@@ -12,8 +12,7 @@ MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT?=	Library for machine-independent, array-oriented data access
 
-CONFLICTS=	hdf-4.* netcdf-3.*
-LATEST_LINK?=	netcdf4
+CONFLICTS_INSTALL=	hdf-4.[0-9]* netcdf-3.[0-9]* netcdf3-3.[0-9]*
 PORTSCOUT=	limit:^4\.
 
 OPTIONS_DEFINE=	DAP FORTRAN SZIP

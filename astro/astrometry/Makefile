@@ -11,10 +11,10 @@ DISTNAME=	astrometry.net-${PORTVERSION}
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Describes an astronomical image
 
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		netpbm.1:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libnetpbm.so:${PORTSDIR}/graphics/netpbm
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
 

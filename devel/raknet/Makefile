@@ -22,6 +22,7 @@ LICENSE_COMB=	dual
 LICENSE_NAME_SpecialAuth=	Special authorization from developer
 LICENSE_FILE_SpecialAuth=	${FILESDIR}/SpecialAuth.mbox
 LICENSE_PERMS_SpecialAuth=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LEGAL_TEXT=	FreeBSD granted special license to distribute 3.x under GPLv3
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes

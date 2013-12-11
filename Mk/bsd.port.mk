@@ -169,6 +169,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  but distfiles can be put on ftp sites and CDROMs.
 # FORBIDDEN		- Package build should not be attempted because of
 #				  security vulnerabilities.
+# LEGAL_TEXT	- Port has legal issues (e.g., special permission to distribute, lacks a license).
+# LEGAL_PACKAGE - Port has no legal issues but defines NO_PACKAGE
 # IGNORE		- Package build should be skipped entirely (e.g.
 #				  because of serious unfixable problems in the build,
 #				  because it cannot be manually fetched, etc).  Error
@@ -3162,6 +3164,17 @@ IGNORE=		is marked as broken on ${ARCH}: ${BROKEN_${ARCH}}
 .endif
 .elif defined(FORBIDDEN)
 IGNORE=		is forbidden: ${FORBIDDEN}
+.endif
+
+# Define the text to be output to LEGAL
+.if defined(LEGAL_TEXT)
+LEGAL= ${LEGAL_TEXT}
+.elif defined(RESTRICTED)
+LEGAL= ${RESTRICTED}
+.elif defined(NO_CDROM)
+LEGAL= ${NO_CDROM}
+.elif defined(NO_PACKAGE) && ! defined(LEGAL_PACKAGE)
+LEGAL= ${NO_PACKAGE}
 .endif
 
 .if (defined(MANUAL_PACKAGE_BUILD) && defined(PACKAGE_BUILDING))

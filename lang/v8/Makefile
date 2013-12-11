@@ -14,7 +14,7 @@ LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
 USES=		gmake
 USE_XZ=		yes
-USE_PYTHON=	2.6+
+USE_PYTHON=	2.6-2.7
 USE_LDCONFIG=	yes
 ALL_TARGET=	native
 MAKE_ARGS=	library=shared
@@ -38,6 +38,7 @@ ONLY_FOR_ARCHS=	i386 amd64
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/build/common.gypi ${WRKSRC}/tools/gyp/v8.gyp
+	@${REINPLACE_CMD} -e '1 s|${SETENV} python|&2|' ${WRKSRC}/build/gyp/gyp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/out/native/d8 ${STAGEDIR}/${PREFIX}/bin/d8

@@ -2,6 +2,7 @@
 
 PORTNAME=	ansible
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://ansibleworks.com/releases/
 

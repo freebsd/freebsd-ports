@@ -3,6 +3,7 @@
 
 PORTNAME=	timelimit
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/sysutils/timelimit/
 

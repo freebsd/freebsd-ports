@@ -19,7 +19,7 @@ MAKE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS}
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
+LIB_DEPENDS+=	liblzma.so:${PORTSDIR}/archivers/xz
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif

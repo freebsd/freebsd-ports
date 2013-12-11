@@ -1,133 +1,108 @@
-bin/subtitleeditor
-lib/subtitleeditor/plugins/actions/libdocumentsnavigation.la
-lib/subtitleeditor/plugins/actions/libdocumentsnavigation.so
-lib/subtitleeditor/plugins/actions/libinsertsubtitlefromkeyframe.la
-lib/subtitleeditor/plugins/actions/libinsertsubtitlefromkeyframe.so
-lib/subtitleeditor/plugins/actions/libsortsubtitles.la
-lib/subtitleeditor/plugins/actions/libsortsubtitles.so
-lib/subtitleeditor/plugins/actions/libtypewriter.la
-lib/subtitleeditor/plugins/actions/libtypewriter.so
-lib/subtitleeditor/plugins/subtitleformats/libsami.la
-lib/subtitleeditor/plugins/subtitleformats/libsami.so
-lib/subtitleeditor/plugins/subtitleformats/libsbv.la
-lib/subtitleeditor/plugins/subtitleformats/libsbv.so
-lib/subtitleeditor/plugins/subtitleformats/libsprucestl.la
-lib/subtitleeditor/plugins/subtitleformats/libsprucestl.so
-lib/libsubtitleeditor.la
-lib/libsubtitleeditor.so
-lib/libsubtitleeditor.so.0
-lib/subtitleeditor/plugins/actions/libabout.so
-lib/subtitleeditor/plugins/actions/libabout.la
-lib/subtitleeditor/plugins/actions/libadjusttime.so
-lib/subtitleeditor/plugins/actions/libadjusttime.la
-lib/subtitleeditor/plugins/actions/libapplytranslation.so
-lib/subtitleeditor/plugins/actions/libapplytranslation.la
-lib/subtitleeditor/plugins/actions/libchangeframerate.so
-lib/subtitleeditor/plugins/actions/libchangeframerate.la
-lib/subtitleeditor/plugins/actions/libcombinesubtitles.so
-lib/subtitleeditor/plugins/actions/libcombinesubtitles.la
-lib/subtitleeditor/plugins/actions/libcommand.so
-lib/subtitleeditor/plugins/actions/libcommand.la
-lib/subtitleeditor/plugins/actions/libconfigurekeyboardshortcuts.so
-lib/subtitleeditor/plugins/actions/libconfigurekeyboardshortcuts.la
-lib/subtitleeditor/plugins/actions/libdialoguize.so
-lib/subtitleeditor/plugins/actions/libdialoguize.la
-lib/subtitleeditor/plugins/actions/libdocumentmanagement.so
-lib/subtitleeditor/plugins/actions/libdocumentmanagement.la
-lib/subtitleeditor/plugins/actions/libduplicatesubtitle.so
-lib/subtitleeditor/plugins/actions/libduplicatesubtitle.la
-lib/subtitleeditor/plugins/actions/libeditcell.so
-lib/subtitleeditor/plugins/actions/libeditcell.la
-lib/subtitleeditor/plugins/actions/liberrorchecking.so
-lib/subtitleeditor/plugins/actions/liberrorchecking.la
-lib/subtitleeditor/plugins/actions/libextendlength.so
-lib/subtitleeditor/plugins/actions/libextendlength.la
-lib/subtitleeditor/plugins/actions/libexternalvideoplayer.so
-lib/subtitleeditor/plugins/actions/libexternalvideoplayer.la
-lib/subtitleeditor/plugins/actions/libfindandreplace.so
-lib/subtitleeditor/plugins/actions/libfindandreplace.la
-lib/subtitleeditor/plugins/actions/libinsertsubtitle.so
-lib/subtitleeditor/plugins/actions/libinsertsubtitle.la
-lib/subtitleeditor/plugins/actions/libitalicize.so
-lib/subtitleeditor/plugins/actions/libitalicize.la
-lib/subtitleeditor/plugins/actions/libjoindocument.so
-lib/subtitleeditor/plugins/actions/libjoindocument.la
-lib/subtitleeditor/plugins/actions/libkeyframesmanagement.so
-lib/subtitleeditor/plugins/actions/libkeyframesmanagement.la
-lib/subtitleeditor/plugins/actions/libmoveafterprecedingsubtitle.so
-lib/subtitleeditor/plugins/actions/libmoveafterprecedingsubtitle.la
-lib/subtitleeditor/plugins/actions/libmovesubtitles.so
-lib/subtitleeditor/plugins/actions/libmovesubtitles.la
-lib/subtitleeditor/plugins/actions/libplaintext.so
-lib/subtitleeditor/plugins/actions/libplaintext.la
-lib/subtitleeditor/plugins/actions/libpreferences.so
-lib/subtitleeditor/plugins/actions/libpreferences.la
-lib/subtitleeditor/plugins/actions/libremovesubtitle.so
-lib/subtitleeditor/plugins/actions/libremovesubtitle.la
-lib/subtitleeditor/plugins/actions/libreversetextandtranslation.so
-lib/subtitleeditor/plugins/actions/libreversetextandtranslation.la
-lib/subtitleeditor/plugins/actions/libscalesubtitles.so
-lib/subtitleeditor/plugins/actions/libscalesubtitles.la
-lib/subtitleeditor/plugins/actions/libselection.so
-lib/subtitleeditor/plugins/actions/libselection.la
-lib/subtitleeditor/plugins/actions/libspellchecking.so
-lib/subtitleeditor/plugins/actions/libspellchecking.la
-lib/subtitleeditor/plugins/actions/libsplitdocument.so
-lib/subtitleeditor/plugins/actions/libsplitdocument.la
-lib/subtitleeditor/plugins/actions/libsplitsubtitle.so
-lib/subtitleeditor/plugins/actions/libsplitsubtitle.la
-lib/subtitleeditor/plugins/actions/libstyleeditor.so
-lib/subtitleeditor/plugins/actions/libstyleeditor.la
-lib/subtitleeditor/plugins/actions/libtextcorrection.so
-lib/subtitleeditor/plugins/actions/libtextcorrection.la
-lib/subtitleeditor/plugins/actions/libtimemodemanagement.so
-lib/subtitleeditor/plugins/actions/libtimemodemanagement.la
-lib/subtitleeditor/plugins/actions/libtimingfromplayer.so
-lib/subtitleeditor/plugins/actions/libtimingfromplayer.la
-lib/subtitleeditor/plugins/actions/libvideoplayermanagement.so
-lib/subtitleeditor/plugins/actions/libvideoplayermanagement.la
-lib/subtitleeditor/plugins/actions/libviewmanager.so
-lib/subtitleeditor/plugins/actions/libviewmanager.la
-lib/subtitleeditor/plugins/actions/libwaveformmanagement.so
-lib/subtitleeditor/plugins/actions/libwaveformmanagement.la
-lib/subtitleeditor/plugins/subtitleformats/libdcsubtitle.so
-lib/subtitleeditor/plugins/subtitleformats/libdcsubtitle.la
-lib/subtitleeditor/plugins/subtitleformats/libadobeencoredvdntsc.so
-lib/subtitleeditor/plugins/subtitleformats/libadobeencoredvdntsc.la
-lib/subtitleeditor/plugins/subtitleformats/libadobeencoredvdpal.so
-lib/subtitleeditor/plugins/subtitleformats/libadobeencoredvdpal.la
-lib/subtitleeditor/plugins/subtitleformats/libadvancedsubstationalpha.so
-lib/subtitleeditor/plugins/subtitleformats/libadvancedsubstationalpha.la
-lib/subtitleeditor/plugins/subtitleformats/libbitc.so
-lib/subtitleeditor/plugins/subtitleformats/libbitc.la
-lib/subtitleeditor/plugins/subtitleformats/libmicrodvd.so
-lib/subtitleeditor/plugins/subtitleformats/libmicrodvd.la
-lib/subtitleeditor/plugins/subtitleformats/libmpl2.so
-lib/subtitleeditor/plugins/subtitleformats/libmpl2.la
-lib/subtitleeditor/plugins/subtitleformats/libmpsub.so
-lib/subtitleeditor/plugins/subtitleformats/libmpsub.la
-lib/subtitleeditor/plugins/subtitleformats/libsubrip.so
-lib/subtitleeditor/plugins/subtitleformats/libsubrip.la
-lib/subtitleeditor/plugins/subtitleformats/libsubstationalpha.so
-lib/subtitleeditor/plugins/subtitleformats/libsubstationalpha.la
-lib/subtitleeditor/plugins/subtitleformats/libsubviewer2.so
-lib/subtitleeditor/plugins/subtitleformats/libsubtitleeditorproject.so
-lib/subtitleeditor/plugins/subtitleformats/libsubtitleeditorproject.la
-lib/subtitleeditor/plugins/subtitleformats/libsubviewer2.la
-lib/subtitleeditor/plugins/subtitleformats/libtimedtextauthoringformat1.so
-lib/subtitleeditor/plugins/subtitleformats/libtimedtextauthoringformat1.la
+%%DATADIR%%/menubar.xml
+%%DATADIR%%/plugins-description/actions/about.se-plugin
+%%DATADIR%%/plugins-description/actions/adjusttime.se-plugin
+%%DATADIR%%/plugins-description/actions/applytranslation.se-plugin
+%%DATADIR%%/plugins-description/actions/bestfit.se-plugin
+%%DATADIR%%/plugins-description/actions/changeframerate.se-plugin
+%%DATADIR%%/plugins-description/actions/clipboard.se-plugin
+%%DATADIR%%/plugins-description/actions/combinesubtitles.se-plugin
+%%DATADIR%%/plugins-description/actions/command.se-plugin
+%%DATADIR%%/plugins-description/actions/configurekeyboardshortcuts.se-plugin
+%%DATADIR%%/plugins-description/actions/dialoguize.se-plugin
+%%DATADIR%%/plugins-description/actions/documentmanagement.se-plugin
+%%DATADIR%%/plugins-description/actions/documentsnavigation.se-plugin
+%%DATADIR%%/plugins-description/actions/duplicatesubtitle.se-plugin
+%%DATADIR%%/plugins-description/actions/editcell.se-plugin
+%%DATADIR%%/plugins-description/actions/errorchecking.se-plugin
+%%DATADIR%%/plugins-description/actions/extendlength.se-plugin
+%%DATADIR%%/plugins-description/actions/externalvideoplayer.se-plugin
+%%DATADIR%%/plugins-description/actions/findandreplace.se-plugin
+%%DATADIR%%/plugins-description/actions/insertsubtitle.se-plugin
+%%DATADIR%%/plugins-description/actions/insertsubtitlefromkeyframe.se-plugin
+%%DATADIR%%/plugins-description/actions/italicize.se-plugin
+%%DATADIR%%/plugins-description/actions/joindocument.se-plugin
+%%DATADIR%%/plugins-description/actions/keyframesmanagement.se-plugin
+%%DATADIR%%/plugins-description/actions/minimizeduration.se-plugin
+%%DATADIR%%/plugins-description/actions/moveafterprecedingsubtitle.se-plugin
+%%DATADIR%%/plugins-description/actions/movesubtitles.se-plugin
+%%DATADIR%%/plugins-description/actions/plaintext.se-plugin
+%%DATADIR%%/plugins-description/actions/preferences.se-plugin
+%%DATADIR%%/plugins-description/actions/removesubtitle.se-plugin
+%%DATADIR%%/plugins-description/actions/reversetextandtranslation.se-plugin
+%%DATADIR%%/plugins-description/actions/scalesubtitles.se-plugin
+%%DATADIR%%/plugins-description/actions/selection.se-plugin
+%%DATADIR%%/plugins-description/actions/sortsubtitles.se-plugin
+%%DATADIR%%/plugins-description/actions/spellchecking.se-plugin
+%%DATADIR%%/plugins-description/actions/splitdocument.se-plugin
+%%DATADIR%%/plugins-description/actions/splitsubtitle.se-plugin
+%%DATADIR%%/plugins-description/actions/stacksubtitles.se-plugin
+%%DATADIR%%/plugins-description/actions/styleeditor.se-plugin
+%%DATADIR%%/plugins-description/actions/textcorrection.se-plugin
+%%DATADIR%%/plugins-description/actions/timemodemanagement.se-plugin
+%%DATADIR%%/plugins-description/actions/timingfromplayer.se-plugin
+%%DATADIR%%/plugins-description/actions/typewriter.se-plugin
+%%DATADIR%%/plugins-description/actions/videoplayermanagement.se-plugin
+%%DATADIR%%/plugins-description/actions/viewmanager.se-plugin
+%%DATADIR%%/plugins-description/actions/waveformmanagement.se-plugin
+%%DATADIR%%/plugins-description/subtitleformats/adobeencoredvdntsc.se-plugin
+%%DATADIR%%/plugins-description/subtitleformats/adobeencoredvdpal.se-plugin
+%%DATADIR%%/plugins-description/subtitleformats/advancedsubstationalpha.se-plugin
+%%DATADIR%%/plugins-description/subtitleformats/bitc.se-plugin
+%%DATADIR%%/plugins-description/subtitleformats/dcsubtitle.se-plugin
+%%DATADIR%%/plugins-description/subtitleformats/microdvd.se-plugin
+%%DATADIR%%/plugins-description/subtitleformats/mpl2.se-plugin
+%%DATADIR%%/plugins-description/subtitleformats/mpsub.se-plugin
+%%DATADIR%%/plugins-description/subtitleformats/plaintextformat.se-plugin
+%%DATADIR%%/plugins-description/subtitleformats/sami.se-plugin
+%%DATADIR%%/plugins-description/subtitleformats/sbv.se-plugin
+%%DATADIR%%/plugins-description/subtitleformats/sprucestl.se-plugin
+%%DATADIR%%/plugins-description/subtitleformats/subrip.se-plugin
+%%DATADIR%%/plugins-description/subtitleformats/substationalpha.se-plugin
+%%DATADIR%%/plugins-description/subtitleformats/subtitleeditorproject.se-plugin
+%%DATADIR%%/plugins-description/subtitleformats/subviewer2.se-plugin
+%%DATADIR%%/plugins-description/subtitleformats/timedtextauthoringformat1.se-plugin
+%%DATADIR%%/plugins-share/advancedsubstationalpha/dialog-advancedsubstationalpha-preferences.ui
+%%DATADIR%%/plugins-share/changeframerate/dialog-change-framerate.ui
+%%DATADIR%%/plugins-share/configurekeyboardshortcuts/dialog-configure-keyboard-shortcuts.ui
+%%DATADIR%%/plugins-share/dialoguize/dialog-dialoguize-preferences.ui
+%%DATADIR%%/plugins-share/errorchecking/dialog-error-checking-preferences.ui
+%%DATADIR%%/plugins-share/errorchecking/dialog-error-checking.ui
+%%DATADIR%%/plugins-share/externalvideoplayer/dialog-external-video-player-preferences.ui
+%%DATADIR%%/plugins-share/findandreplace/dialog-find-and-replace.ui
+%%DATADIR%%/plugins-share/movesubtitles/dialog-move-subtitles.ui
+%%DATADIR%%/plugins-share/preferences/dialog-preferences.ui
+%%DATADIR%%/plugins-share/scalesubtitles/dialog-scale-subtitles.ui
+%%DATADIR%%/plugins-share/spellchecking/dialog-spell-checking.ui
+%%DATADIR%%/plugins-share/splitdocument/dialog-split-document.ui
+%%DATADIR%%/plugins-share/styleeditor/dialog-style-editor.ui
+%%DATADIR%%/plugins-share/substationalpha/dialog-substationalpha-preferences.ui
+%%DATADIR%%/plugins-share/textcorrection/Latn-en-US.common-error.se-pattern
+%%DATADIR%%/plugins-share/textcorrection/Latn-en.capitalization.se-pattern
+%%DATADIR%%/plugins-share/textcorrection/Latn-en.common-error.se-pattern
+%%DATADIR%%/plugins-share/textcorrection/Latn-en.hearing-impaired.se-pattern
+%%DATADIR%%/plugins-share/textcorrection/Latn-fi.common-error.se-pattern
+%%DATADIR%%/plugins-share/textcorrection/Latn-fr.common-error.se-pattern
+%%DATADIR%%/plugins-share/textcorrection/Latn.capitalization.se-pattern
+%%DATADIR%%/plugins-share/textcorrection/Latn.common-error.se-pattern
+%%DATADIR%%/plugins-share/textcorrection/Latn.hearing-impaired.se-pattern
+%%DATADIR%%/plugins-share/textcorrection/Zyyy.common-error.se-pattern
+%%DATADIR%%/plugins-share/textcorrection/assistant-text-correction.ui
+%%DATADIR%%/plugins-share/viewmanager/dialog-view-manager.ui
+%%DATADIR%%/ui/dialog-character-codings.ui
+%%DATADIR%%/ui/dialog-encodings-chooser.ui
+%%DATADIR%%/ui/dialog-export-text.ui
+%%DATADIR%%/ui/dialog-import-text.ui
+%%DATADIR%%/ui/dialog-open-document.ui
+%%DATADIR%%/ui/dialog-save-document.ui
+%%DATADIR%%/ui/dialog-script-properties.ui
+%%DATADIR%%/ui/subtitleeditor.ui
 %%DESKTOPDIR%%/subtitleeditor.desktop
-share/icons/hicolor/16x16/apps/subtitleeditor.png
-share/icons/hicolor/22x22/apps/subtitleeditor.png
-share/icons/hicolor/24x24/apps/subtitleeditor.png
-share/icons/hicolor/32x32/apps/subtitleeditor.png
-share/icons/hicolor/scalable/apps/subtitleeditor.svg
 %%NLS%%share/locale/bg/LC_MESSAGES/subtitleeditor.mo
-%%NLS%%share/locale/el/LC_MESSAGES/subtitleeditor.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/subtitleeditor.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/subtitleeditor.mo
 %%NLS%%share/locale/da/LC_MESSAGES/subtitleeditor.mo
 %%NLS%%share/locale/de/LC_MESSAGES/subtitleeditor.mo
+%%NLS%%share/locale/el/LC_MESSAGES/subtitleeditor.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/subtitleeditor.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/subtitleeditor.mo
 %%NLS%%share/locale/es/LC_MESSAGES/subtitleeditor.mo
@@ -135,132 +110,152 @@ share/icons/hicolor/scalable/apps/subtitleeditor.svg
 %%NLS%%share/locale/gl/LC_MESSAGES/subtitleeditor.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/subtitleeditor.mo
 %%NLS%%share/locale/it/LC_MESSAGES/subtitleeditor.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/subtitleeditor.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/subtitleeditor.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/subtitleeditor.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/subtitleeditor.mo
-%%NLS%%share/locale/lt/LC_MESSAGES/subtitleeditor.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/subtitleeditor.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/subtitleeditor.mo
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/subtitleeditor.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/subtitleeditor.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/subtitleeditor.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/subtitleeditor.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/subtitleeditor.mo
-share/pixmaps/subtitleeditor.svg
-share/subtitleeditor/menubar.xml
-share/subtitleeditor/plugins-description/actions/about.se-plugin
-share/subtitleeditor/plugins-description/actions/adjusttime.se-plugin
-share/subtitleeditor/plugins-description/actions/applytranslation.se-plugin
-share/subtitleeditor/plugins-description/actions/changeframerate.se-plugin
-share/subtitleeditor/plugins-description/actions/combinesubtitles.se-plugin
-share/subtitleeditor/plugins-description/actions/command.se-plugin
-share/subtitleeditor/plugins-description/actions/configurekeyboardshortcuts.se-plugin
-share/subtitleeditor/plugins-description/actions/dialoguize.se-plugin
-share/subtitleeditor/plugins-description/actions/documentmanagement.se-plugin
-share/subtitleeditor/plugins-description/actions/duplicatesubtitle.se-plugin
-share/subtitleeditor/plugins-description/actions/editcell.se-plugin
-share/subtitleeditor/plugins-description/actions/errorchecking.se-plugin
-share/subtitleeditor/plugins-description/actions/extendlength.se-plugin
-share/subtitleeditor/plugins-description/actions/externalvideoplayer.se-plugin
-share/subtitleeditor/plugins-description/actions/findandreplace.se-plugin
-share/subtitleeditor/plugins-description/actions/insertsubtitle.se-plugin
-share/subtitleeditor/plugins-description/actions/italicize.se-plugin
-share/subtitleeditor/plugins-description/actions/joindocument.se-plugin
-share/subtitleeditor/plugins-description/actions/keyframesmanagement.se-plugin
-share/subtitleeditor/plugins-description/actions/moveafterprecedingsubtitle.se-plugin
-share/subtitleeditor/plugins-description/actions/movesubtitles.se-plugin
-share/subtitleeditor/plugins-description/actions/plaintext.se-plugin
-share/subtitleeditor/plugins-description/actions/preferences.se-plugin
-share/subtitleeditor/plugins-description/actions/removesubtitle.se-plugin
-share/subtitleeditor/plugins-description/actions/reversetextandtranslation.se-plugin
-share/subtitleeditor/plugins-description/actions/scalesubtitles.se-plugin
-share/subtitleeditor/plugins-description/actions/selection.se-plugin
-share/subtitleeditor/plugins-description/actions/spellchecking.se-plugin
-share/subtitleeditor/plugins-description/actions/splitdocument.se-plugin
-share/subtitleeditor/plugins-description/actions/splitsubtitle.se-plugin
-share/subtitleeditor/plugins-description/actions/styleeditor.se-plugin
-share/subtitleeditor/plugins-description/actions/textcorrection.se-plugin
-share/subtitleeditor/plugins-description/actions/timemodemanagement.se-plugin
-share/subtitleeditor/plugins-description/actions/timingfromplayer.se-plugin
-share/subtitleeditor/plugins-description/actions/videoplayermanagement.se-plugin
-share/subtitleeditor/plugins-description/actions/viewmanager.se-plugin
-share/subtitleeditor/plugins-description/actions/waveformmanagement.se-plugin
-share/subtitleeditor/plugins-description/subtitleformats/adobeencoredvdntsc.se-plugin
-share/subtitleeditor/plugins-description/subtitleformats/adobeencoredvdpal.se-plugin
-share/subtitleeditor/plugins-description/subtitleformats/advancedsubstationalpha.se-plugin
-share/subtitleeditor/plugins-description/subtitleformats/bitc.se-plugin
-share/subtitleeditor/plugins-description/subtitleformats/microdvd.se-plugin
-share/subtitleeditor/plugins-description/subtitleformats/mpl2.se-plugin
-share/subtitleeditor/plugins-description/subtitleformats/mpsub.se-plugin
-share/subtitleeditor/plugins-description/subtitleformats/subrip.se-plugin
-share/subtitleeditor/plugins-description/subtitleformats/substationalpha.se-plugin
-share/subtitleeditor/plugins-description/subtitleformats/subtitleeditorproject.se-plugin
-share/subtitleeditor/plugins-description/subtitleformats/subviewer2.se-plugin
-share/subtitleeditor/plugins-description/subtitleformats/timedtextauthoringformat1.se-plugin
-share/subtitleeditor/plugins-share/changeframerate/dialog-change-framerate.ui
-share/subtitleeditor/plugins-share/configurekeyboardshortcuts/dialog-configure-keyboard-shortcuts.ui
-share/subtitleeditor/plugins-share/errorchecking/dialog-error-checking.ui
-share/subtitleeditor/plugins-share/errorchecking/dialog-error-checking-preferences.ui
-share/subtitleeditor/plugins-share/externalvideoplayer/dialog-external-video-player-preferences.ui
-share/subtitleeditor/plugins-share/findandreplace/dialog-find-and-replace.ui
-share/subtitleeditor/plugins-share/movesubtitles/dialog-move-subtitles.ui
-share/subtitleeditor/plugins-share/preferences/dialog-preferences.ui
-share/subtitleeditor/plugins-share/scalesubtitles/dialog-scale-subtitles.ui
-share/subtitleeditor/plugins-share/spellchecking/dialog-spell-checking.ui
-share/subtitleeditor/plugins-share/splitdocument/dialog-split-document.ui
-share/subtitleeditor/plugins-share/styleeditor/dialog-style-editor.ui
-share/subtitleeditor/plugins-share/textcorrection/assistant-text-correction.ui
-share/subtitleeditor/plugins-share/textcorrection/Latn.capitalization.se-pattern
-share/subtitleeditor/plugins-share/textcorrection/Latn.common-error.se-pattern
-share/subtitleeditor/plugins-share/textcorrection/Latn.hearing-impaired.se-pattern
-share/subtitleeditor/plugins-share/textcorrection/Latn-en.capitalization.se-pattern
-share/subtitleeditor/plugins-share/textcorrection/Latn-en.common-error.se-pattern
-share/subtitleeditor/plugins-share/textcorrection/Latn-en.hearing-impaired.se-pattern
-share/subtitleeditor/plugins-share/textcorrection/Latn-en-US.common-error.se-pattern
-share/subtitleeditor/plugins-share/textcorrection/Latn-fi.common-error.se-pattern
-share/subtitleeditor/plugins-share/textcorrection/Latn-fr.common-error.se-pattern
-share/subtitleeditor/plugins-share/textcorrection/Zyyy.common-error.se-pattern
-share/subtitleeditor/plugins-share/viewmanager/dialog-view-manager.ui
-share/subtitleeditor/ui/dialog-encodings-chooser.ui
-share/subtitleeditor/ui/dialog-export-text.ui
-share/subtitleeditor/ui/dialog-character-codings.ui
-share/subtitleeditor/ui/dialog-import-text.ui
-share/subtitleeditor/ui/dialog-open-document.ui
-share/subtitleeditor/ui/dialog-save-document.ui
-share/subtitleeditor/ui/dialog-script-properties.ui
-share/subtitleeditor/ui/subtitleeditor.ui
-share/subtitleeditor/plugins-description/subtitleformats/dcsubtitle.se-plugin
-share/subtitleeditor/plugins-description/actions/documentsnavigation.se-plugin
-share/subtitleeditor/plugins-description/actions/insertsubtitlefromkeyframe.se-plugin
-share/subtitleeditor/plugins-description/actions/sortsubtitles.se-plugin
-share/subtitleeditor/plugins-description/actions/typewriter.se-plugin
-share/subtitleeditor/plugins-description/subtitleformats/sami.se-plugin
-share/subtitleeditor/plugins-description/subtitleformats/sbv.se-plugin
-share/subtitleeditor/plugins-description/subtitleformats/sprucestl.se-plugin
-share/subtitleeditor/plugins-share/advancedsubstationalpha/dialog-advancedsubstationalpha-preferences.ui
-share/subtitleeditor/plugins-share/substationalpha/dialog-substationalpha-preferences.ui
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/subtitleeditor.mo
+bin/subtitleeditor
+lib/libsubtitleeditor.la
+lib/libsubtitleeditor.so
+lib/libsubtitleeditor.so.0
+lib/subtitleeditor/plugins/actions/libabout.la
+lib/subtitleeditor/plugins/actions/libabout.so
+lib/subtitleeditor/plugins/actions/libadjusttime.la
+lib/subtitleeditor/plugins/actions/libadjusttime.so
+lib/subtitleeditor/plugins/actions/libapplytranslation.la
+lib/subtitleeditor/plugins/actions/libapplytranslation.so
+lib/subtitleeditor/plugins/actions/libbestfit.la
+lib/subtitleeditor/plugins/actions/libbestfit.so
+lib/subtitleeditor/plugins/actions/libchangeframerate.la
+lib/subtitleeditor/plugins/actions/libchangeframerate.so
+lib/subtitleeditor/plugins/actions/libclipboard.la
+lib/subtitleeditor/plugins/actions/libclipboard.so
+lib/subtitleeditor/plugins/actions/libcombinesubtitles.la
+lib/subtitleeditor/plugins/actions/libcombinesubtitles.so
+lib/subtitleeditor/plugins/actions/libcommand.la
+lib/subtitleeditor/plugins/actions/libcommand.so
+lib/subtitleeditor/plugins/actions/libconfigurekeyboardshortcuts.la
+lib/subtitleeditor/plugins/actions/libconfigurekeyboardshortcuts.so
+lib/subtitleeditor/plugins/actions/libdialoguize.la
+lib/subtitleeditor/plugins/actions/libdialoguize.so
+lib/subtitleeditor/plugins/actions/libdocumentmanagement.la
+lib/subtitleeditor/plugins/actions/libdocumentmanagement.so
+lib/subtitleeditor/plugins/actions/libdocumentsnavigation.la
+lib/subtitleeditor/plugins/actions/libdocumentsnavigation.so
+lib/subtitleeditor/plugins/actions/libduplicatesubtitle.la
+lib/subtitleeditor/plugins/actions/libduplicatesubtitle.so
+lib/subtitleeditor/plugins/actions/libeditcell.la
+lib/subtitleeditor/plugins/actions/libeditcell.so
+lib/subtitleeditor/plugins/actions/liberrorchecking.la
+lib/subtitleeditor/plugins/actions/liberrorchecking.so
+lib/subtitleeditor/plugins/actions/libextendlength.la
+lib/subtitleeditor/plugins/actions/libextendlength.so
+lib/subtitleeditor/plugins/actions/libexternalvideoplayer.la
+lib/subtitleeditor/plugins/actions/libexternalvideoplayer.so
+lib/subtitleeditor/plugins/actions/libfindandreplace.la
+lib/subtitleeditor/plugins/actions/libfindandreplace.so
+lib/subtitleeditor/plugins/actions/libinsertsubtitle.la
+lib/subtitleeditor/plugins/actions/libinsertsubtitle.so
+lib/subtitleeditor/plugins/actions/libinsertsubtitlefromkeyframe.la
+lib/subtitleeditor/plugins/actions/libinsertsubtitlefromkeyframe.so
+lib/subtitleeditor/plugins/actions/libitalicize.la
+lib/subtitleeditor/plugins/actions/libitalicize.so
+lib/subtitleeditor/plugins/actions/libjoindocument.la
+lib/subtitleeditor/plugins/actions/libjoindocument.so
+lib/subtitleeditor/plugins/actions/libkeyframesmanagement.la
+lib/subtitleeditor/plugins/actions/libkeyframesmanagement.so
+lib/subtitleeditor/plugins/actions/libminimizeduration.la
+lib/subtitleeditor/plugins/actions/libminimizeduration.so
+lib/subtitleeditor/plugins/actions/libmoveafterprecedingsubtitle.la
+lib/subtitleeditor/plugins/actions/libmoveafterprecedingsubtitle.so
+lib/subtitleeditor/plugins/actions/libmovesubtitles.la
+lib/subtitleeditor/plugins/actions/libmovesubtitles.so
+lib/subtitleeditor/plugins/actions/libplaintext.la
+lib/subtitleeditor/plugins/actions/libplaintext.so
+lib/subtitleeditor/plugins/actions/libpreferences.la
+lib/subtitleeditor/plugins/actions/libpreferences.so
+lib/subtitleeditor/plugins/actions/libremovesubtitle.la
+lib/subtitleeditor/plugins/actions/libremovesubtitle.so
+lib/subtitleeditor/plugins/actions/libreversetextandtranslation.la
+lib/subtitleeditor/plugins/actions/libreversetextandtranslation.so
+lib/subtitleeditor/plugins/actions/libscalesubtitles.la
+lib/subtitleeditor/plugins/actions/libscalesubtitles.so
+lib/subtitleeditor/plugins/actions/libselection.la
+lib/subtitleeditor/plugins/actions/libselection.so
+lib/subtitleeditor/plugins/actions/libsortsubtitles.la
+lib/subtitleeditor/plugins/actions/libsortsubtitles.so
+lib/subtitleeditor/plugins/actions/libspellchecking.la
+lib/subtitleeditor/plugins/actions/libspellchecking.so
+lib/subtitleeditor/plugins/actions/libsplitdocument.la
+lib/subtitleeditor/plugins/actions/libsplitdocument.so
+lib/subtitleeditor/plugins/actions/libsplitsubtitle.la
+lib/subtitleeditor/plugins/actions/libsplitsubtitle.so
+lib/subtitleeditor/plugins/actions/libstacksubtitles.la
+lib/subtitleeditor/plugins/actions/libstacksubtitles.so
+lib/subtitleeditor/plugins/actions/libstyleeditor.la
+lib/subtitleeditor/plugins/actions/libstyleeditor.so
+lib/subtitleeditor/plugins/actions/libtextcorrection.la
+lib/subtitleeditor/plugins/actions/libtextcorrection.so
+lib/subtitleeditor/plugins/actions/libtimemodemanagement.la
+lib/subtitleeditor/plugins/actions/libtimemodemanagement.so
+lib/subtitleeditor/plugins/actions/libtimingfromplayer.la
+lib/subtitleeditor/plugins/actions/libtimingfromplayer.so
+lib/subtitleeditor/plugins/actions/libtypewriter.la
+lib/subtitleeditor/plugins/actions/libtypewriter.so
+lib/subtitleeditor/plugins/actions/libvideoplayermanagement.la
+lib/subtitleeditor/plugins/actions/libvideoplayermanagement.so
+lib/subtitleeditor/plugins/actions/libviewmanager.la
+lib/subtitleeditor/plugins/actions/libviewmanager.so
+lib/subtitleeditor/plugins/actions/libwaveformmanagement.la
+lib/subtitleeditor/plugins/actions/libwaveformmanagement.so
+lib/subtitleeditor/plugins/subtitleformats/libadobeencoredvdntsc.la
+lib/subtitleeditor/plugins/subtitleformats/libadobeencoredvdntsc.so
+lib/subtitleeditor/plugins/subtitleformats/libadobeencoredvdpal.la
+lib/subtitleeditor/plugins/subtitleformats/libadobeencoredvdpal.so
+lib/subtitleeditor/plugins/subtitleformats/libadvancedsubstationalpha.la
+lib/subtitleeditor/plugins/subtitleformats/libadvancedsubstationalpha.so
+lib/subtitleeditor/plugins/subtitleformats/libbitc.la
+lib/subtitleeditor/plugins/subtitleformats/libbitc.so
+lib/subtitleeditor/plugins/subtitleformats/libdcsubtitle.la
+lib/subtitleeditor/plugins/subtitleformats/libdcsubtitle.so
+lib/subtitleeditor/plugins/subtitleformats/libmicrodvd.la
+lib/subtitleeditor/plugins/subtitleformats/libmicrodvd.so
+lib/subtitleeditor/plugins/subtitleformats/libmpl2.la
+lib/subtitleeditor/plugins/subtitleformats/libmpl2.so
+lib/subtitleeditor/plugins/subtitleformats/libmpsub.la
+lib/subtitleeditor/plugins/subtitleformats/libmpsub.so
+lib/subtitleeditor/plugins/subtitleformats/libplaintextformat.la
+lib/subtitleeditor/plugins/subtitleformats/libplaintextformat.so
+lib/subtitleeditor/plugins/subtitleformats/libsami.la
+lib/subtitleeditor/plugins/subtitleformats/libsami.so
+lib/subtitleeditor/plugins/subtitleformats/libsbv.la
+lib/subtitleeditor/plugins/subtitleformats/libsbv.so
+lib/subtitleeditor/plugins/subtitleformats/libsprucestl.la
+lib/subtitleeditor/plugins/subtitleformats/libsprucestl.so
+lib/subtitleeditor/plugins/subtitleformats/libsubrip.la
+lib/subtitleeditor/plugins/subtitleformats/libsubrip.so
+lib/subtitleeditor/plugins/subtitleformats/libsubstationalpha.la
+lib/subtitleeditor/plugins/subtitleformats/libsubstationalpha.so
+lib/subtitleeditor/plugins/subtitleformats/libsubtitleeditorproject.la
+lib/subtitleeditor/plugins/subtitleformats/libsubtitleeditorproject.so
+lib/subtitleeditor/plugins/subtitleformats/libsubviewer2.la
+lib/subtitleeditor/plugins/subtitleformats/libsubviewer2.so
+lib/subtitleeditor/plugins/subtitleformats/libtimedtextauthoringformat1.la
+lib/subtitleeditor/plugins/subtitleformats/libtimedtextauthoringformat1.so
 man/man1/subtitleeditor.1.gz
-@dirrm share/subtitleeditor/ui
-@dirrm share/subtitleeditor/plugins-share/substationalpha
-@dirrm share/subtitleeditor/plugins-share/advancedsubstationalpha
-@dirrm share/subtitleeditor/plugins-share/viewmanager
-@dirrm share/subtitleeditor/plugins-share/textcorrection
-@dirrm share/subtitleeditor/plugins-share/styleeditor
-@dirrm share/subtitleeditor/plugins-share/splitdocument
-@dirrm share/subtitleeditor/plugins-share/spellchecking
-@dirrm share/subtitleeditor/plugins-share/scalesubtitles
-@dirrm share/subtitleeditor/plugins-share/preferences
-@dirrm share/subtitleeditor/plugins-share/movesubtitles
-@dirrm share/subtitleeditor/plugins-share/findandreplace
-@dirrm share/subtitleeditor/plugins-share/externalvideoplayer
-@dirrm share/subtitleeditor/plugins-share/errorchecking
-@dirrm share/subtitleeditor/plugins-share/configurekeyboardshortcuts
-@dirrm share/subtitleeditor/plugins-share/changeframerate
-@dirrm share/subtitleeditor/plugins-share/bitc
-@dirrm share/subtitleeditor/plugins-share
-@dirrm share/subtitleeditor/plugins-description/subtitleformats
-@dirrm share/subtitleeditor/plugins-description/actions
-@dirrm share/subtitleeditor/plugins-description
+share/icons/hicolor/16x16/apps/subtitleeditor.png
+share/icons/hicolor/22x22/apps/subtitleeditor.png
+share/icons/hicolor/24x24/apps/subtitleeditor.png
+share/icons/hicolor/32x32/apps/subtitleeditor.png
+share/icons/hicolor/scalable/apps/subtitleeditor.svg
+share/pixmaps/subtitleeditor.svg
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/32x32/apps
@@ -273,8 +268,29 @@ man/man1/subtitleeditor.1.gz
 @dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrm share/subtitleeditor
 @dirrm lib/subtitleeditor/plugins/subtitleformats
 @dirrm lib/subtitleeditor/plugins/actions
 @dirrm lib/subtitleeditor/plugins
 @dirrm lib/subtitleeditor
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%/plugins-share/viewmanager
+@dirrm %%DATADIR%%/plugins-share/textcorrection
+@dirrm %%DATADIR%%/plugins-share/substationalpha
+@dirrm %%DATADIR%%/plugins-share/styleeditor
+@dirrm %%DATADIR%%/plugins-share/splitdocument
+@dirrm %%DATADIR%%/plugins-share/spellchecking
+@dirrm %%DATADIR%%/plugins-share/scalesubtitles
+@dirrm %%DATADIR%%/plugins-share/preferences
+@dirrm %%DATADIR%%/plugins-share/movesubtitles
+@dirrm %%DATADIR%%/plugins-share/findandreplace
+@dirrm %%DATADIR%%/plugins-share/externalvideoplayer
+@dirrm %%DATADIR%%/plugins-share/errorchecking
+@dirrm %%DATADIR%%/plugins-share/dialoguize
+@dirrm %%DATADIR%%/plugins-share/configurekeyboardshortcuts
+@dirrm %%DATADIR%%/plugins-share/changeframerate
+@dirrm %%DATADIR%%/plugins-share/advancedsubstationalpha
+@dirrm %%DATADIR%%/plugins-share
+@dirrm %%DATADIR%%/plugins-description/subtitleformats
+@dirrm %%DATADIR%%/plugins-description/actions
+@dirrm %%DATADIR%%/plugins-description
+@dirrm %%DATADIR%%

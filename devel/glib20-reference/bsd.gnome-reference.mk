@@ -56,10 +56,9 @@ make-descr:
 do-install:
 .    for d in ${BOOKS}
 	if [ -d ${REFERENCE_SRC}/${d}/html ]; then \
-		${MKDIR} ${DOCSDIR}/${d}; \
+		${MKDIR} ${STAGEDIR}${DOCSDIR}/${d}; \
 		cd ${REFERENCE_SRC}/${d}/html && \
-		${FIND} * -type d ! -empty -exec ${MKDIR} "${DOCSDIR}/${d}/{}" \; && \
-		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/${d}/{}" \; ; \
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${d}; \
 	fi
 .    endfor
 .endif

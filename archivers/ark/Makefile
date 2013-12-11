@@ -11,7 +11,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Archiving tool for KDE
 
-LIB_DEPENDS=	qjson.0:${PORTSDIR}/devel/qjson
+LIB_DEPENDS=	libqjson.so:${PORTSDIR}/devel/qjson
 
 CONFLICTS_INSTALL=	kdeutils-4.[0-7].*
 
@@ -44,7 +44,7 @@ RUN_DEPENDS+=	unzip>0:${PORTSDIR}/archivers/unzip \
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=	archive:${PORTSDIR}/archivers/libarchive
+LIB_DEPENDS+=	libarchive.so:${PORTSDIR}/archivers/libarchive
 .endif
 
 .if ${PORT_OPTIONS:MRAR}

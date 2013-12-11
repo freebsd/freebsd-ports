@@ -10,9 +10,9 @@ MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/supported/${PORTVERSION:R}/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Free image processing system
 
-OPTIONS_DEFINE=	LIBOIL PYTHON
+OPTIONS_DEFINE=	LIBOIL PYTHON DOCS
 OPTIONS_DEFAULT=	LIBOIL
-LIBOIL_DESC=	Use leiboil for CPU-optimized primitives
+LIBOIL_DESC=	Use liboil for CPU-optimized primitives
 PYTHON_DESC=	Create Python bindings
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
@@ -80,5 +80,9 @@ LIB_DEPENDS+=	oil:${PORTSDIR}/devel/liboil
 .else
 CONFIGURE_ARGS+=	--without-liboil
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/VIPS_CXX_LIBS="-lstdc++"/ d' \
+		${WRKSRC}/configure.in ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

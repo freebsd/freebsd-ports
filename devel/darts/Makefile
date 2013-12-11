@@ -7,26 +7,22 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.chasen.org/~taku/software/darts/src/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A C++ template library that implements Double-Array
+COMMENT=	C++ template library that implements Double-Array
 
 GNU_CONFIGURE=	yes
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
 EXAMPLES=	darts.cpp mkdarts.cpp
 DOCS=		AUTHORS ChangeLog README doc
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${DOCS}
-	${CP} -R ${WRKSRC}/${f} ${DOCSDIR}/
+	${CP} -R ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${EXAMPLES}
-	${CP} -R ${WRKSRC}/${f} ${EXAMPLESDIR}/
+	${CP} -R ${WRKSRC}/${f} ${STAGEDIR}${EXAMPLESDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>

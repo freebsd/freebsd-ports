@@ -15,8 +15,7 @@ COMMENT=	Hierarchical Data Format library (from NCSA)
 
 OPTIONS_DEFINE=	DEBUG EXAMPLES FORTRAN SZIP
 
-CONFLICTS=	hdf-4.* hdf5-1.6.*
-NO_LATEST_LINK=	yes
+CONFLICTS_INSTALL=	hdf-4.[0-9]* hdf5-1.6.[0-9]*
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes

@@ -127,6 +127,7 @@
     SUBDIR += clonehdd
     SUBDIR += cloop-utils
     SUBDIR += cmdwatch
+    SUBDIR += cmogstored
     SUBDIR += cmospwd
     SUBDIR += cog
     SUBDIR += colorize

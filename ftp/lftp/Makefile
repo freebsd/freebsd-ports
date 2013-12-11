@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	lftp
-PORTVERSION=	4.4.9
-PORTREVISION=	1
+PORTVERSION=	4.4.13
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	http://ftp.yars.free.net/pub/source/lftp/ \
-		http://ftp.yars.free.net/pub/source/lftp/old/ \
+MASTER_SITES=	http://lftp.yar.ru/ftp/ \
+		http://lftp.yar.ru/ftp/old/ \
 		http://lftp.cybermirror.org/ \
 		http://lftp.cybermirror.org/old/ \
 		http://ftp.st.ryukoku.ac.jp/pub/network/ftp/lftp/ \

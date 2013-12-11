@@ -12,7 +12,7 @@ COMMENT=	Client program to help playing MUDs
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 OPTIONS_DEFINE=	BIG5 DOCS
 BIG5_DESC=	Big5 support
@@ -33,20 +33,14 @@ PORTDOCS=	${DOCS:T}
 
 SLAVEDIRS=	chinese/tintin++
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBIG5}
-CONFIGURE_ARGS+=--enable-big5
-.endif
+BIG5_CONFIGURE_ARGS=	--enable-big5
 
 post-configure:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tt++ ${STAGEDIR}${PREFIX}/bin/
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/../ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>

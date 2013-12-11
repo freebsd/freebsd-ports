@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.reza.net/rmap/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates images of the Earth centered at a particular location
 
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
 GNU_CONFIGURE=	yes
 USES=		gmake

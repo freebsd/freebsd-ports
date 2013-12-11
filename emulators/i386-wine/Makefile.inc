@@ -38,6 +38,8 @@ SUB_FILES=	pkg-message
 USE_LDCONFIG32=	${PREFIX}/lib32 ${PREFIX}/lib32/wine
 USE_XZ=		yes
 
+PORTSCOUT=	limitw:1,even
+
 .include <bsd.port.pre.mk>
 
 .if !(${OSVERSION} >= 803000 && ${OSVERSION} < 900000) && !(${OSVERSION} >= 901000 && ${OSVERSION} < 1000000)

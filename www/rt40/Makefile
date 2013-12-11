@@ -2,6 +2,7 @@
 
 PORTNAME=	rt
 PORTVERSION=	4.0.18
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		SF/requesttracker/

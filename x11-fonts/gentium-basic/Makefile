@@ -3,6 +3,7 @@
 
 PORTNAME=	GentiumBasic
 PORTVERSION=	110
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php?format=file&media_id=${MEDIA_ID}&filename=/
 DISTNAME=	ttf-sil-gentium-basic_1.1.orig

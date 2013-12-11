@@ -4,8 +4,14 @@ bin/mopesnake
 %%DATADIR%%/images/title.png
 %%DATADIR%%/images/tryad.png
 %%DATADIR%%/mopelib/__init__.py
+%%DATADIR%%/mopelib/__init__.pyc
+%%DATADIR%%/mopelib/__init__.pyo
 %%DATADIR%%/mopelib/mopelib.py
+%%DATADIR%%/mopelib/mopelib.pyc
+%%DATADIR%%/mopelib/mopelib.pyo
 %%DATADIR%%/mopesnake.py
+%%DATADIR%%/mopesnake.pyc
+%%DATADIR%%/mopesnake.pyo
 %%DATADIR%%/music/the_final_rewind_loop.ogg
 %%DATADIR%%/sounds/aaa1.wav
 %%DATADIR%%/sounds/aah2.wav

@@ -92,7 +92,7 @@ CONFIGURE_ARGS+=	--without-xml2
 .endif
 
 .if ${PORT_OPTIONS:MLZO}
-LIB_DEPENDS=	lzo2:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 CONFIGURE_ARGS+=	--with-lzo2
 .else
 CONFIGURE_ARGS+=	--without-lzo2

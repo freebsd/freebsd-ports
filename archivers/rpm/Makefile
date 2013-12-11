@@ -12,7 +12,7 @@ MASTER_SITES=	http://rpm5.org/files/rpm/rpm-3.0/ \
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	The Red Hat Package Manager
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
 CONFLICTS=	rpm-[45].*
 

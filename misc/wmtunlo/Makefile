@@ -11,16 +11,17 @@ MASTER_SITES=	http://www.gnu-darwin.org/distfiles/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Falling-down-a-tunnel dockapp
 
+LICENSE=	GPLv2
+
 USE_XORG=	x11 xpm xextproto
 ALL_TARGET=	wmtunlo
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	EXAMPLES
+
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/wmtunlo ${PREFIX}/bin
-.ifndef NOPORTEXAMPLES
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/examples/* \
-		${EXAMPLESDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/wmtunlo ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/* \
+		${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

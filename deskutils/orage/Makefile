@@ -2,17 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	orage
-PORTVERSION=	4.8.4
-PORTREVISION=	1
+PORTVERSION=	4.10.0
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Calendar application to manage your time with Xfce 4
+COMMENT=	Calendar application for the Xfce Desktop
 
-LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
+	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -23,10 +25,12 @@ USE_XFCE=	configenv libmenu panel
 USE_XORG=	xext xrender xinerama xi xrandr xcursor xcomposite xdamage x11 \
 		xfixes
 LDFLAGS+=	-L${LOCALBASE}/lib
-OPTIONS_DEFINE=	BDB ICAL DBUS NOTIFY
-OPTIONS_DEFAULT=	DBUS NOTIFY
+OPTIONS_DEFINE=	BDB ICAL NOTIFY
+OPTIONS_DEFAULT=	NOTIFY
 
-ICAL_DESC=	libical support
+ICAL_DESC=	iCalendar support
+
+CONFIGURE_ARGS=	--enable-dbus
 
 .include <bsd.port.options.mk>
 
@@ -48,15 +52,6 @@ PLIST_SUB+=	WITH_ICAL="@comment "
 .else
 CONFIGURE_ARGS+=--disable-libical
 PLIST_SUB+=	WITH_ICAL=""
-.endif
-
-.if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-CONFIGURE_ARGS+=--enable-dbus
-PLIST_SUB+=	DBUS=""
-.else
-CONFIGURE_ARGS+=--disable-dbus
-PLIST_SUB+=	DBUS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNOTIFY}

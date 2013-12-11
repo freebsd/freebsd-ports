@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	subtitleeditor
-PORTVERSION=	0.40.0
-PORTREVISION=	2
+PORTVERSION=	0.41.0
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.gna.org/${PORTNAME}/${PORTVERSION:C/\.[0-9]*$//}/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Subtitle editor
+
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
@@ -20,6 +21,7 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		pcre:${PORTSDIR}/devel/pcre
 
 USES=		gmake pkgconfig
+USE_GCC=	4.6+
 USE_GNOME=	gtk20
 USE_GSTREAMER=	good
 INSTALLS_ICONS=	yes
@@ -45,6 +47,5 @@ PLIST_SUB+=	NLS="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|strtoll|strtoq|g' ${WRKSRC}/plugins/subtitleformats/advancedsubstationalpha/advancedsubstationalpha.cc
-	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' ${WRKSRC}/plugins/actions/findandreplace/findandreplace.cc
 
 .include <bsd.port.mk>

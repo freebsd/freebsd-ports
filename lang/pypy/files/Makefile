@@ -21,7 +21,7 @@ TOUCH?=		touch
 
 REINPLACE_CMD?=	${SED} -i~
 
-BUILDDIR=	usession-release-${DISTVERSION}.x-0
+BUILDDIR=	usession-release-${DISTVERSION:C/.[0-9]*$//}.x-0
 
 .for inst in ${PYPY_INST}
 

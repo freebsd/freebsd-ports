@@ -8,22 +8,17 @@ CATEGORIES+=	devel
 MASTER_SITES=	http://public.perforce.com/public/perforce/utils/c4/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A CVS-like Frontend to Perforce
+COMMENT=	CVS-like Frontend to Perforce
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	c4
 
-MAN1=		c4.1
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/c4 ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/c4.1 ${MAN1PREFIX}/man/man1/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/c4.pdf ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/c4.ps ${DOCSDIR}/
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/c4 ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/c4.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/c4.pdf ${STAGEDIR}${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/c4.ps ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

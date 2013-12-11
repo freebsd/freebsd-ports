@@ -14,11 +14,11 @@ DIST_SUBDIR=	rpm
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	CD/DVD disk burner
 
-RESTRICTED=	Get a serial number at http://www.nero.com/eng/NeroLINUX.html
+RESTRICTED=	Must be downloaded from their website and a serial number must be bought
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
-USE_LINUX_APPS=	gtk2                                                        
+USE_LINUX_APPS=	gtk2
 USE_LDCONFIG=	yes
 BRANDELF_DIRS=	usr/bin
 SRC_DISTFILES=

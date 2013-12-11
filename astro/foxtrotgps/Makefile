@@ -10,10 +10,10 @@ MASTER_SITES=	http://www.foxtrotgps.org/releases/
 MAINTAINER=	crwhipp@gmail.com
 COMMENT=	Lightweight opensource gps moving map application
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		exif:${PORTSDIR}/graphics/libexif \
-		soup-2.4:${PORTSDIR}/devel/libsoup \
-		gps:${PORTSDIR}/astro/gpsd
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libexif.so:${PORTSDIR}/graphics/libexif \
+		libsoup-2.so:${PORTSDIR}/devel/libsoup \
+		libgps.so:${PORTSDIR}/astro/gpsd
 
 GNU_CONFIGURE=	yes
 NO_STAGE=	yes

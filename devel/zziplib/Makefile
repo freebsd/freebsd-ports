@@ -17,7 +17,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 OPTIONS_DEFINE=	SDL
 
 USE_BZIP2=	yes
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig gmake
 USE_PYTHON_BUILD=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	ac_cv_path_XMLTO=":"

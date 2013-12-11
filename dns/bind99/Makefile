@@ -164,7 +164,11 @@ CONFIGURE_ARGS+=	--disable-threads
 
 .if ${PORT_OPTIONS:MGSSAPI}
 CONFIGURE_ARGS+=	--with-gssapi
+.if defined(HEIMDAL_HOME)
+LDFLAGS+=		-L${LIBDIR} -lgssapi -lkrb5
+.else
 LDFLAGS+=		-L${LIBDIR} -lgssapi_krb5
+.endif
 .else
 CONFIGURE_ARGS+=        --without-gssapi
 .endif

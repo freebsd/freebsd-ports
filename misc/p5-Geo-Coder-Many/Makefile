@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-Coder-Many
-PORTVERSION=	0.42
+PORTVERSION=	0.44
 CATEGORIES=	misc geography perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-Geo-Coder-Bing>=0.10:${PORTSDIR}/misc/p5-Geo-Coder-Bing \
 		p5-Geo-Coder-Google>=0.06:${PORTSDIR}/misc/p5-Geo-Coder-Google \
 		p5-Geo-Coder-Googlev3>=0.07:${PORTSDIR}/misc/p5-Geo-Coder-Googlev3 \
-		p5-Geo-Coder-Mapquest>=0.04:${PORTSDIR}/misc/p5-Geo-Coder-Mapquest \
+		p5-Geo-Coder-Mapquest>=0.05:${PORTSDIR}/misc/p5-Geo-Coder-Mapquest \
 		p5-Geo-Coder-Multimap>=0.01:${PORTSDIR}/misc/p5-Geo-Coder-Multimap \
 		p5-Geo-Coder-OSM>=0.01:${PORTSDIR}/misc/p5-Geo-Coder-OSM \
 		p5-Geo-Coder-Ovi>=0.01:${PORTSDIR}/misc/p5-Geo-Coder-Ovi \

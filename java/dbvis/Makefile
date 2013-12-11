@@ -7,7 +7,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://www.dbvis.com/product_download/${PORTNAME}-${PORTVERSION}/media/
 DISTNAME=	dbvis_unix_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	contact@toha.org.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DbVisualizer database tool
 
 USE_JAVA=	yes

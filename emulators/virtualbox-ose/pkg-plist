@@ -10,8 +10,8 @@ bin/VBoxSVC
 %%QT4%%bin/VBoxTestOGL
 bin/VBoxXPCOMIPCD
 %%QT4%%bin/VirtualBox
-%%WEB%%bin/vboxwebsrv
-%%WEB%%bin/webtest
+%%WEBSERVICE%%bin/vboxwebsrv
+%%WEBSERVICE%%bin/webtest
 %%X11%%lib/virtualbox/VBoxBFE
 %%X11%%lib/virtualbox/VBoxBFE.so
 lib/virtualbox/DBGCPlugInDiggers.so
@@ -67,8 +67,8 @@ lib/virtualbox/VBoxDDR0.r0
 %%GUESTADDITIONS%%lib/virtualbox/additions/VBoxGuestAdditions_%%GUEST_VER%%.iso
 lib/virtualbox/VBoxPython%%PYTHON_VERU%%.so
 lib/virtualbox/VMMR0.r0
-%%WEB%%lib/virtualbox/vboxwebsrv
-%%WEB%%lib/virtualbox/webtest
+%%WEBSERVICE%%lib/virtualbox/vboxwebsrv
+%%WEBSERVICE%%lib/virtualbox/webtest
 lib/virtualbox/components/VirtualBox_XPCOM.xpt
 lib/virtualbox/components/VBoxXPCOMIPCC.so
 lib/virtualbox/components/VBoxSVCM.so
@@ -242,8 +242,8 @@ lib/virtualbox/components/VBoxXPCOMBase.xpt
 %%DATADIR%%/idl/VirtualBox_XPCOM.idl
 %%DATADIR%%/samples/tstVBoxAPILinux.cpp
 %%DATADIR%%/samples/Makefile
-%%WEB%%%%DATADIR%%/sdk/bindings/webservice/vboxweb.wsdl
-%%WEB%%%%DATADIR%%/sdk/bindings/webservice/vboxwebService.wsdl
+%%WEBSERVICE%%%%DATADIR%%/sdk/bindings/webservice/vboxweb.wsdl
+%%WEBSERVICE%%%%DATADIR%%/sdk/bindings/webservice/vboxwebService.wsdl
 include/virtualbox/VBoxCAPI_v2_2.h
 include/virtualbox/VBoxCAPI_v3_0.h
 include/virtualbox/VBoxCAPI_v3_1.h
@@ -623,12 +623,13 @@ include/virtualbox/xpcom/xpcom-config.h
 %%VNC%%@dirrm lib/virtualbox/ExtensionPacks/VNC
 %%VNC%%@dirrmtry lib/virtualbox/ExtensionPacks
 %%NLS%%@dirrm %%DATADIR%%/nls
-%%WEB%%@dirrm %%DATADIR%%/sdk/bindings/webservice
-%%WEB%%@dirrm %%DATADIR%%/sdk/bindings
-%%WEB%%@dirrm %%DATADIR%%/sdk
+%%WEBSERVICE%%@dirrm %%DATADIR%%/sdk/bindings/webservice
+%%WEBSERVICE%%@dirrm %%DATADIR%%/sdk/bindings
+%%WEBSERVICE%%@dirrm %%DATADIR%%/sdk
 @dirrm %%DATADIR%%/samples
 @dirrm %%DATADIR%%/idl
 @dirrmtry %%DATADIR%%
+%%QT4%%@dirrmtry share/applications
 @dirrm lib/virtualbox/components
 %%GUESTADDITIONS%%@dirrm lib/virtualbox/additions
 @dirrmtry lib/virtualbox

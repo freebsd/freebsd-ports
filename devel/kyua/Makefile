@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kyua
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	kyua
@@ -13,9 +13,9 @@ COMMENT=	Kyua (automated testing framework) - Command line interface
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	liblutok.so.2:${PORTSDIR}/devel/lutok
+LIB_DEPENDS=	liblutok.so.3:${PORTSDIR}/devel/lutok
 LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
-BUILD_DEPENDS=	${LOCALBASE}/libexec/kyua-atf-tester:${PORTSDIR}/devel/kyua-testers
+BUILD_DEPENDS=	kyua-testers>=0.2:${PORTSDIR}/devel/kyua-testers
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes

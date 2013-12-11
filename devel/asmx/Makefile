@@ -6,6 +6,7 @@ PORTVERSION=	1.8.2
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://xi6.com/files/
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-CPU macro assembler for many major 8-bit and 16-bit CPUs
@@ -26,11 +27,8 @@ Z80_DESC=	Zilog Z-80 and Nintendo Gameboy Z-80 variant
 
 NO_WRKSUBDIR=	yes
 
-USE_ZIP=	yes
-
 PORTDOCS=	README.txt
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:M1802}
@@ -93,11 +91,9 @@ do-build:
 
 do-install:
 .for f in ${ALL_TARGET}
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

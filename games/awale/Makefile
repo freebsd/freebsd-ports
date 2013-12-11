@@ -18,7 +18,7 @@ SUB_FILES=	pkg-message
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README THANKS
 
-OPTIONS_DEFINE=	DOC
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${ECHO_CMD} "#!/bin/sh" > ${WRKSRC}/src/x${PORTNAME}

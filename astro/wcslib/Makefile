@@ -31,13 +31,13 @@ PGPLOT_DESC=	Add pgplot support (for tests only)
 
 .if ${PORT_OPTIONS:MCFITSIO} || exists(${LOCALBASE}/lib/libcfitsio.so)
 PLIST_SUB+=		HPXCVT=""
-LIB_DEPENDS+=	cfitsio:${PORTSDIR}/astro/cfitsio
+LIB_DEPENDS+=	libcfitsio.so:${PORTSDIR}/astro/cfitsio
 .else
 PLIST_SUB+=		HPXCVT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPGPLOT}
-LIB_DEPENDS+=	pgplot.5:${PORTSDIR}/graphics/pgplot
+LIB_DEPENDS+=	libpgplot.so:${PORTSDIR}/graphics/pgplot
 .endif
 
 post-patch:

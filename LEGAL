@@ -149,6 +149,7 @@ jre-7*-i586.tar.gz	java/linux-sun-jre17	License does not allow distribution with
 jta-*.zip		java/jta		See the license
 KASH3-*			math/kash3		Not for commercial distribution or use
 komodo-*		editors/komodo-edit	Distribution not permitted
+kye-data_nuke_levels.20121101.tar.gz games/kye	kye-data_nuke_levels is charityware
 kzip-*			archivers/kzip		No redistribution allowed
 l0phtcrack/*		security/l0phtcrack	Parts are under GPL, so binaries should not be distributed.  Contains crypto code from OpenSSL
 ladder.tar		games/ladder		Possible copyright problems
@@ -180,7 +181,7 @@ mypaedia-*		japanese/mypaedia-fpw	The original dictionary is not free
 ncftpd-*		ftp/ncftpd		30 day evaluation license
 nero2_linux_*		games/linux-nerogame	Freeware, but license terms are unclear
 NeroDigitalAudio.zip	audio/linux-neroaaccodec Redistribution forbidden
-nerolinux-*		sysutils/linux-nero	Must be downloaded from WWW and a Serial Number must be bought
+nerolinux-*		sysutils/linux-nero	Must be downloaded from their website and a serial number must be bought
 NetComponents-*		java/netcomponents	No redistribution except as part of a substantially different product
 nntpcache-*		news/nntpcache		Commercial or government use requires license
 nttcp-*			benchmarks/nttcp	No commercial use
@@ -194,7 +195,6 @@ oracle/*		databases/jdbc-oracle8i	This software is under license and export cont
 oracle/*		databases/jdbc-oracle9i	This software is under license and export controls
 oracle/sqldeveloper*	databases/sqldeveloper	This software is under license and export controls
 palmos-sdk-*-1.tar.gz	palm/palmos-sdk		License agreement is required
-pam_authsrv-*		security/pam_authsrv	No form of redistribution is allowed, because of linking against fwtk
 pcsv*i3fb.tar.gz	lang/petite-chez	Must acknowledge license
 PDFlib-Lite-*.tar.gz	print/pdflib		Many odd restrictions on usage and distribution
 pgp*			security/pgp		Various locality restrictions

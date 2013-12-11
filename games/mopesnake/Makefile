@@ -5,47 +5,61 @@ PORTNAME=	mopesnake
 PORTVERSION=	0.5
 PORTREVISION=	3
 CATEGORIES=	games python
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
-DISTNAME=	${PORTNAME}-pc-${DISTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
+		SF/nemysisfreebsdp/games/:icons
+DISTFILES=	${PORTNAME}-pc-${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}.png:icons
+EXTRACT_ONLY=	${PORTNAME}-pc-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Classic snake game in which you attempt to eat all the pain
 
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYGAME}
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-pc-${DISTVERSION}
+
 USE_ZIP=	yes
 USE_PYTHON=	yes
-NO_BUILD=	yes
 
 PORTDOCS=	TODO.txt index.html
 
+OPTIONS_DEFINE=	DOCS
+
 SUB_FILES=	${PORTNAME}
 
-DESKTOP_ENTRIES="Master Of Pain (Eating) - Snake" "${COMMENT}" \
-		"${PREFIX}/share/pixmaps/${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+DESKTOP_ENTRIES="Master Of Pain (Eating) - Snake" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin/python,${PYTHON_CMD},' \
 		${WRKSRC}/*.py ${WRKSRC}/mopelib/*.py
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/
-	${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${DATADIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "images mopelib music sounds" ${DATADIR})
-	${INSTALL_DATA} ${WRKSRC}/doc/screenshot1.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
-	${INSTALL_DATA} ${WRKSRC}/version ${DATADIR}
+do-build:
+	@${PYTHON_CMD} -m compileall ${WRKSRC}
+	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
-.endif
+do-install:
+	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' \
+		${WRKDIR}/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+
+.for d in  *.py *.pyc *.pyo
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
+.endfor
+
+.for d in images mopelib music sounds
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
+.endfor
+
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+
+	${INSTALL_DATA} ${WRKSRC}/version ${STAGEDIR}${DATADIR}
+
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

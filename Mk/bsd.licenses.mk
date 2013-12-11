@@ -767,7 +767,6 @@ install-license:
 .else
 install-license:
 	@${DO_NADA}
-
 .endif
 
 .else	# !LICENSE

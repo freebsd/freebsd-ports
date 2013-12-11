@@ -12,9 +12,9 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Realtime strategy game inspired by Settlers II
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		GLEW:${PORTSDIR}/graphics/glew \
-		execinfo:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
+		libGLEW.so:${PORTSDIR}/graphics/glew \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
@@ -28,6 +28,7 @@ USE_SDL=	sdl mixer image net ttf gfx
 USE_PYTHON_BUILD=2.5+
 
 PLIST_FILES=	bin/widelands
+PORTDATA=	*
 
 DESKTOP_ENTRIES="Widelands" \
 		"Realtime strategy game inspired by Settlers II" \
@@ -36,15 +37,8 @@ DESKTOP_ENTRIES="Widelands" \
 		"Game;StrategyGame;" \
 		false
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/cmake/Modules/*.cmake
-
-post-install:
-	@${FIND} ${DATADIR} -type f | \
-		${SED} -e 's|^${PREFIX}/||' >> ${TMPPLIST}
-	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
-		${SED} -e 's|^${PREFIX}/|@dirrm |' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
