@@ -9,7 +9,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for libmemcached
 
-LIB_DEPENDS=	memcached:${PORTSDIR}/databases/libmemcached
+LIB_DEPENDS=	libmemcached.so:${PORTSDIR}/databases/libmemcached
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

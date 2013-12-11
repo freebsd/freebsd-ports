@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-legacy
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	C++ wrapper for libgda4 library
 
-LIB_DEPENDS=	glibmm-2.4:${PORTSDIR}/devel/glibmm
+LIB_DEPENDS=	libglibmm-2.4.so:${PORTSDIR}/devel/glibmm
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_AUTOTOOLS=	libtool

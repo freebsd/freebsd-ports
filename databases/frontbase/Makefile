@@ -26,7 +26,7 @@ ONLY_FOR_ARCHS=	i386
 
 NO_STAGE=	yes
 # Binary is built for 5.X :
-LIB_DEPENDS+=	c.5:${PORTSDIR}/misc/compat5x
+LIB_DEPENDS+=	libc.so.5:${PORTSDIR}/misc/compat5x
 
 USERS=		frontbase
 GROUPS=		frontbase

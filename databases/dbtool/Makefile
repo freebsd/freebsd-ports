@@ -10,14 +10,14 @@ MASTER_SITES=	http://www.daemon.de/idisk/Apps/dbtool/
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Store and retrieve data in a key/value format in a hash database
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 .if defined(WITH_BERKELEY_DB)
-LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
+LIB_DEPENDS+=	libdb3.so:${PORTSDIR}/databases/db3
 DB_INC=		-I${LOCALBASE}/include/db3
 CONFIGURE_ARGS=	--with-berkeley
 .else
-LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
 .endif
 .if !defined(NOPORTDOCS)
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash

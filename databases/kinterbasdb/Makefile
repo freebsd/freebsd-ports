@@ -11,7 +11,7 @@ DISTNAME=		${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=		rud@cs.uni-magdeburg.de
 COMMENT=		Python extension for Firebird/Interbase(R) relational databases
 
-LIB_DEPENDS=		gds.2:${PORTSDIR}/databases/firebird20-client
+LIB_DEPENDS=		libgds.so.2:${PORTSDIR}/databases/firebird20-client
 RUN_DEPENDS=		${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py:${PORTSDIR}/lang/py-mx-base
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}

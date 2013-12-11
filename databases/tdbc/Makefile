@@ -52,7 +52,7 @@ PLIST_SUB+=	MYSQL="@comment "
 # ODBC
 #
 .if ${PORT_OPTIONS:MODBC}
-LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
 DISTFILES+=	${PORTNAME}odbc${PORTVERSION}${EXTRACT_SUFX}
 MODULES+=	tdbcodbc
 PLIST_SUB+=	ODBC=""

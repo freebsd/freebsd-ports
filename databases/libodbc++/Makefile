@@ -30,12 +30,12 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIODBC}
-LIB_DEPENDS=	iodbc.3:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS=	libiodbc.so:${PORTSDIR}/databases/libiodbc
 CONFIGURE_ARGS+=	--with-iodbc=${LOCALBASE}
 .endif
 
 .if ${PORT_OPTIONS:MUNIXODBC}
-LIB_DEPENDS=	odbc.2:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE}
 .endif
 

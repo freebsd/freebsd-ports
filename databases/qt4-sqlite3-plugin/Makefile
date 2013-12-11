@@ -11,7 +11,7 @@ COMMENT=	Qt SQLite 3.x database plugin
 DB=		sqlite
 DISTINFO_FILE=	${PORTSDIR}/devel/qt4/distinfo
 
-LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 USE_QT4=	moc_build sql
 QT_NONSTANDARD=	yes

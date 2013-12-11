@@ -25,11 +25,11 @@ PLIST_FILES=	lib/psqlodbcw.la lib/psqlodbcw.so
 
 .if !defined(WITH_IODBC) || defined(WITH_UNIXODBC)
 # I.e. even if WITH_IODBC is defined
-LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
 BUILD_DEPENDS+=	unixODBC>=2.2.14_1:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-unixodbc=${LOCALBASE}
 .else
-LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS+=	libiodbc.so:${PORTSDIR}/databases/libiodbc
 CONFIGURE_ARGS+=	--with-iodbc=${LOCALBASE}
 
 # Modify a suffix in this case

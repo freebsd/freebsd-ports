@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	qingfeng@douban.com
 COMMENT=	Python API for memcached, a distributed memory cache daemon
 
-LIB_DEPENDS=	memcache:${PORTSDIR}/databases/libmemcache
+LIB_DEPENDS=	libmemcache.so:${PORTSDIR}/databases/libmemcache
 
 USE_BZIP2=	yes
 USE_PYTHON=		yes

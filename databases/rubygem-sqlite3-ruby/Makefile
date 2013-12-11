@@ -9,7 +9,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface to the SQLite DB engine version 3
 
-LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 RUN_DEPENDS=	rubygem-sqlite3>=1.3.3:${PORTSDIR}/databases/rubygem-sqlite3
 

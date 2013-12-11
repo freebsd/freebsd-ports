@@ -12,8 +12,8 @@ PKGNAMESUFIX=	-legacy
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adds support for geographic objects to PostgreSQL databases
 
-LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
-		geos:${PORTSDIR}/graphics/geos
+LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj \
+		libgeos.so:${PORTSDIR}/graphics/geos
 RUN_DEPENDS=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
 CONFLICTS=	postgis-2.*

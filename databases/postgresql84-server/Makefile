@@ -127,7 +127,7 @@ USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS+=--with-icu
 PATCH_SITES+=	http://people.freebsd.org/~crees/postgresql-icu/:icu
 PATCHFILES+=	${ICU_PATCHFILE}:icu
-LIB_DEPENDS+=	icudata.50:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	libicudata.so:${PORTSDIR}/devel/icu
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-icu4
 .  endif
 .endif # !SLAVE_ONLY
@@ -154,7 +154,7 @@ USE_OPENLDAP=	yes
 
 .  if ${PORT_OPTIONS:MXML}
 CONFIGURE_ARGS+=--with-libxml
-LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS+=	libxml2.so:${PORTSDIR}/textproc/libxml2
 .  endif
 
 .  if ${PORT_OPTIONS:MTZDATA}
@@ -212,7 +212,7 @@ IGNORE=	requires that you remove heimdal's /usr/bin/krb5-config and /usr/lib/lib
 .    if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a) && exists(${KRB5_HOME}/bin/krb5-config)
 CONFIGURE_ARGS+=--with-krb5
 .    else
-LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=	libkrb5.so.3:${PORTSDIR}/security/krb5
 CONFIGURE_ARGS+=--with-krb5
 .    endif
 .  endif
@@ -225,7 +225,7 @@ CONFIGURE_ARGS+=--with-krb5
 # Postgresql apps will not link properly when libpq is linked with base heimdal in /usr,
 # so we always use the heimdal port. See
 # http://lists.freebsd.org/pipermail/freebsd-stable/2005-October/018809.html
-LIB_DEPENDS+=	krb5.26:${PORTSDIR}/security/heimdal
+LIB_DEPENDS+=	libkrb5.so.26:${PORTSDIR}/security/heimdal
 CONFIGURE_ARGS+=--with-krb5
 .    endif
 .  endif
