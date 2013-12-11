@@ -10,8 +10,8 @@ DIST_SUBDIR=	fcitx
 MAINTAINER=	lichray@gmail.com
 COMMENT=	A libgooglepinyin support for Fcitx
 
-LIB_DEPENDS=	fcitx-config:${PORTSDIR}/chinese/fcitx \
-		googlepinyin:${PORTSDIR}/chinese/libgooglepinyin
+LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx \
+		libgooglepinyin.so:${PORTSDIR}/chinese/libgooglepinyin
 
 USE_XZ=		yes
 USES=		cmake gettext pkgconfig

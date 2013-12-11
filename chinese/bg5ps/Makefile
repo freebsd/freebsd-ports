@@ -11,7 +11,7 @@ DISTNAME=	bg5ps-1.3.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Chinese-Big5/GB encoded files to Postscript, using TTF fonts
 
-LIB_DEPENDS=	ttf:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	libttf.so:${PORTSDIR}/print/freetype
 
 USE_PYTHON=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
