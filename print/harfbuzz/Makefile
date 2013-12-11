@@ -9,9 +9,9 @@ MASTER_SITES=	http://www.freedesktop.org/software/harfbuzz/release/
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	OpenType text shaping engine
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
-		icudata:${PORTSDIR}/devel/icu \
-		graphite2:${PORTSDIR}/graphics/graphite2
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libicudata.so:${PORTSDIR}/devel/icu \
+		libgraphite2.so:${PORTSDIR}/graphics/graphite2
 
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
