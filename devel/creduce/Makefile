@@ -10,7 +10,7 @@ CATEGORIES=	devel
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Produces small test cases
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	clang32=3.2:${PORTSDIR}/lang/clang32
 RUN_DEPENDS=	clang32=3.2:${PORTSDIR}/lang/clang32
