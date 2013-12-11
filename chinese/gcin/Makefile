@@ -36,7 +36,7 @@ NO_STAGE=	yes
 
 .if ${PORT_OPTIONS:MQT_IM_MODULE}
 USE_QT4=	inputmethods qmake_build moc_build corelib gui
-LIB_DEPENDS+=	mng:${PORTSDIR}/graphics/libmng
+LIB_DEPENDS+=	libmng.so:${PORTSDIR}/graphics/libmng
 PLIST_SUB+=	QT_IM_MODULE=""
 .else
 CONFIGURE_ARGS+=	--use_qt4=N
@@ -51,7 +51,7 @@ BROKEN=		does not compile
 
 .if ${PORT_OPTIONS:MANTHY}
 BUILD_DEPENDS+=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
-LIB_DEPENDS+=	anthy:${PORTSDIR}/japanese/anthy
+LIB_DEPENDS+=	libanthy.so:${PORTSDIR}/japanese/anthy
 PLIST_SUB+=	ANTHY_MODULE=""
 .else
 CONFIGURE_ARGS+=	--use_anthy=N

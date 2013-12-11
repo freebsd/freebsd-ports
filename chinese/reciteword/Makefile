@@ -28,7 +28,7 @@ XTRACT_AFTER_ARGS+=	--exclude CVS
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-LIB_DEPENDS+=	espeak:${PORTSDIR}/audio/espeak
+LIB_DEPENDS+=	libespeak.so:${PORTSDIR}/audio/espeak
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|' ${WRKSRC}/src/readword.cpp

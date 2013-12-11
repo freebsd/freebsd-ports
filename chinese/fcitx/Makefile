@@ -17,9 +17,9 @@ COMMENT=	A Flexible Input Method Framework
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-		dbus-1:${PORTSDIR}/devel/dbus \
-		icuuc:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libicuuc.so:${PORTSDIR}/devel/icu
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 MAN1=		createPYMB.1 fcitx-remote.1 fcitx.1 mb2org.1 mb2txt.1 \
@@ -80,7 +80,7 @@ PLIST_SUB+=	QT4="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENCC}
-LIB_DEPENDS+=	opencc:${PORTSDIR}/chinese/opencc
+LIB_DEPENDS+=	libopencc.so:${PORTSDIR}/chinese/opencc
 .else
 CMAKE_ARGS+=	-DENABLE_OPENCC=OFF
 .endif

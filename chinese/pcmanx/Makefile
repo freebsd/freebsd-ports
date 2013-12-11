@@ -58,7 +58,7 @@ CONFIGURE_ARGS+=--disable-notifier
 
 .if ${PORT_OPTIONS:MLIBNOTIFY}
 CONFIGURE_ARGS+=--enable-libnotify
-LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	libnotifa.soy:${PORTSDIR}/devel/libnotify
 .endif
 
 .if empty(PORT_OPTIONS:MNANCY)
