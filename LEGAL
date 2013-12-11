@@ -199,7 +199,6 @@ palmos-sdk-*-1.tar.gz	palm/palmos-sdk		License agreement is required
 pcsv*i3fb.tar.gz	lang/petite-chez	Must acknowledge license
 PDFlib-Lite-*.tar.gz	print/pdflib		Many odd restrictions on usage and distribution
 pgp*			security/pgp		Various locality restrictions
-pgp*			security/pgpdump	Various locality restrictions
 pgp*			security/pgpgpg		Various locality restrictions
 pgp*			security/pgpin		Various locality restrictions
 platon*			biology/platon		$5000 USD for commercial users, free for academic
