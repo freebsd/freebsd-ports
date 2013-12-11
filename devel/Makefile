@@ -3050,6 +3050,7 @@
     SUBDIR += p5-local-lib
     SUBDIR += p5-mixin
     SUBDIR += p5-mocked
+    SUBDIR += p5-multidimensional
     SUBDIR += p5-namespace-autoclean
     SUBDIR += p5-namespace-clean
     SUBDIR += p5-namespace-sweep
