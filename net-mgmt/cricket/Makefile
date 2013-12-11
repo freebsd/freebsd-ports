@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A high performance, extremely flexible monitoring system
+COMMENT=	High performance, flexible monitoring system
 
 RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
