@@ -3023,6 +3023,7 @@
     SUBDIR += p5-autobox
     SUBDIR += p5-autobox-Core
     SUBDIR += p5-autodie
+    SUBDIR += p5-bareword-filehandles
     SUBDIR += p5-base
     SUBDIR += p5-boolean
     SUBDIR += p5-capitalization
