@@ -14,7 +14,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Ruby extension library to use Thomas Boutell's gd library
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libgd.so:${PORTSDIR}/graphics/gd
 
 NEED_ROOT=	yes
 
@@ -26,12 +27,11 @@ RUBY_MODNAME=	${PORTNAME:L}
 CONFIGURE_ARGS=	--with-gd-lib="${LOCALBASE}/lib" \
 		--with-jpeg \
 		--with-ttf \
-		--with-freetype
-INSTALL_TARGET=	site-install
-
-CONFIGURE_ARGS+=	--enable-gd2_0 \
+		--with-freetype \
+		--enable-gd2_0 \
 		--with-gd-include="${LOCALBASE}/include"
-LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
+
+INSTALL_TARGET=	site-install
 
 .include <bsd.port.options.mk>
 
