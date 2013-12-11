@@ -53,7 +53,7 @@ boodler-*		audio/boodler		Not for commercial use
 Browser*.tar.gz		net/ldapbrowser		No reply from author regarding redistribution licensing
 bzip-*			archivers/bzip		Some algorithms used may infringe certain US patents.  Opinions differ.  Commercial use could render you liable to unfriendly legal action
 citrix_ica-*		net/citrix_ica		License prohibits redistribution
-cli_freebsd*		sysutils/arcconf	May not be redistributed
+cli_freebsd*		sysutils/arcconf	May not be redistributed in binary form
 clustalw-*		biology/clustalw	No commercial use
 condor_src-*		sysutils/condor		Requires (free) registration
 contool-*		sysutils/contool	Do not incorporate the source code into a product which is subsequently sold
