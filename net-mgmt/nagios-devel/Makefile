@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.downtools.com.au/~jarrod/nagios/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Extremely powerful network monitoring system
+COMMENT=	Powerful network monitoring system
 
 LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
