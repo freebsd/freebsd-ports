@@ -27,9 +27,9 @@ COMMENT=	A Three-Dimensional Structural Finite Element Program
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	arpack.1:${PORTSDIR}/math/arpack	\
-		spooles.1:${PORTSDIR}/math/spooles \
-		taucs.1:${PORTSDIR}/math/taucs
+LIB_DEPENDS=	libarpack.so:${PORTSDIR}/math/arpack	\
+		libspooles.so:${PORTSDIR}/math/spooles \
+		libtaucs.so:${PORTSDIR}/math/taucs
 
 USE_BZIP2=	yes
 
@@ -61,22 +61,22 @@ OPTIONS_DEFINE= METIS METIS_EDF
 OPTIONS_DEFAULT=METIS
 
 .if ${PORT_OPTIONS:MMETIS}
-LIB_DEPENDS+= 	metis.1:${PORTSDIR}/math/metis4
+LIB_DEPENDS+= 	libmetis.so:${PORTSDIR}/math/metis4
 .endif
 .if ${PORT_OPTIONS:MMETIS_EDF}
-LIB_DEPENDS+= 	metis.1:${PORTSDIR}/math/metis-edf
+LIB_DEPENDS+= 	libmetis.so:${PORTSDIR}/math/metis-edf
 .endif
 
 .if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
 WITH_ATLAS=             yes
 .endif
 .if defined(WITH_ATLAS)
-LIB_DEPENDS+=		atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=		libatlas.so:${PORTSDIR}/math/atlas
 BLAS_LIBS=		-lf77blas
 LAPACK_LIBS=		-lalapack -lcblas
 .else
-LIB_DEPENDS+=		blas.2:${PORTSDIR}/math/blas
-LIB_DEPENDS+=		lapack.4:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=		libblas.so:${PORTSDIR}/math/blas
+LIB_DEPENDS+=		liblapack.so:${PORTSDIR}/math/lapack
 BLAS_LIBS=		-lblas
 LAPACK_LIBS=		-llapack
 .endif

@@ -13,7 +13,7 @@ EXTRACT_ONLY=	${PORTNAME}130${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A compact Finite Element Analysis System
 
-LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 
 NO_WRKSUBDIR=	yes
 USES=		pkgconfig

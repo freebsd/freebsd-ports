@@ -12,9 +12,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free explicit/implicit Finite Element Program
 
 .ifdef WITH_ATLAS
-LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
+LIB_DEPENDS=	libatlas.so:${PORTSDIR}/math/atlas
 .else
-LIB_DEPENDS=	blas:${PORTSDIR}/math/blas
+LIB_DEPENDS=	libblas.so:${PORTSDIR}/math/blas
 .endif
 BUILD_DEPENDS=	${LOCALBASE}/lib/libf2c.a:${PORTSDIR}/lang/f2c
 .ifdef WITH_THREADS
