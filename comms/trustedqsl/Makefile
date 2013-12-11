@@ -9,8 +9,8 @@ DISTNAME=	tqsl-1.14.2
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio Station electronic trusted logbook
 
-LIB_DEPENDS=	db-5:${PORTSDIR}/databases/db5 \
-		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libdb-5.so:${PORTSDIR}/databases/db5 \
+		libcurl.so:${PORTSDIR}/ftp/curl
 
 USES=		cmake
 USE_WX=		2.8+

@@ -11,7 +11,7 @@ DISTNAME=	Ettus-USRP-3.4.3
 MAINTAINER=	adrian@FreeBSD.org
 COMMENT=	Ettus Research USRP driver framework
 
-LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/tuple/tuple.hpp:${PORTSDIR}/devel/boost-libs \
 		cheetah-analyze:${PORTSDIR}/devel/py-cheetah \
 		rst2html:${PORTSDIR}/textproc/py-docutils \

@@ -37,7 +37,7 @@ LDFLAGS+=	-L${PREFIX}/lib
 
 .elif ${PORT_OPTIONS:MPULSEAUDIO}
 MAKE_FLAGS+=	DEVICE=PA
-LIB_DEPENDS+=	pulse-simple:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
 USES+=		pkgconfig
 .endif
 

@@ -80,7 +80,7 @@ CONFIGURE_ARGS+=	--disable-postgres
 PLIST_SUB+=	PGM='@comment '
 . endif
 . if ${PORT_OPTIONS:MSQLITE}
-LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 PLIST_SUB+=	SQLT=''
 . else
 CONFIGURE_ARGS+=	--disable-sqlite

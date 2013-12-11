@@ -43,7 +43,7 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libvga.so.1)
-LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
+LIB_DEPENDS+=	libvga.so:${PORTSDIR}/graphics/svgalib
 PLIST_SUB+=	SMODE2=
 .else
 PLIST_SUB+=	SMODE2="@comment "
@@ -51,7 +51,7 @@ PLIST_SUB+=	SMODE2="@comment "
 
 .if empty(PORT_OPTIONS:MMINIMAL)
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libirman.a:${PORTSDIR}/comms/libirman
-LIB_DEPENDS+=		ftdi:${PORTSDIR}/devel/libftdi
+LIB_DEPENDS+=		libftdi.so:${PORTSDIR}/devel/libftdi
 CONFIGURE_ARGS+=	--with-driver=userspace
 .else
 CONFIGURE_ARGS+=	--with-driver=dvico

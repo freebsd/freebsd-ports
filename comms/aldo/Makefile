@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	lambert@lambertfam.org
 COMMENT=	Morse code training program
 
-LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao
+LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

@@ -12,7 +12,7 @@ DISTNAME=	nec2c
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Used to calculate antenna patterns useful to ham radio
 
-LIB_DEPENDS=	ccm:${PORTSDIR}/math/ccmath
+LIB_DEPENDS=	libccm.so:${PORTSDIR}/math/ccmath
 
 NO_STAGE=	yes
 post-patch:

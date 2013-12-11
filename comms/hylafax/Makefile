@@ -10,9 +10,9 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Fax software
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm
-LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		jbig:${PORTSDIR}/graphics/jbigkit
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libjbig.so:${PORTSDIR}/graphics/jbigkit
 
 MAKE_JOBS_UNSAFE=	yes
 NO_STAGE=	yes

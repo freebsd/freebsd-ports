@@ -31,7 +31,7 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MHAMLIB}
-LIB_DEPENDS+=	hamlib:${PORTSDIR}/comms/hamlib
+LIB_DEPENDS+=	libhamlib.so:${PORTSDIR}/comms/hamlib
 CONFIGURE_ARGS+=	--enable-hamlib
 .else
 CONFIGURE_ARGS+=	--disable-hamlib
