@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	krion
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show latitude and longitude of the moon
 
-LIB_DEPENDS=	nova:${PORTSDIR}/astro/libnova
+LIB_DEPENDS=	libnova.so:${PORTSDIR}/astro/libnova
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

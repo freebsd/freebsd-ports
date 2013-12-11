@@ -27,7 +27,7 @@ MAN1=	xplanet.1
 
 .if ${PORT_OPTIONS:MFREETYPE}
 CONFIGURE_ARGS+=	--with-freetype
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
 .else
 CONFIGURE_ARGS+=	--without-freetype
 .endif
@@ -41,35 +41,35 @@ CONFIGURE_ARGS+=	--without-pango
 
 .if ${PORT_OPTIONS:MGIF}
 CONFIGURE_ARGS+=	--with-gif
-LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
+LIB_DEPENDS+=	libgif.so:${PORTSDIR}/graphics/giflib
 .else
 CONFIGURE_ARGS+=	--without-gif
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}
 CONFIGURE_ARGS+=	--with-jpeg
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 .else
 CONFIGURE_ARGS+=	--without-jpeg
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
 CONFIGURE_ARGS+=	--with-png
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
 .else
 CONFIGURE_ARGS+=	--without-png
 .endif
 
 .if ${PORT_OPTIONS:MPNM}
 CONFIGURE_ARGS+=	--with-pnm
-LIB_DEPENDS+=	netpbm.1:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS+=	libnetpbm.so:${PORTSDIR}/graphics/netpbm
 .else
 CONFIGURE_ARGS+=	--without-pnm
 .endif
 
 .if ${PORT_OPTIONS:MTIFF}
 CONFIGURE_ARGS+=	--with-tiff
-LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff
 .else
 CONFIGURE_ARGS+=	--without-tiff
 .endif

@@ -20,7 +20,7 @@ PLIST_FILES=	bin/xmoontool
 .if defined(WITHOUT_LIBNOVA)
 MAKE_ENV+=	WITHOUT_LIBNOVA=yes
 .else
-LIB_DEPENDS+=	nova:${PORTSDIR}/astro/libnova
+LIB_DEPENDS+=	libnova.so:${PORTSDIR}/astro/libnova
 .endif
 
 pre-everything::

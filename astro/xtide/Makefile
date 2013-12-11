@@ -16,11 +16,10 @@ COMMENT=	Harmonic tide clock and tide predictor
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USES=		gmake
-USE_GCC=	yes
 GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I../${TCD_DISTNAME} -I${LOCALBASE}/include/libpng15 -Wno-deprecated-declarations
