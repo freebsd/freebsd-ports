@@ -34,6 +34,7 @@ actx-*			games/actx		Contains commercial character data
 adobesvg-*		graphics/linux-adobesvg	Redistribution prohibited
 adom-*			games/adom		Copy of CD must be sent to author
 aestats-*		games/aestats		Commercial use is prohibited
+agrep-*			textproc/agrep		No redistribution for profit
 alephone/M1A1.zip	games/alephone-data	Bungie/Microsoft do not allow charging for Marathon data files
 alephone/Marathon*.zip	games/alephone-data	Bungie/Microsoft do not allow charging for Marathon data files
 annelid-*		games/annelid		Redistribution is limited
@@ -162,7 +163,7 @@ l0phtcrack/*		security/l0phtcrack	Parts are under GPL, so binaries should not be
 ladder.tar		games/ladder		Possible copyright problems
 lame*			audio/lame		May be patented
 lgrind/*		print/lgrind		Contains non-free code written by Van Jacobson
-lha-1.14i-ac*		archivers/lha-ac	No Redistribution
+lha-1.14i-ac*		archivers/lha-ac	No redistribution allowed
 libaacplus-*		audio/libaacplus	Unclear legal status
 libamrnb		audio/libamrnb		No redistribution allowed
 libamrwb		audio/libamrwb		No redistribution allowed
@@ -206,9 +207,6 @@ oracle/sqldeveloper*	databases/sqldeveloper	This software is under license and e
 palmos-sdk-*-1.tar.gz	palm/palmos-sdk		License agreement is required
 pcsv*i3fb.tar.gz	lang/petite-chez	Must acknowledge license
 PDFlib-Lite-*.tar.gz	print/pdflib		Many odd restrictions on usage and distribution
-pgp*			security/pgp		Various locality restrictions
-pgp*			security/pgpgpg		Various locality restrictions
-pgp*			security/pgpin		Various locality restrictions
 platon*			biology/platon		$5000 USD for commercial users, free for academic
 poseidonCE-*		java/poseidon		Redistribution is not permitted
 ppsmall-*		archivers/ppunpack	No commercial redistribution
@@ -289,6 +287,7 @@ webcopy-*		www/webcopy		Do not sell for profit
 webfonts/*		x11-fonts/webfonts	Restrictive copyright
 win32/*			multimedia/win32-codecs	Licensing status of the codecs is unknown
 WowzaMediaServerPro	net/wowzamediaserverpro	Redistribution not allowed
+xanim-*			multimedia/xanim	Must be redistributed without fee
 xchada01.lzh		games/xchadance		Contains commercial character data
 xds-c-*			lang/xds-c		Redistribution is forbidden
 xds-[0-9]*		lang/xds		Redistribution is forbidden

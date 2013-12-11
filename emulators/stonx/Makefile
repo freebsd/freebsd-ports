@@ -17,7 +17,7 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		${LOCALBASE}/lib/X11/fonts/misc/10x20-ISO8859-1.pcf.gz:${PORTSDIR}/x11-fonts/font-misc-misc
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
-RESTRICTED=	tos.img is copyrighted
+RESTRICTED=	Contains ROM (C) by Atari
 NO_STAGE=	yes
 
 TOSIMG?=	tos.img
