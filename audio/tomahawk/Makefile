@@ -11,16 +11,16 @@ COMMENT=	Multi-source, social, and smart music player
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	attica:${PORTSDIR}/x11-toolkits/attica \
-		clucene-core:${PORTSDIR}/textproc/clucene \
-		boost_thread:${PORTSDIR}/devel/boost-libs \
-		echonest:${PORTSDIR}/audio/libechonest \
-		jreen:${PORTSDIR}/net-im/libjreen \
-		lastfm:${PORTSDIR}/audio/liblastfm \
-		qca:${PORTSDIR}/devel/qca \
-		qjson:${PORTSDIR}/devel/qjson \
-		quazip:${PORTSDIR}/archivers/quazip \
-		tag:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	libattica.so:${PORTSDIR}/x11-toolkits/attica \
+		libclucene-core.so:${PORTSDIR}/textproc/clucene \
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libechonest.so:${PORTSDIR}/audio/libechonest \
+		libjreen.so:${PORTSDIR}/net-im/libjreen \
+		liblastfm.so:${PORTSDIR}/audio/liblastfm \
+		libqca.so:${PORTSDIR}/devel/qca \
+		libqjson.so:${PORTSDIR}/devel/qjson \
+		libquazip.so:${PORTSDIR}/archivers/quazip \
+		libtag.so:${PORTSDIR}/audio/taglib
 RUN_DEPENDS=	qca-ossl>=2.0.0.b3_4:${PORTSDIR}/security/qca-ossl
 
 CMAKE_ARGS+=	-DWITH_BREAKPAD:BOOL="OFF" \
@@ -54,7 +54,7 @@ USE_QT4=	dbus designer gui linguist_build moc_build \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQTWEETLIB}
-LIB_DEPENDS+=	QTweetLib:${PORTSDIR}/net/qtweetlib
+LIB_DEPENDS+=	libQTweetLib.so:${PORTSDIR}/net/qtweetlib
 .else
 CMAKE_ARGS+=	-DWITH_QTweetLib:BOOL="OFF"
 .endif

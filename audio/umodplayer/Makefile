@@ -12,8 +12,8 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console module player
 
-LIB_DEPENDS=	modplug.1:${PORTSDIR}/audio/libmodplug \
-		ao.4:${PORTSDIR}/audio/libao
+LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug \
+		libao.so:${PORTSDIR}/audio/libao
 BUILD_DEPENDS=	${LOCALBASE}/lib/libaiff.a:${PORTSDIR}/audio/libaiff
 
 NO_STAGE=	yes

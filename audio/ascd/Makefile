@@ -14,7 +14,7 @@ COMMENT=	Dockable CD player for AfterStep or WindowMaker
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	workman:${PORTSDIR}/audio/libworkman
+LIB_DEPENDS=	libworkman.so:${PORTSDIR}/audio/libworkman
 
 NO_STAGE=	yes
 USES=		imake

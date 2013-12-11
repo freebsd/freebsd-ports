@@ -14,13 +14,13 @@ COMMENT=	Modular patch bay for Jack
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
-		raul.10:${PORTSDIR}/audio/raul \
-		boost_date_time:${PORTSDIR}/devel/boost-libs \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		glibmm-2.4.1:${PORTSDIR}/devel/glibmm \
-		glademm-2.4:${PORTSDIR}/devel/libglademm24 \
-		flowcanvas.5:${PORTSDIR}/x11-toolkits/flowcanvas
+LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
+		libraul.so:${PORTSDIR}/audio/raul \
+		libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libglibmm-2.4.so:${PORTSDIR}/devel/glibmm \
+		libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
+		libflowcanvas.so:${PORTSDIR}/x11-toolkits/flowcanvas
 
 USES=		pkgconfig
 NO_STAGE=	yes

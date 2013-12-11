@@ -14,7 +14,7 @@ MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A curses-based media player with vim-like keybinds
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
-LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
 
 NO_STAGE=	yes
 ALL_TARGET=	vitunes

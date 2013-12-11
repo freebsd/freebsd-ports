@@ -10,8 +10,8 @@ MASTER_SITES=	http://50hz.ws/mpdas/
 MAINTAINER=	hrkfdn@gmail.com
 COMMENT=	MPD AudioScrobbler written in C++ supporting the latest protocol
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		mpd.4:${PORTSDIR}/audio/libmpd
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libmpd.so:${PORTSDIR}/audio/libmpd
 
 USES=		pkgconfig
 NO_STAGE=	yes

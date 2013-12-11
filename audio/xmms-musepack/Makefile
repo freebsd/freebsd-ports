@@ -10,7 +10,7 @@ MASTER_SITES=	http://dl.slik.org/musepack/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS input plugin for playing MPC Musepack (.mpc, .mp+) files
 
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 PLIST_FILES=	lib/xmms/Input/xmms-mpegplus-1.8.0.so
 USES=		gmake

@@ -36,7 +36,7 @@ PLIST_DIRS=	lib/mp3stat
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 PLIST_FILES+=	lib/mp3stat/input_vorb.so
 .else
 MAKE_ARGS+=	VORBIS=""

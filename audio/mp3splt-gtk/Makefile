@@ -43,7 +43,7 @@ NLS_USES=	gettext
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-LIB_DEPENDS+=	gvc:${PORTSDIR}/graphics/graphviz
+LIB_DEPENDS+=	libgvc.so:${PORTSDIR}/graphics/graphviz
 BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 .else
 CONFIGURE_ARGS+=	--disable-doxygen-doc

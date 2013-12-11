@@ -12,10 +12,10 @@ COMMENT=	Media Transfer Protocol (MTP) GUI client
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	mtp:${PORTSDIR}/audio/libmtp \
-		id3tag:${PORTSDIR}/audio/libid3tag \
-		FLAC:${PORTSDIR}/audio/flac \
-		vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libmtp.so:${PORTSDIR}/audio/libmtp \
+		libid3tag.so:${PORTSDIR}/audio/libid3tag \
+		libFLAC.so:${PORTSDIR}/audio/flac \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 WRKSRC=		${WRKDIR}/gMTP
 

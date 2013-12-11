@@ -11,12 +11,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Learning console-based MP3/OGG player
 
-LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac \
-		fftw:${PORTSDIR}/math/fftw \
-		id3:${PORTSDIR}/audio/id3lib \
-		mad:${PORTSDIR}/audio/mad \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		ao:${PORTSDIR}/audio/libao
+LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac \
+		libfftw.so:${PORTSDIR}/math/fftw \
+		libid3.so:${PORTSDIR}/audio/id3lib \
+		libmad.so:${PORTSDIR}/audio/mad \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libao.so:${PORTSDIR}/audio/libao
 RUN_DEPENDS=	id3v2:${PORTSDIR}/audio/id3v2
 
 NO_STAGE=	yes

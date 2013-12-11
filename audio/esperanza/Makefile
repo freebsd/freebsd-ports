@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:R}+git${PORTVERSION:E}.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced QT4 XMMS2 client
 
-LIB_DEPENDS=	xmmsclient++.4:${PORTSDIR}/audio/cpp-xmms2
+LIB_DEPENDS=	libxmmsclient++.so:${PORTSDIR}/audio/cpp-xmms2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}+git${PORTVERSION:E}
 

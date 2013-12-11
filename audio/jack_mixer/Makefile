@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.gna.org/${PORTNAME:S/_//}/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A mixer for the jack audio connection kit
 
-LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/fpconst.py:${PORTSDIR}/math/py-fpconst \
    		${LOCALBASE}/include/pygtk-2.0/pygtk/pygtk.h:${PORTSDIR}/x11-toolkits/py-gtk2
 RUN_DEPENDS:=	${BUILD_DEPENDS}

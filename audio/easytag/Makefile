@@ -33,7 +33,7 @@ OPTIONS_DEFINE=	WAVPACK
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWAVPACK}
-LIB_DEPENDS+=		wavpack:${PORTSDIR}/audio/wavpack
+LIB_DEPENDS+=		libwavpack.so:${PORTSDIR}/audio/wavpack
 CONFIGURE_ARGS+=	--enable-wavpack
 .else
 CONFIGURE_ARGS+=	--disable-wavpack

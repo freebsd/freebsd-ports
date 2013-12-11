@@ -11,8 +11,8 @@ MASTER_SITES=	http://unkart.ovh.org/ncmpcpp/ \
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A ncurses mpd client, clone of ncmpc with some new features
 
-LIB_DEPENDS=	mpdclient:${PORTSDIR}/audio/libmpdclient \
-		fftw3:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient \
+		libfftw3.so:${PORTSDIR}/math/fftw3
 
 USES=		iconv ncurses pkgconfig
 NO_STAGE=	yes
@@ -46,7 +46,7 @@ PLIST_FILES=	bin/ncmpcpp \
 PLIST_DIRS=	%%DOCSDIR%%
 
 .if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-curl
 .else
 CONFIGURE_ARGS+=	--with-curl=no
@@ -65,7 +65,7 @@ CONFIGURE_ARGS+=	--disable-unicode
 .endif
 
 .if ${PORT_OPTIONS:MTAGLIB}
-LIB_DEPENDS+=	tag:${PORTSDIR}/audio/taglib
+LIB_DEPENDS+=	libtag.so:${PORTSDIR}/audio/taglib
 CONFIGURE_ARGS+=	--with-taglib
 .else
 CONFIGURE_ARGS+=	--with-taglib=no

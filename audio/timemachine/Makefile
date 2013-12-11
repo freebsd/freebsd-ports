@@ -12,9 +12,9 @@ COMMENT=	JACK audio capture tool
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack \
-		lo:${PORTSDIR}/audio/liblo \
-		sndfile:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
+		liblo.so:${PORTSDIR}/audio/liblo \
+		libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 OPTIONS_DEFINE=	LASH
 
@@ -27,7 +27,7 @@ LDFLAGS+=	-lm
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLASH}
-LIB_DEPENDS+=	lash:${PORTSDIR}/audio/lash
+LIB_DEPENDS+=	liblash.so:${PORTSDIR}/audio/lash
 .else
 CONFIGURE_ARGS+=--disable-lash
 .endif

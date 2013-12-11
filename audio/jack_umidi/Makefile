@@ -12,7 +12,7 @@ COMMENT=	Daemon that converts a raw MIDI device into a JACK MIDI device
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack
+LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 
 USE_BZIP2=	yes
 NO_STAGE=	yes

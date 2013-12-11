@@ -14,7 +14,7 @@ COMMENT=	Steve Harris' huge Collection of LADSPA Plugins
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
 		${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
-LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
 
 # includes assembler code
 ONLY_FOR_ARCHS=	i386 amd64

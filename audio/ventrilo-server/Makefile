@@ -11,9 +11,9 @@ DISTNAME=	ventrilo_srv-${PORTVERSION}-FreeBSD-i386
 MAINTAINER=	bob@immure.com
 COMMENT=	Server side of the Ventrilo group voice chat system
 
-LIB_DEPENDS=	stdc\\+\\+.3:${PORTSDIR}/misc/compat4x \
-		m.2:${PORTSDIR}/misc/compat4x \
-		c.4:${PORTSDIR}/misc/compat4x
+LIB_DEPENDS=	libstdc\\+\\+.so.3:${PORTSDIR}/misc/compat4x \
+		libm.so.2:${PORTSDIR}/misc/compat4x \
+		libc.so.4:${PORTSDIR}/misc/compat4x
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

@@ -45,8 +45,8 @@ CONFIGURE_ARGS+=	--disable-cpu-clip
 .endif
 
 .if ${PORT_OPTIONS:MEXTERNAL}
-LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=--disable-external-libs
 .endif

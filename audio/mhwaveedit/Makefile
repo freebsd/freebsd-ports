@@ -67,13 +67,13 @@ CONFIGURE_ARGS+=	--with-double-samples
 .if empty(PORT_OPTIONS:MSNDFILE)
 CONFIGURE_ARGS+=	--without-libsndfile
 .else
-LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 .endif
 
 .if empty(PORT_OPTIONS:MSAMPLERATE)
 CONFIGURE_ARGS+=	--without-libsamplerate
 .else
-LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS+=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 .endif
 
 .if empty(PORT_OPTIONS:MOSS)
@@ -81,7 +81,7 @@ CONFIGURE_ARGS+=	--without-oss
 .endif
 
 .if ${PORT_OPTIONS:MPORTAUDIO}
-LIB_DEPENDS+=	portaudio.0:${PORTSDIR}/audio/portaudio
+LIB_DEPENDS+=	libportaudio.so:${PORTSDIR}/audio/portaudio
 .else
 CONFIGURE_ARGS+=	--without-portaudio
 .endif
@@ -93,7 +93,7 @@ CONFIGURE_ARGS+=	--without-sdl
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
 .else
 CONFIGURE_ARGS+=	--without-jack
 .endif

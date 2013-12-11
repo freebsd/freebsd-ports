@@ -10,8 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK-based MP3 player
 
-LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
-		gdbm.4:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	libid3-3.8.so:${PORTSDIR}/audio/id3lib \
+		libgdbm.so:${PORTSDIR}/databases/gdbm
 
 USES=		pathfix gettext gmake perl5
 NO_STAGE=	yes
@@ -46,7 +46,7 @@ PLIST_SUB+=	ESOUND="@comment "
 .endif
 
 .if !defined(WITHOUT_VORBIS) || defined(WITH_ALL_PLUGINS)
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	VORBIS=""
 .else
 CONFIGURE_ARGS+=	--disable-vorbis

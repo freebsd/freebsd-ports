@@ -20,8 +20,8 @@ BUILD_DEPENDS=	${JAVALIBDIR}/swt-devel.jar:${PORTSDIR}/x11-toolkits/swt-devel \
 		${JAVALIBDIR}/itext.jar:${PORTSDIR}/devel/itext \
 		${JAVALIBDIR}/gervill.jar:${PORTSDIR}/audio/gervill
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-LIB_DEPENDS=	fluidsynth.1:${PORTSDIR}/audio/fluidsynth \
-    		jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth \
+		libjack.so:${PORTSDIR}/audio/jack
 
 MAKE_ENV+=	PREFIX=${PREFIX} INSTALL_DOC_DIR=${DOCSDIR} \
 		INSTALL_SHARE_DIR=${DATADIR}

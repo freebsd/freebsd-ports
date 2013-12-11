@@ -14,7 +14,7 @@ COMMENT?=	Command line player for .nsf and .hes audio files
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS+=	samplerate:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS+=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 
 USES=		pkgconfig
 USE_AUTOTOOLS=	libtool

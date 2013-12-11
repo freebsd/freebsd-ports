@@ -9,7 +9,7 @@ MASTER_SITES=	http://royale.zerezo.com/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Audio Playlist Generator
 
-LIB_DEPENDS=	uriparser:${PORTSDIR}/net/uriparser
+LIB_DEPENDS=	liburiparser.so:${PORTSDIR}/net/uriparser
 
 MAKE_ARGS+=	CC="${CC}"
 NO_STAGE=	yes

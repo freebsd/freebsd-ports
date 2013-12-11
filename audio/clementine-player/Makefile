@@ -13,12 +13,12 @@ COMMENT=	Cross-platform music player based on Amarok 1.4
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-		tag:${PORTSDIR}/audio/taglib \
-		chromaprint:${PORTSDIR}/audio/chromaprint \
-		protobuf:${PORTSDIR}/devel/protobuf \
-		qjson:${PORTSDIR}/devel/qjson \
-		fftw3:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libtag.so:${PORTSDIR}/audio/taglib \
+		libchromaprint.so:${PORTSDIR}/audio/chromaprint \
+		libprotobuf.so:${PORTSDIR}/devel/protobuf \
+		libqjson.so:${PORTSDIR}/devel/qjson \
+		libfftw3.so:${PORTSDIR}/math/fftw3
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
@@ -79,7 +79,7 @@ CMAKE_ARGS+=	-DENABLE_USE_BUILTIN_TAGLIB=OFF
 
 .if ${PORT_OPTIONS:MAUDIOCD}
 CMAKE_ARGS+=	-DENABLE_AUDIOCD=ON
-LIB_DEPENDS+=	cdio:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS+=	libcdio.so:${PORTSDIR}/sysutils/libcdio
 .else
 CMAKE_ARGS+=	-DENABLE_AUDIOCD=OFF
 .endif
@@ -112,28 +112,28 @@ CMAKE_ARGS+=	-DENABLE_GOOGLE_DRIVE=OFF
 
 .if ${PORT_OPTIONS:MGPOD}
 CMAKE_ARGS+=	-DENABLE_LIBGPOD=ON
-LIB_DEPENDS+=	gpod:${PORTSDIR}/audio/libgpod
+LIB_DEPENDS+=	libgpod.so:${PORTSDIR}/audio/libgpod
 .else
 CMAKE_ARGS+=	-DENABLE_LIBGPOD=OFF
 .endif
 
 .if ${PORT_OPTIONS:MLASTFM}
 CMAKE_ARGS+=	-DENABLE_LIBLASTFM=ON
-LIB_DEPENDS+=	lastfm:${PORTSDIR}/audio/liblastfm
+LIB_DEPENDS+=	liblastfm.so:${PORTSDIR}/audio/liblastfm
 .else
 CMAKE_ARGS+=	-DENABLE_LIBLASTFM=OFF
 .endif
 
 .if ${PORT_OPTIONS:MMTP}
 CMAKE_ARGS+=	-DENABLE_LIBMTP=ON
-LIB_DEPENDS+=	mtp:${PORTSDIR}/audio/libmtp
+LIB_DEPENDS+=	libmtp.so:${PORTSDIR}/audio/libmtp
 .else
 CMAKE_ARGS+=	-DENABLE_LIBMTP=OFF
 .endif
 
 .if ${PORT_OPTIONS:MSPOTIFY}
 CMAKE_ARGS+=	-DENABLE_SPOTIFY=ON
-LIB_DEPENDS+=	qca:${PORTSDIR}/devel/qca
+LIB_DEPENDS+=	libqca.so:${PORTSDIR}/devel/qca
 .else
 CMAKE_ARGS+=	-DENABLE_SPOTIFY=OFF -DENABLE_SPOTIFY_BLOB=OFF
 .endif

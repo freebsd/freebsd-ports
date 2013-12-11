@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/eXtace/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio visualization plugin for the X Window System
 
-LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
 
 USES=        pathfix pkgconfig
 NO_STAGE=	yes

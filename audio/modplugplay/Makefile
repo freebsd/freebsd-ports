@@ -14,7 +14,7 @@ COMMENT=	Command-line music mod player using libmodplug
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	modplug.1:${PORTSDIR}/audio/libmodplug
+LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug
 
 PLIST_FILES=	bin/modplugplay man/man1/modplugplay.1.gz
 

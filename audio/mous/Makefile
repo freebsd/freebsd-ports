@@ -81,7 +81,7 @@ PLIST_SUB+=	OSS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 CMAKE_ARGS+=	-DWithPluginAlsaRenderer=1
 PLIST_SUB+=	ALSA=""
 .else
@@ -90,7 +90,7 @@ PLIST_SUB+=	ALSA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MAO}
-LIB_DEPENDS+=	libao:${PORTSDIR}/audio/libao
+LIB_DEPENDS+=	libao.so:${PORTSDIR}/audio/libao
 CMAKE_ARGS+=	-DWithPluginAoRenderer=1
 PLIST_SUB+=	AO=""
 .else
@@ -99,7 +99,7 @@ PLIST_SUB+=	AO="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTAGLIB}
-LIB_DEPENDS+=	tag:${PORTSDIR}/audio/taglib
+LIB_DEPENDS+=	libtag.so:${PORTSDIR}/audio/taglib
 CMAKE_ARGS+=	-DWithPluginTagLibParser=1
 PLIST_SUB+=	TAGLIB=""
 .else
@@ -108,7 +108,7 @@ PLIST_SUB+=	TAGLIB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCUE}
-LIB_DEPENDS+=	cue:${PORTSDIR}/textproc/libcue
+LIB_DEPENDS+=	libcue.so:${PORTSDIR}/textproc/libcue
 CMAKE_ARGS+=	-DWithPluginCuePack=1
 PLIST_SUB+=	CUE=""
 .else
@@ -133,7 +133,7 @@ PLIST_SUB+=	WAVENCODER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFAAD}
-LIB_DEPENDS+=	faad:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=	libfaad.so:${PORTSDIR}/audio/faad
 CMAKE_ARGS+=	-DWithPluginFaadDecoder=1
 PLIST_SUB+=	FAAD=""
 .else
@@ -142,7 +142,7 @@ PLIST_SUB+=	FAAD="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFAAC}
-LIB_DEPENDS+=	faac:${PORTSDIR}/audio/faac
+LIB_DEPENDS+=	libfaac.so:${PORTSDIR}/audio/faac
 CMAKE_ARGS+=	-DWithPluginFaacEncoder=1
 PLIST_SUB+=	FAAC=""
 .else
@@ -151,7 +151,7 @@ PLIST_SUB+=	FAAC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMPG123}
-LIB_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
+LIB_DEPENDS+=	libmpg123.so:${PORTSDIR}/audio/mpg123
 CMAKE_ARGS+=	-DWithPluginMpg123Decoder=1
 PLIST_SUB+=	MPG123=""
 .else
@@ -160,7 +160,7 @@ PLIST_SUB+=	MPG123="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLAME}
-LIB_DEPENDS+=	mp3lame:${PORTSDIR}/audio/lame
+LIB_DEPENDS+=	libmp3lame.so:${PORTSDIR}/audio/lame
 CMAKE_ARGS+=	-DWithPluginLameEncoder=1
 PLIST_SUB+=	LAME=""
 .else
@@ -185,7 +185,7 @@ PLIST_SUB+=	MAC4="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMACDECODER}
-LIB_DEPENDS+=	mac:${PORTSDIR}/audio/mac
+LIB_DEPENDS+=	libmac.so:${PORTSDIR}/audio/mac
 CMAKE_ARGS+=	-DWithPluginMacDecoder=1
 PLIST_SUB+=	MAC=""
 .else
@@ -194,7 +194,7 @@ PLIST_SUB+=	MAC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
 CMAKE_ARGS+=	-DWithPluginFlacDecoder=1
 PLIST_SUB+=	FLAC=""
 .else
@@ -203,7 +203,7 @@ PLIST_SUB+=	FLAC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbisfile:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
 CMAKE_ARGS+=	-DWithPluginOggDecoder=1
 PLIST_SUB+=	OGG=""
 .else

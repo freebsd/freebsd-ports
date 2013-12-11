@@ -38,13 +38,13 @@ BROKEN=		does not compile on sparc64
 .endif
 
 .if ${PORT_OPTIONS:MFFTW3}
-LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
+LIB_DEPENDS+=	libfftw3.so:${PORTSDIR}/math/fftw3
 .else
 CONFIGURE_ARGS+=	--without-fftw
 .endif
 
 .if ${PORT_OPTIONS:MGSL}
-LIB_DEPENDS+=	gsl:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=	libgsl.so:${PORTSDIR}/math/gsl
 .else
 CONFIGURE_ARGS+=	--without-gsl
 .endif

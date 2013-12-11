@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.berlios.de/bmp-plugins/
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	WMA input plugin for beep-media-player
 
-LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
+LIB_DEPENDS=	libbeep.so:${PORTSDIR}/multimedia/beep-media-player
 
 PLIST_FILES=	lib/bmp/Input/libwma.so \
 		lib/bmp/Input/libwma.la \

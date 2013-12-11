@@ -10,8 +10,8 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Minimalistic Murmur (Mumble server)
 
-LIB_DEPENDS=	config.10:${PORTSDIR}/devel/libconfig \
-		protobuf-c.0:${PORTSDIR}/devel/protobuf-c
+LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig \
+		libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
 
 NO_STAGE=	yes
 USES=		gmake

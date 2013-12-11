@@ -12,12 +12,12 @@ COMMENT=	Multichannel digital audio workstation
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	lo:${PORTSDIR}/audio/liblo \
-		lrdf:${PORTSDIR}/textproc/liblrdf \
-		aubio:${PORTSDIR}/audio/aubio \
-		fftw3:${PORTSDIR}/math/fftw3 \
-		boost_date_time:${PORTSDIR}/devel/boost-libs \
-		gnomecanvasmm-2.6:${PORTSDIR}/graphics/libgnomecanvasmm26
+LIB_DEPENDS=	liblo.so:${PORTSDIR}/audio/liblo \
+		liblrdf.so:${PORTSDIR}/textproc/liblrdf \
+		libaubio.so:${PORTSDIR}/audio/aubio \
+		libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
+		libgnomecanvasmm-2.6.so:${PORTSDIR}/graphics/libgnomecanvasmm26
 
 USE_BZIP2=	yes
 NO_STAGE=	yes
@@ -40,7 +40,7 @@ SCONS_ENV+=	VST=yes
 BUILD_DEPENDS+=	winegcc:${PORTSDIR}/emulators/wine \
 		unzip:${PORTSDIR}/archivers/unzip \
 		gsed:${PORTSDIR}/textproc/gsed
-LIB_DEPENDS+=	wine.1:${PORTSDIR}/emulators/wine
+LIB_DEPENDS+=	libwine.so:${PORTSDIR}/emulators/wine
 
 PLIST_SUB+=	NO_VST="@comment "
 PLIST_SUB+=	VST=""

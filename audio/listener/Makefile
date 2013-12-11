@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	A program to listen for and record sound activity
 
-LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 NO_STAGE=	yes
 PORTDOCS=	manual.html

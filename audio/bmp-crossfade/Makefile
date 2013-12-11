@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 APP=		bmp
-LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
+LIB_DEPENDS=	libbeep.so:${PORTSDIR}/multimedia/beep-media-player
 
 NO_STAGE=	yes
 MASTERDIR=	${.CURDIR}/../xmms-crossfade

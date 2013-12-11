@@ -11,11 +11,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for audio labelling
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
-LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate \
-		sndfile:${PORTSDIR}/audio/libsndfile \
-		jack:${PORTSDIR}/audio/jack \
-		fftw3f:${PORTSDIR}/math/fftw3-float \
-		lash:${PORTSDIR}/audio/lash
+LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
+		libsndfile.so:${PORTSDIR}/audio/libsndfile \
+		libjack.so:${PORTSDIR}/audio/jack \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
+		liblash.so:${PORTSDIR}/audio/lash
 
 GNU_CONFIGURE=	yes
 # --disable-complex: does not compile due to missing carg(3) et al.

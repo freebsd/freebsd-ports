@@ -11,7 +11,7 @@ COMMENT=	Collection of C++/Qt classes designed to use the APIs of The Echo Nest
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	qjson:${PORTSDIR}/devel/qjson
+LIB_DEPENDS=	libqjson.so:${PORTSDIR}/devel/qjson
 
 GH_ACCOUNT=	lfranchi
 GH_PROJECT=	${PORTNAME}

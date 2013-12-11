@@ -12,7 +12,7 @@ COMMENT=	Graphical audio file editor
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	FOX-1.4:${PORTSDIR}/x11-toolkits/fox14
+LIB_DEPENDS=	libFOX-1.4.so:${PORTSDIR}/x11-toolkits/fox14
 
 USES=		bison
 NO_STAGE=	yes
@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=	--enable-largefile
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
 .endif
 
 .if ${PORT_OPTIONS:MAUDIOFILE}
@@ -48,27 +48,27 @@ LIB_DEPENDS+=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 .endif
 
 .if ${PORT_OPTIONS:MPORTAUDIO}
-LIB_DEPENDS+=	portaudio:${PORTSDIR}/audio/portaudio
+LIB_DEPENDS+=	libportaudio.so:${PORTSDIR}/audio/portaudio
 .endif
 
 .if ${PORT_OPTIONS:MOGG}
-LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg
+LIB_DEPENDS+=	libogg.so:${PORTSDIR}/audio/libogg
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 .endif
 
 .if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
 .endif
 
 .if ${PORT_OPTIONS:MFFTW}
-LIB_DEPENDS+=	fftw:${PORTSDIR}/math/fftw
+LIB_DEPENDS+=	libfftw.so:${PORTSDIR}/math/fftw
 .endif
 
 .if ${PORT_OPTIONS:MSOUNDTOUCH}
-LIB_DEPENDS+=	SoundTouch:${PORTSDIR}/audio/soundtouch
+LIB_DEPENDS+=	libSoundTouch.so:${PORTSDIR}/audio/soundtouch
 .endif
 
 .if ${PORT_OPTIONS:MLADSPA}

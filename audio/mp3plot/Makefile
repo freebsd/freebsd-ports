@@ -10,7 +10,7 @@ MASTER_SITES=	http://p.outlyer.net/mp3plot/files/
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Mp3 bitrate plot tool
 
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 OPTIONS_DEFINE=	GD IMAGEMAGICK
 OPTIONS_DEFAULT=	GD
@@ -32,13 +32,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGD}
-LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
 .else
 CONFIGURE_ARGS+=	--disable-gd
 .endif
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
-LIB_DEPENDS+=	Magick++.5:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	libMagick++.so:${PORTSDIR}/graphics/ImageMagick
 .else
 CONFIGURE_ARGS+=	--disable-magick
 .endif

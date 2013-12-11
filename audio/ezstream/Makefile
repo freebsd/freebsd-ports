@@ -11,8 +11,8 @@ MASTER_SITES=	http://downloads.xiph.org/releases/ezstream/ \
 MAINTAINER=	ayu@commun.jp
 COMMENT=	A command line utility for streaming to icecast servers
 
-LIB_DEPENDS=	shout:${PORTSDIR}/audio/libshout2 \
-		vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout2 \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 OPTIONS_DEFINE=	TAGLIB
 OPTIONS_DEFAULT=	TAGLIB
@@ -41,7 +41,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 .if ${PORT_OPTIONS:MTAGLIB}
 CONFIGURE_ARGS+=	--without-taglib
 .else
-LIB_DEPENDS+=		tag:${PORTSDIR}/audio/taglib
+LIB_DEPENDS+=		libtag.so:${PORTSDIR}/audio/taglib
 CONFIGURE_ARGS+=	--with-taglib=${LOCALBASE}
 .endif
 

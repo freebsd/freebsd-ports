@@ -10,7 +10,7 @@ MASTER_SITES=	http://ftp.auxio.org/pub/mirrors/step.polymtl.ca/pub/Xview/apps/xv
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Look-based audio mixer
 
-LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
+LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
 
 NO_STAGE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include -DUSE_XBM_ICON" \

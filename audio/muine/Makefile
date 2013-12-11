@@ -12,10 +12,10 @@ COMMENT=	Mono based Gnome audio player
 
 IGNORE=		Fails to run
 
-LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
-		id3tag.0:${PORTSDIR}/audio/libid3tag \
-		gdbm:${PORTSDIR}/databases/gdbm \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
+		libid3tag.so:${PORTSDIR}/audio/libid3tag \
+		libgdbm.so:${PORTSDIR}/databases/gdbm \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/ndesk-dbus-glib-1.0.pc:${PORTSDIR}/devel/ndesk-dbus-glib \
 		${LOCALBASE}/libdata/pkgconfig/taglib-sharp.pc:${PORTSDIR}/audio/taglib-sharp
 RUN_DEPENDS:=	${BUILD_DEPENDS}

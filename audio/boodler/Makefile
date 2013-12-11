@@ -34,7 +34,7 @@ pre-everything::
 	@${ECHO} ""
 
 .if ${DRIVER:L} == "esd"
-LIB_DEPENDS+=	esd.2:${PORTSDIR}/audio/esound
+LIB_DEPENDS+=	libesd.so:${PORTSDIR}/audio/esound
 .endif
 
 .include <bsd.port.pre.mk>

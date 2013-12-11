@@ -16,13 +16,13 @@ MASTER_SITES=	http://freedesktop.org/software/pulseaudio/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sound server for UNIX
 
-LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		sndfile.1:${PORTSDIR}/audio/libsndfile \
-		speexdsp.1:${PORTSDIR}/audio/speex \
-		dbus-1.3:${PORTSDIR}/devel/dbus \
-		gdbm.4:${PORTSDIR}/databases/gdbm \
-		execinfo:${PORTSDIR}/devel/libexecinfo \
-		ck-connector.0:${PORTSDIR}/sysutils/consolekit
+LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
+		libsndfile.so:${PORTSDIR}/audio/libsndfile \
+		libspeexdsp.so${PORTSDIR}/audio/speex \
+		libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libgdbm.so:${PORTSDIR}/databases/gdbm \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libck-connector.so:${PORTSDIR}/sysutils/consolekit
 
 USE_GNOME=	gnomehack glib20 intltool ltverhack
 NO_STAGE=	yes
@@ -69,7 +69,7 @@ MAN5=		default.pa.5 pulse-client.conf.5 pulse-daemon.conf.5
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
 PLIST_SUB+=	JACK=""
 .else
 PLIST_SUB+=	JACK="@comment "
@@ -77,7 +77,7 @@ CONFIGURE_ARGS+=--disable-jack
 .endif
 
 .if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=	avahi-client.3:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 PLIST_SUB+=	AVAHI=""
 .else
 CONFIGURE_ARGS+=--disable-avahi
@@ -85,7 +85,7 @@ PLIST_SUB+=	AVAHI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MHAL}
-LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal
 PLIST_SUB+=	HAL=""
 .else
 CONFIGURE_ARGS+=--disable-hal

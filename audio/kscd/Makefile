@@ -13,7 +13,7 @@ COMMENT=	CD Player for KDE
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	musicbrainz3.6:${PORTSDIR}/audio/libmusicbrainz3
+LIB_DEPENDS=	libmusicbrainz3.so:${PORTSDIR}/audio/libmusicbrainz3
 
 CONFLICTS_INSTALL=	kdemultimedia-4.[1-8].*
 
@@ -29,7 +29,7 @@ OPTIONS_DEFINE=	ALSA
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-no_alsa
 .endif

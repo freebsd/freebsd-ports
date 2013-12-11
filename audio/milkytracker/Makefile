@@ -15,8 +15,8 @@ LICENSE=	GPLv3
 
 NOT_FOR_ARCH=	powerpc
 
-LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack \
-		zzip:${PORTSDIR}/devel/zziplib
+LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack \
+		libzzip.so:${PORTSDIR}/devel/zziplib
 
 USES=		pkgconfig
 GNU_CONFIGURE=	yes

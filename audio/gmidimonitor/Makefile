@@ -10,8 +10,8 @@ MASTER_SITES=	http://download.gna.org/gmidimonitor/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ application that shows MIDI events
 
-LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
-		lash.2:${PORTSDIR}/audio/lash
+LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
+		liblash.so:${PORTSDIR}/audio/lash
 
 USES=		pkgconfig
 NO_STAGE=	yes

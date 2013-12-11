@@ -18,9 +18,9 @@ BUILD_DEPENDS=	${LOCALBASE}/include/vorbis/codec.h:${PORTSDIR}/audio/libvorbis \
 		${LOCALBASE}/include/FLAC/metadata.h:${PORTSDIR}/audio/flac
 RUN_DEPENDS=	oggdec:${PORTSDIR}/audio/vorbis-tools \
 		flac:${PORTSDIR}/audio/flac
-LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
-		sqlite3:${PORTSDIR}/databases/sqlite3 \
-		id3tag:${PORTSDIR}/audio/libid3tag
+LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
+		libid3tag.so:${PORTSDIR}/audio/libid3tag
 
 GNU_CONFIGURE=	yes
 NO_STAGE=	yes
