@@ -31,20 +31,23 @@ OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	pkg-message
 
-DESKTOP_ENTRIES="Python Kye" "${COMMENT}" "Kye" \
-		"Kye" "Game;LogicGame;" false
+DESKTOP_ENTRIES="Python Kye" "" "Kye" \
+		"Kye" "Game;LogicGame;" ""
 
 .include <bsd.port.options.mk>
 
 post-extract-script:
-	${MKDIR} ${WRKDIR}/${PORTNAME}
-.for l in kye-data_moria_levels.20121101.tar.gz kye-data_nuke_levels.20121101.tar.gz kye-data_extra_levels.20120818.tar.gz
-	${TAR} xfjp ${DISTDIR}/${DIST_SUBDIR}/${l} -C ${WRKDIR}/${PORTNAME}
+	@${MKDIR} ${WRKDIR}/${PORTNAME}
+.for l in kye-data_moria_levels.20121101.tar.gz kye-data_nuke_levels.20121101.tar.gz \
+	kye-data_extra_levels.20120818.tar.gz
+	${TAR} xfjp ${_DISTDIR}/${l} -C ${WRKDIR}/${PORTNAME}
 .endfor
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/kye-icon.png ${STAGEDIR}${PREFIX}/share/pixmaps/Kye.png
-	${INSTALL_DATA} ${WRKSRC}/kye-edit-icon.png ${STAGEDIR}${PREFIX}/share/pixmaps/Kye-edit.png
+	${INSTALL_DATA} ${WRKSRC}/kye-icon.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/Kye.png
+	${INSTALL_DATA} ${WRKSRC}/kye-edit-icon.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/Kye-edit.png
 	@cd ${WRKDIR}/${PORTNAME} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
