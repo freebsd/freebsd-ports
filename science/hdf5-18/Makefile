@@ -9,6 +9,7 @@ MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF5/current/src/ \
 		http://www.hdfgroup.org/ftp/HDF5/releases/${DISTNAME}/src/ \
 		ftp://ftp.hdfgroup.org/HDF5/releases/${DISTNAME}/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-patch1
+PKGNAMESUFFIX=	-18
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Hierarchical Data Format library (from NCSA)
