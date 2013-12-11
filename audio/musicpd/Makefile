@@ -241,7 +241,7 @@ CONFIGURE_ARGS+=--disable-lsr
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE3}
-LIB_DEPENDS+=	libsqlite3.so:${ORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 CONFIGURE_ARGS+=--enable-sqlite
 .else
 CONFIGURE_ARGS+=--disable-sqlite
