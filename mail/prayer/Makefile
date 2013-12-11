@@ -10,18 +10,14 @@ COMMENT=	Prayer Webmail System
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	c-client4:${PORTSDIR}/mail/cclient
+LIB_DEPENDS=	libc-client4.so:${PORTSDIR}/mail/cclient
 
-USES=		iconv shebangfix gmake perl5
+USES=		iconv shebangfix gmake perl5 uidfix
 USE_PERL5=	build
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 SHEBANG_FILES=	utils/ucsnews.pl \
 		templates/old/make_olist.pl \
 		templates/src/*.pl
-
-MAKE_ENV+=	PORTCFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		PORTLDFLAGS="${LDFLAGS}"
 
 PORTDOCS=	ACCOUNTD CMD_LINE DESIGN DONE DONE-OLD FEATURES ICONLIST \
 		INSTALL LOGS NOTICE README ROADMAP SECURITY TODO
@@ -36,22 +32,54 @@ SESSIONCACHE_DESC=	Activate Session Cache
 USERS=		_prayer
 GROUPS=		prayer
 
-MAN5=		prayer.cf.5
-MAN8=		prayer-session.8 prayer-ssl-prune.8 prayer.8
+SESSIONCACHE_USE=	BDB=yes
+LDAP_USE=		OPENLDAP=yes
+TIDY_LIB_DEPENDS=	libtidy-0.99.so:${PORTSDIR}/www/tidy-lib
 
-NO_STAGE=	yes
+GID!=		id -g
+DESTDIRNAME=	BROOT
+MAKE_ARGS+=	RW_USER="${UID}" RW_GROUP="${GID}" RO_GROUP="${GID}" RO_USER="${UID}" \
+		CCLIENT_INCLUDE="-I${LOCALBASE}/include/c-client" \
+		CCLIENT_LIBS="-L${LOCALBASE}/lib -lc-client4" \
+		CC="${CC}" \
+		CPPFLAGS="${CFLAGS}" \
+		PREFIX="${PREFIX}/prayer" \
+		BIN_DIR="${PREFIX}/sbin" \
+		PRAYER_CONFIG_FILE="${ETCDIR}/prayer.cf" \
+		ACCOUNTD_CONFIG_FILE="${ETCDIR}/accountd.cf"
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MSESSIONCACHE}
-USE_BDB=	yes
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	yes
+.if ${PORT_OPTIONS:MLDAP_ENABLE}
+MAKE_ARGS+=	LDAP_ENABLE=true \
+		LDAP_INCLUDE="-I${LOCALBASE}/include" \
+		LDAP_LIBS="-L${LOCALBASE}/lib -lldap"
+.else
+MAKE_ARGS+=	LDAP_ENABLE=false
 .endif
 
 .if ${PORT_OPTIONS:MTIDY}
-LIB_DEPENDS+=	tidy-0.99.0:${PORTSDIR}/www/tidy-lib
+MAKE_ARGS+=	TIDY_ENABLE=true \
+		TIDY_INCLUDE=-I${LOCALBASE}/include/tidy \
+		TIDY_LIBS="-L${LOCALBASE}/lib -ltidy"
+.else
+MAKE_ARGS+=	TIDY_ENABLE=false
+.endif
+
+.if ${PORT_OPTIONS:MSSL}
+MAKE_ARGS+=	CCLIENT_SSL_ENABLE=true \
+		SSL_ENABLE=true
+.else
+MAKE_ARGS+=	CCLIENT_SSL_ENABLE=false \
+		SSL_ENABLE=false
+.endif
+
+.if ${PORT_OPTIONS:MSESSION_CACHE}
+MAKE_ARGS+=	SESSION_CACHE_ENABLE=true \
+		DB_INCLUDE=-I${BDB_INCLUDE_DIR} \
+		DB_LIBS="-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}"
+.else
+MAKE_ARGS+=	SESSION_CACHE_ENABLE=false
 .endif
 
 pre-patch:
@@ -63,41 +91,15 @@ post-patch:
 # change the user in the default config and cylog util
 	@${REINPLACE_CMD} "s#prayer_user           = \"prayer\"#prayer_user           = \"_prayer\"#" ${WRKSRC}/files/etc/prayer.cf.SRC
 	@${REINPLACE_CMD} "s#\"prayer\" \"prayer\"#\"_prayer\" \"prayer\"#" ${WRKSRC}/utils/prayer-cyclog.SRC
-	@${REINPLACE_CMD} "/^CC\s.*/d" ${WRKSRC}/Config
-	@${REINPLACE_CMD} "s#%%PREFIX%%#${PREFIX}#" ${WRKSRC}/Config
-
-post-configure:
-.if ${PORT_OPTIONS:MSESSIONCACHE}
-	@${REINPLACE_CMD} "s|^#DB_INCLUDE=.*|DB_INCLUDE=-I${BDB_INCLUDE_DIR}|" ${WRKSRC}/Config
-	@${REINPLACE_CMD} "s|^#DB_LIBS=.*|DB_LIBS=-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}|" ${WRKSRC}/Config
-.else
-	@${REINPLACE_CMD} "s#^SESSION_CACHE_ENABLE = true#SESSION_CACHE_ENABLE = false#" ${WRKSRC}/Config
-.endif
-	@${REINPLACE_CMD} "s#^RW_USER    = prayer#RW_USER    = _prayer#" ${WRKSRC}/Config
-
-.if ${PORT_OPTIONS:MSSL}
-	@${REINPLACE_CMD} "s#CCLIENT_SSL_ENABLE   = false#CCLIENT_SSL_ENABLE   = true#" ${WRKSRC}/Config
-.else
-	@${REINPLACE_CMD} "s#^SSL_ENABLE           = true#SSL_ENABLE           = false#" ${WRKSRC}/Config
-.endif
-
-.if ! ${PORT_OPTIONS:MLDAP}
-	@${REINPLACE_CMD} "s#LDAP_ENABLE          = true#LDAP_ENABLE          = false#" ${WRKSRC}/Config
-.endif
-
-.if ! ${PORT_OPTIONS:MTIDY}
-	@${REINPLACE_CMD} "s#TIDY_ENABLE          = true#TIDY_ENABLE          = false#" ${WRKSRC}/Config
-.else
-	@${REINPLACE_CMD} "s#TIDY_INCLUDE=-I/usr/include/tidy#TIDY_INCLUDE=-I${LOCALBASE}/include/tidy#" ${WRKSRC}/Config
-.endif
+	@${REINPLACE_CMD} "s,-liconv,${ICONV_LIB}," ${WRKSRC}/Config
 
 pre-install:
-	@${MKDIR} ${PREFIX}/etc/prayer
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/prayer \
+		${STAGEDIR}${PREFIX}/prayer
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}/docs && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}/var/spool/prayer
 
 .include <bsd.port.mk>
