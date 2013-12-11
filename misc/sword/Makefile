@@ -14,6 +14,8 @@ COMMENT=	Framework for manipulating Bible texts
 
 LICENSE=	GPLv2
 
+CONFLICTS=	sword-1.7.*
+
 BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
 
 USES=		gmake pkgconfig
