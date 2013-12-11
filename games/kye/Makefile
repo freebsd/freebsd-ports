@@ -19,7 +19,8 @@ DIST_SUBDIR=	kye
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Puzzle game with arcade game elements
 
-LICENSE=	GPLv2
+RESTRICTED=	kye-data_nuke_levels is charityware
+RESTRICTED_FILES=	 kye-data_nuke_levels.20121101.tar.gz
 
 USE_GNOME=	pygtk2 librsvg2
 USE_PYTHON=	yes
