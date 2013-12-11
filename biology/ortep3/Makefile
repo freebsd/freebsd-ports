@@ -13,7 +13,7 @@ EXTRACT_ONLY=	ortep.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Oak Ridge Thermal Ellipsoid Plot Program for Crystal Structure
 
-PGPLOT_LIB_DEPENDS=	pgplot:${PORTSDIR}/graphics/pgplot
+PGPLOT_LIB_DEPENDS=	libpgplot.so:${PORTSDIR}/graphics/pgplot
 
 USE_FORTRAN=	yes
 WRKSRC=		${WRKDIR}/ortep/src

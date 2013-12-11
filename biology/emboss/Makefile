@@ -15,8 +15,8 @@ COMMENT=	A collection of open source tools for genetic sequence analysis
 
 BUILD_DEPENDS=	clustalw:${PORTSDIR}/biology/clustalw \
 		primer3:${PORTSDIR}/biology/primer3
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 CONFLICTS=	qmail-ldap-[0-9]* digest-[0-9]*
 
@@ -38,8 +38,8 @@ CONFIGURE_ARGS+= --with-docroot=${DOCSDIR}
 .if !defined(WITHOUT_X11)
 USE_XORG=	x11
 USES+=		motif
-LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd \
+		libpng15.so:${PORTSDIR}/graphics/png
 .else
 CONFIGURE_ARGS+= --without-x
 .endif

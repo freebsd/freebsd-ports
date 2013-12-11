@@ -12,7 +12,7 @@ COMMENT=	Toolset for working with human genetic variation data
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	protobuf:${PORTSDIR}/devel/protobuf
+LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
 
 USE_DOS2UNIX=	yes
 USE_LDCONFIG=	yes
