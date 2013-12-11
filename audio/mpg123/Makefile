@@ -12,11 +12,10 @@ COMMENT=	Command-line player for MPEG Layer 1, 2, and 3 audio files
 
 LICENSE=	LGPL21
 
-USES=		gmake
+USES=		gmake pathfix
 USE_BZIP2=	yes
-NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool libltdl
-USE_GNOME=	gnomehack ltverhack
+#USE_GNOME=	ltverhack
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -26,8 +25,6 @@ CONFIGURE_ARGS=	--with-optimization=0 \
 CONFIGURE_ENV=	CONFIG_SHELL=${SH}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-MAN1=		${PORTNAME}.1
 
 .include <bsd.port.pre.mk>
 

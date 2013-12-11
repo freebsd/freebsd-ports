@@ -61,7 +61,7 @@ OPTIONS_DEFAULT=VORBIS
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ENV+=	OGG_SUPPORT=YES
 .endif
 

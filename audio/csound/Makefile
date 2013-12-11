@@ -21,7 +21,7 @@ DIST_SUBDIR=	csound
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13 \
 		${LOCALBASE}/include/gmm/gmm.h:${PORTSDIR}/math/gmm++ \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	sndfile:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 OPTIONS_DEFINE=	ALSA DSSI FLUIDSYNTH JACK OSC PORTAUDIO PULSEAUDIO FLTK
 OPTIONS_DEFAULT=FLTK
@@ -55,7 +55,7 @@ SUB_FILES=	pkg-message
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 SCONS_ARGS+=	useALSA=1
 PLIST_SUB+=	ALSA=""
 ALSA_H=		alsa/asoundlib.h
@@ -76,7 +76,7 @@ PLIST_SUB+=	DSSI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFLUIDSYNTH}
-LIB_DEPENDS+=	fluidsynth:${PORTSDIR}/audio/fluidsynth
+LIB_DEPENDS+=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
 PLIST_SUB+=	FLUIDSYNTH=""
 FLUIDSYNTH_H=	fluidsynth.h
 .else
@@ -85,7 +85,7 @@ FLUIDSYNTH_H=	##fluidsynth.h##
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
 SCONS_ARGS+=	useJack=1
 PLIST_SUB+=	JACK=""
 .else
@@ -94,7 +94,7 @@ PLIST_SUB+=	JACK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOSC}
-LIB_DEPENDS+=	lo:${PORTSDIR}/audio/liblo
+LIB_DEPENDS+=	liblo.so:${PORTSDIR}/audio/liblo
 SCONS_ARGS+=	useOSC=1
 PLIST_SUB+=	OSC=""
 .else
@@ -117,7 +117,7 @@ PORTAUDIO_R=	# empty
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	pulse-simple:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
 PLIST_SUB+=	PULSEAUDIO=""
 PULSEAUDIO_H=	pulse/simple.h
 .else
@@ -126,7 +126,7 @@ PULSEAUDIO_H=	##pulse/simple.h##
 .endif
 
 .if ${PORT_OPTIONS:MFLTK}
-LIB_DEPENDS+=	fltk:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS+=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 PLIST_SUB+=	FLTK=""
 SCONS_ARGS+=	buildCsound5GUI=1 buildCSEditor=1 buildWinsound=1 useFLTK=1
 .else

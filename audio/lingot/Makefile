@@ -27,15 +27,15 @@ OPTIONS_DEFAULT=	JACK
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack \
-		samplerate.1:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack \
+		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=--enable-jack
 .else
 CONFIGURE_ARGS+=--disable-jack
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
 CONFIGURE_ARGS+=--enable-alsa
 .else

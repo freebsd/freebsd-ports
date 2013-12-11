@@ -13,7 +13,7 @@ COMMENT=	Volume Normalizer plugin for XMMS
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

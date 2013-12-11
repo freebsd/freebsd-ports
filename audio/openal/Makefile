@@ -52,14 +52,14 @@ CONFIGURE_ARGS+=--disable-sdl
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--enable-vorbis
 .else
 CONFIGURE_ARGS+=--disable-vorbis
 .endif
 
 .if ${PORT_OPTIONS:MSMPEG}
-LIB_DEPENDS+=	smpeg.1:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS+=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
 CONFIGURE_ARGS+=--enable-smpeg
 .else
 CONFIGURE_ARGS+=--disable-smpeg

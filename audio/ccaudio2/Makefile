@@ -10,10 +10,10 @@ MASTER_SITES=	http://www.gnutelephony.org/dist/tarballs/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	C++ class framework for manipulating audio files
 
-LIB_DEPENDS=	ccgnu2:${PORTSDIR}/devel/commoncpp \
-    		ucommon:${PORTSDIR}/devel/ucommon \
-		gsm:${PORTSDIR}/audio/gsm \
-		speex:${PORTSDIR}/audio/speex
+LIB_DEPENDS=	libccgnu2.so:${PORTSDIR}/devel/commoncpp \
+    		libucommon.so:${PORTSDIR}/devel/ucommon \
+		libgsm.so:${PORTSDIR}/audio/gsm \
+		libspeex.so:${PORTSDIR}/audio/speex
 
 CONFLICTS=	ccaudio-[0-9]*
 

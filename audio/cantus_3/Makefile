@@ -11,11 +11,11 @@ MASTER_SITES=	SF/${PORTNAME}/Testing%20%28unstable%29/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for tagging and renaming MP3 and OGG/Vorbis files
 
-LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
-		ogg:${PORTSDIR}/audio/libogg \
-		sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
+		libogg.so:${PORTSDIR}/audio/libogg \
+		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 CONFLICTS=	cantus-1*
 

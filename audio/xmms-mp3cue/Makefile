@@ -11,7 +11,7 @@ DISTNAME=	XMMS-mp3cue-${PORTVERSION}
 MAINTAINER=	r2@music.lt
 COMMENT=	XMMS mp3cue adds cue file support to XMMS
 
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 GNU_CONFIGURE=	yes
 USES=		gmake

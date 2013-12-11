@@ -11,7 +11,7 @@ COMMENT=	Curses based front-end to various audio players
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	glib-12:${PORTSDIR}/devel/glib12
+USE_GNOME=	glib12
 
 NO_STAGE=	yes
 MAN1=		${PORTNAME}.1

@@ -13,9 +13,9 @@ COMMENT=	Gigasampler file loader library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
-		sndfile.1:${PORTSDIR}/audio/libsndfile \
-		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
+		libsndfile.so:${PORTSDIR}/audio/libsndfile \
+		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 USE_BZIP2=	yes
 NO_STAGE=	yes

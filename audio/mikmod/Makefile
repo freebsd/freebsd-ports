@@ -12,7 +12,7 @@ COMMENT=	Mod player which plays MTM, STM, XM, MOD, S3M, ULT, UNI, and IT mods
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	mikmod:${PORTSDIR}/audio/libmikmod
+LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod
 
 USES=		gmake
 GNU_CONFIGURE=	yes

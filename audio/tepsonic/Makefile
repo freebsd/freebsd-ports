@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	TepSonic is a simple and fast audio player
 
-LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
 
 USES=		cmake
 NO_STAGE=	yes

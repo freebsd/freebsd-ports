@@ -36,56 +36,56 @@ MAN5=		darkice.cfg.5
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
 CONFIGURE_ARGS+=	--with-jack-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-jack
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	pulse-simple:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
 CONFIGURE_ARGS+=	--with-pulseaudio-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-pulseaudio
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=	--with-vorbis-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-vorbis
 .endif
 
 .if ${PORT_OPTIONS:MOPUS}
-LIB_DEPENDS+=	opus:${PORTSDIR}/audio/opus
+LIB_DEPENDS+=	libopus.so:${PORTSDIR}/audio/opus
 CONFIGURE_ARGS+=	--with-opus-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-opus
 .endif
 
 .if ${PORT_OPTIONS:MLAME}
-LIB_DEPENDS+=	mp3lame:${PORTSDIR}/audio/lame
+LIB_DEPENDS+=	libmp3lame.so:${PORTSDIR}/audio/lame
 CONFIGURE_ARGS+=	--with-lame-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-lame
 .endif
 
 .if ${PORT_OPTIONS:MTWOLAME}
-LIB_DEPENDS+=	twolame:${PORTSDIR}/audio/twolame
+LIB_DEPENDS+=	libtwolame.so:${PORTSDIR}/audio/twolame
 CONFIGURE_ARGS+=	--with-twolame-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-twolame
 .endif
 
 .if ${PORT_OPTIONS:MFAAC}
-LIB_DEPENDS+=	faac:${PORTSDIR}/audio/faac
+LIB_DEPENDS+=	libfaac.so:${PORTSDIR}/audio/faac
 CONFIGURE_ARGS+=	--with-faac-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-faac
 .endif
 
 .if ${PORT_OPTIONS:MAACPLUS}
-LIB_DEPENDS+=	aacplus:${PORTSDIR}/audio/libaacplus \
+LIB_DEPENDS+=	libaacplus.so:${PORTSDIR}/audio/libaacplus \
 		samplerate:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=	--with-aacplus-prefix=${LOCALBASE} \
 			--with-samplerate-prefix=${LOCALBASE}

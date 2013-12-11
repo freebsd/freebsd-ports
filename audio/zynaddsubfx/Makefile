@@ -13,8 +13,8 @@ COMMENT=	Realtime software synthesizer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
-		mxml:${PORTSDIR}/textproc/mxml
+LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libmxml.so:${PORTSDIR}/textproc/mxml
 
 USE_BZIP2=	yes
 USES=		cmake pkgconfig

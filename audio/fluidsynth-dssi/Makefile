@@ -10,10 +10,10 @@ MASTER_SITES=	SF/dssi/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper for FluidSynth allowing it to function as a DSSI plugin
 
-LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
-		lo:${PORTSDIR}/audio/liblo \
-		fluidsynth.1:${PORTSDIR}/audio/fluidsynth \
-		jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS=	libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat \
+		liblo.so:${PORTSDIR}/audio/liblo \
+		libfluidsynth.so:${PORTSDIR}/audio/fluidsynth \
+		libjack.so:${PORTSDIR}/audio/jack
 BUILD_DEPENDS=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi
 
 GNU_CONFIGURE=	yes

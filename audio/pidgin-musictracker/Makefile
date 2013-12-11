@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
 NO_STAGE=	yes

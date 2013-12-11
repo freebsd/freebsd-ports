@@ -10,7 +10,7 @@ COMMENT=	A Linnya Audio Player
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 USE_GITHUB=	yes
 NO_STAGE=	yes

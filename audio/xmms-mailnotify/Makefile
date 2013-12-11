@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	arved
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	XMMS plugin, that plays a sound on incoming mail and opens the MUA
 
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

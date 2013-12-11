@@ -14,11 +14,11 @@ COMMENT=	Full featured GTK2 client for musicpd
 
 BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2 \
 		valac:${PORTSDIR}/lang/vala
-LIB_DEPENDS=	mpd.4:${PORTSDIR}/audio/libmpd \
-		sexy.2:${PORTSDIR}/x11-toolkits/libsexy \
-		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		soup-2.4.1:${PORTSDIR}/devel/libsoup \
-		unique-1.0:${PORTSDIR}/x11-toolkits/unique
+LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \
+		libsexy.so:${PORTSDIR}/x11-toolkits/libsexy \
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
+		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
+		libunique-1.so:${PORTSDIR}/x11-toolkits/unique
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20 libglade2
@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=--disable-mmkeys
 .endif
 
 .if ${PORT_OPTIONS:MXSPF}
-LIB_DEPENDS+=	xspf.4:${PORTSDIR}/multimedia/libxspf
+LIB_DEPENDS+=	libxspf.so:${PORTSDIR}/multimedia/libxspf
 CONFIGURE_ARGS+=--enable-libxspf
 .else
 CONFIGURE_ARGS+=--disable-libxspf

@@ -13,9 +13,9 @@ COMMENT=	Ultimate music player for Unix-like systems
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate \
-		mad:${PORTSDIR}/audio/libmad \
-		execinfo:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
+		libmad.so:${PORTSDIR}/audio/libmad \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig gettext iconv shebangfix
@@ -68,7 +68,7 @@ VFS_ZIP_DESC=		ZIP support
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
 PLIST_SUB+=	PULSE=""
-LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 .else
 CONFIGURE_ARGS+=	--disable-pulse
 PLIST_SUB+=	PULSE="@comment "
@@ -85,7 +85,7 @@ PLIST_SUB+=	GUI="@comment "
 
 .if ${PORT_OPTIONS:MVFS}
 PLIST_SUB+=	VFS=""
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 .else
 CONFIGURE_ARGS+=	--disable-vfs-curl
 PLIST_SUB+=	VFS="@comment "
@@ -93,7 +93,7 @@ PLIST_SUB+=	VFS="@comment "
 
 .if ${PORT_OPTIONS:MLASTFM}
 PLIST_SUB+=	LASTFM=""
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 .else
 CONFIGURE_ARGS+=	--disable-lfm
 PLIST_SUB+=	LASTFM="@comment "
@@ -103,7 +103,7 @@ PLIST_SUB+=	LASTFM="@comment "
 .if ${PORT_OPTIONS:MVFS}
 CONFIGURE_ARTS+=	--disable-artwork-imlib2
 PLIST_SUB+=	ART=""
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl \
 		jpeg:${PORTSDIR}/graphics/jpeg
 .else
 BROKEN=		VFS plugin required for album art loader, please rerun 'make config' and either disable ART or enable VFS
@@ -157,7 +157,7 @@ PLIST_SUB+=	HOTKEYS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOGG}
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	OGG=""
 .else
 CONFIGURE_ARGS+=	--disable-vorbis
@@ -176,7 +176,7 @@ PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
 PLIST_SUB+=	FLAC=""
 .else
 CONFIGURE_ARGS+=	--disable-flac
@@ -184,7 +184,7 @@ PLIST_SUB+=	FLAC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSNDFILE}
-LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 PLIST_SUB+=	SNDFILE=""
 .else
 CONFIGURE_ARGS+=	--disable-sndfile
@@ -192,7 +192,7 @@ PLIST_SUB+=	SNDFILE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MWAV}
-LIB_DEPENDS+=	wavpack:${PORTSDIR}/audio/wavpack
+LIB_DEPENDS+=	libwavpack.so:${PORTSDIR}/audio/wavpack
 PLIST_SUB+=	WAV=""
 .else
 CONFIGURE_ARGS+=	--disable-wavpack
@@ -201,8 +201,8 @@ PLIST_SUB+=	WAV="@comment "
 
 .if ${PORT_OPTIONS:MCDDA}
 PLIST_SUB+=	CDDA=""
-LIB_DEPENDS+=	cdio:${PORTSDIR}/sysutils/libcdio \
-		cddb:${PORTSDIR}/audio/libcddb
+LIB_DEPENDS+=	libcdio.so:${PORTSDIR}/sysutils/libcdio \
+		libcddb.so:${PORTSDIR}/audio/libcddb
 .else
 CONFIGURE_ARGS+=	--disable-cdda
 PLIST_SUB+=	CDDA="@comment "
@@ -224,7 +224,7 @@ PLIST_SUB+=	DUMB="@comment "
 
 .if ${PORT_OPTIONS:MNOTIFY}
 PLIST_SUB+=	NOTIFY=""
-LIB_DEPENDS+=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 .else
 CONFIGURE_ARGS+=	--disable-notify
 PLIST_SUB+=	NOTIFY="@comment "
@@ -261,7 +261,7 @@ PLIST_SUB+=	DCA="@comment "
 
 .if ${PORT_OPTIONS:MAAC}
 PLIST_SUB+=	AAC=""
-LIB_DEPENDS+=	faad:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=	libfaad.so:${PORTSDIR}/audio/faad
 .else
 CONFIGURE_ARGS+=	--disable-aac
 PLIST_SUB+=	AAC="@comment "
@@ -330,7 +330,7 @@ PLIST_SUB+=	PSF="@comment "
 
 .if ${PORT_OPTIONS:MDSP}
 PLIST_SUB+=	DSP=""
-LIB_DEPENDS+=	samplerate:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS+=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 .else
 CONFIGURE_ARGS+=	--disable-src
 PLIST_SUB+=	DSP="@comment "
@@ -345,7 +345,7 @@ PLIST_SUB+=	MONO2STEREO="@comment "
 
 .if ${PORT_OPTIONS:MVFS_ZIP}
 PLIST_SUB+=	VFS_ZIP=""
-LIB_DEPENDS+=	zip:${PORTSDIR}/archivers/libzip
+LIB_DEPENDS+=	libzip.so:${PORTSDIR}/archivers/libzip
 .else
 CONFIGURE_ARGS+=	--disable-vfs-zip
 PLIST_SUB+=	VFS_ZIP="@comment "

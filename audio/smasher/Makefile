@@ -11,9 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Cross platform audio loop slicer
 
-LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
-		mad.2:${PORTSDIR}/audio/libmad \
-		csound64.5:${PORTSDIR}/audio/csound
+LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
+		libmad.so:${PORTSDIR}/audio/libmad \
+		libcsound64.so:${PORTSDIR}/audio/csound
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig

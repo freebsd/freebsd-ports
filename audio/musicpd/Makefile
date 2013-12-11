@@ -10,8 +10,8 @@ DISTNAME=	mpd-${PORTVERSION}
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Remote-controllable music daemon
 
-LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
-		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad \
+		libcurl.so:${PORTSDIR}/ftp/curl
 
 LICENSE=	GPLv2
 
@@ -77,32 +77,32 @@ IGNORE=${MSG}  You also have musicpd.conf-- check carefully to see which one you
 .endif
 
 .if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
 .else
 CONFIGURE_ARGS+=--disable-flac \
 		--disable-oggflac
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=--disable-vorbis
 .endif
 
 .if ${PORT_OPTIONS:MTREMOR}
 CONFIGURE_ARGS+=--with-tremor
-LIB_DEPENDS+=	vorbisidec.1:${PORTSDIR}/audio/libtremor
+LIB_DEPENDS+=	libvorbisidec.so:${PORTSDIR}/audio/libtremor
 .endif
 
 .if ${PORT_OPTIONS:MAAC}
-LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=	libfaad.so:${PORTSDIR}/audio/faad
 .else
 CONFIGURE_ARGS+=--disable-aac
 .endif
 
 .if ${PORT_OPTIONS:MLAME}
 CONFIGURE_ARGS+=--enable-lame-encoder
-LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
+LIB_DEPENDS+=	libmp3lame.so:${PORTSDIR}/audio/lame
 .else
 CONFIGURE_ARGS+=--disable-lame-encoder
 .endif
@@ -120,20 +120,20 @@ CONFIGURE_ARGS+=--disable-audiofile
 .endif
 
 .if ${PORT_OPTIONS:MMUSEPACK}
-LIB_DEPENDS+=	mpcdec.7:${PORTSDIR}/audio/musepack
+LIB_DEPENDS+=	libmpcdec.so:${PORTSDIR}/audio/musepack
 .else
 CONFIGURE_ARGS+=--disable-mpc
 .endif
 
 .if ${PORT_OPTIONS:MMIKMOD}
-LIB_DEPENDS+=	mikmod.2:${PORTSDIR}/audio/libmikmod
+LIB_DEPENDS+=	libmikmod.so:${PORTSDIR}/audio/libmikmod
 CONFIGURE_ARGS+=--enable-mikmod
 .else
 CONFIGURE_ARGS+=--disable-mikmod
 .endif
 
 .if ${PORT_OPTIONS:MMODPLUG}
-LIB_DEPENDS+=	modplug.1:${PORTSDIR}/audio/libmodplug
+LIB_DEPENDS+=	libmodplug.so:${PORTSDIR}/audio/libmodplug
 CONFIGURE_ARGS+=--enable-modplug
 .else
 CONFIGURE_ARGS+=--disable-modplug
@@ -143,7 +143,7 @@ CONFIGURE_ARGS+=--disable-modplug
 CONFIGURE_ARGS+=--enable-bzip2 \
 		--enable-zip \
 		--enable-iso9660
-LIB_DEPENDS+=	zzip.13:${PORTSDIR}/devel/zziplib \
+LIB_DEPENDS+=	libzzip.so:${PORTSDIR}/devel/zziplib \
 		iso9660.8:${PORTSDIR}/sysutils/libcdio
 .endif
 
@@ -163,13 +163,13 @@ CONFIGURE_ARGS+=--disable-lastfm
 
 .if ${PORT_OPTIONS:MMMS}
 CONFIGURE_ARGS+=--enable-mms
-LIB_DEPENDS+=	mms.0:${PORTSDIR}/net/libmms
+LIB_DEPENDS+=	libmms.so:${PORTSDIR}/net/libmms
 .else
 CONFIGURE_ARGS+=--disable-mms
 .endif
 
 .if ${PORT_OPTIONS:MID3TAG}
-LIB_DEPENDS+=	id3tag.0:${PORTSDIR}/audio/libid3tag
+LIB_DEPENDS+=	libid3tag.so:${PORTSDIR}/audio/libid3tag
 .else
 CONFIGURE_ARGS+=--disable-id3
 .endif
@@ -182,33 +182,33 @@ CONFIGURE_ARGS+=--disable-ipv6
 
 .if ${PORT_OPTIONS:MAVAHI}
 CONFIGURE_ARGS+=--with-zeroconf=avahi
-LIB_DEPENDS+=	avahi-client.3:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 .else
 CONFIGURE_ARGS+=--with-zeroconf=no
 .endif
 
 .if ${PORT_OPTIONS:MMDNSRESPONDER}
 CONFIGURE_ARGS+=--with-zeroconf=bonjour
-LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
+LIB_DEPENDS+=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
 .else
 CONFIGURE_ARGS+=--with-zeroconf=no
 .endif
 
 .if ${PORT_OPTIONS:MAO}
 CONFIGURE_ARGS+=--enable-ao
-LIB_DEPENDS+=	ao.4:${PORTSDIR}/audio/libao
+LIB_DEPENDS+=	libao.so:${PORTSDIR}/audio/libao
 .else
 CONFIGURE_ARGS+=--disable-ao
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 .else
 CONFIGURE_ARGS+=--disable-pulse
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
 .else
 CONFIGURE_ARGS+=--disable-jack
 .endif
@@ -219,7 +219,7 @@ CONFIGURE_ARGS+=--disable-jack
 .  if ${PORT_OPTIONS:MTREMOR}
 IGNORE=		shoutcast and tremor do not coexist; use vorbis instead
 .  endif
-LIB_DEPENDS+=	shout.5:${PORTSDIR}/audio/libshout2
+LIB_DEPENDS+=	libshout.so:${PORTSDIR}/audio/libshout2
 CONFIGURE_ARGS+=--enable-vorbis-encoder \
 		--enable-shout
 .else
@@ -227,21 +227,21 @@ CONFIGURE_ARGS+=--disable-shout
 .endif
 
 .if ${PORT_OPTIONS:MSNDFILE}
-LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 CONFIGURE_ARGS+=	--enable-sndfile
 .else
 CONFIGURE_ARGS+=	--disable-sndfile
 .endif
 
 .if ${PORT_OPTIONS:MSAMPLERATE}
-LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS+=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 CONFIGURE_ARGS+=--enable-lsr
 .else
 CONFIGURE_ARGS+=--disable-lsr
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE3}
-LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	libsqlite3.so:${ORTSDIR}/databases/sqlite3
 CONFIGURE_ARGS+=--enable-sqlite
 .else
 CONFIGURE_ARGS+=--disable-sqlite

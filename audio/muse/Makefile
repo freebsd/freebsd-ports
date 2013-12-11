@@ -12,8 +12,8 @@ COMMENT=	Multiple Streaming Engine
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		ogg:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libogg.so:${PORTSDIR}/audio/libogg
 
 OPTIONS_DEFINE=	X11 LAME SNDFILE DOCS
 OPTIONS_DEFAULT=X11
@@ -42,13 +42,13 @@ CONFIGURE_ARGS+=--without-x --with-rubik
 .endif
 
 .if ${PORT_OPTIONS:MLAME}
-LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
+LIB_DEPENDS+=	libmp3lame.so:${PORTSDIR}/audio/lame
 .else
 CONFIGURE_ENV+=	ac_cv_header_lame_lame_h=no
 .endif
 
 .if ${PORT_OPTIONS:MSNDFILE}
-LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 .endif
 
 post-patch:

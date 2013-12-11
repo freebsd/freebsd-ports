@@ -10,7 +10,7 @@ MASTER_SITES=	http://sjeng.org/ftp/vorbis/
 MAINTAINER=	gamato@users.sf.net
 COMMENT=	Calculates the perceived sound level of an Ogg Vorbis file
 
-LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 GNU_CONFIGURE=	yes
 NO_STAGE=	yes

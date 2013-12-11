@@ -40,13 +40,13 @@ MIKMOD_CONFIGURE_ENABLE=	music-mod
 MODPLUG_LIB_DEPENDS=		libmodplug.so:${PORTSDIR}/audio/libmodplug
 MODPLUG_CONFIGURE_ENABLE=	music-mod-modplug
 
-FLAC_LIB_DEPENDS=		FLAC:${PORTSDIR}/audio/flac
+FLAC_LIB_DEPENDS=		libFLAC.so:${PORTSDIR}/audio/flac
 FLAC_CONFIGURE_ENABLE=		music-flac
 
-SMPEG_LIB_DEPENDS=		smpeg:${PORTSDIR}/multimedia/smpeg
+SMPEG_LIB_DEPENDS=		libsmpeg.so:${PORTSDIR}/multimedia/smpeg
 SMPEG_CONFIGURE_ENABLE=		music-mp3
 
-VORBIS_LIB_DEPENDS=		vorbis:${PORTSDIR}/audio/libvorbis
+VORBIS_LIB_DEPENDS=		libvorbis.so:${PORTSDIR}/audio/libvorbis
 VORBIS_CONFIGURE_ENABLE=	music-ogg
 
 .include <bsd.port.pre.mk>

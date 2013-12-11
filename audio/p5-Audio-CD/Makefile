@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl interface to libcdaudio (cd + cddb)
 
-LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
+LIB_DEPENDS=	libcdaudio.so:${PORTSDIR}/audio/libcdaudio
 
 USES=		perl5
 USE_PERL5=	configure

@@ -13,7 +13,7 @@ COMMENT=	Unix Amiga Delitracker Emulator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao
+LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
 
 USES=		gmake pkgconfig
 HAS_CONFIGURE=	yes
@@ -55,7 +55,7 @@ PLIST_SUB+=	FUSE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MXMMS}
-LIB_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=	libxmms.so:${PORTSDIR}/multimedia/xmms
 PLIST_SUB+=	XMMS=""
 .else
 CONFIGURE_ARGS+=--without-xmms

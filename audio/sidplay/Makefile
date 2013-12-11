@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commodore SID-chip emulator that plays SID music files
 
-LIB_DEPENDS=	sidplay:${PORTSDIR}/audio/libsidplay
+LIB_DEPENDS=	libsidplay.so:${PORTSDIR}/audio/libsidplay
 
 CONFIGURE_ARGS=	--with-sidplay-includes=${LOCALBASE}/include \
 		--with-sidplay-library=${LOCALBASE}/lib

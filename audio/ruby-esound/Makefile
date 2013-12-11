@@ -15,7 +15,7 @@ COMMENT=	A Ruby binding to the EsounD library
 
 BROKEN=	Fails to configure
 
-LIB_DEPENDS=	esd:${PORTSDIR}/audio/esound
+LIB_DEPENDS=	libesd.so:${PORTSDIR}/audio/esound
 
 USES=		pkgconfig
 NO_STAGE=	yes

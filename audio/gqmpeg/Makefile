@@ -11,7 +11,7 @@ MASTER_SITES=	SF
 MAINTAINER?=	lyngbol@wheel.dk
 COMMENT?=	Another gtk-based MP3 frontend
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	ogg123:${PORTSDIR}/audio/vorbis-tools \
 		xmp:${PORTSDIR}/audio/xmp
 

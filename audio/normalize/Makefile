@@ -10,7 +10,7 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	alex@fafula.com
 COMMENT=	A tool for adjusting the volume of wave/MP3 files to a standard level
 
-LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad
+LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
 
 USE_BZIP2=		yes
 NO_STAGE=	yes
@@ -29,7 +29,7 @@ XMMS_DESC=	XMMS plugin
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXMMS}
-LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=	libxmms.so:${PORTSDIR}/multimedia/xmms
 PLIST_SUB+=	XMMS=""
 .else
 CONFIGURE_ARGS+=--disable-xmms

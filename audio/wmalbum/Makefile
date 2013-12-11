@@ -10,8 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	A dockapp to display album covers for xmms
 
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
-		gdk_pixbuf_xlib.2:${PORTSDIR}/graphics/gdk-pixbuf
+LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
+		libgdk_pixbuf_xlib.so:${PORTSDIR}/graphics/gdk-pixbuf
 
 GNU_CONFIGURE=	yes
 NO_STAGE=	yes

@@ -12,8 +12,8 @@ COMMENT=	GUI for Apple iPod using GTK2
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	id3tag:${PORTSDIR}/audio/libid3tag \
-		gpod:${PORTSDIR}/audio/libgpod
+LIB_DEPENDS=	libid3tag.so:${PORTSDIR}/audio/libid3tag \
+		libgpod.so:${PORTSDIR}/audio/libgpod
 
 USES=		gettext gmake pkgconfig
 NO_STAGE=	yes
@@ -34,19 +34,19 @@ CURL_DESC=	Cover art download support via libcurl
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbisfile:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=	--without-ogg
 .endif
 
 .if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
 .else
 CONFIGURE_ARGS+=	--without-flac
 .endif
 
 .if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 .else
 CONFIGURE_ARGS+=	--without-curl
 .endif

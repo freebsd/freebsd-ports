@@ -11,14 +11,14 @@ MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE music player
 
-LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
-		tag-extras:${PORTSDIR}/audio/taglib-extras \
-		lastfm:${PORTSDIR}/audio/liblastfm \
-		ofa:${PORTSDIR}/audio/libofa \
-		avcodec:${PORTSDIR}/multimedia/ffmpeg \
-		qjson:${PORTSDIR}/devel/qjson \
-		qca:${PORTSDIR}/devel/qca \
-		dbus-1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
+		libtag-extras.so:${PORTSDIR}/audio/taglib-extras \
+		liblastfm.so:${PORTSDIR}/audio/liblastfm \
+		libofa.so:${PORTSDIR}/audio/libofa \
+		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
+		libqjson.so:${PORTSDIR}/devel/qjson \
+		libqca.so:${PORTSDIR}/devel/qca \
+		libdbus-1.so:${PORTSDIR}/devel/dbus
 BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator
 RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator \
 		${KDE4_PREFIX}/lib/kde4/kio_upnp_ms.so:${PORTSDIR}/net/kio-upnp-ms
@@ -55,7 +55,7 @@ RUN_DEPENDS+=	clamz:${PORTSDIR}/net/clamz
 .endif
 
 .if ${PORT_OPTIONS:MIPOD}
-LIB_DEPENDS+=	gpod:${PORTSDIR}/audio/libgpod
+LIB_DEPENDS+=	libgpod.so:${PORTSDIR}/audio/libgpod
 USE_GNOME+=	gdkpixbuf2 glib20
 PLIST_SUB+=	IPOD=""
 .else
@@ -64,8 +64,8 @@ PLIST_SUB+=	IPOD="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMP3TUNES}
-LIB_DEPENDS+=	loudmouth-1:${PORTSDIR}/net-im/loudmouth \
-		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth \
+		libcurl.so:${PORTSDIR}/ftp/curl
 USE_GNOME+=	glib20 libxml2
 PLIST_SUB+=	MP3TUNES=""
 .else
@@ -74,7 +74,7 @@ PLIST_SUB+=	MP3TUNES="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMTP}
-LIB_DEPENDS+=	mtp:${PORTSDIR}/audio/libmtp
+LIB_DEPENDS+=	libmtp.so:${PORTSDIR}/audio/libmtp
 PLIST_SUB+=	MTP=""
 .else
 CMAKE_ARGS+=	-DWITH_Mtp:BOOL=Off

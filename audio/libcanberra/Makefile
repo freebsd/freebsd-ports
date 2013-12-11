@@ -14,7 +14,7 @@ COMMENT=	Implementation of the Freedesktop sound theme spec
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LGPL
 
-LIB_DEPENDS=	vorbisfile:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
 
 USES=		gmake pkgconfig
 NO_STAGE=	yes
@@ -37,13 +37,13 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 
 .if defined(SLAVEPORT)
 USE_GNOME+=	gtk30
-LIB_DEPENDS+=	canberra:${PORTSDIR}/audio/libcanberra
+LIB_DEPENDS+=	libcanberra.so:${PORTSDIR}/audio/libcanberra
 CONFIGURE_ARGS+=--enable-gtk3
 .else
 CONFIGURE_ARGS+=--disable-gtk3
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PLIST_SUB+=	PULSE=""
 .else
 CONFIGURE_ARGS+=--disable-pulse

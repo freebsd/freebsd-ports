@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS Input plugin for playing TFMX tunes
 
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 USE_GNOME=	gtk12 lthack
 NO_STAGE=	yes
