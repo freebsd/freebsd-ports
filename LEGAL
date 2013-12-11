@@ -252,7 +252,7 @@ svm_light.tar.gz	science/svmlight	The software must not be further distributed w
 systemc-2*.tgz		cad/systemc		License agreement required
 systemsim-cell-*	emulators/linux-systemsimcell	Redistribution of pre-compiled binaries is not permitted
 taetgen-*		math/tetgen		Academic or personal use only
-tarsnap-*		sysutils/tarsnap	Redistribution restricted
+tarsnap-*		sysutils/tarsnap	license restricts redistribution of source and binaries
 tcetest_*		games/linux-enemyterritory-tce	Redistribution limited
 teamspeak*		audio/teamspeak3-server	No redistribution
 texcm-ttf-20010117/*	x11-fonts/texcm-ttf	Cannot be sold or distributed with any commercial product
