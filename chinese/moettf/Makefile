@@ -17,7 +17,7 @@ EXTRACT_DEPENDS=unrar:${PORTSDIR}/archivers/unrar
 
 DIST_SUBDIR=	zh-moettf
 
-NO_CDROM=	Contact Taiwan's Ministry of Education for commercial use.
+NO_CDROM=	Contact Taiwan's Ministry of Education for commercial use
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
