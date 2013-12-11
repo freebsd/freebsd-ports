@@ -53,7 +53,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTBB}
-LIB_DEPENDS+=	tbb:${PORTSDIR}/devel/tbb
+LIB_DEPENDS+=	libtbb.so:${PORTSDIR}/devel/tbb
 CONFIGURE_ARGS+=--with-tbb-include=${LOCALBASE}/include	\
 		--with-tbb-library=${LOCALBASE}/lib
 .endif
@@ -64,9 +64,9 @@ CONFIGURE_ARGS+=--enable-vis			\
 		--with-freetype=${LOCALBASE}	\
 		--with-gl2ps=${LOCALBASE}
 USE_GL=		glu
-LIB_DEPENDS+=	ftgl:${PORTSDIR}/graphics/ftgl		\
-		freetype:${PORTSDIR}/print/freetype2	\
-		gl2ps:${PORTSDIR}/print/gl2ps
+LIB_DEPENDS+=	libftgl.so:${PORTSDIR}/graphics/ftgl		\
+		libfreetype.so:${PORTSDIR}/print/freetype2	\
+		libgl2ps:${PORTSDIR}/print/gl2ps
 PLIST_SUB+=	VIS=""
 . if ${PORT_OPTIONS:MOCAF}
 CONFIGURE_ARGS+=--enable-caf
@@ -79,8 +79,8 @@ CONFIGURE_ARGS+=--enable-draw			\
 		--with-tcl=${TCL_LIBDIR}	\
 		--with-tk=${TK_LIBDIR}
 USE_TK=		84+
-LIB_DEPENDS+=	itcl.${ITCL_VER}:${PORTSDIR}/lang/itcl		\
-		Tix${TIX_VER}:${PORTSDIR}/x11-toolkits/tix
+LIB_DEPENDS+=	libitcl.so.${ITCL_VER}:${PORTSDIR}/lang/itcl		\
+		libTix${TIX_VER}.so:${PORTSDIR}/x11-toolkits/tix
 ITCL_VER=	3
 TIX_VER=	8.4.3
 TIX_MM=		8.4.3
@@ -103,7 +103,7 @@ PLIST_SUB+=	VIS="@comment " DRAW="@comment " DE="@comment " OCAF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFI}
-LIB_DEPENDS+=	freeimageplus:${PORTSDIR}/graphics/freeimage
+LIB_DEPENDS+=	libfreeimageplus.so:${PORTSDIR}/graphics/freeimage
 CONFIGURE_ARGS+=--with-freeimage=${LOCALBASE}
 .else
 PLIST_SUB+=	FI="@comment "

@@ -11,13 +11,13 @@ COMMENT=	CSG modelling system from the US Ballistic Research Laboratory
 
 BUILD_DEPENDS=	${LOCALBASE}/include/tnt/jama_lu.h:${PORTSDIR}/math/jama	\
 		xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		drm:${PORTSDIR}/graphics/libdrm \
-		png15:${PORTSDIR}/graphics/png \
-		rle:${PORTSDIR}/graphics/urt \
-		freetype:${PORTSDIR}/print/freetype2 \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
+		libdrm.so:${PORTSDIR}/graphics/libdrm \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		librle.so:${PORTSDIR}/graphics/urt \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_BZIP2=	yes
 USE_GL=		gl glu

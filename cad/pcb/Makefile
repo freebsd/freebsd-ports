@@ -12,8 +12,8 @@ COMMENT=	X11 interactive printed circuit board layout system
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
-		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
+		libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 RUN_DEPENDS=	m4>=1.4.11:${PORTSDIR}/devel/m4 \
 		${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus
 BUILD_DEPENDS:=	${RUN_DEPENDS}

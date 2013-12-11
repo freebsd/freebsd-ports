@@ -26,7 +26,7 @@ NO_STAGE=	yes
 FEATURES+=	MOTIF
 
 .if ${PORT_OPTIONS:MT1LIB}
-LIB_DEPENDS+=	t1.5:${PORTSDIR}/devel/t1lib
+LIB_DEPENDS+=	libt1.so:${PORTSDIR}/devel/t1lib
 FEATURES+=	T1LIB
 .endif
 
