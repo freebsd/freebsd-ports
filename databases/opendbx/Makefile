@@ -49,7 +49,7 @@ PLIST_SUB+=		WITHPGSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2
+LIB_DEPENDS+=		libsqlite.so:${PORTSDIR}/databases/sqlite2
 CONFIGURE_MODULES+=	"sqlite"
 PLIST_SUB+=		WITHSQLITE=""
 .else
@@ -57,7 +57,7 @@ PLIST_SUB+=		WITHSQLITE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE3}
-LIB_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 CONFIGURE_MODULES+=	"sqlite3"
 PLIST_SUB+=		WITHSQLITE3=""
 .else
@@ -65,7 +65,7 @@ PLIST_SUB+=		WITHSQLITE3="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMSSQL}
-LIB_DEPENDS+=		sybdb.5:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=		libsybdb.so:${PORTSDIR}/databases/freetds
 CONFIGURE_MODULES+=	"mssql"
 PLIST_SUB+=		WITHMSSQL=""
 .else
@@ -73,7 +73,7 @@ PLIST_SUB+=		WITHMSSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSYBASE}
-LIB_DEPENDS+=		ct.4:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=		libct.so:${PORTSDIR}/databases/freetds
 CONFIGURE_MODULES+=	"sybase"
 PLIST_SUB+=		WITHSYBASE=""
 .else

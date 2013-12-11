@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	High-performance distributed memory object cache system
 
-LIB_DEPENDS=	event-1:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent-1.so:${PORTSDIR}/devel/libevent
 
 TEST_DEPENDS=	prove:${PORTSDIR}/lang/${PERL_PORT} \
 		git:${PORTSDIR}/devel/git
@@ -68,7 +68,7 @@ CONFIGURE_ARGS+=	--enable-replication
 .endif
 
 .if ${PORT_OPTIONS:MSASL} && !defined(WITHOUT_SASL)
-LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--enable-sasl
 CFLAGS+=		-I${LOCALBASE}/include
 CPPFLAGS+=		${CFLAGS}

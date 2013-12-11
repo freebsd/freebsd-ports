@@ -64,10 +64,10 @@ CMAKE_ARGS+=	-DWITH_SQLITE3:BOOL=OFF
 PLIST_SUB+=	ODBC=""
 CMAKE_ARGS+=	-DWITH_ODBC:BOOL=ON
 .if ${PORT_OPTIONS:MUODBC}
-LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
 CMAKE_ARGS+=	-DODBC_LIBRARY:FILE_PATH=${LOCALBASE}/lib/libodbc.so
 .elif ${PORT_OPTIONS:MIODBC}
-LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS+=	libiodbc.so:${PORTSDIR}/databases/libiodbc
 CMAKE_ARGS+=	-DODBC_LIBRARY:FILE_PATH=${LOCALBASE}/lib/libiodbc.so
 .endif
 .else
@@ -76,7 +76,7 @@ CMAKE_ARGS+=	-DWITH_ODBC:BOOL=OFF
 .endif
 
 . if ${PORT_OPTIONS:MBOOST}
-LIB_DEPENDS+=	boost_date_time:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
 PLIST_SUB+=	BOOST=""
 CMAKE_ARGS+=	-DWITH_BOOST:BOOL=ON
 .else

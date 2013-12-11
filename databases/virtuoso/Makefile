@@ -19,7 +19,7 @@ BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk\
 		flex>2.5.4:${PORTSDIR}/textproc/flex\
 		gperf>=3.0.3:${PORTSDIR}/devel/gperf\
 		unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
 
 .if defined(.PARSEDIR)
 USE_GMAKE=	yes
@@ -70,7 +70,7 @@ check:
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
 CONFIGURE_ARGS+=--enable-imagemagick=${LOCALBASE}
-LIB_DEPENDS+=	MagickWand:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	libMagickWand.so:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	WITH_IMAGEMAGICK=""
 .else
 CONFIGURE_ARGS+=--disable-imagemagick
@@ -79,7 +79,7 @@ PLIST_SUB+=	WITH_IMAGEMAGICK="@comment "
 
 .if ${PORT_OPTIONS:MIODBC}
 CONFIGURE_ARGS+=--with-iodbc=${LOCALBASE}
-LIB_DEPENDS+=	iodbc:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS+=	libiodbc.so:${PORTSDIR}/databases/libiodbc
 IODBC_CPPFLAGS=
 PLIST_SUB+=	WITH_IODBC=""
 .else
@@ -89,7 +89,7 @@ PLIST_SUB+=	WITH_IODBC="@comment "
 
 .if ${PORT_OPTIONS:MKERBEROS}
 CONFIGURE_ARGS+=--enable-krb=${LOCALBASE}
-LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=	libkrb5.so.3:${PORTSDIR}/security/krb5
 .else
 CONFIGURE_ARGS+=--disable-krb
 .endif

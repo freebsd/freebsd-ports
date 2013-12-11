@@ -13,7 +13,7 @@ COMMENT=	Pure language binding to the SQLite3 library
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 USES=		pure
 

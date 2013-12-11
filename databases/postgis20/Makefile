@@ -9,9 +9,9 @@ MASTER_SITES=	http://download.osgeo.org/postgis/source/
 MAINTAINER=	matt.trisoline@intermedix.com
 COMMENT=	Adds support for geographic objects to PostgreSQL databases
 
-LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj \
-		geos:${PORTSDIR}/graphics/geos \
-		json:${PORTSDIR}/devel/json-c
+LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj \
+		libgeos.so:${PORTSDIR}/graphics/geos \
+		libjson.so:${PORTSDIR}/devel/json-c
 RUN_DEPENDS=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
 CONFLICTS=	postgis-1.*
@@ -47,7 +47,7 @@ PLIST_SUB+=		LOADERGUI="@comment "
 .if ${OSVERSION} < 900033
 BROKEN=			Raster suppport is broken on FreeBSD < 9.x
 .endif
-LIB_DEPENDS+=		gdal:${PORTSDIR}/graphics/gdal
+LIB_DEPENDS+=		libgdal.so:${PORTSDIR}/graphics/gdal
 CONFIGURE_ARGS+=	--with-raster --with-gdalconfig=${LOCALBASE}/bin/gdal-config
 PLIST_SUB+=		RASTER=""
 .else

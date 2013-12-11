@@ -24,13 +24,13 @@ LICENSE=	GPLv2
 BROKEN=		Does not build
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		proj:${PORTSDIR}/graphics/proj \
-		tiff:${PORTSDIR}/graphics/tiff \
-		fftw3:${PORTSDIR}/math/fftw3 \
-		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libproj.so:${PORTSDIR}/graphics/proj \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USES=		gettext gmake iconv readline perl5 tk
@@ -92,7 +92,7 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MODBC}
-LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=	libodbc.so:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=--with-odbc
 PLIST_SUB+=	ODBC=""
 .else

@@ -48,7 +48,7 @@ OPENSSL_DESC=	Use OpenSSL instead of bundled yassl
 
 .if !defined(MARIADB_CLIENT_SLAVE)
 CONFIGURE_ARGS+=	--with-libevent=${LOCALBASE}
-LIB_DEPENDS+=	event-1:${PORTSDIR}/devel/libevent
+LIB_DEPENDS+=	libevent-1.so:${PORTSDIR}/devel/libevent
 
 MAN1=	innochecksum.1 my_print_defaults.1 myisam_ftdump.1 myisamchk.1 \
 	myisamlog.1 myisampack.1 mysql.server.1 mysql_client_test_embedded.1 \
@@ -186,7 +186,7 @@ PLIST_SUB+=	HANDLERSOCKET="@comment "
 .if ${PORT_OPTIONS:MOQGRAPH}
 CONFIGURE_ARGS+=	--with-plugin-oqgraph
 PLIST_SUB+=	OQGRAPH=""
-LIB_DEPENDS+=	boost_system:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=	libboost_system.so:${PORTSDIR}/devel/boost-libs
 PLUGINS+=	oqgraph
 .else
 CONFIGURE_ARGS+=	--without-plugin-oqgraph

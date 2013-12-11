@@ -12,7 +12,7 @@ COMMENT=	Lightweight connection pooler for PostgreSQL
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	event-2:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libevent-2.so:${PORTSDIR}/devel/libevent2
 
 PORTSCOUT=	site:http://pgfoundry.org/frs/?group_id=1000258
 

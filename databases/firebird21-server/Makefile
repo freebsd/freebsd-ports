@@ -18,7 +18,7 @@ CONFLICTS?=	${PORTNAME}20-client-* \
 		${PORTNAME}20-server-* \
 		${PORTNAME}25-server-*
 
-LIB_DEPENDS=	icuuc:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
 
 USES=		bison
 USE_BZIP2=	yes
@@ -57,7 +57,7 @@ IGNORE=		your system does not support sysvipc
 
 .if !defined(CLIENT_ONLY)
 # Server part stuff
-LIB_DEPENDS+=	fbembed.2:${PORTSDIR}/databases/firebird21-client
+LIB_DEPENDS+=	libfbembed.so:${PORTSDIR}/databases/firebird21-client
 
 AUTOGENARGS=	--without-editline --with-lock-manager
 

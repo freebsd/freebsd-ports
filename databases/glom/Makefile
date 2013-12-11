@@ -15,12 +15,12 @@ COMMENT=	GNOME database designer and user interface
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	gdamm-4.0.12:${PORTSDIR}/databases/libgdamm \
-		gconfmm-2.6:${PORTSDIR}/devel/gconfmm26 \
-		gtksourceviewmm-2.0.2:${PORTSDIR}/x11-toolkits/libgtksourceviewmm \
-		avahi-ui.0:${PORTSDIR}/net/avahi-gtk \
-		epc-1.0.2:${PORTSDIR}/www/libepc \
-		goocanvasmm-1.0.5:${PORTSDIR}/graphics/goocanvasmm
+LIB_DEPENDS=	libgdamm-4.0.so:${PORTSDIR}/databases/libgdamm \
+		libgconfmm-2.6.so:${PORTSDIR}/devel/gconfmm26 \
+		libgtksourceviewmm-2.0.so:${PORTSDIR}/x11-toolkits/libgtksourceviewmm \
+		libavahi-ui.so:${PORTSDIR}/net/avahi-gtk \
+		libepc-1.0.so:${PORTSDIR}/www/libepc \
+		libgoocanvasmm-1.0.so:${PORTSDIR}/graphics/goocanvasmm
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/libgda-postgres-4.0.pc:${PORTSDIR}/databases/libgda4-postgresql
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \

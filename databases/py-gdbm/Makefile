@@ -13,7 +13,7 @@ DISTFILES=	${PYTHON_DISTFILE}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python bindings to the GNU dbm library
 
-LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
 
 PORTSCOUT=	ignore:1
 

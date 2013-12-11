@@ -13,7 +13,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl5 interface to the TokyoTyrant
 
 BUILD_DEPENDS=	tokyotyrant>=1.1.40:${PORTSDIR}/databases/tokyotyrant
-LIB_DEPENDS=	tokyotyrant:${PORTSDIR}/databases/tokyotyrant
+LIB_DEPENDS=	libtokyotyrant.so:${PORTSDIR}/databases/tokyotyrant
 
 USES=		perl5
 USE_PERL5=	configure

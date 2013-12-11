@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Oracle Open Source ODBC driver
 
-LIB_DEPENDS=	odbc:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS=	--with-unixODBC=${LOCALBASE}
 
 BUILD_DEPENDS=	${ORACLE_HOME}/lib/libclntst8.a:${PORTSDIR}/databases/oracle8-client

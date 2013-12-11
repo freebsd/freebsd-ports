@@ -10,7 +10,7 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	Network interface of Tokyo Cabinet
 
 BUILD_DEPENDS=	tokyocabinet>=1.4.20:${PORTSDIR}/databases/tokyocabinet
-LIB_DEPENDS=	tokyocabinet:${PORTSDIR}/databases/tokyocabinet
+LIB_DEPENDS=	libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

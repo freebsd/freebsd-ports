@@ -13,7 +13,7 @@ COMMENT=	Firebird RDBMS bindings for Python
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	fbclient:${PORTSDIR}/databases/firebird25-client
+LIB_DEPENDS=	libfbclient.so:${PORTSDIR}/databases/firebird25-client
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install

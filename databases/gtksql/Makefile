@@ -11,7 +11,7 @@ COMMENT=	Graphical query tool for PostgreSQL/MySQL/SQLite
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	avahi-client:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=--without-postgresql
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE3}
-LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 .else
 CONFIGURE_ARGS+=--without-sqlite
 .endif

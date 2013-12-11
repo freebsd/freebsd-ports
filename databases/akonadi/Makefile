@@ -15,9 +15,9 @@ COMMENT=	Storage server for KDE-Pim
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 # Let process generate meaningful backtrace on core dump.
-LIB_DEPENDS+=	execinfo:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 USE_KDE4=	kdehier kdeprefix sharedmime automoc4 soprano

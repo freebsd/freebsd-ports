@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/jlaffaye
 MAINTAINER=	lichray@gmail.com
 COMMENT=	A Go interface for SQLite3
 
-LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 GO_PKGNAME=	${SUBLIBDIR}/${PORTNAME}
 

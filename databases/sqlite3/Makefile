@@ -121,7 +121,7 @@ RTREE_INT=		"float"
 
 .if ${PORT_OPTIONS:MICU}
 BUILD_DEPENDS+=		${LOCALBASE}/bin/icu-config:${PORTSDIR}/devel/icu
-LIB_DEPENDS+=		icudata:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=		libicudata.so:${PORTSDIR}/devel/icu
 CPPFLAGS+=		-DSQLITE_ENABLE_ICU=1
 CPPFLAGS+=		`${LOCALBASE}/bin/icu-config --cppflags`
 LDFLAGS+=		`${LOCALBASE}/bin/icu-config --ldflags`
