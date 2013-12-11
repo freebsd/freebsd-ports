@@ -8,19 +8,19 @@
 #    *** distributed, please inform portmgr@FreeBSD.org so that the     ***
 #    *** distfile/packages can be removed from the FTP site.            ***
 #    **********************************************************************
-# 
+#
 # Some of the ports in this directory have restrictive copyrights prohibiting
 # their actual redistribution on mass media.  When creating compilations
 # of FreeBSD on such mass media, you should be sure and NOT distribute
 # the original source tarballs for such ports in your distfiles directory.
 # To do so will invite needless problems from the various parties involved.
-# 
+#
 # Since those connected to the net will also be able to use the ports framework
 # to automatically fetch their own original sources and thus complete the puzzle,
 # the hardship is not as severe as it might otherwise be.
-# 
+#
 # Such ports are listed below:
-# 
+#
 # Dist			Port			Why
 # ------------------------------------------------------------------------------
 *-for-1.4.tgz	net/dgd-lpmud			No commercial use
@@ -52,9 +52,11 @@ blast*.freebsd-*	biology/blast		Must be downloaded from vendor site
 boodler-*		audio/boodler		Not for commercial use
 Browser*.tar.gz		net/ldapbrowser		No reply from author regarding redistribution licensing
 bzip-*			archivers/bzip		Some algorithms used may infringe certain US patents.  Opinions differ.  Commercial use could render you liable to unfriendly legal action
+candycruncher_demo*	games/linux-candycruncher-demo	Redistribution is limited, see license
 citrix_ica-*		net/citrix_ica		License prohibits redistribution
 cli_freebsd*		sysutils/arcconf	May not be redistributed in binary form
 clustalw-*		biology/clustalw	No commercial use
+coldwar_demo*		games/linux-coldwar-demo	Redistribution is limited, see license
 condor_src-*		sysutils/condor		Requires (free) registration
 contool-*		sysutils/contool	Do not incorporate the source code into a product which is subsequently sold
 cos-*			java/cos		Special conditions apply for commercial use
@@ -62,12 +64,12 @@ cosmo/*			games/cosmo		Possible copyright infringement
 CrystalSVGforGnomeIcons* x11-themes/gnome-icons-crystal Author rights unclear
 cyberbit/*		x11-fonts/cyberbit-ttfonts Not free for commercial use
 dansguardian-2.[678]*	www/dansguardian	Not free for installation by 3rd parties charging for installation or support; not free for commercial use
-darwinia-demo		games/linux-darwinia-demo Redistribution limited
+darwinia-demo*		games/linux-darwinia-demo	Redistribution is limited, see license
 datamodeler		databases/datamodeler	Packaging prohibited by Oracle license
 dbvis			java/dbvis		Redistribution is not permitted
 dcl-*-C.tar.gz		science/cdcl		No commercial use
 dcl-*.tar.gz		science/dcl		No commercial use
-defcon			games/linux-defcon	Redistribution limited
+defcon*			games/linux-defcon	Redistribution is limited, see license
 djbdns*			dns/djbdns		No license -- see http://cr.yp.to/softwarelaw.html
 djbdns-1.05.tar.gz	mail/qmail-conf		Borrows code from djbdns, thus falls under the same restrictions as dns/djbdns
 djbfft-*		math/djbfft		No license -- see http://cr.yp.to/softwarelaw.html
@@ -112,13 +114,17 @@ fvcom/sourcecode1.tar.gz	science/fvcom-mpi	Requires (free) registration
 gamess.*/gamess*	science/gamess		No Redistribution
 giac-*			math/giacxcas		The french documentation is for non commercial only use
 giftool*		graphics/giftool	Do not redistribute for profit
+gishdemo-*		games/gish-demo		(c) Copyright 2004 Chronic Logic All rights reserved
 glimpse-*		textproc/glimpse	Do not sell for profit
 gnome2/mcitymicrogui-default* x11-themes/metacity-theme-microgui Themes may contain artwork not done by the author.  Keep FreeBSD safe if the theme author violated copyrights
 GoogleEarthLinux-*	astro/google-earth	Not really sure about the redistribution terms
+gorky17_demo*		games/linux-gorky17-demo	Redistribution is limited, see license
 groupoffice-com-*	www/groupoffice		Free for personal use only
 gsview*			print/gsview		Can only be distributed for free
 hcwPVRP2.sys		multimedia/pvr250	Driver is part of the CD-ROM distribution coming with the TV card
 hcwPVRP2.sys		multimedia/pvrxxx	Driver is part of the CD-ROM distribution coming with the TV card
+hdb_demo*		games/linux-hdb-demo	Redistribution is limited, see license
+HeroesOfMightAndMagic-*	games/HeroesOfMightAndMagic	Software is commercial
 homard-*		french/homard		Only free for use in conjunction with french/aster.  For any other purpose, you have to acquire a license
 hplip-*-plugin.run	print/hplip-plugin	License agreement is required
 httprint_freebsd_*.zip	security/httprint	No cost for personal, education and non-commercial use
@@ -171,6 +177,7 @@ l_cc_p*_*.*.*.tar.gz	lang/icc		No redistribution allowed
 l_fc_p*_*.*.*.tar.gz	lang/ifc		No redistribution allowed
 macopix-*.tar.gz	games/macopix		Contains commercial character data
 madfufw-*		audio/madfufw		No redistribution of firmware files
+majesty_demo*		games/linux-majesty-demo	Redistribution is limited, see license
 MB339-PAN.zip		games/flightgear-mb339-pan Redistribution prohibited
 mikachan-ttfonts/ver*.*	japanese/mikachan-ttfonts Do not sell distfile
 mindfocus-*		games/mindfocus		Contains commercial character data
@@ -184,6 +191,7 @@ nero2_linux_*		games/linux-nerogame	Freeware, but license terms are unclear
 NeroDigitalAudio.zip	audio/linux-neroaaccodec Redistribution forbidden
 nerolinux-*		sysutils/linux-nero	Must be downloaded from their website and a serial number must be bought
 NetComponents-*		java/netcomponents	No redistribution except as part of a substantially different product
+ningpo_demo*		games/linux-ningpo-demo	Redistribution is limited, see license
 nntpcache-*		news/nntpcache		Commercial or government use requires license
 nttcp-*			benchmarks/nttcp	No commercial use
 ofb06trial.tgz		editors/softmaker-office  distribution with other products of any kind forbiden
@@ -263,7 +271,7 @@ tw_cli-*		sysutils/tw_cli		Redistribution forbidden by license
 uDrawGraph-*		graphics/uDrawGraph	Binary under GNU LGPL without accompanying source
 ue*dev.zip		editors/uemacs		Resale allowed for media cost only
 UniFi.unix.zip		net-mgmt/unifi		Redistribution limited
-uplink-demo		games/linux-uplink-demo	Redistribution limited
+uplink-demo*		games/linux-uplink-demo	Redistribution is limited, see license
 uppaal-*.zip		devel/uppaal		Downloading requires completion of a license agreement
 ut2004-lnx-*		games/linux-ut2004-demo	Redistribution limited
 ut_linux_mgr_*		sysutils/linux-megamgr	Redistribution prohibited
