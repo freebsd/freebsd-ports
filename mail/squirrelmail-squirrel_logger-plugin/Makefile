@@ -5,7 +5,7 @@ PORTNAME=	squirrel_logger
 PORTVERSION=	2.3
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.2.7
 
-MAINTAINER=	morinaga@riken.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Logging functionality for your webmail interface
 
 USE_SM_COMPAT=	yes
