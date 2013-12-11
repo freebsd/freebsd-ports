@@ -1,0 +1,16 @@
+To use sword, you need to have bible, commentary and/or lexicon
+modules. You can install those from the crosswire website in two
+ways. If you live in a persecuted country however and do not wish
+to risk detection, you should *not* try this.
+
+  1. Use installmgr (doesn't work when port is built WITHOUT_CURL). E.g.:
+     # installmgr -init
+     # installmgr -r crosswire
+     # installmgr -ri crosswire ASV
+     See `installmgr --help` for details.
+  2. Download raw zip-archives from
+       http://www.crosswire.org/sword/modules/
+     and unpack them in %%PREFIX%%/share/sword.
+
+You probably want to install a bible-application that uses sword,
+like bibletime or xiphos.
