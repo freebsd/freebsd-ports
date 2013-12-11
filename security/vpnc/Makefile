@@ -18,6 +18,8 @@ USES=		shebangfix gmake perl5
 USE_PERL5=	build
 USE_RC_SUBR=	vpnc
 
+LEGAL_TEXT=	Redistribution is not allowed if liked against OpenSSL
+
 ALL_TARGET=	all
 SHEBANG_FILES=	makeman.pl
 
