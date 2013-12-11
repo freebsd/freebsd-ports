@@ -13,9 +13,9 @@ LICENSE=	ISCL
 
 BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man \
 		${LOCALBASE}/include/xorg/xserver-properties.h:${PORTSDIR}/x11-servers/xorg-server
-LIB_DEPENDS=	gtkmm-3:${PORTSDIR}/x11-toolkits/gtkmm30 \
-		dbus-glib:${PORTSDIR}/devel/dbus-glib \
-		boost_serialization:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libgtkmm-3.so:${PORTSDIR}/x11-toolkits/gtkmm30 \
+		libdbus-glib.so:${PORTSDIR}/devel/dbus-glib \
+		libboost_serialization.so:${PORTSDIR}/devel/boost-libs
 
 MAN1=		easystroke.1
 

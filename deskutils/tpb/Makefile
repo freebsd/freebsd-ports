@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	On-Screen-Display for hotkeys of IBM ThinkPads
 
-LIB_DEPENDS=	xosd.4:${PORTSDIR}/misc/xosd
+LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
 
 ONLY_FOR_ARCHS=	i386 amd64
 

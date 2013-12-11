@@ -10,10 +10,10 @@ MASTER_SITES=	https://launchpadlibrarian.net/137290048/ \
 MAINTAINER=	fidaj@ukr.net
 COMMENT=	Cairo-Dock is a light and eye-candy dock
 
-LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
-		curl:${PORTSDIR}/ftp/curl \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		gtkglext-x11-1:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
+		libcurl.so:${PORTSDIR}/ftp/curl \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libgtkglext-x11-1.so:${PORTSDIR}/x11-toolkits/gtkglext
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		sox:${PORTSDIR}/audio/sox
 

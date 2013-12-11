@@ -11,8 +11,8 @@ DISTNAME=	${PORTNAME}-rra-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SynCE legacy plugin for the OpenSync framework
 
-LIB_DEPENDS=	opensync.0:${PORTSDIR}/devel/libopensync022 \
-		rra.0:${PORTSDIR}/palm/synce-librra
+LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync022 \
+		librra.so:${PORTSDIR}/palm/synce-librra
 
 USES=		pkgconfig
 GNU_CONFIGURE=	yes

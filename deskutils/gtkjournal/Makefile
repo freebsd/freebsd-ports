@@ -12,9 +12,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk+-2 journal/diary
 
-LIB_DEPENDS=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtkmm20 \
-		sqlite.2:${PORTSDIR}/databases/sqlite2 \
-		gtkspell:${PORTSDIR}/textproc/gtkspell
+LIB_DEPENDS=	libgtkmm-2.0.so:${PORTSDIR}/x11-toolkits/gtkmm20 \
+		libsqlite.so:${PORTSDIR}/databases/sqlite2 \
+		libgtkspell.so:${PORTSDIR}/textproc/gtkspell
 
 PLIST_FILES=	bin/gtkjournal lib/libsqlitemm.a lib/libsqlitemm.la \
 		lib/libsqlitemm.so lib/libsqlitemm.so.0

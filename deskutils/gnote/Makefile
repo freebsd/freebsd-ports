@@ -13,11 +13,11 @@ COMMENT=	A port of Tomboy to C++, note taking application
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		pcre.3:${PORTSDIR}/devel/pcre \
-		gtkspell.0:${PORTSDIR}/textproc/gtkspell \
-		boost_filesystem:${PORTSDIR}/devel/boost-libs \
-		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libgtkspell.so:${PORTSDIR}/textproc/gtkspell \
+		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
+		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 USE_XZ=		yes
 USE_GNOME=	gnomehack gnomeprefix gconf2 gtk20 intltool libxml2 libxslt \
@@ -36,7 +36,7 @@ DOCS=		AUTHORS ChangeLog NEWS README TODO
 MAN1=		gnote.1
 
 .if !defined(WITHOUT_APPLET)
-LIB_DEPENDS+=	panelappletmm-2.6:${PORTSDIR}/x11-toolkits/libpanelappletmm
+LIB_DEPENDS+=	libpanelappletmm-2.6.so:${PORTSDIR}/x11-toolkits/libpanelappletmm
 CONFIGURE_ARGS+=--enable-applet
 PLIST_SUB+=	APPLET=""
 .else

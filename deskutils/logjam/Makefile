@@ -10,8 +10,8 @@ MASTER_SITES=	http://andy-shev.github.com/LogJam/download/
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	A GTK2 interface to livejournals, ie www.livejournal.com
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-	        dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
 MAN1=		logjam.1
 
@@ -26,18 +26,18 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 .ifndef(WITHOUT_GTKSPELL)
-LIB_DEPENDS+=		gtkspell.0:${PORTSDIR}/textproc/gtkspell
+LIB_DEPENDS+=		libgtkspell.so:${PORTSDIR}/textproc/gtkspell
 .else
 CONFIGURE_ARGS+=	--without-gtkspell
 .endif
 
 .if defined(WITH_SQLITE)
 CONFIGURE_ARGS+=	--with-sqlite3
-LIB_DEPENDS+=		sqlite3.8:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 .endif
 
 .if defined(WITH_XMMS)
-LIB_DEPENDS+=		xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=		libxmms.so:${PORTSDIR}/multimedia/xmms
 PLIST_SUB+=		WITH_XMMS=""
 .else
 PLIST_SUB+=		WITH_XMMS="@comment "

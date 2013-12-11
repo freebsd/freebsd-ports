@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	44
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Libraries for KDE-PIM applications
 
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 CONFLICTS_INSTALL=	kdepim-runtime-4.*
 

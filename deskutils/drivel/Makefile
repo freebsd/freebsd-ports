@@ -11,7 +11,7 @@ COMMENT=	Blog editor for GNOME
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
 OPTIONS_DEFINE=	GTKSPELL
 OPTIONS_DEFAULT=	GTKSPELL
