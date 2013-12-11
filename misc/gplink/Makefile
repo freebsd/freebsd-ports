@@ -15,20 +15,17 @@ LICENSE_COMB=	dual
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS} ${USB_CFLAGS}" \
 		LDFLAGS="${USB_LDFLAGS}"
 
 PLIST_FILES=	bin/gplink
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 USB_CFLAGS=	# none
 USB_LDFLAGS=	-lusb
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gplink ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/gplink ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
