@@ -13,10 +13,10 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-Wno-return-type
 
 PLIST_FILES=	bin/amin bin/helpers bin/huh bin/jot bin/mesg bin/tel \
-		bin/telegram bin/write etc/orville.conf etc/wrthist etc/wrttmp
-MAN1=		amin.1 helpers.1 huh.1 mesg.1 write.1
+		bin/telegram bin/write etc/orville.conf etc/wrthist etc/wrttmp \
+		man/man1/amin.1.gz man/man1/helpers.1.gz man/man1/huh.1.gz \
+		man/man1/mesg.1.gz man/man1/write.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900006
@@ -35,22 +35,22 @@ EXTRA_PATCHES=	${PATCHDIR}/utmpx-wrttmp.h \
 
 do-install:
 .for i in amin helpers huh mesg
-	${INSTALL_PROGRAM} -m 4711 ${WRKSRC}/${i} ${PREFIX}/bin
+	${INSTALL_PROGRAM} -m 4711 ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for i in write
-	${INSTALL_PROGRAM} -m 6711 ${WRKSRC}/${i} ${PREFIX}/bin
+	${INSTALL_PROGRAM} -m 6711 ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for i in jot tel telegram
-	${LN} -sf write ${PREFIX}/bin/${i}
+	${LN} -sf write ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
 .for i in orville.conf
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/etc
 .endfor
 .for i in wrthist wrttmp
-	${INSTALL_DATA} -m 600 /dev/null ${PREFIX}/etc/${i}
+	${INSTALL_DATA} -m 600 /dev/null ${STAGEDIR}${PREFIX}/etc/${i}
 .endfor
-.for i in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/${i} ${MANPREFIX}/man/man1
+.for i in amin.1 helpers.1 huh.1 mesg.1 write.1
+	${INSTALL_MAN} ${WRKSRC}/${i} ${STAGEDIR}${MANPREFIX}/man/man1
 .endfor
 
 .include <bsd.port.post.mk>
