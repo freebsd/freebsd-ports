@@ -10,3 +10,8 @@ lib/libmj.la
 lib/libmj.so
 lib/libmj.so.0
 lib/libmj.a
+man/man1/netpgp.1.gz
+man/man1/netpgpkeys.1.gz
+man/man1/netpgpverify.1.gz
+man/man3/libmj.3.gz
+man/man3/libnetpgp.3.gz

@@ -14,13 +14,9 @@ USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-CFLAGS+=	-DOPENSSL_NO_IDEA -Wno-error
+CFLAGS+=	-Wno-error
+.if !exists(/usr/include/openssl/idea.h)
+CFLAGS+=-	-DOPENSSL_NO_IDEA
+.endif
 
-MAN1+=		netpgp.1 \
-		netpgpkeys.1 \
-		netpgpverify.1
-MAN3+=		libnetpgp.3 \
-		libmj.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
