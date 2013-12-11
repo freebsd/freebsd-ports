@@ -46,7 +46,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --passive-mesa
 USE_LDCONFIG=	${PREFIX}/lib/virtualbox
 
-CONFLICTS=	bcc-[0-9]*
+CONFLICTS=	bcc-[0-9]* compat9x-*
 CONFLICTS_INSTALL=	virtualbox-ose-devel-[3,4]* virtualbox-ose-legacy-[3,4]* virtualbox-ose-additions-[3,4]* virtualbox-ose-additions-devel-[3,4]*
 
 VBOXUSER?=	vboxusers
