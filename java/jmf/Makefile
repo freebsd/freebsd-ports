@@ -8,7 +8,7 @@ CATEGORIES=	java
 MASTER_SITES=	#http://java.sun.com/products/java-media/jmf/2.1.1/download.html
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-alljava
 
-MAINTAINER=	toha@toha.org.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Media Framework
 
 USE_JAVA=	yes
