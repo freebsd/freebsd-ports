@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	../../ftp/tridge/dbench
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	A simulation of the Ziff-Davis netbench benchmark
 
-LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
 LICENSE=	GPLv3
 
