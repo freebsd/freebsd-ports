@@ -10,11 +10,8 @@ COMMENT=	Open source Bible study tool
 
 LICENSE=	GPLv2
 
-CONFLICTS=	bibletime-2.10.*
-
-LIB_DEPENDS=	libclucene-core.so:${PORTSDIR/textproc/clucene
-RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.6.2.so:${PORTSDIR}/misc/sword
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+LIB_DEPENDS=	libsword.so:${PORTSDIR}/misc/sword \
+		libclucene-core.so:${PORTSDIR}/textproc/clucene
 
 USES=		cmake
 USE_BZIP2=	yes
