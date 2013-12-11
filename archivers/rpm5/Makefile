@@ -10,13 +10,13 @@ MASTER_SITES=	http://rpm5.org/files/rpm/rpm-${PORTVERSION:R}/
 MAINTAINER=	afb@rpm5.org
 COMMENT=	The RPM Package Manager
 
-LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		popt.0:${PORTSDIR}/devel/popt \
-		beecrypt.7:${PORTSDIR}/security/beecrypt \
-		neon.27:${PORTSDIR}/www/neon29 \
-		magic:${PORTSDIR}/sysutils/file \
-		xar:${PORTSDIR}/archivers/xar \
-		pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
+		libpopt.so:${PORTSDIR}/devel/popt \
+		libbeecrypt.so:${PORTSDIR}/security/beecrypt \
+		libneon.so:${PORTSDIR}/www/neon29 \
+		libmagic.so:${PORTSDIR}/sysutils/file \
+		libxar.so:${PORTSDIR}/archivers/xar \
+		libpcre.so:${PORTSDIR}/devel/pcre
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
 		${LOCALBASE}/lib/libuuid.a:${PORTSDIR}/misc/ossp-uuid \
 		bash:${PORTSDIR}/shells/bash
@@ -122,7 +122,7 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
+LIB_DEPENDS+=	liblzma.so:${PORTSDIR}/archivers/xz
 .endif
 
 .if ${OSVERSION} <= 701000

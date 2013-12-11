@@ -11,8 +11,8 @@ MAINTAINER=	pirzyk@FreeBSD.org
 COMMENT=	Encap Package Manager
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libfget.a:${PORTSDIR}/ftp/fget
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libexpat.so:${PORTSDIR}/textproc/expat2
 
 NO_STAGE=	yes
 HAS_CONFIGURE=	YES

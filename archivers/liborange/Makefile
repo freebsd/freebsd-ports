@@ -34,7 +34,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--without-libsynce
 REQUIRES+=	libsynce
 .else
-LIB_DEPENDS+=		synce:${PORTSDIR}/palm/synce-libsynce
+LIB_DEPENDS+=		libsynce.so:${PORTSDIR}/palm/synce-libsynce
 CONFIGURE_ARGS+=	--with-libsynce
 .endif
 
@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=	--with-libsynce
 CONFIGURE_ARGS+=	--without-libdynamite
 REQUIRES+=	libdynamite
 .else
-LIB_DEPENDS+=		dynamite:${PORTSDIR}/archivers/libdynamite
+LIB_DEPENDS+=		libdynamite.so:${PORTSDIR}/archivers/libdynamite
 CONFIGURE_ARGS+=	--with-libdynamite
 .endif
 
@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=	--with-libdynamite
 CONFIGURE_ARGS+=	--without-libunshield
 REQUIRES+=	libunshield
 .else
-LIB_DEPENDS+=		unshield:${PORTSDIR}/archivers/unshield
+LIB_DEPENDS+=		libunshield.so:${PORTSDIR}/archivers/unshield
 CONFIGURE_ARGS+=	--with-libunshield
 .endif
 
@@ -64,7 +64,7 @@ CONFIGURE_ARGS+=	--enable-vise
 
 .if ${PORT_OPTIONS:MMSI}
 CONFIGURE_ARGS+=	--enable-msi --with-libgsf
-LIB_DEPENDS+=		gsf-1.114:${PORTSDIR}/devel/libgsf
+LIB_DEPENDS+=		libgsf-1.so.114:${PORTSDIR}/devel/libgsf
 .endif
 
 post-patch:

@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs \
 		${LOCALBASE}/include/libiberty/libiberty.h:${PORTSDIR}/devel/gnulibiberty
-LIB_DEPENDS=	explain:${PORTSDIR}/devel/libexplain
+LIB_DEPENDS=	libexplain.so:${PORTSDIR}/devel/libexplain
 
 GNU_CONFIGURE=	yes
 

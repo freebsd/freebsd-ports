@@ -13,7 +13,7 @@ COMMENT=	Long Range ZIP or Lzma RZIP
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	nasm>=0:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	lzo2:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 
 NO_STAGE=		yes
 CFLAGS+=	-I${LOCALBASE}/include
