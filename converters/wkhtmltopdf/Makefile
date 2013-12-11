@@ -13,8 +13,8 @@ DISTFILES=	${DISTNAME}.tar.bz2:wkhtmltopdf \
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Convert HTML (or live webpages) to PDF or image files
-LIB_DEPENDS+=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-qt
 INSTALL_WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
@@ -67,10 +67,10 @@ BROKEN=		Does not link on powerpc
 .if ${PORT_OPTIONS:MBUNDLED_LIBS}
 CONFIGURE_ARGS+=	-qt-libtiff -qt-libpng -qt-libmng -qt-libjpeg
 .else
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		mng:${PORTSDIR}/graphics/libmng \
-		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libmng.so:${PORTSDIR}/graphics/libmng \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=	-system-libtiff -system-libpng -system-libmng \
 			-system-libjpeg
 .endif

@@ -10,7 +10,7 @@ MASTER_SITES=	SF/fix-mime-chr/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	Fix incorrect Content-Type MIME headers of e-mail messages
 
-LIB_DEPENDS=	enca.5:${PORTSDIR}/converters/enca
+LIB_DEPENDS=	libenca.so:${PORTSDIR}/converters/enca
 
 PORTDOCS=	README.koi8r README
 
