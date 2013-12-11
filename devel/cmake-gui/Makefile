@@ -3,7 +3,7 @@
 PORTNAME=	cmake
 PORTVERSION=	2.8.12.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cmake.org/files/v2.8/
+MASTER_SITES=	http://downloads.cmake.org/files/v2.8/
 PKGNAMESUFFIX=	-gui
 
 MAINTAINER=	kde@FreeBSD.org
