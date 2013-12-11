@@ -269,6 +269,7 @@ uppaal-*.zip		devel/uppaal		Downloading requires completion of a license agreeme
 ut2004-lnx-*		games/linux-ut2004-demo	Redistribution limited
 ut_linux_mgr_*		sysutils/linux-megamgr	Redistribution prohibited
 uzap.tar.gz		editors/uzap		This software may not be used to make a profit in any way.
+vdr-markad-*		multimedia/vdr-plugin-markad	Installs station logos
 ventrilo_srv-*		audio/ventrilo-server	May not be redistributed.  For personal use only.  Must accept license to download.
 vice-*			emulators/vice		ROMs are copyrighted by Commodore Business Machines
 VMware-vSphere-Perl*	net/vmware-vsphere-cli	May not be redistributed.  Must accept license to download.
