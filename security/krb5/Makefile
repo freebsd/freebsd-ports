@@ -59,6 +59,9 @@ CONFIGURE_ARGS+=	--enable-dns-for-realm
 .if ${PORT_OPTIONS:MLDAP}
 USE_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--with-ldap
+PLIST_SUB+=		LDAP=""
+.else
+PLIST_SUB+=		LDAP="@comment "
 .endif
 
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
