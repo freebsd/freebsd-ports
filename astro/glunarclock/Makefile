@@ -11,7 +11,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME applet that displays the current phase of the Moon
 
-LIB_DEPENDS=	xklavier.12:${PORTSDIR}/x11/libxklavier
+LIB_DEPENDS=	libxklavier.so:${PORTSDIR}/x11/libxklavier
 
 NO_STAGE=	yes
 USES=        pathfix gettext gmake pkgconfig

@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for using the cfitsio library
 
-LIB_DEPENDS=	cfitsio:${PORTSDIR}/astro/cfitsio
+LIB_DEPENDS=	libcfitsio.so:${PORTSDIR}/astro/cfitsio
 
 CONFIGURE_ENV=	CFITSIO=${LOCALBASE}
 USES=		perl5

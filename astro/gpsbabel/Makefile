@@ -10,7 +10,7 @@ MASTER_SITES=	https://secure.ohos.nl/downloads/ \
 MAINTAINER=	dev2@heesakkers.info
 COMMENT=	GPS file translating tool
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 NO_STAGE=	yes
 USE_AUTOTOOLS=	autoconf

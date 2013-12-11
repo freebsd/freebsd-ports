@@ -10,7 +10,7 @@ MASTER_SITES=	http://hamete.org/static/wmg/
 MAINTAINER=	will@FreeBSD.org
 COMMENT=	A neat xearth-like WindowMaker dockapp
 
-LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
+LIB_DEPENDS=	libwraster.so:${PORTSDIR}/x11-wm/windowmaker
 
 NO_STAGE=	yes
 MAN1=		wmglobe.1
