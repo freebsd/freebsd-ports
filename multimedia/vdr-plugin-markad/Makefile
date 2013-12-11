@@ -27,7 +27,7 @@ MAKE_ENV+=	DEFINES="${DEFINES}"
 MANCOMPRESSED=	yes
 MAN1=		markad.1
 
-RESTRICTED=	installs station logos
+RESTRICTED=	Installs station logos
 
 NO_STAGE=	yes
 .include	"${.CURDIR}/../vdr/Makefile.plugins"
