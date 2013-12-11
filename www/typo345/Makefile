@@ -2,16 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	typo3
-PORTVERSION=	4.5.31
+PORTVERSION=	4.5.32
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
+PKGNAMESUFFIX=	${TYPO3RELEASE}
 
 MAINTAINER=	freebsd-ports@charlieroot.de
 COMMENT=	The typo3 content management system
 
 LICENSE=	GPLv2
 
-LATEST_LINK=	${PKGBASE}${TYPO3RELEASE}
 NO_BUILD=	yes
 USE_PHP=	ctype filter json mysql pcre session xml
 WANT_PHP_WEB=	yes
