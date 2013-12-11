@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Oct 21 03:46:44 2002
-+++ Makefile	Sat Nov  2 16:41:52 2002
+--- Makefile.orig	2004-05-31 00:38:31.000000000 +0500
++++ Makefile	2013-12-11 23:08:46.646822192 +0400
 @@ -24,7 +24,6 @@
  # Set this to an ANSI compatible C compiler (preferably gcc)
  # See also system specific settings below
@@ -8,7 +8,7 @@
  
  ############################################################################
  #
-@@ -40,7 +39,7 @@
+@@ -40,7 +39,7 @@ CC=gcc
  #  See glob.c for all possibilities
  #
  # PAGESIZE=Letter
@@ -17,15 +17,22 @@
  
  #
  # Define your spooler type
-@@ -50,7 +49,6 @@
+@@ -50,11 +49,10 @@ PAGESIZE=A4
  SPOOL_TYPE=BSD_SPOOLER
  
  # PREFIX=e:/usr		# OS/2 type
 -PREFIX=/usr/local
  #PREFIX=/usr
- BINDIR=$(PREFIX)/bin
- LIBDIR=$(PREFIX)/share
-@@ -106,8 +104,11 @@
+-BINDIR=$(PREFIX)/bin
+-LIBDIR=$(PREFIX)/share
+-MANDIR=$(PREFIX)/man/man1
++BINDIR=${DESTDIR}$(PREFIX)/bin
++LIBDIR=${DESTDIR}$(PREFIX)/share
++MANDIR=${DESTDIR}$(PREFIX)/man/man1
+ 
+ #
+ # A default encoding is given in encoding.h. Setting ENCODING=1 will
+@@ -106,8 +104,11 @@ O = .o
  # Choose one of the following CFLAGS/CC definitions:
  # If you are using gcc, you probably don't need to change anything here.
  
@@ -38,7 +45,7 @@
  
  # AIX (xlC on aix 4):
  #CFLAGS = -O2 -s $(DEFS)
-@@ -177,7 +178,6 @@
+@@ -181,7 +182,6 @@ install:
  	if [ ! -d $(LIBDIR)/mpage ] ; then mkdir -p $(LIBDIR)/mpage ; fi
  	if [ ! -d $(BINDIR) ] ; then mkdir -p $(BINDIR) ; fi
  	if [ ! -d $(MANDIR) ] ; then mkdir -p $(MANDIR) ; fi
