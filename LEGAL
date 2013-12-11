@@ -149,6 +149,7 @@ jre-7*-i586.tar.gz	java/linux-sun-jre17	License does not allow distribution with
 jta-*.zip		java/jta		See the license
 KASH3-*			math/kash3		Not for commercial distribution or use
 komodo-*		editors/komodo-edit	Distribution not permitted
+kye-data_nuke_levels.20121101.tar.gz games/kye	kye-data_nuke_levels is charityware
 kzip-*			archivers/kzip		No redistribution allowed
 l0phtcrack/*		security/l0phtcrack	Parts are under GPL, so binaries should not be distributed.  Contains crypto code from OpenSSL
 ladder.tar		games/ladder		Possible copyright problems
