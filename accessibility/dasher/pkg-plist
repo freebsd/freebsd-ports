@@ -1,4 +1,5 @@
 bin/dasher
+man/man1/dasher.1.gz
 share/applications/dasher.desktop
 %%DATADIR%%/alphabet.AfaanOromo.xml
 %%DATADIR%%/alphabet.Armenian.xml

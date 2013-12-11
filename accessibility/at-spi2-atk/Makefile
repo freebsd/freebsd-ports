@@ -14,7 +14,7 @@ COMMENT=	Assisted Technology Provider module for GTK+
 LICENSE=	LGPL21
 
 BUILD_DEPENDS=	at-spi2-core>=2.8.0:${PORTSDIR}/accessibility/at-spi2-core
-LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 RUN_DEPENDS=	at-spi2-core>=2.8.0:${PORTSDIR}/accessibility/at-spi2-core
 
 PORTSCOUT=	limitw:1,even
