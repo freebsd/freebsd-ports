@@ -194,7 +194,6 @@ oracle/*		databases/jdbc-oracle8i	This software is under license and export cont
 oracle/*		databases/jdbc-oracle9i	This software is under license and export controls
 oracle/sqldeveloper*	databases/sqldeveloper	This software is under license and export controls
 palmos-sdk-*-1.tar.gz	palm/palmos-sdk		License agreement is required
-pam_authsrv-*		security/pam_authsrv	No form of redistribution is allowed, because of linking against fwtk
 pcsv*i3fb.tar.gz	lang/petite-chez	Must acknowledge license
 PDFlib-Lite-*.tar.gz	print/pdflib		Many odd restrictions on usage and distribution
 pgp*			security/pgp		Various locality restrictions
