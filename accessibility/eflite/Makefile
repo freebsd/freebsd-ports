@@ -12,7 +12,6 @@ COMMENT=	Speech server for Festival Lite used by yasr and Emacspeak
 BUILD_DEPENDS=	flite:${PORTSDIR}/audio/flite
 RUN_DEPENDS=	flite:${PORTSDIR}/audio/flite
 
-NO_STAGE=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes
 ALL_TARGET=	eflite
@@ -47,15 +46,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/es\.conf|${PREFIX}/etc/es.conf|;s|sockname|socketfile|g' ${WRKSRC}/INSTALL
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
-.endif
-	${INSTALL_DATA} ${FILESDIR}/es.conf.sample ${PREFIX}/etc
-	@if [ ! -f ${PREFIX}/etc/es.conf ]; then \
-	    ${CP} -p ${PREFIX}/etc/es.conf.sample ${PREFIX}/etc/es.conf ; \
-	fi
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/es.conf.sample ${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>
