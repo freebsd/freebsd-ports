@@ -69,6 +69,7 @@
 %%WWWDIR%%/inc/changelog.php
 %%WWWDIR%%/inc/cliopts.php
 %%WWWDIR%%/inc/common.php
+%%WWWDIR%%/inc/compatibility.php
 %%WWWDIR%%/inc/config_cascade.php
 %%WWWDIR%%/inc/confutils.php
 %%WWWDIR%%/inc/events.php
@@ -415,6 +416,17 @@
 %%WWWDIR%%/inc/lang/bg/subscr_single.txt
 %%WWWDIR%%/inc/lang/bg/updateprofile.txt
 %%WWWDIR%%/inc/lang/bg/uploadmail.txt
+%%WWWDIR%%/inc/lang/bn/admin.txt
+%%WWWDIR%%/inc/lang/bn/adminplugins.txt
+%%WWWDIR%%/inc/lang/bn/backlinks.txt
+%%WWWDIR%%/inc/lang/bn/conflict.txt
+%%WWWDIR%%/inc/lang/bn/denied.txt
+%%WWWDIR%%/inc/lang/bn/diff.txt
+%%WWWDIR%%/inc/lang/bn/draft.txt
+%%WWWDIR%%/inc/lang/bn/edit.txt
+%%WWWDIR%%/inc/lang/bn/editrev.txt
+%%WWWDIR%%/inc/lang/bn/index.txt
+%%WWWDIR%%/inc/lang/bn/lang.php
 %%WWWDIR%%/inc/lang/ca-valencia/admin.txt
 %%WWWDIR%%/inc/lang/ca-valencia/adminplugins.txt
 %%WWWDIR%%/inc/lang/ca-valencia/backlinks.txt
@@ -1051,6 +1063,7 @@
 %%WWWDIR%%/inc/lang/he/subscr_single.txt
 %%WWWDIR%%/inc/lang/he/updateprofile.txt
 %%WWWDIR%%/inc/lang/he/uploadmail.txt
+%%WWWDIR%%/inc/lang/hi/diff.txt
 %%WWWDIR%%/inc/lang/hi/lang.php
 %%WWWDIR%%/inc/lang/hr/admin.txt
 %%WWWDIR%%/inc/lang/hr/backlinks.txt
@@ -1092,6 +1105,7 @@
 %%WWWDIR%%/inc/lang/hu/locked.txt
 %%WWWDIR%%/inc/lang/hu/login.txt
 %%WWWDIR%%/inc/lang/hu/mailtext.txt
+%%WWWDIR%%/inc/lang/hu/mailwrap.html
 %%WWWDIR%%/inc/lang/hu/newpage.txt
 %%WWWDIR%%/inc/lang/hu/norev.txt
 %%WWWDIR%%/inc/lang/hu/password.txt
@@ -1102,6 +1116,7 @@
 %%WWWDIR%%/inc/lang/hu/register.txt
 %%WWWDIR%%/inc/lang/hu/registermail.txt
 %%WWWDIR%%/inc/lang/hu/resendpwd.txt
+%%WWWDIR%%/inc/lang/hu/resetpwd.txt
 %%WWWDIR%%/inc/lang/hu/revisions.txt
 %%WWWDIR%%/inc/lang/hu/searchpage.txt
 %%WWWDIR%%/inc/lang/hu/showrev.txt
@@ -1949,6 +1964,7 @@
 %%WWWDIR%%/inc/lang/sv/locked.txt
 %%WWWDIR%%/inc/lang/sv/login.txt
 %%WWWDIR%%/inc/lang/sv/mailtext.txt
+%%WWWDIR%%/inc/lang/sv/mailwrap.html
 %%WWWDIR%%/inc/lang/sv/newpage.txt
 %%WWWDIR%%/inc/lang/sv/norev.txt
 %%WWWDIR%%/inc/lang/sv/password.txt
@@ -1959,10 +1975,13 @@
 %%WWWDIR%%/inc/lang/sv/register.txt
 %%WWWDIR%%/inc/lang/sv/registermail.txt
 %%WWWDIR%%/inc/lang/sv/resendpwd.txt
+%%WWWDIR%%/inc/lang/sv/resetpwd.txt
 %%WWWDIR%%/inc/lang/sv/revisions.txt
 %%WWWDIR%%/inc/lang/sv/searchpage.txt
 %%WWWDIR%%/inc/lang/sv/showrev.txt
 %%WWWDIR%%/inc/lang/sv/stopwords.txt
+%%WWWDIR%%/inc/lang/sv/subscr_form.txt
+%%WWWDIR%%/inc/lang/sv/subscr_single.txt
 %%WWWDIR%%/inc/lang/sv/updateprofile.txt
 %%WWWDIR%%/inc/lang/sv/uploadmail.txt
 %%WWWDIR%%/inc/lang/th/admin.txt
@@ -1995,6 +2014,7 @@
 %%WWWDIR%%/inc/lang/th/updateprofile.txt
 %%WWWDIR%%/inc/lang/th/uploadmail.txt
 %%WWWDIR%%/inc/lang/tr/admin.txt
+%%WWWDIR%%/inc/lang/tr/adminplugins.txt
 %%WWWDIR%%/inc/lang/tr/backlinks.txt
 %%WWWDIR%%/inc/lang/tr/conflict.txt
 %%WWWDIR%%/inc/lang/tr/denied.txt
@@ -2156,6 +2176,7 @@
 %%WWWDIR%%/inc/lang/zh/subscr_single.txt
 %%WWWDIR%%/inc/lang/zh/updateprofile.txt
 %%WWWDIR%%/inc/lang/zh/uploadmail.txt
+%%WWWDIR%%/inc/lessc.inc.php
 %%WWWDIR%%/inc/load.php
 %%WWWDIR%%/inc/mail.php
 %%WWWDIR%%/inc/media.php
@@ -2169,6 +2190,13 @@
 %%WWWDIR%%/inc/parser/xhtml.php
 %%WWWDIR%%/inc/parser/xhtmlsummary.php
 %%WWWDIR%%/inc/parserutils.php
+%%WWWDIR%%/inc/phpseclib/Crypt_AES.php
+%%WWWDIR%%/inc/phpseclib/Crypt_Base.php
+%%WWWDIR%%/inc/phpseclib/Crypt_Hash.php
+%%WWWDIR%%/inc/phpseclib/Crypt_Rijndael.php
+%%WWWDIR%%/inc/phpseclib/LICENSE
+%%WWWDIR%%/inc/phpseclib/Math_BigInteger.php
+%%WWWDIR%%/inc/phpseclib/update.sh
 %%WWWDIR%%/inc/plugin.php
 %%WWWDIR%%/inc/plugincontroller.class.php
 %%WWWDIR%%/inc/pluginutils.php
@@ -2200,17 +2228,11 @@
 %%WWWDIR%%/lib/images/admin/popularity.png
 %%WWWDIR%%/lib/images/admin/revert.png
 %%WWWDIR%%/lib/images/admin/usermanager.png
-%%WWWDIR%%/lib/images/arrow_down.gif
-%%WWWDIR%%/lib/images/arrow_up.gif
-%%WWWDIR%%/lib/images/at.gif
 %%WWWDIR%%/lib/images/blank.gif
 %%WWWDIR%%/lib/images/bullet.png
-%%WWWDIR%%/lib/images/close.png
 %%WWWDIR%%/lib/images/closed-rtl.png
 %%WWWDIR%%/lib/images/closed.png
-%%WWWDIR%%/lib/images/del.png
 %%WWWDIR%%/lib/images/diff.png
-%%WWWDIR%%/lib/images/edit.gif
 %%WWWDIR%%/lib/images/email.png
 %%WWWDIR%%/lib/images/error.png
 %%WWWDIR%%/lib/images/external-link.png
@@ -2287,12 +2309,10 @@
 %%WWWDIR%%/lib/images/interwiki/doku.gif
 %%WWWDIR%%/lib/images/interwiki/dokubug.gif
 %%WWWDIR%%/lib/images/interwiki/google.gif
-%%WWWDIR%%/lib/images/interwiki/meatball.gif
 %%WWWDIR%%/lib/images/interwiki/paypal.gif
 %%WWWDIR%%/lib/images/interwiki/phpfn.gif
 %%WWWDIR%%/lib/images/interwiki/sb.gif
 %%WWWDIR%%/lib/images/interwiki/skype.gif
-%%WWWDIR%%/lib/images/interwiki/wiki.gif
 %%WWWDIR%%/lib/images/interwiki/wp.gif
 %%WWWDIR%%/lib/images/interwiki/wpde.gif
 %%WWWDIR%%/lib/images/interwiki/wpes.gif
@@ -2321,8 +2341,6 @@
 %%WWWDIR%%/lib/images/license/button/cc.png
 %%WWWDIR%%/lib/images/license/button/gnufdl.png
 %%WWWDIR%%/lib/images/license/button/publicdomain.png
-%%WWWDIR%%/lib/images/list-minus.gif
-%%WWWDIR%%/lib/images/list-plus.gif
 %%WWWDIR%%/lib/images/loading.gif
 %%WWWDIR%%/lib/images/magnifier.png
 %%WWWDIR%%/lib/images/media_align_center.png
@@ -2343,7 +2361,6 @@
 %%WWWDIR%%/lib/images/ns.png
 %%WWWDIR%%/lib/images/open.png
 %%WWWDIR%%/lib/images/page.png
-%%WWWDIR%%/lib/images/pencil.png
 %%WWWDIR%%/lib/images/plus.gif
 %%WWWDIR%%/lib/images/resizecol.png
 %%WWWDIR%%/lib/images/smaller.gif
@@ -2409,8 +2426,8 @@
 %%WWWDIR%%/lib/images/up.png
 %%WWWDIR%%/lib/images/wrap.gif
 %%WWWDIR%%/lib/index.html
+%%WWWDIR%%/lib/plugins/acl/action.php
 %%WWWDIR%%/lib/plugins/acl/admin.php
-%%WWWDIR%%/lib/plugins/acl/ajax.php
 %%WWWDIR%%/lib/plugins/acl/lang/af/lang.php
 %%WWWDIR%%/lib/plugins/acl/lang/ar/help.txt
 %%WWWDIR%%/lib/plugins/acl/lang/ar/lang.php
@@ -2519,6 +2536,7 @@
 %%WWWDIR%%/lib/plugins/acl/pix/page.png
 %%WWWDIR%%/lib/plugins/acl/pix/user.png
 %%WWWDIR%%/lib/plugins/acl/plugin.info.txt
+%%WWWDIR%%/lib/plugins/acl/remote.php
 %%WWWDIR%%/lib/plugins/acl/script.js
 %%WWWDIR%%/lib/plugins/acl/style.css
 %%WWWDIR%%/lib/plugins/action.php
@@ -2542,19 +2560,27 @@
 %%WWWDIR%%/lib/plugins/authad/conf/metadata.php
 %%WWWDIR%%/lib/plugins/authad/lang/bg/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/cs/settings.php
+%%WWWDIR%%/lib/plugins/authad/lang/da/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/de-informal/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/de/settings.php
+%%WWWDIR%%/lib/plugins/authad/lang/el/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/en/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/eo/settings.php
+%%WWWDIR%%/lib/plugins/authad/lang/es/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/fi/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/fr/settings.php
+%%WWWDIR%%/lib/plugins/authad/lang/hu/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/it/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/ja/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/ko/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/lv/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/nl/settings.php
+%%WWWDIR%%/lib/plugins/authad/lang/pl/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/pt-br/settings.php
+%%WWWDIR%%/lib/plugins/authad/lang/pt/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/ru/settings.php
+%%WWWDIR%%/lib/plugins/authad/lang/sk/settings.php
+%%WWWDIR%%/lib/plugins/authad/lang/sv/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/zh-tw/settings.php
 %%WWWDIR%%/lib/plugins/authad/lang/zh/settings.php
 %%WWWDIR%%/lib/plugins/authad/plugin.info.txt
@@ -2563,19 +2589,26 @@
 %%WWWDIR%%/lib/plugins/authldap/conf/metadata.php
 %%WWWDIR%%/lib/plugins/authldap/lang/bg/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/cs/settings.php
+%%WWWDIR%%/lib/plugins/authldap/lang/da/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/de-informal/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/de/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/en/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/eo/settings.php
+%%WWWDIR%%/lib/plugins/authldap/lang/es/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/fi/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/fr/settings.php
+%%WWWDIR%%/lib/plugins/authldap/lang/hu/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/it/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/ja/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/ko/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/lv/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/nl/settings.php
+%%WWWDIR%%/lib/plugins/authldap/lang/pl/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/pt-br/settings.php
+%%WWWDIR%%/lib/plugins/authldap/lang/pt/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/ru/settings.php
+%%WWWDIR%%/lib/plugins/authldap/lang/sk/settings.php
+%%WWWDIR%%/lib/plugins/authldap/lang/sv/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/zh-tw/settings.php
 %%WWWDIR%%/lib/plugins/authldap/lang/zh/settings.php
 %%WWWDIR%%/lib/plugins/authldap/plugin.info.txt
@@ -2584,19 +2617,27 @@
 %%WWWDIR%%/lib/plugins/authmysql/conf/metadata.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/bg/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/cs/settings.php
+%%WWWDIR%%/lib/plugins/authmysql/lang/da/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/de-informal/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/de/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/en/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/eo/settings.php
+%%WWWDIR%%/lib/plugins/authmysql/lang/es/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/fi/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/fr/settings.php
+%%WWWDIR%%/lib/plugins/authmysql/lang/hu/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/it/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/ja/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/ko/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/lv/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/nl/settings.php
+%%WWWDIR%%/lib/plugins/authmysql/lang/pl/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/pt-br/settings.php
+%%WWWDIR%%/lib/plugins/authmysql/lang/pt/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/ru/settings.php
+%%WWWDIR%%/lib/plugins/authmysql/lang/sk/settings.php
+%%WWWDIR%%/lib/plugins/authmysql/lang/sl/settings.php
+%%WWWDIR%%/lib/plugins/authmysql/lang/sv/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/zh-tw/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/lang/zh/settings.php
 %%WWWDIR%%/lib/plugins/authmysql/plugin.info.txt
@@ -2605,19 +2646,26 @@
 %%WWWDIR%%/lib/plugins/authpgsql/conf/metadata.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/bg/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/cs/settings.php
+%%WWWDIR%%/lib/plugins/authpgsql/lang/da/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/de-informal/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/de/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/en/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/eo/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/fi/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/fr/settings.php
+%%WWWDIR%%/lib/plugins/authpgsql/lang/hu/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/it/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/ja/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/ko/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/lv/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/nl/settings.php
+%%WWWDIR%%/lib/plugins/authpgsql/lang/pl/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/pt-br/settings.php
+%%WWWDIR%%/lib/plugins/authpgsql/lang/pt/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/ru/settings.php
+%%WWWDIR%%/lib/plugins/authpgsql/lang/sk/settings.php
+%%WWWDIR%%/lib/plugins/authpgsql/lang/sl/settings.php
+%%WWWDIR%%/lib/plugins/authpgsql/lang/sv/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/zh-tw/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/lang/zh/settings.php
 %%WWWDIR%%/lib/plugins/authpgsql/plugin.info.txt
@@ -3096,6 +3144,9 @@
 %%WWWDIR%%/lib/plugins/syntax.php
 %%WWWDIR%%/lib/plugins/testing/action.php
 %%WWWDIR%%/lib/plugins/testing/plugin.info.txt
+%%WWWDIR%%/lib/plugins/usermanager/_test/csv_export.test.php
+%%WWWDIR%%/lib/plugins/usermanager/_test/csv_import.test.php
+%%WWWDIR%%/lib/plugins/usermanager/_test/mocks.class.php
 %%WWWDIR%%/lib/plugins/usermanager/admin.php
 %%WWWDIR%%/lib/plugins/usermanager/images/search.png
 %%WWWDIR%%/lib/plugins/usermanager/lang/af/lang.php
@@ -3126,6 +3177,7 @@
 %%WWWDIR%%/lib/plugins/usermanager/lang/cs/add.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/cs/delete.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/cs/edit.txt
+%%WWWDIR%%/lib/plugins/usermanager/lang/cs/import.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/cs/intro.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/cs/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/cs/list.txt
@@ -3138,12 +3190,14 @@
 %%WWWDIR%%/lib/plugins/usermanager/lang/de-informal/add.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/de-informal/delete.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/de-informal/edit.txt
+%%WWWDIR%%/lib/plugins/usermanager/lang/de-informal/import.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/de-informal/intro.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/de-informal/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/de-informal/list.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/de/add.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/de/delete.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/de/edit.txt
+%%WWWDIR%%/lib/plugins/usermanager/lang/de/import.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/de/intro.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/de/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/de/list.txt
@@ -3156,12 +3210,14 @@
 %%WWWDIR%%/lib/plugins/usermanager/lang/en/add.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/en/delete.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/en/edit.txt
+%%WWWDIR%%/lib/plugins/usermanager/lang/en/import.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/en/intro.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/en/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/en/list.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/eo/add.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/eo/delete.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/eo/edit.txt
+%%WWWDIR%%/lib/plugins/usermanager/lang/eo/import.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/eo/intro.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/eo/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/eo/list.txt
@@ -3193,6 +3249,7 @@
 %%WWWDIR%%/lib/plugins/usermanager/lang/fr/add.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/fr/delete.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/fr/edit.txt
+%%WWWDIR%%/lib/plugins/usermanager/lang/fr/import.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/fr/intro.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/fr/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/fr/list.txt
@@ -3213,6 +3270,7 @@
 %%WWWDIR%%/lib/plugins/usermanager/lang/hu/add.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/hu/delete.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/hu/edit.txt
+%%WWWDIR%%/lib/plugins/usermanager/lang/hu/import.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/hu/intro.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/hu/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/hu/list.txt
@@ -3240,6 +3298,7 @@
 %%WWWDIR%%/lib/plugins/usermanager/lang/ja/add.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/ja/delete.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/ja/edit.txt
+%%WWWDIR%%/lib/plugins/usermanager/lang/ja/import.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/ja/intro.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/ja/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/ja/list.txt
@@ -3247,6 +3306,7 @@
 %%WWWDIR%%/lib/plugins/usermanager/lang/ko/add.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/ko/delete.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/ko/edit.txt
+%%WWWDIR%%/lib/plugins/usermanager/lang/ko/import.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/ko/intro.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/ko/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/ko/list.txt
@@ -3292,6 +3352,7 @@
 %%WWWDIR%%/lib/plugins/usermanager/lang/nl/add.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/nl/delete.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/nl/edit.txt
+%%WWWDIR%%/lib/plugins/usermanager/lang/nl/import.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/nl/intro.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/nl/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/nl/list.txt
@@ -3316,6 +3377,7 @@
 %%WWWDIR%%/lib/plugins/usermanager/lang/pt/add.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/pt/delete.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/pt/edit.txt
+%%WWWDIR%%/lib/plugins/usermanager/lang/pt/import.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/pt/intro.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/pt/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/pt/list.txt
@@ -3328,12 +3390,14 @@
 %%WWWDIR%%/lib/plugins/usermanager/lang/ru/add.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/ru/delete.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/ru/edit.txt
+%%WWWDIR%%/lib/plugins/usermanager/lang/ru/import.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/ru/intro.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/ru/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/ru/list.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/sk/add.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/sk/delete.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/sk/edit.txt
+%%WWWDIR%%/lib/plugins/usermanager/lang/sk/import.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/sk/intro.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/sk/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/sk/list.txt
@@ -3383,12 +3447,14 @@
 %%WWWDIR%%/lib/plugins/usermanager/lang/zh-tw/add.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/zh-tw/delete.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/zh-tw/edit.txt
+%%WWWDIR%%/lib/plugins/usermanager/lang/zh-tw/import.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/zh-tw/intro.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/zh-tw/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/zh-tw/list.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/zh/add.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/zh/delete.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/zh/edit.txt
+%%WWWDIR%%/lib/plugins/usermanager/lang/zh/import.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/zh/intro.txt
 %%WWWDIR%%/lib/plugins/usermanager/lang/zh/lang.php
 %%WWWDIR%%/lib/plugins/usermanager/lang/zh/list.txt
@@ -3446,45 +3512,6 @@
 %%WWWDIR%%/lib/styles/index.html
 %%WWWDIR%%/lib/styles/print.css
 %%WWWDIR%%/lib/styles/screen.css
-%%WWWDIR%%/lib/tpl/default/_admin.css
-%%WWWDIR%%/lib/tpl/default/_fileuploader.css
-%%WWWDIR%%/lib/tpl/default/_linkwiz.css
-%%WWWDIR%%/lib/tpl/default/_mediamanager.css
-%%WWWDIR%%/lib/tpl/default/_mediaoptions.css
-%%WWWDIR%%/lib/tpl/default/_subscription.css
-%%WWWDIR%%/lib/tpl/default/_tabs.css
-%%WWWDIR%%/lib/tpl/default/design.css
-%%WWWDIR%%/lib/tpl/default/detail.php
-%%WWWDIR%%/lib/tpl/default/footer.html
-%%WWWDIR%%/lib/tpl/default/images/UWEB.png
-%%WWWDIR%%/lib/tpl/default/images/UWEBshadow.png
-%%WWWDIR%%/lib/tpl/default/images/apple-touch-icon.png
-%%WWWDIR%%/lib/tpl/default/images/bullet.gif
-%%WWWDIR%%/lib/tpl/default/images/button-cc.gif
-%%WWWDIR%%/lib/tpl/default/images/button-css.png
-%%WWWDIR%%/lib/tpl/default/images/button-donate.gif
-%%WWWDIR%%/lib/tpl/default/images/button-dw.png
-%%WWWDIR%%/lib/tpl/default/images/button-php.gif
-%%WWWDIR%%/lib/tpl/default/images/button-rss.png
-%%WWWDIR%%/lib/tpl/default/images/button-xhtml.png
-%%WWWDIR%%/lib/tpl/default/images/buttonshadow.png
-%%WWWDIR%%/lib/tpl/default/images/closed.gif
-%%WWWDIR%%/lib/tpl/default/images/favicon.ico
-%%WWWDIR%%/lib/tpl/default/images/inputshadow.png
-%%WWWDIR%%/lib/tpl/default/images/link_icon.gif
-%%WWWDIR%%/lib/tpl/default/images/mail_icon.gif
-%%WWWDIR%%/lib/tpl/default/images/open.gif
-%%WWWDIR%%/lib/tpl/default/images/resizecol.png
-%%WWWDIR%%/lib/tpl/default/images/tocdot2.gif
-%%WWWDIR%%/lib/tpl/default/images/windows.gif
-%%WWWDIR%%/lib/tpl/default/layout.css
-%%WWWDIR%%/lib/tpl/default/main.php
-%%WWWDIR%%/lib/tpl/default/media.css
-%%WWWDIR%%/lib/tpl/default/mediamanager.php
-%%WWWDIR%%/lib/tpl/default/print.css
-%%WWWDIR%%/lib/tpl/default/rtl.css
-%%WWWDIR%%/lib/tpl/default/style.ini
-%%WWWDIR%%/lib/tpl/default/template.info.txt
 %%WWWDIR%%/lib/tpl/dokuwiki/css/_admin.css
 %%WWWDIR%%/lib/tpl/dokuwiki/css/_diff.css
 %%WWWDIR%%/lib/tpl/dokuwiki/css/_edit.css
@@ -3500,14 +3527,14 @@
 %%WWWDIR%%/lib/tpl/dokuwiki/css/_search.css
 %%WWWDIR%%/lib/tpl/dokuwiki/css/_tabs.css
 %%WWWDIR%%/lib/tpl/dokuwiki/css/_toc.css
-%%WWWDIR%%/lib/tpl/dokuwiki/css/basic.css
-%%WWWDIR%%/lib/tpl/dokuwiki/css/content.css
-%%WWWDIR%%/lib/tpl/dokuwiki/css/design.css
-%%WWWDIR%%/lib/tpl/dokuwiki/css/includes.css
-%%WWWDIR%%/lib/tpl/dokuwiki/css/mobile.css
-%%WWWDIR%%/lib/tpl/dokuwiki/css/pagetools.css
+%%WWWDIR%%/lib/tpl/dokuwiki/css/basic.less
+%%WWWDIR%%/lib/tpl/dokuwiki/css/content.less
+%%WWWDIR%%/lib/tpl/dokuwiki/css/design.less
+%%WWWDIR%%/lib/tpl/dokuwiki/css/mixins.less
+%%WWWDIR%%/lib/tpl/dokuwiki/css/mobile.less
+%%WWWDIR%%/lib/tpl/dokuwiki/css/pagetools.less
 %%WWWDIR%%/lib/tpl/dokuwiki/css/print.css
-%%WWWDIR%%/lib/tpl/dokuwiki/css/structure.css
+%%WWWDIR%%/lib/tpl/dokuwiki/css/structure.less
 %%WWWDIR%%/lib/tpl/dokuwiki/detail.php
 %%WWWDIR%%/lib/tpl/dokuwiki/images/apple-touch-icon.png
 %%WWWDIR%%/lib/tpl/dokuwiki/images/button-css.png
@@ -3523,6 +3550,7 @@
 %%WWWDIR%%/lib/tpl/dokuwiki/images/page-gradient.png
 %%WWWDIR%%/lib/tpl/dokuwiki/images/pagetools-build.php
 %%WWWDIR%%/lib/tpl/dokuwiki/images/pagetools-sprite.png
+%%WWWDIR%%/lib/tpl/dokuwiki/images/pagetools/00_default.png
 %%WWWDIR%%/lib/tpl/dokuwiki/images/pagetools/01_edit.png
 %%WWWDIR%%/lib/tpl/dokuwiki/images/pagetools/02_create.png
 %%WWWDIR%%/lib/tpl/dokuwiki/images/pagetools/03_draft.png
@@ -3552,8 +3580,6 @@
 @dirrm %%WWWDIR%%/lib/tpl/dokuwiki/images
 @dirrm %%WWWDIR%%/lib/tpl/dokuwiki/css
 @dirrm %%WWWDIR%%/lib/tpl/dokuwiki
-@dirrm %%WWWDIR%%/lib/tpl/default/images
-@dirrm %%WWWDIR%%/lib/tpl/default
 @dirrm %%WWWDIR%%/lib/tpl
 @dirrm %%WWWDIR%%/lib/styles
 @dirrm %%WWWDIR%%/lib/scripts/jquery/jquery-ui-theme/images
@@ -3619,6 +3645,7 @@
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang/af
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/lang
 @dirrm %%WWWDIR%%/lib/plugins/usermanager/images
+@dirrm %%WWWDIR%%/lib/plugins/usermanager/_test
 @dirrm %%WWWDIR%%/lib/plugins/usermanager
 @dirrm %%WWWDIR%%/lib/plugins/testing
 @dirrm %%WWWDIR%%/lib/plugins/safefnrecode
@@ -3865,19 +3892,26 @@
 @dirrm %%WWWDIR%%/lib/plugins/authplain
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/zh
+@dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/sv
+@dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/sl
+@dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/sk
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/ru
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/pt-br
+@dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/pt
+@dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/pl
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/nl
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/lv
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/ko
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/ja
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/it
+@dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/hu
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/fr
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/fi
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/eo
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/en
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/de
+@dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/da
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/cs
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang/bg
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql/lang
@@ -3885,19 +3919,27 @@
 @dirrm %%WWWDIR%%/lib/plugins/authpgsql
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/zh
+@dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/sv
+@dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/sl
+@dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/sk
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/ru
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/pt-br
+@dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/pt
+@dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/pl
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/nl
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/lv
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/ko
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/ja
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/it
+@dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/hu
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/fr
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/fi
+@dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/es
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/eo
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/en
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/de
+@dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/da
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/cs
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang/bg
 @dirrm %%WWWDIR%%/lib/plugins/authmysql/lang
@@ -3905,19 +3947,26 @@
 @dirrm %%WWWDIR%%/lib/plugins/authmysql
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/zh
+@dirrm %%WWWDIR%%/lib/plugins/authldap/lang/sv
+@dirrm %%WWWDIR%%/lib/plugins/authldap/lang/sk
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/ru
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/pt-br
+@dirrm %%WWWDIR%%/lib/plugins/authldap/lang/pt
+@dirrm %%WWWDIR%%/lib/plugins/authldap/lang/pl
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/nl
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/lv
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/ko
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/ja
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/it
+@dirrm %%WWWDIR%%/lib/plugins/authldap/lang/hu
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/fr
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/fi
+@dirrm %%WWWDIR%%/lib/plugins/authldap/lang/es
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/eo
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/en
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/de
+@dirrm %%WWWDIR%%/lib/plugins/authldap/lang/da
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/cs
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang/bg
 @dirrm %%WWWDIR%%/lib/plugins/authldap/lang
@@ -3925,19 +3974,27 @@
 @dirrm %%WWWDIR%%/lib/plugins/authldap
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/zh-tw
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/zh
+@dirrm %%WWWDIR%%/lib/plugins/authad/lang/sv
+@dirrm %%WWWDIR%%/lib/plugins/authad/lang/sk
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/ru
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/pt-br
+@dirrm %%WWWDIR%%/lib/plugins/authad/lang/pt
+@dirrm %%WWWDIR%%/lib/plugins/authad/lang/pl
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/nl
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/lv
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/ko
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/ja
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/it
+@dirrm %%WWWDIR%%/lib/plugins/authad/lang/hu
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/fr
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/fi
+@dirrm %%WWWDIR%%/lib/plugins/authad/lang/es
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/eo
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/en
+@dirrm %%WWWDIR%%/lib/plugins/authad/lang/el
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/de-informal
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/de
+@dirrm %%WWWDIR%%/lib/plugins/authad/lang/da
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/cs
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang/bg
 @dirrm %%WWWDIR%%/lib/plugins/authad/lang
@@ -4018,6 +4075,7 @@
 @dirrm %%WWWDIR%%/lib/images
 @dirrm %%WWWDIR%%/lib/exe
 @dirrm %%WWWDIR%%/lib
+@dirrm %%WWWDIR%%/inc/phpseclib
 @dirrm %%WWWDIR%%/inc/parser
 @dirrm %%WWWDIR%%/inc/lang/zh-tw
 @dirrm %%WWWDIR%%/inc/lang/zh
@@ -4077,6 +4135,7 @@
 @dirrm %%WWWDIR%%/inc/lang/cs
 @dirrm %%WWWDIR%%/inc/lang/ca-valencia
 @dirrm %%WWWDIR%%/inc/lang/ca
+@dirrm %%WWWDIR%%/inc/lang/bn
 @dirrm %%WWWDIR%%/inc/lang/bg
 @dirrm %%WWWDIR%%/inc/lang/az
 @dirrm %%WWWDIR%%/inc/lang/ar
