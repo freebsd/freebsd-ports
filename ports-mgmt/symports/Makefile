@@ -10,7 +10,7 @@ DISTNAME=	auto-symlink-virtual-${PORTVERSION}
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Automatically generate symlinks for virtual categories
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
