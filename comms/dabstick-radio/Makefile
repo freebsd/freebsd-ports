@@ -13,13 +13,13 @@ COMMENT=	DAB/DAB+ and wideband FM receiver for RTL2832-based USB sticks
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS+=	rtlsdr:${PORTSDIR}/comms/rtl-sdr \
-		qwt:${PORTSDIR}/x11-toolkits/qwt5 \
-		portaudio.2:${PORTSDIR}/audio/portaudio2 \
-		sndfile:${PORTSDIR}/audio/libsndfile \
-		avcodec:${PORTSDIR}/multimedia/ffmpeg \
-		fftw3:${PORTSDIR}/math/fftw3 \
-		faad:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=	librtlsdr.so:${PORTSDIR}/comms/rtl-sdr \
+		libqwt.so:${PORTSDIR}/x11-toolkits/qwt5 \
+		libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \
+		libsndfile.so:${PORTSDIR}/audio/libsndfile \
+		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
+		libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libfaad.so:${PORTSDIR}/audio/faad
 
 USE_QT4=	gui qt3support qmake_build moc_build rcc_build uic_build
 

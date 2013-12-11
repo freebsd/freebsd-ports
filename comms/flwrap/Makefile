@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	db
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Flwrap is a companion utility for fldigi
 
-LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

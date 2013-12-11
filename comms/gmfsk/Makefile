@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	db
 MAINTAINER=	carl@stagecraft.cx
 COMMENT=	The Gnome MFSK terminal program
 
-LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw
+LIB_DEPENDS=	libfftw.so:${PORTSDIR}/math/fftw
 
 GNU_CONFIGURE=	yes
 # This is pure evil but it looks like autoconf 2.53 has a bug in linking the
@@ -33,7 +33,7 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MHAMLIB}
-LIB_DEPENDS+=	hamlib:${PORTSDIR}/comms/hamlib
+LIB_DEPENDS+=	libhamlib.so:${PORTSDIR}/comms/hamlib
 CONFIGURE_ARGS+=	--enable-hamlib
 CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lib/pkgconfig
 .else

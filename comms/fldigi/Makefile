@@ -16,11 +16,11 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconf \
 		asciidoc:${PORTSDIR}/textproc/asciidoc\
 		docbook-xsl>=1.0:${PORTSDIR}/textproc/docbook-xsl\
 		xsltproc:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-		samplerate:${PORTSDIR}/audio/libsamplerate\
-		boost_system:${PORTSDIR}/devel/boost-libs\
-		fltk:${PORTSDIR}/x11-toolkits/fltk
-CXXFLAGS	+=-std=gnu++0x
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libsamplerate.so:${PORTSDIR}/audio/libsamplerate\
+		libboost_system.so:${PORTSDIR}/devel/boost-libs\
+		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+USE_CXXSTD=	gnu++0x
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig

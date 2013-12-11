@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Geodetic computer for amateur radio use
 
-LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
 USE_GMAKE=	yes
 MAKEFILE=	makefile
