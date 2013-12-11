@@ -18,7 +18,7 @@ COMMENT=	Sound server for UNIX
 
 LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libsndfile.so:${PORTSDIR}/audio/libsndfile \
-		libspeexdsp.so${PORTSDIR}/audio/speex \
+		libspeexdsp.so:${PORTSDIR}/audio/speex \
 		libdbus-1.so:${PORTSDIR}/devel/dbus \
 		libgdbm.so:${PORTSDIR}/databases/gdbm \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
