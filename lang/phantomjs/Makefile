@@ -2,6 +2,7 @@
 
 PORTNAME=	phantomjs
 PORTVERSION=	1.9.2
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -12,12 +13,12 @@ COMMENT=	Minimalistic, headless, WebKit-based, JavaScript-driven tool
 LICENSE=	BSD
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 PROJECTHOST=	phantomjs
+USES=		gmake dos2unix
 USE_ZIP=	YES
-USE_GMAKE=	YES
-USE_DOS2UNIX=	YES
-USE_QT4=	moc qmake gui webkit rcc
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-build:
