@@ -9,8 +9,8 @@ MASTER_SITES=	http://www.rkeene.org/files/oss/dact/release/
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Dynamic Adaptive Compression Tool
 
-LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
-		lzo2.2:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/libmcrypt \
+		liblzo2.so:${PORTSDIR}/archivers/lzo2
 
 NO_STAGE=	yes
 USES=		gmake

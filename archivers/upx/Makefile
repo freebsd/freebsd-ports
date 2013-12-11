@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFX}\
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	The Ultimate Packer for eXecutables
 
-LIB_DEPENDS=	ucl.1:${PORTSDIR}/archivers/ucl
+LIB_DEPENDS=	libucl.so:${PORTSDIR}/archivers/ucl
 
 NO_STAGE=	yes
 LZMA_VER=	4.65

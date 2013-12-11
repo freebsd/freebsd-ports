@@ -32,7 +32,7 @@ LZMA_DEPEND?=	xz
 .endif
 
 .if (${LZMA_DEPEND} == "xz") || (${LZMA_DEPEND} == "lzmalib")
-LIB_DEPENDS+=	lzma:${PORTSDIR}/archivers/${LZMA_DEPEND}
+LIB_DEPENDS+=	liblzma.so:${PORTSDIR}/archivers/${LZMA_DEPEND}
 .endif
 
 pre-build:
