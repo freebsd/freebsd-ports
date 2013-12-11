@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert between XML and WBXML using libwbxml2
 
-LIB_DEPENDS=	wbxml2:${PORTSDIR}/textproc/wbxml2
+LIB_DEPENDS=	libwbxml2.so:${PORTSDIR}/textproc/wbxml2
 
 USES=		perl5
 USE_PERL5=	configure

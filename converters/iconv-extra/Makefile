@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	bland
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Additional charsets for the iconv library (those from the Unicode site)
 
-LIB_DEPENDS=	biconv.2:${PORTSDIR}/converters/iconv
+LIB_DEPENDS=	libbiconv.so:${PORTSDIR}/converters/iconv
 
 USES=		perl5
 
