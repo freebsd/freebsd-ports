@@ -3,7 +3,8 @@
 
 PORTNAME=		sasql
 PORTVERSION=	3.2.0
-PORTREVISION=	1
+PORTREVISION=	2
+CATEGORIES=		mail www
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Edit SpamAssassin settings stored in an SQL DB

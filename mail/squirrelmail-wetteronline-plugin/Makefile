@@ -3,7 +3,8 @@
 
 PORTNAME=		wetteronline
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
+CATEGORIES=		mail www
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Plugin for the weather in Germany
