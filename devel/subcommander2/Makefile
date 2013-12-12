@@ -13,8 +13,8 @@ COMMENT=	Qt4 based multiplatform subversion client, diff & merge tool
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
-		svn_client-1:${PORTSDIR}/devel/subversion
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libsvn_client-1.so:${PORTSDIR}/devel/subversion
 
 LATEST_LINK=	subcommander2
 CONFLICTS=	subcommander-1.*

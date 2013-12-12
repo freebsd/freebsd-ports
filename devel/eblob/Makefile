@@ -10,7 +10,7 @@ COMMENT=	Append-only low-level I/O library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zloidemon
@@ -34,7 +34,7 @@ CMAKE_ARGS+=	-DWITH_ASSERTS=OFF
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-LIB_DEPENDS+=	boost_python:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS+=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
 USE_PYTHON=	yes
 CMAKE_ARGS+=	-DWITH_PYTHON=ON
 INSTALLS_EGGINFO=	yes
@@ -46,7 +46,7 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSNAPPY}
-LIB_DEPENDS+=	snappy:${PORTSDIR}/archivers/snappy
+LIB_DEPENDS+=	libsnappy.so:${PORTSDIR}/archivers/snappy
 CMAKE_ARGS+=	-DWITH_SNAPPY=ON
 .else
 CMAKE_ARGS+=	-DWITH_SNAPPY=OFF
