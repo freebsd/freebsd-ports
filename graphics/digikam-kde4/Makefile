@@ -14,16 +14,16 @@ NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.common"
 
 BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Eigen:${PORTSDIR}/math/eigen3
-LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
-		lcms:${PORTSDIR}/graphics/lcms \
-		png15:${PORTSDIR}/graphics/png \
-		jasper:${PORTSDIR}/graphics/jasper \
-		lensfun:${PORTSDIR}/graphics/lensfun \
-		lqr-1:${PORTSDIR}/graphics/liblqr-1 \
-		kface:${PORTSDIR}/graphics/libkface \
-		pgf:${PORTSDIR}/graphics/libpgf \
-		kgeomap:${PORTSDIR}/astro/libkgeomap \
-		boost_graph:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
+		liblcms.so:${PORTSDIR}/graphics/lcms \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libjasper.so:${PORTSDIR}/graphics/jasper \
+		liblensfun.so:${PORTSDIR}/graphics/lensfun \
+		liblqr-1.so:${PORTSDIR}/graphics/liblqr-1 \
+		libkface.so:${PORTSDIR}/graphics/libkface \
+		libpgf.so:${PORTSDIR}/graphics/libpgf \
+		libkgeomap.so:${PORTSDIR}/astro/libkgeomap \
+		libboost_graph.so:${PORTSDIR}/devel/boost-libs
 
 LATEST_LINK=	${PORTNAME}-kde4
 
@@ -56,7 +56,7 @@ RUN_DEPENDS+=	digikam-doc>=${DIGIKAM_VER}:${PORTSDIR}/graphics/digikam-kde4-doc
 .endif
 
 .if ${PORT_OPTIONS:MGPHOTO2}
-LIB_DEPENDS+=	gphoto2:${PORTSDIR}/graphics/libgphoto2
+LIB_DEPENDS+=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
 .else
 CMAKE_ARGS+=	-DWITH_Gphoto2:BOOL=OFF
 .endif

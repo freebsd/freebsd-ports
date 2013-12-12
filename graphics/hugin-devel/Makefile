@@ -12,16 +12,16 @@ DISTNAME=	hugin-2013.0.0_beta1
 MAINTAINER=	grog@FreeBSD.org
 COMMENT=	A GUI for Panorama Tools, to stitch panoramic images
 
-LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		Imath:${PORTSDIR}/graphics/ilmbase \
-		boost_thread:${PORTSDIR}/devel/boost-libs \
-		exiv2:${PORTSDIR}/graphics/exiv2 \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		lensfun:${PORTSDIR}/graphics/lensfun \
-		pano13:${PORTSDIR}/graphics/libpano13 \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
+		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
+		libImath.so:${PORTSDIR}/graphics/ilmbase \
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		liblensfun.so:${PORTSDIR}/graphics/lensfun \
+		libpano13.so:${PORTSDIR}/graphics/libpano13 \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 BUILD_DEPENDS=	swig2.0:${PORTSDIR}/devel/swig20 \
 		tclap>=1.2.1:${PORTSDIR}/devel/tclap
 # gmake is really needed at _runtime_.   Do not remove it from this list.

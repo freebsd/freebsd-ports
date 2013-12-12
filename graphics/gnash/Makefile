@@ -10,12 +10,12 @@ MASTER_SITES=	GNU/${PORTNAME}/${PORTVERSION}/
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNU Flash movie player
 
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		curl:${PORTSDIR}/ftp/curl \
-		gif:${PORTSDIR}/graphics/giflib \
-		speex:${PORTSDIR}/audio/speex \
-		nspr4:${PORTSDIR}/devel/nspr
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libcurl.so:${PORTSDIR}/ftp/curl \
+		libgif.so:${PORTSDIR}/graphics/giflib \
+		libspeex.so:${PORTSDIR}/audio/speex \
+		libnspr4.so:${PORTSDIR}/devel/nspr
 
 CONFLICTS=	gnash-devel-[0-9]*
 NO_STAGE=	yes

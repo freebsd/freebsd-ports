@@ -16,12 +16,12 @@ EXPIRATION_DATE=	2013-12-22
 
 BROKEN=		Does not build with recent boost
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
-		boost_thread:${PORTSDIR}/devel/boost-libs \
-		IL:${PORTSDIR}/graphics/devil \
-		ogg:${PORTSDIR}/audio/libogg \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		execinfo:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libIL.so:${PORTSDIR}/graphics/devil \
+		libogg.so:${PORTSDIR}/audio/libogg \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 BUILD_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 
 ONLY_FOR_ARCHS=	i386 amd64

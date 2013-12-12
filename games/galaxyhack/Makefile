@@ -12,8 +12,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AI script based strategy game
 
-LIB_DEPENDS=	boost_filesystem:${PORTSDIR}/devel/boost-libs \
-		freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 USES=		dos2unix gmake
 USE_BZIP2=	yes

@@ -10,8 +10,8 @@ MASTER_SITES=	http://download.gna.org/colorscheme/releases/
 MAINTAINER=	ps.ports@smyrak.com
 COMMENT=	A color scheme builder for the GNOME desktop
 
-LIB_DEPENDS=	glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
-		boost_thread:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 # --disable-gnome option is broken in 0.4.2
 #OPTIONS=	GNOME	"Adds GNOME support"	on
@@ -33,7 +33,7 @@ NO_STAGE=	yes
 #CONFIGURE_ARGS+=	--disable-gnome --disable-gconf
 #.else
 USE_GNOME+=	libgnomeui
-LIB_DEPENDS+=	gconfmm-2.6:${PORTSDIR}/devel/gconfmm26
+LIB_DEPENDS+=	libgconfmm-2.6.so:${PORTSDIR}/devel/gconfmm26
 #.endif
 
 .include <bsd.port.post.mk>
