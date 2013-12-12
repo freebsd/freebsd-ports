@@ -66,7 +66,7 @@ CONFIGURE_ARGS+=--enable-vis			\
 USE_GL=		glu
 LIB_DEPENDS+=	libftgl.so:${PORTSDIR}/graphics/ftgl		\
 		libfreetype.so:${PORTSDIR}/print/freetype2	\
-		libgl2ps:${PORTSDIR}/print/gl2ps
+		libgl2ps.so:${PORTSDIR}/print/gl2ps
 PLIST_SUB+=	VIS=""
 . if ${PORT_OPTIONS:MOCAF}
 CONFIGURE_ARGS+=--enable-caf
