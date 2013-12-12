@@ -355,6 +355,9 @@ share/locale/tr/LC_MESSAGES/iso_639_3.mo
 share/locale/tt/LC_MESSAGES/iso_3166.mo
 share/locale/tt/LC_MESSAGES/iso_639.mo
 share/locale/tt/LC_MESSAGES/iso_639_3.mo
+share/locale/tt@iqtelif/LC_MESSAGES/iso_3166.mo
+share/locale/tt@iqtelif/LC_MESSAGES/iso_639.mo
+share/locale/tt@iqtelif/LC_MESSAGES/iso_639_3.mo
 share/locale/ug/LC_MESSAGES/iso_3166.mo
 share/locale/uk/LC_MESSAGES/iso_15924.mo
 share/locale/uk/LC_MESSAGES/iso_3166.mo
@@ -421,6 +424,8 @@ share/xml/iso-codes/iso_639_3.xml
 @dirrmtry share/locale/ve
 @dirrmtry share/locale/ug/LC_MESSAGES
 @dirrmtry share/locale/ug
+@dirrmtry share/locale/tt@iqtelif/LC_MESSAGES
+@dirrmtry share/locale/tt@iqtelif
 @dirrmtry share/locale/tt/LC_MESSAGES
 @dirrmtry share/locale/tt
 @dirrmtry share/locale/tl/LC_MESSAGES
