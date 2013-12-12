@@ -16,6 +16,8 @@ COMMENT?=	A collection of secure and reliable DNS tools
 RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
 		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 
+LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
+
 OPTIONS_DEFINE=	DUMPCACHE IP6 IGNOREIP JUMBO MAN PERSISTENT_MMAP SRV DNSCURVE ADD_USERS
 OPTIONS_DEFAULT=	MAN
 DUMPCACHE_DESC=	persistent cache for dnscache

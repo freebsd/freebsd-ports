@@ -14,6 +14,7 @@ COMMENT=	Improved version of the ezmlm mailing list manager
 MAKE_JOBS_UNSAFE=	yes
 
 LICENSE=	GPLv2
+LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
 
 USES=		qmail:run
 
@@ -28,6 +29,7 @@ DB_DESC=		Enable database extension support
 MYSQL_DESC=		Build the MySQL extension
 PGSQL_DESC=		Build the PostgreSQL extension
 SQLITE_DESC=		Build the SQLite3 extension
+
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>

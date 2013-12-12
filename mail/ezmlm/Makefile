@@ -16,6 +16,8 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy-to-use, high-speed mailing list manager for qmail
 
+LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
+
 USES=		qmail:run
 
 USE_GCC=	any
