@@ -512,45 +512,6 @@ man/man1/anki.1.gz
 %%DATADIR%%/designer/studydeck.ui
 %%DATADIR%%/designer/taglimit.ui
 %%DATADIR%%/designer/template.ui
-%%DATADIR%%/locale/af/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/ar/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/az/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/bg/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/bn/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/ca/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/cs/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/da/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/de/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/el/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/en_GB/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/eo/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/es/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/et/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/eu/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/fa/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/fi/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/fr/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/gl/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/gu/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/he/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/hr/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/hu/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/it/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/ja/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/km/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/ko/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/lt/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/lv/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/mn/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/mr/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/ms/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/nb/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/nl/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/no/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/oc/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/pl/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/pt/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/pt_BR/LC_MESSAGES/anki.mo
 %%DATADIR%%/locale/qt_ar.qm
 %%DATADIR%%/locale/qt_cs.qm
 %%DATADIR%%/locale/qt_da.qm
@@ -573,21 +534,6 @@ man/man1/anki.1.gz
 %%DATADIR%%/locale/qt_uk.qm
 %%DATADIR%%/locale/qt_zh_CN.qm
 %%DATADIR%%/locale/qt_zh_TW.qm
-%%DATADIR%%/locale/ro/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/ru/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/sk/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/sl/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/sr/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/sv/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/th/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/tlh/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/tr/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/uk/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/vi/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/wo/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/zh_CN/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/zh_HK/LC_MESSAGES/anki.mo
-%%DATADIR%%/locale/zh_TW/LC_MESSAGES/anki.mo
 %%DATADIR%%/oldanki/README
 %%DATADIR%%/oldanki/__init__.py
 %%DATADIR%%/oldanki/__init__.pyc
@@ -738,124 +684,79 @@ man/man1/anki.1.gz
 %%DATADIR%%/tools/build_ui.sh
 %%DATADIR%%/tools/tests.sh
 share/applications/anki.desktop
+%%NLS%%share/locale/af/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/az/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/bn/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/da/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/de/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/el/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/es/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/et/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/gu/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/he/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/it/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/km/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/mn/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/mr/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/no/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/th/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/tlh/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/wo/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/zh_HK/LC_MESSAGES/anki.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/anki.mo
 share/mime/packages/anki.xml
 share/pixmaps/anki.png
 share/pixmaps/anki.xpm
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
+%%NLS%%@dirrmtry share/locale/zh_HK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_HK
+%%NLS%%@dirrmtry share/locale/wo/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/wo
+%%NLS%%@dirrmtry share/locale/tlh/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tlh
+%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/oc
+%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/mr
+%%NLS%%@dirrmtry share/locale/km/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/km
 @dirrm %%DATADIR%%/tools
 @dirrm %%DATADIR%%/tests/support
 @dirrm %%DATADIR%%/tests
 @dirrm %%DATADIR%%/oldanki/template
 @dirrm %%DATADIR%%/oldanki
-@dirrm %%DATADIR%%/locale/zh_TW/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/zh_TW
-@dirrm %%DATADIR%%/locale/zh_HK/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/zh_HK
-@dirrm %%DATADIR%%/locale/zh_CN/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/zh_CN
-@dirrm %%DATADIR%%/locale/wo/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/wo
-@dirrm %%DATADIR%%/locale/vi/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/vi
-@dirrm %%DATADIR%%/locale/uk/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/uk
-@dirrm %%DATADIR%%/locale/tr/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/tr
-@dirrm %%DATADIR%%/locale/tlh/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/tlh
-@dirrm %%DATADIR%%/locale/th/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/th
-@dirrm %%DATADIR%%/locale/sv/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/sv
-@dirrm %%DATADIR%%/locale/sr/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/sr
-@dirrm %%DATADIR%%/locale/sl/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/sl
-@dirrm %%DATADIR%%/locale/sk/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/sk
-@dirrm %%DATADIR%%/locale/ru/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/ru
-@dirrm %%DATADIR%%/locale/ro/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/ro
-@dirrm %%DATADIR%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/pt_BR
-@dirrm %%DATADIR%%/locale/pt/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/pt
-@dirrm %%DATADIR%%/locale/pl/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/pl
-@dirrm %%DATADIR%%/locale/oc/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/oc
-@dirrm %%DATADIR%%/locale/no/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/no
-@dirrm %%DATADIR%%/locale/nl/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/nl
-@dirrm %%DATADIR%%/locale/nb/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/nb
-@dirrm %%DATADIR%%/locale/ms/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/ms
-@dirrm %%DATADIR%%/locale/mr/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/mr
-@dirrm %%DATADIR%%/locale/mn/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/mn
-@dirrm %%DATADIR%%/locale/lv/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/lv
-@dirrm %%DATADIR%%/locale/lt/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/lt
-@dirrm %%DATADIR%%/locale/ko/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/ko
-@dirrm %%DATADIR%%/locale/km/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/km
-@dirrm %%DATADIR%%/locale/ja/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/ja
-@dirrm %%DATADIR%%/locale/it/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/it
-@dirrm %%DATADIR%%/locale/hu/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/hu
-@dirrm %%DATADIR%%/locale/hr/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/hr
-@dirrm %%DATADIR%%/locale/he/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/he
-@dirrm %%DATADIR%%/locale/gu/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/gu
-@dirrm %%DATADIR%%/locale/gl/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/gl
-@dirrm %%DATADIR%%/locale/fr/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/fr
-@dirrm %%DATADIR%%/locale/fi/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/fi
-@dirrm %%DATADIR%%/locale/fa/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/fa
-@dirrm %%DATADIR%%/locale/eu/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/eu
-@dirrm %%DATADIR%%/locale/et/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/et
-@dirrm %%DATADIR%%/locale/es/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/es
-@dirrm %%DATADIR%%/locale/eo/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/eo
-@dirrm %%DATADIR%%/locale/en_GB/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/en_GB
-@dirrm %%DATADIR%%/locale/el/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/el
-@dirrm %%DATADIR%%/locale/de/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/de
-@dirrm %%DATADIR%%/locale/da/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/da
-@dirrm %%DATADIR%%/locale/cs/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/cs
-@dirrm %%DATADIR%%/locale/ca/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/ca
-@dirrm %%DATADIR%%/locale/bn/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/bn
-@dirrm %%DATADIR%%/locale/bg/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/bg
-@dirrm %%DATADIR%%/locale/az/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/az
-@dirrm %%DATADIR%%/locale/ar/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/ar
-@dirrm %%DATADIR%%/locale/af/LC_MESSAGES
-@dirrm %%DATADIR%%/locale/af
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%/designer/icons
 @dirrm %%DATADIR%%/designer
