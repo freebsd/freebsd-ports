@@ -3,6 +3,8 @@
 
 PORTNAME=	abook_import_export
 PORTVERSION=	1.1
+PORTREVISION=	1
+CATEGORIES=	mail www
 DISTNAME=	${PORTNAME:S/-/_/}-${PORTVERSION}-1.4.4
 DIST_SUBDIR=	squirrelmail
 

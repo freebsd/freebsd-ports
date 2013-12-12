@@ -3,6 +3,8 @@
 
 PORTNAME=		login_auth
 PORTVERSION=		3.0
+PORTREVISION=	1
+CATEGORIES=		mail www
 MASTER_SITES=		http://www.squirrelmail.org/plugins/ \
 			http://www.transit.hanse.de/mirror/www.squirrelmail.org/plugins/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-1.4.0

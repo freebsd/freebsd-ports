@@ -3,7 +3,8 @@
 
 PORTNAME=	user_special_mailboxes
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
+CATEGORIES=		mail www
 DISTNAME=	${PORTNAME:S/-/_/}.${PORTVERSION}-1.4
 
 MAINTAINER=	itetcu@FreeBSD.org

@@ -3,7 +3,8 @@
 
 PORTNAME=	avelsieve
 PORTVERSION=	1.9.7
-PORTREVISION=	2
+PORTREVISION=	3
+CATEGORIES=		mail www
 
 MAINTAINER=	neil@darlow.co.uk
 COMMENT=	SquirrelMail plugin for Server-Side Mail Filtering management
