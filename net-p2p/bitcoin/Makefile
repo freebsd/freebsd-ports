@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MAINTAINER=	robbak@robbak.com
 COMMENT=	Virtual Peer-to-Peer Currency Client
 
-LIB_DEPENDS=	boost_date_time:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
 
 OPTIONS_DEFINE=	GUI UPNP QRCODES
 OPTIONS_DEFAULT=	GUI QRCODES
@@ -48,7 +48,7 @@ MAKE_ARGS+=	-C ${WRKSRC}/src
 .endif
 
 .if ${PORT_OPTIONS:MQRCODES}
-LIB_DEPENDS+=	qrencode:${PORTSDIR}/graphics/libqrencode
+LIB_DEPENDS+=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
 QMAKE_USE_QRCODE=1
 .else
 QMAKE_USE_QRCODE=0
@@ -57,7 +57,7 @@ QMAKE_USE_QRCODE=0
 PLIST_FILES=	bin/${BINARY}
 
 .if ${PORT_OPTIONS:MUPNP}
-LIB_DEPENDS+=	miniupnpc:${PORTSDIR}/net/miniupnpc
+LIB_DEPENDS+=	libminiupnpc.so:${PORTSDIR}/net/miniupnpc
 QMAKE_USE_UPNP=	1
 .else
 QMAKE_USE_UPNP=	-

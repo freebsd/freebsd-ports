@@ -13,7 +13,7 @@ COMMENT=	A Direct Connect client shared library
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs
 BUILD_DEPENDS+=	chrpath:${PORTSDIR}/devel/chrpath
 
 PROJECTHOST=	eiskaltdc
@@ -47,14 +47,14 @@ CMAKE_ARGS+=	-DLUA_SCRIPT:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 CMAKE_ARGS+=	-DPERL_REGEX:BOOL=ON
 .else
 CMAKE_ARGS+=	-DPERL_REGEX:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MIDN}
-LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
+LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
 CMAKE_ARGS+=	-DUSE_IDNA:BOOL=ON
 .else
 CMAKE_ARGS+=	-DUSE_IDNA:BOOL=OFF
