@@ -12,14 +12,15 @@ COMMENT=	Produces small test cases
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	clang32=3.2:${PORTSDIR}/lang/clang32
-RUN_DEPENDS=	clang32=3.2:${PORTSDIR}/lang/clang32
-RUN_DEPENDS=	topformflat:${PORTSDIR}/devel/delta \
+BUILD_DEPENDS=	llvm-config32:${PORTSDIR}/lang/clang32
+RUN_DEPENDS=	llvm-config32:${PORTSDIR}/lang/clang32 \
+		topformflat:${PORTSDIR}/devel/delta \
 		astyle:${PORTSDIR}/devel/astyle \
 		p5-Benchmark-Timer>=0:${PORTSDIR}/devel/p5-Benchmark-Timer \
 		p5-Exporter-Lite>=0:${PORTSDIR}/devel/p5-Exporter-Lite \
 		p5-File-Which>=0:${PORTSDIR}/sysutils/p5-File-Which \
-		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common
+		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \
+		devel/p5-Sys-Cpu>=0:${PORTSDIR}/devel/p5-Sys-Cpu
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	csmith-project
