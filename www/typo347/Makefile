@@ -12,6 +12,8 @@ COMMENT=	The typo3 content management system
 
 LICENSE=	GPLv2
 
+PORTSCOUT=	limit:^4\.7\.
+
 NO_BUILD=	yes
 USE_PHP=	ctype filter json mysql pcre session xml
 WANT_PHP_WEB=	yes
