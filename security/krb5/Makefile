@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		krb5
-PORTVERSION=		1.11.3
-PORTREVISION=		2
+PORTVERSION=		1.12
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
@@ -19,7 +18,7 @@ LICENSE=		MIT
 
 BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
-CONFLICTS=		heimdal-[0-9]* srp-[0-9]*
+CONFLICTS=		heimdal-[0-9]* srp-[0-9]* krb5-maint-[0-9]*
 
 LATEST_LINK=		${PORTNAME}-19
 KERBEROSV_URL=		http://web.mit.edu/kerberos/

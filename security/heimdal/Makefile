@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.h5l.org/dist/src/ \
 MAINTAINER=	Joerg.Pulz@frm2.tum.de
 COMMENT=	Popular BSD-licensed implementation of Kerberos 5
 
-CONFLICTS=	krb4-[0-9]* krb5-[0-9]* srp-[0-9]*
+CONFLICTS=	krb4-[0-9]* krb5-[0-9]* krb5-maint-[0-9]* srp-[0-9]*
 
 OPTIONS_DEFINE=	IPV6 KCM BDB SQLITE LDAP PKINIT DIGEST KX509 CRACKLIB X11
 OPTIONS_DEFAULT=	KCM BDB PKINIT DIGEST KX509

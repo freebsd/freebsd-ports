@@ -9,7 +9,7 @@ MASTER_SITES=	http://srp.stanford.edu/source/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure Remote Password protocol library, TELNET, and FTP
 
-CONFLICTS=	krb4-[0-9]* krb5-[0-9]* heimdal-[0-9]*
+CONFLICTS=	krb4-[0-9]* krb5-[0-9]* krb5-maint-[0-9]* heimdal-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	INSTALL="/usr/bin/install -C"
