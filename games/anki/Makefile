@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	anki
-PORTVERSION=	2.0.18
+PORTVERSION=	2.0.19
 CATEGORIES=	games python
 MASTER_SITES=	http://ankisrs.net/download/mirror/
 EXTRACT_SUFX=	.tgz
@@ -24,15 +24,26 @@ RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		${PYTHON_PKGNAMEPREFIX}qt4-webkit>=4.4:${PORTSDIR}/www/py-qt4-webkit \
 		${PYTHON_PKGNAMEPREFIX}send2trash>0:${PORTSDIR}/deskutils/py-send2trash
 
-USES=		desktop-file-utils gettext:run shared-mime-info
-USE_PYTHON=	-2.7
+USES=		desktop-file-utils shared-mime-info
+USE_PYTHON=	2.7
 USE_QT4=	network_run webkit_run
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext:run
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/|${PREFIX}/share/|' \
 		${WRKSRC}/runanki
-	@${REINPLACE_CMD} -e 's|^Categories=.*|Categories=Education;Languages;KDE;Qt;Game;|' \
+	@${REINPLACE_CMD} -e 's|/usr/share/anki/locale|${PREFIX}/share/locale/|' \
+		${WRKSRC}/anki/lang.py
+	@${REINPLACE_CMD} \
+		-e 's|^Categories=.*|Categories=Education;Languages;KDE;Qt;Game;|' \
 		${WRKSRC}/${PORTNAME}.desktop
+	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
@@ -40,9 +51,23 @@ do-build:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/runanki ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-.for i in anki aqt designer locale oldanki tests tools
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${DATADIR})
+
+.for d in anki aqt designer oldanki tests tools
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor
+
+	@${MKDIR} ${STAGEDIR}${DATADIR}/locale
+	${INSTALL_DATA} ${WRKSRC}/locale/qt* ${STAGEDIR}${DATADIR}/locale/
+
+.if ${PORT_OPTIONS:MNLS}
+.  for f in af ar az bg bn ca cs da de el en_GB eo es et eu fa fi fr gl gu he \
+	hu it ja km ko lt lv mn mr ms nb nl no oc pl pt pt_BR ro ru sk sl sr \
+	sv th tlh tr uk vi wo zh_CN zh_HK zh_TW
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${f}/LC_MESSAGES && \
+		${INSTALL_DATA} ${WRKSRC}/locale/${f}/LC_MESSAGES/${PORTNAME}.mo \
+	${STAGEDIR}${PREFIX}/share/locale/${f}/LC_MESSAGES/${PORTNAME}.mo
+.  endfor
+.endif
 
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
@@ -50,6 +75,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages/
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.xml \
 		${STAGEDIR}${PREFIX}/share/mime/packages/
+
 .for p in *.png *.xpm
 	${INSTALL_DATA} ${WRKSRC}/${p} \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
