@@ -13,7 +13,7 @@ COMMENT=	Advanced molecular editor and viewer
 LICENSE=	GPLv2 # (or later)
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
-LIB_DEPENDS=	openbabel:${PORTSDIR}/science/openbabel
+LIB_DEPENDS=	libopenbabel.so:${PORTSDIR}/science/openbabel
 
 OPTIONS_DEFINE=	PYTHON
 OPTIONS_DEFAULT=PYTHON
@@ -40,7 +40,7 @@ CMAKE_ARGS+=	-DENABLE_PYTHON=ON
 USE_PYTHON=	-2.7
 BUILD_DEPENDS+=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}sip>0:${PORTSDIR}/devel/py-sip
-LIB_DEPENDS+=	boost_python:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS+=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
 RUN_DEPENDS+=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}sip>0:${PORTSDIR}/devel/py-sip
 PLIST_SUB+=	PYTHON=""

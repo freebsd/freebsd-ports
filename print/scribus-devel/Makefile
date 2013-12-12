@@ -13,20 +13,20 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	coder@tuxfamily.org
 COMMENT=	Comprehensive desktop publishing program
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		lcms:${PORTSDIR}/graphics/lcms \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff \
-		cups:${PORTSDIR}/print/cups-base \
-		freetype:${PORTSDIR}/print/freetype2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		podofo:${PORTSDIR}/graphics/podofo \
-		boost_thread:${PORTSDIR}/devel/boost-libs \
-		aspell:${PORTSDIR}/textproc/aspell \
-		cairo:${PORTSDIR}/graphics/cairo \
-		execinfo:${PORTSDIR}/devel/libexecinfo \
-		poppler:${PORTSDIR}/graphics/poppler \
-		osg:${PORTSDIR}/graphics/osg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		liblcms.so:${PORTSDIR}/graphics/lcms \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libcups.so:${PORTSDIR}/print/cups-base \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libpodofo.so:${PORTSDIR}/graphics/podofo \
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libaspell.so:${PORTSDIR}/textproc/aspell \
+		libcairo.so:${PORTSDIR}/graphics/cairo \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libpoppler.so:${PORTSDIR}/graphics/poppler \
+		libosg.so:${PORTSDIR}/graphics/osg
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging \
 		update-mime-database:${PORTSDIR}/misc/shared-mime-info

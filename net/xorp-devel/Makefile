@@ -13,8 +13,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source network routing platform, development branch
 
 # Uses libcurses, libcrypto, librt from base system.
-LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs \
-		pcap:${PORTSDIR}/net/libpcap
+LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs \
+		libpcap.so:${PORTSDIR}/net/libpcap
 
 CONFLICTS=	xorp-1*
 

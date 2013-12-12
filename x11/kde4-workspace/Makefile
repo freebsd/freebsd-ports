@@ -11,20 +11,20 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Plasma Desktop
 
-LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus \
-		ck-connector:${PORTSDIR}/sysutils/consolekit \
-		pci:${PORTSDIR}/devel/libpci \
-		hal:${PORTSDIR}/sysutils/hal \
-		qalculate:${PORTSDIR}/math/libqalculate \
-		prison:${PORTSDIR}/graphics/prison \
-		boost_thread:${PORTSDIR}/devel/boost-libs \
-		dbusmenu-qt:${PORTSDIR}/devel/libdbusmenu-qt \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype:${PORTSDIR}/print/freetype2 \
-		png15:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		xcb-render-util:${PORTSDIR}/x11/xcb-util-renderutil \
-		xcb-image:${PORTSDIR}/x11/xcb-util-image
+LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libck-connector.so:${PORTSDIR}/sysutils/consolekit \
+		libpci.so:${PORTSDIR}/devel/libpci \
+		libhal.so:${PORTSDIR}/sysutils/hal \
+		libqalculate.so:${PORTSDIR}/math/libqalculate \
+		libprison.so:${PORTSDIR}/graphics/prison \
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libdbusmenu-qt.so:${PORTSDIR}/devel/libdbusmenu-qt \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libxcb-render-util.so:${PORTSDIR}/x11/xcb-util-renderutil \
+		libxcb-image.so:${PORTSDIR}/x11/xcb-util-image
 BUILD_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
 RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \

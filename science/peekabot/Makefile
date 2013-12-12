@@ -15,9 +15,9 @@ LICENSE_COMB=	multi
 
 BROKEN=		Does not build
 
-LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs \
-		xerces-c.3:${PORTSDIR}/textproc/xerces-c3 \
-		gtkglextmm-x11-1.2:${PORTSDIR}/x11-toolkits/gtkglextmm
+LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs \
+		libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3 \
+		libgtkglextmm-x11-1.2.so:${PORTSDIR}/x11-toolkits/gtkglextmm
 
 USE_BZIP2=	yes
 USES=	pathfix gmake
