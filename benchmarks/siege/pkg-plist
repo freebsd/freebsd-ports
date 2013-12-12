@@ -1,4 +1,5 @@
-%%DATADIR%%/siegerc
+%%ETCDIR%%/siegerc
+%%ETCDIR%%/urls.txt
 bin/bombardment
 bin/siege
 bin/siege.config
@@ -9,4 +10,4 @@ man/man1/siege.config.1.gz
 man/man1/siege2csv.1.gz
 man/man5/urls_txt.5.gz
 man/man7/layingsiege.7.gz
-@dirrm %%DATADIR%%
+@dirrm %%ETCDIR%%
