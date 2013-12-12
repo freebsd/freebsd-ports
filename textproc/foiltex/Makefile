@@ -12,7 +12,7 @@ DISTFILES=	foiltex.dtx foiltex.ins
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of LaTeX files for making foils
 
-NO_CDROM=	redistribution on a not-for-profit basis only
+NO_CDROM=	Redistribution on a not-for-profit basis only
 
 USE_TEX=	latex
 NO_WRKSUBDIR=	yes

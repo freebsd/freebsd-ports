@@ -15,7 +15,7 @@ COMMENT=	Oxford Advanced Learner's pronunciation dictionary for Festival
 
 RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival
 
-RESTRICTED=	no-commercial-use
+RESTRICTED=	No commercial use
 
 WRKSRC=		${WRKDIR}/festival
 
