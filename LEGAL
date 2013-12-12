@@ -26,8 +26,8 @@
 *-for-1.4.tgz	net/dgd-lpmud			No commercial use
 *_FreeBSD_MegaCLI.zip	sysutils/megacli	Reproduction or redistribution prohibited
 ASpath-tree-*.tar.gz	net-mgmt/aspathtree	No commercial us
-26410-800.zip		audio/libaacplus	Unclear legal status
-aacplusenc-*		audio/aacplusenc	Unclear legal status
+26410-800.zip		audio/libaacplus	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
+aacplusenc-*		audio/aacplusenc	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 acroread/AdbeRdr8.*	print/acroread8		Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
 acroread/AdbeRdr9.*	print/acroread9		Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
 actx-*			games/actx		Contains commercial character data
@@ -37,7 +37,7 @@ aestats-*		games/aestats		Commercial use is prohibited
 agrep-*			textproc/agrep		No redistribution for profit
 alephone/M1A1.zip	games/alephone-data	Bungie/Microsoft do not allow charging for Marathon data files
 alephone/Marathon*.zip	games/alephone-data	Bungie/Microsoft do not allow charging for Marathon data files
-annelid-*		games/annelid		Redistribution is limited
+annelid-*		games/annelid		No redistribution allowed
 apache2/mod_h264_streaming-*	www/mod_h264_streaming	No commercial use
 AquaGatekeeper*		net/AquaGatekeeper	No redistribution allowed
 armyops*-linux.run	games/linux-americasarmy Redistribution is limited
@@ -81,7 +81,7 @@ dnews_*			news/dnews		Only free for schools and universities, but they have to r
 doom3-linux-*		games/linux-doom3	Redistribution is limited, see license; Requested by id Software
 doom3-linux-*		games/linux-doom3-demo	Redistribution is limited, see license; Requested by id Software
 doomsrc.zip		games/doom		Redistribution is limited, see license; Requested by id Software
-dr_freebsd_*.zip	sysutils/megarc		Must be downloaded manually
+dr_freebsd_*.zip	sysutils/megarc		Must be downloaded directly from the manufacturer
 dsnake-*		games/dsnake		License prohibits any reselling
 dtiquery-*		science/dtiquery	License agreement is required
 eagle-lin-*.run		cad/linux-eagle5	Usage permitted for non-commercial purposes only
