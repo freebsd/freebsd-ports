@@ -1,0 +1,120 @@
+bin/compile_et
+bin/gss-client
+bin/k5srvutil
+bin/kadmin
+bin/kdestroy
+bin/kinit
+bin/klist
+bin/kpasswd
+bin/krb5-config
+bin/kswitch
+bin/ksu
+bin/ktutil
+bin/kvno
+bin/sclient
+bin/sim_client
+bin/uuclient
+include/com_err.h
+include/gssapi.h
+include/gssapi/gssapi.h
+include/gssapi/gssapi_ext.h
+include/gssapi/gssapi_generic.h
+include/gssapi/gssapi_krb5.h
+include/gssapi/mechglue.h
+include/gssrpc/auth.h
+include/gssrpc/auth_gss.h
+include/gssrpc/auth_gssapi.h
+include/gssrpc/auth_unix.h
+include/gssrpc/clnt.h
+include/gssrpc/netdb.h
+include/gssrpc/pmap_clnt.h
+include/gssrpc/pmap_prot.h
+include/gssrpc/pmap_rmt.h
+include/gssrpc/rename.h
+include/gssrpc/rpc.h
+include/gssrpc/rpc_msg.h
+include/gssrpc/svc.h
+include/gssrpc/svc_auth.h
+include/gssrpc/types.h
+include/gssrpc/xdr.h
+include/krb5.h
+%%LDAP%%include/krb5/ccselect_plugin.h
+include/krb5/kadm5_hook_plugin.h
+include/krb5/krb5.h
+include/krb5/locate_plugin.h
+include/krb5/plugin.h
+include/krb5/pwqual_plugin.h
+include/kadm5/admin.h
+include/kadm5/chpass_util_strings.h
+include/kadm5/kadm_err.h
+include/kdb.h
+include/krb5/preauth_plugin.h
+include/profile.h
+include/verto-module.h
+include/verto.h
+lib/libcom_err.so
+lib/libcom_err.so.3
+lib/libgssapi_krb5.so
+lib/libgssapi_krb5.so.2
+lib/libgssrpc.so
+lib/libgssrpc.so.4
+lib/libk5crypto.so
+lib/libk5crypto.so.3
+lib/libkadm5clnt.so
+lib/libkadm5clnt_mit.so
+lib/libkadm5clnt_mit.so.8
+lib/libkadm5srv.so
+lib/libkadm5srv_mit.so
+lib/libkadm5srv_mit.so.8
+lib/libkdb5.so
+lib/libkdb5.so.7
+lib/libkrb5.so
+lib/libkrb5.so.3
+lib/libkrb5support.so
+lib/libkrb5support.so.0
+lib/krb5/plugins/kdb/db2.so
+%%LDAP%%lib/krb5/plugins/kdb/kldap.so
+lib/krb5/plugins/preauth/pkinit.so
+%%LDAP%%lib/libkdb_ldap.so
+%%LDAP%%lib/libkdb_ldap.so.1
+lib/libverto.so.0
+lib/libverto.so
+sbin/gss-server
+sbin/kadmin.local
+sbin/kadmind
+%%LDAP%%sbin/kdb5_ldap_util
+sbin/kdb5_util
+sbin/kprop
+sbin/kpropd
+sbin/kproplog
+sbin/krb5-send-pr
+sbin/krb5kdc
+sbin/sim_server
+sbin/sserver
+sbin/uuserver
+share/doc/krb5/README.FreeBSD
+share/et/et_c.awk
+share/et/et_h.awk
+share/examples/krb5/kdc.conf
+share/examples/krb5/krb5.conf
+share/examples/krb5/services.append
+share/gnats/mit
+share/locale/en_US/LC_MESSAGES/mit-krb5.mo
+@exec mkdir -p %D/var/krb5kdc
+@dirrmtry var/krb5kdc
+@dirrmtry var
+@dirrmtry share/locale/en_US/LC_MESSAGES
+@dirrmtry share/locale/en_US
+@dirrm lib/krb5/plugins/preauth
+@dirrm lib/krb5/plugins/libkrb5
+@dirrm lib/krb5/plugins/kdb
+@dirrm lib/krb5/plugins/authdata
+@dirrm lib/krb5/plugins
+@dirrm lib/krb5
+@dirrm include/gssapi
+@dirrm include/gssrpc
+@dirrm include/krb5
+@dirrm include/kadm5
+@dirrm share/et
+@dirrmtry share/gnats
+@dirrm share/examples/krb5
