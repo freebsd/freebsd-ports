@@ -78,8 +78,8 @@ dlv			lang/dlv		Not sure if we can redistribute it
 dmd-*			lang/dmd		No redistribution of non validated binaries
 dn*.tgz			emulators/darcnes	Commercial use is restricted
 dnews_*			news/dnews		Only free for schools and universities, but they have to register as well.  4 weeks of free trial for everybody We currently ask for permission to put a package on the CD-ROM
-doom3-linux-*		games/linux-doom3	Redistribution is limited, see license
-doom3-linux-*		games/linux-doom3-demo	Redistribution is limited, see license
+doom3-linux-*		games/linux-doom3	Redistribution is limited, see license; Requested by id Software
+doom3-linux-*		games/linux-doom3-demo	Redistribution is limited, see license; Requested by id Software
 doomsrc.zip		games/doom		Redistribution is limited, see license; Requested by id Software
 dr_freebsd_*.zip	sysutils/megarc		Must be downloaded manually
 dsnake-*		games/dsnake		License prohibits any reselling
