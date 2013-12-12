@@ -15,7 +15,7 @@ COMMENT=	Alternative Bitcoin peer-to-peer currency client
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/graph/parallel/algorithm.hpp:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS=	boost_date_time:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
 
 OPTIONS_DEFINE=	WXGTK
 OPTIONS_DEFAULT=	WXGTK

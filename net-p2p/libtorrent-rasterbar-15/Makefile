@@ -19,8 +19,8 @@ CONFLICTS+=	libtorrent-rasterbar-0.1[46789].*
 NO_LATEST_LINK=	yes
 
 BUILD_DEPENDS=	pkgconf>0:${PORTSDIR}/devel/pkgconf
-LIB_DEPENDS+=	boost_date_time:${PORTSDIR}/devel/boost-libs \
-		GeoIP.5:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
+		libGeoIP.so:${PORTSDIR}/net/GeoIP
 
 USES=	pathfix
 USE_OPENSSL=	yes
