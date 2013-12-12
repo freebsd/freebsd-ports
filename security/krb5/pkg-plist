@@ -37,9 +37,14 @@ include/gssrpc/svc.h
 include/gssrpc/svc_auth.h
 include/gssrpc/types.h
 include/gssrpc/xdr.h
+include/krad.h
 include/krb5.h
-%%LDAP%%include/krb5/ccselect_plugin.h
+include/krb5/ccselect_plugin.h
+include/krb5/clpreauth_plugin.h
+include/krb5/hostrealm_plugin.h
 include/krb5/kadm5_hook_plugin.h
+include/krb5/kdcpreauth_plugin.h
+include/krb5/localauth_plugin.h
 include/krb5/krb5.h
 include/krb5/locate_plugin.h
 include/krb5/plugin.h
@@ -62,10 +67,10 @@ lib/libk5crypto.so
 lib/libk5crypto.so.3
 lib/libkadm5clnt.so
 lib/libkadm5clnt_mit.so
-lib/libkadm5clnt_mit.so.8
+lib/libkadm5clnt_mit.so.9
 lib/libkadm5srv.so
 lib/libkadm5srv_mit.so
-lib/libkadm5srv_mit.so.8
+lib/libkadm5srv_mit.so.9
 lib/libkdb5.so
 lib/libkdb5.so.7
 lib/libkrb5.so
@@ -74,11 +79,22 @@ lib/libkrb5support.so
 lib/libkrb5support.so.0
 lib/krb5/plugins/kdb/db2.so
 %%LDAP%%lib/krb5/plugins/kdb/kldap.so
+lib/krb5/plugins/preauth/otp.so
 lib/krb5/plugins/preauth/pkinit.so
 %%LDAP%%lib/libkdb_ldap.so
 %%LDAP%%lib/libkdb_ldap.so.1
+lib/libkrad.so
+lib/libkrad.so.0
 lib/libverto.so.0
 lib/libverto.so
+lib/pkgconfig/gssrpc.pc
+lib/pkgconfig/kadm-client.pc
+lib/pkgconfig/kadm-server.pc
+lib/pkgconfig/kdb.pc
+lib/pkgconfig/krb5-gssapi.pc
+lib/pkgconfig/krb5.pc
+lib/pkgconfig/mit-krb5-gssapi.pc
+lib/pkgconfig/mit-krb5.pc
 sbin/gss-server
 sbin/kadmin.local
 sbin/kadmind
@@ -105,6 +121,7 @@ share/locale/en_US/LC_MESSAGES/mit-krb5.mo
 @dirrmtry var
 @dirrmtry share/locale/en_US/LC_MESSAGES
 @dirrmtry share/locale/en_US
+@dirrm lib/pkgconfig
 @dirrm lib/krb5/plugins/preauth
 @dirrm lib/krb5/plugins/libkrb5
 @dirrm lib/krb5/plugins/kdb
