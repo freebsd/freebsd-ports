@@ -32,19 +32,19 @@ LICENSE_DISTFILES_UNICODE= EastAsianWidth.txt \
 	8859-11.TXT 8859-13.TXT 8859-14.TXT 8859-15.TXT 8859-16.TXT
 LICENSE_DISTFILES_ZEND200=	${DISTNAME}${EXTRACT_SUFX}
 
-LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
-		boost_thread:${PORTSDIR}/devel/boost-libs \
-		execinfo:${PORTSDIR}/devel/libexecinfo \
-		tbb:${PORTSDIR}/devel/tbb \
-		gd:${PORTSDIR}/graphics/gd \
-		mcrypt:${PORTSDIR}/security/libmcrypt \
-		onig:${PORTSDIR}/devel/oniguruma4 \
-		pcre:${PORTSDIR}/devel/pcre \
-		expat:${PORTSDIR}/textproc/expat2 \
-		memcached:${PORTSDIR}/databases/libmemcached \
-		c-client4:${PORTSDIR}/mail/cclient \
-		unwind:${PORTSDIR}/devel/libunwind \
-		glog:${PORTSDIR}/devel/glog
+LIB_DEPENDS=	libicudata.so:${PORTSDIR}/devel/icu \
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libtbb.so:${PORTSDIR}/devel/tbb \
+		libgd.so:${PORTSDIR}/graphics/gd \
+		libmcrypt.so:${PORTSDIR}/security/libmcrypt \
+		libonig.so:${PORTSDIR}/devel/oniguruma4 \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libmemcached.so:${PORTSDIR}/databases/libmemcached \
+		libc-client4.so:${PORTSDIR}/mail/cclient \
+		libunwind.so:${PORTSDIR}/devel/libunwind \
+		libglog.so:${PORTSDIR}/devel/glog
 
 OPTIONS_DEFINE=		DOCS
 

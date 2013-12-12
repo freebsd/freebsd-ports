@@ -14,10 +14,10 @@ COMMENT=	Open Source implementation of Microsoft Exchange protocols
 
 BUILD_DEPENDS=	${HOSTCONFIG}:${PORTSDIR}/net/samba4 \
 		pidl:${PORTSDIR}/devel/p5-Parse-Pidl
-LIB_DEPENDS=	ical:${PORTSDIR}/devel/libical \
-		tdb:${PORTSDIR}/databases/tdb \
-		tevent:${PORTSDIR}/devel/tevent \
-		talloc:${PORTSDIR}/devel/talloc
+LIB_DEPENDS=	libical.so:${PORTSDIR}/devel/libical \
+		libtdb.so:${PORTSDIR}/databases/tdb \
+		libtevent.so:${PORTSDIR}/devel/tevent \
+		libtalloc.so:${PORTSDIR}/devel/talloc
 RUN_DEPENDS=	${HOSTCONFIG}:${PORTSDIR}/net/samba4
 
 HOSTCONFIG=	${LOCALBASE}/libdata/pkgconfig/samba-hostconfig.pc
@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=	--disable-swig-perl
 CONFIGURE_ARGS+=	--disable-pymapi
 
 .if ${PORT_OPTIONS:MBOOST} || exists(${LOCALBASE}/lib/libboost_thread.so)
-LIB_DEPENDS+=	boost_thread:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 PLIST_SUB+=	BOOST=""
 .else
 PLIST_SUB+=	BOOST="@comment "

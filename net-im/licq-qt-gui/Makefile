@@ -11,7 +11,7 @@ COMMENT=	Qt plugin for licq
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/lib/licq/protocol_icq.so:${PORTSDIR}/${LICQ_PORT}-icq
 
 NO_STAGE=	yes
