@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gambit
-PORTVERSION=	13.1.0
+PORTVERSION=	13.1.1
 CATEGORIES=	math
 MASTER_SITES=	SF/gambit/${PORTNAME}13/${PORTVERSION}/
 
@@ -17,5 +17,4 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-wx-config=${WX_CONFIG}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
