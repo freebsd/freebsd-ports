@@ -1,0 +1,51 @@
+--- ./Makefile.orig	2013-12-09 03:51:52.000000000 +0100
++++ ./Makefile	2013-12-12 21:03:24.000000000 +0100
+@@ -1,4 +1,4 @@
+-PREFIX=/usr
++PREFIX=/usr/local
+ 
+ all:
+ 	@echo "You can run Anki with ./runanki"
+@@ -6,24 +6,31 @@
+ 	@echo "Uninstall with 'sudo make uninstall'"
+ 
+ install:
+-	rm -rf ${DESTDIR}${PREFIX}/share/anki
+ 	mkdir -p ${DESTDIR}${PREFIX}/share/anki
+-	cp -av * ${DESTDIR}${PREFIX}/share/anki/
+-	cd ${DESTDIR}${PREFIX}/share/anki && (\
+-	mv runanki ${DESTDIR}${PREFIX}/local/bin/anki;\
++	cp -av anki aqt designer oldanki tests tools\
++	 ${DESTDIR}${PREFIX}/share/anki/
++	cp -av runanki ${DESTDIR}${PREFIX}/bin/anki
++	mkdir -p ${DESTDIR}${PREFIX}/share/anki/locale/
++	mkdir -p qt-locale/ && mv locale/qt* ./qt-locale/
++	cp -av qt-locale/* ${DESTDIR}${PREFIX}/share/anki/locale/
++	mkdir -p ${DESTDIR}${PREFIX}/share/locale/
++	cp -av locale/* ${DESTDIR}${PREFIX}/share/locale/
+ 	test -d ${DESTDIR}${PREFIX}/share/pixmaps &&\
+-	  mv anki.xpm anki.png ${DESTDIR}${PREFIX}/share/pixmaps/;\
+-	mv anki.desktop ${DESTDIR}${PREFIX}/share/applications;\
+-	mv anki.1 ${DESTDIR}${PREFIX}/share/man/man1/)
+-	xdg-mime install anki.xml --novendor
+-	xdg-mime default anki.desktop application/x-anki
+-	xdg-mime default anki.desktop application/x-apkg
++	 cp -av anki.xpm anki.png ${DESTDIR}${PREFIX}/share/pixmaps/
++	cp -av anki.desktop ${DESTDIR}${PREFIX}/share/applications
++	mkdir -p ${DESTDIR}${PREFIX}/man/man1/
++	cp -av anki.1 ${DESTDIR}${PREFIX}/man/man1/
++	mkdir -p ${DESTDIR}${PREFIX}/share/mime/packages/
++	cp -av anki.xml ${DESTDIR}${PREFIX}/share/mime/packages/
++#	xdg-mime install anki.xml --novendor
++#	xdg-mime default anki.desktop application/x-anki
++#	xdg-mime default anki.desktop application/x-apkg
+ 	@echo
+ 	@echo "Install complete."
+ 
+ uninstall:
+ 	rm -rf ${DESTDIR}${PREFIX}/share/anki
+-	rm -rf ${DESTDIR}${PREFIX}/local/bin/anki
++	rm -rf ${DESTDIR}${PREFIX}/bin/anki
+ 	rm -rf ${DESTDIR}${PREFIX}/share/pixmaps/anki.xpm
+ 	rm -rf ${DESTDIR}${PREFIX}/share/pixmaps/anki.png
+ 	rm -rf ${DESTDIR}${PREFIX}/share/applications/anki.desktop

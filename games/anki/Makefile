@@ -3,6 +3,7 @@
 
 PORTNAME=	anki
 PORTVERSION=	2.0.19
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	http://ankisrs.net/download/mirror/
 EXTRACT_SUFX=	.tgz
@@ -36,49 +37,18 @@ NLS_USES=	gettext:run
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/|${PREFIX}/share/|' \
-		${WRKSRC}/runanki
-	@${REINPLACE_CMD} -e 's|/usr/share/anki/locale|${PREFIX}/share/locale/|' \
-		${WRKSRC}/anki/lang.py
 	@${REINPLACE_CMD} \
 		-e 's|^Categories=.*|Categories=Education;Languages;KDE;Qt;Game;|' \
 		${WRKSRC}/${PORTNAME}.desktop
-	@${FIND} ${WRKSRC} -name "*.bak" -delete
+	@${FIND} ${WRKSRC} -name "*.bak" -delete -or -name "*.orig" -delete
+
+.if ! ${PORT_OPTIONS:MNLS}
+	@${REINPLACE_CMD} -i '' '/mkdir -p qt-locale/,/cp -av locale/s/^/#/' \
+		${WRKSRC}/Makefile
+.endif
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/runanki ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
-.for d in anki aqt designer oldanki tests tools
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
-.endfor
-
-	@${MKDIR} ${STAGEDIR}${DATADIR}/locale
-	${INSTALL_DATA} ${WRKSRC}/locale/qt* ${STAGEDIR}${DATADIR}/locale/
-
-.if ${PORT_OPTIONS:MNLS}
-.  for f in af ar az bg bn ca cs da de el en_GB eo es et eu fa fi fr gl gu he \
-	hu it ja km ko lt lv mn mr ms nb nl no oc pl pt pt_BR ro ru sk sl sr \
-	sv th tlh tr uk vi wo zh_CN zh_HK zh_TW
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${f}/LC_MESSAGES && \
-		${INSTALL_DATA} ${WRKSRC}/locale/${f}/LC_MESSAGES/${PORTNAME}.mo \
-	${STAGEDIR}${PREFIX}/share/locale/${f}/LC_MESSAGES/${PORTNAME}.mo
-.  endfor
-.endif
-
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages/
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.xml \
-		${STAGEDIR}${PREFIX}/share/mime/packages/
-
-.for p in *.png *.xpm
-	${INSTALL_DATA} ${WRKSRC}/${p} \
-		${STAGEDIR}${PREFIX}/share/pixmaps/
-.endfor
 
 .include <bsd.port.mk>
