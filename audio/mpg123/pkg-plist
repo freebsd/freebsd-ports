@@ -13,4 +13,5 @@ lib/mpg123/output_oss.a
 lib/mpg123/output_oss.la
 lib/mpg123/output_oss.so
 libdata/pkgconfig/libmpg123.pc
+man/man1/mpg123.1.gz
 @dirrm lib/mpg123

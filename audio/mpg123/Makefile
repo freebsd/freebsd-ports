@@ -15,7 +15,7 @@ LICENSE=	LGPL21
 USES=		gmake pathfix
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool libltdl
-#USE_GNOME=	ltverhack
+USE_GNOME=	ltverhack
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
