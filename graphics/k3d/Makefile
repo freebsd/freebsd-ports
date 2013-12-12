@@ -16,15 +16,15 @@ LICENSE=	GPLv2
 BROKEN=		Fails to configure
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gmm/gmm.h:${PORTSDIR}/math/gmm++
-LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
-		execinfo:${PORTSDIR}/devel/libexecinfo \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff \
-		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		expat:${PORTSDIR}/textproc/expat2 \
-		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext \
-		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
+LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
+		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 
 OPTIONS_DEFINE=	3DS COMPIZ GNOME PERFTOOLS GTS IMAGEMAGICK OPENEXR
 3DS_DESC=	3ds_io plugin module
@@ -58,7 +58,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:M3DS}
-LIB_DEPENDS+=	3ds-1:${PORTSDIR}/graphics/lib3ds
+LIB_DEPENDS+=	lib3ds-1.so:${PORTSDIR}/graphics/lib3ds
 PLIST_SUB+=	3DS=""
 .else
 CMAKE_ARGS+=	-DK3D_BUILD_3DS_IO_MODULE:BOOL=OFF
@@ -66,7 +66,7 @@ PLIST_SUB+=	3DS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCOMPIZ}
-LIB_DEPENDS+=	dbus-glib:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	libdbus-glib.so:${PORTSDIR}/devel/dbus-glib
 PLIST_SUB+=	COMPIZ=""
 .else
 CMAKE_ARGS+=	-DK3D_BUILD_COMPIZ_MODULE:BOOL=OFF
@@ -82,7 +82,7 @@ PLIST_SUB+=	GNOME="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPERFTOOLS}
-LIB_DEPENDS+=	profiler:${PORTSDIR}/devel/google-perftools
+LIB_DEPENDS+=	libprofiler.so:${PORTSDIR}/devel/google-perftools
 PLIST_SUB+=	PERFTOOLS=""
 .else
 CMAKE_ARGS+=	-DK3D_BUILD_GOOGLE_PERFTOOLS_MODULE:BOOL=OFF
@@ -90,7 +90,7 @@ PLIST_SUB+=	PERFTOOLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGTS}
-LIB_DEPENDS+=	gts:${PORTSDIR}/graphics/gts
+LIB_DEPENDS+=	libgts.so:${PORTSDIR}/graphics/gts
 PLIST_SUB+=	GTS=""
 .else
 CMAKE_ARGS+=	-DK3D_BUILD_GTS_MODULE:BOOL=OFF
@@ -98,7 +98,7 @@ PLIST_SUB+=	GTS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
-LIB_DEPENDS+=	MagickCore:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	libMagickCore.so:${PORTSDIR}/graphics/ImageMagick
 PLIST_SUB+=	IMAGEMAGICK=""
 .else
 CMAKE_ARGS+=	-DK3D_BUILD_IMAGEMAGICK_IO_MODULE:BOOL=OFF
@@ -106,7 +106,7 @@ PLIST_SUB+=	IMAGEMAGICK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENEXR}
-LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR
+LIB_DEPENDS+=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
 PLIST_SUB+=	OPENEXR=""
 .else
 CMAKE_ARGS+=	-DK3D_BUILD_OPENEXR_IO_MODULE:BOOL=OFF

@@ -10,19 +10,19 @@ MASTER_SITES=	SF \
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Comprehensive desktop publishing program
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		lcms:${PORTSDIR}/graphics/lcms \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff \
-		cups:${PORTSDIR}/print/cups-client \
-		freetype:${PORTSDIR}/print/freetype2 \
-		podofo:${PORTSDIR}/graphics/podofo \
-		boost_thread:${PORTSDIR}/devel/boost-libs \
-		hunspell:${PORTSDIR}/textproc/hunspell \
-		cairo:${PORTSDIR}/graphics/cairo \
-		hyphen:${PORTSDIR}/textproc/hyphen \
-		execinfo:${PORTSDIR}/devel/libexecinfo \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		liblcms.so:${PORTSDIR}/graphics/lcms \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libcups.so:${PORTSDIR}/print/cups-client \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libpodofo.so:${PORTSDIR}/graphics/podofo \
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libhunspell.so:${PORTSDIR}/textproc/hunspell \
+		libcairo.so:${PORTSDIR}/graphics/cairo \
+		libhyphen.so:${PORTSDIR}/textproc/hyphen \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging
 

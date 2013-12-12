@@ -12,7 +12,7 @@ COMMENT=	A modern style C++ library for working with XML data
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
 
 OPTIONS_DEFINE=	XSLT
 XSLT_DESC=	Build libxsltwrap library (requires libxslt)

@@ -11,7 +11,7 @@ MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	C/C++ and Java sources to HTML converter
 
 BUILD_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
-LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
