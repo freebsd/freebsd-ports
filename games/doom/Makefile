@@ -13,7 +13,7 @@ COMMENT=	DOOM: the game and the sound server
 
 LICENSE=	GPLv1
 
-NO_CDROM=	requested by IDsoftware
+NO_CDROM=	Redistribution is limited, see license
 
 ONLY_FOR_ARCHS=	i386
 

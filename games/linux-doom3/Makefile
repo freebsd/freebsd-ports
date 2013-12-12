@@ -16,7 +16,7 @@ COMMENT=	Doom III for Linux
 
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
-NO_CDROM=	Redistribution is limited, see license
+NO_CDROM=	Redistribution is limited, see license; Requested by id Software
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
