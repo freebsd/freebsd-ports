@@ -11,8 +11,8 @@ EXPIRATION_DATE=2013-12-13
 
 USE_PYTHON=	yes
 
-LIB_DEPENDS+=	boost_python:${PORTSDIR}/devel/boost-python-libs \
-		torrent-rasterbar.6:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15
+LIB_DEPENDS+=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
+		libtorrent-rasterbar.so.6:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15
 
 BUILD_WRKSRC=	${WRKSRC}/bindings/python
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
