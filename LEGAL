@@ -179,7 +179,7 @@ l_fc_p*_*.*.*.tar.gz	lang/ifc		No redistribution allowed
 macopix-*.tar.gz	games/macopix		Contains commercial character data
 madfufw-*		audio/madfufw		No redistribution of firmware files
 majesty_demo*		games/linux-majesty-demo	Redistribution is limited, see license
-MB339-PAN.zip		games/flightgear-mb339-pan Redistribution prohibited
+mb339pan_*		games/flightgear-mb339-pan Redistribution prohibited
 mikachan-ttfonts/ver*.*	japanese/mikachan-ttfonts Do not sell distfile
 mindfocus-*		games/mindfocus		Contains commercial character data
 mindterm-*		security/mindterm-binary Do not sell for profit
