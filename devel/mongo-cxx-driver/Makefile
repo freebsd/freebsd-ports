@@ -12,8 +12,8 @@ COMMENT=	C++ 2.4 Driver for MongoDB
 LICENSE=	AL2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs \
-		sasl2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
+		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	waitman

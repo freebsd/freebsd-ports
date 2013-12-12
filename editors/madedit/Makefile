@@ -16,7 +16,7 @@ USES=		gettext pkgconfig dos2unix
 USE_WX=		2.6+
 WANT_UNICODE=	yes
 
-LIB_DEPENDS+=	boost_regex:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-wx-config=${WX_CONFIG}

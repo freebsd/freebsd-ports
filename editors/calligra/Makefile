@@ -11,26 +11,26 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE graphic art and office suite
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		boost_thread:${PORTSDIR}/devel/boost-libs \
-		qca:${PORTSDIR}/devel/qca \
-		exiv2:${PORTSDIR}/graphics/exiv2 \
-		lcms2:${PORTSDIR}/graphics/lcms2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype:${PORTSDIR}/print/freetype2 \
-		wpd-0.9:${PORTSDIR}/textproc/libwpd \
-		wpg-0.2:${PORTSDIR}/graphics/libwpg \
-		poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
-		openjpeg:${PORTSDIR}/graphics/openjpeg \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		dcmdata:${PORTSDIR}/devel/dcmtk \
-		fftw3:${PORTSDIR}/math/fftw3 \
-		tiff:${PORTSDIR}/graphics/tiff \
-		gsl:${PORTSDIR}/math/gsl \
-		wps-0.2:${PORTSDIR}/textproc/libwps \
-		visio-0.0:${PORTSDIR}/textproc/libvisio \
-		OpenColorIO:${PORTSDIR}/graphics/opencolorio
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libqca.so:${PORTSDIR}/devel/qca \
+		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
+		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libwpd-0.9.so:${PORTSDIR}/textproc/libwpd \
+		libwpg-0.2.so:${PORTSDIR}/graphics/libwpg \
+		libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4 \
+		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libdcmdata.so:${PORTSDIR}/devel/dcmtk \
+		libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libgsl.so:${PORTSDIR}/math/gsl \
+		libwps-0.2.so:${PORTSDIR}/textproc/libwps \
+		libvisio-0.0.so:${PORTSDIR}/textproc/libvisio \
+		libOpenColorIO.so:${PORTSDIR}/graphics/opencolorio
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
 
 CONFLICTS=	koffice-kde4-2.*
