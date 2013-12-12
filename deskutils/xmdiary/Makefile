@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}.tar.gz
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Personal and group calendar utility
 
-NO_CDROM=	Don't sell for profit
+NO_CDROM=	Do not sell for profit
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 USES=		imake motif
 USE_XORG=	x11 xext xp xpm xt
