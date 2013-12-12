@@ -11,7 +11,7 @@ DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}
 MAINTAINER=	bkoenig@alpha-tierchen.de
 COMMENT=	Persistence of Vision Ray Tracer
 
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 OPTIONS_DEFINE=	X11 PNG JPEG TIFF OPENEXR STATIC IO EXAMPLES DOCS
 OPTIONS_DEFAULT=	PNG JPEG EXAMPLES DOCS
@@ -60,7 +60,7 @@ CONFIGURE_ARGS+=--disable-io-restrictions
 .if ${PORT_OPTIONS:MSTATIC}
 BUILD_DEPENDS+=	png>=1.4:${PORTSDIR}/graphics/png
 .else
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
 LIBS+=		-lpng
 .endif
 .else
@@ -71,7 +71,7 @@ CONFIGURE_ARGS+=--without-libpng
 .if ${PORT_OPTIONS:MSTATIC}
 BUILD_DEPENDS+=	jpeg>=6b:${PORTSDIR}/graphics/jpeg
 .else
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 LIBS+=		-ljpeg
 .endif
 .else
@@ -82,7 +82,7 @@ CONFIGURE_ARGS+=--without-libjpeg
 .if ${PORT_OPTIONS:MSTATIC}
 BUILD_DEPENDS+=	tiff>=4:${PORTSDIR}/graphics/tiff
 .else
-LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff
 LIBS+=		-ltiff
 .endif
 .else
@@ -93,7 +93,7 @@ CONFIGURE_ARGS+=--without-libtiff
 .if ${PORT_OPTIONS:MSTATIC}
 BUILD_DEPENDS+=	OpenEXR>=1.6:${PORTSDIR}/graphics/OpenEXR
 .else
-LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR
+LIB_DEPENDS+=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
 LIBS+=		-lIlmImf
 INCLUDES+=	-I${LOCALBASE}/include/OpenEXR
 .endif

@@ -27,7 +27,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-LIB_DEPENDS+=	boost_python:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS+=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
 .endif
 
 .include <bsd.port.mk>

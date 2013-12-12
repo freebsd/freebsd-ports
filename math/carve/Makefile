@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A fast, robust constructive solid geometry library
 
-LIB_DEPENDS=	boost_filesystem:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
 
 OPTIONS_DEFINE=	GUI
 
@@ -28,7 +28,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUI}
-LIB_DEPENDS+=	glui:${PORTSDIR}/devel/glui
+LIB_DEPENDS+=	libglui.so:${PORTSDIR}/devel/glui
 PLIST_SUB+=	GUI=""
 CMAKE_ARGS+=	-DCARVE_WITH_GUI:BOOL=true
 .else

@@ -23,35 +23,35 @@ BUILD_DEPENDS=	enca:${PORTSDIR}/converters/enca \
 		nasm:${PORTSDIR}/devel/nasm \
 		dvdread-config:${PORTSDIR}/multimedia/libdvdread
 
-LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib	\
-		boost_thread:${PORTSDIR}/devel/boost-libs \
-		cdio:${PORTSDIR}/sysutils/libcdio	\
-		curl:${PORTSDIR}/ftp/curl \
-		dbus-1:${PORTSDIR}/devel/dbus \
-		enca:${PORTSDIR}/converters/enca \
-		GLEW:${PORTSDIR}/graphics/glew \
-		avcodec0:${PORTSDIR}/multimedia/ffmpeg0	\
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype:${PORTSDIR}/print/freetype2 \
-		fribidi:${PORTSDIR}/converters/fribidi \
-		lzo2:${PORTSDIR}/archivers/lzo2 \
-		jasper:${PORTSDIR}/graphics/jasper \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		faad:${PORTSDIR}/audio/faad \
-		mad:${PORTSDIR}/audio/libmad \
-		modplug:${PORTSDIR}/audio/libmodplug \
-		mpeg2:${PORTSDIR}/multimedia/libmpeg2 \
-		ogg:${PORTSDIR}/audio/libogg \
-		pcre:${PORTSDIR}/devel/pcre \
-		png15:${PORTSDIR}/graphics/png \
-		samplerate:${PORTSDIR}/audio/libsamplerate \
-		smbclient:${PORTSDIR}/net/samba-libsmbclient	\
-		sqlite3:${PORTSDIR}/databases/sqlite3 \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		ass:${PORTSDIR}/multimedia/libass \
-		wavpack:${PORTSDIR}/audio/wavpack \
-		yajl:${PORTSDIR}/devel/yajl \
-		plist:${PORTSDIR}/devel/libplist
+LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib	\
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libcdio.so:${PORTSDIR}/sysutils/libcdio	\
+		libcurl.so:${PORTSDIR}/ftp/curl \
+		libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libenca.so:${PORTSDIR}/converters/enca \
+		libGLEW.so:${PORTSDIR}/graphics/glew \
+		libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0	\
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libfribidi.so:${PORTSDIR}/converters/fribidi \
+		liblzo2.so:${PORTSDIR}/archivers/lzo2 \
+		libjasper.so:${PORTSDIR}/graphics/jasper \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libfaad.so:${PORTSDIR}/audio/faad \
+		libmad.so:${PORTSDIR}/audio/libmad \
+		libmodplug.so:${PORTSDIR}/audio/libmodplug \
+		libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2 \
+		libogg.so:${PORTSDIR}/audio/libogg \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
+		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient	\
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libass.so:${PORTSDIR}/multimedia/libass \
+		libwavpack.so:${PORTSDIR}/audio/wavpack \
+		libyajl.so:${PORTSDIR}/devel/yajl \
+		libplist.so:${PORTSDIR}/devel/libplist
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
@@ -121,28 +121,28 @@ PLIST_SUB+=	ARCH="x86_64"
 
 .if ${PORT_OPTIONS:MAVAHI}
 CONFIGURE_ARGS+=	--enable-avahi
-LIB_DEPENDS+=	avahi-common:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=	libavahi-common.so:${PORTSDIR}/net/avahi-app
 .else
 CONFIGURE_ARGS+=	--disable-avahi
 .endif
 
 .if ${PORT_OPTIONS:MLIBBLURAY}
 CONFIGURE_ARGS+=	--enable-libbluray
-LIB_DEPENDS+=	bluray:${PORTSDIR}/multimedia/libbluray
+LIB_DEPENDS+=	libbluray.so:${PORTSDIR}/multimedia/libbluray
 .else
 CONFIGURE_ARGS+=	--disable-libbluray
 .endif
 
 .if ${PORT_OPTIONS:MFAAC}
 CONFIGURE_ARGS+=	--enable-faac
-LIB_DEPENDS+=	faac:${PORTSDIR}/audio/faac
+LIB_DEPENDS+=	libfaac.so:${PORTSDIR}/audio/faac
 .else
 CONFIGURE_ARGS+=	--disable-faac
 .endif
 
 .if ${PORT_OPTIONS:MHAL}
 CONFIGURE_ARGS+=	--enable-hal
-LIB_DEPENDS+=	hal:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal
 .else
 CONFIGURE_ARGS+=	--disable-hal
 .endif
@@ -153,7 +153,7 @@ RUN_DEPENDS+=	lircd:${PORTSDIR}/comms/lirc
 
 .if ${PORT_OPTIONS:MMMS}
 CONFIGURE_ARGS+=	--enable-libmms
-LIB_DEPENDS+=	mms:${PORTSDIR}/net/libmms
+LIB_DEPENDS+=	libmms.so:${PORTSDIR}/net/libmms
 .else
 CONFIGURE_ARGS+=	--disable-libmms
 .endif
@@ -168,27 +168,27 @@ CONFIGURE_ARGS+=	--disable-non-free
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
 CONFIGURE_ARGS+=	--enable-pulse
-LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 .else
 CONFIGURE_ARGS+=	--disable-pulse
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
 CONFIGURE_ARGS+=	--enable-rtmp
-LIB_DEPENDS+=	rtmp:${PORTSDIR}/multimedia/librtmp
+LIB_DEPENDS+=	librtmp.so:${PORTSDIR}/multimedia/librtmp
 .else
 CONFIGURE_ARGS+=	--disable-rtmp
 .endif
 
 .if ${PORT_OPTIONS:MVAAPI}
-LIB_DEPENDS+=	va:${PORTSDIR}/multimedia/libva
+LIB_DEPENDS+=	libva.so:${PORTSDIR}/multimedia/libva
 CONFIGURE_ARGS+=	--enable-vaapi
 .else
 CONFIGURE_ARGS+=	--disable-vaapi
 .endif
 
 .if ${PORT_OPTIONS:MVDPAU}
-LIB_DEPENDS+=	vdpau:${PORTSDIR}/multimedia/libvdpau
+LIB_DEPENDS+=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
 CONFIGURE_ARGS+=	--enable-vdpau
 .else
 CONFIGURE_ARGS+=	--disable-vdpau
@@ -196,7 +196,7 @@ CONFIGURE_ARGS+=	--disable-vdpau
 
 .if ${PORT_OPTIONS:MWEBSERVER}
 CONFIGURE_ARGS+=	--enable-webserver
-LIB_DEPENDS+=	microhttpd:${PORTSDIR}/www/libmicrohttpd
+LIB_DEPENDS+=	libmicrohttpd.so:${PORTSDIR}/www/libmicrohttpd
 PLIST_SUB+=	HTTPD=""
 .else
 CONFIGURE_ARGS+=	--disable-webserver

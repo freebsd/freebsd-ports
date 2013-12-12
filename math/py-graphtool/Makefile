@@ -14,9 +14,9 @@ COMMENT=	Python module for complex network based on C++
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=0.90.1:${PORTSDIR}/math/py-matplotlib \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.8.0:${PORTSDIR}/science/py-scipy
-LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
-		boost_graph:${PORTSDIR}/devel/boost-libs \
-		CGAL.10:${PORTSDIR}/math/cgal
+LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
+		libboost_graph.so:${PORTSDIR}/devel/boost-libs \
+		libCGAL.so:${PORTSDIR}/math/cgal
 
 USE_BZIP2=	yes
 USE_GCC=	yes

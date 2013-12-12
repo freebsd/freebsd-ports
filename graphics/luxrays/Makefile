@@ -14,7 +14,7 @@ COMMENT=	Accelerate the ray intersection process by using GPUs
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libfreeimage.a:${PORTSDIR}/graphics/freeimage
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 HG_NODEID=	475fbf15f0ca
 
