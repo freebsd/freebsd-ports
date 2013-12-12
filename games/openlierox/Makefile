@@ -11,10 +11,10 @@ DISTNAME=	OpenLieroX_${DISTVERSION}.src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Extremely addictive realtime worms shoot-em-up
 
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
-		boost_signals:${PORTSDIR}/devel/boost-libs \
-		curl:${PORTSDIR}/ftp/curl \
-   		alut:${PORTSDIR}/audio/freealut
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
+		libboost_signals.so:${PORTSDIR}/devel/boost-libs \
+		libcurl.so:${PORTSDIR}/ftp/curl \
+		libalut.so:${PORTSDIR}/audio/freealut
 
 USE_BZIP2=	yes
 USE_SDL=	sdl image
