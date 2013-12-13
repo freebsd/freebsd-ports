@@ -26,5 +26,6 @@ lib/X11/app-defaults/XVkbd-swedish
 lib/X11/app-defaults/XVkbd-swissgerman
 lib/X11/app-defaults/XVkbd-turkish
 lib/X11/app-defaults/XVkbd-uk
+man/man1/xvkbd.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

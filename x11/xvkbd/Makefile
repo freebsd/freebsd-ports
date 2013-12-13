@@ -19,9 +19,6 @@ XTEST_DESC=	XTEST extensions support
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
-MAN1=		xvkbd.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXAW3D}
@@ -46,9 +43,7 @@ post-patch:
 		's|/usr/include/|${LOCALBASE}/include/|' ${WRKSRC}/XVkbd-small.ad
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} README ${DOCSDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
