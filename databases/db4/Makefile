@@ -10,6 +10,8 @@ MASTER_SITES=	http://download.oracle.com/berkeley-db/
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
+DEPRECATED=	Please migrate to databases/db5
+
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	The Berkeley DB package, revision 4
 
