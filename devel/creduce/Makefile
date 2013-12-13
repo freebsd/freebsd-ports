@@ -10,7 +10,9 @@ CATEGORIES=	devel
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Produces small test cases
 
-LICENSE=	BSD2CLAUSE
+
+# "University of Illinois Open Source License."
+#LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	llvm-config32:${PORTSDIR}/lang/clang32
 RUN_DEPENDS=	llvm-config32:${PORTSDIR}/lang/clang32 \
