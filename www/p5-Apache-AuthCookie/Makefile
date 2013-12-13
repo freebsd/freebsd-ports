@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Apache-AuthCookie
-PORTVERSION=	3.19
+PORTVERSION=	3.20
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module to provide custom forms for reauthentication
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:${PORTSDIR}/www/mod_perl2 \
 		p5-autobox>=0:${PORTSDIR}/devel/p5-autobox \
