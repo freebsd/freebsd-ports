@@ -3,6 +3,7 @@
 
 PORTNAME=	broccoli
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.bro.org/downloads/release/
 DISTNAME=	bro-${PORTVERSION}
@@ -14,59 +15,53 @@ LICENSE=	BSD
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
 		swig:${PORTSDIR}/devel/swig13
-LIB_DEPENDS=	GeoIP:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 
-EXTRACT_AFTER_ARGS= ${DISTNAME}/aux/broccoli
+EXTRACT_AFTER_ARGS=	${DISTNAME}/aux/broccoli
 
-USES=		cmake:outsource perl5
+USES=		cmake:outsource
 USE_LDCONFIG=	yes
-NO_MTREE=	yes
 CMAKE_SOURCE_PATH=	${WRKSRC}/aux/broccoli
 
 .if defined(BRO_PREFIX)
-PREFIX=${BRO_PREFIX}
+PREFIX=		${BRO_PREFIX}
 PLIST_SUB+=	CLEANUP_PREFIX=""
+.if ! defined(WITH_PKGNG) && ! exists(${BRO_PREFIX})
 NEED_ROOT=	yes
+.endif
+NO_MTREE=	yes
 .else
 PLIST_SUB+=	CLEANUP_PREFIX="@comment "
 .endif
 CMAKE_ARGS+=	-D CMAKE_INSTALL_PREFIX:PATH=${PREFIX} \
-		-D BRO_ETC_INSTALL_DIR:PATH=${PREFIX}/etc \
-		-D PY_MOD_INSTALL_DIR:PATH=${PREFIX}
+		-D BRO_ETC_INSTALL_DIR:PATH=${PREFIX}/etc
 
 OPTIONS_DEFINE=	DEBUG PYTHON RUBY
+OPTIONS_SUB=
 
 DEBUG_DESC=	Compile in debugging mode
 PYTHON_DESC=	Build python bindings for broccoli
 RUBY_DESC=	Build ruby bindings for broccoli
 
-.include <bsd.port.options.mk>
+DEBUG_CMAKE_ON=	-D ENABLE_DEBUG:BOOL=true
+PYTHON_USE=	python=yes
+PYTHON_CMAKE_ON=	-D PY_MOD_INSTALL_DIR:PATH=${PYTHON_SITELIBDIR}
+PYTHON_CMAKE_OFF=	-D DISABLE_PYTHON_BINDINGS:BOOL=true
+RUBY_USE=	ruby=yes
+RUBY_CMAKE_ON=	-D RB_INSTALL_DIR:PATH=${RUBY_SITELIBDIR} \
+		-D RB_ARCH_INSTALL_DIR:PATH=${RUBY_SITEARCHLIBDIR}
+RUBY_CMAKE_OFF=		-D DISABLE_RUBY_BINDINGS:BOOL=true
 
-.if ${PORT_OPTIONS:MDEBUG}
-CMAKE_ARGS+=		-D ENABLE_DEBUG:BOOL=true
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=		yes
-PLIST_SUB+=		PYTHON=""
-.else
-CMAKE_ARGS+=		-D DISABLE_PYTHON_BINDINGS:BOOL=true
-PLIST_SUB+=		PYTHON="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MRUBY}
-USE_RUBY=		yes
-PLIST_SUB+=		RUBY=""
-.else
-CMAKE_ARGS+=		-D DISABLE_RUBY_BINDINGS:BOOL=true
-PLIST_SUB+=		RUBY="@comment "
-.endif
-
-post-stage::
-.if defined(BRO_PREFIX)
+post-install::
+.if defined(BRO_PREFIX) && ! defined(WITH_PKGNG) && ! exists(${BRO_PREFIX})
+	# pkg_install needs PREFIX in order to make a package from STAGEDIR/PREFIX.
 	@${MKDIR} ${PREFIX}
 .endif
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc
-	@${INSTALL_SCRIPT} ${WRKSRC}/aux/broccoli/broccoli.conf ${STAGEDIR}${PREFIX}/etc/broccoli.conf.example
+	@${MV} ${STAGEDIR}${PREFIX}/etc/broccoli.conf ${STAGEDIR}${PREFIX}/etc/broccoli.conf.example
+.if defined(BRO_PREFIX)
+	# bsd.python.mk isn't PREFIX-safe yet.
+	@${MV} ${STAGEDIR}${PYTHON_LIBDIR} ${STAGEDIR}${PYTHON_LIBDIR:S/${LOCALBASE}/${PREFIX}/}
+.endif
 
 .include <bsd.port.mk>
