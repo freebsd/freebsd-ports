@@ -13,8 +13,7 @@ COMMENT=	Graphically display and edit the keyboard mapping
 
 USES=		imake
 USE_XORG=	xbitmaps xaw
-MAN1=		xkeycaps.1
-PLIST_FILES=	bin/xkeycaps
+PLIST_FILES=	bin/xkeycaps \
+		man/man1/xkeycaps.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
