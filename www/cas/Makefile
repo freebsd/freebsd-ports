@@ -16,7 +16,6 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 
 USES=		cmake iconv
 USE_LDCONFIG=	yes
-WITHOUT_NLS=	yes
 
 OPTIONS_DEFINE=	DEBUG_MODE               \
 		ENABLE_OPTIMIZATION      \
