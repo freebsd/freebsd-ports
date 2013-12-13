@@ -31,7 +31,7 @@ _INCLUDE_USES_COMPILER_MK=	yes
 compiler_ARGS=	env
 .endif
 
-VALID_ARGS=	c++11-lib c++11-lang c11 features openmp env
+VALID_ARGS=	c++11-lib c++11-lang c11 features openmp env nestedfct
 
 .if ${compiler_ARGS} == c++11-lib
 _COMPILER_ARGS+=	features c++11-lib
@@ -45,6 +45,8 @@ _COMPILER_ARGS+=	features
 _COMPILER_ARGS+=	env
 .elif ${compiler_ARGS} == openmp
 _COMPILER_ARGS+=	env openmp
+.elif ${compiler_ARGS} == nestedfct
+_COMPILER_ARGS+=	env nestedfct
 .else
 IGNORE=	Invalid argument "${compiler_ARGS}", valid arguments are: ${VALID_ARGS}
 _COMPILER_ARGS=	#
@@ -83,6 +85,13 @@ CHOSEN_COMPILER_TYPE=	${COMPILER_TYPE}
 .if ${_COMPILER_ARGS:Mopenmp}
 .if ${COMPILER_TYPE} == clang
 USE_GCC=	yes
+CHOSEN_COMPILER_TYPE=	gcc
+.endif
+.endif
+
+.if ${_COMPILER_ARGS:Mnestedfct}
+.if ${COMPILER_TYPE} == clang
+USE_GCC=	any
 CHOSEN_COMPILER_TYPE=	gcc
 .endif
 .endif
