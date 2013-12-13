@@ -18,8 +18,7 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libxslt.so:${PORTSDIR}/textproc/libxslt
 
 USE_LDCONFIG=	yes
-USE_GCC=	4.6
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig compiler:c++11-lang
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	"OPENSSL_CFLAGS=${CFLAGS} -l${OPENSSLINC}" \
 		OPENSSL_LIBS=-L${OPENSSLLIB}
