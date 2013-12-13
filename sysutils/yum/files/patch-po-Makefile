@@ -1,5 +1,5 @@
---- po/Makefile.orig	2010-05-06 16:54:46.000000000 +0200
-+++ po/Makefile	2011-06-08 17:19:11.000000000 +0200
+--- ./po/Makefile.orig	2011-06-28 20:27:22.000000000 +0000
++++ ./po/Makefile	2013-12-13 14:18:45.000000000 +0000
 @@ -1,7 +1,9 @@
 +localedir = share/locale
 +
@@ -7,10 +7,30 @@
  INSTALL_PROGRAM= ${INSTALL}
  INSTALL_DATA= ${INSTALL} -m 644
 -INSTALLNLSDIR=$(DESTDIR)/usr/share/locale
-+INSTALLNLSDIR=$(DESTDIR)$(localedir)
++INSTALLNLSDIR=$(PREFIX)/$(localedir)
  top_srcdir = "."
  
  
+@@ -57,15 +59,15 @@
+ depend:
+ 
+ install:	all
+-	mkdir -p $(PREFIX)/$(INSTALLNLSDIR)
++	mkdir -p $(DESTDIR)/$(INSTALLNLSDIR)
+ 	for n in $(CATALOGS); do \
+ 	    l=`basename $$n .po`; \
+ 	    mo=$$l.mo; \
+ 	    if [ ! -f $$mo ]; then continue; fi; \
+-	    $(INSTALL) -m 755 -d $(PREFIX)/$(INSTALLNLSDIR)/$$l; \
+-	    $(INSTALL) -m 755 -d $(PREFIX)/$(INSTALLNLSDIR)/$$l/LC_MESSAGES; \
++	    $(INSTALL) -m 755 -d $(DESTDIR)$(INSTALLNLSDIR)/$$l; \
++	    $(INSTALL) -m 755 -d $(DESTDIR)$(INSTALLNLSDIR)/$$l/LC_MESSAGES; \
+ 	    $(INSTALL) -m 644 $$mo \
+-		$(PREFIX)/$(INSTALLNLSDIR)/$$l/LC_MESSAGES/$(NLSPACKAGE).mo; \
++		$(DESTDIR)$(INSTALLNLSDIR)/$$l/LC_MESSAGES/$(NLSPACKAGE).mo; \
+ 	done
+ 
+ %.mo: %.po
 @@ -77,4 +79,4 @@
  	msgfmt -c $$n; \
  	done

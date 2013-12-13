@@ -9,6 +9,8 @@ MASTER_SITES=	http://yum.baseurl.org/download/${PORTVERSION:R}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Installer/updater for rpm
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		msgfmt:${PORTSDIR}/devel/gettext \
 		intltool-update:${PORTSDIR}/textproc/intltool
@@ -19,20 +21,13 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/rpm:${PORTSDIR}/archivers/rpm4 \
 		${PYTHON_SITELIBDIR}/urlgrabber:${PORTSDIR}/www/py-urlgrabber
 
 USE_PYTHON=	yes
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake
 
 MAKE_ARGS=	MAKE=${GMAKE} PYTHON=${PYTHON_CMD} \
 		prefix=${PREFIX} mandir=${MANPREFIX}/man sysconfdir=${PREFIX}/etc
 
-PLIST_SUB+=	PYTHONPREFIX_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR}
-
-MAN5=		yum.conf.5 yum-updatesd.conf.5
-MAN8=		yum.8 yum-updatesd.8 yum-shell.8
-
 RPMDIR?=	/var/lib/rpm
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|@PREFIX@|${PREFIX}|g' -e \
 	's|@RPMDIR@|${RPMDIR}|g' -e \
@@ -82,21 +77,5 @@ post-patch:
 		${WRKSRC}/yum/update_md.py
 	${REINPLACE_CMD} -e 's|%%PYTHONPREFIX_SITELIBDIR%%|${PYTHONPREFIX_SITELIBDIR}|' \
 		${WRKSRC}/yum/Makefile ${WRKSRC}/rpmUtils/Makefile
-
-pre-install:
-	${MKDIR} ${PREFIX}/share/yum-cli
-	${MKDIR} ${PREFIX}/etc/yum/repos.d
-	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/rpmUtils
-	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/yum
-	${MKDIR} /var/cache/yum
-	${MKDIR} /var/lib/yum
-
-post-install:
-	if [ ! -f ${PREFIX}/etc/yum/yum.conf ]; then \
-		${CP} -p ${PREFIX}/etc/yum/yum.conf.sample ${PREFIX}/etc/yum/yum.conf; \
-	fi
-	if [ ! -f ${PREFIX}/etc/yum/yum-updatesd.conf ]; then \
-		${CP} -p ${PREFIX}/etc/yum/yum-updatesd.conf.sample ${PREFIX}/etc/yum/yum-updatesd.conf; \
-	fi
 
 .include <bsd.port.mk>

@@ -1,4 +1,9 @@
 bin/yum
+man/man5/yum-updatesd.conf.5.gz
+man/man5/yum.conf.5.gz
+man/man8/yum-shell.8.gz
+man/man8/yum-updatesd.8.gz
+man/man8/yum.8.gz
 sbin/yum-updatesd
 share/yum-cli/callback.py
 share/yum-cli/callback.pyc
@@ -125,10 +130,12 @@ etc/rc.d/init.d/yum-updatesd
 etc/dbus-1/system.d/yum-updatesd.conf
 etc/bash_completion.d/yum.bash
 etc/yum/version-groups.conf
-etc/yum/yum.conf
-etc/yum/yum-updatesd.conf
+@unexec if cmp -s %D/etc/yum/yum.conf.sample %D/etc/yum/yum.conf; then rm -f %D/etc/yum/yum.conf; fi
 etc/yum/yum.conf.sample
+@exec if [ ! -f %D/etc/yum/yum.conf ]; then cp -p %D/%F %B/yum.conf; fi
+@unexec if cmp -s %D/etc/yum/yum-updatesd.conf.sample %D/etc/yum/yum-updatesd.conf; then rm -f %D/etc/yum/yum-updatesd.conf; fi
 etc/yum/yum-updatesd.conf.sample
+@exec if [ ! -f %D/etc/yum/yum-updatesd.conf ]; then cp -p %D/%F %B/yum-updatesd.conf; fi
 @dirrm share/yum-cli
 @dirrm etc/yum/repos.d
 @dirrm etc/yum/vars
@@ -147,9 +154,6 @@ etc/yum/yum-updatesd.conf.sample
 @dirrmtry share/locale/ur
 @dirrmtry etc/dbus-1/system.d
 @dirrmtry etc/dbus-1
-@unexec if cmp -s %D/etc/yum/yum.conf.sample %D/etc/yum/yum.conf; then rm -f %D/etc/yum/yum.conf; fi
-@exec if [ ! -f %D/etc/yum/yum.conf ]; then cp -p %D/%F %B/yum.conf; fi
-@unexec if cmp -s %D/etc/yum/yum-updatesd.conf.sample %D/etc/yum/yum-updatesd.conf; then rm -f %D/etc/yum/yum-updatesd.conf; fi
-@exec if [ ! -f %D/etc/yum-updatesd/yum.conf ]; then cp -p %D/%F %B/yum-updatesd.conf; fi
 @unexec rmdir /var/cache/yum 2>&1 >/dev/null || true
 @unexec rmdir /var/lib/yum 2>&1 >/dev/null || true
+@unexec rmdir /var/lib 2>&1 >/dev/null || true
