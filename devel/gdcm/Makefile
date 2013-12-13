@@ -43,7 +43,7 @@ PLIST_SUB+=	VTK="@comment "
 
 GDCM_MAJOR=	2
 GDCM_MINOR=	4
-GDCM_PATCH=	0
+GDCM_PATCH=	1
 
 PLIST_SUB+=	GDCM_MAJOR="${GDCM_MAJOR}" \
 		GDCM_MINOR="${GDCM_MINOR}" \
@@ -56,10 +56,6 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 CMAKE_ARGS+=	-DGDCM_DOCUMENTATION:BOOL=YES \
 		-DGDCM_INSTALL_MAN_DIR:STRING=man \
 		-DGDCM_INSTALL_DOC_DIR:STRING=${DOCSDIR}
-MAN1=		gdcm2vtk.1 gdcmconv.1 gdcmanon.1 gdcmgendir.1 \
-		gdcmdump.1 gdcmimg.1 gdcminfo.1 gdcmpdf.1 \
-		gdcmraw.1 gdcmscanner.1 gdcmtar.1 gdcmviewer.1 \
-		gdcm2pnm.1 gdcmdiff.1 gdcmscu.1
 PORTDOCS=	*
 .else
 CMAKE_ARGS+=	-DGDCM_DOCUMENTATION:BOOL=NO
