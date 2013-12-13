@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	rekonq
-PORTVERSION=	2.3.2
+PORTVERSION=	2.4.0
 CATEGORIES=	www kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:C,\..*,.0,}/
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Lightweight KDE browser based on WebKit
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USES=		cmake:outsource
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_QT4=	script webkit \
