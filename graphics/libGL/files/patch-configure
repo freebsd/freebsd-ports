@@ -8,7 +8,7 @@
 -            DRI_DIRS="i915 i965 nouveau r200 radeon swrast"
 -        fi
 +        case "$host_cpu" in
-+        x86_64)
++        x86_64|ia64)
 +            # i810 is missing because there is no x86-64 system where it
 +            # could *ever* be used.
 +            if test "x$DRI_DIRS" = "xyes"; then
