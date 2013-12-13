@@ -18,12 +18,11 @@ USE_XORG=	x11 xv
 WANT_GNOME=	yes
 USES=		pkgconfig
 
-MAN1=		${PORTNAME}.1
-PLIST_FILES=	bin/${PORTNAME} bin/g${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} bin/g${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz
 
 CFLAGS+=	-DVERSION=\"${PORTVERSION}\"
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK1}
@@ -44,8 +43,8 @@ do-build:
 		`pkg-config --cflags --libs ${GTK_PC} xv x11`
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/g${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/g${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
