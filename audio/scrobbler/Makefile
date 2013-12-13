@@ -18,9 +18,9 @@ CONFLICTS=	bmp-scrobbler-[0-9]* \
 		xmms-scrobbler-[0-9]*
 
 USES=		gmake pkgconfig
+USE_CSTD=	gnu89
 NO_STAGE=	yes
 USE_BZIP2=	yes
-USE_GCC=	any
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
