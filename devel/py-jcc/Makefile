@@ -18,7 +18,6 @@ PYDISTUTILS_PKGNAME=	JCC
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_VENDOR=	openjdk
-USE_GCC=	4.2+
 
 JCC_INCLUDES=	'${JAVA_HOME}/include;${JAVA_HOME}/include/freebsd'
 JCC_CFLAGS=	'-fno-strict-aliasing;-pipe'
