@@ -38,13 +38,9 @@ post-patch:
 	${FIND} ${WRKSRC}/addons -name "*.bak" -o -name "*.orig" -delete
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR}  ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} .  ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR}  ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/samples && ${COPYTREE_SHARE} .  ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>
