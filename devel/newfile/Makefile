@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Tool for creating starter files in various languages
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_RUBY=	yes
 GNU_CONFIGURE=	yes
