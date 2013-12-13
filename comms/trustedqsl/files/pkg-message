@@ -1,0 +1,3 @@
+trustedqsl is now installed. You will have to create a directory .tqsl in
+your home directory and setup a copy of %%PREFIX%%/share/TrustedQSL/config.xml
+here before this program will run correctly.

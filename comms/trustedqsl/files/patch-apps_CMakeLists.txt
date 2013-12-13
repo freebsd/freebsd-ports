@@ -1,13 +1,14 @@
---- apps/CMakeLists.txt.orig	2013-06-25 20:03:58.000000000 -0500
-+++ apps/CMakeLists.txt	2013-06-25 20:05:42.000000000 -0500
-@@ -101,5 +101,9 @@
+--- apps/CMakeLists.txt.orig	2013-12-06 17:42:11.000000000 -0800
++++ apps/CMakeLists.txt	2013-12-06 17:43:12.000000000 -0800
+@@ -121,6 +121,10 @@
+ add_definitions("-DCONFDIR=\"${CMAKE_INSTALL_PREFIX}/share/TrustedQSL/\"")
  install(TARGETS tqsl DESTINATION bin)
- install(TARGETS tqslcert DESTINATION bin)
  install(DIRECTORY help DESTINATION share/TrustedQSL)
--install(FILES trustedqsl.5 DESTINATION share/man/man5)
+-install(FILES tqsl.5 DESTINATION share/man/man5)
 +if(CMAKE_SYSTEM_NAME STREQUAL "FreeBSD")
-+  install(FILES trustedqsl.5 DESTINATION man/man5)
++  install(FILES tqsl.5 DESTINATION man/man5)
 +else()
-+  install(FILES trustedqsl.5 DESTINATION share/man/man5)
++  install(FILES tqsl.5 DESTINATION share/man/man5)
 +endif()
+ install(FILES icons/key48.png DESTINATION share/pixmaps RENAME TrustedQSL.png)
  endif()
