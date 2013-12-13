@@ -14,7 +14,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT?=	Object-oriented interpreted scripting language
 
-LICENSE=	RUBY
+LICENSE=	BSD2CLAUSE RUBY
+LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libffi.so:${PORTSDIR}/devel/libffi \
