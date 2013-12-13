@@ -15,9 +15,7 @@ COMMENT=	Find colour values by graphical colour mixing
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 
-MANCOMPRESSED=	yes
-MAN1=		xcoloredit.1
-PLIST_FILES=	bin/xcoloredit
+PLIST_FILES=	bin/xcoloredit \
+		man/man1/xcoloredit.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
