@@ -1,0 +1,58 @@
+--- Config.kmk.orig	2013-10-15 13:01:31.000000000 +0200
++++ Config.kmk	2013-10-20 14:43:19.015746151 +0200
+@@ -3387,16 +3387,16 @@
+ 	$(VBOX_GCC_WARN) -Wpointer-arith -Winline $(VBOX_GCC_Wno-pointer-sign) $(VBOX_GCC_fdiagnostics-show-option) \
+ 	-Wstrict-prototypes -Wmissing-prototypes -Wstrict-prototypes \
+ 	-Wimplicit-function-declaration -Werror-implicit-function-declaration \
+-	-O2 -fformat-extensions -ffreestanding -fno-strict-aliasing -fno-common -finline-limit=8000 \
++	-O2 -ffreestanding -fno-strict-aliasing -fno-common -finline-limit=8000 \
+ 	$(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_R0_OPT) $(VBOX_GCC_R0_FP) \
+ 	-nostdinc -std=c99
+-TEMPLATE_VBOXR0DRV_CFLAGS.x86          = -m32 -mno-align-long-strings -mpreferred-stack-boundary=2 -mno-mmx -mno-3dnow -mno-sse -mno-sse2
++TEMPLATE_VBOXR0DRV_CFLAGS.x86          = -m32 -mpreferred-stack-boundary=2 -mno-mmx -mno-3dnow -mno-sse -mno-sse2
+ TEMPLATE_VBOXR0DRV_CFLAGS.amd64        = -m64 --param inline-unit-growth=100 --param large-function-growth=1000 \
+ 	-fno-omit-frame-pointer -mcmodel=kernel -mno-red-zone -mfpmath=387 -mno-sse -mno-sse2 -mno-mmx \
+ 	-mno-3dnow -msoft-float -fno-asynchronous-unwind-tables -Wundef
+ TEMPLATE_VBOXR0DRV_CXXFLAGS            = -fno-exceptions -fno-rtti \
+ 	$(VBOX_GCC_WARN) -Wpointer-arith -Winline \
+-	-O2 -fno-format-extensions -fno-strict-aliasing -fno-common -finline-limit=8000 \
++	-O2 -fno-strict-aliasing -fno-common -finline-limit=8000 \
+ 	$(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_R0_OPT) $(VBOX_GCC_R0_FP) \
+ 	-nostdinc
+ TEMPLATE_VBOXR0DRV_CXXFLAGS.x86        = $(TEMPLATE_VBOXR0DRV_CFLAGS.x86)
+@@ -3630,8 +3630,6 @@
+ 	/usr/X11R6/include \
+ 	/usr/local/include
+ TEMPLATE_VBOXR3EXE_LIBPATH            += \
+-	/usr/lib \
+-	/usr/X11R6/lib \
+ 	/usr/local/lib
+  else ifeq ($(KBUILD_TARGET),solaris)
+ TEMPLATE_VBOXR3EXE_TOOL                = GXX3PLAIN
+@@ -4206,8 +4204,6 @@
+ 	/usr/X11R6/include \
+ 	/usr/local/include
+ TEMPLATE_VBOXMAINEXE_LIBPATH            += \
+-	/usr/lib \
+-	/usr/X11R6/lib \
+ 	/usr/local/lib
+ else ifeq ($(KBUILD_TARGET),solaris)
+ TEMPLATE_VBOXMAINEXE_TOOL                = GXX3PLAIN
+@@ -4673,8 +4669,6 @@
+ 	/usr/X11R6/include \
+ 	/usr/local/include
+     TEMPLATE_VBOXQT4GUIEXE_LIBPATH += \
+-	/usr/lib \
+-	/usr/X11R6/lib \
+ 	/usr/local/lib
+    endif
+    ifeq ($(KBUILD_TARGET),solaris)
+@@ -4869,8 +4863,6 @@
+ 	/usr/X11R6/include \
+ 	/usr/local/include
+ TEMPLATE_VBOXBLDPROG_LIBPATH            += \
+-	/usr/lib \
+-	/usr/X11R6/lib \
+ 	/usr/local/lib
+  else ifeq ($(KBUILD_HOST),solaris)
+ TEMPLATE_VBOXBLDPROG_TOOL                = GXX3PLAIN
