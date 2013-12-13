@@ -8,7 +8,7 @@ MASTER_SITES=	LOCAL/eadler/delta
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Heuristically minimizes interesting files
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 PLIST_FILES=	bin/delta bin/multidelta bin/topformflat
 
