@@ -11,7 +11,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/libfishsound/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Programing interface to decode/encode audio data
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libspeex.so:${PORTSDIR}/audio/speex \
