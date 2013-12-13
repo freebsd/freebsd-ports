@@ -9,7 +9,7 @@ MASTER_SITES=	http://opensource.apple.com/tarballs/${PORTNAME}/
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bonjour (zero-configuration networking) by Apple
 
-LICENSE=	AL2 BSD
+LICENSE=	AL2 BSD3CLAUSE
 LICENSE_COMB=	dual
 
 CONFLICTS=	avahi-libdns-[0-9]*
