@@ -14,8 +14,7 @@ COMMENT=	Ant hill simulation on X11 root window
 WRKSRC=		${WRKDIR}/xantfarm
 USES=		imake
 USE_XORG=	x11 xext xt
-MAN1=		xantfarm.1
-PLIST_FILES=	bin/xantfarm
+PLIST_FILES=	bin/xantfarm \
+		man/man1/xantfarm.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
