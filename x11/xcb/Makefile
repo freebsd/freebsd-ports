@@ -17,9 +17,8 @@ LICENSE=	MIT
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xt
 
-MAN1=		xcb.1
 PLIST_FILES=	bin/xcb \
-		lib/X11/app-defaults/Xcb
+		lib/X11/app-defaults/Xcb \
+		man/man1/xcb.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
