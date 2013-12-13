@@ -21,10 +21,6 @@ USE_XORG=	x11
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
 		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults  -f
 CFLAGS+=	-Wno-error=return-type
-
-MAN1=		xgrab.1 xgrabsc.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's,\*envp,\*\*envp,g' ${WRKSRC}/xgrabxaw.c
 
