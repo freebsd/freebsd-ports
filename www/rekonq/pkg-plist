@@ -45,6 +45,7 @@ share/doc/HTML/el/rekonq/Rekonq-kget.png
 share/doc/HTML/el/rekonq/Rekonq-manualplugins.png
 share/doc/HTML/el/rekonq/Rekonq-newtab.png
 share/doc/HTML/el/rekonq/Rekonq-notabs.png
+share/doc/HTML/el/rekonq/Rekonq-zoom.png
 share/doc/HTML/el/rekonq/Systemsettings-enablewindowtabbing.png
 share/doc/HTML/el/rekonq/advanced.png
 share/doc/HTML/el/rekonq/appearance.png
@@ -151,8 +152,10 @@ share/locale/de/LC_MESSAGES/rekonq.mo
 share/locale/el/LC_MESSAGES/rekonq.mo
 share/locale/es/LC_MESSAGES/rekonq.mo
 share/locale/et/LC_MESSAGES/rekonq.mo
+share/locale/eu/LC_MESSAGES/rekonq.mo
 share/locale/fi/LC_MESSAGES/rekonq.mo
 share/locale/fr/LC_MESSAGES/rekonq.mo
+share/locale/gl/LC_MESSAGES/rekonq.mo
 share/locale/hu/LC_MESSAGES/rekonq.mo
 share/locale/ia/LC_MESSAGES/rekonq.mo
 share/locale/it/LC_MESSAGES/rekonq.mo
