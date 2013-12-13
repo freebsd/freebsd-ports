@@ -15,7 +15,6 @@ LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 OPTIONS_DEFINE=	DOXYGEN EXAMPLES
 
-USE_GCC=	4.2+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-libsqlite3
 USE_GMAKE=	yes
