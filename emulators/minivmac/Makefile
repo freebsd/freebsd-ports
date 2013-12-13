@@ -8,23 +8,23 @@ MASTER_SITES=	SF
 DISTFILES=	${PORTNAME}-${PORTVERSION}.src.tgz ${PORTNAME}-${PORTVERSION}.prj.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A miniature Macintosh emulator
+COMMENT=	Miniature Macintosh emulator
+
+LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/projects/bgclx86d
 
 USE_XORG=	x11 xext
-USE_GMAKE=	yes
+USES=		gmake
 CFLAGS+=	-I${LOCALBASE}/include
 ALL_TARGET=	# nothing
 
 PLIST_FILES=	bin/minivmac
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/minivmac ${PREFIX}/bin
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/minivmac ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
