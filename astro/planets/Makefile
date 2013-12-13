@@ -15,26 +15,21 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
 
-NO_STAGE=	yes
 USES=		gmake
+USE_XORG=	x11
 ALL_TARGET=	${PORTNAME}
 
-MAN1=		planets.1
-PORTDOCS=	KEYBINDINGS.txt getting_started.html
-PLIST_FILES=	bin/planets
+OPTIONS_DEFINE=	DOCS
 
-.if defined(WITHOUT_X11)
-BROKEN=		Does not build without X11 support
-.endif
+PORTDOCS=	KEYBINDINGS.txt getting_started.html
+PLIST_FILES=	bin/planets man/man1/planets.1.gz
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/planets.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/planets.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
