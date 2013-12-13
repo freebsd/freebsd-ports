@@ -351,10 +351,6 @@ NOPORTDOCS=	yes
 NOPORTEXAMPLES=	yes
 .endif
 
-.if empty(PORT_OPTIONS:MNLS)
-WITHOUT_NLS=	yes
-.endif
-
 .if defined(NO_OPTIONS_SORT)
 ALL_OPTIONS=	${OPTIONS_DEFINE}
 .endif
