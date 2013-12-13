@@ -10,6 +10,20 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20131213:
+AUTHOR: tijl@FreeBSD.org
+
+  New USES=fortran to replace USE_FORTRAN.
+
+  USE_FORTRAN=yes can be replaced with USES=fortran or USES=fortran:gcc.
+  USE_FORTRAN=ifort can be replaced with USES=fortran:ifort.
+  USE_FORTRAN=f77 is deprecated and the version of gcc it depends
+  on (lang/gcc34) is scheduled to be removed.
+
+  Note that USE_FORTRAN=yes also makes GCC the C/C++ compiler while
+  USES=fortran only sets the Fortran compiler and can be used together
+  with Clang as C/C++ compiler.
+
 20131208:
 AUTHOR: mva@FreeBSD.org
 
