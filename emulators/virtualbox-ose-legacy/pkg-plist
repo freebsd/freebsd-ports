@@ -1,3 +1,4 @@
+bin/VBoxAutostart
 bin/VBoxBalloonCtrl
 %%X11%%bin/VBoxBFE
 bin/VBoxHeadless
@@ -9,12 +10,13 @@ bin/VBoxSVC
 %%QT4%%bin/VBoxTestOGL
 bin/VBoxXPCOMIPCD
 %%QT4%%bin/VirtualBox
-%%WEB%%bin/vboxwebsrv
-%%WEB%%bin/webtest
+%%WEBSERVICE%%bin/vboxwebsrv
+%%WEBSERVICE%%bin/webtest
 %%X11%%lib/virtualbox/VBoxBFE
 %%X11%%lib/virtualbox/VBoxBFE.so
 lib/virtualbox/DBGCPlugInDiggers.so
 lib/virtualbox/VBoxAuth.so
+lib/virtualbox/VBoxAutostart
 lib/virtualbox/VBoxAuthSimple.so
 lib/virtualbox/VBoxBalloonCtrl
 %%QT4%%lib/virtualbox/VBoxDbg.so
@@ -28,6 +30,7 @@ lib/virtualbox/VBoxGuestControlSvc.so
 lib/virtualbox/VBoxGuestPropSvc.so
 lib/virtualbox/VBoxHeadless
 lib/virtualbox/VBoxHeadless.so
+lib/virtualbox/VBoxHostChannel.so
 %%X11%%lib/virtualbox/VBoxKeyboard.so
 lib/virtualbox/VBoxManage
 lib/virtualbox/VBoxNetAdpCtl
@@ -49,6 +52,7 @@ lib/virtualbox/VBoxSharedClipboard.so
 %%X11%%lib/virtualbox/VBoxSharedCrOpenGL.so
 lib/virtualbox/VBoxSharedFolders.so
 lib/virtualbox/VBoxVMM.so
+lib/virtualbox/VBoxVMMPreload.so
 lib/virtualbox/VBoxXPCOM.so
 lib/virtualbox/VBoxXPCOMC.so
 lib/virtualbox/VBoxXPCOMIPCD
@@ -63,24 +67,29 @@ lib/virtualbox/VBoxDDR0.r0
 %%GUESTADDITIONS%%lib/virtualbox/additions/VBoxGuestAdditions_%%GUEST_VER%%.iso
 lib/virtualbox/VBoxPython%%PYTHON_VERU%%.so
 lib/virtualbox/VMMR0.r0
-%%WEB%%lib/virtualbox/vboxwebsrv
-%%WEB%%lib/virtualbox/webtest
+%%WEBSERVICE%%lib/virtualbox/vboxwebsrv
+%%WEBSERVICE%%lib/virtualbox/webtest
 lib/virtualbox/components/VirtualBox_XPCOM.xpt
 lib/virtualbox/components/VBoxXPCOMIPCC.so
 lib/virtualbox/components/VBoxSVCM.so
 lib/virtualbox/components/VBoxC.so
 lib/virtualbox/components/VBoxXPCOMBase.xpt
-%%NLS%%%%DATADIR%%/nls/VirtualBox_ar.qm
+%%VNC%%lib/virtualbox/ExtensionPacks/VNC/%%ARCH%%/VBoxVNC.so
+%%VNC%%lib/virtualbox/ExtensionPacks/VNC/%%ARCH%%/VBoxVNCMain.so
+%%VNC%%lib/virtualbox/ExtensionPacks/VNC/ExtPack-license.html
+%%VNC%%lib/virtualbox/ExtensionPacks/VNC/ExtPack-license.rtf
+%%VNC%%lib/virtualbox/ExtensionPacks/VNC/ExtPack-license.txt
+%%VNC%%lib/virtualbox/ExtensionPacks/VNC/ExtPack.xml
 %%NLS%%%%DATADIR%%/nls/VirtualBox_bg.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_ca.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_ca_VA.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_cs.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_da.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_de.qm
-%%NLS%%%%DATADIR%%/nls/VirtualBox_el.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_en.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_es.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_eu.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_fa_IR.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_fi.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_fr.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_gl_ES.qm
@@ -104,17 +113,16 @@ lib/virtualbox/components/VBoxXPCOMBase.xpt
 %%NLS%%%%DATADIR%%/nls/VirtualBox_uk.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_zh_CN.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_zh_TW.qm
-%%NLS%%%%DATADIR%%/nls/qt_ar.qm
 %%NLS%%%%DATADIR%%/nls/qt_bg.qm
 %%NLS%%%%DATADIR%%/nls/qt_ca.qm
 %%NLS%%%%DATADIR%%/nls/qt_ca_VA.qm
 %%NLS%%%%DATADIR%%/nls/qt_cs.qm
 %%NLS%%%%DATADIR%%/nls/qt_da.qm
 %%NLS%%%%DATADIR%%/nls/qt_de.qm
-%%NLS%%%%DATADIR%%/nls/qt_el.qm
 %%NLS%%%%DATADIR%%/nls/qt_en.qm
 %%NLS%%%%DATADIR%%/nls/qt_es.qm
 %%NLS%%%%DATADIR%%/nls/qt_eu.qm
+%%NLS%%%%DATADIR%%/nls/qt_fa_IR.qm
 %%NLS%%%%DATADIR%%/nls/qt_fi.qm
 %%NLS%%%%DATADIR%%/nls/qt_fr.qm
 %%NLS%%%%DATADIR%%/nls/qt_gl_ES.qm
@@ -234,14 +242,15 @@ lib/virtualbox/components/VBoxXPCOMBase.xpt
 %%DATADIR%%/idl/VirtualBox_XPCOM.idl
 %%DATADIR%%/samples/tstVBoxAPILinux.cpp
 %%DATADIR%%/samples/Makefile
-%%WEB%%%%DATADIR%%/sdk/bindings/webservice/vboxweb.wsdl
-%%WEB%%%%DATADIR%%/sdk/bindings/webservice/vboxwebService.wsdl
+%%WEBSERVICE%%%%DATADIR%%/sdk/bindings/webservice/vboxweb.wsdl
+%%WEBSERVICE%%%%DATADIR%%/sdk/bindings/webservice/vboxwebService.wsdl
 include/virtualbox/VBoxCAPI_v2_2.h
 include/virtualbox/VBoxCAPI_v3_0.h
 include/virtualbox/VBoxCAPI_v3_1.h
 include/virtualbox/VBoxCAPI_v3_2.h
 include/virtualbox/VBoxCAPI_v4_0.h
 include/virtualbox/VBoxCAPI_v4_1.h
+include/virtualbox/VBoxCAPI_v4_2.h
 include/virtualbox/VirtualBox_XPCOM.h
 include/virtualbox/ipcIClientObserver.h
 include/virtualbox/ipcIDConnectService.h
@@ -610,13 +619,17 @@ include/virtualbox/xpcom/xpcom-config.h
 @dirrm include/virtualbox/nsprpub
 @dirrm include/virtualbox/ipcd
 @dirrm include/virtualbox
+%%VNC%%@dirrm lib/virtualbox/ExtensionPacks/VNC/%%ARCH%%
+%%VNC%%@dirrm lib/virtualbox/ExtensionPacks/VNC
+%%VNC%%@dirrmtry lib/virtualbox/ExtensionPacks
 %%NLS%%@dirrm %%DATADIR%%/nls
-%%WEB%%@dirrm %%DATADIR%%/sdk/bindings/webservice
-%%WEB%%@dirrm %%DATADIR%%/sdk/bindings
-%%WEB%%@dirrm %%DATADIR%%/sdk
+%%WEBSERVICE%%@dirrm %%DATADIR%%/sdk/bindings/webservice
+%%WEBSERVICE%%@dirrm %%DATADIR%%/sdk/bindings
+%%WEBSERVICE%%@dirrm %%DATADIR%%/sdk
 @dirrm %%DATADIR%%/samples
 @dirrm %%DATADIR%%/idl
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%
+%%QT4%%@dirrmtry share/applications
 @dirrm lib/virtualbox/components
 %%GUESTADDITIONS%%@dirrm lib/virtualbox/additions
-@dirrm lib/virtualbox
+@dirrmtry lib/virtualbox

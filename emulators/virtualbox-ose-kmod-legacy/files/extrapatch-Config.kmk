@@ -1,0 +1,11 @@
+--- Config.kmk.orig	2012-05-24 01:15:53.393052000 +0200
++++ Config.kmk	2012-05-24 01:16:15.883067161 +0200
+@@ -3188,7 +3188,7 @@
+ 		| xargs -J% objcopy % $(out)
+ 
+ ## Strip debug info (comment out if debugging or something).
+-	objcopy --strip-debug $(out)
++#	objcopy --strip-debug $(out)
+ endef
+  else # x86
+ TOOL_FREEBSDKMODLD_LINK_SYSMOD_OUTPUT = $(outbase).kld

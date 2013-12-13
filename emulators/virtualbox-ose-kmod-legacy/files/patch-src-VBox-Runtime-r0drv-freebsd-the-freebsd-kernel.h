@@ -1,5 +1,7 @@
---- src/VBox/Runtime/r0drv/freebsd/the-freebsd-kernel.h.orig	2012-12-19 20:51:59.000000000 +0100
-+++ src/VBox/Runtime/r0drv/freebsd/the-freebsd-kernel.h	2013-05-10 12:40:19.000000000 +0200
+$FreeBSD$
+
+--- src/VBox/Runtime/r0drv/freebsd/the-freebsd-kernel.h	2012-12-19 10:27:29.000000000 -0800
++++ src/VBox/Runtime/r0drv/freebsd/the-freebsd-kernel.h	2013-03-20 19:10:15.854804053 -0700
 @@ -50,6 +50,9 @@
  #include <sys/unistd.h>
  #include <sys/kthread.h>
