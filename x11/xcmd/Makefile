@@ -15,9 +15,7 @@ COMMENT=	Xcmd is a front-end for starting programs under X11
 USES=		imake
 USE_XORG=	ice sm x11 xext xmu xt
 
-MANCOMPRESSED=	yes
-MAN1=		xcmd.1
-PLIST_FILES=	bin/xcmd
+PLIST_FILES=	bin/xcmd \
+		man/man1/xcmd.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
