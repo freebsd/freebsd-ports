@@ -14,9 +14,7 @@ COMMENT=	Displays a dialog box and prompts user for text
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xt
 
-MAN1=		xprompt.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/xprompt
+PLIST_FILES=	bin/xprompt \
+		man/man1/xprompt.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
