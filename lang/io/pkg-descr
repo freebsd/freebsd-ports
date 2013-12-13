@@ -4,4 +4,4 @@ are mostly inspired by Smalltalk (all values are objects), Self
 (actors and futures for concurrency), LISP (code is a runtime
 inspectable/modifiable tree) and Lua (small, embeddable).
 
-WWW:	http://www.iolanguage.com/
+WWW: http://www.iolanguage.com/

@@ -11,9 +11,15 @@ COMMENT=	Small prototype-based programming language
 
 LICENSE=	BSD
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_GROUP=	ADDONS
+
+USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	stevedekorte
+GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	23afbcc
+MAKE_JOBS_UNSAFE=yes
 
 USE_LDCONFIG=	yes
 USES=		cmake:outsource
@@ -21,7 +27,6 @@ USES=		cmake:outsource
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.addons"
 
 post-patch:
@@ -33,13 +38,13 @@ post-patch:
 	${FIND} ${WRKSRC}/addons -name "*.bak" -o -name "*.orig" -delete
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR}  ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} .  ${STAGEDIR}${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/samples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR}  ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/samples && ${COPYTREE_SHARE} .  ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
