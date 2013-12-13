@@ -3,7 +3,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	3.6.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gnu.org/gnu/octave/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/bleeding-edge/
@@ -32,7 +32,7 @@ LIB_DEPENDS=	GraphicsMagick:${PORTSDIR}/graphics/GraphicsMagick \
 		umfpack.1:${PORTSDIR}/math/suitesparse \
 		glpk:${PORTSDIR}/math/glpk
 
-USES=		charsetfix gmake perl5 pkgconfig
+USES=		charsetfix fortran gmake perl5 pkgconfig
 USE_BZIP2=	yes
 USE_PERL5=	build
 USE_TEX=	dvipsk:build
@@ -73,8 +73,6 @@ LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
 BLAS=		-lptf77blas
 LAPACK=		-lalapack -lptcblas
 .endif
-
-USE_FORTRAN=	yes
 
 OCTAVE_VERSION=	${PORTVERSION}
 GNU_HOST=	${ARCH}-portbld-freebsd${OSREL}
@@ -140,7 +138,7 @@ post-install:
 	${ECHO_CMD} @dirrm share/octave >> ${WRKDIR}/PLIST
 	cd ${WRKDIR} ; ${SED} -i -e "/PLIST/ r PLIST" ${TMPPLIST}
 
-check:
-	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} check)
+check regression-test: build
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} check)
 
 .include <bsd.port.post.mk>
