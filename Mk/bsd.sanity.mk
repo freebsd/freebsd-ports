@@ -7,10 +7,10 @@
 DEV_WARNING+=	"USE_GMAKE is deprecated, consider using USES=gmake"
 .endif
 
-#.if defined(WITHOUT_NLS)
-#WARNING+=	"WITHOUT_NLS is deprecated use NLS option instead"
-#.endif
-#
+.if defined(WITHOUT_NLS)
+WARNING+=	"WITHOUT_NLS is deprecated use NLS option instead"
+.endif
+
 #.if defined(WITHOUT_X11)
 #WARNING+=	"WITHOUT_X11 is deprecated use X11 option instead"
 #.endif
