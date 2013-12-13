@@ -7,3 +7,12 @@ bin/mkdirhier
 bin/mkhtmlindex
 bin/revpath
 bin/xmkmf
+man/man1/ccmakedep.1.gz
+man/man1/cleanlinks.1.gz
+man/man1/imake.1.gz
+man/man1/makeg.1.gz
+man/man1/mergelib.1.gz
+man/man1/mkdirhier.1.gz
+man/man1/mkhtmlindex.1.gz
+man/man1/revpath.1.gz
+man/man1/xmkmf.1.gz
