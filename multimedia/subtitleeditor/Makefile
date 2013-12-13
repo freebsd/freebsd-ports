@@ -36,6 +36,10 @@ OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} >= 1000000
+BROKEN=		Does not compile on FreeBSD 10.0 and later
+.endif
+
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
