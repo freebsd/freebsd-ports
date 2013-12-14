@@ -27,4 +27,12 @@ post-install:
 .endfor
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's|/usr/bin/env python|${PYTHON_CMD}|' \
+		${WRKSRC}/twander.py
+	@${REINPLACE_CMD} \
+		-e 's|python |${PYTHON_CMD} |' \
+		${WRKSRC}/Makefile
+
 .include <bsd.port.mk>
