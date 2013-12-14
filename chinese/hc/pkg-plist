@@ -2,6 +2,7 @@
 bin/b2g
 bin/g2b
 bin/hc
+man/man1/hc.1.gz
 share/chinese/hc-supp.tab
 share/chinese/hc.tab
 @dirrmtry share/chinese
