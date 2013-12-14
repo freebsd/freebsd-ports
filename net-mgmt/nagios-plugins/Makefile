@@ -3,6 +3,7 @@
 
 PORTNAME=	nagios-plugins
 PORTVERSION=	1.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.nagios-plugins.org/download/
@@ -119,7 +120,7 @@ USE_PGSQL=	YES
 CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
 PLIST_SUB+=	SUB_PGSQL=""
 .else
-CONFIGURE_ARGS+=	--with-pgsql=${NONEXISTENT}
+CONFIGURE_ARGS+=	--with-pgsql=no
 PLIST_SUB+=	SUB_PGSQL="@comment "
 .endif
 
