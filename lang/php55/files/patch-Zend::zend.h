@@ -1,8 +1,8 @@
---- Zend/zend.h.orig	2008-08-15 21:47:23.000000000 +0200
-+++ Zend/zend.h	2008-09-25 22:52:50.000000000 +0200
-@@ -192,7 +192,7 @@
- # define ZEND_FASTCALL
+--- Zend/zend.h.orig	2013-12-10 23:31:06.000000000 +0000
++++ Zend/zend.h	2013-12-13 21:50:24.994258569 +0000
+@@ -193,7 +193,7 @@ char *alloca ();
  #endif
+ #define restrict __restrict__
  
 -#if (HAVE_ALLOCA || (defined (__GNUC__) && __GNUC__ >= 2)) && !(defined(ZTS) && defined(ZEND_WIN32)) && !(defined(ZTS) && defined(NETWARE)) && !(defined(ZTS) && defined(HPUX)) && !defined(DARWIN)
 +#if (HAVE_ALLOCA || (defined (__GNUC__) && __GNUC__ >= 2)) && !(defined(ZTS) && defined(ZEND_WIN32)) && !(defined(ZTS) && defined(NETWARE)) && !(defined(ZTS) && defined(HPUX)) && !defined(DARWIN) && !(defined(ZTS) && defined(__FreeBSD__))
