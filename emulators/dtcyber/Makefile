@@ -19,24 +19,20 @@ USE_XORG=	x11
 NO_WRKSUBDIR=	yes
 INSTALL_TARGET=
 MAKEFILE=	Makefile.x11
+
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_FILES=	bin/dtcyber %%EXAMPLESDIR%%/cyber.ini %%EXAMPLESDIR%%/cos.tap
 PLIST_DIRS=	%%EXAMPLESDIR%%
 
-NO_STAGE=	yes
 pre-patch:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile.x11
 	${REINPLACE_CMD} -e 's|CFLAGS  = -O2|CFLAGS+= |' ${WRKSRC}/Makefile.x11
 	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|' ${WRKSRC}/Makefile.x11
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dtcyber ${PREFIX}/bin
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/cyber.ini ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/Os/cos.tap ${EXAMPLESDIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/dtcyber ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/cyber.ini ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/Os/cos.tap ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
