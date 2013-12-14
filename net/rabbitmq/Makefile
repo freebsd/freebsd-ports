@@ -21,6 +21,7 @@ USES=		gmake shebangfix
 USE_PYTHON_BUILD=yes
 USE_RC_SUBR=	rabbitmq
 SHEBANG_FILES=	plugins-src/rabbitmq-amqp1.0/codegen.py
+python_CMD=	${PYTHON_CMD}
 
 USERS=	rabbitmq
 GROUPS=	rabbitmq
@@ -32,6 +33,7 @@ MAN5=		rabbitmq-env.conf.5
 MANCOMPRESSED=	yes
 
 SCRIPTS_DIR=	${WRKSRC}/scripts/
+MAKE_ARGS+=	PYTHON=${PYTHON_CMD}
 MAKE_ENV+=	TARGET_DIR="${PREFIX}/lib/erlang/lib/rabbitmq_server-${PORTVERSION}" SBIN_DIR="${PREFIX}/sbin/" \
 		MAN_DIR="${PREFIX}/man"
 
