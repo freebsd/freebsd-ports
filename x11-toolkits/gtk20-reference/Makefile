@@ -1,7 +1,7 @@
 # Created by: Jean-Yves Lefort <jylefort@FreeBSD.org>
 # $FreeBSD$
 
-PORTREVISION=	1
+PORTREVISION=	0
 
 BOOKS=		gdk gtk
 
@@ -14,7 +14,7 @@ do-install:
 	fi
 .endfor
 
-# overwrite this from bsd.port.mk, because we not don't honow DOCSDIR
+# overwrite this from bsd.port.mk, because we not don't honor DOCSDIR
 add-plist-docs:
 	@${DO_NADA}
 
