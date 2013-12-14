@@ -1,6 +1,6 @@
---- avahi-ui/Makefile.in.orig	2012-04-03 18:30:32.000000000 +0200
-+++ avahi-ui/Makefile.in	2012-04-03 18:33:59.000000000 +0200
-@@ -119,9 +119,7 @@ am__installdirs = "$(DESTDIR)$(libdir)" 
+--- avahi-ui/Makefile.in.orig	2013-12-11 12:03:44.000000000 +0100
++++ avahi-ui/Makefile.in	2013-12-11 12:05:00.000000000 +0100
+@@ -125,9 +125,7 @@ am__installdirs = "$(DESTDIR)$(libdir)" 
  	"$(DESTDIR)$(desktopdir)" "$(DESTDIR)$(avahiincludedir)"
  LTLIBRARIES = $(lib_LTLIBRARIES)
  am__DEPENDENCIES_1 =
@@ -11,7 +11,7 @@
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__DEPENDENCIES_1) \
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__DEPENDENCIES_1)
  am__libavahi_ui_gtk3_la_SOURCES_DIST = avahi-ui.h avahi-ui.c \
-@@ -142,9 +140,7 @@ libavahi_ui_gtk3_la_LINK = $(LIBTOOL) $(
+@@ -148,9 +146,7 @@ libavahi_ui_gtk3_la_LINK = $(LIBTOOL) $(
  	$(libavahi_ui_gtk3_la_LDFLAGS) $(LDFLAGS) -o $@
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_TRUE@am_libavahi_ui_gtk3_la_rpath = -rpath \
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_TRUE@	$(libdir)
@@ -22,7 +22,7 @@
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__DEPENDENCIES_1) \
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__DEPENDENCIES_1)
  am__libavahi_ui_la_SOURCES_DIST = avahi-ui.h avahi-ui.c \
-@@ -166,12 +162,8 @@ am__bssh_SOURCES_DIST = bssh.c
+@@ -172,12 +168,8 @@ am__bssh_SOURCES_DIST = bssh.c
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@am_bssh_OBJECTS = bssh-bssh.$(OBJEXT)
  bssh_OBJECTS = $(am_bssh_OBJECTS)
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_FALSE@bssh_DEPENDENCIES = $(am__DEPENDENCIES_1) \
@@ -35,7 +35,17 @@
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@@HAVE_GTK3_TRUE@	libavahi-ui-gtk3.la
  bssh_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(bssh_CFLAGS) $(CFLAGS) \
-@@ -482,9 +474,7 @@ EXTRA_DIST = $(desktop_DATA_in_in)
+@@ -464,8 +456,7 @@ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ 
+ # This cool debug trap works on i386/gcc only
+-AM_CFLAGS = -I$(top_srcdir) -DG_DISABLE_DEPRECATED=1 \
+-	-DGDK_DISABLE_DEPRECATED=1 -DGTK_DISABLE_DEPRECATED=1 \
++AM_CFLAGS = -I$(top_srcdir) \
+ 	'-DDEBUG_TRAP=__asm__("int $$3")' $(am__append_1)
+ pkglibdatadir = $(libdir)/avahi
+ desktopdir = $(datadir)/applications
+@@ -489,9 +480,7 @@ EXTRA_DIST = $(desktop_DATA_in_in)
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__append_5) \
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__append_10)
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@libavahi_ui_la_LIBADD = $(AM_LDADD) \
@@ -46,7 +56,7 @@
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(GTK20_LIBS) \
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__append_6)
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@libavahi_ui_la_LDFLAGS = $(AM_LDFLAGS)  -version-info $(LIBAVAHI_UI_VERSION_INFO)
-@@ -494,17 +484,15 @@ EXTRA_DIST = $(desktop_DATA_in_in)
+@@ -501,17 +490,15 @@ EXTRA_DIST = $(desktop_DATA_in_in)
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__append_7) \
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@	$(am__append_11)
  @HAVE_DBUS_TRUE@@HAVE_GLIB_TRUE@@HAVE_GTK2OR3_TRUE@libavahi_ui_gtk3_la_LIBADD = $(AM_LDADD) \
@@ -67,7 +77,7 @@
  CLEANFILES = $(desktop_DATA) $(desktop_DATA_in)
  all: all-am
  
-@@ -713,7 +701,7 @@ clean-libtool:
+@@ -711,7 +698,7 @@ clean-libtool:
  	-rm -rf .libs _libs
  install-desktopDATA: $(desktop_DATA)
  	@$(NORMAL_INSTALL)
@@ -75,4 +85,4 @@
 +@HAVE_GTK_TRUE@	test -z "$(desktopdir)" || $(MKDIR_P) "$(DESTDIR)$(desktopdir)"
  	@list='$(desktop_DATA)'; test -n "$(desktopdir)" || list=; \
  	for p in $$list; do \
- 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \ 

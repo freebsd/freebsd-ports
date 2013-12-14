@@ -11,7 +11,7 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	The "meta-port" for the Avahi service discovery suite
+COMMENT=	"meta-port" for the Avahi service discovery suite
 
 RUN_DEPENDS=	avahi-resolve:${PORTSDIR}/net/avahi-app \
 		avahi-app>=0.6.31:${PORTSDIR}/net/avahi-app
@@ -23,8 +23,9 @@ GTK_DESC=	Gtk+ tools and bindings
 LIBDNS_DESC=	Apple's mDNSResponder compatibility library
 
 NO_BUILD=	yes
+NO_INSTALL=	yes
+NO_MTREE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAUTOIPD}
@@ -50,7 +51,5 @@ RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/avahi-qt4.pc:${PORTSDIR}/net/avahi-
 .if ${PORT_OPTIONS:MPYTHON}
 RUN_DEPENDS+=	avahi-bookmarks:${PORTSDIR}/net/py-avahi
 .endif
-
-do-install:
 
 .include <bsd.port.mk>
