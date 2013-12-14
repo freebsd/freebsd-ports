@@ -15,8 +15,8 @@ CONFIGURE_WRKSRC=	${WRKSRC}/src
 BUILD_WRKSRC=	${WRKSRC}/src
 
 
-MAN5=	pppoe.conf.5
-MAN8=	pppoe-connect.8 pppoe-setup.8 pppoe-start.8 pppoe-status.8 \
+man5=	pppoe.conf.5
+man8=	pppoe-connect.8 pppoe-setup.8 pppoe-start.8 pppoe-status.8 \
 	pppoe-stop.8 pppoe-relay.8 pppoe-server.8 pppoe.8
 
 CONFIG_FILES=	firewall-masq firewall-standalone pap-secrets \
@@ -28,7 +28,6 @@ SCRIPT_FILES=	pppoe-connect pppoe-init pppoe-setup pppoe-start \
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 # work around "Present But Cannot Be Compiled" issue in GNU configure:
 CFLAGS+=	-include sys/types.h -include sys/socket.h -include netinet/in.h
 
@@ -57,37 +56,38 @@ post-patch:
 
 do-install:
 # Binaries
+	${MKDIR} ${STAGEDIR}${PREFIX}/sbin
 .for f in pppoe pppoe-server pppoe-relay
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${f} ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${f} ${STAGEDIR}${PREFIX}/sbin
 .endfor
 # Configurations
-	${MKDIR} ${PREFIX}/etc/ppp
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/ppp
 .for f in ${CONFIG_FILES}
 	${INSTALL_DATA} ${WRKSRC}/configs/${f} \
-		${PREFIX}/etc/ppp/${f}.sample
+		${STAGEDIR}${PREFIX}/etc/ppp/${f}.sample
 .endfor
 # Manual pages
-	${MKDIR} ${MAN5PREFIX}/man/man5
-.for f in ${MAN5}
-	${INSTALL_MAN} ${WRKSRC}/man/${f} ${MAN5PREFIX}/man/man5
+	${MKDIR} ${STAGEDIR}${MAN5PREFIX}/man/man5
+.for f in ${man5}
+	${INSTALL_MAN} ${WRKSRC}/man/${f} ${STAGEDIR}${MAN5PREFIX}/man/man5
 .endfor
-	${MKDIR} ${MAN8PREFIX}/man/man8
-.for f in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/man/${f} ${MAN8PREFIX}/man/man8
+	${MKDIR} ${STAGEDIR}${MAN8PREFIX}/man/man8
+.for f in ${man8}
+	${INSTALL_MAN} ${WRKSRC}/man/${f} ${STAGEDIR}${MAN8PREFIX}/man/man8
 .endfor
 # Scripts
 .for f in ${SCRIPT_FILES}
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/${f} ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/${f} ${STAGEDIR}${PREFIX}/sbin
 .endfor
 # Startup scripts
 .for f in 04pppoe-relay.sh.sample 04pppoe-server.sh.sample
-	${INSTALL_SCRIPT} ${FILESDIR}/${f} ${PREFIX}/etc/rc.d/
+	${INSTALL_SCRIPT} ${FILESDIR}/${f} ${STAGEDIR}${PREFIX}/etc/rc.d/
 .endfor
 
 # Documentation
 .ifndef (NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 .endif # NOPORTDOCS
 
 .include <bsd.port.mk>
