@@ -3,6 +3,7 @@
 
 PORTNAME=	dpaste
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}django-
 
@@ -27,9 +28,7 @@ USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_AUTOPLIST=	yes
 
 GH_ACCOUNT=	bartTC
-GH_COMMIT=	129be43
-
-post-patch:
-	@${CP} ${FILESDIR}/MANIFEST.in ${WRKSRC}
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	bb089fe
 
 .include <bsd.port.mk>
