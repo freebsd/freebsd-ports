@@ -23,11 +23,10 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/xmovie
 WRKSRC=		${WRKDIR}/usr/bin
 
-NO_STAGE=	yes
 pre-install:
 	@${BRANDELF} -t Linux ${WRKSRC}/${PORTNAME}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
