@@ -139,3 +139,9 @@ DEV_ERROR+=	"you cannot include bsd.port[.pre].mk twice"
 .if defined(USE_DOS2UNIX)
 DEV_WARNING+=	"USE_DOS2UNIX is deprecated, please use USES=dos2unix"
 .endif
+
+.if defined(LICENSE)
+.if ${LICENSE:MBSD}
+DEV_WARNING+=	"LICENSE must not contain BSD, instead use BSD[234]CLAUSE"
+.endif
+.endif
