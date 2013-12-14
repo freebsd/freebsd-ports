@@ -19,7 +19,6 @@ LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libao.so:${PORTSDIR}/audio/libao
 RUN_DEPENDS=	id3v2:${PORTSDIR}/audio/id3v2
 
-NO_STAGE=	yes
 USE_BZIP2=	yes
 USES=		gmake
 USE_RUBY=	yes
@@ -41,18 +40,18 @@ post-patch:
 		${WRKSRC}/src/global.c
 
 do-install:
-	${MKDIR} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/squash ${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/squash ${STAGEDIR}${PREFIX}/bin
 .for FILE in collect_info edit_tag export_music import_music joystick uncollect_info
-	${INSTALL_SCRIPT} ${WRKSRC}/extra/${FILE}.rb ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/extra/${FILE}.rb ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${MKDIR} ${RUBY_SITELIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/extra/musicdb_lib.rb ${RUBY_SITELIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/extra/squash.conf ${PREFIX}/etc/squash.conf.dist
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/extra/musicdb_lib.rb ${STAGEDIR}${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/extra/squash.conf ${STAGEDIR}${PREFIX}/etc/squash.conf.dist
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README doc/FEATURES doc/LOCKS doc/INSTALL doc/USERS_GUIDE
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

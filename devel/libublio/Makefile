@@ -21,7 +21,8 @@ PLIST_SUB+=	PROFLIB=""
 SRCCONF=	/dev/null
 MAKE_ENV+=	SRCCONF=${SRCCONF}
 
-NO_STAGE=	yes
+NEED_ROOT=	yes
+
 .include <bsd.port.options.mk>
 
 post-extract:
@@ -36,8 +37,8 @@ pre-install:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
