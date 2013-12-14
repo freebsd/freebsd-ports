@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20131214:
+  AFFECTS: users of databases/db4*
+  AUTHOR: mandree@FreeBSD.org
+
+  Berkeley DB versions before and excluding 4.8 have been marked
+  deprecated.  Please see https://wiki.freebsd.org/Ports/BerkeleyDBCleanup
+  for upgrade instructions.
+
+  You can add WITH_BDB_VERSION=5 or WITH_BDB_VERSION=6 to have all
+  applications that get rebuilt use Oracle Berkeley DB 5 or 6, respectively.
+
+  Note that Oracle Berkeley DB 6 is under the more restrictive Affero GPL v3.
+
 20131209:
   AFFECTS: users of dns/bind96, dns/bind98 and bind99 on FreeBSD 10.0
   AUTHOR: erwin@FreeBSD.org
