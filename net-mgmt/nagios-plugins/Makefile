@@ -99,7 +99,7 @@ PLIST_SUB+=	SUB_SNMP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MRADIUS}
-LIB_DEPENDS+=	radiusclient-ng:${PORTSDIR}/net/radiusclient
+LIB_DEPENDS+=	libradiusclient-ng.so:${PORTSDIR}/net/radiusclient
 PLIST_SUB+=	SUB_RADIUS=""
 .else
 CONFIGURE_ARGS+=	--without-radius
