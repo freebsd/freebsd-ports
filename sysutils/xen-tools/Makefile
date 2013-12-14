@@ -33,9 +33,9 @@ PLIST_FILES=	lib/libxenstore.so.3.0 \
 		bin/xenstore-write
 
 do-build:
-	cd ${WRKSRC}/tools && ${GMAKE} -C include
-	cd ${WRKSRC}/tools/misc && ${GMAKE} xen-detect
-	cd ${WRKSRC}/tools/xenstore && ${GMAKE} clients
+	cd ${WRKSRC}/tools && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C include
+	cd ${WRKSRC}/tools/misc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} xen-detect
+	cd ${WRKSRC}/tools/xenstore && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} clients
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/misc/xen-detect ${STAGEDIR}${PREFIX}/bin
