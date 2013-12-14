@@ -51,6 +51,53 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="47b4e713-6513-11e3-868f-0025905a4771">
+    <topic>PHP5 -- memory corruption in openssl_x509_parse()</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<range><ge>5.4.0</ge><lt>5.4.23</lt></range>
+      </package>
+      <package>
+	<name>php53</name>
+	<range><lt>5.3.28</lt></range>
+      </package>
+      <package>
+	<name>php55</name>
+	<range><ge>5.5.0</ge><lt>5.5.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Esser reports:</p>
+	<blockquote cite="https://www.sektioneins.de/advisories/advisory-012013-php-openssl_x509_parse-memory-corruption-vulnerability.html">
+	  <p>The PHP function openssl_x509_parse() uses a helper function
+	    called asn1_time_to_time_t() to convert timestamps from ASN1
+	    string format into integer timestamp values. The parser within
+	    this helper function is not binary safe and can therefore be
+	    tricked to write up to five NUL bytes outside of an allocated
+	    buffer.</p>
+	  <p>This problem can be triggered by x509 certificates that contain
+	    NUL bytes in their notBefore and notAfter timestamp fields and
+	    leads to a memory corruption that might result in arbitrary
+	    code execution.</p>
+	  <p>Depending on how openssl_x509_parse() is used within a PHP
+	    application the attack requires either a malicious cert signed
+	    by a compromised/malicious CA or can be carried out with a
+	    self-signed cert.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6420</cvename>
+      <url>https://www.sektioneins.de/advisories/advisory-012013-php-openssl_x509_parse-memory-corruption-vulnerability.html</url>
+    </references>
+    <dates>
+      <discovery>2013-12-13</discovery>
+      <entry>2013-12-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dd116b19-64b3-11e3-868f-0025905a4771">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
