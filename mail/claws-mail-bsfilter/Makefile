@@ -6,6 +6,8 @@ PORTREVISION=	0
 
 COMMENT=	Spam filtering, bsfilter based plugin for Claws Mail
 
+RUN_DEPENDS=	bsfilter:${PORTSDIR}/mail/bsfilter
+
 CLAWS_PLUGINS_BUILD=	bsfilter
 
 .include "../claws-mail/Makefile.claws"

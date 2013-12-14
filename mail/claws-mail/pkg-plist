@@ -78,6 +78,7 @@ include/claws-mail/expldifdlg.h
 include/claws-mail/export.h
 include/claws-mail/exporthtml.h
 include/claws-mail/exportldif.h
+include/claws-mail/file_checker.h
 include/claws-mail/filtering.h
 include/claws-mail/folder.h
 include/claws-mail/folder_item_prefs.h
@@ -171,6 +172,7 @@ include/claws-mail/plugins/claws-mail/gtkhotkey/gtkhotkey.h
 include/claws-mail/plugins/claws-mail/gtkhotkey/tomboykeybinder.h
 include/claws-mail/plugins/claws-mail/ical.h
 include/claws-mail/plugins/pgpcore/passphrase.h
+include/claws-mail/plugins/pgpcore/pgp_utils.h
 include/claws-mail/plugins/pgpcore/pgp_viewer.h
 include/claws-mail/plugins/pgpcore/prefs_gpg.h
 include/claws-mail/plugins/pgpcore/select-keys.h
