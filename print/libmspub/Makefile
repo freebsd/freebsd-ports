@@ -25,5 +25,4 @@ CONFIGURE_ARGS=	--disable-werror --without-docs
 CONFIGURE_ENV=	ZLIB_CFLAGS="-I/usr/include" ZLIB_LIBS="-lz"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
