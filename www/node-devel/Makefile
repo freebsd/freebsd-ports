@@ -40,6 +40,12 @@ GYP_DEFINES+=	gcc_version=${CXX:S/g++//}
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/deps/v8/tools/gyp/v8.gyp
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|'python',|'${PYTHON_CMD}',|" \
+		${WRKSRC}/deps/v8/build/shim_headers.gypi \
+		${WRKSRC}/deps/v8/tools/gyp/v8.gyp \
+		${WRKSRC}/deps/v8/src/d8.gyp
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/node_modules/
