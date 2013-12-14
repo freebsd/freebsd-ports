@@ -19,8 +19,10 @@ LIB_DEPENDS=	confuse.0:${PORTSDIR}/devel/libconfuse \
 
 USES=		iconv pkgconfig
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
 USE_EFL=	imlib2
 USE_GNOME=	pango
+USE_PYTHON_BUILD=	yes
 USE_XORG=	x11 xft xext xinerama xt xrandr xproto
 LDFLAGS+=	-lX11 -lXext ${ICONV_LIB}
 
