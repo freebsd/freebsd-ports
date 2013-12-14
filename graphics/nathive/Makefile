@@ -11,10 +11,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Lightweight image editor
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
+BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
+RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
+		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
 USES=		gmake
-USE_PYTHON=	yes
+USE_PYTHON=	2
 MAKEFILE=	makefile
 ALL_TARGET=	default
 
