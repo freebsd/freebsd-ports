@@ -21,7 +21,7 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		pcre:${PORTSDIR}/devel/pcre
 
 USES=		gmake pkgconfig
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_GNOME=	gtk20
 USE_GSTREAMER=	good
 INSTALLS_ICONS=	yes
