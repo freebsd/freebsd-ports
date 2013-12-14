@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	-libdns
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	mDNSResponder compatibility from Avahi
 
-LIB_DEPENDS=	avahi-common:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS=	libavahi-common.so:${PORTSDIR}/net/avahi-app
 
 MASTERDIR=	${.CURDIR}/../avahi-app
 BUILD_WRKSRC=	${WRKSRC}/avahi-compat-libdns_sd
@@ -21,5 +21,4 @@ AVAHI_PKGCONFIG=avahi-compat-libdns_sd.pc
 
 CONFLICTS=	mDNSResponder-[0-9]*
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
