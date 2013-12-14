@@ -23,7 +23,8 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		kmk:${PORTSDIR}/devel/kBuild \
 		gtar:${PORTSDIR}/archivers/gtar \
-		cdrecord:${PORTSDIR}/sysutils/cdrtools
+		cdrecord:${PORTSDIR}/sysutils/cdrtools \
+		python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libxslt.so:${PORTSDIR}/textproc/libxslt \
 		libcurl.so:${PORTSDIR}/ftp/curl
