@@ -120,7 +120,7 @@ USE_PGSQL=	YES
 CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
 PLIST_SUB+=	SUB_PGSQL=""
 .else
-CONFIGURE_ARGS+=	--with-pgsql=no
+CONFIGURE_ARGS+=	--without-pgsql
 PLIST_SUB+=	SUB_PGSQL="@comment "
 .endif
 
