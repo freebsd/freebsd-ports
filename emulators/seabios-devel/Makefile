@@ -12,13 +12,24 @@ DIST_SUBDIR=	qemu
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	SeaBIOS git snapshot (for emulators/qemu-devel)
 
-USE_GMAKE=	yes
+USES=		gmake shebangfix
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
 PATCH_STRIP=	-p1
 ONLY_FOR_ARCHS=	amd64 i386
 # Doesn't run with qemu 0.11.1
 CONFLICTS_INSTALL=	qemu-[0-9]*
+
+SHEBANG_FILES=	tools/buildrom.py \
+		tools/checkrom.py \
+		tools/checkstack.py \
+		tools/checksum.py \
+		tools/encodeint.py \
+		tools/layoutrom.py \
+		tools/readserial.py \
+		tools/transdump.py
+python_OLD_CMD=	${SETENV} python
+python_CMD=	${PYTHON_CMD}
 
 NO_STAGE=	yes
 
