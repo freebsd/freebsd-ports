@@ -1,5 +1,5 @@
---- ext/standard/image.c.orig	2007-10-04 15:31:11.000000000 +0200
-+++ ext/standard/image.c	2007-11-13 22:47:04.000000000 +0100
+--- ext/standard/image.c.orig	2013-12-10 19:32:43.000000000 +0000
++++ ext/standard/image.c	2013-12-13 21:55:54.112235824 +0000
 @@ -31,9 +31,7 @@
  #endif
  #include "php_image.h"
@@ -10,7 +10,7 @@
  
  /* file type markers */
  PHPAPI const char php_sig_gif[3] = {'G', 'I', 'F'};
-@@ -80,9 +78,7 @@
+@@ -81,9 +79,7 @@ PHP_MINIT_FUNCTION(imagetypes)
  	REGISTER_LONG_CONSTANT("IMAGETYPE_JP2",     IMAGE_FILETYPE_JP2,     CONST_CS | CONST_PERSISTENT);
  	REGISTER_LONG_CONSTANT("IMAGETYPE_JPX",     IMAGE_FILETYPE_JPX,     CONST_CS | CONST_PERSISTENT);
  	REGISTER_LONG_CONSTANT("IMAGETYPE_JB2",     IMAGE_FILETYPE_JB2,     CONST_CS | CONST_PERSISTENT);
@@ -20,7 +20,7 @@
  	REGISTER_LONG_CONSTANT("IMAGETYPE_IFF",     IMAGE_FILETYPE_IFF,     CONST_CS | CONST_PERSISTENT);
  	REGISTER_LONG_CONSTANT("IMAGETYPE_WBMP",    IMAGE_FILETYPE_WBMP,    CONST_CS | CONST_PERSISTENT);
  	REGISTER_LONG_CONSTANT("IMAGETYPE_JPEG2000",IMAGE_FILETYPE_JPC,     CONST_CS | CONST_PERSISTENT); /* keep alias */
-@@ -184,7 +180,6 @@
+@@ -188,7 +184,6 @@ static unsigned long int php_swf_get_bit
  }
  /* }}} */
  
@@ -28,7 +28,7 @@
  /* {{{ php_handle_swc
   */
  static struct gfxinfo *php_handle_swc(php_stream * stream TSRMLS_DC)
-@@ -255,7 +250,6 @@
+@@ -259,7 +254,6 @@ static struct gfxinfo *php_handle_swc(ph
  	return result;
  }
  /* }}} */
@@ -36,7 +36,7 @@
  
  /* {{{ php_handle_swf
   */
-@@ -1314,11 +1308,7 @@
+@@ -1318,11 +1312,7 @@ static void php_getimagesize_from_stream
  			result = php_handle_swf(stream TSRMLS_CC);
  			break;
  		case IMAGE_FILETYPE_SWC:
