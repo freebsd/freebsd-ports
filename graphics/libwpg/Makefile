@@ -11,18 +11,17 @@ COMMENT=	Library and tools to work with WordPerfect Graphics (WPG) files
 LICENSE=	LGPL21 MPL
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	wpd-0.9:${PORTSDIR}/textproc/libwpd
+LIB_DEPENDS=	libwpd-0.9.so:${PORTSDIR}/textproc/libwpd
 
 USE_AUTOTOOLS=	libtool
-USES=		pkgconfig perl5
-USE_GNOME=	gnomeprefix gnomehack ltverhack
+USES=		pkgconfig perl5 pathfix
+USE_GNOME=	gnomeprefix ltverhack
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-werror
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
