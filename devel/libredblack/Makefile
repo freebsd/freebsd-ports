@@ -21,6 +21,7 @@ CONFIGURE_ARGS+=	--without-rbgen
 PLIST_SUB+=	PYTHON="@comment "
 .else
 USE_PYTHON=	yes
+CONFIGURE_ARGS+=	--with-python=${PYTHON_CMD}
 PLIST_SUB+=	PYTHON=""
 .endif
 
