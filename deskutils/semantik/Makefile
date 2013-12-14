@@ -47,15 +47,15 @@ post-patch:
 
 do-configure:
 	@cd ${WRKSRC}; \
-		${SETENV} ${CONFIGURE_ENV} ./waf configure --prefix=${PREFIX}
+		${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} waf configure --prefix=${PREFIX}
 
 do-build:
 	@cd ${WRKSRC}; \
-		${SETENV} ${MAKE_ENV} ./waf build ${_MAKE_JOBS}
+		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} waf build ${_MAKE_JOBS}
 
 do-install:
 	@cd ${WRKSRC}; \
-		${SETENV} ${MAKE_ENV} ./waf install
+		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} waf install
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
