@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pytsk
-DISTVERSION=	2013-11-24
+DISTVERSION=	2013-12-13
 CATEGORIES=	sysutils security devel python
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiScUxsUm54cG02RDA/ \
 		LOCAL/antoine
@@ -24,8 +24,7 @@ python_OLD_CMD=	.*
 python_CMD=	${PYTHON_CMD}
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=pytsk3
-PYDISTUTILS_PKGVERSION=4.1.2
+PYDISTUTILS_AUTOPLIST=yes
 
 post-patch:
 	${REINPLACE_CMD} -e "s|'/', 'usr', 'local'|'${LOCALBASE}'|" \
@@ -36,8 +35,6 @@ PORTDOCS=	README
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 PORTEXAMPLES=	*
-
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pytsk3.so
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
@@ -50,7 +47,7 @@ post-install:
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/*.py ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/samples/*.py ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
