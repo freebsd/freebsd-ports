@@ -4,7 +4,7 @@
  CUSTOM_LIBS=1
  endif
  
-+ifeq ($(OS_ARCH), FreeBSD)
++ifneq (,$(filter DragonFly FreeBSD,$(OS_ARCH)))
 +EXTRA_LIBS = -L$(dist_libdir) -l$(LBER_LIBNAME) -lpthread
 +EXTRA_LIBS+= $(filter -L% -l%,${NSPRLINK})
 +CUSTOM_LIBS=1

@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.22
-PORTREVISION=	1
-CATEGORIES?=	www ipv6
+DISTVERSION=	2.23
+CATEGORIES?=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source \
 		https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME}/candidates/${DISTVERSION}-candidates/build1/source/
 DISTFILES=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
@@ -13,7 +12,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
-BUILD_DEPENDS=	nspr>=4.10:${PORTSDIR}/devel/nspr \
+BUILD_DEPENDS=	nspr>=4.10.2:${PORTSDIR}/devel/nspr \
 		nss>=3.15:${PORTSDIR}/security/nss \
 		sqlite3>=3.7.17:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
@@ -22,7 +21,7 @@ BUILD_DEPENDS=	nspr>=4.10:${PORTSDIR}/devel/nspr \
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
 EM_VERSION=	1.6
-L_VERSION=	2.7b1
+L_VERSION=	2.8b1
 
 SSP_UNSAFE=	yes
 USE_AUTOTOOLS=	autoconf213:env
@@ -49,7 +48,7 @@ MOZ_PKGCONFIG_FILES=
 NOT_FOR_ARCHS=	ia64
 
 OPTIONS_DEFINE=	CHATZILLA COMPOSER ENIGMAIL LDAP LIGHTNING MAILNEWS
-OPTIONS_DEFAULT=CHATZILLA COMPOSER ENIGMAIL LDAP LIGHTNING MAILNEWS
+OPTIONS_DEFAULT=CHATZILLA COMPOSER LDAP LIGHTNING MAILNEWS
 
 CHATZILLA_DESC?=Chatzilla IRC module
 COMPOSER_DESC?=	HTML Composer module
@@ -83,10 +82,6 @@ MOZ_OPTIONS+=	--disable-ldap --disable-mailnews
 .if ! ${PORT_OPTIONS:MLDAP}
 MOZ_OPTIONS+=	--disable-ldap --enable-mailnews
 .else
-# libprldap60.so: Undefined symbol "PR_GetCurrentThread"
-. if ${ARCH} == i386
-USE_GCC?=	yes
-. endif
 MOZ_OPTIONS+=	--enable-ldap --enable-mailnews
 .endif
 .if ${PORT_OPTIONS:MENIGMAIL}
