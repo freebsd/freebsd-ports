@@ -17,7 +17,6 @@ LICENSE_TEXT=	${RESTRICTED}
 LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell no-auto-accept
 
 RESTRICTED=	See http://astah.net/faq/community/enduser-license-agreement
-LEGAL_TEXT=	License restrictions
 
 USE_ZIP=	yes
 USE_JAVA=	yes
