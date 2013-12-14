@@ -1,6 +1,6 @@
---- sapi/fpm/config.m4.orig	2011-06-26 17:48:11.000000000 +0200
-+++ sapi/fpm/config.m4	2011-11-18 11:05:21.000000000 +0100
-@@ -312,7 +312,7 @@
+--- sapi/fpm/config.m4.orig	2013-12-10 23:31:06.000000000 +0000
++++ sapi/fpm/config.m4	2013-12-13 21:50:25.662258580 +0000
+@@ -317,7 +317,7 @@ AC_DEFUN([AC_FPM_LQ],
  
    AC_MSG_CHECKING([for TCP_INFO])
  
@@ -9,7 +9,7 @@
      have_lq=tcp_info
      AC_MSG_RESULT([yes])
    ], [
-@@ -333,7 +333,7 @@
+@@ -338,7 +338,7 @@ AC_DEFUN([AC_FPM_LQ],
        AC_MSG_RESULT([no])
      ])
  
