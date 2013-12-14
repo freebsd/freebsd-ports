@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	notification
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	New mail notification plugin for Claws Mail
 
