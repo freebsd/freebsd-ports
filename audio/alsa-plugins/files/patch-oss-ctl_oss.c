@@ -12,3 +12,12 @@
  
  typedef struct snd_ctl_oss {
  	snd_ctl_ext_t ext;
+@@ -52,7 +56,7 @@ static const char *const vol_devices[SOU
+ 	[SOUND_MIXER_CD] =	"CD Playback Volume",
+ 	[SOUND_MIXER_IMIX] =	"Monitor Mix Playback Volume",
+ 	[SOUND_MIXER_ALTPCM] =	"Headphone Playback Volume",
+-	[SOUND_MIXER_RECLEV] =	"Capture Volume",
++	[SOUND_MIXER_RECLEV] =	"Master Capture Volume",
+ 	[SOUND_MIXER_IGAIN] =	"Capture Volume",
+ 	[SOUND_MIXER_OGAIN] =	"Playback Volume",
+ 	[SOUND_MIXER_LINE1] =	"Aux Playback Volume",

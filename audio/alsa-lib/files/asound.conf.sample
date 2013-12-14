@@ -1,42 +1,65 @@
 #
 # FreeBSD/OSS
 #
+pcm_slave.oss {
+	pcm.type oss
+}
+
 pcm.!default {
-	type oss
-	device /dev/dsp
+	type plug
+	slave oss
 }
 
 ctl.!default {
 	type oss
-	device /dev/mixer
 }
 
 #
 # Remap all possible surround stuffs.
 #
+pcm.!front {
+	type plug
+	slave oss
+}
+
+pcm.!rear {
+	type plug
+	slave oss
+}
+
+pcm.!center_lfe {
+	type plug
+	slave oss
+}
+
+pcm.!side {
+	type plug
+	slave oss
+}
+
 pcm.!surround40 {
-	type oss
-	device /dev/dsp
+	type plug
+	slave oss
 }
 
 pcm.!surround41 {
-	type oss
-	device /dev/dsp
+	type plug
+	slave oss
 }
 
 pcm.!surround50 {
-	type oss
-	device /dev/dsp
+	type plug
+	slave oss
 }
 
 pcm.!surround51 {
-	type oss
-	device /dev/dsp
+	type plug
+	slave oss
 }
 
 pcm.!surround71 {
-	type oss
-	device /dev/dsp
+	type plug
+	slave oss
 }
 
 #
