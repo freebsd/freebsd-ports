@@ -1,14 +1,17 @@
 # Created by: Koji Yokota <yokota@res.otaru-uc.ac.jp>
 # $FreeBSD$
 
-OPTIONS_DEFINE=	LANG_AF \
+OPTIONS_DEFINE=	LANG_ACH \
+		LANG_AF \
 		LANG_AK \
 		LANG_SQ \
 		LANG_AR \
+		LANG_AS \
 		LANG_AM \
 		LANG_AST \
 		LANG_EU \
 		LANG_BN \
+		LANG_BD \
 		LANG_BB \
 		LANG_BS \
 		LANG_BR \
@@ -17,6 +20,7 @@ OPTIONS_DEFINE=	LANG_AF \
 		LANG_CA \
 		LANG_CN \
 		LANG_CS \
+		LANG_CSB \
 		LANG_DA \
 		LANG_NL \
 		LANG_GB \
@@ -27,10 +31,12 @@ OPTIONS_DEFINE=	LANG_AF \
 		LANG_DE \
 		LANG_EL \
 		LANG_GU \
+		LANG_FF \
 		LANG_FI \
 		LANG_FR \
 		LANG_FY \
 		LANG_GA \
+		LANG_GD \
 		LANG_HE \
 		LANG_HI \
 		LANG_HR \
@@ -41,11 +47,13 @@ OPTIONS_DEFINE=	LANG_AF \
 		LANG_JA \
 		LANG_KN \
 		LANG_KK \
+		LANG_KM \
 		LANG_KO \
 		LANG_KU \
 		LANG_LV \
 		LANG_LT \
 		LANG_LG \
+		LANG_LIJ \
 		LANG_MK \
 		LANG_MAI \
 		LANG_ML \
@@ -89,3 +97,10 @@ OPTIONS_DEFAULT=LANG_AR LANG_BN LANG_BR LANG_CN LANG_ET LANG_DE LANG_FR \
 		LANG_HI LANG_ID LANG_IT LANG_JA LANG_KO LANG_MK LANG_MR \
 		LANG_MN LANG_PBR LANG_PA LANG_RU LANG_ES LANG_SON LANG_TE
 
+LANG_ACH_DESC?=	Acholi language support
+LANG_AS_DESC?=	Assamese language support
+LANG_BD_DESC?=	Bengali (Bangladesh) language support
+LANG_CSB_DESC?=	Kashubian language support
+LANG_FF_DESC?=	Pulaar Fulfulde language support
+LANG_KM_DESC?=	Khmer language support
+LANG_LIJ_DESC?=	Ligurian (Genoa) language support

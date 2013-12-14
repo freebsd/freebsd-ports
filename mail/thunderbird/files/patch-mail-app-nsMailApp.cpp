@@ -4,7 +4,7 @@
    TriggerQuirks();
  #endif
  
-+  setenv("MOZ_PLUGIN_PATH", "%%LOCALBASE%%/lib/browser_plugins/symlinks/gecko19:%%LOCALBASE%%/lib/npapi/symlinks/thunderbird", 0);
++  setenv("MOZ_PLUGIN_PATH", "%%LOCALBASE%%/lib/browser_plugins/symlinks/gecko", 0);
    nsresult rv = mozilla::BinaryPath::Get(argv[0], exePath);
    if (NS_FAILED(rv)) {
      Output("Couldn't calculate the application directory.\n");

@@ -1,13 +1,16 @@
 # Created by: Koji Yokota <yokota@res.otaru-uc.ac.jp>
 # $FreeBSD$
 
-SEAMONKEY_I18N_ALL_=	ca cs de en-GB en-US es-AR es-ES \
-			fi fr hu it ja-JP-mac ja lt nb-NO nl pl \
-			pt-PT ru sk sv-SE tr uk
+SEAMONKEY_I18N_ALL_=	be ca cs de en-GB en-US es-AR es-ES fi fr gl hu it  \
+			ja-JP-mac ja lt nb-NO nl pl pt-PT ru sk sv-SE tr uk \
+			zh-CN zh-TW
 
 .if defined(SEAMONKEY_I18N_ALL) || (defined(PACKAGE_BUILDING) && !exists(${OPTIONSFILE})) || make(makesum)
 SEAMONKEY_I18N=   ${SEAMONKEY_I18N_ALL_}
 .else
+.if ${PORT_OPTIONS:MLANG_BE}
+SEAMONKEY_I18N+=  be
+.endif
 .if ${PORT_OPTIONS:MLANG_CA}
 SEAMONKEY_I18N+=  ca
 .endif
@@ -34,6 +37,9 @@ SEAMONKEY_I18N+=  fi
 .endif
 .if ${PORT_OPTIONS:MLANG_FR}
 SEAMONKEY_I18N+=  fr
+.endif
+.if ${PORT_OPTIONS:MLANG_GL}
+SEAMONKEY_I18N+=  gl
 .endif
 .if ${PORT_OPTIONS:MLANG_HU}
 SEAMONKEY_I18N+=  hu
@@ -76,5 +82,11 @@ SEAMONKEY_I18N+=  tr
 .endif
 .if ${PORT_OPTIONS:MLANG_UA}
 SEAMONKEY_I18N+=  uk
+.endif
+.if ${PORT_OPTIONS:MLANG_CN}
+SEAMONKEY_I18N+=  zh-CN
+.endif
+.if ${PORT_OPTIONS:MLANG_TW}
+SEAMONKEY_I18N+=  zh-TW
 .endif
 .endif

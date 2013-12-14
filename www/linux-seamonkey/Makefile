@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.21
-CATEGORIES=	www
+DISTVERSION=	2.23
+CATEGORIES=	www mail news editors irc ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/linux-i686/en-US
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -13,6 +13,5 @@ USE_BZIP2=	yes
 
 USE_LINUX_APPS=	dbusglib dbuslibs alsalib alsa-plugins-oss
 
-NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.common"
 .include <bsd.port.mk>
