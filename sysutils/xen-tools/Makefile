@@ -15,6 +15,7 @@ DISTFILES=	xen-${PORTVERSION}.tar.gz
 
 USES=		gmake
 USE_PYTHON=	yes
+MAKE_ENV+=	PYTHON=${PYTHON_CMD}
 
 ONLY_FOR_ARCHS=		amd64 i386 ia64
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64, i386, or ia64"
