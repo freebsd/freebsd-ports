@@ -19,7 +19,6 @@ EXTRACT_DEPENDS=${PYTHON_CMD}:${PYTHON_PORTSDIR}
 LIB_DEPENDS=	protobuf:${PORTSDIR}/devel/protobuf \
 		zinnia:${PORTSDIR}/japanese/zinnia
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 
 USES=		pkgconfig iconv
 USE_BZIP2=	yes
