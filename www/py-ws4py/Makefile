@@ -8,10 +8,9 @@ MASTER_SITES=	http://www.defuze.org/oss/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rene@FreeBSD.org
-# python@ is also OK with me
 COMMENT=	WebSocket package for Python
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
