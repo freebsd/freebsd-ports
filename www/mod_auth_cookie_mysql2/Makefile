@@ -10,8 +10,7 @@ DISTNAME=	${PORTNAME}_1.0
 DIST_SUBDIR=	apache2
 
 MAINTAINER=	apache@FreeBSD.org
-COMMENT=	Allows authentication against a MySQL database via a secure cookie
-
+COMMENT=	Allows authentication against MySQL database via secure cookie
 
 USE_MYSQL=	yes
 USE_APACHE=	22
@@ -23,5 +22,4 @@ AP_INC=		${LOCALBASE}/include/mysql
 AP_LIB=		${LOCALBASE}/lib/mysql -lmysqlclient
 SRC_FILE=	mod_auth_cookie_sql2.c mod_auth_cookie_sql2_mysql.c
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

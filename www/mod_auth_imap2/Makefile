@@ -6,6 +6,7 @@ PORTVERSION=	2.2.0
 PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://ben.brillat.net/files/projects/mod_auth_imap2/
+PKGNAMESUFFIX=	2
 DISTNAME=	mod_auth_imap2-${PORTVERSION}
 DIST_SUBDIR=	apache2
 
@@ -16,7 +17,6 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2-${PORTVERSION}
 USE_APACHE=	22
-LATEST_LINK=	mod_auth_imap2
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 
