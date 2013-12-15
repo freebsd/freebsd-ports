@@ -26,18 +26,18 @@ WRKSRC=		${WRKDIR}/cuecat
 NO_STAGE=	yes
 pre-install:
 	@${MV} ${WRKSRC}/cuecat.py ${WRKSRC}/cuecat.py-orig
-	@${SED} 's;/usr/opt;${PREFIX};' ${WRKSRC}/cuecat.py-orig >${WRKSRC}/cuecat.py
+	@${SED} 's;/usr/opt/bin/python;${PYTHON_CMD};' ${WRKSRC}/cuecat.py-orig >${WRKSRC}/cuecat.py
 	@${MV} ${WRKSRC}/barcode.py ${WRKSRC}/barcode.py-orig
-	@${SED} 's;/usr/opt;${PREFIX};' ${WRKSRC}/barcode.py-orig >${WRKSRC}/barcode.py
+	@${SED} 's;/usr/opt/bin/python;${PYTHON_CMD};' ${WRKSRC}/barcode.py-orig >${WRKSRC}/barcode.py
 .if !defined(WITHOUT_X11)
 	@${MV} ${WRKSRC}/xcuecat.py ${WRKSRC}/xcuecat.py-orig
-	@${SED} 's;/usr/opt;${PREFIX};' ${WRKSRC}/xcuecat.py-orig >${WRKSRC}/xcuecat.py
+	@${SED} 's;/usr/opt/bin/python;${PYTHON_CMD};' ${WRKSRC}/xcuecat.py-orig >${WRKSRC}/xcuecat.py
 .endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cuecat.py ${PYTHON_SITELIBDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/barcode.py ${PYTHON_SITELIBDIR}
-	python -O -c "import barcode, cuecat"
+	${PYTHON_CMD} -O -c "import barcode, cuecat"
 	${LN} -sf ${PYTHON_SITELIBDIR}/cuecat.py ${PREFIX}/bin/cuecat
 	${INSTALL_MAN} ${WRKSRC}/cuecat.1 ${PREFIX}/man/man1
 .if !defined(WITHOUT_X11)
