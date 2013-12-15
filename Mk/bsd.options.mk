@@ -358,7 +358,7 @@ ALL_OPTIONS=	${OPTIONS_DEFINE}
 ### to be removed once old OPTIONS disappear
 .for opt in ${ALL_OPTIONS}
 .if empty(PORT_OPTIONS:M${opt})
-.   if !defined(WITH_${opt}) && !defined(WITHOUT_${opt})
+.   if !defined(WITH_${opt}) && !defined(WITHOUT_${opt}) && ${opt} != NLS
 WITHOUT_${opt}:=	true
 .   endif
 .else
