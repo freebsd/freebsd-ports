@@ -27,6 +27,7 @@ MAKE_ARGS=	CC="${CC}" \
 NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/CC/s,gcc,$$\{CC\},' ${WRKSRC}/make.inc
+	@${REINPLACE_CMD} -e 's|= python|= ${PYTHON_CMD}|' ${WRKSRC}/make.inc
 
 pre-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
