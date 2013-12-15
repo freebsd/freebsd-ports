@@ -3,7 +3,6 @@
 
 PORTNAME=	mod_proctitle
 PORTVERSION=	0.4.1
-PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.springdaemons.com/soft/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -11,6 +10,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Set httpd process titles to reflect currently processed request
 
+LICENSE=	BSD
 
 USE_APACHE=	22+
 GNU_CONFIGURE=	yes
@@ -21,9 +21,9 @@ CFLAGS+=	-I${LOCALBASE}/include \
 
 PLIST_FILES=	${APACHEMODDIR}/${PORTNAME}.so
 
-NO_STAGE=	yes
 do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/.libs/mod_proctitle.so \
-		${PREFIX}/${APACHEMODDIR}/
+		${STAGEDIR}${PREFIX}/${APACHEMODDIR}
 
 .include <bsd.port.mk>

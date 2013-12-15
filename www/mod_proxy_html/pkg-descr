@@ -3,4 +3,9 @@ situation, to ensure that links work for users outside the proxy.  It
 serves the same purpose as Apache's ProxyPassReverse directive does for
 HTTP headers, and is an essential component of a reverse proxy.
 
+Note (for apache24 users):
+mod_proxy_html has now been relicensed and incorporated into the core
+Apache HTTPD distribution at apache.org from HTTPD 2.4. That version is
+now likely to be more up-to-date than this one.
+
 WWW: http://apache.webthing.com/mod_proxy_html/
