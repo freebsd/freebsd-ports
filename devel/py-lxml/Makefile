@@ -16,10 +16,8 @@ LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libxslt.so:${PORTSDIR}/textproc/libxslt
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
+USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes
-PYEASYINSTALL_ARCHDEP=	yes
-NO_STAGE=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 DOCS_FILES=	CHANGES.txt CREDITS.txt TODO.txt README.rst
