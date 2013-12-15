@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	mod_authz_unixgroup
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.0.3
 CATEGORIES=	www
-MASTER_SITES=	http://www.unixpapa.com/software/
+MASTER_SITES=	http://mod-auth-external.googlecode.com/files/
 
 MAINTAINER=	apache@FreeBSD.org
-COMMENT=	A unix group access control module for Apache 2.1 and later
+COMMENT=	UNIX group access control module for Apache 2.2
 
+LICENSE=	AL2
+
+PORTSCOUT=	limit:^1\.0\.
 
 USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SHORTMODNAME=	authz_unixgroup
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
