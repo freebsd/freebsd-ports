@@ -13,19 +13,17 @@ EXTRACT_SUFX=
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for simple text rewriting
 
-
-WRKSRC=	${WRKDIR}
+LICENSE=	GPLv2
 
 USE_APACHE=	22+
 
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 
-NO_STAGE=	yes
 pre-extract:
-	@${MKDIR} ${WRKDIR}
+	@${MKDIR} ${WRKSRC}
 
 do-extract:
-	@${CP} ${DISTDIR}/${PORTNAME}.c ${WRKDIR}/
+	@${CP} ${DISTDIR}/${PORTNAME}.c ${WRKSRC}
 
 .include <bsd.port.mk>

@@ -10,6 +10,7 @@ DISTNAME=	Webware-${PORTVERSION}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for WebWare WebKit AppServer
 
+LICENSE=	PSFL
 
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes
@@ -18,7 +19,6 @@ AP_EXTRAS=	marshal.c
 
 WRKSRC=		${WRKDIR}/Webware-${PORTVERSION}/WebKit/Adapters/${PORTNAME}2
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/sbin/apxs|${APXS}|' ${WRKSRC}/Makefile
 
