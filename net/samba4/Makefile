@@ -471,7 +471,7 @@ post-patch:
 				${PATCH_WRKSRC}/dynconfig/config.m4
 # Make sure that the right version of Python is used by the tools
 # https://bugzilla.samba.org/show_bug.cgi?id=7305
-			@for f in ${PATCH_WRKSRC}/source4/scripting/bin/*; do \
+			@for f in ${PATCH_WRKSRC}/source4/scripting/bin/* ${WRKSRC}/${WAF_TOOL}; do \
 				${REINPLACE_CMD} -e '1,1 s|.*python.*|#!${PYTHON_CMD}|' $${f}; \
 			done
 
