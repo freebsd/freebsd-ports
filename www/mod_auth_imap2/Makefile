@@ -10,13 +10,13 @@ DISTNAME=	mod_auth_imap2-${PORTVERSION}
 DIST_SUBDIR=	apache2
 
 MAINTAINER=	apache@FreeBSD.org
-COMMENT=	An Apache 2 module to provide authentication via an IMAP mail server
+COMMENT=	Apache 2 module to provide authentication via an IMAP mail server
 
 LICENSE=	GPLv2
 
 
 WRKSRC=		${WRKDIR}/${PORTNAME}2-${PORTVERSION}
-USE_APACHE=	22+
+USE_APACHE=	22
 NO_STAGE=	yes
 LATEST_LINK=	mod_auth_imap2
 AP_FAST_BUILD=	yes
