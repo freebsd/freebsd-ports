@@ -17,11 +17,16 @@ COMMENT=	Liberate the universe from the evil company WEAPCO
 
 LICENSE=	GPLv2
 
-USES=		gmake iconv
+USES=		gmake iconv shebangfix
+USE_PYTHON_BUILD=	-2.7
 USE_XORG=	x11 xau xdmcp
 USE_SDL=	image mixer
 WITH_ZLIB=	yes
 MAKEFILE=	makefile
+
+SHEBANG_FILES=	pack.py unpack.py
+python_OLD_CMD=	${SETENV} python
+python_CMD=	${PYTHON_CMD}
 
 INSTALLS_ICONS=	yes
 
