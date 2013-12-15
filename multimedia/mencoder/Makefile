@@ -3,30 +3,28 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	Convenient video file and movie encoder
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../mplayer/Makefile.shared"
 
-OPTIONS_DEFINE= AMR_NB AMR_WB BLURAY CDIO CDPARANOIA DEBUG DIRAC \
-		DV FAAC FONTCONFIG FRIBIDI GIF GSM IPV6 JACK LADSPA \
-		LIBMNG LIVEMEDIA LZO MAD NAS OCFLAGS OPENAL OPENJPEG \
-		OTCHAIN PULSEAUDIO REAL RTCPU RTMP SCHROEDINGER SMB \
-		THEORA TWOLAME V4L VPX WIN32 X264 XVID
+OPTIONS_DEFINE=	AMR_NB AMR_WB BLURAY CDIO CDPARANOIA DEBUG DIRAC \
+		DV FAAC FONTCONFIG FRIBIDI GIF GSM IPV6 JACK \
+		LADSPA LIBMNG LZO MAD NAS OCFLAGS OPENAL OPENJPEG \
+		OPUS OTCHAIN PULSEAUDIO REAL RTCPU RTMP SCHROEDINGER \
+		SMB THEORA TWOLAME V4L VPX WIN32 X264 XVID
 
 OPTIONS_DEFAULT=GIF IPV6 OCFLAGS RTCPU WIN32 X264 XVID
 
 BLURAY_DESC?=	BluRay support
 LZO_DESC?=	Enable external liblzo library
 OCFLAGS_DESC?=	Use optimized compiler flags
+OPUS_DESC?=	Opus decoding with libopus
 OTCHAIN_DESC?=	Use gcc 4.6+ toolchain on legacy systems
 REAL_DESC?=	Enable realplayer plugin
 RTCPU_DESC?=	Use runtime CPU detection
 WIN32_DESC?=	Install win32 binary codecs
-
-MAN1=		mencoder.1
 
 RESTRICTED=	Port has restricted dependencies
 
@@ -43,9 +41,16 @@ TOOLFILES=	aconvert.sh binary_codecs.sh calcbpp.pl \
 		subedit.pl subsearch.sh vobshift.py \
 		w32codec_dl.pl wma2ogg.pl
 
-.include <bsd.port.pre.mk>
+USES+=		shebangfix
+SHEBANG_FILES=	TOOLS/calcbpp.pl TOOLS/checktree.sh TOOLS/countquant.pl	\
+		TOOLS/divx2svcd.sh TOOLS/dvd2divxscript.pl TOOLS/mencvcd.sh \
+		TOOLS/mphelp_check.py TOOLS/plotpsnr.pl TOOLS/psnr-video.sh \
+		TOOLS/qepdvcd.sh TOOLS/subedit.pl TOOLS/w32codec_dl.pl \
+		TOOLS/wma2ogg.pl
 
-LIB_DEPENDS+=	mp3lame:${PORTSDIR}/audio/lame
+.include "${.CURDIR}/../mplayer/Makefile.optvars"
+.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=	--disable-mplayer \
 			--disable-libdca \
@@ -65,45 +70,11 @@ CONFIGURE_ARGS+=	--disable-mplayer \
 			--disable-enca \
 			--disable-musepack
 
+LIB_DEPENDS+=	libmp3lame.so:${PORTSDIR}/audio/lame
+
 ALL_TARGET=	mencoder
 
 .include "${.CURDIR}/../mplayer/Makefile.options"
-
-.if ${PORT_OPTIONS:MFONTCONFIG}
-LIB_DEPENDS+=		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
-.else
-CONFIGURE_ARGS+=	--disable-fontconfig
-.endif
-
-.if ${PORT_OPTIONS:MTWOLAME}
-LIB_DEPENDS+=		twolame:${PORTSDIR}/audio/twolame
-.else
-CONFIGURE_ARGS+=	--disable-twolame
-.endif
-
-.if ${PORT_OPTIONS:MFAAC}
-LIB_DEPENDS+=		faac:${PORTSDIR}/audio/faac
-.else
-CONFIGURE_ARGS+=	--disable-faac
-.endif
-
-.if ${PORT_OPTIONS:MX264}
-LIB_DEPENDS+=		x264:${PORTSDIR}/multimedia/x264
-.else
-CONFIGURE_ARGS+=	--disable-x264
-.endif
-
-.if ${PORT_OPTIONS:MXVID}
-LIB_DEPENDS+=		xvidcore:${PORTSDIR}/multimedia/xvid
-.else
-CONFIGURE_ARGS+=	--disable-xvid
-.endif
-
-.if ${PORT_OPTIONS:MDIRAC}
-LIB_DEPENDS+=		dirac_encoder:${PORTSDIR}/multimedia/dirac
-.else
-CONFIGURE_ARGS+=	--disable-libdirac-lavc
-.endif
 
 pre-everything::
 	@${ECHO_MSG} "N - O - T - E"
@@ -141,20 +112,16 @@ post-patch:
 		 s|/dev/\\:(cdrom[[:alnum:]]*[[:>:]])|${DEFAULT_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g'
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/mencoder ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/mencoder ${STAGEDIR}${PREFIX}/bin
 
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/DOCS/man/en/mplayer.1 ${MAN1PREFIX}/man/man1/mencoder.1
-	@${MKDIR} ${DATADIR}
-	@${CHMOD} 755 ${DATADIR}
-	@${MKDIR} ${DATADIR}/tools
-	@${CHMOD} 755 ${DATADIR}/tools
+	@${INSTALL_MAN} ${WRKSRC}/DOCS/man/en/mplayer.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/mencoder.1
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${CHMOD} 755 ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/tools
+	@${CHMOD} 755 ${STAGEDIR}${DATADIR}/tools
 .for tool in ${TOOLFILES}
-	@${INSTALL_SCRIPT} ${WRKSRC}/TOOLS/${tool} ${DATADIR}/tools
+	@${INSTALL_SCRIPT} ${WRKSRC}/TOOLS/${tool} ${STAGEDIR}${DATADIR}/tools
 .endfor
-
-.if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
-BROKEN=		Does not detect CPU correctly on ia64 or sparc64
-.endif
 
 .include <bsd.port.post.mk>

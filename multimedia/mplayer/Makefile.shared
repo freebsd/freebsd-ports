@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 
-MPLAYER_SNAPSHOT_DATE=	2013-03-08
+MPLAYER_SNAPSHOT_DATE=	2013-11-09
 MPLAYER_PORT_VERSION=	1.1.r${MPLAYER_SNAPSHOT_DATE:S/-//g}
 CATEGORIES?=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -17,14 +17,13 @@ MAINTAINER?=	thomas.e.zander@googlemail.com
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/yasm:${PORTSDIR}/devel/yasm
 
-USES=		iconv ncurses
+USES=		gmake iconv ncurses
 USE_XZ=		yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
@@ -34,16 +33,22 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--as="${AS}" \
 		--extra-cflags="-I${PREFIX}/include -I${LOCALBASE}/include" \
 		--extra-libs="-L${PREFIX}/lib" \
-		--disable-bitmap-font \
-		--disable-liba52 \
 		--disable-alsa \
+		--disable-bitmap-font \
+		--disable-crystalhd \
+		--disable-faad \
+		--disable-liba52 \
 		--disable-libbs2b \
-		--disable-mp3lib \
-		--enable-ass-internal \
+		--disable-libilbc \
+		--disable-libnut \
 		--disable-libvorbis \
+		--disable-live \
+		--disable-joystick \
+		--disable-mad \
+		--disable-mp3lib \
+		--disable-nemesi \
 		--disable-speex \
-		--disable-libopus \
-		--disable-libilbc
+		--enable-ass-internal
 
 WANT_GNOME=	yes
 WANT_SDL=	yes
