@@ -16,7 +16,7 @@ LICENSE=	ZLIB
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
-USE_PYTHON_BUILD=	yes
+USE_PYTHON_BUILD=	2
 
 BAM_VERSION=	0.4.0
 BAM_WRKSRC=	${WRKDIR}/bam-${BAM_VERSION}
@@ -52,6 +52,8 @@ DESKTOP_ENTRIES="Teeworlds" \
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|"python "|"${PYTHON_CMD} "|' \
+		${WRKSRC}/bam.lua
 	@${REINPLACE_CMD} -e 's|-O.||; s|-lpthread|${PTHREAD_LIBS}|; s|^gcc|${CC} ${CFLAGS}|; s|-ldl||g' \
 		${BAM_WRKSRC}/make_unix.sh
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/other/sdl/sdl.lua
