@@ -148,6 +148,14 @@ CONFIGURE_ARGS+=	--without-dbi
 PLIST_SUB+=	SUB_DBI="@comment "
 .endif
 
+.if ${OSVERSION} > 1000055
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-dig-to-drill.diff
+CONFIGURE_ARGS+=--with-dig-command=/usr/bin/drill
+PLIST_SUB+=	SUB_DNS="@comment "
+.else
+PLIST_SUB+=	SUB_DNS=""
+.endif
+
 post-patch:
 .for file in check_by_ssh.c check_disk.c check_http.c check_mrtgtraf.c \
 	check_nagios.c check_ntp.c check_ntp_peer.c check_ntp_time.c \
