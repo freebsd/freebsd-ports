@@ -19,6 +19,7 @@ USES=		pkgconfig
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20
+USE_PYTHON_BUILD=yes
 
 MAN8=		telepathy-idle.8
 
