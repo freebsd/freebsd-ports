@@ -31,7 +31,8 @@ NO_STAGE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/BASE =/ s|=.*|= ${PREFIX}/|; \
-		s|cp -r \([^ ]*\)/|cp -R \1|' ${WRKSRC}/${MAKEFILE}
+		s|cp -r \([^ ]*\)/|cp -R \1|; \
+		s|python |${PYTHON_CMD} |' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's|/usr/share/nathive|${DATADIR}|' \
 		${WRKSRC}/${PORTNAME}.desktop
 .if ! ${PORT_OPTIONS:MDOCS}
