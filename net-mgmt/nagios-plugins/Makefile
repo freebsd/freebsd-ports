@@ -18,8 +18,8 @@ USE_AUTOTOOLS=	libtool aclocal autoconf automake
 ACLOCAL_ARGS=	-I m4 -I gl/m4
 AUTOMAKE_ARGS=	--add-missing
 
-OPTIONS_DEFINE=	QSTAT FPING NETSNMP RADIUS MYSQL PGSQL LDAP IPV6 JAIL NLS DBI
-OPTIONS_DEFAULT=IPV6
+OPTIONS_DEFINE=	QSTAT FPING NETSNMP RADIUS MYSQL PGSQL LDAP IPV6 JAIL NLS DBI EXTRAOPTS
+OPTIONS_DEFAULT=IPV6 EXTRAOPTS
 
 QSTAT_DESC=	Game server query support (check_game)
 FPING_DESC=	Support for non-flooding fast ping (check_fping)
@@ -30,6 +30,7 @@ PGSQL_DESC=	PostgreSQL support (check_pgsql)
 LDAP_DESC=	OpenLDAP support (check_ldap)
 JAIL_DESC=	Compilation within jail(8) (see Makefile)
 DBI_DESC=	Check database using DBI
+EXTRAOPTS_DESC=	Parsing of plugins ini config files for extra options
 
 GNU_CONFIGURE=	yes
 
@@ -154,6 +155,10 @@ CONFIGURE_ARGS+=--with-dig-command=/usr/bin/drill
 PLIST_SUB+=	SUB_DNS="@comment "
 .else
 PLIST_SUB+=	SUB_DNS=""
+.endif
+
+.if ${PORT_OPTIONS:MEXTRAOPTS}
+CONFIGURE_ARGS+=	--enable-extra-opts
 .endif
 
 post-patch:
