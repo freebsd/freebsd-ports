@@ -16,7 +16,8 @@ COMMENT=	Equinox Desktop Environment
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
+BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
+		doxygen:${PORTSDIR}/devel/doxygen \
 		jam:${PORTSDIR}/devel/jam \
 		update-mime-database:${PORTSDIR}/misc/shared-mime-info
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus \
