@@ -30,9 +30,6 @@ NO_BUILD=	yes
 
 CRASHDIR=	${PREFIX}/share/crashplan
 
-pre-patch:
-	@${REINPLACE_CMD} -i '' 's,%%PREFIX%%,${PREFIX},' ${FILESDIR}/patch-CrashPlanDesktop
-
 post-patch:
 	@${REINPLACE_CMD} 's/SRV_JAVA_OPTS="/SRV_JAVA_OPTS="-Djava.nio.channels.spi.SelectorProvider=sun.nio.ch.PollSelectorProvider /' ${WRKSRC}/scripts/run.conf
 	@${REINPLACE_CMD} 's/GUI_JAVA_OPTS="/GUI_JAVA_OPTS="-Djava.nio.channels.spi.SelectorProvider=sun.nio.ch.PollSelectorProvider /' ${WRKSRC}/scripts/run.conf
