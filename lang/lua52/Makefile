@@ -2,74 +2,60 @@
 # $FreeBSD$
 
 PORTNAME=	lua
-PORTVERSION=	5.2.2
-PORTREVISION=	1
+PORTVERSION=	5.2.3
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/
-PKGNAMESUFFIX=	${LUA_VER_STR}
+PKGNAMESUFFIX=	52
 
-MAINTAINER=	fiziologus@gmail.com
+MAINTAINER=	lua@FreeBSD.org
 COMMENT=	Small, compilable scripting language providing easy access to C code
 
 LICENSE=	MIT
 
-#USE_LUA=	5.2
 LUA_VER=	5.2
-LUA_VER_SH=	1
-LUA_VER_STR=	52
-LUA_SUBDIR=	lua${LUA_VER_STR}
-LUA_PREFIX=	${PREFIX}
-LUA_BINDIR=	${LUA_PREFIX}/bin/${LUA_SUBDIR}
-LUA_INCDIR=	${LUA_PREFIX}/include/${LUA_SUBDIR}
-LUA_LIBDIR=	${LUA_PREFIX}/lib/${LUA_SUBDIR}
-LUA_MODLIBDIR=	${LUA_PREFIX}/lib/lua/${LUA_VER}
-LUA_MODSHAREDIR=	${LUA_PREFIX}/share/lua/${LUA_VER}
-
-ALL_TARGET=	freebsd
+USES=		pkgconfig readline
 USE_LDCONFIG=	yes
-MAKE_ENV=	LUA_SONAME="liblua-${LUA_VER}.so.${LUA_VER_SH}" \
-		MYCFLAGS="${CFLAGS}" MYLDFLAGS="${LDFLAGS}"
+
+# Overriding __MAKE_CONF makes sure that we don't re-parse
+# /etc/make.conf during do-build, which would jeopardize the build
+# if, for instance, the user set CFLAGS=mumble
+# NOTE: /etc/make.conf is read BEFORE Makefile, so we already
+# have its settings when we get here.
+# See http://wiki.freebsd.org/MatthiasAndree/LuaLessonsLearnt
+MAKE_ARGS=	__MAKE_CONF=${NONEXISTENT}
 # liblua.so requires libm, so make sure it has an explicit dependency
 # so that applications need not second-guess lua's dependencies.
 LDFLAGS+=	-lm -pthread
+BUILD_WRKSRC=	${WRKSRC}/src
+MAKE_ARGS+=	MYCFLAGS="${CFLAGS} -DLUA_USE_LINUX" \
+		MYLDFLAGS="${LDFLAGS} -Wl,-E -lreadline" \
+		CC="${CC}" \
+		LUA_T=lua52 \
+		LUAC_T=luac52 \
+		LUA_A=liblua-${LUA_VER}.a \
+		LUA_SO=liblua-${LUA_VER}.so \
+		TO_BIN="lua52 luac52" \
+		TO_LIB="liblua-${LUA_VER}.a liblua-${LUA_VER}.so" \
+		INSTALL_TOP=${STAGEDIR}${PREFIX} \
+		INSTALL_INC=${STAGEDIR}${PREFIX}/include/lua52 \
+		INSTALL_EXEC="${INSTALL_PROGRAM}"
 
-MAN1=		lua-${LUA_VER}.1 luac-${LUA_VER}.1
-DOCSDIR=	${PREFIX}/share/doc/${LUA_SUBDIR}
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "powerpc"
 CFLAGS+=	-fPIC
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -Ee \
-		"s|%%LUA_PREFIX%%|${LUA_PREFIX}| ; \
-		s|%%LUA_BINDIR%%|${LUA_BINDIR}| ; \
-		s|%%LUA_INCDIR%%|${LUA_INCDIR}| ; \
-		s|%%LUA_LIBDIR%%|${LUA_LIBDIR}| ; \
-		s|%%LUA_MODSHAREDIR%%|${LUA_MODSHAREDIR}| ; \
-		s|%%LUA_MODLIBDIR%%|${LUA_MODLIBDIR}| ; \
-		s|%%LUA_VER_SH%%|${LUA_VER_SH}|" \
-		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,rand *(,random(,g' \
 		${WRKSRC}/src/lmathlib.c
 	@${REINPLACE_CMD} -e "/LUA_ROOT/s|/usr/local|${LUA_PREFIX}|" \
 		${WRKSRC}/src/luaconf.h
 
 post-install:
-.for f in lua luac
-	${LN} -sf ${LUA_BINDIR}/${f} ${PREFIX}/bin/${f}-${LUA_VER}
-.endfor
-	${LN} -sf ${LUA_LIBDIR}/liblua-${LUA_VER}.so.${LUA_VER_SH} ${LUA_LIBDIR}/liblua.so
-	${LN} -sf ${LUA_SUBDIR}/liblua-${LUA_VER}.so.${LUA_VER_SH} ${PREFIX}/lib
-	${LN} -sf liblua-${LUA_VER}.so.${LUA_VER_SH} ${PREFIX}/lib/liblua-${LUA_VER}.so
+	@${MV} ${STAGEDIR}${PREFIX}/man/man1/lua.1 \
+		${STAGEDIR}${PREFIX}/man/man1/lua52.1
+	@${MV} ${STAGEDIR}${PREFIX}/man/man1/luac.1 \
+		${STAGEDIR}${PREFIX}/man/man1/luac52.1
 
-# Documentation.
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html *.gif *.css *.png ${DOCSDIR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
