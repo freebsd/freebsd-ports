@@ -33,7 +33,6 @@ WRKSRC=		${WRKDIR}/GPL/GtkRadiant
 
 SUB_FILES=	${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/-ldl//' ${WRKSRC}/SConscript
 	@${GREP} -Rl 'defined[[:blank:]]*([[:blank:]]*__linux__[[:blank:]]*) || defined[[:blank:]]*([[:blank:]]*__APPLE__[[:blank:]]*)' ${WRKSRC} | \
@@ -62,13 +61,13 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.cpp' | ${XARGS} ${REINPLACE_CMD} \
 		-E 's|(gtk_adjustment_new[^)]*,)[^)]*|\1 0|'
 
-post-build:
+pre-install:
 	cd ${WRKSRC} && ${PYTHON_CMD} install.py
 	${CP} -a ${WRKDIR}/${PORTNAME}_gamepacks/* ${WRKSRC}/install
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	${CP} -a ${WRKSRC}/install/* ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -a ${WRKSRC}/install/* ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
