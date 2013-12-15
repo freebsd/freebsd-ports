@@ -5,6 +5,7 @@ PORTNAME=	mod_authz_unixgroup
 PORTVERSION=	1.0.3
 CATEGORIES=	www
 MASTER_SITES=	http://mod-auth-external.googlecode.com/files/
+DIST_SUBDIR=	apache2
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	UNIX group access control module for Apache 2.2
