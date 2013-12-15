@@ -56,14 +56,6 @@ DISTFILES+=	${FP_ARCH}/fenv.c?p=203441:fp ${FP_ARCH}/fenv.h?p=203441:fp
 
 .if ${PORT_OPTIONS:MATLAS}
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libalapack.a
-@${ECHO_MSG}
-@${ECHO_MSG} "Atlas *must* be built with the WITH_STATIC option"
-@${ECHO_MSG} "for numpy to function correctly. Ensure it is"
-@${ECHO_MSG} "selected in the configuration dialog when prompted, or"
-@${ECHO_MSG} "Ctrl-C now and reinstall the atlas port with the option"
-@${ECHO_MSG} "enabled."
-sleep 5
 .else
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack \
 		blas.2:${PORTSDIR}/math/blas
