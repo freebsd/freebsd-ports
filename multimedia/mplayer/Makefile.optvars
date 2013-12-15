@@ -26,7 +26,7 @@ CDPARANOIA_CONFIGURE_OFF=	--disable-cdparanoia
 DIRAC_LIB_DEPENDS=	libdirac_encoder.so:${PORTSDIR}/multimedia/dirac
 DIRAC_CONFIGURE_OFF=	--disable-libdirac-lavc
 
-DV_LIB_DEPENDS=		dv.so:${PORTSDIR}/multimedia/libdv
+DV_LIB_DEPENDS=		libdv.so:${PORTSDIR}/multimedia/libdv
 DV_CONFIGURE_OFF=	--disable-libdv
 
 ENCA_LIB_DEPENDS=	libenca.so:${PORTSDIR}/converters/enca
