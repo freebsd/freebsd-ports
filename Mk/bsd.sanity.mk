@@ -145,3 +145,7 @@ DEV_WARNING+=	"USE_DOS2UNIX is deprecated, please use USES=dos2unix"
 DEV_WARNING+=	"LICENSE must not contain BSD, instead use BSD[234]CLAUSE"
 .endif
 .endif
+
+.if defined(USE_PYDISTUTILS) && ${USE_PYDISTUTILS} == "easy_install"
+DEV_WARNING+=	"USE_PYDISTUTILS=easy_install is deprecated, please use USE_PYDISTUTILS=yes"
+.endif
