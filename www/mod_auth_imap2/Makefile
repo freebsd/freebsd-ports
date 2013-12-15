@@ -14,20 +14,16 @@ COMMENT=	Apache 2 module to provide authentication via an IMAP mail server
 
 LICENSE=	GPLv2
 
-
 WRKSRC=		${WRKDIR}/${PORTNAME}2-${PORTVERSION}
 USE_APACHE=	22
-NO_STAGE=	yes
 LATEST_LINK=	mod_auth_imap2
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 
 PORTDOCS=	htaccess-example httpd.conf-append-example
 
-.if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/examples && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/examples/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
