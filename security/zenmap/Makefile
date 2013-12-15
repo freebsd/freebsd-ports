@@ -43,9 +43,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|su-to-zenmap.sh %F|su-to-zenmap.sh ${PORTNAME}|' \
 		${WRKSRC}/install_scripts/unix/zenmap-root.desktop
 	@${REINPLACE_CMD} \
-		-e '/self.create_uninstaller/s|^|#|' ${WRKSRC}/setup.py
+		-e '/self.create_uninstaller/s|^|#|' \
+		-e 's,distutils\.command\.install ,setuptools\.command\.install ,' \
+		${WRKSRC}/setup.py
 	@${REINPLACE_CMD} \
-		-e 's|share/man/man1|man/man1|' ${WRKSRC}/../ndiff/setup.py
+		-e 's|share/man/man1|man/man1|' \
+		-e 's,"install": checked_install,,' \
+		${WRKSRC}/../ndiff/setup.py
 .if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -i '' '/locale_dir, mo_find, /d' ${WRKSRC}/setup.py
 .endif
@@ -57,6 +61,6 @@ post-build:
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/../docs/zenmap.1 ${MAN1PREFIX}/man/man1
 	@(cd ${WRKSRC}/../ndiff \
-		&& ${PYTHON_CMD} setup.py install --prefix ${PREFIX})
+		&& ${PYTHON_CMD} setup.py install --prefix=${PREFIX})
 
 .include <bsd.port.mk>

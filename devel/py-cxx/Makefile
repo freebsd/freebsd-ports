@@ -27,4 +27,9 @@ post-install:
 		${INSTALL_DATA} ${WRKSRC}/Doc/PyCXX.html ${DOCSDIR}
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's,distutils\.command\.install ,setuptools\.command\.install ,' \
+		${WRKSRC}/setup.py
+
 .include <bsd.port.mk>

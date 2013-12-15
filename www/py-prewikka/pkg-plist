@@ -236,6 +236,7 @@ etc/prewikka/prewikka.conf-dist
 %%DATADIR%%/htdocs/images/table_order_up.gif
 %%DATADIR%%/htdocs/js/functions.js
 %%DATADIR%%/htdocs/js/jquery.js
+@exec mkdir -p %%DATADIR%%/htdocs/generated_images
 @dirrm %%DATADIR%%/htdocs/js
 @dirrm %%DATADIR%%/htdocs/images
 @dirrm %%DATADIR%%/htdocs/generated_images

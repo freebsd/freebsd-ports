@@ -38,7 +38,7 @@ post-install:
 .endif
 
 .if ${PORT_OPTIONS:MLIBYAML}
-PYSETUP=	setup.py --with-libyaml
+PYDISTUTILS_SETUP+=	--with-libyaml
 PYDISTUTILS_BUILD_TARGET=	build_ext
 PYDISTUTILS_BUILDARGS+=	--include-dirs=${LOCALBASE}/include \
 			--library-dirs=${LOCALBASE}/lib
@@ -47,7 +47,7 @@ LIB_DEPENDS+=		yaml-0.2:${PORTSDIR}/textproc/libyaml
 
 PLIST_SUB+=	LIBYAML=""
 .else
-PYSETUP=	setup.py --without-libyaml
+PYDISTUTILS_SETUP+=	--without-libyaml
 
 PLIST_SUB+=	LIBYAML="@comment "
 .endif

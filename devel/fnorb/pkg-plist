@@ -271,6 +271,7 @@ bin/fnping
 %%PYTHON_SITELIBDIR%%/Fnorb/script/fnping.py
 %%PYTHON_SITELIBDIR%%/Fnorb/script/fnping.pyc
 %%PYTHON_SITELIBDIR%%/Fnorb/script/fnping.pyo
+%%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%
 %%DOCSDIR%%/CHANGES
 %%DOCSDIR%%/LICENSE.HTML
 %%DOCSDIR%%/MANIFEST.in

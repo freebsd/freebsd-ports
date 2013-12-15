@@ -17,4 +17,8 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PyProtocols
 
 NO_STAGE=	yes
+
+post-patch:
+	@${RM} -rf ${WRKSRC}/setuptools
+
 .include <bsd.port.mk>

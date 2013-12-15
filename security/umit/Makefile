@@ -23,6 +23,9 @@ USE_PYDISTUTILS=	yes
 NO_STAGE=	yes
 
 post-patch:
-	${REINPLACE_CMD} 's/self.build_html_doc()//' ${WRKSRC}/setup.py
+	${REINPLACE_CMD} \
+		-e 's/self.build_html_doc()//' \
+		-e 's,distutils\.command\.install ,setuptools\.command\.install ,' \
+		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

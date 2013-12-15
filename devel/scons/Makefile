@@ -13,10 +13,17 @@ RUN_DEPENDS+=	python2:${PORTSDIR}/lang/python2
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_EGGINFODIR=	${PREFIX}/lib/scons-${PORTVERSION}
+PYDISTUTILS_AUTOPLIST=	yes
 
 PLIST_SUB+=	SCONS_VER=${PORTVERSION}
 
 USE_PYTHON=	-2.7
+
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's,distutils\.command\.install$$,setuptools\.command\.install,' \
+		-e 's,distutils\.command\.install\.,setuptools\.command\.install\.,' \
+		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

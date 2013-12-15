@@ -21,6 +21,8 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	0.0.0
 PYDISTUTILS_PKGNAME=	ldaptor
+PYDISTUTILS_INSTALL_TARGET=	install_locale install
+PYDISTUTILS_BUILD_TARGET=	build_locale build
 
 NO_STAGE=	yes
 .include <bsd.port.mk>

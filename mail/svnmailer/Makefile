@@ -31,7 +31,10 @@ PYDISTUTILS_INSTALLARGS+=	--no-install-docs
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "1s|^.*|#!${PYTHON_CMD}|" ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} \
+		-e "1s|^.*|#!${PYTHON_CMD}|" \
+		-e 's,distutils\.command import install ,setuptools\.command import install ,' \
+		${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e "1s|^.*|#!${PYTHON_CMD}|" ${WRKSRC}/src/svn-mailer
 
 .include <bsd.port.mk>
