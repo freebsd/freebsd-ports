@@ -12,7 +12,7 @@
 # c++11-lib:	The port needs a compiler understanding C++11 and with a C++11 ready standard library
 # c11:		The port needs a compiler understanding C11
 # openmp:	The port needs a compiler understanding openmp
-# nestedfct:	The port needs a compiler understanding nestedfct
+# nestedfct:	The port needs a compiler understanding nested functions
 # features:	The port will determine the features supported by the default compiler
 #
 # Variable to test after <bsd.port.pre.mk>
