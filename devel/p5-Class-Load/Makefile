@@ -18,7 +18,6 @@ BUILD_DEPENDS=	p5-Data-OptList>0:${PORTSDIR}/devel/p5-Data-OptList \
 		p5-Package-Stash>=0.14:${PORTSDIR}/devel/p5-Package-Stash \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
 		p5-Test-Without-Module>=0:${PORTSDIR}/devel/p5-Test-Without-Module
@@ -26,7 +25,4 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Class::Load.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

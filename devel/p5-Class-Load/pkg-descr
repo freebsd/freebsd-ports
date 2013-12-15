@@ -8,4 +8,4 @@ Asking %INC is an option, but that will miss inner packages and any class for
 which the filename does not correspond to the package name. For that, 
 we provide is_class_loaded 'Class::Name'.
 
-WWW:	http://search.cpan.org/dist/Class-Load/
+WWW: http://search.cpan.org/dist/Class-Load/
