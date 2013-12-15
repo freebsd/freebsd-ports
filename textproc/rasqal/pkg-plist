@@ -6,6 +6,9 @@ lib/librasqal.la
 lib/librasqal.so
 lib/librasqal.so.3
 libdata/pkgconfig/rasqal.pc
+man/man1/rasqal-config.1.gz
+man/man1/roqet.1.gz
+man/man3/librasqal.3.gz
 share/gtk-doc/html/rasqal/home.png
 share/gtk-doc/html/rasqal/index.html
 share/gtk-doc/html/rasqal/index.sgml
@@ -19,6 +22,7 @@ share/gtk-doc/html/rasqal/rasqal-changes-0-9-25-to-0-9-26.html
 share/gtk-doc/html/rasqal/rasqal-changes-0-9-26-to-0-9-27.html
 share/gtk-doc/html/rasqal/rasqal-changes-0-9-28-to-0-9-29.html
 share/gtk-doc/html/rasqal/rasqal-changes-0-9-29-to-0-9-30.html
+share/gtk-doc/html/rasqal/rasqal-changes-0-9-30-to-0-9-31.html
 share/gtk-doc/html/rasqal/rasqal-changes.html
 share/gtk-doc/html/rasqal/rasqal-section-data.html
 share/gtk-doc/html/rasqal/rasqal-section-expression.html
@@ -44,7 +48,7 @@ share/gtk-doc/html/rasqal/reference-manual.html
 share/gtk-doc/html/rasqal/right.png
 share/gtk-doc/html/rasqal/style.css
 share/gtk-doc/html/rasqal/up.png
-@exec mkdir -p %D/share/gtk-doc/html/rasqal
 @dirrm share/gtk-doc/html/rasqal
+@dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
 @dirrm include/rasqal

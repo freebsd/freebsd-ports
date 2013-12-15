@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rasqal
-PORTVERSION=	0.9.30
+PORTVERSION=	0.9.31
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/ \
 		SF/librdf/${PORTNAME}/${PORTVERSION}
@@ -10,8 +10,13 @@ MASTER_SITES=	http://download.librdf.org/source/ \
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	High-level interface for RDF
 
-LIB_DEPENDS=	raptor2:${PORTSDIR}/textproc/raptor2 \
-		pcre:${PORTSDIR}/devel/pcre
+# Even though GPLv3 is not explicitly mentioned in the port's LICENSE.html, one
+# of its licenses is "GPLv2 or newer", which includes GPLv3.
+LICENSE=	AL2 GPLv2 GPLv3 LGPL21
+LICENSE_COMB=	dual
+
+LIB_DEPENDS=	libraptor2.so:${PORTSDIR}/textproc/raptor2 \
+		libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_GNOME=	lthack
 USE_OPENSSL=	yes
@@ -20,25 +25,20 @@ USES=		gmake pathfix pkgconfig perl5
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-MAN1=		rasqal-config.1 roqet.1
-MAN3=		librasqal.3
-
 OPTIONS_RADIO=	DEC
 OPTIONS_RADIO_DEC=	GMP MPFR
 
 GMP_DESC=	Use GMP library for decimals
 MPFR_DESC=	Use MPFR library for decimals
 
-NO_STAGE=	yes
+GMP_CONFIGURE_ON=	--with-decimal=gmp --with-gmp=${LOCALBASE}
+GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+MPFR_CONFIGURE_ON=	--with-decimal=mpfr --with-mpfr=${LOCALBASE}
+MPFR_LIB_DEPENDS=	libmpfr.so:${PORTSDIR}/math/mpfr
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MMPFR}
-CONFIGURE_ARGS+=--with-decimal=mpfr --with-mpfr=${LOCALBASE}
-LIB_DEPENDS+=	mpfr:${PORTSDIR}/math/mpfr
-.elif ${PORT_OPTIONS:MGMP}
-CONFIGURE_ARGS+=--with-decimal=gmp
-LIB_DEPENDS+=	gmp:${PORTSDIR}/math/gmp
-.else
+.if empty(PORT_OPTIONS:MMPFR) && empty(PORT_OPTIONS:MGMP)
 CONFIGURE_ARGS+=--with-decimal=none
 .endif
 
