@@ -10,11 +10,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Console Jabber Client
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyxmpp>=1.1.0:${PORTSDIR}/net-im/py-pyxmpp
 
-USE_PYTHON=	2.6+
+USE_PYTHON=	2
 
 NO_STAGE=	yes
 post-patch:
@@ -25,10 +24,13 @@ post-patch:
 		 /pkg_docdir/s|^|#|g ; \
 		 s|INSTALL=.*|INSTALL=${INSTALL}| ; \
 		 s|INSTALL_DATA=.*|INSTALL_DATA=${INSTALL_DATA}| ; \
-		 s|INSTALL_DIR=.*|INSTALL_DIR=${MKDIR}|g" ${WRKSRC}/Makefile
+		 s|INSTALL_DIR=.*|INSTALL_DIR=${MKDIR}|g ; \
+		 s|python |${PYTHON_CMD} |g" ${WRKSRC}/Makefile
+
+.include <bsd.port.options.mk>
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/manual.html ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
