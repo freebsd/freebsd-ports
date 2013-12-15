@@ -355,20 +355,6 @@ NOPORTEXAMPLES=	yes
 ALL_OPTIONS=	${OPTIONS_DEFINE}
 .endif
 
-### to be removed once old OPTIONS disappear
-.for opt in ${ALL_OPTIONS}
-.if empty(PORT_OPTIONS:M${opt})
-.   if !defined(WITH_${opt}) && !defined(WITHOUT_${opt}) && ${opt} != NLS
-WITHOUT_${opt}:=	true
-.   endif
-.else
-.   if !defined(WITH_${opt}) && !defined(WITHOUT_${opt})
-WITH_${opt}:=  true
-.   endif
-.endif
-.endfor
-###
-
 .for opt in ${COMPLETE_OPTIONS_LIST} ${OPTIONS_SLAVE}
 # PLIST_SUB
 PLIST_SUB?=
