@@ -3,17 +3,16 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	High performance media player supporting many formats
 
-NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.shared"
 
 OPTIONS_DEFINE=	AALIB AMR_NB AMR_WB BLURAY CACA DEBUG DV \
 		ENCA ESOUND FRIBIDI GIF GSM GUI IPV6 JACK \
-		JOYSTICK LADSPA LIBMNG LIRC LIVEMEDIA LZO MAD \
-		NAS OCFLAGS OPENAL OPENGL OPENJPEG OTCHAIN \
+		LADSPA LIBMNG LIRC LZO NAS OCFLAGS \
+		OPENAL OPENGL OPENJPEG OPUS OTCHAIN \
 		PULSEAUDIO REAL RTC RTCPU RTMP SCHROEDINGER SDL \
 		SKINS SMB SVGALIB V4L VDPAU WIN32 \
 		X11 X11DGA X11VM XINERAMA XVIDEO XVMC
@@ -26,9 +25,9 @@ OPTIONS_DEFAULT=GUI IPV6 OCFLAGS OPENGL RTCPU SKINS \
 
 BLURAY_DESC?=	BluRay support
 ENCA_DESC?=	Charset conversion via enca
-JOYSTICK_DESC?=	Joystick support
 LZO_DESC?=	External liblzo support
 OCFLAGS_DESC?=	Use optimized compiler flags
+OPUS_DESC?=	Opus decoding with libopus
 OTCHAIN_DESC?=	Use gcc 4.6+ toolchain on legacy systems
 REAL_DESC?=	Enable realplayer plugin
 RTC_DESC?=	Add support for kernel real time clock
@@ -38,24 +37,20 @@ WIN32_DESC?=	Install win32 binary codecs
 X11DGA_DESC?=	X11 DGA video driver support
 X11VM_DESC?=	X11 VidMode support
 
-MAN1=		mplayer.1
-MANCOMPRESSED=	no
+#MANCOMPRESSED=	no
 
 SUB_FILES=	pkg-message
 
 CONFFILES=	example.conf input.conf menu.conf dvb-menu.conf
-USES=		pkgconfig
+USES+=		pkgconfig
 
+.include "${.CURDIR}/Makefile.optvars"
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
 
 CONFIGURE_ARGS+=	--disable-arts \
 			--disable-directfb \
 			--disable-faac \
-			--disable-faad \
 			--disable-libdca \
 			--disable-toolame \
 			--disable-twolame \
@@ -67,15 +62,9 @@ CONFIGURE_ARGS+=	--disable-arts \
 			--disable-musepack \
 			--disable-theora
 
-# Fix a problem with unknown assembly opcodes in embedded ffmpeg
-.if ${ARCH} == "ppc"
-CONFIGURE_ARGS+=	--disable-asm
-.endif
-
 .include "${.CURDIR}/Makefile.options"
 
 .if ${PORT_OPTIONS:MGUI} && ${PORT_OPTIONS:MX11}
-MLINKS+=	mplayer.1 gmplayer.1
 PLIST_SUB+=	GMPLAYER=""
 DESKTOP_ENTRIES=	"MPlayer" "High performance media player" "mplayer" "gmplayer" "" false
 .if ${PORT_OPTIONS:MSKINS}
@@ -94,7 +83,7 @@ PLIST_SUB+=	GMPLAYER="@comment "
 .endif #GUI && X11
 
 .if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11
+USE_XORG=	x11 xscrnsaver
 .if ${PORT_OPTIONS:MXVIDEO}
 USE_XORG+=	xv
 .else
@@ -128,75 +117,6 @@ CONFIGURE_ARGS+=--enable-xvmc --with-xvmclib=XvMCW
 .else	#X11
 CONFIGURE_ARGS+=--disable-x11 \
 		--disable-fontconfig
-.endif
-
-.if ${PORT_OPTIONS:MVDPAU}
-LIB_DEPENDS+=	vdpau:${PORTSDIR}/multimedia/libvdpau
-.else
-CONFIGURE_ARGS+=	--disable-vdpau
-.endif
-
-.if ${PORT_OPTIONS:MRTC}
-BUILD_DEPENDS+=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
-RUN_DEPENDS+=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
-CONFIGURE_ARGS+=	--enable-rtc
-.else
-CONFIGURE_ARGS+=	--disable-rtc
-.endif
-
-.if ${PORT_OPTIONS:MCACA}
-LIB_DEPENDS+=		caca:${PORTSDIR}/graphics/libcaca
-.else
-CONFIGURE_ARGS+=	--disable-caca
-.endif
-
-.if ${PORT_OPTIONS:MLIRC}
-LIB_DEPENDS+=		lirc_client:${PORTSDIR}/comms/lirc
-.else
-CONFIGURE_ARGS+=	--disable-lirc
-.endif
-
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL=	sdl
-.else
-CONFIGURE_ARGS+=	--disable-sdl
-.endif
-
-.if ${PORT_OPTIONS:MSVGALIB}
-LIB_DEPENDS+=		vga:${PORTSDIR}/graphics/svgalib
-.else
-CONFIGURE_ARGS+=	--disable-svga
-.endif
-
-.if ${PORT_OPTIONS:MAALIB} || ${PORT_OPTIONS:MSDL}
-LIB_DEPENDS+=		aa:${PORTSDIR}/graphics/aalib
-.else
-CONFIGURE_ARGS+=	--disable-aa
-.endif
-
-.if ${PORT_OPTIONS:MESOUND}
-USE_GNOME+=	esound
-.else
-CONFIGURE_ARGS+=	--disable-esd
-.endif
-
-.if defined(WITH_KERN_HZ)
-DEFAULT_KERN_HZ=${WITH_KERN_HZ}
-.else
-DEFAULT_KERN_HZ=1024
-.endif
-
-.if ${PORT_OPTIONS:MJOYSTICK}
-BUILD_DEPENDS+=	${LOCALBASE}/include/linux/joystick.h:${PORTSDIR}/devel/linux-js
-CONFIGURE_ARGS+=--enable-joystick
-.else
-CONFIGURE_ARGS+=--disable-joystick
-.endif
-
-.if ${PORT_OPTIONS:MENCA}
-LIB_DEPENDS+=		enca:${PORTSDIR}/converters/enca
-.else
-CONFIGURE_ARGS+=	--disable-enca
 .endif
 
 pre-everything::
@@ -248,16 +168,17 @@ post-patch:
 .endif
 
 post-install:
-	@${MKDIR} ${DATADIR}
-	@${CHMOD} 755 ${DATADIR}
-	@${MKDIR} ${DATADIR}/examples/etc
-	@${CHMOD} 755 ${DATADIR}/examples/etc
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${CHMOD} 755 ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/examples/etc
+	@${CHMOD} 755 ${STAGEDIR}${DATADIR}/examples/etc
 .for conf in ${CONFFILES}
-	${INSTALL_DATA} ${WRKSRC}/etc/${conf} ${DATADIR}/examples/etc
+	${INSTALL_DATA} ${WRKSRC}/etc/${conf} ${STAGEDIR}${DATADIR}/examples/etc
 .endfor
 .if ${PORT_OPTIONS:MGUI} && ${PORT_OPTIONS:MX11}
-	@${LN} -sf ${PREFIX}/bin/mplayer ${PREFIX}/bin/gmplayer
-	${CP} -f ${WRKSRC}/etc/mplayer256x256.png ${LOCALBASE}/share/pixmaps/mplayer.png
+	@${LN} -sf ${PREFIX}/bin/mplayer ${STAGEDIR}${PREFIX}/bin/gmplayer
+	@(cd ${STAGEDIR}${MAN1PREFIX}/man/man1 && ${LN} -sf mplayer.1.gz gmplayer.1.gz)
+	${CP} -f ${WRKSRC}/etc/mplayer256x256.png ${STAGEDIR}${LOCALBASE}/share/pixmaps/mplayer.png
 .endif
 	@${CAT} ${PKGMESSAGE}
 

@@ -1,0 +1,110 @@
+# Contains simple option variables that are used
+# before including bsd.port.options.mk
+# in Makefiles
+
+AALIB_LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib
+AALIB_CONFIGURE_OFF=	--disable-aa
+
+AMR_NB_LIB_DEPENDS=	libopencore-amrnb.so:${PORTSDIR}/audio/opencore-amr
+AMR_NB_CONFIGURE_OFF=	--disable-libopencore_amrnb
+
+AMR_WB_LIB_DEPENDS=	libopencore-amrwb.so:${PORTSDIR}/audio/opencore-amr
+AMR_WB_CONFIGURE_OFF=	--disable-libopencore_amrwb
+
+BLURAY_LIB_DEPENDS=	libbluray.so:${PORTSDIR}/multimedia/libbluray
+BLURAY_CONFIGURE_OFF=	--disable-bluray
+
+CACA_LIB_DEPENDS=	libcaca.so:${PORTSDIR}/graphics/libcaca
+CACA_CONFIGURE_OFF=	--disable-caca
+
+CDIO_LIB_DEPENDS=	libcdio.so:${PORTSDIR}/sysutils/libcdio
+CDIO_CONFIGURE_OFF=	--disable-libcdio
+
+CDPARANOIA_LIB_DEPENDS=	libcdda_paranoia.so:${PORTSDIR}/audio/cdparanoia
+CDPARANOIA_CONFIGURE_OFF=	--disable-cdparanoia
+
+DIRAC_LIB_DEPENDS=	libdirac_encoder.so:${PORTSDIR}/multimedia/dirac
+DIRAC_CONFIGURE_OFF=	--disable-libdirac-lavc
+
+DV_LIB_DEPENDS=		dv.so:${PORTSDIR}/multimedia/libdv
+DV_CONFIGURE_OFF=	--disable-libdv
+
+ENCA_LIB_DEPENDS=	libenca.so:${PORTSDIR}/converters/enca
+ENCA_CONFIGURE_OFF=		--disable-enca
+
+FAAC_LIB_DEPENDS=	libfaac.so:${PORTSDIR}/audio/faac
+FAAC_CONFIGURE_OFF=	--disable-faac
+
+FONTCONFIG_LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+FONTCONFIG_CONFIGURE_OFF=	--disable-fontconfig
+
+FRIBIDI_LIB_DEPENDS=	libfribidi.so:${PORTSDIR}/converters/fribidi
+FRIBIDI_CONFIGURE_OFF=	--disable-fribidi
+
+GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
+GIF_CONFIGURE_OFF=	--disable-gif
+
+GSM_LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
+GSM_CONFIGURE_OFF=	--disable-libgsm
+
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_CONFIGURE_OFF=	--disable-jack
+
+LADSPA_RUN_DEPENDS=	${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa
+LADSPA_CONFIGURE_OFF=	--disable-ladspa
+
+LIBMNG_LIB_DEPENDS=	libmng.so:${PORTSDIR}/graphics/libmng
+LIBMNG_CONFIGURE_OFF=	--disable-mng
+
+LIRC_LIB_DEPENDS=	liblirc_client.so:${PORTSDIR}/comms/lirc
+LIRC_CONFIGURE_OFF=	--disable-lirc
+
+LZO_LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
+LZO_CONFIGURE_OFF=	--disable-liblzo
+
+NAS_LIB_DEPENDS=	libaudio.so:${PORTSDIR}/audio/nas
+NAS_CONFIGURE_OFF=	--disable-nas
+
+OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg
+OPENJPEG_CONFIGURE_OFF=	--disable-libopenjpeg
+
+OPUS_LIB_DEPENDS=	libopus.so:${PORTSDIR}/audio/opus
+OPUS_CONFIGURE_OFF=	--disable-libopus
+
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
+
+REAL_RUN_DEPENDS=	realplay:${PORTSDIR}/multimedia/linux-realplayer
+REAL_BUILD_DEPENDS=	realplay:${PORTSDIR}/multimedia/linux-realplayer
+REAL_CONFIGURE_OFF=	--disable-real
+
+RTC_BUILD_DEPENDS=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
+RTC_RUN_DEPENDS=	${LOCALBASE}/modules/rtc.ko:${PORTSDIR}/emulators/rtc
+RTC_CONFIGURE_ENABLE=	rtc
+
+SCHROEDINGER_LIB_DEPENDS=	libschroedinger-1.0.so:${PORTSDIR}/multimedia/schroedinger
+SCHROEDINGER_CONFIGURE_OFF=	--disable-libschroedinger-lavc
+
+SMB_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+SMB_CONFIGURE_OFF=	--disable-smb
+
+SVGALIB_LIB_DEPENDS=	libvga.so:${PORTSDIR}/graphics/svgalib
+SVGALIB_CONFIGURE_OFF=	--disable-svga
+
+THEORA_LIB_DEPENDS=	libtheora.so:${PORTSDIR}/multimedia/libtheora
+THEORA_CONFIGURE_OFF=	--disable-theora
+
+TWOLAME_LIB_DEPENDS=	libtwolame.so:${PORTSDIR}/audio/twolame
+TWOLAME_CONFIGURE_OFF=	--disable-twolame
+
+VDPAU_LIB_DEPENDS=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
+VDPAU_CONFIGURE_OFF=	--disable-vdpau
+
+VPX_LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx
+VPX_CONFIGURE_OFF=	--disable-libvpx-lavc
+
+X264_LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/x264
+X264_CONFIGURE_OFF=	--disable-x264
+
+XVID_LIB_DEPENDS=	libxvidcore.so:${PORTSDIR}/multimedia/xvid
+XVID_CONFIGURE_OFF=	--disable-xvid
