@@ -9,21 +9,13 @@ MASTER_SITES=	http://dryice.name/computer/FreeBSD/distfiles/
 DISTNAME=	scgi-${PORTVERSION:S/.a/a/}
 
 MAINTAINER=	dryice@dryice.name
-COMMENT=	Apache module that implements the client side of the SCGI protocol
-
+COMMENT=	Apache 2.2 module that implements the client side of the SCGI protocol
 
 SCGI_DIR=	apache2
 WRKSRC=		${WRKDIR}/${DISTNAME}/${SCGI_DIR}
 
 USE_APACHE=	22
-
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

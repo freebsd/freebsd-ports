@@ -11,7 +11,6 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Apache 2.2.x module to manage apr_memcache connections
 
-
 GNU_CONFIGURE=	yes
 PROJECTHOST=	modmemcache
 USE_APACHE=	22+
@@ -20,5 +19,4 @@ AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SRC_FILE=	src/${PORTNAME}.c
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

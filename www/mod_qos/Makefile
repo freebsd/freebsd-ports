@@ -11,6 +11,7 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	andrea@cervesato.it
 COMMENT=	Qos for Apache
 
+LICENSE=	GPLv2
 
 USE_APACHE=	22+
 AP_GENPLIST=	yes
@@ -18,5 +19,4 @@ AP_FAST_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/apache2
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
