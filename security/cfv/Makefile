@@ -9,9 +9,10 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to both test and create .sfv, .csv, and md5sum files
 
-USE_PYTHON=	yes
+USE_PYTHON=	2
 ALL_TARGET=	cfv.wrapper
 INSTALL_TARGET=	install-wrapper
+MAKE_ARGS=	PYTHON=${PYTHON_CMD}
 
 MAN1=	cfv.1
 
