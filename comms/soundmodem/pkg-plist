@@ -5,6 +5,8 @@ include/modem.h
 include/simd.h
 share/locale/fr/LC_MESSAGES/soundmodem.mo
 share/locale/sv/LC_MESSAGES/soundmodem.mo
+man/man8/soundmodem.8.gz
+man/man8/soundmodemconfig.8.gz
 @dirrmtry share/locale/fr/LC_MESSAGES
 @dirrmtry share/locale/sv/LC_MESSAGES
 @dirrmtry share/locale/fr
