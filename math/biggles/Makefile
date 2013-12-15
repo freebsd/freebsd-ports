@@ -17,11 +17,12 @@ BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libplot.so:${PORTSDIR}/graphics/plotutils
 
 USES=		gmake
-USE_PYTHON=	yes
+USE_PYTHON=	2
 MAKE_ARGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS} -fPIC" \
 		LIBPLOT_CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBPLOT_LDFLAGS="-L${LOCALBASE}/lib -lplot"
+		LIBPLOT_LDFLAGS="-L${LOCALBASE}/lib -lplot" \
+		PYTHON="${PYTHON_CMD}"
 
 NO_STAGE=	yes
 post-patch:
