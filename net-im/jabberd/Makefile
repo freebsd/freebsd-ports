@@ -2,35 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	jabberd
-PORTVERSION=	2.2.17
-PORTREVISION=	1
+DISTVERSION=	2.3.1
 CATEGORIES=	net-im
-MASTER_SITES=	http://cloud.github.com/downloads/jabberd2/jabberd2/
+MASTER_SITES=	https://github.com/jabberd2/jabberd2/releases/download/${PORTNAME}-${DISTVERSION}/ \
+		http://freefall.freebsd.org/~matthew/distfiles/
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Online presence and instant messaging server
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
-		idn:${PORTSDIR}/dns/libidn \
-		udns:${PORTSDIR}/dns/udns
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libidn.so:${PORTSDIR}/dns/libidn \
+		libudns.so:${PORTSDIR}/dns/udns
 
 OPTIONS_DEFINE=	MYSQL PGSQL LDAP BDB SQLITE PAM PIPE ANON FS DEBUG REQUIRES \
-		CYRUS DOCS
-OPTIONS_DEFAULT=	MYSQL DEBUG
-PIPE_DESC=	Enable pipe (auth/reg)
-ANON_DESC=	Enable anonymous (auth/reg)
-FS_DESC=	Filesystem storage (only for testing)
-REQUIRES_DESC=	Add backend requires to startup script
-CYRUS_DESC=	Use Cyrus SASL backend (not supported)
+		DOCS SUPERSEDED EXPERIMENTAL
+OPTIONS_SINGLE=	SASL
+OPTIONS_SINGLE_SASL=	CYRUS GSASL
+OPTIONS_DEFAULT=MYSQL DEBUG GSASL
+OPTIONS_SUB=	yes
 
 USE_XZ=		yes
+FETCH_ARGS=	-Fpr
 GNU_CONFIGURE=	yes
 USE_PERL5=	run
 USE_OPENSSL=	yes
-USES=		iconv perl5
+USES=		iconv perl5 compiler:c11
 USE_RC_SUBR=	jabberd
 USE_LDCONFIG=	${PREFIX}/lib/jabberd
 CONFIGURE_ARGS+=	--localstatedir=/var \
@@ -59,103 +57,81 @@ SUB_FILES+=	pkg-install pkg-deinstall
 
 PORTDOCS=	*
 
-DOCFILES=	AUTHORS COPYING ChangeLog INSTALL NEWS README \
-		TODO UPGRADE
+DOCFILES=	AUTHORS ChangeLog NEWS README README.config \
+		README.protocol TODO
 
 _REQUIRE=	LOGIN
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 ELP+=	${OPENSSLLIB}
 EIP+=	${OPENSSLINC}
 
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--enable-debug
+DEBUG_CONFIGURE_ENABLE=	debug
+
+PGSQL_USE=		PGSQL=yes
+PGSQL_CONFIGURE_ENABLE=	pgsql
+
+SQLITE_CONFIGURE_ENABLE=sqlite
+SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+SQLITE_CFLAGS=		${PTHREAD_CFLAGS}
+
+MYSQL_USE=		MYSQL=yes
+MYSQL_CONFIGURE_ENABLE=	mysql
+
+BDB_USE=		BDB=41+
+BDB_CONFIGURE_ENABLE=	db
+BDB_CONFIGURE_ON=	--oldincludedir=/nonexistant
+
+LDAP_USE=		OPENLDAP=yes
+LDAP_CONFIGURE_ENABLE=	ldap
+
+FS_CONFIGURE_ENABLE=	fs
+FS_DESC=		Filesystem storage (only for testing)
+
+PAM_CONFIGURE_ENABLE=	pam
+
+PIPE_CONFIGURE_ENABLE=	pipe
+PIPE_DESC=		Enable pipe (auth/reg)
+
+ANON_CONFIGURE_ENABLE=	anon
+ANON_DESC=		Enable anonymous (auth/reg)
+
+CYRUS_CONFIGURE_ON=	--with-sasl=cyrus
+CYRUS_DESC=		Use Cyrus SASL backend (not supported)
+CYRUS_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+
+GSASL_CONFIGURE_ON=	--with-sasl=gsasl
+GSASL_DESC=		Use GSASL backend
+GSASL_LIB_DEPENDS=	libgsasl.so:${PORTSDIR}/security/gsasl
+
+SUPERSEDED_CONFIGURE_ENABLE=	superseded
+SUPERSEDED_DESC=	Enable superseded features (ns_TIME)
+
+EXPERIMENTAL_CONFIGURE_ENABLE=	experimental
+EXPERIMENTAL_DESC=	Enable experimental features (TLS-Everywhere)
+
+.include <bsd.port.options.mk>
+
+.if (${OPSYS} != FreeBSD || ${OSVERSION} < 10000000)
+WITH_OPENSSL_PORT=	yes
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-CONFIGURE_ARGS+=--enable-pgsql
-PLIST_SUB+=	SUB_PGSQL=""
-_REQUIRE+=	postgresql
-.else
-CONFIGURE_ARGS+=--disable-pgsql
-PLIST_SUB+=	SUB_PGSQL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-CONFIGURE_ARGS+=--enable-sqlite
-LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
-CFLAGS+=	${PTHREAD_CFLAGS}
-PLIST_SUB+=	SUB_SQLITE=""
-.else
-CONFIGURE_ARGS+=--disable-sqlite
-PLIST_SUB+=	SUB_SQLITE="@comment "
+_REQUIRE+=		postgresql
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-CONFIGURE_ARGS+=--enable-mysql
-EIP+=:${LOCALBASE}/include/mysql
-ELP+=:${LOCALBASE}/lib/mysql
-PLIST_SUB+=	SUB_MYSQL=""
+EIP+=${LOCALBASE}/include/mysql
+ELP+=${LOCALBASE}/lib/mysql
 _REQUIRE+=	mysql
-.else
-CONFIGURE_ARGS+=--disable-mysql
-PLIST_SUB+=	SUB_MYSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MBDB}
-USE_BDB=	41+
-CONFIGURE_ARGS+=--enable-db
-CONFIGURE_ARGS+=--oldincludedir=/nonexistant
-EIP+=:${BDB_INCLUDE_DIR}
-ELP+=:${BDB_LIB_DIR}
-PLIST_SUB+=	SUB_BDB=""
-.else
-CONFIGURE_ARGS+=--disable-db
-PLIST_SUB+=	SUB_BDB="@comment "
+EIP+=${BDB_INCLUDE_DIR}
+ELP+=${BDB_LIB_DIR}
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=--enable-ldap
-PLIST_SUB+=	SUB_LDAP=""
 _REQUIRE+=	slapd
-.else
-CONFIGURE_ARGS+=--disable-ldap
-PLIST_SUB+=	SUB_LDAP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MFS}
-CONFIGURE_ARGS+=--enable-fs
-PLIST_SUB+=	SUB_FS=""
-.else
-CONFIGURE_ARGS+=--disable-fs
-PLIST_SUB+=	SUB_FS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPAM}
-CONFIGURE_ARGS+=--enable-pam
-PLIST_SUB+=	SUB_PAM=""
-.else
-CONFIGURE_ARGS+=--disable-pam
-PLIST_SUB+=	SUB_PAM="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPIPE}
-CONFIGURE_ARGS+=--enable-pipe
-PLIST_SUB+=	SUB_PIPE=""
-.else
-PLIST_SUB+=	SUB_PIPE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MANON}
-CONFIGURE_ARGS+=--enable-anon
-PLIST_SUB+=	SUB_ANON=""
-.else
-PLIST_SUB+=	SUB_ANON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MREQUIRES}
@@ -163,16 +139,7 @@ SUB_LIST+=	REQUIRE="${_REQUIRE}"
 .else
 SUB_LIST+=	REQUIRE="LOGIN"
 .endif
-
-.if ${PORT_OPTIONS:MCYRUS}
-CONFIGURE_ARGS+=	--with-sasl=cyrus
-LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
-.else
-CONFIGURE_ARGS+=	--with-sasl=gsasl
-LIB_DEPENDS+=	gsasl:${PORTSDIR}/security/gsasl
-.endif
-
-MAN8=		c2s.8 jabberd.8 router.8 s2s.8 sm.8
+REQUIRES_DESC=	Add backend requires to startup script
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"-lsqlite3|"-lsqlite3 ${PTHREAD_LIBS}|g' \
@@ -185,17 +152,13 @@ post-patch:
 .endif
 
 post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CHOWN} -R ${JABBER_USER}:${JABBER_GROUP} ${PREFIX}/etc/jabberd
-	@${FIND} ${PREFIX}/etc/jabberd -type d | ${XARGS} ${CHMOD} 750
-	@${FIND} ${PREFIX}/etc/jabberd -type f | ${XARGS} ${CHMOD} 660
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ${DOCFILES}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for FILE in db-setup.mysql db-setup.pgsql db-setup.sqlite
-	@${INSTALL_DATA} ${WRKSRC}/tools/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/tools/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

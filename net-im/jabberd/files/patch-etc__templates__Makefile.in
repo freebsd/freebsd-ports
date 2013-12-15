@@ -1,0 +1,20 @@
+--- ./etc/templates/Makefile.in.orig	2013-11-28 11:16:25.000000000 +0000
++++ ./etc/templates/Makefile.in	2013-12-15 10:29:42.305779574 +0000
+@@ -506,14 +506,9 @@
+ 	mv $@.tmp $@
+ 
+ install-data-hook:
+-	@list='$(templates_DATA)'; for p in $$list; do \
+-      dest=`echo $$p | sed -e s/.dist//`; \
+-	  if test -f $(DESTDIR)$(templatesdir)/$$dest; then \
+-        echo "$@ will not overwrite existing $(DESTDIR)$(templatesdir)/$$dest"; \
+-      else \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(templatesdir)/$$dest"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(templatesdir)/$$dest; \
+-	  fi; \
++	@list='$(templates_DATA)'; for dest in $$list; do \
++	    echo " $(INSTALL_DATA) $$dest $(DESTDIR)$(templatesdir)/$$dest"; \
++	    $(INSTALL_DATA) $$dest $(DESTDIR)$(templatesdir)/$$dest; \
+ 	done
+ 
+ clean-local:
