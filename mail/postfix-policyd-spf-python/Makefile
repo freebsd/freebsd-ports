@@ -57,7 +57,7 @@ post-patch:
 
 do-install:
 	@# Install data to an unused directory to ensure it doesn't pollute the system
-	@(cd ${INSTALL_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} \
+	@(cd ${INSTALL_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} \
 		${PYDISTUTILS_INSTALL_TARGET} ${PYDISTUTILS_INSTALLARGS} \
 		--install-data ${WRKDIR}/tmp-datadump-dir)
 	${INSTALL_MAN} ${WRKSRC}/policyd-spf.1 ${MANPREFIX}/man/man1

@@ -1,6 +1,3 @@
-
-$FreeBSD$
-
 --- hotwire_ui/renderers/file.py.orig
 +++ hotwire_ui/renderers/file.py
 @@ -245,7 +245,10 @@

@@ -19,7 +19,11 @@ LIB_DEPENDS=	tidy-0.99.0:${PORTSDIR}/www/tidy-lib
 USE_ZIP=	yes
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	uTidylib
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's,distutils\.command\.install ,setuptools\.command\.install ,' \
+		${WRKSRC}/setup.py
+
 .include <bsd.port.mk>

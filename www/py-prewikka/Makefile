@@ -11,13 +11,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frontend for the Prelude IDS
 
 BUILD_DEPENDS=	cheetah-compile:${PORTSDIR}/devel/py-cheetah
-LIB_DEPENDS=	prelude:${PORTSDIR}/security/libprelude \
-		preludedb:${PORTSDIR}/security/libpreludedb
+LIB_DEPENDS=	libprelude.so:${PORTSDIR}/security/libprelude \
+		libpreludedb.so:${PORTSDIR}/security/libpreludedb
 
 USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -35,11 +34,5 @@ post-patch:
 	${REINPLACE_CMD} 's,\(.*self.data_files.extend(self._compile_po_files())\),#\1,' \
 	   ${WRKSRC}/setup.py
 .endif
-
-post-install:
-	@if [ ! -f ${PREFIX}/etc/prewikka/prewikka.conf ]; then \
-	   ${CP} -p ${PREFIX}/etc/prewikka/prewikka.conf-dist \
-	      ${PREFIX}/etc/prewikka/prewikka.conf ; \
-	fi
 
 .include <bsd.port.mk>

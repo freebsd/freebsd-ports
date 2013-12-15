@@ -151,6 +151,7 @@ post-install:
 # fix installation permissions
 	${CHMOD} -R a+rX \
 		${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/${WX_PYTHON_DIR}
+	@${RM} -rf ${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/${WX_PYTHON_DIR}/*egg-info
 .endif
 ##
 # wxversion wxPython available list

@@ -22,7 +22,6 @@ RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		${PYTHON_SITELIBDIR}/BeautifulSoup.py:${PORTSDIR}/www/py-beautifulsoup32 \
 		${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
-		${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twisted \
 		${PYTHON_SITELIBDIR}/Numeric/Numeric_headers/__init__.py:${PORTSDIR}/math/py-numeric
 
 FREEVO_USER=	freevo
@@ -40,8 +39,14 @@ SUB_LIST+=	PYTHON_VERSION=${PYTHON_DEFAULT_VERSION} \
 		FREEVO_HOME=${FREEVO_HOME}
 SUB_FILES=	pkg-message pkg-install pkg-deinstall
 
+USES=		twisted:web
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_INSTALLNOSINGLE=	yes
+PYDISTUTILS_NOEGGINFO=	yes
+PYDISTUTILS_SETUP=	${PYSETUP}
+
+PLIST_SUB=	PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO}
 
 USE_RC_SUBR=	${PORTNAME}
 RC_SCRIPT=	${PREFIX}/etc/rc.d/${PORTNAME}
@@ -72,6 +77,9 @@ post-patch:
 	@${RM} ${WRKSRC}/src/www/htdocs/fileinfo.rpy.orig ${WRKSRC}/src/www/htdocs/guide.rpy.orig \
 		${WRKSRC}/src/www/htdocs/guidechannel.rpy.orig ${WRKSRC}/src/www/htdocs/proginfo.rpy.orig \
 		${WRKSRC}/src/www/htdocs/vlcwin.rpy.orig
+
+do-configure:
+	@${DO_NADA}
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

@@ -1,10 +1,5 @@
+# Created by: Timothy Beyer <beyert@cs.ucr.edu>
 # $FreeBSD$
-
-# Date created:				15 Aug 2010
-# Whom:					Timothy Beyer <beyert@cs.ucr.edu>
-#
-# $FreeBSD$
-#
 
 PORTNAME=	tegaki
 PORTVERSION=	0.3.1.2
@@ -18,7 +13,7 @@ COMMENT=	Open-Source Chinese and Japanese Handwriting Recognition
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	zinnia.0:${PORTSDIR}/japanese/zinnia
+LIB_DEPENDS=	libzinnia.so:${PORTSDIR}/japanese/zinnia
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/tegakigtk/recognizer.py:${PORTSDIR}/japanese/py-tegaki-gtk
 
 USE_PYTHON=	-2.7
@@ -36,5 +31,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's,distutils\.command\.install ,setuptools\.command\.install ,' \
+		${WRKSRC}/setup.py
 
 .include <bsd.port.post.mk>

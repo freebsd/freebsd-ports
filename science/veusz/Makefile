@@ -22,4 +22,10 @@ USE_PYDISTUTILS=	yes
 INSTALLS_EGGINFO=	yes
 
 NO_STAGE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's,distutils\.command\.install ,setuptools\.command\.install ,' \
+		${WRKSRC}/setup.py
+
 .include <bsd.port.mk>

@@ -805,6 +805,7 @@
 %%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/__config__.py
 %%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PACKAGE_DIR%%/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%
 %%DATADIR%%/Data/Stylesheets/commandline.css
 %%DATADIR%%/Data/Stylesheets/commandline_html.xslt
 %%DATADIR%%/Data/Stylesheets/docbook_html-css.xslt

@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	LOGILAB
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A fast Mercurial log navigator written in pyqt4
+COMMENT=	Fast Mercurial log navigator written in pyqt4
 
 RUN_DEPENDS=	hg:${PORTSDIR}/devel/mercurial \
 		${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	hg:${PORTSDIR}/devel/mercurial \
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_GMAKE=	yes
+USES=		gmake
 PORTDOCS=	*
 
 MAN1=		hgview.1
@@ -38,6 +38,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|path/to.*hgview.py|${PYTHON_SITELIBDIR}/hgext/hgview.py|' \
 		${WRKSRC}/README
 	@${REINPLACE_CMD} -e 's|'make'|'${GMAKE}'|' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} \
+		-e 's,distutils\.command\.install ,setuptools\.command\.install ,' \
+		${WRKSRC}/setup.py
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

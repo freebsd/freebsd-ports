@@ -14,8 +14,10 @@ LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib
 NO_BUILD=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_INSTALLARGS=	build_ext -I${LOCALBASE}/include -L${LOCALBASE}/lib \
-				install -c -O1 --prefix=${PREFIX}
 
 NO_STAGE=	yes
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+PYDISTUTILS_INSTALLARGS:=	${PYDISTUTILS_INSTALLARGS} build_ext -I${LOCALBASE}/include -L${LOCALBASE}/lib
+
+.include <bsd.port.post.mk>
