@@ -62,7 +62,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libalapack.a
 @${ECHO_MSG} "for numpy to function correctly. Ensure it is"
 @${ECHO_MSG} "selected in the configuration dialog when prompted, or"
 @${ECHO_MSG} "Ctrl-C now and reinstall the atlas port with the option"
-@${ECHO_MSG} "enabled.
+@${ECHO_MSG} "enabled."
 sleep 5
 .else
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack \
