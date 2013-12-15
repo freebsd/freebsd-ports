@@ -10,12 +10,10 @@ DISTNAME=	httpd-2.3.5-alpha
 MAINTAINER=	ports@christianserving.org
 COMMENT=	Replaces the client IP address/hostname with that given by a proxy
 
-
 USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 
 SRC_FILE=	modules/metadata/${PORTNAME}.c
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

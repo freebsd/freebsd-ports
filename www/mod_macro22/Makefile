@@ -14,6 +14,9 @@ LICENSE_NAME=	mod_macro license (apache with postcard request)
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
 
 USE_APACHE=	22
 LATEST_LINK=	mod_macro22
@@ -23,15 +26,8 @@ PORTDOCS=	${PORTNAME}.html
 
 PORTSCOUT=	limit:^1\.1\.
 
-OPTIONS_DEFINE=	DOCS
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

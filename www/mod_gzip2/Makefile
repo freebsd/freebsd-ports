@@ -9,8 +9,9 @@ MASTER_SITES=	http://www.gknw.net/development/apache/httpd-2.0/unix/modules/
 DISTNAME=	mod_gzip-${PORTVERSION}
 
 MAINTAINER=	sec@42.org
-COMMENT=	An Internet Content Acceleration module for Apache2+
+COMMENT=	Apache 2.x Internet Content Acceleration module
 
+#LICENSE=	AL11
 
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes
@@ -18,24 +19,16 @@ AP_GENPLIST=	yes
 MAKE_ENV+=	"APXS=${APXS}"
 USE_GMAKE=	yes
 
-.if !defined(NOPORTDOCS)
-PLIST_FILES=	${DOCSDIR:S/${PREFIX}\///}/commands.txt
-PLIST_FILES+=	${DOCSDIR:S/${PREFIX}\///}/samples.txt
-PLIST_DIRS=	${DOCSDIR:S/${PREFIX}\///}
-.endif
-PLIST_FILES+=	share/examples/mod_gzip2/mod_gzip2.conf.sample
-PLIST_DIRS+=	share/examples/mod_gzip2
+PORTDOCS=	commands.txt samples.txt
+PORTEXAMPLES=	mod_gzip2.conf.sample
 
-NO_STAGE=	yes
 post-patch:
 	@${MV} ${WRKSRC}/mod_gzip.c ${WRKSRC}/${PORTNAME}.c
 
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/my_cfg.txt ${EXAMPLESDIR}/mod_gzip2.conf.sample
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/commands.txt ${WRKSRC}/samples.txt ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/my_cfg.txt ${STAGEDIR}${EXAMPLESDIR}/mod_gzip2.conf.sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

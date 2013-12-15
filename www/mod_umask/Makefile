@@ -11,6 +11,7 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	gebhart@secnetix.de
 COMMENT=	Apache 2.x module to set umask of created files
 
+LICENSE=	AL2
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -20,5 +21,4 @@ AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SRC_FILE=	src/${PORTNAME}.c
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
