@@ -11,7 +11,9 @@ MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Portable, Extensible Toolkit for Scientific computation
 
-RUN_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh	\
+BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
+RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
+		ksh:${PORTSDIR}/shells/pdksh	\
 		qsub:${PORTSDIR}/sysutils/torque
 
 HAS_CONFIGURE=		yes
