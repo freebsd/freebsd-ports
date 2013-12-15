@@ -1,27 +1,28 @@
 # $FreeBSD$
 #
-# Allows to feature determine the compiler used
+# Allows to determine the compiler being used
 #
 # MAINTAINER: portmgr@FreeBSD.org
 #
 # Feature:	compiler
 # Usage:	USES=compiler or USES=compiler:ARGS
-# Valid ARGS:	env (default, implicit) c++11-lib c++11-lang c11 openmp features
+# Valid ARGS:	env (default, implicit) c++11-lib c++11-lang c11 openmp nestedfct features
 #
-# c++11-lang:	The port need a compiler understanding C++11
-# c++11-lib:	The port need a compiler understanding C++11 and with a C++11 ready standard library
-# c11:		The port need a compiler understanding c11
-# openmp:	The port need a compiler understanding openmp
+# c++11-lang:	The port needs a compiler understanding C++11
+# c++11-lib:	The port needs a compiler understanding C++11 and with a C++11 ready standard library
+# c11:		The port needs a compiler understanding C11
+# openmp:	The port needs a compiler understanding openmp
+# nestedfct:	The port needs a compiler understanding nestedfct
 # features:	The port will determine the features supported by the default compiler
 #
 # Variable to test after <bsd.port.pre.mk>
 #
 # COMPILER_TYPE:	can be gcc or clang
-# ALT_COMPILER_TYPE:	can be gcc or clang depending on COMPILER_TYPE and only set if the base system has 2 compiler
-# COMPILER_VERSION:	2 first digit of the version: 33 for clang 3.3.*, 46 for gcc 4.6.*
-# ALT_COMPILER_VERSION:	2 first digit of the version: 33 for clang 3.3.*, 46 for gcc 4.6.* of the ALT_COMPILER_TYPE
+# ALT_COMPILER_TYPE:	can be gcc or clang depending on COMPILER_TYPE, only set if the base system has 2 compilers
+# COMPILER_VERSION:	first 2 digits of the version: 33 for clang 3.3.*, 46 for gcc 4.6.*
+# ALT_COMPILER_VERSION:	first 2 digits of the version: 33 for clang 3.3.*, 46 for gcc 4.6.* of the ALT_COMPILER_TYPE
 #
-# COMPILER_FEATURES:	the list of features supported by the compiler include the standard C++ library.
+# COMPILER_FEATURES:	the list of features supported by the compiler includes the standard C++ library.
 # CHOSEN_COMPILER_TYPE:	can be gcc or clang (type of compiler chosen by the framework)
 
 .if !defined(_INCLUDE_USES_COMPILER_MK)
