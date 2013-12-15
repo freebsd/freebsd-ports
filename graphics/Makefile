@@ -618,7 +618,6 @@
     SUBDIR += opencv-java
     SUBDIR += opendis
     SUBDIR += opendx
-    SUBDIR += openexr_ctl
     SUBDIR += opengl-man
     SUBDIR += opengtl
     SUBDIR += openimageio

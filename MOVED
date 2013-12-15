@@ -5299,3 +5299,10 @@ security/pdfcrack||2013-12-08|Has expired: Not active since several years
 security/rarcrack||2013-12-08|Has expired: Not active since several years
 java/subversion-java|java/java-subversion|2013-12-08|Rename to reflect subversion child port naming scheme
 games/flare|games/flare-game|2013-12-10|Flare port was split into engine and game counterparts, as upstream did
+audio/liteamp||2013-12-15|Has expired: Dead upstream since 2004, does not build with clang
+security/opieprint||2013-12-15|Has expired: No more active upstream
+security/bubblegum||2013-12-15|Has expired: No more active upstream
+security/snortsms||2013-12-15|Has expired: Not active since several years.
+sysutils/hammerhead||2013-12-15|Has expired: Development no more active
+net-p2p/libtorrent-rasterbar-15-python||2013-12-15|Has expired: Unusable, development ceased
+graphics/openexr_ctl||2013-12-15|Has expired: Now distributed with ampasCTL-1.5
