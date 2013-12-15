@@ -9,9 +9,9 @@ MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Kernel module to retrieve bitmap fonts from BIOS memory
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
-# only platforms guraranteed to be ok, feedback/patches are welcome
+# only platforms guaranteed to be ok, feedback/patches are welcome
 ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		uidfix kmod
