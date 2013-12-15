@@ -19,20 +19,23 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distorm>=0:${PORTSDIR}/devel/py-distorm \
 		${PYTHON_PKGNAMEPREFIX}openpyxl>=0:${PORTSDIR}/textproc/py-openpyxl
 
 USE_PYTHON=	-2.7
-USE_PYDISTUTILS=easy_install
+USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=yes
 
 OPTIONS_DEFINE=	DOCS
 
+DATADIR=	${PREFIX}/share/py-${PORTNAME}
 PORTDOCS=	AUTHORS.txt CHANGELOG.txt CREDITS.txt README.txt
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+PYDISTUTILS_INSTALLARGS+=--install-data ${DATADIR}
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
