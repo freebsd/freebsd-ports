@@ -1,10 +1,10 @@
 # Created by: Matthew N. Dodd <mdodd@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	spamprobe
+PORTNAME=		spamprobe
 PORTVERSION=	1.4d
 PORTREVISION=	7
-CATEGORIES=	mail
+CATEGORIES=		mail
 MASTER_SITES=	SF
 
 MAINTAINER=	stefan@FreeBSD.org
@@ -15,53 +15,44 @@ CONFIGURE_ARGS=	--enable-default-8bit
 
 PLIST_FILES=	bin/spamprobe man/man1/spamprobe.1.gz
 
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	GIF JPEG PNG
+OPTIONS_MULTI=	DATABASE
+OPTIONS_MULTI_DATABASE=	PBL BDB
+OPTIONS_DEFAULT=PBL GIF JPEG PNG
+PBL_DESC=		PBL database support (author's recommended data store)
 
-.if ${OSVERSION} >= 1000024
-USE_GCC=	yes
-.endif
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 # PBL support
-.if !defined(WITHOUT_PBL)
-BUILD_DEPENDS+=	${LOCALBASE}/include/pbl.h:${PORTSDIR}/databases/libpbl
-CONFIGURE_ARGS+=	--with-pbl=${LOCALBASE}
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lpbl
-.endif
+PBL_BUILD_DEPENDS=	${LOCALBASE}/lib/libpbl.a:${PORTSDIR}/databases/libpbl
+PBL_RUN_DEPENDS+=	${PBL_BUILD_DEPENDS}
+PBL_CONFIGURE_WITH=	pbl
+PBL_LDFLAGS=	-lpbl
 
 # BerkleyDB support
-.if !defined(WITHOUT_BDB)
-USE_BDB=	40+
-CONFIGURE_ARGS+=	--enable-cdb
-CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -DUSE_DB=1
-LDFLAGS+=	-L${LOCALBASE}/lib -l${BDB_LIB_NAME}
-.endif
+BDB_CONFIGURE_ENABLE=	cdb
+BDB_CONFIGURE_WITH=	db
+BDB_CPPFLAGS=	-DUSE_DB=1
 
 # giflib support
-.if defined(WITHOUT_UNGIF)
-CONFIGURE_ARGS+=	--without-gif
-.else
-LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
+GIF_CONFIGURE_WITH=	gif
+GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
 
 # PNG support
-.if defined(WITHOUT_PNG)
-CONFIGURE_ARGS+=	--without-png
-.else
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
+PNG_CONFIGURE_WITH=	png
+PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 # JPEG support
-.if defined(WITHOUT_JPEG)
-CONFIGURE_ARGS+=	--without-jpeg
-.else
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+JPEG_CONFIGURE_WITH=jpeg
+JPEG_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MBDB}
+USE_BDB=	40+
+CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
+LDFLAGS+=	-l${BDB_LIB_NAME}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
