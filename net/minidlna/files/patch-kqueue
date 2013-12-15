@@ -1,0 +1,520 @@
+diff -ruN configure.ac.orig configure.ac
+--- configure.ac.orig	2013-11-02 02:06:41.000000000 +0100
++++ configure.ac	2013-11-21 13:22:46.000000000 +0100
+@@ -453,7 +453,7 @@
+ ################################################################################################################
+ ### Header checks
+ 
+-AC_CHECK_HEADERS([arpa/inet.h asm/unistd.h endian.h machine/endian.h fcntl.h libintl.h locale.h netdb.h netinet/in.h stddef.h stdlib.h string.h sys/file.h sys/inotify.h sys/ioctl.h sys/param.h sys/socket.h sys/time.h unistd.h])
++AC_CHECK_HEADERS([arpa/inet.h asm/unistd.h endian.h machine/endian.h fcntl.h libintl.h locale.h netdb.h netinet/in.h stddef.h stdlib.h string.h sys/file.h sys/inotify.h sys/ioctl.h sys/param.h sys/socket.h sys/time.h unistd.h sys/event.h])
+ 
+ AC_CHECK_FUNCS(inotify_init, AC_DEFINE(HAVE_INOTIFY,1,[Whether kernel has inotify support]), [
+     AC_MSG_CHECKING([for __NR_inotify_init syscall])
+diff -ruN inotify.c.orig inotify.c
+--- inotify.c.orig	2013-11-02 02:06:41.000000000 +0100
++++ inotify.c	2013-11-21 13:49:58.000000000 +0100
+@@ -17,7 +17,7 @@
+  */
+ #include "config.h"
+ 
+-#ifdef HAVE_INOTIFY
++#if defined(HAVE_INOTIFY) || defined(HAVE_SYS_EVENT_H)
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>
+@@ -31,11 +31,16 @@
+ #include <sys/time.h>
+ #include <sys/resource.h>
+ #include <poll.h>
++#ifdef HAVE_INOTIFY
+ #ifdef HAVE_SYS_INOTIFY_H
+ #include <sys/inotify.h>
+-#else
++#else /*HAVE_SYS_INOTIFY_H*/
+ #include "linux/inotify.h"
+ #include "linux/inotify-syscalls.h"
++#endif /*HAVE_SYS_INOTIFY_H*/
++#else
++#include <sys/event.h>
++#include <fcntl.h>
+ #endif
+ #include "libav.h"
+ 
+@@ -49,11 +54,13 @@
+ #include "playlist.h"
+ #include "log.h"
+ 
++#ifdef HAVE_INOTIFY
+ #define EVENT_SIZE  ( sizeof (struct inotify_event) )
+ #define BUF_LEN     ( 1024 * ( EVENT_SIZE + 16 ) )
+ #define DESIRED_WATCH_LIMIT 65536
+ 
+ #define PATH_BUF_SIZE PATH_MAX
++#endif
+ 
+ struct watch
+ {
+@@ -86,6 +93,7 @@
+ 	struct watch *nw;
+ 	int wd;
+ 
++	#ifdef HAVE_INOTIFY
+ 	wd = inotify_add_watch(fd, path, IN_CREATE|IN_CLOSE_WRITE|IN_DELETE|IN_MOVE);
+ 	if( wd < 0 )
+ 	{
+@@ -93,6 +101,25 @@
+ 		return -1;
+ 	}
+ 
++#else /*HAVE_INOTIFY*/
++ wd = open(path, O_RDONLY);
++  if (wd == -1)
++  {
++    DPRINTF(E_ERROR, L_INOTIFY, "inotify_add_watch[kqueue,open](%s) [%s]\n", path, strerror(errno));
++    return -1;
++  }
++  struct kevent ke;
++  EV_SET(&ke, wd,
++    EVFILT_VNODE,
++    EV_ADD | EV_ENABLE | EV_CLEAR,
++    NOTE_DELETE | NOTE_WRITE | NOTE_EXTEND /*| NOTE_ATTRB*/,
++    0, NULL);
++  if( kevent(fd, &ke, 1, NULL, 0, NULL) == -1 )
++  {
++    DPRINTF(E_ERROR, L_INOTIFY, "inotify_add_watch[kqueue](%s) [%s]\n", path, strerror(errno));
++    return -1;
++  }
++#endif	
+ 	nw = malloc(sizeof(struct watch));
+ 	if( nw == NULL )
+ 	{
+@@ -125,9 +152,15 @@
+ 	for( w = watches; w; w = w->next )
+ 	{
+ 		if( strcmp(path, w->path) == 0 )
++		#ifdef HAVE_INOTIFY
+ 			return(inotify_rm_watch(fd, w->wd));
+-	}
++		#else
++			close(w->wd); /* kqueue cleans up events when handle dies*/
++			return(0);
++		#endif
++			}
+ 
++	
+ 	return 1;
+ }
+ 
+@@ -145,8 +178,7 @@
+ int
+ inotify_create_watches(int fd)
+ {
+-	FILE * max_watches;
+-	unsigned int num_watches = 0, watch_limit;
++	unsigned int num_watches = 0;
+ 	char **result;
+ 	int i, rows = 0;
+ 	struct media_dir_s * media_path;
+@@ -165,6 +197,9 @@
+ 		num_watches++;
+ 	}
+ 	sqlite3_free_table(result);
++		#ifdef HAVE_INOTIFY
++		FILE * max_watches;
++		unsigned int watch_limit;
+ 		
+ 	max_watches = fopen("/proc/sys/fs/inotify/max_user_watches", "r");
+ 	if( max_watches )
+@@ -204,7 +239,7 @@
+ 		DPRINTF(E_WARN, L_INOTIFY, "WARNING: Could not read inotify max_user_watches!  "
+ 		                        "Hopefully it is enough to cover %u current directories plus any new ones added.\n", num_watches);
+ 	}
+-
++#endif
+ 	return rows;
+ }
+ 
+@@ -218,7 +253,11 @@
+ 	while( w )
+ 	{
+ 		last_w = w;
++		#ifdef HAVE_INOTIFY
+ 		inotify_rm_watch(fd, w->wd);
++		#else
++			close(w->wd); /*kqueue cleans up after fhandle dies*/
++		#endif
+ 		free(w->path);
+ 		rm_watches++;
+ 		w = w->next;
+@@ -294,6 +333,8 @@
+ 	struct media_dir_s * media_path = media_dirs;
+ 	struct stat st;
+ 
++	DPRINTF(E_DEBUG, L_INOTIFY, "inotify_insert_file: %s @ %s\n", name, path);
++	
+ 	/* Is it cover art for another file? */
+ 	if( is_image(path) )
+ 		update_if_album_art(path);
+@@ -421,7 +462,7 @@
+ 
+ 	if( !depth )
+ 	{
+-		//DEBUG DPRINTF(E_DEBUG, L_INOTIFY, "Inserting %s\n", name);
++		 DPRINTF(E_DEBUG, L_INOTIFY, "Inserting %s\n", name);
+ 		insert_file(name, path, id+2, get_next_available_id("OBJECTS", id));
+ 		sqlite3_free(id);
+ 		if( (is_audio(path) || is_playlist(path)) && next_pl_fill != 1 )
+@@ -446,6 +487,8 @@
+ 	struct media_dir_s* media_path;
+ 	struct stat st;
+ 
++	DPRINTF(E_DEBUG, L_INOTIFY, "inotify_insert_directory: %s @ %s\n", name, path);
++	
+ 	if( access(path, R_OK|X_OK) != 0 )
+ 	{
+ 		DPRINTF(E_WARN, L_INOTIFY, "Could not access %s [%s]\n", path, strerror(errno));
+@@ -537,6 +580,7 @@
+ 	char **result;
+ 	int64_t detailID;
+ 	int rows, playlist;
++	DPRINTF(E_DEBUG, L_INOTIFY, "inotify_remove_file: %s\n", path);
+ 
+ 	if( ends_with(path, ".srt") )
+ 	{
+@@ -582,6 +626,8 @@
+ 					continue;
+ 				if( children < 2 )
+ 				{
++					sql_exec(db, "DELETE from DETAILS where ID ="
++						" (SELECT DETAIL_ID from OBJECTS where OBJECT_ID = '%s')", result[i]);
+ 					sql_exec(db, "DELETE from OBJECTS where OBJECT_ID = '%s'", result[i]);
+ 
+ 					ptr = strrchr(result[i], '$');
+@@ -589,7 +635,9 @@
+ 						*ptr = '\0';
+ 					if( sql_get_int_field(db, "SELECT count(*) from OBJECTS where PARENT_ID = '%s'", result[i]) == 0 )
+ 					{
+-						sql_exec(db, "DELETE from OBJECTS where OBJECT_ID = '%s'", result[i]);
++					sql_exec(db, "DELETE from DETAILS where ID ="
++						" (SELECT DETAIL_ID from OBJECTS where OBJECT_ID = '%s')", result[i]);
++					sql_exec(db, "DELETE from OBJECTS where OBJECT_ID = '%s'", result[i]);
+ 					}
+ 				}
+ 			}
+@@ -612,7 +660,7 @@
+ 	char **result;
+ 	int64_t detailID = 0;
+ 	int rows, i, ret = 1;
+-
++	DPRINTF(E_DEBUG, L_INOTIFY, "inotify_remove_directory: %s\n", path);
+ 	/* Invalidate the scanner cache so we don't insert files into non-existent containers */
+ 	valid_cache = 0;
+ 	remove_watch(fd, path);
+@@ -638,7 +686,7 @@
+ 
+ 	return ret;
+ }
+-
++#ifdef HAVE_INOTIFY
+ void *
+ start_inotify()
+ {
+@@ -755,4 +803,218 @@
+ 
+ 	return 0;
+ }
++
++#else
++void *
++start_kqueue()
++{
++  int global_kqueue_handle = -1;
++
++  global_kqueue_handle = kqueue();
++  if ( global_kqueue_handle < 0 )
++    DPRINTF(E_ERROR, L_INOTIFY, "kqueue() failed: %s\n", strerror(errno));
++
++  while( scanning )
++  {
++    if( quitting )
++      goto quitting;
++    sleep(1);
++  }
++
++ inotify_create_watches(global_kqueue_handle);
++ if (setpriority(PRIO_PROCESS, 0, 19) == -1)
++   DPRINTF(E_WARN, L_INOTIFY,  "Failed to reduce kqueue thread priority\n");
++ sqlite3_release_memory(1<<31);
++ av_register_all();
++
++ while( !quitting )
++ {
++   struct kevent ke;
++   if ( kevent(global_kqueue_handle, NULL, 0, &ke, 1, NULL) == -1 )
++   {
++     DPRINTF(E_WARN, L_INOTIFY,  "kevent polling failure: %s\n", strerror(errno));
++  }
++
++   /*DPRINTF(E_DEBUG, L_INOTIFY,  "GOT KEVENT:\n"
++     "ident=0x%X, filter=0x%X, flags=0x%X, fflags=0x%X, data=0x%X, udata=0x%X\n", 
++     ke.ident, ke.filter, ke.flags, ke.fflags, ke.data, ke.udata);*/
++    char* dir_path = get_path_from_wd(ke.ident);
++    if (dir_path == NULL)
++    {
++      DPRINTF(E_ERROR, L_INOTIFY, "Path with FD=0x%X can't be resolved.\n", ke.ident);
++      continue;
++    }
++
++
++
++    if (ke.fflags & NOTE_DELETE)
++    {
++      DPRINTF(E_DEBUG, L_INOTIFY, "Path [%s] deleted.\n", dir_path);
++      inotify_remove_directory(ke.ident, dir_path);
++    }
++    else if ((ke.fflags & (NOTE_WRITE | NOTE_LINK)) == (NOTE_WRITE | NOTE_LINK))
++    {
++      DPRINTF(E_DEBUG, L_INOTIFY, "Path [%s] content updated (directory).\n", dir_path);
++      char * sql;
++      char **result;
++      int i, rows;
++      sql = sqlite3_mprintf("SELECT PATH from DETAILS where (PATH > '%q/' and PATH <= '%q/%c')"
++        " and SIZE = ''", dir_path, dir_path, 0xFF);
++      if( (sql_get_table(db, sql, &result, &rows, NULL) != SQLITE_OK) )
++      {
++        DPRINTF(E_WARN, L_INOTIFY, "Read state [%s]: Query failed, not updating\n", dir_path);
++        sqlite3_free(sql);
++        continue;
++      }
++
++
++      for( i=1; i <= rows; i++ )
++      {
++        DPRINTF(E_DEBUG, L_INOTIFY, "Indexed content: %s\n", result[i]);
++        if (access(result[i], R_OK) == -1)
++        {
++          /* actually, global_kqueue_handle is not used here */
++          inotify_remove_directory(global_kqueue_handle, result[i]);
++        }
++      }
++      DIR* d;
++      struct dirent * entry;
++      d = opendir(dir_path);
++      if (!d)
++      {
++        DPRINTF(E_ERROR, L_INOTIFY, "Can't list [%s] (%s)\n", dir_path, strerror(errno));
++        continue;
++      }
++
++      for ( entry = readdir(d); entry != NULL; entry = readdir(d) )
++      {
++        if ( (entry->d_type == DT_DIR) &&
++          (strcmp(entry->d_name, "..") != 0) &&
++          (strcmp(entry->d_name, ".") != 0) )
++        {
++
++          char tmp_path[PATH_MAX];
++          int result_path_len;
++          result_path_len = snprintf(tmp_path, PATH_MAX,
++            "%s/%s", dir_path, entry->d_name);
++          if (result_path_len >= PATH_MAX)
++          {
++            DPRINTF(E_ERROR, L_INOTIFY, "File path too long for %s!", entry->d_name);
++            continue;
++          }
++          DPRINTF(E_DEBUG, L_INOTIFY, "Walking %s\n", tmp_path);
++		  char found_flag = 0;
++          for( i=1; i <= rows; i++ )
++          {
++            if (strcmp(result[i], tmp_path) == 0)
++            {
++              found_flag = 1;
++              break;
++            }
++          }
++          if ( !found_flag )
++          {
++            char * esc_name = NULL;
++			esc_name = modifyString(strdup(entry->d_name), "&", "&amp;amp;");
++            inotify_insert_directory(global_kqueue_handle, esc_name, tmp_path);
++            free(esc_name);
++          }
++        }
++      }
++
++      sqlite3_free_table(result);
++      sqlite3_free(sql);
++    }
++    else if (ke.fflags & NOTE_WRITE)
++    {
++      DPRINTF(E_DEBUG, L_INOTIFY, "Path [%s] content updated (file).\n", dir_path);
++      char * sql;
++      char **result;
++      int i, rows;
++      sql = sqlite3_mprintf("SELECT PATH from DETAILS where (PATH > '%q/' and PATH <= '%q/%c')"
++        " and SIZE <> ''", dir_path, dir_path, 0xFF);
++      if( (sql_get_table(db, sql, &result, &rows, NULL) != SQLITE_OK) )
++
++      {
++        DPRINTF(E_WARN, L_INOTIFY, "Read state [%s]: Query failed, not updating\n", dir_path);
++        sqlite3_free(sql);
++        continue;
++      }
++      for( i=1; i <= rows; i++ )
++      {
++        DPRINTF(E_DEBUG, L_INOTIFY, "Indexed content: %s\n", result[i]);
++        if (access(result[i], R_OK) == -1) /*oops, our file is gone*/
++        {
++          inotify_remove_file(result[i]);
++        }
++      }
++
++      DIR* d;
++      struct dirent * entry;
++      d = opendir(dir_path);
++      if (!d)
++      {
++        DPRINTF(E_ERROR, L_INOTIFY, "Can't list [%s] (%s)\n", dir_path, strerror(errno));
++        continue;
++      }
++
++      for ( entry = readdir(d); entry != NULL; entry = readdir(d) )
++      {
++        if ( (entry->d_type == DT_REG) ||
++           (entry->d_type == DT_LNK) )
++        {
++          char tmp_path[PATH_MAX];
++          int result_path_len;
++          result_path_len = snprintf(tmp_path, PATH_MAX,
++            "%s/%s", dir_path, entry->d_name);
++          if (result_path_len >= PATH_MAX)
++          {
++            DPRINTF(E_ERROR, L_INOTIFY, "File path too long for %s!", entry->d_name);
++            continue;
++          }
++
++          DPRINTF(E_DEBUG, L_INOTIFY, "Walking %s\n", tmp_path);
++          char found_flag = 0;
++          for( i=1; i <= rows; i++ )
++          {
++            if (strcmp(result[i], tmp_path) == 0)
++            {
++              found_flag = 1;
++              break;
++            }
++          }
++          if ( !found_flag )
++          {
++            char * esc_name = NULL;
++            struct stat st;
++            if( stat(tmp_path, &st) != 0 )
++            {
++              DPRINTF(E_ERROR, L_INOTIFY, "'%s' disappeared!", tmp_path);
++              continue;
++            }
++
++            esc_name = modifyString(strdup(entry->d_name), "&", "&amp;amp;");
++            if ( S_ISDIR(st.st_mode) )
++              inotify_insert_directory(global_kqueue_handle, esc_name, tmp_path);
++            else
++              inotify_insert_file(esc_name, tmp_path);
++            free(esc_name);
++          }
++        }
++      }
++
++
++
++      sqlite3_free_table(result);
++      sqlite3_free(sql);
++    }
++  }
++
++  inotify_remove_watches(global_kqueue_handle);
++quitting:
++
++  return 0;
++}
++
+ #endif
++#endif // defined(HAVE_INOTIFY) || defined(HAVE_SYS_EVENT_H)
+\ No newline at end of file
+diff -ruN inotify.h.orig inotify.h
+--- inotify.h.orig	2013-11-02 02:06:41.000000000 +0100
++++ inotify.h	2013-11-21 13:50:46.000000000 +0100
+@@ -1,7 +1,11 @@
+ #ifdef HAVE_INOTIFY
+ int
+ inotify_remove_file(const char * path);
+-
++#elif defined(HAVE_SYS_EVENT_H)
++int
++inotify_remove_file(const char* path);
++void *
++start_kqueue();
+ void *
+ start_inotify();
+ #endif
+diff -ruN metadata.c.orig metadata.c
+--- metadata.c.orig	2013-11-02 02:06:41.000000000 +0100
++++ metadata.c	2013-11-21 13:54:22.000000000 +0100
+@@ -492,7 +492,8 @@
+ 	                   m.dlna_pn, song.mime?song.mime:m.mime, album_art);
+ 	if( ret != SQLITE_OK )
+ 	{
+-		fprintf(stderr, "Error inserting details for '%s'!\n", path);
++		DPRINTF(E_ERROR, L_DB_SQL, "Error inserting details for '%s'!\n", path);
++		DPRINTF(E_ERROR, L_DB_SQL, "Error inserting details for '%s'!\n", path);
+ 		ret = 0;
+ 	}
+ 	else
+@@ -675,7 +676,7 @@
+ 	                   m.rotation, thumb, m.creator, m.dlna_pn, m.mime);
+ 	if( ret != SQLITE_OK )
+ 	{
+-		fprintf(stderr, "Error inserting details for '%s'!\n", path);
++		DPRINTF(E_ERROR, L_DB_SQL, "Error inserting details for '%s'!\n", path);
+ 		ret = 0;
+ 	}
+ 	else
+@@ -1587,7 +1588,7 @@
+                            m.mime, album_art);
+ 	if( ret != SQLITE_OK )
+ 	{
+-		fprintf(stderr, "Error inserting details for '%s'!\n", path);
++		DPRINTF(E_ERROR, L_DB_SQL, "Error inserting details for '%s'!\n", path);
+ 		ret = 0;
+ 	}
+ 	else
+diff -ruN minidlna.c.orig minidlna.c
+--- minidlna.c.orig	2013-11-02 02:06:41.000000000 +0100
++++ minidlna.c	2013-11-21 13:55:45.000000000 +0100
+@@ -997,6 +997,16 @@
+ 		else if (pthread_create(&inotify_thread, NULL, start_inotify, NULL) != 0)
+ 			DPRINTF(E_FATAL, L_GENERAL, "ERROR: pthread_create() failed for start_inotify. EXITING\n");
+ 	}
++#elif defined(HAVE_SYS_EVENT_H)
++  if( GETFLAG(INOTIFY_MASK) )
++  {
++    if (!sqlite3_threadsafe() || sqlite3_libversion_number() < 3005001)
++      DPRINTF(E_ERROR, L_GENERAL, "SQLite library is not threadsafe!  "
++      "Kqueue will be disabled.\n");
++    else if (pthread_create(&inotify_thread, NULL, start_kqueue, NULL) != 0)
++      DPRINTF(E_FATAL, L_GENERAL, "ERROR: pthread_create() failed for start_kqueue. EXITING\n");
++  }	
++	
+ #endif
+ 	smonitor = OpenAndConfMonitorSocket();
+ 
+diff -ruN scanner.c.orig scanner.c
+--- scanner.c.orig	2013-11-02 02:06:41.000000000 +0100
++++ scanner.c	2013-11-21 13:56:07.000000000 +0100
+@@ -590,7 +590,7 @@
+ 
+ sql_failed:
+ 	if( ret != SQLITE_OK )
+-		fprintf(stderr, "Error creating SQLite3 database!\n");
++		DPRINTF(E_ERROR, L_DB_SQL, "Error creating SQLite3 database!\n");
+ 	return (ret != SQLITE_OK);
+ }
+ 
