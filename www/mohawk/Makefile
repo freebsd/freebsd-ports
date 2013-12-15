@@ -15,15 +15,14 @@ LICENSE=	BSD
 LIB_DEPENDS=	event-2:${PORTSDIR}/devel/libevent2
 
 PLIST_FILES+=	bin/mhtpasswd \
+		man/man5/mohawk.conf.5.gz \
+		man/man8/mhtpasswd.8.gz \
+		man/man8/mohawk.8.gz \
 		sbin/mohawk \
 		etc/mohawk.conf.sample
 
 PORTEXAMPLES=	*
 USE_RC_SUBR=	mohawk
-
-MAN5=	mohawk.conf.5
-MAN8=	mhtpasswd.8 \
-	mohawk.8
 
 CFLAGS+=	-I${LOCALBASE}/include/event2/compat -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib/event2
