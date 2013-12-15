@@ -5,13 +5,14 @@ PORTNAME=	mod_bw
 PORTVERSION=	0.8
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://www.ivn.cl/apache/files/source/
+MASTER_SITES=	http://legacy.ivn.cl/files/source/
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	apache2
 
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Bandwidth and Connection control per Virtual Host or Directory
 
+LICENSE=	AL2
 
 WRKSRC=		${WRKDIR}/mod_bw
 USE_APACHE=	22
@@ -19,14 +20,10 @@ AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 
 SRC_FILE=	mod_bw.c
-PORTDOCS=	LICENSE mod_bw.txt
+PORTDOCS=	mod_bw.txt
 
-NO_STAGE=	yes
 post-install:
-.ifndef NOPORTDOCS
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && \
-		${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
