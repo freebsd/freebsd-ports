@@ -816,6 +816,7 @@
     SUBDIR += rubygem-hiera-json
     SUBDIR += rubygem-hiera-puppet
     SUBDIR += rubygem-log4r
+    SUBDIR += rubygem-mogilefs-client
     SUBDIR += rubygem-murder
     SUBDIR += rubygem-ohai
     SUBDIR += rubygem-parallel
