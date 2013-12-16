@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lander
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.nickg.me.uk/files/ \
