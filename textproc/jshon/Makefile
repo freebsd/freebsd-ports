@@ -5,7 +5,7 @@ PORTVERSION=	20121210
 PORTREVISION=	1
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	json parser for the shell.
 
 LICENSE=	MIT
