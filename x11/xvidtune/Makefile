@@ -9,4 +9,5 @@ COMMENT=	Video mode tuner for X
 
 XORG_CAT=	app
 USE_XORG=	xxf86vm xt xaw
+
 .include <bsd.port.mk>

@@ -12,9 +12,6 @@ LICENSE=	MIT
 XORG_CAT=	app
 USE_XORG=	x11 xxf86dga xt xaw7 xmu
 
-PLIST_FILES=	bin/dga
+PLIST_FILES=	bin/dga man/man1/dga.1.gz
 
-MAN1=		dga.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

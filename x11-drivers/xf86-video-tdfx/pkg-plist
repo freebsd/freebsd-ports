@@ -1,5 +1,6 @@
 lib/xorg/modules/drivers/tdfx_drv.la
 lib/xorg/modules/drivers/tdfx_drv.so
+man/man4/tdfx.4x.gz
 @dirrmtry lib/xorg/modules/drivers
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg

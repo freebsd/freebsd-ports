@@ -10,9 +10,6 @@ COMMENT=	Session Manager Proxy
 XORG_CAT=	app
 USE_XORG=	xt xmu
 
-PLIST_FILES=	bin/smproxy
+PLIST_FILES=	bin/smproxy man/man1/smproxy.1.gz
 
-MAN1=		smproxy.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

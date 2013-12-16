@@ -10,7 +10,4 @@ COMMENT=	Various X related scripts
 XORG_CAT=	app
 USE_XORG=	x11
 
-MAN1=		xon.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

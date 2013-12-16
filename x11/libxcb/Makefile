@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libxcb
-PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTVERSION=	1.9.3
 CATEGORIES=	x11 python
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
@@ -14,7 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcheck.a:${PORTSDIR}/devel/libcheck \
-		xcb-proto>=1.7:${PORTSDIR}/x11/xcb-proto \
+		xcb-proto>=1.9:${PORTSDIR}/x11/xcb-proto \
 		${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:${PORTSDIR}/devel/libpthread-stubs
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:${PORTSDIR}/devel/libpthread-stubs
 
@@ -46,9 +45,6 @@ XPROTO_LIBS=	-L${LOCALBASE}/lib
 .include <bsd.port.options.mk>
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${SETENV} DESTDIR=${STAGEDIR} ${MAKE} -C ${WRKSRC}/doc ${INSTALL_TARGET}
-.endif
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxcb*.so.*
 
 .include <bsd.port.mk>

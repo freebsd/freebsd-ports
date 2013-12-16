@@ -11,5 +11,4 @@ COMMENT=	X.Org tga display driver
 XORG_CAT=	driver
 USE_XORG=	xf86dgaproto
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

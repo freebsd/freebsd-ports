@@ -12,9 +12,6 @@ LICENSE=	MIT
 XORG_CAT=	app
 USE_XORG=	x11 ice xproxymngproto
 
-PLIST_FILES=	bin/xfwp
+PLIST_FILES=	bin/xfwp man/man1/xfwp.1.gz
 
-MAN1=		xfwp.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

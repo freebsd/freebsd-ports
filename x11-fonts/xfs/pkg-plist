@@ -1,4 +1,5 @@
 bin/xfs
+man/man1/xfs.1.gz
 @unexec if cmp -s %D/etc/X11/fs/config.default %D/etc/X11/fs/config; then rm -f %D/etc/X11/fs/config; fi
 etc/X11/fs/config.default
 @exec if [ ! -f %D/etc/X11/fs/config ] ; then cp -p %D/%F %B/config; fi

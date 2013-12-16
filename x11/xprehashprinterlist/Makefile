@@ -10,9 +10,6 @@ COMMENT=	Recomputes the list of available printers.
 XORG_CAT=	app
 USE_XORG=	xp x11
 
-PLIST_FILES=	bin/xprehashprinterlist
+PLIST_FILES=	bin/xprehashprinterlist man/man1/xprehashprinterlist.1.gz
 
-MAN1=		xprehashprinterlist.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

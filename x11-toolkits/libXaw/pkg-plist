@@ -82,6 +82,7 @@ lib/libXaw7.so
 lib/libXaw7.so.7
 libdata/pkgconfig/xaw6.pc
 libdata/pkgconfig/xaw7.pc
+man/man3/Xaw.3.gz
 %%DOCSDIR%%/AsciiSink.xml
 %%DOCSDIR%%/AsciiSource.xml
 %%DOCSDIR%%/AsciiText.xml

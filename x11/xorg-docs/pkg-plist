@@ -1,3 +1,9 @@
+man/man7/X.7.gz
+man/man7/Standards.7.gz
+man/man7/XProjectTeam.7.gz
+man/man7/Consortium.7.gz
+man/man7/Xsecurity.7.gz
+man/man7/XOrgFoundation.7.gz
 %%DOCSDIR%%/fonts/fonts.xml
 %%DOCSDIR%%/input/XKB-Config.xml
 %%DOCSDIR%%/input/XKB-Enhancing.xml

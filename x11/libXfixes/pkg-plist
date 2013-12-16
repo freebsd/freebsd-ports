@@ -4,3 +4,4 @@ lib/libXfixes.la
 lib/libXfixes.so
 lib/libXfixes.so.3
 libdata/pkgconfig/xfixes.pc
+man/man3/Xfixes.3.gz

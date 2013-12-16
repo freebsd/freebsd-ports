@@ -2,6 +2,7 @@ lib/xorg/modules/drivers/rendition_drv.la
 lib/xorg/modules/drivers/rendition_drv.so
 lib/xorg/modules/v10002d.uc
 lib/xorg/modules/v20002d.uc
+man/man4/rendition.4x.gz
 @dirrmtry lib/xorg/modules/drivers
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg

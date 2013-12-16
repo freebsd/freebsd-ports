@@ -17,7 +17,6 @@ USES=		pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	MANPAGES
 
@@ -42,28 +41,22 @@ PLIST_SUB+=	KMS="@comment " NOUVEAU="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMANPAGES}
-BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
-		xsltproc:${PORTSDIR}/textproc/libxslt
-MAN3=		drmAvailable.3 \
-		drmHandleEvent.3 \
-		drmModeGetResources.3
-MAN7=		drm-gem.7 \
-		drm-kms.7 \
-		drm-memory.7 \
-		drm-mm.7 \
-		drm-ttm.7 \
-		drm.7
+BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
+USE_GNOME+=	libxslt:build
+PLIST_SUB+=	MAN=""
 .else
 CONFIGURE_ARGS+=--disable-manpages
+PLIST_SUB+=	MAN="@comment "
 .endif
 
-LIBDRM_VERSION=	2.4.46
+LIBDRM_VERSION=	2.4.50
 LIBDRM_REVISION=0
 PLIST_SUB+=	OLD="@comment " NEW=""
 EXTRA_PATCHES+=	${FILESDIR}/extra-configure \
 		${FILESDIR}/extra-tests_modetest_Makefile.in \
 		${FILESDIR}/extra-tests_modetest_modetest.c \
-		${FILESDIR}/extra-tests_modetest_strchrnul.c
+		${FILESDIR}/extra-tests_modetest_strchrnul.c \
+		${FILESDIR}/extra-tests__radeon__radeon_ttm.c
 CONFIGURE_ARGS+=--disable-vmwgfx
 .else
 CONFIGURE_ARGS=	--enable-nouveau-experimental-api
@@ -84,5 +77,8 @@ pre-patch:
 	@${REINPLACE_CMD} 's|{libdir}/pkgconfig|{prefix}/libdata/pkgconfig|g; \
 			   s,i?86|x86_64),i?86|amd64|x86_64),g' \
 		${WRKSRC}/configure
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.*
 
 .include <bsd.port.mk>

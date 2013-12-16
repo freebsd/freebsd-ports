@@ -12,12 +12,4 @@ LICENSE=	MIT
 XORG_CAT=	lib
 USE_XORG=	evieproto x11 xext xextproto xproto:both
 
-MAN3=		Xevie.3 \
-		XevieEnd.3 \
-		XevieQueryVersion.3 \
-		XevieSelectInput.3 \
-		XevieSendEvent.3 \
-		XevieStart.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

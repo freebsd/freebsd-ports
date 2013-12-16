@@ -187,7 +187,7 @@ CL_GLX_OBJS = \
 
 CL_COMMON_LIBS = -lm
 CL_X11_LIBS = -L${LOCALBASE}/lib -lX11 -lXext
-CL_GLX_LIBS = -L${LOCALBASE}/lib -lpng -ljpeg -L${LOCALBASE}/lib -lGL -lXxf86dga -lXxf86vm
+CL_GLX_LIBS = -L${LOCALBASE}/lib -lpng -ljpeg -L${LOCALBASE}/lib -lX11 -lGL -lXxf86dga -lXxf86vm
 
 .c.o:
 		${CC} ${DO_CFLAGS} -c $< -o $*.o

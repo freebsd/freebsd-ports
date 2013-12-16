@@ -21,9 +21,9 @@ RUN_DEPENDS=	${FONTDIR}/100dpi/courB08.pcf.gz:${PORTSDIR}/x11-fonts/font-adobe-1
 CONFLICTS=	XFree86-font100dpi-*
 
 NO_BUILD=	# none
+NO_MTREE=	yes
 FONTDIR=	${LOCALBASE}/lib/X11/fonts
 
 do-install:	# empty
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

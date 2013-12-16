@@ -10,7 +10,4 @@ COMMENT=	Point and click selection of X11 font names
 XORG_CAT=	app
 USE_XORG=	xt xaw
 
-MAN1=		xfontsel.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

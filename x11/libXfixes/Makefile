@@ -13,7 +13,4 @@ LICENSE=	MIT
 XORG_CAT=	lib
 USE_XORG=	x11 fixesproto:both xproto:both xextproto
 
-MAN3=		Xfixes.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

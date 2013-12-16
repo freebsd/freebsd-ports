@@ -1,4 +1,5 @@
 libdata/pkgconfig/xkeyboard-config.pc
+man/man7/xkeyboard-config.7.gz
 share/X11/xkb/compat/README
 share/X11/xkb/compat/accessx
 share/X11/xkb/compat/basic

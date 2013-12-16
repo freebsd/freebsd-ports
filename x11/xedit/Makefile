@@ -10,7 +10,4 @@ COMMENT=	Simple text editor for X
 XORG_CAT=	app
 USE_XORG=	xt xaw7
 
-MAN1=		xedit.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

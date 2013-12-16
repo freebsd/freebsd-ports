@@ -1,5 +1,7 @@
 bin/xclipboard
 bin/xcutsel
+man/man1/xclipboard.1.gz
+man/man1/xcutsel.1.gz
 share/X11/app-defaults/XClipboard
 @dirrmtry share/X11/app-defaults
 @dirrmtry share/X11

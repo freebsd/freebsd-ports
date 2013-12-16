@@ -10,7 +10,4 @@ COMMENT=	Print extension headers
 
 XORG_CAT=	proto
 
-MAN7=	Xprint.7
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -11,9 +11,7 @@ XORG_CAT=	app
 USE_XORG=	xrandr xrender x11
 
 PLIST_FILES=	bin/xrandr \
-		bin/xkeystone
+		bin/xkeystone \
+		man/man1/xrandr.1.gz
 
-MAN1=		xrandr.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

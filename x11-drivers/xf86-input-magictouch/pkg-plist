@@ -1,6 +1,7 @@
 lib/xorg/modules/input/magictouch_drv.a
 lib/xorg/modules/input/magictouch_drv.la
 lib/xorg/modules/input/magictouch_drv.so
+man/man4/magictouch.4x.gz
 @dirrmtry lib/xorg/modules/input
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg

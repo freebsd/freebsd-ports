@@ -1,5 +1,6 @@
 lib/xorg/modules/input/penmount_drv.la
 lib/xorg/modules/input/penmount_drv.so
+man/man4/penmount.4x.gz
 @dirrmtry lib/xorg/modules/input
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg

@@ -1,0 +1,22 @@
+--- config.h.in	2013-11-27 00:54:40.000000000 -0500
++++ config.h.in	2013-12-09 16:56:20.000000000 -0500
+@@ -12,6 +12,9 @@
+ /* Define to 1 if you have the <memory.h> header file. */
+ #undef HAVE_MEMORY_H
+ 
++/* Use mkostemp(3) */
++#undef HAVE_MKOSTEMP
++
+ /* Use pthread primitives */
+ #undef HAVE_PTHREAD
+ 
+@@ -33,6 +36,9 @@
+ /* Define to 1 if you have the <sys/types.h> header file. */
+ #undef HAVE_SYS_TYPES_H
+ 
++/* Use umtx */
++#undef HAVE_UMTX
++
+ /* Define to 1 if you have the <unistd.h> header file. */
+ #undef HAVE_UNISTD_H
+ 

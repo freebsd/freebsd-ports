@@ -10,9 +10,6 @@ COMMENT=	X server resource database utility
 XORG_CAT=	app
 USE_XORG=	xmuu x11
 
-PLIST_FILES=	bin/xrdb
+PLIST_FILES=	bin/xrdb man/man1/xrdb.1.gz
 
-MAN1=		xrdb.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

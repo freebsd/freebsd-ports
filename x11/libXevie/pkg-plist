@@ -4,3 +4,9 @@ lib/libXevie.so
 lib/libXevie.la
 lib/libXevie.a
 libdata/pkgconfig/xevie.pc
+man/man3/Xevie.3.gz
+man/man3/XevieEnd.3.gz
+man/man3/XevieQueryVersion.3.gz
+man/man3/XevieSelectInput.3.gz
+man/man3/XevieSendEvent.3.gz
+man/man3/XevieStart.3.gz

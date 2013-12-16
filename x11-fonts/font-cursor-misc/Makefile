@@ -10,5 +10,4 @@ COMMENT=	X.Org miscellaneous Cursor fonts
 
 XORG_CAT=	font
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

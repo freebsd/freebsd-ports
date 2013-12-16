@@ -20,18 +20,16 @@ CONFIGURE_ARGS=	--disable-dmx --disable-xvfb \
 		--localstatedir=/var --without-dtrace
 
 SLAVE_PORT=	yes
-PLIST_FILES=	bin/Xnest
-MAN1=		Xnest.1
+PLIST_FILES=	bin/Xnest man/man1/Xnest.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hw/xnest/Xnest ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/hw/xnest/Xnest ${STAGEDIR}${PREFIX}/bin/
 .if defined(WITH_NEW_XORG)
-	${INSTALL_MAN} ${WRKSRC}/hw/xnest/man/Xnest.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/hw/xnest/man/Xnest.1 ${STAGEDIR}${PREFIX}/man/man1/
 .else
-	${INSTALL_MAN} ${WRKSRC}/hw/xnest/Xnest.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/hw/xnest/Xnest.1 ${STAGEDIR}${PREFIX}/man/man1/
 .endif
 
 .include "${MASTERDIR}/Makefile"

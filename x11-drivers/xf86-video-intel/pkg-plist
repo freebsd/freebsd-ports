@@ -16,6 +16,7 @@ lib/xorg/modules/drivers/intel_drv.so
 %%OLD%%lib/xorg/modules/drivers/sil164.so
 %%OLD%%lib/xorg/modules/drivers/tfp410.la
 %%OLD%%lib/xorg/modules/drivers/tfp410.so
+man/man4/intel.4x.gz
 @dirrmtry lib/xorg/modules/drivers
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg

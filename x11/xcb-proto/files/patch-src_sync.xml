@@ -1,0 +1,50 @@
+From 9c343995eacdc39db2ec7f93cbeab00c88a55026 Mon Sep 17 00:00:00 2001
+From: Peter Harris <pharris@opentext.com>
+Date: Fri, 15 Nov 2013 16:07:39 +0000
+Subject: sync: Add missing namespace for the INT64 struct
+
+Signed-off-by: Peter Harris <pharris@opentext.com>
+Reviewed-By: Daniel Martin <consume.noise@gmail.com>
+---
+diff --git a/src/sync.xml b/src/sync.xml
+index bc07c5b..dd70a08 100644
+--- src/sync.xml
++++ src/sync.xml
+@@ -147,7 +147,7 @@ for licensing information.
+       </bitcase>
+       <bitcase>
+         <enumref ref="CA">Value</enumref>
+-        <field type="INT64" name="value" />
++        <field type="sync:INT64" name="value" />
+       </bitcase>
+       <bitcase>
+         <enumref ref="CA">TestType</enumref>
+@@ -155,7 +155,7 @@ for licensing information.
+       </bitcase>
+       <bitcase>
+         <enumref ref="CA">Delta</enumref>
+-        <field type="INT64" name="delta" />
++        <field type="sync:INT64" name="delta" />
+       </bitcase>
+       <bitcase>
+         <enumref ref="CA">Events</enumref>
+@@ -179,7 +179,7 @@ for licensing information.
+       </bitcase>
+       <bitcase>
+         <enumref ref="CA">Value</enumref>
+-        <field type="INT64" name="value" />
++        <field type="sync:INT64" name="value" />
+       </bitcase>
+       <bitcase>
+         <enumref ref="CA">TestType</enumref>
+@@ -187,7 +187,7 @@ for licensing information.
+       </bitcase>
+       <bitcase>
+         <enumref ref="CA">Delta</enumref>
+-        <field type="INT64" name="delta" />
++        <field type="sync:INT64" name="delta" />
+       </bitcase>
+       <bitcase>
+         <enumref ref="CA">Events</enumref>
+--
+cgit v0.9.0.2-2-gbebe

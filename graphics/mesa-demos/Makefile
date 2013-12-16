@@ -23,7 +23,6 @@ DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
 OPTIONS_DEFINE=	NVIDIA
 NVIDIA_DESC=	Use NVIDIA's libraries
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ffast-math|${FAST_MATH}|' -e 's|x86_64|amd64|' \
 		${WRKSRC}/configure

@@ -12,9 +12,6 @@ LICENSE=	MIT
 XORG_CAT=	app
 USE_XORG=	xproto ice
 
-PLIST_FILES=	bin/iceauth
+PLIST_FILES=	bin/iceauth man/man1/iceauth.1.gz
 
-MAN1=		iceauth.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

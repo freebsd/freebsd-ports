@@ -12,9 +12,6 @@ LICENSE=	MIT
 XORG_CAT=	app
 USE_XORG=	x11
 
-PLIST_FILES=	bin/xmodmap
+PLIST_FILES=	bin/xmodmap man/man1/xmodmap.1.gz
 
-MAN1=		xmodmap.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

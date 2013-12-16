@@ -4,3 +4,9 @@ lib/libXRes.la
 lib/libXRes.so
 lib/libXRes.so.1
 libdata/pkgconfig/xres.pc
+man/man3/XRes.3.gz
+man/man3/XResQueryClients.3.gz
+man/man3/XResQueryClientPixmapBytes.3.gz
+man/man3/XResQueryClientResources.3.gz
+man/man3/XResQueryExtension.3.gz
+man/man3/XResQueryVersion.3.gz

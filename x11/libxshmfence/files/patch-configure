@@ -1,0 +1,45 @@
+--- configure	2013-11-27 00:54:35.000000000 -0500
++++ configure	2013-12-09 15:03:55.000000000 -0500
+@@ -17633,11 +17633,27 @@
+ 	ac_fn_c_check_header_mongrel "$LINENO" "linux/futex.h" "ac_cv_header_linux_futex_h" "$ac_includes_default"
+ if test "x$ac_cv_header_linux_futex_h" = xyes; then :
+   FUTEX=yes
++fi
++
++
++fi
++
++if test "x$FUTEX" = "xauto"; then
++	ac_fn_c_check_header_compile "$LINENO" "sys/umtx.h" "ac_cv_header_sys_umtx_h" "#include <errno.h>
++	     #include <sys/types.h>
++"
++if test "x$ac_cv_header_sys_umtx_h" = xyes; then :
++  FUTEX=yes
+ else
+   FUTEX=no
+ fi
+ 
+ 
++	if test "x$FUTEX" = "xyes"; then
++
++$as_echo "#define HAVE_UMTX 1" >>confdefs.h
++
++	fi
+ fi
+ 
+ if test "x$FUTEX" = "xyes"; then
+@@ -17717,6 +17733,14 @@
+ fi
+ 
+ 
++ac_fn_c_check_func "$LINENO" "mkostemp" "ac_cv_func_mkostemp"
++if test "x$ac_cv_func_mkostemp" = xyes; then :
++
++$as_echo "#define HAVE_MKOSTEMP 1" >>confdefs.h
++
++fi
++
++
+ 
+ pkg_failed=no
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for XPROTO" >&5

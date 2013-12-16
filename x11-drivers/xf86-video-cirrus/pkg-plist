@@ -4,6 +4,7 @@ lib/xorg/modules/drivers/cirrus_drv.la
 lib/xorg/modules/drivers/cirrus_drv.so
 lib/xorg/modules/drivers/cirrus_laguna.la
 lib/xorg/modules/drivers/cirrus_laguna.so
+man/man4/cirrus.4x.gz
 @dirrmtry lib/xorg/modules/drivers
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg

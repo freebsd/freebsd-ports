@@ -3,6 +3,7 @@
 
 PORTNAME=	xf86-video-rdc
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 MASTER_SITES=	http://www.SpringDaemons.com/stas/
 
@@ -12,6 +13,8 @@ COMMENT=	X.Org RDC display driver
 #USE_GL=		gl
 XORG_CAT=	driver
 USE_XORG=	xvmc xf86driproto xextproto x11 glproto
+
+.include <bsd.port.options.mk>
 
 .if defined(WITH_NEW_XORG)
 IGNORE=         does not build with X server 1.12
