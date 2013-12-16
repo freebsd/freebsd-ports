@@ -19,7 +19,7 @@ COMMENT=	The Berkeley DB package, revision 4.1
 
 CONFLICTS?=	db41-nocrypto-4*
 
-DEPRECATED=	Please migrate to databases/db5
+DEPRECATED=	Please use databases/db5 or db6 for new installs.
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
