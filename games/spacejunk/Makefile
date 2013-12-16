@@ -49,6 +49,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/spacejunk ${STAGEDIR}${PREFIX}/libexec/
 	cd ${WRKSRC} && ${COPYTREE_SHARE} 'data config.txt' ${STAGEDIR}${DATADIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/spacejunk ${STAGEDIR}${PREFIX}/bin/
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} '*' ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

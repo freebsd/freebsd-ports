@@ -34,6 +34,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/freera ${STAGEDIR}${PREFIX}/bin/
-	cd ${WRKSRC}/data && ${COPYTREE_SHARE} '*' ${STAGEDIR}${DATADIR}/
+	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

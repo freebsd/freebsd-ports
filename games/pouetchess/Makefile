@@ -41,8 +41,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|' ${WRKSRC}/src/globalInfos.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/pouetChess ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/pouetChess ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/bin/config.ini ${STAGEDIR}${PREFIX}/etc/pouetChess.conf.sample
-	cd ${WRKSRC}/bin/data && ${COPYTREE_SHARE} "*" ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/bin/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

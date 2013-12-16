@@ -50,7 +50,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
-	cd ${WRKSRC}/share/caph && ${COPYTREE_SHARE} '*' ${STAGEDIR}${DATADIR}/
+	cd ${WRKSRC}/share/caph && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc/caph && ${INSTALL_DATA} README CHANGELOG ${STAGEDIR}${DOCSDIR}/
 

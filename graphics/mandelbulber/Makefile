@@ -28,10 +28,10 @@ post-patch:
 		${WRKSRC}/${PORTNAME}.desktop
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC}/usr/share && ${COPYTREE_SHARE} '*' ${STAGEDIR}${DATADIR}/
+	cd ${WRKSRC}/usr/share && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
