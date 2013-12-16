@@ -1,22 +1,32 @@
 etc/mail/smtpd.conf.sample
 libexec/opensmtpd/mail.local
 libexec/opensmtpd/makemap
-libexec/opensmtpd/backend-queue-null
-libexec/opensmtpd/backend-queue-ram
-libexec/opensmtpd/backend-queue-stub
+libexec/opensmtpd/queue-null
+libexec/opensmtpd/queue-ram
+libexec/opensmtpd/queue-stub
 libexec/opensmtpd/table-stub
 libexec/opensmtpd/table-passwd
 %%MYSQL%%libexec/opensmtpd/table-mysql
 %%SQLITE%%libexec/opensmtpd/table-sqlite
 %%LDAP%%libexec/opensmtpd/table-ldap
 %%PGSQL%%libexec/opensmtpd/table-postgres
-libexec/opensmtpd/backend-scheduler-ram
-libexec/opensmtpd/backend-scheduler-stub
+libexec/opensmtpd/scheduler-ram
+libexec/opensmtpd/scheduler-stub
 libexec/opensmtpd/filter-dnsbl
 libexec/opensmtpd/filter-monkey
 libexec/opensmtpd/filter-stub
 libexec/opensmtpd/filter-trace
+libexec/opensmtpd/encrypt
 sbin/smtpctl
 sbin/smtpd
+man/man8/newaliases.8.gz
+man/man8/sendmail.8.gz
+man/man8/smtpd.8.gz
+man/man8/makemap.8.gz
+man/man8/smtpctl.8.gz
+man/man5/table.5.gz
+man/man5/smtpd.conf.5.gz
+man/man5/forward.5.gz
+man/man5/aliases.5.gz
 @dirrm libexec/opensmtpd
 @dirrmtry etc/mail
