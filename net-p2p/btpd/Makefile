@@ -6,7 +6,7 @@ PORTREVISION=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://cloud.github.com/downloads/btpd/btpd/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bittorrent client consisting of a daemon and client commands
 
 LICENSE=	BSD

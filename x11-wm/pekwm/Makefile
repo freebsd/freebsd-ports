@@ -8,7 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://pekwm.org/projects/3/files/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light, Unobtrusive, and configurable windowmanager
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \

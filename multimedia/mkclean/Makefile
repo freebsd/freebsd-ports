@@ -5,7 +5,7 @@ PORTVERSION=	0.8.7
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/matroska/${PORTNAME}/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clean and optimize Matroska and WebM files
 
 LICENSE=	BSD

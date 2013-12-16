@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://entropymine.com/jason/pngrewrite/ \
 		http://mirror.roe.ch/dist/pngrewrite/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PNG palette optimizer
 
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png

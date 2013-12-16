@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	misc
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for creating presentations
 
 OPTIONS_DEFINE=	DOCS

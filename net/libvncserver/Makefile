@@ -8,7 +8,7 @@ CATEGORIES=	net devel
 MASTER_SITES=	SF
 DISTNAME=	LibVNCServer-${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provide an easy API to write one's own vnc server
 
 LICENSE=	GPLv2
