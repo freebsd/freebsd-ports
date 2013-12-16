@@ -14,8 +14,7 @@ COMMENT=	Intelligent schema migrations for Django apps
 LICENSE=	AL2
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
+USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	South
 
 .include <bsd.port.mk>
