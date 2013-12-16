@@ -2210,7 +2210,7 @@ you update your ports collection, before attempting any port upgrades.
 
   When using Firefox or SeaMonkey compiled with ALSA option ON it may
   crash on assert in alsa_refill_stream as described in ports/170473.
-  To workaround disable ARIFF_OSS in audio/alsa-plugins or use PULSEAUDIO.
+  To workaround enable BUFSZ_P2 in audio/alsa-plugins or use PULSEAUDIO.
 
 20121010:
   AFFECTS: users of CURRENT (OSVERSION >= 1000017)
