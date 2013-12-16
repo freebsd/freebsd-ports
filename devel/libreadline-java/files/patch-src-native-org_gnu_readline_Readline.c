@@ -1,5 +1,14 @@
 --- src/native/org_gnu_readline_Readline.c.orig	2003-01-07 11:14:35.000000000 +0100
-+++ src/native/org_gnu_readline_Readline.c	2007-09-27 09:21:14.000000000 +0200
++++ src/native/org_gnu_readline_Readline.c	2013-12-12 20:40:36.000000000 +0100
+@@ -430,7 +430,7 @@
+   jtext = (*jniEnv)->NewStringUTF(jniEnv,text);
+ 
+   if (jniMethodId == 0) {
+-    return;
++    return 0;
+   }
+ 
+   completion = (*jniEnv)->CallObjectMethod(jniEnv, jniObject,
 @@ -560,6 +560,21 @@
  #endif
  
