@@ -1,6 +1,6 @@
 libexec/nagios/check_apt
 libexec/nagios/check_breeze
-libexec/nagios/check_by_ssh
+%%SUB_SSH%%libexec/nagios/check_by_ssh
 libexec/nagios/check_clamd
 libexec/nagios/check_cluster
 %%SUB_DBI%%libexec/nagios/check_dbi

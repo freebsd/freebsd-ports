@@ -149,6 +149,10 @@ CONFIGURE_ARGS+=	--without-dbi
 PLIST_SUB+=	SUB_DBI="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MEXTRAOPTS}
+CONFIGURE_ARGS+=	--enable-extra-opts
+.endif
+
 .if ${OSVERSION} > 1000055
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-dig-to-drill.diff
 CONFIGURE_ARGS+=--with-dig-command=/usr/bin/drill
@@ -157,8 +161,10 @@ PLIST_SUB+=	SUB_DNS="@comment "
 PLIST_SUB+=	SUB_DNS=""
 .endif
 
-.if ${PORT_OPTIONS:MEXTRAOPTS}
-CONFIGURE_ARGS+=	--enable-extra-opts
+.if !exists(/usr/bin/ssh)
+PLIST_SUB+=	SUB_SSH="@comment "
+.else
+PLIST_SUB+=	SUB_SSH=""
 .endif
 
 post-patch:
