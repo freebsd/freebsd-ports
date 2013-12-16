@@ -645,6 +645,8 @@
 %%WWWDIR%%/locale/bg/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/lt/LC_MESSAGES/frontend.po
 %%WWWDIR%%/locale/lt/LC_MESSAGES/frontend.mo
+%%WWWDIR%%/locale/ro/LC_MESSAGES/frontend.po
+%%WWWDIR%%/locale/ro/LC_MESSAGES/frontend.mo
 %%WWWDIR%%/locale/add_new_language.sh
 %%WWWDIR%%/conf/zabbix.conf.php.example
 %%WWWDIR%%/conf/maintenance.inc.php
@@ -858,6 +860,8 @@
 @dirrm %%WWWDIR%%/locale/bg/
 @dirrm %%WWWDIR%%/locale/lt/LC_MESSAGES/
 @dirrm %%WWWDIR%%/locale/lt/
+@dirrm %%WWWDIR%%/locale/ro/LC_MESSAGES/
+@dirrm %%WWWDIR%%/locale/ro/
 @dirrm %%WWWDIR%%/locale
 @dirrm %%WWWDIR%%/conf
 @dirrm %%WWWDIR%%/js/jquery
