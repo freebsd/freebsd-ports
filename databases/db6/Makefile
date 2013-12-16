@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	db6
-PORTVERSION=	6.0.19.0
+PORTVERSION=	6.0.20
 CATEGORIES=	databases java
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
 # the distfiles aren't named db6-* but db-*:
-DISTNAME=	db-${PORTVERSION:R}
+DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -15,9 +15,10 @@ COMMENT=	The Oracle Berkeley DB, revision ${BDBVER}
 
 LICENSE=	AGPLv3
 
-BDBVER=		${PORTVERSION:R:R}
+BDBVER=		${PORTVERSION:R}
 BDBMAJ=		${BDBVER:R}
 CONFIGURE_ARGS=	--enable-cxx --enable-stl \
+		--enable-compat185 --enable-dump185 \
 		--disable-tcl \
 		--includedir=${PREFIX}/include/${PORTNAME} \
 		--libdir=${PREFIX}/lib/${PORTNAME} \
