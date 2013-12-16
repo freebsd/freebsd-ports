@@ -3,7 +3,7 @@
 
 PORTNAME=	pyspacewar
 PORTVERSION=	0.9.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games python
 MASTER_SITES=	http://mg.pov.lt/${PORTNAME}/\
 		LOCAL/beech
@@ -18,6 +18,13 @@ RUN_DEPENDS=	${PYGAME}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
+
+PLIST_FILES=	share/icons/hicolor/16x16/apps/pyspacewar.png \
+		share/icons/hicolor/22x22/apps/pyspacewar.png \
+		share/icons/hicolor/32x32/apps/pyspacewar.png \
+		share/icons/hicolor/48x48/apps/pyspacewar.png \
+		share/pixmaps/${PORTNAME}.png
 
 PORTDOCS=	NEWS.txt README.txt TODO.txt performance-notes.txt
 
