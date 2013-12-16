@@ -12,11 +12,11 @@ PATCHDIR=
 PLIST=		${PKGDIR}/pkg-plist.frontend
 
 USE_PHP=	bcmath ctype gd pcre snmp sockets mbstring session dom xml \
-		xmlreader xmlwriter simplexml gettext
+		xmlreader xmlwriter simplexml gettext ldap
 WANT_PHP_WEB=	yes
 
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
-OPTIONS_DEFINE=	MYSQL MYSQLI PGSQL SQLITE
+OPTIONS_DEFINE=	MYSQL MYSQLI PGSQL SQLITE ORACLE
 OPTIONS_DEFAULT=	MYSQL MYSQLI
 MYSQLI_DESC=	MySQLI backend
 
@@ -37,6 +37,11 @@ USE_PHP+=	pgsql
 
 .if ${PORT_OPTIONS:MSQLITE}
 USE_PHP+=	sqlite3
+.endif
+
+.if ${PORT_OPTIONS:MORACLE}
+ZABBIX_REQUIRE=
+CONFIGURE_ARGS+=	--with-oracle
 .endif
 
 do-install:

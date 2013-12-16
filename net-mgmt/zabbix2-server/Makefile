@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zabbix2
-PORTVERSION=	2.0.8
+PORTVERSION=	2.0.10
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
@@ -15,6 +15,8 @@ COMMENT=	Enterprise-class open source distributed monitoring (${PKGNAMESUFFIX:S/
 LICENSE=	GPLv2
 
 CONFLICTS=	${PKGBASE}-1.[0-8]*
+
+IGNORE_WITH_MYSQL=	41
 
 .if ${PKGNAMESUFFIX} != "-agent"
 CONFLICTS+=	${PORTNAME}-1.[0-8]*
@@ -68,8 +70,8 @@ CONFIGURE_ARGS+=	--with-net-snmp
 
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
 
-OPTIONS_DEFINE=	IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP ODBC JAVAGW
-OPTIONS_DEFAULT=	MYSQL IPV6 FPING JABBER CURL LDAP
+OPTIONS_DEFINE=	IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP ODBC JAVAGW MYSQL
+OPTIONS_DEFAULT=	MYSQL IPV6 FPING JABBER CURL
 
 CURL_DESC=	Support for web monitoring
 FPING_DESC=	Build/install fping for ping checks
@@ -84,7 +86,7 @@ IODBC_DESC=	Use iODBC for ODBC support
 UNIXODBC_DESC=	Use UnixODBC for ODBC support
 
 OPTIONS_SINGLE=	DB ODBC
-OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE
+OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE ORACLE
 OPTIONS_SINGLE_ODBC=	IODBC UNIXODBC
 
 NO_STAGE=	yes
@@ -103,9 +105,14 @@ CONFIGURE_ARGS+=	--with-postgresql
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-ZABBIX_REQUIRE=
+ZABBIX_REQUIRE= " sqlite"
 USE_SQLITE=	3
 CONFIGURE_ARGS+=	--with-sqlite3
+.endif
+
+.if ${PORT_OPTIONS:MORACLE}
+ZABBIX_REQUIRE=
+CONFIGURE_ARGS+=	--with-oracle
 .endif
 
 .if ${PORT_OPTIONS:MCURL}
@@ -173,13 +180,12 @@ post-patch:
 
 .if ${ZABBIX_BUILD} != "agent"
 .if empty(PORT_OPTIONS:MFPING)
-	@${ECHO} 'DisablePinger=yes' >> ${WRKSRC}/conf/zabbix_${ZABBIX_BUILD}.conf
 .endif
 .for d in mysql oracle postgresql sqlite3
 	@${REINPLACE_CMD} -e 's|/bin/ping|/sbin/ping|g; \
-	                      s|/usr/bin/traceroute|/usr/sbin/traceroute|g; \
-	                      s|sudo /usr/bin/nmap|sudo ${LOCALBASE}/bin/nmap|g;' \
-	                      ${WRKSRC}/database/${d}/data.sql
+			      s|/usr/bin/traceroute|/usr/sbin/traceroute|g; \
+			      s|sudo /usr/bin/nmap|sudo ${LOCALBASE}/bin/nmap|g;' \
+			      ${WRKSRC}/database/${d}/data.sql
 .endfor
 .endif
 	@${REINPLACE_CMD} -Ee 's|(@sysconfdir@/(\$$\([A-Z]*_CONFIG\)))" ([|][|] cp "../../conf/\$$\([A-Z]*_CONFIG\)" "\$$\(DESTDIR\)@sysconfdir@)"|\1.sample" \3/\2.sample"|;' \
@@ -187,6 +193,11 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.orig' \) -exec ${RM} -f {} +
 
 post-install:
+
+.if defined(WITH_JAVAGW)
+	@${MV} ${PREFIX}/sbin/zabbix_java/settings.sh ${PREFIX}/sbin/zabbix_java/settings.sh.sample
+.endif
+
 .if ${ZABBIX_BUILD} != "agent"
 	@${MKDIR} "${DATADIR}/${ZABBIX_BUILD}/database"
 	@cd ${WRKSRC}/upgrades/ && ${COPYTREE_SHARE} dbpatches ${DATADIR}/${ZABBIX_BUILD}/upgrades/
