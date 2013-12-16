@@ -18,8 +18,6 @@ share/icons/hicolor/scalable/apps/springlobby.svg
 %%NLS%%share/locale/sv/LC_MESSAGES/springlobby.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/springlobby.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/springlobby.mo
-%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en_US
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor
