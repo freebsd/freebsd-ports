@@ -51,6 +51,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3b86583a-66a7-11e3-868f-0025905a4771">
+    <topic>phpmyfaq -- arbitrary PHP code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq</name>
+	<range><lt>2.8.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyFAQ team reports:</p>
+	<blockquote cite="http://www.phpmyfaq.de/advisory_2013-11-26.php">
+	  <p>Secunia noticed while analysing the advisory that authenticated
+	    users with "Right to add attachments" are able to exploit an already
+	    publicly known issue in the bundled Ajax File Manager of phpMyFAQ version
+	    2.8.3, which leads to arbitrary PHP code execution for authenticated
+	    users with the permission "Right to add attachments".</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyfaq.de/advisory_2013-11-26.php</url>
+      <url>http://en.securitylab.ru/lab/PT-2013-41</url>
+    </references>
+    <dates>
+      <discovery>2013-11-26</discovery>
+      <entry>2013-12-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="44d0f8dc-6607-11e3-bb11-0025900931f8">
     <topic>zabbix -- shell command injection vulnerability</topic>
     <affects>
