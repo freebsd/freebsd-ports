@@ -46,7 +46,6 @@
     SUBDIR += libtorrent
     SUBDIR += libtorrent-devel
     SUBDIR += libtorrent-rasterbar
-    SUBDIR += libtorrent-rasterbar-15
     SUBDIR += libtorrent-rasterbar-python
     SUBDIR += linux-jigdo
     SUBDIR += linuxdcpp
