@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://cvsbook.red-bean.com/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-all
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tutorial and reference for CVS
 
 OPTIONS_MULTI=		CVSBOOK

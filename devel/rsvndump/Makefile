@@ -6,7 +6,7 @@ PORTVERSION=	0.5.8
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remote Subversion repository dumpfile generator
 
 GNU_CONFIGURE=	yes

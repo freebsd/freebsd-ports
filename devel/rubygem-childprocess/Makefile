@@ -6,7 +6,7 @@ PORTVERSION=	0.3.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	External background process controller
 
 RUN_DEPENDS=	rubygem-ffi>=1.0.11:${PORTSDIR}/devel/rubygem-ffi

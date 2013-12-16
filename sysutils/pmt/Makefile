@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://hansmi.ch/download/pmt/ \
 		LOCAL/glarkin
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small collection of filters which can be added to UNIX pipes
 
 USE_BZIP2=	yes

@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 PKGNAMESUFFIX=	11
 DISTNAME=	cake_${PORTVERSION}
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
 
 USE_BZIP2=	yes

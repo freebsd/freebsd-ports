@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 DISTNAME=	${SRCFILE}
 EXTRACT_SUFX=
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Math, string, and aggregate function library for SQLite
 
 USE_SQLITE=	yes

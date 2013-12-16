@@ -8,7 +8,7 @@ CATEGORIES=	security www
 MASTER_SITES=	SF/${PORTNAME}/Deadlock/${PORTVERSION}%20Stable
 DISTNAME=	Deadlock-${PORTVERSION}-Stable
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-based user authentication/password protection system
 
 WRKSRC=	${WRKDIR}/Deadlock-1.01

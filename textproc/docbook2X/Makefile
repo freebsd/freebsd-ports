@@ -7,7 +7,7 @@ PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert DocBook documents into UNIX man page and GNU Texinfo formats
 
 BUILD_DEPENDS=	p5-XML-NamespaceSupport>=0:${PORTSDIR}/textproc/p5-XML-NamespaceSupport \

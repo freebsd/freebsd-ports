@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://launchpadlibrarian.net/41155299/ \
 		LOCAL/glarkin
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Client and protocol library for the Drizzle database
 
 LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3

@@ -9,7 +9,7 @@ MASTER_SITES=	http://untroubled.org/nullmailer/ \
 		http://untroubled.org/nullmailer/archive/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MTA for hosts which relay to a fixed set of smart relays
 
 LICENSE=	GPLv2
