@@ -8,6 +8,16 @@ bin/abc2ly
 bin/convert-ly
 bin/etf2ly
 bin/midi2ly
+man/man1/lilymidi.1.gz
+man/man1/lilypond-book.1.gz
+man/man1/lilypond-invoke-editor.1.gz
+man/man1/lilypond.1.gz
+man/man1/lilysong.1.gz
+man/man1/convert-ly.1.gz
+man/man1/abc2ly.1.gz
+man/man1/etf2ly.1.gz
+man/man1/midi2ly.1.gz
+man/man1/musicxml2ly.1.gz
 lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/fonts/otf/CenturySchL-Bold.otf
 %%DATADIR%%/%%PORTVERSION%%/fonts/otf/CenturySchL-BoldItal.otf
