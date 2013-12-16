@@ -44,7 +44,7 @@ CONFIGURE_ARGS=	--without-sasl \
 # workaround to override pkg-config calls
 # random_data fix can be removed when 8.x is eol
 CONFIGURE_ENV=	SSH2_LIBS="-L${LOCALBASE}/lib -lssh2 -lssl" \
-		SSH2_CFLAGS="-I${LOCLABASE}/include" \
+		SSH2_CFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_type_struct_random_data=""
 
 # limit production release x.x.x
