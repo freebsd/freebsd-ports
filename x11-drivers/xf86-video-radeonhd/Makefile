@@ -17,6 +17,10 @@ USE_XORG=	damageproto glproto videoproto xextproto xf86driproto
 CONFIGURE_ARGS=	--enable-exa
 CONFLICTS=	xf86-video-radeonhd-devel-[0-9]*
 
+IGNORE=		Reports of issues with KMS, unsupported, use xf86-video-ati.
+DEPRECATED=	Abandond upstream since 2010
+EXPIRATION_DATE=2014-02-28
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUTILS}
