@@ -51,6 +51,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="44d0f8dc-6607-11e3-bb11-0025900931f8">
+    <topic>zabbix -- shell command injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>zabbix2-agent</name>
+	<range><lt>2.0.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Recurity Labs Team project reports:</p>
+	<blockquote cite="https://support.zabbix.com/browse/ZBX-7479">
+	  <p>Zabbix agent is vulnerable to remote command execution
+	    from the Zabbix server in some cases.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6824</cvename>
+      <url>https://support.zabbix.com/browse/ZBX-7479</url>
+    </references>
+    <dates>
+      <discovery>2013-12-03</discovery>
+      <entry>2013-12-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="47b4e713-6513-11e3-868f-0025905a4771">
     <topic>PHP5 -- memory corruption in openssl_x509_parse()</topic>
     <affects>
