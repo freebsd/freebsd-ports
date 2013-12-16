@@ -37,7 +37,7 @@ firstboot_pkgs_run()
 
 	# Install requested packages, if any
 	if ! [ -z "$firstboot_pkgs_list" ]; then
-		env ASSUME_ALWAYS_YES=YES pkg install $firstboot_pkgs_list
+		env ASSUME_ALWAYS_YES=YES pkg install $firstboot_pkgs_list </dev/null
 	fi
 
 	# Count rc.d scripts again
