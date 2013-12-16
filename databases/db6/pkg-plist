@@ -2,6 +2,7 @@ bin/db%%BDBMAJ%%/db_archive
 bin/db%%BDBMAJ%%/db_checkpoint
 bin/db%%BDBMAJ%%/db_deadlock
 bin/db%%BDBMAJ%%/db_dump
+bin/db%%BDBMAJ%%/db_dump185
 bin/db%%BDBMAJ%%/db_hotbackup
 bin/db%%BDBMAJ%%/db_load
 bin/db%%BDBMAJ%%/db_log_verify
@@ -18,6 +19,7 @@ bin/db_archive-%%BDBVER%%
 bin/db_checkpoint-%%BDBVER%%
 bin/db_deadlock-%%BDBVER%%
 bin/db_dump-%%BDBVER%%
+bin/db_dump185-%%BDBVER%%
 bin/db_hotbackup-%%BDBVER%%
 bin/db_load-%%BDBVER%%
 bin/db_log_verify-%%BDBVER%%
@@ -31,6 +33,7 @@ bin/db_upgrade-%%BDBVER%%
 bin/db_verify-%%BDBVER%%
 %%SQL%%bin/dbsql-%%BDBVER%%
 include/db%%BDBMAJ%%/db.h
+include/db%%BDBMAJ%%/db_185.h
 include/db%%BDBMAJ%%/db_cxx.h
 %%SQL%%include/db%%BDBMAJ%%/dbsql.h
 include/db%%BDBMAJ%%/dbstl_base_iterator.h
