@@ -12,7 +12,7 @@ DISTFILES=	Numeric-${PORTVERSION}${EXTRACT_SUFX}:source \
 		numpy.pdf:doc
 EXTRACT_ONLY=	Numeric-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Numeric Extension to Python
 
 USE_PYTHON=		yes

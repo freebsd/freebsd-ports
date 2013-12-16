@@ -10,7 +10,7 @@ MASTER_SITES=	SF \
 PORTSCOUT=	limit:^1\.2\.
 PKGNAMESUFFIX=	12
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast image processing tools based on ImageMagick
 
 CONFLICTS=	GraphicsMagick-1.[13].* GraphicsMagick13-*

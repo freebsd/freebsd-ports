@@ -6,7 +6,7 @@ PORTVERSION=	2.5
 CATEGORIES=	devel
 MASTER_SITES=	SF/cvschangelogb/CVSChangelogBuilder/${PORTVERSION}
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to generate changelogs and reports from a CVS repository
 
 LICENSE=	GPLv2

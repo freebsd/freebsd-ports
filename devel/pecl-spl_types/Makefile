@@ -11,7 +11,7 @@ DISTNAME=	SPL_Types-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PECL extension of a collection of special typehandling classes
 
 LICENSE=	PHP301

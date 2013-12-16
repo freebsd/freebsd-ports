@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME:S/-devel//g}-${PORTVERSION}
 PORTSCOUT=	limit:^1\.2\. skipb:1
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web-based calendar application
 
 USE_PHP=	pcre session

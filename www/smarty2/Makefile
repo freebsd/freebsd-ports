@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.smarty.net/files/ \
 		http://www.smarty.net/files/docs/:manual
 DISTFILES=	Smarty-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The PHP compiling template engine
 
 USE_ZIP=	yes

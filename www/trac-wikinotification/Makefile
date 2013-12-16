@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	brooks
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/rc/}
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allow email notifications on wiki page changes
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac

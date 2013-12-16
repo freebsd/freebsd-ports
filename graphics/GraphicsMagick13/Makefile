@@ -9,7 +9,7 @@ MASTER_SITES=	SF \
 MASTER_SITE_SUBDIR=	${PORTNAME:L}/${PORTNAME:L}/${PORTVERSION}
 PKGNAMESUFFIX=	13
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast image processing tools based on ImageMagick
 
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2	\

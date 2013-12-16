@@ -10,7 +10,7 @@ MASTER_SITES=	SF \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.1/
 PORTSCOUT=	limit:^1\.1\.
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast image processing tools based on ImageMagick
 
 CONFLICTS=	GraphicsMagick-1.[23].* GraphicsMagick1[23]-*

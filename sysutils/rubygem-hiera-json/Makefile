@@ -6,7 +6,7 @@ PORTVERSION=	0.4.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A backend for Hiera that queries JSON data
 
 RUN_DEPENDS=	puppet>=0:${PORTSDIR}/sysutils/puppet \

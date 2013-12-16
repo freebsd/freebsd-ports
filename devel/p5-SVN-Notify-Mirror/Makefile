@@ -8,7 +8,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keep a mirrored working copy of a repository path
 
 BUILD_DEPENDS=	p5-SVN-Notify>=2.83:${PORTSDIR}/devel/p5-SVN-Notify \
