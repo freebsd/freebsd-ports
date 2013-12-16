@@ -20,6 +20,6 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 post-install:
-	cd ${WRKSRC}/documentation && ${COPYTREE_SHARE} '*' ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/documentation && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

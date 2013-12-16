@@ -43,7 +43,7 @@ post-patch:
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "snowui gamelib simplejson run_game.py" \
 		${STAGEDIR}${PREFIX}/lib/${PORTNAME}/
-	cd ${WRKSRC}/data && ${COPYTREE_SHARE} '*' ${STAGEDIR}${DATADIR}/
+	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>

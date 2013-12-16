@@ -61,6 +61,6 @@ post-install:
 	cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION} && \
 		${COPYTREE_SHARE} "font	images music script sound" ${STAGEDIR}${DATADIR}/
 	cd ${WRKDIR}/${PORTNAME}-data-${DATAVERSION}/doc && \
-		${COPYTREE_SHARE} "*" ${STAGEDIR}${DOCSDIR}/
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.post.mk>
