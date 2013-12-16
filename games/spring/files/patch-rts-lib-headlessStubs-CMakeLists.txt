@@ -1,0 +1,13 @@
+--- rts/lib/headlessStubs/CMakeLists.txt.orig	2013-03-26 03:58:36.000000000 +0400
++++ rts/lib/headlessStubs/CMakeLists.txt	2013-12-07 07:05:38.984034014 +0400
+@@ -15,8 +15,8 @@
+ ELSE  (MINGW)
+ 	# Use a direct copy of the GL and SDL headers,
+ 	# as these may not be available on headless systems.
+-	INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/include)
+-	INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/include/SDL)
++	INCLUDE_DIRECTORIES(BEFORE ${CMAKE_SOURCE_DIR}/include)
++	INCLUDE_DIRECTORIES(BEFORE ${CMAKE_SOURCE_DIR}/include/SDL)
+ ENDIF (MINGW)
+ 
+ ADD_LIBRARY(headlessStubs STATIC EXCLUDE_FROM_ALL ${headlessStubsSources})

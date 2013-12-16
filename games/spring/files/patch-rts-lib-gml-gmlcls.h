@@ -1,7 +1,7 @@
---- ./rts/lib/gml/gmlcls.h.orig	2010-09-06 16:16:18.000000000 +0400
-+++ ./rts/lib/gml/gmlcls.h	2010-09-15 23:36:35.000000000 +0400
-@@ -60,7 +60,7 @@
- //#define BOOST_AC_USE_PTHREADS
+--- rts/lib/gml/gmlcls.h.orig	2013-12-07 00:06:39.928020847 +0400
++++ rts/lib/gml/gmlcls.h	2013-12-07 00:09:21.477010398 +0400
+@@ -43,7 +43,7 @@
+ extern bool ThreadRegistered();
  
  // memory barriers for different platforms
 -#if defined(__APPLE__) || defined(__FreeBSD__)
@@ -9,7 +9,7 @@
  #	include <libkern/OSAtomic.h>
  #	define GML_MEMBAR OSMemoryBarrier()
  #elif defined(__GNUC__)
-@@ -112,7 +112,7 @@
+@@ -95,7 +95,7 @@
  #	define GML_TYPENAME
  #endif
  
@@ -18,3 +18,16 @@
  #	define GML_USE_SPEEDY_TLS 1
  #	include "System/Platform/errorhandler.h"
  #	include "speedy-tls.h"
+@@ -234,11 +234,7 @@
+ 	}
+ 	virtual ~gmlBaseMutexLock() {
+ 		if (GML::Enabled()) {
+-#if (BOOST_VERSION >= 103500)
+-			((T*)lockdata)->boost::unique_lock<U>::~unique_lock();
+-#else
+-			((T*)lockdata)->boost::scoped_lock<U>::~scoped_lock();
+-#endif
++			((T*)lockdata)->~T();
+ 		}
+ 	}
+ };
