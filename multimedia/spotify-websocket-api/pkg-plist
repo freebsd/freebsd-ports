@@ -5,4 +5,3 @@ bin/respotify-helper.pyo
 bin/respotify.py
 bin/respotify.pyc
 bin/respotify.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
