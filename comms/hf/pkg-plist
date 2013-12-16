@@ -19,6 +19,14 @@ bin/ratetry
 bin/reffreq
 etc/calibrations.samp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fix.01
+man/de.ISO8859-1/man1/hf.1.gz
+man/de.ISO8859-1/man1/hfkernel.1.gz
+man/de.ISO8859-1/man1/hfterm.1.gz
+man/man1/dcf77gen.1.gz
+man/man1/dcf77rx.1.gz
+man/man1/hf.1.gz
+man/man1/hfkernel.1.gz
+man/man1/hfterm.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fix.02
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fix.03
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fix.04
