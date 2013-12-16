@@ -796,7 +796,6 @@ misc/xenmenu||2009-08-08|Removed: Project abandoned in 1998
 security/dns-proxy-tor||2009-08-09|Removed
 security/trans-proxy-tor||2009-08-09|Removed: trans-proxy-tor is rendered obsolete by Tor's TransPort option (currently only available in tor-devel)
 science/dft++||2009-08-11|Removed
-misc/bibletime-devel||2009-08-17|Has expired
 devel/p5-MooseX-Policy-SemiAffordanceAccessor|devel/p5-MooseX-SemiAffordanceAccessor|2009-08-18|Renamed
 www/mediawiki12|www/mediawiki112|2009-08-19|Renamed
 lang/gcc42-withgcjawt|lang/gcc42|2009-08-19|Not needed any longer, still an option for the regular lang/gcc ports
