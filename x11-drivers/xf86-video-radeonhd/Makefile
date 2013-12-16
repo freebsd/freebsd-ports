@@ -30,8 +30,8 @@ PLIST_SUB=	UTILS="@comment "
 
 .if ${PORT_OPTIONS:MUTILS}
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/utils/conntest/rhd_conntest ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/utils/conntest/rhd_dump ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/utils/conntest/rhd_conntest ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/utils/conntest/rhd_dump ${STAGEDIR}${PREFIX}/sbin
 .endif
 
 .include <bsd.port.mk>
