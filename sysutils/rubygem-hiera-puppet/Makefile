@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mat@FreeBSD.org
 COMMENT=	A data backend for Hiera that queries the Puppet scope for data
 
 RUN_DEPENDS=	puppet>=0:${PORTSDIR}/sysutils/puppet27 \
