@@ -9,8 +9,7 @@ MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/ \
 PKGNAMESUFFIX=	-devel
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz?uuid=${FSL_CHKIN}
 
-# Also maintained by bdrewery@FreeBSD.org
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Port build and test system
 
 LICENSE=	BSD
