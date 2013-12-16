@@ -32,7 +32,6 @@ DESKTOP_ENTRIES="Jigzo" \
 		false
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 .include <bsd.port.options.mk>
 

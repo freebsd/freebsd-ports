@@ -22,7 +22,6 @@ USES=		gettext gmake
 PORTDOCS=	AUTHORS NEWS README README.data TODO
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/bin/python,${SETENV} python,' ${WRKSRC}/metromap.py

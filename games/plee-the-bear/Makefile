@@ -31,7 +31,6 @@ CMAKE_ARGS=	-Dlibclaw_DIR="${LOCALBASE}/share/libclaw/cmake" \
 		-DBEAR_NO_EDITOR=YES
 
 OPTIONS_DEFINE=	NLS
-OPTIONS_DEFAULT=NLS
 OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>

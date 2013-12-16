@@ -28,7 +28,6 @@ CONFIGURE_ARGS=	--without-glew --with-fribidi
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

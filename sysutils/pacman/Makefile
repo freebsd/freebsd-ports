@@ -40,7 +40,7 @@ MAN8=		makepkg.8 pacman-key.8 pacman.8 pkgdelta.8 repo-add.8 vercmp.8
 MLINKS=		repo-add.8 repo-remove.8
 
 OPTIONS_DEFINE=	CURL GPGME EXAMPLES NLS
-OPTIONS_DEFAULT=CURL GPGME EXAMPLES NLS
+OPTIONS_DEFAULT=CURL GPGME
 CURL_DESC=	Use libcurl fetcher instead of external curl/wget
 GPGME_DESC=	Use GPGME for PGP signature verification
 

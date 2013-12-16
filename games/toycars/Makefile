@@ -27,7 +27,6 @@ PORTDOCS=	*
 PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 post-extract:
 	@${RM} ${WRKSRC}/data/.*Store

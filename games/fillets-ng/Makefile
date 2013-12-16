@@ -38,7 +38,7 @@ DESKTOP_ENTRIES="Fish Fillets - Next Generation" \
 		false
 
 OPTIONS_DEFINE=	DOCS FRIBIDI
-OPTIONS_DEFAULT=DOCS FRIBIDI
+OPTIONS_DEFAULT=FRIBIDI
 
 .include <bsd.port.pre.mk>
 

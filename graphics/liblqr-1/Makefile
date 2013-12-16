@@ -23,7 +23,6 @@ USE_CSTD=	gnu89
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	EXAMPLES HTMLDOCS
-OPTIONS_DEFAULT=EXAMPLES
 HTMLDOCS_DESC=	Build and install HTML documentation
 
 .include <bsd.port.options.mk>

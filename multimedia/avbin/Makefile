@@ -21,7 +21,6 @@ USE_LDCONFIG=	yes
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 .include <bsd.port.options.mk>
 

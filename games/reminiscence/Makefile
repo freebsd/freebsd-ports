@@ -25,7 +25,6 @@ PLIST_FILES=	bin/remin
 PLIST_DIRSTRY=	%%DATADIR%%/data %%DATADIR%%
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|DATA|${DATADIR}/data|' ${WRKSRC}/main.cpp

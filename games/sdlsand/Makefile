@@ -19,9 +19,6 @@ PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/crtdbg/ d' ${WRKSRC}/CmdLine.cpp
