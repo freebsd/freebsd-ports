@@ -1,4 +1,3 @@
-share/apps/koffice/autocorrect/cs.xml
 share/locale/cs/LC_MESSAGES/ArtisticTextShape.mo
 share/locale/cs/LC_MESSAGES/AutocorrectPlugin.mo
 share/locale/cs/LC_MESSAGES/CalendarTool.mo
@@ -6,19 +5,17 @@ share/locale/cs/LC_MESSAGES/ChangecasePlugin.mo
 share/locale/cs/LC_MESSAGES/ChartShape.mo
 share/locale/cs/LC_MESSAGES/CommentShape.mo
 share/locale/cs/LC_MESSAGES/FormulaShape.mo
-share/locale/cs/LC_MESSAGES/FreOffice.mo
 share/locale/cs/LC_MESSAGES/KarbonTools.mo
 share/locale/cs/LC_MESSAGES/KexiRelationDesignShapePlugin.mo
-share/locale/cs/LC_MESSAGES/MapShape.mo
 share/locale/cs/LC_MESSAGES/MusicShape.mo
-share/locale/cs/LC_MESSAGES/ParagraphTool.mo
 share/locale/cs/LC_MESSAGES/PathShapes.mo
 share/locale/cs/LC_MESSAGES/PictureShape.mo
 share/locale/cs/LC_MESSAGES/PluginShape.mo
 share/locale/cs/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/cs/LC_MESSAGES/TableShape.mo
+share/locale/cs/LC_MESSAGES/TemplateShape.mo
 share/locale/cs/LC_MESSAGES/TextShape.mo
-share/locale/cs/LC_MESSAGES/TreeShape.mo
+share/locale/cs/LC_MESSAGES/ThreedShape.mo
 share/locale/cs/LC_MESSAGES/VariablesPlugin.mo
 share/locale/cs/LC_MESSAGES/VectorShape.mo
 share/locale/cs/LC_MESSAGES/VideoShape.mo
@@ -27,6 +24,7 @@ share/locale/cs/LC_MESSAGES/calligra-defaulttools.mo
 share/locale/cs/LC_MESSAGES/calligra-dockers.mo
 share/locale/cs/LC_MESSAGES/calligra-opener.mo
 share/locale/cs/LC_MESSAGES/calligra.mo
+share/locale/cs/LC_MESSAGES/calligraactive.mo
 share/locale/cs/LC_MESSAGES/calligrafilters.mo
 share/locale/cs/LC_MESSAGES/desktop_calligra.mo
 share/locale/cs/LC_MESSAGES/flow.mo
@@ -35,22 +33,17 @@ share/locale/cs/LC_MESSAGES/karbon.mo
 share/locale/cs/LC_MESSAGES/kexi.mo
 share/locale/cs/LC_MESSAGES/kformdesigner_mapbrowser.mo
 share/locale/cs/LC_MESSAGES/kformdesigner_webbrowser.mo
-share/locale/cs/LC_MESSAGES/koabstraction.mo
 share/locale/cs/LC_MESSAGES/kocolorspaces.mo
 share/locale/cs/LC_MESSAGES/koconverter.mo
 share/locale/cs/LC_MESSAGES/koproperty.mo
 share/locale/cs/LC_MESSAGES/koreport_barcodeplugin.mo
 share/locale/cs/LC_MESSAGES/koreport_chartplugin.mo
 share/locale/cs/LC_MESSAGES/koreport_mapsplugin.mo
-share/locale/cs/LC_MESSAGES/koreport_shapeplugin.mo
 share/locale/cs/LC_MESSAGES/koreport_webplugin.mo
-share/locale/cs/LC_MESSAGES/kounavail.mo
 share/locale/cs/LC_MESSAGES/krita.mo
 share/locale/cs/LC_MESSAGES/krossmoduleplan.mo
-share/locale/cs/LC_MESSAGES/krossmoduletables.mo
+share/locale/cs/LC_MESSAGES/krossmodulesheets.mo
 share/locale/cs/LC_MESSAGES/krossmodulewords.mo
-share/locale/cs/LC_MESSAGES/kscan_plugin.mo
-share/locale/cs/LC_MESSAGES/kthesaurus.mo
 share/locale/cs/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/cs/LC_MESSAGES/plan.mo
 share/locale/cs/LC_MESSAGES/planlibs.mo
@@ -58,9 +51,8 @@ share/locale/cs/LC_MESSAGES/planrcpsplugin.mo
 share/locale/cs/LC_MESSAGES/plantjplugin.mo
 share/locale/cs/LC_MESSAGES/planwork.mo
 share/locale/cs/LC_MESSAGES/sheets.mo
+share/locale/cs/LC_MESSAGES/sheetspivottables_plugin.mo
+share/locale/cs/LC_MESSAGES/sheetssolver.mo
 share/locale/cs/LC_MESSAGES/stage.mo
-share/locale/cs/LC_MESSAGES/tablessolver.mo
 share/locale/cs/LC_MESSAGES/thesaurus_tool.mo
 share/locale/cs/LC_MESSAGES/words.mo
-@dirrmtry share/apps/koffice/autocorrect
-@dirrmtry share/apps/koffice

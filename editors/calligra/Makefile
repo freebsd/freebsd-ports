@@ -2,7 +2,6 @@
 
 PORTNAME=	calligra
 PORTVERSION=	${CALLIGRA_VERSION}
-PORTREVISION=	5
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${CALLIGRA_BRANCH}/${PORTNAME}-${PORTVERSION}/
@@ -40,24 +39,42 @@ USE_GL=		glew
 USE_GNOME=	glib20 libxml2 libxslt
 USE_KDE4=	kactivities kdehier kdelibs kdeprefix libkdcraw nepomuk-core \
 		okular pimlibs attica automoc4 sharedmime soprano
-USE_QT4=	dbus designer_build gui opengl phonon porting_build qt3support \
-		qtestlib_build script sql svg webkit xml xmlpatterns \
+USE_QT4=	corelib dbus designer_build gui opengl phonon porting_build \
+		qt3support qtestlib_build script sql svg webkit xml xmlpatterns \
 		moc_build qmake_build rcc_build uic_build uic3_build
 USE_SQLITE=	3
-USE_BZIP2=	yes
-USES=		cmake:outsource pkgconfig iconv perl5
+USES=		cmake:outsource compiler:c++11-lang iconv perl5 pkgconfig
+USE_XZ=		yes
 CMAKE_ARGS=	-DCMAKE_INCLUDE_PATH:STRING="${QT_INCDIR} ${LOCALBASE}/include" \
-		-DIHAVEPATCHEDQT:BOOL=TRUE # To be removed with Qt 4.8.2.
+		-DPRODUCTSET:STRING="DESKTOP"
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	GTL MARBLE MYSQL PGSQL SYBASE
 OPTIONS_DEFAULT=MARBLE MYSQL PGSQL
+OPTIONS_SUB=	yes
 
 GTL_DESC=	Color transformations in Krita (requires LLVM)
+GTL_LIB_DEPENDS=libOpenCTL.so:${PORTSDIR}/graphics/opengtl \
+		libQtShiva.so:${PORTSDIR}/graphics/qtgtl
+GTL_CMAKE_OFF=	-DWITH_OpenShiva:BOOL=FALSE \
+		-DWITH_QtShiva:BOOL=FALSE
+
 MARBLE_DESC=	World globe widget support via Marble
+MARBLE_USE=	KDE4=marble
+MARBLE_CMAKE_OFF=-DWITH_Marble:BOOL=FALSE
+
 MYSQL_DESC=	MySQL database support in Kexi
+MYSQL_USE=	MYSQL=yes
+MYSQL_CMAKE_OFF=-DWITH_MySQL:BOOL=FALSE
+
 PGSQL_DESC=	PostgreSQL database support in Kexi
+PGSQL_LIB_DEPENDS=libpqxx-3.1.so:${PORTSDIR}/databases/postgresql-libpqxx3
+PGSQL_USE=	PGSQL=yes
+PGSQL_CMAKE_OFF=-DWITH_PostgreSQL:BOOL=FALSE
+
 SYBASE_DESC=	Sybase database support in Kexi
+SYBASE_LIB_DEPENDS=libsybdb.so:${PORTSDIR}/databases/freetds
+SYBASE_CMAKE_OFF=-DWITH_FreeTDS:BOOL=FALSE
 
 .if exists(${LOCALBASE}/lib/pstoedit/libp2edrvlplot.so)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/pstoedit/libp2edrvlplot.so:${PORTSDIR}/graphics/pstoedit
@@ -72,51 +89,6 @@ PLIST_SUB+=	EPS="@comment "
 CMAKE_ARGS+=	-DWITH_PACKAGERS_BUILD:BOOL=TRUE
 .else
 CMAKE_ARGS+=	-DWITH_PACKAGERS_BUILD:BOOL=FALSE
-.endif
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTL} || exists(${LOCALBASE}/lib/libQtShiva.so)
-LIB_DEPENDS+=	OpenCTL:${PORTSDIR}/graphics/opengtl \
-		QtShiva:${PORTSDIR}/graphics/qtgtl
-PLIST_SUB+=	GTL=""
-.else
-PLIST_SUB+=	GTL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMARBLE}
-USE_KDE4+=	marble
-PLIST_SUB+=	MARBLE=""
-.else
-CMAKE_ARGS+=	-DWITH_Marble:BOOL=FALSE
-PLIST_SUB+=	MARBLE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-PLIST_SUB+=	MYSQL=""
-.else
-CMAKE_ARGS+=	-DWITH_MySQL:BOOL=FALSE
-PLIST_SUB+=	MYSQL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx3
-RUN_DEPENDS+=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx3
-PLIST_SUB+=	PGSQL=""
-.else
-CMAKE_ARGS+=	-DWITH_PostgreSQL:BOOL=FALSE
-PLIST_SUB+=	PGSQL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSYBASE}
-LIB_DEPENDS+=	sybdb:${PORTSDIR}/databases/freetds
-PLIST_SUB+=	SYBASE=""
-.else
-CMAKE_ARGS+=	-DWITH_FreeTDS:BOOL=FALSE
-PLIST_SUB+=	SYBASE="@comment "
 .endif
 
 post-patch:

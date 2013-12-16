@@ -9,6 +9,7 @@ COMMENT=	Japanese messages and documentation for Calligra
 
 CALLIGRA_L10N=	ja
 
-NO_STAGE=	yes
+USE_BZIP2=	yes
+
 .include "${.CURDIR}/../../editors/calligra-l10n/files/bsd.l10n.mk"
 .include <bsd.port.mk>

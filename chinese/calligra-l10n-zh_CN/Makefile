@@ -9,6 +9,5 @@ COMMENT=	Simplified Chinese messages and documentation for Calligra
 
 CALLIGRA_L10N=	zh_CN
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../editors/calligra-l10n/files/bsd.l10n.mk"
 .include <bsd.port.mk>

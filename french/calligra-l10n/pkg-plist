@@ -24,6 +24,35 @@ share/doc/HTML/fr/sheets/shortcut2.png
 share/doc/HTML/fr/sheets/shortcut3.png
 share/doc/HTML/fr/sheets/sort1.png
 share/doc/HTML/fr/sheets/starting1.png
+share/doc/HTML/fr/stage/barstyle1.png
+share/doc/HTML/fr/stage/common
+share/doc/HTML/fr/stage/configure-document.png
+share/doc/HTML/fr/stage/configure-grid.png
+share/doc/HTML/fr/stage/configure-misc.png
+share/doc/HTML/fr/stage/great-presentations.docbook
+share/doc/HTML/fr/stage/guides.docbook
+share/doc/HTML/fr/stage/htmlshow3.png
+share/doc/HTML/fr/stage/htmlshow9.png
+share/doc/HTML/fr/stage/index.cache.bz2
+share/doc/HTML/fr/stage/index.docbook
+share/doc/HTML/fr/stage/menus.docbook
+share/doc/HTML/fr/stage/options.docbook
+share/doc/HTML/fr/stage/settings03.png
+share/doc/HTML/fr/stage/settings04.png
+share/doc/HTML/fr/stage/template03.png
+share/doc/HTML/fr/stage/template04.png
+share/doc/HTML/fr/stage/tut01.png
+share/doc/HTML/fr/stage/tut03.png
+share/doc/HTML/fr/stage/tut04.png
+share/doc/HTML/fr/stage/tut07.png
+share/doc/HTML/fr/stage/tut09.png
+share/doc/HTML/fr/stage/tut10.png
+share/doc/HTML/fr/stage/tut13.png
+share/doc/HTML/fr/stage/tut19.png
+share/doc/HTML/fr/stage/tut21.png
+share/doc/HTML/fr/stage/tut25.png
+share/doc/HTML/fr/stage/tut26.png
+share/doc/HTML/fr/stage/tutorial.docbook
 share/locale/fr/LC_MESSAGES/ArtisticTextShape.mo
 share/locale/fr/LC_MESSAGES/AutocorrectPlugin.mo
 share/locale/fr/LC_MESSAGES/CalendarTool.mo
@@ -41,6 +70,7 @@ share/locale/fr/LC_MESSAGES/SpellCheckPlugin.mo
 share/locale/fr/LC_MESSAGES/TableShape.mo
 share/locale/fr/LC_MESSAGES/TemplateShape.mo
 share/locale/fr/LC_MESSAGES/TextShape.mo
+share/locale/fr/LC_MESSAGES/ThreedShape.mo
 share/locale/fr/LC_MESSAGES/VariablesPlugin.mo
 share/locale/fr/LC_MESSAGES/VectorShape.mo
 share/locale/fr/LC_MESSAGES/VideoShape.mo
@@ -49,6 +79,7 @@ share/locale/fr/LC_MESSAGES/calligra-defaulttools.mo
 share/locale/fr/LC_MESSAGES/calligra-dockers.mo
 share/locale/fr/LC_MESSAGES/calligra-opener.mo
 share/locale/fr/LC_MESSAGES/calligra.mo
+share/locale/fr/LC_MESSAGES/calligraactive.mo
 share/locale/fr/LC_MESSAGES/calligrafilters.mo
 share/locale/fr/LC_MESSAGES/desktop_calligra.mo
 share/locale/fr/LC_MESSAGES/flow.mo
@@ -75,11 +106,11 @@ share/locale/fr/LC_MESSAGES/planrcpsplugin.mo
 share/locale/fr/LC_MESSAGES/plantjplugin.mo
 share/locale/fr/LC_MESSAGES/planwork.mo
 share/locale/fr/LC_MESSAGES/sheets.mo
+share/locale/fr/LC_MESSAGES/sheetspivottables_plugin.mo
 share/locale/fr/LC_MESSAGES/sheetssolver.mo
 share/locale/fr/LC_MESSAGES/stage.mo
 share/locale/fr/LC_MESSAGES/thesaurus_tool.mo
 share/locale/fr/LC_MESSAGES/words.mo
+@dirrm share/doc/HTML/fr/stage
 @dirrm share/doc/HTML/fr/sheets
 @dirrm share/doc/HTML/fr/calligra
-@dirrmtry share/apps/koffice/autocorrect
-@dirrmtry share/apps/koffice

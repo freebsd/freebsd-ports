@@ -157,6 +157,7 @@ share/locale/sv/LC_MESSAGES/calligra-defaulttools.mo
 share/locale/sv/LC_MESSAGES/calligra-dockers.mo
 share/locale/sv/LC_MESSAGES/calligra-opener.mo
 share/locale/sv/LC_MESSAGES/calligra.mo
+share/locale/sv/LC_MESSAGES/calligraactive.mo
 share/locale/sv/LC_MESSAGES/calligrafilters.mo
 share/locale/sv/LC_MESSAGES/desktop_calligra.mo
 share/locale/sv/LC_MESSAGES/flow.mo
@@ -183,6 +184,7 @@ share/locale/sv/LC_MESSAGES/planrcpsplugin.mo
 share/locale/sv/LC_MESSAGES/plantjplugin.mo
 share/locale/sv/LC_MESSAGES/planwork.mo
 share/locale/sv/LC_MESSAGES/sheets.mo
+share/locale/sv/LC_MESSAGES/sheetspivottables_plugin.mo
 share/locale/sv/LC_MESSAGES/sheetssolver.mo
 share/locale/sv/LC_MESSAGES/stage.mo
 share/locale/sv/LC_MESSAGES/thesaurus_tool.mo
