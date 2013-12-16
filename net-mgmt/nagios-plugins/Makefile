@@ -32,6 +32,8 @@ JAIL_DESC=	Compilation within jail(8) (see Makefile)
 DBI_DESC=	Check database using DBI
 EXTRAOPTS_DESC=	Parsing of plugins ini config files for extra options
 
+EXTRAOPTS_CONFIGURE_ENABLE=	extra-opts
+
 GNU_CONFIGURE=	yes
 
 NAGIOSUSER?=	nagios
@@ -49,7 +51,7 @@ NEED_ROOT=	yes # check_icmp, check_dhcp
 
 .include <bsd.port.options.mk>
 
-CONFIGURE_ARGS=	--with-nagios-user=${NAGIOSUSER} \
+CONFIGURE_ARGS+=--with-nagios-user=${NAGIOSUSER} \
 		--with-nagios-group=${NAGIOSGROUP} \
 		--with-cgiurl=${NAGIOSCGIURL} \
 		--sbindir=${PREFIX}/${NAGIOSWWWDIR}/cgi-bin \
@@ -147,10 +149,6 @@ LIB_DEPENDS+=	libdbi.so:${PORTSDIR}/databases/libdbi
 .else
 CONFIGURE_ARGS+=	--without-dbi
 PLIST_SUB+=	SUB_DBI="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MEXTRAOPTS}
-CONFIGURE_ARGS+=	--enable-extra-opts
 .endif
 
 .if ${OSVERSION} > 1000055
