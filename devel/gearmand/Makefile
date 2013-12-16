@@ -6,7 +6,7 @@ PORTVERSION=	1.0.6
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpad.net/gearmand/1.0/${PORTVERSION}/+download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Gearman C Server and Library
 
 BUILD_DEPENDS=	boost-libs>=0:${PORTSDIR}/devel/boost-libs \
