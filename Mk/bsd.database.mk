@@ -504,10 +504,10 @@ _SQLITE_VER=	 ${USE_SQLITE}
 
 # USE_SQLITE is specified incorrectly, so mark this as IGNORE
 .if ${_SQLITE_VER} == "3"
-LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
+LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
 SQLITE_VER=	${_SQLITE_VER}
 .elif ${_SQLITE_VER} == "2"
-LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
+LIB_DEPENDS+=	libsqlite.so:${PORTSDIR}/databases/sqlite${_SQLITE_VER}
 SQLITE_VER=	${_SQLITE_VER}
 .else
 IGNORE=		cannot install: unknown SQLite version: ${_SQLITE_VER}
