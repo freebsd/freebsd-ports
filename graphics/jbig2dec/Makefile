@@ -8,7 +8,7 @@ MASTER_SITES=	SF \
 		http://ghostscript.com/~giles/jbig2/jbig2dec/
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Decoder implementation of the JBIG2 image compression format
 
 USE_XZ=		yes:src

@@ -6,7 +6,7 @@ PORTVERSION=	3.0.5
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.joedog.org/pub/siege/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP regression testing and benchmarking utility
 
 LICENSE=	GPLv2

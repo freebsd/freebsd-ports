@@ -6,7 +6,7 @@ PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/misc/libpuzzle/releases/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to find similar pictures
 
 LICENSE=	BSD

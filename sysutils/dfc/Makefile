@@ -5,7 +5,7 @@ PORTVERSION=	3.0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://projects.gw-computing.net/attachments/download/79/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display file system space usage using graph and colors
 
 LICENSE=	BSD

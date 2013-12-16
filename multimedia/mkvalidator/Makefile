@@ -5,7 +5,7 @@ PORTVERSION=	0.4.2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/matroska/${PORTNAME}/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line tool to verify Matroska and WebM files
 
 LICENSE=	BSD

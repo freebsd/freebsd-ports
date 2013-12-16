@@ -5,7 +5,7 @@ PORTVERSION=	2.1
 CATEGORIES=	lang devel
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very small C interpreter for scripting
 
 LICENSE=	BSD

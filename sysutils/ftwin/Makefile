@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://files.etoilebsd.net/ftwin/ \
 		http://download.meroware.org/ftwin/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Useful tool to find duplicate files
 
 LIB_DEPENDS=	libpuzzle.so:${PORTSDIR}/graphics/libpuzzle \
