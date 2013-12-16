@@ -2,21 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	db5
-PORTVERSION=	5.3.21.0
+PORTVERSION=	5.3.28
 CATEGORIES=	databases java
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
 #
 # the distfiles aren't named db5-* but db-*:
-DISTNAME=	db-${PORTVERSION:R}
+DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	The Oracle Berkeley DB, revision ${BDBVER}
 
-BDBVER=		${PORTVERSION:R:R}
+BDBVER=		${PORTVERSION:R}
 BDBMAJ=		${BDBVER:R}
 CONFIGURE_ARGS=	--enable-cxx --enable-stl \
+		--enable-compat185 --enable-dump185 \
 		--disable-tcl \
 		--includedir=${PREFIX}/include/${PORTNAME} \
 		--libdir=${PREFIX}/lib/${PORTNAME} \
