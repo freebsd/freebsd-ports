@@ -70,6 +70,15 @@ libdata/pkgconfig/libdrm.pc
 %%NOUVEAU%%libdata/pkgconfig/libdrm_nouveau.pc
 %%NEW%%%%RADEON_DRIVERS%%libdata/pkgconfig/libdrm_radeon.pc
 %%NEW%%%%KMS%%libdata/pkgconfig/libkms.pc
+%%NEW%%%%MAN%%man/man3/drmAvailable.3.gz
+%%NEW%%%%MAN%%man/man3/drmHandleEvent.3.gz
+%%NEW%%%%MAN%%man/man3/drmModeGetResources.3.gz
+%%NEW%%%%MAN%%man/man7/drm-gem.7.gz
+%%NEW%%%%MAN%%man/man7/drm-kms.7.gz
+%%NEW%%%%MAN%%man/man7/drm-memory.7.gz
+%%NEW%%%%MAN%%man/man7/drm-mm.7.gz
+%%NEW%%%%MAN%%man/man7/drm-ttm.7.gz
+%%NEW%%%%MAN%%man/man7/drm.7.gz
 %%OLD%%@dirrm include/nouveau
 %%NEW%%%%KMS%%@dirrm include/libkms
 %%NEW%%@dirrm include/libdrm

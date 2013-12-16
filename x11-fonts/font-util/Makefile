@@ -10,7 +10,4 @@ COMMENT=	Create an index of X font files in a directory
 
 XORG_CAT=	font
 
-MAN1=		bdftruncate.1 ucs2any.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

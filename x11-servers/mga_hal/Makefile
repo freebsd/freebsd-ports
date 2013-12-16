@@ -16,7 +16,6 @@ RESTRICTED=	Matrox drivers may not be distributed.
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -31,13 +30,13 @@ XORG_VERSION=	6.9.0
 
 do-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/readme.txt ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/readme.txt ${STAGEDIR}${DOCSDIR}
 .endif
-	${MKDIR} ${PREFIX}/lib/modules/drivers
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/modules/drivers
 	${INSTALL_DATA} ${WRKSRC}/xserver/${XORG_VERSION}/mga_hal_drv.so \
-		${PREFIX}/lib/modules/drivers/
+		${STAGEDIR}${PREFIX}/lib/modules/drivers/
 	${INSTALL_DATA} ${WRKSRC}/xserver/${XORG_VERSION}/mga_drv.so \
-		${PREFIX}/lib/modules/drivers/
+		${STAGEDIR}${PREFIX}/lib/modules/drivers/
 
 .include <bsd.port.post.mk>

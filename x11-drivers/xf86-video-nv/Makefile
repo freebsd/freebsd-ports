@@ -2,14 +2,12 @@
 
 PORTNAME=	xf86-video-nv
 PORTVERSION=	2.1.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org nv display driver
 
 XORG_CAT=	driver
-MAN4=		nv.4x
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

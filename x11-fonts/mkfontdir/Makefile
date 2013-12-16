@@ -12,8 +12,6 @@ RUN_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 XORG_CAT=	app
 
-PLIST_FILES=	bin/mkfontdir
-MAN1=		mkfontdir.1
+PLIST_FILES=	bin/mkfontdir man/man1/mkfontdir.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

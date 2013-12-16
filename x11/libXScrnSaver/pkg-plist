@@ -4,4 +4,16 @@ lib/libXss.so
 lib/libXss.la
 lib/libXss.a
 libdata/pkgconfig/xscrnsaver.pc
+man/man3/Xss.3.gz
+man/man3/XScreenSaverAllocInfo.3.gz
+man/man3/XScreenSaverGetRegistered.3.gz
+man/man3/XScreenSaverQueryExtension.3.gz
+man/man3/XScreenSaverQueryInfo.3.gz
+man/man3/XScreenSaverQueryVersion.3.gz
+man/man3/XScreenSaverRegister.3.gz
+man/man3/XScreenSaverSelectInput.3.gz
+man/man3/XScreenSaverSetAttributes.3.gz
+man/man3/XScreenSaverSuspend.3.gz
+man/man3/XScreenSaverUnregister.3.gz
+man/man3/XScreenSaverUnsetAttributes.3.gz
 @dirrmtry include/X11/extensions

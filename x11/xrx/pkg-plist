@@ -5,4 +5,5 @@ lib/libxrx.so
 lib/libxrxnest.a
 lib/libxrxnest.la
 lib/libxrxnest.so
-@dirrmtry include/X11/extensions
+man/man1/xrx.1.gz
+man/man1/libxrx.1.gz

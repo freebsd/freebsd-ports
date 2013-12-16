@@ -6,6 +6,7 @@ lib/libchromeXvMCPro.so
 lib/libchromeXvMCPro.so.1
 lib/xorg/modules/drivers/openchrome_drv.la
 lib/xorg/modules/drivers/openchrome_drv.so
+man/man4/openchrome.4x.gz
 @dirrmtry lib/xorg/modules/drivers
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg

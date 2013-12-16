@@ -12,9 +12,6 @@ COMMENT=	Dependency generator for makefiles
 XORG_CAT=	util
 USE_XORG=	xproto
 
-PLIST_FILES=	bin/makedepend
+PLIST_FILES=	bin/makedepend man/man1/makedepend.1.gz
 
-MAN1=		makedepend.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

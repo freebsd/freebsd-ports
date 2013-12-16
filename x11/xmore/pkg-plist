@@ -1,4 +1,5 @@
 bin/xmore
+man/man1/xmore.1.gz
 share/X11/app-defaults/XMore
 @dirrmtry share/X11/app-defaults
 @dirrmtry share/X11

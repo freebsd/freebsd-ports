@@ -5,6 +5,35 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20131216:
+  AFFECTS: users of x11/xorg, graphics/libGL, graphics/dri, all xorg ports
+  AUTHOR: zeising@FreeBSD.org
+
+  The default xorg version has been switched on FreeBSD CURRENT.
+
+  To upgrade graphics/libGL, graphics/dri and related MESA ports, it is
+  neccessary to first remove the old versions of those ports.
+  No special upgrade procedure is needed for xorg port but it is
+  necessary to recompile all xorg drivers (xf86-*) and other ports that
+  depend on the xserver version, including
+  emulators/virtualbox-ose-additions.  Portrevisions have been bumped
+  where needed, but users of drivers not in the ports tree will need to
+  recompile those.
+
+  If it is important to stay on the old versions, it is possible to
+  specify WITHOUT_NEW_XORG= in /etc/make.conf to get the old xorg
+  distribution.
+
+  To update:
+
+  # pkg_delete -f libGL-\* dri-\*
+    or
+  # pkg delete -f libGL dri
+    followed by
+  # portmaster -a
+    or
+  # portupgrade -a
+
 20131214:
   AFFECTS: users of databases/db4*
   AUTHOR: mandree@FreeBSD.org

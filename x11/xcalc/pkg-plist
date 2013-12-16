@@ -1,4 +1,5 @@
 bin/xcalc
+man/man1/xcalc.1.gz
 share/X11/app-defaults/XCalc
 share/X11/app-defaults/XCalc-color
 @dirrmtry share/X11/app-defaults

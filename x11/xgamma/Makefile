@@ -10,9 +10,6 @@ COMMENT=	Gamma correction through the X server.
 XORG_CAT=	app
 USE_XORG=	x11 xxf86vm
 
-PLIST_FILES=	bin/xgamma
+PLIST_FILES=	bin/xgamma man/man1/xgamma.1.gz
 
-MAN1=		xgamma.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

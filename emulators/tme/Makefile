@@ -3,7 +3,7 @@
 
 PORTNAME=	tme
 PORTVERSION=	0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://people.csail.mit.edu/fredette/tme/
 

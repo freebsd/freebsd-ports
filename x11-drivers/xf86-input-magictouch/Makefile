@@ -8,11 +8,13 @@ CATEGORIES=	x11-drivers
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	X.Org magictouch input driver
 
+.include <bsd.port.options.mk>
+
+.if defined(WITH_NEW_XORG)
 IGNORE=		needs xf86_ansic.h which doesn't exist with recent xserver
+.endif
 
 XORG_CAT=	driver
-MAN4=		magictouch.4x
 USE_AUTOTOOLS=	libtool
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

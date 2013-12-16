@@ -9,5 +9,4 @@ COMMENT=	X.Org Bitstream Vera Speedo font
 
 XORG_CAT=	font
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

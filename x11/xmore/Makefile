@@ -10,7 +10,4 @@ COMMENT=	Plain text display program for X
 XORG_CAT=	app
 USE_XORG=	xt xaw xp xprintutil
 
-MAN1=		xmore.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

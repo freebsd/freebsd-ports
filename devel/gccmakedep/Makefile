@@ -13,10 +13,7 @@ XORG_CAT=	util
 
 BUILD_DEPENDS=	tradcpp:${PORTSDIR}/devel/tradcpp
 
-MAN1=		gccmakedep.1
-
-PLIST_FILES=	bin/gccmakedep
+PLIST_FILES=	bin/gccmakedep man/man1/gccmakedep.1.gz
 CONFIGURE_ENV+=	ac_cv_path_RAWCPP=tradcpp
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

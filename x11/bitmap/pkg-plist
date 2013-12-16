@@ -14,6 +14,9 @@ include/X11/bitmaps/RotateRight
 include/X11/bitmaps/Stipple
 include/X11/bitmaps/Term
 include/X11/bitmaps/Up
+man/man1/atobm.1.gz
+man/man1/bitmap.1.gz
+man/man1/bmtoa.1.gz
 share/X11/app-defaults/Bitmap
 share/X11/app-defaults/Bitmap-color
 share/X11/app-defaults/Bitmap-nocase

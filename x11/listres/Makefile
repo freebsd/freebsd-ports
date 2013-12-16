@@ -10,9 +10,6 @@ COMMENT=	List resources in widgets
 XORG_CAT=	app
 USE_XORG=	xproto xt xmu xaw
 
-PLIST_FILES=	bin/listres
+PLIST_FILES=	bin/listres man/man1/listres.1.gz
 
-MAN1=		listres.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

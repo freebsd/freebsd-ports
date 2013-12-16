@@ -10,9 +10,6 @@ COMMENT=	List fonts served by the X font server
 XORG_CAT=	app
 USE_XORG=	x11 libfs
 
-PLIST_FILES=	bin/fslsfonts
+PLIST_FILES=	bin/fslsfonts man/man1/fslsfonts.1.gz
 
-MAN1=		fslsfonts.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

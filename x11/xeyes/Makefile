@@ -10,9 +10,6 @@ COMMENT=	A follow the mouse X demo
 XORG_CAT=	app
 USE_XORG=	x11 xt xext xmu xrender
 
-PLIST_FILES=	bin/xeyes
+PLIST_FILES=	bin/xeyes man/man1/xeyes.1.gz
 
-MAN1=		xeyes.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

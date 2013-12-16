@@ -10,9 +10,6 @@ COMMENT=	Set the mode for an X Input Device
 XORG_CAT=	app
 USE_XORG=	xi x11
 
-PLIST_FILES=	bin/xsetmode
+PLIST_FILES=	bin/xsetmode man/man1/xsetmode.1.gz
 
-MAN1=		xsetmode.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

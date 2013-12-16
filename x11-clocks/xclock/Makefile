@@ -12,7 +12,4 @@ XORG_CAT=	app
 USE_XORG=	xrender xft xkbfile xt xaw
 USES=		iconv
 
-MAN1=		xclock.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

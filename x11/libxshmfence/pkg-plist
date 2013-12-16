@@ -1,0 +1,6 @@
+include/X11/xshmfence.h
+lib/libxshmfence.a
+lib/libxshmfence.la
+lib/libxshmfence.so
+lib/libxshmfence.so.1
+libdata/pkgconfig/xshmfence.pc

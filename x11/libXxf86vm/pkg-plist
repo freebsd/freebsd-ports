@@ -4,4 +4,26 @@ lib/libXxf86vm.la
 lib/libXxf86vm.so
 lib/libXxf86vm.so.1
 libdata/pkgconfig/xxf86vm.pc
+man/man3/XF86VM.3.gz
+man/man3/XF86VidModeLockModeSwitch.3.gz
+man/man3/XF86VidModeDeleteModeLine.3.gz
+man/man3/XF86VidModeModModeLine.3.gz
+man/man3/XF86VidModeGetAllModeLines.3.gz
+man/man3/XF86VidModeQueryExtension.3.gz
+man/man3/XF86VidModeGetDotClocks.3.gz
+man/man3/XF86VidModeQueryVersion.3.gz
+man/man3/XF86VidModeGetGamma.3.gz
+man/man3/XF86VidModeSetClientVersion.3.gz
+man/man3/XF86VidModeGetGammaRamp.3.gz
+man/man3/XF86VidModeSetGamma.3.gz
+man/man3/XF86VidModeGetGammaRampSize.3.gz
+man/man3/XF86VidModeSetGammaRamp.3.gz
+man/man3/XF86VidModeGetModeLine.3.gz
+man/man3/XF86VidModeSetViewPort.3.gz
+man/man3/XF86VidModeGetMonitor.3.gz
+man/man3/XF86VidModeSwitchMode.3.gz
+man/man3/XF86VidModeGetPermissions.3.gz
+man/man3/XF86VidModeSwitchToMode.3.gz
+man/man3/XF86VidModeGetViewPort.3.gz
+man/man3/XF86VidModeValidateModeLine.3.gz
 @dirrmtry include/X11/extensions

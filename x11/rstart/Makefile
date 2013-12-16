@@ -10,7 +10,4 @@ COMMENT=	Sample implementation of a Remote Start client
 XORG_CAT=	app
 USE_XORG=	x11
 
-MAN1=		rstart.1 rstartd.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

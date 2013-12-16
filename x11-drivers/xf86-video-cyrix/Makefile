@@ -2,7 +2,7 @@
 
 PORTNAME=	xf86-video-cyrix
 PORTVERSION=	1.1.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -12,7 +12,5 @@ IGNORE=		requires pciVideoPtr typedef
 
 XORG_CAT=	driver
 USE_XORG=	xextproto xf86dgaproto
-MAN4=		cyrix.4x
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

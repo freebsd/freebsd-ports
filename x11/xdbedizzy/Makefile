@@ -12,9 +12,6 @@ LICENSE=	MIT
 XORG_CAT=	app
 USE_XORG=	xp xext xprintutil xp xau xext
 
-PLIST_FILES=	bin/xdbedizzy
+PLIST_FILES=	bin/xdbedizzy man/man1/xdbedizzy.1.gz
 
-MAN1=		xdbedizzy.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

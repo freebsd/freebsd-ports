@@ -1,5 +1,11 @@
 bin/X
+%%SUID%%@owner root
+%%SUID%%@group wheel
+%%SUID%%@mode 4555
 bin/Xorg
+%%SUID%%@owner
+%%SUID%%@group
+%%SUID%%@mode
 bin/cvt
 bin/gtf
 include/xorg/BT.h
@@ -226,8 +232,16 @@ lib/xorg/modules/multimedia/uda1380_drv.la
 lib/xorg/modules/multimedia/uda1380_drv.so
 lib/xorg/protocol.txt
 libdata/pkgconfig/xorg-server.pc
+man/man1/Xorg.1.gz
+man/man1/Xserver.1.gz
+man/man1/cvt.1.gz
+man/man1/gtf.1.gz
+man/man4/exa.4.gz
+man/man4/fbdevhw.4.gz
+man/man5/xorg.conf.5.gz
+%%NEW%%man/man5/xorg.conf.d.5.gz
 share/aclocal/xorg-server.m4
-%%NEW%%@exec /bin/mkdir -p %D/share/X11/xorg.conf.d
+%%NEW%%@exec /bin/mkdir -p %D/etc/X11/xorg.conf.d
 @comment %%NEW%%@dirrm share/doc/xorg-server
 @dirrm include/xorg
 @dirrm lib/xorg/modules/extensions/.xorg
@@ -236,5 +250,5 @@ share/aclocal/xorg-server.m4
 %%OLD%%@dirrm lib/xorg/modules/linux
 @dirrm lib/xorg/modules
 @dirrm lib/xorg
-%%NEW%%@dirrmtry share/X11/xorg.conf.d
-@dirrmtry share/X11
+%%NEW%%@dirrmtry etc/X11/xorg.conf.d
+%%NEW%%@dirrmtry etc/X11

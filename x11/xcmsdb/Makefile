@@ -12,9 +12,6 @@ LICENSE=	MIT
 XORG_CAT=	app
 USE_XORG=	x11
 
-PLIST_FILES=	bin/xcmsdb
+PLIST_FILES=	bin/xcmsdb man/man1/xcmsdb.1.gz
 
-MAN1=		xcmsdb.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

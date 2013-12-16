@@ -2,3 +2,4 @@ bin/xauth_switch_to_sun-des-1
 bin/fontname.sh
 bin/fontprop.sh
 bin/xon
+man/man1/xon.1.gz

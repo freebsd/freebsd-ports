@@ -10,9 +10,6 @@ COMMENT=	Manage utmp/wtmp entries for non-init X clients
 XORG_CAT=	app
 USE_XORG=	x11
 
-PLIST_FILES=	bin/sessreg
+PLIST_FILES=	bin/sessreg man/man1/sessreg.1.gz
 
-MAN1=		sessreg.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

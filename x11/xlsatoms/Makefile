@@ -12,9 +12,6 @@ LICENSE=	MIT
 XORG_CAT=	app
 USE_XORG=	x11 xmuu
 
-PLIST_FILES=	bin/xlsatoms
+PLIST_FILES=	bin/xlsatoms man/man1/xlsatoms.1.gz
 
-MAN1=		xlsatoms.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -10,7 +10,4 @@ COMMENT=	Display message or query in a X window
 XORG_CAT=	app
 USE_XORG=	xt xaw
 
-MAN1=		xmessage.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

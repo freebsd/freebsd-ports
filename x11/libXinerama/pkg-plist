@@ -5,4 +5,9 @@ lib/libXinerama.la
 lib/libXinerama.so
 lib/libXinerama.so.1
 libdata/pkgconfig/xinerama.pc
+man/man3/Xinerama.3.gz
+man/man3/XineramaQueryExtension.3.gz
+man/man3/XineramaQueryVersion.3.gz
+man/man3/XineramaIsActive.3.gz
+man/man3/XineramaQueryScreens.3.gz
 @dirrmtry include/X11/extensions

@@ -1,4 +1,5 @@
 bin/xclock
+man/man1/xclock.1.gz
 share/X11/app-defaults/XClock-color
 share/X11/app-defaults/XClock
 @dirrmtry share/X11/app-defaults

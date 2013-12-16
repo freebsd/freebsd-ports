@@ -3,7 +3,7 @@
 
 PORTNAME=	xf86-video-radeonhd
 PORTVERSION=	1.3.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -17,9 +17,6 @@ USE_XORG=	damageproto glproto videoproto xextproto xf86driproto
 CONFIGURE_ARGS=	--enable-exa
 CONFLICTS=	xf86-video-radeonhd-devel-[0-9]*
 
-MAN4=	radeonhd.4x
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUTILS}

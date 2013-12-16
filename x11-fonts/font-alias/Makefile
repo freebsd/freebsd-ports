@@ -11,5 +11,4 @@ COMMENT=	X.Org Font aliases
 XORG_CAT=	font
 FONTDIR=	100dpi 75dpi misc cyrillic
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

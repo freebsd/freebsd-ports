@@ -10,5 +10,4 @@ COMMENT=	X.Org Screen Cyrillic font
 
 XORG_CAT=	font
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@
 PORTNAME=	xf86-video-nouveau
 PORTVERSION=	0.0.10.${SNAPDATE}
 DISTVERSIONSUFFIX=.${SNAPREV}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-drivers
 MASTER_SITES=	ftp://ftp.lissyara.su/users/Guest/distfiles/
 
@@ -13,13 +13,12 @@ COMMENT=	Free nouveau display driver for nvidia-based cards
 
 XORG_CAT=	driver
 USE_XORG=	xf86driproto glproto
-MAN4=		nouveau.4x
 
+# also doesn't work with mesa (libGL) version higher than 7.4.x
+BROKEN=		Does not build
+DEPRECATED=	Not supported, missing kernel support. use the nvidia driver.
+EXPIRATION_DATE=2014-01-31
 
-# also doesn't work with mesa (libGL) version higher then 7.4.x
-IGNORE=		Not supported, missing kernel support. use the nvidia driver.
-
-NO_STAGE=	yes
 post-configure:
 	${REINPLACE_CMD} '/NV_DRIVER_DATE/s/".*"/"${SNAPDATE}.${SNAPREV}"/' ${WRKSRC}/config.h
 

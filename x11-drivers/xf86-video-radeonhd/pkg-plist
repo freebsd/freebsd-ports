@@ -1,5 +1,6 @@
 lib/xorg/modules/drivers/radeonhd_drv.la
 lib/xorg/modules/drivers/radeonhd_drv.so
+man/man4/radeonhd.4x.gz
 %%UTILS%%sbin/rhd_conntest
 %%UTILS%%sbin/rhd_dump
 @dirrmtry lib/xorg/modules/drivers

@@ -11,9 +11,6 @@ COMMENT=	A sample X compositing manager
 XORG_CAT=	app
 USE_XORG=	x11 xcomposite xfixes xdamage xrender
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
-MAN1=		xcompmgr.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
