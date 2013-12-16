@@ -329,8 +329,6 @@ bin/exiftool
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%SITE_PERL%%/mach/auto/Image/ExifTool
 @dirrm %%SITE_PERL%%/mach/auto/Image
-@dirrm %%SITE_PERL%%/mach/auto
-@dirrm %%SITE_PERL%%/mach
 @dirrm %%SITE_PERL%%/Image/ExifTool/Lang
 @dirrm %%SITE_PERL%%/Image/ExifTool/Charset
 @dirrm %%SITE_PERL%%/Image/ExifTool
