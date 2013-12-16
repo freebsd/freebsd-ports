@@ -1,0 +1,15 @@
+--- gold/config.in.orig	2012-09-11 11:20:40.000000000 +0200
++++ gold/config.in	2013-06-22 20:44:46.000000000 +0200
+@@ -190,6 +190,12 @@
+ /* Define to 1 if you have the <windows.h> header file. */
+ #undef HAVE_WINDOWS_H
+ 
++/* Define to 1 if you have the <unordered_map> header file. */
++#undef HAVE_UNORDERED_MAP
++
++/* Define to 1 if you have the <unordered_set> header file. */
++#undef HAVE_UNORDERED_SET
++
+ /* Define to 1 if you have the <zlib.h> header file. */
+ #undef HAVE_ZLIB_H
+ 

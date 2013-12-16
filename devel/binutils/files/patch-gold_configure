@@ -1,0 +1,23 @@
+--- gold/configure.orig	2013-11-08 11:13:48.000000000 +0100
++++ gold/configure	2013-12-14 13:03:48.000000000 +0100
+@@ -7133,6 +7133,20 @@
+ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+ 
+ 
++for ac_header in unordered_set unordered_map
++do :
++  as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
++ac_fn_cxx_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"
++eval as_val=\$$as_ac_Header
++   if test "x$as_val" = x""yes; then :
++  cat >>confdefs.h <<_ACEOF
++#define `$as_echo "HAVE_$ac_header" | $as_tr_cpp` 1
++_ACEOF
++
++fi
++
++done
++
+ for ac_header in tr1/unordered_set tr1/unordered_map
+ do :
+   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
