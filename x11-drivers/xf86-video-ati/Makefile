@@ -12,7 +12,7 @@ USE_GL=		gl
 XORG_CAT=	driver
 USE_XORG=	xf86driproto xineramaproto xf86miscproto glproto
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1000051 || !defined(WITH_NEW_XORG)
 ATI_VERSION=	6.14.6
@@ -27,4 +27,4 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-src__radeon_kms.c
 PLIST_SUB+=	OLD="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
