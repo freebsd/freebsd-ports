@@ -14,6 +14,10 @@ COMMENT=	HP's Ski IA-64 simulator
 
 ONLY_FOR_ARCHS=	i386
 
+BROKEN=		${DISTNAME}${EXTRACT_SUFX} does not exist on HP's site anymore
+DEPRECATED=	${BROKEN} and there's no apparent interest in the port
+EXPIRATION_DATE=2014-03-24
+
 NOTICE=		 -- please manually download ${DISTNAME}${EXTRACT_SUFX} from the HP site (http://www.hpl.hp.com/research/linux/ski/download.php) and put it in ${DISTDIR} first
 RESTRICTED=	License restrictions disallow automatic downloads and redistribution of the software.
 
