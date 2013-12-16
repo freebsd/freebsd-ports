@@ -3,7 +3,7 @@
 
 PORTNAME=	minidlna
 PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net multimedia www
 MASTER_SITES=	SF
@@ -21,11 +21,13 @@ LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3	\
 		libavformat.so:${PORTSDIR}/multimedia/ffmpeg
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-db-path=/var/db/minidlna \
+CONFIGURE_ARGS=	--with-db-path=/var/db/minidlna \
 		--with-os-url="http://www.FreeBSD.org"
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		iconv
+USE_AUTOTOOLS=	autoconf aclocal automake
+AUTOMAKE_ARGS=	--add-missing
 
 PKGMESSAGE=	${WRKSRC}/pkg-message
 SUB_FILES+=	pkg-message
