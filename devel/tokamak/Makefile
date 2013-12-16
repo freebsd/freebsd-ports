@@ -23,7 +23,6 @@ BUILD_WRKSRC=	${WRKSRC}/build/gnu
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 .include <bsd.port.options.mk>
 

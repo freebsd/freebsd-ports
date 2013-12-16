@@ -22,7 +22,6 @@ USE_SDL=	sdl
 PORTDOCS=	README ChangeLog
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 regression-test:
 	cd ${BUILD_WRKSRC} && ctest

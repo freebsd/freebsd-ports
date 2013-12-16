@@ -28,7 +28,6 @@ PORTDOCS=	Readme Readme.elite
 PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 post-extract:
 	@${FIND} ${WRKSRC}/Data -name '._*' -delete
