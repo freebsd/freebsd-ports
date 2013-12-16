@@ -1429,13 +1429,6 @@
 %%WWWDIR%%/3rdparty/fontawesome/font/fontawesome-webfont.svg
 %%WWWDIR%%/3rdparty/fontawesome/font/fontawesome-webfont.ttf
 %%WWWDIR%%/3rdparty/fontawesome/font/fontawesome-webfont.woff
-%%WWWDIR%%/3rdparty/fullcalendar/GPL-LICENSE.txt
-%%WWWDIR%%/3rdparty/fullcalendar/MIT-LICENSE.txt
-%%WWWDIR%%/3rdparty/fullcalendar/css/fullcalendar.css
-%%WWWDIR%%/3rdparty/fullcalendar/css/fullcalendar.print.css
-%%WWWDIR%%/3rdparty/fullcalendar/js/fullcalendar.js
-%%WWWDIR%%/3rdparty/fullcalendar/js/fullcalendar.min.js
-%%WWWDIR%%/3rdparty/fullcalendar/js/gcal.js
 %%WWWDIR%%/3rdparty/getid3/extension.cache.dbm.php
 %%WWWDIR%%/3rdparty/getid3/extension.cache.mysql.php
 %%WWWDIR%%/3rdparty/getid3/extension.cache.sqlite3.php
@@ -1528,8 +1521,6 @@
 %%WWWDIR%%/3rdparty/miniColors/css/jquery.miniColors.css
 %%WWWDIR%%/3rdparty/miniColors/js/jquery.miniColors.js
 %%WWWDIR%%/3rdparty/miniColors/js/jquery.miniColors.min.js
-%%WWWDIR%%/3rdparty/openid/class.openid.v3.php
-%%WWWDIR%%/3rdparty/openid/phpmyid.php
 %%WWWDIR%%/3rdparty/phpass/PasswordHash.php
 %%WWWDIR%%/3rdparty/phpass/c/Makefile
 %%WWWDIR%%/3rdparty/phpass/c/crypt_private.c
@@ -2306,7 +2297,6 @@
 %%WWWDIR%%/3rdparty/phpdocx/templates/xmls/settings.xml
 %%WWWDIR%%/3rdparty/phpdocx/templates/xmls/styles.xml
 %%WWWDIR%%/3rdparty/phpdocx/xsl/docx2html.xsl
-%%WWWDIR%%/3rdparty/smb4php/smb.php
 %%WWWDIR%%/3rdparty/symfony/console/Symfony/Component/Console/Application.php
 %%WWWDIR%%/3rdparty/symfony/console/Symfony/Component/Console/CHANGELOG.md
 %%WWWDIR%%/3rdparty/symfony/console/Symfony/Component/Console/Command/Command.php
@@ -6850,6 +6840,7 @@
 %%WWWDIR%%/apps/search_lucene/appinfo/app.php
 %%WWWDIR%%/apps/search_lucene/appinfo/database.xml
 %%WWWDIR%%/apps/search_lucene/appinfo/info.xml
+%%WWWDIR%%/apps/search_lucene/appinfo/preupdate.php
 %%WWWDIR%%/apps/search_lucene/appinfo/update.php
 %%WWWDIR%%/apps/search_lucene/appinfo/version
 %%WWWDIR%%/apps/search_lucene/css/lucene.css
@@ -7286,14 +7277,17 @@
 %%WWWDIR%%/core/doc/admin/_images/custom_mount_config_gui-2.png
 %%WWWDIR%%/core/doc/admin/_images/custom_mount_config_gui-3.png
 %%WWWDIR%%/core/doc/admin/_images/custom_mount_config_gui-4.png
-%%WWWDIR%%/core/doc/admin/_images/ldap-advanced-settings-connection-settings-oc5.png
-%%WWWDIR%%/core/doc/admin/_images/ldap-advanced-settings-directory-settings-oc5.png
-%%WWWDIR%%/core/doc/admin/_images/ldap-advanced-settings-oc5.png
-%%WWWDIR%%/core/doc/admin/_images/ldap-advanced-settings-special-attributes-oc5.png
-%%WWWDIR%%/core/doc/admin/_images/ldap-basic-settings-oc5.png
-%%WWWDIR%%/core/doc/admin/_images/ldap-expert-settings-oc5.png
+%%WWWDIR%%/core/doc/admin/_images/ldap-advanced-1-connection.png
+%%WWWDIR%%/core/doc/admin/_images/ldap-advanced-2-directory.png
+%%WWWDIR%%/core/doc/admin/_images/ldap-advanced-3-attributes.png
+%%WWWDIR%%/core/doc/admin/_images/ldap-expert.png
+%%WWWDIR%%/core/doc/admin/_images/ldap-fetched-avatar.png
 %%WWWDIR%%/core/doc/admin/_images/ldap-settings-invalid-oc45.png
 %%WWWDIR%%/core/doc/admin/_images/ldap-settings-valid-oc45.png
+%%WWWDIR%%/core/doc/admin/_images/ldap-wizard-1-server.png
+%%WWWDIR%%/core/doc/admin/_images/ldap-wizard-2-user.png
+%%WWWDIR%%/core/doc/admin/_images/ldap-wizard-3-login.png
+%%WWWDIR%%/core/doc/admin/_images/ldap-wizard-4-group.png
 %%WWWDIR%%/core/doc/admin/_images/ucs-app-center-install.png
 %%WWWDIR%%/core/doc/admin/_images/ucs-app-center-module.png
 %%WWWDIR%%/core/doc/admin/_images/ucsint.png
@@ -10723,7 +10717,6 @@
 @dirrmtry %%WWWDIR%%/3rdparty/symfony/console/Symfony
 @dirrmtry %%WWWDIR%%/3rdparty/symfony/console
 @dirrmtry %%WWWDIR%%/3rdparty/symfony
-@dirrmtry %%WWWDIR%%/3rdparty/smb4php
 @dirrmtry %%WWWDIR%%/3rdparty/phpdocx/xsl
 @dirrmtry %%WWWDIR%%/3rdparty/phpdocx/templates/xmls
 @dirrmtry %%WWWDIR%%/3rdparty/phpdocx/templates
@@ -10795,7 +10788,6 @@
 @dirrmtry %%WWWDIR%%/3rdparty/phpdocx
 @dirrmtry %%WWWDIR%%/3rdparty/phpass/c
 @dirrmtry %%WWWDIR%%/3rdparty/phpass
-@dirrmtry %%WWWDIR%%/3rdparty/openid
 @dirrmtry %%WWWDIR%%/3rdparty/miniColors/js
 @dirrmtry %%WWWDIR%%/3rdparty/miniColors/css/images
 @dirrmtry %%WWWDIR%%/3rdparty/miniColors/css
@@ -10805,9 +10797,6 @@
 @dirrmtry %%WWWDIR%%/3rdparty/js/chosen
 @dirrmtry %%WWWDIR%%/3rdparty/js
 @dirrmtry %%WWWDIR%%/3rdparty/getid3
-@dirrmtry %%WWWDIR%%/3rdparty/fullcalendar/js
-@dirrmtry %%WWWDIR%%/3rdparty/fullcalendar/css
-@dirrmtry %%WWWDIR%%/3rdparty/fullcalendar
 @dirrmtry %%WWWDIR%%/3rdparty/fontawesome/font
 @dirrmtry %%WWWDIR%%/3rdparty/fontawesome/docs/assets/less/twbs-222/tests
 @dirrmtry %%WWWDIR%%/3rdparty/fontawesome/docs/assets/less/twbs-222
