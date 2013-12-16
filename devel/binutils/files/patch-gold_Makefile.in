@@ -1,12 +1,11 @@
-
-$FreeBSD$
-
---- gold/Makefile.in.orig
-+++ gold/Makefile.in
-@@ -368,7 +368,6 @@
- 	@INCINTL@
+--- gold/Makefile.in.orig	2013-11-04 16:33:39.000000000 +0100
++++ gold/Makefile.in	2013-12-13 17:15:03.279391312 +0100
+@@ -419,7 +419,7 @@
+ 	-DTOOLLIBDIR="\"$(tooldir)/lib\"" @INCINTL@
  
  LIBIBERTY = ../libiberty/libiberty.a
--@PLUGINS_TRUE@LIBDL = -ldl
+-@PLUGINS_TRUE@LIBDL = @DLOPEN_LIBS@
++@PLUGINS_TRUE@LIBDL = 
  @THREADS_TRUE@THREADSLIB = -lpthread
  AM_YFLAGS = -d
+ 
