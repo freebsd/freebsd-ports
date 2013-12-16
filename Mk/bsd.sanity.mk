@@ -149,3 +149,7 @@ DEV_WARNING+=	"LICENSE must not contain BSD, instead use BSD[234]CLAUSE"
 .if defined(USE_PYDISTUTILS) && ${USE_PYDISTUTILS} == "easy_install"
 DEV_WARNING+=	"USE_PYDISTUTILS=easy_install is deprecated, please use USE_PYDISTUTILS=yes"
 .endif
+
+.if defined(USE_PYDISTUTILS) && ${USE_PYDISTUTILS} != "easy_install" && defined(PYDISTUTILS_AUTOPLIST) && defined(PYDISTUTILS_PKGNAME)
+DEV_WARNING+=	"PYDISTUTILS_PKGNAME has no effect for USE_PYDISTUTILS=yes and PYDISTUTILS_AUTOPLIST=yes"
+.endif
