@@ -161,8 +161,8 @@ make-pkg-install:
 	@ ${SED} "/^\. /s/^/: /;/^BASE_DIR=/d;s/BIN_DIR=/: BIN_DIR=/;/^POLICYSRC/d" ${WRKSRC}/install/install.sh >> ${PKGINSTALL}
 
 create-database:
-.if ${PORT_OPTIONS:MDB_BUILD} && ${WITH_DB_BUILD} == "true"
-.if ${PORT_OPTIONS:MSW_ONLY} && ${WITH_SW_ONLY} == "true"
+.if ${PORT_OPTIONS:MDB_BUILD}
+.if ${PORT_OPTIONS:MSW_ONLY}
 	@ ${ECHO} SW_ONLY has been specified, database will not be built.
 .else
 	@ ${MKDIR} ${TWCFG} ${TWPOLICY} ${TWSITEKEYDIR} ${TWLOCALKEYDIR} \
