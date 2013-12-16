@@ -1,6 +1,13 @@
---- src/native/Makefile.orig	2003-01-07 07:14:35.000000000 -0300
-+++ src/native/Makefile	2008-02-16 18:53:37.000000000 -0300
-@@ -44,10 +44,12 @@
+--- src/native/Makefile.orig	2003-01-07 11:14:35.000000000 +0100
++++ src/native/Makefile	2013-12-13 08:29:23.000000000 +0100
+@@ -38,25 +38,28 @@
+ INCLUDES = -I "c:/Programme/DevStudio/VC/include" \
+ 			-I $(JAVAINCLUDE) -I $(JAVANATINC)
+ LIB = "c:/Programme/DevStudio/VC/lib"
+-CC = cl
++#CC = gcc
+ OBJ_EXT := obj
+ LIB_PRE := 
  LIB_EXT := dll
  CFLAGS=-DWIN32=$(WIN32) -D__IBMC__
  else
@@ -16,7 +23,8 @@
  ifeq (cygwin,$(WIN32))
  JavaGetline_LIBS = -lcygwin
  endif
-@@ -55,8 +57,9 @@
+-CC = gcc
++CC = cc
  OBJ_EXT := o
  LIB_PRE := lib
  LIB_EXT := so
