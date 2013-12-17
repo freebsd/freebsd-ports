@@ -51,6 +51,55 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0c39bafc-6771-11e3-868f-0025905a4771">
+    <topic>asterisk -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>asterisk10</name>
+	<range><lt>10.12.4</lt></range>
+      </package>
+      <package>
+	<name>asterisk11</name>
+	<range><lt>11.6.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><lt>1.8.24.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/security">
+	  <p>A 16 bit SMS message that contains an odd message length value will
+	    cause the message decoding loop to run forever. The message buffer is
+	    not on the stack but will be overflowed resulting in corrupted memory
+	    and an immediate crash.</p>
+	  <p>External control protocols, such as the Asterisk Manager Interface,
+	    often have the ability to get and set channel variables; this allows
+	    the execution of dialplan functions. Dialplan functions within
+	    Asterisk are incredibly powerful, which is wonderful for building
+	    applications using Asterisk. But during the read or write execution,
+	    certain diaplan functions do much more. For example, reading the SHELL()
+	    function can execute arbitrary commands on the system Asterisk is
+	    running on.  Writing to the FILE() function can change any file that
+	    Asterisk has write access to.  When these functions are executed from an
+	    external protocol, that execution could result in a privilege escalation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-7100</cvename>
+      <url>http://downloads.asterisk.org/pub/security/AST-2013-006.pdf</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2013-007.pdf</url>
+      <url>https://www.asterisk.org/security</url>
+    </references>
+    <dates>
+      <discovery>2013-12-16</discovery>
+      <entry>2013-12-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3b86583a-66a7-11e3-868f-0025905a4771">
     <topic>phpmyfaq -- arbitrary PHP code execution vulnerability</topic>
     <affects>
@@ -72,12 +121,13 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <url>http://www.phpmyfaq.de/advisory_2013-11-26.php</url>
       <url>http://en.securitylab.ru/lab/PT-2013-41</url>
+      <url>http://www.phpmyfaq.de/advisory_2013-11-26.php</url>
     </references>
     <dates>
       <discovery>2013-11-26</discovery>
       <entry>2013-12-16</entry>
+      <modified>2013-12-17</modified>
     </dates>
   </vuln>
 
