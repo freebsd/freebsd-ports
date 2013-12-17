@@ -1,12 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	tortoisehg
-PORTVERSION=	2.10
+PORTVERSION=	2.10.1
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
 
 MAINTAINER=	6yearold@gmail.com
 COMMENT=	THg script from TortoiseHG
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=4.10.2:${PORTSDIR}/devel/py-qt4-core \
 		${PYTHON_PKGNAMEPREFIX}qt4-qscintilla2>=2.7.2:${PORTSDIR}/devel/py-qt4-qscintilla2 \
