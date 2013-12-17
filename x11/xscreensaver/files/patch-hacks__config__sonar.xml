@@ -1,5 +1,5 @@
---- hacks/config/sonar.xml.orig	2012-07-02 12:25:48.000000000 -0700
-+++ hacks/config/sonar.xml	2012-07-04 15:29:38.000000000 -0700
+--- hacks/config/sonar.xml.orig	2013-12-04 23:42:00.000000000 +0100
++++ hacks/config/sonar.xml	2013-12-09 12:29:34.301395635 +0100
 @@ -29,7 +29,7 @@
  
       <option id="ssh" _label="Ping known SSH hosts"      arg-set="-ping /etc/hosts,$HOME/.ssh/known_hosts,$HOME/.ssh/known_hosts2"/>
@@ -9,13 +9,12 @@
  
       <option id="sim" _label="Simulation (don't ping)"   arg-set="-ping simulation"/>
      </select>
-@@ -74,8 +74,7 @@
+@@ -76,6 +76,8 @@
  
  Alternately, it can run a simulation that doesn't involve hosts.
  
--(If pinging doesn't work on Linux, you may need to make the executable
--be setuid.)
 +To ping, use the port build option to install this suid.
- 
++
  http://en.wikipedia.org/wiki/Ping#History
  
+ Written by Jamie Zawinski and Stephen Martin; 1998.
