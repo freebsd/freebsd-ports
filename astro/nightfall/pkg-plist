@@ -1,4 +1,5 @@
 bin/nightfall
+man/man1/nightfall.1.gz
 share/applications/nightfall.desktop
 %%GNOMEUI%%share/gnome/help/nightfall/C/nightfall.xml
 %%GNOMEUI%%share/gnome/help/nightfall/de/nightfall.xml
