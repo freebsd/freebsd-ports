@@ -1454,9 +1454,9 @@
 %%PYPY_LIBDIR%%/lib2to3/tests/test_util.pyc
 %%PYPY_LIBDIR%%/lib_pypy/__init__.py
 %%PYPY_LIBDIR%%/lib_pypy/__init__.pyc
-%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g3e8f69b6x1fd01a91.pypy-%%PYPY_VER%%.so
-%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g45f34413x310af836.pypy-%%PYPY_VER%%.so
-%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__ga01735dbxad93c709.pypy-%%PYPY_VER%%.so
+%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g16926e9ax39a3fadd.pypy-%%PYPY_VER%%.so
+%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g3ed5c373x359e5476.pypy-%%PYPY_VER%%.so
+%%PYPY_LIBDIR%%/lib_pypy/__pycache__/_cffi__g8b5895b6x576c1bb2.pypy-%%PYPY_VER%%.so
 %%PYPY_LIBDIR%%/lib_pypy/_codecs_cn.py
 %%PYPY_LIBDIR%%/lib_pypy/_codecs_cn.pyc
 %%PYPY_LIBDIR%%/lib_pypy/_codecs_hk.py
