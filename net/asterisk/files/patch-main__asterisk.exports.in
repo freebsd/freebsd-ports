@@ -1,9 +1,9 @@
---- main/asterisk.exports.in.orig	2012-04-10 21:41:26.211743996 +0200
-+++ main/asterisk.exports.in	2012-04-10 21:41:49.229621831 +0200
-@@ -44,6 +44,8 @@
- 		LINKER_SYMBOL_PREFIXres_srtp;
- 		LINKER_SYMBOL_PREFIXres_srtp_policy;
- 		LINKER_SYMBOL_PREFIXsecure_call_info;
+--- main/asterisk.exports.in.orig	2013-08-22 10:19:02.000000000 +0200
++++ main/asterisk.exports.in	2013-10-27 13:37:29.053477896 +0100
+@@ -63,6 +63,8 @@
+ 
+ 		*/
+ 		LINKER_SYMBOL_PREFIX_IO_stdin_used;
 +		LINKER_SYMBOL_PREFIX__progname;
 +		LINKER_SYMBOL_PREFIXenviron;
  	local:
