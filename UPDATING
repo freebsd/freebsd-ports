@@ -5,6 +5,34 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20131217:
+  AFFECTS: users of databases/ruby-bdb and databases/db5 or databases/db6
+  AUTHOR: mandree@FreeBSD.org
+
+  databases/db5 and databases/db6 have recently been updated to fix
+  bugs. This changed their patchlevel version.
+
+  However, ruby-bdb breaks during the upgrade due to a bug described in
+  <http://www.freebsd.org/cgi/query-pr.cgi?pr=184921>.
+
+  THIS MEANS THAT YOU MUST NOT USE PORTUPGRADE TO UPGRADE databases/db5
+  databases/db6 and databases/ruby-bdb. Doing that will break the latter and
+  cause corrupted dependency data.  Use portmaster for the upgrade.
+
+  If you are in a situation where portupgrade refuses to work with
+  errors like:
+
+  DB needs compatible versions of libdb & db.h
+    you have db.h version 5.3.21 and libdb version 5.3.28
+
+  then you must manually upgrade the ruby-bdb port and repair dependency data:
+
+  # make -C /usr/ports/databases/ruby-bdb all deinstall install clean
+  # pkgdb -fu
+  # portupgrade -f db5 db6
+
+  This should return portupgrade to normal operation.
+
 20131216:
   AFFECTS: users of x11/xorg, graphics/libGL, graphics/dri, all xorg ports
   AUTHOR: zeising@FreeBSD.org
