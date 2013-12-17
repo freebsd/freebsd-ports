@@ -3,6 +3,7 @@
 
 PORTNAME=	phpMyAdmin
 DISTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${DISTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -25,8 +26,7 @@ USE_PHP=	ctype session filter mbstring json spl
 # want this, either turn off GD in the config dialog, or else turn off
 # FONTCONFIG in the graphics/gd port options.
 
-PHP_MODULE_OPTIONS=	APC BZ2 GD MCRYPT OPENSSL PDF XML ZIP ZLIB
-OPTIONS_DEFINE=		SUPHP ${PHP_MODULE_OPTIONS}
+OPTIONS_DEFINE=		APC BZ2 GD MCRYPT OPENSSL PDF XML ZIP ZLIB
 OPTIONS_DEFAULT=	APC BZ2 GD MCRYPT MYSQLI OPENSSL PDF XML ZIP ZLIB
 
 OPTIONS_MULTI=		DB_connect
@@ -40,52 +40,30 @@ MYSQLI_DESC=	PHP Improved MySQL client support
 MYSQL_DESC=	PHP MySQL support via mysql client
 OPENSSL_DESC=	PHP OpenSSL support
 PDF_DESC=	PHP PDFlib support
-SUPHP_DESC=	suPHP support
 XML_DESC=	PHP XML support (Export to OpenDoc)
 ZIP_DESC=	PHP Zip compression support
 ZLIB_DESC=	PHP ZLIB support
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MSUPHP}
-
-PKGNAMESUFFIX=	-suphp
-RUN_DEPENDS+=	${LOCALBASE}/sbin/suphp:${PORTSDIR}/www/suphp
-WANT_PHP_CGI=	yes
-
-.else
-
 WANT_PHP_WEB=	yes
 
-.endif
-
-# USERS is only used with the SUPHP option
 GROUPS?=	${WWWGRP}
 CFG_FILE=	config.inc.php
 
 PLIST=		${WRKDIR}/plist
 PLIST_SUB+=	PMA_GRP=${GROUPS}
 
-.if ${PORT_OPTIONS:MSUPHP}
-
-USERS?=		_pma
-SUPHP_ENABLED=	yes
-
-.endif
-
 SUB_LIST+=	PKGNAME=${PKGNAME}	       \
-		PMA_USR=${USERS}	       \
-		PMA_GRP=${GROUPS}	       \
-		CFG_FILE=${WWWDIR}/${CFG_FILE} \
-		SUPHP_ENABLED=${SUPHP_ENABLED}
-SUB_FILES+=	pkg-install pkg-deinstall pkg-message
+		CFG_FILE=${WWWDIR}/${CFG_FILE}
+SUB_FILES+=	pkg-message
 
 SHEBANG_FILES=	libraries/plugins/transformations/generator_main_class.sh \
 		libraries/plugins/transformations/generator_plugin.sh
 
 .if !defined(WITHOUT_PHP_DEPENDS)
 
-.for opt in ${PHP_MODULE_OPTIONS} ${OPTIONS_MULTI_DB_connect}
+.for opt in ${OPTIONS_DEFINE} ${OPTIONS_MULTI_DB_connect}
 .    if ${PORT_OPTIONS:M${opt}}
 USE_PHP+=	${opt:L}
 .    endif
