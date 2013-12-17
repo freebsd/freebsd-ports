@@ -2,20 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	generate
-PORTVERSION=	2.6
+PORTVERSION=	2.8
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.druid.net/pub/distrib/
+MASTER_SITES=	http://www.druid.net/darcy/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	darcy@druid.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple text pre-processor
 
-USE_GMAKE=	yes
-MAN1=		generate.1
+USES=		gmake
 
-PLIST_FILES=	bin/generate bin/rgenerate
+MAKE_ARGS=	BINDIR=${STAGEDIR}${PREFIX}/bin \
+		MANDIR=${STAGEDIR}${PREFIX}/man
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/generate bin/rgenerate man/man1/generate.1.gz
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,^CFLAGS *=,CFLAGS +=,' \
 		${WRKSRC}/Makefile
