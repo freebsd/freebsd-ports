@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	mysql
-PORTVERSION=	5.1.72
+PORTVERSION=	5.1.73
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
@@ -62,7 +62,6 @@ CONFIGURE_ARGS+=--with-plugins=max-no-ndb
 CONFIGURE_ARGS+=--with-collation=${WITH_COLLATION}
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"
@@ -153,11 +152,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/sql/mysqld.cc
 .endif
 
-post-install:
-.if !defined(PACKAGE_BUILDING)
-	@${CAT} ${PKGMESSAGE}
-.endif
-
 .else
 # MySQL-Client part
 .if defined(CLIENT_ONLY)
@@ -180,7 +174,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|install-exec-am: install-binPROGRAMS|install-exec-am:|g" ${WRKSRC}/extra/Makefile.in
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/support-files/mysql.m4 ${PREFIX}/share/aclocal/
+	${INSTALL_DATA} ${WRKSRC}/support-files/mysql.m4 ${STAGEDIR}${PREFIX}/share/aclocal/
 
 .else
 # MySQL-Scripts part
