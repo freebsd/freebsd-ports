@@ -32,6 +32,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	ARCH=${ARCH}
+PLIST_SUB:=	${SUB_LIST}
 
 post-patch:
 # Add missing checks for __FreeBSD__
