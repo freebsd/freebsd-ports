@@ -12,6 +12,14 @@ etc/a2ps-site.cfg
 etc/a2ps.cfg
 include/liba2ps.h
 lib/liba2ps.a
+man/man1/a2ps.1.gz
+man/man1/ogonkify.1.gz
+man/man1/card.1.gz
+man/man1/psmandup.1.gz
+man/man1/fixps.1.gz
+man/man1/pdiff.1.gz
+man/man1/psset.1.gz
+man/man1/texi2dvi4a2ps.1.gz
 %%DATADIR%%/README
 %%DATADIR%%/afm/fonts.map
 %%DATADIR%%/afm/make_fonts_map.sh
@@ -47,16 +55,16 @@ lib/liba2ps.a
 %%DATADIR%%/afm/ptmr.afm
 %%DATADIR%%/afm/pzcmi.afm
 %%DATADIR%%/afm/pzdr.afm
-%%WITHI18N%%%%DATADIR%%/afm/colle10.afm
-%%WITHI18N%%%%DATADIR%%/afm/colle8.afm
-%%WITHI18N%%%%DATADIR%%/afm/colle9.afm
-%%WITHI18N%%%%DATADIR%%/afm/crr35__i.afm
-%%WITHI18N%%%%DATADIR%%/afm/crr36__i.afm
-%%WITHI18N%%%%DATADIR%%/afm/crr55__i.afm
-%%WITHI18N%%%%DATADIR%%/afm/crr56__i.afm
-%%WITHI18N%%%%DATADIR%%/afm/textb18.afm
-%%WITHI18N%%%%DATADIR%%/afm/textb19.afm
-%%WITHI18N%%%%DATADIR%%/afm/textb20.afm
+%%I18N%%%%DATADIR%%/afm/colle10.afm
+%%I18N%%%%DATADIR%%/afm/colle8.afm
+%%I18N%%%%DATADIR%%/afm/colle9.afm
+%%I18N%%%%DATADIR%%/afm/crr35__i.afm
+%%I18N%%%%DATADIR%%/afm/crr36__i.afm
+%%I18N%%%%DATADIR%%/afm/crr55__i.afm
+%%I18N%%%%DATADIR%%/afm/crr56__i.afm
+%%I18N%%%%DATADIR%%/afm/textb18.afm
+%%I18N%%%%DATADIR%%/afm/textb19.afm
+%%I18N%%%%DATADIR%%/afm/textb20.afm
 %%DATADIR%%/encoding/ascii.edf
 %%DATADIR%%/encoding/encoding.map
 %%DATADIR%%/encoding/hp.edf
@@ -76,16 +84,16 @@ lib/liba2ps.a
 %%DATADIR%%/encoding/mac.edf
 %%DATADIR%%/encoding/ms-cp1250.edf
 %%DATADIR%%/fonts/pcfont.pfa
-%%WITHI18N%%%%DATADIR%%/fonts/colle10.pfb
-%%WITHI18N%%%%DATADIR%%/fonts/colle8.pfb
-%%WITHI18N%%%%DATADIR%%/fonts/colle9.pfb
-%%WITHI18N%%%%DATADIR%%/fonts/crr35__i.pfb
-%%WITHI18N%%%%DATADIR%%/fonts/crr36__i.pfb
-%%WITHI18N%%%%DATADIR%%/fonts/crr55__i.pfb
-%%WITHI18N%%%%DATADIR%%/fonts/crr56__i.pfb
-%%WITHI18N%%%%DATADIR%%/fonts/textb18.pfb
-%%WITHI18N%%%%DATADIR%%/fonts/textb19.pfb
-%%WITHI18N%%%%DATADIR%%/fonts/textb20.pfb
+%%I18N%%%%DATADIR%%/fonts/colle10.pfb
+%%I18N%%%%DATADIR%%/fonts/colle8.pfb
+%%I18N%%%%DATADIR%%/fonts/colle9.pfb
+%%I18N%%%%DATADIR%%/fonts/crr35__i.pfb
+%%I18N%%%%DATADIR%%/fonts/crr36__i.pfb
+%%I18N%%%%DATADIR%%/fonts/crr55__i.pfb
+%%I18N%%%%DATADIR%%/fonts/crr56__i.pfb
+%%I18N%%%%DATADIR%%/fonts/textb18.pfb
+%%I18N%%%%DATADIR%%/fonts/textb19.pfb
+%%I18N%%%%DATADIR%%/fonts/textb20.pfb
 %%DATADIR%%/ogonkify/README
 %%DATADIR%%/ogonkify/adobe.enc
 %%DATADIR%%/ogonkify/afm/pcrb-o.afm
@@ -276,12 +284,12 @@ lib/liba2ps.a
 %%NLS%%share/locale/sl/LC_MESSAGES/a2ps.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/a2ps.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/a2ps.mo
-%%WITHEMACS%%%%EMACS_SITE_LISPDIR%%/a2ps-print.el
-%%WITHEMACS%%%%EMACS_SITE_LISPDIR%%/a2ps-print.elc
-%%WITHEMACS%%%%EMACS_SITE_LISPDIR%%/a2ps.el
-%%WITHEMACS%%%%EMACS_SITE_LISPDIR%%/a2ps.elc
-%%WITHEMACS%%lib/xemacs/site-lisp/a2ps-print.el
-%%WITHEMACS%%lib/xemacs/site-lisp/a2ps.el
+%%EMACS%%%%EMACS_SITE_LISPDIR%%/a2ps-print.el
+%%EMACS%%%%EMACS_SITE_LISPDIR%%/a2ps-print.elc
+%%EMACS%%%%EMACS_SITE_LISPDIR%%/a2ps.el
+%%EMACS%%%%EMACS_SITE_LISPDIR%%/a2ps.elc
+%%EMACS%%lib/xemacs/site-lisp/a2ps-print.el
+%%EMACS%%lib/xemacs/site-lisp/a2ps.el
 @dirrm %%DATADIR%%/ogonkify/fonts
 @dirrm %%DATADIR%%/ogonkify/afm
 @dirrm %%DATADIR%%/ogonkify
@@ -292,5 +300,5 @@ lib/liba2ps.a
 @dirrm %%DATADIR%%/encoding
 @dirrm %%DATADIR%%/afm
 @dirrm %%DATADIR%%
-%%WITHEMACS%%@dirrm lib/xemacs/site-lisp
-%%WITHEMACS%%@dirrm lib/xemacs
+%%EMACS%%@dirrm lib/xemacs/site-lisp
+%%EMACS%%@dirrm lib/xemacs
