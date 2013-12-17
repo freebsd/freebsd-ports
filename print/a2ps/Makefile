@@ -14,17 +14,14 @@ COMMENT=	Formats an ASCII file for printing on a postscript printer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	paper:${PORTSDIR}/print/libpaper
+LIB_DEPENDS=	libpaper.so:${PORTSDIR}/print/libpaper
 
 PORTSCOUT=	skipv:4.14
-NO_STAGE=	yes
 
 USES=		perl5
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-MAN1=		a2ps.1 ogonkify.1 card.1 psmandup.1 fixps.1 pdiff.1 psset.1 \
-		texi2dvi4a2ps.1
 INFO=		a2ps ogonkify regex
 WRKSRC=		${WRKDIR}/${PORTNAME}-4.13
 I18N_PACKAGE=	i18n-fonts-0.1
@@ -43,31 +40,28 @@ RUN_DEPENDS+=	${LOCALBASE}/etc/papersize:${PORTSDIR}/print/papersize-default-a4
 OPTIONS_DEFINE=NLS I18N EMACS
 OPTIONS_DEFAULT=NLS
 NO_OPTIONS_SORT=yes
+OPTIONS_SUB=	yes
 EMACS_DESC=Enable Emacs support
 I18N_DESC=Enable I18N support
 
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+EMACS_USE=		EMACS=yes
+EMACS_CONFIGURE_ON=	--with-lispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
+.if ! ${PORT_OPTIONS:MEMACS}
+CONFIGURE_ENV+=	EMACS=no
 .endif
 
-.if ${PORT_OPTIONS:MEMACS}
-USE_EMACS=	yes
-CONFIGURE_ARGS+=	--with-lispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}
-PLIST_SUB+=	WITHEMACS=""
-.else
-CONFIGURE_ENV+=	EMACS=no
-PLIST_SUB+=	WITHEMACS="@comment "
-.endif
+post-patch:
+	${REINPLACE_CMD} -e 's|^DESTDIR|#DESTDIR|' \
+		`${FIND} ${WRKSRC} -name "Makefile.in"`
 
 .if ${PORT_OPTIONS:MI18N}
+#DISTFILES+=	${I18N_PACKAGE}${EXTRACT_SUFX}:i18n
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${I18N_PACKAGE}${EXTRACT_SUFX}:i18n
-PLIST_SUB+=	WITHI18N=""
 
 pre-configure:
 	cd ${WRKDIR}/${I18N_PACKAGE}/afm && \
@@ -83,21 +77,19 @@ post-configure:
 	@cd ${WRKSRC}/afm && { ${ECHO} ''; \
 	${ECHO} "i18n_afms =" `cat ${WRKDIR}/${I18N_PACKAGE}/afm/afms.lst`; } >> Makefile && \
 	${REINPLACE_CMD} 's,^\(all_afms = .*\),\1 $$(i18n_afms),' Makefile
-.else
-PLIST_SUB+=	WITHI18N="@comment "
 .endif
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/bin/a2ps
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/a2ps
 .if ${PORT_OPTIONS:MEMACS}
-	${MKDIR} ${PREFIX}/lib/xemacs/site-lisp
-	${LN} -sf ${PREFIX}/share/emacs/site-lisp/a2ps-print.el \
-		  ${PREFIX}/lib/xemacs/site-lisp/a2ps-print.el
-	${LN} -sf ${PREFIX}/share/emacs/site-lisp/a2ps.el \
-		  ${PREFIX}/lib/xemacs/site-lisp/a2ps.el
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xemacs/site-lisp
+	${LN} -sf ${STAGEDIR}${PREFIX}/share/emacs/site-lisp/a2ps-print.el \
+		  ${STAGEDIR}${PREFIX}/lib/xemacs/site-lisp/a2ps-print.el
+	${LN} -sf ${STAGEDIR}${PREFIX}/share/emacs/site-lisp/a2ps.el \
+		  ${STAGEDIR}${PREFIX}/lib/xemacs/site-lisp/a2ps.el
 .endif
 	cd ${WRKSRC}/doc && \
-		${SETENV} ${MAKE_ENV} ${MAKE} ${.MAKEFLAGS} ${INSTALL_TARGET}
-	${RM} -f ${PREFIX}/lib/liba2ps.la
+		${SETENV} ${MAKE_ENV} ${MAKE} ${.MAKEFLAGS} ${MAKE_ARGS} ${INSTALL_TARGET}
+	${RM} -f ${STAGEDIR}${PREFIX}/lib/liba2ps.la
 
 .include <bsd.port.mk>
