@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTREVISION=	7
-AWN_DESKTOP=    gnome
-MASTERDIR=      ${.CURDIR}/../avant-window-navigator
+AWN_DESKTOP=	gnome
+MASTERDIR=	${.CURDIR}/../avant-window-navigator
 
-NO_STAGE=	yes
 .include <${MASTERDIR}/Makefile>
