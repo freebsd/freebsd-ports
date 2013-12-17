@@ -19,12 +19,12 @@ USES=		pkgconfig
 
 PLIST_FILES=	bin/ssh-askpass-fullscreen
 
-NO_STAGE=	yes
 post-patch:
-	${REINPLACE_CMD} -e "s,gcc,${CC}," ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "s,gcc,${CC}," \
+		-e "/${CC}/s,$$, -lX11," ${WRKSRC}/Makefile
 
 do-install:
 	cd ${WRKSRC};\
-	${INSTALL_PROGRAM} ssh-askpass-fullscreen ${PREFIX}/bin/ssh-askpass-fullscreen;\
+	${INSTALL_PROGRAM} ssh-askpass-fullscreen ${STAGEDIR}${PREFIX}/bin/ssh-askpass-fullscreen
 
 .include <bsd.port.mk>
