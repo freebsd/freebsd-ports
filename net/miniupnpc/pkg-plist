@@ -12,4 +12,5 @@ include/miniupnpc/upnperrors.h
 lib/libminiupnpc.a
 lib/libminiupnpc.so
 lib/libminiupnpc.so.9
+man/man3/miniupnpc.3.gz
 @dirrm include/miniupnpc
