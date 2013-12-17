@@ -5,7 +5,7 @@ PORTNAME=	jabberd
 DISTVERSION=	2.3.1
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/jabberd2/jabberd2/releases/download/${PORTNAME}-${DISTVERSION}/ \
-		http://freefall.freebsd.org/~matthew/distfiles/
+		LOCAL/matthew/${PORTNAME}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Online presence and instant messaging server
