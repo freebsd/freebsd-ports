@@ -46,7 +46,7 @@ add_webkit_account()
 
 compile_python_files()
 {
-	(cd ${WEBWARE_MASTER_DIR} && python install.py --no-password-prompt)
+	(cd ${WEBWARE_MASTER_DIR} && ${PYTHON} install.py --no-password-prompt)
 }
 
 make_webkit_home_dir()
@@ -54,7 +54,7 @@ make_webkit_home_dir()
     # make the default webware user home directory if it doesn't exist yet
     if ! [ -d ${WEBKIT_HOME_DIR} ] ; then
         # make application workdir for webkit user
-        python ${WEBWARE_MASTER_DIR}/bin/MakeAppWorkDir.py \
+        ${PYTHON} ${WEBWARE_MASTER_DIR}/bin/MakeAppWorkDir.py \
                ${WEBKIT_HOME_DIR}
         chown -R root:wheel ${WEBKIT_HOME_DIR}
         echo chown -R ${WEBWARE_USER}:${WEBWARE_GROUP} \
