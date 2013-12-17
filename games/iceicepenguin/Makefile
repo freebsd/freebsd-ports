@@ -31,10 +31,12 @@ ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
 
 SUB_FILES=	${PORTNAME}
 
-DESKTOP_ENTRIES="Ice Ice Penguin" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
+DESKTOP_ENTRIES="Ice Ice Penguin" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 do-install:
+	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' \
+		${WRKDIR}/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
 .for d in fonts gfx lvls menu sfx

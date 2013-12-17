@@ -4,4 +4,4 @@
 #
 
 cd "%%DATADIR%%"
-exec /usr/bin/env python ./iceicepengui.py "${@}"
+exec %%PYTHON_CMD%% ./iceicepengui.py "${@}"
