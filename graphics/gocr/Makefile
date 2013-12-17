@@ -2,26 +2,40 @@
 # $FreeBSD$
 
 PORTNAME=	gocr
-PORTVERSION=	0.49
-PORTREVISION=	1
+PORTVERSION=	0.50
 CATEGORIES=	graphics
 MASTER_SITES=	http://www-e.uni-magdeburg.de/jschulen/ocr/
 
 MAINTAINER=	dhn@FreeBSD.org
-COMMENT=	An OCR (Optical Character Recognition) program
+COMMENT=	OCR (Optical Character Recognition) program
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-netpbm=${LOCALBASE}
+USE_GMAKE=	yes
 MAKE_ARGS=	prefix=${PREFIX} exec_prefix=${PREFIX} DESTDIR=${DESTDIR}
 
-MAN1=		gocr.1
-PORTDOCS=	examples.txt gocr.html unicode.txt
 PLIST_FILES=	bin/gocr
 
-.if !defined(WITHOUT_X11)
+MAN1=	gocr.1
+PORTDOCS=	*
+
+DOCSRCDIR1=	${WRKSRC}
+DOC_FILES1=	AUTHORS BUGS CREDITS HISTORY README READMEde.txt TODO
+
+DOCSRCDIR2=	${WRKSRC}/doc
+DOCSDIR2=	${DOCSDIR}/doc
+DOC_FILES2=	*.dtd *.xml *.html *.txt *.fig *.png
+
+OPTIONS_DEFINE=	X11
+OPTIONS_DEFAULT=	X11
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MX11}
 USE_TK_WRAPPER=	yes
 PLIST_FILES+=	bin/gocr.tcl
 .endif
@@ -29,14 +43,16 @@ PLIST_FILES+=	bin/gocr.tcl
 NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|@LIBS@|-L${LOCALBASE}/lib @LIBS@|g' ${WRKSRC}/src/Makefile.in
-.if defined(WITHOUT_X11)
+.if !  ${PORT_OPTIONS:MX11}
 	@${REINPLACE_CMD} -e '/gocr.tcl/d' ${WRKSRC}/src/Makefile.in
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${DOCSDIR2}
 .endif
 
 .include <bsd.port.mk>
