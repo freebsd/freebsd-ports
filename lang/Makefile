@@ -334,6 +334,7 @@
     SUBDIR += spidermonkey17
     SUBDIR += spidermonkey170
     SUBDIR += spidermonkey185
+    SUBDIR += spidermonkey24
     SUBDIR += spl
     SUBDIR += squeak
     SUBDIR += squirrel
