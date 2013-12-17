@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	simpleirc
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	irc
 MASTER_SITES=	http://dl.suckless.org/tools/ \
 		${MASTER_SITE_LOCAL}
