@@ -2,10 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	tomcat
-PORTVERSION=	7.0.40
+PORTVERSION=	7.0.47
 CATEGORIES=	www java
 MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	tomcat/tomcat-7/v${PORTVERSION}/bin
+PKGNAMESUFFIX=	7
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ale@FreeBSD.org
@@ -19,9 +20,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
-APP_SHORTNAME=	tomcat7
-
-USE_RC_SUBR=	${APP_SHORTNAME}
+USE_RC_SUBR=	${PKGBASE}
 
 TOMCAT_SUBDIR?=	${DISTNAME:R}
 TOMCAT_HOME=	${PREFIX}/${TOMCAT_SUBDIR}
@@ -29,13 +28,11 @@ TOMCAT_CONF_FILES=	catalina.policy catalina.properties context.xml logging.prope
 CONF_EXT=	sample
 PLIST_SUB=	T=${TOMCAT_SUBDIR} CONF_EXT=${CONF_EXT} \
 		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
-LATEST_LINK=	${APP_SHORTNAME}
 
 SUB_LIST=	TOMCAT_HOME=${TOMCAT_HOME} \
 		TOMCAT_USER=${WWWOWN} \
 		JAVA_HOME=${JAVA_HOME}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-patch:
@@ -52,29 +49,16 @@ post-patch:
 
 do-install:
 	@${ECHO_MSG} -n ">> Creating destination directory..."
-	@${MKDIR} ${TOMCAT_HOME}/logs
-	@${MKDIR} ${TOMCAT_HOME}/endorsed
+	@${MKDIR} ${STAGEDIR}${TOMCAT_HOME}/logs
+	@${MKDIR} ${STAGEDIR}${TOMCAT_HOME}/endorsed
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Copying files to destination directory..."
-	@${CP} -R ${WRKSRC}/* ${TOMCAT_HOME}
-	@${ECHO_MSG} " [ DONE ]"
-
-.for f in ${TOMCAT_CONF_FILES}
-.	if !exists(${TOMCAT_HOME}/conf/${f})
-		@${CP} ${TOMCAT_HOME}/conf/${f}.${CONF_EXT} ${TOMCAT_HOME}/conf/${f}
-.	else
-		@${ECHO_MSG} ">> Preserving local configuration file: ${f} [ DONE ]"
-.	endif
-.endfor
-
-	@${ECHO_MSG} -n ">> Fixing ownership settings..."
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${TOMCAT_HOME}/conf ${TOMCAT_HOME}/logs \
-		${TOMCAT_HOME}/temp ${TOMCAT_HOME}/webapps ${TOMCAT_HOME}/work
+	@${CP} -R ${WRKSRC}/* ${STAGEDIR}${TOMCAT_HOME}
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Fixing permissions..."
-	@${FIND} ${TOMCAT_HOME} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
+	@${FIND} ${STAGEDIR}${TOMCAT_HOME} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@${ECHO_MSG} " [ DONE ]"
 
 .include <bsd.port.post.mk>
