@@ -10,11 +10,9 @@ PKGNAMESUFFIX=	${SOCKS_SUFFIX}${PKGNAMESUFFIX2}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A popular ICQ-compatible plugin-based program
 
-LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
 
 LICENSE=	GPLv2
-
-NO_STAGE=	yes
 
 USES=		cmake iconv
 WRKSRC=		${WRKDIR}/${DISTNAME}
@@ -26,20 +24,22 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-Wl,--export-dynamic
 
-.if !defined(WITHOUT_OPENSSL)
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=--with-openssl-inc=${OPENSSLINC}
-CONFIGURE_ARGS+=--with-openssl-lib=${OPENSSLLIB}
-.endif
+OPTIONS_DEFINE=	OPENSSL
+OPTIONS_DEFAULT=OPENSSL
+
+OPENSSL_USE=	OPENSSL=yes
+OPENSSL_CONFIGURE_ON=	--with-openssl-inc=${OPENSSLINC} --with-openssl-lib=${OPENSSLLIB}
 
 .include <bsd.port.options.mk>
 
+.include "${PORTSDIR}/${LICQ_PORT}/Makefile.inc"
+
 .if ${PORT_OPTIONS:MNLS}
-CMAKE_ARGS+=	-DENABLE_NLS:BOOL=OFF
-PLIST_SUB+=	NLS="@comment "
-.else
 USES+=		gettext
 PLIST_SUB+=	NLS=""
+.else
+CMAKE_ARGS+=	-DENABLE_NLS:BOOL=OFF
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 pre-configure:
@@ -47,12 +47,7 @@ pre-configure:
 		${WRKSRC}/bin/sidclean.sh
 
 post-install:
-	@${MKDIR} ${PREFIX}/lib/licq
-	@${CAT} ${PKGMESSAGE}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/sidclean.sh ${PREFIX}/bin/sidclean.bash
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/licq
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/sidclean.sh ${STAGEDIR}${PREFIX}/bin/sidclean.bash
 
-.include <bsd.port.pre.mk>
-
-.include "${PORTSDIR}/${LICQ_PORT}/Makefile.inc"
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
