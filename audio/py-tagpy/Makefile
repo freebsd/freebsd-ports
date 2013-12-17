@@ -14,7 +14,7 @@ COMMENT=	Python bindings for Scott Wheeler's TagLib
 LICENSE=	MIT
 
 LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
-		libtag;so:${PORTSDIR}/audio/taglib
+		libtag.so:${PORTSDIR}/audio/taglib
 
 USES=		shebangfix
 HAS_CONFIGURE=	yes
