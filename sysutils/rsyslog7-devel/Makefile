@@ -1,23 +1,22 @@
 # $FreeBSD$
 
 PORTNAME=	rsyslog
-PORTVERSION=	7.5.5
-PORTREVISION=	1
+PORTVERSION=	7.5.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 
 MAINTAINER=	brd@FreeBSD.org
 COMMENT=	Syslogd supporting SQL, TCP, and TLS
 
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-
-LIB_DEPENDS=	ee:${PORTSDIR}/devel/libee \
-		estr:${PORTSDIR}/devel/libestr \
-		libjson.so:${PORTSDIR}/devel/json-c \
-		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
-
 BUILD_DEPENDS=	libgcrypt-config:${PORTSDIR}/security/libgcrypt
+
+LIB_DEPENDS=	libee.so:${PORTSDIR}/devel/libee \
+		libestr.so:${PORTSDIR}/devel/libestr \
+		libjson.so:${PORTSDIR}/devel/json-c \
+		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
+
+USE_LDCONFIG=	yes
+USE_AUTOTOOLS=	autoconf
 
 PORTSCOUT=	limit:^7\.5
 PORTDOCS=	*
@@ -37,11 +36,10 @@ SNMP_DESC=	SNMP trap sender for rsyslog
 
 USES=		pkgconfig
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBI}
-LIB_DEPENDS+=	dbi.1:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS+=	libdbi.so:${PORTSDIR}/databases/libdbi
 CONFIGURE_ARGS+=--enable-libdbi
 PLIST_FILES+=	lib/rsyslog/omlibdbi.la \
 		lib/rsyslog/omlibdbi.so
@@ -50,8 +48,8 @@ CONFIGURE_ARGS+=--disable-libdbi
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls \
-		gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=--enable-gnutls
 PLIST_FILES+=	lib/rsyslog/lmnsd_gtls.la \
 		lib/rsyslog/lmnsd_gtls.so
@@ -90,7 +88,7 @@ CONFIGURE_ARGS+=--disable-pgsql
 .endif
 
 .if ${PORT_OPTIONS:MRELP}
-LIB_DEPENDS+=	relp.0:${PORTSDIR}/devel/librelp
+LIB_DEPENDS+=	librelp.so:${PORTSDIR}/devel/librelp
 CONFIGURE_ARGS+=--enable-relp
 PLIST_FILES+=	lib/rsyslog/imrelp.la \
 		lib/rsyslog/imrelp.so \
@@ -101,7 +99,7 @@ CONFIGURE_ARGS+=--disable-relp
 .endif
 
 .if ${PORT_OPTIONS:MRFC3195}
-LIB_DEPENDS+=	logging.0:${PORTSDIR}/devel/liblogging
+LIB_DEPENDS+=	liblogging.so:${PORTSDIR}/devel/liblogging
 CONFIGURE_ARGS+=--enable-rfc3195
 PLIST_FILES+=	lib/rsyslog/im3195.la \
 		lib/rsyslog/im3195.so
@@ -110,7 +108,7 @@ CONFIGURE_ARGS+=--disable-rfc3195
 .endif
 
 .if ${PORT_OPTIONS:MSNMP}
-LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=--enable-snmp
 PLIST_FILES+=	lib/rsyslog/omsnmp.la \
 		lib/rsyslog/omsnmp.so
@@ -130,6 +128,7 @@ CONFLICTS=	rsyslog6-* rsyslog-[0-9].*
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
 
 .ifdef WITH_DEBUG
 CONFIGURE_ARGS+=--enable-rtinst --enable-debug
@@ -144,13 +143,10 @@ CPPFLAGS+=-march=i686
 CONFIGURE_ENV+=	LIBESTR_CFLAGS="${CFLAGS}" LIBESTR_LIBS="${LDFLAGS} -lestr" LIBEE_CFLAGS="${CFLAGS}" LIBEE_LIBS="${LDFLAGS} -lee -lkvm"
 CFLAGS+=	${CPPFLAGS}
 
-MAN8=	rsyslogd.8
-MAN5=	rsyslog.conf.5
-
 USE_RC_SUBR=	${PORTNAME}d
 SUB_FILES=	pkg-message
 
-CONFIGURE_ARGS+=	--enable-imfile --enable-mail --enable-imdiag --enable-impstats --enable-omstdout --enable-cached-man-pages
+CONFIGURE_ARGS+=	--enable-imfile --enable-mail --enable-imdiag --enable-impstats --enable-omstdout --enable-cached-man-pages --disable-testbench
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/lib/rsyslog/|${PREFIX}/lib/rsyslog/|'\
@@ -161,15 +157,9 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/*html ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/*jpg ${DOCSDIR}/
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${INSTALL} -d ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/rsyslog-example.conf ${EXAMPLESDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/doc/*html ${STAGEDIR}${DOCSDIR}/
+	@${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/rsyslog-example.conf ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.post.mk>
