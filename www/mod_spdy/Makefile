@@ -16,7 +16,8 @@ COMMENT=	SPDY module for the Apache HTTP server v2.2
 
 LICENSE=	AL2
 
-BUILD_DEPENDS=	greadlink:${PORTSDIR}/sysutils/coreutils \
+BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
+		greadlink:${PORTSDIR}/sysutils/coreutils \
 		flock:${PORTSDIR}/sysutils/flock \
 		svn:${PORTSDIR}/devel/subversion \
 		curl:${PORTSDIR}/ftp/curl \
