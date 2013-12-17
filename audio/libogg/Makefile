@@ -18,6 +18,6 @@ GNU_CONFIGURE=	yes
 OPTIONS_DEFINE=	DOCS
 
 regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.mk>
