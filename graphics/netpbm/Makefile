@@ -12,15 +12,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Toolkit for conversion of images between different formats
 
-LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		jbig:${PORTSDIR}/graphics/jbigkit \
-		jasper:${PORTSDIR}/graphics/jasper \
-		xml2:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libjbig.so:${PORTSDIR}/graphics/jbigkit \
+		libjasper.so:${PORTSDIR}/graphics/jasper \
+		libxml2.so:${PORTSDIR}/textproc/libxml2
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
-
-NO_STAGE=	yes
 
 USES=		gmake perl5
 CFLAGS+=	-DPNG_DEPSTRUCT= -Iutil
@@ -30,24 +28,20 @@ MAKEFILE2=	Makefile
 INSTALL_TARGET=	install.bin install.lib install.data install-dev
 USE_LDCONFIG=	yes
 
-MAN1=		netpbm.1
-
 OPTIONS_DEFINE=	X11 MANPAGES
+OPTIONS_SUB=	yes
+
+X11_USE=	xorg=x11
+X11_MAKE_ENV=	WITH_X11=yes
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11
-MAKE_ENV+=	WITH_X11="${WITH_X11}"
-PLIST_SUB+=	X11=''
-.else
-PLIST_SUB+=	X11='@comment '
-.endif
 
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES} || make(makesum) || defined(FETCH_ALL)
+#DISTFILES+=	netpbm-manpages-2013-03-09${EXTRACT_SUFX}:man
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} netpbm-manpages-2013-03-09${EXTRACT_SUFX}:man
+
 # lifted from ${WRKSRC}/buildtools/Makefile.manpage
 HMAN1+=	411toppm.1 anytopnm.1 asciitopgm.1 atktopbm.1 bioradtopgm.1 \
 	bmptopnm.1 bmptoppm.1 brushtopbm.1 cmuwmtopbm.1 ddbugtopbm.1 \
@@ -108,27 +102,26 @@ HMAN1+=	pamx.1
 HMAN3=	libnetpbm.3 libnetpbm_image.3 libnetpbm_ug.3 libpbm.3 \
 	libpgm.3 libpm.3 libpnm.3 libppm.3 libsystem.3 libtmpfile.3
 HMAN5=	extendedopacity.5 pam.5 pbm.5 pgm.5 pnm.5 ppm.5
-MAN1+=	${HMAN1}
-MAN3+=	${HMAN3}
-MAN5+=	${HMAN5}
 .endif
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	${REINPLACE_CMD} -e 's|doc/USERDOC|${DOCSDIR}/USERDOC|g' \
+		${WRKSRC}/doc/netpbm.1
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/pm_config.in.h
-	@${REINPLACE_CMD} -e 's|^SCRIPTS =.*|SCRIPTS =|' ${WRKSRC}/GNUmakefile
-	@${REINPLACE_CMD} -e 's|<shhopt.h>|<pm_shhopt.h>|g' ${WRKSRC}/lib/pm.h
-	@${REINPLACE_CMD} -e 's| jpeg2000||g' \
+	${REINPLACE_CMD} -e 's|^SCRIPTS =.*|SCRIPTS =|' ${WRKSRC}/GNUmakefile
+	${REINPLACE_CMD} -e 's|<shhopt.h>|<pm_shhopt.h>|g' ${WRKSRC}/lib/pm.h
+	${REINPLACE_CMD} -e 's| jpeg2000||g' \
 		${WRKSRC}/converter/other/Makefile
-	@${CP} ${PATCHDIR}/Makefile.config.FreeBSD ${WRKSRC}/Makefile.config
-	@${LN} -sf ${WRKSRC}/lib/util/shhopt.h ${WRKSRC}/lib/util/pm_shhopt.h
-	@${LN} -sf ${WRKSRC}/lib/util/nstring.h ${WRKSRC}/lib/util/pm_nstring.h
+	${CP} ${PATCHDIR}/Makefile.config.FreeBSD ${WRKSRC}/Makefile.config
+	${LN} -sf ${WRKSRC}/lib/util/shhopt.h ${WRKSRC}/lib/util/pm_shhopt.h
+	${LN} -sf ${WRKSRC}/lib/util/nstring.h ${WRKSRC}/lib/util/pm_nstring.h
 	cd ${WRKSRC} && buildtools/stamp-date > ${WRKSRC}/lib/compile.h
 
 # This snippet is all it takes to make the port as of 10.35.80 MAKE_JOBS_SAFE:
 pre-build:
-	@(cd ${BUILD_WRKSRC}/lib/util; if ! ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE2} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}; then \
+	(cd ${BUILD_WRKSRC}/lib/util; if ! ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE2} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}; then \
 	if [ x != x${BUILD_FAIL_MESSAGE} ] ; then \
 	    ${ECHO_MSG} "===> Compilation failed unexpectedly."; \
 	    (${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
@@ -137,19 +130,16 @@ pre-build:
 	fi)
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/lib/util/pm_c_util.h ${PREFIX}/include/
-	@${ECHO_MSG} "===>  Installing man pages..."
-	@${REINPLACE_CMD} -e 's|doc/USERDOC|${DOCSDIR}/USERDOC|g' \
-		${WRKSRC}/doc/netpbm.1
-	${INSTALL_MAN} ${WRKSRC}/doc/netpbm.1 ${MANPREFIX}/man/man1/
+	${INSTALL_DATA} ${WRKSRC}/lib/util/pm_c_util.h ${STAGEDIR}${PREFIX}/include/
+	${INSTALL_MAN} ${WRKSRC}/doc/netpbm.1 ${STAGEDIR}${MANPREFIX}/man/man1/
 .if ${PORT_OPTIONS:MMANPAGES}
-	(cd ${WRKDIR}/doc && ${INSTALL_MAN} ${HMAN1} ${MANPREFIX}/man/man1/)
-	(cd ${WRKDIR}/doc && ${INSTALL_MAN} ${HMAN3} ${MANPREFIX}/man/man3/)
-	(cd ${WRKDIR}/doc && ${INSTALL_MAN} ${HMAN5} ${MANPREFIX}/man/man5/)
+	cd ${WRKDIR}/doc && ${INSTALL_MAN} ${HMAN1} ${STAGEDIR}${MANPREFIX}/man/man1/
+	cd ${WRKDIR}/doc && ${INSTALL_MAN} ${HMAN3} ${STAGEDIR}${MANPREFIX}/man/man3/
+	cd ${WRKDIR}/doc && ${INSTALL_MAN} ${HMAN5} ${STAGEDIR}${MANPREFIX}/man/man5/
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/USERDOC ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/USERDOC ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.post.mk>
