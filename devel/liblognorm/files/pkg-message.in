@@ -1,0 +1,19 @@
+***********************************************************************
+
+WARNING  WARNING  WARNING  WARNING  WARNING  WARNING  WARNING  WARNING
+
+The previous version of liblognorm (0.3.7) used the libee CEE support 
+library in its API.
+
+In 2013, Pavel Levshin converted liblognorm to native JSON, which helped
+improve performance and simplicity for many client applications.
+Unfortunately, this change broke interface compatibility (and there was
+no way to avoid that, obviously...).
+
+The current library is the result of that effort. Application developers
+are encouraged to switch to this version, as it provides the benefit of
+a simpler API. PREVIOUS VERSIONS ARE INCOMPATIBLE WITH THIS ONE
+
+WARNING  WARNING  WARNING  WARNING  WARNING  WARNING  WARNING  WARNING
+
+***********************************************************************
