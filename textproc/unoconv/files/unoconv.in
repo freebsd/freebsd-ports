@@ -4,4 +4,4 @@
 #
 
 cd "%%DATADIR%%"
-./unoconv "$@"
+exec ./unoconv "$@"
