@@ -229,7 +229,6 @@ x11-wm/beryl-settings-bindings||2008-08-18|Has expired: No longer supported -- u
 japanese/lyx|print/lyx|2008-08-18|No longer maintained and print/lyx now supports Unicode
 japanese/lyx-doc||2008-08-18|Obsolete
 games/blobandconquer||2008-08-20|Removed due to copyright problems
-games/blobwars||2008-08-20|Removed due to copyright problems
 games/randomshooter||2008-08-20|Removed due to copyright problems
 devel/autoconf261|devel/autoconf262|2008-08-20|Migration to autoconf-2.62
 x11-themes/enlightenment-theme-BlueSteel||2008-08-20|Deprecated by x11-themes/e16-themes

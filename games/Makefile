@@ -81,6 +81,7 @@
     SUBDIR += blinkensisters
     SUBDIR += blobby
     SUBDIR += bloboats
+    SUBDIR += blobwars
     SUBDIR += block
     SUBDIR += blockade
     SUBDIR += blockout
