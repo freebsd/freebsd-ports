@@ -18,6 +18,8 @@ NO_STAGE=	yes
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 
+RESTRICTED=	Possibly restricted binary distribution of modified versions
+
 EZMLM_DIR?=	${LOCALBASE}
 
 post-patch:
