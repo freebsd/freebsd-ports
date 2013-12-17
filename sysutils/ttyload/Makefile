@@ -2,11 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	ttyload
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.5.3
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.daveltd.com/src/util/ttyload/ \
-		http://mirror.mcx2.org/
+MASTER_SITES=	http://www.daveltd.com/src/util/ttyload/
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Give a color-coded graph of load averages over time
@@ -15,20 +13,17 @@ ALL_TARGET=	default
 
 USE_BZIP2=	yes
 PLIST_FILES=	bin/ttyload
-PORTDOCS=	*
-SUB_FILES=	pkg-message
+MAN1=	ttyload.1
 
-NO_STAGE=	yes
-post-install:
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} "Installing additional documentation to ${DOCSDIR}"
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}/LICENSE
+.include <bsd.port.pre.mk>
+
+do-install:
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/README
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${STAGEDIR}${DOCSDIR}/LICENSE
 .endif
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
-	@${ECHO_MSG} ""
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG} ""
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
