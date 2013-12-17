@@ -18,15 +18,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:${PORTSDIR}/devel/py-six
 TEST_DEPENDS:=	${RUN_DEPENDS}
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
+USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
-
-post-install:
-.if ${PYTHON_REL} >= 320
-.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
-.endif
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
