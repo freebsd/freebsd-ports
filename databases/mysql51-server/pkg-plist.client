@@ -52,6 +52,18 @@ lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.la
 lib/mysql/libmysqlclient_r.so
 lib/mysql/libmysqlclient_r.so.16
+man/man1/mysql.1.gz
+man/man1/mysql_config.1.gz
+man/man1/mysql_upgrade.1.gz
+man/man1/mysqladmin.1.gz
+man/man1/mysqlbinlog.1.gz
+man/man1/mysqlbug.1.gz
+man/man1/mysqlcheck.1.gz
+man/man1/mysqldump.1.gz
+man/man1/mysqlimport.1.gz
+man/man1/mysqlshow.1.gz
+man/man1/mysqlslap.1.gz
+man/man1/mysqltest.1.gz
 share/aclocal/mysql.m4
 %%DATADIR%%/mysql_fix_privilege_tables.sql
 @dirrm include/mysql
