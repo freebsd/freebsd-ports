@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	litecoin
-PORTVERSION=	0.8.5.1
+PORTVERSION=	0.8.6.1
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	LOCAL/swills \
 		GH
@@ -14,14 +14,14 @@ LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	litecoin-project
-GH_COMMIT=	6cef39c
+GH_COMMIT=	dab8fe6
 GH_TAGNAME=	v${PORTVERSION}
 
 USE_OPENSSL=	yes
 USE_BDB=	yes
 WANT_BDB_VER=	48
 
-USE_GMAKE=	yes
+USES=		gmake
 
 OPTIONS_DEFINE=	GUI UPNP QRCODES DBUS
 OPTIONS_DEFAULT=	GUI QRCODES
@@ -71,6 +71,10 @@ QMAKE_USE_DBUS=	0
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1000000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-endian
+.endif
 
 do-configure:
 .if ${PORT_OPTIONS:MGUI} && !defined(WITHOUT_X11)
