@@ -1,0 +1,24 @@
+--- Makefile.orig
++++ Makefile
+@@ -1,11 +1,16 @@
+ PACKAGE    = apngdis
+-CC         = gcc
+-CFLAGS     = -Wall -pedantic
+-CFLAGS_OPT = -O2
+-LIBS       = -lstdc++ -lm -lpng -lz
++CXX       ?= c++
++CXXFLAGS  += -Wall -pedantic
++CPPFLAGS  += $(shell libpng-config --cflags)
++ifeq ($(strip $(STATIC)),)
++LIBS       = $(shell libpng-config --ldflags)
++else
++LIBS       = $(shell libpng-config --static --ldflags)
++LDFLAGS   += -static
++endif
+ 
+ all :
+-	$(CC) $(CFLAGS) $(CFLAGS_OPT) -o apngdis apngdis.cpp -s $(LIBS)
++	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -o apngdis apngdis.cpp -s $(LIBS) $(LDFLAGS)
+ 
+ .PHONY : clean
+
