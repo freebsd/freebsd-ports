@@ -12,7 +12,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The data backends for the Evolution integrated mail/PIM suite
 
-LIB_DEPENDS=	libsoup-2.so:${PORTSDIR}/devel/libsoup \
+LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libgdata.so:${PORTSDIR}/devel/libgdata \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libical.so:${PORTSDIR}/devel/libical \
