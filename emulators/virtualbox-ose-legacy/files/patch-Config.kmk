@@ -1,6 +1,6 @@
---- Config.kmk.orig	2013-10-15 13:01:31.000000000 +0200
-+++ Config.kmk	2013-10-20 14:43:19.015746151 +0200
-@@ -3387,16 +3387,16 @@
+--- Config.kmk.orig	2013-11-28 19:29:52.000000000 +0100
++++ Config.kmk	2013-12-17 20:15:54.000000000 +0100
+@@ -3260,16 +3260,16 @@
  	$(VBOX_GCC_WARN) -Wpointer-arith -Winline $(VBOX_GCC_Wno-pointer-sign) $(VBOX_GCC_fdiagnostics-show-option) \
  	-Wstrict-prototypes -Wmissing-prototypes -Wstrict-prototypes \
  	-Wimplicit-function-declaration -Werror-implicit-function-declaration \
@@ -20,7 +20,7 @@
  	$(VBOX_GCC_fno-stack-protector) $(VBOX_GCC_R0_OPT) $(VBOX_GCC_R0_FP) \
  	-nostdinc
  TEMPLATE_VBOXR0DRV_CXXFLAGS.x86        = $(TEMPLATE_VBOXR0DRV_CFLAGS.x86)
-@@ -3630,8 +3630,6 @@
+@@ -3486,8 +3486,6 @@
  	/usr/X11R6/include \
  	/usr/local/include
  TEMPLATE_VBOXR3EXE_LIBPATH            += \
@@ -29,7 +29,16 @@
  	/usr/local/lib
   else ifeq ($(KBUILD_TARGET),solaris)
  TEMPLATE_VBOXR3EXE_TOOL                = GXX3PLAIN
-@@ -4206,8 +4204,6 @@
+@@ -3670,7 +3668,7 @@
+ # not necessary except USE_LIB_PCAP is defined in SUPR3HardenedMain.cpp
+ # TEMPLATE_VBOXR3HARDENEDEXE_LIBS += cap
+ endif
+-ifn1of ($(KBUILD_TARGET), win os2)
++ifn1of ($(KBUILD_TARGET), win os2 freebsd)
+  TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS       = $(filter-out '$(VBOX_GCC_RPATH_OPT)%,$(TEMPLATE_VBOXR3EXE_LDFLAGS))
+  TEMPLATE_VBOXR3HARDENEDEXE_LDFLAGS.linux = $(filter-out $(VBOX_GCC_ORIGIN_OPT),$(TEMPLATE_VBOXR3EXE_LDFLAGS.linux))
+ endif
+@@ -3976,8 +3974,6 @@
  	/usr/X11R6/include \
  	/usr/local/include
  TEMPLATE_VBOXMAINEXE_LIBPATH            += \
@@ -38,7 +47,7 @@
  	/usr/local/lib
  else ifeq ($(KBUILD_TARGET),solaris)
  TEMPLATE_VBOXMAINEXE_TOOL                = GXX3PLAIN
-@@ -4673,8 +4669,6 @@
+@@ -4392,8 +4388,6 @@
  	/usr/X11R6/include \
  	/usr/local/include
      TEMPLATE_VBOXQT4GUIEXE_LIBPATH += \
@@ -47,7 +56,7 @@
  	/usr/local/lib
     endif
     ifeq ($(KBUILD_TARGET),solaris)
-@@ -4869,8 +4863,6 @@
+@@ -4576,8 +4570,6 @@
  	/usr/X11R6/include \
  	/usr/local/include
  TEMPLATE_VBOXBLDPROG_LIBPATH            += \
