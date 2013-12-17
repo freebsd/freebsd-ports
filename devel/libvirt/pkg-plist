@@ -38,15 +38,6 @@ lib/libvirt-qemu.so.%%SHLIB_VER%%
 lib/libvirt.la
 lib/libvirt.so
 lib/libvirt.so.%%SHLIB_VER%%
-%%PYTHON_SITELIBDIR%%/libvirt.py
-%%PYTHON_SITELIBDIR%%/libvirtmod.la
-%%PYTHON_SITELIBDIR%%/libvirtmod.so
-%%PYTHON_SITELIBDIR%%/libvirtmod_lxc.so
-%%PYTHON_SITELIBDIR%%/libvirtmod_lxc.la
-%%PYTHON_SITELIBDIR%%/libvirt_lxc.py
-%%PYTHON_SITELIBDIR%%/libvirt_qemu.py
-%%PYTHON_SITELIBDIR%%/libvirtmod_qemu.la
-%%PYTHON_SITELIBDIR%%/libvirtmod_qemu.so
 libdata/pkgconfig/libvirt.pc
 libexec/libvirt_iohelper
 libexec/libvirt-guests.sh
@@ -73,6 +64,7 @@ share/augeas/lenses/tests/test_virtlockd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/archnetwork.html
 %%DOCSDIR%%%%PORTVERSION%%/html/archnode.html
 %%DOCSDIR%%%%PORTVERSION%%/html/archstorage.html
+%%DOCSDIR%%%%PORTVERSION%%/html/auditlog.html
 %%DOCSDIR%%%%PORTVERSION%%/html/auth.html
 %%DOCSDIR%%%%PORTVERSION%%/html/bindings.html
 %%DOCSDIR%%%%PORTVERSION%%/html/bugs.html
@@ -158,6 +150,7 @@ share/augeas/lenses/tests/test_virtlockd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/python.html
 %%DOCSDIR%%%%PORTVERSION%%/html/relatedlinks.html
 %%DOCSDIR%%%%PORTVERSION%%/html/remote.html
+%%DOCSDIR%%%%PORTVERSION%%/html/secureusage.html
 %%DOCSDIR%%%%PORTVERSION%%/html/securityprocess.html
 %%DOCSDIR%%%%PORTVERSION%%/html/sitemap.html
 %%DOCSDIR%%%%PORTVERSION%%/html/storage.html
@@ -283,8 +276,6 @@ lib/libvirt/connection-driver/libvirt_driver_vbox.so
 lib/libvirt/connection-driver/libvirt_driver_vbox.la
 @dirrmtry etc/logrotate.d
 @dirrm include/libvirt
-@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrmtry %%PYTHON_LIBDIR%%
 @dirrm lib/libvirt/connection-driver
 @dirrm lib/libvirt/lock-driver
 @dirrm lib/libvirt

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.1.4
+PORTVERSION=	1.2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -55,8 +55,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 USES=		charsetfix pathfix gmake pkgconfig perl5
 USE_PERL5=	build
 USE_LDCONFIG=	yes
-USE_PYTHON_BUILD=	yes
-SHLIB_VER=	1001
+SHLIB_VER=	1002
 PLIST_SUB=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
