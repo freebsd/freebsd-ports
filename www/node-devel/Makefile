@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	node
-PORTVERSION=	0.11.8
+PORTVERSION=	0.11.9
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
