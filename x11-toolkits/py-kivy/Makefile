@@ -122,6 +122,8 @@ post-build: do-build-docs
 do-build-docs:
 	${MKDIR} ${WRKSRC}/doc/build/doctrees ${WRKSRC}/doc/build/html \
 		${WRKSRC}/doc/build/latex-a4 ${WRKSRC}/doc/build/latex-letter
+	${REINPLACE_CMD} -i '' -e 's/\(import pygame\.joystick\)/#\1/' \
+		${WRKSRC}/kivy/input/providers/androidjoystick.py
 	(cd ${WRKSRC}; \
 		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} doc/autobuild.py)
 	(cd ${WRKSRC}; \
@@ -142,6 +144,8 @@ do-build-docs:
 	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC}/doc/build/latex-letter \
 		all-pdf > /dev/null
 .endif
+	${REINPLACE_CMD} -i '' -e 's/#\(import pygame\.joystick\)/\1/' \
+		${WRKSRC}/kivy/input/providers/androidjoystick.py
 
 post-install: do-install-docs
 
