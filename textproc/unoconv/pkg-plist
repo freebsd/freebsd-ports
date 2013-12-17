@@ -1,14 +1,8 @@
 bin/unoconv
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README.asciidoc
-%%PORTDOCS%%%%DOCSDIR%%/WISHLIST
-%%PORTDOCS%%%%DOCSDIR%%/doc/errcode.txt
-%%PORTDOCS%%%%DOCSDIR%%/doc/filters.txt
-%%PORTDOCS%%%%DOCSDIR%%/doc/formats.txt
-%%PORTDOCS%%%%DOCSDIR%%/doc/office-installations.txt
-%%PORTDOCS%%%%DOCSDIR%%/doc/selinux.txt
-%%PORTDOCS%%%%DOCSDIR%%/doc/unoconv.1.txt
-share/pixmaps/unoconv.gif
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+man/man1/unoconv.1.gz
+share/pixmaps/unoconv.png
+%%DATADIR%%/tests/document-example.odt
+%%DATADIR%%/tests/spreadsheet-example.csv
+%%DATADIR%%/unoconv
+@dirrm %%DATADIR%%/tests
+@dirrm %%DATADIR%%
