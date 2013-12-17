@@ -183,6 +183,7 @@
     SUBDIR += dangerdeep
     SUBDIR += dangerdeep-data
     SUBDIR += darkplaces
+    SUBDIR += dcross
     SUBDIR += deal
     SUBDIR += defendguin
     SUBDIR += deng

@@ -1,0 +1,85 @@
+bin/dcross
+%%DATADIR%%/data/__init__.py
+%%DATADIR%%/data/__init__.pyc
+%%DATADIR%%/data/__init__.pyo
+%%DATADIR%%/data/blocks.py
+%%DATADIR%%/data/blocks.pyc
+%%DATADIR%%/data/blocks.pyo
+%%DATADIR%%/data/game.py
+%%DATADIR%%/data/game.pyc
+%%DATADIR%%/data/game.pyo
+%%DATADIR%%/data/highs.dat
+%%DATADIR%%/data/highscore.py
+%%DATADIR%%/data/highscore.pyc
+%%DATADIR%%/data/highscore.pyo
+%%DATADIR%%/data/keymap.py
+%%DATADIR%%/data/keymap.pyc
+%%DATADIR%%/data/keymap.pyo
+%%DATADIR%%/data/loser.py
+%%DATADIR%%/data/loser.pyc
+%%DATADIR%%/data/loser.pyo
+%%DATADIR%%/data/main.py
+%%DATADIR%%/data/main.pyc
+%%DATADIR%%/data/main.pyo
+%%DATADIR%%/data/menu.py
+%%DATADIR%%/data/menu.pyc
+%%DATADIR%%/data/menu.pyo
+%%DATADIR%%/data/playcontrols.dat
+%%DATADIR%%/data/reset.py
+%%DATADIR%%/data/reset.pyc
+%%DATADIR%%/data/reset.pyo
+%%DATADIR%%/data/setup.py
+%%DATADIR%%/data/setup.pyc
+%%DATADIR%%/data/setup.pyo
+%%DATADIR%%/data/title.py
+%%DATADIR%%/data/title.pyc
+%%DATADIR%%/data/title.pyo
+%%DATADIR%%/data/tools.py
+%%DATADIR%%/data/tools.pyc
+%%DATADIR%%/data/tools.pyo
+%%DATADIR%%/double-cross.pyw
+%%DATADIR%%/fonts/arial.ttf
+%%DATADIR%%/fonts/impact.ttf
+%%DATADIR%%/fonts/wadim_giant.ttf
+%%DATADIR%%/fonts/wadimi.ttf
+%%DATADIR%%/graphics/alphagrid.png
+%%DATADIR%%/graphics/base.png
+%%DATADIR%%/graphics/brick.png
+%%DATADIR%%/graphics/cell_deletion1.png
+%%DATADIR%%/graphics/cell_deletion2.png
+%%DATADIR%%/graphics/controls.png
+%%DATADIR%%/graphics/curt.png
+%%DATADIR%%/graphics/dc_icon.png
+%%DATADIR%%/graphics/donote.png
+%%DATADIR%%/graphics/flipper_h.png
+%%DATADIR%%/graphics/komrade.png
+%%DATADIR%%/graphics/logo.png
+%%DATADIR%%/graphics/nekey.png
+%%DATADIR%%/graphics/note.png
+%%DATADIR%%/graphics/scorebg.png
+%%DATADIR%%/graphics/shade.png
+%%DATADIR%%/graphics/strip.png
+%%DATADIR%%/graphics/title1.png
+%%DATADIR%%/graphics/title2.png
+%%DATADIR%%/sound/effects/blipshort1.wav
+%%DATADIR%%/sound/effects/chimed.wav
+%%DATADIR%%/sound/effects/explosion.wav
+%%DATADIR%%/sound/effects/lev.wav
+%%DATADIR%%/sound/effects/line.wav
+%%DATADIR%%/sound/effects/thud.wav
+%%DATADIR%%/sound/music/Kalinka.mp3
+%%DATADIR%%/sound/music/Katyusha.mp3
+%%DATADIR%%/sound/music/Korobelniki.mp3
+share/icons/hicolor/32x32/apps/dcross.png
+share/icons/hicolor/48x48/apps/dcross.png
+share/icons/hicolor/64x64/apps/dcross.png
+share/icons/hicolor/72x72/apps/dcross.png
+share/icons/hicolor/96x96/apps/dcross.png
+share/pixmaps/dcross.png
+@dirrm %%DATADIR%%/sound/music
+@dirrm %%DATADIR%%/sound/effects
+@dirrm %%DATADIR%%/sound
+@dirrm %%DATADIR%%/graphics
+@dirrm %%DATADIR%%/fonts
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
