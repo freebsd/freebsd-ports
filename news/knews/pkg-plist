@@ -1,2 +1,3 @@
 bin/knews
 lib/X11/app-defaults/Knews
+man/man1/knews.1.gz
