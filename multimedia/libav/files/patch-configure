@@ -1,0 +1,13 @@
+--- configure.orig	2013-12-17 19:12:24.000000000 +0100
++++ configure	2013-12-17 19:12:49.000000000 +0100
+@@ -730,8 +730,8 @@
+ 
+ check_ld(){
+     log check_ld "$@"
+-    flags=$(filter_out '-l*' "$@")
+-    libs=$(filter '-l*' "$@")
++    flags=$(filter_out '-l*|*.so' "$@")
++    libs=$(filter '-l*|*.so' "$@")
+     check_cc $($cflags_filter $flags) || return
+     flags=$($ldflags_filter $flags)
+     libs=$($ldflags_filter $libs)
