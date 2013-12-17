@@ -1,6 +1,6 @@
---- configure.orig	2011-04-13 05:41:45.000000000 +0400
-+++ configure	2011-09-19 22:17:17.498960457 +0400
-@@ -4982,7 +4982,7 @@
+--- configure.orig	2013-09-16 07:09:00.000000000 +0400
++++ configure	2013-11-14 15:10:56.406013703 +0400
+@@ -6094,7 +6094,7 @@
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
  if test "x$ac_cv_lib_pthread_pthread_create" = x""yes; then :
@@ -9,19 +9,3 @@
  else
    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lc_r" >&5
  $as_echo_n "checking for pthread_create in -lc_r... " >&6; }
-@@ -5488,13 +5488,13 @@
- if test "${with_libdkim+set}" = set; then :
-   withval=$with_libdkim; LDFLAGS=$LDFLAGS" -L$withval/lib -Wl,$rpath$withval/lib"
- 	    CFLAGS=$CFLAGS" -I$withval/include"
--	    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for dkim_init in -ldkim -lsm -lcrypto" >&5
--$as_echo_n "checking for dkim_init in -ldkim -lsm -lcrypto... " >&6; }
-+	    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for dkim_init in -ldkim -lcrypto" >&5
-+$as_echo_n "checking for dkim_init in -ldkim -lcrypto... " >&6; }
- if test "${ac_cv_lib_dkim__lsm__lcrypto_dkim_init+set}" = set; then :
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-ldkim -lsm -lcrypto  $LIBS"
-+LIBS="-ldkim -lcrypto  $LIBS"
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */

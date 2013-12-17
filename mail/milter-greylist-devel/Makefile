@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	milter-greylist
-PORTVERSION=	4.3.9
+PORTVERSION=	4.5.7
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.espci.fr/pub/milter-greylist/ \
 		http://fossies.org/unix/privat/
@@ -14,7 +14,7 @@ COMMENT=	Easy-to-use greylist milter for sendmail and postfix (development)
 
 LICENSE=	BSD
 
-CONFLICTS=	milter-greylist-4.2.*
+CONFLICTS=	milter-greylist-4.2.* milter-greylist-4.4.*
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAKE_JOBS_UNSAFE=	yes
