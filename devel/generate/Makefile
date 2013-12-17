@@ -10,14 +10,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	darcy@druid.net
 COMMENT=	Simple text pre-processor
 
-USES=		gmake
+USE_GMAKE=	yes
+MAN1=		generate.1
 
-PLIST_FILES=	bin/generate bin/rgenerate \
-		man/man1/generate.1.gz
+PLIST_FILES=	bin/generate bin/rgenerate
 
-MAKE_ARGS+=	MANDIR=${STAGEDIR}${MAN1PREFIX}/man \
-		BINDIR=${STAGEDIR}${PREFIX}/bin
-
+NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,^CFLAGS *=,CFLAGS +=,' \
 		${WRKSRC}/Makefile

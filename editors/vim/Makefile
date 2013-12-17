@@ -12,7 +12,7 @@ PORTNAME=	vim
 #		! PATCHLEVEL to that level.
 PATCHLEVEL=	110
 PORTVERSION=	7.4.${PATCHLEVEL}
-PORTREVISION?=	2
+PORTREVISION?=	1
 CATEGORIES?=	editors
 MASTER_SITES=	VIM
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
@@ -141,7 +141,7 @@ USE_XORG+=	xaw
 . if ${PORT_OPTIONS:MGTK2}
 USE_GNOME=	gtk20
 CONF_OPT_GUI="--enable-gui=gtk2 --with-gtk-prefix=${LOCALBASE}"
-MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lX11 -lXt"
+MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
 USE_XORG+=	xt
 . endif
 
@@ -149,7 +149,7 @@ USE_XORG+=	xt
 USE_GNOME=	libgnomeui
 PKGNAMESUFFIX=	-gnome2
 CONF_OPT_GUI=	"--enable-gui=gnome2"
-MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lX11 -lXt"
+MAKE_ARGS+=	X_LIBS="$(X_LIBS) -lXt"
 USE_XORG+=	xt glproto
 . endif
 
