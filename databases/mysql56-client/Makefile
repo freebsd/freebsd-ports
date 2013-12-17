@@ -24,5 +24,4 @@ MAN1=		comp_err.1 msql2mysql.1 mysql.1 mysql_config.1 mysql_config_editor.1 mysq
 
 CLIENT_ONLY=	yes
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
