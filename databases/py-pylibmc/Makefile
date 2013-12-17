@@ -12,11 +12,10 @@ COMMENT=	Python libmemcached wrapper
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	libmemcached.do:${PORTSDIR}/databases/libmemcached
+LIB_DEPENDS=	libmemcached.so:${PORTSDIR}/databases/libmemcached
 
 MAKE_ENV+=	LIBMEMCACHED="${LOCALBASE}"
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
