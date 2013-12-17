@@ -58,6 +58,10 @@ you update your ports collection, before attempting any port upgrades.
     or
   # pkg delete -f libGL dri
     followed by
+  # portmaster graphics/dri graphics/libGL
+    or
+  # portupgrade graphics/dri graphics/libGL
+    and then
   # portmaster -a
     or
   # portupgrade -a
