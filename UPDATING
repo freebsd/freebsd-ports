@@ -47,6 +47,16 @@ you update your ports collection, before attempting any port upgrades.
   You can add WITH_BDB_VER=5 or WITH_BDB_VER=6 to have all
   applications that get rebuilt use Oracle Berkeley DB 5 or 6, respectively.
 
+  DO NOT FORCE DELETE older BerkeleyDB packages, that breaks the upgrade
+  tools.  Instead, first rebuild the ports that depend on it, then
+  remove the old Berkeley DB versions.
+
+  Berkeley DB ports should be able to build/install with an older and a
+  newer version version both installed if WITH_BDB_VER is set.  If a
+  port then grabs the old Berkeley DB version, that is an issue with the
+  port that requires Berkeley DB, and should be reported to the
+  maintainer.
+
   If you are interested in upgrading now already, we have instructions
   at <https://wiki.freebsd.org/Ports/BerkeleyDBCleanup>.
 
