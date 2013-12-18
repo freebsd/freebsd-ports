@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	chinese
 MASTER_SITES=	http://of.openfoundry.org/download/scimarray/${PORTVERSION}/
 
-MAINTAINER=	llwang@infor.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Array 30 SCIM IMEngine module
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim

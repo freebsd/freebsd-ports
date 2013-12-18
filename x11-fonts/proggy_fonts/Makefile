@@ -22,7 +22,7 @@ EXTRACT_ONLY=	ProggyClean.pcf.zip ProggySquare.pcf.zip \
 		SpeedyPCF.zip WebbySmall.pcf.zip \
 		WebbyCaps.pcf.zip
 
-MAINTAINER=	llwang@infor.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The perfect monospaced bitmap programming fonts
 
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \

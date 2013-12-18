@@ -14,7 +14,7 @@ DISTFILES=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}:source \
 		numpy-user-${PORTVERSION}.pdf:doc
 EXTRACT_ONLY=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}
 
-MAINTAINER=	llwang@infor.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	The New Numeric Extension to Python
 
 LICENSE=	BSD
