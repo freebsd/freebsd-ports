@@ -10,7 +10,7 @@ MASTER_SITES=	SF/lgames/${PORTNAME} \
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_icons${EXTRACT_SUFX}:icons
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Atomix-like game of moving marbles in puzzles
 
 LICENSE=	GPLv2

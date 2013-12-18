@@ -6,7 +6,7 @@ PORTVERSION=	0.2.0a
 CATEGORIES=	multimedia
 MASTER_SITES=	http://dvdid.cjkey.org.uk/
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Tool for calculating dvdids
 
 GNU_CONFIGURE=	yes

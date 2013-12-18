@@ -8,7 +8,7 @@ CATEGORIES=	graphics java
 MASTER_SITES=	APACHE/xmlgraphics/${PORTNAME}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Java based SVG toolkit
 
 LICENSE=	AL2

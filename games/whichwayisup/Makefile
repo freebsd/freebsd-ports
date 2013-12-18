@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}_b${DISTVERSION:S/.//g}${EXTRACT_SUFX} \
 DIST_SUBDIR=	python
 EXTRACT_ONLY=	${PORTNAME}_b${DISTVERSION:S/.//g}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Platformer game with rotational twist
 
 LICENSE=	GPLv2

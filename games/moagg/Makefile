@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}-bin.zip \
 DIST_SUBDIR=	java
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}-bin.zip
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Pilot a small space ship
 
 LICENSE=	GPLv2

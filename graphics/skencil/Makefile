@@ -7,7 +7,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/alpha_rev/}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Interactive drawing program
 
 LICENSE=	LGPL20

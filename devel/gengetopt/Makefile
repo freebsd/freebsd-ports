@@ -6,7 +6,7 @@ PORTVERSION=	2.22.6
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Tool for generating a C function which parses command line arguments
 
 LICENSE=	GPLv3

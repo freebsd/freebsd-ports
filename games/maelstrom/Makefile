@@ -13,7 +13,7 @@ DISTFILES=	Maelstrom-${DISTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	Maelstrom-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Asteroids-style game for X Window System
 
 LICENSE=	GPLv2

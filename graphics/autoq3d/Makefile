@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/AutoQ3D%20${PORTVERSION}
 DISTNAME=	AutoQ3DCommunity${PORTVERSION:C/\./-/}qt4source
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Qt 4 quick 3D model editor
 
 LICENSE=	GPLv2 GPLv3

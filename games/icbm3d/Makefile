@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}.${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.gif:icons
 EXTRACT_ONLY=	${PORTNAME}.${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Inter-Continental Ballistic Missiles, 3D
 
 WRKSRC=		${WRKDIR}/icbm3d

@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/ttt/ \
 		ftp://ftp.billsgames.com/unix/x/ttt/
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Simple one or two player Tic Tac Toe game
 
 LICENSE=	GPLv2

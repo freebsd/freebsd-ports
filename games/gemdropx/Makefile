@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/gemdropx/src/ \
 		ftp://ftp.billsgames.com/unix/x/gemdropx/src/
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Interesting one-player puzzle game for X (SDL)
 
 LICENSE=	GPLv2

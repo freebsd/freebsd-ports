@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/bluemoon/
 DISTNAME=	bluemoon-${PORTVERSION}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Blue Moon card solitaire
 
 LICENSE=	BSD
