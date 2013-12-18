@@ -11,8 +11,8 @@ COMMENT=	HTTP Test Tool
 
 LICENSE=	AL2
 
-LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1 \
-		pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
+		libpcre.so:${PORTSDIR}/devel/pcre
 
 OPTIONS_DEFINE=	EXAMPLES
 

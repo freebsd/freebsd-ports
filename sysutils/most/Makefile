@@ -13,7 +13,7 @@ COMMENT=	Pager (like less) which has support for windows and binary files
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
