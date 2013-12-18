@@ -1,6 +1,3 @@
-@comment Package is not complete without minimal /var/news installation :-(
-@comment Basically just in.* and out.*    /var/news might be a symbolic link
-@comment and it might not exist yet :-(
 bin/checknews
 bin/cnewsdo
 bin/inews
@@ -9,6 +6,29 @@ bin/postnews
 bin/readnews
 include/dbz.h
 lib/libcnews.a
+man/man1/checknews.1cn.gz
+man/man1/inews.1cn.gz
+man/man1/postnews.1cn.gz
+man/man1/readnews.1cn.gz
+man/man5/controlperm.5.gz
+man/man5/news.5.gz
+man/man5/newsctl.5.gz
+man/man5/newsdb.5.gz
+man/man5/newsoverview.5.gz
+man/man5/newssys.5.gz
+man/man8/cnewsdo.8cn.gz
+man/man8/expire.8cn.gz
+man/man8/explode.8cn.gz
+man/man8/mergeactive.8.gz
+man/man8/mkhistory.8cn.gz
+man/man8/newsaux.8cn.gz
+man/man8/newsbatch.8cn.gz
+man/man8/newsmail.8cn.gz
+man/man8/newsmaint.8cn.gz
+man/man8/newsoverview.8.gz
+man/man8/relaynews.8cn.gz
+man/man8/report.8cn.gz
+man/man8/rnews.8cn.gz
 %%NEWSBIN%%/batch/batchcheck
 %%NEWSBIN%%/batch/batcher
 %%NEWSBIN%%/batch/batchih
@@ -118,6 +138,8 @@ lib/libcnews.a
 %%NEWSBIN%%/unlock
 %%NEWSBIN%%/pgpverify
 %%NEWSBIN%%/config
+@exec chown news:news %D/%%NEWSBIN%%/input/newsspool
+@exec chmod 6555  %D/%%NEWSBIN%%/input/newsspool
 @dirrm %%NEWSBIN%%/batch
 @dirrm %%NEWSBIN%%/ctl
 @dirrm %%NEWSBIN%%/decompressors
@@ -130,53 +152,56 @@ lib/libcnews.a
 @dirrm %%NEWSBIN%%
 @owner news
 @group news
-@unexec for i in %%NEWSCTL_FILES%%; do if cmp -s %%VARBASE%%/%%NEWSCTL%%/$i %D/%%EXAMPLESDIR%%/newsctl/$i; then rm -f %%VARBASE%%/%%NEWSCTL%%/$i; else echo "Preserving %%VARBASE%%/%%NEWSCTL%%/$i"; fi; done
-%%EXAMPLESDIR%%/newsctl/active
-%%EXAMPLESDIR%%/newsctl/active.times
-%%EXAMPLESDIR%%/newsctl/batchparms
-%%EXAMPLESDIR%%/newsctl/controlperm
-%%EXAMPLESDIR%%/newsctl/explist
-%%EXAMPLESDIR%%/newsctl/history
-%%EXAMPLESDIR%%/newsctl/history.dir
-%%EXAMPLESDIR%%/newsctl/history.pag
-%%EXAMPLESDIR%%/newsctl/inews
-%%EXAMPLESDIR%%/newsctl/mailname
-%%EXAMPLESDIR%%/newsctl/mailpaths
-%%EXAMPLESDIR%%/newsctl/organization
-%%EXAMPLESDIR%%/newsctl/postdefltgroup
-%%EXAMPLESDIR%%/newsctl/readnews.ctl
-%%EXAMPLESDIR%%/newsctl/readnews.help
-%%EXAMPLESDIR%%/newsctl/report.ctl
-%%EXAMPLESDIR%%/newsctl/sys
-%%EXAMPLESDIR%%/newsctl/versionname
-%%EXAMPLESDIR%%/newsctl/whoami
-@exec mkdir -p %D/%%EXAMPLESDIR%%/newsctl/bin
-@exec mkdir -p %%VARBASE%%/%%NEWSCTL%%/bin
-@exec for i in %%NEWSCTL_FILES%%; do if test ! -f %%VARBASE%%/%%NEWSCTL%%/$i; then cp %D/%%EXAMPLESDIR%%/newsctl/$i %%VARBASE%%/%%NEWSCTL%%/$i; else echo "preservering %%VARBASE%%/%%NEWSCTL%%/$i"; fi; done
-@dirrm %%EXAMPLESDIR%%/newsctl/bin
-@dirrm %%EXAMPLESDIR%%/newsctl
-@dirrm %%EXAMPLESDIR%%
+@exec mkdir -p %%VARBASE%%/%%NEWSCTL%%
+@exec chown news:news %%VARBASE%%/%%NEWSCTL%%
+%%PORTEXAMPLES%%@unexec for i in %%NEWSCTL_FILES%%; do if cmp -s %%VARBASE%%/%%NEWSCTL%%/$i %D/%%EXAMPLESDIR%%/newsctl/$i; then rm -f %%VARBASE%%/%%NEWSCTL%%/$i; else echo "Preserving %%VARBASE%%/%%NEWSCTL%%/$i"; fi; done
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/active
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/active.times
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/batchparms
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/controlperm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/explist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/history
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/history.dir
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/history.pag
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/inews
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/mailname
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/mailpaths
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/organization
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/postdefltgroup
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/readnews.ctl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/readnews.help
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/report.ctl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/sys
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/versionname
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/newsctl/whoami
+%%PORTEXAMPLES%%@exec for i in %%NEWSCTL_FILES%%; do if test ! -f %%VARBASE%%/%%NEWSCTL%%/$i; then cp -p %D/%%EXAMPLESDIR%%/newsctl/$i %%VARBASE%%/%%NEWSCTL%%/$i; else echo "preservering %%VARBASE%%/%%NEWSCTL%%/$i"; fi; done
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/newsctl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@exec mkdir -p %%VARBASE%%/%%NEWSARTS%%/control
+@exec mkdir -p %%VARBASE%%/%%NEWSARTS%%/junk
+@exec mkdir -p %%VARBASE%%/%%NEWSARTS%%/news/announce/newusers
+@exec mkdir -p %%VARBASE%%/%%NEWSARTS%%/in.coming/bad
+@exec chmod g+w %%VARBASE%%/%%NEWSARTS%%/in.coming
+@exec mkdir -p %%VARBASE%%/%%NEWSARTS%%/out.going
+@exec mkdir -p %%VARBASE%%/%%NEWSARTS%%/out.master
+@exec mkdir -p %%VARBASE%%/%%NEWSARTS%%/out.nntp
+@exec chown news:news %%VARBASE%%/%%NEWSARTS%%
+@exec chown news:news %%VARBASE%%/%%NEWSARTS%%/*
+@exec chown news:news %%VARBASE%%/%%NEWSARTS%%/news/announce
+@exec chown news:news %%VARBASE%%/%%NEWSARTS%%/news/announce/newusers
+@exec mkdir -p %%VARBASE%%/%%NEWSOV%%
+@exec chown news:news %%VARBASE%%/%%NEWSOV%%
 @cwd %%VARBASE%%
-@dirrm %%NEWSCTL%%/bin
-@dirrm %%NEWSCTL%%
-@dirrm %%NEWSCTLBASE%%
-@dirrm %%NEWSARTS%%/control
-@dirrm %%NEWSARTS%%/junk
-@dirrm %%NEWSARTS%%/news/announce/newusers
-@dirrm %%NEWSARTS%%/news/announce
-@dirrm %%NEWSARTS%%/news
-@dirrm %%NEWSARTS%%/in.coming/bad
-@dirrm %%NEWSARTS%%/in.coming
-@dirrm %%NEWSARTS%%/out.going
-@dirrm %%NEWSARTS%%/out.master
-@dirrm %%NEWSARTS%%/out.nntp
-@dirrm %%NEWSARTS%%
-@exec mkdir -p %D/%%NEWSARTS%%/control
-@exec mkdir -p %D/%%NEWSARTS%%/junk
-@exec mkdir -p %D/%%NEWSARTS%%/news/announce/newusers
-@exec mkdir -p %D/%%NEWSARTS%%/in.coming/bad
-@exec chmod g+w %D/%%NEWSARTS%%/in.coming
-@exec mkdir -p %D/%%NEWSARTS%%/out.going
-@exec mkdir -p %D/%%NEWSARTS%%/out.master
-@exec mkdir -p %D/%%NEWSARTS%%/out.nntp
-@cwd
+@dirrmtry %%NEWSCTL%%
+@dirrmtry %%NEWSCTLBASE%%
+@dirrmtry %%NEWSARTS%%/control
+@dirrmtry %%NEWSARTS%%/junk
+@dirrmtry %%NEWSARTS%%/news/announce/newusers
+@dirrmtry %%NEWSARTS%%/news/announce
+@dirrmtry %%NEWSARTS%%/news
+@dirrmtry %%NEWSARTS%%/in.coming/bad
+@dirrmtry %%NEWSARTS%%/in.coming
+@dirrmtry %%NEWSARTS%%/out.going
+@dirrmtry %%NEWSARTS%%/out.master
+@dirrmtry %%NEWSARTS%%/out.nntp
+@dirrmtry %%NEWSARTS%%

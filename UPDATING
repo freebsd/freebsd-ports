@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20131218:
+  AFFECTS: users of news/cnews
+  AUTHOR: dinoex@FreeBSD.org
+
+  The default path for overview files has changed.
+  Rebuild your overview files after the update with:
+  su - news /usr/local/libexec/cnews/nov/initov
+
 20131217:
   AFFECTS: users of databases/ruby-bdb or ports-mgmt/portupgrade and databases/db5 or databases/db6
   AUTHOR: mandree@FreeBSD.org
