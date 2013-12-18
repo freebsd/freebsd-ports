@@ -61,7 +61,60 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pango/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pango/Pango.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pango/Pango.so
+%%PERL5_MAN3%%/Pango.3.gz
+%%PERL5_MAN3%%/Pango::AttrBackground.3.gz
+%%PERL5_MAN3%%/Pango::AttrColor.3.gz
+%%PERL5_MAN3%%/Pango::AttrFallback.3.gz
+%%PERL5_MAN3%%/Pango::AttrFamily.3.gz
+%%PERL5_MAN3%%/Pango::AttrFontDesc.3.gz
+%%PERL5_MAN3%%/Pango::AttrForeground.3.gz
+%%PERL5_MAN3%%/Pango::AttrGravity.3.gz
+%%PERL5_MAN3%%/Pango::AttrGravityHint.3.gz
+%%PERL5_MAN3%%/Pango::AttrInt.3.gz
+%%PERL5_MAN3%%/Pango::AttrIterator.3.gz
+%%PERL5_MAN3%%/Pango::AttrLanguage.3.gz
+%%PERL5_MAN3%%/Pango::AttrLetterSpacing.3.gz
+%%PERL5_MAN3%%/Pango::AttrList.3.gz
+%%PERL5_MAN3%%/Pango::AttrRise.3.gz
+%%PERL5_MAN3%%/Pango::AttrScale.3.gz
+%%PERL5_MAN3%%/Pango::AttrShape.3.gz
+%%PERL5_MAN3%%/Pango::AttrSize.3.gz
+%%PERL5_MAN3%%/Pango::AttrStretch.3.gz
+%%PERL5_MAN3%%/Pango::AttrStrikethrough.3.gz
+%%PERL5_MAN3%%/Pango::AttrStrikethroughColor.3.gz
+%%PERL5_MAN3%%/Pango::AttrString.3.gz
+%%PERL5_MAN3%%/Pango::AttrStyle.3.gz
+%%PERL5_MAN3%%/Pango::AttrUnderline.3.gz
+%%PERL5_MAN3%%/Pango::AttrUnderlineColor.3.gz
+%%PERL5_MAN3%%/Pango::AttrVariant.3.gz
+%%PERL5_MAN3%%/Pango::AttrWeight.3.gz
+%%PERL5_MAN3%%/Pango::Attribute.3.gz
+%%PERL5_MAN3%%/Pango::Cairo.3.gz
+%%PERL5_MAN3%%/Pango::Cairo::Context.3.gz
+%%PERL5_MAN3%%/Pango::Cairo::Font.3.gz
+%%PERL5_MAN3%%/Pango::Cairo::FontMap.3.gz
+%%PERL5_MAN3%%/Pango::Color.3.gz
+%%PERL5_MAN3%%/Pango::Context.3.gz
+%%PERL5_MAN3%%/Pango::Font.3.gz
+%%PERL5_MAN3%%/Pango::FontDescription.3.gz
+%%PERL5_MAN3%%/Pango::FontFace.3.gz
+%%PERL5_MAN3%%/Pango::FontFamily.3.gz
+%%PERL5_MAN3%%/Pango::FontMap.3.gz
+%%PERL5_MAN3%%/Pango::FontMetrics.3.gz
+%%PERL5_MAN3%%/Pango::Fontset.3.gz
+%%PERL5_MAN3%%/Pango::Gravity.3.gz
+%%PERL5_MAN3%%/Pango::Language.3.gz
+%%PERL5_MAN3%%/Pango::Layout.3.gz
+%%PERL5_MAN3%%/Pango::LayoutIter.3.gz
+%%PERL5_MAN3%%/Pango::LayoutLine.3.gz
+%%PERL5_MAN3%%/Pango::Matrix.3.gz
+%%PERL5_MAN3%%/Pango::Renderer.3.gz
+%%PERL5_MAN3%%/Pango::Script.3.gz
+%%PERL5_MAN3%%/Pango::ScriptIter.3.gz
+%%PERL5_MAN3%%/Pango::TabArray.3.gz
+%%PERL5_MAN3%%/Pango::index.3.gz
+%%PERL5_MAN3%%/Pango::version.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pango
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Pango/Cairo
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Pango/Install
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Pango/Cairo
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Pango
