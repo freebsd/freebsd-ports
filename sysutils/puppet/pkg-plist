@@ -1,5 +1,42 @@
 bin/extlookup2hiera
 bin/puppet
+man/man5/puppet.conf.5.gz
+man/man8/extlookup2hiera.8.gz
+man/man8/puppet-agent.8.gz
+man/man8/puppet-apply.8.gz
+man/man8/puppet-ca.8.gz
+man/man8/puppet-catalog.8.gz
+man/man8/puppet-cert.8.gz
+man/man8/puppet-certificate.8.gz
+man/man8/puppet-certificate_request.8.gz
+man/man8/puppet-certificate_revocation_list.8.gz
+man/man8/puppet-config.8.gz
+man/man8/puppet-describe.8.gz
+man/man8/puppet-device.8.gz
+man/man8/puppet-doc.8.gz
+man/man8/puppet-facts.8.gz
+man/man8/puppet-file.8.gz
+man/man8/puppet-filebucket.8.gz
+man/man8/puppet-help.8.gz
+man/man8/puppet-inspect.8.gz
+man/man8/puppet-instrumentation_data.8.gz
+man/man8/puppet-instrumentation_listener.8.gz
+man/man8/puppet-instrumentation_probe.8.gz
+man/man8/puppet-key.8.gz
+man/man8/puppet-kick.8.gz
+man/man8/puppet-man.8.gz
+man/man8/puppet-master.8.gz
+man/man8/puppet-module.8.gz
+man/man8/puppet-node.8.gz
+man/man8/puppet-parser.8.gz
+man/man8/puppet-plugin.8.gz
+man/man8/puppet-queue.8.gz
+man/man8/puppet-report.8.gz
+man/man8/puppet-resource.8.gz
+man/man8/puppet-resource_type.8.gz
+man/man8/puppet-secret_agent.8.gz
+man/man8/puppet-status.8.gz
+man/man8/puppet.8.gz
 %%RUBY_SITELIBDIR%%/hiera/backend/puppet_backend.rb
 %%RUBY_SITELIBDIR%%/hiera/scope.rb
 %%RUBY_SITELIBDIR%%/hiera_puppet.rb
@@ -10,11 +47,12 @@ bin/puppet
 %%RUBY_SITELIBDIR%%/puppetx.rb
 %%ETCDIR%%/puppet.conf-dist
 %%ETCDIR%%/auth.conf-dist
+www/puppet/config.ru
+@dirrm www/puppet/public
+@dirrm www/puppet
 @dirrmtry etc/puppet/modules
 @dirrmtry etc/puppet
-@unexec rmdir /var/puppet 2>/dev/null || true
-@exec /bin/mkdir -p /var/puppet
-@exec /bin/mkdir -p %D/etc/puppet/modules
+@unexec rmdir /var/puppet 2>/dev/null || :
 @exec /usr/sbin/chown -Rh puppet:puppet /var/puppet
 @dirrm %%RUBY_SITELIBDIR%%/hiera/backend
 @dirrm %%RUBY_SITELIBDIR%%/hiera
