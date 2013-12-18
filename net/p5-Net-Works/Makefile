@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net-Works
-PORTVERSION=	0.13
-PORTREVISION=	1
+PORTVERSION=	0.14
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DROLSKY
@@ -23,8 +22,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Works.3 Net::Works::Util.3 Net::Works::Address.3 \
-		Net::Works::Network.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
