@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	surfraw
-PORTVERSION=	2.2.8
+PORTVERSION=	2.2.9
 CATEGORIES=	www
 MASTER_SITES=	http://surfraw.alioth.debian.org/dist/
 
@@ -9,8 +9,7 @@ MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Command line interface to popular WWW search engines
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		perl5
+USES=		perl5 gmake
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} '\|xdg/surfraw|d' ${WRKSRC}/Makefile.in
