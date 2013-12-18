@@ -10,6 +10,28 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20131218:
+AUTHOR: mva@FreeBSD.org
+
+  lang/python (and as such the 'python' binary and accomplices)
+  has been removed as default dependency for the USE_PYTHON,
+  USE_PYTHON_BUILD and USE_PYTHON_RUN knobs.
+
+  Ports need to use a designated (default) python interpreter
+  to build and install and in most cases for execution in the user
+  environment. Ports that install python scripts, which are not
+  limited to a certain python version (or version range), can
+  include lang/python as build and/or run dependency.
+
+  USE_PYTHON=yes and similar knobs will only pull in the
+  default python version (e.g. lang/python27), but none
+  of the meta ports or lang/python itself.
+
+  Please use lang/python as build or run-time dependency only,
+  if there is no other way to get a port working properly, since
+  the usage of lang/python complicates package builds for different
+  python versions.
+
 20131213:
 AUTHOR: tijl@FreeBSD.org
 
