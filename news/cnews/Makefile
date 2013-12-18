@@ -3,7 +3,7 @@
 
 PORTNAME=	cnews
 PORTVERSION=	cr.g
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.funet.fi/pub/unix/news/cnews/ \
@@ -36,13 +36,13 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 MAKE_JOBS_UNSAFE=	yes
-NO_STAGE=	yes
 
 USE_GCC=	any
 
 DIST_SUBDIR=	${DISTNAME}
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
+SUB_FILES=	pkg-message
 MAN1=		checknews.1cn inews.1cn postnews.1cn readnews.1cn
 MAN5=		controlperm.5 news.5 newsctl.5 newsdb.5 newsoverview.5 \
 		newssys.5
@@ -50,10 +50,14 @@ MAN8=		cnewsdo.8cn expire.8cn explode.8cn mergeactive.8 \
 		mkhistory.8cn newsaux.8cn newsbatch.8cn newsmail.8cn \
 		newsmaint.8cn newsoverview.8 relaynews.8cn report.8cn \
 		rnews.8cn
+NO_EG_FILES=	active.times inews organization postdefltgroup readnews.ctl \
+		readnews.help report.ctl versionname
 NEWSCTL_FILES=	active active.times batchparms controlperm explist \
 		history history.dir history.pag inews mailname mailpaths \
 		organization postdefltgroup readnews.ctl readnews.help \
 		report.ctl sys versionname whoami
+
+SUB_LIST+=	NEWSCTL=${NEWSCTL}
 PLIST_SUB+=	VARBASE=${VARBASE}
 PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=^${PREFIX}/==}
 PLIST_SUB+=	NEWSCTL=${NEWSCTL:S=^${VARBASE}/==}
@@ -62,92 +66,71 @@ PLIST_SUB+=	NEWSARTS=${NEWSARTS:S=^${VARBASE}/==}
 PLIST_SUB+=	NEWSOV=${NEWSOV:S=^${VARBASE}/==}
 PLIST_SUB+=	NEWSCTL_FILES="${NEWSCTL_FILES}"
 
-MODIFY=		conf/quiz.def \
-		conf/substitutions \
-		include/config.make
+OPTIONS_DEFINE=	SENDMAIL
+SENDMAIL_DESC=	use sendmail instead of /bin/mail
 
 VARBASE?=	/var
 NEWSBIN?=	${PREFIX}/libexec/cnews
 NEWSCTL?=	${VARBASE}/lib/news
 NEWSARTS?=	${VARBASE}/news
-NEWSOV?=	${VARBASE}/news
+NEWSOV?=	${VARBASE}/news/over.view
 PGPVERIFY?=	pgpverify-1.12
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if make(makesum) || defined(FETCH_ALL)
 PATCHFILES+=	c-news-patch-gawk3
 .endif
 
-.if defined(WITH_SENDMAIL) || defined(WITH_CNEWS_SENDMAIL)
+.if ${PORT_OPTIONS:MSENDMAIL}
 EXTRA_PATCHES+=	${FILESDIR}/sendmail.patch
 .endif
 
 pre-patch:
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${PGPVERIFY} ${WRKSRC}/${PGPVERIFY}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${PGPVERIFY} ${WRKSRC}/${PGPVERIFY}
 
 pre-configure:
-.for i in ${MODIFY}
-	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}.sed
-	${SED} \
+.for i in conf/quiz.def conf/substitutions include/config.make
+	${REINPLACE_CMD} \
 		-e "s=/usr/local/news/lib/bin/config=${NEWSBIN}/config=" \
 		-e "s=/usr/local/news/cnewsbin=${NEWSBIN}=" \
 		-e "s=/usr/local/news/lib=${NEWSCTL}=" \
 		-e "s=/var/news/over.view=${NEWSOV}=" \
 		-e "s=/var/news=${NEWSARTS}=" \
 		-e "s=/usr/local/bin=${PREFIX}/bin=" \
-		${WRKSRC}/${i}.sed > ${WRKSRC}/${i}
+		${WRKSRC}/${i}
 .endfor
 
 do-install:
-	${RM} -f ${PREFIX}/bin/inews
-	${INSTALL_DATA} ${WRKSRC}/libdbz/dbz.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/libcnews.a ${PREFIX}/lib
-	${MKDIR} ${NEWSARTS} ${NEWSOV} ${NEWSBIN} ${NEWSCTL}
-	${CHOWN} ${BINOWN}:${BINGRP} ${NEWSBIN}
-	${INSTALL_SCRIPT} ${WRKSRC}/${PGPVERIFY} ${NEWSBIN}/pgpverify
-	cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install
-	cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} setup
-	cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ui readpostcheck
-.for f in checknews cnewsdo inews injnews postnews readnews
-	${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/bin/$f
+	${INSTALL_DATA} ${WRKSRC}/libdbz/dbz.h ${STAGEDIR}${PREFIX}/include/
+	${INSTALL_DATA} ${WRKSRC}/libcnews.a ${STAGEDIR}${PREFIX}/lib/
+	${MKDIR} ${STAGEDIR}${NEWSARTS} ${STAGEDIR}${NEWSOV} \
+		${STAGEDIR}${NEWSCTL} ${STAGEDIR}${NEWSBIN}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PGPVERIFY} ${STAGEDIR}${NEWSBIN}/pgpverify
+	${INSTALL_SCRIPT} ${WRKSRC}/conf/config ${STAGEDIR}${NEWSBIN}/
+	cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS} ${MAKE_FLAGS} ${MAKEFILE} install
+	cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS} ${MAKE_FLAGS} ${MAKEFILE} ui readpostcheck
+	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN1} ${STAGEDIR}${PREFIX}/man/man1/
+	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN5} ${STAGEDIR}${PREFIX}/man/man5/
+	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN8} ${STAGEDIR}${PREFIX}/man/man8/
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/newsctl
+	cd ${WRKSRC} && ${INSTALL_DATA} ${NO_EG_FILES:S,^,*/,} \
+		${STAGEDIR}${EXAMPLESDIR}/newsctl/
+.for f in active batchparms controlperm explist mailname mailpaths sys whoami
+	cd ${WRKSRC} && ${CP} -p */${f}.eg ${STAGEDIR}${EXAMPLESDIR}/newsctl/${f}
 .endfor
-	${CHOWN} news:news ${NEWSARTS} ${NEWSOV} ${NEWSCTL} ${NEWSCTL}/bin
+	${TOUCH} ${STAGEDIR}${EXAMPLESDIR}/newsctl/history
+	cd ${STAGEDIR}${EXAMPLESDIR}/newsctl && \
+		${STAGEDIR}${NEWSBIN}/dbz history
+.endif
 .for d in control junk news/announce/newusers news/announce news \
 	in.coming/bad in.coming out.going out.master out.nntp
-	${CHOWN} news:news ${NEWSARTS}/${d}
+	${MKDIR} ${STAGEDIR}${NEWSARTS}/${d}
 .endfor
-	${CHOWN} news:news ${NEWSBIN}/input/newsspool
-	${CHMOD} 6555 ${NEWSBIN}/input/newsspool
-.for i in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/man/${i} ${PREFIX}/man/man1
-.endfor
-.for i in ${MAN5}
-	${INSTALL_MAN} ${WRKSRC}/man/${i} ${PREFIX}/man/man5
-.endfor
-.for i in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/man/${i} ${PREFIX}/man/man8
-.endfor
-	${MKDIR} ${EXAMPLESDIR}/newsctl
-	@${TAR} -C ${NEWSCTL} -cf - . | ${TAR} -C ${EXAMPLESDIR}/newsctl -xf -
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "!!!!!!!!"
-	@${ECHO_MSG} "you MUST change the configuration of this news setup:"
-	@${ECHO_MSG} "	cd to ${NEWSCTL} and change the following files..."
-	@${ECHO_MSG} "mailname, whoami, organization, mailpaths, sys, readnews.ctl, postdefltgroup"
-	@${ECHO_MSG} "	to suit your local system and news topology."
-	@${ECHO_MSG} "check that you have vaild aliases in report.ctl,"
-	@${ECHO_MSG} "	so any problem can be reported."
-	@${ECHO_MSG} "!!!!!!!!"
-	@${ECHO_MSG} ""
-.if !defined(BATCH)
-	@if test "$$(pw usershow news)" != "news:*:8:8::0:0:News Subsystem:${NEWSCTL}:${SHELL}"; then \
-	pw usermod news -d "${NEWSCTL}" -s ${SHELL}; fi
-	@pw usershow news
-.endif
 
 test:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} r)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
