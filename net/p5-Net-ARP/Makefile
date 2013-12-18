@@ -16,7 +16,4 @@ BUILD_DEPENDS=	p5-Net-Pcap>=0:${PORTSDIR}/net/p5-Net-Pcap
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Net::ARP.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
