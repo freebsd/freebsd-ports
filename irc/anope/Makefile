@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	anope
-PORTVERSION=	1.8.7
+PORTVERSION=	1.8.8
 CATEGORIES=	irc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/Anope%20${PORTVERSION}
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A set of IRC services for IRC networks
 
-USES=		gmake perl5
+USES=		perl5
+USE_GMAKE=	yes
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir="${LOCALBASE}/lib" \
@@ -40,6 +41,10 @@ USE_MYSQL=	yes
 .else
 CONFIGURE_ARGS+=	--without-mysql
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|ja_utf8|ja|g' ${WRKSRC}/lang/Makefile
+	${MV} ${WRKSRC}/lang/ja_utf8.l ${WRKSRC}/lang/ja.l
 
 pre-install:
 	@${MKDIR} ${PREFIX}/libexec/anope

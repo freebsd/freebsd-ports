@@ -15,6 +15,7 @@ libexec/anope/tools/epona2anope
 %%DATADIR%%/languages/gr
 %%DATADIR%%/languages/hun
 %%DATADIR%%/languages/it
+%%DATADIR%%/languages/ja
 %%DATADIR%%/languages/nl
 %%DATADIR%%/languages/pl
 %%DATADIR%%/languages/pt
