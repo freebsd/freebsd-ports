@@ -12,7 +12,7 @@ COMMENT=	Create 2D barcodes, also known as DataMatrix
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
