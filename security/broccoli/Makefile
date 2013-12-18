@@ -59,7 +59,7 @@ post-install::
 .endif
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc
 	@${MV} ${STAGEDIR}${PREFIX}/etc/broccoli.conf ${STAGEDIR}${PREFIX}/etc/broccoli.conf.example
-.if defined(BRO_PREFIX)
+.if !empty(${PORT_OPTIONS:MPYTHON}) && defined(BRO_PREFIX)	
 	# bsd.python.mk isn't PREFIX-safe yet.
 	@${MV} ${STAGEDIR}${PYTHON_LIBDIR} ${STAGEDIR}${PYTHON_LIBDIR:S/${LOCALBASE}/${PREFIX}/}
 .endif
