@@ -13,7 +13,7 @@ COMMENT=	File duplicate scanner with database support
 
 LICENSE=	GPLv2
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SRCF=		crc32 dlink weedit md5
