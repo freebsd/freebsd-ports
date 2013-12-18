@@ -1,0 +1,15 @@
+from distutils.core import setup, Extension
+
+setup(
+    name='snack',
+	version='%%VERSION%%',
+	description='Python interface to Newt module',
+	py_modules=['snack'],
+	ext_modules=[ Extension(
+		name='_snack',
+		sources=['snackmodule.c'],
+		include_dirs=['.', '%%LOCALBASE%%'+'/include', '%%PREFIX%%'+'/include'],
+		library_dirs=['.', '%%LOCALBASE%%'+'/lib', '%%PREFIX%%'+'/lib'],
+		libraries=['newt', 'popt', 'slang', 'ncurses']
+	)]
+)
