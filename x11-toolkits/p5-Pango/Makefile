@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Pango
-PORTVERSION=	1.223
-PORTREVISION=	1
+PORTVERSION=	1.224
 CATEGORIES=	x11-toolkits lang perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:XAOC
@@ -11,6 +10,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Perl module for layout and render i18n text
+
+LICENSE=	LGPL21
 
 BUILD_DEPENDS=	p5-ExtUtils-Depends>=0.300:${PORTSDIR}/devel/p5-ExtUtils-Depends \
 		p5-ExtUtils-PkgConfig>=1.03:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
@@ -21,11 +22,6 @@ RUN_DEPENDS=	p5-Glib2>=1.220:${PORTSDIR}/devel/p5-Glib2
 USE_GNOME=	pango
 USES=		perl5
 USE_PERL5=	configure
-MAKE_JOBS_UNSAFE=yes
-
-NO_STAGE=	yes
-post-install:
-	@cd ${WRKSRC}/blib/man3 && ${FIND} * -name "*.3" | ${SED} \
-		's,^,${MAN3PREFIX:S,^${PREFIX}/,,}/man/man3/,' >> ${TMPPLIST}
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
