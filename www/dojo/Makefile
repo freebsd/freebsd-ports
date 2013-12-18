@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=		dojo
-PORTVERSION=		1.9.1
+PORTVERSION=		1.9.2
 CATEGORIES=		www
 MASTER_SITES=		http://download.dojotoolkit.org/release-${PORTVERSION}/
 DISTNAME=		dojo-release-${PORTVERSION}

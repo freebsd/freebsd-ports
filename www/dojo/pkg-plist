@@ -1000,8 +1000,6 @@
 %%WWWDIR%%/dijit/themes/claro/README
 %%WWWDIR%%/dijit/themes/claro/TimePicker.css
 %%WWWDIR%%/dijit/themes/claro/TimePicker.less
-%%WWWDIR%%/dijit/themes/claro/TimePicker_rtl.css
-%%WWWDIR%%/dijit/themes/claro/TimePicker_rtl.less
 %%WWWDIR%%/dijit/themes/claro/TitlePane.css
 %%WWWDIR%%/dijit/themes/claro/TitlePane.less
 %%WWWDIR%%/dijit/themes/claro/TitlePane_rtl.css
