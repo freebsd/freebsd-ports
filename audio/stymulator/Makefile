@@ -14,7 +14,7 @@ COMMENT=	Command-line Yamaha YM2149 (.ym) chiptune player
 
 LICENSE=	GPLv2
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
