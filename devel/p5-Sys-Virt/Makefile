@@ -15,7 +15,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath
-LIB_DEPENDS=	virt.1001:${PORTSDIR}/devel/libvirt
+LIB_DEPENDS=	libvirt.so:${PORTSDIR}/devel/libvirt
 RUN_DEPENDS=	p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath
 TEST_DEPENDS=	p5-CPAN-Changes>=0:${PORTSDIR}/devel/p5-CPAN-Changes \
 		p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod \
