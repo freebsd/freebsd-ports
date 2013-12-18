@@ -10,7 +10,7 @@ MASTER_SITES=	http://lpccomp.bc.ca/remserial/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Bridge between a TCP/IP network port and a character-oriented device
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 
 PLIST_FILES=	bin/remserial
 PORTDOCS=	README.txt
