@@ -3,18 +3,20 @@
 
 PORTNAME=	puppet
 PORTVERSION=	3.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	A configuration management framework written in Ruby
 
+LICENSE=	AL2
+
 RUN_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
 		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-augeas \
 		rubygem-hiera>=0:${PORTSDIR}/sysutils/rubygem-hiera
 
-CONFLICTS=      puppet-2*
+CONFLICTS=	puppet-2*
 NO_BUILD=	yes
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
@@ -26,29 +28,14 @@ GROUPS=		puppet
 SUB_FILES+=	pkg-message
 SUB_LIST=	RUBY=${RUBY}
 
-MANCOMPRESSED=	yes
-MAN5=	puppet.conf.5
-MAN8=	extlookup2hiera.8 puppet-agent.8 puppet-apply.8 puppet-ca.8 \
-	puppet-catalog.8 puppet-cert.8 puppet-certificate.8 \
-	puppet-certificate_request.8 puppet-certificate_revocation_list.8 \
-	puppet-config.8 puppet-describe.8 puppet-device.8 puppet-doc.8 \
-	puppet-facts.8 puppet-file.8 puppet-filebucket.8 puppet-help.8 \
-	puppet-inspect.8 puppet-instrumentation_data.8 \
-	puppet-instrumentation_listener.8 puppet-instrumentation_probe.8 \
-	puppet-key.8 puppet-kick.8 puppet-man.8 puppet-master.8 \
-	puppet-module.8 puppet-node.8 puppet-parser.8 puppet-plugin.8 \
-	puppet-queue.8 puppet-report.8 puppet-resource.8 \
-	puppet-resource_type.8 puppet-secret_agent.8 puppet-status.8 \
-	puppet.8
-
+OPTIONS_DEFINE=		DOCS EXAMPLES
 OPTIONS_DEFAULT=	PACKAGE_ORIGIN
-OPTIONS_SINGLE=         PATCHES
+OPTIONS_SINGLE=		PATCHES
 OPTIONS_SINGLE_PATCHES=	PACKAGE_ORIGIN PACKAGE_ROOT
 PACKAGE_ORIGIN_DESC=	Use port origin as package name
 PACKAGE_ROOT_DESC=	Use PACKAGEROOT insted of PACKAGESITE
-PATCHES_DESC=           Optional exclusive patches
+PATCHES_DESC=		Optional exclusive patches
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPACKAGE_ROOT}
@@ -63,7 +50,7 @@ BROKEN=	PACKAGE_ROOT option patch is incompatable with PACKAGE_ORIGIN patch.
 
 .if ${PORT_OPTIONS:MPACKAGE_ORIGIN}
 EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_origin
-.if ${RUBY_VER} == 1.8 || ${RUBY_VER} == 1.9
+.if ${RUBY_VER} == 1.9
 RUN_DEPENDS+=	rubygem-bzip2>=0:${PORTSDIR}/archivers/rubygem-bzip2
 .endif
 .endif
@@ -83,34 +70,32 @@ post-patch:
 		${WRKSRC}/lib/puppet/defaults.rb
 
 do-install:
-	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ${RUBY} ${WRKSRC}/install.rb --no-configs
+	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ${RUBY} ${WRKSRC}/install.rb --no-configs --destdir=${STAGEDIR}
 
 post-install:
-	${INSTALL} -d ${ETCDIR}
-	${INSTALL} -m 0755 -o puppet -g puppet -d /var/puppet
-	${INSTALL} -m 0644 ${WRKSRC}/conf/auth.conf ${ETCDIR}/auth.conf-dist
-	${RUBY} -I ${RUBY_SITELIBDIR} ${PREFIX}/bin/puppet master --genconfig \
+	${MKDIR} ${STAGEDIR}${ETCDIR}/modules
+	${MKDIR} ${STAGEDIR}/var/puppet
+	${INSTALL_DATA} ${WRKSRC}/conf/auth.conf ${STAGEDIR}${ETCDIR}/auth.conf-dist
+	${RUBY} -I ${STAGEDIR}/${RUBY_SITELIBDIR} ${STAGEDIR}${PREFIX}/bin/puppet master --genconfig \
 		--confdir=${ETCDIR} \
 		--rundir=/var/run/puppet \
-		--vardir=/var/lib/puppet \
+		--vardir=/var/puppet \
 		--logdir=/var/log/puppet \
-		> ${ETCDIR}/puppet.conf-dist
-	${MKDIR} -p ${ETCDIR}/modules
-	@${ECHO} ${RUBY_SITELIBDIR}/puppet.rb | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${ECHO} ${RUBY_SITELIBDIR}/semver.rb | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${RUBY_SITELIBDIR}/${PORTNAME} -type f | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${RUBY_SITELIBDIR}/${PORTNAME} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.if ${PORT_OPTIONS:MDOCS}
-	${INSTALL} -d ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+		> ${STAGEDIR}${ETCDIR}/puppet.conf-dist
+	@${ECHO} ${STAGEDIR}${RUBY_SITELIBDIR}/puppet.rb | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
+	@${ECHO} ${STAGEDIR}${RUBY_SITELIBDIR}/semver.rb | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${RUBY_SITELIBDIR}/${PORTNAME} -type f | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${RUBY_SITELIBDIR}/${PORTNAME} -type d | ${SORT} -r | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}/public
+	${INSTALL_DATA} ${WRKSRC}/ext/rack/files/config.ru ${STAGEDIR}${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/ext/rack/files/apache2.conf ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.post.mk>
