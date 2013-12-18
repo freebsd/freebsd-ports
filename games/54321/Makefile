@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.nklein.com/products/54321/${PORTVERSION}/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	llwang@infor.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	54321 is five games in four-, three-, or two-dimensions for one player
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png

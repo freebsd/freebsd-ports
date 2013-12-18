@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.darkarts.co.za/projects/noegnud/downloads/${PORTVERSION
 PKGNAMESUFFIX=	-addons
 DISTFILES=	${DISTNAME}_data-tileset-absurd${EXTRACT_SUFX}
 
-MAINTAINER=	llwang@infor.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Addons (tilesets and sound themes) for noeGNUd
 
 USE_BZIP2=	yes

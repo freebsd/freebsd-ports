@@ -9,7 +9,7 @@ MASTER_SITES=	http://compsoc.dur.ac.uk/whitespace/downloads/
 DISTNAME=	wspace-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	llwang@infor.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interpreter for the Whitespace programming language
 
 LICENSE=	GPLv2

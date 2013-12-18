@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.darkarts.co.za/projects/noegnud/downloads/${PORTVERSION
 PKGNAMESUFFIX=	-data
 DISTFILES=	${DISTNAME}_linux_src-minimal${EXTRACT_SUFX}
 
-MAINTAINER=	llwang@infor.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The noeGNUd Data Files
 
 NOEGNUDVERSION=	${PORTNAME}-0.8.0

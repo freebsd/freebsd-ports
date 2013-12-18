@@ -8,7 +8,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://sdlemu.ngemu.com/OpenProjects/
 DISTNAME=	Cygne-SDL-${PORTVERSION}-src
 
-MAINTAINER=	llwang@infor.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The SDL port of Cygne, a free Bandai Wonderswan emulator
 
 USE_SDL=	sdl

@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/BuDDy%20${PORTVERSION}
 
-MAINTAINER=	llwang@infor.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Binary Decision Diagram library
 
 USE_AUTOTOOLS=	libtool
