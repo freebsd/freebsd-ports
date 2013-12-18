@@ -2,50 +2,40 @@
 # $FreeBSD$
 
 PORTNAME=	apngasm
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 DISTVERSIONSUFFIX=-src
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Creates an APNG animation from a PNG/TGA image sequence
+COMMENT=	Create Animated PNG from a sequence of files
 
 LICENSE=	ZLIB
 
-NO_WRKSUBDIR=	yes
-
-USE_DOS2UNIX=	yes
-USE_ZIP=	yes
-
-CPPFLAGS+=	`libpng-config --I_opts`
-LDFLAGS+=	`libpng-config --ldflags` -lm -lz
-
-PLIST_FILES=	bin/${PORTNAME}
-
-PORTDOCS=	readme.txt
-
 OPTIONS_DEFINE=	DOCS STATIC
 
-NO_STAGE=	yes
+NO_WRKSUBDIR=	yes
+
+USE_ZIP=	yes
+USES=		dos2unix gmake
+
+PORTDOCS=	readme.txt
+PLIST_FILES=	bin/${PORTNAME}
+
+STATIC_BUILD_DEPENDS=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png
+STATIC_MAKE_ENV=	STATIC=1
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MSTATIC}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libpng.a:${PORTSDIR}/graphics/png
-LDFLAGS+=	-static
-.else
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
+.if ! ${PORT_OPTIONS:MSTATIC}
+LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
 .endif
-
-do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} ${PORTNAME}.c \
-		-o ${PORTNAME} ${LDFLAGS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

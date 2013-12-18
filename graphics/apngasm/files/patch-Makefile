@@ -1,0 +1,49 @@
+--- ./Makefile.orig	2013-12-18 15:23:41.000000000 -0200
++++ ./Makefile	2013-12-18 15:23:54.000000000 -0200
+@@ -1,10 +1,17 @@
+ PACKAGE    = apngasm
+-CC         = gcc
++CC        ?= cc
++CXX       ?= c++
+ SRC_DIRS   = . 7z zopfli
+-CFLAGS     = -Wall -pedantic
+-CFLAGS_OPT = -O2
+-CFLAGS_7Z  = -Wno-sign-compare -Wno-reorder -Wno-maybe-uninitialized -Wno-parentheses
+-LIBS       = -lstdc++ -lm -lpng -lz
++CFLAGS    += -Wall -pedantic
++CXXFLAGS  += -Wall -pedantic
++CPPFLAGS  += $(shell libpng-config --cflags)
++CFLAGS_7Z  = -Wno-sign-compare -Wno-reorder -Wno-parentheses
++ifeq ($(strip $(STATIC)),)
++LIBS       = $(shell libpng-config --ldflags)
++else
++LIBS       = $(shell libpng-config --static --ldflags)
++LDFLAGS   += -static
++endif
+ 
+ INCUDE_DIRS := $(addprefix -I./, $(SRC_DIRS))
+ OBJ_DIRS := $(addprefix obj/, $(SRC_DIRS))
+@@ -16,19 +23,19 @@
+ all : $(PACKAGE)
+ 
+ $(PACKAGE) : objdirs $(OBJECTS)
+-	$(CC) -o $@ $(OBJECTS) -s $(LIBS)
++	$(CXX) -o $@ $(OBJECTS) $(LIBS) $(LDFLAGS)
+ 
+ objdirs :
+ 	mkdir -p $(OBJ_DIRS)
+ 
+ obj/%.o : %.cpp
+-	$(CC) -o $@ -c $< $(INCUDE_DIRS) $(CFLAGS) $(CFLAGS_OPT)
++	$(CXX) -o $@ -c $< $(INCUDE_DIRS) $(CXXFLAGS) $(CPPFLAGS)
+ 
+ obj/%.o : %.c
+-	$(CC) -o $@ -c $< $(INCUDE_DIRS) $(CFLAGS) $(CFLAGS_OPT)
++	$(CC) -o $@ -c $< $(INCUDE_DIRS) $(CFLAGS) $(CPPFLAGS)
+ 
+ obj/%.o : %.cc
+-	$(CC) -o $@ -c $< $(INCUDE_DIRS) $(CFLAGS) $(CFLAGS_OPT) $(CFLAGS_7Z)
++	$(CXX) -o $@ -c $< $(INCUDE_DIRS) $(CXXFLAGS) $(CPPFLAGS) $(CFLAGS_7Z)
+ 
+ .PHONY : clean
+ 
