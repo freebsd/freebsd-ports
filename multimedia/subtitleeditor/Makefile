@@ -14,11 +14,11 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
-LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
-		gstreamermm-0.10.2:${PORTSDIR}/multimedia/gstreamermm \
-		enchant:${PORTSDIR}/textproc/enchant \
-		pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
+		libgstreamermm-0.10.so:${PORTSDIR}/multimedia/gstreamermm \
+		libenchant.so:${PORTSDIR}/textproc/enchant \
+		libpcre.so:${PORTSDIR}/devel/pcre
 
 USES=		gmake pkgconfig
 USE_GCC=	yes
