@@ -48,6 +48,7 @@ include/avogadro/undosequence.h
 include/avogadro/zmatrix.h
 lib/avogadro/1_1/AvogadroUse.cmake
 lib/avogadro/1_1/cmake/FindEigen2.cmake
+lib/avogadro/1_1/cmake/FindEigen3.cmake
 lib/avogadro/1_1/cmake/FindGLEW.cmake
 lib/avogadro/1_1/colors/atomindexcolor.so
 lib/avogadro/1_1/colors/chargecolor.so
@@ -80,6 +81,7 @@ lib/avogadro/1_1/extensions/gl2psextension.so
 lib/avogadro/1_1/extensions/h2methylextension.so
 lib/avogadro/1_1/extensions/hydrogensextension.so
 lib/avogadro/1_1/extensions/inputfileextension.so
+lib/avogadro/1_1/extensions/insertdnaextension.so
 lib/avogadro/1_1/extensions/insertfragmentextension.so
 lib/avogadro/1_1/extensions/insertpeptideextension.so
 lib/avogadro/1_1/extensions/invertchiralextension.so
@@ -110,12 +112,14 @@ lib/avogadro/AvogadroTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/avogadro/AvogadroTargets.cmake
 lib/libavogadro.so
 lib/libavogadro.so.1
-lib/libavogadro.so.1.1.0
+lib/libavogadro.so.1.1.1
 lib/libavogadro_OpenQube.so
 lib/libavogadro_OpenQube.so.0
 lib/libavogadro_OpenQube.so.0.1.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/Avogadro.so
 libdata/pkgconfig/avogadro.pc
+man/man1/avogadro.1.gz
+man/man1/avopkg.1.gz
 share/applications/avogadro.desktop
 %%DATADIR%%/builder/amino/d-ala.zmat
 %%DATADIR%%/builder/amino/d-arg.zmat
@@ -1060,11 +1064,13 @@ share/applications/avogadro.desktop
 %%DATADIR%%/i18n/avogadro_en_CA.qm
 %%DATADIR%%/i18n/avogadro_en_GB.qm
 %%DATADIR%%/i18n/avogadro_es.qm
+%%DATADIR%%/i18n/avogadro_et.qm
 %%DATADIR%%/i18n/avogadro_eu.qm
 %%DATADIR%%/i18n/avogadro_fi.qm
 %%DATADIR%%/i18n/avogadro_fr.qm
 %%DATADIR%%/i18n/avogadro_gl.qm
 %%DATADIR%%/i18n/avogadro_he.qm
+%%DATADIR%%/i18n/avogadro_hi.qm
 %%DATADIR%%/i18n/avogadro_hr.qm
 %%DATADIR%%/i18n/avogadro_hu.qm
 %%DATADIR%%/i18n/avogadro_id.qm
@@ -1072,6 +1078,7 @@ share/applications/avogadro.desktop
 %%DATADIR%%/i18n/avogadro_ja.qm
 %%DATADIR%%/i18n/avogadro_kn.qm
 %%DATADIR%%/i18n/avogadro_ko.qm
+%%DATADIR%%/i18n/avogadro_ms.qm
 %%DATADIR%%/i18n/avogadro_nb.qm
 %%DATADIR%%/i18n/avogadro_nl.qm
 %%DATADIR%%/i18n/avogadro_oc.qm
@@ -1080,8 +1087,11 @@ share/applications/avogadro.desktop
 %%DATADIR%%/i18n/avogadro_pt_BR.qm
 %%DATADIR%%/i18n/avogadro_ru.qm
 %%DATADIR%%/i18n/avogadro_sk.qm
+%%DATADIR%%/i18n/avogadro_sl.qm
+%%DATADIR%%/i18n/avogadro_sq.qm
 %%DATADIR%%/i18n/avogadro_sr.qm
 %%DATADIR%%/i18n/avogadro_sv.qm
+%%DATADIR%%/i18n/avogadro_ta.qm
 %%DATADIR%%/i18n/avogadro_th.qm
 %%DATADIR%%/i18n/avogadro_tr.qm
 %%DATADIR%%/i18n/avogadro_ug.qm
@@ -1102,6 +1112,7 @@ share/applications/avogadro.desktop
 %%DATADIR%%/i18n/libavogadro_en_CA.qm
 %%DATADIR%%/i18n/libavogadro_en_GB.qm
 %%DATADIR%%/i18n/libavogadro_es.qm
+%%DATADIR%%/i18n/libavogadro_et.qm
 %%DATADIR%%/i18n/libavogadro_eu.qm
 %%DATADIR%%/i18n/libavogadro_fi.qm
 %%DATADIR%%/i18n/libavogadro_fr.qm
@@ -1114,6 +1125,7 @@ share/applications/avogadro.desktop
 %%DATADIR%%/i18n/libavogadro_ja.qm
 %%DATADIR%%/i18n/libavogadro_kn.qm
 %%DATADIR%%/i18n/libavogadro_ko.qm
+%%DATADIR%%/i18n/libavogadro_ms.qm
 %%DATADIR%%/i18n/libavogadro_nb.qm
 %%DATADIR%%/i18n/libavogadro_nl.qm
 %%DATADIR%%/i18n/libavogadro_oc.qm
@@ -1122,6 +1134,8 @@ share/applications/avogadro.desktop
 %%DATADIR%%/i18n/libavogadro_pt_BR.qm
 %%DATADIR%%/i18n/libavogadro_ru.qm
 %%DATADIR%%/i18n/libavogadro_sk.qm
+%%DATADIR%%/i18n/libavogadro_sl.qm
+%%DATADIR%%/i18n/libavogadro_sq.qm
 %%DATADIR%%/i18n/libavogadro_sr.qm
 %%DATADIR%%/i18n/libavogadro_sv.qm
 %%DATADIR%%/i18n/libavogadro_tr.qm
