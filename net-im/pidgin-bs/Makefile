@@ -13,7 +13,7 @@ COMMENT=	Pidgin plugin to prevent instant message spam
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	purple:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS=	libpurple.so:${PORTSDIR}/net-im/libpurple
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
 GNU_CONFIGURE=	yes
