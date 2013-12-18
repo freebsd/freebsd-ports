@@ -4287,9 +4287,11 @@ create-users-groups:
 		IFS=","; for _login in $$members; do \
 			for _user in ${USERS}; do \
 				if [ "x$${_user}" = "x$${_login}" ]; then \
+					if [ "${NO_STAGE}" = "yes" ]; then \
 					if ! ${PW} groupshow ${_group} | ${GREP} -qw $${_login}; then \
 						${ECHO_MSG} "Adding user \`$${_login}' to group \`${_group}'."; \
 						${PW} groupmod ${_group} -m $${_login}; \
+					fi; \
 					fi; \
 					if [ -z "${WITH_PKGNG}" ]; then \
 							${ECHO_CMD} "@exec if ! ${PW} groupshow ${_group} | ${GREP} -qw $${_login}; then \
