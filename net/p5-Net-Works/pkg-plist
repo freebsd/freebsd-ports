@@ -5,8 +5,15 @@
 %%SITE_PERL%%/Net/Works/Types.pm
 %%SITE_PERL%%/Net/Works/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Works/.packlist
+%%PERL5_MAN3%%/Net::Works.3.gz
+%%PERL5_MAN3%%/Net::Works::Address.3.gz
+%%PERL5_MAN3%%/Net::Works::Network.3.gz
+%%PERL5_MAN3%%/Net::Works::Util.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Works
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
+@dirrmtry %%PERL5_MAN3%%
 @dirrm %%SITE_PERL%%/Net/Works/Role
 @dirrm %%SITE_PERL%%/Net/Works
-@dirrm %%SITE_PERL%%/Net
+@dirrmtry %%SITE_PERL%%/Net
