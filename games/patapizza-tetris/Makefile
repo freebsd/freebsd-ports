@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	https://github.com/patapizza/tetris/downloads/
 DISTNAME=	${PORTNAME:S/patapizza-//}-${DISTVERSION}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Unofficial clone of the original Tetris game
 
 LICENSE=	GPLv3

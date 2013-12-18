@@ -8,7 +8,7 @@ CATEGORIES=		misc windowmaker geography
 MASTER_SITES=		SF/wmweatherplus/wmweather%2B/
 DISTNAME=		wmweather%2B-${PORTVERSION}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Displays current conditions and forecasts with icons and text
 
 LICENSE=	GPLv2

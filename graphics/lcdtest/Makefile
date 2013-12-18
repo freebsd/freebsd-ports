@@ -7,7 +7,7 @@ PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.brouhaha.com/~eric/software/lcdtest/download/
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	LCD monitor test pattern generator
 
 LICENSE=	GPLv3

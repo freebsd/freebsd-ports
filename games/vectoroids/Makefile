@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/vectoroids/src/ \
 		ftp://ftp.billsgames.com/unix/x/vectoroids/src/
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Vector-based rock-shooting game similar to Asteroids
 
 LICENSE=	GPLv2

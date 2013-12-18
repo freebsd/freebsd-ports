@@ -7,7 +7,7 @@ PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.freedesktop.org/software/icon-slicer/releases/
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Utility for generating icon and cursor themes
 
 LICENSE=	GPLv2

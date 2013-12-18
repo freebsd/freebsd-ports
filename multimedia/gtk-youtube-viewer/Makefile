@@ -6,7 +6,7 @@ PORTVERSION=	3.0.7
 PORTREVISION=	2
 CATEGORIES=	multimedia perl5
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	GTK Search and play YouTube videos streaming in MPlayer
 
 LICENSE=	GPLv3

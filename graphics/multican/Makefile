@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Remote control utility for Canon DSLR cameras
 
 LICENSE=	GPLv2

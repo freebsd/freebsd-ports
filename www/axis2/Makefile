@@ -8,7 +8,7 @@ MASTER_SITES=	APACHE
 MASTER_SITE_SUBDIR=	axis/${PORTNAME}/java/core/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Provides a Web Services,SOAP and WSDL engine from Apache
 
 LICENSE=	AL2

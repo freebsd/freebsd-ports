@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://kombat.kajaani.net/dl/
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Funny multiplayer game... and much more
 
 LICENSE=	GPLv2

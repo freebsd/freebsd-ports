@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	http://releases.chipx86.com/libsexy/libsexy/
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Extension widgets for GTK+
 
 LICENSE=	LGPL21

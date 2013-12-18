@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://mattdm.org/icebreaker/1.9.x/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Game similar to Jezzball or Barrack
 
 LICENSE=	GPLv2
