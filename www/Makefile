@@ -1671,6 +1671,7 @@
     SUBDIR += py-selenium
     SUBDIR += py-slimmer
     SUBDIR += py-slumber
+    SUBDIR += py-splinter
     SUBDIR += py-surl
     SUBDIR += py-textile
     SUBDIR += py-tgwebservices
