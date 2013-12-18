@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	radvd
-PORTVERSION=	1.9.1
+PORTVERSION=	1.9.7
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.litech.org/radvd/dist/
 
@@ -23,11 +23,14 @@ PORTDOCS=	CHANGES COPYRIGHT INTRO.html README TODO
 PLIST_FILES=	etc/radvd.conf.example sbin/radvd sbin/radvdump
 
 NO_STAGE=	yes
+
+.include <bsd.port.pre.mk>
+
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/radvd.conf.example ${PREFIX}/etc/
-.ifndef NOPORTDOCS
-	@${INSTALL} -d ${DOCSDIR}/
-	@${INSTALL_DATA} ${PORTDOCS:S.^.${WRKSRC}/.} ${DOCSDIR}/
+.if ${PORT_OPTIONS:MDOCS}
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/
+	@${INSTALL_DATA} ${PORTDOCS:S.^.${WRKSRC}/.} ${STAGEDIR}${DOCSDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
