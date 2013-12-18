@@ -3,6 +3,7 @@
 
 PORTNAME=	libvpx
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -30,37 +31,22 @@ RUNTIME_DESC=	Enable runtime CPU detection
 SHARED_DESC=	Enable shared-library support
 
 ALL_TARGET=
-CONFIGURE_ARGS+=	--enable-pic --disable-install-srcs --enable-vp8 --disable-install-docs
-MAKE_ARGS+=	DIST_DIR=${PREFIX} verbose=yes DESTDIR=${STAGEDIR}
+CONFIGURE_ARGS+=	--enable-pic --disable-install-srcs --enable-vp8 --disable-install-docs --prefix=${PREFIX}
+MAKE_ARGS+=	verbose=yes
 MAKE_ENV=	LC_ALL=C
+
+OPTIONS_SUB=		SHARED
+
+DEBUG_CONFIGURE_ON=	--enable-debug
+POSTPROC_CONFIGURE_ON=	--enable-postproc
+RUNTIME_CONFIGURE_ON=	--enable-runtime-cpu-detect
+THREADS_CONFIGURE_OFF=	--disable-multithread
+SHARED_CONFIGURE_ON=	--enable-shared
 
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 1000000
 CONFIGURE_ARGS+=	--disable-unit-tests
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug
-.endif
-
-.if ${PORT_OPTIONS:MPOSTPROC}
-CONFIGURE_ARGS+=	--enable-postproc
-.endif
-
-.if ${PORT_OPTIONS:MRUNTIME}
-CONFIGURE_ARGS+=	--enable-runtime-cpu-detect
-.endif
-
-.if ! ${PORT_OPTIONS:MTHREADS}
-CONFIGURE_ARGS+=	--disable-multithread
-.endif
-
-.if ${PORT_OPTIONS:MSHARED}
-CONFIGURE_ARGS+=	--enable-shared
-PLIST_SUB+=	SHARED=""
-.else
-PLIST_SUB+=	SHARED="@comment "
 .endif
 
 .if ${ARCH} == "amd64"

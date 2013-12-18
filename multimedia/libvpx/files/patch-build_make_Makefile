@@ -9,8 +9,8 @@ $FreeBSD$
  	$(if $(quiet),@echo "    [INSTALL] $$@")
 -	$(qexec)mkdir -p $$(dir $$@)
 -	$(qexec)cp -p $$< $$@
-+	$(qexec)install -d %%DESTDIR%%$$(dir $$@)
-+	$(qexec)install -p $$< %%DESTDIR%%$$(dir $$@)
++	$(qexec)install -d $$(dir $$@)
++	$(qexec)install -p $$< $$(dir $$@)
  endef
  
  define archive_template
