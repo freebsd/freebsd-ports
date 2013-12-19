@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	ptools
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://shewolf.com.pl/ptools/
+PKGNAMESUFFIX=	2
 
 MAINTAINER=	tmwalaszek@gmail.com
 COMMENT=	Toolset based on Solaris ptools functionality
 
 LICENSE=	BSD
-
-LATEST_LINK=	${PORTNAME}2
 
 PLIST_FILES=	bin/pargs \
 		bin/pwdx \
