@@ -2,23 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	djangotoolbox
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTVERSION=	1.6.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	john@ixsystems.com
-COMMENT=	A common API for running Django on non-relational/NoSQL databases
+COMMENT=	Common API for running Django on non-relational/NoSQL databases
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>0:${PORTSDIR}/www/py-django
 
 USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
