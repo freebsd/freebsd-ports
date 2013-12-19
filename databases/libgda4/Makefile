@@ -21,7 +21,7 @@ LIBGDA4_SLAVE?=	no
 .if !defined(REFERENCE_PORT)
 
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libjson-glib-1.so:${PORTSDIR}/devel/json-glib
+		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
 
 USE_AUTOTOOLS=	libtool
 USES=		pathfix gettext gmake pkgconfig
