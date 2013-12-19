@@ -1,0 +1,19 @@
+# $FreeBSD$
+#
+# MAINTAINER: x11@FreeBSD.org
+
+actions: [dirrmtry]
+post-install: |
+  fc-cache -s %D/%@ 2>/dev/null || true
+  mkfontscale %D/%@ 2>/dev/null || true
+  mkfontdir %D/%@ 2>/dev/null || true
+post-deinstall: |
+  fc-cache -s %D/%@ 2>/dev/null || true
+  mkfontscale %D/%@ 2>/dev/null || true
+  if [ -e %D/%@/fonts.scale -a "`stat -f '%%z' %D/%@/fonts.scale 2>/dev/null`" = '2' ]; then
+    rm %D/%@/fonts.scale
+  fi
+  mkfontdir %D/%@ 2>/dev/null || true
+  if [ -e %D/%@/fonts.dir -a "`stat -f '%%z' %D/%@/fonts.dir 2>/dev/null`" = '2' ]; then
+    rm %D/%@/fonts.dir
+  fi

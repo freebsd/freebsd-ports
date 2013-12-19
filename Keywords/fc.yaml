@@ -1,0 +1,9 @@
+# $FreeBSD$
+#
+# MAINTAINER: x11@FreeBSD.org
+
+actions: [dirrmtry]
+post-install: |
+  fc-cache -s %D/%@ 2>/dev/null || true
+post-deinstall: |
+  fc-cache -s %D/%@ 2>/dev/null || true
