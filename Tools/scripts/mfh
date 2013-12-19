@@ -1,0 +1,86 @@
+#!/bin/sh
+#
+# mfh - Merge from head to a given branch
+# Copyright 2013 Baptiste Daroussin
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+#
+# MAINTAINER=	portmgr@FreeBSD.org
+
+set -e
+
+err() {
+	echo $@ >&2
+	exit 1
+}
+
+clean() {
+	rm -rf ${dir}
+	exit 1
+}
+
+ask() {
+	question=${1}
+
+	answer=x
+	while [ "${answer}" != "y" -a "${answer}" != "n" ] ; do
+		read -p "${question} [yn] " answer
+	done
+
+	[ "${answer}" = "y" ] && return 0
+	return 1
+}
+
+[ $# -ne 2 ] && err "Takes 2 arguments: <branch> <revnumber>"
+branch=$1
+rev=$2
+case $rev in
+''|*[!0-9]*) err "revision should be a number" ;;
+esac
+
+dir=$(mktemp -d /tmp/merge.XXX)
+cd $dir
+svn co --depth=empty svn+ssh://svn.FreeBSD.org/ports/branches/${branch}
+filelist=""
+for f in $(svn diff --summarize -c $rev svn://svn.FreeBSD.org/ports/head); do
+	case ${f} in
+	*/*) ;;
+	*)continue;;
+	esac
+	f=${f#*/ports/head/}
+	f=${f%/*}
+	filelist="$filelist\n$f"
+done
+filelist=$(echo -e $filelist | sort -u)
+echo "MFH: r$rev" > commit.txt
+svn log -r$rev svn://svn.freebsd.org/ports/head | sed '1,2d;$d' >> commit.txt
+for f in ${filelist}; do
+	svn up --parents ${branch}/${f}
+done
+svn merge -c r${rev} ^/head/ ${branch}
+svn up --quiet ${branch}
+svn diff ${branch}
+ask "Do you want to commit?" || clean
+${EDITOR:-vi} commit.txt
+svn ci -F commit.txt ${branch}
+rm -rf $dir
