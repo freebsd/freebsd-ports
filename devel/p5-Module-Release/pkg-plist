@@ -6,7 +6,7 @@ bin/release
 %%SITE_PERL%%/Module/Release/PAUSE.pm
 %%SITE_PERL%%/Module/Release/Prereq.pm
 %%SITE_PERL%%/Module/Release/SVN.pm
-%%SITE_PERL%%/Module/Release/SourceForge.pm
+%%SITE_PERL%%/Module/Release/WebUpload/Mojo.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Release/.packlist
 %%PERL5_MAN3%%/Module::Release.3.gz
 %%PERL5_MAN3%%/Module::Release::FTP.3.gz
@@ -15,9 +15,10 @@ bin/release
 %%PERL5_MAN3%%/Module::Release::PAUSE.3.gz
 %%PERL5_MAN3%%/Module::Release::Prereq.3.gz
 %%PERL5_MAN3%%/Module::Release::SVN.3.gz
-%%PERL5_MAN3%%/Module::Release::SourceForge.3.gz
+%%PERL5_MAN3%%/Module::Release::WebUpload::Mojo.3.gz
 man/man1/release.1.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Release
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Release
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
+@dirrmtry %%SITE_PERL%%/Module/Release/WebUpload
 @dirrmtry %%SITE_PERL%%/Module/Release
 @dirrmtry %%SITE_PERL%%/Module
