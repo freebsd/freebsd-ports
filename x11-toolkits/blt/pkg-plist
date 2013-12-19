@@ -170,6 +170,41 @@ lib/blt%%BLTVER%%/treeview.tcl
 lib/blt%%BLTVER%%/treeview.xbm
 lib/blt%%BLTVER%%/treeview_m.xbm
 lib/blt%%BLTVER%%/tvutil.tcl
+man/man3/Blt_Tree.3.gz
+man/man3/Blt_TreeCreate.3.gz
+man/man3/Blt_TreeCreateNode.3.gz
+man/man3/Blt_TreeDeleteNode.3.gz
+man/man3/Blt_TreeExists.3.gz
+man/man3/Blt_TreeGetNode.3.gz
+man/man3/Blt_TreeGetToken.3.gz
+man/man3/Blt_TreeName.3.gz
+man/man3/Blt_TreeNodeId.3.gz
+man/man3/Blt_TreeReleaseToken.3.gz
+man/mann/BLT.n.gz
+man/mann/barchart.n.gz
+man/mann/beep.n.gz
+man/mann/bgexec.n.gz
+man/mann/bitmap.n.gz
+man/mann/bltdebug.n.gz
+man/mann/busy.n.gz
+man/mann/container.n.gz
+man/mann/cutbuffer.n.gz
+man/mann/dragdrop.n.gz
+man/mann/eps.n.gz
+man/mann/graph.n.gz
+man/mann/hierbox.n.gz
+man/mann/hiertable.n.gz
+man/mann/htext.n.gz
+man/mann/spline.n.gz
+man/mann/stripchart.n.gz
+man/mann/table.n.gz
+man/mann/tabset.n.gz
+man/mann/tile.n.gz
+man/mann/tree.n.gz
+man/mann/treeview.n.gz
+man/mann/vector.n.gz
+man/mann/watch.n.gz
+man/mann/winop.n.gz
 @dirrm lib/blt%%BLTVER%%/demos/scripts
 @dirrm lib/blt%%BLTVER%%/demos/images
 @dirrm lib/blt%%BLTVER%%/demos/bitmaps/hand

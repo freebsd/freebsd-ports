@@ -11,7 +11,7 @@ DISTFILES=	sdllopan-${DISTVERSION}.tgz \
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	sdllopan-${DISTVERSION}.tgz
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Mahjong game remake
 
 LICENSE=	GPLv2

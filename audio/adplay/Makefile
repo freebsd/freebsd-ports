@@ -15,7 +15,7 @@ COMMENT=	AdLib player using adplug library
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	adplug:${PORTSDIR}/audio/libadplug
+LIB_DEPENDS=	libadplug.so:${PORTSDIR}/audio/libadplug
 
 GNU_CONFIGURE=	yes
 WANT_SDL=	yes

@@ -31,6 +31,9 @@ PLIST_FILES=	include/microhttpd.h \
 		libdata/pkgconfig/libmicrohttpd.pc \
 		man/man3/libmicrohttpd.3.gz
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-ldl|-lc|' ${WRKSRC}/src/examples/Makefile.in
+
 post-build:
 	@${STRIP_CMD} ${WRKSRC}/src/microhttpd/.libs/libmicrohttpd.so.30
 

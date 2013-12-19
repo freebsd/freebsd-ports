@@ -3,12 +3,12 @@
 
 PORTNAME=	tcllib
 PORTVERSION=	1.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel tcl
 MASTER_SITES=	SF
 
 MAINTAINER=	tcltk@FreeBSD.org
-COMMENT=	A collection of utility modules for Tcl
+COMMENT=	Collection of utility modules for Tcl
 
 OPTIONS_DEFINE=	DOCS MANPAGES
 
@@ -19,11 +19,10 @@ ALL_TARGET=	all
 MAKE_ENV+=	LANG=C
 PORTDOCS=	*
 
-INSTALL_ARGS=	-pkgs -pkg-path ${PREFIX}/lib/tcllib \
-		-apps -app-path ${PREFIX}/bin \
+INSTALL_ARGS=	-pkgs -pkg-path ${STAGEDIR}${PREFIX}/lib/tcllib \
+		-apps -app-path ${STAGEDIR}${PREFIX}/bin \
 		-no-wait -no-gui -no-examples
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 #
@@ -31,7 +30,7 @@ NO_STAGE=	yes
 #
 .if ${PORT_OPTIONS:MMANPAGES}
 ALL_TARGET+=	nroff-doc
-INSTALL_ARGS+=	-nroff-path ${MANPREFIX}/man/mann
+INSTALL_ARGS+=	-nroff-path ${STAGEDIR}${PREFIX}/man/mann
 .include "Makefile.man"
 .else
 INSTALL_ARGS+=	-no-nroff
@@ -42,7 +41,7 @@ INSTALL_ARGS+=	-no-nroff
 #
 .if ${PORT_OPTIONS:MDOCS}
 ALL_TARGET+=	html-doc
-INSTALL_ARGS+=	-html-path ${DOCSDIR}
+INSTALL_ARGS+=	-html-path ${STAGEDIR}${DOCSDIR}
 .else
 INSTALL_ARGS+=	-no-html
 .endif

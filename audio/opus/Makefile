@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	opus
-PORTVERSION=	1.0.3
+PORTVERSION=	1.1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
 		https://ftp.mozilla.org/pub/mozilla.org/opus/
@@ -9,7 +9,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/opus/ \
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	IETF audio codec
 
-USES=		pathfix
+USES=		gmake pathfix
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
@@ -19,7 +19,7 @@ CONFIGURE_ARGS=	--enable-custom-modes \
 		--disable-doc   # requires doxygen
 
 regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.options.mk>
 

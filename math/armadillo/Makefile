@@ -11,8 +11,8 @@ COMMENT=	C++ linear algebra library
 
 LICENSE=	MPL
 
-LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack	\
-		boost_date_time:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	liblapack.so:${PORTSDIR}/math/lapack	\
+		libboost_date_time.so:${PORTSDIR}/devel/boost-libs
 
 USES=		cmake
 USE_LDCONFIG=	yes

@@ -15,13 +15,13 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX System with Unicode and Modern Font Technologies
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
-		graphite2:${PORTSDIR}/graphics/graphite2 \
-		icuio:${PORTSDIR}/devel/icu \
-		openjpeg:${PORTSDIR}/graphics/openjpeg \
-		png15:${PORTSDIR}/graphics/png \
-		poppler:${PORTSDIR}/graphics/poppler \
-		TECkit:${PORTSDIR}/textproc/teckit
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libgraphite2.so:${PORTSDIR}/graphics/graphite2 \
+		libicuio.so:${PORTSDIR}/devel/icu \
+		libopenjpeg.so:${PORTSDIR}/graphics/openjpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libpoppler.so:${PORTSDIR}/graphics/poppler \
+		libTECkit.so:${PORTSDIR}/textproc/teckit
 
 USE_XZ=		yes
 USE_GMAKE=	yes

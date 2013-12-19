@@ -10,9 +10,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS plugin for jack
 
-LIB_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
-		jack:${PORTSDIR}/audio/jack \
-		samplerate:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
+		libjack.so:${PORTSDIR}/audio/jack \
+		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

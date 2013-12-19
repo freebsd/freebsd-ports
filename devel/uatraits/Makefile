@@ -12,9 +12,9 @@ COMMENT=	User-Agent detection library
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
 		automake:${PORTSDIR}/devel/automake \
 		libtool:${PORTSDIR}/devel/libtool
-LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
-		pcre:${PORTSDIR}/devel/pcre \
-		xml2:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libxml2.so:${PORTSDIR}/textproc/libxml2
 
 USES=		pkgconfig
 GNU_CONFIGURE=	yes

@@ -10,7 +10,7 @@ DISTFILES=	hhh-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_icons.tar.gz:icons
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Pacman with a fast food twist
 
 LICENSE=	GPLv2 OFL11

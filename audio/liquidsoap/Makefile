@@ -107,27 +107,27 @@ PORT_OPTIONS+=	LAME
 # alsa and portaudio disabled permanently - alsa is linux only, portaudio broken
 _ALL_PACKAGES=	aacplus alsa ao cry dssi faad flac gavl gstreamer ladspa lame lo mad ogg vorbis schroedinger speex theora samplerate soundtouch voaacenc portaudio pulseaudio taglib xmlplaylist lastfm
 
-LIB_DEPENDS_aacplus=	aacplus.2:${PORTSDIR}/audio/libaacplus
-LIB_DEPENDS_ao=		ao.4:${PORTSDIR}/audio/libao
+LIB_DEPENDS_aacplus=	libaacplus.so:${PORTSDIR}/audio/libaacplus
+LIB_DEPENDS_ao=		libao.so:${PORTSDIR}/audio/libao
 BUILD_DEPENDS_dssi=	${LOCALBASE}/include/dssi.h:${PORTSDIR}/audio/dssi
-LIB_DEPENDS_faad=	faad.2:${PORTSDIR}/audio/faad
-LIB_DEPENDS_gavl=	gavl.1:${PORTSDIR}/multimedia/gavl
+LIB_DEPENDS_faad=	libfaad.so:${PORTSDIR}/audio/faad
+LIB_DEPENDS_gavl=	libgavl.so:${PORTSDIR}/multimedia/gavl
 BUILD_DEPENDS_gstreamer=${LOCALBASE}/lib/ocaml/libcamlidl.a:${PORTSDIR}/lang/ocaml-camlidl
-LIB_DEPENDS_gstreamer=	gstreamer-0.10.0:${PORTSDIR}/multimedia/gstreamer \
-			gstapp-0.10.0:${PORTSDIR}/multimedia/gstreamer-plugins
+LIB_DEPENDS_gstreamer=	libgstreamer-0.10:${PORTSDIR}/multimedia/gstreamer \
+			libgstapp-0.10:${PORTSDIR}/multimedia/gstreamer-plugins
 BUILD_DEPENDS_ladspa=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS_lame=	mp3lame.0:${PORTSDIR}/audio/lame
-LIB_DEPENDS_mad=	mad.2:${PORTSDIR}/audio/libmad
-LIB_DEPENDS_ogg=	ogg:${PORTSDIR}/audio/libogg
-LIB_DEPENDS_vorbis=	vorbis.4:${PORTSDIR}/audio/libvorbis
-LIB_DEPENDS_speex=	speex.1:${PORTSDIR}/audio/speex
-LIB_DEPENDS_theora=	theora.0:${PORTSDIR}/multimedia/libtheora
-LIB_DEPENDS_samplerate=	samplerate.1:${PORTSDIR}/audio/libsamplerate
-LIB_DEPENDS_soundtouch=	SoundTouch.0:${PORTSDIR}/audio/soundtouch bpm:${PORTSDIR}/audio/libbpm
-LIB_DEPENDS_portaudio=	portaudio.2:${PORTSDIR}/audio/portaudio2
-LIB_DEPENDS_pulseaudio=	pulse.0:${PORTSDIR}/audio/pulseaudio
-LIB_DEPENDS_taglib=	tag.1:${PORTSDIR}/audio/taglib
-LIB_DEPENDS_voaacenc=	vo-aacenc.0:${PORTSDIR}/audio/vo-aacenc
+LIB_DEPENDS_lame=	libmp3lame.so:${PORTSDIR}/audio/lame
+LIB_DEPENDS_mad=	libmad.so:${PORTSDIR}/audio/libmad
+LIB_DEPENDS_ogg=	libogg.so:${PORTSDIR}/audio/libogg
+LIB_DEPENDS_vorbis=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS_speex=	libspeex.so:${PORTSDIR}/audio/speex
+LIB_DEPENDS_theora=	libtheora.so:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS_samplerate=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS_soundtouch=	libSoundTouch.so:${PORTSDIR}/audio/soundtouch bpm:${PORTSDIR}/audio/libbpm
+LIB_DEPENDS_portaudio=	libportaudio.so:${PORTSDIR}/audio/portaudio2
+LIB_DEPENDS_pulseaudio=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS_taglib=	libtag.so:${PORTSDIR}/audio/taglib
+LIB_DEPENDS_voaacenc=	libvo-aacenc.so:${PORTSDIR}/audio/vo-aacenc
 
 .if ${PORT_OPTIONS:MFESTIVAL}
 RUN_DEPENDS+=	${LOCALBASE}/bin/festival:${PORTSDIR}/audio/festival
@@ -159,7 +159,7 @@ IGNORE=	ladspa required for dssi. Please rerun make config and select ladspa
 
 #Server is known as JACK, but module named ocaml-bjack
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
 .else
 _DISABLE_SED_ARGS+=	-e "s/^ocaml-bjack/\#ocaml-bjack/"
 CONFIGURE_ARGS+=	--disable-bjack

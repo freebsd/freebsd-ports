@@ -1,0 +1,8 @@
+Perl's multidimensional array emulation stems from the days before the language
+had references, but these days it mostly serves to bite you when you typo a hash
+slice by using the $ sigil instead of @.
+
+This module lexically makes using multidimensional array emulation a fatal error
+at compile time.
+
+WWW: http://search.cpan.org/dist/multidimensional/

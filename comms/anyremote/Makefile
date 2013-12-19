@@ -26,7 +26,7 @@ NO_STAGE=	yes
 .if ! ${PORT_OPTIONS:MDBUS}
 CONFIGURE_ARGS+=--disable-dbus
 .else
-LIB_DEPENDS+=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 .endif
 
 .if ! ${PORT_OPTIONS:MX11}

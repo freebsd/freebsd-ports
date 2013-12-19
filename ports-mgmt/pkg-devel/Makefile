@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.2.3
+DISTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://files.etoilebsd.net/pkg/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
@@ -11,7 +12,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	portmgr@FreeBSD.org
 COMMENT=	New generation package manager
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USE_XZ=		yes
 

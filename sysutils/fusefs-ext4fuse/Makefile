@@ -12,7 +12,7 @@ COMMENT=	EXT4 implementation for FUSE
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 USES=		fuse pkgconfig gmake
 USE_GITHUB=	yes

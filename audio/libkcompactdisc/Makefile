@@ -25,7 +25,7 @@ OPTIONS_DEFINE=	ALSA
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-no_alsa
 .endif

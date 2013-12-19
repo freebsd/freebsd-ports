@@ -1213,6 +1213,7 @@
     SUBDIR += p5-Tenjin
     SUBDIR += p5-Test-HTTP
     SUBDIR += p5-Test-HTTP-Server-Simple
+    SUBDIR += p5-Test-Nginx
     SUBDIR += p5-TestGen4Web-Runner
     SUBDIR += p5-Text-MultiMarkdown-ApacheHandler
     SUBDIR += p5-Tie-TinyURL
@@ -1673,6 +1674,7 @@
     SUBDIR += py-selenium
     SUBDIR += py-slimmer
     SUBDIR += py-slumber
+    SUBDIR += py-splinter
     SUBDIR += py-surl
     SUBDIR += py-textile
     SUBDIR += py-tgwebservices

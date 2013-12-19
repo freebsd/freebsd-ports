@@ -4,8 +4,10 @@ libdata/pkgconfig/xcb-proto.pc
 %%DATADIR%%/damage.xml
 %%DATADIR%%/dpms.xml
 %%DATADIR%%/dri2.xml
+%%DATADIR%%/dri3.xml
 %%DATADIR%%/ge.xml
 %%DATADIR%%/glx.xml
+%%DATADIR%%/present.xml
 %%DATADIR%%/randr.xml
 %%DATADIR%%/record.xml
 %%DATADIR%%/render.xml

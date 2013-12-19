@@ -24,14 +24,14 @@ USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	2.4+
 
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
-LIB_DEPENDS+=	boost_thread:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS+=	boost_python:${PORTSDIR}/devel/boost-python-libs
-LIB_DEPENDS+=	gdal:${PORTSDIR}/graphics/gdal
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
-LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR
-LIB_DEPENDS+=	cairomm-1.0.1:${PORTSDIR}/graphics/cairomm
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS+=	libgdal.so:${PORTSDIR}/graphics/gdal
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
+LIB_DEPENDS+=	libcairomm-1.0.so:${PORTSDIR}/graphics/cairomm
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

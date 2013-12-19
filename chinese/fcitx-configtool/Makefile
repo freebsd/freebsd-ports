@@ -13,7 +13,7 @@ COMMENT=	Fcitx IM framework configuration tool
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:${PORTSDIR}/devel/dbus-glib
-LIB_DEPENDS=	fcitx-config:${PORTSDIR}/chinese/fcitx
+LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx
 
 USE_XZ=		yes
 USE_GNOME=	intltool gnomehack

@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}-html${EXTRACT_SUFX}
 MAINTAINER=	gnb@itga.com.au
 COMMENT=	A Python Database API interface to the Sybase RDBMS
 
-LIB_DEPENDS=	tds.5:${PORTSDIR}/databases/freetds
+LIB_DEPENDS=	libtds.so:${PORTSDIR}/databases/freetds
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

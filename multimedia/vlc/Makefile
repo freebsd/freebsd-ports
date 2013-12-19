@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	vlc
-DISTVERSION=	2.1.1
-PORTREVISION=	1
+DISTVERSION=	2.1.2
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
@@ -247,6 +246,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/a$//}
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CFLAGS+=	-fPIC
 CPPFLAGS+=	-I${WRKSRC}/include
 CONFIGURE_ENV=	LIBS="-lc"
 LDFLAGS+=	${PTHREAD_LIBS} -lc

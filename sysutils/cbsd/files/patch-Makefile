@@ -1,0 +1,14 @@
+--- ./Makefile.orig	2013-12-14 16:53:31.000000000 -0200
++++ ./Makefile	2013-12-14 16:53:49.000000000 -0200
+@@ -3,7 +3,7 @@
+ all:
+ 
+ install:
+-	mkdir -p ${PREFIX}/cbsd
+-	cp -Rpv * ${PREFIX}/cbsd/
+-	cp -Rpv .ssh ${PREFIX}/cbsd/
+-	install man/cbsd.8  ${PREFIX}/man/man8/cbsd.8
++	mkdir -p ${DESTDIR}${PREFIX}/cbsd
++	cp -Rpv * ${DESTDIR}${PREFIX}/cbsd/
++	cp -Rpv .ssh ${DESTDIR}${PREFIX}/cbsd/
++	install man/cbsd.8 ${DESTDIR}${PREFIX}/man/man8/cbsd.8

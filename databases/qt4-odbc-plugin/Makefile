@@ -10,7 +10,7 @@ COMMENT=	Qt ODBC database plugin
 
 DB=		odbc
 
-LIB_DEPENDS+=	iodbc.3:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS+=	libiodbc.so:${PORTSDIR}/databases/libiodbc
 
 USE_QT4=	moc_build sql
 QT_NONSTANDARD=	yes

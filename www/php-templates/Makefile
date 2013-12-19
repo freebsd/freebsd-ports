@@ -27,9 +27,9 @@ PORTDOCS=	*
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
-	@${INSTALL_DATA} ${WRKSRC}/modules/templates.so \
+	${INSTALL_DATA} ${WRKSRC}/modules/templates.so \
 		${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@${INSTALL_DATA} ${STAGEDIR}${WRKSRC}-doc/* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}-doc/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

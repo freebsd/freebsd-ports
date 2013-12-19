@@ -16,8 +16,8 @@ COMMENT=	Port of Gnome's notification-daemon for the Xfce desktop
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
-LIB_DEPENDS=	sexy:${PORTSDIR}/x11-toolkits/libsexy \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libsexy.so:${PORTSDIR}/x11-toolkits/libsexy \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	dbus-daemon:${PORTSDIR}/devel/dbus
 
 GNU_CONFIGURE=	yes

@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 
 USES=		fmake
 
-PLIST_FILES=	bin/chrpath
+PLIST_FILES=	bin/chrpath man/man1/chrpath.1.gz
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 

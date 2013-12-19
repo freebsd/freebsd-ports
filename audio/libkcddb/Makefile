@@ -11,7 +11,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE CDDB library
 
-LIB_DEPENDS=	musicbrainz5:${PORTSDIR}/audio/libmusicbrainz5
+LIB_DEPENDS=	libmusicbrainz5.so:${PORTSDIR}/audio/libmusicbrainz5
 
 CONFLICTS_INSTALL=	kdemultimedia-4.[1-8].*
 

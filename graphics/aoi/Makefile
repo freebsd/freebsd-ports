@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/ArtOfIllusion/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 DIST_SUBDIR=	java
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Open source Java written 3D modelling and rendering studio
 
 LICENSE=	GPLv2

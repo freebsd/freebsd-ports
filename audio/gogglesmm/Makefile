@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music collection manager and player
 
 LICENSE=	GPLv3

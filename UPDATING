@@ -5,6 +5,101 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20131218:
+  AFFECTS: users of news/cnews
+  AUTHOR: dinoex@FreeBSD.org
+
+  The default path for overview files has changed.
+  Rebuild your overview files after the update with:
+  su - news /usr/local/libexec/cnews/nov/initov
+
+20131217:
+  AFFECTS: users of databases/ruby-bdb or ports-mgmt/portupgrade and databases/db5 or databases/db6
+  AUTHOR: mandree@FreeBSD.org
+
+  databases/db5 and databases/db6 have recently been updated to fix
+  bugs. This changed their patchlevel version.
+
+  However, ruby-bdb breaks during the upgrade due to a bug described in
+  <http://www.freebsd.org/cgi/query-pr.cgi?pr=184921>.
+
+  THIS MEANS THAT YOU MUST NOT USE PORTUPGRADE TO UPGRADE databases/db5
+  databases/db6 and databases/ruby-bdb. Doing that will break the latter and
+  cause corrupted dependency data.  Use portmaster for the upgrade.
+
+  If you are in a situation where portupgrade refuses to work with
+  errors like:
+
+  DB needs compatible versions of libdb & db.h
+    you have db.h version 5.3.21 and libdb version 5.3.28
+
+  then you must manually upgrade the ruby-bdb port and repair dependency data:
+
+  # make -C /usr/ports/databases/ruby-bdb all deinstall install clean
+  # pkgdb -fu
+  # portupgrade -f db5 db6
+
+  This should return portupgrade to normal operation.
+
+20131216:
+  AFFECTS: users of x11/xorg, graphics/libGL, graphics/dri, all xorg ports
+  AUTHOR: zeising@FreeBSD.org
+
+  The default xorg version has been switched on FreeBSD CURRENT.
+
+  To upgrade graphics/libGL, graphics/dri and related MESA ports, it is
+  neccessary to first remove the old versions of those ports.
+  No special upgrade procedure is needed for xorg port but it is
+  necessary to recompile all xorg drivers (xf86-*) and other ports that
+  depend on the xserver version, including
+  emulators/virtualbox-ose-additions.  Portrevisions have been bumped
+  where needed, but users of drivers not in the ports tree will need to
+  recompile those.
+
+  If it is important to stay on the old versions, it is possible to
+  specify WITHOUT_NEW_XORG= in /etc/make.conf to get the old xorg
+  distribution.
+
+  To update:
+
+  # pkg_delete -f libGL-\* dri-\*
+    or
+  # pkg delete -f libGL dri
+    followed by
+  # portmaster graphics/dri graphics/libGL
+    or
+  # portupgrade graphics/dri graphics/libGL
+    and then
+  # portmaster -a
+    or
+  # portupgrade -a
+
+20131216:
+  AFFECTS: users of databases/db4*
+  AUTHOR: mandree@FreeBSD.org
+
+  Berkeley DB versions before and excluding 4.8 have been marked deprecated.
+  New port installations should be based on Berkeley DB 5 or 6.
+
+  Note that Oracle Berkeley DB 6 is under the more restrictive Affero GPL v3
+  license, be sure to review if using that fits your requirements.
+
+  You can add WITH_BDB_VER=5 or WITH_BDB_VER=6 to have all
+  applications that get rebuilt use Oracle Berkeley DB 5 or 6, respectively.
+
+  DO NOT FORCE DELETE older BerkeleyDB packages, that breaks the upgrade
+  tools.  Instead, first rebuild the ports that depend on it, then
+  remove the old Berkeley DB versions.
+
+  Berkeley DB ports should be able to build/install with an older and a
+  newer version version both installed if WITH_BDB_VER is set.  If a
+  port then grabs the old Berkeley DB version, that is an issue with the
+  port that requires Berkeley DB, and should be reported to the
+  maintainer.
+
+  If you are interested in upgrading now already, we have instructions
+  at <https://wiki.freebsd.org/Ports/BerkeleyDBCleanup>.
+
 20131209:
   AFFECTS: users of dns/bind96, dns/bind98 and bind99 on FreeBSD 10.0
   AUTHOR: erwin@FreeBSD.org
@@ -2165,7 +2260,7 @@ you update your ports collection, before attempting any port upgrades.
 
   When using Firefox or SeaMonkey compiled with ALSA option ON it may
   crash on assert in alsa_refill_stream as described in ports/170473.
-  To workaround disable ARIFF_OSS in audio/alsa-plugins or use PULSEAUDIO.
+  To workaround enable BUFSZ_P2 in audio/alsa-plugins or use PULSEAUDIO.
 
 20121010:
   AFFECTS: users of CURRENT (OSVERSION >= 1000017)

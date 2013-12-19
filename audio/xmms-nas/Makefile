@@ -10,8 +10,8 @@ MASTER_SITES=	ftp://ftp.stack.nl/pub/users/willem/
 MAINTAINER=	bitbucket63-it@yahoo.com
 COMMENT=	A Network Audio System (NAS) output plugin for XMMS
 
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
-		audio.2:${PORTSDIR}/audio/nas
+LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
+		libaudio.so:${PORTSDIR}/audio/nas
 
 USE_GNOME=	gtk12
 NO_STAGE=	yes

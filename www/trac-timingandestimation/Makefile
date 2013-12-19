@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 USE_ZIP=	yes
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add estimation and time tracking functionality to Trac
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac

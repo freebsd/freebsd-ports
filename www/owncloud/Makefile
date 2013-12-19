@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	owncloud
-PORTVERSION=	5.0.13
-PORTREVISION=	3
+PORTVERSION=	6.0.0a
 CATEGORIES=	www
 MASTER_SITES=	http://download.owncloud.org/community/
 
@@ -19,7 +18,6 @@ USE_PHP=	ctype curl dom fileinfo filter gd hash iconv json ldap \
 		mbstring openssl pdo session simplexml xml xmlreader \
 		xsl wddx zip zlib
 WANT_PHP_WEB=	yes
-DEFAULT_PHP_VER=5
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes

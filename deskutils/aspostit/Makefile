@@ -12,7 +12,7 @@ COMMENT=	AfterStep dockable version of XPostIt
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USE_XORG=	xpm xaw xext x11
 USE_GMAKE=	yes

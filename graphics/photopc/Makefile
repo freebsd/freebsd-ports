@@ -6,7 +6,7 @@ PORTVERSION=	3.07
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Control cameras based on Sierra Imaging chipset and compatibles
 
 GNU_CONFIGURE=	yes

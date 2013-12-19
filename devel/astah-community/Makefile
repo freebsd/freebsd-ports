@@ -11,6 +11,11 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION:S!.!_!g}-${REVISION}
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Java/UML Object-Oriented Design Tool
 
+LICENSE=	EULA
+LICENSE_NAME=	End User License Agreement
+LICENSE_TEXT=	${RESTRICTED}
+LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell no-auto-accept
+
 RESTRICTED=	See http://astah.net/faq/community/enduser-license-agreement
 
 USE_ZIP=	yes
@@ -42,7 +47,6 @@ REINPLACE_ARGS=	-i ""
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
@@ -64,22 +68,22 @@ post-patch:
 
 do-install:
 .for script in ${PLIST_FILES:S!bin/!!}
-	${INSTALL_SCRIPT} ${WRKSRC}/${script} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${script} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${DATADIR})
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR})
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docfile in ${PORTDOCS:Napi}
-	${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
-	${MKDIR} ${DOCSDIR}/api
-	(cd ${WRKSRC}/api && ${COPYTREE_SHARE} \* ${DOCSDIR}/api)
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/api
+	(cd ${WRKSRC}/api && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/api)
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for examplefile in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${examplefile} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${examplefile} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .endif
 

@@ -48,6 +48,7 @@ PLIST_SUB+=	PGSQL="@comment "
 
 post-patch:
 	@${RM} -f ${WRKSRC}/include/dbconn/README
+	@${REINPLACE_CMD} 's/gcc/${CC}/' ${WRKSRC}/src/dbconnect/Makefile.in
 	@${REINPLACE_CMD} 's/gcc/${CC}/' ${WRKSRC}/src/driver_*/Makefile.in
 
 do-install:

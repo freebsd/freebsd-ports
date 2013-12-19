@@ -10,9 +10,6 @@ COMMENT=	Server font list displayer for X
 XORG_CAT=	app
 USE_XORG=	x11
 
-PLIST_FILES=	bin/xlsfonts
+PLIST_FILES=	bin/xlsfonts man/man1/xlsfonts.1.gz
 
-MAN1=		xlsfonts.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

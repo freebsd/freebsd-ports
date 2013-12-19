@@ -14,7 +14,7 @@ NO_STAGE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
-LIB_DEPENDS+=	cdio.13:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS+=	libcdio.so:${PORTSDIR}/sysutils/libcdio
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame\
 		cdparanoia:${PORTSDIR}/audio/cdparanoia \
 		cdda2wav:${PORTSDIR}/sysutils/cdrtools

@@ -2,6 +2,7 @@ bin/db5/db_archive
 bin/db5/db_checkpoint
 bin/db5/db_deadlock
 bin/db5/db_dump
+bin/db5/db_dump185
 bin/db5/db_hotbackup
 bin/db5/db_load
 bin/db5/db_log_verify
@@ -22,6 +23,8 @@ bin/db_deadlock-%%BDBMAJ%%
 bin/db_deadlock-%%BDBVER%%
 bin/db_dump-%%BDBMAJ%%
 bin/db_dump-%%BDBVER%%
+bin/db_dump185-%%BDBMAJ%%
+bin/db_dump185-%%BDBVER%%
 bin/db_hotbackup-%%BDBMAJ%%
 bin/db_hotbackup-%%BDBVER%%
 bin/db_load-%%BDBMAJ%%
@@ -47,6 +50,7 @@ bin/db_verify-%%BDBVER%%
 %%SQL%%bin/dbsql-%%BDBMAJ%%
 %%SQL%%bin/dbsql-%%BDBVER%%
 include/db5/db.h
+include/db5/db_185.h
 include/db5/db_cxx.h
 %%SQL%%include/db5/dbsql.h
 include/db5/dbstl_base_iterator.h

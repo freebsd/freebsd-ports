@@ -12,7 +12,7 @@ COMMENT=	Mysql replication client library, embeddable into your C++ application
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 DATE=		20121210
 USES=		cmake

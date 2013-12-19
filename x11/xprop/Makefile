@@ -10,9 +10,6 @@ COMMENT=	Property displayer for X
 XORG_CAT=	app
 USE_XORG=	xmuu x11
 
-PLIST_FILES=	bin/xprop
+PLIST_FILES=	bin/xprop man/man1/xprop.1.gz
 
-MAN1=		xprop.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

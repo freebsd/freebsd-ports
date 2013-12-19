@@ -19,8 +19,7 @@ USES=		gmake
 USE_XORG=	xpm
 ALL_TARGET=	clean all
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmMatrix ${PREFIX}/bin/wmmatrix
+	${INSTALL_PROGRAM} ${WRKSRC}/wmMatrix ${STAGEDIR}${PREFIX}/bin/wmmatrix
 
 .include <bsd.port.mk>

@@ -11,8 +11,8 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Open Source Audio Library Project
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
-LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
-    		vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame \
+    		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-fPIC -DPIC

@@ -8,7 +8,7 @@ MASTER_SITES=	http://embed.cs.utah.edu/csmith/
 MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Generates random C programs that conform to the C99 standard
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf

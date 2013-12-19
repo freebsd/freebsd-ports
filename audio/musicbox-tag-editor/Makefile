@@ -12,7 +12,7 @@ DISTNAME=	musicbox-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple GTK+ audio tag editor
 
-LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
 
 USES=		pathfix pkgconfig
 NO_STAGE=	yes

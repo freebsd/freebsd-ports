@@ -12,19 +12,22 @@ COMMENT=	Numeric array manipulation extension module for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-configure:
 	cd ${WRKSRC} && \
 	${PYTHON_CMD} generate.py && \
 	${PYTHON_CMD} Include/numarray/genapis.py
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
-	@${TAR} -C ${WRKSRC}/Doc -cf- .|${TAR} -C ${DOCSDIR} -xf-
-	@${TAR} -C ${WRKSRC}/Examples -cf- .|${TAR} -C ${EXAMPLESDIR} -xf-
-	@${RM} -fr ${EXAMPLESDIR}/ufunc/build
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${TAR} -C ${WRKSRC}/Doc -cf- .|${TAR} -C ${STAGEDIR}${DOCSDIR} -xf-
+	@${TAR} -C ${WRKSRC}/Examples -cf- .|${TAR} -C ${STAGEDIR}${EXAMPLESDIR} -xf-
+	@${RM} -fr ${STAGEDIR}${EXAMPLESDIR}/ufunc/build
 
 .include <bsd.port.mk>

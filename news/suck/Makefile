@@ -3,7 +3,7 @@
 
 PORTNAME=	suck
 PORTVERSION=	4.3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	news
 #MASTER_SITES=	http://www.sucknews.org/
 MASTER_SITES=	http://home.comcast.net/~bobyetman/ \
@@ -14,7 +14,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Receives/sends news to/from localhost via NNTP
 
 CONFLICTS?=	suckblow-1.*
-NO_STAGE=	yes
 
 USES=		gmake
 GNU_CONFIGURE=	yes
@@ -26,11 +25,19 @@ EX_SCRIPTS=	get.news.generic get.news.inn perl_kill.pl perl_xover.pl \
 EX_DATA=	suckkillfile.sample sucknewsrc.sample suckothermsgs.sample
 
 OPTIONS_DEFINE=	SSL EXAMPLES
-OPTIONS_DEFAULT=	SSL
+OPTIONS_SINGLE=	NEWS
+OPTIONS_SINGLE_NEWS=	INN CNEWS
+OPTIONS_DEFAULT?=	SSL INN
+INN_DESC=	Build for local inn news server
+CNEWS_DESC=	Build for local cnews news server
+
+VARBASE?=	/var
+NEWSBIN?=	${LOCALBASE}/libexec/cnews
+NEWSCTL?=	${VARBASE}/lib/news
 
 .include <bsd.port.options.mk>
 
-.if defined(NEWSBIN) && !defined(SUCK_WITH_INN)
+.if ${PORT_OPTIONS:MCNEWS}
 CNEWS_PORT?=	news/cnews
 CNEWS_SUFFIX=	-cnews
 MAKE_ENV+=	DB_TYPE=-DUSE_DBZ DB_LIB=-lcnews
@@ -38,7 +45,9 @@ MAKE_ENV+=	DB_LIB_LOC=-L${LOCALBASE}/lib
 MAKE_ENV+=	INCDIR2=-I${LOCALBASE}/include
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcnews.a:${PORTSDIR}/${CNEWS_PORT}
 CONFLICTS+=	suck-4.*
-.else
+.endif
+
+.if ${PORT_OPTIONS:MINN}
 CFLAGS+=	-DNO_CONFIGDATA -I${LOCALBASE}/include/inn
 MAKE_ENV+=	DB_TYPE="-DUSE_INN23 -DDO_TAGGED_HASH"
 MAKE_ENV+=	DB_LIB="-linn -lstorage"
@@ -56,28 +65,25 @@ MAKE_ENV+=	SSL_DEFS="-I${OPENSSLINC} -DHAVE_LIBSSL"
 MAKE_ENV+=	SSL_LIB_LOC="-L${OPENSSLLIB}"
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e "s=/usr/local/=${LOCALBASE}/=" \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e "s=/usr/local/lib/suck=${PREFIX}/lib/suck=" \
-		${WRKSRC}/suck_config.h
-.if defined(NEWSBIN) && !defined(SUCK_WITH_INN)
-	@${REINPLACE_CMD} -e "s=/usr/local/news/lib=${NEWSCTL}=" \
-		${WRKSRC}/suck_config.h
-.else
-	@${REINPLACE_CMD} -e "s=/usr/local/news/lib=${LOCALBASE}/news/lib=" \
+pre-configure:
+.if ${PORT_OPTIONS:MCNEWS}
+	${REINPLACE_CMD} -e "s=/usr/news/db=${NEWSCTL}=" \
+		-e "s=/usr/lib/news/rnews=${NEWSBIN}/rnews=" \
+		-e "s=/usr/local/lib/suck=${PREFIX}/lib/suck=" \
 		${WRKSRC}/suck_config.h
 .endif
-# Add missing dependency to allow parallel (-jX) builds
-	@${GREP} -l '#include "phrases.h"' ${WRKSRC}/*.c | ${SED} -e \
-		's=.*/== ; s=\.c=.o= ; $$s=$$=: phrases.h=' | ${XARGS} \
-		>> ${WRKSRC}/Makefile.in
+.if ${PORT_OPTIONS:MINN}
+	${REINPLACE_CMD} -e "s=/usr/news/db=${LOCALBASE}/news/lib=" \
+		-e "s=/usr/lib/news/rnews=${LOCALBASE}/libexec/news/bin/rnews=" \
+		-e "s=/usr/local/lib/suck=${PREFIX}/lib/suck=" \
+		${WRKSRC}/suck_config.h
+.endif
 
-post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${EX_SCRIPTS:S=^=${WRKSRC}/sample/=} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${EX_DATA:S=^=${WRKSRC}/sample/=} ${EXAMPLESDIR}
+post-install:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${EX_SCRIPTS:S=^=${WRKSRC}/sample/=} ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_DATA} ${EX_DATA:S=^=${WRKSRC}/sample/=} ${STAGEDIR}${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>

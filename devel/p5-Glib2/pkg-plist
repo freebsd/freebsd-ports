@@ -39,6 +39,39 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/Glib.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Glib/Glib.so
+%%PERL5_MAN3%%/Glib.3.gz
+%%PERL5_MAN3%%/Glib::BookmarkFile.3.gz
+%%PERL5_MAN3%%/Glib::Boxed.3.gz
+%%PERL5_MAN3%%/Glib::CodeGen.3.gz
+%%PERL5_MAN3%%/Glib::Error.3.gz
+%%PERL5_MAN3%%/Glib::Flags.3.gz
+%%PERL5_MAN3%%/Glib::GenPod.3.gz
+%%PERL5_MAN3%%/Glib::KeyFile.3.gz
+%%PERL5_MAN3%%/Glib::Log.3.gz
+%%PERL5_MAN3%%/Glib::MainLoop.3.gz
+%%PERL5_MAN3%%/Glib::MakeHelper.3.gz
+%%PERL5_MAN3%%/Glib::Markup.3.gz
+%%PERL5_MAN3%%/Glib::Object.3.gz
+%%PERL5_MAN3%%/Glib::Object::Subclass.3.gz
+%%PERL5_MAN3%%/Glib::OptionContext.3.gz
+%%PERL5_MAN3%%/Glib::OptionGroup.3.gz
+%%PERL5_MAN3%%/Glib::Param::Double.3.gz
+%%PERL5_MAN3%%/Glib::Param::Enum.3.gz
+%%PERL5_MAN3%%/Glib::Param::Flags.3.gz
+%%PERL5_MAN3%%/Glib::Param::GType.3.gz
+%%PERL5_MAN3%%/Glib::Param::Int.3.gz
+%%PERL5_MAN3%%/Glib::Param::Int64.3.gz
+%%PERL5_MAN3%%/Glib::Param::UInt.3.gz
+%%PERL5_MAN3%%/Glib::Param::UInt64.3.gz
+%%PERL5_MAN3%%/Glib::ParamSpec.3.gz
+%%PERL5_MAN3%%/Glib::ParseXSDoc.3.gz
+%%PERL5_MAN3%%/Glib::Signal.3.gz
+%%PERL5_MAN3%%/Glib::Type.3.gz
+%%PERL5_MAN3%%/Glib::Utils.3.gz
+%%PERL5_MAN3%%/Glib::devel.3.gz
+%%PERL5_MAN3%%/Glib::index.3.gz
+%%PERL5_MAN3%%/Glib::version.3.gz
+%%PERL5_MAN3%%/Glib::xsapi.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Param
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Object
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Glib/Install

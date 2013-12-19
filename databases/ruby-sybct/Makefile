@@ -12,7 +12,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby module for accessing Sybase databases
 
-LIB_DEPENDS=	tds.5:${PORTSDIR}/databases/freetds
+LIB_DEPENDS=	libtds.so:${PORTSDIR}/databases/freetds
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

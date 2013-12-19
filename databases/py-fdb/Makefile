@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fdb
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.4
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,16 +12,16 @@ COMMENT=	Firebird RDBMS bindings for Python
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	fbclient:${PORTSDIR}/databases/firebird25-client
+LIB_DEPENDS=	libfbclient.so:${PORTSDIR}/databases/firebird25-client
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} >= 320
-.include "${FILESDIR}/py3k-fix-pkg-plist.inc"
+.if ${ARCH} == i386 && ${OSVERSION} >= 900000
+BROKEN=	Does not compile on FreeBSD 9 i386
 .endif
 
 post-patch:

@@ -18,7 +18,7 @@ PERIODICSCRIPT=	410.status-aac-raid
 SUB_FILES+=	${PERIODICSCRIPT}
 
 RESTRICTED=	May not be redistributed in binary form
-NO_CDROM=	yes
+NO_CDROM=	May not be redistributed in binary form
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

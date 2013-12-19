@@ -10,6 +10,9 @@ MASTER_SITES=	GNOME
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Send small notifications to your desktop
 
+LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

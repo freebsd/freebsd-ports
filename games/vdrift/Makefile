@@ -15,8 +15,8 @@ COMMENT=	Open source driving simulation
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons \
 		${LOCALBASE}/lib/libBulletCollision.a:${PORTSDIR}/devel/bullet \
 		${LOCALBASE}/include/asio.hpp:${PORTSDIR}/net/asio
-LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
-		boost_thread:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/settings/VDrift.config:${PORTSDIR}/games/vdrift-data
 
 USE_BZIP2=	yes

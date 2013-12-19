@@ -9,7 +9,7 @@ MASTER_SITES=		http://download.dojotoolkit.org/release-${PORTVERSION}/ \
 PKGNAMEPREFIX=		dojo-
 DISTNAME=		${PKGNAMEPREFIX}release-${PORTVERSION}-${PORTNAME}
 
-MAINTAINER=		glarkin@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		JavaScript code compressor
 
 USE_JAVA=	yes

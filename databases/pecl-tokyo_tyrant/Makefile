@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper to the Tokyo Tyrant client library
 
-LIB_DEPENDS=	tokyotyrant:${PORTSDIR}/databases/tokyotyrant
+LIB_DEPENDS=	libtokyotyrant.so:${PORTSDIR}/databases/tokyotyrant
 
 USES=		pkgconfig
 USE_PHP=	session

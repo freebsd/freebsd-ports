@@ -1,0 +1,5 @@
+This library offers a CPU-based synchronization primitive compatible
+with the X SyncFence objects that can be shared between processes
+using file descriptor passing.
+
+WWW: http://www.freedesktop.org/Software/xlibs

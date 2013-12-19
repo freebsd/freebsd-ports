@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl glue for libshout MP3 streaming source library
 
-LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2
+LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout2
 
 USES=		perl5 pkgconfig
 NO_STAGE=	yes

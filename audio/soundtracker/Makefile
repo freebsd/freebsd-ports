@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=	--enable-asm
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=		jack:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=		libjack.so:${PORTSDIR}/audio/jack
 .else
 CONFIGURE_ARGS+=	--disable-jack
 .endif

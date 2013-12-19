@@ -1,8 +1,10 @@
+man/man1/nntpxmit.1.gz
+man/man8/nntpd.8c.gz
+man/man8/acttimes.8c.gz
 sbin/nntpd
 %%NEWSBIN%%/acttimes
 %%NEWSBIN%%/nntpxmit
 %%NEWSBIN%%/nntpxfer
-@comment     just in case anyone wants it
 %%NEWSBIN%%/shlock
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORIZE
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES

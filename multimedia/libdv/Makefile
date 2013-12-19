@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quasar DV codec (libdv): software codec for DV video encoding format
 
 LICENSE=	LGPL21

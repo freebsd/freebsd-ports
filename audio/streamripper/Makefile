@@ -14,8 +14,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Splits SHOUTcast stream into tracks
 
-LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
-		tre.5:${PORTSDIR}/textproc/libtre
+LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad \
+		libtre.so:${PORTSDIR}/textproc/libtre
 
 OPTIONS_DEFINE=	FAAD VORBIS
 OPTIONS_DEFAULT=	FAAD VORBIS
@@ -45,13 +45,13 @@ CDK_VERSION=	5.0-20060507
 .if ! ${PORT_OPTIONS:MFAAD}
 CONFIGURE_ARGS+=	ac_cv_lib_faad_NeAACDecDecode2=no
 .else
-LIB_DEPENDS+=	faad.2:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=	libfaad.so:${PORTSDIR}/audio/faad
 .endif
 
 .if ! ${PORT_OPTIONS:MVORBIS}
 CONFIGURE_ARGS+=	--without-ogg
 .else
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 .endif
 
 post-extract:

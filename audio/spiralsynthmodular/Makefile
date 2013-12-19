@@ -13,8 +13,8 @@ COMMENT=	Object-oriented modular softsynth/sequencer/sampler
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa \
 		jackd:${PORTSDIR}/audio/jack
-LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk \
-		sndfile:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
+		libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 NO_STAGE=	yes
 USE_XORG=	x11

@@ -10,7 +10,7 @@ DISTNAME=	sidplay-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commodore SID music player using libsidplay2
 
-LIB_DEPENDS=	sidplay2:${PORTSDIR}/audio/libsidplay2
+LIB_DEPENDS=	libsidplay2.so:${PORTSDIR}/audio/libsidplay2
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig

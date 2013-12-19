@@ -15,10 +15,10 @@ LICENSE=	GPLv3
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_BZIP2=	yes
+USES=		dos2unix gmake
 DOS2UNIX_GLOB=	*.cpp *.h
 USE_WX=		2.6+
 WX_UNICODE=	yes
-USES=		dos2unix gmake
 
 PLIST_FILES=	bin/xorg-edit \
 		lib/xorg-edit/de_DE/LC_MESSAGES/xorg-edit.mo \
@@ -34,7 +34,6 @@ PLIST_DIRS=	lib/xorg-edit/options/devices \
 
 DESKTOP_ENTRIES="Xorg Edit" "" "" "${PORTNAME}" "Settings;" true
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CXX =|CXX ?=| ; \
@@ -58,15 +57,15 @@ do-configure:
 	@${ECHO_CMD} '	$$(MAKE) -C xorgedit' >> ${WRKSRC}/Makefile
 
 do-install:
-	(cd ${WRKDIR} && ${INSTALL_SCRIPT} xorg-edit ${PREFIX}/bin)
-	@${MKDIR} ${PREFIX}/lib/xorg-edit
+	(cd ${WRKDIR} && ${INSTALL_SCRIPT} xorg-edit ${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/xorg-edit
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} xorg-edit \
-		${PREFIX}/lib/xorg-edit)
-	@${MKDIR} ${PREFIX}/lib/xorg-edit/de_DE/LC_MESSAGES
+		${STAGEDIR}${PREFIX}/lib/xorg-edit)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/xorg-edit/de_DE/LC_MESSAGES
 	(cd ${WRKSRC}/de_DE/LC_MESSAGES && ${INSTALL_DATA} ${PORTNAME}.mo \
-		${PREFIX}/lib/xorg-edit/de_DE/LC_MESSAGES)
-	@${MKDIR} ${PREFIX}/lib/xorg-edit/options/devices
+		${STAGEDIR}${PREFIX}/lib/xorg-edit/de_DE/LC_MESSAGES)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/xorg-edit/options/devices
 	(cd ${WRKSRC}/options/devices && ${INSTALL_DATA} *.xml \
-		${PREFIX}/lib/xorg-edit/options/devices)
+		${STAGEDIR}${PREFIX}/lib/xorg-edit/options/devices)
 
 .include <bsd.port.mk>

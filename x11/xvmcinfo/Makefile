@@ -16,15 +16,12 @@ NO_WRKSUBDIR=	defined
 
 PLIST_FILES=	bin/xvmcinfo
 
-NO_MAN=		defined
-
-NO_STAGE=	yes
 do-build:
 	${CC} ${CFLAGS} ${CPPFLAGS} \
 	    -I${LOCALBASE}/include -L${LOCALBASE}/lib \
 	    -o ${WRKSRC}/xvmcinfo ${FILESDIR}/xvmcinfo.c ${LDFLAGS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xvmcinfo ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/xvmcinfo ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

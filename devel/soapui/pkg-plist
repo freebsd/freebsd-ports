@@ -70,7 +70,7 @@ bin/soapui.sh
 %%DATADIR%%/bin/loadtestrunner.sh
 %%DATADIR%%/bin/mockservicerunner.sh
 %%DATADIR%%/bin/securitytestrunner.sh
-%%DATADIR%%/bin/soapui-4.6.1.jar
+%%DATADIR%%/bin/soapui-4.6.3.jar
 %%DATADIR%%/bin/soapui-errors.log
 %%DATADIR%%/bin/soapui-log4j.xml
 %%DATADIR%%/bin/soapui-splash.png
@@ -107,7 +107,8 @@ bin/soapui.sh
 %%DATADIR%%/lib/flex-messaging-proxy-1.0.jar
 %%DATADIR%%/lib/flex-messaging-remoting-1.0.jar
 %%DATADIR%%/lib/forms-1.0.7.jar
-%%DATADIR%%/lib/groovy-all-1.8.0.jar
+%%DATADIR%%/lib/groovy-all-2.1.7.jar
+%%DATADIR%%/lib/proxy-vole-20121203.jar
 %%DATADIR%%/lib/guava-14.0.jar
 %%DATADIR%%/lib/hamcrest-core-1.1.jar
 %%DATADIR%%/lib/hermes-1.14.jar

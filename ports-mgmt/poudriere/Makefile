@@ -7,8 +7,7 @@ MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/ \
 		LOCAL/bdrewery/${PORTNAME}/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}?uuid=${PORTVERSION}
 
-# Also maintained by bdrewery@FreeBSD.org
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Port build and test system
 
 LICENSE=	BSD

@@ -11,10 +11,9 @@ MASTER_SITES=	http://projects.raphnet.net/playgsf/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line player for gsf audio files
 
-LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao
+LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao
 
-USES=		gmake
-USE_DOS2UNIX=	yes
+USES=		gmake dos2unix
 GNU_CONFIGURE=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include

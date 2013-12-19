@@ -19,16 +19,15 @@ USES=		pkgconfig
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.sh
 
-.if defined(WITH_GTK2)
-USE_GNOME+=	gtk20
-CONFIGURE_ARGS+=	--gtk 2.0
-PKGNAMESUFFIX=	-gtk2
-.else
-USE_GNOME+=	gtk12
-CONFIGURE_ARGS+=	--gtk 1.2
-.endif
+OPTIONS_SINGLE=	GTK
+OPTIONS_SINGLE_GTK=	GTK1 GTK2
+OPTIONS_DEFAULT=	GTK1
 
-NO_STAGE=	yes
+GTK1_USE=		GNOME=gtk12
+GTK1_CONFIGURE_ON=	--gtk 1.2
+GTK2_USE=		GNOME=gtk20
+GTK2_CONFIGURE_ON=	--gtk 2.0
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%CFLAGS%%|"${CFLAGS}"|g ; \
@@ -39,9 +38,9 @@ post-patch:
 				${WRKSRC}/${CONFIGURE_SCRIPT}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bfe2 ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/README.bferc ${DATADIR}/bferc.sample
-	${INSTALL_DATA} ${WRKSRC}/README.bferc ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bfe2 ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/README.bferc ${STAGEDIR}${DATADIR}/bferc.sample
+	${INSTALL_DATA} ${WRKSRC}/README.bferc ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

@@ -50,7 +50,7 @@ post-install:
 
 .else
 
-LIB_DEPENDS+=	qdbm:${PORTSDIR}/databases/qdbm
+LIB_DEPENDS+=	libqdbm.so:${PORTSDIR}/databases/qdbm
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/java|${JAVA_HOME}|' ${WRKSRC}/configure

@@ -81,6 +81,9 @@ MLINKS=	TIFFError.3tiff          TIFFSetErrorHandler.3tiff \
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
+OPTIONS_SUB=	yes
+X11_CONFIGURE_WITH=	x libgl
+X11_USE=	xorg=sm,ice,xmu,xi,x11 gl=glut,glu,gl
 
 .include <bsd.port.options.mk>
 
@@ -91,15 +94,6 @@ __pmlinks3!= ${ECHO_CMD} '${MLINKS:S/    / /}' | ${AWK} \
 		if ( i % 2 == 0) { print " " $$i " ;"; } \
 		else { printf "${LN} -s " $$i " "; } \
 	} }'
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	sm ice xmu xi x11
-USE_GL=		glut glu gl
-PLIST_SUB+=	WITH_X11=""
-.else
-CONFIGURE_ARGS+=	--without-x --without-libgl
-PLIST_SUB+=	WITH_X11="@comment "
 .endif
 
 pre-configure:

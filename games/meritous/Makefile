@@ -33,16 +33,15 @@ DESKTOP_ENTRIES="Meritous" \
 		false
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|dat/|${DATADIR}/|' ${WRKSRC}/src/*.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/meritous ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/meritous ${STAGEDIR}${PREFIX}/bin/
 	${MKDIR} ${STAGEDIR}${DATADIR}
-	cd ${WRKSRC}/dat && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/dat && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

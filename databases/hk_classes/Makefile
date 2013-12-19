@@ -10,8 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Library for rapid development of database applications
 
 BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
-LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libxml2.so:${PORTSDIR}/textproc/libxml2
 
 USES=	pkgconfig gettext iconv
 USE_BZIP2=	yes
@@ -76,7 +76,7 @@ PLIST_SUB+=	POSTGRESQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MODBC}
-LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		libodbc.so:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc-incdir=${LOCALBASE}/include/\
 			--with-odbc-libdir=${LOCALBASE}/lib
 PLIST_SUB+=	ODBC=""
@@ -86,7 +86,7 @@ PLIST_SUB+=	ODBC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPARADOX}
-LIB_DEPENDS+=		px:${PORTSDIR}/databases/pxlib
+LIB_DEPENDS+=		libpx.so:${PORTSDIR}/databases/pxlib
 CONFIGURE_ARGS+=	--with-paradox-incdir=${LOCALBASE}/include/\
 			--with-paradox-libdir=${LOCALBASE}/lib
 PLIST_SUB+=	PARADOX=""
@@ -97,7 +97,7 @@ PLIST_SUB+=	PARADOX="@comment "
 
 # XXX does not work yet
 .if ${PORT_OPTIONS:MMSACCESS}
-LIB_DEPENDS+=		mdb:${PORTSDIR}/databases/mdbtools
+LIB_DEPENDS+=		libmdb.so:${PORTSDIR}/databases/mdbtools
 CONFIGURE_ARGS+=	--with-mdb-incdir=${LOCALBASE}/include/\
 			--with-mdb-libdir=${LOCALBASE}/lib
 PLIST_SUB+=	MSACCESS=""
@@ -110,7 +110,7 @@ PLIST_SUB+=	MSACCESS="@comment "
 CONFIGURE_ARGS+=	--without-xbase
 
 .if ${PORT_OPTIONS:MSQLITE2}
-LIB_DEPENDS+=		sqlite.2:${PORTSDIR}/databases/sqlite2
+LIB_DEPENDS+=		libsqlite.so.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--with-sqlite-incdir=${LOCALBASE}/include/\
 			--with-sqlite-libdir=${LOCALBASE}/lib
 PLIST_SUB+=	SQLITE2=""
@@ -120,7 +120,7 @@ PLIST_SUB+=	SQLITE2="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE3}
-LIB_DEPENDS+=		sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 CONFIGURE_ARGS+=	--with-sqlite-incdir3=${LOCALBASE}/include/\
 			--with-sqlite-libdir3=${LOCALBASE}/lib
 PLIST_SUB+=	SQLITE3=""

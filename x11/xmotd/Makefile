@@ -15,13 +15,12 @@ USE_XORG=	ice sm x11 xaw xext xmu xt
 NO_INSTALL_MANPAGES=	yes
 XFREE86_HTML_MAN=	no
 
-MAN8=		xmotd.8
-PLIST_FILES=	bin/xmotd
+PLIST_FILES=	bin/xmotd \
+		man/man8/xmotd.8.gz
 
 OPTIONS_DEFINE=	HTML MOTIF XPM
 HTML_DESC=	Use HTML widget instead of ASCII text
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHTML}
@@ -57,7 +56,7 @@ post-patch:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xmotd ${LOCALBASE}/bin/xmotd
-	${INSTALL_MAN} ${WRKSRC}/xmotd.8 ${MANPREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/xmotd ${STAGEDIR}${LOCALBASE}/bin/xmotd
+	${INSTALL_MAN} ${WRKSRC}/xmotd.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>

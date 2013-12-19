@@ -13,6 +13,7 @@ COMMENT=	Framework for manipulating Bible texts
 LICENSE=	GPLv2
 
 CONFLICTS=	sword-1.6.*
+PKGNAMESUFFIX=	17
 
 BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
 

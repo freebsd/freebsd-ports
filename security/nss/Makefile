@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nss
-PORTVERSION=	3.15.2
+PORTVERSION=	3.15.3.1
 #DISTVERSIONSUFFIX=	.with.ckbi.1.93
 CATEGORIES=	security
 MASTER_SITES=	MOZILLA/security/${PORTNAME}/releases/${DISTNAME:U:C/[-.]/_/g}_RTM/src
@@ -11,7 +11,7 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Libraries to support development of security-enabled applications
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		nspr>=4.10:${PORTSDIR}/devel/nspr \
+		nspr>=4.10.2:${PORTSDIR}/devel/nspr \
 		sqlite3>=3.7.15:${PORTSDIR}/databases/sqlite3
 LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3

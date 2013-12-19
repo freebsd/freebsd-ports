@@ -11,8 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio Echolink client for UNIX
 
-LIB_DEPENDS=	forms.2:${PORTSDIR}/x11-toolkits/xforms \
-		gsm.1:${PORTSDIR}/audio/gsm
+LIB_DEPENDS=	libforms.so:${PORTSDIR}/x11-toolkits/xforms \
+		libgsm.so:${PORTSDIR}/audio/gsm
 
 USE_GCC=	any
 

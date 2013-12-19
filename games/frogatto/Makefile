@@ -10,8 +10,8 @@ MASTER_SITES=	GH
 MAINTAINER=	fiziologus@gmail.com
 COMMENT=	An old-school 2D classic adventure platformer game
 
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 NO_PACKAGE=	Package will be 144M, set FORCE_PACKAGE if you really want it
 

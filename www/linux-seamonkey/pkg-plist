@@ -107,6 +107,7 @@ lib/%%APP_NAME%%/mozilla-xremote-client
 lib/%%APP_NAME%%/omni.ja
 lib/%%APP_NAME%%/platform.ini
 lib/%%APP_NAME%%/plugin-container
+lib/%%APP_NAME%%/plugins
 lib/%%APP_NAME%%/precomplete
 lib/%%APP_NAME%%/removed-files
 lib/%%APP_NAME%%/run-mozilla.sh
@@ -119,9 +120,7 @@ lib/%%APP_NAME%%/searchplugins/yahoo.xml
 lib/%%APP_NAME%%/update-settings.ini
 lib/%%APP_NAME%%/updater
 lib/%%APP_NAME%%/updater.ini
-@exec /bin/cp -R %%LOCALBASE%%/lib/npapi/symlinks/%%APP_NAME%%/  %D/lib/%%APP_NAME%%/plugins/ 2>/dev/null || true
 @exec /bin/cp -R %%LOCALBASE%%/lib/xpi/symlinks/%%APP_NAME%%/  %D/lib/%%APP_NAME%%/extensions/ 2>/dev/null || true
-@unexec /usr/bin/find %D/lib/%%APP_NAME%%/plugins/  -depth 1 -type l -delete 2>/dev/null || true
 @unexec /usr/bin/find %D/lib/%%APP_NAME%%/extensions/  -depth 1 -type l -delete 2>/dev/null || true
 @dirrm lib/%%APP_NAME%%/chrome/icons/default
 @dirrm lib/%%APP_NAME%%/chrome/icons
@@ -137,6 +136,5 @@ lib/%%APP_NAME%%/updater.ini
 @dirrm lib/%%APP_NAME%%/extensions
 @dirrm lib/%%APP_NAME%%/icons
 @dirrm lib/%%APP_NAME%%/isp
-@dirrm lib/%%APP_NAME%%/plugins
 @dirrm lib/%%APP_NAME%%/searchplugins
 @dirrm lib/%%APP_NAME%%

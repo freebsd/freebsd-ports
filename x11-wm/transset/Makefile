@@ -13,8 +13,6 @@ COMMENT=	Make your windows transparent
 XORG_CAT=	app
 USE_XORG=	x11 xproto
 
-MAN1=		transset.1
-PLIST_FILES=	bin/transset
+PLIST_FILES=	bin/transset man/man1/transset.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -10,9 +10,9 @@ MASTER_SITES=	GOOGLE_CODE CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Daemon that filters out private IP addresses in DNS responses
 
+USES=		dos2unix
 PROJECTHOST=	google-dnswall
 USE_AUTOTOOLS=	automake autoconf:env
-USE_DOS2UNIX=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

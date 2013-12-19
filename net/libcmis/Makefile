@@ -11,7 +11,7 @@ COMMENT=	Client library for the CMIS interface
 LICENSE=	LGPL20 MPL GPLv2
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit \
 		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs
 
@@ -23,7 +23,6 @@ USES=		gmake pathfix pkgconfig
 CONFIGURE_ARGS=	--disable-werror --with-boost=${LOCALBASE} --without-man
 PLIST_SUB=	MAJVER=${PORTVERSION:R}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|@WITH_LIBCMIS_MAN_FALSE@|#|g" \
 	    ${WRKSRC}/Makefile.in

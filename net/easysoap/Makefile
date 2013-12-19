@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/SWANSONG
 DISTNAME=	EasySoap++-${PORTVERSION}
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ SOAP Library based on expat
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2

@@ -17,8 +17,10 @@ bin/gnuchessx
 %%DATADIR%%/gnuchess.ini
 %%DATADIR%%/smallbook.bin
 %%NLS%%share/locale/de/LC_MESSAGES/gnuchess.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gnuchess.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/gnuchess.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gnuchess.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

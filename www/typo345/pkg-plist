@@ -2791,6 +2791,7 @@
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/res/oracle/templavoila.diff
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/res/postgresql/postgresql-compatibility.sql
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/em/ChangeLog
+%%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/em/Tests/Unit/tools/class.tx_em_toolsTest.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/em/classes/class.tx_em_api.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/em/classes/class.tx_em_extensionmanager.php
 %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/em/classes/conf.php
@@ -8059,6 +8060,9 @@
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/em/classes/database
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/em/classes/connection
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/em/classes
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/em/Tests/Unit/tools
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/em/Tests/Unit
+@dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/em/Tests
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/em
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/res/postgresql
 @dirrm %%WWWDIR%%_src-%%PORTVERSION%%/typo3/sysext/dbal/res/oracle

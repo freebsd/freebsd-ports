@@ -13,7 +13,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	t.hiroaki.209@gmail.com
 COMMENT=	A Ruby library wrapping the Taglib library
 
-LIB_DEPENDS=    tag:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=    libtag.so:${PORTSDIR}/audio/taglib
 
 USE_RUBY=	yes
 NO_STAGE=	yes

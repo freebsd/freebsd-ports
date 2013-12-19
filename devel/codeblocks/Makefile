@@ -14,9 +14,9 @@ LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs \
-		hunspell:${PORTSDIR}/textproc/hunspell \
-		rsync:${PORTSDIR}/net/librsync
+LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
+		libhunspell.so:${PORTSDIR}/textproc/hunspell \
+		librsync.so:${PORTSDIR}/net/librsync
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 USES=		pkgconfig

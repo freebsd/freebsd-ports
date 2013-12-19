@@ -4,21 +4,29 @@
 PORTNAME=	mcplay
 DISTVERSION=	0.3i
 CATEGORIES=	audio
-MASTER_SITES=	http://www.yahuxo.de/${PORTNAME}/
+MASTER_SITES=	http://www.yahuxo.de/${PORTNAME}/ \
+		http://www.sourcefiles.org/Multimedia/MP3/Front_End/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses based front-end to various audio players
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	glib-12:${PORTSDIR}/devel/glib12
+USES=		ncurses
+USE_GNOME=	glib12
 
-NO_STAGE=	yes
-MAN1=		${PORTNAME}.1
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+
+post-patch:
+.for i in mcplay.c screen.c
+	@${REINPLACE_CMD} -e \
+		's|<sys/termios.h>|<termios.h>|' ${WRKSRC}/${i}
+.endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${FILESDIR} && ${INSTALL_MAN} ${PORTNAME}.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1)
 
 .include <bsd.port.mk>

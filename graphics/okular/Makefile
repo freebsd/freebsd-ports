@@ -2,7 +2,7 @@
 
 PORTNAME=	okular
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -24,7 +24,7 @@ LIB_DEPENDS=	djvulibre:${PORTSDIR}/graphics/djvulibre \
 CONFLICTS=	kdegraphics-4.[0-6].*
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4 qimageblitz kactivities
-USES=		cmake:outsource
+USES=		cmake:outsource pkgconfig
 USE_QT4=	corelib declarative gui opengl xml \
 		qmake_build moc_build uic_build rcc_build
 USE_XZ=		yes

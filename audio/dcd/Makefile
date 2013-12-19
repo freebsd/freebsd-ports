@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}player/${PORTNAME}player/${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A simple, programmable, intelligent CD player
 
-LIB_DEPENDS=	cdaudio:${PORTSDIR}/audio/libcdaudio
+LIB_DEPENDS=	libcdaudio.so:${PORTSDIR}/audio/libcdaudio
 
 USES=		gmake
 NO_STAGE=	yes

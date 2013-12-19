@@ -11,26 +11,26 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION} \
 MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	Music player with rich features
 
-LIB_DEPENDS=	samplerate:${PORTSDIR}/audio/libsamplerate \
-		sndfile:${PORTSDIR}/audio/libsndfile \
-		FLAC:${PORTSDIR}/audio/flac \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		oggz:${PORTSDIR}/audio/liboggz \
-		speex:${PORTSDIR}/audio/speex \
-		mad:${PORTSDIR}/audio/libmad \
-		modplug:${PORTSDIR}/audio/libmodplug \
-		mpcdec:${PORTSDIR}/audio/musepack \
-		mac:${PORTSDIR}/audio/mac \
-		tag:${PORTSDIR}/audio/taglib \
-		lrdf:${PORTSDIR}/textproc/liblrdf \
-		cdio:${PORTSDIR}/sysutils/libcdio \
-		mp3lame:${PORTSDIR}/audio/lame \
-		avcodec:${PORTSDIR}/multimedia/ffmpeg \
-		strfunc:${PORTSDIR}/devel/libstrfunc \
-		wavpack:${PORTSDIR}/audio/wavpack \
-		xslt:${PORTSDIR}/textproc/libxslt \
-		cddb:${PORTSDIR}/audio/libcddb \
-		strfunc:${PORTSDIR}/devel/libstrfunc
+LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
+		libsndfile.so:${PORTSDIR}/audio/libsndfile \
+		libFLAC.so:${PORTSDIR}/audio/flac \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		liboggz.so:${PORTSDIR}/audio/liboggz \
+		libspeex.so:${PORTSDIR}/audio/speex \
+		libmad.so:${PORTSDIR}/audio/libmad \
+		libmodplug.so:${PORTSDIR}/audio/libmodplug \
+		libmpcdec.so:${PORTSDIR}/audio/musepack \
+		libmac.so:${PORTSDIR}/audio/mac \
+		libtag.so:${PORTSDIR}/audio/taglib \
+		liblrdf.so:${PORTSDIR}/textproc/liblrdf \
+		libcdio.so:${PORTSDIR}/sysutils/libcdio \
+		libmp3lame.so:${PORTSDIR}/audio/lame \
+		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
+		libstrfunc.so:${PORTSDIR}/devel/libstrfunc \
+		libwavpack.so:${PORTSDIR}/audio/wavpack \
+		libxslt.so:${PORTSDIR}/textproc/libxslt \
+		libcddb.so:${PORTSDIR}/audio/libcddb \
+		libstrfunc.so:${PORTSDIR}/devel/libstrfunc
 
 NO_STAGE=	yes
 USES=		gmake pkgconfig gettext
@@ -49,14 +49,14 @@ OPTIONS_DEFINE=	JACK PULSEAUDIO DOCS
 .if ${PORT_OPTIONS:MJACK}
 CONFIGURE_ARGS+=	--with-jack=no
 .else
-LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
 CONFIGURE_ARGS+=	--with-jack=yes
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
 CONFIGURE_ARGS+=	--with-pulse=no
 .else
-LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 CONFIGURE_ARGS+=	--with-pulse=yes
 .endif
 post-patch:

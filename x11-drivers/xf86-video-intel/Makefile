@@ -23,14 +23,11 @@ USE_XORG=	glproto \
 		xrender \
 		xvmc
 
-MAN4=		intel.4x
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(WITH_NEW_XORG)
 INTEL_VERSION=	2.21.15
-INTEL_REVISION=	0
+INTEL_REVISION=	1
 CONFIGURE_ENV+=	xorg_cv_cc_flag__Wno_maybe_uninitialized=no
 CONFIGURE_ARGS+=	--enable-sna
 MAKE_JOBS_UNSAFE=yes
@@ -39,10 +36,10 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-src__sna__sna_threads.c \
 		${PATCHDIR}/extra-src_sna_kgem.c \
 		${PATCHDIR}/extra-clang \
 		${PATCHDIR}/extra-i915kms
-LIB_DEPENDS+=	xcb-util:${PORTSDIR}/x11/xcb-util
+LIB_DEPENDS+=	libxcb-util.so:${PORTSDIR}/x11/xcb-util
 .else
 INTEL_VERSION=	2.7.1
-INTEL_REVISION=	5
+INTEL_REVISION=	6
 PLIST_SUB+=	OLD=""
 
 EXTRA_PATCHES+=	${PATCHDIR}/extra-src_ch7017_ch7017.c \
@@ -65,14 +62,9 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-src_ch7017_ch7017.c \
 		${PATCHDIR}/extra-uxa_uxa-priv.h
 .endif
 
-.include <bsd.port.pre.mk>
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libIntelXvMC.so.1
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libI810XvMC.so.1
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/xorg/modules/drivers/intel_drv.so
 
-.if defined(WITH_NEW_XORG)
-pre-configure:
-.if !exists(${LOCALBASE}/lib/libkms.so)
-	@${ECHO} "${PKGNAME}: Rebuild graphics/libdrm with the WITH_KMS option."
-	@${FALSE}
-.endif
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -11,7 +11,7 @@ COMMENT=	Qt fluidsynth front-end application
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	fluidsynth:${PORTSDIR}/audio/fluidsynth
+LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
 
 OPTIONS_DEFINE=	GRADIENT SYSTEM_TRAY
 OPTIONS_DEFAULT=	GRADIENT SYSTEM_TRAY

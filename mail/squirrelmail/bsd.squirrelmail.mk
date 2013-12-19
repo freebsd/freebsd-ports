@@ -28,7 +28,6 @@
 # tweaking. Feedback is always welcome.
 #
 
-CATEGORIES?=	mail www
 MASTER_SITES?=	http://www.squirrelmail.org/plugins/
 PKGNAMEPREFIX?=	squirrelmail-
 PKGNAMESUFFIX?=	-plugin

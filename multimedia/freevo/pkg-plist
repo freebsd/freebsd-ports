@@ -1074,6 +1074,7 @@ etc/freevo/local_conf.py.example
 %%PYTHON_SITELIBDIR%%/freevo/www/web_types.py
 %%PYTHON_SITELIBDIR%%/freevo/www/web_types.pyc
 %%PYTHON_SITELIBDIR%%/freevo/www/web_types.pyo
+%%PYTHON_SITELIBDIR%%/%%PYDISTUTILS_EGGINFO%%
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/CREDITS
 %%DOCSDIR%%/ChangeLog

@@ -13,7 +13,7 @@ COMMENT=	An ncurses Tetris clone which is harder than every other Tetris
 
 LICENSE=	GPLv3 # (or later)
 
-LIB_DEPENDS=	boost_program_options:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_program_options.so:${PORTSDIR}/devel/boost-libs
 
 USES=		ncurses
 USE_GMAKE=	yes

@@ -13,7 +13,8 @@ DISTNAME=	mod_pagespeed_source_${PORTVERSION}
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	An Apache module that automatically optimizes web pages
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
+		bash:${PORTSDIR}/shells/bash \
 		greadlink:${PORTSDIR}/sysutils/coreutils \
 		gsed:${PORTSDIR}/textproc/gsed \
 		svn:${PORTSDIR}/devel/subversion \

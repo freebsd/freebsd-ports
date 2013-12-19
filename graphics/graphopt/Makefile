@@ -3,16 +3,19 @@
 
 PORTNAME=	graphopt
 PORTVERSION=	0.4.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Graph Layout Optimizer
+COMMENT=	Graph layout optimizer
+
+LICENSE=	GPLv2 # (or later)
 
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
+DESKTOP_ENTRIES="GraphOpt" "" "" "${PORTNAME}" "Graphics;GTK;" ""
+
 .include <bsd.port.mk>

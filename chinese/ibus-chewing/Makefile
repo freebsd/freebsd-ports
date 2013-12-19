@@ -17,7 +17,7 @@ BUILD_DEPENDS=	gob2:${PORTSDIR}/devel/gob2 \
 		${LOCALBASE}/share/cmake/Modules/ManageEnvironment.cmake:${PORTSDIR}/devel/cmake-fedora \
 		ibus-daemon:${PORTSDIR}/textproc/ibus
 RUN_DEPENDS=	ibus-daemon:${PORTSDIR}/textproc/ibus
-LIB_DEPENDS=	chewing:${PORTSDIR}/chinese/libchewing
+LIB_DEPENDS=	libchewing.so:${PORTSDIR}/chinese/libchewing
 
 CMAKE_ARGS+=	-DSYSCONF_INSTALL_DIR=${PREFIX}/etc \
 		-DLIB_DIR=${PREFIX}/lib

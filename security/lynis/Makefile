@@ -3,6 +3,7 @@
 
 PORTNAME=	lynis
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://cisofy.com/files/
 

@@ -1,4 +1,5 @@
 bin/netradiant
+man/man6/q3map2.6.gz
 %%DATADIR%%/RADIANT_MAJOR
 %%DATADIR%%/RADIANT_MINOR
 %%DATADIR%%/README.txt
@@ -96,7 +97,7 @@ bin/netradiant
 %%DATADIR%%/gl/zfill_vp.glp
 %%DATADIR%%/gl/zfill_vp.glsl
 %%DATADIR%%/global.xlink
-%%DATADIR%%/heretic2/h2data.i386
+%%DATADIR%%/heretic2/h2data.%%ARCH%%
 %%DATADIR%%/modules/archivepak.so
 %%DATADIR%%/modules/archivewad.so
 %%DATADIR%%/modules/archivezip.so
@@ -156,12 +157,12 @@ bin/netradiant
 %%DATADIR%%/plugins/ufoaiplug.so
 %%DATADIR%%/q1.game/default_build_menu.xml
 %%DATADIR%%/q1.game/id1/entities.ent
-%%DATADIR%%/q2map.i386
-%%DATADIR%%/q3data.i386
+%%DATADIR%%/q2map.%%ARCH%%
+%%DATADIR%%/q3data.%%ARCH%%
 %%DATADIR%%/q3data.qdt
-%%DATADIR%%/q3map2.i386
-%%DATADIR%%/qdata3.i386
-%%DATADIR%%/radiant.i386
+%%DATADIR%%/q3map2.%%ARCH%%
+%%DATADIR%%/qdata3.%%ARCH%%
+%%DATADIR%%/radiant.%%ARCH%%
 %%DATADIR%%/warsow.game/basewsw/default_shaderlist.txt
 %%DATADIR%%/warsow.game/basewsw/entities.def
 %%DATADIR%%/warsow.game/default_build_menu.xml

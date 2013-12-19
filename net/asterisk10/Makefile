@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	asterisk
-PORTVERSION=	10.12.3
+PORTVERSION=	10.12.4
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -19,14 +19,16 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64
 
+DEPRECATED=	asterisk 10 reached EOL on 2013-12-15
+EXPIRATION_DATE=2014-02-28
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gsm=${LOCALBASE}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 USE_CSTD=	gnu89
-USE_GMAKE=	yes
 USE_GNOME=	libxml2
-USES=		bison
+USES=		bison gmake
 USE_RC_SUBR=	asterisk
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \

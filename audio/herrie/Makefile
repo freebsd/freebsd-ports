@@ -36,41 +36,41 @@ CONFIGURE_ARGS+=ncurses
 .endif
 
 .if ${PORT_OPTIONS:MMAD}
-LIB_DEPENDS+=	mad:${PORTSDIR}/audio/mad \
-		id3tag:${PORTSDIR}/audio/libid3tag
+LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/mad \
+		libid3tag.so:${PORTSDIR}/audio/libid3tag
 .else
 CONFIGURE_ARGS+=no_mp3
 .endif
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=no_vorbis
 .endif
 .if ${PORT_OPTIONS:MSNDFILE}
-LIB_DEPENDS+=	sndfile:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 .else
 CONFIGURE_ARGS+=no_sndfile
 .endif
 .if ${PORT_OPTIONS:MMODPLUG}
-LIB_DEPENDS+=	modplug:${PORTSDIR}/audio/libmodplug
+LIB_DEPENDS+=	libmodplug.so:${PORTSDIR}/audio/libmodplug
 .else
 CONFIGURE_ARGS+=no_modplug
 .endif
 .if ${PORT_OPTIONS:MHTTP}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libbcurl.so:${PORTSDIR}/ftp/curl
 .else
 CONFIGURE_ARGS+=no_http no_scrobbler
 .endif
 .if ${PORT_OPTIONS:MLIBAO}
-LIB_DEPENDS+=	ao:${PORTSDIR}/audio/libao
+LIB_DEPENDS+=	libao.so:${PORTSDIR}/audio/libao
 CONFIGURE_ARGS+=ao
 .endif
 .if ${PORT_OPTIONS:MXCURSES}
-LIB_DEPENDS+=	XCurses:${PORTSDIR}/devel/pdcurses
+LIB_DEPENDS+=	libXCurses.so:${PORTSDIR}/devel/pdcurses
 CONFIGURE_ARGS+=xcurses
 .endif
 .if ${PORT_OPTIONS:MXSPF}
-LIB_DEPENDS+=	xspf:${PORTSDIR}/multimedia/libxspf
+LIB_DEPENDS+=	libxspf.so:${PORTSDIR}/multimedia/libxspf
 .else
 CONFIGURE_ARGS+=no_xspf
 .endif

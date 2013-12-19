@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-plugin-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Realtime XMMS plugin for remastering mp3 sound
 
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 USE_GNOME=	imlib
 NO_STAGE=	yes

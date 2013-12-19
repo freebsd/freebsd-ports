@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=cherokee/1.2/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Extremely fast and flexible web server
+COMMENT=	Fast and flexible web server
 
 BROKEN=		Does not configure
 

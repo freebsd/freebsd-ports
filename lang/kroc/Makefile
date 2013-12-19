@@ -28,14 +28,16 @@ USE_GNOME=	libxslt
 USE_AUTOTOOLS=	autoconf:env automake:env
 USE_XORG=	xmu xi
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 
 MAN1=		kmakef.1 kroc.1 mkoccdeps.1 occ21.1 occamdoc.1
 MAN3=		libconvert-inmos.3 libcourse-cycles.3 libcourse-nets.3 \
 		libcourse-utils.3 libfile.3 libhostio-inmos.3 libmath-inmos.3 \
 		libproc.3 libsock.3 libstreamio-inmos.3 libstring-inmos.3
 
-# Fix pkgconfig location
 NO_STAGE=	yes
+
+# Fix pkgconfig location
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.am" -type f | \
 		${XARGS} ${REINPLACE_CMD} -e \

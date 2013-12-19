@@ -40,5 +40,7 @@ lib/rsyslog/omstdout.la
 lib/rsyslog/omstdout.so
 lib/rsyslog/omtesting.la
 lib/rsyslog/omtesting.so
+man/man5/rsyslog.conf.5.gz
+man/man8/rsyslogd.8.gz
 sbin/rsyslogd
 @dirrmtry lib/rsyslog

@@ -30,6 +30,8 @@ PATCH_DIST_STRIP=	-d .. --ignore-whitespace
 MAINTAINER=	gslin@gslin.org
 COMMENT=	The Berkeley DB package, revision 4.7
 
+DEPRECATED=	Please use databases/db5 or db6 for new installs.
+
 BDBVER=		${PORTVERSION:R:R}
 CONFIGURE_ARGS=	--enable-compat185 --enable-dump185 --enable-cxx \
 		--enable-dynamic --enable-rpc --enable-pthread_api \

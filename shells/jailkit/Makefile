@@ -11,7 +11,8 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Utilities to limit user account
 
 GNU_CONFIGURE=	yes
-USE_PYTHON=	2.5+
+CONFIGURE_ENV=	PYTHONINTERPRETER=${PYTHON_CMD}
+USE_PYTHON=	2
 
 SHELLS=		/etc/shells
 

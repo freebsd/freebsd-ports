@@ -1,3 +1,4 @@
 etc/avahi/avahi-autoipd.action
 sbin/avahi-autoipd
-@dirrm etc/avahi
+man/man8/avahi-autoipd.8.gz
+@dirrmtry etc/avahi

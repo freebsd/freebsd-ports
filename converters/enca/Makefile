@@ -10,7 +10,7 @@ MAINTAINER=	never@nevermind.kiev.ua
 COMMENT=	A package for detecting encoding of text files
 
 BUILD_DEPENDS=	umap:${PORTSDIR}/converters/p5-Unicode-Map8
-LIB_DEPENDS=	recode:${PORTSDIR}/converters/recode
+LIB_DEPENDS=	librecode.so:${PORTSDIR}/converters/recode
 RUN_DEPENDS=	umap:${PORTSDIR}/converters/p5-Unicode-Map8
 
 LICENSE=	GPLv2

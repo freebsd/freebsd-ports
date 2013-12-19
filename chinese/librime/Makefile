@@ -12,11 +12,11 @@ COMMENT=	Rime Input Method Engine
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
-		glog:${PORTSDIR}/devel/glog \
-		kyotocabinet:${PORTSDIR}/databases/kyotocabinet \
-		opencc:${PORTSDIR}/chinese/opencc \
-		yaml-cpp:${PORTSDIR}/devel/yaml-cpp
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libglog.so:${PORTSDIR}/devel/glog \
+		libkyotocabinet.so:${PORTSDIR}/databases/kyotocabinet \
+		libopencc.so:${PORTSDIR}/chinese/opencc \
+		libyaml-cpp.so:${PORTSDIR}/devel/yaml-cpp
 
 USES=		cmake pkgconfig gettext perl5
 USE_PERL5=	build patch

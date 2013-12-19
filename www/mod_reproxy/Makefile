@@ -9,10 +9,12 @@ MASTER_SITE_SUBDIR=	kuriyama
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Apache module to support x-reproxy-url header
 
+LICENSE=	AL2
+
 WRKSRC=		${WRKDIR}/lestrrat-mod_reproxy-0f945ff
+
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

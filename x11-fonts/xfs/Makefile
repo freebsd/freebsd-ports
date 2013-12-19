@@ -14,9 +14,6 @@ USE_XORG=	libfs xfont xtrans
 USE_RC_SUBR=	xfs
 CONFIGURE_ARGS=	--without-xmlto --without-fop
 
-MAN1=		xfs.1
-
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} '/^config_DATA/d' ${WRKSRC}/config/Makefile.in
 .if defined(WITHOUT_XFS_CACHE)
@@ -27,9 +24,7 @@ post-build:
 	@cd ${WRKSRC}/config/ && ${GMAKE} config
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/config/config ${PREFIX}/etc/X11/fs/config.default
-	@if [ ! -f ${PREFIX}/etc/X11/fs/config ]; then \
-		${INSTALL_SCRIPT} ${WRKSRC}/config/config ${PREFIX}/etc/X11/fs/config; \
-	fi
+	${INSTALL_SCRIPT} ${WRKSRC}/config/config ${STAGEDIR}${PREFIX}/etc/X11/fs/config.default
+	${INSTALL_SCRIPT} ${WRKSRC}/config/config ${STAGEDIR}${PREFIX}/etc/X11/fs/config; \
 
 .include <bsd.port.mk>

@@ -367,6 +367,7 @@ bin/balazar_brothers
 %%DATADIR%%/worlds/scn-tree5.data
 %%DATADIR%%/worlds/sign_brother_surf.data
 %%DATADIR%%/worlds/sign_u_turn.data
+share/%%PYDISTUTILS_EGGINFO%%
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/levels

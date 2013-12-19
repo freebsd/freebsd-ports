@@ -76,9 +76,7 @@ bin/gtkradiant
 %%DATADIR%%/games/et.game
 %%DATADIR%%/games/heretic2.game
 %%DATADIR%%/games/hl.game
-%%DATADIR%%/games/hlcs.game
 %%DATADIR%%/games/ja.game
-%%DATADIR%%/games/jabp.game
 %%DATADIR%%/games/jk2.game
 %%DATADIR%%/games/q1.game
 %%DATADIR%%/games/q2.game
@@ -194,14 +192,11 @@ bin/gtkradiant
 @dirrm %%DATADIR%%/q2.game
 @dirrm %%DATADIR%%/q1.game/id1
 @dirrm %%DATADIR%%/q1.game
-@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/modules
 @dirrm %%DATADIR%%/jk2.game/base
 @dirrm %%DATADIR%%/jk2.game
-@dirrm %%DATADIR%%/jabp.game
 @dirrm %%DATADIR%%/ja.game/base
 @dirrm %%DATADIR%%/ja.game
-@dirrm %%DATADIR%%/hlcs.game
 @dirrm %%DATADIR%%/hl.game/valve
 @dirrm %%DATADIR%%/hl.game/cstrike
 @dirrm %%DATADIR%%/hl.game

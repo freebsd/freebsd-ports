@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-xmms-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time graphical equalizer plugin for XMMS
 
-LIB_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 USE_BZIP2=	yes
 NO_STAGE=	yes

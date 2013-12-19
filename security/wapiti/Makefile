@@ -11,8 +11,6 @@ COMMENT=	Wapiti is a vulnerability scanner for web applications
 
 LICENSE=	GPLv2
 
-# easy_install puts man page and doc in the egg, so use install with setuptools
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:${PORTSDIR}/devel/py-setuptools
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup32>=0:${PORTSDIR}/www/py-beautifulsoup32 \
 		${PYTHON_PKGNAMEPREFIX}requests>=1.2.3:${PORTSDIR}/www/py-requests
 

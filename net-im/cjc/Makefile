@@ -4,36 +4,37 @@
 PORTNAME=	cjc
 PORTVERSION=	1.2.1
 CATEGORIES=	net-im python
-MASTER_SITES=	http://cloud.github.com/downloads/Jajcus/cjc/
+MASTER_SITES=	GHC
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The Console Jabber Client
+COMMENT=	Console Jabber Client
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyxmpp>=1.1.0:${PORTSDIR}/net-im/py-pyxmpp
 
-USE_PYTHON=	2.6+
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	Jajcus
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
+
+USES=		shebangfix
+SHEBANG_FILES=	cjc.in cjc.py cjc/main.py
+USE_PYTHON=	2
+
 post-patch:
-	@${GREP} -lR "/usr/bin/python" ${WRKSRC} | ${XARGS} \
-		${REINPLACE_CMD} -e "s|/usr/bin/python|${PYTHON_CMD}|"
 	@${REINPLACE_CMD} -e \
 		"s|prefix=.*|prefix=${PREFIX}| ; \
-		 /pkg_docdir/s|^|#|g ; \
+		 /^DOCS/s|COPYING|| ; \
 		 s|INSTALL=.*|INSTALL=${INSTALL}| ; \
 		 s|INSTALL_DATA=.*|INSTALL_DATA=${INSTALL_DATA}| ; \
-		 s|INSTALL_DIR=.*|INSTALL_DIR=${MKDIR}|g" ${WRKSRC}/Makefile
+		 s|INSTALL_DIR=.*|INSTALL_DIR=${MKDIR}|g ; \
+		 /compileall/d" ${WRKSRC}/Makefile
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/manual.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}
-.endif
+	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -m compileall \
+		-d ${PREFIX} -f ${DATADIR_REL})
 
 .include <bsd.port.mk>

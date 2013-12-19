@@ -7,6 +7,7 @@ include/graphite2/Segment.h
 include/graphite2/Types.h
 lib/libgraphite2.so
 lib/libgraphite2.so.3
+lib/libgraphite2.so.3.0.1
 libdata/pkgconfig/graphite2.pc
 @dirrmtry include/graphite2
 @dirrmtry %%DATADIR%%

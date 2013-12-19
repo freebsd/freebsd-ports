@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	mail
 
 MAINTAINER=	vsevolod@FreeBSD.org
@@ -17,7 +17,7 @@ USE_GITHUB=		yes
 GH_ACCOUNT=		vstakhov
 GH_PROJECT=		${PORTNAME}
 GH_TAG=		${PORTVERSION}
-GH_COMMIT=		6a90393
+GH_COMMIT=		c9a29e3
 
 OPTIONS_DEFINE=	GPERF JUDY REDIRECTOR
 GPERF_DESC=		google perf-tools profiling
@@ -30,7 +30,7 @@ PLIST_SUB+=	ETCDIR=etc/rspamd \
 		RSPAMDVERSION=${PORTVERSION}
 CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 				-DLOGDIR=/var/log/rspamd \
-				-DDBDIR=/var/lib/rspamd \
+				-DDBDIR=/var/db/rspamd \
 				-DRUNDIR=/var/run/rspamd \
 				-DMANDIR=${MANPREFIX}/man \
 				-DCMAKE_INSTALL_PREFIX=${PREFIX} \

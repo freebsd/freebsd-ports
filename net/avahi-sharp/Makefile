@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	-sharp
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono bindings for Avahi service discovery
 
-LIB_DEPENDS=	avahi-core:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS=	libavahi-core.so:${PORTSDIR}/net/avahi-app
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
@@ -21,7 +21,6 @@ PLIST=		${.CURDIR}/pkg-plist
 AVAHI_SLAVE=	sharp
 AVAHI_PKGCONFIG=avahi-sharp.pc
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|@CLIENT_DLNAME@|libavahi-client.so|g; \
 		s|@COMMON_DLNAME@|libavahi-common.so|g; \

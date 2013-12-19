@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	16.b.02
-PORTREVISION=	1
+PORTVERSION=	16.b.03
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -20,7 +19,7 @@ PATCH_SITES=	http://www.erlang.org/download
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A functional programming language from Ericsson
 
-WRKSRC=		${WRKDIR}/otp_src_R16B02
+WRKSRC=		${WRKDIR}/otp_src_R16B03
 
 ERLANG_LIB=	${PORTNAME}${PORTVERSION:C/\..*//}
 

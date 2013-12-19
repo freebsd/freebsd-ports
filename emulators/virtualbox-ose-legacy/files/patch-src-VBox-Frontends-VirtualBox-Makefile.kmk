@@ -1,0 +1,13 @@
+--- src/VBox/Frontends/VirtualBox/Makefile.kmk.orig	2013-10-16 21:47:09.588793988 +0400
++++ src/VBox/Frontends/VirtualBox/Makefile.kmk	2013-10-16 21:47:37.458794265 +0400
+@@ -175,10 +175,6 @@
+ # Necessary for the hdd backend enumeration
+ VirtualBox_LIBS = $(LIB_DDU)
+ 
+-if1of ($(KBUILD_TARGET), linux freebsd netbsd openbsd)
+- VirtualBox_LIBS += dl
+-endif
+-
+ # This library is required for multi-monitor support
+ VirtualBox_LIBS.linux   += Xinerama
+ VirtualBox_LIBS.solaris += Xinerama

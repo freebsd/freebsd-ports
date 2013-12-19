@@ -11,7 +11,7 @@ COMMENT=	MySQL Data Dumper
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
 

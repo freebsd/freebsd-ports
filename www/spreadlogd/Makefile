@@ -9,7 +9,9 @@ MASTER_SITES=	http://www.lethargy.org/mod_log_spread/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	The backend of mod_log_spread
 
-LIB_DEPENDS=	spread.1:${PORTSDIR}/net/spread
+LICENSE=	ART10
+
+LIB_DEPENDS=	libspread.so:${PORTSDIR}/net/spread
 
 MAKEFILE=	makefile
 
@@ -17,22 +19,15 @@ USE_RC_SUBR=	spreadlogd
 
 PLIST_FILES=	sbin/spreadlogd etc/spreadlogd.conf.sample
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	README Artistic.txt
-.endif
+PORTDOCS=	README
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|' ${WRKSRC}/spreadlogd.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/spreadlogd ${PREFIX}/sbin
-	${INSTALL} ${WRKSRC}/spreadlogd.conf ${PREFIX}/etc/spreadlogd.conf.sample
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/spreadlogd ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL} ${WRKSRC}/spreadlogd.conf ${STAGEDIR}${PREFIX}/etc/spreadlogd.conf.sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

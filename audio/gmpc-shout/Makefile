@@ -11,8 +11,8 @@ MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Shoutcast stream for gmpc
 
-LIB_DEPENDS=	mpd.4:${PORTSDIR}/audio/libmpd \
-		cairo.2:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \
+		libcairo.so:${PORTSDIR}/graphics/cairo
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
 RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc \
 		ogg123:${PORTSDIR}/audio/vorbis-tools

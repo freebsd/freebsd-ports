@@ -17,10 +17,10 @@ COMMENT=		Flexible Isometric Free Engine
 
 BUILD_DEPENDS=		${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
 
-LIB_DEPENDS=		vorbisfile:${PORTSDIR}/audio/libvorbis \
-			guichan:${PORTSDIR}/devel/guichan \
-			boost_filesystem:${PORTSDIR}/devel/boost-libs \
-			png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
+			libguichan.so:${PORTSDIR}/devel/guichan \
+			libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
+			libpng15.so:${PORTSDIR}/graphics/png
 
 FETCH_ARGS=		-Fpr
 

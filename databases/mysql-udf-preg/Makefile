@@ -10,7 +10,7 @@ DISTNAME=	lib_mysqludf_preg-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of MySQL UDFs providing access to PCRE
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/mysql/plugin

@@ -3,6 +3,7 @@
 
 PORTNAME=	audacity
 PORTVERSION=	2.0.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE \
 		SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
@@ -12,6 +13,8 @@ MAINTAINER=	xxjack12xx@gmail.com
 COMMENT=	GUI editor for digital audio waveforms
 
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 
@@ -65,9 +68,6 @@ CONFIGURE_ARGS+=	--disable-sse
 .endif
 
 DEBUG_CONFIGURE_WITH=	debug
-
-SNDFILE_CONFIGURE_WITH=	libsndfile
-SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 FFMPEG_CONFIGURE_WITH=	ffmpeg
 FFMPEG_RUN_DEPENDS=	ffmpeg0:${PORTSDIR}/multimedia/ffmpeg0

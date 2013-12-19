@@ -10,9 +10,9 @@ MASTER_SITES=	https://launchpad.net/flowgrind/trunk/${PORTNAME}-0.6.1/+download/
 MAINTAINER=	lars@eggert.org
 COMMENT=	Measure throughput and other metrics for TCP
 
-LIB_DEPENDS=	xmlrpc++:${PORTSDIR}/net/xmlrpc-c \
-		gsl:${PORTSDIR}/math/gsl \
-		pcap.1:${PORTSDIR}/net/libpcap
+LIB_DEPENDS=	libxmlrpc++.so:${PORTSDIR}/net/xmlrpc-c \
+		libgsl.so:${PORTSDIR}/math/gsl \
+		libpcap.so:${PORTSDIR}/net/libpcap
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

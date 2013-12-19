@@ -58,7 +58,7 @@ PLIST_SUB+=	OPENPHRASE_DB="@comment "
 
 .if ${PORT_OPTIONS:MOPENCC}
 CONFIGURE_ARGS+=	--enable-opencc
-LIB_DEPENDS+=		opencc.1:${PORTSDIR}/chinese/opencc
+LIB_DEPENDS+=		libopencc.so:${PORTSDIR}/chinese/opencc
 .else
 CONFIGURE_ARGS+=	--disable-opencc
 .endif

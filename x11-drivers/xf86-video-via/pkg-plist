@@ -6,6 +6,7 @@ lib/libviaXvMCPro.so
 lib/libviaXvMCPro.so.1
 lib/xorg/modules/drivers/via_drv.la
 lib/xorg/modules/drivers/via_drv.so
+man/man4/via.4x.gz
 @dirrmtry lib/xorg/modules/drivers
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg

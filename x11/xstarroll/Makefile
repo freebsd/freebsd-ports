@@ -16,17 +16,16 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-1.1
 USE_XORG=	xpm xt xaw
 ALL_TARGET=	xstarroll
 
-MAN1=		xstarroll.1
-PLIST_FILES=	bin/xstarroll
+PLIST_FILES=	bin/xstarroll \
+		man/man1/xstarroll.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|$${LOCALBASE}|g ; \
 		 s|gcc |$${CC} |g ; \
 		 s|-O |$${CFLAGS} |g' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xstarroll ${PREFIX}/bin/xstarroll
-	${INSTALL_MAN} ${WRKSRC}/xstarroll.man ${MANPREFIX}/man/man1/xstarroll.1
+	${INSTALL_PROGRAM} ${WRKSRC}/xstarroll ${STAGEDIR}${PREFIX}/bin/xstarroll
+	${INSTALL_MAN} ${WRKSRC}/xstarroll.man ${STAGEDIR}${MANPREFIX}/man/man1/xstarroll.1
 
 .include <bsd.port.mk>

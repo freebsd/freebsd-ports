@@ -19,7 +19,8 @@ COMMENT=	RabbitMQ C AMQP client library
 LICENSE=		GPLv2 MPL
 LICENSE_COMB=		dual
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson
+BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
+		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson
 
 CONFLICTS=	rabbitmq-c-[0-9]*
 

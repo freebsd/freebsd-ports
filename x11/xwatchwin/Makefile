@@ -13,11 +13,10 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Watch a window on another X server
 
-MAN1=		xwatchwin.1
-PLIST_FILES=	bin/xwatchwin
+PLIST_FILES=	bin/xwatchwin \
+		man/man1/xwatchwin.1.gz
 
 USES=		imake
 USE_XORG=	x11 xext
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

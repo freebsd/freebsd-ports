@@ -6,7 +6,7 @@ PORTVERSION=	1.0
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/downloads/patapizza/puckman/
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	An unofficial clone of the original Pac-Man game
 
 LICENSE=	GPLv3

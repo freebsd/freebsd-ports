@@ -15,11 +15,11 @@ COMMENT=	MIDI controllable audio sampler
 # is supposed to work around that.
 
 BUILD_DEPENDS=	jackit>=0.109.2:${PORTSDIR}/audio/jack
-LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack \
-		lash:${PORTSDIR}/audio/lash \
-		samplerate:${PORTSDIR}/audio/libsamplerate \
-		sndfile:${PORTSDIR}/audio/libsndfile \
-		phat:${PORTSDIR}/x11-toolkits/phat
+LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
+		liblash.so:${PORTSDIR}/audio/lash \
+		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
+		libsndfile.so:${PORTSDIR}/audio/libsndfile \
+		libphat.so:${PORTSDIR}/x11-toolkits/phat
 
 USES=		pkgconfig gmake
 NO_STAGE=	yes

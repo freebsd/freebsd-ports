@@ -6,3 +6,5 @@ lib/libXpm.la
 lib/libXpm.so
 lib/libXpm.so.4
 libdata/pkgconfig/xpm.pc
+man/man1/cxpm.1.gz
+man/man1/sxpm.1.gz

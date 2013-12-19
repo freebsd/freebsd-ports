@@ -33,6 +33,7 @@
     SUBDIR += calligra-l10n-et
     SUBDIR += calligra-l10n-fi
     SUBDIR += calligra-l10n-gl
+    SUBDIR += calligra-l10n-ia
     SUBDIR += calligra-l10n-it
     SUBDIR += calligra-l10n-kk
     SUBDIR += calligra-l10n-nb

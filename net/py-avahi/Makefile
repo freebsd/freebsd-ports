@@ -1,7 +1,8 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/net/py-avahi/Makefile,v 1.4 2007/07/31 18:24:13 ahze Exp $
-PORTREVISION=	5
+
+PORTREVISION=	7
 CATEGORIES=	net gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	# empty
@@ -11,11 +12,9 @@ COMMENT=	Python interface to the Avahi mDNS system
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>0:${PORTSDIR}/databases/py-gdbm \
 		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus
-LIB_DEPENDS=	avahi-client.3:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gdbm>0:${PORTSDIR}/databases/py-gdbm \
 		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus
-
-BROKEN=		fails to install
 
 MASTERDIR=	${.CURDIR}/../avahi-app
 BUILD_WRKSRC=	${WRKSRC}/avahi-python
@@ -25,11 +24,10 @@ PLIST=		${.CURDIR}/pkg-plist
 
 AVAHI_SLAVE=	python
 
-USE_GNOME=	gnomehack pygtk2
+USE_GNOME=	pygtk2
 USE_PYTHON=	yes
-MAN1=		avahi-bookmarks.1 avahi-discover.1
+MANPAGES=	avahi-bookmarks.1 avahi-discover.1
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|@pkglibdir@|${DATADIR}|' \
 	    	${WRKSRC}/avahi-python/avahi/ServiceTypeDatabase.py.in
@@ -43,9 +41,11 @@ post-build:
 		${MAKE_FLAGS} Makefile ${MAKE_ARGS} ${ALL_TARGET}
 
 post-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/service-type-database/service-types.db ${DATADIR}
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${PYTHONPREFIX_SITELIBDIR}/avahi
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -l ${PYTHONPREFIX_SITELIBDIR}/avahi
+	@cd ${WRKSRC}/service-type-database && ${SETENV} ${MAKE_ENV} ${GMAKE} \
+		${MAKE_FLAGS} Makefile ${MAKE_ARGS} install
+	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PREFIX} -f ${PYTHONPREFIX_SITELIBDIR:S,${PREFIX}/,,})
+	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PREFIX} -f ${PYTHONPREFIX_SITELIBDIR:S,${PREFIX}/,,})
 
 .include "${MASTERDIR}/Makefile"

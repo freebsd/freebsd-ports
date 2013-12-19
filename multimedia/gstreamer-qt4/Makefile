@@ -14,7 +14,7 @@ COMMENT=	Qt4 bindings for GStreamer multimedia library
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 USES=		bison cmake gmake pkgconfig
 USE_BZIP2=	yes

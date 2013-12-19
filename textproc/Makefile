@@ -404,6 +404,7 @@
     SUBDIR += linux-f10-scim-libs
     SUBDIR += linuxdoc
     SUBDIR += localize
+    SUBDIR += loook
     SUBDIR += lt-aspell
     SUBDIR += lt-hyphen
     SUBDIR += lttoolbox

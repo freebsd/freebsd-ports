@@ -263,7 +263,7 @@ BUILD_DEPENDS+=		${AUTOCONF_DEPENDS}
 #---------------------------------------------------------------------------
 
 .if defined(_AUTOTOOL_libltdl)
-LIB_DEPENDS+=		ltdl.7:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS+=		libltdl.so:${PORTSDIR}/devel/libltdl
 .endif
 
 #---------------------------------------------------------------------------

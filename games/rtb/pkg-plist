@@ -1,5 +1,6 @@
 bin/realtimebattle
 include/RealTimeBattle/Messagetypes.h
+info/RealTimeBattle.info
 lib/RealTimeBattle/Arenas/Circle.arena
 lib/RealTimeBattle/Arenas/Circles.arena
 lib/RealTimeBattle/Arenas/Cross.arena
@@ -121,9 +122,38 @@ lib/RealTimeBattle/rtb_logo.jpg
 lib/RealTimeBattle/rtblogo1024.jpg
 lib/RealTimeBattle/rtblogo1600.jpg
 lib/RealTimeBattle/tournament.txt
+%%PORTDOCS%%%%DOCSDIR%%/ABOUT-NLS
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/EXTRAROBOTS.README
+%%PORTDOCS%%%%DOCSDIR%%/French/RealTimeBattle-1.html
+%%PORTDOCS%%%%DOCSDIR%%/French/RealTimeBattle-2.html
+%%PORTDOCS%%%%DOCSDIR%%/French/RealTimeBattle-3.html
+%%PORTDOCS%%%%DOCSDIR%%/French/RealTimeBattle-4.html
+%%PORTDOCS%%%%DOCSDIR%%/French/RealTimeBattle-5.html
+%%PORTDOCS%%%%DOCSDIR%%/French/RealTimeBattle-6.html
+%%PORTDOCS%%%%DOCSDIR%%/French/RealTimeBattle.html
+%%PORTDOCS%%%%DOCSDIR%%/French/next.gif
+%%PORTDOCS%%%%DOCSDIR%%/French/prev.gif
+%%PORTDOCS%%%%DOCSDIR%%/French/toc.gif
+%%PORTDOCS%%%%DOCSDIR%%/German/RealTimeBattle-1.html
+%%PORTDOCS%%%%DOCSDIR%%/German/RealTimeBattle-2.html
+%%PORTDOCS%%%%DOCSDIR%%/German/RealTimeBattle-3.html
+%%PORTDOCS%%%%DOCSDIR%%/German/RealTimeBattle-4.html
+%%PORTDOCS%%%%DOCSDIR%%/German/RealTimeBattle-5.html
+%%PORTDOCS%%%%DOCSDIR%%/German/RealTimeBattle-6.html
+%%PORTDOCS%%%%DOCSDIR%%/German/RealTimeBattle.dvi
+%%PORTDOCS%%%%DOCSDIR%%/German/RealTimeBattle.html
+%%PORTDOCS%%%%DOCSDIR%%/German/RealTimeBattle.info
+%%PORTDOCS%%%%DOCSDIR%%/German/RealTimeBattle.sgml
+%%PORTDOCS%%%%DOCSDIR%%/German/RealTimeBattle.txt
+%%PORTDOCS%%%%DOCSDIR%%/German/next.gif
+%%PORTDOCS%%%%DOCSDIR%%/German/next.png
+%%PORTDOCS%%%%DOCSDIR%%/German/prev.gif
+%%PORTDOCS%%%%DOCSDIR%%/German/prev.png
+%%PORTDOCS%%%%DOCSDIR%%/German/toc.gif
+%%PORTDOCS%%%%DOCSDIR%%/German/toc.png
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RTB-Team-Framework-Tutorial.tar.gz
@@ -137,6 +167,16 @@ lib/RealTimeBattle/tournament.txt
 %%PORTDOCS%%%%DOCSDIR%%/RealTimeBattle.html
 %%PORTDOCS%%%%DOCSDIR%%/RealTimeBattle.sgml
 %%PORTDOCS%%%%DOCSDIR%%/RealTimeBattle.txt
+%%PORTDOCS%%%%DOCSDIR%%/Spanish/next.gif
+%%PORTDOCS%%%%DOCSDIR%%/Spanish/prev.gif
+%%PORTDOCS%%%%DOCSDIR%%/Spanish/rtb-docs-1.0.5-es-1.html
+%%PORTDOCS%%%%DOCSDIR%%/Spanish/rtb-docs-1.0.5-es-2.html
+%%PORTDOCS%%%%DOCSDIR%%/Spanish/rtb-docs-1.0.5-es-3.html
+%%PORTDOCS%%%%DOCSDIR%%/Spanish/rtb-docs-1.0.5-es-4.html
+%%PORTDOCS%%%%DOCSDIR%%/Spanish/rtb-docs-1.0.5-es-5.html
+%%PORTDOCS%%%%DOCSDIR%%/Spanish/rtb-docs-1.0.5-es-6.html
+%%PORTDOCS%%%%DOCSDIR%%/Spanish/rtb-docs-1.0.5-es.html
+%%PORTDOCS%%%%DOCSDIR%%/Spanish/toc.gif
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/next.gif
 %%PORTDOCS%%%%DOCSDIR%%/next.png
@@ -153,10 +193,13 @@ share/locale/ja/LC_MESSAGES/RealTimeBattle.mo
 share/locale/pl/LC_MESSAGES/RealTimeBattle.mo
 share/locale/pt/LC_MESSAGES/RealTimeBattle.mo
 share/locale/sv/LC_MESSAGES/RealTimeBattle.mo
-@dirrmtry share/locale/en@boldquot/LC_MESSAGES
-@dirrmtry share/locale/en@boldquot
 @dirrmtry share/locale/en@quot/LC_MESSAGES
 @dirrmtry share/locale/en@quot
+@dirrmtry share/locale/en@boldquot/LC_MESSAGES
+@dirrmtry share/locale/en@boldquot
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Spanish
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/German
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/French
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/RealTimeBattle/Robots/xt-bot
 @dirrm lib/RealTimeBattle/Robots/thomas2

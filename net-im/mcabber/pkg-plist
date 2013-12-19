@@ -34,6 +34,10 @@ lib/mcabber/libbeep.la
 lib/mcabber/libbeep.so
 lib/mcabber/libxttitle.la
 lib/mcabber/libxttitle.so
+lib/mcabber/liburlregex.la
+lib/mcabber/libfifo.la
+lib/mcabber/liburlregex.so
+lib/mcabber/libfifo.so
 libdata/pkgconfig/mcabber.pc
 share/applications/mcabber.desktop
 %%EXAMPLESDIR%%/mcabberrc
@@ -386,6 +390,7 @@ share/applications/mcabber.desktop
 %%DATADIR%%/contrib/themes/light.txt
 %%DATADIR%%/contrib/themes/light2.txt
 %%DATADIR%%/contrib/themes/oliver.txt
+%%DATADIR%%/contrib/themes/mikael-256.txt
 %%DATADIR%%/contrib/vim/mcabber_log-ftdetect.vim
 %%DATADIR%%/contrib/vim/mcabber_log-syntax.vim
 %%DATADIR%%/contrib/cicq2mcabber.pl

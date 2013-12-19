@@ -22,7 +22,6 @@ INFO=		cflow
 PLIST_FILES=	bin/cflow
 
 OPTIONS_DEFINE=	NLS
-OPTIONS_DEFAULT=NLS
 
 .include <bsd.port.options.mk>
 

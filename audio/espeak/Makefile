@@ -22,8 +22,8 @@ OPTIONS_RADIO=	AUDIO_SYSTEM
 OPTIONS_RADIO_AUDIO_SYSTEM=	PORTAUDIO PULSEAUDIO RUNTIME
 RUNTIME_DESC=	Sound interface selected at runtime
 
-PORTAUDIOLIB=	portaudio:${PORTSDIR}/audio/portaudio
-PULSEAUDIOLIB=	pulse:${PORTSDIR}/audio/pulseaudio
+PORTAUDIOLIB=	libportaudio.so:${PORTSDIR}/audio/portaudio
+PULSEAUDIOLIB=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 
 CONFLICTS=	speak-1.[0-9]
 

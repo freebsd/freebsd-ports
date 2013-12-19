@@ -176,7 +176,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         is given by the maintainer via the port or by the
 #                         user via defined variable try to find the highest
 #                         stable installed version.
-#                         Available values: yes 24+ 25+ 24 25+
+#                         Available values: yes 24+ 26+ 24 26
 #                         NOTE:
 #                         default value 24 is used in case of USE_FIREFOX=yes
 #
@@ -187,9 +187,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port
 #                         or by the user via defined variable try to find
 #                         the highest stable installed version.
-#                         Available values: yes 22+ 22
+#                         Available values: yes 23+ 23
 #                         NOTE:
-#                         default value 22 is used in case of USE_SEAMONKEY=yes
+#                         default value 23 is used in case of USE_SEAMONKEY=yes
 #
 # USE_SEAMONKEY_BUILD     Add buildtime dependency on SeaMonkey.
 #                         Available values: see USE_SEAMONKEY
@@ -218,11 +218,11 @@ _FIREFOX_BUILD_DEPENDS=		yes
 .endif
 
 _FIREFOX_DEFAULT_VERSION=	24
-_FIREFOX_VERSIONS=			24 25
-_FIREFOX_RANGE_VERSIONS=	24+ 25+
+_FIREFOX_VERSIONS=			24 26
+_FIREFOX_RANGE_VERSIONS=	24+ 26+
 
 # For specifying [24, ..]+
-_FIREFOX_25P=	25 ${_FIREFOX_24P}
+_FIREFOX_26P=	26 ${_FIREFOX_24P}
 _FIREFOX_24P=	24
 
 # Set the default Firefox version and check if USE_FIREFOX=yes was given
@@ -269,7 +269,7 @@ IGNORE=			cannot install: unknown Firefox version: firefox-${USE_FIREFOX:C/([0-9
 
 # Dependence lines for different Firefox versions
 24_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox-esr
-25_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
+26_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
 
 # Add dependencies
 .if defined(USE_FIREFOX)
@@ -291,12 +291,12 @@ USE_SEAMONKEY:=				${USE_SEAMONKEY_BUILD}
 _SEAMONKEY_BUILD_DEPENDS=	yes
 .endif
 
-_SEAMONKEY_DEFAULT_VERSION=	22
-_SEAMONKEY_VERSIONS=		22
-_SEAMONKEY_RANGE_VERSIONS=	22+
+_SEAMONKEY_DEFAULT_VERSION=	23
+_SEAMONKEY_VERSIONS=		23
+_SEAMONKEY_RANGE_VERSIONS=	23+
 
-# For specifying [22, ..]+
-_SEAMONKEY_22P=	22
+# For specifying [23, ..]+
+_SEAMONKEY_23P=	23
 
 # Set the default SeaMonkey version and check if USE_SEAMONKEY=yes was given
 .if ${USE_SEAMONKEY} == "yes"
@@ -338,7 +338,7 @@ IGNORE=			cannot install: unknown SeaMonkey version: seamonkey-2.${USE_SEAMONKEY
 .endif
 
 # Dependence lines for different SeaMonkey versions
-22_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
+23_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
 
 # Add dependencies
 .if defined(USE_SEAMONKEY)
@@ -540,7 +540,7 @@ MOZ_EXPORT+=	${CONFIGURE_ENV} \
 MOZ_OPTIONS+=	--prefix="${FAKEDIR}"
 
 CPPFLAGS+=		-isystem${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-z,origin -Wl,-rpath,\\\$$\$$ORIGIN
+LDFLAGS+=		-L${LOCALBASE}/lib -Wl,-R,${PREFIX}/lib/${MOZILLA}
 
 # prefer base clang, for lang/clang{,-devel} see ports/177224
 .if ${CC} == "cc" && (exists(/usr/bin/clang) && ${OSVERSION} >= 900014)
@@ -662,12 +662,8 @@ MOZ_OPTIONS+=	--with-system-zlib		\
 		--disable-updater		\
 		--disable-pedantic
 
-.if ${MOZILLA_VER:R:R} < 25 && !exists(${FILESDIR}/patch-bug803480)
-MOZ_OPTIONS+=	--disable-necko-wifi
-.else
 # XXX stolen from www/chromium
 MOZ_EXPORT+=	MOZ_GOOGLE_API_KEY=AIzaSyBsp9n41JLW8jCokwn7vhoaMejDFRd1mp8
-.endif
 
 .if ${PORT_OPTIONS:MGTK3}
 MOZ_TOOLKIT=	cairo-gtk3
@@ -758,9 +754,6 @@ ALL_TARGET=	profiledbuild
 LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
 MOZ_OPTIONS+=	--enable-alsa
-. if exists(${FILESDIR}/extra-bug780531)
-EXTRA_PATCHES+=	${FILESDIR}/extra-bug780531
-. endif
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
@@ -959,8 +952,9 @@ gecko-post-patch:
 		${MOZSRC}/xpcom/io/SpecialSystemDirectory.cpp
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}&|g' \
 		${MOZSRC}/xpcom/build/nsXPCOMPrivate.h
-	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		-e 's|mozilla/plugins|browser_plugins|g' \
+		-e 's|share/mozilla/extensions|lib/xpi|g' \
 		${MOZSRC}/xpcom/io/nsAppFileLocationProvider.cpp \
 		${MOZSRC}/toolkit/xre/nsXREDirProvider.cpp
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \

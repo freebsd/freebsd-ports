@@ -1,0 +1,9 @@
+you MUST change the configuration of this news setup:
+  cd to %%NEWSCTL%% and change the following files...
+mailname, whoami, organization, mailpaths, sys, readnews.ctl, postdefltgroup
+  to suit your local system and news topology.
+check that you have vaild aliases in report.ctl,
+  so any problem can be reported.
+
+for ease of administration you may add a shell:
+pw usermod news -d %%NEWSCTL%% -s /bin/csh

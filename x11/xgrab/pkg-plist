@@ -1,3 +1,5 @@
 bin/xgrab
 bin/xgrabsc
 lib/X11/app-defaults/XGrab
+man/man1/xgrab.1.gz
+man/man1/xgrabsc.1.gz

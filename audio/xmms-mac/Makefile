@@ -16,8 +16,8 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 MAINTAINER=	alexbestms@wwu.de
 COMMENT=	Native Monkey Audio Codec plugin for the XMMS1 Multimedia Player
 
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
-		mac.2:${PORTSDIR}/audio/mac
+LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
+		libmac.so:${PORTSDIR}/audio/mac
 
 USES=		gmake
 NO_STAGE=	yes

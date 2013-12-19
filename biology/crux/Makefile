@@ -31,7 +31,7 @@ USE_FORTRAN=	yes
 
 .if ${PORT_OPTIONS:MSYS_LINALG}
 CONFIGURE_ARGS+=	--enable-sys-linalg
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 .else
 CONFIGURE_ARGS+=	--disable-sys-linalg
 .endif

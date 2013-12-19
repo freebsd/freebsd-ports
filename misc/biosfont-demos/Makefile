@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Demos for the biosfont kernel module
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/biosfont.h:${PORTSDIR}/sysutils/biosfont
 RUN_DEPENDS=	/boot/modules/biosfont.ko:${PORTSDIR}/sysutils/biosfont

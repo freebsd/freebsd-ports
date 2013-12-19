@@ -11,7 +11,7 @@ COMMENT=	A program for uu/xx/Base64/BinHex/yEnc de-/encoding
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	uu.3:${PORTSDIR}/converters/uulib
+LIB_DEPENDS=	libuu.so:${PORTSDIR}/converters/uulib
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tcl

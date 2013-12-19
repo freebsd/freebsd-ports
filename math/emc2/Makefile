@@ -13,7 +13,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A graphical editor of two-dimensional mesh geometries
+COMMENT=	Graphical editor of two-dimensional mesh geometries
 
 LICENSE=	INRIA
 LICENSE_NAME=	INRIA license, perhaps specific to emc2
@@ -22,36 +22,30 @@ LICENSE_PERMS=	auto-accept no-dist-sell no-pkg-sell
 RESTRICTED=	No resale, contact author for commercial usage
 
 USE_XORG=	x11
-USE_GMAKE=	yes
+USES=		gmake
 ALL_TARGET=	${PORTNAME}
 
 .if defined(LANG) && ${LANG:Mfr*} != ""
 CFLAGS+=	-DFRENCH
 .endif
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	${DISTFILES:M*.pdf}
-.endif
-
-.if !defined(NOPORTEXAMPLES)
 PORTEXAMPLES=	*
-.endif
 
 PLIST_FILES=	bin/emc2 bin/prf_f3d
 
 NO_STAGE=	yes
+.include <bsd.port.options.mk>
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/emc2 ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/prf_f3d ${PREFIX}/bin
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@(cd ${DISTDIR} && ${INSTALL_MAN} ${PORTDOCS} ${DOCSDIR})
 .endif
-.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>

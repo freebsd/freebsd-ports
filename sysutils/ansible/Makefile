@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansible
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.4.2
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://ansibleworks.com/releases/
 
@@ -29,7 +28,8 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
 USES=		shebangfix
-SHEBANG_FILES=	${WRKSRC}/library/*/*
+SHEBANG_FILES=	${WRKSRC}/library/*/* \
+		lib/ansible/runner/action_plugins/synchronize.py
 
 SUB_FILES=	pkg-message
 

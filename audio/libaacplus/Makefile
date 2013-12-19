@@ -37,8 +37,8 @@ FFTW3_DESC=	Use FFTW3 library for performance
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFFTW3}
-LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3 \
-		fftw3f:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS+=	libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float
 CONFIGURE_ARGS+=--with-fftw3=yes --with-fftw3-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-fftw3=no

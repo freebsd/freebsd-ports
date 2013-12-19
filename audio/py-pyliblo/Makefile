@@ -12,7 +12,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Python wrapper for the Liblo OSC Library
 
 BUILD_DEPENDS=	pyrex>=0.9.4:${PORTSDIR}/devel/pyrex
-LIB_DEPENDS=	lo:${PORTSDIR}/audio/liblo
+LIB_DEPENDS=	liblo.so:${PORTSDIR}/audio/liblo
 
 USE_PYTHON=		yes
 NO_STAGE=	yes

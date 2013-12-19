@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openvsp
-PORTVERSION=	2.2.5
+PORTVERSION=	2.3.0
 CATEGORIES=	cad
 MASTER_SITES=	GH
 
@@ -28,7 +28,7 @@ USE_GITHUB=	yes
 GH_PROJECT=	OpenVSP
 GH_ACCOUNT=	${GH_PROJECT}
 GH_TAGNAME=	${GH_PROJECT}_${PORTVERSION}
-GH_COMMIT=	4c359c8
+GH_COMMIT=	568c424
 
 CMAKE_SOURCE_PATH=	${WRKSRC}/src
 USES=		cmake:outsource iconv
@@ -44,13 +44,9 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	EXAMPLES
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/vsp/vsp ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
-.endif
 
 .include <bsd.port.mk>

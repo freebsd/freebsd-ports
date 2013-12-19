@@ -1,6 +1,8 @@
---- src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c.orig	2013-05-10 15:16:34.000000000 +0200
-+++ src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c	2013-05-10 12:43:20.000000000 +0200
-@@ -165,7 +165,11 @@
+$FreeBSD$
+
+--- src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c	2013-03-20 19:19:36.795745576 -0700
++++ src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c	2013-03-20 19:15:35.164791970 -0700
+@@ -162,7 +162,11 @@
          case RTR0MEMOBJTYPE_PHYS:
          case RTR0MEMOBJTYPE_PHYS_NC:
          {
@@ -12,41 +14,40 @@
              vm_page_t pPage = vm_page_find_least(pMemFreeBSD->pObject, 0);
  #if __FreeBSD_version < 900000
              /* See http://lists.freebsd.org/pipermail/freebsd-current/2012-November/037963.html */
-@@ -177,8 +181,14 @@
-             {
-                 vm_page_unwire(pPage, 0);
-             }
-+#if __FreeBSD_version < 900000
+@@ -177,7 +181,12 @@
+ #if __FreeBSD_version < 900000
              vm_page_unlock_queues();
-+#endif
+ #endif
 +#if __FreeBSD_version >= 1000030
 +            VM_OBJECT_WUNLOCK(pMemFreeBSD->pObject);
 +#else
              VM_OBJECT_UNLOCK(pMemFreeBSD->pObject);
 +#endif
++
              vm_object_deallocate(pMemFreeBSD->pObject);
              break;
          }
-@@ -205,9 +215,17 @@
-         flags |= VM_ALLOC_WIRED;
-     while (1)
+@@ -205,10 +214,18 @@
+ 
+     while (cTries <= 1)
      {
 +#if __FreeBSD_version >= 1000030
 +        VM_OBJECT_WLOCK(pObject);
 +#else
          VM_OBJECT_LOCK(pObject);
 +#endif
-         pPages = vm_page_alloc_contig(pObject, iPIndex, flags, cPages, 0, VmPhysAddrHigh, uAlignment, 0, VM_MEMATTR_DEFAULT);
+         pPages = vm_page_alloc_contig(pObject, iPIndex, fFlags, cPages, 0,
+                                       VmPhysAddrHigh, uAlignment, 0, VM_MEMATTR_DEFAULT);
 +#if __FreeBSD_version >= 1000030
 +        VM_OBJECT_WUNLOCK(pObject);
 +#else
          VM_OBJECT_UNLOCK(pObject);
 +#endif
-         if (pPages || tries >= 1)
+         if (pPages)
              break;
-         vm_pageout_grow_cache(tries, 0, VmPhysAddrHigh);
-@@ -226,7 +244,11 @@
-     }
+         vm_pageout_grow_cache(cTries, 0, VmPhysAddrHigh);
+@@ -228,7 +245,11 @@
+ 
      if (!pPages)
          return pPages;
 +#if __FreeBSD_version >= 1000030
@@ -57,7 +58,7 @@
      for (vm_pindex_t iPage = 0; iPage < cPages; iPage++)
      {
          vm_page_t pPage = pPages + iPage;
-@@ -238,7 +260,11 @@
+@@ -240,7 +261,11 @@
              atomic_add_int(&cnt.v_wire_count, 1);
          }
      }
@@ -69,7 +70,7 @@
      return pPages;
  #endif
  }
-@@ -261,7 +287,11 @@
+@@ -264,7 +289,11 @@
          if (!pPage)
          {
              /* Free all allocated pages */
@@ -81,23 +82,19 @@
              while (iPage-- > 0)
              {
                  pPage = vm_page_lookup(pObject, iPage);
-@@ -271,9 +301,15 @@
-                 if (fWire)
-                     vm_page_unwire(pPage, 0);
-                 vm_page_free(pPage);
-+#if __FreeBSD_version < 900000
+@@ -278,7 +307,11 @@
                  vm_page_unlock_queues();
-+#endif
+ #endif
              }
 +#if __FreeBSD_version >= 1000030
 +            VM_OBJECT_WUNLOCK(pObject);
 +#else
              VM_OBJECT_UNLOCK(pObject);
 +#endif
-             return VERR_NO_MEMORY;
+             return rcNoMem;
          }
      }
-@@ -406,9 +442,17 @@
+@@ -411,9 +444,17 @@
          if (fContiguous)
          {
              Assert(enmType == RTR0MEMOBJTYPE_PHYS);
@@ -115,7 +112,7 @@
              pMemFreeBSD->Core.u.Phys.fAllocated = true;
          }
  
-@@ -813,9 +857,17 @@
+@@ -823,9 +864,17 @@
          case RTR0MEMOBJTYPE_PHYS_NC:
          {
              RTHCPHYS addr;

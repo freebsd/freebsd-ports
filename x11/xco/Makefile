@@ -12,17 +12,14 @@ COMMENT=	Display X11 color names and colors
 
 USES=		imake
 USE_XORG=	x11 xext
-MAN1=		xco.1
-MANCOMPRESSED=	yes
 DOCDIR=		${PREFIX}/share/doc/xco
 
-NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} -e 's/extern char \*malloc();//g' \
 			${WRKSRC}/xco.c ${WRKSRC}/xargs.c
 
 post-install:
-		@${MKDIR} ${DOCDIR}
-		@${INSTALL_DATA} ${FILESDIR}/copyright ${DOCDIR}
+		@${MKDIR} ${STAGEDIR}${DOCDIR}
+		@${INSTALL_DATA} ${FILESDIR}/copyright ${STAGEDIR}${DOCDIR}
 
 .include <bsd.port.mk>

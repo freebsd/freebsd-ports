@@ -10,12 +10,12 @@ MASTER_SITES=	SF/${PORTNAME}-pim/${PORTNAME}-pim/${PORTNAME}-${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A personal organizer
 
-LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
-		notify:${PORTSDIR}/devel/libnotify \
-		ical:${PORTSDIR}/devel/libical \
-		tar:${PORTSDIR}/devel/libtar \
-		gringotts:${PORTSDIR}/security/libgringotts \
-		gtkhtml:${PORTSDIR}/www/libgtkhtml
+LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
+		libnotify.so:${PORTSDIR}/devel/libnotify \
+		libical.so:${PORTSDIR}/devel/libical \
+		libtar.so:${PORTSDIR}/devel/libtar \
+		libgringotts.so:${PORTSDIR}/security/libgringotts \
+		libgtkhtml.so:${PORTSDIR}/www/libgtkhtml
 
 USE_GNOME=	gtk20
 USES=		gettext gmake pkgconfig

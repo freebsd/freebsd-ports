@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	db
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio cw (Morse code) keyer daemon
 
-LIB_DEPENDS=	cw:${PORTSDIR}/comms/unixcw
+LIB_DEPENDS=	libcw.so:${PORTSDIR}/comms/unixcw
 
 INSTALL_TARGET=	install-exec
 GNU_CONFIGURE=	yes

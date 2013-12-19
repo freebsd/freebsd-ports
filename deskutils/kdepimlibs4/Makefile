@@ -12,13 +12,13 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Libraries for KDE-PIM applications
 
-LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
-		sasl2:${PORTSDIR}/security/cyrus-sasl2 \
-		boost_thread:${PORTSDIR}/devel/boost-libs \
-		ical:${PORTSDIR}/devel/libical \
-		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid \
-		prison:${PORTSDIR}/graphics/prison \
-		qjson:${PORTSDIR}/devel/qjson
+LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme \
+		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2 \
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libical.so:${PORTSDIR}/devel/libical \
+		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
+		libprison.so:${PORTSDIR}/graphics/prison \
+		libqjson.so:${PORTSDIR}/devel/qjson
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 

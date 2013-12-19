@@ -11,8 +11,8 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Comprehensive html/website development environment
 
-LIB_DEPENDS=	tidy-0.99.0:${PORTSDIR}/www/tidy-lib \
-		boost_thread:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libtidy-0.99.so:${PORTSDIR}/www/tidy-lib \
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 LATEST_LINK=	${PORTNAME}4
 

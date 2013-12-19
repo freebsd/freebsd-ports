@@ -2,4 +2,4 @@ Converts back and forth between a nested hash structure and a flat hash of
 delimited key-value pairs. Useful for protocols that only support 
 key-value pairs (such as CGI and DBMs).
 
-WWW:	http://search.cpan.org/dist/Hash-Flatten/
+WWW: http://search.cpan.org/dist/Hash-Flatten/

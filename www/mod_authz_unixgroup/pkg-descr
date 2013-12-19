@@ -1,8 +1,9 @@
-This is a port of mod_authz_unixgroup for apache22, written by Jan Wolter.
+Mod_Authz_Unixgroup 1.0.x is a unix group access control modules for Apache
+version 2.2.  If you have Apache 2.3 or Apache 2.4, you should be using
+version 1.1.x of this module instead.
 
-Mod_Authz_Unixgroup is a unix group access control modules for Apache 2.1 and
-later.  If you are having users authenticate with real Unix login ID over the
-net, using something like my mod_authnz_external / pwauth combination, and you
+If you are having users authenticate with real Unix login ID over the net,
+using something like my mod_authnz_external / pwauth combination, and you
 want to do access control based on unix group membership, then
 mod_authz_unixgroup is exactly what you need.
 

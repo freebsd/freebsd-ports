@@ -31,10 +31,6 @@ USE_GCC=yes
 . endif
 .endif
 
-.if ${ARCH} == ia64
-#BROKEN=		does not install on ia64
-.endif
-
 ALL_DRI_DRIVERS=I915 I965 R200 RADEON SWRAST
 
 .if !defined(WITH_NEW_XORG)
@@ -45,7 +41,7 @@ ALL_DRI_DRIVERS+=I810 MACH64 MGA R128 R300 R600 SAVAGE SIS TDFX UNICHROME
 
 PLIST_SUB+=	VERSION=${MESADISTVERSION}
 
-.if ${ARCH} == amd64 || ${ARCH} == i386
+.if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == ia64
 DRI_DRIVERS=	${ALL_DRI_DRIVERS}
 .endif
 
@@ -62,7 +58,7 @@ PLIST_SUB+=	GALLIUM=""
 CONFIGURE_ARGS+=--enable-gallium-llvm=no --without-gallium-drivers
 PLIST_SUB+=	GALLIUM="@comment "
 . endif
-. if ${ARCH} == powerpc || ${ARCH} == ia64
+. if ${ARCH} == powerpc
 DRI_DRIVERS=	RADEON SWRAST
 . endif
 . if ${ARCH} == sparc64

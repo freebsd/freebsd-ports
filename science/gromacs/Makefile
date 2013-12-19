@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gromacs
-PORTVERSION=	4.6.4
+PORTVERSION=	4.6.5
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
@@ -16,19 +16,31 @@ OPTIONS_DEFAULT=	FLOAT GSL X11
 OPTIONS_RADIO=	MPI
 OPTIONS_RADIO_MPI=	MPICH OMPI
 
+OPTIONS_SUB=	yes
+
 ATLAS_DESC=	Use ATLAS for BLAS and LAPACK
 FLOAT_DESC=	Use single instead of double precision
 GSL_DESC=	Extra analysis using math/gsl
 MPICH_DESC=	MPI support using net/mpich2
 OMPI_DESC=	MPI support using net/openmpi
 
-USES=		cmake pkgconfig shebangfix perl5
+USES=		cmake perl5 pkgconfig shebangfix
 SHEBANG_FILES=	admin/*.pl scripts/*.pl scripts/*.sh src/gmxlib/selection/*.sh
 bash_CMD=	${SH}
 USE_FORTRAN=	yes
 CMAKE_ARGS=	-DBLAS_LIBRARIES:FILEPATH="${BLAS_LIBS}" \
 		-DLAPACK_LIBRARIES:FILEPATH="${LAPACK_LIBS}"
 USE_LDCONFIG=	yes
+
+GSL_LIB_DEPENDS=	libgsl.so:${PORTSDIR}/math/gsl
+GSL_CMAKE_ON=		-DGMX_GSL:BOOL=ON
+GSL_CMAKE_OFF=		-DGMX_GSL:BOOL=OFF
+
+SIMD_CMAKE_OFF=		-DGMX_CPU_ACCELERATION:STRING="None"
+
+X11_USE=		XORG=xext,x11
+X11_CMAKE_ON=		-DGMX_X11:BOOL=ON
+X11_CMAKE_OFF=		-DGMX_X11:BOOL=OFF
 
 .include <bsd.port.options.mk>
 
@@ -52,26 +64,6 @@ PLIST_SUB+=	SUFFIX_D=""
 LIB_DEPENDS+=	libfftw3.so:${PORTSDIR}/math/fftw3
 CMAKE_ARGS+=	-DGMX_DOUBLE:BOOL=ON
 PLIST_SUB+=	SUFFIX_D="_d"
-.endif
-
-.if ${PORT_OPTIONS:MGSL}
-LIB_DEPENDS+=	libgsl.so:${PORTSDIR}/math/gsl
-CMAKE_ARGS+=	-DGMX_GSL:BOOL=ON
-.else
-CMAKE_ARGS+=	-DGMX_GSL:BOOL=OFF
-.endif
-
-.if empty(PORT_OPTIONS:MSIMD)
-CMAKE_ARGS+=	-DGMX_CPU_ACCELERATION:STRING="None"
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	xext x11
-CMAKE_ARGS+=	-DGMX_X11:BOOL=ON
-PLIST_SUB+=	X11=""
-.else
-CMAKE_ARGS+=	-DGMX_X11:BOOL=OFF
-PLIST_SUB+=	X11="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMPICH} || ${PORT_OPTIONS:MOMPI}

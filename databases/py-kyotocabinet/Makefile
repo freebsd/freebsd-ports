@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-python-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python binding of kyotocabinet
 
-LIB_DEPENDS=	kyotocabinet:${PORTSDIR}/databases/kyotocabinet
+LIB_DEPENDS=	libkyotocabinet.so:${PORTSDIR}/databases/kyotocabinet
 
 USE_PYTHON=	3.1+
 USE_PYDISTUTILS=yes

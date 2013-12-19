@@ -11,7 +11,7 @@ COMMENT=	Generic music player for Unix-like systems
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	id3tag:${PORTSDIR}/audio/libid3tag
+LIB_DEPENDS=	libid3tag.so:${PORTSDIR}/audio/libid3tag
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 USE_GNOME=	gtk20

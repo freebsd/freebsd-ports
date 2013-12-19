@@ -1,0 +1,11 @@
+--- plugins/check_dig.c.orig	2013-10-02 19:22:21.000000000 +0400
++++ plugins/check_dig.c	2013-12-15 16:55:26.000000000 +0400
+@@ -88,7 +88,7 @@ main (int argc, char **argv)
+     usage_va(_("Could not parse arguments"));
+ 
+   /* get the command to run */
+-  xasprintf (&command_line, "%s @%s -p %d %s -t %s %s %s",
++  xasprintf (&command_line, "%s @%s -p %d %s %s %s %s",
+             PATH_TO_DIG, dns_server, server_port, query_address, record_type, dig_args, query_transport);
+ 
+   alarm (timeout_interval);

@@ -15,8 +15,6 @@ USE_XORG=	xproto fontenc
 
 CONFIGURE_ARGS+=--disable-maintainer-mode
 
-PLIST_FILES=	bin/mkfontscale
-MAN1=		mkfontscale.1
+PLIST_FILES=	bin/mkfontscale man/man1/mkfontscale.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

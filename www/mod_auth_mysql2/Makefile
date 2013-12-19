@@ -6,6 +6,7 @@ PORTVERSION=	1.10
 PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.heuer.org/mod_auth_mysql/old/
+PKGNAMESUFFIX=	2
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	apache2
@@ -14,8 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL-based authentication module with VirtualHost support
 
 LICENSE=	AL2
-
-LATEST_LINK=	mod_auth_mysql2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_MYSQL=	yes
@@ -30,15 +29,10 @@ USE_OPENSSL=	yes
 AP_EXTRAS+=	-DMYSQL_USE_SSL
 .endif
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	INSTALL example_data.html htpasswd.sql
-.endif
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

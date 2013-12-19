@@ -15,8 +15,8 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 
 USE_XZ=		yes
-USES=		gmake pkgconfig desktop-file-utils
-USE_GNOME=	desktopfileutils intltool
+USES=		gmake pkgconfig desktop-file-utils compiler:c++11-lib desktop-file-utils
+USE_GNOME=	intltool
 USE_WX=	2.8+
 WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
@@ -28,14 +28,8 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 1000054
-USE_GCC=	4.7+
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s,^itlocaledir =.*$$,itlocaledir = ${PREFIX}/share/locale,g" \
 		${WRKSRC}/po/Makefile.in.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

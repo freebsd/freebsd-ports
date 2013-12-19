@@ -12,7 +12,7 @@ COMMENT=	Vamp audio analysis plugin SDK
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
+LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 GNU_CONFIGURE=	yes
 NO_STAGE=	yes

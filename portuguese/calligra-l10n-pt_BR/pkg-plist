@@ -6,19 +6,14 @@ share/doc/HTML/pt_BR/kexi/index.cache.bz2
 share/doc/HTML/pt_BR/kexi/index.docbook
 share/doc/HTML/pt_BR/sheets/advanced.docbook
 share/doc/HTML/pt_BR/sheets/basics.docbook
-share/doc/HTML/pt_BR/sheets/chart1.png
 share/doc/HTML/pt_BR/sheets/commands.docbook
 share/doc/HTML/pt_BR/sheets/common
 share/doc/HTML/pt_BR/sheets/config.docbook
 share/doc/HTML/pt_BR/sheets/configdialog.docbook
-share/doc/HTML/pt_BR/sheets/copy1.png
 share/doc/HTML/pt_BR/sheets/format.docbook
 share/doc/HTML/pt_BR/sheets/functions.docbook
 share/doc/HTML/pt_BR/sheets/index.cache.bz2
 share/doc/HTML/pt_BR/sheets/index.docbook
-share/doc/HTML/pt_BR/sheets/shortcut1.png
-share/doc/HTML/pt_BR/sheets/sort1.png
-share/doc/HTML/pt_BR/sheets/starting1.png
 share/doc/HTML/pt_BR/stage/common
 share/doc/HTML/pt_BR/stage/great-presentations.docbook
 share/doc/HTML/pt_BR/stage/guides.docbook
@@ -53,6 +48,7 @@ share/locale/pt_BR/LC_MESSAGES/calligra-defaulttools.mo
 share/locale/pt_BR/LC_MESSAGES/calligra-dockers.mo
 share/locale/pt_BR/LC_MESSAGES/calligra-opener.mo
 share/locale/pt_BR/LC_MESSAGES/calligra.mo
+share/locale/pt_BR/LC_MESSAGES/calligraactive.mo
 share/locale/pt_BR/LC_MESSAGES/calligrafilters.mo
 share/locale/pt_BR/LC_MESSAGES/desktop_calligra.mo
 share/locale/pt_BR/LC_MESSAGES/flow.mo
@@ -79,6 +75,7 @@ share/locale/pt_BR/LC_MESSAGES/planrcpsplugin.mo
 share/locale/pt_BR/LC_MESSAGES/plantjplugin.mo
 share/locale/pt_BR/LC_MESSAGES/planwork.mo
 share/locale/pt_BR/LC_MESSAGES/sheets.mo
+share/locale/pt_BR/LC_MESSAGES/sheetspivottables_plugin.mo
 share/locale/pt_BR/LC_MESSAGES/sheetssolver.mo
 share/locale/pt_BR/LC_MESSAGES/stage.mo
 share/locale/pt_BR/LC_MESSAGES/thesaurus_tool.mo

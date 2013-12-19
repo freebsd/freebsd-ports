@@ -1,0 +1,7 @@
+--- ./tools/po/Makefile.orig	2013-12-17 10:35:33.849229663 +0000
++++ ./tools/po/Makefile	2013-12-17 10:35:42.989230589 +0000
+@@ -1,4 +1,3 @@
+-#!/bin/bash
+ #
+ # Makefile Utility to manipulate PO and POT files
+ # Copyright (c) 2009 Alessandro De Zorzi - <lota@nonlontano.it>

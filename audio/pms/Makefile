@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	A ncurses-based client for the Music Player Daemon
 
-LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
 
 USES=		pkgconfig
 NO_STAGE=	yes

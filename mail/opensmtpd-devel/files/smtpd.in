@@ -7,7 +7,7 @@
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable smtpd:
-# smtpd_enable (bool):        Set it to "YES" to enable postfix.
+# smtpd_enable (bool):        Set it to "YES" to enable OpenSMTPD.
 #                             Default is "NO".
 # smtpd_config (string):      Path to OpenSMTPD configuration file.
 #                             Default is "%%PREFIX%%/etc/mail/smtpd.conf"

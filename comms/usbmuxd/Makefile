@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.libimobiledevice.org/downloads/
 MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Daemon for multiplexing connections over USB to iPhone/iPod Touch
 
-LIB_DEPENDS=	plist:${PORTSDIR}/devel/libplist
+LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist
 
 USE_BZIP2=	yes
 USES=		cmake pkgconfig
@@ -24,7 +24,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MINOTIFY}
-LIB_DEPENDS+=	inotify:${PORTSDIR}/devel/libinotify
+LIB_DEPENDS+=	libinotify.so:${PORTSDIR}/devel/libinotify
 CMAKE_ARGS+=	-DWANT_INOTIFY:BOOL=TRUE
 .else
 CMAKE_ARGS+=	-DWANT_INOTIFY:BOOL=FALSE

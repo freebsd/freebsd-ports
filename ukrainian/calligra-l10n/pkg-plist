@@ -49,6 +49,10 @@ share/doc/HTML/uk/sheets/hideformula1.png
 share/doc/HTML/uk/sheets/index.cache.bz2
 share/doc/HTML/uk/sheets/index.docbook
 share/doc/HTML/uk/sheets/newdocument.png
+share/doc/HTML/uk/sheets/pivot1.png
+share/doc/HTML/uk/sheets/pivot2.png
+share/doc/HTML/uk/sheets/pivot3.png
+share/doc/HTML/uk/sheets/pivot4.png
 share/doc/HTML/uk/sheets/sheetproperties.png
 share/doc/HTML/uk/sheets/shortcut1.png
 share/doc/HTML/uk/sheets/sort1.png
@@ -109,6 +113,7 @@ share/locale/uk/LC_MESSAGES/calligra-defaulttools.mo
 share/locale/uk/LC_MESSAGES/calligra-dockers.mo
 share/locale/uk/LC_MESSAGES/calligra-opener.mo
 share/locale/uk/LC_MESSAGES/calligra.mo
+share/locale/uk/LC_MESSAGES/calligraactive.mo
 share/locale/uk/LC_MESSAGES/calligrafilters.mo
 share/locale/uk/LC_MESSAGES/desktop_calligra.mo
 share/locale/uk/LC_MESSAGES/flow.mo
@@ -135,6 +140,7 @@ share/locale/uk/LC_MESSAGES/planrcpsplugin.mo
 share/locale/uk/LC_MESSAGES/plantjplugin.mo
 share/locale/uk/LC_MESSAGES/planwork.mo
 share/locale/uk/LC_MESSAGES/sheets.mo
+share/locale/uk/LC_MESSAGES/sheetspivottables_plugin.mo
 share/locale/uk/LC_MESSAGES/sheetssolver.mo
 share/locale/uk/LC_MESSAGES/stage.mo
 share/locale/uk/LC_MESSAGES/thesaurus_tool.mo

@@ -4,4 +4,16 @@ lib/libXcomposite.la
 lib/libXcomposite.so
 lib/libXcomposite.so.1
 libdata/pkgconfig/xcomposite.pc
+man/man3/Xcomposite.3.gz
+man/man3/XCompositeQueryExtension.3.gz
+man/man3/XCompositeQueryVersion.3.gz
+man/man3/XCompositeVersion.3.gz
+man/man3/XCompositeRedirectWindow.3.gz
+man/man3/XCompositeRedirectSubwindows.3.gz
+man/man3/XCompositeUnredirectWindow.3.gz
+man/man3/XCompositeUnredirectSubwindows.3.gz
+man/man3/XCompositeCreateRegionFromBorderClip.3.gz
+man/man3/XCompositeNameWindowPixmap.3.gz
+man/man3/XCompositeGetOverlayWindow.3.gz
+man/man3/XCompositeReleaseOverlayWindow.3.gz
 @dirrmtry include/X11/extensions

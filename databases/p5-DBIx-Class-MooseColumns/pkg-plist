@@ -3,6 +3,10 @@
 %%SITE_PERL%%/DBIx/Class/MooseColumns/Meta/Role/Attribute.pm
 %%SITE_PERL%%/DBIx/Class/MooseColumns.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/MooseColumns/.packlist
+%%PERL5_MAN3%%/DBIx::Class::MooseColumns.3.gz
+%%PERL5_MAN3%%/DBIx::Class::MooseColumns::Meta::Role::Attribute.3.gz
+%%PERL5_MAN3%%/DBIx::Class::MooseColumns::Meta::Role::Attribute::DBICColumn.3.gz
+%%PERL5_MAN3%%/DBIx::Class::MooseColumns::Meta::Role::Attribute::DBICColumn::Inflated.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/MooseColumns
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx

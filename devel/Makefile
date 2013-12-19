@@ -30,6 +30,7 @@
     SUBDIR += R-cran-randomForest
     SUBDIR += R-cran-reshape
     SUBDIR += R-cran-reshape2
+    SUBDIR += R-cran-vcd
     SUBDIR += SpecTcl
     SUBDIR += aap
     SUBDIR += abi-compliance-checker
@@ -3024,6 +3025,7 @@
     SUBDIR += p5-autobox
     SUBDIR += p5-autobox-Core
     SUBDIR += p5-autodie
+    SUBDIR += p5-bareword-filehandles
     SUBDIR += p5-base
     SUBDIR += p5-boolean
     SUBDIR += p5-capitalization
@@ -3050,6 +3052,7 @@
     SUBDIR += p5-local-lib
     SUBDIR += p5-mixin
     SUBDIR += p5-mocked
+    SUBDIR += p5-multidimensional
     SUBDIR += p5-namespace-autoclean
     SUBDIR += p5-namespace-clean
     SUBDIR += p5-namespace-sweep
@@ -3780,6 +3783,8 @@
     SUBDIR += py-sip
     SUBDIR += py-six
     SUBDIR += py-smmap
+    SUBDIR += py-snack
+    SUBDIR += py-snackwich
     SUBDIR += py-spark
     SUBDIR += py-speaklater
     SUBDIR += py-sqlcc
@@ -4114,6 +4119,7 @@
     SUBDIR += rubygem-debugger
     SUBDIR += rubygem-debugger-linecache
     SUBDIR += rubygem-debugger-xml
+    SUBDIR += rubygem-deep_merge
     SUBDIR += rubygem-deeptest
     SUBDIR += rubygem-delayed_job
     SUBDIR += rubygem-dep_selector

@@ -17,7 +17,7 @@ LIB_DEPENDS=	spectre.1:${PORTSDIR}/print/libspectre \
 CONFLICTS=	kdeedu-4.[0-6].*
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource pkgconfig
 USE_QT4=	corelib qtestlib_build xml xmlpatterns \
 		moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes

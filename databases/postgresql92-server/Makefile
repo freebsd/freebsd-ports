@@ -125,7 +125,7 @@ PATCHFILES+=	${ICU_PATCHFILE}:icu
 .    if defined(ICU_EXTRAPATCH)
 EXTRA_PATCHES+=	${ICU_EXTRAPATCH}
 .    endif
-LIB_DEPENDS+=	icudata.50:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	libicudata.so:${PORTSDIR}/devel/icu
 .  endif
 .endif # !SLAVE_ONLY
 
@@ -162,7 +162,7 @@ USE_OPENLDAP=	yes
 
 .  if ${PORT_OPTIONS:MXML}
 CONFIGURE_ARGS+=--with-libxml
-LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS+=	libxml2.so:${PORTSDIR}/textproc/libxml2
 .  endif
 
 .  if ${PORT_OPTIONS:MTZDATA}
@@ -217,7 +217,7 @@ IGNORE=	requires that you remove heimdal's /usr/bin/krb5-config and /usr/lib/lib
 CONFIGURE_ARGS+=--with-krb5
 # Allow defining a home built MIT Kerberos by setting KRB5_HOME
 .    if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a) && exists(${KRB5_HOME}/bin/krb5-config)
-LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=	libkrb5.so.3:${PORTSDIR}/security/krb5
 .    endif
 .   endif
 .  endif

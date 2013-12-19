@@ -14,6 +14,8 @@ COMMENT=	The Berkeley DB package, revision 4.3
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
+DEPRECATED=	Please use databases/db5 or db6 for new installs.
+
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../dist/configure

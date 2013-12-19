@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.1.24
+DISTVERSION=	4.2.20
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -34,9 +34,10 @@ CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal \
 		--build-headless
 
 CONFLICTS=	bcc-[0-9]*
-CONFLICTS_INSTALL=	virtualbox-ose-kmod-[3,4]* virtualbox-ose-kmod-devel-[3,4]*
+CONFLICTS_INSTALL=	virtualbox-ose-kmod-4* virtualbox-ose-kmod-devel-4*
 
 OPTIONS_DEFINE=	DEBUG VIMAGE
+DEBUG_DESC=	Debug symbols, additional logs and assertions
 VIMAGE_DESC=	VIMAGE virtual networking support
 
 NO_STAGE=	yes
@@ -48,13 +49,14 @@ VBOX_BIN=	${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/src
 
 KMK_BUILDTYPE=	release
 KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
-KMK_FLAGS=	HostDrivers-src vboxdrv-mod VBoxNetFlt-src VBoxNetAdp-src
+KMK_FLAGS=	HostDrivers-scripts vboxdrv-mod VBoxNetFlt-src VBoxNetAdp-src
 
 MAKE_FLAGS=	SYSDIR=${SRC_BASE}/sys
 
 .if ${PORT_OPTIONS:MDEBUG}
 KMK_FLAGS+=	BUILD_TYPE=debug
 KMK_BUILDTYPE=	debug
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-Config.kmk ${FILESDIR}/extrapatch-src-VBox-HostDrivers-Support-freebsd-Makefile
 MAKE_FLAGS+=	DEBUG_FLAGS="-O1 -g"
 PLIST_SUB+=	WITH_DEBUG=""
 .else
@@ -68,14 +70,6 @@ KMK_ARCH=	freebsd.${ARCH}
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 802000
-BROKEN=		Does not compile on FreeBSD < 8.2
-.endif
-
-.if ${OSVERSION} < 800500 && !empty(PORT_OPTIONS:MVIMAGE)
-IGNORE=		newer kernel is required to build with VIMAGE
-.endif
 
 post-patch:
 	@${ECHO} 'VBOX_WITH_VBOXDRV = 1' > ${WRKSRC}/LocalConfig.kmk

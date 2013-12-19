@@ -32,10 +32,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	ARCH=${ARCH}
+PLIST_SUB:=	${SUB_LIST}
 
-MAN6=		q3map2.6
-
-NO_STAGE=	yes
 post-patch:
 # Add missing checks for __FreeBSD__
 	@${FIND} ${WRKSRC}/tools -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} \
@@ -47,15 +45,17 @@ post-patch:
 		x ; s/^/#include "scenelib.h"/ ; G ; }' \
 			${WRKSRC}/plugins/mapq3/parse.h
 
-do-install:
+pre-install:
 # Fix permissions of some files (drop bogus execute bit)
 	@${FIND} ${WRKSRC}/install/osirion.game -type f | ${XARGS} ${CHMOD} a-x
 	@${CHMOD} a-x ${WRKSRC}/install/games/osirion.game
 # Remove extra copy of GNU GPL from what we install
 	@${RM} ${WRKSRC}/install/GPL.txt
-	@${MKDIR} ${DATADIR}
-	${CP} -a ${WRKSRC}/install/* ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${DISTDIR}/${MAN6} ${MANPREFIX}/man/man6
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -a ${WRKSRC}/install/* ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${DISTDIR}/q3map2.6 ${STAGEDIR}${MANPREFIX}/man/man6
 
 .include <bsd.port.mk>

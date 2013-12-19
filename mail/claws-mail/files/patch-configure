@@ -1,11 +1,10 @@
---- configure.orig	2013-06-12 17:09:02.000000000 +0200
-+++ configure	2013-06-12 17:10:54.000000000 +0200
-@@ -21627,7 +21627,7 @@
- 		# libpython.so
- 		PYTHON_SHARED_LIB="libpython${PYTHON_VERSION}.so"
- 		_save_libs="$LIBS"
--		LIBS="-ldl"
-+		LIBS="$lt_cv_dlopen_libs"
- 		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to dlopen $PYTHON_SHARED_LIB works" >&5
+--- configure.orig	2013-12-14 14:13:44.125318907 +0100
++++ configure	2013-12-14 14:15:18.705347095 +0100
+@@ -21459,7 +21459,6 @@
+ 		if test x"$platform_win32" = xno; then
+ 			# libpython.so
+ 			PYTHON_SHARED_LIB="libpython${PYTHON_VERSION}.so"
+-			LIBS="-ldl"
+ 			{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to dlopen $PYTHON_SHARED_LIB works" >&5
  $as_echo_n "checking whether to dlopen $PYTHON_SHARED_LIB works... " >&6; }
- 		if test "$cross_compiling" = yes; then :
+ 			if test "$cross_compiling" = yes; then :

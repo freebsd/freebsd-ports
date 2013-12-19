@@ -2,28 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	db5
-PORTVERSION=	5.3.21.0
+PORTVERSION=	5.3.28
 CATEGORIES=	databases java
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
-NO_STAGE=	yes
+#
 # the distfiles aren't named db5-* but db-*:
-DISTNAME=	db-${PORTVERSION:R}
+DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	The Oracle Berkeley DB, revision ${BDBVER}
 
-BDBVER=		${PORTVERSION:R:R}
+BDBVER=		${PORTVERSION:R}
 BDBMAJ=		${BDBVER:R}
 CONFIGURE_ARGS=	--enable-cxx --enable-stl \
+		--enable-compat185 --enable-dump185 \
 		--disable-tcl \
 		--includedir=${PREFIX}/include/${PORTNAME} \
 		--libdir=${PREFIX}/lib/${PORTNAME} \
 		--bindir=${PREFIX}/bin/${PORTNAME}
 CONFIGURE_SCRIPT=	../dist/configure
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 INSTALL_TARGET=	install_include install_lib install_utilities
 LIBTOOLFILES=	${CONFIGURE_SCRIPT}
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
@@ -85,30 +86,31 @@ post-patch:
 
 post-install:
 .for i in libdb libdb_cxx libdb_stl ${libdb_sql} ${libdb_java}
-	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${PREFIX}/lib
-	${LN} -s -f ${PORTNAME}/${i}-${BDBMAJ}.so ${PREFIX}/lib
-	${LN} -s -f ${i}-${BDBVER}.so.0 ${PREFIX}/lib/${i}-${BDBVER}.so
-	${LN} -s -f ${i}-${BDBVER}.so.0 ${PREFIX}/lib/${i}-${BDBMAJ}.so.0
-	${LN} -s -f ${i}-${BDBVER}.a ${PREFIX}/lib/${PORTNAME}/${i}.a
-	${CHMOD} a-w ${PREFIX}/lib/${PORTNAME}/${i}-${BDBVER}.so.0 \
-		${PREFIX}/lib/${PORTNAME}/${i}-${BDBVER}.a \
-		${PREFIX}/lib/${PORTNAME}/${i}-${BDBVER}.la
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${i}-${BDBVER}.so.0
+	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${STAGEDIR}${PREFIX}/lib
+	${LN} -s -f ${PORTNAME}/${i}-${BDBMAJ}.so ${STAGEDIR}${PREFIX}/lib
+	${LN} -s -f ${i}-${BDBVER}.so.0 ${STAGEDIR}${PREFIX}/lib/${i}-${BDBVER}.so
+	${LN} -s -f ${i}-${BDBVER}.so.0 ${STAGEDIR}${PREFIX}/lib/${i}-${BDBMAJ}.so.0
+	${LN} -s -f ${i}-${BDBVER}.a ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${i}.a
+	${CHMOD} a-w ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${i}-${BDBVER}.so.0 \
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${i}-${BDBVER}.a \
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${i}-${BDBVER}.la
 .endfor
-	cd ${PREFIX}/bin/${PORTNAME}; \
+	cd ${STAGEDIR}${PREFIX}/bin/${PORTNAME}; \
 	for i in *; do ${LN} -s -f ${PORTNAME}/$$i ../$$i-${BDBVER} ; \
 		       ${LN} -s -f ${PORTNAME}/$$i ../$$i-${BDBMAJ} ; done
 .if ${PORT_OPTIONS:MDOCS}
 .for i in api_reference/TCL
-	${RM} -r -f ${DOCSDIR}/${i}
+	${RM} -r -f ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
 .if empty(PORT_OPTIONS:MJAVA)
-	${RM} -r -f ${DOCSDIR}/java
+	${RM} -r -f ${STAGEDIR}${DOCSDIR}/java
 .for i in gsg gsg_db_rep gsg_txn
-	${RM} -r -f ${DOCSDIR}/${i}/JAVA
+	${RM} -r -f ${STAGEDIR}${DOCSDIR}/${i}/JAVA
 .endfor
 .endif
 .if empty(PORT_OPTIONS:MSQL)
-	${RM} -r -f ${DOCSDIR}/bdb-sql
+	${RM} -r -f ${STAGEDIR}${DOCSDIR}/bdb-sql
 .endif
 .endif
 

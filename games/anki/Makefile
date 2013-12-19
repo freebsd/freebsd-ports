@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	anki
-PORTVERSION=	2.0.18
+PORTVERSION=	2.0.19
+PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	http://ankisrs.net/download/mirror/
 EXTRACT_SUFX=	.tgz
@@ -24,35 +25,30 @@ RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		${PYTHON_PKGNAMEPREFIX}qt4-webkit>=4.4:${PORTSDIR}/www/py-qt4-webkit \
 		${PYTHON_PKGNAMEPREFIX}send2trash>0:${PORTSDIR}/deskutils/py-send2trash
 
-USES=		desktop-file-utils gettext:run shared-mime-info
-USE_PYTHON=	-2.7
+USES=		desktop-file-utils shared-mime-info
+USE_PYTHON=	2.7
 USE_QT4=	network_run webkit_run
 
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext:run
+
+.include <bsd.port.options.mk>
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/|${PREFIX}/share/|' \
-		${WRKSRC}/runanki
-	@${REINPLACE_CMD} -e 's|^Categories=.*|Categories=Education;Languages;KDE;Qt;Game;|' \
+	@${REINPLACE_CMD} \
+		-e 's|^Categories=.*|Categories=Education;Languages;KDE;Qt;Game;|' \
 		${WRKSRC}/${PORTNAME}.desktop
+	@${FIND} ${WRKSRC} -name "*.bak" -delete -or -name "*.orig" -delete
+
+.if ! ${PORT_OPTIONS:MNLS}
+	@${REINPLACE_CMD} -i '' '/mkdir -p qt-locale/,/cp -av locale/s/^/#/' \
+		${WRKSRC}/Makefile
+.endif
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/runanki ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-.for i in anki aqt designer locale oldanki tests tools
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${DATADIR})
-.endfor
-
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
-	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages/
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.xml \
-		${STAGEDIR}${PREFIX}/share/mime/packages/
-.for p in *.png *.xpm
-	${INSTALL_DATA} ${WRKSRC}/${p} \
-		${STAGEDIR}${PREFIX}/share/pixmaps/
-.endfor
 
 .include <bsd.port.mk>

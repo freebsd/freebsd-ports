@@ -5,7 +5,7 @@
  	if {[file exists $aexe.man]} {
  	    if {$config(doc,nroff)} {
 -		_manfile $aexe.man nroff n $config(doc,nroff,path)
-+		_manfile $aexe.man nroff tcllib $config(doc,nroff,path)
++		_manfile $aexe.man nroff tcllib.n $config(doc,nroff,path)
  	    }
  	    if {$config(doc,html)} {
  		_manfile $aexe.man html html $config(doc,html,path)
@@ -14,7 +14,7 @@
  	gen_main_index $config(pkg,path) $package_name $package_version
  	if {$config(doc,nroff)} {
 -	    xinstall doc nroff n    $config(doc,nroff,path)
-+	    xinstall doc nroff tcllib $config(doc,nroff,path)
++	    xinstall doc nroff tcllib.n $config(doc,nroff,path)
  	}
  	if {$config(doc,html)}  {
  	    xinstall doc html  html $config(doc,html,path)

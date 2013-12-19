@@ -19,8 +19,8 @@ USE_BZIP2=	yes
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
-    		rarian.0:${PORTSDIR}/textproc/rarian
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
+		librarian.so:${PORTSDIR}/textproc/rarian
 
 CONFLICTS=	libgda-0*
 
@@ -108,7 +108,7 @@ PLIST_SUB+=		LDAP:="@comment "
 .endif
 
 .if !defined(WITHOUT_FIREBIRD) && defined(WITH_FIREBIRD)
-LIB_DEPENDS+=		gds.1:${PORTSDIR}/databases/firebird-client
+LIB_DEPENDS+=		libgds.so:${PORTSDIR}/databases/firebird-client
 CONFIGURE_ARGS+=	--with-firebird=${LOCALBASE}
 PLIST_SUB+=		FIREBIRD:=""
 .else
@@ -117,7 +117,7 @@ PLIST_SUB+=		FIREBIRD:="@comment "
 .endif
 
 .if !defined(WITHOUT_FREETDS) && defined(WITH_FREETDS)
-LIB_DEPENDS+=		tds.5:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=		libtds.so:${PORTSDIR}/databases/freetds
 CONFIGURE_ARGS+=	--with-tds=${LOCALBASE}
 PLIST_SUB+=		FREETDS:=""
 .else
@@ -126,7 +126,7 @@ PLIST_SUB+=		FREETDS:="@comment "
 .endif
 
 .if !defined(WITHOUT_SYBASE) && defined(WITH_SYBASE)
-LIB_DEPENDS+=		sybdb.5:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=		libsybdb.so:${PORTSDIR}/databases/freetds
 CONFIGURE_ARGS+=	--with-sybase=${LOCALBASE}
 PLIST_SUB+=		SYBASE:=""
 BROKEN=	Sybase backend is linux only
@@ -136,7 +136,7 @@ PLIST_SUB+=		SYBASE:="@comment "
 .endif
 
 .if !defined(WITHOUT_MDB) && defined(WITH_MDB)
-LIB_DEPENDS+=		mdbsql.0:${PORTSDIR}/databases/mdbtools
+LIB_DEPENDS+=		libmdbsql.so:${PORTSDIR}/databases/mdbtools
 CONFIGURE_ARGS+=	--with-mdb=${LOCALBASE}
 PLIST_SUB+=		MDB:=""
 .else
@@ -145,7 +145,7 @@ PLIST_SUB+=		MDB:="@comment "
 .endif
 
 .if !defined(WITHOUT_ODBC) && defined(WITH_ODBC)
-LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		libodbc.so:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE}
 PLIST_SUB+=		ODBC:=""
 .else
@@ -154,7 +154,7 @@ PLIST_SUB+=		ODBC:="@comment "
 .endif
 
 .if !defined(WITHOUT_SQLITE) && defined(WITH_SQLITE)
-LIB_DEPENDS+=		sqlite3.8:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
 PLIST_SUB+=		SQLITE:=""
 .else

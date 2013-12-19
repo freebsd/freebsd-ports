@@ -13,7 +13,7 @@ COMMENT=	The PHP client library for Bullet Cache (mdcached)
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	mdcached.1:${PORTSDIR}/databases/mdcached
+LIB_DEPENDS=	libmdcached.so:${PORTSDIR}/databases/mdcached
 
 USE_PHP=	yes
 USE_PHPEXT=	yes

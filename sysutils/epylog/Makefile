@@ -19,7 +19,8 @@ MAN5=		epylog-modules.5 epylog.conf.5
 MAN8=		epylog.8
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-lynx=${LOCALBASE}/bin/lynx
+CONFIGURE_ARGS=	--with-lynx=${LOCALBASE}/bin/lynx \
+		--with-python=${PYTHON_CMD}
 USES=		perl5
 USE_PYTHON=	yes
 

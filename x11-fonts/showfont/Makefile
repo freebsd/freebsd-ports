@@ -10,9 +10,6 @@ COMMENT=	Font dumper for the X font server
 XORG_CAT=	app
 USE_XORG=	libfs
 
-PLIST_FILES=	bin/showfont
+PLIST_FILES=	bin/showfont man/man1/showfont.1.gz
 
-MAN1=		showfont.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

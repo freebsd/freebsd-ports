@@ -192,7 +192,7 @@ MAKE_ENV+=	"CC=${CC} CXX=${CXX}"
 #
 .if defined(USE_GNUSTEP_BASE)
 BUILD_DEPENDS+=	${GNUSTEP_SYSTEM_LIBRARIES}/libgnustep-base.so:${PORTSDIR}/${GNUSTEP_BASE_PORT}
-LIB_DEPENDS+=	objc.4:${PORTSDIR}/lang/libobjc2
+LIB_DEPENDS+=	libobjc.so.4:${PORTSDIR}/lang/libobjc2
 RUN_DEPENDS+=	${GNUSTEP_SYSTEM_LIBRARIES}/libgnustep-base.so:${PORTSDIR}/${GNUSTEP_BASE_PORT}
 .endif
 

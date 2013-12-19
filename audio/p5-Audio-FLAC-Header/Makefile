@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Interface to FLAC header metadata
 
-LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac
+LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
 
 USES=		perl5
 NO_STAGE=	yes

@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	siege
-PORTVERSION=	2.70
-PORTREVISION=	2
+PORTVERSION=	3.0.5
 CATEGORIES=	benchmarks
-MASTER_SITES=	ftp://sid.joedog.org/pub/siege/
+MASTER_SITES=	http://www.joedog.org/pub/siege/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP regression testing and benchmarking utility
 
 LICENSE=	GPLv2
@@ -17,10 +16,7 @@ USE_OPENSSL=	yes
 
 USES=		perl5
 
-CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} --disable-shared
-
-post-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/siegerc ${STAGEDIR}${DATADIR}/
+CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} --disable-shared \
+		--sysconfdir=${ETCDIR}
 
 .include <bsd.port.mk>

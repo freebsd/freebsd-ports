@@ -10,11 +10,11 @@ MASTER_SITES=	http://www.cs.mun.ca/~gstarkes/wmaker/dockapps/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Run xscreensaver modules inside a WindowMaker dock
 
+USES=		uidfix
 USE_XORG=	x11 xpm
 PLIST_FILES=	bin/wmxss
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/Src
 
-NO_STAGE=	yes
 post-extract:
 	@( cd ${WRKSRC} ; ${MAKE} clean ; ${RM} -f .nfs* )
 

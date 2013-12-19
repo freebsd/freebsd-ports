@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	freemat/FreeMat4
 PKGNAMESUFFIX=		-mpi
 .endif
 
-MAINTAINER=		glarkin@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		An environment for rapid engineering and scientific processing
 
 LIB_DEPENDS=		lapack.4:${PORTSDIR}/math/lapack	\

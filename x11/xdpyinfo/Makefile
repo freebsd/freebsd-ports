@@ -13,9 +13,6 @@ XORG_CAT=	app
 USE_XORG=	dmx x11 xcb xcomposite xext xinerama xproto xrender \
 		xtst xxf86dga xxf86misc xxf86vm
 
-PLIST_FILES=	bin/xdpyinfo
+PLIST_FILES=	bin/xdpyinfo man/man1/xdpyinfo.1.gz
 
-MAN1=		xdpyinfo.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

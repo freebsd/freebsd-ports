@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rubytter
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 

@@ -13,9 +13,9 @@ COMMENT=	On-screen lyrics display program for various media players
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libcurl.so:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	DATADIRNAME=share
@@ -35,9 +35,9 @@ MPD_DESC=	Enable MPD support
 XMMS2_DESC=	Enable XMMS2 support
 AMAROK_DESC=	Enable Amarok 1.4 support
 
-MPD_LIB_DEPENDS=	mpd:${PORTSDIR}/audio/libmpd
+MPD_LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd
 MPD_CONFIGURE_OFF=	--disable-mpd
-XMMS2_LIB_DEPENDS=	xmmsclient:${PORTSDIR}/audio/xmms2
+XMMS2_LIB_DEPENDS=	libxmmsclient.so:${PORTSDIR}/audio/xmms2
 XMMS2_CONFIGURE_OFF=	--disable-xmms2
 AMAROK_CONFIGURE_ENABLE=	amarok1
 

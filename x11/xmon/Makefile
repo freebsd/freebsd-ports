@@ -16,8 +16,4 @@ WRKSRC=		${WRKDIR}/xmon.${PORTVERSION}
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xt
 
-MAN1=		xmon.1 xmond.1 xmonui.1
-MANCOMPRESSED=	yes
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

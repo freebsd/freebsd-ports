@@ -11,8 +11,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME MP3/Ogg file tagger
 
-LIB_DEPENDS=	id3-3.8:${PORTSDIR}/audio/id3lib \
-		vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libid3-3.8.so:${PORTSDIR}/audio/id3lib \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
 NO_STAGE=	yes

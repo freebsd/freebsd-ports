@@ -8,17 +8,16 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://launchpadlibrarian.net/53558954/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A wrapper for LaTeX and friends
+COMMENT=	Wrapper for LaTeX and friends
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_PYTHON=	2.5+
-USE_GMAKE=	yes
+USE_PYTHON=	2
 USE_TEX=	latex
+USES=		gmake
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH} \
-		--datadir=${PYTHON_SITELIBDIR}
+		--datadir=${PYTHON_SITELIBDIR} --python=${PYTHON_CMD}
 
 MANLANG=	"" fr
 MAN1=		rubber.1 rubber-info.1 rubber-pipe.1

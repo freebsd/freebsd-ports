@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey-i18n
-PORTVERSION=	2.22
-CATEGORIES=	www
+PORTVERSION=	2.23
+CATEGORIES=	www mail news editors irc
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}/langpack
 PKGNAMEPREFIX=
 DISTFILES=	${SEAMONKEY_I18N_:S/$/.langpack.xpi/:S/^/seamonkey-${PORTVERSION}./}
@@ -21,6 +21,7 @@ PLISTF?=	${WRKDIR}/plist_files
 USE_SEAMONKEY=	yes
 USE_XPI=	seamonkey linux-seamonkey
 
+NO_ARCH=	yes
 USE_SUBMAKE=	yes
 
 WDIR=	langpack-*@seamonkey.mozilla.org

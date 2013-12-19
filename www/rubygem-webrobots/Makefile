@@ -9,7 +9,7 @@ MASTER_SITES=	RG
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Write robots.txt compliant web robots in Ruby
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

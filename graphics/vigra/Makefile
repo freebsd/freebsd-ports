@@ -30,14 +30,14 @@ NO_STAGE=	yes
 
 .if ${PORT_OPTIONS:MHDF5}
 CMAKE_ARGS+=	-DWITH_HDF5=1
-LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18
+LIB_DEPENDS+=	libhdf5.so.7:${PORTSDIR}/science/hdf5-18
 .else
 CMAKE_ARGS+=	-DWITH_HDF5=0
 .endif
 
 .if ${PORT_OPTIONS:MOPENEXR}
 CMAKE_ARGS+=	-DWITH_OPENEXR=1
-LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR
+LIB_DEPENDS+=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
 .else
 CMAKE_ARGS+=	-DWITH_OPENEXR=0
 .endif
@@ -51,7 +51,7 @@ USE_PYTHON=	2.6-2.7
 BUILD_DEPENDS+=	nosetests:${PORTSDIR}/devel/py-nose
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/numpy/core/numeric.py:${PORTSDIR}/math/py-numpy
 #BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
-LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 PLIST_SUB+=	PYTHON=""
 .else
@@ -73,20 +73,20 @@ PLIST_SUB+=	PYTHON="@comment "
 # do not have graphics/tiff installed and do not want TIFF support in Vigra.
 
 .if !defined(WITHOUT_VIGRA_TIFF)
-LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff
 .endif
 
 .if !defined(WITHOUT_VIGRA_JPEG)
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 .endif
 
 .if !defined(WITHOUT_VIGRA_PNG)
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
 .endif
 
 .if !defined(WITHOUT_VIGRA_FFTW)
-LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
-LIB_DEPENDS+=	fftw3f:${PORTSDIR}/math/fftw3-float
+LIB_DEPENDS+=	libfftw3.so:${PORTSDIR}/math/fftw3
+LIB_DEPENDS+=	libfftw3f.so:${PORTSDIR}/math/fftw3-float
 .endif
 
 pre-everything::

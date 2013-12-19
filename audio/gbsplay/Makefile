@@ -34,7 +34,7 @@ OPTIONS_DEFINE=	NAS DOCS
 .if ${PKGNAMEPREFIX} == ""
 
 .if ${PORT_OPTIONS:MNAS}
-LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
+LIB_DEPENDS+=	libaudio.so:${PORTSDIR}/audio/nas
 .else
 CONFIGURE_ARGS+=	--disable-nas
 .endif

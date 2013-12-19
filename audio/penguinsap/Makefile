@@ -9,8 +9,7 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Command-line Atari(TM) .sap player
 
-USES=		compiler
-USE_DOS2UNIX=	yes
+USES=		compiler dos2unix
 
 SOURCES=	sapPokey pokey1 sapCpu sapEngine main pokey0
 

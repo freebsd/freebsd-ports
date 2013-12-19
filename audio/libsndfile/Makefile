@@ -11,10 +11,8 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Reading and writing files containing sampled sound (like WAV or AIFF)
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake pathfix pkgconfig
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gcc-pipe \
 		--disable-sqlite \
@@ -24,10 +22,6 @@ CPPFLAGS+=	-isystem /usr/include -isystem ${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
-MAN1=		sndfile-concat.1 sndfile-cmp.1 sndfile-convert.1 \
-		sndfile-info.1 sndfile-metadata-get.1 sndfile-metadata-set.1 \
-		sndfile-play.1 sndfile-deinterleave.1 sndfile-interleave.1
-
 PORTDOCS=	AUTHORS ChangeLog NEWS README libsndfile.css \
 		new_file_type.HOWTO libsndfile.jpg *.html
 
@@ -36,7 +30,7 @@ OPTIONS_DEFAULT=	EXTERNAL
 CPU_CLIP_DESC=	Allow machine-dependent clipping
 EXTERNAL_DESC=	Enable FLAC and Ogg Vorbis support
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCPU_CLIP}
 MANUAL_PACKAGE_BUILD=	WITH_CPU_CLIP may customize the package for the build machine
@@ -45,8 +39,8 @@ CONFIGURE_ARGS+=	--disable-cpu-clip
 .endif
 
 .if ${PORT_OPTIONS:MEXTERNAL}
-LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=--disable-external-libs
 .endif
@@ -59,11 +53,8 @@ check regression-test test: build
 	check
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${TAR} -C ${WRKSRC}/doc --exclude "*Makefile*" --exclude "*.in" \
-		-cf - . | ${TAR} -C ${DOCSDIR} --unlink -xf -
-	@${CHOWN} ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-.endif
+		-cf - . | ${TAR} -C ${STAGEDIR}${DOCSDIR} --unlink -xf -
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

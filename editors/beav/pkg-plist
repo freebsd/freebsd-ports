@@ -1,3 +1,4 @@
 bin/beav
+man/man1/beav.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/beav.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

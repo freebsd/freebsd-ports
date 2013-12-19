@@ -9,14 +9,14 @@ MASTER_SITES=	http://www.jlogday.com/code/libmal/
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	A library encapsulating malsync
 
-LIB_DEPENDS=	pisock.9:${PORTSDIR}/palm/pilot-link
+LICENSE=	MPL
 
-USE_GMAKE=	YES
+LIB_DEPENDS=	libpisock.so.9:${PORTSDIR}/palm/pilot-link
+
+USES=	gmake
 GNU_CONFIGURE=	yes
-HAS_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-pilot-prefix=${LOCALBASE}
 USE_LDCONFIG=	YES
 CONFLICTS=	malsync-[0-9]*
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

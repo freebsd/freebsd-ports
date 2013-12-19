@@ -9,7 +9,7 @@ MASTER_SITES=	SF/musicpd/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	henrik@affekt.org
 COMMENT=	Ncurses client for the musicpd
 
-LIB_DEPENDS=	mpdclient:${PORTSDIR}/audio/libmpdclient
+LIB_DEPENDS=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20

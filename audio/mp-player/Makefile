@@ -11,7 +11,7 @@ COMMENT=	Curses based module tracker using libmikmod
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
+LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lmikmod ${PTHREAD_LIBS} -lncurses -lpanel

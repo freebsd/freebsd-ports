@@ -13,7 +13,7 @@ COMMENT=	Evolution 2 plugin for the OpenSync framework
 
 BROKEN=		Does not find opensync
 
-LIB_DEPENDS=	opensync.1:${PORTSDIR}/devel/libopensync
+LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync
 RUN_DEPENDS=	vconvert:${PORTSDIR}/deskutils/libopensync-plugin-vformat-devel
 
 CONFLICTS=	libopensync-plugin-evolution2-0.2*

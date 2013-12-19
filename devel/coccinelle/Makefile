@@ -12,7 +12,7 @@ COMMENT=	Coccinelle is a program matching and transformation engine
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		shebangfix gmake perl5
+USES=		shebangfix gmake perl5 pkgconfig:build
 GNU_CONFIGURE=	yes
 USE_PERL5=	build
 USE_PYTHON=	2.6+
@@ -20,6 +20,7 @@ USE_OCAML=	3.0+
 bash_CMD=	${SH}
 SHEBANG_FILES=	setup/echo.sh
 MAKE_ARGS+=	PYTHON_VERSION=${PYTHON_VER}
+CONFIGURE_ENV+=	PYVER=${PYTHON_VER} PYTHON=${PYTHON_CMD}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${DATADIR}/dllpcre_stubs.so \

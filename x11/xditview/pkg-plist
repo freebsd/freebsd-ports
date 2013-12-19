@@ -1,6 +1,7 @@
 bin/xditview
 include/X11/bitmaps/ldblarrow
 include/X11/bitmaps/rdblarrow
+man/man1/xditview.1.gz
 share/X11/app-defaults/Xditview
 share/X11/app-defaults/Xditview-chrtr
 @dirrmtry share/X11/app-defaults

@@ -4,7 +4,7 @@
  export MOZILLA_FIVE_HOME LD_LIBRARY_PATH
  export SHLIB_PATH LIBPATH LIBRARY_PATH ADDON_PATH DYLD_LIBRARY_PATH
  
-+MOZ_PLUGIN_PATH=%%LOCALBASE%%/lib/browser_plugins/symlinks/gecko19:%%LOCALBASE%%/lib/npapi/symlinks/firefox
++MOZ_PLUGIN_PATH=%%LOCALBASE%%/lib/browser_plugins/symlinks/gecko:%%LOCALBASE%%/lib/browser_plugins/symlinks/firefox
 +export MOZ_PLUGIN_PATH
 +
  if [ $moz_debug -eq 1 ]

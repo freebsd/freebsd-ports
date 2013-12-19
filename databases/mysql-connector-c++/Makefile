@@ -12,7 +12,7 @@ COMMENT=	A MySQL database connector for C++
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
 
 USE_MYSQL=	51+
 USE_LDCONFIG=	yes

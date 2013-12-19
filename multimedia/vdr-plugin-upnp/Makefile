@@ -13,9 +13,9 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - UPnP/DLNA plugin (alpha!)
 
 LIB_DEPENDS+=	libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0 \
-		boost_system:${PORTSDIR}/devel/boost-libs \
-		upnp:${PORTSDIR}/devel/upnp \
-		sqlite3:${PORTSDIR}/databases/sqlite3
+		libboost_system.so:${PORTSDIR}/devel/boost-libs \
+		libupnp.so:${PORTSDIR}/devel/upnp \
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 DIST_SUBDIR=	vdr
 PATCH_STRIP=	-p1

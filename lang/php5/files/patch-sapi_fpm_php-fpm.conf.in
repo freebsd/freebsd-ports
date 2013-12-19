@@ -1,6 +1,6 @@
---- sapi/fpm/php-fpm.conf.in.orig	2012-02-08 15:50:42.000000000 +0100
-+++ sapi/fpm/php-fpm.conf.in	2012-02-08 15:50:54.000000000 +0100
-@@ -317,7 +317,7 @@
+--- sapi/fpm/php-fpm.conf.in.orig	2013-12-10 19:32:43.000000000 +0000
++++ sapi/fpm/php-fpm.conf.in	2013-12-13 21:55:54.520235931 +0000
+@@ -341,7 +341,7 @@ pm.max_spare_servers = 3
  ;   last request memory:  0
  ;
  ; Note: There is a real-time FPM status monitoring sample web page available

@@ -23,6 +23,7 @@ GH_COMMIT=	f4f6246
 USES=		shebangfix
 USE_GL=		gl
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_BUILD_TARGET=	build_ext
 PYDISTUTILS_BUILDARGS=	--inplace
 PYDISTUTILS_EGGINFO=	Kivy-${PORTVERSION}-py${PYTHON_VER}.egg-info
@@ -118,10 +119,13 @@ do-test-build:
 .if ${PORT_OPTIONS:MDOCS}
 
 post-build: do-build-docs
+	find ${WKRSRC} -name '*.so' | ${XARGS} ${STRIP_CMD}
 
 do-build-docs:
 	${MKDIR} ${WRKSRC}/doc/build/doctrees ${WRKSRC}/doc/build/html \
 		${WRKSRC}/doc/build/latex-a4 ${WRKSRC}/doc/build/latex-letter
+	${REINPLACE_CMD} -i '' -e 's/\(import pygame\.joystick\)/#\1/' \
+		${WRKSRC}/kivy/input/providers/androidjoystick.py
 	(cd ${WRKSRC}; \
 		${SETENV} ${MAKE_ENV} ${PYTHON_CMD} doc/autobuild.py)
 	(cd ${WRKSRC}; \
@@ -137,11 +141,13 @@ do-build-docs:
 		${SETENV} ${MAKE_ENV} sphinx-build -b latex \
 			-d ${WRKSRC}/doc/build/doctrees \
 			-D latex_paper=letter doc/sources ${WRKSRC}/doc/build/latex-letter)
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC}/doc/build/latex-a4 \
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC}/doc/build/latex-a4 \
 		all-pdf > /dev/null
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC}/doc/build/latex-letter \
+	${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C ${WRKSRC}/doc/build/latex-letter \
 		all-pdf > /dev/null
 .endif
+	${REINPLACE_CMD} -i '' -e 's/#\(import pygame\.joystick\)/\1/' \
+		${WRKSRC}/kivy/input/providers/androidjoystick.py
 
 post-install: do-install-docs
 

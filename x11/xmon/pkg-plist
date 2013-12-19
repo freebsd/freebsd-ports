@@ -1,2 +1,5 @@
 bin/xmonui
 bin/xmond
+man/man1/xmon.1.gz
+man/man1/xmond.1.gz
+man/man1/xmonui.1.gz

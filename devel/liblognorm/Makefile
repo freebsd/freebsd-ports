@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	liblognorm
-PORTVERSION=	0.3.7
+PORTVERSION=	1.0.0
 CATEGORIES=	devel net security
 MASTER_SITES=	http://www.liblognorm.com/download/files/download/
 
@@ -10,12 +10,14 @@ COMMENT=	Log normalizer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libee.so:${PORTSDIR}/devel/libee \
+LIB_DEPENDS=	libjson.so:${PORTSDIR}/devel/json-c \
 		libestr.so:${PORTSDIR}/devel/libestr
 
 USES=		pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+
+SUB_FILES=	pkg-message
 
 # Try to fix parallel (-jX) builds
 post-patch:

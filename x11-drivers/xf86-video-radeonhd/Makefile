@@ -3,7 +3,7 @@
 
 PORTNAME=	xf86-video-radeonhd
 PORTVERSION=	1.3.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	x11@FreeBSD.org
@@ -17,9 +17,10 @@ USE_XORG=	damageproto glproto videoproto xextproto xf86driproto
 CONFIGURE_ARGS=	--enable-exa
 CONFLICTS=	xf86-video-radeonhd-devel-[0-9]*
 
-MAN4=	radeonhd.4x
+IGNORE=		Reports of issues with KMS, unsupported, use xf86-video-ati.
+DEPRECATED=	Abandond upstream since 2010
+EXPIRATION_DATE=2014-02-28
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUTILS}
@@ -33,8 +34,8 @@ PLIST_SUB=	UTILS="@comment "
 
 .if ${PORT_OPTIONS:MUTILS}
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/utils/conntest/rhd_conntest ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/utils/conntest/rhd_dump ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/utils/conntest/rhd_conntest ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/utils/conntest/rhd_dump ${STAGEDIR}${PREFIX}/sbin
 .endif
 
 .include <bsd.port.mk>

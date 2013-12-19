@@ -1,14 +1,27 @@
 # $FreeBSD$
 
-THUNDERBIRD_I18N_ALL_=	ar br ca cs da de en-GB en-US es-AR es-ES et eu fi fr \
-			fy-NL ga-IE gd gl he hu is it ja ko lt nb-NO nl nn-NO \
-			pl pt-BR pt-PT rm ru si sk sl sq sv-SE ta-LK tr uk zh-CN zh-TW
+THUNDERBIRD_I18N_ALL_=	ar ast be bg bn-BD br ca cs da de el en-GB en-US es-AR \
+			es-ES et eu fi fr fy-NL ga-IE gd gl he hr hu hy-AM id  \
+			is it ja ko lt nb-NO nl nn-NO pa-IN pl pt-BR pt-PT rm  \
+			ro ru si sk sl sq sr sv-SE ta-LK tr uk vi zh-CN zh-TW
 
 .if defined(THUNDERBIRD_I18N_ALL) || defined(PACKAGE_BUILDING) || target(package)
 THUNDERBIRD_I18N=   ${THUNDERBIRD_I18N_ALL_}
 .else
 .if ${PORT_OPTIONS:MLANG_AR}
 THUNDERBIRD_I18N+=  ar
+.endif
+.if ${PORT_OPTIONS:MLANG_AST}
+THUNDERBIRD_I18N+=  ast
+.endif
+.if ${PORT_OPTIONS:MLANG_BE}
+THUNDERBIRD_I18N+=  be
+.endif
+.if ${PORT_OPTIONS:MLANG_BG}
+THUNDERBIRD_I18N+=  bg
+.endif
+.if ${PORT_OPTIONS:MLANG_BB}
+THUNDERBIRD_I18N+=  bn-BD
 .endif
 .if ${PORT_OPTIONS:MLANG_BR}
 THUNDERBIRD_I18N+=  br
@@ -24,6 +37,9 @@ THUNDERBIRD_I18N+=  da
 .endif
 .if ${PORT_OPTIONS:MLANG_DE}
 THUNDERBIRD_I18N+=  de
+.endif
+.if ${PORT_OPTIONS:MLANG_EL}
+THUNDERBIRD_I18N+=  el
 .endif
 .if ${PORT_OPTIONS:MLANG_GB}
 THUNDERBIRD_I18N+=  en-GB
@@ -64,8 +80,17 @@ THUNDERBIRD_I18N+=  gl
 .if ${PORT_OPTIONS:MLANG_HE}
 THUNDERBIRD_I18N+=  he
 .endif
+.if ${PORT_OPTIONS:MLANG_HR}
+THUNDERBIRD_I18N+=  hr
+.endif
 .if ${PORT_OPTIONS:MLANG_HU}
 THUNDERBIRD_I18N+=  hu
+.endif
+.if ${PORT_OPTIONS:MLANG_AM}
+THUNDERBIRD_I18N+=  hy-AM
+.endif
+.if ${PORT_OPTIONS:MLANG_ID}
+THUNDERBIRD_I18N+=  id
 .endif
 .if ${PORT_OPTIONS:MLANG_IS}
 THUNDERBIRD_I18N+=  is
@@ -94,6 +119,9 @@ THUNDERBIRD_I18N+=  nl
 .if ${PORT_OPTIONS:MLANG_NN}
 THUNDERBIRD_I18N+=  nn-NO
 .endif
+.if ${PORT_OPTIONS:MLANG_PA}
+THUNDERBIRD_I18N+=  pa-IN
+.endif
 .if ${PORT_OPTIONS:MLANG_PL}
 THUNDERBIRD_I18N+=  pl
 .endif
@@ -105,6 +133,9 @@ THUNDERBIRD_I18N+=  pt-PT
 .endif
 .if ${PORT_OPTIONS:MLANG_RM}
 THUNDERBIRD_I18N+=  rm
+.endif
+.if ${PORT_OPTIONS:MLANG_RO}
+THUNDERBIRD_I18N+=  ro
 .endif
 .if ${PORT_OPTIONS:MLANG_RU}
 THUNDERBIRD_I18N+=  ru
@@ -121,6 +152,9 @@ THUNDERBIRD_I18N+=  sl
 .if ${PORT_OPTIONS:MLANG_SQ}
 THUNDERBIRD_I18N+=  sq
 .endif
+.if ${PORT_OPTIONS:MLANG_SR}
+THUNDERBIRD_I18N+=  sr
+.endif
 .if ${PORT_OPTIONS:MLANG_SV}
 THUNDERBIRD_I18N+=  sv-SE
 .endif
@@ -132,6 +166,9 @@ THUNDERBIRD_I18N+=  tr
 .endif
 .if ${PORT_OPTIONS:MLANG_UK}
 THUNDERBIRD_I18N+=  uk
+.endif
+.if ${PORT_OPTIONS:MLANG_VI}
+THUNDERBIRD_I18N+=  vi
 .endif
 .if ${PORT_OPTIONS:MLANG_CN}
 THUNDERBIRD_I18N+=  zh-CN

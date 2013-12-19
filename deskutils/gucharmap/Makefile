@@ -12,6 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Unicode/ISO10646 character map and font viewer
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
+LIB_DEPENDS=	librarian.so:${PORTSDIR}/textproc/rarian
 
 USE_XZ=		yes
 USES=		gettext gmake pathfix pkgconfig

@@ -7,6 +7,9 @@ lib/libavahi-ui.la
 lib/libavahi-ui.so
 lib/libavahi-ui.so.0
 libdata/pkgconfig/avahi-ui.pc
+man/man1/bshell.1.gz
+man/man1/bssh.1.gz
+man/man1/bvnc.1.gz
 share/applications/bssh.desktop
 share/applications/bvnc.desktop
 %%DATADIR%%/interfaces/avahi-discover.ui

@@ -1,3 +1,16 @@
+@exec mkdir -p %D/www/phpmyfaq/attachments
+@exec mkdir -p %D/www/phpmyfaq/data
+@exec mkdir -p %D/www/phpmyfaq/images
+@exec mkdir -p %D/www/phpmyfaq/inc
+@exec mkdir -p %D/www/phpmyfaq/pdf
+@exec mkdir -p %D/www/phpmyfaq/xml
+@exec chown %%WWWOWN%%:%%WWWGRP%% %D/www/phpmyfaq/attachments
+@exec chown %%WWWOWN%%:%%WWWGRP%% %D/www/phpmyfaq/config
+@exec chown %%WWWOWN%%:%%WWWGRP%% %D/www/phpmyfaq/data
+@exec chown %%WWWOWN%%:%%WWWGRP%% %D/www/phpmyfaq/images
+@exec chown %%WWWOWN%%:%%WWWGRP%% %D/www/phpmyfaq/inc
+@exec chown %%WWWOWN%%:%%WWWGRP%% %D/www/phpmyfaq/pdf
+@exec chown %%WWWOWN%%:%%WWWGRP%% %D/www/phpmyfaq/xml
 %%WWWDIR%%/_.htaccess
 %%WWWDIR%%/_httpd.ini
 %%WWWDIR%%/_lighttpd.conf
@@ -24,6 +37,7 @@
 %%WWWDIR%%/admin/assets/font/fontawesome-webfont.svg
 %%WWWDIR%%/admin/assets/font/fontawesome-webfont.ttf
 %%WWWDIR%%/admin/assets/font/fontawesome-webfont.woff
+%%WWWDIR%%/admin/assets/js/record.js
 %%WWWDIR%%/admin/assets/js/uploadcheck.js
 %%WWWDIR%%/admin/assets/js/user.js
 %%WWWDIR%%/admin/assets/less/style.less
@@ -876,6 +890,7 @@
 %%WWWDIR%%/assets/template/default/favicon.ico
 %%WWWDIR%%/assets/template/default/glossary.tpl
 %%WWWDIR%%/assets/template/default/images/arrow.gif
+%%WWWDIR%%/assets/template/default/indexPassword.tpl
 %%WWWDIR%%/assets/template/default/index.tpl
 %%WWWDIR%%/assets/template/default/indexLogin.tpl
 %%WWWDIR%%/assets/template/default/indexMaintenance.tpl
@@ -1264,7 +1279,7 @@
 @dirrm %%WWWDIR%%/xml
 @dirrm %%WWWDIR%%/services/twitter
 @dirrm %%WWWDIR%%/services
-@dirrmtry %%WWWDIR%%/pdf
+@dirrm %%WWWDIR%%/pdf
 @dirrm %%WWWDIR%%/multisite
 @dirrm %%WWWDIR%%/lang
 @dirrm %%WWWDIR%%/install
@@ -1357,16 +1372,16 @@
 @dirrm %%WWWDIR%%/inc/PMF/Attachment
 @dirrm %%WWWDIR%%/inc/PMF
 @dirrm %%WWWDIR%%/inc
-@dirrmtry %%WWWDIR%%/images
+@dirrm %%WWWDIR%%/images
 @dirrm %%WWWDIR%%/feed/topten
 @dirrm %%WWWDIR%%/feed/openquestions
 @dirrm %%WWWDIR%%/feed/news
 @dirrm %%WWWDIR%%/feed/latest
 @dirrm %%WWWDIR%%/feed/category
 @dirrm %%WWWDIR%%/feed
-@dirrmtry %%WWWDIR%%/data
-@dirrmtry %%WWWDIR%%/config
-@dirrmtry %%WWWDIR%%/attachments
+@dirrm %%WWWDIR%%/data
+@dirrm %%WWWDIR%%/config
+@dirrm %%WWWDIR%%/attachments
 @dirrm %%WWWDIR%%/assets/template/default/less
 @dirrm %%WWWDIR%%/assets/template/default/images
 @dirrm %%WWWDIR%%/assets/template/default/css

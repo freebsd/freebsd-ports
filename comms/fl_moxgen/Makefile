@@ -14,7 +14,7 @@ COMMENT=	Compute the dimensions of a Moxon Rectangle antenna
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
 DESKTOP_ENTRIES=	"Fl_MoxGen" "${COMMENT}" "" "${PORTNAME}" \
 			"Network;HamRadio;" "false"
@@ -27,7 +27,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPDF}
- LIB_DEPENDS+=	hpdf:${PORTSDIR}/print/libharu
+ LIB_DEPENDS+=	libhpdf.so:${PORTSDIR}/print/libharu
  ALL_TARGET=	fl_moxgen
 .else
  ALL_TARGET=	fl_moxgen_no_pdf

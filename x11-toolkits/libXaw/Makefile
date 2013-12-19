@@ -14,7 +14,4 @@ USE_XORG=	printproto:both x11 xau xext xextproto xmu xp xpm xproto:both xt
 USES=		gmake
 CONFIGURE_ARGS+=--without-xmlto
 
-MAN3=		Xaw.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

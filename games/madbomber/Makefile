@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/madbomber/src/ \
 		ftp://ftp.billsgames.com/unix/x/madbomber/src/
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Clone of Activision's classic Atari 2600 console game "Kaboom!"
 
 LICENSE=	GPLv2

@@ -10,7 +10,7 @@ DIST_SUBDIR=	fcitx
 MAINTAINER=	lichray@gmail.com
 COMMENT=	SunPinyin support for Fcitx
 
-LIB_DEPENDS=	fcitx-config:${PORTSDIR}/chinese/fcitx
+LIB_DEPENDS=	libfcitx-config.so:${PORTSDIR}/chinese/fcitx
 BUILD_DEPENDS=	zh-sunpinyin>=2.0.4.r2:${PORTSDIR}/chinese/sunpinyin
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

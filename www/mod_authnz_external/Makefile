@@ -11,7 +11,6 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	Allows users authentication based on external mechanisms on apache 2.2
 
-
 USE_APACHE=	22
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
@@ -21,13 +20,8 @@ PROJECTHOST=	mod-auth-external
 PORTDOCS=	AUTHENTICATORS INSTALL README	\
 		CHANGES UPGRADE INSTALL.HARDCODE
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.   for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.   endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

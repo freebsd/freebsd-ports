@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libvirt
-PORTVERSION=	1.1.4
+PORTVERSION=	1.2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -44,7 +44,7 @@ CONFIGURE_ARGS=	--without-sasl \
 # workaround to override pkg-config calls
 # random_data fix can be removed when 8.x is eol
 CONFIGURE_ENV=	SSH2_LIBS="-L${LOCALBASE}/lib -lssh2 -lssl" \
-		SSH2_CFLAGS="-I${LOCLABASE}/include" \
+		SSH2_CFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_type_struct_random_data=""
 
 # limit production release x.x.x
@@ -55,8 +55,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -fstack-protector
 USES=		charsetfix pathfix gmake pkgconfig perl5
 USE_PERL5=	build
 USE_LDCONFIG=	yes
-USE_PYTHON_BUILD=	yes
-SHLIB_VER=	1001
+SHLIB_VER=	1002
 PLIST_SUB=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*

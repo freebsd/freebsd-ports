@@ -1,2 +1,2 @@
-SHA256 (mod_authz_unixgroup-1.0.1.tar.gz) = 217ca24b2ad8f8e74fd247f6d21845a28a2a7b6529ba1d121da15265a522aefa
-SIZE (mod_authz_unixgroup-1.0.1.tar.gz) = 5909
+SHA256 (apache2/mod_authz_unixgroup-1.0.3.tar.gz) = 2792f736fdc3831a613747c78938cad58487486a606535eba2c4bb20009b7e2b
+SIZE (apache2/mod_authz_unixgroup-1.0.3.tar.gz) = 10427

@@ -1,9 +1,10 @@
 # Created by: Alexander Wittig <alexander@wittig.name>
 # $FreeBSD$
 
-PORTNAME=	change_ldappass
+PORTNAME=		change_ldappass
 PORTVERSION=	2.2
-PORTREVISION=	4
+PORTREVISION=	5
+CATEGORIES=		mail www
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.4.0
 
 MAINTAINER=	ports@FreeBSD.org

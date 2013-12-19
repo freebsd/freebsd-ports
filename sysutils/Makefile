@@ -183,6 +183,7 @@
     SUBDIR += dirdiff
     SUBDIR += dirvish
     SUBDIR += diskcheckd
+    SUBDIR += diskimage-tools
     SUBDIR += diskscrub
     SUBDIR += disktool
     SUBDIR += disktype
@@ -370,7 +371,6 @@
     SUBDIR += hachoir-wx
     SUBDIR += hal
     SUBDIR += hal-info
-    SUBDIR += hammerhead
     SUBDIR += hardlink
     SUBDIR += hatop
     SUBDIR += hdrecover
@@ -746,6 +746,7 @@
     SUBDIR += py-halite 
     SUBDIR += py-iowait
     SUBDIR += py-nagiosplugin
+    SUBDIR += py-plumbum
     SUBDIR += py-psutil
     SUBDIR += py-pytsk
     SUBDIR += py-ranger
@@ -794,6 +795,7 @@
     SUBDIR += rsyncrypto
     SUBDIR += rsyslog7
     SUBDIR += rsyslog7-devel
+    SUBDIR += rsyslog8-devel
     SUBDIR += rtty
     SUBDIR += ruby-quota
     SUBDIR += rubygem-SyslogLogger
@@ -820,6 +822,7 @@
     SUBDIR += rubygem-hiera-json
     SUBDIR += rubygem-hiera-puppet
     SUBDIR += rubygem-log4r
+    SUBDIR += rubygem-mogilefs-client
     SUBDIR += rubygem-murder
     SUBDIR += rubygem-ohai
     SUBDIR += rubygem-parallel

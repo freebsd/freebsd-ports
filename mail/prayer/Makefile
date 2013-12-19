@@ -5,7 +5,7 @@ PORTVERSION=	1.3.5
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/prayer/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prayer Webmail System
 
 LICENSE=	GPLv2

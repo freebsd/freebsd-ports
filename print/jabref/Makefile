@@ -28,16 +28,14 @@ icon=		${DATADIR}/${PORTNAME}-icon48x48.png
 SUB_FILES=	${PORTNAME}.sh ${PORTNAME}.desktop
 SUB_LIST=	JARNAME=${PORTNAME}.jar
 
-USE_GNOME=	desktopfileutils
+USES=		desktop-file-utils
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${DATADIR}/${PORTNAME}.jar
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${FILESDIR}/JabRef-icon-48.png "${icon}"
-	${MKDIR} ${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${DESKTOPDIR}
-	-${LOCALBASE}/bin/update-desktop-database -q
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${STAGEDIR}${DATADIR}/${PORTNAME}.jar
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${FILESDIR}/JabRef-icon-48.png ${STAGEDIR}"${icon}"
+	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	SF/${PORTNAME}/Download%20StatCVS/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS repository activity report generator
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper

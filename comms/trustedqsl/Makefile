@@ -1,33 +1,31 @@
 # $FreeBSD$
 
 PORTNAME=	trustedqsl
-PORTVERSION=	1.14.2
+PORTVERSION=	2.0
 CATEGORIES=	comms hamradio
-MASTER_SITES=	SF/${PORTNAME}/TrustedQSL/v1.14.2/
-DISTNAME=	tqsl-1.14.2
+MASTER_SITES=	SF/${PORTNAME}/TrustedQSL/v${PORTVERSION}/
+DISTNAME=	tqsl-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio Station electronic trusted logbook
 
-LIB_DEPENDS=	db-5:${PORTSDIR}/databases/db5 \
-		curl:${PORTSDIR}/ftp/curl
+LICENSE=	BSD
 
-USES=		cmake
+LIB_DEPENDS=	libdb-5.so:${PORTSDIR}/databases/db5 \
+		libcurl.so:${PORTSDIR}/ftp/curl
+
+CXXFLAGS	+=-std=gnu++0x
+
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+USES=		compiler:c++11-lib cmake pkgconfig
 USE_WX=		2.8+
 WX_UNICODE=	yes
-
-MAN5=		trustedqsl.5
-
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+post-patch:
+	@${SED} -e 's:%%PREFIX%%:${PREFIX}:g' \
+		${FILESDIR}/pkg-message > ${WRKDIR}/pkg-message
 
-post-install:
-	@${ECHO_MSG}
-	@${ECHO_MSG} trustedqsl is now installed. You will have to create a directory .tqsl in
-	@${ECHO_MSG} your home directory and setup a copy of ${PREFIX}/share/TrustedQSL/config.xml here
-	@${ECHO_MSG} before this program will run correctly.
-	@${ECHO_MSG}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

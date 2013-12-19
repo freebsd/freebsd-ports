@@ -8,7 +8,7 @@ MASTER_SITES=	http://codeigniter.com/download_files/ \
 		LOCAL/glarkin
 DISTNAME=	CodeIgniter_${PORTVERSION}
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A framework for developing PHP web applications
 
 USE_ZIP=	yes

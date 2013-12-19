@@ -11,8 +11,8 @@ COMMENT=	Low-level I/O storage library which packs data
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost-libs \
-		snappy:${PORTSDIR}/archivers/snappy
+LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs \
+		libsnappy.so:${PORTSDIR}/archivers/snappy
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	zloidemon

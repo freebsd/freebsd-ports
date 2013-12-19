@@ -15,7 +15,7 @@ EXTRACT_ONLY=	${SFNAME}-stable${EXTRACT_SUFX}
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Schematic and PCB editing software
 
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/share/kicad/library/74xx.dcm:${PORTSDIR}/cad/kicad-library
 
 CONFLICTS=	kicad-devel*

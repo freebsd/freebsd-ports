@@ -3,7 +3,7 @@
 
 PORTNAME=	xf86-video-sis-intel
 PORTVERSION=	300407
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-drivers
 MASTER_SITES=	http://downloadmirror.intel.com/15443/eng/
 DISTNAME=	sis_drv_src_300407

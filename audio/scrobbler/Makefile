@@ -12,15 +12,15 @@ DISTNAME=	xmms-scrobbler-${PORTVERSION}
 MAINTAINER?=	novel@FreeBSD.org
 COMMENT?=	XMMS/BMP plugin for Audioscrobbler.com
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 CONFLICTS=	bmp-scrobbler-[0-9]* \
 		xmms-scrobbler-[0-9]*
 
 USES=		gmake pkgconfig
+USE_CSTD=	gnu89
 NO_STAGE=	yes
 USE_BZIP2=	yes
-USE_GCC=	any
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -33,7 +33,7 @@ WITH_BMP=	yes
 .endif
 
 .if defined(WITH_XMMS)
-LIB_DEPENDS+=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=	libxmms.so:${PORTSDIR}/multimedia/xmms
 PLIST_FILES+=	lib/xmms/General/libxmms_scrobbler.la \
 		lib/xmms/General/libxmms_scrobbler.so
 .else
@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=	--disable-xmms-plugin
 .endif
 
 .if defined(WITH_BMP)
-LIB_DEPENDS+=	beep.2:${PORTSDIR}/multimedia/beep-media-player
+LIB_DEPENDS+=	libbeep.so:${PORTSDIR}/multimedia/beep-media-player
 PLIST_FILES+=	lib/bmp/General/libbmp_scrobbler.la \
 		lib/bmp/General/libbmp_scrobbler.so
 .else

@@ -11,10 +11,10 @@ DISTNAME=	Sigil-${PORTVERSION}-Code
 MAINTAINER=	jonc@chen.org.nz
 COMMENT=	WYSIWYG ePub editor
 
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
-		xerces-c:${PORTSDIR}/textproc/xerces-c3 \
-		hunspell-1.3:${PORTSDIR}/textproc/hunspell \
-		pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libxerces-c.so:${PORTSDIR}/textproc/xerces-c3 \
+		libhunspell-1.so:${PORTSDIR}/textproc/hunspell \
+		libpcre.so:${PORTSDIR}/devel/pcre
 
 LICENSE=	GPLv3
 

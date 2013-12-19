@@ -10,7 +10,7 @@ DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby binding to the libshout library
 
-LIB_DEPENDS=	shout.5:${PORTSDIR}/audio/libshout2
+LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout2
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}.tar.gz\?only_with_tag=ruby-${PORTNAME}-${PORTVERSION:S/./_/g}\&view=tar
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Ruby library to provide a high level interface to a CVS repository
 
 DEPRECATED=	Broken for more than 6 month

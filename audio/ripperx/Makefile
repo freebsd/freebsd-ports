@@ -11,7 +11,7 @@ DISTNAME=	ripperX-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK program to rip CD audio tracks and encode them
 
-LIB_DEPENDS=	id3:${PORTSDIR}/audio/id3lib
+LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib
 RUN_DEPENDS=	cdparanoia:${PORTSDIR}/audio/cdparanoia
 
 GNU_CONFIGURE=	yes

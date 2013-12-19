@@ -11,7 +11,7 @@ DIST_SUBDIR=	varkon
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free CAD system and applications development tool
 
-LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 WRKSRC=		${WRKDIR}/Varkon_${PORTVERSION}

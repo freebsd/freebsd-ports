@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mcabber
-PORTVERSION=	0.10.1
-PORTREVISION=	5
+PORTVERSION=	0.10.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ CENKES
 

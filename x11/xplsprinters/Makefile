@@ -10,9 +10,6 @@ COMMENT=	Shows a list of Xprint printers
 XORG_CAT=	app
 USE_XORG=	xp xprintutil x11
 
-PLIST_FILES=	bin/xplsprinters
+PLIST_FILES=	bin/xplsprinters man/man1/xplsprinters.1.gz
 
-MAN1=		xplsprinters.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

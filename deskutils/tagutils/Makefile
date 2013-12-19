@@ -10,7 +10,7 @@ MASTER_SITES=	http://releases.chipx86.com/leaftag/tagutils/
 MAINTAINER=	kaeru@inigo-tech.com
 COMMENT=	A command line tool for tagging files
 
-LIB_DEPENDS=	leaftag.0:${PORTSDIR}/devel/libleaftag
+LIB_DEPENDS=	libleaftag.so:${PORTSDIR}/devel/libleaftag
 
 GNU_CONFIGURE=	yes
 USES=		gmake pathfix pkgconfig

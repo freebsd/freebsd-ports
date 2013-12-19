@@ -1,6 +1,6 @@
---- Zend/zend_list.h.orig	2012-01-01 14:15:04.000000000 +0100
-+++ Zend/zend_list.h	2012-03-02 10:36:42.000000000 +0100
-@@ -71,9 +71,9 @@
+--- Zend/zend_list.h.orig	2013-12-10 19:32:43.000000000 +0000
++++ Zend/zend_list.h	2013-12-13 21:55:53.929236061 +0000
+@@ -71,9 +71,9 @@ int zend_init_rsrc_list_dtors(void);
  void zend_destroy_rsrc_list_dtors(void);
  
  ZEND_API int zend_list_insert(void *ptr, int type TSRMLS_DC);
@@ -13,7 +13,7 @@
  
  #define zend_list_addref(id)		_zend_list_addref(id TSRMLS_CC)
  #define zend_list_delete(id)		_zend_list_delete(id TSRMLS_CC)
-@@ -82,7 +82,7 @@
+@@ -82,7 +82,7 @@ ZEND_API void *_zend_list_find(int id, i
  ZEND_API int zend_register_resource(zval *rsrc_result, void *rsrc_pointer, int rsrc_type TSRMLS_DC);
  ZEND_API void *zend_fetch_resource(zval **passed_id TSRMLS_DC, int default_id, const char *resource_type_name, int *found_resource_type, int num_resource_types, ...);
  

@@ -28,14 +28,10 @@ DOCS=		AUTHORS ChangeLog ChangeLog-2011 INSTALL NEWS README \
 INFO=		gcrypt
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"
 CONFIGURE_ARGS+=	--disable-asm
-.if (${OSVERSION} >= 1000000)
-BROKEN=	will not compile. See pr ports/166388
-.endif
 
 .elif ${ARCH} == "armv6"
 USE_GCC=4.2+
@@ -58,8 +54,8 @@ pre-configure:
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 regression-test: build

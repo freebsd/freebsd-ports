@@ -10,9 +10,6 @@ COMMENT=	Displays a wire-frame rotating plyhedron
 XORG_CAT=	app
 USE_XORG=	x11
 
-PLIST_FILES=	bin/ico
+PLIST_FILES=	bin/ico man/man1/ico.1.gz
 
-MAN1=		ico.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

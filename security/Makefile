@@ -51,7 +51,6 @@
     SUBDIR += bsdsfv
     SUBDIR += bsmtrace
     SUBDIR += bsp_upektfmess
-    SUBDIR += bubblegum
     SUBDIR += bugs
     SUBDIR += burpsuite
     SUBDIR += ca_root_nss
@@ -251,6 +250,7 @@
     SUBDIR += kpcli
     SUBDIR += krb5
     SUBDIR += krb5-appl
+    SUBDIR += krb5-maint
     SUBDIR += kripp
     SUBDIR += kwallet
     SUBDIR += l0pht-watch
@@ -378,7 +378,6 @@
     SUBDIR += openvpn-beta
     SUBDIR += openvpn-devel
     SUBDIR += ophcrack
-    SUBDIR += opieprint
     SUBDIR += orthrus
     SUBDIR += osiris
     SUBDIR += ossec-hids-client
@@ -933,7 +932,6 @@
     SUBDIR += snort-rep
     SUBDIR += snortreport
     SUBDIR += snortsam
-    SUBDIR += snortsms
     SUBDIR += snortsnarf
     SUBDIR += softhsm
     SUBDIR += spass

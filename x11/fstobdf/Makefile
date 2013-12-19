@@ -10,9 +10,6 @@ COMMENT=	Generate BDF font from X font server
 XORG_CAT=	app
 USE_XORG=	x11 libfs
 
-PLIST_FILES=	bin/fstobdf
+PLIST_FILES=	bin/fstobdf man/man1/fstobdf.1.gz
 
-MAN1=		fstobdf.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

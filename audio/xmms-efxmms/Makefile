@@ -11,7 +11,7 @@ DISTNAME=	EFXmms-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Send the XMMS audio output through a queue of multiple effect plugins
 
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 USES=		gmake
 NO_STAGE=	yes

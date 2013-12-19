@@ -8,7 +8,7 @@
 -BINDIR = $(TINKERDIR)/bin
 -LINKDIR = /usr/local/bin
 +TINKERDIR = ${WRKDIR}
-+BINDIR = ${PREFIX}/bin
++BINDIR = ${DESTDIR}${PREFIX}/bin
 +#LINKDIR = /usr/local/bin
  
  ####################################################################

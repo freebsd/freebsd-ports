@@ -42,7 +42,7 @@
  	oss->ext.private_data = oss;
 --- oss/pcm_oss.c.orig	2009-08-31 21:09:41.000000000 +0800
 +++ oss/pcm_oss.c	2009-09-28 14:54:12.000000000 +0800
-@@ -22,17 +22,55 @@
+@@ -22,17 +22,48 @@
  #include <sys/ioctl.h>
  #include <alsa/asoundlib.h>
  #include <alsa/pcm_external.h>
@@ -54,18 +54,11 @@
 +#define ARRAY_SIZE(x)	(sizeof(x) / sizeof(*(x)))
 +
 +#ifdef __FreeBSD__
-+/* #define FREEBSD_OSS_USE_IO_PTR	1 */
-+/* #define FREEBSD_OSS_BLKCNT_P2	1 */
-+/* #define FREEBSD_OSS_DEBUG_VERBOSE	1 */
-+#undef FREEBSD_OSS_USE_IO_PTR	/* _IPTR is buggy ... Grr... */
-+#undef FREEBSD_OSS_BLKCNT_P2
-+#undef FREEBSD_OSS_DEBUG_VERBOSE
-+
 +#define FREEBSD_OSS_RATE_MIN	1
 +#define FREEBSD_OSS_RATE_MAX	384000
 +
 +#define FREEBSD_OSS_CHANNELS_MIN	1
-+#if __FreeBSD_version >= 800096
++#ifndef __DragonFly__
 +#define FREEBSD_OSS_CHANNELS_MAX	8
 +#else
 +#define FREEBSD_OSS_CHANNELS_MAX	2
@@ -73,7 +66,7 @@
 +
 +#define FREEBSD_OSS_BUFSZ_MAX	131072
 +#define FREEBSD_OSS_BLKCNT_MIN	2
-+#define FREEBSD_OSS_BLKSZ_MIN	16 /* (FREEBSD_OSS_CHANNEL_MAX * 4) */
++#define FREEBSD_OSS_BLKSZ_MIN	16 /* (FREEBSD_OSS_CHANNELS_MAX * 4) */
 +
 +#define FREEBSD_OSS_BUFSZ_MIN	(FREEBSD_OSS_BLKCNT_MIN * FREEBSD_OSS_BLKSZ_MIN)
 +#define FREEBSD_OSS_BLKCNT_MAX	(FREEBSD_OSS_BUFSZ_MAX / FREEBSD_OSS_BUFSZ_MIN)
@@ -461,7 +454,7 @@
  
  	if ((flags = fcntl(oss->fd, F_GETFL)) < 0) {
  		err = -errno;
-@@ -229,10 +530,128 @@
+@@ -229,10 +530,146 @@
  	return 0;
  }
  
@@ -477,6 +470,9 @@
 +	};
 +#ifdef FREEBSD_OSS_BLKCNT_P2
 +	unsigned int period_list[30];
++#endif
++#ifdef FREEBSD_OSS_BUFSZ_P2
++	unsigned int bufsz_list[30];
 +#endif
 +	unsigned int nformats;
 +	unsigned int format[ARRAY_SIZE(oss_formats_tab)];
@@ -580,6 +576,21 @@
 +	if (err < 0)
 +		return err;
 +
++#ifdef FREEBSD_OSS_BUFSZ_P2
++	tmp = 0;
++	for (i = 1; i < 31 && tmp < ARRAY_SIZE(bufsz_list); i++) {
++		if ((1 << i) > FREEBSD_OSS_BUFSZ_MAX)
++			break;
++		if ((1 << i) < FREEBSD_OSS_BUFSZ_MIN)
++			continue;
++		bufsz_list[tmp++] = 1 << i;
++	}
++
++	if (tmp > 0)
++		err = snd_pcm_ioplug_set_param_list(io,
++		    SND_PCM_IOPLUG_HW_BUFFER_BYTES, tmp, bufsz_list);
++	else
++#endif
 +	/* buffer size , not strictly ^2 */
 +	err = snd_pcm_ioplug_set_param_minmax(io,
 +	    SND_PCM_IOPLUG_HW_BUFFER_BYTES, FREEBSD_OSS_BUFSZ_MIN,

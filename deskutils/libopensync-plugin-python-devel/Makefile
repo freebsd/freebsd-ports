@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python plugin for the OpenSync framework
 
-LIB_DEPENDS=	opensync.1:${PORTSDIR}/devel/libopensync
+LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync
 
 CONFLICTS=	libopensync-plugin-python-0.2*
 

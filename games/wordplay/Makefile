@@ -9,7 +9,7 @@ MASTER_SITES=	http://hsvmovies.com/static_subpages/personal_orig/wordplay/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Simple program to generate anagrams
 
 NO_WRKSUBDIR=	yes

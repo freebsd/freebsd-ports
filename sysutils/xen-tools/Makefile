@@ -15,6 +15,7 @@ DISTFILES=	xen-${PORTVERSION}.tar.gz
 
 USES=		gmake
 USE_PYTHON=	yes
+MAKE_ENV+=	PYTHON=${PYTHON_CMD}
 
 ONLY_FOR_ARCHS=		amd64 i386 ia64
 ONLY_FOR_ARCHS_REASON=	"not yet ported to anything other than amd64, i386, or ia64"
@@ -32,9 +33,9 @@ PLIST_FILES=	lib/libxenstore.so.3.0 \
 		bin/xenstore-write
 
 do-build:
-	cd ${WRKSRC}/tools && ${GMAKE} -C include
-	cd ${WRKSRC}/tools/misc && ${GMAKE} xen-detect
-	cd ${WRKSRC}/tools/xenstore && ${GMAKE} clients
+	cd ${WRKSRC}/tools && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} -C include
+	cd ${WRKSRC}/tools/misc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} xen-detect
+	cd ${WRKSRC}/tools/xenstore && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} clients
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/misc/xen-detect ${STAGEDIR}${PREFIX}/bin

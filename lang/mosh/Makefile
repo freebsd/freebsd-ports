@@ -10,11 +10,10 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	mjt@cltn.org
 COMMENT=	A Fast R6RS Scheme interpreter
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		onig.2:${PORTSDIR}/devel/oniguruma5
+LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
+		libonig.so:${PORTSDIR}/devel/oniguruma5
 
-USE_GCC=	4.2+
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/lib
 CFLAGS+=	-I${LOCALBASE}/include
@@ -27,10 +26,6 @@ MAN1=	mosh.1 mosh_config.1
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-BROKEN=	Does not build on FreeBSD 7.x
-.endif
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerpc, or sparc64

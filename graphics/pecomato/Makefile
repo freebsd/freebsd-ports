@@ -18,7 +18,7 @@ MAKEFILE=	Makefile.unix
 PLIST_FILES=	bin/pecomato man/man1/pecomato.1.gz
 
 post-build:
-	${PYTHON} ${WRKSRC}/devtools/txt2tags.py --no-rc -t man \
+	${PYTHON_CMD} ${WRKSRC}/devtools/txt2tags.py --no-rc -t man \
 		-i ${WRKSRC}/doc/manpage.t2t -o ${WRKSRC}/doc/${PORTNAME}.1
 
 post-patch:

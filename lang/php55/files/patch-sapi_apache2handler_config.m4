@@ -1,6 +1,6 @@
---- sapi/apache2handler/config.m4.orig	2013-10-18 12:22:26.576545216 +0000
-+++ sapi/apache2handler/config.m4	2013-10-18 12:23:00.903131412 +0000
-@@ -67,7 +67,7 @@
+--- sapi/apache2handler/config.m4.orig	2013-12-10 23:31:06.000000000 +0000
++++ sapi/apache2handler/config.m4	2013-12-13 21:50:25.488258534 +0000
+@@ -67,7 +67,7 @@ if test "$PHP_APXS2" != "no"; then
    fi
  
    APXS_LIBEXECDIR='$(INSTALL_ROOT)'`$APXS -q LIBEXECDIR`

@@ -14,7 +14,7 @@ DISTFILES=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}:source \
 		numpy-user-${PORTVERSION}.pdf:doc
 EXTRACT_ONLY=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}
 
-MAINTAINER=	llwang@infor.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	The New Numeric Extension to Python
 
 LICENSE=	BSD
@@ -56,9 +56,6 @@ DISTFILES+=	${FP_ARCH}/fenv.c?p=203441:fp ${FP_ARCH}/fenv.h?p=203441:fp
 
 .if ${PORT_OPTIONS:MATLAS}
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-.if !exists(${LOCALBASE}/lib/libalapack.a)
-IGNORE=	atlas needs to be built with WITH_STATIC for numpy to function properly
-.endif
 .else
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack \
 		blas.2:${PORTSDIR}/math/blas

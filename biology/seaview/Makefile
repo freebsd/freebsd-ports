@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiple DNA/protein sequence alignment editor
 
-LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
 OPTIONS_DEFINE=	PDFLIB
 OPTIONS_DEFAULT=PDFLIB
@@ -39,7 +39,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPDFLIB}
-LIB_DEPENDS+=	pdf:${PORTSDIR}/print/pdflib
+LIB_DEPENDS+=	libpdf.so:${PORTSDIR}/print/pdflib
 MAKE_ENV+=	LPDF='-L${LOCALBASE}/lib -lpdf'
 .else
 MAKE_ENV+=	PDF_PS_FLAGS='-DNO_PDF'

@@ -42,7 +42,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.1:${PORTSDIR}/devel/py-dbus
 .endif
 
 .if ${PORT_OPTIONS:MHAL}
-LIB_DEPENDS+=	hal:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal
 .endif
 
 .if ${PORT_OPTIONS:MNOTIFY}

@@ -1,8 +1,8 @@
---- main/php_config.h.in.orig	Wed Jan 11 15:25:52 2006
-+++ main/php_config.h.in	Wed May  3 09:38:09 2006
-@@ -2760,6 +2760,9 @@
- /* Define if uint32_t type is present.  */
- #undef HAVE_UINT32_T
+--- main/php_config.h.in.orig	2013-12-10 20:12:52.000000000 +0000
++++ main/php_config.h.in	2013-12-13 21:55:54.207235635 +0000
+@@ -2375,6 +2375,9 @@
+ /* Define if processor uses big-endian word */
+ #undef WORDS_BIGENDIAN
  
 +/* Include external shared modules configurations */
 +#include "ext/php_config.h"

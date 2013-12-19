@@ -10,8 +10,8 @@ MASTER_SITES=	ftp://svr-ftp.eng.cam.ac.uk/pub/comp.speech/synthesis/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speech synthesizer
 
-LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm	\
-		audio:${PORTSDIR}/audio/nas
+LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm	\
+		libaudio.so:${PORTSDIR}/audio/nas
 
 NO_STAGE=	yes
 

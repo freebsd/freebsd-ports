@@ -1,0 +1,11 @@
+--- cmd/wmii/Makefile.orig
++++ cmd/wmii/Makefile
+@@ -9,7 +9,7 @@
+ 
+ PACKAGES += $(X11PACKAGES) xext xrandr xrender xinerama
+ 
+-LIB =	$(LIBIXP)
++LIBS += $(LIBIXP)
+ LIBS += -lm $(LIBS9)
+ 
+ CFLAGS += $(INCICONV) -DIXP_NEEDAPI=97

@@ -12,7 +12,7 @@ COMMENT=	Musicpd last.fm client
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS+=	mpdclient.2:${PORTSDIR}/audio/libmpdclient
+LIB_DEPENDS+=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient
 
 USE_BZIP2=	yes
 NO_STAGE=	yes
@@ -29,10 +29,10 @@ SOUP_DESC=	Use libsoup instead of libcurl
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSOUP}
-LIB_DEPENDS+=	soup-2.4.1:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS+=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 CONFIGURE_ARGS+=	--with-http-client=soup
 .else
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--with-http-client=curl
 .endif
 

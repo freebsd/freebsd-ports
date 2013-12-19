@@ -19,21 +19,20 @@ PORTDOCS=	*
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-src!=		${MAKE} -C ${PORTSDIR}/net/cvsup-without-gui -V WRKSRC
+get_src=	${MAKE} -C ${PORTSDIR}/net/cvsup-without-gui -V WRKSRC
 
 do-extract:
 	${MKDIR} ${WRKSRC}
-	${SED} 's:^#!/usr/local/bin/python:#!${PYTHON_CMD}:' <${src}/contrib/cvsupchk/cvsupchk >${WRKSRC}/cvsupchk
+	${SED} 's:^#!/usr/local/bin/python:#!${PYTHON_CMD}:' <$$(${get_src})/contrib/cvsupchk/cvsupchk >${WRKSRC}/cvsupchk
 
 do-install:
-	${MKDIR} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/cvsupchk ${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/cvsupchk ${STAGEDIR}${PREFIX}/bin/
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${src}/contrib/cvsupchk/README ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} $$(${get_src})/contrib/cvsupchk/README ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.post.mk>

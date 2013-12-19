@@ -13,7 +13,7 @@ COMMENT=	Jukebox, tagger and music collection manager
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib
 
 CONFLICTS_INSTALL=	kdemultimedia-4.[1-8].*
 

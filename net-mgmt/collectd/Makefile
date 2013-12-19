@@ -3,7 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	4.10.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -410,7 +410,7 @@ PLIST_SUB+=	TOKYOTYRANT="@comment "
 
 .if ${PORT_OPTIONS:MLIBVIRT}
 CONFIGURE_ARGS+=--enable-libvirt
-LIB_DEPENDS+=	virt.1001:${PORTSDIR}/devel/libvirt
+LIB_DEPENDS+=	libvirt.so:${PORTSDIR}/devel/libvirt
 PLIST_SUB+=	VIRT=""
 .else
 CONFIGURE_ARGS+=--disable-libvirt

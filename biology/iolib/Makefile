@@ -13,7 +13,7 @@ COMMENT=	General purpose trace file (and Experiment File) reading interface
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 USE_AUTOTOOLS=	libtool:env
 GNU_CONFIGURE=	yes

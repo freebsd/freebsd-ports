@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.linuxmotors.com/sets/downloads/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	This is an implementation of the sets game
 
 LICENSE=	GPLv3

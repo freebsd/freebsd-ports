@@ -13,7 +13,7 @@ COMMENT=	Virtual keyboard for JACK MIDI
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack
+LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 
 MAN1=		jack-keyboard.1
 
@@ -28,7 +28,7 @@ OPTIONS_DEFAULT=       LASH
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLASH}
-LIB_DEPENDS+=  lash:${PORTSDIR}/audio/lash
+LIB_DEPENDS+=	liblash.so:${PORTSDIR}/audio/lash
 CMAKE_ARGS+=	-DLashEnable:BOOL=On
 .else
 CMAKE_ARGS+=	-DLashEnable:BOOL=Off

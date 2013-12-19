@@ -12,10 +12,10 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Software Development Kit
 
-LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion \
-		boost_thread:${PORTSDIR}/devel/boost-libs \
-		hunspell-1.3.0:${PORTSDIR}/textproc/hunspell \
-		qca.2:${PORTSDIR}/devel/qca
+LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion \
+		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
+		libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
+		libqca.so:${PORTSDIR}/devel/qca
 BUILD_DEPENDS=	${LOCALBASE}/include/ltdl.h:${PORTSDIR}/devel/libltdl
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 

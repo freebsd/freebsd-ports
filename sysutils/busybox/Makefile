@@ -23,7 +23,6 @@ MAKE_ARGS+=	SKIP_STRIP=y CC="${CC}" HOSTCC="${CC}" CXX="${CXX}" HOSTCXX="${CXX}"
 USES=		gmake
 USE_BZIP2=	yes
 # avoid clang, breaks in findutils/find.c l. 752+,
-NO_STAGE=	yes
 # uses a GCC extension/invalid C code:
 USE_GCC?=	4.2+
 
@@ -50,10 +49,10 @@ do-configure:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} oldconfig
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
-	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
-	${RM} -f ${DOCSDIR}/.gitignore
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	${RM} -f ${STAGEDIR}${DOCSDIR}/.gitignore
 .endif
 
 .include <bsd.port.mk>

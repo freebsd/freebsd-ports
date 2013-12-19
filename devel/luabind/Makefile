@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library that helps you create bindings between C++ and Lua
 
-LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
 
 USE_LUA=	5.1+
 USE_LDCONFIG=	yes

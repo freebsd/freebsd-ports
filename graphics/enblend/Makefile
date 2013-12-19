@@ -13,13 +13,13 @@ COMMENT=	Tool for image blending with multiresolution splines
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo \
 		OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		lcms2:${PORTSDIR}/graphics/lcms2 \
-		xmi:${PORTSDIR}/graphics/plotutils \
-		tiff:${PORTSDIR}/graphics/tiff \
-		boost_filesystem:${PORTSDIR}/devel/boost-libs \
-		vigraimpex:${PORTSDIR}/graphics/vigra \
-		gsl:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
+		libxmi.so:${PORTSDIR}/graphics/plotutils \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
+		libvigraimpex.so:${PORTSDIR}/graphics/vigra \
+		libgsl.so:${PORTSDIR}/math/gsl
 RUN_DEPENDS=	OpenEXR>=1.0:${PORTSDIR}/graphics/OpenEXR
 
 USE_AUTOTOOLS=	automake:env autoconf:env

@@ -26,6 +26,11 @@ ALL_TARGET=	build
 LICENSE=	GPLv2
 
 NO_STAGE=	yes
+post-patch:
+	${REINPLACE_CMD} -e 's|@python|@${PYTHON_CMD}|' \
+		${WRKSRC}/Makefile \
+		${WRKSRC}/src/Makefile
+
 pre-configure:
 	${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|'	\
 		${WRKSRC}/tvdownloader.sh

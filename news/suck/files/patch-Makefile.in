@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Mar 28 20:22:38 2003
-+++ Makefile.in	Tue Apr  1 07:07:42 2003
+--- Makefile.in.orig	2003-03-28 20:22:38.000000000 +0100
++++ Makefile.in	2013-12-19 08:04:14.000000000 +0100
 @@ -6,7 +6,7 @@
  ############################################################################
  
@@ -51,7 +51,7 @@
  #SSL_LIB=-lssl -lcrypto
  #SSL_DEFS=-I/usr/local/ssl/include -DHAVE_LIBSSL
  #SSL_LIB_LOC=-L/usr/local/ssl/lib
-@@ -110,7 +112,7 @@
+@@ -110,16 +112,16 @@
  @SET_MAKE@
  
  CFLAGS = @CFLAGS@
@@ -60,3 +60,39 @@
  LDFLAGS = @LDFLAGS@ $(DMALLOC_LD) $(OS2_LD)
  DEFS = @DEFS@ -DSUCK_VERSION=\"$(VERSION)\" $(DMALLOC_DEFS) $(OS2_DEFS) $(DMALLOC_INC)
  LIBS = @LIBS@ $(DMALLOC_LIB)
+ 
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+-bindir = @bindir@
++bindir = ${DESTDIR}@bindir@
+ manext = 1
+-mandir = @mandir@/man$(manext)
++mandir = ${DESTDIR}@mandir@/man$(manext)
+ srcdir = @srcdir@
+ MAN = $(srcdir)/man
+ SMAN= $(srcdir)/Spanish.docs
+@@ -177,7 +179,7 @@
+ 
+ install_bin: suck rpost testhost lmove
+ 	- mkdir -p $(bindir)
+-	- strip -s suck rpost testhost lmove
++	- strip -x suck rpost testhost lmove
+ 	$(INSTALL_PROGRAM) suck $(bindir)/suck
+ 	$(INSTALL_PROGRAM) rpost $(bindir)/rpost
+ 	$(INSTALL_PROGRAM) testhost $(bindir)/testhost
+@@ -195,7 +197,7 @@
+ #	$(MAKE) -C $(SMAN)
+ 
+ install_lpost: lpost $(MAN)/lpost.1
+-	- strip -s lpost
++	- strip -x lpost
+ 	$(INSTALL_PROGRAM) lpost $(bindir)/lpost
+ 	$(INSTALL_DATA) $(MAN)/lpost.1 $(mandir)/lpost.$(manext)
+ 
+@@ -295,3 +297,6 @@
+ 	rm -rf /tmp/suck*
+ # now generate the .sig files
+ 	#pgps -b ~/suck*.rpm ~/suck*.tar.gz
++
++# Add missing dependency to allow parallel (-jX) builds
++active.o batch.o both.o chkhistory.o chkhistory_db.o db.o dedupe.o killfile.o killprg.o lmove.o rpost.o suck.o suckutils.o testhost.o timer.o xover.o: phrases.h

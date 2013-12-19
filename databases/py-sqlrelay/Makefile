@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python modules to access to SQL Relay
 
 EXTRACT_DEPENDS=	${NONEXISTENT}:${SQLRELAY_PORTDIR}:patch
-LIB_DEPENDS=	sqlrclient.0:${SQLRELAY_PORTDIR}
+LIB_DEPENDS=	libsqlrclient.so:${SQLRELAY_PORTDIR}
 
 USE_PYTHON=	yes
 USES=		perl5

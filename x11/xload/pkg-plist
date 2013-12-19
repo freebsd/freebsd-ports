@@ -1,4 +1,5 @@
 bin/xload
+man/man1/xload.1.gz
 share/X11/app-defaults/XLoad
 @dirrmtry share/X11/app-defaults
 @dirrmtry share/X11

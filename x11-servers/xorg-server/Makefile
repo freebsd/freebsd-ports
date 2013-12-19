@@ -13,7 +13,7 @@ DISTNAME=	xorg-server-${PORTVERSION}
 MAINTAINER=	x11@FreeBSD.org
 COMMENT?=	X.Org X server and related programs
 
-LIB_DEPENDS=	drm:${PORTSDIR}/graphics/libdrm
+LIB_DEPENDS=	libdrm.so:${PORTSDIR}/graphics/libdrm
 RUN_DEPENDS=	xkeyboard-config>=2.5:${PORTSDIR}/x11/xkeyboard-config \
 		xkbcomp:${PORTSDIR}/x11/xkbcomp
 
@@ -74,24 +74,12 @@ CONFIGURE_ARGS?=--disable-dmx --disable-xvfb --disable-xnest \
 
 .if ${SLAVE_PORT} == "no"
 SUB_FILES=	pkg-install pkg-deinstall
-MAN1=		Xorg.1 \
-		Xserver.1 \
-		cvt.1 \
-		gtf.1
-MAN4=		exa.4 \
-		fbdevhw.4
-MAN5=		xorg.conf.5
-
-.if defined(WITH_NEW_XORG)
-MAN5+=		xorg.conf.d.5
-.endif
 .else
 # for slave ports we need to overwrite PLIST, so it doesn't overwrite
 # PLIST_FILES, with the masterport plist.
 PLIST=		${.CURDIR}/pkg-plist
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OPENSSL_BASE)
@@ -102,7 +90,7 @@ CONFIGURE_ENV=	SHA1_LIB="-L/usr/lib -lcrypto" SHA1_CFLAGS="-I/usr/include"
 .endif
 
 .if ${PORT_OPTIONS:MHAL}
-LIB_DEPENDS+=	hal:${PORTSDIR}/sysutils/hal
+LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal
 CONFIGURE_ARGS+=	--enable-config-hal=yes
 .else
 CONFIGURE_ARGS+=	--enable-config-hal=no
@@ -120,8 +108,10 @@ CONFIGURE_ARGS+=	--enable-aiglx=no
 
 .if ${PORT_OPTIONS:MSUID}
 CONFIGURE_ARGS+=--enable-install-setuid=yes
+PLIST_SUB+=	SUID=""
 .else
 CONFIGURE_ARGS+=--enable-install-setuid=no
+PLIST_SUB+=	SUID="@comment"
 .endif
 
 .if ${ARCH} == i386
@@ -199,18 +189,21 @@ post-configure:
 .endif
 
 .if ${SLAVE_PORT} == "no"
-pre-su-install:
+post-install:
 # The .xorg dir because else the xorg-server might not load the correct 
 # libglx module.
-	${MKDIR} ${PREFIX}/lib/xorg/modules/extensions/.xorg
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xorg/modules/extensions/.xorg
 	${INSTALL_LIB} ${WRKSRC}/hw/xfree86/dixmods/.libs/libglx.so \
-		${PREFIX}/lib/xorg/modules/extensions/.xorg/
+		${STAGEDIR}${PREFIX}/lib/xorg/modules/extensions/.xorg/
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/xorg/modules/*.so
+.if !defined(WITH_NEW_XORG)
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/xorg/modules/extensions/*.so
+.endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/xorg/modules/multimedia/*.so
 
-post-install:
 .if defined(WITH_NEW_XORG)
-	@${MKDIR} ${PREFIX}/share/X11/xorg.conf.d
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/X11/xorg.conf.d
 .endif
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
+.endif # ! SLAVE_PORT
 
 .include <bsd.port.post.mk>

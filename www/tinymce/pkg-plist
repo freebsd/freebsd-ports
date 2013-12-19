@@ -135,3 +135,5 @@
 @dirrm %%WWWDIR%%/js/tinymce
 @dirrm %%WWWDIR%%/js
 @dirrmtry %%WWWDIR%%
+@owner
+@group

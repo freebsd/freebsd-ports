@@ -78,11 +78,17 @@ CONFIGURE_ARGS+=--with-pg_config=/nopostgres
 # preinstalled on 9.1-RELEASE.  Worked fine on second try.
 USE_GNOME=	glib20 gtk20	# sview
 PLIST_FILES+=	bin/sview
-.else
-# Can't disable configure test, so make it fail
+.endif
+
 post-patch:
+# Can't disable configure test, so make it fail
+.if ! ${PORT_OPTIONS:MGTK2}
 	${REINPLACE_CMD} -e 's|min_gtk_version=2.7.1|min_gtk_version=200.7.1|' \
 		${WRKSRC}/configure
 .endif
+	@${REINPLACE_CMD} \
+		-e 's|/usr/bin/env python|${PYTHON_CMD}|g' \
+		${WRKSRC}/doc/html/shtml2html.py \
+		${WRKSRC}/doc/man/man2html.py
 
 .include <bsd.port.mk>

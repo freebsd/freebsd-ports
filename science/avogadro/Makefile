@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	avogadro
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	science
 MASTER_SITES=	SF
 
@@ -12,14 +11,15 @@ COMMENT=	Advanced molecular editor and viewer
 
 LICENSE=	GPLv2 # (or later)
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
-LIB_DEPENDS=	openbabel:${PORTSDIR}/science/openbabel
+BUILD_DEPENDS=	eigen2>2:${PORTSDIR}/math/eigen2
+LIB_DEPENDS=	libopenbabel.so:${PORTSDIR}/science/openbabel
 
 OPTIONS_DEFINE=	PYTHON
 OPTIONS_DEFAULT=PYTHON
+OPTIONS_SUB=	yes
 
 USE_BZIP2=	yes
-USES=		cmake pkgconfig
+USES=		cmake desktop-file-utils pkgconfig
 USE_GL=		glu
 USE_QT4=	gui network opengl \
 		linguist_build moc_build qmake_build rcc_build uic_build
@@ -27,26 +27,23 @@ CMAKE_ARGS=	-DENABLE_GLSL=OFF \
 		-DQT_MKSPECS_RELATIVE=share/qt4/mkspecs
 USE_LDCONFIG=	yes
 
-CFLAGS+=	-idirafter ${LOCALBASE}/include
+CFLAGS+=	-idirafter ${LOCALBASE}/include/eigen2 \
+		-idirafter ${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		avogadro.1 avopkg.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-CMAKE_ARGS+=	-DENABLE_PYTHON=ON
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 BUILD_DEPENDS+=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}sip>0:${PORTSDIR}/devel/py-sip
-LIB_DEPENDS+=	boost_python:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS+=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
 RUN_DEPENDS+=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}sip>0:${PORTSDIR}/devel/py-sip
-PLIST_SUB+=	PYTHON=""
+CMAKE_ARGS+=	-DENABLE_PYTHON=ON \
+		-DPYTHON_INCLUDE_DIR:PATH=${WRKDIR}/include/${PYTHON_VERSION}
 .else
 CMAKE_ARGS+=	-DENABLE_PYTHON=OFF
-PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 post-patch:
@@ -55,5 +52,16 @@ post-patch:
 		 /PC_FILES/s|$${LIB_INSTALL_DIR}|libdata|' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e \
 		's|share/man|man|' ${WRKSRC}/doc/CMakeLists.txt
+
+pre-configure:
+.if ${PORT_OPTIONS:MPYTHON}
+	@${MKDIR} ${WRKDIR}/include/${PYTHON_VERSION}
+	@${FIND} ${PYTHON_INCLUDEDIR} ! -name "pyport.h" -type f \
+		-maxdepth 1 | ${XARGS} -J % ${LN} -sf % \
+		${WRKDIR}/include/${PYTHON_VERSION}
+	@${SED} -e 's|^#ifdef _PY_PORT_CTYPE_UTF8_ISSUE|#if 0|' \
+		${PYTHON_INCLUDEDIR}/pyport.h > \
+		${WRKDIR}/include/${PYTHON_VERSION}/pyport.h
+.endif
 
 .include <bsd.port.mk>

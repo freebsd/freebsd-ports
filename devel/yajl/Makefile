@@ -5,7 +5,7 @@ PORTVERSION=	2.0.4
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable JSON parsing and serialization library in ANSI C
 
 USE_GITHUB=	yes

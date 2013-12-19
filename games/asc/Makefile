@@ -18,10 +18,10 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/lib/libloki.so:${PORTSDIR}/devel/loki
-LIB_DEPENDS=	vorbis:${PORTSDIR}/audio/libvorbis \
-		boost_regex:${PORTSDIR}/devel/boost-libs \
-		sigc-1.2.5:${PORTSDIR}/devel/libsigc++12 \
-		expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libboost_regex.so:${PORTSDIR}/devel/boost-libs \
+		libsigc-1.2.so:${PORTSDIR}/devel/libsigc++12 \
+		libexpat.so:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	MUSIC XVID
@@ -64,7 +64,7 @@ PLIST_FILES+=	${ASC_MUSICDIR}/${file}
 .endif
 
 .if ${PORT_OPTIONS:MXVID}
-LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
+LIB_DEPENDS+=	libxvidcore.so:${PORTSDIR}/multimedia/xvid
 .else
 CONFIGURE_ENV+=	ac_cv_lib_xvidcore_xvid_encore=no
 .endif

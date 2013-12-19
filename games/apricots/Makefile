@@ -28,7 +28,7 @@ DESKTOP_ENTRIES="Apricots" \
 		false
 
 OPTIONS_DEFINE=	DOCS OPENAL
-OPTIONS_DEFAULT=DOCS OPENAL
+OPTIONS_DEFAULT=OPENAL
 
 .include <bsd.port.options.mk>
 

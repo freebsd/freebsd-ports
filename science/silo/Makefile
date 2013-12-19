@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	silo
-PORTVERSION=	4.9
+PORTVERSION=	4.9.1
 DISTVERSIONSUFFIX=	-bsd
 CATEGORIES=	science
 MASTER_SITES=	https://wci.llnl.gov/codes/${PORTNAME}/silo-${PORTVERSION}/
@@ -18,49 +18,39 @@ OPTIONS_RADIO=	EXCLUSIVE
 OPTIONS_RADIO_EXCLUSIVE=	FORTRAN QT4
 OPTIONS_DEFAULT=	QT4
 
-NO_LATEST_LINK=	yes
+OPTIONS_SUB=	yes
 
-USES=		readline
-USE_GMAKE=	yes
+USES=		gmake readline
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --disable-static
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
+FORTRAN_CONFIGURE_ENABLE=	fortran
+FORTRAN_USE=			FORTRAN=yes
+
+PYTHON_CONFIGURE_ENABLE=	pythonmodule
+PYTHON_USE=			PYTHON=yes
+
+QT4_USE=			XORG=xext,xi,xmu,xt \
+				QT4=gui,linguist_build,moc_build,uic_build
+QT4_CONFIGURE_ON=		--with-Qt-dir=${QT_PREFIX} \
+				--with-Qt-lib="QtGui -lQtCore"
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MFORTRAN}
-USE_FORTRAN=	yes
-.else
-CONFIGURE_ARGS+=	--disable-fortran
-.endif
-
 .if ${PORT_OPTIONS:MHDF5}
-LIB_DEPENDS+=	hdf5:${PORTSDIR}/science/hdf5
+LIB_DEPENDS+=	libhdf5.so:${PORTSDIR}/science/hdf5
 CONFIGURE_ARGS+=	--with-hdf5=${LOCALBASE}/include,${LOCALBASE}/lib
-PLIST_SUB+=	HDF5="" NOHDF5="@comment "
+PLIST_SUB+=	SUFX_HDF5="h5"
 .else
-PLIST_SUB+=	HDF5="@comment " NOHDF5=""
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	yes
-CONFIGURE_ARGS+=	--enable-pythonmodule
-PLIST_SUB+=	PYTHON=""
-.else
-PLIST_SUB+=	PYTHON="@comment "
+PLIST_SUB+=	SUFX_HDF5=""
 .endif
 
 .if ${PORT_OPTIONS:MQT4}
-USE_XORG=	xext xi xmu xt
-USE_QT4=	qt3support linguist_build moc_build uic_build
 QT_NONSTANDARD=	yes
-CONFIGURE_ARGS+=	--with-Qt-dir=${QT_PREFIX}
-PLIST_SUB+=	QT4=""
 DESKTOP_ENTRIES="Silex" "Silex browser for Silo files" "" "silex" "" true
 .else
 CONFIGURE_ARGS+=	--disable-silex
-PLIST_SUB+=	QT4="@comment "
 .endif
 
 post-extract:
@@ -86,7 +76,7 @@ post-patch:
 
 .if defined(MAINTAINER_MODE)
 regression-test: build
-	@cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${GMAKE} check
+	@cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 .endif
 
 .include <bsd.port.mk>

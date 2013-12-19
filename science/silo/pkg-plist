@@ -9,9 +9,6 @@ include/silo.h
 include/silo.inc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/Silo.la
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/Silo.so
-%%NOHDF5%%lib/libsilo.la
-%%NOHDF5%%lib/libsilo.so
-%%NOHDF5%%lib/libsilo.so.0
-%%HDF5%%lib/libsiloh5.la
-%%HDF5%%lib/libsiloh5.so
-%%HDF5%%lib/libsiloh5.so.0
+lib/libsilo%%SUFX_HDF5%%.la
+lib/libsilo%%SUFX_HDF5%%.so
+lib/libsilo%%SUFX_HDF5%%.so.0

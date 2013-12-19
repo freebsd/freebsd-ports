@@ -11,9 +11,9 @@ COMMENT=	Qt C++ library for the Last.fm webservices
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
-		fftw3f:${PORTSDIR}/math/fftw3-float \
-		samplerate:${PORTSDIR}/audio/libsamplerate
+LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
+		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 
 GH_ACCOUNT=	lastfm
 GH_COMMIT=	5826fe6

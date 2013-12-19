@@ -12,7 +12,6 @@ COMMENT=	Implementation of ANSI Forth
 USE_BZIP2=	yes
 USES=		gmake perl5
 USE_PERL5=	build
-USE_GCC=	4.2+
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	pfe/configure
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"

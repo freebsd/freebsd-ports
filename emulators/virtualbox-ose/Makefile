@@ -3,6 +3,7 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	4.2.20
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -22,7 +23,8 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		kmk:${PORTSDIR}/devel/kBuild \
 		gtar:${PORTSDIR}/archivers/gtar \
-		cdrecord:${PORTSDIR}/sysutils/cdrtools
+		cdrecord:${PORTSDIR}/sysutils/cdrtools \
+		python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libxslt.so:${PORTSDIR}/textproc/libxslt \
 		libcurl.so:${PORTSDIR}/ftp/curl
@@ -46,7 +48,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --passive-mesa
 USE_LDCONFIG=	${PREFIX}/lib/virtualbox
 
-CONFLICTS=	bcc-[0-9]* compat9x-*
+CONFLICTS=	bcc-[0-9]*
 CONFLICTS_INSTALL=	virtualbox-ose-devel-[3,4]* virtualbox-ose-legacy-[3,4]* virtualbox-ose-additions-[3,4]* virtualbox-ose-additions-devel-[3,4]*
 
 VBOXUSER?=	vboxusers
@@ -176,11 +178,7 @@ pre-everything::
 post-patch:
 	@${ECHO} 'VBOX_PATH_APP_PRIVATE_ARCH = ${PREFIX}/lib/virtualbox' > ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_PATH_SHARED_LIBS = ${PREFIX}/lib/virtualbox' >> ${WRKSRC}/LocalConfig.kmk
-.if defined(_GCC_RUNTIME)
-	@${ECHO} 'VBOX_WITH_RUNPATH = ${_GCC_RUNTIME}:${PREFIX}/lib/virtualbox' >> ${WRKSRC}/LocalConfig.kmk
-.else
-	@${ECHO} 'VBOX_WITH_RUNPATH = ${PREFIX}/lib/virtualbox' >> ${WRKSRC}/LocalConfig.kmk
-.endif
+	@var=${_GCC_RUNTIME}; ${ECHO} "VBOX_WITH_RUNPATH = $${var:+$${var}:}${PREFIX}/lib/virtualbox" >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_PATH_APP_PRIVATE = ${DATADIR}' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_PATH_APP_DOCS = ${DOCSDIR}' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_INSTALLER = 1' >> ${WRKSRC}/LocalConfig.kmk

@@ -1,0 +1,11 @@
+--- input/makefile.orig	1995-01-02 22:48:40.000000000 +0100
++++ input/makefile	2013-12-18 11:20:24.000000000 +0100
+@@ -17,7 +17,7 @@
+ 
+ install:	$(PROGS)
+ 	$(MKDIR) $(DEST) $(DBIN)
+-	rm -f $(DEST)/newsspool
++	rm -f ${DESTDIR}$(DEST)/newsspool
+ 	$(TO) $(DEST) $(PROGS)
+ 	$(TO) $(RBIN) $(RCVRS)
+ 	$(TO) $(DBIN) $(DECS)

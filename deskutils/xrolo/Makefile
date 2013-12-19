@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic Rolodex
 
-LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
+LIB_DEPENDS=	libxview.so:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/xrolo
 

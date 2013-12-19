@@ -5,7 +5,7 @@ PORTVERSION=	20101107
 CATEGORIES=	security
 MASTER_SITES=	NETBSD/LOCAL_PORTS
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PGP signing, verification, encryption, and decryption program
 
 LICENSE=	BSD

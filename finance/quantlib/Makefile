@@ -11,7 +11,7 @@ DISTNAME=	QuantLib-${PORTVERSION}
 MAINTAINER=	dikshie@sfc.wide.ad.jp
 COMMENT=	A comprehensive software framework for quantitative finance
 
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 WRKSRC=		${WRKDIR}/QuantLib-${PORTVERSION}
 

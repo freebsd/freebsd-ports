@@ -16,13 +16,14 @@ CONFLICTS=	postgresql-libpqxx-[2-4].*
 PORTSCOUT=	limit:^2\.
 
 USE_PGSQL=	yes
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig shebangfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USE_PYTHON_BUILD=	yes
-USES=shebangfix
+
 SHEBANG_FILES=	tools/splitconfig
+python_CMD=	${PYTHON_CMD}
 
 CONFIGURE_ARGS=	--enable-shared
 

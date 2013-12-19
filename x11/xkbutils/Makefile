@@ -12,7 +12,4 @@ LICENSE=	MIT
 XORG_CAT=	app
 USE_XORG=	xkbfile x11 xaw inputproto
 
-MAN1=		xkbbell.1 xkbvleds.1 xkbwatch.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -15,12 +15,12 @@ COMMENT=	Lightweight JS unit testing using the V8 engine
 LICENSE=	AL2
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	gflags:${PORTSDIR}/devel/gflags \
-		glog:${PORTSDIR}/devel/glog \
-		protobuf:${PORTSDIR}/devel/protobuf \
-		re2:${PORTSDIR}/devel/re2 \
-		v8:${PORTSDIR}/lang/v8 \
-		xml2:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS=	libgflags.so:${PORTSDIR}/devel/gflags \
+		libglog.so:${PORTSDIR}/devel/glog \
+		libprotobuf.so:${PORTSDIR}/devel/protobuf \
+		libre2.so:${PORTSDIR}/devel/re2 \
+		libv8.so:${PORTSDIR}/lang/v8 \
+		libxml2.so:${PORTSDIR}/textproc/libxml2
 
 ALL_TARGET=	default
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2

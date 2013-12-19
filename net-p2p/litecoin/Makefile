@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	litecoin
-PORTVERSION=	0.8.5.1
+PORTVERSION=	0.8.6.1
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	LOCAL/swills \
 		GH
@@ -10,18 +10,18 @@ MASTER_SITES=	LOCAL/swills \
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Virtual Peer-to-Peer Currency Software
 
-LIB_DEPENDS=	boost_date_time:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	litecoin-project
-GH_COMMIT=	6cef39c
+GH_COMMIT=	dab8fe6
 GH_TAGNAME=	v${PORTVERSION}
 
 USE_OPENSSL=	yes
 USE_BDB=	yes
 WANT_BDB_VER=	48
 
-USE_GMAKE=	yes
+USES=		gmake
 
 OPTIONS_DEFINE=	GUI UPNP QRCODES DBUS
 OPTIONS_DEFAULT=	GUI QRCODES
@@ -38,7 +38,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUPNP}
-LIB_DEPENDS+=	miniupnpc:${PORTSDIR}/net/miniupnpc
+LIB_DEPENDS+=	libminiupnpc.so:${PORTSDIR}/net/miniupnpc
 QMAKE_USE_UPNP=	1
 .else
 QMAKE_USE_UPNP=	-
@@ -57,7 +57,7 @@ MAKE_ARGS+=	-C ${WRKSRC}/src USE_UPNP=${QMAKE_USE_UPNP}
 PLIST_FILES=	bin/${BINARY}
 
 .if ${PORT_OPTIONS:MGUI} && !defined(WITHOUT_X11) && ${PORT_OPTIONS:MQRCODES}
-LIB_DEPENDS+=	qrencode:${PORTSDIR}/graphics/libqrencode
+LIB_DEPENDS+=	libqrencode.so:${PORTSDIR}/graphics/libqrencode
 QMAKE_USE_QRCODE=1
 .else
 QMAKE_USE_QRCODE=0
@@ -71,6 +71,10 @@ QMAKE_USE_DBUS=	0
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1000000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-endian
+.endif
 
 do-configure:
 .if ${PORT_OPTIONS:MGUI} && !defined(WITHOUT_X11)

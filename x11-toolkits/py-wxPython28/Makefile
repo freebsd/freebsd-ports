@@ -27,7 +27,7 @@ PYDISTUTILS_BUILDARGS=	\
 			WX_CONFIG="${WX_CONFIG}" \
 			WXPORT="${WXPORT}"
 PYDISTUTILS_CONFIGUREARGS=	${PYDISTUTILS_BUILDARGS}
-PYDISTUTILS_NOEGGINFO=	yes
+PYDISTUTILS_EGGINFODIR=	${PYTHONPREFIX_SITELIBDIR}/${WX_PYTHON_DIR}
 USE_WX=		2.8
 WX_COMPS=	contrib
 WX_PREMK=	yes
@@ -138,7 +138,8 @@ post-install:
 	${CHMOD} -R a+rX \
 		${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/${WX_PYTHON_DIR}
 # Remove unwanted .egg-info
-	${RM} ${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/wxPython_common-*.egg-info
+	${RM} -rf ${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/wxPython_common-*.egg-info
+	${RM} -rf ${PYTHON_SITELIBDIR:C@^${LOCALBASE}@${PREFIX}@}/${WX_PYTHON_DIR}/*.egg-info
 .endif
 ##
 # wxversion wxPython available list

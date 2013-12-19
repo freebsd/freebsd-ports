@@ -7,7 +7,7 @@ CATEGORIES=	databases pear
 MASTER_SITES=	http://www.doctrine-project.org/downloads/ \
 		LOCAL/glarkin
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Doctrine is a PHP object relational mapper
 
 LICENSE=	LGPL21

@@ -5,7 +5,7 @@ Software Pascal/2, Macintosh Programmer's Workshop Pascal,
 Sun/Berkeley Pascal, Texas Instruments Pascal, Apollo Domain Pascal.
 Modula-2 syntax is also supported.  Output is a set of .c and .h files
 that comprise an equivalent program in any of several dialects of
-C. Output code may be kept machine- and dialectindependent, or it may
+C. Output code may be kept machine- and dialect independent, or it may
 be targeted to a specific machine and compiler. Most reasonable Pascal
 programs are converted into fully functional C which will compile and
 run with no further modifications, although p2c sometimes chooses to

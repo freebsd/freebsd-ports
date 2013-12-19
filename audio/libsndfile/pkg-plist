@@ -16,3 +16,12 @@ lib/libsndfile.la
 lib/libsndfile.so
 lib/libsndfile.so.1
 libdata/pkgconfig/sndfile.pc
+man/man1/sndfile-cmp.1.gz
+man/man1/sndfile-concat.1.gz
+man/man1/sndfile-convert.1.gz
+man/man1/sndfile-deinterleave.1.gz
+man/man1/sndfile-info.1.gz
+man/man1/sndfile-interleave.1.gz
+man/man1/sndfile-metadata-get.1.gz
+man/man1/sndfile-metadata-set.1.gz
+man/man1/sndfile-play.1.gz

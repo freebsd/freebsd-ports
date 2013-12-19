@@ -12,9 +12,6 @@ USE_XORG=	x11 fontenc
 
 CONFIGURE_ARGS=	--datadir=${LOCALBASE}/lib
 
-PLIST_FILES=	bin/luit
+PLIST_FILES=	bin/luit man/man1/luit.1.gz
 
-MAN1=		luit.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

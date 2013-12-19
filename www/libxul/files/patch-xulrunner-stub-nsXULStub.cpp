@@ -4,7 +4,7 @@
    char greDir[MAXPATHLEN];
    bool greFound = false;
  
-+  setenv("MOZ_PLUGIN_PATH", "%%LOCALBASE%%/lib/browser_plugins/symlinks/gecko19:%%LOCALBASE%%/lib/npapi/symlinks/xulrunner", 0);
++  setenv("MOZ_PLUGIN_PATH", "%%LOCALBASE%%/lib/browser_plugins/symlinks/gecko", 0);
 +
  #if defined(XP_MACOSX)
    CFBundleRef appBundle = CFBundleGetMainBundle();

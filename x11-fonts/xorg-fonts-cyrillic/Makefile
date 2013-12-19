@@ -20,9 +20,9 @@ RUN_DEPENDS=	${FONTDIR}/cyrillic/crox1c.pcf.gz:${PORTSDIR}/x11-fonts/font-cronyx
 CONFLICTS=	XFree86-fontCyrillic-*
 
 NO_BUILD=	# none
+NO_MTREE=	yes
 FONTDIR=	${LOCALBASE}/lib/X11/fonts
 
 do-install:	# empty
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-PORTVERSION=	3.9.2
+PORTVERSION=	3.9.3
 CATEGORIES?=	mail
 MASTER_SITES=	SF/sylpheed-claws/Claws%20Mail/${PORTVERSION}
 

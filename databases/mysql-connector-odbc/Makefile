@@ -33,12 +33,12 @@ WITH_UNIXODBC?=	yes
 .endif
 
 .if defined(WITH_UNIXODBC)
-LIB_DEPENDS+=		odbc.2:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS+=		libodbc.so:${PORTSDIR}/databases/unixODBC
 BUILD_DEPENDS=		unixODBC>=2.2.14_1:${PORTSDIR}/databases/unixODBC
 CMAKE_ARGS              += -DWITH_UNIXODBC=1
 DRIVER_MANAGER=		unixodbc
 .elif defined(WITH_IODBC)
-LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS+=		libiodbc.so:${PORTSDIR}/databases/libiodbc
 DRIVER_MANAGER=		iodbc
 CFLAGS+=		-I${LOCALBASE}/include
 .endif

@@ -15,7 +15,7 @@ RUN_DEPENDS=	gccmakedep:${PORTSDIR}/devel/gccmakedep \
 		makedepend:${PORTSDIR}/devel/makedepend \
 		${LOCALBASE}/lib/X11/config/xorg.cf:${PORTSDIR}/x11/xorg-cf-files
 
-USES=	shebangfix perl5
+USES=	shebangfix perl5 pkgconfig
 USE_PERL5=	run
 
 SHEBANG_FILES=	mkhtmlindex.pl
@@ -25,15 +25,4 @@ USE_XORG=	xproto
 
 CONFIGURE_ENV=	ac_cv_path_RAWCPP=tradcpp
 
-MAN1=		ccmakedep.1 \
-		cleanlinks.1 \
-		imake.1 \
-		makeg.1 \
-		mergelib.1 \
-		mkdirhier.1 \
-		mkhtmlindex.1 \
-		revpath.1 \
-		xmkmf.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -43,6 +43,7 @@
     SUBDIR += dmxproto
     SUBDIR += docker
     SUBDIR += dri2proto
+    SUBDIR += dri3proto
     SUBDIR += dxpc
     SUBDIR += dynamag
     SUBDIR += dzen2
@@ -186,6 +187,7 @@
     SUBDIR += libxkbfile
     SUBDIR += libxkbui
     SUBDIR += libxklavier
+    SUBDIR += libxshmfence
     SUBDIR += linux-f10-xorg-libs
     SUBDIR += listres
     SUBDIR += lsw
@@ -233,6 +235,7 @@
     SUBDIR += pixman
     SUBDIR += plasma-scriptengine-python
     SUBDIR += plasma-scriptengine-ruby
+    SUBDIR += presentproto
     SUBDIR += printproto
     SUBDIR += printscreen
     SUBDIR += props

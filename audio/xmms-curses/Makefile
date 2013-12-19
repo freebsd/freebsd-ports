@@ -12,7 +12,7 @@ COMMENT=	A ncurses program for (remote) controlling multimedia/xmms
 
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS=	pthread-stubs.0:${PORTSDIR}/devel/libpthread-stubs
+LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs
 
 USES=		gettext iconv
 NO_STAGE=	yes

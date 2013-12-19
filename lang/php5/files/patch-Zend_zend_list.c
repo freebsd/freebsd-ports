@@ -1,6 +1,6 @@
---- Zend/zend_list.c.orig	2012-01-01 14:15:04.000000000 +0100
-+++ Zend/zend_list.c	2012-03-02 10:29:02.000000000 +0100
-@@ -47,7 +47,7 @@
+--- Zend/zend_list.c.orig	2013-12-10 19:32:43.000000000 +0000
++++ Zend/zend_list.c	2013-12-13 21:55:53.859235929 +0000
+@@ -47,7 +47,7 @@ ZEND_API int zend_list_insert(void *ptr,
  	return index;
  }
  
@@ -9,7 +9,7 @@
  {
  	zend_rsrc_list_entry *le;
  	
-@@ -64,7 +64,7 @@
+@@ -64,7 +64,7 @@ ZEND_API int _zend_list_delete(int id TS
  }
  
  
@@ -18,7 +18,7 @@
  {
  	zend_rsrc_list_entry *le;
  
-@@ -77,7 +77,7 @@
+@@ -77,7 +77,7 @@ ZEND_API void *_zend_list_find(int id, i
  	}
  }
  
@@ -27,7 +27,7 @@
  {
  	zend_rsrc_list_entry *le;
  	
-@@ -348,7 +348,7 @@
+@@ -348,7 +348,7 @@ void zend_destroy_rsrc_list_dtors(void)
  }
  
  

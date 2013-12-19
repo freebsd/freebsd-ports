@@ -9,10 +9,10 @@ PKGNAMEPREFIX=	pecl-
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PECL
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PHP wrapper for the libdrizzle library
 
-LIB_DEPENDS=	drizzle.0:${PORTSDIR}/databases/libdrizzle
+LIB_DEPENDS=	libdrizzle.so:${PORTSDIR}/databases/libdrizzle
 
 LICENSE=	PHP301
 

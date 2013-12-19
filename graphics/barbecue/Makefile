@@ -7,7 +7,7 @@ CATEGORIES=	graphics print java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}/
 DIST_SUBDIR=	java
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Java barcode generator
 
 LICENSE=	BSD

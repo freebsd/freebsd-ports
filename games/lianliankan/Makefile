@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/llk-linux/llk-linux-source/${DISTVERSION}
 DISTNAME=	llk_linux-${DISTVERSION}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Tile matching game
 
 LICENSE=	GPLv2

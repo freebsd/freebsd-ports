@@ -5,7 +5,7 @@ PORTNAME=	db41
 PORTVERSION=	4.1.25
 PORTREVISION=	4
 CATEGORIES=	databases
-MASTER_SITES=	http://download.oracle.com/berkeley-db/ 
+MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMESUFFIX?=
 DISTNAME?=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
@@ -17,6 +17,10 @@ PATCH_DIST_STRIP=	-d ${WRKDIR}/${DISTNAME}
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	The Berkeley DB package, revision 4.1
 
+CONFLICTS?=	db41-nocrypto-4*
+
+DEPRECATED=	Please use databases/db5 or db6 for new installs.
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
 GNU_CONFIGURE=	yes
@@ -26,7 +30,9 @@ CONFIGURE_ARGS=	--enable-compat185 --enable-dump185 \
 		--includedir=${PREFIX}/include/db41
 USE_LDCONFIG=	yes
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 INSTALL_TARGET=	install install_docs
 PORTDOCS=	*
 .endif

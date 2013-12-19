@@ -12,7 +12,8 @@ MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Python module for processing ID3 tags
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:${PORTSDIR}/devel/py-setuptools
 
 USE_PYTHON=	2.6-2.7
 NO_STAGE=	yes
@@ -21,7 +22,8 @@ USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PYTHON="${PYTHON_CMD}"
 MAKE_ENV=	SETUP_ARGS_BUILD="${PYDISTUTILS_BUILDARGS}" \
-		SETUP_ARGS_INSTALL="${PYDISTUTILS_INSTALLARGS}"
+		SETUP_ARGS_INSTALL="${PYDISTUTILS_INSTALLARGS}" \
+		SETUP_COMMAND="${PYDISTUTILS_SETUP:S,",\",g}"
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 MAN1=		eyeD3.1
@@ -34,8 +36,8 @@ post-patch:
 	${REINPLACE_CMD} -e 's,PYTHON="",,g' -e 's,/usr/local,${LOCALBASE},g' \
 		-e 's,2\\\.\[23456789\]\\\.,2.[23456789],g' \
 		${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's,\(setup.py build\),\1 $${SETUP_ARGS_BUILD},g' \
-		-e 's,\(setup.py install\),\1 $${SETUP_ARGS_INSTALL} ,g' \
+	${REINPLACE_CMD} -e 's,\(setup.py build\),$${SETUP_COMMAND} build $${SETUP_ARGS_BUILD},g' \
+		-e 's,\(setup.py install\),$${SETUP_COMMAND} install $${SETUP_ARGS_INSTALL} ,g' \
 		-e 's,^docdir:=.*,docdir:=${DOCSDIR},g' \
 		${WRKSRC}/Makefile.in
 .if defined(NOPORTDOCS)

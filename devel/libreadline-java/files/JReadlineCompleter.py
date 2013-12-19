@@ -4,6 +4,10 @@
 #
 # This is rlcompleter.py from CPython 2.5.1 adapted for Jython
 # and libreadline-java.
+#
+# NOTE: Jython >= 2.5 already includes rlcompleter,
+#       see http://www.jython.org/docs/library/rlcompleter.html
+#       This is useful for older Jython versions only!
 
 """TAB-completion for Jython + libreadline-java
 
@@ -105,9 +109,13 @@ class PyCompleter:
         try:
             if state == 0:
                 if "." in text:
-                    self.matches = self.attr_matches(text)
+                    matches = self.attr_matches(text)
                 else:
-                    self.matches = self.global_matches(text)
+                    matches = self.global_matches(text)
+                # remove duplicates and sort
+                matches = list(set(matches))
+                matches.sort()
+                self.matches = matches
             return self.matches[state]
         except (AttributeError, IndexError, NameError):
             return None

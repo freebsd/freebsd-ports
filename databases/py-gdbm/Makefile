@@ -13,7 +13,7 @@ DISTFILES=	${PYTHON_DISTFILE}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python bindings to the GNU dbm library
 
-LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm
 
 PORTSCOUT=	ignore:1
 
@@ -26,11 +26,8 @@ DISTINFO_FILE=	${PORTSDIR}/lang/python${PYTHON_SUFFIX}/distinfo
 WRKSRC=		${PYTHON_WRKSRC}/Modules
 
 PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHON_LIBDIR}/lib-dynload
-PYDISTUTILS_NOEGGINFO=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-PLIST_FILES=	%%PYTHON_LIBDIR%%/lib-dynload/gdbm.so
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

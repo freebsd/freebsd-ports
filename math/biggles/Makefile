@@ -17,15 +17,17 @@ BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libplot.so:${PORTSDIR}/graphics/plotutils
 
 USES=		gmake
-USE_PYTHON=	yes
+USE_PYTHON=	2
 MAKE_ARGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS} -fPIC" \
 		LIBPLOT_CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBPLOT_LDFLAGS="-L${LOCALBASE}/lib -lplot"
+		LIBPLOT_LDFLAGS="-L${LOCALBASE}/lib -lplot" \
+		PYTHON="${PYTHON_CMD}"
 
 NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/CC/s,gcc,$$\{CC\},' ${WRKSRC}/make.inc
+	@${REINPLACE_CMD} -e 's|= python|= ${PYTHON_CMD}|' ${WRKSRC}/make.inc
 
 pre-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}

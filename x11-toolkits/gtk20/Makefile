@@ -3,8 +3,8 @@
 #   $MCom: ports/x11-toolkits/gtk20/Makefile,v 1.237 2013/03/04 17:44:38 kwm Exp $
 
 PORTNAME=	gtk
-PORTVERSION=	2.24.19
-PORTREVISION?=	2
+PORTVERSION=	2.24.22
+PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -23,33 +23,29 @@ PORTSCOUT=	limitw:0,even
 
 .if !defined(REFERENCE_PORT)
 
-BUILD_DEPENDS+=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 RUN_DEPENDS+=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		python:${PORTSDIR}/lang/python
 
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack atk pango gdkpixbuf2 ltverhack gtk-update-icon-cache
-USES=		gettext gmake pkgconfig perl5
+GNU_CONFIGURE=	yes
+USE_GNOME=	atk pango gdkpixbuf2 introspection:build ltverhack \
+		gtk-update-icon-cache
+USES=		gettext gmake pathfix pkgconfig perl5
 USE_PERL5=	build
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite
-CONFIGURE_ARGS=	--enable-static --with-xinput=yes
-CPPFLAGS+=	-I${LOCALBASE}/include/freetype2 \
-		-I${LOCALBASE}/include
+CONFIGURE_ARGS=	--with-xinput=yes
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-MAN1=		gtk-query-immodules-2.0.1
 
 OPTIONS_DEFINE=	CUPS DEBUG
 OPTIONS_DEFAULT=CUPS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-client
+LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
 CONFIGURE_ARGS+=--enable-cups=auto
 PLIST_SUB+=	CUPS:=""
 .else
@@ -80,14 +76,12 @@ pre-build:
 	@${RM} -rf ${WRKSRC}/docs/gtk.info*
 
 post-install:
-	-@${FIND} ${LOCALBASE}/share/icons -type d -depth 1 -exec \
-		${PREFIX}/bin/gtk-update-icon-cache -q -f {} \; 2>/dev/null
-	@${MKDIR} ${PREFIX}/lib/gtk-2.0/modules
-	@${MKDIR} ${PREFIX}/lib/gtk-2.0/${GTK2_VERSION}/engines
-	@${MKDIR} ${PREFIX}/lib/gtk-2.0/${GTK2_VERSION}/loaders
-	@${MKDIR} ${PREFIX}/lib/gtk-2.0/${GTK2_VERSION}/modules
-	${INSTALL_MAN} ${MAN1:S|^|${WRKSRC}/docs/reference/gtk/|} \
-		${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk-2.0/modules
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk-2.0/${GTK2_VERSION}/engines
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk-2.0/${GTK2_VERSION}/loaders
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk-2.0/${GTK2_VERSION}/modules
+	${INSTALL_MAN} ${WRKSRC}/docs/reference/gtk/gtk-query-immodules-2.0.1 \
+		${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
 

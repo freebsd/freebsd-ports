@@ -20,14 +20,14 @@ BUILD_DEPENDS=	sdl-config:${PORTSDIR}/devel/sdl12 \
 		xdg-open:${PORTSDIR}/devel/xdg-utils \
 		guile:${PORTSDIR}/lang/guile \
 		git:${PORTSDIR}/devel/git
-LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
-		fftw3f:${PORTSDIR}/math/fftw3-float \
-		qwt:${PORTSDIR}/x11-toolkits/qwt5 \
-		boost_python:${PORTSDIR}/devel/boost-python-libs \
-		portaudio.2:${PORTSDIR}/audio/portaudio2 \
-		jack:${PORTSDIR}/audio/jack \
-		asound:${PORTSDIR}/audio/alsa-lib \
-		gsl:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
+		libqwt.so:${PORTSDIR}/x11-toolkits/qwt5 \
+		libboost_python.so:${PORTSDIR}/devel/boost-python-libs \
+		libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \
+		libjack.so:${PORTSDIR}/audio/jack \
+		libasound.so:${PORTSDIR}/audio/alsa-lib \
+		libgsl.so:${PORTSDIR}/math/gsl
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_SITELIBDIR}/ephem/__init__.py:${PORTSDIR}/astro/pyephem\
 		${PYTHON_SITELIBDIR}/PyQt4/Qt.py:${PORTSDIR}/devel/py-qt4

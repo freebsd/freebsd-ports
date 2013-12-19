@@ -6,7 +6,7 @@ PORTREVISION=	8
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sourcefiles.org/Toys/Humor/
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Viewer/converter for CBR/CBZ comic book archives
 
 LICENSE=	GPLv2

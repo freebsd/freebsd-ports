@@ -18,8 +18,8 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		quilt:${PORTSDIR}/devel/quilt \
 		bison:${PORTSDIR}/devel/bison
-LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
-		gpg-error:${PORTSDIR}/security/libgpg-error
+LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+		libgpg-error.so:${PORTSDIR}/security/libgpg-error
 RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
 		qpress:${PORTSDIR}/archivers/qpress
 

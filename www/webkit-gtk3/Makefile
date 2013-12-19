@@ -36,11 +36,13 @@ USE_GNOME=	cairo gnomehier gtk20 gtk30 introspection:build \
 USE_SQLITE=	3
 USE_PERL5=	build
 USE_LDCONFIG=	yes
+USE_PYTHON_BUILD=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_FLEX="${LOCALBASE}/bin/flex" \
 		ZLIB_CFLAGS="-I/usr/include" \
 		ZLIB_LIBS="-L/usr/lib -lz" \
-		ac_cv_path_DOLT_BASH=""
+		ac_cv_path_DOLT_BASH="" \
+		PYTHON="${PYTHON_CMD}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-gtk=3.0 \

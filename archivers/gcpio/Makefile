@@ -26,6 +26,6 @@ NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
 regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 .include <bsd.port.mk>

@@ -126,6 +126,7 @@ post-patch:
 		 s|^BUILD_JPEGLIB|# BUILD_JPEGLIB| ; \
 		 s| = @gcc| := $$(CC)| ; \
 		 s| = @g++| := $$(CXX)| ; \
+		 s| = @python| := @${PYTHON_CMD}| ; \
 		 s|-O$$(OPTIMIZE)|| ; \
 		 /--warn-common/s|= -Wl,|= $$(GCC_LDFLAGS) -Wl,| ; \
 		 /LDFLAGS/s|-s|| ; \

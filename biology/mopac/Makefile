@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}7-${MOPAC_SUBVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Semi-empirical (MNDO, etc.) molecular orbital calculation
 
-LIB_DEPENDS=	f2c:${PORTSDIR}/lang/f2c
+LIB_DEPENDS=	libf2c.so:${PORTSDIR}/lang/f2c
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal automake autoconf libtool

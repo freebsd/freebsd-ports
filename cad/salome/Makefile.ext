@@ -133,14 +133,14 @@ AUTOMAKE_ARGS=--add-missing --copy --gnu
 
 #Dependency from HDF5
 .if !${SAL_MODULE} == "randomizer" &&  !${SAL_MODULE} == "yacs" && !${SAL_MODULE} == "hello" && !${SAL_MODULE} == "pyhello"
-LIB_DEPENDS+=		hdf5.7:${PORTSDIR}/science/hdf5-18
+LIB_DEPENDS+=		libhdf5.so.7:${PORTSDIR}/science/hdf5-18
 CONFIGURE_ARGS+=	--with-hdf5=${LOCALBASE}
 AUTOTOOLS_ENV+= 	HDF5HOME=${LOCALBASE}
 .endif
 
 #Dependency from Opencascade
 .if  !${SAL_MODULE} == "kernel"
-LIB_DEPENDS+=		TKernel.0:${PORTSDIR}/cad/opencascade
+LIB_DEPENDS+=		libTKernel.so:${PORTSDIR}/cad/opencascade
 CASROOT=		${LOCALBASE}/OpenCAS/ros
 CONFIGURE_ENV+=		CASROOT=${CASROOT}
 AUTOTOOLS_ENV+= 	CASROOT=${CASROOT}
@@ -154,7 +154,7 @@ BUILD_DEPENDS+=		swig:${PORTSDIR}/devel/swig13
 
 #Dependency from libxml2
 .if ${SAL_MODULE} == "gui" || ${SAL_MODULE} == "kernel" || ${SAL_MODULE} == "med" || ${SAL_MODULE} == "yacs"
-LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS+=	libxml2.so:${PORTSDIR}/textproc/libxml2
 CPPFLAGS+=	-I${LOCALBASE}/include/libxml2
 CONFIGURE_ENV+=	LIBXML_DIR=${LOCALBASE}
 .endif
@@ -162,7 +162,7 @@ CONFIGURE_ENV+=	LIBXML_DIR=${LOCALBASE}
 #Dependency from boost
 .if !${SAL_MODULE} == "light" && !${SAL_MODULE} == "randomizer" && !${SAL_MODULE} == "pycalculator" && !${SAL_MODULE} == "light"
 CONFIGURE_ENV+=		BOOSTDIR=${LOCALBASE}
-LIB_DEPENDS+=		boost_thread:${PORTSDIR}/devel/boost-all
+LIB_DEPENDS+=		libboost_thread.so:${PORTSDIR}/devel/boost-all
 ###python boost support off by default
 RUN_DEPENDS+=		${LOCALBASE}/lib/libboost_python.so:${PORTSDIR}/devel/boost-python-libs
 BUILD_DEPENDS+=		${LOCALBASE}/lib/libboost_python.so:${PORTSDIR}/devel/boost-python-libs
@@ -185,14 +185,14 @@ CONFIGURE_ARGS+=	--with-qsci4-libraries=${QT_LIBDIR} --with-qsci4-includes=${QT_
 
 #Dependency from vtk
 .if !${SAL_MODULE} == "kernel" && !${SAL_MODULE} == "randomizer"
-LIB_DEPENDS+=		vtkCommon.5:${PORTSDIR}/math/vtk5
+LIB_DEPENDS+=		libvtkCommon.so:${PORTSDIR}/math/vtk5
 CONFIGURE_ARGS+=	--with-vtk=${LOCALBASE}
 CONFIGURE_ENV+=		VTKSUFFIX=-5.10
 .endif
 
 #Dependency from cad/netgen
 .if ${SAL_MODULE} == "netgenplugin"
-LIB_DEPENDS+=		nglib.1:${PORTSDIR}/cad/netgen
+LIB_DEPENDS+=		libnglib.so:${PORTSDIR}/cad/netgen
 CONFIGURE_ENV+=		NETGENHOME=${LOCALBASE}
 AUTOTOOLS_ENV+=		NETGENHOME=${LOCALBASE}
 .endif
@@ -200,7 +200,7 @@ AUTOTOOLS_ENV+=		NETGENHOME=${LOCALBASE}
 
 #Dependency from qwt5
 .if ${SAL_MODULE} == "gui" || ${SAL_MODULE} == "component" || ${SAL_MODULE} == "smesh" || ${SAL_MODULE} == "visu" || ${SAL_MODULE} == "filter"
-LIB_DEPENDS+=		qwt.5:${PORTSDIR}/x11-toolkits/qwt5
+LIB_DEPENDS+=		libqwt.so:${PORTSDIR}/x11-toolkits/qwt5
 CONFIGURE_ARGS+=	--with-qwt=${LOCALBASE}
 CPPFLAGS+=		-I/${LOCALBASE}/include/qwt/
 AUTOTOOLS_ENV+= 	QWTHOME=${LOCALBASE}
@@ -208,7 +208,7 @@ AUTOTOOLS_ENV+= 	QWTHOME=${LOCALBASE}
 
 #Dependency from omniORB & py-omniorb
 .if  !${SAL_MODULE} == "light"
-LIB_DEPENDS+=		omniORB4.1:${PORTSDIR}/devel/omniORB
+LIB_DEPENDS+=		libomniORB4.so:${PORTSDIR}/devel/omniORB
 RUN_DEPENDS+=		${LOCALBASE}/include/omniORBpy.h:${PORTSDIR}/devel/py-omniorb
 RUN_DEPENDS+=		notifd:${PORTSDIR}/devel/omniNotify
 AUTOTOOLS_ENV+= 	OMNIORBDIR=${LOCALBASE}
@@ -246,19 +246,19 @@ CPPFLAGS+=		-I${LOCALBASE}/include/metis
 
 #Dependency from MED
 .if  ${SAL_MODULE} == "med"
-LIB_DEPENDS+=		med.2:${PORTSDIR}/french/med
+LIB_DEPENDS+=		libmed.so:${PORTSDIR}/french/med
 CONFIGURE_ENV+=		MED2HOME=${LOCALBASE}
 .endif
 
 #Dependency from gd
 .if  ${SAL_MODULE} == "sierpinsky"
-LIB_DEPENDS+=		gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=		libgd.so:${PORTSDIR}/graphics/gd
 .endif
 
 .if ${SAL_MODULE} == "yacs"
-LIB_DEPENDS+=		argp.0:${PORTSDIR}/devel/argp-standalone
-LIB_DEPENDS+=		expat.6:${PORTSDIR}/textproc/expat2
-LIB_DEPENDS+=		gvc:${PORTSDIR}/graphics/graphviz
+LIB_DEPENDS+=		libargp.so:${PORTSDIR}/devel/argp-standalone
+LIB_DEPENDS+=		libexpat.so:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=		libgvc.so:${PORTSDIR}/graphics/graphviz
 LDFLAGS+=		-largp
 .endif
 
@@ -282,7 +282,7 @@ PLIST_SUB+=     CPPUNIT="@comment "
 #optionally dependency from mpich2
 .if ${SAL_MODULE} == "kernel" || ${SAL_MODULE} == "med"
 .if ${PORT_OPTIONS:MMPI}
-LIB_DEPENDS+=	mpich.2:${PORTSDIR}/net/mpich2
+LIB_DEPENDS+=	libmpich.so:${PORTSDIR}/net/mpich2
 CONFIGURE_ARGS+=	--with-mpich=${LOCALBASE}/mpich2 --with-mpi=${LOCALBASE}/mpich2
 PLIST_SUB+=     MPI=""
 .		else

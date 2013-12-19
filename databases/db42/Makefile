@@ -14,6 +14,10 @@ PATCHFILES=	patch.${PORTVERSION}.1  patch.${PORTVERSION}.2 \
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	The Berkeley DB package, revision 4.2
 
+DEPRECATED=	Please use databases/db5 or db6 for new installs.
+
+CONFLICTS?=	db42-nocrypto-4*
+
 MASTERDIR?=	${.CURDIR}
 
 SLAVE_PORT=	no

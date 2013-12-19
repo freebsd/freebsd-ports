@@ -14,7 +14,7 @@ COMMENT=	Graphical diff program using FLTK
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes
 

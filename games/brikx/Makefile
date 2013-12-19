@@ -33,6 +33,6 @@ post-patch:
 		${WRKSRC}/src/brikx.h
 
 post-install:
-	cd ${WRKSRC}/src/data && ${COPYTREE_SHARE} "*" ${STAGEDIR}${DATADIR}/
+	cd ${WRKSRC}/src/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

@@ -12,8 +12,8 @@ DISTNAME=	moodbar-0.1.2
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Shows the "moods" of audio tracks in Amarok
 
-LIB_DEPENDS=	fftw3f:${PORTSDIR}/math/fftw3-float \
-		fftw3:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	libfftw3f.so:${PORTSDIR}/math/fftw3-float \
+		libfftw3.so:${PORTSDIR}/math/fftw3
 
 CFLAGS:=	${CFLAGS} -O2
 USE_GSTREAMER=	yes good

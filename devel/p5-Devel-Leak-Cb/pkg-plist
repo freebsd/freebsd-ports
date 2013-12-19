@@ -4,6 +4,5 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Leak/Cb
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Leak
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Devel
 @dirrmtry %%SITE_PERL%%/Devel/Leak
 @dirrmtry %%SITE_PERL%%/Devel

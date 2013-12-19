@@ -2,6 +2,7 @@
 %%DATADIR%%/Plex Media Scanner
 %%DATADIR%%/Plex Media Server
 %%DATADIR%%/Resources/DejaVuUniversal.ttf
+%%DATADIR%%/Resources/DigiCertCA.crt
 %%DATADIR%%/Resources/Graphics/DefaultAlbumCover.png
 %%DATADIR%%/Resources/Graphics/actor-icon.png
 %%DATADIR%%/Resources/Graphics/album-fanart.jpg
@@ -9,7 +10,7 @@
 %%DATADIR%%/Resources/Graphics/aperture-icon.png
 %%DATADIR%%/Resources/Graphics/artist-fanart.jpg
 %%DATADIR%%/Resources/Graphics/artist.png
-%%DATADIR%%/Resources/Graphics/dlna-icon-120.jpg
+%%DATADIR%%/Resources/Graphics/dlna-icon-260.jpg
 %%DATADIR%%/Resources/Graphics/dlna-icon-260.png
 %%DATADIR%%/Resources/Graphics/favicon.ico
 %%DATADIR%%/Resources/Graphics/iphoto-fanart.jpg
@@ -1229,6 +1230,7 @@
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Resources/Common/ID3v2.py
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Resources/Common/M4ATags.py
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Resources/Common/Media.py
+%%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Resources/Common/PhotoFiles.py
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Resources/Common/Stack.py
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Resources/Common/UnicodeHelper.py
 %%DATADIR%%/Resources/Plug-ins/Scanners.bundle/Contents/Resources/Common/Utils.py
@@ -1382,8 +1384,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.fxuk/URL/FXUK/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.g4tv/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.g4tv/URL/G4TV/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gamekings/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gamekings/URL/Gamekings/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gamernl/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gamernl/URL/GamerNL/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gametrailers/ServiceInfo.plist
@@ -1397,8 +1397,6 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.globaltv/URL/GlobalTV/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.goal/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.goal/URL/Goal/ServiceCode.pys
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.golfchannel/ServiceInfo.plist
-%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.golfchannel/URL/GolfChannel/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.hgtvcanada/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.hgtvcanada/URL/HGTV Canada/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.history_canada/ServiceInfo.plist
@@ -1430,6 +1428,8 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.kelbytv/URL/Kelby TV/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.khanacademy/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.khanacademy/URL/KhanAcademy/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.lifetime/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.lifetime/URL/Lifetime/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.liveleak/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.liveleak/URL/LiveLeak/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.locotv/ServiceInfo.plist
@@ -2016,11 +2016,15 @@
 %%DATADIR%%/Resources/Profiles/Panasonic Viera 3D TV.xml
 %%DATADIR%%/Resources/Profiles/PlayStation 3.xml
 %%DATADIR%%/Resources/Profiles/Plex Home Theater.xml
+%%DATADIR%%/Resources/Profiles/Popcorn Hour.xml
 %%DATADIR%%/Resources/Profiles/Roku-3.1.xml
 %%DATADIR%%/Resources/Profiles/Roku.xml
+%%DATADIR%%/Resources/Profiles/RokuDLNA-3.1.xml
+%%DATADIR%%/Resources/Profiles/RokuDLNA-5.1.xml
 %%DATADIR%%/Resources/Profiles/Safari.xml
 %%DATADIR%%/Resources/Profiles/Samsung SmartTV.xml
 %%DATADIR%%/Resources/Profiles/Samsung.xml
+%%DATADIR%%/Resources/Profiles/Sony Blu-ray 2013.xml
 %%DATADIR%%/Resources/Profiles/Sony Blu-ray.xml
 %%DATADIR%%/Resources/Profiles/Sony Bravia 2010.xml
 %%DATADIR%%/Resources/Profiles/Sony Bravia 2011.xml
@@ -2049,6 +2053,9 @@
 %%DATADIR%%/Resources/Profiles/iOS-iPad-3,4.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPad-3,5.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPad-3,6.xml
+%%DATADIR%%/Resources/Profiles/iOS-iPad-4,1.xml
+%%DATADIR%%/Resources/Profiles/iOS-iPad-4,2.xml
+%%DATADIR%%/Resources/Profiles/iOS-iPad-4,5.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPhone-2,1.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPhone-3,1.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPhone-3,2.xml
@@ -2059,6 +2066,9 @@
 %%DATADIR%%/Resources/Profiles/iOS-iPhone-5,1.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPhone-5,2.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPhone-5,3.xml
+%%DATADIR%%/Resources/Profiles/iOS-iPhone-5,4.xml
+%%DATADIR%%/Resources/Profiles/iOS-iPhone-6,1.xml
+%%DATADIR%%/Resources/Profiles/iOS-iPhone-6,2.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPod-3,1.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPod-4,1.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPod-5,1.xml
@@ -2862,14 +2872,14 @@
 %%DATADIR%%/Resources/none-combiner-shows.xml
 %%DATADIR%%/Resources/rickroll.ts
 %%DATADIR%%/Resources/rsync
-%%DATADIR%%/Resources/server.crt
-%%DATADIR%%/Resources/server.key
+%%DATADIR%%/Resources/star_hub_plex_tv.crt
+%%DATADIR%%/Resources/star_hub_plex_tv.key
 %%DATADIR%%/Resources/themoviedb-combiner-movies.xml
 %%DATADIR%%/Resources/thetvdb-combiner-shows.xml
 %%DATADIR%%/libass.so.5
-%%DATADIR%%/libavcodec.so.52
-%%DATADIR%%/libavformat.so.52
-%%DATADIR%%/libavutil.so.50
+%%DATADIR%%/libavcodec.so.54
+%%DATADIR%%/libavformat.so.54
+%%DATADIR%%/libavutil.so.52
 %%DATADIR%%/libboost_chrono.so.1.50.0
 %%DATADIR%%/libboost_filesystem.so.1.50.0
 %%DATADIR%%/libboost_iostreams.so.1.50.0
@@ -2899,7 +2909,7 @@
 %%DATADIR%%/libsoci_sqlite3-gcc-3_0.so.3.0.0
 %%DATADIR%%/libsqlite3.so.8
 %%DATADIR%%/libssl.so.1.0.0
-%%DATADIR%%/libswscale.so.0
+%%DATADIR%%/libswscale.so.2
 %%DATADIR%%/libvo-aacenc.so.0
 %%DATADIR%%/libxml2.so.9
 %%DATADIR%%/libxslt.so.2
@@ -3346,6 +3356,9 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.liveleak/URL/LiveLeak
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.liveleak/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.liveleak
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.lifetime/URL/Lifetime
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.lifetime/URL
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.lifetime
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.khanacademy/URL/KhanAcademy
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.khanacademy/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.khanacademy
@@ -3392,9 +3405,6 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.hgtvcanada/URL/HGTV Canada
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.hgtvcanada/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.hgtvcanada
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.golfchannel/URL/GolfChannel
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.golfchannel/URL
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.golfchannel
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.goal/URL/Goal
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.goal/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.goal
@@ -3413,9 +3423,6 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gamernl/URL/GamerNL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gamernl/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gamernl
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gamekings/URL/Gamekings
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gamekings/URL
-@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.gamekings
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.g4tv/URL/G4TV
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.g4tv/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.g4tv

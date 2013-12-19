@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-autoipd
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	IPv4LL network address configuration daemon
 
-LIB_DEPENDS=	avahi-common.3:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS=	libavahi-common.so:${PORTSDIR}/net/avahi-app
 
 USERS=		avahi-autoipd
 GROUPS=		${USERS}
@@ -22,7 +22,6 @@ PLIST=		${.CURDIR}/pkg-plist
 
 AVAHI_SLAVE=	autoipd
 
-MAN8=		avahi-autoipd.8
+MANPAGES=	avahi-autoipd.8
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

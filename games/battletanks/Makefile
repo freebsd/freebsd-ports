@@ -24,6 +24,7 @@ USE_LUA=	5.0+
 USE_OPENAL=	al
 USE_SDL=	image sdl
 USE_SCONS=	yes
+USE_PYTHON=	yes
 SCONS_ARGS=	prefix=${PREFIX} resources_dir=${DATADIR}
 SCONS_BUILDENV=	CC="${CC}" CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS} -fpermissive" \
@@ -42,7 +43,7 @@ NO_STAGE=	yes
 pre-build:
 # Regenerate `sl08.h' after we patch `sl08.py' (as patching the header itself
 # would have resulted in a larger diff and gratuitous difference with Debian)
-	@cd ${WRKSRC} && python engine/sl08/sl08.py > engine/sl08/sl08.h
+	@cd ${WRKSRC} && ${PYTHON_CMD} engine/sl08/sl08.py > engine/sl08/sl08.h
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/build/release/clunk/libclunk.so \

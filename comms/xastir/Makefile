@@ -12,9 +12,9 @@ COMMENT=	X Amateur Station Tracking and Information Reporting
 
 BUILD_DEPENDS=	xfontsel:${PORTSDIR}/x11-fonts/xfontsel
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
-LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
 USES=		gettext gmake motif
@@ -48,33 +48,33 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MSHAPELIB}
-LIB_DEPENDS+=	shp:${PORTSDIR}/devel/shapelib
+LIB_DEPENDS+=	libshp.so:${PORTSDIR}/devel/shapelib
 .else
 CONFIGURE_ARGS+=	--without-shapelib
 .endif
 
 .if ${PORT_OPTIONS:MMAGICK}
-LIB_DEPENDS+=	GraphicsMagickWand:${PORTSDIR}/graphics/GraphicsMagick13
+LIB_DEPENDS+=	libGraphicsMagickWand.so:${PORTSDIR}/graphics/GraphicsMagick13
 .else
 CONFIGURE_ARGS+=	--without-imagemagick --without-graphicsmagick
 .endif
 
 .if ${PORT_OPTIONS:MDBFAWK}
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 .else
 CONFIGURE_ARGS+=	--without-dbfawk
 .endif
 
 .if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 .endif
 
 .if ${PORT_OPTIONS:MGEOTIFF}
-LIB_DEPENDS+=	geotiff:${PORTSDIR}/graphics/libgeotiff
+LIB_DEPENDS+=	libgeotiff.so:${PORTSDIR}/graphics/libgeotiff
 .endif
 
 .if ${PORT_OPTIONS:MGDAL}
-LIB_DEPENDS+=	gdal:${PORTSDIR}/graphics/gdal
+LIB_DEPENDS+=	libgdal.so:${PORTSDIR}/graphics/gdal
 .else
 CONFIGURE_ARGS+=	--without-gdal
 .endif

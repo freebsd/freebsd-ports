@@ -37,6 +37,7 @@ CMAKE_ARGS+=	-DOCIO_USE_SSE:BOOL=OFF
 .include <bsd.port.options.mk>
 
 .if ${SLAVE_PORT} == no
+BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	libtinyxml.so:${PORTSDIR}/textproc/tinyxml \
 		libyaml-cpp.so:${PORTSDIR}/devel/yaml-cpp
 USE_PYTHON=	2.6+

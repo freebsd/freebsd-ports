@@ -28,4 +28,9 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/x86info.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/lsmsr.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's|python scripts/createheader.py|${PYTHON_CMD} scripts/createheader.py|' \
+		${WRKSRC}/Makefile
+
 .include <bsd.port.mk>

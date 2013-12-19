@@ -13,8 +13,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
-USE_GCC=	4.2+	# uses nested functions
-USES=		gmake
+USES=		gmake compiler:nestedfct
 
 MAKE_ARGS+=	CFLAGS="${CFLAGS} -I. -Wall -Wstrict-prototypes -Wextra -Wno-unused-parameter"
 

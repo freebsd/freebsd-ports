@@ -1222,6 +1222,16 @@ WITH_PKGNG?=	yes
 .endif
 .endif
 
+# Enable new xorg for FreeBSD versions after Radeon KMS was imported unless
+# WITHOUT_NEW_XORG is set.
+.if ${OSVERSION} >= 1100000
+. if !defined(WITHOUT_NEW_XORG)
+WITH_NEW_XORG?=	yes
+. else
+.undef WITH_NEW_XORG
+. endif
+.endif
+
 # Only define tools here (for transition period with between pkg tools)
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
@@ -4276,9 +4286,11 @@ create-users-groups:
 		IFS=","; for _login in $$members; do \
 			for _user in ${USERS}; do \
 				if [ "x$${_user}" = "x$${_login}" ]; then \
+					if [ "${NO_STAGE}" = "yes" ]; then \
 					if ! ${PW} groupshow ${_group} | ${GREP} -qw $${_login}; then \
 						${ECHO_MSG} "Adding user \`$${_login}' to group \`${_group}'."; \
 						${PW} groupmod ${_group} -m $${_login}; \
+					fi; \
 					fi; \
 					if [ -z "${WITH_PKGNG}" ]; then \
 							${ECHO_CMD} "@exec if ! ${PW} groupshow ${_group} | ${GREP} -qw $${_login}; then \

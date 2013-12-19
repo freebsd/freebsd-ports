@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	cmogstored
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://bogomips.org/cmogstored/files/
 
@@ -19,5 +19,8 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--bindir=${PREFIX}/sbin \
 		--mandir=${PREFIX}/man
 USE_RC_SUBR=	cmogstored
+
+regression-test: build
+	${MAKE} -C ${WRKSRC} check
 
 .include <bsd.port.mk>

@@ -11,8 +11,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	alex@kamaz.org.uk
 COMMENT=	Utility for tagging groups of audio files using CDDB
 
-LIB_DEPENDS=	cddb.4:${PORTSDIR}/audio/libcddb \
-		tag.1:${PORTSDIR}/audio/taglib
+LIB_DEPENDS=	libcddb.so:${PORTSDIR}/audio/libcddb \
+		libtag.so:${PORTSDIR}/audio/taglib
 
 USES=		pkgconfig
 NO_STAGE=	yes

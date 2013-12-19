@@ -11,8 +11,6 @@ COMMENT=	Convert X font from BDF to PCF
 XORG_CAT=	app
 USE_XORG=	xfont
 
-PLIST_FILES=	bin/bdftopcf
-MAN1=		bdftopcf.1
+PLIST_FILES=	bin/bdftopcf man/man1/bdftopcf.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

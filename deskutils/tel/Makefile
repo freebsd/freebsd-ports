@@ -14,6 +14,11 @@ USE_BZIP2=	yes
 USES=		gettext
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-
 NO_STAGE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} \
+		-e 's,distutils\.command\.install ,setuptools\.command\.install ,' \
+		${WRKSRC}/appdistutils.py
+
 .include <bsd.port.mk>

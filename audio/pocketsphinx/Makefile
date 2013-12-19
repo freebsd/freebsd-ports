@@ -9,7 +9,7 @@ MASTER_SITES=	SF/cmusphinx/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Speech recognition system
 
-LIB_DEPENDS=	sphinxad:${PORTSDIR}/audio/sphinxbase
+LIB_DEPENDS=	libsphinxad.so:${PORTSDIR}/audio/sphinxbase
 
 USES=		gmake pkgconfig
 NO_STAGE=	yes

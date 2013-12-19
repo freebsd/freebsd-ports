@@ -10,7 +10,7 @@ MASTER_SITES=	http://rplay.doit.org/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network audio player
 
-LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm
+LIB_DEPENDS=	libgsm.so:${PORTSDIR}/audio/gsm
 
 USE_LDCONFIG=	yes
 NO_STAGE=	yes

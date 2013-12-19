@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/bugsquish/src/ \
 		ftp://ftp.billsgames.com/unix/x/bugsquish/src/
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Action game not unlike light gun arcade games
 
 LICENSE=	GPLv2

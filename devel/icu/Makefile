@@ -34,28 +34,12 @@ CONFIGURE_ARGS+=	--with-data-packaging=library \
 			--enable-static
 
 
-USE_GMAKE=		yes
+USES=			gmake pathfix
 INSTALL_TARGET=		install install-manx
-
-MAN1+=	derb.1
-MAN1+=	genbrk.1
-MAN1+=	gencnval.1
-MAN1+=	gencfu.1
-MAN1+=	gendict.1
-MAN1+=	genrb.1
-MAN1+=	icu-config.1
-MAN1+=	makeconv.1
-MAN1+=	pkgdata.1
-MAN1+=	uconv.1
-MAN8+=	icupkg.8
-MAN8+=	genccode.8
-MAN8+=	gencmn.8
-MAN8+=	gensprep.8
 
 ICUMAJOR=	${PORTVERSION:C/\..*//}
 PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUVER=${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"
@@ -75,7 +59,6 @@ post-patch:
 .if ! ${PORT_OPTIONS:MTHREADS}
 	@${REINPLACE_CMD} -e 's,\(THREADSC.*FLAGS\).*,\1=,g' ${WRKSRC}/config/mh-bsd-gcc
 .endif
-	@${REINPLACE_CMD} -e 's,$$(libdir)/pkgconfig,${PREFIX}/libdata/pkgconfig,g' ${WRKSRC}/Makefile.in
 
 iotest cintltst intltest:
 	# Performing the ${.TARGET} test

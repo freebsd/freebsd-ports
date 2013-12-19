@@ -1,12 +1,17 @@
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	unoconv
 PORTVERSION=	0.6
 CATEGORIES=	textproc python
-MASTER_SITES=	http://dag.wieers.com/home-made/unoconv/
+MASTER_SITES=	http://dag.wieers.com/home-made/${PORTNAME}/ \
+		SF/nemysisfreebsdp/textproc/:icons
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}.png:icons
 DIST_SUBDIR=	python
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	nemysis@gmx.ch
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Convert any document from and to any LibreOffice supported format
 
 LICENSE=	GPLv2
@@ -16,7 +21,7 @@ RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-PORTDATA=	 *
+PORTDOCS=	*
 
 DOCSRCDIR1=	${WRKSRC}
 DOC_FILES1=	AUTHORS ChangeLog README.asciidoc WISHLIST
@@ -26,41 +31,30 @@ DOCSDIR2=	${DOCSDIR}/doc
 DOC_FILES2=	errcode.txt filters.txt formats.txt office-installations.txt \
 		selinux.txt unoconv.1.txt
 
-MAN1=		${PORTNAME}.1
-
 SUB_FILES=	${PORTNAME} pkg-message
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|' \
+		${WRKSRC}/${PORTNAME}
 
 do-install:
-# Scripts
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
-# Executable
-	${MKDIR} ${DATADIR}/tests
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/tests/
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${DATADIR}
 
-# Data
 .for f in *.odt *.csv
-	@(cd ${WRKSRC}/tests && ${INSTALL_DATA} ${f} ${DATADIR}/tests)
+	@(cd ${WRKSRC}/tests && ${INSTALL_DATA} ${f} ${STAGEDIR}${DATADIR}/tests)
 .endfor
 
-# Pixmaps
-	${INSTALL_DATA} ${WRKSRC}/tests/dag.gif ${PREFIX}/share/pixmaps/${PORTNAME}.gif
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/
 
-# Documentation
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${DOCSDIR}
-	${MKDIR} ${DOCSDIR2}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${DOCSDIR2}
-	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
-.endif
-
-# pkg-message
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 
 .include <bsd.port.mk>

@@ -12,9 +12,10 @@ DISTNAME=	xorp-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source network routing platform, development branch
 
+BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 # Uses libcurses, libcrypto, librt from base system.
-LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs \
-		pcap:${PORTSDIR}/net/libpcap
+LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs \
+		libpcap.so:${PORTSDIR}/net/libpcap
 
 CONFLICTS=	xorp-1*
 
@@ -22,6 +23,7 @@ NOMAN=		defined
 
 USE_BZIP2=	yes
 USE_GCC=	4.2+
+USE_PYTHON_BUILD=	2
 USE_SCONS=	yes
 NO_STAGE=	yes
 #USE_OPENSSL=	yes

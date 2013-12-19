@@ -30,7 +30,7 @@ ONLY_FOR_ARCHS=		i386 amd64
 ONLY_FOR_ARCHS_REASON=	does not configure except on i386 amd64
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
- LIB_DEPENDS+=	cl:${PORTSDIR}/security/cryptlib
+ LIB_DEPENDS+=	libcl.so:${PORTSDIR}/security/cryptlib
 .else
  MAKE_ARGS+=	WITHOUT_CRYPTLIB=yes
 .endif

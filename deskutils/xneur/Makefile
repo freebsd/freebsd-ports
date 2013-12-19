@@ -11,8 +11,8 @@ MASTER_SITES=	http://dists.xneur.ru/release-${DISTVERSION}/tgz/ \
 MAINTAINER=	admin@lissyara.su
 COMMENT=	Auto keyboard switcher
 
-LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify \
-		pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
+		libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
 USES=		pkgconfig iconv
@@ -64,14 +64,14 @@ CONFIGURE_ARGS+=	--with-sound=no
 .endif
 
 .if ${PORT_OPTIONS:MASPELL}
-LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=	libaspell.so:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=	--with-spell=aspell
 .else
 CONFIGURE_ARGS+=	--with-spell=no --without-aspell
 .endif
 
 .if ${PORT_OPTIONS:MXOSD}
-LIB_DEPENDS+=	xosd.4:${PORTSDIR}/misc/xosd
+LIB_DEPENDS+=	libxosd.so:${PORTSDIR}/misc/xosd
 CONFIGURE_ARGS+=	--with-xosd
 .else
 CONFIGURE_ARGS+=	--without-xosd

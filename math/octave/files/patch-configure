@@ -1,0 +1,11 @@
+--- configure.orig	2013-02-21 21:21:49.000000000 +0100
++++ configure	2013-11-22 20:34:49.000000000 +0100
+@@ -58248,7 +58248,7 @@
+ main ()
+ {
+ 
+-      std::unordered_map m;
++      std::unordered_map<int, int> m;
+ 
+   ;
+   return 0;

@@ -39,7 +39,8 @@ SMPD_DESC=	use SMPD instead of MPD, for a mixed-OS cluster
 X11_DESC=	build MPE graphics routines
 
 CONFIGURE_ARGS=	--enable-romio --enable-shared	\
-		--docdir="${DOCSDIR}"
+		--docdir="${DOCSDIR}" \
+		--with-python="${PYTHON_CMD}"
 CONFIGURE_ENV=	FCFLAGS="${FFLAGS}" \
 		PACKAGE=${PORTNAME} \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"

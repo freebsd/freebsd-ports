@@ -1,0 +1,5 @@
+MogileFS is an open source distributed filesystem, see: mogilefs.org
+for more details. This library allows any Ruby application to read,
+write and delete files in a MogileFS instance.
+
+WWW: http://bogomips.org/mogilefs-client/

@@ -1,5 +1,5 @@
 --- configure.in.orig	2013-10-02 17:22:21.000000000 +0200
-+++ configure.in	2013-12-09 16:12:25.845469460 +0100
++++ configure.in	2013-12-14 14:27:40.067139387 +0100
 @@ -12,8 +12,6 @@
  RELEASE=1
  AC_SUBST(RELEASE)
@@ -17,11 +17,7 @@
  
  AM_PROG_CC_C_O
  
-@@ -211,11 +210,12 @@
- 	ACX_HELP_STRING([--with-pgsql=DIR],
- 		[sets path to pgsql installation]),
- 	PGSQL=$withval,)
-+if test -d "$PGSQL"; then
+@@ -214,8 +213,8 @@
  AC_CHECK_LIB(crypt,main)
  if test "$ac_cv_lib_crypt_main" = "yes" -a "x$PGSQL" != "xno"; then
    if test -n "$PGSQL"; then
@@ -32,7 +28,7 @@
    fi
    AC_CHECK_LIB(pq,PQsetdbLogin,,,-lcrypt)
    if test "$ac_cv_lib_pq_PQsetdbLogin" = "yes"; then
-@@ -259,10 +259,10 @@
+@@ -259,10 +258,10 @@
  dnl Check for DBI libraries
  AS_IF([test "x$with_dbi" != "xno"], [
    _SAVEDLIBS="$LIBS"
@@ -45,7 +41,7 @@
      AC_SUBST(DBILIBS)
    else
      AC_MSG_WARN([Skipping dbi plugin])
-@@ -276,17 +276,13 @@
+@@ -276,22 +275,17 @@
  dnl Check for radius libraries
  AS_IF([test "x$with_radius" != "xno"], [
    _SAVEDLIBS="$LIBS"
@@ -67,7 +63,12 @@
      else
        AC_MSG_WARN([Skipping radius plugin])
        AC_MSG_WARN([install radius libs to compile this plugin (see REQUIREMENTS).])
-@@ -300,12 +296,13 @@
+     fi
+-  fi
+   LIBS="$_SAVEDLIBS"
+ ])
+ 
+@@ -300,12 +294,13 @@
  dnl Check for LDAP libraries
  AS_IF([test "x$with_ldap" != "xno"], [
    _SAVEDLIBS="$LIBS"
@@ -85,7 +86,7 @@
      AC_CHECK_FUNCS(ldap_set_option)
      EXTRAS="$EXTRAS check_ldap"
    	AC_CHECK_FUNCS(ldap_init ldap_set_option ldap_get_option ldap_start_tls_s)
-@@ -729,22 +726,10 @@
+@@ -729,22 +724,10 @@
  dnl 	ac_cv_ps_cols=8
  dnl 	AC_MSG_RESULT([$ac_cv_ps_command])
  
@@ -111,7 +112,7 @@
  then
  	ac_cv_ps_varlist="[procstat,&procuid,&procpid,&procppid,&procvsz,&procrss,&procpcpu,procprog,&pos]"
  	ac_cv_ps_command="$PATH_TO_PS -axwo 'stat uid pid ppid vsz rss pcpu comm args'"
-@@ -752,9 +737,8 @@
+@@ -752,9 +735,8 @@
  	ac_cv_ps_cols=9
  	AC_MSG_RESULT([$ac_cv_ps_command])
  
@@ -123,7 +124,7 @@
  elif ps -axwo 'stat uid pid ppid vsz rss pcpu ucomm command' 2>/dev/null | \
  	egrep -i ["^ *STAT +UID +PID +PPID +VSZ +RSS +%CPU +UCOMM +COMMAND"] > /dev/null
  then
-@@ -764,209 +748,6 @@
+@@ -764,209 +746,6 @@
  	ac_cv_ps_cols=9
  	AC_MSG_RESULT([$ac_cv_ps_command])
  
@@ -333,7 +334,7 @@
  else
  	AC_MSG_WARN([unable to find usable ps syntax - check_procs and check_nagios will not be compiled])
  fi
-@@ -1354,6 +1135,8 @@
+@@ -1354,6 +1133,8 @@
  	AC_MSG_WARN([Get smbclient from Samba.org to monitor SMB shares])
  fi
  
@@ -342,7 +343,7 @@
  AC_PATH_PROG(PATH_TO_SNMPGET,snmpget)
  AC_ARG_WITH(snmpget_command,
              ACX_HELP_STRING([--with-snmpget-command=PATH],
-@@ -1384,7 +1167,10 @@
+@@ -1384,7 +1165,10 @@
  else
  	AC_MSG_WARN([Tried $PERL - install Net::SNMP perl module if you want to use the perl snmp plugins])
  fi
@@ -353,7 +354,7 @@
  AC_PATH_PROG(PATH_TO_QUAKESTAT,quakestat)
  AC_PATH_PROG(PATH_TO_QSTAT,qstat)
  AC_ARG_WITH(qstat_command,
-@@ -1409,7 +1195,10 @@
+@@ -1409,7 +1193,10 @@
  	AC_DEFINE_UNQUOTED(PATH_TO_QSTAT,"$ac_cv_path_to_qstat",
  		[path to qstat/quakestat])
  fi
@@ -364,7 +365,7 @@
  AC_PATH_PROG(PATH_TO_FPING,fping)
  AC_PATH_PROG(PATH_TO_FPING6,fping6)
  
-@@ -1430,6 +1219,7 @@
+@@ -1430,6 +1217,7 @@
  else
  	AC_MSG_WARN([Get fping from http://www.fping.com in order to make check_fping plugin])
  fi
@@ -372,7 +373,7 @@
  
  AC_PATH_PROG(PATH_TO_SSH,ssh)
  AC_ARG_WITH(ssh_command,
-@@ -1497,32 +1287,12 @@
+@@ -1497,32 +1285,12 @@
  dnl end if for PATH_TO_SWAP
  fi
  

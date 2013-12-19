@@ -4,7 +4,7 @@
    TriggerQuirks();
  #endif
  
-+  setenv("MOZ_PLUGIN_PATH", "%%LOCALBASE%%/lib/browser_plugins/symlinks/gecko19:%%LOCALBASE%%/lib/npapi/symlinks/firefox", 0);
++  setenv("MOZ_PLUGIN_PATH", "%%LOCALBASE%%/lib/browser_plugins/symlinks/gecko", 0);
    int gotCounters;
  #if defined(XP_UNIX)
    struct rusage initialRUsage;

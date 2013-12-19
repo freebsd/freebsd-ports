@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.linuxsampler.org/packages/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular MIDI sampler
 
-LIB_DEPENDS=	gig:${PORTSDIR}/audio/libgig
+LIB_DEPENDS=	libgig.so:${PORTSDIR}/audio/libgig
 
 RESTRICTED=	no commercial use
 
@@ -40,13 +40,13 @@ CONFIGURE_ARGS+=--disable-arts-driver
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
 .else
 CONFIGURE_ARGS+=--disable-jack-driver
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
+LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 .else
 CONFIGURE_ARGS+=--disable-alsa-driver
 .endif

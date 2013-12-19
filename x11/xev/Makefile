@@ -10,9 +10,6 @@ COMMENT=	Print contents of X events
 XORG_CAT=	app
 USE_XORG=	x11 xrandr
 
-PLIST_FILES=	bin/xev
+PLIST_FILES=	bin/xev man/man1/xev.1.gz
 
-MAN1=		xev.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

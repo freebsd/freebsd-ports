@@ -34,7 +34,6 @@ VIDEO_DRIVERS=		ati \
 			mach64 \
 			nv \
 			r128 \
-			radeonhd \
 			vesa \
 			apm \
 			ark \
@@ -45,7 +44,6 @@ VIDEO_DRIVERS=		ati \
 			glint \
 			i128 \
 			i740 \
-			imstt \
 			mga \
 			neomagic \
 			newport \
@@ -68,7 +66,6 @@ OPTIONS_DEFAULT=	MOUSE \
 			MACH64 \
 			NV \
 			R128 \
-			RADEONHD \
 			VESA
 
 .for type in input video
@@ -97,7 +94,6 @@ SUNFFB_DESC=		Install sunffb video driver
 # these drivers have a different module name compared to the plugin they install
 QUIRKS=		keyboard:kbd
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Manual add arch specific drivers so they be added to depend lines.
@@ -122,7 +118,7 @@ RUN_DEPENDS+=	${${type:U}DIR}/${i}_drv.so:${PORTSDIR}/x11-drivers/xf86-${type}-$
 .endfor
 
 do-install:
-		${MKDIR} ${PREFIX}/libdata/xorg
-		${TOUCH} ${PREFIX}/libdata/xorg/drivers
+		${MKDIR} ${STAGEDIR}${PREFIX}/libdata/xorg
+		${TOUCH} ${STAGEDIR}${PREFIX}/libdata/xorg/drivers
 
 .include <bsd.port.mk>

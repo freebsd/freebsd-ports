@@ -11,15 +11,14 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Learning console-based MP3/OGG player
 
-LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac \
-		fftw:${PORTSDIR}/math/fftw \
-		id3:${PORTSDIR}/audio/id3lib \
-		mad:${PORTSDIR}/audio/mad \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		ao:${PORTSDIR}/audio/libao
+LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac \
+		libfftw.so:${PORTSDIR}/math/fftw \
+		libid3.so:${PORTSDIR}/audio/id3lib \
+		libmad.so:${PORTSDIR}/audio/mad \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libao.so:${PORTSDIR}/audio/libao
 RUN_DEPENDS=	id3v2:${PORTSDIR}/audio/id3v2
 
-NO_STAGE=	yes
 USE_BZIP2=	yes
 USES=		gmake
 USE_RUBY=	yes
@@ -41,18 +40,18 @@ post-patch:
 		${WRKSRC}/src/global.c
 
 do-install:
-	${MKDIR} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/squash ${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/squash ${STAGEDIR}${PREFIX}/bin
 .for FILE in collect_info edit_tag export_music import_music joystick uncollect_info
-	${INSTALL_SCRIPT} ${WRKSRC}/extra/${FILE}.rb ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/extra/${FILE}.rb ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${MKDIR} ${RUBY_SITELIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/extra/musicdb_lib.rb ${RUBY_SITELIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/extra/squash.conf ${PREFIX}/etc/squash.conf.dist
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/extra/musicdb_lib.rb ${STAGEDIR}${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/extra/squash.conf ${STAGEDIR}${PREFIX}/etc/squash.conf.dist
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README doc/FEATURES doc/LOCKS doc/INSTALL doc/USERS_GUIDE
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

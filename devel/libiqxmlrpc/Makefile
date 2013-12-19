@@ -13,7 +13,7 @@ COMMENT=	Free, object-oriented XML-RPC implementation written in C++
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen
 .endif
-LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 LICENSE=	BSD
 

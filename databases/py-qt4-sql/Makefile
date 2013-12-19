@@ -45,7 +45,7 @@ ARGS=		-b ${PREFIX}/bin \
 ARGS+=		--no-qsci-api
 PLIST_SUB+=	API="@comment "
 .else
-LIB_DEPENDS+=	qscintilla2:${PORTSDIR}/devel/qscintilla2
+LIB_DEPENDS+=	libqscintilla2.so:${PORTSDIR}/devel/qscintilla2
 ARGS+=		--qsci-api --qsci-api-destdir=${QSCIDIR}
 PLIST_SUB+=	API=""
 .endif

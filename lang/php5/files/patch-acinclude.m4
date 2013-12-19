@@ -1,6 +1,6 @@
---- acinclude.m4.orig	2009-05-09 22:28:02.000000000 +0200
-+++ acinclude.m4	2009-06-25 08:08:05.000000000 +0200
-@@ -968,15 +968,9 @@
+--- acinclude.m4.orig	2013-12-10 19:32:43.000000000 +0000
++++ acinclude.m4	2013-12-13 21:55:53.955235854 +0000
+@@ -984,15 +984,9 @@ dnl ------------------------------------
    if test "$3" != "shared" && test "$3" != "yes" && test "$4" = "cli"; then
  dnl ---------------------------------------------- CLI static module
      [PHP_]translit($1,a-z_-,A-Z__)[_SHARED]=no
@@ -18,7 +18,7 @@
      EXT_CLI_STATIC="$EXT_CLI_STATIC $1"
    fi
    PHP_ADD_BUILD_DIR($ext_builddir)
-@@ -1026,12 +1020,6 @@
+@@ -1042,12 +1036,6 @@ You either need to build $1 shared or bu
  build to be successful.
  ])
    fi
@@ -31,7 +31,7 @@
    dnl Some systems require that we link $2 to $1 when building
  ])
  
-@@ -2303,9 +2291,9 @@
+@@ -2320,9 +2308,9 @@ AC_DEFUN([PHP_SETUP_OPENSSL],[
    test -z "$PHP_IMAP_SSL" && PHP_IMAP_SSL=no
  
    dnl Fallbacks for different configure options

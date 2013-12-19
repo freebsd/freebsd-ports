@@ -1,6 +1,0 @@
-A highly configurable sensor management system that provides the
-ability to remotely manage Snort [Barnyard] based Intrusion
-Detection Systems, push configuration files, monitor sensor health,
-and view Snort alerts all from a clean simple web interface.
-
-WWW: http://snortsms.sourceforge.net/

@@ -14,6 +14,8 @@ COMMENT=	The Berkeley DB package, revision 4.4
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
+DEPRECATED=	Please use databases/db5 or db6 for new installs.
+
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 DEBUG_FLAGS=		-g -O1	# need -O1 for inline assembly

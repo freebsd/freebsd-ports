@@ -13,7 +13,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby API for mSQL
 
-LIB_DEPENDS=	msql.1:${PORTSDIR}/databases/msql
+LIB_DEPENDS=	libmsql.so:${PORTSDIR}/databases/msql
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

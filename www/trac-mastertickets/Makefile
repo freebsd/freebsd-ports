@@ -9,7 +9,7 @@ MASTER_SITES=	http://mirrors.redv.com/pub/trac/ \
 PKGNAMEPREFIX=	trac-
 DISTNAME=	coderanger-trac-${PORTNAME}-43a7537
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Support for ticket dependencies
 
 RUN_DEPENDS+=	trac>=0.12:${PORTSDIR}/www/trac

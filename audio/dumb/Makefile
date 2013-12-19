@@ -19,7 +19,7 @@ ALLEGRO_DESC=	Enable allegro support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALLEGRO}
-LIB_DEPENDS+=	alleg:${PORTSDIR}/devel/allegro
+LIB_DEPENDS+=	liballeg.so:${PORTSDIR}/devel/allegro
 PLIST_SUB+=	ALLEGRO=""
 MAKE_ARGS=	_PORT_ALLEGRO_CFLAGS="`allegro-config --cflags`"
 MAKE_ARGS+=	LINK_ALLEGRO="-lm -L${LOCALBASE}/lib -lalleg"

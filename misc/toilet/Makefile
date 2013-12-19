@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/toilet/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced figlet(6)
 
 LIB_DEPENDS=	libcaca.so:${PORTSDIR}/graphics/libcaca

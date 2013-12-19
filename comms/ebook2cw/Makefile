@@ -10,8 +10,8 @@ MASTER_SITE_SUBDIR=	db
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Convert text files into cw as an mp3 or ogg file
 
-LIB_DEPENDS=	mp3lame:${PORTSDIR}/audio/lame \
-		vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 MAN1=		ebook2cw.1
 

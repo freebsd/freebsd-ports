@@ -9,7 +9,7 @@ MASTER_SITES=	http://borderworlds.dk/projects/sm/
 MAINTAINER=	xi@borderworlds.dk
 COMMENT=	A minimalistic module player
 
-LIB_DEPENDS=	mikmod.2:${PORTSDIR}/audio/libmikmod
+LIB_DEPENDS=	libmikmod.so:${PORTSDIR}/audio/libmikmod
 
 WRKSRC=		${WRKDIR}/simplemod
 

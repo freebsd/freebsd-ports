@@ -14,7 +14,7 @@ COMMENT=	Library to import various 3D model formats in a uniform manner
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	boost_filesystem:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs
 
 USE_ZIP=	yes
 USES=		cmake pkgconfig

@@ -12,9 +12,6 @@ LICENSE=	MIT
 XORG_CAT=	app
 USE_XORG=	x11
 
-PLIST_FILES=	bin/xrefresh
+PLIST_FILES=	bin/xrefresh man/man1/xrefresh.1.gz
 
-MAN1=		xrefresh.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

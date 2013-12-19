@@ -12,8 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manipulate / fetch info from Ogg-Vorbis audio files
 
 BUILD_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
-LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
-		vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MAKE_JOBS_UNSAFE=	yes

@@ -2,35 +2,28 @@
 # $FreeBSD$
 
 PORTNAME=	radare2
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9.6
 CATEGORIES=	devel
-MASTER_SITES=	http://radare.org/get/
+MASTER_SITES=	http://rada.re/get/
 
 MAINTAINER=	kpedersen@opencde.org
 COMMENT=	Tools to disasm, debug, analyze, and manipulate binary files
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
+USE_XZ=		yes
 
-CONFIGURE_ARGS=--without-ewf --without-gmp
+CONFIGURE_ARGS+=--without-ewf --without-gmp
+MAKE_ENV+=	HOST_CC=${CC}
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
-
-.if ${CC} == "clang" || ${CXX} == "clang++"
-BROKEN=		does not build when compiled with clang
-.endif
-
-MAN1=	r2.1 rabin2.1 radiff2.1 rafind2.1 ranal2.1 rarc2-tool.1 \
-	rarc2.1 rasc2.1 rasm2.1 rax2.1 rsc2.1 radare2.1 rahash2.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|..LIBDIR./pkgconfig|libdata/pkgconfig|g' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|..LFX./pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
+	@${REINPLACE_CMD} -e 's|..LFX./pkgconfig|${STAGEDIR}${PREFIX}/libdata/pkgconfig|g' \
 		${WRKSRC}/libr/Makefile
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's| install-doc install-man||g' ${WRKSRC}/Makefile

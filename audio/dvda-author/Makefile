@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-7
 MAINTAINER=	martin.dieringer@gmx.de
 COMMENT=	Author and playback unencrypted and uncompressed Audio-DVDs
 
-LIB_DEPENDS=	FLAC:${PORTSDIR}/audio/flac \
+LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 	libogg.so:${PORTSDIR}/audio/libogg \
 	libsox.so:${PORTSDIR}/audio/sox \
 	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \

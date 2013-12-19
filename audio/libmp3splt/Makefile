@@ -37,7 +37,7 @@ PLIST_FILES=	include/libmp3splt/mp3splt.h include/libmp3splt/version.h lib/libmp
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMAD}
-LIB_DEPENDS+=	mad:${PORTSDIR}/audio/libmad
+LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad
 PLIST_FILES+=	lib/${PLUGIN_DIR}/libsplt_mp3.a \
 		lib/${PLUGIN_DIR}/libsplt_mp3.la \
 		lib/${PLUGIN_DIR}/libsplt_mp3.so \
@@ -47,8 +47,8 @@ CONFIGURE_ARGS+=	--disable-mp3
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg \
-		vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libogg.so:${PORTSDIR}/audio/libogg \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis
 PLIST_FILES+=	lib/${PLUGIN_DIR}/libsplt_ogg.a \
 		lib/${PLUGIN_DIR}/libsplt_ogg.la \
 		lib/${PLUGIN_DIR}/libsplt_ogg.so \
@@ -58,13 +58,13 @@ CONFIGURE_ARGS+=	--disable-ogg
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 .else
 CONFIGURE_ARGS+=	--disable-pcre
 .endif
 
 .if ${PORT_OPTIONS:MID3}
-LIB_DEPENDS+=	id3tag:${PORTSDIR}/audio/libid3tag
+LIB_DEPENDS+=	libid3tag.so:${PORTSDIR}/audio/libid3tag
 .else
 CONFIGURE_ARGS+=	--disable-id3tag
 .endif

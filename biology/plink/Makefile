@@ -13,10 +13,10 @@ COMMENT=	Whole genome association analysis toolset
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack
+LIB_DEPENDS=	liblapack.so:${PORTSDIR}/math/lapack
 
+USES=		gmake
 USE_ZIP=	yes
-USE_GMAKE=	yes
 USE_FORTRAN=	yes	# Make it use the same compiler as lapack
 
 PLIST_FILES=	bin/plink

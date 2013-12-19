@@ -10,9 +10,6 @@ COMMENT=	Program to create Compose cache files
 XORG_CAT=	app
 USE_XORG=	x11
 
-PLIST_FILES=	sbin/mkcomposecache
+PLIST_FILES=	sbin/mkcomposecache man/man8/mkcomposecache.8.gz
 
-MAN8=		mkcomposecache.8
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

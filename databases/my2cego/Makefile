@@ -10,9 +10,9 @@ MASTER_SITES=	http://www.lemke-it.com/
 MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	Imports mysqldump files into cego
 
-LIB_DEPENDS=	lfcbase:${PORTSDIR}/devel/lfcbase \
-		lfcxml:${PORTSDIR}/devel/lfcxml \
-		cego:${PORTSDIR}/databases/cego
+LIB_DEPENDS=	liblfcbase.so:${PORTSDIR}/devel/lfcbase \
+		liblfcxml.so:${PORTSDIR}/devel/lfcxml \
+		libcego.so:${PORTSDIR}/databases/cego
 
 LICENSE=	GPLv3
 GNU_CONFIGURE=	yes

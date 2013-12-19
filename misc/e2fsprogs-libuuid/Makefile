@@ -11,7 +11,7 @@ CONFLICTS=	ossp-uuid-[0-9]*
 
 CONFIGURE_ARGS=	--enable-elf-shlibs
 
-WITHOUT_NLS=	yes
+OPTIONS_EXCLUDE=	NLS
 OPTIONSFILE=	# works around optionsNG trouble
 MASTERDIR=	${.CURDIR}/../../sysutils/e2fsprogs
 MAKE_ARGS=	LIB_SUBDIRS=lib/uuid

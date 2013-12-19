@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libxul
-DISTVERSION=	24.1.0
+DISTVERSION=	24.2.0
 CATEGORIES?=	www devel
 MASTER_SITES=	MOZILLA/firefox/releases/${DISTVERSION}esr/source \
 		https://ftp.mozilla.org/pub/mozilla.org/firefox/candidates/${DISTVERSION}esr-candidates/build1/source/
@@ -11,7 +11,7 @@ DISTNAME=	firefox-${DISTVERSION}esr.source
 MAINTAINER?=	gecko@FreeBSD.org
 COMMENT?=	Mozilla runtime package that can be used to bootstrap XUL+XPCOM apps
 
-BUILD_DEPENDS=	nspr>=4.10:${PORTSDIR}/devel/nspr \
+BUILD_DEPENDS=	nspr>=4.10.2:${PORTSDIR}/devel/nspr \
 		nss>=3.15:${PORTSDIR}/security/nss \
 		sqlite3>=3.7.17:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \

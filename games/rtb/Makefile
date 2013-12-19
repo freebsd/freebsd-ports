@@ -3,60 +3,45 @@
 
 PORTNAME=	RealTimeBattle
 PORTVERSION=	1.0.8
-PORTREVISION=	9
+DISTVERSIONSUFFIX=	-Ext
+PORTREVISION=	10
 CATEGORIES=	games
-MASTER_SITES=	SF${PORTNAME:}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-Ext
+MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}-1.0.x/${PORTNAME}%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robot programming game for UNIX
 
+LICENSE=	GPLv2 # (or later)
+
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
-USES=		perl5 gmake pkgconfig
+OPTIONS_DEFINE=	DOCS
+
 USE_BZIP2=	yes
+USES=		gettext gmake perl5 pkgconfig
 USE_GNOME=	gtk20
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rtb-dir=${PREFIX}/lib/${PORTNAME}
 
-CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-post-patch:
-.for file in configure
-	@${REINPLACE_CMD} -e '/test/s| == | = |g ; \
-		 s|INCLUDED_LIBINTL=yes|INCLUDED_LIBINTL=no|g ; \
-		 s|\\$${top_builddir}/intl/libintl.a|-lintl|g' ${WRKSRC}/${file}
-.endfor
-.for file in Makefile.in
-	@${REINPLACE_CMD} -e '/^SUBDIRS/s|Documentation||g' ${WRKSRC}/${file}
-.endfor
-.for file in team-framework/createrobot.sh \
-	team-framework/createrobotconf.sh
-	@${REINPLACE_CMD} -e 's| sed| gsed|g' ${WRKSRC}/${file}
-.endfor
+DESKTOP_ENTRIES="${PORTNAME}" "" "" "${PORTNAME:L}" "" ""
 
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS ChangeLog EXTRAROBOTS.README NEWS README TODO \
-	Documentation/RealTimeBattle-1.html \
-	Documentation/RealTimeBattle-2.html \
-	Documentation/RealTimeBattle-3.html \
-	Documentation/RealTimeBattle-4.html \
-	Documentation/RealTimeBattle-5.html \
-	Documentation/RealTimeBattle-6.html \
-	Documentation/RealTimeBattle.html \
-	Documentation/next.gif Documentation/prev.gif Documentation/toc.gif \
-	Documentation/next.png Documentation/prev.png Documentation/toc.png \
-	Documentation/RealTimeBattle.dvi \
-	Documentation/RealTimeBattle.sgml \
-	Documentation/RealTimeBattle.txt \
-	Documentation/RTB-Team-Framework-Tutorial.tar.gz
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+post-patch:
+.for i in configure
+	@${REINPLACE_CMD} -e 's|INCLUDED_LIBINTL=yes|INCLUDED_LIBINTL=no|g ; \
+		 s|\\$${top_builddir}/intl/libintl.a|-lintl|g ; \
+		 /^DOCS_DIR/s|=.*|=$${prefix}/share/doc/${PORTNAME}| ; \
+		 /test/s| == | = |g' ${WRKSRC}/${i}
 .endfor
-.endif
+.for i in Documentation/Makefile.in
+	@${REINPLACE_CMD} -e '/COPYING/d' ${WRKSRC}/${i}
+.endfor
+.for i in team-framework/createrobot.sh \
+	team-framework/createrobotconf.sh
+	@${REINPLACE_CMD} -e 's| sed| gsed|g' ${WRKSRC}/${i}
+.endfor
 
 .include <bsd.port.mk>

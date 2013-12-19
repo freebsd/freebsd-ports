@@ -20,7 +20,7 @@ USES=		qmail:run
 NO_STAGE=	yes
 OPTIONS_SUB=	yes
 
-RESTRICTED=	Unsure of DJB license
+LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
 
 ALL_TARGET=	it
 

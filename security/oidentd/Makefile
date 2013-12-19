@@ -38,6 +38,7 @@ CONFIGURE_ARGS+=--disable-masq
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/,${PREFIX}&,g' ${WRKSRC}/src/oidentd.h
+	@${REINPLACE_CMD} -e 's|5-9|5-11|g;s|4-9|4-11|g' ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/oidentd ${PREFIX}/sbin

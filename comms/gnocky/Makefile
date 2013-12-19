@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.gnokii.org/download/gnocky/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical (GTK+2) frontend for gnokii
 
-LIB_DEPENDS=	gnokii:${PORTSDIR}/comms/gnokii
+LIB_DEPENDS=	libgnokii.so:${PORTSDIR}/comms/gnokii
 
 USES=		pkgconfig
 USE_BZIP2=	yes

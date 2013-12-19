@@ -8,7 +8,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}%201.0/${PORTVERSION}
 PORTSCOUT=	limit:^1\.0\.
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web-based calendar application
 
 USE_PHP=	pcre session

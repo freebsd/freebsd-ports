@@ -17,7 +17,7 @@ bin/tiffcp
 bin/tiffcrop
 bin/tiffdither
 bin/tiffdump
-%%WITH_X11%%bin/tiffgt
+%%X11%%bin/tiffgt
 bin/tiffinfo
 bin/tiffmedian
 bin/tiffset

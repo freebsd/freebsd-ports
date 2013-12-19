@@ -2,12 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	Pymacs
-PORTVERSION=	0.22
-PORTREVISION=	6
+PORTVERSION=	0.25
 CATEGORIES=	devel editors python elisp
-MASTER_SITES=	http://pymacs.progiciels-bpi.ca/archives/ \
-		${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=	distfiles
+MASTER_SITES=	http://github.com/pinard/${PORTNAME}/archive/v${PORTVERSION}.tar.gz?dummy=/
 
 MAINTAINER=	mwm@mired.org
 COMMENT=	A Python package for scripting emacs
@@ -16,21 +13,18 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_PYTHON_PREFIX=	yes
 USE_EMACS=	yes
-
-.if !defined(EMACS_PORT_NAME)
-EMACS_PORT_NAME=xemacs21
-.endif
+FETCH_ARGS=   -Fpr
 
 NO_STAGE=	yes
-post-patch:
-.for f in __init__.py pymacs.py
-	${REINPLACE_CMD} -e 's,# Copyright,# coding:latin1 Copyright,g' \
-		${WRKSRC}/Pymacs/$f
-.endfor
+pre-configure:
+	@(cd ${WRKSRC}; \
+		${PYTHON_CMD} pppp -C ppppconfig.py Pymacs.py.in \
+			pppp.rst.in pymacs.el.in pymacs.rst.in \
+			contrib	tests)
 
 # Install the emacs side of things
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pymacs.el ${PREFIX}/${EMACS_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/pymacs.el ${PREFIX}/${EMACS_SITE_LISPDIR}
 	${EMACS_NAME} -batch -f batch-byte-compile \
 		${PREFIX}/${EMACS_SITE_LISPDIR}/pymacs.el
 

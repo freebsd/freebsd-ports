@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	quimup
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	audio
 MASTER_SITES=	SF/musicpd/Quimup/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_src
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
-USES=		qmake
+USES=		pkgconfig qmake
 USE_QT4=	corelib gui network \
 		moc_build rcc_build uic_build
 

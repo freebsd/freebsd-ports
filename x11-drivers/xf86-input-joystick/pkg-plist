@@ -2,6 +2,7 @@ include/xorg/joystick-properties.h
 lib/xorg/modules/input/joystick_drv.la
 lib/xorg/modules/input/joystick_drv.so
 libdata/pkgconfig/xorg-joystick.pc
+man/man4/joystick.4x.gz
 @dirrmtry lib/xorg/modules/input
 @dirrmtry lib/xorg/modules
 @dirrmtry lib/xorg

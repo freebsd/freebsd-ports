@@ -14,7 +14,7 @@ COMMENT=	A daemon notifying the user about devd(8) events \
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
 
 USES=		pkgconfig
 MAN1=		devd-notifier.1

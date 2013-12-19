@@ -1,22 +1,22 @@
---- configure.in.orig	2011-03-04 10:10:54.000000000 +0100
-+++ configure.in	2011-03-04 10:11:01.000000000 +0100
-@@ -302,7 +302,6 @@
+--- configure.in.orig	2013-12-10 19:32:43.000000000 +0000
++++ configure.in	2013-12-13 21:55:53.986235686 +0000
+@@ -370,7 +370,6 @@ sinclude(TSRM/tsrm.m4)
  dnl .
  dnl -------------------------------------------------------------------------
  
 -PTHREADS_CHECK
  PHP_HELP_SEPARATOR([SAPI modules:])
  PHP_SHLIB_SUFFIX_NAMES
- PHP_SAPI=default
-@@ -327,7 +326,6 @@
- 
+ PHP_BUILD_PROGRAM
+@@ -409,7 +408,6 @@ fi
+ dnl force ZTS
  if test "$enable_maintainer_zts" = "yes"; then
    PTHREADS_ASSIGN_VARS
 -  PTHREADS_FLAGS
  fi
  
- divert(3)
-@@ -612,7 +610,7 @@
+ dnl Starting system checks.
+@@ -688,7 +686,7 @@ nanosleep \
  )
  
  dnl Some systems (like OpenSolaris) do not have nanosleep in libc
@@ -25,7 +25,7 @@
  
  dnl Check for getaddrinfo, should be a better way, but...
  dnl Also check for working getaddrinfo
-@@ -1162,7 +1160,7 @@
+@@ -1225,7 +1223,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfd
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
@@ -34,9 +34,9 @@
  
  exec_prefix=$old_exec_prefix
  libdir=$old_libdir
-@@ -1373,7 +1371,7 @@
- PHP_SUBST(all_targets)
+@@ -1435,7 +1433,7 @@ PHP_SUBST(all_targets)
  PHP_SUBST(install_targets)
+ PHP_SUBST(install_binary_targets)
  
 -PHP_INSTALL_HEADERS([Zend/ TSRM/ include/ main/ main/streams/])
 +PHP_INSTALL_HEADERS([Zend/ TSRM/ main/ main/streams/])

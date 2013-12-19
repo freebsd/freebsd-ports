@@ -3,6 +3,7 @@
 
 PORTNAME=	google-sparsehash
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL}
@@ -14,6 +15,7 @@ MAINTAINER=	vd@FreeBSD.org
 COMMENT=	An extremely memory-efficient hash_map implementation
 
 GNU_CONFIGURE=	yes
+USE_GCC=	4.8+
 
 .include <bsd.port.pre.mk>
 

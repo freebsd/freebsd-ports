@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/vg
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Micro-benchmarking NoSQL storage
 
-LIB_DEPENDS=	tarantool:${PORTSDIR}/databases/tarantool
+LIB_DEPENDS=	libtarantool.so:${PORTSDIR}/databases/tarantool
 
 DATE=		20120802
 USE_BZIP2=	yes

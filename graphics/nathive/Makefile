@@ -11,10 +11,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Lightweight image editor
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
+BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
+RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
+		${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2
 
 USES=		gmake
-USE_PYTHON=	yes
+USE_PYTHON=	2
 MAKEFILE=	makefile
 ALL_TARGET=	default
 
@@ -29,7 +31,8 @@ NO_STAGE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/BASE =/ s|=.*|= ${PREFIX}/|; \
-		s|cp -r \([^ ]*\)/|cp -R \1|' ${WRKSRC}/${MAKEFILE}
+		s|cp -r \([^ ]*\)/|cp -R \1|; \
+		s|python |${PYTHON_CMD} |' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's|/usr/share/nathive|${DATADIR}|' \
 		${WRKSRC}/${PORTNAME}.desktop
 .if ! ${PORT_OPTIONS:MDOCS}

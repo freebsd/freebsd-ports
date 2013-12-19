@@ -1,0 +1,56 @@
+--- servers/slapd/overlays/memberof.c.orig	2013-11-14 19:31:27.000000000 -0800
++++ servers/slapd/overlays/memberof.c	2013-12-12 16:44:13.000000000 -0800
+@@ -190,7 +190,16 @@
+ 	BerVarray memberof;
+ 	memberof_is_t what;
+ } memberof_cbinfo_t;
+-	
++
++static void
++memberof_set_backend(Operation *op_target, Operation *op, slap_overinst *on)
++{
++	BackendInfo *bi = op->o_bd->bd_info;
++
++	if (bi->bi_type == memberof.on_bi.bi_type)
++		op_target->o_bd->bd_info = (BackendInfo *)on->on_info;
++}
++
+ static int
+ memberof_isGroupOrMember_cb( Operation *op, SlapReply *rs )
+ {
+@@ -285,7 +294,7 @@
+ 		op2.ors_filterstr = mo->mo_groupFilterstr;
+ 		op2.ors_filter = &mo->mo_groupFilter;
+ 
+-		op2.o_bd->bd_info = (BackendInfo *)on->on_info;
++		memberof_set_backend(&op2, op, on);
+ 		(void)op->o_bd->be_search( &op2, &rs2 );
+ 		op2.o_bd->bd_info = bi;
+ 
+@@ -307,7 +316,7 @@
+ 		op2.ors_filterstr = mo->mo_memberFilterstr;
+ 		op2.ors_filter = &mo->mo_memberFilter;
+ 
+-		op2.o_bd->bd_info = (BackendInfo *)on->on_info;
++		memberof_set_backend(&op2, op, on);
+ 		(void)op->o_bd->be_search( &op2, &rs2 );
+ 		op2.o_bd->bd_info = bi;
+ 
+@@ -409,7 +418,7 @@
+ 
+ 		oex.oe_key = (void *)&memberof;
+ 		LDAP_SLIST_INSERT_HEAD(&op2.o_extra, &oex, oe_next);
+-		op2.o_bd->bd_info = (BackendInfo *)on->on_info;
++		memberof_set_backend(&op2, op, on);
+ 		(void)op->o_bd->be_modify( &op2, &rs2 );
+ 		op2.o_bd->bd_info = bi;
+ 		LDAP_SLIST_REMOVE(&op2.o_extra, &oex, OpExtra, oe_next);
+@@ -451,7 +460,7 @@
+ 
+ 		oex.oe_key = (void *)&memberof;
+ 		LDAP_SLIST_INSERT_HEAD(&op2.o_extra, &oex, oe_next);
+-		op2.o_bd->bd_info = (BackendInfo *)on->on_info;
++		memberof_set_backend(&op2, op, on);
+ 		(void)op->o_bd->be_modify( &op2, &rs2 );
+ 		op2.o_bd->bd_info = bi;
+ 		LDAP_SLIST_REMOVE(&op2.o_extra, &oex, OpExtra, oe_next);

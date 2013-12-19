@@ -1,5 +1,5 @@
 --- ncurses-5.9/src/configure.orig	2013-08-21 02:51:59.000000000 +0000
-+++ ncurses-5.9/src/configure	2013-08-21 02:53:23.000000000 +0000
++++ ncurses-5.9.p2/src/configure	2013-08-21 02:53:23.000000000 +0000
 @@ -5719,7 +5719,7 @@
  		cf_cv_shared_soname='`basename $@`'
  	fi

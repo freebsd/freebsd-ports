@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME:S/tools//}/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Set of tools to record/playback/edit videos in MPEG format
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 OPTIONS_DEFINE=	GTK2 SDL PNG DV QUICKTIME SIMD DOCS
 OPTIONS_DEFAULT=GTK2 SDL PNG
@@ -18,8 +18,7 @@ QUICKTIME_DESC=		Enable libQuickTime support
 
 CONFLICTS=	mplex-[0-9]*
 
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
 LIBTOOLIZE_ARGS=--force
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
@@ -30,13 +29,6 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 CONFIGURE_ARGS=	--without-x
 USE_LDCONFIG=	yes
 
-MAN1=		jpeg2yuv.1 lav2mpeg.1 lav2wav.1 lav2yuv.1 lavpipe.1 lavplay.1 \
-		lavrec.1 lavtrans.1 mjpegtools.1 mp2enc.1 mpeg2enc.1 mplex.1 \
-		pgmtoy4m.1 png2yuv.1 pnmtoy4m.1 ppmtoy4m.1 y4mcolorbars.1 \
-		y4mdenoise.1 y4munsharp.1 y4mtopnm.1 y4mtoppm.1 yuv2lav.1 \
-		yuvdenoise.1 yuvfps.1 yuvinactive.1 yuvkineco.1 \
-		yuvmedianfilter.1 yuvplay.1 yuvscaler.1 yuvycsnoise.1
-MAN5=		yuv4mpeg.5
 INFO=		mjpeg-howto
 
 DOC_FILES=	AUTHORS BUGS CHANGES ChangeLog HINTS NEWS PLANS README \
@@ -46,7 +38,6 @@ DOC_FILES=	AUTHORS BUGS CHANGES ChangeLog HINTS NEWS PLANS README \
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
@@ -72,7 +63,7 @@ CONFIGURE_ARGS+=--without-libsdl
 .endif # SDL
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=--with-libpng
 PLIST_SUB+=	PNG:=""
 .else
@@ -81,7 +72,7 @@ PLIST_SUB+=	PNG:="@comment "
 .endif # PNG
 
 .if ${PORT_OPTIONS:MDV}
-LIB_DEPENDS+=	dv:${PORTSDIR}/multimedia/libdv
+LIB_DEPENDS+=	libdv.so:${PORTSDIR}/multimedia/libdv
 CONFIGURE_ARGS+=--with-libdv
 .else
 CONFIGURE_ARGS+=--without-libdv
@@ -89,7 +80,7 @@ CONFIGURE_ARGS+=--without-libdv
 
 .if ${PORT_OPTIONS:MQUICKTIME}
 PLIST_SUB+=	QUICKTIME=""
-LIB_DEPENDS+=	quicktime:${PORTSDIR}/multimedia/libquicktime
+LIB_DEPENDS+=	libquicktime.so:${PORTSDIR}/multimedia/libquicktime
 CONFIGURE_ARGS+=--with-libquicktime
 .else
 PLIST_SUB+=	QUICKTIME="@comment "
@@ -119,11 +110,9 @@ post-patch:
 		'/^pkgconfigdir/s|$$(libdir)|$$(prefix)/libdata|g' ${WRKSRC}/Makefile.am
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif # NOPORTDOCS
 
 .include <bsd.port.post.mk>

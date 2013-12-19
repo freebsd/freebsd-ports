@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	meld
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.3
 CATEGORIES=	textproc devel python
 MASTER_SITES=	GNOME
 
@@ -21,9 +21,11 @@ INSTALLS_OMF=	yes
 
 OPTIONS_DEFINE=		NLS PYGNOMEDESKTOP
 OPTIONS_SUB=		yes
-PYGNOMEDESKTOP_DESC=	Code syntax highlighting (many dependencies)
 
-NLS_USES=	gettext
+NLS_USES=		gettext
+
+PYGNOMEDESKTOP_DESC=	Code syntax highlighting (many dependencies)
+PYGNOMEDESKTOP_USE=	gnome=pygnomedesktop
 
 .include <bsd.port.options.mk>
 
@@ -39,9 +41,5 @@ post-patch:
 		 s|^LANG :=|LANG_ :=|g ; \
 		 s|$$(LANG)|$$(LANG_)|g' ${WRKSRC}/${file}
 .endfor
-
-.if ${PORT_OPTIONS:MPYGNOMEDESKTOP}
-USE_GNOME+=	pygnomedesktop
-.endif
 
 .include <bsd.port.mk>

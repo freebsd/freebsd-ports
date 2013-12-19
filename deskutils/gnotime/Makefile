@@ -14,7 +14,7 @@ COMMENT=	Time tracker for gnome2
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
 
 USES=		gettext gmake pathfix pkgconfig
 USE_XORG=	xscrnsaver

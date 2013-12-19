@@ -13,12 +13,12 @@ COMMENT=	VRML97 runtime and browser
 BROKEN=		does not build
 
 BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
-LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig		\
-		js.1:${PORTSDIR}/lang/spidermonkey17			\
-		jpeg.11:${PORTSDIR}/graphics/jpeg			\
-		png15:${PORTSDIR}/graphics/png				\
-		curl:${PORTSDIR}/ftp/curl				\
-		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig		\
+		libjs.so:${PORTSDIR}/lang/spidermonkey17			\
+		libjpeg.so:${PORTSDIR}/graphics/jpeg			\
+		libpng15.so:${PORTSDIR}/graphics/png				\
+		libcurl.so:${PORTSDIR}/ftp/curl				\
+		libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_GL=		yes
 USES=		 pathfix pkgconfig
@@ -54,8 +54,8 @@ NO_STAGE=	yes
 BROKEN=		Gets internal gcc error on ${ARCH}
 .endif
 
-LIB_DEPENDS+=	boost_regex:${PORTSDIR}/devel/boost-libs
-LIB_DEPENDS+=	boost_python:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS+=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=	libboost_python.so:${PORTSDIR}/devel/boost-python-libs
 
 pre-everything::
 	@${ECHO_MSG}

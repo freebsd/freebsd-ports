@@ -10,8 +10,8 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	BDD-based satisfiability and reachability solver
 
-LIB_DEPENDS+=	bdd:${PORTSDIR}/science/buddy \
-		boost_program_options:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=	libbdd.so:${PORTSDIR}/science/buddy \
+		libboost_program_options.so:${PORTSDIR}/devel/boost-libs
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes

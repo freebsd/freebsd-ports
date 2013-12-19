@@ -3,7 +3,8 @@
 
 PORTNAME=	web_search
 PORTVERSION=	0.1.6
-PORTREVISION=	2
+PORTREVISION=	3
+CATEGORIES=		mail www
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin for Websearch

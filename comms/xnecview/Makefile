@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	A X viewer of nec2c data
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	nec2c:${PORTSDIR}/comms/nec2c
 
 USES=		gmake pkgconfig

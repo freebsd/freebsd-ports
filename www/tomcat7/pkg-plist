@@ -6,8 +6,8 @@
 %%T%%/bin/bootstrap.jar
 %%T%%/bin/catalina-tasks.xml
 %%T%%/bin/catalina.sh
-%%T%%/bin/commons-daemon.jar
 %%T%%/bin/commons-daemon-native.tar.gz
+%%T%%/bin/commons-daemon.jar
 %%T%%/bin/configtest.sh
 %%T%%/bin/daemon.sh
 %%T%%/bin/digest.sh
@@ -58,6 +58,8 @@
 %%T%%/lib/tomcat-i18n-ja.jar
 %%T%%/lib/tomcat-jdbc.jar
 %%T%%/lib/tomcat-util.jar
+%%T%%/lib/tomcat7-websocket.jar
+%%T%%/lib/websocket-api.jar
 %%T%%/temp/safeToDelete.tmp
 %%T%%/webapps/ROOT/RELEASE-NOTES.txt
 %%T%%/webapps/ROOT/WEB-INF/web.xml
@@ -163,6 +165,7 @@
 %%T%%/webapps/docs/images/add.gif
 %%T%%/webapps/docs/images/asf-logo.gif
 %%T%%/webapps/docs/images/code.gif
+%%T%%/webapps/docs/images/cors-flowchart.png
 %%T%%/webapps/docs/images/design.gif
 %%T%%/webapps/docs/images/docs.gif
 %%T%%/webapps/docs/images/fix.gif
@@ -287,6 +290,7 @@
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/ValuesBean.class
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/ValuesBean.java
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/el/Functions.class
+
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/el/Functions.java
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/EchoAttributesTag.class
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/EchoAttributesTag.java
@@ -312,17 +316,45 @@
 %%T%%/webapps/examples/WEB-INF/classes/util/HTMLFilter.java
 %%T%%/webapps/examples/WEB-INF/classes/validators/DebugValidator.class
 %%T%%/webapps/examples/WEB-INF/classes/validators/DebugValidator.java
-%%T%%/webapps/examples/WEB-INF/classes/websocket/chat/ChatWebSocketServlet$1.class
-%%T%%/webapps/examples/WEB-INF/classes/websocket/chat/ChatWebSocketServlet$ChatMessageInbound.class
-%%T%%/webapps/examples/WEB-INF/classes/websocket/chat/ChatWebSocketServlet.class
-%%T%%/webapps/examples/WEB-INF/classes/websocket/chat/ChatWebSocketServlet.java
-%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoMessage$EchoMessageInbound.class
-%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoMessage.class
-%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoMessage.java
-%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoStream$1.class
-%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoStream$EchoStreamInbound.class
-%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoStream.class
-%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoStream.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/ExamplesConfig.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/ExamplesConfig.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/chat/ChatAnnotation.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/chat/ChatAnnotation.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/Client$1.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/Client.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/Client.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawMessage$ParseException.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawMessage.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawMessage.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardContextListener.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardContextListener.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$1.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$2.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$3$1.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint$3.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/DrawboardEndpoint.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$1$1.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$1.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$2.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$MessageType.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/Room$Player.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/Room.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/Room.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/AbstractWebsocketMessage.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/AbstractWebsocketMessage.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/BinaryWebsocketMessage.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/BinaryWebsocketMessage.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/CloseWebsocketMessage.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/CloseWebsocketMessage.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/StringWebsocketMessage.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages/StringWebsocketMessage.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoAnnotation.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoAnnotation.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$1.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint$EchoMessageHandler.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/echo/EchoEndpoint.java
 %%T%%/webapps/examples/WEB-INF/classes/websocket/snake/Direction.class
 %%T%%/webapps/examples/WEB-INF/classes/websocket/snake/Direction.java
 %%T%%/webapps/examples/WEB-INF/classes/websocket/snake/Location$1.class
@@ -330,10 +362,33 @@
 %%T%%/webapps/examples/WEB-INF/classes/websocket/snake/Location.java
 %%T%%/webapps/examples/WEB-INF/classes/websocket/snake/Snake.class
 %%T%%/webapps/examples/WEB-INF/classes/websocket/snake/Snake.java
-%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeWebSocketServlet$1.class
-%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeWebSocketServlet$SnakeMessageInbound.class
-%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeWebSocketServlet.class
-%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeWebSocketServlet.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeAnnotation.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeAnnotation.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer$1.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/chat/ChatWebSocketServlet$1.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/chat/ChatWebSocketServlet$ChatMessageInbound.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/chat/ChatWebSocketServlet.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/chat/ChatWebSocketServlet.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/echo/EchoMessage$EchoMessageInbound.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/echo/EchoMessage.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/echo/EchoMessage.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/echo/EchoStream$1.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/echo/EchoStream$EchoStreamInbound.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/echo/EchoStream.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/echo/EchoStream.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/snake/Direction.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/snake/Direction.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/snake/Location$1.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/snake/Location.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/snake/Location.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/snake/Snake.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/snake/Snake.java
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/snake/SnakeWebSocketServlet$1.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/snake/SnakeWebSocketServlet$SnakeMessageInbound.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/snake/SnakeWebSocketServlet.class
+%%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/snake/SnakeWebSocketServlet.java
 %%T%%/webapps/examples/WEB-INF/jsp/applet/Clock2.java
 %%T%%/webapps/examples/WEB-INF/jsp/debug-taglib.tld
 %%T%%/webapps/examples/WEB-INF/jsp/example-taglib.tld
@@ -535,10 +590,15 @@
 %%T%%/webapps/examples/servlets/reqinfo.html
 %%T%%/webapps/examples/servlets/reqparams.html
 %%T%%/webapps/examples/servlets/sessions.html
-%%T%%/webapps/examples/websocket/chat.html
-%%T%%/webapps/examples/websocket/echo.html
-%%T%%/webapps/examples/websocket/index.html
-%%T%%/webapps/examples/websocket/snake.html
+%%T%%/webapps/examples/websocket/chat.xhtml
+%%T%%/webapps/examples/websocket/drawboard.xhtml
+%%T%%/webapps/examples/websocket/echo.xhtml
+%%T%%/webapps/examples/websocket/index.xhtml
+%%T%%/webapps/examples/websocket/snake.xhtml
+%%T%%/webapps/examples/websocket-deprecated/chat.html
+%%T%%/webapps/examples/websocket-deprecated/echo.html
+%%T%%/webapps/examples/websocket-deprecated/index.html
+%%T%%/webapps/examples/websocket-deprecated/snake.html
 %%T%%/webapps/host-manager/META-INF/context.xml
 %%T%%/webapps/host-manager/WEB-INF/jsp/401.jsp
 %%T%%/webapps/host-manager/WEB-INF/jsp/403.jsp
@@ -574,113 +634,120 @@
 %%T%%/webapps/manager/index.jsp
 %%T%%/webapps/manager/status.xsd
 %%T%%/webapps/manager/xform.xsl
-@exec mkdir %D/%%T%%/endorsed 2>/dev/null || true
+@exec mkdir %D/%%T%%/endorsed 2>/dev/null || true  
 @exec mkdir %D/%%T%%/logs 2>/dev/null || true
 @exec mkdir %D/%%T%%/work 2>/dev/null || true
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/conf %D/%%T%%/logs %D/%%T%%/temp %D/%%T%%/webapps %D/%%T%%/work
-@dirrmtry %%T%%/work
-@dirrm %%T%%/webapps/manager/images
-@dirrm %%T%%/webapps/manager/WEB-INF/jsp
-@dirrm %%T%%/webapps/manager/WEB-INF
-@dirrm %%T%%/webapps/manager/META-INF
-@dirrm %%T%%/webapps/manager
-@dirrm %%T%%/webapps/host-manager/images
-@dirrm %%T%%/webapps/host-manager/WEB-INF/jsp
-@dirrm %%T%%/webapps/host-manager/WEB-INF
-@dirrm %%T%%/webapps/host-manager/META-INF
-@dirrm %%T%%/webapps/host-manager
-@dirrm %%T%%/webapps/examples/websocket
-@dirrm %%T%%/webapps/examples/servlets/images
-@dirrm %%T%%/webapps/examples/servlets
-@dirrm %%T%%/webapps/examples/jsp/xml
-@dirrm %%T%%/webapps/examples/jsp/tagplugin
-@dirrm %%T%%/webapps/examples/jsp/snp
-@dirrm %%T%%/webapps/examples/jsp/simpletag
-@dirrm %%T%%/webapps/examples/jsp/sessions
-@dirrm %%T%%/webapps/examples/jsp/security/protected
-@dirrm %%T%%/webapps/examples/jsp/security
-@dirrm %%T%%/webapps/examples/jsp/plugin/applet
-@dirrm %%T%%/webapps/examples/jsp/plugin
-@dirrm %%T%%/webapps/examples/jsp/num
-@dirrm %%T%%/webapps/examples/jsp/jsptoserv
-@dirrm %%T%%/webapps/examples/jsp/jsp2/tagfiles
-@dirrm %%T%%/webapps/examples/jsp/jsp2/simpletag
-@dirrm %%T%%/webapps/examples/jsp/jsp2/misc
-@dirrm %%T%%/webapps/examples/jsp/jsp2/jspx
-@dirrm %%T%%/webapps/examples/jsp/jsp2/jspattribute
-@dirrm %%T%%/webapps/examples/jsp/jsp2/el
-@dirrm %%T%%/webapps/examples/jsp/jsp2
-@dirrm %%T%%/webapps/examples/jsp/include
-@dirrm %%T%%/webapps/examples/jsp/images
-@dirrm %%T%%/webapps/examples/jsp/forward
-@dirrm %%T%%/webapps/examples/jsp/error
-@dirrm %%T%%/webapps/examples/jsp/dates
-@dirrm %%T%%/webapps/examples/jsp/colors
-@dirrm %%T%%/webapps/examples/jsp/checkbox
-@dirrm %%T%%/webapps/examples/jsp/chat
-@dirrm %%T%%/webapps/examples/jsp/cal
-@dirrm %%T%%/webapps/examples/jsp/async
-@dirrm %%T%%/webapps/examples/jsp
-@dirrm %%T%%/webapps/examples/WEB-INF/tags
-@dirrm %%T%%/webapps/examples/WEB-INF/lib
-@dirrm %%T%%/webapps/examples/WEB-INF/jsp2
-@dirrm %%T%%/webapps/examples/WEB-INF/jsp/applet
-@dirrm %%T%%/webapps/examples/WEB-INF/jsp
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/websocket/snake
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/websocket/echo
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/websocket/chat
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/websocket
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/validators
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/util
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/sessions
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/num
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/listeners
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/el
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/jsp2
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/filters
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/examples
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/error
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/dates
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/compressionFilters
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/colors
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/checkbox
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/chat
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/cal
-@dirrm %%T%%/webapps/examples/WEB-INF/classes/async
-@dirrm %%T%%/webapps/examples/WEB-INF/classes
-@dirrm %%T%%/webapps/examples/WEB-INF
-@dirrm %%T%%/webapps/examples
-@dirrm %%T%%/webapps/docs/tribes
-@dirrm %%T%%/webapps/docs/servletapi
-@dirrm %%T%%/webapps/docs/jspapi
-@dirrm %%T%%/webapps/docs/images
-@dirrm %%T%%/webapps/docs/funcspecs
-@dirrm %%T%%/webapps/docs/elapi
-@dirrm %%T%%/webapps/docs/config
-@dirrm %%T%%/webapps/docs/architecture/startup
-@dirrm %%T%%/webapps/docs/architecture/requestProcess
-@dirrm %%T%%/webapps/docs/architecture
-@dirrm %%T%%/webapps/docs/appdev/sample/web/images
-@dirrm %%T%%/webapps/docs/appdev/sample/web/WEB-INF
-@dirrm %%T%%/webapps/docs/appdev/sample/web
-@dirrm %%T%%/webapps/docs/appdev/sample/src/mypackage
-@dirrm %%T%%/webapps/docs/appdev/sample/src
-@dirrm %%T%%/webapps/docs/appdev/sample/docs
-@dirrm %%T%%/webapps/docs/appdev/sample
-@dirrm %%T%%/webapps/docs/appdev
-@dirrm %%T%%/webapps/docs/api
-@dirrm %%T%%/webapps/docs/WEB-INF
-@dirrm %%T%%/webapps/docs
+@dirrm %%T%%/bin
+@dirrmtry %%T%%/conf
+@dirrmtry %%T%%/endorsed
+@dirrm %%T%%/lib
+@dirrmtry %%T%%/logs
+@dirrm %%T%%/temp
 @dirrm %%T%%/webapps/ROOT/WEB-INF
 @dirrm %%T%%/webapps/ROOT
+@dirrm %%T%%/webapps/docs/WEB-INF
+@dirrm %%T%%/webapps/docs/api
+@dirrm %%T%%/webapps/docs/appdev/sample/docs
+@dirrm %%T%%/webapps/docs/appdev/sample/src/mypackage
+@dirrm %%T%%/webapps/docs/appdev/sample/src
+@dirrm %%T%%/webapps/docs/appdev/sample/web/WEB-INF
+@dirrm %%T%%/webapps/docs/appdev/sample/web/images
+@dirrm %%T%%/webapps/docs/appdev/sample/web
+@dirrm %%T%%/webapps/docs/appdev/sample
+@dirrm %%T%%/webapps/docs/appdev
+@dirrm %%T%%/webapps/docs/architecture/requestProcess
+@dirrm %%T%%/webapps/docs/architecture/startup
+@dirrm %%T%%/webapps/docs/architecture
+@dirrm %%T%%/webapps/docs/config
+@dirrm %%T%%/webapps/docs/elapi
+@dirrm %%T%%/webapps/docs/funcspecs
+@dirrm %%T%%/webapps/docs/images
+@dirrm %%T%%/webapps/docs/jspapi
+@dirrm %%T%%/webapps/docs/servletapi
+@dirrm %%T%%/webapps/docs/tribes
+@dirrm %%T%%/webapps/docs
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/async
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/cal
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/chat
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/checkbox
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/colors
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/compressionFilters
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/dates
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/error
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/examples
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/filters
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/el
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/jsp2
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/listeners
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/num
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/sessions
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/util
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/validators
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/websocket/chat
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard/wsmessages
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/websocket/drawboard
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/websocket/echo
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/websocket/snake
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/chat
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/echo
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/websocket/tc7/snake
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/websocket/tc7
+@dirrm %%T%%/webapps/examples/WEB-INF/classes/websocket
+@dirrm %%T%%/webapps/examples/WEB-INF/classes
+@dirrm %%T%%/webapps/examples/WEB-INF/jsp/applet
+@dirrm %%T%%/webapps/examples/WEB-INF/jsp
+@dirrm %%T%%/webapps/examples/WEB-INF/jsp2
+@dirrm %%T%%/webapps/examples/WEB-INF/lib
+@dirrm %%T%%/webapps/examples/WEB-INF/tags
+@dirrm %%T%%/webapps/examples/WEB-INF
+@dirrm %%T%%/webapps/examples/jsp/async
+@dirrm %%T%%/webapps/examples/jsp/cal
+@dirrm %%T%%/webapps/examples/jsp/chat
+@dirrm %%T%%/webapps/examples/jsp/checkbox
+@dirrm %%T%%/webapps/examples/jsp/colors
+@dirrm %%T%%/webapps/examples/jsp/dates
+@dirrm %%T%%/webapps/examples/jsp/error
+@dirrm %%T%%/webapps/examples/jsp/forward
+@dirrm %%T%%/webapps/examples/jsp/images
+@dirrm %%T%%/webapps/examples/jsp/include
+@dirrm %%T%%/webapps/examples/jsp/jsp2/el
+@dirrm %%T%%/webapps/examples/jsp/jsp2/jspattribute
+@dirrm %%T%%/webapps/examples/jsp/jsp2/jspx
+@dirrm %%T%%/webapps/examples/jsp/jsp2/misc
+@dirrm %%T%%/webapps/examples/jsp/jsp2/simpletag
+@dirrm %%T%%/webapps/examples/jsp/jsp2/tagfiles
+@dirrm %%T%%/webapps/examples/jsp/jsp2
+@dirrm %%T%%/webapps/examples/jsp/jsptoserv
+@dirrm %%T%%/webapps/examples/jsp/num
+@dirrm %%T%%/webapps/examples/jsp/plugin/applet
+@dirrm %%T%%/webapps/examples/jsp/plugin
+@dirrm %%T%%/webapps/examples/jsp/security/protected
+@dirrm %%T%%/webapps/examples/jsp/security
+@dirrm %%T%%/webapps/examples/jsp/sessions
+@dirrm %%T%%/webapps/examples/jsp/simpletag
+@dirrm %%T%%/webapps/examples/jsp/snp
+@dirrm %%T%%/webapps/examples/jsp/tagplugin
+@dirrm %%T%%/webapps/examples/jsp/xml
+@dirrm %%T%%/webapps/examples/jsp
+@dirrm %%T%%/webapps/examples/servlets/images
+@dirrm %%T%%/webapps/examples/servlets
+@dirrm %%T%%/webapps/examples/websocket
+@dirrm %%T%%/webapps/examples/websocket-deprecated
+@dirrm %%T%%/webapps/examples
+@dirrm %%T%%/webapps/host-manager/META-INF
+@dirrm %%T%%/webapps/host-manager/WEB-INF/jsp
+@dirrm %%T%%/webapps/host-manager/WEB-INF
+@dirrm %%T%%/webapps/host-manager/images
+@dirrm %%T%%/webapps/host-manager
+@dirrm %%T%%/webapps/manager/META-INF
+@dirrm %%T%%/webapps/manager/WEB-INF/jsp
+@dirrm %%T%%/webapps/manager/WEB-INF
+@dirrm %%T%%/webapps/manager/images
+@dirrm %%T%%/webapps/manager
 @dirrm %%T%%/webapps
-@dirrm %%T%%/temp
-@dirrmtry %%T%%/logs
-@dirrm %%T%%/lib
-@dirrmtry %%T%%/endorsed
-@dirrmtry %%T%%/conf
-@dirrm %%T%%/bin
+@dirrmtry %%T%%/work
 @dirrmtry %%T%%
 @unexec [ ! -d %D/%%T%% ] || echo If permanently deleting this package, %D/%%T%% must be removed manually

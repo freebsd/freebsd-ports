@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://archives.nd.edu/whitaker/
 DISTNAME=	${PORTNAME}all
 
-MAINTAINER=	llwang@infor.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Latin-English Dictionary Program
 
 USES=		ada

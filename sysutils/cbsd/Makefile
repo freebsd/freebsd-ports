@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cbsd
-PORTVERSION=	9.2.5
+PORTVERSION=	10.0.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bsdstore.ru/downloads/ \
 		GH
@@ -14,20 +14,17 @@ LICENSE=	BSD
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
 		sudo:${PORTSDIR}/security/sudo \
 		sqlite3:${PORTSDIR}/databases/sqlite3
-LIB_DEPENDS=	ssh2:${PORTSDIR}/security/libssh2
+LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	olevole
 GH_PROJECT=	cbsd
-GH_COMMIT=	f39bd8f
+GH_COMMIT=	1d65639
 
 SUB_FILES=	pkg-message
+PLIST_FILES+=	man/man8/cbsd.8.gz
 
 CBSD_HOME?=	${PREFIX}/cbsd
-
-MAN8=		cbsd.8
-
-NO_STAGE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -40,10 +37,9 @@ RUN_DEPENDS+=	sysrc:${PORTSDIR}/sysutils/sysrc
 .endif
 
 post-install:
-	@${FIND} -s ${CBSD_HOME} -not -type d | ${SORT} | \
-	${SED} -e 's#^${PREFIX}/##' >> ${TMPPLIST}
-	@${FIND} ${CBSD_HOME} -type d | ${SORT} -r | \
-	${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-	@${CAT} ${PKGMESSAGE}
+	@${FIND} -s ${STAGEDIR}${CBSD_HOME} -not -type d | ${SORT} | \
+	${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${CBSD_HOME} -type d | ${SORT} -r | \
+	${SED} -e 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>

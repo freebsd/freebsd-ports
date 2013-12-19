@@ -10,7 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	TCL extension to connect to Sybase servers
 
-LIB_DEPENDS=	sybdb:${PORTSDIR}/databases/freetds
+LIB_DEPENDS=	libsybdb.so:${PORTSDIR}/databases/freetds
 
 USE_TCL=	84+
 TCL_DVER=	${TCL_VER:S/.//}

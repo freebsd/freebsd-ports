@@ -12,15 +12,31 @@ DISTFILES=	p2c-1.21alpha2.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pascal to C translator
 
-WRKSRC=		${WRKDIR}/p2c-1.21alpha-07.Dec.93
-MAN1=		p2c.1 p2cc.1
+LICENSE=	GPLv2
 
-pre-install: build
-	@${MKDIR} ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/lib
-	@${MKDIR} ${PREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/include/p2c
-	@${INSTALL_MAN} ${WRKSRC}/src/p2cc.man ${PREFIX}/man/man1/p2cc.1
+WRKSRC=		${WRKDIR}/p2c-1.21alpha-07.Dec.93/src
 
-NO_STAGE=	yes
+USES=		perl5 shebangfix
+SHEBANG_FILES=	p2cc.perl
+perl_OLD_CMD=	/bin/perl
+ALL_TARGET=	all p2cc
+
+do-install:
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} p2c \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} p2cc \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_LIB} libp2c.a \
+		${STAGEDIR}${PREFIX}/lib)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/p2c
+	(cd ${WRKSRC} && ${INSTALL_DATA} p2c.h \
+		${STAGEDIR}${PREFIX}/include/p2c)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/p2c
+	(cd ${WRKSRC} && ${INSTALL_DATA} sys.p2crc \
+		${STAGEDIR}${PREFIX}/lib/p2c/p2crc)
+.for i in loc.p2crc system.imp system.m2 turbo.imp string.pas
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
+		${STAGEDIR}${PREFIX}/lib/p2c)
+.endfor
+
 .include <bsd.port.mk>

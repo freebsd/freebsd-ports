@@ -3,7 +3,7 @@
 
 PORTNAME=	freera
 PORTVERSION=	080203
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}%20${PORTNAME}%2B%2B/0.47%20beta
 DISTNAME=	${PORTVERSION}_freera++_src
@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/freera++
 
 SUB_FILES=	pkg-message
 
-PLIST_FILES=	bin/${PORTNMAE}
+PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 
 post-patch:
@@ -34,6 +34,6 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/freera ${STAGEDIR}${PREFIX}/bin/
-	cd ${WRKSRC}/data && ${COPYTREE_SHARE} '*' ${STAGEDIR}${DATADIR}/
+	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

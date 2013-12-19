@@ -1,6 +1,8 @@
 bin/cxref
 bin/cxref-cc
 bin/cxref-query
+man/man1/cxref-query.1.gz
+man/man1/cxref.1.gz
 %%DATADIR%%/README
 %%DATADIR%%/README.xrgr
 %%DATADIR%%/cflow.el

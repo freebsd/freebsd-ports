@@ -13,7 +13,7 @@ COMMENT=	Thumbnailers for various graphics file formats
 CONFLICTS=	kdegraphics-4.[0-6].*
 
 USE_KDE4=	kdehier kdelibs kdeprefix libkdcraw libkexiv2 automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource pkgconfig
 USE_QT4=	gui qmake_build moc_build uic_build rcc_build
 USE_XZ=		yes
 

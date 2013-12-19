@@ -34,7 +34,6 @@ DESKTOP_ENTRIES="CRRCsim" \
 		""
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/portaudio/ s|==|=|' ${WRKSRC}/configure

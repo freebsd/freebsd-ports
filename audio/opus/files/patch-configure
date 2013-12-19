@@ -1,0 +1,20 @@
+--- configure.orig	2013-12-17 16:51:41.000000000 +0100
++++ configure	2013-12-17 16:52:02.000000000 +0100
+@@ -12807,7 +12807,7 @@ else
+   CPU_ARM_FALSE=
+ fi
+ 
+- if test x"${inline_optimization:0:3}" = x"ARM"; then
++ if expr x"${inline_optimization}" : x"ARM" >/dev/null; then
+   OPUS_ARM_INLINE_ASM_TRUE=
+   OPUS_ARM_INLINE_ASM_FALSE='#'
+ else
+@@ -12815,7 +12815,7 @@ else
+   OPUS_ARM_INLINE_ASM_FALSE=
+ fi
+ 
+- if test x"${asm_optimization:0:3}" = x"ARM"; then
++ if expr x"${asm_optimization}" : x"ARM" >/dev/null; then
+   OPUS_ARM_EXTERNAL_ASM_TRUE=
+   OPUS_ARM_EXTERNAL_ASM_FALSE='#'
+ else

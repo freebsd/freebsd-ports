@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird-i18n
-PORTVERSION=	24.1.0
-CATEGORIES=	mail
+PORTVERSION=	24.2.0
+CATEGORIES=	mail news net-im
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
 DISTFILES=	${THUNDERBIRD_I18N_:S/$/.xpi/}
@@ -19,6 +19,7 @@ PLISTD?=	${WRKDIR}/plist_dirs
 PLISTF?=	${WRKDIR}/plist_files
 
 NO_BUILD=	yes
+NO_ARCH=	yes
 USE_THUNDERBIRD=	yes
 USE_XPI=	thunderbird linux-thunderbird
 USE_SUBMAKE=	yes
@@ -76,7 +77,7 @@ post-patch:
 		${XARGS} -0L1 ${REINPLACE_CMD} -i '' '/<?xml/,$$!d'
 
 list-langs:
-	@fetch -qo- "https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}esr/linux-i686/xpi"|\
+	@fetch -qo- "https://ftp.mozilla.org/pub/mozilla.org/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}/linux-i686/xpi"|\
 		${PERL} -ne 'if(/.*href="([a-zA-Z-]+).xpi.*/){print "$$1\n"}' |\
 		${AWK} 'BEGIN{ORS=" "}{print $$1}END{printf "\nNumber of languages: %d\n",NR}'
 

@@ -15,7 +15,7 @@ EXTRACT_ONLY=	${BZ2DIST:C/:.*$//}
 PATCH_SITES=	http://www.onicos.com/staff/iz/timidity/dist/
 PATCHFILES=	ump-patch-1.gz ump-patch-2.gz ump-patch-3.gz ump-patch-4.gz
 
-MAINTAINER=	llwang@infor.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unix MIDI Plugin based on TiMidity++
 
 LIB_DEPENDS=	libarc.so:${PORTSDIR}/archivers/libarc

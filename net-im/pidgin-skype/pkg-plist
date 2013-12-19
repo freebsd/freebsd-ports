@@ -25,3 +25,7 @@ share/pixmaps/pidgin/emotes/skype/theme
 @dirrmtry share/pixmaps/pidgin/protocols/48
 @dirrmtry share/pixmaps/pidgin/protocols/22
 @dirrmtry share/pixmaps/pidgin/protocols/16
+@dirrmtry share/pixmaps/pidgin/protocols
+@dirrmtry share/pixmaps/pidgin/emotes
+@dirrmtry share/pixmaps/pidgin
+@dirrmtry lib/purple-2

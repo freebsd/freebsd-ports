@@ -11,8 +11,8 @@ COMMENT=	Qt Interface for the JACK Audio Connection Kit
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib \
-		jack:${PORTSDIR}/audio/jack
+LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
+		libjack.so:${PORTSDIR}/audio/jack
 
 USE_QT4=	corelib dbus gui xml \
 		linguist_build moc_build qmake_build rcc_build uic_build

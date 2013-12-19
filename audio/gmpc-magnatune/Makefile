@@ -10,8 +10,8 @@ MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	The Magnatune plugin let's you preview music from Magnatune
 
-LIB_DEPENDS=	mpd.4:${PORTSDIR}/audio/libmpd \
-		sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
 RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 

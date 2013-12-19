@@ -10,7 +10,7 @@ MASTER_SITES=	SF/defx/defx/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-effects processor plug-in for XMMS
 
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 USES=		gmake
 NO_STAGE=	yes

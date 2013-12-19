@@ -1,6 +1,6 @@
 bin/gnash
-%%GTK%%bin/gnash-gtk-launcher
-%%GTK%%bin/gtk-gnash
+%%GTK2%%bin/gnash-gtk-launcher
+%%GTK2%%bin/gtk-gnash
 %%KDE4%%bin/gnash-qt-launcher
 %%KDE4%%bin/kde4-gnash
 bin/gprocessor
@@ -10,7 +10,7 @@ bin/rtmpget
 %%CYGNAL%%bin/cygnal
 %%CYGNAL%%bin/flvdumper
 %%CYGNAL%%bin/soldumper
-%%NPAPI%%%%WEBPLUGINS_DIR%%/libgnashplugin.so
+%%NPAPI%%%%WEBPLUGIN_DIR%%/libgnashplugin.so
 %%CYGNAL%%@unexec if cmp -s %D/etc/cygnalrc.dist %D/etc/cygnalrc; then rm -f %D/etc/cygnalrc; fi
 %%CYGNAL%%etc/cygnalrc.dist
 %%CYGNAL%%@exec if [ ! -f %B/cygnalrc ]; then cp -p %D/%F %B/cygnalrc; fi
@@ -214,15 +214,27 @@ lib/gnash/libgnashrender.so
 lib/gnash/libgnashsound-%%GNASHVER%%.so
 lib/gnash/libgnashsound.so
 libdata/pkgconfig/gnash.pc
-%%GTK%%share/applications/gnash.desktop
+%%GTK2%%share/applications/gnash.desktop
 %%KDE4%%share/applications/klash.desktop
+man/man1/cygnal.1.gz
+man/man1/findmicrophones.1.gz
+man/man1/findwebcams.1.gz
+man/man1/flvdumper.1.gz
+man/man1/gnash.1.gz
+man/man1/gprocessor.1.gz
+man/man1/rtmpget.1.gz
+man/man1/soldumper.1.gz
+%%GTK2%%man/man1/gnash-gtk-launcher.1.gz
+%%GTK2%%man/man1/gtk-gnash.1.gz
+%%KDE4%%man/man1/gnash-qt-launcher.1
+%%KDE4%%man/man1/kde4-gnash.1
 %%DATADIR%%/GnashG.png
 %%DATADIR%%/gnash-splash.swf
 %%DATADIR%%/gnash_128_96.ico
 %%DOCSDIR%%/gnashref.html
 %%DOCSDIR%%/gnashuser.html
 %%DOCSDIR%%/images/rtmp.png
-%%GTK%%share/icons/hicolor/32x32/apps/gnash.xpm
+%%GTK2%%share/icons/hicolor/32x32/apps/gnash.xpm
 %%KDE4%%share/icons/hicolor/32x32/apps/klash.xpm
 share/locale/cs/LC_MESSAGES/gnash.mo
 share/locale/da/LC_MESSAGES/gnash.mo
@@ -255,4 +267,4 @@ share/locale/zh_TW/LC_MESSAGES/gnash.mo
 @dirrm include/gnash/asobj
 @dirrm include/gnash
 %%KPARTS4%%@dirrm kde4/share/apps/klash
-%%NPAPI%%@dirrmtry %%WEBPLUGINS_DIR%%
+%%NPAPI%%@dirrmtry %%WEBPLUGIN_DIR%%

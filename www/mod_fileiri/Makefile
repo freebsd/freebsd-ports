@@ -10,13 +10,12 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DIST_SUBDIR=	apache2
 
 MAINTAINER=	apache@FreeBSD.org
-COMMENT=	A http IRIs module for Apache 2
+COMMENT=	Apache 2.x http IRIs module
 
+#LICENSE=	AL11
 
 USE_APACHE=	22+
-
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

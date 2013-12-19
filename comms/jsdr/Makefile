@@ -12,11 +12,11 @@ COMMENT=	SDR tools for RTL2832-based USB sticks
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS+=	qwt:${PORTSDIR}/x11-toolkits/qwt5 \
-		portaudio.2:${PORTSDIR}/audio/portaudio2 \
-		samplerate:${PORTSDIR}/audio/libsamplerate \
-		sndfile:${PORTSDIR}/audio/libsndfile \
-		fftw3:${PORTSDIR}/math/fftw3
+LIB_DEPENDS+=	libqwt.so:${PORTSDIR}/x11-toolkits/qwt5 \
+		libportaudio.so.2:${PORTSDIR}/audio/portaudio2 \
+		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
+		libsndfile.so:${PORTSDIR}/audio/libsndfile \
+		libfftw3.so:${PORTSDIR}/math/fftw3
 
 USE_QT4=	gui qt3support qmake_build moc_build rcc_build uic_build
 

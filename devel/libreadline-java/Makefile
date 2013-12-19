@@ -4,7 +4,7 @@
 PORTNAME=		libreadline-java
 PORTVERSION=		0.8.0
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	1
+PORTREVISION=		2
 CATEGORIES=		devel java
 MASTER_SITES=		SF/java-readline/java-readline/${PORTVERSION}
 
@@ -17,38 +17,32 @@ RUN_DEPENDS=	${LOCALBASE}/include/editline/readline.h:${PORTSDIR}/devel/libedit
 ALL_TARGET=	# empty
 MAKE_ENV=	JAVA_HOME="${JAVA_HOME}" JAVA="${JAVA}" JAVAC="${JAVAC}" \
 		JAVAH="${JAVAH}" JAR_="${JAR}"
-PKGMESSAGE=	${WRKDIR}/pkg-message
+SUB_FILES=	pkg-message jython.sh
 PLIST_FILES=	%%JAVAJARDIR%%/libreadline-java.jar lib/libJavaReadline.so \
 		lib/libJavaEditline.so lib/libJavaGetline.so
-.if !defined(NOPORTDOCS)
-PLIST_FILES+=	%%DOCSDIR%%/README.1st %%DOCSDIR%%/README \
-		%%DOCSDIR%%/jython.sh %%DOCSDIR%%/JReadlineCompleter.py \
-		@dirrm\ %%DOCSDIR%%
-.endif
-USE_GMAKE=	yes
+PORTDOCS=	README.1st README jython.sh JReadlineCompleter.py
+USES=		gmake
 USE_JAVA=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/libreadline-java.jar ${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/libJavaReadline.so ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libJavaEditline.so ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libJavaGetline.so ${PREFIX}/lib
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.1st ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${FILESDIR}/jython.sh ${DOCSDIR}
-	${INSTALL_DATA} ${FILESDIR}/JReadlineCompleter.py ${DOCSDIR}
-.endif
+OPTIONS_DEFINE=	DOCS
 
-post-install:
-	@${SED} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|g' -- \
-		${.CURDIR}/pkg-message >${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
+.include <bsd.port.options.mk>
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/libreadline-java.jar ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/libJavaReadline.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libJavaEditline.so ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libJavaGetline.so ${STAGEDIR}${PREFIX}/lib
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.1st ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/jython.sh ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/JReadlineCompleter.py ${STAGEDIR}${DOCSDIR}
+.endif
 
 .if !defined(BATCH)
 test:

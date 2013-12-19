@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pd
-DISTVERSION=	0.45-3
+DISTVERSION=	0.45-4
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	audio
 MASTER_SITES=	http://msp.ucsd.edu/Software/
@@ -20,7 +20,11 @@ OPTIONS_DEFAULT=FFTW
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S,${DISTVERSIONSUFFIX},,}
 
-USES=		gettext gmake pkgconfig tk:wrapper
+USES=		gettext gmake pkgconfig shebangfix tk:wrapper
+SHEBANG_FILES=	tcl/pkg_mkIndex.tcl
+SHEBANG_LANG=	tclsh
+tclsh_OLD_CMD=	/usr/bin/tclsh
+tclsh_CMD=	${LOCALBASE}/bin/tclsh
 USE_AUTOTOOLS=	aclocal libtoolize autoconf automake
 ACLOCAL_ARGS=	-I m4/generated -I m4
 LIBTOOLIZE_ARGS=--install --force
@@ -91,8 +95,6 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(${TAR} -C ${WRKSRC}/doc --exclude "*.bak" --exclude "*.orig" \
 		-cf - . | ${TAR} -C ${STAGEDIR}${DOCSDIR} --unlink -xf -)
-	@${FIND} ${STAGEDIR}${DOCSDIR} -type d | ${XARGS} ${CHMOD} 755
-	@${FIND} ${STAGEDIR}${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 .for i in LICENSE.txt README.txt
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor

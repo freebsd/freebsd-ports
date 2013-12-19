@@ -1,6 +1,14 @@
 share/doc/HTML/es/calligra/common
 share/doc/HTML/es/calligra/index.cache.bz2
 share/doc/HTML/es/calligra/index.docbook
+share/doc/HTML/es/stage/common
+share/doc/HTML/es/stage/great-presentations.docbook
+share/doc/HTML/es/stage/guides.docbook
+share/doc/HTML/es/stage/index.cache.bz2
+share/doc/HTML/es/stage/index.docbook
+share/doc/HTML/es/stage/menus.docbook
+share/doc/HTML/es/stage/options.docbook
+share/doc/HTML/es/stage/tutorial.docbook
 share/locale/es/LC_MESSAGES/ArtisticTextShape.mo
 share/locale/es/LC_MESSAGES/AutocorrectPlugin.mo
 share/locale/es/LC_MESSAGES/CalendarTool.mo
@@ -27,6 +35,7 @@ share/locale/es/LC_MESSAGES/calligra-defaulttools.mo
 share/locale/es/LC_MESSAGES/calligra-dockers.mo
 share/locale/es/LC_MESSAGES/calligra-opener.mo
 share/locale/es/LC_MESSAGES/calligra.mo
+share/locale/es/LC_MESSAGES/calligraactive.mo
 share/locale/es/LC_MESSAGES/calligrafilters.mo
 share/locale/es/LC_MESSAGES/desktop_calligra.mo
 share/locale/es/LC_MESSAGES/flow.mo
@@ -53,8 +62,10 @@ share/locale/es/LC_MESSAGES/planrcpsplugin.mo
 share/locale/es/LC_MESSAGES/plantjplugin.mo
 share/locale/es/LC_MESSAGES/planwork.mo
 share/locale/es/LC_MESSAGES/sheets.mo
+share/locale/es/LC_MESSAGES/sheetspivottables_plugin.mo
 share/locale/es/LC_MESSAGES/sheetssolver.mo
 share/locale/es/LC_MESSAGES/stage.mo
 share/locale/es/LC_MESSAGES/thesaurus_tool.mo
 share/locale/es/LC_MESSAGES/words.mo
+@dirrm share/doc/HTML/es/stage
 @dirrm share/doc/HTML/es/calligra

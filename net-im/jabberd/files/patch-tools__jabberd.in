@@ -1,0 +1,53 @@
+--- ./tools/jabberd.in.orig	2013-10-07 16:27:54.000000000 +0100
++++ ./tools/jabberd.in	2013-12-15 10:29:42.333778600 +0000
+@@ -1,9 +1,4 @@
+-#!/bin/sh
+-#-*-Perl-*-
+-
+-exec perl -w -x $0 "$@"
+-
+-#!perl
++#!/usr/local/bin/perl
+ 
+ ##############################################################################
+ #
+@@ -28,8 +23,7 @@
+ my $LibExec = "@libexecdir@";
+ my $VERSION = "@VERSION@";
+ my $config_dir = "@sysconfdir@";
+-my $config = $config_dir."/jabberd.cfg";
+-$config = "internal" unless (-e $config);
++my $config = "jabberd.cfg";
+ my $debug = 0;
+ my $daemon = 0;
+ my $g_kill_signal = "";
+@@ -44,13 +38,20 @@
+ # Process the command line arguments
+ #-----------------------------------------------------------------------------
+ my %opts;
+-getopts("c:Dhb",\%opts);
++getopts("c:d:Dhb",\%opts);
+ &usage if exists($opts{h});
+ if (exists($opts{c}))
+ {
+     $config = $opts{c} if (defined($opts{c}) && ($opts{c} ne ""));
+     &usage() if (!defined($opts{c}) || ($opts{c} eq ""));
+ }
++if (exists($opts{d}))
++{
++    $config_dir = $opts{d} if (defined($opts{d}) && ($opts{d} ne ""));
++    &usage() if (!defined($opts{d}) || ($opts{d} eq ""));
++}
++$config = $config_dir.'/'.$config if ($config !~ /^\//);
++$config = "internal" unless (-e $config);
+ 
+ $debug = 1 if exists($opts{D});
+ $daemon = 1 if exists($opts{b});
+@@ -120,6 +121,7 @@
+     &debug("jabberd","stdout","debug on\n");
+     &debug("jabberd","stdout","version($VERSION)\n");
+     &debug("jabberd","stdout","config_dir($config_dir)\n");
++    &debug("jabberd","stdout","config($config)\n");
+ }
+ 
+ #-----------------------------------------------------------------------------

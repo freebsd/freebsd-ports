@@ -15,17 +15,15 @@ COMMENT?=	Service discovery on a local network
 AVAHI_SLAVE?=	no
 
 .if ${AVAHI_SLAVE} != header
-BUILD_DEPENDS?=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS?=	expat:${PORTSDIR}/textproc/expat2 \
-		daemon.0:${PORTSDIR}/devel/libdaemon \
-		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		gdbm:${PORTSDIR}/databases/gdbm
-RUN_DEPENDS?=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
+LIB_DEPENDS?=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libdaemon.so:${PORTSDIR}/devel/libdaemon \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libgdbm.so:${PORTSDIR}/databases/gdbm
 
 USERS?=		${PORTNAME}
 GROUPS?=	${USERS}
 
-USE_GNOME+=	ltverhack glib20 intltool
+USE_GNOME+=	ltverhack glib20 intltool introspection
 USES=		gettext gmake pathfix pkgconfig
 USE_GNOME_SUBR=	yes
 USE_AUTOTOOLS=	libtool
@@ -44,23 +42,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 .if ${AVAHI_SLAVE} == no
 CONFLICTS=	howl-[0-9]*
 
-MAN1=	avahi-browse.1 avahi-publish.1 avahi-resolve.1 avahi-set-host-name.1
-MAN5=	avahi-daemon.conf.5 avahi.service.5 avahi.hosts.5
-MAN8=	avahi-daemon.8 avahi-dnsconfd.8 avahi-dnsconfd.action.8
-
-MLINKS=	avahi-browse.1 avahi-browse-domains.1 \
-	avahi-publish.1 avahi-publish-address.1 \
-	avahi-publish.1 avahi-publish-service.1 \
-	avahi-resolve.1 avahi-resolve-address.1 \
-	avahi-resolve.1 avahi-resolve-host-name.1
-
 DAEMON_CONFIG_FILES=	hosts avahi-daemon.conf
 .endif
 
 USE_RC_SUBR=yes
 .endif # !avahi-header
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${AVAHI_SLAVE} != header
@@ -141,33 +128,36 @@ pre-su-install: avahi-pre-su-install
 
 avahi-pre-su-install:
 .if ${AVAHI_SLAVE}=="no"
-	@${MKDIR} ${PREFIX}/lib/avahi
-	@${TOUCH} -f ${PREFIX}/lib/avahi/.keep
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/avahi
+	@${TOUCH} -f ${STAGEDIR}${PREFIX}/lib/avahi/.keep
 .endif
 
 post-install: avahi-post-install
 
 avahi-post-install:
-.if ${AVAHI_SLAVE}!="no"
-.for f in ${MAN1} ${MAN2} ${MAN3} ${MAN4} ${MAN5} ${MAN6} ${MAN7} ${MAN8} ${MAN9}
-	${INSTALL_DATA} ${WRKSRC}/man/${f} ${PREFIX}/man/man${f:E}/${f}
+.if defined(MANPAGES)
+.for f in ${MANPAGES}
+	${INSTALL_DATA} ${WRKSRC}/man/${f} ${STAGEDIR}${PREFIX}/man/man${f:E}/${f}
 .endfor
 .endif
 .for f in ${AVAHI_PKGCONFIG}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 .endfor
-	${MKDIR} ${PREFIX}/etc/avahi
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/avahi
 .for f in ${DAEMON_CONFIG_FILES}
 	${INSTALL_DATA} ${WRKSRC}/avahi-daemon/${f} \
-	    	${PREFIX}/etc/avahi/${f}.dist
-	if [ ! -f ${PREFIX}/etc/avahi/${f} ]; then \
-	    	${INSTALL_DATA} ${WRKSRC}/avahi-daemon/${f} \
-			${PREFIX}/etc/avahi; \
-	fi
+		${STAGEDIR}${PREFIX}/etc/avahi/${f}.dist
 .endfor
-.if ${AVAHI_SLAVE}=="no"
+.if ${AVAHI_SLAVE}==no
 	${INSTALL_DATA} ${FILESDIR}/org.freedesktop.Avahi.service \
-		${LOCALBASE}/share/dbus-1/system-services
+		${STAGEDIR}${PREFIX}/share/dbus-1/system-services
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so*
+.elif ${AVAHI_SLAVE}==gtk3
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libavahi-ui-gtk3.so.0
+.elif ${AVAHI_SLAVE}==libdns
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libdns_sd.so.1
+.elif ${AVAHI_SLAVE}==qt4
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libavahi-qt4.so.1
 .endif
 .endif # avahi-header
 

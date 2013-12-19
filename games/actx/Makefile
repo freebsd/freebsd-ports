@@ -10,7 +10,7 @@ MASTER_SITES=	http://rosegray.sakura.ne.jp/ActX/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window sitter for X11
 
-NO_CDROM=	'contains commercial character data'
+NO_CDROM=	Contains commercial character data
 
 USES=		imake
 USE_XORG=	xaw

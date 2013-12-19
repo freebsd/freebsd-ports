@@ -351,27 +351,9 @@ NOPORTDOCS=	yes
 NOPORTEXAMPLES=	yes
 .endif
 
-.if empty(PORT_OPTIONS:MNLS)
-WITHOUT_NLS=	yes
-.endif
-
 .if defined(NO_OPTIONS_SORT)
 ALL_OPTIONS=	${OPTIONS_DEFINE}
 .endif
-
-### to be removed once old OPTIONS disappear
-.for opt in ${ALL_OPTIONS}
-.if empty(PORT_OPTIONS:M${opt})
-.   if !defined(WITH_${opt}) && !defined(WITHOUT_${opt})
-WITHOUT_${opt}:=	true
-.   endif
-.else
-.   if !defined(WITH_${opt}) && !defined(WITHOUT_${opt})
-WITH_${opt}:=  true
-.   endif
-.endif
-.endfor
-###
 
 .for opt in ${COMPLETE_OPTIONS_LIST} ${OPTIONS_SLAVE}
 # PLIST_SUB

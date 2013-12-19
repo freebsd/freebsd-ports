@@ -13,7 +13,7 @@ COMMENT=	C++ utility library primarily aimed at audio/musical applications
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	boost_date_time:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
 
 USES=		pkgconfig
 NO_STAGE=	yes

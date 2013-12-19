@@ -1,12 +1,24 @@
 # Created by: Andrew Pantyukhin <infofarmer@FreeBSD.org>
 # $FreeBSD$
 
+.if defined(OVERRIDE_LINUX_NONBASE_PORTS) && \
+    ${OVERRIDE_LINUX_NONBASE_PORTS} != "f10"
+.undef WANT_GTK218
+.endif
+
 CATEGORIES+=	linux
 MASTER_SITES?=	MOZILLA/${PORTNAME}/releases/${PORTVERSION}esr/linux-i686/en-US
 PKGNAMEPREFIX?=		linux-
 
-.if defined(REPLACE_GRE)
-EXTRACT_DEPENDS+=${NONEXISTENT}:${PORTSDIR}/www/linux-seamonkey:extract
+.if defined(WANT_GTK218)
+MASTER_SITES+=	https://archives.fedoraproject.org/pub/archive/fedora/linux/releases/12/Everything/i386/os/Packages/:f12
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		glib2-2.22.2-2.fc12.i686.rpm:f12 \
+		gtk2-2.18.3-19.fc12.i686.rpm:f12
+GTK218_FILES=	lib/libgio-2.0.so.0 \
+		lib/libglib-2.0.so.0 \
+		usr/lib/libgdk-x11-2.0.so.0 \
+		usr/lib/libgtk-x11-2.0.so.0
 .endif
 
 NO_BUILD=	yes
@@ -16,8 +28,10 @@ BIN_NAME?=	${PORTNAME}
 USE_LINUX=	yes
 USE_LINUX_APPS+=	atk fontconfig gtk2 hicontheme pango
 WRKSRC?=	${WRKDIR}/${BIN_NAME}
-FDIR=		${PREFIX}/lib/${APP_NAME}
+FDIR=		${STAGEDIR}${PREFIX}/lib/${APP_NAME}
 COMMON_DIR=	${.CURDIR}/../../www/linux-seamonkey
+
+APP_ENV+=	MOZ_CRASHREPORTER_DISABLE=1
 
 PLIST_SUB+=	APP_NAME=${APP_NAME}
 SUB_LIST+=	APP_NAME=${APP_NAME}
@@ -28,54 +42,56 @@ DESKTOP_SUFFIX?=	(Linux, devel)
 .endif
 DESKTOP_SUFFIX?=	(Linux)
 
+.if defined(WANT_GTK218)
+PLIST_SUB+=	GTK218=""
+.else
+PLIST_SUB+=	GTK218="@comment "
+.endif
+
 _A=	>> ${TMPPLIST}
 _Q=	2>/dev/null || true
 
 .if !target(post-extract)
 post-extract:
 	@${RM} -rf ${WRKSRC}/updates
-	@${MKDIR} ${WRKSRC}/${APP_SUBDIR}plugins
 	@${MKDIR} ${WRKSRC}/${APP_SUBDIR}extensions
+	@${LN} -sf ${LOCALBASE}/lib/browser_plugins/symlinks/${APP_NAME} \
+		${WRKSRC}/${APP_SUBDIR}plugins
+. if defined(WANT_GTK218)
+.  for f in ${GTK218_FILES}
+	@${CP} -p ${WRKDIR}/${f} ${WRKSRC}
+	@${ECHO_CMD} ${f:T} >>${WRKSRC}/dependentlibs.list
+.  endfor
+	@${REINPLACE_CMD} -i '' '/libxul/ { h; d; }; $$G' \
+		${WRKSRC}/dependentlibs.list
+. endif
 .endif
 
-.if defined(REPLACE_GRE)
-# XXX remove after linux_base-c6 and linux-c6-gtk2 become default
-# using seamonkey gre for linux_base-f10 compat
-post-extract:	replace-gre
-replace-gre:	version-compat-check
-	@${ECHO_MSG} "===>   GRE versions are compatible, replacing with" \
-		"$$(${MAKE} -V PKGNAME -C ${.CURDIR}/../../www/linux-seamonkey)"
-	cd $$(${MAKE} -V WRKSRC -C ${.CURDIR}/../../www/linux-seamonkey); \
-		${CP} lib* dependentlibs.list ${WRKSRC}
-
-version-compat-check:
-	@${ECHO_MSG} "===>  Checking GRE version is compatible with" \
-		"$$(${MAKE} -V PKGNAME -C ${.CURDIR}/../../www/linux-seamonkey)"
-	@ff_gre_version=$$(${AWK} -F= '/Milestone/ { print $$2 }' ${WRKSRC}/platform.ini); \
-	sm_gre_version=$$(${AWK} -F= '/Milestone/ { print $$2 }' $$(${MAKE} -V WRKSRC -C ${.CURDIR}/../../www/linux-seamonkey)/platform.ini); \
-	if [ $$ff_gre_version != $$sm_gre_version ]; then \
-	    ${ECHO_MSG} "===>   GRE versions aren't compatible, aborting"; \
-	    exit 1; \
-	fi
-.endif
 
 .if !target(post-patch)
 post-patch:
 	@${MKDIR} ${PREFS_FILE:H}
 
-	# out-of-process plugins don't work with linuxulator (ports/170402)
-	${ECHO} 'pref("dom.ipc.plugins.enabled", false);' >> ${PREFS_FILE}
+	# empty port preferences
+	@${DO_NADA} >>${PREFS_FILE}
+
+. if (${DISTVERSION:R:R} < 28 && ${PORTNAME} != "seamonkey") || \
+ (${PORTNAME} == "seamonkey" && ${DISTVERSION:C/[0-9]*\.//:C/b.*//} < 25)
+	# dummy resident-unique for make about:memory's "measure"
+	@${REINPLACE_CMD} -i '' \
+		's,/proc/self/smaps\(.Private\),////////dev/null\1,' \
+		${WRKSRC}/libxul.so
+. endif
 .endif
 
 .if !target(do-install)
 do-install:
-	@${INSTALL} -d ${FDIR} ${PREFIX}/share/applications
-	@${INSTALL_DATA} ${WRKDIR}/${APP_NAME}.desktop ${PREFIX}/share/applications/
+	@${INSTALL_DATA} ${WRKDIR}/${APP_NAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/
 	@${CP} -pR ${WRKSRC}/ ${FDIR}/
-	@${CHOWN} -R ${BINOWN}:${BINGRP} ${FDIR}/
-	@${LN} -sf ${FDIR}/${BIN_NAME} ${PREFIX}/bin/${APP_NAME}
-	@${CP} -R ${LOCALBASE}/lib/npapi/symlinks/${APP_NAME}/ \
-		${FDIR}/${APP_SUBDIR}plugins/ ${_Q}
+	@${PRINTF} '#! /bin/sh\n${APP_ENV} \
+		${PREFIX}/lib/${APP_NAME}/${BIN_NAME} "$$@"\n' \
+		>>${STAGEDIR}${PREFIX}/bin/${APP_NAME}
+	@${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${APP_NAME}
 	@${CP} -R ${LOCALBASE}/lib/xpi/symlinks/${APP_NAME}/ \
 		${FDIR}/${APP_SUBDIR}extensions/ ${_Q}
 .endif
@@ -106,19 +122,22 @@ create-plist: build
 	${ECHO_CMD} share/applications/%%APP_NAME%%.desktop >> ${PLIST}
 	cd ${WRKSRC} && ${FIND} -s . -type f -or -type l | \
 		${SED} -e "s#^\.#lib/%%APP_NAME%%#" | ${SORT} >> ${PLIST}
-	${ECHO_CMD} '@exec ${CP} -R %%LOCALBASE%%/lib/npapi/symlinks/%%APP_NAME%%/ \
-		%D/lib/%%APP_NAME%%/${APP_SUBDIR}plugins/ ${_Q}' >> ${PLIST}
 	${ECHO_CMD} '@exec ${CP} -R %%LOCALBASE%%/lib/xpi/symlinks/%%APP_NAME%%/ \
 		%D/lib/%%APP_NAME%%/${APP_SUBDIR}extensions/ ${_Q}' >> ${PLIST}
-	${ECHO_CMD} '@unexec ${FIND} %D/lib/%%APP_NAME%%/${APP_SUBDIR}plugins/ \
-		-depth 1 -type l -delete ${_Q}' >> ${PLIST}
 	${ECHO_CMD} '@unexec ${FIND} %D/lib/%%APP_NAME%%/${APP_SUBDIR}extensions/ \
 		-depth 1 -type l -delete ${_Q}' >> ${PLIST}
 	cd ${WRKSRC} && ${FIND} -sd . -type d | \
 		${SED} -e "s#^\.#@dirrm lib/%%APP_NAME%%#" >> ${PLIST}
+.if defined(WANT_GTK218)
+. for f in ${GTK218_FILES}
+	${REINPLACE_CMD} -i '' '/${f:T}/s/^/%%GTK218%%/' ${PLIST}
+. endfor
+.endif
 
 snatch-desktop:
 	${SED} -E -e 's/${PORTNAME}/${APP_NAME}/' \
+		-e "s,@MOZILLA_NAME@,$$(echo ${PORTNAME} | ${SED} 's/\b./\u&/g')," \
+		-e 's/@MOZILLA@|%%MOZILLA%%/${APP_NAME}/' \
 		-e 's/^(Name.*=.+)$$/\1 ${DESKTOP_SUFFIX}/' \
 		-e 's/^(GenericName.*=.+)$$/\1 ${DESKTOP_SUFFIX}/' \
 		-e 's!^Icon=.*$$!Icon=%%PREFIX%%/lib/%%APP_NAME%%/chrome/icons/default/default.xpm!' \

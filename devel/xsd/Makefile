@@ -17,8 +17,8 @@ LICENSE_FILE=	${WRKSRC}/xsd/LICENSE
 #        check if things still work to get rid of the shells/bash dependency.
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		gm4:${PORTSDIR}/devel/m4
-LIB_DEPENDS=	boost_filesystem:${PORTSDIR}/devel/boost-libs \
-		xerces-c.3:${PORTSDIR}/textproc/xerces-c3
+LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
+		libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3
 
 ALL_TARGET=	# no default target should be passed to gmake.
 CXXFLAGS+=	-I${LOCALBASE}/include

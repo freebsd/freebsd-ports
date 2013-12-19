@@ -8,6 +8,15 @@
 %%SITE_PERL%%/Net/BGP/Refresh.pm
 %%SITE_PERL%%/Net/BGP/Transport.pm
 %%SITE_PERL%%/Net/BGP/Update.pm
+%%PERL5_MAN3%%/Net::BGP.3.gz
+%%PERL5_MAN3%%/Net::BGP::ASPath.3.gz
+%%PERL5_MAN3%%/Net::BGP::NLRI.3.gz
+%%PERL5_MAN3%%/Net::BGP::Notification.3.gz
+%%PERL5_MAN3%%/Net::BGP::Peer.3.gz
+%%PERL5_MAN3%%/Net::BGP::Process.3.gz
+%%PERL5_MAN3%%/Net::BGP::Refresh.3.gz
+%%PERL5_MAN3%%/Net::BGP::Transport.3.gz
+%%PERL5_MAN3%%/Net::BGP::Update.3.gz
 @dirrm %%SITE_PERL%%/Net/BGP
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/BGP
 @dirrmtry %%SITE_PERL%%/Net

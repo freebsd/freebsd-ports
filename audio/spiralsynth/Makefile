@@ -11,7 +11,7 @@ DISTNAME=	SpiralSynth-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI-capable synthesizer for X
 
-LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
 NO_STAGE=	yes
 GNU_CONFIGURE=	yes

@@ -18,10 +18,10 @@ COMMENT=	An automatic 3D finite element mesh generator
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	fltk:${PORTSDIR}/x11-toolkits/fltk \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		lapack:${PORTSDIR}/math/lapack
+LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		liblapack.so:${PORTSDIR}/math/lapack
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 
@@ -86,21 +86,21 @@ PLIST_SUB+=	METIS="@comment "
 .endif
 
 .if defined(WITH_TAUCS)
-LIB_DEPENDS+=	taucs:${PORTSDIR}/math/taucs
+LIB_DEPENDS+=	libtaucs.so:${PORTSDIR}/math/taucs
 CMAKE_ARGS+=	-DENABLE_TAUCS=ON
 .else
 CMAKE_ARGS+=	-DENABLE_TAUCS=OFF
 .endif
 
 .if !defined(WITHOUT_MED)
-LIB_DEPENDS+=	med:${PORTSDIR}/french/med
+LIB_DEPENDS+=	libmed.so:${PORTSDIR}/french/med
 CMAKE_ARGS+=	-DENABLE_MED=ON
 .else
 CMAKE_ARGS+=	-DENABLE_MED=OFF
 .endif
 
 .if !defined(WITHOUT_CGNS)
-LIB_DEPENDS+=	cgns:${PORTSDIR}/science/cgnslib
+LIB_DEPENDS+=	libcgns.so:${PORTSDIR}/science/cgnslib
 CMAKE_ARGS+=	-DENABLE_CGNS=ON
 .else
 CMAKE_ARGS+=	-DENABLE_CGNS=OFF
@@ -111,7 +111,7 @@ CMAKE_ARGS+=	-DENABLE_GMM=OFF
 .endif
 
 .if defined(WITH_OCC)
-LIB_DEPENDS+=	TKernel:${PORTSDIR}/cad/opencascade
+LIB_DEPENDS+=	libTKernel.so:${PORTSDIR}/cad/opencascade
 CMAKE_ARGS+=	-DENABLE_OCC=ON -DOCC_INC=${LOCALBASE}/include/OpenCASCADE
 CONFLICTS=	gmsh-2.*
 .else

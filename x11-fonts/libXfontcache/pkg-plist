@@ -3,3 +3,9 @@ lib/libXfontcache.la
 lib/libXfontcache.so
 lib/libXfontcache.so.1
 libdata/pkgconfig/xfontcache.pc
+man/man3/FontCacheChangeCacheSettings.3.gz
+man/man3/FontCacheQueryExtension.3.gz
+man/man3/FontCacheQueryVersion.3.gz
+man/man3/FontCacheGetCacheSettings.3.gz
+man/man3/FontCacheGetCacheStatistics.3.gz
+man/man3/Xfontcache.3.gz

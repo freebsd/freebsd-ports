@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The gEDA's symbol checking utility
 
 RUN_DEPENDS=	${LOCALBASE}/share/geda/sym:${PORTSDIR}/cad/geda-symbols
-LIB_DEPENDS=	geda.33:${PORTSDIR}/cad/libgeda
+LIB_DEPENDS=	libgeda.so:${PORTSDIR}/cad/libgeda
 
 DOCSDIR=	${PREFIX}/share/doc/geda
 DATADIR=	${PREFIX}/share/geda

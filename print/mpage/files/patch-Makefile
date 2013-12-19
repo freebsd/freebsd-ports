@@ -1,0 +1,58 @@
+--- Makefile.orig	2004-05-31 00:38:31.000000000 +0500
++++ Makefile	2013-12-11 23:08:46.646822192 +0400
+@@ -24,7 +24,6 @@
+ # Set this to an ANSI compatible C compiler (preferably gcc)
+ # See also system specific settings below
+ #CC=cc
+-CC=gcc
+ 
+ ############################################################################
+ #
+@@ -40,7 +39,7 @@ CC=gcc
+ #  See glob.c for all possibilities
+ #
+ # PAGESIZE=Letter
+-PAGESIZE=A4
++PAGESIZE?=A4
+ 
+ #
+ # Define your spooler type
+@@ -50,11 +49,10 @@ PAGESIZE=A4
+ SPOOL_TYPE=BSD_SPOOLER
+ 
+ # PREFIX=e:/usr		# OS/2 type
+-PREFIX=/usr/local
+ #PREFIX=/usr
+-BINDIR=$(PREFIX)/bin
+-LIBDIR=$(PREFIX)/share
+-MANDIR=$(PREFIX)/man/man1
++BINDIR=${DESTDIR}$(PREFIX)/bin
++LIBDIR=${DESTDIR}$(PREFIX)/share
++MANDIR=${DESTDIR}$(PREFIX)/man/man1
+ 
+ #
+ # A default encoding is given in encoding.h. Setting ENCODING=1 will
+@@ -106,8 +104,11 @@ O = .o
+ # Choose one of the following CFLAGS/CC definitions:
+ # If you are using gcc, you probably don't need to change anything here.
+ 
++# FreeBSD:
++CFLAGS += $(DEFS)
++
+ # Linux:
+-CFLAGS = -O2 -s $(DEFS) -Wall
++#CFLAGS = -O2 -s $(DEFS) -Wall
+ 
+ # AIX (xlC on aix 4):
+ #CFLAGS = -O2 -s $(DEFS)
+@@ -181,7 +182,6 @@ install:
+ 	if [ ! -d $(LIBDIR)/mpage ] ; then mkdir -p $(LIBDIR)/mpage ; fi
+ 	if [ ! -d $(BINDIR) ] ; then mkdir -p $(BINDIR) ; fi
+ 	if [ ! -d $(MANDIR) ] ; then mkdir -p $(MANDIR) ; fi
+-	cp mpage$(E) $(BINDIR)
+-	cp mpage.1 $(MANDIR)
+-	-cp Encodings/* $(LIBDIR)/mpage
+-	-chmod 644 $(LIBDIR)/mpage/*
++	$(BSD_INSTALL_PROGRAM) mpage$(E) $(BINDIR)
++	$(BSD_INSTALL_MAN) mpage.1 $(MANDIR)
++	$(BSD_INSTALL_DATA) Encodings/* $(LIBDIR)/mpage

@@ -16,7 +16,7 @@ COMMENT=	Explore, Search, and Discover
 EXTRACT_DEPENDS=	unmakeself:${PORTSDIR}/archivers/unmakeself
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-RESTRICTED=	Not sure about redistribution rights
+RESTRICTED=	Not really sure about the redistribution terms
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\..*//g}/
 

@@ -1,6 +1,6 @@
---- src/tqslconvert.cpp.orig	2013-06-23 17:30:50.000000000 -0700
-+++ src/tqslconvert.cpp	2013-06-23 17:31:00.000000000 -0700
-@@ -22,7 +22,7 @@
+--- src/tqslconvert.cpp.orig	2013-10-20 19:33:20.000000000 -0500
++++ src/tqslconvert.cpp	2013-12-07 20:54:11.000000000 -0500
+@@ -23,7 +23,7 @@
  #include <vector>
  #include <ctype.h>
  #include <set>

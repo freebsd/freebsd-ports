@@ -33,11 +33,4 @@ TEST_DEPENDS=	p5-Test-Aggregate>=0.363:${PORTSDIR}/devel/p5-Test-Aggregate \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	\
-	DBIx::Class::MooseColumns.3 \
-	DBIx::Class::MooseColumns::Meta::Role::Attribute.3 \
-	DBIx::Class::MooseColumns::Meta::Role::Attribute::DBICColumn.3 \
-	DBIx::Class::MooseColumns::Meta::Role::Attribute::DBICColumn::Inflated.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

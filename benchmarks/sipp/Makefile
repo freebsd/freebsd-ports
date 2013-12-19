@@ -32,7 +32,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGSL}
-LIB_DEPENDS+=	gsl:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=	libgsl.so:${PORTSDIR}/math/gsl
 
 MAKE_ENV+=	EXTRACPPFLAGS=-DHAVE_GSL \
 		EXTRACFLAGS=-DHAVE_GSL \

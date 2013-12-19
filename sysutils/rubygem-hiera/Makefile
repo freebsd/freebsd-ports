@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	hiera
-PORTVERSION=	1.1.2
+PORTVERSION=	1.3.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@robakdesign.com
 COMMENT=	A pluggable data store for hierarchical data
 
 RUN_DEPENDS=	${PKGNAMEPREFIX}json_pure>=0:${PORTSDIR}/devel/rubygem-json_pure

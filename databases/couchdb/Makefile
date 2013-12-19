@@ -12,9 +12,9 @@ DISTNAME=	apache-couchdb-${PORTVERSION}
 MAINTAINER=	adams-ports@ateamsystems.com
 COMMENT=	A document database server, accessible via a RESTful JSON API
 
-LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
-		mozjs185:${PORTSDIR}/lang/spidermonkey185 \
-		curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libicudata.so:${PORTSDIR}/devel/icu \
+		libmozjs185.so:${PORTSDIR}/lang/spidermonkey185 \
+		libcurl.so:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	${LOCALBASE}/bin/help2man:${PORTSDIR}/misc/help2man \
 		erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang

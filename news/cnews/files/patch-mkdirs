@@ -1,0 +1,14 @@
+--- conf/mkdirs.orig	1993-07-11 05:10:40.000000000 +0200
++++ conf/mkdirs	2013-12-18 11:18:16.000000000 +0100
+@@ -1,9 +1,9 @@
+ #! /bin/sh
+ for d
+ do
+-	if test ! -d "$d"
++	if test ! -d "${DESTDIR}$d"
+ 	then
+-		mkdir "$d" || exit 1
++		mkdir "${DESTDIR}$d" || exit 1
+ 	fi
+ done
+ exit 0

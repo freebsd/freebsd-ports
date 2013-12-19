@@ -15,7 +15,7 @@ COMMENT=	PHP extension for interfacing with memcached via libmemcached library
 LICENSE=	PHP30
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/pear:${PORTSDIR}/devel/pear
-LIB_DEPENDS=	memcached:${PORTSDIR}/databases/libmemcached
+LIB_DEPENDS=	libmemcached.so:${PORTSDIR}/databases/libmemcached
 RUN_DEPENDS=	${LOCALBASE}/bin/pear:${PORTSDIR}/devel/pear
 
 PHP_MODNAME=	memcached

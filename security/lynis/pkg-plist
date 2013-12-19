@@ -22,6 +22,7 @@ man/man8/lynis.8.gz
 %%DATADIR%%/include/parameters
 %%DATADIR%%/include/profiles
 %%DATADIR%%/include/report
+@mode 0400
 %%DATADIR%%/include/tests_accounting
 %%DATADIR%%/include/tests_authentication
 %%DATADIR%%/include/tests_banners
@@ -63,6 +64,7 @@ man/man8/lynis.8.gz
 %%DATADIR%%/include/tests_tooling
 %%DATADIR%%/include/tests_virtualization
 %%DATADIR%%/include/tests_webservers
+@mode
 @dirrm %%DATADIR%%/include
 @dirrm %%DATADIR%%/dev/openbsd
 @dirrm %%DATADIR%%/dev

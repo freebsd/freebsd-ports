@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	teamocil
-PORTVERSION=	0.3.7
+PORTVERSION=	0.4.4
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 

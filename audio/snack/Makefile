@@ -36,7 +36,7 @@ CFLAGS+=	-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} \
 		-I${LOCALBASE}/include
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=	--with-ogg-include=${LOCALBASE}/include \
 			--with-ogg-lib=${LOCALBASE}/lib
 ALL_TARGET=	all libsnackogg.so

@@ -5,15 +5,9 @@ lib/libnewt.so
 lib/libnewt.so.%%SOVERSION%%
 lib/libnewt.so.%%VERSION%%
 man/man1/whiptail.1.gz
-%%PYTHONOPT%%%%PYTHON_SITELIBDIR%%/_snack.so
-%%PYTHONOPT%%%%PYTHON_SITELIBDIR%%/_snackmodule.so
-%%PYTHONOPT%%%%PYTHON_SITELIBDIR%%/snack.py
-%%PYTHONOPT%%%%PYTHON_SITELIBDIR%%/snack.pyc
 %%TCLOPT%%lib/whip%%VERSION%%/pkgIndex.tcl
 %%TCLOPT%%lib/whip%%VERSION%%/whiptcl.so
 libdata/pkgconfig/libnewt.pc
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/peanuts.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/popcorn.py
 %%NLS%%share/locale/ar/LC_MESSAGES/newt.mo
 %%NLS%%share/locale/as/LC_MESSAGES/newt.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/newt.mo
@@ -121,5 +115,4 @@ libdata/pkgconfig/libnewt.pc
 %%NLS%%@dirrmtry share/locale/ast
 %%NLS%%@dirrmtry share/locale/as/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/as
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%TCLOPT%%@dirrm lib/whip%%VERSION%%

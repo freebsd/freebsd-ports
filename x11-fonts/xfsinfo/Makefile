@@ -10,9 +10,6 @@ COMMENT=	X font server information utility
 XORG_CAT=	app
 USE_XORG=	x11 libfs
 
-PLIST_FILES=	bin/xfsinfo
+PLIST_FILES=	bin/xfsinfo man/man1/xfsinfo.1.gz
 
-MAN1=		xfsinfo.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

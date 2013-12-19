@@ -9,8 +9,8 @@ EXTRACT_AFTER_ARGS?=	"${DISTNAME}/source/${PORTNAME}-core/*" \
 				"${DISTNAME}/source/${PORTNAME}${PKGNAMESUFFIX}/*"
 
 .if ${PKGNAMESUFFIX} == "-core"
-LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2 \
-			png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=		libfreetype.so:${PORTSDIR}/print/freetype2 \
+			libpng15.so:${PORTSDIR}/graphics/png
 .else
 PLIST=			${WRKDIR}/pkg-plist
 .endif
@@ -20,11 +20,11 @@ MAN6=	mupen64plus.6
 .endif
 
 .if ${PKGNAMESUFFIX} == "-video-rice"
-LIB_DEPENDS+=		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=		libpng15.so:${PORTSDIR}/graphics/png
 .endif
 
 .if ${PKGNAMESUFFIX} == "-video-glide64mk"
-LIB_DEPENDS+=		boost_thread:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=		libboost_thread.so:${PORTSDIR}/devel/boost-libs
 .endif
 
 .if ${PKGNAMESUFFIX} != "-core"

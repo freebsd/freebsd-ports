@@ -18,12 +18,12 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUNIXODBC}
-LIB_DEPENDS=	odbc:${PORTSDIR}/databases/unixODBC
+LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
 CONFIGURE_ARGS=	--with-unixodbc=${LOCALBASE}
 .endif
 
 .if ${PORT_OPTIONS:MIODBC}
-LIB_DEPENDS=	iodbc:${PORTSDIR}/databases/libiodbc
+LIB_DEPENDS=	libiodbc.so:${PORTSDIR}/databases/libiodbc
 CONFIGURE_ARGS=	--with-iodbc
 .endif
 

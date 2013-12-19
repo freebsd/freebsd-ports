@@ -10,7 +10,7 @@ MASTER_SITES=	http://downloads.xiph.org/releases/liboggz/ \
 MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	Simple Ogg API
 
-LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg
+LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
 
 USE_AUTOTOOLS=	libtool
 NO_STAGE=	yes

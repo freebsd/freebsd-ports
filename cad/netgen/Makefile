@@ -10,9 +10,9 @@ MASTER_SITES=	SF/netgen-mesher/netgen-mesher/${PORTVERSION:S|.0$||}/
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	An automatic 3D tetrahedral mesh generator
 
-LIB_DEPENDS=	Tix8.4.3:${PORTSDIR}/x11-toolkits/tix \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		togl.1:${PORTSDIR}/graphics/togl
+LIB_DEPENDS=	liobTix8.4.so:${PORTSDIR}/x11-toolkits/tix \
+		liobjpeg.so:${PORTSDIR}/graphics/jpeg \
+		liobtogl.so:${PORTSDIR}/graphics/togl
 
 USE_LDCONFIG=	yes
 USES=		gmake
@@ -36,13 +36,13 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOCC}
-LIB_DEPENDS+=	TKernel.0:${PORTSDIR}/cad/opencascade
+LIB_DEPENDS+=	libTKernel.so:${PORTSDIR}/cad/opencascade
 CXXFLAGS+=	-DOCCGEOMETRY -DHAVE_CONFIG_H -D${ARCH} -I${LOCALBASE}/include/OpenCASCADE
 CONFIGURE_ARGS+=	--enable-occ
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--enable-ffmpeg
 .endif
 

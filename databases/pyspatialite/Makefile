@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:pyspatialite \
 MAINTAINER=	coder@tuxfamily.org
 COMMENT=	DB-API 2.0 interface for SQLite 3.x with Spatialite 3.x
 
-LIB_DEPENDS=	spatialite:${PORTSDIR}/databases/spatialite
+LIB_DEPENDS=	libspatialite.so:${PORTSDIR}/databases/spatialite
 
 USES=		iconv
 USE_PYTHON=	yes

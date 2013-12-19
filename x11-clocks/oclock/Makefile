@@ -10,7 +10,4 @@ COMMENT=	Round clock application for X
 XORG_CAT=	app
 USE_XORG=	x11 xmu xext xt xkbfile
 
-MAN1=		oclock.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

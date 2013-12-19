@@ -9,7 +9,6 @@ MASTER_SITES=	GNOME
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Interactive tool for performing search and replace operations
 
-NO_STAGE=	yes
 USES=		gettext gmake pathfix pkgconfig
 USE_XZ=		yes
 GNU_CONFIGURE=	yes

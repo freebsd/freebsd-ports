@@ -14,7 +14,7 @@ COMMENT=	Simple queue service over Memcache
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent-1.so:${PORTSDIR}/devel/libevent
 
 USE_CSTD=	gnu89
 CFLAGS+=	-I"${BDB_INCLUDE_DIR}"

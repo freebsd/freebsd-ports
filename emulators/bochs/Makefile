@@ -84,274 +84,120 @@ CXXFLAGS+=	-fno-rtti
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MANCOMPRESSED=	yes
-MAN1=		bochs.1 bochs-dlx.1 bxcommit.1 bximage.1
-MAN5=		bochsrc.5
-
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
+A20_PIN_CONFIGURE_ENABLE=	a20-pin
+
+ALIGN_CHECK_CONFIGURE_ENABLE=	alignment-check
+
+ASSERT_CHECK_CONFIGURE_ENABLE=	assert-checks
+
+AVX_CONFIGURE_ENABLE=	avx
+
+CDROM_CONFIGURE_ENABLE=	cdrom
+
+CHAINING_CONFIGURE_ENABLE=	handlers-chaining
+
+CLGD54XX_CONFIGURE_ENABLE=	clgd54xx
+
+CONF_MSRS_CONFIGURE_ENABLE=	configurable-msrs
+
+CPP_SUFX_CONFIGURE_ENABLE=	cpp
+
+DEBUGGER_CONFIGURE_ENABLE=	debugger
+
+DEBUGGER_X86_CONFIGURE_ENABLE=	x86-debugger
+
+DISASM_CONFIGURE_ENABLE=	disasm
+
+E1000_CONFIGURE_ENABLE=		e1000
+
+ES1370_CONFIGURE_ENABLE=	es1370
+
+FAST_FUNCCALL_CONFIGURE_ENABLE=	fast-function-calls
+
+FPU_CONFIGURE_ENABLE=		fpu
+
+GAMEPORT_CONFIGURE_ENABLE=	gameport
+
+GDB_STUB_CONFIGURE_ENABLE=	gdb-stub
+
+IDLE_HACK_CONFIGURE_ENABLE=	idle-hack
+
+IODEBUG_CONFIGURE_ENABLE=	iodebug
+
+LARGE_RAMFILE_CONFIGURE_ENABLE=	large-ramfile
+
+LOGGING_CONFIGURE_ENABLE=	logging
+
+LONG_PHY_ADDR_CONFIGURE_ENABLE=	long-phy-address
+
+MWAIT_CONFIGURE_ENABLE=		monitor-mwait
+
+NE2000_CONFIGURE_ENABLE=	ne2000
+
+OPTIMIZATIONS_CONFIGURE_ENABLE=	all-optimizations
+
+PCI_CONFIGURE_ENABLE=		pci
+
+PLUGINS_CONFIGURE_ENABLE=	plugins
+
+PNIC_CONFIGURE_ENABLE=		pnic
+
+RAW_SERIAL_CONFIGURE_ENABLE=	raw-serial
+
+READLINE_USES=			readline
+READLINE_CONFIGURE_ENABLE=	readline
+
+REPEAT_SPEED_CONFIGURE_ENABLE=	repeat-speedups
+
+RFB_CONFIGURE_WITH=		rfb
+
+SB16_CONFIGURE_ENABLE=		sb16
+
+SDL_USE=			SDL=sdl
+SDL_CONFIGURE_WITH=		sdl
+
+SHOW_IPS_CONFIGURE_ENABLE=	show-ips
+
+SMP_CONFIGURE_ENABLE=		smp
+
+SVGALIB_LIB_DEPENDS=		libvga.so:${PORTSDIR}/graphics/svgalib
+SVGALIB_CONFIGURE_WITH=		svga
+
+SVM_CONFIGURE_ENABLE=		svm
+
+TERM_CONFIGURE_WITH=		term
+
+USB_CONFIGURE_ENABLE=		usb
+
+USB_OHCI_CONFIGURE_ENABLE=	usb-ohci
+
+USB_XHCI_CONFIGURE_ENABLE=	usb-xhci
+
+VOODOO_CONFIGURE_ENABLE=	voodoo
+
+WXGTK_USE=			WX=2.4+
+WXGTK_CONFIGURE_WITH=		wx
+WXGTK_CONFIGURE_OFF=		--disable-debugger-gui
+
+X11_USE=			XORG=xrandr
+X11_CONFIGURE_WITH=		x11
+
+X86_64_CONFIGURE_ENABLE=	x86-64
+
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MTERM) && empty(PORT_OPTIONS:MWXGTK) && empty(PORT_OPTIONS:MX11)
 CONFIGURE_ARGS+=--with-nogui
 .endif
 
-.if ${PORT_OPTIONS:MA20_PIN}
-CONFIGURE_ARGS+=--enable-a20-pin
-.else
-CONFIGURE_ARGS+=--disable-a20-pin
-.endif
-
-.if ${PORT_OPTIONS:MALIGN_CHECK}
-CONFIGURE_ARGS+=--enable-alignment-check
-.else
-CONFIGURE_ARGS+=--disable-alignment-check
-.endif
-
-.if ${PORT_OPTIONS:MASSERT_CHECK}
-CONFIGURE_ARGS+=--enable-assert-checks
-.else
-CONFIGURE_ARGS+=--disable-assert-checks
-.endif
-
-.if ${PORT_OPTIONS:MAVX}
-CONFIGURE_ARGS+=--enable-avx
-.else
-CONFIGURE_ARGS+=--disable-avx
-.endif
-
-.if ${PORT_OPTIONS:MCDROM}
-CONFIGURE_ARGS+=--enable-cdrom
-.else
-CONFIGURE_ARGS+=--disable-cdrom
-.endif
-
-.if ${PORT_OPTIONS:MCHAINING}
-CONFIGURE_ARGS+=--enable-handlers-chaining
-.else
-CONFIGURE_ARGS+=--disable-handlers-chaining
-.endif
-
-.if ${PORT_OPTIONS:MCLGD54XX}
-CONFIGURE_ARGS+=--enable-clgd54xx
-.else
-CONFIGURE_ARGS+=--disable-clgd54xx
-.endif
-
-.if ${PORT_OPTIONS:MCONF_MSRS}
-CONFIGURE_ARGS+=--enable-configurable-msrs
-.else
-CONFIGURE_ARGS+=--disable-configurable-msrs
-.endif
-
-.if ${PORT_OPTIONS:MCPP_SUFX}
-CONFIGURE_ARGS+=--enable-cpp
-.else
-CONFIGURE_ARGS+=--disable-cpp
-.endif
-
-.if ${PORT_OPTIONS:MDEBUGGER}
-CONFIGURE_ARGS+=--enable-debugger
-.else
-CONFIGURE_ARGS+=--disable-debugger
-.endif
-
-.if ${PORT_OPTIONS:MDEBUGGER_X86}
-CONFIGURE_ARGS+=--enable-x86-debugger
-.else
-CONFIGURE_ARGS+=--disable-x86-debugger
-.endif
-
-.if ${PORT_OPTIONS:MDISASM}
-CONFIGURE_ARGS+=--enable-disasm
-.else
-CONFIGURE_ARGS+=--disable-disasm
-.endif
-
-.if ${PORT_OPTIONS:ME1000}
-CONFIGURE_ARGS+=--enable-e1000
-.else
-CONFIGURE_ARGS+=--disable-e1000
-.endif
-
-.if ${PORT_OPTIONS:MES1370}
-CONFIGURE_ARGS+=--enable-es1370
-.else
-CONFIGURE_ARGS+=--disable-es1370
-.endif
-
-.if ${PORT_OPTIONS:MFAST_FUNCCALL}
-CONFIGURE_ARGS+=--enable-fast-function-calls
-.else
-CONFIGURE_ARGS+=--disable-fast-function-calls
-.endif
-
-.if ${PORT_OPTIONS:MFPU}
-CONFIGURE_ARGS+=--enable-fpu
-.else
-CONFIGURE_ARGS+=--disable-fpu
+.if ! ${PORT_OPTIONS:MFPU}
 WITH_CPU_LEVEL=	3
 .endif
 
-.if ${PORT_OPTIONS:MGAMEPORT}
-CONFIGURE_ARGS+=--enable-gameport
-.else
-CONFIGURE_ARGS+=--disable-gameport
-.endif
-
-.if ${PORT_OPTIONS:MGDB_STUB}
-CONFIGURE_ARGS+=--enable-gdb-stub
-.else
-CONFIGURE_ARGS+=--disable-gdb-stub
-.endif
-
-.if ${PORT_OPTIONS:MIDLE_HACK}
-CONFIGURE_ARGS+=--enable-idle-hack
-.else
-CONFIGURE_ARGS+=--disable-idle-hack
-.endif
-
-.if ${PORT_OPTIONS:MIODEBUG}
-CONFIGURE_ARGS+=--enable-iodebug
-.else
-CONFIGURE_ARGS+=--disable-iodebug
-.endif
-
-.if ${PORT_OPTIONS:MLARGE_RAMFILE}
-CONFIGURE_ARGS+=--enable-large-ramfile
-.else
-CONFIGURE_ARGS+=--disable-large-ramfile
-.endif
-
-.if ${PORT_OPTIONS:MLOGGING}
-CONFIGURE_ARGS+=--enable-logging
-.else
-CONFIGURE_ARGS+=--disable-logging
-.endif
-
-.if ${PORT_OPTIONS:MLONG_PHY_ADDR}
-CONFIGURE_ARGS+=--enable-long-phy-address
-.else
-CONFIGURE_ARGS+=--disable-long-phy-address
-.endif
-
-.if ${PORT_OPTIONS:MMWAIT}
-CONFIGURE_ARGS+=--enable-monitor-mwait
-.else
-CONFIGURE_ARGS+=--disable-monitor-mwait
-.endif
-
-.if ${PORT_OPTIONS:MNE2000}
-CONFIGURE_ARGS+=--enable-ne2000
-.else
-CONFIGURE_ARGS+=--disable-ne2000
-.endif
-
-.if ${PORT_OPTIONS:MOPTIMIZATIONS}
-CONFIGURE_ARGS+=--enable-all-optimizations
-.else
-CONFIGURE_ARGS+=--disable-all-optimizations
-.endif
-
-.if ${PORT_OPTIONS:MPCI}
-CONFIGURE_ARGS+=--enable-pci
-.else
-CONFIGURE_ARGS+=--disable-pci
-.endif
-
-.if ${PORT_OPTIONS:MPLUGINS}
-CONFIGURE_ARGS+=--enable-plugins
-.else
-CONFIGURE_ARGS+=--disable-plugins
-.endif
-
-.if ${PORT_OPTIONS:MPNIC}
-CONFIGURE_ARGS+=--enable-pnic
-.else
-CONFIGURE_ARGS+=--disable-pnic
-.endif
-
-.if ${PORT_OPTIONS:MRAW_SERIAL}
-CONFIGURE_ARGS+=--enable-raw-serial
-.else
-CONFIGURE_ARGS+=--disable-raw-serial
-.endif
-
-.if ${PORT_OPTIONS:MREADLINE}
-USES+=		readline
-CONFIGURE_ARGS+=--enable-readline
-.else
-CONFIGURE_ARGS+=--disable-readline
-.endif
-
-.if ${PORT_OPTIONS:MREPEAT_SPEED}
-CONFIGURE_ARGS+=--enable-repeat-speedups
-.else
-CONFIGURE_ARGS+=--disable-repeat-speedups
-.endif
-
-.if ${PORT_OPTIONS:MRFB}
-CONFIGURE_ARGS+=--with-rfb
-.else
-CONFIGURE_ARGS+=--without-rfb
-.endif
-
-.if ${PORT_OPTIONS:MSB16}
-CONFIGURE_ARGS+=--enable-sb16
-.endif
-
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL=	sdl
-CONFIGURE_ARGS+=--with-sdl
-.endif
-
-.if ${PORT_OPTIONS:MSHOW_IPS}
-CONFIGURE_ARGS+=--enable-show-ips
-.else
-CONFIGURE_ARGS+=--disable-show-ips
-.endif
-
 .if ${PORT_OPTIONS:MSMP}
-CONFIGURE_ARGS+=--enable-smp
 WITH_CPU_LEVEL=	6
-.endif
-
-.if ${PORT_OPTIONS:MSVGALIB}
-LIB_DEPENDS+=	vga:${PORTSDIR}/graphics/svgalib
-CONFIGURE_ARGS+=--with-svga
-.else
-CONFIGURE_ARGS+=--without-svga
-.endif
-
-.if ${PORT_OPTIONS:MSVM}
-CONFIGURE_ARGS+=--enable-svm
-.else
-CONFIGURE_ARGS+=--disable-svm
-.endif
-
-.if ${PORT_OPTIONS:MTERM}
-CONFIGURE_ARGS+=--with-term
-.else
-CONFIGURE_ARGS+=--without-term
-.endif
-
-.if ${PORT_OPTIONS:MUSB}
-CONFIGURE_ARGS+=--enable-usb
-.else
-CONFIGURE_ARGS+=--disable-usb
-.endif
-
-.if ${PORT_OPTIONS:MUSB_OHCI}
-CONFIGURE_ARGS+=--enable-usb-ohci
-.else
-CONFIGURE_ARGS+=--disable-usb-ohci
-.endif
-
-.if ${PORT_OPTIONS:MUSB_XHCI}
-CONFIGURE_ARGS+=--enable-usb-xhci
-.else
-CONFIGURE_ARGS+=--disable-usb-xhci
 .endif
 
 .if ${PORT_OPTIONS:MVMX} && ${PORT_OPTIONS:MX86_64}
@@ -364,29 +210,8 @@ CONFIGURE_ARGS+=--enable-vmx=1
 WITH_CPU_LEVEL=	6
 .endif
 
-.if ${PORT_OPTIONS:MVOODOO}
-CONFIGURE_ARGS+=--enable-voodoo
-.else
-CONFIGURE_ARGS+=--disable-voodoo
-.endif
-
-.if ${PORT_OPTIONS:MWXGTK}
-USE_WX=		2.4+
-CONFIGURE_ARGS+=--with-wx
-.else
-CONFIGURE_ARGS+=--disable-debugger-gui
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	xrandr
-CONFIGURE_ARGS+=--with-x11
-.endif
-
 .if ${PORT_OPTIONS:MX86_64}
-CONFIGURE_ARGS+=--enable-x86-64
 WITH_CPU_LEVEL=	6
-.else
-CONFIGURE_ARGS+=--disable-x86-64
 .endif
 
 .if ${PORT_OPTIONS:MXPM} && ${PORT_OPTIONS:MX11}
@@ -464,21 +289,18 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MPLUGINS}
-	@${FIND} ${PREFIX}/lib/bochs ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/lib/bochs -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/bochs ! -type d | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/bochs -type d | ${SORT} -r | \
+		${SED} 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}/CHANGES
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
-	@${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}/TODO
-	@${INSTALL_DATA} ${WRKSRC}/.bochsrc ${DOCSDIR}/bochsrc-sample.txt
-	@${INSTALL_DATA} ${WRKSRC}/docs-html/*.txt ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/html
-	@${INSTALL_DATA} ${WRKSRC}/docs-html/*.html ${DOCSDIR}/html
-.endif
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${STAGEDIR}${DOCSDIR}/CHANGES
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README
+	${INSTALL_DATA} ${WRKSRC}/TODO ${STAGEDIR}${DOCSDIR}/TODO
+	${INSTALL_DATA} ${WRKSRC}/.bochsrc ${STAGEDIR}${DOCSDIR}/bochsrc-sample.txt
+	${INSTALL_DATA} ${WRKSRC}/docs-html/*.txt ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/docs-html/*.html ${STAGEDIR}${DOCSDIR}/html
 
 .include <bsd.port.mk>

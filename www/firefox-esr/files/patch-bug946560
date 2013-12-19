@@ -1,0 +1,44 @@
+diff --git xpcom/base/nsMemoryInfoDumper.cpp xpcom/base/nsMemoryInfoDumper.cpp
+index 0b2f78c..d857374 100644
+--- xpcom/base/nsMemoryInfoDumper.cpp
++++ xpcom/base/nsMemoryInfoDumper.cpp
+@@ -30,7 +30,7 @@
+ #include <unistd.h>
+ #endif
+ 
+-#ifdef XP_LINUX
++#if defined(XP_LINUX) || defined(__FreeBSD__)
+ #include <fcntl.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+@@ -109,7 +109,7 @@ private:
+ 
+ } // anonymous namespace
+ 
+-#ifdef XP_LINUX // {
++#if defined(XP_LINUX) || defined(__FreeBSD__) // {
+ namespace {
+ 
+ /*
+@@ -548,7 +548,7 @@ nsMemoryInfoDumper::~nsMemoryInfoDumper(
+ /* static */ void
+ nsMemoryInfoDumper::Initialize()
+ {
+-#ifdef XP_LINUX
++#if defined(XP_LINUX) || defined(__FreeBSD__)
+   SignalPipeWatcher::Create();
+   FifoWatcher::MaybeCreate();
+ #endif
+diff --git xpcom/base/nsMemoryReporterManager.cpp xpcom/base/nsMemoryReporterManager.cpp
+index 8c65665..8f6d0e9 100644
+--- xpcom/base/nsMemoryReporterManager.cpp
++++ xpcom/base/nsMemoryReporterManager.cpp
+@@ -824,7 +824,7 @@ nsMemoryReporterManager::Init()
+     RegisterReporter(new mozilla::dmd::DMDReporter);
+ #endif
+ 
+-#if defined(XP_LINUX)
++#if defined(XP_LINUX) || defined(__FreeBSD__)
+     nsMemoryInfoDumper::Initialize();
+ #endif
+ 

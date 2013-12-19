@@ -8,7 +8,8 @@ MAINTAINER=	avilla@FreeBSD.org
 COMMENT=	Python bindings for libplist
 
 LIB_DEPENDS=	plist:${PORTSDIR}/${MASTER_PORT}
-BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:${PORTSDIR}/devel/py-setuptools \
+		cython:${PORTSDIR}/lang/cython \
 		swig2.0:${PORTSDIR}/devel/swig20
 
 USE_PYTHON=	yes

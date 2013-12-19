@@ -542,6 +542,7 @@
     SUBDIR += py-basemap-data
     SUBDIR += py-bitvector
     SUBDIR += py-bottleneck
+    SUBDIR += py-fastcluster
     SUBDIR += py-ffc
     SUBDIR += py-fiat
     SUBDIR += py-fpconst

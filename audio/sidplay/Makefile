@@ -3,25 +3,27 @@
 
 PORTNAME=	sidplay
 PORTVERSION=	1.0.9
+DISTVERSIONPREFIX=	base-
 CATEGORIES=	audio emulators
-MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/
-DISTNAME=	${PORTNAME}-base-${PORTVERSION}
+MASTER_SITES=	http://bsd-geek.de/FreeBSD/distfiles/ \
+		http://www.sourcefiles.org/Multimedia/Module_Players/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Commodore SID-chip emulator that plays SID music files
 
-LIB_DEPENDS=	sidplay:${PORTSDIR}/audio/libsidplay
+LICENSE=	GPLv2 # (or later)
 
+LIB_DEPENDS=	libsidplay.so:${PORTSDIR}/audio/libsidplay
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-sidplay-includes=${LOCALBASE}/include \
 		--with-sidplay-library=${LOCALBASE}/lib
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-base-${PORTVERSION}
-GNU_CONFIGURE=	yes
-NO_STAGE=	yes
+PLIST_FILES=	bin/sid2wav bin/sidcon bin/sidplay
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/bin/sidplay ${PREFIX}/bin/sid2wav \
-		${PREFIX}/bin/sidcon
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sidplay \
+		${STAGEDIR}${PREFIX}/bin/sid2wav \
+		${STAGEDIR}${PREFIX}/bin/sidcon
 
 .include <bsd.port.mk>

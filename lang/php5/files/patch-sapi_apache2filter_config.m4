@@ -1,6 +1,6 @@
---- sapi/apache2filter/config.m4.orig	2013-10-18 12:17:14.622544934 +0000
-+++ sapi/apache2filter/config.m4	2013-10-18 12:22:13.032234760 +0000
-@@ -68,7 +68,7 @@
+--- sapi/apache2filter/config.m4.orig	2013-12-10 19:32:43.000000000 +0000
++++ sapi/apache2filter/config.m4	2013-12-13 21:55:54.268235571 +0000
+@@ -68,7 +68,7 @@ if test "$PHP_APXS2FILTER" != "no"; then
    fi
  
    APXS_LIBEXECDIR='$(INSTALL_ROOT)'`$APXS -q LIBEXECDIR`

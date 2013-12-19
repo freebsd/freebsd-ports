@@ -10,7 +10,7 @@ COMMENT=	Qt SQLite 2.x database plugin
 
 DB=		sqlite2
 
-LIB_DEPENDS+=	sqlite.2:${PORTSDIR}/databases/sqlite2
+LIB_DEPENDS+=	libsqlite.so:${PORTSDIR}/databases/sqlite2
 
 USE_QT4=	moc_build sql
 QT_NONSTANDARD=	yes

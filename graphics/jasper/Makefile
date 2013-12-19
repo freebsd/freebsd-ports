@@ -12,7 +12,7 @@ MASTER_SITE_SUBDIR=	ImageMagick/delegates
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An implementation of the codec specified in the JPEG-2000 standard
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 LICENSE=	MIT
 

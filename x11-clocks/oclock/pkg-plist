@@ -1,4 +1,5 @@
 bin/oclock
+man/man1/oclock.1.gz
 share/X11/app-defaults/Clock-color
 @dirrmtry share/X11/app-defaults
 @dirrmtry share/X11

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	firefox
-PORTVERSION=	24.1.0
+PORTVERSION=	24.2.0
 CATEGORIES=	www
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}esr/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -16,8 +16,9 @@ COMMENT=	Localized interface for Firefox
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 USE_FIREFOX=	24
-USE_XPI=	firefox linux-firefox
+USE_XPI=	firefox
 
+NO_ARCH=	yes
 USE_SUBMAKE=	yes
 
 WDIR=	langpack-*@firefox.mozilla.org

@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ stream directory browser
 
 BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
 NO_STAGE=	yes
@@ -58,7 +58,7 @@ PLIST_SUB+=	XIPH="@comment "
 .if ${PORT_OPTIONS:MLOCAL}
 PLIST_SUB+=	LOCAL=""
 .if ${PORT_OPTIONS:MLOCAL_METADATA}
-LIB_DEPENDS+=	tag_c:${PORTSDIR}/audio/taglib
+LIB_DEPENDS+=	libtag_c.so:${PORTSDIR}/audio/taglib
 .else
 CONFIGURE_ARGS+=	--disable-local-metadata
 .endif

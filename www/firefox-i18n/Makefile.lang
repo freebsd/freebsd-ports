@@ -1,16 +1,20 @@
 # Created by: Koji Yokota <yokota@res.otaru-uc.ac.jp>
 # $FreeBSD$
 
-FIREFOX_I18N_ALL_=	af ak ar ast be bg bn-BD bn-IN br bs ca cs cy da de el \
-			en-GB en-US en-ZA eo es-AR es-CL es-ES es-MX et eu fa \
-			fi fr fy-NL ga-IE gl gu-IN he hi-IN hr hu hy-AM id is \
-			it ja kk kn ko ku lg lt lv mai mk ml mr nb-NO nl nn-NO \
-			nso or pa-IN pl pt-BR pt-PT rm ro ru si sk sl son sq \
-			sr sv-SE ta-LK ta te th tr uk vi zh-CN zh-TW zu
+FIREFOX_I18N_ALL_=	ach af ak ar as ast be bg bn-BD bn-IN br bs ca cs csb  \
+			cy da de el en-GB en-US en-ZA eo es-AR es-CL es-ES     \
+			es-MX et eu fa ff fi fr fy-NL ga-IE gd gl gu-IN he     \
+			hi-IN hr hu hy-AM id is it ja kk km kn ko ku lg lij lt \
+			lv mai mk ml mr nb-NO nl nn-NO nso or pa-IN pl pt-BR   \
+			pt-PT rm ro ru si sk sl son sq sr sv-SE ta-LK ta te th \
+			tr uk vi zh-CN zh-TW zu
 
 .if defined(FIREFOX_I18N_ALL) || defined(PACKAGE_BUILDING) || target(package)
 FIREFOX_I18N=   ${FIREFOX_I18N_ALL_}
 .else
+.if ${PORT_OPTIONS:MLANG_ACH}
+FIREFOX_I18N+=  ach
+.endif
 .if ${PORT_OPTIONS:MLANG_AF}
 FIREFOX_I18N+=  af
 .endif
@@ -19,6 +23,9 @@ FIREFOX_I18N+=  ak
 .endif
 .if ${PORT_OPTIONS:MLANG_AR}
 FIREFOX_I18N+=  ar
+.endif
+.if ${PORT_OPTIONS:MLANG_AS}
+FIREFOX_I18N+=  as
 .endif
 .if ${PORT_OPTIONS:MLANG_AST}
 FIREFOX_I18N+=  ast
@@ -46,6 +53,9 @@ FIREFOX_I18N+=  ca
 .endif
 .if ${PORT_OPTIONS:MLANG_CS}
 FIREFOX_I18N+=  cs
+.endif
+.if ${PORT_OPTIONS:MLANG_CSB}
+FIREFOX_I18N+=  csb
 .endif
 .if ${PORT_OPTIONS:MLANG_CY}
 FIREFOX_I18N+=  cy
@@ -92,6 +102,9 @@ FIREFOX_I18N+=  eu
 .if ${PORT_OPTIONS:MLANG_FA}
 FIREFOX_I18N+=  fa
 .endif
+.if ${PORT_OPTIONS:MLANG_FF}
+FIREFOX_I18N+=  ff
+.endif
 .if ${PORT_OPTIONS:MLANG_FI}
 FIREFOX_I18N+=  fi
 .endif
@@ -103,6 +116,9 @@ FIREFOX_I18N+=  fy-NL
 .endif
 .if ${PORT_OPTIONS:MLANG_GA}
 FIREFOX_I18N+=  ga-IE
+.endif
+.if ${PORT_OPTIONS:MLANG_GD}
+FIREFOX_I18N+=  gd
 .endif
 .if ${PORT_OPTIONS:MLANG_GL}
 FIREFOX_I18N+=  gl
@@ -140,6 +156,9 @@ FIREFOX_I18N+=  ja
 .if ${PORT_OPTIONS:MLANG_KK}
 FIREFOX_I18N+=  kk
 .endif
+.if ${PORT_OPTIONS:MLANG_KM}
+FIREFOX_I18N+=  km
+.endif
 .if ${PORT_OPTIONS:MLANG_KN}
 FIREFOX_I18N+=  kn
 .endif
@@ -151,6 +170,9 @@ FIREFOX_I18N+=  ku
 .endif
 .if ${PORT_OPTIONS:MLANG_LG}
 FIREFOX_I18N+=  lg
+.endif
+.if ${PORT_OPTIONS:MLANG_LIJ}
+FIREFOX_I18N+=  lij
 .endif
 .if ${PORT_OPTIONS:MLANG_LT}
 FIREFOX_I18N+=  lt

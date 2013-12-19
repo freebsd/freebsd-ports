@@ -12,11 +12,11 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Python bindings for exiv2
 
-LIB_DEPENDS=	exiv2:${PORTSDIR}/graphics/exiv2\
-		boost_python:${PORTSDIR}/devel/boost-python-libs
+LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2\
+		libboost_python.so:${PORTSDIR}/devel/boost-python-libs
 
+USES=		gmake
 USE_PYTHON=	-2.7
-USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_SCONS=	yes
 USE_LDCONFIG=	yes

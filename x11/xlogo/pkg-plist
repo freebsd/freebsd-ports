@@ -1,4 +1,5 @@
 bin/xlogo
+man/man1/xlogo.1.gz
 share/X11/app-defaults/XLogo
 share/X11/app-defaults/XLogo-color
 @dirrmtry share/X11/app-defaults

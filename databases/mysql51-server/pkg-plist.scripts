@@ -9,3 +9,14 @@ bin/mysqlaccess
 bin/mysqld_multi
 bin/mysqldumpslow
 bin/mysqlhotcopy
+man/man1/msql2mysql.1.gz
+man/man1/mysql_convert_table_format.1.gz
+man/man1/mysql_find_rows.1.gz
+man/man1/mysql_fix_extensions.1.gz
+man/man1/mysql_secure_installation.1.gz
+man/man1/mysql_setpermission.1.gz
+man/man1/mysql_zap.1.gz
+man/man1/mysqlaccess.1.gz
+man/man1/mysqld_multi.1.gz
+man/man1/mysqldumpslow.1.gz
+man/man1/mysqlhotcopy.1.gz

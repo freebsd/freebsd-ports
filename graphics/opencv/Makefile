@@ -157,7 +157,7 @@ CMAKE_ARGS+=	-DWITH_PNG:BOOL=Off
 .if ${PORT_OPTIONS:MQT4}
 USE_QT4+=	gui moc_build qmake_build rcc_build uic_build qtestlib
 CMAKE_ARGS+=	-DWITH_QT:STRING="4"
-. if ${PORT_OPTIONS:MQT4}
+. if ${PORT_OPTIONS:MOPENGL}
 USE_QT4+=	opengl
 . endif
 .else

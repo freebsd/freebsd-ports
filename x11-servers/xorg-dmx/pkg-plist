@@ -11,3 +11,7 @@ bin/dmxtodmx
 bin/dmxwininfo
 bin/vdltodmx
 bin/xdmxconfig
+man/man1/Xdmx.1.gz
+man/man1/dmxtodmx.1.gz
+man/man1/vdltodmx.1.gz
+man/man1/xdmxconfig.1.gz

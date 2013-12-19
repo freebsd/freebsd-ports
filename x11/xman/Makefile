@@ -12,7 +12,4 @@ LICENSE=	MIT
 XORG_CAT=	app
 USE_XORG=	xt xaw xp xprintutil
 
-MAN1=		xman.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

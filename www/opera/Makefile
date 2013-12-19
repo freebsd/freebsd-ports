@@ -16,8 +16,8 @@ DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.${ARCH}.freebsd
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Blazingly fast, full-featured, standards-compliant browser
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 BUILD_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
@@ -27,9 +27,9 @@ OPERA_VER?=	12.16
 OPERA_BUILD?=	1860
 MASTER_SITES_VER_PATH=	unix/${OPERA_VER:S/.//}
 
+USES=		desktop-file-utils
 USE_XZ=		yes
 USE_XORG=	x11 xext sm ice xft xrender
-USE_GNOME=	desktopfileutils
 INSTALLS_ICONS=	yes
 
 MAN1=		opera.1
@@ -38,11 +38,15 @@ MANCOMPRESSED=	yes
 NO_BUILD=	yes
 EXPLICIT_PACKAGE_DEPENDS=	yes
 
-OPTIONS_DEFINE=	CUPS VIDEO GTK2 KDE4
+OPTIONS_DEFINE=	CUPS VIDEO GTK2 KDE4 COMPAT9
 OPTIONS_DEFAULT=	CUPS VIDEO
+NO_OPTIONS_SORT=yes
 
 CUPS_DESC=	support for printing (requires CUPS)
 VIDEO_DESC=	support for HTML5 video (requires GStreamer)
+COMPAT9_DESC=	use libstdc++.so.6 from compat9x instead of gcc46
+
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 
 .include <bsd.port.options.mk>
 
@@ -55,10 +59,6 @@ DISTFILES=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.amd64.freebsd${EXTRACT_SUFX} 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.i386.freebsd${EXTRACT_SUFX}
 .endif
-.endif
-
-.if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=	cups:${PORTSDIR}/print/cups-client
 .endif
 
 .if ${PORT_OPTIONS:MVIDEO}
@@ -84,7 +84,11 @@ IGNORE=		only for FreeBSD 7.x and higher
 .endif
 
 .if ${OSVERSION} >= 1000054
+.if ${PORT_OPTIONS:MCOMPAT9}
 RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
+.else
+RUN_DEPENDS+=	${LOCALBASE}/lib/gcc46/libstdc++.so.6:${PORTSDIR}/lang/gcc46
+.endif
 .endif
 
 post-extract:

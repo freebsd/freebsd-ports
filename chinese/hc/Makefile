@@ -24,6 +24,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/g2b ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/hc.tab ${STAGEDIR}${PREFIX}/share/chinese
 	${INSTALL_DATA} ${DISTDIR}/hc-supp.tab ${STAGEDIR}${PREFIX}/share/chinese
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>

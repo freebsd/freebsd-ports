@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xcache
-DISTVERSION=	3.0.1
+DISTVERSION=	3.1.0
 CATEGORIES=	www
 MASTER_SITES=	http://xcache.lighttpd.net/pub/Releases/${DISTVERSION}/
 
@@ -10,7 +10,6 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A fast and stable php opcode cacher
 
 LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 USE_PHP=	yes
@@ -30,7 +29,6 @@ PLIST_DIRSTRY=	lib/php/%%PHP_EXT_DIR%%
 
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCONSTANT}
@@ -45,15 +43,13 @@ PLIST_SUB+=	COVERAGER="@comment "
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
 	${INSTALL_DATA} ${WRKSRC}/modules/${PORTNAME}.so \
-	       ${PREFIX}/lib/php/${PHP_EXT_DIR}
-	@${MKDIR} ${EXAMPLESDIR}
+	       ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/xcache.ini \
-		${EXAMPLESDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} htdocs ${EXAMPLESDIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+		${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} htdocs \
+		${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
