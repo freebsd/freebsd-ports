@@ -10,18 +10,21 @@ MASTER_SITES=	http://www.fhttpd.org/pub/qcread/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Supports both color and B&W parallel-port Connectix QuickCam for PC
 
-ONLY_FOR_ARCHS=	i386
+LICENSE=	BSD
 
-NO_STAGE=	yes
+USE_CSTD=	gnu89
+
+ONLY_FOR_ARCHS=	amd64 i386
+
 do-build:
-	cd ${WRKSRC} && ${CC} ${CFLAGS} -I. -DFreeBSD ${CPPFLAGS} \
-		-o qcread qcread.c cqc.c -lm ${LDFLAGS}
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} -I. -DFreeBSD ${CPPFLAGS} \
+		-o qcread qcread.c cqc.c -lm ${LDFLAGS})
+	@${LN} -sf qcam.conf ${WRKSRC}/qcam.conf.dist
 
 do-install:
-	${INSTALL} ${COPY} -o root -g wheel -m 644 ${WRKSRC}/qcam.conf ${PREFIX}/etc/qcam.conf.dist
-	if [ ! -e ${PREFIX}/etc/qcam.conf ]; then \
-		${CP} ${PREFIX}/etc/qcam.conf.dist ${PREFIX}/etc/qcam.conf; \
-	fi
-	${INSTALL_PROGRAM} ${WRKSRC}/qcread ${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} qcread \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_DATA} qcam.conf.dist \
+		${STAGEDIR}${PREFIX}/etc)
 
 .include <bsd.port.mk>
