@@ -1,27 +1,24 @@
-# Created by: Jason Bacon
+# Created by: Jason Bacon <jwbacon@tds.net>
 # $FreeBSD$
 
 PORTNAME=	genplist
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
-		http://acadix.biz/Ports/distfiles/
+MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
+		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 
 MAINTAINER=	jwbacon@tds.net
 COMMENT=	Generates a static plist for a port
 
+LICENSE=	BSD
+
 NO_BUILD=	yes
+USE_XZ=		yes
 
-PLIST_FILES=	bin/genplist
+PLIST_FILES=	bin/genplist man/man1/genplist.1.gz
 
-MAN1=		genplist.1
-
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/genplist ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/genplist.1 ${MAN1PREFIX}/man/man1
+	@${INSTALL_SCRIPT} ${WRKSRC}/genplist ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/genplist.1 ${STAGEDIR}${PREFIX}/man/man1
 
-.include <bsd.port.pre.mk>
-post-patch:
-		${REINPLACE_CMD} 's|/etc/mtree|$${PORTSDIR=/usr/ports}/Templates|' ${WRKSRC}/genplist
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
