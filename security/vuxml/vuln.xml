@@ -51,6 +51,49 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4e1f4abc-6837-11e3-9cda-3c970e169bc2">
+    <topic>cURL library -- cert name check ignore with GnuTLS</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><ge>7.21.4</ge><lt>7.33.0_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cURL project reports:</p>
+	<blockquote cite="http://curl.haxx.se/docs/adv_20131217.html">
+	  <p>libcurl is vulnerable to a case of missing out the checking
+	    of the certificate CN or SAN name field when the digital
+	    signature verification is turned off.</p>
+	  <p>libcurl offers two separate and independent options for
+	    verifying a server's TLS certificate. CURLOPT_SSL_VERIFYPEER
+	    and CURLOPT_SSL_VERIFYHOST. The first one tells libcurl to
+	    verify the trust chain using a CA cert bundle, while the
+	    second tells libcurl to make sure that the name fields in
+	    the server certificate meets the criteria. Both options are
+	    enabled by default.</p>
+	  <p>This flaw had the effect that when an application disabled
+	    CURLOPT_SSL_VERIFYPEER, libcurl mistakenly also skipped the
+	    CURLOPT_SSL_VERIFYHOST check. Applications can disable
+	    CURLOPT_SSL_VERIFYPEER and still achieve security by doing
+	    the check on its own using other means.</p>
+	  <p>The curl command line tool is not affected by this problem
+	    as it either enables both options or disables both at the
+	    same time.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://curl.haxx.se/docs/adv_20131217.html</url>
+      <cvename>CVE-2013-6422</cvename>
+    </references>
+    <dates>
+      <discovery>2013-12-17</discovery>
+      <entry>2013-12-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2e5715f8-67f7-11e3-9811-b499baab0cbe">
     <topic>gnupg -- RSA Key Extraction via Low-Bandwidth Acoustic Cryptanalysis attack</topic>
     <affects>
