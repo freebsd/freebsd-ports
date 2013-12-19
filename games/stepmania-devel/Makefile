@@ -6,6 +6,7 @@ PORTVERSION=	5.0.a3
 PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE
+PROJECTHOST=	sm-ssc
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-SM5-alpha3-src
 
@@ -24,11 +25,10 @@ OPTIONS_DEFAULT=VORBIS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-SM5-alpha3
 
-PROJECTHOST=	sm-ssc
 USE_BZIP2=	yes
+USES=		iconv pathfix perl5 pkgconfig shebangfix
 USE_XORG=	x11 xau xdmcp xext xrandr xrender xtst
 USE_GL=		gl glu
-USES=		pathfix iconv shebangfix perl5 pkgconfig
 USE_GNOME=	gtk20
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
@@ -38,7 +38,7 @@ SHEBANG_FILES=	Utils/*.pl \
 		extern/zlib/zlib2ansi
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lpthread
+LDFLAGS+=	-L${LOCALBASE}/lib -lX11
 
 VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 VORBIS_CONFIGURE_WITH=	vorbis
@@ -53,8 +53,10 @@ CONFIGURE_ENV+=	ac_cv_lib_pulse_pa_stream_new=no
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/^LIBS/s|-lpthread|${ICONV_LIB}|' -e 's/-finline-limit=300//g' \
-			 ${WRKSRC}/src/Makefile.in
+		's|-lpthread |-pthread |' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/^LIBS/s|-lpthread|${ICONV_LIB}| ; \
+		 s|-finline-limit=300||g' ${WRKSRC}/src/Makefile.in
 
 pre-build:
 	@${ECHO_CMD} -n > ${WRKDIR}/stepmania.sh
@@ -62,7 +64,7 @@ pre-build:
 	@${ECHO_CMD} 'cd ${PREFIX}/lib/stepmania; ./stepmania $$@' >> ${WRKDIR}/stepmania.sh
 
 post-build:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} \
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS} SMData)
 
 do-install:
@@ -84,5 +86,8 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(${TAR} -C ${WRKSRC}/Docs --exclude "Licenses.txt" -cf - . | \
 		${TAR} -C ${STAGEDIR}${DOCSDIR} --unlink -xf -)
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/stepmania/GtkModule.so
 
 .include <bsd.port.mk>
