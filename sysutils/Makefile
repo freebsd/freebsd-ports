@@ -181,6 +181,7 @@
     SUBDIR += dirdiff
     SUBDIR += dirvish
     SUBDIR += diskcheckd
+    SUBDIR += diskimage-tools
     SUBDIR += diskscrub
     SUBDIR += disktool
     SUBDIR += disktype
