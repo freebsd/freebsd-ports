@@ -11,11 +11,11 @@ COMMENT= 	Grub-emu loader for bhyve
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
+		gcc47:${PORTSDIR}/lang/gcc47 \
 		help2man:${PORTSDIR}/misc/help2man
 
 ONLY_FOR_ARCHS=	amd64
 SSP_UNSAFE=	yes
-USE_GCC=	4.7
 USE_GITHUB=	yes
 GH_ACCOUNT=	grehan-freebsd
 GH_COMMIT=	aa0717f
