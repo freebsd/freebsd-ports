@@ -1,5 +1,22 @@
---- aw.cpp.orig	Sat Jan 26 02:51:03 2002
-+++ aw.cpp	Sat May 26 22:33:51 2007
+--- aw.cpp.orig	2002-01-26 02:51:03.000000000 +0900
++++ aw.cpp	2013-12-04 04:50:18.000000000 +0900
+@@ -62,11 +62,11 @@
+ 
+ /*****************************************************************************/
+ 
+-#include <math.h>
+-#include <complex.h>
+-#include <stdlib.h>
+-#include <string.h>
+-#include <stdio.h>
++#include <cmath>
++#include <complex>
++#include <cstdlib>
++#include <cstring>
++#include <cstdio>
+ 
+ /*****************************************************************************/
+ 
 @@ -85,6 +85,8 @@
  #define AW_INPUT2     6
  #define AW_OUTPUT2    7
@@ -9,8 +26,29 @@
  /*****************************************************************************/
  /* Make number of samples represented by 'delay' proportional to
   * the sample rate, such that delay=1 is 1 sample buffer at
-@@ -139,21 +141,57 @@
- 	c2(float_complex(0,0)) {
+@@ -118,10 +120,10 @@
+ unsigned long t2;              //??
+ unsigned long k;               // index for delaybuf
+ unsigned long k2;              // index for delaybuf2
+-float_complex * delaybuf;
+-float_complex * delaybuf2;
+-float_complex c;               //??
+-float_complex c2;              //??
++std::complex<float> * delaybuf;
++std::complex<float> * delaybuf2;
++std::complex<float> c;               //??
++std::complex<float> c2;              //??
+ float freq;
+ float startphase;
+ float feedback;
+@@ -135,25 +137,61 @@
+ 	samplerate(lSampleRate),
+ 	t(0), t2(0),
+ 	k(0), k2(0),
+-	c(float_complex(0,0)),
+-	c2(float_complex(0,0)) {
++	c(std::complex<float>(0,0)),
++	c2(std::complex<float>(0,0)) {
  }
  
 +friend LADSPA_Handle instantiateAW(const LADSPA_Descriptor *,
@@ -40,12 +78,12 @@
 +printf("delay %d\n", delay);
 +	if (delay < 1) delay = 1;
 +	if (delay > MAX_DELAY) delay = MAX_DELAY;
-+	delaybuf = new float_complex[delay];
++	delaybuf = new std::complex<float>[delay];
 +	if (chans == 2) {
-+		delaybuf2 = new float_complex[MAX_DELAY+1];
++		delaybuf2 = new std::complex<float>[MAX_DELAY+1];
 +	}
 +	for (unsigned int i =0; i<delay; ++i) {
-+		delaybuf[i] = float_complex(0,0);
++		delaybuf[i] = std::complex<float>(0,0);
 +	}
 +}
  
@@ -73,7 +111,7 @@
  	switch (port) {
  	case AW_FREQ:
  		((AW *)instance)->lfreq = *datalocation;
-@@ -182,38 +220,16 @@
+@@ -182,41 +220,19 @@
   * connect_port may be called before of after here, so we
   * cannot rely upon port data for initialization
   */
@@ -115,8 +153,21 @@
 +{
  	AW * me = (AW *)instance;
  	float lfo;
- 	float_complex outc;
-@@ -238,7 +254,8 @@
+-	float_complex outc;
++	std::complex<float> outc;
+ 	float lfoskip = me->freq * 2 * PI / me->samplerate;
+ 
+ 	if (! me->inited) me->initState(1);
+@@ -224,7 +240,7 @@
+ 	for(unsigned int i=0; i<samplecount; ++i) {
+ 		if ((me->t++ % LFO_SKIPSAMPLES) == 0) {
+ 			lfo = 1 + cos(me->t * lfoskip + me->startphase);
+-			me->c = float_complex(cos(lfo) * me->feedback,
++			me->c = std::complex<float>(cos(lfo) * me->feedback,
+ 				 sin(lfo) * me->feedback);
+ 		}
+ 		outc = me->c * me->delaybuf[me->k] + (1 - me->feedback) * 
+@@ -238,10 +254,11 @@
  /*
   * Stereo effect?
   */
@@ -125,7 +176,29 @@
 +{
  	AW * me = (AW *)instance;
  	float lfo;
- 	float_complex outc;
+-	float_complex outc;
++	std::complex<float> outc;
+ 	float lfoskip = me->freq * 2 * PI / me->samplerate;
+ 
+ 	if (! me->inited) me->initState(2);
+@@ -249,7 +266,7 @@
+ 	for(unsigned int i=0; i<samplecount; ++i) {
+ 		if ((me->t++ % LFO_SKIPSAMPLES) == 0) {
+ 			lfo = 1 + cos(me->t * lfoskip + me->startphase);
+-			me->c = float_complex(cos(lfo) * me->feedback,
++			me->c = std::complex<float>(cos(lfo) * me->feedback,
+ 				 sin(lfo) * me->feedback);
+ 		}
+ 		outc = me->c * me->delaybuf[me->k] + (1 - me->feedback) * 
+@@ -262,7 +279,7 @@
+ 	for(unsigned int i=0; i<samplecount; ++i) {
+ 		if ((me->t2++ % LFO_SKIPSAMPLES) == 0) {
+ 			lfo = 1 + cos(me->t2 * lfoskip);
+-			me->c2 = float_complex(cos(lfo) * me->feedback,
++			me->c2 = std::complex<float>(cos(lfo) * me->feedback,
+ 				 sin(lfo) * me->feedback);
+ 		}
+ 		outc = me->c2 * me->delaybuf2[me->k2] + (1 - me->feedback) * 
 @@ -273,13 +290,11 @@
  	}
  }
