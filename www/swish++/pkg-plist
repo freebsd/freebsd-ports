@@ -9,3 +9,13 @@ bin/splitmail
 etc/rc.d/swish++.sh.sample
 etc/swish++.conf
 %%SITE_PERL%%/WWW.pm
+man/man1/extract.1.gz
+man/man1/httpindex.1.gz
+man/man1/index.1.gz
+man/man1/search.1.gz
+man/man1/splitmail.1.gz
+man/man3/WWW.3.gz
+man/man4/swish++.conf.4.gz
+man/man4/swish++.index.4.gz
+man/man8/searchd.8.gz
+man/man8/searchmonitor.8.gz
