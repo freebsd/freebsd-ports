@@ -1,5 +1,6 @@
 bin/cssed
 libdata/pkgconfig/cssed.pc
+man/man1/cssed.1.gz
 %%DATADIR%%/data/cssed-cfg.xml
 %%DATADIR%%/data/cssed-def.dtd
 %%DATADIR%%/data/cssed-def.xml
