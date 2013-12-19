@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freedoko
-PORTVERSION=	0.7.11
-PORTREVISION=	1
+PORTVERSION=	0.7.12
 CATEGORIES=	games
 MASTER_SITES=	SF/free-doko/FreeDoko%20source
 DISTNAME=	FreeDoko_${PORTVERSION}.src
@@ -13,13 +12,13 @@ COMMENT=	Play the card game Doppelkopf
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgnet-2.0.so:${PORTSDIR}/net/gnet2 \
-		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
+LIB_DEPENDS=	libgnet-2.0.so:${PORTSDIR}/net/gnet2
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/\.src$//}/src
 
 USE_ZIP=	yes
 USES=		gmake pkgconfig
+USE_GNOME=	gtkmm24
 MAKE_ENV=	OS="${OPSYS}" DATADIR="${DATADIR}" DOCSDIR="${DOCSDIR}"
 
 OPTIONS_DEFINE=	DOCS
