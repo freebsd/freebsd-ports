@@ -3,7 +3,7 @@
 
 PORTNAME=	knights
 PORTVERSION=	2.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games kde
 MASTER_SITES=	http://dl.dropbox.com/u/2888238/Knights/
 
@@ -11,6 +11,8 @@ MAINTAINER=	syncer@gmail.com
 COMMENT=	KDE4 chess interface
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gnuchess:${PORTSDIR}/games/gnuchess
+
+LICENSE=	GPLv2
 
 FETCH_ARGS?=	-Fpr
 USE_BZIP2=	yes
