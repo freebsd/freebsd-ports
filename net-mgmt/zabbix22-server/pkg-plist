@@ -1,0 +1,77 @@
+%%ETCDIR%%/zabbix_%%ZABBIX_BUILD%%.conf.sample
+sbin/zabbix_%%ZABBIX_BUILD%%
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/mysql/data.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/mysql/schema.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/mysql/images.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/data.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/images.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql/schema.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/sqlite3/images.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/sqlite3/schema.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/sqlite3/data.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/ibm_db2/schema.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/ibm_db2/images.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/ibm_db2/data.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/oracle/data.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/oracle/images.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/database/oracle/schema.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/2.2/README
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/2.0/ibm_db2/patch.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/2.0/ibm_db2/rc4_rc5.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/2.0/postgresql/rc4_rc5.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/2.0/postgresql/patch.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/2.0/oracle/patch.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/2.0/oracle/rc4_rc5.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/2.0/mysql/rc4_rc5.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/2.0/mysql/upgrade
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/2.0/mysql/patch.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.8/mysql/patch.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.8/mysql/upgrade
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.8/postgresql/patch.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.8/oracle/patch.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.6/postgresql/patch.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.6/oracle/patch.sql
+%%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.6/mysql/patch.sql
+%%JAVAGW%%%%ZABBIX_JAVA%%/shutdown.sh
+%%JAVAGW%%%%ZABBIX_JAVA%%/lib/logback-console.xml
+%%JAVAGW%%%%ZABBIX_JAVA%%/lib/logback-core-0.9.27.jar
+%%JAVAGW%%%%ZABBIX_JAVA%%/lib/org-json-2010-12-28.jar
+%%JAVAGW%%%%ZABBIX_JAVA%%/lib/logback-classic-0.9.27.jar
+%%JAVAGW%%%%ZABBIX_JAVA%%/lib/logback.xml
+%%JAVAGW%%%%ZABBIX_JAVA%%/lib/slf4j-api-1.6.1.jar
+%%JAVAGW%%%%ZABBIX_JAVA%%/settings.sh.sample
+%%JAVAGW%%%%ZABBIX_JAVA%%/startup.sh
+%%JAVAGW%%%%ZABBIX_JAVA%%/bin/zabbix-java-gateway-%%PORTVERSION%%.jar
+%%JAVAGW%%@dirrmtry %%ZABBIX_JAVA%%/lib
+%%JAVAGW%%@dirrmtry %%ZABBIX_JAVA%%/bin
+%%JAVAGW%%@dirrmtry %%ZABBIX_JAVA%%
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/2.2
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/2.0/ibm_db2
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/2.0/postgresql
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/2.0/oracle
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/2.0/mysql
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/2.0
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.8/mysql
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.8/postgresql
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.8/oracle
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.8
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.6/postgresql
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.6/oracle
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.6/mysql
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches/1.6
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades/dbpatches
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/upgrades
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/database/mysql
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/database/postgresql
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/database/sqlite3
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/database/ibm_db2
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/database/oracle
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%/database
+@dirrm %%DATADIR%%/%%ZABBIX_BUILD%%
+@dirrmtry %%DATADIR%%
+%%SERVER%%@dirrmtry %%ETCDIR%%/zabbix/alertscripts
+@dirrmtry %%ETCDIR%%/zabbix/externalscripts
+@dirrmtry %%ETCDIR%%/zabbix
+%%PROXY%%@dirrmtry %%ETCDIR%%/zabbix_proxy.conf.d
+%%SERVER%%@dirrmtry %%ETCDIR%%/zabbix_server.conf.d
+@dirrmtry %%ETCDIR%%

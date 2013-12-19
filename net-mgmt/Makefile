@@ -331,6 +331,10 @@
     SUBDIR += zabbix2-frontend
     SUBDIR += zabbix2-proxy
     SUBDIR += zabbix2-server
+    SUBDIR += zabbix22-agent
+    SUBDIR += zabbix22-frontend
+    SUBDIR += zabbix22-proxy
+    SUBDIR += zabbix22-server
     SUBDIR += zenoss
     SUBDIR += zenpack-checkping
     SUBDIR += zenpack-dellmon
