@@ -99,6 +99,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>gnupg</name>
+	<name>gnupg1</name>
 	<range><lt>1.4.16</lt></range>
       </package>
     </affects>
@@ -136,6 +137,7 @@ within an hour.</p>
     <dates>
       <discovery>2013-12-18</discovery>
       <entry>2013-12-18</entry>
+      <modified>2013-12-18</modified>
     </dates>
   </vuln>
 
