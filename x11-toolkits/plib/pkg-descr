@@ -1,8 +1,6 @@
 These are Steve Baker <sjbaker1@airmail.net>'s portability libraries. They
 are licensed under the LGPL.
 
-From the README:
-
 The following libraries are provided:
 
 JS  -- A Joystick interface.
