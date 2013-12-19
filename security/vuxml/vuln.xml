@@ -51,6 +51,51 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2e5715f8-67f7-11e3-9811-b499baab0cbe">
+    <topic>gnupg -- RSA Key Extraction via Low-Bandwidth Acoustic Cryptanalysis attack</topic>
+    <affects>
+      <package>
+	<name>gnupg</name>
+	<range><lt>1.4.16</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Werner Koch reports:</p>
+	<blockquote cite="http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000337.html">
+	  <p>CVE-2013-4576 has been assigned to this security bug.</p>
+
+	  <p>The paper describes two attacks.  The first attack allows
+to distinguish keys: An attacker is able to notice which key is
+currently used for decryption.  This is in general not a problem but
+may be used to reveal the information that a message, encrypted to a
+commonly not used key, has been received by the targeted machine.  We
+do not have a software solution to mitigate this attack.</p>
+
+	  <p>The second attack is more serious.  It is an adaptive
+chosen ciphertext attack to reveal the private key.  A possible
+scenario is that the attacker places a sensor (for example a standard
+smartphone) in the vicinity of the targeted machine.  That machine is
+assumed to do unattended RSA decryption of received mails, for example
+by using a mail client which speeds up browsing by opportunistically
+decrypting mails expected to be read soon.  While listening to the
+acoustic emanations of the targeted machine, the smartphone will send
+new encrypted messages to that machine and re-construct the private
+key bit by bit.  A 4096 bit RSA key used on a laptop can be revealed
+within an hour.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4576</cvename>
+      <url>http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000337.html</url>
+    </references>
+    <dates>
+      <discovery>2013-12-18</discovery>
+      <entry>2013-12-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0c39bafc-6771-11e3-868f-0025905a4771">
     <topic>asterisk -- multiple vulnerabilities</topic>
     <affects>
