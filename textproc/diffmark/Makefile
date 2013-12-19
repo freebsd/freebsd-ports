@@ -4,20 +4,25 @@
 PORTNAME=	diffmark
 PORTVERSION=	0.10
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.mangrove.cz/diffmark/
+MASTER_SITES=	http://www.mangrove.cz/diffmark/ \
+		http://penguin.cz/~vbarta/diffmark/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XML diff and merge package
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
-
 USES=		pkgconfig
-USE_LDCONFIG=	YES
-GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--with-libxml2-incldir=${LOCALBASE}/include/libxml2
+USE_GNOME=	libxml2
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|-lstdc++||' ${WRKSRC}/lib/Makefile.in
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libdiffmark.so.2
+
 .include <bsd.port.mk>
