@@ -3,29 +3,40 @@
 
 PORTNAME=	multiget
 PORTVERSION=	1.1.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	ftp www
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An http/ftp downloader with a nice GUI
+COMMENT=	HTTP/FTP downloader with a nice GUI
 
+WRKSRC_SUBDIR=	src
+
+USES=		dos2unix
 USE_WX=		2.6+
 MAKEFILE=	makefile
 ALL_TARGET=	MultiGet
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} share/pixmaps/MultiGet.png
 
-NO_STAGE=	yes
+DESKTOP_ENTRIES="MultiGet" "" "${PREFIX}/share/pixmaps/MultiGet.png" \
+		"${PORTNAME}" "" ""
+
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|g++|${CXX}|; \
-		 s|\(CFLAGS\) =|\1 +=|; \
-		 s|wx-config|${WX_CONFIG}|' \
+		's|$$(CC)|$$(CXX)| ; \
+		 s|$$(CFLAGS)|$$(CXXFLAGS)| ; \
+		 s|^CC =|CXX ?=| ; \
+		 s|^CFLAGS =|CXXFLAGS +=| ; \
+		 s| -O2 | | ; \
+		 s| -s | | ; \
+		 s|wx-config|$${WX_CONFIG}|' \
 		 ${WRKSRC}/${MAKEFILE}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/MultiGet ${PREFIX}/bin/${PORTNAME}
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} MultiGet \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME})
+	(cd ${WRKSRC}/.. && ${INSTALL_DATA} MultiGet.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps)
 
 .include <bsd.port.mk>
