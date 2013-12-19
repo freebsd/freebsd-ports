@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	acpica
-PORTVERSION=	20131115
+PORTVERSION=	20131218
 CATEGORIES=	sysutils devel
 MASTER_SITES=	https://acpica.org/sites/acpica/files/ \
 		LOCAL
@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-unix2-${PORTVERSION}
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Tools from the ACPI Component Architecture (ACPICA) project
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USES=		gmake
 
@@ -22,11 +22,12 @@ YACC=		${LOCALBASE}/bin/bison
 
 ACPICA_TOOLS=	acpibin acpidump acpiexec acpihelp acpinames acpisrc
 ACPICA_TOOLS+=	acpixtract iasl
+#ACPICA_TOOLS+=	acpiexamples
 
 PLIST_FILES=	${ACPICA_TOOLS:S,^,bin/,}
 WRKSRC_SUBDIR=	generate/unix
 
-MAKE_ARGS=	HOST=_FreeBSD NOOPT=TRUE
+MAKE_ARGS=	HOST=_FreeBSD NOOPT=TRUE PROGS="${ACPICA_TOOLS}"
 MAKE_ARGS+=	CC="${CC}" LEX="${FLEX}" YACC="${YACC}"
 
 do-install:
