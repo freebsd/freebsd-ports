@@ -793,7 +793,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-xss-nginx-module-${GIT_XSS_VERSIO
 .endif
 
 .if ${PORT_OPTIONS:MSPDY}
-USE_OPENSSL_PORT=	yes
+NGINX_OPENSSL=	yes
 USE_HTTP_SSL=	yes
 CONFIGURE_ARGS+=--with-http_spdy_module
 .endif
@@ -867,6 +867,13 @@ GROUPS?=${WWWGRP}
 
 .if defined(NGINX_OPENSSL)
 USE_OPENSSL=	yes
+.if ${PORT_OPTIONS:MSPDY}
+.if ${OSVERSION} < 1000028
+WITH_OPENSSL_PORT=	yes
+.else
+WITH_OPENSSL_BASE=	yes
+.endif
+.endif
 .endif
 
 pre-everything::
