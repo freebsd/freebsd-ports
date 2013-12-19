@@ -20,6 +20,7 @@
     SUBDIR += ctorrent
     SUBDIR += dclib
     SUBDIR += deluge
+    SUBDIR += dogecoin
     SUBDIR += ed2k
     SUBDIR += edonkey-tool-hash
     SUBDIR += eiskaltdcpp-cli
