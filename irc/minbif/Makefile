@@ -8,11 +8,11 @@ CATEGORIES=	irc net-im
 MASTER_SITES=	https://symlink.me/attachments/download/148/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An IRC to instant messaging gateway
+COMMENT=	IRC to instant messaging gateway
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	purple:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS=	libpurple.so:${PORTSDIR}/net-im/libpurple
 
 # right now PLUGINS installs prpl-coincoin and prpl-gayattitude
 OPTIONS_DEFINE=	CACA GNUTLS VIDEO PLUGINS DOCS
@@ -22,13 +22,14 @@ VIDEO_DESC=	Webcam display using libcaca (depends on CACA)
 PLUGINS_DESC=	Compile additional libpurple-plugins
 
 USE_RC_SUBR=	minbif
+
+USES=		cmake pkgconfig
 USE_GNOME=	glib20
 USE_EFL=	imlib2
-USES=		cmake pkgconfig
 CMAKE_ARGS=	-DENABLE_IMLIB:BOOL=ON
 
-CFLAGS+=	${PTHREAD_CFLAGS} -DX_DISPLAY_MISSING
-LDFLAGS+=	${PTHREAD_LIBS}
+CFLAGS+=	-DX_DISPLAY_MISSING
+LDFLAGS+=	-pthread
 
 USERS=		minbif
 GROUPS=		minbif
@@ -36,25 +37,30 @@ GROUPS=		minbif
 SUB_FILES=	pkg-message
 SUB_LIST=	USERS="${USERS}"
 
-MAN8=		minbif.8
 PORTDOCS=	*
 PLIST_FILES=	bin/minbif %%ETCDIR%%/minbif.conf-dist \
-		%%ETCDIR%%/minbif.motd-dist
+		%%ETCDIR%%/minbif.motd-dist man/man8/minbif.8.gz
 PLIST_DIRS=	%%ETCDIR%%
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+CACA_LIB_DEPENDS=	libcaca.so:${PORTSDIR}/graphics/libcaca
+CACA_CMAKE_ON=		-DENABLE_CACA:BOOL=ON
+CACA_CMAKE_OFF=		-DENABLE_CACA:BOOL=OFF
 
-.if ${PORT_OPTIONS:MCACA}
-LIB_DEPENDS+=	caca:${PORTSDIR}/graphics/libcaca
-CMAKE_ARGS+=	-DENABLE_CACA:BOOL=ON
-.else
-CMAKE_ARGS+=	-DENABLE_CACA:BOOL=OFF
-.endif
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_CMAKE_ON=	-DENABLE_TLS:BOOL=ON
+GNUTLS_CMAKE_OFF=	-DENABLE_TLS:BOOL=OFF
+
+PLUGINS_USE=		GNOME=libxml2
+PLUGINS_CMAKE_ON=	-DENABLE_PLUGIN:BOOL=ON
+PLUGINS_CMAKE_OFF=	-DENABLE_PLUGIN:BOOL=OFF
+PLUGINS_PLIST_FILES=	lib/purple-2/libcoincoin.so \
+			lib/purple-2/libgayattitude.so
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVIDEO} && !empty(PORT_OPTIONS:MCACA)
 USE_GSTREAMER+=	core good
-LIB_DEPENDS+=	gstfarsight-0.10:${PORTSDIR}/net-im/farsight2
+LIB_DEPENDS+=	libgstfarsight-0.10.so:${PORTSDIR}/net-im/farsight2
 CMAKE_ARGS+=	-DENABLE_VIDEO:BOOL=ON
 .else
 CMAKE_ARGS+=	-DENABLE_VIDEO:BOOL=OFF
@@ -65,46 +71,37 @@ IGNORE=		if you want to enable webcam support, you must \
 		also enable CACA.
 .endif
 
-.if ${PORT_OPTIONS:MPLUGINS}
-USE_GNOME+=	libxml2
-CMAKE_ARGS+=	-DENABLE_PLUGIN:BOOL=ON
-PLIST_FILES+=	lib/purple-2/libcoincoin.so \
-		lib/purple-2/libgayattitude.so
-.else
-CMAKE_ARGS+=	-DENABLE_PLUGIN:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
-CMAKE_ARGS+=	-DENABLE_TLS:BOOL=ON
-.else
-CMAKE_ARGS+=	-DENABLE_TLS:BOOL=OFF
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|"-lpthread -lstdc++"||' ${WRKSRC}/src/CMakeLists.txt
 	@${REINPLACE_CMD} -e \
 		'/pam_misc.h/d' ${WRKSRC}/src/im/auth_pam.h
-	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
-		${WRKSRC}/src/server_poll/daemon_fork.cpp \
-		${WRKSRC}/src/server_poll/inetd.cpp
+
+post-build:
+	@${LN} -sf minbif.conf ${WRKSRC}/minbif.conf-dist
+	@${LN} -sf minbif.motd ${WRKSRC}/minbif.motd-dist
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/minbif.8 ${MAN8PREFIX}/man/man8
-	${MKDIR} ${ETCDIR}
-	${INSTALL_DATA} ${WRKSRC}/minbif.conf ${ETCDIR}/minbif.conf-dist
-	${INSTALL_DATA} ${WRKSRC}/minbif.motd ${ETCDIR}/minbif.motd-dist
+	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} ${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC}/man && ${INSTALL_MAN} minbif.8 \
+		${STAGEDIR}${MAN8PREFIX}/man/man8)
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} minbif.conf-dist \
+		${STAGEDIR}${ETCDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} minbif.motd-dist \
+		${STAGEDIR}${ETCDIR})
 .if ${PORT_OPTIONS:MPLUGINS}
-	${INSTALL_PROGRAM} ${WRKSRC}/plugins/coincoin/libcoincoin.so ${PREFIX}/lib/purple-2
-	${INSTALL_PROGRAM} ${WRKSRC}/plugins/gayattitude/libgayattitude.so ${PREFIX}/lib/purple-2
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/purple-2
+	(cd ${WRKSRC}/plugins/coincoin && ${INSTALL_LIB} libcoincoin.so \
+		${STAGEDIR}${PREFIX}/lib/purple-2)
+	(cd ${WRKSRC}/plugins/gayattitude && ${INSTALL_LIB} libgayattitude.so \
+		${STAGEDIR}${PREFIX}/lib/purple-2)
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/minbif.xinetd ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README \
+		${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} minbif.xinetd \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
