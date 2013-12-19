@@ -12,7 +12,8 @@ COMMENT=	Configuration-based Console UI Framework
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libnewt.so:${PORTSDIR}/devel/newt
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}snack>0:${PORTSDIR}/devel/py-snack
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
