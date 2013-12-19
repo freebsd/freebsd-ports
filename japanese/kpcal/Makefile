@@ -5,8 +5,7 @@ PORTNAME=	kpcal
 PORTVERSION=	2.0
 PORTREVISION=	2
 CATEGORIES=	japanese
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	yoichi
+MASTER_SITES=	LOCAL/yoichi
 
 PATCH_SITES=	http://www.tamaru.kuee.kyoto-u.ac.jp/~tsuchiya/misc/kpcal/
 PATCHFILES=	${PORTNAME}-${PORTVERSION}-20040518.patch
@@ -16,14 +15,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Make Calendar in Postscript format
 
 ALL_TARGET=	kpcal
-MAN1=		kpcal.1
-PLIST_FILES=	bin/kpcal
 
-NO_STAGE=	yes
-post-patch:
-	${REINPLACE_CMD} -e 's/long/time_t/' ${WRKSRC}/kpcal.c
+PLIST_FILES=	bin/kpcal man/man1/kpcal.1.gz
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/kpcal ${LOCALBASE}/bin
-	${INSTALL_MAN} ${WRKSRC}/kpcal.1 ${LOCALBASE}/man/man1
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} kpcal \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} kpcal.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
 
 .include <bsd.port.mk>
