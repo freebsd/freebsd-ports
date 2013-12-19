@@ -28,8 +28,55 @@ bin/freedoko
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/party_finished.html
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/party_points.html
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/party_settings.html
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/about.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/about.small.jpg
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Aktueller_Stich.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Aktueller_Stich.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Fehler_erzeugen.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Fehler_erzeugen.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Fehlerbericht.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Fehlerbericht.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Hauptfenster.Spiel.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Hauptfenster.Spiel.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Hauptfenster.Start.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Hauptfenster.Start.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Letzter_Stich.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Letzter_Stich.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Lizenz.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Lizenz.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Ansagen.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Ansagen.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Armut.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Armut.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Dollen.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Dollen.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Hochzeit.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Hochzeit.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Informationen.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Informationen.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Schweine.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Schweine.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Solo.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Solo.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Sonderpunkte.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Sonderpunkte.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Turnier.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Turnier.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Zählung.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/Zählung.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Regeln/create_screenshots.sh
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Spielerkonfiguration.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Spielerkonfiguration.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Splash.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Splash.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Turniereinstellungen.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Turniereinstellungen.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Turnierpunkte.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Turnierpunkte.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Voller_Stich.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Voller_Stich.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Vorbehalt.Solo.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Vorbehalt.Solo.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Vorbehalt.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Vorbehalt.small.png
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/aiconfig/aitype.png
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/aiconfig/aitype.small.jpeg
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/aiconfig/announcements.png
@@ -48,24 +95,6 @@ bin/freedoko
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/aiconfig/simple.small.jpeg
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/aiconfig/trick_decision.png
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/aiconfig/trick_decision.small.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/bug_report.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/cardset_license.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/cardset_license.small.jpg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/changelog.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/changelog.small.jpg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/current_trick.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/current_trick.small.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/full_trick.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/generate_error.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/generate_error.small.jpg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/last_trick.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/last_trick.small.jpg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/license.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/license.small.jpg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/main_window.game.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/main_window.game.small.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/main_window.start.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/main_window.start.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/network/connections.png
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/network/connections.small.jpeg
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/network/local_adresses.png
@@ -74,37 +103,6 @@ bin/freedoko
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/network/receiver.small.jpeg
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/network/rule_differences.png
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/network/rule_differences.small.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/party_points.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/party_points.small.jpg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/party_settings.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/party_settings.small.jpg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/player_config.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/player_config.small.jpg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/reservation.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/reservation.small.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/reservation.solo.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/reservation.solo.small.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/announcements.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/announcements.small.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/counting.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/counting.small.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/create_screenshots.sh
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/dollen.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/dollen.small.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/informations.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/informations.small.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/marriage.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/marriage.small.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/poverty.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/poverty.small.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/solo.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/solo.small.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/specialpoints.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/specialpoints.small.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/swines.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/swines.small.jpeg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/tournament.png
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/rules/tournament.small.jpeg
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/settings/appearance.cards.png
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/settings/appearance.cards.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/settings/appearance.fonts_colors.png
@@ -139,7 +137,6 @@ bin/freedoko
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/settings/information.network.small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/settings/information.swines.png
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/settings/information.swines.small.jpg
-%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/splash.png
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/symbols/contra.png
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/symbols/fox_highest_trump.png
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/symbols/genscher.png
@@ -201,6 +198,10 @@ bin/freedoko
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/symbols/thrown_kings.png
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/symbols/thrown_nines.png
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/symbols/thrown_nines_and_kings.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Änderungsliste.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Änderungsliste.small.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Über.png
+%%PORTDOCS%%%%DOCSDIR%%/de/operation/pictures/Über.small.png
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/player_config.html
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/problems.html
 %%PORTDOCS%%%%DOCSDIR%%/de/operation/reservation.html
@@ -234,9 +235,23 @@ bin/freedoko
 %%PORTDOCS%%%%DOCSDIR%%/pictures/FreeDoko.icon.png
 %%PORTDOCS%%%%DOCSDIR%%/pictures/flags/de.gif
 %%PORTDOCS%%%%DOCSDIR%%/pictures/flags/gb.gif
+%%DATADIR%%/backgrounds/christmas/christmas_teddies.png
+%%DATADIR%%/backgrounds/christmas/mountains.png
+%%DATADIR%%/backgrounds/christmas/sky.png
+%%DATADIR%%/backgrounds/christmas/snowflakes1.png
+%%DATADIR%%/backgrounds/christmas/snowflakes2.png
+%%DATADIR%%/backgrounds/christmas/star_simple.png
 %%DATADIR%%/backgrounds/table.png
-%%DATADIR%%/cardsets/xskat/COPYRIGHT
-%%DATADIR%%/cardsets/xskat/french/COPYRIGHT
+%%DATADIR%%/backgrounds/wood/table1.png
+%%DATADIR%%/backgrounds/wood/table2.png
+%%DATADIR%%/backgrounds/wood/table3.png
+%%DATADIR%%/backgrounds/wood/table4.png
+%%DATADIR%%/backgrounds/wood/table5.png
+%%DATADIR%%/backgrounds/wood/table6.png
+%%DATADIR%%/backgrounds/wood/table7.png
+%%DATADIR%%/backgrounds/wood/table8.png
+%%DATADIR%%/cardsets/xskat/COPYRIGHT.txt
+%%DATADIR%%/cardsets/xskat/french/COPYRIGHT.txt
 %%DATADIR%%/cardsets/xskat/french/backs/christmas/candle.png
 %%DATADIR%%/cardsets/xskat/french/backs/christmas/christmasdog.png
 %%DATADIR%%/cardsets/xskat/french/backs/christmas/tree1.png
@@ -280,6 +295,7 @@ bin/freedoko
 %%DATADIR%%/cardsets/xskat/french/icons/marriage.color.png
 %%DATADIR%%/cardsets/xskat/french/icons/marriage.foreign.png
 %%DATADIR%%/cardsets/xskat/french/icons/marriage.heart.png
+%%DATADIR%%/cardsets/xskat/french/icons/marriage.partner.png
 %%DATADIR%%/cardsets/xskat/french/icons/marriage.png
 %%DATADIR%%/cardsets/xskat/french/icons/marriage.spade.png
 %%DATADIR%%/cardsets/xskat/french/icons/marriage.trump.png
@@ -297,6 +313,7 @@ bin/freedoko
 %%DATADIR%%/cardsets/xskat/french/icons/poverty.1.png
 %%DATADIR%%/cardsets/xskat/french/icons/poverty.2.png
 %%DATADIR%%/cardsets/xskat/french/icons/poverty.3.png
+%%DATADIR%%/cardsets/xskat/french/icons/poverty.partner.png
 %%DATADIR%%/cardsets/xskat/french/icons/poverty.png
 %%DATADIR%%/cardsets/xskat/french/icons/re.png
 %%DATADIR%%/cardsets/xskat/french/icons/solo.club.png
@@ -319,7 +336,7 @@ bin/freedoko
 %%DATADIR%%/cardsets/xskat/french/icons/swines.diamond.png
 %%DATADIR%%/cardsets/xskat/french/icons/swines.heart.png
 %%DATADIR%%/cardsets/xskat/french/icons/swines.spade.png
-%%DATADIR%%/cardsets/xskat/german/COPYRIGHT
+%%DATADIR%%/cardsets/xskat/german/COPYRIGHT.txt
 %%DATADIR%%/cardsets/xskat/german/backs/christmas/candle.png
 %%DATADIR%%/cardsets/xskat/german/backs/christmas/christmasdog.png
 %%DATADIR%%/cardsets/xskat/german/backs/christmas/tree1.png
@@ -363,6 +380,7 @@ bin/freedoko
 %%DATADIR%%/cardsets/xskat/german/icons/marriage.color.png
 %%DATADIR%%/cardsets/xskat/german/icons/marriage.foreign.png
 %%DATADIR%%/cardsets/xskat/german/icons/marriage.heart.png
+%%DATADIR%%/cardsets/xskat/german/icons/marriage.partner.png
 %%DATADIR%%/cardsets/xskat/german/icons/marriage.png
 %%DATADIR%%/cardsets/xskat/german/icons/marriage.spade.png
 %%DATADIR%%/cardsets/xskat/german/icons/marriage.trump.png
@@ -380,6 +398,7 @@ bin/freedoko
 %%DATADIR%%/cardsets/xskat/german/icons/poverty.1.png
 %%DATADIR%%/cardsets/xskat/german/icons/poverty.2.png
 %%DATADIR%%/cardsets/xskat/german/icons/poverty.3.png
+%%DATADIR%%/cardsets/xskat/german/icons/poverty.partner.png
 %%DATADIR%%/cardsets/xskat/german/icons/poverty.png
 %%DATADIR%%/cardsets/xskat/german/icons/re.png
 %%DATADIR%%/cardsets/xskat/german/icons/solo.club.png
@@ -407,13 +426,13 @@ bin/freedoko
 %%DATADIR%%/rules/beginner
 %%DATADIR%%/rules/standard
 %%DATADIR%%/rules/tournament
+%%DATADIR%%/translations/de-alt/text
 %%DATADIR%%/translations/de/aiconfig
 %%DATADIR%%/translations/de/aiconfig.heuristics.description
 %%DATADIR%%/translations/de/basistypes
 %%DATADIR%%/translations/de/bug_report
 %%DATADIR%%/translations/de/cards
 %%DATADIR%%/translations/de/chat
-%%DATADIR%%/translations/de/en
 %%DATADIR%%/translations/de/gui
 %%DATADIR%%/translations/de/help
 %%DATADIR%%/translations/de/menu
@@ -423,7 +442,6 @@ bin/freedoko
 %%DATADIR%%/translations/de/settings
 %%DATADIR%%/translations/de/text
 %%DATADIR%%/translations/de/versions
-%%DATADIR%%/translations/de-alt/text
 %%DATADIR%%/translations/en/aiconfig
 %%DATADIR%%/translations/en/aiconfig.heuristics.description
 %%DATADIR%%/translations/en/basistypes
@@ -454,45 +472,47 @@ bin/freedoko
 %%DATADIR%%/translations/fr/settings
 %%DATADIR%%/translations/fr/text
 %%DATADIR%%/translations/fr/versions
-@dirrm %%DATADIR%%/translations/fr
-@dirrm %%DATADIR%%/translations/en
-@dirrm %%DATADIR%%/translations/de-alt
-@dirrm %%DATADIR%%/translations/de
-@dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%/rules
-@dirrm %%DATADIR%%/cardsets/xskat/german/icons
-@dirrm %%DATADIR%%/cardsets/xskat/german/cards/spade
-@dirrm %%DATADIR%%/cardsets/xskat/german/cards/heart
-@dirrm %%DATADIR%%/cardsets/xskat/german/cards/diamond
-@dirrm %%DATADIR%%/cardsets/xskat/german/cards/club
-@dirrm %%DATADIR%%/cardsets/xskat/german/cards
-@dirrm %%DATADIR%%/cardsets/xskat/german/backs/christmas
-@dirrm %%DATADIR%%/cardsets/xskat/german/backs
-@dirrm %%DATADIR%%/cardsets/xskat/german
-@dirrm %%DATADIR%%/cardsets/xskat/french/icons
-@dirrm %%DATADIR%%/cardsets/xskat/french/cards/spade
-@dirrm %%DATADIR%%/cardsets/xskat/french/cards/heart
-@dirrm %%DATADIR%%/cardsets/xskat/french/cards/diamond
-@dirrm %%DATADIR%%/cardsets/xskat/french/cards/club
-@dirrm %%DATADIR%%/cardsets/xskat/french/cards
-@dirrm %%DATADIR%%/cardsets/xskat/french/backs/christmas
-@dirrm %%DATADIR%%/cardsets/xskat/french/backs
-@dirrm %%DATADIR%%/cardsets/xskat/french
-@dirrm %%DATADIR%%/cardsets/xskat
-@dirrm %%DATADIR%%/cardsets
-@dirrm %%DATADIR%%/backgrounds
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pictures/flags
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/pictures
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/operation
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/de/pictures
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/de/operation/pictures/symbols
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/de/operation/pictures/settings
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/de/operation/pictures/rules
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/de/operation/pictures/network
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/de/operation/pictures/aiconfig
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/de/operation/pictures
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/de/operation
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/de
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/translations/fr
+@dirrmtry %%DATADIR%%/translations/en
+@dirrmtry %%DATADIR%%/translations/de-alt
+@dirrmtry %%DATADIR%%/translations/de
+@dirrmtry %%DATADIR%%/translations
+@dirrmtry %%DATADIR%%/rules
+@dirrmtry %%DATADIR%%/cardsets/xskat/german/icons
+@dirrmtry %%DATADIR%%/cardsets/xskat/german/cards/spade
+@dirrmtry %%DATADIR%%/cardsets/xskat/german/cards/heart
+@dirrmtry %%DATADIR%%/cardsets/xskat/german/cards/diamond
+@dirrmtry %%DATADIR%%/cardsets/xskat/german/cards/club
+@dirrmtry %%DATADIR%%/cardsets/xskat/german/cards
+@dirrmtry %%DATADIR%%/cardsets/xskat/german/backs/christmas
+@dirrmtry %%DATADIR%%/cardsets/xskat/german/backs
+@dirrmtry %%DATADIR%%/cardsets/xskat/german
+@dirrmtry %%DATADIR%%/cardsets/xskat/french/icons
+@dirrmtry %%DATADIR%%/cardsets/xskat/french/cards/spade
+@dirrmtry %%DATADIR%%/cardsets/xskat/french/cards/heart
+@dirrmtry %%DATADIR%%/cardsets/xskat/french/cards/diamond
+@dirrmtry %%DATADIR%%/cardsets/xskat/french/cards/club
+@dirrmtry %%DATADIR%%/cardsets/xskat/french/cards
+@dirrmtry %%DATADIR%%/cardsets/xskat/french/backs/christmas
+@dirrmtry %%DATADIR%%/cardsets/xskat/french/backs
+@dirrmtry %%DATADIR%%/cardsets/xskat/french
+@dirrmtry %%DATADIR%%/cardsets/xskat
+@dirrmtry %%DATADIR%%/cardsets
+@dirrmtry %%DATADIR%%/backgrounds/wood
+@dirrmtry %%DATADIR%%/backgrounds/christmas
+@dirrmtry %%DATADIR%%/backgrounds
+@dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/pictures/flags
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/pictures
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/en/operation
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/en
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/de/pictures
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/de/operation/pictures/symbols
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/de/operation/pictures/settings
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/de/operation/pictures/network
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/de/operation/pictures/aiconfig
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/de/operation/pictures/Regeln
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/de/operation/pictures
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/de/operation
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/de
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
