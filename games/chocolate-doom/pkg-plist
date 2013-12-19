@@ -1,10 +1,52 @@
+bin/chocolate-doom
+bin/chocolate-doom-setup
+bin/chocolate-heretic
+bin/chocolate-heretic-setup
+bin/chocolate-hexen
+bin/chocolate-hexen-setup
+bin/chocolate-server
+bin/chocolate-strife
+bin/chocolate-strife-setup
+man/man5/chocolate-doom.cfg.5.gz
+man/man5/chocolate-heretic.cfg.5.gz
+man/man5/chocolate-hexen.cfg.5.gz
+man/man5/chocolate-strife.cfg.5.gz
+man/man5/default.cfg.5.gz
+man/man5/heretic.cfg.5.gz
+man/man5/hexen.cfg.5.gz
+man/man5/strife.cfg.5.gz
+man/man6/chocolate-doom.6.gz
+man/man6/chocolate-heretic.6.gz
+man/man6/chocolate-hexen.6.gz
+man/man6/chocolate-server.6.gz
+man/man6/chocolate-setup.6.gz
+man/man6/chocolate-strife.6.gz
+share/applications/chocolate-doom.desktop
+share/applications/chocolate-setup.desktop
+share/applications/screensavers/chocolate-doom-screensaver.desktop
+share/doc/chocolate-heretic/CMDLINE.heretic
+share/doc/chocolate-heretic/ChangeLog
+share/doc/chocolate-heretic/INSTALL.heretic
+share/doc/chocolate-heretic/NEWS
+share/doc/chocolate-heretic/README
+share/doc/chocolate-heretic/README.OPL
+share/doc/chocolate-hexen/CMDLINE.hexen
+share/doc/chocolate-hexen/ChangeLog
+share/doc/chocolate-hexen/INSTALL.hexen
+share/doc/chocolate-hexen/NEWS
+share/doc/chocolate-hexen/README
+share/doc/chocolate-hexen/README.OPL
+share/doc/chocolate-strife/CMDLINE.strife
+share/doc/chocolate-strife/ChangeLog
+share/doc/chocolate-strife/INSTALL.strife
+share/doc/chocolate-strife/NEWS
+share/doc/chocolate-strife/README
+share/doc/chocolate-strife/README.OPL
+share/doc/chocolate-strife/README.Strife
 share/icons/chocolate-doom.png
 share/icons/chocolate-setup.png
-share/applications/chocolate-doom.desktop
-share/applications/screensavers/chocolate-doom-screensaver.desktop
-share/applications/chocolate-setup.desktop
-bin/chocolate-doom
-bin/chocolate-server
-bin/chocolate-setup
 @dirrmtry share/icons
+@dirrmtry share/doc/chocolate-strife
+@dirrmtry share/doc/chocolate-hexen
+@dirrmtry share/doc/chocolate-heretic
 @dirrmtry share/applications/screensavers

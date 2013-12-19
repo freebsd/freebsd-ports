@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	chocolate-doom
-PORTVERSION=	1.7.0
+PORTVERSION=	2.0.0
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	http://www.chocolate-doom.org/downloads/2.0.0/
 
 MAINTAINER=	jakub_lach@mailplus.pl
-COMMENT=	Doom port that aims to be compatible with the original exe
+COMMENT=	Doom/Heretic/Hexen/Strife engine port compatible with the original exes
 
 LICENSE=	GPLv2
 
@@ -15,21 +15,14 @@ USE_SDL=	mixer net sdl
 USE_PYTHON=	2.5+
 GNU_CONFIGURE=	yes
 
-MAN5=		chocolate-doom.cfg.5 default.cfg.5
-MAN6=		chocolate-doom.6 chocolate-server.6 chocolate-setup.6
-PORTDOCS=	CMDLINE ChangeLog HACKING INSTALL NEWS NOT-BUGS README README.OPL
+PORTDOCS=	CMDLINE.doom ChangeLog INSTALL.doom NEWS NOT-BUGS README README.OPL
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include "${.CURDIR}/../doom-data/Makefile.include"
-
-.include <bsd.port.options.mk>
 
 post-patch-script:
 	${REINPLACE_CMD} -e 's|gamesdir = $$(prefix)/games|gamesdir = $$(prefix)/bin|' \
-		${WRKSRC}/src/Makefile.in ${WRKSRC}/setup/Makefile.in
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/HACKING ${DOCSDIR}
-	@${CAT} ${PKGMESSAGE}
+		${WRKSRC}/src/Makefile.in ${WRKSRC}/src/setup/Makefile.in
 
 .include <bsd.port.mk>
