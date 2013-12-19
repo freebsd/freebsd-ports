@@ -57,6 +57,8 @@ sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/__init__.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/attribute/__init__.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/attribute/__init__.pyc
+%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/attribute/aigp.py
+%%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/attribute/aigp.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/attribute/aggregator.py
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/attribute/aggregator.pyc
 %%PYTHON_SITELIBDIR%%/exabgp/bgp/message/update/attribute/aspath.py

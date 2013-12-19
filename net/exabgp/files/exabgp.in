@@ -28,7 +28,9 @@ command="%%PYTHON_SITELIBDIR%%/${name}/application/bgp.py"
 procname="%%PYTHON_CMD%%"
 
 start_cmd="exabgp_start"
-extra_commands="reload"
+reload_all_cmd="exabgp_reload_all"
+extra_commands="reload reload_all"
+sig_reload="USR1"
 
 exabgp_start()
 {
@@ -44,6 +46,12 @@ exabgp_start()
 	rm -f ${pidfile}
 
 	${procname} ${command} --folder %%ETCDIR%% ${exabgp_conf}
+}
+
+exabgp_reload_all() {
+{
+    	echo "Reloading exabgp configuration and processes."
+	kill -USR2 $rc_pid
 }
 
 run_rc_command "$1"
