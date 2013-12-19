@@ -4,7 +4,7 @@
 PORTNAME=	pcf2bdf
 PORTVERSION=	1.04
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://cloud.github.com/downloads/ganaware/pcf2bdf/
+MASTER_SITES=	GHC
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,17 +12,25 @@ COMMENT=	Convert X font from PCF to BDF
 
 LICENSE=	MIT
 
-NO_WRKSUBDIR=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	ganaware
 
-MAN1=		pcf2bdf.1
-PLIST_FILES=	bin/pcf2bdf
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/pcf2bdf man/man1/pcf2bdf.1.gz
+
+post-extract:
+	@${MKDIR} ${WRKSRC}
+	@${LN} -sf ../pcf2bdf.cc ${WRKSRC}/pcf2bdf.cc
+	@${LN} -sf ../pcf2bdf.man ${WRKSRC}/pcf2bdf.1
+
 do-build:
-	${CXX} ${CXXFLAGS} -o ${WRKSRC}/pcf2bdf ${WRKSRC}/pcf2bdf.cc
+	(cd ${WRKSRC} && ${CXX} ${CXXFLAGS} pcf2bdf.cc -o pcf2bdf)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pcf2bdf ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pcf2bdf.man ${MANPREFIX}/man/man1/pcf2bdf.1
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} pcf2bdf \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} pcf2bdf.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
 
 .include <bsd.port.mk>
