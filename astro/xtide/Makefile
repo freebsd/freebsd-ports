@@ -21,6 +21,7 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 USE_BZIP2=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes
+USE_GCC=	yes
 
 CPPFLAGS+=	-I../${TCD_DISTNAME} -I${LOCALBASE}/include/libpng15 -Wno-deprecated-declarations
 LDFLAGS+=	-L../${TCD_DISTNAME}/.libs -L${LOCALBASE}/lib
