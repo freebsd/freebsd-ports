@@ -6,9 +6,7 @@ MAINTAINER=	dinoex@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../suck
 
-VARBASE?=	/var
-NEWSBIN?=	${PREFIX}/libexec/cnews
-NEWSCTL?=	${VARBASE}/lib/news
+OPTIONS_DEFAULT=	SSL CNEWS
 
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
