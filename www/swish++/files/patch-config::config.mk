@@ -42,7 +42,7 @@
  #		Install command; usually "$(ROOT)/install-sh".
  
 -I_ROOT:=	/usr/local
-+I_ROOT:=	${PREFIX}
++I_ROOT:=	${DESTDIR}${PREFIX}
  #		The top-level directory of where SWISH++ will be installed.
  
  I_BIN:=		$(I_ROOT)/bin

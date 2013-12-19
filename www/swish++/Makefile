@@ -12,27 +12,25 @@ COMMENT=	Simple Web Indexing System for Humans: C++ version
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
-USES=		perl5
-USE_GMAKE=	yes
+USES=		gmake perl5
 MAKEFILE=	GNUmakefile
-MAKE_ENV=	PERL=${PERL} PERL_VER=${PERL_VERSION}
+MAKE_ENV=	PERL="${PERL}" PERL_VER="${PERL_VER}"
 
-MAN1=	extract.1 httpindex.1 index.1 search.1 splitmail.1
-MAN3=	WWW.3
-MAN4=	swish++.conf.4 swish++.index.4
-MAN8=	searchd.8 searchmonitor.8
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/^#error/d' ${WRKSRC}/config.h
-.for file in scripts/searchd scripts/searchmonitor
-	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/${file}.in
+.for i in scripts/searchd scripts/searchmonitor
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${i}.in
 .endfor
 
+do-configure:
+	@(cd ${WRKSRC}/config && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
+		${MAKE_FLAGS} ${MAKEFILE})
+
 pre-install:
-	@${MKDIR} ${SITE_PERL}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
 
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/swish++.sh ${PREFIX}/etc/rc.d/swish++.sh.sample
+	(cd ${FILESDIR} && ${INSTALL_SCRIPT} swish++.sh \
+		${STAGEDIR}${PREFIX}/etc/rc.d/swish++.sh.sample)
 
 .include <bsd.port.mk>
