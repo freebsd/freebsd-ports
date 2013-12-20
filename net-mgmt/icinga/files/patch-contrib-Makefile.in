@@ -1,6 +1,6 @@
---- contrib/Makefile.in.orig	2012-05-15 13:00:56.000000000 +0000
-+++ contrib/Makefile.in	2012-05-16 19:18:25.684923160 +0000
-@@ -52,10 +52,10 @@
+--- contrib/Makefile.in.orig	2013-12-05 12:51:35.000000000 +0100
++++ contrib/Makefile.in	2013-12-06 17:20:50.028144909 +0100
+@@ -63,10 +63,10 @@ distclean: clean
  devclean: distclean
  
  install:
@@ -15,3 +15,12 @@
  
  ##############################################################################
  # rules and dependencies for actual target programs
+@@ -96,7 +96,7 @@ dst: dst.c
+ # dependencies
+ 
+ $(CGI_O): $(CGI_C)
+-	cd $(SRC_CGI) && make $(CGI_O)
++	$(MAKE) -C $(SRC_CGI) $(CGI_O)
+ 
+ ##############################################################################
+ # implicit rules

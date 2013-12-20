@@ -11,9 +11,9 @@
 
   If you don't already have a web server running, you will need to
   install and configure one to finish off your Icinga installation.
-  If you selected APACHE in Icinga's OPTION screen, the configuration
-  is already installed as %%LOCALBASE%%/etc/apache22/extra/icinga.conf
-  and you only need to source the configuration file in Apache's config.
+
+  A sample Apache 2.x configuration is installed as
+  %%PREFIX%%/%%EXAMPLESDIR%%/apache22/icinga.conf-sample
 
   If you like to use database backend with IDOutils the SQL scripts to
   setup the database have been installed in
