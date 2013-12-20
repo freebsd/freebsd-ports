@@ -1,0 +1,13 @@
+--- Makefile.am.orig	2013-12-20 13:44:12.000000000 -0500
++++ Makefile.am	2013-12-20 13:44:17.000000000 -0500
+@@ -20,8 +20,10 @@
+         .dir-locals.el
+ 
+ install-data-hook:
++	chmod 644 $(DESTDIR)$(pkgdatadir)/bash_completion
+ 	tmpfile=`mktemp $${TMPDIR:-/tmp}/bash_completion.XXXXXX` && \
+ 	sed -e 's|=/etc/bash_completion\.d|=$(compatdir)|' \
+ 		$(DESTDIR)$(pkgdatadir)/bash_completion > $$tmpfile && \
+ 	cat $$tmpfile > $(DESTDIR)$(pkgdatadir)/bash_completion && \
+ 	rm $$tmpfile
++	chmod 444 $(DESTDIR)$(pkgdatadir)/bash_completion
