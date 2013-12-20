@@ -5,36 +5,34 @@ bin/wmii.rc
 bin/wmii.sh
 bin/wmii9menu
 bin/wmiir
-etc/wmii/plan9port/wmiirc
-etc/wmii/python/pygmi/__init__.py
-etc/wmii/python/pygmi/event.py
-etc/wmii/python/pygmi/fs.py
-etc/wmii/python/pygmi/menu.py
-etc/wmii/python/pygmi/monitor.py
-etc/wmii/python/pygmi/util.py
-etc/wmii/python/pyxp/__init__.py
-etc/wmii/python/pyxp/asyncclient.py
-etc/wmii/python/pyxp/client.py
-etc/wmii/python/pyxp/dial.py
-etc/wmii/python/pyxp/fcall.py
-etc/wmii/python/pyxp/fields.py
-etc/wmii/python/pyxp/messages.py
-etc/wmii/python/pyxp/mux.py
-etc/wmii/python/pyxp/types.py
-etc/wmii/python/wmiirc
-etc/wmii/python/wmiirc.py
-etc/wmii/ruby/config.rb
-etc/wmii/ruby/config.yaml
-etc/wmii/ruby/wmiirc
-etc/wmii/welcome
-etc/wmii/wmiirc
-@dirrm etc/wmii/ruby
-@dirrm etc/wmii/python/pyxp
-@dirrm etc/wmii/python/pygmi
-@dirrm etc/wmii/python
-@dirrm etc/wmii/plan9port
-@dirrm etc/wmii
+%%ETCDIR%%/plan9port/wmiirc
+%%ETCDIR%%/python/pygmi/__init__.py
+%%ETCDIR%%/python/pygmi/event.py
+%%ETCDIR%%/python/pygmi/fs.py
+%%ETCDIR%%/python/pygmi/menu.py
+%%ETCDIR%%/python/pygmi/monitor.py
+%%ETCDIR%%/python/pygmi/util.py
+%%ETCDIR%%/python/pyxp/__init__.py
+%%ETCDIR%%/python/pyxp/asyncclient.py
+%%ETCDIR%%/python/pyxp/client.py
+%%ETCDIR%%/python/pyxp/dial.py
+%%ETCDIR%%/python/pyxp/fcall.py
+%%ETCDIR%%/python/pyxp/fields.py
+%%ETCDIR%%/python/pyxp/messages.py
+%%ETCDIR%%/python/pyxp/mux.py
+%%ETCDIR%%/python/pyxp/types.py
+%%ETCDIR%%/python/wmiirc
+%%ETCDIR%%/python/wmiirc.py
+%%ETCDIR%%/ruby/config.rb
+%%ETCDIR%%/ruby/config.yaml
+%%ETCDIR%%/ruby/wmiirc
+%%ETCDIR%%/welcome
+%%ETCDIR%%/wmiirc
 lib/libwmii_hack.so
+man/man1/wimenu.1.gz
+man/man1/wmii.1.gz
+man/man1/wmii9menu.1.gz
+man/man1/wmiir.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/alternative_wmiircs/README
@@ -49,3 +47,9 @@ lib/libwmii_hack.so
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/alternative_wmiircs/plan9port
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/alternative_wmiircs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%ETCDIR%%/ruby
+@dirrm %%ETCDIR%%/python/pyxp
+@dirrm %%ETCDIR%%/python/pygmi
+@dirrm %%ETCDIR%%/python
+@dirrm %%ETCDIR%%/plan9port
+@dirrm %%ETCDIR%%

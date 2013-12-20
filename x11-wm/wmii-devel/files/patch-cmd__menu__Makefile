@@ -1,0 +1,13 @@
+--- cmd/menu/Makefile.orig
++++ cmd/menu/Makefile
+@@ -14,8 +14,8 @@
+ 
+ PACKAGES += $(X11PACKAGES) xext xrandr xrender xinerama
+ 
+-LIB =	$(LIBIXP)
+-LIBS += -lm $(LIBS9)
++LIBS += $(LIBIXP)
++LIBS += -lm $(LIBS9) $(LIBIXP)
+ CFLAGS += -DIXP_NEEDAPI=86
+ OBJ =	main	\
+ 	caret	\
