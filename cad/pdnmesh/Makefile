@@ -12,36 +12,18 @@ COMMENT=	Mesh generator and solver for Finite Element problems
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
-		libpcre.so:${PORTSDIR}/devel/pcre \
-		libcairo.so:${PORTSDIR}/graphics/cairo \
-		libdrm.so:${PORTSDIR}/graphics/libdrm \
-		libpng15.so:${PORTSDIR}/graphics/png \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libexpat.so:${PORTSDIR}/textproc/expat2 \
-		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libgtkglext.so:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 
 OPTIONS_DEFINE=	ATLAS DOCS EXAMPLES
 ATLAS_DESC=	Enable ATLAS support
 
-USES=		pkgconfig gettext iconv
-USE_FORTRAN=	yes
+USES=		fortran pkgconfig
 USE_GL=		glu
-USE_GNOME=	gdkpixbuf2 gtk20
-USE_XORG=	ice pixman sm x11 xau xcb xcomposite xcursor xdamage xdmcp \
-		xext xfixes xmu xi xinerama xrandr xrender xt xxf86vm
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lm
-
-MAN1=		pdnmesh.1
-MAN5=		pdnmesh_input.5
 
 DESKTOP_ENTRIES="pdnMesh" "${COMMENT}" "" "${PORTNAME}" "" "true"
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MATLAS}
@@ -60,22 +42,19 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} \
-		&& ${INSTALL_DATA} ChangeLog ${DOCSDIR} \
-		&& ${INSTALL_DATA} README ${DOCSDIR})
-	@${MKDIR} ${DOCSDIR}/tutorial
+		&& ${INSTALL_DATA} ChangeLog ${STAGEDIR}${DOCSDIR} \
+		&& ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/tutorial
 	(cd ${WRKSRC}/doc/tutorial \
-		&& ${INSTALL_DATA} README ${DOCSDIR}/tutorial \
-		&& ${INSTALL_DATA} tutorial.* ${DOCSDIR}/tutorial)
+		&& ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR}/tutorial \
+		&& ${INSTALL_DATA} tutorial.* ${STAGEDIR}${DOCSDIR}/tutorial)
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@(${TAR} -C ${WRKSRC}/doc/examples --exclude "*Makefile*" -cf - . | \
-		${TAR} -C ${EXAMPLESDIR} --unlink -xf -)
-	@${FIND} ${EXAMPLESDIR} | ${XARGS} ${CHOWN} ${SHREOWN}:${SHAREGRP}
-	@${FIND} ${EXAMPLESDIR} -type d | ${XARGS} ${CHMOD} a+rx
-	@${FIND} ${EXAMPLESDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	(cd ${WRKSRC}/doc/examples && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	${RM} ${STAGEDIR}${EXAMPLESDIR}/Makefile*
 .endif
 
 .include <bsd.port.mk>
