@@ -3,7 +3,7 @@
 
 PORTNAME=	aircrack-ng
 DISTVERSION=	1.2b2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://download.aircrack-ng.org/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
@@ -22,7 +22,7 @@ USE_OPENSSL=	yes
 SUB_FILES=	pkg-message
 
 BIN_FILES=	airdecloak-ng buddy-ng aircrack-ng airdecap-ng ivstools \
-		airolib-ng makeivs-ng packetforge-ng wpaclean kstats do
+		makeivs-ng packetforge-ng wpaclean kstats
 SBIN_FILES=	airtun-ng besside-ng airbase-ng easside-ng airodump-ng \
 		aireplay-ng wesside-ng airserv-ng tkiptun-ng
 
@@ -35,6 +35,7 @@ SQLITE_DESC=	Use SQLite for storing pre-computed key tables
 .if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	yes
 MAKE_ARGS+=	SQLITE=true
+BIN_FILES+=	airolib-ng
 .endif
 
 .if ${ARCH} == "powerpc"
@@ -65,7 +66,6 @@ post-install:
 .for f in ${BIN_FILES}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/$f
 .endfor
-
 .for f in ${SBIN_FILES}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/$f
 .endfor
