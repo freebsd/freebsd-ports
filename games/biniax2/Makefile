@@ -13,7 +13,8 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Original logic game with arcade and tactics modes
 
 USE_SDL=	sdl mixer image
-USE_DOS2UNIX=	biniax.c
+USES=		dos2unix
+DOS2UNIX_FILES=	biniax.c
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
