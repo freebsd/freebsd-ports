@@ -54,6 +54,7 @@ www/puppet/config.ru
 @dirrmtry etc/puppet
 @unexec rmdir /var/puppet 2>/dev/null || :
 @exec /usr/sbin/chown -Rh puppet:puppet /var/puppet
+@exec /usr/sbin/chown -Rh puppet:puppet www/puppet/config.ru
 @dirrm %%RUBY_SITELIBDIR%%/hiera/backend
 @dirrm %%RUBY_SITELIBDIR%%/hiera
 @dirrm %%RUBY_SITELIBDIR%%/puppetx/puppetlabs/syntax_checkers
