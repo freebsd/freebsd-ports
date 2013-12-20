@@ -3,7 +3,7 @@
 
 PORTNAME=	puppet
 PORTVERSION=	3.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
@@ -68,6 +68,8 @@ post-patch:
 		${WRKSRC}/lib/puppet/util/run_mode.rb
 	@${REINPLACE_CMD} -e "s|\$$confdir/ssl|/var/puppet/ssl|" \
 		${WRKSRC}/lib/puppet/defaults.rb
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" \
+		${WRKSRC}/ext/rack/files/config.ru
 
 do-install:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} ${RUBY} ${WRKSRC}/install.rb --no-configs --destdir=${STAGEDIR}
