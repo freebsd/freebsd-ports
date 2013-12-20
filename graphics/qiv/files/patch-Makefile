@@ -1,0 +1,13 @@
+--- ./Makefile.orig	2013-12-20 10:43:05.000000000 -0200
++++ ./Makefile	2013-12-20 10:43:25.000000000 -0200
+@@ -52,8 +52,8 @@
+ CC        = gcc
+ #CFLAGS    = -O0 -g -Wall
+ CFLAGS    = -O2 -Wall \
+-	    -fcaller-saves -ffast-math -fno-strength-reduce \
+-	    -fthread-jumps #-march=pentium #-DSTAT_MACROS_BROKEN
++	    -ffast-math -fno-strength-reduce \
++	    #-march=pentium #-DSTAT_MACROS_BROKEN
+ #CFLAGS    = -O2 -Wall -fomit-frame-pointer -finline-functions \
+ #	    -fcaller-saves -ffast-math -fno-strength-reduce \
+ #	    -fthread-jumps #-march=pentium #-DSTAT_MACROS_BROKEN
