@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	musicpd
-PORTVERSION=	0.17.6
+PORTVERSION=	0.18.5
 CATEGORIES=	audio ipv6
 MASTER_SITES=	http://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
@@ -10,12 +10,12 @@ MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Remote-controllable music daemon
 
 LICENSE=	GPLv2
-LICENSE=	GPLv2
 
 LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
 USES=		gmake pkgconfig
+USE_GCC=	4.7+
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
