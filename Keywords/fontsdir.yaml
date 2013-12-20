@@ -5,13 +5,13 @@
 actions: [dirrmtry]
 post-install: |
   mkfontscale %D/%@ 2>/dev/null || true
-  mkfontsdir %D/%@ 2>/dev/null || true
+  mkfontdir %D/%@ 2>/dev/null || true
 post-deinstall: |
-  mkfontscale %@ 2>/dev/null || true
+  mkfontscale %D/%@ 2>/dev/null || true
   if [ -e %D/%@/fonts.scale -a "`stat -f '%%z' %D/%@/fonts.scale 2>/dev/null`" = '2' ]; then
     rm %D/%@/fonts.scale
   fi
-  mkfontdir %@ 2>/dev/null || true
-  if [ -e %D/%@/fonts.dir -a "`stat -f '%%z' %D/%@§fonts.dir 2>/dev/null`" = '2' ]; then
+  mkfontdir %D/%@ 2>/dev/null || true
+  if [ -e %D/%@/fonts.dir -a "`stat -f '%%z' %D/%@/fonts.dir 2>/dev/null`" = '2' ]; then
     rm %D/%@/fonts.dir
   fi
