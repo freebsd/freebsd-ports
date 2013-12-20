@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	MySQL-Proxy
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Monitor, analyze, or transform the communication of MySQL
 
-LIB_DEPENDS=	libevent-1.so:${PORTSDIR}/devel/libevent \
+LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent \
 		libglib.so:${PORTSDIR}/devel/glib20
 
 CONFIGURE_ARGS+=	--with-lua=lua-5.1 --with-mysql=${LOCALBASE}/bin/mysql_config --docdir=${DATADIR} --enable-self-contained
