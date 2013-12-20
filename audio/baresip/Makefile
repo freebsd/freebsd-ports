@@ -1,48 +1,66 @@
 # $FreeBSD$
 
 PORTNAME=	baresip
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.8
 CATEGORIES=	audio
 MASTER_SITES=	http://www.creytiv.com/pub/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Small SIP client
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
-BUILD_DEPENDS=	re>=${PORTVERSION}:${PORTSDIR}/audio/re \
-		rem>=${PORTVERSION}:${PORTSDIR}/audio/rem
+BUILD_DEPENDS=	re>=0.4.6:${PORTSDIR}/audio/re \
+		rem>=0.4.4:${PORTSDIR}/audio/rem
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-NO_STAGE=	yes
-USES=		gmake
-
+USES=		gmake pkgconfig
 CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/ilbc
 MAKE_ARGS=	MOD_AUTODETECT=""
 PLIST_FILES=	bin/baresip
 PORTDATA=	*
 PORTDOCS=	*
 
-#OPTIONS_NOT_YET_WORKING=	ALSA BV32 G722_1 PLC
-OPTIONS_DEFINE=	CELT CONS DOCS FFMPEG G711 G722 GSM GSTREAMER ILBC L16 OPUS \
-		OSS PORTAUDIO SDL SNDFILE SPEEX SRTP STDIO UUID V4L V4L2 X11
-OPTIONS_DEFAULT=CONS G711 G722 L16
+#OPTIONS_NOT_YET_WORKING=	ALSA BV32 G722_1 PLC ISAC OPENGLES
+OPTIONS_DEFINE=	CELT CONS DOCS FFMPEG G711 G722 G726 GSM GSTREAMER ILBC L16 \
+	OPUS OSS PORTAUDIO SDL SNDFILE SPEEX SRTP STDIO UUID V4L V4L2 X11 \
+	DTLS_SRTP AUBRIDGE VIDBRIDGE HTTPD DSHOW DIRECTFB ACCOUNT \
+	NATPMP SDL MIW SNAPSHOT SELFVIEW VUMETER AULOOP CONTACT \
+	MENU PRESENCE SYSLOG VIDLOOP
+OPTIONS_DEFAULT=CONS G711 G722 G726 L16
 
+AULOOP_DESC=	Audio-loop test module
 BV32_DESC=	BroadVoice32 Wideband Audio codec
+CELT_DESC=	Celt support [broken]
+CONTACT_DESC=	Contacts module
 CONS_DESC=	Console input driver
+DTLS_SRTP_DESC=	DTLS Secure RTP module [broken]
 G711_DESC=	G.711 audio codec
 G722_DESC=	G.722 audio codec
 G722_1_DESC=	G.722.1 audio codec
+G726_DESC=	G.726 audio codec
 ILBC_DESC=	iLBC audio codec
 L16_DESC=	L16 audio codec
+MENU_DESC=	Interactive menu
+OPENGLES_DESC=	OpenGL ES video output
 OPUS_DESC=	Opus audio codec
 PLC_DESC=	Packet Loss Concealment
-SRTP_DESC=	Secure RTP module
+PRESENCE_DESC=	Presence module
+SRTP_DESC=	Secure RTP module [broken]
 STDIO_DESC=	stdio input driver
+SYSLOG_DESC=	Syslog module
 UUID_DESC=	UUID module
-V4L_DESC=	Video4Linux module
-V4L2_DESC=	Video4Linux2 module
+V4L_DESC=	Video4Linux module [broken]
+V4L2_DESC=	Video4Linux2 module [broken]
+VIDLOOP_DESC=	Video-loop test module
+X11_DESC=	X11 module [broken]
+
+.for o in ${OPTIONS_DEFINE}
+.  ifndef $o_DESC
+$o_DESC=	${o:C,^(.).*,\1,}${o:C,^.,,:L} module
+.  endif
+.endfor
 
 .include <bsd.port.options.mk>
 
@@ -64,6 +82,12 @@ MAKE_ARGS+=	USE_$s=yes
 . endfor
 MAKE_ARGS+=	HAVE_SPEEXDSP=yes
 .endif
+
+.for o in CELT SRTP V4L DTLS_SRTP V4L2 X11
+.  if ${PORT_OPTIONS:M$o}
+BROKEN=	OPTIONS marked as BROKEN have not been updated to the new Baresip API
+.  endif
+.endfor
 
 .if ${PORT_OPTIONS:MX11}
 USE_XORG=	x11
@@ -87,22 +111,21 @@ post-patch:
 		${WRKSRC}/modules/portaudio/module.mk
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/share/* ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/share/* ${STAGEDIR}${DATADIR}
 
 # Install modules and add to plist
 post-install:
-	${MKDIR} ${PREFIX}/lib/${PORTNAME}/modules
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/modules
 	for m in $$(${GMAKE} -sC ${WRKSRC} ${MAKE_ARGS} showmodules); \
-	do ${INSTALL_LIB} ${WRKSRC}/$$m.so ${PREFIX}/lib/baresip/modules; \
+	do ${INSTALL_LIB} ${WRKSRC}/$$m.so \
+		${STAGEDIR}${PREFIX}/lib/baresip/modules; \
 	   ${ECHO_CMD} lib/${PORTNAME}/modules/$$m.so >> ${TMPPLIST}; \
 	done
 	${ECHO_CMD} "@dirrm lib/baresip/modules" >> ${TMPPLIST}
 	${ECHO_CMD} "@dirrm lib/baresip" >> ${TMPPLIST}
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

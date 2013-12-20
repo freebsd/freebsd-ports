@@ -20,6 +20,7 @@ include/re/re_uri.h
 include/re/re_jbuf.h
 include/re/re_sipevent.h
 include/re/re_telev.h
+include/re/re_http.h
 include/re/re_httpauth.h
 include/re/re_dns.h
 include/re/re_ice.h
