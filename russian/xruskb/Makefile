@@ -5,7 +5,8 @@ PORTNAME=	xruskb
 PORTVERSION=	1.15.4
 PORTREVISION=	2
 CATEGORIES=	russian x11
-MASTER_SITES=	ftp://ftp.yars.free.net/pub/source/xruskb/
+MASTER_SITES=	ftp://ftp.yars.free.net/pub/source/xruskb/ \
+		http://lav.yar.ru/download/xruskb/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Keyboard layout switcher and indicator
