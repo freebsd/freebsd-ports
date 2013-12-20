@@ -1,4 +1,6 @@
 %%DATADIR%%/httpd-tt-rss.conf
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/README.md
 %%WWWDIR%%/api/index.php
 %%WWWDIR%%/atom-to-html.xsl
@@ -2030,6 +2032,8 @@
 %%WWWDIR%%/locale/ru_RU/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/sv_SE/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/sv_SE/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/tr_TR/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/tr_TR/LC_MESSAGES/messages.po
 %%WWWDIR%%/locale/zh_CN/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/zh_CN/LC_MESSAGES/messages.po
 %%WWWDIR%%/lock/.empty
@@ -2040,11 +2044,13 @@
 %%WWWDIR%%/plugins/af_buttersafe/init.php
 %%WWWDIR%%/plugins/af_dilbert/init.php
 %%WWWDIR%%/plugins/af_explosm/init.php
+%%WWWDIR%%/plugins/af_fsckportal/init.php
 %%WWWDIR%%/plugins/af_gocomics/init.php
 %%WWWDIR%%/plugins/af_natgeo/init.php
 %%WWWDIR%%/plugins/af_pennyarcade/init.php
 %%WWWDIR%%/plugins/af_redditimgur/init.php
 %%WWWDIR%%/plugins/af_sciam/init.php
+%%WWWDIR%%/plugins/af_threewordphrase/init.php
 %%WWWDIR%%/plugins/af_unburn/init.php
 %%WWWDIR%%/plugins/af_whomp/init.php
 %%WWWDIR%%/plugins/auth_internal/init.php
@@ -2075,6 +2081,8 @@
 %%WWWDIR%%/plugins/no_iframes/init.php
 %%WWWDIR%%/plugins/no_title_counters/init.js
 %%WWWDIR%%/plugins/no_title_counters/init.php
+%%WWWDIR%%/plugins/no_url_hashes/init.js
+%%WWWDIR%%/plugins/no_url_hashes/init.php
 %%WWWDIR%%/plugins/note/init.php
 %%WWWDIR%%/plugins/note/note.js
 %%WWWDIR%%/plugins/note/note.png
@@ -2349,16 +2357,17 @@
 %%WWWDIR%%/templates/resetpass_template.txt
 %%WWWDIR%%/themes/.empty
 %%WWWDIR%%/themes/default.css
+@mode u=rx
 %%WWWDIR%%/update.php
 %%WWWDIR%%/update_daemon2.php
+@mode
 %%WWWDIR%%/utils/.htaccess
-%%WWWDIR%%/utils/extract-i18n-js.pl
 %%WWWDIR%%/utils/localized_schema.txt
+@mode u=rx
+%%WWWDIR%%/utils/extract-i18n-js.pl
 %%WWWDIR%%/utils/regen_config_checks.sh
 %%WWWDIR%%/utils/update-translations.sh
-@exec chmod -R 777 %B
-@exec chmod 444 %D/%F
-@exec chown -R %%WWWOWN%% %D/%%WWWDIR%%
+@mode
 @dirrm %%WWWDIR%%/utils
 @dirrm %%WWWDIR%%/themes
 @dirrm %%WWWDIR%%/templates
@@ -2372,6 +2381,7 @@
 @dirrm %%WWWDIR%%/plugins/shorten_expanded
 @dirrm %%WWWDIR%%/plugins/share
 @dirrm %%WWWDIR%%/plugins/nsfw
+@dirrm %%WWWDIR%%/plugins/no_url_hashes
 @dirrm %%WWWDIR%%/plugins/note
 @dirrm %%WWWDIR%%/plugins/no_title_counters
 @dirrm %%WWWDIR%%/plugins/no_iframes
@@ -2390,11 +2400,13 @@
 @dirrm %%WWWDIR%%/plugins/auth_internal
 @dirrm %%WWWDIR%%/plugins/af_whomp
 @dirrm %%WWWDIR%%/plugins/af_unburn
+@dirrm %%WWWDIR%%/plugins/af_threewordphrase
 @dirrm %%WWWDIR%%/plugins/af_sciam
 @dirrm %%WWWDIR%%/plugins/af_redditimgur
 @dirrm %%WWWDIR%%/plugins/af_pennyarcade
 @dirrm %%WWWDIR%%/plugins/af_natgeo
 @dirrm %%WWWDIR%%/plugins/af_gocomics
+@dirrm %%WWWDIR%%/plugins/af_fsckportal
 @dirrm %%WWWDIR%%/plugins/af_explosm
 @dirrm %%WWWDIR%%/plugins/af_dilbert
 @dirrm %%WWWDIR%%/plugins/af_buttersafe
@@ -2403,6 +2415,8 @@
 @dirrmtry %%WWWDIR%%/lock
 @dirrm %%WWWDIR%%/locale/zh_CN/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/zh_CN
+@dirrm %%WWWDIR%%/locale/tr_TR/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/tr_TR
 @dirrm %%WWWDIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%WWWDIR%%/locale/sv_SE
 @dirrm %%WWWDIR%%/locale/ru_RU/LC_MESSAGES
@@ -2708,4 +2722,6 @@
 @dirrmtry %%WWWDIR%%/cache
 @dirrm %%WWWDIR%%/api
 @dirrmtry %%WWWDIR%%
+@owner
+@group
 @dirrm %%DATADIR%%
