@@ -1,24 +1,22 @@
 # $FreeBSD$
 
 PORTNAME=	musicpd
-PORTVERSION=	0.17.3
-PORTREVISION=	4
+PORTVERSION=	0.17.6
 CATEGORIES=	audio ipv6
-MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
+MASTER_SITES=	http://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Remote-controllable music daemon
 
+LICENSE=	GPLv2
+LICENSE=	GPLv2
+
 LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
-LICENSE=	GPLv2
-
-USE_STAGE=	yes
-NO_STAGE=	yes
 USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 
@@ -28,16 +26,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 CFLAGS+=	-I${PREFIX}/include
 
-MAN1=		${PORTNAME}.1
-MAN5=		${PORTNAME}.conf.5
-
 DOCSDIR?=	${PREFIX}/share/doc/musicpd
 PORTDOCS=	AUTHORS README COPYING NEWS UPGRADING
 
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	ID3TAG IPV6 FLAC VORBIS WAV FFMPEG TREMOR AAC \
-		MUSEPACK MIKMOD MODPLUG ARCHIVE MMS LASTFM AO PULSEAUDIO \
+		MUSEPACK MIKMOD MODPLUG ARCHIVE MMS AO PULSEAUDIO \
 		JACK SHOUTCAST SNDFILE LAME HTTPD SAMPLERATE SQLITE3
 OPTIONS_RADIO=	ZEROCONF
 OPTIONS_RADIO_ZEROCONF=	AVAHI MDNSRESPONDER
@@ -144,7 +139,7 @@ CONFIGURE_ARGS+=--enable-bzip2 \
 		--enable-zip \
 		--enable-iso9660
 LIB_DEPENDS+=	libzzip.so:${PORTSDIR}/devel/zziplib \
-		iso9660.8:${PORTSDIR}/sysutils/libcdio
+		libiso9660.so:${PORTSDIR}/sysutils/libcdio
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
@@ -153,12 +148,6 @@ LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libavutil.so:${PORTSDIR}/multimedia/ffmpeg
 .else
 CONFIGURE_ARGS+=--disable-ffmpeg
-.endif
-
-.if ${PORT_OPTIONS:MLASTFM}
-CONFIGURE_ARGS+=--enable-lastfm
-.else
-CONFIGURE_ARGS+=--disable-lastfm
 .endif
 
 .if ${PORT_OPTIONS:MMMS}
@@ -274,26 +263,19 @@ post-patch:
 .endif
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/mpd ${PREFIX}/bin/${PORTNAME}
-	@${INSTALL_MAN} ${WRKSRC}/doc/mpd.1 ${MAN1PREFIX}/man/man1/${PORTNAME}.1
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/mpd \
+		${STAGEDIR}/${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_MAN} ${WRKSRC}/doc/mpd.1 \
+		${STAGEDIR}/${PREFIX}/man/man1/${PORTNAME}.1
 	@${INSTALL_MAN} ${WRKSRC}/doc/mpd.conf.5 \
-		${MAN5PREFIX}/man/man5/${PORTNAME}.conf.5
+		${STAGEDIR}/${PREFIX}/man/man5/${PORTNAME}.conf.5
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 .   for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}/${DOCSDIR}/
 .   endfor
+	@${INSTALL_DATA} ${WRKSRC}/doc/mpdconf.example \
+		${STAGEDIR}/${PREFIX}/etc/${PORTNAME}.conf.sample
 .endif
-
-post-install:
-	@${INSTALL_DATA} ${WRKSRC}/doc/mpdconf.example ${PREFIX}/etc/${PORTNAME}.conf.sample
-	@if [ ! -f ${PREFIX}/etc/${PORTNAME}.conf ]; then \
-		${CP} -p ${PREFIX}/etc/${PORTNAME}.conf.sample \
-			${PREFIX}/etc/${PORTNAME}.conf ; \
-	fi
-	@${INSTALL} -d -o ${MPDUSER} -g ${MPDGROUP} ${MPDDIR} ${MPDDIR}/.mpd
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
