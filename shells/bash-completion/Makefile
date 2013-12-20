@@ -10,14 +10,12 @@ MASTER_SITES=	http://bash-completion.alioth.debian.org/files/
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Programmable completion library for Bash
 
-.if defined(WITH_BASH_DEVEL)
-RUN_DEPENDS=bash:${PORTSDIR}/shells/bash-devel
-.else
-RUN_DEPENDS=bash:${PORTSDIR}/shells/bash
-.endif
+OPTIONS_DEFINE=		BASH_DEVEL
+BASH_DEVEL_DESC=	Use shells/bash-devel instead of shells/bash
 
 CONFLICTS=	bash-completion-classic-[0-9]*
 
+USE_AUTOTOOLS=	aclocal automake
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
@@ -26,7 +24,15 @@ USE_BZIP2=	yes
 SUB_FILES=	pkg-message
 SUB_LIST+=	RUNFILE=${DATADIR}/bash_completion.sh
 
-post-patch:
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MBASH_DEVEL}
+RUN_DEPENDS=bash:${PORTSDIR}/shells/bash-devel
+.else
+RUN_DEPENDS=bash:${PORTSDIR}/shells/bash
+.endif
+
+post-configure:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g; \
 		s|/etc/bash_completion|${PREFIX}&|g; \
 		s|/usr\(/sbin/postconf\)|${PREFIX}\1|g; \
