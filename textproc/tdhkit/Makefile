@@ -10,65 +10,40 @@ DISTNAME=	${PORTNAME}${PORTVERSION:C/\.//1}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of programs for working with tabular ASCII data
 
-OPTIONS_DEFINE=	LIBCHRON DOCS
-LIBCHRON_DESC=	Install libchron
+LICENSE=	GPLv2 # (or later)
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	CHRON DOCS
+OPTIONS_SUB=	yes
+CHRON_DESC=	Install libchron
 
-.if ${PORT_OPTIONS:MLIBCHRON}
-PLIST_SUB+=	LIBCHRON=""
-.else
-PLIST_SUB+=	LIBCHRON="@comment "
-.endif
+BUILD_WRKSRC=	${WRKSRC}/src
 
-.if !defined(NO_INSTALL_MANPAGES)
-MAN1=		dateconvert.1 \
-		fldfmt.1 \
-		fldmap.1 \
-		fldsel.1 \
-		pjoin.1 \
-		recsel.1 \
-		tabo.1 \
-		tdhfunction.1 \
-		xlcells.1 \
-		xlcleaner.1
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^CFLAGS =|CFLAGS +=|' \
+		${WRKSRC}/libsrc/Makefile
+	@${REINPLACE_CMD} -e \
+		's|^CFLAGS =|CFLAGS +=| ; \
+		 s|^CC =|CC ?=| ; \
+		 /^all:/s|recsel fldsel|recsel fldmap fldsel|' \
+		${BUILD_WRKSRC}/Makefile
 
-.if ${PORT_OPTIONS:MLIBCHRON}
-MAN3=		libchron.3
-.endif
-MANCOMPRESSED=	no
-.endif
-
-do-build:
-	cd ${WRKSRC}/libsrc && ${SETENV} ${MAKE_ENV} \
-		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
-	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} \
-		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
-.if ${PORT_OPTIONS:MLIBCHRON}
-	cd ${WRKSRC}/libsrc && ${SETENV} ${MAKE_ENV} \
-		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} libchron
-.endif
+pre-build:
+	@(cd ${WRKSRC}/libsrc && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
+		${MAKE_FLAGS} ${MAKEFILE} -j${MAKE_JOBS_NUMBER} \
+		${MAKE_ARGS} default libchron)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin
-
-.if ${PORT_OPTIONS:MLIBCHRON}
-	${INSTALL_PROGRAM} ${WRKSRC}/libchron.a ${PREFIX}/lib
-.endif
-
-.if !defined(NO_INSTALL_MANPAGES)
-.for manpage in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/man/mantdh/${manpage} ${MAN1PREFIX}/man/man1
-.endfor
-.if ${PORT_OPTIONS:MLIBCHRON}
-	${INSTALL_MAN} ${WRKSRC}/man/mantdh/${MAN3} ${MAN3PREFIX}/man/man3
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/man/html/* ${DOCSDIR}
-.endif
+	(cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} * \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_DATA} libchron.a \
+		${STAGEDIR}${PREFIX}/lib)
+	(cd ${WRKSRC}/man/mantdh && ${INSTALL_MAN} *.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1)
+	(cd ${WRKSRC}/man/mantdh && ${INSTALL_MAN} *.3 \
+		${STAGEDIR}${MAN3PREFIX}/man/man3)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/man/html && ${INSTALL_DATA} * \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
