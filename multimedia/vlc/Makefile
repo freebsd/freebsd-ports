@@ -166,7 +166,8 @@ NCURSES_CONFIGURE_ENABLE=	ncurses
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
+			libgtk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20
 NOTIFY_CONFIGURE_ENABLE=	notify
 
 OPTIMIZED_CFLAGS_CFLAGS=	-O3 -ffast-math -fomit-frame-pointer
