@@ -3,7 +3,7 @@
 
 PORTNAME=	shaaft
 PORTVERSION=	0.5.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	SF/criticalmass/OldFiles
 DISTNAME=	Shaaft-${PORTVERSION}
@@ -18,15 +18,20 @@ CONFLICTS=	criticalmass-*
 USE_BZIP2=	yes
 USE_SDL=	mixer image sdl
 USE_GL=		yes
+USE_GCC=	any
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-optimize
+
+CPPFLAGS+=	$$(libpng-config --I_opts)
+LDFLAGS+=	$$(libpng-config --L_opts)
+
 DATADIR=	${PREFIX}/share/Shaaft
 
 PLIST_FILES=	bin/Packer bin/shaaft %%DATADIR%%/resource.dat \
 		man/man6/shaaft.6.gz
 PLIST_DIRS=	%%DATADIR%%
+
+DESKTOP_ENTRIES="Shaaft" "" "" "${PORTNAME}" "" ""
 
 .include <bsd.port.pre.mk>
 
