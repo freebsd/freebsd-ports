@@ -13,11 +13,11 @@ COMMENT=	Binary-to-text file-encoder
 
 MAKEFILE=	makefile
 MAKE_ARGS=	CFLAGS="${CFLAGS}" DEST=${PREFIX}/bin
-PLIST_FILES=	bin/ish
 ALL_TARGET=	ish
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/ish
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ish ${STAGEDIR}${PREFIX}/bin)
 
 .include <bsd.port.mk>
