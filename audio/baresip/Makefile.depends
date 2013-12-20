@@ -4,6 +4,7 @@ ALSA_DEPEND=	${LOCALBASE}/include/alsa/asoundlib.h:${PORTSDIR}/audio/alsa-lib
 BV32_DEPEND=	# nonexistent
 CELT_DEPEND=	${LOCALBASE}/include/celt/celt.h:${PORTSDIR}/audio/celt
 CONS_DEPEND=	# unnecessary
+DTLS_SRTP_DEPEND=	# unnecessary
 EVDEV_DEPEND=
 FFMPEG_DEPEND=	${LOCALBASE}/include/libavcodec/avcodec.h:${PORTSDIR}/multimedia/ffmpeg
 G711_DEPEND=	${LOCALBASE}/include/spandsp/g711.h:${PORTSDIR}/comms/spandsp
