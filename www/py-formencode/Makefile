@@ -3,12 +3,13 @@
 
 PORTNAME=	formencode
 PORTVERSION=	1.2.6
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	FormEncode-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wg@FreeBSD.org
 COMMENT=	HTML form validation, generation, and conversion package
 
 LICENSE=	PSFL
@@ -17,21 +18,15 @@ OPTIONS_DEFINE=	DOCS
 
 USE_ZIP=	yes
 USES=		gettext:run
-USE_PYTHON=	-2.7
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	FormEncode
+USE_PYTHON=	2
+USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-
 PORTDOCS=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${DOCSDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
