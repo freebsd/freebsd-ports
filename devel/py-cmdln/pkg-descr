@@ -2,4 +2,4 @@ cmdln.py fixes some of the design flaws in cmd.py and takes advantage
 of new Python stdlib modules (e.g. optparse) so that it is more useful
 (and convenient) for implementing command-line scripts/shells.
 
-WWW: http://code.google.com/p/cmdln/
+WWW: https://github.com/trentm/cmdln
