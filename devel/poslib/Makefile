@@ -10,22 +10,30 @@ MASTER_SITES=	SF/posadis/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Posadis C++ DNS library
 
+LICENSE=	GPLv2 # (or later)
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 USE_AUTOTOOLS=	libtool
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-DOCS=		AUTHORS ChangeLog NEWS README TODO
-EXAMPLES=	examples/*.cpp
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/CXXFLAGS/s|-O0|$$CXXFLAGS| ; \
+		 /LIBS=/s|-lstdc++||' ${WRKSRC}/configure
 
-NO_STAGE=	yes
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in AUTHORS ChangeLog NEWS README TODO
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} \
+		${STAGEDIR}${DOCSDIR})
+.endfor
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${INSTALL_DATA} *.cpp \
+		${STAGEDIR}${EXAMPLESDIR})
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libposlib.so.0 \
+		${STAGEDIR}${PREFIX}/lib/libposserver.so.0
 
 .include <bsd.port.mk>
