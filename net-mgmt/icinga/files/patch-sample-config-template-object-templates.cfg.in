@@ -1,6 +1,6 @@
---- sample-config/template-object/templates.cfg.in.orig	Fri Jul 20 13:46:57 2007
-+++ sample-config/template-object/templates.cfg.in	Fri Jul 20 13:47:52 2007
-@@ -63,17 +63,17 @@
+--- sample-config/template-object/templates.cfg.in.orig	2013-12-05 12:51:35.000000000 +0100
++++ sample-config/template-object/templates.cfg.in	2013-12-06 17:20:49.759139643 +0100
+@@ -61,17 +61,17 @@ define host{
          }
  
  

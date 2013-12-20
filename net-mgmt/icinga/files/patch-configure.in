@@ -1,14 +1,14 @@
---- configure.in.orig	2012-05-15 13:00:56.000000000 +0000
-+++ configure.in	2012-05-16 21:05:28.973178226 +0000
-@@ -6,7 +6,6 @@
+--- configure.in.orig	2013-12-05 12:51:35.000000000 +0100
++++ configure.in	2013-12-06 17:22:07.285134852 +0100
+@@ -6,7 +6,6 @@ define([AC_CACHE_SAVE],)
  
  AC_INIT(base/icinga.c)
  AC_CONFIG_HEADER(include/config.h)
 -AC_PREFIX_DEFAULT(/usr/local/icinga)
  
  PKG_NAME=icinga-core
- PKG_VERSION="1.7.0"
-@@ -144,6 +143,15 @@
+ PKG_VERSION="1.10.2"
+@@ -144,6 +143,15 @@ AC_TRY_COMPILE([#include <stdlib.h>
  dnl Test for pthreads support - taken from ICU FreeBSD Port configure script
  THREADLIBS=""
  have_pthreads="no"
@@ -24,7 +24,7 @@
  
  dnl FreeBSD: Try ports/linuxthreads first - Mammad Zadeh <mammad@yahoo-inc.com>
  dnl FreeBSD -pthread check - Jonathan McDowell <noodles@earth.li>
-@@ -205,6 +213,7 @@
+@@ -205,6 +213,7 @@ dnl all other thread tests fail, try BSD
  if test $have_pthreads = "no"; then
  	AC_PTHREAD_FREEBSD
  fi
@@ -32,16 +32,15 @@
  
  AC_SUBST(THREADLIBS)
  
-@@ -223,7 +232,7 @@
+@@ -223,7 +232,6 @@ AC_DEFINE_UNQUOTED(DEFAULT_ICINGA_USER,"
  AC_DEFINE_UNQUOTED(DEFAULT_NAGIOS_USER,"$icinga_user",[user name to run nagios])
  AC_DEFINE_UNQUOTED(DEFAULT_ICINGA_GROUP,"$icinga_grp",[group name to run nagios])
  AC_DEFINE_UNQUOTED(DEFAULT_NAGIOS_GROUP,"$icinga_grp",[group name to run nagios])
 -INSTALL_OPTS="-o $icinga_user -g $icinga_grp"
-+INSTALL_OPTS="-o root -g wheel"
  AC_SUBST(INSTALL_OPTS)
  
  AC_ARG_WITH(command_user,AC_HELP_STRING([--with-command-user=<user>],[sets user name for command access]),command_user=$withval,command_user=$icinga_user)
-@@ -414,7 +423,7 @@
+@@ -443,7 +451,7 @@ dnl Location of the embedded perl p1.pl
  P1FILELOC=no
  AC_ARG_WITH(p1-file-dir,AC_HELP_STRING([--with-p1-file-dir=<path>],[sets path to embedded perl p1.pl directory]),P1FILELOC=$withval,P1FILELOC=no)
  if test x$P1FILELOC = xno; then
@@ -50,7 +49,7 @@
  fi
  AC_SUBST(P1FILELOC)
  
-@@ -1033,6 +1042,9 @@
+@@ -1097,6 +1105,9 @@ if test x$USEPERL = xyes; then
  
  	AC_DEFINE_UNQUOTED(EMBEDDEDPERL,,[Is embedded Perl being compiled in?])
  	PERLLIBS="`perl -MExtUtils::Embed -e ldopts`"
