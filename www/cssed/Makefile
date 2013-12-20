@@ -3,31 +3,31 @@
 
 PORTNAME=	cssed
 PORTVERSION=	0.4.0
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An application to help CSS style sheets creation and maintenance
+COMMENT=	Application to help CSS style sheets creation and maintenance
 
-USES=		pathfix pkgconfig
+USES=		dos2unix pathfix pkgconfig
+DOS2UNIX_FILES=	scintilla/gtk/ScintillaGTK.cxx
 USE_GNOME=	gtk20 libxml2
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lgmodule-2.0
 CONFIGURE_ARGS=	--with-plugin-headers
 
-MAN1=		cssed.1
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+DESKTOP_ENTRIES="CSSED" "CSS Editor" "${DATADIR}/pixmaps/cssed-icon.png" \
+		"${PORTNAME}" "GTK;Development;WebDevelopment;TextEditor;" ""
+
 post-patch:
-.for file in scintilla/gtk/ScintillaGTK.cxx
-	@cd ${WRKSRC} && ${MV} ${file} ${file}.pre_tr \
-		&& ${TR} -d '\r' < ${file}.pre_tr > ${file}
-.endfor
-.for file in scintilla/gtk/Makefile.in src/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|gthread-2.0|gmodule-2.0|' ${WRKSRC}/configure
+.for i in scintilla/gtk/Makefile.in src/Makefile.in
 	@${REINPLACE_CMD} -e 's|gcc|@CC@|g ; \
-		 s|g++|@CXX@|g' ${WRKSRC}/src/Makefile.in
+		 s|g++|@CXX@|g' ${WRKSRC}/${i}
 .endfor
 
 .include <bsd.port.mk>
