@@ -20,7 +20,7 @@
  
  WXVER=0
 -case "`wx-config --version`" in
-+case "`/usr/local/bin/wxgtk2-2.8-config --version`" in
++case "`%%WX_CONFIG%% --version`" in
    2.9*|3*)
          echo WARNING: wxWidgets versions higher than 2.8 have not been tested.
          echo It might work if they are compiled with backwards compatibility.
@@ -28,7 +28,7 @@
    2.8*) ;;
    *)    echo Could not find wxWidgets 2.8.0 or higher.
 -        echo Please install it and ensure that wx-config is in the path
-+        echo Please install it and ensure that /usr/local/bin/wxgtk2-2.8-config is in the path
++        echo Please install it and ensure that %%WX_CONFIG%% is in the path
          exit 1
    ;;
  esac
@@ -47,11 +47,22 @@
  then
 -  WXREL="`wx-config --release`"
 -  if [ -n "`wx-config --list | grep $WXREL | grep unicode`" ]
-+  WXREL="`/usr/local/bin/wxgtk2-2.8-config --release`"
-+  if [ -n "`/usr/local/bin/wxgtk2-2.8-config --list | grep $WXREL | grep unicode`" ]
++  WXREL="`%%WX_CONFIG%% --release`"
++  if [ -n "`%%WX_CONFIG%% --list | grep $WXREL | grep unicode`" ]
    then
      WITHUNICODE="--unicode=yes"
    fi
+@@ -210,8 +210,8 @@
+          PREFIX="/cygdrive/c/Program Files/Sunder.NET/LisaEm"
+          PREFIXLIB="/cygdrive/c/Program Files/Sunder.NET/LisaEm"
+       else
+-         PREFIX="/usr/local/bin"
+-         PREFIXLIB="/usr/local/share/"
++         PREFIX="%%PREFIX%%/bin"
++         PREFIXLIB="%%PREFIX%%/share/"
+       fi
+   fi
+ fi
 @@ -230,11 +230,11 @@
  # if the object is older than the source, it will return true.
  ##############################################################################
@@ -72,8 +83,8 @@
  					   (default for non-OS X)
 ---with-unicode         Ask wx-config for a unicode build (might not yet work)
 ---without-unicode      Ask wx-config for a non-unicode build (default)
-+--with-unicode         Ask /usr/local/bin/wxgtk2-2.8-config for a unicode build (might not yet work)
-+--without-unicode      Ask /usr/local/bin/wxgtk2-2.8-config for a non-unicode build (default)
++--with-unicode         Ask %%WX_CONFIG%% for a unicode build (might not yet work)
++--without-unicode      Ask %%WX_CONFIG%% for a non-unicode build (default)
  
  Environment Variables you can pass:
  
@@ -82,13 +93,13 @@
   # many thanks to David Cecchin for finding the unicode issues fixed below.
  
 - WXCONFIGFLAGS=`wx-config  --cppflags $WITHUNICODE `
-+ WXCONFIGFLAGS=`/usr/local/bin/wxgtk2-2.8-config  --cppflags $WITHUNICODE `
++ WXCONFIGFLAGS=`%%WX_CONFIG%%  --cppflags $WITHUNICODE `
   if [ -z "$WXCONFIGFLAGS" ]
   then
 -    echo wx-config has failed, or returned an error.  Ensure that it exists in your path.
 -    which wx-config
-+    echo /usr/local/bin/wxgtk2-2.8-config has failed, or returned an error.  Ensure that it exists in your path.
-+    which /usr/local/bin/wxgtk2-2.8-config
++    echo %%WX_CONFIG%% has failed, or returned an error.  Ensure that it exists in your path.
++    which %%WX_CONFIG%%
      exit 3
   fi
 - CFLAGS="-I. -I../include -I../cpu68k -I../wxui $WXCONFIGFLAGS $WITHOPTIMIZE $WITHDEBUG"
@@ -96,13 +107,13 @@
 - LINKOPTS="`wx-config $STATIC  $WITHUNICODE  --libs --linkdeps --cppflags`"
 + CFLAGS="$CFLAGS -I. -I../include -I../cpu68k -I../wxui $WXCONFIGFLAGS"
 + CXXFLAGS="$CXXFLAGS -I. -I../include -I../cpu68k -I../wxui $WXCONFIGFLAGS"
-+ LINKOPTS="`/usr/local/bin/wxgtk2-2.8-config $STATIC  $WITHUNICODE  --libs --linkdeps --cppflags`"
++ LINKOPTS="`%%WX_CONFIG%% $STATIC  $WITHUNICODE  --libs --linkdeps --cppflags`"
   if [ -z "$LINKOPTS" ]
   then
 -    echo wx-config has failed, or returned an error.  Ensure that it exists in your path.
 -    which wx-config
-+    echo /usr/local/bin/wxgtk2-2.8-config has failed, or returned an error.  Ensure that it exists in your path.
-+    which /usr/local/bin/wxgtk2-2.8-config
++    echo %%WX_CONFIG%% has failed, or returned an error.  Ensure that it exists in your path.
++    which %%WX_CONFIG%%
      exit 3
   fi
  
@@ -115,3 +126,14 @@
  fi
  
  if [ -f ../bin/lisaem ]
+@@ -960,8 +960,8 @@
+ then
+ 
+   echo "Freshly compiled `du -sh lisaem`"
+-  strip lisaem${EXT}
+-  echo "Stripped `du -sh lisaem`"
++# strip lisaem${EXT}
++# echo "Stripped `du -sh lisaem`"
+ 
+   # compress it if upx exists.
+   if [ -z "$WITHOUTUPX"              ]; then
