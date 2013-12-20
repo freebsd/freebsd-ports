@@ -3,7 +3,7 @@
 
 PORTNAME=	ibus-pinyin
 PORTVERSION=	1.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
@@ -20,7 +20,6 @@ RUN_DEPENDS=	ibus-daemon:${PORTSDIR}/textproc/ibus \
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
 
-USE_GCC=	yes
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking --disable-lua-extension
