@@ -3,6 +3,7 @@
 
 PORTNAME=	xdebug
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.xdebug.org/files/
 PKGNAMEPREFIX=	php-
@@ -15,8 +16,8 @@ LICENSE=	BSD
 
 CONFIGURE_ARGS=	--enable-xdebug
 USE_PHP=	yes
-USE_PHPEXT=	yes
 USE_PHPIZE=	yes
+USE_ZENDEXT=	yes
 SUB_FILES=	pkg-message
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
