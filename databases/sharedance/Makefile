@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.pureftpd.org/pub/sharedance/
 MAINTAINER=	gslin@gslin.org
 COMMENT=	A daemon to centralize keys and associated data
 
-LIB_DEPENDS=	libevent-1.so:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 
 CONFIGURE_ARGS=	--with-largefile
 GNU_CONFIGURE=	yes

@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	High-performance distributed memory object cache system
 
-LIB_DEPENDS=	libevent-1.so:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 
 TEST_DEPENDS=	prove:${PORTSDIR}/lang/${PERL_PORT} \
 		git:${PORTSDIR}/devel/git
