@@ -148,7 +148,6 @@
     SUBDIR += freeradius2
     SUBDIR += freeradius3
     SUBDIR += freerdp
-    SUBDIR += freeswitch
     SUBDIR += freeswitch-core-devel
     SUBDIR += freeswitch-curl-devel
     SUBDIR += freeswitch-devel
