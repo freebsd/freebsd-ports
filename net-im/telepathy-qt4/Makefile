@@ -1,6 +1,6 @@
 # Created by: Alberto Villa <avilla@FreeBSD.org>
-# $FreeBSD: net-im/telepathy-qt4/Makefile 327756 2013-09-20 22:13:34Z bapt $
-#    $MCom: ports/trunk/net-im/telepathy-qt4/Makefile 18872 2013-11-09 09:06:15Z gusi $
+# $FreeBSD$
+#    $MCom: ports/trunk/net-im/telepathy-qt4/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	telepathy-qt4
 PORTVERSION=	0.9.3

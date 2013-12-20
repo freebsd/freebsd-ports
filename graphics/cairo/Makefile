@@ -1,10 +1,9 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/graphics/cairo/Makefile,v 1.101 2010/10/29 15:40:04 kwm Exp $
+#   $MCom: ports/trunk/graphics/cairo/Makefile 18956 2013-12-12 14:55:22Z kwm $
 
 PORTNAME=	cairo
-PORTVERSION=	1.10.2
-PORTREVISION=	7
+PORTVERSION=	1.12.16
 PORTEPOCH?=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://cairographics.org/releases/
@@ -12,30 +11,35 @@ MASTER_SITES=	http://cairographics.org/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Vector graphics library with cross-device output support
 
+PORTSCOUT=	skipv:5c-1\.[1-3]
+
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
-		png15:${PORTSDIR}/graphics/png \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
+
+USE_XZ=		yes
+USES=		pathfix pkgconfig
+USE_XORG=	pixman xext
+USE_GNOME=	ltverhack referencehack
+GNU_CONFIGURE=	yes
+USE_LDCONFIG=	yes
+ltverhack_PATCH_FILES=	build/ltmain.sh
 
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \
 		--disable-directfb \
+		--disable-gallium \
+		--disable-glesv2 \
+		--disable-wgl \
+		--disable-egl \
 		--enable-tee
-USES=		pathfix pkgconfig
-USE_XORG=	pixman
-USE_GNOME=	ltverhack referencehack
-USE_AUTOTOOLS=	libtool
-USE_LDCONFIG=	yes
 
-CPPFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
-
-OPTIONS_DEFINE=	OPENGL XCB GLIB X11
-OPTIONS_DEFAULT=	XCB GLIB X11
+OPTIONS_DEFINE=	OPENGL XCB GLIB X11 
+OPTIONS_DEFAULT=XCB GLIB X11
 XCB_DESC=	Enable XCB (X C-language Binding) Support
 GLIB_DESC=	Enable GObject Functions Feature
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "arm"
@@ -81,16 +85,24 @@ PLIST_SUB+=	GLIB="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e '/test/s/==/=/g' \
-		-e '/LIBS/s/-lrt//' \
+		-e '/LIBS/s/-lrt//'  -e '/LIBS/s|-ldld||' \
+		-e '/LIBS/s|-ldl||' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-lcairo|-lcairo ${PTHREAD_LIBS}|' \
 		${WRKSRC}/src/*.pc.in
 	@${REINPLACE_CMD} -e '/@CAIRO_HAS_PNG_FUNCTIONS_TRUE@.*=/d' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-ldl||g' \
+		${WRKSRC}/util/*/Makefile.in \
+		${WRKSRC}/boilerplate/Makefile.in
 .if ${PORT_OPTIONS:MOPENGL}
 	@${REINPLACE_CMD} 's|@CAIRO_CFLAGS@|-I$$(top_srcdir)/src/glew &|' \
 		${WRKSRC}/src/Makefile.in
 .endif
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcairo*.so.2
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/cairo/*.so.0
 
 .include <bsd.port.post.mk>
 

@@ -1,9 +1,9 @@
 # Created by: Dmitry Sivachenko <demon@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/anjuta3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/devel/anjuta/Makefile 18914 2013-11-23 11:40:23Z gusi $
 
 PORTNAME=	anjuta
-PORTVERSION=	3.4.3
+PORTVERSION=	3.6.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -12,20 +12,29 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integrated Development Environment for C and C++
 
 BUILD_DEPENDS=	glade>=3.12.0:${PORTSDIR}/devel/glade \
-		valac:${PORTSDIR}/lang/vala
+		valac:${PORTSDIR}/lang/vala \
+		itstool:${PORTSDIR}/textproc/itstool
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libgladeui-2.so:${PORTSDIR}/devel/glade \
 		libgdl-3.so:${PORTSDIR}/x11-toolkits/gdl
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme \
 		autogen:${PORTSDIR}/devel/autogen \
-		automake-1.12:${PORTSDIR}/devel/automake \
-		autoconf-2.69:${PORTSDIR}/devel/autoconf \
+		automake>=0:${PORTSDIR}/devel/automake \
+		autoconf>=0:${PORTSDIR}/devel/autoconf \
 		libtool>=2.4:${PORTSDIR}/devel/libtool \
 		gdb>=7.3:${PORTSDIR}/devel/gdb \
 		yelp>=3.0.0:${PORTSDIR}/x11/yelp
-
 USE_XZ=		yes
-USES=		bison gettext gmake pathfix perl5 pkgconfig shared-mime-info
+USE_CSTD=	gnu89
+USES=		bison desktop-file-utils gettext gmake pathfix perl5 \
+		pkgconfig shared-mime-info shebangfix
+SHEBANG_FILES=	plugins/project-wizard/templates/js_minimal/src/main.js \
+		plugins/tools/scripts/find-fixmes.pl \
+		plugins/tools/scripts/translation-status.pl \
+		plugins/tools/scripts/prepare-changelog.pl
+SHEBANG_LANG+=	gjs
+gjs_OLD_CMD=	/usr/bin/gjs
+gjs_CMD=	${LOCALBASE}/bin/gjs
 INSTALLS_ICONS=	yes
 USE_PYTHON=	yes
 USE_LDCONFIG=	yes
@@ -37,19 +46,22 @@ CONFIGURE_ARGS=	--with-symbol-db-shm=/tmp \
 		--disable-packagekit \
 		--enable-introspection=yes
 DOCSDIR=	share/doc/libanjuta
-GLIB_SCHEMAS=	org.gnome.anjuta.code-analyzer.gschema.xml \
-		org.gnome.anjuta.cpp.gschema.xml \
-		org.gnome.anjuta.cvs.gschema.xml \
+GLIB_SCHEMAS=	org.gnome.anjuta.cvs.gschema.xml \
 		org.gnome.anjuta.document-manager.gschema.xml \
 		org.gnome.anjuta.file-manager.gschema.xml \
 		org.gnome.anjuta.gschema.xml \
-		org.gnome.anjuta.js.gschema.xml \
 		org.gnome.anjuta.plugins.build.gschema.xml \
+		org.gnome.anjuta.plugins.cpp.gschema.xml \
 		org.gnome.anjuta.plugins.debug-manager.gschema.xml \
+		org.gnome.anjuta.plugins.indent-c.gschema.xml \
+		org.gnome.anjuta.plugins.indent-python.gschema.xml \
+		org.gnome.anjuta.plugins.js.gschema.xml \
 		org.gnome.anjuta.plugins.message-manager.gschema.xml \
+		org.gnome.anjuta.plugins.parser-cxx.gschema.xml \
+		org.gnome.anjuta.plugins.python.gschema.xml \
 		org.gnome.anjuta.plugins.run.gschema.xml \
 		org.gnome.anjuta.plugins.sourceview.gschema.xml \
-		org.gnome.anjuta.python.gschema.xml \
+		org.gnome.anjuta.plugins.vala.gschema.xml \
 		org.gnome.anjuta.snippets.gschema.xml \
 		org.gnome.anjuta.symbol-db.gschema.xml \
 		org.gnome.anjuta.terminal.gschema.xml \
@@ -111,5 +123,18 @@ post-patch:
 		${WRKSRC}/plugins/build-basic-autotools/plugin.c
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${PREFIX}|g' \
 		${WRKSRC}/libanjuta/anjuta-utils.c
+	@${REINPLACE_CMD} -e 's|ac_ct_CXX" = "x"|CXX" = "x"|g' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|values.h|limits.h|g' \
+		${WRKSRC}/plugins/project-wizard/property.h \
+		${WRKSRC}/plugins/project-wizard/install.h
+	@${REINPLACE_CMD} -e 's|-fprofile-arcs||g' \
+		${WRKSRC}/libanjuta/tests/Makefile.in \
+		${WRKSRC}/libanjuta/tests/Makefile.am
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/anjuta/lib*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/glade/modules/libgladeanjuta.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libanjuta-3.so.0
 
 .include <bsd.port.mk>

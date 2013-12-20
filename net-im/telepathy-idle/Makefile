@@ -1,6 +1,6 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/net-im/telepathy-idle/Makefile 18791 2013-10-11 08:54:52Z gusi $
+#    $MCom: ports/trunk/net-im/telepathy-idle/Makefile 18961 2013-12-15 21:20:29Z kwm $
 
 PORTNAME=	telepathy-idle
 PORTVERSION=	0.1.14
@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	glib20 libxslt:build
+USE_PYTHON_BUILD=yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

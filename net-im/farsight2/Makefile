@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-# $FreeBSD: head/net-im/farsight2/Makefile 327756 2013-09-20 22:13:34Z bapt $
-#    $MCom: ports/trunk/net-im/farsight2/Makefile 18856 2013-11-07 12:46:27Z kwm $
+# $FreeBSD$
+#    $MCom: ports/trunk/net-im/farsight2/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	farsight2
 PORTVERSION=	0.0.31

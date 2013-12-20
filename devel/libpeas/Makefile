@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/libpeas/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/devel/libpeas/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	libpeas
 PORTVERSION=	1.6.1
@@ -13,11 +13,9 @@ COMMENT=	Next evolution of the Gedit plugins engine
 
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 
-NO_STAGE=	yes
 USE_XZ=		yes
 USE_PYTHON=	2.5+
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
 USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gtk30 ltverhack introspection:build
 INSTALLS_ICONS=	yes
@@ -65,5 +63,10 @@ PLIST_SUB+=	GJS="@comment "
 .endif
 
 PLIST_SUB+=	VALA="@comment "
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpeas-1.0/loaders/lib*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/peas-demo/plugins/*/*.so
 
 .include <bsd.port.mk>

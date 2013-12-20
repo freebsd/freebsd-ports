@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/graphics/colord/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#    $MCom: ports/trunk/graphics/colord/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	colord
 PORTVERSION=	1.0.1
@@ -17,7 +17,6 @@ LIB_DEPENDS=	libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit \
 USERS=		colord
 GROUPS=		colord
 
-NO_STAGE=	yes
 USE_XZ=		yes
 USE_GNOME=	gnomehier glib20 intlhack introspection:build
 USES=		gettext gmake pathfix pkgconfig
@@ -48,7 +47,9 @@ OPTIONS_DEFINE=	MANPAGES
 .if ${PORT_OPTIONS:MMANPAGES}
 BUILD_DEPENDS+=	docbook2html:${PORTSDIR}/textproc/docbook-utils \
 		${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-410
-MAN1=		cd-create-profile.1 cd-fix-profile.1 colormgr.1
+PLIST_SUB+=	MAN=""
+.else
+PLIST_SUB+=	MAN="@comment "
 .endif
 
 post-patch:
@@ -70,6 +71,8 @@ post-patch:
 .endif
 
 post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${MKDIR} ${STAGEDIR}/var/db/colord/icc
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/colord-sensors/lib*.so
 
 .include <bsd.port.mk>

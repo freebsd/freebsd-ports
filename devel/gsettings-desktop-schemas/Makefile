@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/gsettings-desktop-schemas/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/devel/gsettings-desktop-schemas/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	gsettings-desktop-schemas
 PORTVERSION=	3.6.1
@@ -16,7 +16,6 @@ LICENSE=	LGPL21
 
 RUN_DEPENDS=	${LOCALBASE}/etc/fonts/conf.avail/31-cantarell.conf:${PORTSDIR}/x11-fonts/cantarell-fonts
 
-NO_STAGE=	yes
 USE_XZ=		yes
 USES=		gettext gmake pathfix perl5 pkgconfig
 USE_PERL5=	build

@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtk-vnc
-PORTVERSION=	0.3.10
-PORTREVISION=	8
+PORTVERSION=	0.4.4
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 
@@ -12,19 +11,23 @@ COMMENT=	VNC viewer widget for GTK+
 
 LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2 \
-		libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
+		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 
-CONFLICTS=	gtk-vnc-0.4.[0-9]*
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-NO_STAGE=	yes
-USE_GNOME=	pygtk2
+USE_XZ=		yes
+USE_GNOME=	gtk20 introspection:build
 USES=		gettext gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-gtkglext=yes
+CONFIGURE_ARGS=	--with-gtk=2.0 --enable-introspection \
+		--disable-plugin --without-python
+MAKE_JOBS_UNSAFE=yes
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.0
 
 .include <bsd.port.mk>

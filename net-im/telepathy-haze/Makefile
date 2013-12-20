@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net-im/telepathy-haze/Makefile 18861 2013-11-08 08:20:16Z kwm $
+#   $MCom: ports/trunk/net-im/telepathy-haze/Makefile 18907 2013-11-21 19:28:11Z gusi $
 
 PORTNAME=	telepathy-haze
 PORTVERSION=	0.6.0
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libpurple.so:${PORTSDIR}/net-im/libpurple \
 		libidn.so:${PORTSDIR}/dns/libidn \
 		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib
 
-USES=		gmake pathfix
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	libxslt:build
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes

@@ -1,10 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net/libgweather/Makefile 17268 2013-04-01 05:13:11Z marcus $
+#   $MCom: ports/trunk/net/libgweather/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	libgweather
-PORTVERSION=	2.30.3
-PORTREVISION=	2
+PORTVERSION=	3.6.2
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 
@@ -12,22 +11,21 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library to accessing online weather informations
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
-LIB_DEPENDS=	soup-2.4:${PORTSDIR}/devel/libsoup
+LIB_DEPENDS=	libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-icon-theme.pc:${PORTSDIR}/misc/gnome-icon-theme
 
-CONFLICTS=	libgweather-3.[0-9]*
-
-USES=		gettext pathfix pkgconfig
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix intlhack gconf2 ltverhack
+USES=		gettext gmake pathfix pkgconfig
+USE_XZ=		yes
 INSTALLS_ICONS=	yes
+USE_GNOME=	gnomehier gnomeprefix intlhack gconf2 ltverhack gtk30
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+GLIB_SCHEMAS=	org.gnome.GWeather.enums.xml \
+		org.gnome.GWeather.gschema.xml
 
-GCONF_SCHEMAS=	gweather.schemas
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.*
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

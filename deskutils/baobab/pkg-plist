@@ -1,4 +1,5 @@
 bin/baobab
+man/man1/baobab.1.gz
 share/applications/baobab.desktop
 share/help/C/baobab/index.page
 share/help/C/baobab/introduction.page

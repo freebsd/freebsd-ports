@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/gnome-panel3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/x11/gnome-panel/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	gnome-panel
 PORTVERSION=	3.6.2
@@ -16,7 +16,7 @@ USE_XZ=		yes
 .if !defined(REFERENCE_PORT)
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libgweather-3.so:${PORTSDIR}/net/libgweather3 \
+LIB_DEPENDS=	libgweather-3.so:${PORTSDIR}/net/libgweather \
 		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit

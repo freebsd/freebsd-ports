@@ -1,20 +1,6 @@
---- configure.orig	2012-08-04 11:48:19.000000000 +0200
-+++ configure	2012-08-04 11:50:50.000000000 +0200
-@@ -14228,11 +14228,12 @@ fi
-     fi
-     if test "$PYTHON_VERSION" != ""
-     then
-+	with_python=`$PYTHON -c "import sys; print sys.exec_prefix"`
- 	if test -r $with_python/include/python$PYTHON_VERSION/Python.h -a \
- 	   -d $with_python/lib/python$PYTHON_VERSION/site-packages
- 	then
- 	    PYTHON_INCLUDES=$with_python/include/python$PYTHON_VERSION
--	    PYTHON_SITE_PACKAGES=$libdir/python$PYTHON_VERSION/site-packages
-+	    PYTHON_SITE_PACKAGES=$with_python/lib/python$PYTHON_VERSION/site-packages
- 	else
- 	    if test -r $prefix/include/python$PYTHON_VERSION/Python.h
- 	    then
-@@ -14635,6 +14636,8 @@ fi
+--- configure.orig	2013-11-24 09:41:13.000000000 +0100
++++ configure	2013-11-24 09:41:55.000000000 +0100
+@@ -14499,6 +14499,8 @@
  	       fi
  	   fi
         ;;

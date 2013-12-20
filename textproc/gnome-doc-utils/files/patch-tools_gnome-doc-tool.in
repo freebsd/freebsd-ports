@@ -1,0 +1,8 @@
+--- tools/gnome-doc-tool.in.orig	2013-12-19 16:08:52.000000000 +0100
++++ tools/gnome-doc-tool.in	2013-12-19 16:08:59.000000000 +0100
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ # gnome-doc-html - Convert documentation to HTML
+ # gnome-doc-html.  Generated from gnome-doc-html.in by configure.
+ # Copyright (C) 2006 Shaun McCance <shaunm@gnome.org>

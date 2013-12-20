@@ -1,6 +1,6 @@
 # Created by: Florent Thoumie <flz@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net-im/telepathy-salut/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/net-im/telepathy-salut/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	telepathy-salut
 PORTVERSION=	0.8.0
@@ -14,7 +14,6 @@ LIB_DEPENDS=	libavahi-glib.so:${PORTSDIR}/net/avahi-app \
 		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup
 
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	glib20 libxslt:build
@@ -25,11 +24,12 @@ CONFIGURE_ARGS=	--disable-Werror --enable-avahi-tests=no
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
-MAN8=		telepathy-salut.8
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|make -C|${GMAKE} -C|g' \
 		${WRKSRC}/src/Makefile.in \
 		${WRKSRC}/tests/Makefile.in
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/telepathy/salut-0/lib/lib*.so
 
 .include <bsd.port.mk>

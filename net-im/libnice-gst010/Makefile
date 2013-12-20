@@ -1,5 +1,5 @@
 # $FreeBSD$
-#    $MCom: ports/trunk/net-im/libnice-gst010/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#    $MCom: ports/trunk/net-im/libnice-gst010/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTREVISION=	0
 PKGNAMESUFFIX=	-gst010
@@ -7,7 +7,7 @@ PKGNAMESUFFIX=	-gst010
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GStreamer 0.10 plugin from libnice
 
-LIB_DEPENDS=	nice:${PORTSDIR}/net-im/libnice
+LIB_DEPENDS=	libnice.so:${PORTSDIR}/net-im/libnice
 
 MASTERDIR=	${.CURDIR}/../libnice
 DESCR=		${.CURDIR}/pkg-descr

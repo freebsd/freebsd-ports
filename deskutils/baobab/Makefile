@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/baobab/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/deskutils/baobab/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	baobab
 PORTVERSION=	3.6.2
@@ -17,16 +17,14 @@ LIB_DEPENDS=	libgtop-2.0.so:${PORTSDIR}/devel/libgtop
 
 CONFLICTS=	gnome-utils-2.[0-9]*
 
-NO_STAGE=	yes
 USE_XZ=		yes
-USES=		gettext gmake pathfix pkgconfig
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomeprefix intlhack libxml2 gtk30
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		baobab.1
 GLIB_SCHEMAS=	org.gnome.baobab.gschema.xml
 
 post-patch:

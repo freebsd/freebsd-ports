@@ -1,4 +1,5 @@
 bin/gnome-system-log
+man/man1/gnome-system-log.1.gz
 share/GConf/gsettings/logview.convert
 share/applications/gnome-system-log.desktop
 share/help/C/gnome-system-log/figures/log-viewer-main.png

@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/sysutils/accountsservice/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#    $MCom: ports/trunk/sysutils/accountsservice/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	accountsservice
 PORTVERSION=	0.6.24
@@ -14,13 +14,12 @@ COMMENT=	D-Bus interface for user account query and manipulation
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 
-NO_STAGE=	yes
 USE_XZ=		yes
 USE_GNOME=	glib20 gnomehier intlhack introspection:build libxslt
 USES=		gettext gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS=	--disable-systemd --localstatedir=/var/
+CONFIGURE_ARGS=	--disable-systemd --localstatedir=/var/ --disable-vala
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
@@ -31,6 +30,7 @@ post-patch:
 		${WRKSRC}/src/user.c ${WRKSRC}/src/Makefile.in
 
 post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so*
 
 .include <bsd.port.mk>
+

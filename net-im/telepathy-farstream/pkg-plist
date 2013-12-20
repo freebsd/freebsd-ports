@@ -8,16 +8,19 @@ lib/libtelepathy-farstream.so
 lib/libtelepathy-farstream.so.3
 libdata/pkgconfig/telepathy-farstream.pc
 share/gir-1.0/TelepathyFarstream-0.6.gir
-share/doc/telepathy-farstream/TfChannel.html
-share/doc/telepathy-farstream/TfContent.html
-share/doc/telepathy-farstream/ch01.html
-share/doc/telepathy-farstream/home.png
-share/doc/telepathy-farstream/index.html
-share/doc/telepathy-farstream/index.sgml
-share/doc/telepathy-farstream/left.png
-share/doc/telepathy-farstream/right.png
-share/doc/telepathy-farstream/style.css
-share/doc/telepathy-farstream/up.png
-share/doc/telepathy-farstream/telepathy-farstream.devhelp2
-@dirrm share/doc/telepathy-farstream
+share/gtk-doc/html/telepathy-farstream/TfChannel.html
+share/gtk-doc/html/telepathy-farstream/TfContent.html
+share/gtk-doc/html/telepathy-farstream/ch01.html
+share/gtk-doc/html/telepathy-farstream/home.png
+share/gtk-doc/html/telepathy-farstream/index.html
+share/gtk-doc/html/telepathy-farstream/index.sgml
+share/gtk-doc/html/telepathy-farstream/left.png
+share/gtk-doc/html/telepathy-farstream/right.png
+share/gtk-doc/html/telepathy-farstream/style.css
+share/gtk-doc/html/telepathy-farstream/telepathy-farstream.devhelp2
+share/gtk-doc/html/telepathy-farstream/up.png
+@dirrm share/gtk-doc/html/telepathy-farstream
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
 @dirrm include/telepathy-1.0/telepathy-farstream
+

@@ -271,16 +271,6 @@ share/locale/xh/LC_MESSAGES/gcr.mo
 share/locale/zh_CN/LC_MESSAGES/gcr.mo
 share/locale/zh_HK/LC_MESSAGES/gcr.mo
 share/locale/zh_TW/LC_MESSAGES/gcr.mo
-share/mime/application/pkcs10+pem.xml
-share/mime/application/pkcs12+pem.xml
-share/mime/application/pkcs7-mime+pem.xml
-share/mime/application/pkcs8+pem.xml
-share/mime/application/pkix-cert+pem.xml
-share/mime/application/pkix-crl+pem.xml
-share/mime/application/x-pem-file.xml
-share/mime/application/x-pem-key.xml
-share/mime/application/x-spkac+base64.xml
-share/mime/application/x-spkac.xml
 share/mime/packages/gcr-crypto-types.xml
 @dirrm share/gtk-doc/html/gcr-3
 @dirrm share/gtk-doc/html/gck

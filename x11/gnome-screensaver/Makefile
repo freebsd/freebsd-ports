@@ -4,6 +4,7 @@
 
 PORTNAME=	gnome-screensaver
 PORTVERSION=	3.6.1
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -22,7 +23,7 @@ USE_XZ=		yes
 USES=		gettext gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xext xxf86vm xxf86misc xscrnsaver
-USE_GNOME=	gnomedesktop3 gnomeprefix intlhack libgnomekbd3
+USE_GNOME=	gnomedesktop3 gnomeprefix intlhack libgnomekbd
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-pam-prefix=${PREFIX}/etc/pam.d \

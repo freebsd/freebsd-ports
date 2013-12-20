@@ -6,6 +6,7 @@ lib/telepathy/salut-0/lib/libwocky.a
 lib/telepathy/salut-0/lib/libwocky.la
 lib/telepathy/salut-0/lib/libwocky.so
 libexec/telepathy-salut
+man/man8/telepathy-salut.8.gz
 share/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.salut.service
 %%DOCSDIR%%/clique.html
 share/telepathy/managers/salut.manager

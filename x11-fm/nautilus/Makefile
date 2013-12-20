@@ -33,6 +33,10 @@ CONFIGURE_ARGS=	--disable-packagekit --disable-tracker
 
 GLIB_SCHEMAS=	org.gnome.nautilus.gschema.xml
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/configure
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnautilus-extension.so.1
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nautilus/extensions-3.0/libnautilus-sendto.so

@@ -4,6 +4,7 @@
 
 PORTNAME=	gnome-settings-daemon
 PORTVERSION=	3.6.3
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -27,7 +28,7 @@ RUN_DEPENDS=	gnome-session>=3.0.0:${PORTSDIR}/x11/gnome-session \
 
 USE_XORG=	xxf86misc
 USE_XZ=		yes
-USE_GNOME=	gnomeprefix intlhack gnomedesktop3 libgnomekbd3 gnomehier
+USE_GNOME=	gnomeprefix intlhack gnomedesktop3 libgnomekbd gnomehier
 USES=		gettext gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

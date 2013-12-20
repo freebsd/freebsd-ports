@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/databases/evolution-data-server3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/databases/evolution-data-server/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	evolution-data-server
 PORTVERSION=	3.6.4
@@ -60,7 +60,7 @@ KRB5_LIB=		`/usr/bin/krb5-config gssapi --libs`
 .endif
 
 .if ${PORT_OPTIONS:MWEATHER}
-LIB_DEPENDS+=		libgweather-3.so:${PORTSDIR}/net/libgweather3
+LIB_DEPENDS+=		libgweather-3.so:${PORTSDIR}/net/libgweather
 CONFIGURE_ARGS+=	--enable-weather
 PLIST_SUB+=		WEATHER=""
 .else

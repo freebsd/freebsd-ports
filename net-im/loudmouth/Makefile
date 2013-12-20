@@ -12,10 +12,9 @@ COMMENT=	Lightweight Jabber client library
 
 LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
 
-NO_STAGE=	yes
 USE_BZIP2=	yes
 USES=		gettext gmake pathfix pkgconfig
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 ltverhack
 CONFIGURE_ARGS=	--disable-gtk-doc
@@ -46,5 +45,8 @@ CONFIGURE_ARGS+=--without-ssl
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 	    	${WRKSRC}/loudmouth/lm-ssl-gnutls.c
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so*
 
 .include <bsd.port.mk>

@@ -13,7 +13,6 @@ COMMENT=	Library to access the secret service API
 BUILD_DEPENDS=	docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-NO_STAGE=	yes
 USE_XZ=		yes
 USE_GNOME=	gnomehier glib20 libxslt:build intltool introspection:build
 USES=		gettext gmake pathfix pkgconfig
@@ -21,6 +20,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-introspection
 
-MAN1=		secret-tool.1
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsecret-1.so.0
 
 .include <bsd.port.mk>

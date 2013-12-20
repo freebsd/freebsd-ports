@@ -1,6 +1,6 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/databases/glom/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/databases/glom/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	glom
 PORTVERSION=	1.24.0
@@ -23,12 +23,11 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 		${LOCALBASE}/libdata/pkgconfig/libgda-mysql-5.0.pc:${PORTSDIR}/databases/libgda5-mysql \
 		${LOCALBASE}/libdata/pkgconfig/libgda-postgres-5.0.pc:${PORTSDIR}/databases/libgda5-postgresql
 
-NO_STAGE=	yes
 USE_XZ=		yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-USES=		gettext gmake pathfix pkgconfig shared-mime-info \
-		desktop-file-utils
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
+		shared-mime-info
 USE_GNOME=	gnomedocutils gnomeprefix intltool pygobject3 libxml2 \
 		gtksourceviewmm3 libgdamm5
 USE_LDCONFIG=	yes
@@ -60,5 +59,9 @@ post-patch:
 		${WRKSRC}/glom/mode_design/layout/layout_item_dialogs/comboentry_borderwidth.cc \
 		${WRKSRC}/glom/mode_design/layout/layout_item_dialogs/dialog_group_by.cc \
 		${WRKSRC}/glom/main.cc
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.*
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/*.so
 
 .include <bsd.port.mk>

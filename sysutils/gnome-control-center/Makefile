@@ -4,6 +4,7 @@
 
 PORTNAME=	gnome-control-center
 PORTVERSION=	3.6.3
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -38,7 +39,7 @@ CONFLICTS=	gnome-media-2.[0-9]*
 USE_XZ=		yes
 USES=		gettext gmake pathfix pkgconfig shared-mime-info
 USE_GNOME=	gnomeprefix gnomehier intlhack libxml2 gnomemenus3 \
-		libgnomekbd3 gnomedesktop3 gconf2
+		libgnomekbd gnomedesktop3 gconf2
 USE_XORG=	xscrnsaver x11 xxf86misc kbproto xi
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

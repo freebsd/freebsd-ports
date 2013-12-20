@@ -7,6 +7,8 @@ bin/vapigen-%%VERSION%%
 lib/vala-%%VERSION%%/gen-introspect-%%VERSION%%
 libdata/pkgconfig/vapigen-%%VERSION%%.pc
 libdata/pkgconfig/vapigen.pc
+man/man1/vala-gen-introspect.1.gz
+man/man1/vapigen.1.gz
 share/aclocal/vapigen.m4
 %%DATADIR%%/Makefile.vapigen
 @dirrm lib/vala-%%VERSION%%

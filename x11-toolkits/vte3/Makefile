@@ -13,7 +13,7 @@ PKGNAMESUFFIX?=	3
 DIST_SUBDIR=	gnome3
 
 MAINTAINER?=	gnome@FreeBSD.org
-COMMENT?=	Gtk 3 based terminal widget with accessibility and I18N support
+COMMENT?=	Terminal widget with improved accessibility and I18N support
 
 USE_XZ=		yes
 

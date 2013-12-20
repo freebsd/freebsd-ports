@@ -15,6 +15,7 @@ lib/librsvg-2.la
 lib/librsvg-2.so
 lib/librsvg-2.so.2
 libdata/pkgconfig/librsvg-2.0.pc
+man/man1/rsvg-convert.1.gz
 share/doc/rsvg-2.0/RsvgHandle.html
 share/doc/rsvg-2.0/annotation-glossary.html
 share/doc/rsvg-2.0/api-index-2-14.html

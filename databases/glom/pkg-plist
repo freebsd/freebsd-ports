@@ -310,7 +310,6 @@ share/locale/sv/LC_MESSAGES/glom.mo
 share/locale/tr/LC_MESSAGES/glom.mo
 share/locale/vi/LC_MESSAGES/glom.mo
 share/locale/zh_CN/LC_MESSAGES/glom.mo
-share/mime/application/x-glom.xml
 share/mime/packages/glom.xml
 share/omf/glom/glom-C.omf
 share/omf/glom/glom-de.omf

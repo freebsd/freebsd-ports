@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/security/gcr/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#    $MCom: ports/trunk/security/gcr/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	gcr
 PORTVERSION=	3.6.2
@@ -18,14 +18,17 @@ LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
 
 CONFLICTS=	gnome-keyring-2.[0-9]*
 
-NO_STAGE=	yes
 USE_XZ=		yes
 USE_GNOME=	gtk30 intlhack introspection:build
-USES=		gettext gmake pathfix pkgconfig shared-mime-info
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
+		shared-mime-info
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
 GLIB_SCHEMAS=	org.gnome.crypto.pgp.gschema.xml
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so*
 
 .include <bsd.port.mk>

@@ -4,6 +4,11 @@ bin/gcm-inspect
 bin/gcm-picker
 bin/gcm-viewer
 %%RAW%%libexec/gcm-helper-exiv
+man/man1/gcm-calibrate.1.gz
+man/man1/gcm-import.1.gz
+man/man1/gcm-inspect.1.gz
+man/man1/gcm-picker.1.gz
+man/man1/gcm-viewer.1.gz
 share/applications/gcm-calibrate.desktop
 share/applications/gcm-import.desktop
 share/applications/gcm-picker.desktop
@@ -69,6 +74,10 @@ share/help/es/gnome-color-manager/color-import-linux.page
 share/help/es/gnome-color-manager/color-import-osx.page
 share/help/es/gnome-color-manager/color-import-windows.page
 share/help/es/gnome-color-manager/legal.xml
+share/help/fr/gnome-color-manager/color-import-linux.page
+share/help/fr/gnome-color-manager/color-import-osx.page
+share/help/fr/gnome-color-manager/color-import-windows.page
+share/help/fr/gnome-color-manager/legal.xml
 share/icons/hicolor/16x16/apps/gnome-color-manager.png
 share/icons/hicolor/16x16/mimetypes/application-vnd.iccprofile.png
 share/icons/hicolor/22x22/apps/gnome-color-manager.png
@@ -88,6 +97,7 @@ share/icons/hicolor/scalable/mimetypes/application-vnd.iccprofile.svg
 share/locale/as/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ar/LC_MESSAGES/gnome-color-manager.mo
 share/locale/bg/LC_MESSAGES/gnome-color-manager.mo
+share/locale/bn_IN/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ca/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-color-manager.mo
 share/locale/cs/LC_MESSAGES/gnome-color-manager.mo
@@ -117,17 +127,20 @@ share/locale/lv/LC_MESSAGES/gnome-color-manager.mo
 share/locale/mr/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ml/LC_MESSAGES/gnome-color-manager.mo
 share/locale/nb/LC_MESSAGES/gnome-color-manager.mo
+share/locale/or/LC_MESSAGES/gnome-color-manager.mo
 share/locale/pa/LC_MESSAGES/gnome-color-manager.mo
 share/locale/pl/LC_MESSAGES/gnome-color-manager.mo
 share/locale/pt/LC_MESSAGES/gnome-color-manager.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ro/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ru/LC_MESSAGES/gnome-color-manager.mo
+share/locale/sk/LC_MESSAGES/gnome-color-manager.mo
 share/locale/sl/LC_MESSAGES/gnome-color-manager.mo
 share/locale/sr/LC_MESSAGES/gnome-color-manager.mo
 share/locale/sr@latin/LC_MESSAGES/gnome-color-manager.mo
 share/locale/sv/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ta/LC_MESSAGES/gnome-color-manager.mo
+share/locale/te/LC_MESSAGES/gnome-color-manager.mo
 share/locale/th/LC_MESSAGES/gnome-color-manager.mo
 share/locale/ug/LC_MESSAGES/gnome-color-manager.mo
 share/locale/uk/LC_MESSAGES/gnome-color-manager.mo
@@ -141,14 +154,19 @@ share/locale/zh_TW/LC_MESSAGES/gnome-color-manager.mo
 @dirrmtry share/locale/ug
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/or/LC_MESSAGES
+@dirrmtry share/locale/or
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrm share/help/fr/gnome-color-manager
+@dirrm share/help/es/gnome-color-manager
+@dirrm share/help/el/gnome-color-manager
+@dirrm share/help/de/gnome-color-manager
+@dirrm share/help/C/gnome-color-manager
 @dirrm %%DATADIR%%/ti1
 @dirrm %%DATADIR%%/targets
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/figures
 @dirrm %%DATADIR%%
-@dirrm share/help/es/gnome-color-manager
-@dirrm share/help/el/gnome-color-manager
-@dirrm share/help/de/gnome-color-manager
-@dirrm share/help/C/gnome-color-manager

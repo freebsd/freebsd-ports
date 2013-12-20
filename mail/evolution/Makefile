@@ -1,6 +1,6 @@
 # Created by: Ade Lovett <ade@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/mail/evolution3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/mail/evolution/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	evolution
 PORTVERSION=	3.6.4
@@ -80,7 +80,7 @@ CONFIGURE_ARGS+=--with-openldap=no
 .endif
 
 .if ${PORT_OPTIONS:MWEATHER}
-LIB_DEPENDS+=	libgweather-3.so:${PORTSDIR}/net/libgweather3
+LIB_DEPENDS+=	libgweather-3.so:${PORTSDIR}/net/libgweather
 CONFIGURE_ARGS+=--enable-weather
 PLIST_SUB+=	WEATHER=""
 .else

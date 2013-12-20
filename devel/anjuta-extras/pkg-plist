@@ -110,3 +110,6 @@ share/pixmaps/anjuta/anjuta-scratchbox-48.png
 @dirrmtry share/locale/ca@valencia
 @dirrmtry share/locale/be@latin/LC_MESSAGES
 @dirrmtry share/locale/be@latin
+@dirrm share/gnome/help/anjuta-manual/de
+@dirrm share/gnome/help/anjuta-manual/C
+@dirrm share/gnome/help/anjuta-manual

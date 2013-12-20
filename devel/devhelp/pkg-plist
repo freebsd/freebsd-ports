@@ -12,7 +12,6 @@ include/devhelp-3.0/devhelp/dh-language.h
 include/devhelp-3.0/devhelp/dh-link.h
 include/devhelp-3.0/devhelp/dh-search.h
 include/devhelp-3.0/devhelp/dh-window.h
-lib/libdevhelp-3.a
 lib/libdevhelp-3.la
 lib/libdevhelp-3.so
 lib/libdevhelp-3.so.1

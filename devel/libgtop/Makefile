@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-# $FreeBSD: head/devel/libgtop/Makefile 330901 2013-10-19 16:21:20Z kwm $
-#   $MCom: ports/trunk/devel/libgtop/Makefile 18895 2013-11-18 16:06:52Z kwm $
+# $FreeBSD$
+#   $MCom: ports/trunk/devel/libgtop/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	libgtop
 PORTVERSION=	2.28.5

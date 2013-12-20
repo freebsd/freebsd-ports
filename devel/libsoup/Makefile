@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-# $FreeBSD: head/devel/libsoup/Makefile 313633 2013-03-08 10:51:34Z kwm $
-#   $MCom: ports/trunk/devel/libsoup/Makefile 18692 2013-09-22 00:45:30Z kwm $
+# $FreeBSD$
+#   $MCom: ports/trunk/devel/libsoup/Makefile 18964 2013-12-19 13:32:54Z kwm $
 
 PORTNAME=	libsoup
 PORTVERSION=	2.42.2
@@ -17,7 +17,6 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 RUN_DEPENDS=	glib-networking>=2.29.18:${PORTSDIR}/net/glib-networking
 
 USE_XZ=		yes
-NO_STAGE=	yes
 
 .if !defined(REFERENCE_PORT)
 
@@ -25,7 +24,7 @@ USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomehier glib20 libxml2 ltverhack referencehack intltool
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USE_PYTHON_BUILD=	-2.7
 CONFIGURE_ARGS=	--disable-more-warnings
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -46,27 +45,30 @@ CONFIGURE_ARGS+=--without-gnome
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
 		${WRKSRC}/configure
+	 @${REINPLACE_CMD} -e 's|env python|env ${PYTHON_VERSION}|g' \
+		${WRKSRC}/libsoup/tld-parser.py
 
 .if defined(SOUP_SLAVE)
 do-build:
 	cd ${WRKSRC}/libsoup && ${GMAKE} libsoup-gnome-2.4.la
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.a ${PREFIX}/lib/
-	${INSTALL_DATA} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.la ${PREFIX}/lib/
-	${INSTALL_DATA} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.so ${PREFIX}/lib/
-	${INSTALL_DATA} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.so.1 ${PREFIX}/lib/
-	cd ${WRKSRC}/libsoup && ${GMAKE} install-libsoupgnomeincludeHEADERS
+	${INSTALL_PROGRAM} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.a ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.la ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_PROGRAM} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.so ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_PROGRAM} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.so.1 ${STAGEDIR}${PREFIX}/lib/
+	cd ${WRKSRC}/libsoup && DESTDIR=${STAGEDIR} ${GMAKE} install-libsoupgnomeincludeHEADERS
 .endif
 
 post-install:
 .if defined(SOUP_SLAVE)
-	@${MKDIR} ${PREFIX}/libdata/pkgconfig
-	@${INSTALL_DATA} ${WRKSRC}/libsoup-gnome-2.4.pc \
-		${PREFIX}/libdata/pkgconfig/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/libsoup-gnome-2.4.pc \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 .else
-	@${INSTALL_DATA} ${WRKSRC}/libsoup/soup-connection.h \
-	    	${PREFIX}/include/libsoup-2.4/libsoup/soup-connection.h
+	${INSTALL_DATA} ${WRKSRC}/libsoup/soup-connection.h \
+		${STAGEDIR}${PREFIX}/include/libsoup-2.4/libsoup/soup-connection.h
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsoup*.so*
 .endif
 
 .include <bsd.port.mk>

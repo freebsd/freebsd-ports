@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-utils/Makefile 18905 2013-11-19 10:31:31Z gusi $
+#   $MCom: ports/trunk/deskutils/gnome-utils/Makefile 18911 2013-11-22 10:09:54Z gusi $
 
 PORTNAME=	gnome-utils
 PORTVERSION=	3.6.0
@@ -20,7 +20,8 @@ RUN_DEPENDS=	baobab>=3.0:${PORTSDIR}/deskutils/baobab \
 		gnome-search-tool>=3.0:${PORTSDIR}/deskutils/gnome-search-tool \
 		gnome-dictionary>=3.0:${PORTSDIR}/deskutils/gnome-dictionary \
 		gnome-system-log>=3.0:${PORTSDIR}/deskutils/gnome-system-log \
-		gnome-font-viewer>=3.0:${PORTSDIR}/deskutils/gnome-font-viewer
+		gnome-font-viewer>=3.0:${PORTSDIR}/deskutils/gnome-font-viewer \
+		gnome-system-monitor>=3.0:${PORTSDIR}/sysutils/gnome-system-monitor
 
 NO_BUILD=	yes
 NO_INSTALL=	yes

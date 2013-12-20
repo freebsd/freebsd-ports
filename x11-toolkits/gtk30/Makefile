@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/x11-toolkits/gtk30/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	gtk
-PORTVERSION=	3.8.4
+PORTVERSION=	3.10.6
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
@@ -19,19 +19,20 @@ LICENSE=	LGPL20
 
 USE_XZ=		yes
 
-.if !defined(REFERENCE_PORT)
+.if defined(REFERENCE_PORT)
+PORTSCOUT=	ignore:1
+.else
+PORTSCOUT=	limit:1,even
 
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/atk-bridge-2.0.pc:${PORTSDIR}/accessibility/at-spi2-atk
-# something goes wrong with USE_GNOME=introspection so do it manualy for now
-BUILD_DEPENDS+=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		${LOCALBASE}/libdata/pkgconfig/atk-bridge-2.0.pc:${PORTSDIR}/accessibility/at-spi2-atk
 
 USE_PERL5=	build
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	atk pango gdkpixbuf2 ltverhack gtk-update-icon-cache
-#		introspection:build
+GNU_CONFIGURE=	yes
+USE_GNOME=	atk pango gdkpixbuf2 ltverhack gtk-update-icon-cache \
+		introspection:build
 USES=		gettext gmake pathfix perl5 pkgconfig
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite
@@ -39,10 +40,12 @@ CONFIGURE_ARGS=	--enable-gtk2-dependency --disable-packagekit
 CPPFLAGS+=	-I${LOCALBASE}/include -fno-omit-frame-pointer
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	INTROSPECTION_GIRDIR=`pkg-config --variable=girdir gobject-introspection-1.0`
+ltverhack_PATCH_FILES=build-aux/ltmain.sh
 
 GLIB_SCHEMAS=	org.gtk.Demo.gschema.xml \
 		org.gtk.Settings.ColorChooser.gschema.xml \
-		org.gtk.Settings.FileChooser.gschema.xml
+		org.gtk.Settings.FileChooser.gschema.xml \
+		org.gtk.exampleapp.gschema.xml
 
 OPTIONS_DEFINE=	CUPS COLORD DEBUG
 OPTIONS_DEFAULT=CUPS COLORD

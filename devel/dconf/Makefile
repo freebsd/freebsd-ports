@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
-# $FreeBSD: devel/dconf/Makefile 313956 2013-03-12 09:45:07Z kwm $
-#   $MCom: ports/trunk/devel/dconf/Makefile 18855 2013-11-07 12:12:25Z kwm $
+# $FreeBSD$
+#   $MCom: ports/trunk/devel/dconf/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME?=	dconf
 PORTVERSION=	0.16.1

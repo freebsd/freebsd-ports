@@ -20,6 +20,7 @@ lib/libsecret-1.so
 lib/libsecret-1.so.0
 libdata/pkgconfig/libsecret-1.pc
 libdata/pkgconfig/libsecret-unstable.pc
+man/man1/secret-tool.1.gz
 share/gir-1.0/Secret-1.gir
 share/gir-1.0/SecretUnstable-0.gir
 share/gtk-doc/html/libsecret-1/SecretCollection.html

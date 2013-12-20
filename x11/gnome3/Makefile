@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/gnome3/Makefile 18906 2013-11-19 10:42:34Z gusi $
+#   $MCom: ports/trunk/x11/gnome3/Makefile 18918 2013-11-24 07:02:55Z kwm $
 
 PORTNAME=	gnome3
 PORTVERSION=	3.6.2
@@ -77,7 +77,7 @@ RUN_DEPENDS+=	empathy>=3.0.0:${PORTSDIR}/net-im/empathy \
 		gdm>=3.0.0:${PORTSDIR}/x11/gdm \
 		evolution>=3.0.0:${PORTSDIR}/mail/evolution \
 		cheese>=3.0.0:${PORTSDIR}/multimedia/cheese \
-		alacarte:${PORTSDIR}/deskutils/alacarte
+		alacarte>=3.0.0:${PORTSDIR}/deskutils/alacarte
 
 .if ${PORT_OPTIONS:MMAPI}
 #RUN_DEPENDS+=	evolution-mapi>=3.0.0:${PORTSDIR}/mail/evolution-mapi

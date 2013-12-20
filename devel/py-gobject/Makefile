@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/py-gobject/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/devel/py-gobject/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	gobject
 PORTVERSION=	2.28.6
@@ -22,7 +22,6 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py
 LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
 
-NO_STAGE=	yes
 USE_XZ=		yes
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	glib20 introspection:build
@@ -35,7 +34,14 @@ CONFLICTS=	py*-gtk-0*
 PLIST_SUB=	PYTHON_VER="${PYTHON_VER}"
 
 post-install:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
-		${PREFIX}/share/pygobject/2.0/codegen
+	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -d \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -f ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -f ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -f ${STAGEDIR}${PREFIX}/share/pygobject/2.0/codegen
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyglib-2.0-${PYTHON_VERSION}.so.0
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/*/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/*/*/*.so
 
 .include <bsd.port.mk>

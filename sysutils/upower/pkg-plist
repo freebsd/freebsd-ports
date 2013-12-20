@@ -18,6 +18,9 @@ lib/libupower-glib.so
 lib/libupower-glib.so.1
 libdata/pkgconfig/upower-glib.pc
 libexec/upowerd
+%%MAN%%man/man1/upower.1.gz
+%%MAN%%man/man7/UPower.7.gz
+%%MAN%%man/man8/upowerd.8.gz
 share/dbus-1/interfaces/org.freedesktop.UPower.Device.xml
 share/dbus-1/interfaces/org.freedesktop.UPower.KbdBacklight.xml
 share/dbus-1/interfaces/org.freedesktop.UPower.QoS.xml

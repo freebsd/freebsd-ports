@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
-# $FreeBSD: devel/dconf-editor/Makefile 313633 2013-03-08 10:51:34Z kwm $
-#   $MCom: ports/trunk/devel/dconf-editor/Makefile 18855 2013-11-07 12:12:25Z kwm $
+# $FreeBSD$
+#   $MCom: ports/trunk/devel/dconf-editor/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	dconf
 PORTREVISION=	0

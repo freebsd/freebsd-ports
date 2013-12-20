@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-# $FreeBSD: head/x11-toolkits/gtksourceview3/Makefile 316407 2013-04-24 07:35:40Z ak $
-#   $MCom: ports/trunk/x11-toolkits/gtksourceview3/Makefile 18771 2013-10-06 11:56:38Z kwm $
+# $FreeBSD$
+#   $MCom: ports/trunk/x11-toolkits/gtksourceview3/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	gtksourceview
 PORTVERSION=	3.6.3

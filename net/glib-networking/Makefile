@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net/glib-networking/Makefile 18537 2013-06-16 20:08:30Z kwm $
+#   $MCom: ports/trunk/net/glib-networking/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	glib-networking
 PORTVERSION=	2.36.2
@@ -20,7 +20,6 @@ LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
 		gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-NO_STAGE=	yes
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 intltool
@@ -31,5 +30,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e' s|-Wmissing-include-dirs||g' ${WRKSRC}/configure
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gio/modules/lib*.so
 
 .include <bsd.port.mk>

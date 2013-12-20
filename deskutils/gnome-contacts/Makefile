@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#  $MCom: ports/trunk/deskutils/gnome-contacts/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#  $MCom: ports/trunk/deskutils/gnome-contacts/Makefile 18910 2013-11-22 10:02:02Z gusi $
 
 PORTNAME=	gnome-contacts
 PORTVERSION=	3.6.2
@@ -25,22 +25,22 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.gnome.Contacts.gschema.xml
 
-CHEESE_DESC=	Cheese webcam support
+#CHEESE_DESC=	Cheese webcam support
 
-OPTIONS_DEFINE_i386=	CHEESE
-OPTIONS_DEFAULT_i386=	CHEESE
-OPTIONS_DEFINE_amd64=	CHEESE
-OPTIONS_DEFAULT_amd64=	CHEESE
+#OPTIONS_DEFINE_i386=	CHEESE
+#OPTIONS_DEFAULT_i386=	CHEESE
+#OPTIONS_DEFINE_amd64=	CHEESE
+#OPTIONS_DEFAULT_amd64=	CHEESE
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MCHEESE}
+#.if ${PORT_OPTIONS:MCHEESE}
 CONFIGURE_ARGS+=--with-cheese
 BUILD_DEPENDS+=	cheese>=3.0.1:${PORTSDIR}/multimedia/cheese
 LIB_DEPENDS+=	libcheese-gtk.so:${PORTSDIR}/multimedia/cheese
-.else
-BORKEN=		sorry cheese less build is currently borken
-CONFIGURE_ARGS+=--without-cheese
-.endif
+#.else
+#BROKEN=		sorry cheese less build is currently borken
+#CONFIGURE_ARGS+=--without-cheese
+#.endif
 
 .include <bsd.port.mk>

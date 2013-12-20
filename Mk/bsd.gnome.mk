@@ -3,7 +3,7 @@
 #
 # $FreeBSD$
 #	$NetBSD: $
-#     $MCom: ports/trunk/Mk/bsd.gnome.mk 18899 2013-11-18 18:34:00Z kwm $
+#     $MCom: ports/trunk/Mk/bsd.gnome.mk 18938 2013-12-05 14:02:58Z kwm $
 #
 # Please view me with 4 column tabs!
 
@@ -91,7 +91,7 @@ _USE_GNOME_ALL+= atk atspi cairo desktopfileutils eel2 gal2 \
 # GNOME 3 components
 _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
 		gnomemenus3 gnomepanel3 gtk30 gtkhtml4 gtksourceview3 libgda5 \
-		libgda5-ui libgnomekbd3 libwnck3 metacity3 nautilus3 pygobject3 vte3
+		libgda5-ui libwnck3 metacity3 nautilus3 pygobject3 vte3
 
 # C++ bindings
 _USE_GNOME_ALL+=atkmm cairomm gconfmm gconfmm26 glibmm gtkmm20 gtkmm24 \
@@ -425,7 +425,7 @@ gal2_USE_GNOME_IMPL=gnomeui libgnomeprintui
 gnomecontrolcenter3_DETECT=	${LOCALBASE}/libdata/pkgconfig/gnome-keybindings.pc
 gnomecontrolcenter3_BUILD_DEPENDS=	${gnomecontrolcenter3_DETECT}:${PORTSDIR}/sysutils/gnome-control-center
 gnomecontrolcenter3_RUN_DEPENDS=	${gnomecontrolcenter3_DETECT}:${PORTSDIR}/sysutils/gnome-control-center
-gnomecontrolcenter3_USE_GNOME_IMPL=gnomemenus3 libgnomekbd3 gnomedesktop3 gconf2
+gnomecontrolcenter3_USE_GNOME_IMPL=gnomemenus3 libgnomekbd gnomedesktop3 gconf2
 gnomecontrolcenter3_GNOME_DESKTOP_VERSION=3
 
 libgda2_LIB_DEPENDS=	libgda-2.so:${PORTSDIR}/databases/libgda2
@@ -557,17 +557,9 @@ gnomesharp20_BUILD_DEPENDS=	${gnomesharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnom
 gnomesharp20_RUN_DEPENDS=	${gnomesharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-sharp20
 gnomesharp20_USE_GNOME_IMPL=	gnomepanel3 gtkhtml3 gtksharp20 librsvg2 vte
 
-#libgnomekbd_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgnomekbd.pc
-libgnomekbd_DETECT=		${LOCALBASE}/lib/libgnomekbd.so.4
-libgnomekbd_LIB_DEPENDS=	libgnomekbd.so.4:${PORTSDIR}/x11/libgnomekbd
-libgnomekbd_USE_GNOME_IMPL=	gconf2
-libgnomekbd_GNOME_DESKTOP_VERSION=2
-
-#libgnomekbd3_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgnomekbd.pc
-libgnomekbd3_DETECT=		${LOCALBASE}/lib/libgnomekbd.so.8
-libgnomekbd3_LIB_DEPENDS=	libgnomekbd.so.8:${PORTSDIR}/x11/libgnomekbd3
-libgnomekbd3_USE_GNOME_IMPL=	gtk30
-libgnomekbd3_GNOME_DESKTOP_VERSION=3
+libgnomekbd_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgnomekbd.pc
+libgnomekbd_LIB_DEPENDS=	libgnomekbd.so:${PORTSDIR}/x11/libgnomekbd
+libgnomekbd_USE_GNOME_IMPL=	gtk30 libxml2
 
 pygtksourceview_DETECT=		${LOCALBASE}/libdata/pkgconfig/pygtksourceview-2.0.pc
 pygtksourceview_BUILD_DEPENDS=	${pygtksourceview_DETECT}:${PORTSDIR}/x11-toolkits/py-gtksourceview
@@ -781,7 +773,7 @@ USE_CSTD=	gnu89
 _GNOME_NEED_LIBTOOL=1
 . endif
 
-# this is splitted out from the above entry because fmake is trows a fit otherwise
+# this is splitted out from the above entry because fmake trows a fit otherwise
 . if defined(USE_AUTOTOOLS) && ${USE_AUTOTOOLS:Mlibtool*}
 .  if ${USE_GNOME:Mltverhack*}!= ""
 _GNOME_NEED_LIBTOOL=1

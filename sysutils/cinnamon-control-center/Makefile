@@ -1,6 +1,6 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#
+#   $MCom$
 
 PORTNAME=	cinnamon-control-center
 PORTVERSION=	1.8.2
@@ -23,6 +23,7 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libmuffin.so:${PORTSDIR}/x11-wm/muffin \
 		libtelepathy-glib.so:${PORTSDIR}/net-im/telepathy-glib \
 		libtelepathy-logger.so:${PORTSDIR}/net-im/telepathy-logger \
+		libgnomekbdui.so:${PORTSDIR}/x11/libgnomekbd \
 		libfolks.so:${PORTSDIR}/net-im/folks \
 		libpulse.so:${PORTSDIR}/audio/pulseaudio \
 		libcroco-0.6.so:${PORTSDIR}/textproc/libcroco \

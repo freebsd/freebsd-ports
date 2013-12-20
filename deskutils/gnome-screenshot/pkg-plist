@@ -1,4 +1,5 @@
 bin/gnome-screenshot
+man/man1/gnome-screenshot.1.gz
 share/GConf/gsettings/gnome-screenshot.convert
 share/applications/gnome-screenshot.desktop
 share/locale/af/LC_MESSAGES/gnome-screenshot.mo

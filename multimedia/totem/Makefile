@@ -1,6 +1,6 @@
 # Created by: Hendrik Scholz <hendrik@scholz.net>
 # $FreeBSD$
-#   $MCom: ports/trunk/multimedia/totem3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/multimedia/totem/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	totem
 PORTVERSION=	3.6.3
@@ -26,7 +26,6 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-co
 		gnome-icon-theme-symbolic>=2.91.0:${PORTSDIR}/x11-themes/gnome-icon-theme-symbolic \
 		grilo-plugins>=0.2:${PORTSDIR}/net/grilo-plugins
 
-NO_STAGE=	yes
 USE_PYTHON=	yes
 USE_XORG=	x11 xproto xtst ice sm
 USE_XZ=		yes
@@ -35,24 +34,22 @@ USE_GNOME=	gnomeprefix intlhack gtk30 libxml2 nautilus3 ltverhack \
 		pygobject3 gnomedocutils gnomehier introspection:build
 USE_GSTREAMER1=	core good bad soup ugly
 INSTALLS_ICONS=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALLS_OMF=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	LIBS="-lXrandr" \
-		BROWSER_PLUGIN_DIR="${WEBPLUGINS_DIR}"
+CONFIGURE_ENV=	LIBS="-lXrandr"
 CONFIGURE_ARGS=	--with-plugins="${TOTEM_PLUGINS}"
 SHEBANG_FILES=	data/totem-bugreport.py
 
-MAN1=		totem.1 totem-video-thumbnailer.1
 GLIB_SCHEMAS=	org.gnome.totem.enums.xml \
 		org.gnome.totem.gschema.xml \
 		org.gnome.totem.plugins.opensubtitles.gschema.xml
 
 OPTIONS_DEFINE=	LIRC BROWSER_PLUGINS
-BROWSER_PLUGINS_DESC=	Plugins for gecko browser
+BROWSER_PLUGINS_DESC=	Web browser plugins
 TRACKER_DESC=	Tracker local search plugin
 
 OPTIONS_DEFAULT=BROWSER_PLUGINS
@@ -91,11 +88,12 @@ CONFIGURE_ARGS+=--enable-browser-plugins \
 		--enable-narrowspace-plugin
 PLIST_SUB+=	BROWSER_PLUGINS=""
 
-USE_WEBPLUGINS=		webkit-gtk3
-WEBPLUGINS_FILES=	libtotem-cone-plugin.so libtotem-gmp-plugin.so \
+USES+=		webplugin:native
+WEBPLUGIN_FILES=	libtotem-cone-plugin.so libtotem-gmp-plugin.so \
 			libtotem-mully-plugin.so \
 			libtotem-narrowspace-plugin.so
-.include "${PORTSDIR}/www/firefox/Makefile.webplugins"
+CONFIGURE_ENV+=	BROWSER_PLUGIN_DIR="${WEBPLUGIN_DIR}"
+
 .else
 CONFIGURE_ARGS+=--disable-browser-plugins \
 		--disable-basic-plugin \
@@ -123,7 +121,5 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtotem.so.0
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/nautilus/extensions-3.0/libtotem-properties-page.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/browser_plugins/totem/libtotem-*-plugin.so
-# remove after stage conversion
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

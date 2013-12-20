@@ -1,5 +1,5 @@
 # $FreeBSD$
-#    $MCom: ports/trunk/net-im/telepathy-glib/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#    $MCom: ports/trunk/net-im/telepathy-glib/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	telepathy-glib
 PORTVERSION=	0.20.2
@@ -15,8 +15,6 @@ RUN_DEPENDS=	vapigen:${PORTSDIR}/lang/vala-vapigen
 
 PORTSCOUT=	limitw:1,even
 
-NO_STAGE=	yes
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	glib20 gnomehier introspection:build libxslt:build ltverhack
@@ -24,5 +22,8 @@ USE_PYTHON_BUILD=	yes
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-vala-bindings
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so*
 
 .include <bsd.port.mk>

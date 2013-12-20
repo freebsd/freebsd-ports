@@ -1,4 +1,5 @@
 bin/gnome-search-tool
+man/man1/gnome-search-tool.1.gz
 share/GConf/gsettings/gnome-search-tool.convert
 share/applications/gnome-search-tool.desktop
 share/help/C/gnome-search-tool/index.docbook

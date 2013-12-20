@@ -1,6 +1,6 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
-# $FreeBSD: head/devel/glibmm/Makefile 313633 2013-03-08 10:51:34Z kwm $
-#   $MCom: ports/trunk/devel/glibmm/Makefile 18900 2013-11-18 18:38:25Z kwm $
+# $FreeBSD$
+#   $MCom: ports/trunk/devel/glibmm/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	glibmm
 PORTVERSION=	2.38.1

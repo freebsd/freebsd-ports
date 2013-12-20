@@ -1,10 +1,10 @@
 # Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
-# $FreeBSD: head/devel/glib20/Makefile 326307 2013-09-04 18:06:07Z madpilot $
-#   $MCom: ports/trunk/devel/glib20/Makefile 18887 2013-11-12 23:35:33Z kwm $
+# $FreeBSD$
+#   $MCom: ports/trunk/devel/glib20/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	glib
 PORTVERSION=	2.38.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

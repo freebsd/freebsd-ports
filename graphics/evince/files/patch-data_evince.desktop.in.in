@@ -1,0 +1,10 @@
+--- data/evince.desktop.in.in.orig	2013-11-22 21:25:48.000000000 +0100
++++ data/evince.desktop.in.in	2013-11-22 21:25:55.000000000 +0100
+@@ -7,7 +7,6 @@
+ Terminal=false
+ Type=Application
+ Icon=evince
+-NoDisplay=true
+ X-GNOME-DocPath=
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+ X-GNOME-Bugzilla-Product=evince

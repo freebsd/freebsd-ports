@@ -1,6 +1,6 @@
 # Created by: Koop Mast<kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/sysutils/polkit/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/sysutils/polkit/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	polkit
 PORTVERSION=	0.105
@@ -14,7 +14,6 @@ COMMENT=	Framework for controlling access to system-wide components
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	dbus-launch:${PORTSDIR}/devel/dbus
 
-NO_STAGE=	yes
 USE_GNOME=	glib20 intlhack gnomehier introspection
 USES=		gettext gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
@@ -36,9 +35,9 @@ OPTIONS_DEFINE=	MANPAGES
 
 .if ${PORT_OPTIONS:MMANPAGES}
 BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-410 \
-    		xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 
+USE_GNOME+=	libxslt:build
 MAN1=		pkaction.1 pkcheck.1 pkexec.1 pkttyagent.1
 MAN8=		pklocalauthority.8 polkit.8 polkitd.8
 .else
@@ -51,15 +50,11 @@ post-patch:
 		${WRKSRC}/src/examples/org.freedesktop.policykit.examples.pkexec.policy.in
 
 post-install:
-	${MKDIR} ${PREFIX}/etc/dbus-1/system.d/
-	if [ ! -f ${PREFIX}/etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf ]; then \
-		${INSTALL_DATA} ${WRKSRC}/data/org.freedesktop.PolicyKit1.conf \
-			${PREFIX}/etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf ; \
-	fi
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/dbus-1/system.d/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/polkit-1/rules.d/
 	${INSTALL_DATA} ${WRKSRC}/data/org.freedesktop.PolicyKit1.conf \
-		${PREFIX}/etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf.dist
-.if !defined(PACKAGE_BUILDING)
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
+		${STAGEDIR}${PREFIX}/etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf.dist
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/polkit-1/extensions/lib*.so
 
 .include <bsd.port.mk>

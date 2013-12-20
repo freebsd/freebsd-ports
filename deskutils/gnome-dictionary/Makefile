@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-dictionary/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/deskutils/gnome-dictionary/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	gnome-dictionary
 PORTVERSION=	3.6.0
@@ -16,7 +16,6 @@ BUILD_DEPENDS=	gtkdoc-check:${PORTSDIR}/textproc/gtk-doc \
 
 CONFLICTS=	gnome-utils-2.[0-9]*
 
-NO_STAGE=	yes
 USE_XZ=		yes
 USES=		gettext gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
@@ -26,7 +25,9 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		gnome-dictionary.1
 GLIB_SCHEMAS=	org.gnome.dictionary.gschema.xml
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdict-1.0.so.6
 
 .include <bsd.port.mk>

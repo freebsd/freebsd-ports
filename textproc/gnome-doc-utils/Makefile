@@ -1,6 +1,6 @@
 # Created by: Adam Weinberger <adamw@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/textproc/gnome-doc-utils/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/textproc/gnome-doc-utils/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	gnome-doc-utils
 PORTVERSION=	0.20.10
@@ -11,14 +11,12 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME doc utils
 
 BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian \
-		${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2 \
-    		gawk:${PORTSDIR}/lang/gawk
+		${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian \
 		${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2 \
 		${LOCALBASE}/share/xml/docbook/4.3/catalog.xml:${PORTSDIR}/textproc/docbook-xml-430 \
 		${LOCALBASE}/share/xml/docbook/4.4/catalog.xml:${PORTSDIR}/textproc/docbook-xml-440
 
-NO_STAGE=	yes
 USE_XZ=		yes
 MAKE_JOBS_UNSAFE=yes
 USES=		gettext gmake pathfix pkgconfig
@@ -29,8 +27,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-omf-dir=${PREFIX}/share/omf
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-MAN1=		xml2po.1
 
 post-install:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}/xml2po

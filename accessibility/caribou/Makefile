@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/accessibility/caribou/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#    $MCom: ports/trunk/accessibility/caribou/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	caribou
 PORTVERSION=	0.4.10
@@ -19,7 +19,6 @@ LIB_DEPENDS=	libclutter-glx-1.0.so:${PORTSDIR}/graphics/clutter \
 		libxklavier.so:${PORTSDIR}/x11/libxklavier
 RUN_DEPENDS=	py*-atspi>=2.1.91:${PORTSDIR}/accessibility/py-atspi
 
-NO_STAGE=	yes
 USE_XZ=		yes
 USES=		gettext gmake pathfix pkgconfig shebangfix
 SHEBANG_FILES=	tools/fix_gir.py tools/make_schema.py
@@ -34,4 +33,9 @@ CONFIGURE_ARGS=	--enable-gtk2-module=no
 GLIB_SCHEMAS=	org.gnome.caribou.gschema.xml \
 		org.gnome.antler.gschema.xml
 
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcaribou.so.0
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtk-3.0/modules/libcaribou-gtk-module.so
+
 .include <bsd.port.mk>
+

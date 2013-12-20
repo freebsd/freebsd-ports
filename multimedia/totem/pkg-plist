@@ -7,21 +7,21 @@ include/totem/1.0/totem-interface.h
 include/totem/1.0/totem-plugin.h
 include/totem/1.0/totem-video-list.h
 include/totem/1.0/totem.h
-%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-cone-plugin.a
-%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-cone-plugin.la
-%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-cone-plugin.so
-%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-gmp-plugin.a
-%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-gmp-plugin.la
-%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-gmp-plugin.so
-%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-mully-plugin.a
-%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-mully-plugin.la
-%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-mully-plugin.so
-%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-narrowspace-plugin.a
-%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-narrowspace-plugin.la
-%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-narrowspace-plugin.so
-%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-vegas-plugin.a
-%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-vegas-plugin.la
-%%BROWSER_PLUGINS%%%%WEBPLUGINS_DIR%%/libtotem-vegas-plugin.so
+%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-cone-plugin.a
+%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-cone-plugin.la
+%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-cone-plugin.so
+%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-gmp-plugin.a
+%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-gmp-plugin.la
+%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-gmp-plugin.so
+%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-mully-plugin.a
+%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-mully-plugin.la
+%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-mully-plugin.so
+%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-narrowspace-plugin.a
+%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-narrowspace-plugin.la
+%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-narrowspace-plugin.so
+%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-vegas-plugin.a
+%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-vegas-plugin.la
+%%BROWSER_PLUGINS%%%%WEBPLUGIN_DIR%%/libtotem-vegas-plugin.so
 lib/girepository-1.0/Totem-1.0.typelib
 lib/libtotem.a
 lib/libtotem.la
@@ -104,8 +104,8 @@ lib/totem/plugins/skipto/skipto.ui
 libdata/pkgconfig/totem.pc
 %%BROWSER_PLUGINS%%libexec/totem-plugin-viewer
 libexec/totem/totem-bugreport.py
-@comment man/man1/totem.1.gz
-@comment man/man1/totem-video-thumbnailer.1.gz
+man/man1/totem.1.gz
+man/man1/totem-video-thumbnailer.1.gz
 share/GConf/gsettings/opensubtitles.convert
 share/GConf/gsettings/totem.convert
 share/applications/totem.desktop
@@ -660,6 +660,6 @@ share/thumbnailers/totem.thumbnailer
 @dirrm lib/totem/plugins/brasero-disc-recorder
 @dirrm lib/totem/plugins
 @dirrm lib/totem
-%%BROWSER_PLUGINS%%@dirrmtry %%WEBPLUGINS_DIR%%
+%%BROWSER_PLUGINS%%@dirrmtry %%WEBPLUGIN_DIR%%
 @dirrm include/totem/1.0
 @dirrm include/totem

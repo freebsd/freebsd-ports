@@ -16,7 +16,8 @@ BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 LIB_DEPENDS=	librest-0.7.so:${PORTSDIR}/devel/librest \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
 
-USE_GNOME=	glib20 intlhack gconf2 introspection:build gnomehier
+USE_GNOME=	gconf2 glib20 gnomehier intlhack introspection:build \
+		libxslt:build
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

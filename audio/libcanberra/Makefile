@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
-# $FreeBSD: head/audio/libcanberra/Makefile 309632 2012-12-29 20:57:20Z mezz $
-#   $MCom: ports/trunk/audio/libcanberra/Makefile 18805 2013-10-27 09:10:09Z kwm $
+# $FreeBSD$
+#   $MCom: ports/trunk/audio/libcanberra/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	libcanberra
 PORTVERSION=	0.28

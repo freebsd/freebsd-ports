@@ -1,6 +1,6 @@
 # Created by: FreeBSD GNOME Team <gnome@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/graphics/gnome-color-manager/Makefile 18575 2013-06-18 16:28:35Z kwm $
+#   $MCom: ports/trunk/graphics/gnome-color-manager/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	gnome-color-manager
 PORTVERSION=	3.6.1
@@ -20,7 +20,6 @@ LIB_DEPENDS=	liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3 \
 		libexif.so:${PORTSDIR}/graphics/libexif
 
-NO_STAGE=	yes
 USE_XZ=		yes
 USE_XORG=	xrandr
 USE_GNOME=	gnomedesktop3 gnomeprefix gtk30 intlhack vte3
@@ -31,9 +30,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-clutter=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-MAN1=		gcm-calibrate.1 gcm-import.1 gcm-inspect.1 gcm-picker.1 \
-		gcm-viewer.1
 
 OPTIONS_DEFINE=	RAW
 OPTIONS_DEFAULT=RAW

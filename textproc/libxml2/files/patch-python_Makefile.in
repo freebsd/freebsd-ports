@@ -1,26 +1,20 @@
---- python/Makefile.in.orig	2012-08-04 12:00:53.000000000 +0200
-+++ python/Makefile.in	2012-08-04 12:02:59.000000000 +0200
-@@ -395,7 +395,7 @@
- 	-I$(top_builddir)/include \
- 	-I$(top_builddir)/$(subdir)
+--- python/Makefile.in.orig	2013-11-24 08:47:04.000000000 +0100
++++ python/Makefile.in	2013-11-24 08:51:02.000000000 +0100
+@@ -415,7 +415,7 @@
  
--docsdir = $(datadir)/doc/libxml2-python-$(LIBXML_VERSION)
-+docsdir = $(datadir)/doc/py-libxml2
- # libxml2class.txt is generated
+ # Makefile for libxml2 python library
+ AUTOMAKE_OPTIONS = 1.4 foreign
+-SUBDIRS = . tests
++SUBDIRS = .
+ docsdir = $(datadir)/doc/libxml2-python-$(LIBXML_VERSION)
  dist_docs_DATA = TODO
  EXTRA_DIST = \
-@@ -408,12 +408,12 @@
- 
- libxml2mod_la_LDFLAGS = @CYGWIN_EXTRA_LDFLAGS@ @WIN32_EXTRA_LDFLAGS@ -module -avoid-version 
- @WITH_PYTHON_TRUE@mylibs = \
--@WITH_PYTHON_TRUE@	$(top_builddir)/libxml2.la
-+@WITH_PYTHON_TRUE@	-lxml2
- 
+@@ -435,7 +435,7 @@
  @WITH_PYTHON_TRUE@python_LTLIBRARIES = libxml2mod.la
- @WITH_PYTHON_TRUE@libxml2mod_la_SOURCES = $(srcdir)/libxml.c $(srcdir)/types.c
- @WITH_PYTHON_TRUE@nodist_libxml2mod_la_SOURCES = libxml2-py.c
--@WITH_PYTHON_TRUE@libxml2mod_la_LIBADD = $(mylibs) @CYGWIN_EXTRA_PYTHON_LIBADD@ @WIN32_EXTRA_PYTHON_LIBADD@ @PYTHON_LIBS@ -lpython$(PYTHON_VERSION)
-+@WITH_PYTHON_TRUE@libxml2mod_la_LIBADD = $(mylibs) @CYGWIN_EXTRA_PYTHON_LIBADD@ @WIN32_EXTRA_PYTHON_LIBADD@ @PYTHON_LIBS@
- @WITH_PYTHON_TRUE@python_DATA = \
- @WITH_PYTHON_TRUE@	libxml2.py
+ @WITH_PYTHON_TRUE@libxml2mod_la_SOURCES = libxml.c libxml_wrap.h libxml2-py.h libxml2-py.c types.c
+ @WITH_PYTHON_TRUE@libxml2mod_la_LDFLAGS = $(CYGWIN_EXTRA_LDFLAGS) $(WIN32_EXTRA_LDFLAGS) -module -avoid-version \
+-@WITH_PYTHON_TRUE@        $(top_builddir)/libxml2.la $(CYGWIN_EXTRA_PYTHON_LIBADD) $(WIN32_EXTRA_PYTHON_LIBADD) $(PYTHON_LIBS)
++@WITH_PYTHON_TRUE@        -lxml2 $(CYGWIN_EXTRA_PYTHON_LIBADD) $(WIN32_EXTRA_PYTHON_LIBADD) $(PYTHON_LIBS)
  
+ @WITH_PYTHON_TRUE@BUILT_SOURCES = libxml2-export.c libxml2-py.h libxml2-py.c
+ @WITH_PYTHON_TRUE@dist_python_DATA = \

@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/deskutils/gnome-font-viewer/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/deskutils/gnome-font-viewer/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	gnome-font-viewer
 PORTVERSION=	3.6.1
@@ -16,9 +16,8 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 
 CONFLICTS=	gnome-utils-2.[0-9]*
 
-NO_STAGE=	yes
 USE_XZ=		yes
-USES=		gettext gmake pathfix pkgconfig
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix intlhack gtk30 gnomedesktop3

@@ -52,7 +52,6 @@ devel/libsoup
 devel/libsoup-gnome
 devel/py-gobject
 devel/py-gobject3
-devel/regexxer
 devel/seed
 editors/gedit
 editors/gedit-plugins
@@ -73,6 +72,7 @@ games/lightsoff
 games/quadrapassel
 games/swell-foop
 games/tali
+graphics/cairo
 graphics/clutter
 graphics/clutter-gtk3
 graphics/cogl
@@ -114,7 +114,7 @@ net/grilo
 net/grilo-plugins
 net/gtk-vnc
 net/gtk-vnc3
-net/libgweather3
+net/libgweather
 net/libproxy
 net/libzapojit
 net/vinagre
@@ -190,7 +190,6 @@ x11/gnome-terminal
 x11/gnome3
 x11/gnome3-lite
 x11/libgnomekbd
-x11/libgnomekbd3
 x11/libxklavier
 x11/yelp
 x11/zenity
@@ -203,7 +202,6 @@ x11-themes/gnome-themes
 x11-themes/gnome-themes-standard
 x11-themes/gtk-theme-engine-clearlooks
 x11-toolkits/gdl
-x11-toolkits/gnome-pty-helper
 x11-toolkits/gtk30
 x11-toolkits/gtkmm30
 x11-toolkits/gtksourceview3
@@ -211,7 +209,6 @@ x11-toolkits/libwnck
 x11-toolkits/libwnck3
 x11-toolkits/pango
 x11-toolkits/pangomm
-x11-toolkits/vte
 x11-toolkits/vte3
 x11-wm/metacity
 x11-wm/muffin

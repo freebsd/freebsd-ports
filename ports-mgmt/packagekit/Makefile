@@ -1,6 +1,6 @@
 # Created by: Anders F Bjorklund <afb@users.sourceforge.net>
 # $FreeBSD$
-#   $MCom: ports/trunk/ports-mgmt/packagekit/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/ports-mgmt/packagekit/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	packagekit
 PORTVERSION=	0.8.9
@@ -16,7 +16,6 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
 
-NO_STAGE=	yes
 USE_XZ=		yes
 USES=		gettext gmake iconv pathfix shared-mime-info
 USE_GNOME=	glib20 intltool introspection
@@ -44,9 +43,10 @@ OPTIONS_DEFINE=	MANPAGES
 BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-410 \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 USE_GNOME+=	libxslt:build
-MAN1=	pkcon.1 pkmon.1 pkgenpack.1 pk-debuginfo-install.1
+PLIST_SUB+=	MAN=""
 .else
 CONFIGURE_ARGS+=--disable-man-pages
+PLIST_SUB+=	MAN="@comment "
 .endif
 
 # IMO we should just enable the new (not writted pkgng backend) on systems
@@ -70,6 +70,9 @@ post-patch:
 		${WRKSRC}/src/plugins/pk-lsof.c
 
 post-install:
-	@${MKDIR} /var/cache/PackageKit/downloads
+	@${MKDIR} ${STAGEDIR}/var/cache/PackageKit/downloads
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so*
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/packagekit-backend/libpk*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/packagekit-plugins/libpk*.so
 
 .include <bsd.port.mk>

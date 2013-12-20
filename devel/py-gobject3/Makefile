@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/py-gobject3/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/devel/py-gobject3/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	gobject
 PORTVERSION=	3.8.1
@@ -8,6 +8,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/pygobject/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	3
 DISTNAME=	pygobject-${PORTVERSION}
 DIST_SUBDIR=	gnome3
 
@@ -21,8 +22,6 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py
 LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-cairo
 
-NO_STAGE=	yes
-LATEST_LINK=	${PYTHON_PKGNAMEPREFIX}${PORTNAME}3
 USE_XZ=		yes
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	glib20 introspection
@@ -44,5 +43,10 @@ UNAME_R!=	${UNAME} -r
 post-patch:
 	@${REINPLACE_CMD} -e 's|SUBDIRS = examples gi tests|SUBDIRS = examples gi|g' \
 		${WRKSRC}/Makefile.in
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpyglib-gi-2.0-${PYTHON_VERSION}.so.0
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/gi/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/gi/*/*.so
 
 .include <bsd.port.post.mk>

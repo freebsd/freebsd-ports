@@ -1,6 +1,6 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
-# $FreeBSD: head/lang/vala/Makefile 313635 2013-03-08 11:32:11Z bapt $
-#   $MCom: ports/trunk/lang/vala/Makefile 18692 2013-09-22 00:45:30Z kwm $
+# $FreeBSD$
+#   $MCom: ports/trunk/lang/vala/Makefile 18965 2013-12-20 11:02:42Z kwm $
 
 PORTNAME=	vala
 PORTVERSION=	0.20.1
@@ -12,7 +12,6 @@ COMMENT=	Programming language and compiler that converts Vala code into C code
 
 LICENSE=	LGPL21
 
-NO_STAGE=	yes
 USES=		bison gettext gmake pathfix pkgconfig
 USE_XZ=		yes
 USE_GNOME=	glib20 gnomeprefix libxslt
@@ -21,7 +20,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
-MAN1?=		valac.1 valac-${VALA_VER}.1
 VALA_VER=	${PORTVERSION:R}
 
 PLIST_SUB=	VERSION=${VALA_VER}
@@ -31,7 +29,6 @@ LIB_DEPENDS+=	libvala-${VALA_VER}.so:${PORTSDIR}/lang/vala
 CONFIGURE_ARGS+=--enable-vapigen
 BUILD_DEPENDS+=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS+=	p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
-MAN1=		vala-gen-introspect.1 vapigen.1
 .else
 CONFIGURE_ARGS+=--disable-vapigen
 .endif
@@ -54,13 +51,14 @@ pre-build:
 		${GMAKE} gen-introspect
 
 post-install:
-	@cd ${WRKSRC}/gobject-introspection && ${GMAKE} install
+	@cd ${WRKSRC}/gobject-introspection && DESTDIR=${STAGEDIR} ${GMAKE} install
 	@${INSTALL_MAN} ${WRKSRC}/doc/vapigen.1 ${WRKSRC}/doc/vala-gen-introspect.1 \
-		 ${PREFIX}/man/man1/
+		 ${STAGEDIR}${PREFIX}/man/man1/
 .else
 post-install:
 	${LN} -fs ${PREFIX}/libdata/pkgconfig/libvala-${VALA_VER}.pc \
-		${PREFIX}/libdata/pkgconfig/vala-1.0.pc
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/vala-1.0.pc
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.*
 .endif
 
 .include <bsd.port.mk>

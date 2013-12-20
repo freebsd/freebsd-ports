@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/anjuta-extras3/Makefile 18393 2013-04-26 21:23:07Z kwm $
+#   $MCom: ports/trunk/devel/anjuta-extras/Makefile 18915 2013-11-23 14:03:41Z gusi $
 
 PORTNAME=	anjuta-extras
-PORTVERSION=	3.4.0
+PORTVERSION=	3.6.0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -12,16 +12,19 @@ COMMENT=	Extra anjuta 3 plugins
 
 LIB_DEPENDS=	libanjuta-3.so:${PORTSDIR}/devel/anjuta
 		
-NO_STAGE=	yes
 USE_XZ=		yes
 USES=		gettext gmake pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	intltool libxml2 gtk30
+USE_GNOME=	gtk30 intltool libxml2
 CPPFLAGS+=	-I${LOCALBASE}/include 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 GLIB_SCHEMAS=	org.gnome.anjuta.plugins.scintilla.gschema.xml \
 		org.gnome.anjuta.plugins.scratchbox.gschema.xml
+
+post-patch:
+		@${REINPLACE_CMD} -e 's|return style_data|return|g' \
+			${WRKSRC}/plugins/scintilla/style-editor.c
 
 .include <bsd.port.mk>
