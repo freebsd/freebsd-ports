@@ -27,7 +27,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "*.cpp" -or -name "*.h" | ${XARGS} \
 		${REINPLACE_CMD} -e \
 		's|<features.h>|<cstdio>| ; \
-		 s|__GNUC_PREREQ |__GNUC_PREREQ__|'
+		 s|(__cplusplus) \&\&|(__cplusplus) // \&\&|'
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} codeworker ${STAGEDIR}${PREFIX}/bin)
