@@ -3,7 +3,7 @@
 
 PORTNAME=	ng_ipacct
 PORTVERSION=	20061223
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_LOCAL:S!$!skv/!} \
 		http://highsecure.ru/distfiles/
