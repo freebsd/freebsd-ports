@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	denemo
-PORTVERSION=	1.0.8
+PORTVERSION=	1.1.0
 CATEGORIES=	audio
 MASTER_SITES=	GNU
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Graphical score editor
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/portaudio-2.0.pc:${PORTSDIR}/audio/portaudio2
+BUILD_DEPENDS=	portaudio2>0:${PORTSDIR}/audio/portaudio2
 LIB_DEPENDS=	libaubio.so:${PORTSDIR}/audio/aubio \
 		libfluidsynth.so:${PORTSDIR}/audio/fluidsynth \
 		libjack.so:${PORTSDIR}/audio/jack \
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libaubio.so:${PORTSDIR}/audio/aubio \
 		libevview.so:${PORTSDIR}/graphics/evince \
 		libguile.so:${PORTSDIR}/lang/guile \
 		libfftw3.so:${PORTSDIR}/math/fftw3
-RUN_DEPENDS=	portaudio2>=0:${PORTSDIR}/audio/portaudio2 \
+RUN_DEPENDS=	portaudio2>0:${PORTSDIR}/audio/portaudio2 \
 		xdg-open:${PORTSDIR}/devel/xdg-utils
 
 LICENSE=	GPLv3
@@ -50,11 +50,9 @@ post-patch:
 		 s|-lpthread|-pthread|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		'/^SUBDIRS/s|doc|| ; \
-		 /) install-data-hook/s|^|#|' ${WRKSRC}/Makefile.in
+        	 /) install-data-hook/s|^|#|' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|"firefox"|"xdg-open"|' ${WRKSRC}/src/prefops.c
-	@${REINPLACE_CMD} -e \
-		'/get_playback_speed/s|^volatile ||' ${WRKSRC}/src/audiointerface.h
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
