@@ -42,13 +42,13 @@ lib/poslib-%%VERSION%%/include/poslib-config.h
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnstimeago.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/host.cpp
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/server.cpp
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/dnstimeago.cpp
-%%EXAMPLESDIR%%/host.cpp
-%%EXAMPLESDIR%%/server.cpp
-@dirrm %%EXAMPLESDIR%%
+@dirrm lib/poslib-%%VERSION%%/include
+@dirrm lib/poslib-%%VERSION%%
 @dirrm include/poslib-%%VERSION%%/poslib/server
 @dirrm include/poslib-%%VERSION%%/poslib
 @dirrm include/poslib-%%VERSION%%
-@dirrm lib/poslib-%%VERSION%%/include
-@dirrm lib/poslib-%%VERSION%%
