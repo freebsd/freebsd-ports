@@ -39,7 +39,6 @@ bin/cheechwebd
 %%DATADIR%%/cheechweb/images/peg-yellow.png
 %%DATADIR%%/cheechweb/index.html
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -50,8 +49,8 @@ share/pixmaps/cheech/cheech.png
 share/pixmaps/cheech/highlight.png
 share/pixmaps/cheech/pegs.png
 share/pixmaps/cheech/smiley.png
-@dirrmtry share/pixmaps/cheech
-%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
-@dirrmtry %%DATADIR%%/cheechweb/images
-@dirrmtry %%DATADIR%%/cheechweb
-@dirrmtry %%DATADIR%%
+@dirrm share/pixmaps/cheech
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/cheechweb/images
+@dirrm %%DATADIR%%/cheechweb
+@dirrm %%DATADIR%%
