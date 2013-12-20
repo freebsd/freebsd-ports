@@ -7,14 +7,18 @@ share/icons/hicolor/32x32/apps/tetzle.png
 share/icons/hicolor/48x48/apps/tetzle.png
 share/icons/hicolor/64x64/apps/tetzle.png
 share/pixmaps/tetzle.xpm
+%%DATADIR%%/translations/tetzle_cs.qm
 %%DATADIR%%/translations/tetzle_de.qm
 %%DATADIR%%/translations/tetzle_en.qm
 %%DATADIR%%/translations/tetzle_eo.qm
 %%DATADIR%%/translations/tetzle_fr.qm
 %%DATADIR%%/translations/tetzle_he.qm
 %%DATADIR%%/translations/tetzle_lv.qm
+%%DATADIR%%/translations/tetzle_ms.qm
+%%DATADIR%%/translations/tetzle_pl.qm
 %%DATADIR%%/translations/tetzle_ro.qm
 %%DATADIR%%/translations/tetzle_ru.qm
+%%DATADIR%%/translations/tetzle_tr.qm
 %%DATADIR%%/translations/tetzle_uk.qm
 %%DATADIR%%/translations/tetzle_uk_UA.qm
 @dirrm %%DATADIR%%/translations
