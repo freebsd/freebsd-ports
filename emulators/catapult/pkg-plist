@@ -1,4 +1,5 @@
 bin/catapult
+share/applications/openMSX-Catapult.desktop
 %%DATADIR%%/resources/bitmaps/about.png
 %%DATADIR%%/resources/bitmaps/diskimage.png
 %%DATADIR%%/resources/bitmaps/eject.png
