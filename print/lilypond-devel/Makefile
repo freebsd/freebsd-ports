@@ -16,15 +16,16 @@ BUILD_DEPENDS=	pdftexi2dvi:${PORTSDIR}/print/texinfo \
 		t1ascii:${PORTSDIR}/print/t1utils \
 		bash:${PORTSDIR}/shells/bash \
 		fontforge:${PORTSDIR}/print/fontforge \
+		dblatex:${PORTSDIR}/textproc/dblatex \
+		pngtopnm:${PORTSDIR}/graphics/netpbm \
+		rsync:${PORTSDIR}/net/rsync \
 		${LOCALBASE}/share/ghostscript/fonts/c059033l.pfb:${PORTSDIR}/print/gsfonts
 
 LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile \
 		libgmp.so:${PORTSDIR}/math/gmp \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
-RUN_DEPENDS=	dblatex:${PORTSDIR}/textproc/dblatex \
-		mftrace:${PORTSDIR}/print/mftrace \
-		pngtopnm:${PORTSDIR}/graphics/netpbm \
+RUN_DEPENDS=	mftrace:${PORTSDIR}/print/mftrace \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans-Bold.ttf:${PORTSDIR}/x11-fonts/dejavu
 
