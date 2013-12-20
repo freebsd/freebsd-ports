@@ -3,7 +3,7 @@
 
 PORTNAME=	freeimage
 PORTVERSION=	3.15.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Source%20Distribution/${PORTVERSION}
 DISTNAME=	FreeImage${PORTVERSION:S/.//g}
@@ -11,9 +11,9 @@ DISTNAME=	FreeImage${PORTVERSION:S/.//g}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Simple C/C++ bitmap graphics library
 
-USES=		gmake
+USES=		gmake dos2unix
 USE_ZIP=	yes
-USE_DOS2UNIX=	Source/LibOpenJPEG/opj_malloc.h
+DOS2UNIX_FILES=	Source/LibOpenJPEG/opj_malloc.h
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/FreeImage
 MAKE_ARGS=	CC=${CC} CPP=${CPP} CXX=${CXX}
@@ -31,7 +31,6 @@ PLIST_FILES=	include/FreeImage.h \
 		lib/libfreeimageplus.so.3 \
 		lib/libfreeimageplus.so
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
@@ -47,7 +46,7 @@ post-build:
 
 post-install:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} -f Makefile.fip ${MAKE_ARGS} ${INSTALL_TARGET}
-	${LN} -s libfreeimageplus-${PORTVERSION}.so.3 ${PREFIX}/lib/libfreeimageplus.so
-	${LN} -s libfreeimageplus-${PORTVERSION}.so ${PREFIX}/lib/libfreeimageplus.so.3
+	${LN} -s libfreeimageplus.so.3 ${STAGEDIR}${PREFIX}/lib/libfreeimageplus.so
+	${LN} -s libfreeimageplus-${PORTVERSION}.so ${STAGEDIR}${PREFIX}/lib/libfreeimageplus.so.3
 
 .include <bsd.port.post.mk>
