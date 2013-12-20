@@ -1271,6 +1271,7 @@ share/kde4/servicetypes/amarok_plugin.desktop
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/amarokcollectionscanner_qt.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/amarokpkg.mo
 share/mime/packages/amzdownloader.xml
+@dirrmtry share/mime/packages
 @dirrm share/doc/HTML/uk/amarok
 @dirrm share/doc/HTML/sv/amarok
 @dirrm share/doc/HTML/ru/amarok
