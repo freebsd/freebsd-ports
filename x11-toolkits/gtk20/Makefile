@@ -4,7 +4,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	2.24.22
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -35,7 +35,7 @@ USES=		gettext gmake pathfix pkgconfig perl5
 USE_PERL5=	build
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite
-CONFIGURE_ARGS=	--with-xinput=yes
+CONFIGURE_ARGS=	--with-xinput=yes --enable-explicit-deps
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
