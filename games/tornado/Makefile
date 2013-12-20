@@ -1,4 +1,4 @@
-# Created by: minter
+# Created by: minter@lunenburg.org
 # $FreeBSD$
 
 PORTNAME=	tornado
@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://kiza.kcore.de/media/software/${PORTNAME}/
 
-MAINTAINER=	minter@lunenburg.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A curses-based game of weather destruction
 
 MAN6=		tornado.6
