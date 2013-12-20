@@ -3,6 +3,7 @@
 
 PORTNAME=	aircrack-ng
 DISTVERSION=	1.2b2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://download.aircrack-ng.org/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
@@ -11,11 +12,19 @@ DISTNAME=	${PORTNAME}-${DISTVERSION:C/b/-beta/}
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	An 802.11 WEP and WPA-PSK keys cracking program
 
+LICENSE=	GPLv2 BSD3CLAUSE AL2
+LICENSE_COMB=	dual
+
 USES=		gmake dos2unix
 DOS2UNIX_FILES=	src/osdep/byteorder.h
 MAKE_ARGS+=	unstable=true prefix=${PREFIX}
 USE_OPENSSL=	yes
 SUB_FILES=	pkg-message
+
+BIN_FILES=	airdecloak-ng buddy-ng aircrack-ng airdecap-ng ivstools \
+		airolib-ng makeivs-ng packetforge-ng wpaclean kstats do
+SBIN_FILES=	airtun-ng besside-ng airbase-ng easside-ng airodump-ng \
+		aireplay-ng wesside-ng airserv-ng tkiptun-ng
 
 OPTIONS_DEFINE=	SQLITE
 OPTIONS_SUB=	yes
@@ -52,5 +61,13 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|-lpthread|${PTHREAD_LIBS}|' \
 			${WRKSRC}/src/Makefile
+post-install:
+.for f in ${BIN_FILES}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/$f
+.endfor
+
+.for f in ${SBIN_FILES}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/$f
+.endfor
 
 .include <bsd.port.mk>

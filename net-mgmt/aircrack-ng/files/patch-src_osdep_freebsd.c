@@ -1,5 +1,5 @@
 --- src/osdep/freebsd.c.orig	2011-09-25 00:05:54.000000000 +0200
-+++ src/osdep/freebsd.c	2013-09-29 13:49:18.588462319 +0200
++++ src/osdep/freebsd.c	2013-12-20 17:15:28.184126473 +0100
 @@ -53,7 +53,9 @@ struct priv_fbsd {
  	unsigned char			pf_buf[4096];
  	unsigned char			*pf_next;
@@ -56,7 +56,58 @@
          if (ioctl(s, SIOCSIFMEDIA, &ifr) == -1)
  		goto close_sock;
  
-@@ -542,13 +554,17 @@ static struct wif *fbsd_open(char *iface
+@@ -510,6 +522,39 @@ static int fbsd_set_mac(struct wif *wi, 
+ 	return ioctl(priv->pf_s, SIOCSIFLLADDR, ifr);
+ }
+ 
++static int fbsd_set_mtu(struct wif *wi, int mtu)
++{
++	struct priv_fbsd *priv = wi_priv(wi);
++	struct ifreq *ifr = &priv->pf_ifr;
++
++	memset(ifr, 0, sizeof(struct ifreq));
++
++	strncpy(ifr->ifr_name, wi_get_ifname(wi), sizeof(ifr->ifr_name));
++	ifr->ifr_mtu = mtu;
++
++	if(ioctl(priv->pf_s, SIOCSIFMTU, ifr) < 0)
++		return -1;
++
++	return 0;
++}
++
++static int fbsd_get_mtu(struct wif *wi)
++{
++	struct priv_fbsd *priv = wi_priv(wi);
++	struct ifreq ifr;
++
++	memset(&ifr, 0, sizeof(struct ifreq));
++
++	ifr.ifr_addr.sa_family = AF_INET;
++
++	strncpy(ifr.ifr_name, wi_get_ifname(wi), sizeof(ifr.ifr_name));
++
++	if(ioctl(priv->pf_s, SIOCGIFMTU, (caddr_t)&ifr) < 0)
++		return -1;
++
++	return ifr.ifr_mtu;
++}
++
+ static struct wif *fbsd_open(char *iface)
+ {
+ 	struct wif *wi;
+@@ -530,7 +575,9 @@ static struct wif *fbsd_open(char *iface
+ 	wi->wi_set_mac		= fbsd_set_mac;
+ 	wi->wi_get_rate		= fbsd_get_rate;
+ 	wi->wi_set_rate		= fbsd_set_rate;
+-        wi->wi_get_monitor      = fbsd_get_monitor;
++	wi->wi_get_monitor	= fbsd_get_monitor;
++	wi->wi_get_mtu		= fbsd_get_mtu;
++	wi->wi_set_mtu		= fbsd_set_mtu;
+ 
+ 	/* setup iface */
+ 	fd = do_fbsd_open(wi, iface);
+@@ -542,13 +589,17 @@ static struct wif *fbsd_open(char *iface
  	/* setup private state */
  	pf = wi_priv(wi);
  	pf->pf_fd = fd;
