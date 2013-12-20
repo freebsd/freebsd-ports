@@ -16,7 +16,7 @@
  
  #ifdef SOUND_RPLAY
  RPLAYLIB = -lrplay
-@@ -23,12 +23,10 @@
+@@ -23,15 +23,13 @@
  
  ComplexProgramTarget(xdigger)
  InstallNonExecFile(xdigger.level,XDIGGER_LIB_DIR)
@@ -30,3 +30,9 @@
  /* InstallNonExecFileNoClobber(xdigger.hiscore,XDIGGER_HISCORE_DIR) */
  
  install::
+-	$(MKDIRHIER) XDIGGER_HISCORE_DIR
+-	touch XDIGGER_HISCORE_DIR/xdigger.hiscore
+-	chmod a+w XDIGGER_HISCORE_DIR/xdigger.hiscore
++	$(MKDIRHIER) $(DESTDIR)XDIGGER_HISCORE_DIR
++	touch $(DESTDIR)XDIGGER_HISCORE_DIR/xdigger.hiscore
++	chmod a+w $(DESTDIR)XDIGGER_HISCORE_DIR/xdigger.hiscore
