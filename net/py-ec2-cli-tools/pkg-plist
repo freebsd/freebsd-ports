@@ -1,9 +1,7 @@
-%%PYTHON_LIBDIR%%/site-packages/%%PYEASYINSTALL_EGG%%
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 bin/ec2getsnaps
 bin/ec2host
 bin/ec2hostcache
 bin/ec2ssh
 bin/ec2sshproxy
 bin/ec2who
-@dirrm %%PYTHON_LIBDIR%%/site-packages
-@dirrm %%PYTHON_LIBDIR%%
