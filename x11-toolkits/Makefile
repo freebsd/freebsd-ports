@@ -64,7 +64,6 @@
     SUBDIR += gtkmm30-reference
     SUBDIR += gtksourceview
     SUBDIR += gtksourceview-reference
-    SUBDIR += gtksourceview-sharp
     SUBDIR += gtksourceview2
     SUBDIR += gtksourceview2-reference
     SUBDIR += gtksourceview3

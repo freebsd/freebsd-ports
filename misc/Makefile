@@ -121,9 +121,7 @@
     SUBDIR += freebsd-doc-zh_tw
     SUBDIR += freecode-submit
     SUBDIR += freeguide
-    SUBDIR += freeswitch-pizzademo
     SUBDIR += freeswitch-pizzademo-devel
-    SUBDIR += freeswitch-scripts
     SUBDIR += freeswitch-scripts-devel
     SUBDIR += ftdi-eeprom
     SUBDIR += fxload
