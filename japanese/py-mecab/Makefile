@@ -13,7 +13,7 @@ COMMENT=	Python bindings for MeCab
 LICENSE=	BSD GPLv2 LGPL21
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	swig>=1.3:${PORTSDIR}/devel/swig13
+BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	mecab:${PORTSDIR}/japanese/mecab
 
 USE_PYTHON=	yes
