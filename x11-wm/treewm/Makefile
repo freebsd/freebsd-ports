@@ -12,37 +12,40 @@ COMMENT=	Window manager that arranges windows in a tree
 
 LICENSE=	GPLv2
 
-USES=		imake:env
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake imake:env
 USE_XORG=	x11 ice sm xext xmu xpm xt xxf86vm
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL PROBLEMS README README.tiling TODO
 PORTEXAMPLES=	default.cfg sample.cfg
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^PREFIX/s| =| ?=| ; /^CXXFLAGS/s| =| ?=| ; \
-		s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		'/^PREFIX/s| =| ?=| ; \
+		 /^CXXFLAGS/s| =| ?=| ; \
+		 s|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/treewm ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/xprop/xprop ${PREFIX}/bin/xprop-treewm
-	${INSTALL_PROGRAM} ${WRKSRC}/xkill/xkill ${PREFIX}/bin/xkill-treewm
-	@${MKDIR} ${DATADIR}/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/src/pixmaps/*.xpm ${DATADIR}/pixmaps
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
-.endif
+	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} treewm \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC}/xprop && ${INSTALL_PROGRAM} xprop \
+		${STAGEDIR}${PREFIX}/bin/xprop-treewm)
+	(cd ${WRKSRC}/xkill && ${INSTALL_PROGRAM} xkill \
+		${STAGEDIR}${PREFIX}/bin/xkill-treewm)
+	@${MKDIR} ${STAGEDIR}${DATADIR}/pixmaps
+	(cd ${WRKSRC}/src/pixmaps && ${INSTALL_DATA} *.xpm \
+		${STAGEDIR}${DATADIR}/pixmaps)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for F in ${PORTDOCS}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${F} ${STAGEDIR}${DOCSDIR})
+.endfor
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+.for F in ${PORTEXAMPLES}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${F} ${STAGEDIR}${EXAMPLESDIR})
+.endfor
 
 .include <bsd.port.mk>
