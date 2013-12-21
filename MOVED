@@ -5315,3 +5315,4 @@ misc/freeswitch-pizzademo||2013-12-20|Has expired: Depends on expired net/freesw
 misc/freeswitch-scripts||2013-12-20|Has expired: Depends on expired net/freeswitch-core
 www/p5-HTML-Webmake||2013-12-20|Has expired: Depends on expired textproc/p5-XML-Sablotron
 net/freeswitch||2013-12-20|Has expired: Depends on expired net/freeswitch-core
+games/blue|games/bluemoon|2013-12-21|Rename to match upstream naming
