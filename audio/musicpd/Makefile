@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
-USES=		gmake pkgconfig
+USES=		gmake pkgconfig compiler:c++11-lib
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
@@ -57,12 +57,6 @@ SUB_LIST+=	MPDDIR=${MPDDIR}
 
 .ifdef MPDCONF
 IGNORE=Please remove the MPDCONF line from make.conf, then rename ${PREFIX}/etc/${MPDCONF} to musicpd.conf, if it exists
-.endif
-
-.if ${OSVERSION} < 1000054
-USE_GCC=	4.7+
-.else
-USES+=		compiler:c++11-lang
 .endif
 
 .include <bsd.port.pre.mk>
