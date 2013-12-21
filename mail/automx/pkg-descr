@@ -1,15 +1,15 @@
-automx makes setting up a mail account easy. All your users need to provide 
-is real name, mail address and password. Their mail client and automx will 
+automx makes setting up a mail account easy.  All your users need to provide
+is real name, mail address and password.  Their mail client and automx will
 safely handle the rest.
 
-automx runs on your server and handles mail account profile requests from 
-your mail clients. Put an end to endless phone calls trying to coach users to 
-configure settings, whose dialogs they can't find. Stop wasting your time 
+automx runs on your server and handles mail account profile requests from
+your mail clients.  Put an end to endless phone calls trying to coach users to
+configure settings, whose dialogs they can't find.  Stop wasting your time
 writing Tutorials nobody reads.
 
-automx unifies Microsofts and Mozillas mail account provisioning standards in 
-one powerful Open Source tool. Choose from many backends, including LDAP and 
-SQL, and let automx create standard and individualized profiles for multiple 
-domains on the fly!
+automx unifies Microsoft's and Mozilla's mail account provisioning standards
+in one powerful Open Source tool.  Choose from many backends, including LDAP
+and SQL, and let automx create standard and individualized profiles for
+multiple domains on the fly!
 
 WWW: http://www.automx.org/en/
