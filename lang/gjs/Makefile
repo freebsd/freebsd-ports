@@ -28,6 +28,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 SHEBANG_FILES=	scripts/make-tests
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|env python|env ${PYTHON_VERSION}|g' \
+		${WRKSRC}/scripts/make-tests
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so*
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gjs-1.0/*.so
