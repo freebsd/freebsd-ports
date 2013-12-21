@@ -9,25 +9,26 @@ MASTER_SITES=	ftp://ftp.nist.gov/pub/dataplot/unix/:source \
 		LOCAL/beech:source \
 		http://www.itl.nist.gov/div898/software/dataplot.html/:doc \
 		LOCAL/beech:doc
-DISTFILES=	dpsrc${EXTRACT_SUFX}:source \
-		dpsnapsh.pdf:doc
+DISTFILES=	dpsrc${EXTRACT_SUFX}:source
 DIST_SUBDIR=	dataplot
 EXTRACT_ONLY=	dpsrc${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A free software system for statistical visualization
+COMMENT=	Free software system for statistical visualization
 
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
-		png15:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
-USE_FORTRAN=	yes
+OPTIONS_DEFINE=	DOCS
+DOCS_DISTFILES=	dpsnapsh.pdf:doc
+
+USES=		fortran
 USE_XORG=	x11 xi
 NO_WRKSUBDIR=	yes
 MAXOBV?=	400000	# Change if you need more observations/variable
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ((${ARCH}=="amd64") || (${ARCH}=="sparc64") || (${ARCH}=="ia64"))
 FFLAGS+= -DDD -DI32 -fdefault-real-8 -fdefault-double-8
@@ -37,9 +38,11 @@ FFLAGS+= -DSD -DI32 -fdefault-real-8 -fdefault-double-8
 
 post-extract:
 	@${INSTALL_DATA} ${FILESDIR}/Makefile.tmpl ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's;%%LOCALBASE%%;${LOCALBASE};g ; \
-	s;%%LOCALBASE%%;${LOCALBASE};g' \
-	${WRKSRC}/Makefile
+	@${REINPLACE_CMD} \
+		-e 's;%%CFLAGS%%;${CFLAGS};' \
+		-e 's;%%FFLAGS%%;${FFLAGS};' \
+		-e 's;%%LDFLAGS%%;${LDFLAGS};' \
+		-e 's;%%LOCALBASE%%;${LOCALBASE};g' ${WRKSRC}/Makefile
 # Ensure preprocessing is done
 	@${CP} ${WRKSRC}/dp1_linux.f ${WRKSRC}/dp1_linux.F
 # Turn off some dependencies
@@ -53,10 +56,10 @@ pre-patch:
 	${WRKSRC}/DPCOPA.INC
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d  ${DOCSDIR}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/dpsnapsh.pdf \
-		${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/dpsnapsh.pdf \
+		${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
