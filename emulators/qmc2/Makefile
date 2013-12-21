@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	qmc2
-PORTVERSION=	0.40
-PORTREVISION=	1
+PORTVERSION=	0.41
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Qt4 based UNIX MAME/MESS frontend
 
 RUN_DEPENDS=	mame:${PORTSDIR}/emulators/mame \
@@ -33,8 +32,6 @@ DESKTOP_ENTRIES="QMC2 (MAME)" "MAME frontend" "${DATADIR}/img/mame.png" \
 		"${PORTNAME}-sdlmame" "Game;Emulator;Qt;" "true" \
 		"QMC2 (MESS)" "MESS frontend" "${DATADIR}/img/mess.png" \
 		"${PORTNAME}-sdlmess" "Game;Emulator;Qt;" "true"
-
-.include <bsd.port.options.mk>
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/qmc2-sdlmess
