@@ -44,7 +44,7 @@
 -# SUPERLU_LIB=$(SUPERLU)/superlu.a $(SUPERLU)/blas.a
 -# SUPERLU_INCLUDE=-I$(SUPERLU)/SRC
 +SUPERLU=%%LOCALBASE%%
-+SUPERLU_LIB=$(SUPERLU)/lib/lib%%SUPERLU%%.a %%BLAS_LIBS%% %%GCCLIBDIR%% %%FORTRANLIBS%% 
++SUPERLU_LIB=$(SUPERLU)/lib/lib%%SUPERLU%%.a %%BLAS_LIBS%%
 +SUPERLU_INCLUDE=-I$(SUPERLU)/include/%%SUPERLU%%
  #   3. For SuperLU_MT be sure to compile a multi threaded version
  #      of Tochnog (sparc_parallel, alpha_parallel, linux, etc.)
@@ -82,9 +82,9 @@
 +	make tochnog \
 +	"SYS_FILE=sysposix" \
 +	"OBJ=o" \
-+	"COMPILER_FLAGS= -c ${CFLAGS} -D_REENTRANT $(ALL_INCLUDE)" \
++	"COMPILER_FLAGS= -c ${CFLAGS} ${CPPFLAGS} -D_REENTRANT $(ALL_INCLUDE)" \
 +	"LINK_FLAGS_BEFORE=" \
-+	"LINK_FLAGS_AFTER=  $(ALL_LIB) -pthread -lm -o tochnog"
++	"LINK_FLAGS_AFTER= $(PROFILE) $(ALL_LIB) ${LDFLAGS} -pthread -lm -o tochnog"
  
  # multi processor linux; gnu gcc compiler
  linux: 
