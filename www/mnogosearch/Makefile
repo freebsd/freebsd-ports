@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mnogosearch
-PORTVERSION=	3.3.12
+PORTVERSION=	3.4.0
 CATEGORIES=	www databases
 MASTER_SITES=	http://www.mnogosearch.org/Download/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
@@ -14,9 +14,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	dpsearch-[0-9]* udmsearch-[0-9]* mguesser-[0-9]*
-
-MAN1=		indexer.1
-MAN5=		indexer.conf.5
 
 OPTIONS_DEFINE=	THREADS SSL ASIAN SYSLOG
 
@@ -30,9 +27,9 @@ SYSLOG_DESC=	Send logs to syslog
 SQLITE2_DESC=	Use SQLite 2.x
 SQLITE3_DESC=	Use SQLite 3.x
 
+USES=		gmake
 USE_LDCONFIG=	yes
 USE_GNOME=	lthack
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS+=--enable-shared \
 		--sysconfdir=${ETCDIR} \
@@ -46,7 +43,6 @@ SHLIB_VER=	1
 
 SUB_FILES+=	pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
@@ -69,7 +65,7 @@ CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 CONFIGURE_ARGS+=	--with-extra-charsets=all
 .endif
 
-.if empty(PORT_OPTIONS:MSYSLOG)
+.if ! ${PORT_OPTIONS:MSYSLOG}
 CONFIGURE_ARGS+=	--disable-syslog
 .endif
 
@@ -98,8 +94,8 @@ USE_SQLITE=	3
 CONFIGURE_ARGS+=	--with-sqlite3=${LOCALBASE}
 .endif
 
-DOCS=		ChangeLog INSTALL
-PORTDOCS=	*
+PORTDATA=	*
+PORTDOCS=	ChangeLog INSTALL README.html
 PORTEXAMPLES=	README *.conf
 
 post-patch:
@@ -112,23 +108,21 @@ post-patch:
 		${WRKSRC}/Makefile.in
 .endif
 
-pre-su-install:
-	@${MKDIR} ${DATADIR}
+pre-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 
 post-install:
+.for l in charset search
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmnogo$l-${PORTVERSION:R}.so
+.endfor
 	${LN} -sf libmnogosearch.so \
-		${PREFIX}/lib/libmnogosearch-${PORTVERSION:R}.so.${SHLIB_VER}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} /var/mnogosearch
-.if !defined (NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.    for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.    endfor
-.endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/samples/* ${EXAMPLESDIR}/
-.endif
+		${STAGEDIR}${PREFIX}/lib/libmnogosearch-${PORTVERSION:R}.so.${SHLIB_VER}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS:NREADME.html}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/samples/* ${STAGEDIR}${EXAMPLESDIR}/
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
 
