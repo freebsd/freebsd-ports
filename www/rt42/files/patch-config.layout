@@ -1,11 +1,19 @@
 --- ./config.layout.orig	2013-11-13 18:25:50.000000000 +0000
-+++ ./config.layout	2013-12-01 12:29:19.357557589 +0000
-@@ -110,24 +110,24 @@
++++ ./config.layout	2013-12-21 20:55:02.411251960 +0000
+@@ -103,31 +103,31 @@
+ </Layout>
+ 
+ <Layout FreeBSD>
+-  prefix:		/usr/local
++  prefix:		%%PREFIX%%
+   exec_prefix:		${prefix}
+   bindir:		${exec_prefix}/bin
+   sbindir:		${exec_prefix}/sbin
    sysconfdir:		${prefix}/etc+
    mandir:		${prefix}/man
    plugindir:		${prefix}/plugins
 -  libdir:		${prefix}/lib+
-+  libdir:		/usr/local/lib/perl5/site_perl/5.16
++  libdir:		%%SITE_PERL%%
    datadir:		${prefix}/share+
    htmldir:		${datadir}/html
    lexdir:		${datadir}/po
