@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	monitorix
-PORTVERSION=	3.3.1
+PORTVERSION=	3.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.monitorix.org/ \
 		http://www.monitorix.org/old_versions/ \
@@ -12,7 +12,7 @@ COMMENT=	A web based monitoring system
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
+LIB_DEPENDS=	librrd.so:${PORTSDIR}/databases/rrdtool
 RUN_DEPENDS=	p5-ParallelUA>=0:${PORTSDIR}/www/p5-ParallelUA \
 		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
@@ -24,9 +24,6 @@ RUN_DEPENDS=	p5-ParallelUA>=0:${PORTSDIR}/www/p5-ParallelUA \
 
 USES=		perl5
 USE_PERL5=	run
-MAN5=		monitorix.conf.5
-MAN8=		monitorix.8
-MANCOMPRESSED=	no
 NO_BUILD=	yes
 USE_RC_SUBR=	${PORTNAME}
 
@@ -54,7 +51,6 @@ WWW_FILES=	logo_top.png \
 PORTDOCS=	*
 PORTDATA=	*.pm
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 pre-everything::
@@ -83,49 +79,30 @@ post-patch:
 			${WRKSRC}/monitorix.conf
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/monitorix ${PREFIX}/bin/
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/* ${DATADIR}/
-	@${MKDIR} ${WWWDIR}
-	@${INSTALL} -d -o ${WWW_OWNER} -g ${WWW_GROUP} ${WWWDIR}/imgs
-.for f in ${WWW_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${WWWDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/monitorix ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/* ${STAGEDIR}${DATADIR}/
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	(cd ${STAGEDIR}${WWWDIR} && ${MKDIR} usage imgs)
+	${INSTALL_DATA} ${WWW_FILES:S,^,${WRKSRC}/,} ${STAGEDIR}${WWWDIR}/
+	${MKDIR} ${STAGEDIR}${PREFIX}/${CGIDIR}
+	${LN} -sf ${PREFIX}/${CGIDIR} ${STAGEDIR}${WWWDIR}/cgi
+	${INSTALL_SCRIPT} ${WRKSRC}/monitorix.cgi \
+		${STAGEDIR}${PREFIX}/${CGIDIR}/
+.for s in 5 8
+	${INSTALL_MAN} ${WRKSRC}/man/man$s/* ${STAGEDIR}${PREFIX}/man/man$s/
 .endfor
-	@${MKDIR} ${PREFIX}/${CGIDIR}
-	@${LN} -s ${PREFIX}/${CGIDIR} ${WWWDIR}/cgi
-	@${INSTALL_SCRIPT} ${WRKSRC}/monitorix.cgi ${PREFIX}/${CGIDIR}/
-.for c in 5 8
-. for m in ${MAN$c}
-	@${INSTALL_MAN} ${WRKSRC}/man/man$c/$m ${MAN$cPREFIX}/man/man$c/
-. endfor
-.endfor
-	@${MKDIR} ${WWWDIR}/reports
+	${MKDIR} ${STAGEDIR}${WWWDIR}/reports
 .for l in ${REPORT_LANG}
-	@${INSTALL_DATA} ${WRKSRC}/reports/${l}.html \
-		${WWWDIR}/reports/$l.html.sample
+	${INSTALL_DATA} ${WRKSRC}/reports/${l}.html \
+		${STAGEDIR}${WWWDIR}/reports/$l.html.sample
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-. for f in docs/* README README.FreeBSD README.nginx Changes
-	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
-. endfor
-.endif
-
-post-install:
-	@${MKDIR} ${DATADIR}
-	@${MKDIR} ${WWWDIR}/usage
-	@${INSTALL_DATA} ${WRKSRC}/monitorix.conf \
-		${PREFIX}/etc/monitorix.conf.sample
-	@if [ ! -f ${PREFIX}/etc/monitorix.conf ]; then \
-		${CP} -p ${PREFIX}/etc/monitorix.conf.sample \
-			${PREFIX}/etc/monitorix.conf ; \
-	fi
-	if [ ! -d ${DBDIR} ]; then \
-		${INSTALL} -d -o ${WWW_OWNER} -g ${WWW_GROUP} ${DBDIR}; \
-		if [ -f ${DATADIR}/fs.rrd ]; then \
-			${MV} ${DATADIR}/*.rrd ${DBDIR}; \
-		fi; \
-	fi
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in docs/*[^t] README README.FreeBSD README.nginx Changes
+	${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/monitorix.conf \
+		${STAGEDIR}${PREFIX}/etc/monitorix.conf.sample
+	${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}
 
 .include <bsd.port.mk>
