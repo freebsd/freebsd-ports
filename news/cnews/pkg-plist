@@ -205,3 +205,5 @@ man/man8/rnews.8cn.gz
 @dirrmtry %%NEWSARTS%%/out.master
 @dirrmtry %%NEWSARTS%%/out.nntp
 @dirrmtry %%NEWSARTS%%
+@owner
+@group
