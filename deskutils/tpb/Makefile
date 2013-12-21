@@ -5,45 +5,44 @@ PORTNAME=	tpb
 PORTVERSION=	0.6.4
 PORTREVISION=	10
 CATEGORIES=	deskutils
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	On-Screen-Display for hotkeys of IBM ThinkPads
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
+
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+USES=		bison gmake iconv pkgconfig
 GNU_CONFIGURE=	yes
-USES=		bison iconv gmake pkgconfig
-
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
 
-MAN1=		tpb.1
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALABASE}/lib
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=		gettext
+NLS_CONFIGURE_OFF=	--disable-nls
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/src/cfg.h \
-		${WRKSRC}/man/tpb.1
+.for i in man/tpb.1 src/cfg.h
+	@${REINPLACE_CMD} -e \
+		's|%%PREFIX%%|${PREFIX}|g ; \
+		 s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/${i}
+.endfor
+	@${REINPLACE_CMD} -e \
+		's|void test()||' ${WRKSRC}/configure
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/doc/tpbrc ${PREFIX}/etc/tpbrc.default
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/doc/callback_example.sh ${DOCSDIR}
-.endif
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} tpbrc \
+		${STAGEDIR}${PREFIX}/etc/tpbrc.default)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} callback_example.sh \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
