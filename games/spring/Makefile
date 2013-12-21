@@ -21,8 +21,10 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 BUILD_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 
-ONLY_FOR_ARCHS=	i386 amd64
-ONLY_FOR_ARCHS_REASON=	relies on x86 floating-point math
+# XXX: it should be possible to build it on i386, investigate
+# (currently link fails on undefined reference to __sync_fetch_and_add_8)
+ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS_REASON=	relies on x86 floating-point math and amd64 atomic ops
 
 USE_SDL=	sdl
 USE_OPENAL=	al
@@ -64,10 +66,6 @@ MANPAGES_DOCS_OFF=	-DUSERDOCS_PLAIN:BOOL=false
 PR_DOWNLOADER_LIB_DEPENDS=libcurl.so:${PORTSDIR}/ftp/curl
 
 .include <bsd.port.options.mk>
-
-.if ${ARCH} == "i386"
-BROKEN=		does not build on i386 (undefined reference to __sync_fetch_and_add_8)
-.endif
 
 .if defined(WITH_SYNC_DEBUG)
 CFLAGS=		# empty
