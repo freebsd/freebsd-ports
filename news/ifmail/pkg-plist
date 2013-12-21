@@ -1,3 +1,6 @@
+man/man3/parsedate.3.gz
+man/man8/ifmail.8.gz
+man/man8/iftoss.8.gz
 @exec if ! pw usershow %%IFMAIL_RUNAS%% 2>/dev/null; then pw useradd %%IFMAIL_RUNAS%% -g uucp -u 75 -h - -d /nonexistent -s /nonexistent -c "Ifmail Server"; fi
 @unexec if pw usershow %%IFMAIL_RUNAS%% | grep -q 75:66; then pw userdel %%IFMAIL_RUNAS%%; fi
 @owner ifmail

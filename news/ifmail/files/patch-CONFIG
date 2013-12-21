@@ -73,7 +73,7 @@
  
  # for make install, where to put binaries and what owner to set
 -BINDIR = /usr/lib/ifmail
-+BINDIR = ${PREFIX}/libexec/ifmail
++BINDIR = ${DESTDIR}${PREFIX}/libexec/ifmail
  OWNER = ifmail
  GROUP = uucp
  MODE = 0711
