@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Blue Moon
+GenericName=Blue Moon game
+Comment=Blue Moon card solitaire
+Icon=bluemoon
+Exec=bluemoon
+Categories=Game;CardGame;
+Terminal=true

@@ -88,7 +88,7 @@
     SUBDIR += blockrage
     SUBDIR += blokish
     SUBDIR += bloodfrontier
-    SUBDIR += blue
+    SUBDIR += bluemoon
     SUBDIR += bogged
     SUBDIR += bomber
     SUBDIR += bomberclone
