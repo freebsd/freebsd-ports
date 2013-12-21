@@ -3,64 +3,69 @@
 
 PORTNAME=	galaxyhack
 PORTVERSION=	1.74
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF \
+		SF/${PORTNAME}/Fleet%20packages/020906:fleets
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AI script based strategy game
 
+LICENSE=	GPLv2
+
+BUILD_DEPENDS=	winicontoppm:${PORTSDIR}/graphics/netpbm
 LIB_DEPENDS=	libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
-USES=		dos2unix gmake
-USE_BZIP2=	yes
-USE_SDL=	gfx image mixer sdl
-WRKSRC=		${WRKDIR}/${PORTNAME}/src
-
 OPTIONS_DEFINE=	FLEETS OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
-FLEETS_DESC=	Install additional fleets
+OPTIONS_SUB=	yes
+FLEETS_DESC=	Additional fleets
 
+WRKSRC=		${WRKDIR}/${PORTNAME}/src
+
+USE_BZIP2=	yes
+USES=		dos2unix gmake
+USE_SDL=	gfx image mixer sdl
 ALL_TARGET=	${PORTNAME}
-SUB_FILES=	${PORTNAME}-sh
-FLEETS_FILE=	gh_fleets_020906.zip
 
-NO_STAGE=	yes
+SUB_FILES=	${PORTNAME}-sh
+
+DESKTOP_ENTRIES="GalaxyHack" "" "${PREFIX}/share/pixmaps/galaxyhack.png" \
+		"${PORTNAME}" "" ""
+
+FLEETS_DISTFILES=		gh_fleets_020906.zip:fleets
+FLEETS_EXTRACT_DEPENDS=		${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+OPTIMIZED_CFLAGS_MAKE_ENV=	OPTIMIZED_CFLAGS=YES
+
 .include <bsd.port.options.mk>
 
+post-extract:
 .if ${PORT_OPTIONS:MFLEETS}
-EXTRACT_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
-DISTFILES+=	${FLEETS_FILE}
-PLIST_SUB+=	FLEETS=""
-.else
-PLIST_SUB+=	FLEETS="@comment "
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${UNZIP_CMD} -o ${DISTDIR}/${FLEETS_DISTFILES:S/:fleets//} \
+		-x "*/CVS/*" "*/.svn/*" -d ${STAGEDIR}${DATADIR}
 .endif
 
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-MAKE_ENV+=	OPTIMIZED_CFLAGS=YES
-.endif
+post-build:
+	@(winicontoppm ${WRKSRC}/../GalaxyHack.ico | pnmtopng \
+		> ${WRKDIR}/galaxyhack.png)
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-sh ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/libexec
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/../settings.dat ${DATADIR}
+	(cd ${WRKDIR} && ${INSTALL_SCRIPT} ${PORTNAME}-sh \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME})
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} \
+		${STAGEDIR}${PREFIX}/libexec)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/.. && ${INSTALL_DATA} settings.dat \
+		${STAGEDIR}${DATADIR})
 .for d in fleets gamedata graphics music standardpictures
-	${CP} -R ${WRKSRC}/../${d} ${DATADIR}
+	@(cd ${WRKSRC}/.. && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor
-.if ${PORT_OPTIONS:MFLEETS}
-	@${UNZIP_CMD} -o ${DISTDIR}/${FLEETS_FILE} -x "*/CVS/*" "*/.svn/*" \
-		-d ${DATADIR}
-.endif
-
-post-install:
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
-	@${FIND} ${DATADIR} -type f -print0 | \
-		${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	@${FIND} ${DATADIR} -type d -print0 | \
-		${XARGS} -0 ${CHMOD} ${BINMODE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
+	(cd ${WRKDIR} && ${INSTALL_DATA} galaxyhack.png \
+		${STAGEDIR}/${PREFIX}/share/pixmaps)
 
 .include <bsd.port.mk>
