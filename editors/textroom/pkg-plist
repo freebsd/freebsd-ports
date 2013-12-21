@@ -1,13 +1,12 @@
 bin/textroom
-bin/textroom-uninstall
 share/applications/textroom.desktop
-share/textroom/textroom-txr-mime.xml
-share/textroom/words.txt
 share/hunspell/tr.aff
 share/hunspell/tr.dic
 share/pixmaps/textroom.png
 share/sounds/keyany.wav
 share/sounds/keyenter.wav
+%%DATADIR%%/textroom-txr-mime.xml
+%%DATADIR%%/words.txt
+@dirrm %%DATADIR%%
 @dirrmtry share/sounds
 @dirrmtry share/hunspell
-@dirrm share/textroom
