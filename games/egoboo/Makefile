@@ -13,31 +13,25 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A 3D dungeon crawling adventure in the spirit of NetHack
 
+USES=		gmake
 USE_SDL=	sdl ttf mixer image
 USE_GL=		yes
-USE_GMAKE=	yes
 USE_DOS2UNIX=	*.c
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/game
 MAKEFILE=	Makefile.unix
+MAKE_ARGS=	PREFIX="${STAGEDIR}${PREFIX}"
 
 PLIST_FILES=	bin/${PORTNAME} libexec/${PORTNAME}
-
 PORTDATA=	*
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/egoboo|${DATADIR}|g; \
 		s|cp -a|cp -RPp|; s|/usr/libexec|${PREFIX}/libexec|' \
 		${WRKSRC}/egoboo.sh
 
 post-install:
-.if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}
 	@cd ${WRKDIR}/${DISTNAME:S/-/-data-/} && \
-		${COPYTREE_SHARE} . ${DATADIR}
-.endif
-
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
+		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
