@@ -14,7 +14,7 @@ DIST_SUBDIR=	foomatic
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Foomatic database
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
+LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 		curl:${PORTSDIR}/ftp/curl
 
 PROJECTHOST=	bsdistfiles
