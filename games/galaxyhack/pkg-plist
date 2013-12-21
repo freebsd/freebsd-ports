@@ -780,6 +780,7 @@ libexec/galaxyhack
 %%DATADIR%%/standardpictures/yellow/smallship/kpovieta_ft1.png
 %%DATADIR%%/standardpictures/yellow/smallship/ss1-hshape-j.png
 %%DATADIR%%/standardpictures/yellow/smallship/ss2-xshape-j.png
+share/pixmaps/galaxyhack.png
 @dirrm %%DATADIR%%/standardpictures/yellow/smallship
 @dirrm %%DATADIR%%/standardpictures/yellow/frigate
 @dirrm %%DATADIR%%/standardpictures/yellow/capship
@@ -800,23 +801,6 @@ libexec/galaxyhack
 @dirrm %%DATADIR%%/music
 @dirrm %%DATADIR%%/graphics
 @dirrm %%DATADIR%%/gamedata
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/yellow/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/yellow/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/yellow/capship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/yellow
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/red/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/red/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/red/capship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/red
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/green/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/green/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/green/capship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/green
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/blue/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/blue/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/blue/capship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures/blue
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m/unitpictures
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/the_m
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/sitducks
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/quiters
@@ -852,7 +836,6 @@ libexec/galaxyhack
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/green
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/blue/smallship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/blue/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/blue/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures/blue
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids/unitpictures
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/humanoids
@@ -947,20 +930,12 @@ libexec/galaxyhack
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/atenyn/unitpictures
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/atenyn
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/yellow/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/yellow/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/yellow/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/yellow
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/red/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/red/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/red/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/red
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/green/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/green/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/green/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/green
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/blue/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/blue/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/blue/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures/blue
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas/unitpictures
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/alfarninas
@@ -993,38 +968,26 @@ libexec/galaxyhack
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY/unitpictures/blue
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY/unitpictures
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/The VKY
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/yellow/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/yellow/frigate
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/yellow/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/yellow
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/red/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/red/frigate
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/red/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/red
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/green/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/green/frigate
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/green/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/green
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/blue/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/blue/frigate
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/blue/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures/blue
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons/unitpictures
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Tedingtons
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/yellow/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/yellow/frigate
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/yellow/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/yellow
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/red/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/red/frigate
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/red/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/red
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/green/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/green/frigate
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/green/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/green
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/blue/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/blue/frigate
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/blue/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures/blue
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Star Wars/unitpictures
@@ -1032,23 +995,6 @@ libexec/galaxyhack
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Space Superiority
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/SS-Rings-2
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/SS-Rings
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/yellow/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/yellow/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/yellow/capship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/yellow
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/red/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/red/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/red/capship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/red
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/green/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/green/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/green/capship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/green
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/blue/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/blue/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/blue/capship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures/blue
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers/unitpictures
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Rushers
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Renennians
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Qurennians
@@ -1074,41 +1020,7 @@ libexec/galaxyhack
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Orbital V2
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Orbital
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Omicron
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/yellow/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/yellow/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/yellow/capship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/yellow
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/red/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/red/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/red/capship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/red
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/green/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/green/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/green/capship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/green
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/blue/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/blue/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/blue/capship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures/blue
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers/unitpictures
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/MiserableStingers
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/yellow/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/yellow/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/yellow/capship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/yellow
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/red/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/red/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/red/capship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/red
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/green/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/green/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/green/capship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/green
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/blue/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/blue/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/blue/capship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures/blue
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM/unitpictures
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/MMM
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Kpovieta
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Kamikaza
@@ -1133,39 +1045,23 @@ libexec/galaxyhack
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/IR2 The Swarm/unitpictures
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/IR2 The Swarm
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/IR Evadies
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/yellow/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/yellow/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/yellow/capship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/yellow
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red/smallship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red/frigate
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/red
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/green/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/green/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/green/capship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/green
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/blue/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/blue/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/blue/capship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures/blue
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset/unitpictures
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Hirvikankaalaiset
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Ghost v1
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/yellow/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/yellow/frigate
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/yellow/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/yellow
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/red/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/red/frigate
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/red/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/red
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/green/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/green/frigate
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/green/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/green
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/blue/smallship
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/blue/frigate
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/blue/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures/blue
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Fereans/unitpictures
@@ -1192,19 +1088,15 @@ libexec/galaxyhack
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Cowards
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/yellow/smallship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/yellow/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/yellow/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/yellow
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/red/smallship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/red/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/red/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/red
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/green/smallship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/green/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/green/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/green
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/blue/smallship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/blue/frigate
-%%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/blue/capship
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures/blue
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans/unitpictures
 %%FLEETS%%@dirrm %%DATADIR%%/fleets/Carcinogeneticans

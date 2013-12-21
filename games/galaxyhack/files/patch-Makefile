@@ -9,7 +9,7 @@
 -LDFLAGS = $(shell sdl-config --libs) -lSDL_image -lSDL_mixer -lboost_filesystem
 +CXX ?= g++
 +CXXFLAGS += $(shell $(SDL_CONFIG) --cflags)
-+LDFLAGS += $(shell $(SDL_CONFIG) --libs) -lSDL_image -lSDL_mixer -lboost_filesystem
++LDFLAGS += $(shell $(SDL_CONFIG) --libs) -lSDL_image -lSDL_mixer -lboost_filesystem -lboost_system
 +
 +ifdef OPTIMIZED_CFLAGS
 +CXXFLAGS += -O3
