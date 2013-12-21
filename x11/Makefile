@@ -172,7 +172,6 @@
     SUBDIR += libgnome-java
     SUBDIR += libgnome-reference
     SUBDIR += libgnomekbd
-    SUBDIR += libgnomekbd3
     SUBDIR += libgnomemm26
     SUBDIR += libkonq
     SUBDIR += libmatekbd
