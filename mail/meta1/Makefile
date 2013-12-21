@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	meta1
-PORTVERSION=	1.0.0a.18.0
-DISTVERSION=	1.0.Alpha18.0
+PORTVERSION=	1.0.0a.19.0
+DISTVERSION=	1.0.Alpha19.0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://www.MeTA1.org/download/.alpha/dns/
+MASTER_SITES=	http://www.MeTA1.org/download/.alpha/amd64/
 PKGNAMESUFFIX?=	${TLS_SUFFIX}${SASL_SUFFIX}${BERKELEYDB_SUFFIX}${PMILTER_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -50,6 +50,8 @@ NOLOGIN_CMD?=	/usr/sbin/nologin
 
 OPTIONS_DEFINE=	BDB PMILTER DKIM MSP SASL2 SASL2AUTHD TLS
 OPTIONS_DEFAULT=	BDB PMILTER DKIM SASL2 TLS
+NO_OPTIONS_SORT=yes
+OPTIONS_SUB=	yes
 
 BDB_DESC=	External Berkeley DB support
 PMILTER_DESC=	Adds policy milter support
@@ -57,6 +59,16 @@ DKIM_DESC=	Enable DKIM signing support
 MSP_DESC=	Enable mail submision program
 SASL2_DESC=	Adds SASL2 support
 SASL2AUTHD_DESC=	Enable plaintext authentication via SASL2
+
+PMILTER_CONFIGURE_ENABLE=	pmilter
+DKIM_CONFIGURE_ENABLE=	DKIM
+MSP_CONFIGURE_ENABLE=	msp
+SASL2_LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
+SASL2_CONFIGURE_ENABLE=	SASL
+SASL2_CONFIGURE_ON=	--with-sasl-incdir=${LOCALBASE}/include \
+			--with-sasl-libdir=${LOCALBASE}/lib
+SASL2AUTHD_RUN_DEPENDS=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
+TLS_CONFIGURE_ENABLE=	TLS
 
 .include <bsd.port.options.mk>
 
@@ -75,50 +87,27 @@ PLIST_SUB+=	WITH_BDBINT=""
 
 .if ${PORT_OPTIONS:MPMILTER}
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--enable-pmilter
 .else
 PMILTER_SUFFIX?=	-nopmilter
-CONFIGURE_ARGS+=	--disable-pmilter
-.endif
-
-.if ${PORT_OPTIONS:MDKIM}
-CONFIGURE_ARGS+=       --enable-DKIM
-.else
-CONFIGURE_ARGS+=       --disable-DKIM
 .endif
 
 .if ${PORT_OPTIONS:MMSP}
-CONFIGURE_ARGS+=       --enable-msp
 MAN8+=	sendmail.8
-PLIST_SUB+=	WITH_MSP=""
 CONFLICTS+=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.* opensmtpd-* sendmail-*
-.else
-CONFIGURE_ARGS+=       --disable-msp
-PLIST_SUB+=	WITH_MSP="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MSASL2}
-LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
-CONFIGURE_ARGS+=	--enable-SASL
-CONFIGURE_ARGS+=	--with-sasl-incdir=${LOCALBASE}/include
-CONFIGURE_ARGS+=	--with-sasl-libdir=${LOCALBASE}/lib
-.else
+.if ! ${PORT_OPTIONS:MSASL2}
 SASL_SUFFIX?=	-nosasl
-CONFIGURE_ARGS+=	--disable-SASL
 .endif
 
 .if ${PORT_OPTIONS:MSASL2AUTHD}
 .if empty(PORT_OPTIONS:MSASL2)
 IGNORE=		Option SASL2AUTHD needs option SASL2
 .endif
-RUN_DEPENDS+=	${LOCALBASE}/sbin/saslauthd:${PORTSDIR}/security/cyrus-sasl2-saslauthd
 .endif
 
-.if ${PORT_OPTIONS:MTLS}
-CONFIGURE_ARGS+=	--enable-TLS
-.else
+.if ! ${PORT_OPTIONS:MTLS}
 TLS_SUFFIX?=	-notls
-CONFIGURE_ARGS+=	--disable-TLS
 .endif
 
 post-patch:
@@ -186,7 +175,7 @@ post-install:
 .endfor
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
