@@ -7,7 +7,7 @@
 -#include "dsp_defs.h"
 +#include "slu_ddefs.h"
  #elif SUPERLU_MT_USE
-+#include "util.h"
++#include "slu_mt_util.h"
  #include "pdsp_defs.h"
  #elif SUPERLU_DIST_USE
  #include <math.h>
@@ -30,6 +30,17 @@
  #endif
  
    /* Create Matrix A in the format expected by SuperLU */
+@@ -94,8 +100,8 @@
+   nrhs = 1;
+ #if ( SUPERLU_USE || SUPERLU_MT_USE )
+   dCreate_Dense_Matrix( &B, n, nrhs, solve_b, n, DN, _D, GE ); 
+-  if ( !(perm_r = intMalloc(1000+n)) ) ABORT("Not enough memory for SuperLU.");
+-  if ( !(perm_c = intMalloc(1000+n)) ) ABORT("Not enough memory for SuperLU.");
++  if ( !(perm_r = intMalloc(1000+n)) ) USER_ABORT("Not enough memory for SuperLU.");
++  if ( !(perm_c = intMalloc(1000+n)) ) USER_ABORT("Not enough memory for SuperLU.");
+     /* Get column permutation vector perm_c[] */
+   perm_spec = 1;
+   get_perm_c( perm_spec, &A, perm_c );
 @@ -103,7 +109,9 @@
  
    /* Solve */
