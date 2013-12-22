@@ -11,6 +11,8 @@ COMMENT=	Free, opensource ad server in PHP
 
 LICENSE=	GPLv2
 
+FORBIDDEN=	CVE-2013-7149
+
 USE_BZIP2=	yes
 NO_BUILD=	yes
 SUB_LIST+=	PKGNAME=${PKGNAME}

@@ -51,6 +51,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3e33a0bb-6b2f-11e3-b042-20cf30e32f6d">
+    <topic>OpenX -- SQL injection vulnerability</topic>
+    <affects>
+      <package>
+	<name>openx</name>
+	<range><lt>3.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Revive reports:</p>
+	<blockquote cite="http://www.revive-adserver.com/security/revive-sa-2013-001/">
+	  <p>An SQL-injection vulnerability was recently discovered and reported
+	    to the Revive Adserver team by Florian Sander. The vulnerability is
+	    known to be already exploited to gain unauthorised access to the
+	    application using brute force mechanisms, however other kind of
+	    attacks might be possible and/or already in use. The risk is rated
+	    to be critical as the most common end goal of the attackers is to
+	    spread malware to the visitors of all the websites and ad networks
+	    that the ad server is being used on.</p>
+	  <p>The vulnerability is also present and exploitable in OpenX Source
+	    2.8.11 and earlier versions, potentially back to phpAdsNew 2.0.x.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.revive-adserver.com/security/revive-sa-2013-001/</url>
+      <url>http://www.kreativrauschen.com/blog/2013/12/18/zero-day-vulnerability-in-openx-source-2-8-11-and-revive-adserver-3-0-1/</url>
+      <cvename>CVE-2013-7149</cvename>
+    </references>
+    <dates>
+      <discovery>2013-12-20</discovery>
+      <entry>2013-12-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4e1f4abc-6837-11e3-9cda-3c970e169bc2">
     <topic>cURL library -- cert name check ignore with GnuTLS</topic>
     <affects>
