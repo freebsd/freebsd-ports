@@ -1,4 +1,6 @@
 bin/svnup
+man/man1/svnup.1.gz
+man/man5/svnup.conf.5.gz
 @unexec if cmp -s %D/etc/svnup.conf.sample %D/etc/svnup.conf; then rm -f %D/etc/svnup.conf; else echo "If permanently removing this package, then please consider removing %D/etc/svnup.conf" ;fi
 etc/svnup.conf.sample
 @exec if [ ! -f %D/etc/svnup.conf ] ; then cp -p %D/etc/svnup.conf.sample %D/etc/svnup.conf; fi
