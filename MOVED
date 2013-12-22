@@ -5333,3 +5333,5 @@ finance/quantlib||2013-12-22|Has expired: Broken for more than 6 month
 games/xkobo||2013-12-22|Has expired: Broken for more than 6 month
 games/quake3-rq3||2013-12-22|Has expired: Broken for more than 6 month
 math/fbm||2013-12-22|Has expired: No new release since 2004, new supported upstream
+graphics/yukon||2013-12-22|Removed, depends on graphics/seom
+graphics/seom||2013-12-22|Has expired: Broken for more than 6 month

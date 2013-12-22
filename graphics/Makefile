@@ -957,7 +957,6 @@
     SUBDIR += sdl_ttf
     SUBDIR += seam-carving-gui
     SUBDIR += seejpeg
-    SUBDIR += seom
     SUBDIR += separate
     SUBDIR += sharpconstruct
     SUBDIR += shiva-collections
@@ -1077,7 +1076,6 @@
     SUBDIR += yafray
     SUBDIR += yagf
     SUBDIR += yed
-    SUBDIR += yukon
     SUBDIR += zathura
     SUBDIR += zathura-djvu
     SUBDIR += zathura-pdf-poppler
