@@ -23,8 +23,12 @@
 %%DATADIR%%/icons/unticked-small.png
 %%DATADIR%%/icons/xpra.png
 %%DATADIR%%/webm/LICENSE
-%%LOCALBASE%%/%%ETCDIR%%/xorg.conf
-%%LOCALBASE%%/%%ETCDIR%%/xpra.conf
+@unexec if cmp -s %D/etc/xpra/xpra.conf.sample %D/etc/xpra/xpra.conf ; then rm -f %D/etc/xpra/xpra.conf; fi
+@unexec if cmp -s %D/etc/xpra/xorg.conf.sample %D/etc/xpra/xorg.conf ; then rm -f %D/etc/xpra/xorg.conf; fi
+%%ETCDIR%%/xpra.conf.sample
+@exec if [ ! -f %D/etc/xpra/xpra.conf ]; then cp -p %D/%F %B/xpra.conf; fi
+%%ETCDIR%%/xorg.conf.sample
+@exec if [ ! -f %D/etc/xpra/xorg.conf ]; then cp -p %D/%F %B/xorg.conf; fi
 %%PYTHON_LIBDIR%%/site-packages/xpra/__init__.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/__init__.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/__init__.pyo
@@ -583,8 +587,9 @@ bin/xpra_launcher
 share/applications/xpra.desktop
 share/applications/xpra_launcher.desktop
 share/icons/xpra.png
+man/man1/xpra.1.gz
+man/man1/xpra_launcher.1.gz
 @dirrm share/icons
-@dirrm share/applications
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/x11/gtk_x11
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/x11/bindings
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/x11
