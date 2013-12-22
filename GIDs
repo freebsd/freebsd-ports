@@ -199,6 +199,7 @@ jenkins:*:818:
 openacs:*:820:
 dotlrn:*:821:
 polw:*:825:
+statsd:*:826:
 netdisco:*:840:
 munin:*:842:
 dahdi:*:843:asterisk

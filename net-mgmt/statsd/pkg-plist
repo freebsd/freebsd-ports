@@ -1,0 +1,19 @@
+%%DATADIR%%/backends/console.js
+%%DATADIR%%/backends/graphite.js
+%%DATADIR%%/backends/repeater.js
+%%DATADIR%%/exampleConfig.js
+%%DATADIR%%/exampleProxyConfig.js
+%%DATADIR%%/lib/config.js
+%%DATADIR%%/lib/helpers.js
+%%DATADIR%%/lib/logger.js
+%%DATADIR%%/lib/mgmt_console.js
+%%DATADIR%%/lib/process_metrics.js
+%%DATADIR%%/lib/process_mgmt.js
+%%DATADIR%%/lib/set.js
+%%DATADIR%%/stats.js
+@unexec if cmp -s %D/etc/statsd.js.sample %D/etc/statsd.js; then rm -f %D/etc/statsd.js; fi
+etc/statsd.js.sample
+@exec [ -f %B/statsd.js ] || cp %B/%f %B/statsd.js
+@dirrmtry %%DATADIR%%/lib
+@dirrmtry %%DATADIR%%/backends
+@dirrmtry %%DATADIR%%
