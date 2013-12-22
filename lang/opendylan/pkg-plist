@@ -350,6 +350,9 @@ bin/parser-compiler
 %%DATADIR%%/sources/app/goodbye-world/goodbye-world.dylan
 %%DATADIR%%/sources/app/goodbye-world/goodbye-world.lid
 %%DATADIR%%/sources/app/goodbye-world/library.dylan
+%%DATADIR%%/sources/app/gtk-unit-converter/gtk-unit-converter.dylan
+%%DATADIR%%/sources/app/gtk-unit-converter/gtk-unit-converter.lid
+%%DATADIR%%/sources/app/gtk-unit-converter/library.dylan
 %%DATADIR%%/sources/app/harp-runtime-generator/x86-darwin-library.dylan
 %%DATADIR%%/sources/app/harp-runtime-generator/x86-darwin-runtime-generator.lid
 %%DATADIR%%/sources/app/harp-runtime-generator/x86-darwin-runtime.dylan
@@ -376,6 +379,7 @@ bin/parser-compiler
 %%DATADIR%%/sources/app/llvm-tablegen/library.dylan
 %%DATADIR%%/sources/app/llvm-tablegen/llvm-tablegen.lid
 %%DATADIR%%/sources/app/llvm-tablegen/tablegen-intrinsics.dylan
+%%DATADIR%%/sources/app/llvm-tablegen/tablegen-multi-class.dylan
 %%DATADIR%%/sources/app/llvm-tablegen/tablegen-parser.dylan
 %%DATADIR%%/sources/app/llvm-tablegen/tablegen-parser.dylgram
 %%DATADIR%%/sources/app/llvm-tablegen/tablegen-parser.spec
@@ -564,6 +568,8 @@ bin/parser-compiler
 %%DATADIR%%/sources/common-dylan/tests/threads/threads.dylan
 %%DATADIR%%/sources/common-dylan/tests/transcendentals.dylan
 %%DATADIR%%/sources/common-dylan/tests/variables.dylan
+%%DATADIR%%/sources/common-dylan/timer_helpers.c
+%%DATADIR%%/sources/common-dylan/timers.dylan
 %%DATADIR%%/sources/common-dylan/transcendentals.dylan
 %%DATADIR%%/sources/common-dylan/unix-common-extensions.dylan
 %%DATADIR%%/sources/common-dylan/version.rc
@@ -1241,7 +1247,6 @@ bin/parser-compiler
 %%DATADIR%%/sources/deuce/standalone/frame.dylan
 %%DATADIR%%/sources/deuce/standalone/icons.dylan
 %%DATADIR%%/sources/deuce/standalone/library.dylan
-%%DATADIR%%/sources/deuce/standalone/module.dylan
 %%DATADIR%%/sources/deuce/standalone/new.ico
 %%DATADIR%%/sources/deuce/standalone/open.ico
 %%DATADIR%%/sources/deuce/standalone/paste.ico
@@ -1259,6 +1264,7 @@ bin/parser-compiler
 %%DATADIR%%/sources/deuce/standalone/undo.ico
 %%DATADIR%%/sources/deuce/standalone/values.ico
 %%DATADIR%%/sources/deuce/standalone/warning.ico
+%%DATADIR%%/sources/deuce/standalone/win32-library.dylan
 %%DATADIR%%/sources/deuce/standalone/win32-standalone-deuce.lid
 %%DATADIR%%/sources/deuce/streams.dylan
 %%DATADIR%%/sources/deuce/strings.dylan
@@ -1336,18 +1342,6 @@ bin/parser-compiler
 %%DATADIR%%/sources/dfmc/c-linker/c-linker-library.dylan
 %%DATADIR%%/sources/dfmc/c-linker/c-linker.dylan
 %%DATADIR%%/sources/dfmc/c-linker/c-linker.lid
-%%DATADIR%%/sources/dfmc/c-run-time/Makefile.in
-%%DATADIR%%/sources/dfmc/c-run-time/Makefile.win32
-%%DATADIR%%/sources/dfmc/c-run-time/debug-print.c
-%%DATADIR%%/sources/dfmc/c-run-time/dummy-threads.c
-%%DATADIR%%/sources/dfmc/c-run-time/hacking.txt
-%%DATADIR%%/sources/dfmc/c-run-time/posix-threads.c
-%%DATADIR%%/sources/dfmc/c-run-time/posix-threads.h
-%%DATADIR%%/sources/dfmc/c-run-time/run-time.c
-%%DATADIR%%/sources/dfmc/c-run-time/run-time.h
-%%DATADIR%%/sources/dfmc/c-run-time/trace.c
-%%DATADIR%%/sources/dfmc/c-run-time/trace.h
-%%DATADIR%%/sources/dfmc/c-run-time/win32-ccl-linker.script
 %%DATADIR%%/sources/dfmc/common/common-library.dylan
 %%DATADIR%%/sources/dfmc/common/common-macros.dylan
 %%DATADIR%%/sources/dfmc/common/common.dylan
@@ -1494,6 +1488,7 @@ bin/parser-compiler
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-emit-type-check.dylan
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-emit.dylan
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-entry-points.dylan
+%%DATADIR%%/sources/dfmc/llvm-back-end/llvm-mv.dylan
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-ops.dylan
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-primitives-alloc.dylan
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-primitives-basic.dylan
@@ -1506,9 +1501,11 @@ bin/parser-compiler
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-primitives-os.dylan
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-primitives-symbol.dylan
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-primitives-thread.dylan
+%%DATADIR%%/sources/dfmc/llvm-back-end/llvm-primitives-value-cell.dylan
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-primitives.dylan
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-sections.dylan
 %%DATADIR%%/sources/dfmc/llvm-back-end/llvm-targets.dylan
+%%DATADIR%%/sources/dfmc/llvm-back-end/llvm-varargs.dylan
 %%DATADIR%%/sources/dfmc/llvm-linker/llvm-gluefile.dylan
 %%DATADIR%%/sources/dfmc/llvm-linker/llvm-link-object.dylan
 %%DATADIR%%/sources/dfmc/llvm-linker/llvm-linker-library.dylan
@@ -1697,7 +1694,7 @@ bin/parser-compiler
 %%DATADIR%%/sources/duim/examples/interface-builder/representation.dylan
 %%DATADIR%%/sources/duim/examples/interface-builder/start.dylan
 %%DATADIR%%/sources/duim/examples/interface-builder/win32-interface-builder.lid
-%%DATADIR%%/sources/duim/examples/life/README.html
+%%DATADIR%%/sources/duim/examples/life/README.rst
 %%DATADIR%%/sources/duim/examples/life/display.dylan
 %%DATADIR%%/sources/duim/examples/life/erase.ico
 %%DATADIR%%/sources/duim/examples/life/events.dylan
@@ -2167,7 +2164,6 @@ bin/parser-compiler
 %%DATADIR%%/sources/dylan/integer.dylan
 %%DATADIR%%/sources/dylan/limited-array.dylan
 %%DATADIR%%/sources/dylan/limited-integer.dylan
-%%DATADIR%%/sources/dylan/limited-list.dylan
 %%DATADIR%%/sources/dylan/limited-stretchy-vector.dylan
 %%DATADIR%%/sources/dylan/limited-vector.dylan
 %%DATADIR%%/sources/dylan/list-speed.dylan
@@ -2419,11 +2415,6 @@ bin/parser-compiler
 %%DATADIR%%/sources/environment/editor/backends/gnuserv/gnuserv-backend.lid
 %%DATADIR%%/sources/environment/editor/backends/gnuserv/library.dylan
 %%DATADIR%%/sources/environment/editor/backends/gnuserv/module.dylan
-%%DATADIR%%/sources/environment/editor/backends/lispworks/library.dylan
-%%DATADIR%%/sources/environment/editor/backends/lispworks/lispworks-backend.dylan
-%%DATADIR%%/sources/environment/editor/backends/lispworks/lispworks-backend.lid
-%%DATADIR%%/sources/environment/editor/backends/lispworks/lispworks-hook.lisp
-%%DATADIR%%/sources/environment/editor/backends/lispworks/module.dylan
 %%DATADIR%%/sources/environment/editor/backends/vi/library.dylan
 %%DATADIR%%/sources/environment/editor/backends/vi/module.dylan
 %%DATADIR%%/sources/environment/editor/backends/vi/vi-backend.dylan
@@ -2948,28 +2939,64 @@ bin/parser-compiler
 %%DATADIR%%/sources/examples/odbc/select-viewer/select-viewer.hdp
 %%DATADIR%%/sources/examples/odbc/select-viewer/start.dylan
 %%DATADIR%%/sources/examples/odbc/select-viewer/thread-utilities.dylan
-%%DATADIR%%/sources/gtk/gtk-c-ffi/gtk-2-10-win32.dylan
-%%DATADIR%%/sources/gtk/gtk-c-ffi/gtk-2-10-win32.intr
-%%DATADIR%%/sources/gtk/gtk-c-ffi/gtk-2-12-linux.dylan
-%%DATADIR%%/sources/gtk/gtk-c-ffi/gtk-2-8-linux.dylan
-%%DATADIR%%/sources/gtk/gtk-c-ffi/gtk-2-8-linux.intr
-%%DATADIR%%/sources/gtk/gtk-c-ffi/gtk-c-ffi-freebsd.hdp
-%%DATADIR%%/sources/gtk/gtk-c-ffi/gtk-c-ffi-linux.hdp
-%%DATADIR%%/sources/gtk/gtk-c-ffi/gtk-c-ffi-win32.hdp
-%%DATADIR%%/sources/gtk/gtk-c-ffi/gtk-module-2-10-win32.dylan
-%%DATADIR%%/sources/gtk/gtk-c-ffi/gtk-module-2-12-linux.dylan
-%%DATADIR%%/sources/gtk/gtk-c-ffi/gtk-module-2-8-linux.dylan
-%%DATADIR%%/sources/gtk/gtk-c-ffi/library.dylan
-%%DATADIR%%/sources/gtk/gtk-glue/gtk-linux.hdp
-%%DATADIR%%/sources/gtk/gtk-glue/gtk-module.dylan
-%%DATADIR%%/sources/gtk/gtk-glue/gtk-win32.hdp
-%%DATADIR%%/sources/gtk/gtk-glue/gtk.dylan
-%%DATADIR%%/sources/gtk/gtk-glue/gtk.jam
-%%DATADIR%%/sources/gtk/gtk-glue/library.dylan
-%%DATADIR%%/sources/gtk/gtk-glue/module.dylan
-%%DATADIR%%/sources/gtk/gtk-glue/properties-module.dylan
-%%DATADIR%%/sources/gtk/gtk-glue/properties.dylan
-%%DATADIR%%/sources/gtk/gtk-glue/support.c
+%%DATADIR%%/sources/gtk/atk-dylan/atk-dylan.jam
+%%DATADIR%%/sources/gtk/atk-dylan/atk-dylan.lid
+%%DATADIR%%/sources/gtk/atk-dylan/atk.dylan
+%%DATADIR%%/sources/gtk/atk-dylan/library.dylan
+%%DATADIR%%/sources/gtk/atk-dylan/properties.dylan
+%%DATADIR%%/sources/gtk/cairo-dylan/cairo-dylan.jam
+%%DATADIR%%/sources/gtk/cairo-dylan/cairo-dylan.lid
+%%DATADIR%%/sources/gtk/cairo-dylan/cairo.dylan
+%%DATADIR%%/sources/gtk/cairo-dylan/library.dylan
+%%DATADIR%%/sources/gtk/cairo-dylan/support.dylan
+%%DATADIR%%/sources/gtk/gdk-dylan/gdk-dylan.jam
+%%DATADIR%%/sources/gtk/gdk-dylan/gdk-dylan.lid
+%%DATADIR%%/sources/gtk/gdk-dylan/gdk.dylan
+%%DATADIR%%/sources/gtk/gdk-dylan/library.dylan
+%%DATADIR%%/sources/gtk/gdk-dylan/properties.dylan
+%%DATADIR%%/sources/gtk/gdk-dylan/support.dylan
+%%DATADIR%%/sources/gtk/gdkpixbuf-dylan/gdkpixbuf-dylan.jam
+%%DATADIR%%/sources/gtk/gdkpixbuf-dylan/gdkpixbuf-dylan.lid
+%%DATADIR%%/sources/gtk/gdkpixbuf-dylan/gdkpixbuf.dylan
+%%DATADIR%%/sources/gtk/gdkpixbuf-dylan/library.dylan
+%%DATADIR%%/sources/gtk/gdkpixbuf-dylan/properties.dylan
+%%DATADIR%%/sources/gtk/gio-dylan/gio-dylan.jam
+%%DATADIR%%/sources/gtk/gio-dylan/gio-dylan.lid
+%%DATADIR%%/sources/gtk/gio-dylan/gio.dylan
+%%DATADIR%%/sources/gtk/gio-dylan/library.dylan
+%%DATADIR%%/sources/gtk/gio-dylan/properties.dylan
+%%DATADIR%%/sources/gtk/glib-dylan/glib-dylan.jam
+%%DATADIR%%/sources/gtk/glib-dylan/glib-dylan.lid
+%%DATADIR%%/sources/gtk/glib-dylan/glib.dylan
+%%DATADIR%%/sources/gtk/glib-dylan/library.dylan
+%%DATADIR%%/sources/gtk/gmodule-dylan/gmodule-dylan.jam
+%%DATADIR%%/sources/gtk/gmodule-dylan/gmodule-dylan.lid
+%%DATADIR%%/sources/gtk/gmodule-dylan/gmodule.dylan
+%%DATADIR%%/sources/gtk/gmodule-dylan/library.dylan
+%%DATADIR%%/sources/gtk/gobject-dylan/gobject-dylan.jam
+%%DATADIR%%/sources/gtk/gobject-dylan/gobject-dylan.lid
+%%DATADIR%%/sources/gtk/gobject-dylan/gobject-glue.dylan
+%%DATADIR%%/sources/gtk/gobject-dylan/gobject.dylan
+%%DATADIR%%/sources/gtk/gobject-dylan/library.dylan
+%%DATADIR%%/sources/gtk/gobject-dylan/properties.dylan
+%%DATADIR%%/sources/gtk/gobject-dylan/support.c
+%%DATADIR%%/sources/gtk/gtk-dylan/gtk-constants.dylan
+%%DATADIR%%/sources/gtk/gtk-dylan/gtk-dylan.jam
+%%DATADIR%%/sources/gtk/gtk-dylan/gtk-dylan.lid
+%%DATADIR%%/sources/gtk/gtk-dylan/gtk-support.dylan
+%%DATADIR%%/sources/gtk/gtk-dylan/gtk.dylan
+%%DATADIR%%/sources/gtk/gtk-dylan/library.dylan
+%%DATADIR%%/sources/gtk/gtk-dylan/properties.dylan
+%%DATADIR%%/sources/gtk/gtk-dylan/support.c
+%%DATADIR%%/sources/gtk/pango-dylan/library.dylan
+%%DATADIR%%/sources/gtk/pango-dylan/pango-cairo.dylan
+%%DATADIR%%/sources/gtk/pango-dylan/pango-dylan.jam
+%%DATADIR%%/sources/gtk/pango-dylan/pango-dylan.lid
+%%DATADIR%%/sources/gtk/pango-dylan/pango.dylan
+%%DATADIR%%/sources/gtk/xlib-dylan/library.dylan
+%%DATADIR%%/sources/gtk/xlib-dylan/xlib-dylan.jam
+%%DATADIR%%/sources/gtk/xlib-dylan/xlib-dylan.lid
+%%DATADIR%%/sources/gtk/xlib-dylan/xlib.dylan
 %%DATADIR%%/sources/harp/binary-builder/binary-builder.lid
 %%DATADIR%%/sources/harp/binary-builder/builder.dylan
 %%DATADIR%%/sources/harp/binary-builder/library.dylan
@@ -3389,6 +3416,20 @@ bin/parser-compiler
 %%DATADIR%%/sources/lib/grammar-compiler/grammar-compiler-library.dylan
 %%DATADIR%%/sources/lib/grammar-compiler/grammar-compiler.dylan
 %%DATADIR%%/sources/lib/grammar-compiler/grammar-compiler.lid
+%%DATADIR%%/sources/lib/hash-algorithms/LICENSE
+%%DATADIR%%/sources/lib/hash-algorithms/README.rst
+%%DATADIR%%/sources/lib/hash-algorithms/hash-algorithms.dylan
+%%DATADIR%%/sources/lib/hash-algorithms/hash-algorithms.lid
+%%DATADIR%%/sources/lib/hash-algorithms/hash-macro.dylan
+%%DATADIR%%/sources/lib/hash-algorithms/library.dylan
+%%DATADIR%%/sources/lib/hash-algorithms/md5.c
+%%DATADIR%%/sources/lib/hash-algorithms/registry/generic/hash-algorithms
+%%DATADIR%%/sources/lib/hash-algorithms/registry/generic/hash-algorithms-test
+%%DATADIR%%/sources/lib/hash-algorithms/sha1.c
+%%DATADIR%%/sources/lib/hash-algorithms/sha2.c
+%%DATADIR%%/sources/lib/hash-algorithms/test/hash-algorithms-test.dylan
+%%DATADIR%%/sources/lib/hash-algorithms/test/hash-algorithms-test.lid
+%%DATADIR%%/sources/lib/hash-algorithms/test/library.dylan
 %%DATADIR%%/sources/lib/jam/jam-evaluator.dylan
 %%DATADIR%%/sources/lib/jam/jam-glob.dylan
 %%DATADIR%%/sources/lib/jam/jam-grist.dylan
@@ -3445,6 +3486,21 @@ bin/parser-compiler
 %%DATADIR%%/sources/lib/llvm/tests/llvm-test-suite.lid
 %%DATADIR%%/sources/lib/llvm/tests/llvm-test.dylan
 %%DATADIR%%/sources/lib/llvm/tests/specification.dylan
+%%DATADIR%%/sources/lib/logging/License.txt
+%%DATADIR%%/sources/lib/logging/README.rst
+%%DATADIR%%/sources/lib/logging/library.dylan
+%%DATADIR%%/sources/lib/logging/logging.dylan
+%%DATADIR%%/sources/lib/logging/logging.lid
+%%DATADIR%%/sources/lib/logging/registry/generic/logging
+%%DATADIR%%/sources/lib/logging/registry/generic/logging-test-suite
+%%DATADIR%%/sources/lib/logging/registry/generic/logging-test-suite-app
+%%DATADIR%%/sources/lib/logging/tests/app-library.dylan
+%%DATADIR%%/sources/lib/logging/tests/app.dylan
+%%DATADIR%%/sources/lib/logging/tests/library.dylan
+%%DATADIR%%/sources/lib/logging/tests/logging-test-suite-app.lid
+%%DATADIR%%/sources/lib/logging/tests/logging-test-suite.dylan
+%%DATADIR%%/sources/lib/logging/tests/logging-test-suite.lid
+%%DATADIR%%/sources/lib/logging/tests/spec.dylan
 %%DATADIR%%/sources/lib/memory-manager/library.dylan
 %%DATADIR%%/sources/lib/memory-manager/memory-manager.dylan
 %%DATADIR%%/sources/lib/memory-manager/memory-manager.lid
@@ -3506,24 +3562,37 @@ bin/parser-compiler
 %%DATADIR%%/sources/lib/run-time/Makefile.in
 %%DATADIR%%/sources/lib/run-time/Makefile.win32
 %%DATADIR%%/sources/lib/run-time/boehm-collector.c
-%%DATADIR%%/sources/lib/run-time/boehm.h
 %%DATADIR%%/sources/lib/run-time/break.c
+%%DATADIR%%/sources/lib/run-time/c-primitives-debug.c
+%%DATADIR%%/sources/lib/run-time/c-primitives-math.c
+%%DATADIR%%/sources/lib/run-time/c-run-time.c
+%%DATADIR%%/sources/lib/run-time/c-support.c
 %%DATADIR%%/sources/lib/run-time/collector.c
+%%DATADIR%%/sources/lib/run-time/debug-print.c
+%%DATADIR%%/sources/lib/run-time/dummy-threads.c
 %%DATADIR%%/sources/lib/run-time/exceptions.c
+%%DATADIR%%/sources/lib/run-time/hacking.txt
 %%DATADIR%%/sources/lib/run-time/harp-support/x86-freebsd/dylan-elf-dll.script
 %%DATADIR%%/sources/lib/run-time/harp-support/x86-freebsd/dylan-elf-exe.script
 %%DATADIR%%/sources/lib/run-time/harp-support/x86-freebsd/dylan-support.harp
 %%DATADIR%%/sources/lib/run-time/harp-support/x86-freebsd/dylan-support.o
+%%DATADIR%%/sources/lib/run-time/harp-support/x86-freebsd/dylan-support.s
+%%DATADIR%%/sources/lib/run-time/harp-support/x86-freebsd/runtime-syms.diff
 %%DATADIR%%/sources/lib/run-time/harp-support/x86-freebsd/runtime.harp
 %%DATADIR%%/sources/lib/run-time/harp-support/x86-freebsd/runtime.o
+%%DATADIR%%/sources/lib/run-time/harp-support/x86-freebsd/runtime.s
 %%DATADIR%%/sources/lib/run-time/harp-support/x86-linux/dylan-elf-dll.script
 %%DATADIR%%/sources/lib/run-time/harp-support/x86-linux/dylan-elf-exe.script
 %%DATADIR%%/sources/lib/run-time/harp-support/x86-linux/dylan-support.harp
 %%DATADIR%%/sources/lib/run-time/harp-support/x86-linux/dylan-support.o
+%%DATADIR%%/sources/lib/run-time/harp-support/x86-linux/dylan-support.s
 %%DATADIR%%/sources/lib/run-time/harp-support/x86-linux/runtime.harp
 %%DATADIR%%/sources/lib/run-time/harp-support/x86-linux/runtime.o
+%%DATADIR%%/sources/lib/run-time/harp-support/x86-linux/runtime.s
+%%DATADIR%%/sources/lib/run-time/harp-support/x86-windows/dylan-support.def
 %%DATADIR%%/sources/lib/run-time/harp-support/x86-windows/dylan-support.harp
 %%DATADIR%%/sources/lib/run-time/harp-support/x86-windows/dylan-support.obj
+%%DATADIR%%/sources/lib/run-time/harp-support/x86-windows/runtime.def
 %%DATADIR%%/sources/lib/run-time/harp-support/x86-windows/runtime.harp
 %%DATADIR%%/sources/lib/run-time/harp-support/x86-windows/runtime.obj
 %%DATADIR%%/sources/lib/run-time/heap-display.c
@@ -3533,17 +3602,23 @@ bin/parser-compiler
 %%DATADIR%%/sources/lib/run-time/heap-trail.c
 %%DATADIR%%/sources/lib/run-time/heap-utils.c
 %%DATADIR%%/sources/lib/run-time/heap-utils.h
+%%DATADIR%%/sources/lib/run-time/malloc-collector.c
 %%DATADIR%%/sources/lib/run-time/minvcrt.def
 %%DATADIR%%/sources/lib/run-time/mm.h
 %%DATADIR%%/sources/lib/run-time/mps-collector.c
 %%DATADIR%%/sources/lib/run-time/mps-dylan.c
 %%DATADIR%%/sources/lib/run-time/mpsiowin32.c
 %%DATADIR%%/sources/lib/run-time/plinth.c
+%%DATADIR%%/sources/lib/run-time/posix-threads.c
+%%DATADIR%%/sources/lib/run-time/posix-threads.h
 %%DATADIR%%/sources/lib/run-time/rtsyms.obj
 %%DATADIR%%/sources/lib/run-time/rtsyms.s
+%%DATADIR%%/sources/lib/run-time/run-time.h
 %%DATADIR%%/sources/lib/run-time/spy-interfaces.h
 %%DATADIR%%/sources/lib/run-time/tests/queue_test.c
 %%DATADIR%%/sources/lib/run-time/tests/threads_primitives_test.c
+%%DATADIR%%/sources/lib/run-time/trace.c
+%%DATADIR%%/sources/lib/run-time/trace.h
 %%DATADIR%%/sources/lib/run-time/unix-spy-interfaces.c
 %%DATADIR%%/sources/lib/run-time/unix-support.c
 %%DATADIR%%/sources/lib/run-time/unix-threads-primitives.c
@@ -3595,6 +3670,7 @@ bin/parser-compiler
 %%DATADIR%%/sources/lib/stack-walker/library.dylan
 %%DATADIR%%/sources/lib/stack-walker/stack-walker.dylan
 %%DATADIR%%/sources/lib/stack-walker/stack-walker.lid
+%%DATADIR%%/sources/lib/strings/README.rst
 %%DATADIR%%/sources/lib/strings/library.dylan
 %%DATADIR%%/sources/lib/strings/strings.dylan
 %%DATADIR%%/sources/lib/strings/strings.lid
@@ -4057,27 +4133,6 @@ bin/parser-compiler
 %%DATADIR%%/sources/ole/win32-automation/util.dylan
 %%DATADIR%%/sources/ole/win32-automation/variant.dylan
 %%DATADIR%%/sources/ole/win32-automation/win32-automation.lid
-%%DATADIR%%/sources/project-manager/dfmc-projects/binary-projects.dylan
-%%DATADIR%%/sources/project-manager/dfmc-projects/compiler.dylan
-%%DATADIR%%/sources/project-manager/dfmc-projects/dfmc-projects.lid
-%%DATADIR%%/sources/project-manager/dfmc-projects/interactive.dylan
-%%DATADIR%%/sources/project-manager/dfmc-projects/library.dylan
-%%DATADIR%%/sources/project-manager/dfmc-projects/lid-projects.dylan
-%%DATADIR%%/sources/project-manager/dfmc-projects/module.dylan
-%%DATADIR%%/sources/project-manager/dfmc-projects/progress.dylan
-%%DATADIR%%/sources/project-manager/dfmc-projects/projects.dylan
-%%DATADIR%%/sources/project-manager/dfmc-projects/registries.dylan
-%%DATADIR%%/sources/project-manager/dfmc-projects/workspace.dylan
-%%DATADIR%%/sources/project-manager/projects-protocol/build.dylan
-%%DATADIR%%/sources/project-manager/projects-protocol/conditions.dylan
-%%DATADIR%%/sources/project-manager/projects-protocol/library.dylan
-%%DATADIR%%/sources/project-manager/projects-protocol/module.dylan
-%%DATADIR%%/sources/project-manager/projects-protocol/projects-protocol.lid
-%%DATADIR%%/sources/project-manager/projects-protocol/projects.dylan
-%%DATADIR%%/sources/project-manager/projects-protocol/targets.dylan
-%%DATADIR%%/sources/project-manager/projects-protocol/templates.dylan
-%%DATADIR%%/sources/project-manager/projects-protocol/tools.dylan
-%%DATADIR%%/sources/project-manager/projects-protocol/workspaces.dylan
 %%DATADIR%%/sources/project-manager/projects/compilation.dylan
 %%DATADIR%%/sources/project-manager/projects/implementation.dylan
 %%DATADIR%%/sources/project-manager/projects/lid-file.dylan
@@ -4206,8 +4261,7 @@ bin/parser-compiler
 %%DATADIR%%/sources/qa/testworks-specs/testworks-specs.lid
 %%DATADIR%%/sources/qa/testworks-specs/variable-specs.dylan
 %%DATADIR%%/sources/qa/testworks-specs/win32-testworks-specs.lid
-%%DATADIR%%/sources/qa/testworks/benchmarks.dylan
-%%DATADIR%%/sources/qa/testworks/checks.dylan
+%%DATADIR%%/sources/qa/testworks/assertions.dylan
 %%DATADIR%%/sources/qa/testworks/command-line.dylan
 %%DATADIR%%/sources/qa/testworks/components.dylan
 %%DATADIR%%/sources/qa/testworks/documentation/users-guide/Makefile
@@ -4237,6 +4291,8 @@ bin/parser-compiler
 %%DATADIR%%/sources/qa/testworks/report/test-diff.dylan
 %%DATADIR%%/sources/qa/testworks/report/testworks-report.lid
 %%DATADIR%%/sources/qa/testworks/reports.dylan
+%%DATADIR%%/sources/qa/testworks/results.dylan
+%%DATADIR%%/sources/qa/testworks/run.dylan
 %%DATADIR%%/sources/qa/testworks/specs/class-specs.dylan
 %%DATADIR%%/sources/qa/testworks/specs/function-specs.dylan
 %%DATADIR%%/sources/qa/testworks/specs/library.dylan
@@ -4247,8 +4303,6 @@ bin/parser-compiler
 %%DATADIR%%/sources/qa/testworks/specs/testworks-specs.lid
 %%DATADIR%%/sources/qa/testworks/specs/variable-specs.dylan
 %%DATADIR%%/sources/qa/testworks/specs/win32-testworks-specs.lid
-%%DATADIR%%/sources/qa/testworks/suites.dylan
-%%DATADIR%%/sources/qa/testworks/tests.dylan
 %%DATADIR%%/sources/qa/testworks/tests/test-command-line.dylan
 %%DATADIR%%/sources/qa/testworks/tests/testworks-test-suite-app-library.dylan
 %%DATADIR%%/sources/qa/testworks/tests/testworks-test-suite-app.dylan
@@ -4256,9 +4310,9 @@ bin/parser-compiler
 %%DATADIR%%/sources/qa/testworks/tests/testworks-test-suite-library.dylan
 %%DATADIR%%/sources/qa/testworks/tests/testworks-test-suite.dylan
 %%DATADIR%%/sources/qa/testworks/tests/testworks-test-suite.lid
-%%DATADIR%%/sources/qa/testworks/testworks.dylan
 %%DATADIR%%/sources/qa/testworks/testworks.lid
 %%DATADIR%%/sources/qa/testworks/to-do.txt
+%%DATADIR%%/sources/qa/testworks/utils.dylan
 %%DATADIR%%/sources/qa/warnings-test-suite/functions.dylan
 %%DATADIR%%/sources/qa/warnings-test-suite/library.dylan
 %%DATADIR%%/sources/qa/warnings-test-suite/macros.dylan
@@ -4285,6 +4339,7 @@ bin/parser-compiler
 %%DATADIR%%/sources/registry/generic/access-path
 %%DATADIR%%/sources/registry/generic/apple-dylan-test-suite
 %%DATADIR%%/sources/registry/generic/apple-dylan-test-suite-app
+%%DATADIR%%/sources/registry/generic/atk
 %%DATADIR%%/sources/registry/generic/batch-debug
 %%DATADIR%%/sources/registry/generic/big-integers
 %%DATADIR%%/sources/registry/generic/binary-builder
@@ -4294,6 +4349,7 @@ bin/parser-compiler
 %%DATADIR%%/sources/registry/generic/c-ffi-test
 %%DATADIR%%/sources/registry/generic/c-ffi-test-suite-app
 %%DATADIR%%/sources/registry/generic/c-lexer
+%%DATADIR%%/sources/registry/generic/cairo
 %%DATADIR%%/sources/registry/generic/channels
 %%DATADIR%%/sources/registry/generic/channels-tests
 %%DATADIR%%/sources/registry/generic/checkmate
@@ -4358,7 +4414,6 @@ bin/parser-compiler
 %%DATADIR%%/sources/registry/generic/dfmc-modeling
 %%DATADIR%%/sources/registry/generic/dfmc-namespace
 %%DATADIR%%/sources/registry/generic/dfmc-optimization
-%%DATADIR%%/sources/registry/generic/dfmc-projects
 %%DATADIR%%/sources/registry/generic/dfmc-reader
 %%DATADIR%%/sources/registry/generic/dfmc-typist
 %%DATADIR%%/sources/registry/generic/disasm
@@ -4400,7 +4455,6 @@ bin/parser-compiler
 %%DATADIR%%/sources/registry/generic/editor-emacsserver-backend
 %%DATADIR%%/sources/registry/generic/editor-exe-backend
 %%DATADIR%%/sources/registry/generic/editor-gnuserv-backend
-%%DATADIR%%/sources/registry/generic/editor-lispworks-backend
 %%DATADIR%%/sources/registry/generic/editor-manager
 %%DATADIR%%/sources/registry/generic/editor-vi-backend
 %%DATADIR%%/sources/registry/generic/environment-application-commands
@@ -4424,14 +4478,22 @@ bin/parser-compiler
 %%DATADIR%%/sources/registry/generic/file-source-records
 %%DATADIR%%/sources/registry/generic/functional-dylan-orb
 %%DATADIR%%/sources/registry/generic/gctest
+%%DATADIR%%/sources/registry/generic/gdk
+%%DATADIR%%/sources/registry/generic/gdkpixbuf
 %%DATADIR%%/sources/registry/generic/generic-arithmetic
 %%DATADIR%%/sources/registry/generic/generic-test-suite
 %%DATADIR%%/sources/registry/generic/generic-test-suite-app
+%%DATADIR%%/sources/registry/generic/gio
+%%DATADIR%%/sources/registry/generic/glib
+%%DATADIR%%/sources/registry/generic/gmodule
 %%DATADIR%%/sources/registry/generic/gnu-as-outputter
+%%DATADIR%%/sources/registry/generic/gobject
 %%DATADIR%%/sources/registry/generic/goodbye-world
 %%DATADIR%%/sources/registry/generic/grammar-compiler
+%%DATADIR%%/sources/registry/generic/gtk
 %%DATADIR%%/sources/registry/generic/gtk-duim
 %%DATADIR%%/sources/registry/generic/gtk-duim-gadget-panes
+%%DATADIR%%/sources/registry/generic/gtk-unit-converter
 %%DATADIR%%/sources/registry/generic/gui-dylan-playground
 %%DATADIR%%/sources/registry/generic/harp
 %%DATADIR%%/sources/registry/generic/harp-cg-back-end
@@ -4447,6 +4509,8 @@ bin/parser-compiler
 %%DATADIR%%/sources/registry/generic/harp-x86-unix-rtg
 %%DATADIR%%/sources/registry/generic/harp-x86-windows-rtg
 %%DATADIR%%/sources/registry/generic/harp-x86-windows-runtime-generator
+%%DATADIR%%/sources/registry/generic/hash-algorithms
+%%DATADIR%%/sources/registry/generic/hash-algorithms-test
 %%DATADIR%%/sources/registry/generic/hello-world
 %%DATADIR%%/sources/registry/generic/interactive-downloader
 %%DATADIR%%/sources/registry/generic/interactive-symbol-table
@@ -4468,6 +4532,9 @@ bin/parser-compiler
 %%DATADIR%%/sources/registry/generic/llvm-tablegen
 %%DATADIR%%/sources/registry/generic/llvm-test-suite
 %%DATADIR%%/sources/registry/generic/llvm-test-suite-app
+%%DATADIR%%/sources/registry/generic/logging
+%%DATADIR%%/sources/registry/generic/logging-test-suite
+%%DATADIR%%/sources/registry/generic/logging-test-suite-app
 %%DATADIR%%/sources/registry/generic/make-dylan-app
 %%DATADIR%%/sources/registry/generic/map-statistics
 %%DATADIR%%/sources/registry/generic/memory-manager
@@ -4489,6 +4556,7 @@ bin/parser-compiler
 %%DATADIR%%/sources/registry/generic/orb-poa
 %%DATADIR%%/sources/registry/generic/orb-streams
 %%DATADIR%%/sources/registry/generic/orb-utilities
+%%DATADIR%%/sources/registry/generic/pango
 %%DATADIR%%/sources/registry/generic/parser-compiler
 %%DATADIR%%/sources/registry/generic/parser-generator
 %%DATADIR%%/sources/registry/generic/parser-run-time
@@ -4497,7 +4565,6 @@ bin/parser-compiler
 %%DATADIR%%/sources/registry/generic/portableserver-protocol
 %%DATADIR%%/sources/registry/generic/ppml
 %%DATADIR%%/sources/registry/generic/projects
-%%DATADIR%%/sources/registry/generic/projects-protocol
 %%DATADIR%%/sources/registry/generic/registry-projects
 %%DATADIR%%/sources/registry/generic/regular-expressions
 %%DATADIR%%/sources/registry/generic/release-info
@@ -4507,6 +4574,7 @@ bin/parser-compiler
 %%DATADIR%%/sources/registry/generic/remote-nub-protocol
 %%DATADIR%%/sources/registry/generic/remote-nub-skeletons
 %%DATADIR%%/sources/registry/generic/remote-nub-stubs
+%%DATADIR%%/sources/registry/generic/reversi
 %%DATADIR%%/sources/registry/generic/scepter
 %%DATADIR%%/sources/registry/generic/scepter-ast
 %%DATADIR%%/sources/registry/generic/scepter-core
@@ -4555,6 +4623,7 @@ bin/parser-compiler
 %%DATADIR%%/sources/registry/generic/user-projects
 %%DATADIR%%/sources/registry/generic/walker
 %%DATADIR%%/sources/registry/generic/warnings-test-suite
+%%DATADIR%%/sources/registry/generic/xlib
 %%DATADIR%%/sources/registry/ppc-darwin/c-ffi
 %%DATADIR%%/sources/registry/ppc-darwin/common-dylan
 %%DATADIR%%/sources/registry/ppc-darwin/dood
@@ -4567,6 +4636,7 @@ bin/parser-compiler
 %%DATADIR%%/sources/registry/x86-darwin/c-ffi
 %%DATADIR%%/sources/registry/x86-darwin/common-dylan
 %%DATADIR%%/sources/registry/x86-darwin/dood
+%%DATADIR%%/sources/registry/x86-darwin/duim
 %%DATADIR%%/sources/registry/x86-darwin/io
 %%DATADIR%%/sources/registry/x86-darwin/jam
 %%DATADIR%%/sources/registry/x86-darwin/network
@@ -4726,6 +4796,7 @@ bin/parser-compiler
 %%DATADIR%%/sources/registry/x86_64-darwin/c-ffi
 %%DATADIR%%/sources/registry/x86_64-darwin/common-dylan
 %%DATADIR%%/sources/registry/x86_64-darwin/dood
+%%DATADIR%%/sources/registry/x86_64-darwin/duim
 %%DATADIR%%/sources/registry/x86_64-darwin/io
 %%DATADIR%%/sources/registry/x86_64-darwin/jam
 %%DATADIR%%/sources/registry/x86_64-darwin/network
@@ -5256,9 +5327,8 @@ bin/parser-compiler
 %%DATADIR%%/sources/win32/win32-version/version.rc
 %%DATADIR%%/sources/win32/win32-version/win32-version.lid
 %%DATADIR%%/sources/win32/win32-version/winver.dylan
-share/doc/opendylan/License.txt
-share/doc/opendylan/README
-@dirrm share/doc/opendylan
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/sources/win32/win32-version
 @dirrm %%DATADIR%%/sources/win32/win32-user
 @dirrm %%DATADIR%%/sources/win32/win32-shell
@@ -5328,6 +5398,7 @@ share/doc/opendylan/README
 @dirrm %%DATADIR%%/sources/qa/testworks/gui
 @dirrm %%DATADIR%%/sources/qa/testworks/documentation/users-guide/source
 @dirrm %%DATADIR%%/sources/qa/testworks/documentation/users-guide
+@dirrm %%DATADIR%%/sources/qa/testworks/documentation/sphinx-extensions
 @dirrm %%DATADIR%%/sources/qa/testworks/documentation
 @dirrm %%DATADIR%%/sources/qa/testworks-specs
 @dirrm %%DATADIR%%/sources/qa/testworks-report
@@ -5364,9 +5435,7 @@ share/doc/opendylan/README
 @dirrm %%DATADIR%%/sources/project-manager/user-projects
 @dirrm %%DATADIR%%/sources/project-manager/tools-interface
 @dirrm %%DATADIR%%/sources/project-manager/registry-projects
-@dirrm %%DATADIR%%/sources/project-manager/projects-protocol
 @dirrm %%DATADIR%%/sources/project-manager/projects
-@dirrm %%DATADIR%%/sources/project-manager/dfmc-projects
 @dirrm %%DATADIR%%/sources/project-manager
 @dirrm %%DATADIR%%/sources/ole/win32-automation
 @dirrm %%DATADIR%%/sources/ole/ole-server
@@ -5439,7 +5508,6 @@ share/doc/opendylan/README
 @dirrm %%DATADIR%%/sources/lib/ssl
 @dirrm %%DATADIR%%/sources/lib/source-records
 @dirrm %%DATADIR%%/sources/lib/run-time/tests
-@dirrm %%DATADIR%%/sources/lib/run-time/pentium-win32
 @dirrm %%DATADIR%%/sources/lib/run-time/harp-support/x86-windows
 @dirrm %%DATADIR%%/sources/lib/run-time/harp-support/x86-linux
 @dirrm %%DATADIR%%/sources/lib/run-time/harp-support/x86-freebsd
@@ -5457,11 +5525,19 @@ share/doc/opendylan/README
 @dirrm %%DATADIR%%/sources/lib/motley
 @dirrm %%DATADIR%%/sources/lib/midi
 @dirrm %%DATADIR%%/sources/lib/memory-manager
+@dirrm %%DATADIR%%/sources/lib/logging/tests
+@dirrm %%DATADIR%%/sources/lib/logging/registry/generic
+@dirrm %%DATADIR%%/sources/lib/logging/registry
+@dirrm %%DATADIR%%/sources/lib/logging
 @dirrm %%DATADIR%%/sources/lib/llvm/tests
 @dirrm %%DATADIR%%/sources/lib/llvm
 @dirrm %%DATADIR%%/sources/lib/lisp-reader
 @dirrm %%DATADIR%%/sources/lib/jam/tests
 @dirrm %%DATADIR%%/sources/lib/jam
+@dirrm %%DATADIR%%/sources/lib/hash-algorithms/test
+@dirrm %%DATADIR%%/sources/lib/hash-algorithms/registry/generic
+@dirrm %%DATADIR%%/sources/lib/hash-algorithms/registry
+@dirrm %%DATADIR%%/sources/lib/hash-algorithms
 @dirrm %%DATADIR%%/sources/lib/grammar-compiler
 @dirrm %%DATADIR%%/sources/lib/generic-arithmetic
 @dirrm %%DATADIR%%/sources/lib/dood/tests
@@ -5509,8 +5585,17 @@ share/doc/opendylan/README
 @dirrm %%DATADIR%%/sources/harp/binary-manager
 @dirrm %%DATADIR%%/sources/harp/binary-builder
 @dirrm %%DATADIR%%/sources/harp
-@dirrm %%DATADIR%%/sources/gtk/gtk-glue
-@dirrm %%DATADIR%%/sources/gtk/gtk-c-ffi
+@dirrm %%DATADIR%%/sources/gtk/xlib-dylan
+@dirrm %%DATADIR%%/sources/gtk/pango-dylan
+@dirrm %%DATADIR%%/sources/gtk/gtk-dylan
+@dirrm %%DATADIR%%/sources/gtk/gobject-dylan
+@dirrm %%DATADIR%%/sources/gtk/gmodule-dylan
+@dirrm %%DATADIR%%/sources/gtk/glib-dylan
+@dirrm %%DATADIR%%/sources/gtk/gio-dylan
+@dirrm %%DATADIR%%/sources/gtk/gdkpixbuf-dylan
+@dirrm %%DATADIR%%/sources/gtk/gdk-dylan
+@dirrm %%DATADIR%%/sources/gtk/cairo-dylan
+@dirrm %%DATADIR%%/sources/gtk/atk-dylan
 @dirrm %%DATADIR%%/sources/gtk
 @dirrm %%DATADIR%%/sources/examples/odbc/select-viewer
 @dirrm %%DATADIR%%/sources/examples/odbc/employee-explorer
@@ -5571,7 +5656,6 @@ share/doc/opendylan/README
 @dirrm %%DATADIR%%/sources/environment/framework
 @dirrm %%DATADIR%%/sources/environment/editor/tests
 @dirrm %%DATADIR%%/sources/environment/editor/backends/vi
-@dirrm %%DATADIR%%/sources/environment/editor/backends/lispworks
 @dirrm %%DATADIR%%/sources/environment/editor/backends/gnuserv
 @dirrm %%DATADIR%%/sources/environment/editor/backends/exe
 @dirrm %%DATADIR%%/sources/environment/editor/backends/emacsserver
@@ -5661,7 +5745,6 @@ share/doc/opendylan/README
 @dirrm %%DATADIR%%/sources/dfmc/conversion
 @dirrm %%DATADIR%%/sources/dfmc/conditions
 @dirrm %%DATADIR%%/sources/dfmc/common
-@dirrm %%DATADIR%%/sources/dfmc/c-run-time
 @dirrm %%DATADIR%%/sources/dfmc/c-linker
 @dirrm %%DATADIR%%/sources/dfmc/c-ffi
 @dirrm %%DATADIR%%/sources/dfmc/c-back-end
@@ -5801,6 +5884,7 @@ share/doc/opendylan/README
 @dirrm %%DATADIR%%/sources/app/llvm-as
 @dirrm %%DATADIR%%/sources/app/hello-world
 @dirrm %%DATADIR%%/sources/app/harp-runtime-generator
+@dirrm %%DATADIR%%/sources/app/gtk-unit-converter
 @dirrm %%DATADIR%%/sources/app/goodbye-world
 @dirrm %%DATADIR%%/sources/app/gctest
 @dirrm %%DATADIR%%/sources/app/flying-squares
