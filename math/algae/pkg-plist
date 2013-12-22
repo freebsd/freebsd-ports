@@ -1,6 +1,7 @@
 bin/algae
 bin/algae-%%ALGAE_VERSION%%
 lib/algae/%%ALGAE_VERSION%%/algae.A
+man/man1/algae.1.gz
 %%DATADIR%%/%%ALGAE_VERSION%%/html/COPYING
 %%DATADIR%%/%%ALGAE_VERSION%%/html/LICENSE
 %%DATADIR%%/%%ALGAE_VERSION%%/html/algae.html
