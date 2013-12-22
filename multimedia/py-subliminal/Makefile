@@ -3,6 +3,7 @@
 
 PORTNAME=	subliminal
 PORTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bs4/__init__.py:${PORTSDIR}/www/py-beautifulso
 		${PYTHON_PKGNAMEPREFIX}dogpile.cache>=0.5.2:${PORTSDIR}/devel/py-dogpile.cache
 
 USE_PYTHON=	2.7
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
 post-patch:
@@ -31,6 +32,7 @@ post-patch:
 		${WRKSRC}/setup.py
 	@${REINPLACE_CMD} \
 		-e 's,^requests.*,requests,g' \
+		-e 's,^html5lib.*,html5lib,g' \
 		${WRKSRC}/requirements.txt
 
 .include <bsd.port.mk>
