@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.digitalcorpora.org/downloads/${PORTNAME}/
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Advanced Forensics Format library and utilities
 
-LICENSE=	BSD
+LICENSE=	BSD4CLAUSE
 
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libcurl.so:${PORTSDIR}/ftp/curl
