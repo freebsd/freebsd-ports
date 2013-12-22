@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	warzone2100
-PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTVERSION=	3.1.1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/releases/${PORTVERSION}/
 
@@ -26,7 +25,7 @@ LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs \
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
 
 USE_XZ=		yes
-USES=		bison gmake pkgconfig
+USES=		bison gmake pkgconfig compiler:c++11-lang # actually, old gcc fails on unknown -W flag
 GNU_CONFIGURE=	yes
 USE_OPENAL=	al
 USE_GL=		yes
@@ -43,18 +42,14 @@ REINPLACE_ARGS=	-i ''
 PORTDOCS=	*
 PORTDATA=	*
 
-OPTIONS_DEFINE=	DOCS NLS
-OPTIONS_DEFAILT=DOCS NLS
+OPTIONS_DEFINE=	DOCS NLS MANPAGES
+OPTIONS_DEFAULT=MANPLAGES
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext
-NLS_CONFIGURE_ENABLE=nls
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000000
-USE_GCC=	yes
-.endif
+MANPAGES_BUILD_DEPENDS=	a2x:${PORTSDIR}/textproc/asciidoc
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g' ${WRKSRC}/configure
