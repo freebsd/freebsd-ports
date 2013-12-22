@@ -16,12 +16,13 @@ COMMENT?=	Fast C routines to compute the Discrete Fourier Transform
 
 LICENSE=	GPLv2
 
+OPTIONS_DEFINE=	DOCS
+
 # current flavors: default, float
 FFTW_FLAVOR?=	default
 FFTW_SUFIX=
 
-USE_FORTRAN=	yes
-USE_GMAKE=	yes
+USES=		fortran gmake
 USE_AUTOTOOLS=	aclocal automake autoconf libtool
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
@@ -33,9 +34,6 @@ PLIST_SUB=	FFTW_SUFX="${FFTW_SUFX}"
 
 PORTSCOUT=	limit:^2\.
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 .if ${FFTW_FLAVOR}=="float"
 CONFIGURE_ARGS+=	--enable-float --enable-type-prefix
 FFTW_SUFX=		s
@@ -45,6 +43,8 @@ PLIST_SUB+=	DEF="@comment "
 INFO=			fftw
 PLIST_SUB+=	DEF=""
 .endif
+
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == "i386"
 CONFIGURE_ARGS+=	--enable-i386-hacks
@@ -64,14 +64,14 @@ post-build:
 
 post-install:
 .if ${FFTW_FLAVOR}=="default"
-	${INSTALL_DATA} ${WRKSRC}/doc/fftw.info ${PREFIX}/${INFO_PATH}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/fftw.ps ${DOCSDIR}/fftw.ps
+	${INSTALL_DATA} ${WRKSRC}/doc/fftw.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/fftw.ps ${STAGEDIR}${DOCSDIR}/fftw.ps
 .endif
 .endif
 
 regression-test: build
-	@cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MAKE} check
+	@(cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
