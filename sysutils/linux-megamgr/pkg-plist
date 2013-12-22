@@ -1,4 +1,0 @@
-sbin/megamgr
-libexec/megamgr.bin
-%%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

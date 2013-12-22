@@ -468,7 +468,6 @@
     SUBDIR += linux-afaapps
     SUBDIR += linux-crashplan
     SUBDIR += linux-f10-procps
-    SUBDIR += linux-megamgr
     SUBDIR += linux-nero
     SUBDIR += linuxfdisk
     SUBDIR += lire

@@ -537,7 +537,6 @@
     SUBDIR += linux-quake4-demo
     SUBDIR += linux-rtcw
     SUBDIR += linux-savage
-    SUBDIR += linux-savage-samuraiwars
     SUBDIR += linux-skulltag
     SUBDIR += linux-sof
     SUBDIR += linux-spheresofchaos-demo
@@ -811,7 +810,6 @@
     SUBDIR += quake3-freezetag
     SUBDIR += quake3-osp
     SUBDIR += quake3-ra3
-    SUBDIR += quake3-rq3
     SUBDIR += quake3-ut
     SUBDIR += quake3-wfa
     SUBDIR += quakeforge
@@ -1082,7 +1080,6 @@
     SUBDIR += xjig
     SUBDIR += xjump
     SUBDIR += xjumpx
-    SUBDIR += xkobo
     SUBDIR += xkoules
     SUBDIR += xlaby
     SUBDIR += xlife

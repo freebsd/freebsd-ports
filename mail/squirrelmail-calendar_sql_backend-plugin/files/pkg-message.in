@@ -1,5 +1,0 @@
-For the port to work properly you must copy the file
-%%SQUIRRELDIR%%/plugins/calendar_sql_backend/config.sample.php
-to
-%%SQUIRRELDIR%%/plugins/calendar_sql_backend/config.php
-and edit the configuration to meet your needs.

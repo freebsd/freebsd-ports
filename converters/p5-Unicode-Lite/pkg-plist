@@ -1,5 +1,0 @@
-%%SITE_PERL%%/Unicode/Lite.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Lite/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/Lite
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode
-@dirrmtry %%SITE_PERL%%/Unicode

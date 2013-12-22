@@ -323,7 +323,6 @@
     SUBDIR += sisc
     SUBDIR += sketchy
     SUBDIR += slib
-    SUBDIR += slib-gauche
     SUBDIR += slib-guile
     SUBDIR += slisp
     SUBDIR += smalltalk
