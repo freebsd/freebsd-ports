@@ -34,9 +34,9 @@ GLIB_SCHEMAS=	org.gnome.caribou.gschema.xml \
 		org.gnome.antler.gschema.xml
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/python|${LOCALBASE}/bin/${PYTHON_VERSION}|g' \
+	@${REINPLACE_CMD} -e 's|bin/python|bin/${PYTHON_VERSION}|g' \
 	${WRKSRC}/tools/fix_gir.py
-	@${REINPLACE_CMD} -e 's|/usr/bin/python|${LOCALBASE}/bin/${PYTHON_VERSION}|g' \
+	@${REINPLACE_CMD} -e 's|bin/python|bin/${PYTHON_VERSION}|g' \
 	${WRKSRC}/tools/make_schema.py
 
 post-install:
