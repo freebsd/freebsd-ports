@@ -316,7 +316,6 @@
     SUBDIR += libfixbuf
     SUBDIR += libgnetwork
     SUBDIR += libgweather
-    SUBDIR += libgweather3
     SUBDIR += libilbc
     SUBDIR += libkvkontakte
     SUBDIR += libmateweather
