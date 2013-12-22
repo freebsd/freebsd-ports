@@ -9,7 +9,7 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Tool for analyzing Windows recycle bin
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
 USES=		gettext pkgconfig

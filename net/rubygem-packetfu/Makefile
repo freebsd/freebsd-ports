@@ -8,7 +8,7 @@ MASTER_SITES=	RG
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Mid-level packet manipulation library for Ruby
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
