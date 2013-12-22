@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.catb.org/~esr/bluemoon/
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Blue Moon card solitaire
 
-LICENSE=	BSD4CLAUSE
+LICENSE=	BSD3CLAUSE
 
 USES=		gmake
 ALL_TARGET=	${PORTNAME}
