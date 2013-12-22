@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Galaxis
+GenericName=Galaxis game
+Comment=Clone of the nifty little Macintosh game
+Icon=galaxis
+Exec=galaxis
+Categories=Game;ArcadeGame;
+Terminal=true
