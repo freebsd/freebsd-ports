@@ -1,0 +1,43 @@
+--- configure.orig
++++ configure
+@@ -2561,9 +2561,9 @@
+ cat > conftest.$ac_ext <<EOF
+ #line 2562 "configure"
+ #include "confdefs.h"
+-int main(int argc, char *argv);
++int main(int argc, char **argv);
+ int t(void);
+-int main(int argc, char *argv) { return t(); }
++int main(int argc, char **argv) { return t(); }
+ int t(void) { return 0; }
+ EOF
+ if eval $ac_compile; then
+@@ -4479,7 +4479,7 @@
+   *-unicos*	) f77_lib_names="F77 I77 sci f" ;;
+   *		) f77_lib_names="F77 I77" ;;
+ esac
+-f77_lib_names="$f77_lib_names g2c f2c"
++f77_lib_names=gfortran
+ for f in $f77_lib_names; do reversed_names="$f $reversed_names"; done
+ 
+ #---------------------------------------------------------------------
+@@ -5494,8 +5494,7 @@
+ # checks (except for LAPACK) don't need it and won't find it.
+ 
+ if test "$BLAS" = xblas; then
+-  LDFLAGS="$LDFLAGS -L../blas"
+-  LOCAL_LIBS="-lblas $LOCAL_LIBS"
++  LOCAL_LIBS="../blas/libblas.a $LOCAL_LIBS"
+ fi
+ 
+ 
+@@ -5590,8 +5589,7 @@
+ # checks don't need it and won't find it.
+ 
+ if test "$LAPACK" = xlapack; then
+-  LDFLAGS="$LDFLAGS -L../lapack"
+-  LOCAL_LIBS="-llapack $LOCAL_LIBS"
++  LOCAL_LIBS="../lapack/liblapack.a $LOCAL_LIBS"
+ fi
+ 
+ 
