@@ -1,5 +1,0 @@
-lib/opensync-1.0/plugins/python-module.so
-lib/opensync-1.0/python-plugins/sample.py
-@dirrmtry lib/opensync-1.0/plugins
-@dirrmtry lib/opensync-1.0/python-plugins
-@dirrmtry lib/opensync-1.0
