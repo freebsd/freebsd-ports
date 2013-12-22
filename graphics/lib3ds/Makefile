@@ -17,10 +17,7 @@ USE_GL=		glut
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-MAN1=		3dsdump.1 lib3ds-config.1
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
