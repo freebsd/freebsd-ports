@@ -35,10 +35,6 @@
 #			Debug otherwise
 # CMAKE_SOURCE_PATH	- Path to the source directory
 #			Default: ${WRKSRC}
-#
-# Deprecated variables:
-# CMAKE_OUTSOURCE	- Instruct to perform an out-of-source build.
-#			Deprecated, use 'USES+=	cmake:outsource' instead.
 
 .if !defined(_INCLUDE_USES_CMAKE_MK)
 _INCLUDE_USES_CMAKE_MK=	yes
@@ -88,7 +84,8 @@ CMAKE_ARGS+=		-DCMAKE_C_COMPILER:STRING="${CC}" \
 			-DCMAKE_SHARED_LINKER_FLAGS:STRING="${LDFLAGS}" \
 			-DCMAKE_INSTALL_PREFIX:PATH="${PREFIX}" \
 			-DCMAKE_BUILD_TYPE:STRING="${CMAKE_BUILD_TYPE}" \
-			-DTHREADS_HAVE_PTHREAD_ARG:BOOL=YES
+			-DTHREADS_HAVE_PTHREAD_ARG:BOOL=YES \
+			-DCMAKE_INSTALL_RPATH_USE_LINK_PATH=YES
 
 .if defined(BATCH) || defined(PACKAGE_BUILDING)
 CMAKE_VERBOSE=		yes
