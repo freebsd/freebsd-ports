@@ -1,5 +1,5 @@
-A library which may be used to explain Unix and Linux system call errors. The
-library is not quite a drop-in replacement for strerror, but it comes close.
-Each system call has a dedicated libexplain function.
+A library which may be used to explain Unix and Linux system call
+errors. The library is not quite a drop-in replacement for strerror, but
+it comes close.  Each system call has a dedicated libexplain function.
 
 WWW: http://libexplain.sourceforge.net/
