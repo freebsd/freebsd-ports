@@ -192,7 +192,6 @@
     SUBDIR += exiftran
     SUBDIR += exiv2
     SUBDIR += exrtools
-    SUBDIR += f-spot
     SUBDIR += fbm
     SUBDIR += feh
     SUBDIR += ffff
@@ -1040,7 +1039,6 @@
     SUBDIR += xglurbules
     SUBDIR += xgrasp
     SUBDIR += xli
-    SUBDIR += xmagv
     SUBDIR += xmandel
     SUBDIR += xmedcon
     SUBDIR += xmfract

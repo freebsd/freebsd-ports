@@ -1,4 +1,0 @@
-To use the features offered by the SLIB library, add the following
-construct to your programs:
-
-	(use slib)

@@ -1,3 +1,0 @@
-bin/xkobo
-@exec mkdir -p %D/lib/X11/xkobo-scores && chmod 775 %D/lib/X11/xkobo-scores; chmod u-s,g+s %D/bin/xkobo; chown root:games %D/lib/X11/xkobo-scores
-@unexec rm -rf %D/lib/X11/xkobo-scores

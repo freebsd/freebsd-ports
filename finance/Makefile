@@ -95,7 +95,6 @@
     SUBDIR += py-stripe
     SUBDIR += py-vatnumber
     SUBDIR += qhacc
-    SUBDIR += quantlib
     SUBDIR += rubygem-money
     SUBDIR += sabernetdcs-client
     SUBDIR += skrooge

@@ -5316,3 +5316,20 @@ misc/freeswitch-scripts||2013-12-20|Has expired: Depends on expired net/freeswit
 www/p5-HTML-Webmake||2013-12-20|Has expired: Depends on expired textproc/p5-XML-Sablotron
 net/freeswitch||2013-12-20|Has expired: Depends on expired net/freeswitch-core
 games/blue|games/bluemoon|2013-12-21|Rename to match upstream naming
+devel/ruby-cvs||2013-12-22|Has expired: Broken for more than 6 month
+devel/hs-reactive||2013-12-22|Has expired: Broken for more than 6 month
+databases/rubygem-delayed_job_data_mapper||2013-12-22|Has expired: Broken for more than 6 month
+graphics/xmagv||2013-12-22|Has expired: Broken for more than 6 month
+lang/slib-gauche||2013-12-22|Has expired: Broken for more than 6 month
+graphics/f-spot||2013-12-22|Has expired: Broken for more than 6 month
+sysutils/linux-megamgr||2013-12-22|Has expired: Broken for more than 6 month
+games/linux-savage-samuraiwars||2013-12-22|Has expired: Broken for more than 6 month
+ftp/gftp||2013-12-22|Has expired: Broken for more than 6 month
+devel/hs-DeepArrow||2013-12-22|Has expired: Broken for more than 6 month
+converters/py-svglib||2013-12-22|Has expired: Broken for more than 6 month
+converters/p5-Unicode-Lite||2013-12-22|Has expired: Broken for more than 6 month
+mail/squirrelmail-calendar_sql_backend-plugin||2013-12-22|Has expired: Broken for more than 6 month
+finance/quantlib||2013-12-22|Has expired: Broken for more than 6 month
+games/xkobo||2013-12-22|Has expired: Broken for more than 6 month
+games/quake3-rq3||2013-12-22|Has expired: Broken for more than 6 month
+math/fbm||2013-12-22|Has expired: No new release since 2004, new supported upstream

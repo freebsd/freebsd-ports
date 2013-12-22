@@ -648,7 +648,6 @@
     SUBDIR += hs-BNFC
     SUBDIR += hs-Boolean
     SUBDIR += hs-ConfigFile
-    SUBDIR += hs-DeepArrow
     SUBDIR += hs-HUnit
     SUBDIR += hs-IORefCAS
     SUBDIR += hs-IfElse
@@ -793,7 +792,6 @@
     SUBDIR += hs-quickcheck-io
     SUBDIR += hs-random
     SUBDIR += hs-ranges
-    SUBDIR += hs-reactive
     SUBDIR += hs-readline
     SUBDIR += hs-reflection
     SUBDIR += hs-resource-pool
@@ -4033,7 +4031,6 @@
     SUBDIR += ruby-byaccr
     SUBDIR += ruby-cache
     SUBDIR += ruby-calendar
-    SUBDIR += ruby-cvs
     SUBDIR += ruby-date2
     SUBDIR += ruby-dialogs
     SUBDIR += ruby-event-loop
