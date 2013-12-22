@@ -5337,3 +5337,4 @@ graphics/yukon||2013-12-22|Removed, depends on graphics/seom
 graphics/seom||2013-12-22|Has expired: Broken for more than 6 month
 deskutils/libopensync-plugin-python-devel||2013-12-22|Has expired: Broken for more than 6 month
 deskutils/libopensync-plugin-synce-devel||2013-12-22|Removed, unmaintained, depends on deskutils/libopensync-plugin-python-devel
+net-im/libmsn||2013-12-22|Has expired: Primary MSN Messenger service terminated 30 APR 2013

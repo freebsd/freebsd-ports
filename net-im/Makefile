@@ -61,7 +61,6 @@
     SUBDIR += ktp-text-ui
     SUBDIR += libjingle
     SUBDIR += libjreen
-    SUBDIR += libmsn
     SUBDIR += libnice
     SUBDIR += libpurple
     SUBDIR += libtelepathy
