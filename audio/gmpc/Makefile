@@ -18,7 +18,7 @@ LIB_DEPENDS=	libmpd.so:${PORTSDIR}/audio/libmpd \
 		libsexy.so:${PORTSDIR}/x11-toolkits/libsexy \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
 		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
-		libunique-1.so:${PORTSDIR}/x11-toolkits/unique
+		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20 libglade2
