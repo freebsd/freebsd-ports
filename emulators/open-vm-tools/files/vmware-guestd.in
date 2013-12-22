@@ -4,7 +4,7 @@
 #
 
 # PROVIDE: vmware-guestd
-# REQUIRE: DAEMON
+# REQUIRE: DAEMON netif
 # BEFORE: LOGIN
 
 . /etc/rc.subr
