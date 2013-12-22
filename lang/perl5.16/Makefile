@@ -3,7 +3,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -21,8 +21,6 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 CONFLICTS_INSTALL=	perl5.12-* perl5.14-* perl5.16-* perl5.18-*
-
-RUN_DEPENDS=	groff>=1.20.1:${PORTSDIR}/textproc/groff
 
 OPTIONS_DEFINE=	DEBUG GDBM PERL_MALLOC PERL_64BITINT THREADS PTHREAD \
 		MULTIPLICITY SITECUSTOMIZE USE_PERL
@@ -190,8 +188,6 @@ post-patch:
 		${BSDPAN_WRKSRC}/ExtUtils/*.pm
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Configure ${WRKSRC}/hints/freebsd.sh
-	${REINPLACE_CMD} -e '52s| = .*;$$| = "${LOCALBASE}/bin/groff";|' \
-		${WRKSRC}/cpan/Pod-Perldoc/lib/Pod/Perldoc/ToMan.pm
 .if ${PORT_OPTIONS:MPTHREAD}
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g;' \
 		-e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g;' \
