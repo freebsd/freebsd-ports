@@ -11,7 +11,7 @@ DISTNAME=	py-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Thread-safe Python binding for LevelDB
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libleveldb.so:${PORTSDIR}/databases/leveldb
 
