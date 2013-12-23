@@ -16,7 +16,7 @@ USE_BZIP2=	yes
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS+=--disable-pam
+CONFIGURE_ARGS+=--disable-pam --with-pythonsitedir=$PYTHON_SITELIBDIR
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 # configure needs to be fixed
