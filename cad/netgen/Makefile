@@ -10,9 +10,9 @@ MASTER_SITES=	SF/netgen-mesher/netgen-mesher/${PORTVERSION:S|.0$||}/
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	An automatic 3D tetrahedral mesh generator
 
-LIB_DEPENDS=	liobTix8.4.so:${PORTSDIR}/x11-toolkits/tix \
-		liobjpeg.so:${PORTSDIR}/graphics/jpeg \
-		liobtogl.so:${PORTSDIR}/graphics/togl
+LIB_DEPENDS=	libTix8.4.3.so:${PORTSDIR}/x11-toolkits/tix \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtogl.so:${PORTSDIR}/graphics/togl
 
 USE_LDCONFIG=	yes
 USES=		gmake
