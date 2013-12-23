@@ -21,5 +21,23 @@ lib/libSDLmm.a
 lib/libSDLmm.la
 lib/libSDLmm.so
 lib/libSDLmm.so.8
+man/man3/SDLmm.3.gz
+man/man3/SDLmm_Audio.3.gz
+man/man3/SDLmm_BaseSurface.3.gz
+man/man3/SDLmm_CD.3.gz
+man/man3/SDLmm_ColorRGB.3.gz
+man/man3/SDLmm_ColorRGBA.3.gz
+man/man3/SDLmm_Display.3.gz
+man/man3/SDLmm_Event.3.gz
+man/man3/SDLmm_EventHandler.3.gz
+man/man3/SDLmm_Joystick.3.gz
+man/man3/SDLmm_PixelFormat.3.gz
+man/man3/SDLmm_SPoint.3.gz
+man/man3/SDLmm_SRect.3.gz
+man/man3/SDLmm_Surface.3.gz
+man/man3/SDLmm_Timer.3.gz
+man/man3/SDLmm_VideoInfo.3.gz
+man/man3/SDLmm_todo.3.gz
+man/man3/sdlmm.h.3.gz
 share/aclocal/sdlmm.m4
 @dirrm include/SDLmm
