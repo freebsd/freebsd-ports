@@ -2,38 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	charm
-PORTVERSION=	1.9.1
+PORTVERSION=	1.9.2
 CATEGORIES=	deskutils net
 MASTER_SITES=	SF/lj${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	seawolf@marinewolf.net
-COMMENT=	A menu-driven python-based livejournal client
+COMMENT=	Menu-driven python-based livejournal client
 
-MAN1=charm.1
-MAN5=charmrc.5
+LICENSE=	GPLv2
 
-USE_PYTHON=	yes
+USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGVERSION=	1.9.1
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
+PORTDOCS=	*
+
 post-patch:
-.if !defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e 's,share/doc/charm,${DOCSDIR},'  ${WRKSRC}/setup.py
-.else
-	${REINPLACE_CMD} -e '/data_files = /d' \
-			-e '/man\/man1/s,^[ ]*,      data_files = [ ,' \
-			${WRKSRC}/setup.py
-.endif
+	${REINPLACE_CMD} -e 's,share/doc/charm,${DOCSDIR},' ${WRKSRC}/setup.py
+	${REINPLACE_CMD} -e 's,1.9.1,1.9.2,' ${WRKSRC}/setup.py
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKSRC}/CHANGES.charm ${DOCSDIR}/CHANGES
-	${INSTALL_DATA} ${WRKSRC}/README.charm ${DOCSDIR}/README
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample.charmrc ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CHANGES.charm ${STAGEDIR}${DOCSDIR}/CHANGES
+	${INSTALL_DATA} ${WRKSRC}/README.charm ${STAGEDIR}${DOCSDIR}/README
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample.charmrc ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
