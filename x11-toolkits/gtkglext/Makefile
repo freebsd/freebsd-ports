@@ -13,16 +13,14 @@ COMMENT=	OpenGL extension to GTK+
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pthread-stubs:${PORTSDIR}/devel/libpthread-stubs \
-		pcre:${PORTSDIR}/devel/pcre \
-		cairo:${PORTSDIR}/graphics/cairo \
-		drm:${PORTSDIR}/graphics/libdrm \
-		png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2 \
-		expat:${PORTSDIR}/textproc/expat2 \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig
-
-OPTIONS_DEFINE=	DOCS
+LIB_DEPENDS=	libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libcairo.so:${PORTSDIR}/graphics/cairo \
+		libdrm.so:${PORTSDIR}/graphics/libdrm \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
@@ -33,7 +31,8 @@ USES=		gettext gmake iconv pathfix pkgconfig
 USE_GNOME=	gdkpixbuf2 gtk20 pangox-compat
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -45,8 +44,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/reference/gtkglext/html/* ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/reference/gtkglext/html/* ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
