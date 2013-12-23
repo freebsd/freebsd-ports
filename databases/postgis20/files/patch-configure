@@ -1,0 +1,19 @@
+--- configure.orig
++++ configure
+@@ -19041,7 +19041,7 @@
+ $as_echo "Using user-specified json-c directory: $JSONDIR" >&6; }
+ 
+ 				JSON_CPPFLAGS="-I$JSONDIR/include"
+-		JSON_LDFLAGS="-L$JSONDIR/lib -ljson"
++		JSON_LDFLAGS="-L$JSONDIR/lib -ljson-c"
+ 	fi
+ fi
+ 
+@@ -19104,7 +19104,7 @@
+ $as_echo "#define HAVE_LIBJSON 1" >>confdefs.h
+ 
+     if test "x$JSON_LDFLAGS" = "x"; then
+-        JSON_LDFLAGS="-ljson"
++        JSON_LDFLAGS="-ljson-c"
+     fi
+ fi
