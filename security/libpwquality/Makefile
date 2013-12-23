@@ -41,5 +41,7 @@ post-patch:
 	${WRKSRC}/python/setup.py
 	@${REINPLACE_CMD} -e 's|python setup.py|${PYTHON_VERSION} setup.py|g' \
 	${WRKSRC}/python/Makefile.am
+	@${REINPLACE_CMD} -e 's|python setup.py|${PYTHON_VERSION} setup.py|g' \
+	${WRKSRC}/python/Makefile.in
 
 .include <bsd.port.mk>
