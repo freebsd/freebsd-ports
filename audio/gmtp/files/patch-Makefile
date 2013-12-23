@@ -1,5 +1,5 @@
 --- Makefile.orig	2012-08-06 13:24:43.000000000 +0200
-+++ Makefile	2013-02-16 17:52:04.062614859 +0100
++++ Makefile	2013-12-05 14:23:50.881516874 +0100
 @@ -27,7 +27,7 @@
  LDFLAGS += -L/usr/sfw/lib -R/usr/sfw/lib
  endif
@@ -51,14 +51,23 @@
  	$(INSTALL) -m 644 images/audio-x-mp3-playlist.png $(DESTDIR)$(PREFIX)/share/$(PKG_NAME)
  	$(INSTALL) -m 644 images/audio-x-mpeg.png $(DESTDIR)$(PREFIX)/share/$(PKG_NAME)
  	$(INSTALL) -m 644 images/folder.png $(DESTDIR)$(PREFIX)/share/$(PKG_NAME)
-@@ -203,7 +201,6 @@
+@@ -203,7 +201,7 @@
  	$(INSTALL) -m 644 images/video-x-generic.png $(DESTDIR)$(PREFIX)/share/$(PKG_NAME)
  	$(INSTALL) -m 644 images/empty.png $(DESTDIR)$(PREFIX)/share/$(PKG_NAME)
  	$(INSTALL) -m 644 images/view-refresh.png $(DESTDIR)$(PREFIX)/share/$(PKG_NAME)
 -	mv $(DESTDIR)$(PREFIX)/share/pixmaps/icon.png $(DESTDIR)$(PREFIX)/share/pixmaps/gMTPicon.png
++	$(INSTALL) -m 644 misc/org.gnome.gmtp.gschema.xml $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas
  	cp po/es.mo $(DESTDIR)$(PREFIX)/share/locale/es/LC_MESSAGES/gmtp.mo
  	cp po/fr.mo $(DESTDIR)$(PREFIX)/share/locale/fr/LC_MESSAGES/gmtp.mo
  	cp po/it.mo $(DESTDIR)$(PREFIX)/share/locale/it/LC_MESSAGES/gmtp.mo
+@@ -211,7 +209,6 @@
+ 	cp po/de.mo $(DESTDIR)$(PREFIX)/share/locale/de/LC_MESSAGES/gmtp.mo
+ 
+ register-gsettings-schemas: install-gtk3
+-	$(INSTALL) -m 644 misc/org.gnome.gmtp.gschema.xml $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas
+ 	glib-compile-schemas $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas
+ 
+ install-doc:
 @@ -227,7 +224,7 @@
  	rm -f  $(DESTDIR)$(PREFIX)/share/$(PKG_NAME)/*
  	rm -f  $(DESTDIR)$(PREFIX)/share/applications/gMTP.desktop
