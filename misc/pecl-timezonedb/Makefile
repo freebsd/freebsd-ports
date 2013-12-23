@@ -18,4 +18,7 @@ CONFIGURE_ARGS=	--enable-timezonedb
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
+post-build:
+	@${STRIP_CMD} ${WRKSRC}/modules/${PORTNAME}.so
+
 .include <bsd.port.mk>
