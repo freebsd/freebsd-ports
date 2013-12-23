@@ -28,6 +28,9 @@ USE_WX=		2.8
 WX_COMPS=	wx contrib
 WX_UNICODE=	yes
 
+PLIST_FILES=	bin/pgadmin3
+PORTDATA=	*
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/wx-config,/${WX_CONFIG:T},' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's,/usr/bin/xterm,${LOCALBASE}/bin/xterm,' ${WRKSRC}/plugins.d/plugins.ini
