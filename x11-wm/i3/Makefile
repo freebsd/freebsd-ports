@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	i3
-DISTVERSION=	4.6
-PORTREVISION=	5
+DISTVERSION=	4.7
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://i3wm.org/downloads/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Improved dynamic tiling window manager
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libxcb-util.so:${PORTSDIR}/x11/xcb-util \
@@ -20,12 +19,13 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libyajl.so:${PORTSDIR}/devel/yajl \
 		libcairo.so:${PORTSDIR}/graphics/cairo \
 		libpangocairo-1.0.so:${PORTSDIR}/x11-toolkits/pango \
-		libpcre.so:${PORTSDIR}/devel/pcre
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libxcb-cursor.so.0:${PORTSDIR}/x11/xcb-util-cursor
 RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-AnyEvent-I3>=0:${PORTSDIR}/devel/p5-AnyEvent-I3
 
-USE_XORG=	x11 xcb xcursor
+USE_XORG=	x11 xcb
 USES=		pkgconfig iconv gmake perl5
 USE_BZIP2=	yes
 USE_PERL5=	run
@@ -47,5 +47,13 @@ post-patch:
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/man/*.1 ${STAGEDIR}${MANPREFIX}/man/man1/
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/i3 \
+		${STAGEDIR}${PREFIX}/bin/i3bar \
+		${STAGEDIR}${PREFIX}/bin/i3-config-wizard \
+		${STAGEDIR}${PREFIX}/bin/i3-msg \
+		${STAGEDIR}${PREFIX}/bin/i3-input \
+		${STAGEDIR}${PREFIX}/bin/i3-nagbar \
+		${STAGEDIR}${PREFIX}/bin/i3-dump-log
+
 
 .include <bsd.port.mk>
