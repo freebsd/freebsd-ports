@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Dancer2
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,10 +14,13 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
+	p5-App-Cmd>=0:${PORTSDIR}/devel/p5-App-Cmd \
 	p5-Capture-Tiny>=0.12:${PORTSDIR}/devel/p5-Capture-Tiny \
+	p5-Class-Load>=0:${PORTSDIR}/devel/p5-Class-Load \
 	p5-Crypt-URandom>0:${PORTSDIR}/security/p5-Crypt-URandom \
 	p5-Config-Any>=0:${PORTSDIR}/devel/p5-Config-Any \
 	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA \
+	p5-File-ShareDir-Install>=0:${PORTSDIR}/devel/p5-File-ShareDir-Install \
 	p5-Hash-Merge-Simple>=0:${PORTSDIR}/devel/p5-Hash-Merge-Simple \
 	p5-HTTP-Body>=0:${PORTSDIR}/www/p5-HTTP-Body \
 	p5-HTTP-Date>=0:${PORTSDIR}/www/p5-HTTP-Date \
