@@ -602,12 +602,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator2/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator2/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator2/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator2/_decorator2.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator2/_decorator2.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator2/_decorator2.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator%%PYTHON_MAJOR_VER%%/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator%%PYTHON_MAJOR_VER%%/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator%%PYTHON_MAJOR_VER%%/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator%%PYTHON_MAJOR_VER%%/_decorator%%PYTHON_MAJOR_VER%%.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator%%PYTHON_MAJOR_VER%%/_decorator%%PYTHON_MAJOR_VER%%.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator%%PYTHON_MAJOR_VER%%/_decorator%%PYTHON_MAJOR_VER%%.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/generators/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/generators/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/generators/__init__.pyo
@@ -984,7 +984,7 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/linalg
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/generators/tests
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/generators
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator2
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator/decorator%%PYTHON_MAJOR_VER%%
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external/decorator
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/external
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/networkx/drawing/tests

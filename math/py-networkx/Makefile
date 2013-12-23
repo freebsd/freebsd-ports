@@ -13,7 +13,9 @@ COMMENT=	Tools for complex network
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
+PYTHON_PY3K_PLIST_HACK=yes
 PYSETUP=	setup_egg.py
+PLIST_SUB+=	PYTHON_MAJOR_VER=${PYTHON_MAJOR_VER}
 
 NO_STAGE=	yes
 post-install:
