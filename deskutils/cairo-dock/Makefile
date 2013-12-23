@@ -13,7 +13,7 @@ COMMENT=	Cairo-Dock is a light and eye-candy dock
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libcurl.so:${PORTSDIR}/ftp/curl \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
-		libgtkglext-x11-1.so:${PORTSDIR}/x11-toolkits/gtkglext
+		libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		sox:${PORTSDIR}/audio/sox
 
