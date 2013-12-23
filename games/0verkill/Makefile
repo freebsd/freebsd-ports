@@ -3,7 +3,7 @@
 
 PORTNAME=	0verkill
 PORTVERSION=	0.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://artax.karlin.mff.cuni.cz/~brain/0verkill/release/
 EXTRACT_SUFX=	.tgz
@@ -15,51 +15,39 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 
-.if defined(WITHOUT_X11)
-PLIST_SUB=	X11="@comment "
-.else
-USE_XORG=	xpm
-CONFIGURE_ARGS+=	--with-x
-PLIST_SUB=	X11=""
-.endif
+OPTIONS_DEFINE=	X11 DOCS
+OPTIONS_DEFAULT=X11 DOCS
 
-NO_STAGE=	yes
-pre-everything::
-.if !defined(WITHOUT_X11)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want to compile without X11 support,"
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITHOUT_X11=yes\""
-	@${ECHO_MSG}
-.endif
+OPTIONS_SUB=	yes
+X11_USE=	XORG=xpm
+X11_CONFIGURE_WITH=	x
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/data/|g' ${WRKSRC}/cfg.h
-	@${REINPLACE_CMD} -e 's|grx/|${DATADIR}/grx/|g' ${WRKSRC}/data/*
 	@${REINPLACE_CMD} -e 's|-O3 ||g ; \
 		 s|gcc |\$$\(CC\) |g' ${WRKSRC}/Makefile.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/0verkill ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/0verkill ${STAGEDIR}${PREFIX}/bin
 .for file in avi bot editor server test_server
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin/0verkill-${file}
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} \
+		${STAGEDIR}${PREFIX}/bin/0verkill-${file}
 .endfor
-.if !defined(WITHOUT_X11)
-	${INSTALL_PROGRAM} ${WRKSRC}/x0verkill ${PREFIX}/bin
+.if ${PORT_OPTIONS:MX11}
+	${INSTALL_PROGRAM} ${WRKSRC}/x0verkill ${STAGEDIR}${PREFIX}/bin
 .for file in avi editor
-	${INSTALL_PROGRAM} ${WRKSRC}/x${file} ${PREFIX}/bin/x0verkill-${file}
+	${INSTALL_PROGRAM} ${WRKSRC}/x${file} \
+		${STAGEDIR}${PREFIX}/bin/x0verkill-${file}
 .endfor
 .endif
-	@${MKDIR} ${DATADIR}/data
-.for file in banner.dat level.dat sprites.dat *.sp *.dn *.st
-	${INSTALL_DATA} ${WRKSRC}/data/${file} ${DATADIR}/data
+.for dir in data grx
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DATADIR}
 .endfor
-	@${MKDIR} ${DATADIR}/grx
-	${INSTALL_DATA} ${WRKSRC}/grx/* ${DATADIR}/grx
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in AUTHORS README.html avi.txt bot.txt doc.html
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
