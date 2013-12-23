@@ -13,7 +13,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PECL wrapper around the gpgme library
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libgpgme.so:${PORTSDIR}/security/gpgme
 
