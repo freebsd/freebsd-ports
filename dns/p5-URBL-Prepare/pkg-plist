@@ -1,0 +1,10 @@
+%%SITE_PERL%%/URBL/Prepare.pm
+%%SITE_PERL%%/auto/URBL/Prepare/autosplit.ix
+%%SITE_PERL%%/auto/URBL/Prepare/loadcache.al
+%%SITE_PERL%%/mach/auto/URBL/Prepare/.packlist
+%%PERL5_MAN3%%/URBL::Prepare.3.gz
+@dirrmtry %%SITE_PERL%%/URBL
+@dirrmtry %%SITE_PERL%%/auto/URBL/Prepare
+@dirrmtry %%SITE_PERL%%/auto/URBL
+@dirrmtry %%SITE_PERL%%/mach/auto/URBL/Prepare
+@dirrmtry %%SITE_PERL%%/mach/auto/URBL

@@ -1,0 +1,4 @@
+URPL::Prepare is a Perl module that prepares hostname for URBL domain lookup
+and is used by Net::DNSBL::MultiDaemon
+
+WWW: http://search.cpan.org/dist/URBL-Prepare/
