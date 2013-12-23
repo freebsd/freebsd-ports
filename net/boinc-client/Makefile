@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	boinc-client
-PORTVERSION=	7.2.28
-PORTREVISION=	1
+PORTVERSION=	7.2.33
 CATEGORIES=	net
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 
@@ -59,7 +58,7 @@ MANAGER_CONFIGURE_OFF=	--with-wx-config=false --without-x
 MANAGER_CONFIGURE_ENABLE=manager
 MANAGER_USE=		XORG=x11 WX=2.8+
 
-CLIENT_CONFIGURE_WITH=	client
+CLIENT_CONFIGURE_ENABLE=client
 CLIENT_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 CLIENT_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 CLIENT_USE=		RC_SUBR=boinc-client
