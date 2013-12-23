@@ -11,10 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced tool for adjusting soundcard mixers, replacement for aumix
 
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
 
-MAN1=		umix.1
-PLIST_FILES=	bin/umix
+PLIST_FILES=	bin/umix \
+		man/man1/umix.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e \
