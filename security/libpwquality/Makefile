@@ -36,4 +36,8 @@ CONFIGURE_ARGS+=--disable-python-bindings
 PLIST_SUB+=	PYTHON="@comment "
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|env python|env ${PYTHON_VERSION}|g' \
+	${WRKSRC}/python/setup.py
+
 .include <bsd.port.mk>
