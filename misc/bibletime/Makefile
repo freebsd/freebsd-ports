@@ -23,5 +23,4 @@ USE_QT4=	corelib dbus gui iconengines network phonon qtestlib script \
 		svg webkit xml linguist_build moc_build qmake_build \
 		rcc_build uic_build
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
