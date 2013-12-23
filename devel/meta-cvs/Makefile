@@ -9,6 +9,8 @@ MASTER_SITES=	http://common-lisp.net/project/meta-cvs/downloads/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A more capable version control system than CVS, built around CVS
 
+BROKEN=	loop on install
+
 OPTIONS_DEFINE=	PDFDOC
 PDFDOC_DESC=	Build PDF documentation
 
