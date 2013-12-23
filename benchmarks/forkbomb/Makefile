@@ -4,15 +4,13 @@
 PORTNAME=	forkbomb
 PORTVERSION=	1.4
 CATEGORIES=	benchmarks
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+MASTER_SITES=	SUNSITE/system/benchmark \
 		http://home.tiscali.cz:8080/~cz210552/distfiles/
-MASTER_SITE_SUBDIR=	system/benchmark
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System stress testing tool
 
-MAN8=		forkbomb.8
-PLIST_FILES=	sbin/forkbomb
+PLIST_FILES=	sbin/forkbomb \
+		man/man8/forkbomb.8.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
