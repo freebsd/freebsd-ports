@@ -13,9 +13,9 @@ COMMENT=	Tools and library for converting Microsoft WMF (windows metafile)
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng.so:${PORTSDIR}/graphics/png \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	libxml2
@@ -28,9 +28,8 @@ USE_LDCONFIG=	yes
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	X11
-OPTIONS_DEFAULT=	X11
+OPTIONS_DEFAULT=X11
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
@@ -55,10 +54,10 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${TAR} -C ${WRKSRC}/doc --exclude '*Makefile*' -cf - . | \
-		${TAR} -C ${DOCSDIR} --unlink -xf -
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGROUP} ${DOCSDIR}
+		${TAR} -C ${STAGEDIR}${DOCSDIR} --unlink -xf -
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGROUP} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
