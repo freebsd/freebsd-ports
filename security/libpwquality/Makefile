@@ -39,5 +39,7 @@ PLIST_SUB+=	PYTHON="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|env python|env ${PYTHON_VERSION}|g' \
 	${WRKSRC}/python/setup.py
+	@${REINPLACE_CMD} -e 's|python setup.py|${PYTHON_VERSION} setup.py|g' \
+	${WRKSRC}/python/Makefile.am
 
 .include <bsd.port.mk>
