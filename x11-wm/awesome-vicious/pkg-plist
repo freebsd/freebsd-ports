@@ -1,4 +1,5 @@
 share/awesome/lib/vicious/contrib/README
+share/awesome/lib/vicious/contrib/ati.lua
 share/awesome/lib/vicious/contrib/batacpi.lua
 share/awesome/lib/vicious/contrib/batpmu.lua
 share/awesome/lib/vicious/contrib/batproc.lua
@@ -8,6 +9,7 @@ share/awesome/lib/vicious/contrib/init.lua
 share/awesome/lib/vicious/contrib/mpc.lua
 share/awesome/lib/vicious/contrib/net.lua
 share/awesome/lib/vicious/contrib/netcfg.lua
+share/awesome/lib/vicious/contrib/openweather.lua
 share/awesome/lib/vicious/contrib/ossvol.lua
 share/awesome/lib/vicious/contrib/pop.lua
 share/awesome/lib/vicious/contrib/pulse.lua
