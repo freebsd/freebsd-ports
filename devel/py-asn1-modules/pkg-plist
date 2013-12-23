@@ -11,7 +11,3 @@ bin/pkcs7dump.py
 bin/pkcs8dump.py
 bin/snmpget.py
 bin/x509dump.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
