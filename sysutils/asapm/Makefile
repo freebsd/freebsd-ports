@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.tigr.net/afterstep/download/asapm/
 MAINTAINER=	gamato@users.sf.net
 COMMENT=	Laptop battery status display for X11
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
