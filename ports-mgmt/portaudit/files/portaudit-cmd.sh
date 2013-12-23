@@ -53,6 +53,10 @@ portaudit_confs()
 
 	: ${portaudit_fixed=""}
 	: ${portaudit_openssl:="/usr/bin/openssl"}
+
+	# check if new pkg tools are in use
+	: ${pkgng_db:="/var/db/pkg/local.sqlite"}
+	: ${PKGSTATIC:="%%PREFIX%%/sbin/pkg-static"}
 }
 
 extract_auditfile_raw()
@@ -436,6 +440,20 @@ ret=0
 
 if $opt_version; then
 	echo "portaudit version %%PORTVERSION%%"
+fi
+
+if [ -e ${pkgng_db} -a -x ${PKGSTATIC} ]; then
+	IPKGNG=`echo 'SELECT COUNT() FROM packages;' | $PKGSTATIC shell`
+	if [ ${IPKGNG} -ge 1 ]; then
+		echo "New pkg tools detected: found ${IPKGNG} installed packages."
+		echo
+		echo "The portaudit tool is now obsolete, please remove portaudit and use the"
+		echo "command 'pkg audit' instead.  See man pkg-audit(8) for more information."
+		echo
+		echo "Running ${PKGSTATIC} audit -F:"
+		${PKGSTATIC} audit -F
+		exit 1
+	fi
 fi
 
 if $opt_fetch; then
