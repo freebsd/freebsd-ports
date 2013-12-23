@@ -15,7 +15,6 @@ COMMENT=	The "meta-port" for the MAD sound playback system
 RUN_DEPENDS=	madplay:${PORTSDIR}/audio/madplay
 
 NO_BUILD=	yes
-NO_STAGE=	yes
 
 do-install:	# empty
 
