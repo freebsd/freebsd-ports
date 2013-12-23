@@ -3,6 +3,7 @@
 
 PORTNAME=	rabbitmq
 PORTVERSION=	3.1.5
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -20,7 +21,8 @@ RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
 USES=		gmake shebangfix
 USE_PYTHON_BUILD=yes
 USE_RC_SUBR=	rabbitmq
-SHEBANG_FILES=	plugins-src/rabbitmq-amqp1.0/codegen.py
+SHEBANG_FILES=	calculate-relative plugins-src/rabbitmq-amqp1.0/codegen.py
+python_OLD_CMD=	.*python
 python_CMD=	${PYTHON_CMD}
 
 USERS=	rabbitmq
