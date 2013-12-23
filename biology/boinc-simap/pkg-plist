@@ -1,5 +1,9 @@
+@owner %%BOINC_CLIENT_USER%%
+@group %%BOINC_CLIENT_GROUP%%
 @cwd %%BOINC_CLIENT_HOME%%
 projects/%%SIMAP_SITE%%/app_info.xml
 projects/%%SIMAP_SITE%%/%%SIMAP_BINARY%%
 projects/%%SIMAP_SITE%%/%%HMMER_BINARY%%
 @dirrmtry projects/%%SIMAP_SITE%%
+@dirrmtry projects
+@exec chown -R %%BOINC_CLIENT_USER%%:%%BOINC_CLIENT_GROUP%% projects/
