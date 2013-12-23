@@ -5,7 +5,6 @@ share/applications/pokerth.desktop
 share/pixmaps/pokerth.png
 %%DATADIR%%/data/data-copyright.txt
 %%DATADIR%%/data/fonts/DejaVuSans-Bold.ttf
-%%DATADIR%%/data/fonts/n019003l.pfb
 %%DATADIR%%/data/gfx/avatars/default/misc/00a0b3d26a67841239b8883183b7a8f0.png
 %%DATADIR%%/data/gfx/avatars/default/misc/030a14c105d3fd164cb4bae54bad6191.png
 %%DATADIR%%/data/gfx/avatars/default/misc/08ced517579b3d258c947aec6c0a0dd4.png
@@ -400,6 +399,7 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/gfx/gui/table/default_800x480/table_dark.png
 %%DATADIR%%/data/gfx/gui/table/default_800x480/toolboxbg.png
 %%DATADIR%%/data/misc/agpl.html
+%%DATADIR%%/data/misc/third_party_libs.txt
 %%DATADIR%%/data/sounds/default/allin.wav
 %%DATADIR%%/data/sounds/default/bet.wav
 %%DATADIR%%/data/sounds/default/call.wav
@@ -423,6 +423,8 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/translations/pokerth_es.qm
 %%DATADIR%%/data/translations/pokerth_fi.qm
 %%DATADIR%%/data/translations/pokerth_fr.qm
+%%DATADIR%%/data/translations/pokerth_gd.qm
+%%DATADIR%%/data/translations/pokerth_gl.qm
 %%DATADIR%%/data/translations/pokerth_gr.qm
 %%DATADIR%%/data/translations/pokerth_hu.qm
 %%DATADIR%%/data/translations/pokerth_it.qm
@@ -437,6 +439,7 @@ share/pixmaps/pokerth.png
 %%DATADIR%%/data/translations/pokerth_sv.qm
 %%DATADIR%%/data/translations/pokerth_ta.qm
 %%DATADIR%%/data/translations/pokerth_tr.qm
+%%DATADIR%%/data/translations/pokerth_vi.qm
 %%DATADIR%%/data/translations/pokerth_jp.qm
 %%DATADIR%%/data/translations/pokerth_zhcn.qm
 %%DATADIR%%/data/translations/qt_ar.qm
