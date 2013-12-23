@@ -18,7 +18,6 @@ CONFIGURE_ARGS+=	--with-gtk2
 USE_XZ=		yes
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PORTDOCS=	*
 PLIST_FILES=	bin/gtkpasman share/applications/gtkpasman.desktop
@@ -34,9 +33,6 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/applications
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/data && ${INSTALL_DATA} gpasman4.sample ${STAGEDIR}${DOCSDIR})
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} ${WRKSRC}/data/gpasman4.sample ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
