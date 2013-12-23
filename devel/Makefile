@@ -1459,6 +1459,7 @@
     SUBDIR += p5-Bread-Board-Declare
     SUBDIR += p5-Bundle-Perl6
     SUBDIR += p5-C-Scan
+    SUBDIR += p5-CBOR-XS
     SUBDIR += p5-CHI
     SUBDIR += p5-CLASS
     SUBDIR += p5-CPAN-Changes
