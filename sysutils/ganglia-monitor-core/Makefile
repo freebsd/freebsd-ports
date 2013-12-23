@@ -31,7 +31,8 @@ USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure libmetrics/configure
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-setuid=ganglia --enable-setgid=ganglia
+CONFIGURE_ARGS=	--enable-setuid=ganglia --enable-setgid=ganglia \
+		--with-python=${PYTHON_CMD}
 CONFIGURE_ENV=	GANGLIA_ACK_SYSCONFDIR=1 "LDFLAGS=${LDFLAGS}"
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
