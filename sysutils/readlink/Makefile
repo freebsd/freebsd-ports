@@ -4,33 +4,17 @@
 PORTNAME=	readlink
 PORTVERSION=	20010616
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dd
+MASTER_SITES=	LOCAL/dd
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dereference a symbolic link and print the name of the target
 
-MANSECTS=	1
-MAN1=		readlink.1
-MANCOMPRESSED=	maybe
+PLIST_FILES=	bin/readlink \
+		man/man1/readlink.1.gz
 
-# MAN page COMPression SUFFIX
-.if !defined(NO_MANCOMPRESS)
-MANCOMPSUFFIX=	.gz
-.else
-MANCOMPSUFFIX=
-.endif
-
-PLIST_FILES=	bin/readlink
-
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/readlink ${PREFIX}/bin/readlink
-.for __s in ${MANSECTS}
-.for __m in ${MAN${__s}:S/$/${MANCOMPSUFFIX}/}
-	@${INSTALL_MAN} ${WRKSRC}/${__m} ${PREFIX}/man/man${__s}/${__m}
-.endfor
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/readlink ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/readlink.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 
 #
 # Ports build/install stuff stops here.  Tarball creation stuff begins here.
