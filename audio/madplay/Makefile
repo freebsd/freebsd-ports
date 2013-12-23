@@ -16,38 +16,21 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad \
 		libid3tag.so:${PORTSDIR}/audio/libid3tag
 
-WANT_GNOME=	yes
-
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lz
 ALL_TARGET=	all madtime
-NO_STAGE=	yes
 
-MAN1=		abxtest.1 madplay.1
+OPTIONS_DEFINE=	NLS ESOUND
+OPTIONS_DEFAULT=ESOUND
+OPTIONS_SUB=	yes
 
-OPTIONS_DEFINE=NLS ESOUND
-OPTIONS_DEFAULT=NLS ESOUND
-NO_OPTIONS_SORT=yes
-TCL82_MAN_DESC= Install tcl 8.3 manpages
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MESOUND}
-USE_GNOME+=	esound
-.else
-CONFIGURE_ARGS+=	--without-esd
-.endif
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+ESOUND_USE=		GNOME=esound
+ESOUND_CONFIGURE_WITH=	esd
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/madtime ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/madtime ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
