@@ -3,6 +3,7 @@
 
 PORTNAME=	i18ntools
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	converters
 MASTER_SITES=	ftp://ftp.whizkidtech.redprince.net/unix/ \
 		http://www.whizkidtech.redprince.net/fports/
@@ -12,6 +13,11 @@ COMMENT=	Tools for the conversion to and from UTF-8 Unicode encoding
 
 LIB_DEPENDS=	libutf-8.so:${PORTSDIR}/converters/libutf-8
 RUN_DEPENDS=	tuc:${PORTSDIR}/converters/tuc
+
+OPTIONS_DEFINE=	DOCS
+
+DATADIR=	${PREFIX}/share/i18n
+DOCSDIR=	${PREFIX}/share/doc/i18n
 
 BINARIES=	hutrans mbm ptrans uhtrans utrans
 CHARMAPS=	ANSI_X3.110-1983 ANSI_X3.4-1968 ASMO_449 BALTIC BS_4730 \
@@ -45,27 +51,29 @@ CHARMAPS=	ANSI_X3.110-1983 ANSI_X3.4-1968 ASMO_449 BALTIC BS_4730 \
 		T.61-8BIT VIDEOTEX-SUPPL
 DOCFILES=	fgetu8.html fputu8.html index.html libutf-8.html rfc1641.txt \
 		rfc2277.txt rfc2279.txt sgetu8.html sputu8.html utrans.html
-MAN1=		hutrans.1 ptrans.1 utrans.1 uhtrans.1
+MAN1FILES=	hutrans.1 ptrans.1 utrans.1 uhtrans.1
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|$${PREFIX}/include|$${LOCALBASE}/include| ; \
+		 s|$${PREFIX}/lib|$${LOCALBASE}/lib| ; \
+		 s|gcc -o|$$(CC) $$(CFLAGS) -o|' ${WRKSRC}/Makefile
+
 do-install:
 .for f in ${BINARIES}
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${f} ${STAGEDIR}${PREFIX}/bin)
 .endfor
-.for f in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/${f} ${PREFIX}/man/man1
+.for f in ${MAN1FILES}
+	(cd ${WRKSRC} && ${INSTALL_MAN} ${f} ${STAGEDIR}${MANPREFIX}/man/man1)
 .endfor
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/i18n/tools
-.for f in ${DOCFILES}
-	${INSTALL_MAN} ${WRKSRC}/${f} ${PREFIX}/share/doc/i18n/tools
-.endfor
-.endif
-	${MKDIR} ${PREFIX}/share/i18n/charmaps/binary
+	${MKDIR} ${STAGEDIR}${DATADIR}/charmaps/binary
 .for f in ${CHARMAPS}
-	${INSTALL_DATA} ${WRKSRC}/charmaps/${f} ${PREFIX}/share/i18n/charmaps/binary
+	(cd ${WRKSRC}/charmaps && ${INSTALL_DATA} ${f} \
+		${STAGEDIR}${DATADIR}/charmaps/binary)
+.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/tools
+.for f in ${DOCFILES}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${f} ${STAGEDIR}${DOCSDIR}/tools)
 .endfor
 
 .include <bsd.port.mk>
