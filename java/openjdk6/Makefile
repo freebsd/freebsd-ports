@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	openjdk6
-PORTVERSION=	b28
-PORTREVISION?=	7
+PORTVERSION=	b29
+PORTREVISION?=	0
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,} \
 		http://download.java.net/openjdk/jtreg/promoted/4.1/b05/:jtreg \
-		https://java.net/projects/openjdk6/downloads/download/ \
+		https://java.net/downloads/openjdk6/ \
 		LOCAL
 MASTER_SITE_SUBDIR=	jkim
 DISTNAME=	openjdk-6-src-${PORTVERSION}-${OPENJDK_BUILDDATE}
@@ -29,7 +29,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 
-OPENJDK_BUILDDATE=	04_oct_2013
+OPENJDK_BUILDDATE=	05_dec_2013
 
 OPTIONS_DEFINE=	ICEDTEA IPV6 POLICY SOUND TZUPDATE
 OPTIONS_DEFAULT=ICEDTEA IPV6 TZUPDATE
@@ -228,6 +228,12 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|%%CXX_LIBS%%|${CXX_LIBS}|" \
 	    ${WRKSRC}/corba/make/common/Defs-bsd.gmk \
 	    ${WRKSRC}/jdk/make/common/Defs-bsd.gmk
+.if ${COMPILER_TYPE} == "clang"
+	@${REINPLACE_CMD} -e "s|-fno-omit-frame-pointer|-fno-omit-frame-pointer -mno-omit-leaf-frame-pointer|" \
+	    ${WRKSRC}/corba/make/common/Defs-bsd.gmk \
+	    ${WRKSRC}/hotspot/make/bsd/makefiles/amd64.make \
+	    ${WRKSRC}/jdk/make/common/Defs-bsd.gmk
+.endif
 	@${REINPLACE_CMD} -e "s|%%ICONV_INC%%|${ICONV_INCLUDE}|" \
 	    -e "s|%%ICONV_LIB%%|${ICONV_LIBS}|" \
 	    ${WRKSRC}/Makefile ${WRKSRC}/jdk/make/java/instrument/Makefile \
