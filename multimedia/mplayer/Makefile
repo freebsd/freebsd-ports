@@ -3,7 +3,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 
 COMMENT=	High performance media player supporting many formats
 
@@ -31,7 +31,7 @@ OPUS_DESC?=	Opus decoding with libopus
 OTCHAIN_DESC?=	Use gcc 4.6+ toolchain on legacy systems
 REAL_DESC?=	Enable realplayer plugin
 RTC_DESC?=	Add support for kernel real time clock
-RTCPU_DESC?=	Use runtime CPU detection
+RTCPU_DESC?=	Use runtime CPU detection on supported archs
 SKINS_DESC?=	Install skins for GUI
 WIN32_DESC?=	Install win32 binary codecs
 X11DGA_DESC?=	X11 DGA video driver support
@@ -180,6 +180,5 @@ post-install:
 	@(cd ${STAGEDIR}${MAN1PREFIX}/man/man1 && ${LN} -sf mplayer.1.gz gmplayer.1.gz)
 	${CP} -f ${WRKSRC}/etc/mplayer256x256.png ${STAGEDIR}${LOCALBASE}/share/pixmaps/mplayer.png
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

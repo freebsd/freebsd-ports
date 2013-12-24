@@ -112,8 +112,10 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-base_system_log2f
 #On i386, gcc runs out of general purpose registers when
 #trying to compile a debug version with the default flags.
 .if ${PORT_OPTIONS:MDEBUG}
+WITH_DEBUG=	yes
+CONFIGURE_ARGS=+	--enable-debug
 .if ${ARCH} == "i386"
-DEBUG_FLAGS=	-g -O -fomit-frame-pointer
+DEBUG_FLAGS=	-g -fomit-frame-pointer
 .endif
 .else
 .if ${PORT_OPTIONS:MOCFLAGS}
@@ -128,6 +130,11 @@ CFLAGS+=	-O -fomit-frame-pointer
 MPLAYER_CLANG_SUPPORTED_ARCH=	yes
 .endif
 
+# Supported architectures for runtime CPU detection
+.if ${ARCH} == "amd64" || ${ARCH} == "i386" || ${ARCH} == "ppc"
+MPLAYER_RTCPU_SUPPORTED_ARCH=	yes
+.endif
+
 # Unsupported architectures for inline assembly
 .if ${ARCH} == "ppc"
 CONFIGURE_ARGS+=	--disable-asm
@@ -137,12 +144,9 @@ CONFIGURE_ARGS+=	--disable-asm
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
-.if ${ARCH} == "ia64"
-BROKEN=		Does not detect CPU correctly on ia64
-.endif
 
-
-.if ${PORT_OPTIONS:MRTCPU}
+.if ${PORT_OPTIONS:MRTCPU} \
+	&& defined(MPLAYER_RTCPU_SUPPORTED_ARCH)
 CONFIGURE_ARGS+=--enable-runtime-cpudetection
 .endif
 
