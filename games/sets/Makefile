@@ -34,7 +34,6 @@ DESKTOP_ENTRIES="Sets" "" "${PORTNAME}" \
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
-post-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 
