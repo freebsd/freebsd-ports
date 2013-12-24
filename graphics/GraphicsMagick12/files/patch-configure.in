@@ -1,6 +1,15 @@
---- configure.orig	2008-05-18 17:22:52.000000000 -0400
-+++ configure	2008-06-06 18:37:48.269146182 -0400
-@@ -37604,7 +37604,7 @@
+--- configure.orig	2010-01-05 20:20:45.000000000 +0100
++++ configure	2013-12-13 12:20:04.000000000 +0100
+@@ -24299,7 +24299,7 @@
+ fi
+ 
+ 
+-    ac_fn_c_check_header_compile "$LINENO" "freetype/freetype.h" "ac_cv_header_freetype_freetype_h" "$FT2BUILD_H
++    ac_fn_c_check_header_compile "$LINENO" "freetype.h" "ac_cv_header_freetype_freetype_h" "$FT2BUILD_H
+ "
+ if test "x$ac_cv_header_freetype_freetype_h" = x""yes; then :
+   have_freetype_h='yes'
+@@ -25089,7 +25089,7 @@
  #
  
  # Subdirectory under lib to place GraphicsMagick lib files
@@ -9,7 +18,7 @@
  
  cat >>confdefs.h <<_ACEOF
  #define MagickLibSubdir "$MagickLibSubdir"
-@@ -37708,7 +37708,7 @@
+@@ -25193,7 +25193,7 @@
  
  #
  # Path to GraphicsMagick share files

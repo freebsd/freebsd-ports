@@ -1,6 +1,16 @@
---- ttf.cpp	2003-01-08 00:25:25.000000000 -0500
-+++ ttf.cpp	2012-12-07 12:34:54.000000000 -0500
-@@ -51,20 +51,27 @@
+--- ttf.cpp.orig	2003-01-08 06:25:25.000000000 +0100
++++ ttf.cpp	2013-12-17 00:08:13.000000000 +0100
+@@ -3,7 +3,8 @@
+ #include <cctype>
+ #include <cstring>
+ 
+-#include "freetype/tttables.h"
++#include <ft2build.h>
++#include FT_TRUETYPE_TABLES_H
+ #include "ttmkfdir.h"
+ #include "ttf.h"
+ #include "ttos2val.h"
+@@ -51,20 +52,27 @@
  bool
  Face::MappingPresent (int cmapidx, NumericMapping *m, int enc_size, int start_code, bool enc_comp)
  {
@@ -35,7 +45,7 @@
  }
  
  Face::Face (const std::string &filename)
-@@ -239,7 +246,7 @@
+@@ -239,7 +247,7 @@
  	for (i = 0; i < n; i++) {
  	    if ((fterror = FT_Get_Sfnt_Name (face, i, &NamePtr)) != FT_Err_Ok) {
                      std::cout << "Warning: Can't SFNT name : " << FileName << "(" << fterror << ")" << std::endl;
@@ -44,7 +54,7 @@
              };
              platform = NamePtr.platform_id;
              encoding = NamePtr.encoding_id;
-@@ -483,7 +490,7 @@
+@@ -483,7 +491,7 @@
  const char *
  Face::PanoseWeight (void) const
  {
@@ -53,7 +63,7 @@
  	"any",
  	"no fit",
  	"very light",
-@@ -548,7 +555,7 @@
+@@ -548,7 +556,7 @@
  const char *
  Face::PanoseWidth (void) const
  {
@@ -62,7 +72,7 @@
  	"any",
  	"no fit",
  	"old style",
-@@ -561,7 +568,7 @@
+@@ -561,7 +569,7 @@
  	"monospaced",
      };
      

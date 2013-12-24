@@ -1,6 +1,35 @@
---- ./configure.orig	2008-04-10 11:16:29.000000000 -0400
-+++ ./configure	2008-09-02 08:05:29.000000000 -0400
-@@ -34040,7 +34040,7 @@
+--- configure.orig	2008-11-20 04:31:11.000000000 +0100
++++ configure	2013-12-13 12:12:27.000000000 +0100
+@@ -32116,7 +32116,7 @@
+     fi
+ 
+     # Some Freetype installs appear to require that <ft2build.h> be
+-    # included prior to including <freetype/freetype.h>.  Oops!
++    # included prior to including <freetype.h>.  Oops!
+     if test "${ac_cv_header_ft2build_h+set}" = set; then
+   { echo "$as_me:$LINENO: checking for ft2build.h" >&5
+ echo $ECHO_N "checking for ft2build.h... $ECHO_C" >&6; }
+@@ -32249,8 +32249,8 @@
+ fi
+ 
+ 
+-    { echo "$as_me:$LINENO: checking for freetype/freetype.h" >&5
+-echo $ECHO_N "checking for freetype/freetype.h... $ECHO_C" >&6; }
++    { echo "$as_me:$LINENO: checking for freetype.h" >&5
++echo $ECHO_N "checking for freetype.h... $ECHO_C" >&6; }
+ if test "${ac_cv_header_freetype_freetype_h+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+@@ -32262,7 +32262,7 @@
+ /* end confdefs.h.  */
+ $FT2BUILD_H
+ 
+-#include <freetype/freetype.h>
++#include <freetype.h>
+ _ACEOF
+ rm -f conftest.$ac_objext
+ if { (ac_try="$ac_compile"
+@@ -34050,7 +34050,7 @@
  #define MagickLibConfigSubDir "$MagickLibConfigSubDir"
  _ACEOF
  
@@ -9,7 +38,7 @@
  MagickLibConfigPathDefine="${MagickLibConfigPath}/"
  if test "$native_win32_build" = 'yes'
  then
-@@ -34098,7 +34098,7 @@
+@@ -34108,7 +34108,7 @@
  #
  # Path to GraphicsMagick share files
  MagickShareSubdir="${PACKAGE_NAME}-${PACKAGE_VERSION}"
@@ -18,7 +47,7 @@
  MagickSharePathDefine="${MagickSharePath}/"
  if test "$native_win32_build" = 'yes'
  then
-@@ -34118,7 +34118,7 @@
+@@ -34128,7 +34128,7 @@
  #define MagickShareConfigSubDir "$MagickShareConfigSubDir"
  _ACEOF
  

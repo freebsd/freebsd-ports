@@ -21,5 +21,9 @@ USES=		pkgconfig
 PLIST_FILES=	bin/gtkmmorse
 MAN1=		gtkmmorse.1
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-ansi||g' -e 's|-pedantic||g' \
+		${WRKSRC}/src/Makefile.in
+
 NO_STAGE=	yes
 .include <bsd.port.mk>
