@@ -9,6 +9,15 @@ MASTER_SITES=	http://www.student.nada.kth.se/~d92-jwa/code/gma/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Go-moku game which learns playing the game from studying its opponent
 
+LICENSE=	GPLv2 # (or later)
+
 GNU_CONFIGURE=	yes
+
+PLIST_FILES=	bin/apprentice.gmaplayer bin/gma-console
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|stl\.h|map| ; \
+		 s|^CXXFLAGS|#CXXFLAGS|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
