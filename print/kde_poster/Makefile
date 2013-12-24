@@ -12,7 +12,7 @@ DISTNAME=	poster
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE version of the poster utility
 
-LICENSE=	GPL2
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 ALL_TARGET=	poster
