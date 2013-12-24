@@ -162,6 +162,15 @@
  		r->insert (r->end(), new_routes.begin(), new_routes.end());
  		resort_routes_using (r);
  	}
+@@ -2150,7 +2149,7 @@ Session::add_routes (RouteList& new_rout
+ 		} 
+ 	}
+ 
+-	if (_control_out && IO::connecting_legal) {
++	if (_control_out && IO::connecting_is_legal()) {
+ 
+ 		vector<string> cports;
+ 		uint32_t ni = _control_out->n_inputs();
 @@ -2198,14 +2197,14 @@ Session::add_diskstream (boost::shared_p
  }
  
