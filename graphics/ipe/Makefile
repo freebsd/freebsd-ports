@@ -12,8 +12,8 @@ COMMENT=	Extensible vector graphics editor with Latex text support
 
 LICENSE=	GPLv3 # (or later)
 
-LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
-		lua-5.2:${PORTSDIR}/lang/lua52
+LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
+		liblua-5.2.so:${PORTSDIR}/lang/lua52
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 OPTIONS_DEFINE=	DOCS
