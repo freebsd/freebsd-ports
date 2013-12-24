@@ -39,6 +39,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-ldl //' \
+		-e 's|freetype/||g' \
 		${WRKSRC}/configure ${WRKSRC}/rw/configure
 	@${REINPLACE_CMD} -e '/^LIBTOOL/d' \
 		-e '/^install-exec-am:/s/install-libLTLIBRARIES//' \

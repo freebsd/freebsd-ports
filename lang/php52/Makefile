@@ -194,6 +194,7 @@ CONFIGURE_ARGS+=--disable-ipv6
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/ext/php_config.h
+	@${REINPLACE_CMD} -e 's|freetype/||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} "s|^\(extension_dir\)|; \1|" ${WRKSRC}/php.ini-*
 .if ${PORT_OPTIONS:MFPM} && ${PORT_OPTIONS:MCGI}
 	@${REINPLACE_CMD} -e 's,BUILD_CGI=\"\\$$\(.*\)\\$$(EXTRA_LIBS),BUILD_CGI=\"\\$$\1\\$$(EXTRA_LIBS) \\$$(SAPI_EXTRA_LIBS),g' \

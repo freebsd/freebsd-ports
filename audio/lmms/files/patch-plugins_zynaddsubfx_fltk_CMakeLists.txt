@@ -1,0 +1,11 @@
+--- plugins/zynaddsubfx/fltk/CMakeLists.txt.orig	2013-12-24 21:48:53.000000000 +0200
++++ plugins/zynaddsubfx/fltk/CMakeLists.txt	2013-12-24 21:49:16.000000000 +0200
+@@ -165,7 +165,7 @@
+ mark_as_advanced(HAVE_SYS_STDTYPES_H HAVE_XDBE_H)
+ 
+ # where to find freetype headers
+-find_path(FREETYPE_PATH freetype/config/ftheader.h PATH_SUFFIXES freetype2)
++find_path(FREETYPE_PATH config/ftheader.h PATH_SUFFIXES freetype2)
+ if(FREETYPE_PATH)
+    include_directories(${FREETYPE_PATH})
+ endif(FREETYPE_PATH)

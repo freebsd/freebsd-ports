@@ -1,5 +1,5 @@
---- CMakeLists.txt.orig	2013-09-11 14:54:40.000000000 +0200
-+++ CMakeLists.txt	2013-10-23 16:43:54.000000000 +0200
+--- CMakeLists.txt.orig	2013-09-11 15:54:40.000000000 +0300
++++ CMakeLists.txt	2013-12-23 19:35:33.000000000 +0200
 @@ -54,6 +54,12 @@
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -framework Cocoa")
  endif(APPLE)
@@ -13,6 +13,15 @@
  if(WIN32)
     if(MSVC)
        add_definitions(-DWIN32_LEAN_AND_MEAN)
+@@ -129,7 +135,7 @@
+ mark_as_advanced(HAVE_SYS_STDTYPES_H HAVE_XDBE_H)
+ 
+ # where to find freetype headers
+-find_path(FREETYPE_PATH freetype/config/ftheader.h PATH_SUFFIXES freetype2)
++find_path(FREETYPE_PATH config/ftheader.h PATH_SUFFIXES freetype2)
+ if(FREETYPE_PATH)
+    include_directories(${FREETYPE_PATH})
+ endif(FREETYPE_PATH)
 @@ -681,7 +687,7 @@
     install(FILES
        ${FLTK_SOURCE_DIR}/documentation/src/${FILE}.man

@@ -30,11 +30,14 @@ USE_OPENAL=	al alut
 USE_SDL=	mixer net sdl
 USE_WX=		2.4+
 WX_CONF_ARGS=	absolute
-USES=		iconv perl5 gmake pkgconfig
+USES=		dos2unix iconv perl5 gmake pkgconfig
 USE_AUTOTOOLS=	aclocal automake autoconf
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing --copy --force --foreign
 CONFIGURE_ARGS=	--datadir=${DATADIR}
+
+DOS2UNIX_FILES=	src/client/GLEXT/GLFont2dFreeType.h \
+		src/launcher/wxdialogs/TrueTypeFont.h
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

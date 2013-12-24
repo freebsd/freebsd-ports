@@ -14,9 +14,10 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
-USES=		iconv gmake pkgconfig
+USES=		dos2unix iconv gmake pkgconfig
 USE_GNOME=	libxml2 libxslt
 USE_AUTOTOOLS=	libtool
+DOS2UNIX_FILES=	src/swft/swft_import_ttf.cpp
 
 PLIST_FILES=	bin/swfmill
 
