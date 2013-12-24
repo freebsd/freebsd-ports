@@ -3,6 +3,7 @@
 
 PORTNAME=	dbf
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PORTNAME}.berlios
 DISTFILES=	${PORTNAME}-core-${PORTVERSION}.src.zip \
@@ -12,6 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show and convert the content of dBASE III, IV, and 5.0 files
 
 OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
 WRKSRC=		${WRKDIR}/lib${PORTNAME}
 
@@ -22,20 +24,15 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_prog_DOC_TO_MAN=""
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ENV+=	ac_cv_header_libintl_h=no
-PLIST_SUB+=	NLS="@comment "
 .endif
-
-_make_jobs=	-j${MAKE_JOBS_NUMBER}
 
 post-extract:
 	@${FIND} ${WRKDIR} -name "configure" -or -name "install-sh" | \
@@ -49,8 +46,8 @@ post-configure:
 	@(cd ${WRKDIR}/${PORTNAME}-core && ${SETENV} ${CONFIGURE_ENV} \
 		CC="${CC}" CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
-		CPPFLAGS="-I${WRKSRC}/include" \
-		LDFLAGS="-L${WRKSRC}/src/.libs" \
+		CPPFLAGS="-I${WRKSRC}/include ${CPPFLAGS}" \
+		LDFLAGS="-L${WRKSRC}/src/.libs ${LDFLAGS}" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_LIB="${INSTALL_LIB}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
@@ -59,11 +56,14 @@ post-configure:
 		./configure --prefix=${PREFIX})
 
 post-build:
-	@(cd ${WRKDIR}/${PORTNAME}-core && ${SETENV} ${MAKE_ENV} ${MAKE} \
-		${MAKE_FLAGS} ${MAKEFILE} ${_make_jobs} ${ALL_TARGET})
+	@(cd ${WRKDIR}/${PORTNAME}-core && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
+		${MAKE_FLAGS} ${MAKEFILE} -j${MAKE_JOBS_NUMBER} ${MAKE_ARGS} \
+		${ALL_TARGET})
 
 post-install:
-	@(cd ${WRKDIR}/${PORTNAME}-core && ${SETENV} ${MAKE_ENV} ${MAKE} \
-		${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
+	@(cd ${WRKDIR}/${PORTNAME}-core && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
+		${MAKE_FLAGS} ${MAKEFILE} -j${MAKE_JOBS_NUMBER} ${MAKE_ARGS} \
+		${INSTALL_TARGET})
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libdbf.so.0
 
 .include <bsd.port.mk>
