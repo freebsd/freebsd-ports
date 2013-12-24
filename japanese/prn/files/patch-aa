@@ -19,10 +19,10 @@
   
 !           PREFIX?=/usr/local
 !           BINPATH = ${PREFIX}/bin
-!           LIBPATH = ${PREFIX}/lib/prn
+!           LIBPATH = ${PREFIX}/share/prn
 !           MANPATH = ${PREFIX}/man
 !           JMANDIR = ja
-!            CFLAGS = -O \
+!            CFLAGS += \
 ! 		-DKCCPATH=\"${PREFIX}/bin/kcc\" \
 ! 		-DCMTPATH=\"${PREFIX}/bin/cmt\" \
 ! 		-DPSPATH=\"${PREFIX}/bin/psconv\"
