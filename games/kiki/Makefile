@@ -3,7 +3,7 @@
 
 PORTNAME=	kiki
 PORTVERSION=	1.0.2
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION}
 EXTRACT_SUFX=	-src.tgz
@@ -14,14 +14,17 @@ COMMENT=	Kiki the nanobot is a 3-D puzzle game
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
 USE_PYTHON=	2.5+
-USE_GMAKE=	yes
+USES=		gmake dos2unix
 USE_GL=		gl glu glut
 USE_SDL=	sdl mixer image
-USE_DOS2UNIX=	kodilib/linux/Makefile src/main/KikiController.cpp linux/Makefile kodilib/src/types/KVector.h src/main/KikiPythonWidget.h
+DOS2UNIX_REGEX=	.*/(Makefile|.*\.cpp|.*\.h|.*\.i)$
 MAKE_ENV=	PYTHON_VER=${PYTHON_VERSION:C/^python//}
-USE_GCC=	any # swig produces clang-incompatible code
+CXXFLAGS+=	-include sys/limits.h -fpermissive
 
 WRKSRC=		${WRKDIR}/kiki
+
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
 
 DESKTOP_ENTRIES="kiki the nanobot" \
 		"3-D puzzle game" \
@@ -30,7 +33,13 @@ DESKTOP_ENTRIES="kiki the nanobot" \
 		"Game;LogicGame;" \
 		false
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} >= 1000000
+# these are critical, detect them if possible
+CXXFLAGS+=	-Werror=tautological-constant-out-of-range-compare
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^CXXFLAGS/ s|.*|CXXFLAGS+=$$(KODI_INCLUDES) -I${LOCALBASE}/include `${SDL_CONFIG} --cflags`|' ${WRKSRC}/kodilib/linux/Makefile
 	@${REINPLACE_CMD} -e 's|getenv("KIKI_HOME")|"${DATADIR}"|' ${WRKSRC}/src/main/KikiController.cpp
@@ -41,8 +50,8 @@ do-build:
 	cd ${WRKSRC}/linux && ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/linux/kiki ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "py sound" ${DATADIR}/
+	${INSTALL_PROGRAM} ${WRKSRC}/linux/kiki ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "py sound" ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
