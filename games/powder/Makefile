@@ -12,18 +12,16 @@ DISTNAME=	${PORTNAME}${PORTVERSION}_src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Graphical dungeon crawling game
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_SDL=	sdl
 MAKE_JOBS_UNSAFE=yes
 
 BUILD_WRKSRC=	${WRKSRC}/port/linux
 
 PLIST_FILES=	bin/powder
-
 PORTDOCS=	README.TXT LICENSE.TXT CREDITS.TXT
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|bin/bash|bin/sh|' \
@@ -33,12 +31,10 @@ post-patch:
 		${BUILD_WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/powder ${PREFIX}/bin/
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/powder ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>
