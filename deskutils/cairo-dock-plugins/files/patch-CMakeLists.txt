@@ -1,0 +1,11 @@
+--- ./CMakeLists.txt.orig	2013-04-04 21:40:14.000000000 +0000
++++ ./CMakeLists.txt	2013-12-24 08:11:07.000000000 +0000
+@@ -717,7 +717,7 @@
+ enable_if_not_defined (enable-gmenu)
+ if (enable-gmenu)
+ 	set (GMENU_MODULE "libgnome-menu-3.0")
+-	set (GMENU_MODULE_OLD "libgnome-menu")
++	set (GMENU_MODULE_OLD "libgnome-menu gio-unix-2.0")
+ 	pkg_check_modules (GMENU_PACKAGE ${GMENU_MODULE})
+ 	if (NOT GMENU_PACKAGE_FOUND)
+ 		message (STATUS "Could not find ${GMENU_MODULE}; trying with an old version...")

@@ -18,16 +18,14 @@ DATADIR=	${PREFIX}/share/cairo-dock
 
 ICONS_PACKAGE=	cairo-dock-plugins-png-icons
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack glib20 gtk20 librsvg2 libxml2
+USE_GNOME=	glib20 gtk20 librsvg2 libxml2
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 USE_XORG=	xrender
-USE_DOS2UNIX=	YES
 USES=		cmake gettext pkgconfig
 LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB+=	PYVER="${PYTHON_VERSION:S/thon//}"
-CMAKE_ARGS+=	-Dinstall-pc-path:STRING="${LOCALBASE}/libdata/pkgconfig"
+CMAKE_ARGS+=	-DROOT_PREFIX:PATH=${STAGEDIR}
 
 OPTIONS_DEFINE=		XFCE_INTEGRATION ALSA_MIXER GMENU \
 			KEYBOARD_INDICATOR IMPULSE \
@@ -44,14 +42,15 @@ WEBLETS_DESC=		Weblets applet
 
 OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
 	@${CP} -R ${WRKDIR}/${ICONS_PACKAGE}/* ${WRKSRC}
-	@${FIND} ${WRKSRC} -type f -name "*" | ${XARGS} ${REINPLACE_CMD} -i.orig -e \
+	@${FIND} ${WRKSRC} -type f \( -name "*.c" -o -name "*.conf" \
+		-o -name netspeed -o -name nvidia-config -o -name "*.sh" \
+		-o -name "*.rb" \) | ${XARGS} ${REINPLACE_CMD} -i.orig -e \
 	    's|/bin/bash|${LOCALBASE}/bin/bash|g; \
-	     s|/usr/bin/python|${LOCALBASE}/bin/python|g; \
+	     s|/usr/bin/python|${PYTHON_CMD}|g; \
 	     s|/usr/bin/ruby|${LOCALBASE}/bin/ruby|g; \
 	     s|/usr/share/applications|${LOCALBASE}/share/applications|g; \
 	     s|/usr/share/cairo-dock|${LOCALBASE}/share/cairo-dock|g'
