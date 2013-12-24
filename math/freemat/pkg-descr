@@ -1,9 +1,6 @@
-FreeMat is an environment for rapid engineering and scientific processing.
-It is similar to commercial systems such as MATLAB from Mathworks and IDL
-from Research Systems, but is Open Source.
-
-FreeMat includes several novel features such as a codeless interface to
-external C/C++/FORTRAN code, parallel/distributed algorithm development
-(via MPI), and plotting and visualization capabilities.
+FreeMat is a free environment for rapid engineering and scientific
+prototyping and data processing.  It is similar to commercial systems
+such as MATLAB from Mathworks, and IDL from Research Systems, but is
+Open Source.
 
 WWW: http://freemat.sourceforge.net/
