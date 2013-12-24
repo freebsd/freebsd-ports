@@ -3,31 +3,39 @@
 
 PORTNAME=	pcre++
 PORTVERSION=	0.9.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.daemon.de/idisk/Apps/pcre++/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A wrapper class around the pcre library
+COMMENT=	Wrapper class around the pcre library
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
+LICENSE=	LGPL21
 
-PCRE_CONFIG?=	${LOCALBASE}/bin/pcre-config
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
+USES=		gmake
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	`${PCRE_CONFIG} --cflags`
-LDFLAGS+=	`${PCRE_CONFIG} --libs`
 USE_LDCONFIG=	yes
 
-MAN3=		Pcre.3
-PLIST_SUB=	VERSION=${PORTVERSION}
+CPPFLAGS+=	$$(${PCRE_CONFIG} --cflags)
+LDFLAGS+=	$$(${PCRE_CONFIG} --libs)
 
 DOCSDIR=	${PREFIX}/share/doc/lib${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
+PCRE_CONFIG?=	${LOCALBASE}/bin/pcre-config
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O -g|\@CXXFLAGS\@|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's| ../COPYING|| ; \
+		 s| $$(prefix)/doc| $${DESTDIR}$$(prefix)/share/doc|' \
+		${WRKSRC}/doc/Makefile.in
+.for i in examples/Makefile.in libpcre++/Makefile.in test/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|-O -g|@CXXFLAGS@|' ${WRKSRC}/${i}
+.endfor
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpcre++.so.0
 
 .include <bsd.port.mk>
