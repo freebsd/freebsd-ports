@@ -1,37 +1,44 @@
-# Created by: nemysis@gmx.ch
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
 
 PORTNAME=	sets
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://www.linuxmotors.com/sets/downloads/
+MASTER_SITES=	http://www.linuxmotors.com/sets/downloads/ \
+		SF/nemysisfreebsdp/${CATEGORIES}/:icons
 EXTRACT_SUFX=	.tgz
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}.png:icons
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	This is an implementation of the sets game
 
 LICENSE=	GPLv3
 
-USE_GMAKE=	yes
-ALL_TARGET=	${PORTNAME}
+USES=		gmake
 USE_SDL=	sdl image
+ALL_TARGET=	${PORTNAME}
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		share/pixmaps/${PORTNAME}.png
 
 PORTDOCS=	README
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
+
+DESKTOP_ENTRIES="Sets" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;CardGame;" ""
 
 do-install:
-# Executable
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
 post-install:
-# Documentation
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
