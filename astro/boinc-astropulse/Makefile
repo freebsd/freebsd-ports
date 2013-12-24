@@ -3,7 +3,7 @@
 
 PORTNAME=	boinc-astropulse
 PORTVERSION=	6.01
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	astro
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
 DISTNAME=	astropulse-svn-1702 # modified archive, see leftout in top directory
@@ -31,8 +31,6 @@ CFLAGS+=	-O2 -I${LOCALBASE}/include/boinc -I${LOCALBASE}/include \
 CFLAGS+=	-march=${CPUTYPE}
 .endif
 
-NEED_ROOT=	yes
-
 # these must match settings in ${PORTSDIR}/net/boinc-client/Makefile
 BOINC_CLIENT_USER?=	boinc
 BOINC_CLIENT_GROUP?=	nobody
@@ -41,18 +39,18 @@ BOINC_CLIENT_HOME?=	/var/db/boinc
 OPTIONS_DEFINE=	X11
 X11_DESC=	Build screensaver (requires net/boinc-client with X11)
 
+OPTIONS_SUB=	yes
+
+X11_BUILD_DEPENDS=	${LOCALBASE}/lib/libboinc_graphics2.a:${PORTSDIR}/net/boinc-client
+X11_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+X11_USE=		GL=gl,glu,glut \
+			XORG=ice,sm,x11,xau,xcb,xext,xi,xdamage,xdmcp,xfixes,xmu,xt,xxf86vm
+X11_CONFIGURE_ENABLE=	graphics
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MX11}
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-USE_GL=		gl glu glut
-USE_XORG=	ice sm x11 xau xcb xext xi xdamage xdmcp xfixes xmu xt xxf86vm
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libboinc_graphics2.a:${PORTSDIR}/net/boinc-client
-PLIST_SUB+=	X11=""
-.else
+.if ! ${PORT_OPTIONS:MX11}
 BUILD_DEPENDS+=	${LOCALBASE}/include/boinc/std_fixes.h:${PORTSDIR}/net/boinc-client
-CONFIGURE_ARGS+=	--disable-graphics
-PLIST_SUB+=	X11="@comment "
 .endif
 
 .if ${ARCH} == amd64 || ${ARCH} == i386
@@ -79,22 +77,20 @@ SUB_LIST=	AP_BINARY=${AP_BINARY} \
 		BOINC_CLIENT_GROUP=${BOINC_CLIENT_GROUP}
 PLIST_SUB+=	AP_BINARY=${AP_BINARY} \
 		SETI_SITE=${SETI_SITE} \
-		BOINC_CLIENT_HOME=${BOINC_CLIENT_HOME}
+		BOINC_CLIENT_HOME=${BOINC_CLIENT_HOME} \
+		BOINC_CLIENT_USER=${BOINC_CLIENT_USER} \
+		BOINC_CLIENT_GROUP=${BOINC_CLIENT_GROUP}
 
 pre-configure:
 	(cd ${WRKSRC} ; ./_autosetup)
 
 do-install:
-	${INSTALL} -d -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} \
-	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects
-	${INSTALL} -d -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} \
-	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}
-	${INSTALL_PROGRAM} -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} \
-	    ${WRKSRC}/${AP_BINARY} \
+	${INSTALL} -d ${STAGEDIR}${BOINC_CLIENT_HOME}/projects
+	${INSTALL} -d ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}
+	${INSTALL_PROGRAM} ${WRKSRC}/${AP_BINARY} \
 	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
 .if ${PORT_OPTIONS:MX11}
-	${INSTALL_PROGRAM} -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} \
-	    ${WRKSRC}/ap_graphics \
+	${INSTALL_PROGRAM} ${WRKSRC}/ap_graphics \
 	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
 .endif
 
