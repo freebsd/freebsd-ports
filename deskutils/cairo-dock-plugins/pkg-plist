@@ -45,7 +45,6 @@ lib/cairo-dock/libcd-weather.so
 lib/cairo-dock/libcd-wifi.so
 lib/cairo-dock/libcd_gnome-integration.so
 lib/libCDApplet.so
-lib/pkgconfig/CDApplet.pc
 %%XFCE_INTEGRATION%%lib/cairo-dock/libcd_xfce-integration.so
 %%PYTHON_SITELIBDIR%%/CDApplet.py
 %%PYTHON_SITELIBDIR%%/CDApplet.pyc
@@ -55,6 +54,7 @@ lib/pkgconfig/CDApplet.pc
 %%PYTHON_SITELIBDIR%%/CDBashApplet-1.0-%%PYVER%%.egg-info
 %%PYTHON_SITELIBDIR%%/CairoDock.py
 %%PYTHON_SITELIBDIR%%/CairoDock.pyc
+libdata/pkgconfig/CDApplet.pc
 share/locale/he/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/hr/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/fr/LC_MESSAGES/cairo-dock-plugins.mo
@@ -485,7 +485,6 @@ share/cairo-dock/plug-ins/Xgamma/icon.png
 share/cairo-dock/plug-ins/Xgamma/preview.jpg
 share/vala/vapi/CDApplet.vapi
 share/vala/vapi/CDApplet.deps
-@dirrmtry lib/pkgconfig
 @dirrm share/cairo-dock/plug-ins/clock/digital/default
 @dirrm share/cairo-dock/plug-ins/clock/digital
 @dirrm share/cairo-dock/plug-ins/clock/themes/default

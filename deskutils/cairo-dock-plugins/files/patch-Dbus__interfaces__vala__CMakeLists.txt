@@ -1,0 +1,8 @@
+--- ./Dbus/interfaces/vala/CMakeLists.txt.orig	2013-03-23 15:55:27.000000000 +0000
++++ ./Dbus/interfaces/vala/CMakeLists.txt	2013-12-24 08:04:37.000000000 +0000
+@@ -62,4 +62,4 @@
+ add_subdirectory(src)
+ # .pc goes with others
+ configure_file (${CMAKE_CURRENT_SOURCE_DIR}/${CDAPPLET}.pc.in ${CMAKE_CURRENT_BINARY_DIR}/${CDAPPLET}.pc)
+-install (FILES  ${CMAKE_CURRENT_BINARY_DIR}/${CDAPPLET}.pc DESTINATION ${libdir}/pkgconfig)
++install (FILES  ${CMAKE_CURRENT_BINARY_DIR}/${CDAPPLET}.pc DESTINATION libdata/pkgconfig)
