@@ -12,9 +12,6 @@ MAINTAINER=	rum1cro@yandex.ru
 COMMENT=	Function library for begemot tools
 
 LICENSE=	BSD2CLAUSE
-LICENSE_NAME=	FreeBSD BSD Variant (2 clause BSD)
-LICENSE_FILE=	${WRKDIR}/libbegemot-${PORTVERSION}/COPYRIGHT
-LICENSE_PERMS=	auto-accept
 
 GNU_CONFIGURE=	yes
 USES=	gmake
