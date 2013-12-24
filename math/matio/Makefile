@@ -17,7 +17,6 @@ CFLAGS+=	-fPIC
 OPTIONS_DEFINE=	FORTRAN
 FORTRAN_DESC=	Build Fortran bindings
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PLIST_FILES= 	include/matio.h \
@@ -36,6 +35,9 @@ CONFIGURE_ARGS+=	--enable-fortran
 CONFIGURE_ENV+=	FCFLAGS="${FFLAGS}"
 
 PLIST_FILES+=	include/matio.mod
+
+USES+=		gmake
+MAKE_JOBS_UNSAFE=yes
 .endif
 
 post-build:
@@ -49,14 +51,14 @@ post-build:
 .endif
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/src/.libs/libmatio.lai ${PREFIX}/lib/libmatio.la
-	${INSTALL_DATA} ${WRKSRC}/src/.libs/libmatio.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/src/matio.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/src/matioConfig.h ${PREFIX}/include
-	${INSTALL_PROGRAM} ${WRKSRC}/src/libmatio.so.1 ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/matio.pc ${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/src/.libs/libmatio.lai ${STAGEDIR}${PREFIX}/lib/libmatio.la
+	${INSTALL_DATA} ${WRKSRC}/src/.libs/libmatio.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/src/matio.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/src/matioConfig.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_PROGRAM} ${WRKSRC}/src/libmatio.so.1 ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/matio.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 .if ${PORT_OPTIONS:MFORTRAN}
-	${INSTALL_DATA} ${WRKSRC}/src/matio.mod ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/src/matio.mod ${STAGEDIR}${PREFIX}/include
 .endif
 
 .include <bsd.port.mk>
