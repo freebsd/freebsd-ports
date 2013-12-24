@@ -32,7 +32,7 @@
  // export path where DHCP files in XML format will be output ready for
  // transformation into DHCP file for various DHCP servers
 -define("DHCPEXPORTPATH", '/tmp/dhcp/');
-+define("DHCPEXPORTPATH", '/var/spool/ipplan/dncpexport/');
++define("DHCPEXPORTPATH", '/var/spool/ipplan/dhcpexport/');
  
  // This string identifies ip addresses that belong in the DHCP pool
  define("DHCPRESERVED", "Reserved - DHCP pool");
