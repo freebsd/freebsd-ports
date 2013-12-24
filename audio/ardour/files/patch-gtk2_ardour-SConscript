@@ -1,0 +1,14 @@
+--- gtk2_ardour/SConscript.orig
++++ gtk2_ardour/SConscript
+@@ -411,9 +411,9 @@ for style in ['', 'BOLD', 'ITALIC']:
+ # 
+ 
+ if env['GTKOSX']:
+-	ardour_menus = env.Command ('ardour.menus', 'ardour.menus.in', "cpp -E -P -DGTKOSX -DTOP_MENUBAR ardour.menus.in ardour.menus", chdir=1)
++	ardour_menus = env.Command ('ardour.menus', 'ardour.menus.in', "cpp -E -P -DGTKOSX -DTOP_MENUBAR -o ardour.menus ardour.menus.in", chdir=1)
+ else:
+-	ardour_menus = env.Command ('ardour.menus', 'ardour.menus.in', "cpp -E -P ardour.menus.in ardour.menus", chdir=1)
++	ardour_menus = env.Command ('ardour.menus', 'ardour.menus.in', "cpp -E -P -o ardour.menus ardour.menus.in", chdir=1)
+ 
+ ardour_dark_theme = env.SubstInFile ('ardour2_ui_dark.rc', 'ardour2_ui_dark.rc.in', SUBST_DICT = my_font_dict)
+ ardour_light_theme = env.SubstInFile ('ardour2_ui_light.rc', 'ardour2_ui_light.rc.in', SUBST_DICT = my_font_dict)
