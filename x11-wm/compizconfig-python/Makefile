@@ -3,7 +3,7 @@
 
 PORTNAME=	compizconfig-python
 PORTVERSION=	0.8.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
@@ -14,6 +14,7 @@ BUILD_DEPENDS=	\
 	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz \
 	${LOCALBASE}/libdata/pkgconfig/libcompizconfig.pc:${PORTSDIR}/x11-wm/libcompizconfig \
 	${PYTHON_SITELIBDIR}/Pyrex/Distutils/__init__.py:${PORTSDIR}/devel/pyrex
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -22,11 +23,5 @@ USE_PYTHON=	-2.7
 USES=		pathfix pkgconfig
 USE_GNOME=	glib20
 USE_AUTOTOOLS=	libtool
-
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g' \
-		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
