@@ -1,6 +1,16 @@
 --- cmt.c.orig	Mon Apr 25 16:26:57 1994
 +++ cmt.c	Fri Feb  6 00:18:46 2004
-@@ -352,16 +352,15 @@
+@@ -27,7 +27,9 @@
+ #endif
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <ctype.h>
++#include <unistd.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include "cmt.h"
+@@ -352,16 +354,15 @@
  	error(format, arg1, arg2, ...)
  	    char *format;
   ---------------------------------------------------------------------*/

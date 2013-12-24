@@ -1,6 +1,11 @@
-bin/prn
-bin/cprn
 bin/cmt
+bin/cprn
+bin/prn
 bin/psconv
-lib/prn/cmtdefs
-@dirrm lib/prn
+man/man1/cmt.1.gz
+man/man1/cprn.1.gz
+man/man1/prn.1.gz
+man/man1/psconv.1.gz
+man/man5/cmtdefs.5.gz
+%%DATADIR%%/cmtdefs
+@dirrm %%DATADIR%%
