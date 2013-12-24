@@ -161,7 +161,7 @@ kye-data_nuke_levels.20121101.tar.gz games/kye	kye-data_nuke_levels is charitywa
 kzip-*			archivers/kzip		No redistribution allowed
 l0phtcrack/*		security/l0phtcrack	Parts are under GPL, so binaries should not be distributed.  Contains crypto code from OpenSSL
 ladder.tar		games/ladder		Possible copyright problems
-lame*			audio/lame		May be patented
+lame*			audio/lame		patent issues, see http://www.mp3licensing.com/
 lgrind/*		print/lgrind		Contains non-free code written by Van Jacobson
 lha-1.14i-ac*		archivers/lha-ac	No redistribution allowed
 libaacplus-*		audio/libaacplus	Unclear legal status
