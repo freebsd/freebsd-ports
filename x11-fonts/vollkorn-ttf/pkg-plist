@@ -1,0 +1,8 @@
+lib/X11/fonts/vollkorn/Vollkorn-Bold.ttf
+lib/X11/fonts/vollkorn/Vollkorn-BoldItalic.ttf
+lib/X11/fonts/vollkorn/Vollkorn-Italic.ttf
+lib/X11/fonts/vollkorn/Vollkorn-Regular.ttf
+@dirrm lib/X11/fonts/vollkorn
+%%PORTDOCS%%%%DOCSDIR%%/OFL-FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/Fontlog.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
