@@ -12,10 +12,10 @@ COMMENT=	Free and healthy typeface for bread and butter use
 LICENSE=	OFL11
 
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 
 FONTDIR=	${STAGEDIR}${PREFIX}/lib/X11/fonts/${PORTNAME}
-WRKSRC=		${WRKDIR}
 
 OPTIONS_DEFINE=	DOCS
 
