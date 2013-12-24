@@ -1,5 +1,7 @@
 bin/bsdl2jtag
 bin/jtag
+man/man1/bsdl2jtag.1.gz
+man/man1/jtag.1.gz
 %%NLS%%share/locale/fr/LC_MESSAGES/urjtag.mo
 %%NLS%%share/locale/rw/LC_MESSAGES/urjtag.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/urjtag.mo
