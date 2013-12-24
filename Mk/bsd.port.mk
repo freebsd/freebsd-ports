@@ -336,12 +336,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  for compression.
 # USE_MAKESELF		- If set, this port distfile uses makeself, not tar w/[bg]zip
 #				  for compression.
-# USE_DOS2UNIX	- If set to "YES", remove the ^M from all files
-#				  under ${WRKSRC}. If set to a string, remove in all
-#				  files under ${WRKSRC} with one of these names the ^Ms.
-# DOS2UNIX_REGEX
-#				- Limit the ^M removal to files which name matches
-#				  the regular expression.
 # USE_GCC		- If set, this port requires this version of gcc, either in
 #				  the system or installed from a port.
 # USE_CSTD		- Override the default C language standard (gnu89, gnu99)
@@ -1304,8 +1298,6 @@ UNIQUENAME?=	${PKGNAMEPREFIX}${PORTNAME}
 
 .endif
 
-DOS2UNIX_REGEX?=	.*
-
 # At least KDE needs TMPDIR for the package building,
 # so we're setting it to the known default value.
 .if defined(PACKAGE_BUILDING)
@@ -1511,6 +1503,19 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
 .if defined(USE_GMAKE)
 USES+=	gmake
+.endif
+
+.if defined(USE_DOS2UNIX)
+.if ${USE_DOS2UNIX:U}=="YES"
+DOS2UNIX_REGEX?=	.*
+.else
+.if ${USE_DOS2UNIX:M*/*}
+DOS2UNIX_FILES+=	${USE_DOS2UNIX}
+.else
+DOS2UNIX_GLOB+=	${USE_DOS2UNIX}
+.endif
+.endif
+USES+=	dos2unix
 .endif
 
 .if !defined(UID)
@@ -3626,31 +3631,6 @@ do-extract:
 
 # Patch
 
-.if !target(patch-dos2unix)
-patch-dos2unix:
-.if defined(USE_DOS2UNIX)
-.if ${USE_DOS2UNIX:U}=="YES"
-	@${ECHO_MSG} "===>   Converting DOS text files to UNIX text files"
-	@${FIND} -E ${WRKSRC} -type f -iregex '${DOS2UNIX_REGEX}' -print0 | \
-			${XARGS} -0 ${REINPLACE_CMD} -i '' -e 's/$$//'
-.else
-.if ${USE_DOS2UNIX:M*/*}
-.for f in ${USE_DOS2UNIX}
-	@${ECHO_MSG} "===>   Converting DOS text file to UNIX text file: ${f}"
-	@${REINPLACE_CMD} -i '' -e 's/$$//' ${WRKSRC}/${f}
-.endfor
-.else
-.for f in ${USE_DOS2UNIX}
-	@${FIND} ${WRKSRC} -type f -name '${f}' -print0 | \
-			${XARGS} -0 ${REINPLACE_CMD} -i '' -e 's/$$//'
-.endfor
-.endif
-.endif
-.else
-	@${DO_NADA}
-.endif
-.endif
-
 .if !target(do-patch)
 do-patch:
 .if defined(PATCHFILES)
@@ -4410,7 +4390,7 @@ _EXTRACT_SEQ=	check-build-conflicts extract-message checksum extract-depends \
 				pre-extract pre-extract-script do-extract \
 				post-extract post-extract-script
 _PATCH_DEP=		extract
-_PATCH_SEQ=		ask-license patch-message patch-depends patch-dos2unix pre-patch \
+_PATCH_SEQ=		ask-license patch-message patch-depends pre-patch \
 				pre-patch-script do-patch post-patch post-patch-script
 _CONFIGURE_DEP=	patch
 _CONFIGURE_SEQ=	build-depends lib-depends configure-message run-autotools-fixup \
