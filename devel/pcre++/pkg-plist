@@ -4,8 +4,8 @@ lib/libpcre++.a
 lib/libpcre++.la
 lib/libpcre++.so
 lib/libpcre++.so.0
+man/man3/Pcre.3.gz
 %%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/INSTALL
 %%DOCSDIR%%/README
