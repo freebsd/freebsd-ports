@@ -1,7 +1,18 @@
 --- prn.c.orig	Thu May 26 11:37:45 1994
 +++ prn.c	Fri Feb  6 00:18:11 2004
-@@ -34,8 +34,13 @@
+@@ -26,16 +26,24 @@
+ #endif
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include <ctype.h>
+ #include <fcntl.h>
+ #include <time.h>
++#include <unistd.h>
+ #include <sys/types.h>
  #include <sys/stat.h>
++#include <sys/wait.h>
  #include "euc.h"
  
 +#if !defined KCCPATH
@@ -15,7 +26,7 @@
  #define LPRPATH		"/usr/bin/lpr"
  #else
  #define LPRPATH		"/usr/ucb/lpr"
-@@ -48,8 +53,12 @@
+@@ -48,8 +56,12 @@
  
  #else
  
@@ -28,7 +39,7 @@
  
  #endif
  
-@@ -96,7 +105,7 @@
+@@ -96,7 +108,7 @@
  static char *filename;		/* name of the file being processed */
  static char *modtime;		/* the last modification time */
  
@@ -37,7 +48,7 @@
  static char *basename();
  static bool formatopt();
  static bool rangeopt();
-@@ -498,16 +507,15 @@
+@@ -498,16 +510,15 @@
  	error(format, arg1, arg2, ...)
  	    char *format;
   ---------------------------------------------------------------------*/
