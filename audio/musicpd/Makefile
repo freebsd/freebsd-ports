@@ -268,13 +268,11 @@ do-install:
 		${STAGEDIR}/${PREFIX}/man/man1/${PORTNAME}.1
 	@${INSTALL_MAN} ${WRKSRC}/doc/mpd.conf.5 \
 		${STAGEDIR}/${PREFIX}/man/man5/${PORTNAME}.conf.5
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
-.   for doc in ${PORTDOCS}
+.for doc in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}/${DOCSDIR}/
-.   endfor
+.endfor
 	@${INSTALL_DATA} ${WRKSRC}/doc/mpdconf.example \
 		${STAGEDIR}/${PREFIX}/etc/${PORTNAME}.conf.sample
-.endif
 
 .include <bsd.port.post.mk>
