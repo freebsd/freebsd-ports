@@ -30,9 +30,8 @@ USE_APACHE_RUN=	22+
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
+USE_PGSQL=	server
 WANT_PGSQL_VER=	84+
-RUN_DEPENDS+=	postgresql-server>=0:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 .endif
 
 .if ${PORT_OPTIONS:MPHP} && ${PORT_OPTIONS:MPGSQL}
