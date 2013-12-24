@@ -951,57 +951,51 @@ share/applications/bibletime.desktop
 %%DATADIR%%/locale/bibletime_ui_es.qm
 %%DATADIR%%/locale/bibletime_ui_et.qm
 %%DATADIR%%/locale/bibletime_ui_fi.qm
-%%DATADIR%%/locale/bibletime_ui_fr.qm
 %%DATADIR%%/locale/bibletime_ui_hu.qm
 %%DATADIR%%/locale/bibletime_ui_it.qm
-%%DATADIR%%/locale/bibletime_ui_nl.qm
-%%DATADIR%%/locale/bibletime_ui_nn_NO.qm
-%%DATADIR%%/locale/bibletime_ui_pl.qm
 %%DATADIR%%/locale/bibletime_ui_pt.qm
 %%DATADIR%%/locale/bibletime_ui_pt_BR.qm
-%%DATADIR%%/locale/bibletime_ui_ro.qm
 %%DATADIR%%/locale/bibletime_ui_ru.qm
 %%DATADIR%%/locale/bibletime_ui_sk.qm
-%%DATADIR%%/locale/bibletime_ui_zh_CN.qm
 %%DATADIR%%/locale/bibletime_ui_zh_TW.qm
 %%DATADIR%%/pics/startuplogo.png
 %%DATADIR%%/pics/startuplogo_christmas.png
 %%DATADIR%%/pics/startuplogo_easter.jpg
 share/icons/bibletime.svg
 @dirrmtry share/icons
-@dirrm %%DATADIR%%/pics
-@dirrm %%DATADIR%%/locale
-@dirrm %%DATADIR%%/license
-@dirrm %%DATADIR%%/javascript
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%/docs/howto/ru
-@dirrm %%DATADIR%%/docs/howto/pt_BR
-@dirrm %%DATADIR%%/docs/howto/nl
-@dirrm %%DATADIR%%/docs/howto/ko
-@dirrm %%DATADIR%%/docs/howto/it
-@dirrm %%DATADIR%%/docs/howto/hu
-@dirrm %%DATADIR%%/docs/howto/fr
-@dirrm %%DATADIR%%/docs/howto/fi
-@dirrm %%DATADIR%%/docs/howto/es
-@dirrm %%DATADIR%%/docs/howto/en
-@dirrm %%DATADIR%%/docs/howto/de
-@dirrm %%DATADIR%%/docs/howto/da
-@dirrm %%DATADIR%%/docs/howto/cs
-@dirrm %%DATADIR%%/docs/howto/bg
-@dirrm %%DATADIR%%/docs/howto/ar
-@dirrm %%DATADIR%%/docs/howto
-@dirrm %%DATADIR%%/docs/handbook/pt_BR
-@dirrm %%DATADIR%%/docs/handbook/nl
-@dirrm %%DATADIR%%/docs/handbook/it
-@dirrm %%DATADIR%%/docs/handbook/hu
-@dirrm %%DATADIR%%/docs/handbook/fr
-@dirrm %%DATADIR%%/docs/handbook/fi
-@dirrm %%DATADIR%%/docs/handbook/es
-@dirrm %%DATADIR%%/docs/handbook/en
-@dirrm %%DATADIR%%/docs/handbook/de
-@dirrm %%DATADIR%%/docs/handbook/cs
-@dirrm %%DATADIR%%/docs/handbook/ar
-@dirrm %%DATADIR%%/docs/handbook
-@dirrm %%DATADIR%%/docs
-@dirrm %%DATADIR%%/display-templates
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/pics
+@dirrmtry %%DATADIR%%/locale
+@dirrmtry %%DATADIR%%/license
+@dirrmtry %%DATADIR%%/javascript
+@dirrmtry %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%/docs/howto/ru
+@dirrmtry %%DATADIR%%/docs/howto/pt_BR
+@dirrmtry %%DATADIR%%/docs/howto/nl
+@dirrmtry %%DATADIR%%/docs/howto/ko
+@dirrmtry %%DATADIR%%/docs/howto/it
+@dirrmtry %%DATADIR%%/docs/howto/hu
+@dirrmtry %%DATADIR%%/docs/howto/fr
+@dirrmtry %%DATADIR%%/docs/howto/fi
+@dirrmtry %%DATADIR%%/docs/howto/es
+@dirrmtry %%DATADIR%%/docs/howto/en
+@dirrmtry %%DATADIR%%/docs/howto/de
+@dirrmtry %%DATADIR%%/docs/howto/da
+@dirrmtry %%DATADIR%%/docs/howto/cs
+@dirrmtry %%DATADIR%%/docs/howto/bg
+@dirrmtry %%DATADIR%%/docs/howto/ar
+@dirrmtry %%DATADIR%%/docs/howto
+@dirrmtry %%DATADIR%%/docs/handbook/pt_BR
+@dirrmtry %%DATADIR%%/docs/handbook/nl
+@dirrmtry %%DATADIR%%/docs/handbook/it
+@dirrmtry %%DATADIR%%/docs/handbook/hu
+@dirrmtry %%DATADIR%%/docs/handbook/fr
+@dirrmtry %%DATADIR%%/docs/handbook/fi
+@dirrmtry %%DATADIR%%/docs/handbook/es
+@dirrmtry %%DATADIR%%/docs/handbook/en
+@dirrmtry %%DATADIR%%/docs/handbook/de
+@dirrmtry %%DATADIR%%/docs/handbook/cs
+@dirrmtry %%DATADIR%%/docs/handbook/ar
+@dirrmtry %%DATADIR%%/docs/handbook
+@dirrmtry %%DATADIR%%/docs
+@dirrmtry %%DATADIR%%/display-templates
+@dirrmtry %%DATADIR%%
