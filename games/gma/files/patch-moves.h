@@ -1,11 +1,13 @@
---- src/moves.h.orig	Sun May 18 19:18:04 2003
-+++ src/moves.h	Sun May 18 19:18:19 2003
-@@ -24,7 +24,7 @@
+--- src/moves.h.orig
++++ src/moves.h
+@@ -24,7 +24,9 @@
  
  #include "pattern.h"
  
 -#include <stl.h>
-+#include <map.h>
++#include <map>
++
++using std::map;
  
  class Moves:map<Pattern,int>
  {
