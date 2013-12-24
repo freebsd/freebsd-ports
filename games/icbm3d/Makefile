@@ -3,43 +3,40 @@
 
 PORTNAME=	icbm3d
 PORTVERSION=	0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/icbm3d/  \
 		ftp://ftp.billsgames.com/unix/x/icbm3d/ \
-		http://www.newbreedsoftware.com/images/prodicons/:icons
+		SF/nemysisfreebsdp/games/${PORTNAME}/:icons
 DISTFILES=	${PORTNAME}.${DISTVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}.gif:icons
+		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}.${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Inter-Continental Ballistic Missiles, 3D
 
-WRKSRC=		${WRKDIR}/icbm3d
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XORG=	x11
 MAKEFILE=	makefile
 ALL_TARGET=	${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.gif
+		share/pixmaps/${PORTNAME}.png
 
 PORTDOCS=	README.txt
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
+
+DESKTOP_ENTRIES="ICBM3D" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 do-install:
-# Executable
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
-# Pixmaps
-	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}.gif ${PREFIX}/share/pixmaps/
-
-# Documentation
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
