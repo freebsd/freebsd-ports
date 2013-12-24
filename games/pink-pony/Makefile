@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pink-pony
-PORTVERSION=	1.2.1
-PORTREVISION=	9
+PORTVERSION=	1.3.1
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/
@@ -11,46 +10,40 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tron-like multiplayer racing game
 
-LIB_DEPENDS=	IL:${PORTSDIR}/graphics/devil \
-		protobuf:${PORTSDIR}/devel/protobuf \
-		glfw:${PORTSDIR}/graphics/glfw \
-		Half:${PORTSDIR}/graphics/ilmbase \
-		ftgl:${PORTSDIR}/graphics/ftgl \
-		sigc-2.0:${PORTSDIR}/devel/libsigc++20
-BUILD_DEPENDS=	${LOCALBASE}/lib/libaudiere.so:${PORTSDIR}/audio/audiere
-RUN_DEPENDS=	${LOCALBASE}/lib/libaudiere.so:${PORTSDIR}/audio/audiere
+LICENSE=	GPLv3
+
+LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
+		libprotobuf.so:${PORTSDIR}/devel/protobuf \
+		libglfw.so:${PORTSDIR}/graphics/glfw \
+		libHalf.so:${PORTSDIR}/graphics/ilmbase \
+		libftgl.so:${PORTSDIR}/graphics/ftgl \
+		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20
 
 USES=		pkgconfig
 USE_BZIP2=	yes
 USE_SCONS=	yes
+USES=		pkgconfig
 USE_GL=		gl glu
+USE_SDL=	mixer
 SUB_FILES=	pink-pony.sh
 USE_DOS2UNIX=	lib/GL/GLee.h
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-PORTDOCS=	README
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+PORTDOCS=	*
+PORTDATA=	*
 
 post-patch:
-	@${REINPLACE_CMD} -Ee 's,(GLSL|levels|models|music|textures|fonts)/,${DATADIR}/&,' \
-		${WRKSRC}/pony.options ${WRKSRC}/Pony.cc ${WRKSRC}/lib/*.cc ${WRKSRC}/levels.xml
-	@${REINPLACE_CMD} -e 's|levels.xml|${DATADIR}/&|' \
-		${WRKSRC}/lib/Config.cc ${WRKSRC}/pony.options
+	@${REINPLACE_CMD} -Ee 's,resources/,${DATADIR}/,' \
+		${WRKSRC}/pony.options ${WRKSRC}/lib/Config.cc
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/install/pink-pony.desktop
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Pony ${PREFIX}/libexec/
-	cd ${WRKSRC} && ${COPYTREE_SHARE} \
-		"GLSL levels* models music textures fonts pony.options" ${DATADIR}/
-	${INSTALL_SCRIPT} ${WRKDIR}/pink-pony.sh ${PREFIX}/bin/pink-pony
-	${INSTALL_DATA} ${WRKSRC}/install/pink-pony.png ${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${WRKSRC}/install/pink-pony.desktop ${PREFIX}/share/applications/
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/Pony ${STAGEDIR}${PREFIX}/libexec/
+	cd ${WRKSRC}/resources && ${COPYTREE_SHARE} '*' ${STAGEDIR}${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/pony.options ${STAGEDIR}${DATADIR}/
+	${INSTALL_SCRIPT} ${WRKDIR}/pink-pony.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/install/pink-pony.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/install/pink-pony.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
