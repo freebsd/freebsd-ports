@@ -10,37 +10,45 @@ MASTER_SITES=	http://tnemeth.free.fr/projets/programmes/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Incoming mail monitor dockapp with a similar look to wmcpuload
 
+OPTIONS_DEFINE=	GTK2
+
 USES=		gmake pkgconfig
 USE_XORG=	xpm
 USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
-MAKE_ARGS=	CC="${CC}" \
-		CFLAGS="${CFLAGS} -D_GNU_SOURCE ${PTHREAD_CFLAGS}" \
-		CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIB_SSL="-lssl -lcrypto" \
-		LIB_THREADS="${PTHREAD_LIBS}" \
-		DEBUG_CFLAGS="-I${OPENSSLINC}" \
+MAKE_ENV=	DEBUG_CFLAGS="-I${OPENSSLINC}" \
 		DEBUG_LDFLAGS="-L${OPENSSLLIB}"
 
-MAN1=		${PORTNAME}.1 ${PORTNAME}-config.1
-PLIST_FILES=	bin/wmmaiload bin/wmmaiload-config
+CFLAGS+=	-D_GNU_SOURCE
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if defined(WITH_GTK2)
+PLIST_FILES=	bin/wmmaiload bin/wmmaiload-config \
+		man/man1/wmmaiload.1.gz man/man1/wmmaiload-config.1.gz
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGTK2}
 USE_GNOME+=	gtk20
-MAKE_ARGS+=	GTK_CFLAGS="pkg-config --cflags gtk+-2.0" \
+MAKE_ENV+=	GTK_CFLAGS="pkg-config --cflags gtk+-2.0" \
 		GTK_LIBS="pkg-config --libs gtk+-2.0"
 .else
 USE_GNOME+=	gtk12
-MAKE_ARGS+=	GTK_CFLAGS="pkg-config --cflags gtk+" \
+MAKE_ENV+=	GTK_CFLAGS="pkg-config --cflags gtk+" \
 		GTK_LIBS="pkg-config --libs gtk+"
 .endif
 
-NO_STAGE=	yes
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64
+.endif
+
 post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
+		's| =| ?=|'
 .for i in wmmaiload/Init.make
-	@${REINPLACE_CMD} -e 's|-L/usr/X11R6/lib||g' ${WRKSRC}/${i}
+	@${REINPLACE_CMD} -e 's|-L/usr/X11R6/lib||g ; \
+		 s|-lpthread|-pthread|g' ${WRKSRC}/${i}
 .endfor
 .for i in wmmaiload/checkthread.c
 	@${REINPLACE_CMD} -e 's|isnumber(|isnum(|g' ${WRKSRC}/${i}
@@ -63,14 +71,10 @@ post-patch:
 
 do-install:
 .for i in wmmaiload wmmaiload-config
-	${INSTALL_PROGRAM} ${WRKSRC}/${i}/${i} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/${i}.1 ${MANPREFIX}/man/man1
+	(cd ${WRKSRC}/${i} && ${INSTALL_PROGRAM} ${i} \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC}/doc && ${INSTALL_MAN} ${i}.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
 .endfor
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
