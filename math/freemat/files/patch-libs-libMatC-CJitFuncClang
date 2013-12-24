@@ -1,0 +1,72 @@
+--- libs/libMatC/CJitFuncClang.hpp.orig
++++ libs/libMatC/CJitFuncClang.hpp
+@@ -4,9 +4,9 @@
+ #include <stdint.h>
+ #include <string>
+ 
+-#include "llvm/Function.h"
++#include "llvm/IR/Function.h"
+ #include "llvm/ExecutionEngine/ExecutionEngine.h"
+-#include "llvm/LLVMContext.h"
++#include "llvm/IR/LLVMContext.h"
+ #include "clang/Frontend/CompilerInstance.h"
+ #include "CJitFunc.hpp"
+ 
+--- libs/libMatC/CJitFuncClang.cpp.orig
++++ libs/libMatC/CJitFuncClang.cpp
+@@ -14,13 +14,13 @@
+ #include "clang/Frontend/FrontendDiagnostic.h"
+ #include "clang/Frontend/TextDiagnosticPrinter.h"
+ 
+-#include "llvm/LLVMContext.h"
+-#include "llvm/Module.h"
++#include "llvm/IR/LLVMContext.h"
++#include "llvm/IR/Module.h"
+ #include "llvm/Config/config.h"
+ #include "llvm/ADT/OwningPtr.h"
+ #include "llvm/ADT/SmallString.h"
+ #include "llvm/Config/config.h"
+-#include "llvm/LLVMContext.h"
++#include "llvm/IR/LLVMContext.h"
+ #include "llvm/ExecutionEngine/ExecutionEngine.h"
+ #include "llvm/ExecutionEngine/GenericValue.h"
+ #include "llvm/Support/ManagedStatic.h"
+@@ -32,9 +32,9 @@
+ #include "llvm/Support/TargetSelect.h"
+ #include "llvm/Target/TargetOptions.h"
+ 
+-#include "llvm/Constants.h"
+-#include "llvm/DerivedTypes.h"
+-#include "llvm/Instructions.h"
++#include "llvm/IR/Constants.h"
++#include "llvm/IR/DerivedTypes.h"
++#include "llvm/IR/Instructions.h"
+ #include "llvm/ExecutionEngine/JIT.h"
+ //#include "llvm/ExecutionEngine/Interpreter.h"
+ 
+@@ -73,7 +73,7 @@
+   llvm::IntrusiveRefCntPtr<DiagnosticIDs> DiagID(new DiagnosticIDs());
+   DiagnosticsEngine Diags(DiagID, &*DiagOpts, DiagClient);
+   Driver TheDriver("", llvm::sys::getDefaultTargetTriple(),
+-                   "a.out", /*IsProduction=*/false,
++                   "a.out",
+                    Diags);
+   TheDriver.setTitle("FreeMat JIT");
+   llvm::SmallVector<const char *, 16> Args;
+@@ -107,14 +107,14 @@
+                                        CCArgs.size(),
+                                      Diags);
+   QString path = GetRootPath() + "/toolbox/jit";
+-  CI->getHeaderSearchOpts().AddPath(path.toStdString().c_str(),frontend::Quoted,true,false,false);
++  CI->getHeaderSearchOpts().AddPath(path.toStdString().c_str(),frontend::Quoted,false,false);
+ 
+   // FIXME: This is copied from cc1_main.cpp; simplify and eliminate.
+   // Create a compiler instance to handle the actual work.
+   comp = new clang::CompilerInstance;
+   comp->setInvocation(CI.take());
+   // Create the compilers actual diagnostics engine.
+-  comp->createDiagnostics(int(CCArgs.size()),const_cast<char**>(CCArgs.data()));
++  comp->createDiagnostics();
+   if (!comp->hasDiagnostics()) return false;
+   // Create and execute the frontend to generate an LLVM bitcode module.
+   // Pass the LLVM context to the code gen action.  Otherwise, the action

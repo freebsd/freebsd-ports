@@ -127,7 +127,6 @@
     SUBDIR += fpc-numlib
     SUBDIR += freefem
     SUBDIR += freemat
-    SUBDIR += freemat-mpi
     SUBDIR += fricas
     SUBDIR += fxt
     SUBDIR += galculator
