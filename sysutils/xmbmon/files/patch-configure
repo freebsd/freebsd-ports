@@ -1,0 +1,27 @@
+--- configure.orig	Wed Feb  1 20:34:58 2006
++++ configure	Wed Feb  1 20:35:38 2006
+@@ -3487,7 +3487,6 @@
+ 
+ case "${host}" in
+ 	i?86-*-freebsd*)
+-  		CC=cc
+ 		;;
+ 	i?86-*-linux-*)
+   		CC=gcc
+@@ -3499,7 +3498,6 @@
+ 		ADDLIBS="-li386"
+ 		;;
+ 	*)
+-  		CC=gcc
+ 		;;
+ esac
+ 
+@@ -3946,7 +3944,7 @@
+ done
+ 
+ 
+-for ac_header in machine/smb.h
++for ac_header in dev/smbus/smb.h machine/smb.h
+ do
+ as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ if eval "test \"\${$as_ac_Header+set}\" = set"; then
