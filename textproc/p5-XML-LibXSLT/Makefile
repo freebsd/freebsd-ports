@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	XML-LibXSLT
-PORTVERSION=	1.82
+PORTVERSION=	1.83
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,9 +16,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-XML-LibXML>=1.70:${PORTSDIR}/textproc/p5-XML-LibXML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2
-LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		perl5
+USES=		perl5 pkgconfig
 USE_GNOME=	libxml2 libxslt
 USE_PERL5=	configure
 
