@@ -15,75 +15,38 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libFOX-1.4.so:${PORTSDIR}/x11-toolkits/fox14
 
 USES=		bison
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--disable-alsa
-CONFIGURE_ENV+=	ac_cv_path_RESWRAP=${LOCALBASE}/bin/fox-1.4/reswrap
 MAKE_JOBS_UNSAFE=	yes
+CONFIGURE_ENV=	ac_cv_path_RESWRAP=${LOCALBASE}/bin/fox-1.4/reswrap
 
 OPTIONS_DEFINE=	LARGEFILE JACK AUDIOFILE PORTAUDIO OGG VORBIS FLAC FFTW \
 		SOUNDTOUCH LADSPA LAME CDRDAO DOCS BROKEN_NLS
 OPTIONS_DEFAULT=	AUDIOFILE PORTAUDIO OGG VORBIS FLAC SOUNDTOUCH \
 		LADSPA LAME
 
-LARGEFILE_DESC=	64-bit file I/O support
+LARGEFILE_DESC=	Use 64-bit file I/O
 FFTW_DESC=	Use fast Fourier transform routines
 CDRDAO_DESC=	Burning audio files to CD support
 BROKEN_NLS_DESC=	${NLS_DESC} (broken!)
 
+LARGEFILE_CONFIGURE_ON=	--enable-largefile
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+AUDIOFILE_LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
+PORTAUDIO_LIB_DEPENDS=	libportaudio.so:${PORTSDIR}/audio/portaudio
+OGG_LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
+VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
+FFTW_LIB_DEPENDS=	libfftw.so:${PORTSDIR}/math/fftw
+SOUNDTOUCH_LIB_DEPENDS=	libSoundTouch.so:${PORTSDIR}/audio/soundtouch
+LADSPA_RUN_DEPENDS=	${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa
+LADSPA_CONFIGURE_OFF=	--disable-ladspa
+LAME_RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame
+CDRDAO_RUN_DEPENDS=	cdrdao:${PORTSDIR}/sysutils/cdrdao
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLARGEFILE}
-CONFIGURE_ARGS+=	--enable-largefile
-.endif
-
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
-.endif
-
-.if ${PORT_OPTIONS:MAUDIOFILE}
-LIB_DEPENDS+=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
-.endif
-
-.if ${PORT_OPTIONS:MPORTAUDIO}
-LIB_DEPENDS+=	libportaudio.so:${PORTSDIR}/audio/portaudio
-.endif
-
-.if ${PORT_OPTIONS:MOGG}
-LIB_DEPENDS+=	libogg.so:${PORTSDIR}/audio/libogg
-.endif
-
-.if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
-.endif
-
-.if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
-.endif
-
-.if ${PORT_OPTIONS:MFFTW}
-LIB_DEPENDS+=	libfftw.so:${PORTSDIR}/math/fftw
-.endif
-
-.if ${PORT_OPTIONS:MSOUNDTOUCH}
-LIB_DEPENDS+=	libSoundTouch.so:${PORTSDIR}/audio/soundtouch
-.endif
-
-.if ${PORT_OPTIONS:MLADSPA}
-RUN_DEPENDS+=	${LOCALBASE}/lib/ladspa/amp.so:${PORTSDIR}/audio/ladspa
-.else
-CONFIGURE_ARGS+=	--disable-ladspa
-.endif
-
-.if ${PORT_OPTIONS:MLAME}
-RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
-.endif
-
-.if ${PORT_OPTIONS:MCDRDAO}
-RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao
-.endif
 
 # NLS support is broken as of recent versions of libstdc++; rezound dies at
 # startup with "locale::facet::_S_create_c_locale name not valid" exception
@@ -120,6 +83,15 @@ post-patch: .SILENT
 		${WRKSRC}/src/backend/Remaster/Makefile.in \
 		${WRKSRC}/src/backend/LADSPA/Makefile.in \
 		${WRKSRC}/src/frontend_fox/Makefile.in
+# Fix some sloppy C++ coding which upsets Clang
+	${REINPLACE_CMD} -e '/&string_to_anytype/s,static ,,' \
+		${WRKSRC}/src/misc/CNestedDataFile/anytype.h
+	${REINPLACE_CMD} -e 's,push_back((,this->&,' \
+		${WRKSRC}/src/misc/auto_array.h
+	${REINPLACE_CMD} -e 's,overflowWrite(,this->&,' \
+		${WRKSRC}/src/PoolFile/TPoolAccesser.cpp
+	${REINPLACE_CMD} -e 's,map<string,map<const string,' \
+		${WRKSRC}/src/PoolFile/TPoolFile.cpp
 .if ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e '/AUTHORS/d; /COPYING/d' ${WRKSRC}/Makefile.in
 .else
