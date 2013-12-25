@@ -11,15 +11,19 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple calculator program inspired by basecalc
 
-LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
+LICENSE=	GPLv2
 
-MAKE_ARGS=	INCLUDES="`fltk-config --cflags` -I." \
-		LIBS="`fltk-config --ldflags`"
+LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+
+MAKE_ARGS=	CC="${CC}" CXX="${CXX}" CFLAGS="${CPPFLAGS} ${CXXFLAGS}" \
+		LIBS="${LDFLAGS}"
+
+CPPFLAGS+=	$$(fltk-config --cflags) -DSYS_UNIX
+LDFLAGS+=	$$(fltk-config --ldflags)
 
 PLIST_FILES=	bin/mbasecalc
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mbasecalc ${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} mbasecalc ${STAGEDIR}${PREFIX}/bin)
 
 .include <bsd.port.mk>
