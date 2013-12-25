@@ -14,7 +14,7 @@ COMMENT=	Kiki the nanobot is a 3-D puzzle game
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
 USE_PYTHON=	2.5+
-USES=		gmake dos2unix
+USES=		gmake dos2unix compiler
 USE_GL=		gl glu glut
 USE_SDL=	sdl mixer image
 DOS2UNIX_REGEX=	.*/(Makefile|.*\.cpp|.*\.h|.*\.i)$
@@ -33,9 +33,9 @@ DESKTOP_ENTRIES="kiki the nanobot" \
 		"Game;LogicGame;" \
 		false
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 1000000
+.if ${COMPILER_TYPE} == "clang"
 # these are critical, detect them if possible
 CXXFLAGS+=	-Werror=tautological-constant-out-of-range-compare
 .endif
@@ -54,4 +54,4 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} "py sound" ${STAGEDIR}${DATADIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
