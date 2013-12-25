@@ -13,7 +13,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://cpp.in/dev/
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HipHop Virtual Machine for PHP (HHVM)
 
 LICENSE=	PHP301 ZEND200 UNICODE
