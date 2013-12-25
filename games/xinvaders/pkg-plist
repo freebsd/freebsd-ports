@@ -1,5 +1,12 @@
+@group games
+@mode 2555
 bin/xinvaders
+@mode
+@group
 lib/X11/app-defaults/Vaders
+man/man6/xinvaders.6.gz
 share/locale/es/LC_MESSAGES/xinvaders.mo
-share/xinvaders/xinvaders.scores
-@dirrm share/xinvaders
+share/pixmaps/xinvaders.xpm
+@exec if [ ! -e /var/games/xinvaders.scores ]; then echo "0" > /var/games/xinvaders.scores; fi
+@exec chmod 0660 /var/games/xinvaders.scores
+@exec chgrp games /var/games/xinvaders.scores
