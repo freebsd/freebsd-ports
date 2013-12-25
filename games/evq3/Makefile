@@ -35,6 +35,9 @@ OPENAL_DLOPEN_DESC=	Enable dynamic loading of OpenAL
 SMP_DESC=	Build SMP (threaded) client
 VOIP_DESC=	Enable Voice Over IP
 
+# USES must be before bsd.port.pre.mk
+OPENAL_USES=	openal:al
+
 MAKE_ENV=	DEFAULT_BASEDIR="${Q3DIR}" LIBDIR="${LIBDIR}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 PLIST_SUB=	LIBDIR="${LIBDIR:S/${PREFIX}\///}"
@@ -67,7 +70,6 @@ MAKE_ENV+=	USE_CURL_DLOPEN=1
 .   endif
 # OpenAL
 .   if ${PORT_OPTIONS:MOPENAL}
-USE_OPENAL=	al
 MAKE_ENV+=	USE_OPENAL=1
 .       if ${PORT_OPTIONS:MOPENAL_DLOPEN}
 MAKE_ENV+=	USE_OPENAL_DLOPEN=1

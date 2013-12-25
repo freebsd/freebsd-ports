@@ -15,10 +15,9 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \
 		ogg:${PORTSDIR}/audio/libogg
 
-USE_OPENAL=	al
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake openal:al
 USE_PYTHON=	yes
 USE_SDL=	sdl
 USE_XORG=	sm ice xi x11 xext xrender xinerama xi xrandr xcursor \

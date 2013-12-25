@@ -13,7 +13,7 @@ LICENSE=	BSD
 
 USE_CABAL=	OpenAL StateVar
 NO_STAGE=	yes
-USE_OPENAL=	al alut
+USES=		openal:al,alut
 
 INSTALL_PORTEXAMPLES=	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 

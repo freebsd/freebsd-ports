@@ -10,7 +10,7 @@ DISTNAME=	PyAL-${PORTVERSION}
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	PyAL is a binding of OpenAL for Python
 
-USE_OPENAL=	al
+USES=		openal:al
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

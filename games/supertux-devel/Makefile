@@ -16,9 +16,8 @@ LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs \
 
 USE_BZIP2=	yes
 USE_SDL=	image
-USE_OPENAL=	al
 USE_GL=		glew
-USES=		cmake:outsource iconv
+USES=		cmake:outsource iconv openal:al
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 post-patch:

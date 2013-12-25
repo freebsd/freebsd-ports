@@ -26,11 +26,10 @@ OPTIONS_DEFINE=	MYSQL
 WRKSRC=		${WRKDIR}/scorched
 
 USE_GL=		glu
-USE_OPENAL=	al alut
 USE_SDL=	mixer net sdl
 USE_WX=		2.4+
 WX_CONF_ARGS=	absolute
-USES=		dos2unix iconv perl5 gmake pkgconfig
+USES=		dos2unix gmake iconv openal:al,alut perl5 pkgconfig
 USE_AUTOTOOLS=	aclocal automake autoconf
 ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing --copy --force --foreign

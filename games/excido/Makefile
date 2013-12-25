@@ -22,8 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 USE_GL=		yes
 USE_SDL=	image sdl ttf
-USE_OPENAL=	al alut
-USES=		gmake
+USES=		gmake openal:al,alut
 
 OPTIONS_DEFINE=	DOCS
 

@@ -24,12 +24,11 @@ LIB_DEPENDS=	CEGUIBase-0.7.9.0:${PORTSDIR}/graphics/cegui \
 		PocoNet.12:${PORTSDIR}/devel/poco \
 		physfs.1:${PORTSDIR}/devel/physfs
 
-USES=		cmake gettext gmake pkgconfig
+USES=		cmake gettext gmake openal:al,alut pkgconfig
 USE_GL=		gl glu
 USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
 USE_LUA=	5.1
-USE_OPENAL=	al alut
 
 FETCH_ARGS?=	-pRr
 

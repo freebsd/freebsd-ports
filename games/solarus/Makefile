@@ -16,11 +16,10 @@ LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs \
 		libogg.so:${PORTSDIR}/audio/libogg
 
 USE_SDL=	sdl ttf image
-USE_OPENAL=	yes
 
 PLIST_FILES=	bin/solarus
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USES=		cmake
+USES=		cmake openal
 
 .include <bsd.port.mk>

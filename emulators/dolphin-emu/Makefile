@@ -22,7 +22,6 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libpolarssl.so:${PORTSDIR}/security/polarssl
 
 USE_SDL=	sdl
-USE_OPENAL=	yes
 USE_XORG=	ice xext x11 xrandr xi
 USE_WX=		2.9+
 WX_UNICODE=	yes
@@ -30,7 +29,7 @@ USE_GL=	gl glew glu
 
 USE_GCC=	yes
 
-USES=		dos2unix cmake pkgconfig iconv
+USES=		dos2unix cmake iconv openal pkgconfig
 DOS2UNIX_REGEX=	.*\.(h|c|cpp)
 
 # Disable ALSA (emulated) and ao (buggy)

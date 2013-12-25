@@ -12,12 +12,11 @@ MAINTAINER=	devel@stasyan.com
 COMMENT=	Aliens versus predator unofficial port from icculus.org
 
 USE_SDL=	mixer sdl
-USE_GMAKE=	yes
+USES=		gmake openal
 USE_GL=		gl
 
 WRKSRC=		${WRKDIR}
 BUILD_WRKSRC=	${WRKDIR}/avp_git
-USE_OPENAL=	yes
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

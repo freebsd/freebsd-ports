@@ -14,10 +14,9 @@ LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
 USE_AUTOTOOLS=	automake:env autoconf:env aclocal:env
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake openal:soft
 USE_GL=		gl glu glut
 USE_GNOME=	#
-USE_OPENAL=	soft
 USE_SDL=	yes
 
 SUB_FILES=	pkg-message

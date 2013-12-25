@@ -80,7 +80,7 @@ PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSOUND}
-USE_OPENAL=	al alut
+USES+=		openal:al,alut
 CONFIGURE_ARGS+=--enable-sound
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}

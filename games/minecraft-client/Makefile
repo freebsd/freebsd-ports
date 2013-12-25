@@ -35,7 +35,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNATIVE_LIBS}
-USE_OPENAL=	soft
+USES+=		openal:soft
 RUN_DEPENDS+=	${JAVALIBDIR}/lwjgl/lwjgl_util.jar:${PORTSDIR}/games/lwjgl
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk

@@ -27,13 +27,12 @@ ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	relies on x86 floating-point math and amd64 atomic ops
 
 USE_SDL=	sdl
-USE_OPENAL=	al
 USE_GL=		gl glu glew
 USE_XORG=	x11 xcursor
 USE_LDCONFIG=	yes
-USE_DOS2UNIX=	*.h *.hpp *.cpp
+DOS2UNIX_GLOB=	*.h *.hpp *.cpp
 
-USES=		cmake compiler:c++11-lib
+USES=		cmake compiler:c++11-lib dos2unix openal:al
 CMAKE_ARGS=	-DDATADIR:STRING="share/${PORTNAME}" \
 		-DAI_TYPES:STRING="NATIVE" \
 		-DDOCDIR:STRING="share/doc/${PORTNAME}" \

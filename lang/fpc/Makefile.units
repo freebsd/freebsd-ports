@@ -241,12 +241,6 @@ LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
 .	endif
 .endif
 
-.if ${PKGNAMESUFFIX} == "-openal"
-.	if defined(WITH_OPENAL)
-USE_OPENAL=	soft
-.	endif
-.endif
-
 .if ${PKGNAMESUFFIX} == "-opengl"
 .	if defined(WITH_OPENGL)
 USE_GL=		glut

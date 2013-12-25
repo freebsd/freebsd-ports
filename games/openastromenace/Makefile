@@ -20,12 +20,10 @@ LIB_DEPENDS+=	vorbisfile:${PORTSDIR}/audio/libvorbis \
 
 USE_BZIP2=	yes
 USE_GL=		gl glu
-USE_OPENAL=	al alut
 WANT_SDL=	yes
 USE_SDL=	sdl
-USES=		cmake
+USES=		cmake dos2unix openal:al,alut
 WRKSRC=		${WRKDIR}/OpenAstroMenaceSVN
-USE_DOS2UNIX=	yes
 
 OPTIONS_SINGLE=	LANG
 OPTIONS_SINGLE_LANG=	EN DE RU

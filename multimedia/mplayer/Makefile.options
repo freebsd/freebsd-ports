@@ -69,12 +69,6 @@ CATEGORIES+=	ipv6
 CONFIGURE_ARGS+=	--disable-inet6
 .endif
 
-.if ${PORT_OPTIONS:MOPENAL}
-USE_OPENAL=	soft
-.else
-CONFIGURE_ARGS+=	--disable-openal
-.endif
-
 .if ${PORT_OPTIONS:MRTMP}
 LIB_DEPENDS+=		librtmp.so:${PORTSDIR}/multimedia/librtmp
 CONFIGURE_ARGS+=	--enable-librtmp

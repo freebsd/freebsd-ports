@@ -20,8 +20,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USES=		gmake gettext
-USE_OPENAL=	al
+USES=		gettext gmake openal:al
 USE_LUA=	5.1
 USE_SDL=	sdl ttf net
 USE_GL=		yes

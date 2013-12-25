@@ -17,8 +17,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
 		libpng15.so:${PORTSDIR}/graphics/png
 
-USES=		pkgconfig
-USE_OPENAL=	al alut
+USES=		openal:al,alut pkgconfig
 USE_XORG=	sm ice x11 xi xext xmu
 USE_GL=		glut
 USE_SDL=	sdl

@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_GL=		gl glu
-USE_OPENAL=	al
+USES=		openal:al
 
 PORTDOCS=	*
 PORTEXAMPLES=	*

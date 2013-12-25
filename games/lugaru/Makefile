@@ -19,9 +19,8 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libogg.so:${PORTSDIR}/audio/libogg
 
 USE_BZIP2=	yes
-USES=		cmake pkgconfig
+USES=		cmake openal:soft pkgconfig
 USE_GL=		glu
-USE_OPENAL=	soft
 USE_SDL=	sdl
 USE_XORG=	sm
 USE_GCC=	yes
