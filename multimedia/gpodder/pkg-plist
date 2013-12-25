@@ -1,4 +1,6 @@
 bin/gpo
+man/man1/gpo.1.gz
+%%GTK%%man/man1/gpodder.1.gz
 %%GTK%%bin/gpodder
 bin/gpodder-migrate2tres
 %%PYTHON_SITELIBDIR%%/gpodder/__init__.py
