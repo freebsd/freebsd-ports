@@ -11,31 +11,26 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SSL proxy for securing insecure connections
 
-USE_OPENSSL=	YES
-USE_GMAKE=	YES
-PLIST_FILES=	sbin/ssl_proxy
-SUB_FILES+=	pkg-message
+LICENSE=	GPLv2 # (or later)
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+USES=		gmake
+USE_OPENSSL=	yes
 
-.if !defined(NOPORTDOCS)
+SUB_FILES=	pkg-message
+
 PORTDOCS=	README
-.endif
+PLIST_FILES=	sbin/ssl_proxy
 
 post-patch:
-	${REINPLACE_CMD} -e 's|CC =|CC ?=|' \
-			-e 's|CFLAGS =|CFLAGS +=|' ${WRKSRC}/Makefile.global
+	@${REINPLACE_CMD} -e \
+		's|^CC =|CC ?=| ; \
+		 s|^LD =.*|LD = $$(CC)| ; \
+		 s|^CFLAGS =|#CFLAGS =| ; \
+		 s|^LDFLAGS =|#LDFLAGS =|' ${WRKSRC}/Makefile.global
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ssl_proxy ${PREFIX}/sbin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ssl_proxy ${STAGEDIR}${PREFIX}/sbin)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
 
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-
-post-install:
-	${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
