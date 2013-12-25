@@ -41,7 +41,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENAL}
-USE_OPENAL=		yes
+USES+=			openal
 CONFIGURE_ARGS+=	--with-openal=yes
 .else
 CONFIGURE_ARGS+=	--with-openal=no

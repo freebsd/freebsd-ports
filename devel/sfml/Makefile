@@ -16,8 +16,7 @@ LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libpng.so:${PORTSDIR}/graphics/png \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
-USES=		gmake pkgconfig
-USE_OPENAL=	al
+USES=		gmake openal:al pkgconfig
 USE_XORG=	x11 xrandr
 USE_GL=		gl glu
 USE_LDCONFIG=	yes

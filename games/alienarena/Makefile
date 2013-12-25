@@ -20,8 +20,7 @@ COMMENT=	Alien Arena (native version)
 
 RUN_DEPENDS=	${DATADIR}/data1/default.cfg:${PORTSDIR}/games/alienarena-data
 
-USE_DOS2UNIX=	yes
-USE_GMAKE=	yes
+USES=		dos2unix gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=${WRKDIR}/${PORTNAME}-7.66/
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
@@ -52,14 +51,13 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}
-USES+=		pkgconfig
+USES+=		openal:soft,alut pkgconfig
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 USE_GL=		yes
-USE_OPENAL=	soft alut
 USE_XORG=	xxf86dga xxf86vm
 .endif
 

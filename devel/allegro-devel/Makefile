@@ -23,9 +23,8 @@ LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack \
 		libFLAC.so:${PORTSDIR}/audio/flac \
 		libphysfs.so:${PORTSDIR}/devel/physfs
 
-USES=		gmake cmake pkgconfig
+USES=		gmake cmake openal:soft pkgconfig
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga
-USE_OPENAL=	soft
 USE_GL=		gl glu
 USE_FREETYPE=	yes
 USE_LDCONFIG=	yes

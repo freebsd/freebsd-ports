@@ -20,8 +20,7 @@ LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
-USES=		gmake
-USE_OPENAL=	yes
+USES=		gmake openal
 USE_SDL=	sdl mixer
 USE_GL=		gl glu
 USE_LUA=	5.1+

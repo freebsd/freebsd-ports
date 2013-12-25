@@ -15,8 +15,7 @@ NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		gmake pathfix pkgconfig
-USE_OPENAL=	al
+USES=		gmake openal:al pathfix pkgconfig
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>

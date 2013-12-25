@@ -23,8 +23,7 @@ LICENSE_FILE_OTHER=	${WRKSRC}/docs/package_copyrights.txt
 LICENSE_PERMS_OTHER=	dist-mirror pkg-mirror auto-accept
 
 USE_BZIP2=	yes
-USE_OPENAL=	al
-USES=	gmake
+USES=		gmake openal:al
 GNU_CONFIGURE=	yes
 ALL_TARGET=	libenet
 WRKSRC=		${WRKDIR}/AssaultCube_v${PORTVERSION}

@@ -91,7 +91,7 @@ CONFIGURE_ARGS+=	--without-alsa
 .endif
 
 .if ${PORT_OPTIONS:MOPENAL}
-USE_OPENAL=		yes
+USES+=			openal
 .else
 CONFIGURE_ARGS+=	--without-openal
 .endif

@@ -25,9 +25,8 @@ LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs \
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans.ttf:${PORTSDIR}/x11-fonts/dejavu
 
 USE_XZ=		yes
-USES=		bison gmake pkgconfig compiler:c++11-lang # actually, old gcc fails on unknown -W flag
+USES=		bison gmake openal:al pkgconfig compiler:c++11-lang # actually, old gcc fails on unknown -W flag
 GNU_CONFIGURE=	yes
-USE_OPENAL=	al
 USE_GL=		yes
 USE_SDL=	sdl
 USE_QT4=	corelib network script gui moc_build

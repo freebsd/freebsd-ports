@@ -25,7 +25,6 @@ LIB_DEPENDS=		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 FETCH_ARGS=		-Fpr
 
 USE_SDL=		sdl ttf image
-USE_OPENAL=		al
 
 USE_SCONS=		yes
 SCONS_ARGS=		--prefix=${PREFIX} --python-prefix=${PYTHON_SITELIBDIR}
@@ -39,7 +38,7 @@ USE_PYTHON=		2.7
 USE_XORG=		xcursor
 USE_GL=			gl
 
-USES=			pkgconfig
+USES=			openal:al pkgconfig
 
 NO_STAGE=	yes
 post-patch:

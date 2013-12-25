@@ -24,13 +24,11 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-alpha
 BUILD_WRKSRC=	${WRKSRC}/build/workspaces/gcc
 MAKE_ARGS=	config=release
-USES=		compiler:c++11-lang gmake pkgconfig
+USES=		compiler:c++11-lang dos2unix gmake openal:al pkgconfig
 USE_XZ=		yes
 USE_SDL=	sdl
 USE_GNOME=	libxml2 gtk20
 USE_GL=		gl
-USE_OPENAL=	al
-USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.([ch]p{0,2}|make)
 
 USE_WX=		2.8

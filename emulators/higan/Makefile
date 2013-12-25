@@ -84,7 +84,7 @@ VIDEO_DRIVER+=	video.sdl
 .endif
 
 .if ${PORT_OPTIONS:MOPENAL}
-USE_OPENAL+=	al
+USES+=		openal:al
 AUDIO_DRIVER+=	audio.openal
 .endif
 

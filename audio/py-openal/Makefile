@@ -13,7 +13,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	PyOpenAL is a binding of OpenAL for Python
 
 DIST_SUBDIR=	python
-USE_OPENAL=	al alut
+USES=		openal:al,alut
 NO_STAGE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

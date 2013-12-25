@@ -34,7 +34,7 @@ OPENAL_DESC=	Build OpenAL sound plugin
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENAL}
-USE_OPENAL=	al
+USES+=		openal:al
 CMAKE_ARGS+=	-DBUILDOPENAL:BOOL=ON
 PLIST_SUB=	OPENAL=""
 .else

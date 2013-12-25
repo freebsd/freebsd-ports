@@ -30,8 +30,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 USE_BZIP2=	yes
 USE_XORG=	ice sm x11 xext xft xi xinerama xt xmu
 USE_GL=		gl glu glut
-USE_OPENAL=	al alut
-USES=		cmake
+USES=		cmake openal:al,alut
 CMAKE_ARGS+=	-DJPEG_FACTORY:BOOL=ON \
 		-DENABLE_JS_SERVER:BOOL=ON \
 		-DFG_DATA_DIR:PATH=${LOCALBASE}/share/${PORTNAME} \

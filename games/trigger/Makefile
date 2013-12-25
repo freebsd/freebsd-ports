@@ -15,7 +15,7 @@ COMMENT=	Rally car racing game
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
 LIB_DEPENDS=	libphysfs.so:${PORTSDIR}/devel/physfs
 
-USE_OPENAL=	al alut
+USES=		openal:al,alut
 USE_SDL=	sdl image
 USE_GL=		glu
 USE_BZIP2=	yes

@@ -19,4 +19,6 @@ OPTIONS_DEFINE=	OPENAL
 OPENAL_DESC=	Install openal library
 OPTIONS_DEFAULT=	OPENAL
 
+OPENAL_USES=	openal:soft
+
 .include "${MASTERDIR}/Makefile"
