@@ -6,7 +6,7 @@ PORTVERSION=	1.3.4
 PORTREVISION=	9
 CATEGORIES=	games
 MASTER_SITES=	SF \
-		SF/nemysisfreebsdp/:icons
+		SF/nemysisfreebsdp/${CATEGORIES}/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 DIST_SUBDIR=	${PORTNAME}
@@ -18,27 +18,25 @@ COMMENT=	Enhanced shoot-the-asteroids game
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+CONFIGURE_ARGS=	 --datadir=${STAGEDIR}${PREFIX}/share
+USE_GCC=	yes
 USE_CSTD=	gnu89
 USE_SDL=	mixer sdl
 
-MAN6=		sdlroids.6
-
 PORTDOCS=	ChangeLog README README.orig README.petopt README.xhyperoid TODO
 
-DESKTOP_ENTRIES="SDLRoids" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME} -n 2" "Game;ArcadeGame;" false
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+DESKTOP_ENTRIES="SDLRoids" "" "${PORTNAME}" \
+		"${PORTNAME} -n 2" "Game;ArcadeGame;" ""
 
 post-install:
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
