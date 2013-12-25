@@ -3,6 +3,7 @@
 
 PORTNAME=	ntopng
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/ntop/${PORTNAME}:source1 \
 		http://geolite.maxmind.com/download/geoip/database/:source2 \
@@ -25,6 +26,9 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libluajit-5.1.so:${PORTSDIR}/lang/luajit \
 		libzmq.so:${PORTSDIR}/devel/ntopng-zmq
+
+IGNOREFILES=	GeoLiteCity.dat.gz GeoLiteCityv6.dat.gz \
+		GeoIPASNum.dat.gz GeoIPASNumv6.dat.gz
 
 CPPFLAGS+=	-I${LOCALBASE}/include/luajit-2.0
 GNU_CONFIGURE=	yes
