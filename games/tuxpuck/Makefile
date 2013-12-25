@@ -22,15 +22,19 @@ USES=		gmake
 ALL_TARGET=	${PORTNAME}
 MAKE_JOBS_UNSAFE=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include/libpng15
-
 PLIST_FILES=	bin/${PORTNAME} man/man6/tuxpuck.6.gz
 
 post-patch:
-	cd ${WRKSRC}; \
-	${REINPLACE_CMD} 's|timer_create|_timer_create|g' \
-	tuxpuck.c video.c timer.c intro.c tuxpuck.h
-	${REINPLACE_CMD} -e 's|sdl-config|$$(SDL_CONFIG)|g' ${WRKSRC}/utils/Makefile
+.for i in intro.c timer.c tuxpuck.c tuxpuck.h video.c
+	@${REINPLACE_CMD} -e \
+		's|timer_create|_timer_create|g' ${WRKSRC}/${i}
+.endfor
+.for i in data utils
+	@${REINPLACE_CMD} -e \
+		's|^CC|#CC| ; \
+		 s|^CFLAGS|#CFLAGS| ; \
+		 s|sdl-config|$$(SDL_CONFIG)|' ${WRKSRC}/${i}/Makefile
+.endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
