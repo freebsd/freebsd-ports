@@ -22,10 +22,6 @@ lib/sasl2/libanonymous.so.3
 %%DIGEST%%lib/sasl2/libdigestmd5.la
 %%DIGEST%%lib/sasl2/libdigestmd5.so
 %%DIGEST%%lib/sasl2/libdigestmd5.so.3
-%%GSSAPI%%lib/sasl2/libgssapiv2.a
-%%GSSAPI%%lib/sasl2/libgssapiv2.la
-%%GSSAPI%%lib/sasl2/libgssapiv2.so
-%%GSSAPI%%lib/sasl2/libgssapiv2.so.3
 %%LOGIN%%lib/sasl2/liblogin.a
 %%LOGIN%%lib/sasl2/liblogin.la
 %%LOGIN%%lib/sasl2/liblogin.so
