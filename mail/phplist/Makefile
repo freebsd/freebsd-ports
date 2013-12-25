@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phplist
-PORTVERSION=	2.10.19
+PORTVERSION=	3.0.5
 CATEGORIES=	mail www
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -10,17 +10,22 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	A full-featured open-source newsletter manager
 
-USE_PHP=	session mysql imap xml pcre zlib
+USE_PHP=	session mysql imap xml pcre zlib iconv
 NO_BUILD=	yes
+PEARDIR?=	${LOCALBASE}/share/pear
+
+RUN_DEPENDS=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 
 PORTDOCS=	BUGS INSTALL NEWS PEOPLE README README.batches \
 		README.bounces README.commandline README.passwords \
 		README.repetition README.rssfeeds README.security \
-		README.usertables TODO UPGRADE VERSION phplist.sql
+		README.usertables README.utf8 TODO UPGRADE VERSION \
+		phplist.sql
 
 SUB_FILES=	phplist pkg-message
 
 NO_STAGE=	yes
+
 post-extract:
 	@${MV} ${WRKSRC}/public_html/lists/config/config.php ${WRKSRC}/public_html/lists/config/config.php-dist
 
