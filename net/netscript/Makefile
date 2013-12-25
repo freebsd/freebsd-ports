@@ -3,41 +3,48 @@
 
 PORTNAME=	netscript
 PORTVERSION=	1.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	SF \
 		http://fakehalo.deadpig.org/%SUBDIR%/
-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable/multi-platform lightweight TCP socket scripting
 
-WANT_GNOME=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES GTK1
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+USES=		ncurses shebangfix
+SHEBANG_FILES=	examples/*.ruleset examples/gui/*.ruleset \
+		examples/ncurses/*.ruleset
+SHEBANG_LANG=	netscript
+netscript_OLD_CMD=	/usr/bin/netscript
+netscript_CMD=		${LOCALBASE}/bin/netscript
 
-.if ${HAVE_GNOME:Mgtk12}!=""
-USE_GNOME+=	gtk12
-PKGNAMESUFFIX=	-gtk
-ALL_TARGET=	gbsd
-.else
-ALL_TARGET=	bsd
-.endif
+CFLAGS+=	-DNCURSES -DARPA -DBSD_T -Wl,--export-dynamic
+LDFLAGS+=	-lcurses
 
-post-patch:
-	@${REINPLACE_CMD} -e "s,gtk-config,${GTK_CONFIG},g" ${WRKSRC}/Makefile
+PORTDOCS=	*
+PORTEXAMPLES=	*
+PLIST_FILES=	bin/netscript
+
+GTK1_USE=	GNOME=gtk12
+GTK1_CFLAGS=	-DGTK
+GTK1_CPPFLAGS=	$$(gtk-config --cflags gthread)
+GTK1_LDFLAGS=	$$(gtk-config --libs gthread)
+
+do-build:
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} netscript.c \
+		-o netscript ${LDFLAGS})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/netscript ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
-	@${CHMOD} -R og+r ${EXAMPLESDIR}
-	@${CHMOD} og+x ${EXAMPLESDIR}/gui ${EXAMPLESDIR}/ncurses
-.endif
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} netscript \
+		${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README \
+		${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${EXAMPLESDIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
