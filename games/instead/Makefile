@@ -3,7 +3,7 @@
 
 PORTNAME=	instead
 PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/instead/instead/${PORTVERSION}/ \
 		http://mirror.amdmi3.ru/distfiles/
