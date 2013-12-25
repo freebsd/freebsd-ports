@@ -34,7 +34,7 @@ post-patch:
 		-e 's|/doc/packages|/doc|' \
 		-e 's|^.*/get_svn_revision.sh$$||' \
 			${WRKSRC}/Makefile
-.if ${PORT_OPTIONS:MDOCS}
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -E -e '/(install|tar).*DOC_PATH/d' \
 		${WRKSRC}/Makefile
 .endif
