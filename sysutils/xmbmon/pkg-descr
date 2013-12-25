@@ -1,0 +1,13 @@
+This is a X/tty motherboard monitor which supports LM78/79, WINBond
+83781D/83782D/83783S, ASUS 991227F, and VIA VT82C686A/B PC-health
+chips via 3 methods: ISA-I/O, SMBus, VIA-direct.
+
+Run "mbmon -h" or "xmbmon -help" to see the usage.
+
+***CAUTION*** 
+
+These programs access to the SMBus or the ISA-IO port directly under
+the superuser privilege, so it may cause a system crash.  Please test
+"mbmon -d" or "xmbmon -debug" first.
+
+WWW: http://www.nt.phys.kyushu-u.ac.jp/shimizu/download/download.html

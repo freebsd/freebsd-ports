@@ -1,0 +1,6 @@
+SHA256 (xmbmon205.tar.gz) = 65b10ebfe53585ac22d6a31d8ef3fea552cb266cf2c124c00421dec1df5a4a4f
+SIZE (xmbmon205.tar.gz) = 142987
+SHA256 (xmbmon205_fflush.patch) = f837f465861ce46e4a90d1d3c7a680c1904f7fb91e14efcbad22313c90e2cdc7
+SIZE (xmbmon205_fflush.patch) = 242
+SHA256 (xmbmon205_A7N8X-VM.patch) = 20565e0b1216d3becb87f796fa547e81fec84e37cff05405eb8f71bc97eebc68
+SIZE (xmbmon205_A7N8X-VM.patch) = 274

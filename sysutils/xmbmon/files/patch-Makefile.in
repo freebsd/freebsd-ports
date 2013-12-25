@@ -1,0 +1,48 @@
+--- Makefile.in.orig	Wed Feb  1 20:12:01 2006
++++ Makefile.in	Wed Feb  1 20:12:22 2006
+@@ -27,9 +27,9 @@
+ 
+ #CC=/compat/linux/usr/bin/gcc
+ CC=@CC@
+-CFLAGS=-O3 $(INCLUDES) $(DEFS)
++CFLAGS+=$(INCLUDES) $(DEFS)
+ CFLAGSX=$(CFLAGS) @X_CFLAGS@
+-LDFLAGS=-s
++LDFLAGS=
+ 
+ LINT=lint
+ # LINT=$(CC) -c -Wall -Wshadow -Wpointer-arith
+@@ -37,9 +37,9 @@
+ RM=rm -f
+ INSTALL=install
+ 
+-INST_DIR=/usr/local/bin
+-INST_MANDIR=/usr/local/man/man1
+-INST_XDIR=/usr/X11R6/bin
++INST_DIR=%%STAGEDIR%%%%PREFIX%%/bin
++INST_MANDIR=%%STAGEDIR%%%%PREFIX%%/man/man1
++INST_XDIR=%%STAGEDIR%%%%PREFIX%%/lib/X11/app-defaults
+ INST_MANXDIR=/usr/X11R6/man/man1
+ INST_XRDIR=/usr/X11R6/lib/X11/app-defaults
+  
+@@ -56,7 +56,7 @@
+ HWM_OBJ = sens_winbond.o sens_via686.o sens_it87.o sens_gl52.o sens_lm85.o sens_lm80.o sens_lm90.o sens_lm75.o sens_wl784.o smb_extemp.o
+ OBJS = getMBinfo.o tyan_tiger.o pci_pm.o sensors.o $(MB_OBJ) $(SMB_OBJ) $(HWM_OBJ)
+ 
+-all: $(PROGRAM)
++all: $(PROGRAM) $(MANPAGE)
+ 
+ mbmon: mbmon.c mbmon.h methods.h pci_pm.h smbuses.h sensors.h $(OBJS)
+ 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ mbmon.c $(OBJS) $(LIBS)
+@@ -135,10 +135,8 @@
+ install: $(PROGRAM)
+ 	$(INSTALL) -o root -g wheel -m 4555 -c -p mbmon $(INST_DIR)
+ 	$(INSTALL) -o root -g wheel -m 4555 -c -p xmbmon $(INST_XDIR)
+-
+-install-man: $(MANPAGE)
+ 	$(INSTALL) -o root -g wheel -m 444 -c -p mbmon.1 $(INST_MANDIR)
+-	$(INSTALL) -o root -g wheel -m 444 -c -p xmbmon.1x $(INST_MANXDIR)
++	$(INSTALL) -o root -g wheel -m 444 -c -p xmbmon.1x $(INST_MANDIR)
+ 
+ lint:
+ 	$(LINT) $(INCLUDES) $(DEFS) $(FONTDEFINES) $(SRCS) -lm
