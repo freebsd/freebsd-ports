@@ -12,8 +12,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Object Oriented Input System
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		pathfix
+USES=		pathfix gmake
 USE_AUTOTOOLS=	libtool:env aclocal:env autoheader:env automake:env autoconf:env
 USE_XORG=	x11 xaw
 USE_LDCONFIG=	yes
@@ -23,7 +22,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|^pkgconfigdir = .*|pkgconfigdir=$${prefix}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.am
