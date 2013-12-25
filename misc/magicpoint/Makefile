@@ -68,6 +68,8 @@ post-configure:
 		${SETENV} ${MAKE_ENV} ${XMKMF} ${XMKMF_ARGS}
 	cd ${WRKSRC}/contrib/xmindpath && \
 		${SH} ${CONFIGURE_SCRIPT} --prefix=${PREFIX}
+	@${REINPLACE_CMD} -e 's|freetype1/freetype|freetype1|g' \
+		${WRKSRC}/Makefile ${WRKSRC}/image/Makefile
 
 post-build:
 	cd ${WRKSRC}/contrib/xmindpath && \
