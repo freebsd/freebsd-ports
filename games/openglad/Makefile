@@ -3,29 +3,30 @@
 
 PORTNAME=	openglad
 PORTVERSION=	0.98
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	SF/snowstorm/OpenGlad/Openglad-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL port of an old DOS game called Gladiator
 
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+LICENSE=	GPLv2 # (or later)
+
+USES=		gmake
 USE_SDL=	sdl mixer
+GNU_CONFIGURE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+DESKTOP_ENTRIES="OpenGlad" "" "" "${PORTNAME}" "" ""
 
 NOT_FOR_ARCHS=	sparc64
 
-.if defined(NOPORTDOCS)
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's|^docs_DOCS = |nono&|' ${WRKSRC}/Makefile.in
-.endif
-
-post-configure:
-	${REINPLACE_CMD} -e 's|/path/to/data/dir|${LOCALBASE}/share/openglad|g' \
-		${WRKSRC}/openglad.cfg
+	@${REINPLACE_CMD} -e \
+		's|COPYING INSTALL|INSTALL|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|/path/to/data/dir|${DATADIR}|' ${WRKSRC}/openglad.cfg
 
 .include <bsd.port.mk>
