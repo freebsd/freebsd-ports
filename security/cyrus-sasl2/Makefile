@@ -2,7 +2,7 @@
 
 PORTNAME=	cyrus-sasl
 PORTVERSION=	2.1.26
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/ \
 		http://cyrusimap.org/releases/
@@ -10,7 +10,7 @@ MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/ \
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
-LICENSE=	BSD
+LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		perl5
@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--enable-auth-sasldb \
 		--with-rc4=openssl \
 		--with-saslauthd=${SASLAUTHD_RUNPATH} \
+		--disable-gssapi \
 		--disable-krb4
 MAKE_ENV+=	INSTALL_STRIP_FLAG=${STRIP}
 
@@ -108,17 +109,6 @@ SQL=	"@comment "
 .if ${ARCH} == "amd64"
 CPPFLAGS+=	-fPIC
 .endif
-.if !defined(WITHOUT_GSSAPI) && defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.so)
-CONFIGURE_ARGS+=--enable-gssapi=${KRB5_HOME} --with-gss_impl=mit
-LDFLAGS+=	"-R${KRB5_HOME}/lib"
-.elif !defined(WITHOUT_GSSAPI) && defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
-CONFIGURE_ARGS+=--enable-gssapi=${HEIMDAL_HOME} --with-gss_impl=heimdal
-.elif !defined(WITHOUT_GSSAPI) && exists(/usr/lib/libkrb5.a)
-CONFIGURE_ARGS+=--enable-gssapi
-.else
-CONFIGURE_ARGS+=--disable-gssapi
-GSSAPI=	"@comment "
-.endif
 
 .if ${OPENSSLBASE} == /usr
 CONFIGURE_ARGS+=--with-openssl=yes
@@ -148,8 +138,6 @@ HTDOCS=	advanced appconvert components gssapi index install macosx \
 	windows
 
 PLIST_SUB+=	PREFIX=${PREFIX} \
-		GSSAPI=${GSSAPI} \
-		EBONES=${EBONES} \
 		SQL=${SQL} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///}
 
