@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glances
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.3
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://github.com/nicolargo/glances/archive/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,41 +14,34 @@ COMMENT=	CLI curses based monitoring tool for GNU/Linux and BSD OS
 LICENSE=	LGPL3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.0.0:${PORTSDIR}/devel/py-Jinja2 \
-		${PYTHON_PKGNAMEPREFIX}psutil>=0.4.1:${PORTSDIR}/sysutils/py-psutil
+		${PYTHON_PKGNAMEPREFIX}psutil>=1.2.1:${PORTSDIR}/sysutils/py-psutil
+
+OPTIONS_DEFINE=	MANPAGES NLS
+OPTIONS_SUB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 FETCH_ARGS=	-pRr
 USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
+USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	Glances
+#NO_STAGE=	yes
 
-OPTIONS_DEFINE=	NLS
+MANPAGES_MAN1=		glances.1
+NLS_TRANSLATIONS=	es fr it pt_BR zh_CN
+NLS_USES=		gettext
 
-.if !defined(NO_INSTALL_MANPAGES)
-MAN1=		glances.1
-.endif
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-TRANSLATIONS=	es fr it pt_BR zh_CN
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
-
 post-install:
-	@${MKDIR} ${PREFIX}/etc/glances
-	${INSTALL_DATA} ${WRKSRC}/glances/conf/glances.conf ${PREFIX}/etc/glances/glances.conf.sample
-.if !defined(NO_INSTALL_MANPAGES)
-	${INSTALL_MAN} ${WRKSRC}/docs/man/glances.1 ${MANPREFIX}/man/man1/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/glances
+	${INSTALL_DATA} ${WRKSRC}/conf/glances.conf ${STAGEDIR}${PREFIX}/etc/glances/glances.conf.sample
+.if ${PORT_OPTIONS:MMANPAGES}
+	${INSTALL_MAN} ${WRKSRC}/man/glances.1 ${STAGEDIR}${MANPREFIX}/man/man1/
 .endif
 .if ${PORT_OPTIONS:MNLS}
-.for lang in ${TRANSLATIONS}
+.for lang in ${NLS_TRANSLATIONS}
 	${INSTALL_DATA} ${WRKSRC}/i18n/${lang}/LC_MESSAGES/glances.mo \
-		${PREFIX}/share/locale/${lang}/LC_MESSAGES/
+		${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/
 .endfor
 .endif
 
