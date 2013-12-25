@@ -26,7 +26,7 @@ For Apache version 2.4.x or above:
     Alias /phpmyadmin/ "%%WWWDIR%%/"
 
     <Directory "%%WWWDIR%%/">
-	Options -All
+	Options None
 	AllowOverride Limit
 
 	Require local
