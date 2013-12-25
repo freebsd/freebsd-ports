@@ -3,36 +3,37 @@
 
 PORTNAME=	xinvaders
 PORTVERSION=	2.1.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	games/arcade/invaders
+MASTER_SITES=	SUNSITE/games/arcade/invaders
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shoot-em-up them nasty little bugs
-
-ONLY_FOR_ARCHS=	i386
 
 NO_CDROM=	don't sell for profit
 
 USES=		gettext
 USE_XORG=	x11 xmu xaw xt
-USE_AUTOTOOLS=	automake14 autoconf213
-AUTOMAKE_ARGS=	--include-deps
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl"
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-scorefile=/var/games/xinvaders.scores
+
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ARGS=	--enable-scorefile=${PREFIX}/share/xinvaders/xinvaders.scores
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
-MAN6=		xinvaders.6
+DESKTOP_ENTRIES="XInvaders" "Space Invaders game for X" \
+		"${PREFIX}/share/pixmaps/${PORTNAME}.xpm" "${PORTNAME}" "" ""
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|$$(prefix)/games|$$(prefix)/bin| ; \
+		 /install-exec-am:/s|install-exec-local|| ; \
+		 /install-data-am:/s|install-data-local||' ${WRKSRC}/Makefile.in
+
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/Vaders.ad ${PREFIX}/lib/X11/app-defaults/Vaders
-	@${MKDIR} ${PREFIX}/share/xinvaders
-	@${ECHO_CMD} '0' > ${PREFIX}/share/xinvaders/xinvaders.scores
-	@${CHOWN} root:games ${PREFIX}/bin/xinvaders
-	@${CHMOD} 2555 ${PREFIX}/bin/xinvaders
-	@${CHOWN} root:games ${PREFIX}/share/xinvaders/xinvaders.scores
-	@${CHMOD} 0660 ${PREFIX}/share/xinvaders/xinvaders.scores
+	(cd ${FILESDIR} && ${INSTALL_DATA} Vaders.ad \
+		${STAGEDIR}${PREFIX}/lib/X11/app-defaults/Vaders)
+	(cd ${WRKSRC} && ${INSTALL_DATA} icon.xpm \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.xpm)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
