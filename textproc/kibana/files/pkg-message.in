@@ -1,0 +1,7 @@
+===
+Kibana has been installed.
+
+Edit %%WWWDIR%%/config.js to point to your ElasticSearch server.
+A simple nginx virtual host and proxy configuration to protect ElasticSearch can
+be found at https://raw.github.com/elasticsearch/kibana/master/sample/nginx.conf
+===
