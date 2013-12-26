@@ -3,6 +3,7 @@
 
 PORTNAME=	coccigrep
 PORTVERSION=	1.12
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	pawel@FreeBSD.org
@@ -18,27 +19,23 @@ GH_TAGNAME=	v${PORTVERSION}
 GH_COMMIT=	5ca9276
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-MANCOMPRESSED=	no
+USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-MAN1=		coccigrep.1
+PLIST_FILES=	man/man1/coccigrep.1.gz \
+		${DATADIR_REL}/cocci-grep.el \
+		${DATADIR_REL}/cocci-grep.vim
+PLIST_DIRS=	${DATADIR_REL}
 PORTDOCS=	ChangeLog README.rst
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/coccigrep.1 ${MANPREFIX}/man/man1
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/editors/cocci-grep.el ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/editors/cocci-grep.vim ${DATADIR}
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.rst ${DOCSDIR}
-.endif
+	${INSTALL_MAN} ${WRKSRC}/coccigrep.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/editors/cocci-grep.el ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/editors/cocci-grep.vim ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
