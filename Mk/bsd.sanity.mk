@@ -153,3 +153,7 @@ DEV_WARNING+=	"USE_PYDISTUTILS=easy_install is deprecated, please use USE_PYDIST
 .if defined(USE_PYDISTUTILS) && ${USE_PYDISTUTILS} != "easy_install" && defined(PYDISTUTILS_AUTOPLIST) && defined(PYDISTUTILS_PKGNAME)
 DEV_WARNING+=	"PYDISTUTILS_PKGNAME has no effect for USE_PYDISTUTILS=yes and PYDISTUTILS_AUTOPLIST=yes"
 .endif
+
+.if defined(USE_OPENAL)
+DEV_ERROR+=	"USE_OPENAL is unsupported, please use USES=openal"
+.endif
