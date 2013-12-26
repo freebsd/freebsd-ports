@@ -16,13 +16,10 @@ COMMENT=	WYSIWYG editor for Trac wiki
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 USE_BZIP2=	yes
-USE_PYTHON=	-2.7
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	TracWysiwyg
-PYDISTUTILS_PKGVERSION=	0.12.0.4
-PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+USE_PYTHON=	2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(SVN_REV)
@@ -44,8 +41,5 @@ do-fetch:
 	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
 	echo "SVN_REV=  ${SVN_REV}" > ${MASTERDIR}/Makefile.svn_rev
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
