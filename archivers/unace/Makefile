@@ -13,7 +13,6 @@ COMMENT=	Extract, view & test ACE archives
 
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 USES=		gmake
 ALL_TARGET=	clean unace
 PLIST_FILES=	bin/unace
@@ -27,6 +26,6 @@ post-patch:
 			${WRKSRC}/uac_crt.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/unace ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/unace ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
