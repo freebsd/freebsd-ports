@@ -12,11 +12,9 @@ COMMENT=	High-ratio LZMA compressor
 
 CONFLICTS=	lzmautils-[0-9]* xz-[0-9]*
 
-USES=		gmake
+USES=		gmake dos2unix
 USE_BZIP2=	yes
-NO_STAGE=	yes
 NO_WRKSUBDIR=	yes
-USE_DOS2UNIX=	yes
 BUILD_WRKSRC=	${WRKSRC}/CPP/7zip/Bundles/LzmaCon
 MAKEFILE=	makefile.gcc
 PLIST_FILES=	bin/${PORTNAME}
@@ -42,11 +40,9 @@ post-patch:
 			${BUILD_WRKSRC}/${MAKEFILE}
 
 do-install:
-	@${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-.ifndef NOPORTDOCS
-	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-.endif
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/&&${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 regression-test: build
 	${BUILD_WRKSRC}/${PORTNAME} b
