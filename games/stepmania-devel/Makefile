@@ -38,7 +38,7 @@ SHEBANG_FILES=	Utils/*.pl \
 		extern/zlib/zlib2ansi
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lX11
+LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lpthread
 
 VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 VORBIS_CONFIGURE_WITH=	vorbis
