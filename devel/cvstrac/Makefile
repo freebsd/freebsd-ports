@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.cvstrac.org/
 DISTNAME=	cvstrac-${PORTVERSION}
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Web-Based Bug And Patch-Set Tracking System For CVS
 
 WRKSRC=		${WRKDIR}/cvstrac-${PORTVERSION}

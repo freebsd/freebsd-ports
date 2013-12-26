@@ -9,7 +9,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for config-driven Subversion notification
 
 RUN_DEPENDS=	${LOCALBASE}/bin/svnlook:${PORTSDIR}/devel/subversion \

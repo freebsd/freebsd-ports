@@ -8,7 +8,7 @@ MASTER_SITES=	SF
 DISTNAME=	syncmail
 EXTRACT_SUFX=
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS notification tool
 
 .if defined(WITH_CVSNT)

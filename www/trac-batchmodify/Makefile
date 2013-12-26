@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enables users to modify several tickets together at once
 
 RUN_DEPENDS+=	trac>=0.12:${PORTSDIR}/www/trac

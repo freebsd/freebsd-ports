@@ -7,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension to manipulate SVN Access files
 
 BUILD_DEPENDS=	p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \

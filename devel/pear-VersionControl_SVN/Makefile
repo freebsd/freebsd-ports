@@ -5,7 +5,7 @@ PORTNAME=	VersionControl_SVN
 PORTVERSION=	0.5.0
 CATEGORIES=	devel pear
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper interface for the Subversion command-line client
 
 BUILD_DEPENDS=	pear>=1.9.4:${PORTSDIR}/devel/pear \

@@ -9,7 +9,7 @@ MASTER_SITES=	http://proj.llucax.com.ar/home/eventxx/releases/ \
 		LOCAL/glarkin
 MASTER_SITE_SUBDIR=	gahr
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ wrapper for libevent
 
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent

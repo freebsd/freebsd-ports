@@ -8,7 +8,7 @@ CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Auditing tool for system logs on Unix boxes
 
 RUN_DEPENDS=	mime-construct:${PORTSDIR}/mail/mime-construct \

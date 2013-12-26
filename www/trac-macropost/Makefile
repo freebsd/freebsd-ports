@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.gerritbeine.de/download/trac/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows Macros to use POST in forms
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac

@@ -12,7 +12,7 @@ DISTFILES=	yui_${DISTVERSION}r1.zip:main \
 		swfstore-${DISTVERSION:S/.//g}.zip:patch \
 		uploader-${DISTVERSION:S/.//g}.zip:patch
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Yahoo! User Interface (YUI) Library
 
 LICENSE=	BSD

@@ -7,7 +7,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl interface to create Amazon AWS signatures
 
 TEST_DEPENDS=	p5-Spiffy>=0:${PORTSDIR}/devel/p5-Spiffy \

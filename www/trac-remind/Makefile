@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.unixmedia.it/
 PKGNAMEPREFIX=	trac-
 DISTNAME=	trac${PORTNAME}
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trac tickets reminder script
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac

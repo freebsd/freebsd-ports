@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.ezmlm.org/archive/${PORTVERSION}/ \
 		http://ezmlm.sericyb.com.au/archive/${PORTVERSION}/
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Improved version of the ezmlm mailing list manager
 
 MAKE_JOBS_UNSAFE=	yes

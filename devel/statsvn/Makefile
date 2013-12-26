@@ -8,7 +8,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subversion repository activity report generator
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper \

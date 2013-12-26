@@ -7,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Caching wrapper around the svnlook command
 
 BUILD_DEPENDS=	subversion>=1.7.0:${PORTSDIR}/devel/subversion \

@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/ZThread/${PORTVERSION}
 DISTNAME=	ZThread-${PORTVERSION}
 
-MAINTAINER=	glarkin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A platform-independent object-oriented C++ threading library
 
 USE_AUTOTOOLS=	libtool
