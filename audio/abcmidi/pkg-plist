@@ -5,6 +5,12 @@ bin/mftext
 bin/midi2abc
 bin/midicopy
 bin/yaps
+man/man1/abc2abc.1.gz
+man/man1/abc2midi.1.gz
+man/man1/mftext.1.gz
+man/man1/midi2abc.1.gz
+man/man1/midicopy.1.gz
+man/man1/yaps.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/abcguide.txt
 %%PORTDOCS%%%%DOCSDIR%%/abcmatch.txt
