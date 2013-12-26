@@ -3,7 +3,7 @@
 
 PORTNAME=	minidlna
 PORTVERSION=	1.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	net multimedia www
 MASTER_SITES=	SF
@@ -37,10 +37,18 @@ SUB_LIST+=	USER=${USERS}
 USERS=	dlna
 GROUPS=	dlna
 
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	KQUEUE NLS
+OPTIONS_DEFAULT=KQUEUE
 OPTIONS_SUB=	yes
 
+KQUEUE_DESC=	Experimental patch for automatic rescan using kqueue(2)
 NLS_USES=	gettext
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MKQUEUE}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-kqueue
+.endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/*.5 ${STAGEDIR}${MANPREFIX}/man/man5/
