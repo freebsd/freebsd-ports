@@ -44,6 +44,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-perl --enable-shared --enable-static \
 		--with-ltdl-include=${LOCALBASE}/include \
 		--with-ltdl-lib=${LOCALBASE}/lib
+CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes
 
 ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
