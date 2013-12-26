@@ -3,7 +3,7 @@
 
 PORTNAME=	wikitemplates
 PORTVERSION=	0.3.0p3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin
@@ -18,9 +18,6 @@ RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	TracWikiTemplates
-PYDISTUTILS_PKGVERSION=	${PORTVERSION:S/p/rc/}
+USE_PYDISTUTILS=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
