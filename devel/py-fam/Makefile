@@ -12,13 +12,11 @@ DISTNAME=	python-fam-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Interface to the File Alteration Monitor
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/_fam.so
+USE_FAM=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGVERSION=	0.0.0
-USE_FAM=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 pre-patch:
 	${INSTALL_DATA} ${FILESDIR}/setup.py ${WRKSRC}
 
