@@ -14,12 +14,7 @@ LICENSE=	GPLv2
 
 USE_ZIP=	yes
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
-
-NO_STAGE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} 's/license="GPL2",/license="GPL2", zip_safe=False,/' \
-		${WRKSRC}/setup.py
+USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
