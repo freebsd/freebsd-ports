@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	daimonin-music
-PORTVERSION=	20100827
+PORTVERSION=	20120402
 CATEGORIES=	games
 MASTER_SITES=	SF/daimonin/Addon%20packs/Music/
-DISTFILES=	AllMusic.zip
-DIST_SUBDIR=	${PORTNAME:S/-music//}
+DISTNAME=	AllMusic
+DIST_SUBDIR=	daimonin
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music for daimonin client
 
-NO_CHECKSUM=	true
 NO_BUILD=	true
 USE_ZIP=	true
 
