@@ -3,6 +3,7 @@
 
 PORTNAME=	mastertickets
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://mirrors.redv.com/pub/trac/ \
 		LOCAL/glarkin
@@ -17,13 +18,7 @@ RUN_DEPENDS+=	trac>=0.12:${PORTSDIR}/www/trac
 WRKSRC=			${WRKDIR}/${DISTNAME}
 
 USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	TracMasterTickets
-PYDISTUTILS_NOEGGINFO=	yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-PLIST_SUB+=		PORTVERSION=${PORTVERSION} \
-			PYTHONVERSION=${PYTHON_VER}
-PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/TracMasterTickets-%%PORTVERSION%%-py%%PYTHONVERSION%%.egg
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
