@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.libspf2.org/spf/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sender Rewriting Scheme 2 C Implementation
 
-LICENSE=	BSD LGPL21 LGPL3
+LICENSE=	BSD2CLAUSE LGPL21 LGPL3
 LICENSE_COMB=	dual
 
 CONFLICTS=	${PORTNAME}-1.0.* p5-Mail-SPF-Query-[0-9]*
