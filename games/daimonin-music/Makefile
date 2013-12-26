@@ -11,22 +11,16 @@ DIST_SUBDIR=	${PORTNAME:S/-music//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Music for daimonin client
 
-DEPRECATED=	Broken for more than 6 month
-EXPIRATION_DATE=	2013-11-18
-
 NO_CHECKSUM=	true
 NO_BUILD=	true
 USE_ZIP=	true
 
-BROKEN=		Does not install
-
-MYDATADIR=	${DATADIR:S/-music//}
+MYDATADIR=	${PREFIX}/share/daimonin
 
 EXTRACT_BEFORE_ARGS=	-aqo
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${MYDATADIR}/media
-	${CP} -p ${WRKDIR}/* ${MYDATADIR}/media/
+	${MKDIR} ${STAGEDIR}${MYDATADIR}
+	cd ${WRKDIR} && ${COPYTREE_SHARE} media ${STAGEDIR}${MYDATADIR}/
 
 .include <bsd.port.mk>

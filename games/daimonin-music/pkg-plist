@@ -63,9 +63,7 @@ share/daimonin/media/frozen.ogg
 share/daimonin/media/ghost.ogg
 share/daimonin/media/jungle1.ogg
 share/daimonin/media/landing.ogg
-@unexec if [ -f %D/share/daimonin/media/media.txt ]; then rm %D/share/daimonin/media/media.txt; fi
 share/daimonin/media/ocean.ogg
-@unexec if [ -f %D/share/daimonin/media/orchestral.ogg ]; then rm %D/share/daimonin/media/orchestral.ogg; fi
 share/daimonin/media/rainthunder.ogg
 share/daimonin/media/raspy.ogg
 share/daimonin/media/rubberfreak.ogg
