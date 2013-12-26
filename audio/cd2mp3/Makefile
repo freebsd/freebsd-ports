@@ -15,7 +15,6 @@ COMMENT=	Easy to use CD Ripping and MP3 Encoding tool
 RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		dagrab:${PORTSDIR}/audio/dagrab
 
-NO_STAGE=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/cd2mp3
 
@@ -23,10 +22,8 @@ PLIST_FILES=	bin/cd2mp3
 PORTDOCS=	README
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/cd2mp3 ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/cd2mp3 ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
