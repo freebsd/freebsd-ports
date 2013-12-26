@@ -1,5 +1,5 @@
---- hiscore.c.orig	2002-06-02 16:28:35.000000000 +0200
-+++ hiscore.c	2013-01-13 20:24:43.000000000 +0100
+--- ./hiscore.c.orig	2002-06-02 16:28:35.000000000 +0200
++++ ./hiscore.c	2013-12-24 13:42:35.000000000 +0100
 @@ -72,7 +72,7 @@
  	// make sure all entries are zeroed out to start.
  	for (i=0;i<HISCORENUM;i++)
