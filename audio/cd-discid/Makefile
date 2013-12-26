@@ -12,10 +12,12 @@ COMMENT=	Backend utility to retrieve CDDB discid information
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
-MAKE_ARGS=	prefix=${PREFIX} mandir=${PREFIX}/man/man1
+MAKE_ARGS=	prefix=${STAGEDIR}${PREFIX} mandir=${STAGEDIR}${PREFIX}/man/man1
 
-MAN1=	cd-discid.1
-PLIST_FILES=	bin/cd-discid
-NO_STAGE=	yes
+PLIST_FILES=	bin/cd-discid \
+		man/man1/cd-discid.1.gz
+
+post-patch:
+	@${REINPLACE_CMD} -e "s/-o 0//g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
