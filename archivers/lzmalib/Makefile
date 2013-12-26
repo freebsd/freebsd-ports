@@ -9,7 +9,6 @@ MASTER_SITES=	http://tokyocabinet.sourceforge.net/misc/
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Thin wrapper library of LZMA
 
-NO_STAGE=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
