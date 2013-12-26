@@ -3,25 +3,24 @@
 
 PORTNAME=	iniparse
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	GOOGLE_CODE \
 		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A better INI parser for Python
+COMMENT=	Better INI parser for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-NO_STAGE=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 PORTDOCS=	Changelog README
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
-.if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
