@@ -19,7 +19,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-NO_STAGE=	yes
 USES=		gmake
 USE_BZIP2=	yes
 
@@ -33,12 +32,12 @@ post-patch:
 		s|g++[[:space:]]|$$(CXX) |g' ${WRKSRC}/Makefile
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/ladspa
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ladspa
 .for i in 0 1 2 3
-	${INSTALL_DATA} ${WRKSRC}/ambisonic${i}.so ${PREFIX}/lib/ladspa
+	${INSTALL_DATA} ${WRKSRC}/ambisonic${i}.so ${STAGEDIR}${PREFIX}/lib/ladspa
 .endfor
-	@${MKDIR} ${PREFIX}/share/ladspa/rdf
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/ladspa/rdf
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/fa-plugins.rdf \
-		${PREFIX}/share/ladspa/rdf
+		${STAGEDIR}${PREFIX}/share/ladspa/rdf
 
 .include <bsd.port.mk>
