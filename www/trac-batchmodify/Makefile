@@ -3,6 +3,7 @@
 
 PORTNAME=	batchmodify
 PORTVERSION=	0.8.0.9694
+PORTREVISION=	1
 CATEGORIES=	www devel python
 MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin
@@ -17,16 +18,8 @@ RUN_DEPENDS+=	trac>=0.12:${PORTSDIR}/www/trac
 USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.12/trunk
-USE_PYTHON=	2.5+
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=    BatchModify
-PYDISTUTILS_PKGVERSION= ${PORTVERSION:R}_trac0.12
-PLIST_SUB+=	EGGVERSION=${PORTVERSION:R} PYTHONVERSION=${PYTHON_VER}
-PYDISTUTILS_NOEGGINFO=	yes
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/BatchModify-%%EGGVERSION%%_trac0.12-py%%PYTHONVERSION%%.egg
-
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
+USE_PYTHON=	2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
