@@ -7,7 +7,7 @@ CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 DISTNAME=	right_aws-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides access to Amazon EC2, S3, SQS, and SDB web services
 
 LICENSE=	MIT
