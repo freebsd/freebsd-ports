@@ -6,7 +6,7 @@ PORTVERSION=	1.0.14
 PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	SF/tuxaqfh/tuxaqfh/${PORTVERSION}-classic \
-		SF/nemysisfreebsdp/:icons
+		SF/nemysisfreebsdp/${CATEGORIES}/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
@@ -18,10 +18,11 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 
+USES=		gmake
 USE_GL=		glut
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-plib=${LOCALBASE}
+#USE_GCC=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib -lusbhid ${PTHREAD_LIBS}
@@ -35,18 +36,15 @@ DOCSRCDIR2=	${WRKSRC}/doc
 DOCSDIR2=	${DOCSDIR}/doc
 DOC_FILES2=	*.png *.html
 
-DESKTOP_ENTRIES="Tuxedo The Penguin: A Quest for Herring" "${COMMENT}" ${PORTNAME} \
-		"${PORTNAME}" "Game;ArcadeGame;" false
+DESKTOP_ENTRIES="Tuxedo The Penguin: A Quest for Herring" "" ${PORTNAME} \
+		"${PORTNAME}" "Game;SportsGame;" ""
 
 OPTIONS_DEFINE=	DOCS
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-lplibul|-lplibul -lplibjs| ; \
-		 s|-O6||g ; \
+		 s|-O6 -Wall|-w|g ; \
 		 s|-lpthread|| ; \
 		 s|datadir/games|datadir|' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -56,13 +54,12 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 post-install:
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR2}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${DOCSDIR2}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 
 .include <bsd.port.mk>
