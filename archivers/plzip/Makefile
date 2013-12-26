@@ -11,14 +11,13 @@ COMMENT=	Parallel, lossless data compressor based on the LZMA algorithm
 
 BUILD_DEPENDS=	lzlib>=1.1:${PORTSDIR}/archivers/lzlib
 
-PLIST_FILES=	bin/plzip
+PLIST_FILES=	bin/plzip \
+		man/man1/plzip.1.gz
 
-NO_STAGE=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	CXXFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-MAN1=		plzip.1
 INFO=		plzip
 
 .include <bsd.port.mk>
