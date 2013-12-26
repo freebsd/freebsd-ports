@@ -3,6 +3,7 @@
 
 PORTNAME=	guessit
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,9 +13,8 @@ COMMENT=	Extract as much information as possible from a video file
 
 LICENSE=	LGPL3
 
-USE_PYTHON=	-2.7
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=	2
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
