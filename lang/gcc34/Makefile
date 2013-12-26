@@ -19,7 +19,7 @@ COMMENT=	GNU Compiler Collection 3.4
 SUFFIX=		34
 USES=		bison gmake iconv perl5
 USE_BZIP2=	yes
-USE_PERL=	build
+USE_PERL5=	build
 SSP_UNSAFE=	yes
 
 PATCH_WRKSRC=	${SRCDIR}
