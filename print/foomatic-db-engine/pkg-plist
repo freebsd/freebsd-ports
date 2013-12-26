@@ -4,8 +4,8 @@ bin/foomatic-configure
 bin/foomatic-datafile
 bin/foomatic-perl-data
 bin/foomatic-ppd-options
-bin/foomatic-ppdfile
 bin/foomatic-ppd-to-xml
+bin/foomatic-ppdfile
 bin/foomatic-printjob
 bin/foomatic-searchprinter
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Foomatic/.packlist
@@ -13,8 +13,21 @@ bin/foomatic-searchprinter
 %%SITE_PERL%%/Foomatic/Defaults.pm
 %%SITE_PERL%%/Foomatic/PPD.pm
 %%SITE_PERL%%/Foomatic/UIElem.pm
+libexec/cups/driver/foomatic
+man/man1/foomatic-combo-xml.1.gz
+man/man1/foomatic-compiledb.1.gz
+man/man1/foomatic-configure.1.gz
+man/man1/foomatic-perl-data.1.gz
+man/man1/foomatic-ppd-options.1.gz
+man/man1/foomatic-ppdfile.1.gz
+man/man1/foomatic-printjob.1.gz
+man/man8/foomatic-addpjloptions.8.gz
+man/man8/foomatic-getpjloptions.8.gz
+man/man8/foomatic-kitload.8.gz
+man/man8/foomatic-preferred-driver.8.gz
 sbin/foomatic-addpjloptions
 sbin/foomatic-cleanupdrivers
+sbin/foomatic-extract-text
 sbin/foomatic-fix-xml
 sbin/foomatic-getpjloptions
 sbin/foomatic-kitload
@@ -22,12 +35,13 @@ sbin/foomatic-nonumericalids
 sbin/foomatic-preferred-driver
 sbin/foomatic-printermap-to-gutenprint-xml
 sbin/foomatic-replaceoldprinterids
-sbin/foomatic-extract-text
 share/foomatic/templates/pjl_enum_choice.xml
 share/foomatic/templates/pjl_enum_option.xml
 share/foomatic/templates/pjl_num_option.xml
 @dirrm share/foomatic/templates
 @dirrmtry share/foomatic
+@dirrmtry libexec/cups/driver
+@dirrmtry libexec/cups
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Foomatic
 @dirrm %%SITE_PERL%%/Foomatic
 @dirrmtry etc/foomatic
