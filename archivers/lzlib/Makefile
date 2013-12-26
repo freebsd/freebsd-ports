@@ -12,7 +12,6 @@ COMMENT=	In-memory LZMA compression and decompression library
 PLIST_FILES=	include/lzlib.h \
 		lib/liblz.a
 
-NO_STAGE=		yes
 USES=		gmake
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	${MAKE_ENV}
