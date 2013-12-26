@@ -4,7 +4,7 @@
 PORTNAME=		bash
 PATCHLEVEL=		45
 PORTVERSION=		4.2.${PATCHLEVEL:S/^0//g}
-PORTREVISION?=		1
+PORTREVISION?=		2
 CATEGORIES=		shells
 MASTER_SITES=		GNU
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -82,7 +82,9 @@ CPPFLAGS+=		${PTHREAD_CFLAGS} \
 			-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-CONFIGURE_ENV=		YACC="bison -y"
+CONFIGURE_ENV=		YACC="bison -y" \
+			bash_cv_dev_fd=absent
+
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/doc/bash.1
