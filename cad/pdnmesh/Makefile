@@ -21,6 +21,7 @@ USES=		fortran pkgconfig
 USE_GL=		glu
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-lm
 
 DESKTOP_ENTRIES="pdnMesh" "${COMMENT}" "" "${PORTNAME}" "" "true"
 
