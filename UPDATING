@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20121226:
+  AFFECTS: users of security/cyrus-sasl2
+  AUTHOR: ume@FreeBSD.org
+
+  The SASL GSSAPI authentication plugin was removed from
+  security/cyrus-sasl2 port and divided into new
+  security/cyrus-sasl2-gssapi port.
+
+  If you are using the SASL GSSAPI authentication, please install
+  security/cyrus-sasl2-gssapi port, in addition to upgrading
+  security/cyrus-sasl2 port.
+ 
 20131218:
   AFFECTS: users of news/cnews
   AUTHOR: dinoex@FreeBSD.org
