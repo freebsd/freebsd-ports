@@ -9,7 +9,7 @@ MASTER_SITES=	LOCAL/sunpoet
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Database of all known IDs used in PCI devices
 
-LICENSE=	BSD GPLv2 GPLv3
+LICENSE=	BSD3CLAUSE GPLv2 GPLv3
 LICENSE_COMB=	dual
 
 NO_BUILD=	yes
