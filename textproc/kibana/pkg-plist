@@ -1,0 +1,167 @@
+%%WWWDIR%%/LICENSE.md
+%%WWWDIR%%/README.md
+%%WWWDIR%%/app/app.js
+%%WWWDIR%%/app/components/require.config.js
+%%WWWDIR%%/app/dashboards/blank.json
+%%WWWDIR%%/app/dashboards/default.json
+%%WWWDIR%%/app/dashboards/guided.json
+%%WWWDIR%%/app/dashboards/logstash.js
+%%WWWDIR%%/app/dashboards/logstash.json
+%%WWWDIR%%/app/dashboards/noted.json
+%%WWWDIR%%/app/panels/bettermap/editor.html
+%%WWWDIR%%/app/panels/bettermap/leaflet/images/layers-2x.png
+%%WWWDIR%%/app/panels/bettermap/leaflet/images/layers.png
+%%WWWDIR%%/app/panels/bettermap/leaflet/images/marker-icon-2x.png
+%%WWWDIR%%/app/panels/bettermap/leaflet/images/marker-icon.png
+%%WWWDIR%%/app/panels/bettermap/leaflet/images/marker-shadow.png
+%%WWWDIR%%/app/panels/bettermap/leaflet/leaflet.css
+%%WWWDIR%%/app/panels/bettermap/leaflet/leaflet.ie.css
+%%WWWDIR%%/app/panels/bettermap/leaflet/leaflet.js
+%%WWWDIR%%/app/panels/bettermap/leaflet/plugins.css
+%%WWWDIR%%/app/panels/bettermap/leaflet/plugins.js
+%%WWWDIR%%/app/panels/bettermap/module.css
+%%WWWDIR%%/app/panels/bettermap/module.html
+%%WWWDIR%%/app/panels/bettermap/module.js
+%%WWWDIR%%/app/panels/column/editor.html
+%%WWWDIR%%/app/panels/column/module.html
+%%WWWDIR%%/app/panels/column/module.js
+%%WWWDIR%%/app/panels/column/panelgeneral.html
+%%WWWDIR%%/app/panels/dashcontrol/editor.html
+%%WWWDIR%%/app/panels/dashcontrol/load.html
+%%WWWDIR%%/app/panels/dashcontrol/module.html
+%%WWWDIR%%/app/panels/dashcontrol/module.js
+%%WWWDIR%%/app/panels/dashcontrol/save.html
+%%WWWDIR%%/app/panels/dashcontrol/share.html
+%%WWWDIR%%/app/panels/derivequeries/editor.html
+%%WWWDIR%%/app/panels/derivequeries/module.html
+%%WWWDIR%%/app/panels/derivequeries/module.js
+%%WWWDIR%%/app/panels/fields/editor.html
+%%WWWDIR%%/app/panels/fields/micropanel.html
+%%WWWDIR%%/app/panels/fields/module.html
+%%WWWDIR%%/app/panels/fields/module.js
+%%WWWDIR%%/app/panels/filtering/editor.html
+%%WWWDIR%%/app/panels/filtering/meta.html
+%%WWWDIR%%/app/panels/filtering/module.html
+%%WWWDIR%%/app/panels/filtering/module.js
+%%WWWDIR%%/app/panels/histogram/editor.html
+%%WWWDIR%%/app/panels/histogram/module.html
+%%WWWDIR%%/app/panels/histogram/module.js
+%%WWWDIR%%/app/panels/hits/editor.html
+%%WWWDIR%%/app/panels/hits/module.html
+%%WWWDIR%%/app/panels/hits/module.js
+%%WWWDIR%%/app/panels/map/editor.html
+%%WWWDIR%%/app/panels/map/lib/map.europe.js
+%%WWWDIR%%/app/panels/map/lib/map.usa.js
+%%WWWDIR%%/app/panels/map/lib/map.world.js
+%%WWWDIR%%/app/panels/map/module.html
+%%WWWDIR%%/app/panels/map/module.js
+%%WWWDIR%%/app/panels/pie/editor.html
+%%WWWDIR%%/app/panels/pie/module.html
+%%WWWDIR%%/app/panels/pie/module.js
+%%WWWDIR%%/app/panels/query/editor.html
+%%WWWDIR%%/app/panels/query/meta.html
+%%WWWDIR%%/app/panels/query/module.html
+%%WWWDIR%%/app/panels/query/module.js
+%%WWWDIR%%/app/panels/query/query.css
+%%WWWDIR%%/app/panels/table/editor.html
+%%WWWDIR%%/app/panels/table/micropanel.html
+%%WWWDIR%%/app/panels/table/modal.html
+%%WWWDIR%%/app/panels/table/module.html
+%%WWWDIR%%/app/panels/table/module.js
+%%WWWDIR%%/app/panels/table/pagination.html
+%%WWWDIR%%/app/panels/terms/editor.html
+%%WWWDIR%%/app/panels/terms/module.html
+%%WWWDIR%%/app/panels/terms/module.js
+%%WWWDIR%%/app/panels/text/editor.html
+%%WWWDIR%%/app/panels/text/module.html
+%%WWWDIR%%/app/panels/text/module.js
+%%WWWDIR%%/app/panels/timepicker/custom.html
+%%WWWDIR%%/app/panels/timepicker/editor.html
+%%WWWDIR%%/app/panels/timepicker/module.html
+%%WWWDIR%%/app/panels/timepicker/module.js
+%%WWWDIR%%/app/panels/timepicker/refreshctrl.html
+%%WWWDIR%%/app/panels/trends/editor.html
+%%WWWDIR%%/app/panels/trends/module.html
+%%WWWDIR%%/app/panels/trends/module.js
+%%WWWDIR%%/app/partials/dashLoader.html
+%%WWWDIR%%/app/partials/dashLoaderShare.html
+%%WWWDIR%%/app/partials/dashboard.html
+%%WWWDIR%%/app/partials/dasheditor.html
+%%WWWDIR%%/app/partials/inspector.html
+%%WWWDIR%%/app/partials/load.html
+%%WWWDIR%%/app/partials/modal.html
+%%WWWDIR%%/app/partials/paneladd.html
+%%WWWDIR%%/app/partials/paneleditor.html
+%%WWWDIR%%/app/partials/panelgeneral.html
+%%WWWDIR%%/app/partials/querySelect.html
+%%WWWDIR%%/app/partials/roweditor.html
+%%WWWDIR%%/build.txt
+@unexec if cmp -s %D/%%WWWDIR%%/config.js %D/%%WWWDIR%%/config.js.sample; then rm -f %D/%%WWWDIR%%/config.js; fi
+%%WWWDIR%%/config.js.sample
+@exec if [ ! -f %B/config.js ]; then cp -p %B/%f %B/config.js; fi
+%%WWWDIR%%/css/animate.min.css
+%%WWWDIR%%/css/bootstrap-responsive.min.css
+%%WWWDIR%%/css/bootstrap.dark.less
+%%WWWDIR%%/css/bootstrap.dark.min.css
+%%WWWDIR%%/css/bootstrap.light.less
+%%WWWDIR%%/css/bootstrap.light.min.css
+%%WWWDIR%%/css/font-awesome.min.css
+%%WWWDIR%%/css/normalize.min.css
+%%WWWDIR%%/css/timepicker.css
+%%WWWDIR%%/font/FontAwesome.otf
+%%WWWDIR%%/font/fontawesome-webfont.eot
+%%WWWDIR%%/font/fontawesome-webfont.svg
+%%WWWDIR%%/font/fontawesome-webfont.ttf
+%%WWWDIR%%/font/fontawesome-webfont.woff
+%%WWWDIR%%/img/glyphicons-halflings-white.png
+%%WWWDIR%%/img/glyphicons-halflings.png
+%%WWWDIR%%/img/kibana.png
+%%WWWDIR%%/img/load.gif
+%%WWWDIR%%/img/load_big.gif
+%%WWWDIR%%/img/small.png
+%%WWWDIR%%/index.html
+%%WWWDIR%%/vendor/bootstrap/less/tests/buttons.html
+%%WWWDIR%%/vendor/bootstrap/less/tests/css-tests.css
+%%WWWDIR%%/vendor/bootstrap/less/tests/css-tests.html
+%%WWWDIR%%/vendor/bootstrap/less/tests/forms-responsive.html
+%%WWWDIR%%/vendor/bootstrap/less/tests/forms.html
+%%WWWDIR%%/vendor/bootstrap/less/tests/navbar-fixed-top.html
+%%WWWDIR%%/vendor/bootstrap/less/tests/navbar-static-top.html
+%%WWWDIR%%/vendor/bootstrap/less/tests/navbar.html
+%%WWWDIR%%/vendor/require/css-build.js
+%%WWWDIR%%/vendor/require/require.js
+%%WWWDIR%%/vendor/require/tmpl.js
+%%WWWDIR%%/vendor/timezone.js
+@dirrm %%WWWDIR%%/vendor/require
+@dirrm %%WWWDIR%%/vendor/bootstrap/less/tests
+@dirrm %%WWWDIR%%/vendor/bootstrap/less
+@dirrm %%WWWDIR%%/vendor/bootstrap
+@dirrm %%WWWDIR%%/vendor
+@dirrm %%WWWDIR%%/img
+@dirrm %%WWWDIR%%/font
+@dirrm %%WWWDIR%%/css
+@dirrm %%WWWDIR%%/app/partials
+@dirrm %%WWWDIR%%/app/panels/trends
+@dirrm %%WWWDIR%%/app/panels/timepicker
+@dirrm %%WWWDIR%%/app/panels/text
+@dirrm %%WWWDIR%%/app/panels/terms
+@dirrm %%WWWDIR%%/app/panels/table
+@dirrm %%WWWDIR%%/app/panels/query
+@dirrm %%WWWDIR%%/app/panels/pie
+@dirrm %%WWWDIR%%/app/panels/map/lib
+@dirrm %%WWWDIR%%/app/panels/map
+@dirrm %%WWWDIR%%/app/panels/hits
+@dirrm %%WWWDIR%%/app/panels/histogram
+@dirrm %%WWWDIR%%/app/panels/filtering
+@dirrm %%WWWDIR%%/app/panels/fields
+@dirrm %%WWWDIR%%/app/panels/derivequeries
+@dirrm %%WWWDIR%%/app/panels/dashcontrol
+@dirrm %%WWWDIR%%/app/panels/column
+@dirrm %%WWWDIR%%/app/panels/bettermap/leaflet/images
+@dirrm %%WWWDIR%%/app/panels/bettermap/leaflet
+@dirrm %%WWWDIR%%/app/panels/bettermap
+@dirrm %%WWWDIR%%/app/panels
+@dirrmtry %%WWWDIR%%/app/dashboards
+@dirrm %%WWWDIR%%/app/components
+@dirrmtry %%WWWDIR%%/app
+@dirrmtry %%WWWDIR%%
