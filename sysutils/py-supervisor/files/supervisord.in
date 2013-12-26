@@ -9,7 +9,10 @@
 # Add the following line to /etc/rc.conf.local or /etc/rc.conf
 # to enable supervisord:
 #
-# supervisord_enable="YES"
+# supervisord_enable="bool"	Set to NO by default.
+#				Set it to YES to enable supervisord.
+# supervisord_config (patch):	Set to %%PREFIX%%/etc/supervisord.conf by default.
+# supervisord_user (username):	Set to root by default.
 #
 
 . /etc/rc.subr
@@ -17,12 +20,15 @@
 name="supervisord"
 rcvar=supervisord_enable
 
-command="%%PREFIX%%/bin/${name}"
-command_interpreter="%%PYTHON_CMD%%"
-pidfile="%%PIDDIR%%/${name}.pid"
-
 load_rc_config $name
 
 : ${supervisord_enable="NO"}
+: ${supervisord_config="%%PREFIX%%/etc/supervisord.conf"}
+: ${supervisord_user="root"}
+
+command="%%PREFIX%%/bin/${name}"
+command_args="-u ${supervisord_user} -c ${supervisord_config}"
+command_interpreter="%%PYTHON_CMD%%"
+pidfile="%%PIDDIR%%/${name}.pid"
 
 run_rc_command "$1"
