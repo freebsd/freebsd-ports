@@ -33,7 +33,9 @@ etc/nagios/resource.cfg-sample
 %%NAGIOSWWWDIR%%/cgi-bin/summary.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/tac.cgi
 %%NAGIOSWWWDIR%%/cgi-bin/trends.cgi
-%%NAGIOSWWWDIR%%/config.inc.php
+@unexec if cmp -s %D/%%NAGIOSWWWDIR%%/config.inc.php.sample %D/%%NAGIOSWWWDIR%%/config.inc.php; then rm -f %D/%%NAGIOSWWWDIR%%/config.inc.php; fi
+%%NAGIOSWWWDIR%%/config.inc.php.sample
+@exec if [ ! -f %D/%%NAGIOSWWWDIR%%/config.inc.php ] ; then cp -p %D/%F %B/config.inc.php; fi
 %%NAGIOSWWWDIR%%/contexthelp/A1.html
 %%NAGIOSWWWDIR%%/contexthelp/A2.html
 %%NAGIOSWWWDIR%%/contexthelp/A3.html
