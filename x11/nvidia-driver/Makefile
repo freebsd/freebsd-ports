@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	319.32
+DISTVERSION?=	331.20
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
 CATEGORIES=	x11
@@ -99,7 +99,7 @@ IGNORE=		requires fairly recent FreeBSD-STABLE, or FreeBSD-CURRENT
 .endif
 
 .if ${NVVERSION} < 1952200
-# ABI version is hardcoded inside the binary, so specify it explicitly
+# ABI version is hardcoded inside the binary, so specify it explicitly here
 LIB_DEPENDS=	libm.so.3:${PORTSDIR}/misc/compat5x
 .endif
 
@@ -242,6 +242,10 @@ post-install: .SILENT
 	${REINPLACE_CMD} -e '/libXvMCNVIDIA/d' ${TMPPLIST}
 .else	# some applications need this symlink (see PR ports/72877)
 	${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
+.endif
+.if ${NVVERSION} < 3311300
+	${REINPLACE_CMD} -E '/lib(nvidia-)?(EGL|eglcore|GLESv|glsi)/d' \
+		${TMPPLIST}
 .endif
 .if ${NVVERSION} >= 1952200
 	${REINPLACE_CMD} -e '/does not support PAE/,+1d' ${PKGMESSAGE}
