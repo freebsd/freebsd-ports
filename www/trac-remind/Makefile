@@ -16,17 +16,16 @@ RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 NO_BUILD=	yes
 USE_ZIP=	yes
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 
 PLIST_FILES=	bin/tracremind.py etc/tracremind.conf
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," \
 		 -e "s,%%PYTHON%%,${PYTHON_CMD}," ${WRKSRC}/tracremind.py
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/tracremind.py ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/tracremind.conf ${PREFIX}/etc
+	${INSTALL_SCRIPT} ${WRKSRC}/tracremind.py ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/tracremind.conf ${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>
