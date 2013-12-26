@@ -11,14 +11,13 @@ MAINTAINER=	delphus@gmail.com
 COMMENT=	Another mp3 player
 
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
 USES=		gmake
 
-MAN1=		amp.1
-PLIST_FILES=	bin/amp
+PLIST_FILES=	bin/amp \
+		man/man1/amp.1.gz
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/amp ${PREFIX}/bin
-	@ ${INSTALL_MAN} ${WRKSRC}/amp.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/amp ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/amp.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
