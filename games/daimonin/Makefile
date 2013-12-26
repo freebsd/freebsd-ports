@@ -48,8 +48,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-wrapper.c
 .endif
 
 .if ${PORT_OPTIONS:MMUSIC}
-DEPRECATED=	Depends on expired games/daimonin-music
-EXPIRATION_DATE=2013-12-19
 RUN_DEPENDS+=	${DATADIR}/media/AnichGiantTrouble.ogg:${PORTSDIR}/games/daimonin-music
 .endif
 
