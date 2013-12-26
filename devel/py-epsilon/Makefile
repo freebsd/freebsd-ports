@@ -19,8 +19,6 @@ CONFLICTS=	brlcad-[0-9]*
 USES=		twisted
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	Epsilon
-NO_BUILD=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
