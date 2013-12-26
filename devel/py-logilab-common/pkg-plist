@@ -87,6 +87,9 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/registry.py
 %%PYTHON_SITELIBDIR%%/logilab/common/registry.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/registry.pyo
+%%PYTHON_SITELIBDIR%%/logilab/common/setup.py
+%%PYTHON_SITELIBDIR%%/logilab/common/setup.pyc
+%%PYTHON_SITELIBDIR%%/logilab/common/setup.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/shellutils.py
 %%PYTHON_SITELIBDIR%%/logilab/common/shellutils.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/shellutils.pyo
@@ -309,11 +312,11 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/xmlutils.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/xmlutils.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/common/ureports
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/same_dir/subdir
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/same_dir
-@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/sub
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/subdir_differ_dir/subdir
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/subdir_differ_dir
+@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/sub
+@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/same_dir/subdir
+@dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/same_dir
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/reference_dir/subdir
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/reference_dir
 @dirrm %%PYTHON_SITELIBDIR%%/logilab/common/test/data/lmfp
