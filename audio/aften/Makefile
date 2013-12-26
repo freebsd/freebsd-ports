@@ -11,7 +11,6 @@ COMMENT=	ATSC A/52 audio encoder
 
 USE_BZIP2=	yes
 
-NO_STAGE=	yes
 USES=		cmake:outsource
 
 OPTIONS_DEFINE=		SHARED_LIB CXX_BINDINGS DOUBLE
