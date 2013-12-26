@@ -15,4 +15,135 @@ etc/sphinx.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/sphinx.html
 %%PORTDOCS%%%%DOCSDIR%%/sphinx.txt
 %%PORTDOCS%%%%DOCSDIR%%/sphinx.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/java/MANIFEST.MF
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/java/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/java/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/java/SphinxClient.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/java/SphinxException.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/java/SphinxMatch.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/java/SphinxResult.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/java/SphinxWordInfo.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/java/mk.cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/java/mkdoc.cmd
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/java/test.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/COPYING
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/Makefile.am
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/Makefile.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/build.mk
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/buildconf.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/config.guess
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/config.sub
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/configure
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/configure.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/install-sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/libsphinxclient.vcproj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/ltmain.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/missing
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/smoke_ref.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/smoke_test.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/smoke_test.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/sphinxclient.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/sphinxclient.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/sphinxclient_config.h.in
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/test.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/test.sln
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/test.vcproj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/test03.sln
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/libsphinxclient/test03.vcproj
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/README.rdoc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/Rakefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/init.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/install.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/lib/sphinx.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/lib/sphinx/client.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/lib/sphinx/request.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/lib/sphinx/response.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/client_response_spec.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/client_spec.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/default_search.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/default_search_index.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/excerpt_custom.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/excerpt_default.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/excerpt_flags.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/field_weights.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/filter.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/filter_exclude.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/filter_float_range.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/filter_float_range_exclude.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/filter_range.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/filter_range_exclude.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/filter_range_int64.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/filter_ranges.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/filters.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/filters_different.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/geo_anchor.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/group_by_attr.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/group_by_attrpair.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/group_by_day.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/group_by_day_sort.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/group_by_month.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/group_by_week.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/group_by_year.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/group_distinct.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/id_range.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/id_range64.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/index_weights.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/keywords.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/limits.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/limits_cutoff.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/limits_max.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/limits_max_cutoff.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/match_all.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/match_any.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/match_boolean.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/match_extended.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/match_extended2.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/match_fullscan.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/match_phrase.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/max_query_time.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/miltiple_queries.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/ranking_bm25.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/ranking_none.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/ranking_proximity.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/ranking_proximity_bm25.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/ranking_wordcount.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/retries.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/retries_delay.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/select.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/set_override.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/sort_attr_asc.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/sort_attr_desc.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/sort_expr.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/sort_extended.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/sort_relevance.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/sort_time_segments.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/sphinxapi.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/update_attributes.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/update_attributes_mva.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/fixtures/weights.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/sphinx/sphinx-id64.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/sphinx/sphinx.conf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/spec/sphinx/sphinx_test.sql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/sphinx.yml.tpl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/tasks/sphinx.rake
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/ruby/test.rb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/sphinxapi.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/sphinxapi.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/test.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/test.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/test2.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/api/test2.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.sql
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api/ruby/tasks
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api/ruby/spec/sphinx
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api/ruby/spec/fixtures
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api/ruby/spec
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api/ruby/lib/sphinx
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api/ruby/lib
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api/ruby
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api/libsphinxclient
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api/java
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/api
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
