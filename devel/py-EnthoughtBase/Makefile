@@ -3,6 +3,7 @@
 
 PORTNAME=	EnthoughtBase
 PORTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://enthought.com/repo/ets/ \
 		CHEESESHOP
@@ -12,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Core Packages for the Enthought Tool Suite
 
 USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
