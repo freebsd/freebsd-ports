@@ -23,18 +23,15 @@ PLIST_FILES=	lib/libargp.la lib/libargp.a \
 		lib/libargp.so lib/libargp.so.0 \
 		include/argp.h
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 pre-configure:
 	@cd ${WRKSRC}; ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} --automake
 
 do-install:
 	@cd ${WRKSRC}; \
-	${INSTALL_DATA} argp.h ${PREFIX}/include; \
-	${INSTALL_DATA} .libs/libargp.la ${PREFIX}/lib; \
-	${INSTALL_DATA} .libs/libargp.a ${PREFIX}/lib; \
-	${INSTALL_PROGRAM} .libs/libargp.so.0 ${PREFIX}/lib
-	@cd ${PREFIX}/lib && ${LN} -sf libargp.so.0 libargp.so
+	${INSTALL_DATA} argp.h ${STAGEDIR}${PREFIX}/include; \
+	${INSTALL_DATA} .libs/libargp.la ${STAGEDIR}${PREFIX}/lib; \
+	${INSTALL_DATA} .libs/libargp.a ${STAGEDIR}${PREFIX}/lib; \
+	${INSTALL_LIB} .libs/libargp.so.0 ${STAGEDIR}${PREFIX}/lib
+	@cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libargp.so.0 libargp.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
