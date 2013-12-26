@@ -11,10 +11,10 @@ COMMENT=	Extremely powerful network monitoring system
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
-USES=		iconv perl5
+USES=		iconv perl5 uidfix
 USE_PERL5=	build
 USE_AUTOTOOLS=	autoconf libltdl
 USE_PHP=	yes
@@ -83,41 +83,27 @@ NANOSLEEP_DESC=		Use nanosleep in event timing
 EVENT_BROKER_DESC=	Enable event broker functionality
 UNHANDLED_HACK_DESC=	Display passive checks in unhandled queries
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_SUB=
 
-.if ${PORT_OPTIONS:MEMBEDDED_PERL}
-USE_PERL5+=	run
-CONFIGURE_ARGS+=--enable-embedded-perl \
-		--with-perlcache
-PLIST_SUB+=	EMBEDDED_PERL=""
-.else
-PLIST_SUB+=	EMBEDDED_PERL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNANOSLEEP}
-CONFIGURE_ARGS+=--enable-nanosleep
-.endif
-
-.if ${PORT_OPTIONS:MEVENT_BROKER}
-CONFIGURE_ARGS+=--enable-event-broker
-.else
-CONFIGURE_ARGS+=--disable-event-broker
-.endif
+EMBEDDED_PERL_USE=	perl5=run
+EMBEDDED_PERL_CONFIGURE_ENABLE=	embedded-perl
+EMBEDDED_PERL_CONFIGURE_WITH=	perlcache
+NANOSLEEP_CONFIGURE_ENABLE=	nanosleep
+EVENT_BROKER_CONFIGURE_ENABLE=	event-broker
 
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
+.include <bsd.port.options.mk>
+
 post-patch:
+	@${REINPLACE_CMD} -e '/^INSTALL_OPTS=/d' `${FIND} ${WRKSRC} -name Makefile.in`
 .if ${PORT_OPTIONS:MUNHANDLED_HACK}
 	@${REINPLACE_CMD} -e 's#;serviceprops=42\&#;serviceprops=10\&#g' \
 		-e 's#;hostprops=42\"#;hostprops=10\"#g' ${WRKSRC}/html/side.php
 .endif
 
 post-install:
-	@${CHMOD} 775 ${NAGIOSDIR} ${NAGIOSDIR}/archives ${NAGIOSDIR}/checkresults ${NAGIOSDIR}/rw
-	@${CHOWN} ${NAGIOSUSER}:${NAGIOSGROUP} ${NAGIOSDIR} ${NAGIOSDIR}/archives ${NAGIOSDIR}/checkresults
-	@${CHOWN} ${NAGIOSUSER}:${WWWGRP} ${NAGIOSDIR}/rw
-	@${CAT} ${PKGMESSAGE}
+	@${MV} ${STAGEDIR}${PREFIX}/${NAGIOSWWWDIR}/config.inc.php ${STAGEDIR}${PREFIX}/${NAGIOSWWWDIR}/config.inc.php.sample
 
 .include <bsd.port.mk>
