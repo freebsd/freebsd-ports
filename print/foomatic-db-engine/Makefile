@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	engine
-PORTVERSION=	4.0.7
+PORTVERSION=	4.0.9
 PORTEPOCH=	2
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/foomatic/ \
@@ -12,37 +12,32 @@ PKGNAMEPREFIX=	foomatic-db-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	foomatic
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Foomatic database engine
 
-BUILD_DEPENDS=	curl:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-PROJECTHOST=	bsdistfiles
 USE_GNOME=	libxml2
-USES=		perl5
-USE_GMAKE=	yes
+USES=		gmake perl5
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	PERL=${PERL} LIBDIR=${PREFIX}/share/foomatic/
+CONFIGURE_ENV=	PERL=${PERL} LIBDIR=${PREFIX}/share/foomatic/ \
+		LIB_CUPS=${LOCALBASE}/libexec/cups \
+		CUPS_FILTERS=${LOCALBASE}/libexec/cups/filters \
+		CUPS_BACKENDS=${LOCALBASE}/libexec/cups/backends
 
-MAN1=		foomatic-printjob.1 foomatic-ppdfile.1 foomatic-perl-data.1 \
-		foomatic-configure.1 foomatic-compiledb.1 foomatic-combo-xml.1 \
-		foomatic-ppd-options.1
-MAN8=		foomatic-preferred-driver.8 \
-		foomatic-kitload.8 foomatic-getpjloptions.8 \
-		foomatic-addpjloptions.8
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		"s,sysconfdir=/etc,sysconfdir=\'${PREFIX}/etc\',g ; \
 		 s,/usr/local/etc:,${PREFIX}/etc:,g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
 		"s,/usr/local/bin:,${PREFIX}/bin:,g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		"/ln -sf foo/ s,foomatic-ppdfile,$$\(BINDIR\)/foomatic-ppdfile," \
+		-e "/if \[ -d/ s,LIB_CUPS,PREFIX," ${WRKSRC}/Makefile.in
 
 post-install:
 .for file in foomatic-combo-xml foomatic-perl-data
-	@${STRIP_CMD} ${PREFIX}/bin/${file}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
 
 .include <bsd.port.mk>
