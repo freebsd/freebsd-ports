@@ -12,16 +12,14 @@ COMMENT=	Microsoft "compress.exe/expand.exe" compatible (de)compressor
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
-NO_STAGE=	yes
 
-MAN1=		mscompress.1 msexpand.1
-
-PLIST_FILES=	bin/mscompress bin/msexpand
+PLIST_FILES=	bin/mscompress bin/msexpand \
+		man/man1/mscompress.1.gz man/man1/msexpand.1.gz
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mscompress ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/msexpand ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/mscompress.1 ${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/msexpand.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/mscompress ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/msexpand ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/mscompress.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/msexpand.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
