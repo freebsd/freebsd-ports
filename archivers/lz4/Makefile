@@ -10,13 +10,12 @@ MASTER_SITES=	https://dl.dropboxusercontent.com/u/59565338/LZ4/ \
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Fast compressor using LZ4 algorithm
 
-NO_STAGE=		yes
 USES=		gmake
 ALL_TARGET=	lz4c
 
 PLIST_FILES=	bin/lz4c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lz4c.exe ${PREFIX}/bin/lz4c
+	${INSTALL_PROGRAM} ${WRKSRC}/lz4c.exe ${STAGEDIR}${PREFIX}/bin/lz4c
 
 .include <bsd.port.mk>
