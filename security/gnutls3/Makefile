@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnutls
-PORTVERSION=	3.1.17
+PORTVERSION=	3.1.18
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.gnutls.org/gcrypt/gnutls/v3.1/
 PKGNAMESUFFIX=	${GNUTLS_SUFFIX}
@@ -24,7 +24,7 @@ USE_AUTOTOOLS=	libtool
 USE_GNOME=	ltverhack
 USE_LDCONFIG=	${PREFIX}/lib/gnutls3
 USE_XZ=		yes
-CPPFLAGS=	-I${LOCALBASE}/include -fPIC
+CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
 LDFLAGS=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=		MAKEINFO=${PREFIX}/bin/makeinfo
