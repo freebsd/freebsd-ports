@@ -10,8 +10,8 @@ MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Portable library and utility to use Microsoft cabinet files (.cab)
 
 USE_LDCONFIG=	yes
-NO_STAGE=	yes
 
+USES=		uidfix
 SRCFILE=	${WRKSRC}/listcab.cpp
 PROGFILE=	${SRCFILE:S/.cpp$//}
 MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
@@ -19,10 +19,10 @@ MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
 post-build:
 	${CXX} ${CXXFLAGS} -o ${PROGFILE} ${SRCFILE} -L${WRKSRC} -lcabinet
 
-pre-su-install:
-	${MKDIR} ${PREFIX}/include/cabinet
+pre-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/cabinet
 
 post-install:
-	${INSTALL_PROGRAM} ${PROGFILE} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${PROGFILE} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
