@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	enzyme
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	multimedia python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +13,7 @@ COMMENT=	Python module to parse metadata in video files
 LICENSE=	GPLv3
 
 USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
