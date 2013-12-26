@@ -1,13 +1,19 @@
---- Makefile.orig	2005-12-06 19:29:22.000000000 +0200
-+++ Makefile	2010-01-12 12:17:24.000000000 +0200
-@@ -1,3 +1,4 @@
-+CC = cc
- PREFIX = /usr/local
+--- Makefile.orig	2005-12-06 20:29:22.000000000 +0300
++++ Makefile	2013-12-25 05:28:09.226755504 +0400
+@@ -1,15 +1,17 @@
+-PREFIX = /usr/local
  SHAREDIR = $(PREFIX)/share/keyboardcast
  APPSDIR = $(PREFIX)/share/applications
-@@ -9,7 +10,10 @@
- LDLIBS += -lXmu
- CFLAGS += -Wall -O2 -DPREFIX=\"$(PREFIX)\"
+ BINDIR = $(PREFIX)/bin
+ 
+ PKGS = gtk+-2.0 libwnck-1.0 libglade-2.0
+-CFLAGS = `pkg-config --cflags $(PKGS)`
++CFLAGS += `pkg-config --cflags $(PKGS)`
+ LDLIBS = `pkg-config --libs $(PKGS)`
+-LDLIBS += -lXmu
+-CFLAGS += -Wall -O2 -DPREFIX=\"$(PREFIX)\"
++LDLIBS += -lXmu -lX11
++CFLAGS += -Wall -DPREFIX=\"$(PREFIX)\"
  
 -keyboardcast: keyboardcast.o window-list.o grab-window.o
 +all: keyboardcast
