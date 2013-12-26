@@ -3,6 +3,7 @@
 
 PORTNAME=	qtile
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 
 MAINTAINER=	wg@FreeBSD.org
@@ -21,19 +22,17 @@ GH_TAGNAME=	v0.6
 USE_GNOME=	pygobject pygtk2
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-PORTDOCS=	CHANGELOG INSTALL.rst LICENSE README.rst
+PORTDOCS=	CHANGELOG INSTALL.rst README.rst
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-. for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-. endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
