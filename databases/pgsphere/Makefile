@@ -11,7 +11,7 @@ MASTER_SITES=	http://pgfoundry.org/frs/download.php/2558/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Spherical data types, functions, and operators for PostgreSQL
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=	DOCS
 
