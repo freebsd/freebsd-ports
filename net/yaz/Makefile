@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaz
-PORTVERSION=	5.0.5
+PORTVERSION=	5.0.9
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
@@ -11,9 +11,14 @@ COMMENT=	Z39.50/SR client and API library
 
 LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
 
-USE_OPENSSL=	yes
+USES=		iconv pathfix pkgconfig shebangfix tcl
+SHEBANG_FILES=	util/yaz-asncomp
+SHEBANG_LANG=	tcl
+tcl_OLD_CMD=	/usr/bin/tclsh
+tcl_CMD=	${TCLSH}
+
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig iconv
+USE_OPENSSL=	yes
 USE_GNOME=	libxml2 libxslt
 USE_LDCONFIG=	yes
 
@@ -24,8 +29,14 @@ CONFIGURE_ARGS+=--enable-shared --with-openssl=${OPENSSLBASE} \
 
 OPTIONS_DEFINE=	DOCS
 
+post-patch:
+	@${REINPLACE_CMD} 's|tclsh |tclsh8.6 |' ${WRKSRC}/configure
+	
 post-configure:
 	@${REINPLACE_CMD} -e 's,[$$]{datarootdir}/man,${PREFIX}/man,' \
 		${WRKSRC}/doc/Makefile
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.5
 
 .include <bsd.port.mk>
