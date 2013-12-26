@@ -894,7 +894,6 @@ share/uhd/utils/usrp_n2xx_net_burner_gui.py
 %%PUSRP1%%@dirrm share/uhd/fpga/usrp1/rev4
 %%PUSRP1%%@dirrm share/uhd/fpga/usrp1
 %%PUSRP1%%@dirrm share/uhd/fpga
-@dirrm share/uhd
 @dirrm share/uhd/examples
 @dirrm share/uhd/tests
 @dirrm share/uhd/utils
