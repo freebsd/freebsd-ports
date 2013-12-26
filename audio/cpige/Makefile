@@ -12,7 +12,6 @@ MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Icecast/Shoutcast stream ripper
 
 USES=		gmake
-NO_STAGE=	yes
 
 MAKE_ARGS=	CC="${CC}"
 
@@ -24,6 +23,6 @@ STRIP=
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
