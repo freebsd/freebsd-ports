@@ -1,6 +1,6 @@
---- Makefile.orig	2011-06-09 15:07:08.000000000 +0100
-+++ Makefile	2012-03-21 19:59:55.548558697 +0000
-@@ -17,9 +17,7 @@
+--- Makefile.orig	2013-11-18 20:57:48.000000000 +0400
++++ Makefile	2013-11-24 00:25:20.393194109 +0400
+@@ -17,28 +17,26 @@
  VERSION=0.0
  
  # Installation prefix...
@@ -10,17 +10,32 @@
 +PREFIX?=/usr/local
  
  # Pathnames for this package...
- BIN=$(PREFIX)/bin
-@@ -31,13 +29,14 @@
- SHAREQPDL=$(PREFIX)/share/foo2qpdl
- SHARESLX=$(PREFIX)/share/foo2slx
- SHAREHC=$(PREFIX)/share/foo2hiperc
+-BIN=$(PREFIX)/bin
+-SHAREZJS=$(PREFIX)/share/foo2zjs
+-SHAREOAK=$(PREFIX)/share/foo2oak
+-SHAREHP=$(PREFIX)/share/foo2hp
+-SHAREXQX=$(PREFIX)/share/foo2xqx
+-SHARELAVA=$(PREFIX)/share/foo2lava
+-SHAREQPDL=$(PREFIX)/share/foo2qpdl
+-SHARESLX=$(PREFIX)/share/foo2slx
+-SHAREHC=$(PREFIX)/share/foo2hiperc
+-SHAREHBPL=$(PREFIX)/share/foo2hbpl
 -MANDIR=$(PREFIX)/share/man
-+MANDIR=$(PREFIX)/man
- DOCDIR=$(PREFIX)/share/doc/foo2zjs/
+-DOCDIR=$(PREFIX)/share/doc/foo2zjs/
 -INSTALL=install
++BIN=$(DESTDIR)$(PREFIX)/bin
++SHAREZJS=$(DESTDIR)$(PREFIX)/share/foo2zjs
++SHAREOAK=$(DESTDIR)$(PREFIX)/share/foo2oak
++SHAREHP=$(DESTDIR)$(PREFIX)/share/foo2hp
++SHAREXQX=$(DESTDIR)$(PREFIX)/share/foo2xqx
++SHARELAVA=$(DESTDIR)$(PREFIX)/share/foo2lava
++SHAREQPDL=$(DESTDIR)$(PREFIX)/share/foo2qpdl
++SHARESLX=$(DESTDIR)$(PREFIX)/share/foo2slx
++SHAREHC=$(DESTDIR)$(PREFIX)/share/foo2hiperc
++SHAREHBPL=$(DESTDIR)$(PREFIX)/share/foo2hbpl
++MANDIR=$(DESTDIR)$(PREFIX)/man
++DOCDIR=$(DESTDIR)$(PREFIX)/share/doc/foo2zjs
 +INSTALL?=install
-+INSTALL_MAN?=install
  ROOT=root
  
  # Pathnames for referenced packages...
@@ -29,7 +44,7 @@
  
  # User ID's
  LPuid=-oroot
-@@ -282,7 +281,7 @@
+@@ -291,7 +289,7 @@
  
  # Compiler flags
  #CFLAGS +=	-O2 -Wall -Wno-unused-but-set-variable
@@ -38,7 +53,7 @@
  #CFLAGS +=	-g
  
  #
-@@ -556,10 +555,9 @@
+@@ -599,10 +597,9 @@
  #
  # Installation rules
  #
@@ -52,16 +67,48 @@
  	#
  	# If you use CUPS, then restart the spooler:
  	#	make cups
-@@ -595,7 +593,7 @@
+@@ -617,6 +614,7 @@
+ 	# On Ubuntu 7.10/8.x/9.x, run "system-config-printer".
+ 
+ install-test:
++	echo "install-test:"
  	#
+ 	# Installation Dependencies...
+ 	#
+@@ -636,19 +634,22 @@
+ 	fi
+ 	# ... OK!
+ 	#
++	echo "install-test: exit"
      
  
 -UDEVBIN=$(DESTDIR)/bin/
-+UDEVBIN=$(DESTDIR)$(PREFIX)/bin/
++UDEVBIN=$(DESTDIR)$(PREFIX)/bin
  
  install-prog:
++	echo "install-prog:"
  	#
-@@ -625,20 +623,13 @@
+ 	# Install driver, wrapper, and development tools
+ 	#
+ 	$(INSTALL) -d $(BIN)
++	$(INSTALL) -s -c $(PROGS) $(BIN)
++	$(INSTALL) -c $(SHELLS) $(BIN)
+-	$(INSTALL) -c $(PROGS) $(SHELLS) $(BIN)/
+ 	if [ "$(BINPROGS)" != "" ]; then \
+ 	    $(INSTALL) -d $(UDEVBIN); \
+-	    $(INSTALL) -c $(BINPROGS) $(UDEVBIN); \
++	    $(INSTALL) -s -c $(BINPROGS) $(UDEVBIN); \
+ 	fi
+ 	#
+ 	# Install gamma correction files.  These are just templates,
+@@ -663,25 +665,20 @@
+ 	$(INSTALL) -d $(SHAREXQX)/
+ 	$(INSTALL) -d $(SHARELAVA)/
+ 	$(INSTALL) -d $(SHAREHC)/
++	echo "install-prog: exit"
+ 
+ install-foo:
++	echo "install-foo:"
  	#
  	# Remove obsolete foomatic database files from previous versions
  	#
@@ -85,7 +132,7 @@
  		echo install -d $(FOODB)/$$dir/; \
  		$(INSTALL) -d $(FOODB)/$$dir/; \
  		echo install -m 644 foomatic-db/$$dir/*.xml $(FOODB)/$$dir/; \
-@@ -655,15 +646,6 @@
+@@ -698,28 +695,20 @@
  	    echo "*** ... wherever foomatic is stashed on your machine."; \
  	    echo "***"; \
  	fi
@@ -98,23 +145,40 @@
 -	    cd /var/cache/foomatic/compiled; \
 -	    foomatic-combo-xml -O >overview.xml; \
 -	fi
++	echo "install-foo: exit"
  
  install-icc2ps:
  	#
-@@ -783,9 +765,9 @@
+ 	# Install ICM to Postscript file conversion utility
+ 	#
+-	cd icc2ps; $(MAKE) PREFIX=$(PREFIX) install
++	cd icc2ps; $(MAKE) PREFIX=$(DESTDIR)$(PREFIX) install
+ 
+ install-osx-hotplug:
+ ifeq ($(UNAME),Darwin)
+ 	#
+ 	# Install Mac OSX hotplug utility
+ 	#
+-	cd osx-hotplug; $(MAKE) PREFIX=$(PREFIX) install
++	cd osx-hotplug; $(MAKE) PREFIX=$(DESTDIR)$(PREFIX) install
+ endif
+ 
+ install-crd:
+@@ -833,10 +822,10 @@
  	    fi; \
  	done
  
 -MODEL=$(DESTDIR)/usr/share/cups/model
 -LOCALMODEL=$(DESTDIR)/usr/local/share/cups/model
--PPD=$(DESTDIR)/usr/share/ppd
 +MODEL=$(DESTDIR)$(PREFIX)/share/cups/model
 +LOCALMODEL=$(DESTDIR)$(PREFIX)/share/cups/model
+ MACMODEL=/Library/Printers/PPDs/Contents/Resources
+-PPD=$(DESTDIR)/usr/share/ppd
 +PPD=$(DESTDIR)$(PREFIX)/ppd
  VARPPD=/var/lp/ppd
  install-ppd:
  	#
-@@ -819,6 +801,7 @@
+@@ -871,6 +860,7 @@
  	fi
  	#
  	export PATH=$$PATH:`pwd`:; \
@@ -122,7 +186,7 @@
  	if [ -d $(MODEL) ]; then \
  	    rm -f $(MODEL)/KonicaMinolta*; \
  	    cd PPD; \
-@@ -835,9 +818,9 @@
+@@ -894,9 +884,9 @@
  	    done; \
  	fi
  
@@ -135,74 +199,3 @@
  
  install-desktop:
  	#
-@@ -1344,38 +1327,38 @@
- 	#
- 	# Install manual pages
- 	#
--	$(INSTALL) -d -m 755 $(MANDIR)
--	$(INSTALL) -d -m 755 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 foo2zjs.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 foo2zjs-wrapper.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 zjsdecode.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 foo2oak.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 foo2oak-wrapper.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 oakdecode.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 foo2hp.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 foo2hp2600-wrapper.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 xqxdecode.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 foo2xqx.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 foo2xqx-wrapper.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 lavadecode.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 foo2lava.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 foo2lava-wrapper.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 qpdldecode.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 foo2qpdl.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 foo2qpdl-wrapper.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 opldecode.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 slxdecode.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 foo2slx.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 foo2slx-wrapper.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 foo2hiperc.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 foo2hiperc-wrapper.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 hipercdecode.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 gipddecode.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 hbpldecode.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 foo2zjs-pstops.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 arm2hpdl.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 usb_printerid.1 $(MANDIR)/man1/
--	$(INSTALL) -c -m 644 printer-profile.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -d -m 755 $(MANDIR)
-+	$(INSTALL_MAN) -d -m 755 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 foo2zjs.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 foo2zjs-wrapper.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 zjsdecode.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 foo2oak.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 foo2oak-wrapper.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 oakdecode.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 foo2hp.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 foo2hp2600-wrapper.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 xqxdecode.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 foo2xqx.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 foo2xqx-wrapper.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 lavadecode.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 foo2lava.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 foo2lava-wrapper.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 qpdldecode.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 foo2qpdl.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 foo2qpdl-wrapper.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 opldecode.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 slxdecode.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 foo2slx.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 foo2slx-wrapper.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 foo2hiperc.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 foo2hiperc-wrapper.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 hipercdecode.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 gipddecode.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 hbpldecode.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 foo2zjs-pstops.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 arm2hpdl.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 usb_printerid.1 $(MANDIR)/man1/
-+	$(INSTALL_MAN) -c -m 644 printer-profile.1 $(MANDIR)/man1/
- 	cd icc2ps; $(MAKE) install-man
- ifeq ($(UNAME),Darwin)
- 	cd osx-hotplug; $(MAKE) install-man
