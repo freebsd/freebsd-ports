@@ -1,4 +1,6 @@
-This is the Terminal emulator application. Terminal is a lightweight and
-easy to use terminal emulator for the X windowing system.
+Terminal is a modern terminal emulator for the Unix/Linux desktop,
+primarily for the Xfce desktop environment. It's a lightweight emulator
+based on the VTE widget, easy to use and provides an optional drop-down
+window.
 
-WWW: http://www.xfce.org/projects
+WWW: http://www.xfce.org/
