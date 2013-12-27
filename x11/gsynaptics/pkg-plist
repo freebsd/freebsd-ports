@@ -1,5 +1,7 @@
 bin/gsynaptics
 bin/gsynaptics-init
+man/man1/gsynaptics-init.1.gz
+man/man1/gsynaptics.1.gz
 share/applications/gsynaptics.desktop
 share/gnome/autostart/gsynaptics-init.desktop
 share/gnome/help/gsynaptics/C/gsynaptics.xml
