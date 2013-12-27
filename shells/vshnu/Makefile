@@ -13,8 +13,8 @@ COMMENT=	New Visual Shell
 BUILD_DEPENDS=	p5-Term-Screen>=0:${PORTSDIR}/devel/p5-Term-Screen
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
+SHEBANG_FILES=	*.pl
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
