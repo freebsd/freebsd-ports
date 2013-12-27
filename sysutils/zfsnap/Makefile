@@ -18,7 +18,6 @@ GH_COMMIT=	2228749
 PERIODICDIR?=	${PREFIX}/etc/periodic
 PLIST_SUB+=	PERIODICDIR="${PERIODICDIR:S,^${PREFIX}/,,}"
 
-NO_STAGE=	yes
 do-patch:
 .for period in hourly daily weekly monthly reboot
 	@${SED} -e "s/xPERIODICx/${period}/g" -e "s#xPREFIXx#${PREFIX}/sbin#g" ${WRKSRC}/xPERIODICx_zfSnap.sh > ${WRKSRC}/${period}_zfSnap.sh
@@ -28,16 +27,13 @@ do-patch:
 .endfor
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/zfSnap.sh ${PREFIX}/sbin/zfSnap
+	${INSTALL_SCRIPT} ${WRKSRC}/zfSnap.sh ${STAGEDIR}${PREFIX}/sbin/zfSnap
 .for period in hourly daily weekly monthly
-	@${MKDIR} ${PERIODICDIR}/${period}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${period}_zfSnap.sh ${PERIODICDIR}/${period}/402.zfSnap
-	@${INSTALL_SCRIPT} ${WRKSRC}/${period}_zfSnap_delete.sh ${PERIODICDIR}/${period}/403.zfSnap_delete
+	@${MKDIR} ${STAGEDIR}${PERIODICDIR}/${period}
+	${INSTALL_SCRIPT} ${WRKSRC}/${period}_zfSnap.sh ${STAGEDIR}${PERIODICDIR}/${period}/402.zfSnap
+	${INSTALL_SCRIPT} ${WRKSRC}/${period}_zfSnap_delete.sh ${STAGEDIR}${PERIODICDIR}/${period}/403.zfSnap_delete
 .endfor
-	@${MKDIR} ${PERIODICDIR}/reboot
-	@${INSTALL_SCRIPT} ${WRKSRC}/reboot_zfSnap.sh ${PERIODICDIR}/reboot/402.zfSnap
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PERIODICDIR}/reboot
+	${INSTALL_SCRIPT} ${WRKSRC}/reboot_zfSnap.sh ${STAGEDIR}${PERIODICDIR}/reboot/402.zfSnap
 
 .include <bsd.port.mk>
