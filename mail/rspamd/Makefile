@@ -1,23 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	0.6.5
+PORTVERSION=	0.6.6
 CATEGORIES=	mail
+MASTER_SITES=	http://rspamd.com/downloads/
 
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Fast spam filtering system
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libgmime-2.4.so:${PORTSDIR}/mail/gmime24 \
 		libevent.so:${PORTSDIR}/devel/libevent
-
-USE_GITHUB=		yes
-GH_ACCOUNT=		vstakhov
-GH_PROJECT=		${PORTNAME}
-GH_TAG=		${PORTVERSION}
-GH_COMMIT=		a48634e
 
 OPTIONS_DEFINE=	GPERF JUDY REDIRECTOR
 GPERF_DESC=		google perf-tools profiling

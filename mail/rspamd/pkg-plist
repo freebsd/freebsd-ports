@@ -14,6 +14,7 @@ etc/rspamd/lua/regexp/headers.lua
 etc/rspamd/lua/regexp/lotto.lua
 etc/rspamd/lua/rspamd.classifiers.lua
 etc/rspamd/lua/rspamd.lua
+etc/rspamd/lua/hfilter.lua
 %%DATADIR%%/lua/emails.lua
 %%DATADIR%%/lua/forged_recipients.lua
 %%DATADIR%%/lua/ip_score.lua
