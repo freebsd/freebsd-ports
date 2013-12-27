@@ -14,7 +14,6 @@ COMMENT=	File I/O related functions and classes
 USE_BZIP2=		yes
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	FileUtils
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
