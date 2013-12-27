@@ -9,11 +9,10 @@ MASTER_SITES=	SF
 MAINTAINER=	miki@ceti.pl
 COMMENT=	Tool to decode yEnc encoded files
 
-MAN1=		yydecode.1
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/yydecode
+PLIST_FILES=	bin/yydecode \
+		man/man1/yydecode.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
