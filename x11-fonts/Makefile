@@ -13,6 +13,7 @@
     SUBDIR += bdfresize
     SUBDIR += bdftopcf
     SUBDIR += bitstream-vera
+    SUBDIR += bitter
     SUBDIR += c64bdf
     SUBDIR += cantarell-fonts
     SUBDIR += charis
