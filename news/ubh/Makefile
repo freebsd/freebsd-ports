@@ -20,18 +20,15 @@ RUN_DEPENDS=	\
 NO_BUILD=	YES
 USES=		perl5
 
-NO_STAGE=	yes
 pre-patch:
 	@${MV} ${WRKSRC}/ubh ${WRKSRC}/ubh.old
 	@${SED} -e '1,1s:/usr/bin/perl:${PERL5}:' \
 		${WRKSRC}/ubh.old > ${WRKSRC}/ubh
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/ubh ${PREFIX}/bin
-	${CP} -R ${WRKSRC}/examples ${PREFIX}/share/ubh
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ubh
-	${INSTALL_DATA} ${WRKSRC}/doc/ubh.html ${PREFIX}/share/doc/ubh
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/ubh ${STAGEDIR}${PREFIX}/bin
+	${CP} -R ${WRKSRC}/examples ${STAGEDIR}${PREFIX}/share/ubh
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ubh
+	${INSTALL_DATA} ${WRKSRC}/doc/ubh.html ${STAGEDIR}${PREFIX}/share/doc/ubh
 
 .include <bsd.port.mk>
