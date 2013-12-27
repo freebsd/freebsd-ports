@@ -14,7 +14,7 @@ USES=		perl5
 USE_PERL5=	run
 
 SUB_FILES=	pkg-message
-SUB_LIST=	PREFIX=${STAGEDIR}${PREFIX}
+SUB_LIST=	PREFIX=${PREFIX}
 
 PLIST_FILES=	bin/mirmon bin/probe
 MAN1=		mirmon.1
