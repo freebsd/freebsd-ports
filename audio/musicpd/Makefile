@@ -73,8 +73,7 @@ IGNORE=${MSG}  You also have musicpd.conf-- check carefully to see which one you
 .if ${PORT_OPTIONS:MFLAC}
 LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
 .else
-CONFIGURE_ARGS+=--disable-flac \
-		--disable-oggflac
+CONFIGURE_ARGS+=--disable-flac
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
