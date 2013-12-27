@@ -1,4 +1,0 @@
-bin/linknx
-%%DOCSDIR%%/linknx.xml
-%%DOCSDIR%%/linknx_doc.tgz
-@dirrm %%DOCSDIR%%
