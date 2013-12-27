@@ -3,7 +3,7 @@
 
 PORTNAME=	setuptools_darcs
 PORTVERSION=	1.2.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ COMMENT=	Setuptools plugin for darcs
 BUILD_DEPENDS=		darcsver:${PORTSDIR}/devel/py-darcsver
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
