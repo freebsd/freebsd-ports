@@ -13,9 +13,8 @@ COMMENT=	Python EBNF parser generator for use with mx.TextTools
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mx-base>0:${PORTSDIR}/lang/py-mx-base
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=	SimpleParse
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
