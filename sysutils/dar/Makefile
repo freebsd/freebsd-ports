@@ -17,9 +17,6 @@ CONFIGURE_ARGS=	--disable-build-html --datadir=${DATADIR} --disable-upx
 
 CPPFLAGS+=	-DHAVE_DECL_GETOPT=0
 
-MAN1=		dar.1 dar_cp.1 dar_manager.1 dar_slave.1 dar_xform.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -27,7 +24,7 @@ USES+=		gettext
 PLIST_SUB+=	NLS=""
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=--with-libintl-prefix=${PREFIX}
+CONFIGURE_ARGS+=--with-libintl-prefix=${STAGEDIR}${PREFIX}
 .else
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
@@ -35,12 +32,15 @@ PLIST_SUB+=	NLS="@comment "
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html *.dtd *.txt *.jpg [CR]* ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/samples
-	cd ${WRKSRC}/doc/samples && ${INSTALL_DATA} [JR]* [a-z]* ${DOCSDIR}/samples
-	@${MKDIR} ${DOCSDIR}/mini-howto
-	cd ${WRKSRC}/doc/mini-howto && ${INSTALL_DATA} *.html README ${DOCSDIR}/mini-howto
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html *.dtd *.txt *.jpg [CR]* \
+	${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/samples
+	cd ${WRKSRC}/doc/samples && ${INSTALL_DATA} [JR]* [a-z]* \
+	${STAGEDIR}${DOCSDIR}/samples
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/mini-howto
+	cd ${WRKSRC}/doc/mini-howto && ${INSTALL_DATA} \
+	*.html README ${STAGEDIR}${DOCSDIR}/mini-howto
 .endif
 
 .include <bsd.port.mk>

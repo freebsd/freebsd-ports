@@ -1,5 +1,7 @@
 bin/connect-tunnel
 bin/sslh
+man/man1/connect-tunnel.1.gz
+man/man1/sslh.1.gz
 %%SITE_PERL%%/Net/Proxy.pm
 %%SITE_PERL%%/Net/Proxy/Connector.pm
 %%SITE_PERL%%/Net/Proxy/Connector/connect.pm
@@ -10,6 +12,15 @@ bin/sslh
 %%SITE_PERL%%/Net/Proxy/Connector/tcp.pm
 %%SITE_PERL%%/Net/Proxy/Tutorial.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Proxy/.packlist
+%%PERL5_MAN3%%/Net::Proxy.3.gz
+%%PERL5_MAN3%%/Net::Proxy::Connector.3.gz
+%%PERL5_MAN3%%/Net::Proxy::Connector::connect.3.gz
+%%PERL5_MAN3%%/Net::Proxy::Connector::connect_ssl.3.gz
+%%PERL5_MAN3%%/Net::Proxy::Connector::dual.3.gz
+%%PERL5_MAN3%%/Net::Proxy::Connector::dummy.3.gz
+%%PERL5_MAN3%%/Net::Proxy::Connector::ssl.3.gz
+%%PERL5_MAN3%%/Net::Proxy::Connector::tcp.3.gz
+%%PERL5_MAN3%%/Net::Proxy::Tutorial.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Proxy
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/Proxy/Connector
