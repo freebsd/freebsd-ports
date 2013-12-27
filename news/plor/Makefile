@@ -9,28 +9,22 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= system/bbs/mail
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An alpha-release reader for reading SOUP and QWK packets
+COMMENT=	Alpha-release reader for reading SOUP and QWK packets
 
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		perl5
-
-MAN1=		plor.1
+USES=		gmake perl5
 
 DOCFILES=	../AUTHORS ../NEWS TODO plor-1.html plor-2.html \
 		plor.html plor.txt
 
-NO_STAGE=	yes
 post-install:
-.if !defined{NOPORTDOCS}
-	@${MKDIR} ${PREFIX}/share/doc/plor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/plor
 .for f in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${PREFIX}/share/doc/plor
+	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${STAGEDIR}${PREFIX}/share/doc/plor
 .endfor
-.endif
-	${INSTALL_MAN} ${FILESDIR}/plor.1 ${PREFIX}/man/man1/plor.1
-	perl -pi -e '$$a = '\''${PREFIX}/share/doc/plor/'\''; $$a =~ s/([^\w\/])/\\$$1/g; s/FUNKYTOKENHERE/$$a/' ${PREFIX}/man/man1/plor.1
+	${INSTALL_MAN} ${FILESDIR}/plor.1 ${STAGEDIR}${PREFIX}/man/man1/plor.1
+	${PERL} -pi -e '$$a = '\''${PREFIX}/share/doc/plor/'\''; $$a =~ s/([^\w\/])/\\$$1/g; s/FUNKYTOKENHERE/$$a/' ${STAGEDIR}${PREFIX}/man/man1/plor.1
 
 .include <bsd.port.mk>

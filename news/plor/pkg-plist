@@ -1,4 +1,5 @@
 bin/plor
+man/man1/plor.1.gz
 share/doc/plor/AUTHORS
 share/doc/plor/NEWS
 share/doc/plor/TODO
