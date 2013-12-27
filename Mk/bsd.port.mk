@@ -341,6 +341,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_CSTD		- Override the default C language standard (gnu89, gnu99)
 # USE_CXXSTD	  Override the default C++ language standard
 # USE_BINUTILS	- Use binutils suite from port instead of the version in base.
+# CFLAGS_${ARCH}  Append the cflags to CFLAGS only on the specified architecture
+# CXXFLAGS_${ARCH}
+#				 Append the cxxflags to CXXFLAGS only on the specified architecture
 ##
 # USE_GHOSTSCRIPT
 #				- If set, this port needs ghostscript to both
@@ -2101,8 +2104,16 @@ CFLAGS+=       -fno-strict-aliasing
 CFLAGS:=	${CFLAGS:N-std=*} -std=${USE_CSTD}
 .endif
 
+.if defined(CFLAGS_${ARCH})
+CFLAGS+=	${CFLAGS_${ARCH}}
+.endif
+
 .if defined(USE_CXXSTD)
 CXXFLAGS:=	${CXXFLAGS:N-std=*} -std=${USE_CXXSTD}
+.endif
+
+.if defined(CXXFLAGS_${ARCH})
+CXXFLAGS+=	${CXXFLAGS_${ARCH}}
 .endif
 
 # Multiple make jobs support
