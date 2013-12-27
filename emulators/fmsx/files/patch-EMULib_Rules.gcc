@@ -1,0 +1,11 @@
+--- EMULib/Rules.gcc.orig	2013-12-20 20:52:16.000000000 +0100
++++ EMULib/Rules.gcc	2013-12-20 20:52:22.000000000 +0100
+@@ -6,7 +6,7 @@
+ LIBGBZ	= $(BASEDIR)/GBZ80
+ PRIVATE	= $(BASEDIR)/Private
+ 
+-CC	= gcc
++CC	?= gcc
+ CPP	= cpp
+ CFLAGS	= -O3 -pthread -I.. -I$(EMULIB)
+ DEFINES = -DZLIB
