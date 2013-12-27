@@ -14,7 +14,6 @@ USE_PHP=	mysql pcre session iconv hash gettext mbstring
 WANT_PHP_WEB=	yes
 
 NO_BUILD=	yes
-NO_STAGE=	yes
 USES=		gettext
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
@@ -25,25 +24,20 @@ SUB_LIST=	PORTNAME=${PORTNAME} \
 		WWWOWN=${WWWOWN} \
 		WWWGROUP=${WWWGROUP}
 
-MAN1=		ampache.1
-MANCOMPRESSED=	no
-
 PORTDOCS=	CHANGELOG README MIGRATION INSTALL
 
+.include <bsd.port.options.mk>
+
 do-install:
-	@${MKDIR} ${WWWDIR}
-	${INSTALL_MAN} ${WRKSRC}/docs/man/man1/ampache.1 ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	${INSTALL_MAN} ${WRKSRC}/docs/man/man1/ampache.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/docs/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 	${RM} -rf ${WRKSRC}/docs/man
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR})
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${WWWDIR} "! -name *.orig")
 
 .include <bsd.port.mk>
