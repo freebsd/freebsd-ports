@@ -3,6 +3,7 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${PORT_MINOR_VERSION}.${PORT_BUILD_NUMBER}
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/ \
 		http://download.java.net/jaxp/1.4.5/:jaxp \
@@ -110,6 +111,10 @@ NO_STAGE=	yes
 MAKE_ENV+=	ALT_OBJCOPY="/nonexistent"
 .endif
 
+.if ${PORT_OPTIONS:MPOLICY}
+MAKE_ENV+=	UNLIMITED_CRYPTO=1
+.endif
+
 .if ${PORT_OPTIONS:MTZUPDATE}
 RUN_DEPENDS+=  ${LOCALBASE}/share/java/zi:${PORTSDIR}/java/java-zoneinfo
 .endif
@@ -135,10 +140,6 @@ PATCH=		gpatch
 post-patch:
 	@${REINPLACE_CMD} "s|%%LOCALBASE%%|${LOCALBASE}|" \
 		${WRKSRC}/hotspot/src/os/bsd/vm/os_bsd.cpp
-.if ${PORT_OPTIONS:MPOLICY}
-	@${REINPLACE_CMD} 's|build-policy install-limited|build-policy install-unlimited|' \
-		${WRKSRC}/jdk/make/javax/crypto/Makefile
-.endif
 .if empty(ICONV_LIB)
 	@${REINPLACE_CMD} 's| -liconv||' \
 		${WRKSRC}/Makefile \
