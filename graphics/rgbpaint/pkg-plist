@@ -1,4 +1,5 @@
 bin/rgbpaint
+man/man1/rgbpaint.1.gz
 share/locale/cs/LC_MESSAGES/rgbpaint.mo
 share/locale/de_DE/LC_MESSAGES/rgbpaint.mo
 share/locale/es/LC_MESSAGES/rgbpaint.mo
