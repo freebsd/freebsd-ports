@@ -17,7 +17,6 @@ WRKSRC=		${WRKDIR}/pyexif
 DATADIR=	${PREFIX}/share/py-exif
 DOCSDIR=	${PREFIX}/share/doc/py-exif
 
-NO_STAGE=	yes
 post-patch:
 .for pyfile in exiftool exifinfo.py
 	@ cd ${WRKSRC}/bin && ${MV} ${pyfile} ${pyfile}.orig && \
@@ -25,22 +24,23 @@ post-patch:
 .endfor
 
 do-build:
-	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/lib
-	@ ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/lib
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-f ${WRKSRC}/lib \
+		-d ${PYTHONPREFIX_SITELIBDIR}
+	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		-f ${WRKSRC}/lib \
+		-d ${PYTHONPREFIX_SITELIBDIR}
 
 do-install:
-	@ ${MKDIR} ${PREFIX}/bin
-	@ cd ${WRKSRC}/lib && ${INSTALL_DATA} *.py *.pyc *.pyo \
-	  ${PYTHON_SITELIBDIR}
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/bin/exiftool ${PREFIX}/bin/py-exiftool
-	@ ${MKDIR} ${DATADIR}
-	@ cd ${WRKSRC}/share/exiftool && ${INSTALL_DATA} *.html *.txt \
-	  ${DATADIR}
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/README* ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	cd ${WRKSRC}/lib && ${INSTALL_DATA} *.py *.pyc *.pyo \
+		${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/exiftool ${STAGEDIR}${PREFIX}/bin/py-exiftool
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/share/exiftool && ${INSTALL_DATA} *.html *.txt \
+		${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
