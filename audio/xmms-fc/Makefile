@@ -35,11 +35,8 @@ LIBFC_PORTNAME=	libfc14audiodecoder
 LIBFC_PORTVERSION=	1.0.2
 LIBFC_DISTNAME=	${LIBFC_PORTNAME}-${LIBFC_PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CXXFLAGS+=	-fPIC -DPIC
-.endif
+CFLAGS_amd64=	-fPIC -DPIC
+CFLAGS_ia64=	-fPIC -DPIC
 
 pre-configure:
 	@(cd ${WRKDIR}/${LIBFC_DISTNAME} && ./configure --disable-shared \
@@ -49,4 +46,4 @@ pre-build:
 	@(cd ${WRKDIR}/${LIBFC_DISTNAME} && ${SETENV} ${MAKE_ENV} ${MAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET} ${MAKE_ARGS})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

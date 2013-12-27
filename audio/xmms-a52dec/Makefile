@@ -18,10 +18,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk12
 CFLAGS+=	`xmms-config --cflags` -L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-.if ${ARCH} == "amd64"
-CFLAGS+=	-fPIC
-.endif
+CFLAGS_amd64=	fPIC
 
 PLIST_FILES=	lib/xmms/Input/liba52dec.so
 
@@ -33,4 +30,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/liba52dec.so \
 		${STAGEDIR}${PREFIX}/lib/xmms/Input/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
