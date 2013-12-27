@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	Moo
-PORTVERSION=	1.003001
+PORTVERSION=	1.004000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:MSTROUT
+MASTER_SITE_SUBDIR=	CPAN:HAARG
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -15,11 +15,12 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-Method-Modifiers>=1.10:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
-		p5-Devel-GlobalDestruction>=0.09:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
+		p5-Devel-GlobalDestruction>=0.11:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
 		p5-Dist-CheckConflicts>=0.02:${PORTSDIR}/devel/p5-Dist-CheckConflicts \
 		p5-Module-Runtime>=0.012:${PORTSDIR}/devel/p5-Module-Runtime \
 		p5-Role-Tiny>=1.003.002:${PORTSDIR}/devel/p5-Role-Tiny \
-		p5-strictures>=1.004003:${PORTSDIR}/devel/p5-strictures
+		p5-strictures>=1.004003:${PORTSDIR}/devel/p5-strictures \
+		p5-Import-Into>=1.002000:${PORTSDIR}/devel/p5-Import-Into
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Fatal>=0.003:${PORTSDIR}/devel/p5-Test-Fatal
 
