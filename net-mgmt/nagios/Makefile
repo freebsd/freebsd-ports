@@ -3,7 +3,7 @@
 
 PORTNAME=	nagios
 PORTVERSION=	3.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3.x/${PORTNAME}-${PORTVERSION}
 
@@ -98,7 +98,7 @@ post-extract:
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^INSTALL_OPTS=/d' `${FIND} ${WRKSRC} -name Makefile.in`
+	@${REINPLACE_CMD} -e '/^INSTALL_OPTS=/d;/^COMMAND_OPTS=/d' `${FIND} ${WRKSRC} -name Makefile.in`
 .if ${PORT_OPTIONS:MUNHANDLED_HACK}
 	@${REINPLACE_CMD} -e 's#;serviceprops=42\&#;serviceprops=10\&#g' \
 		-e 's#;hostprops=42\"#;hostprops=10\"#g' ${WRKSRC}/html/side.php

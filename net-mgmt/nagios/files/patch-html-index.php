@@ -6,14 +6,8 @@
  <?php
 +include_once(dirname(__FILE__).'/includes/utils.inc.php');
   // allow specifying main window URL for permalinks, etc.
- $corewindow="main.php";
+-$corewindow="main.php";
++$corewindow=$cfg["cgi_base_url"]."/tac.cgi";
  if(isset($_GET['corewindow'])){
-@@ -43,7 +44,7 @@
- 
- <frameset cols="180,*" style="border: 0px; framespacing: 0px">
- <frame src="side.php" name="side" frameborder="0" style="">
--<frame src="<?php echo $corewindow;?>" name="main" frameborder="0" style="">
-+<frame src="<?php echo $cfg["cgi_base_url"];?>/tac.cgi" name="main" frameborder="0">
- 
- <noframes>
- <!-- This page requires a web browser which supports frames. --> 
+ 	
+ 	// default window url may have been overridden with a permalink...
