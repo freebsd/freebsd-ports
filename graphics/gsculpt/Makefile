@@ -3,13 +3,13 @@
 
 PORTNAME=	gsculpt
 PORTVERSION=	0.99.47
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME:S,-src,,}
 DISTNAME=	gSculpt-${PORTVERSION}-alpha-src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An Opensource 3D modelling application
+COMMENT=	Opensource 3D modelling application
 
 LICENSE=	GPLv2
 
@@ -19,18 +19,19 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opengl>0:${PORTSDIR}/graphics/py-opengl \
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S,-src,,}
 
-USES=		pkgconfig
+USES=		pkgconfig scons
 USE_GNOME=	pygtk2
 USE_GL=		glu
 USE_XORG=	x11
-USE_PYTHON=	2.4+
-USE_SCONS=	yes
-SCONS_BUILDENV=	${SCONS_ENV}
+USE_PYTHON=	2
 USE_LDCONFIG=	${PREFIX}/lib/gSculpt
 
 DATADIR=	${PREFIX}/share/gSculpt
 
-NO_STAGE=	yes
+DESKTOP_ENTRIES="gSculpt" "" \
+		"${DATADIR}/gsimages/gSculpt_Glass_Master_by_Gary_Rose.png" \
+		"${PORTNAME}" "Graphics;GTK;" ""
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
@@ -53,11 +54,21 @@ post-patch:
 		 /^cppLibs/s|BackgroundModel|BackgroundMesh|" \
 		${WRKSRC}/SConstruct
 	@${REINPLACE_CMD} -e \
-		"/^prefix/s|=.*|= '${PREFIX}'| ; \
+		"/^prefix/s|=.*|= '${STAGEDIR}${PREFIX}'| ; \
 		 /^gSculptStartDir/s|=.*|= os.path.join( pysitelibdir )|" \
 		${WRKSRC}/SConstruct-install
+	@${REINPLACE_CMD} -e \
+		"s|#GSCULPT_LIBRARY_PATH#|${LOCALBASE}/lib/gSculpt|; \
+		 s|python|${PYTHON_CMD}|; \
+		 s|#GSCULPT_START#|${PYTHONPREFIX_SITELIBDIR}/gsculpt.py|" \
+		${WRKSRC}/posixbuild/gsculpt
 
 do-install:
-	@cd ${WRKSRC} && ${SCONS_BIN} -f SConstruct-install ${PREFIX}
+	@(cd ${WRKSRC} && ${SCONS} -f SConstruct-install install)
+	@(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -m compileall \
+		-d ${PREFIX} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
+	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/Britefury \
+		-name "*.so" -exec ${STRIP_CMD} {} \;
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gSculpt/*.so
 
 .include <bsd.port.post.mk>
