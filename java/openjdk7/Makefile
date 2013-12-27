@@ -21,6 +21,8 @@ EXTRACT_ONLY=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX} \
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Java Development Kit 7
 
+FORBIDDEN=	Triggering a nasty FreeBSD bug
+
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
