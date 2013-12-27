@@ -6,7 +6,7 @@ PORTVERSION=	4.0.17
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/foomatic/
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Foomatic wrapper scripts
 
 LICENSE=	GPLv2
