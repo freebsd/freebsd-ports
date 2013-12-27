@@ -17,18 +17,13 @@ RUN_DEPENDS=	p5-NNTPClient>=0:${PORTSDIR}/news/p5-NNTPClient \
 		p5-Time-modules>=0:${PORTSDIR}/devel/p5-Time-modules
 
 NO_BUILD=	yes
-USES=		perl5
-
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e 's|^#!/usr/bin/perl|#!${PERL}|' ${WRKSRC}/newsgrab.pl
+USES=		perl5 shebangfix
+SHEBANG_FILES=	newsgrab.pl
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/newsgrab.pl ${PREFIX}/bin/newsgrab
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/newsgrab
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/newsgrab
-	${INSTALL_DATA} ${WRKSRC}/newsgrabrc ${PREFIX}/share/doc/newsgrab
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/newsgrab.pl ${STAGEDIR}${PREFIX}/bin/newsgrab
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/newsgrab
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${PREFIX}/share/doc/newsgrab
+	${INSTALL_DATA} ${WRKSRC}/newsgrabrc ${STAGEDIR}${PREFIX}/share/doc/newsgrab
 
 .include <bsd.port.mk>
