@@ -17,8 +17,7 @@ NO_WRKSUBDIR=	yes
 USES=		imake
 USE_XORG=	x11 xext
 
-MAN1=		glib.1 xgrasp.1
-PLIST_FILES=	bin/glib bin/xgrasp
+PLIST_FILES=	bin/glib bin/xgrasp \
+		man/man1/glib.1.gz man/man1/xgrasp.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
