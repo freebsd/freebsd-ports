@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wordpress
-PORTVERSION=	3.7.1
+PORTVERSION=	3.8
 CATEGORIES=	japanese www
 MASTER_SITES=	http://ja.wordpress.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-ja
