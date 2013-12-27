@@ -4,5 +4,11 @@ bin/if
 bin/osh
 bin/sh6
 bin/glob6
+man/man1/fd2.1.gz
+man/man1/glob6.1.gz
+man/man1/goto.1.gz
+man/man1/if.1.gz
+man/man1/osh.1.gz
+man/man1/sh6.1.gz
 @exec echo "updating ${DESTDIR}/etc/shells"; cp ${DESTDIR}/etc/shells ${DESTDIR}/etc/shells.bak; (grep -v %D/%F ${DESTDIR}/etc/shells.bak; echo %D/%F) >${DESTDIR}/etc/shells
 @unexec echo "updating ${DESTDIR}/etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells
