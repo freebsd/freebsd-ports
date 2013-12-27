@@ -16,16 +16,17 @@ SUB_LIST=	PORTNAME=${PORTNAME}
 
 PLIST_FILES=	bin/banihstypos
 
-PORTDOCS=	readme.txt
+.include <bsd.port.options.mk>
 
-NO_STAGE=	yes
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/banihstypos ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
+.if ! ${PORT_OPTIONS:MDOCS}
+PORTDOCS=	readme.txt
 .endif
-post-install:
-	@${ECHO_MSG}; ${CAT} ${PKGMESSAGE}; ${ECHO_MSG}
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/banihstypos ${STAGEDIR}${PREFIX}/bin
+.if ! ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
