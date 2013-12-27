@@ -9,6 +9,9 @@ MASTER_SITES=	SF/popbsmtp/Source%20tar/${PORTVERSION}
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A log parser to identify valid POP/IMAP logins for later smtp
 
+DEPRECATED=	No more active project
+EXPIRATION_DATE=	2014-01-27
+
 RUN_DEPENDS=	p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
 		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
