@@ -1,19 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=		rmilter
-PORTVERSION=		1.5.46
+PORTVERSION=		1.5.47
 CATEGORIES=		mail
 
 MAINTAINER=		vsevolod@FreeBSD.org
 COMMENT=		Milter that performs spamd, clamav, and spf checks
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		vstakhov
 GH_PROJECT=		${PORTNAME}
 GH_TAG=		${PORTVERSION}
-GH_COMMIT=		af8ceb6
+GH_COMMIT=		3d7b91c
 
 USE_RC_SUBR=	yes
 
