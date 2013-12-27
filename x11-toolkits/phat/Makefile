@@ -12,12 +12,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of GTK+ widgets geared toward pro-audio apps
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		pathfix pkgconfig
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	gtk20 libgnomecanvas
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 		-e 's|-Werror||g' \
