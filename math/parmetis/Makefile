@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	. OLD
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A package for parallel (mpi) unstructured graph partitioning
+COMMENT=	Package for parallel (mpi) unstructured graph partitioning
 
 LICENSE=	METIS
 LICENSE_NAME=	University of Minnesota METIS License
@@ -20,9 +20,9 @@ LICENSE_PERMS=	auto-accept
 OPTIONS_DEFINE=	OPENMPI DOCS
 OPENMPI_DESC=	Use openmpi instead of mpich2
 
-USES=		cmake
-USE_GMAKE=	yes
+USES=		cmake gmake
 
+MAKE_ARGS+=	MAKEFLAGS=MAKE=${GMAKE}
 PORTDOCS=	manual.pdf
 PLIST_FILES=	include/parmetis/parmetis.h \
 		lib/parmetis/libmetis.a lib/parmetis/libparmetis.a
@@ -44,12 +44,12 @@ MPICC=		${LOCALBASE}/bin/mpicc
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|BUILDDIR =.*|BUILDDIR = build| ; \
-		 s|make -C|$$(MAKE) -C|' ${WRKSRC}/Makefile
+		 s|make -C|${MAKE_CMD} -C|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e \
 		's|"-O3"|""|' ${WRKSRC}/metis/GKlib/GKlibSystem.cmake
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${MAKEFILE} config prefix="${PREFIX}" cc="${MPICC}"
 
 do-install:
