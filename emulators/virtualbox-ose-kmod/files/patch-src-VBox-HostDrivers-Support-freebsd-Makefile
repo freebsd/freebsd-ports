@@ -1,0 +1,10 @@
+--- src/VBox/HostDrivers/Support/freebsd/Makefile.orig	2013-10-17 00:51:57.724397794 +0400
++++ src/VBox/HostDrivers/Support/freebsd/Makefile	2013-10-17 00:52:05.491398026 +0400
+@@ -170,6 +170,7 @@
+ SRCS += \
+ 	semspinmutex-r0drv-generic.c \
+ 	mpnotification-r0drv-generic.c \
++	threadctxhooks-r0drv-generic.c \
+ 	RTMpIsCpuWorkPending-r0drv-generic.c
+ 
+ .PATH:	${.CURDIR}/VBox

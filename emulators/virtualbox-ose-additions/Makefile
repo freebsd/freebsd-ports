@@ -1,10 +1,9 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
-# $FreeBSD$
+# $FreeBSD: jkim/emulators/virtualbox-ose-additions/Makefile 20836 2013-12-20 23:07:56Z jkim $
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.2.20
-PORTREVISION=	1
-CATEGORIES=	emulators
+DISTVERSION=	4.3.6
+CATEGORIES=	emulators kld
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
 		http://disasterarea.chruetertee.ch/
@@ -24,8 +23,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxguest vboxservice
-USES=		iconv kmod
-USE_GCC=	any
+USES=		compiler:features iconv
 ONLY_FOR_ARCHS=	i386 amd64
 FETCH_ARGS=	-pRr
 USE_BZIP2=	yes
@@ -46,6 +44,10 @@ OPTIONS_SUB=	DEBUG X11 OPENGL
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
+PLIST_SUB+=	KMODDIR=${KMODDIR:C,^/,,}
+
+KMODDIR=	/boot/modules
+SRC_BASE?=	/usr/src
 VIDEODIR=	${PREFIX}/lib/xorg/modules/drivers
 INPUTDIR=	${PREFIX}/lib/xorg/modules/input
 
@@ -85,7 +87,19 @@ KMK_ARCH=	freebsd.${ARCH}
 
 XSERVER_ABI:=	${XSERVER_VER:S/.//:R}
 
+.if !exists(${SRC_BASE}/sys/kern/bus_if.m)
+IGNORE=		requires kernel sources
+.endif
+
 .include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang
+EXTRA_PATCHES=	${FILESDIR}/extrapatch-Config.kmk \
+		${FILESDIR}/extrapatch-src-VBox-Additions-x11-vboxvideo-Makefile.kmk
+.if ${COMPILER_FEATURES:Mlibc++}
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-src-VBox-Additions-x11-VBoxClient-Makefile.kmk
+.endif
+.endif
 
 pre-everything::
 .if ${ARCH} == "amd64"
@@ -99,11 +113,15 @@ pre-everything::
 post-patch:
 	@${ECHO} 'VBOX_ONLY_ADDITIONS = 1' > ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_X11_ADDITIONS = ${VBOX_WITH_X11}' >> ${WRKSRC}/LocalConfig.kmk
+.if ${COMPILER_TYPE} == clang
+	@${ECHO} 'VBOX_GCC_Wno-unused-parameter = -Wno-unused-parameter' >> ${WRKSRC}/LocalConfig.kmk
+.endif
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Config.kmk \
 		${WRKSRC}/configure \
 		${WRKSRC}/kBuild/units/qt4.kmk \
 		${WRKSRC}/kBuild/sdks/LIBSDL.kmk \
+		${WRKSRC}/src/VBox/Additions/common/crOpenGL/fakedri_drv.c \
 		${WRKSRC}/src/VBox/Additions/x11/Installer/98vboxadd-xclient \
 		${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop
 	@${REINPLACE_CMD} -e 's|\$$KBUILDDIR_BIN/kmk_sed|${LOCALBASE}/bin/kmk_sed|g' ${WRKSRC}/configure
@@ -122,6 +140,7 @@ do-build:
 	cd ${VBOX_BIN}/src && make ${MAKE_FLAGS}
 
 do-install:
+	${MKDIR} ${KMODDIR}
 	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko ${KMODDIR}
 .if ${PORT_OPTIONS:MDEBUG}
 	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko.symbols ${KMODDIR}
@@ -132,6 +151,7 @@ do-install:
 	${INSTALL_KLD} ${VBOX_BIN}/vboxvideo.ko.symbols ${KMODDIR}
 .endif
 .endif
+	@/usr/sbin/kldxref ${KMODDIR}
 
 	${MKDIR} ${PREFIX}/etc/rc.d/
 

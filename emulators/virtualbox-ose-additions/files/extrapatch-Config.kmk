@@ -1,0 +1,12 @@
+--- Config.kmk.orig	2013-12-18 11:05:32.000000000 -0500
++++ Config.kmk	2013-12-19 21:28:19.000000000 -0500
+@@ -1508,6 +1508,9 @@
+   VBOX_GCC_OPT <= -march=i586
+  endif
+ endif
++ifeq ($(KBUILD_TARGET),freebsd)
++ VBOX_GCC_WARN += -Qunused-arguments
++endif
+ 
+ 
+ #
