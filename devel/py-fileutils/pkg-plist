@@ -1,7 +1,0 @@
-%%PYTHON_SITELIBDIR%%/ll/__init__.py
-%%PYTHON_SITELIBDIR%%/ll/__init__.pyc
-%%PYTHON_SITELIBDIR%%/ll/__init__.pyo
-%%PYTHON_SITELIBDIR%%/ll/fileutils.py
-%%PYTHON_SITELIBDIR%%/ll/fileutils.pyc
-%%PYTHON_SITELIBDIR%%/ll/fileutils.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/ll
