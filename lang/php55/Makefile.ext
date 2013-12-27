@@ -160,7 +160,7 @@ CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 USE_OPENLDAP=	yes
 
 . ifdef(WANT_OPENLDAP_SASL)
-CONFIGURE_ARGS+=--with-ldap-sasl
+CONFIGURE_ARGS+=--with-ldap-sasl=${LOCALBASE}
 . endif
 .endif
 
