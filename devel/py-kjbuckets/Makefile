@@ -14,17 +14,17 @@ COMMENT=	Graph and set datatypes for Python (C extension)
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGVERSION=	2.2
+PYDISTUTILS_AUTOPLIST=	yes
 WRKSRC=			${WRKDIR}/${DISTNAME}/kjbuckets
 
-NO_STAGE=	yes
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../COPYRIGHT.txt ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../doc/kjbuckets.txt ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/../doc/demo/kjbuckets/*.py ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../COPYRIGHT.txt ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../doc/kjbuckets.txt ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../doc/demo/kjbuckets/*.py ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
