@@ -1,8 +1,12 @@
 bin/jigdo-file
 bin/jigdo-lite
 bin/jigdo-mirror
+man/man1/jigdo-file.1.gz
+man/man1/jigdo-lite.1.gz
+man/man1/jigdo-mirror.1.gz
 share/jigdo/debian-mirrors.jigdo
 %%GUI%%bin/jigdo
+%%GUI%%man/man1/jigdo.1.gz
 %%GUI%%share/jigdo/COPYING
 %%GUI%%share/jigdo/pixmaps/close.png
 %%GUI%%share/jigdo/pixmaps/jigdo-logo.png
