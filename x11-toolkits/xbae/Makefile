@@ -16,7 +16,4 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=--enable-production --enable-static
 
-MAN3=		XbaeCaption.3 XbaeInput.3 XbaeMatrix.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
