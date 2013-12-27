@@ -1,4 +1,5 @@
 bin/chirpw
+man/man1/chirpw.1.gz
 share/applications/chirp.desktop
 share/chirp/chirp.xsd
 share/chirp/chirp_banks.xsd
@@ -279,7 +280,6 @@ share/pixmaps/chirp.png
 %%PYTHON_SITELIBDIR%%/chirpui/shiftdialog.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/chirp
 @dirrm %%PYTHON_SITELIBDIR%%/chirpui
-@dirrm share/chirp/images
 @dirrm share/chirp/stock_configs
 @dirrm share/chirp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
