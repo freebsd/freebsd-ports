@@ -10,13 +10,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pyncurses-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A ncurses binding for Python
+COMMENT=	Ncurses binding for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	pyncurses
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
