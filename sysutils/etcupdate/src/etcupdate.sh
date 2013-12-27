@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Copyright (c) 2010 Advanced Computing Technologies LLC
+# Copyright (c) 2010-2013 Advanced Computing Technologies LLC
 # Written by: John H. Baldwin <jhb@FreeBSD.org>
 # All rights reserved.
 #
@@ -486,6 +486,39 @@ diffnode()
 	esac
 }
 
+# Run one-off commands after an update has completed.  These commands
+# are not tied to a specific file, so they cannot be handled by
+# post_install_file().
+post_update()
+{
+	local args
+
+	# None of these commands should be run for a pre-world update.
+	if [ -n "$preworld" ]; then
+		return
+	fi
+
+	# If /etc/localtime exists and is not a symlink and /var/db/zoneinfo
+	# exists, run tzsetup -r to refresh /etc/localtime.
+	if [ -f ${DESTDIR}/etc/localtime -a \
+	    ! -L ${DESTDIR}/etc/localtime ]; then
+		if [ -f ${DESTDIR}/var/db/zoneinfo ]; then
+			if [ -n "${DESTDIR}" ]; then
+				args="-C ${DESTDIR}"
+			else
+				args=""
+			fi
+			log "tzsetup -r ${args}"
+			if [ -z "$dryrun" ]; then
+				tzsetup -r ${args} >&3 2>&1
+			fi
+		else
+			warn "Needs update: /etc/localtime (required" \
+			    "manual update via tzsetup(1))"
+		fi
+	fi
+}
+
 # Create missing parent directories of a node in a target tree
 # preserving the owner, group, and permissions from a specified
 # template tree.
@@ -581,6 +614,14 @@ post_install_file()
 				if [ -z "$dryrun" ]; then
 					sh /etc/rc.d/motd start >&3 2>&1
 				fi
+			fi
+			;;
+		/etc/services)
+			log "services_mkdb -q -o $DESTDIR/var/db/services.db" \
+			    "${DESTDIR}$1"
+			if [ -z "$dryrun" ]; then
+				services_mkdb -q -o $DESTDIR/var/db/services.db \
+				    ${DESTDIR}$1 >&3 2>&1
 			fi
 			;;
 	esac
@@ -1026,16 +1067,6 @@ handle_modified_file()
 		fi
 	fi
 
-	# If the only change in the new file versus the old file is a
-	# change in the FreeBSD ID string and -F is specified, just
-	# update the FreeBSD ID string in the local file.
-	if [ -n "$FREEBSD_ID" -a $cmp -eq $COMPARE_DIFFFILES ] && \
-	    fbsdid_only $OLDTREE/$file $NEWTREE/$file; then
-		if update_freebsdid $file; then
-			continue
-		fi
-	fi
-
 	# If the file was removed from the dest tree, just whine.
 	if [ $newdestcmp -eq $COMPARE_ONLYFIRST ]; then
 		# If the removed file matches an ALWAYS_INSTALL glob,
@@ -1047,6 +1078,14 @@ handle_modified_file()
 					echo "  A $file"
 				fi
 			fi
+			return
+		fi
+
+		# If the only change in the new file versus the old
+		# file is a change in the FreeBSD ID string and -F is
+		# specified, don't warn.
+		if [ -n "$FREEBSD_ID" -a $cmp -eq $COMPARE_DIFFFILES ] && \
+		    fbsdid_only $OLDTREE/$file $NEWTREE/$file; then
 			return
 		fi
 
@@ -1077,6 +1116,16 @@ handle_modified_file()
 		log "ALWAYS: updating $file"
 		if update_unmodified $file; then
 			return
+		fi
+	fi
+
+	# If the only change in the new file versus the old file is a
+	# change in the FreeBSD ID string and -F is specified, just
+	# update the FreeBSD ID string in the local file.
+	if [ -n "$FREEBSD_ID" -a $cmp -eq $COMPARE_DIFFFILES ] && \
+	    fbsdid_only $OLDTREE/$file $NEWTREE/$file; then
+		if update_freebsdid $file; then
+			continue
 		fi
 	fi
 
@@ -1498,6 +1547,9 @@ EOF
 		    "(requires manual update via newaliases(1))"
 	fi
 
+	# Run any special one-off commands after an update has completed.
+	post_update
+
 	if [ -s $WARNINGS ]; then
 		echo "Warnings:"
 		cat $WARNINGS
@@ -1698,7 +1750,7 @@ case $command in
 		fi
 		;;
 	build|diff|status)
-		if [ -n "$dryrun" -o -n "$rerun" -o -n "$tarball" -o
+		if [ -n "$dryrun" -o -n "$rerun" -o -n "$tarball" -o \
 		     -n "$preworld" ]; then
 			usage
 		fi
