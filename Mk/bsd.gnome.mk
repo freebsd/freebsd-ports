@@ -742,6 +742,9 @@ ltverhack_PRE_PATCH=	\
 			${REINPLACE_CMD} -e \
 			'/freebsd-elf)/,/;;/ s|major="\.$$current"|${ltverhack_LIB_VERSION}|; \
 			 /freebsd-elf)/,/;;/ s|versuffix="\.$$current"|versuffix="$$major"|' \
+			-e \
+			'/freebsd-elf)/,/;;/ s|major=\.$$current|${ltverhack_LIB_VERSION}|; \
+			 /freebsd-elf)/,/;;/ s|versuffix=\.$$current|versuffix="$$major"|' \
 			${WRKSRC}/$$file; \
 		fi; \
 	done
