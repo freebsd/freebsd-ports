@@ -10,13 +10,10 @@ MASTER_SITES=	http://anarcat.ath.cx/software/distfiles/
 MAINTAINER=	anarcat@anarcat.ath.cx
 COMMENT=	Handy tools for living with make world
 
-USES=		perl5
+USES=		perl5 uidfix shebangfix
+SHEBANG_FILES=	whereintheworld
 USE_PERL5=	run
 
-MAN8=		buildit.8 upgrade.8 whereintheworld.8
-
 MAKE_ARGS=	SHAREDIR=${PREFIX}
-MANCOMPRESSED=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

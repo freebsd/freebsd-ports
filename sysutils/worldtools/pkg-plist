@@ -1,3 +1,6 @@
+man/man8/buildit.8.gz
+man/man8/upgrade.8.gz
+man/man8/whereintheworld.8.gz
 sbin/whereintheworld
 sbin/upgrade
 sbin/buildit
