@@ -3,6 +3,7 @@
 
 PORTNAME=	pdfgrep
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -12,7 +13,7 @@ COMMENT=	A tool to search text in PDF files
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	poppler:${PORTSDIR}/graphics/poppler
+LIB_DEPENDS=	libpoppler.so:${PORTSDIR}/graphics/poppler
 
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig

@@ -2,7 +2,7 @@
 
 PORTNAME=	electrix
 PORTVERSION=	0.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics print
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTVERSION}
 
@@ -43,7 +43,7 @@ PLIST_SUB=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPDF}
-LIB_DEPENDS=	poppler-glib:${PORTSDIR}/graphics/poppler-glib
+LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
 .else
 CONFIGURE_ARGS+=	--disable-pdf
 .endif

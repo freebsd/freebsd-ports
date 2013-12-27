@@ -3,6 +3,7 @@
 
 PORTNAME=	nepomuk-core
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -11,7 +12,7 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Core Nepomuk system libraries and services for KDE
 
-LIB_DEPENDS=	poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
+LIB_DEPENDS=	libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4 \
 		tag.1:${PORTSDIR}/audio/taglib \
 		exiv2.12:${PORTSDIR}/graphics/exiv2 \
 		swscale:${PORTSDIR}/multimedia/ffmpeg

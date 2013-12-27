@@ -4,7 +4,7 @@
 
 PORTNAME=	tracker
 PORTVERSION=	0.6.95
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX?=	-client
@@ -14,7 +14,7 @@ COMMENT=	Object database, tag/metadata database, search tool and indexer
 
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		poppler-glib.8:${PORTSDIR}/graphics/poppler-glib \
+		libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib \
 		exif.12:${PORTSDIR}/graphics/libexif \
 		wv-1.2.4:${PORTSDIR}/textproc/wv \
 		gmime-2.0.4:${PORTSDIR}/mail/gmime2 \

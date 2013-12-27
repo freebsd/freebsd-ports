@@ -133,7 +133,7 @@ lib/libpoppler-cpp.so.0
 lib/libpoppler.a
 lib/libpoppler.la
 lib/libpoppler.so
-lib/libpoppler.so.34
+lib/libpoppler.so.44
 %%CAIRO%%libdata/pkgconfig/poppler-cairo.pc
 libdata/pkgconfig/poppler-cpp.pc
 libdata/pkgconfig/poppler-splash.pc

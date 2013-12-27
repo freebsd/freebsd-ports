@@ -3,6 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	editors java
 MASTER_SITES=	http://www.apache.org/dist/openoffice/${PORTVERSION}/source/ \
 		ftp://ftp.riken.jp/net/apache/openoffice/${PORTVERSION}/source/ \
@@ -116,7 +117,7 @@ LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		curl:${PORTSDIR}/ftp/curl \
 		hunspell-1.3:${PORTSDIR}/textproc/hunspell \
-		poppler-glib:${PORTSDIR}/graphics/poppler-glib \
+		libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib \
 		rdf:${PORTSDIR}/textproc/redland \
 		textcat:${PORTSDIR}/textproc/libtextcat \
 		freetype:${PORTSDIR}/print/freetype2 \
