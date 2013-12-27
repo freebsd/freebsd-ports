@@ -11,9 +11,6 @@ COMMENT=	Small program for testing basic Render extension conformance
 XORG_CAT=	app
 USE_XORG=	xrender
 
-MAN1=		rendercheck.1
+PLIST_FILES=	bin/rendercheck man/man1/rendercheck.1.gz
 
-PLIST_FILES=	bin/rendercheck
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
