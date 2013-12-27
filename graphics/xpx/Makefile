@@ -20,7 +20,6 @@ DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 PORTDOCS=	xpx.doc xpxrc.eg
 PLIST_FILES=	bin/xpx
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|myname|my_name|g' ${WRKSRC}/magtoppm.c
 	@${REINPLACE_CMD} -e '/edit_mode/d' ${WRKSRC}/work.h
@@ -29,11 +28,9 @@ pre-configure:
 	@(cd ${CONFIGURE_WRKSRC}; ${SH} configure)
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
