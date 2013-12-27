@@ -18,6 +18,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${ANTFILE}
 MAINTAINER=	java@FreeBSD.org
 COMMENT?=	Oracle's Java 6 virtual machine release under the GPL v2
 
+FORBIDDEN=	Triggering a nasty FreeBSD bug
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
