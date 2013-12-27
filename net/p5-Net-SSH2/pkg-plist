@@ -1,3 +1,10 @@
+%%PERL5_MAN3%%/Net::SSH2.3.gz
+%%PERL5_MAN3%%/Net::SSH2::Channel.3.gz
+%%PERL5_MAN3%%/Net::SSH2::Dir.3.gz
+%%PERL5_MAN3%%/Net::SSH2::File.3.gz
+%%PERL5_MAN3%%/Net::SSH2::Listener.3.gz
+%%PERL5_MAN3%%/Net::SSH2::PublicKey.3.gz
+%%PERL5_MAN3%%/Net::SSH2::SFTP.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/SSH2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/SSH2/Channel.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/SSH2/Dir.pm

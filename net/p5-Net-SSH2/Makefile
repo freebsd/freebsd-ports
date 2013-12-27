@@ -18,10 +18,4 @@ LIB_DEPENDS=	ssh2.1:${PORTSDIR}/security/libssh2
 USES=	perl5
 USE_PERL5=	configure
 
-MAN3=		Net::SSH2.3 Net::SSH2::Channel.3 \
-		Net::SSH2::Dir.3 Net::SSH2::File.3 \
-		Net::SSH2::Listener.3 Net::SSH2::PublicKey.3 \
-		Net::SSH2::SFTP.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
