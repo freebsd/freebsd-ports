@@ -12,38 +12,39 @@ COMMENT=	MIT Photonic-Bands
 
 LICENSE=	GPLv2
 
-MAKE_JOBS_UNSAFE= yes
-
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	fftw:${PORTSDIR}/math/fftw \
-		hdf5:${PORTSDIR}/science/hdf5 \
-		ctl:${PORTSDIR}/science/libctl \
-		guile:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	libfftw.so:${PORTSDIR}/math/fftw \
+		libhdf5.so:${PORTSDIR}/science/hdf5 \
+		libctl.so:${PORTSDIR}/science/libctl \
+		libguile.so:${PORTSDIR}/lang/guile
 
-USE_FORTRAN=	yes
+OPTIONS_DEFINE=	ATLAS
+ATLAS_DESC=	Use math/atlas instead of math/lapack
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+USES=		fortran
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if exists(${LOCALBASE}/lib/libatlas.so) && !defined(WITH_BLAS)
-WITH_ATLAS=	yes
-.endif
-.if defined(WITH_ATLAS)
-LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MATLAS}
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 CONFIGURE_ARGS+=	--with-lapack=-lalapack
 .else
-LIB_DEPENDS+=	blas:${PORTSDIR}/math/blas
-LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack
+LIB_DEPENDS+=	libblas.so:${PORTSDIR}/math/blas \
+		liblapack.so:${PORTSDIR}/math/lapack
 CONFIGURE_ARGS+=	--with-lapack=-llapack
 .endif
-
-MAN1=	mpb.1 mpb-data.1 mpb-split.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lhdf5 |-lhdf5 ${PTHREAD_LIBS} |g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} \
+		-e '/INSTALL/s/$$(prefix)/$$(DESTDIR)$$(prefix)/' \
+		-e '/INSTALL/s/$$(mandir)/$$(DESTDIR)$$(mandir)/' \
+		${WRKSRC}/mpb-ctl/Makefile.in ${WRKSRC}/utils/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
