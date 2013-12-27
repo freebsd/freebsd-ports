@@ -1,3 +1,7 @@
 bin/ydecode
 bin/yencode
 bin/ypost
+man/man1/ydecode.1.gz
+man/man1/yencode.1.gz
+man/man1/ypost.1.gz
+man/man5/ypostrc.5.gz
