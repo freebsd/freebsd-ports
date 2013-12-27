@@ -11,15 +11,13 @@ DISTNAME=	PQueue-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fibonacci-Heap based Priority-Queue Extension for Python
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pqueue.so
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGVERSION=	0.0.0
+PYDISTUTILS_AUTOPLIST=	yes
 
 WRKSRC=		${WRKDIR}/PQueue
 
-NO_STAGE=	yes
 post-patch:
 	${CP} ${FILESDIR}/setup.py ${WRKSRC}
 
