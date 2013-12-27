@@ -1,3 +1,168 @@
+bin/ikiwiki
+bin/ikiwiki-calendar
+bin/ikiwiki-makerepo
+bin/ikiwiki-transition
+bin/ikiwiki-update-wikilist
+%%ETCDIR%%/auto-blog.setup
+%%ETCDIR%%/auto.setup
+lib/ikiwiki/plugins/proxy.py
+lib/ikiwiki/plugins/rst
+%%SITE_PERL%%/IkiWiki.pm
+%%SITE_PERL%%/IkiWiki/CGI.pm
+%%SITE_PERL%%/IkiWiki/Plugin/404.pm
+%%SITE_PERL%%/IkiWiki/Plugin/aggregate.pm
+%%SITE_PERL%%/IkiWiki/Plugin/amazon_s3.pm
+%%SITE_PERL%%/IkiWiki/Plugin/anonok.pm
+%%SITE_PERL%%/IkiWiki/Plugin/attachment.pm
+%%SITE_PERL%%/IkiWiki/Plugin/autoindex.pm
+%%SITE_PERL%%/IkiWiki/Plugin/blogspam.pm
+%%SITE_PERL%%/IkiWiki/Plugin/brokenlinks.pm
+%%SITE_PERL%%/IkiWiki/Plugin/bzr.pm
+%%SITE_PERL%%/IkiWiki/Plugin/calendar.pm
+%%SITE_PERL%%/IkiWiki/Plugin/camelcase.pm
+%%SITE_PERL%%/IkiWiki/Plugin/color.pm
+%%SITE_PERL%%/IkiWiki/Plugin/comments.pm
+%%SITE_PERL%%/IkiWiki/Plugin/conditional.pm
+%%SITE_PERL%%/IkiWiki/Plugin/creole.pm
+%%SITE_PERL%%/IkiWiki/Plugin/cutpaste.pm
+%%SITE_PERL%%/IkiWiki/Plugin/cvs.pm
+%%SITE_PERL%%/IkiWiki/Plugin/darcs.pm
+%%SITE_PERL%%/IkiWiki/Plugin/date.pm
+%%SITE_PERL%%/IkiWiki/Plugin/ddate.pm
+%%SITE_PERL%%/IkiWiki/Plugin/editdiff.pm
+%%SITE_PERL%%/IkiWiki/Plugin/editpage.pm
+%%SITE_PERL%%/IkiWiki/Plugin/edittemplate.pm
+%%SITE_PERL%%/IkiWiki/Plugin/embed.pm
+%%SITE_PERL%%/IkiWiki/Plugin/external.pm
+%%SITE_PERL%%/IkiWiki/Plugin/favicon.pm
+%%SITE_PERL%%/IkiWiki/Plugin/filecheck.pm
+%%SITE_PERL%%/IkiWiki/Plugin/flattr.pm
+%%SITE_PERL%%/IkiWiki/Plugin/format.pm
+%%SITE_PERL%%/IkiWiki/Plugin/fortune.pm
+%%SITE_PERL%%/IkiWiki/Plugin/getsource.pm
+%%SITE_PERL%%/IkiWiki/Plugin/git.pm
+%%SITE_PERL%%/IkiWiki/Plugin/goodstuff.pm
+%%SITE_PERL%%/IkiWiki/Plugin/google.pm
+%%SITE_PERL%%/IkiWiki/Plugin/goto.pm
+%%SITE_PERL%%/IkiWiki/Plugin/graphviz.pm
+%%SITE_PERL%%/IkiWiki/Plugin/haiku.pm
+%%SITE_PERL%%/IkiWiki/Plugin/headinganchors.pm
+%%SITE_PERL%%/IkiWiki/Plugin/highlight.pm
+%%SITE_PERL%%/IkiWiki/Plugin/hnb.pm
+%%SITE_PERL%%/IkiWiki/Plugin/html.pm
+%%SITE_PERL%%/IkiWiki/Plugin/htmlbalance.pm
+%%SITE_PERL%%/IkiWiki/Plugin/htmlscrubber.pm
+%%SITE_PERL%%/IkiWiki/Plugin/htmltidy.pm
+%%SITE_PERL%%/IkiWiki/Plugin/httpauth.pm
+%%SITE_PERL%%/IkiWiki/Plugin/img.pm
+%%SITE_PERL%%/IkiWiki/Plugin/inline.pm
+%%SITE_PERL%%/IkiWiki/Plugin/link.pm
+%%SITE_PERL%%/IkiWiki/Plugin/linkmap.pm
+%%SITE_PERL%%/IkiWiki/Plugin/listdirectives.pm
+%%SITE_PERL%%/IkiWiki/Plugin/localstyle.pm
+%%SITE_PERL%%/IkiWiki/Plugin/lockedit.pm
+%%SITE_PERL%%/IkiWiki/Plugin/map.pm
+%%SITE_PERL%%/IkiWiki/Plugin/mdwn.pm
+%%SITE_PERL%%/IkiWiki/Plugin/mercurial.pm
+%%SITE_PERL%%/IkiWiki/Plugin/meta.pm
+%%SITE_PERL%%/IkiWiki/Plugin/mirrorlist.pm
+%%SITE_PERL%%/IkiWiki/Plugin/moderatedcomments.pm
+%%SITE_PERL%%/IkiWiki/Plugin/monotone.pm
+%%SITE_PERL%%/IkiWiki/Plugin/more.pm
+%%SITE_PERL%%/IkiWiki/Plugin/norcs.pm
+%%SITE_PERL%%/IkiWiki/Plugin/notifyemail.pm
+%%SITE_PERL%%/IkiWiki/Plugin/opendiscussion.pm
+%%SITE_PERL%%/IkiWiki/Plugin/openid.pm
+%%SITE_PERL%%/IkiWiki/Plugin/orphans.pm
+%%SITE_PERL%%/IkiWiki/Plugin/osm.pm
+%%SITE_PERL%%/IkiWiki/Plugin/otl.pm
+%%SITE_PERL%%/IkiWiki/Plugin/pagecount.pm
+%%SITE_PERL%%/IkiWiki/Plugin/pagestats.pm
+%%SITE_PERL%%/IkiWiki/Plugin/pagetemplate.pm
+%%SITE_PERL%%/IkiWiki/Plugin/parentlinks.pm
+%%SITE_PERL%%/IkiWiki/Plugin/passwordauth.pm
+%%SITE_PERL%%/IkiWiki/Plugin/pingee.pm
+%%SITE_PERL%%/IkiWiki/Plugin/pinger.pm
+%%SITE_PERL%%/IkiWiki/Plugin/po.pm
+%%SITE_PERL%%/IkiWiki/Plugin/poll.pm
+%%SITE_PERL%%/IkiWiki/Plugin/polygen.pm
+%%SITE_PERL%%/IkiWiki/Plugin/postsparkline.pm
+%%SITE_PERL%%/IkiWiki/Plugin/prettydate.pm
+%%SITE_PERL%%/IkiWiki/Plugin/progress.pm
+%%SITE_PERL%%/IkiWiki/Plugin/rawhtml.pm
+%%SITE_PERL%%/IkiWiki/Plugin/recentchanges.pm
+%%SITE_PERL%%/IkiWiki/Plugin/recentchangesdiff.pm
+%%SITE_PERL%%/IkiWiki/Plugin/relativedate.pm
+%%SITE_PERL%%/IkiWiki/Plugin/remove.pm
+%%SITE_PERL%%/IkiWiki/Plugin/rename.pm
+%%SITE_PERL%%/IkiWiki/Plugin/repolist.pm
+%%SITE_PERL%%/IkiWiki/Plugin/rsync.pm
+%%SITE_PERL%%/IkiWiki/Plugin/search.pm
+%%SITE_PERL%%/IkiWiki/Plugin/shortcut.pm
+%%SITE_PERL%%/IkiWiki/Plugin/sidebar.pm
+%%SITE_PERL%%/IkiWiki/Plugin/signinedit.pm
+%%SITE_PERL%%/IkiWiki/Plugin/skeleton.pm.example
+%%SITE_PERL%%/IkiWiki/Plugin/smiley.pm
+%%SITE_PERL%%/IkiWiki/Plugin/sortnaturally.pm
+%%SITE_PERL%%/IkiWiki/Plugin/sparkline.pm
+%%SITE_PERL%%/IkiWiki/Plugin/svn.pm
+%%SITE_PERL%%/IkiWiki/Plugin/table.pm
+%%SITE_PERL%%/IkiWiki/Plugin/tag.pm
+%%SITE_PERL%%/IkiWiki/Plugin/template.pm
+%%SITE_PERL%%/IkiWiki/Plugin/testpagespec.pm
+%%SITE_PERL%%/IkiWiki/Plugin/teximg.pm
+%%SITE_PERL%%/IkiWiki/Plugin/textile.pm
+%%SITE_PERL%%/IkiWiki/Plugin/theme.pm
+%%SITE_PERL%%/IkiWiki/Plugin/tla.pm
+%%SITE_PERL%%/IkiWiki/Plugin/toc.pm
+%%SITE_PERL%%/IkiWiki/Plugin/toggle.pm
+%%SITE_PERL%%/IkiWiki/Plugin/trail.pm
+%%SITE_PERL%%/IkiWiki/Plugin/transient.pm
+%%SITE_PERL%%/IkiWiki/Plugin/txt.pm
+%%SITE_PERL%%/IkiWiki/Plugin/typography.pm
+%%SITE_PERL%%/IkiWiki/Plugin/underlay.pm
+%%SITE_PERL%%/IkiWiki/Plugin/userlist.pm
+%%SITE_PERL%%/IkiWiki/Plugin/version.pm
+%%SITE_PERL%%/IkiWiki/Plugin/websetup.pm
+%%SITE_PERL%%/IkiWiki/Plugin/wikitext.pm
+%%SITE_PERL%%/IkiWiki/Plugin/wmd.pm
+%%SITE_PERL%%/IkiWiki/Receive.pm
+%%SITE_PERL%%/IkiWiki/Render.pm
+%%SITE_PERL%%/IkiWiki/Setup.pm
+%%SITE_PERL%%/IkiWiki/Setup/Automator.pm
+%%SITE_PERL%%/IkiWiki/Setup/Standard.pm
+%%SITE_PERL%%/IkiWiki/Setup/Yaml.pm
+%%SITE_PERL%%/IkiWiki/UserInfo.pm
+%%SITE_PERL%%/IkiWiki/Wrapper.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/IkiWiki/.packlist
+%%W3M%%libexec/w3m/cgi-bin/ikiwiki-w3m.cgi
+man/man1/ikiwiki-calendar.1.gz
+man/man1/ikiwiki-makerepo.1.gz
+man/man1/ikiwiki-transition.1.gz
+man/man1/ikiwiki-update-wikilist.1.gz
+man/man1/ikiwiki.1.gz
+man/man8/ikiwiki-mass-rebuild.8.gz
+sbin/ikiwiki-mass-rebuild
+%%DATADIR%%/attachment/ikiwiki/images/pbar-ani.gif
+%%DATADIR%%/attachment/ikiwiki/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%DATADIR%%/attachment/ikiwiki/images/ui-bg_flat_75_ffffff_40x100.png
+%%DATADIR%%/attachment/ikiwiki/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%DATADIR%%/attachment/ikiwiki/images/ui-bg_glass_65_ffffff_1x400.png
+%%DATADIR%%/attachment/ikiwiki/images/ui-bg_glass_75_dadada_1x400.png
+%%DATADIR%%/attachment/ikiwiki/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%DATADIR%%/attachment/ikiwiki/images/ui-bg_glass_95_fef1ec_1x400.png
+%%DATADIR%%/attachment/ikiwiki/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%DATADIR%%/attachment/ikiwiki/images/ui-icons_222222_256x240.png
+%%DATADIR%%/attachment/ikiwiki/images/ui-icons_2e83ff_256x240.png
+%%DATADIR%%/attachment/ikiwiki/images/ui-icons_454545_256x240.png
+%%DATADIR%%/attachment/ikiwiki/images/ui-icons_888888_256x240.png
+%%DATADIR%%/attachment/ikiwiki/images/ui-icons_cd0a0a_256x240.png
+%%DATADIR%%/attachment/ikiwiki/jquery-ui.min.css
+%%DATADIR%%/attachment/ikiwiki/jquery-ui.min.js
+%%DATADIR%%/attachment/ikiwiki/jquery.fileupload-ui.js
+%%DATADIR%%/attachment/ikiwiki/jquery.fileupload.js
+%%DATADIR%%/attachment/ikiwiki/jquery.iframe-transport.js
+%%DATADIR%%/attachment/ikiwiki/jquery.tmpl.min.js
 %%DATADIR%%/basewiki/favicon.ico
 %%DATADIR%%/basewiki/ikiwiki.mdwn
 %%DATADIR%%/basewiki/ikiwiki/directive.mdwn
@@ -50,6 +215,7 @@
 %%DATADIR%%/directives/ikiwiki/directive/meta.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/more.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/orphans.mdwn
+%%DATADIR%%/directives/ikiwiki/directive/osm.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/pagecount.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/pagestats.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/pagetemplate.mdwn
@@ -71,10 +237,16 @@
 %%DATADIR%%/directives/ikiwiki/directive/toc.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/toggle.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/toggleable.mdwn
+%%DATADIR%%/directives/ikiwiki/directive/trailitem.mdwn
+%%DATADIR%%/directives/ikiwiki/directive/trailitems.mdwn
+%%DATADIR%%/directives/ikiwiki/directive/traillink.mdwn
+%%DATADIR%%/directives/ikiwiki/directive/trailoptions.mdwn
 %%DATADIR%%/directives/ikiwiki/directive/version.mdwn
+%%DATADIR%%/directives/ikiwiki/directive/waypoint.mdwn
 %%DATADIR%%/javascript/ikiwiki/ikiwiki.js
 %%DATADIR%%/javascript/ikiwiki/relativedate.js
 %%DATADIR%%/javascript/ikiwiki/toggle.js
+%%DATADIR%%/jquery/ikiwiki/jquery.min.js
 %%PO4A%%%%DATADIR%%/locale/cs/basewiki/ikiwiki.mdwn
 %%PO4A%%%%DATADIR%%/locale/cs/basewiki/ikiwiki/directive.mdwn
 %%PO4A%%%%DATADIR%%/locale/cs/basewiki/ikiwiki/formatting.mdwn
@@ -281,8 +453,9 @@
 %%PO4A%%%%DATADIR%%/locale/fr/directives/ikiwiki/directive/toggle.mdwn
 %%PO4A%%%%DATADIR%%/locale/fr/directives/ikiwiki/directive/version.mdwn
 %%PO4A%%%%DATADIR%%/locale/fr/smiley/smileys.mdwn
-%%DATADIR%%/openid-selector/ikiwiki/openid/jquery.js
 %%DATADIR%%/openid-selector/ikiwiki/openid/openid-jquery.js
+%%DATADIR%%/osm/ikiwiki/images/osm.png
+%%DATADIR%%/osm/ikiwiki/osm.js
 %%DATADIR%%/po/cs/basewiki/ikiwiki.cs.po
 %%DATADIR%%/po/cs/basewiki/ikiwiki/directive.cs.po
 %%DATADIR%%/po/cs/basewiki/ikiwiki/formatting.cs.po
@@ -562,6 +735,7 @@
 %%DATADIR%%/templates/googleform.tmpl
 %%DATADIR%%/templates/inlinepage.tmpl
 %%DATADIR%%/templates/microblog.tmpl
+%%DATADIR%%/templates/notifyemail.tmpl
 %%DATADIR%%/templates/openid-selector.tmpl
 %%DATADIR%%/templates/page.tmpl
 %%DATADIR%%/templates/passwordmail.tmpl
@@ -574,6 +748,7 @@
 %%DATADIR%%/templates/searchform.tmpl
 %%DATADIR%%/templates/searchquery.tmpl
 %%DATADIR%%/templates/titlepage.tmpl
+%%DATADIR%%/templates/trails.tmpl
 %%DATADIR%%/themes/actiontabs/style.css
 %%DATADIR%%/themes/blueview/background_darkness.png
 %%DATADIR%%/themes/blueview/header_background.png
@@ -581,140 +756,8 @@
 %%DATADIR%%/themes/goldtype/background_darkness.png
 %%DATADIR%%/themes/goldtype/header_background.png
 %%DATADIR%%/themes/goldtype/style.css
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/IkiWiki/.packlist
-%%SITE_PERL%%/IkiWiki.pm
-%%SITE_PERL%%/IkiWiki/CGI.pm
-%%SITE_PERL%%/IkiWiki/Plugin/404.pm
-%%SITE_PERL%%/IkiWiki/Plugin/aggregate.pm
-%%SITE_PERL%%/IkiWiki/Plugin/amazon_s3.pm
-%%SITE_PERL%%/IkiWiki/Plugin/anonok.pm
-%%SITE_PERL%%/IkiWiki/Plugin/attachment.pm
-%%SITE_PERL%%/IkiWiki/Plugin/autoindex.pm
-%%SITE_PERL%%/IkiWiki/Plugin/blogspam.pm
-%%SITE_PERL%%/IkiWiki/Plugin/brokenlinks.pm
-%%SITE_PERL%%/IkiWiki/Plugin/bzr.pm
-%%SITE_PERL%%/IkiWiki/Plugin/calendar.pm
-%%SITE_PERL%%/IkiWiki/Plugin/camelcase.pm
-%%SITE_PERL%%/IkiWiki/Plugin/color.pm
-%%SITE_PERL%%/IkiWiki/Plugin/comments.pm
-%%SITE_PERL%%/IkiWiki/Plugin/conditional.pm
-%%SITE_PERL%%/IkiWiki/Plugin/creole.pm
-%%SITE_PERL%%/IkiWiki/Plugin/cutpaste.pm
-%%SITE_PERL%%/IkiWiki/Plugin/cvs.pm
-%%SITE_PERL%%/IkiWiki/Plugin/darcs.pm
-%%SITE_PERL%%/IkiWiki/Plugin/date.pm
-%%SITE_PERL%%/IkiWiki/Plugin/ddate.pm
-%%SITE_PERL%%/IkiWiki/Plugin/editdiff.pm
-%%SITE_PERL%%/IkiWiki/Plugin/editpage.pm
-%%SITE_PERL%%/IkiWiki/Plugin/edittemplate.pm
-%%SITE_PERL%%/IkiWiki/Plugin/embed.pm
-%%SITE_PERL%%/IkiWiki/Plugin/external.pm
-%%SITE_PERL%%/IkiWiki/Plugin/favicon.pm
-%%SITE_PERL%%/IkiWiki/Plugin/filecheck.pm
-%%SITE_PERL%%/IkiWiki/Plugin/flattr.pm
-%%SITE_PERL%%/IkiWiki/Plugin/format.pm
-%%SITE_PERL%%/IkiWiki/Plugin/fortune.pm
-%%SITE_PERL%%/IkiWiki/Plugin/getsource.pm
-%%SITE_PERL%%/IkiWiki/Plugin/git.pm
-%%SITE_PERL%%/IkiWiki/Plugin/goodstuff.pm
-%%SITE_PERL%%/IkiWiki/Plugin/google.pm
-%%SITE_PERL%%/IkiWiki/Plugin/goto.pm
-%%SITE_PERL%%/IkiWiki/Plugin/graphviz.pm
-%%SITE_PERL%%/IkiWiki/Plugin/haiku.pm
-%%SITE_PERL%%/IkiWiki/Plugin/highlight.pm
-%%SITE_PERL%%/IkiWiki/Plugin/hnb.pm
-%%SITE_PERL%%/IkiWiki/Plugin/html.pm
-%%SITE_PERL%%/IkiWiki/Plugin/htmlbalance.pm
-%%SITE_PERL%%/IkiWiki/Plugin/htmlscrubber.pm
-%%SITE_PERL%%/IkiWiki/Plugin/htmltidy.pm
-%%SITE_PERL%%/IkiWiki/Plugin/httpauth.pm
-%%SITE_PERL%%/IkiWiki/Plugin/img.pm
-%%SITE_PERL%%/IkiWiki/Plugin/inline.pm
-%%SITE_PERL%%/IkiWiki/Plugin/link.pm
-%%SITE_PERL%%/IkiWiki/Plugin/linkmap.pm
-%%SITE_PERL%%/IkiWiki/Plugin/listdirectives.pm
-%%SITE_PERL%%/IkiWiki/Plugin/localstyle.pm
-%%SITE_PERL%%/IkiWiki/Plugin/lockedit.pm
-%%SITE_PERL%%/IkiWiki/Plugin/map.pm
-%%SITE_PERL%%/IkiWiki/Plugin/mdwn.pm
-%%SITE_PERL%%/IkiWiki/Plugin/mercurial.pm
-%%SITE_PERL%%/IkiWiki/Plugin/meta.pm
-%%SITE_PERL%%/IkiWiki/Plugin/mirrorlist.pm
-%%SITE_PERL%%/IkiWiki/Plugin/moderatedcomments.pm
-%%SITE_PERL%%/IkiWiki/Plugin/monotone.pm
-%%SITE_PERL%%/IkiWiki/Plugin/more.pm
-%%SITE_PERL%%/IkiWiki/Plugin/norcs.pm
-%%SITE_PERL%%/IkiWiki/Plugin/opendiscussion.pm
-%%SITE_PERL%%/IkiWiki/Plugin/openid.pm
-%%SITE_PERL%%/IkiWiki/Plugin/orphans.pm
-%%SITE_PERL%%/IkiWiki/Plugin/otl.pm
-%%SITE_PERL%%/IkiWiki/Plugin/pagecount.pm
-%%SITE_PERL%%/IkiWiki/Plugin/pagestats.pm
-%%SITE_PERL%%/IkiWiki/Plugin/pagetemplate.pm
-%%SITE_PERL%%/IkiWiki/Plugin/parentlinks.pm
-%%SITE_PERL%%/IkiWiki/Plugin/passwordauth.pm
-%%SITE_PERL%%/IkiWiki/Plugin/pingee.pm
-%%SITE_PERL%%/IkiWiki/Plugin/pinger.pm
-%%SITE_PERL%%/IkiWiki/Plugin/po.pm
-%%SITE_PERL%%/IkiWiki/Plugin/poll.pm
-%%SITE_PERL%%/IkiWiki/Plugin/polygen.pm
-%%SITE_PERL%%/IkiWiki/Plugin/postsparkline.pm
-%%SITE_PERL%%/IkiWiki/Plugin/prettydate.pm
-%%SITE_PERL%%/IkiWiki/Plugin/progress.pm
-%%SITE_PERL%%/IkiWiki/Plugin/rawhtml.pm
-%%SITE_PERL%%/IkiWiki/Plugin/recentchanges.pm
-%%SITE_PERL%%/IkiWiki/Plugin/recentchangesdiff.pm
-%%SITE_PERL%%/IkiWiki/Plugin/relativedate.pm
-%%SITE_PERL%%/IkiWiki/Plugin/remove.pm
-%%SITE_PERL%%/IkiWiki/Plugin/rename.pm
-%%SITE_PERL%%/IkiWiki/Plugin/repolist.pm
-%%SITE_PERL%%/IkiWiki/Plugin/rsync.pm
-%%SITE_PERL%%/IkiWiki/Plugin/search.pm
-%%SITE_PERL%%/IkiWiki/Plugin/shortcut.pm
-%%SITE_PERL%%/IkiWiki/Plugin/sidebar.pm
-%%SITE_PERL%%/IkiWiki/Plugin/signinedit.pm
-%%SITE_PERL%%/IkiWiki/Plugin/skeleton.pm.example
-%%SITE_PERL%%/IkiWiki/Plugin/smiley.pm
-%%SITE_PERL%%/IkiWiki/Plugin/sortnaturally.pm
-%%SITE_PERL%%/IkiWiki/Plugin/sparkline.pm
-%%SITE_PERL%%/IkiWiki/Plugin/svn.pm
-%%SITE_PERL%%/IkiWiki/Plugin/table.pm
-%%SITE_PERL%%/IkiWiki/Plugin/tag.pm
-%%SITE_PERL%%/IkiWiki/Plugin/template.pm
-%%SITE_PERL%%/IkiWiki/Plugin/testpagespec.pm
-%%SITE_PERL%%/IkiWiki/Plugin/teximg.pm
-%%SITE_PERL%%/IkiWiki/Plugin/textile.pm
-%%SITE_PERL%%/IkiWiki/Plugin/theme.pm
-%%SITE_PERL%%/IkiWiki/Plugin/tla.pm
-%%SITE_PERL%%/IkiWiki/Plugin/toc.pm
-%%SITE_PERL%%/IkiWiki/Plugin/toggle.pm
-%%SITE_PERL%%/IkiWiki/Plugin/transient.pm
-%%SITE_PERL%%/IkiWiki/Plugin/txt.pm
-%%SITE_PERL%%/IkiWiki/Plugin/typography.pm
-%%SITE_PERL%%/IkiWiki/Plugin/underlay.pm
-%%SITE_PERL%%/IkiWiki/Plugin/version.pm
-%%SITE_PERL%%/IkiWiki/Plugin/websetup.pm
-%%SITE_PERL%%/IkiWiki/Plugin/wikitext.pm
-%%SITE_PERL%%/IkiWiki/Plugin/wmd.pm
-%%SITE_PERL%%/IkiWiki/Receive.pm
-%%SITE_PERL%%/IkiWiki/Render.pm
-%%SITE_PERL%%/IkiWiki/Setup.pm
-%%SITE_PERL%%/IkiWiki/Setup/Automator.pm
-%%SITE_PERL%%/IkiWiki/Setup/Standard.pm
-%%SITE_PERL%%/IkiWiki/Setup/Yaml.pm
-%%SITE_PERL%%/IkiWiki/UserInfo.pm
-%%SITE_PERL%%/IkiWiki/Wrapper.pm
-bin/ikiwiki
-bin/ikiwiki-calendar
-bin/ikiwiki-makerepo
-bin/ikiwiki-transition
-bin/ikiwiki-update-wikilist
-etc/ikiwiki/auto-blog.setup
-etc/ikiwiki/auto.setup
-lib/ikiwiki/plugins/proxy.py
-lib/ikiwiki/plugins/rst
-%%W3M%%libexec/w3m/cgi-bin/ikiwiki-w3m.cgi
-sbin/ikiwiki-mass-rebuild
+%%DATADIR%%/themes/monochrome/gradient.png
+%%DATADIR%%/themes/monochrome/style.css
 share/locale/bg/LC_MESSAGES/ikiwiki.mo
 share/locale/cs/LC_MESSAGES/ikiwiki.mo
 share/locale/da/LC_MESSAGES/ikiwiki.mo
@@ -727,116 +770,125 @@ share/locale/pl/LC_MESSAGES/ikiwiki.mo
 share/locale/sv/LC_MESSAGES/ikiwiki.mo
 share/locale/tr/LC_MESSAGES/ikiwiki.mo
 share/locale/vi/LC_MESSAGES/ikiwiki.mo
-@dirrm etc/ikiwiki
-@dirrm lib/ikiwiki/plugins
-@dirrm lib/ikiwiki
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IkiWiki
-@dirrm %%DATADIR%%/basewiki/ikiwiki/pagespec
-@dirrm %%DATADIR%%/basewiki/ikiwiki/subpage
-@dirrm %%DATADIR%%/basewiki/ikiwiki
-@dirrm %%DATADIR%%/basewiki/templates
-@dirrm %%DATADIR%%/basewiki/wikiicons
-@dirrm %%DATADIR%%/basewiki
-@dirrm %%DATADIR%%/directives/ikiwiki/directive
-@dirrm %%DATADIR%%/directives/ikiwiki
-@dirrm %%DATADIR%%/directives
-@dirrm %%DATADIR%%/javascript/ikiwiki
-@dirrm %%DATADIR%%/javascript
-%%PO4A%%@dirrm %%DATADIR%%/locale/cs/basewiki/ikiwiki/pagespec
-%%PO4A%%@dirrm %%DATADIR%%/locale/cs/basewiki/ikiwiki/subpage
-%%PO4A%%@dirrm %%DATADIR%%/locale/cs/basewiki/ikiwiki
-%%PO4A%%@dirrm %%DATADIR%%/locale/cs/basewiki
-%%PO4A%%@dirrm %%DATADIR%%/locale/cs
-%%PO4A%%@dirrm %%DATADIR%%/locale/da/basewiki/ikiwiki/pagespec
-%%PO4A%%@dirrm %%DATADIR%%/locale/da/basewiki/ikiwiki/subpage
-%%PO4A%%@dirrm %%DATADIR%%/locale/da/basewiki/ikiwiki
-%%PO4A%%@dirrm %%DATADIR%%/locale/da/basewiki/templates
-%%PO4A%%@dirrm %%DATADIR%%/locale/da/basewiki
-%%PO4A%%@dirrm %%DATADIR%%/locale/da/directives/ikiwiki/directive
-%%PO4A%%@dirrm %%DATADIR%%/locale/da/directives/ikiwiki
-%%PO4A%%@dirrm %%DATADIR%%/locale/da/directives
-%%PO4A%%@dirrm %%DATADIR%%/locale/da/smiley
-%%PO4A%%@dirrm %%DATADIR%%/locale/da
-%%PO4A%%@dirrm %%DATADIR%%/locale/de/basewiki/ikiwiki/pagespec
-%%PO4A%%@dirrm %%DATADIR%%/locale/de/basewiki/ikiwiki/subpage
-%%PO4A%%@dirrm %%DATADIR%%/locale/de/basewiki/ikiwiki
-%%PO4A%%@dirrm %%DATADIR%%/locale/de/basewiki
-%%PO4A%%@dirrm %%DATADIR%%/locale/de/directives/ikiwiki/directive
-%%PO4A%%@dirrm %%DATADIR%%/locale/de/directives/ikiwiki
-%%PO4A%%@dirrm %%DATADIR%%/locale/de/directives
-%%PO4A%%@dirrm %%DATADIR%%/locale/de/smiley
-%%PO4A%%@dirrm %%DATADIR%%/locale/de
-%%PO4A%%@dirrm %%DATADIR%%/locale/es/basewiki/ikiwiki/pagespec
-%%PO4A%%@dirrm %%DATADIR%%/locale/es/basewiki/ikiwiki/subpage
-%%PO4A%%@dirrm %%DATADIR%%/locale/es/basewiki/ikiwiki
-%%PO4A%%@dirrm %%DATADIR%%/locale/es/basewiki
-%%PO4A%%@dirrm %%DATADIR%%/locale/es
-%%PO4A%%@dirrm %%DATADIR%%/locale/fr/basewiki/ikiwiki/pagespec
-%%PO4A%%@dirrm %%DATADIR%%/locale/fr/basewiki/ikiwiki/subpage
-%%PO4A%%@dirrm %%DATADIR%%/locale/fr/basewiki/ikiwiki
-%%PO4A%%@dirrm %%DATADIR%%/locale/fr/basewiki
-%%PO4A%%@dirrm %%DATADIR%%/locale/fr/directives/ikiwiki/directive
-%%PO4A%%@dirrm %%DATADIR%%/locale/fr/directives/ikiwiki
-%%PO4A%%@dirrm %%DATADIR%%/locale/fr/directives
-%%PO4A%%@dirrm %%DATADIR%%/locale/fr/smiley
-%%PO4A%%@dirrm %%DATADIR%%/locale/fr
-%%PO4A%%@dirrm %%DATADIR%%/locale
-@dirrm %%DATADIR%%/openid-selector/ikiwiki/openid
-@dirrm %%DATADIR%%/openid-selector/ikiwiki
-@dirrm %%DATADIR%%/openid-selector
-@dirrm %%DATADIR%%/po/cs/basewiki/ikiwiki/pagespec
-@dirrm %%DATADIR%%/po/cs/basewiki/ikiwiki/subpage
-@dirrm %%DATADIR%%/po/cs/basewiki/ikiwiki
-@dirrm %%DATADIR%%/po/cs/basewiki/templates
-@dirrm %%DATADIR%%/po/cs/basewiki
-@dirrm %%DATADIR%%/po/cs
-@dirrm %%DATADIR%%/po/da/basewiki/ikiwiki/pagespec
-@dirrm %%DATADIR%%/po/da/basewiki/ikiwiki/subpage
-@dirrm %%DATADIR%%/po/da/basewiki/ikiwiki
-@dirrm %%DATADIR%%/po/da/basewiki/templates
-@dirrm %%DATADIR%%/po/da/basewiki
-@dirrm %%DATADIR%%/po/da/directives/ikiwiki/directive
-@dirrm %%DATADIR%%/po/da/directives/ikiwiki
-@dirrm %%DATADIR%%/po/da/directives
-@dirrm %%DATADIR%%/po/da/smiley
-@dirrm %%DATADIR%%/po/da
-@dirrm %%DATADIR%%/po/de/basewiki/ikiwiki/pagespec
-@dirrm %%DATADIR%%/po/de/basewiki/ikiwiki/subpage
-@dirrm %%DATADIR%%/po/de/basewiki/ikiwiki
-@dirrm %%DATADIR%%/po/de/basewiki/templates
-@dirrm %%DATADIR%%/po/de/basewiki
-@dirrm %%DATADIR%%/po/de/directives/ikiwiki/directive
-@dirrm %%DATADIR%%/po/de/directives/ikiwiki
-@dirrm %%DATADIR%%/po/de/directives
-@dirrm %%DATADIR%%/po/de/smiley
-@dirrm %%DATADIR%%/po/de
-@dirrm %%DATADIR%%/po/es/basewiki/ikiwiki/pagespec
-@dirrm %%DATADIR%%/po/es/basewiki/ikiwiki/subpage
-@dirrm %%DATADIR%%/po/es/basewiki/ikiwiki
-@dirrm %%DATADIR%%/po/es/basewiki/templates
-@dirrm %%DATADIR%%/po/es/basewiki
-@dirrm %%DATADIR%%/po/es
-@dirrm %%DATADIR%%/po/fr/basewiki/ikiwiki/pagespec
-@dirrm %%DATADIR%%/po/fr/basewiki/ikiwiki/subpage
-@dirrm %%DATADIR%%/po/fr/basewiki/ikiwiki
-@dirrm %%DATADIR%%/po/fr/basewiki/templates
-@dirrm %%DATADIR%%/po/fr/basewiki
+@dirrm %%DATADIR%%/themes/monochrome
+@dirrm %%DATADIR%%/themes/goldtype
+@dirrm %%DATADIR%%/themes/blueview
+@dirrm %%DATADIR%%/themes/actiontabs
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/smiley/smileys
+@dirrm %%DATADIR%%/smiley
+@dirrm %%DATADIR%%/po/fr/smiley
 @dirrm %%DATADIR%%/po/fr/directives/ikiwiki/directive
 @dirrm %%DATADIR%%/po/fr/directives/ikiwiki
 @dirrm %%DATADIR%%/po/fr/directives
-@dirrm %%DATADIR%%/po/fr/smiley
+@dirrm %%DATADIR%%/po/fr/basewiki/templates
+@dirrm %%DATADIR%%/po/fr/basewiki/ikiwiki/subpage
+@dirrm %%DATADIR%%/po/fr/basewiki/ikiwiki/pagespec
+@dirrm %%DATADIR%%/po/fr/basewiki/ikiwiki
+@dirrm %%DATADIR%%/po/fr/basewiki
 @dirrm %%DATADIR%%/po/fr
+@dirrm %%DATADIR%%/po/es/basewiki/templates
+@dirrm %%DATADIR%%/po/es/basewiki/ikiwiki/subpage
+@dirrm %%DATADIR%%/po/es/basewiki/ikiwiki/pagespec
+@dirrm %%DATADIR%%/po/es/basewiki/ikiwiki
+@dirrm %%DATADIR%%/po/es/basewiki
+@dirrm %%DATADIR%%/po/es
+@dirrm %%DATADIR%%/po/de/smiley
+@dirrm %%DATADIR%%/po/de/directives/ikiwiki/directive
+@dirrm %%DATADIR%%/po/de/directives/ikiwiki
+@dirrm %%DATADIR%%/po/de/directives
+@dirrm %%DATADIR%%/po/de/basewiki/templates
+@dirrm %%DATADIR%%/po/de/basewiki/ikiwiki/subpage
+@dirrm %%DATADIR%%/po/de/basewiki/ikiwiki/pagespec
+@dirrm %%DATADIR%%/po/de/basewiki/ikiwiki
+@dirrm %%DATADIR%%/po/de/basewiki
+@dirrm %%DATADIR%%/po/de
+@dirrm %%DATADIR%%/po/da/smiley
+@dirrm %%DATADIR%%/po/da/directives/ikiwiki/directive
+@dirrm %%DATADIR%%/po/da/directives/ikiwiki
+@dirrm %%DATADIR%%/po/da/directives
+@dirrm %%DATADIR%%/po/da/basewiki/templates
+@dirrm %%DATADIR%%/po/da/basewiki/ikiwiki/subpage
+@dirrm %%DATADIR%%/po/da/basewiki/ikiwiki/pagespec
+@dirrm %%DATADIR%%/po/da/basewiki/ikiwiki
+@dirrm %%DATADIR%%/po/da/basewiki
+@dirrm %%DATADIR%%/po/da
+@dirrm %%DATADIR%%/po/cs/basewiki/templates
+@dirrm %%DATADIR%%/po/cs/basewiki/ikiwiki/subpage
+@dirrm %%DATADIR%%/po/cs/basewiki/ikiwiki/pagespec
+@dirrm %%DATADIR%%/po/cs/basewiki/ikiwiki
+@dirrm %%DATADIR%%/po/cs/basewiki
+@dirrm %%DATADIR%%/po/cs
 @dirrm %%DATADIR%%/po
-@dirrm %%DATADIR%%/smiley/smileys
-@dirrm %%DATADIR%%/smiley
-@dirrm %%DATADIR%%/templates
-@dirrm %%DATADIR%%/themes/actiontabs
-@dirrm %%DATADIR%%/themes/blueview
-@dirrm %%DATADIR%%/themes/goldtype
-@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/osm/ikiwiki/images
+@dirrm %%DATADIR%%/osm/ikiwiki
+@dirrm %%DATADIR%%/osm
+@dirrm %%DATADIR%%/openid-selector/ikiwiki/openid
+@dirrm %%DATADIR%%/openid-selector/ikiwiki
+@dirrm %%DATADIR%%/openid-selector
+%%PO4A%%@dirrm %%DATADIR%%/locale/fr/smiley
+%%PO4A%%@dirrm %%DATADIR%%/locale/fr/directives/ikiwiki/directive
+%%PO4A%%@dirrm %%DATADIR%%/locale/fr/directives/ikiwiki
+%%PO4A%%@dirrm %%DATADIR%%/locale/fr/directives
+%%PO4A%%@dirrm %%DATADIR%%/locale/fr/basewiki/ikiwiki/subpage
+%%PO4A%%@dirrm %%DATADIR%%/locale/fr/basewiki/ikiwiki/pagespec
+%%PO4A%%@dirrm %%DATADIR%%/locale/fr/basewiki/ikiwiki
+%%PO4A%%@dirrm %%DATADIR%%/locale/fr/basewiki
+%%PO4A%%@dirrm %%DATADIR%%/locale/fr
+%%PO4A%%@dirrm %%DATADIR%%/locale/es/basewiki/ikiwiki/subpage
+%%PO4A%%@dirrm %%DATADIR%%/locale/es/basewiki/ikiwiki/pagespec
+%%PO4A%%@dirrm %%DATADIR%%/locale/es/basewiki/ikiwiki
+%%PO4A%%@dirrm %%DATADIR%%/locale/es/basewiki
+%%PO4A%%@dirrm %%DATADIR%%/locale/es
+%%PO4A%%@dirrm %%DATADIR%%/locale/de/smiley
+%%PO4A%%@dirrm %%DATADIR%%/locale/de/directives/ikiwiki/directive
+%%PO4A%%@dirrm %%DATADIR%%/locale/de/directives/ikiwiki
+%%PO4A%%@dirrm %%DATADIR%%/locale/de/directives
+%%PO4A%%@dirrm %%DATADIR%%/locale/de/basewiki/ikiwiki/subpage
+%%PO4A%%@dirrm %%DATADIR%%/locale/de/basewiki/ikiwiki/pagespec
+%%PO4A%%@dirrm %%DATADIR%%/locale/de/basewiki/ikiwiki
+%%PO4A%%@dirrm %%DATADIR%%/locale/de/basewiki
+%%PO4A%%@dirrm %%DATADIR%%/locale/de
+%%PO4A%%@dirrm %%DATADIR%%/locale/da/smiley
+%%PO4A%%@dirrm %%DATADIR%%/locale/da/directives/ikiwiki/directive
+%%PO4A%%@dirrm %%DATADIR%%/locale/da/directives/ikiwiki
+%%PO4A%%@dirrm %%DATADIR%%/locale/da/directives
+%%PO4A%%@dirrm %%DATADIR%%/locale/da/basewiki/templates
+%%PO4A%%@dirrm %%DATADIR%%/locale/da/basewiki/ikiwiki/subpage
+%%PO4A%%@dirrm %%DATADIR%%/locale/da/basewiki/ikiwiki/pagespec
+%%PO4A%%@dirrm %%DATADIR%%/locale/da/basewiki/ikiwiki
+%%PO4A%%@dirrm %%DATADIR%%/locale/da/basewiki
+%%PO4A%%@dirrm %%DATADIR%%/locale/da
+%%PO4A%%@dirrm %%DATADIR%%/locale/cs/basewiki/ikiwiki/subpage
+%%PO4A%%@dirrm %%DATADIR%%/locale/cs/basewiki/ikiwiki/pagespec
+%%PO4A%%@dirrm %%DATADIR%%/locale/cs/basewiki/ikiwiki
+%%PO4A%%@dirrm %%DATADIR%%/locale/cs/basewiki
+%%PO4A%%@dirrm %%DATADIR%%/locale/cs
+%%PO4A%%@dirrm %%DATADIR%%/locale
+@dirrm %%DATADIR%%/jquery/ikiwiki
+@dirrm %%DATADIR%%/jquery
+@dirrm %%DATADIR%%/javascript/ikiwiki
+@dirrm %%DATADIR%%/javascript
+@dirrm %%DATADIR%%/directives/ikiwiki/directive
+@dirrm %%DATADIR%%/directives/ikiwiki
+@dirrm %%DATADIR%%/directives
+@dirrm %%DATADIR%%/basewiki/wikiicons
+@dirrm %%DATADIR%%/basewiki/templates
+@dirrm %%DATADIR%%/basewiki/ikiwiki/subpage
+@dirrm %%DATADIR%%/basewiki/ikiwiki/pagespec
+@dirrm %%DATADIR%%/basewiki/ikiwiki
+@dirrm %%DATADIR%%/basewiki
+@dirrm %%DATADIR%%/attachment/ikiwiki/images
+@dirrm %%DATADIR%%/attachment/ikiwiki
+@dirrm %%DATADIR%%/attachment
 @dirrm %%DATADIR%%
-@dirrm %%SITE_PERL%%/IkiWiki/Plugin
-@dirrm %%SITE_PERL%%/IkiWiki/Setup
-@dirrm %%SITE_PERL%%/IkiWiki
 %%W3M%%@dirrmtry libexec/w3m/cgi-bin
 %%W3M%%@dirrmtry libexec/w3m
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IkiWiki
+@dirrm %%SITE_PERL%%/IkiWiki/Setup
+@dirrm %%SITE_PERL%%/IkiWiki/Plugin
+@dirrm %%SITE_PERL%%/IkiWiki
+@dirrmtry lib/ikiwiki/plugins
+@dirrmtry lib/ikiwiki
+@dirrmtry %%ETCDIR%%
