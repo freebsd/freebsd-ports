@@ -1,4 +1,8 @@
 bin/lmarbles
+@unexec if cmp -s %D/%%ETCDIR%%/lmarbles.prfs.sample %D/%%ETCDIR%%/lmarbles.prfs ; then rm -f %D/%%ETCDIR%%/lmarbles.prfs ; fi
+%%ETCDIR%%/lmarbles.prfs.sample
+@exec if [ ! -f %D/%%ETCDIR%%/lmarbles.prfs ] ; then cp -p %D/%F %B/lmarbles.prfs ; fi
+man/man6/lmarbles.6.gz
 share/applications/lmarbles.desktop
 %%DATADIR%%/gfx/board.bmp
 %%DATADIR%%/gfx/f_red.bmp
@@ -75,7 +79,4 @@ share/pixmaps/lmarbles48.png
 @dirrm %%DATADIR%%/gfx/metal
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
-@unexec if cmp -s %D/%%ETCDIR%%/lmarbles.prfs.sample %D/%%ETCDIR%%/lmarbles.prfs ; then rm -f %D/%%ETCDIR%%/lmarbles.prfs ; fi
-%%ETCDIR%%/lmarbles.prfs.sample
-@exec if [ ! -f %D/%%ETCDIR%%/lmarbles.prfs ] ; then cp -p %D/%F %B/lmarbles.prfs ; fi
 @dirrmtry %%ETCDIR%%
