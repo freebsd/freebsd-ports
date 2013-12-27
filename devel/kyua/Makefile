@@ -3,6 +3,7 @@
 
 PORTNAME=	kyua
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	kyua
@@ -21,6 +22,11 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
 
+TESTS_USER=	tests
+USERS=		${TESTS_USER}
+SUB_FILES=	kyua.conf
+SUB_LIST=	TESTS_USER=${TESTS_USER}
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
@@ -38,6 +44,8 @@ MAKE_FLAGS+=	doc_DATA=
 MAKE_FLAGS+=	dist_examples_DATA=
 .endif
 PLIST_FILES=	bin/kyua
+PLIST_DIRS=	etc/kyua
+PLIST_FILES+=	etc/kyua/kyua.conf
 
 PORTDATA=	misc store examples
 PORTDOCS=	AUTHORS COPYING NEWS README
@@ -46,5 +54,9 @@ MAN1+=	kyua-debug.1 kyua-help.1 kyua-list.1 kyua-report-html.1
 MAN1+=	kyua-report.1 kyua-test.1 kyua.1
 MAN5=	kyua.conf.5 kyuafile.5
 MAN7=	kyua-build-root.7 kyua-test-filters.7
+
+post-install:
+	${MKDIR} ${PREFIX}/etc/kyua/
+	${INSTALL_DATA} ${WRKDIR}/kyua.conf ${PREFIX}/etc/kyua/
 
 .include <bsd.port.mk>
