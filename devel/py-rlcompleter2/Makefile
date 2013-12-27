@@ -12,12 +12,8 @@ COMMENT=	Python module for readline interactive completion
 
 LICENSE=	MIT
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/rlcompleter2.py \
-		%%PYTHON_SITELIBDIR%%/rlcompleter2.pyc \
-		%%PYTHON_SITELIBDIR%%/rlcompleter2.pyo
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
