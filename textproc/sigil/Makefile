@@ -13,7 +13,7 @@ COMMENT=	WYSIWYG ePub editor
 
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libxerces-c.so:${PORTSDIR}/textproc/xerces-c3 \
-		libhunspell-1.so:${PORTSDIR}/textproc/hunspell \
+		libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
 LICENSE=	GPLv3

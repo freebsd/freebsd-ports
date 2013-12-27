@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
-		libhunspell.so:${PORTSDIR}/textproc/hunspell \
+		libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
 		librsync.so:${PORTSDIR}/net/librsync
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
