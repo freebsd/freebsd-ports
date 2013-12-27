@@ -1,5 +1,7 @@
 bin/nget
 bin/ngetlite
+man/man1/nget.1.gz
+man/man1/ngetlite.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
