@@ -8,28 +8,16 @@ MASTER_SITES=	http://vvelox.net/src/shell-include/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	vvelox@vvelox.net
-COMMENT=	A include system for shell scripts
+COMMENT=	Include system for shell scripts
 
 USES=		perl5
 
-MAN3=		random::shortIntRandom.3 \
-		random.3 \
-		fileGetLine.3
-
-MAN7=		shell-include.7
-
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-#nothing to configure
-NO_STAGE=	yes
-do-configure:
-	@${ECHO} -n
-
-#nothing to build
-do-build:
-	@${ECHO} -n
+NO_CONFIGURE=	yes
+NO_BUILD=	yes
 
 do-install:
-	@${EXEC} cd ${WRKSRC}/ ; ${WRKSRC}/install ${PREFIX}
+	cd ${WRKSRC}/ ; ${SH} ${WRKSRC}/install ${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>
