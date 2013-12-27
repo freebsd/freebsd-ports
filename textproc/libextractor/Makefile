@@ -3,7 +3,7 @@
 
 PORTNAME=	libextractor
 PORTVERSION=	0.6.2
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -99,7 +99,7 @@ PLIST_SUB+=	GSF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPOPPLER}
-LIB_DEPENDS+=	poppler:${PORTSDIR}/graphics/poppler
+LIB_DEPENDS+=	libpoppler.so:${PORTSDIR}/graphics/poppler
 PLIST_SUB+=	POPPLER=""
 .else
 PLIST_SUB+=	POPPLER="@comment "
