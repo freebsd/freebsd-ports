@@ -7,20 +7,14 @@ CATEGORIES=	shells
 MASTER_SITES=	http://members.tip.net.au/~dbell/programs/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Stand-Alone shell combining many common utilities
+COMMENT=	Stand-Alone shell combining many common utilities
 
-MAN1=		sash.1
+.if !exists(/usr/include/fs/ntfs/ntfsmount.h)
+BROKEN=	Depends on fs/ntfs/ntfsmount.h
+.endif
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sash ${PREFIX}/bin/sash
-	${INSTALL_MAN} ${WRKSRC}/sash.1 ${MAN1PREFIX}/man/man1/sash.1
-
-post-install:
-	@${ECHO_MSG} "Updating /etc/shells"
-	@${CP} /etc/shells /etc/shells.bak
-	@(${GREP} -v ${PREFIX}/bin/sash /etc/shells.bak; \
-		${ECHO_CMD} ${PREFIX}/bin/sash) > /etc/shells
-	@${RM} /etc/shells.bak
+	${INSTALL_PROGRAM} ${WRKSRC}/sash ${STAGEDIR}${PREFIX}/bin/sash
+	${INSTALL_MAN} ${WRKSRC}/sash.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/sash.1
 
 .include <bsd.port.mk>
