@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgupnp-1.0.so:${PORTSDIR}/net/gupnp
 RUN_DEPENDS=	gupnp>=0.19.0:${PORTSDIR}/net/gupnp
 
 CONFIGURE_ARGS=	--enable-introspection=yes
-CONFIGURE_ENV=	VAPIGEN=""
+CONFIGURE_ENV=	VAPIGEN="" ac_cv_path_VAPIGEN=""
 GNU_CONFIGURE=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 USE_GNOME=	glib20 introspection:build
