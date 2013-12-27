@@ -31,12 +31,9 @@ LDFLAGS+=	-lm
 MAKE_ENV=	CCFLAGS="${CFLAGS}"
 NO_WRKSUBDIR=	yes
 
-MAN1=		ksh93.1
-
 INITVERSION=	2013-05-24
 KSHVERSION=	2012-08-01
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSTATIC}
@@ -51,17 +48,10 @@ do-build:
 	@cd ${WRKSRC}/ && ${SETENV} -i ${MAKE_ENV} ${SH} bin/package flat make
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/ksh ${PREFIX}/bin/ksh93
-	${INSTALL_MAN} ${WRKSRC}/man/man1/sh.1 ${MAN1PREFIX}/man/man1/ksh93.1
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}/
-	cd ${WRKSRC}/fun/ && ${INSTALL_SCRIPT} dirs popd pushd ${EXAMPLESDIR}/
-.endif
-
-post-install:
-	@${ECHO} "Updating /etc/shells"
-	@${SED} -i '' '\|${PREFIX}/bin/ksh93|d' /etc/shells
-	@${ECHO} ${PREFIX}/bin/ksh93 >> /etc/shells
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/ksh ${STAGEDIR}${PREFIX}/bin/ksh93
+	${INSTALL_MAN} ${WRKSRC}/man/man1/sh.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/ksh93.1
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	cd ${WRKSRC}/fun/ && ${INSTALL_SCRIPT} dirs popd pushd ${STAGEDIR}${EXAMPLESDIR}/
 
 test: build
 	@cd ${WRKSRC}/src/cmd/ksh93/tests/ && \
