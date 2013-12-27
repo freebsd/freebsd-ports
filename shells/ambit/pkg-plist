@@ -1,5 +1,6 @@
 bin/ambit
 lib/libambit.sh
+man/man1/ambit.1.gz
 @unexec if cmp -s %D/etc/ambit.conf.sample %D/etc/ambit.conf; then rm -f %D/etc/ambit.conf; fi
 etc/ambit.conf.sample
 @exec if [ ! -f %D/etc/ambit.conf ] ; then cp -p %D/%F %B/ambit.conf; fi
