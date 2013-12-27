@@ -194,6 +194,10 @@ USES+=			iconv
 CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG}
 .endif
 
+.if ${PORT_OPTIONS:MFASTMEM} && ${OSVERSION} > 1000000
+BROKEN=		segfaults on 10.X with fast mem enabled
+.endif
+
 #
 # Elinks will try to use it if exists
 #
