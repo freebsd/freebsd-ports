@@ -11,7 +11,7 @@ DISTNAME=	NewsCache-${PORTVERSION:S/.r./rc/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NewsCache is a free cache server for USENET News
 
-LIB_DEPENDS=	socket[+][+].1:${PORTSDIR}/net/libsocket++
+LIB_DEPENDS=	libsocket++.so:${PORTSDIR}/net/libsocket++
 
 USE_AUTOTOOLS=	automake autoheader autoconf
 AUTOMAKE_ARGS=	--add-missing
@@ -20,13 +20,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc
 USE_RC_SUBR=	${PORTNAME}
 
-MAN5=	newscache.conf.5
-MAN8=	newscache.8 newscacheclean.8 updatenews.8
 INFO=	NewsCache
 
-NO_STAGE=	yes
 post-patch:
-	${REINPLACE_CMD} -e "s,-pedantic,," ${WRKSRC}/configure.in
+	${REINPLACE_CMD} -e "s,-pedantic,," \
+		-e "s,^main,int main," \
+		${WRKSRC}/configure.in
 
 pre-configure:
 	(cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ${SH} ./autogen)
