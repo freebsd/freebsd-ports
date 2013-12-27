@@ -90,3 +90,8 @@ lib/libmfhdf.a
 lib/libmfhdf.la
 lib/libmfhdf.so
 lib/libmfhdf.so.3
+man/man1/hdf.1.gz
+man/man1/hdfunpac.1.gz 
+man/man1/ncdump.1.gz 
+man/man1/ncgen.1.gz 
+man/man3/gr_chunk.3.gz
