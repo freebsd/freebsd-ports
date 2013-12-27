@@ -3689,7 +3689,6 @@
     SUBDIR += py-pip
     SUBDIR += py-plex
     SUBDIR += py-ply
-    SUBDIR += py-pmock
     SUBDIR += py-polib
     SUBDIR += py-posix_ipc
     SUBDIR += py-pp

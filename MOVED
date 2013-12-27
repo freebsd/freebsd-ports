@@ -5340,3 +5340,4 @@ deskutils/libopensync-plugin-synce-devel||2013-12-22|Removed, unmaintained, depe
 net-im/libmsn||2013-12-22|Has expired: Primary MSN Messenger service terminated 30 APR 2013
 lang/clang||2013-12-22|Has expired: Migrate to lang/clang32 or newer
 math/freemat-mpi||2013-12-23|Obsolete since FreeMat 3.0
+devel/py-pmock||2013-12-27|Does not work with python 2.6 and beyond
