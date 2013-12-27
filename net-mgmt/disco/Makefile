@@ -16,15 +16,15 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PORTDOCS=	README
 PLIST_FILES=	bin/disco bin/disco.fp
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ! ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
