@@ -15,7 +15,7 @@ COMMENT=	Single instance application library
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk20 ltverhack
 USE_LDCONFIG=	yes
-USES=		pkgconfig gettext
+USES=		gettext pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -23,11 +23,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 OPTIONS_DEFINE=	DBUS
 OPTIONS_DEFAULT=	DBUS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 PLIST_SUB+=	DBUS="" XLIBS="@comment "
 .else
 PLIST_SUB+=	DBUS="@comment " XLIBS=""
@@ -35,6 +34,5 @@ PLIST_SUB+=	DBUS="@comment " XLIBS=""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror ||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
