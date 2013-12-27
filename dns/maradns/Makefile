@@ -2,21 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	maradns
-PORTVERSION=	1.4.12
+PORTVERSION=	1.4.13
 CATEGORIES=	dns
-MASTER_SITES=	http://www.maradns.org/download/1.4/
+MASTER_SITES=	http://maradns.samiam.org/download/1.4/\
+		http://www.maradns.org/download/1.4/
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	DNS server with focus on security and simplicity
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	MaraDNS 1 end-of-life: June 21, 2015
+EXPIRATION_DATE=2015-06-21
 
 REINPLACE_ARGS=	-i ""
 MAKE_ENV=	FLAGS="${CFLAGS}"
-CONFIGURE_ENV=	LANG=
 
-USE_BZIP2=	yes
 USE_RC_SUBR=	${PORTNAME} zoneserver
 USERS=		bind
 GROUPS=		bind
