@@ -1,3 +1,7 @@
+@owner %%WWWOWN%% 
+@group %%WWWGROUP%% 
+@owner %%WWWOWN%% 
+@group %%WWWGROUP%% 
 %%WWWDIR%%/admin/access.php
 %%WWWDIR%%/admin/catalog.php
 %%WWWDIR%%/admin/duplicates.php
@@ -583,6 +587,7 @@
 %%WWWDIR%%/themes/penguin/theme.cfg.php
 %%WWWDIR%%/update.php
 %%WWWDIR%%/util.php
+man/man1/ampache.1.gz
 @dirrm %%WWWDIR%%/themes/penguin/templates
 @dirrm %%WWWDIR%%/themes/penguin/images/ratings
 @dirrm %%WWWDIR%%/themes/penguin/images/icons

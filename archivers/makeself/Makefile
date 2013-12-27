@@ -18,12 +18,13 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	--nox11 --target ${WRKSRC}
 
 NO_BUILD=	yes
-NO_STAGE=	yes
 
 PLIST_FILES=	bin/makeself bin/makeself-header \
 		bin/makeself-header.sh bin/makeself.sh
 
 PORTDOCS=	README
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -31,12 +32,13 @@ post-patch:
 
 do-install:
 .for i in makeself makeself-header
-	${INSTALL_SCRIPT} ${WRKSRC}/${i}.sh ${PREFIX}/bin
-	@${LN} -sf ${i}.sh ${PREFIX}/bin/${i}
+	${INSTALL_SCRIPT} ${WRKSRC}/${i}.sh ${STAGEDIR}${PREFIX}/bin
+	@${LN} -sf ${i}.sh ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
