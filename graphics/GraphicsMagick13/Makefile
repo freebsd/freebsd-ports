@@ -3,6 +3,7 @@
 
 PORTNAME=	GraphicsMagick
 PORTVERSION=	1.3.18
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.3/
@@ -83,6 +84,7 @@ CONFIGURE_ARGS+=	--without-fpx
 .endif
 
 .if ${PORT_OPTIONS:MDPS}
+USE_XORG+=		xt
 LIB_DEPENDS+=		libdps.so:${PORTSDIR}/x11/dgs
 CONFIGURE_ARGS+=	--with-dps
 .else
@@ -113,6 +115,7 @@ CONFIGURE_ARGS+=	--with-windows-font-dir="${WINDOWS_FONT_DIR}"
 CONFIGURE_ARGS+=--without-x
 LIB_DEPENDS+=	libwmflite.so:${PORTSDIR}/graphics/libwmf-nox11
 .else
+USE_XORG+=		xext
 LIB_DEPENDS+=	libwmflite.so:${PORTSDIR}/graphics/libwmf
 .endif
 
