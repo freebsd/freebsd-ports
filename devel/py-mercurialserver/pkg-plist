@@ -1,35 +1,8 @@
-%%PYTHON_SITELIBDIR%%/mercurialserver/__init__.py
-%%PYTHON_SITELIBDIR%%/mercurialserver/__init__.pyc
-%%PYTHON_SITELIBDIR%%/mercurialserver/__init__.pyo
-%%PYTHON_SITELIBDIR%%/mercurialserver/access.py
-%%PYTHON_SITELIBDIR%%/mercurialserver/access.pyc
-%%PYTHON_SITELIBDIR%%/mercurialserver/access.pyo
-%%PYTHON_SITELIBDIR%%/mercurialserver/changes.py
-%%PYTHON_SITELIBDIR%%/mercurialserver/changes.pyc
-%%PYTHON_SITELIBDIR%%/mercurialserver/changes.pyo
-%%PYTHON_SITELIBDIR%%/mercurialserver/config.py
-%%PYTHON_SITELIBDIR%%/mercurialserver/config.pyc
-%%PYTHON_SITELIBDIR%%/mercurialserver/config.pyo
-%%PYTHON_SITELIBDIR%%/mercurialserver/refreshauth.py
-%%PYTHON_SITELIBDIR%%/mercurialserver/refreshauth.pyc
-%%PYTHON_SITELIBDIR%%/mercurialserver/refreshauth.pyo
-%%PYTHON_SITELIBDIR%%/mercurialserver/ruleset.py
-%%PYTHON_SITELIBDIR%%/mercurialserver/ruleset.pyc
-%%PYTHON_SITELIBDIR%%/mercurialserver/ruleset.pyo
-%%PYTHON_SITELIBDIR%%/mercurialserver/servelog.py
-%%PYTHON_SITELIBDIR%%/mercurialserver/servelog.pyc
-%%PYTHON_SITELIBDIR%%/mercurialserver/servelog.pyo
-
-bin/hg-ssh
-bin/refresh-auth
 etc/mercurialserver/access.conf
-etc/mercurialserver/dot-mercurial-server
-etc/mercurialserver/hgadmin-hgrc
-etc/mercurialserver/hginit
 etc/mercurialserver/remote-hgrc.d/access.rc
 etc/mercurialserver/remote-hgrc.d/logging.rc
-
-@dirrm %%PYTHON_SITELIBDIR%%/mercurialserver
+@exec /bin/mkdir -p %D/etc/mercurialserver/keys/users
+@exec /bin/mkdir -p %D/etc/mercurialserver/keys/root
 @dirrmtry hg
 @dirrmtry etc/mercurialserver/remote-hgrc.d
 @dirrmtry etc/mercurialserver/keys/users
