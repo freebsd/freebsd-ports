@@ -13,9 +13,7 @@ COMMENT=	Convert VMDK files to/from raw disk images
 
 LICENSE=	BSD
 
-MAN8=		vmdktool.8
+PLIST_FILES=	bin/vmdktool \
+		man/man8/vmdktool.8.gz
 
-PLIST_FILES=	bin/vmdktool
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
