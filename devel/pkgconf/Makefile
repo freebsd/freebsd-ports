@@ -11,8 +11,6 @@ COMMENT=	Utility to help to configure compiler and linker flags
 
 LICENSE=	BSD
 
-OPTIONS_DEFINE=	DOCS
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkg-config-dir=${PREFIX}/libdata/pkgconfig:/usr/libdata/pkgconfig \
 		--with-system-libdir=/usr/lib \
