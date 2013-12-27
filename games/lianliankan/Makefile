@@ -24,25 +24,32 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 DATADIR=	${PREFIX}/share/llk_linux
-DOCSDIR=	${PREFIX}/share/doc/llk_linux
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
-
 post-patch:
-.if empty(PORT_OPTIONS:MNLS)
+	@${REINPLACE_CMD} -e 's|po include src|po src|' \
+		-e '/llk_linuxdocdir/,/EXTRA_DIST =/ d' \
+		${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e 's|gdk_pixbuf_unref|g_object_unref| ; \
+		s|OK,message|OK, "%s", message|' \
+		${WRKSRC}/src/main.c
+	@${REINPLACE_CMD} -e 's|Pos.__pos|Pos|' \
+		${WRKSRC}/src/pak/pak.c
+
+
+.if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|po||' \
 		${WRKSRC}/Makefile.am
 .endif
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/lianliankan.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${FILESDIR}/lianliankan.desktop \
+		${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.mk>
