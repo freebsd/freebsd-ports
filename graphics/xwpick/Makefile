@@ -13,18 +13,11 @@ COMMENT=	Image pick up utility for X Window System
 
 USES=		imake
 USE_XORG=	x11 xext
-MAN1=		xwpick.1
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/xwpick
-	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${PREFIX}/share/doc/xwpick
-	${INSTALL_DATA} ${WRKSRC}/CNL_ARTICLE.PS ${PREFIX}/share/doc/xwpick
-	${INSTALL_DATA} ${WRKSRC}/0README ${PREFIX}/share/doc/xwpick/README
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/xwpick
+	${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${STAGEDIR}${PREFIX}/share/doc/xwpick
+	${INSTALL_DATA} ${WRKSRC}/CNL_ARTICLE.PS ${STAGEDIR}${PREFIX}/share/doc/xwpick
+	${INSTALL_DATA} ${WRKSRC}/0README ${STAGEDIR}${PREFIX}/share/doc/xwpick/README
 
 .include <bsd.port.mk>
