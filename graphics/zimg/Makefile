@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image-generator that uses ASCII input files to create PNGs/EDFs
 
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-dynaload-cc="${CC}" \
@@ -18,10 +18,9 @@ CONFIGURE_ARGS=	--with-dynaload-cc="${CC}" \
 		--with-gd-includes="${LOCALBASE}/include" \
 		--with-gd-lib="${LOCALBASE}/lib"
 
-MAN1=		zimg.1
-PLIST_FILES=	include/zimg.h bin/zimg
+PLIST_FILES=	include/zimg.h bin/zimg \
+		man/man1/zimg.1.gz
 
 CFLAGS+=	-DHAVE_GD_FREETYPE
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
