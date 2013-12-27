@@ -4,7 +4,9 @@
 PORTNAME=	biosfont
 PORTVERSION=	1.2.1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+#MASTER_SITES+=	ftp://rene-ladan.nl/pub/distfiles/
+MASTER_SITE_SUBDIR=rene
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Kernel module to retrieve bitmap fonts from BIOS memory
