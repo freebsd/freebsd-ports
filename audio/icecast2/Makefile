@@ -33,7 +33,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	OGG_PREFIX=${LOCALBASE}
 GNU_CONFIGURE=	yes
 USE_RC_SUBR=	${PORTNAME}
-NO_STAGE=	yes
 USES=		gmake
 WRKSRC=		${WRKDIR}/icecast-${PORTVERSION}
 
@@ -50,7 +49,6 @@ post-patch:
 .endif
 
 post-install:
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/favicon.ico ${DATADIR}/web/
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/favicon.ico ${STAGEDIR}${DATADIR}/web/
 
 .include <bsd.port.mk>
