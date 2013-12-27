@@ -19,18 +19,16 @@ EXTRACT_DEPENDS+=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
 NO_STAGE=	yes
 # A partial dependencies list can be found at:
 # http://wiki.scilab.org/Dependencies_of_Scilab_5.X
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
+		libpcre.so:${PORTSDIR}/devel/pcre
 
-
-USE_FORTRAN=	yes
-USES=		gettext gmake pkgconfig
+USES=		fortran gettext gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS =	--with-gfortran
+CONFIGURE_ARGS=	--with-gfortran
 CONFIGURE_ENV=	ac_cv_search_pthread_join="${PTHREAD_LIBS}" \
 	BLAS_LIBS="${BLAS_LIBS}" LAPACK_LIBS="${LAPACK_LIBS}"
 
@@ -48,12 +46,12 @@ UMFPACK_DESC=	Build with umfpack
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MATLAS}
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 BLAS_LIBS=	-lf77blas
 LAPACK_LIBS=	-lalapack -lcblas
 .else
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack \
+		libblas.so:${PORTSDIR}/math/blas
 BLAS_LIBS?=	-lblas
 LAPACK_LIBS?=	-llapack
 .endif
@@ -95,7 +93,7 @@ JGRAPHX_JAR=	jgraphx-${JGRAPHX_VERSION:C/\./_/g}.jar
 
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-bin-JAVA_HOME
 
-LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18
+LIB_DEPENDS+=	libhdf5.so:${PORTSDIR}/science/hdf5-18
 
 GUI_DEPENDS=	${JAVALIBDIR}/flexdock.jar:${PORTSDIR}/devel/flexdock \
 		${JAVALIBDIR}/jogl.jar:${PORTSDIR}/graphics/jogl \
@@ -148,7 +146,7 @@ ALL_TARGET=	all doc
 .if ! ${PORT_OPTIONS:MFFTW}
 CONFIGURE_ARGS+=	--without-fftw
 .else
-LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
+LIB_DEPENDS+=	libfftw3.so:${PORTSDIR}/math/fftw3
 .endif
 
 .if ! ${PORT_OPTIONS:MPVM}
@@ -167,7 +165,7 @@ CONFIGURE_ENV=	PVM_ROOT=${LOCALBASE} \
 .if ! ${PORT_OPTIONS:MUMFPACK}
 CONFIGURE_ARGS+=	--without-umfpack
 .else
-LIB_DEPENDS+=	amd.1:${PORTSDIR}/math/suitesparse
+LIB_DEPENDS+=	libamd.so:${PORTSDIR}/math/suitesparse
 CONFIGURE_ARGS+=	--with-umfpack-include=${LOCALBASE}/include \
 			--with-umfpack-library=${LOCALBASE}/lib
 .endif
@@ -175,7 +173,7 @@ CONFIGURE_ARGS+=	--with-umfpack-include=${LOCALBASE}/include \
 .if ! ${PORT_OPTIONS:MMATIO}
 CONFIGURE_ARGS+=	--without-matio
 .else
-LIB_DEPENDS+=	matio.1:${PORTSDIR}/math/matio
+LIB_DEPENDS+=	libmatio.so:${PORTSDIR}/math/matio
 .endif
 
 .if ! ${PORT_OPTIONS:MOCAML}
@@ -279,8 +277,8 @@ post-install:
 	@${TOUCH} ${DATADIR}/contrib/xcos_toolbox_skeleton/images/h5/.keep_me
 .endif
 
-check test: build
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} \
-		${MAKE_ARGS} check
+check test regression-test: build
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${_MAKE_JOBS} \
+		${MAKE_ARGS} check)
 
 .include <bsd.port.mk>
