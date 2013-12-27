@@ -24,33 +24,28 @@ HGGROUP=	hg
 USERS=		${HGUSER}
 GROUPS=		${HGGROUP}
 
-USE_PYTHON=	2.6+
-USE_PYDISTUTILS=YES
-PYDISTUTILS_PKGNAME=${SNAME}
-PYDISTUTILS_PKGVERSION=${SVERSION}
+SUB_FILES=	pkg-message
+SUB_LIST=	PORTNAME=${PORTNAME} \
+		HGUSER=${HGUSER}
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
+USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 HGSVCONF_FILES=	access.conf \
 		remote-hgrc.d/access.rc \
 		remote-hgrc.d/logging.rc
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 pre-patch:
 	${SED} -I .orig -e "s#/etc/mercurial-server/#${PREFIX}/etc/${PORTNAME}/#" ${WRKSRC}/src/init/dot-mercurial-server
 
 post-install:
-	${MKDIR} ${PREFIX}/etc/${PORTNAME}/remote-hgrc.d
-	${MKDIR} ${PREFIX}/etc/${PORTNAME}/keys/users
-	${MKDIR} ${PREFIX}/etc/${PORTNAME}/keys/root
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}/remote-hgrc.d
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}/keys/users
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}/keys/root
 .for i in ${HGSVCONF_FILES}
-	${INSTALL_DATA} ${WRKSRC}/src/init/conf/${i} ${PREFIX}/etc/${PORTNAME}/${i}
+	${INSTALL_DATA} ${WRKSRC}/src/init/conf/${i} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}/${i}
 .endfor
-	@${ECHO_MSG}
-	@${ECHO_MSG} "NOTE: ${PORTNAME} has been patched to use ${PREFIX}/etc/${PORTNAME}"
-	@${ECHO_MSG} "      instead of /etc/mercurial-server"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Now you need to create ${HGUSER} home (if nessacery) and run"
-	@${ECHO_MSG} "      ${PREFIX}/etc/hginit as ${HGUSER} user from home directory"
-	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
