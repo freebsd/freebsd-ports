@@ -1,5 +1,5 @@
 -
-You have to set PVM_ROOT=%%PREFIX%%/lib/pvm enviropment variable on all machines
+You have to set PVM_ROOT=%%PREFIX%%/lib/pvm environment variable on all machines
 which you are planning to use for distributed computing. The best way to set
 this variable on system-wide basis is to add "PVM_ROOT=%%PREFIX%%/lib/pvm" into
 appropriate section of your /etc/login.conf file. You also have to enable
