@@ -4,7 +4,8 @@
 PORTNAME=	db
 PORTVERSION=	20131207
 CATEGORIES=	print
-MASTER_SITES=	http://www.openprinting.org/download/foomatic/
+MASTER_SITES=	http://www.openprinting.org/download/foomatic/ \
+		ftp://ftp.wart.ru/pub/FreeBSD/ports/distfiles/foomatic/
 PKGNAMEPREFIX=	foomatic-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${FOOMATICVER}-${PORTVERSION}
 DIST_SUBDIR=	foomatic
