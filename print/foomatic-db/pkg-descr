@@ -1,4 +1,7 @@
-foomatic is a collection of printer drivers that can be
-used by gimp-print and cups among others.
+Foomatic is a database-driven system for integrating free software
+printer drivers with common spoolers under Unix. It supports CUPS,
+LPRng, LPD, GNUlpr, Solaris LP, PPR, PDQ, CPS, and direct printing
+with every free software printer driver known to us and every printer
+known to work with these drivers.
 
-WWW: http://www.linuxprinting.org/foomatic.html
+WWW: http://www.linuxfoundation.org/collaborate/workgroups/openprinting/database/foomatic
