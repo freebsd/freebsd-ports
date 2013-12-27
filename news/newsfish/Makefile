@@ -9,11 +9,10 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Batch USENET news reader with filter capabilities
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
-MAN1=		newsfish.1
-PLIST_FILES=	bin/newsfish
+PLIST_FILES=	bin/newsfish \
+		man/man1/newsfish.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
