@@ -37,15 +37,21 @@ MAKE_ENV+=	ETCDIR="${STAGEDIR}${PREFIX}/sbin"
 MAKE_ENV+=	BINDIR="${STAGEDIR}${NEWSBIN}"
 MAKE_ENV+=	MANDIR="${STAGEDIR}${PREFIX}/man"
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	INETD DOCS
+NO_OPTIONS_SORT=yes
+INETD_DESC=	build to run from inetd only
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MINETD}
+ALONE=	-e 's|\#define.ALONE|\#undef	ALONE|'
+.endif
 
 post-extract:
 	${CP} ${WRKSRC}/conf.h.dist ${WRKSRC}/conf.h
 
 pre-configure:
-	${REINPLACE_CMD} \
+	${REINPLACE_CMD} ${ALONE} \
 		-e "s=/usr/local/news/lib/bin/config=${NEWSBIN}/config=" \
 		-e "s=/usr/local/news/cnewsbin=${NEWSBIN}=" \
 		-e "s=/usr/local/news/lib=${NEWSCTL}=" \
