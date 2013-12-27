@@ -14,8 +14,7 @@ COMMENT=	Simple battery meter
 USES=		imake
 USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/xbattbar-${PORTVERSION}
-MAN1=		xbattbar.1
-PLIST_FILES=	bin/xbattbar
+PLIST_FILES=	bin/xbattbar \
+		man/man1/xbattbar.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
