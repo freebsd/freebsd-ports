@@ -23,6 +23,14 @@ lib/libkyototycoon.a
 libdata/pkgconfig/kyototycoon.pc
 libexec/ktplugdbvoid.so
 libexec/ktplugservmemc.so
+man/man1/ktremotemgr.1.gz
+man/man1/ktremotetest.1.gz
+man/man1/ktserver.1.gz
+man/man1/kttimedmgr.1.gz
+man/man1/kttimedtest.1.gz
+man/man1/ktutilmgr.1.gz
+man/man1/ktutilserv.1.gz
+man/man1/ktutiltest.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/doc/api/annotated.html

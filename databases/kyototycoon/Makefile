@@ -17,39 +17,35 @@ LIB_DEPENDS=	libkyotocabinet.so:${PORTSDIR}/databases/kyotocabinet
 OPTIONS_DEFINE=	DOCS
 
 CONFIGURE_ARGS=	--enable-profile --enable-uyield
+CPPFLAGS+=	-fPIC
 GNU_CONFIGURE=	yes
-MAKE_ARGS=	PCDIR="${PREFIX}/libdata/pkgconfig"
+MAKE_ARGS=	PCDIR=${PREFIX}/libdata/pkgconfig
+REINPLACE_ARGS=	-i ''
+USE_GCC=	any
 USE_LDCONFIG=	yes
-USES=		gmake
+USES=		gmake pkgconfig
 
-MAN1=		ktremotemgr.1 \
-		ktremotetest.1 \
-		ktserver.1 \
-		kttimedmgr.1 \
-		kttimedtest.1 \
-		ktutilmgr.1 \
-		ktutilserv.1 \
-		ktutiltest.1
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure ${WRKSRC}/doc/spex.html ${WRKSRC}/example/Makefile
 .if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/DOCDIR/d' ${WRKSRC}/Makefile.in
 .endif
 
-post-configure:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile
+post-build:
+	@cd ${WRKSRC}/ && ${STRIP_CMD} ktplugdbvoid.so ktplugservmemc.so \
+		ktremotemgr ktremotetest ktserver kttimedmgr kttimedtest \
+		ktutilmgr ktutilserv ktutiltest
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${FIND} ${DOCSDIR}/ -type d -exec ${CHMOD} 755 '{}' \;
-	${FIND} ${DOCSDIR}/ -type f -exec ${CHMOD} 444 '{}' \;
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/
+	${FIND} ${STAGEDIR}${DOCSDIR}/ -type d -exec ${CHMOD} 755 '{}' \;
+	${FIND} ${STAGEDIR}${DOCSDIR}/ -type f -exec ${CHMOD} 444 '{}' \;
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 regression-test test: build
 	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
