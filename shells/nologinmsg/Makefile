@@ -10,10 +10,8 @@ DISTFILES=	# none
 MAINTAINER=	freebsd-security@rikrose.net
 COMMENT=	More functional native binary replacement for /sbin/nologin
 
-MAN8=		nologinmsg.8
-MANCOMPRESSED=	yes
+USES=		uidfix
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 .for i in Makefile nologinmsg.c nologinmsg.8 pathnames.h
@@ -25,9 +23,6 @@ post-patch:
 		${WRKSRC}/pathnames.h
 
 pre-install:
-	${MKDIR} ${PREFIX}/etc/nologinmsgs
-
-post-install:
-	${STRIP_CMD} ${PREFIX}/bin/nologinmsg
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/nologinmsgs
 
 .include <bsd.port.mk>
