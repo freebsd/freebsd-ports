@@ -1,4 +1,5 @@
 bin/mtoolsfm
+man/man1/mtoolsfm.1.gz
 share/locale/de/LC_MESSAGES/mtoolsfm.mo
 share/locale/en@boldquot/LC_MESSAGES/mtoolsfm.mo
 share/locale/en@quot/LC_MESSAGES/mtoolsfm.mo
