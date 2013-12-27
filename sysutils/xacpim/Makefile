@@ -13,8 +13,7 @@ COMMENT=	Utility to display battery status and temperature on the root-display
 USE_XORG=	x11
 PLIST_FILES=	bin/xacpim
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/xacpim ${PREFIX}/bin/xacpim
+	@${INSTALL_PROGRAM} ${WRKSRC}/xacpim ${STAGEDIR}${PREFIX}/bin/xacpim
 
 .include <bsd.port.mk>
