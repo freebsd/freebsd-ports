@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/gimmix
+man/man1/gimmix.1.gz
 %%NLS%%share/locale/de/LC_MESSAGES/gimmix.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gimmix.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gimmix.mo
@@ -13,16 +14,3 @@ share/pixmaps/gimmix.png
 share/pixmaps/gimmix_logo_small.png
 share/pixmaps/gimmix_playlist.png
 @dirrm %%DATADIR%%
-@dirrmtry share/locale/zh_TW/LC_MESSAGES
-@dirrmtry share/locale/zh_TW
-@dirrmtry share/locale/tr/LC_MESSAGES
-@dirrmtry share/locale/tr
-@dirrmtry share/locale/sv/LC_MESSAGES
-@dirrmtry share/locale/sv
-@dirrmtry share/locale/de/LC_MESSAGES
-@dirrmtry share/locale/de
-@dirrmtry share/locale/fr/LC_MESSAGES
-@dirrmtry share/locale/fr
-@dirrmtry share/locale
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
