@@ -1,8 +1,3 @@
-%%PORTDOCS%%share/doc/py-xmlrpclib/README
 %%PYTHON_SITELIBDIR%%/xmlrpclib.py
 %%PYTHON_SITELIBDIR%%/xmlrpclib.pyc
 %%PYTHON_SITELIBDIR%%/xmlrpclib.pyo
-share/examples/py-xmlrpclib/xmlrpc_handler.py
-share/examples/py-xmlrpclib/xmlrpcserver.py
-@dirrm share/examples/py-xmlrpclib
-%%PORTDOCS%%@dirrm share/doc/py-xmlrpclib
