@@ -1,0 +1,14 @@
+The Shell Toolkit (shtk) is an application toolkit for programmers
+writing POSIX-compliant shell scripts.
+
+shtk provides a collection of reusable modules that work on a wide
+variety of operating systems and shell interpreters.  The included
+modules aid developers in implementing usable and consistent CLI
+interfaces, interacting with processes, parsing configuration files and
+manipulating higher-level data types among other things.
+
+shtk-based scripts are "built" by using the included shtk(1) utility,
+which adds the necessary machinery to the scripts so that they can
+trivially import and use the modular interfaces of shtk.
+
+WWW: https://github.com/jmmv/shtk/
