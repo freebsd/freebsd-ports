@@ -1,11 +1,11 @@
---- Makefile.bak	2013-01-07 23:13:28.000000000 -0600
-+++ Makefile	2013-01-07 23:14:17.000000000 -0600
+--- Makefile.orig	2013-01-06 09:14:09.000000000 -0500
++++ Makefile	2013-12-27 23:29:30.000000000 -0500
 @@ -1,14 +1,14 @@
  # qrq Makefile -- Fabian Kurz, DJ1YFK -- http://fkurz.net/ham/qrq.html
  
  VERSION=0.3.1
 -DESTDIR?=/usr
-+DESTDIR?=%%PREFIX%%
++DSTDIR=%%PREFIX%%
  
  # set to YES if you want to use Core Audio
  # note that you must use Core Audio for OSX
@@ -17,26 +17,86 @@
  
  # set to YES if you compile with MINGW32
  USE_WIN32=NO
-@@ -26,7 +26,7 @@
+@@ -25,8 +25,7 @@
+ 		OSX_BUNDLE=NO
  endif
  
- CFLAGS:=$(CFLAGS) -D DESTDIR=\"$(DESTDIR)\" -D VERSION=\"$(VERSION)\" -I.
+-CFLAGS:=$(CFLAGS) -D DESTDIR=\"$(DESTDIR)\" -D VERSION=\"$(VERSION)\" -I.
 -CC=gcc
-+CC?=gcc
++CFLAGS:=$(CFLAGS) -D DESTDIR=\"$(DSTDIR)\" -D VERSION=\"$(VERSION)\" -I.
  
  ifeq ($(USE_CA), YES)
  		OBJECTS=qrq.o coreaudio.o
-@@ -96,11 +96,11 @@
+@@ -95,44 +94,44 @@
+ else
  
  install: qrq
- 	install -d -v                      $(DESTDIR)/share/qrq/
+-	install -d -v                      $(DESTDIR)/share/qrq/
 -	install -d -v                      $(DESTDIR)/share/man/man1/
-+	install -d -v                      $(DESTDIR)/man/man1/
- 	install -d -v                      $(DESTDIR)/bin/
- 	install -s -m 0755 qrq             $(DESTDIR)/bin/
- 	install    -m 0755 qrqscore        $(DESTDIR)/bin/
+-	install -d -v                      $(DESTDIR)/bin/
+-	install -s -m 0755 qrq             $(DESTDIR)/bin/
+-	install    -m 0755 qrqscore        $(DESTDIR)/bin/
 -	install    -m 0644 qrq.1           $(DESTDIR)/share/man/man1/
-+	install    -m 0644 qrq.1           $(DESTDIR)/man/man1/
- 	install    -m 0644 callbase.qcb    $(DESTDIR)/share/qrq/
- 	install    -m 0644 english.qcb     $(DESTDIR)/share/qrq/
- 	install    -m 0644 qrqrc           $(DESTDIR)/share/qrq/
+-	install    -m 0644 callbase.qcb    $(DESTDIR)/share/qrq/
+-	install    -m 0644 english.qcb     $(DESTDIR)/share/qrq/
+-	install    -m 0644 qrqrc           $(DESTDIR)/share/qrq/
+-	install    -m 0644 toplist         $(DESTDIR)/share/qrq/
++	install -d -v                      $(DSTDIR)/share/qrq/
++	install -d -v                      $(DSTDIR)/share/man/man1/
++	install -d -v                      $(DSTDIR)/bin/
++	install -s -m 0755 qrq             $(DSTDIR)/bin/
++	install    -m 0755 qrqscore        $(DSTDIR)/bin/
++	install    -m 0644 qrq.1           $(DSTDIR)/man/man1/
++	install    -m 0644 callbase.qcb    $(DSTDIR)/share/qrq/
++	install    -m 0644 english.qcb     $(DSTDIR)/share/qrq/
++	install    -m 0644 qrqrc           $(DSTDIR)/share/qrq/
++	install    -m 0644 toplist         $(DSTDIR)/share/qrq/
+ 
+ 	
+ uninstall:
+-	rm -f $(DESTDIR)/bin/qrq
+-	rm -f $(DESTDIR)/bin/qrqscore
+-	rm -f $(DESTDIR)/share/man/man1/qrq.1
+-	rm -f $(DESTDIR)/share/qrq/callbase.qcb
+-	rm -f $(DESTDIR)/share/qrq/english.qcb
+-	rm -f $(DESTDIR)/share/qrq/qrqrc
+-	rm -f $(DESTDIR)/share/qrq/toplist
+-	rmdir $(DESTDIR)/share/qrq/
++	rm -f $(DSTDIR)/bin/qrq
++	rm -f $(DSTDIR)/bin/qrqscore
++	rm -f $(DSTDIR)/man/man1/qrq.1
++	rm -f $(DSTDIR)/share/qrq/callbase.qcb
++	rm -f $(DSTDIR)/share/qrq/english.qcb
++	rm -f $(DSTDIR)/share/qrq/qrqrc
++	rm -f $(DSTDIR)/share/qrq/toplist
++	rmdir $(DSTDIR)/share/qrq/
+ 
+ endif
+ 
+ package: qrq
+ 	export CODESIGN_ALLOCATE=/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/codesign_allocate; ldid -s qrq
+ 	rm -rf qrq-pkg
+-	install -d -v                      qrq-pkg/$(DESTDIR)/share/qrq/
+-	install -d -v                      qrq-pkg/$(DESTDIR)/share/man/man1/
+-	install -d -v                      qrq-pkg/$(DESTDIR)/bin/
++	install -d -v                      qrq-pkg/$(DSTDIR)/share/qrq/
++	install -d -v                      qrq-pkg/$(DSTDIR)/share/man/man1/
++	install -d -v                      qrq-pkg/$(DSTDIR)/bin/
+ 	install -d -v                      qrq-pkg/DEBIAN/
+-	install -s -m 0755 qrq             qrq-pkg/$(DESTDIR)/bin/
+-	install    -m 0755 qrqscore        qrq-pkg/$(DESTDIR)/bin/
+-	install    -m 0644 qrq.1           qrq-pkg/$(DESTDIR)/share/man/man1/
+-	install    -m 0644 callbase.qcb    qrq-pkg/$(DESTDIR)/share/qrq/
+-	install    -m 0644 english.qcb     qrq-pkg/$(DESTDIR)/share/qrq/
+-	install    -m 0644 qrqrc           qrq-pkg/$(DESTDIR)/share/qrq/
+-	install    -m 0644 toplist         qrq-pkg/$(DESTDIR)/share/qrq/
++	install -s -m 0755 qrq             qrq-pkg/$(DSTDIR)/bin/
++	install    -m 0755 qrqscore        qrq-pkg/$(DSTDIR)/bin/
++	install    -m 0644 qrq.1           qrq-pkg/$(DSTDIR)/share/man/man1/
++	install    -m 0644 callbase.qcb    qrq-pkg/$(DSTDIR)/share/qrq/
++	install    -m 0644 english.qcb     qrq-pkg/$(DSTDIR)/share/qrq/
++	install    -m 0644 qrqrc           qrq-pkg/$(DSTDIR)/share/qrq/
++	install    -m 0644 toplist         qrq-pkg/$(DSTDIR)/share/qrq/
+ 	install    -m 0644 control         qrq-pkg/DEBIAN/
+ 	export COPYFILE_DISABLE=1; export COPY_EXTENDED_ATTRIBUTES_DISABLE=1; dpkg-deb -b qrq-pkg cydiastore_com.kb1ooo.qrq_v$(shell grep ^Version: control | cut -d ' ' -f 2).deb
+ 	$(SCP) cydiastore_com.kb1ooo.qrq_v$(shell grep ^Version: control | cut -d ' ' -f 2).deb $(IPHONE_HOST):/tmp
