@@ -12,16 +12,13 @@ COMMENT=	Morse telegraphy trainer similar to the classic DOS version by DL4MM
 
 LICENSE=	GPLv2
 
-MAN1=		qrq.1
-
 USE_GMAKE=	yes
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${STAGEDIR}${PREFIX}|g' \
 	-e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' ${WRKSRC}/Makefile
 
 post-install:
-	${INSTALL_DATA}	${WRKSRC}/qrq.png ${DATADIR}/qrq.png
+	${INSTALL_DATA}	${WRKSRC}/qrq.png ${STAGEDIR}${DATADIR}/qrq.png
 
 .include <bsd.port.mk>
