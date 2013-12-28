@@ -11,6 +11,8 @@ MASTER_SITES=	http://downloads.pilot-link.org/ \
 MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	Suite of tools used to connect and sync your Palm handled
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 USES=		pathfix pkgconfig iconv
@@ -23,7 +25,6 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=	PNG THREADS USB
 USB_DESC=	Compile with USB via libusb support (READ MANUAL!)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTHREADS}
@@ -49,8 +50,6 @@ CONFIGURE_ARGS+=	--with-libpng=${PREFIX}
 .else
 CONFIGURE_ARGS+=	--disable-png
 .endif
-
-.include "${.CURDIR}/manpages.mk"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|png_voidp_NULL|NULL|g' \
