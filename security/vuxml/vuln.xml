@@ -144,25 +144,23 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Werner Koch reports:</p>
 	<blockquote cite="http://lists.gnupg.org/pipermail/gnupg-announce/2013q4/000337.html">
 	  <p>CVE-2013-4576 has been assigned to this security bug.</p>
-
 	  <p>The paper describes two attacks.  The first attack allows
-to distinguish keys: An attacker is able to notice which key is
-currently used for decryption.  This is in general not a problem but
-may be used to reveal the information that a message, encrypted to a
-commonly not used key, has been received by the targeted machine.  We
-do not have a software solution to mitigate this attack.</p>
-
+	    to distinguish keys: An attacker is able to notice which key is
+	    currently used for decryption.  This is in general not a problem but
+	    may be used to reveal the information that a message, encrypted to a
+	    commonly not used key, has been received by the targeted machine.  We
+	    do not have a software solution to mitigate this attack.</p>
 	  <p>The second attack is more serious.  It is an adaptive
-chosen ciphertext attack to reveal the private key.  A possible
-scenario is that the attacker places a sensor (for example a standard
-smartphone) in the vicinity of the targeted machine.  That machine is
-assumed to do unattended RSA decryption of received mails, for example
-by using a mail client which speeds up browsing by opportunistically
-decrypting mails expected to be read soon.  While listening to the
-acoustic emanations of the targeted machine, the smartphone will send
-new encrypted messages to that machine and re-construct the private
-key bit by bit.  A 4096 bit RSA key used on a laptop can be revealed
-within an hour.</p>
+	    chosen ciphertext attack to reveal the private key.  A possible
+	    scenario is that the attacker places a sensor (for example a standard
+	    smartphone) in the vicinity of the targeted machine.  That machine is
+	    assumed to do unattended RSA decryption of received mails, for example
+	    by using a mail client which speeds up browsing by opportunistically
+	    decrypting mails expected to be read soon.  While listening to the
+	    acoustic emanations of the targeted machine, the smartphone will send
+	    new encrypted messages to that machine and re-construct the private
+	    key bit by bit.  A 4096 bit RSA key used on a laptop can be revealed
+	    within an hour.</p>
 	</blockquote>
       </body>
     </description>
@@ -454,7 +452,7 @@ within an hour.</p>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Samba project reports:</p>
 	<blockquote cite="http://www.samba.org/samba/latest_news.html#4.1.3">
-	    <p>These are security releases in order to address CVE-2013-4408
+	  <p>These are security releases in order to address CVE-2013-4408
 	    (DCE-RPC fragment length field is incorrectly checked) and CVE-2012-6150
 	    (pam_winbind login without require_membership_of restrictions).</p>
 	</blockquote>
@@ -789,12 +787,12 @@ within an hour.</p>
 	<p>Ruby Gem developers report:</p>
 	<blockquote cite="http://blog.rubygems.org/2013/09/24/CVE-2013-4363.html">
 	  <p>The patch for CVE-2013-4363 was insufficiently verified so the
-	     combined regular expression for verifying gem version remains
-	     vulnerable following CVE-2013-4363.</p>
+	    combined regular expression for verifying gem version remains
+	    vulnerable following CVE-2013-4363.</p>
 	  <p>RubyGems validates versions with a regular expression that is
-	     vulnerable to denial of service due to backtracking. For specially
-	     crafted RubyGems versions attackers can cause denial of service
-	     through CPU consumption.</p>
+	    vulnerable to denial of service due to backtracking. For specially
+	    crafted RubyGems versions attackers can cause denial of service
+	    through CPU consumption.</p>
 	</blockquote>
       </body>
     </description>
@@ -824,9 +822,9 @@ within an hour.</p>
 	<p>Ruby Gem developers report:</p>
 	<blockquote cite="http://blog.rubygems.org/2013/09/09/CVE-2013-4287.html">
 	  <p>RubyGems validates versions with a regular expression that is
-	     vulnerable to denial of service due to backtracking. For specially
-	     crafted RubyGems versions attackers can cause denial of service
-	     through CPU consumption.</p>
+	    vulnerable to denial of service due to backtracking. For specially
+	    crafted RubyGems versions attackers can cause denial of service
+	    through CPU consumption.</p>
 	</blockquote>
       </body>
     </description>
@@ -856,11 +854,11 @@ within an hour.</p>
 	<p>Ruby developers report:</p>
 	<blockquote cite="https://www.ruby-lang.org/en/news/2013/11/22/heap-overflow-in-floating-point-parsing-cve-2013-4164/">
 	  <p>Any time a string is converted to a floating point value, a
-	     specially crafted string can cause a heap overflow. This can lead
-	     to a denial of service attack via segmentation faults and possibly
-	     arbitrary code execution. Any program that converts input of
-	     unknown origin to floating point values (especially common when
-	     accepting JSON) are vulnerable.
+	    specially crafted string can cause a heap overflow. This can lead
+	    to a denial of service attack via segmentation faults and possibly
+	    arbitrary code execution. Any program that converts input of
+	    unknown origin to floating point values (especially common when
+	    accepting JSON) are vulnerable.
 	  </p>
 	</blockquote>
       </body>
@@ -892,11 +890,11 @@ within an hour.</p>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Samba project reports:</p>
 	<blockquote cite="http://www.samba.org/samba/security/CVE-2013-4476">
-	       <p>Samba 4.0.x before 4.0.11 and 4.1.x before 4.1.1, when LDAP or HTTP is
-	       provided over SSL, uses world-readable permissions for a private key,
-	       which allows local users to obtain sensitive information by reading the
-	       key file, as demonstrated by access to the local filesystem on an AD
-	       domain controller.</p>
+	  <p>Samba 4.0.x before 4.0.11 and 4.1.x before 4.1.1, when LDAP or HTTP is
+	    provided over SSL, uses world-readable permissions for a private key,
+	    which allows local users to obtain sensitive information by reading the
+	    key file, as demonstrated by access to the local filesystem on an AD
+	    domain controller.</p>
 	</blockquote>
       </body>
     </description>
@@ -938,7 +936,7 @@ within an hour.</p>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Samba project reports:</p>
 	<blockquote cite="http://www.samba.org/samba/security/CVE-2013-4475">
-	    <p>Samba versions 3.2.0 and above (all versions of 3.2.x, 3.3.x,
+	  <p>Samba versions 3.2.0 and above (all versions of 3.2.x, 3.3.x,
 	    3.4.x, 3.5.x, 3.6.x, 4.0.x and 4.1.x) do not check the underlying
 	    file or directory ACL when opening an alternate data stream.</p>
 	    <p>According to the SMB1 and SMB2+ protocols the ACL on an underlying
@@ -1127,18 +1125,15 @@ within an hour.</p>
 	  <p>A memory corruption vulnerability exists in the post-
 	    authentication sshd process when an AES-GCM cipher
 	    (aes128-gcm@openssh.com or aes256-gcm@openssh.com) is
-	    selected during kex exchange.
-
-	    If exploited, this vulnerability might permit code execution
+	    selected during kex exchange.</p>
+	  <p>If exploited, this vulnerability might permit code execution
 	    with the privileges of the authenticated user and may
 	    therefore allow bypassing restricted shell/command
 	    configurations.</p>
 	  <p>Either upgrade to 6.4 or disable AES-GCM in the server
 	    configuration. The following sshd_config option will disable
-	    AES-GCM while leaving other ciphers active:
-
-	    Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc
-	  </p>
+	    AES-GCM while leaving other ciphers active:</p>
+	  <p>Ciphers aes128-ctr,aes192-ctr,aes256-ctr,aes128-cbc,3des-cbc,blowfish-cbc,cast128-cbc,aes192-cbc,aes256-cbc</p>
 	</blockquote>
       </body>
     </description>
@@ -1165,9 +1160,9 @@ within an hour.</p>
 	<p>Quassel IRC developers report:</p>
 	<blockquote cite="http://www.quassel-irc.org/node/120">
 	  <p>SQL injection vulnerability in Quassel IRC before 0.9.1,
-	     when Qt 4.8.5 or later and PostgreSQL 8.2 or later are used,
-	     allows remote attackers to execute arbitrary SQL commands via
-	     a \ (backslash) in a message.</p>
+	    when Qt 4.8.5 or later and PostgreSQL 8.2 or later are used,
+	    allows remote attackers to execute arbitrary SQL commands via
+	    a \ (backslash) in a message.</p>
 	</blockquote>
       </body>
     </description>
@@ -1277,10 +1272,10 @@ within an hour.</p>
 	<p>mod_pagespeed developers report:</p>
 	<blockquote cite="https://groups.google.com/forum/#!msg/mod-pagespeed-announce/oo015UHRxMc/JcAuf1hE8L8J">
 	  <p>Various versions of mod_pagespeed are subject to critical
-	     cross-site scripting (XSS) vulnerability, CVE-2013-6111. This
-	     permits a hostile third party to execute JavaScript in users'
-	     browsers in context of the domain running mod_pagespeed, which
-	     could permit theft of users' cookies or data on the site.</p>
+	    cross-site scripting (XSS) vulnerability, CVE-2013-6111. This
+	    permits a hostile third party to execute JavaScript in users'
+	    browsers in context of the domain running mod_pagespeed, which
+	    could permit theft of users' cookies or data on the site.</p>
 	</blockquote>
       </body>
     </description>
@@ -1310,8 +1305,8 @@ within an hour.</p>
 	<p>Salvatore Bonaccorso reports:</p>
 	<blockquote cite="http://www.gnutls.org/security.html#GNUTLS-SA-2013-3">
 	  <p>This vulnerability affects the DANE library of gnutls 3.1.x and
-	     gnutls 3.2.x. A server that returns more 4 DANE entries could
-	     corrupt the memory of a requesting client.</p>
+	    gnutls 3.2.x. A server that returns more 4 DANE entries could
+	    corrupt the memory of a requesting client.</p>
 	</blockquote>
       </body>
     </description>
@@ -1340,9 +1335,9 @@ within an hour.</p>
 	<p>Alan Coopersmith reports:</p>
 	<blockquote cite="http://lists.x.org/archives/xorg-announce/2013-October/002332.html">
 	  <p>Pedro Ribeiro (pedrib at gmail.com) reported an issue to the X.Org
-	     security team in which an authenticated X client can cause an X
-	     server to use memory after it was freed, potentially leading to
-	     crash and/or memory corruption.</p>
+	    security team in which an authenticated X client can cause an X
+	    server to use memory after it was freed, potentially leading to
+	    crash and/or memory corruption.</p>
 	</blockquote>
       </body>
     </description>
@@ -1410,16 +1405,16 @@ within an hour.</p>
 	<blockquote cite="http://wordpress.org/news/2013/09/wordpress-3-6-1/">
 	  <ul>
 	    <li>Block unsafe PHP unserialization that could occur in limited
-		situations and setups, which can lead to remote code
-		execution.</li>
+	      situations and setups, which can lead to remote code
+	      execution.</li>
 	    <li>Prevent a user with an Author role, using a specially crafted
-		request, from being able to create a post "written by" another
-		user.</li>
+	      request, from being able to create a post "written by" another
+	      user.</li>
 	    <li>Fix insufficient input validation that could result in
-		redirecting or leading a user to another website.</li>
+	      redirecting or leading a user to another website.</li>
 	  </ul>
 	<p>Additionally, we've adjusted security restrictions around file
-	   uploads to mitigate the potential for cross-site scripting.</p>
+	  uploads to mitigate the potential for cross-site scripting.</p>
 	</blockquote>
       </body>
     </description>
