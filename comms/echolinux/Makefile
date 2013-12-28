@@ -11,19 +11,18 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio Echolink client for UNIX
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libforms.so:${PORTSDIR}/x11-toolkits/xforms \
 		libgsm.so:${PORTSDIR}/audio/gsm
 
-USE_GCC=	any
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|$${CC}|' -e 's|/usr/include/X11|$${LOCALBASE}/include|' \
 		-e 's|-o echogui -L/usr/X11R6/lib -lX11 -lXpm -lforms -lm -lpthread|$${CFLAGS} -o echogui -L$${LOCALBASE}/lib -lX11 -lXpm -lforms -lm ${PTHREAD_LIBS}|' \
 		-e 's|CARGS|CFLAGS|' -e 's|= -DNodeFont=FL_TINY_SIZE|+= ${PTHREAD_CFLAGS} -DNodeFont=FL_TINY_SIZE|' \
-		-e 's|/usr/local/bin/|$${PREFIX}/bin/|' \
+		-e 's|/usr/local/bin/|${STAGEDIR}${PREFIX}/bin/|' \
 		${WRKSRC}/echogui/Makefile
 	@${REINPLACE_CMD} -e 's|<linux/soundcard.h>|<sys/soundcard.h>|' \
 		${WRKSRC}/echogui/testgui_cb.c ${WRKSRC}/echogui/testgui_main.c \
@@ -32,24 +31,16 @@ post-patch:
 		${WRKSRC}/echolinux/Makefile
 	@${REINPLACE_CMD} -e 's|LFLAGS = -lm|LFLAGS = -L${LOCALBASE}/lib -lm -lgsm|' \
 		-e 's|libgsm.a||' -e 's|-Igsm/inc|-I${LOCALBASE}/include|' \
-		-e 's|/usr/local/bin/|$${PREFIX}/bin/|' \
+		-e 's|/usr/local/bin/|${STAGEDIR}${PREFIX}/bin/|' \
 		${WRKSRC}/echolinux/Makefile
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
-	@${INSTALL_DATA} ${WRKSRC}/Using_EchoLinux.txt ${DOCSDIR}/Using_EchoLinux.txt
-	@${ECHO} ""
-	@${ECHO} "echolinux docs installed in ${DOCSDIR}"
-	@${ECHO} ""
-.endif
-	@${MKDIR} ${PREFIX}/share/echolinux
-	@${INSTALL_DATA} ${WRKSRC}/echolinux.desktop ${PREFIX}/share/echolinux
-	@${MKDIR} ${PREFIX}/share/echolinux/pixmaps
-	@${INSTALL_DATA} ${WRKSRC}/pixmaps/echolinux_48x48.png ${PREFIX}/share/echolinux/pixmaps
-	@${ECHO} ""
-	@${ECHO} "echolinux desktop examples installed in ${PREFIX}/share/echolinux"
-	@${ECHO} ""
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README
+	@${INSTALL_DATA} ${WRKSRC}/Using_EchoLinux.txt ${STAGEDIR}${DOCSDIR}/Using_EchoLinux.txt
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/echolinux
+	@${INSTALL_DATA} ${WRKSRC}/echolinux.desktop ${STAGEDIR}${PREFIX}/share/echolinux
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/echolinux/pixmaps
+	@${INSTALL_DATA} ${WRKSRC}/pixmaps/echolinux_48x48.png ${STAGEDIR}${PREFIX}/share/echolinux/pixmaps
 
 .include <bsd.port.mk>
