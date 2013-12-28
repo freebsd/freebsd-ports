@@ -201,7 +201,6 @@
     SUBDIR += memcacheq
     SUBDIR += mergeant
     SUBDIR += metakit
-    SUBDIR += mird
     SUBDIR += mongodb
     SUBDIR += mrtg-mysql-load
     SUBDIR += msql
