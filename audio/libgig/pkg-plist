@@ -10,3 +10,7 @@ lib/libgig.la
 lib/libgig.so
 lib/libgig.so.10
 libdata/pkgconfig/gig.pc
+man/man1/dlsdump.1.gz
+man/man1/gigdump.1.gz
+man/man1/gigextract.1.gz
+man/man1/rifftree.1.gz
