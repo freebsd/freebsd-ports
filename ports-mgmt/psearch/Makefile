@@ -7,14 +7,13 @@ CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.maxlor.com/files/
 
 MAINTAINER=	mail@maxlor.com
-COMMENT=	An utility for searching the FreeBSD Ports Collection
+COMMENT=	Utility for searching the FreeBSD Ports Collection
 
-MAN1=		psearch.1
-PLIST_FILES=	bin/psearch
+PLIST_FILES=	bin/psearch \
+		man/man1/psearch.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/psearch ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/psearch.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/psearch ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/psearch.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
