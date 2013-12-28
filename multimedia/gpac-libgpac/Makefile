@@ -16,10 +16,10 @@ LICENSE=	LGPL21
 WRKSRC=		${WRKDIR}/gpac
 ALL_TARGET=	lib
 INSTALL_TARGET=	install-lib
-USES=		gmake
+USES=		gmake dos2unix
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_DOS2UNIX=	src/utils/os_config_init.c
+DOS2UNIX_FILES=	src/utils/os_config_init.c
 
 OPTIONS_DEFINE=	IPV6 JPEG OPENGL SSL PNG XVIDEO
 OPTIONS_DEFAULT=	IPV6 JPEG SSL PNG
