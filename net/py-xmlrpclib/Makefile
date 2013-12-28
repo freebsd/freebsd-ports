@@ -8,31 +8,33 @@ MASTER_SITES=	http://effbot.org/media/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Python implementation of the XML-RPC protocol
+COMMENT=	Python implementation of the XML-RPC protocol
 
 USE_PYTHON=	yes
 USE_ZIP=	yes
 
-XRL_DOCDIR=	${PREFIX}/share/doc/py-xmlrpclib
-XRL_EGDIR=	${PREFIX}/share/examples/py-xmlrpclib
+DOCSDIR=	${PREFIX}/share/doc/py-xmlrpclib
+EXAMPLESDIR=	${PREFIX}/share/examples/py-xmlrpclib
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 do-build:
-	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
-	@ ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PYTHONPREFIX_SITELIBDIR} \
+		-f ${WRKSRC}
+	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PYTHONPREFIX_SITELIBDIR} \
+		-f ${WRKSRC}
 
 do-install:
-	@ ${INSTALL_DATA} ${WRKSRC}/xmlrpclib.py* \
-	  ${PREFIX}/lib/${PYTHON_VERSION}/site-packages
-	@ ${MKDIR} ${XRL_EGDIR}
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/xmlrpclib.py* \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for egfile in xmlrpcserver.py xmlrpc_handler.py
-	@ ${INSTALL_DATA} ${WRKSRC}/${egfile} ${XRL_EGDIR}
+	${INSTALL_DATA} ${WRKSRC}/${egfile} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${XRL_DOCDIR}
-	@ ${INSTALL_MAN} ${WRKSRC}/README ${XRL_DOCDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
