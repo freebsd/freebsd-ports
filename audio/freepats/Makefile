@@ -10,12 +10,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free and open set of instrument patches
 
 USE_BZIP2=	yes
-NO_STAGE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
 do-install:
-	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
