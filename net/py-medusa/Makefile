@@ -16,6 +16,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
@@ -23,22 +24,15 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in CHANGES.txt INSTALL.txt LICENSE.txt README.txt TODO.txt
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${DOCSDIR})
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for exdir in demo test thread
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${exdir} ${EXAMPLESDIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${exdir} ${STAGEDIR}${EXAMPLESDIR})
 .endfor
-.endif
 
 .include <bsd.port.mk>
