@@ -21,8 +21,7 @@ LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
 
 OPTIONS_DEFINE=	ALSA
 
-USES=		pkgconfig iconv gmake
-NO_STAGE=	yes
+USES=		gmake iconv pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
@@ -31,7 +30,7 @@ CONFIGURE_ARGS=	--disable-roaraudio --disable-sun-audio
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-ALSA_LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
-ALSA_CONFIGURE_ENABLE+=	alsa
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_CONFIGURE_ENABLE=	alsa
 
 .include <bsd.port.mk>
