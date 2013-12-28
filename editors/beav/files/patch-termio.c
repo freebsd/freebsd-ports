@@ -5,7 +5,7 @@
  #ifdef UNIX			/* System V */
  
 +#if defined(__GLIBC__) || \
-+    defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
++    defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__DragonFly__)
 +#define TERMIOS 1
 +#endif
 +
