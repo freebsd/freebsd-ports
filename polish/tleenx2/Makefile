@@ -21,19 +21,16 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 WRKSRC=		${WRKDIR}/TleenX2-${PORTVERSION}
 
-MAN1=		tleenx2.1
 PORTDOCS=	README gg.txt sms.txt
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} 's,/usr/local,${LOCALBASE},g; s,gcc,${CC},' \
+		${WRKSRC}/iksemel/Makefile
+	@${REINPLACE_CMD} 's,gcc,${CC},' ${WRKSRC}/jabby/Makefile
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
