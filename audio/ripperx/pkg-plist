@@ -14,3 +14,4 @@ bin/ripperX_plugin-toolame
 bin/ripperX_plugin-musepack
 bin/ripperX_plugin_tester
 libdata/pkgconfig/ripperX.pc
+man/man1/ripperX.1.gz
