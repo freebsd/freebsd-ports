@@ -13,7 +13,6 @@ COMMENT=	Wrapper around the LSCP network protocol
 LICENSE=	LGPL21
 
 USES=		gmake pathfix
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
