@@ -1,5 +1,7 @@
 @comment $FreeBSD$
-bin/testgdbm
+bin/gdbm_dump
+bin/gdbm_load
+bin/gdbmtool
 include/gdbm.h
 %%GDBM_COMPAT%%include/dbm.h
 %%GDBM_COMPAT%%include/ndbm.h
@@ -11,8 +13,17 @@ lib/libgdbm.so.4
 %%GDBM_COMPAT%%lib/libgdbm_compat.la
 %%GDBM_COMPAT%%lib/libgdbm_compat.so
 %%GDBM_COMPAT%%lib/libgdbm_compat.so.4
+man/man1/gdbm_dump.1.gz
+man/man1/gdbm_load.1.gz
+man/man1/gdbmtool.1.gz
+man/man3/gdbm.3.gz
 %%NLS%%share/locale/de/LC_MESSAGES/gdbm.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/gdbm.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gdbm.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/gdbm.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/gdbm.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gdbm.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/gdbm.mo

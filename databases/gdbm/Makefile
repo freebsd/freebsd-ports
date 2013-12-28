@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gdbm
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	databases
 MASTER_SITES=	GNU
 
@@ -13,18 +13,16 @@ LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USES=		gmake
 
 MAKE_JOBS_UNSAFE=	yes
 
 INFO=		gdbm
-MAN3=		gdbm.3
 
 OPTIONS_DEFINE=	COMPAT NLS
 COMPAT_DESC=	Enable dbm/ndbm compatibility
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCOMPAT}
@@ -47,5 +45,11 @@ post-patch:
 		-e "s|BINOWN = bin|BINOWN = root|" -e "s|BINGRP = bin|BINGRP = wheel|" \
 		-e "s|libgdbm.la libgdbm_compat.la|libgdbm.la libgdbm_compat.la gdbm.info|" \
 			${WRKSRC}/Makefile.in
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdbm.so.4
+.if ${PORT_OPTIONS:MCOMPAT}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgdbm_compat.so.4
+.endif
 
 .include <bsd.port.mk>
