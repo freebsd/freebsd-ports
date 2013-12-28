@@ -17,12 +17,11 @@ GH_COMMIT=	719165b
 USE_PYTHON=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/xps
-MAN1=		xps.1
+PLIST_FILES=	bin/xps \
+		man/man1/xps.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/xps ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/xps ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xps.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
