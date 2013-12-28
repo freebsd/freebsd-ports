@@ -10,16 +10,15 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyProlog-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Python extension embedding SWI-Prolog
+COMMENT=	Python extension embedding SWI-Prolog
 
 BUILD_DEPENDS=	swipl:${PORTSDIR}/lang/swi-pl
 RUN_DEPENDS=	swipl:${PORTSDIR}/lang/swi-pl
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	PyProlog
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "amd64"
