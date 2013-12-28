@@ -12,6 +12,8 @@ lib/libhistory.so.6
 lib/libhistory.so
 lib/libreadline.so.6
 lib/libreadline.so
+man/man3/readline.3.gz
+man/man3/history.3.gz
 %%DATADIR%%/excallback.c
 %%DATADIR%%/fileman.c
 %%DATADIR%%/histexamp.c
