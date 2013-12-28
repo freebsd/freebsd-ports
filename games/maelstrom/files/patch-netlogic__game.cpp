@@ -1,5 +1,5 @@
---- netlogic/game.cpp.orig	2001-07-23 04:24:03.000000000 +0200
-+++ netlogic/game.cpp	2013-03-16 13:13:14.000000000 +0100
+--- ./netlogic/game.cpp.orig	2001-07-23 04:24:03.000000000 +0200
++++ ./netlogic/game.cpp	2013-12-28 11:39:16.000000000 +0100
 @@ -232,7 +232,7 @@
  
  			lastDisplayed = gDisplayed;

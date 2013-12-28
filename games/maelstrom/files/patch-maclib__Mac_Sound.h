@@ -1,6 +1,6 @@
---- maclib/Mac_Resource.h.orig	1999-12-03 19:01:47.000000000 +0100
-+++ maclib/Mac_Resource.h	2013-03-16 10:47:19.000000000 +0100
-@@ -96,7 +96,7 @@
+--- ./maclib/Mac_Sound.h.orig	2002-10-20 04:53:34.000000000 +0200
++++ ./maclib/Mac_Sound.h	2013-12-28 11:39:16.000000000 +0100
+@@ -199,7 +199,7 @@
  		va_list ap;
  
  		va_start(ap, fmt);

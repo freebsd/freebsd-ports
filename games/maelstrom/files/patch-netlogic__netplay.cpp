@@ -1,5 +1,5 @@
---- netlogic/netplay.cpp.orig	2002-10-20 06:11:52.000000000 +0200
-+++ netlogic/netplay.cpp	2013-03-16 13:16:57.000000000 +0100
+--- ./netlogic/netplay.cpp.orig	2002-10-20 06:11:52.000000000 +0200
++++ ./netlogic/netplay.cpp	2013-12-28 11:39:16.000000000 +0100
 @@ -670,7 +670,9 @@
  		strcpy(message, "Waiting for players:");
  		for ( i=0; i<gNumPlayers; ++i ) {

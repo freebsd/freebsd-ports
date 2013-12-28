@@ -1,5 +1,5 @@
---- screenlib/SDL_FrameBuf.cpp.orig	2001-07-22 23:03:13.000000000 +0200
-+++ screenlib/SDL_FrameBuf.cpp	2013-03-16 11:45:02.000000000 +0100
+--- ./screenlib/SDL_FrameBuf.cpp.orig	2001-07-22 23:03:13.000000000 +0200
++++ ./screenlib/SDL_FrameBuf.cpp	2013-12-28 11:39:16.000000000 +0100
 @@ -628,7 +628,7 @@
  
  		found = 0;
