@@ -23,14 +23,11 @@ DSSI_DESC=	Enable DSSI support
 LV2CORE_DESC=	Enable LV2 support
 
 USE_BZIP2=	yes
-NO_STAGE=	yes
 USES=		gmake pathfix pkgconfig
 USE_SQLITE=	3
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	HAVE_UNIX98=1
 USE_LDCONFIG=	yes
-
-MAN1=		linuxsampler.1
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -75,6 +72,6 @@ post-patch:
 		 s|"lv2core"|"_lv2core_"|' ${WRKSRC}/configure
 
 post-install:
-	@${TOUCH} ${PREFIX}/lib/linuxsampler/plugins/.keep_me
+	@${TOUCH} ${STAGEDIR}${PREFIX}/lib/linuxsampler/plugins/.keep_me
 
 .include <bsd.port.mk>
