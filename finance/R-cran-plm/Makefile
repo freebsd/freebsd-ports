@@ -18,7 +18,6 @@ RUN_DEPENDS=	R-cran-bdsmatrix>0:${PORTSDIR}/math/R-cran-bdsmatrix \
 		R-cran-sandwich>0:${PORTSDIR}/math/R-cran-sandwich \
 		R-cran-zoo>0:${PORTSDIR}/math/R-cran-zoo
 
-USE_R_MOD=	yes
-R_MOD_AUTOPLIST=	yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>

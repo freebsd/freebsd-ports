@@ -10,7 +10,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:C/\./-/g:C/-/\./1}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Multivariate Normal and t Distributions
 
-USE_R_MOD=  		yes
-R_MOD_AUTOPLIST=	yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>

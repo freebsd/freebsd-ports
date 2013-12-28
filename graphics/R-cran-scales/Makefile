@@ -18,7 +18,6 @@ RUN_DEPENDS=	R-cran-RColorBrewer>=0:${PORTSDIR}/graphics/R-cran-RColorBrewer \
 		R-cran-plyr>=1.2:${PORTSDIR}/devel/R-cran-plyr \
 		R-cran-labeling>=0:${PORTSDIR}/math/R-cran-labeling
 
-USE_R_MOD=	yes
-R_MOD_AUTOPLIST=	yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>

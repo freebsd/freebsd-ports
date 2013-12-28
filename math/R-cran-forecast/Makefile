@@ -20,7 +20,6 @@ RUN_DEPENDS=	R-cran-tseries>0:${PORTSDIR}/finance/R-cran-tseries \
 		R-cran-RcppArmadillo>=0.2.35:${PORTSDIR}/math/R-cran-RcppArmadillo \
 		R-cran-colorspace>0:${PORTSDIR}/graphics/R-cran-colorspace
 
-USE_R_MOD=	yes
-R_MOD_AUTOPLIST=	yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>

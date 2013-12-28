@@ -16,7 +16,6 @@ RUN_DEPENDS=	R-cran-coda>0.11.3:${PORTSDIR}/math/R-cran-coda
 
 # Actually required 4.0 or later, but at least 4.2 in the FreeBSD ports tree
 USE_GCC=	4.2+
-USE_R_MOD=	yes
-R_MOD_AUTOPLIST=	yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>
