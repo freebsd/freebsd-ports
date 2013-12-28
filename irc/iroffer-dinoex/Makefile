@@ -42,26 +42,16 @@ IROFFER_HTDOCS=	iroffer-state.css robots.txt \
 OPTIONS_DEFINE=	CURL RUBY UPNP GEOIP
 OPTIONS_DEFAULT=CURL RUBY UPNP GEOIP
 
-.include <bsd.port.options.mk>
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+CURL_CONFIGURE_ON=	-curl
+RUBY_USE=		RUBY=yes LIBRUBY=yes
+RUBY_CONFIGURE_ON=	-ruby
+UPNP_LIB_DEPENDS=	libminiupnpc.so:${PORTSDIR}/net/miniupnpc
+UPNP_CONFIGURE_ON=	-upnp
+GEOIP_LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
+GEOIP_CONFIGURE_ON=	-geoip
 
-.if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=	-curl
-.endif
-.if ${PORT_OPTIONS:MGEOIP}
-LIB_DEPENDS+=	GeoIP:${PORTSDIR}/net/GeoIP
-CONFIGURE_ARGS+=	-geoip
-.endif
-.if ${PORT_OPTIONS:MUPNP}
-LIB_DEPENDS+=	miniupnpc:${PORTSDIR}/net/miniupnpc
-CONFIGURE_ARGS+=	-upnp
-.endif
-.if ${PORT_OPTIONS:MRUBY}
-USE_RUBY=	yes
-USE_LIBRUBY=	yes
-CONFIGURE_ARGS+=	-ruby
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
-.endif
+.include <bsd.port.options.mk>
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer ${STAGEDIR}${PREFIX}/bin/
