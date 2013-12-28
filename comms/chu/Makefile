@@ -13,8 +13,6 @@ COMMENT=	Synchronise computer clock to CHU radio station
 
 LICENSE=	GPLv1
 
-.include <bsd.port.pre.mk>
-
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
@@ -46,4 +44,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
