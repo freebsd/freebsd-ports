@@ -13,7 +13,6 @@ COMMENT=	Everyone's Statistical Software
 BUILD_DEPENDS=	R-cran-sandwich>=0:${PORTSDIR}/math/R-cran-sandwich
 RUN_DEPENDS=	R-cran-sandwich>=0:${PORTSDIR}/math/R-cran-sandwich
 
-USE_R_MOD=	yes
-R_MOD_AUTOPLIST=yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>

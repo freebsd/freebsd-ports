@@ -12,7 +12,6 @@ COMMENT=	R implementation of an algorithm for non-negative least squares
 
 LICENSE=	GPLv2
 
-USE_R_MOD=	yes
-R_MOD_AUTOPLIST=	yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>

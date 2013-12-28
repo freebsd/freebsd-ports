@@ -15,7 +15,6 @@ LICENSE=	AL2
 BUILD_DEPENDS=	R-cran-RSQLite>=0.11.1:${PORTSDIR}/databases/R-cran-RSQLite
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_R_MOD=	yes
-R_MOD_AUTOPLIST=	yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>

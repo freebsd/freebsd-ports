@@ -15,7 +15,6 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	R-cran-timeDate>=2150.95:${PORTSDIR}/finance/R-cran-timeDate
 
-USE_R_MOD=	yes
-R_MOD_AUTOPLIST=	yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>

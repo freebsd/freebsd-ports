@@ -15,7 +15,6 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
-USE_R_MOD=	yes
-R_MOD_AUTOPLIST=	yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>

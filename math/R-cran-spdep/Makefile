@@ -17,7 +17,6 @@ RUN_DEPENDS=	R-cran-sp>=0.9:${PORTSDIR}/math/R-cran-sp \
 		R-cran-coda>0:${PORTSDIR}/math/R-cran-coda \
 		R-cran-LearnBayes>0:${PORTSDIR}/math/R-cran-LearnBayes
 
-USE_R_MOD=	yes
-R_MOD_AUTOPLIST=	yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>

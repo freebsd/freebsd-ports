@@ -16,7 +16,6 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	R-cran-png>0:${PORTSDIR}/graphics/R-cran-png \
 		R-cran-RJSONIO>0:${PORTSDIR}/converters/R-cran-RJSONIO
 
-USE_R_MOD=	yes
-R_MOD_AUTOPLIST=	yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>

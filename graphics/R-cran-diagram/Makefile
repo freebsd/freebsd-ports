@@ -15,7 +15,6 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	R-cran-shape>0:${PORTSDIR}/graphics/R-cran-shape
 
-USE_R_MOD=	yes
-R_MOD_AUTOPLIST=	yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>

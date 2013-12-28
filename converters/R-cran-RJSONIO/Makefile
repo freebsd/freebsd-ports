@@ -12,7 +12,6 @@ COMMENT=	Serialize R objects to JSON, JavaScript Object Notation
 
 LICENSE=	BSD
 
-USE_R_MOD=	yes
-R_MOD_AUTOPLIST=	yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>

@@ -18,7 +18,6 @@ BUILD_DEPENDS=	R-cran-quadprog>0:${PORTSDIR}/math/R-cran-quadprog \
 RUN_DEPENDS=	R-cran-quadprog>0:${PORTSDIR}/math/R-cran-quadprog \
 		R-cran-zoo>0:${PORTSDIR}/math/R-cran-zoo
 
-USE_R_MOD=	yes
-R_MOD_AUTOPLIST=	yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>

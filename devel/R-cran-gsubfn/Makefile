@@ -14,7 +14,6 @@ LICENSE=        GPLv2
 
 RUN_DEPENDS=    R-cran-proto>=0.3.9.2_6:${PORTSDIR}/devel/R-cran-proto
 
-USE_R_MOD=      yes
-R_MOD_AUTOPLIST=        yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>
