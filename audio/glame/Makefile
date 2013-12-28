@@ -17,9 +17,8 @@ LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame \
 		libguile.so:${PORTSDIR}/lang/guile
 
 USE_AUTOTOOLS=	libltdl libtool
-NO_STAGE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
-USES=		gmake pathfix gettext pkgconfig
+USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gnomeprefix libgnomeui
 USE_XORG=	xbitmaps x11
 
