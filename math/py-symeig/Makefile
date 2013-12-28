@@ -18,23 +18,23 @@ LATEST_LINK=	py-${PORTNAME}
 OPTIONSFILE=	${PORT_DBDIR}/py-numpy/options
 
 USE_FORTRAN=	yes
-USE_PYTHON=	2.4+
+USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 OPTIONS_DEFINE=	ATLAS
 ATLAS_DESC=	Use optimized blas library
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MATLAS}
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 .if !exists(${LOCALBASE}/lib/libalapack.a)
 IGNORE=		atlas needs to be built with WITH_STATIC for symeig to function properly
 .endif
 .else
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack \
-		blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack \
+		libblas.so:${PORTSDIR}/math/blas
 .endif
 
 .include <bsd.port.mk>
