@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}core-${PORTVERSION}
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	An opensource MPEG-4 codec, based on OpenDivx
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
@@ -27,7 +27,6 @@ WRKSRC=		${WRKDIR}/xvidcore/build/generic
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
@@ -42,6 +41,6 @@ CFLAGS=		# let xvid's build system decide about those
 .endif
 
 post-install:
-	@ ${LN} -sf ${PREFIX}/lib/libxvidcore.so.4 ${PREFIX}/lib/libxvidcore.so
+	@ ${LN} -sf ${PREFIX}/lib/libxvidcore.so.4 ${STAGEDIR}${PREFIX}/lib/libxvidcore.so
 
 .include <bsd.port.post.mk>
