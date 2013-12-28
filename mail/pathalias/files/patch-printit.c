@@ -1,6 +1,6 @@
 --- printit.c.orig	1993-03-03 22:10:03.000000000 +0100
-+++ printit.c	2013-06-16 17:17:32.000000000 +0200
-@@ -1,9 +1,10 @@
++++ printit.c	2013-06-17 00:12:38.000000000 +0200
+@@ -1,6 +1,6 @@
  /* pathalias -- by steve bellovin, as told to peter honeyman */
  #ifndef lint
 -static char	*sccsid = "@(#)printit.c	9.4 89/02/07";
@@ -8,30 +8,31 @@
  #endif
  
  #include "def.h"
-+#include <string.h>
- 
- /*
-  * print the routes by traversing the shortest path tree in preorder.
-@@ -11,27 +12,28 @@
+@@ -11,27 +11,27 @@
   */
  
  /* exports */
 -extern void printit();
-+extern void printit(void);
  
  /* imports */
- extern int Cflag, Vflag, Dflag, Fflag;
- extern node *Home;
- extern char *Netchars;
+-extern int Cflag, Vflag, Dflag, Fflag;
+-extern node *Home;
+-extern char *Netchars;
 -extern void die();
 -extern int strlen();
  
  /* privates */
 -static link *Ancestor;	/* for -f option */
+-STATIC void preorder(), setpath(), printhost(), printdomain();
+-STATIC char *hostpath();
+-STATIC int printable();
 +static palink *Ancestor;	/* for -f option */
- STATIC void preorder(), setpath(), printhost(), printdomain();
- STATIC char *hostpath();
- STATIC int printable();
++STATIC void preorder(register palink *l, char *ppath);
++STATIC void setpath(palink *l, register char *ppath, register char *npath);
++STATIC void printhost(register node *n, char *path, Cost cost);
++STATIC void printdomain(register node *n, char *path, Cost cost);
++STATIC char *hostpath(register char *path, register palink *l, int netchar);
++STATIC int printable(register node *n);
  
  /* in practice, even the longest paths are < 100 bytes */
 -#define PATHSIZE 512
@@ -47,7 +48,7 @@
  	char pbuf[PATHSIZE];
  
  	/* print home */
-@@ -57,7 +59,7 @@
+@@ -57,7 +57,7 @@
   */
  STATIC void
  preorder(l, ppath)
@@ -56,7 +57,7 @@
  	char *ppath;
  {	register node *n;
  	node *ncp;		/* circular copy list */
-@@ -105,7 +107,7 @@
+@@ -105,7 +105,7 @@
  printable(n)
  	register node *n;
  {	node *ncp;
@@ -65,7 +66,7 @@
  
  	if (n->n_flag & PRINTED)
  		return 0;
-@@ -156,7 +158,7 @@
+@@ -156,7 +156,7 @@
  
  STATIC void
  setpath(l, ppath, npath) 
@@ -74,7 +75,7 @@
  	register char *ppath, *npath;
  {	register node *next, *parent;
  	char netchar;
-@@ -192,11 +194,12 @@
+@@ -192,11 +192,12 @@
  		return;
  	}
  		
@@ -88,7 +89,7 @@
  
  	/* remainder should be a sprintf -- foo on '%' as an operator */
  	for ( ; (*npath = *ppath) != 0; ppath++) {
-@@ -224,7 +227,7 @@
+@@ -224,7 +225,7 @@
  STATIC char *
  hostpath(path, l, netchar)
  	register char *path;

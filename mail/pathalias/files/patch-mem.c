@@ -1,15 +1,13 @@
 --- mem.c.orig	1993-03-03 22:11:23.000000000 +0100
-+++ mem.c	2013-06-16 17:14:35.000000000 +0200
-@@ -1,38 +1,40 @@
++++ mem.c	2013-06-16 23:49:12.000000000 +0200
+@@ -1,38 +1,36 @@
  /* pathalias -- by steve bellovin, as told to peter honeyman */
  #ifndef lint
 -static char	*sccsid = "@(#)mem.c	9.6 92/08/25";
 +static const char	*sccsid = "@(#)mem.c	9.6 92/08/25";
  #endif
  
-+#include <stdlib.h>
  #include "def.h"
-+#include <string.h>
  
  /* exports */
  long Ncount;
@@ -17,8 +15,8 @@
 -extern long allocation();
  
  /* imports */
- extern char *Netchars;
- extern int Vflag;
+-extern char *Netchars;
+-extern int Vflag;
 -extern void die();
 -extern int strlen();
  #ifdef DEBUG
@@ -54,7 +52,7 @@
  		nomem();
  	return rval;
  }
-@@ -40,7 +42,7 @@
+@@ -40,7 +38,7 @@
  /* caution: this destroys the contents of l_next */
  void
  freelink(l)
@@ -63,7 +61,7 @@
  {
  	l->l_next = Lcache;
  	Lcache = l;
-@@ -69,7 +71,7 @@
+@@ -69,7 +67,7 @@
  
  char	*
  strsave(s)
@@ -72,7 +70,7 @@
  {	register char *r;
  
  	if ((r = malloc((unsigned) strlen(s) + 1)) == 0)
-@@ -105,8 +107,6 @@
+@@ -105,8 +103,6 @@
  	long size;
  {
  #ifdef MYMALLOC
@@ -81,7 +79,7 @@
  	addtoheap((char *) t, size * sizeof(node *));
  #else
  	free((char *) t);
-@@ -163,10 +163,9 @@
+@@ -163,10 +159,9 @@
  #undef calloc
  
  /* imports */

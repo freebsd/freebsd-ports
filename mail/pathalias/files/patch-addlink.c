@@ -1,6 +1,6 @@
 --- addlink.c.orig	1993-03-03 22:10:01.000000000 +0100
-+++ addlink.c	2013-06-16 17:03:10.000000000 +0200
-@@ -1,39 +1,35 @@
++++ addlink.c	2013-06-16 23:45:51.000000000 +0200
+@@ -1,39 +1,32 @@
  /* pathalias -- by steve bellovin, as told to peter honeyman */
  #ifndef lint
 -static char	*sccsid = "@(#)addlink.c	9.7 88/06/10";
@@ -8,18 +8,16 @@
  #endif /* lint */
  
  #include "def.h"
-+#include <string.h>
  
  /* exports */
 -extern link *addlink();
 -extern void deadlink(), atrace(), freelink();
 -extern int tracelink(), maptrace();
 -char *Netchars = "!:@%";	/* sparse, but sufficient */
-+const char *Netchars = "!:@%";	/* sparse, but sufficient */
  long Lcount;			/* how many edges? */
  
  /* imports */
- extern int Tflag, Dflag;
+-extern int Tflag, Dflag;
 -extern link *newlink();
 -extern node *addnode();
 -extern void yyerror(), die();
@@ -49,7 +47,7 @@
  
  	LTRACE(from, to, cost, netchar, netdir, "");
  	/*
-@@ -89,7 +85,7 @@
+@@ -89,7 +82,7 @@
  void
  deadlink(nleft, nright) 
  	node *nleft, *nright;
@@ -58,7 +56,7 @@
  
  	/* DEAD host */
  	if (nright == 0) {
-@@ -132,7 +128,7 @@
+@@ -132,7 +125,7 @@
  
  STATIC void
  netbits(l, netchar, netdir)
@@ -67,7 +65,7 @@
  	char netchar, netdir;
  {
  	l->l_flag &= ~LDIR;
-@@ -144,7 +140,7 @@
+@@ -144,7 +137,7 @@
  tracelink(arg) 
  	char *arg;
  {	char *bang;
@@ -76,7 +74,7 @@
  
  	if (Tracecount >= NTRACE)
  		return -1;
-@@ -170,8 +166,9 @@
+@@ -170,8 +163,9 @@
  ltrace(from, to, cost, netchar, netdir, message)
  	node *from, *to;
  	Cost cost;
@@ -88,7 +86,7 @@
  	int i;
  
  	for (i = 0; i < Tracecount; i++) {
-@@ -194,7 +191,8 @@
+@@ -194,7 +188,8 @@
  ltrprint(from, to, cost, netchar, netdir, message)
  	node *from, *to;
  	Cost cost;
@@ -98,7 +96,7 @@
  {	char buf[256], *bptr = buf;
  
  	strcpy(bptr, from->n_name);
-@@ -213,7 +211,7 @@
+@@ -213,7 +208,7 @@
  void
  atrace(n1, n2)
  	node *n1, *n2;
@@ -107,7 +105,7 @@
  	int i;
  	char buf[256];
  
-@@ -230,7 +228,7 @@
+@@ -230,7 +225,7 @@
  int
  maptrace(from, to)
  	register node *from, *to;
@@ -116,7 +114,7 @@
  	register int i;
  
  	for (i = 0; i < Tracecount; i++) {
-@@ -248,7 +246,7 @@
+@@ -248,7 +243,7 @@
  deletelink(from, to)
  	node *from;
  	node *to;
