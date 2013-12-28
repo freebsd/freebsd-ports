@@ -12,7 +12,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to play Commodore 64 SID-tunes cycle accurate
 
 USES=		gmake pathfix pkgconfig
-NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	builders/hardsid-builder/configure \
 		builders/resid-builder/configure \
