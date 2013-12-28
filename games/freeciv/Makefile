@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freeciv
-PORTVERSION=	2.4.0
-PORTREVISION=	1
+PORTVERSION=	2.4.1
 CATEGORIES=	games
 MASTER_SITES=	SF/freeciv/Freeciv%20${PORTVERSION:R}/${PORTVERSION}
 
@@ -11,10 +10,13 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Free turn-based multiplayer strategy
 
 RUN_DEPENDS=	hicolor-icon-theme>=0:${PORTSDIR}/misc/hicolor-icon-theme
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 USES=		gettext gmake iconv pkgconfig
+USE_SQLITE=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	yes
+USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -34,7 +36,6 @@ IGNORE=		cannot use SDL without X11: re-run make config
 .if ${PORT_OPTIONS:MX11}
 LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libpng15.so:${PORTSDIR}/graphics/png \
-		libcurl.so:${PORTSDIR}/ftp/curl \
 		libggz.so:${PORTSDIR}/games/libggz \
 		libggz-gtk.so:${PORTSDIR}/games/ggz-gtk-client \
 		libggzcore.so:${PORTSDIR}/games/ggz-client-libs \
@@ -42,7 +43,6 @@ LIB_DEPENDS+=	libtiff.so:${PORTSDIR}/graphics/tiff \
 USE_XORG=	xpm
 USE_SDL=	mixer
 USE_GNOME=	gtk20
-USE_SQLITE=	yes
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS+=--enable-client=gtk
 CONFLICTS=	freeciv-nox11-[0-9]*
