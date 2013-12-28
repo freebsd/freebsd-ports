@@ -98,6 +98,43 @@ share/aclocal/pilot-link.m4
 %%DATADIR%%/prc/getrom.prc
 %%DATADIR%%/prc/getrom2.prc
 %%DATADIR%%/udev/60-libpisock.rules
+man/man1/ietf2datebook.1.gz
+man/man1/pilot-install-datebook.1.gz
+man/man1/pilot-install-expenses.1.gz
+man/man1/pilot-install-hinote.1.gz
+man/man1/pilot-install-memo.1.gz
+man/man1/pilot-install-netsync.1.gz
+man/man1/pilot-install-todo.1.gz
+man/man1/pilot-install-todos.1.gz
+man/man1/pilot-install-user.1.gz
+man/man1/pilot-addresses.1.gz
+man/man1/pilot-clip.1.gz
+man/man1/pilot-csd.1.gz
+man/man1/pilot-debugsh.1.gz
+man/man1/pilot-dedupe.1.gz
+man/man1/pilot-dlpsh.1.gz
+man/man1/pilot-file.1.gz
+man/man1/pilot-foto.1.gz
+man/man1/pilot-foto-treo600.1.gz
+man/man1/pilot-foto-treo650.1.gz
+man/man1/pilot-getram.1.gz
+man/man1/pilot-getrom.1.gz
+man/man1/pilot-getromtoken.1.gz
+man/man1/pilot-hinotes.1.gz
+man/man1/pilot-memos.1.gz
+man/man1/pilot-nredir.1.gz
+man/man1/pilot-reminders.1.gz
+man/man1/pilot-schlep.1.gz
+man/man1/pilot-wav.1.gz
+man/man1/pilot-xfer.1.gz
+man/man1/pilot-read-expenses.1.gz
+man/man1/pilot-read-ical.1.gz
+man/man1/pilot-read-notepad.1.gz
+man/man1/pilot-read-palmpix.1.gz
+man/man1/pilot-read-screenshot.1.gz
+man/man1/pilot-read-todos.1.gz
+man/man1/pilot-read-veo.1.gz
+man/man7/pilot-link.7.gz
 @dirrm %%DATADIR%%/udev
 @dirrm %%DATADIR%%/prc
 @dirrm %%DATADIR%%/pix
