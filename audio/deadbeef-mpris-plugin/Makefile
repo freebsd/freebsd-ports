@@ -18,7 +18,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 USES=		pkgconfig
-NO_STAGE=	yes
 
 WRKSRC=		${WRKDIR}/deadbeef-${PORTVERSION}
 
