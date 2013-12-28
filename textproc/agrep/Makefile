@@ -13,7 +13,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Approximate grep (fast approximate pattern-matching tool)
 
-NO_CDROM=	no redistribution for profit
+NO_CDROM=	No redistribution for profit
 
 ALL_TARGET=
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
