@@ -4376,6 +4376,7 @@
     SUBDIR += shiboken
     SUBDIR += shmap
     SUBDIR += showgrammar
+    SUBDIR += shtk
     SUBDIR += shtool
     SUBDIR += sigslot
     SUBDIR += silc-toolkit
