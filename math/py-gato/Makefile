@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Gato-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Python-based toolbox to visualise algorithms on graphs
+COMMENT=	Python-based toolbox to visualise algorithms on graphs
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 
@@ -21,7 +21,6 @@ USE_PYTHON=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,^.*__future__.*$$,,' ${WRKSRC}/DataStructures.py
 	@${GREP} -lR "^#!" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
@@ -31,23 +30,25 @@ pre-build:
 	@${TOUCH} ${WRKSRC}/__init__.py
 
 do-build:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PYTHON_SITELIBDIR} \
+		-f ${WRKSRC}
+	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PYTHON_SITELIBDIR} \
+		-f ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${PYTHON_SITELIBDIR}/Gato
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/Gato
 .for pyfile in *.py *.pyc *.pyo
-	${INSTALL_DATA} ${WRKSRC}/${pyfile} ${PYTHON_SITELIBDIR}/Gato
+	${INSTALL_DATA} ${WRKSRC}/${pyfile} ${STAGEDIR}${PYTHON_SITELIBDIR}/Gato
 .endfor
 .for script in Gato Gred
-	@${CHMOD} ${BINMODE} ${PYTHON_SITELIBDIR}/Gato/${script}.py
-	@${LN} -sf ${PYTHON_SITELIBDIR}/Gato/${script}.py ${PREFIX}/bin/${script}
+	@${CHMOD} ${BINMODE} ${STAGEDIR}${PYTHON_SITELIBDIR}/Gato/${script}.py
+	@${LN} -sf ${PYTHON_SITELIBDIR}/Gato/${script}.py ${STAGEDIR}${PREFIX}/bin/${script}
 .endfor
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for egfile in *.alg *.pro *.cat
-	${INSTALL_DATA} ${WRKSRC}/${egfile} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${egfile} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
