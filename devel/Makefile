@@ -1255,7 +1255,6 @@
     SUBDIR += ncc
     SUBDIR += ncnf
     SUBDIR += ncurses
-    SUBDIR += ncurses-devel
     SUBDIR += ndesk-dbus
     SUBDIR += ndesk-dbus-glib
     SUBDIR += ndesk-options
