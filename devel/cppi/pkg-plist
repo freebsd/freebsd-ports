@@ -1,4 +1,5 @@
 bin/cppi
+man/man1/cppi.1.gz
 %%NLS%%share/locale/de/LC_MESSAGES/cppi.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/cppi.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/cppi.mo

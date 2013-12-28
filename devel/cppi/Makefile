@@ -13,15 +13,12 @@ USES=		charsetfix gmake	# gmake is needed for -jX builds
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		${PORTNAME}.1
-
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
 NLS_CONFIGURE_OFF=	--disable-nls
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's:(libdir)/lib:(libdir):' ${WRKSRC}/Makefile.in
 
