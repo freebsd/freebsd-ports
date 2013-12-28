@@ -9,20 +9,12 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Mail routing tools
 
-NO_STAGE=	yes
-
 ALL_TARGET=	pathalias
 
-MAN8=		pathalias.8
-BIN8=		pathalias
-PLIST_FILES=	bin/pathalias
+PLIST_FILES=	bin/pathalias man/man8/pathalias.8.gz
 
 do-install:
-.for i in ${BIN8}
-	@${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin
-.endfor
-.for i in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/${i} ${PREFIX}/man/man8
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/pathalias ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/pathalias.8 ${STAGEDIR}${PREFIX}/man/man8/
 
 .include <bsd.port.mk>
