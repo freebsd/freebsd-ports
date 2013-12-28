@@ -12,9 +12,17 @@ lib/libapreq2.a
 lib/libapreq2.la
 lib/libapreq2.so
 lib/libapreq2.so.%%SHLIB_MAJOR%%
-%%APACHEMODDIR%%/mod_apreq2.a
-%%APACHEMODDIR%%/mod_apreq2.la
-%%APACHEMODDIR%%/mod_apreq2.so
+%%WITH_MODPERL2%%%%PERL5_MAN3%%/APR::Request.3.gz
+%%WITH_MODPERL2%%%%PERL5_MAN3%%/APR::Request::Apache2.3.gz
+%%WITH_MODPERL2%%%%PERL5_MAN3%%/APR::Request::CGI.3.gz
+%%WITH_MODPERL2%%%%PERL5_MAN3%%/APR::Request::Cookie.3.gz
+%%WITH_MODPERL2%%%%PERL5_MAN3%%/APR::Request::Error.3.gz
+%%WITH_MODPERL2%%%%PERL5_MAN3%%/APR::Request::Hook.3.gz
+%%WITH_MODPERL2%%%%PERL5_MAN3%%/APR::Request::Param.3.gz
+%%WITH_MODPERL2%%%%PERL5_MAN3%%/APR::Request::Parser.3.gz
+%%WITH_MODPERL2%%%%PERL5_MAN3%%/Apache2::Cookie.3.gz
+%%WITH_MODPERL2%%%%PERL5_MAN3%%/Apache2::Request.3.gz
+%%WITH_MODPERL2%%%%PERL5_MAN3%%/Apache2::Upload.3.gz
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request.pm
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request.pod
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Apache2.pm
@@ -25,8 +33,8 @@ lib/libapreq2.so.%%SHLIB_MAJOR%%
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Cookie.pod
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Error.pm
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Error.pod
-%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Hook.pod
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Hook.pm
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Hook.pod
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Param.pm
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Param.pod
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/Parser.pm
@@ -42,27 +50,29 @@ lib/libapreq2.so.%%SHLIB_MAJOR%%
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Cookie/Cookie.so
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Error/Error.bs
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Error/Error.so
-%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Hook/Hook.so
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Hook/Hook.bs
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Hook/Hook.so
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Param/Param.bs
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Param/Param.so
-%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Parser/Parser.so
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Parser/Parser.bs
+%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Parser/Parser.so
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Request.bs
 %%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Request.so
-%%WITH_MODPERL2%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/libapreq2/.packlist
-%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/APR/Request/
-%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/APR/
-%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/
-%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Apache2/
-%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/CGI/
-%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Cookie/
-%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Error/
-%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Hook/
-%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Param/
-%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Parser/
-%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/
+%%APACHEMODDIR%%/mod_apreq2.a
+%%APACHEMODDIR%%/mod_apreq2.la
+%%APACHEMODDIR%%/mod_apreq2.so
 %%WITH_MODPERL2%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/libapreq2
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Parser
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Param
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Hook
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Error
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Cookie
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/CGI
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request/Apache2
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Request
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Apache2
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/APR/Request
+%%WITH_MODPERL2%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/APR
+@dirrm include/apreq2
 @dirrm %%APACHEINCLUDEDIR%%/apreq2
 @dirrmtry %%APACHEINCLUDEDIR%%
-@dirrm include/apreq2
