@@ -2,7 +2,7 @@
 
 PORTNAME=	pike78
 PORTVERSION=	7.8.700
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://pike.ida.liu.se/pub/pike/beta/${PORTVERSION}/ \
@@ -17,7 +17,8 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
 		libgdbm.so:${PORTSDIR}/databases/gdbm \
 		libpcre.so:${PORTSDIR}/devel/pcre \
-		libgmp.so:${PORTSDIR}/math/gmp
+		libgmp.so:${PORTSDIR}/math/gmp \
+		libnettle.so:${PORTSDIR}/security/nettle
 
 CONFLICTS=	pike7[26]-[0-9]*
 
@@ -30,6 +31,7 @@ MAN1=		pike.1
 
 CFLAGS+=	-ffast-math -fomit-frame-pointer
 
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS+=${PTHREAD_CFLAGS} M4="/usr/bin/m4 -g"
 CONFIGURE_ARGS+=	--without-debug \
 		 --with-thread-library=${PTHREAD_LIBS} \
@@ -71,9 +73,6 @@ CONFIGURE_ARGS+=	--without-debug \
 		 --without-sybase \
 		 --prefix=${PREFIX}
 
-MAKE_ARGS=	"CONFIGUREARGS=${CONFIGURE_ARGS}"
-MAKE_ENV=	"ac_cv_lib_nettle_nettle_md5_init=no"
-
 USES=		bison gettext gmake perl5
 
 PLIST_FILES=	bin/pike bin/pike78 bin/hilfe
@@ -112,8 +111,9 @@ CONFIGURE_ARGS+=	--with-pgsql=${PREFIX}
 CONFIGURE_ARGS+=	--without-pgsql
 .endif
 
-pre-configure:
-	@${ECHO} ${CONFIGURE_ARGS}
+do-configure:
+	@${MAKE} -C ${WRKSRC} configure CONFIGUREARGS="${CONFIGURE_ARGS}"
+
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -lgmp| -L${LOCALBASE}/lib -lgmp|' \
