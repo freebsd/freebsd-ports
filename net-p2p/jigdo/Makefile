@@ -12,8 +12,6 @@ COMMENT=	Utility used to retrieve large files over the Internet
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
-MAN1=		jigdo-file.1 jigdo-lite.1 jigdo-mirror.1
-
 USE_BZIP2=	yes
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -23,44 +21,27 @@ WITH_BDB_VER?=	43
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=		GUI BDB NLS
-OPTIONS_DEFAULT=	BDB NLS
+OPTIONS_DEFAULT=	BDB
+OPTIONS_SUB=		yes
 
-GUI_DESC=		Build the gtk2 gui
-BDB_DESC=		Build with Berkeley DB support (for jigdo-file cache)
+GUI_DESC=		GTK2 Graphical User Interface
+BDB_DESC=		Berkeley DB support (for jigdo-file cache)
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+GUI_CONFIGURE_WITH=	gui
+GUI_LIB_DEPENDS=	libgtk-x11-2.0.so:${PORTSDIR}/x11-toolkits/gtk20 \
+			libcurl.so:${PORTSDIR}/ftp/curl
+GUI_USES=		pkgconfig
 
-.if ${PORT_OPTIONS:MGUI}
-CONFIGURE_ARGS+=	--with-gui
-LIB_DEPENDS+=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20 \
-		curl:${PORTSDIR}/ftp/curl
-MAN1+=		jigdo.1
-PLIST_SUB+=	GUI=""
-.else
-CONFIGURE_ARGS+=--without-gui
-PLIST_SUB+=	GUI="@comment "
-.endif
+BDB_CONFIGURE_ENV=	LIBS=-L${BDB_LIB_DIR}
+BDB_CONFIGURE_ON=	--with-libdb=-l${BDB_LIB_CXX_NAME}
+BDB_CONFIGURE_OFF=	--without-libdb
+BDB_CPPFLAGS=		-I${BDB_INCLUDE_DIR}
+BDB_USE=		BDB=${WITH_BDB_VER}
 
-.if ${PORT_OPTIONS:MBDB}
-CONFIGURE_ENV+=	LIBS=-L${BDB_LIB_DIR}
-CPPFLAGS+=	-I${BDB_INCLUDE_DIR}
-CONFIGURE_ARGS+=--with-libdb=-l${BDB_LIB_CXX_NAME}
-USE_BDB=	${WITH_BDB_VER}
-.else
-CONFIGURE_ARGS+=--without-libdb
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS+=--enable-nls
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=		gettext
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/jigdo-file
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/jigdo-file
 
 .include <bsd.port.mk>
