@@ -1,33 +1,53 @@
---- ./src/Makefile.orig	2013-01-23 10:37:31.000000000 -0200
-+++ ./src/Makefile	2013-09-24 12:03:20.000000000 -0300
-@@ -5,24 +5,23 @@
+--- ./src/Makefile.orig	2013-12-27 08:39:49.000000000 -0200
++++ ./src/Makefile	2013-12-28 00:19:50.000000000 -0200
+@@ -5,7 +5,7 @@
  
- ####### Compiler, tools and options
+ ####### Makefile Conventions - Directory variables
  
--PREFIX = /usr
--DEST = $(DESTDIR)/$(PREFIX)/bin
-+DEST = $(PREFIX)/bin
- LIBPE = ../lib/libpe
- LIBUDIS86 = ../lib/libudis86
--override LDFLAGS += -L$(LIBPE) -lpe
--override CFLAGS += -I$(LIBPE) -W -Wall -Wextra -std=c99 -pedantic
-+override LDFLAGS += -L/usr/local/lib -L$(LIBPE) -lpe
-+override CFLAGS += -I/usr/local/include -I$(LIBPE) -W -Wall -Wextra -std=c99 -pedantic
- ifeq ($(PLATFORM_OS), Darwin)
- 	# We disable warnings for deprecated declarations since Apple deprecated OpenSSL in Mac OS X 10.7
- 	override CFLAGS += -Wno-deprecated-declarations
- endif
--CC = gcc
-+CC ?= ${CC}
- RM = rm -f
- SOURCES = output.c
- PROGS = readpe pedis pepack pescan rva2ofs pesec ofs2rva pestr pehash pestr
- INSTALL = install -m 0755
--SHAREDIR = /usr/share/pev
-+SHAREDIR = ${PREFIX}/share/pev
- MAN = ../doc/manpages
--MANDIR = /usr/share/man/man1
-+MANDIR = ${PREFIX}/man/man1
+-prefix = /usr
++prefix = /usr/local
+ exec_prefix = $(prefix)
+ bindir = $(exec_prefix)/bin
+ sbindir = $(exec_prefix)/sbin
+@@ -19,7 +19,7 @@
+ infodir = $(datarootdir)/info
+ libdir = $(exec_prefix)/lib
+ localedir = $(datarootdir)/locale
+-mandir = $(datarootdir)/man
++mandir = $(prefix)/man
+ man1dir = $(mandir)/man1
+ manext = .1
+ man1ext = .1
+@@ -71,7 +71,7 @@
+ pesec: LDFLAGS += -lcrypto
+ pesec: compat/strlcat.c
  
- ####### Build rules
+-pestr: LDFLAGS += -lpcre
++pestr: LDFLAGS += -L/usr/local/lib -lpcre
  
+ pehash: CFLAGS += -I$(LIBFUZZY)
+ pehash: $(LIBFUZZY)/*.c
+@@ -89,18 +89,16 @@
+ 
+ install: installdirs
+ 	for prog in $(PROGS); do \
+-		$(INSTALL_PROGRAM) -m 755 $$prog $(DEST); \
+-		$(CHK_FILE_EXISTS) $(MANDIR)/$$prog$(man1ext) && \
+-			gzip -c -9 $(MANDIR)/$$prog$(man1ext) > $(man1dir)/$$prog$(man1ext).gz || \
+-			echo -n; \
++		$(INSTALL_PROGRAM) -s -m 755 $$prog $(DEST); \
++		$(INSTALL_DATA) $(MANDIR)/$$prog$(man1ext)  $(DESTDIR)$(man1dir); \
+ 	done
+ 	# TODO: Should we copy it anyway if it already exists?
+-	@$(CHK_FILE_EXISTS) $(SHAREDIR)/userdb.txt || cp $(srcdir)/userdb.txt $(SHAREDIR)
++	@$(CHK_FILE_EXISTS) $(DESTDIR)$(SHAREDIR)/userdb.txt || cp $(srcdir)/userdb.txt $(DESTDIR)$(SHAREDIR)
+ 
+ installdirs:
+ 	@$(CHK_DIR_EXISTS) $(DEST) || $(MKDIR) $(DEST)
+-	@$(CHK_DIR_EXISTS) $(man1dir) || $(MKDIR) $(man1dir)
+-	@$(CHK_DIR_EXISTS) $(SHAREDIR) || $(MKDIR) $(SHAREDIR)
++	@$(CHK_DIR_EXISTS) $(DESTDIR)$(man1dir) || $(MKDIR) $(DESTDIR)$(man1dir)
++	@$(CHK_DIR_EXISTS) $(DESTDIR)$(SHAREDIR) || $(MKDIR) $(DESTDIR)$(SHAREDIR)
+ 
+ uninstall:
+ 	for prog in $(PROGS); do \
