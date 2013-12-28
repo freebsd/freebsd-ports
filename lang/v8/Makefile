@@ -12,6 +12,8 @@ COMMENT=	Google\'s open source JavaScript engine
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
+CONFLICTS=      v8-devel-*
+
 USES=		gmake
 USE_XZ=		yes
 USE_PYTHON=	2.6-2.7
