@@ -17,8 +17,6 @@ RUN_DEPENDS=	cdparanoia:${PORTSDIR}/audio/cdparanoia
 GNU_CONFIGURE=	yes
 CFLAGS+=	-L${LOCALBASE}/lib
 USES=		gmake pathfix pkgconfig
-NO_STAGE=	yes
 USE_GNOME=	gtk20
-MAN1=		ripperX.1
 
 .include <bsd.port.mk>
