@@ -1,6 +1,6 @@
 --- mapaux.c.orig	1993-03-03 22:10:03.000000000 +0100
-+++ mapaux.c	2013-06-16 17:14:02.000000000 +0200
-@@ -1,33 +1,26 @@
++++ mapaux.c	2013-06-17 00:07:15.000000000 +0200
+@@ -1,33 +1,21 @@
  /* pathalias -- by steve bellovin, as told to peter honeyman */
  #ifndef lint
 -static char	*sccsid = "@(#)mapaux.c	9.8 91/06/23";
@@ -8,13 +8,12 @@
  #endif /* lint */
  
  #include "def.h"
-+#include <string.h>
  
  /* imports */
- extern long Nheap, Hashpart, Tabsize, NumNcopy, Nlink, NumLcopy;
- extern node **Table, *Home;
- extern char *Graphout, *Linkout, *Netchars, **Argv;
- extern int Vflag;
+-extern long Nheap, Hashpart, Tabsize, NumNcopy, Nlink, NumLcopy;
+-extern node **Table, *Home;
+-extern char *Graphout, *Linkout, *Netchars, **Argv;
+-extern int Vflag;
 -extern void freelink(), die();
 -extern long pack();
 -extern link *newlink();
@@ -41,7 +40,7 @@
  
  /*
   * slide everything from Table[low] to Table[high]
-@@ -103,8 +96,8 @@
+@@ -103,8 +91,8 @@
  dumpnode(from)
  	register node *from;
  {	register node *to;
@@ -52,7 +51,7 @@
  
  	for (l = from->n_link ; l; l = l->l_next) {
  		to = l->l_to;
-@@ -182,7 +175,7 @@
+@@ -182,7 +170,7 @@
  STATIC void
  dfs(n)
  	register node *n;
@@ -61,7 +60,7 @@
  	register node *next;
  
  	n->n_flag |= INDFS;
-@@ -203,7 +196,7 @@
+@@ -203,7 +191,7 @@
  
  void
  showlinks() 
@@ -70,7 +69,7 @@
  	register node *n;
  	register long i;
  	FILE	*estream;
-@@ -223,7 +216,7 @@
+@@ -223,7 +211,7 @@
  			fputs(l->l_to->n_name, estream);
  			if (NETDIR(l) == LLEFT)
  				putc(NETCHAR(l), estream);
@@ -79,7 +78,7 @@
  		}
  	}
  	(void) fclose(estream);
-@@ -323,7 +316,7 @@
+@@ -323,7 +311,7 @@
  node *
  ncopy(parent, l)
  	register node *parent;
@@ -88,7 +87,7 @@
  {	register node *n, *ncp;
  
  #ifdef DEBUG
-@@ -359,11 +352,11 @@
+@@ -359,11 +347,11 @@
   *
   * why copy any links other than aliases?  hmmm ...
   */

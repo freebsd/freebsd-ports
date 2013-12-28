@@ -1,6 +1,6 @@
 --- addnode.c.orig	1993-03-03 22:10:02.000000000 +0100
-+++ addnode.c	2013-06-16 17:10:09.000000000 +0200
-@@ -1,34 +1,30 @@
++++ addnode.c	2013-06-16 23:54:57.000000000 +0200
+@@ -1,6 +1,6 @@
  /* pathalias -- by steve bellovin, as told to peter honeyman */
  #ifndef lint
 -static char	*sccsid = "@(#)addnode.c	9.7 91/05/23";
@@ -8,8 +8,7 @@
  #endif
  
  #include "def.h"
-+#include <string.h>
- 
+@@ -8,27 +8,18 @@
  #define EQ(n, s)	(*(n)->n_name == *(s) && strcmp((n)->n_name, (s)) == 0)
  
  /* exports */
@@ -22,10 +21,10 @@
 -extern link *addlink();
 -extern node *newnode(), **newtable();
 -extern char *strsave();
- extern int Iflag, Tflag, Vflag, InetFlag;
- extern node **Table, *Home;
- extern long Ncount, Tabsize;
- extern char **Argv;
+-extern int Iflag, Tflag, Vflag, InetFlag;
+-extern node **Table, *Home;
+-extern long Ncount, Tabsize;
+-extern char **Argv;
 -extern void atrace(), die(), freetable();
 -extern int strcmp();
  
@@ -43,7 +42,7 @@
  static node *Private;	/* list of private nodes in current input file */
  /*
   * these numbers are chosen because:
-@@ -83,7 +79,7 @@
+@@ -83,7 +74,7 @@
  alias(n1, n2)
  	node *n1, *n2;
  {
@@ -52,7 +51,7 @@
  
  	if (ISADOMAIN(n1) && ISADOMAIN(n2)) {
  		fprintf(stderr, "%s: domain alias %s = %s is illegal\n", Argv[0], n1->n_name, n2->n_name);
-@@ -219,7 +215,7 @@
+@@ -219,7 +210,7 @@
  	Tabsize = Primes[++Tabindex];
  	if (Tabsize == 0)
  		die("too many hosts");	/* need more prime numbers */

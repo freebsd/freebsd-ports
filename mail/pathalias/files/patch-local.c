@@ -1,6 +1,6 @@
 --- local.c.orig	1993-03-03 22:10:02.000000000 +0100
-+++ local.c	2013-06-16 15:45:27.000000000 +0200
-@@ -1,11 +1,9 @@
++++ local.c	2013-06-16 18:29:55.000000000 +0200
+@@ -1,15 +1,14 @@
  /* pathalias -- by steve bellovin, as told to peter honeyman */
  #ifndef lint
 -static char	*sccsid = "@(#)local.c	9.3 91/06/11";
@@ -14,8 +14,24 @@
  
  #ifdef	UNAME
  #include <sys/utsname.h>
-@@ -29,7 +27,7 @@
- 	extern int gethostname();
+ 
++
+ char	*
+ local()
+ {
+@@ -22,14 +21,17 @@
+ 
+ #else /* !UNAME */
+ 
++#ifndef GETHOSTNAME
++STATIC int gethostname(char *name, int len);
++#endif /* GETHOSTNAME */
++
+ char	*
+ local()
+ {
+ 	static char lname[64];
+-	extern int gethostname();
  
  	(void) gethostname(lname, (int) sizeof(lname));
 -	lname[sizeof(lname)] = 0;

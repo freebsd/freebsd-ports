@@ -1,5 +1,5 @@
 --- mapit.c.orig	1993-03-03 22:10:02.000000000 +0100
-+++ mapit.c	2013-06-16 17:13:06.000000000 +0200
++++ mapit.c	2013-06-17 00:08:03.000000000 +0200
 @@ -1,6 +1,6 @@
  /* pathalias -- by steve bellovin, as told to peter honeyman */
  #ifndef lint
@@ -8,18 +8,18 @@
  #endif
  
  #include "def.h"
-@@ -17,43 +17,42 @@
+@@ -17,43 +17,38 @@
  long Nheap;		/* end of heap */
  long NumNcopy, Nlink, NumLcopy;
  
 -void mapit();
 -
  /* imports */
- extern long Nheap, Hashpart, Tabsize, Tcount;
- extern int Tflag, Vflag;
- extern node **Table, *Home;
- extern char *Linkout, *Graphout;
- 
+-extern long Nheap, Hashpart, Tabsize, Tcount;
+-extern int Tflag, Vflag;
+-extern node **Table, *Home;
+-extern char *Linkout, *Graphout;
+-
 -extern void freelink(), resetnodes(), printit(), dumpgraph();
 -extern void showlinks(), die();
 -extern long pack(), allocation();
@@ -27,7 +27,7 @@
 -extern int maptrace(), tiebreaker();
 -extern node *ncopy();
 -
--
+ 
  /* privates */
  static long	Heaphighwater;
 -static link	**Heap;
@@ -70,7 +70,7 @@
  	Hashpart = pack(0L, Tabsize - 1);
  
  	/* expunge penalties from -a option and make circular copy lists */
-@@ -84,7 +83,7 @@
+@@ -84,7 +79,7 @@
  			n->n_flag |= MAPPED;
  			heapchildren(n);	/* add children to heap */
  		}
@@ -79,7 +79,7 @@
  
  		if (Nheap != 0)		/* sanity check */
  			die("null entry in heap");
-@@ -116,7 +115,7 @@
+@@ -116,7 +111,7 @@
  STATIC void
  heapchildren(n)
  	register node *n;
@@ -88,7 +88,7 @@
  	register node *next;
  	register int mtrace;
  	register Cost cost;
-@@ -132,11 +131,12 @@
+@@ -132,11 +127,12 @@
  		if (l->l_flag & LTERMINAL)
  			l->l_to = next = ncopy(n, l);
  
@@ -102,7 +102,7 @@
  
  		if (next->n_flag & MAPPED) {
  			if (mtrace)
-@@ -208,12 +208,12 @@
+@@ -208,12 +204,12 @@
   */
  STATIC int
  skiplink(l, parent, cost, trace)
@@ -117,7 +117,7 @@
  
  	n = l->l_to;
  
-@@ -263,7 +263,7 @@
+@@ -263,7 +259,7 @@
  STATIC Cost
  costof(prev, l)
  	register node *prev;
@@ -126,7 +126,7 @@
  {	register node *next;
  	register Cost cost;
  
-@@ -296,6 +296,9 @@
+@@ -296,6 +292,9 @@
  		 || (NETDIR(l) == LRIGHT && (prev->n_flag & HASLEFT)))
  			cost += INF;			/* mixed syntax */
  	}
@@ -136,7 +136,7 @@
  
  	return cost;
  }
-@@ -303,7 +306,7 @@
+@@ -303,7 +302,7 @@
  /* binary heap implementation of priority queue */
  STATIC void
  insert(l)
@@ -145,7 +145,7 @@
  {	register node *n;
  
  	n = l->l_to;
-@@ -336,7 +339,7 @@
+@@ -336,7 +335,7 @@
   */
  STATIC void
  heapup(l)
@@ -154,7 +154,7 @@
  {	register long cindx, pindx;	/* child, parent indices */
  	register Cost cost;
  	register node *child, *parent;
-@@ -366,10 +369,10 @@
+@@ -366,10 +365,10 @@
  }
  
  /* extract min (== Heap[1]) from heap */
@@ -168,7 +168,7 @@
  
  	if (Nheap == 0)
  		return 0;
-@@ -399,9 +402,9 @@
+@@ -399,9 +398,9 @@
  
  STATIC void
  heapdown(l)
@@ -180,7 +180,7 @@
  	node *child, *rchild, *parent;
  
  	pindx = l->l_to->n_tloc;
-@@ -450,7 +453,7 @@
+@@ -450,7 +449,7 @@
  STATIC void
  heapswap(i, j)
  	long i, j;
@@ -189,7 +189,7 @@
  
  	rheap = Heap;	/* heavily used -- put in register */
  	temp = rheap[i];
-@@ -489,7 +492,7 @@
+@@ -489,7 +488,7 @@
   */
  STATIC void
  backlinks()
@@ -198,7 +198,7 @@
  	register node *n, *child;
  	node *nomap;
  	long i;
-@@ -539,7 +542,7 @@
+@@ -539,7 +538,7 @@
  		if (Vflag > 1)
  			fprintf(stderr, "backlink: %s <- %s\n", nomap->n_name, child->n_name);
  	}
@@ -207,7 +207,7 @@
  }
  
  /* find a mapped copy of n if it exists */
-@@ -562,7 +565,7 @@
+@@ -562,7 +561,7 @@
   */
  STATIC void
  setheapbits(l)
@@ -216,7 +216,7 @@
  {	register node *n;
  	register node *parent;
  
-@@ -588,8 +591,8 @@
+@@ -588,8 +587,8 @@
  STATIC void
  mtracereport(from, l, excuse)
  	node *from;
@@ -227,7 +227,7 @@
  {	node *to = l->l_to;
  
  	fprintf(stderr, "%-16s ", excuse);
-@@ -638,7 +641,7 @@
+@@ -638,7 +637,7 @@
  #if 00
  	/* this hasn't been used for years */
  	for (i = 1; i < Nheap; i++) {
@@ -236,7 +236,7 @@
  
  		vprintf(stderr, "%5d %-16s", i, Heap[i]->l_to->n_name);
  		if ((l = Heap[i]->l_to->n_link) != 0) do {
-@@ -647,7 +650,7 @@
+@@ -647,7 +646,7 @@
  		vprintf(stderr, "\n");
  	}
  	for (i = Hashpart; i < Tabsize; i++) {
