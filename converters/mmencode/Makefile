@@ -14,17 +14,17 @@ COMMENT=	Translate to and from mail-oriented encoding formats
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/metamail
 
-PLIST_FILES=	bin/mmencode bin/mimencode
-MAN1=		mmencode.1
-MLINKS=		mmencode.1 mimencode.1
+PLIST_FILES=	bin/mmencode bin/mimencode \
+		man/man1/mmencode.1.gz man/man1/mimencode.1.gz
 
 ALL_TARGET=	mmencode
 MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
-NO_STAGE=	yes
 do-install:
-	@cd ${WRKSRC}		&& ${INSTALL_PROGRAM} mmencode ${PREFIX}/bin
-	@cd ${WRKSRC}/../man	&& ${INSTALL_MAN} mmencode.1 ${PREFIX}/man/man1
-	@cd ${PREFIX}/bin	&& ${LN} -s mmencode mimencode
+	@${INSTALL_PROGRAM} ${WRKSRC}/mmencode ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/../man/mmencode.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/
+	@cd ${STAGEDIR}${MAN1PREFIX}/man/man1 && ${LN} -s mmencode.1 mimencode.1
+	@cd ${STAGEDIR}${PREFIX}/bin && ${LN} -s mmencode mimencode
 
 .include <bsd.port.mk>
