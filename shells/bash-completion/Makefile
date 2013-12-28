@@ -3,6 +3,7 @@
 
 PORTNAME=	bash-completion
 PORTVERSION=	2.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://bash-completion.alioth.debian.org/files/
@@ -32,6 +33,9 @@ RUN_DEPENDS=bash:${PORTSDIR}/shells/bash-devel
 RUN_DEPENDS=bash:${PORTSDIR}/shells/bash
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|FLAC|&\|flv\|FLV|;' ${WRKSRC}/bash_completion
+
 post-configure:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g; \
 		s|/etc/bash_completion|${PREFIX}&|g; \
@@ -40,12 +44,7 @@ post-configure:
 		s|/usr/share\(/ssl/openssl.cnf\)|/etc\1|g; \
 		s|/usr/ports|${PORTSDIR}|g; \
 		s|/usr/lib\(/aspell\)|${PREFIX}/share\1|g; \
-		s|/usr/share/info|&:${PREFIX}/info|g; \
-		s|\$$(sysconfdir)/profile.d|${PREFIX}/bin|g; \
-		s|FLAC|&\|flv\|FLV|; \
-		s|\(profiledir = \)${PREFIX}/bin|\1${DATADIR}|g; \
-		s|\$$(datadir)/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
-		${WRKSRC}/bash_completion ${WRKSRC}/Makefile.in \
+		s|/usr/share/info|&:${PREFIX}/info|g;' \
 		${WRKSRC}/completions/*
 
 post-install:
