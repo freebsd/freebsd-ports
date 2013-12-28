@@ -1,10 +1,11 @@
 # Created by: Cyrille Lefevre <clefevre@citeweb.net>
 # $FreeBSD$
 
-PORTNAME=		gcal
-PORTVERSION=		3.6.3
-CATEGORIES=		deskutils
-MASTER_SITES=		GNU
+PORTNAME=	gcal
+PORTVERSION=	3.6.3
+PORTREVISION=	1
+CATEGORIES=	deskutils
+MASTER_SITES=	GNU
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The GNU Gregorian calendar program
@@ -12,15 +13,15 @@ COMMENT=	The GNU Gregorian calendar program
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+USES=		shebangfix
+SHEBANG_FILES=	misc/gcalltx/gcalltxp.in misc/gcalltx/gcalltx.pl
 
 INFO=		gcal
-#MAN1=		gcal.1 gcal2txt.1 tcal.1 txt2gcal.1
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-USES=		gettext
+USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
@@ -39,10 +40,11 @@ post-patch:
 
 post-install:
 	@${TAR} -cf - -C ${WRKSRC} --exclude '*.in' --exclude '*.in.bak' \
-		--exclude '*.alias' misc | ${TAR} -xpf - -C ${DATADIR}
+		--exclude '*.alias' misc | \
+		${TAR} -xpf - -C ${STAGEDIR}${DATADIR}
 .for p in ${GCAL_SCRIPTS}
-	@${CHMOD} +x ${DATADIR}/misc/${p}
-	@${LN} -s ${DATADIR}/misc/${p} ${PREFIX}/bin/gcal-${p:T}
+	@${CHMOD} +x ${STAGEDIR}${DATADIR}/misc/${p}
+	@${LN} -s ${DATADIR}/misc/${p} ${STAGEDIR}${PREFIX}/bin/gcal-${p:T}
 .endfor
 
 .include <bsd.port.mk>
