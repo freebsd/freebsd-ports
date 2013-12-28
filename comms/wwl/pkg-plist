@@ -1,0 +1,4 @@
+bin/wwl 
+man/man1/wwl.1.gz
+share/doc/wwl/INSTALL
+@dirrm share/doc/wwl
