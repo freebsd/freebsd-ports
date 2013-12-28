@@ -29,6 +29,7 @@ MAKE_ARGS=	INSTALL_BASE="${STAGEDIR}${PREFIX}" \
 		CATAPULT_FLAVOUR="portbld" \
 		CATAPULT_OPENMSX_BINARY="${LOCALBASE}/bin/openmsx" \
 		CATAPULT_OPENMSX_SHARE="${LOCALBASE}/share/openmsx" \
+		CATAPULT_NO_DESKTOP_HOOKS="true" \
 		SYMLINK_FOR_BINARY="false" \
 		PYTHON="${PYTHON_CMD}"
 
@@ -41,6 +42,10 @@ CATAPULT_STRIP=	false
 CFLAGS+=	-DNDEBUG
 CATAPULT_STRIP=	true
 .endif
+
+post-extract:
+	${CP} ${WRKSRC}/build/platform-freebsd.mk \
+		${WRKSRC}/build/platform-dragonfly.mk
 
 post-patch:
 	@${REINPLACE_CMD} 's|$$(INSTALL_BASE)|${DATADIR}|' \
@@ -62,6 +67,9 @@ post-patch:
 		>> ${WRKSRC}/build/flavour-portbld.mk
 
 post-install:
+	${MKDIR} ${STAGEDIR}${DATADIR}/resources/icons
+	${INSTALL_DATA} ${WRKSRC}/src/catapult.xpm \
+		${STAGEDIR}${DATADIR}/resources/icons
 	(cd ${WRKSRC}/desktop && ${INSTALL_DATA} openMSX-Catapult.desktop \
 		${STAGEDIR}${DESKTOPDIR})
 
