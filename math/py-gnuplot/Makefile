@@ -18,13 +18,12 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	gnuplot-py
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
+PORTDOCS=	*
+
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
