@@ -14,6 +14,8 @@ COMMENT=	Library for terminal-independent, full-screen output
 
 CONFLICTS=	ncurses-devel-*
 
+LICENSE=	MIT
+
 RELEASE=	5.9
 
 GNU_CONFIGURE=	yes
