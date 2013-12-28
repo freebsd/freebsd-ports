@@ -1,5 +1,5 @@
---- screenlib/SDL_FrameBuf.h.orig	2000-09-24 19:55:39.000000000 +0200
-+++ screenlib/SDL_FrameBuf.h	2013-03-16 11:33:01.000000000 +0100
+--- ./screenlib/SDL_FrameBuf.h.orig	2000-09-24 19:55:39.000000000 +0200
++++ ./screenlib/SDL_FrameBuf.h	2013-12-28 11:39:16.000000000 +0100
 @@ -165,7 +165,7 @@
  		va_list ap;
  
