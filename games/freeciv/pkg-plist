@@ -1,11 +1,10 @@
 bin/freeciv-server
-bin/freeciv-modpack
+%%X11%%bin/freeciv-modpack
 %%X11%%bin/freeciv-client
 %%X11%%bin/freeciv-manual
 %%GTK%%bin/freeciv-gtk2
 %%SDL%%bin/freeciv-sdl
 etc/freeciv/database.lua
-etc/ggz.modules
 lib/libfreeciv-srv.a
 lib/libfreeciv-srv.la
 lib/libfreeciv-srv.so
@@ -24,8 +23,38 @@ man/man6/freeciv-sdl.6.gz
 man/man6/freeciv-server.6.gz
 man/man6/freeciv-xaw.6.gz
 share/applications/freeciv-server.desktop
-share/applications/freeciv-modpack.desktop
+%%X11%%share/applications/freeciv-modpack.desktop
 %%X11%%share/applications/freeciv.desktop
+%%PORTDOCS%%%%DOCSDIR%%/ABOUT-NLS
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/CodingStyle
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/HOWTOPLAY
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.Cygwin
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README.AI
+%%PORTDOCS%%%%DOCSDIR%%/README.AI_modules
+%%PORTDOCS%%%%DOCSDIR%%/README.SDLClient
+%%PORTDOCS%%%%DOCSDIR%%/README.agents
+%%PORTDOCS%%%%DOCSDIR%%/README.attributes
+%%PORTDOCS%%%%DOCSDIR%%/README.cma
+%%PORTDOCS%%%%DOCSDIR%%/README.delta
+%%PORTDOCS%%%%DOCSDIR%%/README.effects
+%%PORTDOCS%%%%DOCSDIR%%/README.fcdb
+%%PORTDOCS%%%%DOCSDIR%%/README.graphics
+%%PORTDOCS%%%%DOCSDIR%%/README.nations
+%%PORTDOCS%%%%DOCSDIR%%/README.packaging
+%%PORTDOCS%%%%DOCSDIR%%/README.ruleset_experimental
+%%PORTDOCS%%%%DOCSDIR%%/README.ruleset_multiplayer
+%%PORTDOCS%%%%DOCSDIR%%/README.rulesets
+%%PORTDOCS%%%%DOCSDIR%%/README.scorelog
+%%PORTDOCS%%%%DOCSDIR%%/README.sound
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%X11%%%%DATADIR%%/amplio2/ancientcities.png
 %%X11%%%%DATADIR%%/amplio2/ancientcities.spec
 %%X11%%%%DATADIR%%/amplio2/explosions.png
@@ -3210,19 +3239,19 @@ share/applications/freeciv-modpack.desktop
 %%X11%%%%DATADIR%%/wonders/united_nations.png
 %%X11%%%%DATADIR%%/wonders/womens_suffrage.png
 %%X11%%share/icons/hicolor/128x128/apps/freeciv-client.png
+%%X11%%share/icons/hicolor/128x128/apps/freeciv-modpack.png
 %%X11%%share/icons/hicolor/16x16/apps/freeciv-client.png
+%%X11%%share/icons/hicolor/16x16/apps/freeciv-modpack.png
 %%X11%%share/icons/hicolor/32x32/apps/freeciv-client.png
+%%X11%%share/icons/hicolor/32x32/apps/freeciv-modpack.png
 %%X11%%share/icons/hicolor/48x48/apps/freeciv-client.png
+%%X11%%share/icons/hicolor/48x48/apps/freeciv-modpack.png
 %%X11%%share/icons/hicolor/64x64/apps/freeciv-client.png
-share/icons/hicolor/128x128/apps/freeciv-modpack.png
+%%X11%%share/icons/hicolor/64x64/apps/freeciv-modpack.png
 share/icons/hicolor/128x128/apps/freeciv-server.png
-share/icons/hicolor/16x16/apps/freeciv-modpack.png
 share/icons/hicolor/16x16/apps/freeciv-server.png
-share/icons/hicolor/32x32/apps/freeciv-modpack.png
 share/icons/hicolor/32x32/apps/freeciv-server.png
-share/icons/hicolor/48x48/apps/freeciv-modpack.png
 share/icons/hicolor/48x48/apps/freeciv-server.png
-share/icons/hicolor/64x64/apps/freeciv-modpack.png
 share/icons/hicolor/64x64/apps/freeciv-server.png
 %%NLS%%share/locale/ar/LC_MESSAGES/freeciv.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/freeciv.mo
@@ -3319,4 +3348,5 @@ share/icons/hicolor/64x64/apps/freeciv-server.png
 @dirrmtry share/icons
 %%NLS%%@dirrm share/locale/gd/LC_MESSAGES
 %%NLS%%@dirrm share/locale/gd
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry etc/freeciv
