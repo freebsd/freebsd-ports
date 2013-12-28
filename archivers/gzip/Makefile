@@ -9,12 +9,9 @@ MASTER_SITES=	GNU
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Compression utility designed to be a replacement for compress
 
-NO_STAGE=	yes
 USES=		charsetfix
 GNU_CONFIGURE=	yes
 
-MAN1=	gunzip.1 gzexe.1 gzip.1 zcat.1 zcmp.1 zdiff.1 zforce.1 \
-	zgrep.1 zless.1 zmore.1 znew.1
 INFO=	gzip
 
 DOC_FILES=	AUTHORS COPYING ChangeLog ChangeLog-2007 INSTALL NEWS README \
@@ -32,9 +29,9 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-gzip-rsyncable.diff
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
