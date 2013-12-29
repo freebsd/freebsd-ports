@@ -1,4 +1,3 @@
-etc/rc.d/ssltunnel.sh.sample
 @unexec if cmp -s %D/%%ETCDIR%%/tunnel.conf %D/%%ETCDIR%%/tunnel.conf.default; then rm -f %D/%%ETCDIR%%/tunnel.conf; fi
 @unexec if cmp -s %D/%%ETCDIR%%/users %D/%%ETCDIR%%/users.sample; then rm -f %D/%%ETCDIR%%/users; fi
 %%ETCDIR%%/tunnel.conf.default
