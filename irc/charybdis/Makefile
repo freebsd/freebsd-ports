@@ -20,44 +20,38 @@ CONFLICTS=	ircd-ratbox-[0-9]* ircd-ratbox-devel-[0-9]* \
 		expect-[0-9]* whois-[0-9]* undernet-ircu-[0-9]* \
 		ru-ircd-hybrid-[0-9]* \
 
-.for s in ${MASTER_SITES}
-MASTER_SITES+=	$scharybdis-stable-oper-guide/:pdf
-.endfor
+MASTER_SITES:=	${MASTER_SITES} \
+		${MASTER_SITES:S,$,charybdis-stable-oper-guide/:pdf,}
 
-MAN8=		ircd.8
 PORTDOCS=	charybdis-oper-guide.pdf
 
-USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	autoconf
-USES=	pathfix
+USES=		pathfix
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
-USERS=	ircd
-GROUPS=	ircd
+USERS=		ircd
+GROUPS=		ircd
 CONFIGURE_ARGS=	--with-confdir=${ETCDIR} \
 		--with-helpdir=${DATADIR}/help \
 		--with-logdir=/var/log/${PORTNAME} \
 		--with-moduledir=${DATADIR}/modules \
 		--enable-kqueue
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-. for d in ${PORTDOCS}
-DOCSDIST+=	$d:pdf
-. endfor
+DOCSDIST+=	${PORTDOCS}:pdf
 .endif
 
-pre-su-install:
-	@${MKDIR} ${DATADIR}
+pre-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DISTDIR}/charybdis-oper-guide.pdf ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${DISTDIR}/charybdis-oper-guide.pdf \
+		${STAGEDIR}${DOCSDIR}
 .endif
-	@${MKDIR} ${ETCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/ircd.motd ${ETCDIR}/ircd.motd.sample
-	@[ -f ${ETCDIR}/ircd.motd ] || ${CP} -p ${ETCDIR}/ircd.motd.sample \
-		${ETCDIR}/ircd.motd
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/ircd.motd \
+		${STAGEDIR}${ETCDIR}/ircd.motd.sample
 
 .include <bsd.port.mk>

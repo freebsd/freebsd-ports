@@ -1,3 +1,5 @@
+Note: the jot parts can be removed when 8.x is no longer supported
+
 --- biabam.orig	Tue Dec 21 00:08:38 2004
 +++ biabam	Tue Dec 21 00:10:02 2004
 @@ -33,15 +33,15 @@
