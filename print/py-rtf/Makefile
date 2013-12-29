@@ -13,13 +13,13 @@ COMMENT=	Library to create RTF documents using the Python language
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	PyRTF
+PYDISTUTILS_AUTOPLIST=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-rtf
+PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
