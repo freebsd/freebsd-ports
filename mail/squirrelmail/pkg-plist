@@ -272,6 +272,10 @@ etc/periodic/daily/111.clean-squirrelmail
 %%SQUIRRELDIR%%/po/mergepo
 %%SQUIRRELDIR%%/po/squirrelmail.pot
 %%SQUIRRELDIR%%/po/xgetpo
+%%SQUIRRELDIR%%/scripts/common.js
+%%SQUIRRELDIR%%/scripts/index.php
+%%SQUIRRELDIR%%/scripts/reload_page.js
+%%SQUIRRELDIR%%/scripts/remote_request.js
 %%SQUIRRELDIR%%/src/addrbook_popup.php
 %%SQUIRRELDIR%%/src/addrbook_search.php
 %%SQUIRRELDIR%%/src/addrbook_search_html.php
@@ -464,6 +468,7 @@ etc/periodic/daily/111.clean-squirrelmail
 @dirrm %%SQUIRRELDIR%%/themes/css
 @dirrm %%SQUIRRELDIR%%/themes
 @dirrm %%SQUIRRELDIR%%/src
+@dirrm %%SQUIRRELDIR%%/scripts
 @dirrm %%SQUIRRELDIR%%/po
 @dirrm %%SQUIRRELDIR%%/plugins/translate
 @dirrm %%SQUIRRELDIR%%/plugins/test
