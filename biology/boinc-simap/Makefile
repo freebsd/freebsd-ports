@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	biology
 MASTER_SITES=	http://boincsimap.org/boincsimap/download/
 DISTNAME=	${SIMAP_BINARY} ${HMMER_BINARY}
-EXTRACT_SUFX=	#
+EXTRACT_ONLY=	${HMMER_BINARY}
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Similarity Matrix of Proteins project for BOINC
@@ -65,7 +65,7 @@ do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} ${DISTDIR}/${SIMAP_BINARY} ${WRKDIR}
 	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-	    ${DISTDIR}/${HMMER_BINARY} ${EXTRACT_AFTER_ARGS})
+	    ${DISTDIR}/${HMMER_BINARY}.tar.gz ${EXTRACT_AFTER_ARGS})
 
 do-install:
 	${INSTALL} -d ${STAGEDIR}${BOINC_CLIENT_HOME}/projects
