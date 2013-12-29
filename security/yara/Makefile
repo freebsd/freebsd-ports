@@ -1,24 +1,29 @@
 # $FreeBSD$
 
 PORTNAME=	yara
-PORTVERSION=	1.7
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	security
-MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	A malware identification and classification tool
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre
+USE_GITHUB=	yes
+GH_ACCOUNT=	plusvic
+GH_TAGNAME=	v2.0.0
+GH_COMMIT=	d5dbefb
 
-PROJECTHOST=	yara-project
+USE_AUTOTOOLS=	libtool aclocal autoheader automake
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
-USE_CSTD=	gnu89
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=	yara.1
 
 NO_STAGE=	yes
+
+pre-configure:
+	@cd ${WRKSRC} && ${SH} ./bootstrap.sh
+
 .include <bsd.port.mk>
