@@ -95,4 +95,5 @@ lib/X11/EyeClock/taro_left_eye.xpm
 lib/X11/EyeClock/taro_right_core.xpm
 lib/X11/EyeClock/taro_right_eye.xpm
 lib/X11/app-defaults/EyeClock
+man/man1/eyeclock.1.gz
 @dirrm lib/X11/EyeClock
