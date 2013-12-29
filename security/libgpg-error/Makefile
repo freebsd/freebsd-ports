@@ -10,6 +10,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Common error values for all GnuPG components
 
+OPTIONS_DEFINE=	DOCS NLS
+
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	ltverhack
