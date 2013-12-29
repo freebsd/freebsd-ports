@@ -15,7 +15,7 @@ LICENSE=	MIT
 
 TEST_DEPENDS=	runtest:${PORTSDIR}/misc/dejagnu
 
-USES=		pathfix pkgconfig
+USES=		pathfix
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
