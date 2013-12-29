@@ -17,11 +17,9 @@ COMMENT=	Mail format/encoding converter
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	YACC=byacc
-MAN1=		emil.1 emil.cf.1
 
 .if defined(NOPORTDOCS)
 MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS}
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

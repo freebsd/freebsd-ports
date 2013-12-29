@@ -1,6 +1,8 @@
 bin/emil
 lib/charsets.cpl
 lib/emil.cf
+man/man1/emil.1.gz
+man/man1/emil.cf.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/analysis.html
 %%PORTDOCS%%%%DOCSDIR%%/arguments.html
 %%PORTDOCS%%%%DOCSDIR%%/arrow_left3.gif

@@ -1,5 +1,5 @@
 --- Makefile.in.orig	1996-06-04 13:54:32.000000000 +0200
-+++ Makefile.in	2011-07-25 20:21:13.000000000 +0200
++++ Makefile.in	2013-12-29 21:24:36.000000000 +0100
 @@ -41,9 +41,10 @@ exec_prefix = @exec_prefix@
  #manprefix =
  
@@ -12,16 +12,70 @@
  
  MAINCF = $(libdir)/emil.cf
  CHARFILE = $(libdir)/charsets.cpl
-@@ -262,6 +263,12 @@ install: installdirs
- 		$(INSTALL_DATA) emil.cf.$(manext) $(mandir)/man$(manext); \
+@@ -213,14 +214,14 @@ test:
+ 
+ install: installdirs
+ 	@if test -f emil ; then \
+-		if test -f $(bindir)/emil ; then \
++		if test -f $(DESTDIR)$(bindir)/emil ; then \
+ 			echo " " ;\
+ 			echo "Saving $(bindir)/emil in $(bindir)/emil.bak" ; \
+-			mv $(bindir)/emil $(bindir)/emil.bak ; \
++			mv $(DESTDIR)$(bindir)/emil $(DESTDIR)$(bindir)/emil.bak ; \
+ 		fi ; \
+ 		echo " " ;\
+ 		echo "Installing emil as $(bindir)/emil" ; \
+-		$(INSTALL_PROGRAM) emil $(bindir)/emil ; \
++		$(INSTALL_PROGRAM) emil $(DESTDIR)$(bindir)/emil ; \
+ 	fi ;
+ 	@if test -f emil.cf ; then \
+ 		if test -f $(MAINCF) ; then \
+@@ -237,35 +238,41 @@ install: installdirs
+ 		else \
+ 			echo " " ;\
+ 			echo "Installing emil.cf as $(MAINCF)" ; \
+-			$(INSTALL_DATA) emil.cf $(MAINCF) ; \
++			$(INSTALL_DATA) emil.cf $(DESTDIR)$(MAINCF) ; \
+ 		fi ; \
+ 	fi ;
+ 	@if test -f charset/charsets.cpl ; then \
+-		if test -f $(CHARFILE) ; then \
++		if test -f $(DESTDIR)$(CHARFILE) ; then \
+ 			echo " " ;\
+ 			echo "Keeping $(CHARFILE) as is" ; \
+ 		else \
+ 			echo " " ;\
+ 			echo "Installing charset/charsets.cpl as $(CHARFILE)";\
+-			$(INSTALL_DATA) charset/charsets.cpl $(CHARFILE); \
+-			 chmod 444 $(CHARFILE) ; \
++			$(INSTALL_DATA) charset/charsets.cpl $(DESTDIR)$(CHARFILE); \
++			 chmod 444 $(DESTDIR)$(CHARFILE) ; \
+ 		fi ; \
+ 	fi ;
+ 	@if test -f emil.$(manext) ; then \
+ 		echo " " ;\
+ 		echo "Installing emil.$(manext) in $(mandir)/man$(manext)";\
+-		$(INSTALL_DATA) emil.$(manext) $(mandir)/man$(manext); \
++		$(INSTALL_DATA) emil.$(manext) $(DESTDIR)$(mandir)/man$(manext); \
+ 	fi ;
+ 	@if test -f emil.cf.$(manext) ; then \
+ 		echo " " ;\
+ 		echo "Installing emil.cf.$(manext) in $(mandir)/man$(manext)";\
+-		$(INSTALL_DATA) emil.cf.$(manext) $(mandir)/man$(manext); \
++		$(INSTALL_DATA) emil.cf.$(manext) $(DESTDIR)$(mandir)/man$(manext); \
  	fi ;
  	@echo " " ;
 +.if !defined(NOPORTDOCS)
-+	$(srcdir)/mkinstalldirs $(datadir)/doc/emil 
++	$(srcdir)/mkinstalldirs $(DESTDIR)$(datadir)/doc/emil 
 +	@echo "Installing doc files in $(datadir)/doc/emil" ;
-+	@$(INSTALL_DATA) $(DOCS) $(datadir)/doc/emil/
++	@$(INSTALL_DATA) $(DOCS) $(DESTDIR)$(datadir)/doc/emil/
 +.endif
 +	@echo " " ;
  	@echo "Installation done." ;
  
  installdirs:
+-	$(srcdir)/mkinstalldirs $(bindir) $(libdir) $(mandir)/man$(manext)
++	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(libdir) $(DESTDIR)$(mandir)/man$(manext)
+ 
+ uninstall: 
+ 	if test -f $(bindir)/emil ; then \
