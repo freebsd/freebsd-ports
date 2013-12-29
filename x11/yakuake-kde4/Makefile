@@ -21,5 +21,4 @@ INSTALLS_ICONS=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
