@@ -1,6 +1,6 @@
---- support/config.h.dist.orig	Sat Dec 11 01:56:41 2004
-+++ support/config.h.dist	Sat Feb 26 01:13:29 2005
-@@ -118,13 +118,13 @@
+--- support/config.h.dist.orig	2010-08-13 21:53:03.000000000 +0200
++++ support/config.h.dist	2013-12-29 16:09:38.000000000 +0100
+@@ -123,13 +123,13 @@
  /* 
   * Operator rights can be precisely defined in O:line flags. However
   * if you undefine any of the following, it will make given function
@@ -17,9 +17,9 @@
 +#define LOCOP_REHASH
 +#define LOCOP_RESTART
  #define	OPER_SQUIT
- #define	OPER_TKLINE
- /* In a perfect world these two (or at least second) would be undefined. */
-@@ -232,25 +232,25 @@
+ #define	OPER_SQUIT_REMOTE
+ #define	OPER_KLINE
+@@ -241,25 +241,25 @@
   * this option is used unless you tell the system administrator beforehand
   * and obtain their permission to send messages to the system log files.
   */
@@ -53,7 +53,7 @@
  #endif /* USE_SYSLOG */
  
  /*
-@@ -275,7 +275,7 @@
+@@ -308,7 +308,7 @@
   * Define this if you want to use crypted passwords for operators in your
   * ircd.conf file. See contrib/mkpasswd/README for more details on this.
   */
@@ -62,7 +62,7 @@
  
  /*
   * If you want to store encrypted passwords in N-lines for server links,
-@@ -324,7 +324,7 @@
+@@ -357,7 +357,7 @@
   * send to the server without processing before disconnecting the client for
   * flooding it.  Values greater than 8000 make no difference to the server.
   */
@@ -71,7 +71,7 @@
  
  /* Remote query flood protection. */
  #define	CHREPLLEN	8192
-@@ -359,7 +359,7 @@
+@@ -392,7 +392,7 @@
   * The library and the include files must have been found by configure,
   * if you have installed the zlib after running configure, run it again.
   */

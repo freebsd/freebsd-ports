@@ -17,22 +17,13 @@ CONFLICTS_INSTALL=	charybdis-[0-9]* ircd-hybrid-[0-9]* Nefarious-[0-9]* \
 			ru-ircd-hybrid-[0-9]* ircd-ru-[0-9]*
 
 USE_RC_SUBR=	ircd
-MAN5=		iauth.conf.5
-MAN8=		ircd.8 iauth.8 ircdwatch.8
-
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/ircd
 BUILD_WRKSRC=	${WRKSRC}/${MACHINE_ARCH}-unknown-${OPSYS:L}${OSREL}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 OPTIONS_DEFINE=	IPV6
 OPTIONS_DEFAULT=IPV6
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.endif
+IPV6_CONFIGURE_ENABLE=	ipv6
 
 .include <bsd.port.mk>
