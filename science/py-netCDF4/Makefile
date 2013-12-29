@@ -13,7 +13,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Interface to the NetCDF Library (versions 3 and 4)
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	hdf5:${PORTSDIR}/science/hdf5-18 \
@@ -26,6 +25,7 @@ USES=		dos2unix
 DOS2UNIX_FILES=	utils/nc3tonc4
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 MAKE_ENV=	HDF5_INCDIR=${LOCALBASE}/include \
 		HDF5_LIBDIR=${LOCALBASE}/lib \
 		NETCDF4_INCDIR=${LOCALBASE}/include \
@@ -33,17 +33,7 @@ MAKE_ENV=	HDF5_INCDIR=${LOCALBASE}/include \
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
-PLIST_FILES=	bin/nc3tonc4 \
-		bin/nc4tonc3 \
-		%%PYTHON_SITELIBDIR%%/netCDF4.so \
-		%%PYTHON_SITELIBDIR%%/netCDF4_utils.py \
-		%%PYTHON_SITELIBDIR%%/netCDF4_utils.pyc \
-		%%PYTHON_SITELIBDIR%%/netCDF4_utils.pyo \
-		%%PYTHON_SITELIBDIR%%/netcdftime.py \
-		%%PYTHON_SITELIBDIR%%/netcdftime.pyc \
-		%%PYTHON_SITELIBDIR%%/netcdftime.pyo
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -51,13 +41,9 @@ post-patch:
 		"/dirstosearch/s|=.*|= ['${LOCALBASE}']|" ${WRKSRC}/setup.py
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/docs && ${INSTALL_DATA} * ${DOCSDIR})
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples && ${INSTALL_DATA} * ${EXAMPLESDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${INSTALL_DATA} * ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
