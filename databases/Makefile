@@ -919,6 +919,7 @@
     SUBDIR += usogres
     SUBDIR += vfront
     SUBDIR += virtuoso
+    SUBDIR += vsqlite
     SUBDIR += wfb2sql
     SUBDIR += wmjsql
     SUBDIR += xapian-bindings
