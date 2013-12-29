@@ -13,6 +13,8 @@ COMMENT=	A parser generator from FSF, (mostly) compatible with Yacc
 BUILD_DEPENDS=	m4>=1.4.16,1:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	m4>=1.4.16,1:${PORTSDIR}/devel/m4
 
+OPTIONS_DEFINE=	EXAMPLES NLS
+
 USES=		charsetfix perl5
 USE_XZ=		yes
 USE_PERL5=	build
