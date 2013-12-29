@@ -10,49 +10,29 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME} \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	SLang-based newsreader
 
-LIB_DEPENDS=	slang:${PORTSDIR}/devel/libslang2
+LIB_DEPENDS=	libslang.so:${PORTSDIR}/devel/libslang2
 
 CONFLICTS_INSTALL=	ja-slrn-[0-9]*
 
-USE_GMAKE=	yes
-USES=		iconv
+USES=		gmake iconv
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-ipv6 --disable-inews --with-slrnpull \
-			${ICONV_CONFIGURE_ARG}
+CONFIGURE_ARGS+=--enable-ipv6 --disable-inews --with-slrnpull \
+		${ICONV_CONFIGURE_ARG}
 
 ALL_TARGET=	all
 
-MAN1=		slrn.1 slrnpull.1
-
-OPTIONS_DEFINE=	SSL DEVIEW
-OPTIONS_DEFAULT=SSL
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSSL}
-USE_OPENSSL=	YES
-CONFIGURE_ARGS+=	--with-ssl
-.endif
-
-.if ${PORT_OPTIONS:MDEVIEW}
-LIB_DEPENDS+=	uu:${PORTSDIR}/converters/uulib
-CONFIGURE_ARGS+=	--with-uulib
-.endif
-
-.if ! ${PORT_OPTIONS:MDOCS}
-# Use dummy target rather than rewriting makefile
-CONFIGURE_ARGS+=	--with-docdir=${WRKSRC}/dummy
-.endif
+OPTIONS_DEFINE=	NLS SSL DEVIEW
+OPTIONS_DEFAULT=NLS SSL
+OPTIONS_SUB=	yes
+NLS_USES=		gettext
+NLS_CONFIGURE_OFF=	--disable-nls
+SSL_USE=		OPENSSL
+SSL_CONFIGURE_WITH=	ssl
+DEVIEW_DESC?=		UUdecode view support
+DEVIEW_LIB_DEPENDS=	libuu.so:${PORTSDIR}/converters/uulib
+DEVIEW_CONFIGURE_WITH=	uulib
+DOCS_CONFIGURE_OFF=	--with-docdir=${WRKSRC}/dummy
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/lib/sendmail,/usr/sbin/sendmail,' \
