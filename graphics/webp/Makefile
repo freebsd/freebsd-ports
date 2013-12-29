@@ -27,14 +27,8 @@ CONFIGURE_ARGS+=--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 
 OPTIONS_DEFINE=	X11
 OPTIONS_SUB=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MX11}
-USE_GL=		glut
-.else
-CONFIGURE_ARGS+=--with-glincludedir=/dev/null
-.endif
+X11_USE=	GL=glut
+X11_CONFIGURE_OFF=	--with-glincludedir=/dev/null
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libwebp*.so
