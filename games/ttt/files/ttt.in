@@ -1,7 +1,7 @@
 #!/bin/sh
 #
 # $FreeBSD$
+#
 
-echo "Tic Tac Toe: Starting up..."
 cd "%%DATADIR%%"
-./ttt
+exec ./ttt "${@}"

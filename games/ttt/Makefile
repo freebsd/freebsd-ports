@@ -3,53 +3,45 @@
 
 PORTNAME=	ttt
 PORTVERSION=	2011.04
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/ttt/ \
-		ftp://ftp.billsgames.com/unix/x/ttt/
+		ftp://ftp.billsgames.com/unix/x/ttt/ \
+		SF/nemysisfreebsdp/${CATEGORIES}/:icons
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}.png:icons
+EXTRACT_ONLY=   ${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Simple one or two player Tic Tac Toe game
 
 LICENSE=	GPLv2
 
-USE_AUTOTOOLS=	aclocal automake autoheader autoconf
+USE_SDL=	mixer sdl
+USE_AUTOTOOLS=	aclocal automake autoheader autoconf libtoolize
 AUTOMAKE_ARGS=	--add-missing --force
 ALL_TARGET=	${PORTNAME}
-USE_SDL=	mixer sdl
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.bmp
-
-PORTDATA=	*
 PORTDOCS=	README
+
+OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	${PORTNAME}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+DESKTOP_ENTRIES="Tic-Tac-Toe" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;LogicGame;" ""
 
 do-install:
-# Scripts
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "images sounds" ${STAGEDIR}${DATADIR})
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
-# Executable
-	${MKDIR} ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${DATADIR}
-
-# Data
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "images sounds" ${DATADIR})
-
-# Pixmaps
-	${INSTALL_DATA} ${WRKSRC}/images/program_logo.bmp ${PREFIX}/share/pixmaps/${PORTNAME}.bmp
-
-# Documentation
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
