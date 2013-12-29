@@ -19,15 +19,15 @@ USE_XORG=	xt xaw x11
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu99
 
-MAN6=		xshogi.6
-PLIST_FILES=	bin/xshogi
+PLIST_FILES=	bin/xshogi man/man6/xshogi.6.gz
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../games/gnushogi/Makefile.common"
 .include <bsd.port.pre.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xshogi/xshogi ${PREFIX}/bin/xshogi
-	${INSTALL_MAN} ${WRKSRC}/doc/xshogi.6 ${MANPREFIX}/man/man6/xshogi.6
+	${INSTALL_PROGRAM} ${WRKSRC}/xshogi/xshogi \
+		${STAGEDIR}${PREFIX}/bin/xshogi
+	${INSTALL_MAN} ${WRKSRC}/doc/xshogi.6 \
+		${STAGEDIR}${MANPREFIX}/man/man6/xshogi.6
 
 .include <bsd.port.post.mk>
