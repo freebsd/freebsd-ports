@@ -12,7 +12,6 @@ COMMENT=	Parser for the MUD eXtension protocol
 USES=		cmake
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|objformat=.*|objformat=elf|g' \
 		${WRKSRC}/configure
