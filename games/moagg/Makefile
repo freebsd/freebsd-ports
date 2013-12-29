@@ -1,13 +1,14 @@
-# Created by: nemysis@gmx.ch
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
 
 PORTNAME=	moagg
 PORTVERSION=	1.95b
+PORTREVISION=	1
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}2/${DISTVERSION:S/b//}/ \
-		http://moagg.sourceforge.net/images/screenshots/:icons
+		SF/nemysisfreebsdp/games/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}-bin.zip \
-		crates.png:icons
+		${PORTNAME}.png:icons
 DIST_SUBDIR=	java
 EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}-bin.zip
 
@@ -16,46 +17,37 @@ COMMENT=	Pilot a small space ship
 
 LICENSE=	GPLv2
 
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.png
-
-REPLACE_LIST_TEMP=	${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
-
-PORTDATA=	*
 PORTDOCS=	AUTHORS README.txt
-DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
-post-patch-script:
-	@${SED} ${REPLACE_LIST_TEMP} ${WRKSRC}/run.sh > ${WRKSRC}/run.sh.new
+DESKTOP_ENTRIES="MOAGG, Mother of all gravity Games" "" ${PORTNAME} \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%JAVASHAREDIR%%|${JAVASHAREDIR}|' \
+		${WRKSRC}/run.sh
 
 do-install:
-# Executable
-	${INSTALL_SCRIPT} ${WRKSRC}/run.sh.new ${PREFIX}/bin/${PORTNAME}
-
-# Data
-	${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "data ghosts jar" ${DATADIR})
+	${INSTALL_SCRIPT} ${WRKSRC}/run.sh \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "data ghosts jar" \
+		${STAGEDIR}${DATADIR})
 .for d in hiscores.dat log4j.properties
 	${INSTALL_DATA} ${WRKSRC}/${d} ${DATADIR}
 .endfor
 
-# Pixmaps
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/crates.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
-# Documentation
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.  for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.  endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
