@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	squirrelmail
-PORTVERSION=	20131026
+PORTVERSION=	20131229
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	adamw/squirrelmail
@@ -46,12 +46,9 @@ SUB_LIST=	SQUIRRELDIR=${SQUIRRELDIR} SMUSER=${SMUSER} SMGROUP=${SMGROUP}
 CONFLICTS=	squirreloutlook-[0-9]*
 
 DATABASE_RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
+LDAP_USE=	PHP=ldap
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_PHP+=	ldap
-.endif
 
 pre-everything::
 .if ${PORT_OPTIONS:MDATABASE}
@@ -100,7 +97,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/index.php ${STAGEDIR}${SQUIRRELDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/configure ${STAGEDIR}${SQUIRRELDIR}
 	cd ${WRKSRC} && \
-		${FIND} attach class config data functions help images include locale plugins po src themes \
+		${FIND} attach class config data functions help images include locale plugins po scripts src themes \
 		| ${CPIO} -pdmu --quiet ${STAGEDIR}${SQUIRRELDIR}
 	${CHOWN} ${SMUSER}:${SMGROUP} ${STAGEDIR}${SQUIRRELDIR}/data ${STAGEDIR}${SQUIRRELDIR}/attach
 	${CHMOD} 730 ${STAGEDIR}${SQUIRRELDIR}/attach
