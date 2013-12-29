@@ -16,23 +16,23 @@ RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 
 USE_BZIP2=	yes
 USE_TEX=	tex
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-PYDISTUTILS_INSTALLARGS=	-c -O1 --prefix=${PREFIX} \
-				--catalogs=${PREFIX}/share/xml/catalog.ports
+PYDISTUTILS_AUTOPLIST=yes
 
-PYDISTUTILS_NOEGGINFO=	yes
-PLIST_SUB+=	PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO}
+OPTIONS_DEFINE=	DOCS
 
-MAN1=		dblatex.1
-MANCOMPRESSED=	yes
+.include <bsd.port.options.mk>
 
-NO_STAGE=	yes
 post-patch:
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/pdfdocs),/d' ${WRKSRC}/setup.py
 	@${REINPLACE_CMD} -e '/htmldoc)/d' ${WRKSRC}/setup.py
 .endif
 	@${REINPLACE_CMD} -e "s,share/man/man1,man/man1,g" ${WRKSRC}/setup.py
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+PYDISTUTILS_INSTALLARGS+=	--catalogs=${PREFIX}/share/xml/catalog.ports
+
+.include <bsd.port.post.mk>
