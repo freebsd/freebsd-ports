@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.297 2013/10/26 14:41:47 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.302 2013/12/29 05:26:49 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 14;
-my $micro = 7;
+my $micro = 8;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -851,11 +851,11 @@ sub checkplist {
 			}
 		}
 
-		if ($_ =~ m{^%%PORT(\w+)%%(.*?)%%(\w+)DIR%%(.*)$} and $1 ne $3) {
+		if ($_ =~ m{^%%PORT(\w+)%%(.*?)%%(\w+)DIR%%(.*)$} and $1 ne $3 and
+			defined($check_xxxdir_ok{$3})) {
 			&perror("WARN", $file, $., "Do not mix %%PORT$1%% with %%$3DIR%%. ".
 				"Use '%%PORT$check_xxxdir_ok{$3}%%$2%%$3DIR%%$4' instead and update Makefile ".
-				"accordingly.") unless (defined($check_xxxdir_ok{$3}) and
-					$check_xxxdir_ok{$3} eq $1);
+				"accordingly.") unless ($check_xxxdir_ok{$3} eq $1);
 		}
 
 		if ($_ =~ m#man/([^/]+/)?man([$manchapters])/([^\.]+\.[$manchapters])(\.gz)?$#) {
@@ -1630,8 +1630,9 @@ sub checkmakefile {
 	#
 	print "OK: checking DESKTOP_ENTRIES for \${TRUE}/\${FALSE}.\n" if ($verbose);
 	$desktop_entries = &get_makevar_raw('DESKTOP_ENTRIES');
-	if ($desktop_entries =~ /\${TRUE}/ or $desktop_entries =~ /\${FALSE}/) {
-		&perror("FATAL", $file, -1, "Use true/false instead of \${TRUE}/\${FALSE} in DESKTOP_ENTRIES.");
+	if ($desktop_entries =~ /\${TRUE}/ or $desktop_entries =~ /\${FALSE}/ or
+	    $desktop_entries =~ /\"true\"/ or $desktop_entries =~ /\"false\"/) {
+		&perror("FATAL", $file, -1, "Use true/false (without quotes) instead of \${TRUE}/\${FALSE} in DESKTOP_ENTRIES.");
 	}
 
 	#
@@ -1893,6 +1894,11 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 		# lines, and go through each one.
 		while ($j =~ /^(.*$i.*)$/gm) {
 			my $curline = $1;
+			my $dte_test = $curline;
+			$dte_test =~ s/^\s+//g;
+			if ($desktop_entries =~ /$dte_test$/) {
+				next;
+			}
 			my $lineno = &linenumber($`);
 			if ($curline =~ /(?:^|\s)[\@\-]{0,2}$i(?:$|\s)/
 				&& $curline !~ /^[A-Z]+_TARGET[?+]?=[^\n]+$i/m
@@ -1905,6 +1911,8 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 				&& $curline !~ /^CATEGORIES(.)?=[^\n]+$i/m
 				&& $curline !~ /^USES(.)?=[^\n]+$i/m
 				&& $curline !~ /^WX_COMPS(.)?=[^\n]+$i/m
+				&& $curline !~ /^ONLY_FOR_ARCHS_REASON(.)?=[^\n]+$i/m
+				&& $curline !~ /^NOT_FOR_ARCHS_REASON(.)?=[^\n]+$i/m
 				&& $curline !~ /^\s*#.+$/m
 				&& $curline !~ /\-\-$i/m
 				&& $curline !~ /^COMMENT(.)?=[^\n]+$i/m) {
