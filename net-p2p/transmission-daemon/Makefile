@@ -23,7 +23,7 @@ EXTRA_CONF_ARGS=--disable-cli \
 		--disable-mac \
 		--disable-nls
 
-MAN1=		transmission-daemon.1 transmission-remote.1
+post-install:
+		${MKDIR} ${STAGEDIR}${ETCDIR}/home
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

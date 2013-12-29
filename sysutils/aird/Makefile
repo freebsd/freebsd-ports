@@ -8,19 +8,16 @@ MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Handles Apple IR receiver button events
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USE_RC_SUBR=	${PORTNAME}
-MAN1=		${PORTNAME}.1
-MANCOMPRESSED=	yes
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1}.gz ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1.gz ${STAGEDIR}${PREFIX}/man/man1/
 
 .include <bsd.port.mk>

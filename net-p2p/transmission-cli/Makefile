@@ -25,7 +25,6 @@ CONFLICTS_INSTALL=	${PORTNAME}${PKGNAMESUFFIX}-2.5*
 
 OPTIONS_DEFINE=	LITE
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${SLAVEPORT} != web
@@ -54,8 +53,6 @@ EXTRA_CONF_ARGS?=--enable-cli \
 CONFIGURE_ARGS+=--enable-lightweight
 .endif
 
-MAN1?=		transmission-cli.1 transmission-create.1 transmission-edit.1 \
-		transmission-show.1
 EXTRA_PATCHES=	${PATCHDIR}/disable-web
 .endif
 
@@ -86,12 +83,10 @@ general-patch:
 post-patch: general-patch
 
 general-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 post-install: general-install
 

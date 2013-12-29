@@ -1,4 +1,3 @@
-# Created by: Chris Rees
 # $FreeBSD$
 
 PORTNAME=	skinlf
@@ -10,6 +9,9 @@ MASTER_SITES=	https://skinlf.dev.java.net/files/documents/66/37801/ \
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Allows Java developers to write skinnable applications in Swing
+
+LICENSE=	BSD4CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -23,10 +25,11 @@ NO_BUILD=	yes
 PLIST_FILES=	%%JAVAJARDIR%%/${JAR_NAME} \
 		%%JAVAJARDIR%%/themepack.zip
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${JAVAJARDIR}
-	${INSTALL_DATA} "${WRKSRC}/lib/${JAR_NAME}" ${JAVAJARDIR}/${JAR_NAME}
-	${INSTALL_DATA} "${WRKSRC}/lib/themepack.zip" ${JAVAJARDIR}/themepack.zip
+	${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/${JAR_NAME} \
+		${STAGEDIR}${JAVAJARDIR}/${JAR_NAME}
+	${INSTALL_DATA} ${WRKSRC}/lib/themepack.zip \
+		${STAGEDIR}${JAVAJARDIR}/themepack.zip
 
 .include <bsd.port.mk>

@@ -17,12 +17,11 @@ PORTDOCS=	*
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC}/web -name Makefile.* -delete
 
 do-install:
-	@${MKDIR} ${DATADIR}/web
-	@(cd ${WRKSRC}/web && ${COPYTREE_SHARE} \* ${DATADIR}/web)
+	${MKDIR} ${STAGEDIR}${DATADIR}/web
+	(cd ${WRKSRC}/web && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/web)
 
 .include "${MASTERDIR}/Makefile"

@@ -17,7 +17,6 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	itcl>=3.4:${PORTSDIR}/lang/itcl \
 		wish:${PORTSDIR}/x11-toolkits/tk-wrapper
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == i386
@@ -34,8 +33,7 @@ WITHOUTSO=	"@comment "
 PLIST_SUB+=	GORILLAARCH=${GORILLAARCH:L} WITHOUTSO=${WITHOUTSO}
 
 WRKSRC=		${WRKDIR}/zdia-${PORTNAME}-${DISTVERSIONSUFFIX}
-USE_TCL_RUN=	85+
-USE_TK=		85+
+USES=		tk:85+,run
 SUB_FILES=	gorilla
 SUB_LIST=	WISH=${WISH}
 PORTDOCS=	*
@@ -61,26 +59,22 @@ do-build:
 
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/gorilla
-	@${INSTALL_SCRIPT} ${WRKSRC}/sources/*.tcl ${PREFIX}/lib/gorilla
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gorilla
+	@${INSTALL_SCRIPT} ${WRKSRC}/sources/*.tcl \
+		${STAGEDIR}${PREFIX}/lib/gorilla
 .for dir in ${SRC_DIRS}
-	@${MKDIR} ${PREFIX}/lib/${PORTNAME}/${dir}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${dir}
 	@cd ${WRKSRC}/sources/${dir} \
 		&& ${COPYTREE_SHARE} \* \
-		${PREFIX}/lib/${PORTNAME}/${dir}
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}/${dir}
 .endfor
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 post-install:
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gorilla
-	@${FIND} ${PREFIX}/lib/${PORTNAME}/ -name "*.tcl" \
-		| ${XARGS} ${CHMOD} ${BINMODE}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README			\
 		${WRKSRC}/sources/README.install-from-source	\
 		${WRKSRC}/sources/CHANGES.txt			\
-	   ${DOCSDIR}
-.endif
+	   ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -14,7 +14,4 @@ RUN_DEPENDS=	p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		CGI::Enurl.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

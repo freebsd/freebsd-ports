@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: transmission
-# REQUIRE: DAEMON 
+# REQUIRE: DAEMON
 # KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to enable this service:

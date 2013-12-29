@@ -1,4 +1,5 @@
 bin/transmission-qt
+man/man1/transmission-qt.1.gz
 share/applications/transmission-qt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
@@ -6,5 +7,3 @@ share/applications/transmission-qt.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README-qt4
 share/pixmaps/transmission-qt.png
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

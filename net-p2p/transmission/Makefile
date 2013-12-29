@@ -17,8 +17,8 @@ RUN_DEPENDS=	transmission-cli:${PORTSDIR}/net-p2p/transmission-cli \
 CONFLICTS_INSTALL=      ${PORTNAME}${PKGNAMESUFFIX}-2.[56]*
 
 NO_BUILD=	yes
+NO_MTREE=	yes
 
-NO_STAGE=	yes
 do-install:
 	@${DO_NADA}
 
