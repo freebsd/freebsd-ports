@@ -16,7 +16,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GTK+ chess board interface (mainly for FICS and chessd)
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
 EXTRAS=		1pl2 2
 USES=		shebangfix pkgconfig perl5
@@ -28,14 +28,9 @@ SHEBANG_FILES=	configure
 
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--extra-inc=${LOCALBASE}/include \
-		--extra-ld=${LOCALBASE}/lib \
-		--data-dir=${DATADIR} \
-		--disable-dgt
+		--extra-ld=${LOCALBASE}/lib
 
 INSTALL_TARGET=	install install-man
-
-MAN1=	eboard-config.1 eboard-addtheme.1
-MAN6=	eboard.6
 
 OPTIONS_DEFINE=	JOYSTICK
 JOYSTICK_DESC=	Enable joystick support
@@ -47,7 +42,6 @@ DESKTOP_ENTRIES="eboard" \
 		"Game;BoardGame;GTK;" \
 		true
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJOYSTICK}
@@ -72,20 +66,21 @@ post-configure:
 .endif
 
 post-install:
-	${LN} -sf ${LOCALBASE}/bin/timeseal ${DATADIR}/timeseal.FreeBSD
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${LN} -sf ${LOCALBASE}/bin/timeseal \
+		${STAGEDIR}${DATADIR}/timeseal.FreeBSD
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .for file in Crafty.txt FICS-Timeseal.txt GNUChess4.txt GNUChess5.txt \
 	Scripts.txt Sjeng.txt Themes.txt
-	${INSTALL_DATA} ${WRKSRC}/Documentation/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Documentation/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 .for extra in ${EXTRAS}
-	@cd ${WRKDIR}/eboard-extras-${extra} && EBOARDCONFIG=${PREFIX}/bin/eboard-config ./${CONFIGURE_SCRIPT} --prefix=${PREFIX}
-	@cd ${WRKDIR}/eboard-extras-${extra} && ${SETENV} ${MAKE_ENV} ${MAKE} install
+	@cd ${WRKDIR}/eboard-extras-${extra} && ${SETENV} EBOARDCONFIG=${STAGEDIR}${PREFIX}/bin/eboard-config ./${CONFIGURE_SCRIPT} --prefix=${PREFIX}
+	@cd ${WRKDIR}/eboard-extras-${extra} && ${SETENV} ${MAKE_ENV} ${MAKE} install DATADIR=${STAGEDIR}${DATADIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/icon-eboard.xpm ${PREFIX}/share/pixmaps/eboard.xpm
+	@${INSTALL_DATA} ${WRKSRC}/icon-eboard.xpm ${STAGEDIR}${PREFIX}/share/pixmaps/eboard.xpm
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
