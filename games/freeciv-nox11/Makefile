@@ -7,5 +7,4 @@ MASTERDIR=	${.CURDIR}/../freeciv
 OPTIONS_EXCLUDE=	SDL X11
 PKGNAMESUFFIX=	-nox11
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
