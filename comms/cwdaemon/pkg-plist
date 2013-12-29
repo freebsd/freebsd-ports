@@ -1,4 +1,5 @@
 sbin/cwdaemon
+man/man8/cwdaemon.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/cwdaemon.png
 %%PORTDOCS%%%%DOCSDIR%%/cwsetup.sh
