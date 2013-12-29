@@ -20,7 +20,6 @@ OPTIONS_DEFAULT=	VORBIS
 OPUS_DESC=	Ogg Opus audio codec support
 AACPLUS_DESC=	AAC HEv2 and libsamplerate support
 
-NO_STAGE=	yes
 USE_AUTOTOOLS=	aclocal automake autoconf
 ACLOCAL_ARGS=	# none
 AUTOMAKE_ARGS=	--add-missing --copy --foreign
@@ -29,9 +28,6 @@ CONFIGURE_ARGS=	--without-alsa
 
 SUB_FILES=	pkg-message
 USE_RC_SUBR=	${PORTNAME}
-
-MAN1=		darkice.1
-MAN5=		darkice.cfg.5
 
 .include <bsd.port.options.mk>
 
@@ -97,18 +93,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-O2 -pedantic||g' ${WRKSRC}/src/Makefile.am
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.cfg \
-		${PREFIX}/etc/${PORTNAME}.cfg.dist
-	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.cfg.5 ${MAN5PREFIX}/man/man5
-
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
-	@if [ ! -f ${PREFIX}/etc/darkice.cfg ]; then \
-		${CP} -p ${PREFIX}/etc/darkice.cfg.dist ${PREFIX}/etc/darkice.cfg ; \
-	fi
+		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.cfg.dist
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.cfg.5 ${STAGEDIR}${MAN5PREFIX}/man/man5
 
 .include <bsd.port.mk>
