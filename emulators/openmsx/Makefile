@@ -2,17 +2,19 @@
 
 PORTNAME=	openmsx
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Open source MSX emulator
 
-LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
-		png15:${PORTSDIR}/graphics/png \
-		ogg:${PORTSDIR}/audio/libogg \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		theora:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libogg.so:${PORTSDIR}/audio/libogg \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libtheora.so:${PORTSDIR}/multimedia/libtheora \
+		libao.so:${PORTSDIR}/audio/libao
 
 MAKE_ARGS+=	INSTALL_BINARY_DIR=${PREFIX}/bin \
 		INSTALL_SHARE_DIR=${DATADIR} \
@@ -20,9 +22,8 @@ MAKE_ARGS+=	INSTALL_BINARY_DIR=${PREFIX}/bin \
 		OPENMSX_CXX=${CXX}
 
 MAKEFILE=	GNUmakefile
+USES=		gmake tcl
 USE_GL=		glew
-USE_GMAKE=	yes
-USE_TCL=	85+
 USE_SDL=	sdl ttf
 USE_PYTHON=	2.5+
 
@@ -30,16 +31,17 @@ PLIST_FILES=	bin/openmsx
 PORTDATA=	*
 PORTDOCS=	*
 
+.include <bsd.port.options.mk>
+
 .ifdef	NOPORTDATA
 IGNORE=		opemsx requires port data, unset NOPORTDATA to install
 .endif
 
-.ifdef	NOPORTDOCS
+.if !${PORT_OPTIONS:MDOCS}
 # Use dummy target rather than rewriting makefile
 MAKE_ARGS+=	INSTALL_DOC_DIR=${WRKSRC}/dummy
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/{TCL_LIB_SPEC}/& $${TCL_LD_FLAGS}/' \
 		${WRKSRC}/build/libraries.py
