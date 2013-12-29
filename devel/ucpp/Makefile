@@ -9,17 +9,15 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	A C preprocessor and lexer
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-MAN1=		ucpp.1
-PLIST_FILES=	bin/ucpp
-USE_GMAKE=	yes
+PLIST_FILES=	bin/ucpp man/man1/ucpp.1.gz
+USES=		gmake
 
-WRKSRC= ${WRKDIR}/${PORTNAME}
+WRKSRC= 	${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 .include <bsd.port.mk>

@@ -8,7 +8,7 @@ MASTER_SITES=	GH
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Simple library of tools for developing multithreaded software
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	crees
@@ -25,7 +25,6 @@ INFO=		${PORTNAME}
 
 # XXX: work around an issue with automake-1.13 erroring out on a
 #      non-existent m4 directory before libtoolize creates it
-NO_STAGE=	yes
 pre-configure::
 	@${MKDIR} ${WRKSRC}/m4
 

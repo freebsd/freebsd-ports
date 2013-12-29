@@ -16,19 +16,19 @@ COMMENT=	Perl script to turn ``cvs log'' output into HTML
 
 LICENSE=	GPLv2
 
+RUN_DEPENDS=	cvs:${PORTSDIR}/devel/cvs
+
 PLIST_FILES=	bin/cvs2html
-USES=		perl5
+NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+USES=		perl5 shebangfix
+SHEBANG_FILES=	${PORTNAME}
 
-NO_STAGE=	yes
 do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${CP} ${DISTDIR}/${PORTNAME} ${WRKDIR}
-
-post-patch:
-	${REINPLACE_CMD} -e '1s|\(#!\).*$$|\1${PERL}|' ${WRKDIR}/${PORTNAME}
+	@${MKDIR} ${WRKSRC}
+	@${CP} ${DISTDIR}/${PORTNAME} ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
