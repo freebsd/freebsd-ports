@@ -19,20 +19,19 @@ OPTIONS_DEFAULT=DATA
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION:R}
 
-USE_XORG=	x11
+USES=		fortran gmake
+USE_XORG=	x11 xproto
 USE_GL=		glu
-USE_FORTRAN=	yes
-USE_GMAKE=	yes
 MAKEFILE=	makefile
 MAKE_JOBS_UNSAFE=yes
 
-CFLAGS+=	-D${OPSYS:U} -DDOBACK -DHASTIMER -DCOLOR_OFFSET=0.0
+CFLAGS+=	-D${OPSYS:U} -DDOBACK -DHASTIMER -DCOLOR_OFFSET=0.0 \
+		-I/usr/local/include -Wno-return-type
 
 PORTDOCS=	*
 PORTDATA=	*
 PLIST_FILES=	bin/ambfor bin/gmolden bin/molden bin/surf
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -51,19 +50,19 @@ post-configure:
 	@${ECHO_MSG} "********************"
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/molden ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/gmolden ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/ambfor/ambfor ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/surf/surf ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/molden ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/gmolden ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ambfor/ambfor ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/surf/surf ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MDATA}
-	@${MKDIR} ${DATADIR}/test
-	${INSTALL_DATA} ${WRKSRC}/test/* ${DATADIR}/test
-	@${MKDIR} ${DATADIR}/utils
-	${INSTALL_DATA} ${WRKSRC}/utils/* ${DATADIR}/utils
+	${MKDIR} ${STAGEDIR}${DATADIR}/test
+	${INSTALL_DATA} ${WRKSRC}/test/* ${STAGEDIR}${DATADIR}/test
+	${MKDIR} ${STAGEDIR}${DATADIR}/utils
+	${INSTALL_DATA} ${WRKSRC}/utils/* ${STAGEDIR}${DATADIR}/utils
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
