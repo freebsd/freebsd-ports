@@ -10,11 +10,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lossless WAV file compressor
 
-NO_STAGE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_FILES=	bin/kexis
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/kexis ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/kexis ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
