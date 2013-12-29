@@ -18,7 +18,6 @@ USE_GNOME=	gtk20
 
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CC=|CC?=| ; \
@@ -26,6 +25,6 @@ post-patch:
 		 s|-o clipboard-daemon |-o ${PORTNAME} |' ${WRKSRC}/Makefile
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
