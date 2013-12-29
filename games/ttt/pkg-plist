@@ -1,0 +1,24 @@
+bin/ttt
+share/pixmaps/ttt.png
+%%DATADIR%%/images/game_board.bmp
+%%DATADIR%%/images/human_vs_computer.bmp
+%%DATADIR%%/images/human_vs_human.bmp
+%%DATADIR%%/images/mark_o.bmp
+%%DATADIR%%/images/mark_x.bmp
+%%DATADIR%%/images/program_logo.bmp
+%%DATADIR%%/images/status_draw.bmp
+%%DATADIR%%/images/status_win_o.bmp
+%%DATADIR%%/images/status_win_x.bmp
+%%DATADIR%%/images/turn_o.bmp
+%%DATADIR%%/images/turn_x.bmp
+%%DATADIR%%/sounds/badspot.wav
+%%DATADIR%%/sounds/draw.wav
+%%DATADIR%%/sounds/intro.wav
+%%DATADIR%%/sounds/o.wav
+%%DATADIR%%/sounds/start.wav
+%%DATADIR%%/sounds/win.wav
+%%DATADIR%%/sounds/x.wav
+%%DATADIR%%/ttt
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%
