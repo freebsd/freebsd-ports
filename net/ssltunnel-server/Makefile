@@ -11,15 +11,17 @@ PKGNAMESUFFIX=	-server
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	PPP over SSL virtual private networking (server part)
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	TCPWRAPPERS
 TCPWRAPPERS_DESC=	libwrap support
 
+USE_RC_SUBR=	${PORTNAME}
+SUB_FILES+=	pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-client
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCPWRAPPERS}
@@ -36,13 +38,9 @@ post-patch:
 		${WRKSRC}/server/users > ${WRKSRC}/server/users.new
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}/server.README
-	${INSTALL_MAN} ${WRKSRC}/LISEZ-MOI ${DOCSDIR}/server.LISEZ-MOI
-.endif
-	${INSTALL_SCRIPT} ${WRKSRC}/server/pppserver.sh ${PREFIX}/etc/rc.d/ssltunnel.sh.sample
-	${INSTALL_DATA} ${WRKSRC}/server/users.new ${ETCDIR}/users.sample
-	@${CAT} ${PKGMESSAGE} | ${SED} "s|PREFIX|${PREFIX}|g"
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/server.README
+	${INSTALL_MAN} ${WRKSRC}/LISEZ-MOI ${STAGEDIR}${DOCSDIR}/server.LISEZ-MOI
+	${INSTALL_DATA} ${WRKSRC}/server/users.new ${STAGEDIR}${ETCDIR}/users.sample
 
 .include <bsd.port.mk>

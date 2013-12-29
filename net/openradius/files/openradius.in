@@ -4,6 +4,7 @@
 #
 # PROVIDE: openradius
 # REQUIRE: DAEMON
+# KEYWORD: shutdown
 #
 # Add the following line to /etc/rc.conf to enable openradius:
 #
@@ -15,13 +16,13 @@
 
 . /etc/rc.subr
 
-name="openradius"
+name=openradius
 rcvar=openradius_enable
 
 load_rc_config ${name}
 
-: ${openradius_enable="NO"}
-: ${openradius_flags="-o %%LOGFILE%%"}
+: ${openradius_enable:=no}
+: ${openradius_flags=-o %%LOGFILE%%}
 
 command=%%PREFIX%%/sbin/radiusd
 

@@ -21,14 +21,14 @@ CONFLICTS=	freeradius-[0-9]* gnu-radius-[0-9]* radiusd-cistron-[0-9]* \
 
 CC?=		gcc
 CXX?=		g++
+MAKE_ENV=	INST_PREFIX=${STAGEDIR}
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_RC_SUBR=	openradius
 SUB_LIST=	LOGFILE="${LOGFILE}"
 
 OPTIONS_DEFINE=	LDAP
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAP}
@@ -40,58 +40,51 @@ PLIST_SUB+=	LDAP="@comment "
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/async-iface-notes ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/language.html ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/module-interface.html ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/note-behaviourfile ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/note-struct-ownership ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/using-openradius.html ${DOCSDIR}
-.endif
-
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}/accounts
-	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-ldap ${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-ldap-authbind ${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-mysql ${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-postgres ${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-unixpass ${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-usersfile ${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/configuration.sample-ldap ${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/configuration.sample-ldap-authbind ${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/configuration.sample-mysql ${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/configuration.sample-postgres ${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/configuration.sample-unixpass ${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/configuration.sample-usersfile ${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/examples/accounts/README ${EXAMPLESDIR}/accounts
-	${INSTALL_MAN} ${WRKSRC}/examples/accounts/accounts.mysql ${EXAMPLESDIR}/accounts
-	${INSTALL_MAN} ${WRKSRC}/examples/accounts/behaviour ${EXAMPLESDIR}/accounts
-	${INSTALL_MAN} ${WRKSRC}/examples/accounts/configuration ${EXAMPLESDIR}/accounts
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/async-iface-notes ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/language.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/module-interface.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/note-behaviourfile ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/note-struct-ownership ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/using-openradius.html ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/accounts
+	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-ldap ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-ldap-authbind ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-mysql ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-postgres ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-unixpass ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-usersfile ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/examples/configuration.sample-ldap ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/examples/configuration.sample-ldap-authbind ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/examples/configuration.sample-mysql ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/examples/configuration.sample-postgres ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/examples/configuration.sample-unixpass ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/examples/configuration.sample-usersfile ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/examples/accounts/README ${STAGEDIR}${EXAMPLESDIR}/accounts
+	${INSTALL_MAN} ${WRKSRC}/examples/accounts/accounts.mysql ${STAGEDIR}${EXAMPLESDIR}/accounts
+	${INSTALL_MAN} ${WRKSRC}/examples/accounts/behaviour ${STAGEDIR}${EXAMPLESDIR}/accounts
+	${INSTALL_MAN} ${WRKSRC}/examples/accounts/configuration ${STAGEDIR}${EXAMPLESDIR}/accounts
 # Configuration, copy over to sample files
-	${MKDIR} ${ETCDIR}
+	${MKDIR} ${STAGEDIR}${ETCDIR}
 .for FILE in dictionary
-	${INSTALL_DATA} ${WRKSRC}/etc/${FILE} ${ETCDIR}/${FILE}.sample
+	${INSTALL_DATA} ${WRKSRC}/etc/${FILE} \
+		${STAGEDIR}${ETCDIR}/${FILE}.sample
 .endfor
 # Copy over legacy config files to sample
-	${MKDIR} ${ETCDIR}/legacy
+	${MKDIR} ${STAGEDIR}${ETCDIR}/legacy
 .for FILE in clients nases realms users
-	${INSTALL} -m 0600 ${WRKSRC}/etc/legacy/${FILE} ${ETCDIR}/legacy/${FILE}.sample
+	${INSTALL} -m 0600 ${WRKSRC}/etc/legacy/${FILE} \
+		${STAGEDIR}${ETCDIR}/legacy/${FILE}.sample
 .endfor
-
-	${MKDIR} ${ETCDIR}/modules
+	${MKDIR} ${STAGEDIR}${ETCDIR}/modules
 .for FILE in radldap.attrmap
-	${INSTALL} -m 0600 ${WRKSRC}/etc/modules/${FILE} ${ETCDIR}/modules/${FILE}.sample
+	${INSTALL} -m 0600 ${WRKSRC}/etc/modules/${FILE} \
+		${STAGEDIR}${ETCDIR}/modules/${FILE}.sample
 .endfor
-
-	${MKDIR} ${ETCDIR}/subdicts
+	${MKDIR} ${STAGEDIR}${ETCDIR}/subdicts
 .for FILE in dict.*
-	${INSTALL} -m 0600 ${WRKSRC}/etc/subdicts/${FILE} ${ETCDIR}/subdicts/
+	${INSTALL} -m 0600 ${WRKSRC}/etc/subdicts/${FILE} \
+		${STAGEDIR}${ETCDIR}/subdicts/
 .endfor
-
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.mk>

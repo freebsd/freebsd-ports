@@ -1,4 +1,4 @@
-All ppp parameters that were to go into PREFIX/etc/ssltunnel/users should
+All ppp parameters that were to go into %%ETCDIR%%/users should
 go to /etc/ppp/ppp.conf for example:
 
 default:
