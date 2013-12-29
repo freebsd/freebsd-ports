@@ -4,4 +4,4 @@ be taken from the sound card, or be a locally generated sine wave, white noise
 or impulse signal. The output is fed to the sound card, as well as to a virtual
 oscilloscope and spectrum analyzer. 
 
-WWW:	http://wwwhome.cs.utwente.nl/~ptdeboer/ham/basicdsp/
+WWW: http://wwwhome.cs.utwente.nl/~ptdeboer/ham/basicdsp/
