@@ -11,6 +11,7 @@ COMMENT=	A complete rewrite of the NASM assembler
 
 LICENSE=	BSD
 
+OPTIONS_DEFINE=	NLS
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-python --disable-python-bindings
