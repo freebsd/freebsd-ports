@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doublecmd
-PORTVERSION=	0.5.7
+PORTVERSION=	0.5.8
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/Double%20Commander%20Source
@@ -19,15 +19,14 @@ BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus \
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-MAN1=		${PORTNAME}.1
 PORTDOCS=	*
 
-USE_DOS2UNIX=	src/dmhelpmanager.pas
+USES=		dos2unix
+DOS2UNIX_FILES=	src/dmhelpmanager.pas
 USE_FPC=	yes
 WANT_GNOME=	yes
 
 PLIST=		${WRKDIR}/pkg-plist
-SUB_FILES=	pkg-message
 
 PROJECT_FILE=	src/doublecmd.lpi
 LAZBUILD_CMD=	${LOCALBASE}/bin/lazbuild -d
@@ -67,14 +66,17 @@ OPTIONS_DEFAULT=	GTK2 \
 			WCX_DEB \
 			WCX_LZMA \
 			WCX_RPM \
+			WCX_UNRAR \
+			WCX_ZIP \
 			WDX_RPM \
 			WDX_DEB \
 			WDX_SVN \
 			WDX_SCRIPTS \
 			WDX_XPI \
+			WFX_FTP \
+			WFX_SAMBA \
 			DSX_LOCATE
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
@@ -294,104 +296,105 @@ pre-install:
 	@${ECHO_CMD} "@dirrm %%DATADIR%%/sdk" >> ${PLIST}
 	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
 
+	@${ECHO_CMD} "man/man1/doublecmd.1.gz" >> ${PLIST}
+
 do-install:
-	@${MKDIR} ${DATADIR}/plugins
-	@${MKDIR} ${DATADIR}/plugins/wcx
-	@${MKDIR} ${DATADIR}/plugins/wdx
-	@${MKDIR} ${DATADIR}/plugins/wfx
-	@${MKDIR} ${DATADIR}/plugins/wlx
-	@${MKDIR} ${DATADIR}/plugins/dsx
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wcx
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wdx
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wfx
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wlx
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/dsx
 .if ${PORT_OPTIONS:MWCX_CPIO}
-	@${MKDIR} ${DATADIR}/plugins/wcx/cpio
-	${INSTALL_LIB} ${WRKSRC}/plugins/wcx/cpio/lib/cpio.wcx ${DATADIR}/plugins/wcx/cpio/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wcx/cpio
+	${INSTALL_LIB} ${WRKSRC}/plugins/wcx/cpio/lib/cpio.wcx ${STAGEDIR}${DATADIR}/plugins/wcx/cpio/
 .endif
 .if ${PORT_OPTIONS:MWCX_DEB}
-	@${MKDIR} ${DATADIR}/plugins/wcx/deb
-	${INSTALL_LIB} ${WRKSRC}/plugins/wcx/deb/lib/deb.wcx ${DATADIR}/plugins/wcx/deb/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wcx/deb
+	${INSTALL_LIB} ${WRKSRC}/plugins/wcx/deb/lib/deb.wcx ${STAGEDIR}${DATADIR}/plugins/wcx/deb/
 .endif
 .if ${PORT_OPTIONS:MWCX_LZMA}
-	@${MKDIR} ${DATADIR}/plugins/wcx/lzma/
-	${INSTALL_LIB} ${WRKSRC}/plugins/wcx/lzma/lib/lzma.wcx ${DATADIR}/plugins/wcx/lzma/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wcx/lzma/
+	${INSTALL_LIB} ${WRKSRC}/plugins/wcx/lzma/lib/lzma.wcx ${STAGEDIR}${DATADIR}/plugins/wcx/lzma/
 .endif
 .if ${PORT_OPTIONS:MWCX_RPM}
-	@${MKDIR} ${DATADIR}/plugins/wcx/rpm/
-	${INSTALL_LIB} ${WRKSRC}/plugins/wcx/rpm/lib/rpm.wcx ${DATADIR}/plugins/wcx/rpm/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wcx/rpm/
+	${INSTALL_LIB} ${WRKSRC}/plugins/wcx/rpm/lib/rpm.wcx ${STAGEDIR}${DATADIR}/plugins/wcx/rpm/
 .endif
 .if ${PORT_OPTIONS:MWCX_UNRAR}
-	@${MKDIR} ${DATADIR}/plugins/wcx/unrar/
-	${INSTALL_LIB} ${WRKSRC}/plugins/wcx/unrar/lib/unrar.wcx ${DATADIR}/plugins/wcx/unrar/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wcx/unrar/
+	${INSTALL_LIB} ${WRKSRC}/plugins/wcx/unrar/lib/unrar.wcx ${STAGEDIR}${DATADIR}/plugins/wcx/unrar/
 .endif
 .if ${PORT_OPTIONS:MWCX_ZIP}
-	@${MKDIR} ${DATADIR}/plugins/wcx/zip/
-	${INSTALL_LIB} ${WRKSRC}/plugins/wcx/zip/lib/zip.wcx ${DATADIR}/plugins/wcx/zip/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wcx/zip/
+	${INSTALL_LIB} ${WRKSRC}/plugins/wcx/zip/lib/zip.wcx ${STAGEDIR}${DATADIR}/plugins/wcx/zip/
 .endif
 
 .if ${PORT_OPTIONS:MWDX_RPM}
-	@${MKDIR} ${DATADIR}/plugins/wdx/rpm_wdx/
-	${INSTALL_LIB} ${WRKSRC}/plugins/wdx/rpm_wdx/lib/rpm_wdx.wdx ${DATADIR}/plugins/wdx/rpm_wdx/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wdx/rpm_wdx/
+	${INSTALL_LIB} ${WRKSRC}/plugins/wdx/rpm_wdx/lib/rpm_wdx.wdx ${STAGEDIR}${DATADIR}/plugins/wdx/rpm_wdx/
 .endif
 .if ${PORT_OPTIONS:MWDX_DEB}
-	@${MKDIR} ${DATADIR}/plugins/wdx/deb_wdx/
-	${INSTALL_LIB} ${WRKSRC}/plugins/wdx/deb_wdx/lib/deb_wdx.wdx ${DATADIR}/plugins/wdx/deb_wdx/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wdx/deb_wdx/
+	${INSTALL_LIB} ${WRKSRC}/plugins/wdx/deb_wdx/lib/deb_wdx.wdx ${STAGEDIR}${DATADIR}/plugins/wdx/deb_wdx/
 .endif
 .if ${PORT_OPTIONS:MWDX_SVN}
-	@${MKDIR} ${DATADIR}/plugins/wdx/svn_wdx/
-	${INSTALL_LIB} ${WRKSRC}/plugins/wdx/svn_wdx/lib/svn_wdx.wdx ${DATADIR}/plugins/wdx/svn_wdx/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wdx/svn_wdx/
+	${INSTALL_LIB} ${WRKSRC}/plugins/wdx/svn_wdx/lib/svn_wdx.wdx ${STAGEDIR}${DATADIR}/plugins/wdx/svn_wdx/
 .endif
 .if ${PORT_OPTIONS:MWDX_XPI}
-	@${MKDIR} ${DATADIR}/plugins/wdx/xpi_wdx/
-	${INSTALL_LIB} ${WRKSRC}/plugins/wdx/xpi_wdx/lib/xpi_wdx.wdx ${DATADIR}/plugins/wdx/xpi_wdx/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wdx/xpi_wdx/
+	${INSTALL_LIB} ${WRKSRC}/plugins/wdx/xpi_wdx/lib/xpi_wdx.wdx ${STAGEDIR}${DATADIR}/plugins/wdx/xpi_wdx/
 .endif
 .if ${PORT_OPTIONS:MWDX_SCRIPTS}
-	@${MKDIR} ${DATADIR}/plugins/wdx/scripts/
-	${INSTALL_DATA} ${WRKSRC}/plugins/wdx/scripts/* ${DATADIR}/plugins/wdx/scripts/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wdx/scripts/
+	${INSTALL_DATA} ${WRKSRC}/plugins/wdx/scripts/* ${STAGEDIR}${DATADIR}/plugins/wdx/scripts/
 .endif
 
 .if ${PORT_OPTIONS:MWFX_FTP}
-	@${MKDIR} ${DATADIR}/plugins/wfx/ftp/
-	${INSTALL_LIB} ${WRKSRC}/plugins/wfx/ftp/lib/ftp.wfx ${DATADIR}/plugins/wfx/ftp/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wfx/ftp/
+	${INSTALL_LIB} ${WRKSRC}/plugins/wfx/ftp/lib/ftp.wfx ${STAGEDIR}${DATADIR}/plugins/wfx/ftp/
 .endif
 .if ${PORT_OPTIONS:MWFX_SAMBA}
-	@${MKDIR} ${DATADIR}/plugins/wfx/samba/
-	${INSTALL_LIB} ${WRKSRC}/plugins/wfx/samba/lib/samba.wfx ${DATADIR}/plugins/wfx/samba/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wfx/samba/
+	${INSTALL_LIB} ${WRKSRC}/plugins/wfx/samba/lib/samba.wfx ${STAGEDIR}${DATADIR}/plugins/wfx/samba/
 .endif
 
 .if ${PORT_OPTIONS:MWLX_MPLAYER}
-	@${MKDIR} ${DATADIR}/plugins/wlx/wlxmplayer/
-	${INSTALL_LIB} ${WRKSRC}/plugins/wlx/WlxMplayer/lib/wlxmplayer.wlx ${DATADIR}/plugins/wlx/wlxmplayer/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/wlx/wlxmplayer/
+	${INSTALL_LIB} ${WRKSRC}/plugins/wlx/WlxMplayer/lib/wlxmplayer.wlx ${STAGEDIR}${DATADIR}/plugins/wlx/wlxmplayer/
 .endif
 
 .if ${PORT_OPTIONS:MDSX_LOCATE}
-	@${MKDIR} ${DATADIR}/plugins/dsx/dsxlocate/
-	${INSTALL_LIB} ${WRKSRC}/plugins/dsx/DSXLocate/lib/dsxlocate.dsx ${DATADIR}/plugins/dsx/dsxlocate/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins/dsx/dsxlocate/
+	${INSTALL_LIB} ${WRKSRC}/plugins/dsx/DSXLocate/lib/dsxlocate.dsx ${STAGEDIR}${DATADIR}/plugins/dsx/dsxlocate/
 .endif
 
 .for DIRE in language pixmaps sdk
-	@${MKDIR} ${DATADIR}/${DIRE}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/${DIRE}
 	@cd ${WRKSRC}/${DIRE} && \
-		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/${DIRE}/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/${DIRE}/{}" \;
+		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DATADIR}/${DIRE}/{}" \; && \
+			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/${DIRE}/{}" \;
 .endfor
 
 .for FILE in doublecmd.ext.example pixmaps.txt multiarc.ini install/linux/doublecmd.xml
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DATADIR}
 .endfor
 
 .for FILE in doublecmd.png install/linux/doublecmd.xpm
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${PREFIX}/share/pixmaps/
 .endfor
 
-	${INSTALL_PROGRAM} ${WRKSRC}/doublecmd ${PREFIX}/bin/${PORTNAME}
-	@${MKDIR} ${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/install/linux/${PORTNAME}.desktop ${DESKTOPDIR}/
-	${INSTALL_MAN} ${WRKSRC}/install/linux/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/doublecmd ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/install/linux/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}/
+	${INSTALL_MAN} ${WRKSRC}/install/linux/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@cd ${DOCSRC} && \
-		${FIND} * -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
+		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DOCSDIR}/{}" \; && \
+			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DOCSDIR}/{}" \;
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
