@@ -2,6 +2,10 @@ bin/transmission-cli
 bin/transmission-create
 bin/transmission-edit
 bin/transmission-show
+man/man1/transmission-cli.1.gz
+man/man1/transmission-create.1.gz
+man/man1/transmission-edit.1.gz
+man/man1/transmission-show.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
