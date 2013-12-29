@@ -20,7 +20,6 @@ LICENSE_COMB=	dual
 
 WRKSRC=		${WRKDIR}/caps-${PORTVERSION}
 
-NO_STAGE=	yes
 USES=		gmake
 MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS} -fPIC -DPIC"
 
@@ -30,9 +29,9 @@ PLIST_DIRSTRY=	share/ladspa/rdf share/ladspa
 OPTIMIZED_CFLAGS_CFLAGS=	-O2 -ffast-math -funroll-loops
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/ladspa
-	${INSTALL_DATA} ${WRKSRC}/caps.so ${PREFIX}/lib/ladspa
-	@${MKDIR} ${PREFIX}/share/ladspa/rdf
-	${INSTALL_DATA} ${WRKSRC}/caps.rdf ${PREFIX}/share/ladspa/rdf
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/ladspa
+	${INSTALL_LIB} ${WRKSRC}/caps.so ${STAGEDIR}${PREFIX}/lib/ladspa
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/ladspa/rdf
+	${INSTALL_DATA} ${WRKSRC}/caps.rdf ${STAGEDIR}${PREFIX}/share/ladspa/rdf
 
 .include <bsd.port.mk>
