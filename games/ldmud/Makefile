@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.bearnip.com/ftp/mud/ \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A modern version of the LPMud game driver
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
@@ -23,9 +23,7 @@ CONFIGURE_ARGS+=--libdir=${DATADIR} \
 		--enable-use-tls=ssl
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 ALL_TARGET=	ldmud
-MAN1=		ldmud.1
 USE_RC_SUBR=	ldmud
-SUB_LIST+=	LDUSER=${USERS}
 MAKE_JOBS_UNSAFE=	yes
 
 USERS=		mud
@@ -35,9 +33,6 @@ OPTIONS_DEFINE=	MYSQL PGSQL SQLITE IPV6 LPMUD
 OPTIONS_DEFAULT=MYSQL PGSQL SQLITE IPV6 LPMUD
 LPMUD_DESC=	Install default mudlib (LP-245)
 
-PORTSCOUT=	skipv:3.4.2
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}
@@ -78,20 +73,21 @@ PLIST_SUB+=	LPMUD="@comment " DEMOLIB=""
 
 post-install:
 #	# Install mudlib and other directories
-	@${MKDIR} ${DATADIR} /var/log/${PORTNAME} /var/run/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}/var/log/${PORTNAME} \
+		${STAGEDIR}/var/run/${PORTNAME}
 	@${CHOWN} ${USERS}:${GROUPS} /var/log/${PORTNAME} /var/run/${PORTNAME}
 .if ${PORT_OPTIONS:MLPMUD}
 	@cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/mud/lp-245 && ${FIND} . \
-		| ${CPIO} -pdmu -R ${USERS}:${GROUPS} ${DATADIR}
+		| ${CPIO} -pdmu -R ${USERS}:${GROUPS} ${STAGEDIR}${DATADIR}
 .else
 	@cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/mudlib && ${FIND} . \
-		| ${CPIO} -pdmu -R ${USERS}:${GROUPS} ${DATADIR}
+		| ${CPIO} -pdmu -R ${USERS}:${GROUPS} ${STAGEDIR}${DATADIR}
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc && ${FIND} . \
-		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-	@${RM} -f ${DOCSDIR}/Makefile
+		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
+	@${RM} -f ${STAGEDIR}${DOCSDIR}/Makefile
 .endif
 
 .include <bsd.port.post.mk>

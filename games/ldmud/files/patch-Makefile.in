@@ -1,0 +1,15 @@
+--- Makefile.in.orig	2013-12-29 15:19:34.000000000 +0100
++++ Makefile.in	2013-12-29 15:20:35.000000000 +0100
+@@ -135,9 +135,9 @@ install: install-driver
+ 	@echo "To install everything in one go, use 'make install-all'."
+ 
+ install-driver: ldmud@EXEEXT@ docs
+-	$(mkinstalldirs) $(BINDIR) $(MANDIR)/man1
+-	$(INSTALL) -c ldmud@EXEEXT@ $(BINDIR)/ldmud@EXEEXT@
+-	$(INSTALL) -c ../doc/man/ldmud.1 $(MANDIR)/man1/ldmud.1
++	$(mkinstalldirs) $(DESTDIR)$(BINDIR) $(DESTDIR)$(MANDIR)/man1
++	$(INSTALL) -c ldmud@EXEEXT@ $(DESTDIR)$(BINDIR)/ldmud@EXEEXT@
++	$(INSTALL) -c ../doc/man/ldmud.1 $(DESTDIR)$(MANDIR)/man1/ldmud.1
+ 
+ install-headers: 
+ 	$(mkinstalldirs) $(MUD_LIB_INCLUDE)
