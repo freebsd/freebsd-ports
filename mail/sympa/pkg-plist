@@ -78,6 +78,10 @@ libexec/sympa/virtualwrapper
 libexec/sympa/wwslib.pm
 libexec/sympa/wwsympa-wrapper.fcgi
 libexec/sympa/wwsympa.fcgi
+man/man8/alias_manager.8.gz
+man/man8/archived.8.gz
+man/man8/bounced.8.gz
+man/man8/sympa.8.gz
 %%EXAMPLESDIR%%/auth.conf
 %%EXAMPLESDIR%%/ca-bundle.crt
 %%EXAMPLESDIR%%/charset.conf

@@ -17,13 +17,10 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	yes
 PLIST_FILES=	bin/biabam
-
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e '1s|\(#!\)\(/bin/bash\)|\1${LOCALBASE}\2|' \
-		${WRKSRC}/${PORTNAME}
+USES=		shebangfix
+SHEBANG_FILES=${PORTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/biabam ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/biabam ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

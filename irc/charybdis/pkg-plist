@@ -12,10 +12,11 @@ etc/charybdis/example.conf
 @unexec cmp -s %D/etc/charybdis/ircd.motd.sample %D/etc/charybdis/ircd.motd && rm -f %D/etc/charybdis/ircd.motd || true
 etc/charybdis/ircd.motd.sample
 @exec [ -f %D/ircd.motd ] || cp -p %D/%F %B/ircd.motd
-etc/charybdis/reference.conf
+%%ETCDIR%%/reference.conf
 lib/libratbox.la
 lib/libratbox.so
 libdata/pkgconfig/libratbox.pc
+man/man8/ircd.8.gz
 %%DATADIR%%/help/opers/accept
 %%DATADIR%%/help/opers/admin
 %%DATADIR%%/help/opers/away
@@ -279,10 +280,11 @@ libdata/pkgconfig/libratbox.pc
 %%DATADIR%%/modules/m_squit.so
 @dirrm %%DATADIR%%/modules/extensions
 @dirrm %%DATADIR%%/modules/autoload
-@dirrm %%DATADIR%%/modules-old
 @dirrm %%DATADIR%%/modules
 @dirrm %%DATADIR%%/help/users
 @dirrm %%DATADIR%%/help/opers
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
-@dirrm etc/charybdis
+@dirrm %%ETCDIR%%
+@unexec rmdir >/dev/null 2>&1 /var/log/charybdis || :
+@unexec rmdir >/dev/null 2>&1 /var/db/charybdis || :

@@ -40,8 +40,10 @@ RUN_DEPENDS+=	\
 # Ignore alpha/beta versions
 PORTSCOUT=	limit:^[0-9]+(\.[0-9]+)*$$
 
+NEED_ROOT=	yes
 USERS=		sympa
 GROUPS=		sympa
+# Shebang is corrected by configure script
 USES=		perl5
 GNU_CONFIGURE=	yes
 ICONSDIR?=	www/icons
@@ -62,10 +64,9 @@ CONFIGURE_ARGS+=--bindir=${PREFIX}/libexec/${PORTNAME}	\
 CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
 SUB_FILES=	pkg-install
+SUB_LIST=	DB_TYPE=${DB_TYPE:L} WITH_FASTCGI=${PORT_OPTIONS:MFASTCGI}
 
 USE_RC_SUBR=	sympa
-
-MAN8=		alias_manager.8 archived.8 bounced.8 sympa.8
 
 CONFLICTS=	sympa-5*
 
@@ -86,7 +87,6 @@ OPTIONS_SET+=	${option}
 .  endfor
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -107,18 +107,19 @@ RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fa
 
 .if ${PORT_OPTIONS:MORACLE}
 RUN_DEPENDS+=	p5-DBD-Oracle>=0:${PORTSDIR}/databases/p5-DBD-Oracle
+DB_TYPE=	oracle
 .elif ${PORT_OPTIONS:MPGSQL}
 SUB_LIST+=	REQ_MYSQL="" REQ_PGSQL=postgresql
 RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+DB_TYPE=	pg
 .elif ${PORT_OPTIONS:MSYBASE}
 RUN_DEPENDS+=	p5-DBD-Sybase>=0:${PORTSDIR}/databases/p5-DBD-Sybase
+DB_TYPE=	sybase
 .elif ${PORT_OPTIONS:MMYSQL}
 SUB_LIST+=	REQ_MYSQL=mysql REQ_PGSQL=""
 RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+DB_TYPE=	mysql
 .endif
-
-pre-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\( *staticdir=\).*$$|\1${DATADIR}|'	\
@@ -129,11 +130,7 @@ post-patch:
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|\(--target.*sympa.conf\)|\1.sample|'	\
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's/\$$(DESTDIR)\$$(sampledir)/\$$(sampledir)/g' \
+	@${REINPLACE_CMD} -e 's#\$$(DESTDIR)\$$(sampledir)#${STAGEDIR}\$$(sampledir)#g' \
 		${WRKSRC}/doc/sample/Makefile.in
-
-post-install:
-	@PKG_PREFIX=${PREFIX} DB_TYPE=${DB_TYPE} WITH_FASTCGI=${WITH_FASTCGI} \
-		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
