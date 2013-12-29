@@ -11,14 +11,12 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The C-INTERCAL compiler, ick, and supporting libraries
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 CFLAGS+=	-D_POSIX_SOURCE
 DATADIR=	${PREFIX}/share/ick
 
-MAN1=		ick.1 convickt.1
 INFO=		ick
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/ICK_SPECIFIC_SUBDIR/s/-@PACKAGE_VERSION@// ' \
 		${WRKSRC}/buildaux/Makefile.in
