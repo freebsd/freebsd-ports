@@ -26,15 +26,14 @@ CONFIGURE_ARGS+=--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \
 		--enable-libwebpdecoder
 
 OPTIONS_DEFINE=	X11
+OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
 USE_GL=		glut
-PLIST_SUB=	X11=""
 .else
 CONFIGURE_ARGS+=--with-glincludedir=/dev/null
-PLIST_SUB=	X11="@comment "
 .endif
 
 post-install:
