@@ -1,27 +1,31 @@
 # $FreeBSD$
 
 PORTNAME=	yara
-PORTVERSION=	1.7
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	security
-MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	yara-python-${PORTVERSION}
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Python bindings for yara
 
-LIB_DEPENDS=	yara.0:${PORTSDIR}/security/yara
+USE_GITHUB=	yes
+GH_ACCOUNT=	plusvic
+GH_TAGNAME=	v2.0.0
+GH_COMMIT=	d5dbefb
 
-PROJECTHOST=	yara-project
+LIB_DEPENDS=	yara:${PORTSDIR}/security/yara
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_EGGINFO=	yara_python-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg-info
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/yara.so
+BUILD_WRKSRC=	${WRKSRC}/yara-python
+INSTALL_WRKSRC=	${WRKSRC}/yara-python
 
 NO_STAGE=	yes
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${BUILD_WRKSRC}/setup.py
 
 .include <bsd.port.mk>
