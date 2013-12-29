@@ -34,6 +34,9 @@ lib/sawfish/x.a
 lib/sawfish/x.la
 lib/sawfish/x.so
 libdata/pkgconfig/sawfish.pc
+man/man1/sawfish-client.1.gz
+man/man1/sawfish-config.1.gz
+man/man1/sawfish.1.gz
 share/applications/sawfish.desktop
 share/gnome/wm-properties/sawfish-wm.desktop
 share/icons/hicolor/32x32/apps/sawfish-config.png
