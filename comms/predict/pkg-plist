@@ -1,5 +1,6 @@
 bin/predict
 bin/vocalizer
+man/man1/predict.1.gz
 %%DATADIR%%/default/predict.db
 %%DATADIR%%/default/predict.qth
 %%DATADIR%%/default/predict.tle
