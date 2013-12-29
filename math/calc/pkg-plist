@@ -75,6 +75,7 @@ lib/libcustcalc.so.%%VERSION%%
 lib/libcustcalc.so.%%VER1%%
 lib/libcustcalc.so.%%VER2%%
 lib/libcustcalc.so.%%VER3%%
+man/man1/calc.1.gz
 %%DATADIR%%/README
 %%DATADIR%%/alg_config.cal
 %%DATADIR%%/beer.cal
