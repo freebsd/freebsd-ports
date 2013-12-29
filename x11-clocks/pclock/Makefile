@@ -18,13 +18,12 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" OBJS="Main.o Graphics.o" \
 		INCDIR="-I. -I${LOCALBASE}/include ${CPPFLAGS}" \
 		LIBDIR="-L${LOCALBASE}/lib ${LDFLAGS}"
 
-NO_STAGE=	yes
 post-extract:
 	cd ${WRKSRC} && ${RM} -f getopt*
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pclock ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/../XPM/*.xpm ${DATADIR}/pixmaps
+	${INSTALL_PROGRAM} ${WRKSRC}/pclock ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/../XPM/*.xpm ${STAGEDIR}${DATADIR}/pixmaps
 
 .include <bsd.port.mk>
