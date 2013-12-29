@@ -545,6 +545,7 @@ include/freeradius/realms.h
 include/freeradius/sha1.h
 include/freeradius/stats.h
 include/freeradius/sysutmp.h
+include/freeradius/threads.h
 include/freeradius/token.h
 include/freeradius/udpfromto.h
 include/freeradius/vmps.h
@@ -683,6 +684,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.alcatel
 %%DATADIR%%/dictionary.alcatel.esam
 %%DATADIR%%/dictionary.alcatel.sr
+%%DATADIR%%/dictionary.alcatel-lucent.aaa
 %%DATADIR%%/dictionary.alteon
 %%DATADIR%%/dictionary.altiga
 %%DATADIR%%/dictionary.alvarion
@@ -719,6 +721,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.dhcp
 %%DATADIR%%/dictionary.digium
 %%DATADIR%%/dictionary.dlink
+%%DATADIR%%/dictionary.efficientip
 %%DATADIR%%/dictionary.epygi
 %%DATADIR%%/dictionary.eltex
 %%DATADIR%%/dictionary.ericsson
