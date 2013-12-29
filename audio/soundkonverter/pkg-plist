@@ -43,6 +43,7 @@ share/icons/hicolor/48x48/apps/soundkonverter-replaygain.png
 share/icons/hicolor/48x48/apps/soundkonverter.png
 share/icons/hicolor/64x64/apps/soundkonverter-replaygain.png
 share/icons/hicolor/64x64/apps/soundkonverter.png
+%%NLS%%share/locale/ca/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/de/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/es/LC_MESSAGES/soundkonverter.mo
@@ -52,8 +53,11 @@ share/icons/hicolor/64x64/apps/soundkonverter.png
 %%NLS%%share/locale/it/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/soundkonverter.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/soundkonverter.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/soundkonverter.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/soundkonverter.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/soundkonverter.mo
 share/kde4/services/soundkonverter_codec_aften.desktop
 share/kde4/services/soundkonverter_codec_faac.desktop
 share/kde4/services/soundkonverter_codec_ffmpeg.desktop
