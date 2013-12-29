@@ -18,24 +18,18 @@ OPTIONS_DEFINE=	DOCS
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_EGGINFODIR=	${PYTHON_SITELIBDIR}/FontTools
-
-MAN1=		ttx.1
+PYDISTUTILS_AUTOPLIST=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-fonttools
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+PORTDOCS=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/man/man1|man/man1|g' ${WRKSRC}/setup.py
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Doc/ChangeLog ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Doc/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Doc/*.txt ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Doc/ChangeLog ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Doc/*.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Doc/*.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
