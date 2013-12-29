@@ -1,0 +1,6 @@
+Partio is a library for reading/writing/processing particle files for a wide
+range of tools and file formats. It acts as an abstraction for the
+commonalities in particle models (i.e. accessing many attributes associated
+with an index or entity).
+
+WWW: http://www.partio.us
