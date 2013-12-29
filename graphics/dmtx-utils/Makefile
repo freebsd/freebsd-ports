@@ -11,14 +11,14 @@ MASTER_SITE_SUBDIR=libdmtx/libdmtx/${PORTVERSION}
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Software for reading and writing Data Matrix barcodes
 
-LIB_DEPENDS=	dmtx.0:${PORTSDIR}/graphics/libdmtx
+LIB_DEPENDS=	libdmtx.so:${PORTSDIR}/graphics/libdmtx
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		dmtxread.1 dmtxwrite.1 dmtxquery.1
-PLIST_FILES=	bin/dmtxread bin/dmtxwrite bin/dmtxquery
+PLIST_FILES=	bin/dmtxread bin/dmtxwrite bin/dmtxquery \
+		man/man1/dmtxread.1.gz man/man1/dmtxwrite.1.gz \
+		man/man1/dmtxquery.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

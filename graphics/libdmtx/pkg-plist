@@ -4,3 +4,4 @@ lib/libdmtx.so.0
 lib/libdmtx.la
 lib/libdmtx.a
 libdata/pkgconfig/libdmtx.pc
+man/man3/libdmtx.3.gz
