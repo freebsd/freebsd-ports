@@ -8,10 +8,10 @@ MASTER_SITES=	SF/${PORTNAME}/_${PORTNAME}/Complete%20Kit
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Cryptographic Toolkit for Python
+COMMENT=	Cryptographic Toolkit for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
