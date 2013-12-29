@@ -1,4 +1,3 @@
-# Created by: crees
 # $FreeBSD$
 
 PORTNAME=	vfront
@@ -20,7 +19,6 @@ OPTIONS_MULTI=	database
 OPTIONS_MULTI_database=	MYSQL PGSQL
 OPTIONS_DEFAULT=	MYSQL PGSQL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -45,10 +43,10 @@ pre-install:
 	    ${FIND} * -type d | ${SORT} -r | \
 			${SED} 's,^,@dirrmtry %%WWWDIR%%/,' >> ${PLIST})
 	@${ECHO_CMD} '@dirrmtry %%WWWDIR%%' >> ${PLIST}
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN} %D/%%WWWDIR%%' >> ${PLIST}
+	@${ECHO_CMD} '@exec ${CHMOD} 700 %D/%%WWWDIR%%/conf' >> ${PLIST}
 
 do-install:
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR})
-	${CHOWN} -R ${WWWOWN} ${WWWDIR}
-	${CHMOD} 700 ${WWWDIR}/conf
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${WWWDIR})
 
 .include <bsd.port.mk>
