@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpcap
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcpdump.org/release/
 
@@ -42,6 +42,7 @@ MAN3=		pcap.3 \
 		pcap_fileno.3 \
 		pcap_findalldevs.3 \
 		pcap_freecode.3 \
+		pcap_get_tstamp_precision.3 \
 		pcap_get_selectable_fd.3 \
 		pcap_geterr.3 \
 		pcap_inject.3 \
@@ -60,10 +61,12 @@ MAN3=		pcap.3 \
 		pcap_open_offline.3 \
 		pcap_set_buffer_size.3 \
 		pcap_set_datalink.3 \
+		pcap_set_immediate_mode.3 \
 		pcap_set_promisc.3 \
 		pcap_set_rfmon.3 \
 		pcap_set_snaplen.3 \
 		pcap_set_timeout.3 \
+		pcap_set_tstamp_precision.3 \
 		pcap_set_tstamp_type.3 \
 		pcap_setdirection.3 \
 		pcap_setfilter.3 \
