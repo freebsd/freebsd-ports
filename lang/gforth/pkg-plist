@@ -1,18 +1,13 @@
 bin/gforth-%%PORTVERSION%%
-@exec ln -fs %f %B/gforth
-@unexec rm -f %B/gforth
 bin/gforth-fast-%%PORTVERSION%%
-@exec ln -fs %f %B/gforth-fast
-@unexec rm -f %B/gforth-fast
 bin/gforth-itc-%%PORTVERSION%%
-@exec ln -fs %f %B/gforth-itc
-@unexec rm -f %B/gforth-itc
 bin/gforthmi-%%PORTVERSION%%
-@exec ln -fs %f %B/gforthmi
-@unexec rm -f %B/gforthmi
 bin/vmgen-%%PORTVERSION%%
-@exec ln -fs %f %B/vmgen
-@unexec rm -f %B/vmgen
+bin/gforth
+bin/gforth-fast
+bin/gforth-itc
+bin/gforthmi
+bin/vmgen
 include/gforth/%%PORTVERSION%%/config.h
 include/gforth/%%PORTVERSION%%/libcc.h
 lib/gforth/%%PORTVERSION%%/gforth-ditc
@@ -33,6 +28,7 @@ lib/gforth/%%PORTVERSION%%/libcc-named/fflib.so.0
 lib/gforth/%%PORTVERSION%%/libcc-named/fflib.so
 lib/gforth/%%PORTVERSION%%/libcc-named/fflib.la
 lib/gforth/%%PORTVERSION%%/libcc-named/fflib.a
+man/man1/gforth.1.gz
 %%DATADIR%%/%%PORTVERSION%%/TAGS
 %%DATADIR%%/%%PORTVERSION%%/add.fs
 %%DATADIR%%/%%PORTVERSION%%/ans-report.fs
