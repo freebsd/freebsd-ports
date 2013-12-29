@@ -1,0 +1,15 @@
+include/sqlite/command.hpp
+include/sqlite/connection.hpp
+include/sqlite/database_exception.hpp
+include/sqlite/execute.hpp
+include/sqlite/ext/variant.hpp
+include/sqlite/query.hpp
+include/sqlite/result.hpp
+include/sqlite/transaction.hpp
+include/sqlite/view.hpp
+lib/libvsqlitepp.a
+lib/libvsqlitepp.la
+lib/libvsqlitepp.so
+lib/libvsqlitepp.so.3
+@dirrmtry include/sqlite/ext
+@dirrmtry include/sqlite
