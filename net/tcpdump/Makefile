@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tcpdump
-PORTVERSION=	4.4.0
+PORTVERSION=	4.5.1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcpdump.org/release/
 
