@@ -3,7 +3,7 @@
 
 PORTNAME=	cnews
 PORTVERSION=	cr.g
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.funet.fi/pub/unix/news/cnews/ \
@@ -68,7 +68,13 @@ PLIST_SUB+=	NEWSOV=${NEWSOV:S=^${VARBASE}/==}
 PLIST_SUB+=	NEWSCTL_FILES="${NEWSCTL_FILES}"
 
 OPTIONS_DEFINE=	SENDMAIL
+OPTIONS_DEFAULT=PGPGPG
+OPTIONS_SINGLE=	VERIFY
+OPTIONS_SINGLE_VERIFY=	PGP2 PGPIN PGPGPG
 SENDMAIL_DESC=	use sendmail instead of /bin/mail
+PGP2_DESC=	use pgp-2.6.3ia for control messages
+PGPIN_DESC=	use pgp-2.6.3in for control messages
+PGPGPG_DESC=	use pgpgpg for control messages
 
 VARBASE?=	/var
 NEWSBIN?=	${PREFIX}/libexec/cnews
@@ -97,6 +103,14 @@ pre-configure:
 		-e "s=/usr/local/bin=${PREFIX}/bin=" \
 		${WRKSRC}/${i}
 .endfor
+.if ${PORT_OPTIONS:MPGPIN}
+	${REINPLACE_CMD} -e "s|'/usr/local/bin/pgp'|'/usr/local/bin/pgpin'|" \
+		${WRKSRC}/${PGPVERIFY}
+.endif
+.if ${PORT_OPTIONS:MPGPGPG}
+	${REINPLACE_CMD} -e "s|'/usr/local/bin/pgp'|'/usr/local/bin/pgpgpg'|" \
+		${WRKSRC}/${PGPVERIFY}
+.endif
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libdbz/dbz.h ${STAGEDIR}${PREFIX}/include/
