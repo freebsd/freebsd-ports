@@ -16,9 +16,8 @@ MAKE_ARGS=	CC="${CC}" OPT="${CFLAGS}"
 
 USE_XORG=	x11 xau xdmcp
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/abclock ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/abc_img ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/abclock ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/abc_img ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
