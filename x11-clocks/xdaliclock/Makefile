@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xdaliclock
-PORTVERSION=	2.39
+PORTVERSION=	2.40
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://www.jwz.org/xdaliclock/
 MASTER_SITE_SUBDIR=	applications
