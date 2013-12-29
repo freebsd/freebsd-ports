@@ -4,3 +4,4 @@ lib/liboauth.so
 lib/liboauth.la
 lib/liboauth.a
 libdata/pkgconfig/oauth.pc
+man/man3/oauth.3.gz
