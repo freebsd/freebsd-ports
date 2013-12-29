@@ -3,7 +3,8 @@
 PORTNAME=	shtk
 PORTVERSION=	1.3
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/jmmv/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/
+MASTER_SITES=	https://github.com/jmmv/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/ \
+		LOCAL/jmmv
 
 MAINTAINER=	jmmv@freebsd.org
 COMMENT=	Application toolkit for POSIX-compliant shell scripts
@@ -16,7 +17,5 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--without-atf
 
 MAKE_ARGS=      pkgconfigdir=${PREFIX}/libdata/pkgconfig
-
-MAN1=		shtk.1
 
 .include <bsd.port.mk>
