@@ -12,20 +12,17 @@ COMMENT=	Xlib implementation of an attractive, configurable clock
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_XORG=	x11 xext
-USES=		bison pkgconfig
-USE_GMAKE=	yes
+USES=		bison gmake pkgconfig
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=yes
 
-MAN1=		buici-clock.1
-PLIST_FILES=	bin/buici-clock
+PLIST_FILES=	bin/buici-clock man/man1/buici-clock.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|echo -e|echo| ; \
@@ -35,7 +32,7 @@ post-patch:
 		 s|-g | |' ${WRKSRC}/xo/Makefile.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/buici-clock ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/buici-clock.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/buici-clock ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/buici-clock.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
