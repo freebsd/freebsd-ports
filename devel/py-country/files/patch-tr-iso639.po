@@ -23,7 +23,7 @@
  #. name for nld, nl
  msgid "Dutch; Flemish"
 -msgstr "Hollandaca; Flamanca"
-+msgstr "FelemenkÃ§e; Flamanca"
++msgstr "Felemenkçe; Flamanca"
  
  #. name for dyu
  msgid "Dyula"
@@ -68,7 +68,7 @@
  #. name for pol, pl
  msgid "Polish"
 -msgstr "Polonyaca"
-+msgstr "LehÃ§e"
++msgstr "Lehçe"
  
  #. name for pon
  #, fuzzy
