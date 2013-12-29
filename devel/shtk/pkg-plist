@@ -1,5 +1,6 @@
 bin/shtk
 libdata/pkgconfig/shtk.pc
+man/man1/shtk.1.gz
 share/aclocal/shtk.m4
 share/doc/shtk/AUTHORS
 share/doc/shtk/COPYING
@@ -12,3 +13,5 @@ share/shtk/config.subr
 share/shtk/cvs.subr
 share/shtk/list.subr
 share/shtk/process.subr
+@dirrm share/shtk
+@dirrm share/doc/shtk
