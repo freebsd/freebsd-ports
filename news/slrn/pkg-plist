@@ -1,5 +1,7 @@
 bin/slrn
 bin/slrnpull
+man/man1/slrn.1.gz
+man/man1/slrnpull.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
