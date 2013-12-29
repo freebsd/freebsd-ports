@@ -3,6 +3,7 @@
 
 PORTNAME=	eif
 PORTVERSION=	1.3.4
+PORTREVISION=	1
 CATEGORIES=	games ipv6
 MASTER_SITES=	http://www.stack.nl/~marcolz/empire/ \
 		ftp://ftp.stack.nl/pub/users/johans/eif/
@@ -10,14 +11,15 @@ MASTER_SITES=	http://www.stack.nl/~marcolz/empire/ \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Empire text client
 
-MAN1=		eif.1
-
 GNU_CONFIGURE=	yes
+USES=		shebangfix
+SHEBANG_FILES=	contrib/*.pl
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/curout_isapipe/d' ${WRKSRC}/src/data.h
+	@${REINPLACE_CMD} -e '/cd .(pkglibdir)/s/cd /&$$(DESTDIR)/' \
+		${WRKSRC}/contrib/Makefile.in
 
 .include <bsd.port.post.mk>
