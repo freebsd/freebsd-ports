@@ -726,6 +726,7 @@
     SUBDIR += p5-ming
     SUBDIR += panoglview
     SUBDIR += panomatic
+    SUBDIR += partio
     SUBDIR += passepartout
     SUBDIR += pdf2svg
     SUBDIR += pear-Horde_Image
