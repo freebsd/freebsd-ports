@@ -32,26 +32,26 @@
 -	mkdir -p $(DESTDIR)/usr/share/man/man1 ; \
 -	install -c -m 644 pdfconcat.1 $(DESTDIR)/usr/share/man/man1 ; \
 -	echo "install -c pdfconcat.1 $(DESTDIR)/usr/share/man/man1" ; fi
-+	mkdir -p $(PREFIX)/bin ; \
-+	install -c pdfconcat $(PREFIX)/bin ; \
-+	echo "install -c pdfconcat $(PREFIX)/bin" ; \
-+	mkdir -p $(PREFIX)/man/man1 ; \
-+	install -c -m 644 pdfconcat.1 $(PREFIX)/man/man1 ; \
-+	echo "install -c pdfconcat.1 $(PREFIX)/man/man1" ; fi
++	mkdir -p $(DESTDIR)$(PREFIX)/bin ; \
++	install -c pdfconcat $(DESTDIR)$(PREFIX)/bin ; \
++	echo "install -c pdfconcat $(DESTDIR)$(PREFIX)/bin" ; \
++	mkdir -p $(DESTDIR)$(PREFIX)/man/man1 ; \
++	install -c -m 644 pdfconcat.1 $(DESTDIR)$(PREFIX)/man/man1 ; \
++	echo "install -c pdfconcat.1 $(DESTDIR)$(PREFIX)/man/man1" ; fi
  	@if [ -x ppmtops ] ; then \
 -	mkdir -p $(DESTDIR)/usr/bin ; \
 -	install -c ppmtops $(DESTDIR)/usr/bin ; \
 -	echo "install -c ppmtops $(DESTDIR)/usr/bin" ; fi
-+	mkdir -p $(PREFIX)/bin ; \
-+	install -c ppmtops $(PREFIX)/bin ; \
-+	echo "install -c ppmtops $(PREFIX)/bin" ; fi
++	mkdir -p $(DESTDIR)$(PREFIX)/bin ; \
++	install -c -s ppmtops $(DESTDIR)$(PREFIX)/bin ; \
++	echo "install -c ppmtops $(DESTDIR)$(PREFIX)/bin" ; fi
  	@if [ -x pgf2pnm ] ; then \
 -	mkdir -p $(DESTDIR)/usr/bin ; \
 -	install -c pgf2pnm $(DESTDIR)/usr/bin ; \
 -	echo "install -c pgf2pnm $(DESTDIR)/usr/bin" ; fi
-+	mkdir -p $(PREFIX)/bin ; \
-+	install -c pgf2pnm $(PREFIX)/bin ; \
-+	echo "install -c pgf2pnm $(PREFIX)/bin" ; fi
++	mkdir -p $(DESTDIR)$(PREFIX)/bin ; \
++	install -c pgf2pnm $(DESTDIR)$(PREFIX)/bin ; \
++	echo "install -c pgf2pnm $(DESTDIR)$(PREFIX)/bin" ; fi
  
  clean:
  	rm -f core *~ *.o pdfconcat ppmtops pgf2pnm
