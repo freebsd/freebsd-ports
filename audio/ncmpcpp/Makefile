@@ -15,8 +15,8 @@ LIB_DEPENDS=	libmpdclient.so:${PORTSDIR}/audio/libmpdclient \
 		libfftw3.so:${PORTSDIR}/math/fftw3
 
 USES=		iconv ncurses pkgconfig
-NO_STAGE=	yes
 USE_BZIP2=	yes
+USE_GCC=	any
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 USE_AUTOTOOLS=	automake aclocal libtool
@@ -90,15 +90,15 @@ CONFIGURE_ARGS+=	NCURSES_CONFIG=/usr/bin/true
 .endif
 
 post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/ncmpcpp ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/ncmpcpp ${STAGEDIR}${PREFIX}/bin/
 .if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
+	@${ECHO_MSG} "installing additional documentation to ${STAGEDIR}${DOCSDIR}"
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}/NEWS
-	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}/AUTHORS
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}/COPYING
-	${INSTALL_DATA} ${WRKSRC}/doc/config ${DOCSDIR}/config
-	${INSTALL_DATA} ${WRKSRC}/doc/keys ${DOCSDIR}/keys
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}/NEWS
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}/AUTHORS
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}/COPYING
+	${INSTALL_DATA} ${WRKSRC}/doc/config ${STAGEDIR}${DOCSDIR}/config
+	${INSTALL_DATA} ${WRKSRC}/doc/keys ${STAGEDIR}${DOCSDIR}/keys
 .endif
 
 	@${ECHO_MSG} ""
