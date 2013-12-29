@@ -11,6 +11,8 @@ COMMENT=	Library to read digital camera file meta-data
 
 LICENSE=	LGPL21
 
+OPTIONS_DEFINE=	DOCS NLS
+
 USES=		pkgconfig
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack ltverhack
