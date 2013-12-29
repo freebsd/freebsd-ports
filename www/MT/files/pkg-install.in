@@ -4,21 +4,21 @@ case $2 in
 		;;
 	POST-INSTALL)
 
-		if [ -n "$3" ]; then
-			mkdir -p -m 755 %%DB_DIR%%
-			chown -R %%WWWOWN%%:%%WWWGRP%% %%DB_DIR%%
+		if [ "X"$3 != "X" ]; then
+			mkdir -p -m 755 ${STAGE}%%DB_DIR%%
+			chown -R %%WWWOWN%%:%%WWWGRP%% ${STAGE}%%DB_DIR%%
 		fi
 			chown -R %%WWWOWN%%:%%WWWGRP%%\
-				%%PREFIX%%/%%CGIDIR%%\
-				%%PREFIX%%/%%DATADIR%%
+				${STAGE}%%PREFIX%%/%%CGIDIR%%\
+				${STAGE}%%PREFIX%%/%%DATADIR%%
 		;;
 	*)
 	;;
 esac
-mkdir -p -m 755 %%PREFIX%%/%%CGIDIR%%/import\
-		%%PREFIX%%/%%CGIDIR%%/alt-tmpl\
-		%%PREFIX%%/%%CGIDIR%%/extlib/MT/L10N\
-		%%PREFIX%%/%%CGIDIR%%/php/extlib/smarty/demo/templates_c\
-		%%PREFIX%%/%%CGIDIR%%/php/plugins\
-		%%PREFIX%%/%%DATADIR%%/mt-static/support
+mkdir -p -m 755 ${STAGE}%%PREFIX%%/%%CGIDIR%%/import\
+		${STAGE}%%PREFIX%%/%%CGIDIR%%/alt-tmpl\
+		${STAGE}%%PREFIX%%/%%CGIDIR%%/extlib/MT/L10N\
+		${STAGE}%%PREFIX%%/%%CGIDIR%%/php/extlib/smarty/demo/templates_c\
+		${STAGE}%%PREFIX%%/%%CGIDIR%%/php/plugins\
+		${STAGE}%%PREFIX%%/%%DATADIR%%/mt-static/support
 exit

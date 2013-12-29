@@ -13,6 +13,8 @@
 	Options None
 	Order allow,deny
 	Allow from all
+%%APACHE24%%	Require all granted
+%%APACHE24%%	SetHandler cgi-script
 </Directory>
 <Directory "%%PREFIX%%/%%DATADIR%%/mt-static">
 	Options None

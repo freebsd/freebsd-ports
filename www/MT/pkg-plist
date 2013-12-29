@@ -3571,7 +3571,7 @@
 @dirrm %%CGIDIR%%/php/lib
 @dirrm %%CGIDIR%%/php/tmpl
 @dirrm %%CGIDIR%%/php
-@dirrmtry %%CGIDIR%%/db
+@dirrmtry %%DB_DIR%%
 @dirrm %%CGIDIR%%
 @dirrm %%DATADIR%%/mt-static/js/flash
 @dirrm %%DATADIR%%/mt-static/js/editor/editor

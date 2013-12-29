@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	MT
-PORTVERSION=	5.2.7
+PORTVERSION=	5.2.9
 PORTEPOCH=	1
 CATEGORIES?=	www
 MASTER_SITES?=	http://www.movabletype.org/downloads/stable/\
-		http://www.movabletype.org/downloads/archives/5.x/
+		http://www.movabletype.org/downloads/archives/5.x/\
+		http://www.movabletype.jp/downloads/stable/
 DISTNAME?=	MTOS-${PORTVERSION}
 
 MAINTAINER?=	takefu@airport.fm
@@ -18,33 +19,28 @@ RUN_DEPENDS+=	p5-DBI>=1.21:${PORTSDIR}/databases/p5-DBI \
 		p5-Image-Size>=0:${PORTSDIR}/graphics/p5-Image-Size
 
 NO_OPTIONS_SORT=	yes
-OPTIONS_DEFINE=		APACHE MYSQL SSL TLS\
-			OPTIONAL_MODULES ADDITIONAL_MODULES\
-			PGSQL ORACLE ODBC SQLITE2 SQLITE PSGI
+OPTIONS_DEFINE=		APACHE SSL TLS PSGI\
+			OPTIONAL_MODULES ADDITIONAL_MODULES
 OPTIONS_DEFAULT=	MYSQL OPTIONAL_MODULES
+OPTIONS_SINGLE=		DB
+OPTIONS_SINGLE_DB=	MYSQL PGSQL ORACLE ODBC SQLITE2 SQLITE
 OPTIONAL_MODULES_DESC=	Optional Perl Modules
 ADDITIONAL_MODULES_DESC=Additional Perl modules
 PSGI_DESC=		Perl Web Server Gateway Interface
-
+DB_DESC=		Choose Database
 PGSQL_DESC=		PostgreSQL database support[obsolete]
 SQLITE_DESC=		SQLite3 database support[obsolete]
 SQLITE2_DESC=		SQLite2 database support[obsolete]
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 DATADIR=	www/data
 CGIDIR=		www/cgi-bin/mt
-PLIST_SUB+=	DATADIR=${DATADIR}\
-		CGIDIR=${CGIDIR}\
-		DB_DIR=${DB_DIR}
+PLIST_SUB+=	DATADIR=${DATADIR} CGIDIR=${CGIDIR} DB_DIR=${DB_DIR}
 SUB_FILES+=	pkg-install
-SUB_LIST+=	DATADIR=${DATADIR}\
-		CGIDIR=${CGIDIR}\
+SUB_LIST+=	DATADIR=${DATADIR} CGIDIR=${CGIDIR} DB_DIR=${DB_DIR}\
 		PACKAGENAME=${PKGNAMEPREFIX}${PORTNAME}\
-		DB_DIR=${DB_DIR}\
-		WWWOWN=${WWWOWN}\
-		WWWGRP=${WWWGRP}
+		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} STAGEDIR=${STAGEDIR}
 
 USES=		perl5
 USE_PERL5=	run
@@ -95,25 +91,25 @@ RUN_DEPENDS+=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay\
 RUN_DEPENDS+=	p5-Net-SMTP-TLS>=0:${PORTSDIR}/mail/p5-Net-SMTP-TLS
 . endif
 .endif
-.if ${PORT_OPTIONS:MMYSQL} && empty(PORT_OPTIONS:MPGSQL)
+.if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	server
 DB_DIR?=	${BASEDIR}/var/db/mysql/WEBLOG_DATABASEDIR
 RUN_DEPENDS+=	p5-DBD-mysql>=2.9005:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
-.if ${PORT_OPTIONS:MPGSQL} && empty(PORT_OPTIONS:MMYSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	server
 RUN_DEPENDS+=	p5-DBD-Pg>=1.32:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
-.if empty${PORT_OPTIONS:MPGSQL} && empty(PORT_OPTIONS:MMYSQL)
+.if empty(PORT_OPTIONS:MPGSQL) && empty(PORT_OPTIONS:MMYSQL)
 DB_DIR?=	${PREFIX}/${CGIDIR}/db
-. if ${PORT_OPTIONS:MSQLITE} && empty(PORT_OPTIONS:MSQLITE2)
+. if ${PORT_OPTIONS:MSQLITE}
 USE_SQLITE=	yes
 RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
-. elif ${PORT_OPTIONS:MSQLITE2} && empty(PORT_OPTIONS:MSQLITE)
+. endif
+. if ${PORT_OPTIONS:MSQLITE2}
 USE_SQLITE=	2
 RUN_DEPENDS+=	p5-DBD-SQLite2>=0:${PORTSDIR}/databases/p5-DBD-SQLite2
 . endif
-WITH_DEFAULTDB=	yes
 .endif
 .if ${PORT_OPTIONS:MORACLE}
 RUN_DEPENDS+=	p5-DBD-Oracle>=0.19:${PORTSDIR}/databases/p5-DBD-Oracle
@@ -125,7 +121,14 @@ RUN_DEPENDS+=	p5-DBD-ODBC>=1.13:${PORTSDIR}/databases/p5-DBD-ODBC
 USE_APACHE_RUN=	22+
 SUB_FILES+=	MT.conf
 SUB_LIST+=	APACHEETCDIR=${PREFIX}/${APACHEETCDIR}
-PLIST_SUB+=	APACHE=""
+.include <bsd.port.pre.mk>
+. if ${APACHE_VERSION} == 24
+PLIST_SUB+=	APACHE="" APACHE24=""
+SUB_LIST+=	APACHE24=""
+. else
+PLIST_SUB+=	APACHE="" APACHE24="\#"
+SUB_LIST+=	APACHE24="\#"
+. endif
 .else
 PLIST_SUB+=	APACHE="@comment "
 .endif
@@ -159,17 +162,18 @@ pre-everything::
 do-install:
 	@cd ${WRKSRC} && ${FIND} * -name "*.orig" -delete
 	@${ECHO_MSG} "Installing cgi under ${PREFIX}/${CGIDIR}/"
-	@${MKDIR} ${PREFIX}/${CGIDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${CGIDIR}
 	@cd ${WRKSRC} && ${CP} -R *.cgi mt.psgi mt-config.cgi-original \
 	  alt-tmpl default_templates extlib import lib php plugins \
 	  search_templates themes tmpl tools COPYING index.html readme.html \
-	  ${PREFIX}/${CGIDIR}
+	  ${STAGEDIR}${PREFIX}/${CGIDIR}
 	@${ECHO_MSG} "Installing data under ${PREFIX}/${DATADIR}/"
-	@${MKDIR} ${PREFIX}/${DATADIR}
-	@cd ${WRKSRC} && ${CP} -R mt-static ${PREFIX}/${DATADIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${DATADIR}
+	@cd ${WRKSRC} && ${CP} -R mt-static ${STAGEDIR}${PREFIX}/${DATADIR}
 
 post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL ${WITH_DEFAULTDB}
+	@${SETENV} PKG_PREFIX=${PREFIX} STAGE=${STAGEDIR}\
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL ${DB_DIR}
 	@${ECHO_MSG} "*****************************************************************"
 	@${ECHO_CMD} ""
 	@${ECHO_MSG} "You have just installed the movabletype."
@@ -184,9 +188,9 @@ post-install:
 	@${ECHO_CMD} ""
 	@${CAT} ${WRKDIR}/MT.conf
 	@${ECHO_CMD} ""
-	@${MKDIR} ${PREFIX}/${APACHEETCDIR}/Includes
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/Includes
 	@${INSTALL_DATA} ${WRKDIR}/MT.conf \
-	  ${PREFIX}/${APACHEETCDIR}/Includes/MT.conf
+	  ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/Includes/MT.conf
 .else
 	@${ECHO_CMD} ""
 .endif
