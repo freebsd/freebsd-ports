@@ -1,6 +1,7 @@
 bin/manedit
 bin/manview
 bin/manwrap
+man/man1/manedit.1.gz
 %%DATADIR%%/help/index.html
 %%DATADIR%%/help/manedit_heading.gif
 %%DATADIR%%/help/tutorial.html
