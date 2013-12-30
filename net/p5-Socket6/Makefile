@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	IPv6 related part of the C socket.h defines and structure manipulators
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USES=		perl5
 USE_PERL5=	configure
