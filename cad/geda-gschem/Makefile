@@ -21,7 +21,7 @@ DOCSDIR=	${PREFIX}/share/doc/geda
 DATADIR=	${PREFIX}/share/geda
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
+USES=		desktop-file-utils gmake pkgconfig
 USE_GNOME=	gtk20
 INSTALLS_ICONS=	yes
 CONFIGURE_ARGS=	--enable-gdgeda --with-docdir=${DOCSDIR} \
@@ -30,9 +30,6 @@ CONFIGURE_ARGS=	--enable-gdgeda --with-docdir=${DOCSDIR} \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		gschem.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
