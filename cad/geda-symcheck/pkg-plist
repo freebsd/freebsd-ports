@@ -1,4 +1,5 @@
 bin/gsymcheck
+man/man1/gsymcheck.1.gz
 %%DOCSDIR%%/man/gsymcheck.html
 %%DATADIR%%/system-gsymcheckrc
 @dirrmtry %%DATADIR%%
