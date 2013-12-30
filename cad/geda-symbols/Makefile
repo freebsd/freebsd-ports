@@ -21,13 +21,12 @@ CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e "s,^(DATADIR[[:space:]]*=[[:space:]]*)gEDA,\1geda," \
 		${WRKSRC}/configure
 
 post-install:
-	@${TOUCH} ${DATADIR}/sym/local/.keep_me
+	@${TOUCH} ${STAGEDIR}${DATADIR}/sym/local/.keep_me
 
 .include <bsd.port.mk>
