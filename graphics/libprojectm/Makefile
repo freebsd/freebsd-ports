@@ -1,4 +1,3 @@
-# Created by: utisoft@gmail.com
 # $FreeBSD$
 
 PORTNAME=	libprojectM
@@ -13,15 +12,14 @@ COMMENT=	An awesome music visualiser
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	ftgl:${PORTSDIR}/graphics/ftgl \
-		GLEW:${PORTSDIR}/graphics/glew \
-		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libftgl.so:${PORTSDIR}/graphics/ftgl \
+		libGLEW.so:${PORTSDIR}/graphics/glew \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 USES=		cmake
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 # Install config.inp.sample instead of overwriting user's file.
 # Needs to be specific enough not to rename config.inp.in too!
@@ -34,11 +32,5 @@ post-patch:
 # Fix empty libdir in pkgconfig file to stop vlc complaining
 	@${REINPLACE_CMD} -e 's#^\(libdir=\).*#\1${PREFIX}/lib#' \
 		${WRKSRC}/${PORTNAME}.pc.in
-
-post-install:
-	@if [ ! -f ${PREFIX}/share/projectM/config.inp ]; then \
-		${CP} -p ${PREFIX}/share/projectM/config.inp.sample \
-			${PREFIX}/share/projectM/config.inp ; \
-	fi
 
 .include <bsd.port.mk>
