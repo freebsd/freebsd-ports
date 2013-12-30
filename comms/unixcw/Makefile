@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	unixcw
-PORTVERSION=	3.2.0
+PORTVERSION=	3.3.0
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-DISTNAME=	unixcw_3.2.0.orig
+DISTNAME=	unixcw_3.3.0.orig
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Libs for cw on unix
