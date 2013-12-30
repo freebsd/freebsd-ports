@@ -11,14 +11,14 @@ MASTER_SITE_SUBDIR=	libs
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	A mathematics library with many different functions
 
+LICENSE=	LGPL20
+
 USE_LDCONFIG=	yes
 
 PORTDOCS=	*
-PLIST_FILES=	include/ccmath.h lib/libccm.a lib/libccm.so lib/libccm.so.1
 SRC_DIRS=	cfit complex fft geom intg matrix roots sfunc simu sort statf \
 		tseries util xarm
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
@@ -42,13 +42,11 @@ do-build:
 	(cd ${WRKSRC}/tmp; ${AR} r libccm.a *.o; ${CC} -shared -o libccm.so *.o)
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/ccmath.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/tmp/libccm.a ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/tmp/libccm.so ${PREFIX}/lib
-	${LN} -s ${PREFIX}/lib/libccm.so ${PREFIX}/lib/libccm.so.1
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ccmath
-	${INSTALL_DATA} ${WRKSRC}/manual/* ${PREFIX}/share/doc/ccmath
-.endif
+	@${INSTALL_DATA} ${WRKSRC}/ccmath.h ${STAGEDIR}${PREFIX}/include
+	@${INSTALL_DATA} ${WRKSRC}/tmp/libccm.a ${STAGEDIR}${PREFIX}/lib
+	@${INSTALL_PROGRAM} ${WRKSRC}/tmp/libccm.so ${STAGEDIR}${PREFIX}/lib
+	@${LN} -s libccm.so ${STAGEDIR}${PREFIX}/lib/libccm.so.1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ccmath
+	@${INSTALL_DATA} ${WRKSRC}/manual/* ${STAGEDIR}${PREFIX}/share/doc/ccmath
 
 .include <bsd.port.post.mk>
