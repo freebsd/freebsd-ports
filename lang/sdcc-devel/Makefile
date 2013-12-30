@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	sdcc
-PORTVERSION=	3.3.1.2013.09.07
+PORTVERSION=	3.3.2.2013.12.30
 CATEGORIES=	lang
 MASTER_SITES=	SF/sdcc/snapshot_builds/sdcc-src/ \
 		http://tijl.fastmail.fm/mirror/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	${PORTNAME}-src-20130907-8835
+DISTNAME=	${PORTNAME}-src-20131230-8930
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Small Device C Compiler
@@ -31,7 +31,7 @@ MCS51_DESC=	Intel MCS51, Maxim DS80C390/DS80C400
 PIC_DESC=	Microchip PIC
 UCSIM_DESC=	The ucSim simulator
 STM8_DESC=	STMicroelectronics STM8
-Z80_DESC=	Zilog Z80/Z180/GBZ80, Rabbit 2000/3000/3000A
+Z80_DESC=	Zilog Z80/Z180/GBZ80, Rabbit 2000/3000, Toshiba TLCS-90
 
 CPPFLAGS+=	-idirafter ${LOCALBASE}/include
 CONFIGURE_ARGS= --disable-avr --disable-install-libbfd --disable-werror \
@@ -47,14 +47,15 @@ HC08_CONFIGURE_OFF=	--disable-hc08 --disable-hc08-port		\
 			--disable-s08-port
 MCS51_CONFIGURE_OFF=	--disable-51 --disable-mcs51-port		\
 			--disable-ds390-port --disable-ds400-port
-PIC_BUILD_DEPENDS=	gputils>=1.0.0:${PORTSDIR}/devel/gputils
+PIC_BUILD_DEPENDS=	gputils>=1.2.0:${PORTSDIR}/devel/gputils
 PIC_RUN_DEPENDS=	gpasm:${PORTSDIR}/devel/gputils
 PIC_CONFIGURE_OFF=	--disable-pic14-port --disable-pic16-port
 STM8_CONFIGURE_OFF=	--disable-stm8 --disable-stm8-port
 UCSIM_CONFIGURE_OFF=	--disable-ucsim
 Z80_CONFIGURE_OFF=	--disable-z80 --disable-z80-port		\
 			--disable-z180-port --disable-gbz80-port	\
-			--disable-r2k-port --disable-r3ka-port
+			--disable-r2k-port --disable-r3ka-port		\
+			--disable-tlcs90-port
 
 .include <bsd.port.options.mk>
 
