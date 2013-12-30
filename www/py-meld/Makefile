@@ -11,17 +11,16 @@ EXTRACT_SUFX=	.py
 EXTRACT_ONLY=	# This space left intentionally empty
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A system for manipulating HTML using a Pythonic object model
+COMMENT=	System for manipulating HTML using a Pythonic object model
 
 LICENSE=	MIT
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/PyMeld.py \
 		%%PYTHON_SITELIBDIR%%/PyMeld.pyc \
 		%%PYTHON_SITELIBDIR%%/PyMeld.pyo
 
-NO_STAGE=	yes
 pre-build:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}
@@ -31,8 +30,9 @@ do-build:
 	${PYTHON_CMD} -c 'import PyMeld'
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/PyMeld.py ${PYTHON_SITELIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/PyMeld.pyc ${PYTHON_SITELIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/PyMeld.pyo ${PYTHON_SITELIBDIR}
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/PyMeld.py ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/PyMeld.pyc ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/PyMeld.pyo ${STAGEDIR}${PYTHON_SITELIBDIR}
 
 .include <bsd.port.mk>
