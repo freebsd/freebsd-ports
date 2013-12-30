@@ -90,7 +90,8 @@ _GSTREAMER_PLUGINS+= \
 .if defined(USE_GSTREAMER1)
 _GSTREAMER_PLUGINS+= \
 		assrender curl dvdread kate libav modplug openjpeg png rtmp \
-		spandsp vaapi vpx webp x ximagesrc zbar
+		spandsp vpx webp x ximagesrc zbar
+# vaapi?
 .endif
 
 # other plugins

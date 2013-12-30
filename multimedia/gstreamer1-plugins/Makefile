@@ -27,16 +27,16 @@ RUN_DEPENDS+=	iso-codes>=0:${PORTSDIR}/misc/iso-codes
 
 PORTSCOUT=	limitw:1,even
 
-BASE_PORTVERSION=	1.2.1
+BASE_PORTVERSION=	1.2.2
 BASE_DISTNAME=		gst-plugins-base-${BASE_PORTVERSION}
 BASE_DISTFILE=		${BASE_DISTNAME}${EXTRACT_SUFX}
-BAD_PORTVERSION=	1.2.1
+BAD_PORTVERSION=	1.2.2
 BAD_DISTNAME=		gst-plugins-bad-${BAD_PORTVERSION}
 BAD_DISTFILE=		${BAD_DISTNAME}${EXTRACT_SUFX}
-GOOD_PORTVERSION=	1.2.1
+GOOD_PORTVERSION=	1.2.2
 GOOD_DISTNAME=		gst-plugins-good-${GOOD_PORTVERSION}
 GOOD_DISTFILE=		${GOOD_DISTNAME}${EXTRACT_SUFX}
-UGLY_PORTVERSION=	1.2.1
+UGLY_PORTVERSION=	1.2.2
 UGLY_DISTNAME=		gst-plugins-ugly-${UGLY_PORTVERSION}
 UGLY_DISTFILE=		${UGLY_DISTNAME}${EXTRACT_SUFX}
 DIST?=		base
@@ -135,8 +135,9 @@ DEFAULT_DVD_DEVICE=/dev/cd0
 
 post-patch:
 .if ${DIST}=="bad"
-#	@${REINPLACE_CMD} -e 's|opencv <= 2.3.1|opencv <= 2.3.99|g' \
-#		${WRKSRC}/configure
+# custom rule to fix opencv detection in configure
+	@${REINPLACE_CMD} -e 's|opencv <= 2.4.6.1|opencv <= 2.4.7|g' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|g' \
 		${WRKSRC}/ext/resindvd/resindvdbin.c \
 		${WRKSRC}/ext/resindvd/resindvdsrc.c
