@@ -11,7 +11,7 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	gebhart@secnetix.de
 COMMENT=	Apache 2.x module to set umask of created files
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

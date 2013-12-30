@@ -10,7 +10,7 @@ DISTNAME=	google-authenticator-${PORTVERSION}
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	PAM module for two-step authentication from Google
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_GMAKE=	yes
 

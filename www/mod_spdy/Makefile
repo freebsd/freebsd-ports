@@ -14,7 +14,7 @@ EXTRACT_ONLY=	mod_spdy_source_${PORTVERSION}.tar.xz
 MAINTAINER=	masaki@club.kyutech.ac.jp
 COMMENT=	SPDY module for the Apache HTTP server v2.2
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
 		greadlink:${PORTSDIR}/sysutils/coreutils \

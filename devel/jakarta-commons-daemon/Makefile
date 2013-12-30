@@ -14,7 +14,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}-native-src${EXTRACT_SUFX}:src \
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Wrapper code to start/stop a Java application as a daemon
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

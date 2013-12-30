@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}_source_${PORTVERSION}
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Automatic creation of a super timeline
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	hachoir-core>=0:${PORTSDIR}/devel/hachoir-core \
 		hachoir-metadata>=0:${PORTSDIR}/sysutils/hachoir-metadata \

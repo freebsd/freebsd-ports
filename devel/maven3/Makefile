@@ -11,7 +11,7 @@ DISTNAME=	apache-maven-${DISTVERSION}-bin
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Java project management tool, 3.x branch
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	mvn:${PORTSDIR}/devel/maven-wrapper
 

@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Extract web streams and pipe them into video player of choice
 
-LICENSE=	BSD MIT AL2
+LICENSE=	BSD MIT APACHE20
 LICENSE_COMB=	multi
 
 RUN_DEPENDS=	rtmpdump:${PORTSDIR}/multimedia/rtmpdump \

@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tjs@cdpa.nsysu.edu.tw
 COMMENT=	Compare the difference between two numbers within a specified amount
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USES=		perl5
 USE_PERL5=	configure

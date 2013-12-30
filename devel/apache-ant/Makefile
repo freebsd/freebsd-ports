@@ -13,7 +13,7 @@ EXTRACT_ONLY=	${ANT_DISTFILE}
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java- and XML-based build tool, conceptually similar to make
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
 

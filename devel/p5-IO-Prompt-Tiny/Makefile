@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Prompt for user input with a default option
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	p5-Capture-Tiny>=0.12:${PORTSDIR}/devel/p5-Capture-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}

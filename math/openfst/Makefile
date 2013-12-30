@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.openfst.org/twiki/pub/FST/FstDownload/
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Library for working with weighted finite-state transducers (FSTs)
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

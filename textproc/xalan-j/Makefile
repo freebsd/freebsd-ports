@@ -13,7 +13,7 @@ COMMENT=	Apache XSLT processor for transforming XML documents
 
 RUN_DEPENDS=	${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_ZIP=	yes

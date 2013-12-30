@@ -10,7 +10,7 @@ MASTER_SITES=	LOCAL/pgollucci
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module that makes Apache respect hosts.allow and hosts.deny
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_APACHE=	22
 AP_FAST_BUILD=	yes

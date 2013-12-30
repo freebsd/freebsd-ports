@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Functional behaviour load and performance test application
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 # These are JAR-files installed by other ports. The list should keep
 # growing until all Java applications install just their own JARs -- not

@@ -11,7 +11,7 @@ DISTNAME=	httpcomponents-client-${DISTVERSION}-bin
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java components implementing an advanced HTTP client
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${JAVAJARDIR}/httpcore.jar:${PORTSDIR}/www/httpcore \

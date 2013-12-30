@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_${DISTVERSION}
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	ColorBrewer palettes
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USES=	cran:auto-plist
 

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Path::Tiny types and coercions for Moose and Moo
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	p5-Path-Tiny>=0:${PORTSDIR}/devel/p5-Path-Tiny \
 		p5-Type-Tiny>=0.008:${PORTSDIR}/devel/p5-Type-Tiny

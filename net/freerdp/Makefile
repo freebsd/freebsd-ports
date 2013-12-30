@@ -8,7 +8,7 @@ CATEGORIES=	net comms ipv6
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	A free implementation of Remote Desktop Protocol
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_OPENSSL=	yes

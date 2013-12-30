@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	ja-p5-
 MAINTAINER=	masaki@club.kyutech.ac.jp
 COMMENT=	SpamAssassin with patches to handle multibyte character
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 MASTERDIR=	${.CURDIR}/../../mail/p5-Mail-SpamAssassin
 

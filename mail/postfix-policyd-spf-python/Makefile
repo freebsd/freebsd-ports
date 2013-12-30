@@ -11,7 +11,7 @@ DISTNAME=	pypolicyd-spf-${PORTVERSION}
 MAINTAINER=	me@mortis.eu
 COMMENT=	Pure Python Postfix policy daemon for SPF checking
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipaddr>0:${PORTSDIR}/devel/py-ipaddr \
 		${PYTHON_PKGNAMEPREFIX}spf>0:${PORTSDIR}/mail/py-spf \

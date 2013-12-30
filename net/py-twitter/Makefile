@@ -11,7 +11,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python wrapper around the Twitter API
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httplib2>=0:${PORTSDIR}/www/py-httplib2 \
 		${PYTHON_PKGNAMEPREFIX}oauth2>=0:${PORTSDIR}/net/py-oauth2 \

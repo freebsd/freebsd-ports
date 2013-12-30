@@ -10,7 +10,7 @@ MASTER_SITES=	http://download.elasticsearch.org/${PORTNAME}/${PORTNAME}/ \
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	A full-text search engine for Java
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_JAVA=	yes
 NO_BUILD=	yes

@@ -9,7 +9,7 @@ MASTER_SITES=	http://ivo.palli.nl/prog/linux/htdump/bin/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to retrieve WWW data
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 OPTIONS_DEFINE=	SSL
 OPTIONS_DEFAULT=SSL

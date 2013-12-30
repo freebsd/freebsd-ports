@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	File path utility
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 TEST_DEPENDS=	p5-Test-FailWarnings>=0:${PORTSDIR}/devel/p5-Test-FailWarnings
 

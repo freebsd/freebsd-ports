@@ -12,7 +12,7 @@ DIST_SUBDIR=	hadoop
 MAINTAINER=	pfg@apache.org
 COMMENT=	Apache Map/Reduce framework
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake \
 		gsed:${PORTSDIR}/textproc/gsed

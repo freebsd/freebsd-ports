@@ -14,7 +14,7 @@ COMMENT=	XQuery and XPath2 library
 
 OPTIONS_DEFINE=	DOCS
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 LIB_DEPENDS=	libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3
 

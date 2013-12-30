@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	General-purpose fuzzer with simple, command-line interface
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 LICENSE_FILE=   ${WRKSRC}/COPYING
 
 USE_GMAKE=	yes

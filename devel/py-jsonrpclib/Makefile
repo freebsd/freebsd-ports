@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	bra@fsn.hu
 COMMENT=	Implements the JSON-RPC 2.0 proposed specification in pure Python
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes

@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=libapreq
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Generic Apache2 Request Library
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_APACHE=	22+
 USE_GMAKE=	yes

@@ -10,7 +10,7 @@ DISTNAME=	Roboto_Hinted_${PORTVERSION}
 MAINTAINER=	winstonw@lavabit.com
 COMMENT=	The Roboto typeface family
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale

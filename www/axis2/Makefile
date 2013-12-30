@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Provides a Web Services,SOAP and WSDL engine from Apache
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_ZIP=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}

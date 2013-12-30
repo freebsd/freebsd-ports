@@ -12,7 +12,7 @@ DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Open-source Java web server by Apache, 7.x branch
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	jsvc:${PORTSDIR}/devel/jakarta-commons-daemon
 

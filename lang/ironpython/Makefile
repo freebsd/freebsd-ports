@@ -8,7 +8,7 @@ DISTNAME=	ipy-${PORTVERSION}
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Python implementation based on .NET
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono

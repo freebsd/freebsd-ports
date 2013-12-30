@@ -9,7 +9,7 @@ MASTER_SITES=	http://openvswitch.org/releases/
 MAINTAINER=	emaste@FreeBSD.org
 COMMENT=	A production quality, multilayer virtual switch
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	SSL_LIBS=-lssl SSL_CFLAGS=-I/usr/include/openssl

@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Tomcat native library
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 LIB_DEPENDS=	libapr-1.so.4:${PORTSDIR}/devel/apr1
 

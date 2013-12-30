@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}_src_${PORTVERSION:S/./_/g}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Enterprise instant messaging server
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper \
    		${JAVAJARDIR}/slf4j-api.jar:${PORTSDIR}/devel/slf4j

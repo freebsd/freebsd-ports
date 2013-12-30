@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/Adminer/Adminer%20${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Full-featured database management tool written in PHP
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_ZIP=	yes
 NO_BUILD=	yes

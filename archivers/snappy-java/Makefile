@@ -21,7 +21,7 @@ EXTRACT_ONLY=	snappy-${PORTVERSION}.tar.gz \
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	Fast compressor/decompressor library
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/share/java/maven3/bin/mvn:${PORTSDIR}/devel/maven3
 

@@ -18,7 +18,7 @@ EXTRACT_ONLY=		Squeak-${VM_VERSION}-src${EXTRACT_SUFX}
 MAINTAINER=		mutoh@openedu.org
 COMMENT=		Full Smalltalk 80 with portability to UNIX, Mac, and Windows
 
-LICENSE=		AL2 MIT
+LICENSE=		APACHE20 MIT
 LICENSE_COMB=		multi
 
 # Don't set USE_ZIP as this breaks EXTRACT_CMD.

@@ -9,7 +9,7 @@ MASTER_SITES=	http://mod-jail.googlecode.com/files/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module to enable an easy alternative to mod_chroot
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes

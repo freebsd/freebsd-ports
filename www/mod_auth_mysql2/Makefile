@@ -14,7 +14,7 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MySQL-based authentication module with VirtualHost support
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_MYSQL=	yes

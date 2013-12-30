@@ -10,7 +10,7 @@ MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	A configuration management framework written in Ruby
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-facter>=0:${PORTSDIR}/sysutils/rubygem-facter \
 		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-augeas \
