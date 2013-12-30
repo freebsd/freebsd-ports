@@ -1,4 +1,3 @@
-# Created by: Diane Bruce <db@db.net>
 # $FreeBSD$
 
 PORTNAME=	geoid
@@ -20,18 +19,14 @@ LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 
-PLIST_FILES=	bin/geoid ${DATADIR_REL}/country.pos share/pixmaps/geoid.png
-PLIST_DIRS=	${DATADIR_REL}
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/geoid.cxx
+		's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/geoid.cxx
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/geoid ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/geoid.png ${PREFIX}/share/pixmaps
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA}	${WRKSRC}/country.pos ${DATADIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/geoid ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/geoid.png ${STAGEDIR}${PREFIX}/share/pixmaps
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${INSTALL_DATA}	${WRKSRC}/country.pos ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
