@@ -23,14 +23,9 @@ USE_GMAKE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl -lmcrypt"
 CPPFLAGS+=	${CFLAGS} -I${LOCALBASE}/include -fpermissive
 
-MAN1=		steghide.1
-
-NO_STAGE=	yes
 post-patch:
-.ifdef(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's|install-data-am\: install-docDATA||' \
 		${WRKSRC}/Makefile.in
-.endif
 	${REINPLACE_CMD} -e 's,SHELL) libtool,SHELL) ${LIBTOOL} --tag=CXX,' \
 		${WRKSRC}/src/Makefile.in
 	${REINPLACE_CMD} -e 's,-O2,${CFLAGS},' ${WRKSRC}/configure

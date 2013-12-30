@@ -24,7 +24,6 @@ PLIST_FILES=	bin/scdp
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,' ${WRKSRC}/scdp.c
 	${REINPLACE_CMD} -e 's|libnet-config|${LIBNET_CONFIG}|' \
