@@ -9,14 +9,13 @@ MASTER_SITES=	http://darwin.zoology.gla.ac.uk/~rpage/treeviewx/download/${PORTVE
 DISTNAME=	tv-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A phylogenetic tree viewer
+COMMENT=	Phylogenetic tree viewer
 
 USE_WX=		yes
 WX_COMPS=	wx contrib
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/tv
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
