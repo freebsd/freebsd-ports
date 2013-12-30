@@ -14,23 +14,14 @@ COMMENT=	Used to calculate antenna patterns useful to ham radio
 
 LIB_DEPENDS=	libccm.so:${PORTSDIR}/math/ccmath
 
-NO_STAGE=	yes
 post-patch:
 	${CP} ${FILESDIR}/carg.c  ${WRKSRC}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/nec2c ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${ECHO} ""
-	@${ECHO} "nec2c docs installed in ${DOCSDIR}"
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/Input/*.nec ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/Input/*.NEC ${EXAMPLESDIR}
-	@${ECHO} "nec2c sample Input files installed in ${EXAMPLESDIR}"
-.endif
-	@${ECHO} ""
+	@${INSTALL_PROGRAM} ${WRKSRC}/nec2c ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/Input/*.nec ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/Input/*.NEC ${STAGEDIR}${EXAMPLESDIR}
 .include <bsd.port.mk>
