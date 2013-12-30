@@ -337,58 +337,40 @@ include/gtk-3.0/unix-print/gtk/gtkunixprint.h
 lib/girepository-1.0/Gdk-3.0.typelib
 lib/girepository-1.0/GdkX11-3.0.typelib
 lib/girepository-1.0/Gtk-3.0.typelib
-lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-am-et.a
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-am-et.la
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-am-et.so
-lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-cedilla.a
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-cedilla.la
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-cedilla.so
-lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-cyrillic-translit.a
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-cyrillic-translit.la
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-cyrillic-translit.so
-lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-inuktitut.a
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-inuktitut.la
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-inuktitut.so
-lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-ipa.a
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-ipa.la
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-ipa.so
-lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-multipress.a
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-multipress.la
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-multipress.so
-lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-thai.a
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-thai.la
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-thai.so
-lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-ti-er.a
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-ti-er.la
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-ti-er.so
-lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-ti-et.a
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-ti-et.la
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-ti-et.so
-lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-viqr.a
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-viqr.la
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-viqr.so
-lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-xim.a
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-xim.la
 lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-xim.so
-lib/gtk-3.0/%%GTK3_VERSION%%/immodules.cache
-%%CUPS%%lib/gtk-3.0/%%GTK3_VERSION%%/printbackends/libprintbackend-cups.a
 %%CUPS%%lib/gtk-3.0/%%GTK3_VERSION%%/printbackends/libprintbackend-cups.la
 %%CUPS%%lib/gtk-3.0/%%GTK3_VERSION%%/printbackends/libprintbackend-cups.so
-lib/gtk-3.0/%%GTK3_VERSION%%/printbackends/libprintbackend-file.a
 lib/gtk-3.0/%%GTK3_VERSION%%/printbackends/libprintbackend-file.la
 lib/gtk-3.0/%%GTK3_VERSION%%/printbackends/libprintbackend-file.so
-lib/gtk-3.0/%%GTK3_VERSION%%/printbackends/libprintbackend-lpr.a
 lib/gtk-3.0/%%GTK3_VERSION%%/printbackends/libprintbackend-lpr.la
 lib/gtk-3.0/%%GTK3_VERSION%%/printbackends/libprintbackend-lpr.so
-lib/libgailutil-3.a
 lib/libgailutil-3.la
 lib/libgailutil-3.so
 lib/libgailutil-3.so.0
-lib/libgdk-3.a
 lib/libgdk-3.la
 lib/libgdk-3.so
 lib/libgdk-3.so.0
-lib/libgtk-3.a
 lib/libgtk-3.la
 lib/libgtk-3.so
 lib/libgtk-3.so.0
@@ -398,6 +380,7 @@ libdata/pkgconfig/gdk-x11-3.0.pc
 libdata/pkgconfig/gtk+-3.0.pc
 libdata/pkgconfig/gtk+-unix-print-3.0.pc
 libdata/pkgconfig/gtk+-x11-3.0.pc
+man/man1/gtk-query-immodules-3.0.1.gz
 share/aclocal/gtk-3.0.m4
 share/gir-1.0/Gdk-3.0.gir
 share/gir-1.0/GdkX11-3.0.gir
@@ -477,6 +460,8 @@ share/locale/fr/LC_MESSAGES/gtk30-properties.mo
 share/locale/fr/LC_MESSAGES/gtk30.mo
 share/locale/ga/LC_MESSAGES/gtk30-properties.mo
 share/locale/ga/LC_MESSAGES/gtk30.mo
+share/locale/gd/LC_MESSAGES/gtk30-properties.mo
+share/locale/gd/LC_MESSAGES/gtk30.mo
 share/locale/gl/LC_MESSAGES/gtk30-properties.mo
 share/locale/gl/LC_MESSAGES/gtk30.mo
 share/locale/gu/LC_MESSAGES/gtk30-properties.mo
@@ -694,6 +679,8 @@ share/themes/Emacs/gtk-3.0/gtk-keys.css
 @dirrmtry share/locale/ia
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
+@dirrmtry share/locale/gd/LC_MESSAGES
+@dirrmtry share/locale/gd
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
@@ -727,7 +714,8 @@ share/themes/Emacs/gtk-3.0/gtk-keys.css
 @dirrm lib/gtk-3.0/%%GTK3_VERSION%%/engines
 @dirrm lib/gtk-3.0/%%GTK3_VERSION%%
 @dirrm lib/gtk-3.0
-@exec %D/bin/gtk-query-immodules-3.0 > /dev/null 2>&1 && %D/bin/gtk-query-immodules-3.0 > %D/lib/gtk-3.0/%%GTK3_VERSION%%/immodules.cache 2>/dev/null || /usr/bin/true
+@exec %D/bin/gtk-query-immodules-3.0 --update-cache > /dev/null 2>&1 || /usr/bin/true
+@unexec /bin/rm -f %D/lib/gtk-3.0/%%GTK3_VERSION%%/immodules.cache
 @dirrm include/gtk-3.0/unix-print/gtk
 @dirrm include/gtk-3.0/unix-print
 @dirrm include/gtk-3.0/gtk/deprecated
