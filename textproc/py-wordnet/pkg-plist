@@ -1,12 +1,3 @@
-%%PYTHON_SITELIBDIR%%/concordance.py
-%%PYTHON_SITELIBDIR%%/concordance.pyc
-%%PYTHON_SITELIBDIR%%/concordance.pyo
-%%PYTHON_SITELIBDIR%%/wordnet.py
-%%PYTHON_SITELIBDIR%%/wordnet.pyc
-%%PYTHON_SITELIBDIR%%/wordnet.pyo
-%%PYTHON_SITELIBDIR%%/wntools.py
-%%PYTHON_SITELIBDIR%%/wntools.pyc
-%%PYTHON_SITELIBDIR%%/wntools.pyo
 %%WNDATA%%/adj.exc
 %%WNDATA%%/adv.exc
 %%WNDATA%%/cntlist
