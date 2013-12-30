@@ -15,8 +15,7 @@ LIB_DEPENDS=	libid3-3.8.so:${PORTSDIR}/audio/id3lib \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
-NO_STAGE=	yes
-USES=		pathfix gettext gmake pkgconfig
+USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	intlhack libglade2
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
