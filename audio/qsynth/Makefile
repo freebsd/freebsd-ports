@@ -23,7 +23,6 @@ SYSTEM_TRAY_DESC=	System-tray icon
 SYSTEM_TRAY_CONFIGURE_OFF=	--disable-system-tray
 
 USE_QT4=	gui linguist_build moc_build qmake_build rcc_build uic_build
-NO_STAGE=	yes
 QT_NONSTANDARD=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes
@@ -42,6 +41,6 @@ post-configure:
 		${QMAKE_ARGS})
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/qsynth
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qsynth
 
 .include <bsd.port.mk>
