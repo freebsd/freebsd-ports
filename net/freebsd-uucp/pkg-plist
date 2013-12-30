@@ -5,6 +5,8 @@ bin/uusched
 bin/uustat
 bin/uuto
 bin/uux
+etc/mtree/uucp-var.mtree
+etc/mtree/uucp-local.mtree
 etc/periodic/daily/340.uucp
 etc/periodic/daily/410.status-uucp
 etc/periodic/weekly/300.uucp
@@ -42,11 +44,22 @@ libexec/uucp/uuxqt
 @group wheel
 sbin/uuchk
 sbin/uuconv
+@dirrmtry etc/mtree
 @dirrm etc/periodic/daily
 @dirrm etc/periodic/weekly
 @dirrm etc/periodic
 @dirrm etc/uucp
 @dirrm libexec/uucp
 @exec pw usermod uucp -s %D/libexec/uucp/uucico
+@exec mtree -deU -f etc/mtree/uucp-var.mtree -p /var
+@exec mtree -deU -f etc/mtree/uucp-local.mtree -p %D
+@unexec rm -d /var/spool/uucppublic 2>/dev/null || true
+@unexec rm -d /var/spool/uucp/.Preserve 2>/dev/null || true
+@unexec rm -d /var/spool/uucp/.Sequence 2>/dev/null || true
+@unexec rm -d /var/spool/uucp/.Status 2>/dev/null || true
+@unexec rm -d /var/spool/uucp/.Temp 2>/dev/null || true
+@unexec rm -d /var/spool/uucp/.Xqtdir 2>/dev/null || true
+@unexec rm -d /var/spool/uucp 2>/dev/null || true
+%%VAR_LOG%%@unexec rm -d /var/log/uucp 2>/dev/null || true
 @exec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^suucp /etc/services.bak ; echo "suucp               4031/tcp  #UUCP over SSL";  echo "suucp               4031/udp  #UUCP over SSL") > /etc/services
 @unexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^suucp /etc/services.bak ) > /etc/services
