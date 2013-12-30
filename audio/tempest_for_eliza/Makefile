@@ -11,7 +11,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to send AM radio signals using a PC monitor
 
 USES=		gmake
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USE_SDL=	sdl
 
@@ -24,11 +23,11 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/tempest
-	${INSTALL_DATA} ${SONGS:S,^,${WRKSRC}/songs/,} ${PREFIX}/share/tempest
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/tempest
+	${INSTALL_DATA} ${SONGS:S,^,${WRKSRC}/songs/,} ${STAGEDIR}${PREFIX}/share/tempest
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
