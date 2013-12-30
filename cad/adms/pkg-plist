@@ -15,3 +15,4 @@ lib/libadmsVeriloga.a
 lib/libadmsVeriloga.la
 lib/libadmsVeriloga.so
 lib/libadmsVeriloga.so.0
+man/man1/admsXml.1.gz
