@@ -1587,6 +1587,8 @@
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvone/URL/TV One/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvtropolis/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvtropolis/URL/TVTropolis/ServiceCode.pys
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitchtv/ServiceInfo.plist
+%%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitchtv/URL/Twitch.tv/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitlive/ServiceInfo.plist
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitlive/URL/TWiT.TV/ServiceCode.pys
 %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.ubu/ServiceInfo.plist
@@ -1823,6 +1825,7 @@
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/uk.json
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/zh-TW.json
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/localizations/zh.json
+%%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/setup.html
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/swf/jwplayer/jwplayer.swf
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/swf/jwplayer/plex.xml
 %%DATADIR%%/Resources/Plug-ins/WebClient.bundle/Contents/Resources/swf/soundmanager/soundmanager2.swf
@@ -2047,6 +2050,8 @@
 %%DATADIR%%/Resources/Profiles/iOS-iPad-2,3.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPad-2,4.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPad-2,5.xml
+%%DATADIR%%/Resources/Profiles/iOS-iPad-2,6.xml
+%%DATADIR%%/Resources/Profiles/iOS-iPad-2,7.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPad-3,1.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPad-3,2.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPad-3,3.xml
@@ -2055,6 +2060,8 @@
 %%DATADIR%%/Resources/Profiles/iOS-iPad-3,6.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPad-4,1.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPad-4,2.xml
+%%DATADIR%%/Resources/Profiles/iOS-iPad-4,3.xml
+%%DATADIR%%/Resources/Profiles/iOS-iPad-4,4.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPad-4,5.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPhone-2,1.xml
 %%DATADIR%%/Resources/Profiles/iOS-iPhone-3,1.xml
@@ -3128,6 +3135,9 @@
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitlive/URL/TWiT.TV
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitlive/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitlive
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitchtv/URL/Twitch.tv
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitchtv/URL
+@dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.twitchtv
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvtropolis/URL/TVTropolis
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvtropolis/URL
 @dirrmtry %%DATADIR%%/Resources/Plug-ins/Services.bundle/Contents/Service Sets/com.plexapp.plugins.tvtropolis
