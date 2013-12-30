@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	shtk
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/jmmv/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/ \
 		LOCAL/jmmv
