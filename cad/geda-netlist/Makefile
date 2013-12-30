@@ -22,14 +22,12 @@ DOCSDIR=	${PREFIX}/share/doc/geda
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
-USES=		pkgconfig
+USES=		pkgconfig shebangfix
+SHEBANG_FILES=	scripts/sch2eaglepos.sh
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		gnetlist.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e "s,^(DATADIR[[:space:]]*=[[:space:]]*)gEDA,\1geda," \
