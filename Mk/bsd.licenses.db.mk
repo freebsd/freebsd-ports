@@ -14,8 +14,8 @@ Licenses_db_Include_MAINTAINER=         portmgr@FreeBSD.org
 #
 
 # Possible sources for information:
-# - FOSSology (see "Default License Groups")
-#   http://fossology.org/interpret_the_license_group_analysis_report
+# - SPDX License List
+#   https://spdx.org/licenses/
 #
 # - Wikipedia (article "Comparison of Free Software Licenses")
 #   http://en.wikipedia.org/wiki/Comparison_of_free_software_licences
