@@ -13,13 +13,8 @@ DIST_SUBDIR=	foomatic
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Database for integrating printer drivers with common spoolers
 
-<<<<<<< HEAD
-LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
-		curl:${PORTSDIR}/ftp/curl
-=======
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libcurl.so:${PORTSDIR}/ftp/curl
->>>>>>> 6810dd43a6bfc4fc073331efa2a777f647ad158a
 
 USES=		gmake
 USE_AUTOTOOLS=	automake:env autoconf
