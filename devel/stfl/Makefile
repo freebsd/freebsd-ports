@@ -22,7 +22,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDLIBS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	LDLIBS="${LDLIBS}"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -44,9 +43,9 @@ post-build:
 		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} stfl.pc
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/libstfl.so ${PREFIX}/lib/libstfl.so.1
-	@${LN} -sf ${PREFIX}/lib/libstfl.so.1 ${PREFIX}/lib/libstfl.so
-	@${INSTALL_DATA} ${WRKSRC}/stfl.h ${PREFIX}/include/
-	@${INSTALL_DATA} ${WRKSRC}/stfl.pc ${PREFIX}/libdata/pkgconfig/
+	@${INSTALL_PROGRAM} ${WRKSRC}/libstfl.so ${STAGEDIR}${PREFIX}/lib/libstfl.so.1
+	@${LN} -sf ${PREFIX}/lib/libstfl.so.1 ${STAGEDIR}${PREFIX}/lib/libstfl.so
+	@${INSTALL_DATA} ${WRKSRC}/stfl.h ${STAGEDIR}${PREFIX}/include/
+	@${INSTALL_DATA} ${WRKSRC}/stfl.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 
 .include <bsd.port.post.mk>
