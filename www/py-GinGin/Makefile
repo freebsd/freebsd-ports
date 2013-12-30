@@ -8,7 +8,7 @@ MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A hybrid of WIKI and BLOG system
+COMMENT=	Hybrid of WIKI and BLOG system
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mez_xml/__init__.py:${PORTSDIR}/devel/py-mez_xml
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
@@ -17,6 +17,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
