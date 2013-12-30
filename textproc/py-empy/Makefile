@@ -8,11 +8,10 @@ MASTER_SITES=	http://www.alcyone.com/software/empy/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A powerful and robust templating system for Python
+COMMENT=	Powerful and robust templating system for Python
 
-USE_PYTHON=	1.5+
+USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGVERSION=	3.1
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
