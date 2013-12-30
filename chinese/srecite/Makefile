@@ -12,20 +12,18 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		wordbooks-utf8.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool for the Chinese people to study foreign language
+COMMENT=	Tool for the Chinese people to study foreign language
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
-USE_GMAKE=	yes
-USES=        pathfix
+USES=		gmake pathfix
 USE_GNOME=	gnomeprefix libgnomeui
 
 WORDBOOKS_PATH=	${PREFIX}/share/${PORTNAME}/wordbooks
 
-NO_STAGE=	yes
 post-install:
-	cd ${WRKDIR}/wordbooks && ${INSTALL_DATA} * ${WORDBOOKS_PATH}
-	${INSTALL_DATA} ${FILESDIR}/srecite.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKDIR}/wordbooks/* ${STAGEDIR}${WORDBOOKS_PATH}
+	${INSTALL_DATA} ${FILESDIR}/srecite.desktop ${STAGEDIR}${PREFIX}/share/applications
 
 .include <bsd.port.mk>
