@@ -111,7 +111,7 @@ CONFIGURE_ARGS+=--enable-install-setuid=yes
 PLIST_SUB+=	SUID=""
 .else
 CONFIGURE_ARGS+=--enable-install-setuid=no
-PLIST_SUB+=	SUID="@comment"
+PLIST_SUB+=	SUID="@comment "
 .endif
 
 .if ${ARCH} == i386
