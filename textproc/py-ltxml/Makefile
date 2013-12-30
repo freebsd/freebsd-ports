@@ -17,12 +17,14 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	PyLTXML
+PYDISTUTILS_AUTOPLIST=	yes
 USE_LDCONFIG=	yes
+
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
@@ -33,10 +35,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/group/ltg/projects/lcontrib9|${LOCALBASE}|' ${WRKSRC}/setup.py
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/00README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/example/* ${EXAMPLESDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/00README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/example/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.post.mk>
