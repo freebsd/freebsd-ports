@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	hunspell
-PORTVERSION=	1.6.5
-PORTREVISION=	1
+PORTVERSION=	1.7.0
 CATEGORIES=	ukrainian textproc
 MASTER_SITES=	SF/ispell-uk/spell-uk/${PORTVERSION}
 DISTNAME=	spell-uk-${PORTVERSION}
@@ -11,6 +10,9 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Ukrainian hunspell dictionaries
+
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	dual
 
 ALL_TARGET=	myspell
 USE_PERL5=	build
