@@ -8,18 +8,14 @@ CATEGORIES=	cad
 MASTER_SITES=	SF/mot-${PORTNAME}/${PORTNAME}-source/${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A model generator for SPICE simulators
+COMMENT=	Model generator for SPICE simulators
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig
+USES=		gmake pkgconfig
 USE_GNOME=	glib20
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-MAN1=		admsXml.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
