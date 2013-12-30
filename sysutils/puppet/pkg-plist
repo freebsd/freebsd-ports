@@ -48,13 +48,13 @@ man/man8/puppet.8.gz
 %%ETCDIR%%/puppet.conf-dist
 %%ETCDIR%%/auth.conf-dist
 www/puppet/config.ru
+@exec /usr/sbin/chown -Rh puppet:puppet %D/%F
 @dirrm www/puppet/public
 @dirrm www/puppet
 @dirrmtry etc/puppet/modules
 @dirrmtry etc/puppet
 @unexec rmdir /var/puppet 2>/dev/null || :
 @exec /usr/sbin/chown -Rh puppet:puppet /var/puppet
-@exec /usr/sbin/chown -Rh puppet:puppet www/puppet/config.ru
 @dirrm %%RUBY_SITELIBDIR%%/hiera/backend
 @dirrm %%RUBY_SITELIBDIR%%/hiera
 @dirrm %%RUBY_SITELIBDIR%%/puppetx/puppetlabs/syntax_checkers
