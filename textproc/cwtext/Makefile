@@ -14,16 +14,14 @@ USE_GMAKE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	ALL
 
-NO_STAGE=	yes
+LICENSE=	GPLv2
+
 post-patch:
-	@${REINPLACE_CMD} -e "s,^PREFIX,#PREFIX,g" \
-		-e "s,gcc,${CC} ${CFLAGS},g" \
-		-e "s,install -sc,${INSTALL_PROGRAM},g" ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e "s,%%STAGEDIR%%,${STAGEDIR},g" \
+		${WRKSRC}/makefile
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
