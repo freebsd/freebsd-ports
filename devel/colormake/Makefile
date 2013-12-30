@@ -17,7 +17,6 @@ USE_PERL5=	run
 PLIST_FILES=	bin/colormake bin/colormake.pl bin/colormake-short bin/clmake \
 		bin/clmake-short
 
-NO_STAGE=	yes
 post-patch:
 	cd ${WRKSRC} && \
 	${REINPLACE_CMD} -e "s,make ,gmake ,g;s,/bin/bash,${LOCALBASE}/bin/bash,g" \
@@ -26,6 +25,6 @@ post-patch:
 do-install:
 	cd ${WRKSRC} && \
 	${INSTALL_SCRIPT} colormake.pl colormake colormake-short clmake \
-		clmake-short ${PREFIX}/bin
+		clmake-short ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
