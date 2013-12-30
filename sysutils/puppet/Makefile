@@ -3,7 +3,7 @@
 
 PORTNAME=	puppet
 PORTVERSION=	3.3.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
