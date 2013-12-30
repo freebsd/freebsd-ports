@@ -17,7 +17,6 @@ LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 GNU_CONFIGURE=	yes
 USES=		pathfix pkgconfig
-NO_STAGE=	yes
 USE_GNOME=	esound gdkpixbuf
 
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -76,6 +75,6 @@ pre-build:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/sharp.xpm \
-		${PREFIX}/share/pixmaps/soundtracker.xpm
+		${STAGEDIR}${PREFIX}/share/pixmaps/soundtracker.xpm
 
 .include <bsd.port.mk>
