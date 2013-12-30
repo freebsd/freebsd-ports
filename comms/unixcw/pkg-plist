@@ -6,7 +6,7 @@ include/libcw.h
 include/libcw_debug.h
 lib/libcw.a
 lib/libcw.so
-lib/libcw.so.5
+lib/libcw.so.6
 lib/libcw.la
 libdata/pkgconfig/libcw.pc
 man/man1/cw.1.gz
