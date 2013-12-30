@@ -16,6 +16,7 @@ bin/sarlacc_schem
 bin/sarlacc_sym
 bin/smash_megafile
 bin/tragesym
+man/man1/grenum.1.gz
 %%DOCSDIR%%/readmes/README.grenum
 %%DOCSDIR%%/readmes/README.gsch2pcb
 %%DOCSDIR%%/readmes/README.olib
