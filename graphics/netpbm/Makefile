@@ -18,7 +18,6 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libjbig.so:${PORTSDIR}/graphics/jbigkit \
 		libjasper.so:${PORTSDIR}/graphics/jasper \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USES=		gmake perl5
 CFLAGS+=	-DPNG_DEPSTRUCT= -Iutil
