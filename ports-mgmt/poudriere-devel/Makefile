@@ -17,6 +17,8 @@ FSL_CHKIN=	ae87e905f3
 
 OPTIONS_DEFINE=	ZSH
 
+FORBIDDEN=	sanity check issue being fixed
+
 CONFLICTS_INSTALL=	poudriere-[0-9]*
 
 USES=		uidfix
