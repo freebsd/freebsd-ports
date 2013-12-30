@@ -5,8 +5,6 @@ PORTNAME=	freebsd-uucp
 PORTVERSION=	1.07.3
 PORTREVISION=	1
 CATEGORIES=	net comms ipv6
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=dinoex
 PKGNAMESUFFIX?=	${PAM_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -14,7 +12,11 @@ COMMENT=	FreeBSD-modified Taylor UUCP (unix-to-unix copy program)
 
 NEED_ROOT=	yes
 
-USE_BZIP2=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	dinoex
+GH_TAGNAME=     r1_07_3
+GH_COMMIT=	6355e29
+
 PKGMESSAGE=	${WRKDIR}/pkg-message
 INFO=	uucp
 VARLOG=	uucp/common_sources/policy.h uucp/uucico/uucico.8 \
@@ -46,13 +48,7 @@ CONFLICTS?=	freebsd-uucp-pam-1.*
 MAKE_ENV+=	WITH_ENCRYPTED_PASSWORDS=1
 .endif
 
-.if ${OSVERSION} > 1000000
-BUILD_DEPENDS=	cvs:${PORTSDIR}/devel/cvs
-.endif
-
 post-extract:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
-		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} extract)
 	${REINPLACE_CMD} -e 's|doc ||' ${WRKSRC}/uucp/Makefile
 	${REINPLACE_CMD} -e 's|VERSION=.*|VERSION=${PORTVERSION}|' \
 		${WRKSRC}/uucp/common_sources/configure \
