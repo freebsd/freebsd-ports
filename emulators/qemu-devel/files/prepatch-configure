@@ -1,0 +1,10 @@
+--- a/configure
++++ b/configure
+@@ -491,6 +491,7 @@ FreeBSD)
+   audio_possible_drivers="oss sdl esd pa"
+   # needed for kinfo_getvmmap(3) in libutil.h
+   LIBS="-lutil $LIBS"
++  netmap=""  # enable netmap autodetect
+ ;;
+ DragonFly)
+   bsd="yes"
