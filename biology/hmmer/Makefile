@@ -24,7 +24,6 @@ EXAMPLES=	7LESS_DROME Pkinase.sto fn3.sto globins4.sto minifam.h3f minifam.h3p \
 OPTIONS_DEFINE=	PVM
 PVM_DESC=	PVM support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPVM}
@@ -35,21 +34,13 @@ BUILD_DEPENDS+=		pvm:${PORTSDIR}/net/pvm
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@ ${MKDIR} ${DOCSDIR}
-.for docfile in ${DOCFILES}
-	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@ ${MKDIR} ${EXAMPLESDIR}
-.for example in ${EXAMPLES}
-	@ ${INSTALL_DATA} ${WRKSRC}/tutorial/${example} ${EXAMPLESDIR}
-.endfor
-.endif
-
-.if !defined(BATCH)
-	@ ${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/tutorial/,} ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
