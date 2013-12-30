@@ -30,7 +30,8 @@ GNU_CONFIGURE=	yes
 USES=		shebangfix
 SHEBANG_FILES=	share/bin/imgmerge share/bin/xpaint_ocr
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
+		-I${LOCALBASE}/include/freetype2/freetype
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	RM="${RM} -f"
 
@@ -39,6 +40,7 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-ldl //' \
+		-e 's|freetype/||g' \
 		${WRKSRC}/configure ${WRKSRC}/rw/configure
 	@${REINPLACE_CMD} -e '/^LIBTOOL/d' \
 		-e '/^install-exec-am:/s/install-libLTLIBRARIES//' \
