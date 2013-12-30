@@ -26,7 +26,6 @@ bin/qemu-system-i386
 %%NONX86%%bin/qemu-system-sparc64
 %%NONX86%%bin/qemu-system-unicore32
 %%BSD_USER%%bin/qemu-arm
-%%BSD_USER%%bin/qemu-armeb
 %%BSD_USER%%bin/qemu-i386
 %%BSD_USER%%bin/qemu-mips
 %%BSD_USER64%%bin/qemu-mips64
@@ -48,6 +47,7 @@ etc/qemu-ifdown.sample
 etc/qemu/target-x86_64.conf.sample
 @exec if [ ! -f %D/etc/qemu/target-x86_64.conf ] ; then cp -p %D/%F %D/etc/qemu/target-x86_64.conf; fi
 @dirrmtry etc/qemu
+%%DATADIR%%/QEMU,tcx.bin
 %%DATADIR%%/acpi-dsdt.aml
 %%DATADIR%%/q35-acpi-dsdt.aml
 %%DATADIR%%/bios.bin
@@ -89,6 +89,7 @@ etc/qemu/target-x86_64.conf.sample
 %%DATADIR%%/keymaps/ar
 %%DATADIR%%/keymaps/bepo
 %%DATADIR%%/keymaps/common
+%%DATADIR%%/keymaps/cz
 %%DATADIR%%/keymaps/da
 %%DATADIR%%/keymaps/de
 %%DATADIR%%/keymaps/de-ch
