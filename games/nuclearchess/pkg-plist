@@ -36,5 +36,3 @@ bin/nuclearchess
 share/pixmaps/nuclearchess.png
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
-@exec %%LOCALBASE%%/bin/update-desktop-database -q || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database -q || /usr/bin/true
