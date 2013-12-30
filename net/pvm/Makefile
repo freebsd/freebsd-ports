@@ -29,12 +29,15 @@ NOT_FOR_ARCHS=	powerpc
 
 .include <bsd.port.options.mk>
 
-pre-patch:
+post-patch:
 	@${REINPLACE_CMD} -e 's,<malloc.h>,<stdlib.h>,' \
 		${WRKSRC}/tracer/tracer.h ${WRKSRC}/tracer/trclib.h \
 		${WRKSRC}/tracer/trcsort.c
 	@${FIND} ${WRKSRC} -name Makefile.aimk | ${XARGS} ${REINPLACE_CMD} \
 		-e 's,-[gO],,g'
+	@${REINPLACE_CMD} \
+		-e 's/$$(XCFLAGS) $$(CFLAGS)/$$(CFLAGS) $$(XCFLAGS)/' \
+		${WRKSRC}/xep/Makefile.aimk
 .if ! ${PORT_OPTIONS:MX11}
 	@${REINPLACE_CMD} -e '/default/s/xep[^ ]*//' ${WRKSRC}/xep/Makefile.aimk
 .endif
