@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libtorrent-rasterbar
-PORTVERSION=	0.16.12
+PORTVERSION=	0.16.13
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	libtorrent
@@ -47,8 +47,6 @@ DOC_FILES2=	*.png *.jpg *.gif *.html *.rst *.css
 PORTEXAMPLES=	*.cpp
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.options.mk>
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT:L} == "yes" && defined(USE_PYTHON)
 CONFIGURE_ARGS+=	--enable-python-binding \
