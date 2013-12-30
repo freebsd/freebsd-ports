@@ -1,4 +1,5 @@
 bin/qjackctl
+man/man1/qjackctl.1.gz
 share/applications/qjackctl.desktop
 share/icons/hicolor/32x32/apps/qjackctl.png
 share/locale/qjackctl_cs.qm
