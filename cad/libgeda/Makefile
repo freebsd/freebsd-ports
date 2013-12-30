@@ -16,7 +16,7 @@ LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		pathfix gmake pkgconfig
+USES=		gmake pathfix pkgconfig shared-mime-info
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-update-mime-database \
@@ -24,7 +24,6 @@ CONFIGURE_ARGS=	--disable-update-mime-database \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
