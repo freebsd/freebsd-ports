@@ -19,6 +19,9 @@ sbin/pcscd
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pcsc_demo.c
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+man/man1/pcsc-spy.1.gz
+man/man5/reader.conf.5.gz
+man/man8/pcscd.8.gz
 @dirrm lib/pcsc/services
 @dirrm lib/pcsc/drivers
 @dirrm lib/pcsc
