@@ -20,7 +20,6 @@ T1LIB_DESC=	Use T1lib Type1 font library
 
 USES=		motif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 FEATURES+=	MOTIF
@@ -55,6 +54,6 @@ post-patch:
 .endfor
 
 post-install:
-	${STRIP_CMD} ${PREFIX}/bin/electric
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/electric
 
 .include <bsd.port.mk>
