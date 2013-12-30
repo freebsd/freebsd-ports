@@ -1091,6 +1091,7 @@
     SUBDIR += libsigc++12
     SUBDIR += libsigc++20
     SUBDIR += libsigcx
+    SUBDIR += libsigrok
     SUBDIR += libsigsegv
     SUBDIR += libslang2
     SUBDIR += libslave
