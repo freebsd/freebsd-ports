@@ -9,13 +9,11 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show you font info and add new 'name' and 'cmap' tables
 
-USES=		iconv
+USES=		gmake iconv
 GNU_CONFIGURE=	YES
-USE_GMAKE=	YES
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${ICONV_LIB}"
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC}/src/ -type f -print0 | \
 	    ${XARGS} -0 ${REINPLACE_CMD} -e 's,stdint.h,inttypes.h,'
