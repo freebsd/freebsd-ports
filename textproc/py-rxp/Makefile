@@ -16,20 +16,16 @@ COMMENT=	Fast validating XML parser for Python
 NO_WRKSUBDIR=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	pyRXP
-PYDISTUTILS_PKGVERSION=	0.5
+PYDISTUTILS_AUTOPLIST=	yes
 
-EXAMPLESDIR=	${PREFIX}/share/examples/py-rxp
 DOCSDIR=	${PREFIX}/share/doc/py-rxp
+EXAMPLESDIR=	${PREFIX}/share/examples/py-rxp
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${EXAMPLESDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
