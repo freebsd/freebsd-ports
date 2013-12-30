@@ -38,13 +38,18 @@ MANCOMPRESSED=	yes
 NO_BUILD=	yes
 EXPLICIT_PACKAGE_DEPENDS=	yes
 
-OPTIONS_DEFINE=	CUPS VIDEO GTK2 KDE4 COMPAT9
-OPTIONS_DEFAULT=	CUPS VIDEO
+OPTIONS_DEFINE=	CUPS VIDEO GTK2 KDE4
+OPTIONS_SINGLE=	LIBSTDCXX
+OPTIONS_SINGLE_LIBSTDCXX=	COMPAT9 GCCXX GCC42 GCC46
+OPTIONS_DEFAULT=	CUPS VIDEO COMPAT9
 NO_OPTIONS_SORT=yes
 
 CUPS_DESC=	support for printing (requires CUPS)
 VIDEO_DESC=	support for HTML5 video (requires GStreamer)
-COMPAT9_DESC=	use libstdc++.so.6 from compat9x instead of gcc46
+COMPAT9_DESC=	use libstdc++.so.6 from compat9x
+GCCXX_DESC=	use libstdc++.so.6 from lang/gcc
+GCC42_DESC=	use libstdc++.so.6 from lang/gcc42
+GCC46_DESC=	use libstdc++.so.6 from lang/gcc46
 
 CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 
@@ -86,8 +91,15 @@ IGNORE=		only for FreeBSD 7.x and higher
 .if ${OSVERSION} >= 1000054
 .if ${PORT_OPTIONS:MCOMPAT9}
 RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
-.else
+.endif
+.if ${PORT_OPTIONS:MGCC42}
+RUN_DEPENDS+=	${LOCALBASE}/lib/gcc42/libstdc++.so.6:${PORTSDIR}/lang/gcc42
+.endif
+.if ${PORT_OPTIONS:MGCC46}
 RUN_DEPENDS+=	${LOCALBASE}/lib/gcc46/libstdc++.so.6:${PORTSDIR}/lang/gcc46
+.endif
+.if ${PORT_OPTIONS:MGCCXX}
+RUN_DEPENDS+=	${LOCALBASE}/lib/gcc46/libstdc++.so.6:${PORTSDIR}/lang/gcc
 .endif
 .endif
 
