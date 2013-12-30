@@ -3,15 +3,13 @@
 
 PORTNAME=	sc
 PORTVERSION=	7.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/financial/spreadsheet
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Curses-based spreadsheet program
-
-MAN1=		sc.1 psc.1
 
 .include <bsd.port.pre.mk>
 
@@ -20,6 +18,7 @@ post-patch:
 		-e '/^CC=/s,=.*,=${CC},' \
 		-e '/^CFLAGS=/s,=.*,=-DSYSV3 ${CFLAGS} -O0,' \
 		-e '/^LIBDIR=/s,=.*,=$${DESTDIR}${DATADIR},' \
+		-e '/^MANDIR=/s,=,=$${DESTDIR},' \
 		-e '/^EXDIR=/s,=.*,=$${DESTDIR}${PREFIX}/bin,' \
 		-e '/^YACC=/s,=.*,=${YACC},' \
 		-e '/usr.bin.crypt/s,^# *,,' \
