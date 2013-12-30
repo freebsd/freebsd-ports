@@ -18,8 +18,4 @@ USES=		gmake pkgconfig
 USE_AUTOTOOLS=	aclocal automake autoconf
 AUTOMAKE_ARGS=	-i --add-missing --foreign --copy
 
-MAN1=		gsmc.1
-PLIST_FILES=	bin/gsmc
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
