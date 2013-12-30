@@ -3,6 +3,7 @@
 
 PORTNAME=	icinga
 PORTVERSION=	1.10.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -28,6 +29,8 @@ ICINGADIR?=	/var/spool/icinga
 ICINGALOGDIR?=	/var/log/icinga
 
 ICINGAWWWDIR?=	www/icinga
+ICINGAHTMURL?=	/icinga
+ICINGACGIURL?=	${ICINGAHTMURL}/cgi-bin
 
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
 CFLAGS+=	${CPPFLAGS}
@@ -36,6 +39,8 @@ CONFIGURE_ARGS=	--with-command-user=${ICINGAUSER} \
 		--with-command-group=${WWWGRP} \
 		--with-icinga-user=${ICINGAUSER} \
 		--with-icinga-group=${ICINGAGROUP} \
+		--with-htmurl=${ICINGAHTMURL} \
+		--with-cgiurl=${ICINGACGIURL} \
 		--sbindir=${PREFIX}/${ICINGAWWWDIR}/cgi-bin \
 		--datarootdir=${PREFIX}/${ICINGAWWWDIR} \
 		--datadir=${PREFIX}/${ICINGAWWWDIR} \
@@ -59,6 +64,7 @@ PLIST_SUB=	ICINGADIR=${ICINGADIR} \
 		ICINGAWWWDIR=${ICINGAWWWDIR} \
 		ICINGAUSER=${ICINGAUSER} \
 		ICINGAGROUP=${ICINGAGROUP} \
+		ICINGAHTMURL=${ICINGAHTMURL} \
 		ICINGACGIURL=${ICINGACGIURL} \
 		WWWGRP=${WWWGRP}
 
