@@ -10,12 +10,17 @@ MASTER_SITES=	http://newsbeuter.org/downloads/
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	An RSS feed reader for the text console
 
-LIB_DEPENDS=	stfl.1:${PORTSDIR}/devel/stfl \
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	stfl:${PORTSDIR}/devel/stfl \
 		curl:${PORTSDIR}/ftp/curl \
 		libjson.so:${PORTSDIR}/devel/json-c
 
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+OPTIONS_DEFINE= PODCAST
+PODCAST_DESC=	Podcast client (podbeuter)
+
+OPTIONS_DEFAULT= PODCAST
 
 USES=		gettext iconv ncurses gmake pkgconfig perl5
 USE_PERL5=	build
@@ -23,9 +28,13 @@ USE_SQLITE=	yes
 USE_GNOME=	libxml2
 USE_GCC=	any
 
-MAN1=	newsbeuter.1 podbeuter.1
+.include  <bsd.port.options.mk>
 
-NO_STAGE=	yes
+.if ${PORT_OPTIONS:MPODCAST}
+PLIST_SUB+=	PODCAST=""
+.else
+PLIST_SUB+=	PODCAST="@comment "
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e "s,share/man,man,; \
