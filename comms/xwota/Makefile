@@ -12,15 +12,15 @@ MASTER_SITE_SUBDIR=	db
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	X version of who is on the air
 
+LICENSE=	GPLv2
+
 USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 
-NO_STAGE=	yes
 post-install:
-.if	!defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for	d in ${WRKSRC}/README \
 	${WRKSRC}/COPYING \
 	${WRKSRC}/AUTHORS \
@@ -28,11 +28,7 @@ post-install:
 	${WRKSRC}/INSTALL \
 	${WRKSRC}/NEWS \
 	${WRKSRC}/TODO
-	@${INSTALL_DATA} ${WRKSRC}/${d} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${ECHO} ""
-	@${ECHO} "xwota docs installed in ${DOCSDIR}"
-	@${ECHO} ""
-.endif
 
 .include <bsd.port.mk>
