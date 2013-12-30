@@ -11,12 +11,11 @@ DISTNAME=	python-mhash-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python mhash module
 
-LIB_DEPENDS=	mhash:${PORTSDIR}/security/mhash
+LIB_DEPENDS=	libmhash.so:${PORTSDIR}/security/mhash
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/mhash.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=	python-mhash
+PYDISTUTILS_AUTOPLIST=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -24,5 +23,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 test: install
 	${PYTHON_CMD} ${WRKSRC}/test.py
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
