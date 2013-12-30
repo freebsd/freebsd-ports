@@ -17,15 +17,14 @@ OPTIONS_DEFINE=	READLINE DOCS EXAMPLES
 OPTIONS_DEFAULT=READLINE
 READLINE_DESC=	Enable readline support
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
-MAN1=		gnucap.1 gnucap-ibis.1
 PORTDOCS=	*
 PORTEXAMPLES=	*
-PLIST_FILES=	bin/gnucap bin/gnucap-modelgen
+PLIST_FILES=	bin/gnucap bin/gnucap-modelgen \
+		man/man1/gnucap-ibis.1.gz man/man1/gnucap.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREADLINE}
@@ -44,21 +43,21 @@ post-patch:
 .endfor
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/acs-tutorial ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/history ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/relnotes.* ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/whatisit ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/acs-tutorial ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/history ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/relnotes.* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/whatisit ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/README ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/runall ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.c ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.ckt ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.doc ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/README ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/runall ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.c ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.ckt ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.doc ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
