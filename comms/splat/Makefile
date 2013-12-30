@@ -13,10 +13,6 @@ LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 PORTDOCS=	README README2 CHANGES
-PLIST_FILES=	bin/splat bin/citydecoder bin/usgs2sdf bin/srtm2sdf\
-			bin/srtm2sdf-hd bin/fontdata bin/bearing\
-			bin/postdownload
-MAN1=		splat.1
 
 OPTIONS_SINGLE=	SRM
 OPTIONS_RADIO=	HRM
@@ -40,7 +36,6 @@ HRM_4X4_DESC=	4 x 4 degrees
 HRM_5X5_DESC=	5 x 5 degrees
 HRM_6X6_DESC=	6 X 6 degrees
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHRM}
@@ -111,19 +106,17 @@ do-build:
 do-install:
 .for f in splat utils/citydecoder utils/usgs2sdf utils/srtm2sdf \
 	utils/fontdata utils/bearing
-	@${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .if ${PORT_OPTIONS:MHRM}
-	@${INSTALL_PROGRAM} ${WRKSRC}/splat-hd ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/splat-hd ${STAGEDIR}${PREFIX}/bin
 .endif
-	@${INSTALL_SCRIPT} ${WRKSRC}/utils/postdownload ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/docs/english/man/splat.1 ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/utils/postdownload ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/docs/english/man/splat.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .  for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .  endfor
-.endif
 
-	@${LN} -s ${PREFIX}/bin/srtm2sdf ${PREFIX}/bin/srtm2sdf-hd
+	@${LN} -s srtm2sdf ${STAGEDIR}${PREFIX}/bin/srtm2sdf-hd
 .include <bsd.port.mk>

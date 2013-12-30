@@ -1,0 +1,9 @@
+bin/splat
+bin/citydecoder
+bin/usgs2sdf
+bin/srtm2sdf
+bin/srtm2sdf-hd
+bin/fontdata
+bin/bearing
+bin/postdownload
+man/man1/splat.1.gz
