@@ -9,8 +9,9 @@ DISTVERSION=	31.0.1650.63
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/:testdata \
 		http://download.goodking.org/downloads/:browser \
-		ftp://rene-ladan.nl/pub/distfiles/:browser \
+		${MASTER_SITE_LOCAL}:browser \
 		http://files.etoilebsd.net/goodking/:browser
+MASTER_SITE_SUBDIR=rene
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:browser
 
 MAINTAINER=	chromium@FreeBSD.org

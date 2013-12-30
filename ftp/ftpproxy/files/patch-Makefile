@@ -1,0 +1,20 @@
+--- Makefile.orig	2004-07-30 12:49:27.000000000 +0000
++++ Makefile
+@@ -9,7 +9,7 @@ TARGETS =	ftp.proxy
+ 
+ 
+ all:	$(TARGETS)
+-	cd src; make all 
++	cd src; $(MAKE) all 
+ 
+ 
+ install:	all
+@@ -18,7 +18,7 @@ install:	all
+ 
+ 
+ ftp.proxy:
+-	cd src; make ftp.proxy 
++	cd src; $(MAKE) ftp.proxy 
+ 
+ 
+ tar:		clean

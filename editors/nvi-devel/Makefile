@@ -26,9 +26,7 @@ USE_BDB=		42+
 CONFIGURE_ARGS+=	--with-db-prefix=${LOCALBASE} \
 			--program-prefix=n
 CONFIGURE_SCRIPT=	../dist/configure
-MAN1=			nex.1 nvi.1 nview.1
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWIDECHAR}
@@ -47,8 +45,8 @@ post-patch:
 
 post-install:
 .for __p in nex nvi nview
-	@# XXX: Hack the Makefile in the distribution so this isn't necessary.
-	${RM} ${PREFIX}/man/cat1/${__p}.0
+#	XXX: Hack the Makefile in the distribution so this isn't necessary.
+	${RM} ${STAGEDIR}${PREFIX}/man/cat1/${__p}.0
 .endfor
 
 .include <bsd.port.mk>

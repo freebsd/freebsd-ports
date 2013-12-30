@@ -1,51 +1,129 @@
 # $FreeBSD$
 
 PORTNAME=	musicpd
-PORTVERSION=	0.17.3
-PORTREVISION=	4
+PORTVERSION=	0.18.5
 CATEGORIES=	audio ipv6
-MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
+MASTER_SITES=	http://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Remote-controllable music daemon
 
-LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad \
-		libcurl.so:${PORTSDIR}/ftp/curl
-
 LICENSE=	GPLv2
 
-USE_STAGE=	yes
-NO_STAGE=	yes
-USES=		gmake pkgconfig
-USE_BZIP2=	yes
+USES=		gmake pkgconfig compiler:c++11-lib
+USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 
 USE_RC_SUBR=	${PORTNAME}
+CONFIGURE_ARGS+=--disable-alsa --disable-systemd-daemon --disable-roar
+CFLAGS+=	-I${PREFIX}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-CFLAGS+=	-I${PREFIX}/include
-
-MAN1=		${PORTNAME}.1
-MAN5=		${PORTNAME}.conf.5
-
-DOCSDIR?=	${PREFIX}/share/doc/musicpd
 PORTDOCS=	AUTHORS README COPYING NEWS UPGRADING
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	ID3TAG IPV6 FLAC VORBIS WAV FFMPEG TREMOR AAC \
-		MUSEPACK MIKMOD MODPLUG ARCHIVE MMS LASTFM AO PULSEAUDIO \
-		JACK SHOUTCAST SNDFILE LAME HTTPD SAMPLERATE SQLITE3
+OPTIONS_DEFINE=	ID3TAG IPV6 ARCHIVE SAMPLERATE SQLITE3 \
+		CDPARANOIA LAME MMS VORBISENC
+
 OPTIONS_RADIO=	ZEROCONF
 OPTIONS_RADIO_ZEROCONF=	AVAHI MDNSRESPONDER
 
-TREMOR_DESC=	Tremor decoder (not with SHOUTCAST; use VORBIS)
+OPTIONS_MULTI=	FILE_FORMAT
+OPTIONS_MULTI_FILE_FORMAT=	AAC ADPLUG FFMPEG FLAC FLUIDSYNTH \
+	   GME MAD MIKMOD MODPLUG MPG123 MUSEPACK \
+	   OPUS SIDPLAY2 SNDFILE TREMOR TWOLAME \
+	   VORBIS WAV WAVPACK WILDMIDI
 
-OPTIONS_DEFAULT=ID3TAG IPV6 FLAC VORBIS WAV FFMPEG SNDFILE
+OPTIONS_GROUP=	PLAYBACK
+OPTIONS_GROUP_PLAYBACK=	AO CURL HTTPD JACK OPENAL OSS PULSEAUDIO SHOUTCAST
+
+ADPLUG_DESC=	AdPlug support
+FLUIDSYNTH_DESC=FludSynth support (MIDI files)
+GME_DESC=	GME support (video game music files)
 LAME_DESC=	Support for MP3 Icecast Streams
+OPUS_DESC=	Opus decoder
+SIDPLAY2_DESC=	Sidplay support (C64 mono and stereo files)
+TREMOR_DESC=	Tremor decoder (not with SHOUTCAST; use VORBIS)
+TWOLAME_DESC=	TwoLAME support (mp2)
+VORBISENC_DESC=	Ogg Vorbis encoder
+WAVPACK_DESC=	WavPack support
+WILDMIDI_DESC=	WildMIDI support (MIDI files)
+
+OPTIONS_DEFAULT=ID3TAG IPV6 MAD OSS FLAC VORBIS WAV FFMPEG SNDFILE
+
+AAC_CONFIGURE_ENABLE=aac
+AAC_LIB_DEPENDS=libfaad.so:${PORTSDIR}/audio/faad
+ADPLUG_CONFIGURE_ENABLE=adplug
+ADPLUG_LIB_DEPENDS=libadplug.so:${PORTSDIR}/audio/libadplug
+AO_CONFIGURE_ENABLE=ao
+AO_LIB_DEPENDS=libao.so:${PORTSDIR}/audio/libao
+CDPARANOIA_CONFIGURE_ENABLE=cdio-paranoia
+CDPARANOIA_LIB_DEPENDS=libcdda_paranoia:${PORTSDIR}/audio/cdparanoia
+CURL_CONFIGURE_ENABLE=curl
+CURL_LIB_DEPENDS=libcurl.so:${PORTSDIR}/ftp/curl
+FFMPEG_CONFIGURE_ENABLE=ffmpeg
+FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
+			libavformat.so:${PORTSDIR}/multimedia/ffmpeg \
+			libavutil.so:${PORTSDIR}/multimedia/ffmpeg
+FLAC_CONFIGURE_ENABLE=flac
+FLAC_LIB_DEPENDS=libFLAC.so:${PORTSDIR}/audio/flac
+FLUIDSYNTH_CONFIGURE_ENABLE=fluidsynth
+FLUIDSYNTH_LIB_DEPENDS=libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
+GME_CONFIGURE_ENABLE=gme
+GME_LIB_DEPENDS=libgme.so:${PORTSDIR}/audio/libgme
+HTTPD_CONFIGURE_ENABLE=httpd-output
+ID3TAG_CONFIGURE_ENABLE=id3
+ID3_LIB_DEPENDS=libid3tag.so:${PORTSDIR}/audio/libid3tag
+IPV6_CONFIGURE_ENABLE=ipv6
+JACK_CONFIGURE_ENABLE=jack
+JACK_LIB_DEPENDS=libjack.so:${PORTSDIR}/audio/jack
+LAME_CONFIGURE_ENABLE=lame-encoder
+LAME_LIB_DEPENDS=libmp3lame.so:${PORTSDIR}/audio/lame
+MAD_CONFIGURE_ENABLE=mad
+MAD_LIB_DEPENDS=libmad.so:${PORTSDIR}/audio/libmad
+MIKMOD_CONFIGURE_ENABLE=mikmod
+MIKMOD_LIB_DEPENDS=libmikmod.so:${PORTSDIR}/audio/libmikmod
+MMS_CONFIGURE_ENABLE=mms
+MMS_LIB_DEPENDS=libmms.so:${PORTSDIR}/net/libmms
+MODPLUG_CONFIGURE_ENABLE=modplug
+MODPLUG_LIB_DEPENDS=libmodplug.so:${PORTSDIR}/audio/libmodplug
+MPG123_CONFIGURE_ENABLE=mpg123
+MPG123_LIB_DEPENDS=libmpg123.so:${PORTSDIR}/audio/mpg123
+MUSEPACK_CONFIGURE_ENABLE=mpc
+MUSEPACK_LIB_DEPENDS=libmpcdec.so:${PORTSDIR}/audio/musepack
+OPENAL_CONFIGURE_ENABLE=openal
+OPENAL_LIB_DEPENDS=libopenal.so:${PORTSDIR}/audio/openal
+OPUS_CONFIGURE_ENABLE=opus
+OPUS_LIB_DEPENDS=libopus.so:${PORTSDIR}/audio/opus
+OSS_CONFIGURE_ENABLE=oss
+PULSEAUDIO_CONFIGURE_ENABLE=pulse
+PULSEAUDIO_LIB_DEPENDS=libpulse.so:${PORTSDIR}/audio/pulseaudio
+SAMPLERATE_CONFIGURE_ENABLE=lsr
+SAMPLERATE_LIB_DEPENDS=libsamplerate.so:${PORTSDIR}/audio/libsamplerate
+SIDPLAY2_CONFIGURE_ENABLE=sidplay
+SIDPLAY_LIB_DEPENDS=libsidplay2.so:${PORTSDIR}/audio/libsidplay2
+SNDFILE_CONFIGURE_ENABLE=sndfile
+SNDFILE_LIB_DEPENDS=libsndfile.so:${PORTSDIR}/audio/libsndfile
+SQLITE3_CONFIGURE_ENABLE=sqlite
+SQLITE3_LIB_DEPENDS=libsqlite3.so:${PORTSDIR}/databases/sqlite3
+TREMOR_CONFIGURE_WITH=tremor
+TREMOR_LIB_DEPENDS=libvorbisidec.so:${PORTSDIR}/audio/libtremor
+TWOLAME_CONFIGURE_ENABLE=twolame-encoder
+TWOLAME_LIB_DEPENDS=libtwolame.so:${PORTSDIR}/audio/twolame
+VORBISENC_CONFIGURE_ENABLE=vorbis-encoder
+VORBISENC_LIB_DEPENDS=libvorbisenc.so:${PORTSDIR}/audio/libvorbis
+VORBIS_CONFIGURE_ENABLE=vorbis
+VORBIS_LIB_DEPENDS=libvorbis.so:${PORTSDIR}/audio/libvorbis
+WAV_CONFIGURE_ENABLE=audiofile
+WAV_LIB_DEPENDS=libaudiofile.so:${PORTSDIR}/audio/libaudiofile
+WAVPACK_CONFIGURE_ENABLE=wavpack
+WAVPACK_LIB_DEPENDS=libwavpack.so:${PORTSDIR}/audio/wavpack
+WILDMIDI_CONFIGURE_ENABLE=wildmidi
+WILDMIDI_LIB_DEPENDS=libWildMidi.so:${PORTSDIR}/audio/wildmidi
 
 MPDDIR?=	/var/mpd
 MPDUSER?=	mpd
@@ -76,108 +154,16 @@ IGNORE=${MSG}  You also have musicpd.conf-- check carefully to see which one you
 .endif
 .endif
 
-.if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
-.else
-CONFIGURE_ARGS+=--disable-flac \
-		--disable-oggflac
-.endif
-
-.if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
-.else
-CONFIGURE_ARGS+=--disable-vorbis
-.endif
-
-.if ${PORT_OPTIONS:MTREMOR}
-CONFIGURE_ARGS+=--with-tremor
-LIB_DEPENDS+=	libvorbisidec.so:${PORTSDIR}/audio/libtremor
-.endif
-
-.if ${PORT_OPTIONS:MAAC}
-LIB_DEPENDS+=	libfaad.so:${PORTSDIR}/audio/faad
-.else
-CONFIGURE_ARGS+=--disable-aac
-.endif
-
-.if ${PORT_OPTIONS:MLAME}
-CONFIGURE_ARGS+=--enable-lame-encoder
-LIB_DEPENDS+=	libmp3lame.so:${PORTSDIR}/audio/lame
-.else
-CONFIGURE_ARGS+=--disable-lame-encoder
-.endif
-
-.if ${PORT_OPTIONS:MHTTPD}
-CONFIGURE_ARGS+=--enable-httpd-output
-.else
-CONFIGURE_ARGS+=--disable-httpd-output
-.endif
-
-.if ${PORT_OPTIONS:MWAV}
-LIB_DEPENDS+=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
-.else
-CONFIGURE_ARGS+=--disable-audiofile
-.endif
-
-.if ${PORT_OPTIONS:MMUSEPACK}
-LIB_DEPENDS+=	libmpcdec.so:${PORTSDIR}/audio/musepack
-.else
-CONFIGURE_ARGS+=--disable-mpc
-.endif
-
-.if ${PORT_OPTIONS:MMIKMOD}
-LIB_DEPENDS+=	libmikmod.so:${PORTSDIR}/audio/libmikmod
-CONFIGURE_ARGS+=--enable-mikmod
-.else
-CONFIGURE_ARGS+=--disable-mikmod
-.endif
-
-.if ${PORT_OPTIONS:MMODPLUG}
-LIB_DEPENDS+=	libmodplug.so:${PORTSDIR}/audio/libmodplug
-CONFIGURE_ARGS+=--enable-modplug
-.else
-CONFIGURE_ARGS+=--disable-modplug
-.endif
-
 .if ${PORT_OPTIONS:MARCHIVE}
 CONFIGURE_ARGS+=--enable-bzip2 \
-		--enable-zip \
+		--enable-zzip \
 		--enable-iso9660
 LIB_DEPENDS+=	libzzip.so:${PORTSDIR}/devel/zziplib \
-		iso9660.8:${PORTSDIR}/sysutils/libcdio
-.endif
-
-.if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libavformat.so:${PORTSDIR}/multimedia/ffmpeg \
-		libavutil.so:${PORTSDIR}/multimedia/ffmpeg
+		libiso9660.so:${PORTSDIR}/sysutils/libcdio
 .else
-CONFIGURE_ARGS+=--disable-ffmpeg
-.endif
-
-.if ${PORT_OPTIONS:MLASTFM}
-CONFIGURE_ARGS+=--enable-lastfm
-.else
-CONFIGURE_ARGS+=--disable-lastfm
-.endif
-
-.if ${PORT_OPTIONS:MMMS}
-CONFIGURE_ARGS+=--enable-mms
-LIB_DEPENDS+=	libmms.so:${PORTSDIR}/net/libmms
-.else
-CONFIGURE_ARGS+=--disable-mms
-.endif
-
-.if ${PORT_OPTIONS:MID3TAG}
-LIB_DEPENDS+=	libid3tag.so:${PORTSDIR}/audio/libid3tag
-.else
-CONFIGURE_ARGS+=--disable-id3
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=--enable-ipv6
-.else
-CONFIGURE_ARGS+=--disable-ipv6
+CONFIGURE_ARGS+=--disable-bzip2 \
+		--disable-zzip \
+		--disable-iso9660
 .endif
 
 .if ${PORT_OPTIONS:MAVAHI}
@@ -194,25 +180,6 @@ LIB_DEPENDS+=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
 CONFIGURE_ARGS+=--with-zeroconf=no
 .endif
 
-.if ${PORT_OPTIONS:MAO}
-CONFIGURE_ARGS+=--enable-ao
-LIB_DEPENDS+=	libao.so:${PORTSDIR}/audio/libao
-.else
-CONFIGURE_ARGS+=--disable-ao
-.endif
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
-.else
-CONFIGURE_ARGS+=--disable-pulse
-.endif
-
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
-.else
-CONFIGURE_ARGS+=--disable-jack
-.endif
-
 # libshout streaming support will be disabled by configure script when built
 # also with tremor since the latter does not support vorbis encoding
 .if ${PORT_OPTIONS:MSHOUTCAST}
@@ -224,27 +191,6 @@ CONFIGURE_ARGS+=--enable-vorbis-encoder \
 		--enable-shout
 .else
 CONFIGURE_ARGS+=--disable-shout
-.endif
-
-.if ${PORT_OPTIONS:MSNDFILE}
-LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile
-CONFIGURE_ARGS+=	--enable-sndfile
-.else
-CONFIGURE_ARGS+=	--disable-sndfile
-.endif
-
-.if ${PORT_OPTIONS:MSAMPLERATE}
-LIB_DEPENDS+=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
-CONFIGURE_ARGS+=--enable-lsr
-.else
-CONFIGURE_ARGS+=--disable-lsr
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE3}
-LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
-CONFIGURE_ARGS+=--enable-sqlite
-.else
-CONFIGURE_ARGS+=--disable-sqlite
 .endif
 
 post-patch:
@@ -274,26 +220,17 @@ post-patch:
 .endif
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/mpd ${PREFIX}/bin/${PORTNAME}
-	@${INSTALL_MAN} ${WRKSRC}/doc/mpd.1 ${MAN1PREFIX}/man/man1/${PORTNAME}.1
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/mpd \
+		${STAGEDIR}/${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_MAN} ${WRKSRC}/doc/mpd.1 \
+		${STAGEDIR}/${PREFIX}/man/man1/${PORTNAME}.1
 	@${INSTALL_MAN} ${WRKSRC}/doc/mpd.conf.5 \
-		${MAN5PREFIX}/man/man5/${PORTNAME}.conf.5
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.   for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}/
-.   endfor
-.endif
-
-post-install:
-	@${INSTALL_DATA} ${WRKSRC}/doc/mpdconf.example ${PREFIX}/etc/${PORTNAME}.conf.sample
-	@if [ ! -f ${PREFIX}/etc/${PORTNAME}.conf ]; then \
-		${CP} -p ${PREFIX}/etc/${PORTNAME}.conf.sample \
-			${PREFIX}/etc/${PORTNAME}.conf ; \
-	fi
-	@${INSTALL} -d -o ${MPDUSER} -g ${MPDGROUP} ${MPDDIR} ${MPDDIR}/.mpd
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+		${STAGEDIR}/${PREFIX}/man/man5/${PORTNAME}.conf.5
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
+.for doc in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}/${DOCSDIR}/
+.endfor
+	@${INSTALL_DATA} ${WRKSRC}/doc/mpdconf.example \
+		${STAGEDIR}/${PREFIX}/etc/${PORTNAME}.conf.sample
 
 .include <bsd.port.post.mk>

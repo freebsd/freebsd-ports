@@ -19,13 +19,10 @@ NO_STAGE=	yes
 
 PLIST_SUB=	PORTDOCS=${DISTNAME}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CFLAGS+=	-fPIC
-.endif
+CFLAGS_amd64=	-fPIC
+CFLAGS_ia64=	-fPIC
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/*.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

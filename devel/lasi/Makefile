@@ -4,13 +4,15 @@
 
 PORTNAME=	lasi
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}%20Source
 DISTNAME=	libLASi-${PORTVERSION}
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	C++ stream output interface for creating Postscript documents
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USES=		cmake pkgconfig
 USE_GNOME=	pango

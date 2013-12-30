@@ -100,7 +100,6 @@ PLIST_SUB+=	APCSNMP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDRAC3} || exists (${PREFIX}/lib/libcurl.so)
-USE_CURL=	yes
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	DRAC3=""
 .else

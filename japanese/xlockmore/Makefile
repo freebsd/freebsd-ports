@@ -10,5 +10,4 @@ MASTERDIR=	${.CURDIR}/../../x11/xlockmore
 WITH_MB=	yes
 XLOCKMORE_LANG=	ja
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

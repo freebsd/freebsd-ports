@@ -11,13 +11,10 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	MatC language library used by ELMER FEM package
 
-DEPRECATED=	Relies on long obsolete version of GCC, does not build on FreeBSD 10 and later
-EXPIRATION_DATE=2013-12-27
-
 CXXFLAGS+=	-Wno-deprecated
 
 GNU_CONFIGURE=	yes
-USE_FORTRAN=	g77
+USES=		fortran
 
 PLIST_SUB=	ARCH=${MACHINE_ARCH}
 

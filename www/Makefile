@@ -968,7 +968,6 @@
     SUBDIR += p5-HTML-Tree
     SUBDIR += p5-HTML-TreeBuilder-LibXML
     SUBDIR += p5-HTML-TreeBuilder-XPath
-    SUBDIR += p5-HTML-Webmake
     SUBDIR += p5-HTML-Widgets-SelectLayers
     SUBDIR += p5-HTML-WikiConverter
     SUBDIR += p5-HTML-WikiConverter-DokuWiki
@@ -1685,6 +1684,7 @@
     SUBDIR += py-tvdb_api
     SUBDIR += py-twistedWeb
     SUBDIR += py-twistedWeb2
+    SUBDIR += py-uliweb
     SUBDIR += py-urlgrabber
     SUBDIR += py-urljr
     SUBDIR += py-utidy

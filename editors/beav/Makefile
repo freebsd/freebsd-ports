@@ -20,12 +20,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:S/.//}
 ALL_TARGET=	beav
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DUNIX -DBSD -DNOPROTO"
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|(OFILES):|$$(OFILES):|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/beav.1
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/beav ${STAGEDIR}${PREFIX}/bin/beav
 	${INSTALL_MAN} ${WRKSRC}/beav.1 ${STAGEDIR}${PREFIX}/man/man1/beav.1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/beav140.txt ${STAGEDIR}${DOCSDIR}/beav.txt
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-	    ${STAGEDIR}${PREFIX}/man/man1/beav.1
 
 .include <bsd.port.mk>

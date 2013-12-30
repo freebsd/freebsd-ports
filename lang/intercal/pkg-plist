@@ -11,23 +11,25 @@ lib/libick.a
 lib/libickec.a
 lib/libickmt.a
 lib/libyuk.a
+man/man1/ick.1.gz
+man/man1/convickt.1.gz
+%%DATADIR%%/COPYING
 %%DATADIR%%/atari.bin
 %%DATADIR%%/baudot.bin
+%%DATADIR%%/compunex.c
+%%DATADIR%%/coopt.sh
 %%DATADIR%%/ebcdic.bin
-%%DATADIR%%/latin1.bin
+%%DATADIR%%/ecto_b98.c
+%%DATADIR%%/floatlib.i
 %%DATADIR%%/ick-wrap.c
+%%DATADIR%%/latin1.bin
 %%DATADIR%%/pickwrap.c
-%%DATADIR%%/COPYING
 %%DATADIR%%/syslib.i
 %%DATADIR%%/syslib3.3i
 %%DATADIR%%/syslib4.4i
 %%DATADIR%%/syslib5.5i
 %%DATADIR%%/syslib6.6i
 %%DATADIR%%/syslib7.7i
-%%DATADIR%%/floatlib.i
-%%DATADIR%%/coopt.sh
 %%DATADIR%%/syslibc.c
-%%DATADIR%%/compunex.c
-%%DATADIR%%/ecto_b98.c
 @dirrm %%DATADIR%%
 @dirrm include/ick

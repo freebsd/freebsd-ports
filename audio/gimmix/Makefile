@@ -20,13 +20,10 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	NLS
 
 USE_GNOME=	gtk20 intltool libglade2
-NO_STAGE=	yes
 USE_BZIP2=	yes
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
-
-MAN1=		gimmix.1
+USES=		desktop-file-utils gmake pkgconfig
 
 CONFIGURE_ENV=	DATADIRNAME=share
 

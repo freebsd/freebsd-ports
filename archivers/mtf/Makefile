@@ -15,19 +15,13 @@ COMMENT=	Unix reader for the Microsoft Tape Format used by NT Backup
 LICENSE=	GPLv2
 
 ALL_TARGET=	# empty
-NO_STAGE=	yes
 PLIST_FILES=	bin/mtf
 PORTDOCS=	README
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|CC=|CC?=|" -e "s|CFLAGS=|CFLAGS?=|" \
-		${WRKSRC}/Makefile
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mtf ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/mtf ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

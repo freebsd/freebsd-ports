@@ -26,6 +26,10 @@ HAS_CONFIGURE=	yes
 PLUGDIR?=	lib/bmp/Input
 PLIST_FILES=	${PLUGDIR}/libmodplugbmp.so
 
+post-patch:
+	@${REINPLACE_CMD} 's|-lstdc++||' ${WRKSRC}/modplugbmp/Makefile.in \
+		${WRKSRC}/modplugplay/Makefile.in
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PLUGDIR}
 	${INSTALL_LIB} ${WRKSRC}/modplugbmp/.libs/libmodplugbmp.so \

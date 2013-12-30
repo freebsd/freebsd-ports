@@ -11,12 +11,11 @@ MASTER_SITE_SUBDIR=	apps/sound/cdrom
 MAINTAINER=	clkao@CirX.ORG
 COMMENT=	Read audio tracks from a CD into wav sound files
 
-NO_STAGE=	yes
-MAN1=		dagrab.1
-PLIST_FILES=	bin/dagrab
+PLIST_FILES=	bin/dagrab \
+		man/man1/dagrab.1.gz
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dagrab ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/dagrab.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/dagrab ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/dagrab.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

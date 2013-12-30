@@ -11,6 +11,9 @@ lib/libXbae.a
 lib/libXbae.la
 lib/libXbae.so
 lib/libXbae.so.4
+man/man3/XbaeCaption.3.gz
+man/man3/XbaeInput.3.gz
+man/man3/XbaeMatrix.3.gz
 share/Xbae/FAQ.html
 share/Xbae/NEWS
 share/Xbae/README

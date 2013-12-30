@@ -14,8 +14,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
-USES=		cmake pkgconfig
-USE_OPENAL=	soft
+USES=		cmake openal:soft pkgconfig
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib

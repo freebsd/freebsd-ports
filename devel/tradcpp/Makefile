@@ -8,7 +8,7 @@ MASTER_SITES=	http://ftp.NetBSD.org/pub/NetBSD/misc/dholland/
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Traditional (K&R-style) C preprocessor
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USES=		uidfix
 

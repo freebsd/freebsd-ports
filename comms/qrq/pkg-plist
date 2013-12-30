@@ -1,5 +1,6 @@
 bin/qrq
 bin/qrqscore
+man/man1/qrq.1.gz
 %%DATADIR%%/callbase.qcb
 %%DATADIR%%/english.qcb
 %%DATADIR%%/qrqrc

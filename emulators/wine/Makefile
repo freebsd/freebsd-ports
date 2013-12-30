@@ -58,6 +58,9 @@ WINEMAKER_DESC=	Fully support winemaker (requires Perl)
 GECKO_DESC=	Bundle Gecko MSI package for Wine
 MONO_DESC=	Bundle Mono MSI package for Wine
 
+# USES needs to be before bsd.port.pre.mk
+OPENAL_USES=	openal
+
 PORTDATA=	fonts/ generic.ppd l_intl.nls wine.inf
 
 PORTSCOUT=	limitw:1,even
@@ -105,7 +108,6 @@ CONFIGURE_ARGS+=	--without-xslt
 
 .if ${PORT_OPTIONS:MOPENAL}
 CONFIGURE_ARGS+=	--with-openal
-USE_OPENAL=		yes
 PLIST_SUB+=		OPENAL=""
 .else
 CONFIGURE_ARGS+=	--without-openal

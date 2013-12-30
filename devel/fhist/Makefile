@@ -4,7 +4,7 @@
 PORTNAME=	fhist
 PORTVERSION=	1.21
 DISTVERSIONSUFFIX=	.D001
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
@@ -13,7 +13,7 @@ COMMENT=	Utilities to maintain file history, do file comparisons, and merges
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	explain:${PORTSDIR}/devel/libexplain
+LIB_DEPENDS=	libexplain.so:${PORTSDIR}/devel/libexplain
 
 OPTIONS_DEFINE=	NLS
 
@@ -28,10 +28,10 @@ MAKE_JOBS_UNSAFE=yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		fcomp.1 fhist.1 fmerge.1
-PLIST_FILES=	bin/fcomp bin/fhist bin/fmerge
+PLIST_FILES=	bin/fcomp bin/fhist bin/fmerge \
+		man/man1/fcomp.1.gz man/man1/fhist.1.gz \
+		man/man1/fmerge.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -53,12 +53,12 @@ post-build:
 
 do-install:
 .for file in fcomp fhist fmerge
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/lib/en/man1/${file}.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/${file} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/lib/en/man1/${file}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .if ${PORT_OPTIONS:MNLS}
-	@${MKDIR} ${PREFIX}/share/locale/en/LC_MESSAGES
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/en/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/lib/en/LC_MESSAGES/${file}.mo \
-		${PREFIX}/share/locale/en/LC_MESSAGES
+		${STAGEDIR}${PREFIX}/share/locale/en/LC_MESSAGES
 .endif
 .endfor
 

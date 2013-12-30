@@ -3,6 +3,10 @@ etc/ircd/iauth.conf.example
 etc/ircd/iauth.conf
 etc/ircd/ircd.motd
 etc/ircd/ircd.m4
+man/man5/iauth.conf.5.gz
+man/man8/iauth.8.gz
+man/man8/ircd.8.gz
+man/man8/ircdwatch.8.gz
 sbin/chkconf
 sbin/ircd
 sbin/iauth

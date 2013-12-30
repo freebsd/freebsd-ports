@@ -10,22 +10,20 @@ MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Yet another uptimes.net client
 
 ALL_TARGET=	bsd
-CFLAGS+=	-DCONFFILE=\\\"${PREFIX}/etc/yaunc.conf\\\"
+CFLAGS+=	-DCONFFILE=\\\"${STAGEDIR}${PREFIX}/etc/yaunc.conf\\\"
 
 PLIST_FILES=	bin/yaunc \
-		etc/yaunc.conf.sample
+		etc/yaunc.conf.sample \
+		man/man1/yaunc.1.gz
 
 USE_RC_SUBR=	yaunc
 
-MAN1=		yaunc.1
-
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/yaunc.1
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${STAGEDIR}${PREFIX}|g" ${WRKSRC}/yaunc.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/yaunc ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/yaunc.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} -m 600 ${WRKSRC}/yaunc.conf ${PREFIX}/etc/yaunc.conf.sample
+	${INSTALL_PROGRAM} ${WRKSRC}/yaunc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/yaunc.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} -m 600 ${WRKSRC}/yaunc.conf ${STAGEDIR}${PREFIX}/etc/yaunc.conf.sample
 
 .include <bsd.port.mk>

@@ -9,24 +9,19 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-mcrypt-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A comprehensive Python interface to the mcrypt library
+COMMENT=	Comprehensive Python interface to the mcrypt library
 
-LIB_DEPENDS=	mcrypt:${PORTSDIR}/security/libmcrypt
+LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/libmcrypt
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_BUILDARGS=	-L${LOCALBASE}/lib
-PYDISTUTILS_PKGNAME=	python-mcrypt
+PYDISTUTILS_BUILD_TARGET=	build_ext
 CFLAGS+=	-I${LOCALBASE}/include
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/mcrypt.so
-
-NO_STAGE=	yes
 pre-patch:
 	# put a missed terminating quote
 	${REINPLACE_CMD} -e '1136s,$$,\\,g' -e '1678s,$$,\\,g' ${WRKSRC}/mcrypt.c
-
-do-build:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} build_ext ${PYDISTUTILS_BUILDARGS})
 
 .include <bsd.port.mk>

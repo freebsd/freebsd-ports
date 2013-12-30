@@ -3,62 +3,51 @@
 
 PORTNAME=	icebreaker
 PORTVERSION=	1.9.8
+PORTREVISION=	1 
 CATEGORIES=	games
-MASTER_SITES=	http://mattdm.org/icebreaker/1.9.x/
+MASTER_SITES=	http://mattdm.org/icebreaker/1.9.x/ \
+		SF/nemysisfreebsdp/games/${PORTNAME}/:icons
 EXTRACT_SUFX=	.tgz
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}.png:icons
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Game similar to Jezzball or Barrack
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	pnmtopng:${PORTSDIR}/graphics/netpbm
-
+USES=		gmake
 USE_SDL=	mixer sdl
-USE_GMAKE=	yes
 
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.png \
-		share/applications/${PORTNAME}.desktop
+PORTDOCS=	ChangeLog README README.SDL README.ifyoumakechanges \
+		README.themes TODO
 
-PORTDATA=	*
-PORTDOCS=	ChangeLog README README.SDL README.ifyoumakechanges README.themes TODO
-
-MAN6=		${PORTNAME}.6
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} \
-	-e 's|CC=gcc|CC?=g++|' \
-	-e 's|sdl-config|$(SDL_CONFIG)|' \
-	-e 's|prefix=/usr/local|prefix=${PREFIX}|' \
-	-e 's|mandir=$$(prefix)/share/man|mandir=$$(prefix)/man|' \
-	-e 's|highscoredir=/var/local/lib/games|highscoredir=/var/games|' \
-	-e 's|CFLAGS=|CFLAGS+=|' \
-	-e 's|OPTIMIZE=-O3|OPTIMIZE=|' \
-	-e 's|$$(CC) $$(CFLAGS) $$^ -o icebreaker $$(SDL_LIB)|$$(CC) $$(LDFLAGS) $$(CFLAGS) $$^ -o icebreaker $$(SDL_LIB)|' \
-	-e 's|install -s -g games -m 2755 icebreaker $(bindir)|install -g games -m 2755 icebreaker $(bindir)|' \
-	-e 's|install -s -m 755 icebreaker $(bindir)|install -m 755 icebreaker $(bindir)|' \
-	-e 's|chown -f games:games|chown -f root:games|' \
+	-e 's|CC=gcc|CC?=gcc| ; \
+	s|sdl-config|$(SDL_CONFIG)| ; \
+	s|prefix=/usr/local|prefix=${STAGEDIR}${PREFIX}| ; \
+	s|datadir=$$(prefix)/share|datadir=${STAGEDIR}${PREFIX}/share| ; \
+	s|mandir=$$(prefix)/share/man|mandir=${STAGEDIR}${PREFIX}/man| ; \
+	s|highscoredir=/var/local/lib/games|highscoredir=/var/games| ; \
+	s|CFLAGS=|CFLAGS+=| ; \
+	s|OPTIMIZE=-O3|OPTIMIZE=| ; \
+	s|$$(CC) $$(CFLAGS)|$$(CC) $$(LDFLAGS) $$(CFLAGS)| ; \
+	s|install -s -g games|install -g games| ; \
+	s|install -s -m 755|install -m 755| ; \
+	s|chown -f games:games|chown -f root:games| ; \
+	s|$$(SRC:.c=.d)|$$(SRC:.c)|' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} \
-	-e 's|%{Summary}|Game similar to Jezzball or Barrack|' \
-	-e 's|/usr/share/icebreaker/icebreaker_48.bmp|icebreaker|' \
-		${WRKSRC}/icebreaker.desktop
-
-post-build:
-	@(cd ${WRKSRC} && ${LOCALBASE}/bin/winicontoppm -bestqual icebreaker_32.ico | \
-		${LOCALBASE}/bin/pnmtopng > icebreaker.png)
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

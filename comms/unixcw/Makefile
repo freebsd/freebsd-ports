@@ -1,40 +1,35 @@
-# Created by: Diane Bruce <db@db.net>
 # $FreeBSD$
 
 PORTNAME=	unixcw
-PORTVERSION=	2.3
-PORTREVISION=	1
+PORTVERSION=	3.3.0
 CATEGORIES=	comms hamradio
-MASTER_SITES=	http://www.ibiblio.org/pub/linux/apps/ham/morse/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	db
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+DISTNAME=	unixcw_3.3.0.orig
 
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Libs for cw on unix
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--includedir="${LOCALBASE}/include" \
-			--libdir="${LOCALBASE}/lib"
-MAN1=		cw.1 cwgen.1 cwcp.1
-MAN3=		cwlib.3
+			--libdir="${LOCALBASE}/lib" \
+			--disable-alsa --disable-pulseaudio
+
 .if defined(WITH_XCWCP)
-BROKEN=		Depends on QT3 which is removed, update is in progress
-MAN1+=		xcwcp.1
-USE_QT_VER=	3
-CONFIGURE_ARGS+=	QTLIB=qt-mt
+USE_QT4=	gui moc_build qmake_build rcc_build uic_build designer
+USE_AUTOTOOLS=	autoconf
 PLIST_SUB+=	XCWCP=""
+CONFIGURE_ARGS+=	--enable-xcwcp
 .else
 PLIST_SUB+=	XCWCP="@comment "
+CONFIGURE_ARGS+=	--disable-xcwcp
 .endif
-MAN7=		cw.7 CW.7
-MANCOMPRESSED=	yes
-USE_AUTOTOOLS=	autoconf
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-AUTOTOOLSFILES=	configure.ac
+USE_CSTD=	gnu99
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
 pre-extract:
 .if !defined(WITH_XCWCP)
 	@${ECHO_CMD}
@@ -43,9 +38,5 @@ pre-extract:
 	@${ECHO_CMD}
 	@sleep 3
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|%%LIBDATA%%|${PREFIX}/libdata|" \
-	${WRKSRC}/src/cwlib/Makefile
 
 .include <bsd.port.mk>

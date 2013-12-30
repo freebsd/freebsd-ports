@@ -9,15 +9,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	hash_ring-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An implementation of consistent hashing in Python
+COMMENT=	Implementation of consistent hashing in Python
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}memcached>=0:${PORTSDIR}/databases/py-memcached
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	hash_ring
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -5,8 +5,6 @@ PORTNAME=	freebsd-uucp
 PORTVERSION=	1.07.3
 PORTREVISION=	1
 CATEGORIES=	net comms ipv6
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=dinoex
 PKGNAMESUFFIX?=	${PAM_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -14,21 +12,24 @@ COMMENT=	FreeBSD-modified Taylor UUCP (unix-to-unix copy program)
 
 NEED_ROOT=	yes
 
-USE_BZIP2=	yes
+USE_GITHUB=	yes
+GH_ACCOUNT=	dinoex
+GH_TAGNAME=     r1_07_3
+GH_COMMIT=	6355e29
+
 PKGMESSAGE=	${WRKDIR}/pkg-message
 INFO=	uucp
 VARLOG=	uucp/common_sources/policy.h uucp/uucico/uucico.8 \
 	uucp/uucp/uucp.1 uucp/uux/uux.1 uucp/uuxqt/uuxqt.8
-POLICY=	uucp/common_sources/policy.h
 FIXME=	etc/periodic/daily/340.uucp etc/periodic/daily/410.status-uucp \
 	etc/periodic/weekly/300.uucp
-BPKGNAME=	base-uucp-1.06.1
 
 # fix errros for -std=iso9899:1999 in FreeBSD 5.1
 MAKE_ENV+=	CSTD=gnu99
 
 OPTIONS_DEFINE=PAM ENCRYPTED_PASSWORDS VAR_LOG
 OPTIONS_DEFAULT=
+OPTIONS_SUB=	yes
 NO_OPTIONS_SORT=yes
 ENCRYPTED_PASSWORDS_DESC=	use encrypted passwords in etc/uucp/sys
 VAR_LOG_DESC=			put logfiles into /var/log
@@ -47,14 +48,14 @@ CONFLICTS?=	freebsd-uucp-pam-1.*
 MAKE_ENV+=	WITH_ENCRYPTED_PASSWORDS=1
 .endif
 
-.if ${OSVERSION} > 1000000
-BUILD_DEPENDS=	cvs:${PORTSDIR}/devel/cvs
-.endif
-
 post-extract:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \
-		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} extract)
 	${REINPLACE_CMD} -e 's|doc ||' ${WRKSRC}/uucp/Makefile
+	${REINPLACE_CMD} -e 's|VERSION=.*|VERSION=${PORTVERSION}|' \
+		${WRKSRC}/uucp/common_sources/configure \
+		${WRKSRC}/uucp/Makefile.inc
+	${REINPLACE_CMD} -e 's|(owner)|(uucpowner)|' \
+		${WRKSRC}/uucp/uustat/Makefile
+	${REINPLACE_CMD} -e 's|0770|0750|' ${WRKSRC}/local.mtree
 
 do-configure:
 	${REINPLACE_CMD} -e "s=/usr/local/=${PREFIX}/=" \
@@ -77,7 +78,7 @@ do-configure:
 .if ${PORT_OPTIONS:MENCRYPTED_PASSWORDS}
 	${REINPLACE_CMD} \
 		-e "s=HAVE_ENCRYPTED_PASSWORDS.*=HAVE_ENCRYPTED_PASSWORDS 1=" \
-		${WRKSRC}/${POLICY}
+		${WRKSRC}/uucp/common_sources/policy.h
 .endif
 	@${CAT} pkg-message > ${WRKDIR}/pkg-message
 .if ${PORT_OPTIONS:MPAM}
@@ -92,27 +93,9 @@ pre-install:
 	${MKDIR} ${STAGEDIR}/var
 
 post-install:
-	-${MKDIR} ${STAGEDIR}${PREFIX}/info
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mtree ${STAGEDIR}${PREFIX}/info
+	${INSTALL_DATA} ${WRKSRC}/uucp.mtree ${STAGEDIR}${PREFIX}/etc/mtree/uucp-var.mtree
+	${INSTALL_DATA} ${WRKSRC}/local.mtree ${STAGEDIR}${PREFIX}/etc/mtree/uucp-local.mtree
 	${INSTALL_DATA} ${WRKSRC}/uucp/doc/uucp.info ${STAGEDIR}${PREFIX}/info/
-	${CHOWN} uucp:uucp ${STAGEDIR}${PREFIX}/etc/uucp
-	${CHMOD} 750 ${STAGEDIR}${PREFIX}/etc/uucp
-	@${ECHO_CMD} "updating ${ROOTDIR}/etc/services"
-	@${CP} ${ROOTDIR}/etc/services ${ROOTDIR}/etc/services.bak
-	@(grep -v ^suucp ${ROOTDIR}/etc/services.bak; \
-	${ECHO_CMD} "suucp           4031/tcp   #UUCP over SSL"; \
-	${ECHO_CMD} "suucp           4031/udp   #UUCP over SSL" ) \
-		> ${ROOTDIR}/etc/services
-.if !defined(BATCH)
-	@if test "$$(pw usershow uucp)" != "uucp:*:66:66::0:0:UUCP pseudo-user:/var/spool/uucppublic:${PREFIX}/libexec/uucp/uucico"; then \
-	pw usermod uucp -s ${PREFIX}/libexec/uucp/uucico; fi
-	@pw usershow uucp
-.endif
-	@${ECHO_MSG} "Use the 'make upgrade' command to copy your old configuration"
-	@${ECHO_MSG} "files from /etc/uucp to the new location in ${PREFIX}/etc/uucp"
-	@${ECHO_MSG}
-
-upgrade:
-	@${ECHO_MSG} "Copying old configuration files from /etc/uucp to ${PREFIX}/etc/uucp"
-	@${CP} -rp /etc/uucp ${PREFIX}/etc/uucp
 
 .include <bsd.port.mk>

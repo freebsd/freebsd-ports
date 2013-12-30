@@ -1,5 +1,5 @@
 bin/newsbeuter
-bin/podbeuter
+%%PODCAST%%bin/podbeuter
 share/locale/de/LC_MESSAGES/newsbeuter.mo
 share/locale/es/LC_MESSAGES/newsbeuter.mo
 share/locale/es_ES/LC_MESSAGES/newsbeuter.mo
@@ -19,5 +19,7 @@ share/locale/zh_TW/LC_MESSAGES/newsbeuter.mo
 share/doc/newsbeuter/docbook-xsl.css
 share/doc/newsbeuter/newsbeuter.html
 share/doc/newsbeuter/examples/config
+man/man1/newsbeuter.1.gz
+%%PODCAST%%man/man1/podbeuter.1.gz
 @dirrm share/doc/newsbeuter/examples
 @dirrm share/doc/newsbeuter

@@ -10,18 +10,10 @@ MAINTAINER=	db@FreeBSD.org
 COMMENT=	Grid square calculator program used in Amateur Radio and GPS work
 
 CONFLICTS=	wwl*
-PORTDOCS=	README
-PLIST_FILES=	bin/locator
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/locator ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${ECHO} ""
-	@${ECHO} "locator README installed in ${DOCSDIR}"
-	@${ECHO} ""
-.endif
+	@${INSTALL_PROGRAM} ${WRKSRC}/locator ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

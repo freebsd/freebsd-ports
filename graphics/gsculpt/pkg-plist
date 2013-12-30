@@ -486,6 +486,7 @@ lib/gSculpt/libView.so
 %%PYTHON_SITELIBDIR%%/Britefury/gSculptConfig/gSculptConfig.pyc
 %%PYTHON_SITELIBDIR%%/Britefury/gSculptConfig/gSculptUserConfig.pyc
 %%PYTHON_SITELIBDIR%%/gsculpt.py
+%%PYTHON_SITELIBDIR%%/gsculpt.pyc
 %%DATADIR%%/gsimages/background_images.png
 %%DATADIR%%/gsimages/background_models.png
 %%DATADIR%%/gsimages/draw_backg_transparent.png

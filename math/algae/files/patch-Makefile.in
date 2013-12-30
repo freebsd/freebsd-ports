@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sun May 18 17:22:07 2003
-+++ Makefile.in	Sun May 18 17:23:00 2003
+--- Makefile.in.orig
++++ Makefile.in
 @@ -78,12 +78,12 @@
  libdir = $(prefix)/lib
  
@@ -112,23 +112,39 @@
  
  clean mostlyclean distclean maintainer-clean::
  	rm -f a.out core conft* algae-*.tar algae-*.tar.gz
-@@ -297,12 +293,9 @@
- 	$(INSTALL_DATA) algae.A $(RC0)
- 	$(INSTALL_DATA) COPYING $(htmldir)
- 	$(INSTALL_DATA) LICENSE $(htmldir)
+@@ -294,15 +290,12 @@
+ # >>>> End of deleted section.
+ 
+ install: algae.A installdirs
+-	$(INSTALL_DATA) algae.A $(RC0)
+-	$(INSTALL_DATA) COPYING $(htmldir)
+-	$(INSTALL_DATA) LICENSE $(htmldir)
 -	cd src; \
 -	  $(MAKE) bindir=$(bindir) install
 -	cd tools; \
 -	  $(MAKE) tooldir=$(tooldir) install
 -	cd doc; \
 -	  $(MAKE) mandir=$(mandir) datadir=$(datadir) \
++	$(INSTALL_DATA) algae.A $(DESTDIR)$(RC0)
++	$(INSTALL_DATA) COPYING $(DESTDIR)$(htmldir)
++	$(INSTALL_DATA) LICENSE $(DESTDIR)$(htmldir)
 +	$(MAKE) -C src bindir=$(bindir) install
 +	$(MAKE) -C tools tooldir=$(tooldir) install
 +	$(MAKE) -C doc mandir=$(mandir) datadir=$(datadir) \
  	  manext=$(manext) infodir=$(infodir) htmldir=$(htmldir) install
  .PHONY:	install
  
-@@ -318,9 +311,9 @@
+@@ -310,17 +303,17 @@
+ # if necessary.
+ 
+ installdirs: mkinstalldirs
+-	$(srcdir)/mkinstalldirs $(bindir) $(datadir) $(libdir) $(infodir) \
+-          $(mandir) $(tooldir) $(rcdir) $(htmldir)
++	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir) $(DESTDIR)$(libdir) $(DESTDIR)$(infodir) \
++          $(DESTDIR)$(mandir) $(DESTDIR)$(tooldir) $(DESTDIR)$(rcdir) $(DESTDIR)$(htmldir)
+ .PHONY:	installdirs
+ 
+ # Why would anyone want to uninstall?
  
  uninstall:
  	rm -f $(RC0)

@@ -18,9 +18,9 @@ USE_ZIP=	yes
 USE_AUTOTOOLS=	libtool autoconf
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
-NO_STAGE=	yes
+USES=	gmake
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000

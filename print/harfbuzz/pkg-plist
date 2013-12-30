@@ -4,10 +4,11 @@ bin/hb-view
 include/harfbuzz/hb-blob.h
 include/harfbuzz/hb-buffer.h
 include/harfbuzz/hb-common.h
+include/harfbuzz/hb-deprecated.h
+include/harfbuzz/hb-face.h
 include/harfbuzz/hb-font.h
 include/harfbuzz/hb-ft.h
 include/harfbuzz/hb-glib.h
-include/harfbuzz/hb-gobject.h
 include/harfbuzz/hb-graphite2.h
 include/harfbuzz/hb-icu.h
 include/harfbuzz/hb-ot-layout.h
@@ -27,4 +28,45 @@ lib/libharfbuzz.so
 lib/libharfbuzz.so.0
 libdata/pkgconfig/harfbuzz-icu.pc
 libdata/pkgconfig/harfbuzz.pc
+share/gtk-doc/html/harfbuzz/annotation-glossary.html
+share/gtk-doc/html/harfbuzz/api-index-full.html
+share/gtk-doc/html/harfbuzz/ch01.html
+share/gtk-doc/html/harfbuzz/deprecated-api-index.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-blob.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-buffer.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-common.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-coretext.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-deprecated.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-face.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-font.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-ft.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-glib.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-gobject.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-graphite2.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-icu.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-layout.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-tag.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-set.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-shape-plan.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-shape.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-unicode.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-uniscribe.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb-version.html
+share/gtk-doc/html/harfbuzz/harfbuzz-hb.html
+share/gtk-doc/html/harfbuzz/harfbuzz.devhelp2
+share/gtk-doc/html/harfbuzz/home.png
+share/gtk-doc/html/harfbuzz/index.html
+share/gtk-doc/html/harfbuzz/index.sgml
+share/gtk-doc/html/harfbuzz/left-insensitive.png
+share/gtk-doc/html/harfbuzz/left.png
+share/gtk-doc/html/harfbuzz/object-tree.html
+share/gtk-doc/html/harfbuzz/right-insensitive.png
+share/gtk-doc/html/harfbuzz/right.png
+share/gtk-doc/html/harfbuzz/style.css
+share/gtk-doc/html/harfbuzz/up-insensitive.png
+share/gtk-doc/html/harfbuzz/up.png
+@dirrm share/gtk-doc/html/harfbuzz
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
 @dirrm include/harfbuzz

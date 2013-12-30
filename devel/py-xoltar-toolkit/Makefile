@@ -11,21 +11,17 @@ DISTNAME=	${PORTNAME}-01jun01
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functional programming, lazy expressions, and thread pools for Python
 
-USE_PYTHON=	yes
+USE_PYTHON=	2
 NO_WRKSUBDIR=	yes
 
-NO_STAGE=	yes
 do-build:
-	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
-	@ ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	@ ${INSTALL_DATA} ${WRKSRC}/*.py* ${PYTHON_SITELIBDIR}
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.py* ${STAGEDIR}${PYTHON_SITELIBDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

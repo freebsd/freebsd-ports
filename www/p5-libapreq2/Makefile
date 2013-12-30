@@ -11,5 +11,4 @@ MASTERDIR=	${.CURDIR}/../libapreq2
 WITH_MODPERL2=	yes
 MAKE_ENV+=	MAKE=${GMAKE} ## MakeMaker blows it without this
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

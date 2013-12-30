@@ -65,6 +65,9 @@ LZO_CONFIGURE_OFF=	--disable-liblzo
 NAS_LIB_DEPENDS=	libaudio.so:${PORTSDIR}/audio/nas
 NAS_CONFIGURE_OFF=	--disable-nas
 
+OPENAL_USES=		openal:soft
+OPENAL_CONFIGURE_OFF=	--disable-openal
+
 OPENJPEG_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg
 OPENJPEG_CONFIGURE_OFF=	--disable-libopenjpeg
 

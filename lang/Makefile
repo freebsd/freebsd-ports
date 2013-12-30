@@ -31,7 +31,6 @@
     SUBDIR += cfortran
     SUBDIR += chicken
     SUBDIR += cint
-    SUBDIR += clang
     SUBDIR += clang-devel
     SUBDIR += clang31
     SUBDIR += clang32
@@ -323,7 +322,6 @@
     SUBDIR += sisc
     SUBDIR += sketchy
     SUBDIR += slib
-    SUBDIR += slib-gauche
     SUBDIR += slib-guile
     SUBDIR += slisp
     SUBDIR += smalltalk

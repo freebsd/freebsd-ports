@@ -44,17 +44,15 @@ CMAKE_ARGS=	-DKADU_VERSION:STRING="${DISTVERSION}" -DWITH_ENCHANT=ON
 USE_QT4=	dbus gui network phonon script scripttools webkit xml \
 		linguist_build moc_build qmake_build rcc_build uic_build \
 		imageformats_run sql-sqlite3_run
-WANT_GNOME=	yes
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	GG_EMOTS
 OPTIONS_SUB=	yes
-GG_EMOTS_DESC=	Install GG-compatible emoticons
+GG_EMOTS_DESC=	GG-compatible emoticons
 
 GG_EMOTS_DISTFILES=	${GG6_EMOTS_DISTFILE}:additions \
 			${GG7_EMOTS_DISTFILE}:additions
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} > 1000051
@@ -77,7 +75,7 @@ post-install:
 	${MV} kompatybilne_z_GG6 gg6_compatible && \
 	cd gg6_compatible && ${TAR} -zxf ${_DISTDIR}/${GG7_EMOTS_DISTFILE}
 	@cd ${WRKSRC}/varia/themes/emoticons && \
-	${COPYTREE_SHARE} gg6_compatible ${DATADIR}/themes/emoticons
+	${COPYTREE_SHARE} gg6_compatible ${STAGEDIR}${DATADIR}/themes/emoticons
 .endif
 
 .include <bsd.port.mk>

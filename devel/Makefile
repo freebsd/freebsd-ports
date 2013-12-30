@@ -648,7 +648,6 @@
     SUBDIR += hs-BNFC
     SUBDIR += hs-Boolean
     SUBDIR += hs-ConfigFile
-    SUBDIR += hs-DeepArrow
     SUBDIR += hs-HUnit
     SUBDIR += hs-IORefCAS
     SUBDIR += hs-IfElse
@@ -793,7 +792,6 @@
     SUBDIR += hs-quickcheck-io
     SUBDIR += hs-random
     SUBDIR += hs-ranges
-    SUBDIR += hs-reactive
     SUBDIR += hs-readline
     SUBDIR += hs-reflection
     SUBDIR += hs-resource-pool
@@ -1234,7 +1232,6 @@
     SUBDIR += mongo-c-driver
     SUBDIR += mongo-cxx-driver
     SUBDIR += mono-addins
-    SUBDIR += mono-tools
     SUBDIR += monodevelop
     SUBDIR += monodevelop-database
     SUBDIR += monotone
@@ -1259,7 +1256,6 @@
     SUBDIR += ncc
     SUBDIR += ncnf
     SUBDIR += ncurses
-    SUBDIR += ncurses-devel
     SUBDIR += ndesk-dbus
     SUBDIR += ndesk-dbus-glib
     SUBDIR += ndesk-options
@@ -1463,6 +1459,7 @@
     SUBDIR += p5-Bread-Board-Declare
     SUBDIR += p5-Bundle-Perl6
     SUBDIR += p5-C-Scan
+    SUBDIR += p5-CBOR-XS
     SUBDIR += p5-CHI
     SUBDIR += p5-CLASS
     SUBDIR += p5-CPAN-Changes
@@ -3692,7 +3689,6 @@
     SUBDIR += py-pip
     SUBDIR += py-plex
     SUBDIR += py-ply
-    SUBDIR += py-pmock
     SUBDIR += py-polib
     SUBDIR += py-posix_ipc
     SUBDIR += py-pp
@@ -4035,7 +4031,6 @@
     SUBDIR += ruby-byaccr
     SUBDIR += ruby-cache
     SUBDIR += ruby-calendar
-    SUBDIR += ruby-cvs
     SUBDIR += ruby-date2
     SUBDIR += ruby-dialogs
     SUBDIR += ruby-event-loop
@@ -4381,6 +4376,7 @@
     SUBDIR += shiboken
     SUBDIR += shmap
     SUBDIR += showgrammar
+    SUBDIR += shtk
     SUBDIR += shtool
     SUBDIR += sigslot
     SUBDIR += silc-toolkit

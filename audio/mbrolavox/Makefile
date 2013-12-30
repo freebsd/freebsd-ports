@@ -12,7 +12,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voices for MBROLA voice synthesizer
 
 USE_ZIP=	yes
-NO_STAGE=	yes
 NO_BUILD=	yes
 RESTRICTED=	No commercial nor military use, no sale
 WRKSRC=		${WRKDIR}/voices
@@ -46,7 +45,7 @@ do-extract:
 .endfor
 
 do-install:
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${DATADIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 
 # Generates OPTIONS file from voices.conf -- really for maintainer use
 # Only included for compatibility with anyone who wants to modify voices.conf

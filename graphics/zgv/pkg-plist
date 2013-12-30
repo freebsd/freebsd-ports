@@ -1,0 +1,12 @@
+@mode 4555
+bin/zgv
+@mode
+etc/zgvrc.sample
+info/zgvrc.info
+man/man1/zgv.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/SECURITY
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

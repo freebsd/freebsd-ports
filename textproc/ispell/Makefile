@@ -102,7 +102,8 @@ EXTRACT_ONLY+=	${BRDISTFILE}
 DENEUDISTFILE=	igerman98-20071211.tar.bz2
 MASTER_SITES+=	http://www.j3e.de/ispell/igerman98/dict/:denu
 EXTRA_DICT+=	${DENEUDISTFILE}:denu
-USE_GMAKE=	yes
+USES+=		gmake
+MAKE_ARGS+=	MAKE=${GMAKE}
 .endif
 .if defined(ISPELL_DEALT)
 DEALTDISTFILE=	hk-deutsch.tar.gz
@@ -116,7 +117,7 @@ MASTER_SITES+=	http://folk.uio.no/runekl/:no
 EXTRA_DICT+=	${NODISTFILE}:no
 EXTRACT_ONLY+=	${NODISTFILE}
 MASKBITS?=	64
-USE_GMAKE=	yes
+USES+=		gmake
 .endif
 .if defined(ISPELL_NL)
 NLDISTFILE=	ispell-nl-1.0.0.tar.gz

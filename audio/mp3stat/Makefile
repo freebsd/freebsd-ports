@@ -19,12 +19,12 @@ OPTIONS_DEFAULT=	VORBIS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		gmake pkgconfig
-NO_STAGE=	yes
+USES=		dos2unix gmake pkgconfig
+DOS2UNIX_FILES=	ui/console/cli.cpp
 USE_GNOME=	gtk20
 
-CXX+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib \
-		-Wl,--rpath,${LOCALBASE}/lib
+CXXFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -Wl,--rpath,${LOCALBASE}/lib
 
 PORTDOCS=	README
 PLIST_FILES=	bin/mp3stat \
@@ -46,23 +46,25 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|@$${CXX}|$${CXX}|g ; \
 		 s|-ldl|-lz|g ; \
-		 s|-lc||g ; \
+		 s|-lc|$${LDFLAGS}|g ; \
 		 s|-Wl,-soname,.*\.so\.1||g ; \
 		 s|-fpic|-fPIC|g ; \
 		 s|^CXX|#CXX|g'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mp3stat ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/lib/mp3stat
-	${INSTALL_DATA} ${WRKSRC}/ui/gtk/ui_gtk2.so ${PREFIX}/lib/mp3stat
-	${INSTALL_DATA} ${WRKSRC}/ui/console/ui_console.so ${PREFIX}/lib/mp3stat
-	${INSTALL_DATA} ${WRKSRC}/input/mp3/input_mp3.so ${PREFIX}/lib/mp3stat
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} mp3stat ${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/mp3stat
+	(cd ${WRKSRC}/ui/gtk && ${INSTALL_DATA} ui_gtk2.so \
+		${STAGEDIR}${PREFIX}/lib/mp3stat)
+	(cd ${WRKSRC}/ui/console && ${INSTALL_DATA} ui_console.so \
+		${STAGEDIR}${PREFIX}/lib/mp3stat)
+	(cd ${WRKSRC}/input/mp3 && ${INSTALL_DATA} input_mp3.so \
+		${STAGEDIR}${PREFIX}/lib/mp3stat)
 .if ${PORT_OPTIONS:MVORBIS}
-	${INSTALL_DATA} ${WRKSRC}/input/vorbis/input_vorb.so ${PREFIX}/lib/mp3stat
+	(cd ${WRKSRC}/input/vorbis && ${INSTALL_DATA} input_vorb.so \
+		${STAGEDIR}${PREFIX}/lib/mp3stat)
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

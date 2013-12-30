@@ -15,10 +15,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-x --without-xshogi
 MAKE_JOBS_UNSAFE=	yes
 
-MAN6=		gnushogi.6
 INFO=		gnushogi
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../games/gnushogi/Makefile.common"
 .include <bsd.port.pre.mk>
 
@@ -26,7 +24,7 @@ post-extract:
 	-@${RM} ${WRKSRC}/doc/gnushogi.info*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/lib/gnushogi|/share/gnushogi|g' \
+	@${REINPLACE_CMD} -e 's|/lib/gnushogi|/${DATADIR_REL}|g' \
 		${WRKSRC}/gnushogi/Makefile.in
 	@${REINPLACE_CMD} -e '/HAVE_SETLINEBUF/s|ifdef|ifndef|' \
 		${WRKSRC}/gnushogi/gnushogi.h
@@ -35,18 +33,18 @@ pre-build:
 	cd ${WRKSRC}/doc && makeinfo --no-split gnushogi
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gnushogi/gnushogi ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/gnushogi.6 ${MANPREFIX}/man/man6
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/gnushogi/gnushogi.bbk ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/gnushogi.info ${PREFIX}/info
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/BOOKFILES ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/PORTING ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.gam ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.rules ${DOCSDIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/gnushogi/gnushogi ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/doc/gnushogi.6 ${STAGEDIR}${MANPREFIX}/man/man6
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/gnushogi/gnushogi.bbk ${STAGEDIR}${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/gnushogi.info ${STAGEDIR}${PREFIX}/info
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/BOOKFILES ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/PORTING ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.gam ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/*.rules ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

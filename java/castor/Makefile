@@ -27,18 +27,13 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}-anttasks.jar \
 PORTDOCS=	*.html *.txt *.css *.dtd *.xsd *.pdf \
 		ora-mar-2k images rss
 
-NO_STAGE=	yes
 do-install:
 .for f in ${PLIST_FILES:T:R}
-	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${f}.jar..."
-	@${INSTALL_DATA} \
+	${INSTALL_DATA} \
 		${WRKSRC}/${f:S/tor/tor-${PORTVERSION}/}.jar \
-		${JAVAJARDIR}/${f}.jar
-	@${ECHO_MSG} " [ DONE ]"
+		${STAGEDIR}${JAVAJARDIR}/${f}.jar
 .endfor
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

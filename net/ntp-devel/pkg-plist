@@ -7,6 +7,7 @@ sbin/ntpq
 sbin/ntptime
 sbin/ntptrace
 sbin/sntp
+share/ntp/lib/NTP/Util.pm
 %%PORTDOCS%%%%DOCSDIR%%/access.html
 %%PORTDOCS%%%%DOCSDIR%%/accopt.html
 %%PORTDOCS%%%%DOCSDIR%%/assoc.html
@@ -354,6 +355,7 @@ sbin/sntp
 %%PORTDOCS%%%%DOCSDIR%%/ntpdsim_new.html
 %%PORTDOCS%%%%DOCSDIR%%/ntpq.html
 %%PORTDOCS%%%%DOCSDIR%%/ntpsnmpd.html
+%%PORTDOCS%%%%DOCSDIR%%/ntpsweep.html
 %%PORTDOCS%%%%DOCSDIR%%/ntptime.html
 %%PORTDOCS%%%%DOCSDIR%%/ntptrace.html
 %%PORTDOCS%%%%DOCSDIR%%/orphan.html
@@ -491,5 +493,8 @@ sbin/sntp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/drivers/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/drivers
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm share/ntp/lib/NTP
+%%PORTDOCS%%@dirrm share/ntp/lib
+%%PORTDOCS%%@dirrm share/ntp
 %%PORTDOCS%%@dirrm share/doc/sntp
 @dirrm %%EXAMPLESDIR%%

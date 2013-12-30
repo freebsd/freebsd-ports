@@ -8,12 +8,13 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://plib.sourceforge.net/dist/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A portable library for joystick/sound/OpenGL GUI/3D math
+COMMENT=	Portable library for joystick/sound/OpenGL GUI/3D math
 
 USES=		gmake
 USE_XORG=	xt xi xmu xext x11
 USE_GL=		glu
 GNU_CONFIGURE=	yes
+NEED_ROOT=	yes
 
 CXXFLAGS+=	-fPIC
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}

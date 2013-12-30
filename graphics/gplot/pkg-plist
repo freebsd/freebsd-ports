@@ -1,7 +1,4 @@
 bin/gplot
 bin/gtex
 lib/libcgm.a
-%%PORTDOCS%%share/doc/Gplot/gplot.hlp.gz
-%%PORTDOCS%%share/doc/Gplot/gplot.txt.gz
-%%PORTDOCS%%share/doc/Gplot/gtex.doc.gz
-%%PORTDOCS%%@dirrm share/doc/Gplot
+man/man1/gplot.1.gz

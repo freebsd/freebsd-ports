@@ -161,7 +161,7 @@ kye-data_nuke_levels.20121101.tar.gz games/kye	kye-data_nuke_levels is charitywa
 kzip-*			archivers/kzip		No redistribution allowed
 l0phtcrack/*		security/l0phtcrack	Parts are under GPL, so binaries should not be distributed.  Contains crypto code from OpenSSL
 ladder.tar		games/ladder		Possible copyright problems
-lame*			audio/lame		May be patented
+lame*			audio/lame		patent issues, see http://www.mp3licensing.com/
 lgrind/*		print/lgrind		Contains non-free code written by Van Jacobson
 lha-1.14i-ac*		archivers/lha-ac	No redistribution allowed
 libaacplus-*		audio/libaacplus	Unclear legal status
@@ -224,7 +224,6 @@ rftg-*			games/rftg		Redistribution not authorized
 ricty-*			japanese/font-ricty	Redistribution not allowed
 ringtonetools-*		misc/ringtonetools	Not free for commercial organizations
 rsmb-*			net/rsmb		Must register for account on IBM web site, must agree to license before downloading, and no redistribution allowed
-savage/Samuraiwars*	games/linux-savage-samuraiwars	Freeware, but license terms are unclear
 savage/SFE*		games/linux-savage	Freeware, but license terms are unclear
 scv-1.0p2-sysc*		cad/scv			License agreement required
 seatools_cli.tar	sysutils/seatools	Distfile should be loaded by hand
@@ -272,7 +271,6 @@ UniFi.unix.zip		net-mgmt/unifi		Redistribution limited
 uplink-demo*		games/linux-uplink-demo	Redistribution is limited, see license
 uppaal-*.zip		devel/uppaal		Downloading requires completion of a license agreement
 ut2004-lnx-*		games/linux-ut2004-demo	Redistribution limited
-ut_linux_mgr_*		sysutils/linux-megamgr	Redistribution prohibited
 uzap.tar.gz		editors/uzap		This software may not be used to make a profit in any way.
 vdr-markad-*		multimedia/vdr-plugin-markad	Installs station logos
 ventrilo_srv-*		audio/ventrilo-server	May not be redistributed.  For personal use only.  Must accept license to download.

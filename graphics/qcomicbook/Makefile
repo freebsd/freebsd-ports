@@ -3,7 +3,7 @@
 
 PORTNAME=	qcomicbook
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://qcomicbook.linux-projects.net/releases/
 
@@ -12,7 +12,7 @@ COMMENT=	Qt-based comic book archive viewer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	poppler-qt4:${PORTSDIR}/graphics/poppler-qt4
+LIB_DEPENDS=	libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
 		unrar:${PORTSDIR}/archivers/unrar
 USE_QT4=	corelib gui linguist_build moc_build qmake_build rcc_build \

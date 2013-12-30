@@ -1,0 +1,11 @@
+--- src/xcwcp/Makefile.in.orig	2013-12-30 10:51:06.000000000 -0500
++++ src/xcwcp/Makefile.in	2013-12-30 10:51:22.000000000 -0500
+@@ -380,7 +380,7 @@
+ # target-specific preprocessor flags (#defs and include dirs)
+ xcwcp_CPPFLAGS = $(AM_CPPFLAGS) $(AC_QT4CFLAGS) #-I$(AC_QT4INC)/QtCore -I$(AC_QT4INC)/QtGui
+ # target-specific linker flags (objects to link)
+-xcwcp_LDADD = -L$(top_builddir)/src/libcw/.libs -lcw -lQtGui -lQtCore $(top_builddir)/src/cwutils/lib_xcwcp.a
++xcwcp_LDADD = -L$(top_builddir)/src/libcw/.libs -L$(QT4LIBS)  -lcw -lQtGui -lQtCore $(top_builddir)/src/cwutils/lib_xcwcp.a
+ 
+ # copy man page to proper directory during installation
+ man_MANS = xcwcp.1

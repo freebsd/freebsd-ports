@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zsh
-PORTVERSION=	5.0.2
-PORTREVISION=	1
+PORTVERSION=	5.0.4
 CATEGORIES=	shells
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}-doc/${PORTVERSION}:doc
@@ -128,5 +127,10 @@ post-install:
 			zcompile -U -M $$i.zwc $$i/*~*.zwc(^/) ; \
 			${CHMOD} 644 $$i.zwc ; \
 		done'
+
+regression-test:
+	@cd ${WRKSRC}; ${SETENV} -i ${MAKE} check
+
+
 
 .include <bsd.port.mk>

@@ -17,7 +17,6 @@ RUN_DEPENDS=	R-cran-httpuv>=1.2.0:${PORTSDIR}/www/R-cran-httpuv \
 		R-cran-xtable>0:${PORTSDIR}/textproc/R-cran-xtable \
 		R-cran-digest>0:${PORTSDIR}/security/R-cran-digest
 
-USE_R_MOD=	yes
-R_MOD_AUTOPLIST=	yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>

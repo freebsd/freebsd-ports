@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	319.32
+DISTVERSION?=	331.20
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
-CATEGORIES=	x11 kld
+CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
 # MASTER_SITE_SUBDIR has to be set later because it depends on NVVERSION
 DISTNAME=	NVIDIA-FreeBSD-x86${ARCH_SUFX}-${DISTVERSION}
@@ -18,8 +18,8 @@ LICENSE_NAME=	License For Customer Use of NVIDIA Software
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
-SSP_UNSAFE=	kernel module does not support ssp
 ARCH_SUFX=	${ARCH:S/i386//:S/amd/_/}
+USES=		kmod
 USE_XORG=	xorg-server
 USE_GL=		gl
 USE_LDCONFIG=	yes
@@ -29,9 +29,8 @@ USE_LDCONFIG=	yes
 # -Wmissing-include-dirs was added for kernel sources.  Until properly
 # fixed upstream (across all versions, including legacy ones), use this
 # hack below to universally set NVIDIA_ROOT.  Also provide X11BASE value
-# since it is going away from `Mk/bsd.port.mk' as deprecated.
-MAKE_ENV=	NVIDIA_ROOT=${WRKSRC} X11BASE=${LOCALBASE} \
-		SYSDIR=${SRC_BASE}/sys
+# since it is still used by legacy drivers.
+MAKE_ENV=	NVIDIA_ROOT=${WRKSRC} X11BASE=${LOCALBASE}
 SUB_FILES=	pkg-deinstall pkg-install pkg-message
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 MODULESDIR=	lib/xorg/modules
@@ -100,7 +99,7 @@ IGNORE=		requires fairly recent FreeBSD-STABLE, or FreeBSD-CURRENT
 .endif
 
 .if ${NVVERSION} < 1952200
-# ABI version is hardcoded inside the binary, so specify it explicitly
+# ABI version is hardcoded inside the binary, so specify it explicitly here
 LIB_DEPENDS=	libm.so.3:${PORTSDIR}/misc/compat5x
 .endif
 
@@ -243,6 +242,10 @@ post-install: .SILENT
 	${REINPLACE_CMD} -e '/libXvMCNVIDIA/d' ${TMPPLIST}
 .else	# some applications need this symlink (see PR ports/72877)
 	${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
+.endif
+.if ${NVVERSION} < 3311300
+	${REINPLACE_CMD} -E '/lib(nvidia-)?(EGL|eglcore|GLESv|glsi)/d' \
+		${TMPPLIST}
 .endif
 .if ${NVVERSION} >= 1952200
 	${REINPLACE_CMD} -e '/does not support PAE/,+1d' ${PKGMESSAGE}

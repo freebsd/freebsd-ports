@@ -11,17 +11,17 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scanning, Parsing, and Rewriting Kit
 
-USE_PYTHON=	yes
+USE_PYTHON=	2
 NO_BUILD=	yes
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/spark.py ${PYTHON_SITELIBDIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/spark.py ${STAGEDIR}${PYTHON_SITELIBDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in doc.html doc.tex paper.ps.gz
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

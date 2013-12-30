@@ -15,6 +15,8 @@ COMMENT=	Portable version of NetBSD 'make' utility
 
 LICENSE=	BSD
 
+PORTSCOUT=	skipv:200910007
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:	.SILENT

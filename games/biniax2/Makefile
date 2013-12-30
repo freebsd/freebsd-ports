@@ -3,7 +3,7 @@
 
 PORTNAME=	biniax2
 PORTVERSION=	1.30
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	http://mordred.dir.bg/biniax/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -13,10 +13,13 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Original logic game with arcade and tactics modes
 
 USE_SDL=	sdl mixer image
-USE_DOS2UNIX=	yes
+USES=		dos2unix
+DOS2UNIX_FILES=	biniax.c
 NO_WRKSUBDIR=	yes
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/${PORTNAME}
+PORTDATA=	*
+
 post-patch:
 	@${RM} -f ${WRKSRC}/data/Thumbs.db
 	@${REINPLACE_CMD} -e 's|data/|${DATADIR}/|g' \
@@ -29,8 +32,7 @@ do-build:
 		-lSDL_image -lSDL_mixer -o ${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>

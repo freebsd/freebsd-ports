@@ -3,10 +3,12 @@
 
 PORTNAME=	boinc-setiathome-v7
 PORTVERSION=	7.00
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro
-MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+#MASTER_SITES+=	ftp://rene-ladan.nl/pub/distfiles/
 DISTNAME=	setiathome-svn-1924 # modified archive, see leftout in top directory
+MASTER_SITE_SUBDIR=rene
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Setiathome Enhanced for BOINC
@@ -23,8 +25,6 @@ USE_XZ=		yes
 USE_AUTOTOOLS=	autoconf:env automake:env
 GNU_CONFIGURE=	yes
 
-NEED_ROOT=	yes
-
 CFLAGS+=	-O2 -I${LOCALBASE}/include/boinc -I${LOCALBASE}/include \
 		-L${LOCALBASE}/lib
 .if defined(CPUTYPE)
@@ -40,19 +40,18 @@ OPTIONS_DEFINE=	X11
 
 X11_DESC=	Build screensaver (requires net/boinc-client with X11)
 
+OPTIONS_SUB=	yes
+
+X11_BUILD_DEPENDS=	${LOCALBASE}/lib/libboinc_graphics2.a:${PORTSDIR}/net/boinc-client
+X11_LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
+X11_USE=		GL=gl,glu,glut \
+			XORG=ice,sm,x11,xau,xcb,xext,xi,xdamage,xdmcp,xfixes,xmu,xt,xxf86vm
+X11_CONFIGURE_ENABLE=	graphics
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MX11}
-LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
-USE_GL=		gl glu glut
-USE_XORG=	ice sm x11 xau xcb xext xi xdamage xdmcp xfixes xmu xt xxf86vm
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libboinc_graphics2.a:${PORTSDIR}/net/boinc-client
-PLIST_SUB+=	X11=""
-CONFLICTS=	boinc-setiathome-enhanced-[0-9]*
-.else
+.if ! ${PORT_OPTIONS:MX11}
 BUILD_DEPENDS+=	${LOCALBASE}/include/boinc/std_fixes.h:${PORTSDIR}/net/boinc-client
-CONFIGURE_ARGS+=	--disable-graphics
-PLIST_SUB+=	X11="@comment "
 .endif
 
 .if ${ARCH} == i386 || ${ARCH} == amd64
@@ -80,10 +79,12 @@ SUB_LIST=	SETI_BINARY=${SETI_BINARY} \
 		BOINC_CLIENT_HOME=${BOINC_CLIENT_HOME} \
 		BOINC_CLIENT_USER=${BOINC_CLIENT_USER} \
 		BOINC_CLIENT_GROUP=${BOINC_CLIENT_GROUP}
-PLIST_SUB+=	SETI_BINARY=${SETI_BINARY} \
+PLIST_SUB+=	PREFIX=${PREFIX} \
+		SETI_BINARY=${SETI_BINARY} \
 		SETI_SITE=${SETI_SITE} \
 		BOINC_CLIENT_HOME=${BOINC_CLIENT_HOME} \
-		PREFIX=${PREFIX}
+		BOINC_CLIENT_USER=${BOINC_CLIENT_USER} \
+		BOINC_CLIENT_GROUP=${BOINC_CLIENT_GROUP}
 
 # str_replace.h is included in newer versions of net/boinc-client,
 # but it is not needed on FreeBSD
@@ -99,17 +100,12 @@ pre-configure:
 	(cd ${WRKSRC} ; ./_autosetup)
 
 do-install:
-	${INSTALL} -d -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} \
-	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects
-	${INSTALL} -d -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} \
-	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}
-	${INSTALL_PROGRAM} -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} \
-	    ${WRKSRC}/client/${SETI_BINARY} \
+	${INSTALL} -d ${STAGEDIR}${BOINC_CLIENT_HOME}/projects
+	${INSTALL} -d ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}
+	${INSTALL_PROGRAM} ${WRKSRC}/client/${SETI_BINARY} \
 	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
 .if ${PORT_OPTIONS:MX11}
-	${INSTALL_PROGRAM} -o ${BOINC_CLIENT_USER} -g ${BOINC_CLIENT_GROUP} \
-	    ${WRKSRC}/client/seti_graphics \
+	${INSTALL_PROGRAM} ${WRKSRC}/client/seti_graphics \
 	    ${STAGEDIR}${BOINC_CLIENT_HOME}/projects/${SETI_SITE}/
 .endif
-
 .include <bsd.port.mk>

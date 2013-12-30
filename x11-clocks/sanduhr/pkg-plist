@@ -1,5 +1,6 @@
 bin/sanduhr
 libdata/bonobo/servers/sanduhr.server
+man/man1/sanduhr.1.gz
 share/gnome/apps/Utilities/sanduhr.desktop
 share/gnome/help/sanduhr/C/alarmref.xml
 share/gnome/help/sanduhr/C/factoryref.xml

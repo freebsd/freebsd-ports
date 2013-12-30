@@ -114,7 +114,6 @@
     SUBDIR += eval
     SUBDIR += facile
     SUBDIR += fann
-    SUBDIR += fbm
     SUBDIR += fflas-ffpack
     SUBDIR += fftw
     SUBDIR += fftw-float
@@ -128,7 +127,6 @@
     SUBDIR += fpc-numlib
     SUBDIR += freefem
     SUBDIR += freemat
-    SUBDIR += freemat-mpi
     SUBDIR += fricas
     SUBDIR += fxt
     SUBDIR += galculator
@@ -365,6 +363,7 @@
     SUBDIR += oleo
     SUBDIR += open-axiom
     SUBDIR += openblas
+    SUBDIR += openfst
     SUBDIR += orpie
     SUBDIR += p5-AI-DecisionTree
     SUBDIR += p5-AI-Genetic

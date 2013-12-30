@@ -1,5 +1,5 @@
---- Makefile.orig	2009-01-09 11:26:29.000000000 +0900
-+++ Makefile	2009-02-17 14:11:48.000000000 +0900
+--- Makefile.orig	2009-01-09 02:26:29.000000000 +0000
++++ Makefile
 @@ -4,20 +4,20 @@
  # you edit here along your environment
  ############################################################
@@ -35,3 +35,16 @@
  
  # F77_FUNC 
  DEF_F77_FUNC = -DF77_FUNC\(name,NAME\)=name\ \#\#\ _ 
+@@ -82,10 +82,10 @@ cleanall: clean mumps-clean
+ force: cleanall all
+ 
+ mumps:
+-	cd mumps; make
++	cd mumps; $(MAKE)
+ 
+ mumps-clean:
+-	cd mumps; make distclean
++	cd mumps; $(MAKE) distclean
+ 
+ update_make_headers:
+ 	g++ -MM *.cpp > make.headers

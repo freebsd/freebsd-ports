@@ -1,0 +1,5 @@
+lib/X11/fonts/bitter/Bitter-Bold.otf
+lib/X11/fonts/bitter/Bitter-BoldItalic.otf
+lib/X11/fonts/bitter/Bitter-Italic.otf
+lib/X11/fonts/bitter/Bitter-Regular.otf
+@dirrm lib/X11/fonts/bitter

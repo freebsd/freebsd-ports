@@ -25,9 +25,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/editobj/editor.py:${PORTSDIR}/graphics/py-edit
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_OPENAL=	al alut
+USES=		gmake openal:al,alut
 USE_GL=		glew glu
-USE_GMAKE=	yes
 USE_SDL=	sdl
 
 PYDISTUTILS_PKGNAME=	Soya

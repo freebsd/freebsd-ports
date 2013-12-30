@@ -1,0 +1,29 @@
+--- src/libcw/Makefile.am.orig	2013-10-21 13:44:21.000000000 -0500
++++ src/libcw/Makefile.am	2013-12-30 09:58:21.000000000 -0500
+@@ -41,7 +41,7 @@
+ 
+ # target-specific linker flags (objects to link)
+ # libcw_la_LIBADD=-lm -lpthread $(AC_ALSA_LIBS)  $(AC_PULSEAUDIO_LIBS)
+-libcw_la_LIBADD=-lm -lpthread -ldl
++libcw_la_LIBADD=-lm -lpthread 
+ 
+ # target-specific linker flags (additional flags)
+ # http://www.gnu.org/software/libtool/manual/html_node/Updating-version-info.html
+@@ -79,7 +79,7 @@
+ libcwunittests_CPPFLAGS = $(AM_CPPFLAGS) -DLIBCW_UNIT_TESTS
+ 
+ # target-specific linker flags (objects to link)
+-libcwunittests_LDADD=-lm -lpthread -ldl
++libcwunittests_LDADD=-lm -lpthread 
+ 
+ # target-specific compiler flags
+ libcwunittests_CFLAGS = -rdynamic
+@@ -95,7 +95,7 @@
+ 
+ 
+ standalone:
+-	gcc -O0 -g -DHAVE_CONFIG_H  -std=gnu99 -I. -I../../src  -I../../src/ -I../../src/libcw/ -I../../src/cwutils/ -DLIBCW_WITH_DEV -DLIBCW_STANDALONE -DLIBCW_WITH_PULSEAUDIO -DLIBCW_WITH_OSS -DLIBCW_WITH_ALSA -DLIBCW_WITH_CONSOLE libcw.c libcwtest.c libcw_console.c libcw_null.c libcw_pa.c libcw_debug.c libcw_oss.c libcw_alsa.c -lm -ldl -lpthread -o libcw_standalone
++	${CC} -O0 -g -DHAVE_CONFIG_H  -std=gnu99 -I. -I../../src  -I../../src/ -I../../src/libcw/ -I../../src/cwutils/ -DLIBCW_WITH_DEV -DLIBCW_STANDALONE -DLIBCW_WITH_PULSEAUDIO -DLIBCW_WITH_OSS -DLIBCW_WITH_ALSA -DLIBCW_WITH_CONSOLE libcw.c libcwtest.c libcw_console.c libcw_null.c libcw_pa.c libcw_debug.c libcw_oss.c libcw_alsa.c -lm -ldl -lpthread -o libcw_standalone
+ 
+ 
+ # target: libcw.pc

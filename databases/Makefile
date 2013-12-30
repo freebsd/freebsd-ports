@@ -201,7 +201,6 @@
     SUBDIR += memcacheq
     SUBDIR += mergeant
     SUBDIR += metakit
-    SUBDIR += mird
     SUBDIR += mongodb
     SUBDIR += mrtg-mysql-load
     SUBDIR += msql
@@ -843,7 +842,6 @@
     SUBDIR += rubygem-couchrest
     SUBDIR += rubygem-data_objects
     SUBDIR += rubygem-datamapper
-    SUBDIR += rubygem-delayed_job_data_mapper
     SUBDIR += rubygem-dm-active_model
     SUBDIR += rubygem-dm-aggregates
     SUBDIR += rubygem-dm-chunked_query
@@ -921,6 +919,7 @@
     SUBDIR += usogres
     SUBDIR += vfront
     SUBDIR += virtuoso
+    SUBDIR += vsqlite
     SUBDIR += wfb2sql
     SUBDIR += wmjsql
     SUBDIR += xapian-bindings

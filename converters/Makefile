@@ -112,7 +112,6 @@
     SUBDIR += p5-Text-Unidecode
     SUBDIR += p5-URI-UTF8-Punycode
     SUBDIR += p5-Unicode-IMAPUtf7
-    SUBDIR += p5-Unicode-Lite
     SUBDIR += p5-Unicode-Map
     SUBDIR += p5-Unicode-Map8
     SUBDIR += p5-Unicode-MapUTF8
@@ -144,7 +143,6 @@
     SUBDIR += py-bsdconv
     SUBDIR += py-iconv
     SUBDIR += py-pisa
-    SUBDIR += py-svglib
     SUBDIR += py-unidecode
     SUBDIR += py-zfec
     SUBDIR += rcctools

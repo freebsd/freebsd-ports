@@ -1,9 +1,0 @@
---- libs/freetdm/Makefile.am
-+++ libs/freetdm/Makefile.am
-@@ -320,5 +320,5 @@ mod_freetdm-clean:
- install-data-local:
- 	$(mkinstalldirs) $(DESTDIR)$(PREFIX)
- 	$(mkinstalldirs) $(DESTDIR)@confdir@
--	@[ -f "$(DESTDIR)@confdir@/freetdm.conf" ] || ( cp conf/*.conf $(DESTDIR)@confdir@)
-+	@for i in conf/*.conf; do cp -p $$i $$i.sample; done; cp -f -p conf/*.conf.sample $(DESTDIR)@confdir@
- 	@echo FreeTDM Installed

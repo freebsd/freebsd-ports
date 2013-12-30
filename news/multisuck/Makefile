@@ -11,12 +11,9 @@ COMMENT=	Multi-server/conn news suck
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/msuck ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/*.sample ${EXAMPLESDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/msuck ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/*.sample ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

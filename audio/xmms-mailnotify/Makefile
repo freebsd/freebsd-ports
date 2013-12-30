@@ -18,7 +18,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
 USES=		gmake
-NO_STAGE=	yes
 USE_GNOME=	gtk12
 USE_LDCONFIG=	yes
 
@@ -27,5 +26,10 @@ PLIST_FILES=	lib/xmms/General/libmailnotify.so \
 
 post-patch:
 	${REINPLACE_CMD} -e "s,/usr/lib,${LOCALBASE}/lib," ${WRKSRC}/mailnotify.c
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/General/
+	@${INSTALL_DATA} ${WRKSRC}/libmailnotify.so ${STAGEDIR}${PREFIX}/lib/xmms/General/
+	@${INSTALL_DATA} ${WRKSRC}/alert.wav ${STAGEDIR}${PREFIX}/lib/xmms/General/
 
 .include <bsd.port.mk>

@@ -11,9 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Helps link C programs with Fortran subroutines
 
-USES=		perl5
+USES=		fortran perl5
 USE_PERL5=	configure
-USE_FORTRAN=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|'gfortran44'|'${FC}'|" \

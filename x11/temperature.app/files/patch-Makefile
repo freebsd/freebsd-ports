@@ -9,9 +9,10 @@
 +GNUSTEP_BINDIR = $(LOCALBASE)/GNUstep/Apps/Temperature.app
 +X11_BINDIR = $(LOCALBASE)/bin
  
- CXX=c++
+-CXX=c++
 -CXXFLAGS += -Wall -pedantic -fno-rtti -fno-exceptions -O2 -I/usr/X11R6/include
 -LDFLAGS += -L/usr/X11R6/lib -lXpm -lXext -lX11
++CXX ?= c++
 +CXXFLAGS += -Wall -pedantic -fno-rtti -fno-exceptions -I$(LOCALBASE)/include
 +LDFLAGS += -L$(LOCALBASE)/lib -lXpm -lXext -lX11
  

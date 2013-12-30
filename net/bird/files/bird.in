@@ -24,6 +24,8 @@ command=%%PREFIX%%/sbin/${name}
 
 load_rc_config $name
 
+extra_commands="reload"
+
 : ${bird_enable="NO"}
 : ${bird_config="%%PREFIX%%/etc/bird.conf"}
 

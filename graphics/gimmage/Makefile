@@ -3,19 +3,18 @@
 
 PORTNAME=	gimmage
 PORTVERSION=	0.2.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	BERLIOS CENKES
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple image viewer
 
-LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		libcurl.so:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-USES=		gettext pkgconfig
+USES=		desktop-file-utils gettext pkgconfig
+USE_GNOME=	gtkmm24
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-libintl-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

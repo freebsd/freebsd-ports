@@ -3,8 +3,8 @@
 #   $MCom: ports/trunk/x11-fonts/fontconfig/Makefile 18637 2013-07-27 09:15:21Z kwm $
 
 PORTNAME=	fontconfig
-PORTVERSION=	2.10.95
-PORTREVISION?=	0
+PORTVERSION=	2.11.0
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.freedesktop.org/software/fontconfig/release/
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libexpat.so:${PORTSDIR}/textproc/expat2
 
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	ltverhack
 CONFIGURE_ARGS=	--with-configdir=${PREFIX}/etc/fonts/conf.d \
@@ -36,11 +36,10 @@ CONFIGURE_ARGS=	--with-configdir=${PREFIX}/etc/fonts/conf.d \
 MAKE_ENV=	LC_ALL=C
 PKGINSTALL=	${WRKDIR}/pkg-install
 
-MAN1=		fc-cache.1 fc-cat.1 fc-list.1 fc-match.1 fc-query.1 fc-scan.1
-MAN5=		fonts-conf.5
+MAN1PAGES=	fc-cache.1 fc-cat.1 fc-list.1 fc-match.1 fc-query.1 fc-scan.1
+MAN5PAGES=	fonts-conf.5
 PORTDOCS=	fontconfig-user.html fontconfig-user.pdf fontconfig-user.txt
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # work around fc-cache crash on arm platform
@@ -50,26 +49,19 @@ USE_GCC=	any
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 .endif
-	${INSTALL_MAN} ${MAN5:S|^|${WRKSRC}/doc/|} ${PREFIX}/man/man5
-.for manpage in ${MAN1}
-	${INSTALL_MAN} ${FILESDIR}/${manpage} ${PREFIX}/man/man1
+	${INSTALL_MAN} ${MAN5PAGES:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${PREFIX}/man/man5
+.for manpage in ${MAN1PAGES}
+	${INSTALL_MAN} ${FILESDIR}/${manpage} ${STAGEDIR}${PREFIX}/man/man1
 .endfor
-	if [ ! -f ${PREFIX}/etc/fonts/fonts.conf ]; then \
-		${INSTALL_DATA} ${WRKSRC}/fonts.conf ${PREFIX}/etc/fonts/fonts.conf; \
-		${INSTALL_DATA} ${WRKSRC}/fonts.conf ${PREFIX}/etc/fonts/fonts.conf.default; \
-	else \
-		${INSTALL_DATA} ${WRKSRC}/fonts.conf ${PREFIX}/etc/fonts/fonts.conf.default; \
-	fi
+	${INSTALL_DATA} ${WRKSRC}/fonts.conf \
+		${STAGEDIR}${PREFIX}/etc/fonts/fonts.conf.default
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}| ; \
 		s|%%LOCALBASE%%|${LOCALBASE}|' < ${FILESDIR}/pkg-install.in \
 		> ${PKGINSTALL}
-.if !defined(PACKAGE_BUILDING)
-	-@${LDCONFIG} -m ${PREFIX}/lib
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfontconfig.so.1
 
 .include <bsd.port.mk>
 

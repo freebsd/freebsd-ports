@@ -13,12 +13,10 @@ USE_BZIP2=	yes
 USES=		gmake perl5
 USE_PERL5=	build
 USE_AUTOTOOLS=	libtool
+USE_LDCONFIG=	yes
 LIBTOOLFILES=	pfe/configure
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 
-MAN1=		pfe.1
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"

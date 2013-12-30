@@ -1,0 +1,21 @@
+bin/vectoroids
+man/man6/vectoroids.6.gz
+share/pixmaps/vectoroids.png
+%%DATADIR%%/images/icon.png
+%%DATADIR%%/images/redspot-e.bmp
+%%DATADIR%%/images/redspot.jpg
+%%DATADIR%%/music/decision.s3m
+%%DATADIR%%/music/decision.txt
+%%DATADIR%%/sounds/ast1.wav
+%%DATADIR%%/sounds/ast2.wav
+%%DATADIR%%/sounds/ast3.wav
+%%DATADIR%%/sounds/ast4.wav
+%%DATADIR%%/sounds/bullet.wav
+%%DATADIR%%/sounds/explode.wav
+%%DATADIR%%/sounds/extralife.wav
+%%DATADIR%%/sounds/gameover.wav
+%%DATADIR%%/sounds/thrust.wav
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%

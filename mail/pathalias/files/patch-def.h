@@ -1,5 +1,5 @@
 --- def.h.orig	1993-03-03 22:10:01.000000000 +0100
-+++ def.h	2013-06-16 17:11:21.000000000 +0200
++++ def.h	2013-06-17 00:07:48.000000000 +0200
 @@ -2,7 +2,7 @@
  
  #ifndef lint
@@ -63,7 +63,7 @@
  	node	*l_from;
  	short	l_flag;
  	char	l_netop;
-@@ -159,3 +159,65 @@
+@@ -159,3 +159,85 @@
  	dom *prev;
  	char *name;
  };
@@ -75,6 +75,7 @@
 +extern int tracelink(char *arg);
 +extern void deletelink(node *from, node *to);
 +extern int maptrace(register node *from, register node *to);
++extern long Lcount;
 +
 +/* prototypes addnode.c */
 +extern node *addnode(register char *name);
@@ -83,6 +84,8 @@
 +extern void hashanalyze(void);
 +extern void fixprivate(void);
 +extern node *addhidden(register char *name);
++extern node **Table;
++extern long Tabsize;
 +
 +/* prototypes domain.c */
 +extern int ondomlist(dom **headp, char *domain);
@@ -96,6 +99,20 @@
 +
 +/* prototypes main.c */
 +extern void die(const char *s);
++extern const char *Cfile;
++extern char *Graphout;
++extern char *Linkout;
++extern char **Argv;
++extern node *Home;
++extern int Cflag;
++extern int Dflag;
++extern int Iflag;
++extern int Tflag;
++extern int Vflag;
++extern int Fflag;
++extern int InetFlag;
++extern int Lineno;
++extern int Argc;
 +
 +/* prototypes mapaux.c */
 +extern long pack(long low, long high);
@@ -107,6 +124,7 @@
 +
 +/* prototypes mapit.c */
 +void mapit(void);
++extern long Nheap, Hashpart, NumNcopy, Nlink, NumLcopy;
 +
 +/* prototypes mem.c */
 +extern void freelink(palink *l);
@@ -121,10 +139,12 @@
 +#ifdef MYMALLOC
 +extern char *mymalloc(register unsigned int n);
 +#endif
++extern long Ncount;
 +
 +/* prototypes parse.c */
 +extern void yyerror(const char *s);
 +extern int yyparse(void);
++extern long Tcount;
 +
 +/* prototypes printit.c */
 +extern void printit(void);

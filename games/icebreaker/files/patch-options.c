@@ -1,6 +1,6 @@
---- options.c.orig	2002-05-31 05:15:46.000000000 +0200
-+++ options.c	2013-01-13 19:54:42.000000000 +0100
-@@ -66,7 +66,7 @@
+--- ./options.c.orig	2002-06-16 22:35:13.000000000 +0200
++++ ./options.c	2013-12-24 13:42:35.000000000 +0100
+@@ -87,7 +87,7 @@
  	options.autopause=AUTOPAUSEOFF;	
  	options.difficulty=NORMAL;
  	options.fullscreen=FULLSCREENOFF;
@@ -9,16 +9,16 @@
  }
  
  int readoptions(void)
-@@ -81,7 +81,7 @@
+@@ -102,7 +102,7 @@
  
  	setdefaultoptions();
  	
 -	snprintf(filename,255,"%s/%s",homedir,OPTIONFILE);
 +	snprintf(filename,sizeof(filename),"%s/%s",homedir,OPTIONFILE);
  	
- 	optionfile=fopen(filename,"r");
+ 	optionfile=openoptionfile(filename,"r");
  	if (optionfile==NULL)
-@@ -99,7 +99,7 @@
+@@ -120,7 +120,7 @@
  		}
  		
  		sprintf(scanformat,"%%20s %%%ds",10+MAXTHEMENAMELENGTH);	
@@ -27,7 +27,7 @@
  		{
  			if (!strcmp(optbuf,"sound"))
  			{
-@@ -135,7 +135,7 @@
+@@ -156,7 +156,7 @@
  			}
  			else if (!strcmp(optbuf,"theme"))
  			{
@@ -36,16 +36,16 @@
  			}
  			// FIX: add username
  		}
-@@ -150,7 +150,7 @@
+@@ -171,7 +171,7 @@
  {
- 	FILE * optionfile;
+ 	OPTFILEHANDLER * optionfile;
  	char filename[255];
 -	snprintf(filename,255,"%s/%s",homedir,OPTIONFILE);
 +	snprintf(filename,sizeof(filename),"%s/%s",homedir,OPTIONFILE);
  	
- 	optionfile=fopen(filename,"w");
+ 	optionfile=openoptionfile(filename,"w");
  	if (optionfile==NULL)
-@@ -292,7 +292,7 @@
+@@ -313,7 +313,7 @@
  			else
  			{
  				// fix -- we should probably search for malicious characters here.
@@ -54,7 +54,7 @@
  			}	
  		}
  		else if (strncmp(argv[i],FLAGTHEMELONG "=" ,strlen(FLAGTHEMELONG "=")) == 0)
-@@ -312,7 +312,7 @@
+@@ -333,7 +333,7 @@
  			else
  			{
  				// fix -- we should probably search for malicious characters here.

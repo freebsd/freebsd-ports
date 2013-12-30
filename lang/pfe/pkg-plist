@@ -106,9 +106,6 @@ lib/libpfe-0-forth.so.33
 lib/libpfe.a
 lib/libpfe.la
 lib/libpfe.so
-lib/pfe/testmodule1.a
-lib/pfe/testmodule1.la
-lib/pfe/testmodule1.so
 lib/pfe-forth/assembler.a
 lib/pfe-forth/assembler.la
 lib/pfe-forth/assembler.so
@@ -178,6 +175,7 @@ lib/pfe-forth/zchar.a
 lib/pfe-forth/zchar.la
 lib/pfe-forth/zchar.so
 libdata/pkgconfig/pfe.pc
+man/man1/pfe.1.gz
 %%DATADIR%%/lib/arrays.4th
 %%DATADIR%%/lib/defer-is.4th
 %%DATADIR%%/lib/doermake.4th
@@ -255,5 +253,4 @@ libdata/pkgconfig/pfe.pc
 @dirrm %%DATADIR%%
 @dirrm lib/pfe-forth/renamed
 @dirrm lib/pfe-forth
-@dirrm lib/pfe
 @dirrm include/pfe

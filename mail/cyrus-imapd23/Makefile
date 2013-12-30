@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	23
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 
-LICENSE=	BSD
+LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2 \

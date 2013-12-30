@@ -5,49 +5,67 @@ PORTNAME=	zgv
 PORTVERSION=	5.9
 PORTREVISION=	5
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/graphics/viewers/svga
+MASTER_SITES=	SUNSITE/apps/graphics/viewers/svga
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics viewer for SVGAlib
 
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		vga.1:${PORTSDIR}/graphics/svgalib \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
+LICENSE=	GPLv2 # (or later)
 
-ONLY_FOR_ARCHS=	i386
-USE_GMAKE=	yes
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff
+
+OPTIONS_DEFINE=	SDL
+
+USES=		gmake
 ALL_TARGET=	zgv info
-MAKE_ENV=	ZGV_LIBS="${LDFLAGS}"
-BINMODE=	4755
 
-PLIST_FILES=	bin/zgv etc/zgvrc.sample
-.if !defined(NO_INSTALL_MANPAGES)
-MAN1=		zgv.1
-.endif
-.if !defined(NOPORTDOCS)
-INFO=		zgv
-PORTDOCS=	NEWS README SECURITY TODO INSTALL
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSDL}
+USE_SDL=	sdl
+MAKE_ENV+=	BACKEND=SDL
+CPPFLAGS+=	$$(${SDL_CONFIG} --cflags)
+LDFLAGS+=	$$(${SDL_CONFIG} --libs)
+.else
+LIB_DEPENDS+=	libvga.so:${PORTSDIR}/graphics/svgalib
+MAKE_ENV+=	BACKEND=SVGALIB
+ONLY_FOR_ARGS=	i386 amd64
 .endif
 
-NO_STAGE=	yes
+post-extract:
+	@${RM} ${WRKSRC}/doc/zgv
+
 post-patch:
-	${RM} ${WRKSRC}/doc/zgv
-	@${REINPLACE_CMD} -e 's|ZGV_LIBS=|ZGV_LIBS+=|' ${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -e \
+		's|^CC=|#CC=|g ; \
+		 s|^CFLAGS=|#CFLAGS=|g ; \
+		 s|^BACKEND=|#BACKEND=|g ; \
+		 s|^PREFIX=|#PREFIX=|g ; \
+		 s|/usr/X11R6|$${LOCALBASE}|g' ${WRKSRC}/config.mk
+	@${REINPLACE_CMD} -e \
+		's|-I/usr/local/include|$${CPPFLAGS}|g ; \
+		 s|-L/usr/local/lib|$${LDFLAGS}|g ; \
+		 s|=-lSDL|=|g' ${WRKSRC}/src/Makefile
+	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		 's|SDL/SDL|SDL|g'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/zgv ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/doc/sample.zgvrc ${PREFIX}/etc/zgvrc.sample
-.if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${WRKSRC}/doc/zgv ${PREFIX}/${INFO_PATH}/zgv.info
-	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} zgv \
+		${STAGEDIR}${PREFIX}/bin/zgv)
+	(cd ${WRKSRC}/doc && ${INSTALL_MAN} zgv.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1/zgv.1)
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} sample.zgvrc \
+		${STAGEDIR}${PREFIX}/etc/zgvrc.sample)
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} zgv \
+		${STAGEDIR}${PREFIX}/${INFO_PATH}/zgvrc.info)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in NEWS README SECURITY TODO INSTALL
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
-.endif
-.if !defined(NO_INSTALL_MANPAGES)
-	${INSTALL_MAN} ${WRKSRC}/doc/zgv.1 ${MAN1PREFIX}/man/man1
-.endif
 
 .include <bsd.port.mk>

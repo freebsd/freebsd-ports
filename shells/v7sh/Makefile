@@ -17,46 +17,28 @@ DISTFILES=	args.c:s blok.c:s brkincr.h:s builtin.c:s cmd.c:s \
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An implementation of the UNIX 7th Edition shell
+COMMENT=	Implementation of the UNIX 7th Edition shell
 
+USES=		uidfix
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKDIR}
 
 NO_WRKSUBDIR=	yes
-MAN1=		${PORTNAME}.1
-MANCOMPRESSED=	yes
 
 OPTIONS_DEFINE=	SYSIII RENO ULTRIX
 OPTIONS_DEFAULT=	SYSIII RENO ULTRIX
 SYSIII_DESC=	System III enhancements
 RENO_DESC=	4.3BSD-Reno enhancements
 ULTRIX_DESC=	Ultrix 3.1 enhancements
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSYSIII}
-CFLAGS+=	-DSYSIII
-.endif
-.if ${PORT_OPTIONS:MRENO}
-CFLAGS+=	-DRENO
-.endif
-.if ${PORT_OPTIONS:MULTRIX}
-CFLAGS+=	-DULTRIX
-.endif
+SYSIII_CFLAGS=	-DSYSIII
+RENO_CFLAGS=	-DRENO
+ULTRIX_CFLAGS=	-DULTRIX
 
 post-extract:
 	@${MV} ${WRKSRC}/sh.1 ${WRKSRC}/${PORTNAME}.1
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	@${CP} ${FILESDIR}/test.c ${WRKSRC}		# sysIII
 	@${CP} ${FILESDIR}/pathnames.h ${WRKSRC}	# 43reno
-
-post-install:
-	@${ECHO_MSG} "updating /etc/shells"
-	@${CP} /etc/shells /etc/shells.bak
-	@(${GREP} -v ${PREFIX}/bin/${PORTNAME} /etc/shells.bak; \
-	 ${ECHO_CMD} ${PREFIX}/bin/${PORTNAME}) > /etc/shells
-	@${RM} /etc/shells.bak
 
 .include <bsd.port.mk>

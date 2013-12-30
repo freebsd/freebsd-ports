@@ -4,3 +4,5 @@ etc/musicpd.conf.sample
 @exec if [ ! -f %B/musicpd.conf ] ; then cp -p %D/%F %B/musicpd.conf; fi
 @exec install -d -o %%MPDUSER%% -g %%MPDGROUP%% %%MPDDIR%% %%MPDDIR%%/.mpd
 @unexec rmdir -p %%MPDDIR%%/.mpd 2>/dev/null || true
+man/man1/musicpd.1.gz
+man/man5/musicpd.conf.5.gz

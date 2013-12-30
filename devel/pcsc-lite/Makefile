@@ -2,12 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.8.8
+PORTVERSION=	1.8.10
 PORTEPOCH=	2
 CATEGORIES=	devel security
-#MASTER_SITES=	https://alioth.debian.org/frs/download.php/3862/
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	arved
+MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/3963/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A smartcard development library
@@ -26,11 +24,6 @@ CONFIGURE_ARGS=	--enable-usbdropdir=${PREFIX}/lib/pcsc/drivers/
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-MAN1=		pcsc-spy.1
-MAN5=		reader.conf.5
-MAN8=		pcscd.8
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_USB) && ${OSVERSION} >= 800069
@@ -60,18 +53,15 @@ pre-everything::
 .endif
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/example/Makefile.am ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/example/Makefile.in ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/example/pcsc_demo.c ${EXAMPLESDIR}
-.endif
-	@${MKDIR} ${PREFIX}/lib/pcsc/drivers
-	@${MKDIR} ${PREFIX}/lib/pcsc/services
-	${TOUCH} ${PREFIX}/lib/pcsc/drivers/.keep_me
-	${TOUCH} ${PREFIX}/lib/pcsc/services/.keep_me
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/example/Makefile.am ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/example/Makefile.in ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/example/pcsc_demo.c ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/pcsc/drivers
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/pcsc/services
+	${TOUCH} ${STAGEDIR}${PREFIX}/lib/pcsc/drivers/.keep_me
+	${TOUCH} ${STAGEDIR}${PREFIX}/lib/pcsc/services/.keep_me
 	@${SED} 's,%%PREFIX%%,${PREFIX},g' < ${FILESDIR}/pkg-message.in > \
 		${WRKDIR}/pkg-message
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

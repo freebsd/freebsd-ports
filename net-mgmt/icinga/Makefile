@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	icinga
-PORTVERSION=	1.9.3
-PORTREVISION=	2
+PORTVERSION=	1.10.2
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -12,10 +12,10 @@ COMMENT=	Enterprise grade open source monitoring system based on Nagios
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
-USES=		iconv
+USES=		iconv gmake
 USE_AUTOTOOLS=	autoconf libltdl
 USE_RC_SUBR=	icinga
 
@@ -23,11 +23,10 @@ GNU_CONFIGURE=	yes
 
 ICINGAUSER?=	icinga
 ICINGAGROUP?=	icinga
+USERS=		${ICINGAUSER}
+GROUPS=		${ICINGAGROUP}
 ICINGADIR?=	/var/spool/icinga
 ICINGALOGDIR?=	/var/log/icinga
-
-ICINGAUID=	183
-ICINGAGID=	${ICINGAUID}
 
 ICINGAWWWDIR?=	www/icinga
 ICINGAHTMURL?=	/icinga
@@ -51,61 +50,39 @@ CONFIGURE_ARGS=	--with-command-user=${ICINGAUSER} \
 		--libexecdir=${PREFIX}/libexec/icinga \
 		--with-plugin-dir=${LOCALBASE}/libexec/nagios \
 		--with-log-dir=${ICINGALOGDIR} \
-		--enable-event-broker
+		--with-httpd-conf=${EXAMPLESDIR}/apache22 \
+		--enable-event-broker \
+		--enable-nanosleep
 
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
 		PERL=${PERL}
 
-INSTALL_TARGET=	install install-commandmode install-config \
-		install-eventhandlers
+INSTALL_TARGET=	install install-config install-eventhandlers install-webconf
 
 PLIST_SUB=	ICINGADIR=${ICINGADIR} \
 		ICINGALOGDIR=${ICINGALOGDIR} \
 		ICINGAWWWDIR=${ICINGAWWWDIR} \
 		ICINGAUSER=${ICINGAUSER} \
 		ICINGAGROUP=${ICINGAGROUP} \
-		ICINGAUID=${ICINGAUID} \
-		ICINGAGID=${ICINGAGID} \
 		ICINGAHTMURL=${ICINGAHTMURL} \
 		ICINGACGIURL=${ICINGACGIURL} \
 		WWWGRP=${WWWGRP}
 
-SUB_FILES=	pkg-install \
-		pkg-deinstall \
-		pkg-message
+SUB_FILES=	pkg-message
 
 # XXX: Don't remove PREFIX from SUB_LIST here.
 SUB_LIST=	PREFIX=${PREFIX} \
 		${PLIST_SUB}
 
-OPTIONS_DEFINE=	EMBEDDED_PERL NANOSLEEP UNHANDLED_HACK IDOUTILS APACHE EXAMPLES
-OPTIONS_DEFAULT=	EMBEDDED_PERL IDOUTILS
+OPTIONS_DEFINE=		IDOUTILS
+OPTIONS_DEFAULT=	IDOUTILS
 
-EMBEDDED_PERL_DESC=	Enable embedded Perl
-NANOSLEEP_DESC=		Use nanosleep(2) in event timing
-UNHANDLED_HACK_DESC=	Display passive checks in unhandled queries
 IDOUTILS_DESC=		Enable Icinga Data Objects support
-APACHE_DESC=		Depend on Apache and install webconfig
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MEMBEDDED_PERL}
-USES+=			perl5
-USE_PERL5=		build
-CONFIGURE_ARGS+=	--enable-embedded-perl \
-		--with-perlcache
-PLIST_SUB+=	EMBEDDED_PERL=""
-.else
-PLIST_SUB+=	EMBEDDED_PERL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNANOSLEEP}
-CONFIGURE_ARGS+=	--enable-nanosleep
-.endif
-
 .if ${PORT_OPTIONS:MIDOUTILS}
-LIB_DEPENDS+=		dbi:${PORTSDIR}/databases/libdbi-drivers
+LIB_DEPENDS+=		libdbi.so:${PORTSDIR}/databases/libdbi-drivers
 CONFIGURE_ARGS+=	--enable-idoutils \
 			--enable-ssl \
 			--with-dbi-lib=${LOCALBASE}/lib \
@@ -118,15 +95,6 @@ PLIST_SUB+=		IDOUTILS="@comment "
 CONFIGURE_ARGS+=	--disable-idoutils
 .endif
 
-.if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=		22+
-CONFIGURE_ARGS+=	--with-httpd-conf=${LOCALBASE}/${APACHEETCDIR}/extra
-INSTALL_TARGET+=	install-webconf
-PLIST_SUB+=		APACHE=""
-.else
-PLIST_SUB+=		APACHE="@comment "
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's#/bin/ping#/sbin/ping#' \
 		${WRKSRC}/sample-config/cgi.cfg.in
@@ -134,35 +102,18 @@ post-patch:
 		${WRKSRC}/sample-config/icinga.cfg.in
 	@${REINPLACE_CMD} -e 's#775#755#g; s#664#644#g' \
 		${WRKSRC}/html/Makefile.in
-.if ${PORT_OPTIONS:MUNHANDLED_HACK}
-	@${REINPLACE_CMD} -e 's#;serviceprops=42\&#;serviceprops=10\&#g' \
-		-e 's#;hostprops=42\"#;hostprops=10\"#g' \
-			${WRKSRC}/html/menu.html.in
-.endif
 # Use correct make(1) syntax to unbreak parallel builds
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
 		-E 's#cd (.+) && (make|\$$\(MAKE\))#$$(MAKE) -C \1#'
 
-pre-su-install:
-	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
-
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}/idoutils/
-	${MKDIR} ${EXAMPLESDIR}/idoutils/config/
-	${MKDIR} ${EXAMPLESDIR}/idoutils/db
+	${MKDIR} ${STAGEDIR}${PREFIX}/${ICINGAWWWDIR}/ssi
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/idoutils/
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/idoutils/config/
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/idoutils/db
 	cd ${WRKSRC}/module/idoutils/config && ${COPYTREE_SHARE} . \
-		${EXAMPLESDIR}/idoutils/config
+		${STAGEDIR}${EXAMPLESDIR}/idoutils/config
 	cd ${WRKSRC}/module/idoutils/db && ${COPYTREE_SHARE} . \
-		${EXAMPLESDIR}/idoutils/db
-.endif
-	@${CHMOD} 775 ${ICINGADIR} ${ICINGALOGDIR}/archives \
-		${ICINGADIR}/checkresults ${ICINGADIR}/rw
-	@${CHOWN} ${ICINGAUSER}:${ICINGAGROUP} ${ICINGADIR} \
-		${ICINGALOGDIR}/archives ${ICINGADIR}/checkresults
-	@${CHOWN} ${ICINGAUSER}:${WWWGRP} ${ICINGADIR}/rw
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+		${STAGEDIR}${EXAMPLESDIR}/idoutils/db
 
 .include <bsd.port.mk>

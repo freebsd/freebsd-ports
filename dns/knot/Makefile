@@ -3,6 +3,7 @@
 
 PORTNAME=	knot
 DISTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		http://dns-lab.com/downloads/knot-dns/
@@ -37,5 +38,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/samples/knot.sample.conf ${STAGEDIR}${ETCDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
+	@${MKDIR} ${PREFIX}/var/lib/knot
+	@${MKDIR} ${PREFIX}/var/run/knot
+	@${CHOWN} 53:53 ${PREFIX}/var/lib/knot
+	@${CHOWN} 53:53 ${PREFIX}/var/run/knot
 
 .include <bsd.port.mk>

@@ -12,6 +12,7 @@ include/gstreamer-%%VERSION%%/gst/interfaces/photography.h
 include/gstreamer-%%VERSION%%/gst/mpegts/gst-atsc-section.h
 include/gstreamer-%%VERSION%%/gst/mpegts/gst-dvb-descriptor.h
 include/gstreamer-%%VERSION%%/gst/mpegts/gst-dvb-section.h
+include/gstreamer-%%VERSION%%/gst/mpegts/gstmpegts-enumtypes.h
 include/gstreamer-%%VERSION%%/gst/mpegts/gstmpegtsdescriptor.h
 include/gstreamer-%%VERSION%%/gst/mpegts/gstmpegtssection.h
 include/gstreamer-%%VERSION%%/gst/mpegts/mpegts.h

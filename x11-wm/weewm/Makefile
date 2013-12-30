@@ -14,12 +14,11 @@ COMMENT=	Fast and ultra light windowmanager with total keyboard control
 PLIST_FILES=	bin/weewm
 USE_XORG=	x11
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,^CC=,CC?=,' -e 's,/usr/X11R6,${LOCALBASE},g' \
 		${WRKSRC}/src/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/weewm ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/weewm ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

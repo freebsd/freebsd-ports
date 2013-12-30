@@ -2,8 +2,12 @@ bin/sh-include
 bin/bash-include
 libexec/shell-include/sh/random
 libexec/shell-include/sh/fileGetLine
-@dirrm libexec/shell-include/sh
 libexec/shell-include/bash/random
 libexec/shell-include/bash/fileGetLine
+man/man3/fileGetLine.3.gz
+man/man3/random.3.gz
+man/man3/random::shortIntRandom.3.gz
+man/man7/shell-include.7.gz
+@dirrm libexec/shell-include/sh
 @dirrm libexec/shell-include/bash
 @dirrm libexec/shell-include

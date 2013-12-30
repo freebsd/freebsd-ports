@@ -10,14 +10,14 @@ MASTER_SITES=	http://www.complang.tuwien.ac.at/forth/gforth/ \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Fast and portable Forth system
 
-LIB_DEPENDS=	ffi:${PORTSDIR}/devel/libffi
+LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 BUILD_DEPENDS=	${LOCALBASE}/include/avcall.h:${PORTSDIR}/devel/ffcall
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-fno-reorder-blocks -fno-inline
-USE_GMAKE=	yes
+USES=		gmake
 USE_GCC=	any
 USE_AUTOTOOLS=	libtool libltdl
 USE_LDCONFIG=	${PREFIX}/lib/gforth/${PORTVERSION}/libcc-named
@@ -33,10 +33,8 @@ PORTDOCS=	AUTHORS BUGS Benchres COPYING COPYING.DOC \
 		INSTALL INSTALL.BINDIST NEWS README \
 		NEWS.vmgen README.vmgen ToDo
 
-MAN1=		gforth.1
 INFO=		gforth vmgen
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386 || ${ARCH} == powerpc
@@ -60,18 +58,18 @@ post-install: install-doc remove-empty-files remove-empty-dirs
 
 install-doc:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for filename in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${filename} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${filename} ${STAGEDIR}${DOCSDIR}
 . endfor
 .endif
 
 # Remove unused file
 remove-empty-files:
-	@${RM} -f ${DATADIR}/site-forth/siteinit.fs
+	@${RM} -f ${STAGEDIR}${DATADIR}/site-forth/siteinit.fs
 
 # Remove unused directories
 remove-empty-dirs:
-	@${FIND} -d ${DATADIR}/${PORTVERSION}/arch/ -type d -empty -delete
+	@${FIND} -d ${STAGEDIR}${DATADIR}/${PORTVERSION}/arch/ -type d -empty -delete
 
 .include <bsd.port.post.mk>

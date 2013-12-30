@@ -5,6 +5,9 @@ bin/xpaint
 lib/X11/app-defaults/XPaint
 lib/X11/app-defaults/XPaint_es
 lib/X11/app-defaults/XPaint_fr
+man/man1/imgmerge.1.gz
+man/man1/pdfconcat.1.gz
+man/man1/xpaint.1.gz
 %%DATADIR%%/XPaintIcon.xpm
 %%DATADIR%%/bin/xpaint_ocr
 %%DATADIR%%/bitmaps/brushbox.cfg

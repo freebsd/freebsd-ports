@@ -14,9 +14,10 @@ USE_GL=		gl
 USE_SDL=	mixer sdl
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAN1=		glmaze.1
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/glmaze.1.gz
+PORTDATA=	*
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/shot.c
 

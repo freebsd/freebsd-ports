@@ -3,6 +3,7 @@
 
 PORTNAME=	libffi
 PORTVERSION=	3.0.13
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -10,32 +11,32 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	zeising@FreeBSD.org
 COMMENT=	Foreign Function Interface
 
+LICENSE=	MIT
+
 TEST_DEPENDS=	runtest:${PORTSDIR}/misc/dejagnu
+
+USES=		pathfix
+USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	TESTS
 TESTS_DESC=	Include tools for test suite
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTESTS}
 BUILD_DEPENDS:=	${TEST_DEPENDS}
 .endif
 
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-USES=	pathfix pkgconfig
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
-
+INSTALL_TARGET=	install-strip
 INFO=		libffi
-
-MAN3=		ffi.3 ffi_call.3 ffi_prep_cif.3 ffi_prep_cif_var.3
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 post-install:
 	@${LN} -sf ../lib/libffi-${PORTVERSION}/include/ffi.h \
-	    ${PREFIX}/include/
+	    ${STAGEDIR}${PREFIX}/include/
 	@${LN} -sf ../lib/libffi-${PORTVERSION}/include/ffitarget.h \
-	    ${PREFIX}/include/
+	    ${STAGEDIR}${PREFIX}/include/
 
 regression-test: build
 	@cd ${WRKSRC} && ${MAKE} check

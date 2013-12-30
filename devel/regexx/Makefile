@@ -3,27 +3,31 @@
 
 PORTNAME=	regexx
 PORTVERSION=	0.98.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A complete regular expressions C++ solution
+COMMENT=	Complete regular expressions C++ solution
 
-USE_GMAKE=	yes
+LICENSE=	LGPL21
+
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+
+USES=		gmake pkgconfig
 USE_AUTOTOOLS=	libtool
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
+		AUTOMAKE="${TRUE}"
 USE_LDCONFIG=	yes
-MAKE_ENV+=	INCLUDES="-I${WRKSRC}/pcre"
 
-NO_STAGE=	yes
+CPPFLAGS+=	$$(pkg-config --cflags libpcre)
+LDFLAGS+=	$$(pkg-config --libs libpcre)
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|@LIBTOOL@|${LIBTOOL}|g ; \
-		s|	\./libtool|${LIBTOOL}|g ; \
-		s|\(DEFS.*\)|\1 -I${LOCALBASE}/include|' \
-		${WRKSRC}/src/Makefile.in ${WRKSRC}/pcre/Makefile.in
-	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's| examples||g' \
-		${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e \
+		's|"pcre"||' ${WRKSRC}/configure
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libregexx.so.2
 
 .include <bsd.port.mk>

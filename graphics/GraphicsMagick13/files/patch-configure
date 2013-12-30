@@ -1,0 +1,48 @@
+--- configure.orig	2013-03-10 00:21:59.000000000 +0100
++++ configure	2013-12-27 11:48:19.000000000 +0100
+@@ -24580,15 +24580,16 @@
+     # Cygwin doesn't deliver -lXt as a DLL, which prevents a DLL build.
+     # Adobe DPS (as delivered on Solaris) doesn't require -lXt.
+     # GraphicsMagick itself doesn't use -lXt.
++    # in FreeBSD < 10, libXt is added by the linker, bot on >= 10
+     have_libdps='no'
+-    LIBDPS_XT=''
++    LIBDPS_XT='-lXt'
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking for DPSInitialize in -ldps" >&5
+ $as_echo_n "checking for DPSInitialize in -ldps... " >&6; }
+ if ${ac_cv_lib_dps_DPSInitialize+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldps  $LIBS"
++LIBS="-ldps $LIBDPS_XT $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -26059,7 +26060,7 @@
+ fi
+ 
+ 
+-    ac_fn_c_check_header_compile "$LINENO" "freetype/freetype.h" "ac_cv_header_freetype_freetype_h" "$FT2BUILD_H
++    ac_fn_c_check_header_compile "$LINENO" "freetype.h" "ac_cv_header_freetype_freetype_h" "$FT2BUILD_H
+ "
+ if test "x$ac_cv_header_freetype_freetype_h" = xyes; then :
+   have_freetype_h='yes'
+@@ -26935,7 +26936,7 @@
+ #
+ 
+ # Subdirectory under lib to place GraphicsMagick lib files
+-MagickLibSubdir="${PACKAGE_NAME}-${PACKAGE_VERSION}"
++MagickLibSubdir="${PACKAGE_NAME}"
+ 
+ cat >>confdefs.h <<_ACEOF
+ #define MagickLibSubdir "$MagickLibSubdir"
+@@ -27039,7 +27040,7 @@
+ 
+ #
+ # Path to GraphicsMagick share files
+-MagickShareSubdir="${PACKAGE_NAME}-${PACKAGE_VERSION}"
++MagickShareSubdir="${PACKAGE_NAME}"
+ MagickSharePath="${DATA_DIR}/${MagickShareSubdir}"
+ MagickSharePathDefine="${MagickSharePath}/"
+ case "${build_os}" in

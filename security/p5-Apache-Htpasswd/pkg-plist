@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Apache/Htpasswd.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Htpasswd/.packlist
+%%PERL5_MAN3%%/Apache::Htpasswd.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Htpasswd
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache
 @dirrmtry %%SITE_PERL%%/Apache

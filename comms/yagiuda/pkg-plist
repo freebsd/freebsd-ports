@@ -4,6 +4,17 @@ bin/input
 bin/optimise
 bin/output
 bin/yagi
+man/man1/first.1.gz
+man/man1/optimise.1.gz
+man/man1/yagi.1.gz
+man/man1/dipole.1.gz
+man/man1/input.1.gz
+man/man1/output.1.gz
+man/man5/first.5.gz
+man/man5/optimise.5.gz
+man/man5/yagi.5.gz
+man/man5/input.5.gz
+man/man5/output.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/dipole.1.html
 %%PORTDOCS%%%%DOCSDIR%%/first.1.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html

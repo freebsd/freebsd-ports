@@ -1,0 +1,94 @@
+--- support/Makefile.in.orig	2008-06-07 01:51:26.000000000 +0200
++++ support/Makefile.in	2013-12-29 16:16:43.000000000 +0100
+@@ -219,55 +219,55 @@ $(TKSERV): tkserv.o
+ install: install-server
+ 
+ install-ircd: $(IRCD_BIN)
+-	-@if [ ! -d $(server_bin_dir) ]; then \
+-		$(MKDIRHIER) $(server_bin_dir); \
++	-@if [ ! -d $(DESTDIR)$(server_bin_dir) ]; then \
++		$(MKDIRHIER) $(DESTDIR)$(server_bin_dir); \
+ 	fi
+-	$(INSTALL_PROGRAM) -m $(ircd_mode) $(IRCD_BIN) $(server_bin_dir)
++	$(INSTALL_PROGRAM) -m $(ircd_mode) $(IRCD_BIN) $(DESTDIR)$(server_bin_dir)
+ 
+ install-server: install-ircd server
+-	-@if [ ! -d $(server_man_dir) ]; then \
+-		$(MKDIRHIER) $(server_man_dir); \
++	-@if [ ! -d $(DESTDIR)$(server_man_dir) ]; then \
++		$(MKDIRHIER) $(DESTDIR)$(server_man_dir); \
+ 	fi
+-	-@if [ ! -d $(conf_man_dir) ]; then \
+-		$(MKDIRHIER) $(conf_man_dir); \
++	-@if [ ! -d $(DESTDIR)$(conf_man_dir) ]; then \
++		$(MKDIRHIER) $(DESTDIR)$(conf_man_dir); \
+ 	fi
+-	-@if [ ! -d $(ircd_conf_dir) ]; then \
+-		$(MKDIRHIER) $(ircd_conf_dir); \
++	-@if [ ! -d $(DESTDIR)$(ircd_conf_dir) ]; then \
++		$(MKDIRHIER) $(DESTDIR)$(ircd_conf_dir); \
+ 	fi
+-	-@if [ ! -d $(ircd_var_dir) ]; then \
+-		$(MKDIRHIER) $(ircd_var_dir); \
+-	fi
+-	-@if [ ! -d $(ircd_log_dir) ]; then \
+-		$(MKDIRHIER) $(ircd_log_dir); \
+-	fi
+-	$(INSTALL_PROGRAM) -m $(ircd_mode) $(IAUTH) $(server_bin_dir)
+-	$(INSTALL_PROGRAM) -m $(ircd_mode) $(CHKCONF) $(server_bin_dir)
+-	$(INSTALL_PROGRAM) -m $(ircd_mode) ircd-mkpasswd $(server_bin_dir)
+-	$(INSTALL_PROGRAM) -m $(ircd_mode) $(IRCDWATCH) $(server_bin_dir)
+-	$(RM) $(IRCDM4_PATH)
+-	../ircd/buildm4 $(IRCDM4_PATH)
+-	$(INSTALL_DATA) ../doc/ircd.8 $(server_man_dir)
+-	$(INSTALL_DATA) ../doc/iauth.8 $(server_man_dir)
+-	$(INSTALL_DATA) ../doc/iauth.conf.5 $(conf_man_dir)
+-	$(INSTALL_DATA) ../contrib/ircdwatch/ircdwatch.8 $(server_man_dir)
+-	$(INSTALL_DATA) ../doc/ircd.conf.example $(ircd_conf_dir)
+-	$(INSTALL_DATA) ../doc/iauth.conf.example $(ircd_conf_dir)
+-	-@if [ ! -f $(IAUTHCONF_PATH) ]; then \
+-		$(INSTALL_DATA) ../doc/iauth.conf.example $(IAUTHCONF_PATH); \
++	-@if [ ! -d $(DESTDIR)$(ircd_var_dir) ]; then \
++		$(MKDIRHIER) $(DESTDIR)$(ircd_var_dir); \
++	fi
++	-@if [ ! -d $(DESTDIR)$(ircd_log_dir) ]; then \
++		$(MKDIRHIER) $(DESTDIR)$(ircd_log_dir); \
++	fi
++	$(INSTALL_PROGRAM) -m $(ircd_mode) $(IAUTH) $(DESTDIR)$(server_bin_dir)
++	$(INSTALL_PROGRAM) -m $(ircd_mode) $(CHKCONF) $(DESTDIR)$(server_bin_dir)
++	$(INSTALL_PROGRAM) -m $(ircd_mode) ircd-mkpasswd $(DESTDIR)$(server_bin_dir)
++	$(INSTALL_PROGRAM) -m $(ircd_mode) $(IRCDWATCH) $(DESTDIR)$(server_bin_dir)
++	$(RM) $(DESTDIR)$(IRCDM4_PATH)
++	../ircd/buildm4 $(DESTDIR)$(IRCDM4_PATH)
++	$(INSTALL_DATA) ../doc/ircd.8 $(DESTDIR)$(server_man_dir)
++	$(INSTALL_DATA) ../doc/iauth.8 $(DESTDIR)$(server_man_dir)
++	$(INSTALL_DATA) ../doc/iauth.conf.5 $(DESTDIR)$(conf_man_dir)
++	$(INSTALL_DATA) ../contrib/ircdwatch/ircdwatch.8 $(DESTDIR)$(server_man_dir)
++	$(INSTALL_DATA) ../doc/ircd.conf.example $(DESTDIR)$(ircd_conf_dir)
++	$(INSTALL_DATA) ../doc/iauth.conf.example $(DESTDIR)$(ircd_conf_dir)
++	-@if [ ! -f $(DESTDIR)$(IAUTHCONF_PATH) ]; then \
++		$(INSTALL_DATA) ../doc/iauth.conf.example $(DESTDIR)$(IAUTHCONF_PATH); \
+ 	fi
+-	-@if [ ! -f $(IRCDMOTD_PATH) ]; then \
+-		$(INSTALL_DATA) ../support/ircd.motd $(IRCDMOTD_PATH); \
++	-@if [ ! -f $(DESTDIR)$(IRCDMOTD_PATH) ]; then \
++		$(INSTALL_DATA) ../support/ircd.motd $(DESTDIR)$(IRCDMOTD_PATH); \
+ 	fi
+ 	@echo "installation of server done."
+ 
+ install-tkserv: $(TKSERV)
+-	-@if [ ! -d $(server_bin_dir) ]; then \
+-	$(MKDIRHIER) $(server_bin_dir); \
++	-@if [ ! -d $(DESTDIR)$(server_bin_dir) ]; then \
++	$(MKDIRHIER) $(DESTDIR)$(server_bin_dir); \
+ 	fi
+-	-@if [ ! -d $(ircd_conf_dir) ]; then \
+-	$(MKDIRHIER) $(ircd_conf_dir); \
++	-@if [ ! -d $(DESTDIR)$(ircd_conf_dir) ]; then \
++	$(MKDIRHIER) $(DESTDIR)$(ircd_conf_dir); \
+ 	fi
+-	$(INSTALL_PROGRAM) -m $(ircd_mode) $(TKSERV) $(server_bin_dir)
++	$(INSTALL_PROGRAM) -m $(ircd_mode) $(TKSERV) $(DESTDIR)$(server_bin_dir)
+ 	@echo "installation of tkserv done."
+ 
+ clbsd.o: ../common/bsd.c setup.h config.h ../common/struct_def.h

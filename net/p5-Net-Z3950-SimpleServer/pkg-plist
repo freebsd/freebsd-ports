@@ -1,3 +1,5 @@
+%%PERL5_MAN3%%/Net::Z3950::GRS1.3.gz
+%%PERL5_MAN3%%/Net::Z3950::SimpleServer.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/Z3950/GRS1.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/Z3950/OID.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/Z3950/SimpleServer.pm

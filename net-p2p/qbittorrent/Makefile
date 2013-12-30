@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	qbittorrent
-PORTVERSION=	3.1.3
+PORTVERSION=	3.1.4
 PORTREVISION?=	0
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
@@ -17,7 +17,8 @@ LIB_DEPENDS=	libtorrent-rasterbar.so:${PORTSDIR}/net-p2p/libtorrent-rasterbar \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 USES=		pkgconfig
-USE_QT4=	corelib network qmake_build linguist_build moc_build rcc_build uic_build
+USE_QT4=	corelib network qmake_build linguist_build moc_build \
+		rcc_build uic_build
 QT_NONSTANDARD=	yes
 DESTDIRNAME=	INSTALL_ROOT
 
@@ -42,9 +43,11 @@ USE_QT4+=	dbus
 
 do-configure:
 .if defined(SLAVE_PORT) && ${SLAVE_PORT:L} == "no"
-	@cd ${WRKSRC} ; ${SETENV} ${CONFIGURE_ENV} ./configure --prefix=${PREFIX}
+	@cd ${WRKSRC} ; ${SETENV} ${CONFIGURE_ENV} \
+		./configure --prefix=${PREFIX}
 .else
-	@cd ${WRKSRC} ; ${SETENV} ${CONFIGURE_ENV} ./configure --prefix=${PREFIX} --disable-gui
+	@cd ${WRKSRC} ; ${SETENV} ${CONFIGURE_ENV} \
+		./configure --prefix=${PREFIX} --disable-gui
 .endif
 
 post-install:
@@ -53,10 +56,12 @@ post-install:
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT:L} == "no"
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qbittorrent
-	${INSTALL_MAN} ${WRKSRC}/doc/qbittorrent.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/qbittorrent.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/
 .else
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qbittorrent-nox
-	${INSTALL_MAN} ${WRKSRC}/doc/qbittorrent-nox.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/qbittorrent-nox.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/
 .endif
 
 .include <bsd.port.mk>

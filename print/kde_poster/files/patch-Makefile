@@ -1,0 +1,13 @@
+--- Makefile.orig	2002-08-29 19:15:37.000000000 +0300
++++ Makefile	2013-12-24 19:18:30.000000000 +0200
+@@ -1,8 +1,8 @@
+-CFLAGS = -g -Wall
++#CFLAGS = -g -Wall
+ #CFLAGS = -O2 -Wall
+ 
+ poster: poster.c
+-	gcc $(CFLAGS) -o poster poster.c -lm
++	$(CC) $(CFLAGS) -o poster poster.c -lm
+ 
+ # HPUX:	cc -O -Aa -D_POSIX_SOURCE -o poster poster.c -lm
+ #       Note that this program might trigger a stupid bug in the HPUX C library,

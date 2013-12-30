@@ -3,6 +3,7 @@
 
 PORTNAME=	smalltalk
 PORTVERSION=	3.2.5
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	GNU
 
@@ -11,18 +12,22 @@ COMMENT=	GNU Smalltalk
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		gawk:${PORTSDIR}/lang/gawk
-LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm \
-		execinfo:${PORTSDIR}/devel/libexecinfo \
-		cairo:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	libgdbm.so:${PORTSDIR}/databases/gdbm \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+		libcairo.so:${PORTSDIR}/graphics/cairo
 
-OPTIONS_DEFINE=	TCL PGSQL SDL
-OPTIONS_DEFAULT=TCL PGSQL SDL
+OPTIONS_DEFINE=	TK PGSQL SDL
+OPTIONS_DEFAULT=TK PGSQL SDL
+OPTIONS_SUB=	yes
+TK_USES=	tk:84
+TK_CONFIGURE_WITH=tcl=${LOCALBASE}/lib/tcl8.4 tk=${LOCALBASE}/lib/tk8.4
+PGSQL_USE=	PGSQL=yes
+SDL_USE=	SDL=image,mixer,sdl,sound,ttf
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	pango
-USES=		pathfix pkgconfig iconv
+USES=		shebangfix pkgconfig iconv gmake
 USE_SQLITE=	yes
-USE_GMAKE=	yes
 USE_XZ=		yes
 USE_XORG=	ice xi xmu
 USE_GL=		gl glut
@@ -33,6 +38,11 @@ CONFIGURE_ARGS=	--enable-generational-gc=no \
 		--with-emacs=no \
 		--with-gmp=no
 USE_LDCONFIG=	yes
+SHEBANG_LANG=	sed
+sed_OLD_CMD=	/bin/sed
+sed_CMD=	${SED}
+SHEBANG_FILES=	packages/vfs/deb packages/vfs/mailfs \
+		examples/pepe.sed examples/xml.sed
 PLIST_SUB=	VERSION="${PORTVERSION}"
 PORTDATA=	*
 
@@ -40,41 +50,10 @@ PORTDATA=	*
 IGNORE=		smalltalk requires port data, unset NOPORTDATA to install
 .endif
 
-MAN1=		gst.1 gst-load.1 gst-package.1 gst-sunit.1 gst-config.1 \
-		gst-convert.1 gst-doc.1 gst-profile.1
-MLINKS=		gst-load.1 gst-reload.1
 INFO=		gst gst-base gst-libs
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MTCL}
-LIB_DEPENDS+=		tk84:${PORTSDIR}/x11-toolkits/tk84
-CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
-			--with-tk=${LOCALBASE}/lib/tk8.4
-PLIST_SUB+=		TCLTK=""
-.else
-CONFIGURE_ARGS+=	--with-tcl=no
-PLIST_SUB+=		TCLTK="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-. include "${PORTSDIR}/Mk/bsd.database.mk"
-PLIST_SUB+=	PGSQL=""
-.else
-PLIST_SUB+=	PGSQL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL=	image mixer sdl sound ttf
-PLIST_SUB+=	SDL=""
-.else
-PLIST_SUB+=	SDL="@comment "
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -99,8 +78,10 @@ post-build:
 		${WRKSRC}/gst-mode.el.in > ${WRKSRC}/gst-mode.el
 
 post-install:
-	@${MKDIR} ${DATADIR}/gtk
-	@${TOUCH} ${DATADIR}/gtk/.keep_me
-	${INSTALL_DATA} ${WRKSRC}/*.el ${PREFIX}/share/emacs/site-lisp
+	@${MKDIR} ${STAGEDIR}${DATADIR}/gtk
+	@${INSTALL_DATA} ${WRKSRC}/*.el ${STAGEDIR}${PREFIX}/share/emacs/site-lisp
+	@ls -1 ${STAGEDIR}${PREFIX}/bin/gst* |grep -v config|xargs ${STRIP_CMD}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/smalltalk/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgst.so
 
 .include <bsd.port.post.mk>

@@ -28,66 +28,39 @@ LATEST_LINK=	${PORTNAME}-kde4
 USE_KDE4=	kdehier kdelibs kdeprefix libkcddb libkcompactdisc \
 		nepomuk-core runtime automoc4 sharedmime strigi
 USE_MYSQL=	embedded
-USE_QT4=	dbus designer gui network opengl \
+USE_QT4=	corelib dbus designer gui network opengl \
 		phonon script sql svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 USE_XORG=	x11
 USE_BZIP2=	yes
-NO_STAGE=	yes
 USES=		cmake pkgconfig
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	AMAZON IPOD MP3TUNES MTP
+BROKEN_sparc64=	does not build (GCC-related error)
+
+OPTIONS_DEFINE=	AMAZON IPOD MP3TUNES MTP NLS
 OPTIONS_DEFAULT=IPOD MP3TUNES MTP
+OPTIONS_SUB=	yes
 
-AMAZON_DESC=	Amazon MP3 store support via clamz
-IPOD_DESC=	Apple iPod support
-MP3TUNES_DESC=	MP3tunes support
+AMAZON_DESC=		Amazon MP3 store support via clamz
+AMAZON_RUN_DEPENDS=	clamz:${PORTSDIR}/net/clamz
 
-.include <bsd.port.options.mk>
+IPOD_DESC=		Apple iPod support
+IPOD_LIB_DEPENDS=	libgpod.so:${PORTSDIR}/audio/libgpod
+IPOD_USE=		GNOME=gdkpixbuf2,glib20
+IPOD_CMAKE_OFF=		-DWITH_IPOD:BOOL=Off
 
-.if ${ARCH} == "sparc64"
-BROKEN=		does not build on sparc64 (GCC-related error)
-.endif
+MP3TUNES_DESC=		MP3tunes support
+MP3TUNES_LIB_DEPENDS=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth \
+			libcurl.so:${PORTSDIR}/ftp/curl
+MP3TUNES_USE=		GNOME=glib20,libxml2
+MP3TUNES_CMAKE_OFF=	-DWITH_MP3tunes:BOOL=Off
 
-.if ${PORT_OPTIONS:MAMAZON}
-RUN_DEPENDS+=	clamz:${PORTSDIR}/net/clamz
-.endif
+MTP_LIB_DEPENDS=	libmtp.so:${PORTSDIR}/audio/libmtp
+MTP_CMAKE_OFF=		-DWITH_Mtp:BOOL=Off
 
-.if ${PORT_OPTIONS:MIPOD}
-LIB_DEPENDS+=	libgpod.so:${PORTSDIR}/audio/libgpod
-USE_GNOME+=	gdkpixbuf2 glib20
-PLIST_SUB+=	IPOD=""
-.else
-CMAKE_ARGS+=	-DWITH_IPOD:BOOL=Off
-PLIST_SUB+=	IPOD="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMP3TUNES}
-LIB_DEPENDS+=	libloudmouth-1.so:${PORTSDIR}/net-im/loudmouth \
-		libcurl.so:${PORTSDIR}/ftp/curl
-USE_GNOME+=	glib20 libxml2
-PLIST_SUB+=	MP3TUNES=""
-.else
-CMAKE_ARGS+=	-DWITH_MP3tunes:BOOL=Off
-PLIST_SUB+=	MP3TUNES="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMTP}
-LIB_DEPENDS+=	libmtp.so:${PORTSDIR}/audio/libmtp
-PLIST_SUB+=	MTP=""
-.else
-CMAKE_ARGS+=	-DWITH_Mtp:BOOL=Off
-PLIST_SUB+=	MTP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CMAKE_ARGS+=	-DBUILD_po:BOOL=Off
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=		gettext
+NLS_CMAKE_OFF=		-DBUILD_po:BOOL=Off
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
@@ -99,9 +72,10 @@ post-patch:
 		${WRKSRC}/utilities/amzdownloader/CMakeLists.txt
 
 post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages
 	${INSTALL_DATA} ${WRKSRC}/utilities/amzdownloader/amzdownloader.xml \
-		${PREFIX}/share/mime/packages
+		${STAGEDIR}${PREFIX}/share/mime/packages
 	${INSTALL_SCRIPT} ${WRKSRC}/utilities/amzdownloader/amzdownloader.desktop \
-		${PREFIX}/share/applications/kde4
+		${STAGEDIR}${PREFIX}/share/applications/kde4
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- ../nginx-sflow-module-0.9.6/ngx_http_sflow_config.c.orig	2012-06-07 04:52:57.000000000 +0400
-+++ ../nginx-sflow-module-0.9.6/ngx_http_sflow_config.c	2012-06-07 04:59:18.000000000 +0400
+--- ../nginx-sflow-module-0.9.7/ngx_http_sflow_config.c.orig	2012-06-07 04:52:57.000000000 +0400
++++ ../nginx-sflow-module-0.9.7/ngx_http_sflow_config.c	2012-06-07 04:59:18.000000000 +0400
 @@ -26,7 +26,6 @@
          ngx_log_error(NGX_LOG_ERR, log, 0, "getaddrinfo() failed: %s", gai_strerror(err));
          switch(err) {

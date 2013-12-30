@@ -6,27 +6,36 @@ PORTVERSION=	20030619
 PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.citi.umich.edu/projects/smartcard/
-DISTNAME=	libsectok-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ISO 7816 Smartcard API Library
 
+USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_OPENSSL=	YES
-MAKE_ARGS=	CC=${CC}
 
-MAN3=		sectok.3
+PLIST_FILES=	include/sectok.h lib/libsectok.a lib/libsectok.so \
+		lib/libsectok.so.3 man/man3/sectok.3.gz
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^VERSION/s|3.1|3| ; \
+		 s|^CFLAGS=|CFLAGS+=| ; \
+		 s|-g |$${CPPFLAGS} | ; \
+		 s|^LDFLAGS=|LDFLAGS+=| ; \
+		 s|-x .* -shared|-shared| ; \
+		 s|^CC=|CC?=| ; \
+		 /^LD/s|ld|$$(CC)| ; \
+		 s|-fpic|-fPIC|' ${WRKSRC}/Makefile
+
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/sectok.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/libsectok.a ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/libsectok.so.3 ${PREFIX}/lib
-	${LN} -s ${PREFIX}/lib/libsectok.so.3 ${PREFIX}/lib/libsectok.so
-	${INSTALL_MAN} ${WRKSRC}/sectok.3 ${PREFIX}/man/man3
-
-PLIST_FILES=	include/sectok.h lib/libsectok.a \
-		lib/libsectok.so lib/libsectok.so.3
+	(cd ${WRKSRC} && ${INSTALL_DATA} sectok.h \
+		${STAGEDIR}${PREFIX}/include)
+	(cd ${WRKSRC} && ${INSTALL_DATA} libsectok.a \
+		${STAGEDIR}${PREFIX}/lib)
+	(cd ${WRKSRC} && ${INSTALL_LIB} libsectok.so.3 \
+		${STAGEDIR}${PREFIX}/lib)
+	${LN} -s libsectok.so.3 ${STAGEDIR}${PREFIX}/lib/libsectok.so
+	(cd ${WRKSRC} && ${INSTALL_MAN} sectok.3 \
+		${STAGEDIR}${MANPREFIX}/man/man3)
 
 .include <bsd.port.mk>

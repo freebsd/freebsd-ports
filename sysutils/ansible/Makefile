@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ansible
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://ansibleworks.com/releases/
 
@@ -28,15 +28,16 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
 USES=		shebangfix
-SHEBANG_FILES=	${WRKSRC}/library/*/* \
+SHEBANG_FILES=	library/*/* \
 		lib/ansible/runner/action_plugins/synchronize.py
 
 SUB_FILES=	pkg-message
 
 PORTEXAMPLES=	ansible.cfg hosts
 
-post-patch-script:
+post-patch:
 	@${REINPLACE_CMD} -i -e "s|/etc/ansible|${ETCDIR}|" \
+		${WRKSRC}/bin/ansible-galaxy \
 		${WRKSRC}/docs/man/man1/ansible-playbook.1 \
 		${WRKSRC}/docs/man/man1/ansible.1 \
 		${WRKSRC}/examples/ansible.cfg \
@@ -52,6 +53,7 @@ post-patch-script:
 		${WRKSRC}/lib/ansible/constants.py \
 		${WRKSRC}/lib/ansible/playbook/__init__.py \
 		${WRKSRC}/lib/ansible/runner/__init__.py
+	@${RM}	${WRKSRC}/library/system/setup-e
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/man1

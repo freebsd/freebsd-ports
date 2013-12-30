@@ -59,8 +59,8 @@ IGNORE=		requires one of the <${UI_LIST}> values for CELESTIA_UI
 
 .if ${CELESTIA_UI} == "gtk" || ${CELESTIA_UI} == "gnome"
 USE_GNOME+=	gnomehack
-LIB_DEPENDS+=	libgtkglext-x11-1.so:${PORTSDIR}/x11-toolkits/gtkglext \
-		theora:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
+		libtheora.so:${PORTSDIR}/multimedia/libtheora
 STARTUP_NOTIFY=	true
 PLIST_FILES+=	share/celestia/celestia-logo.png share/celestia/celestiaui.xml
 .else

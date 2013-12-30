@@ -9,7 +9,6 @@ CACHE_DIR=%%CACHE_DIR%%
 CACHE_OWNER=%%CACHE_OWNER%%
 CACHE_GROUP=%%CACHE_GROUP%%
 CACHE_MODE=%%CACHE_MODE%%
-CFG_FILE=%%CFG_FILE%%
 
 case $2 in
     
@@ -25,9 +24,6 @@ case $2 in
 	    mkdir -p ${CACHE_DIR}  
 	    chown ${CACHE_OWNER}:${CACHE_GROUP} ${CACHE_GROUP}
 	    chmod ${CACHE_MODE} ${CACHE_DIR}
-	fi
-	if [ ! -f ${CFG_FILE} ] ; then
-	    cp -p ${CFG_FILE}.sample ${CFG_FILE}
 	fi
 	;;
 esac

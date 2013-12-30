@@ -10,10 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Asset (css/js) packaging library for Django
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>0<1.5:${PORTSDIR}/www/py-django14
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django14>0<1.5:${PORTSDIR}/www/py-django14
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=easy_install
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

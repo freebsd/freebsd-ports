@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	q4wine
-DISTVERSION=	1.1-r1
+DISTVERSION=	1.1-r2
 CATEGORIES=	emulators deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20$${DISTVERSION}/
 
@@ -19,6 +19,7 @@ RUN_DEPENDS=	sudo:${PORTSDIR}/security/sudo \
 
 USES=		cmake desktop-file-utils
 CMAKE_ARGS+=	-DMANPAGE_ENTRY_PATH=${MANPREFIX}/man
+USE_GCC=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_QT4=	qmake_build rcc_build moc_build uic_build \
@@ -51,7 +52,8 @@ USE_QT4+=	dbus
 post-patch:
 	@${REINPLACE_CMD} -e 's|/share/man|/man|' \
 		${WRKSRC}/src/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|^Categories=.*|Categories=Qt;System;Emulator;Utility;Game;|' \
+	@${REINPLACE_CMD} \
+		-e 's|^Categories=.*|Categories=Qt;System;Emulator;Utility;Game;|' \
 		${WRKSRC}/${PORTNAME}.desktop
 
 .if ! ${PORT_OPTIONS:MNLS}

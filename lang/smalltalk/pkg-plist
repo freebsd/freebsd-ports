@@ -16,10 +16,10 @@ lib/libgst.a
 lib/libgst.la
 lib/libgst.so
 lib/libgst.so.8
-%%TCLTK%%lib/smalltalk/blox-tk-%%VERSION%%.so
-%%TCLTK%%lib/smalltalk/blox-tk.a
-%%TCLTK%%lib/smalltalk/blox-tk.la
-%%TCLTK%%lib/smalltalk/blox-tk.so
+%%TK%%lib/smalltalk/blox-tk-%%VERSION%%.so
+%%TK%%lib/smalltalk/blox-tk.a
+%%TK%%lib/smalltalk/blox-tk.la
+%%TK%%lib/smalltalk/blox-tk.so
 lib/smalltalk/dbd-sqlite3-%%VERSION%%.so
 lib/smalltalk/dbd-sqlite3.a
 lib/smalltalk/dbd-sqlite3.la
@@ -60,8 +60,6 @@ lib/smalltalk/zlib-%%VERSION%%.so
 lib/smalltalk/zlib.a
 lib/smalltalk/zlib.la
 lib/smalltalk/zlib.so
-lib/smalltalk/libc.la
-libdata/pkgconfig/gnu-smalltalk.pc
 libexec/smalltalk/gnutls-wrapper
 libexec/smalltalk/vfs/deb
 libexec/smalltalk/vfs/lslR
@@ -74,6 +72,15 @@ libexec/smalltalk/vfs/ulha
 libexec/smalltalk/vfs/ucpio
 libexec/smalltalk/vfs/utar
 libexec/smalltalk/vfs/uzip
+man/man1/gst-config.1.gz
+man/man1/gst-convert.1.gz
+man/man1/gst-doc.1.gz
+man/man1/gst-load.1.gz
+man/man1/gst-package.1.gz
+man/man1/gst-profile.1.gz
+man/man1/gst-reload.1.gz
+man/man1/gst-sunit.1.gz
+man/man1/gst.1.gz
 var/lib/smalltalk/gst.im
 share/aclocal/gst.m4
 share/aclocal/gst-package.m4
@@ -85,5 +92,3 @@ share/emacs/site-lisp/smalltalk-mode.el
 @dirrm var/lib/smalltalk
 @dirrmtry var/lib
 @dirrmtry var
-@exec mkdir -p %D/include/snprintfv
-@dirrmtry include/snprintfv

@@ -44,6 +44,11 @@ bin/dar_slave
 bin/dar_manager
 bin/dar_cp
 bin/dar_static
+man/man1/dar.1.gz
+man/man1/dar_cp.1.gz
+man/man1/dar_manager.1.gz
+man/man1/dar_slave.1.gz
+man/man1/dar_xform.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/samples/dar_par.dcf
 %%PORTDOCS%%%%DOCSDIR%%/samples/cdbackup.sh
 %%PORTDOCS%%%%DOCSDIR%%/samples/darrc_sample

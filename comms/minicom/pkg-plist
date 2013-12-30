@@ -2,6 +2,10 @@ bin/minicom
 bin/xminicom
 bin/runscript
 bin/ascii-xfr
+man/man1/minicom.1.gz
+man/man1/runscript.1.gz
+man/man1/ascii-xfr.1.gz
+man/man1/xminicom.1.gz
 %%NLS%%share/locale/cs/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/da/LC_MESSAGES/minicom.mo
 %%NLS%%share/locale/de/LC_MESSAGES/minicom.mo

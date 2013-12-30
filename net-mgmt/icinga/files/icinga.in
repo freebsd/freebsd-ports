@@ -30,13 +30,16 @@ load_rc_config "${name}"
 command="%%PREFIX%%/bin/icinga"
 command_args="-d"
 extra_commands="reload checkconfig configtest"
-pidfile="%%ICINGADIR%%/icinga.lock"
 icinga_user="%%ICINGAUSER%%"
 icinga_group="%%ICINGAGROUP%%"
 
-icinga_logfile="%%ICINGALOGDIR%%/${name}.log"
-icinga_statusfile="%%ICINGADIR%%/status.sav"
-icinga_cmdfile="%%ICINGADIR%%/rw/${name}.cmd"
+icinga_dir="%%ICINGADIR%%"
+icinga_logdir="%%ICINGALOGDIR%%"
+
+pidfile="${icinga_dir}/icinga.lock"
+icinga_logfile="${icinga_logdir}/${name}.log"
+icinga_statusfile="${icinga_dir}/status.sav"
+icinga_cmdfile="${icinga_dir}/rw/${name}.cmd"
 
 start_cmd="start_cmd"
 checkconfig_cmd="icinga_checkconfig verbose"
@@ -69,7 +72,7 @@ icinga_cacheconfig() {
 
 icinga_checkconfig() {
   echo -n "Performing sanity check of icinga configuration: "
-	  	
+
   if [ "$1" != "verbose" ]; then
     ${command} -v ${icinga_configfile} 2>&1 >/dev/null
   else
@@ -97,6 +100,19 @@ reload_precmd() {
 }
 
 start_precmd() {
+  for d in "${icinga_dir}" \
+           "${icinga_dir}/checkresults" \
+           "${icinga_logdir}" \
+           "${icinga_logdir}/archives"; do
+    if [ ! -d "${d}" ]; then
+      install -d -o "${icinga_user}" -g "${icinga_group}" "${icinga_dir}"/checkresults
+    fi
+  done
+
+  if [ ! -d "${icingadir}/rw" ]; then
+    install -d -o "${icinga_user}" -g "%%WWWGRP%%" "${icinga_dir}"/rw
+  fi
+
   if ! icinga_checkconfig; then
     return 1
   fi
@@ -115,7 +131,7 @@ start_precmd() {
 }
 
 stop_postcmd() {
-  rm -f "%%ICINGADIR%%/icinga.tmp" "${icinga_cmdfile}"
+  rm -f "${icinga_dir}/icinga.tmp" "${icinga_cmdfile}"
 }
 
 start_cmd() {

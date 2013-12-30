@@ -1,8 +1,0 @@
-bin/fl0p
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/CREDITS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%DATADIR%%/fl0p.fp
-@dirrm %%DATADIR%%

@@ -3,6 +3,7 @@
 
 PORTNAME=	kyotocabinet
 PORTVERSION=	1.2.76
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://fallabs.com/${PORTNAME}/pkg/ \
 		LOCAL/sunpoet
@@ -14,57 +15,36 @@ LICENSE=	GPLv3
 
 OPTIONS_DEFINE=	DOCS
 
+CPPFLAGS+=	-fPIC
 GNU_CONFIGURE=	yes
-MAKE_ARGS=	PCDIR="${PREFIX}/libdata/pkgconfig"
+MAKE_ARGS=	PCDIR=${PREFIX}/libdata/pkgconfig
+REINPLACE_ARGS=	-i ''
 USE_LDCONFIG=	yes
 USES=		gmake
 
-MAN1=		kccachetest.1 \
-		kcdirmgr.1 \
-		kcdirtest.1 \
-		kcforestmgr.1 \
-		kcforesttest.1 \
-		kcgrasstest.1 \
-		kchashmgr.1 \
-		kchashtest.1 \
-		kclangctest.1 \
-		kcpolymgr.1 \
-		kcpolytest.1 \
-		kcprototest.1 \
-		kcstashtest.1 \
-		kctreemgr.1 \
-		kctreetest.1 \
-		kcutilmgr.1 \
-		kcutiltest.1
+NOT_FOR_ARCHS=	powerpc
+NOT_FOR_ARCHS_REASON=	does not link
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "i386" && !defined(CPUTYPE)
-CONFIGURE_TARGET=	i586-portbld-freebsd${OSREL}
-CPUTYPE=	i586
-PKGMESSAGE=	${FILESDIR}/pkg-message.${ARCH}
-# _CPUCFLAGS will somehow show up twice in CFLAGS but who cares..
-.include <bsd.cpu.mk>
-.endif
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not link on powerpc
-.endif
-
 post-patch:
+	@${REINPLACE_CMD} -e 's|-lstdc++ ||g' ${WRKSRC}/configure ${WRKSRC}/doc/spex.html ${WRKSRC}/example/Makefile ${WRKSRC}/lab/kcdict/Makefile
 .if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/DOCDIR/d' ${WRKSRC}/Makefile.in
 .endif
 
+post-build:
+	@cd ${WRKSRC}/ && ${STRIP_CMD} libkyotocabinet.so.16.13.0 kccachetest \
+		kcdirmgr kcdirtest kcforestmgr kcforesttest kcgrasstest \
+		kchashmgr kchashtest kclangctest kcpolymgr kcpolytest \
+		kcprototest kcstashtest kctreemgr kctreetest kcutilmgr \
+		kcutiltest
+
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${FIND} ${DOCSDIR}/ -type d -exec ${CHMOD} 755 '{}' \;
-	${FIND} ${DOCSDIR}/ -type f -exec ${CHMOD} 444 '{}' \;
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}/
-.endif
-.if exists(${PKGMESSAGE})
-	@${CAT} ${PKGMESSAGE}
+	${FIND} ${STAGEDIR}${DOCSDIR}/ -type d -exec ${CHMOD} 755 '{}' \;
+	${FIND} ${STAGEDIR}${DOCSDIR}/ -type f -exec ${CHMOD} 444 '{}' \;
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.post.mk>

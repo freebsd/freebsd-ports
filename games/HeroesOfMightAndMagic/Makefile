@@ -25,7 +25,7 @@ GAMEFILES=	README Heroes_III_Tutorial.pdf icon.bmp icon.xpm
 DATAFILES=	*.lod *.snd
 
 .if !defined(CDROM_MOUNT)
-BROKEN=	${PKGNAME} requires CDROM_MOUNT to be set to the mount point of the CD
+IGNORE=		${PKGNAME} requires CDROM_MOUNT to be set to the mount point of the CD
 .endif
 
 do-install:

@@ -7,7 +7,7 @@
  VERSION = "1.1a"
  
 -DESTPATH = /usr/local
-+DESTPATH = ${PREFIX}
++DESTPATH = ${DESTDIR}${PREFIX}
  BINPATH = $(DESTPATH)/bin
 -GAMEPATH = $(DESTPATH)/games/glMaze
 +GAMEPATH = $(DESTPATH)/share/glmaze

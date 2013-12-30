@@ -8,7 +8,18 @@ bin/tabo
 bin/tdhfunction
 bin/xlcells
 bin/xlcleaner
-%%LIBCHRON%%lib/libchron.a
+%%CHRON%%lib/libchron.a
+man/man1/dateconvert.1.gz
+man/man1/fldfmt.1.gz
+man/man1/fldmap.1.gz
+man/man1/fldsel.1.gz
+man/man1/pjoin.1.gz
+man/man1/recsel.1.gz
+man/man1/tabo.1.gz
+man/man1/tdhfunction.1.gz
+man/man1/xlcells.1.gz
+man/man1/xlcleaner.1.gz
+man/man3/libchron.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/Copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/commalist.html
 %%PORTDOCS%%%%DOCSDIR%%/condex.html
@@ -32,4 +43,4 @@ bin/xlcleaner
 %%PORTDOCS%%%%DOCSDIR%%/times.html
 %%PORTDOCS%%%%DOCSDIR%%/xlcells.1.html
 %%PORTDOCS%%%%DOCSDIR%%/xlcleaner.1.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

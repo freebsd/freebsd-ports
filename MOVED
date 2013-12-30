@@ -5428,3 +5428,41 @@ x11/yelp3|x11/yelp|%DATE%|moved
 x11-fm/nautilus3|x11-fm/nautilus|%DATE%|moved
 x11-toolkits/gdl3|x11-toolkits/gdl|%DATE%|moved
 x11-wm/metacity3|x11-wm/metacity|%DATE%|moved
+x11-fonts/ppantsfonts||2013-12-20|Has expired: Broken for more than 6 month
+x11-toolkits/gtksourceview-sharp||2013-12-20|Has expired: Depends on expired devel/mono-tools
+devel/mono-tools||2013-12-20|Has expired: Broken for more than 6 month
+textproc/p5-XML-SAXDriver-Sablotron||2013-12-20|Has expired: Depends on expired textproc/p5-XML-Sablotron
+textproc/p5-XML-Sablotron||2013-12-20|Has expired: Broken for more than 6 month
+net/freeswitch-core||2013-12-20|Has expired: Broken for more than 6 month
+misc/freeswitch-pizzademo||2013-12-20|Has expired: Depends on expired net/freeswitch-core
+misc/freeswitch-scripts||2013-12-20|Has expired: Depends on expired net/freeswitch-core
+www/p5-HTML-Webmake||2013-12-20|Has expired: Depends on expired textproc/p5-XML-Sablotron
+net/freeswitch||2013-12-20|Has expired: Depends on expired net/freeswitch-core
+games/blue|games/bluemoon|2013-12-21|Rename to match upstream naming
+devel/ruby-cvs||2013-12-22|Has expired: Broken for more than 6 month
+devel/hs-reactive||2013-12-22|Has expired: Broken for more than 6 month
+databases/rubygem-delayed_job_data_mapper||2013-12-22|Has expired: Broken for more than 6 month
+graphics/xmagv||2013-12-22|Has expired: Broken for more than 6 month
+lang/slib-gauche||2013-12-22|Has expired: Broken for more than 6 month
+graphics/f-spot||2013-12-22|Has expired: Broken for more than 6 month
+sysutils/linux-megamgr||2013-12-22|Has expired: Broken for more than 6 month
+games/linux-savage-samuraiwars||2013-12-22|Has expired: Broken for more than 6 month
+ftp/gftp||2013-12-22|Has expired: Broken for more than 6 month
+devel/hs-DeepArrow||2013-12-22|Has expired: Broken for more than 6 month
+converters/py-svglib||2013-12-22|Has expired: Broken for more than 6 month
+converters/p5-Unicode-Lite||2013-12-22|Has expired: Broken for more than 6 month
+mail/squirrelmail-calendar_sql_backend-plugin||2013-12-22|Has expired: Broken for more than 6 month
+finance/quantlib||2013-12-22|Has expired: Broken for more than 6 month
+games/xkobo||2013-12-22|Has expired: Broken for more than 6 month
+games/quake3-rq3||2013-12-22|Has expired: Broken for more than 6 month
+math/fbm||2013-12-22|Has expired: No new release since 2004, new supported upstream
+graphics/yukon||2013-12-22|Removed, depends on graphics/seom
+graphics/seom||2013-12-22|Has expired: Broken for more than 6 month
+deskutils/libopensync-plugin-python-devel||2013-12-22|Has expired: Broken for more than 6 month
+deskutils/libopensync-plugin-synce-devel||2013-12-22|Removed, unmaintained, depends on deskutils/libopensync-plugin-python-devel
+net-im/libmsn||2013-12-22|Has expired: Primary MSN Messenger service terminated 30 APR 2013
+lang/clang||2013-12-22|Has expired: Migrate to lang/clang32 or newer
+math/freemat-mpi||2013-12-23|Obsolete since FreeMat 3.0
+devel/py-pmock||2013-12-27|Does not work with python 2.6 and beyond
+devel/ncurses-devel|devel/ncurses|2013-12-28|regular ncurses ports is more recent
+databases/mird||2013-12-28|Has expired: No longer maintained upstream

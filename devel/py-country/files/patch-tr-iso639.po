@@ -1,0 +1,74 @@
+--- src/pycountry/locales/tr/LC_MESSAGES/iso639.po.orig
++++ src/pycountry/locales/tr/LC_MESSAGES/iso639.po
+@@ -220,7 +220,7 @@ msgstr ""
+ 
+ #. name for bel, be
+ msgid "Belarusian"
+-msgstr "Beyaz Rusça"
++msgstr "Belarusça"
+ 
+ #. name for bem
+ msgid "Bemba"
+@@ -463,7 +463,7 @@ msgstr "Dakota (Kuzey Amerika yerlileri)"
+ 
+ #. name for dan, da
+ msgid "Danish"
+-msgstr "Danimarkaca; Danca"
++msgstr "Danca"
+ 
+ #. name for dar
+ msgid "Dargwa"
+@@ -517,7 +517,7 @@ msgstr "FlÃ¢manca, Orta dÃ¶nem (1050-1350 dolaylarÄ±)"
+ 
+ #. name for nld, nl
+ msgid "Dutch; Flemish"
+-msgstr "Hollandaca; Flamanca"
++msgstr "Felemenkçe; Flamanca"
+ 
+ #. name for dyu
+ msgid "Dyula"
+@@ -557,7 +557,7 @@ msgstr "Esperanto"
+ 
+ #. name for est, et
+ msgid "Estonian"
+-msgstr "Estonyaca"
++msgstr "Estonca"
+ 
+ #. name for ewe, ee
+ msgid "Ewe"
+@@ -1092,7 +1092,7 @@ msgstr "Adres"
+ 
+ #. name for lav, lv
+ msgid "Latvian"
+-msgstr "Letonyaca"
++msgstr "Letonca"
+ 
+ #. name for lez
+ msgid "Lezghian"
+@@ -1109,7 +1109,7 @@ msgstr "_Yasal"
+ 
+ #. name for lit, lt
+ msgid "Lithuanian"
+-msgstr "Litvanyaca"
++msgstr "Litvanca"
+ 
+ #. name for lol
+ msgid "Mongo"
+@@ -1154,7 +1154,7 @@ msgstr "TaylandÃ§a"
+ 
+ #. name for mkd, mk
+ msgid "Macedonian"
+-msgstr "Makedonyaca"
++msgstr "Makedonca"
+ 
+ # src/prefs.c:1124 src/prefs_callbacks.c:222 src/prefs_callbacks.c:396
+ #. name for mad
+@@ -1534,7 +1534,7 @@ msgstr "Polonyaca"
+ 
+ #. name for pol, pl
+ msgid "Polish"
+-msgstr "Polonyaca"
++msgstr "Lehçe"
+ 
+ #. name for pon
+ #, fuzzy

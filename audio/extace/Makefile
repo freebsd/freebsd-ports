@@ -12,8 +12,7 @@ COMMENT=	Audio visualization plugin for the X Window System
 
 LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
 
-USES=        pathfix pkgconfig
-NO_STAGE=	yes
+USES=		pathfix pkgconfig
 USE_GNOME=	esound gnomehier gtk20
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

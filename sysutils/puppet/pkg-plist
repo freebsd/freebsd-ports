@@ -48,6 +48,7 @@ man/man8/puppet.8.gz
 %%ETCDIR%%/puppet.conf-dist
 %%ETCDIR%%/auth.conf-dist
 www/puppet/config.ru
+@exec /usr/sbin/chown -Rh puppet:puppet %D/%F
 @dirrm www/puppet/public
 @dirrm www/puppet
 @dirrmtry etc/puppet/modules

@@ -2,18 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	foomatic-filters
-PORTVERSION=	4.0.7
-PORTREVISION=	2
+PORTVERSION=	4.0.17
 CATEGORIES=	print
 MASTER_SITES=	http://www.openprinting.org/download/foomatic/
 
-MAINTAINER=	acm@FreeBSD.org
+MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Foomatic wrapper scripts
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		perl5
+LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
+
+USES=		perl5 pkgconfig
 USE_AUTOTOOLS=	autoheader
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
@@ -23,6 +23,7 @@ CONFIGURE_ENV=	ac_cv_path_A2PS=${LOCALBASE}/bin/a2ps \
 		ac_cv_path_CUPS_BACKENDS=${LOCALBASE}/libexec/cups/backend \
 		ac_cv_path_ENSCRIPT=${LOCALBASE}/bin/enscript \
 		ac_cv_path_MPAGE=${LOCALBASE}/bin/mpage \
+		ac_cv_path_PERL=${LOCALBASE}/bin/perl \
 		ac_cv_path_PPR=${LOCALBASE}/lib/ppr \
 		ac_cv_path_PPR_INTERFACES=${LOCALBASE}/lib/ppr/interfaces \
 		ac_cv_path_PPR_LIB=${LOCALBASE}/lib/ppr/lib \
@@ -42,9 +43,6 @@ ENSCRIPT_LETTER_DESC=	Install enscript convertor (letter)
 ENSCRIPT_LETTERDJ_DESC=	Install enscript convertor (letterdj)
 MPAGE_DESC=		Print multiple pages per sheet of paper
 
-MAN1=		foomatic-rip.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCUPS_IMAGE}
@@ -73,5 +71,9 @@ RUN_DEPENDS+=	mpage:${PORTSDIR}/print/mpage
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|g' ${WRKSRC}/foomaticrip.c
+	@${REINPLACE_CMD} -e '/filter.conf/ s|if|#if|g' ${WRKSRC}/Makefile.in
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/foomatic-rip
 
 .include <bsd.port.mk>

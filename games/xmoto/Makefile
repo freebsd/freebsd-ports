@@ -18,6 +18,8 @@ LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libxdg-basedir.so:${PORTSDIR}/x11/libxdg-basedir
 BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 USES=		gmake
 USE_GNOME=	libxml2

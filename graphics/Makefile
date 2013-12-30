@@ -194,7 +194,6 @@
     SUBDIR += exiftran
     SUBDIR += exiv2
     SUBDIR += exrtools
-    SUBDIR += f-spot
     SUBDIR += fbm
     SUBDIR += feh
     SUBDIR += ffff
@@ -732,6 +731,7 @@
     SUBDIR += p5-ming
     SUBDIR += panoglview
     SUBDIR += panomatic
+    SUBDIR += partio
     SUBDIR += passepartout
     SUBDIR += pdf2svg
     SUBDIR += pear-Horde_Image
@@ -963,7 +963,6 @@
     SUBDIR += sdl_ttf
     SUBDIR += seam-carving-gui
     SUBDIR += seejpeg
-    SUBDIR += seom
     SUBDIR += separate
     SUBDIR += shared-color-profiles
     SUBDIR += sharpconstruct
@@ -1046,7 +1045,6 @@
     SUBDIR += xglurbules
     SUBDIR += xgrasp
     SUBDIR += xli
-    SUBDIR += xmagv
     SUBDIR += xmandel
     SUBDIR += xmedcon
     SUBDIR += xmfract
@@ -1085,7 +1083,6 @@
     SUBDIR += yafray
     SUBDIR += yagf
     SUBDIR += yed
-    SUBDIR += yukon
     SUBDIR += zathura
     SUBDIR += zathura-djvu
     SUBDIR += zathura-pdf-poppler

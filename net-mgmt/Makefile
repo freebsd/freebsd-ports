@@ -307,6 +307,7 @@
     SUBDIR += softflowd
     SUBDIR += spectools
     SUBDIR += ssgless
+    SUBDIR += statsd
     SUBDIR += subcalc
     SUBDIR += sysmon
     SUBDIR += tcpreplay

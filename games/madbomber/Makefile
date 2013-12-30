@@ -20,30 +20,26 @@ LDFLAGS+=	`${SDL_CONFIG} --libs`
 
 PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt TODO.txt
 
-DESKTOP_ENTRIES="Mad Bomber" "${COMMENT}" \
-		"${PREFIX}/share/pixmaps/${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+DESKTOP_ENTRIES="Mad Bomber" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} -o ${PORTNAME} \
 		${PORTNAME}.c ${LDFLAGS} -lSDL_mixer -lSDL_image
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
-	${MKDIR} ${DATADIR}
 .for d in images music sounds
-	@(cd ${WRKSRC}/data && ${COPYTREE_SHARE} ${d} ${DATADIR})
+	@(cd ${WRKSRC}/data && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor
 
-	${INSTALL_DATA} ${WRKSRC}/data/images/icon.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
+	${LN} -sf ${DATADIR}/images/icon.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

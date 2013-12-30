@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	science biology
 MASTER_SITES=	SF/itk/itk/2.8
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Insight Toolkit
 
 NO_PACKAGE=	License does not allow redistribution of binaries

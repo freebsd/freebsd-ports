@@ -6,7 +6,7 @@ PORTVERSION=	0.2
 PORTREVISION=	1
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}/ \
-		SF/nemysisfreebsdp/:icons
+		SF/nemysisfreebsdp/games/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 DIST_SUBDIR=	python
@@ -22,9 +22,10 @@ RUN_DEPENDS=	${PYGAME}
 WRKSRC=		${WRKDIR}/Bombz
 
 USE_ZIP=	yes
+USES= 		dos2unix
+DOS2UNIX_FILES=	*.txt
 USE_SDL=	sdl image mixer
 INSTALLS_ICONS=	yes
-USE_DOS2UNIX=	*.txt
 USE_PYTHON=	yes
 
 PORTDOCS=	ChangeLog readme.txt
@@ -36,6 +37,8 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -i '' '/words = name.split()/,/self.name = name/s/^/#/' \
 		${WRKSRC}/bombz/joy.py
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|' \
+		${WRKSRC}/${PORTNAME}.py
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
@@ -51,8 +54,10 @@ do-install:
 	@(cd ${WRKSRC} ; ${INSTALL_SCRIPT} ${d} ${STAGEDIR}${DATADIR})
 .endfor
 
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}

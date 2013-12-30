@@ -7,14 +7,12 @@ MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/chk4mail/ \
 		ftp://mud.stack.nl/pub/chk4mail/
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	A utility to quickly check multiple folders for new email
+COMMENT=	Quickly check multiple folders for new email
 
-PLIST_FILES=	bin/chk4mail bin/chkimap
-
-MAN1=		chk4mail.1 chkimap.1
+PLIST_FILES=	bin/chk4mail bin/chkimap \
+		man/man1/chk4mail.1.gz man/man1/chkimap.1.gz
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-imap
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

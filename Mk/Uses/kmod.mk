@@ -43,17 +43,18 @@ _INCLUDE_USES_KMOD_POST_MK=	yes
 .PHONY: kmod-post-install
 pre-install: ${STAGEDIR}${KMODDIR}
 ${STAGEDIR}${KMODDIR}:
-	${MKDIR} ${.TARGET}
+	@${MKDIR} ${.TARGET}
 
 post-install: kmod-post-install
 kmod-post-install:
-	${ECHO_CMD} "@exec /usr/sbin/kldxref ${KMODDIR}"  >> ${TMPPLIST}
-	${ECHO_CMD} "@unexec /usr/sbin/kldxref ${KMODDIR}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec /usr/sbin/kldxref ${KMODDIR}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec /usr/sbin/kldxref ${KMODDIR}" >> ${TMPPLIST}
 .if defined(NO_STAGE)
 	/usr/sbin/kldxref ${KMODDIR}
 .endif
 .if ${KMODDIR} != /boot/modules
-	${ECHO_CMD} "@unexec rmdir ${KMODDIR} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir ${KMODDIR} 2>/dev/null || true" \
+		>> ${TMPPLIST}
 .endif
 
 .endif

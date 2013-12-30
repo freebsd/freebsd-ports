@@ -2,17 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	ncurses
-PORTVERSION=	${RELEASE}
-PORTREVISION=	3
+DISTVERSION=	${RELEASE}-20131221
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/current/
+MASTER_SITE_SUBDIR=	${PORTNAME}/current
 DIST_SUBDIR=	${PORTNAME}
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Library for terminal-independent, full-screen output
 
 CONFLICTS=	ncurses-devel-*
+
+LICENSE=	MIT
 
 RELEASE=	5.9
 
@@ -26,15 +28,16 @@ CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
 		--with-shared \
 		--without-curses-h --with-termlib --program-prefix= \
 		--enable-rpath --disable-root-environ \
-		--with-manpage-format=gzip --srcdir=../
+		--with-manpage-format=gzip --srcdir=../ \
+		--mandir=${MANPREFIX}/man \
+		--with-hashed-db \
+		--with-pkg-config-libdir=${PREFIX}/libdata/pkgconfig
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	EXTCOLORS TRACE DEBUG
-EXTCOLORS_DESC=	256-color support (only for ncursesw)
+OPTIONS_DEFINE=	TRACE DEBUG PROFILE EXAMPLES DOCS
 TRACE_DESC=	Add trace() function to all models of ncurses
 
-CONFIGURE_ENV=	PKG_CONFIG_LIBDIR=${LOCALBASE}/libdata/pkgconfig \
-		gnat_exists="no"
+CONFIGURE_ENV=	gnat_exists="no"
 
 USE_LDCONFIG=	yes
 USES=		pkgconfig
@@ -49,15 +52,8 @@ CONFIGURE_WRKSRC=	${NOWIDEC_WRKSRC}
 BUILD_WRKSRC=	${NOWIDEC_WRKSRC}
 INSTALL_WRKSRC=	${NOWIDEC_WRKSRC}
 
-NCURSES_ABI_VER=	5
-NCURSES_REL_VER=	${RELEASE}
-NCURSESW_ABI_VER=	${NCURSES_ABI_VER}
-NCURSESW_REL_VER=	${NCURSES_REL_VER}
-
-PLIST_SUB+=	ABI_VER=${NCURSES_ABI_VER} \
-		REL_VER=${NCURSES_REL_VER} \
-		ABI_VER_WIDEC=${NCURSESW_ABI_VER} \
-		REL_VER_WIDEC=${NCURSESW_REL_VER} \
+PLIST_SUB+=	ABI_VER=${RELEASE:R} \
+		REL_VER=${RELEASE} \
 		WIDEC_EXAMPLESDIR=${WIDEC_EXAMPLESDIR:S,${PREFIX}/,,} \
 		NOWIDEC_EXAMPLESDIR=${NOWIDEC_EXAMPLESDIR:S,${PREFIX}/,,}
 
@@ -80,53 +76,13 @@ EXAMPLES_CPP=	Makefile NEWS PROBLEMS README-first cursesapp.cc \
 		cursesw.h cursslk.cc cursslk.h demo.cc etip.h \
 		internal.h
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.include "${.CURDIR}/Makefile.man"
-
 CONFIGURE_ARGS_WIDEC=--enable-widec
-.if ${PORT_OPTIONS:MEXTCOLORS}
-CONFIGURE_ARGS_WIDEC+=--enable-ext-colors
-NCURSESW_ABI_VER=	6
-NCURSESW_REL_VER=	6.0
-.endif
 
-# needed by devel/py-ncurses port
-.if ${PORT_OPTIONS:MTRACE}
-CONFIGURE_ARGS+=	--with-trace
-.endif
+TRACE_CONFIGURE_ON=	--with-trace
+PROFILE_CONFIGURE_WITH=	profile
+DEBUG_CONFIGURE_WITH=	debug
 
-.if !defined(WITHOUT_PROFILE) && !defined(NO_PROFILE) && !defined(NOPROFILE)
-CONFIGURE_ARGS+=--with-profile
-PLIST_SUB+=	PROFILE=""
-.else
-CONFIGURE_ARGS+=--without-profile
-PLIST_SUB+=	PROFILE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--without-debug
-PLIST_SUB+=	DEBUG="@comment "
-.else
-CONFIGURE_ARGS+=--with-debug
-PLIST_SUB+=	DEBUG=""
-.endif
-
-.if !defined(WITHOUT_TERMINFO)
-CONFIGURE_ARGS+=--with-hashed-db
-PLIST_SUB+=	TERMINFO=""
-.else # termcap only, easier for updating ncurses in base
-CONFIGURE_ARGS+=--disable-database
-PLIST_SUB+=	TERMINFO="@comment "
-.endif
-
-.if !defined(WITHOUT_WIDEC)
-PLIST_SUB+=	WIDEC=""
-EXAMPLES_TARGETS+=	WIDEC
-.else
-PLIST_SUB+=	WIDEC="@comment "
-.endif
+OPTIONS_SUB=yes
 
 post-extract:
 	@${MKDIR} ${WIDEC_WRKSRC}
@@ -136,53 +92,41 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,$$(INSTALL_PROG) ncurses-config,@INSTALL_SCRIPT@ ncurses-config,' ${WRKSRC}/misc/Makefile.in
 
 post-configure:
-.if !defined(WITHOUT_WIDEC)
 	cd ${.CURDIR} && \
 	    ${MAKE} ${.MAKEFLAGS} CONFIGURE_WRKSRC=${WIDEC_WRKSRC} \
 	    CONFIGURE_ARGS="${CONFIGURE_ARGS} ${CONFIGURE_ARGS_WIDEC}" \
 	    do-configure
-.endif
 .for d in test c++
-.if !defined(WITHOUT_WIDEC)
 	${CP} -R ${WRKSRC}/${d}/* ${WIDEC_WRKSRC}/${d}/
-.endif
 	${CP} -R ${WRKSRC}/${d}/* ${NOWIDEC_WRKSRC}/${d}/
 .endfor
 
 post-build:
-.if !defined(WITHOUT_WIDEC)
 	cd ${.CURDIR} && \
 	    ${MAKE} ${.MAKEFLAGS} BUILD_WRKSRC=${WIDEC_WRKSRC} do-build
-.endif
 
 post-install:
-.if !defined(WITHOUT_WIDEC)
 	cd ${.CURDIR} && \
 	    ${MAKE} ${.MAKEFLAGS} INSTALL_WRKSRC=${WIDEC_WRKSRC} do-install
-.endif
 
-.if ${PORT_OPTIONS:MEXAMPLES}
-. for i in ${EXAMPLES_TARGETS}
-	${MKDIR} ${${i}_EXAMPLESDIR}/c++
-.  for f in ${EXAMPLES}
-	${INSTALL_DATA} ${${i}_WRKSRC}/test/${f} ${${i}_EXAMPLESDIR}/
-.  endfor
-	${INSTALL_SCRIPT} ${${i}_WRKSRC}/test/tracemunch ${${i}_EXAMPLESDIR}/
-.  for f in ${EXAMPLES_CPP}
-	${INSTALL_DATA} ${${i}_WRKSRC}/c++/${f} ${${i}_EXAMPLESDIR}/c++/
-.  endfor
+.for i in ${EXAMPLES_TARGETS}
+	@${MKDIR} ${STAGEDIR}${${i}_EXAMPLESDIR}/c++
+. for f in ${EXAMPLES}
+	${INSTALL_DATA} ${${i}_WRKSRC}/test/${f} ${STAGEDIR}${${i}_EXAMPLESDIR}/
 . endfor
-.endif
+	${INSTALL_SCRIPT} ${${i}_WRKSRC}/test/tracemunch ${STAGEDIR}${${i}_EXAMPLESDIR}/
+. for f in ${EXAMPLES_CPP}
+	${INSTALL_DATA} ${${i}_WRKSRC}/c++/${f} ${STAGEDIR}${${i}_EXAMPLESDIR}/c++/
+. endfor
+.endfor
 
-.if !defined(WITHOUT_TERMINFO)
-	${FIND} ${PREFIX}/share/misc -name "*.terminfo" -exec ${PREFIX}/bin/tic {} \;
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 . endfor
-.endif
+	${RM} -f ${STAGEDIR}${PREFIX}/lib/libncurses.so \
+		${STAGEDIR}${PREFIX}/lib/libncursesw.so
+	${ECHO} "INPUT(libncurses.so.${RELEASE:R} AS_NEEDED(-ltinfo))" > ${STAGEDIR}${PREFIX}/lib/libncurses.so
+	${ECHO} "INPUT(libncursesw.so.${RELEASE:R} AS_NEEDED(-ltinfow))" > ${STAGEDIR}${PREFIX}/lib/libncursesw.so
 
 .include <bsd.port.mk>

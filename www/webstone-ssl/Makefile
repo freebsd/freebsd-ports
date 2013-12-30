@@ -12,36 +12,34 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	World wide web server benchmarking with SSL support
 
+WRKSRC=		${WRKDIR}/WebStone${PORTVERSION}/src
+
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	autoconf213
-GNU_CONFIGURE=	yes
-WRKSRC=		${WRKDIR}/WebStone${PORTVERSION}/src
 ALL_TARGET=	install
-NO_INSTALL_MANPAGES=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-CONFIGURE_ENV=	LIBS=-L${OPENSSLLIB}
-CFLAGS+=	-I${OPENSSLINC}
+CPPFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
-NO_STAGE=	yes
+pre-configure:
+	@${RM} -f ${WRKSRC}/config.cache
+
 do-install:
 	@${RMDIR} ${WRKSRC}/../bin/runs
-	@${MKDIR} ${PREFIX}/webstone-ssl/bin
-	@${MKDIR} ${PREFIX}/webstone-ssl/conf
-	@${MKDIR} ${PREFIX}/webstone-ssl/lgm
-	${INSTALL_SCRIPT} ${WRKSRC}/../bin/* ${PREFIX}/webstone-ssl/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/../lgm/* ${PREFIX}/webstone-ssl/lgm
-	${INSTALL_DATA} ${WRKSRC}/../conf/* ${PREFIX}/webstone-ssl/conf
-	${INSTALL_SCRIPT} ${WRKSRC}/../webstone  ${PREFIX}/webstone-ssl
+	@${MKDIR} ${STAGEDIR}${PREFIX}/webstone-ssl/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/webstone-ssl/conf
+	@${MKDIR} ${STAGEDIR}${PREFIX}/webstone-ssl/lgm
+	${INSTALL_SCRIPT} ${WRKSRC}/../bin/* ${STAGEDIR}${PREFIX}/webstone-ssl/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/../lgm/* ${STAGEDIR}${PREFIX}/webstone-ssl/lgm
+	${INSTALL_DATA} ${WRKSRC}/../conf/* ${STAGEDIR}${PREFIX}/webstone-ssl/conf
+	${INSTALL_SCRIPT} ${WRKSRC}/../webstone  ${STAGEDIR}${PREFIX}/webstone-ssl
 	@${MKDIR} ${WRKSRC}/../bin/runs
-.for file in webclient webmaster genrand
-	${STRIP_CMD} ${PREFIX}/webstone-ssl/bin/${file}
+.for i in webclient webmaster genrand
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/webstone-ssl/bin/${i}
 .endfor
-.for file in ws20_cgi ws25_cgi
-	${STRIP_CMD} ${PREFIX}/webstone-ssl/lgm/${file}
+.for i in ws20_cgi ws25_cgi
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/webstone-ssl/lgm/${i}
 .endfor
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

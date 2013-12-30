@@ -11,14 +11,11 @@ DISTNAME=	dfarc-${PORTVERSION}
 MAINTAINER=	shurd@sasktel.net
 COMMENT=	Frontend and .dmod installer for GNU FreeDink
 
-USES=		gettext gmake
+USES=		desktop-file-utils gettext gmake shared-mime-info
 USE_WX=		2.6+
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	intltool
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG} --disable-upx --disable-static
 
-MAN1=		dfarc.1 freedink-dfarc.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

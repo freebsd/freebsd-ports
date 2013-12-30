@@ -336,17 +336,14 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  for compression.
 # USE_MAKESELF		- If set, this port distfile uses makeself, not tar w/[bg]zip
 #				  for compression.
-# USE_DOS2UNIX	- If set to "YES", remove the ^M from all files
-#				  under ${WRKSRC}. If set to a string, remove in all
-#				  files under ${WRKSRC} with one of these names the ^Ms.
-# DOS2UNIX_REGEX
-#				- Limit the ^M removal to files which name matches
-#				  the regular expression.
 # USE_GCC		- If set, this port requires this version of gcc, either in
 #				  the system or installed from a port.
 # USE_CSTD		- Override the default C language standard (gnu89, gnu99)
 # USE_CXXSTD	  Override the default C++ language standard
 # USE_BINUTILS	- Use binutils suite from port instead of the version in base.
+# CFLAGS_${ARCH}  Append the cflags to CFLAGS only on the specified architecture
+# CXXFLAGS_${ARCH}
+#				 Append the cxxflags to CXXFLAGS only on the specified architecture
 ##
 # USE_GHOSTSCRIPT
 #				- If set, this port needs ghostscript to both
@@ -376,12 +373,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 ##
 # USE_SDL		- If set, this port uses the sdl libraries.
 #				  See bsd.sdl.mk for more information.
-##
-# USE_OPENAL	- If set, this port relies on the OpenAL package.
-#				  Legal values are: al, soft, si, alut.
-#				  If set to an unknown value, the port is marked broken.
-# WANT_OPENAL	- User-specific OpenAL wishes.
-#				  Legal values are: soft, si. The default is soft.
 ##
 # USE_OPENSSL	- If set, this port relies on the OpenSSL package.
 ##
@@ -423,8 +414,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Implies inclusion of bsd.python.mk. (Also see
 #				  that file for more information on USE_PYTHON_*
 #				  and USE_PYDISTUTILS).
-# USE_R_MOD	- If set, this port uses the Comprehensive R Archive Network.
-#		  See bsd.cran.mk for more details.
 # USE_RUBY		- If set, this port relies on the Ruby language.
 #				  Implies inclusion of bsd.ruby.mk.  (Also see
 #				  that file for more information on USE_RUBY_*).
@@ -1304,8 +1293,6 @@ UNIQUENAME?=	${PKGNAMEPREFIX}${PORTNAME}
 
 .endif
 
-DOS2UNIX_REGEX?=	.*
-
 # At least KDE needs TMPDIR for the package building,
 # so we're setting it to the known default value.
 .if defined(PACKAGE_BUILDING)
@@ -1439,10 +1426,6 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 .include "${PORTSDIR}/Mk/bsd.java.mk"
 .endif
 
-.if defined(USE_R_MOD)
-.include "${PORTSDIR}/Mk/bsd.cran.mk"
-.endif
-
 .if defined(USE_RUBY) || defined(USE_LIBRUBY)
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
 .endif
@@ -1511,6 +1494,19 @@ PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
 .if defined(USE_GMAKE)
 USES+=	gmake
+.endif
+
+.if defined(USE_DOS2UNIX)
+.if ${USE_DOS2UNIX:U}=="YES"
+DOS2UNIX_REGEX?=	.*
+.else
+.if ${USE_DOS2UNIX:M*/*}
+DOS2UNIX_FILES+=	${USE_DOS2UNIX}
+.else
+DOS2UNIX_GLOB+=	${USE_DOS2UNIX}
+.endif
+.endif
+USES+=	dos2unix
 .endif
 
 .if !defined(UID)
@@ -1741,83 +1737,6 @@ MAKE_ENV+=	${b}="${${b}}"
 .if defined(USE_OPENLDAP) || defined(WANT_OPENLDAP_VER)
 .include "${PORTSDIR}/Mk/bsd.ldap.mk"
 .endif
-
-.if defined(USE_OPENAL)
-_OPENAL_ALL=	al si soft alut
-_OPENAL_LIBS=	si soft
-# Default choice.
-_DEFAULT_OPENAL=	soft
-
-_OPENAL_SOFT=	openal.1:${PORTSDIR}/audio/openal-soft
-_OPENAL_SI=	openal.0:${PORTSDIR}/audio/openal
-_OPENAL_ALUT=	alut.1:${PORTSDIR}/audio/freealut
-
-.if exists(${LOCALBASE}/lib/libopenal.a)
-_HAVE_OPENAL=	si
-.elif exists(${LOCALBASE}/bin/openal-info)
-_HAVE_OPENAL=	soft
-.endif
-
-.if ${USE_OPENAL} == "yes"
-# Be friendly.
-USE_OPENAL=	${_DEFAULT_OPENAL}
-.endif
-
-__USED_OPENAL=
-_USE_OPENAL=
-.for component in ${USE_OPENAL}
-.if ${__USED_OPENAL:M${component}} == ""
-__USED_OPENAL+=	${component}
-
-.if ${_OPENAL_ALL:M${component}} == ""
-BROKEN=	OPENAL mismatch: unknown component ${component}
-.elif ${_OPENAL_ALL:M${component}} == "al"
-
-# Check if the user wish matches the found OpenAL system.
-.if defined(WANT_OPENAL) && defined(_HAVE_OPENAL) && ${_HAVE_OPENAL} != ${WANT_OPENAL}
-BROKEN=	OPENAL mismatch: ${_HAVE_OPENAL} is installed, but ${WANT_OPENAL} desired
-.endif # WANT_OPENAL
-
-.if defined(_HAVE_OPENAL)
-_OPENAL_SYSTEM=	${_HAVE_OPENAL}
-.elif defined(WANT_OPENAL)
-_OPENAL_SYSTEM=	${WANT_OPENAL}
-.else
-_OPENAL_SYSTEM=	${_DEFAULT_OPENAL}
-.endif # _HAVE_OPENAL
-
-_USE_OPENAL+= ${_OPENAL_${_OPENAL_SYSTEM:U}}
-
-.else # ${_OPENAL_ALL:M${component}} == ""
-
-.if ${_OPENAL_LIBS:M${component}} == ${component}
-# Check for the system implementation to use.
-.if defined(WANT_OPENAL) && ${WANT_OPENAL} != ${component}
-BROKEN=	OPENAL mismatch: wants to use ${component}, while you wish to use ${WANT_OPENAL}
-.endif
-.if defined(_OPENAL_SYSTEM)
-BROKEN=	OPENAL mismatch: cannot use ${component} and al together.
-.endif
-.if defined(_HAVE_OPENAL) && ${_HAVE_OPENAL} != ${component}
-BROKEN=	OPENAL mismatch: wants to use ${component}, but ${_HAVE_OPENAL} is installed
-.endif
-
-_OPENAL_SYSTEM=	${component}
-
-.endif # ${_OPENAL_LIBS:M${component}} == ${component}
-
-_USE_OPENAL+=	${_OPENAL_${component:U}}
-
-.endif # ${_OPENAL_ALL:M${component}} == ""
-
-.endif # ${__USED_OPENAL:M${component} == ""
-.endfor # component in ${USE_OPENAL}
-
-.for dep in ${_USE_OPENAL}
-LIB_DEPENDS+=	${dep}
-.endfor
-
-.endif # USE_OPENAL
 
 .if defined(USE_FAM)
 DEFAULT_FAM_SYSTEM=	gamin
@@ -2179,8 +2098,16 @@ CFLAGS+=       -fno-strict-aliasing
 CFLAGS:=	${CFLAGS:N-std=*} -std=${USE_CSTD}
 .endif
 
+.if defined(CFLAGS_${ARCH})
+CFLAGS+=	${CFLAGS_${ARCH}}
+.endif
+
 .if defined(USE_CXXSTD)
 CXXFLAGS:=	${CXXFLAGS:N-std=*} -std=${USE_CXXSTD}
+.endif
+
+.if defined(CXXFLAGS_${ARCH})
+CXXFLAGS+=	${CXXFLAGS_${ARCH}}
 .endif
 
 # Multiple make jobs support
@@ -3626,31 +3553,6 @@ do-extract:
 
 # Patch
 
-.if !target(patch-dos2unix)
-patch-dos2unix:
-.if defined(USE_DOS2UNIX)
-.if ${USE_DOS2UNIX:U}=="YES"
-	@${ECHO_MSG} "===>   Converting DOS text files to UNIX text files"
-	@${FIND} -E ${WRKSRC} -type f -iregex '${DOS2UNIX_REGEX}' -print0 | \
-			${XARGS} -0 ${REINPLACE_CMD} -i '' -e 's/$$//'
-.else
-.if ${USE_DOS2UNIX:M*/*}
-.for f in ${USE_DOS2UNIX}
-	@${ECHO_MSG} "===>   Converting DOS text file to UNIX text file: ${f}"
-	@${REINPLACE_CMD} -i '' -e 's/$$//' ${WRKSRC}/${f}
-.endfor
-.else
-.for f in ${USE_DOS2UNIX}
-	@${FIND} ${WRKSRC} -type f -name '${f}' -print0 | \
-			${XARGS} -0 ${REINPLACE_CMD} -i '' -e 's/$$//'
-.endfor
-.endif
-.endif
-.else
-	@${DO_NADA}
-.endif
-.endif
-
 .if !target(do-patch)
 do-patch:
 .if defined(PATCHFILES)
@@ -4409,7 +4311,7 @@ _EXTRACT_SEQ=	check-build-conflicts extract-message checksum extract-depends \
 				pre-extract pre-extract-script do-extract \
 				post-extract post-extract-script
 _PATCH_DEP=		extract
-_PATCH_SEQ=		ask-license patch-message patch-depends patch-dos2unix pre-patch \
+_PATCH_SEQ=		ask-license patch-message patch-depends pre-patch \
 				pre-patch-script do-patch post-patch post-patch-script
 _CONFIGURE_DEP=	patch
 _CONFIGURE_SEQ=	build-depends lib-depends configure-message run-autotools-fixup \

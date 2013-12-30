@@ -3,14 +3,14 @@
 
 PORTNAME=	ParMetis
 PORTVERSION=	4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math parallel
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. OLD
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 
 MAINTAINER=	bf@FreeBSD.org
-COMMENT=	A package for parallel (mpi) unstructured graph partitioning
+COMMENT=	Package for parallel (mpi) unstructured graph partitioning
 
 LICENSE=	METIS
 LICENSE_NAME=	University of Minnesota METIS License
@@ -20,15 +20,18 @@ LICENSE_PERMS=	auto-accept
 OPTIONS_DEFINE=	OPENMPI DOCS
 OPENMPI_DESC=	Use openmpi instead of mpich2
 
-USES=		cmake
-USE_GMAKE=	yes
+USES=		cmake gmake
 
-PORTDOCS=	manual.pdf
-PLIST_FILES=	include/parmetis/parmetis.h \
-		lib/parmetis/libmetis.a lib/parmetis/libparmetis.a
-PLIST_DIRS=	include/parmetis lib/parmetis
+MAKE_ARGS+=	MAKEFLAGS=MAKE=${GMAKE}
+PLIST_FILES=	include/parmetis/metis.h \
+		include/parmetis/parmetis.h \
+		lib/parmetis/libmetis.a \
+		lib/parmetis/libparmetis.a \
+		${DOCSDIR}/manual.pdf
+PLIST_DIRS=	include/parmetis \
+		lib/parmetis \
+		${DOCSDIR}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENMPI}
@@ -44,23 +47,25 @@ MPICC=		${LOCALBASE}/bin/mpicc
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|BUILDDIR =.*|BUILDDIR = build| ; \
-		 s|make -C|$$(MAKE) -C|' ${WRKSRC}/Makefile
+		 s|make -C|${MAKE_CMD} -C|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e \
 		's|"-O3"|""|' ${WRKSRC}/metis/GKlib/GKlibSystem.cmake
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
 		${MAKEFILE} config prefix="${PREFIX}" cc="${MPICC}"
 
 do-install:
-	@${MKDIR} ${PREFIX}/include/parmetis
-	${INSTALL_DATA} ${WRKSRC}/include/parmetis.h ${PREFIX}/include/parmetis
-	@${MKDIR} ${PREFIX}/lib/parmetis
-	${INSTALL_DATA} ${WRKSRC}/build/libmetis/libmetis.a ${PREFIX}/lib/parmetis
-	${INSTALL_DATA} ${WRKSRC}/build/libparmetis/libparmetis.a ${PREFIX}/lib/parmetis
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/manual/manual.pdf ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/parmetis \
+		${STAGEDIR}${PREFIX}/lib/parmetis \
+		${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/include/parmetis.h \
+		${WRKSRC}/metis/include/metis.h \
+		${STAGEDIR}${PREFIX}/include/parmetis
+	${INSTALL_DATA} ${WRKSRC}/build/libmetis/libmetis.a \
+		${STAGEDIR}${PREFIX}/lib/parmetis
+	${INSTALL_DATA} ${WRKSRC}/build/libparmetis/libparmetis.a \
+		${STAGEDIR}${PREFIX}/lib/parmetis
+	${INSTALL_DATA} ${WRKSRC}/manual/manual.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

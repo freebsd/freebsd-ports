@@ -13,7 +13,7 @@ LICENSE=	BSD
 
 USE_CABAL=	ObjectName StateVar Tensor
 NO_STAGE=	yes
-USE_OPENAL=	al
+USES=		openal:al
 
 INSTALL_PORTEXAMPLES=	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
 

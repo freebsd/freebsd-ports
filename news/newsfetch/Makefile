@@ -13,11 +13,11 @@ COMMENT=	Download news articles from NNTP server
 
 MAKE_ENV=	BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man/man"
 
-MAN1=		newsfetch.1
-MANCOMPRESSED=	maybe
-PLIST_FILES=	bin/newsfetch
+USES=		uidfix
+CFLAGS+=	-Wno-return-type
+PLIST_FILES=	bin/newsfetch \
+		man/man1/newsfetch.1.gz
 
-NO_STAGE=	yes
 do-configure:
 	cd ${WRKSRC} && ( \
 	${ECHO_CMD} "PROG= newsfetch"; \

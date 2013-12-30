@@ -19,8 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/el.ini:${PORTSDIR}/games/el-data
 
 PROJECTHOST=	bsdistfiles
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_OPENAL=	al alut
+USES=		gmake openal:al,alut
 USE_GNOME=	libxml2
 USE_SDL=	sdl net image
 USE_GL=		yes

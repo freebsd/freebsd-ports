@@ -54,6 +54,7 @@ share/daimonin/media/License Note
 share/daimonin/media/airhits-01.ogg
 share/daimonin/media/airhits-02.ogg
 share/daimonin/media/barrenlands.ogg
+share/daimonin/media/battle.ogg
 share/daimonin/media/bubblymud.ogg
 share/daimonin/media/comecloser.ogg
 share/daimonin/media/echo.ogg
@@ -63,14 +64,14 @@ share/daimonin/media/frozen.ogg
 share/daimonin/media/ghost.ogg
 share/daimonin/media/jungle1.ogg
 share/daimonin/media/landing.ogg
-@unexec if [ -f %D/share/daimonin/media/media.txt ]; then rm %D/share/daimonin/media/media.txt; fi
+share/daimonin/media/media.txt
 share/daimonin/media/ocean.ogg
-@unexec if [ -f %D/share/daimonin/media/orchestral.ogg ]; then rm %D/share/daimonin/media/orchestral.ogg; fi
+share/daimonin/media/orchestral.ogg
 share/daimonin/media/rainthunder.ogg
 share/daimonin/media/raspy.ogg
 share/daimonin/media/rubberfreak.ogg
 share/daimonin/media/spokyspace.ogg
 share/daimonin/media/swamp.ogg
 share/daimonin/media/thonkdonk.ogg
-@dirrmtry share/daimonin/media
-@dirrmtry share/daimonin
+@dirrm share/daimonin/media
+@dirrm share/daimonin

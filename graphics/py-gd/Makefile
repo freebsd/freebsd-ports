@@ -12,15 +12,14 @@ DISTNAME=	gdmodule-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to the GD library
 
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 PYSETUP=	Setup.py
 USE_PYTHON_PREFIX=	yes
-PYDISTUTILS_PKGNAME=	gdmodule
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/\/usr\/lib/d ; \

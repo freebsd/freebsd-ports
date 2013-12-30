@@ -9,6 +9,7 @@ bin/sdar
 %%Z80%%bin/sdasgb
 %%Z80%%bin/sdasrab
 %%STM8%%bin/sdasstm8
+%%Z80%%bin/sdastlcs90
 %%Z80%%bin/sdasz80
 bin/sdcc
 bin/sdcclib

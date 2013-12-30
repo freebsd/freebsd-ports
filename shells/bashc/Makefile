@@ -18,12 +18,7 @@ PLIST_FILES=	bin/bashc \
 		etc/bash_commander \
 		etc/bash_dialog
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|autoconf|${TRUE}|' ${WRKSRC}/Makefile.in
-
-post-install:
-	@${SETENV} PKG_PREFIX="${PREFIX}" PKG_DESTDIR="${DESTDIR}" \
-		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

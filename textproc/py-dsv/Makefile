@@ -11,21 +11,16 @@ DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module to parse or write delimeter-separated (e.g. CSV) files
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	DSV
+PYDISTUTILS_AUTOPLIST=	yes
 DSV_BASEDIR=	${PYTHONPREFIX_SITELIBDIR}/DSV
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-install:
 	@${PRINTF} '#!/bin/sh\n${PYTHON_CMD} ${DSV_BASEDIR}/DSV.py "$$@"\n' \
 	  >${WRKDIR}/DSV.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/DSV.sh ${PREFIX}/bin/DSV
-.if ${PORT_OPTIONS:MDOCS}
-	@ ${MKDIR} ${DOCSDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKDIR}/DSV.sh ${STAGEDIR}${PREFIX}/bin/DSV
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

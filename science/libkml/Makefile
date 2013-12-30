@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for parse, generate, and operate on KML
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/expat.h:${PORTSDIR}/textproc/expat2 \
 		${LOCALBASE}/bin/curl-config:${PORTSDIR}/ftp/curl

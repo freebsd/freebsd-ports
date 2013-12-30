@@ -37,7 +37,7 @@ OPTIONS_SUB=	yes
 
 VOICE_DISTFILES=	${PORTNAME}-${DATAVERSION}-voice.uqm
 MUSIC_DISTFILES=	${PORTNAME}-${DATAVERSION}-3domusic.uqm
-OPENAL_USE=	OPENAL=al
+OPENAL_USES=	openal:al
 
 .include <bsd.port.options.mk>
 

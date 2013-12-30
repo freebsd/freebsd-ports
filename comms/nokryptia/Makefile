@@ -10,7 +10,7 @@ MASTER_SITES=	http://tuxmobil.org/software/nokryptia/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for fast loading mp3s into Nokia 5510
 
-LIB_DEPENDS=	libid3-3.so:${PORTSDIR}/audio/id3lib
+LIB_DEPENDS=	libid3.so:${PORTSDIR}/audio/id3lib
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

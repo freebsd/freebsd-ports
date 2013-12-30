@@ -5,8 +5,7 @@ PORTNAME=	patch
 PORTVERSION=	2.7
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	patch
+MASTER_SITES=	GNU/patch
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU patch utility
@@ -15,12 +14,10 @@ LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--program-prefix=g
-USE_GMAKE=	yes
 USE_XZ=		yes
-USES=		charsetfix
+USES=		charsetfix gmake
 
-MAN1=		gpatch.1
-PLIST_FILES=	bin/gpatch
+PLIST_FILES=	bin/gpatch \
+		man/man1/gpatch.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

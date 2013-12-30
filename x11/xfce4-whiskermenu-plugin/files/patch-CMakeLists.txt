@@ -1,6 +1,6 @@
---- ./CMakeLists.txt.orig	2013-10-29 18:29:33.000000000 +0000
-+++ ./CMakeLists.txt	2013-10-29 23:51:59.000000000 +0000
-@@ -11,6 +11,11 @@
+--- ./CMakeLists.txt.orig	2013-12-29 12:16:39.000000000 +0000
++++ ./CMakeLists.txt	2013-12-29 16:24:47.000000000 +0000
+@@ -26,6 +26,11 @@
  
  include(GNUInstallDirs)
  
@@ -9,6 +9,6 @@
 +    set(CMAKE_INSTALL_MANDIR ${CMAKE_INSTALL_PREFIX}/man)
 +endif()
 +
- add_subdirectory(src)
- add_subdirectory(po)
  add_subdirectory(icons)
+ add_subdirectory(panel-plugin)
+ add_subdirectory(po)

@@ -11,13 +11,11 @@ MAINTAINER=	uffe@uffe.org
 COMMENT=	Extracts files from .adf-files used by Amiga emulators
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
 
 #
@@ -51,20 +49,18 @@ pre-configure::
 	@${MKDIR} ${WRKSRC}/m4
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/examples/unadf ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/examples/unadf ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-	${MKDIR} ${DOCSDIR}/FAQ
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/FAQ
 .for i in ${FAQS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}/FAQ
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}/FAQ
 .endfor
-	${MKDIR} ${DOCSDIR}/FAQ/image
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/FAQ/image
 .for i in ${FAQSIMGS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}/FAQ/image
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}/FAQ/image
 .endfor
-.endif
 
 .include <bsd.port.mk>

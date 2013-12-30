@@ -2,26 +2,33 @@
 # $FreeBSD$
 
 PORTNAME=	libexplain
-PORTVERSION=	1.2
+PORTVERSION=	1.3.${PATCHLEVEL}
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library which may be used to explain Unix and Linux system call errors
 
 LICENSE=	LGPL3
 
+BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 RUN_DEPENDS=	lsof:${PORTSDIR}/sysutils/lsof
-BUILD_DEPENDS=	pdfopt:${PORTSDIR}/print/ghostscript9 \
-		gsed:${PORTSDIR}/textproc/gsed
 
-USE_AUTOTOOLS=	libtool
 USES=		bison gettext gmake
+USE_GHOSTSCRIPT_BUILD=	yes
+USE_AUTOTOOLS=	libtool
+CONFIGURE_ENV=	ac_cv_header_linux_kd_h=no
 USE_LDCONFIG=	yes
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+PATCHLEVEL=	D012
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|sed -e|gsed -e|g' -e 's|\ sed\ | gsed |g' \
-		-e '/@sleep 1/d' \
-			${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|$$(libdir)/pkgconfig|$$(libdir)/../libdata/pkgconfig|g ; \
+		 s|\([[:blank:]]\)sed|\1gsed|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

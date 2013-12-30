@@ -1,23 +1,30 @@
 # Created by: Rick & Samu
 # $FreeBSD$
 
-PORTNAME=		sniff
-PORTVERSION=		1.0
-CATEGORIES=		security
-MASTER_SITES=		LOCAL/fenner
+PORTNAME=	sniff
+PORTVERSION=	1.0
+CATEGORIES=	security
+MASTER_SITES=	LOCAL/fenner
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Program to sniff logins and passwords
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Program to sniff logins and passwords
 
-MAN1=			sniff.1
+LICENSE=	GPLv2
 
-HAS_CONFIGURE=		yes
-CONFIGURE_SCRIPT=	configure
+GNU_CONFIGURE=	yes
 
-PLIST_FILES=		sbin/sniff
+PLIST_FILES=	sbin/sniff man/man1/sniff.1.gz
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's|PREFIX=/usr/local|PREFIX=${PREFIX}|g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|^CC.*|CC=@CC@| ; \
+		 s|^CFLAGS.*|CFLAGS=@CFLAGS@| ; \
+		 s|^PREFIX.*|PREFIX=@PREFIX@|' ${WRKSRC}/Makefile.in
+
+do-install:
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} sniff \
+		${STAGEDIR}${PREFIX}/sbin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} sniff.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
 
 .include <bsd.port.mk>

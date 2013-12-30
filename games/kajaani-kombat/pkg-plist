@@ -1,4 +1,5 @@
 bin/kajaani-kombat
+man/man6/kajaani-kombat.6.gz
 %%DATADIR%%/0ammo.png
 %%DATADIR%%/0big_ammo.png
 %%DATADIR%%/0big_cannon.png

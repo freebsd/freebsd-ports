@@ -6,24 +6,31 @@ PORTVERSION=	1.1f
 PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://inc2.com/download/
-DISTNAME=	vlog-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A curses based real-time logfile viewer esp. useful for ipflog
+COMMENT=	Curses based real-time logfile viewer esp. useful for ipflog
 
-ALL_TARGET=	it
-MAKE_ARGS=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
-		LIBS="${PTHREAD_LIBS} -lcurses"
-WRKSRC=		${WRKDIR}/vlog
+LICENSE=	GPLv2
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 USES=		perl5
+USE_PERL5=	build
+MAKE_ENV=	LIBS="-lcurses -pthread"
+ALL_TARGET=	it
 
-MAN1=		vlog.1
-MANCOMPRESSED=	no
-PLIST_FILES=	bin/vlog
+PLIST_FILES=	bin/vlog man/man1/vlog.1.gz
 
-NO_STAGE=	yes
 post-patch:
-	${REINPLACE_CMD} -e "s@/usr/local@${PREFIX}@g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		'/^CC/s|\([[:space:]]\)=|\1?=| ; \
+		 /strip/s|^|#|' ${WRKSRC}/Makefile
+
+do-install:
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} vlog \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} vlog.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
 
 .include <bsd.port.mk>

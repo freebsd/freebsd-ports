@@ -1,5 +1,5 @@
 --- main.c.orig	1993-03-03 22:10:02.000000000 +0100
-+++ main.c	2013-06-16 17:10:48.000000000 +0200
++++ main.c	2013-06-16 23:52:03.000000000 +0200
 @@ -1,6 +1,6 @@
 -/* pathalias -- by steve bellovin, as told to peter honeyman */
 +/*_pathalias -- by steve bellovin, as told to peter honeyman */
@@ -9,13 +9,11 @@
  #endif
  
  #ifndef VMS
-@@ -9,10 +9,13 @@
+@@ -9,10 +9,11 @@
  #define	MAIN	XXmain
  #endif
  
-+#include <stdlib.h>
 +#include <unistd.h>
-+#include <string.h>
  #include "def.h"
  
  /* exports */
@@ -24,7 +22,7 @@
  char *Graphout;	/* file for dumping edges (-g option) */
  char *Linkout;	/* file for dumping shortest path tree */
  char **Argv;	/* external copy of argv (for input files) */
-@@ -26,26 +29,20 @@
+@@ -26,26 +27,17 @@
  int InetFlag;	/* local host is w/in scope of DNS (-I flag) */
  int Lineno = 1;	/* line number within current input file */
  int Argc;	/* external copy of argc (for input files) */
@@ -32,9 +30,9 @@
 -extern int tracelink();
  
  /* imports */
- extern char *optarg;
- extern int optind;
- extern long Lcount, Ncount;
+-extern char *optarg;
+-extern int optind;
+-extern long Lcount, Ncount;
 -extern long allocation();
 -extern void wasted(), mapit(), hashanalyze(), deadlink();
 -extern char *local();
@@ -54,7 +52,7 @@
  	register int c;
  	int errflg = 0;
  
-@@ -122,14 +119,14 @@
+@@ -122,14 +114,14 @@
  				Argv[0], locname);
  	}
  
@@ -71,7 +69,7 @@
  				Ncount, Lcount, allocation());
  
  	Cfile = "[backlinks]";	/* for tracing back links */
-@@ -150,7 +147,7 @@
+@@ -150,7 +142,7 @@
  
  void
  die(s)

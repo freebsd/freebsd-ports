@@ -9,4 +9,7 @@ lib/viewglob/vgclassic
 lib/viewglob/vgexpand
 lib/viewglob/vgmini
 lib/viewglob/vgping
+man/man1/vgd.1.gz
+man/man1/vgseer.1.gz
+man/man1/viewglob.1.gz
 @dirrm lib/viewglob

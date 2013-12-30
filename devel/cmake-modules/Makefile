@@ -1,7 +1,7 @@
 # Created by: gahr
 # $FreeBSD$
 
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	-modules
 
 COMMENT=	Modules and Templates for CMake

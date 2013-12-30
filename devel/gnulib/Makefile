@@ -2,6 +2,7 @@
 
 PORTNAME=	gnulib
 PORTVERSION=	20130805
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://erislabs.net/ianb/projects/gnulib/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-stable
@@ -11,7 +12,9 @@ COMMENT=	GNU portability library
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 
-USES=		gmake perl5
+USES=		gmake perl5 shebangfix
+SHEBANG_FILES=	check-module
+
 
 PLIST_FILES=	bin/check-module bin/gnulib-tool
 INFO=		${PORTNAME}
@@ -21,7 +24,6 @@ PORTDATA=	*
 IGNORE=		gnulib requires port data, unset NOPORTDATA to install
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -38,17 +40,19 @@ do-build:
 	cd ${WRKSRC} && ${GMAKE} -C doc info html
 
 do-install:
-	${MKDIR} ${DATADIR} ${PREFIX}/${INFO_PATH}
+	${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${PREFIX}/${INFO_PATH}
 	for p in check-module gnulib-tool;\
-		do ${INSTALL_SCRIPT} ${WRKSRC}/$$p ${DATADIR};\
-		cd ${PREFIX}/bin && ${LN} -s ${DATADIR}/$$p;\
+		do ${INSTALL_SCRIPT} ${WRKSRC}/$$p ${STAGEDIR}${DATADIR};\
+			cd ${STAGEDIR}${PREFIX}/bin;\
+			${LN} -s ../${DATADIR_REL}/$$p;\
 		done
 	${TAR} -cf - -C ${WRKSRC} build-aux config doc lib m4 modules \
-		tests top | ${TAR} -xof - -C ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/gnulib.info ${PREFIX}/${INFO_PATH}
+		tests top | ${TAR} -xof - -C ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/gnulib.info \
+		${STAGEDIR}${PREFIX}/${INFO_PATH}
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/gnulib.html ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/gnulib.html ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -14,9 +14,7 @@ LIB_DEPENDS=	libsidplay2.so:${PORTSDIR}/audio/libsidplay2
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
-NO_STAGE=	yes
 
-MAN1=		sidplay2.1
-PLIST_FILES=	bin/sidplay2
+PLIST_FILES=	bin/sidplay2 man/man1/sidplay2.1.gz
 
 .include <bsd.port.mk>

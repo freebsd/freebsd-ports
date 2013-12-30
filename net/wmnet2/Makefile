@@ -5,8 +5,8 @@ PORTNAME=	wmnet2
 PORTVERSION=	1.06
 PORTREVISION=	5
 CATEGORIES=	net
-MASTER_SITES=	http://www.dockapps.org/files/77/115/ \
-		http://www.katharineosborne.com/wmnet/
+MASTER_SITES=	http://fossies.org/linux/misc/old/ \
+		http://linux-bsd-unix.strefa.pl/
 DISTNAME=	wmnet-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -15,8 +15,12 @@ COMMENT=	Nice network monitor for WindowMaker
 USES=		imake
 USE_XORG=	x11 xext
 
-MAN1=		wmnet2.1
-PLIST_FILES=	bin/wmnet2
+PLIST_FILES=	bin/wmnet2 man/man1/wmnet2.1.gz
 
-NO_STAGE=	yes
+post-extract:
+	@${LN} -sf wmnet.man ${WRKSRC}/wmnet2.man
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/wmnet2
+
 .include <bsd.port.mk>

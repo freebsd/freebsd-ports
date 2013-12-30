@@ -13,6 +13,17 @@ bin/zgrep
 bin/zless
 bin/zmore
 bin/znew
+man/man1/gunzip.1.gz
+man/man1/gzexe.1.gz
+man/man1/gzip.1.gz
+man/man1/zcat.1.gz
+man/man1/zcmp.1.gz
+man/man1/zdiff.1.gz
+man/man1/zforce.1.gz
+man/man1/zgrep.1.gz
+man/man1/zless.1.gz
+man/man1/zmore.1.gz
+man/man1/znew.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Very light interface to the command-line GPG tool
 
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg

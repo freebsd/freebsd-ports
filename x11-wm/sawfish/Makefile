@@ -15,7 +15,7 @@ LICENSE=	ART20 GPLv2
 LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	rep-gtk2>=0.90:${PORTSDIR}/x11-toolkits/rep-gtk2
-LIB_DEPENDS=	rep:${PORTSDIR}/lang/librep
+LIB_DEPENDS=	librep.so:${PORTSDIR}/lang/librep
 RUN_DEPENDS=	rep-gtk2>=0.90:${PORTSDIR}/x11-toolkits/rep-gtk2
 
 USE_XZ=		yes
@@ -30,13 +30,10 @@ INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MANCOMPRESSED=	yes
-MAN1=		sawfish.1 sawfish-client.1 sawfish-config.1
 INFO=		sawfish
 
 PORTSCOUT=	limit:^1\.9\.[0-9]
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/dnsdomainname/d' ${WRKSRC}/build-info

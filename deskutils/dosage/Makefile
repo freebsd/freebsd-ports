@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dosage
-PORTVERSION=	2.8
+PORTVERSION=	2.9
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://wummel.github.io/dosage/dist/
 

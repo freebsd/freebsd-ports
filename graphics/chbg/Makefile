@@ -11,23 +11,20 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Change Background Picture with time period
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LICENSE=	GPLv2 # (or later)
 
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+
+USES=		gmake gettext pathfix
 USE_GNOME=	gdkpixbuf
-USE_GMAKE=	yes
-USES=		gettext
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
-CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--disable-gnome
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-MAN1=		chbg.1
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|^guint argc|gint argc|' ${WRKSRC}/src/chbg.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

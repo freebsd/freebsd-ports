@@ -11,17 +11,14 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	OpenDarwin XML eXtensible ARchiver
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 USES=		gmake
 USE_GNOME=	libxml2
 USE_OPENSSL=	yes
 
 GNU_CONFIGURE=	yes
-
-MAN1=		xar.1
 
 .include <bsd.port.mk>

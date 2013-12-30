@@ -1,0 +1,78 @@
+--- src/automx-test.orig	2013-03-30 18:45:31.000000000 +0000
++++ src/automx-test	2013-12-21 20:34:11.520592847 +0000
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ #
+ # automx - auto configuration service
+ # Copyright (c) 2011-2013 [*] sys4 AG
+@@ -18,19 +18,20 @@
+ # You should have received a copy of the GNU General Public License
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ #
++# Ported to sh to avoid a dependency on bash by crees@FreeBSD.org
++#
+ #
+ VERSION="0.9.2"
+ 
+ trap clean_exit EXIT
+-function clean_exit() {
+-	[[ -f "$OLREQUEST" ]] && rm "$OLREQUEST"
+-	[[ -f "$MBREQUEST" ]] && rm "$MBREQUEST"
++clean_exit() {
++	rm -f "$OLREQUEST" "$MBREQUEST"
+ }
+ 
+ # We need a mail address
+-if [[ $1 ]]; then
++if [ -n "$1" ]; then
+ 	PROFILE="$1"
+-else 
++else
+ 	echo "Provide the mail address for which configuration settings should be retrieved."
+ 	read -ep "Mail address: " PROFILE
+ fi
+@@ -43,7 +44,7 @@
+ 
+ # Test Mozilla schema
+ AUTOCONF="autoconfig.$DOMAIN"
+-if [[ $(dig +short $AUTOCONF) ]]; then
++if [ -n "$(dig +short $AUTOCONF)" ]; then
+ 	CON="http://$AUTOCONF/mail/config-v1.1.xml?emailaddress=$PROFILE"
+ 	echo
+ 	echo "Testing Autoconfig ..."
+@@ -59,13 +60,12 @@
+ 
+ # Test Microsoft schema
+ AUTODISC="autodiscover.$DOMAIN"
+-if [[ -z $(dig +short $AUTODISC) ]]; then
++if [ -z "$(dig +short $AUTODISC)" ]; then
+ 	# default domain does not exist, try to discover non-default
+ 	AUTODISC="$(dig +short -t srv _autodiscover._tcp.$DOMAIN)"
+-  	AUTODISC="${AUTODISC//* /}"
+-  	AUTODISC="${AUTODISC%.*}"
++	AUTODISC="$(echo $AUTODISC | sed 's,[^ ]* ,,g;s,\.[^.]*$,,')"
+ fi
+-if [[ $AUTODISC ]]; then
++if [ -n "$AUTODISC" ]; then
+ 	# Test Microsoft Outlook schema
+ 	CON="https://$AUTODISC/autodiscover/autodiscover.xml"
+ 	cat <<-REQ >$OLREQUEST
+@@ -76,7 +76,7 @@
+ 		    <EMailAddress>$PROFILE</EMailAddress>
+ 		  </Request>
+ 		</Autodiscover>
+-	REQ
++REQ
+ 	
+ 	echo
+ 	echo "Testing Autodiscover (Microsoft Outlook(tm)) ..."
+@@ -94,7 +94,7 @@
+ 		    <EMailAddress>$PROFILE</EMailAddress>
+ 		  </Request>
+ 		</Autodiscover>
+-	REQ
++REQ
+ 	
+ 	echo
+ 	echo "Testing Autodiscover (mobilesync) ..."

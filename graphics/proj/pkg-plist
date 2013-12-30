@@ -12,6 +12,10 @@ lib/libproj.la
 lib/libproj.so
 lib/libproj.so.7
 libdata/pkgconfig/proj.pc
+man/man1/cs2cs.1.gz
+man/man1/geod.1.gz
+man/man1/proj.1.gz
+man/man3/pj_init.3.gz
 %%DATADIR%%/FL
 %%DATADIR%%/GL27
 %%DATADIR%%/IGNF

@@ -3,56 +3,49 @@
 
 PORTNAME=	gemdropx
 PORTVERSION=	0.9
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/gemdropx/src/ \
-		ftp://ftp.billsgames.com/unix/x/gemdropx/src/
+		ftp://ftp.billsgames.com/unix/x/gemdropx/src/ \
+		SF/nemysisfreebsdp/${CATEGORIES}/:icons
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}.png:icons
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Interesting one-player puzzle game for X (SDL)
 
 LICENSE=	GPLv2
 
-ALL_TARGET=	${PORTNAME}
+USES=		gmake
 USE_SDL=	image mixer sdl
+ALL_TARGET=	${PORTNAME}
 
-USE_GMAKE=	yes
-
-PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.xmp
-
-PORTDATA=	*
 PORTDOCS=	AUTHORS.txt CHANGES.txt ICON.txt README.txt TODO.txt
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
+
+DESKTOP_ENTRIES="Gem Drop X" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;LogicGame;" ""
 
 post-patch:
-# Fix SDL, CFLAGS
 	@${REINPLACE_CMD} \
-	-e 's|sdl-config|$(SDL_CONFIG)|' \
-	-e 's|CC=gcc|CC?=g++|' \
-	-e 's|CXX=gcc|CXX?=g++|' \
-	-e 's|CFLAGS=-Wall $(SDL_CFLAGS)|CFLAGS+=$(SDL_CFLAGS)|' \
+	-e 's|sdl-config|$(SDL_CONFIG)| ; \
+	s|CC=gcc|CC?=${CC}| ; \
+	s|CXX=gcc|CXX?=${CC}| ; \
+	s|CFLAGS=-Wall $(SDL_CFLAGS)|CFLAGS+=-w $(SDL_CFLAGS)|' \
 		${WRKSRC}/Makefile
+	@${FIND} ${WRKDIR} -name .xvpics | ${XARGS} ${RM} -rf
 
 do-install:
-# Executable
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	@(cd ${WRKSRC}/data && ${COPYTREE_SHARE} "images sounds" \
+		${STAGEDIR}${DATADIR})
 
-# Data
-	${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC}/data && ${COPYTREE_SHARE} "images sounds" ${DATADIR})
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps
 
-# Pixmaps
-	${INSTALL_DATA} ${WRKSRC}/data/images/gemdropx-icon.xpm ${PREFIX}/share/pixmaps/${PORTNAME}.xmp
-
-# Documentation
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.  for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.  endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

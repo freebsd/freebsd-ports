@@ -10,32 +10,28 @@ PKGNAMESUFFIX=		-devel
 DISTNAME=		SOAPpy-${PORTVERSION}
 
 MAINTAINER=		ports@FreeBSD.org
-COMMENT=		A SOAP implementation
+COMMENT=		SOAP implementation
+
+BUILD_DEPENDS=		${PYTHON_SITELIBDIR}/fpconst.py:${PORTSDIR}/math/py-fpconst
+RUN_DEPENDS:=		${PYXML} \
+			${BUILD_DEPENDS}
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	SOAPpy
-
-BUILD_DEPENDS+=		${PYTHON_SITELIBDIR}/fpconst.py:${PORTSDIR}/math/py-fpconst
-RUN_DEPENDS+=		${PYXML} \
-			${BUILD_DEPENDS}
+PYDISTUTILS_AUTOPLIST=	yes
 
 CONFLICTS=		py*-soappy-0.11.*
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=		*
-.endif
+PORTDATA=		*
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
-.endif
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/contrib/* ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/tools/* ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/validate/* ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/contrib/* ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/tools/* ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/validate/* ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

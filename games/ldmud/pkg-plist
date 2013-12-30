@@ -1,4 +1,5 @@
 sbin/ldmud
+man/man1/ldmud.1.gz
 %%LPMUD%%%%DATADIR%%/ACCESS.ALLOW
 %%LPMUD%%%%DATADIR%%/NEWS
 %%LPMUD%%%%DATADIR%%/README
@@ -1396,8 +1397,5 @@ sbin/ldmud
 %%LPMUD%%@dirrm %%DATADIR%%/doc
 %%LPMUD%%@dirrm %%DATADIR%%/banish
 @dirrm %%DATADIR%%
-@cwd /var
-@exec mkdir -p run/ldmud log/ldmud
-@exec chown %%LDUSER%% run/ldmud log/ldmud
-@dirrmtry run/ldmud
-@dirrmtry log/ldmud
+@dirrmtry /var/run/ldmud
+@dirrmtry /var/log/ldmud

@@ -1,4 +1,5 @@
 bin/gnushogi
+man/man6/gnushogi.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/BOOKFILES
 %%PORTDOCS%%%%DOCSDIR%%/PORTING
 %%PORTDOCS%%%%DOCSDIR%%/gnushogi.html

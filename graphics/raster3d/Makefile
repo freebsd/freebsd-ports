@@ -3,7 +3,7 @@
 
 PORTNAME=	raster3d
 PORTVERSION=	3.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics biology
 MASTER_SITES=	http://skuld.bmsc.washington.edu/${PORTNAME}/
 DISTNAME=	Raster3D_${PORTVERSION:R}-${PORTVERSION:E}
@@ -13,64 +13,54 @@ COMMENT=	Set of tools for generating raster images of proteins and molecules
 
 LICENSE=	ART20
 
-LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
-		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
-OPTIONS_DEFINE=	MAGICK DOCS EXAMPLES
-OPTIONS_DEFAULT=	MAGICK
+OPTIONS_DEFINE=	IMAGEMAGICK DOCS EXAMPLES
+OPTIONS_DEFAULT=IMAGEMAGICK
 
-USE_FORTRAN=	yes
+USES=		fortran
 MAKE_ARGS=	INCDIRS="-I${LOCALBASE}/include" LIBDIRS="-L${LOCALBASE}/lib" \
 		CC="${CC}" CFLAGS="${CFLAGS}" FC="${FC}" FFLAGS="${FFLAGS}" \
 		RM="${RM}" OS="${OPSYS}"
 ALL_TARGET=	linux all
 MAKE_JOBS_UNSAFE=	yes
 
-MANL=		avs2ps.l balls.l label3d.l r3d_objects.l r3dtops.l rastep.l \
-		raster3d.l render.l ribbon.l rods.l normal3d.l stereo3d.l
-
 CFLAGS+=	-DLINUX -DNETWORKBYTEORDER -Dgfortran
 FFLAGS+=	-fno-range-check -ffixed-line-length-132
 
-MAGICK_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
-MAGICK_CFLAGS=		-DIMAGEPIPE
+IMAGEMAGICK_RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 OPTIONS_SUB=		yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+BROKEN_sparc64=	Does not compile with GCC 4.2: internal compiler error
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile with GCC 4.2: internal compiler error
-.endif
+.include <bsd.port.options.mk>
 
 do-install:
 .for file in avs2ps balls normal3d rastep render ribbon rings3d rods
-	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${file} ${PREFIX}/bin
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} ${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for file in worms
-	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${file} ${PREFIX}/bin
+	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
 .for file in label3d stereo3d
-	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${file} ${PREFIX}/bin
+	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .endif
-	cd ${WRKSRC}/doc && ${INSTALL_MAN} ${MANL} ${MANLPREFIX}/man/manl
-	@${MKDIR} ${DATADIR}/materials
-	cd ${WRKSRC}/materials && ${INSTALL_DATA} * ${DATADIR}/materials
+	cd ${WRKSRC}/doc && ${INSTALL_MAN} *.l ${STAGEDIR}${MANLPREFIX}/man/manl
+	${MKDIR} ${STAGEDIR}${DATADIR}/materials
+	cd ${WRKSRC}/materials && ${INSTALL_DATA} * ${STAGEDIR}${DATADIR}/materials
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} R3D_manual.pdf ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/html
-	cd ${WRKSRC}/html && ${INSTALL_DATA} * ${DOCSDIR}/html
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} R3D_manual.pdf ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/html
+	cd ${WRKSRC}/html && ${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR}/html
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples && ${TAR} --exclude "CVS" -cf - . | \
-		${TAR} -C ${EXAMPLESDIR} --unlink -xf -)
-	@${FIND} ${EXAMPLESDIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-	@${FIND} ${EXAMPLESDIR} -type d | ${XARGS} ${CHMOD} a+rx
-	@${FIND} ${EXAMPLESDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
+	${RM} -rf ${STAGEDIR}${EXAMPLESDIR}/msms/CVS
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

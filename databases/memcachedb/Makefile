@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	meritus@innervision.pl
 COMMENT=	Distributed storage system designed for persistent
 
-LIB_DEPENDS=	libevent-1.so:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
 
 CFLAGS=		-I"${BDB_INCLUDE_DIR}"
 CONFIGURE_ARGS=	--enable-threads --with-bdb="${LOCALBASE}" \

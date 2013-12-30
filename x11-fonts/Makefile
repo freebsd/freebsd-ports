@@ -3,6 +3,7 @@
 
     COMMENT = X11 fonts and font utilities
 
+    SUBDIR += alegreya-sans
     SUBDIR += andika
     SUBDIR += anonymous-pro
     SUBDIR += artwiz-aleczapka
@@ -12,6 +13,7 @@
     SUBDIR += bdfresize
     SUBDIR += bdftopcf
     SUBDIR += bitstream-vera
+    SUBDIR += bitter
     SUBDIR += c64bdf
     SUBDIR += cantarell-fonts
     SUBDIR += charis
@@ -134,7 +136,6 @@
     SUBDIR += paratype
     SUBDIR += pcf2bdf
     SUBDIR += pingwi
-    SUBDIR += ppantsfonts
     SUBDIR += profont
     SUBDIR += proggy_fonts
     SUBDIR += proggy_fonts-ttf
@@ -156,6 +157,7 @@
     SUBDIR += ubuntu-font
     SUBDIR += urwfonts
     SUBDIR += urwfonts-ttf
+    SUBDIR += vollkorn-ttf
     SUBDIR += webfonts
     SUBDIR += wqy
     SUBDIR += xf86bigfontproto

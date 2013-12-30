@@ -34,7 +34,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENAL}
-USE_OPENAL=		alut
+USES+=			openal:alut
 CONFIGURE_ARGS+=	--enable-sound
 .else
 CONFIGURE_ARGS+=	--disable-sound

@@ -13,6 +13,9 @@ lib/libpocketsphinx.la
 lib/libpocketsphinx.so
 lib/libpocketsphinx.so.2
 libdata/pkgconfig/pocketsphinx.pc
+man/man1/pocketsphinx_batch.1.gz
+man/man1/pocketsphinx_continuous.1.gz
+man/man1/pocketsphinx_mdef_convert.1.gz
 %%DATADIR%%/model/hmm/en/tidigits/feat.params
 %%DATADIR%%/model/hmm/en/tidigits/mdef
 %%DATADIR%%/model/hmm/en/tidigits/means

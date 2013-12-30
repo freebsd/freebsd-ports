@@ -1,0 +1,15 @@
+--- ipacctctl/Makefile.orig	2013-12-20 18:19:33.000000000 +0000
++++ ipacctctl/Makefile	2013-12-20 18:19:52.000000000 +0000
+@@ -5,12 +5,7 @@
+ BINDIR?=	/usr/local/sbin
+ 
+ PROG=		ipacctctl
+-.if !exists(/usr/share/mk/bsd.compat.mk)
+-# Pre NOFOO -> NO_FOO system
+-NOMAN=		YES
+-.else
+ NO_MAN=		YES
+-.endif
+ 
+ COPTS+=		-g -Wall -Wformat
+ LDADD+=		-lnetgraph

@@ -2,10 +2,13 @@
 # $FreeBSD$
 #
 
+DB_TYPE=%%DB_TYPE%%
+WITH_FASTCGI=%%WITH_FASTCGI%%
+
 case $2 in
 POST-INSTALL)
         echo "======================================================"
-   if [ x"${DB_TYPE}" != "x" ]; then
+   if [ -n "${DB_TYPE}" ]; then
         echo "If this is your first installation of sympa, please load"
         echo "this file with your ${DB_TYPE} database client:"
 	echo "    %%PREFIX%%/libexec/sympa/create_db.${DB_TYPE}"
@@ -32,7 +35,7 @@ POST-INSTALL)
         echo "    AddDefaultCharset UTF-8"
         echo "    DirectoryIndex wws"
         echo "    Options +Indexes"
-   if [ x"${WITH_FASTCGI}" != x ]; then
+   if [ -n "${WITH_FASTCGI}" ]; then
         echo "    LoadModule fastcgi_module libexec/apache2/mod_fastcgi.so"
 	echo "    <Location /wws>"
 	echo "        SetHandler fastcgi-script"

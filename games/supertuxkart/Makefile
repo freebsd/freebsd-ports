@@ -18,10 +18,9 @@ LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 
 USE_BZIP2=	yes
 USE_GL=		gl glu glut
-USE_OPENAL=	al alut
-USES=		cmake gettext gmake pkgconfig
+USES=		cmake dos2unix gettext gmake openal:al,alut pkgconfig
 USE_SDL=	sdl
-USE_DOS2UNIX=	lib/irrlicht/source/Irrlicht/Makefile
+DOS2UNIX_FILES=	lib/irrlicht/source/Irrlicht/Makefile
 CMAKE_ARGS=	-DUSE_WIIUSE=NO
 
 WRKSRC=		${WRKDIR}/SuperTuxKart-${PORTVERSION}

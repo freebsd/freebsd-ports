@@ -6,13 +6,12 @@ DISTVERSION=	20070221
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.advsys.net/ken/util/
 DISTNAME=	${PORTNAME}_src
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Produce a .ZIP file from 2 other ones with the best compressed files
 
-NO_STAGE=	yes
-USE_DOS2UNIX=	yes
-USE_ZIP=	yes
+USES=		dos2unix
 NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
@@ -21,6 +20,6 @@ pre-build:
 	@${CP} ${FILESDIR}/${MAKEFILE} ${WRKSRC}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

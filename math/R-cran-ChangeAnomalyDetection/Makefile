@@ -15,7 +15,6 @@ LICENSE=	BSD
 RUN_DEPENDS=	R-cran-TTR>0:${PORTSDIR}/finance/R-cran-TTR \
 		R-cran-forecast>0:${PORTSDIR}/math/R-cran-forecast
 
-USE_R_MOD=	yes
-R_MOD_AUTOPLIST=	yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>

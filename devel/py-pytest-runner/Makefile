@@ -13,10 +13,8 @@ COMMENT=	Test support for pytest runner in setup.py
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hgtools>=0:${PORTSDIR}/devel/py-hgtools
 
 USE_ZIP=	yes
-USE_PYTHON=	-2.7
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=	2
+USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=yes
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

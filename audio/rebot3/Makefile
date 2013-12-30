@@ -15,13 +15,9 @@ RUN_DEPENDS=	p5-CDDB>=0:${PORTSDIR}/audio/p5-CDDB \
 		p5-MP3-ID3v1Tag>=0:${PORTSDIR}/audio/p5-MP3-ID3v1Tag
 
 USES=		perl5
-NO_STAGE=	yes
 NO_BUILD=	yes
 
-MAN1=		${PORTNAME}.1
-PLIST_FILES=	bin/${PORTNAME}
-
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
 post-patch:
 # Yes, we know it's perl, but we don't want to type '.pl' the whole time.
@@ -31,8 +27,9 @@ post-patch:
 		${WRKSRC}/${PORTNAME}.pl ${WRKSRC}/${PORTNAME}.pl.1
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.pl.1 \
-		${MAN1PREFIX}/man/man1/${PORTNAME}.1
+		${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

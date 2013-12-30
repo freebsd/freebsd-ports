@@ -11,10 +11,7 @@ MASTER_SITE_SUBDIR=	system/admin/time
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Synchronise computer clock to CHU radio station
 
-MAN8=	chu.8
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+LICENSE=	GPLv1
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
@@ -26,30 +23,25 @@ do-extract:
 			exit 1; \
 		fi \
 	done
-	${GZIP_CMD} -d ${WRKSRC}/testsignal.gz
+	@${GZIP_CMD} -d ${WRKSRC}/testsignal.gz
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/etc/chu|${PREFIX}/etc/chu|g' ${WRKSRC}/chu.c ${WRKSRC}/chu.8
-	${REINPLACE_CMD} -e 's|/sbin/chu|${PREFIX}/sbin/chu|g' ${WRKSRC}/chu.8
+	@${REINPLACE_CMD} -e 's|/etc/chu|${PREFIX}/etc/chu|g' ${WRKSRC}/chu.c ${WRKSRC}/chu.8
+	@${REINPLACE_CMD} -e 's|/sbin/chu|${PREFIX}/sbin/chu|g' ${WRKSRC}/chu.8
 	@${REINPLACE_CMD} -e 's|gcc -O2|${CC} ${CFLAGS}|g' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/chu ${PREFIX}/sbin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/testsignal ${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/chu.8 ${PREFIX}/man/man8
-.if	${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/chu ${STAGEDIR}${PREFIX}/sbin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/testsignal ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/chu.8 ${STAGEDIR}${PREFIX}/man/man8
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for	d in ${WRKSRC}/COPYING \
 	${WRKSRC}/TESTING \
 	${WRKSRC}/chu.html \
 	${WRKSRC}/chuman.html \
 	${WRKSRC}/ntp.html
-	${INSTALL_DATA} ${WRKSRC}/${d} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${ECHO} ""
-	@${ECHO} "chu docs installed in ${DOCSDIR}"
-	@${ECHO} ""
-.endif
 
 .include <bsd.port.mk>

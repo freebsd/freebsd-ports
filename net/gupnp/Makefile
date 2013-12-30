@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gupnp
-PORTVERSION=	0.20.8
+PORTVERSION=	0.20.9
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgssdp-1.0.so:${PORTSDIR}/net/gssdp \
 		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 
 CONFIGURE_ARGS=	--enable-introspection=yes
-CONFIGURE_ENV=	VAPIGEN=""
+CONFIGURE_ENV=	VAPIGEN="" ac_cv_path_VAPIGEN=""
 GNU_CONFIGURE=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 USE_GNOME=	glib20 introspection:build

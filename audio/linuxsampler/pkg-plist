@@ -40,6 +40,7 @@ lib/linuxsampler/plugins/.keep_me
 %%LV2CORE%%lib/lv2/linuxsampler.lv2/linuxsampler.ttl
 %%LV2CORE%%lib/lv2/linuxsampler.lv2/manifest.ttl
 libdata/pkgconfig/linuxsampler.pc
+man/man1/linuxsampler.1.gz
 %%LV2CORE%%@dirrm lib/lv2/linuxsampler.lv2
 @dirrm lib/linuxsampler/plugins
 @dirrm lib/linuxsampler

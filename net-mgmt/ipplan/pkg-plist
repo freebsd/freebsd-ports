@@ -1,623 +1,627 @@
-%%IPPLANDIR%%/CHANGELOG
-%%IPPLANDIR%%/CONTRIBUTORS
-%%IPPLANDIR%%/INSTALL
-%%IPPLANDIR%%/INSTALL-IIS+MSSQL
-%%IPPLANDIR%%/INSTALL-ORACLE9i
-%%IPPLANDIR%%/INSTALL-POSTGRESQL
-%%IPPLANDIR%%/INSTALL-WINDOWS
-%%IPPLANDIR%%/INTERNALS
-%%IPPLANDIR%%/IPplan.jpg
-%%IPPLANDIR%%/LICENSE
-%%IPPLANDIR%%/PORTERS
-%%IPPLANDIR%%/README
-%%IPPLANDIR%%/README.html
-%%IPPLANDIR%%/README.sgml
-%%IPPLANDIR%%/README1st-WINDOWS.txt
-%%IPPLANDIR%%/TODO
-%%IPPLANDIR%%/TRANSLATIONS
-%%IPPLANDIR%%/TRIGGERS
-%%IPPLANDIR%%/UPGRADE
-%%IPPLANDIR%%/admin/changepassword.php
-%%IPPLANDIR%%/admin/deletebounds.php
-%%IPPLANDIR%%/admin/displayauditlog.php
-%%IPPLANDIR%%/admin/displayboundsform.php
-%%IPPLANDIR%%/admin/exportbase.php
-%%IPPLANDIR%%/admin/exportbaseform.php
-%%IPPLANDIR%%/admin/exportip.php
-%%IPPLANDIR%%/admin/exportipform.php
-%%IPPLANDIR%%/admin/importbase.php
-%%IPPLANDIR%%/admin/importbaseform.php
-%%IPPLANDIR%%/admin/importip.php
-%%IPPLANDIR%%/admin/importipform.php
-%%IPPLANDIR%%/admin/install.php
-%%IPPLANDIR%%/admin/maintenance.php
-%%IPPLANDIR%%/admin/schemacreate.php
-%%IPPLANDIR%%/admin/usermanager.php
-%%IPPLANDIR%%/adodb/adodb-csvlib.inc.php
-%%IPPLANDIR%%/adodb/adodb-datadict.inc.php
-%%IPPLANDIR%%/adodb/adodb-error.inc.php
-%%IPPLANDIR%%/adodb/adodb-errorhandler.inc.php
-%%IPPLANDIR%%/adodb/adodb-errorpear.inc.php
-%%IPPLANDIR%%/adodb/adodb-exceptions.inc.php
-%%IPPLANDIR%%/adodb/adodb-iterator.inc.php
-%%IPPLANDIR%%/adodb/adodb-lib.inc.php
-%%IPPLANDIR%%/adodb/adodb-pager.inc.php
-%%IPPLANDIR%%/adodb/adodb-pear.inc.php
-%%IPPLANDIR%%/adodb/adodb-perf.inc.php
-%%IPPLANDIR%%/adodb/adodb-perf.inc.php.#.LENS-03-09-05
-%%IPPLANDIR%%/adodb/adodb-php4.inc.php
-%%IPPLANDIR%%/adodb/adodb-time.inc.php
-%%IPPLANDIR%%/adodb/adodb-time.zip
-%%IPPLANDIR%%/adodb/adodb-xmlschema.inc.php
-%%IPPLANDIR%%/adodb/adodb.inc.php
-%%IPPLANDIR%%/adodb/contrib/toxmlrpc.inc.php
-%%IPPLANDIR%%/adodb/cute_icons_for_site/adodb.gif
-%%IPPLANDIR%%/adodb/cute_icons_for_site/adodb2.gif
-%%IPPLANDIR%%/adodb/datadict/datadict-access.inc.php
-%%IPPLANDIR%%/adodb/datadict/datadict-db2.inc.php
-%%IPPLANDIR%%/adodb/datadict/datadict-firebird.inc.php
-%%IPPLANDIR%%/adodb/datadict/datadict-generic.inc.php
-%%IPPLANDIR%%/adodb/datadict/datadict-ibase.inc.php
-%%IPPLANDIR%%/adodb/datadict/datadict-informix.inc.php
-%%IPPLANDIR%%/adodb/datadict/datadict-mssql.inc.php
-%%IPPLANDIR%%/adodb/datadict/datadict-mysql.inc.php
-%%IPPLANDIR%%/adodb/datadict/datadict-oci8.inc.php
-%%IPPLANDIR%%/adodb/datadict/datadict-postgres.inc.php
-%%IPPLANDIR%%/adodb/datadict/datadict-sapdb.inc.php
-%%IPPLANDIR%%/adodb/datadict/datadict-sybase.inc.php
-%%IPPLANDIR%%/adodb/docs/docs-adodb.htm
-%%IPPLANDIR%%/adodb/docs/docs-datadict.htm
-%%IPPLANDIR%%/adodb/docs/docs-oracle.htm
-%%IPPLANDIR%%/adodb/docs/docs-perf.htm
-%%IPPLANDIR%%/adodb/docs/docs-session.htm
-%%IPPLANDIR%%/adodb/docs/old-changelog.htm
-%%IPPLANDIR%%/adodb/docs/readme.htm
-%%IPPLANDIR%%/adodb/docs/tips_portable_sql.htm
-%%IPPLANDIR%%/adodb/docs/tute.htm
-%%IPPLANDIR%%/adodb/drivers/adodb-access.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-ado.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-ado5.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-ado_access.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-ado_mssql.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-borland_ibase.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-csv.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-db2.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-fbsql.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-firebird.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-ibase.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-informix.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-informix72.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-ldap.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-mssql.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-mssqlpo.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-mysql.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-mysqli.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-mysqlt.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-netezza.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-oci8.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-oci805.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-oci8po.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-odbc.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-odbc_mssql.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-odbc_oracle.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-odbtp.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-odbtp_unicode.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-oracle.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-pdo.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-postgres.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-postgres64.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-postgres7.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-proxy.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-sapdb.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-sqlanywhere.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-sqlite.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-sqlitepo.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-sybase.inc.php
-%%IPPLANDIR%%/adodb/drivers/adodb-vfp.inc.php
-%%IPPLANDIR%%/adodb/lang/adodb-ar.inc.php
-%%IPPLANDIR%%/adodb/lang/adodb-bg.inc.php
-%%IPPLANDIR%%/adodb/lang/adodb-bgutf8.inc.php
-%%IPPLANDIR%%/adodb/lang/adodb-ca.inc.php
-%%IPPLANDIR%%/adodb/lang/adodb-cn.inc.php
-%%IPPLANDIR%%/adodb/lang/adodb-cz.inc.php
-%%IPPLANDIR%%/adodb/lang/adodb-de.inc.php
-%%IPPLANDIR%%/adodb/lang/adodb-en.inc.php
-%%IPPLANDIR%%/adodb/lang/adodb-es.inc.php
-%%IPPLANDIR%%/adodb/lang/adodb-fr.inc.php
-%%IPPLANDIR%%/adodb/lang/adodb-hu.inc.php
-%%IPPLANDIR%%/adodb/lang/adodb-it.inc.php
-%%IPPLANDIR%%/adodb/lang/adodb-nl.inc.php
-%%IPPLANDIR%%/adodb/lang/adodb-pl.inc.php
-%%IPPLANDIR%%/adodb/lang/adodb-pt-br.inc.php
-%%IPPLANDIR%%/adodb/lang/adodb-ro.inc.php
-%%IPPLANDIR%%/adodb/lang/adodb-ru1251.inc.php
-%%IPPLANDIR%%/adodb/lang/adodb-sv.inc.php
-%%IPPLANDIR%%/adodb/license.txt
-%%IPPLANDIR%%/adodb/pear/Auth/Container/ADOdb.php
-%%IPPLANDIR%%/adodb/pear/readme.Auth.txt
-%%IPPLANDIR%%/adodb/perf/perf-db2.inc.php
-%%IPPLANDIR%%/adodb/perf/perf-informix.inc.php
-%%IPPLANDIR%%/adodb/perf/perf-mssql.inc.php
-%%IPPLANDIR%%/adodb/perf/perf-mysql.inc.php
-%%IPPLANDIR%%/adodb/perf/perf-oci8.inc.php
-%%IPPLANDIR%%/adodb/perf/perf-postgres.inc.php
-%%IPPLANDIR%%/adodb/pivottable.inc.php
-%%IPPLANDIR%%/adodb/readme.txt
-%%IPPLANDIR%%/adodb/rsfilter.inc.php
-%%IPPLANDIR%%/adodb/server.php
-%%IPPLANDIR%%/adodb/session/adodb-compress-bzip2.php
-%%IPPLANDIR%%/adodb/session/adodb-compress-gzip.php
-%%IPPLANDIR%%/adodb/session/adodb-cryptsession.php
-%%IPPLANDIR%%/adodb/session/adodb-encrypt-mcrypt.php
-%%IPPLANDIR%%/adodb/session/adodb-encrypt-md5.php
-%%IPPLANDIR%%/adodb/session/adodb-encrypt-secret.php
-%%IPPLANDIR%%/adodb/session/adodb-sess.txt
-%%IPPLANDIR%%/adodb/session/adodb-session-clob.php
-%%IPPLANDIR%%/adodb/session/adodb-session.php
-%%IPPLANDIR%%/adodb/session/adodb-sessions.mysql.sql
-%%IPPLANDIR%%/adodb/session/adodb-sessions.oracle.clob.sql
-%%IPPLANDIR%%/adodb/session/adodb-sessions.oracle.sql
-%%IPPLANDIR%%/adodb/session/crypt.inc.php
-%%IPPLANDIR%%/adodb/session/old/adodb-cryptsession.php
-%%IPPLANDIR%%/adodb/session/old/adodb-session-clob.php
-%%IPPLANDIR%%/adodb/session/old/adodb-session.php
-%%IPPLANDIR%%/adodb/session/old/crypt.inc.php
-%%IPPLANDIR%%/adodb/tests/benchmark.php
-%%IPPLANDIR%%/adodb/tests/client.php
-%%IPPLANDIR%%/adodb/tests/pdo.php
-%%IPPLANDIR%%/adodb/tests/test-datadict.php
-%%IPPLANDIR%%/adodb/tests/test-perf.php
-%%IPPLANDIR%%/adodb/tests/test-pgblob.php
-%%IPPLANDIR%%/adodb/tests/test-php5.php
-%%IPPLANDIR%%/adodb/tests/test-xmlschema.php
-%%IPPLANDIR%%/adodb/tests/test.php
-%%IPPLANDIR%%/adodb/tests/test2.php
-%%IPPLANDIR%%/adodb/tests/test3.php
-%%IPPLANDIR%%/adodb/tests/test4.php
-%%IPPLANDIR%%/adodb/tests/test5.php
-%%IPPLANDIR%%/adodb/tests/test_rs_array.php
-%%IPPLANDIR%%/adodb/tests/testcache.php
-%%IPPLANDIR%%/adodb/tests/testdatabases.inc.php
-%%IPPLANDIR%%/adodb/tests/testgenid.php
-%%IPPLANDIR%%/adodb/tests/testmssql.php
-%%IPPLANDIR%%/adodb/tests/testoci8.php
-%%IPPLANDIR%%/adodb/tests/testoci8cursor.php
-%%IPPLANDIR%%/adodb/tests/testpaging.php
-%%IPPLANDIR%%/adodb/tests/testpear.php
-%%IPPLANDIR%%/adodb/tests/testsessions.php
-%%IPPLANDIR%%/adodb/tests/time.php
-%%IPPLANDIR%%/adodb/tests/tmssql.php
-%%IPPLANDIR%%/adodb/tests/xmlschema.xml
-%%IPPLANDIR%%/adodb/toexport.inc.php
-%%IPPLANDIR%%/adodb/tohtml.inc.php
-%%IPPLANDIR%%/adodb/xmlschema.dtd
-%%IPPLANDIR%%/adodb/xsl/convert-0.1-0.2.xsl
-%%IPPLANDIR%%/adodb/xsl/convert-0.2-0.1.xsl
-%%IPPLANDIR%%/adodb/xsl/remove-0.2.xsl
-%%IPPLANDIR%%/auth.php
-%%IPPLANDIR%%/class.dbflib.php
-%%IPPLANDIR%%/class.dnslib.php
-%%IPPLANDIR%%/class.phpmailer.php
-%%IPPLANDIR%%/class.smtp.php
-%%IPPLANDIR%%/class.templib.php
-%%IPPLANDIR%%/class.xptlib.php
-%%IPPLANDIR%%/config.php
-%%IPPLANDIR%%/config.php.sample
-%%IPPLANDIR%%/contrib/bind9_revzone.xsl
-%%IPPLANDIR%%/contrib/bind9_zone.dtd
-%%IPPLANDIR%%/contrib/bind9_zone.xsl
-%%IPPLANDIR%%/contrib/bind9_zone.xsl.rej
-%%IPPLANDIR%%/contrib/create-test-users.sh
-%%IPPLANDIR%%/contrib/dumproute.sh
-%%IPPLANDIR%%/contrib/dumproute.txt
-%%IPPLANDIR%%/contrib/ipplan-poller.php
-%%IPPLANDIR%%/contrib/ipplan2pc.README
-%%IPPLANDIR%%/contrib/ipplan2pc.xsl
-%%IPPLANDIR%%/contrib/isc_dhcp1.xsl
-%%IPPLANDIR%%/contrib/isc_dhcp2.xsl
-%%IPPLANDIR%%/contrib/process-exports.pl
-%%IPPLANDIR%%/contrib/process-exports.pl.rej
-%%IPPLANDIR%%/contrib/process-exports.txt
-%%IPPLANDIR%%/contrib/qipImport-public.README
-%%IPPLANDIR%%/contrib/qipImport-public.pl
-%%IPPLANDIR%%/cookies.js
-%%IPPLANDIR%%/docu.css
-%%IPPLANDIR%%/gpl.html
-%%IPPLANDIR%%/images/square_green.jpg
-%%IPPLANDIR%%/images/square_orange.jpg
-%%IPPLANDIR%%/images/square_red.jpg
-%%IPPLANDIR%%/index.php
-%%IPPLANDIR%%/ipplanlib.js
-%%IPPLANDIR%%/ipplanlib.php
-%%IPPLANDIR%%/layout/class.layout
-%%IPPLANDIR%%/layout/layoutman.html
-%%IPPLANDIR%%/license.php
-%%IPPLANDIR%%/locale/bg/LC_MESSAGES/messages.mo
-%%IPPLANDIR%%/locale/bg/LC_MESSAGES/messages.po
-%%IPPLANDIR%%/locale/de/LC_MESSAGES/messages.mo
-%%IPPLANDIR%%/locale/de/LC_MESSAGES/messages.po
-%%IPPLANDIR%%/locale/es/LC_MESSAGES/messages.mo
-%%IPPLANDIR%%/locale/es/LC_MESSAGES/messages.po
-%%IPPLANDIR%%/locale/fr/LC_MESSAGES/messages.mo
-%%IPPLANDIR%%/locale/fr/LC_MESSAGES/messages.po
-%%IPPLANDIR%%/locale/it/LC_MESSAGES/messages.mo
-%%IPPLANDIR%%/locale/it/LC_MESSAGES/messages.po
-%%IPPLANDIR%%/locale/ja_JP/LC_MESSAGES/messages.mo
-%%IPPLANDIR%%/locale/ja_JP/LC_MESSAGES/messages.po
-%%IPPLANDIR%%/locale/no/LC_MESSAGES/messages.mo
-%%IPPLANDIR%%/locale/no/LC_MESSAGES/messages.po
-%%IPPLANDIR%%/locale/pt/LC_MESSAGES/messages.mo
-%%IPPLANDIR%%/locale/pt/LC_MESSAGES/messages.po
-%%IPPLANDIR%%/locale/pt_BR/LC_MESSAGES/messages.mo
-%%IPPLANDIR%%/locale/pt_BR/LC_MESSAGES/messages.po
-%%IPPLANDIR%%/locale/ru/LC_MESSAGES/messages.mo
-%%IPPLANDIR%%/locale/ru/LC_MESSAGES/messages.po
-%%IPPLANDIR%%/menudefs.php
-%%IPPLANDIR%%/menus/ACKNOWLEDGEMENTS
-%%IPPLANDIR%%/menus/CHANGELOG
-%%IPPLANDIR%%/menus/CHANGE_TEMPLATE_CLASS_NAME.sh
-%%IPPLANDIR%%/menus/COPYING
-%%IPPLANDIR%%/menus/DUMPS/mysql.demo_data.dump
-%%IPPLANDIR%%/menus/DUMPS/mysql.start.dump
-%%IPPLANDIR%%/menus/DUMPS/pgsql.demo_data.dump
-%%IPPLANDIR%%/menus/DUMPS/pgsql.start.dump
-%%IPPLANDIR%%/menus/DUMPS/phplayersmenu
-%%IPPLANDIR%%/menus/DUMPS/sqlite.demo_data.dump
-%%IPPLANDIR%%/menus/DUMPS/sqlite.demo_data.dump.php5
-%%IPPLANDIR%%/menus/DUMPS/sqlite.start.dump
-%%IPPLANDIR%%/menus/DUMPS/sqlite.start.dump.php5
-%%IPPLANDIR%%/menus/LICENSE
-%%IPPLANDIR%%/menus/LOGOS/README
-%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm.png
-%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_b01.png
-%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_b02.png
-%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_b03.png
-%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_b04.png
-%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_l01.png
-%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_l02.png
-%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_l03.png
-%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_l04.png
-%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_y01.png
-%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_y02.png
-%%IPPLANDIR%%/menus/LOGOS/powered_by_phplm_y04.png
-%%IPPLANDIR%%/menus/LOGOS/shortcut_icon_phplm.png
-%%IPPLANDIR%%/menus/LOGOS/shortcut_icon_phplm_01.png
-%%IPPLANDIR%%/menus/LOGOS/shortcut_icon_phplm_02.png
-%%IPPLANDIR%%/menus/LOGOS/shortcut_icon_phplm_03.png
-%%IPPLANDIR%%/menus/LOGOS/shortcut_icon_phplm_04.png
-%%IPPLANDIR%%/menus/PATCHES/FIXEDMENU/README
-%%IPPLANDIR%%/menus/PATCHES/FIXEDMENU/fixedmenu.patch
-%%IPPLANDIR%%/menus/PATCHES/ICONS_I18N/README
-%%IPPLANDIR%%/menus/PATCHES/ICONS_I18N/icons_i18n.patch
-%%IPPLANDIR%%/menus/PATCHES/ONCLICK/README
-%%IPPLANDIR%%/menus/PATCHES/ONCLICK/onclick-simple.patch
-%%IPPLANDIR%%/menus/PATCHES/ONCLICK/onclick.patch
-%%IPPLANDIR%%/menus/PATCHES/README
-%%IPPLANDIR%%/menus/README.PHPDOC
-%%IPPLANDIR%%/menus/README.ihtml
-%%IPPLANDIR%%/menus/THEMES/galeon-theme.tar.gz
-%%IPPLANDIR%%/menus/THEMES/gmc-theme.tar.gz
-%%IPPLANDIR%%/menus/THEMES/kde-theme.tar.gz
-%%IPPLANDIR%%/menus/THEMES/mozilla-theme.tar.gz
-%%IPPLANDIR%%/menus/THEMES/nautilus-gnome-theme.tar.gz
-%%IPPLANDIR%%/menus/TODO
-%%IPPLANDIR%%/menus/demo.php
-%%IPPLANDIR%%/menus/demo.php.html
-%%IPPLANDIR%%/menus/demo.phps
-%%IPPLANDIR%%/menus/example-db-hormenu.php
-%%IPPLANDIR%%/menus/example-db-treemenu.notshown.php
-%%IPPLANDIR%%/menus/example-db-treemenu.php
-%%IPPLANDIR%%/menus/example-dbtofile.php
-%%IPPLANDIR%%/menus/example-filetodb.php
-%%IPPLANDIR%%/menus/example-frame-body.php
-%%IPPLANDIR%%/menus/example-frame-treemenu.php
-%%IPPLANDIR%%/menus/example-frame.html
-%%IPPLANDIR%%/menus/example-hormenu-old.php
-%%IPPLANDIR%%/menus/example-hormenu.php
-%%IPPLANDIR%%/menus/example-hormenu_and_treemenu.php
-%%IPPLANDIR%%/menus/example-hormenu_and_vermenu.php
-%%IPPLANDIR%%/menus/example-horplainmenu.php
-%%IPPLANDIR%%/menus/example-layersmenus_and_treemenus.php
-%%IPPLANDIR%%/menus/example-phptreemenu.php
-%%IPPLANDIR%%/menus/example-see-through.php
-%%IPPLANDIR%%/menus/example-treemenu.php
-%%IPPLANDIR%%/menus/example-two_treemenus.php
-%%IPPLANDIR%%/menus/example-vermenu.php
-%%IPPLANDIR%%/menus/example-verplainmenu.php
-%%IPPLANDIR%%/menus/examples-frame.html
-%%IPPLANDIR%%/menus/examples-leftbar.html
-%%IPPLANDIR%%/menus/images/valid-xhtml10.png
-%%IPPLANDIR%%/menus/images/vcss.png
-%%IPPLANDIR%%/menus/index.php
-%%IPPLANDIR%%/menus/layersmenu-demo.css
-%%IPPLANDIR%%/menus/layersmenu-galaxy.css
-%%IPPLANDIR%%/menus/layersmenu-gtk2.css
-%%IPPLANDIR%%/menus/layersmenu-horizontal-1.txt
-%%IPPLANDIR%%/menus/layersmenu-horizontal-2.txt
-%%IPPLANDIR%%/menus/layersmenu-index.css
-%%IPPLANDIR%%/menus/layersmenu-index.txt
-%%IPPLANDIR%%/menus/layersmenu-keramik.css
-%%IPPLANDIR%%/menus/layersmenu-old.css
-%%IPPLANDIR%%/menus/layersmenu-vertical-1.txt
-%%IPPLANDIR%%/menus/layersmenu-vertical-2.txt
-%%IPPLANDIR%%/menus/layerstreemenu-hidden.css
-%%IPPLANDIR%%/menus/layerstreemenu.css
-%%IPPLANDIR%%/menus/lib/PHPLIB.php
-%%IPPLANDIR%%/menus/lib/layersmenu-browser_detection.php
-%%IPPLANDIR%%/menus/lib/layersmenu-common.inc.php
-%%IPPLANDIR%%/menus/lib/layersmenu-process.inc.php
-%%IPPLANDIR%%/menus/lib/layersmenu.inc.php
-%%IPPLANDIR%%/menus/lib/phptreemenu.inc.php
-%%IPPLANDIR%%/menus/lib/plainmenu.inc.php
-%%IPPLANDIR%%/menus/lib/treemenu.inc.php
-%%IPPLANDIR%%/menus/libjs/layersmenu-browser_detection.js
-%%IPPLANDIR%%/menus/libjs/layersmenu-footer.ijs
-%%IPPLANDIR%%/menus/libjs/layersmenu-header.ijs
-%%IPPLANDIR%%/menus/libjs/layersmenu-library.js
-%%IPPLANDIR%%/menus/libjs/layersmenu-see-through.js
-%%IPPLANDIR%%/menus/libjs/layersmenu.js
-%%IPPLANDIR%%/menus/libjs/layerstreemenu-cookies.js
-%%IPPLANDIR%%/menus/libjs/layerstreemenu.ijs
-%%IPPLANDIR%%/menus/menuicons/bug-small.png
-%%IPPLANDIR%%/menus/menuicons/debian-icon-mini.png
-%%IPPLANDIR%%/menus/menuicons/desktop.png
-%%IPPLANDIR%%/menus/menuicons/downloadManager16.png
-%%IPPLANDIR%%/menus/menuicons/email.png
-%%IPPLANDIR%%/menus/menuicons/epiphany-16.png
-%%IPPLANDIR%%/menus/menuicons/freshmeat.net_favicon.png
-%%IPPLANDIR%%/menus/menuicons/gnome-starthere-mini.png
-%%IPPLANDIR%%/menus/menuicons/kfm_home.png
-%%IPPLANDIR%%/menus/menuicons/misc_doc.png
-%%IPPLANDIR%%/menus/menuicons/mozilla.org_images_mozilla-16.png
-%%IPPLANDIR%%/menus/menuicons/netscape-icon-mini.png
-%%IPPLANDIR%%/menus/menuicons/office_suites.png
-%%IPPLANDIR%%/menus/menuicons/ooo-icon-mini.png
-%%IPPLANDIR%%/menus/menuicons/pan-icon-mini.png
-%%IPPLANDIR%%/menus/menuicons/php-bugs-icon-mini.png
-%%IPPLANDIR%%/menus/menuicons/phplib-logo-mini.png
-%%IPPLANDIR%%/menus/menuicons/quanta.png
-%%IPPLANDIR%%/menus/menuicons/shortcut_icon_phplm.png
-%%IPPLANDIR%%/menus/menuicons/sitebar_root_transparent.png
-%%IPPLANDIR%%/menus/menuicons/sourceforge.net_images_favicon.png
-%%IPPLANDIR%%/menus/menuicons/tgz.png
-%%IPPLANDIR%%/menus/menuicons/www.gimp.org_icons_wilber16.png
-%%IPPLANDIR%%/menus/menuicons/www.gnome.org_images_gnome-16.png
-%%IPPLANDIR%%/menus/menuicons/www.kde.org_favicon.png
-%%IPPLANDIR%%/menus/menuicons/www.kernel.org_images_tux16-16.png
-%%IPPLANDIR%%/menus/menuicons/www.mysql.com_favicon.png
-%%IPPLANDIR%%/menus/menuicons/www.php.net_favicon.png
-%%IPPLANDIR%%/menus/menuicons/www.ximian.com_favicon.png
-%%IPPLANDIR%%/menus/menuimages/down-arrow.png
-%%IPPLANDIR%%/menus/menuimages/down-galaxy.png
-%%IPPLANDIR%%/menus/menuimages/down-gnome.png
-%%IPPLANDIR%%/menus/menuimages/down-gtk2.png
-%%IPPLANDIR%%/menus/menuimages/down-keramik.png
-%%IPPLANDIR%%/menus/menuimages/down-nautilus.png
-%%IPPLANDIR%%/menus/menuimages/forward-arrow.png
-%%IPPLANDIR%%/menus/menuimages/forward-galaxy.png
-%%IPPLANDIR%%/menus/menuimages/forward-gnome.png
-%%IPPLANDIR%%/menus/menuimages/forward-gtk2.png
-%%IPPLANDIR%%/menus/menuimages/forward-keramik.png
-%%IPPLANDIR%%/menus/menuimages/forward-nautilus.png
-%%IPPLANDIR%%/menus/menuimages/kde_tree_collapse.png
-%%IPPLANDIR%%/menus/menuimages/kde_tree_collapse_corner.png
-%%IPPLANDIR%%/menus/menuimages/kde_tree_collapse_corner_first.png
-%%IPPLANDIR%%/menus/menuimages/kde_tree_collapse_first.png
-%%IPPLANDIR%%/menus/menuimages/kde_tree_corner.png
-%%IPPLANDIR%%/menus/menuimages/kde_tree_expand.png
-%%IPPLANDIR%%/menus/menuimages/kde_tree_expand_corner.png
-%%IPPLANDIR%%/menus/menuimages/kde_tree_expand_corner_first.png
-%%IPPLANDIR%%/menus/menuimages/kde_tree_expand_first.png
-%%IPPLANDIR%%/menus/menuimages/kde_tree_folder_closed.png
-%%IPPLANDIR%%/menus/menuimages/kde_tree_folder_open.png
-%%IPPLANDIR%%/menus/menuimages/kde_tree_leaf.png
-%%IPPLANDIR%%/menus/menuimages/kde_tree_space.png
-%%IPPLANDIR%%/menus/menuimages/kde_tree_split.png
-%%IPPLANDIR%%/menus/menuimages/kde_tree_split_first.png
-%%IPPLANDIR%%/menus/menuimages/kde_tree_vertline.png
-%%IPPLANDIR%%/menus/menuimages/nautilus_tree_collapse.png
-%%IPPLANDIR%%/menus/menuimages/nautilus_tree_collapse_corner.png
-%%IPPLANDIR%%/menus/menuimages/nautilus_tree_collapse_corner_first.png
-%%IPPLANDIR%%/menus/menuimages/nautilus_tree_collapse_first.png
-%%IPPLANDIR%%/menus/menuimages/nautilus_tree_corner.png
-%%IPPLANDIR%%/menus/menuimages/nautilus_tree_expand.png
-%%IPPLANDIR%%/menus/menuimages/nautilus_tree_expand_corner.png
-%%IPPLANDIR%%/menus/menuimages/nautilus_tree_expand_corner_first.png
-%%IPPLANDIR%%/menus/menuimages/nautilus_tree_expand_first.png
-%%IPPLANDIR%%/menus/menuimages/nautilus_tree_folder_closed.png
-%%IPPLANDIR%%/menus/menuimages/nautilus_tree_folder_open.png
-%%IPPLANDIR%%/menus/menuimages/nautilus_tree_leaf.png
-%%IPPLANDIR%%/menus/menuimages/nautilus_tree_space.png
-%%IPPLANDIR%%/menus/menuimages/nautilus_tree_split.png
-%%IPPLANDIR%%/menus/menuimages/nautilus_tree_split_first.png
-%%IPPLANDIR%%/menus/menuimages/nautilus_tree_vertline.png
-%%IPPLANDIR%%/menus/menuimages/transparent.png
-%%IPPLANDIR%%/menus/menuimages/tree_collapse.png
-%%IPPLANDIR%%/menus/menuimages/tree_collapse_corner.png
-%%IPPLANDIR%%/menus/menuimages/tree_collapse_corner_first.png
-%%IPPLANDIR%%/menus/menuimages/tree_collapse_first.png
-%%IPPLANDIR%%/menus/menuimages/tree_corner.png
-%%IPPLANDIR%%/menus/menuimages/tree_expand.png
-%%IPPLANDIR%%/menus/menuimages/tree_expand_corner.png
-%%IPPLANDIR%%/menus/menuimages/tree_expand_corner_first.png
-%%IPPLANDIR%%/menus/menuimages/tree_expand_first.png
-%%IPPLANDIR%%/menus/menuimages/tree_folder_closed.png
-%%IPPLANDIR%%/menus/menuimages/tree_folder_open.png
-%%IPPLANDIR%%/menus/menuimages/tree_leaf.png
-%%IPPLANDIR%%/menus/menuimages/tree_space.png
-%%IPPLANDIR%%/menus/menuimages/tree_split.png
-%%IPPLANDIR%%/menus/menuimages/tree_split_first.png
-%%IPPLANDIR%%/menus/menuimages/tree_vertline.png
-%%IPPLANDIR%%/menus/templates/layersmenu-horizontal_menu-full.ihtml
-%%IPPLANDIR%%/menus/templates/layersmenu-horizontal_menu-keramik-full.ihtml
-%%IPPLANDIR%%/menus/templates/layersmenu-horizontal_menu-keramik.ihtml
-%%IPPLANDIR%%/menus/templates/layersmenu-horizontal_menu-old.ihtml
-%%IPPLANDIR%%/menus/templates/layersmenu-horizontal_menu.ihtml
-%%IPPLANDIR%%/menus/templates/layersmenu-horizontal_plain_menu-red.ihtml
-%%IPPLANDIR%%/menus/templates/layersmenu-horizontal_plain_menu.ihtml
-%%IPPLANDIR%%/menus/templates/layersmenu-plain_menu-green.ihtml
-%%IPPLANDIR%%/menus/templates/layersmenu-plain_menu.ihtml
-%%IPPLANDIR%%/menus/templates/layersmenu-sub_menu-galaxy.ihtml
-%%IPPLANDIR%%/menus/templates/layersmenu-sub_menu-keramik.ihtml
-%%IPPLANDIR%%/menus/templates/layersmenu-sub_menu-old.ihtml
-%%IPPLANDIR%%/menus/templates/layersmenu-sub_menu.ihtml
-%%IPPLANDIR%%/menus/templates/layersmenu-vertical_menu-galaxy.ihtml
-%%IPPLANDIR%%/menus/templates/layersmenu-vertical_menu-old.ihtml
-%%IPPLANDIR%%/menus/templates/layersmenu-vertical_menu.ihtml
-%%IPPLANDIR%%/messages.po
-%%IPPLANDIR%%/phpmailer.lang-en.php
-%%IPPLANDIR%%/phpserializer.js
-%%IPPLANDIR%%/schema.php
-%%IPPLANDIR%%/templates/display/basetemplate-dhcp.xml
-%%IPPLANDIR%%/templates/display/basetemplate.xml
-%%IPPLANDIR%%/templates/display/basetemplate.xml.dhcp
-%%IPPLANDIR%%/templates/display/custtemplate-ripe.xml
-%%IPPLANDIR%%/templates/display/custtemplate.xml
-%%IPPLANDIR%%/templates/display/fwdzonetemplate.xml
-%%IPPLANDIR%%/templates/display/iptemplate.xml
-%%IPPLANDIR%%/templates/display/iptemplate.xml.sample
-%%IPPLANDIR%%/templates/ripe_assign-simple-1.0.xsl
-%%IPPLANDIR%%/templates/ripe_person_simple-1.0.xsl
-%%IPPLANDIR%%/templates/swip_reassign-simple-modify3.0.xsl
-%%IPPLANDIR%%/templates/swip_reassign-simple-new3.0.xsl
-%%IPPLANDIR%%/templates/swip_reassign-simple-remove3.0.xsl
-%%IPPLANDIR%%/templates/swip_wdb1.4_delete.xsl
-%%IPPLANDIR%%/templates/swip_wdb1.4_modify.xsl
-%%IPPLANDIR%%/templates/swip_wdb1.4_new.xsl
-%%IPPLANDIR%%/themes/default-safari.css
-%%IPPLANDIR%%/themes/default.css
-%%IPPLANDIR%%/themes/img_red_grey/head-bg.png
-%%IPPLANDIR%%/themes/img_red_grey/page-bg.png
-%%IPPLANDIR%%/themes/pastel.css
-%%IPPLANDIR%%/themes/penguin.css
-%%IPPLANDIR%%/themes/red_grey.css
-%%IPPLANDIR%%/user/Net/DNS.php
-%%IPPLANDIR%%/user/Net/DNS/Header.php
-%%IPPLANDIR%%/user/Net/DNS/Packet.php
-%%IPPLANDIR%%/user/Net/DNS/Question.php
-%%IPPLANDIR%%/user/Net/DNS/RR.php
-%%IPPLANDIR%%/user/Net/DNS/RR/A.php
-%%IPPLANDIR%%/user/Net/DNS/RR/AAAA.php
-%%IPPLANDIR%%/user/Net/DNS/RR/AFSDB.php
-%%IPPLANDIR%%/user/Net/DNS/RR/CNAME.php
-%%IPPLANDIR%%/user/Net/DNS/RR/HINFO.php
-%%IPPLANDIR%%/user/Net/DNS/RR/MX.php
-%%IPPLANDIR%%/user/Net/DNS/RR/NAPTR.php
-%%IPPLANDIR%%/user/Net/DNS/RR/NS.php
-%%IPPLANDIR%%/user/Net/DNS/RR/PTR.php
-%%IPPLANDIR%%/user/Net/DNS/RR/SOA.php
-%%IPPLANDIR%%/user/Net/DNS/RR/SRV.php
-%%IPPLANDIR%%/user/Net/DNS/RR/TSIG.php
-%%IPPLANDIR%%/user/Net/DNS/RR/TXT.php
-%%IPPLANDIR%%/user/Net/DNS/Resolver.php
-%%IPPLANDIR%%/user/changesettings.php
-%%IPPLANDIR%%/user/createarea.php
-%%IPPLANDIR%%/user/createrange.php
-%%IPPLANDIR%%/user/createsubnet.php
-%%IPPLANDIR%%/user/createsubnetform.php
-%%IPPLANDIR%%/user/deletearea.php
-%%IPPLANDIR%%/user/deletecustomer.php
-%%IPPLANDIR%%/user/deleterange.php
-%%IPPLANDIR%%/user/displaybase.php
-%%IPPLANDIR%%/user/displaybaseform.php
-%%IPPLANDIR%%/user/displaycustomerform.php
-%%IPPLANDIR%%/user/displayoverlap.php
-%%IPPLANDIR%%/user/displayoverlapform.php
-%%IPPLANDIR%%/user/displayrouter.php
-%%IPPLANDIR%%/user/displayrouterform.php
-%%IPPLANDIR%%/user/displaysubnet.php
-%%IPPLANDIR%%/user/displayswip.php
-%%IPPLANDIR%%/user/displayswipform.php
-%%IPPLANDIR%%/user/dns.php
-%%IPPLANDIR%%/user/emailswip.php
-%%IPPLANDIR%%/user/exportdhcp.php
-%%IPPLANDIR%%/user/exportview.php
-%%IPPLANDIR%%/user/findfree.php
-%%IPPLANDIR%%/user/findfreeform.php
-%%IPPLANDIR%%/user/logout.php
-%%IPPLANDIR%%/user/modifyarearange.php
-%%IPPLANDIR%%/user/modifyarearangeform.php
-%%IPPLANDIR%%/user/modifybase.php
-%%IPPLANDIR%%/user/modifybaseform.php
-%%IPPLANDIR%%/user/modifycustomer.php
-%%IPPLANDIR%%/user/modifydns.php
-%%IPPLANDIR%%/user/modifydnsform.php
-%%IPPLANDIR%%/user/modifydnsrecord.php
-%%IPPLANDIR%%/user/modifydnsrecordform.php
-%%IPPLANDIR%%/user/modifyipform.php
-%%IPPLANDIR%%/user/modifyipformmul.php
-%%IPPLANDIR%%/user/modifysubnet.php
-%%IPPLANDIR%%/user/modifyzone.php
-%%IPPLANDIR%%/user/modifyzoneform.php
-%%IPPLANDIR%%/user/ping.php
-%%IPPLANDIR%%/user/requestip.php
-%%IPPLANDIR%%/user/searchall.php
-%%IPPLANDIR%%/user/searchallform.php
-%%IPPLANDIR%%/user/swiplib.php
-%%IPPLANDIR%%/user/traceroute.php
-%%IPPLANDIR%%/user/treeview.php
-%%IPPLANDIR%%/user/whois.php
-%%IPPLANDIR%%/xmllib.php
-@dirrm %%IPPLANDIR%%/user/Net/DNS/RR
-@dirrm %%IPPLANDIR%%/user/Net/DNS
-@dirrm %%IPPLANDIR%%/user/Net
-@dirrm %%IPPLANDIR%%/user
-@dirrm %%IPPLANDIR%%/themes/img_red_grey
-@dirrm %%IPPLANDIR%%/themes
-@dirrm %%IPPLANDIR%%/templates/display
-@dirrm %%IPPLANDIR%%/templates
-@dirrm %%IPPLANDIR%%/menus/templates
-@dirrm %%IPPLANDIR%%/menus/menuimages
-@dirrm %%IPPLANDIR%%/menus/menuicons
-@dirrm %%IPPLANDIR%%/menus/libjs
-@dirrm %%IPPLANDIR%%/menus/lib
-@dirrm %%IPPLANDIR%%/menus/images
-@dirrm %%IPPLANDIR%%/menus/THEMES
-@dirrm %%IPPLANDIR%%/menus/PATCHES/ONCLICK
-@dirrm %%IPPLANDIR%%/menus/PATCHES/ICONS_I18N
-@dirrm %%IPPLANDIR%%/menus/PATCHES/FIXEDMENU
-@dirrm %%IPPLANDIR%%/menus/PATCHES
-@dirrm %%IPPLANDIR%%/menus/LOGOS
-@dirrm %%IPPLANDIR%%/menus/DUMPS
-@dirrm %%IPPLANDIR%%/menus
-@dirrm %%IPPLANDIR%%/locale/ru/LC_MESSAGES
-@dirrm %%IPPLANDIR%%/locale/ru
-@dirrm %%IPPLANDIR%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%IPPLANDIR%%/locale/pt_BR
-@dirrm %%IPPLANDIR%%/locale/pt/LC_MESSAGES
-@dirrm %%IPPLANDIR%%/locale/pt
-@dirrm %%IPPLANDIR%%/locale/no/LC_MESSAGES
-@dirrm %%IPPLANDIR%%/locale/no
-@dirrm %%IPPLANDIR%%/locale/ja_JP/LC_MESSAGES
-@dirrm %%IPPLANDIR%%/locale/ja_JP
-@dirrm %%IPPLANDIR%%/locale/it/LC_MESSAGES
-@dirrm %%IPPLANDIR%%/locale/it
-@dirrm %%IPPLANDIR%%/locale/fr/LC_MESSAGES
-@dirrm %%IPPLANDIR%%/locale/fr
-@dirrm %%IPPLANDIR%%/locale/es/LC_MESSAGES
-@dirrm %%IPPLANDIR%%/locale/es
-@dirrm %%IPPLANDIR%%/locale/de/LC_MESSAGES
-@dirrm %%IPPLANDIR%%/locale/de
-@dirrm %%IPPLANDIR%%/locale/bg/LC_MESSAGES
-@dirrm %%IPPLANDIR%%/locale/bg
-@dirrm %%IPPLANDIR%%/locale
-@dirrm %%IPPLANDIR%%/layout
-@dirrm %%IPPLANDIR%%/images
-@dirrm %%IPPLANDIR%%/contrib
-@dirrm %%IPPLANDIR%%/adodb/xsl
-@dirrm %%IPPLANDIR%%/adodb/tests
-@dirrm %%IPPLANDIR%%/adodb/session/old
-@dirrm %%IPPLANDIR%%/adodb/session
-@dirrm %%IPPLANDIR%%/adodb/perf
-@dirrm %%IPPLANDIR%%/adodb/pear/Auth/Container
-@dirrm %%IPPLANDIR%%/adodb/pear/Auth
-@dirrm %%IPPLANDIR%%/adodb/pear
-@dirrm %%IPPLANDIR%%/adodb/lang
-@dirrm %%IPPLANDIR%%/adodb/drivers
-@dirrm %%IPPLANDIR%%/adodb/docs
-@dirrm %%IPPLANDIR%%/adodb/datadict
-@dirrm %%IPPLANDIR%%/adodb/cute_icons_for_site
-@dirrm %%IPPLANDIR%%/adodb/contrib
-@dirrm %%IPPLANDIR%%/adodb
-@dirrm %%IPPLANDIR%%/admin
-@dirrmtry %%IPPLANDIR%%
+%%WWWDIR%%/xmllib.php
+%%WWWDIR%%/user/whois.php
+%%WWWDIR%%/user/treeview.php
+%%WWWDIR%%/user/traceroute.php
+%%WWWDIR%%/user/swiplib.php
+%%WWWDIR%%/user/searchallform.php
+%%WWWDIR%%/user/searchall.php
+%%WWWDIR%%/user/requestip.php
+%%WWWDIR%%/user/ping.php
+%%WWWDIR%%/user/modifyzoneform.php
+%%WWWDIR%%/user/modifyzone.php
+%%WWWDIR%%/user/modifysubnet.php
+%%WWWDIR%%/user/modifyipformmul.php
+%%WWWDIR%%/user/modifyipform.php
+%%WWWDIR%%/user/modifydnsrecordform.php
+%%WWWDIR%%/user/modifydnsrecord.php
+%%WWWDIR%%/user/modifydnsform.php
+%%WWWDIR%%/user/modifydns.php
+%%WWWDIR%%/user/modifycustomer.php
+%%WWWDIR%%/user/modifybaseform.php
+%%WWWDIR%%/user/modifybase.php
+%%WWWDIR%%/user/modifyarearangeform.php
+%%WWWDIR%%/user/modifyarearange.php
+%%WWWDIR%%/user/logout.php
+%%WWWDIR%%/user/findfreeform.php
+%%WWWDIR%%/user/findfree.php
+%%WWWDIR%%/user/exportview.php
+%%WWWDIR%%/user/exportdhcp.php
+%%WWWDIR%%/user/emailswip.php
+%%WWWDIR%%/user/dns.php
+%%WWWDIR%%/user/displayswipform.php
+%%WWWDIR%%/user/displayswip.php
+%%WWWDIR%%/user/displaysubnet.php
+%%WWWDIR%%/user/displayrouterform.php
+%%WWWDIR%%/user/displayrouter.php
+%%WWWDIR%%/user/displayoverlapform.php
+%%WWWDIR%%/user/displayoverlap.php
+%%WWWDIR%%/user/displaycustomerform.php
+%%WWWDIR%%/user/displaybaseform.php
+%%WWWDIR%%/user/displaybase.php
+%%WWWDIR%%/user/deleterange.php
+%%WWWDIR%%/user/deletecustomer.php
+%%WWWDIR%%/user/deletearea.php
+%%WWWDIR%%/user/createsubnetform.php
+%%WWWDIR%%/user/createsubnet.php
+%%WWWDIR%%/user/createrange.php
+%%WWWDIR%%/user/createarea.php
+%%WWWDIR%%/user/changesettings.php
+%%WWWDIR%%/user/Net/DNS/Resolver.php
+%%WWWDIR%%/user/Net/DNS/RR/TXT.php
+%%WWWDIR%%/user/Net/DNS/RR/TSIG.php
+%%WWWDIR%%/user/Net/DNS/RR/SRV.php
+%%WWWDIR%%/user/Net/DNS/RR/SOA.php
+%%WWWDIR%%/user/Net/DNS/RR/PTR.php
+%%WWWDIR%%/user/Net/DNS/RR/NS.php
+%%WWWDIR%%/user/Net/DNS/RR/NAPTR.php
+%%WWWDIR%%/user/Net/DNS/RR/MX.php
+%%WWWDIR%%/user/Net/DNS/RR/HINFO.php
+%%WWWDIR%%/user/Net/DNS/RR/CNAME.php
+%%WWWDIR%%/user/Net/DNS/RR/AFSDB.php
+%%WWWDIR%%/user/Net/DNS/RR/AAAA.php
+%%WWWDIR%%/user/Net/DNS/RR/A.php
+%%WWWDIR%%/user/Net/DNS/RR.php
+%%WWWDIR%%/user/Net/DNS/Question.php
+%%WWWDIR%%/user/Net/DNS/Packet.php
+%%WWWDIR%%/user/Net/DNS/Header.php
+%%WWWDIR%%/user/Net/DNS.php
+%%WWWDIR%%/themes/red_grey.css
+%%WWWDIR%%/themes/penguin.css
+%%WWWDIR%%/themes/pastel.css
+%%WWWDIR%%/themes/img_red_grey/page-bg.png
+%%WWWDIR%%/themes/img_red_grey/head-bg.png
+%%WWWDIR%%/themes/default.css
+%%WWWDIR%%/themes/default-safari.css
+%%WWWDIR%%/templates/swip_wdb1.4_new.xsl
+%%WWWDIR%%/templates/swip_wdb1.4_modify.xsl
+%%WWWDIR%%/templates/swip_wdb1.4_delete.xsl
+%%WWWDIR%%/templates/swip_reassign-simple-remove3.0.xsl
+%%WWWDIR%%/templates/swip_reassign-simple-new3.0.xsl
+%%WWWDIR%%/templates/swip_reassign-simple-modify3.0.xsl
+%%WWWDIR%%/templates/ripe_person_simple-1.0.xsl
+%%WWWDIR%%/templates/ripe_assign-simple-1.0.xsl
+%%WWWDIR%%/templates/display/iptemplate.xml.sample
+%%WWWDIR%%/templates/display/iptemplate.xml
+%%WWWDIR%%/templates/display/fwdzonetemplate.xml
+%%WWWDIR%%/templates/display/custtemplate.xml
+%%WWWDIR%%/templates/display/custtemplate-ripe.xml
+%%WWWDIR%%/templates/display/basetemplate.xml.dhcp
+%%WWWDIR%%/templates/display/basetemplate.xml
+%%WWWDIR%%/templates/display/basetemplate-dhcp.xml
+%%WWWDIR%%/schema.php
+%%WWWDIR%%/phpserializer.js
+%%WWWDIR%%/phpmailer.lang-en.php
+%%WWWDIR%%/messages.po
+%%WWWDIR%%/menus/templates/layersmenu-vertical_menu.ihtml
+%%WWWDIR%%/menus/templates/layersmenu-vertical_menu-old.ihtml
+%%WWWDIR%%/menus/templates/layersmenu-vertical_menu-galaxy.ihtml
+%%WWWDIR%%/menus/templates/layersmenu-sub_menu.ihtml
+%%WWWDIR%%/menus/templates/layersmenu-sub_menu-old.ihtml
+%%WWWDIR%%/menus/templates/layersmenu-sub_menu-keramik.ihtml
+%%WWWDIR%%/menus/templates/layersmenu-sub_menu-galaxy.ihtml
+%%WWWDIR%%/menus/templates/layersmenu-plain_menu.ihtml
+%%WWWDIR%%/menus/templates/layersmenu-plain_menu-green.ihtml
+%%WWWDIR%%/menus/templates/layersmenu-horizontal_plain_menu.ihtml
+%%WWWDIR%%/menus/templates/layersmenu-horizontal_plain_menu-red.ihtml
+%%WWWDIR%%/menus/templates/layersmenu-horizontal_menu.ihtml
+%%WWWDIR%%/menus/templates/layersmenu-horizontal_menu-old.ihtml
+%%WWWDIR%%/menus/templates/layersmenu-horizontal_menu-keramik.ihtml
+%%WWWDIR%%/menus/templates/layersmenu-horizontal_menu-keramik-full.ihtml
+%%WWWDIR%%/menus/templates/layersmenu-horizontal_menu-full.ihtml
+%%WWWDIR%%/menus/menuimages/tree_vertline.png
+%%WWWDIR%%/menus/menuimages/tree_split_first.png
+%%WWWDIR%%/menus/menuimages/tree_split.png
+%%WWWDIR%%/menus/menuimages/tree_space.png
+%%WWWDIR%%/menus/menuimages/tree_leaf.png
+%%WWWDIR%%/menus/menuimages/tree_folder_open.png
+%%WWWDIR%%/menus/menuimages/tree_folder_closed.png
+%%WWWDIR%%/menus/menuimages/tree_expand_first.png
+%%WWWDIR%%/menus/menuimages/tree_expand_corner_first.png
+%%WWWDIR%%/menus/menuimages/tree_expand_corner.png
+%%WWWDIR%%/menus/menuimages/tree_expand.png
+%%WWWDIR%%/menus/menuimages/tree_corner.png
+%%WWWDIR%%/menus/menuimages/tree_collapse_first.png
+%%WWWDIR%%/menus/menuimages/tree_collapse_corner_first.png
+%%WWWDIR%%/menus/menuimages/tree_collapse_corner.png
+%%WWWDIR%%/menus/menuimages/tree_collapse.png
+%%WWWDIR%%/menus/menuimages/transparent.png
+%%WWWDIR%%/menus/menuimages/nautilus_tree_vertline.png
+%%WWWDIR%%/menus/menuimages/nautilus_tree_split_first.png
+%%WWWDIR%%/menus/menuimages/nautilus_tree_split.png
+%%WWWDIR%%/menus/menuimages/nautilus_tree_space.png
+%%WWWDIR%%/menus/menuimages/nautilus_tree_leaf.png
+%%WWWDIR%%/menus/menuimages/nautilus_tree_folder_open.png
+%%WWWDIR%%/menus/menuimages/nautilus_tree_folder_closed.png
+%%WWWDIR%%/menus/menuimages/nautilus_tree_expand_first.png
+%%WWWDIR%%/menus/menuimages/nautilus_tree_expand_corner_first.png
+%%WWWDIR%%/menus/menuimages/nautilus_tree_expand_corner.png
+%%WWWDIR%%/menus/menuimages/nautilus_tree_expand.png
+%%WWWDIR%%/menus/menuimages/nautilus_tree_corner.png
+%%WWWDIR%%/menus/menuimages/nautilus_tree_collapse_first.png
+%%WWWDIR%%/menus/menuimages/nautilus_tree_collapse_corner_first.png
+%%WWWDIR%%/menus/menuimages/nautilus_tree_collapse_corner.png
+%%WWWDIR%%/menus/menuimages/nautilus_tree_collapse.png
+%%WWWDIR%%/menus/menuimages/kde_tree_vertline.png
+%%WWWDIR%%/menus/menuimages/kde_tree_split_first.png
+%%WWWDIR%%/menus/menuimages/kde_tree_split.png
+%%WWWDIR%%/menus/menuimages/kde_tree_space.png
+%%WWWDIR%%/menus/menuimages/kde_tree_leaf.png
+%%WWWDIR%%/menus/menuimages/kde_tree_folder_open.png
+%%WWWDIR%%/menus/menuimages/kde_tree_folder_closed.png
+%%WWWDIR%%/menus/menuimages/kde_tree_expand_first.png
+%%WWWDIR%%/menus/menuimages/kde_tree_expand_corner_first.png
+%%WWWDIR%%/menus/menuimages/kde_tree_expand_corner.png
+%%WWWDIR%%/menus/menuimages/kde_tree_expand.png
+%%WWWDIR%%/menus/menuimages/kde_tree_corner.png
+%%WWWDIR%%/menus/menuimages/kde_tree_collapse_first.png
+%%WWWDIR%%/menus/menuimages/kde_tree_collapse_corner_first.png
+%%WWWDIR%%/menus/menuimages/kde_tree_collapse_corner.png
+%%WWWDIR%%/menus/menuimages/kde_tree_collapse.png
+%%WWWDIR%%/menus/menuimages/forward-nautilus.png
+%%WWWDIR%%/menus/menuimages/forward-keramik.png
+%%WWWDIR%%/menus/menuimages/forward-gtk2.png
+%%WWWDIR%%/menus/menuimages/forward-gnome.png
+%%WWWDIR%%/menus/menuimages/forward-galaxy.png
+%%WWWDIR%%/menus/menuimages/forward-arrow.png
+%%WWWDIR%%/menus/menuimages/down-nautilus.png
+%%WWWDIR%%/menus/menuimages/down-keramik.png
+%%WWWDIR%%/menus/menuimages/down-gtk2.png
+%%WWWDIR%%/menus/menuimages/down-gnome.png
+%%WWWDIR%%/menus/menuimages/down-galaxy.png
+%%WWWDIR%%/menus/menuimages/down-arrow.png
+%%WWWDIR%%/menus/menuicons/www.ximian.com_favicon.png
+%%WWWDIR%%/menus/menuicons/www.php.net_favicon.png
+%%WWWDIR%%/menus/menuicons/www.mysql.com_favicon.png
+%%WWWDIR%%/menus/menuicons/www.kernel.org_images_tux16-16.png
+%%WWWDIR%%/menus/menuicons/www.kde.org_favicon.png
+%%WWWDIR%%/menus/menuicons/www.gnome.org_images_gnome-16.png
+%%WWWDIR%%/menus/menuicons/www.gimp.org_icons_wilber16.png
+%%WWWDIR%%/menus/menuicons/tgz.png
+%%WWWDIR%%/menus/menuicons/sourceforge.net_images_favicon.png
+%%WWWDIR%%/menus/menuicons/sitebar_root_transparent.png
+%%WWWDIR%%/menus/menuicons/shortcut_icon_phplm.png
+%%WWWDIR%%/menus/menuicons/quanta.png
+%%WWWDIR%%/menus/menuicons/phplib-logo-mini.png
+%%WWWDIR%%/menus/menuicons/php-bugs-icon-mini.png
+%%WWWDIR%%/menus/menuicons/pan-icon-mini.png
+%%WWWDIR%%/menus/menuicons/ooo-icon-mini.png
+%%WWWDIR%%/menus/menuicons/office_suites.png
+%%WWWDIR%%/menus/menuicons/netscape-icon-mini.png
+%%WWWDIR%%/menus/menuicons/mozilla.org_images_mozilla-16.png
+%%WWWDIR%%/menus/menuicons/misc_doc.png
+%%WWWDIR%%/menus/menuicons/kfm_home.png
+%%WWWDIR%%/menus/menuicons/gnome-starthere-mini.png
+%%WWWDIR%%/menus/menuicons/freshmeat.net_favicon.png
+%%WWWDIR%%/menus/menuicons/epiphany-16.png
+%%WWWDIR%%/menus/menuicons/email.png
+%%WWWDIR%%/menus/menuicons/downloadManager16.png
+%%WWWDIR%%/menus/menuicons/desktop.png
+%%WWWDIR%%/menus/menuicons/debian-icon-mini.png
+%%WWWDIR%%/menus/menuicons/bug-small.png
+%%WWWDIR%%/menus/libjs/layerstreemenu.ijs
+%%WWWDIR%%/menus/libjs/layerstreemenu-cookies.js
+%%WWWDIR%%/menus/libjs/layersmenu.js
+%%WWWDIR%%/menus/libjs/layersmenu-see-through.js
+%%WWWDIR%%/menus/libjs/layersmenu-library.js
+%%WWWDIR%%/menus/libjs/layersmenu-header.ijs
+%%WWWDIR%%/menus/libjs/layersmenu-footer.ijs
+%%WWWDIR%%/menus/libjs/layersmenu-browser_detection.js
+%%WWWDIR%%/menus/lib/treemenu.inc.php
+%%WWWDIR%%/menus/lib/plainmenu.inc.php
+%%WWWDIR%%/menus/lib/phptreemenu.inc.php
+%%WWWDIR%%/menus/lib/layersmenu.inc.php
+%%WWWDIR%%/menus/lib/layersmenu-process.inc.php
+%%WWWDIR%%/menus/lib/layersmenu-common.inc.php
+%%WWWDIR%%/menus/lib/layersmenu-browser_detection.php
+%%WWWDIR%%/menus/lib/PHPLIB.php
+%%WWWDIR%%/menus/layerstreemenu.css
+%%WWWDIR%%/menus/layerstreemenu-hidden.css
+%%WWWDIR%%/menus/layersmenu-vertical-2.txt
+%%WWWDIR%%/menus/layersmenu-vertical-1.txt
+%%WWWDIR%%/menus/layersmenu-old.css
+%%WWWDIR%%/menus/layersmenu-keramik.css
+%%WWWDIR%%/menus/layersmenu-index.txt
+%%WWWDIR%%/menus/layersmenu-index.css
+%%WWWDIR%%/menus/layersmenu-horizontal-2.txt
+%%WWWDIR%%/menus/layersmenu-horizontal-1.txt
+%%WWWDIR%%/menus/layersmenu-gtk2.css
+%%WWWDIR%%/menus/layersmenu-galaxy.css
+%%WWWDIR%%/menus/layersmenu-demo.css
+%%WWWDIR%%/menus/index.php
+%%WWWDIR%%/menus/images/vcss.png
+%%WWWDIR%%/menus/images/valid-xhtml10.png
+%%WWWDIR%%/menus/examples-leftbar.html
+%%WWWDIR%%/menus/examples-frame.html
+%%WWWDIR%%/menus/example-verplainmenu.php
+%%WWWDIR%%/menus/example-vermenu.php
+%%WWWDIR%%/menus/example-two_treemenus.php
+%%WWWDIR%%/menus/example-treemenu.php
+%%WWWDIR%%/menus/example-see-through.php
+%%WWWDIR%%/menus/example-phptreemenu.php
+%%WWWDIR%%/menus/example-layersmenus_and_treemenus.php
+%%WWWDIR%%/menus/example-horplainmenu.php
+%%WWWDIR%%/menus/example-hormenu_and_vermenu.php
+%%WWWDIR%%/menus/example-hormenu_and_treemenu.php
+%%WWWDIR%%/menus/example-hormenu.php
+%%WWWDIR%%/menus/example-hormenu-old.php
+%%WWWDIR%%/menus/example-frame.html
+%%WWWDIR%%/menus/example-frame-treemenu.php
+%%WWWDIR%%/menus/example-frame-body.php
+%%WWWDIR%%/menus/example-filetodb.php
+%%WWWDIR%%/menus/example-dbtofile.php
+%%WWWDIR%%/menus/example-db-treemenu.php
+%%WWWDIR%%/menus/example-db-treemenu.notshown.php
+%%WWWDIR%%/menus/example-db-hormenu.php
+%%WWWDIR%%/menus/demo.phps
+%%WWWDIR%%/menus/demo.php.html
+%%WWWDIR%%/menus/demo.php
+%%WWWDIR%%/menus/TODO
+%%WWWDIR%%/menus/THEMES/nautilus-gnome-theme.tar.gz
+%%WWWDIR%%/menus/THEMES/mozilla-theme.tar.gz
+%%WWWDIR%%/menus/THEMES/kde-theme.tar.gz
+%%WWWDIR%%/menus/THEMES/gmc-theme.tar.gz
+%%WWWDIR%%/menus/THEMES/galeon-theme.tar.gz
+%%WWWDIR%%/menus/README.ihtml
+%%WWWDIR%%/menus/README.PHPDOC
+%%WWWDIR%%/menus/PATCHES/README
+%%WWWDIR%%/menus/PATCHES/ONCLICK/onclick.patch
+%%WWWDIR%%/menus/PATCHES/ONCLICK/onclick-simple.patch
+%%WWWDIR%%/menus/PATCHES/ONCLICK/README
+%%WWWDIR%%/menus/PATCHES/ICONS_I18N/icons_i18n.patch
+%%WWWDIR%%/menus/PATCHES/ICONS_I18N/README
+%%WWWDIR%%/menus/PATCHES/FIXEDMENU/fixedmenu.patch
+%%WWWDIR%%/menus/PATCHES/FIXEDMENU/README
+%%WWWDIR%%/menus/LOGOS/shortcut_icon_phplm_04.png
+%%WWWDIR%%/menus/LOGOS/shortcut_icon_phplm_03.png
+%%WWWDIR%%/menus/LOGOS/shortcut_icon_phplm_02.png
+%%WWWDIR%%/menus/LOGOS/shortcut_icon_phplm_01.png
+%%WWWDIR%%/menus/LOGOS/shortcut_icon_phplm.png
+%%WWWDIR%%/menus/LOGOS/powered_by_phplm_y04.png
+%%WWWDIR%%/menus/LOGOS/powered_by_phplm_y02.png
+%%WWWDIR%%/menus/LOGOS/powered_by_phplm_y01.png
+%%WWWDIR%%/menus/LOGOS/powered_by_phplm_l04.png
+%%WWWDIR%%/menus/LOGOS/powered_by_phplm_l03.png
+%%WWWDIR%%/menus/LOGOS/powered_by_phplm_l02.png
+%%WWWDIR%%/menus/LOGOS/powered_by_phplm_l01.png
+%%WWWDIR%%/menus/LOGOS/powered_by_phplm_b04.png
+%%WWWDIR%%/menus/LOGOS/powered_by_phplm_b03.png
+%%WWWDIR%%/menus/LOGOS/powered_by_phplm_b02.png
+%%WWWDIR%%/menus/LOGOS/powered_by_phplm_b01.png
+%%WWWDIR%%/menus/LOGOS/powered_by_phplm.png
+%%WWWDIR%%/menus/LOGOS/README
+%%WWWDIR%%/menus/LICENSE
+%%WWWDIR%%/menus/DUMPS/sqlite.start.dump.php5
+%%WWWDIR%%/menus/DUMPS/sqlite.start.dump
+%%WWWDIR%%/menus/DUMPS/sqlite.demo_data.dump.php5
+%%WWWDIR%%/menus/DUMPS/sqlite.demo_data.dump
+%%WWWDIR%%/menus/DUMPS/phplayersmenu
+%%WWWDIR%%/menus/DUMPS/pgsql.start.dump
+%%WWWDIR%%/menus/DUMPS/pgsql.demo_data.dump
+%%WWWDIR%%/menus/DUMPS/mysql.start.dump
+%%WWWDIR%%/menus/DUMPS/mysql.demo_data.dump
+%%WWWDIR%%/menus/COPYING
+%%WWWDIR%%/menus/CHANGE_TEMPLATE_CLASS_NAME.sh
+%%WWWDIR%%/menus/CHANGELOG
+%%WWWDIR%%/menus/ACKNOWLEDGEMENTS
+%%WWWDIR%%/menudefs.php
+%%WWWDIR%%/locale/ru/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/ru/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/pt_BR/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/pt_BR/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/pt/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/pt/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/no/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/no/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/ja_JP/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/ja_JP/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/it/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/it/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/fr/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/fr/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/es/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/es/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/de/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/de/LC_MESSAGES/messages.mo
+%%WWWDIR%%/locale/bg/LC_MESSAGES/messages.po
+%%WWWDIR%%/locale/bg/LC_MESSAGES/messages.mo
+%%WWWDIR%%/license.php
+%%WWWDIR%%/layout/layoutman.html
+%%WWWDIR%%/layout/class.layout
+%%WWWDIR%%/ipplanlib.php
+%%WWWDIR%%/ipplanlib.js
+%%WWWDIR%%/index.php
+%%WWWDIR%%/images/square_red.jpg
+%%WWWDIR%%/images/square_orange.jpg
+%%WWWDIR%%/images/square_green.jpg
+%%WWWDIR%%/gpl.html
+%%WWWDIR%%/docu.css
+%%WWWDIR%%/cookies.js
+%%WWWDIR%%/contrib/qipImport-public.pl
+%%WWWDIR%%/contrib/qipImport-public.README
+%%WWWDIR%%/contrib/process-exports.txt
+%%WWWDIR%%/contrib/process-exports.pl.rej
+%%WWWDIR%%/contrib/process-exports.pl
+%%WWWDIR%%/contrib/isc_dhcp2.xsl
+%%WWWDIR%%/contrib/isc_dhcp1.xsl
+%%WWWDIR%%/contrib/ipplan2pc.xsl
+%%WWWDIR%%/contrib/ipplan2pc.README
+%%WWWDIR%%/contrib/ipplan-poller.php
+%%WWWDIR%%/contrib/dumproute.txt
+%%WWWDIR%%/contrib/dumproute.sh
+%%WWWDIR%%/contrib/create-test-users.sh
+%%WWWDIR%%/contrib/bind9_zone.xsl.rej
+%%WWWDIR%%/contrib/bind9_zone.xsl
+%%WWWDIR%%/contrib/bind9_zone.dtd
+%%WWWDIR%%/contrib/bind9_revzone.xsl
+%%WWWDIR%%/config.php.sample
+%%WWWDIR%%/class.xptlib.php
+%%WWWDIR%%/class.templib.php
+%%WWWDIR%%/class.smtp.php
+%%WWWDIR%%/class.phpmailer.php
+%%WWWDIR%%/class.dnslib.php
+%%WWWDIR%%/class.dbflib.php
+%%WWWDIR%%/auth.php
+%%WWWDIR%%/adodb/xsl/remove-0.2.xsl
+%%WWWDIR%%/adodb/xsl/convert-0.2-0.1.xsl
+%%WWWDIR%%/adodb/xsl/convert-0.1-0.2.xsl
+%%WWWDIR%%/adodb/xmlschema.dtd
+%%WWWDIR%%/adodb/tohtml.inc.php
+%%WWWDIR%%/adodb/toexport.inc.php
+%%WWWDIR%%/adodb/tests/xmlschema.xml
+%%WWWDIR%%/adodb/tests/tmssql.php
+%%WWWDIR%%/adodb/tests/time.php
+%%WWWDIR%%/adodb/tests/testsessions.php
+%%WWWDIR%%/adodb/tests/testpear.php
+%%WWWDIR%%/adodb/tests/testpaging.php
+%%WWWDIR%%/adodb/tests/testoci8cursor.php
+%%WWWDIR%%/adodb/tests/testoci8.php
+%%WWWDIR%%/adodb/tests/testmssql.php
+%%WWWDIR%%/adodb/tests/testgenid.php
+%%WWWDIR%%/adodb/tests/testdatabases.inc.php
+%%WWWDIR%%/adodb/tests/testcache.php
+%%WWWDIR%%/adodb/tests/test_rs_array.php
+%%WWWDIR%%/adodb/tests/test5.php
+%%WWWDIR%%/adodb/tests/test4.php
+%%WWWDIR%%/adodb/tests/test3.php
+%%WWWDIR%%/adodb/tests/test2.php
+%%WWWDIR%%/adodb/tests/test.php
+%%WWWDIR%%/adodb/tests/test-xmlschema.php
+%%WWWDIR%%/adodb/tests/test-php5.php
+%%WWWDIR%%/adodb/tests/test-pgblob.php
+%%WWWDIR%%/adodb/tests/test-perf.php
+%%WWWDIR%%/adodb/tests/test-datadict.php
+%%WWWDIR%%/adodb/tests/pdo.php
+%%WWWDIR%%/adodb/tests/client.php
+%%WWWDIR%%/adodb/tests/benchmark.php
+%%WWWDIR%%/adodb/session/old/crypt.inc.php
+%%WWWDIR%%/adodb/session/old/adodb-session.php
+%%WWWDIR%%/adodb/session/old/adodb-session-clob.php
+%%WWWDIR%%/adodb/session/old/adodb-cryptsession.php
+%%WWWDIR%%/adodb/session/crypt.inc.php
+%%WWWDIR%%/adodb/session/adodb-sessions.oracle.sql
+%%WWWDIR%%/adodb/session/adodb-sessions.oracle.clob.sql
+%%WWWDIR%%/adodb/session/adodb-sessions.mysql.sql
+%%WWWDIR%%/adodb/session/adodb-session.php
+%%WWWDIR%%/adodb/session/adodb-session-clob.php
+%%WWWDIR%%/adodb/session/adodb-sess.txt
+%%WWWDIR%%/adodb/session/adodb-encrypt-secret.php
+%%WWWDIR%%/adodb/session/adodb-encrypt-md5.php
+%%WWWDIR%%/adodb/session/adodb-encrypt-mcrypt.php
+%%WWWDIR%%/adodb/session/adodb-cryptsession.php
+%%WWWDIR%%/adodb/session/adodb-compress-gzip.php
+%%WWWDIR%%/adodb/session/adodb-compress-bzip2.php
+%%WWWDIR%%/adodb/server.php
+%%WWWDIR%%/adodb/rsfilter.inc.php
+%%WWWDIR%%/adodb/readme.txt
+%%WWWDIR%%/adodb/pivottable.inc.php
+%%WWWDIR%%/adodb/perf/perf-postgres.inc.php
+%%WWWDIR%%/adodb/perf/perf-oci8.inc.php
+%%WWWDIR%%/adodb/perf/perf-mysql.inc.php
+%%WWWDIR%%/adodb/perf/perf-mssql.inc.php
+%%WWWDIR%%/adodb/perf/perf-informix.inc.php
+%%WWWDIR%%/adodb/perf/perf-db2.inc.php
+%%WWWDIR%%/adodb/pear/readme.Auth.txt
+%%WWWDIR%%/adodb/pear/Auth/Container/ADOdb.php
+%%WWWDIR%%/adodb/license.txt
+%%WWWDIR%%/adodb/lang/adodb-sv.inc.php
+%%WWWDIR%%/adodb/lang/adodb-ru1251.inc.php
+%%WWWDIR%%/adodb/lang/adodb-ro.inc.php
+%%WWWDIR%%/adodb/lang/adodb-pt-br.inc.php
+%%WWWDIR%%/adodb/lang/adodb-pl.inc.php
+%%WWWDIR%%/adodb/lang/adodb-nl.inc.php
+%%WWWDIR%%/adodb/lang/adodb-it.inc.php
+%%WWWDIR%%/adodb/lang/adodb-hu.inc.php
+%%WWWDIR%%/adodb/lang/adodb-fr.inc.php
+%%WWWDIR%%/adodb/lang/adodb-es.inc.php
+%%WWWDIR%%/adodb/lang/adodb-en.inc.php
+%%WWWDIR%%/adodb/lang/adodb-de.inc.php
+%%WWWDIR%%/adodb/lang/adodb-cz.inc.php
+%%WWWDIR%%/adodb/lang/adodb-cn.inc.php
+%%WWWDIR%%/adodb/lang/adodb-ca.inc.php
+%%WWWDIR%%/adodb/lang/adodb-bgutf8.inc.php
+%%WWWDIR%%/adodb/lang/adodb-bg.inc.php
+%%WWWDIR%%/adodb/lang/adodb-ar.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-vfp.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-sybase.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-sqlitepo.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-sqlite.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-sqlanywhere.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-sapdb.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-proxy.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-postgres7.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-postgres64.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-postgres.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-pdo.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-oracle.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-odbtp_unicode.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-odbtp.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-odbc_oracle.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-odbc_mssql.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-odbc.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-oci8po.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-oci805.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-oci8.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-netezza.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-mysqlt.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-mysqli.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-mysql.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-mssqlpo.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-mssql.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-ldap.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-informix72.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-informix.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-ibase.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-firebird.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-fbsql.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-db2.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-csv.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-borland_ibase.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-ado_mssql.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-ado_access.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-ado5.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-ado.inc.php
+%%WWWDIR%%/adodb/drivers/adodb-access.inc.php
+%%WWWDIR%%/adodb/docs/tute.htm
+%%WWWDIR%%/adodb/docs/tips_portable_sql.htm
+%%WWWDIR%%/adodb/docs/readme.htm
+%%WWWDIR%%/adodb/docs/old-changelog.htm
+%%WWWDIR%%/adodb/docs/docs-session.htm
+%%WWWDIR%%/adodb/docs/docs-perf.htm
+%%WWWDIR%%/adodb/docs/docs-oracle.htm
+%%WWWDIR%%/adodb/docs/docs-datadict.htm
+%%WWWDIR%%/adodb/docs/docs-adodb.htm
+%%WWWDIR%%/adodb/datadict/datadict-sybase.inc.php
+%%WWWDIR%%/adodb/datadict/datadict-sapdb.inc.php
+%%WWWDIR%%/adodb/datadict/datadict-postgres.inc.php
+%%WWWDIR%%/adodb/datadict/datadict-oci8.inc.php
+%%WWWDIR%%/adodb/datadict/datadict-mysql.inc.php
+%%WWWDIR%%/adodb/datadict/datadict-mssql.inc.php
+%%WWWDIR%%/adodb/datadict/datadict-informix.inc.php
+%%WWWDIR%%/adodb/datadict/datadict-ibase.inc.php
+%%WWWDIR%%/adodb/datadict/datadict-generic.inc.php
+%%WWWDIR%%/adodb/datadict/datadict-firebird.inc.php
+%%WWWDIR%%/adodb/datadict/datadict-db2.inc.php
+%%WWWDIR%%/adodb/datadict/datadict-access.inc.php
+%%WWWDIR%%/adodb/cute_icons_for_site/adodb2.gif
+%%WWWDIR%%/adodb/cute_icons_for_site/adodb.gif
+%%WWWDIR%%/adodb/contrib/toxmlrpc.inc.php
+%%WWWDIR%%/adodb/adodb.inc.php
+%%WWWDIR%%/adodb/adodb-xmlschema.inc.php
+%%WWWDIR%%/adodb/adodb-time.zip
+%%WWWDIR%%/adodb/adodb-time.inc.php
+%%WWWDIR%%/adodb/adodb-php4.inc.php
+%%WWWDIR%%/adodb/adodb-perf.inc.php.#.LENS-03-09-05
+%%WWWDIR%%/adodb/adodb-perf.inc.php
+%%WWWDIR%%/adodb/adodb-pear.inc.php
+%%WWWDIR%%/adodb/adodb-pager.inc.php
+%%WWWDIR%%/adodb/adodb-lib.inc.php
+%%WWWDIR%%/adodb/adodb-iterator.inc.php
+%%WWWDIR%%/adodb/adodb-exceptions.inc.php
+%%WWWDIR%%/adodb/adodb-errorpear.inc.php
+%%WWWDIR%%/adodb/adodb-errorhandler.inc.php
+%%WWWDIR%%/adodb/adodb-error.inc.php
+%%WWWDIR%%/adodb/adodb-datadict.inc.php
+%%WWWDIR%%/adodb/adodb-csvlib.inc.php
+%%WWWDIR%%/admin/usermanager.php
+%%WWWDIR%%/admin/schemacreate.php
+%%WWWDIR%%/admin/maintenance.php
+%%WWWDIR%%/admin/install.php
+%%WWWDIR%%/admin/importipform.php
+%%WWWDIR%%/admin/importip.php
+%%WWWDIR%%/admin/importbaseform.php
+%%WWWDIR%%/admin/importbase.php
+%%WWWDIR%%/admin/exportipform.php
+%%WWWDIR%%/admin/exportip.php
+%%WWWDIR%%/admin/exportbaseform.php
+%%WWWDIR%%/admin/exportbase.php
+%%WWWDIR%%/admin/displayboundsform.php
+%%WWWDIR%%/admin/displayauditlog.php
+%%WWWDIR%%/admin/deletebounds.php
+%%WWWDIR%%/admin/changepassword.php
+%%WWWDIR%%/UPGRADE
+%%WWWDIR%%/TRIGGERS
+%%WWWDIR%%/TRANSLATIONS
+%%WWWDIR%%/TODO
+%%WWWDIR%%/README1st-WINDOWS.txt
+%%WWWDIR%%/README.sgml
+%%WWWDIR%%/README.html
+%%WWWDIR%%/README
+%%WWWDIR%%/PORTERS
+%%WWWDIR%%/LICENSE
+%%WWWDIR%%/IPplan.jpg
+%%WWWDIR%%/INTERNALS
+%%WWWDIR%%/INSTALL-WINDOWS
+%%WWWDIR%%/INSTALL-POSTGRESQL
+%%WWWDIR%%/INSTALL-ORACLE9i
+%%WWWDIR%%/INSTALL-IIS+MSSQL
+%%WWWDIR%%/INSTALL
+%%WWWDIR%%/CONTRIBUTORS
+%%WWWDIR%%/CHANGELOG
+@dirrm %%WWWDIR%%/user/Net/DNS/RR
+@dirrm %%WWWDIR%%/user/Net/DNS
+@dirrm %%WWWDIR%%/user/Net
+@dirrm %%WWWDIR%%/user
+@dirrm %%WWWDIR%%/themes/img_red_grey
+@dirrm %%WWWDIR%%/themes
+@dirrm %%WWWDIR%%/templates/display
+@dirrm %%WWWDIR%%/templates
+@dirrm %%WWWDIR%%/menus/templates
+@dirrm %%WWWDIR%%/menus/menuimages
+@dirrm %%WWWDIR%%/menus/menuicons
+@dirrm %%WWWDIR%%/menus/libjs
+@dirrm %%WWWDIR%%/menus/lib
+@dirrm %%WWWDIR%%/menus/images
+@dirrm %%WWWDIR%%/menus/THEMES
+@dirrm %%WWWDIR%%/menus/PATCHES/ONCLICK
+@dirrm %%WWWDIR%%/menus/PATCHES/ICONS_I18N
+@dirrm %%WWWDIR%%/menus/PATCHES/FIXEDMENU
+@dirrm %%WWWDIR%%/menus/PATCHES
+@dirrm %%WWWDIR%%/menus/LOGOS
+@dirrm %%WWWDIR%%/menus/DUMPS
+@dirrm %%WWWDIR%%/menus
+@dirrm %%WWWDIR%%/locale/ru/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/ru
+@dirrm %%WWWDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/pt_BR
+@dirrm %%WWWDIR%%/locale/pt/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/pt
+@dirrm %%WWWDIR%%/locale/no/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/no
+@dirrm %%WWWDIR%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/ja_JP
+@dirrm %%WWWDIR%%/locale/it/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/it
+@dirrm %%WWWDIR%%/locale/fr/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/fr
+@dirrm %%WWWDIR%%/locale/es/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/es
+@dirrm %%WWWDIR%%/locale/de/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/de
+@dirrm %%WWWDIR%%/locale/bg/LC_MESSAGES
+@dirrm %%WWWDIR%%/locale/bg
+@dirrm %%WWWDIR%%/locale
+@dirrm %%WWWDIR%%/layout
+@dirrm %%WWWDIR%%/images
+@dirrm %%WWWDIR%%/contrib
+@dirrm %%WWWDIR%%/adodb/xsl
+@dirrm %%WWWDIR%%/adodb/tests
+@dirrm %%WWWDIR%%/adodb/session/old
+@dirrm %%WWWDIR%%/adodb/session
+@dirrm %%WWWDIR%%/adodb/perf
+@dirrm %%WWWDIR%%/adodb/pear/Auth/Container
+@dirrm %%WWWDIR%%/adodb/pear/Auth
+@dirrm %%WWWDIR%%/adodb/pear
+@dirrm %%WWWDIR%%/adodb/lang
+@dirrm %%WWWDIR%%/adodb/drivers
+@dirrm %%WWWDIR%%/adodb/docs
+@dirrm %%WWWDIR%%/adodb/datadict
+@dirrm %%WWWDIR%%/adodb/cute_icons_for_site
+@dirrm %%WWWDIR%%/adodb/contrib
+@dirrm %%WWWDIR%%/adodb
+@dirrm %%WWWDIR%%/admin
+@dirrmtry %%WWWDIR%%
+@dirrmtry /var/spool/ipplan/uploads
+@dirrmtry /var/spool/ipplan/exportdns
+@dirrmtry /var/spool/ipplan/dhcpexport
+@dirrmtry /var/spool/ipplan
+@unexec cmp -s %D/%%WWWDIR%%/config.php.sample %D/%%WWWDIR%%/config.php && rm -f %D/%%WWWDIR%%/config.php || true

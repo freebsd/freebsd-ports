@@ -1,6 +1,9 @@
 bin/eboard
 bin/eboard-addtheme
 bin/eboard-config
+man/man1/eboard-config.1.gz
+man/man1/eboard-addtheme.1.gz
+man/man6/eboard.6.gz
 %%PORTDOCS%%%%DOCSDIR%%/Crafty.txt
 %%PORTDOCS%%%%DOCSDIR%%/FICS-Timeseal.txt
 %%PORTDOCS%%%%DOCSDIR%%/GNUChess4.txt

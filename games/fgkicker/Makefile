@@ -9,12 +9,12 @@ MASTER_SITES=	http://www.larfeliz.be/projects/files/fgkicker/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	erik@bz.bzflag.bz
-COMMENT=	A launcher frontend for FlightGear
+COMMENT=	Launcher frontend for FlightGear
 
 RUN_DEPENDS=	fgfs:${PORTSDIR}/games/flightgear
 
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 
 NO_STAGE=	yes
 post-patch:

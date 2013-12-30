@@ -33,7 +33,7 @@ OPTIONS_DEFAULT=OPENAL
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENAL}
-USE_OPENAL=	al alut
+USES+=		openal:al,alut
 CPPFLAGS+=	-DAP_AUDIO_OPENAL
 LDFLAGS+=	-L${LOCALBASE}/lib -lopenal -lalut
 .endif

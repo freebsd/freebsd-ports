@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tt-rss
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	www
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -13,19 +13,29 @@ LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	gothfox
 GH_PROJECT=	Tiny-Tiny-RSS
-GH_COMMIT=	02b0d14
+GH_COMMIT=	c04fbe3
 
 NO_BUILD=	yes
-NO_STAGE=	yes
 
 USE_PHP=	ctype dom hash json mbstring pcntl posix session xmlrpc
 WANT_PHP_WEB=	yes
 WANT_PHP_CLI=	yes
 REINPLACE_ARGS=	-i ""
+USES=		shebangfix
+SHEBANG_FILES=	lib/dojo-src/rebuild-dojo.sh utils/extract-i18n-js.pl
 
 USE_RC_SUBR=	ttrssd
 
-.if defined(WITH_PGSQL)
+OPTIONS_DEFINE=	CURL GD
+OPTIONS_SINGLE=	DB
+OPTIONS_SINGLE_DB=	MYSQL PGSQL
+OPTIONS_DEFAULT=	CURL GD MYSQL
+CURL_DESC=	Use SimplePie instead of Magpie
+GD_DESC=	Use OTP QR code generation
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
 DB=		pgsql
 .else
@@ -33,27 +43,22 @@ USE_PHP+=	mysql
 DB=		mysql
 .endif
 
-.if !defined(WITHOUT_CURL)
+.if ${PORT_OPTIONS:MCURL}
 USE_PHP+=	curl
+.endif
+
+.if ${PORT_OPTIONS:MGD}
+USE_PHP+=	gd
 .endif
 
 SUB_FILES=	httpd-tt-rss.conf pkg-message
 SUB_LIST=	DB=${DB} WWWOWN=${WWWOWN}
-PLIST_SUB=	WWWOWN=${WWWOWN}:${WWWGRP}
+PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PHP2FIX=	config.php-dist update.php update_daemon2.php
 
 SCRIPTS=	update.php update_daemon2.php
-
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "	By default, Tiny Tiny RSS will use MySQL as a back-end;"
-	@${ECHO_MSG} "	define WITH_PGSQL if you prefer PostgreSQL."
-	@${ECHO_MSG}
-	@${ECHO_MSG} "	CURL is required for SimplePie, but if you prefer Magpie,"
-	@${ECHO_MSG} "	you can define WITHOUT_CURL."
-	@${ECHO_MSG}
 
 pre-configure:
 .for script in ${PHP2FIX}
@@ -63,29 +68,17 @@ pre-configure:
 .endfor
 
 do-configure:
-.if !defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 	${REINPLACE_CMD} -e '/DB_TYPE/s|pgsql|mysql|;s|mysql$$|pgsql|'	\
 		${WRKSRC}/config.php-dist
 .endif
 
 do-install:
-	${MKDIR} ${WWWDIR} ${DATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "*" ${WWWDIR} "! -name LICENSE")
-	${RM} -rf ${WWWDIR}/debian
-	${MKDIR} ${WWWDIR}/icons/	# Not used for fresh installation
-	${TOUCH} ${WWWDIR}/icons/.empty
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	${CHMOD} ug+x ${SCRIPTS:S|^|${WWWDIR}/|}
-	${CHMOD} ug+x ${WWWDIR}/utils/*.sh ${WWWDIR}/utils/*.pl
-	${INSTALL_DATA} ${WRKDIR}/httpd-tt-rss.conf ${DATADIR}
-	if [ ! -f ${WWWDIR}/config.php ]; then \
-		${CP} -p ${WWWDIR}/config.php-dist ${WWWDIR}/config.php; \
-		${CHMOD} go-r ${WWWDIR}/config.php; \
-	fi
-
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	${MKDIR} ${STAGEDIR}${WWWDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "*" ${STAGEDIR}${WWWDIR} "! -name LICENSE")
+	${RM} -rf ${STAGEDIR}${WWWDIR}/debian
+	${MKDIR} ${STAGEDIR}${WWWDIR}/icons/	# Not used for fresh installation
+	${TOUCH} ${STAGEDIR}${WWWDIR}/icons/.empty
+	${INSTALL_DATA} ${WRKDIR}/httpd-tt-rss.conf ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

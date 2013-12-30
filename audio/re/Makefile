@@ -1,14 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	re
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.6
 CATEGORIES=	audio devel
 MASTER_SITES=	http://www.creytiv.com/pub/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Library for real-time comms with async IO support
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/docs/COPYING
 
 USES=		gmake

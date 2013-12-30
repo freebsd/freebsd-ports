@@ -18,7 +18,7 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libpodofo.so:${PORTSDIR}/graphics/podofo \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libhunspell.so:${PORTSDIR}/textproc/hunspell \
+		libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
 		libcairo.so:${PORTSDIR}/graphics/cairo \
 		libhyphen.so:${PORTSDIR}/textproc/hyphen \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo \

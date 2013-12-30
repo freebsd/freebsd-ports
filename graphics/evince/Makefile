@@ -3,7 +3,12 @@
 #    $MCom: ports/trunk/graphics/evince3/Makefile 18610 2013-06-30 16:33:05Z marcus $
 
 PORTNAME=	evince
+<<<<<<< HEAD
 PORTVERSION=	3.6.1
+=======
+PORTVERSION=	2.32.0
+PORTREVISION=	12
+>>>>>>> 6810dd43a6bfc4fc073331efa2a777f647ad158a
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -11,11 +16,18 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 3 multi-format document viewer
 
+<<<<<<< HEAD
 BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
 		itstool:${PORTSDIR}/textproc/itstool \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib \
 		libspectre.so:${PORTSDIR}/print/libspectre
+=======
+BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
+LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib \
+		dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
+		spectre:${PORTSDIR}/print/libspectre
+>>>>>>> 6810dd43a6bfc4fc073331efa2a777f647ad158a
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 

@@ -23,7 +23,7 @@ OCFLAGS_DESC?=	Use optimized compiler flags
 OPUS_DESC?=	Opus decoding with libopus
 OTCHAIN_DESC?=	Use gcc 4.6+ toolchain on legacy systems
 REAL_DESC?=	Enable realplayer plugin
-RTCPU_DESC?=	Use runtime CPU detection
+RTCPU_DESC?=	Use runtime CPU detection on supported archs
 WIN32_DESC?=	Install win32 binary codecs
 
 RESTRICTED=	Port has restricted dependencies

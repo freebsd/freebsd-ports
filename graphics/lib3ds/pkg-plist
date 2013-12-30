@@ -19,9 +19,11 @@ include/lib3ds/tracks.h
 include/lib3ds/types.h
 include/lib3ds/vector.h
 include/lib3ds/viewport.h
-lib/lib3ds.a
-lib/lib3ds.so
 lib/lib3ds-1.so
 lib/lib3ds-1.so.3
+lib/lib3ds.a
+lib/lib3ds.so
+man/man1/3dsdump.1.gz
+man/man1/lib3ds-config.1.gz
 share/aclocal/lib3ds.m4
 @dirrm include/lib3ds

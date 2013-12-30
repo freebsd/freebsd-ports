@@ -133,7 +133,4 @@ libexec/pkgconfig/mysql-proxy.pc
 @dirrmtry lib/mysql-proxy
 @dirrmtry libexec/pkgconfig
 @dirrmtry %%EXAMPLESDIR%%
-@dirrmtry %%DATADIR%%/lua/proxy
-@dirrmtry %%DATADIR%%/lua
 @dirrmtry %%DATADIR%%
-@dirrmtry %%DOCSDIR%%

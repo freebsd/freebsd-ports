@@ -1,4 +1,5 @@
 bin/ebook2cw
+man/man1/ebook2cw.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ebook2cw.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/isomap.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/utf8map.txt

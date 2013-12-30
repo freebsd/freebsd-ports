@@ -14,7 +14,6 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	R-cran-Rcpp>=0.10.5:${PORTSDIR}/devel/R-cran-Rcpp
 
-USE_R_MOD=	yes
-R_MOD_AUTOPLIST=	yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	graphviz
 PORTVERSION=	2.34.0
+PORTREVISION=	1
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -46,7 +47,8 @@ FIX_INCLUDE=	ast_common.h \
 		lib/gvc/gvcint.h
 
 PATCH_TCL_SCRIPTS=	tclpkg/gv/Makefile.in tclpkg/tcldot/demo/doted.tcl \
-			tclpkg/tclpathplan/demo/pathplan.tcl tclpkg/tkspline/demo/spline.tcl
+			tclpkg/tclpathplan/demo/pathplan.tcl \
+			tclpkg/tkspline/demo/spline.tcl
 PATCH_TK_SCRIPTS=	${PATCH_TCL_SCRIPTS}
 
 PDOCS_TXT=	doc/Dot.ref doc/latex_suggestions.txt
@@ -55,7 +57,9 @@ PDOCS_HTML=	doc/*.html doc/info/*.gif
 
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
-OPTIONS_DEFINE=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO LIBRSVG2 POPPLER ANN GTK2 GDK_PIXBUF GNOMEUI SMYRNA GVEDIT MING DEVIL GHOSTSCRIPT PERL PHP PYTHON RUBY LUA TCL GUILE TK NVTHREADS
+OPTIONS_DEFINE=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO LIBRSVG2 POPPLER \
+		ANN GTS GTK2 GDK_PIXBUF GNOMEUI SMYRNA GVEDIT MING DEVIL \
+		GHOSTSCRIPT PERL PHP PYTHON RUBY LUA TCL TK GUILE NVTHREADS
 OPTIONS_DEFAULT?=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
@@ -63,14 +67,15 @@ DIGCOLA_DESC=	neato layout engine wiwth DIGCOLA features
 IPSEPCOLA_DESC=	neato layout engine wiwth IPSEPCOLA features
 PANGOCAIRO_DESC=pangocairo support
 ANN_DESC=	ANN edge bundling support
+GTS_DESC=	GNU Triangulated Surface Library support
+GTK2_DESC=	gtk2 plugin (requires PANGOCAIRO)
+GDK_PIXBUF_DESC=gdk pixbuf support
+GNOMEUI_DESC=	libgnomeui support
 SMYRNA_DESC=	SMYRNA graph viewer (requires GTK2)
 GVEDIT_DESC=	gvedit (requires qt)
-GTK2_DESC=	gtk2 plugin (requires PANGOCAIRO)
-GDK_PIXBUF_DESC=	gdk pixbuf support
-GNOMEUI_DESC=	libgnomeui support
 MING_DESC=	ming plugin
 DEVIL_DESC=	devil plugin
-GHOSTSCRIPT_DESC=	ghostscript plugin
+GHOSTSCRIPT_DESC=ghostscript plugin
 PERL_DESC=	Perl bindings (swig)
 PHP_DESC=	PHP bindings (swig) 
 PYTHON_DESC=	Python bindings (swig)
@@ -81,43 +86,79 @@ GUILE_DESC=	Guile bindings (swig)
 TK_DESC=	TK toolkit support
 NVTHREADS_DESC=	Link with threads (needed for nvidia)
 
+XPM_USE=	XORG=xaw,xpm,xmu,xt,sm,ice,xext,x11,xau,xdmcp,xp
 ICONV_USES=	iconv
 NLS_USES=	gettext
+PANGOCAIRO_USE=	GNOME=pango XORG=xrender,x11,xau,xdmcp
+LIBRSVG2_USE=	GNOME=librsvg2 GL=gl,glu,glut
+GTK2_USE=	XORG=sm,ice,xext,xinerama,xi,xrandr,xcursor,xfixes GNOME=gtk20
+GNOMEUI_USE=	GNOME=libgnomeui
+SMYRNA_USE=	GNOME=libglade2
+GVEDIT_USE=	qt4=qmake_build,moc_build,rcc_build,uic_build \
+		qt4=linguist_build,corelib,gui
+GHOSTSCRIPT_USE=GHOSTSCRIPT=yes
 PERL_USES=	perl5
+PHP_USE=	PHP=yes PHP_BUILD=yes
+PYTHON_USE=	PYTHON_BUILD=yes
+RUBY_USE=	RUBY=yes
+LUA_USE=	LUA=yes
+# broken: Do not set both tcl and tk in USES
+#TCL_USES=	tcl:84+,build
+#TK_USES= 	tk:84+,build
+TCL_USE=	TCL_BUILD=84+
+TK_USE=		TK_BUILD=84+
 
 POPPLER_LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
 ANN_LIB_DEPENDS=	libann.so:${PORTSDIR}/math/ann
+GTS_LIB_DEPENDS=	libgts.so:${PORTSDIR}/graphics/gts
 SMYRNA_LIB_DEPENDS=	libgtkgl-2.0.so:${PORTSDIR}/x11-toolkits/gtkglarea2 \
-			libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext \
-			libgts.so:${PORTSDIR}/graphics/gts
+			libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 MING_LIB_DEPENDS=	libming.so:${PORTSDIR}/graphics/ming
 DEVIL_LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil
 GUILE_LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
 
 XPM_CONFIGURE_WITH=		x
+DIGCOLA_CONFIGURE_WITH=		digcola
+IPSEPCOLA_CONFIGURE_WITH=	ipsepcola
 NLS_CONFIGURE_ENABLE=		nls
 PANGOCAIRO_CONFIGURE_WITH=	pangocairo
 LIBRSVG2_CONFIGURE_WITH=	rsvg
 POPPLER_CONFIGURE_WITH=		poppler
 ANN_CONFIGURE_WITH=		ann
+ANN_CONFIGURE_ENV=	ANN_CFLAGS=-I${LOCALBASE}/include ANN_LIBS=-lann
+GTS_CONFIGURE_WITH=		gts
 GTK2_CONFIGURE_WITH=		gtk
 GDK_PIXBUF_CONFIGURE_WITH=	gdk-pixbuf
 GNOMEUI_CONFIGURE_WITH=		gnomeui
-SMYRNA_CONFIGURE_WITH=		smyrna
-DIGCOLA_CONFIGURE_WITH=		digcola
-IPSEPCOLA_CONFIGURE_WITH=	ipsepcola
-MING_CONFIGURE_WITH=		ming
-DEVIL_CONFIGURE_WITH=		devil
-PERL_CONFIGURE_ENABLE=		perl
-PHP_CONFIGURE_ENABLE=		php
-PYTHON_CONFIGURE_ENABLE=	python
-RUBY_CONFIGURE_ENABLE=		ruby
-LUA_CONFIGURE_ENABLE=		lua
-TCL_CONFIGURE_ENABLE=		tcl
-GUILE_CONFIGURE_ENABLE=		guile
+SMYRNA_CONFIGURE_WITH=		smyrna glade gtkgl gtkglext
 GVEDIT_CONFIGURE_ON=		--with-gvedit=yes
 GVEDIT_CONFIGURE_OFF=		--with-qt=no
+MING_CONFIGURE_WITH=		ming
+DEVIL_CONFIGURE_WITH=		devil
 GHOSTSCRIPT_CONFIGURE_OFF=	--with-ghostscript=no
+PERL_CONFIGURE_ENABLE=		perl
+PHP_CONFIGURE_ENABLE=		php
+PHP_CPPFLAGS=		-I${LOCALBASE}/include/php/Zend
+PYTHON_CONFIGURE_ENABLE=	python
+PYTHON_LDFLAGS=		"-L${PYTHON_LIBDIR}"
+RUBY_CONFIGURE_ENABLE=		ruby
+RUBY_CONFIGURE_ENV=	RUBY="${RUBY}"
+LUA_CONFIGURE_ENABLE=		lua
+LUA_CFLAGS=		-I${LUA_INCDIR}
+LUA_LDFLAGS=		-L${LUA_LIBDIR} -lm
+LUA_CONFIGURE_ENV=	LUA="${LUA_BINDIR}/lua" \
+			LUA_INSTALL_DIR=${PREFIX}/lib/lua/${LUA_VER}
+TCL_CONFIGURE_ENABLE=		tcl
+TCL_CPPFLAGS=		-I${TK_INCLUDEDIR}
+TCL_CONFIGURE_ON=	--with-tclsh=${TCLSH} --enable-tcl=yes
+TCL_CONFIGURE_ENV=	TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh"
+TK_CPPFLAGS=		-I${TK_INCLUDEDIR}
+TK_CONFIGURE_ON=	--with-wish=${WISH}
+TK_CONFIGURE_ENV=	TKCONFIG="${TK_LIBDIR}/tkConfig.sh"
+GUILE_CONFIGURE_ENABLE=		guile
+NVTHREADS_CFLAGS+=	${PTHREAD_CFLAGS}
+NVTHREADS_LDFLAGS+=	${PTHREAD_LIBS}
+
 
 .include <bsd.port.options.mk>
 
@@ -136,27 +177,14 @@ CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
 
 CONFIGURE_ENV+=	MISSING=${TRUE}
 
-.if ${PORT_OPTIONS:MGVEDIT}
-USE_QT4=	qmake_build moc_build rcc_build uic_build linguist_build corelib gui
-.endif
-
 .if ${PORT_OPTIONS:MTK}
-CPPFLAGS+=		-I${TK_INCLUDEDIR}
-USE_TK_BUILD=		84+
-CONFIGURE_ARGS+=	--with-wish=${WISH}
-CONFIGURE_ENV+=		TKCONFIG="${TK_LIBDIR}/tkConfig.sh"
 .if empty(PORT_OPTIONS:MTCL)
-IGNORE=			option TCL is required for option TK
+IGNORE=	option TCL is required for option TK
 .endif
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
-CPPFLAGS+=		-I${TCL_INCLUDEDIR}
-USE_TCL_BUILD=		84+
-.include "${PORTSDIR}/Mk/bsd.tcl.mk"
-CONFIGURE_ARGS+=	--with-tclsh=${TCLSH} --enable-tcl=yes
-CONFIGURE_ENV+=		TCLCONFIG="${TCL_LIBDIR}/tclConfig.sh"
-PLIST_SUB+=		TCL_VER="${TCL_VER}"
+PLIST_SUB+=	TCL_VER="${TCL_VER}"
 .endif
 
 .if ${PORT_OPTIONS:MICONV}
@@ -166,74 +194,37 @@ CONFIGURE_ARGS+=	--with-iconvincludedir=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--without-libiconv-prefix
 .endif
 
-.if ${PORT_OPTIONS:MXPM}
-USE_XORG+=		xaw xpm xmu xt sm ice xext x11 xau xdmcp xp
-.endif
-
-.if ${PORT_OPTIONS:MPANGOCAIRO}
-USE_GNOME=		pango
-USE_XORG+=		xrender x11 xau xdmcp
-.endif
-
 .if ${PORT_OPTIONS:MLIBRSVG2}
-USE_GNOME+=		librsvg2
-USE_GL+=		gl glu glut
 .if empty(PORT_OPTIONS:MPANGOCAIRO)
-IGNORE=			option PANGOCAIRO is required for option LIBRVG2
+IGNORE=	option PANGOCAIRO is required for option LIBRVG2
 .endif
-.endif
-
-.if ${PORT_OPTIONS:MANN}
-CONFIGURE_ENV+=		ANN_CFLAGS=-I${LOCALBASE}/include ANN_LIBS=-lann
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}
-USE_GNOME+=		gtk20
-USE_XORG+=		sm ice xext xinerama xi xrandr xcursor xfixes
 .if empty(PORT_OPTIONS:MPANGOCAIRO)
-IGNORE=			option PANGOCAIRO is required for option GTK2
+IGNORE=	option PANGOCAIRO is required for option GTK2
 .endif
-.endif
-
+.else
 .if ${PORT_OPTIONS:MGDK_PIXBUF}
-.if empty(PORT_OPTIONS:MGTK2)
-IGNORE=			option GTK2 is required for option GDK_PIXBUF
+IGNORE=	option GTK2 is required for option GDK_PIXBUF
 .endif
-.endif
-
 .if ${PORT_OPTIONS:MGNOMEUI}
-USE_GNOME+=		libgnomeui
-.if empty(PORT_OPTIONS:MGTK2)
-IGNORE=			option GTK2 is required for option GNOMEUI
+IGNORE=	option GTK2 is required for option GNOMEUI
 .endif
 .endif
 
 .if ${PORT_OPTIONS:MSMYRNA}
-USE_GNOME+=		libglade2
-CONFIGURE_ARGS+=	--with-glade=yes
-CONFIGURE_ARGS+=	--with-gtkgl=yes
-CONFIGURE_ARGS+=	--with-gtkglext=yes
-CONFIGURE_ARGS+=	--with-gts=yes
 .if empty(PORT_OPTIONS:MGTK2)
-IGNORE=			option GTK2 is required for option SMYRNA
+IGNORE=	option GTK2 is required for option SMYRNA
 .endif
-.else
-CONFIGURE_ARGS+=	--without-glade
-CONFIGURE_ARGS+=	--without-gtkgl
-CONFIGURE_ARGS+=	--without-gtkglext
-CONFIGURE_ARGS+=	--without-gts
+.if empty(PORT_OPTIONS:MGTS)
+IGNORE=	option GTS is required for option SMYRNA
 .endif
-
-.if defined(USE_GNOME)
-.include "${PORTSDIR}/Mk/bsd.gnome.mk"
-.endif
-.if defined(USE_XORG)
-.include "${PORTSDIR}/Mk/bsd.xorg.mk"
 .endif
 
 .if ${PORT_OPTIONS:MIPSEPCOLA}
 .if empty(PORT_OPTIONS:MDIGCOLA)
-IGNORE=			option WITH_DIGCOLA is required for option WITH_IPSEPCOLA
+IGNORE=		option WITH_DIGCOLA is required for option WITH_IPSEPCOLA
 .endif
 .endif
 
@@ -247,47 +238,6 @@ CONFIGURE_ENV+=		SWIG="${LOCALBASE}/bin/swig2.0"
 .else
 CONFIGURE_ARGS+=	--disable-swig
 CONFIGURE_ENV+=		SWIG="/nonexistent"
-.endif
-
-.if ${PORT_OPTIONS:MPHP}
-USE_PHP=	yes
-USE_PHP_BUILD=	yes
-.include "${PORTSDIR}/Mk/bsd.php.mk"
-CPPFLAGS+=		-I${LOCALBASE}/include/php/Zend
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON_BUILD=	yes
-.include "${PORTSDIR}/Mk/bsd.python.mk"
-LDFLAGS+=		"-L${PYTHON_LIBDIR}"
-.endif
-
-.if ${PORT_OPTIONS:MRUBY}
-CONFIGURE_ENV+=		RUBY="${RUBY}"
-USE_RUBY=		yes
-.include "${PORTSDIR}/Mk/bsd.ruby.mk"
-.endif
-
-.if ${PORT_OPTIONS:MLUA}
-USE_LUA=		yes
-.include "${PORTSDIR}/Mk/bsd.lua.mk"
-CFLAGS+=		-I${LUA_INCDIR}
-LDFLAGS+=		-L${LUA_LIBDIR} -lm
-CONFIGURE_ENV+=		LUA="${LUA_BINDIR}/lua" \
-			LUA_INSTALL_DIR=${PREFIX}/lib/lua/${LUA_VER}
-.endif
-
-.if ${PORT_OPTIONS:MGUILE}
-BROKEN=			the guile plugin needs a new version of guile
-.endif
-
-.if ${PORT_OPTIONS:MGHOSTSCRIPT}
-USE_GHOSTSCRIPT=	yes
-.endif
-
-.if ${PORT_OPTIONS:MNVTHREADS}
-CFLAGS+=	${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
 .endif
 
 post-patch:

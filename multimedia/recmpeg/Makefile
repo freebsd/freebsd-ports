@@ -8,19 +8,19 @@ CATEGORIES=	multimedia
 MASTER_SITES=	SF/fame/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple video encoder
+COMMENT=	Simple video encoder
 
-LIB_DEPENDS=	fame-0.9.1:${PORTSDIR}/multimedia/libfame
+LIB_DEPENDS=	libfame-0.9.so:${PORTSDIR}/multimedia/libfame
 
 GNU_CONFIGURE=	yes
 
 MAN1=		recmpeg.1
-PLIST_FILES=	bin/recmpeg
+PLIST_FILES=	bin/recmpeg \
+		man/man1/recmpeg.1.gz
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"

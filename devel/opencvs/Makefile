@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opencvs
-PORTVERSION=	20130419
+PORTVERSION=	20130930
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	johans
@@ -10,20 +10,17 @@ MASTER_SITE_SUBDIR=	johans
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	BSD-licensed CVS implementation
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 WRKSRC=		${WRKDIR}/cvs
-MANCOMPRESSED=	maybe
-
-MAN1=		opencvs.1
-MAN5=		opencvs.5
-MAN7=		cvsintro.7
 
 MAKE_ENV+=	BINDIR="${PREFIX}/bin" \
 		MANDIR="${MANPREFIX}/man/man" \
 		CATDIR="${MANPREFIX}/man/man"
 
-PLIST_FILES=	bin/opencvs
+PLIST_FILES=	bin/opencvs \
+		man/man1/opencvs.1.gz \
+		man/man5/opencvs.5.gz \
+		man/man7/cvsintro.7.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

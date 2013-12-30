@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	xlockmore
-PORTVERSION=	5.42
+PORTVERSION=	5.43
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.tux.org/~bagleyd/xlock/${PORTNAME}-${PORTVERSION}/ \
 		ftp://ibiblio.org/pub/Linux/X11/screensavers/ \
 		CRITICAL
 
-MAINTAINER=	jgh@FreeBSD.org
+MAINTAINER?=	jgh@FreeBSD.org
 COMMENT=	Like XLock session locker/screen saver, but just more
 
 USE_BZIP2=	yes
@@ -20,10 +20,9 @@ CONFIGURE_ARGS=	--without-motif --without-ttf --without-editres \
 USE_GNOME=	#
 USE_XORG=	x11 xaw ice
 
-LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
 
-MAN1=		xlock.1
-PLIST_FILES=	bin/xlock lib/X11/app-defaults/XLock
+PLIST_FILES=	bin/xlock lib/X11/app-defaults/XLock man/man1/xlock.1.gz
 
 OPTIONS_DEFINE=	MESAGL MB SYSLOG DISABLE_ALLOW_ROOT NICE_ONLY BLANK_ONLY \
 		KERBEROS4 BAD_PAM GTK2 TIME_BOMB CUSTOMIZATION MAGICK
@@ -45,7 +44,11 @@ OPTIONS_RADIO_ONE=	PAM XLOCK_GROUP
 
 NO_OPTIONS_SORT=yes
 
-NO_STAGE=	yes
+MAKE_ARGS+=	bindir=${STAGEDIR}${PREFIX}/bin \
+		mandir=${STAGEDIR}${PREFIX}/man/man1 \
+		datarootdir=${STAGEDIR}${PREFIX}/share \
+		xapploaddir=${STAGEDIR}${PREFIX}/lib/X11/app-defaults
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKERBEROS4}
@@ -123,7 +126,7 @@ CONFIGURE_ARGS+=	--enable-customization
 .endif
 
 .if ${PORT_OPTIONS:MMAGICK}
-LIB_DEPENDS+=	MagickCore:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	libMagickCore.so:${PORTSDIR}/graphics/ImageMagick
 .else
 CONFIGURE_ARGS+=	--without-magick
 .endif

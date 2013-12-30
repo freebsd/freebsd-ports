@@ -12,6 +12,7 @@ bin/moo-outdated
 %%SITE_PERL%%/Moo/Conflicts.pm
 %%SITE_PERL%%/Moo/HandleMoose.pm
 %%SITE_PERL%%/Moo/HandleMoose/FakeMetaClass.pm
+%%SITE_PERL%%/Moo/HandleMoose/_TypeMap.pm
 %%SITE_PERL%%/Moo/Object.pm
 %%SITE_PERL%%/Moo/Role.pm
 %%SITE_PERL%%/Moo/_Utils.pm

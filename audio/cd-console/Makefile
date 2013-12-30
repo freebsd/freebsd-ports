@@ -7,9 +7,10 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.oskusoft.com/osku/cd-console/
 
 MAINTAINER=	jdunn@aquezada.com
-COMMENT=	A curses-based console CD player
+COMMENT=	Curses-based console CD player
 
-NO_STAGE=	yes
+MAKE_ARGS=	BINPATH=${STAGEDIR}${PREFIX}/bin
+
 PLIST_FILES=	bin/cd-console
 
 .include <bsd.port.mk>

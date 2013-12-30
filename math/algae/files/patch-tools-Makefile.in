@@ -1,0 +1,13 @@
+--- tools/Makefile.in.orig
++++ tools/Makefile.in
+@@ -47,8 +47,8 @@
+ # ========================== Installation =========================
+ 
+ install: tools.algae
+-	for f in *.A; do $(INSTALL_DATA) $$f $(tooldir); done
+-	$(INSTALL_DATA) tools.algae $(tooldir)
++	for f in *.A; do $(INSTALL_DATA) $$f $(DESTDIR)$(tooldir); done
++	$(INSTALL_DATA) tools.algae $(DESTDIR)$(tooldir)
+ .PHONY:	install
+ 
+ uninstall:

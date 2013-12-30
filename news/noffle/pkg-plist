@@ -1,4 +1,6 @@
 bin/noffle
+man/man1/noffle.1.gz
+man/man5/noffle.conf.5.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL

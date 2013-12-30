@@ -1,0 +1,19 @@
+bin/shtk
+libdata/pkgconfig/shtk.pc
+man/man1/shtk.1.gz
+share/aclocal/shtk.m4
+share/doc/shtk/AUTHORS
+share/doc/shtk/COPYING
+share/doc/shtk/NEWS
+share/doc/shtk/README
+share/shtk/base.subr
+share/shtk/bool.subr
+share/shtk/bootstrap.subr
+share/shtk/cleanup.subr
+share/shtk/cli.subr
+share/shtk/config.subr
+share/shtk/cvs.subr
+share/shtk/list.subr
+share/shtk/process.subr
+@dirrm share/shtk
+@dirrm share/doc/shtk

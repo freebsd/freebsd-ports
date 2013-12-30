@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libtorrent-rasterbar
-PORTVERSION=	0.16.12
+PORTVERSION=	0.16.13
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	libtorrent

@@ -7,11 +7,12 @@ CATEGORIES=	databases
 MASTER_SITES=	http://cr.yp.to/cdb/
 
 MAINTAINER=	jlaffaye@FreeBSD.org
-COMMENT=	A fast lookup database library & utilities
+COMMENT=	Fast lookup database library & utilities
 
 ALL_TARGET=	it
 
-NO_STAGE=	yes
+CFLAGS_amd64=	-fPIC
+
 do-configure:
 	@${MV} ${WRKSRC}/conf-home ${WRKSRC}/conf-home.orig
 	${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-home
@@ -22,16 +23,10 @@ do-configure:
 
 do-install:
 .for file in cdbdump cdbget cdbmake cdbstats cdbtest
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for file in cdbmake-12 cdbmake-sv
-	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == amd64
-CFLAGS+=	-fPIC
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

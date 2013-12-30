@@ -20,5 +20,4 @@ PLIST_FILES=	bin/bugz
 DATADIR=	${PYTHONPREFIX_SITELIBDIR}/bugz
 PORTDATA=	*
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

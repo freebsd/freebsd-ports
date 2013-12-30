@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rockdodger
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -18,8 +18,11 @@ LICENSE=	GPLv2
 USES=		gmake
 USE_SDL=	mixer image sdl
 
-DESKTOP_ENTRIES="Rock Dodger" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
+DESKTOP_ENTRIES="Rock Dodger" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|#include <malloc.h>||' ${WRKSRC}/u-iff.c
 
 post-install:
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \

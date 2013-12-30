@@ -16,16 +16,15 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-PLIST_FILES=	bin/merge-info bin/xstow bin/xstow-static bin/xstow-stow
-MAN1=		merge-info.1 xstow.1
-MAN5=		xstow.ini.5
+PLIST_FILES=	bin/merge-info bin/xstow bin/xstow-static bin/xstow-stow \
+		man/man1/merge-info.1.gz man/man1/xstow.1.gz \
+		man/man5/xstow.ini.5.gz
 
 # This port always installs documentation, so we cannot respect NOPORTDOCS
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README TODO xstow.html xstow.ini xstow.ini.html
 
-NO_STAGE=	yes
 post-install:
 	(cd ${WRKSRC} && \
-	 ${INSTALL_MAN} AUTHORS COPYING ChangeLog NEWS README TODO ${DOCSDIR})
+	 ${INSTALL_MAN} AUTHORS COPYING ChangeLog NEWS README TODO ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

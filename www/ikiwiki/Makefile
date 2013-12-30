@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	3.20110608
-PORTREVISION=	1
+PORTVERSION=	3.20130904.1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		http://kitenet.net/~joey/debian/unstable/
@@ -11,6 +10,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	A wiki compiler
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-Locale-gettext>=0:${PORTSDIR}/devel/p5-Locale-gettext \
@@ -23,7 +24,8 @@ BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-Text-Markdown>=0:${PORTSDIR}/textproc/p5-Text-Markdown \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
+		p5-YAML-LibYAML>=0:${PORTSDIR}/textproc/p5-YAML-LibYAML
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		p5-File-MimeInfo>=0:${PORTSDIR}/devel/p5-File-MimeInfo \
 		p5-RPC-XML>=0:${PORTSDIR}/net/p5-RPC-XML \
@@ -32,44 +34,28 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-LICENSE=	GPLv2
 USES=		gettext perl5 gmake
 USE_PERL5=	configure
 
-OPTIONS_DEFINE=	PO4A SEARCH W3M
+OPTIONS_DEFINE=	PO4A SEARCH W3M DOCS EXAMPLES
 OPTIONS_DEFAULT=	PO4A SEARCH
+OPTIONS_SUB=
+
 PO4A_DESC=	Install translated underlays
 SEARCH_DESC=	Install search backend
 W3M_DESC=	Install w3m CGI wrapper
 
-MAN1=		ikiwiki.1 ikiwiki-calendar.1 ikiwiki-makerepo.1 ikiwiki-transition.1 ikiwiki-update-wikilist.1
-MAN8=		ikiwiki-mass-rebuild.8
+PO4A_RUN_DEPENDS=	po4a>=0.39:${PORTSDIR}/textproc/po4a
+PO4A_BUILD_DEPENDS=	po4a>=0.39:${PORTSDIR}/textproc/po4a
+SEARCH_RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-Search-Xapian>=0:${PORTSDIR}/databases/p5-Search-Xapian \
+		${LOCALBASE}/www/xapian-omega/cgi-bin/omega:${PORTSDIR}/www/xapian-omega
+W3M_MAKE_ENV=	W3M_CGI_BIN=${PREFIX}/libexec/w3m/cgi-bin
+
 PORTDOCS=	CHANGELOG NEWS README
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPO4A}
-PLIST_SUB+=	PO4A=""
-RUN_DEPENDS+=	po4a>=0.39:${PORTSDIR}/textproc/po4a
-BUILD_DEPENDS+=	po4a>=0.39:${PORTSDIR}/textproc/po4a
-.else
-PLIST_SUB+=	PO4A="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSEARCH}
-RUN_DEPENDS+=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
-		p5-Search-Xapian>=0:${PORTSDIR}/databases/p5-Search-Xapian \
-		${LOCALBASE}/www/xapian-omega/cgi-bin/omega:${PORTSDIR}/www/xapian-omega
-.endif
-
-.if ${PORT_OPTIONS:MW3M}
-MAKE_ENV+=	W3M_CGI_BIN=${PREFIX}/libexec/w3m/cgi-bin
-PLIST_SUB+=	W3M=""
-.else
-PLIST_SUB+=	W3M="@comment "
-.endif
 
 post-patch:
 	@${GREP} -rl '^#!/usr/bin/perl' ${WRKSRC} | \
@@ -91,7 +77,7 @@ post-patch:
 		-e 's|\(-install -m 0644 wikilist\)|#\1|' \
 		-e 's|\(-install -m 0644 auto.setup\)|#\1|' \
 		-e 's|\(-install -m 0644 auto-blog.setup\)|#\1|' \
-		-e 's|$$(DESTDIR)$$(PREFIX)/share/ikiwiki/examples|${EXAMPLESDIR}|' \
+		-e 's|/share/ikiwiki/examples|${EXAMPLESDIR:S/${PREFIX}//}|' \
 		${WRKSRC}/Makefile.PL
 	@${REINPLACE_CMD} -i '' \
 		-e "s|share/ikiwiki/examples|share/examples/ikiwiki|" \
@@ -123,18 +109,13 @@ post-patch:
 .endif
 
 post-install:
-	${MKDIR} ${PREFIX}/etc/ikiwiki
-	${INSTALL_DATA} ${WRKSRC}/auto.setup ${PREFIX}/etc/ikiwiki
-	${INSTALL_DATA} ${WRKSRC}/auto-blog.setup ${PREFIX}/etc/ikiwiki
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/ikiwiki.setup ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/wikilist ${EXAMPLESDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/ikiwiki
+	${INSTALL_DATA} ${WRKSRC}/auto.setup ${STAGEDIR}${PREFIX}/etc/ikiwiki
+	${INSTALL_DATA} ${WRKSRC}/auto-blog.setup ${STAGEDIR}${PREFIX}/etc/ikiwiki
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/ikiwiki.setup ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/wikilist ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

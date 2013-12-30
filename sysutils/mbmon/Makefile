@@ -11,6 +11,9 @@ DISTNAME=	xmbmon${PORTVERSION}
 MAINTAINER=	5u623l20@gmail.com
 COMMENT?=	Motherboard monitor for LM78/79, W8378x, AS99127F, VT82C686 and ADM9240
 
+DEPRECATED=	Use sysutils/xmbmon instead. This port will be removed soon
+EXPIRATION_DATE=2014-01-31
+
 PORTSCOUT=	limit:^[0-9]+$
 PATCH_SITES+=	${MASTER_SITES}
 PATCHFILES+=	xmbmon${PORTVERSION}_fflush.patch

@@ -1,41 +1,20 @@
---- CMakeLists.txt.orig	2009-10-09 02:24:39.000000000 -0400
-+++ CMakeLists.txt	2010-09-23 15:07:03.000000000 -0400
-@@ -15,6 +15,20 @@
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -204,7 +204,7 @@
+ FIND_PACKAGE(PORTAUDIO)
  
- PROJECT(FreeMat CXX C )
+ if (PORTAUDIO_FOUND)
+-  ADD_DEFINITIONS(-DHAVE_PORTAUDIO19)
++  ADD_DEFINITIONS(-DHAVE_PORTAUDIO18)
+   SET(OPTIONAL_LIBS ${OPTIONAL_LIBS} ${PORTAUDIO_LIBS})
+   INCLUDE_DIRECTORIES(${PORTAUDIO_INCLUDE})
+ endif()
+@@ -257,7 +257,7 @@
+   add_definitions(-DHAVE_LLVM)
+   include_directories(${LLVM_INCLUDE_DIRS})
+   link_directories(${LLVM_LIBRARY_DIRS})
+-  llvm_map_components_to_libraries(REQ_LLVM_LIBRARIES jit interpreter nativecodegen asmparser bitreader bitwriter codegen ipo linker selectiondag instrumentation)
++  llvm_map_components_to_libraries(REQ_LLVM_LIBRARIES jit interpreter nativecodegen asmparser bitreader bitwriter codegen ipo linker selectiondag instrumentation irreader)
+   set(OPTIONAL_LIBS ${OPTIONAL_LIBS} ${CLANG_LIBRARIES} ${REQ_LLVM_LIBRARIES})
+ ENDIF()
  
-+# skip the full RPATH for the build tree
-+SET(CMAKE_SKIP_BUILD_RPATH  TRUE)
-+
-+# when building, use the install RPATH already
-+# (so it doesn't need to relink when installing)
-+SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE) 
-+
-+# the RPATH to be used when installing
-+SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
-+
-+# add the automatically determined parts of the RPATH
-+# which point to directories outside the build tree to the install RPATH
-+SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
-+#
- SET(CPACK_PACKAGE_VERSION_MAJOR "4")
- SET(CPACK_PACKAGE_VERSION_MINOR "0")
- SET(VERSION "${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}")
-@@ -217,7 +231,7 @@
-   INCLUDE_DIRECTORIES(${PORTAUDIO_SYS_INCLUDE_DIR})
-   SET (PORTAUDIO_LIBRARY ${PORTAUDIO_SYS_LIBRARY})
- ENDIF (FORCE_BUNDLED_PORTAUDIO OR NOT SYSTEM_PORTAUDIO_AVAILABLE)
--ADD_DEFINITIONS( -DHAVE_PORTAUDIO19)
-+ADD_DEFINITIONS( -DHAVE_PORTAUDIO18)
- SET(OPTIONAL_LIBS ${OPTIONAL_LIBS} ${PORTAUDIO_LIBRARY})
- IF (APPLE)
-    FIND_LIBRARY(COREAUDIO_LIBRARY CoreAudio)
-@@ -245,7 +259,7 @@
- ######################################################################
- # LLVM Support
- ######################################################################
--OPTION(USE_LLVM "Build with LLVM support?" ON)
-+OPTION(USE_LLVM "Build with LLVM support?" OFF)
- 
- IF( USE_LLVM )
-   set(LLVM_FOUND FALSE)

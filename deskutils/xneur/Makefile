@@ -57,7 +57,7 @@ CONFIGURE_ARGS+=	--without-x
 USE_GSTREAMER=	yes
 CONFIGURE_ARGS+=	--with-sound=gstreamer
 .elif ${PORT_OPTIONS:MOPENAL}
-USE_OPENAL=		al alut
+USES+=			openal:al,alut
 CONFIGURE_ARGS+=	--with-sound=openal
 .else
 CONFIGURE_ARGS+=	--with-sound=no

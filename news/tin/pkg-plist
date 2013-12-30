@@ -9,6 +9,15 @@ bin/w2r.pl
 @unexec if cmp -s %D/etc/tin.defaults %D/etc/tin.defaults.dist; then rm -f %D/etc/tin.defaults; fi
 etc/tin.defaults.dist
 @exec [ -f %B/tin.defaults ] || cp %B/%f %B/tin.defaults
+man/man1/opt-case.pl.1.gz
+man/man1/rtin.1.gz
+man/man1/tin.1.gz
+man/man1/tinews.pl.1.gz
+man/man1/tinurl_handler.pl.1.gz
+man/man1/w2r.pl.1.gz
+man/man5/tin.5.gz
+man/man5/tin_mbox.5.gz
+man/man5/tin_mmdf.5.gz
 %%NLS%%share/locale/da/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/de/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/tin.mo
@@ -17,3 +26,4 @@ etc/tin.defaults.dist
 %%NLS%%share/locale/ru/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/tin.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/tin.mo

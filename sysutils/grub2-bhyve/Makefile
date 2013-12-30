@@ -3,10 +3,11 @@
 
 PORTNAME=	grub2-bhyve
 DISTVERSION=	0.21
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	kmoore@FreeBSD.org
-COMMENT= 	Grub-emu loader for bhyve
+COMMENT=	Grub-emu loader for bhyve
 
 LICENSE=	GPLv3
 
@@ -15,14 +16,15 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 
 ONLY_FOR_ARCHS=	amd64
 SSP_UNSAFE=	yes
-USE_GCC=	4.7
+USE_GCC=	4.6+
 USE_GITHUB=	yes
 GH_ACCOUNT=	grehan-freebsd
 GH_COMMIT=	aa0717f
 GH_TAGNAME=	v0.2
 USES=		bison gettext gmake
+PLIST_FILES=	sbin/grub-bhyve
 MAKE_JOBS_UNSAFE=	yes
-CONFIGURE_ARGS=	--with-platform=emu CC=gcc47 LEX=${LOCALBASE}/bin/flex \
+CONFIGURE_ARGS=	--with-platform=emu CC=${CC} LEX=${LOCALBASE}/bin/flex \
 		--enable-grub-mount=no --enable-grub-mkfont=no
 
 .include <bsd.port.pre.mk>

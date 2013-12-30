@@ -315,6 +315,13 @@ gst_ogg_LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
 
 # opencv
 gst_opencv_LIB_DEPENDS=	libopencv_highgui.so:${PORTSDIR}/graphics/opencv
+gst_opencv_PLIST_FILES=	${GST_LIB_DIR}/libgstopencv.la \
+			${GST_LIB_DIR}/libgstopencv.so \
+			share/gst-plugins-bad/${VERSION}/opencv_haarcascades/fist.xml \
+			share/gst-plugins-bad/${VERSION}/opencv_haarcascades/palm.xml
+gst_opencv_PLIST_DIRSTRY=	share/gst-plugins-bad/${VERSION}/opencv_haarcascades \
+				share/gst-plugins-bad/${VERSION} \
+				share/gst-plugins-bad
 
 # openjpeg
 gst_openjpeg_LIB_DEPENDS=	libopenjpeg.so:${PORTSDIR}/graphics/openjpeg

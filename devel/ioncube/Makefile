@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ioncube
-DISTVERSION=	4.4.4
+DISTVERSION=	4.5.0
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads3.ioncube.com/loader_downloads/ \
 		http://dl.ispsystem.info/ioncube/${DISTVERSION}/ \
@@ -22,9 +22,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 
 NO_STAGE=	yes
-
-# PHP 5.5 is unsupported
-IGNORE_WITH_PHP=55
 
 .include <bsd.port.pre.mk>
 

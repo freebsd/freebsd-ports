@@ -18,9 +18,6 @@ USE_OPENSSL=	yes
 USES=		pkgconfig
 USE_LDCONFIG=	yes
 
-MAN3=		oauth.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/PC_REQ=/s/ libcrypto//' ${WRKSRC}/configure
 

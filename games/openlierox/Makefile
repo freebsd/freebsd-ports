@@ -19,14 +19,13 @@ LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd \
 USE_BZIP2=	yes
 USE_SDL=	sdl image
 USE_GNOME=	libxml2
-USE_OPENAL=	yes
 USE_GCC=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-USES=		cmake pkgconfig
+USES=		cmake openal pkgconfig
 CMAKE_ARGS=	-DHAWKNL_BUILTIN=YES \
 		-DLIBZIP_BUILTIN=YES \
 		-DBREAKPAD=NO \

@@ -29,7 +29,7 @@ UNZIP_NAME=	unzip
 .endif
 PLIST_FILES=	bin/${UNZIP_NAME} bin/funzip bin/unzipsfx bin/zipgrep bin/zipinfo
 PORTDOCS=	README WHERE
-MAN1=		${UNZIP_NAME}.1 funzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
+MANPAGES=		${UNZIP_NAME}.1 funzip.1 unzipsfx.1 zipgrep.1 zipinfo.1
 
 LOCAL_UNZIP=	${CFLAGS} -DACORN_FTYPE_NFS -DWILD_STOP_AT_DIR \
 		-DUNICODE_SUPPORT -DUTF8_MAYBE_NATIVE -D_MBCS \
@@ -68,7 +68,7 @@ ALL_TARGET=	freebsd
 ALL_TARGET=	bsd
 .endif
 
-.for m in ${MAN1}
+.for m in ${MANPAGES}
 PLIST_FILES+=	man/man1/${m}.gz
 .endfor
 
@@ -96,7 +96,7 @@ do-install:
 	${LN} -sf ${UNZIP_NAME} ${STAGEDIR}${PREFIX}/bin/zipinfo
 	${INSTALL_SCRIPT} ${WRKSRC}/unix/zipgrep ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/unzip.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/${UNZIP_NAME}.1
-.for f in ${MAN1:Nunzip.1:Ninfo-unzip.1}
+.for f in ${MANPAGES:Nunzip.1:Ninfo-unzip.1}
 	${INSTALL_MAN} ${WRKSRC}/man/${f} ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
 .if ${PORT_OPTIONS:MDOCS}

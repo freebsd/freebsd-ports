@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfce4-whiskermenu-plugin
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.0
 CATEGORIES=	x11 xfce
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

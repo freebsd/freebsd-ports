@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/gMTP
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		gettext gmake pkgconfig
-NO_STAGE=	yes
 USE_GNOME=	glib20
 
 PORTDOCS=	*
@@ -38,19 +37,16 @@ OPTIONS_DEFAULT=	GTK2
 USE_GNOME+=	gtk20 gconf2
 GCONF_SCHEMAS=	gmtp.schemas
 ALL_TARGET=	gtk2
-INSTALL_TARGET=	register-gconf-schemas
 .endif
 
 .if ${PORT_OPTIONS:MGTK3}
 USE_GNOME+=	gtk30
 GLIB_SCHEMAS=	org.gnome.gmtp.gschema.xml
 ALL_TARGET=	gtk3
-INSTALL_TARGET=	register-gsettings-schemas
+INSTALL_TARGET=	install-gtk3
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	cd ${WRKSRC} && ${GMAKE} install-doc
-.endif
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install-doc)
 
 .include <bsd.port.mk>

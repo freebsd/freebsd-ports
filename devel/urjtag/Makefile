@@ -3,7 +3,7 @@
 
 PORTNAME=	urjtag
 PORTVERSION=	0.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -12,26 +12,24 @@ COMMENT=	Extended utility to work with JTAG-aware boards
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake readline shebangfix
+SHEBANG_FILES=	src/bsdl2jtag
+USE_CSTD=	c99
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LEX=${LOCALBASE}/bin/flex
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CFLAGS+=	--std=c99
-
-MAN1=		jtag.1 bsdl2jtag.1
 
 OPTIONS_DEFINE=	USB FTDI JEDEC NLS
 OPTIONS_DEFAULT=	USB FTDI
+OPTIONS_SUB=	yes
 USB_DESC=	Build support for USB JTAG adapters
 FTDI_DESC=	Build support for FTDI-based USB JTAG adapters
 JEDEC_DESC=	Enable experimental JEDEC flash detection
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJEDEC}
@@ -39,29 +37,34 @@ CONFIGURE_ARGS+=	--enable-jedec
 .endif
 
 .if ${PORT_OPTIONS:MUSB}
-CONFIGURE_ARGS+=	--with-libusb
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-usb
+CONFIGURE_ARGS+=	--with-libusb=/usr
 .endif
 
-.if ${PORT_OPTIONS:MFTDI}
-CONFIGURE_ARGS+=	--with-libftdi
-LIB_DEPENDS+=	ftdi:${PORTSDIR}/devel/libftdi
-.endif
-
-.if exists(${LOCALBASE}/lib/libreadline.so.6)
-LIB_DEPENDS+=	readline.6:${PORTSDIR}/devel/readline
+.if ! ${PORT_OPTIONS:MFTDI}
+CONFIGURE_ARGS+=	--without-libftdi
+.else
+LIB_DEPENDS+=	libftdi.so:${PORTSDIR}/devel/libftdi
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-PLIST_SUB+=	NLS=""
+USES+=		gettext
 .else
-PLIST_SUB+=	NLS="@comment "
 CONFIGURE_ARGS+=--disable-nls
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000033
+BUILD_DEPENDS+=	flex>0:${PORTSDIR}/textproc/flex
+CONFIGURE_ENV+=	LEX=${LOCALBASE}/bin/flex
 .endif
 
 post-patch:
 # Suppress svn(1) binary detection
-	@${REINPLACE_CMD} -e 's|^SVN=.*|SVN=''|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|^SVN=.*|SVN=''| ; \
+      		 s|-Lwith_libusb |-L$$with_libusb/lib | ; \
+		 s|-I$$with_libusb"|-I$$with_libusb/include"|' \
+		${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

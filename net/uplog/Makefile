@@ -16,17 +16,18 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 PORTDOCS=	README
 PLIST_FILES=	bin/uplog
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-patch:
 	${REINPLACE_CMD} -e \
 	's|#include <malloc.h>||g' \
 		${WRKSRC}/${PORTNAME}.c
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

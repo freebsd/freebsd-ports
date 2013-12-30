@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=--disable-glut
 USE_SDL+=	mixer
 CONFIGURE_ARGS+=--disable-openal
 .else
-USE_OPENAL=	al alut
+USES+=		openal:al,alut
 CONFIGURE_ARGS+=--disable-sdlmixer
 .endif
 

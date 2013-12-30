@@ -16,7 +16,6 @@ LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 
 USE_QT4=	corelib dbus gui xml \
 		linguist_build moc_build qmake_build rcc_build uic_build
-NO_STAGE=	yes
 QT_NONSTANDARD=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes
@@ -29,13 +28,11 @@ CONFIGURE_ARGS=	--disable-portaudio
 INSTALLS_ICONS=	yes
 MAKE_JOBS_UNSAFE=yes
 
-MAN1=		qjackctl.1
-
 post-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} -o ${PORTNAME}.mak \
 		${QMAKE_ARGS}
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/${PORTNAME}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

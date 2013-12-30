@@ -10,29 +10,24 @@ MASTER_SITE_SUBDIR=	db
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Convert text files into cw as an mp3 or ogg file
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
-MAN1=		ebook2cw.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|'g \
 	     ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|'g \
 	     ${WRKSRC}/Makefile
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/ebook2cw ${PREFIX}/bin/ebook2cw
-	@${INSTALL_DATA} ${WRKSRC}/ebook2cw.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/ebook2cw ${STAGEDIR}${PREFIX}/bin/ebook2cw
+	@${INSTALL_DATA} ${WRKSRC}/ebook2cw.1 ${STAGEDIR}${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for 	f in ebook2cw.conf isomap.txt utf8map.txt
-	@${INSTALL_DATA} ${WRKSRC}/$f ${EXAMPLESDIR}/$f
+	@${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${EXAMPLESDIR}/$f
 .endfor
-.endif
-.if     !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

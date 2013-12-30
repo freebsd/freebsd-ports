@@ -16,7 +16,7 @@ LICENSE=	BSD
 LIB_DEPENDS=	libsimage.so:${PORTSDIR}/graphics/simage
 
 USE_GCC=	any
-USE_OPENAL=	al
+USES=		openal:al
 USE_GL=		yes
 USE_XORG=	xt x11
 GNU_CONFIGURE=	yes

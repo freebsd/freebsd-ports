@@ -10,7 +10,6 @@ MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTNAME}-${PORTVERSION}.tar.gz
 MAINTAINER=	saper@saper.info
 COMMENT=	MPEG audio analysis toolkit
 
-NO_STAGE=	yes
 USES=		gmake
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
@@ -21,11 +20,9 @@ post-patch:
 		 s|(CCLD|(CXXLD|g' ${WRKSRC}/demos/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in API.html ChangeLog THANKS applications.html
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

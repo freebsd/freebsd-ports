@@ -3,6 +3,7 @@
 
 PORTNAME=	metar
 PORTVERSION=	0.19
+PORTREVISION=	1
 CATEGORIES=	astro python geography
 MASTER_SITES=	http://www.schwarzvogel.de/pkgs/ \
 		LOCAL/sunpoet
@@ -21,7 +22,6 @@ PYDISTUTILS_PKGNAME=	${REALPORTNAME}
 USE_PYDISTUTILS=yes
 USE_PYTHON=	-2.7
 
-DOCSDIR=	${PREFIX}/share/doc/${REALPORTNAME}-${PORTVERSION}
 PLIST_FILES=	bin/${REALPORTNAME} \
 		%%PYTHON_SITELIBDIR%%/${REALPORTNAME}.py \
 		%%PYTHON_SITELIBDIR%%/${REALPORTNAME}.pyc \
@@ -39,11 +39,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|share/\(man/man1\)|\1|' ${WRKSRC}/${PYSETUP}
 .if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} \
-		-e 's|"share/doc/pymetar-%s/"%pymetar.__version__|"${DOCSDIR}"|' \
+		-e 's|"share/doc/pymetar-%s"%pymetar.__version__|"${DOCSDIR}"|' \
 		${WRKSRC}/${PYSETUP}
 .else
 	@${REINPLACE_CMD} \
-		-e 's|"share/doc/pymetar-%s/"%pymetar.__version__|""|' \
+		-e 's|"share/doc/pymetar-%s"%pymetar.__version__|""|' \
 		-e "s|\['README.*'\]|[]|" ${WRKSRC}/${PYSETUP}
 .endif
 

@@ -1,34 +1,29 @@
---- ./lib/libpe/Makefile.orig	2012-10-31 01:59:14.000000000 -0200
-+++ ./lib/libpe/Makefile	2013-09-24 12:03:36.000000000 -0300
-@@ -5,16 +5,15 @@
+--- ./lib/libpe/Makefile.orig	2013-12-27 08:39:52.000000000 -0200
++++ ./lib/libpe/Makefile	2013-12-28 00:18:59.000000000 -0200
+@@ -5,7 +5,7 @@
  
- ####### Compiler, tools and options
+ ####### Makefile Conventions - Directory variables
  
--PREFIX = /usr
--DEST = $(DESTDIR)/$(PREFIX)/lib
-+DEST = $(PREFIX)/lib
- VERSION = 1.0
--override CFLAGS += -W -Wall -Wextra -pedantic -std=c99 -c
-+override CFLAGS += -W -Wall -Wextra -pedantic -std=c99 -shared -o libpe.so
- ifneq ($(PLATFORM_OS), CYGWIN)
- 	override CFLAGS += -fPIC
- endif
- SRC = pe.c
- RM = rm -f
--CC = gcc
-+CC ?= ${CC}
- SYMLINK = ln -sf
- ifeq ($(PLATFORM_OS), Darwin)
- 	STRIP = strip -x
-@@ -46,6 +45,11 @@
- 	$(INSTALL) $(LIBNAME).so $(DEST)/$(LIBNAME).so.$(VERSION)
+-prefix = /usr
++prefix = /usr/local
+ exec_prefix = $(prefix)
+ bindir = $(exec_prefix)/bin
+ sbindir = $(exec_prefix)/sbin
+@@ -68,7 +68,7 @@
+ 
+ libpe: CPPFLAGS += -D_GNU_SOURCE
+ libpe: $(libpe_OBJS)
+-ifeq ($(PLATFORM_OS), Linux)
++ifeq ($(PLATFORM_OS), FreeBSD)
+ 	$(LINK) -shared -Wl,-soname,$(LIBNAME).so.1 $(LDFLAGS) -o $(LIBNAME).so $^
+ else ifeq ($(PLATFORM_OS), Darwin)
+ 	$(LINK) -headerpad_max_install_names -dynamiclib \
+@@ -84,7 +84,7 @@
+ 	$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
+ 
+ install: installdirs
+-ifeq ($(PLATFORM_OS), Linux)
++ifeq ($(PLATFORM_OS), FreeBSD)
+ 	$(INSTALL_DATA) $(LIBNAME).so $(DEST)/$(LIBNAME).so.$(VERSION)
  	cd $(DEST); $(SYMLINK) $(LIBNAME).so.$(VERSION) $(LIBNAME).so
  	cd $(DEST); $(SYMLINK) $(LIBNAME).so.$(VERSION) $(LIBNAME).so.1
-+else ifeq ($(PLATFORM_OS), FreeBSD)
-+	$(STRIP) $(LIBNAME).so
-+	$(INSTALL) $(LIBNAME).so $(DEST)/$(LIBNAME).so.$(VERSION)
-+	cd $(DEST); $(SYMLINK) $(LIBNAME).so.$(VERSION) $(LIBNAME).so
-+	cd $(DEST); $(SYMLINK) $(LIBNAME).so.$(VERSION) $(LIBNAME).so.1
- else ifeq ($(PLATFORM_OS), Darwin)
- 	$(STRIP) $(LIBNAME).dylib
- 	$(INSTALL) $(LIBNAME).dylib $(DEST)/$(LIBNAME).$(VERSION).dylib

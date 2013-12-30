@@ -12,7 +12,7 @@ DISTNAME=	libdasm-${PORTVERSION}
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Python interface to libdasm
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 WRKSRC_SUBDIR=	${PORTNAME}
 USE_PYTHON=	yes

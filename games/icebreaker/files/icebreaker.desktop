@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=IceBreaker
+GenericName=IceBreaker game
+Comment=Addictive action-puzzle game involving bouncing penguins
+Exec=icebreaker
+Icon=icebreaker
+Categories=Game;ArcadeGame;
+Terminal=0

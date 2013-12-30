@@ -20,7 +20,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib		# XXX should not be needed
 OPTIONS_DEFINE=	TEMPERATURE
 TEMPERATURE_DESC=	Build with temperature widget (for CPU, etc.)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTEMPERATURE}

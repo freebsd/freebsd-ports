@@ -3,7 +3,7 @@
 
 PORTNAME=	glob2
 PORTVERSION=	0.9.4.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SAVANNAH/${PORTNAME}/${PORTVERSION:R}/
 
@@ -17,44 +17,50 @@ LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis \
 		libfribidi.so:${PORTSDIR}/converters/fribidi \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
 		libfreetype.so:${PORTSDIR}/print/freetype2
-# Should work with portaudio v19_20071207
-# Can be built with portaudio2 but does not run cleanly
-#LIB_DEPENDS+=		libportaudio.so:${PORTSDIR}/audio/portaudio2
 
-USES=		gmake
+OPTIONS_DEFINE=	DOCS PORTAUDIO
+
+USES=		pkgconfig scons
 USE_SDL=	image net sdl ttf
 USE_GL=		gl
-USE_SCONS=	yes
-#SCONS_ARGS+=	--portaudio=true
-#SCONS_BUILDENV=	${SCONS_ENV}
-SCONS_ARGS=	CXXFLAGS+=" -g -pg" INSTALLDIR="${STAGEDIR}${PREFIX}/share"
-CFLAGS+=	-Wno-return-type
-
+MAKE_ARGS=	CCFLAGS="${CFLAGS}" \
+		LINKFLAGS="${LDFLAGS}" \
+		BINDIR="${STAGEDIR}${PREFIX}/bin" \
+		INSTALLDIR="${STAGEDIR}${PREFIX}/share" \
+		DATADIR="${DATADIR}"
 INSTALLS_ICONS=	yes
-ICON_SIZES=	16x16 24x24 32x32 48x48 64x64 128x128
 
-#CFLAGS+=	${PTHREAD_CFLAGS} -I. `pkg-config --cflags portaudio-2.0` -I${LOCALBASE}/include
-CFLAGS+=	${PTHREAD_CFLAGS} -I. -I${LOCALBASE}/include
-#LINKFLAGS=	${PTHREAD_LIBS} `pkg-config --libs portaudio-2.0` -L${LOCALBASE}/lib
-LINKFLAGS=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
+CFLAGS+=	${PA2_CFLAGS} -I${LOCALBASE}/include -Wno-return-type
+LDFLAGS+=	${PA2_LDFLAGS} -L${LOCALBASE}/lib -pthread
 
 PORTDOCS=	README
-
-OPTIONS_DEFINE=	DOCS
-
 SUB_FILES=	pkg-message
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local/bin|${STAGEDIR}${PREFIX}/bin|' \
-		${WRKSRC}/SConstruct
-	@${REINPLACE_CMD} -e 's|portaudio.h|portaudio2/portaudio.h|' ${WRKSRC}/src/VoiceRecorder.cpp
-	@${REINPLACE_CMD} -e 's|^Icon.*|Icon=${PORTNAME}|' \
-			${WRKSRC}/data/${PORTNAME}.desktop
+.include <bsd.port.options.mk>
 
-.for s in 16 24 32 48 64 128
-	@cd ${WRKSRC}/data/icons && \
-		${MV} glob2-icon-${s}x${s}.png ${PORTNAME}_${s}x${s}.png
-.endfor
+# Should work with portaudio v19_20071207
+# Can be built with portaudio2 but does not run cleanly
+.if ${PORT_OPTIONS:MPORTAUDIO}
+BUILD_DEPENDS+=	portaudio2>0:${PORTSDIR}/audio/portaudio2
+RUN_DEPENDS+=	portaudio2>0:${PORTSDIR}/audio/portaudio2
+MAKE_ARGS+=	--portaudio=true
+PA2_CFLAGS+=	-I${LOCALBASE}/include/portaudio2
+PA2_LDFLAGS+=	-L${LOCALBASE}/lib/portaudio2
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|"-g"|""|' \
+		${WRKSRC}/SConstruct
+	@${REINPLACE_CMD} -e \
+		's|portaudio.h|portaudio2/portaudio.h|' \
+		${WRKSRC}/src/VoiceRecorder.cpp
+	@${REINPLACE_CMD} -e \
+		'/^Icon/s|=.*|=${PORTNAME}|' \
+		${WRKSRC}/data/${PORTNAME}.desktop
+	@${REINPLACE_CMD} -e \
+		'/(PACKAGE_SOURCE_DIR)/s|^|//|' \
+		${WRKSRC}/libgag/src/FileManager.cpp
 
 manual-regression-test:
 # Don't enable these tests on pointyhat, they take too long.
@@ -65,15 +71,15 @@ manual-regression-test:
 .endif
 
 post-install:
-.for s in ${ICON_SIZES}
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/
-	${INSTALL_DATA} ${WRKSRC}/data/icons/${PORTNAME}_${s}.png \
-		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps/${PORTNAME}.png
+.for s in 16 24 32 48 64 128
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps
+	(cd ${WRKSRC}/data/icons && ${INSTALL_DATA} glob2-icon-${s}x${s}.png \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps/${PORTNAME}.png)
 .endfor
 	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/
-
+		${STAGEDIR}${PREFIX}/share/pixmaps
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/glob2
 
 .include <bsd.port.mk>

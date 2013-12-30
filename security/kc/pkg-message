@@ -1,3 +1,0 @@
-kc comes with a tiny and simple utility which can convert an exported pwsafe
-database to a kc compatible XML database (that can be imported to it later).
-It is installed under PREFIX/share/kc/

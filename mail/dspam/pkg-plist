@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%HASH%%bin/cssstat
 %%HASH%%bin/csscompress
 %%HASH%%bin/cssclean
@@ -16,6 +17,9 @@ bin/dspam_stats
 bin/dspam_train
 @unexec if cmp -s %D/etc/dspam.conf %D/etc/dspam.conf.sample; then rm -f %D/etc/dspam.conf; fi
 etc/dspam.conf.sample
+@exec chown %%DSPAM_OWNER%%:%%DSPAM_GROUP%% %D/%F
+@exec chmod 640 %D/%F
+@exec cp -np %D/%F %B/dspam.conf
 include/dspam/buffer.h
 include/dspam/config.h
 include/dspam/config_shared.h
@@ -35,6 +39,21 @@ lib/libdspam.a
 lib/libdspam.la
 lib/libdspam.so
 lib/libdspam.so.7
+man/man1/dspam.1.gz
+man/man1/dspam_clean.1.gz
+man/man1/dspam_dump.1.gz
+man/man1/dspam_merge.1.gz
+man/man1/dspam_stats.1.gz
+man/man1/dspam_train.1.gz
+man/man3/libdspam.3.gz
+man/man3/dspam_init.3.gz
+man/man3/dspam_create.3.gz
+man/man3/dspam_addattribute.3.gz
+man/man3/dspam_attach.3.gz
+man/man3/dspam_process.3.gz
+man/man3/dspam_getsource.3.gz
+man/man3/dspam_destroy.3.gz
+man/man3/dspam_detach.3.gz
 %%DYNAMIC%%%%HASH%%lib/dspam/libhash_drv.a
 %%DYNAMIC%%%%HASH%%lib/dspam/libhash_drv.la
 %%DYNAMIC%%%%HASH%%lib/dspam/libhash_drv.so
@@ -72,23 +91,23 @@ libdata/pkgconfig/dspam.pc
 %%PORTDOCS%%%%DOCSDIR%%/UPDATING
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%MYSQL%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mysql/mysql_objects-4.1.sql
-%%MYSQL%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mysql/mysql_objects-space.sql
-%%MYSQL%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mysql/mysql_objects-speed.sql
-%%MYSQL%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mysql/purge-4.1.sql
-%%MYSQL%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mysql/purge.sql
-%%MYSQL%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mysql/virtual_user_aliases.sql
-%%MYSQL%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mysql/virtual_users.sql
-%%MYSQL%%%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mysql
-%%PGSQL%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgsql/pgsql_objects.sql
-%%PGSQL%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgsql/purge.sql
-%%PGSQL%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgsql/purge-pe.sql
-%%PGSQL%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgsql/virtual_users.sql
-%%PGSQL%%%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pgsql
-%%SQLITE%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sqlite/purge-2.sql
-%%SQLITE%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sqlite/purge-3.sql
-%%SQLITE%%%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sqlite
-@dirrmtry %%PORTEXAMPLES%%%%EXAMPLESDIR%%
+%%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects-4.1.sql
+%%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects-space.sql
+%%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects-speed.sql
+%%MYSQL%%%%EXAMPLESDIR%%/mysql/purge-4.1.sql
+%%MYSQL%%%%EXAMPLESDIR%%/mysql/purge.sql
+%%MYSQL%%%%EXAMPLESDIR%%/mysql/virtual_user_aliases.sql
+%%MYSQL%%%%EXAMPLESDIR%%/mysql/virtual_users.sql
+%%MYSQL%%@dirrm %%EXAMPLESDIR%%/mysql
+%%PGSQL%%%%EXAMPLESDIR%%/pgsql/pgsql_objects.sql
+%%PGSQL%%%%EXAMPLESDIR%%/pgsql/purge.sql
+%%PGSQL%%%%EXAMPLESDIR%%/pgsql/purge-pe.sql
+%%PGSQL%%%%EXAMPLESDIR%%/pgsql/virtual_users.sql
+%%PGSQL%%@dirrm %%EXAMPLESDIR%%/pgsql
+%%SQLITE%%%%EXAMPLESDIR%%/sqlite/purge-2.sql
+%%SQLITE%%%%EXAMPLESDIR%%/sqlite/purge-3.sql
+%%SQLITE%%@dirrm %%EXAMPLESDIR%%/sqlite
+@dirrmtry %%EXAMPLESDIR%%
 %%WebUI%%%%WWWDIR%%/admins.sample
 %%WebUI%%%%WWWDIR%%/admin.cgi
 %%WebUI%%%%WWWDIR%%/admingraph.cgi
@@ -209,3 +228,4 @@ firstspam.txt.sample
 quarantinefull.txt.sample
 @cwd /
 @dirrm %%DSPAM_HOME%%
+@exec chown %%DSPAM_HOME_OWNER%%:%%DSPAM_HOME_GROUP%% %%DSPAM_HOME%%

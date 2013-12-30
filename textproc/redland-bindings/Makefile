@@ -9,72 +9,34 @@ MASTER_SITES=	http://download.librdf.org/source/
 MAINTAINER?=	kde@FreeBSD.org
 COMMENT?=	Language bindings for the Redland package
 
-LIB_DEPENDS=	rdf:${PORTSDIR}/textproc/redland
+# Even though GPLv3 is not explicitly mentioned in the port's LICENSE.html, one
+# of its licenses is "GPLv2 or newer", which includes GPLv3.
+LICENSE=	AL2 GPLv2 GPLv3 LGPL21
+LICENSE_COMB=	dual
+
+LIB_DEPENDS=	librdf.so:${PORTSDIR}/textproc/redland
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 
 OPTIONS_DEFINE=	PERL PHP PYTHON RUBY
 OPTIONS_DEFAULT=PYTHON
+OPTIONS_SUB=	yes
 
-USES=		pkgconfig
+PERL_CONFIGURE_WITH=	perl
+PERL_USES=		perl5
+PHP_CONFIGURE_WITH=	php
+PHP_USE=		PHP=yes PHP_BUILD=yes
+PYTHON_CONFIGURE_WITH=	python
+PYTHON_USE=		PYTHON=2.5+
+RUBY_CONFIGURE_WITH=	ruby
+RUBY_USE=		RUBY=yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPERL}
-USES+=		perl5
-CONFIGURE_ARGS+=--with-perl
-PLIST_SUB+=	WITH_PERL=""
-MANPREFIX=	${LOCALBASE}/lib/perl5/${PERL_VER}
-MAN3=		RDF::Redland.3 \
-		RDF::Redland::BlankNode.3 \
-		RDF::Redland::Iterator.3 \
-		RDF::Redland::LiteralNode.3 \
-		RDF::Redland::Model.3 \
-		RDF::Redland::Node.3 \
-		RDF::Redland::Parser.3 \
-		RDF::Redland::Query.3 \
-		RDF::Redland::QueryResults.3 \
-		RDF::Redland::RSS.3 \
-		RDF::Redland::Serializer.3 \
-		RDF::Redland::Statement.3 \
-		RDF::Redland::Storage.3 \
-		RDF::Redland::Stream.3 \
-		RDF::Redland::URI.3 \
-		RDF::Redland::URINode.3 \
-		RDF::Redland::XMLLiteralNode.3
-.else
-PLIST_SUB+=	WITH_PERL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPHP}
-USE_PHP=	yes
-USE_PHP_BUILD=	yes
-CONFIGURE_ARGS+=--with-php
-PLIST_SUB+=	WITH_PHP=""
-.else
-PLIST_SUB+=	WITH_PHP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	2.5+
-CONFIGURE_ARGS+=--with-python
-PLIST_SUB+=	WITH_PYTHON=""
-.else
-PLIST_SUB+=	WITH_PYTHON="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MRUBY}
-USE_RUBY=	yes
-CONFIGURE_ARGS+=--with-ruby
-PLIST_SUB+=	WITH_RUBY=""
-.else
-PLIST_SUB+=	WITH_RUBY="@comment "
-.endif
 
 post-install:
 .if ${PORT_OPTIONS:MPERL}
-	-${RM} -f ${PREFIX}/lib/perl5/${PERL_VER}/mach/perllocal.pod
+	${RM} ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/mach/perllocal.pod
 .endif
 
 .include <bsd.port.mk>

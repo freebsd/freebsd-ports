@@ -19,32 +19,21 @@ name=knot
 rcvar=knot_enable
 
 extra_commands="reload"
-reload_cmd="${name}_reload"
-status_cmd="${name}_status"
-stop_cmd="${name}_stop"
+reload_cmd="${name}_x reload"
+status_cmd="${name}_x status"
+stop_cmd="  ${name}_x stop"
 
 load_rc_config ${name}
 
 : ${knot_enable:="NO"}
 : ${knot_config="%%PREFIX%%/etc/knot/knot.conf"}
 
-command=%%PREFIX%%/sbin/${name}c
-procname=%%PREFIX%%/sbin/${name}d
-pidfile=/var/run/${name}.pid
-
-command_args="-c ${knot_config} -w start"
+command=%%PREFIX%%/sbin/${name}d
+command_args="-c ${knot_config} -d"
 required_files=${knot_config}
 
-knot_reload() {
-	echo "Reloading ${name}."
-	${command} -c ${knot_config} reload
-	}
-knot_status() {
-	${command} -c ${knot_config} status
-	}
-knot_stop() {
-	echo "Stopping ${name}."
-	${command} -c ${knot_config} stop
+knot_x() {
+	%%PREFIX%%/sbin/${name}c -c ${knot_config} "$1"
 	}
 
 run_rc_command "$1"

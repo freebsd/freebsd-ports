@@ -338,6 +338,7 @@
     SUBDIR += jrefentry
     SUBDIR += jshon
     SUBDIR += kdiff3
+    SUBDIR += kibana
     SUBDIR += kmfl-european-latin
     SUBDIR += kmfl-khmer
     SUBDIR += kmfl-sil-ezra
@@ -1003,9 +1004,7 @@
     SUBDIR += p5-XML-SAX-Writer
     SUBDIR += p5-XML-SAXDriver-CSV
     SUBDIR += p5-XML-SAXDriver-Excel
-    SUBDIR += p5-XML-SAXDriver-Sablotron
     SUBDIR += p5-XML-STX
-    SUBDIR += p5-XML-Sablotron
     SUBDIR += p5-XML-Schematron
     SUBDIR += p5-XML-SemanticDiff
     SUBDIR += p5-XML-Simple

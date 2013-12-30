@@ -36,22 +36,15 @@ ICONV_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
 ICONV_CONFIGURE_OFF=	--with-libiconv-prefix=no
 VPX_LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx
 VPX_CONFIGURE_OFF=	--without-vpx
+XPM_USE=	xorg=xpm,x11
+XPM_CONFIGURE_ON=	--with-x
+XPM_CONFIGURE_OFF=	--with-xpm=no
 
 .include <bsd.port.options.mk>
 
 PKGCONFIGDIR?=	${LOCALBASE}/libdata/pkgconfig
 # force gdlib-config --ldflags
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-# honor global WITHOUT_X11
-.if !defined(WITHOUT_X11)
-.if ${PORT_OPTIONS:MXPM}
-USE_XORG=	xpm x11
-GNU_CONFIGURE_ARGS+=	--with-x
-.else
-GNU_CONFIGURE_ARGS+=	--with-xpm=no
-.endif
-.endif
 
 # The GD_FONTS environment variable can be set to specify the gzipped
 # tar-ball containing the fonts in bdf format and the bdf file names.

@@ -3,6 +3,7 @@
 
 PORTNAME=	ipplan
 PORTVERSION=	4.92b
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/iptrack/${PORTNAME}/Release%204.92
 
@@ -17,54 +18,49 @@ USE_PHP=	gettext pcre xml zlib
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-IPPLANDIR?=	share/${PORTNAME}
 CONFIG=		config.php
 SUB_FILES=	pkg-message
-PLIST_SUB=	IPPLANDIR=${IPPLANDIR}
-SUB_LIST+=	IPPLANDIR=${IPPLANDIR}
+REINPLACE_ARGS=	-i ''
+USES=	shebangfix
+SHEBANG_FILES=	${WRKSRC}/contrib/process-exports.pl ${WRKSRC}/contrib/ipplan-poller.php
 
-.if !defined(WITHOUT_MYSQL)
+OPTIONS_DEFINE=	MYSQL PGSQL SNMP
+OPTIONS_DEFAULT=	MYSQL
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MMYSQL}
 USE_PHP+=	mysql
 .endif
 
-.if defined(WITH_PGSQL)
+.if ${PORT_OPTIONS:MPGSQL}
 USE_PHP+=	pgsql
 .endif
 
-.if defined(WITH_SNMP)
+.if ${PORT_OPTIONS:MSNMP}
 USE_PHP+=	snmp
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|/usr/bin/perl|${PERL}|" \
-		-e "s|/usr/bin/xsltproc|${LOCALBASE}/bin/xsltproc|" \
+	@${REINPLACE_CMD} -e "s|/usr/bin/xsltproc|${LOCALBASE}/bin/xsltproc|" \
 		${WRKSRC}/contrib/process-exports.pl
-	@${REINPLACE_CMD} -e "s|/usr/local/bin/php|${LOCALBASE}/bin/php|" \
-		${WRKSRC}/contrib/ipplan-poller.php
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|" \
-		${WRKSRC}/config.php
-	@${FIND} ${WRKSRC} -name '*.orig' -delete -o -name '*.bak' -delete
-
-pre-install:
+		${WRKSRC}/${CONFIG}
 	@${MV} ${WRKSRC}/${CONFIG} ${WRKSRC}/${CONFIG}.sample
+	@${RM} ${WRKSRC}/${CONFIG}.orig
 
 do-install:
-	@${MKDIR} ${PREFIX}/${IPPLANDIR}
-	@cd ${WRKSRC} && ${FIND} * | \
-	${CPIO} -dlmp -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${IPPLANDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
 post-install:
-.if !exists(${PREFIX}/${IPPLANDIR}/${CONFIG})
-	@${INSTALL_DATA} ${WRKSRC}/${CONFIG}.sample \
-	${PREFIX}/${IPPLANDIR}/${CONFIG}
-.endif
-	@${MKDIR} -m 700 /var/spool/ipplan/uploads \
-		/var/spool/ipplan/exportdns
-	@${CHOWN} -R www:www /var/spool/ipplan
-.if defined(WITH_PGSQL)
+	# make /var dirs
+	${MKDIR} ${STAGEDIR}/var/spool/ipplan/dhcpexport
+	${MKDIR} ${STAGEDIR}/var/spool/ipplan/exportdns
+	${MKDIR} ${STAGEDIR}/var/spool/ipplan/uploads
+.if ${PORT_OPTIONS:MPGSQL}
 	@${REINPLACE_CMD} -e 's|INSTALL|INSTALL-POSTGRESQL|g' ${PKGMESSAGE}
 .endif
 	@${CAT} ${PKGMESSAGE}

@@ -1,6 +1,6 @@
---- sample-config/template-object/localhost.cfg.in.orig	Sun Jun 10 02:13:05 2007
-+++ sample-config/template-object/localhost.cfg.in	Fri Jul 20 13:46:46 2007
-@@ -5,7 +5,7 @@
+--- sample-config/template-object/localhost.cfg.in.orig	2013-12-05 12:51:35.000000000 +0100
++++ sample-config/template-object/localhost.cfg.in	2013-12-06 17:20:49.754148157 +0100
+@@ -3,7 +3,7 @@
  #
  # NOTE: This config file is intended to serve as an *extremely* simple 
  #       example of how you can create configuration entries to monitor
@@ -9,7 +9,7 @@
  #
  ###############################################################################
  
-@@ -23,9 +23,9 @@
+@@ -21,9 +21,9 @@
  # Define a host for the local machine
  
  define host{
@@ -21,7 +21,7 @@
          host_name               localhost
          alias                   localhost
          address                 127.0.0.1
-@@ -41,12 +41,12 @@
+@@ -39,12 +39,12 @@ define host{
  ###############################################################################
  ###############################################################################
  

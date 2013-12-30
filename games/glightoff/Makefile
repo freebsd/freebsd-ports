@@ -1,19 +1,21 @@
-# Created by: nemysis@gmx.ch
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
 
 PORTNAME=	glightoff
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Simple (but not so easy to solve!) puzzle game
 
+BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+
 LICENSE=	GPLv2
 
+USES=		gmake iconv pkgconfig
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
 USE_GNOME=	glib20 gtk20
 USE_XORG=	x11
 
@@ -22,27 +24,20 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
 
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
+NLS_USES=	gettext
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
-
 post-configure:
-.if !${PORT_OPTIONS:MNLS}
+.if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} 's|src po|src|' ${WRKSRC}/Makefile
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

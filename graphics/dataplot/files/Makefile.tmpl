@@ -1,6 +1,7 @@
-CFLAGS	     += -I%%LOCALBASE%%/include
+CFLAGS	      = %%CFLAGS%% -I/usr/local/include
+FFLAGS	      = %%FFLAGS%%
 
-DEST	      = ${PREFIX}/bin
+DEST	      = ${DESTDIR}${PREFIX}/bin
 
 EXTHDRS	      = %%LOCALBASE%%/include/X11/X.h \
 		%%LOCALBASE%%/include/X11/Xfuncproto.h \
@@ -17,7 +18,7 @@ INSTALL	      = install
 
 LD	      = $(F77)
 
-LDFLAGS	      = -L%%LOCALBASE%%/lib
+LDFLAGS	      = %%LDFLAGS%% -L%%LOCALBASE%%/lib
 
 LIBS	      = -lgd -lpng -ljpeg -lX11 -lz -lfreetype -lpthread
 
@@ -181,7 +182,7 @@ SYSHDRS	      = /usr/include/machine/_types.h \
 
 all:		$(PROGRAM)
 
-$(PROGRAM):     $(OBJS) $(LIBS)
+$(PROGRAM):     $(OBJS)
 		@echo "Linking $(PROGRAM) ..."
 		@$(LD) $(LDFLAGS) $(OBJS) $(LIBS) -o $(PROGRAM)
 		@echo "done"

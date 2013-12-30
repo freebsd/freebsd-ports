@@ -16,12 +16,14 @@ COMMENT=	Simple Tetris-like game
 
 LICENSE=	GPLv2
 
+USES=		gmake
 USE_SDL=	sdl image mixer
-USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/game
 
-PORTDOCS=	README.TXT
+PLIST_FILES=	bin/game
+PORTDOCS=	*
+PORTDATA=	*
 
 DESKTOP_ENTRIES="game" \
 		"A simple tetris-like game" \
@@ -30,25 +32,15 @@ DESKTOP_ENTRIES="game" \
 		"Game;BlocksGame;" \
 		false
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's,wav/|mp3/|img/,${DATADIR}/&,g' ${WRKSRC}/main.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/game ${PREFIX}/bin
-.for dir in wav mp3 img
-	${MKDIR} ${DATADIR}/${dir}
-	${INSTALL_DATA} ${WRKSRC}/${dir}/* ${DATADIR}/${dir}/
-.endfor
-
-.if ${PORT_OPTIONS:MDOCS}
-post-install:
-	${MKDIR} ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/game ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "wav mp3 img" ${STAGEDIR}${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.TXT ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

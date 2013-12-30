@@ -12,10 +12,9 @@ COMMENT=	A library of Unicode annotation data
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=	libtool
 ALL_TARGET=	both
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -63,7 +63,7 @@ LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT} && ${PORT_OPTIONS:MSOUND}
-USE_OPENAL+=	yes
+USES+=		openal
 LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 .endif
 

@@ -23,7 +23,8 @@ GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig
 CONFIGURE_ARGS=	--enable-emf=yes
 PKGNAMESUFFIX=	-devel
-MAN1=	chemtool.1 cht.1
+MAN1=		chemtool.1 cht.1
+MAKE_ARGS+=	MAKE=${GMAKE}
 MAKE_JOBS_UNSAFE=	yes
 #to include emf
 CFLAGS+=	-I${LOCALBASE}/include/libEMF

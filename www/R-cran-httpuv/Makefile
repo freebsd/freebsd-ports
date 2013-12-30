@@ -17,10 +17,7 @@ LICENSE_PERMS_NODE=	auto-accept
 
 RUN_DEPENDS=	R-cran-Rcpp>=0.10.2:${PORTSDIR}/devel/R-cran-Rcpp
 
-USE_GMAKE=	yes
-USE_R_MOD=	yes
-R_MOD_AUTOPLIST=	yes
-
-MAKE_ENV=	MAKE=${GMAKE}
+MAKE_ENV=	MAKE=${MAKE_CMD}
+USES=		cran:auto-plist gmake
 
 .include <bsd.port.mk>

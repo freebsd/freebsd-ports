@@ -17,21 +17,20 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libIrrlicht.so:${PORTSDIR}/x11-toolkits/irrlicht
 
 USE_LUA=	5.1+
 USE_SCONS=	yes
-USE_DOS2UNIX=	src/engine/save.h
+USES=		scons dos2unix
+DOS2UNIX_FILES=	src/engine/save.h src/objects/orb.cpp src/objects/player.cpp
 
 CPPPATH=	${LOCALBASE}/include ${LUA_INCDIR}
 LIBPATH=	${LOCALBASE}/lib ${LUA_LIBDIR}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PORTDOCS=	readme.txt changelog.txt
-PORTDATA=	*
-
 PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	*
+PORTDATA=	*
 
 DATA_DIRS=	art campaigns collision fonts levels meshes scenes scripts textures
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -44,14 +43,9 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/irrlamb ${PREFIX}/bin
-.if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "${DATA_DIRS}" ${DATADIR}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/irrlamb ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "${DATA_DIRS}" ${STAGEDIR}${DATADIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} readme.txt changelog.txt ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

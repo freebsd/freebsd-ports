@@ -1,6 +1,6 @@
---- utils/Makefile.in.orig	2013-02-10 17:11:45.000000000 +0000
-+++ utils/Makefile.in	2013-02-10 17:13:35.000000000 +0000
-@@ -84,38 +84,38 @@
+--- utils/Makefile.in.orig	2013-12-02 19:00:03.000000000 +0100
++++ utils/Makefile.in	2013-12-02 19:01:25.000000000 +0100
+@@ -111,7 +111,7 @@
  am_pdfdetach_OBJECTS = pdfdetach.$(OBJEXT) $(am__objects_1)
  pdfdetach_OBJECTS = $(am_pdfdetach_OBJECTS)
  pdfdetach_LDADD = $(LDADD)
@@ -9,6 +9,7 @@
  AM_V_lt = $(am__v_lt_@AM_V@)
  am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
  am__v_lt_0 = --silent
+@@ -119,31 +119,31 @@
  am_pdffonts_OBJECTS = pdffonts.$(OBJEXT) $(am__objects_1)
  pdffonts_OBJECTS = $(am_pdffonts_OBJECTS)
  pdffonts_LDADD = $(LDADD)
@@ -30,23 +31,23 @@
  pdfseparate_OBJECTS = $(am_pdfseparate_OBJECTS)
  pdfseparate_LDADD = $(LDADD)
 -pdfseparate_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
-+pdfseparate_DEPENDENCIES = 
++pdfseparate_DEPENDENCIES =
  am__pdftocairo_SOURCES_DIST = pdftocairo.cc parseargs.cc parseargs.h
  @BUILD_CAIRO_OUTPUT_TRUE@am_pdftocairo_OBJECTS = pdftocairo.$(OBJEXT) \
  @BUILD_CAIRO_OUTPUT_TRUE@	$(am__objects_1)
  pdftocairo_OBJECTS = $(am_pdftocairo_OBJECTS)
 -am__DEPENDENCIES_1 = $(top_builddir)/poppler/libpoppler.la
-+am__DEPENDENCIES_1 = 
++am__DEPENDENCIES_1 =
  am__DEPENDENCIES_2 =
  @BUILD_CAIRO_OUTPUT_TRUE@@USE_CMS_TRUE@am__DEPENDENCIES_3 =  \
  @BUILD_CAIRO_OUTPUT_TRUE@@USE_CMS_TRUE@	$(am__DEPENDENCIES_2)
  am__DEPENDENCIES_4 = $(am__DEPENDENCIES_3)
 -@BUILD_CAIRO_OUTPUT_TRUE@pdftocairo_DEPENDENCIES = $(top_builddir)/poppler/libpoppler-cairo.la \
-+@BUILD_CAIRO_OUTPUT_TRUE@pdftocairo_DEPENDENCIES =  \
++@BUILD_CAIRO_OUTPUT_TRUE@pdftocairo_DEPENDENCIES = \
  @BUILD_CAIRO_OUTPUT_TRUE@	$(am__DEPENDENCIES_1) \
- @BUILD_CAIRO_OUTPUT_TRUE@	$(am__DEPENDENCIES_4)
- am__objects_2 = pdftohtml-parseargs.$(OBJEXT)
-@@ -124,7 +124,7 @@
+ @BUILD_CAIRO_OUTPUT_TRUE@	$(am__DEPENDENCIES_4) \
+ @BUILD_CAIRO_OUTPUT_TRUE@	$(am__DEPENDENCIES_2)
+@@ -153,7 +153,7 @@
  	pdftohtml-HtmlOutputDev.$(OBJEXT) $(am__objects_2)
  pdftohtml_OBJECTS = $(am_pdftohtml_OBJECTS)
  pdftohtml_LDADD = $(LDADD)
@@ -55,32 +56,32 @@
  pdftohtml_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(pdftohtml_CXXFLAGS) \
  	$(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
-@@ -133,20 +133,20 @@
+@@ -162,20 +162,20 @@
  @BUILD_SPLASH_OUTPUT_TRUE@	$(am__objects_1)
  pdftoppm_OBJECTS = $(am_pdftoppm_OBJECTS)
  pdftoppm_LDADD = $(LDADD)
 -pdftoppm_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
-+pdftoppm_DEPENDENCIES = 
++pdftoppm_DEPENDENCIES =
  am_pdftops_OBJECTS = pdftops.$(OBJEXT) $(am__objects_1)
  pdftops_OBJECTS = $(am_pdftops_OBJECTS)
  pdftops_LDADD = $(LDADD)
 -pdftops_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
-+pdftops_DEPENDENCIES = 
++pdftops_DEPENDENCIES =
  am_pdftotext_OBJECTS = pdftotext.$(OBJEXT) printencodings.$(OBJEXT) \
  	$(am__objects_1)
  pdftotext_OBJECTS = $(am_pdftotext_OBJECTS)
  pdftotext_LDADD = $(LDADD)
 -pdftotext_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
-+pdftotext_DEPENDENCIES = 
++pdftotext_DEPENDENCIES =
  am_pdfunite_OBJECTS = pdfunite.$(OBJEXT) $(am__objects_1)
  pdfunite_OBJECTS = $(am_pdfunite_OBJECTS)
  pdfunite_LDADD = $(LDADD)
 -pdfunite_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la
-+pdfunite_DEPENDENCIES = 
- DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir) -I$(top_builddir)/poppler
- depcomp = $(SHELL) $(top_srcdir)/depcomp
- am__depfiles_maybe = depfiles
-@@ -451,7 +451,7 @@
++pdfunite_DEPENDENCIES =
+ AM_V_P = $(am__v_P_@AM_V@)
+ am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
+ am__v_P_0 = false
+@@ -516,7 +516,7 @@
  	$(PDFTOCAIRO_CFLAGS)
  
  LDADD = \
@@ -89,12 +90,12 @@
  	$(UTILS_LIBS)
  
  @BUILD_CAIRO_OUTPUT_TRUE@pdftocairo_SOURCES = \
-@@ -459,7 +459,7 @@
+@@ -524,7 +524,7 @@
  @BUILD_CAIRO_OUTPUT_TRUE@	$(common)
  
  @BUILD_CAIRO_OUTPUT_TRUE@pdftocairo_LDADD = \
 -@BUILD_CAIRO_OUTPUT_TRUE@	$(top_builddir)/poppler/libpoppler-cairo.la \
 +@BUILD_CAIRO_OUTPUT_TRUE@	-lpoppler-glib \
- @BUILD_CAIRO_OUTPUT_TRUE@	$(LDADD) $(PDFTOCAIRO_LIBS)
- 
- @BUILD_CAIRO_OUTPUT_TRUE@pdftocairo_binary = pdftocairo
+ @BUILD_CAIRO_OUTPUT_TRUE@	$(LDADD)				\
+ @BUILD_CAIRO_OUTPUT_TRUE@	$(PDFTOCAIRO_LIBS)			\
+ @BUILD_CAIRO_OUTPUT_TRUE@	$(PTHREAD_LIBS)

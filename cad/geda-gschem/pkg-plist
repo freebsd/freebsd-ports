@@ -1,5 +1,6 @@
 bin/gschem
 bin/gschemdoc
+man/man1/gschem.1.gz
 share/applications/geda-gschem.desktop
 %%DATADIR%%/bitmap/gschem-alignment_bottomcenter.png
 %%DATADIR%%/bitmap/gschem-alignment_bottomleft.png

@@ -8,7 +8,7 @@ CATEGORIES=	x11-toolkits haskell
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Binding to the GTK+ OpenGL Extension
 
-LIB_DEPENDS=	gtkglext:${PORTSDIR}/x11-toolkits/gtkglext
+LIB_DEPENDS=	libgtkglext-x11-1.0.so:${PORTSDIR}/x11-toolkits/gtkglext
 
 LICENSE=	LGPL21
 

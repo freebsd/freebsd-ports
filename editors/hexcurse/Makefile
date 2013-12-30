@@ -12,8 +12,6 @@ COMMENT=	A versatile ncurses-based hex editor
 
 GNU_CONFIGURE=	yes
 
-MAN1=		hexcurse.1
-PLIST_FILES=	bin/hexcurse
+PLIST_FILES=	bin/hexcurse man/man1/hexcurse.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

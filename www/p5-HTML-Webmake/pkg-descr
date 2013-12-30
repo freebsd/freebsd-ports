@@ -1,7 +1,0 @@
-WebMake is a simple, Perl based content management system for websites.
-It is based around a templating system for HTML documents, with lots of
-built-in smarts about what a ``typical'' informational website needs
-in the way of functionality, metadata, sitemapping, navigational aids,
-and (of course) embedded perl code.
-
-WWW: http://webmake.taint.org/

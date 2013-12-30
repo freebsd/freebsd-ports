@@ -12,8 +12,12 @@ EXTRACT_SUFX=	.jar
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Java Graph Diagram Component
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+OPTIONS_DEFINE=	COMPILE DOCS
+
+COMPILE_DESC=	Compile from source instead of using prebuilt binaries
 
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
@@ -21,53 +25,43 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_RUN=	yes
 
-.if !defined(WITHOUT_COMPILE) || !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCOMPILE} || ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	${ANT_CMD}:${PORTSDIR}/devel/apache-ant
 ANT_CMD?=	${LOCALBASE}/bin/ant
 ANT=		${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT_CMD}
-.endif
-
-.if !defined(WITHOUT_COMPILE)
+.  if ${PORT_OPTIONS:MCOMPILE}
 JAVA_BUILD=	yes
 ANT_TARGETS=	jar
-.endif
-
-.if !defined(NOPORTDOCS)
+.  endif
+.  if ${PORT_OPTIONS:MDOCS}
 ANT_TARGETS+=	doc
 PORTDOCS=	*
+.  endif
 .endif
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
-NO_STAGE=	yes
-pre-fetch:
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You may use the following build options:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "    WITHOUT_COMPILE=yes    Install the pre-compiled .jar file"
-	@${ECHO_MSG} ""
-
 do-build:
-.if !defined(WITHOUT_COMPILE) || !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MCOMPILE} || ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC} && ${ANT} ${ANT_TARGETS}
 	@${MV} -f ${WRKSRC}/build/lib/${PORTNAME}.jar ${WRKSRC}/lib
-	@${RM} -fr ${WRKSRC}/doc && ${MV} -f ${WRKSRC}/build/doc/api ${WRKSRC}/doc
+	@${RM} -fr ${WRKSRC}/doc && \
+		${MV} -f ${WRKSRC}/build/doc/api ${WRKSRC}/doc
 .endif
 
 do-install: do-install-jar do-install-javadoc
 
 do-install-jar:
-	@${ECHO_CMD} -n  ">> Installing .jar file..."
-	@${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar
-	@${ECHO_CMD} " [DONE]"
+	${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}.jar \
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 
 do-install-javadoc:
-.if !defined(NOPORTDOCS)
-	@${ECHO_CMD} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/doc && ${FIND} . \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-	@${ECHO_CMD} " [DONE]"
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${FIND} . \
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

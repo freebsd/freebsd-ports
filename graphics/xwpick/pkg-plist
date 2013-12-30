@@ -1,4 +1,5 @@
 bin/xwpick
+man/man1/xwpick.1.gz
 %%PORTDOCS%%share/doc/xwpick/CHANGELOG
 %%PORTDOCS%%share/doc/xwpick/CNL_ARTICLE.PS
 %%PORTDOCS%%share/doc/xwpick/README

@@ -1,5 +1,4 @@
 bin/protoc-gen-go
-%%GO_LIBDIR%%/%%GO_PKGNAME%%/proto.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/protoc-gen-go/descriptor.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/protoc-gen-go/generator.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/protoc-gen-go/plugin.a
@@ -14,7 +13,11 @@ bin/protoc-gen-go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/extensions.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/lib.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/message_set.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/pointer_reflect.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/pointer_unsafe.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/properties.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/size2_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/size_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/testdata/Makefile
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/testdata/golden_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/proto/testdata/test.pb.go
@@ -32,3 +35,4 @@ bin/protoc-gen-go
 @dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%
 @dirrmtry %%GO_SRCDIR%%/code.google.com/p
 @dirrmtry %%GO_SRCDIR%%/code.google.com
+@dirrmtry %%GO_SRCDIR%%

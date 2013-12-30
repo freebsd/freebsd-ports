@@ -9,8 +9,9 @@ MASTER_SITES=	http://entrproject.org/code/ \
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Runs arbitrary commands when files change
 
-LICENSE=	ISCL BSD2CLAUSE BSD3CLAUSE
-LICENSE_COMB=	multi
+# This software has code under BSD[23]CLAUSE licenses.
+# All the code used in FreeBSD is under ISCL license.
+LICENSE=	ISCL
 
 WRKSRC=		${WRKDIR}/eradman-entr-c0009123230b
 

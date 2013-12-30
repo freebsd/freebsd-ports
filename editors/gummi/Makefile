@@ -3,6 +3,7 @@
 
 PORTNAME=	gummi
 PORTVERSION=	0.6.5
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	http://dev.midnightcoding.org/attachments/download/301/
 
@@ -12,7 +13,7 @@ COMMENT=	Simple LaTex editor for GTK users
 LICENSE=	MIT
 
 BUILD_DEPENDS+=	msgfmt:${PORTSDIR}/devel/gettext
-LIB_DEPENDS+=	poppler-glib:${PORTSDIR}/graphics/poppler-glib \
+LIB_DEPENDS+=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib \
 		gtkspell:${PORTSDIR}/textproc/gtkspell
 
 USES=		iconv gmake pkgconfig

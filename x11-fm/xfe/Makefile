@@ -27,6 +27,7 @@ post-patch:
 		${WRKSRC}/src/XFileExplorer.cpp \
 		${WRKSRC}/src/help.h \
 		${WRKSRC}/src/xfedefs.h
+	@${REINPLACE_CMD} -e 's|freetype/||g' ${WRKSRC}/configure
 
 .include <bsd.port.options.mk>
 

@@ -1,6 +1,7 @@
 bin/cwebp
 bin/dwebp
 bin/gif2webp
+%%X11%%bin/vwebp
 bin/webpmux
 include/webp/decode.h
 include/webp/demux.h

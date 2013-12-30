@@ -1,0 +1,12 @@
+bin/sdl_jewels
+share/pixmaps/sdl_jewels.png
+%%DATADIR%%/data/alert.raw
+%%DATADIR%%/data/bigdrop.raw
+%%DATADIR%%/data/bigfont.ppm
+%%DATADIR%%/data/drop.raw
+%%DATADIR%%/data/gameover.raw
+%%DATADIR%%/data/illegal.raw
+%%DATADIR%%/data/row.raw
+%%DATADIR%%/data/swap.raw
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%

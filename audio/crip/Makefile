@@ -10,35 +10,26 @@ MASTER_SITES=	http://bach.dynet.com/crip/src/
 MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Terminal-based ripper/encoder/tagger
 
+OPTIONS_DEFINE=	SOX DOCS
+SOX_DESC=	SoX audio support
+
 RUN_DEPENDS=	p5-CDDB_get>=0:${PORTSDIR}/audio/p5-CDDB_get \
 		cdparanoia:${PORTSDIR}/audio/cdparanoia \
 		oggenc:${PORTSDIR}/audio/vorbis-tools \
 		vorbisgain:${PORTSDIR}/audio/vorbisgain
 
-.if defined(WITH_SOX)
-RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
-.endif
-
-.if !defined(NOPORTDOCS)
+SOX_RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 PORTDOCS=	Changelog README criprc_example
-.endif
 
+USES=		shebangfix perl5
+SHEBANG_FILES=	crip editcomment editfilenames
 NO_BUILD=	yes
-USES=		perl5
-NO_STAGE=	yes
-
-pre-fetch:
-.if !defined (WITH_SOX)
-	@${ECHO_MSG} "Define WITH_SOX to enable normalization with sox."
-.endif
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/crip ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/editcomment ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/editfilenames ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/crip ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/editcomment ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/editfilenames ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

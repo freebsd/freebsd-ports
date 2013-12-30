@@ -30,6 +30,8 @@ lib/emerald/engines/libzootreeves.so
 lib/emerald/engines/libzootreeves.la
 lib/emerald/engines/libzootreeves.a
 libdata/pkgconfig/emeraldengine.pc
+man/man1/emerald-theme-manager.1.gz
+man/man1/emerald.1.gz
 share/applications/emerald-theme-manager.desktop
 share/icons/hicolor/48x48/mimetypes/application-x-emerald-theme.png
 share/mime/packages/emerald.xml

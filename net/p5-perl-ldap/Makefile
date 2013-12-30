@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	perl-ldap
-PORTVERSION=	0.5700
+PORTVERSION=	0.5800
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MARSCHAP
@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Client interface to LDAP (includes Net::LDAP)
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Authen-SASL>=2.00:${PORTSDIR}/security/p5-Authen-SASL \
 		p5-Convert-ASN1>=0.20:${PORTSDIR}/converters/p5-Convert-ASN1 \

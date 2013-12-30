@@ -11,22 +11,33 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Passive L7 flow fingerprinting tool
 
-WRKSRC=		${WRKDIR}/fl0p/
+LICENSE=	LGPL21
 
-NO_STAGE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+PORTDOCS=	ChangeLog CREDITS README TODO
+PLIST_FILES=	bin/fl0p %%DATADIR%%/fl0p.fp
+PLIST_DIRS=	%%DATADIR%%
+
 post-patch:
-	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/config.h
+	@${REINPLACE_CMD} -e \
+		's|"/etc/fl0p"|"${DATADIR}"|' ${WRKSRC}/config.h
+	@${REINPLACE_CMD} -e \
+		's|^GMAKE_OK|#GMAKE_OK|' ${WRKSRC}/Build
+	@${REINPLACE_CMD} -e \
+		'/^CC/s|\([[:blank:]]\)=|\1?=| ; \
+		 /^CFLAGS/s|\([[:blank:]]\)=|\1+=| ; \
+		 s|-g -ggdb|| ; \
+		 s|-I.*|$$(CPPFLAGS)| ; \
+		 /^all:/s|strip||' ${WRKSRC}/mk/Linux
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fl0p ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/fl0p.fp ${DATADIR}/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/README ${DOCSDIR}/
-	${INSTALL_MAN} ${WRKSRC}/doc/ChangeLog ${DOCSDIR}/
-	${INSTALL_MAN} ${WRKSRC}/doc/TODO ${DOCSDIR}/
-	${INSTALL_MAN} ${WRKSRC}/doc/CREDITS ${DOCSDIR}/
-.endif
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} fl0p ${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} fl0p.fp ${STAGEDIR}${DATADIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ${PORTDOCS}
+	(cd ${WRKSRC}/doc && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
+.endfor
 
 .include <bsd.port.mk>

@@ -67,7 +67,7 @@ sbin/greyprint
 sbin/greyrm
 sbin/mcp
 sbin/noroot
-%%WITH_MSP%%sbin/sendmail
+%%MSP%%sbin/sendmail
 sbin/sm.check.sh
 sbin/sm.setup.sh
 sbin/statit

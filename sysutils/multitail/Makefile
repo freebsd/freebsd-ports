@@ -3,6 +3,7 @@
 
 PORTNAME=	multitail
 PORTVERSION=	5.2.12
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.vanheusden.com/multitail/ \
 		http://fossies.org/unix/privat/
@@ -23,7 +24,7 @@ PORTDOCS=	readme.txt license.txt
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/etc/multitail.conf,${PREFIX}/etc/multitail.conf,' \
+	@${REINPLACE_CMD} -e 's,$$(DESTDIR)/etc/multitail.conf,${PREFIX}/etc/multitail.conf,' \
 		-e 's/CC=gcc/CC?=gcc/' \
 		${WRKSRC}/mt.c ${WRKSRC}/Makefile
 

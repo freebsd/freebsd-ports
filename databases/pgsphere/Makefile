@@ -11,7 +11,7 @@ MASTER_SITES=	http://pgfoundry.org/frs/download.php/2558/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Spherical data types, functions, and operators for PostgreSQL
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 OPTIONS_DEFINE=	DOCS
 
@@ -26,7 +26,6 @@ PLIST_FILES=	lib/postgresql/pg_sphere.so \
 		%%DATADIR%%/contrib/pg_sphere.sql
 PLIST_DIRSTRY=	%%DATADIR%%/contrib
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -37,7 +36,7 @@ PLIST_DIRS+=	%%DOCSDIR%%/contrib
 MAKE_ARGS+=	DOCS=""
 .endif
 
-#regression-test test: build
-#	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} installcheck
+regression-test test: build
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} installcheck
 
 .include <bsd.port.mk>

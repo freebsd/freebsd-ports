@@ -20,8 +20,9 @@ TIFFICC_DESC=	Build color profile applier for TIFF
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GNOME=	gnomehack lthack
+USE_GNOME=	lthack
 USE_LDCONFIG=	yes
+USES=		pathfix
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 

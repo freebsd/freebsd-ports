@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pylib
-PORTVERSION=	1.4.15
+PORTVERSION=	1.4.19
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,23 +14,7 @@ COMMENT=	Agile development and test support library
 LICENSE=	MIT
 
 USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	py
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-PORTDOCS=	CHANGELOG README.txt
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-post-install:
-.if ${PYTHON_REL} >= 320
-.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

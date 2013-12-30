@@ -12,7 +12,6 @@ COMMENT=	Library to work with RAR archives
 
 WRKSRC=		${WRKDIR}/unrar
 
-NO_STAGE=	yes
 USES=		gmake
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}"
 MAKEFILE=	makefile.unix
@@ -20,9 +19,9 @@ ALL_TARGET=	lib
 USE_LDCONFIG=	yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/libunrar.so ${PREFIX}/lib/libunrar.so.4
-	cd ${PREFIX}/lib && ${LN} -sf libunrar.so.4 libunrar.so
-	${MKDIR} ${PREFIX}/include/libunrar4
-	${INSTALL_DATA} ${WRKSRC}/dll.hpp ${PREFIX}/include/libunrar4/dll.hpp
+	${INSTALL_LIB} ${WRKSRC}/libunrar.so ${STAGEDIR}${PREFIX}/lib/libunrar.so.4
+	cd ${STAGEDIR}${PREFIX}/lib && ${LN} -sf libunrar.so.4 libunrar.so
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/libunrar4
+	${INSTALL_DATA} ${WRKSRC}/dll.hpp ${STAGEDIR}${PREFIX}/include/libunrar4/dll.hpp
 
 .include <bsd.port.mk>

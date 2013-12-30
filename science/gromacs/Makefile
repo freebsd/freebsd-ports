@@ -3,6 +3,7 @@
 
 PORTNAME=	gromacs
 PORTVERSION=	4.6.5
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
@@ -24,10 +25,9 @@ GSL_DESC=	Extra analysis using math/gsl
 MPICH_DESC=	MPI support using net/mpich2
 OMPI_DESC=	MPI support using net/openmpi
 
-USES=		cmake perl5 pkgconfig shebangfix
+USES=		cmake fortran perl5 pkgconfig shebangfix
 SHEBANG_FILES=	admin/*.pl scripts/*.pl scripts/*.sh src/gmxlib/selection/*.sh
 bash_CMD=	${SH}
-USE_FORTRAN=	yes
 CMAKE_ARGS=	-DBLAS_LIBRARIES:FILEPATH="${BLAS_LIBS}" \
 		-DLAPACK_LIBRARIES:FILEPATH="${LAPACK_LIBS}"
 USE_LDCONFIG=	yes
@@ -96,5 +96,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "GMXRC.*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|LDLIB/pkgconfig|LDLIB/../libdata/pkgconfig| ; \
 		 s|LDLIB}/pkgconfig|LDLIB}/../libdata/pkgconfig|'
+	@${REINPLACE_CMD} -e '/CMAKE_REQUIRED_LIBRARIES/d' \
+		${WRKSRC}/cmake/gmxTestdlopen.cmake
 
 .include <bsd.port.mk>

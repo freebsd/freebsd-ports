@@ -3,17 +3,30 @@
 
 PORTNAME=	x2x
 PORTVERSION=	1.27
-PORTREVISION=	3
 CATEGORIES=	x11-servers
-MASTER_SITES=	http://cloud.github.com/downloads/dottedmag/x2x/
+MASTER_SITES=	GHC
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to link multiple X servers together
 
+LICENSE=	MIT
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	dottedmag
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
+
 USES=		imake
 USE_XORG=	x11 xext xtst
-MAN1=		x2x.1
-PLIST_FILES=	bin/x2x
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/x2x man/man1/x2x.1.gz
+
+post-extract:
+	@${LN} -sf x2x.1 ${WRKSRC}/x2x.man
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/CC =/s|^|XCOMM| ; \
+		 /CDEBUGFLAGS =/s|^|XCOMM|' ${WRKSRC}/Imakefile
+
 .include <bsd.port.mk>

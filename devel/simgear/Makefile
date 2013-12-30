@@ -21,9 +21,8 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 
 USE_BZIP2=	yes
 USE_XORG=	ice sm x11 xext xi xt xmu
-USE_OPENAL=	al alut
 USE_GL=		gl glu glut
-USES=		cmake
+USES=		cmake openal:al,alut
 CMAKE_ARGS+=	-DJPEG_FACTORY:BOOL=ON
 
 .include <bsd.port.mk>

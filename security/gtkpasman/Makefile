@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gtkpasman
-PORTVERSION=	0.12
+PORTVERSION=	0.12.1
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -18,33 +18,21 @@ CONFIGURE_ARGS+=	--with-gtk2
 USE_XZ=		yes
 
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
-DOCS=		README data/gpasman4.sample
+PORTDOCS=	*
 PLIST_FILES=	bin/gtkpasman share/applications/gtkpasman.desktop
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	README gpasman4.sample
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Werror||g' ${WRKSRC}/src/Makefile.*
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/gtkpasman ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/gtkpasman ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/data/gtkpasman.desktop \
-		${PREFIX}/share/applications
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${CAT} ${PKGMESSAGE}
-.endif
+		${STAGEDIR}${PREFIX}/share/applications
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/data/gpasman4.sample ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

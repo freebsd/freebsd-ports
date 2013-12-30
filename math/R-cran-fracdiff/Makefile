@@ -13,7 +13,6 @@ COMMENT=	Fractionally differenced ARIMA aka ARFIMA(p,d,q) models
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USE_R_MOD=	yes
-R_MOD_AUTOPLIST=	yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>

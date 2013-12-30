@@ -3,28 +3,27 @@
 
 PORTNAME=	kde_poster
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	print kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	printing
-PKGNAMESUFFIX?=	# empty
 DISTNAME=	poster
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE version of the poster utility
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 ALL_TARGET=	poster
 WRKSRC=		${WRKDIR}/${DISTNAME}-20060221
 
 CONFLICTS?=	poster-[0-9]*
 
-MAN1=		poster.1
-PLIST_FILES=	bin/poster
+PLIST_FILES=	bin/poster man/man1/poster.1.gz
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.1 ${PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
 --- xbackdrop/Imakefile.orig	Sat Mar  9 22:41:13 1996
 +++ xbackdrop/Imakefile	Wed Nov  1 08:19:17 2000
-@@ -1,24 +1,28 @@
+@@ -1,26 +1,27 @@
 -XBACKDROP_DIR = /usr/lib/X11/backdrops
 +XCOMM
 +XCOMM FBSD--SF--I'm not sure about this location--backdrops??
@@ -28,12 +28,15 @@
 +ComplexProgramTargetNoMan(xbackdrop)
  
 -install::	xbackdrop                                                  @@\
-+install::	xbackdrop                                            @@\
- 	@if [ -d $(XBACKDROP_DIR) ]; then set +x; \                  @@\
- 	else (set -x; $(MKDIRHIER) $(XBACKDROP_DIR)); fi             @@\
- 	cp backdrops/?* $(XBACKDROP_DIR);                            @@\
+-	@if [ -d $(XBACKDROP_DIR) ]; then set +x; \                  @@\
+-	else (set -x; $(MKDIRHIER) $(XBACKDROP_DIR)); fi             @@\
+-	cp backdrops/?* $(XBACKDROP_DIR);                            @@\
 -	chown root.root $(XBACKDROP_DIR) $(XBACKDROP_DIR)/?*;        @@\
-+	chown root:daemon $(XBACKDROP_DIR) $(XBACKDROP_DIR)/?*;      @@\
- 	chmod 0755 $(XBACKDROP_DIR);                                 @@\
- 	chmod 0644 $(XBACKDROP_DIR)/?*;                              @@\
+-	chmod 0755 $(XBACKDROP_DIR);                                 @@\
+-	chmod 0644 $(XBACKDROP_DIR)/?*;                              @@\
++install::	xbackdrop                                            @@\
++	@if [ -d $(DESTDIR)$(XBACKDROP_DIR) ]; then set +x; \                  @@\
++	else (set -x; $(MKDIRHIER) $(DESTDIR)$(XBACKDROP_DIR)); fi             @@\
++	$(INSTALL) $(INSTALLFLAGS) $(INSTDATFLAGS) backdrops/?* $(DESTDIR)$(XBACKDROP_DIR);                            @@\
+ 
  

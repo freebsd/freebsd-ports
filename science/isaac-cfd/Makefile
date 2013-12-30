@@ -14,28 +14,19 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Integrated Solution Algorithm for Arbitrary Configuration
 
 NO_WRKSUBDIR=	yes
-USE_GMAKE=	yes
 MAKEFILE=	makefile
-MAKE_FLAGS+=	CPPFLAGS=-I.
-USE_FORTRAN=	yes
+MAKE_ARGS=	CPPFLAGS=-I.
+USES=		fortran gmake
 
-PLIST_FILES+=	bin/isaac
+PLIST_FILES=	bin/isaac
 PORTDOCS=	man.4_2.ps.gz
 PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES OPTIMIZED_FFLAGS
 OPTIMIZED_FFLAGS_DESC=	Use extra compiler (fortran) optimizations
 
-DOCS_DISTFILES+=	man.4_2.ps.gz
-EXAMPLES_DISTFILES+=	example_cases${EXTRACT_SUFX}
-
-NO_STAGE=	yes
-pre-configure:
-	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; s+%%FFLAGS%%+${FFLAGS}+;' \
-	${WRKSRC}/makefile
-	${FIND} ${WRKSRC} -name "*.mk" -exec	\
-		${REINPLACE_CMD} -e 's|SRC= $$(HOME)/ISAAC/src|SRC= ${WRKSRC}|; \
-			s|$$(FFLAGS)|${FFLAGS} -I.|' {} \;
+DOCS_DISTFILES=	man.4_2.ps.gz
+EXAMPLES_DISTFILES=	example_cases${EXTRACT_SUFX}
 
 .include <bsd.port.options.mk>
 
@@ -43,16 +34,23 @@ pre-configure:
 FFLAGS+=	-O2 -ffast-math
 .endif
 
+pre-configure:
+	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; s+%%FFLAGS%%+${FFLAGS}+;' \
+	${WRKSRC}/makefile
+	${FIND} ${WRKSRC} -name "*.mk" -exec	\
+		${REINPLACE_CMD} -e 's|SRC= $$(HOME)/ISAAC/src|SRC= ${WRKSRC}|; \
+			s|$$(FFLAGS)|${FFLAGS} -I.|' {} \;
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/isaac ${PREFIX}/bin/isaac
+	${INSTALL_PROGRAM} ${WRKSRC}/isaac ${STAGEDIR}${PREFIX}/bin/isaac
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${PORTDOCS} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/example_cases${EXTRACT_SUFX} \
-		-C ${EXAMPLESDIR}/
+		-C ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

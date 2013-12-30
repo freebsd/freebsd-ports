@@ -1,6 +1,42 @@
 --- Makefile.orig	2004-09-22 09:09:18.000000000 -0500
 +++ Makefile	2011-03-26 13:49:31.000000000 -0500
-@@ -156,8 +156,2 @@
+@@ -47,7 +47,7 @@
+ endif
+ 
+ # GNU C
+-CC = gcc 
++CC ?= gcc 
+ 
+ # Microsoft C
+ # CC = cl
+@@ -62,13 +62,13 @@
+ #CC = tmcc -DMPBPA
+ 
+ # Default CFLAGS
+-CFLAGS := -D${OS} $(CONCORDE_CFLAGS) $(GMP_CFLAGS) -DINIT 
++CFLAGS += -D${OS} $(CONCORDE_CFLAGS) $(GMP_CFLAGS) -DINIT 
+ 
+ # TESTING option for CFLAGS
+ # CFLAGS := -DTESTING $(CFLAGS)
+ 
+ ifeq ($(strip $(CC)), gcc)
+-CFLAGS := -O3 -Wall -DGCC $(CFLAGS)
++CFLAGS := -Wall -DGCC $(CFLAGS)
+ endif
+ ifeq ($(strip $(CC)), pgcc)
+ CFLAGS := -fast $(CFLAGS)
+@@ -115,7 +115,7 @@
+ RELBASE   = GRAPPA
+ RELNAME   = $(RELBASE)-$(VERS_MAJ).$(VERS_MIN)
+ 
+-LIBS 		:= -lm -lc -lpthread 
++LIBS 		:= -lm -pthread 
+ # added this part to the end of above "-l mpi"
+ ifeq ($(OS), SunOS)
+ LIBS		:= -liberty -lsocket -lposix4 -lnsl ${LIBS}
+@@ -154,12 +154,6 @@
+ 	$(RM) -fr $(RELNAME)
+ 	$(LS) -l $(RELNAME).tar.gz
  
 -$(RELNAME)/%.c : %.c
 -	-$(CP) $< $(RELNAME)/.
@@ -9,3 +45,5 @@
 -	-$(CP) $< $(RELNAME)/.
 -
  clean:
+ 	-rm -f *.${OBJ_SUFFIX} *~ ${EXEC} ${EXEC}.${EXE_SUFFIX} ${SYM} \
+ 	       core gmon.out

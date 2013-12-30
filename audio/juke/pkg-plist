@@ -1,2 +1,5 @@
 bin/juke
+@unexec if cmp -s %D/etc/juke.conf %D/etc/juke.conf.sample; then rm -f %D/etc/juke.conf; fi
 etc/juke.conf.sample
+@exec if [ ! -f %B/juke.conf ]; then cp -p %B/%f %B/juke.conf; fi
+man/man1/juke.1.gz

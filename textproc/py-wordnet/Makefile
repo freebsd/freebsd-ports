@@ -18,7 +18,8 @@ COMMENT=	Python Interface to WordNet
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	pywordnet
+PYDISTUTILS_AUTOPLIST=	yes
+
 WRKSRC=		${WRKDIR}/py${PORTNAME}-${PORTVERSION}
 PLIST_SUB=	WNDATA=${WORDNETDATA}
 
@@ -30,7 +31,6 @@ WN_DICTFILES=	adj.exc adv.exc cntlist cntlist.rev data.adj data.adv \
 		index.sense index.verb lexnames noun.exc sentidx.vrb sents.vrb\
 		verb.exc
 
-NO_STAGE=	yes
 post-patch:
 	@${SED} -e 's|/usr/local/wordnet2.0|${PREFIX}/${WORDNETDATA}|g' \
 		-e 's|os.path.join(WNHOME.*))|WNHOME)|g' ${WRKSRC}/wordnet.py \
@@ -38,9 +38,9 @@ post-patch:
 		> ${WRKSRC}/wordnet.py
 
 post-install:
-	${MKDIR} ${PREFIX}/${WORDNETDATA}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${WORDNETDATA}
 .for f in ${WN_DICTFILES}
-	${INSTALL_DATA} ${WN_WRKSRC}/dict/${f} ${PREFIX}/${WORDNETDATA}/
+	${INSTALL_DATA} ${WN_WRKSRC}/dict/${f} ${STAGEDIR}${PREFIX}/${WORDNETDATA}/
 .endfor
 
 .include <bsd.port.mk>

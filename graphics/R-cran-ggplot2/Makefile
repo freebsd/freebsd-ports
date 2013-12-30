@@ -18,7 +18,6 @@ RUN_DEPENDS=	R-cran-plyr>=1.7.1:${PORTSDIR}/devel/R-cran-plyr \
 		R-cran-scales>=0.2.3:${PORTSDIR}/graphics/R-cran-scales \
 		R-cran-proto>=0:${PORTSDIR}/devel/R-cran-proto
 
-USE_R_MOD=	yes
-R_MOD_AUTOPLIST=	yes
+USES=	cran:auto-plist
 
 .include <bsd.port.mk>
