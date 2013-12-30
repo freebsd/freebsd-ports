@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.mahoroba.org/~ume/ipv6/ \
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Dynamic Tunnel Configuration Protocol client
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USES=		uidfix
 USE_RC_SUBR=	dtcpclient

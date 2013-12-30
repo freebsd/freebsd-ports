@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.mahoroba.org/~ume/ipv6/ \
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	Dynamic Tunnel Configuration Protocol daemon and client
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 .if defined(WITH_QPOPAUTH)
 RUN_DEPENDS=	qpopauth:${PORTSDIR}/mail/qpopper
