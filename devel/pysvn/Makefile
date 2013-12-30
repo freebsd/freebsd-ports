@@ -9,7 +9,7 @@ MASTER_SITES=	http://pysvn.barrys-emacs.org/source_kits/
 MAINTAINER=	bra@fsn.hu
 COMMENT=	Python binding for Subversion
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion \
 		neon:${PORTSDIR}/www/neon29

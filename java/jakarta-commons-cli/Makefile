@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Java library for command line arguments and options
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

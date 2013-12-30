@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-common
 		${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j
 RUN_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 USE_ZIP=	yes

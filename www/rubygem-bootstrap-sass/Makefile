@@ -8,7 +8,7 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Twitter's Bootstrap
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-sass>=3.2:${PORTSDIR}/textproc/rubygem-sass
 

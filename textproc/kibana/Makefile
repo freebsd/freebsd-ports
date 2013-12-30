@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.elasticsearch.org/kibana/kibana/
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Browser based analytics and search interface to ElasticSearch
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message

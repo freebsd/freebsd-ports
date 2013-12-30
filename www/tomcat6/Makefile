@@ -11,7 +11,7 @@ DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Open-source Java web server by Apache, 6.x branch
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_JAVA=	yes

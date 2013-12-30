@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Generate Pod from inline wiki style text
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-File-pushd>=0:${PORTSDIR}/devel/p5-File-pushd \

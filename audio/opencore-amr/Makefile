@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 MAINTAINER=	gslin@gslin.org
 COMMENT=	OpenCORE implementation of AMR Narrowband & Wideband speech codec
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 GNU_CONFIGURE=	yes
 USES=		gmake pathfix

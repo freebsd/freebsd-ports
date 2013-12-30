@@ -14,7 +14,7 @@ EXTRACT_ONLY=
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache 2.x module that supports the CASv1 and CASv2 protocols
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 

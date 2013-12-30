@@ -12,7 +12,7 @@ EXTRACT_SUFX=	-bin.tar.gz
 MAINTAINER=	hsn@sendmail.cz
 COMMENT=	Open source distributed database management system
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 JAVA_VERSION=	1.7
 JAVA_VENDOR=	openjdk

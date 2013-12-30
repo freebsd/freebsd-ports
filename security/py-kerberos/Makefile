@@ -10,7 +10,7 @@ PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=		roland@micite.net
 COMMENT=		Kerberos bindings for python
 
-LICENSE=		AL2
+LICENSE=		APACHE20
 
 BUILD_DEPENDS=		krb5-config:${PORTSDIR}/security/krb5
 LIB_DEPENDS=		krb5support.0:${PORTSDIR}/security/krb5

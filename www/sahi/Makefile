@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}_${SAHI_BUILD:S,.,,g}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Web automation and testing tool
 
-LICENSE=	AL2 MPL
+LICENSE=	APACHE20 MPL
 LICENSE_COMB=	multi
 
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils

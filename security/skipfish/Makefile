@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	A fully automated, active web application security reconnaissance tool
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	idn:${PORTSDIR}/dns/libidn \

@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	christer.edwards@gmail.com
 COMMENT=	Exposes the fundamental aspects of Salt control to external sources
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 FETCH_ARGS=	-pRr
 USE_PYTHON=	2.6-2.7

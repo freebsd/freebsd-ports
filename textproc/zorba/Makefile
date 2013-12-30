@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A general purpose C++ XQuery processor
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
    		xerces-c.3:${PORTSDIR}/textproc/xerces-c3 \

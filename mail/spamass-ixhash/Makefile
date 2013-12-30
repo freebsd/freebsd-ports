@@ -16,7 +16,7 @@ RUN_DEPENDS=	spamc:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
 		p5-Digest-MD5>=0:${PORTSDIR}/security/p5-Digest-MD5 \
 		p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 SUB_FILES=	pkg-message
 NO_BUILD=	yes

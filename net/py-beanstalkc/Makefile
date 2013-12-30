@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	A simple beanstalkd client library for Python
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install

@@ -10,7 +10,7 @@ MASTER_SITES=	APACHE/xmlgraphics/commons/source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Several reusable components used by Apache Batik and FOP
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

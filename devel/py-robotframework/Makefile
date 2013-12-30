@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	Vladimir.Chukharev@gmail.com
 COMMENT=	Generic test automation framework
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Read access to Windows Registry files
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	williballenthin

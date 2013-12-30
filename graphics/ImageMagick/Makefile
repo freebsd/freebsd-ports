@@ -30,7 +30,7 @@ MASTER_SITES=	http://www.imagemagick.org/download/ \
 MAINTAINER=	c.petrik.sosa@gmail.com
 COMMENT=	Image processing tools
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USES=		pkgconfig:both pathfix perl5
 USE_XZ=		yes

@@ -12,7 +12,7 @@ DISTNAME=	ses-tools-2011-11-14
 MAINTAINER=	stephon@gmail.com
 COMMENT=	Perl module of Amazon Simple Email Services
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \

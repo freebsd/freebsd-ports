@@ -10,8 +10,8 @@ DISTNAME=	${PORTNAME}-src-r${PORTVERSION}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	NOSQL distributed document-oriented database
 
-# mongodb is AGPLv3, C++ driver is AL2
-LICENSE=	AGPLv3 AL2
+# mongodb is AGPLv3, C++ driver is APACHE20
+LICENSE=	AGPLv3 APACHE20
 LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \

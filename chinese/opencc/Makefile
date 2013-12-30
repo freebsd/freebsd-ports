@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Open Chinese Convert library and utilities
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 MAN1=	opencc.1 opencc_dict.1
 

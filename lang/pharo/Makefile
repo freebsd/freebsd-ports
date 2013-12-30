@@ -11,7 +11,7 @@ EXTRACT_ONLY=	Pharo-${DISTVERSION}-${SVNVERSION}.zip
 MAINTAINER=	mutoh@openedu.org
 COMMENT=	Pharo is Smalltalk-inspired environment
 
-LICENSE=	AL2 MIT
+LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi
 
 RUN_DEPENDS=	squeak:${PORTSDIR}/lang/squeak

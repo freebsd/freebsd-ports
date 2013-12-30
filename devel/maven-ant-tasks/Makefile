@@ -11,7 +11,7 @@ EXTRACT_ONLY=
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Allows Maven artifact handling to be used from within an Ant build
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant
 

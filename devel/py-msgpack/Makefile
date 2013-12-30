@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-python-${PORTVERSION}
 MAINTAINER=	zont@FreeBSD.org
 COMMENT=	MessagePack (de)serializer for Python
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install

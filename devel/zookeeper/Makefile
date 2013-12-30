@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	zookeeper/zookeeper-${PORTVERSION}
 MAINTAINER=	gnn@FreeBSD.org
 COMMENT=	A Coordination Service for Distributed Applications
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 LIB_DEPENDS=	cppunit:${PORTSDIR}/devel/cppunit
 RUN_DEPENDS:=	${BUILD_DEPENDS}

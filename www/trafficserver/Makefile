@@ -9,7 +9,7 @@ MASTER_SITES=	APACHE/${PORTNAME}
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	A fast, scalable and extensible HTTP proxy server
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \

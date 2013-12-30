@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	yasu@utahime.org
 COMMENT=	Python module for RFC 5451 Authentication-Results headers
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

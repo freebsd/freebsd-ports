@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for dynamically configured mass virtual hosting with php
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 MANUAL_PACKAGE_BUILD=	needs apr and apache with DBD options enabled
 

@@ -12,7 +12,7 @@ DISTNAME=	apache-${PORTNAME}-${PORTVERSION}-bin
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Messaging and Integration Patterns provider
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 NO_BUILD=	yes
 USE_JAVA=	yes

@@ -11,7 +11,7 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Validates the HTML output of your apache2 webserver
 
-LICENSE=	AL2 MIT
+LICENSE=	APACHE20 MIT
 LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libtidy.so:${PORTSDIR}/www/tidy-lib

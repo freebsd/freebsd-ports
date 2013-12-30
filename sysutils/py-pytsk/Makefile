@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	antoine@FreeBSD.org
 COMMENT=	Python bindings for the Sleuthkit
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 LIB_DEPENDS=	libtsk.so:${PORTSDIR}/sysutils/sleuthkit
 

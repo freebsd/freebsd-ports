@@ -11,7 +11,7 @@ MASTER_SITES=	https://tn123.org/mod_xsendfile/ \
 MAINTAINER=	potatosaladx@gmail.com
 COMMENT=	Apache2 module that processes X-SENDFILE headers
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes

@@ -10,7 +10,7 @@ EXTRACT_SUFX=		.tgz
 MAINTAINER=		klm@uidzero.org
 COMMENT=		System baselining and evidence collection tool
 
-LICENSE=		BSD AL2 MIT
+LICENSE=		BSD APACHE20 MIT
 LICENSE_COMB=		multi
 
 GNU_CONFIGURE=		yes

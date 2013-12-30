@@ -11,7 +11,7 @@ DISTNAME=	vert.x-${PORTVERSION}.final
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Effortless asynchronous application development for the modern web
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 

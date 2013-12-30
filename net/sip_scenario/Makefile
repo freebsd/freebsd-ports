@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}.v${PORTVERSION}
 MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	SIP call flow creator (HTML format)
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_ZIP=	yes
 USES=		perl5

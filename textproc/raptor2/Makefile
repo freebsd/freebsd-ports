@@ -12,7 +12,7 @@ COMMENT=	RDF Parser Toolkit for Redland
 
 # Even though GPLv3 is not explicitly mentioned in the port's LICENSE.html, one
 # of its licenses is "GPLv2 or newer", which includes GPLv3.
-LICENSE=	AL2 GPLv2 GPLv3 LGPL21
+LICENSE=	APACHE20 GPLv2 GPLv3 LGPL21
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \

@@ -10,7 +10,7 @@ MASTER_SITES=	GOOGLE_CODE  \
 MAINTAINER=	gavin@16degrees.com.au
 COMMENT=	One-Time Password System (OTP) alternative to OPIE or S/Key
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1
 

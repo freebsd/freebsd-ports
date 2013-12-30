@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Data binding for XML (JAXB) and SQL database (JDO)
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Manage dynamic plugins for Python applications
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}argparse>=1.1:${PORTSDIR}/devel/py-argparse
 TEST_DEPENDS=	${PKGNAMEPREFIX}coverage>=3.5.3:${PORTSDIR}/devel/py-coverage \

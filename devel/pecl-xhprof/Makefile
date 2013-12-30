@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@mcdermottroe.com
 COMMENT=	Hierarchical Profiler for PHP
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/extension
 

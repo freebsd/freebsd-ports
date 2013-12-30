@@ -12,7 +12,7 @@ DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ port of the Log4j project
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1
 

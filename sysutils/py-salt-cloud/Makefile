@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	christer.edwards@gmail.com
 COMMENT=	Provisioning salted minions to various cloud providers
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 FETCH_ARGS=	-pRr
 USE_PYTHON=	2.6-2.7

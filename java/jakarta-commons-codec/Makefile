@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	An implementations of common encoders and decoders
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 OPTIONS_DEFINE=	DOCS
 

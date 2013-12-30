@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A build tool for Scala projects
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 OPTIONS_DEFINE=	ADVANCED
 ADVANCED_DESC=	Install advanced bash shell-script

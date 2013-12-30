@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gaod@hychen.org
 COMMENT=	High performance search server built using Lucene Java
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 CONFLICT=	apache-solr-3.6.*
 

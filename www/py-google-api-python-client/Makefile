@@ -11,7 +11,7 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}.tar.gz
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Google API Client Library for Python
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PKGNAMEPREFIX}gflags>=1.4:${PORTSDIR}/devel/py-gflags \
 		${PKGNAMEPREFIX}httplib2>=0.6.0:${PORTSDIR}/www/py-httplib2 \

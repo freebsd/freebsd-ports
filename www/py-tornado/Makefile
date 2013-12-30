@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	khsing.cn@gmail.com
 COMMENT=	Python Web Server from FriendFeed
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install

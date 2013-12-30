@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME:S/_//:S/2//}-apache_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An intrusion detection and prevention engine
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre \
 		apr-1:${PORTSDIR}/devel/apr1

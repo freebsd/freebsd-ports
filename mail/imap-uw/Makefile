@@ -15,7 +15,7 @@ PKGNAMESUFFIX=	-uw
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	University of Washington IMAP4rev1/POP2/POP3 mail servers
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	c-client4.9:${PORTSDIR}/mail/cclient
