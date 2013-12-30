@@ -18,13 +18,12 @@ NOMAN=
 PLIST_FILES=	sbin/ifdtest
 MAKE_ENV=	LIBS="-L${PREFIX}/lib -lpcsclite"
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,LPSTR,LPTSTR,g; s,LPCSTR,LPCTSTR,g; \
 		s,[P]*SCARD_READERSTATE_A,SCARD_READERSTATE\*,g" \
 		${WRKSRC}/commands.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ifdtest ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/ifdtest ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>
