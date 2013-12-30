@@ -1,4 +1,5 @@
 bin/transcalc
+man/man1/transcalc.1.gz
 share/transcalc/examples/000.trc
 share/transcalc/examples/001.trc
 share/transcalc/examples/cstrip_kj_1.trc
