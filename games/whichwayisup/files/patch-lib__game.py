@@ -1,5 +1,5 @@
---- lib/game.py.orig	2012-10-21 13:48:24.000000000 +0200
-+++ lib/game.py	2012-10-21 14:20:03.000000000 +0200
+--- ./lib/game.py.orig	2013-12-30 21:44:21.000000000 +0100
++++ ./lib/game.py	2013-12-30 21:44:21.000000000 +0100
 @@ -140,15 +140,15 @@
  
    if joystick != None:   # Parse joystick input
@@ -10,14 +10,13 @@
 -    if axis0 < -0.1:
 -      inputs["LEFT"] = True
 -      inputs["ANALOG"] = -axis0
--
--    if axis0 > 0.1:
--      inputs["RIGHT"] = True
--      inputs["ANALOG"] = axis0
 +#    if axis0 < -0.1:
 +#      inputs["LEFT"] = True
 +#      inputs["ANALOG"] = -axis0
-+
+ 
+-    if axis0 > 0.1:
+-      inputs["RIGHT"] = True
+-      inputs["ANALOG"] = axis0
 +#    if axis0 > 0.1:
 +#      inputs["RIGHT"] = True
 +#      inputs["ANALOG"] = axis0
