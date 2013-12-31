@@ -2,7 +2,7 @@
 
 PORTNAME=	phantomjs
 PORTVERSION=	1.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -17,12 +17,13 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 PROJECTHOST=	phantomjs
-USES=		gmake dos2unix
+USE_GCC=	4.2+
+USES=		gmake dos2unix pkgconfig
 USE_ZIP=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} OSTYPE=freebsd MAKEFLAGS= bash -x build.sh --jobs ${MAKE_JOBS_NUMBER} --confirm
+	cd ${WRKSRC} && ${SETENV} CC=${CC} CXX=${CXX} OSTYPE=freebsd MAKEFLAGS= PATH=${PATH} bash -x build.sh --jobs ${MAKE_JOBS_NUMBER} --confirm
 
 do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} bin/phantomjs ${STAGEDIR}${PREFIX}/bin/
