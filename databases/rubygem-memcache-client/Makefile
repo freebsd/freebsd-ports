@@ -9,9 +9,12 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby bindings for MemCached
 
+LICENSE=	BSD3CLAUSE
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
 PLIST_FILES=	bin/memcached_top
 
 .include <bsd.port.mk>
