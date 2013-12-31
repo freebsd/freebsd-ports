@@ -2,17 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	pelican
-PORTVERSION=	3.2.2
+PORTVERSION=	3.3.0
 CATEGORIES=	www textproc
 
 MAINTAINER=	jlaffaye@FreeBSD.org
-COMMENT=	Static blog generator for Pythonistas
+COMMENT=	Static site generator written in Python
 
 RUN_DEPENDS=	rst2html:${PORTSDIR}/textproc/py-docutils \
 		${PYTHON_PKGNAMEPREFIX}markdown>0:${PORTSDIR}/textproc/py-markdown \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.6:${PORTSDIR}/devel/py-Jinja2 \
 		${PYTHON_PKGNAMEPREFIX}pygments>=1.4:${PORTSDIR}/textproc/py-pygments \
-		${PYTHON_PKGNAMEPREFIX}feedgenerator>=1.5:${PORTSDIR}/www/py-feedgenerator \
+		${PYTHON_PKGNAMEPREFIX}feedgenerator>=1.6:${PORTSDIR}/www/py-feedgenerator \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz \
 		${PYTHON_PKGNAMEPREFIX}blinker>0:${PORTSDIR}/devel/py-blinker \
 		${PYTHON_PKGNAMEPREFIX}unidecode>0:${PORTSDIR}/converters/py-unidecode \
@@ -21,21 +21,21 @@ RUN_DEPENDS=	rst2html:${PORTSDIR}/textproc/py-docutils \
 TEST_DEPENDS:=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock \
 
-OPTIONS_DEFINE=	TESTS
-TESTS_DESC=	Install tools for test suite
+OPTIONS_DEFINE=	TEST
 OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-USE_GITHUB=		yes
-USE_PYTHON=		2.7+
+PYDISTUTILS_AUTOPLIST=	yes
+PYDISTUTILS_PKGVERSION=	3.3
 USE_PYDISTUTILS=	easy_install
+USE_PYTHON=		2.7+
 
+USE_GITHUB=		yes
 GH_ACCOUNT=	getpelican
-GH_COMMIT=	4d9197d
+GH_COMMIT=	b35ce43
 
-.if ${PORT_OPTIONS:MTESTS}
+.if ${PORT_OPTIONS:MTEST}
 BUILD_DEPENDS:=	${TEST_DEPENDS}
 .endif
 
