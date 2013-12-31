@@ -56,7 +56,7 @@ VSFTPD_NO_SSP=	-e "s|-fstack-protector --param=ssp-buffer-size=4 ||"
 .endif
 
 do-configure:
-.if !defined(WITHOUT_SSL) && ${PORT_OPTIONS:MVSFTPD_SSL}
+.if ${PORT_OPTIONS:MVSFTPD_SSL} && !defined(WITHOUT_SSL)
 	${REINPLACE_CMD} -e \
 		"s|#undef VSF_BUILD_TCPWRAPPERS|#define VSF_BUILD_TCPWRAPPERS 1|" \
 		-e "s|#undef VSF_BUILD_SSL|#define VSF_BUILD_SSL 1|" \
@@ -86,14 +86,12 @@ do-configure:
 	@${ECHO_CMD} >>${WRKSRC}/vsftpd.conf "# listen=YES"
 	@${ECHO_CMD} >>${WRKSRC}/vsftpd.conf "# background=YES"
 
-pre-install:
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vsftpd ${STAGEDIR}${PREFIX}/libexec/
 	${INSTALL_DATA} ${WRKSRC}/vsftpd.conf ${STAGEDIR}${PREFIX}/etc/vsftpd.conf.dist
 	${INSTALL_MAN} ${WRKSRC}/vsftpd.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5/
 	${INSTALL_MAN} ${WRKSRC}/vsftpd.8 ${STAGEDIR}${MANPREFIX}/man/man8/
+	${MKDIR} ${STAGEDIR}/var/ftp
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} -m 644 ${DOCFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
