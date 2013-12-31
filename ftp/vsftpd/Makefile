@@ -91,7 +91,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/vsftpd.conf ${STAGEDIR}${PREFIX}/etc/vsftpd.conf.dist
 	${INSTALL_MAN} ${WRKSRC}/vsftpd.conf.5 ${STAGEDIR}${MANPREFIX}/man/man5/
 	${INSTALL_MAN} ${WRKSRC}/vsftpd.8 ${STAGEDIR}${MANPREFIX}/man/man8/
-	${MKDIR} ${STAGEDIR}/var/ftp
+	${MKDIR} ${STAGEDIR}/var/ftp ${STAGEDIR}${PREFIX}/share/vsftpd/empty
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} -m 644 ${DOCFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
