@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD$
-
-echo "patapizza Tetris: Starting up..."
-cd "%%DATADIR%%"
-./patapizza-tetris
