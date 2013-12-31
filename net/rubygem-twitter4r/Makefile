@@ -9,13 +9,15 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Twitter client API in pure Ruby
 
-RUN_DEPENDS=	rubygem-oauth>=0.4.1:${PORTSDIR}/net/rubygem-oauth \
-		rubygem-json>=1.1.1:${PORTSDIR}/devel/rubygem-json
+LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-json>=1.1.1:${PORTSDIR}/devel/rubygem-json \
+		rubygem-oauth>=0.4.1:${PORTSDIR}/net/rubygem-oauth
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+
 PLIST_FILES=	bin/t4r-oauth-access bin/t4rsh
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
