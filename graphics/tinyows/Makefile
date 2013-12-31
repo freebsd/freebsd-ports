@@ -13,6 +13,9 @@ COMMENT=		High Performance WFS-T server
 LIB_DEPENDS=		xml2:${PORTSDIR}/textproc/libxml2
 BUILD_DEPENDS=		${LOCALBASE}/lib/postgresql/postgis-1.5.so:${PORTSDIR}/databases/postgis
 
+DEPRECATED=		Depends on expired databases/postgis
+EXPIRATION_DATE=	2014-01-16
+
 USE_BZIP2=		YES
 GNU_CONFIGURE=		YES
 
