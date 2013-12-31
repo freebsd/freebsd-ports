@@ -33,7 +33,6 @@
     SUBDIR += droid-fonts-ttf
     SUBDIR += ecofont
     SUBDIR += encodings
-    SUBDIR += etlfonts
     SUBDIR += farsifonts
     SUBDIR += fntsample
     SUBDIR += font-adobe-100dpi

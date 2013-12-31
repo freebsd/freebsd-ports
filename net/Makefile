@@ -161,7 +161,6 @@
     SUBDIR += fspd
     SUBDIR += fsplib
     SUBDIR += g2ipmsg
-    SUBDIR += gateway6
     SUBDIR += get_iplayer
     SUBDIR += gini
     SUBDIR += gkrellmqst
