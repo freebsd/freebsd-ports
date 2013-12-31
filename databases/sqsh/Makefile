@@ -22,24 +22,18 @@ CONFIGURE_ENV=	SYBASE="${LOCALBASE}"
 CONFIGURE_ARGS=	--with-readline
 ALL_TARGET=	build
 
-MAN1=		sqsh.1
-PLIST_FILES=	bin/sqsh etc/sqshrc.default
+PLIST_FILES=	bin/sqsh etc/sqshrc.default man/man1/sqsh.1.gz
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MX11}
-USES+=		motif
-CONFIGURE_ARGS+=	--with-motif --with-x
-.endif
+X11_USES=	motif
+X11_CONFIGURE_ON=	--with-motif --with-x
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/doc/global.sqshrc
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/sqsh ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/sqsh.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/doc/global.sqshrc ${PREFIX}/etc/sqshrc.default
+	${INSTALL_PROGRAM} ${WRKSRC}/src/sqsh ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/sqsh.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/doc/global.sqshrc ${STAGEDIR}${PREFIX}/etc/sqshrc.default
 
 .include <bsd.port.mk>
