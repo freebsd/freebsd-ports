@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	innate
-PORTVERSION=	2011.10
+PORTVERSION=	2013.02.21
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Powerful web-framework wrapper for Rack
 
-RUN_DEPENDS=	rubygem-rack>=1.1.0:${PORTSDIR}/www/rubygem-rack
+LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-rack15>=1.5.2:${PORTSDIR}/www/rubygem-rack15
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
