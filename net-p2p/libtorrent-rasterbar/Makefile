@@ -3,6 +3,7 @@
 
 PORTNAME=	libtorrent-rasterbar
 PORTVERSION=	0.16.13
+PORTREVISION=	1
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	GOOGLE_CODE
 PROJECTHOST=	libtorrent
@@ -15,7 +16,7 @@ LICENSE=	BSD
 LIB_DEPENDS+=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
 		libGeoIP.so:${PORTSDIR}/net/GeoIP
 
-USES=		pathfix pkgconfig iconv
+USES=		compiler pathfix pkgconfig iconv
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
