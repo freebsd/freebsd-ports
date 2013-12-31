@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-JSON
-PORTVERSION=	0.005
+PORTVERSION=	0.006
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,6 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-Moo>=0:${PORTSDIR}/devel/p5-Moo \
-		p5-Role-Tiny>=0:${PORTSDIR}/devel/p5-Role-Tiny \
 		p5-Type-Tiny>=0:${PORTSDIR}/devel/p5-Type-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Class-Load>=0:${PORTSDIR}/devel/p5-Class-Load \
