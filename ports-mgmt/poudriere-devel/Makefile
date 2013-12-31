@@ -2,6 +2,7 @@
 
 PORTNAME=	poudriere
 PORTVERSION=	3.0.99.20131230
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/ \
 		LOCAL/bdrewery/${PORTNAME}/
@@ -16,8 +17,6 @@ LICENSE=	BSD
 FSL_CHKIN=	ae87e905f3
 
 OPTIONS_DEFINE=	ZSH
-
-FORBIDDEN=	sanity check issue being fixed
 
 CONFLICTS_INSTALL=	poudriere-[0-9]*
 
