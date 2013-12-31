@@ -15,17 +15,16 @@ LICENSE=	ISCL
 
 CONFLICTS_INSTALL=	expect-[0-9]* expect-nox11-[0-9]*
 
-NO_STAGE=	yes
 USE_PYTHON=	yes
 USE_XZ=		yes
 USES=		shebangfix
 
-MAN1=		${PORTNAME}.1
-MAN5=		${PORTNAME}rc.5
 PLIST_FILES=	bin/${PORTNAME} \
 		%%PYTHON_SITELIBDIR%%/${PORTNAME}.py \
 		%%PYTHON_SITELIBDIR%%/${PORTNAME}.pyc \
-		%%PYTHON_SITELIBDIR%%/${PORTNAME}.pyo
+		%%PYTHON_SITELIBDIR%%/${PORTNAME}.pyo \
+		man/man1/${PORTNAME}.1.gz \
+		man/man5/${PORTNAME}rc.5.gz
 PORTDATA=	airports places stations zctas zones
 
 SHEBANG_FILES=	${PORTNAME}
@@ -37,14 +36,13 @@ do-build:
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}/${PORTNAME}.py
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTNAME}.py ${PORTNAME}.pyc ${PORTNAME}.pyo ${PYTHON_SITELIBDIR}/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1/${PORTNAME}.1
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}rc.5 ${MANPREFIX}/man/man5/${PORTNAME}rc.5
-	${MKDIR} ${DATADIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDATA} ${DATADIR}/
-
-post-install:
+	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTNAME}.py ${PORTNAME}.pyc ${PORTNAME}.pyo ${STAGEDIR}${PYTHON_SITELIBDIR}/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1/${PORTNAME}.1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}rc.5 ${STAGEDIR}${MANPREFIX}/man/man5/${PORTNAME}rc.5
+	${MKDIR} ${STAGEDIR}${DATADIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDATA} ${STAGEDIR}${DATADIR}/
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Please add the following to your .weatherrc in order to use installed data files:"
 	@${ECHO_MSG} ""
