@@ -23,6 +23,30 @@
 %%SITE_PERL%%/MooseX/Declare/Syntax/OptionHandling.pm
 %%SITE_PERL%%/MooseX/Declare/Syntax/RoleApplication.pm
 %%SITE_PERL%%/MooseX/Declare/Util.pm
+%%PERL5_MAN3%%/MooseX::Declare.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Context.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Context::Namespaced.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Context::Parameterized.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Context::WithOptions.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::StackItem.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Syntax::EmptyBlockIfMissing.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Syntax::Extending.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Syntax::InnerSyntaxHandling.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Syntax::Keyword::Class.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Syntax::Keyword::Clean.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Syntax::Keyword::Method.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Syntax::Keyword::MethodModifier.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Syntax::Keyword::Namespace.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Syntax::Keyword::Role.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Syntax::Keyword::With.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Syntax::KeywordHandling.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Syntax::MethodDeclaration.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Syntax::MethodDeclaration::Parameterized.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Syntax::MooseSetup.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Syntax::NamespaceHandling.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Syntax::OptionHandling.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Syntax::RoleApplication.3.gz
+%%PERL5_MAN3%%/MooseX::Declare::Util.3.gz
 @dirrm %%SITE_PERL%%/MooseX/Declare/Syntax/MethodDeclaration
 @dirrm %%SITE_PERL%%/MooseX/Declare/Syntax/Keyword
 @dirrm %%SITE_PERL%%/MooseX/Declare/Syntax
