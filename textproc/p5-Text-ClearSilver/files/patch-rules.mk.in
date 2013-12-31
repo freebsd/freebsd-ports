@@ -1,0 +1,11 @@
+--- cs/rules.mk.in.orig	2013-12-31 22:42:58.734123396 +0900
++++ cs/rules.mk.in	2013-12-31 22:43:10.268123883 +0900
+@@ -158,7 +158,7 @@
+ 	@touch Makefile.depends
+ 	@if test "x" != "x$(SOURCE_FILES)"; then \
+ 	  for II in "$(SOURCE_FILES)"; do \
+-		gcc -M -MG ${CFLAGS} $$II >> Makefile.depends; \
++		${CC} -M -MG ${CFLAGS} $$II >> Makefile.depends; \
+ 	  done; \
+ 	 fi
+ 	@echo "** (done) "
