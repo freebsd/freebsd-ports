@@ -1,0 +1,19 @@
+*** po/Makefile.in.in.orig	Tue May  5 19:45:52 2009
+--- po/Makefile.in.in	Tue May  5 19:46:58 2009
+***************
+*** 34,40 ****
+  datarootdir = @datarootdir@
+  libdir = @libdir@
+  DATADIRNAME = @DATADIRNAME@
+! itlocaledir = $(prefix)/$(DATADIRNAME)/locale
+  subdir = po
+  install_sh = @install_sh@
+  # Automake >= 1.8 provides @mkdir_p@.
+--- 34,40 ----
+  datarootdir = @datarootdir@
+  libdir = @libdir@
+  DATADIRNAME = @DATADIRNAME@
+! itlocaledir = $(datarootdir)/locale
+  subdir = po
+  install_sh = @install_sh@
+  # Automake >= 1.8 provides @mkdir_p@.

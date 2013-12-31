@@ -5347,4 +5347,3 @@ security/dazuko||2013-12-31|Has expired: Currently, the project has not an activ
 mail/p5-Mail-SPF-Query||2013-12-31|Has expired: Use mail/p5-Mail-SPF instead
 x11-fonts/etlfonts||2013-12-31|Has expired: master site gone
 net/gateway6||2013-12-31|Has expired: Unsupported upstream, consider using net/gogoc
-deskutils/parcellite||2013-12-31|Removed, use deskutils/clipit instead
