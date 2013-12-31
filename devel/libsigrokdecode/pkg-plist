@@ -1,0 +1,101 @@
+include/libsigrokdecode/libsigrokdecode.h
+lib/libsigrokdecode.a
+lib/libsigrokdecode.la
+lib/libsigrokdecode.so
+lib/libsigrokdecode.so.1
+libdata/pkgconfig/libsigrokdecode.pc
+%%DATADIR%%/decoders/avr_isp/__init__.py
+%%DATADIR%%/decoders/avr_isp/parts.py
+%%DATADIR%%/decoders/avr_isp/pd.py
+%%DATADIR%%/decoders/can/__init__.py
+%%DATADIR%%/decoders/can/pd.py
+%%DATADIR%%/decoders/dcf77/__init__.py
+%%DATADIR%%/decoders/dcf77/pd.py
+%%DATADIR%%/decoders/ds1307/__init__.py
+%%DATADIR%%/decoders/ds1307/pd.py
+%%DATADIR%%/decoders/edid/__init__.py
+%%DATADIR%%/decoders/edid/pd.py
+%%DATADIR%%/decoders/edid/pnpids.txt
+%%DATADIR%%/decoders/i2c/__init__.py
+%%DATADIR%%/decoders/i2c/pd.py
+%%DATADIR%%/decoders/i2cdemux/__init__.py
+%%DATADIR%%/decoders/i2cdemux/pd.py
+%%DATADIR%%/decoders/i2cfilter/__init__.py
+%%DATADIR%%/decoders/i2cfilter/pd.py
+%%DATADIR%%/decoders/i2s/__init__.py
+%%DATADIR%%/decoders/i2s/pd.py
+%%DATADIR%%/decoders/jtag/__init__.py
+%%DATADIR%%/decoders/jtag/pd.py
+%%DATADIR%%/decoders/jtag_stm32/__init__.py
+%%DATADIR%%/decoders/jtag_stm32/pd.py
+%%DATADIR%%/decoders/lm75/__init__.py
+%%DATADIR%%/decoders/lm75/pd.py
+%%DATADIR%%/decoders/lpc/__init__.py
+%%DATADIR%%/decoders/lpc/pd.py
+%%DATADIR%%/decoders/maxim_ds28ea00/__init__.py
+%%DATADIR%%/decoders/maxim_ds28ea00/pd.py
+%%DATADIR%%/decoders/mlx90614/__init__.py
+%%DATADIR%%/decoders/mlx90614/pd.py
+%%DATADIR%%/decoders/mx25lxx05d/__init__.py
+%%DATADIR%%/decoders/mx25lxx05d/pd.py
+%%DATADIR%%/decoders/mxc6225xu/__init__.py
+%%DATADIR%%/decoders/mxc6225xu/pd.py
+%%DATADIR%%/decoders/nunchuk/__init__.py
+%%DATADIR%%/decoders/nunchuk/pd.py
+%%DATADIR%%/decoders/onewire_link/__init__.py
+%%DATADIR%%/decoders/onewire_link/pd.py
+%%DATADIR%%/decoders/onewire_network/__init__.py
+%%DATADIR%%/decoders/onewire_network/pd.py
+%%DATADIR%%/decoders/pan1321/__init__.py
+%%DATADIR%%/decoders/pan1321/pd.py
+%%DATADIR%%/decoders/rtc8564/__init__.py
+%%DATADIR%%/decoders/rtc8564/pd.py
+%%DATADIR%%/decoders/sdcard_spi/__init__.py
+%%DATADIR%%/decoders/sdcard_spi/pd.py
+%%DATADIR%%/decoders/spi/__init__.py
+%%DATADIR%%/decoders/spi/pd.py
+%%DATADIR%%/decoders/tlc5620/__init__.py
+%%DATADIR%%/decoders/tlc5620/pd.py
+%%DATADIR%%/decoders/transitioncounter/__init__.py
+%%DATADIR%%/decoders/transitioncounter/pd.py
+%%DATADIR%%/decoders/uart/__init__.py
+%%DATADIR%%/decoders/uart/pd.py
+%%DATADIR%%/decoders/uart_dump/__init__.py
+%%DATADIR%%/decoders/uart_dump/pd.py
+%%DATADIR%%/decoders/usb_protocol/__init__.py
+%%DATADIR%%/decoders/usb_protocol/pd.py
+%%DATADIR%%/decoders/usb_signalling/__init__.py
+%%DATADIR%%/decoders/usb_signalling/pd.py
+@dirrm %%DATADIR%%/decoders/usb_signalling
+@dirrm %%DATADIR%%/decoders/usb_protocol
+@dirrm %%DATADIR%%/decoders/uart_dump
+@dirrm %%DATADIR%%/decoders/uart
+@dirrm %%DATADIR%%/decoders/transitioncounter
+@dirrm %%DATADIR%%/decoders/tlc5620
+@dirrm %%DATADIR%%/decoders/spi
+@dirrm %%DATADIR%%/decoders/sdcard_spi
+@dirrm %%DATADIR%%/decoders/rtc8564
+@dirrm %%DATADIR%%/decoders/pan1321
+@dirrm %%DATADIR%%/decoders/onewire_network
+@dirrm %%DATADIR%%/decoders/onewire_link
+@dirrm %%DATADIR%%/decoders/nunchuk
+@dirrm %%DATADIR%%/decoders/mxc6225xu
+@dirrm %%DATADIR%%/decoders/mx25lxx05d
+@dirrm %%DATADIR%%/decoders/mlx90614
+@dirrm %%DATADIR%%/decoders/maxim_ds28ea00
+@dirrm %%DATADIR%%/decoders/lpc
+@dirrm %%DATADIR%%/decoders/lm75
+@dirrm %%DATADIR%%/decoders/jtag_stm32
+@dirrm %%DATADIR%%/decoders/jtag
+@dirrm %%DATADIR%%/decoders/i2s
+@dirrm %%DATADIR%%/decoders/i2cfilter
+@dirrm %%DATADIR%%/decoders/i2cdemux
+@dirrm %%DATADIR%%/decoders/i2c
+@dirrm %%DATADIR%%/decoders/edid
+@dirrm %%DATADIR%%/decoders/ds1307
+@dirrm %%DATADIR%%/decoders/dcf77
+@dirrm %%DATADIR%%/decoders/can
+@dirrm %%DATADIR%%/decoders/avr_isp
+@dirrm %%DATADIR%%/decoders
+@dirrm %%DATADIR%%
+@dirrm include/libsigrokdecode
