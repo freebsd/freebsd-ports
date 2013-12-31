@@ -9,8 +9,10 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Implementation of the Tree data structure for the Ruby
 
-RUN_DEPENDS=	rubygem-structured_warnings>=0:${PORTSDIR}/devel/rubygem-structured_warnings \
-		rubygem-json>=0:${PORTSDIR}/devel/rubygem-json
+LICENSE=	BSD3CLAUSE
+
+RUN_DEPENDS=	rubygem-json>=0:${PORTSDIR}/devel/rubygem-json \
+		rubygem-structured_warnings>=0:${PORTSDIR}/devel/rubygem-structured_warnings
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
