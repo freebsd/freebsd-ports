@@ -34,8 +34,6 @@ lib/rsyslog/lmzlibw.la
 lib/rsyslog/lmzlibw.so
 lib/rsyslog/ommail.la
 lib/rsyslog/ommail.so
-lib/rsyslog/omruleset.la
-lib/rsyslog/omruleset.so
 lib/rsyslog/omstdout.la
 lib/rsyslog/omstdout.so
 lib/rsyslog/omtesting.la
