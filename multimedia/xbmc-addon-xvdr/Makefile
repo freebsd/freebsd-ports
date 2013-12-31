@@ -11,6 +11,9 @@ DISTNAME=	pipelka-${PORTNAME}-xvdr-${PORTVERSION}-0-g${GITHASH}
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	XBMC xvdr pvr addon
 
+DEPRECATED=	Depends on expired multimedia/xbmc-pvr
+EXPIRATION_DATE=2014-02-01
+
 BUILD_DEPENDS+=	xbmc:${PORTSDIR}/multimedia/xbmc-pvr
 RUN_DEPENDS+=	xbmc:${PORTSDIR}/multimedia/xbmc-pvr
 
