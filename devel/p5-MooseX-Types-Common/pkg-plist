@@ -2,6 +2,9 @@
 %%SITE_PERL%%/MooseX/Types/Common/Numeric.pm
 %%SITE_PERL%%/MooseX/Types/Common/String.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Common/.packlist
+%%PERL5_MAN3%%/MooseX::Types::Common.3.gz
+%%PERL5_MAN3%%/MooseX::Types::Common::Numeric.3.gz
+%%PERL5_MAN3%%/MooseX::Types::Common::String.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types/Common
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Types
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
