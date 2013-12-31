@@ -1,7 +1,0 @@
-# Makefile.kld to build a driver with linux emulation.
-# See /usr/share/mk/bsd.linux_kmod.mk for more details.
-
-SRCS=	ov511.c		# sources for the linux driver
-KMOD=	ov511		# module name
-
-.include <bsd.linux_kmod.mk>

@@ -1,3 +1,0 @@
-This port builds a kernel module with the 'ov511' USB webcam driver
-using the adaptation layer in devel/linux-kmod-compat
-The sources are taken from the Linux kernel 2.6.x
