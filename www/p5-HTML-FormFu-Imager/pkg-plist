@@ -1,20 +1,18 @@
+%%SITE_PERL%%/HTML/FormFu/Imager.pm
 %%SITE_PERL%%/HTML/FormFu/Inflator/Imager.pm
 %%SITE_PERL%%/HTML/FormFu/Transformer/Imager.pm
-%%SITE_PERL%%/HTML/FormFu/Imager.pm
 %%SITE_PERL%%/HTML/FormFu/Validator/Imager/Size.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu/Imager/.packlist
 %%PERL5_MAN3%%/HTML::FormFu::Imager.3.gz
 %%PERL5_MAN3%%/HTML::FormFu::Inflator::Imager.3.gz
 %%PERL5_MAN3%%/HTML::FormFu::Transformer::Imager.3.gz
 %%PERL5_MAN3%%/HTML::FormFu::Validator::Imager::Size.3.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu/Imager
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Validator/Imager
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Validator
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Transformer
 @dirrmtry %%SITE_PERL%%/HTML/FormFu/Inflator
 @dirrmtry %%SITE_PERL%%/HTML/FormFu
 @dirrmtry %%SITE_PERL%%/HTML
-@dirrmtry %%SITE_PERL%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu/Imager
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
