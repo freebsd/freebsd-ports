@@ -9,7 +9,9 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Twitter Streaming API client for EventMachine
 
-RUN_DEPENDS=	rubygem-eventmachine>=1.0.0:${PORTSDIR}/devel/rubygem-eventmachine \
+LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-eventmachine>=1:${PORTSDIR}/devel/rubygem-eventmachine \
 		rubygem-http_parser.rb>=0.5:${PORTSDIR}/net/rubygem-http_parser.rb \
 		rubygem-simple_oauth>=0.1:${PORTSDIR}/net/rubygem-simple_oauth
 
