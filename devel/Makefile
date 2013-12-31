@@ -3641,6 +3641,7 @@
     SUBDIR += py-levenshtein
     SUBDIR += py-liblarch
     SUBDIR += py-libplist
+    SUBDIR += py-libvirt
     SUBDIR += py-ll-core
     SUBDIR += py-lock_file
     SUBDIR += py-lockfile
