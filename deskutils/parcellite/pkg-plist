@@ -1,9 +1,8 @@
 bin/parcellite
 etc/xdg/autostart/parcellite-startup.desktop
+man/man1/parcellite.1.gz
 share/applications/parcellite.desktop
-share/pixmaps/parcellite.png
-share/pixmaps/parcellite.svg
-share/pixmaps/parcellite.xpm
+%%NLS%%share/locale/ca/LC_MESSAGES/parcellite.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/parcellite.mo
 %%NLS%%share/locale/da/LC_MESSAGES/parcellite.mo
 %%NLS%%share/locale/de/LC_MESSAGES/parcellite.mo
@@ -21,5 +20,8 @@ share/pixmaps/parcellite.xpm
 %%NLS%%share/locale/sv/LC_MESSAGES/parcellite.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/parcellite.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/parcellite.mo
+share/pixmaps/parcellite.png
+share/pixmaps/parcellite.svg
+share/pixmaps/parcellite.xpm
 %%NLS%%@dirrmtry share/locale/pl_PL/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/pl_PL
