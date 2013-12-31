@@ -7,7 +7,10 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A fast, simple event-processing library for Ruby programs
+COMMENT=	Fast, simple event-processing library for Ruby programs
+
+LICENSE=	GPLv2 RUBY
+LICENSE_COMB=	dual
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
