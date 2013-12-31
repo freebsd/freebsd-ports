@@ -1,13 +1,12 @@
---- src/Makevars.orig	2013-04-25 06:10:24.000000000 +0900
-+++ src/Makevars	2013-06-02 13:27:25.000000000 +0900
-@@ -6,6 +6,10 @@
- FRAMEWORK = -framework CoreServices
+--- src/Makevars.orig	2013-12-07 17:47:48.000000000 +0900
++++ src/Makevars	2013-12-09 16:36:18.000000000 +0900
+@@ -10,6 +10,9 @@
+ ifeq ($(UNAME), SunOS)
+ PKG_LIBS += -lkstat -lsendfile
  endif
- 
 +ifeq ($(UNAME), FreeBSD)
-+FRAMEWORK = -lkvm
++PKG_LIBS += -lkvm
 +endif
-+
- PKG_LIBS = `$(R_HOME)/bin/Rscript -e "Rcpp:::LdFlags()"` ./libuv/libuv.a ./http-parser/http_parser.o ./sha1/sha1.o ./base64/base64.o $(FRAMEWORK)
- PKG_CPPFLAGS += -I./libuv/include -I./http-parser -I./sha1 -I./base64
+ 
+ PKG_CPPFLAGS = -I./libuv/include -I./http-parser -I./sha1 -I./base64
  
