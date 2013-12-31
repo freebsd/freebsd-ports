@@ -15,18 +15,16 @@ LICENSE=	GPLv2 # (or later)
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USE_XORG=	xpm xaw xext x11
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
-MAN1=		aspostit.1
-PLIST_FILES=	bin/aspostit
+PLIST_FILES=	bin/aspostit man/man1/aspostit.1.gz
 
-NO_STAGE=	yes
 post-extract:
 	@${LN} -sf aspostit.man ${WRKSRC}/aspostit.1
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} aspostit ${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} aspostit.1 ${MANPREFIX}/man/man1)
+	${INSTALL_PROGRAM} ${WRKSRC}/aspostit ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/aspostit.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
