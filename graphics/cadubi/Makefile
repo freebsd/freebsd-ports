@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics editors
 MASTER_SITES=	http://langworth.com/pub/
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ASCII drawing utility
 
 LICENSE=	ART10
