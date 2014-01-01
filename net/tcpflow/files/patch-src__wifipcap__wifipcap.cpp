@@ -1,6 +1,6 @@
---- ./src/wifipcap/wifipcap.cpp.orig	2013-11-18 02:20:51.000000000 +0000
-+++ ./src/wifipcap/wifipcap.cpp	2013-11-22 21:47:50.000000000 +0000
-@@ -2213,6 +2213,13 @@
+--- ./src/wifipcap/wifipcap.cpp.orig	2013-12-27 17:57:48.000000000 +0000
++++ ./src/wifipcap/wifipcap.cpp	2013-12-28 16:20:01.000000000 +0000
+@@ -1735,6 +1735,13 @@
  const char *Wifipcap::SetFilter(const char *filter)
  {
      struct bpf_program fp;

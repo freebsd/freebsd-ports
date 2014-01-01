@@ -102,7 +102,6 @@
     SUBDIR += cyrus-sasl2-gssapi
     SUBDIR += cyrus-sasl2-ldapdb
     SUBDIR += cyrus-sasl2-saslauthd
-    SUBDIR += dazuko
     SUBDIR += dcetest
     SUBDIR += ddos_scan
     SUBDIR += denyhosts

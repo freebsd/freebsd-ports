@@ -12,7 +12,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PECL classes for Mongo Database Driver
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_PHP=	spl
 USE_PHP_BUILD=	yes

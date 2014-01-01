@@ -8,7 +8,7 @@ MASTER_SITES=	GH
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Erlang library for building mock modules
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
 		rebar:${PORTSDIR}/devel/rebar

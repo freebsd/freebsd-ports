@@ -12,7 +12,7 @@ DISTNAME=	thrift-${PORTVERSION}
 MAINTAINER=	komarov@valerka.net
 COMMENT=	Facebook Bassline
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 LIB_DEPENDS=	libthrift.so:${PORTSDIR}/devel/thrift-cpp
 BUILD_DEPENDS=	thrift:${PORTSDIR}/devel/thrift

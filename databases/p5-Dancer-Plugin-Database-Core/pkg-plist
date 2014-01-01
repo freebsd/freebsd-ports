@@ -1,0 +1,13 @@
+%%SITE_PERL%%/Dancer/Plugin/Database/Core.pm
+%%SITE_PERL%%/Dancer/Plugin/Database/Core/Handle.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/Database/Core/.packlist
+%%PERL5_MAN3%%/Dancer::Plugin::Database::Core.3.gz
+%%PERL5_MAN3%%/Dancer::Plugin::Database::Core::Handle.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/Database/Core
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/Database
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer
+@dirrm %%SITE_PERL%%/Dancer/Plugin/Database/Core
+@dirrmtry %%SITE_PERL%%/Dancer/Plugin/Database
+@dirrmtry %%SITE_PERL%%/Dancer/Plugin
+@dirrmtry %%SITE_PERL%%/Dancer

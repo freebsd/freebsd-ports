@@ -9,6 +9,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Replacement for the rails deploy strategy which ships with Capistrano
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-capistrano>=1.0.0:${PORTSDIR}/sysutils/rubygem-capistrano
 
 USE_RUBY=	yes

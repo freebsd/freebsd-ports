@@ -10,13 +10,14 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Twitter realtime API client
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-eventmachine>=0.12.8:${PORTSDIR}/devel/rubygem-eventmachine \
-		rubygem-simple_oauth>=0.1.4:${PORTSDIR}/net/rubygem-simple_oauth \
-		rubygem-http_parser.rb>=0.5.1:${PORTSDIR}/net/rubygem-http_parser.rb
+		rubygem-http_parser.rb>=0.5.1:${PORTSDIR}/net/rubygem-http_parser.rb \
+		rubygem-simple_oauth>=0.1.4:${PORTSDIR}/net/rubygem-simple_oauth
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -8,6 +8,9 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	RDoc produces HTML and command-line documentation for Ruby projects
 
+LICENSE=	GPLv2 RUBY
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	rubygem-json>=1.4:${PORTSDIR}/devel/rubygem-json
 RUN_DEPENDS=	rubygem-json>=1.4:${PORTSDIR}/devel/rubygem-json
 

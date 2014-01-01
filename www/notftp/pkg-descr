@@ -1,8 +1,0 @@
-NotFTP is a fully featured and easy to use Web to FTP gateway written in
-PHP. It supports all common FTP functions (including uploads and SSL-FTP)
-and allows the administrator to set a maximum transfer size and a daily
-transfer quota for users. It is particularly well-suited for making FTP
-accessible to users behind an HTTP-only proxy. In addition, it will
-usually work right out of the box with no configuration.
-
-WWW: http://wonko.com/notftp/

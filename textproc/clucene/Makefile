@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-core-${PORTVERSION}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	CLucene is a C++ port of Lucene
 
-LICENSE=	AL2 LGPL21
+LICENSE=	APACHE20 LGPL21
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs

@@ -7,6 +7,7 @@
     SUBDIR += amule-devel
     SUBDIR += azureus2
     SUBDIR += bitcoin
+    SUBDIR += bitcoin-daemon
     SUBDIR += bitflu
     SUBDIR += bitmessage
     SUBDIR += bittyrant
@@ -51,6 +52,7 @@
     SUBDIR += linux-jigdo
     SUBDIR += linuxdcpp
     SUBDIR += litecoin
+    SUBDIR += litecoin-daemon
     SUBDIR += lopster
     SUBDIR += microdc2
     SUBDIR += minder

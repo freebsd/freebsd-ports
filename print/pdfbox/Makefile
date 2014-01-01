@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}-app-${PORTVERSION}.jar	\
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java PDF Library
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	${JAVAJARDIR}/bcmail.jar:${PORTSDIR}/java/bouncycastle	\
 		${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging

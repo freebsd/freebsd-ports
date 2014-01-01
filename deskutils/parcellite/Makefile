@@ -2,34 +2,40 @@
 # $FreeBSD$
 
 PORTNAME=	parcellite
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.1.7
 PORTEPOCH=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jrm@ftfl.ca
-COMMENT=	A lightweight GTK+ clipboard manager
+MAINTAINER=	nemysis@FreeBSD.org
+COMMENT=	Lightweight GTK+ clipboard manager
 
-GNU_CONFIGURE=	yes
+LICENSE=	GPLv3
+
+BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+
 USES=		gmake pkgconfig
+GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 
-NO_STAGE=	yes
+PORTDOCS=	AUTHORS ChangeLog README TODO
+
+OPTIONS_DEFINE= DOCS NLS
+OPTIONS_SUB=	yes
+
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext
+
 .include <bsd.port.options.mk>
 
+post-patch:
 .if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
+	@${REINPLACE_CMD} -e 's|$$(DATADIRNAME)/locale|share/locale|' \
+		${WRKSRC}/po/Makefile.in.in
 .endif
 
-MAN1=	parcellite.1
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g'\
-		${WRKSRC}/src/keybinder.h
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

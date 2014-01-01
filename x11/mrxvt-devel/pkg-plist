@@ -1,24 +1,25 @@
 bin/mrxvt
+etc/mrxvt/default.menu.sample
+etc/mrxvt/mrxvtrc.sample
+etc/mrxvt/submenus.menu.sample
+man/man1/mrxvt.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/README.greek
+%%PORTDOCS%%%%DOCSDIR%%/README.menu
+%%PORTDOCS%%%%DOCSDIR%%/README.xvt
+%%PORTDOCS%%%%DOCSDIR%%/behind_mrxvt.txt
+%%PORTDOCS%%%%DOCSDIR%%/hack-mrxvt.txt
+%%PORTDOCS%%%%DOCSDIR%%/mrxvt_seq.txt
+%%PORTDOCS%%%%DOCSDIR%%/rxvtRef.txt
+%%PORTDOCS%%%%DOCSDIR%%/xterm-ctlseqs.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/mrxvtset.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/settitle.c
 share/pixmaps/mrxvt-csh.png
 share/pixmaps/mrxvt-csh.xpm
 share/pixmaps/mrxvt-root.png
 share/pixmaps/mrxvt-root.xpm
 share/pixmaps/mrxvt.png
 share/pixmaps/mrxvt.xpm
-etc/mrxvt/mrxvtrc.sample
-etc/mrxvt/default.menu.sample
-etc/mrxvt/submenus.menu.sample
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/mrxvtset.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/settitle.c
-%%PORTDOCS%%%%DOCSDIR%%/README.greek
-%%PORTDOCS%%%%DOCSDIR%%/README.xvt
-%%PORTDOCS%%%%DOCSDIR%%/hack-mrxvt.txt
-%%PORTDOCS%%%%DOCSDIR%%/rxvtRef.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.menu
-%%PORTDOCS%%%%DOCSDIR%%/behind_mrxvt.txt
-%%PORTDOCS%%%%DOCSDIR%%/mrxvt_seq.txt
-%%PORTDOCS%%%%DOCSDIR%%/xterm-ctlseqs.txt
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry etc/mrxvt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/scripts
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

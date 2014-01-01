@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Full-text search engine for Java, 4.x branch
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 CONFLICTS=	lucene-[0-9].*
 

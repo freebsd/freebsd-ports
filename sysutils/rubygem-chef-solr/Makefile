@@ -2,24 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	chef-solr
-PORTVERSION=	10.24.0
-CATEGORIES=	sysutils
+PORTVERSION=	10.30.2
+CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A systems integration framework. Client part
+COMMENT=	Systems integration framework. Client part
 
-RUN_DEPENDS=	rubygem-chef>=${PORTVERSION}:${PORTSDIR}/sysutils/rubygem-chef \
-		apache-solr>=0:${PORTSDIR}/textproc/apache-solr
+LICENSE=	APACHE20
 
-BROKEN=		fails to install
+RUN_DEPENDS=	apache-solr>=0:${PORTSDIR}/textproc/apache-solr \
+		rubygem-chef>=${PORTVERSION}:${PORTSDIR}/sysutils/rubygem-chef
 
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
+#BROKEN=	fails to install
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/chef-solr \
 		bin/chef-solr-installer
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

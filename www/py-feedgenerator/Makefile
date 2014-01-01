@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	feedgenerator
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,11 +15,11 @@ LICENSE=	BSD
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz \
 		${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six
 
-USE_PYTHON=		yes
+PYDISTUTILS_AUTOPLIST=	yes
 USE_PYDISTUTILS=	easy_install
+USE_PYTHON=		yes
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

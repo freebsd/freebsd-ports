@@ -2,6 +2,9 @@
 %%SITE_PERL%%/MooseX/Method/Signatures.pm
 %%SITE_PERL%%/MooseX/Method/Signatures/Types.pm
 %%SITE_PERL%%/MooseX/Method/Signatures/Meta/Method.pm
+%%PERL5_MAN3%%/MooseX::Method::Signatures.3.gz
+%%PERL5_MAN3%%/MooseX::Method::Signatures::Meta::Method.3.gz
+%%PERL5_MAN3%%/MooseX::Method::Signatures::Types.3.gz
 @dirrm %%SITE_PERL%%/MooseX/Method/Signatures/Meta
 @dirrm %%SITE_PERL%%/MooseX/Method/Signatures
 @dirrmtry %%SITE_PERL%%/MooseX/Method

@@ -1092,6 +1092,8 @@
     SUBDIR += libsigc++12
     SUBDIR += libsigc++20
     SUBDIR += libsigcx
+    SUBDIR += libsigrok
+    SUBDIR += libsigrokdecode
     SUBDIR += libsigsegv
     SUBDIR += libslang2
     SUBDIR += libslave
@@ -1889,7 +1891,6 @@
     SUBDIR += p5-Devel-ebug
     SUBDIR += p5-Devel-ptkdb
     SUBDIR += p5-Device-USB
-    SUBDIR += p5-Dialog
     SUBDIR += p5-Digest-TransformPath
     SUBDIR += p5-Dir-Project
     SUBDIR += p5-Dir-Self
@@ -3640,6 +3641,7 @@
     SUBDIR += py-levenshtein
     SUBDIR += py-liblarch
     SUBDIR += py-libplist
+    SUBDIR += py-libvirt
     SUBDIR += py-ll-core
     SUBDIR += py-lock_file
     SUBDIR += py-lockfile

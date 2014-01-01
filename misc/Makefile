@@ -24,7 +24,6 @@
     SUBDIR += bdelta
     SUBDIR += bestfit
     SUBDIR += bibletime
-    SUBDIR += bibletime-devel
     SUBDIR += biblical-curse
     SUBDIR += bigboard
     SUBDIR += biosfont-demos

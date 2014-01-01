@@ -10,7 +10,7 @@ DISTNAME=	compiler-${PORTVERSION}
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Closure Compiler
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

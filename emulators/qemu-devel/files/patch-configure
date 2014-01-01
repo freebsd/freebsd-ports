@@ -1,7 +1,7 @@
 --- a/configure
 +++ a/configure
-@@ -154,7 +154,7 @@ bigendian="no"
- mingw32="no"
+@@ -192,7 +192,7 @@ gcov="no"
+ gcov_tool="gcov"
  EXESUF=""
  prefix="/usr/local"
 -mandir="\${prefix}/share/man"
@@ -9,16 +9,16 @@
  datadir="\${prefix}/share"
  qemu_docdir="\${prefix}/share/doc/qemu"
  bindir="\${prefix}/bin"
-@@ -1756,7 +1756,7 @@ if test "$gtk" != "no"; then
- 	gtk_libs=`$pkg_config --libs $gtkpackage 2>/dev/null`
- 	vte_cflags=`$pkg_config --cflags $vtepackage 2>/dev/null`
- 	vte_libs=`$pkg_config --libs $vtepackage 2>/dev/null`
+@@ -1749,7 +1749,7 @@ if test "$gtk" != "no"; then
+ 	gtk_libs=`$pkg_config --libs $gtkpackage`
+ 	vte_cflags=`$pkg_config --cflags $vtepackage`
+ 	vte_libs=`$pkg_config --libs $vtepackage`
 -	libs_softmmu="$gtk_libs $vte_libs $libs_softmmu"
 +	libs_softmmu="$gtk_libs -lintl $vte_libs $libs_softmmu"
  	gtk="yes"
-     else
- 	if test "$gtk" = "yes" ; then
-@@ -2511,15 +2511,18 @@ if compile_prog "" "" ; then
+     fi
+ fi
+@@ -2956,15 +2956,18 @@ if compile_prog "" "" ; then
  fi
  
  # Check if tools are available to build documentation.
@@ -45,33 +45,33 @@
  fi
  
  # Search for bswap_32 function
-@@ -3134,18 +3134,29 @@ fi
+@@ -3121,17 +3124,30 @@ fi
  
  # check for libusb
  if test "$libusb" != "no" ; then
--    if $pkg_config --atleast-version=1.0.13 libusb-1.0 >/dev/null 2>&1 ; then
+-    if $pkg_config --atleast-version=1.0.13 libusb-1.0; then
 -        libusb="yes"
--	usb="libusb"
--        libusb_cflags=$($pkg_config --cflags libusb-1.0 2>/dev/null)
--        libusb_libs=$($pkg_config --libs libusb-1.0 2>/dev/null)
+-        libusb_cflags=$($pkg_config --cflags libusb-1.0)
+-        libusb_libs=$($pkg_config --libs libusb-1.0)
 -        QEMU_CFLAGS="$QEMU_CFLAGS $libusb_cflags"
 +    cat > $TMPC << EOF
 +#include <libusb.h>
 +
 +int main(void) { return libusb_get_port_path(NULL, NULL, NULL, 0); }
 +EOF
-+    if compile_prog "-Werror" "-lusb" ; then
++    if compile_prog "-Werror" "-lusb -pthread" ; then
++        libusb="yes"
 +        libusb_cflags=""
 +        libusb_libs=-lusb
          libs_softmmu="$libs_softmmu $libusb_libs"
      else
 -        if test "$libusb" = "yes"; then
 -            feature_not_found "libusb"
-+        if $pkg_config --atleast-version=1.0.13 libusb-1.0 >/dev/null 2>&1 ; then
++        if $pkg_config --atleast-version=1.0.13 libusb-1.0; then
 +            libusb="yes"
 +            usb="libusb"
-+            libusb_cflags=$($pkg_config --cflags libusb-1.0 2>/dev/null)
-+            libusb_libs=$($pkg_config --libs libusb-1.0 2>/dev/null)
++            libusb_cflags=$($pkg_config --cflags libusb-1.0)
++            libusb_libs=$($pkg_config --libs libusb-1.0)
 +            QEMU_CFLAGS="$QEMU_CFLAGS $libusb_cflags"
 +            libs_softmmu="$libs_softmmu $libusb_libs"
 +        else

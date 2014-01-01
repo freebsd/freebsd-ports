@@ -13,13 +13,9 @@ MAINTAINER=	db@FreeBSD.org
 COMMENT=	Spectrum analyser
 
 USES=		gmake motif
-NO_STAGE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
-MAN1=		xanalyser.1
-PLIST_FILES=	bin/xanalyser \
-		lib/X11/app-defaults/XAnalyser
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	john
-DISTVERSION=	1.7.9-jumbo-5
+DISTVERSION=	1.7.9-jumbo-7
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/g/ \
 		http://mirrors.kernel.org/openwall/projects/john/${DISTVERSION:C/-.*//}/ \
@@ -14,8 +14,9 @@ COMMENT=	Featureful Unix password cracker
 
 LICENSE=	GPLv2
 
+USES=		gmake shebangfix
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+SHEBANG_FILES=	run/*.pl
 BUILD_WRKSRC=	${WRKDIR}/${DISTNAME}/src
 
 # We prefer -jumbo (community-enhanced) versions instead of vanilla releases
@@ -37,7 +38,6 @@ PORTDOCS=	CHANGES CONFIG EXAMPLES EXTERNAL FAQ MODES OPTIONS README \
 OPTIONS_DEFINE=	OPENMP DOCS
 OPENMP_DESC=	Compile with OpenMP support
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -80,20 +80,15 @@ pre-build:
 	@${ECHO_CMD}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/run/john ${PREFIX}/bin
-	${LN} -sf john ${PREFIX}/bin/xtract
-	${LN} -sf john ${PREFIX}/bin/unshadow
-	@${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/run && ${INSTALL_DATA} *.??? [^j]*.conf ${DATADIR}
-	cd ${WRKSRC}/run && ${INSTALL_SCRIPT} *.?? mailer ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/run/john ${STAGEDIR}${PREFIX}/bin
+	${LN} -sf john ${STAGEDIR}${PREFIX}/bin/xtract
+	${LN} -sf john ${STAGEDIR}${PREFIX}/bin/unshadow
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/run && ${INSTALL_DATA} *.??? [^j]*.conf ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/run && ${INSTALL_SCRIPT} *.?? mailer ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/run/john.conf \
-		${PREFIX}/etc/john.conf.default
-.if !exists(${PREFIX}/etc/john.conf)
-	${INSTALL_DATA} ${WRKSRC}/run/john.conf ${PREFIX}/etc
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
-.endif
+		${STAGEDIR}${PREFIX}/etc/john.conf.default
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

@@ -10,7 +10,7 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	UNIX group access control module for Apache 2.2
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 PORTSCOUT=	limit:^1\.0\.
 

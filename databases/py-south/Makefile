@@ -11,7 +11,7 @@ DISTNAME=	South-${PORTVERSION}
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	Intelligent schema migrations for Django apps
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

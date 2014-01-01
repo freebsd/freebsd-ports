@@ -23,15 +23,10 @@ do-build:
 	${CC} -o ${WRKSRC}/nasawash ${WRKSRC}/nasawash.o ${LIBS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/nasawash ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/nasawash ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${ECHO} ""
-	@${ECHO} "nasawash docs installed in ${DOCSDIR}"
-	@${ECHO} ""
-.endif
 
 .include <bsd.port.mk>

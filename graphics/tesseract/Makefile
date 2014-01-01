@@ -11,7 +11,7 @@ DISTFILES=	tesseract-ocr-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Commercial quality open source OCR engine
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 LIB_DEPENDS=	lept:${PORTSDIR}/graphics/leptonica
 

@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bill.brinzer@gmail.com
 COMMENT=	Capture STDOUT and STDERR from Perl, XS, or external programs
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 TEST_DEPENDS=	p5-Inline>=0:${PORTSDIR}/devel/p5-Inline
 

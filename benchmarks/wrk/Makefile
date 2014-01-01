@@ -11,7 +11,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	The modern HTTP benchmarking tool
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 FETCH_ARGS=	-pRr
 LIB_DEPENDS+=	libluajit-5.1.so:${PORTSDIR}/lang/luajit

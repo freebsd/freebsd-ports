@@ -9,7 +9,7 @@ DISTNAME=	android-platform_system_core-${GH_COMMIT}
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Android debug bridge command line tool
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	android

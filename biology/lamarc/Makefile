@@ -11,7 +11,7 @@ MASTER_SITES=	http://evolution.genetics.washington.edu/lamarc/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Package of programs for computing population parameters
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 OPTIONS_DEFINE=	WXGTK DOCS
 

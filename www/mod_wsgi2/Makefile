@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	2
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Python WSGI adapter module for Apache
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 CONFLICTS=	${PKGNAMEPREFIX}mod_wsgi-3.* ${PKGNAMEPREFIX}mod_wsgi3.* mod_wsgi-3.*
 

@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	3
 MAINTAINER=	gaod@hychen.org
 COMMENT=	High performance search server built using Lucene Java
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 CONFLICT=	apache-solr-4.1.*
 

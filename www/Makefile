@@ -429,7 +429,6 @@
     SUBDIR += man2web
     SUBDIR += mathjax
     SUBDIR += mathopd
-    SUBDIR += mawstats
     SUBDIR += mediawiki119
     SUBDIR += mediawiki120
     SUBDIR += mediawiki121
@@ -499,7 +498,6 @@
     SUBDIR += mod_layout22
     SUBDIR += mod_limitipconn2
     SUBDIR += mod_line_edit
-    SUBDIR += mod_lisp2
     SUBDIR += mod_log_config-st
     SUBDIR += mod_log_dbd
     SUBDIR += mod_log_firstbyte
@@ -572,7 +570,6 @@
     SUBDIR += node
     SUBDIR += node-devel
     SUBDIR += nostromo
-    SUBDIR += notftp
     SUBDIR += npapi-xine
     SUBDIR += npc
     SUBDIR += npm

@@ -1,0 +1,9 @@
+include/libsigrok/libsigrok.h
+include/libsigrok/proto.h
+include/libsigrok/version.h
+lib/libsigrok.a
+lib/libsigrok.la
+lib/libsigrok.so
+lib/libsigrok.so.1
+libdata/pkgconfig/libsigrok.pc
+@dirrm include/libsigrok

@@ -10,7 +10,7 @@ MASTER_SITES=	http://semicomplete.googlecode.com/files/ \
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	A powerful field extraction tool
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 MAKE_ENV+=	INSTALLMAN=${PREFIX}/man
 

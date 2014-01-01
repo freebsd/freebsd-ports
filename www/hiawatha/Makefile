@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hiawatha
-PORTVERSION=	9.2
+PORTVERSION=	9.3.1
 CATEGORIES=	www
 MASTER_SITES=	http://www.hiawatha-webserver.org/files/ \
 		http://www.c-s.li/ports/
@@ -15,8 +15,6 @@ LICENSE=	GPLv2
 PORTDOCS=	ChangeLog README.md
 CONFIG_FILES=	hiawatha.conf mimetype.conf cgi-wrapper.conf toolkit.conf \
 		index.xslt
-
-MAN1=		cgi-wrapper.1 hiawatha.1 ssi-cgi.1 wigwam.1
 
 SUB_FILES=	pkg-message
 USES=		cmake
@@ -34,17 +32,9 @@ CMAKE_ARGS+=	-DCMAKE_INSTALL_BINDIR=${PREFIX}/bin \
 		-DLOG_DIR=/var/log/hiawatha \
 		-DPID_DIR=/var/run
 
-OPTIONS_DEFINE=	CACHE \
-		DOCS \
-		IPV6 \
-		MONITOR \
-		RPROXY \
-		SSL \
-		TOMAHAWK \
-		TOOLKIT \
-		XSLT
+OPTIONS_DEFINE=	CACHE DOCS IPV6 MONITOR RPROXY SSL TOMAHAWK TOOLKIT XSLT
 
-OPTIONS_DEFAULT=CACHE IPV6 RPROXY SSL TOOLKIT XSLT DOCS
+OPTIONS_DEFAULT=	CACHE IPV6 RPROXY SSL TOOLKIT XSLT DOCS
 
 CACHE_DESC=	Enable cache support
 MONITOR_DESC=	Enable Hiawatha Monitor
@@ -53,61 +43,32 @@ TOMAHAWK_DESC=	Enable Tomahawk command channel
 TOOLKIT_DESC=	Enable URL toolkit
 XSLT_DESC=	Enable XSLT support
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+CACHE_CMAKE_ON=		-DENABLE_CACHE=on
+CACHE_CMAKE_OFF=	-DENABLE_CACHE=off
 
-.if ${PORT_OPTIONS:MCACHE}
-CMAKE_ARGS+=	-DENABLE_CACHE=on
-.else
-CMAKE_ARGS+=	-DENABLE_CACHE=off
-.endif
+TOMAHAWK_CMAKE_ON=	-DENABLE_TOMAHAWK=on
+TOMAHAWK_CMAKE_OFF=	-DENABLE_TOMAHAWK=off
 
-.if ${PORT_OPTIONS:MTOMAHAWK}
-CMAKE_ARGS+=	-DENABLE_TOMAHAWK=on
-.else
-CMAKE_ARGS+=	-DENABLE_TOMAHAWK=off
-.endif
+IPV6_CMAKE_ON=		-DENABLE_IPV6=on
+IPV6_CMAKE_OFF=		-DENABLE_IPV6=off
 
-.if ${PORT_OPTIONS:MIPV6}
-CMAKE_ARGS+=	-DENABLE_IPV6=on
-.else
-CMAKE_ARGS+=	-DENABLE_IPV6=off
-.endif
+MONITOR_CMAKE_ON=	-DENABLE_MONITOR=on
+MONITOR_CMAKE_OFF=	-DENABLE_MONITOR=off
 
-.if ${PORT_OPTIONS:MMONITOR}
-CMAKE_ARGS+=	-DENABLE_MONITOR=on
-.else
-CMAKE_ARGS+=	-DENABLE_MONITOR=off
-.endif
+RPROXY_CMAKE_ON=	-DENABLE_RPROXY=on
+RPROXY_CMAKE_OFF=	-DENABLE_RPROXY=off
 
-.if ${PORT_OPTIONS:MRPROXY}
-CMAKE_ARGS+=	-DENABLE_RPROXY=on
-.else
-CMAKE_ARGS+=	-DENABLE_RPROXY=off
-.endif
+SSL_CMAKE_ON=		-DENABLE_SSL=on
+SSL_CMAKE_OFF=		-DENABLE_SSL=off
 
-.if ${PORT_OPTIONS:MSSL}
-CMAKE_ARGS+=	-DENABLE_SSL=on
-.else
-CMAKE_ARGS+=	-DENABLE_SSL=off
-.endif
+TOOLKIT_CMAKE_ON=	-DENABLE_TOOLKIT=on
+TOOLKIT_CMAKE_OFF=	-DENABLE_TOOLKIT=off
 
-.if ${PORT_OPTIONS:MTOOLKIT}
-CMAKE_ARGS+=	-DENABLE_TOOLKIT=on
-.else
-CMAKE_ARGS+=	-DENABLE_TOOLKIT=off
-.endif
-
-.if ${PORT_OPTIONS:MXSLT}
-USE_GNOME+=	libxslt
-CMAKE_ARGS+=	-DENABLE_XSLT=on
-.else
-CMAKE_ARGS+=	-DENABLE_XSLT=off
-.endif
+XSLT_USE=		GNOME=libxslt
+XSLT_CMAKE_ON=		-DENABLE_XSLT=on
+XSLT_CMAKE_OFF=		-DENABLE_XSLT=off
 
 PLIST_SUB+=	ECHO_MSG=${ECHO_MSG}
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
@@ -118,25 +79,14 @@ post-patch:
 	${WRKSRC}/man/hiawatha.1.in ${WRKSRC}/man/cgi-wrapper.1.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 
 .for FILE in ${CONFIG_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/config/${FILE} ${PREFIX}/etc/hiawatha/${FILE}.sample
-	@if [ ! -f ${PREFIX}/etc/hiawatha/${FILE} ]; then \
-		${CP} -p ${WRKSRC}/config/${FILE} ${PREFIX}/etc/hiawatha/${FILE} ; \
-	fi
+	@${INSTALL_DATA} ${WRKSRC}/config/${FILE} ${STAGEDIR}${PREFIX}/etc/hiawatha/${FILE}.sample
 .endfor
 
-	@if [ ! -d ${WWWDIR} ]; then \
-		@${MKDIR} ${WWWDIR} ; \
-	fi
-	@${CP} ${WRKSRC}/extra/index.html ${WWWDIR}/index.hiawatha.html
-	@if [ ! -f ${WWWDIR}/index.html ] ; then \
-		${CP} ${WRKSRC}/extra/index.html ${WWWDIR}/ ; \
-	fi
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${WWWDIR} ; \
+	${CP} ${WRKSRC}/extra/index.html ${STAGEDIR}${WWWDIR}/index.hiawatha.html
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

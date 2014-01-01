@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	/thrift/${PORTVERSION}
 MAINTAINER=	komarov@valerka.net
 COMMENT=	Framework for scalable cross-language services development
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_AUTOTOOLS=	autoconf autoheader:env aclocal automake libtool
 ACLOCAL_ARGS=	-I${WRKSRC}/aclocal

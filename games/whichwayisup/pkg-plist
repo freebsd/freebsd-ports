@@ -66,12 +66,12 @@ bin/whichwayisup
 %%PYTHON_SITELIBDIR%%/whichwayisup/spikes.py
 %%PYTHON_SITELIBDIR%%/whichwayisup/spikes.pyc
 %%PYTHON_SITELIBDIR%%/whichwayisup/spikes.pyo
-%%PYTHON_SITELIBDIR%%/whichwayisup/trigger.py
-%%PYTHON_SITELIBDIR%%/whichwayisup/trigger.pyc
-%%PYTHON_SITELIBDIR%%/whichwayisup/trigger.pyo
 %%PYTHON_SITELIBDIR%%/whichwayisup/tile.py
 %%PYTHON_SITELIBDIR%%/whichwayisup/tile.pyc
 %%PYTHON_SITELIBDIR%%/whichwayisup/tile.pyo
+%%PYTHON_SITELIBDIR%%/whichwayisup/trigger.py
+%%PYTHON_SITELIBDIR%%/whichwayisup/trigger.pyc
+%%PYTHON_SITELIBDIR%%/whichwayisup/trigger.pyo
 %%PYTHON_SITELIBDIR%%/whichwayisup/util.py
 %%PYTHON_SITELIBDIR%%/whichwayisup/util.pyc
 %%PYTHON_SITELIBDIR%%/whichwayisup/util.pyo
@@ -85,6 +85,7 @@ bin/whichwayisup
 %%PYTHON_SITELIBDIR%%/whichwayisup/world.py
 %%PYTHON_SITELIBDIR%%/whichwayisup/world.pyc
 %%PYTHON_SITELIBDIR%%/whichwayisup/world.pyo
+share/pixmaps/whichwayisup.png
 %%DATADIR%%/levels/A Piece of Cake.txt
 %%DATADIR%%/levels/Quest For The Keys.txt
 %%DATADIR%%/levels/The Other Side.txt
@@ -196,13 +197,10 @@ bin/whichwayisup
 %%DATADIR%%/sounds/kling.ogg
 %%DATADIR%%/sounds/nextlevel.ogg
 %%DATADIR%%/sounds/woosh.ogg
-share/pixmaps/whichwayisup.png
-@dirrm %%PYTHON_SITELIBDIR%%/whichwayisup
-@dirrm %%DATADIR%%/levels
-@dirrm %%DATADIR%%/misc
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/pictures
 @dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/pictures
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/misc
+@dirrm %%DATADIR%%/levels
 @dirrm %%DATADIR%%
-@exec %%LOCALBASE%%/bin/update-desktop-database -q || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database -q || /usr/bin/true
+@dirrm %%PYTHON_SITELIBDIR%%/whichwayisup

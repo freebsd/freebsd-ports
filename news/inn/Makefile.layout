@@ -1,5 +1,8 @@
 # $FreeBSD$
 
+# tell bmake we use the old :L :U modifiers
+.MAKE.FreeBSD_UL= yes
+
 INN_LAYOUT?=		old
 
 .if !empty(INN_LAYOUT:L:Mnew)

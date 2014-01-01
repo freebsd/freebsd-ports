@@ -9,7 +9,7 @@ MASTER_SITES=	http://download.dajobe.org/flickcurl/
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	C library for the Flickr API
 
-LICENSE=	AL2 GPLv2 LGPL21
+LICENSE=	APACHE20 GPLv2 LGPL21
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl

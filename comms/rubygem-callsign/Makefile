@@ -9,8 +9,10 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Provides a Ruby-Frontend to callook.info ham Radio Callsign Lookup
 
-RUN_DEPENDS=	rubygem-json>=0:${PORTSDIR}/devel/rubygem-json \
-		rubygem-hashie>=0:${PORTSDIR}/devel/rubygem-hashie
+LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-hashie>=0:${PORTSDIR}/devel/rubygem-hashie \
+		rubygem-json>=0:${PORTSDIR}/devel/rubygem-json
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

@@ -1,0 +1,9 @@
+lib/X11/fonts/clearsans/ClearSans-Bold.ttf
+lib/X11/fonts/clearsans/ClearSans-BoldItalic.ttf
+lib/X11/fonts/clearsans/ClearSans-Italic.ttf
+lib/X11/fonts/clearsans/ClearSans-Light.ttf
+lib/X11/fonts/clearsans/ClearSans-Medium.ttf
+lib/X11/fonts/clearsans/ClearSans-MediumItalic.ttf
+lib/X11/fonts/clearsans/ClearSans-Regular.ttf
+lib/X11/fonts/clearsans/ClearSans-Thin.ttf
+@dirrm lib/X11/fonts/clearsans

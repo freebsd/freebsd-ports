@@ -12,7 +12,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.${SNAPSHOT}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight JS unit testing using the V8 engine
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	libgflags.so:${PORTSDIR}/devel/gflags \

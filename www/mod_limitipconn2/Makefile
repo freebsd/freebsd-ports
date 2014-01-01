@@ -13,7 +13,7 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Allows you to limit the number of simultaneous connexions
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_APACHE=	22
 USE_BZIP2=	yes

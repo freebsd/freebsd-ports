@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Windows password cracker based on rainbow tables
 
-LICENSE=	AL2 GPLv2
+LICENSE=	APACHE20 GPLv2
 LICENSE_COMB=	multi
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2

@@ -2,6 +2,7 @@ bin/gnetlist
 bin/mk_verilog_syms
 bin/sch2eaglepos.sh
 bin/sw2asc
+man/man1/gnetlist.1.gz
 %%DOCSDIR%%/man/gnetlist.html
 %%DOCSDIR%%/readmes/README.bom
 %%DOCSDIR%%/readmes/README.eagle

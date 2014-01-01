@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Python API library to monitor file system events
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	${PKGNAMEPREFIX}argh>=0.15.1:${PORTSDIR}/devel/py-argh \
 		${PKGNAMEPREFIX}yaml>=3.10:${PORTSDIR}/devel/py-yaml \

@@ -26,10 +26,6 @@ CONFIGURE_ARGS=	--with-perl-binding \
 		--with-python-binding --without-rigmatrix
 PLIST_SUB=	VER=${PORTVERSION} TCL_VER=${TCL_VER}
 
-MAN1=		rigctl.1 rigmem.1 rigswr.1 rotctl.1 rigsmtr.1
-MAN8=		rpc.rigd.8 rpc.rotd.8 rigctld.8 rotctld.8
-
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|g' \
 		-e 's|%%TCL_LIBDIR%%|${TCL_LIBDIR}/hamlib|g' \
@@ -38,21 +34,16 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 post-build:
 	${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' \
-		${WRKSRC}/bindings/Hamlib-pl.mk
+		${STAGEDIR}${WRKSRC}/bindings/Hamlib-pl.mk
 
 post-install:
-.if	!defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for d in ${WRKSRC}/AUTHORS ${WRKSRC}/COPYING ${WRKSRC}/COPYING.LIB \
 	${WRKSRC}/ChangeLog ${WRKSRC}/INSTALL ${WRKSRC}/LICENSE \
 	${WRKSRC}/NEWS ${WRKSRC}/PLAN ${WRKSRC}/README \
 	${WRKSRC}/README.betatester ${WRKSRC}/README.win32 \
 	${WRKSRC}/THANKS
-	${INSTALL_DATA} ${WRKSRC}/${d} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${ECHO}
-	@${ECHO} "docs installed in ${DOCSDIR}"
-	@${ECHO}
-.endif
 
 .include <bsd.port.mk>

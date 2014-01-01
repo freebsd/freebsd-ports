@@ -9,9 +9,9 @@ MASTER_SITES=	http://mirror.kolabsys.com/pub/releases/
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Kolab XML Format Schema Definitions Library
 
-# The XSD schemas in schemas/ are AL2-licensed, and some files are
-# in public domain. The library itself and the installed headers are
-# considered LGPL3-licensed, though.
+# The XSD schemas in schemas/ are APACHE20-licensed, and some files
+# are in public domain. The library itself and the installed headers
+# are considered LGPL3-licensed, though.
 LICENSE=	LGPL3
 
 BUILD_DEPENDS=	xsdcxx:${PORTSDIR}/devel/xsd

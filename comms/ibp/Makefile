@@ -16,13 +16,8 @@ COMMENT=	A little program for monitoring amateur radio beacons
 USES=		imake
 USE_XORG=	x11
 
-PLIST_FILES=	bin/ibp
-MAN1=		ibp.1
-MANCOMPRESSED=	no
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM}	${WRKSRC}/ibp ${PREFIX}/bin/
-	${INSTALL_MAN}	${WRKSRC}/ibp.1 ${MANPREFIX}/man/man1/ibp.1
+	${INSTALL_PROGRAM}	${WRKSRC}/ibp ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN}	${WRKSRC}/ibp.1 ${STAGEDIR}${MANPREFIX}/man/man1/ibp.1
 
 .include <bsd.port.mk>

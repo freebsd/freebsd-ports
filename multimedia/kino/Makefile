@@ -16,6 +16,9 @@ LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv	\
 RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder	\
 		mplex:${PORTSDIR}/multimedia/mjpegtools
 
+DEPRECATED=	Not developed since 2009, declared dead 05.08.2013 on there website.
+EXPIRATION_DATE=	20140130
+
 OPTIONS_DEFINE=	QUICKTIME FFMPEG_KINO
 QUICKTIME_DESC=	With Quicktime support
 FFMPEG_KINO_DESC=	With ffmpeg-kino

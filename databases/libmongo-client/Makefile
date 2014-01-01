@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MAINTAINER=	gd.workbox@gmail.com
 COMMENT=	Alternative C driver for MongoDB
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	algernon

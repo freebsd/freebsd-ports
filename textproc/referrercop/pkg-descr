@@ -1,5 +1,0 @@
- ReferrerCop parses Apache log files or AWStats data files and removes entries
- for referring URLs that match a list of known referrer spammers. It then
- returns the filtered files via standard output.
-
-Author: Ryan Grove <ryan@wonko.com>

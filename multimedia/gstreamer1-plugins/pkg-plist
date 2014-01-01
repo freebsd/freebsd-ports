@@ -244,3 +244,4 @@ share/locale/zh_CN/LC_MESSAGES/gst-plugins-base-%%VERSION%%.mo
 @dirrm include/gstreamer-%%VERSION%%/gst/fft
 @dirrm include/gstreamer-%%VERSION%%/gst/audio
 @dirrm include/gstreamer-%%VERSION%%/gst/app
+@dirrm include/gstreamer-%%VERSION%%/gst/allocators

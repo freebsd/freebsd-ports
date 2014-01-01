@@ -15,6 +15,22 @@
 %%SITE_PERL%%/SVN/Hooks/Notify.pm
 %%SITE_PERL%%/SVN/Hooks/UpdateConfFile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Hooks/.packlist
+%%PERL5_MAN3%%/SVN::Hooks.3.gz
+%%PERL5_MAN3%%/SVN::Hooks::AllowLogChange.3.gz
+%%PERL5_MAN3%%/SVN::Hooks::AllowPropChange.3.gz
+%%PERL5_MAN3%%/SVN::Hooks::CheckCapability.3.gz
+%%PERL5_MAN3%%/SVN::Hooks::CheckJira.3.gz
+%%PERL5_MAN3%%/SVN::Hooks::CheckLog.3.gz
+%%PERL5_MAN3%%/SVN::Hooks::CheckMimeTypes.3.gz
+%%PERL5_MAN3%%/SVN::Hooks::CheckProperty.3.gz
+%%PERL5_MAN3%%/SVN::Hooks::CheckStructure.3.gz
+%%PERL5_MAN3%%/SVN::Hooks::DenyChanges.3.gz
+%%PERL5_MAN3%%/SVN::Hooks::DenyFilenames.3.gz
+%%PERL5_MAN3%%/SVN::Hooks::Generic.3.gz
+%%PERL5_MAN3%%/SVN::Hooks::JiraAcceptance.3.gz
+%%PERL5_MAN3%%/SVN::Hooks::Mailer.3.gz
+%%PERL5_MAN3%%/SVN::Hooks::Notify.3.gz
+%%PERL5_MAN3%%/SVN::Hooks::UpdateConfFile.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Hooks
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN
 @dirrm %%SITE_PERL%%/SVN/Hooks

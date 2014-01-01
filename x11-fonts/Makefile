@@ -18,6 +18,7 @@
     SUBDIR += cantarell-fonts
     SUBDIR += charis
     SUBDIR += charis-compact
+    SUBDIR += clearsans
     SUBDIR += code2000
     SUBDIR += code2001
     SUBDIR += comfortaa-ttf
@@ -33,7 +34,6 @@
     SUBDIR += droid-fonts-ttf
     SUBDIR += ecofont
     SUBDIR += encodings
-    SUBDIR += etlfonts
     SUBDIR += farsifonts
     SUBDIR += fntsample
     SUBDIR += font-adobe-100dpi

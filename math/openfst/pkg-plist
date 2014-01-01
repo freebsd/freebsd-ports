@@ -305,9 +305,6 @@ lib/libfst.so.1
 lib/libfstscript.la
 lib/libfstscript.so
 lib/libfstscript.so.1
-share/licenses/openfst-1.3.4/AL2
-share/licenses/openfst-1.3.4/LICENSE
-share/licenses/openfst-1.3.4/catalog.mk
 @dirrm include/fst/script
 @dirrm include/fst/extensions/pdt
 @dirrm include/fst/extensions/far

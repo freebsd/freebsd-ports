@@ -9,4 +9,4 @@ error variance matrix. KFAS also contains function for computing
 the likelihood of exponential family state space models and function
 for state smoothing of exponential family state space models.
 
-WWW:	http://cran.r-project.org/web/packages/KFAS/
+WWW: http://cran.r-project.org/web/packages/KFAS/

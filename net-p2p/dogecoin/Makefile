@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dogecoin
-PORTVERSION=	0.6.4.0
+PORTVERSION=	1.3
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~swills/ \
@@ -10,6 +10,8 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Virtual Peer-to-Peer Currency Client
+
+LICENSE=	MIT
 
 LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
 
@@ -23,10 +25,10 @@ QRCODES_DESC=	Build with QR code display
 USE_GITHUB=	yes
 GH_ACCOUNT=	dogecoin
 GH_PROJECT=	dogecoin
-GH_COMMIT=	8e53cb8
+GH_COMMIT=	2ee5cb3
 GH_TAGNAME=	${GH_COMMIT}
 
-USES=		gmake
+USES=		gmake compiler:c++11-lib
 USE_OPENSSL=	yes
 USE_BDB=	yes
 WANT_BDB_VER=	48

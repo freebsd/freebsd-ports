@@ -9,7 +9,7 @@ MASTER_SITES=	GH
 MAINTAINER=	waitman@waitman.net
 COMMENT=	C++ 2.4 Driver for MongoDB
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \

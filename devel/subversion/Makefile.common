@@ -14,7 +14,7 @@ USE_AUTOTOOLS=	libtool
 USE_KDE4=	# Used below if KWallet support is enabled
 USES+=		pkgconfig
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[^8].[0-9]*
 

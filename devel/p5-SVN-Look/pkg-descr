@@ -10,4 +10,4 @@ use the information they need.  Moreover, all the information
 gathered buy calling the svnlook command is cached in the object,
 avoiding repetitious calls.
 
-WWW:    http://search.cpan.org/dist/SVN-Look/
+WWW: http://search.cpan.org/dist/SVN-Look/

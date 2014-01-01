@@ -7,7 +7,7 @@ CATEGORIES=	www devel
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	HTTP semantic awareness on top mochiweb
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
 		mochiweb-basho>=0:${PORTSDIR}/www/mochiweb-basho

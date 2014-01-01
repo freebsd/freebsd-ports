@@ -2,16 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	http_parser.rb
-PORTVERSION=	0.5.3
+PORTVERSION=	0.6.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	tota@FreeBSD.org
-COMMENT=	A simple callback-based HTTP request/response parser
+MAINTAINER=	ruby@FreeBSD.org
+COMMENT=	Simple callback-based HTTP request/response parser
+
+LICENSE=	MIT
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -9,7 +9,7 @@ CATEGORIES=	devel
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Ninja is a small build system closest in spirit to Make
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	martine

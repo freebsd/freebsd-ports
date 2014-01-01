@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	SVN-Hooks
-PORTVERSION=	1.21
+PORTVERSION=	1.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A framework for implementing Subversion hooks
+MAINTAINER=	5u623l20@gmail.com
+COMMENT=	Framework for implementing Subversion hooks
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Data-Util>=0:${PORTSDIR}/devel/p5-Data-Util \
 		p5-Email-Send>=0:${PORTSDIR}/mail/p5-Email-Send \
@@ -23,22 +26,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		SVN::Hooks.3 \
-		SVN::Hooks::AllowLogChange.3 \
-		SVN::Hooks::AllowPropChange.3 \
-		SVN::Hooks::CheckCapability.3 \
-		SVN::Hooks::CheckJira.3 \
-		SVN::Hooks::CheckLog.3 \
-		SVN::Hooks::CheckMimeTypes.3 \
-		SVN::Hooks::CheckProperty.3 \
-		SVN::Hooks::CheckStructure.3 \
-		SVN::Hooks::DenyChanges.3 \
-		SVN::Hooks::DenyFilenames.3 \
-		SVN::Hooks::Generic.3 \
-		SVN::Hooks::JiraAcceptance.3 \
-		SVN::Hooks::Mailer.3 \
-		SVN::Hooks::Notify.3 \
-		SVN::Hooks::UpdateConfFile.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -10,7 +10,7 @@ MASTER_SITES=	http://apt.douglasthrift.net/files/${PORTNAME}/ \
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Display a tree of processes
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_XZ=		yes
 GNU_CONFIGURE=	yes

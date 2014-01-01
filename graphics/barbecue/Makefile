@@ -7,7 +7,7 @@ CATEGORIES=	graphics print java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}/
 DIST_SUBDIR=	java
 
-MAINTAINER=	nemysis@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java barcode generator
 
 LICENSE=	BSD
@@ -33,7 +33,6 @@ OPTIONS_SINGLE=	AS
 OPTIONS_SINGLE_AS=	TOMCAT6 TOMCAT7
 OPTIONS_DEFAULT=	TOMCAT6
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTOMCAT6}
@@ -54,22 +53,25 @@ post-extract:
 	${TAR} xf ${WRKSRC}/${PORTNAME}.war -C ${WRKDIR}/${PORTNAME}
 
 do-install:
-	${INSTALL_DATA} ${JARFILES:S|-${DISTVERSION}||:S|^|${WRKSRC}/|} ${JAVAJARDIR}
+	${INSTALL_DATA} ${JARFILES:S|-${DISTVERSION}||:S|^|${WRKSRC}/|} \
+		${STAGEDIR}${JAVAJARDIR}
 
 .if ${PORT_OPTIONS:MTOMCAT6} || ${PORT_OPTIONS:MTOMCAT7}
-	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} ${WEBAPPDIR}/${PORTNAME}
-	@(cd ${WRKDIR}/${PORTNAME} && ${COPYTREE_SHARE} \* ${WEBAPPDIR}/${PORTNAME})
-	${TOUCH} ${WEBAPPDIR}/${PORTNAME}/WEB-INF/classes/net/sourceforge/barbecue/postnet/.empty
+	${INSTALL} -d -o ${WWWOWN} -g ${WWWGRP} ${STAGEDIR}${WEBAPPDIR}/${PORTNAME}
+	@(cd ${WRKDIR}/${PORTNAME} && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${WEBAPPDIR}/${PORTNAME})
+	${TOUCH} \
+	${STAGEDIR}${WEBAPPDIR}/${PORTNAME}/WEB-INF/classes/net/sourceforge/barbecue/postnet/.empty
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
-	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>

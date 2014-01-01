@@ -140,6 +140,7 @@ foomatic/db/source/printer/HP-LaserJet_P2014n.xml
 foomatic/db/source/printer/HP-LaserJet_P2035.xml
 foomatic/db/source/printer/HP-LaserJet_P2035n.xml
 foomatic/db/source/printer/HP-LaserJet_Pro_CP1025nw.xml
+foomatic/db/source/printer/HP-LaserJet_Pro_M1212nf_MFP.xml
 foomatic/db/source/printer/HP-LaserJet_Pro_P1102.xml
 foomatic/db/source/printer/HP-LaserJet_Pro_P1102w.xml
 foomatic/db/source/printer/HP-LaserJet_Pro_P1566.xml
@@ -221,6 +222,7 @@ share/cups/model/HP-LaserJet_P2014n.ppd.gz
 share/cups/model/HP-LaserJet_P2035.ppd.gz
 share/cups/model/HP-LaserJet_P2035n.ppd.gz
 share/cups/model/HP-LaserJet_Pro_CP1025nw.ppd.gz
+share/cups/model/HP-LaserJet_Pro_M1212nf_MFP.ppd.gz
 share/cups/model/HP-LaserJet_Pro_P1102.ppd.gz
 share/cups/model/HP-LaserJet_Pro_P1102w.ppd.gz
 share/cups/model/HP-LaserJet_Pro_P1566.ppd.gz

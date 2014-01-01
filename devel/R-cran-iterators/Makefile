@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Iterator construct for R
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USES=	cran:auto-plist
 

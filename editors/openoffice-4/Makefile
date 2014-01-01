@@ -16,7 +16,7 @@ EXTRACT_ONLY=	${OOOSRC} ${EXTSRC}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 NO_LATEST_LINK=	yes
 
@@ -303,7 +303,7 @@ post-install:
 	@${ECHO_CMD} "" > ${TMPPLIST}
 	@${ECHO_CMD} "share/licenses/${PKGNAME}/catalog.mk" >> ${TMPPLIST}
 	@${ECHO_CMD} "share/licenses/${PKGNAME}/LICENSE"    >> ${TMPPLIST}
-	@${ECHO_CMD} "share/licenses/${PKGNAME}/AL2"        >> ${TMPPLIST}
+	@${ECHO_CMD} "share/licenses/${PKGNAME}/APACHE20"   >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm share/licenses/${PKGNAME}"     >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm share/licenses"                >> ${TMPPLIST}
 	@cd ${PREFIX} ; ${FIND} -s bin \( -type f -or -type l \) -name "${EXECBASE}*" >> ${TMPPLIST}

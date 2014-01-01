@@ -1,0 +1,50 @@
+--- src/qt/configure.orig	2013-12-31 18:16:16.149123834 +0900
++++ src/qt/configure	2013-12-31 18:21:26.989125910 +0900
+@@ -2707,8 +2707,8 @@
+     ShadowMkspecs()
+     {
+         rm -rf "$outpath/mkspecs/$1"
+-        find "$relpath/mkspecs/$1" -type d | sed "s,^$relpath,$outpath," | xargs mkdir -p
+-        find "$relpath/mkspecs/$1" -type f | sed "s,^$relpath/,," | while read f; do ln -s "$relpath/$f" "$outpath/$f"; done
++        find -s "$relpath/mkspecs/$1" -type d | sed "s,^$relpath,$outpath," | xargs mkdir -p
++        find -s "$relpath/mkspecs/$1" -type f | sed "s,^$relpath/,," | while read f; do ln -s "$relpath/$f" "$outpath/$f"; done
+     }
+ 
+     # Special case for mkspecs/features directory.
+@@ -2880,6 +2880,10 @@
+      ULTRIX:*)
+         PLATFORM=ultrix-g++
+         ;;
++#     FreeBSD:10.[0-9]*)
++#        echo "=== ($UNAME_RELEASE) ==="
++#        PLATFORM=freebsd-clang
++#        ;;
+      FreeBSD:*)
+         PLATFORM=freebsd-g++
+         PLATFORM_NOTES="
+@@ -3017,7 +3021,7 @@
+     CFG_SM=no
+     PLATFORMS=`find "$relpath/mkspecs/qws" | sed "s,$relpath/mkspecs/qws/,,"`
+ else
+-    PLATFORMS=`find "$relpath/mkspecs/" -type f | grep -v qws | sed "s,$relpath/mkspecs/qws/,,"`
++    PLATFORMS=`find -s "$relpath/mkspecs/" -type f | grep -v qws | sed "s,$relpath/mkspecs/qws/,,"`
+ fi
+ 
+ [ -z "$XPLATFORM" ] && XPLATFORM="$PLATFORM"
+@@ -5118,6 +5122,7 @@
+ # tests that need qmake
+ #-------------------------------------------------------------------------------
+ 
++export CXX="${CXX}"
+ # detect availability of float math.h functions
+ if "$unixtests/compile.test" "$XQMAKESPEC" "$QMAKE_CONFIG" $OPT_VERBOSE "$relpath" "$outpath" config.tests/unix/floatmath "floatmath" $L_FLAGS $I_FLAGS $l_FLAGS; then
+     CFG_USE_FLOATMATH=yes
+@@ -7665,7 +7670,7 @@
+ 	;;
+     *-g++*)
+ 	# Check gcc's version
+-	case "$(${QMAKE_CONF_COMPILER} -dumpversion)" in
++	case "$(${TEST_COMPILER} -dumpversion)" in
+ 	    4*|3.4*)
+ 		;;
+             3.3*)

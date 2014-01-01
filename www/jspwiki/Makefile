@@ -11,7 +11,7 @@ DISTNAME=	JSPWiki-${PORTVERSION}-bin
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Feature-rich and extensible Wiki engine built around J2EE
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_ZIP=	yes
 USE_JAVA=	1.6+

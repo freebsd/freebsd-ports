@@ -13,7 +13,6 @@ COMMENT=	Server daemon providing Internet access to APRS packet data
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -28,27 +27,21 @@ post-configure:
 	    ${WRKSRC}/Makefile
 
 pre-install:
-	@${MKDIR} ${PREFIX}/etc/aprsd
-	@${MKDIR} "/var/log/aprsd"
-	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/aprsd
+	@${MKDIR} ${STAGEDIR}"/var/log/aprsd"
+	@${SETENV} "PKG_PREFIX=${STAGEDIR}${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@cd ${WRKSRC}/admin
 .for	f in INIT.TNC RESTORE.TNC aprsd.conf welcome.txt user.deny
-	@${INSTALL_DATA} ${WRKSRC}/admin/$f ${PREFIX}/etc/aprsd/$f.samp
+	@${INSTALL_DATA} ${WRKSRC}/admin/$f ${STAGEDIR}${PREFIX}/etc/aprsd/$f.samp
 .endfor
-	${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for	f in chkaprsd udp_example
-	@${INSTALL_DATA} ${WRKSRC}/admin/$f ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/admin/$f ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-	@${INSTALL_SCRIPT}	${FILESDIR}/aprsd ${LOCALBASE}/etc/rc.d
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${CP} ${WRKSRC}/doc/*.html ${DOCSDIR}
-	@${ECHO}
-	@${ECHO} docs are in ${PREFIX}/share/doc/aprsd
-	@${ECHO}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL_SCRIPT}	${FILESDIR}/aprsd ${STAGEDIR}${LOCALBASE}/etc/rc.d
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${CP} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

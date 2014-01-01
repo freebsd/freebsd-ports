@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Foreach looping construct for R
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	R-cran-iterators>=1.0.0:${PORTSDIR}/devel/R-cran-iterators
 

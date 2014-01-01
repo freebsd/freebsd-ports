@@ -12,7 +12,7 @@ DIST_SUBDIR=	apache2
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Allows users authentication based on external mechanisms
 
-LICENSE=	AL2
+LICENSE=	APACHE20
 
 USE_APACHE=	22
 AP_FAST_BUILD=	yes

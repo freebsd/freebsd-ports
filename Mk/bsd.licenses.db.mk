@@ -14,8 +14,8 @@ Licenses_db_Include_MAINTAINER=         portmgr@FreeBSD.org
 #
 
 # Possible sources for information:
-# - FOSSology (see "Default License Groups")
-#   http://fossology.org/interpret_the_license_group_analysis_report
+# - SPDX License List
+#   https://spdx.org/licenses/
 #
 # - Wikipedia (article "Comparison of Free Software Licenses")
 #   http://en.wikipedia.org/wiki/Comparison_of_free_software_licences
@@ -36,7 +36,7 @@ Licenses_db_Include_MAINTAINER=         portmgr@FreeBSD.org
 # _LICENSE_LIST_GROUPS	- List of defined license groups
 #
 
-_LICENSE_LIST= 	AGPLv3 AL2 ART10 ARTPERL10 ART20 \
+_LICENSE_LIST= 	AGPLv3 APACHE10 APACHE11 APACHE20 ART10 ARTPERL10 ART20 \
 				BSD BSD2CLAUSE BSD3CLAUSE BSD4CLAUSE BSL \
 				CDDL EPL GFDL GPLv1 GPLv2 \
 		GPLv3 ISCL LGPL20 LGPL21 LGPL3 LPPL10 LPPL11 LPPL12 LPPL13 LPPL13a \
@@ -75,8 +75,14 @@ _LICENSE_PERMS_DEFAULT=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 _LICENSE_NAME_AGPLv3=	GNU Affero General Public License version 3
 _LICENSE_GROUPS_AGPLv3=	FSF GPL OSI
 
-_LICENSE_NAME_AL2=	Apache License
-_LICENSE_GROUPS_AL2=	FSF OSI
+_LICENSE_NAME_APACHE10=	Apache License 1.0
+_LICENSE_GROUPS_APACHE10=	FSF
+
+_LICENSE_NAME_APACHE11=	Apache License 1.1
+_LICENSE_GROUPS_APACHE11=	FSF OSI
+
+_LICENSE_NAME_APACHE20=	Apache License 2.0
+_LICENSE_GROUPS_APACHE20=	FSF OSI
 
 _LICENSE_NAME_ART10=	Artistic License version 1.0
 _LICENSE_GROUPS_ART10=	OSI

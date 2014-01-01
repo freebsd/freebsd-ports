@@ -161,7 +161,6 @@
     SUBDIR += fspd
     SUBDIR += fsplib
     SUBDIR += g2ipmsg
-    SUBDIR += gateway6
     SUBDIR += geocode-glib
     SUBDIR += get_iplayer
     SUBDIR += gini
@@ -965,7 +964,6 @@
     SUBDIR += py-zsi
     SUBDIR += pygopherd
     SUBDIR += pynids
-    SUBDIR += pypvm
     SUBDIR += pyrad
     SUBDIR += pythondirector
     SUBDIR += qadsl
