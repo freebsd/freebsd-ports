@@ -2,39 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	rsvndump
-PORTVERSION=	0.5.8
+PORTVERSION=	0.6
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remote Subversion repository dumpfile generator
 
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion
+
+OPTIONS_DEFINE=	DOCS NLS
+
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-svn=${LOCALBASE}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+PLIST_FILES=	bin/rsvndump
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_FILES+=		share/locale/de/LC_MESSAGES/rsvndump.mo
-.else
-CONFIGURE_ARGS+=	--disable-nls
-.endif
-CONFIGURE_ARGS+=	--enable-man \
-			--with-svn=${LOCALBASE}
+DOCS_BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
+			xmlto:${PORTSDIR}/textproc/xmlto
+DOCS_PLIST_FILES=	man/man1/rsvndump.1.gz
+DOCS_CONFIGURE_ENABLE=	man
 
-.if ${PORT_OPTIONS:MDOCS}
-MAN1=		rsvndump.1
-.endif
-PLIST_FILES+=	bin/rsvndump
+NLS_USES=		gettext
+NLS_PLIST_FILES=	share/locale/de/LC_MESSAGES/rsvndump.mo
+NLS_CONFIGURE_ENABLE=	nls
 
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-		xmlto:${PORTSDIR}/textproc/xmlto
-CONFIGURE_ARGS+=--enable-man
-.else
-CONFIGURE_ARGS+=--disable-man
-.endif
-
-BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 .include <bsd.port.mk>
