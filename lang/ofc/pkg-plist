@@ -65,11 +65,11 @@ include/ofc/DRnd.h
 include/ofc/DRndDist.h
 include/ofc/DSHA1.h
 include/ofc/DSHA256.h
-include/ofc/DSimpleFont.h
 include/ofc/DScore.h
 include/ofc/DScreenHandler.h
 include/ofc/DShort.h
 include/ofc/DSimpleArithmetic.h
+include/ofc/DSimpleFont.h
 include/ofc/DSizeable.h
 include/ofc/DSocket.h
 include/ofc/DSocketAddress.h
@@ -102,9 +102,9 @@ include/ofc/config.h
 include/ofc/md5.h
 include/ofc/settings.h
 include/ofc/warning.h
+lib/libofc-0.8.so
+lib/libofc-0.8.so.1
 lib/libofc.a
 lib/libofc.la
 lib/libofc.so
-lib/libofc-0.8.so
-lib/libofc-0.8.so.1
 @dirrm include/ofc
