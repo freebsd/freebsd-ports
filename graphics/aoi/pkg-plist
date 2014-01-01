@@ -24,9 +24,7 @@ bin/aoi
 %%DATADIR%%/Scripts/Tools/Platonic Solid.bsh
 %%DATADIR%%/Scripts/Tools/README.txt
 %%DATADIR%%/Scripts/Tools/Sculpt.bsh
-%%DATADIR%%/Scripts/Tools/Text.bsh
 %%DATADIR%%/Scripts/Tools/Thicken.bsh
-%%DATADIR%%/Textures and Materials/Library/.DS_Store
 %%DATADIR%%/Textures and Materials/Library/Building Materials.aoi
 %%DATADIR%%/Textures and Materials/Library/Effects.aoi
 %%DATADIR%%/Textures and Materials/Library/Fire.aoi
@@ -39,8 +37,9 @@ bin/aoi
 %%DATADIR%%/lib/Buoyx.jar
 %%DATADIR%%/lib/Jama-1.0.2.jar
 %%DATADIR%%/lib/QuickTimeWriter.jar
-%%DATADIR%%/lib/beanshell.jar
+%%DATADIR%%/lib/bsh-2.0b4.jar
 %%DATADIR%%/lib/gluegen-rt.jar
+%%DATADIR%%/lib/groovy-all-2.1.2.jar
 %%DATADIR%%/lib/jogl.jar
 %%DATADIR%%/lib/svgSalamander.jar
 share/pixmaps/aoi.png
