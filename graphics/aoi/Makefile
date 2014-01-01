@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	aoi
-PORTVERSION=	2.9.2
-PORTREVISION=	1
+PORTVERSION=	3.0
 CATEGORIES=	graphics java
-MASTER_SITES=	SF/${PORTNAME}/ArtOfIllusion/${PORTVERSION}
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
-DIST_SUBDIR=	java
+MASTER_SITES=	SF/${PORTNAME}/ArtOfIllusion/${PORTVERSION} \
+		SF/${PORTNAME}/ArtOfIllusion-manual/${PORTVERSION}:docs
+DISTFILES=	${PORTNAME}${PORTVERSION:S/.//g}${EXTRACT_SUFX}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Open source Java written 3D modelling and rendering studio
@@ -23,39 +23,52 @@ JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/ArtOfIllusion${PORTVERSION:S/.//g}
-
-PORTDOCS=	HISTORY README
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+
+PORTDOCS=	*
+
+DOCSRCDIR1=	${WRKSRC}
+DOC_FILES1=	HISTORY README
+
+DOCSRCDIR2=	${WRKDIR}/AoI_Manual
+DOCSDIR2=	${DOCSDIR}/AoI_Manual
+DOC_FILES2=	*
+
+OPTIONS_DEFINE= DOCS
 
 SUB_FILES=	${PORTNAME} \
 		pkg-message
 
 DESKTOP_ENTRIES="Art of Illusion" "3D modelling and rendering studio" \
-		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
-		"${PORTNAME}" "Graphics;3DGraphics;" false
+		"${PORTNAME}" "${PORTNAME}" "Graphics;3DGraphics;" ""
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-.for d in Icons Plugins Scripts lib *.jar
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${DATADIR})
-.endfor
-	@(cd ${WRKSRC} && ${CP} -r "Textures and Materials" ${DATADIR})
-
-post-install:
-# Fix Permission that user can write in Plugins and Scripts
-	@(cd ${DATADIR} && ${CHMOD} -R 774 Plugins Scripts)
-	${LN} -sf ${DATADIR}/Icons/48x48.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
-
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+DISTFILES+=	manual${PORTVERSION}${EXTRACT_SUFX}:docs
+post-extract:
+	@(cd ${WRKDIR} && ${MV} "AoI Manual" AoI_Manual)
 .endif
 
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+post-patch::
+	@(cd ${WRKSRC} && ${RM} "Textures and Materials/Library/.DS_Store")
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+.for d in Icons Plugins Scripts lib *.jar
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
+.endfor
+	@(cd ${WRKSRC} && ${CP} -r "Textures and Materials" ${STAGEDIR}${DATADIR})
+
+# Fix Permission that user can write in Plugins and Scripts
+	@(cd ${STAGEDIR}${DATADIR} && ${CHMOD} -R 774 Plugins Scripts)
+	${LN} -sf ${DATADIR}/Icons/48x48.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKDIR}/AoI_Manual && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR2})
+.endif
 
 .include <bsd.port.mk>
