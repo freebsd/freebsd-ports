@@ -40,7 +40,6 @@ RUN_DEPENDS+=	\
 # Ignore alpha/beta versions
 PORTSCOUT=	limit:^[0-9]+(\.[0-9]+)*$$
 
-NEED_ROOT=	yes
 USERS=		sympa
 GROUPS=		sympa
 # Shebang is corrected by configure script
@@ -128,9 +127,24 @@ post-patch:
 	    -e 's|^\( *bouncedir=\).*$$|\1${DATADIR}/bounce|'		\
 	    -e 's|^\( *execcgidir=\).*$$|\1${PREFIX}/libexec/${PORTNAME}|' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|\(--target.*sympa.conf\)|\1.sample|'	\
+	${REINPLACE_CMD} -e 's|\(--target.*sympa.conf\)|\1.sample|'	\
+			  -e 's|/bin/true$$|:|'				\
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's#\$$(DESTDIR)\$$(sampledir)#${STAGEDIR}\$$(sampledir)#g' \
 		${WRKSRC}/doc/sample/Makefile.in
+
+pre-install:
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+
+post-install:
+	for dir in $$(sort ${WRKSRC}/createddirs); do \
+		${MKDIR} -m755 ${STAGEDIR}$$dir; \
+		${TOUCH} ${STAGEDIR}$$dir/.keep; \
+		${ECHO_CMD} "@exec chown ${USERS}:${GROUPS} $${dir#${PREFIX}/}" >> ${TMPPLIST}; \
+		${ECHO_CMD} "$${dir#${PREFIX}/}/.keep" >> ${TMPPLIST}; \
+	done; \
+	for dir in $$(sort -r ${WRKSRC}/createddirs); do \
+		${ECHO_CMD} "@unexec rmdir $$dir" >> ${TMPPLIST}; \
+	done
 
 .include <bsd.port.mk>
