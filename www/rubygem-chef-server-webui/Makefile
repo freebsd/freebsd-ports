@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	chef-server-webui
-PORTVERSION=	10.24.0
+PORTVERSION=	10.30.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A systems integration framework
+COMMENT=	Systems integration framework
+
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-coderay>=0:${PORTSDIR}/textproc/rubygem-coderay \
 		rubygem-extlib>=0.9.16:${PORTSDIR}/devel/rubygem-extlib \
@@ -21,8 +23,8 @@ RUN_DEPENDS=	rubygem-coderay>=0:${PORTSDIR}/textproc/rubygem-coderay \
 		rubygem-openid>=0:${PORTSDIR}/net/rubygem-openid \
 		rubygem-thin>=0:${PORTSDIR}/www/rubygem-thin
 
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/chef-server-webui
