@@ -7,7 +7,7 @@ CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A streaming JSON parsing and encoding library for Ruby
+COMMENT=	Streaming JSON parsing and encoding library for Ruby
 
 LICENSE=	MIT
 
