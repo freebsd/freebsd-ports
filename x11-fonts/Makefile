@@ -18,6 +18,7 @@
     SUBDIR += cantarell-fonts
     SUBDIR += charis
     SUBDIR += charis-compact
+    SUBDIR += clearsans
     SUBDIR += code2000
     SUBDIR += code2001
     SUBDIR += comfortaa-ttf
