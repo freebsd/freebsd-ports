@@ -1,12 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	rake-compiler
-PORTVERSION=	0.8.3
+PORTVERSION=	0.9.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Build and package Ruby extensions (C, Java) using Rake
+
+LICENSE=	MIT
 
 USE_RUBY=	yes
 USE_RAKE=	yes
