@@ -7,6 +7,7 @@
     SUBDIR += amule-devel
     SUBDIR += azureus2
     SUBDIR += bitcoin
+    SUBDIR += bitcoin-daemon
     SUBDIR += bitflu
     SUBDIR += bitmessage
     SUBDIR += bittyrant
