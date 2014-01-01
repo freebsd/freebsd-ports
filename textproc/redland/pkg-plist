@@ -39,6 +39,10 @@ lib/librdf.so.0
 %%VIRTUOSO%%lib/redland/librdf_storage_virtuoso.la
 %%VIRTUOSO%%lib/redland/librdf_storage_virtuoso.so
 libdata/pkgconfig/redland.pc
+man/man1/rdfproc.1.gz
+man/man1/redland-config.1.gz
+man/man1/redland-db-upgrade.1.gz
+man/man3/redland.3.gz
 share/gtk-doc/html/redland/home.png
 share/gtk-doc/html/redland/index.html
 share/gtk-doc/html/redland/index.sgml
@@ -68,7 +72,6 @@ share/gtk-doc/html/redland/redland-query-results.html
 share/gtk-doc/html/redland/redland-query.html
 share/gtk-doc/html/redland/redland-serializer.html
 share/gtk-doc/html/redland/redland-statement.html
-share/gtk-doc/html/redland/redland-storage.html
 share/gtk-doc/html/redland/redland-storage-module-file.html
 share/gtk-doc/html/redland/redland-storage-module-hashes.html
 share/gtk-doc/html/redland/redland-storage-module-memory.html
@@ -79,6 +82,7 @@ share/gtk-doc/html/redland/redland-storage-module-tstore.html
 share/gtk-doc/html/redland/redland-storage-module-uri.html
 share/gtk-doc/html/redland/redland-storage-module-virtuoso.html
 share/gtk-doc/html/redland/redland-storage-modules.html
+share/gtk-doc/html/redland/redland-storage.html
 share/gtk-doc/html/redland/redland-stream.html
 share/gtk-doc/html/redland/redland-unicode.html
 share/gtk-doc/html/redland/redland-uri.html
@@ -97,6 +101,6 @@ share/gtk-doc/html/redland/up.png
 @comment @exec mkdir -p %D/lib/redland
 @comment @dirrm lib/redland
 @dirrm %%DATADIR%%
-@exec mkdir -p %D/share/gtk-doc/html/redland
 @dirrm share/gtk-doc/html/redland
+@dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
