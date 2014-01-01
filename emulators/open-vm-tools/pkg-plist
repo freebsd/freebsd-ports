@@ -39,6 +39,7 @@ include/vmGuestLib/vmSessionId.h
 include/vmGuestLib/vm_basic_types.h
 @exec mkdir -p %D/lib/vmware-tools/modules/input
 sbin/mount_vmhgfs
+sbin/mount_vmblock
 %%X11%%bin/vmware-user-suid-wrapper
 share/vmware-tools/poweroff-vm-default
 share/vmware-tools/poweron-vm-default
@@ -47,8 +48,16 @@ share/vmware-tools/suspend-vm-default
 share/vmware-tools/vm-support
 share/vmware-tools/statechange.subr
 share/vmware-tools/scripts/vmware/network
+%%DATADIR%%/messages/de/toolboxcmd.vmsg
+%%DATADIR%%/messages/de/vmtoolsd.vmsg
+%%DATADIR%%/messages/ja/toolboxcmd.vmsg
+%%DATADIR%%/messages/ja/vmtoolsd.vmsg
+%%DATADIR%%/messages/ko/toolboxcmd.vmsg
+%%DATADIR%%/messages/ko/vmtoolsd.vmsg
+%%DATADIR%%/messages/zh_CN/toolboxcmd.vmsg
 @unexec if test -f %D/share/vmware-tools/tools.conf; then rm -f %D/share/vmware-tools/tools.conf; fi
 @unexec if test -h %D/etc/vmware-tools/plugins; then rm -f %D/etc/vmware-tools/plugins; fi
+etc/pam.d/vmtoolsd
 @dirrmtry lib/vmware-tools/modules/input
 @dirrmtry lib/vmware-tools/modules
 @dirrmtry lib/vmware-tools
@@ -62,3 +71,12 @@ share/vmware-tools/scripts/vmware/network
 @dirrm lib/open-vm-tools/plugins
 @dirrm lib/open-vm-tools
 @dirrm include/vmGuestLib
+@dirrmtry %%DATADIR%%/scripts/vmware
+@dirrmtry %%DATADIR%%/scripts
+@dirrmtry %%DATADIR%%/tests
+@dirrmtry %%DATADIR%%/messages/zh_CN
+@dirrmtry %%DATADIR%%/messages/ko
+@dirrmtry %%DATADIR%%/messages/ja
+@dirrmtry %%DATADIR%%/messages/de
+@dirrmtry %%DATADIR%%/messages
+@dirrmtry %%DATADIR%%
