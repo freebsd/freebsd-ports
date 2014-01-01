@@ -52,6 +52,7 @@
     SUBDIR += linux-jigdo
     SUBDIR += linuxdcpp
     SUBDIR += litecoin
+    SUBDIR += litecoin-daemon
     SUBDIR += lopster
     SUBDIR += microdc2
     SUBDIR += minder
