@@ -7,7 +7,7 @@ CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A simple callback-based HTTP request/response parser
+COMMENT=	Simple callback-based HTTP request/response parser
 
 LICENSE=	MIT
 
