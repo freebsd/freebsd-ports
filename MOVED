@@ -5349,3 +5349,9 @@ x11-fonts/etlfonts||2013-12-31|Has expired: master site gone
 net/gateway6||2013-12-31|Has expired: Unsupported upstream, consider using net/gogoc
 misc/bibletime-devel|misc/bibletime|2013-12-31|Has expired: use misc/bibletime
 multimedia/linux-ov511-kmod||2013-12-31|Removed, broken and only for 6.X / 7.X
+net/pypvm||2014-01-01|Has expired: Dead upstream and suspected that there are no users of port
+www/mawstats||2014-01-01|Has expired: Upstream development dead, use www/[j]awstats instead
+devel/p5-Dialog||2014-01-01|Has expired
+textproc/referrercop||2014-01-01|Has expired: distfile unfetchable
+www/notftp||2014-01-01|Has expired: distfile unfetchable
+www/mod_lisp2||2014-01-01|Has expired: distfile unfetchable
