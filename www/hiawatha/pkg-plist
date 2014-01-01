@@ -2,6 +2,10 @@ bin/ssi-cgi
 sbin/cgi-wrapper
 sbin/hiawatha
 sbin/wigwam
+man/man1/cgi-wrapper.1.gz
+man/man1/hiawatha.1.gz
+man/man1/ssi-cgi.1.gz
+man/man1/wigwam.1.gz
 @unexec if cmp -s %D/etc/hiawatha/cgi-wrapper.conf.sample %D/etc/hiawatha/cgi-wrapper.conf ; then rm -f %D/etc/hiawatha/cgi-wrapper.conf; fi
 %%ETCDIR%%/cgi-wrapper.conf.sample
 @exec if [ ! -f %D/etc/hiawatha/cgi-wrapper.conf.sample ] ; then cp -p %D/%F %%ETCDIR%%/cgi-wrapper.conf; fi
@@ -18,12 +22,13 @@ sbin/wigwam
 %%ETCDIR%%/toolkit.conf.sample
 @exec if [ ! -f %D/etc/hiawatha/toolkit.conf.sample ] ; then cp -p %D/%F %%ETCDIR%%/toolkit.conf; fi
 @unexec t=`/bin/ls %D/etc/hiawatha`; if [ -z "$t" ]; then %%ECHO_MSG%% "===>    Configuration directory is empty, removing it."; rmdir %D/etc/hiawatha; fi;
+@exec if [ ! -d /var/log/hiawatha ] ; then mkdir /var/log/hiawatha ; fi
 @unexec t=`/bin/ls /var/log/hiawatha`; if [ -z "$t" ]; then %%ECHO_MSG%% "===>    Log directory is empty, removing it."; rmdir /var/log/hiawatha; fi;
 @unexec if cmp -s %D/www/hiawatha/index.html %D/www/hiawatha/index.hiawatha.html ; then rm -f %D/www/hiawatha/index.html; fi
 %%WWWDIR%%/index.hiawatha.html
 @exec if [ ! -f %D/www/hiawatha/index.html ] ; then cp -p %D/%F %%WWWDIR%%/index.html; fi
 @unexec t=`/bin/ls %D/www/hiawatha`; if [ -z "$t" ]; then %%ECHO_MSG%% "===>    WWW directory is empty, removing it."; rmdir %D/www/hiawatha; fi;
 lib/hiawatha/libpolarssl.so
-lib/hiawatha/libpolarssl.so.2
-lib/hiawatha/libpolarssl.so.1.2.8
+lib/hiawatha/libpolarssl.so.5
+lib/hiawatha/libpolarssl.so.1.3.2
 @dirrm lib/hiawatha
