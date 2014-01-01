@@ -1,4 +1,0 @@
-bin/referrercop
-%%DATADIR%%/blacklist.refcop
-%%DATADIR%%/whitelist.refcop.sample
-@dirrm %%DATADIR%%

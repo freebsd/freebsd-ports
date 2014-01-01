@@ -958,7 +958,6 @@
     SUBDIR += py-zsi
     SUBDIR += pygopherd
     SUBDIR += pynids
-    SUBDIR += pypvm
     SUBDIR += pyrad
     SUBDIR += pythondirector
     SUBDIR += qadsl
