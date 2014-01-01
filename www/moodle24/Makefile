@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-
 RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
 
 CONFLICTS=	moodle-1.*.* moodle-2.5.*
-LATEST_LINK=	moodle24
+PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}
 
 USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc ctype \
 		soap openssl simplexml spl dom json zip zlib hash
