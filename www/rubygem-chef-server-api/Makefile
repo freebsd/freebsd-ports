@@ -2,12 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	chef-server-api
-PORTVERSION=	10.24.0
+PORTVERSION=	10.30.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	A systems integration framework. Server API
+COMMENT=	Systems integration framework. Server API
+
+LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-dep_selector>=0.0.3:${PORTSDIR}/devel/rubygem-dep_selector \
 		rubygem-extlib>=0.9.16:${PORTSDIR}/devel/rubygem-extlib \
@@ -19,8 +21,8 @@ RUN_DEPENDS=	rubygem-dep_selector>=0.0.3:${PORTSDIR}/devel/rubygem-dep_selector 
 		rubygem-thin>=0:${PORTSDIR}/www/rubygem-thin \
 		rubygem-uuidtools>=2.1.1:${PORTSDIR}/devel/rubygem-uuidtools
 
-USE_RUBY=		yes
-USE_RUBYGEMS=		yes
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/chef-server
