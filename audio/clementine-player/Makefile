@@ -3,7 +3,7 @@
 
 PORTNAME=	clementine
 PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-player
@@ -17,6 +17,7 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libtag.so:${PORTSDIR}/audio/taglib \
 		libchromaprint.so:${PORTSDIR}/audio/chromaprint \
 		libprotobuf.so:${PORTSDIR}/devel/protobuf \
+ 	 	libqca.so:${PORTSDIR}/devel/qca \
 		libqjson.so:${PORTSDIR}/devel/qjson \
 		libfftw3.so:${PORTSDIR}/math/fftw3
 
