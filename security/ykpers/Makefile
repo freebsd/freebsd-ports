@@ -1,24 +1,21 @@
 # $FreeBSD$
 
 PORTNAME=	ykpers
-PORTVERSION=	1.12.0
+PORTVERSION=	1.14.1
 CATEGORIES=	security
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://opensource.yubico.com/yubikey-personalization/releases/
 
 MAINTAINER=	matt@mjslabs.com
 COMMENT=	Library and tool for personalization of Yubico's YubiKey
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	yubikey:${PORTSDIR}/security/libyubikey
+LIB_DEPENDS=	libyubikey.so:${PORTSDIR}/security/libyubikey
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		pkgconfig
 
-MAN1=		ykchalresp.1 \
-		ykinfo.1 \
-		ykpersonalize.1
 PLIST_FILES=	bin/ykchalresp \
 		bin/ykinfo \
 		bin/ykpersonalize \
@@ -28,20 +25,24 @@ PLIST_FILES=	bin/ykchalresp \
 		include/ykpers-1/ykpers.h \
 		include/ykpers-1/ykpers-version.h \
 		include/ykpers-1/ykstatus.h \
-		lib/libykpers-1.a \
 		lib/libykpers-1.la \
 		lib/libykpers-1.so \
-		lib/libykpers-1.so.13 \
-		libdata/pkgconfig/ykpers-1.pc
+		lib/libykpers-1.so.15 \
+		libdata/pkgconfig/ykpers-1.pc \
+		man/man1/ykchalresp.1.gz \
+		man/man1/ykinfo.1.gz \
+		man/man1/ykpersonalize.1.gz
 PLIST_DIRS=	include/ykpers-1
 
-PROJECTHOST=	yubikey-personalization
+OPTIONS_DEFINE=	STATIC
 
-MAKE_JOBS_UNSAFE=yes
+STATIC_CONFIGURE_ENABLE=	static
+STATIC_PLIST_FILES=		lib/libykpers-1.a
+
+MAKE_JOBS_UNSAFE=	yes
 
 LDFLAGS+=	-L/usr/lib
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^pkgconfigdir = .*|pkgconfigdir = /usr/local/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile.in
