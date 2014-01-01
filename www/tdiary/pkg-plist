@@ -162,18 +162,6 @@
 %%WWWDIR%%/misc/plugin/xmlrpc.rb
 %%WWWDIR%%/misc/plugin/xmlrpc/README
 %%WWWDIR%%/misc/plugin/xmlrpc/xmlrpc.rb
-%%WWWDIR%%/misc/style/emptdiary/README.rd
-%%WWWDIR%%/misc/style/emptdiary/README.rd.en
-%%WWWDIR%%/misc/style/emptdiary/emptdiary_style.rb
-%%WWWDIR%%/misc/style/etdiary/README.rd
-%%WWWDIR%%/misc/style/etdiary/etdiary_style.rb
-%%WWWDIR%%/misc/style/gfm/gfm_style.rb
-%%WWWDIR%%/misc/style/rd/README.rd
-%%WWWDIR%%/misc/style/rd/rd_style.rb
-%%WWWDIR%%/misc/style/wiki/README
-%%WWWDIR%%/misc/style/wiki/README.en
-%%WWWDIR%%/misc/style/wiki/wiki_parser.rb
-%%WWWDIR%%/misc/style/wiki/wiki_style.rb
 %%WWWDIR%%/misc/templates/Gemfile.local.erb
 %%WWWDIR%%/misc/theme_convert/Readme.rd
 %%WWWDIR%%/misc/theme_convert/append.rcss
@@ -234,11 +222,12 @@
 %%WWWDIR%%/tdiary/application/extensions/omniauth.rb
 %%WWWDIR%%/tdiary/author_only_base.rb
 %%WWWDIR%%/tdiary/base.rb
+%%WWWDIR%%/tdiary/cache/file.rb
 %%WWWDIR%%/tdiary/cli.rb
 %%WWWDIR%%/tdiary/comment.rb
 %%WWWDIR%%/tdiary/comment_manager.rb
 %%WWWDIR%%/tdiary/compatible.rb
-%%WWWDIR%%/tdiary/config.rb
+%%WWWDIR%%/tdiary/configuration.rb
 %%WWWDIR%%/tdiary/core_ext.rb
 %%WWWDIR%%/tdiary/dispatcher.rb
 %%WWWDIR%%/tdiary/dispatcher/index_main.rb
@@ -248,12 +237,8 @@
 %%WWWDIR%%/tdiary/filter/default.rb
 %%WWWDIR%%/tdiary/filter/spam.rb
 %%WWWDIR%%/tdiary/io/base.rb
-%%WWWDIR%%/tdiary/io/cache/file.rb
-%%WWWDIR%%/tdiary/io/cache/memcached.rb
-%%WWWDIR%%/tdiary/io/cache/redis.rb
 %%WWWDIR%%/tdiary/io/default.rb
 %%WWWDIR%%/tdiary/io/pstore.rb
-%%WWWDIR%%/tdiary/io/rdb.rb
 %%WWWDIR%%/tdiary/lang/en.rb
 %%WWWDIR%%/tdiary/lang/ja.rb
 %%WWWDIR%%/tdiary/plugin.rb
@@ -269,8 +254,8 @@
 %%WWWDIR%%/tdiary/response.rb
 %%WWWDIR%%/tdiary/server.rb
 %%WWWDIR%%/tdiary/style.rb
-%%WWWDIR%%/tdiary/style/tdiary_style.rb
-%%WWWDIR%%/tdiary/style/wiki_style.rb
+%%WWWDIR%%/tdiary/style/tdiary.rb
+%%WWWDIR%%/tdiary/style/wiki.rb
 %%WWWDIR%%/tdiary/tasks.rb
 %%WWWDIR%%/tdiary/tasks/assets.rake
 %%WWWDIR%%/tdiary/tasks/auth.rake
@@ -2250,10 +2235,10 @@
 @dirrm %%WWWDIR%%/tdiary/rack/assets
 @dirrm %%WWWDIR%%/tdiary/rack
 @dirrm %%WWWDIR%%/tdiary/lang
-@dirrm %%WWWDIR%%/tdiary/io/cache
 @dirrm %%WWWDIR%%/tdiary/io
 @dirrm %%WWWDIR%%/tdiary/filter
 @dirrm %%WWWDIR%%/tdiary/dispatcher
+@dirrm %%WWWDIR%%/tdiary/cache
 @dirrm %%WWWDIR%%/tdiary/application/extensions
 @dirrm %%WWWDIR%%/tdiary/application
 @dirrm %%WWWDIR%%/tdiary
@@ -2263,12 +2248,6 @@
 @dirrm %%WWWDIR%%/plugin
 @dirrm %%WWWDIR%%/misc/theme_convert
 @dirrm %%WWWDIR%%/misc/templates
-@dirrm %%WWWDIR%%/misc/style/wiki
-@dirrm %%WWWDIR%%/misc/style/rd
-@dirrm %%WWWDIR%%/misc/style/gfm
-@dirrm %%WWWDIR%%/misc/style/etdiary
-@dirrm %%WWWDIR%%/misc/style/emptdiary
-@dirrm %%WWWDIR%%/misc/style
 @dirrm %%WWWDIR%%/misc/plugin/xmlrpc
 @dirrm %%WWWDIR%%/misc/plugin/ja
 @dirrm %%WWWDIR%%/misc/plugin/en
