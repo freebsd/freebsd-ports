@@ -2,29 +2,31 @@
 # $FreeBSD$
 
 PORTNAME=	redland
-PORTVERSION=	1.0.16
+PORTVERSION=	1.0.17
 CATEGORIES=	textproc
 MASTER_SITES=	http://download.librdf.org/source/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	High-level interface for RDF
 
-LIB_DEPENDS=	raptor2:${PORTSDIR}/textproc/raptor2 \
-		rasqal:${PORTSDIR}/textproc/rasqal
+# Even though GPLv3 is not explicitly mentioned in the port's LICENSE.html, one
+# of its licenses is "GPLv2 or newer", which includes GPLv3.
+LICENSE=	APACHE20 GPLv2 GPLv3 LGPL21
+LICENSE_COMB=	dual
+
+LIB_DEPENDS=	libraptor2.so:${PORTSDIR}/textproc/raptor2 \
+		librasqal.so:${PORTSDIR}/textproc/rasqal
 
 USE_AUTOTOOLS=	libltdl
 USE_GNOME=	libxml2 lthack
 USE_OPENSSL=	yes
 USE_PERL5=	build
-USES=		gmake pathfix perl5 pkgconfig
+USES=		gmake pathfix perl5 pkgconfig shebangfix
+SHEBANG_FILES=	scripts/touch-mtime.pl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-raptor=system \
 		--with-threestore=no
 USE_LDCONFIG=	yes
-
-MAN1=		rdfproc.1 redland-config.1 \
-		redland-db-upgrade.1
-MAN3=		redland.3
 
 OPTIONS_DEFINE=	BDB THREADS
 OPTIONS_DEFAULT=	BDB
@@ -33,7 +35,6 @@ OPTIONS_DEFAULT=	BDB
 #		SQLITE "Use SQLite instead of BDB" off \
 #		VIRTUOSO "Use Virtoso instead of BDB" off
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBDB}
