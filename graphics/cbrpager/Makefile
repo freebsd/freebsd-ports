@@ -6,10 +6,9 @@ PORTVERSION=	0.9.22
 PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
-		http://jcoppens.com/soft/cbrpager/img/:icons
+		SF/nemysisfreebsdp/${CATEGORIES}/:icons
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		snap.jpeg:icons
-DIST_SUBDIR=	${PORTNAME}
+		${PORTNAME}.png:icons
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	nemysis@FreeBSD.org
@@ -17,45 +16,35 @@ COMMENT=	Viewer for cbr (comic book archive) files
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	jpegtopnm:${PORTSDIR}/graphics/netpbm
-
-GNU_CONFIGURE=	yes
 USES=		pkgconfig
+GNU_CONFIGURE=	yes
 USE_GNOME=	libgnomeui
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext
+
 PLIST_FILES=	bin/${PORTNAME} \
-		share/pixmaps/${PORTNAME}.png
+		share/pixmaps/${PORTNAME}.png \
+		%%NLS%%share/locale/es/LC_MESSAGES/${PORTNAME}.mo \
+		%%NLS%%share/locale/fr/LC_MESSAGES/${PORTNAME}.mo
 
-DESKTOP_ENTRIES="cbrPager" "Comic book viewer" \
-		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
-		"${PORTNAME}" "Graphics;Viewer;GNOME;" true
+DESKTOP_ENTRIES="cbrPager" "Comic book viewer" "${PORTNAME}" \
+		"${PORTNAME}" "Graphics;Viewer;GNOME;" ""
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-PLIST_FILES+=	share/locale/es/LC_MESSAGES/${PORTNAME}.mo \
-		share/locale/fr/LC_MESSAGES/${PORTNAME}.mo
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
-
 post-configure:
-.if !${PORT_OPTIONS:MNLS}
+.if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} 's|src po|src|' ${WRKSRC}/Makefile
 .endif
 
-post-build:
-	@(cd ${WRKSRC} && \
-		${LOCALBASE}/bin/jpegtopnm ${DISTDIR}/${DIST_SUBDIR}/snap.jpeg | \
-		${LOCALBASE}/bin/pamscale .118 | ${LOCALBASE}/bin/pnmtopng > ${PORTNAME}.png)
-
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>
