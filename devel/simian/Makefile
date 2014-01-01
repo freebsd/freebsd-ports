@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	simian
-PORTVERSION=	2.3.34
+PORTVERSION=	2.3.35
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.harukizaemon.com/simian/
 
@@ -29,12 +29,11 @@ PORTDOCS=	changes.html customers.html features.html \
 		simian.jpg \
 		javadoc
 
-OPTIONS_MULTI=	LANG
-OPTIONS_MULTI_LANG=	JAVA MONO
+OPTIONS_SINGLE=	LANG
+OPTIONS_SINGLE_LANG=	JAVA MONO
 
 OPTIONS_DEFAULT=	JAVA
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MJAVA}
@@ -76,21 +75,21 @@ pre-fetch:
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/xsl/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/simian.xsl ${PREFIX}/share/xsl/${PORTNAME}
-	@${MKDIR} ${PREFIX}/simian/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/xsl/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/simian.xsl ${STAGEDIR}${PREFIX}/share/xsl/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/simian/bin
 .if ${PORT_OPTIONS:MJAVA}
-	${INSTALL_DATA} ${WRKSRC}/bin/simian-${PORTVERSION}.jar ${PREFIX}/simian/bin
+	${INSTALL_DATA} ${WRKSRC}/bin/simian-${PORTVERSION}.jar ${STAGEDIR}${PREFIX}/simian/bin
 .endif
 .if ${PORT_OPTIONS:MMONO}
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/*.dll ${PREFIX}/simian/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/simian-${PORTVERSION}.exe ${PREFIX}/simian/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/*.dll ${STAGEDIR}${PREFIX}/simian/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/simian-${PORTVERSION}.exe ${STAGEDIR}${PREFIX}/simian/bin
 .endif
-	${INSTALL_SCRIPT} ${WRKSRC}/simian ${PREFIX}/bin/simian
+	${INSTALL_SCRIPT} ${WRKSRC}/simian ${STAGEDIR}${PREFIX}/bin/simian
 .if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKSRC} \
-		&& ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/\{} \; \
-		&& ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;
+		&& ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/\{} \; \
+		&& ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} \{} ${STAGEDIR}${DOCSDIR}/\{} \;
 .endif
 
 .include <bsd.port.post.mk>
