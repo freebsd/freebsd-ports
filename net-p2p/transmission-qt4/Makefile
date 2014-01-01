@@ -33,7 +33,8 @@ post-build:
 	@(cd ${WRKSRC}/qt ; ${QMAKE} ${QMAKE_ARGS} qtr.pro ; ${GMAKE})
 
 do-install:
-	@(cd ${WRKSRC}/qt ; ${SETENV} INSTALL_ROOT=${PREFIX} ${MAKE} install)
+	@(cd ${WRKSRC}/qt ; \
+		${SETENV} INSTALL_ROOT=${STAGEDIR}${PREFIX} ${MAKE} install)
 
 post-install: general-install
 	@${MKDIR} ${DOCSDIR}
