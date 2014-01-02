@@ -10,6 +10,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Evolution 2 plugin for the OpenSync framework
 
+LICENSE=	LGPL21
+
 LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync
 RUN_DEPENDS=	vconvert:${PORTSDIR}/deskutils/libopensync-plugin-vformat-devel
 

@@ -1,6 +1,8 @@
-lib/opensync-1.0/plugins/evo2-sync.so
-share/opensync-1.0/defaults/evo2-sync
-@dirrmtry lib/opensync-1.0/plugins
-@dirrmtry lib/opensync-1.0
-@dirrmtry share/opensync-1.0/defaults
-@dirrmtry share/opensync-1.0
+lib/libopensync1/formats/evo2-format.so
+lib/libopensync1/plugins/evo2-sync.so
+share/libopensync1/defaults/evo2-sync
+@dirrmtry share/libopensync1/defaults
+@dirrmtry share/libopensync1
+@dirrmtry lib/libopensync1/plugins
+@dirrmtry lib/libopensync1/formats
+@dirrmtry lib/libopensync1
