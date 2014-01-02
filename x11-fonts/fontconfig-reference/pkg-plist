@@ -164,6 +164,7 @@ man/man3/FcStrDowncase.3.gz
 man/man3/FcStrFree.3.gz
 man/man3/FcStrListCreate.3.gz
 man/man3/FcStrListDone.3.gz
+man/man3/FcStrListFirst.3.gz
 man/man3/FcStrListNext.3.gz
 man/man3/FcStrPlus.3.gz
 man/man3/FcStrSetAdd.3.gz
