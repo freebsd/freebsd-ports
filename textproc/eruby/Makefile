@@ -51,8 +51,6 @@ post-install:
 .endfor
 .endif
 
-.if ${RUBY_VER} == "1.9"
 CONFIGURE_ENV+=	EXTRA_CFLAGS="${EXTRA_CFLAGS} -DWITH_RUBY_19"
-.endif
 
 .include <bsd.port.post.mk>
