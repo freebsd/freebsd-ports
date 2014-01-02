@@ -29,6 +29,7 @@ RUN_DEPENDS=	rubygem-actionmailer>=${PORTVERSION}:${PORTSDIR}/mail/rubygem-actio
 		rubygem-sass-rails>=3.2.6:${PORTSDIR}/textproc/rubygem-sass-rails \
 		rubygem-sqlite3>=1.3.7:${PORTSDIR}/databases/rubygem-sqlite3 \
 		rubygem-treetop>=1.4.12:${PORTSDIR}/devel/rubygem-treetop \
+		rubygem-turn>=0.8.3:${PORTSDIR}/devel/rubygem-turn \
 		rubygem-tzinfo>=0.3.35:${PORTSDIR}/devel/rubygem-tzinfo \
 		rubygem-uglifier>=1.3.0:${PORTSDIR}/www/rubygem-uglifier \
 		node:${PORTSDIR}/www/node
@@ -54,10 +55,4 @@ FCGI_RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/fcgi.so:${PORTSDIR}/www/ruby-fcgi
 MEMCACHE_CLIENT_RUN_DEPENDS=	rubygem-memcache-client>=1.2.0:${PORTSDIR}/databases/rubygem-memcache-client
 PASSENGER_RUN_DEPENDS=	rubygem-passenger>=2.2.15:${PORTSDIR}/www/rubygem-passenger
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} == 1.9
-RUN_DEPENDS+=	rubygem-turn>=0.8.3:${PORTSDIR}/devel/rubygem-turn
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
