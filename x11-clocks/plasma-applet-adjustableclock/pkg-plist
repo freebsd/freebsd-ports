@@ -17,8 +17,6 @@ share/apps/plasma/adjustableclock/dbclock/metadata.desktop
 share/apps/plasma/adjustableclock/digital/contents/config/main.xml
 share/apps/plasma/adjustableclock/digital/contents/ui/main.html
 share/apps/plasma/adjustableclock/digital/metadata.desktop
-share/apps/plasma/adjustableclock/fuzzy/contents/ui/main.html
-share/apps/plasma/adjustableclock/fuzzy/metadata.desktop
 share/apps/plasma/adjustableclock/lcd/contents/config/main.xml
 share/apps/plasma/adjustableclock/lcd/contents/ui/main.html
 share/apps/plasma/adjustableclock/lcd/metadata.desktop
@@ -75,9 +73,6 @@ share/locale/uk/LC_MESSAGES/plasma_applet_adjustableclock.mo
 @dirrm share/apps/plasma/adjustableclock/lcd/contents/config
 @dirrm share/apps/plasma/adjustableclock/lcd/contents
 @dirrm share/apps/plasma/adjustableclock/lcd
-@dirrm share/apps/plasma/adjustableclock/fuzzy/contents/ui
-@dirrm share/apps/plasma/adjustableclock/fuzzy/contents
-@dirrm share/apps/plasma/adjustableclock/fuzzy
 @dirrm share/apps/plasma/adjustableclock/digital/contents/ui
 @dirrm share/apps/plasma/adjustableclock/digital/contents/config
 @dirrm share/apps/plasma/adjustableclock/digital/contents
