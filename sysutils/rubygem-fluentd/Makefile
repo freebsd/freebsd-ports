@@ -29,10 +29,6 @@ SUB_LIST+=	USER=${USERS} GROUP=${GROUPS}
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-.if ${RUBY_VER} == "1.8"
-IGNORE=		requires Ruby 1.9, please install this first
-.endif
-
 post-install:
 	${INSTALL} -d -o ${USERS} -g ${GROUPS} -m 775 /var/run/fluentd
 
