@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	grep
-PORTVERSION=	2.15
+PORTVERSION=	2.16
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	gnu
@@ -24,23 +24,13 @@ INFO=		grep
 
 OPTIONS_DEFINE=	PCRE NLS
 OPTIONS_DEFAULT=PCRE NLS
+OPTIONS_SUB=	yes
+PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_CONFIGURE_ENABLE=	perl-regexp
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-LDFLAGS+=	-lintl
-PLIST_SUB+=	NLS=
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
-.else
-CONFIGURE_ARGS+=	--disable-perl-regexp
-.endif
 
 post-patch:
 .if empty(PORT_OPTIONS:MNLS)
