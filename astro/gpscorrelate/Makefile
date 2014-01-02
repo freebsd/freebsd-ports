@@ -22,14 +22,12 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	freefoote
 GH_COMMIT=	a36646b
 
-NO_STAGE=	yes
 USES=		gmake pkgconfig
 USE_GNOME=	libxml2
 
-MAN1=		gpscorrelate.1
-MLINKS=		gpscorrelate.1 gpscorrelate-gui.1
 PORTDOCS=	*
-PLIST_FILES=	bin/gpscorrelate bin/gpscorrelate-gui
+PLIST_FILES=	bin/gpscorrelate bin/gpscorrelate-gui \
+		man/man1/gpscorrelate.1.gz man/man1/gpscorrelate-gui.1.gz
 
 .include <bsd.port.options.mk>
 
@@ -47,16 +45,17 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gpscorrelate ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/gpscorrelate-gui ${PREFIX}/bin
-	${INSTALL_MAN} ${FILESDIR}/gpscorrelate.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/gpscorrelate ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/gpscorrelate-gui ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${FILESDIR}/gpscorrelate.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${LN} -sf gpscorrelate.1 ${STAGEDIR}${MANPREFIX}/man/man1/gpscorrelate-gui.1
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/RELEASES ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/html
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
-	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DOCSDIR}/html
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/RELEASES ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${STAGEDIR}${DOCSDIR}/html
 .endif
 
 .include <bsd.port.mk>
