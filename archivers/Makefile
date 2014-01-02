@@ -120,6 +120,7 @@
     SUBDIR += p5-PerlIO-gzip
     SUBDIR += p5-PerlIO-via-Bzip2
     SUBDIR += p7zip
+    SUBDIR += p7zip-codec-rar
     SUBDIR += packddir
     SUBDIR += paq
     SUBDIR += par
