@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.recherche.enac.fr/log/facile/distrib/
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Functional Constraint Library
 
 LICENSE=	LGPL21

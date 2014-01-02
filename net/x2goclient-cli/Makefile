@@ -8,7 +8,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://x2go.obviously-nice.de/deb/pool-lenny/x2goclient-cli/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The x2go perl client
 
 RUN_DEPENDS=	p5-Proc-Simple>=0:${PORTSDIR}/devel/p5-Proc-Simple \
