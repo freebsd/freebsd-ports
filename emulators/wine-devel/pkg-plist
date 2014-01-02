@@ -111,11 +111,17 @@ include/wine/windows/axextend.idl
 include/wine/windows/basetsd.h
 include/wine/windows/basetyps.h
 include/wine/windows/bcrypt.h
+include/wine/windows/bdaiface.h
+include/wine/windows/bdaiface.idl
+include/wine/windows/bdaiface_enums.h
+include/wine/windows/bdatypes.h
 include/wine/windows/binres.idl
 include/wine/windows/bits.h
 include/wine/windows/bits.idl
 include/wine/windows/bits1_5.h
 include/wine/windows/bits1_5.idl
+include/wine/windows/bits3_0.h
+include/wine/windows/bits3_0.idl
 include/wine/windows/bitsmsg.h
 include/wine/windows/cderr.h
 include/wine/windows/cfgmgr32.h
@@ -602,6 +608,8 @@ include/wine/windows/structuredquerycondition.idl
 include/wine/windows/svrapi.h
 include/wine/windows/t2embapi.h
 include/wine/windows/tapi.h
+include/wine/windows/taskschd.h
+include/wine/windows/taskschd.idl
 include/wine/windows/tchar.h
 include/wine/windows/tcpmib.h
 include/wine/windows/textserv.h
@@ -781,11 +789,13 @@ lib/wine/api-ms-win-downlevel-version-l1-1-0.dll.so
 lib/wine/api-ms-win-security-base-l1-1-0.dll.so
 lib/wine/apphelp.dll.so
 lib/wine/appwiz.cpl.so
+lib/wine/arp.exe.so
 lib/wine/aspnet_regiis.exe.so
 lib/wine/atl.dll.so
 lib/wine/atl100.dll.so
 lib/wine/atl110.dll.so
 lib/wine/atl80.dll.so
+lib/wine/atl90.dll.so
 lib/wine/attrib.exe.so
 lib/wine/authz.dll.so
 lib/wine/avicap32.dll.so
@@ -945,11 +955,13 @@ lib/wine/fakedlls/api-ms-win-downlevel-version-l1-1-0.dll
 lib/wine/fakedlls/api-ms-win-security-base-l1-1-0.dll
 lib/wine/fakedlls/apphelp.dll
 lib/wine/fakedlls/appwiz.cpl
+lib/wine/fakedlls/arp.exe
 lib/wine/fakedlls/aspnet_regiis.exe
 lib/wine/fakedlls/atl.dll
 lib/wine/fakedlls/atl100.dll
 lib/wine/fakedlls/atl110.dll
 lib/wine/fakedlls/atl80.dll
+lib/wine/fakedlls/atl90.dll
 lib/wine/fakedlls/attrib.exe
 lib/wine/fakedlls/authz.dll
 lib/wine/fakedlls/avicap32.dll
@@ -1584,8 +1596,12 @@ lib/wine/libmsdmo.def
 lib/wine/libmshtml.def
 lib/wine/libmsi.def
 lib/wine/libmsimg32.def
+lib/wine/libmsvcr100.def
+lib/wine/libmsvcr110.def
 lib/wine/libmsvcr70.def
 lib/wine/libmsvcr71.def
+lib/wine/libmsvcr80.def
+lib/wine/libmsvcr90.def
 lib/wine/libmsvcrt.def
 lib/wine/libmsvcrt20.def
 lib/wine/libmsvcrt40.def
@@ -1995,6 +2011,12 @@ lib/wine/xmllite.dll.so
 lib/wine/xolehlp.dll.so
 lib/wine/xpsprint.dll.so
 lib/wine/xpssvcs.dll.so
+man/de.UTF-8/man1/wine.1.gz
+man/de.UTF-8/man1/winemaker.1.gz
+man/de.UTF-8/man1/wineserver.1.gz
+man/fr.UTF-8/man1/wine.1.gz
+man/fr.UTF-8/man1/winemaker.1.gz
+man/fr.UTF-8/man1/wineserver.1.gz
 man/man1/msiexec.1.gz
 man/man1/notepad.1.gz
 man/man1/regedit.1.gz
@@ -2017,6 +2039,7 @@ man/man1/winepath.1.gz
 man/man1/wineserver.1.gz
 man/man1/wmc.1.gz
 man/man1/wrc.1.gz
+man/pl.UTF-8/man1/wine.1.gz
 share/applications/wine.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -2024,6 +2047,12 @@ share/applications/wine.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README.winedbg
 %%PORTDOCS%%%%DOCSDIR%%/README.winedump
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry man/pl.UTF-8/man1
+@dirrmtry man/pl.UTF-8
+@dirrmtry man/fr.UTF-8/man1
+@dirrmtry man/fr.UTF-8
+@dirrmtry man/de.UTF-8/man1
+@dirrmtry man/de.UTF-8
 @dirrm lib/wine/fakedlls
 @dirrm lib/wine
 @dirrm include/wine/windows/ddk
