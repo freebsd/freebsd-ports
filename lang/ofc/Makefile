@@ -37,7 +37,7 @@ LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
 .endif
 
 .if ${OSVERSION} >= 900000
-# needs libobjc
+# 'obj/obj-api.h' deprecated on gcc4.7, so ofc require gcc4.6 or early version.
 USE_GCC=	4.6
 .endif
 
