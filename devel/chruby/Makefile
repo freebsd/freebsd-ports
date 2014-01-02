@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	chruby
-PORTVERSION=	0.3.6
+PORTVERSION=	0.3.8
 CATEGORIES=	devel ruby
 MASTER_SITES=	GH
 
@@ -21,18 +21,13 @@ SUB_FILES=	pkg-message
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	postmodern
-GH_PROJECT=	chruby
-GH_COMMIT=	f271d06
+GH_COMMIT=	b529bf2
 GH_TAGNAME=	v${PORTVERSION}
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/chruby-exec ${PREFIX}/bin
-	( cd ${WRKSRC}/share/chruby && ${COPYTREE_BIN} \* ${PREFIX}/share/chruby )
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/chruby-exec ${STAGEDIR}${PREFIX}/bin
+	( cd ${WRKSRC}/share/chruby && ${COPYTREE_BIN} \* ${STAGEDIR}${PREFIX}/share/chruby )
 
 .include <bsd.port.mk>
