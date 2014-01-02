@@ -11,7 +11,7 @@ COMMENT=	Command line wrapper for ipmitool and freeipmi
 
 LICENSE=	GPLv3
 
-RUN_DEPENDS=	${LOCALBASE}/bin/bmc-device:${PORTSDIR}/sysutils/freeipmi
+RUN_DEPENDS=	${LOCALBASE}/sbin/bmc-device:${PORTSDIR}/sysutils/freeipmi
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
