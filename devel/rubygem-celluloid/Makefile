@@ -17,10 +17,4 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} == 1.8
-BROKEN=		does not build with ruby ${RUBY_VER}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
