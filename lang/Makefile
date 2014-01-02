@@ -166,6 +166,7 @@
     SUBDIR += ml-pnet
     SUBDIR += mlton
     SUBDIR += mmix
+    SUBDIR += modula3
     SUBDIR += mono
     SUBDIR += mono-basic
     SUBDIR += moscow_ml
