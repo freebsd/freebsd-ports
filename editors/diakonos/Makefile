@@ -12,7 +12,6 @@ COMMENT=	Linux editor for the masses
 LICENSE=	MIT
 
 USE_RUBY=	yes
-RUBY_VER=	1.9
 
 NO_BUILD=	yes
 SUB_FILES=	installation.rb
