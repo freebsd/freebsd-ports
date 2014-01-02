@@ -114,7 +114,7 @@ you update your ports collection, before attempting any port upgrades.
   Note that Oracle Berkeley DB 6 is under the more restrictive Affero GPL v3
   license, be sure to review if using that fits your requirements.
 
-  You can add WITH_BDB_VER=5 or WITH_BDB_VER=6 to have all
+  You can add WITH_BDB_VER=5 or WITH_BDB_VER=6 to /etc/make.conf to have all
   applications that get rebuilt use Oracle Berkeley DB 5 or 6, respectively.
 
   DO NOT FORCE DELETE older BerkeleyDB packages, that breaks the upgrade
