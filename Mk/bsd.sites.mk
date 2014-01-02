@@ -443,20 +443,27 @@ MASTER_SITE_FRUGALWARE+= \
 
 .if !defined(IGNORE_MASTER_SITE_GCC)
 MASTER_SITE_GCC+= \
-	${MASTER_SITE_SOURCEWARE:S,%SUBDIR%,gcc/&,} \
+	http://mirrors.kernel.org/sources.redhat.com/gcc/%SUBDIR%/ \
+	http://gcc.parentingamerica.com/%SUBDIR%/ \
+	http://gcc.skazkaforyou.com/%SUBDIR%/ \
+	http://gcc.cybermirror.org/%SUBDIR%/ \
+	http://gcc-uk.internet.bs/%SUBDIR%/ \
+	http://www.netgull.com/gcc/%SUBDIR%/ \
+	http://mirrors.webhostinggeeks.com/gcc/%SUBDIR%/ \
+	http://robotlab.itk.ppke.hu/gcc/%SUBDIR%/ \
+	http://gcc.fyxm.net/%SUBDIR%/ \
+	http://gcc.igor.onlinedirect.bg/%SUBDIR%/ \
+	http://ftp.cs.pu.edu.tw/Linux/sourceware/gcc/%SUBDIR%/ \
+	ftp://ftp.funet.fi/pub/mirrors/sources.redhat.com/pub/gcc/%SUBDIR%/ \
 	ftp://gcc.gnu.org/pub/gcc/%SUBDIR%/ \
-	ftp://mirrors.laffeycomputer.com/pub/gcc.gnu.org/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.irisa.fr/pub/mirrors/gcc.gnu.org/gcc/%SUBDIR%/ \
 	ftp://ftp.uvsq.fr/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.gwdg.de/pub/misc/gcc/%SUBDIR%/ \
 	ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/gcc.gnu.org/pub/gcc/%SUBDIR%/ \
-	ftp://ftp.iij.ad.jp/pub/gnu/gnu/gcc/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/lang/gcc/%SUBDIR%/ \
 	ftp://ftp.nluug.nl/mirror/languages/gcc/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/sourceware.org/pub/gcc/%SUBDIR%/ \
-	ftp://ftp.ntua.gr/pub/gnu/gcc/%SUBDIR%/ \
-	ftp://mirror.aarnet.edu.au/pub/gnu/gcc/%SUBDIR%/
+	ftp://ftp.ntua.gr/pub/gnu/gcc/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_GENTOO)
