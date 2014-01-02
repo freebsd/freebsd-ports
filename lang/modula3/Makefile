@@ -5,8 +5,8 @@ PORTNAME=	modula3
 PORTVERSION=	5.8.6
 CATEGORIES=	lang
 MASTER_SITES=	https://modula3.elegosoft.com/cm3/releng/ \
-		http://download.dragonlace.net/m3/ \
-		http://download.dragonlace.net/m3/:boot
+		http://downloads.dragonlace.net/m3/ \
+		http://downloads.dragonlace.net/m3/:boot
 DISTFILES=	${SRCDISTFILE} ${BOOTDIST}
 
 MAINTAINER=	marino@FreeBSD.org
