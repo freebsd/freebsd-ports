@@ -42,7 +42,6 @@ SKKDIC_FILE=	SKK-JISYO.L-20110813
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-.if ${RUBY_VER} == 1.9
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.am.ruby19 \
 		${PATCHDIR}/extra-patch-configure.in.ruby19 \
 		${PATCHDIR}/extra-patch-genchars.sh \
@@ -55,7 +54,6 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.am.ruby19 \
 		${PATCHDIR}/extra-patch-migemo-server \
 		${PATCHDIR}/extra-patch-migemo.rb.in \
 		${PATCHDIR}/extra-patch-tests_Makefile.am
-.endif
 
 .if ${ARCH} == "ia64"
 BROKEN=		Does not compile on ia64
@@ -67,7 +65,7 @@ post-extract:
 .endif
 
 post-patch:
-.if ${RUBY_VER} == 1.9 && ${SLAVE_PORT} == "no"
+.if ${SLAVE_PORT} == "no"
 	@cd ${WRKSRC} ; \
 	for f in ${SHEBANG_FILES} ; do \
 	${REINPLACE_CMD} -e 's:#!.*:#!${RUBY} -Ke:' $$f ; \
@@ -76,11 +74,7 @@ post-patch:
 
 post-configure:
 .if ${SLAVE_PORT} == "no"
-.if ${RUBY_VER} == 1.9
 	(cd ${WRKSRC}; ${CAT} SKK-JISYO.L | ${RUBY} -Ke migemo-convert.rb > migemo-dict)
-.else
-	(cd ${WRKSRC}; ${CAT} SKK-JISYO.L | ${RUBY} migemo-convert.rb > migemo-dict)
-.endif
 	${CP} ${AUTOMAKE_DIR}/config.guess ${WRKSRC}
 	${CP} ${AUTOMAKE_DIR}/config.sub ${WRKSRC}
 .endif
