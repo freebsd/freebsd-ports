@@ -50,20 +50,23 @@ you update your ports collection, before attempting any port upgrades.
   databases/db5 and databases/db6 have recently been updated to fix
   bugs. This changed their patchlevel version.
 
-  However, ruby-bdb breaks during the upgrade due to a bug described in
-  <http://www.freebsd.org/cgi/query-pr.cgi?pr=184921>.
+  However, ruby-bdb used to break during the db[56] upgrade due to a bug
+  described in <http://www.freebsd.org/cgi/query-pr.cgi?pr=184921>.
 
-  THIS MEANS THAT YOU MUST NOT USE PORTUPGRADE TO UPGRADE databases/db5
-  databases/db6 and databases/ruby-bdb. Doing that will break the latter and
-  cause corrupted dependency data.  Use portmaster for the upgrade.
+  THEREFORE, YOU MUST MANUALLY UPGRADE databases/ruby-bdb INDIVIDUALLY
+  TO 0.6.6_2 OR NEWER WHEN USING portupgrade AGAINST databases/db[56]
+  PORTS. To achieve that, type:
 
-  If you are in a situation where portupgrade refuses to work with
-  errors like:
+  # portupgrade databases/ruby-bdb
+  or
+  # portmaster -x 'db*' databases/ruby-bdb
 
-  DB needs compatible versions of libdb & db.h
-    you have db.h version 5.3.21 and libdb version 5.3.28
+  before proceeding with other upgrades.
 
-  then you must manually upgrade the ruby-bdb port and repair dependency data:
+  Should you have corrupted the portupgrade databases, or if ruby-bdb
+  refuses to work with the upgraded db* port with errors such as "DB
+  needs compatible versions of libdb & db.h", then rebuild the ruby-bdb
+  port manually, and fix the portupgrade databases:
 
   # make -C /usr/ports/databases/ruby-bdb all deinstall install clean
   # pkgdb -fu
