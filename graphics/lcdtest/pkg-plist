@@ -1,5 +1,0 @@
-bin/lcdtest
-share/applications/lcdtest.desktop
-%%PORTDOCS%%%%DOCSDIR%%/README
-share/pixmaps/lcdtest.svg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
