@@ -1,0 +1,11 @@
+--- tests/Makefile.in.orig	2006-08-01 05:51:52.000000000 +0200
++++ tests/Makefile.in	2013-06-09 06:33:07.000000000 +0200
+@@ -26,7 +26,7 @@
+ CFLAGS+=	@CHECK_CFLAGS@ -DTEST_DATA=\"${srcdir}/data\"
+ OBJCFLAGS+=	@CHECK_CFLAGS@ -DTEST_DATA=\"${srcdir}/data\"
+ LIBS+=		-lauth-ldap-testing $(OBJC_LIBS) $(LDAP_LIBS) @CHECK_LIBS@
+-LDFLAGS+=	-L${top_builddir}src $(LIBS)
++LDFLAGS+=	-L${top_builddir}/src $(LIBS)
+ 
+ # Recompile the tests every time
+ all: tests
