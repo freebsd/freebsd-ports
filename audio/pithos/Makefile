@@ -2,10 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	pithos
-PORTVERSION=	0.3.17
+PORTVERSION=	0.3.18
 CATEGORIES=	audio
-MASTER_SITES=	DEBIAN
-DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
+DISTNAME=	${PORTVERSION}
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	pithos	
+GH_PROJECT=	pithos
+GH_COMMIT=	0770210
 
 MAINTAINER=	john@pcbsd.org
 COMMENT=	Pandora client for the GNOME desktop
@@ -17,23 +21,18 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 		${LOCALBASE}/libdata/pkgconfig/notify-python.pc:${PORTSDIR}/devel/py-notify \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
-
 USE_PYTHON=	2.6+
 NO_STAGE=	yes
 USE_GNOME=	pygtk2
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=	easy_install
 USE_GSTREAMER=	good bad python
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGNAME=	${PORTNAME}
-
-post-patch:
-	${REINPLACE_CMD} -e "s,../data/,${DATADIR}/," ${WRKSRC}/pithos/pithosconfig.py
-	${REINPLACE_CMD} -e "s,Icon=pithos,${DATADIR}/media/icon.png," ${WRKSRC}/pithos.desktop
+PYEASYINSTALL_EGG=	pithos-0.3-py2.7.egg
 
 post-install:
-	@${INSTALL} -o ${BINOWN} -g ${BINGRP} -m 555 \
-		${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${DATADIR}
 	@(cd ${WRKSRC}/data/ && ${COPYTREE_SHARE} \* ${DATADIR})
+	@(cd ${WRKSRC}/pithos/data/ && ${COPYTREE_SHARE} \* ${DATADIR})
 
 .include <bsd.port.mk>

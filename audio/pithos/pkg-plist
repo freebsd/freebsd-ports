@@ -1,94 +1,25 @@
-bin/pithos
-%%PYTHON_SITELIBDIR%%/pithos/AboutPithosDialog.py
-%%PYTHON_SITELIBDIR%%/pithos/PreferencesPithosDialog.py
-%%PYTHON_SITELIBDIR%%/pithos/SearchDialog.py
-%%PYTHON_SITELIBDIR%%/pithos/StationsDialog.py
-%%PYTHON_SITELIBDIR%%/pithos/__init__.py
-%%PYTHON_SITELIBDIR%%/pithos/dbus_service.py
-%%PYTHON_SITELIBDIR%%/pithos/gobject_worker.py
-%%PYTHON_SITELIBDIR%%/pithos/plugin.py
-%%PYTHON_SITELIBDIR%%/pithos/pylast.py
-%%PYTHON_SITELIBDIR%%/pithos/sound_menu.py
-%%PYTHON_SITELIBDIR%%/pithos/pandora/__init__.py
-%%PYTHON_SITELIBDIR%%/pithos/pandora/blowfish.py
-%%PYTHON_SITELIBDIR%%/pithos/pandora/fake.py
-%%PYTHON_SITELIBDIR%%/pithos/pandora/pandora.py
-%%PYTHON_SITELIBDIR%%/pithos/pandora/pandora_keys.py
-%%PYTHON_SITELIBDIR%%/pithos/pandora/__init__.pyc
-%%PYTHON_SITELIBDIR%%/pithos/pandora/blowfish.pyc
-%%PYTHON_SITELIBDIR%%/pithos/pandora/fake.pyc
-%%PYTHON_SITELIBDIR%%/pithos/pandora/pandora.pyc
-%%PYTHON_SITELIBDIR%%/pithos/pandora/pandora_keys.pyc
-%%PYTHON_SITELIBDIR%%/pithos/pandora/__init__.pyo
-%%PYTHON_SITELIBDIR%%/pithos/pandora/blowfish.pyo
-%%PYTHON_SITELIBDIR%%/pithos/pandora/fake.pyo
-%%PYTHON_SITELIBDIR%%/pithos/pandora/pandora.pyo
-%%PYTHON_SITELIBDIR%%/pithos/pandora/pandora_keys.pyo
-%%PYTHON_SITELIBDIR%%/pithos/plugins/__init__.py
-%%PYTHON_SITELIBDIR%%/pithos/plugins/mediakeys.py
-%%PYTHON_SITELIBDIR%%/pithos/plugins/notification_icon.py
-%%PYTHON_SITELIBDIR%%/pithos/plugins/notify.py
-%%PYTHON_SITELIBDIR%%/pithos/plugins/screensaver_pause.py
-%%PYTHON_SITELIBDIR%%/pithos/plugins/scrobble.py
-%%PYTHON_SITELIBDIR%%/pithos/plugins/__init__.pyc
-%%PYTHON_SITELIBDIR%%/pithos/plugins/mediakeys.pyc
-%%PYTHON_SITELIBDIR%%/pithos/plugins/notification_icon.pyc
-%%PYTHON_SITELIBDIR%%/pithos/plugins/notify.pyc
-%%PYTHON_SITELIBDIR%%/pithos/plugins/screensaver_pause.pyc
-%%PYTHON_SITELIBDIR%%/pithos/plugins/scrobble.pyc
-%%PYTHON_SITELIBDIR%%/pithos/plugins/__init__.pyo
-%%PYTHON_SITELIBDIR%%/pithos/plugins/mediakeys.pyo
-%%PYTHON_SITELIBDIR%%/pithos/plugins/notification_icon.pyo
-%%PYTHON_SITELIBDIR%%/pithos/plugins/notify.pyo
-%%PYTHON_SITELIBDIR%%/pithos/plugins/screensaver_pause.pyo
-%%PYTHON_SITELIBDIR%%/pithos/plugins/scrobble.pyo
-%%PYTHON_SITELIBDIR%%/pithos/pithosconfig.py
-%%PYTHON_SITELIBDIR%%/pithos/AboutPithosDialog.pyc
-%%PYTHON_SITELIBDIR%%/pithos/PreferencesPithosDialog.pyc
-%%PYTHON_SITELIBDIR%%/pithos/SearchDialog.pyc
-%%PYTHON_SITELIBDIR%%/pithos/StationsDialog.pyc
-%%PYTHON_SITELIBDIR%%/pithos/__init__.pyc
-%%PYTHON_SITELIBDIR%%/pithos/dbus_service.pyc
-%%PYTHON_SITELIBDIR%%/pithos/gobject_worker.pyc
-%%PYTHON_SITELIBDIR%%/pithos/plugin.pyc
-%%PYTHON_SITELIBDIR%%/pithos/pylast.pyc
-%%PYTHON_SITELIBDIR%%/pithos/sound_menu.pyc
-%%PYTHON_SITELIBDIR%%/pithos/pithosconfig.pyc
-%%PYTHON_SITELIBDIR%%/pithos/AboutPithosDialog.pyo
-%%PYTHON_SITELIBDIR%%/pithos/PreferencesPithosDialog.pyo
-%%PYTHON_SITELIBDIR%%/pithos/SearchDialog.pyo
-%%PYTHON_SITELIBDIR%%/pithos/StationsDialog.pyo
-%%PYTHON_SITELIBDIR%%/pithos/__init__.pyo
-%%PYTHON_SITELIBDIR%%/pithos/dbus_service.pyo
-%%PYTHON_SITELIBDIR%%/pithos/gobject_worker.pyo
-%%PYTHON_SITELIBDIR%%/pithos/plugin.pyo
-%%PYTHON_SITELIBDIR%%/pithos/pylast.pyo
-%%PYTHON_SITELIBDIR%%/pithos/sound_menu.pyo
-%%PYTHON_SITELIBDIR%%/pithos/pithosconfig.pyo
+%%DATADIR%%/media/pithos-mono.png
+%%DATADIR%%/media/icon.png
+%%DATADIR%%/media/rate_bg.svg
+%%DATADIR%%/media/album_default.png
+%%DATADIR%%/media/rate_bg.png
+%%DATADIR%%/media/album_default.svg
 %%DATADIR%%/icons/scalable/apps/pithos-mono.svg
 %%DATADIR%%/icons/scalable/apps/pithos.svg
-%%DATADIR%%/media/album_default.png
-%%DATADIR%%/media/album_default.svg
-%%DATADIR%%/media/icon.png
-%%DATADIR%%/media/pithos-mono.png
-%%DATADIR%%/media/rate_bg.png
-%%DATADIR%%/media/rate_bg.svg
-%%DATADIR%%/ui/AboutPithosDialog.ui
+%%DATADIR%%/pithos.desktop
 %%DATADIR%%/ui/PithosWindow.ui
+%%DATADIR%%/ui/preferences_pithos_dialog.xml
+%%DATADIR%%/ui/pithos_window.xml
 %%DATADIR%%/ui/PreferencesPithosDialog.ui
+%%DATADIR%%/ui/stations_dialog.xml
+%%DATADIR%%/ui/search_dialog.xml
+%%DATADIR%%/ui/AboutPithosDialog.ui
+%%DATADIR%%/ui/about_pithos_dialog.xml
 %%DATADIR%%/ui/SearchDialog.ui
 %%DATADIR%%/ui/StationsDialog.ui
-%%DATADIR%%/ui/about_pithos_dialog.xml
-%%DATADIR%%/ui/pithos_window.xml
-%%DATADIR%%/ui/preferences_pithos_dialog.xml
-%%DATADIR%%/ui/search_dialog.xml
-%%DATADIR%%/ui/stations_dialog.xml
-@dirrm %%DATADIR%%/ui
-@dirrm %%DATADIR%%/media
 @dirrm %%DATADIR%%/icons/scalable/apps
 @dirrm %%DATADIR%%/icons/scalable
 @dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/media
+@dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/pithos/plugins
-@dirrm %%PYTHON_SITELIBDIR%%/pithos/pandora
-@dirrm %%PYTHON_SITELIBDIR%%/pithos
