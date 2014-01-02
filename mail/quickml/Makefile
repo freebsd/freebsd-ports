@@ -36,9 +36,7 @@ LIMIT_DESC=	Creators and Members Limitation Patch
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-.if ${RUBY_VER} == 1.9
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-ruby19-*
-.endif
 
 .if ${PORT_OPTIONS:MANALOG}
 USE_GHOSTSCRIPT_RUN=	yes
