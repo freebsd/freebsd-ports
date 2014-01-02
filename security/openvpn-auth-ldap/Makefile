@@ -34,6 +34,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/xz:${PORTSDIR}/archivers/xz
 
 .if ${OSVERSION} >= 900000
 # Use gcc from ports because Objective C support no longer included in base
+# and the GNU Objective-C runtime is required, lang/libobjc2 + clang
+# does not work currently.
 USE_GCC=	yes
 CONFIGURE_ENV+=	OBJC="${CC}"
 .endif
