@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pytsk
-DISTVERSION=	2013-12-13
+DISTVERSION=	2013-12-30
 CATEGORIES=	sysutils security devel python
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiScUxsUm54cG02RDA/ \
 		LOCAL/antoine
