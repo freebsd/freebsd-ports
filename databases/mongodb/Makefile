@@ -89,4 +89,4 @@ test: build-depends build
 		${SCONS_BIN} ${SCONS_ENV} ${SCONS_ARGS} ${SMOKE_TESTS}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
