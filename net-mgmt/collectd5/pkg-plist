@@ -139,6 +139,9 @@ lib/collectd/pf.la
 lib/collectd/processes.a
 lib/collectd/processes.so
 lib/collectd/processes.la
+%%PYTHON%%lib/collectd/python.a
+%%PYTHON%%lib/collectd/python.la
+%%PYTHON%%lib/collectd/python.so
 %%REDIS%%lib/collectd/redis.a
 %%REDIS%%lib/collectd/redis.so
 %%REDIS%%lib/collectd/redis.la
