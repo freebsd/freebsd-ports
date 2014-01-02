@@ -1,0 +1,215 @@
+--- configure.orig	2013-11-15 21:30:24.000000000 +0200
++++ configure	2014-01-01 21:51:55.000000000 +0200
+@@ -10854,22 +10853,36 @@
+ 
+ if test "x$with_freetype" != "xno"
+ then
+-    ac_save_CPPFLAGS="$CPPFLAGS"
+     if test -n "$FREETYPE_CFLAGS"; then :
+ 
+ elif test -n "$PKG_CONFIG"; then :
+   FREETYPE_CFLAGS=`$PKG_CONFIG --cflags freetype2 2>/dev/null`
+ fi
+-FREETYPE_CFLAGS=${FREETYPE_CFLAGS:-`(freetype-config --cflags || freetype2-config --cflags) 2>/dev/null`}
+-CPPFLAGS="$CPPFLAGS $FREETYPE_CFLAGS"
++test "$cross_compiling" = yes || FREETYPE_CFLAGS=${FREETYPE_CFLAGS:-`(freetype-config --cflags || freetype2-config --cflags) 2>/dev/null`}
+ if test -n "$FREETYPE_LIBS"; then :
+ 
+ elif test -n "$PKG_CONFIG"; then :
+   FREETYPE_LIBS=`$PKG_CONFIG --libs freetype2 2>/dev/null`
+ fi
+-FREETYPE_LIBS=${FREETYPE_LIBS:-`(freetype-config --libs || freetype2-config --libs) 2>/dev/null`}
++test "$cross_compiling" = yes || FREETYPE_LIBS=${FREETYPE_LIBS:-`(freetype-config --libs || freetype2-config --libs) 2>/dev/null`}
+ FREETYPE_LIBS=${FREETYPE_LIBS:-"-lfreetype"}
+-    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for -lfreetype" >&5
++ac_save_CPPFLAGS=$CPPFLAGS
++CPPFLAGS="$CPPFLAGS $FREETYPE_CFLAGS"
++for ac_header in ft2build.h
++do :
++  ac_fn_c_check_header_mongrel "$LINENO" "ft2build.h" "ac_cv_header_ft2build_h" "$ac_includes_default"
++if test "x$ac_cv_header_ft2build_h" = xyes; then :
++  cat >>confdefs.h <<_ACEOF
++#define HAVE_FT2BUILD_H 1
++_ACEOF
++
++fi
++
++done
++
++        if test "$ac_cv_header_ft2build_h" = "yes"
++        then
++            { $as_echo "$as_me:${as_lineno-$LINENO}: checking for -lfreetype" >&5
+ $as_echo_n "checking for -lfreetype... " >&6; }
+ if ${ac_cv_lib_soname_freetype+:} false; then :
+   $as_echo_n "(cached) " >&6
+@@ -10911,7 +10924,7 @@
+ if test "x$ac_cv_lib_soname_freetype" = "x"; then :
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: not found" >&5
+ $as_echo "not found" >&6; }
+-       ft_lib=no
++       FREETYPE_LIBS=""
+ else
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_soname_freetype" >&5
+ $as_echo "$ac_cv_lib_soname_freetype" >&6; }
+@@ -10920,51 +10933,11 @@
+ #define SONAME_LIBFREETYPE "$ac_cv_lib_soname_freetype"
+ _ACEOF
+ 
+-       ft_lib=yes
+-fi
+-    if test "$ft_lib" = "yes"
+-    then
+-	for ac_header in ft2build.h \
+-                         freetype/freetype.h \
+-                         freetype/ftglyph.h \
+-                         freetype/fttypes.h \
+-                         freetype/tttables.h \
+-                         freetype/ftsnames.h \
+-                         freetype/ttnameid.h \
+-                         freetype/ftoutln.h \
+-                         freetype/ftwinfnt.h \
+-                         freetype/ftmodapi.h \
+-                         freetype/ftlcdfil.h
+-do :
+-  as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
+-ac_fn_c_check_header_compile "$LINENO" "$ac_header" "$as_ac_Header" "#ifdef HAVE_FT2BUILD_H
+-                          # include <ft2build.h>
+-                          #endif
+-"
+-if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
+-  cat >>confdefs.h <<_ACEOF
+-#define `$as_echo "HAVE_$ac_header" | $as_tr_cpp` 1
+-_ACEOF
+-
+-fi
+-
+-done
+ 
+-	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+-/* end confdefs.h.  */
+-#include <ft2build.h>
+-                    #include <freetype/fttrigon.h>
+-_ACEOF
+-if ac_fn_c_try_cpp "$LINENO"; then :
+-
+-$as_echo "#define HAVE_FREETYPE_FTTRIGON_H 1" >>confdefs.h
++$as_echo "#define HAVE_FREETYPE 1" >>confdefs.h
+ 
+-                    wine_cv_fttrigon=yes
+-else
+-  wine_cv_fttrigon=no
+-fi
+-rm -f conftest.err conftest.i conftest.$ac_ext
+-        ac_fn_c_check_type "$LINENO" "FT_TrueTypeEngineType" "ac_cv_type_FT_TrueTypeEngineType" "#include <freetype/ftmodapi.h>
++                 ac_fn_c_check_type "$LINENO" "FT_TrueTypeEngineType" "ac_cv_type_FT_TrueTypeEngineType" "#include <ft2build.h>
++#include FT_MODULE_H
+ "
+ if test "x$ac_cv_type_FT_TrueTypeEngineType" = xyes; then :
+ 
+@@ -10975,27 +10948,24 @@
+ 
+ fi
+ 
+-		if test "$ac_cv_header_freetype_freetype_h" = "yes" -a "$wine_cv_fttrigon" = "yes"
+-	then
+-
+-$as_echo "#define HAVE_FREETYPE 1" >>confdefs.h
+-
++fi
+         else
++            FREETYPE_CFLAGS=""
+             FREETYPE_LIBS=""
+-	fi
+-    else
+-        FREETYPE_LIBS=""
+-    fi
+-    CPPFLAGS="$ac_save_CPPFLAGS"
++        fi
++CPPFLAGS=$ac_save_CPPFLAGS
++test -z "$FREETYPE_CFLAGS" || FREETYPE_CFLAGS=`echo " $FREETYPE_CFLAGS" | sed 's/ -I\([^/]\)/ -I\$(top_builddir)\/\1/g'`
++test -z "$FREETYPE_LIBS" || FREETYPE_LIBS=`echo " $FREETYPE_LIBS" | sed 's/ -L\([^/]\)/ -L\$(top_builddir)\/\1/g'`
++
+ fi
+-if test "x$ac_cv_header_freetype_freetype_h" != xyes -o "x$wine_cv_fttrigon" != xyes; then :
++if test "x$ac_cv_lib_soname_freetype" = x; then :
+   case "x$with_freetype" in
+   xno) ;;
+   *)   as_fn_error $? "FreeType ${notice_platform}development files not found. Fonts will not be built.
+ Use the --without-freetype option if you really want this." "$LINENO" 5 ;;
+ esac
+ fi
+-test "x$ac_cv_header_freetype_freetype_h" = xyes -a "x$wine_cv_fttrigon" = xyes || enable_fonts=${enable_fonts:-no}
++test "x$ac_cv_lib_soname_freetype" = x && enable_fonts=${enable_fonts:-no}
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for parport header/ppdev.h" >&5
+ $as_echo_n "checking for parport header/ppdev.h... " >&6; }
+--- dlls/gdi32/freetype.c.orig	2013-11-15 21:30:24.000000000 +0200
++++ dlls/gdi32/freetype.c	2014-01-01 21:41:46.000000000 +0200
+@@ -77,6 +77,23 @@
+ #undef SetRectRgn
+ #endif /* HAVE_CARBON_CARBON_H */
+ 
++#ifdef HAVE_FT2BUILD_H
++#include <ft2build.h>
++#include FT_FREETYPE_H
++#include FT_GLYPH_H
++#include FT_TYPES_H
++#include FT_TRUETYPE_TABLES_H
++#include FT_SFNT_NAMES_H
++#include FT_TRUETYPE_IDS_H
++#include FT_OUTLINE_H
++#include FT_TRIGONOMETRY_H
++#include FT_MODULE_H
++#include FT_WINFONTS_H
++#ifdef FT_LCD_FILTER_H
++#include FT_LCD_FILTER_H
++#endif
++#endif /* HAVE_FT2BUILD_H */
++
+ #include "windef.h"
+ #include "winbase.h"
+ #include "winternl.h"
+@@ -95,43 +112,6 @@
+ 
+ #ifdef HAVE_FREETYPE
+ 
+-#ifdef HAVE_FT2BUILD_H
+-#include <ft2build.h>
+-#endif
+-#ifdef HAVE_FREETYPE_FREETYPE_H
+-#include <freetype/freetype.h>
+-#endif
+-#ifdef HAVE_FREETYPE_FTGLYPH_H
+-#include <freetype/ftglyph.h>
+-#endif
+-#ifdef HAVE_FREETYPE_TTTABLES_H
+-#include <freetype/tttables.h>
+-#endif
+-#ifdef HAVE_FREETYPE_FTTYPES_H
+-#include <freetype/fttypes.h>
+-#endif
+-#ifdef HAVE_FREETYPE_FTSNAMES_H
+-#include <freetype/ftsnames.h>
+-#endif
+-#ifdef HAVE_FREETYPE_TTNAMEID_H
+-#include <freetype/ttnameid.h>
+-#endif
+-#ifdef HAVE_FREETYPE_FTOUTLN_H
+-#include <freetype/ftoutln.h>
+-#endif
+-#ifdef HAVE_FREETYPE_FTTRIGON_H
+-#include <freetype/fttrigon.h>
+-#endif
+-#ifdef HAVE_FREETYPE_FTWINFNT_H
+-#include <freetype/ftwinfnt.h>
+-#endif
+-#ifdef HAVE_FREETYPE_FTMODAPI_H
+-#include <freetype/ftmodapi.h>
+-#endif
+-#ifdef HAVE_FREETYPE_FTLCDFIL_H
+-#include <freetype/ftlcdfil.h>
+-#endif
+-
+ #ifndef HAVE_FT_TRUETYPEENGINETYPE
+ typedef enum
+ {
