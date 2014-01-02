@@ -1,13 +1,3 @@
-Welcome to the Ruby Standard Library Documentation collection,
-brought to you by the ruby-doc project.
-Whether you are browsing online or offline,
-we hope that your use of Ruby's standard library will become more productive
-as a result of this effort.
-
-ruby-doc is a project dedicated to creating and collecting
-documentation on Ruby.
-You can find collections of articles and other resources at the website.
-
 stdlib-doc is a RubyForge project that converts Ruby source code into this
 documentation you are looking at.
 It also tracks the status of the documentation effort.
