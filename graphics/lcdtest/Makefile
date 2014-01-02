@@ -3,9 +3,13 @@
 
 PORTNAME=	lcdtest
 PORTVERSION=	1.18
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.brouhaha.com/~eric/software/lcdtest/download/
+MASTER_SITES=	http://www.brouhaha.com/~eric/software/lcdtest/download/ \
+		SF/nemysisfreebsdp/${CATEGORIES}/:icons
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}.png:icons
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	LCD monitor test pattern generator
@@ -19,20 +23,14 @@ USE_SDL=	sdl image ttf
 CFLAGS+=	-I${LOCALBASE}/include -DRELEASE=1.18
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lSDL -lSDL_image -lSDL_ttf
 
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz \
+		share/applications/${PORTNAME}.desktop \
+		share/pixmaps/${PORTNAME}.png
+
 PORTDOCS=	README
 
-MAN1=	lcdtest.1
-
 OPTIONS_DEFINE=	DOCS
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-PLIST_SUB+=	PORTDOCS=""
-.else
-PLIST_SUB+=	PORTDOCS="@comment "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/fonts/liberation/|${LOCALBASE}/lib/X11/fonts/Liberation/|' \
@@ -43,14 +41,14 @@ do-build:
 	(cd ${WRKSRC}/src && ${CC} ${LDFLAGS} -o lcdtest lcdtest.o)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/man/${MAN1} ${MAN1PREFIX}/man/man1/
-	${INSTALL_DATA} ${WRKSRC}/desktop/${PORTNAME}.svg ${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${WRKSRC}/desktop/${PORTNAME}.desktop ${PREFIX}/share/applications/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/desktop/${PORTNAME}.desktop \
+		${STAGEDIR}${DESKTOPDIR}
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
