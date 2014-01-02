@@ -68,8 +68,6 @@ NO_STAGE=	yes
 
 DEFAULT_ENCODING?=	euc_jp
 
-.if ${RUBY_VER} == 1.9
-BROKEN=	does not compile with ruby 1.9
-.endif
+BROKEN=		Does not compile
 
 .include <bsd.port.post.mk>
