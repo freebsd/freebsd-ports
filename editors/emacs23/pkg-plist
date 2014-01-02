@@ -11,6 +11,7 @@ share/applications/emacs.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/site-lisp/site-start.el
 %%DATADIR%%/%%EMACS_VER%%/site-lisp/subdirs.el
 %%DATADIR%%/site-lisp/subdirs.el
+%%INFODIR%%/dir
 share/icons/hicolor/128x128/apps/emacs.png
 share/icons/hicolor/16x16/apps/emacs.png
 share/icons/hicolor/16x16/apps/emacs22.png
@@ -22,6 +23,7 @@ share/icons/hicolor/48x48/apps/emacs.png
 share/icons/hicolor/48x48/apps/emacs22.png
 share/icons/hicolor/scalable/apps/emacs.svg
 share/icons/hicolor/scalable/mimetypes/emacs-document.svg
+@dirrmtry %%INFODIR%%
 @dirrmtry %%DATADIR%%/%%EMACS_VER%%/site-lisp
 @dirrmtry share/icons/hicolor/scalable/mimetypes
 @dirrmtry share/icons/hicolor/scalable/apps
