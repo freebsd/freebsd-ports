@@ -1,6 +1,7 @@
 bin/autozen
 bin/seq2wav
 bin/zentime
+man/man1/autozen.1.gz
 %%DATADIR%%/deep-relax.seq
 %%DATADIR%%/deep_delta_slide.seq
 %%DATADIR%%/delta_slide.seq
