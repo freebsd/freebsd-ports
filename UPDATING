@@ -5,13 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20121230:
+20131230:
   AFFECTS: ports using Apache Software License 2.0
   AUTHOR: ohauer@FreeBSD.org
 
   The acronym for Apache Software License 2.0 was renamed to APACHE20
 
-20121226:
+20131226:
   AFFECTS: users of security/cyrus-sasl2
   AUTHOR: ume@FreeBSD.org
 
@@ -22,7 +22,7 @@ you update your ports collection, before attempting any port upgrades.
   If you are using the SASL GSSAPI authentication, please install
   security/cyrus-sasl2-gssapi port, in addition to upgrading
   security/cyrus-sasl2 port.
- 
+
 20131218:
   AFFECTS: users of news/cnews
   AUTHOR: dinoex@FreeBSD.org
