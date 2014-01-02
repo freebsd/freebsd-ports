@@ -62,12 +62,6 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
-.if ${RUBY_VER} == 1.9
-.if !defined(RUBY_PROVIDED)
-IGNORE=	requires Ruby 1.9.3 or later
-.endif
-.endif
-
 pre-patch:
 	@${RM} ${WRKSRC}/.coveralls.yml
 	@${RM} ${WRKSRC}/.gitignore
