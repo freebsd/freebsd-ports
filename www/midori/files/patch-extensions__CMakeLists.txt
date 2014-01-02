@@ -1,11 +1,13 @@
---- ./extensions/CMakeLists.txt.orig	2013-09-17 10:59:53.000000000 +0000
-+++ ./extensions/CMakeLists.txt	2013-09-17 14:46:05.000000000 +0000
-@@ -24,6 +24,13 @@
+--- ./extensions/CMakeLists.txt.orig	2013-11-20 01:26:52.000000000 +0000
++++ ./extensions/CMakeLists.txt	2014-01-02 16:00:24.000000000 +0000
+@@ -24,6 +24,15 @@
           "nsplugin-manager.vala"
           )
  endif ()
 +string(FIND ${CMAKE_SYSTEM_NAME} "BSD" BEGIN)
-+string(SUBSTRING ${CMAKE_SYSTEM_NAME} ${BEGIN} 3 BSD)
++if (${BEGIN} GREATER 0)
++    string(SUBSTRING ${CMAKE_SYSTEM_NAME} ${BEGIN} 3 BSD)
++endif ()
 +if (BSD)
 +    list(REMOVE_ITEM EXTENSIONS
 +         "devpet.vala"
