@@ -6,3 +6,9 @@ bin/vdeq
 bin/vdeqemu
 bin/vdetap
 lib/libvdetap.so
+man/man1/dpipe.1.gz
+man/man1/slirpvde.1.gz
+man/man1/vdetaplib.1.gz
+man/man1/vdeq.1.gz
+man/man1/vde_plug.1.gz
+man/man1/vde_switch.1.gz
