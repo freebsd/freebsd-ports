@@ -6,7 +6,7 @@ PORTVERSION=		1.11.3
 PORTREVISION=		2
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
-DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
+DISTNAME=		krb5-${PORTVERSION}-signed
 EXTRACT_SUFX=		.tar
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
