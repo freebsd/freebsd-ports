@@ -51,7 +51,7 @@ do-install:
 .for f in ${DATAFILES}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}/${f}.dist
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}

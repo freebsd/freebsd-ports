@@ -20,6 +20,9 @@ SCRIPTS=	dnadiff exact-tandems mapview mummerplot nucmer \
 DOCUMENTS=	COPYRIGHT INSTALL LICENSE README
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 do-install:
 .for program in ${PROGRAMS}
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${program} ${PREFIX}/bin)
@@ -29,7 +32,7 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_SCRIPT} ${script} ${PREFIX}/bin)
 .endfor
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${DOCUMENTS}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${doc} ${DOCSDIR})

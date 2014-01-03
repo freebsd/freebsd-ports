@@ -31,6 +31,8 @@ PORTDOCS=	njplot.help njplot.html njplot.gif
 MAN1=		njplot.1 unrooted.1
 NO_STAGE=	yes
 
+.include <bsd.port.options.mk>
+
 .ifdef (WITHOUT_X11)
 post-patch:
 	${REINPLACE_CMD} -e 's|njplot.*unrooted||' ${WRKSRC}/makefile
@@ -43,7 +45,7 @@ do-install:
 .for file in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/${file} ${PREFIX}/man/man1
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}

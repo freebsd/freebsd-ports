@@ -984,12 +984,15 @@ MAN3=		Bio::Align::AlignI.3 \
 
 # now install all extra stuff (docs, examples, scripts, models)
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 post-install:
 	${MKDIR} ${DATADIR}
 	${CP} -R ${WRKSRC}/scripts ${WRKSRC}/models ${DATADIR}
 	${MKDIR} ${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for doc in AUTHORS BUGS Changes DEPENDENCIES DEPRECATED INSTALL LICENSE MANIFEST README
 	${INSTALL_MAN} ${WRKSRC}/${doc} ${DOCSDIR}
