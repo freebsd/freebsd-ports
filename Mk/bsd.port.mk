@@ -4256,6 +4256,8 @@ security-check:
 # call the necessary targets/scripts.
 ################################################################
 
+extract-message:
+	@${ECHO_MSG} "===>  Extracting for ${PKGNAME}"
 patch-message:
 	@${ECHO_MSG} "===>  Patching for ${PKGNAME}"
 configure-message:
@@ -6598,8 +6600,6 @@ ${${target:U}_COOKIE}::
 
 .endfor
 
-extract-message:
-	@${ECHO_MSG} "===>  Extracting for ${PKGNAME}"
 .if !target(check-sanity)
 check-sanity: ${_SANITY_REAL_SEQ}
 .endif
