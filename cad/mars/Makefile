@@ -7,9 +7,6 @@ PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.cs.umd.edu/pub/sdag/MaRS/
 DISTNAME=	MaRS-${PORTVERSION}
-.if !defined(NOPORTDOCS)
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} MaRS-2-doc${EXTRACT_SUFX}
-.endif
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -17,6 +14,8 @@ COMMENT=	Maryland Routing Simulator
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
+
+DOCS_DISTFILES=	${DISTNAME}${EXTRACT_SUFX} MaRS-2-doc${EXTRACT_SUFX}
 
 MAKE_JOBS_UNSAFE=	yes
 NO_WRKSUBDIR=	yes
@@ -45,7 +44,7 @@ post-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mars ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/man1/mars.1 ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${PREFIX}/share/doc/mars
 	@${CHMOD} a+rx ${PREFIX}/share/doc/mars
 	@(cd ${PREFIX}/share/doc ; \
