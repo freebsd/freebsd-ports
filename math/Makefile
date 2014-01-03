@@ -71,6 +71,7 @@
     SUBDIR += blas
     SUBDIR += blitz++
     SUBDIR += blocksolve95
+    SUBDIR += bsdnt
     SUBDIR += calc
     SUBDIR += calcoo
     SUBDIR += calctool
