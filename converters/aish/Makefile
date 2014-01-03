@@ -11,8 +11,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ish/uuencode/Base64 converter
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${PREFIX}/share/doc/ja/aish
 	${INSTALL_DATA} ${WRKSRC}/aish.txt ${PREFIX}/share/doc/ja/aish
 .endif

@@ -33,7 +33,7 @@ post-patch:
 		s#(doc_loc, data_fnames)##g' ${WRKSRC}/setup.py
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for DOC in COPYING.GPL COPYING.TGPPL.html README.rst TODO changelog
 	${INSTALL_DATA} ${WRKSRC}/${DOC} ${DOCSDIR}
