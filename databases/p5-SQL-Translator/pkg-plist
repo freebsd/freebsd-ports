@@ -27,6 +27,7 @@ bin/sqlt-graph
 %%PERL5_MAN3%%/SQL::Translator::Parser::DBI::SQLite.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Parser::DBI::Sybase.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Parser::Excel.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Parser::JSON.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Parser::MySQL.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Parser::Oracle.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Parser::PostgreSQL.3.gz
@@ -46,6 +47,7 @@ bin/sqlt-graph
 %%PERL5_MAN3%%/SQL::Translator::Producer::Dumper.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Producer::GraphViz.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Producer::HTML.3.gz
+%%PERL5_MAN3%%/SQL::Translator::Producer::JSON.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Producer::Latex.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Producer::MySQL.3.gz
 %%PERL5_MAN3%%/SQL::Translator::Producer::Oracle.3.gz
@@ -103,6 +105,7 @@ bin/sqlt-graph
 %%SITE_PERL%%/SQL/Translator/Parser/DBI/SQLite.pm
 %%SITE_PERL%%/SQL/Translator/Parser/DBI/Sybase.pm
 %%SITE_PERL%%/SQL/Translator/Parser/Excel.pm
+%%SITE_PERL%%/SQL/Translator/Parser/JSON.pm
 %%SITE_PERL%%/SQL/Translator/Parser/MySQL.pm
 %%SITE_PERL%%/SQL/Translator/Parser/Oracle.pm
 %%SITE_PERL%%/SQL/Translator/Parser/PostgreSQL.pm
@@ -122,6 +125,7 @@ bin/sqlt-graph
 %%SITE_PERL%%/SQL/Translator/Producer/Dumper.pm
 %%SITE_PERL%%/SQL/Translator/Producer/GraphViz.pm
 %%SITE_PERL%%/SQL/Translator/Producer/HTML.pm
+%%SITE_PERL%%/SQL/Translator/Producer/JSON.pm
 %%SITE_PERL%%/SQL/Translator/Producer/Latex.pm
 %%SITE_PERL%%/SQL/Translator/Producer/MySQL.pm
 %%SITE_PERL%%/SQL/Translator/Producer/Oracle.pm
