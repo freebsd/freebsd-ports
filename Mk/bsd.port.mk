@@ -6474,7 +6474,7 @@ _EXTRACT_SEQ=	check-build-conflicts extract-message checksum extract-depends \
 				pre-extract pre-extract-script do-extract \
 				post-extract post-extract-script
 _PATCH_DEP=		extract
-_PATCH_SEQ=		ask-license patch-message patch-depends pre-patch \
+_PATCH_SEQ=		ask-license patch-message patch-depends pathfix-pre-patch pre-patch \
 				pre-patch-script do-patch post-patch post-patch-script
 _CONFIGURE_DEP=	patch
 _CONFIGURE_SEQ=	build-depends lib-depends configure-message run-autotools-fixup \
