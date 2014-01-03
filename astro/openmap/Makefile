@@ -22,6 +22,8 @@ MAKE_ARGS+=	-Dopenmap.home=${WRKSRC} \
 
 SUB_FILES=	openmap.sh
 
+.include <bsd.port.options.mk>
+
 do-configure:
 	(cd ${WRKSRC} && ${FIND} . -type f -print0 | ${XARGS} -0 \
 	    ${REINPLACE_CMD} -e 's,/usr/local/openmap,${DATADIR},g')
@@ -40,7 +42,7 @@ do-install:
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} -o ${SHAREOWN} -g ${SHAREGRP} \
 	    AUTHORS LICENSE README ${DOCSDIR})
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	(cd ${WRKSRC}/doc && ${FIND} . -type f -print | \
 	    ${CPIO} -pdmu -R${SHAREOWN}:${SHAREGRP} ${DOCSDIR})
 	${FIND} ${DOCSDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 0555

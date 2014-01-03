@@ -20,6 +20,8 @@ USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/share/pixmaps,${PREFIX}/share/pixmaps,g' \
 		${WRKSRC}/gmapcatcher/widgets/mapPixbuf.py
@@ -27,7 +29,7 @@ post-patch:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/mapcatcher ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/mapdownloader ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/changelog ${DOCSDIR}
