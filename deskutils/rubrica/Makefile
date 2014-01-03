@@ -15,7 +15,6 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme
 
-FETCH_ARGS?=	-Fpr
 USE_BZIP2=	yes
 USES=		desktop-file-utils gmake pathfix pkgconfig
 USE_GNOME=	gconf2 gnomeprefix libglade2

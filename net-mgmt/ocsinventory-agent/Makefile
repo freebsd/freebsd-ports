@@ -21,7 +21,6 @@ BUILD_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode \
 		lspci:${PORTSDIR}/sysutils/pciutils
 
 USES=		perl5
-FETCH_ARGS=
 USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAN1=		ocsinventory-agent.1
