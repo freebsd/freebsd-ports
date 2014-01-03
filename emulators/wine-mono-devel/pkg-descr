@@ -1,0 +1,4 @@
+Mono is an Open Source and cross-platform implementation of the .NET
+framework.  Wine can use a Windows build of Mono to run .NET applications.
+
+WWW: http://wiki.winehq.org/Mono
