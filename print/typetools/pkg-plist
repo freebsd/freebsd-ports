@@ -9,6 +9,17 @@ bin/t1rawafm
 bin/t1reencode
 bin/t1testpage
 bin/ttftotype42
+man/man1/cfftot1.1.gz
+man/man1/mmafm.1.gz
+man/man1/mmpfb.1.gz
+man/man1/otfinfo.1.gz
+man/man1/otftotfm.1.gz
+man/man1/t1dotlessj.1.gz
+man/man1/t1lint.1.gz
+man/man1/t1rawafm.1.gz
+man/man1/t1reencode.1.gz
+man/man1/t1testpage.1.gz
+man/man1/ttftotype42.1.gz
 %%DATADIR%%/7t.enc
 %%DATADIR%%/glyphlist.txt
 %%DATADIR%%/texglyphlist.txt
