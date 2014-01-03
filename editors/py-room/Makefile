@@ -14,7 +14,6 @@ COMMENT=	PyRoom is a clone of WriteRoom and features "distraction-free writing"
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg
 
-FETCH_ARGS=
 USES=		gettext
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
