@@ -38,11 +38,13 @@ PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 VERSION=	3.00
 
 NO_STAGE=	yes
+
+.include <bsd.port.pre.mk>
 post-configure:
 	cp ${FILESDIR}/wspr ${WRKSRC}
 
 post-install:
-.if	!defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for d in ${WRKSRC}/LICENSE.TXT ${WRKSRC}/WSPR_Announcement.TXT \
 	${WRKSRC}/WSPR0_Instructions.TXT ${WRKSRC}/WSPR_Quick_Start.TXT \
@@ -55,7 +57,6 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.pre.mk>
 .if defined(BOOTSTRAP)
 SVN_REV!=	svn info http://svn.code.sf.net/p/wsjt/code/branches/wspr | ${GREP} Revision | cut -d' ' -f2
 .else
