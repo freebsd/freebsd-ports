@@ -20,8 +20,10 @@ MAN1=		freeze.1 melt.1 unfreeze.1 fcat.1 statist.1
 PLIST_FILES=	bin/fcat bin/freeze bin/melt bin/statist bin/unfreeze
 PORTDOCS=	README
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif

@@ -21,8 +21,10 @@ WRKSRC=		${WRKDIR}/ext
 
 DOCS=		README.txt doc
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${RUBY_MODDOCDIR}
 	cd ${WRKDIR}; ${COPYTREE_SHARE} "${DOCS}" ${RUBY_MODDOCDIR}/
 .endif

@@ -24,6 +24,7 @@ MLINKS=		bzip2.1 bunzip2.1   bzip2.1 bzcat.1   bzip2.1 bz2cat.1 \
 .error You have `USE_BZIP2' variable defined either in environment or in make(1) arguments. Please undefine and try again.
 .endif
 
+.include <bsd.port.options.mk>
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bzip2 ${PREFIX}/bin
 	${LN} -sf ${PREFIX}/bin/bzip2 ${PREFIX}/bin/bunzip2
@@ -42,7 +43,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/bzip2.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/bzgrep.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/bzmore.1 ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${PREFIX}/share/doc/bzip2
 	${INSTALL_DATA} ${WRKSRC}/manual* ${PREFIX}/share/doc/bzip2
 	${INSTALL_DATA} ${WRKSRC}/bzip2.txt ${PREFIX}/share/doc/bzip2
