@@ -766,9 +766,6 @@ install-license:
 	@${ECHO_CMD} "@dirrm ${_LICENSE_DIR_REL}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/share/licenses 2>/dev/null || true" >> ${TMPPLIST}
 
-.else
-install-license:
-	@${DO_NADA}
 .endif
 
 .else	# !LICENSE
