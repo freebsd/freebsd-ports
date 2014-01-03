@@ -1,25 +1,10 @@
---- configure.orig	2013-11-15 21:30:24.000000000 +0200
-+++ configure	2014-01-01 21:51:55.000000000 +0200
-@@ -10854,22 +10853,36 @@
- 
- if test "x$with_freetype" != "xno"
- then
--    ac_save_CPPFLAGS="$CPPFLAGS"
-     if test -n "$FREETYPE_CFLAGS"; then :
- 
- elif test -n "$PKG_CONFIG"; then :
-   FREETYPE_CFLAGS=`$PKG_CONFIG --cflags freetype2 2>/dev/null`
+diff --git configure configure
+index 7e2b5a0..cce9c7f 100755
+--- configure
++++ configure
+@@ -10869,7 +10869,23 @@ elif test -n "$PKG_CONFIG"; then :
  fi
--FREETYPE_CFLAGS=${FREETYPE_CFLAGS:-`(freetype-config --cflags || freetype2-config --cflags) 2>/dev/null`}
--CPPFLAGS="$CPPFLAGS $FREETYPE_CFLAGS"
-+test "$cross_compiling" = yes || FREETYPE_CFLAGS=${FREETYPE_CFLAGS:-`(freetype-config --cflags || freetype2-config --cflags) 2>/dev/null`}
- if test -n "$FREETYPE_LIBS"; then :
- 
- elif test -n "$PKG_CONFIG"; then :
-   FREETYPE_LIBS=`$PKG_CONFIG --libs freetype2 2>/dev/null`
- fi
--FREETYPE_LIBS=${FREETYPE_LIBS:-`(freetype-config --libs || freetype2-config --libs) 2>/dev/null`}
-+test "$cross_compiling" = yes || FREETYPE_LIBS=${FREETYPE_LIBS:-`(freetype-config --libs || freetype2-config --libs) 2>/dev/null`}
+ FREETYPE_LIBS=${FREETYPE_LIBS:-`(freetype-config --libs || freetype2-config --libs) 2>/dev/null`}
  FREETYPE_LIBS=${FREETYPE_LIBS:-"-lfreetype"}
 -    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for -lfreetype" >&5
 +ac_save_CPPFLAGS=$CPPFLAGS
@@ -42,7 +27,7 @@
  $as_echo_n "checking for -lfreetype... " >&6; }
  if ${ac_cv_lib_soname_freetype+:} false; then :
    $as_echo_n "(cached) " >&6
-@@ -10911,7 +10924,7 @@
+@@ -10911,7 +10927,7 @@ fi
  if test "x$ac_cv_lib_soname_freetype" = "x"; then :
    { $as_echo "$as_me:${as_lineno-$LINENO}: result: not found" >&5
  $as_echo "not found" >&6; }
@@ -51,7 +36,7 @@
  else
    { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_soname_freetype" >&5
  $as_echo "$ac_cv_lib_soname_freetype" >&6; }
-@@ -10920,51 +10933,11 @@
+@@ -10920,51 +10936,11 @@ cat >>confdefs.h <<_ACEOF
  #define SONAME_LIBFREETYPE "$ac_cv_lib_soname_freetype"
  _ACEOF
  
@@ -80,11 +65,11 @@
 -  cat >>confdefs.h <<_ACEOF
 -#define `$as_echo "HAVE_$ac_header" | $as_tr_cpp` 1
 -_ACEOF
--
+ 
 -fi
 -
 -done
- 
+-
 -	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 -/* end confdefs.h.  */
 -#include <ft2build.h>
@@ -106,7 +91,7 @@
  "
  if test "x$ac_cv_type_FT_TrueTypeEngineType" = xyes; then :
  
-@@ -10975,27 +10948,24 @@
+@@ -10975,27 +10951,21 @@ _ACEOF
  
  fi
  
@@ -122,13 +107,8 @@
 -	fi
 -    else
 -        FREETYPE_LIBS=""
--    fi
--    CPPFLAGS="$ac_save_CPPFLAGS"
-+        fi
-+CPPFLAGS=$ac_save_CPPFLAGS
-+test -z "$FREETYPE_CFLAGS" || FREETYPE_CFLAGS=`echo " $FREETYPE_CFLAGS" | sed 's/ -I\([^/]\)/ -I\$(top_builddir)\/\1/g'`
-+test -z "$FREETYPE_LIBS" || FREETYPE_LIBS=`echo " $FREETYPE_LIBS" | sed 's/ -L\([^/]\)/ -L\$(top_builddir)\/\1/g'`
-+
+     fi
+     CPPFLAGS="$ac_save_CPPFLAGS"
  fi
 -if test "x$ac_cv_header_freetype_freetype_h" != xyes -o "x$wine_cv_fttrigon" != xyes; then :
 +if test "x$ac_cv_lib_soname_freetype" = x; then :
@@ -143,8 +123,10 @@
  
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for parport header/ppdev.h" >&5
  $as_echo_n "checking for parport header/ppdev.h... " >&6; }
---- dlls/gdi32/freetype.c.orig	2013-11-15 21:30:24.000000000 +0200
-+++ dlls/gdi32/freetype.c	2014-01-01 21:41:46.000000000 +0200
+diff --git dlls/gdi32/freetype.c dlls/gdi32/freetype.c
+index 74c5905..6f7d1c1 100644
+--- dlls/gdi32/freetype.c
++++ dlls/gdi32/freetype.c
 @@ -77,6 +77,23 @@
  #undef SetRectRgn
  #endif /* HAVE_CARBON_CARBON_H */
@@ -169,7 +151,7 @@
  #include "windef.h"
  #include "winbase.h"
  #include "winternl.h"
-@@ -95,43 +112,6 @@
+@@ -95,43 +112,6 @@ WINE_DEFAULT_DEBUG_CHANNEL(font);
  
  #ifdef HAVE_FREETYPE
  
@@ -213,3 +195,83 @@
  #ifndef HAVE_FT_TRUETYPEENGINETYPE
  typedef enum
  {
+@@ -184,7 +164,7 @@ MAKE_FUNCPTR(FT_Set_Pixel_Sizes);
+ MAKE_FUNCPTR(FT_Vector_Transform);
+ MAKE_FUNCPTR(FT_Vector_Unit);
+ static FT_TrueTypeEngineType (*pFT_Get_TrueType_Engine_Type)(FT_Library);
+-#ifdef HAVE_FREETYPE_FTLCDFIL_H
++#ifdef FT_LCD_FILTER_H
+ static FT_Error (*pFT_Library_SetLcdFilter)(FT_Library, FT_LcdFilter);
+ #endif
+ 
+@@ -922,7 +902,7 @@ static BOOL is_hinting_enabled(void)
+ 
+ static BOOL is_subpixel_rendering_enabled( void )
+ {
+-#ifdef HAVE_FREETYPE_FTLCDFIL_H
++#ifdef FT_LCD_FILTER_H
+     static int enabled = -1;
+     if (enabled == -1)
+     {
+@@ -3910,7 +3890,7 @@ static BOOL init_freetype(void)
+ #undef LOAD_FUNCPTR
+     /* Don't warn if these ones are missing */
+     pFT_Get_TrueType_Engine_Type = wine_dlsym(ft_handle, "FT_Get_TrueType_Engine_Type", NULL, 0);
+-#ifdef HAVE_FREETYPE_FTLCDFIL_H
++#ifdef FT_LCD_FILTER_H
+     pFT_Library_SetLcdFilter = wine_dlsym(ft_handle, "FT_Library_SetLcdFilter", NULL, 0);
+ #endif
+ 
+@@ -6653,7 +6633,7 @@ static DWORD get_glyph_outline(GdiFont *incoming_font, UINT glyph, UINT format,
+     case WINE_GGO_HBGR_BITMAP:
+     case WINE_GGO_VRGB_BITMAP:
+     case WINE_GGO_VBGR_BITMAP:
+-#ifdef HAVE_FREETYPE_FTLCDFIL_H
++#ifdef FT_LCD_FILTER_H
+       {
+         switch (ft_face->glyph->format)
+         {
+diff --git include/config.h.in include/config.h.in
+index 7c35aca..b2459f0 100644
+--- include/config.h.in
++++ include/config.h.in
+@@ -132,39 +132,6 @@
+ /* Define if FreeType 2 is installed */
+ #undef HAVE_FREETYPE
+ 
+-/* Define to 1 if you have the <freetype/freetype.h> header file. */
+-#undef HAVE_FREETYPE_FREETYPE_H
+-
+-/* Define to 1 if you have the <freetype/ftglyph.h> header file. */
+-#undef HAVE_FREETYPE_FTGLYPH_H
+-
+-/* Define to 1 if you have the <freetype/ftlcdfil.h> header file. */
+-#undef HAVE_FREETYPE_FTLCDFIL_H
+-
+-/* Define to 1 if you have the <freetype/ftmodapi.h> header file. */
+-#undef HAVE_FREETYPE_FTMODAPI_H
+-
+-/* Define to 1 if you have the <freetype/ftoutln.h> header file. */
+-#undef HAVE_FREETYPE_FTOUTLN_H
+-
+-/* Define to 1 if you have the <freetype/ftsnames.h> header file. */
+-#undef HAVE_FREETYPE_FTSNAMES_H
+-
+-/* Define if you have the <freetype/fttrigon.h> header file. */
+-#undef HAVE_FREETYPE_FTTRIGON_H
+-
+-/* Define to 1 if you have the <freetype/fttypes.h> header file. */
+-#undef HAVE_FREETYPE_FTTYPES_H
+-
+-/* Define to 1 if you have the <freetype/ftwinfnt.h> header file. */
+-#undef HAVE_FREETYPE_FTWINFNT_H
+-
+-/* Define to 1 if you have the <freetype/ttnameid.h> header file. */
+-#undef HAVE_FREETYPE_TTNAMEID_H
+-
+-/* Define to 1 if you have the <freetype/tttables.h> header file. */
+-#undef HAVE_FREETYPE_TTTABLES_H
+-
+ /* Define to 1 if the system has the type `fsblkcnt_t'. */
+ #undef HAVE_FSBLKCNT_T
+ 
