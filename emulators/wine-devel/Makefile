@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.7.9
+DISTVERSION=	1.7.10
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -92,12 +92,12 @@ PORTDATA=	l_intl.nls wine.inf
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MX11}
-PORTDATA+=	fonts/
-.endif
-
 pre-build:
 	cd ${WRKSRC} && ${GMAKE} depend
+
+pre-install:
+	${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} | ${GREP} ^@dirrm | \
+		${CUT} -f 2 -d ' ' | ${SORT} | ${XARGS} -R 1 -I % ${MKDIR} ${STAGEDIR}${PREFIX}/%
 
 post-install:
 	@${MV} -f ${STAGEDIR}${WINELIBDIR}/libwine.so.1.0 \
