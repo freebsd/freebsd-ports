@@ -4,7 +4,9 @@
 PORTNAME=	ccid
 PORTVERSION=	1.4.14
 CATEGORIES=	devel
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/3971/
+#MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/3971/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	arved
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Generic USB CCID (Chip/Smart Card Interface Devices) driver

@@ -184,7 +184,6 @@ mikachan-ttfonts/ver*.*	japanese/mikachan-ttfonts Do not sell distfile
 mindfocus-*		games/mindfocus		Contains commercial character data
 mindterm-*		security/mindterm-binary Do not sell for profit
 molden*			biology/molden		Free for academic, non-profit usage; do not redistribute source and executable
-MPlayer*		multimedia/mplayer	Restricted binary distribution
 msql-*			databases/msql		Not free for commercial organizations
 mypaedia-*		japanese/mypaedia-fpw	The original dictionary is not free
 ncftpd-*		ftp/ncftpd		30 day evaluation license
@@ -267,7 +266,8 @@ twelf-*			lang/twelf		License is currently indeterminate
 tw_cli-*		sysutils/tw_cli		Redistribution forbidden by license
 uDrawGraph-*		graphics/uDrawGraph	Binary under GNU LGPL without accompanying source
 ue*dev.zip		editors/uemacs		Resale allowed for media cost only
-UniFi.unix.zip		net-mgmt/unifi		Redistribution limited
+unifi-2*/UniFi.unix.zip	net-mgmt/unifi2		Redistribution limited
+unifi-3*/UniFi.unix.zip	net-mgmt/unifi3		Redistribution limited
 uplink-demo*		games/linux-uplink-demo	Redistribution is limited, see license
 uppaal-*.zip		devel/uppaal		Downloading requires completion of a license agreement
 ut2004-lnx-*		games/linux-ut2004-demo	Redistribution limited

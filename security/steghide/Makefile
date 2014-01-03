@@ -24,8 +24,6 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -lintl -lmcrypt"
 CPPFLAGS+=	${CFLAGS} -I${LOCALBASE}/include -fpermissive
 
 post-patch:
-	${REINPLACE_CMD} -e 's|install-data-am\: install-docDATA||' \
-		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's,SHELL) libtool,SHELL) ${LIBTOOL} --tag=CXX,' \
 		${WRKSRC}/src/Makefile.in
 	${REINPLACE_CMD} -e 's,-O2,${CFLAGS},' ${WRKSRC}/configure

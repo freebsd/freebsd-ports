@@ -23,6 +23,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 DOC_FILES=	CHANGES COPYING README
 
+.include <bsd.port.options.mk>
+
 post-patch:
 .for ii in \
 	Makefile.in \
@@ -66,7 +68,7 @@ pre-install:
 .else
 	${ECHO_CMD} bin/SpiralSynth > ${PLIST}
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 .for ii in ${DOC_FILES}
 	${ECHO_CMD} share/doc/spiralsynth/${ii} >> ${PLIST}
 .endfor
@@ -80,7 +82,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/SpiralSynth ${PREFIX}/bin
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for ii in ${DOC_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${ii} ${DOCSDIR}

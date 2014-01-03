@@ -2,11 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	stdlib
-PORTVERSION=	0.10.1
-CATEGORIES=	lang ruby
-MASTER_SITES=	http://www.ruby-doc.org/download/stdlib/
+PORTVERSION=	1.9.3
+
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}doc-
-DISTNAME=	ruby-doc-${PORTNAME}-${PORTVERSION}
+CATEGORIES=	lang ruby docs
+
+DISTNAME=	ruby_${PORTVERSION:S/./_/g}_${PORTNAME}_rdocs
+MASTER_SITES=	http://www.ruby-doc.org/downloads/
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
@@ -16,25 +18,10 @@ COMMENT=	Documentation for the Ruby language standard library
 USE_RUBY=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+WRKSRC=		${WRKDIR}/${DISTNAME:S/_rdocs//}
 
 do-install:
-	${MKDIR} ${RUBY_DOCDIR}/
-	@(cd ${WRKSRC} && \
-		${RUBY} install.rb --force --doc-base ${RUBY_DOCDIR}/)
+	@${MKDIR} ${STAGEDIR}${RUBY_DOCDIR}
+	@${CP} -R ${WRKSRC} ${STAGEDIR}${RUBY_DOCDIR}/${PORTNAME}
 
-plist:
-	truncate -s0 pkg-plist
-
-	@${FIND} -ds ${RUBY_MODDOCDIR}/ ! -type d | \
-		${SED} 's,^${RUBY_MODDOCDIR},%%RUBY_MODDOCDIR%%,' \
-		>> pkg-plist
-
-	@${FIND} -ds ${RUBY_MODDOCDIR}/ -type d | ${SORT} -r | ${SED} -E -e \
-		's,^${RUBY_MODDOCDIR}(.*),@dirrm %%RUBY_MODDOCDIR%%\1,' \
-		>> pkg-plist
-
-	@${ECHO_CMD} "@dirrmtry %%RUBY_DOCDIR%%" >> pkg-plist
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -8,7 +8,7 @@ CATEGORIES=	multimedia kde
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	kaffeine/current
 
-MAINTAINER=	arved@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A xine-base multimedia player
 
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/dvb/ca.h:${PORTSDIR}/multimedia/v4l_compat

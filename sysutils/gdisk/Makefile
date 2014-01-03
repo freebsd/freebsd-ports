@@ -17,8 +17,6 @@ LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
 
 WRKSRC=		${WRKDIR}/gptfdisk-${PORTVERSION}
 
-FETCH_ARGS=	-Rr
-
 ONLY_FOR_ARCHS=	i386 amd64
 
 OPTIONS_DEFINE=	CGDISK UTF16

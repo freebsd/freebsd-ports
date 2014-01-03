@@ -1,0 +1,31 @@
+Avoid chown before install, to avoid using root.
+
+createddirs is read in Makefile and processed there
+
+--- Makefile.in.orig	2013-02-05 14:57:30.000000000 +0000
++++ Makefile.in	2014-01-01 20:07:50.489335639 +0000
+@@ -631,12 +631,9 @@
+ 		$(spooldir)/moderation $(spooldir)/expire $(spooldir)/auth \
+ 		$(spooldir)/outgoing $(spooldir)/tmp $(spooldir)/task \
+ 		$(bouncedir) $(arcdir) $(piddir) $(staticdir) $(sysconfdir); do \
+-		if [ ! -d $(DESTDIR)$$dir ] ; then \
+-			echo "Creating $(DESTDIR)$$dir"; \
+-			install -d -m 755 $(DESTDIR)$$dir; \
+-		fi; \
+-		chown $(USER) $(DESTDIR)$$dir || /bin/true; \
+-		chgrp $(GROUP) $(DESTDIR)$$dir || /bin/true; \
++		echo "$${dir}" >> createddirs; \
++		\
++		\
+ 	done
+ 
+ installconfig: installdir
+@@ -668,8 +665,6 @@
+ 		echo "# automatically created file" >> data_structure.version; \
+ 		echo "# you should not modify it" >> data_structure.version; \
+ 		echo $(VERSION) >> data_structure.version; \
+-		chown $(USER) data_structure.version || /bin/true; \
+-		chgrp $(GROUP) data_structure.version || /bin/true; \
+ 	fi
+ 
+ nextstep: 

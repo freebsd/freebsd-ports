@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-bin_utils=0.0.3:${PORTSDIR}/devel/rubygem-bin_utils \
 		rubygem-murmurhash3>=0.1.1:${PORTSDIR}/devel/rubygem-murmurhash3 \
 		rubygem-sumbur>=0.0.2:${PORTSDIR}/devel/rubygem-sumbur
 
-RUBY_VER=	1.9
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes

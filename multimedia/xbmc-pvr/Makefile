@@ -64,7 +64,6 @@ DEPRECATED=	multimedia/xbmc and multimedia/xbmc-addon-pvr are newer
 EXPIRATION_DATE=	2013-12-31
 GITHASH=	9023e39
 WRKSRC=		${WRKDIR}/opdenkamp-${PORTNAME}-${GITHASH}
-FETCH_ARGS=	-Fpr
 USES=		iconv pkgconfig
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf libtool automake libltdl

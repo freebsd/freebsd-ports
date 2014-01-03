@@ -1,0 +1,10 @@
+--- ./fam/Makefile.am.orig	2003-04-15 06:21:26.000000000 +0200
++++ ./fam/Makefile.am	2014-01-03 02:35:10.000000000 +0100
+@@ -72,6 +72,7 @@
+   main.c++ \
+   timeval.c++ \
+   timeval.h \
++  mntent_compat.c++ \
+   @IMON_FUNCS@.c++
+ 
+ EXTRA_fam_SOURCES = IMonIrix.c++ IMonLinux.c++ IMonNone.c++

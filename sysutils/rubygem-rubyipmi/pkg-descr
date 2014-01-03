@@ -1,0 +1,5 @@
+Rubyipmi gem is a ruby wrapper for the freeipmi and ipmitool command line tools.
+It provides a ruby implementation of ipmi commands that will make it simple to
+connect to BMC devices from ruby.
+
+WWW: https://github.com/logicminds/rubyipmi

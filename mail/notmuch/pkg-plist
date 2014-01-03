@@ -1,9 +1,24 @@
 bin/notmuch
 etc/bash_completion.d/notmuch
 include/notmuch.h
-lib/libnotmuch.so.3.0.0
+lib/libnotmuch.so.3.1.0
 lib/libnotmuch.so
 lib/libnotmuch.so.3
+man/man1/notmuch-compact.1.gz
+man/man1/notmuch-config.1.gz
+man/man1/notmuch-count.1.gz
+man/man1/notmuch-dump.1.gz
+man/man1/notmuch-insert.1.gz
+man/man1/notmuch-new.1.gz
+man/man1/notmuch-reply.1.gz
+man/man1/notmuch-restore.1.gz
+man/man1/notmuch-search.1.gz
+man/man1/notmuch-setup.1.gz
+man/man1/notmuch-show.1.gz
+man/man1/notmuch-tag.1.gz
+man/man1/notmuch.1.gz
+man/man5/notmuch-hooks.5.gz
+man/man7/notmuch-search-terms.7.gz
 share/emacs/site-lisp/coolj.el
 share/emacs/site-lisp/notmuch-logo.png
 share/emacs/site-lisp/notmuch-address.el
@@ -13,16 +28,16 @@ share/emacs/site-lisp/notmuch-lib.el
 share/emacs/site-lisp/notmuch-maildir-fcc.el
 share/emacs/site-lisp/notmuch-message.el
 share/emacs/site-lisp/notmuch-mua.el
+share/emacs/site-lisp/notmuch-parser.el
 share/emacs/site-lisp/notmuch-print.el
 share/emacs/site-lisp/notmuch-query.el
 share/emacs/site-lisp/notmuch-show.el
 share/emacs/site-lisp/notmuch-tag.el
+share/emacs/site-lisp/notmuch-tree.el
 share/emacs/site-lisp/notmuch-wash.el
 share/emacs/site-lisp/notmuch.el
 share/zsh/functions/Completion/Unix/_notmuch
 @dirrmtry etc/bash_completion.d
-@dirrmtry share/emacs/site-lisp
-@dirrmtry share/emacs
 @dirrmtry share/zsh/functions/Completion/Unix
 @dirrmtry share/zsh/functions/Completion
 @dirrmtry share/zsh/functions

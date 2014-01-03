@@ -13,7 +13,6 @@ COMMENT=	The modern HTTP benchmarking tool
 
 LICENSE=	APACHE20
 
-FETCH_ARGS=	-pRr
 LIB_DEPENDS+=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		gmake

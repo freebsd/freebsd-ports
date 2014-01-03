@@ -20,7 +20,6 @@ RUN_DEPENDS=	${PYGAME}
 
 WRKSRC=		${WRKDIR}
 
-FETCH_ARGS?=	-Fpr
 USE_PYTHON=	yes
 
 PORTDOCS=	readme_TuxFighter54.txt

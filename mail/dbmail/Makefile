@@ -2,9 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	dbmail
-PORTVERSION=	3.1.7
+PORTVERSION=	3.1.9
 CATEGORIES=	mail
-MASTER_SITES=	http://www.dbmail.org/download/3.1/
+MASTER_SITES=	http://www.dbmail.org/download/3.1/ \
+		http://git.dbmail.eu/paul/dbmail/snapshot/
 
 MAINTAINER=	ahicks@p-o.co.uk
 COMMENT=	SQL database-based mail system (POP3 and IMAP)

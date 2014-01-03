@@ -1,6 +1,6 @@
---- src/updown.c.orig	2011-09-07 23:04:32.000000000 +0200
-+++ src/updown.c	2011-12-28 16:07:59.000000000 +0100
-@@ -296,7 +296,7 @@ void updown(int what, int nr)
+--- src/updown.c.orig	2013-12-08 11:25:06.000000000 +0100
++++ src/updown.c	2014-01-02 20:30:33.000000000 +0100
+@@ -298,7 +298,7 @@ void updown(int what, int nr)
      do_log("%s", cmdline);   /* jl 22.06.97 */
  
    if (P_PFULL(g) == 'N') {

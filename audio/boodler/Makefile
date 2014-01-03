@@ -61,7 +61,7 @@ do-install:
 	@${CHMOD} -R u+w,a+r,og-w ${WRKDIR}/boodler-snd
 	@${FIND} ${WRKDIR}/boodler-snd -type d -print0 | ${XARGS} -0 ${CHMOD} 755
 	@cd ${WRKDIR} && ${CP} -pPR boodler/boodle boodler/effects boodler-snd ${BHOME}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
 .endif

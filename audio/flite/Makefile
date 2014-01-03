@@ -21,10 +21,12 @@ MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS:=	${CFLAGS:N-O:N-O[0123456789]} -O0
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pd|-p|g' ${WRKSRC}/main/Makefile
 
-.ifndef NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	@${MKDIR} ${DOCSDIR}/
 	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}/

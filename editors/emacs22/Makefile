@@ -8,6 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	22
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	GNU editing macros
@@ -16,15 +17,16 @@ COMMENT=	GNU editing macros
 .if defined(WITHOUT_GTK)
 LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		gif.5:${PORTSDIR}/graphics/giflib \
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
+		tiff:${PORTSDIR}/graphics/tiff \
+		gif:${PORTSDIR}/graphics/giflib \
 		png15:${PORTSDIR}/graphics/png
 .endif
 
-CONFLICTS=	emacs-19.* emacs-21.* emacs-23.* emacs-24.* \
+CONFLICTS=	emacs-19.* emacs21-* emacs23-* emacs24-* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
-		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
+		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]* \
+		emacs-devel-* emacs-nox11-*
 
 EMACS_VER=	22.3
 GNU_CONFIGURE=	yes
@@ -61,8 +63,6 @@ INFO=		ada-mode autotype calc ccmode cl dired-x ebrowse ediff \
 		flymake forms gnus idlwave info message mh-e newsticker \
 		org pcl-cvs pgg rcirc reftex sc ses sieve smtpmail speedbar \
 		tramp url vip viper widget woman
-
-LATEST_LINK=	emacs22
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

@@ -18,9 +18,11 @@ NO_STAGE=	yes
 USE_XORG=	xpm
 MAKE_ARGS=	CC="${CXX}" CFLAGS="${CXXFLAGS}"
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmsmixer ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif

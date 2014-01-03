@@ -11,7 +11,6 @@ MAINTAINER=	blttll@gmail.com
 COMMENT=	General purpose storage I/O benchmarking tool
 
 USES=		bison
-FETCH_ARGS=	-Fpr
 MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CC}"
 NO_WRKSUBDIR=	yes

@@ -11,7 +11,6 @@ COMMENT=	Simple daemon for easy stats aggregation
 RUN_DEPENDS=	node:${PORTSDIR}/www/node
 
 NO_BUILD=	yes
-FETCH_ARGS=	-Fpr
 
 USERS=		statsd
 GROUPS=		statsd

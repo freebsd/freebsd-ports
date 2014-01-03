@@ -25,7 +25,6 @@ WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxguest vboxservice
 USES=		compiler:features iconv
 ONLY_FOR_ARCHS=	i386 amd64
-FETCH_ARGS=	-pRr
 USE_BZIP2=	yes
 MAKE_JOBS_UNSAFE=	yes
 

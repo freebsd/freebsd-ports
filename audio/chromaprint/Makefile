@@ -16,7 +16,6 @@ LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 USES=		cmake:outsource
 USE_LDCONFIG=	yes
 
-FETCH_ARGS=	-Fpr
 CMAKE_ARGS=	-DBUILD_EXAMPLES:BOOL=ON \
 		-DWITH_AVFFT:BOOL=ON \
 

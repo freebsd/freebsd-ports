@@ -29,7 +29,6 @@ INSTALLS_OMF=	yes
 
 MAN1=		${PORTNAME}.1 \
 		${PORTNAME}-render.1
-FETCH_ARGS=	-pRr
 
 NO_STAGE=	yes
 post-patch:

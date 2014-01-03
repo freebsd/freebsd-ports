@@ -12,7 +12,6 @@ COMMENT=	Mp3riot creates mp3 playlists, HTML files, etc
 RUN_DEPENDS=	p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info
 
 USES=		perl5
-NO_STAGE=	yes
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -20,15 +19,11 @@ NO_WRKSUBDIR=	yes
 PORTDOCS=	example.unix groupfile CHANGELOG MANUAL mp3table.sql README repl.dat TODO utf.dat
 PLIST_FILES=	bin/mp3riot
 
-.include <bsd.port.pre.mk>
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/mp3riot ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/mp3riot ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for item in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${item} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${item} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

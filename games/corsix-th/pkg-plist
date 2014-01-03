@@ -65,6 +65,7 @@ bin/CorsixTH
 %%DATADIR%%/Levels/finisham.level
 %%DATADIR%%/Levels/original05.level
 %%DATADIR%%/Levels/original07.level
+%%DATADIR%%/Levels/original08.level
 %%DATADIR%%/Levels/original11.level
 %%DATADIR%%/Levels/original12.level
 %%DATADIR%%/Lua/api_version.lua
@@ -119,12 +120,14 @@ bin/CorsixTH
 %%DATADIR%%/Lua/dialogs/resizable.lua
 %%DATADIR%%/Lua/dialogs/resizables/calls_dispatcher.lua
 %%DATADIR%%/Lua/dialogs/resizables/cheats.lua
+%%DATADIR%%/Lua/dialogs/resizables/customise.lua
 %%DATADIR%%/Lua/dialogs/resizables/directory_browser.lua
 %%DATADIR%%/Lua/dialogs/resizables/dropdown.lua
 %%DATADIR%%/Lua/dialogs/resizables/file_browser.lua
 %%DATADIR%%/Lua/dialogs/resizables/file_browsers/choose_font.lua
 %%DATADIR%%/Lua/dialogs/resizables/file_browsers/load_game.lua
 %%DATADIR%%/Lua/dialogs/resizables/file_browsers/save_game.lua
+%%DATADIR%%/Lua/dialogs/resizables/folder_settings.lua
 %%DATADIR%%/Lua/dialogs/resizables/lua_console.lua
 %%DATADIR%%/Lua/dialogs/resizables/main_menu.lua
 %%DATADIR%%/Lua/dialogs/resizables/menu_list_dialog.lua
@@ -133,6 +136,7 @@ bin/CorsixTH
 %%DATADIR%%/Lua/dialogs/resizables/new_game.lua
 %%DATADIR%%/Lua/dialogs/resizables/options.lua
 %%DATADIR%%/Lua/dialogs/resizables/tip_of_the_day.lua
+%%DATADIR%%/Lua/dialogs/resizables/update.lua
 %%DATADIR%%/Lua/dialogs/staff_dialog.lua
 %%DATADIR%%/Lua/dialogs/staff_rise.lua
 %%DATADIR%%/Lua/dialogs/tree_ctrl.lua
@@ -225,6 +229,7 @@ bin/CorsixTH
 %%DATADIR%%/Lua/languages/hungarian.lua
 %%DATADIR%%/Lua/languages/iberic_portuguese.lua
 %%DATADIR%%/Lua/languages/italian.lua
+%%DATADIR%%/Lua/languages/korean.lua
 %%DATADIR%%/Lua/languages/norwegian.lua
 %%DATADIR%%/Lua/languages/original_strings.lua
 %%DATADIR%%/Lua/languages/polish.lua

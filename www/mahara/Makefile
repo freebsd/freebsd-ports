@@ -11,7 +11,6 @@ COMMENT=	An open source ePortfolio system
 
 USE_BZIP2=	yes
 USE_PHP=	session json curl xml xmlrpc openssl simplexml
-FETCH_ARGS=	-pRr
 
 OPTIONS_DEFINE=	MYSQL PGSQL
 OPTIONS_DEFAULT=	MYSQL

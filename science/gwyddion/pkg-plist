@@ -361,6 +361,8 @@ lib/gwyddion/modules/layer/axis.la
 lib/gwyddion/modules/layer/axis.so
 lib/gwyddion/modules/layer/ellipse.la
 lib/gwyddion/modules/layer/ellipse.so
+lib/gwyddion/modules/layer/lattice.la
+lib/gwyddion/modules/layer/lattice.so
 lib/gwyddion/modules/layer/line.la
 lib/gwyddion/modules/layer/line.so
 lib/gwyddion/modules/layer/point.la
@@ -391,6 +393,8 @@ lib/gwyddion/modules/process/calibrate.la
 lib/gwyddion/modules/process/calibrate.so
 lib/gwyddion/modules/process/convolution_filter.la
 lib/gwyddion/modules/process/convolution_filter.so
+lib/gwyddion/modules/process/correct_affine.la
+lib/gwyddion/modules/process/correct_affine.so
 lib/gwyddion/modules/process/crosscor.la
 lib/gwyddion/modules/process/crosscor.so
 lib/gwyddion/modules/process/curvature.la
@@ -481,6 +485,8 @@ lib/gwyddion/modules/process/noise_synth.la
 lib/gwyddion/modules/process/noise_synth.so
 lib/gwyddion/modules/process/obj_synth.la
 lib/gwyddion/modules/process/obj_synth.so
+lib/gwyddion/modules/process/otsu_threshold.la
+lib/gwyddion/modules/process/otsu_threshold.so
 lib/gwyddion/modules/process/outliers.la
 lib/gwyddion/modules/process/outliers.so
 lib/gwyddion/modules/process/pat_synth.la
@@ -585,7 +591,7 @@ lib/libgwyddion2.so
 lib/libgwyddion2.so.10
 lib/libgwydgets2.la
 lib/libgwydgets2.so
-lib/libgwydgets2.so.13
+lib/libgwydgets2.so.14
 lib/libgwydraw2.la
 lib/libgwydraw2.so
 lib/libgwydraw2.so.2
@@ -594,7 +600,7 @@ lib/libgwymodule2.so
 lib/libgwymodule2.so.6
 lib/libgwyprocess2.la
 lib/libgwyprocess2.so
-lib/libgwyprocess2.so.17
+lib/libgwyprocess2.so.18
 libdata/pkgconfig/gwyddion.pc
 libexec/gwyddion/plugins/file/dump
 %%RUBY%%libexec/gwyddion/plugins/process/invert_narray.rb
@@ -672,6 +678,9 @@ share/applications/gwyddion.desktop
 %%DATADIR%%/gradients/Pink
 %%DATADIR%%/gradients/Plum
 %%DATADIR%%/gradients/Pm3d
+%%DATADIR%%/gradients/RGB-Blue
+%%DATADIR%%/gradients/RGB-Green
+%%DATADIR%%/gradients/RGB-Red
 %%DATADIR%%/gradients/Rainbow1
 %%DATADIR%%/gradients/Rainbow2
 %%DATADIR%%/gradients/Red
@@ -784,6 +793,7 @@ share/applications/gwyddion.desktop
 %%DATADIR%%/pixmaps/gwy_polynom-24.png
 %%DATADIR%%/pixmaps/gwy_polynom_level-24.png
 %%DATADIR%%/pixmaps/gwy_profile-24.png
+%%DATADIR%%/pixmaps/gwy_pygwy-24.png
 %%DATADIR%%/pixmaps/gwy_remove_under_mask-24.png
 %%DATADIR%%/pixmaps/gwy_rotate-24.png
 %%DATADIR%%/pixmaps/gwy_rotate_180-24.png

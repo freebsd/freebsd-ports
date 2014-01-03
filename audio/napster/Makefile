@@ -16,8 +16,10 @@ NO_STAGE=	yes
 
 MAN1=	nap.1
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in NEWS README doc/napster.txt doc/userguide.html
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}

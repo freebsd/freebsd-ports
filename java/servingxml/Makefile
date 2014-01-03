@@ -18,7 +18,6 @@ ANT_CMD?=	${LOCALBASE}/bin/ant
 ANT=	${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT_CMD}
 ANT_TARGETS=	dist
 JAVA_BUILD=	yes
-FETCH_ARGS=	-pRr
 
 NO_STAGE=	yes
 do-build:

@@ -11,8 +11,6 @@ DISTNAME=	wmSun-1.03
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp that displays the rise and set times of the Sun
 
-FETCH_ARGS=	-Fpr
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmSun
 
 USE_XORG=	xext xpm x11

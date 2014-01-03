@@ -1,0 +1,73 @@
+%%JAVASHAREDIR%%/unifi/bin/mongod
+%%JAVASHAREDIR%%/unifi/dl/firmware/BZ2/3.1.9.2442/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/U2S48/3.1.9.2442/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/U7E/3.1.9.2442/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/U7P/3.1.9.2442/firmware.bin
+%%JAVASHAREDIR%%/unifi/dl/firmware/bundles.json
+%%JAVASHAREDIR%%/unifi/lib/MRJAdapter.jar
+%%JAVASHAREDIR%%/unifi/lib/ace.jar
+%%JAVASHAREDIR%%/unifi/lib/annotations-api.jar
+%%JAVASHAREDIR%%/unifi/lib/asm.jar
+%%JAVASHAREDIR%%/unifi/lib/bootstrap.jar
+%%JAVASHAREDIR%%/unifi/lib/catalina-ant.jar
+%%JAVASHAREDIR%%/unifi/lib/catalina-ha.jar
+%%JAVASHAREDIR%%/unifi/lib/catalina-tribes.jar
+%%JAVASHAREDIR%%/unifi/lib/catalina.jar
+%%JAVASHAREDIR%%/unifi/lib/cglib.jar
+%%JAVASHAREDIR%%/unifi/lib/commons-beanutils.jar
+%%JAVASHAREDIR%%/unifi/lib/commons-codec.jar
+%%JAVASHAREDIR%%/unifi/lib/commons-daemon.jar
+%%JAVASHAREDIR%%/unifi/lib/commons-httpclient.jar
+%%JAVASHAREDIR%%/unifi/lib/commons-lang.jar
+%%JAVASHAREDIR%%/unifi/lib/commons-logging.jar
+%%JAVASHAREDIR%%/unifi/lib/commons-net.jar
+%%JAVASHAREDIR%%/unifi/lib/dom4j.jar
+%%JAVASHAREDIR%%/unifi/lib/ecj-4.2.1.jar
+%%JAVASHAREDIR%%/unifi/lib/el-api.jar
+%%JAVASHAREDIR%%/unifi/lib/jasper-el.jar
+%%JAVASHAREDIR%%/unifi/lib/jasper.jar
+%%JAVASHAREDIR%%/unifi/lib/jmdns.jar
+%%JAVASHAREDIR%%/unifi/lib/jsp-api.jar
+%%JAVASHAREDIR%%/unifi/lib/jstl.jar
+%%JAVASHAREDIR%%/unifi/lib/jstun-0.7.3.jar
+%%JAVASHAREDIR%%/unifi/lib/jul-log4j-bridge.jar
+%%JAVASHAREDIR%%/unifi/lib/log4j.jar
+%%JAVASHAREDIR%%/unifi/lib/mail.jar
+%%JAVASHAREDIR%%/unifi/lib/mongo.jar
+%%JAVASHAREDIR%%/unifi/lib/org.springframework.config.java-1.0.0.M4.jar
+%%JAVASHAREDIR%%/unifi/lib/servlet-api.jar
+%%JAVASHAREDIR%%/unifi/lib/slf4j-api.jar
+%%JAVASHAREDIR%%/unifi/lib/slf4j-log4j12.jar
+%%JAVASHAREDIR%%/unifi/lib/spring-beans-2.5.6.jar
+%%JAVASHAREDIR%%/unifi/lib/spring-context-2.5.6.jar
+%%JAVASHAREDIR%%/unifi/lib/spring-core-2.5.6.jar
+%%JAVASHAREDIR%%/unifi/lib/sshj.jar
+%%JAVASHAREDIR%%/unifi/lib/tomcat-api.jar
+%%JAVASHAREDIR%%/unifi/lib/tomcat-coyote.jar
+%%JAVASHAREDIR%%/unifi/lib/tomcat-dbcp.jar
+%%JAVASHAREDIR%%/unifi/lib/tomcat-i18n-es.jar
+%%JAVASHAREDIR%%/unifi/lib/tomcat-i18n-fr.jar
+%%JAVASHAREDIR%%/unifi/lib/tomcat-i18n-ja.jar
+%%JAVASHAREDIR%%/unifi/lib/tomcat-jdbc.jar
+%%JAVASHAREDIR%%/unifi/lib/tomcat-juli-adapters.jar
+%%JAVASHAREDIR%%/unifi/lib/tomcat-juli.jar
+%%JAVASHAREDIR%%/unifi/lib/tomcat-util.jar
+%%JAVASHAREDIR%%/unifi/readme.txt
+%%JAVASHAREDIR%%/unifi/webapps/ROOT.war
+@dirrmtry %%JAVASHAREDIR%%/unifi/webapps
+@dirrmtry %%JAVASHAREDIR%%/unifi/lib
+@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U7P/3.1.9.2442
+@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U7P
+@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U7E/3.1.9.2442
+@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U7E
+@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U2S48/3.1.9.2442
+@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/U2S48
+@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/BZ2/3.1.9.2442
+@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware/BZ2
+@dirrmtry %%JAVASHAREDIR%%/unifi/dl/firmware
+@dirrmtry %%JAVASHAREDIR%%/unifi/dl
+@dirrmtry %%JAVASHAREDIR%%/unifi/conf
+@dirrmtry %%JAVASHAREDIR%%/unifi/bin
+@dirrmtry %%JAVASHAREDIR%%/unifi
+@exec chown -R %%USERS%%:%%GROUPS%% %D/%%JAVASHAREDIR%%/unifi
+@exec ln -sf %D/bin/mongod %D/%%JAVASHAREDIR%%/unifi/bin/mongod

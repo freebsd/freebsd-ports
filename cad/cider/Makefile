@@ -21,6 +21,9 @@ MLINKS=		spice.1 spice3.1
 USE_XORG=	xt xaw xmu
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 pre-patch:
 	@${CP} -f ${WRKSRC}/spice/common/lib/helpdir/spice.txt ${WRKSRC}/cider/common/lib/helpdir/spice.txt
 
@@ -41,7 +44,7 @@ do-install:
 	@(cd ${WRKSRC}/cider/common && ${SETENV} ${MAKE_ENV} ${MAKE} install)
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${PREFIX}/share/examples/spice3
 	@${INSTALL_DATA} ${WRKSRC}/spice/common/examples/*.cir ${PREFIX}/share/examples/spice3
 	@${MKDIR} ${PREFIX}/share/examples/cider

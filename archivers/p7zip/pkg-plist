@@ -1,3 +1,14 @@
+bin/7z
+bin/7za
+bin/7zr
+libexec/p7zip/7z
+libexec/p7zip/7z.so
+libexec/p7zip/7zCon.sfx
+libexec/p7zip/7za
+libexec/p7zip/7zr
+man/man1/7z.1.gz
+man/man1/7za.1.gz
+man/man1/7zr.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/7zC.txt
 %%PORTDOCS%%%%DOCSDIR%%/7zFormat.txt
 %%PORTDOCS%%%%DOCSDIR%%/License.txt
@@ -51,3 +62,4 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/MANUAL/switches
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/MANUAL
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry libexec/p7zip

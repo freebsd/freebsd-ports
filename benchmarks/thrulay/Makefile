@@ -23,6 +23,9 @@ MAKE_JOBS_UNSAFE=	yes
 PORTDOCS=	ChangeLog README thrulay-protocol.txt thrulay-index.html
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	${REINPLACE_CMD} -e '922s,datarootdir,prefix,g' ${WRKSRC}/configure
 
@@ -30,7 +33,7 @@ post-extract:
 	@${CP} ${WRKSRC}/doc/*.[ht]* ${WRKSRC}/
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for docs in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}

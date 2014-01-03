@@ -7,6 +7,7 @@ PORTREVISION=	16
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU:C/\/gnu\//\/old-gnu\//g}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+PKGNAMESUFFIX=	21
 
 .if defined(WITH_MENUBAR_FONTSET)
 PATCH_SITES=		http://nijino.homelinux.net/emacs/
@@ -17,17 +18,18 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	GNU editing macros
 
-CONFLICTS=	emacs-19.* emacs-22.* emacs-23.* emacs-24.* \
+CONFLICTS=	emacs-19.* emacs22-* emacs23-* emacs24-* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
-		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
+		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]* \
+		emacs-devel-* emacs-nox11-*
 
 SSP_UNSAFE=	yes
 
 .if !defined(WITHOUT_X11)
 LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		gif.5:${PORTSDIR}/graphics/giflib \
+		jpeg:${PORTSDIR}/graphics/jpeg \
+		tiff:${PORTSDIR}/graphics/tiff \
+		gif:${PORTSDIR}/graphics/giflib \
 		png15:${PORTSDIR}/graphics/png
 USE_XORG=	xpm
 .endif
@@ -53,8 +55,6 @@ INFO=		ada-mode autotype ccmode cl dired-x ebrowse ediff \
 		efaq emacs emacs-mime eshell eudc forms gnus idlwave \
 		info message mh-e pcl-cvs reftex sc speedbar vip \
 		viper widget woman
-
-LATEST_LINK=	emacs21
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

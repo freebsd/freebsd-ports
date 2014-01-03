@@ -2,19 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	minicom
-PORTVERSION=	2.6.2
-PORTREVISION=	1
+PORTVERSION=	2.7
 CATEGORIES=	comms
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/3869/ \
-		http://alioth.debian.org/frs/download.php/file/3869/ \
+MASTER_SITES=	https://alioth.debian.org/frs/download.php/file/3977/ \
+		http://alioth.debian.org/frs/download.php/file/3977/ \
 		http://fossies.org/linux/misc/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	An MS-DOS Telix serial communication program "workalike"
 
-OPTIONS_DEFINE=	DOCS NLS LRZSZ
-OPTIONS_DEFAULT=LRZSZ
+RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
+
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 LRZSZ_DESC=	Install X/Y/ZMODEM protocol handlers
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 USES=		iconv
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -25,20 +28,6 @@ CONFIGURE_ARGS+=	--enable-dfl-baud=57600 \
 			--enable-lock-dir=/var/spool/lock \
 			--enable-dfl-port=/dev/cuau0
 MAKE_ARGS+=	LIBS+="${ICONV_LIB} -lcurses"
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLRZSZ}
-RUN_DEPENDS+=	lrz:${PORTSDIR}/comms/lrzsz
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
 
 .include <bsd.port.pre.mk>
 

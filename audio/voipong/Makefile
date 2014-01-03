@@ -14,11 +14,12 @@ PORTDOCS=	ALGORITHMS AUTHORS ChangeLog COPYING INSTALL KNOWN_BUGS \
 		LICENSE  NEWS README THANKS TODO
 NO_STAGE=	yes
 
+.include <bsd.port.options.mk>
 post-patch:
 	${MV} ${WRKSRC}/Makefile.bsd ${WRKSRC}/Makefile
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/users-manual
 	${INSTALL_DATA} ${WRKSRC}/docs/users-manual/*.html ${DOCSDIR}/users-manual/

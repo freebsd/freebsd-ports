@@ -13,7 +13,6 @@ COMMENT=	Automatic SQL injection tool
 
 LICENSE=	GPLv2
 
-FETCH_ARGS=	-pRr
 USE_PYTHON=	-2.7
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	${PORTNAME}.sh

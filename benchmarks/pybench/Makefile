@@ -17,6 +17,9 @@ USE_PYTHON=	yes
 PORTDOCS=	README
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
@@ -27,7 +30,7 @@ do-install:
 		| (cd ${DATADIR} && ${TAR} --unlink -x -f -)
 	@${PRINTF} '#!/bin/sh\n${PYTHON_CMD} ${DATADIR}/pybench.py "$$@"\n' \
 		> ${WRKDIR}/pybench.sh
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for docs in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}

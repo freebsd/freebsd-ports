@@ -20,6 +20,8 @@ MAN6=		${PORTNAME}.6
 PLIST_FILES=	bin/deusf bin/deutex
 PORTDOCS=	*
 
+.include <bsd.port.options.mk>
+
 post-extract:
 	@${REINPLACE_CMD} -e 's,-mkdir,mkdir -p,' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,malloc\.h,stdlib.h,' ${WRKSRC}/src/tools.c
@@ -29,7 +31,7 @@ post-extract:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/deusf ${WRKSRC}/deutex ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN6} ${MANPREFIX}/man/man6
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGES ${WRKSRC}/TODO ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/dtexman6.txt ${DOCSDIR}/MANUAL

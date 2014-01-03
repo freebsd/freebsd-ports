@@ -3,6 +3,7 @@
 
 PORTNAME=	libsigrok
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://sigrok.org/download/source/libsigrok/
 
@@ -17,6 +18,7 @@ GNU_CONFIGURE=	yes
 USES=	gmake pkgconfig pathfix
 USE_GNOME=	gtk20
 MAKE_JOBS_UNSAFE=	yes
+LDFLAGS+=	-L/usr/lib -lusb
 USE_LDCONFIG=	yes
 
 # Workaround for libusb not knowing LIBUSB_CLASS_APPLICATION

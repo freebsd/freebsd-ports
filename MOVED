@@ -5466,6 +5466,7 @@ math/freemat-mpi||2013-12-23|Obsolete since FreeMat 3.0
 devel/py-pmock||2013-12-27|Does not work with python 2.6 and beyond
 devel/ncurses-devel|devel/ncurses|2013-12-28|regular ncurses ports is more recent
 databases/mird||2013-12-28|Has expired: No longer maintained upstream
+net-mgmt/unifi|net-mgmt/unifi3|2014-01-01|Rename to unifi3; unifi2 is coming to ports tree as well
 security/dazuko||2013-12-31|Has expired: Currently, the project has not an active development and maintainer
 mail/p5-Mail-SPF-Query||2013-12-31|Has expired: Use mail/p5-Mail-SPF instead
 x11-fonts/etlfonts||2013-12-31|Has expired: master site gone
@@ -5478,3 +5479,5 @@ devel/p5-Dialog|devel/p5-UI-Dialog|2014-01-01|Has expired
 textproc/referrercop||2014-01-01|Has expired: distfile unfetchable
 www/notftp||2014-01-01|Has expired: distfile unfetchable
 www/mod_lisp2||2014-01-01|Has expired: distfile unfetchable
+irc/xchat-gnome||2014-01-02|Has expired: broken and no release since 2009
+net-mgmt/unifi|net-mgmt/unifi3|2014-01-02|Rename to unifi3; unifi2 is coming to ports tree as well

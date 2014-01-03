@@ -29,10 +29,6 @@ PLIST_FILES=	bin/gist \
 
 .include <bsd.port.pre.mk>
 
-.if ${RUBY_VER} < 1.9
-RUN_DEPENDS+=	${DEPEND_RUBY_ICONV}
-.endif
-
 .if ${PORT_OPTIONS:MNSSCA}
 RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 EXTRA_PATCHES=	${PATCHDIR}/extrapatch-nssca-gist

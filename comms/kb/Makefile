@@ -27,6 +27,9 @@ DESKTOP_ENTRIES="KB" \
 		true
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 pre-configure:
 	@${CP}	${FILESDIR}/Makefile ${WRKSRC}
 .if !exists(/usr/include/dev/speaker/speaker.h)
@@ -47,7 +50,7 @@ do-install:
 	${MKDIR} ${PREFIX}/share/pixmaps/kb/icons
 	${INSTALL_DATA} ${FILESDIR}/kb-icon.png \
 		${PREFIX}/share/pixmaps/kb/icons/kb-icon.png
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA}	${FILESDIR}/README_TIPS ${DOCSDIR}
 	${INSTALL_DATA}	${WRKSRC}/kb_bsd/README_BSD ${DOCSDIR}

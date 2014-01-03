@@ -32,6 +32,8 @@ MANCOMPRESSED=	yes
 INSTALLS_EGGINFO=	yes
 PYDISTUTILS_PKGNAME=	eyeD3
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	${REINPLACE_CMD} -e 's,PYTHON="",,g' -e 's,/usr/local,${LOCALBASE},g' \
 		-e 's,2\\\.\[23456789\]\\\.,2.[23456789],g' \
@@ -40,7 +42,7 @@ post-patch:
 		-e 's,\(setup.py install\),$${SETUP_COMMAND} install $${SETUP_ARGS_INSTALL} ,g' \
 		-e 's,^docdir:=.*,docdir:=${DOCSDIR},g' \
 		${WRKSRC}/Makefile.in
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e 's,.*docdir.*,#,g' \
 		${WRKSRC}/Makefile.in
 .endif

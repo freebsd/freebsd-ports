@@ -59,6 +59,9 @@ PLIST_FILES+=	%%SITE_PERL%%/${f:H:T}/${f:T}
 PORTDOCS=	ChangeLog Manual.pdf Columbus_manual.pdf
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 post-patch:
 .for f in ${SCRIPTS}
 	${REINPLACE_CMD} -e s,#!/usr/bin/perl,${PERL}, ${WRKSRC}/${f}
@@ -80,7 +83,7 @@ do-install:
 .for f in ${PERLMOD_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${SITE_PERL_REL}/${f:H:T}/${f:T}
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_MAN} ${WRKSRC}/${f} ${DOCSDIR}

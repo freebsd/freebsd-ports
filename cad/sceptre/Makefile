@@ -22,9 +22,7 @@ NO_STAGE=	yes
 
 FFLAGS+=	-fno-automatic
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	doc_en.pdf doc_ger.pdf install.pdf
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E \
@@ -50,7 +48,7 @@ post-patch:
 				${WRKSRC}/bin/sceptre
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/install.pdf ${DOCSDIR}
 	cd ${WRKSRC}/doc ; ${INSTALL_DATA} ${PORTDOCS:Mdoc_*} ${DOCSDIR}

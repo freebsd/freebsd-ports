@@ -11,7 +11,6 @@ DISTNAME=	Mysterie-${PORTNAME}-${HASH}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Decompiler for Python's .pyc and .pyo files
 
-FETCH_ARGS=	-Fpr
 HASH	=	3956a5a
 USE_PYTHON=	2.7
 USE_PYDISTUTILS=yes

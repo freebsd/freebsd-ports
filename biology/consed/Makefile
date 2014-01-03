@@ -53,12 +53,15 @@ PORTDATA+=	${f}.dist
 .endfor
 PORTDOCS=	README.txt
 
-.if defined(WITH_EXAMPLES)
+NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MEXAMPLES}
 EXAMPLES=	standard autofinish assembly_view polyphred
 PLIST=		${PKGDIR}/pkg-plist.examples
 .endif
 
-NO_STAGE=	yes
 post-build:
 	(cd ${WRKSRC}/misc/454; ${CC} ${CFLAGS} sffinfo.c -o sffinfo)
 	(cd ${WRKSRC}/misc/454; ${CC} ${CFLAGS} sff2scf.c -o sff2scf)
@@ -84,19 +87,19 @@ do-install:
 .for f in ${NULLFILES}
 	@${INSTALL_DATA} /dev/null ${DATADIR}/${f}.dist
 .endfor
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 .for dir in ${EXAMPLES}
 	@${CP} -R ${WRKSRC}/${dir} ${EXAMPLESDIR}
 .endfor
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
-.if !defined(WITH_EXAMPLES)
+.if ! ${PORT_OPTIONS:MEXAMPLES}
 	@${ECHO_CMD} "Examples were not installed. You can define WITH_EXAMPLES=yes to install them."
 .endif
 	@${ECHO_CMD} "You must set the CONSED_HOME environment variable to '${PREFIX}'"

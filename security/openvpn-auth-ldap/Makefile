@@ -3,7 +3,7 @@
 
 PORTNAME=	openvpn-auth-ldap
 PORTVERSION=	2.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	auth-ldap-${PORTVERSION}
@@ -18,31 +18,37 @@ GNU_CONFIGURE=	yes
 USE_OPENLDAP=	yes
 OPENVPN_WRKSRC=	`cd ${PORTSDIR}/security/openvpn; make -V WRKSRC`
 CONFIGURE_ARGS+=	--with-openldap=${LOCALBASE} \
-			--with-openvpn=${OPENVPN_WRKSRC}
+			--with-openvpn=${OPENVPN_WRKSRC}/include \
+			--with-objc-runtime=GNU
 
 PORTDOCS=	README
 PORTEXAMPLES=	auth-ldap.conf
 PLIST_FILES=	lib/openvpn-auth-ldap.so
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
+.include <bsd.port.options.mk>
 
 .if (${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || ${OSVERSION} < 800505
 BUILD_DEPENDS+=	${LOCALBASE}/bin/xz:${PORTSDIR}/archivers/xz
 .endif
 
 .if ${OSVERSION} >= 900000
-BROKEN=		does not configure on FreeBSD 9.X
+# Use gcc from ports because Objective C support no longer included in base
+# and the GNU Objective-C runtime is required, lang/libobjc2 + clang
+# does not work currently.
+USE_GCC=	yes
+CONFIGURE_ENV+=	OBJC="${CC}"
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/openvpn-auth-ldap.so
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/auth-ldap.conf ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/auth-ldap.conf ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

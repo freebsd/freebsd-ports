@@ -27,12 +27,10 @@ PLIST_FILES=	bin/baudline
 OPTIONS_DEFINE=		MPG123
 OPTIONS_DEFAULT=	MPG123
 
+MMPG123_RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
+
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MMPG123}
-RUN_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
-.endif
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE=		may not be automatically fetched due to licensing\
@@ -47,7 +45,7 @@ do-build:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/baudline ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL} -d ${DOCSDIR}
 	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
 .endif

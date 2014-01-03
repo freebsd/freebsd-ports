@@ -21,11 +21,13 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 
 PORTDOCS=	*
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${MKDIR} ${PREFIX}/bin ${MANPREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/id3 ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/id3.man ${MANPREFIX}/man/man1/id3.1
-.	if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 		${MKDIR} ${DOCSDIR}
 		${INSTALL_DATA} ${WRKSRC}/README  ${DOCSDIR}
 		${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}

@@ -19,9 +19,12 @@ PLIST_FILES=	bin/gdsreader bin/maptolayer \
 PLIST_DIRS=	${EXAMPLESDIR_REL}
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 post-install:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} install-data
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} install-docs
 .endif
 

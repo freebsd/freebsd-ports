@@ -1,0 +1,35 @@
+--- m3-sys/m3cc/gcc/configure.orig	2008-04-14 04:36:00.000000000 +0000
++++ m3-sys/m3cc/gcc/configure
+@@ -2147,10 +2147,6 @@ case "${target}" in
+     ;;
+   *-*-freebsd*)
+     noconfigdirs="$noconfigdirs target-newlib target-libgloss"
+-    if test "x$with_gmp" = x && test "x$with_gmp_dir" = x \
+-	&& test -f /usr/local/include/gmp.h; then
+-      with_gmp=/usr/local
+-    fi
+ 
+     # Skip some stuff that's unsupported on some FreeBSD configurations.
+     case "${target}" in
+@@ -4415,8 +4411,8 @@ if test "x$with_mpfr_lib" != x; then
+   gmplibs="-L$with_mpfr_lib $gmplibs"
+ fi
+ if test "x$with_mpfr$with_mpfr_include$with_mpfr_lib" = x && test -d ${srcdir}/mpfr; then
+-  gmplibs='-L$$r/$(HOST_SUBDIR)/mpfr/.libs -L$$r/$(HOST_SUBDIR)/mpfr/_libs '"$gmplibs"
+-  gmpinc='-I$$r/$(HOST_SUBDIR)/mpfr -I$$s/mpfr '"$gmpinc"
++  gmplibs='-L$$r/$(HOST_SUBDIR)/mpfr/.libs '"$gmplibs"
++  gmpinc='-I$$s/mpfr '"$gmpinc"
+   # Do not test the mpfr version.  Assume that it is sufficient, since
+   # it is in the source tree, and the library has not been built yet
+   # but it would be included on the link line in the version check below
+@@ -4467,8 +4463,8 @@ if test "x$with_gmp_lib" != x; then
+   gmplibs="-L$with_gmp_lib $gmplibs"
+ fi
+ if test "x$with_gmp$with_gmp_include$with_gmp_lib" = x && test -d ${srcdir}/gmp; then
+-  gmplibs='-L$$r/$(HOST_SUBDIR)/gmp/.libs -L$$r/$(HOST_SUBDIR)/gmp/_libs '"$gmplibs"
+-  gmpinc='-I$$r/$(HOST_SUBDIR)/gmp -I$$s/gmp '"$gmpinc"
++  gmplibs='-L$$r/$(HOST_SUBDIR)/gmp/.libs '"$gmplibs"
++  gmpinc='-I$$r/$(HOST_SUBDIR)/gmp '"$gmpinc"
+   # Do not test the gmp version.  Assume that it is sufficient, since
+   # it is in the source tree, and the library has not been built yet
+   # but it would be included on the link line in the version check below

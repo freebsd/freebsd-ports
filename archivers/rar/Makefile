@@ -44,7 +44,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/default.sfx ${PREFIX}/lib
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}

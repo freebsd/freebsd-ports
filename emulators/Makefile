@@ -178,6 +178,7 @@
     SUBDIR += wine-gecko
     SUBDIR += wine-gecko-devel
     SUBDIR += wine-mono
+    SUBDIR += wine-mono-devel
     SUBDIR += wxmupen64plus
     SUBDIR += x48
     SUBDIR += xbraitenberg

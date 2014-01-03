@@ -3,7 +3,7 @@
 
 PORTNAME=	bdb
 PORTVERSION=	0.6.6
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://ftp.idaemons.org/pub/distfiles/ruby/ \
 		http://idaemons.org/distfiles/ruby/ \
@@ -35,8 +35,29 @@ EXAMPLESDIR=	${RUBY_MODEXAMPLESDIR}
 PLIST_FILES=	%%RUBY_SITEARCHLIBDIR%%/bdb.so
 PORTDOCS=	*
 PORTEXAMPLES=	*
+USES=		shebangfix
+SHEBANG_FILES=	examples/record.rb \
+		examples/recno.rb \
+		examples/zeroc.rb \
+		examples/txn.rb \
+		examples/queue.rb \
+		examples/cats.rb \
+		examples/log.rb \
+		examples/cursor.rb \
+		examples/func.rb \
+		examples/replication/mgr/b.rb \
+		examples/replication/base/op.rb \
+		examples/replication/base/cl.rb \
+		examples/replication/base/b.rb \
+		examples/replication/base/ma.rb \
+		examples/replication/base/mc.rb \
+		examples/join.rb \
+		examples/basic.rb \
+		examples/lock.rb
 
-NO_STAGE=	yes
+
+NEED_ROOT=	yes
+
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -51,14 +72,15 @@ post-build:
 .endif
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${RUBY_SITEARCHLIBDIR}/bdb.so
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/doc
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR})
-	(cd ${WRKSRC}/docs/doc && ${COPYTREE_SHARE} . ${DOCSDIR}/doc)
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/doc
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/docs/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/doc)
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}/
-	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR} "! -empty")
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} "! -empty")
 .endif
 
 regression-test: build

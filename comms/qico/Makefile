@@ -25,6 +25,9 @@ PLIST_SUB+=	WITH_QICO_MORDA="@comment "
 .endif
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/qico.conf.sample ${PREFIX}/etc/
 	${INSTALL_PROGRAM} ${WRKSRC}/src/qico ${PREFIX}/libexec/
@@ -32,7 +35,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/qcc ${PREFIX}/bin/
 .endif
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${PREFIX}/share/doc/qico
 	${INSTALL_DATA} ${WRKSRC}/FAQ ${PREFIX}/share/doc/qico/FAQ.ru
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/qico/README.ru

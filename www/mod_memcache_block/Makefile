@@ -13,7 +13,6 @@ COMMENT=	Apache 2.2 module to block IPs from lists stored in memcache
 
 LIB_DEPENDS+=	libmemcached.so:${PORTSDIR}/databases/libmemcached
 
-FETCH_ARGS=	-Fpr
 GITVERSION=	7b1fcec
 WRKSRC=		${WRKDIR}/netik-${DISTNAME}
 LATEST_LINK=	mod_memcache_block

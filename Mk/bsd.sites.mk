@@ -443,20 +443,27 @@ MASTER_SITE_FRUGALWARE+= \
 
 .if !defined(IGNORE_MASTER_SITE_GCC)
 MASTER_SITE_GCC+= \
-	${MASTER_SITE_SOURCEWARE:S,%SUBDIR%,gcc/&,} \
+	http://mirrors.kernel.org/sources.redhat.com/gcc/%SUBDIR%/ \
+	http://gcc.parentingamerica.com/%SUBDIR%/ \
+	http://gcc.skazkaforyou.com/%SUBDIR%/ \
+	http://gcc.cybermirror.org/%SUBDIR%/ \
+	http://gcc-uk.internet.bs/%SUBDIR%/ \
+	http://www.netgull.com/gcc/%SUBDIR%/ \
+	http://mirrors.webhostinggeeks.com/gcc/%SUBDIR%/ \
+	http://robotlab.itk.ppke.hu/gcc/%SUBDIR%/ \
+	http://gcc.fyxm.net/%SUBDIR%/ \
+	http://gcc.igor.onlinedirect.bg/%SUBDIR%/ \
+	http://ftp.cs.pu.edu.tw/Linux/sourceware/gcc/%SUBDIR%/ \
+	ftp://ftp.funet.fi/pub/mirrors/sources.redhat.com/pub/gcc/%SUBDIR%/ \
 	ftp://gcc.gnu.org/pub/gcc/%SUBDIR%/ \
-	ftp://mirrors.laffeycomputer.com/pub/gcc.gnu.org/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.irisa.fr/pub/mirrors/gcc.gnu.org/gcc/%SUBDIR%/ \
 	ftp://ftp.uvsq.fr/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.gwdg.de/pub/misc/gcc/%SUBDIR%/ \
 	ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/gcc.gnu.org/pub/gcc/%SUBDIR%/ \
-	ftp://ftp.iij.ad.jp/pub/gnu/gnu/gcc/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/lang/gcc/%SUBDIR%/ \
 	ftp://ftp.nluug.nl/mirror/languages/gcc/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/sourceware.org/pub/gcc/%SUBDIR%/ \
-	ftp://ftp.ntua.gr/pub/gnu/gcc/%SUBDIR%/ \
-	ftp://mirror.aarnet.edu.au/pub/gnu/gcc/%SUBDIR%/
+	ftp://ftp.ntua.gr/pub/gnu/gcc/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_GENTOO)
@@ -529,14 +536,12 @@ MASTER_SITES+=	GH GHC
 .endif
 GH_PROJECT?=	${PORTNAME}
 GH_TAGNAME?=	${DISTVERSION}
-FETCH_ARGS=	-Fpr
 .endif
 .endif
 #
-# GitHub files can also be obtained, without the commit hashes, by doing:
+# GitHub files can also be obtained, without the need for any of the above, by doing:
 #
 # MASTER_SITES=	http://github.com/accountname/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
-# FETCH_ARGS=	-Fpr
 #
 
 .if !defined(IGNORE_MASTER_SITE_GNOME)
@@ -665,6 +670,7 @@ MASTER_SITE_KENAI+= \
 # Updated:	2012-10-26
 .if !defined(IGNORE_MASTER_SITE_KDE)
 MASTER_SITE_KDE+= \
+	http://download.kde.org/%SUBDIR%/ \
 	ftp://ftp.gtlib.gatech.edu/pub/kde/%SUBDIR%/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/ftp.kde.org/%SUBDIR%/ \
 	http://ftp.gtlib.gatech.edu/pub/kde/%SUBDIR%/ \
@@ -717,8 +723,7 @@ MASTER_SITE_KDE+= \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/kde/&,} \
 	ftp://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	http://download.kde.org/%SUBDIR%/
+	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_LOGILAB)
@@ -1139,15 +1144,8 @@ MASTER_SITE_SAVANNAH+= \
 	http://download-mirror.savannah.gnu.org/releases/%SUBDIR%/
 .endif
 
-# List:		http://sourceforge.net/apps/trac/sourceforge/wiki/Mirrors
-# Updated:	2013-03-25
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE)
-.for mirror in heanet sunet iweb switch freefr garr aarnet jaist master \
-	nchc ncu internode waix hivelocity superb-dca3 ufpr tenet \
-	netcologne ignum kent kaz
-MASTER_SITE_SOURCEFORGE+= \
-	http://${mirror}.dl.sourceforge.net/project/%SUBDIR%/
-.endfor
+MASTER_SITE_SOURCEFORGE+= http://downloads.sourceforge.net/project/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_SOURCEFORGE_JP)

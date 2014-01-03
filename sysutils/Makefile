@@ -825,6 +825,7 @@
     SUBDIR += rubygem-murder
     SUBDIR += rubygem-ohai
     SUBDIR += rubygem-parallel
+    SUBDIR += rubygem-rubyipmi
     SUBDIR += rubygem-sys-admin
     SUBDIR += rubygem-sys-cpu
     SUBDIR += rubygem-sys-filesystem
@@ -1068,6 +1069,7 @@
     SUBDIR += zidrav
     SUBDIR += zisofs-tools
     SUBDIR += zogftw
+    SUBDIR += zrep
     SUBDIR += zxfer
 
 .include <bsd.port.subdir.mk>

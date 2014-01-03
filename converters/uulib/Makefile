@@ -30,6 +30,9 @@ DOCFILES=	HISTORY doc/Makefile doc/README doc/binhex.fig \
 		doc/td-v3.c doc/test.txt
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${SED} -e 's,FUNKYTOKENHERE,${PREFIX}/,' \
 		< ${FILESDIR}/uulib.3 > ${WRKDIR}/uulib.3
@@ -41,7 +44,7 @@ do-install:
 	@/usr/bin/ranlib ${PREFIX}/lib/libuu.a
 	${INSTALL_DATA} ${WRKSRC}/uulib/uudeview.h ${PREFIX}/include
 	${INSTALL_MAN} ${WRKDIR}/uulib.3 ${MANPREFIX}/man/man3
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/porting.notes ${DOCSDIR}

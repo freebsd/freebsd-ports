@@ -19,7 +19,6 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		${RUBY_SITEARCHLIBDIR}/pasori.so:${PORTSDIR}/devel/libpafe-ruby
 
 USE_RUBY=	yes
-RUBY_VER=	1.9
 
 EXTRACT_CMD=		${CP}
 EXTRACT_BEFORE_ARGS=	-p

@@ -126,7 +126,7 @@ do-install:
 	  ${PREFIX}/bin/ccx
 	@${INSTALL_PROGRAM} ${WRKSRC}/${CGX_VER}/src/cgx \
 	  ${PREFIX}/bin/cgx
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/ccx
 	@${INSTALL_DATA} ${WRKSRC}/${CCX_VER}/doc/ccx/* \
@@ -139,7 +139,7 @@ do-install:
 	  ${DOCSDIR}
 	@${GZIP_CMD} ${DOCSDIR}/*.ps
 .endif
-.ifdef WITH_EXAMPLES
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@${TAR} cf - -C ${WRKSRC}/${CGX_VER}/examples . | ${TAR} xf - -C ${EXAMPLESDIR}
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}

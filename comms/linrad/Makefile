@@ -53,7 +53,7 @@ do-install:
 # Some day we may want the svga version as well.
 #	${INSTALL_PROGRAM} -m04555 ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}.svga
 	${INSTALL_PROGRAM} -m04555 ${WRKSRC}/x${PORTNAME} ${PREFIX}/bin/x${PORTNAME}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${LINRAD_DOCFILES}
 	@${INSTALL_DATA}  ${WRKSRC}/$f ${DOCSDIR}/$f

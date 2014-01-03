@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.7.8
+DISTVERSION=	1.7.9
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -43,7 +43,7 @@ USE_BZIP2=	yes
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS_DEFINE=	CUPS DOSBOX GNUTLS HAL LDAP LIBXSLT OPENAL WINEMAKER GECKO MONO X11
+OPTIONS_DEFINE=	CUPS DOCS DOSBOX GNUTLS HAL LDAP LIBXSLT OPENAL WINEMAKER GECKO MONO X11
 OPTIONS_DEFAULT=X11
 OPTIONS_SUB=	yes
 
@@ -54,88 +54,46 @@ GECKO_DESC=	Bundle Gecko MSI package for Wine
 MONO_DESC=	Bundle Mono MSI package for Wine
 
 # USES needs to be before bsd.port.pre.mk
-OPENAL_USES=	openal
+CUPS_CONFIGURE_WITH=	cups
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+
+DOSBOX_RUN_DEPENDS=	dosbox:${PORTSDIR}/emulators/dosbox
+
+GECKO_RUN_DEPENDS=	${DATADIR}/gecko/wine_gecko-2.24-x86.msi:${PORTSDIR}/emulators/wine-gecko-devel
+
+GNUTLS_CONFIGURE_WITH=	gnutls
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+
+HAL_CONFIGURE_WITH=	hal
+HAL_LIB_DEPENDS=	libhal.so:${PORTSDIR}/sysutils/hal
+
+LDAP_CONFIGURE_WITH=	ldap
+LDAP_USE=		OPENLDAP=yes
+
+LIBXSLT_CONFIGURE_WITH=	xslt
+LIBXSLT_LIB_DEPENDS=	libxslt.so:${PORTSDIR}/textproc/libxslt
+
+MONO_RUN_DEPENDS=	${DATADIR}/mono/wine-mono-4.5.2.msi:${PORTSDIR}/emulators/wine-mono-devel
+
+OPENAL_CONFIGURE_WITH=	openal
+OPENAL_USES=		openal
+
+WINEMAKER_RUN_DEPENDS=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
+
+X11_CONFIGURE_WITH=	x fontconfig glu opengl xinput2 xrandr freetype
+X11_USE=		GL=glu XORG=xcursor,xi,xpm,xrandr,xrender
+X11_LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+			libfreetype.so:${PORTSDIR}/print/freetype2 \
+			libjpeg.so:${PORTSDIR}/graphics/jpeg \
+			liblcms2.so:${PORTSDIR}/graphics/lcms2 \
+			libpng15.so:${PORTSDIR}/graphics/png
 
 PORTDATA=	l_intl.nls wine.inf
 
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MCUPS}
-CONFIGURE_ARGS+=	--with-cups
-LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
-.else
-CONFIGURE_ARGS+=	--without-cups
-.endif
-
-.if ${PORT_OPTIONS:MDOSBOX}
-RUN_DEPENDS+=	dosbox:${PORTSDIR}/emulators/dosbox
-.endif
-
-.if ${PORT_OPTIONS:MGNUTLS}
-CONFIGURE_ARGS+=	--with-gnutls
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
-.else
-CONFIGURE_ARGS+=	--without-gnutls
-.endif
-
-.if ${PORT_OPTIONS:MHAL}
-CONFIGURE_ARGS+=	--with-hal
-LIB_DEPENDS+=	libhal.so:${PORTSDIR}/sysutils/hal
-.else
-CONFIGURE_ARGS+=	--without-hal
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-CONFIGURE_ARGS+=	--with-ldap
-USE_OPENLDAP=	yes
-.else
-CONFIGURE_ARGS+=	--without-ldap
-.endif
-
-.if ${PORT_OPTIONS:MLIBXSLT}
-CONFIGURE_ARGS+=	--with-xslt
-LIB_DEPENDS+=	libxslt.so:${PORTSDIR}/textproc/libxslt
-.else
-CONFIGURE_ARGS+=	--without-xslt
-.endif
-
-.if ${PORT_OPTIONS:MOPENAL}
-CONFIGURE_ARGS+=	--with-openal
-.else
-CONFIGURE_ARGS+=	--without-openal
-.endif
-
-.if ${PORT_OPTIONS:MWINEMAKER}
-RUN_DEPENDS+=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
-.endif
-
-.if ${PORT_OPTIONS:MGECKO}
-RUN_DEPENDS+=	${DATADIR}/gecko/wine_gecko-2.24-x86.msi:${PORTSDIR}/emulators/wine-gecko-devel
-.endif
-
-.if ${PORT_OPTIONS:MMONO}
-RUN_DEPENDS+=	${DATADIR}/mono/wine-mono-0.0.8.msi:${PORTSDIR}/emulators/wine-mono
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
-USE_GL=		glu
-USE_XORG=	xcursor xi xpm xrandr xrender
-LIB_DEPENDS+=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
-		libfreetype.so:${PORTSDIR}/print/freetype2 \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
-		libpng15.so:${PORTSDIR}/graphics/png
-CONFIGURE_ARGS+=--with-fontconfig --with-glu --with-opengl \
-		--with-xinput2 --with-xrandr --with-freetype
 PORTDATA+=	fonts/
-.else
-CONFIGURE_ARGS+=--without-x --without-fontconfig --without-glu \
-		--without-opengl --without-xinput2 --without-xrandr \
-		--without-freetype
-.endif
-
-.if ${OSVERSION} < 800000
-IGNORE=		lacks required sound support on FreeBSD before 8.0
 .endif
 
 pre-build:
@@ -145,7 +103,7 @@ post-install:
 	@${MV} -f ${STAGEDIR}${WINELIBDIR}/libwine.so.1.0 \
 	          ${STAGEDIR}${WINELIBDIR}/libwine.so.1
 	@${LN} -sf libwine.so.1 ${STAGEDIR}/${WINELIBDIR}/libwine.so
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	-@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README ANNOUNCE AUTHORS
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
@@ -156,4 +114,4 @@ post-install:
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

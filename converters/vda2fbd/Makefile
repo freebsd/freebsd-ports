@@ -16,15 +16,12 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" YACC="${YACC}"
 PORTDOCS=	model.ps.gz
 PLIST_FILES=	bin/vda2fbd
 
-NO_STAGE=	yes
 post-build:
 	cd ${WRKSRC}/../doc && ${GZIP_CMD} -c model.ps > model.ps.gz
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/vda2fbd ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../doc/model.ps.gz ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/vda2fbd ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../doc/model.ps.gz ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -12,7 +12,6 @@ COMMENT=	A fast and flexible build system using Lua
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-FETCH_ARGS=	"-Fpr"
 USE_BZIP2=	yes
 
 PLIST_FILES=	bin/bam

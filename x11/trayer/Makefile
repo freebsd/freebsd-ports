@@ -11,7 +11,6 @@ MAINTAINER=	madpilot@FreeBSD.org
 COMMENT=	Lightweight GTK2-based systray for UNIX desktop
 
 GITVERSION=	0-g5353f80
-FETCH_ARGS=	-pRr
 USE_GNOME=	gtk20 glib20 pango atk
 USES=		iconv gmake pkgconfig
 USE_XORG=	xmu

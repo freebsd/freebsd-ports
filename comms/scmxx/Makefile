@@ -24,6 +24,9 @@ DOCS=		README docs/*.txt
 EXAMPLES=	sms.txt vCalendar.vcs vCard.vcf
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${FIND} ${WRKSRC} -name 'Makefile*' | ${XARGS} \
 		${REINPLACE_CMD} -e "s|CFLAGS=|CFLAGS+=|g"
@@ -31,7 +34,7 @@ post-patch:
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif

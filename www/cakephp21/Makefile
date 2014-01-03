@@ -14,7 +14,6 @@ COMMENT=	Framework for developing PHP web applications
 LICENSE=	MIT
 
 GITVERSION=	0-gc26df70
-FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-4b81775
 
 PORTDOCS=	README

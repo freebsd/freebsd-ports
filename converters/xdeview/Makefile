@@ -39,14 +39,12 @@ NO_STAGE=	yes
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/uuwish
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "===>  Installing documents to ${DOCSDIR}"
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
 	@${INSTALL_DATA} ${FILESDIR}/${file} ${DOCSDIR}
 .endfor
-.else
-	@${ECHO_MSG} "===>  Not installing available documents"
 .endif
 	${INSTALL_MAN} ${WRKSRC}/man/xdeview.1 ${MANPREFIX}/man/man1
 

@@ -15,7 +15,6 @@ LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
 
-FETCH_ARGS?=	-pRr
 PLIST_FILES=	sbin/mydumper sbin/myloader
 USE_GNOME=	glib20
 USE_MYSQL=	yes

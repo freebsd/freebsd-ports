@@ -5,13 +5,25 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20121230:
+20140102:
+  AFFECTS: users of archivers/p7zip
+  AUTHOR: rakuco@FreeBSD.org
+
+  The MINIMAL and MODULES options have been removed from archivers/p7zip,
+  which now unconditionally installs the 7z, 7za and 7zr, as if the MINIMAL
+  option was previously unset.
+
+  The RAR decompression codec, whose source code has a more restrictive
+  license that forbids its use for creating RAR archives, has been moved to
+  a separate port, archivers/p7zip-codec-rar.
+
+20131230:
   AFFECTS: ports using Apache Software License 2.0
   AUTHOR: ohauer@FreeBSD.org
 
   The acronym for Apache Software License 2.0 was renamed to APACHE20
 
-20121226:
+20131226:
   AFFECTS: users of security/cyrus-sasl2
   AUTHOR: ume@FreeBSD.org
 
@@ -22,7 +34,7 @@ you update your ports collection, before attempting any port upgrades.
   If you are using the SASL GSSAPI authentication, please install
   security/cyrus-sasl2-gssapi port, in addition to upgrading
   security/cyrus-sasl2 port.
- 
+
 20131218:
   AFFECTS: users of news/cnews
   AUTHOR: dinoex@FreeBSD.org
@@ -38,20 +50,23 @@ you update your ports collection, before attempting any port upgrades.
   databases/db5 and databases/db6 have recently been updated to fix
   bugs. This changed their patchlevel version.
 
-  However, ruby-bdb breaks during the upgrade due to a bug described in
-  <http://www.freebsd.org/cgi/query-pr.cgi?pr=184921>.
+  However, ruby-bdb used to break during the db[56] upgrade due to a bug
+  described in <http://www.freebsd.org/cgi/query-pr.cgi?pr=184921>.
 
-  THIS MEANS THAT YOU MUST NOT USE PORTUPGRADE TO UPGRADE databases/db5
-  databases/db6 and databases/ruby-bdb. Doing that will break the latter and
-  cause corrupted dependency data.  Use portmaster for the upgrade.
+  THEREFORE, YOU MUST MANUALLY UPGRADE databases/ruby-bdb INDIVIDUALLY
+  TO 0.6.6_2 OR NEWER WHEN USING portupgrade AGAINST databases/db[56]
+  PORTS. To achieve that, type:
 
-  If you are in a situation where portupgrade refuses to work with
-  errors like:
+  # portupgrade databases/ruby-bdb
+  or
+  # portmaster -x 'db*' databases/ruby-bdb
 
-  DB needs compatible versions of libdb & db.h
-    you have db.h version 5.3.21 and libdb version 5.3.28
+  before proceeding with other upgrades.
 
-  then you must manually upgrade the ruby-bdb port and repair dependency data:
+  Should you have corrupted the portupgrade databases, or if ruby-bdb
+  refuses to work with the upgraded db* port with errors such as "DB
+  needs compatible versions of libdb & db.h", then rebuild the ruby-bdb
+  port manually, and fix the portupgrade databases:
 
   # make -C /usr/ports/databases/ruby-bdb all deinstall install clean
   # pkgdb -fu
@@ -102,7 +117,7 @@ you update your ports collection, before attempting any port upgrades.
   Note that Oracle Berkeley DB 6 is under the more restrictive Affero GPL v3
   license, be sure to review if using that fits your requirements.
 
-  You can add WITH_BDB_VER=5 or WITH_BDB_VER=6 to have all
+  You can add WITH_BDB_VER=5 or WITH_BDB_VER=6 to /etc/make.conf to have all
   applications that get rebuilt use Oracle Berkeley DB 5 or 6, respectively.
 
   DO NOT FORCE DELETE older BerkeleyDB packages, that breaks the upgrade

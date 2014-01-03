@@ -24,8 +24,6 @@ LIB_DEPENDS=	GLU.1:${PORTSDIR}/graphics/libGLU \
 		gmp.10:${PORTSDIR}/math/gmp \
 		mpfr.4:${PORTSDIR}/math/mpfr
 
-FETCH_ARGS=	-pRr
-
 USE_BZIP2=		yes
 USE_LDCONFIG=		yes
 USES=			cmake

@@ -15,7 +15,6 @@ COMMENT=	RD to HTML/man/etc. converter (RD is to Ruby as POD is to Perl)
 BUILD_DEPENDS=	racc:${PORTSDIR}/devel/rubygem-racc
 
 GITVERSION=	c895345
-FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/uwabami-${PORTNAME}-${GITVERSION}
 
 USE_RUBY=	yes

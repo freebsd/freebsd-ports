@@ -23,7 +23,9 @@ PORTDOCS=	README
 run-autotools:: run-autotools-aclocal run-autotools-autoheader \
 		run-autotools-autoconf run-autotools-automake
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 pre-install:
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README

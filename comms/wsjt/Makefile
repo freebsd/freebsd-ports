@@ -62,7 +62,7 @@ do-fetch:
 .endif
 
 post-install:
-.if	!defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for d in ${WRKSRC}/WSJT_Quick_Reference.pdf  ${WRKSRC}/WSJT_Source_Code.txt \
 	${WRKSRC}/WSJT_User_600.pdf ${WRKSRC}/UpdateHistory.txt \

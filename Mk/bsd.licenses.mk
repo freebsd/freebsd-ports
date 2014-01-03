@@ -760,6 +760,8 @@ install-license:
 .	endfor
 .endif
 # XXX @dirrmtry entry must be here (no way to do with PLIST_* vars)
+	@${ECHO_CMD} "@owner root" >> ${TMPPLIST}
+	@${ECHO_CMD} "@group wheel" >> ${TMPPLIST}
 	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm ${_LICENSE_DIR_REL}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/share/licenses 2>/dev/null || true" >> ${TMPPLIST}

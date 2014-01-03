@@ -5,8 +5,8 @@ PORTNAME=	boinc-setiathome-v7
 PORTVERSION=	7.00
 PORTREVISION=	2
 CATEGORIES=	astro
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-#MASTER_SITES+=	ftp://rene-ladan.nl/pub/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		ftp://rene-ladan.nl/pub/distfiles/
 DISTNAME=	setiathome-svn-1924 # modified archive, see leftout in top directory
 MASTER_SITE_SUBDIR=rene
 

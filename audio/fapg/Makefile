@@ -16,6 +16,8 @@ NO_STAGE=	yes
 
 MAN1=		fapg.1
 
+.include <bsd.port.options.mk>
+
 do-build:
 	@cd ${WRKSRC} && ${MAKE} ${PORTNAME}
 
@@ -24,7 +26,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/fapg.1 ${MAN1PREFIX}/man/man1
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in COPYING README
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}

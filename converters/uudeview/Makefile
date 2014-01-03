@@ -37,13 +37,11 @@ CONFIGURE_ARGS+=	--enable-inews=${PREFIX}/news/lib/inews
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/uudeview
 	@${STRIP_CMD} ${PREFIX}/bin/uuenview
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "===>  Installing documents to ${DOCSDIR}"
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/HISTORY ${DOCSDIR}
 	@${INSTALL_DATA} ${FILESDIR}/porting.notes ${DOCSDIR}
-.else
-	@${ECHO_MSG} "===>  Not installing available documents"
 .endif
 
 .include <bsd.port.post.mk>

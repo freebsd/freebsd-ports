@@ -52,7 +52,7 @@ do-install:
 .for f in ${PORTDATA}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}

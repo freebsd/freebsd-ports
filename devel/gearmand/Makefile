@@ -29,7 +29,6 @@ GID_FILES=	../../GIDs
 USERS=		gearmand
 GROUPS=		gearmand
 
-FETCH_ARGS=	-pRr
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USES=		pathfix gmake perl5

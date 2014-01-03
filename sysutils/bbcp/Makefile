@@ -14,7 +14,6 @@ COMMENT=	Secure and fast copy utility
 LICENSE=	BSD
 
 BUILD_WRKSRC=	${WRKSRC}/src
-FETCH_ARGS=	-Fpr
 PLIST_FILES=	bin/bbcp
 PORTDOCS=	${PORTNAME}.pdf
 USE_XZ=		yes

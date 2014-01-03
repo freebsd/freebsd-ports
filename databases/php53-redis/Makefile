@@ -14,7 +14,6 @@ COMMENT=	PHP5-Extension for Redis
 LICENSE=	PHP301
 
 GITVERSION=	g882c7dc
-FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/nicolasff-phpredis-250e81b
 
 USE_PHP=	session

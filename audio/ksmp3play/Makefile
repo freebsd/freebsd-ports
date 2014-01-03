@@ -23,8 +23,10 @@ MAN1=		ksmp3play.1
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${TAR} -C ${WRKSRC}/doc --exclude "CVS" -cf - . | \
 		${TAR} -C ${DOCSDIR} --unlink -xf -

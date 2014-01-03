@@ -18,8 +18,10 @@ PORTDOCS=	manual.html
 PLIST_FILES=	bin/setlistener bin/listener bin/listenersoundpipe \
 		etc/listener.conf.sample
 
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif

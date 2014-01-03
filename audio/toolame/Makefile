@@ -23,10 +23,10 @@ USE_CSTD=	gnu89
 PLIST_FILES=	bin/toolame
 PORTDOCS=	FUTURE HISTORY LGPL.txt README
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 do-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for docs in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
@@ -34,4 +34,4 @@ do-install:
 .endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/toolame ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

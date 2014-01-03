@@ -18,7 +18,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk12
 CFLAGS+=	`xmms-config --cflags` -L${LOCALBASE}/lib
 
-CFLAGS_amd64=	fPIC
+CFLAGS_amd64=	-fPIC
 
 PLIST_FILES=	lib/xmms/Input/liba52dec.so
 

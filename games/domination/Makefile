@@ -16,7 +16,6 @@ COMMENT=	Board game that is a bit like the well known game Risk
 
 LICENSE=	GPLv3
 
-FETCH_ARGS?=	-Fpr
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+

@@ -16,7 +16,6 @@ COMMENT=	OpenArena game data files
 
 WRKSRC=		${WRKDIR}/baseoa
 NO_BUILD=	yes
-FETCH_ARGS=
 
 OA_DATA=	${PKGNAMEPREFIX}${OA_DATA_VER}.zip
 OA_DATA_VER=	0.8.8

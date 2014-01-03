@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sysv_ipc
-PORTVERSION=	0.6.5
+PORTVERSION=	0.6.6
 CATEGORIES=	devel python
 MASTER_SITES=	http://semanchuk.com/philip/sysv_ipc/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

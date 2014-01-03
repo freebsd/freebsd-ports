@@ -23,6 +23,8 @@ NO_BUILD=	yes
 USE_ASDF=	yes
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
 do-install:
 	@${MKDIR} ${ASDF_PATHNAME}
 	@${MKDIR} ${ASDF_PATHNAME}/src
@@ -30,13 +32,13 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/babel.asd ${ASDF_PATHNAME}
 	@${INSTALL_DATA} ${WRKSRC}/babel-streams.asd ${ASDF_PATHNAME}
 	@${LN} -sf ${ASDF_PATHNAME}/*.asd ${ASDF_REGISTRY}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for FILE in COPYRIGHT HEADER NOTES README
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/tests/* ${EXAMPLESDIR}
 .endif

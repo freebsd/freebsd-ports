@@ -10,6 +10,9 @@ MASTER_SITES=	SF/freetype/freetype-demos/${PORTVERSION} \
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Demo programs for FreeType2
 
+LICENSE=	BSD3CLAUSE GPLv2
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS+=	${FREETYPE_WRKSRC}/config.mk:${PORTSDIR}/print/freetype2:build
 LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
@@ -27,7 +30,7 @@ FT_PROGRAMS=	ftbench ftchkwd ftdiff ftdump ftgamma ftgrid ftlint ftmemchk \
 
 .include <bsd.port.pre.mk>
 
-FREETYPE_WRKSRC!=	cd ${PORTSDIR}/print/freetype2; ${MAKE} -V WRKSRC
+FREETYPE_WRKSRC!=	cd ${.CURDIR}/../../print/freetype2; ${MAKE} -V WRKSRC
 
 do-install:
 	@(cd ${WRKSRC}/bin/.libs/; ${INSTALL_PROGRAM} ${FT_PROGRAMS} ${STAGEDIR}${PREFIX}/bin)

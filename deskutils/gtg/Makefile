@@ -15,7 +15,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.4:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}liblarch>=2.1:${PORTSDIR}/devel/py-liblarch \
 		xset:${PORTSDIR}/x11/xset
 
-FETCH_ARGS=	-pRr
 USE_GNOME=	pygobject pygtk2
 USES=		gettext desktop-file-utils shebangfix
 INSTALLS_ICONS=	yes

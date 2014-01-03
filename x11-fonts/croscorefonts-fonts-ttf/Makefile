@@ -18,8 +18,6 @@ COMMENT=	Fonts created from by Google for ChromeOS to replace MS TTF
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
-FETCH_ARGS=	-Fpr
-
 USE_XORG=	x11
 
 PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"

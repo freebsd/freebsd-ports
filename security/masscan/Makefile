@@ -11,7 +11,6 @@ COMMENT=	Very fast port scanner
 
 LICENSE=	GPLv3
 
-FETCH_ARGS=	-Fpr
 USES=		gmake
 CFLAGS+=	-I. -Wno-format
 MAKE_ARGS=	SYS=freebsd CC=${CC} CFLAGS="${CFLAGS}" LIBS="-lpcap -lm ${PTHREAD_LIBS}"

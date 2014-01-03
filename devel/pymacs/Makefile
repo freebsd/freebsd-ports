@@ -13,7 +13,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_PYTHON_PREFIX=	yes
 USE_EMACS=	yes
-FETCH_ARGS=   -Fpr
 
 NO_STAGE=	yes
 pre-configure:

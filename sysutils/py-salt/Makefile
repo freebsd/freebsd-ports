@@ -21,7 +21,6 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
 		sshpass>=0:${PORTSDIR}/security/sshpass
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-FETCH_ARGS=	-pRr
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=yes
 

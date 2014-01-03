@@ -11,7 +11,6 @@ DISTNAME=	SugarCE-${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Web based customer relationship management suite
 
-FETCH_ARGS=	-pRr
 USE_PHP=	gd mysql session pcre xml zlib mbstring curl imap spl posix
 USE_ZIP=	yes
 NO_BUILD=	yes

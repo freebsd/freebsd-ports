@@ -23,10 +23,13 @@ DIST_SUBDIR=	${PORTNAME}
 MAN1=		ttcp.1
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 post-extract:
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/ttcp.c ${WRKSRC}/
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/ttcp.1 ${WRKSRC}/
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/README ${WRKSRC}/
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/ttcp.c ${WRKSRC}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/ttcp.1 ${WRKSRC}
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/README ${WRKSRC}
 
 do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/ttcp ${WRKSRC}/ttcp.c
@@ -34,9 +37,9 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ttcp ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/ttcp.1 ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

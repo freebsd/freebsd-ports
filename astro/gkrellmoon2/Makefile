@@ -20,10 +20,12 @@ USE_GNOME=	gtk20
 
 ALL_TARGET=	gkrellmoon.so
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/gkrellmoon.so \
 		${PREFIX}/libexec/gkrellm2/plugins
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} \
 		${PREFIX}/share/doc/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/${PORTNAME}

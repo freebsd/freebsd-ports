@@ -21,7 +21,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/google/protobuf/descriptor.h:${PORTSDIR}/dev
 LIB_DEPENDS=	protobuf:${PORTSDIR}/devel/protobuf
 
 GITVERSION=	3a0cb51
-FETCH_ARGS=	-pRr
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_MYSQL=	yes

@@ -561,8 +561,6 @@ man/man8/sympa.8.gz
 %%NLS%%@dirrmtry share/locale/ca
 %%NLS%%@dirrmtry share/locale/bg/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/bg
-@dirrm %%DATADIR%%/list_data
-@dirrmtry %%ETCDIR%%
 @dirrm %%EXAMPLESDIR%%/web_tt2
 @dirrm %%EXAMPLESDIR%%/scenari
 @dirrm %%EXAMPLESDIR%%/sample/test/web_tt2
@@ -588,17 +586,3 @@ man/man8/sympa.8.gz
 @dirrm libexec/sympa/Marc
 @dirrm libexec/sympa/HTML
 @dirrm libexec/sympa
-@dirrm %%DATADIR%%/arc
-@dirrm %%DATADIR%%/bounce
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
-@cwd /var
-@dirrm spool/sympa/tmp
-@dirrm spool/sympa/task
-@dirrm spool/sympa/outgoing
-@dirrm spool/sympa/msg
-@dirrm spool/sympa/moderation
-@dirrm spool/sympa/expire
-@dirrm spool/sympa/digest
-@dirrm spool/sympa/auth
-@dirrm spool/sympa

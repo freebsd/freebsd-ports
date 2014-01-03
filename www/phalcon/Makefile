@@ -12,7 +12,6 @@ COMMENT=	Phalcon PHP Framework written in C-language
 
 LICENSE=	BSD
 
-FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/c${PORTNAME}-${PORTVERSION}/build/
 
 CFLAGS+=	-I${LOCALBASE}/include

@@ -20,10 +20,12 @@ MAKE_JOBS_UNSAFE=	yes
 
 DOC_FILES=	README README-XWAVE2 README.v06 INSTALL
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/xwave ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/src/XWave ${PREFIX}/lib/X11/app-defaults
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${PREFIX}/share/doc/xwave
 .for i in ${DOC_FILES}
 	${INSTALL_MAN} ${WRKSRC}/${i} ${PREFIX}/share/doc/xwave

@@ -12,8 +12,6 @@ COMMENT=	Java NIO client server framework
 
 LICENSE=	APACHE20
 
-FETCH_ARGS=	-Fpr
-
 USE_JAVA=	yes
 USE_BZIP2=	yes
 JAVA_VERSION=	1.6+

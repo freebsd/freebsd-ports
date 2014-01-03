@@ -25,7 +25,6 @@ USE_PERL5=	run
 RUN_DEPENDS?=	exctags:${PORTSDIR}/devel/ctags
 USE_GCC=	any
 
-FETCH_ARGS?=	-Fpr
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME}.pl
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}

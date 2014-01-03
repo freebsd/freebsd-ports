@@ -21,7 +21,6 @@ RUN_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 		${PYTHON_SITELIBDIR}/thrift/__init__.py:${PORTSDIR}/devel/py-thrift
 
 GITVERSION=	63e4824
-FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 ACLOCAL_ARGS=	-I ./aclocal

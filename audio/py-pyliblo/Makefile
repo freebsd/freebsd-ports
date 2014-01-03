@@ -22,6 +22,8 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 
 MAN1=	dump_osc.1 send_osc.1
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#g' ${WRKSRC}/setup.py
 
@@ -29,7 +31,7 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/scripts/dump_osc.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/scripts/send_osc.1 ${PREFIX}/man/man1
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/API.html ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/examples.html ${DOCSDIR}

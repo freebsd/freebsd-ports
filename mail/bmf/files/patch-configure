@@ -1,10 +1,20 @@
---- configure.orig	Fri Apr  4 14:07:12 2003
-+++ configure	Fri Apr  4 14:08:48 2003
-@@ -134,9 +134,9 @@
+--- ./configure.orig	2002-10-19 11:44:49.000000000 +0200
++++ ./configure	2014-01-03 01:50:13.000000000 +0100
+@@ -127,16 +127,16 @@
+       CCDBG="-DNDEBUG"
+       LDDBG=""
+     fi
+-    CC=gcc
++    CC=@@CC
+     CFLAGS="$CCDBG -D_UNIX -D_BSD=$OSVER -Wall"
+-    CXX=g++
++    CXX=@@CXX
+     CXXFLAGS=${CFLAGS}
      AR=ar
      ARFLAGS="-rc"
-     LD=gcc
+-    LD=gcc
 -    LDFLAGS="$LDDBG"
++    LD=@@CC
 +    LDFLAGS="${LDFLAGS}"
      SYSLIBS=""
 -    LIBDB_LIB=""

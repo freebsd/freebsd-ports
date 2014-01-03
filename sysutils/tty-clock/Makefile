@@ -12,7 +12,6 @@ EXTRACT_SUFX=	# none
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Terminal based clock
 
-FETCH_ARGS=	-pRr
 WRKSRC=		"${WRKDIR}/xorg62-${PORTNAME}-${DISTNAME}"
 PLIST_FILES=	bin/tty-clock
 

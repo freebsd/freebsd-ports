@@ -11,7 +11,6 @@ COMMENT=	Online genealogy viewer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
-FETCH_ARGS=	-pRr
 
 USE_ZIP=	yes
 USE_PHP=	calendar dom gd pcre session xml pdo_mysql

@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	GTK2 DOCS
 
-NO_STAGE=	yes
 USES=		shebangfix perl5
 SHEBANG_FILES=	zentime
 USE_PERL5=	run
@@ -27,7 +26,6 @@ DESKTOP_ENTRIES="AutoZen" \
 		"AudioVideo;Player;GTK;" \
 		false
 
-MAN1=		autozen.1
 PORTDOCS=	*
 
 .include <bsd.port.options.mk>
@@ -54,14 +52,14 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} autozen seq2wav ${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_SCRIPT} zentime ${PREFIX}/bin)
-	(cd ${WRKSRC}/doc && ${INSTALL_MAN} autozen.1 ${MANPREFIX}/man/man1)
-	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} *.seq ${DATADIR})
+	${INSTALL_PROGRAM} ${WRKSRC}/autozen ${WRKSRC}/seq2wav ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/zentime ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/autozen.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.seq ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} HTML ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} HTML ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

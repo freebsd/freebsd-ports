@@ -17,7 +17,6 @@ LIB_DEPENDS=	libxmlrpc++.so:${PORTSDIR}/net/xmlrpc-c \
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-debug
-FETCH_ARGS=	-pRr
 
 MAN1=		flowgrind-stop.1 \
 		flowgrind.1 \

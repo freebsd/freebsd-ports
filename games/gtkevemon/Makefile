@@ -11,7 +11,6 @@ COMMENT=	A skill monitoring standalone application for EVE Online
 
 LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 
-FETCH_ARGS=	-pRr
 CHANGESET=	8fa5c0b5f16b
 WRKSRC=		${WRKDIR}/BattleClinic-${PORTNAME}-${CHANGESET}/${PORTNAME}
 

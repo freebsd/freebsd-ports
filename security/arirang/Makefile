@@ -13,7 +13,7 @@ COMMENT=	Powerful webserver security scanner for network
 
 LICENSE=	BSD
 
-USE_RUBY=	1.8+
+USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_LIBRUBY=	yes
 

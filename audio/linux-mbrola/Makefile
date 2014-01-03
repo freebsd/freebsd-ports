@@ -27,7 +27,10 @@ PLIST=		${WRKDIR}/plist
 
 PLIST_DIRS=	share/doc/mbrola
 PLIST_FILES=	bin/mbrola
-.if !defined(NOPORTDOCS)
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PLIST_FILES+=	share/doc/mbrola/readme.txt
 .endif
 
@@ -38,7 +41,7 @@ do-extract:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mbrola-linux-i386 ${PREFIX}/bin/mbrola
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
 .endif

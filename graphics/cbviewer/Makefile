@@ -1,4 +1,4 @@
-# Created by: nemysis@gmx.ch
+# Created by: nemysis <nemysis@gmx.ch>
 # $FreeBSD$
 
 PORTNAME=	cbviewer
@@ -6,7 +6,7 @@ PORTVERSION=	0.8
 PORTREVISION=	1
 CATEGORIES=	graphics java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/CBViewer%200.8/ \
-		SF/nemysisfreebsdp/:icons
+		SF/nemysisfreebsdp/graphics/:icons
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 DIST_SUBDIR=	${PORTNAME}
@@ -20,12 +20,12 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	unrar:${PORTSDIR}/archivers/unrar \
 		unzip:${PORTSDIR}/archivers/unzip
 
-FETCH_ARGS?=	-Fpr
-
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
+
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME} \
 		share/java/cbviewer/CBViewer.jar \
@@ -33,28 +33,24 @@ PLIST_FILES=	bin/${PORTNAME} \
 PLIST_DIRSTRY=	share/java/cbviewer
 
 PORTDOCS=	CREDITS
-DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+
+OPTIONS_DEFINE=	DOCS
 
 SUB_FILES=	${PORTNAME}
 
-DESKTOP_ENTRIES="CBViewer" "Comic book viewer" \
-		"${PREFIX}/share/pixmaps/${PORTNAME}.png" \
-		"${PORTNAME}" "Graphics;Viewer;Java;" true
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+DESKTOP_ENTRIES="CBViewer" "Comic book viewer" "${PORTNAME}" \
+		"${PORTNAME}" "Graphics;Viewer;Java;" ""
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.jar ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.jar ${STAGEDIR}${DATADIR}
 
 post-install:
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

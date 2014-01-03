@@ -12,8 +12,6 @@ COMMENT=	Assist you with MySQL Configuration
 
 LICENSE=	GPLv3
 
-FETCH_ARGS=	-pRr
-
 USES=		perl5
 NO_BUILD=	yes
 

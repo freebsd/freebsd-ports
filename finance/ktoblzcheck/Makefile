@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ktoblzcheck
-PORTVERSION=	1.43
+PORTVERSION=	1.44
 CATEGORIES=	finance german
 MASTER_SITES=	SF/${PORTNAME}
 

@@ -38,13 +38,9 @@ NO_STAGE=	yes
 
 CFLAGS+=	-fPIC
 
-.if ${RUBY_VER} > 1.8
 CFLAGS+=	-I${LOCALBASE}/include/ruby-${RUBY_VER} \
 		-I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}
 PLIST_SUB+=	RIPPER="@comment "
-.else
-PLIST_SUB+=	RIPPER=""
-.endif
 
 post-patch:
 	${REINPLACE_CMD} "s|\(flex --version\)|${LOCALBASE}/bin/\1|" ${WRKSRC}/autogen.sh

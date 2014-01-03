@@ -22,6 +22,9 @@ SUB_FILES=	esmska
 PORTDOCS=	readme.txt
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 do-install:
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/esmska.jar ${DATADIR}/
@@ -32,7 +35,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/esmska ${PREFIX}/bin/
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
