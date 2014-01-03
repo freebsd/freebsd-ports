@@ -795,7 +795,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # FETCH_BINARY	- Path to ftp/http fetch command if not in $PATH.
 #				  Default: "/usr/bin/fetch"
 # FETCH_ARGS	- Arguments to ftp/http fetch command.
-#				  Default: "-AFpr"
+#				  Default: "-Fpr"
 # FETCH_CMD		- ftp/http fetch command.
 #				  Default: ${FETCH_BINARY} ${FETCH_ARGS}
 # FETCH_BEFORE_ARGS
@@ -2159,7 +2159,7 @@ PTHREAD_LIBS?=		-pthread
 
 FETCH_ENV?=		SSL_NO_VERIFY_PEER=1 SSL_NO_VERIFY_HOSTNAME=1
 FETCH_BINARY?=	/usr/bin/fetch
-FETCH_ARGS?=	-AFpr
+FETCH_ARGS?=	-Fpr
 FETCH_REGET?=	1
 .if !defined(DISABLE_SIZE)
 FETCH_BEFORE_ARGS+=	$${CKSIZE:+-S $$CKSIZE}
