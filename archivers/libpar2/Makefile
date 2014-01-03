@@ -15,7 +15,6 @@ LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20
 
 GNU_CONFIGURE=	yes
 
-FETCH_ARGS=	-pRr
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 

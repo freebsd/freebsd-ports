@@ -19,7 +19,6 @@ CONFLICTS=	jenkins-[0-9]*
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
-FETCH_ARGS=	-Fpr
 NO_BUILD=	yes
 
 USE_RC_SUBR=	jenkins

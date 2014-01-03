@@ -22,8 +22,6 @@ LIB_DEPENDS=		libvorbisfile.so:${PORTSDIR}/audio/libvorbis \
 			libboost_filesystem.so:${PORTSDIR}/devel/boost-libs \
 			libpng15.so:${PORTSDIR}/graphics/png
 
-FETCH_ARGS=		-Fpr
-
 USE_SDL=		sdl ttf image
 
 USE_SCONS=		yes

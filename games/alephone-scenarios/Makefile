@@ -44,7 +44,6 @@ NO_STAGE=	yes
 DATADIR!=	cd ${PORTSDIR}/games/alephone && ${MAKE} -V DATADIR
 
 .if ${PORT_OPTIONS:MEMR}
-FETCH_ARGS=	-Fpr
 EMR_FILE=	emr-3.0-0602.tgz
 DISTFILES+=	${EMR_FILE}:emr
 PLIST_SUB+=	EMR=""

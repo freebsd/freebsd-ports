@@ -27,7 +27,6 @@ USE_RC_SUBR=	vboxguest vboxservice
 USES=		iconv kmod
 USE_GCC=	any
 ONLY_FOR_ARCHS=	i386 amd64
-FETCH_ARGS=	-pRr
 USE_BZIP2=	yes
 MAKE_JOBS_UNSAFE=	yes
 

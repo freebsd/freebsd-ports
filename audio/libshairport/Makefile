@@ -10,7 +10,6 @@ DISTNAME=	libshairport-${PORTVERSION}_lib
 MAINTAINER=	manuel.creach@icloud.com
 COMMENT=	An Airport Extreme Emulator
 
-FETCH_ARGS=	-pRr
 USES=		gmake
 NO_STAGE=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize

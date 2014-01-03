@@ -18,8 +18,6 @@ USE_PYTHON=		-2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	instant
 
-FETCH_ARGS=	-F
-
 MAN1=		instant-clean.1 \
 		instant-showcache.1
 MANCOMPRESSED=	yes

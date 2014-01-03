@@ -15,7 +15,6 @@ COMMENT=	PHP-extension part of statistics server for PHP
 LIB_DEPENDS=	protobuf:${PORTSDIR}/devel/protobuf
 
 GITVERSION=	f76b673
-FETCH_ARGS=	-pRr
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

@@ -19,7 +19,6 @@ LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
 GITREVISION=	7debd5b
 GITTAG=		0.8-support
 GITHUB_USER=	mkoppanen
-FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/${GITHUB_USER}-php-${PORTNAME}-${GITREVISION}
 
 USES=		pkgconfig

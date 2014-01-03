@@ -21,8 +21,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:${PORTSDIR}/devel/py-dbus \
 		gtk-vnc>=0.3.10:${PORTSDIR}/net/gtk-vnc \
 		librsvg2>=2.32.1:${PORTSDIR}/graphics/librsvg2
 
-FETCH_ARGS?=	-Fpr
-
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 

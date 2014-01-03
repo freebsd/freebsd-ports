@@ -34,7 +34,6 @@ RUN_DEPENDS=	${KMODDIR}/vboxdrv.ko:${PORTSDIR}/emulators/virtualbox-ose-kmod-leg
 
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64
-FETCH_ARGS=	-pRr
 USES=		iconv pkgconfig
 USE_GCC=	any
 USE_GNOME=	libidl
