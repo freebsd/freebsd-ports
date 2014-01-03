@@ -1,0 +1,12 @@
+--- configure.ac.orig
++++ configure.ac
+@@ -93,7 +93,8 @@
+ 	LDFLAGS="$LDFLAGS -L/usr/local/lib"
+ 	LIBS="${LIBS}"
+ 	AC_CHECK_LIB([usb], [libusb_init], [LIBS_LIBUSB_PRIVATE="${LIBS_LIBUSB_PRIVATE} -lusb"], [hidapi_lib_error libusb])
+-	AC_CHECK_LIB([iconv], [iconv_open], [LIBS_LIBUSB_PRIVATE="${LIBS_LIBUSB_PRIVATE} -liconv"], [hidapi_lib_error libiconv])
++	AC_CHECK_DECLS([libusb_get_string_descriptor], [], [], [[#include <libusb.h>]])
++	AC_SEARCH_LIBS([iconv_open], [iconv], [], [hidapi_lib_error libiconv])
+ 	echo libs_priv: $LIBS_LIBUSB_PRIVATE
+ 	;;
+ *-mingw*)
