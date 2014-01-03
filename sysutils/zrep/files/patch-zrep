@@ -1,0 +1,94 @@
+--- zrep.orig	2013-05-13 22:01:15.000000000 +0400
++++ zrep	2013-11-19 18:37:52.921978370 +0400
+@@ -15,7 +15,6 @@
+ ZREP_PATH=${ZREP_PATH:-zrep}  #Set to /path/to/zrep, if needed, for remote
+ #ZREP_CREATE_FLAGS="-o whatever"   #Set for extra options on remote zfs create
+ 
+-
+ #########################################################################
+ # Everyting else below here, should not be touched. First we have autodetect
+ # routines, and then internal utilities such as locking functions.
+@@ -35,8 +34,8 @@
+ 
+ # dump the usage message, and check for capabilities
+ # make sure we dont spew for non-root, so that "zrep status" works
+-case `id` in
+-	*\(root\))
++case `whoami` in
++	root)
+ 	zrep_checkfile=/var/run/zrep.check.$$
+ 	;;
+ 	*)
+@@ -109,7 +108,8 @@
+ # Note that we check for "us, OR our global parent", if different
+ #
+ zrep_has_global_lock(){
+-	lockpid=`ls -l $Z_GLOBAL_LOCKFILE 2>/dev/null |awk -F/ '{print $NF}'`
++	[ ! -f "${Z_GLOBAL_LOCKFILE}" ] && return 1
++	lockpid=`cat ${Z_GLOBAL_LOCKFILE}`
+ 	if [[ "$lockpid" == "" ]] ; then return 1 ; fi
+ 	if [[ "$lockpid" != "$Z_GLOBAL_PID" ]] ; then
+ 		if [[ "$lockpid" != "$$" ]] ; then
+@@ -127,7 +127,10 @@
+ zrep_get_global_lock(){
+ 	typeset retry_count=$Z_LOCK_RETRY
+ 
+-	ln -s /proc/$Z_GLOBAL_PID $Z_GLOBAL_LOCKFILE && return 0
++	if  [ ! -f "${Z_GLOBAL_LOCKFILE}" ] ; then
++            echo $Z_GLOBAL_PID > $Z_GLOBAL_LOCKFILE
++            return 0
++        fi
+ 
+ 	# otherwise, deal with fail
+ 	# Check for dead old holder first.
+@@ -135,7 +138,10 @@
+ 	
+ 	while (( retry_count > 0 )); do
+ 		sleep 1
+-		ln -s /proc/$Z_GLOBAL_PID $Z_GLOBAL_LOCKFILE && return 0
++		if  [ ! -f "${Z_GLOBAL_LOCKFILE}" ] ; then
++		    echo $Z_GLOBAL_PID > $Z_GLOBAL_LOCKFILE
++		    return 0
++		fi
+ 		retry_count=$((retry_count-1))
+ 	done
+ 
+@@ -178,7 +184,9 @@
+ 	typeset check=`zrep_fs_lock_pid $1` newcheck
+ 	if [[ "$check" != "-" ]] ; then
+ 		# validate fs lock before giving up
+-		ls -d /proc/$check >/dev/null 2>&1 && return 1
++	    if [ "${check}" != "-" ] ; then
++                [ -f "${Z_GLOBAL_LOCKFILE}" ] && return 1
++            fi
+ 	fi
+ 
+ 	zrep_get_global_lock  || return 1
+@@ -257,8 +265,7 @@
+ 
+ zrep_gettimeinseconds(){
+ 	# unfortunately, solaris date doesnt do '%s', so need to use perl
+-	typeset PATH=$PERL_BIN:$PATH
+-	perl -e 'print int(time);'
++	    date +%s
+ }
+ ###### zrep_status
+ 
+@@ -713,7 +720,7 @@
+ 		READONLYPROP="-o readonly=on"
+ 	else
+ 		READONLYPROP=""
+-		print Ancient local version of ZFS detected.
++#		print Ancient local version of ZFS detected.
+ 		print Creating destination filesystem as separate step
+ 		zrep_ssh $desthost zfs create $ZREP_CREATE_FLAGS -o readonly=on $destfs || zrep_errquit "Cannot create $desthost:$destfs"
+ 	fi
+@@ -757,7 +764,7 @@
+ 	# Successful initial sync! Woo! okay record that, etc.
+ 	# ... after stupid old-zfs-compat junk, that is
+ 	if (( ! Z_HAS_X )) ; then
+-		print Debug: Because you have old zfs support, setting remote properties by hand
++#		print Debug: Because you have old zfs support, setting remote properties by hand
+ 		zrep_ssh $desthost zfs set readonly=on $destfs	||
+ 			clearquit Could not set readonly for $desthost:$destfs
+ 
