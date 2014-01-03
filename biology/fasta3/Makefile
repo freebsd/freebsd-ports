@@ -10,6 +10,8 @@ DISTNAME=	fasta-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of programs for searching DNA and protein databases
 
+BROKEN=		Invalid checksum, seems like the software was rerolled
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 NO_CDROM=	May not be sold or incorporated into a commercial product
