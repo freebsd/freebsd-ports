@@ -1069,6 +1069,7 @@
     SUBDIR += zidrav
     SUBDIR += zisofs-tools
     SUBDIR += zogftw
+    SUBDIR += zrep
     SUBDIR += zxfer
 
 .include <bsd.port.subdir.mk>
