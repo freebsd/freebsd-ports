@@ -15,8 +15,6 @@ USES=		perl5
 USE_PERL5=	run
 NO_BUILD=	yes
 
-FETCH_ARGS=	-pRr
-
 DOCS=		COPYING Changes README
 
 .include <bsd.port.options.mk>

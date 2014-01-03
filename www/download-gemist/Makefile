@@ -13,7 +13,6 @@ LICENSE=	MIT
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
-FETCH_ARGS=	-Fpr
 
 PLIST_DIRS=	%%DOCSDIR%%
 PLIST_FILES=	bin/download-gemist \

@@ -13,8 +13,6 @@ COMMENT=	Backup tool that uses librsync and GnuPG
 LIB_DEPENDS=	librsync.so:${PORTSDIR}/net/librsync
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 
-FETCH_ARGS=	-pRr
-
 CONFLICTS=	duplicity-0.5.* duplicity-devel-[0-9]*
 
 USE_PYTHON=	-2.7

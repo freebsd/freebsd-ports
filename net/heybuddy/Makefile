@@ -14,7 +14,6 @@ COMMENT=	Supposedly light, feature free identi.ca client
 
 LICENSE=	GPLv3
 
-FETCH_ARGS=	-Fpr
 USE_PYTHON=	yes
 USE_GNOME=	desktopfileutils pygtk2
 

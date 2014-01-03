@@ -12,7 +12,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Provides API for creating and manipulation of 3D geometry
 
 USE_BZIP2=	yes
-FETCH_ARGS=	-Fpr
 
 USE_JAVA=	yes
 USE_GL=		gl

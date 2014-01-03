@@ -15,8 +15,6 @@ LICENSE=	GPLv2 # (or later)
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-FETCH_ARGS=	-Fpr
-
 USES=		gettext gmake pkgconfig
 MAKE_ENV=	enable_nls=1
 ALL_TARGET=	gkrellweather.so

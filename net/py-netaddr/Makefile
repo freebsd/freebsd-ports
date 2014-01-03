@@ -12,7 +12,6 @@ COMMENT=	Python library for the manipulation of network addresses
 
 LICENSE=	BSD
 
-FETCH_ARGS=	-pRr
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

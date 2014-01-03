@@ -17,7 +17,6 @@ LICENSE=	PHP30
 LIB_DEPENDS=	libopencv_objdetect.so:${PORTSDIR}/graphics/opencv
 
 GITVERSION=	4b1dfe1
-FETCH_ARGS=	-pRr
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

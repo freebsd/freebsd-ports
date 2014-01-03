@@ -14,7 +14,6 @@ COMMENT=	KMFL SCIM IMEngine keyboard for Khmer language
 RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
 
 GITVERSION=	a20cc89
-FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/buganini-kmfl-${PORTNAME}-${GITVERSION}/kmfl
 NO_BUILD=	yes
 

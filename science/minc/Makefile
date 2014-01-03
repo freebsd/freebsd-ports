@@ -69,8 +69,6 @@ MAN1=	dcm2mnc.1 \
 
 MAN3=	ParseArgv.3
 
-FETCH_ARGS+=	-F
-
 NO_STAGE=	yes
 post-install:
 	@${CAT} ${PKGMESSAGE}

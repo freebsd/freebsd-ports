@@ -15,8 +15,6 @@ LICENSE=	GPLv3
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:${PORTSDIR}/devel/pear
 
-FETCH_ARGS=	-Fpr
-
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

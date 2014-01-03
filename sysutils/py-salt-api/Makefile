@@ -11,7 +11,6 @@ COMMENT=	Exposes the fundamental aspects of Salt control to external sources
 
 LICENSE=	APACHE20
 
-FETCH_ARGS=	-pRr
 USE_PYTHON=	2.6-2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

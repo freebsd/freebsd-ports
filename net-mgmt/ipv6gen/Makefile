@@ -11,7 +11,6 @@ COMMENT=	IPv6 prefix generator
 
 LICENSE=	GPLv2
 
-FETCH_ARGS=	-Fpr
 NO_BUILD=
 USES=		perl5 shebangfix
 USE_PERL5=	run

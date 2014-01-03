@@ -13,7 +13,6 @@ COMMENT=	FreeBSD VM tools for Citrix XenServer and XCP
 
 RUN_DEPENDS=	xen-tools>0:${PORTSDIR}/sysutils/xen-tools
 
-FETCH_ARGS=	-pRr
 GIT_ACCOUNT=	felderado
 GIT_PROJECT=	freebsd-xen-tools-scripts
 GIT_VERSION=	5a355c9

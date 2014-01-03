@@ -20,7 +20,6 @@ RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
 
 USE_GNOME=	gnomehack intlhack pygobject
 USE_PYTHON=	yes
-FETCH_ARGS=	-Fpr
 GNU_CONFIGURE=	yes
 USES=		gmake gettext
 CPPFLAGS+=	-I${LOCALBASE}/include

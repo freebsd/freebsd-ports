@@ -17,9 +17,6 @@ DOS2UNIX_REGEX=	.*\.(h|cpp)
 USE_QT4=	gui network moc_build rcc_build \
 		imageformats_run
 
-# Override -A option:
-FETCH_ARGS=	-Fpr
-
 STRIP_FILES=	bin/qtfm
 
 post-patch:

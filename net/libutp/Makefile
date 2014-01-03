@@ -15,11 +15,7 @@ LICENSE=	MIT
 USE_DOS2UNIX=	yes
 MAKEFILE=	${FILESDIR}/BSDmakefile
 USE_LDCONFIG=	yes
-# GitHub will issue a 302 redirect, no way around that, so we
-# have to allow fetch(1) to follow the redirect, which is normally
 NO_STAGE=	yes
-# prevented by the -A flag:
-FETCH_ARGS=	-Fpr
 
 pre-su-install:
 	${MKDIR} ${PREFIX}/include/libutp

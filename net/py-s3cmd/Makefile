@@ -16,8 +16,6 @@ USE_PYTHON=	2.5-2.7
 
 MAN1=		s3cmd.1
 
-FETCH_ARGS=	-Fpr
-
 NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,share/man,man,' ${WRKSRC}/setup.py

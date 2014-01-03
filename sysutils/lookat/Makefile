@@ -10,7 +10,6 @@ DISTNAME=	${PORTNAME}_bekijk-${PORTVERSION}
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Program to view Un*x text files and manual pages
 
-FETCH_ARGS=	-Fpr
 GNU_CONFIGURE=	yes
 USES=		gmake
 

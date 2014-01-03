@@ -18,8 +18,6 @@ LIB_DEPENDS=	libvirt.so:${PORTSDIR}/devel/libvirt \
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-FETCH_ARGS=	-Fpr
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	DATADIRNAME=share
 USES=		gmake pkgconfig

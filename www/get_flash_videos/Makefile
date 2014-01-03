@@ -25,7 +25,6 @@ RUN_DEPENDS=	\
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 		rtmpdump>=2.4.0:${PORTSDIR}/multimedia/rtmpdump
 
-FETCH_ARGS=	-Fpr	# work around 302 redirect at github
 USES=		perl5
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
