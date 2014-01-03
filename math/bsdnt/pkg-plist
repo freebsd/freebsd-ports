@@ -1,0 +1,22 @@
+lib/libbsdnt.a
+lib/libbsdnt.so
+include/bsdnt/arch/inline/nn_linear_x86_64_core2.h
+include/bsdnt/arch/inline/nn_linear_x86_64_k8.h
+include/bsdnt/config.h
+include/bsdnt/helper.h
+include/bsdnt/helper_arch.h
+include/bsdnt/nn.h
+include/bsdnt/nn_arch.h
+include/bsdnt/nn_linear_arch.h
+include/bsdnt/nn_quadratic_arch.h
+include/bsdnt/nn_subquadratic_arch.h
+include/bsdnt/rand.h
+include/bsdnt/sha1.h
+include/bsdnt/test.h
+include/bsdnt/tuning.h
+include/bsdnt/types_arch.h
+include/bsdnt/zz.h
+include/bsdnt/zz0.h
+@dirrm include/bsdnt/arch/inline
+@dirrm include/bsdnt/arch
+@dirrm include/bsdnt
