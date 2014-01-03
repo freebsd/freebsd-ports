@@ -1,5 +1,6 @@
 bin/mp-5
-bin/mpsl2
+bin/mpsl
+man/man1/mp-5.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
