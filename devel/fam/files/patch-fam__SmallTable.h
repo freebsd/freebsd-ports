@@ -1,5 +1,5 @@
---- fam/SmallTable.h.orig	Tue Jul 16 14:23:25 2002
-+++ fam/SmallTable.h	Sat Jul 31 13:14:09 2004
+--- ./fam/SmallTable.h.orig	2003-04-15 06:21:43.000000000 +0200
++++ ./fam/SmallTable.h	2014-01-03 02:35:10.000000000 +0100
 @@ -98,7 +98,7 @@
  }
  
