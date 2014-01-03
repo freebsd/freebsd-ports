@@ -313,6 +313,7 @@
     SUBDIR += tcpreplay
     SUBDIR += tcptrack
     SUBDIR += torrus
+    SUBDIR += unifi2
     SUBDIR += unifi3
     SUBDIR += vidalia
     SUBDIR += virt-viewer
