@@ -139,7 +139,7 @@ do-install:
 	  ${DOCSDIR}
 	@${GZIP_CMD} ${DOCSDIR}/*.ps
 .endif
-.if ${PORT_OPTIONS:MEXAMPLES}
+.ifdef WITH_EXAMPLES
 	@${MKDIR} ${EXAMPLESDIR}
 	@${TAR} cf - -C ${WRKSRC}/${CGX_VER}/examples . | ${TAR} xf - -C ${EXAMPLESDIR}
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
