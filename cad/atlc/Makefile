@@ -44,6 +44,9 @@ PLIST_FILES=	bin/atlc bin/coax bin/create_any_bitmap \
 		bin/locatediff bin/myfilelength bin/mymd5sum bin/readbin
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 post-patch:
 .for file in Makefile.in
 	@${REINPLACE_CMD} -e \
@@ -51,7 +54,7 @@ post-patch:
 .endfor
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	@(${TAR} -C ${WRKSRC}/docs --exclude "*Makefile*" -cf - . | \
 		${TAR} -C ${DOCSDIR} --unlink -xf -)
@@ -59,7 +62,7 @@ post-install:
 	@${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 	@${FIND} ${DOCDIR} | ${XARGS} ${CHOWN} ${SHHAREOWN}:${SHAREGRP}
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${EXAMPLESDIR}
 	@(${TAR} -C ${WRKSRC}/examples --exclude "*Makefile*" -cf - . | \
 		${TAR} -C ${EXAMPLESDIR} --unlink -xf -)

@@ -98,12 +98,12 @@ do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${LICDOCS:S|^|${WRKSRC}/doc/|} ${DATADIR}
 	${INSTALL_MAN} ${MAN1:S|^|${WRKSRC}/man/man1/|} ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
-.if !defined(NOPORTEXAMPLES)
+.if ${PORT_OPTIONS:MEXAMPLES}
 	${MKDIR} ${EXAMPLESDIR}/grf ${EXAMPLESDIR}/tgt
 	${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/examples/|} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/grf/* ${EXAMPLESDIR}/grf

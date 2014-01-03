@@ -29,6 +29,9 @@ Z88_BINS=	z88f z88i1 z88i2 z88com z88d z88e z88g z88h z88n z88o	\
 Z88_DATA=	z88.fcd z88.dyn *.dxf *.txt
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${CP} ${WRKSRC}/z88.fcd.linux ${WRKSRC}/z88.fcd
 	@${CP} ${WRKSRC}/z88.mk.kernel.gcc32 ${WRKSRC}/z88.kernel.mk
@@ -65,7 +68,7 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/*.htm ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/*.gif ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/*.jpg ${DOCSDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/z88mane.pdf ${DOCSDIR}
 .endif
 
