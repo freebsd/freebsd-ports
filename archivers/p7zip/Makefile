@@ -3,7 +3,7 @@
 
 PORTNAME=	p7zip
 PORTVERSION=	9.20.1
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	archivers
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${DISTVERSION}_src_all
@@ -42,6 +42,7 @@ do-install:
 .for BINARY in 7z 7za 7zr 7zCon.sfx
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${BINARY} ${STAGEDIR}${PREFIX}/libexec/p7zip
 .endfor
+	${INSTALL_LIB} ${WRKSRC}/bin/7z.so ${STAGEDIR}${PREFIX}/libexec/p7zip
 
 	${INSTALL_SCRIPT} ${FILESDIR}/7z ${STAGEDIR}${PREFIX}/bin/
 	${LN} -sf 7z ${STAGEDIR}${PREFIX}/bin/7za

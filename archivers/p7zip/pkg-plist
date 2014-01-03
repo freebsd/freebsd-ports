@@ -1,10 +1,11 @@
 bin/7z
 bin/7za
 bin/7zr
+libexec/p7zip/7z
+libexec/p7zip/7z.so
+libexec/p7zip/7zCon.sfx
 libexec/p7zip/7za
 libexec/p7zip/7zr
-libexec/p7zip/7zCon.sfx
-libexec/p7zip/7z
 man/man1/7z.1.gz
 man/man1/7za.1.gz
 man/man1/7zr.1.gz
