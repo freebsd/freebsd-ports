@@ -23,7 +23,7 @@ BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 
 CONFLICTS=	dbmail-2.* dbmail22-[0-9]*
 
-OPTIONS_DEFINE=	LDAP SIEVE THREADS
+OPTIONS_DEFINE=	DOCS LDAP SIEVE THREADS
 OPTIONS_DEFAULT=	THREADS
 SIEVE_DESC=	Build with support for Sieve mail sorting language
 
