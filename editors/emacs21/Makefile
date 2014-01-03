@@ -18,9 +18,10 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	GNU editing macros
 
-CONFLICTS=	emacs-19.* emacs-22.* emacs-23.* emacs-24.* \
+CONFLICTS=	emacs-19.* emacs22-* emacs23-* emacs24-* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
-		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
+		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]* \
+		emacs-devel-* emacs-nox11-*
 
 SSP_UNSAFE=	yes
 
