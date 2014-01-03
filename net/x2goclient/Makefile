@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	x2goclient
-PORTVERSION=	4.0.1.1
+PORTVERSION=	4.0.1.2
 CATEGORIES=	net
 MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/
 
@@ -65,7 +65,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/icons
 	(cd ${WRKSRC}/icons && ${INSTALL_DATA} x2goclient.xpm \
 		${STAGEDIR}${DATADIR}/icons)
-.for i in x2goclient.png x2gosession.png 
+.for i in x2goclient.png x2gosession.png
 	(cd ${WRKSRC}/icons/128x128 && ${INSTALL_DATA} ${i} \
 		${STAGEDIR}${DATADIR}/icons)
 .endfor
