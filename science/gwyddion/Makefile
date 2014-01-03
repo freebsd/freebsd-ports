@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gwyddion
-PORTVERSION=	2.33
-PORTREVISION=	2
+PORTVERSION=	2.34
 CATEGORIES=	science graphics
 MASTER_SITES=	SF
 
@@ -38,22 +37,14 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	gwyddion-thumbnailer.schemas
 
-PERL_CONFIGURE_OFF=	--without-perl
+PERL_CONFIGURE_WITH=	perl
 PERL_USES=		perl5
-PYTHON_CONFIGURE_OFF=	--without-python
-RUBY_CONFIGURE_OFF=	--without-ruby
-UNIQUE_CONFIGURE_OFF=	--without-unique
+PYTHON_CONFIGURE_WITH=	python
+PYTHON_USE=		PYTHON=yes
+RUBY_CONFIGURE_WITH=	ruby
+RUBY_USE=		RUBY=yes
+UNIQUE_CONFIGURE_WITH=	unique
 UNIQUE_LIB_DEPENDS=	libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	yes
-.endif
-
-.if ${PORT_OPTIONS:MRUBY}
-USE_RUBY=	yes
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
