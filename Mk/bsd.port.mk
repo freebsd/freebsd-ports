@@ -2793,16 +2793,6 @@ check-categories:
 .endfor
 .endif
 
-.if !target(check-makevars)
-check-makevars::
-	@${DO_NADA}
-.endif
-
-.if !target(check-depends)
-check-depends:
-	@${DO_NADA}
-.endif
-
 PKGREPOSITORYSUBDIR?=	All
 PKGREPOSITORY?=		${PACKAGES}/${PKGREPOSITORYSUBDIR}
 .if exists(${PACKAGES})
