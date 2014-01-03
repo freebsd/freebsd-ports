@@ -41,6 +41,8 @@ NO_STAGE=	yes
 PHPBBDIR=	${WWWDOCROOT}/${PHPBBURL}
 PKGOPTS=	${FILESDIR}/pkg-opts
 
+.include <bsd.port.options.mk>
+
 options:
 	@ ${ECHO_MSG} "===>  Build options for ${PKGNAME}:"
 	@ ${CAT} ${PKGOPTS}
@@ -63,7 +65,7 @@ do-install:
 	@ ${ECHO_CMD} '@exec ${CHMOD} -R 0755 ${PREFIX}/${PHPBBDIR}' >> ${TMPPLIST}
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@ ${MKDIR} ${DOCSDIR}
 	@ cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
 

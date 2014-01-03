@@ -106,7 +106,7 @@ post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/${f}
 .endfor
 .endif
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in Changelog.html README.html
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
