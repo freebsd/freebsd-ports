@@ -17,6 +17,9 @@ PORTDOCS=	README COPYING ChangeLog
 PLIST_FILES=	bin/o3read bin/o3totxt bin/o3tohtml bin/utf8tolatin1
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/o3read ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/o3totxt ${PREFIX}/bin
@@ -24,7 +27,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/utf8tolatin1 ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/o3read.1 ${MANPREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/utf8tolatin1.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}

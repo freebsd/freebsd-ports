@@ -29,6 +29,9 @@ MULEUCS_DESTDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/mule-ucs
 EMACS_ARGS=	-q --no-site-file -batch
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 do-build:
 	cd ${WRKSRC}/lisp/big5conv && \
 	    ${EMACS_CMD} ${EMACS_ARGS} -l big5-comp.el
@@ -52,7 +55,7 @@ do-install:
 	@${RM} ${MULEUCS_DESTDIR}/jisx0213/x0213-comp.el
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/lisp; \
 	for i in ChangeLog MuleUni.txt README* ; do \

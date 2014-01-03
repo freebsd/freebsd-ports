@@ -24,8 +24,11 @@ DOCS_EN=	COPYING ChangeLog
 DOCS_JA=	ChangeLog.ja README.ja
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${MKDIR} ${DOCSDIR}/ja
 .for f in ${DOCS_EN}
