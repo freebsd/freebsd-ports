@@ -32,7 +32,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/pnetmark.exe ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/linpack/linpack.exe ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/scimark2/scimark2.exe ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for docfile in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/doc/${docfile} ${DOCSDIR}

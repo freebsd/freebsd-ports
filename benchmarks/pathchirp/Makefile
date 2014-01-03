@@ -17,18 +17,14 @@ MAKE_JOBS_UNSAFE=	yes
 PLIST_FILES=	bin/pathchirp_rcv bin/pathchirp_snd bin/pathchirp_run
 PORTDOCS=	README
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/CFLAGS.*O4/d' ${WRKSRC}/configure
 
 do-install:
 .for f in rcv snd run
-	${INSTALL_PROGRAM} ${WRKSRC}/Bin/${ARCH}/${PORTNAME}_${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/Bin/${ARCH}/${PORTNAME}_${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

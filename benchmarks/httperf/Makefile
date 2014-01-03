@@ -18,14 +18,15 @@ MAKE_ARGS=	LIBUTIL_OBJS=ssl_writev.o \
 		exec_prefix=${PREFIX}
 
 PLIST_FILES=	bin/httperf
-.if !defined(NOPORTDOCS)
 PORTDOCS=	ChangeLog NEWS README TODO
-.endif
 MAN1=		httperf.1
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for file in ${PORTDOCS}
 	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
