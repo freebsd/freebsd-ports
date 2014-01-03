@@ -15,7 +15,6 @@ OPTIONS_DEFAULT=	BDB
 BDB_DESC=			Berkeley DB support (may specify w/ WITH_BDB_VER)
 MYSQL_DESC=			Adds MySQL Support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBDB}
@@ -34,16 +33,19 @@ CONFIGURE_ARGS+=--with-mysql
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-package
+NEED_ROOT=	yes
 
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--debug=yes
 .endif
 
-MAN1=	bmf.1 bmfconv.1
+post-patch:
+	${REINPLACE_CMD} -e 's/@@CC/${CC}/;s/@@CXX/${CXX}/' ${WRKSRC}/configure
 
 post-install:
-	@ ${MKDIR} ${PREFIX}/share/bmf
-	@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/bmf
-	@ ${CAT} ${PKGDIR}/pkg-message
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bmf
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bmfconv
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/bmf
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${PREFIX}/share/bmf
 
 .include <bsd.port.mk>
