@@ -34,4 +34,4 @@ do-install:
 .endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/toolame ${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
