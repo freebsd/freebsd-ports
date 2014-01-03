@@ -1,8 +1,8 @@
 # Created by: Mark Felder <feld@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=	unifi
-PORTVERSION=	3.1.6
+PORTNAME=	unifi3
+PORTVERSION=	3.1.9
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/${PORTVERSION}/
 DISTNAME=	UniFi.unix
@@ -24,7 +24,7 @@ JAVA_RUN=	yes
 
 NO_BUILD=	yes
 
-USE_RC_SUBR=	${PORTNAME}
+USE_RC_SUBR=	unifi
 
 USERS=	unifi
 GROUPS=	unifi
@@ -36,7 +36,7 @@ WRKSRC=	${WRKDIR}/UniFi
 RESTRICTED=	Redistribution of bundled firmware images is not permitted
 
 do-install:
-	${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${JAVASHAREDIR}/${PORTNAME}/)
+	${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/unifi
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${JAVASHAREDIR}/unifi/)
 
 .include <bsd.port.mk>
