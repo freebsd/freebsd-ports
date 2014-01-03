@@ -23,8 +23,8 @@
  	else
  		# try now with -liconv
 -		TMP_LDFLAGS="-liconv"
-+		TMP_CFLAGS="-I%%LOCALBASE%%/include"
-+		TMP_LDFLAGS="-L%%LOCALBASE%%/lib -liconv"
++		TMP_CFLAGS="-I%%ICONV_PREFIX%%/include"
++		TMP_LDFLAGS="-L%%ICONV_PREFIX%%/lib %%ICONV_LIB%%"
  
 -		$CC .tmp.c $TMP_LDFLAGS -o .tmp.o 2>> .config.log
 +		$CC $TMP_CFLAGS .tmp.c $TMP_LDFLAGS -o .tmp.o 2>> .config.log
