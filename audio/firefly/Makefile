@@ -67,7 +67,7 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for i in README AUTHORS COPYING CREDITS \
 	ChangeLog INSTALL NEWS TODO

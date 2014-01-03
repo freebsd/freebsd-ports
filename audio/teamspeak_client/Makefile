@@ -36,6 +36,8 @@ DESKTOP_ENTRIES="TeamSpeak" \
 		"Network;Telephony;" \
 		false
 
+.include <bsd.port.options.mk>
+
 post-extract:
 	@${MKDIR} ${WRKDIR}/programs
 	@${GZIP_CMD} -dc ${DISTDIR}/setduplexfake.so.gz >${WRKDIR}/programs/setduplexfake.so
@@ -62,7 +64,7 @@ do-install:
 	${FIND} * -type d -exec ${MKDIR} "${TSHOME}/{}" \; && \
 	${FIND} * -type f -exec ${INSTALL_PROGRAM} "{}" "${TSHOME}/{}" \;
 	${INSTALL_SCRIPT} ${WRKDIR}/TeamSpeak ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	cd ${WRKDIR}/doc && \
 	${FIND} * -type d -exec ${MKDIR} "${DOCSDIR}/{}" \; && \
 	${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;

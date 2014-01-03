@@ -30,12 +30,14 @@ PORTDOCS=	NeroAAC_tut.pdf \
 	license.txt \
 	readme.txt
 
+.include <bsd.port.options.mk>
+
 do-install:
 .for f in ${PLIST_FILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/linux/${f:T} ${PREFIX}/bin
 .endfor
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/

@@ -25,6 +25,8 @@ LICENSE=	GPLv2
 PORTDOCS=	README
 PLIST_FILES=	bin/enscribe
 
+.include <bsd.port.options.mk>
+
 do-build:
 	cd ${BUILD_WRKSRC}; ${CC} ${CFLAGS} \
 		`pkg-config --cflags --libs sndfile freetype2` \
@@ -34,7 +36,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/enscribe ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif

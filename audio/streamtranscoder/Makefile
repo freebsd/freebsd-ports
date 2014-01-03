@@ -24,6 +24,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/streamTranscoder
 PORTDOCS=	AUTHORS README
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-D_REENTRANT|${PTHREAD_CFLAGS}|g; \
 		s|-pthread|${PTHREAD_LIBS}|g; s|-O20|$$CFLAGS|g' \
@@ -33,7 +35,7 @@ post-patch:
 		${WRKSRC}/src/libtranscoder/transcurl.cpp
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif

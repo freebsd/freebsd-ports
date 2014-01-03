@@ -23,6 +23,8 @@ CXXFLAGS+=	-I${LOCALBASE}/include
 PORTDOCS=	ABOUT POINTER
 PLIST_FILES=	bin/fcplay
 
+.include <bsd.port.options.mk>
+
 post-patch:
 .for f in configure Config.h.in
 	@${REINPLACE_CMD} -e "s@machine/soundcard\.h@sys/soundcard\.h@g; \
@@ -32,7 +34,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fcplay ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
