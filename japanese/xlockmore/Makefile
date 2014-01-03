@@ -7,7 +7,7 @@ MAINTAINER=	umeno@rr.iij4u.or.jp
 
 MASTERDIR=	${.CURDIR}/../../x11/xlockmore
 
-WITH_MB=	yes
+PORT_OPTIONS+=	MB
 XLOCKMORE_LANG=	ja
 
 NO_STAGE=	yes
