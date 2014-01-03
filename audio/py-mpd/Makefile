@@ -18,7 +18,9 @@ NO_STAGE=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	python_mpd
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 post-install:

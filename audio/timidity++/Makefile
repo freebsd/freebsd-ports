@@ -80,7 +80,7 @@ post-install::
 .endif # !defined(PKGNAMESUFFIX)
 
 post-install::
-.if !defined(NOPORTDOCS) && defined(DOCFILES)
+.if ${PORT_OPTIONS:MDOCS} && defined(DOCFILES)
 .for lang in ${DOCLANG}
 	${MKDIR} ${PREFIX}/share/doc/${lang:C,^C$,,:C,ja_.*,ja/,}timidity++
 	cd ${WRKSRC}/doc/${lang} && ${INSTALL_DATA} ${DOCFILES}	\

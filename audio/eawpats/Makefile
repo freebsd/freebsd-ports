@@ -23,6 +23,8 @@ DOC_SUBDIRS=	ethnic gsdrum08 gsdrum25 gsdrum40 power wime
 WRKSRC=		${WRKDIR}/${PORTNAME}
 TIMIDITY_DATADIR=	${PREFIX}/share/timidity
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/home/user/eawpats|${DATADIR}|' ${WRKSRC}/linuxconfig/timidity.cfg
 
@@ -37,7 +39,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/linuxconfig/timidity.cfg ${TIMIDITY_DATADIR}/timidity.cfg-eawpats
 	[ -f ${TIMIDITY_DATADIR}/timidity.cfg ] || \
 		${INSTALL_DATA} ${WRKSRC}/linuxconfig/timidity.cfg ${TIMIDITY_DATADIR}/timidity.cfg
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/*.txt ${WRKSRC}/*.hlp ${DOCSDIR}
 .for subdir in ${DOC_SUBDIRS}

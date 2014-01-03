@@ -24,11 +24,13 @@ PORTDOCS=	README
 
 SUB_FILES=	pkg-message
 
+.include <bsd.port.options.mk>
+
 post-install:
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}; \
 	cd ${WRKSRC} && ${INSTALL_MAN} ${PORTDOCS} ${DOCSDIR}
 .endif

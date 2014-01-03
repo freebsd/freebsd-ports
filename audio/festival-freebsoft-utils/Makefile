@@ -20,13 +20,15 @@ PORTDOCS=	ANNOUNCE NEWS README
 
 INFO=		${PORTNAME}
 
+.include <bsd.port.options.mk>
+
 do-install:
 	${MKDIR} ${LOCALBASE}/share/festival/lib
 	cd ${WRKSRC} && ${INSTALL_DATA} *.scm ${LOCALBASE}/share/festival/lib
 	cd ${WRKSRC}/doc && ${INSTALL_MAN} ${PORTNAME}.info ${PREFIX}/${INFO_PATH}
 
 post-install:
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_MAN} ${WRKSRC}/${f} ${DOCSDIR}

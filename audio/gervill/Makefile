@@ -21,14 +21,16 @@ JARFILE=	${PORTNAME}.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
 PORTDOCS=	*
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 ALL_TARGET+=	javadocs
 .endif
 
 do-install:
 	${MKDIR} ${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/${JARFILE} ${JAVAJARDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/javadocs && ${COPYTREE_SHARE} \* ${DOCSDIR}
 .endif

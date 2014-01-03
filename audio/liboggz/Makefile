@@ -34,6 +34,8 @@ MAN1=	oggz.1 \
 	oggz-validate.1 \
 	oggz-codecs.1
 
+.include <bsd.port.options.mk>
+
 # First REINPLACE_CMD line makes all timestimes relative to localtime, crude hack
 post-patch:
 	@${REINPLACE_CMD} -e 's/timezone/0/' \
@@ -41,7 +43,7 @@ post-patch:
 		${WRKSRC}/src/tools/oggz-chop/httpdate_test.c
 	@${REINPLACE_CMD} -e '/^pkgconfigdir/s!=.*!= ${PREFIX}/libdata/pkgconfig!' \
 		${WRKSRC}/Makefile.in
-.ifdef NOPORTDOCS
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e '/^install-data-am/s!install-data-local!!'	\
 		${WRKSRC}/doc/Makefile.in
 .endif

@@ -19,13 +19,15 @@ NO_STAGE=	yes
 PLIST_FILES=	bin/maplay
 PORTDOCS=	README
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,machine/soundcard.h,sys/soundcard.h,' \
 		${WRKSRC}/configuration.sh
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/maplay ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
 .endif

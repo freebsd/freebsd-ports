@@ -21,12 +21,14 @@ PYDISTUTILS_PKGNAME=	PyOpenAL
 WRKSRC=		${WRKDIR}/PyOpenAL-${PORTVERSION}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-openal
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/setup.py
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/demo/* ${EXAMPLESDIR}
 .endif

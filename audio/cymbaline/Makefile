@@ -16,11 +16,13 @@ NO_STAGE=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-.if !defined(NOPORTDOCS)
+PLIST_FILES=	bin/cymbaline
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	*
 .endif
-
-PLIST_FILES=	bin/cymbaline
 
 post-install:
 	@${MV} -f ${PREFIX}/bin/cymbaline.py ${PREFIX}/bin/cymbaline
@@ -28,7 +30,7 @@ post-install:
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${PYTHON_SITELIBDIR}/cypack -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
