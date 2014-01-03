@@ -1,5 +1,5 @@
---- slirpvde/Makefile	Sat Jan 29 15:02:08 2005
-+++ slirpvde/Makefile	Sun Jan 30 14:02:57 2005
+--- slirpvde/Makefile.orig	2004-06-03 18:19:40.000000000 +0300
++++ slirpvde/Makefile	2014-01-03 07:25:37.000000000 +0200
 @@ -3,7 +3,7 @@
  tcp_timer.o udp.o \
  bootp.o
@@ -9,7 +9,7 @@
  
  all: libslirp.a slirpvde
  
-@@ -34,7 +34,7 @@
+@@ -34,12 +34,12 @@
  udp.o: udp.c ip_icmp.h
  
  slirpvde: slirpvde.o libslirp.a
@@ -18,3 +18,10 @@
  
  clean:
  	rm -rf *.o slirpvde libslirp.a
+ 
+ install : slirpvde
+-	install -d $(DESTDIR)$(BIN_DIR)
+-	install -s slirpvde $(DESTDIR)$(BIN_DIR)
++	install -d $(BIN_DIR)
++	install -s slirpvde $(BIN_DIR)
+ 
