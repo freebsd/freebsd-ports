@@ -34,7 +34,7 @@ post-patch:
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
-..if ${PORT_OPTIONS:MDOCS}
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
