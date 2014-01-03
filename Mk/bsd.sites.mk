@@ -536,14 +536,12 @@ MASTER_SITES+=	GH GHC
 .endif
 GH_PROJECT?=	${PORTNAME}
 GH_TAGNAME?=	${DISTVERSION}
-FETCH_ARGS=	-Fpr
 .endif
 .endif
 #
-# GitHub files can also be obtained, without the commit hashes, by doing:
+# GitHub files can also be obtained, without the need for any of the above, by doing:
 #
 # MASTER_SITES=	http://github.com/accountname/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
-# FETCH_ARGS=	-Fpr
 #
 
 .if !defined(IGNORE_MASTER_SITE_GNOME)
