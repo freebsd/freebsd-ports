@@ -5,7 +5,7 @@ PORTNAME=	stdlib
 PORTVERSION=	1.9.3
 
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}doc-
-CATEGORIES=	ruby lang docs
+CATEGORIES=	lang ruby docs
 
 DISTNAME=	ruby_${PORTVERSION:S/./_/g}_${PORTNAME}_rdocs
 MASTER_SITES=	http://www.ruby-doc.org/downloads/
