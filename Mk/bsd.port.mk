@@ -4256,6 +4256,7 @@ security-check:
 # call the necessary targets/scripts.
 ################################################################
 
+.PHONY: extract-message patch-message configure-message stage-message install-message package-message
 extract-message:
 	@${ECHO_MSG} "===>  Extracting for ${PKGNAME}"
 patch-message:
