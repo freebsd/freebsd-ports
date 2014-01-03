@@ -53,6 +53,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/crypto.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/server.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/twisted-client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/twisted-green-client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/twisted-server.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/certs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
