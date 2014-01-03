@@ -15,11 +15,7 @@ RUN_DEPENDS=	ksh93:${PORTSDIR}/shells/ksh93
 
 PLIST_FILES=	bin/zrep
 
-NO_INSTALL_MANPAGES=	yes
-
 NO_BUILD=	yes
-NO_INSTALL=	yes
-NO_EXTRACT=	yes
 
 .include <bsd.port.options.mk>
 
