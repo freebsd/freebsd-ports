@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	palomino
-PORTVERSION=	20130527
+PORTVERSION=	20131231
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.palomino3d.org/sim/
+MASTER_SITES=	http://www.palomino3d.org/software/${PORTNAME}/
 DISTFILES=	${PORTNAME}_src_${PORTVERSION}.txz \
-		${PORTNAME}_data_misc_${MISC_VER}.tar.bz2 \
-		${PORTNAME}_data_models_${MODELS_VER}.tar.bz2 \
-		${PORTNAME}_data_sounds_${SOUNDS_VER}.tar.bz2 \
-		${PORTNAME}_data_terrain_${TERRAIN_VER}.tar.bz2
+		${PORTNAME}_data_misc_${MISC_VER}${EXTRACT_SUFX} \
+		${PORTNAME}_data_models_${MODELS_VER}${EXTRACT_SUFX} \
+		${PORTNAME}_data_sounds_${SOUNDS_VER}${EXTRACT_SUFX} \
+		${PORTNAME}_data_terrain_${TERRAIN_VER}${EXTRACT_SUFX}
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Action flight simulation computer program using OSG
@@ -18,7 +18,6 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	osg:${PORTSDIR}/graphics/osg
 
-USE_BZIP2=	yes
 USE_XZ=		yes
 USES=		cmake
 USE_GL=		gl
@@ -45,8 +44,8 @@ PLIB_BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 
 PORTDOCS=	*
 
-DESKTOP_ENTRIES=	"Palomino" "${COMMENT}" "${PORTNAME}" \
-			"${PORTNAME}" "Game;ArcadeGame;" false
+DESKTOP_ENTRIES=	"Palomino" "" "${PORTNAME}" \
+			"${PORTNAME}" "Game;ArcadeGame;" ""
 
 .include <bsd.port.options.mk>
 
@@ -64,7 +63,7 @@ post-patch:
 		${WRKSRC}/CMakeModules/libraries.cmake
 	@${REINPLACE_CMD} -e '/COMPILE_WITH_OSSIM/ d' ${WRKSRC}/CMakeLists.txt
 
-# Please look MOVED 2013-06-04
+# Please look MOVED devel/linux-js||2013-06-04
 	@${REINPLACE_CMD} -e '/COMPILE_WITH_LINUX_JOYSTICK/ d' ${WRKSRC}/CMakeLists.txt
 
 .if ! ${PORT_OPTIONS:MSDL}
@@ -88,7 +87,7 @@ post-patch:
 post-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "data scripts" ${STAGEDIR}${DATADIR})
-# docs are used from within the game, so this is unconditional
+# DOCS are used from within the game, so this is unconditional
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@(cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
