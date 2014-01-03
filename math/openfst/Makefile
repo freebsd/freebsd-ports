@@ -11,6 +11,7 @@ COMMENT=	Library for working with weighted finite-state transducers (FSTs)
 
 LICENSE=	APACHE20
 
+USE_GCC=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-compact-fsts --enable-const-fsts --enable-far --enable-lookahead-fsts --enable-pdt
