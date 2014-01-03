@@ -15,8 +15,6 @@ LICENSE_NAME=	ToU
 LICENSE_TEXT=	http://spideroak.com/terms_of_use
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-FETCH_ARGS=	-Fpr
-
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

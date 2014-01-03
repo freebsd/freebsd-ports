@@ -17,8 +17,6 @@ GNU_CONFIGURE=	yes
 USES=		gmake
 USE_AUTOTOOLS=	aclocal automake
 
-FETCH_ARGS=	-Fpr
-
 MAN1=		procenv.1
 PLIST_FILES=	bin/procenv
 

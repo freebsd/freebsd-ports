@@ -14,7 +14,6 @@ LICENSE=	BSD2CLAUSE
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
-FETCH_ARGS=	-Fpr
 USES=		pkgconfig uidfix
 
 PLIST_FILES=	bin/kc man/man1/kc.1.gz

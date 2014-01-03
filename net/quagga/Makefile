@@ -22,7 +22,6 @@ ACLOCAL_ARGS=	-I${LOCALBASE}/share/aclocal
 BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-FETCH_ARGS=	-Fpr
 
 MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8 watchquagga.8

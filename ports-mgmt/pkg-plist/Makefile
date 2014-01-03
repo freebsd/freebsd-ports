@@ -15,7 +15,6 @@ USE_PYTHON=	yes
 MAN1=		pkg-plist.1
 PLIST_FILES=	bin/pkg-plist
 NO_BUILD=	yes
-FETCH_ARGS=	-Fpr
 
 NO_STAGE=	yes
 do-install:

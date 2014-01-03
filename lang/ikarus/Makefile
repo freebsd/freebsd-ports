@@ -18,7 +18,6 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 # Both install bin/scheme-script
 CONFLICTS=	petite-chez-*
 
-FETCH_ARGS=	-Fpr
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=\

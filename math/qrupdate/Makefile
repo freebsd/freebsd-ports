@@ -13,8 +13,6 @@ COMMENT=	Fortran library for fast updates of QR and Cholesky decomposition
 
 LIB_DEPENDS=	blas.2:${PORTSDIR}/math/blas lapack.4:${PORTSDIR}/math/lapack
 
-FETCH_ARGS=	-p
-
 USES=		gmake
 
 NO_STAGE=	yes

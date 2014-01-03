@@ -11,8 +11,6 @@ COMMENT=	Use ViM as a pager
 
 RUN_DEPENDS=	vim:${PORTSDIR}/editors/vim
 
-FETCH_ARGS=	-prR
-
 OPTIONS_DEFINE=	VIMCAT BASH_DEVEL
 OPTIONS_DEFAULT=VIMCAT
 VIMCAT_DESC=	Install vimcat(1) (requires shells/bash)

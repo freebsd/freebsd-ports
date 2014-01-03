@@ -15,7 +15,6 @@ COMMENT=	Enhanced X11 screen locker
 LICENSE=	MIT
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE
 
-FETCH_ARGS=	"-Fpr"
 USE_BZIP2=	yes
 USE_XORG=	x11 xt xproto xext xpm
 

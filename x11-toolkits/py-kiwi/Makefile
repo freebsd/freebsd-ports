@@ -24,8 +24,6 @@ USE_XZ=	yes
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
-FETCH_ARGS=	-rRp
-
 NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)

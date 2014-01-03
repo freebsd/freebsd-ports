@@ -12,7 +12,6 @@ COMMENT=	Provisioning salted minions to various cloud providers
 
 LICENSE=	APACHE20
 
-FETCH_ARGS=	-pRr
 USE_PYTHON=	2.6-2.7
 USE_PYDISTUTILS=	yes
 

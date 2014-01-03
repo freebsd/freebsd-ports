@@ -15,8 +15,6 @@ BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkre
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
-FETCH_ARGS=	-Fpr
-
 USES=		pkgconfig
 
 PLIST_FILES=	libexec/gkrellm2/plugins/helium.so

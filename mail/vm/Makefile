@@ -12,7 +12,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jhein@symmetricom.com
 COMMENT=	A mail reader running inside Emacs or XEmacs
 
-FETCH_ARGS=	-prR
 GNU_CONFIGURE=	yes
 USE_EMACS=	yes
 USE_GMAKE=	yes

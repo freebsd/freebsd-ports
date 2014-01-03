@@ -17,7 +17,6 @@ COMMENT=	Optimized BLAS library based on GotoBLAS2
 LICENSE=	BSD
 
 DIST_SUBDIR=	openblas
-FETCH_ARGS=	-Fpr
 GH_ACCOUNT=	xianyi
 GH_PROJECT=	OpenBLAS
 GH_TAGNAME=	${GH_COMMIT}

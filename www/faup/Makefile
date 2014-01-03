@@ -15,7 +15,6 @@ LICENSE_NAME=	Do What The [expletive] You Want To Public License, Version 2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-FETCH_ARGS=	-Fpr
 USES=		cmake:outsource
 USE_LDCONFIG=	yes
 USE_LUA=	5.1

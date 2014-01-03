@@ -11,7 +11,6 @@ COMMENT=	3D video player with multi-display support
 
 LICENSE=	GPLv3
 
-FETCH_ARGS=	-Fpr
 USES=		gmake pkgconfig
 USE_XZ=		yes
 GNU_CONFIGURE=	yes

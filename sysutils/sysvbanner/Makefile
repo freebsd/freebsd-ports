@@ -9,8 +9,6 @@ MASTER_SITES=	http://github.com/uffejakobsen/${PORTNAME}/archive/v${PORTVERSION}
 MAINTAINER=	uffe@uffe.org
 COMMENT=	SysV banner
 
-FETCH_ARGS=	-Fpr
-
 USES=		gmake
 
 ALL_TARGET=	banner
