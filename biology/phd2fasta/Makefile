@@ -38,7 +38,7 @@ do-install:
 .for f in ${BINARIES}
 	@${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin/
 .endfor
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}

@@ -65,7 +65,7 @@ do-install:
 .endfor
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/test/* ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/license ${DOCSDIR}

@@ -19,8 +19,11 @@ SUB_FILES=	pkg-message
 STRIP=
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 do-install:
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/License.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ReleaseNotes.txt ${DOCSDIR}

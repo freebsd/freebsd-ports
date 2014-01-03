@@ -59,7 +59,7 @@ do-install:
 .for xlink in ${XDFORMAT_LINKS}
 	@(cd ${PREFIX}/bin && ${LN} -s xdformat ${xlink})
 .endfor
-.if !defined (NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_MAN} ${WRKSRC}/${doc} ${DOCSDIR}

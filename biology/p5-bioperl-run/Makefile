@@ -129,10 +129,13 @@ MAN3=	Bio::Tools::Run::Phylo::Phylip::DrawGram.3 \
 
 # now install all extra stuff (docs, examples, scripts)
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 post-install:
 	${MKDIR} ${DATADIR}
 	@${CP} -Rv ${WRKSRC}/scripts ${DATADIR}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 .for doc in AUTHORS Changes INSTALL.PROGRAMS README
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
