@@ -21,9 +21,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAKE_JOBS_SAFE=	yes
 
-CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
+CONFLICTS=	emacs-19.* emacs21-* emacs22-* emacs23-* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
-		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
+		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]* \
+		emacs-devel-*
 
 EMACS_VER=	24.3
 GNU_CONFIGURE=	yes

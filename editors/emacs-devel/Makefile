@@ -16,8 +16,8 @@ COMMENT=	GNU editing macros
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
-		xemacs-[0-9]* xemacs-devel-[0-9]* \
+CONFLICTS=	emacs-19.* emacs21-* emacs22-* emacs23-* \
+		emacs24-* xemacs-[0-9]* xemacs-devel-[0-9]* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]* \
 		emacs-nox11-[0-9]*
 

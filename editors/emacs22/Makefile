@@ -23,9 +23,10 @@ LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
 		png15:${PORTSDIR}/graphics/png
 .endif
 
-CONFLICTS=	emacs-19.* emacs-21.* emacs-23.* emacs-24.* \
+CONFLICTS=	emacs-19.* emacs21-* emacs23-* emacs24-* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
-		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]*
+		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]* \
+		emacs-devel-* emacs-nox11-*
 
 EMACS_VER=	22.3
 GNU_CONFIGURE=	yes
