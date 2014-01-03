@@ -3,7 +3,7 @@
 
 PORTNAME=	fam
 PORTVERSION=	2.6.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	ftp://oss.sgi.com/projects/fam/download/
 DIST_SUBDIR=	${PORTNAME}
@@ -23,14 +23,14 @@ SUB_FILES=	pkg-message
 #CONFLICTS_INSTALL=	gamin-[0-9]*
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/-lstdc++//g" ${WRKSRC}/Makefile.am
+	${REINPLACE_CMD} -e "s/-lstdc++//g" ${WRKSRC}/libfam/Makefile.am
 
 pre-configure:
-	@${RM} -fr ${WRKSRC}/util
-	@${MV} ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.am.orig
-	@${SED} -e s/util// -e /SUBDIRS/q \
+	${RM} -fr ${WRKSRC}/util
+	${MV} ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.am.orig
+	${SED} -e s/util// -e /SUBDIRS/q \
 		<${WRKSRC}/Makefile.am.orig >${WRKSRC}/Makefile.am
-	@${CP} ${FILESDIR}/mntent* ${WRKSRC}/fam
+	${CP} ${FILESDIR}/mntent* ${WRKSRC}/fam
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfam.so.0

@@ -61,7 +61,7 @@ struct {
 	{ MNT_SYNCHRONOUS,	"sync"},
 	{ MNT_UNION,		"union"},
 	{ MNT_NOCLUSTERR,	"noclusterr"},
-	{ MNT_NOCLUSTERW,	"noclusterw"},
+	{ static_cast<int>(MNT_NOCLUSTERW),	"noclusterw"},
 	{ MNT_SUIDDIR,		"suiddir"},
 #ifdef MNT_SNAPSHOT
 	{ MNT_SNAPSHOT,		"snapshot"},
