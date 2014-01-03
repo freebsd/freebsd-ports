@@ -13,13 +13,13 @@ COMMENT=	Kaleidoscope on X
 USE_XORG=	x11 xpm xaw
 ALL_TARGET=	xmangekyou
 
-MANCOMPRESSED=	yes
-MAN1=		xmangekyou.1
 PORTDOCS=	COPYRIGHT.euc HISTORY.euc README.euc
-PLIST_FILES=	bin/xmangekyou lib/X11/XMangekyou/animation.dat
+PLIST_FILES=	bin/xmangekyou lib/X11/XMangekyou/animation.dat \
+		man/man1/xmangekyou.1.gz
 PLIST_DIRS=	lib/X11/XMangekyou
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -30,13 +30,13 @@ post-patch:
 		 s|-L/usr/X11R6/|-L$${LOCALBASE}/|g' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xmangekyou ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xmangekyou.1.gz ${MANPREFIX}/man/man1
-	@${MKDIR} ${PREFIX}/lib/X11/XMangekyou
-	${INSTALL_DATA} ${WRKSRC}/animation.dat ${PREFIX}/lib/X11/XMangekyou
+	${INSTALL_PROGRAM} ${WRKSRC}/xmangekyou ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xmangekyou.1.gz ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/XMangekyou
+	${INSTALL_DATA} ${WRKSRC}/animation.dat ${STAGEDIR}${PREFIX}/lib/X11/XMangekyou
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.euc ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.euc ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
