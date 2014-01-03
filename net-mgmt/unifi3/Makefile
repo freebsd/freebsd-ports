@@ -34,6 +34,7 @@ PLIST_SUB+=	GROUPS="${GROUPS}"
 WRKSRC=	${WRKDIR}/UniFi
 
 RESTRICTED=	Redistribution of bundled firmware images is not permitted
+CONFLICTS=	unifi2-*
 
 do-install:
 	${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/unifi
