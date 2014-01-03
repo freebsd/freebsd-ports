@@ -12,7 +12,6 @@ COMMENT=	C and C++ client library to the memcached server
 LIB_DEPENDS?=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libevent-1.4.so:${PORTSDIR}/devel/libevent
 
-FETCH_ARGS?=	-pRr
 USES=		gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

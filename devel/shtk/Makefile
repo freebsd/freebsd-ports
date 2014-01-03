@@ -11,8 +11,6 @@ COMMENT=	Application toolkit for POSIX-compliant shell scripts
 
 LICENSE=	BSD
 
-FETCH_ARGS=     -Fpr
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--without-atf
 

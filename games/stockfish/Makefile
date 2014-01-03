@@ -24,7 +24,6 @@ MYARCH=		${ARCH}
 BOOKDIR=	.
 PORTDOCS=	Readme.md polyglot.ini
 PORTDATA=	Book.bin
-FETCH_ARGS=	-Fpr
 
 PLIST_FILES=	bin/stockfish
 

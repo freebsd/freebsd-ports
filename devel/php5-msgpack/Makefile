@@ -16,7 +16,6 @@ WRKSRC=		${WRKDIR}/msgpack-msgpack-${GITVERSION}/php
 GITHUB_USER=	msgpack
 GITHUB_REPO=	msgpack
 GITVERSION=	980a652
-FETCH_ARGS=	-pRr
 
 USE_PHP=	session
 USE_PHP_BUILD=	yes

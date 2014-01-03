@@ -16,7 +16,6 @@ OPTIONS_DEFINE=	NLS
 
 CONFLICTS_INSTALL=	xpad-current-[0-9]*
 
-FETCH_ARGS=	"-pRr"
 USE_BZIP2=	yes
 USE_XORG=	x11 sm
 USE_GNOME=	gtk20 gnomehier intltool

@@ -9,7 +9,6 @@ MASTER_SITES=	http://smbolton.com/linux/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alsa compatibility library to build DSSI
 
-FETCH_ARGS?=	-Fpr
 USES=		pathfix
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

@@ -21,7 +21,6 @@ USE_GL=		gl glu
 WRKSRC=		${WRKDIR}/bl24_lin_src
 BUILD_WRKSRC=	${WRKSRC}/BlockOut
 
-FETCH_ARGS?=	-pRr
 SUB_FILES=	pkg-message
 
 NO_STAGE=	yes

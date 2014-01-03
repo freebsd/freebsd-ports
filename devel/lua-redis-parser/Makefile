@@ -13,7 +13,6 @@ COMMENT=	Redis reply parser and request constructor library for Lua
 
 BROKEN=		fails checksum because uses moving master branch
 
-FETCH_ARGS=	-pRr
 USE_LUA?=	5.1
 GITVERSION=	0-g32cee57
 WRKSRC=		${WRKDIR}/agentzh-lua-redis-parser-${GITVERSION:S/^0-g//}

@@ -21,8 +21,6 @@ USE_QT4=	gui network \
 		qmake_build moc_build rcc_build uic_build
 INSTALLS_ICONS=	yes
 
-FETCH_ARGS=	-Fpr
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		 ${WRKSRC}/cmake/modules/*.cmake

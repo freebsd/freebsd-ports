@@ -20,7 +20,6 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 CONFLICTS=	texlive-base-*
 
-FETCH_ARGS=	-Fpr
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAKE_JOBS_UNSAFE=yes
 

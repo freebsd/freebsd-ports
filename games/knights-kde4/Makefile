@@ -14,7 +14,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/gnuchess:${PORTSDIR}/games/gnuchess
 
 LICENSE=	GPLv2
 
-FETCH_ARGS?=	-Fpr
 USE_BZIP2=	yes
 USES=		cmake:outsource
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4 workspace libkdegames

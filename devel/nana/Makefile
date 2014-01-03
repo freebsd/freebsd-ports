@@ -10,7 +10,6 @@ MASTER_SITES=	http://download.savannah.gnu.org/releases/nana/ \
 MAINTAINER=	pjm@gnu.org
 COMMENT=	Support for assertion checking and logging using GNU C and GDB
 
-FETCH_ARGS=	-Fpr
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

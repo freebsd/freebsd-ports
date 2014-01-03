@@ -17,7 +17,6 @@ BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk \
 		txt2man:${PORTSDIR}/textproc/txt2man
 LIB_DEPENDS=	libiodbc.so:${PORTSDIR}/databases/libiodbc
 
-FETCH_ARGS?=	-Fpr
 USES=		bison pkgconfig iconv
 USE_AUTOTOOLS=	libtool autoconf automake
 USE_LDCONFIG=	yes

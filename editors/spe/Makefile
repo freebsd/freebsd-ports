@@ -14,7 +14,6 @@ COMMENT=	Stani's Python Editor
 
 NO_BUILD=	yes
 
-FETCH_ARGS=	-Fpr
 USE_PYTHON=	yes
 USE_WX=		2.6
 WANT_UNICODE=	yes
