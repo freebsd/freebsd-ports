@@ -23,6 +23,8 @@ DOCFILES=	README.crc README.hexbin README.macput README.unpit \
 		README.zoom README.crc.orig README.macget README.scan \
 		README.unsit ../README
 
+.include <bsd.port.options.mk>
+
 # The distribution has a naff install target which doesn't install man
 # pages so here is a decent one.
 #
@@ -44,7 +46,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/tomac.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/frommac.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/man/macutil.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} "===>  Installing supplementary documents..."
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCFILES}

@@ -24,11 +24,13 @@ PORTDOCS=	api LICENSE License.html readme.html tarman.html
 JARFILES=	tar.jar
 PLIST_FILES=	${JARFILES:S,^,%%JAVAJARDIR%%/,}
 
+.include <bsd.port.options.mk>
+
 do-install:
 	@${ECHO_MSG} -n ">> Install JAR file in ${JAVAJARDIR}..."
 	@${INSTALL_DATA} ${WRKSRC}/jars/tar.jar ${JAVAJARDIR}/
 	@${ECHO_MSG} " [ DONE ]"
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@${MKDIR} ${DOCSDIR}
 	@cd ${WRKSRC}/doc && ${FIND} ${PORTDOCS} \
