@@ -24,6 +24,9 @@ ALL_TARGET=	${PORTNAME}
 MAN1=		hanzim.1
 
 NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' ${WRKSRC}/hanzim.c
 
@@ -32,7 +35,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/hanzim.man ${PREFIX}/man/man1/hanzim.1
 	@${MKDIR} ${PREFIX}/lib/hanzim
 	${INSTALL_DATA} ${WRKSRC}/Data/* ${PREFIX}/lib/hanzim
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/hanzim.doc ${DOCSDIR}
 .endif

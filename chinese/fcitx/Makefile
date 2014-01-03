@@ -93,9 +93,7 @@ EXTRA_PATCHES+=	${FILESDIR}/tpunc-data_punc.mb.zh_CN
 CMAKE_ARGS+=	-DENABLE_DEBUG=ON
 .endif
 
-.if defined(NOPORTDOCS)
-EXTRA_PATCHES+=	${FILESDIR}/nodocs-doc_CMakeLists.txt
-.endif
+DOCS_EXTRA_PATCHES=	${FILESDIR}/nodocs-doc_CMakeLists.txt
 
 .if defined(NOPORTDATA)
 IGNORE=		code tables are required, undefine NOPORTDATA
