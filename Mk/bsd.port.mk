@@ -1560,7 +1560,7 @@ WWWGRP?=	www
 .if !defined(BEFOREPORTMK) && !defined(INOPTIONSMK)
 
 .if defined(_POSTMKINCLUDED)
-DEV_ERORR=	"${PKGNAME}: Makefile error: you cannot include bsd.port[.post].mk twice"
+DEV_ERROR+=	"${PKGNAME}: Makefile error: you cannot include bsd.port[.post].mk twice"
 	@${FALSE}
 .endif
 
