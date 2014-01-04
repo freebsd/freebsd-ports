@@ -13,6 +13,16 @@ include/bzlib.h
 lib/libbz2.a
 lib/libbz2.so
 lib/libbz2.so.1
+man/man1/bzgrep.1.gz
+man/man1/bzip2.1.gz
+man/man1/bzmore.1.gz
+man/man1/bunzip2.1.gz
+man/man1/bz2cat.1.gz
+man/man1/bzcat.1.gz
+man/man1/bzegrep.1.gz
+man/man1/bzfgrep.1.gz
+man/man1/bzip2recover.1.gz
+man/man1/bzless.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/manual.ps.bz2
 %%PORTDOCS%%%%DOCSDIR%%/manual.xml
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
