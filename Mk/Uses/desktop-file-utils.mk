@@ -19,10 +19,6 @@ IGNORE=	USES=desktop-file-utils does not require args
 BUILD_DEPENDS+=	update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
 RUN_DEPENDS+=	update-desktop-database:${PORTSDIR}/devel/desktop-file-utils
 
-# bolt our post-install target to post-install
-.PHONY: desktop-file-post-install
-post-install: desktop-file-post-install
-
 desktop-file-post-install:
 .if defined(NO_STAGE)
 # run for port post-install
