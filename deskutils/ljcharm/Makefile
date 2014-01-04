@@ -16,6 +16,9 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
 PORTDOCS=	*
+PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	${REINPLACE_CMD} -e 's,share/doc/charm,${DOCSDIR},' ${WRKSRC}/setup.py
