@@ -7,7 +7,7 @@ CATEGORIES?=	mail news ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/alpine/
 DIST_SUBDIR=	alpine-${PORTVERSION}
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Mail and news client descended from Pine
 
 OPTIONS_DEFINE+=	THREADS MOUSE NLS ISPELL NOSPELL
