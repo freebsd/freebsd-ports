@@ -3,6 +3,7 @@
 
 PORTNAME=	tarsnap
 PORTVERSION=	1.0.35
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tarsnap.com/download-http/
 DISTNAME=	${PORTNAME}-autoconf-${PORTVERSION}
@@ -10,8 +11,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	cperciva@tarsnap.com
 COMMENT=	Online encrypted backup service (client)
-
-RESTRICTED=	license restricts redistribution of source and binaries
 
 GNU_CONFIGURE=	yes
 USES=		gmake
@@ -27,10 +26,18 @@ SSE2_CONFIGURE_ENABLE=	sse2
 SSE2_CFLAGS=	-msse2
 
 NO_STAGE=	yes
+
+.include <bsd.port.pre.mk>
+
+# safety check to ensure that we don't violate the license
+.if exists(${PATCHDIR})
+RESTRICTED=     license only allows redistribution and use of unmodified source and binaries
+.endif
+
 post-install:
 	@if [ ! -f ${PREFIX}/etc/tarsnap.conf ]; then \
 	    ${CP} -p ${PREFIX}/etc/tarsnap.conf.sample ${PREFIX}/etc/tarsnap.conf ; \
 	fi
 	@${CAT} ${PKGDIR}/pkg-message
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
