@@ -6,6 +6,7 @@ PORTVERSION=	5.2.1
 PORTREVISION=	3
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm5.org/files/rpm/rpm-${PORTVERSION:R}/
+PKGNAMESUFFIX=	5
 
 MAINTAINER=	afb@rpm5.org
 COMMENT=	The RPM Package Manager
@@ -36,8 +37,7 @@ CONFIGURE_ARGS=	--without-js
 USES=		gmake perl5
 USE_PERL5=	build
 USE_LDCONFIG=	yes
-LATEST_LINK=	rpm5
-CONFLICTS=	rpm-3.* rpm-4.*
+CONFLICTS=	rpm-3.* rpm-4.* rpm4-*
 
 .include <bsd.port.options.mk>
 

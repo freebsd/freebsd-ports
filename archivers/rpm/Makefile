@@ -14,7 +14,7 @@ COMMENT=	The Red Hat Package Manager
 
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
-CONFLICTS=	rpm-[45].*
+CONFLICTS=	rpm-[45].* rpm[45]-*
 
 NO_STAGE=	yes
 USES=		gmake
