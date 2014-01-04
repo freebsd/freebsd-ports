@@ -6,6 +6,7 @@ PORTVERSION=	1.1.1
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://offload1.icculus.org/${PORTNAME}/downloads/
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A library to provide abstract access to various archives
@@ -13,7 +14,6 @@ COMMENT=	A library to provide abstract access to various archives
 USES=		cmake
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-NO_LATEST_LINK=	yes
 
 NO_STAGE=	yes
 patch-autotools-libtool:
