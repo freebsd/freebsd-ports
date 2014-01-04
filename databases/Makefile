@@ -537,6 +537,7 @@
     SUBDIR += pecl-dbase
     SUBDIR += pecl-drizzle
     SUBDIR += pecl-handlersocket
+    SUBDIR += pecl-leveldb
     SUBDIR += pecl-mdbtools
     SUBDIR += pecl-memcache
     SUBDIR += pecl-memcached
