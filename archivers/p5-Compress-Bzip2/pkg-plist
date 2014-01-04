@@ -3,6 +3,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/Bzip2/Bzip2.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/Bzip2/Bzip2.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/Bzip2/.packlist
+%%PERL5_MAN3%%/Compress::Bzip2.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress/Bzip2
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Compress
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Compress
