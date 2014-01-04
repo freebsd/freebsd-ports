@@ -6562,11 +6562,10 @@ _${_t}_REAL_SUSEQ+=	${s}
 .ORDER: ${_${_t}_DEP} ${_${_t}_REAL_SEQ}
 .endfor
 
-.PHONY: ${_PHONY_TARGETS}
-
 .for target in extract patch configure build stage install package
 
 .if !target(${target}) && defined(_OPTIONS_OK)
+_PHONY_TARGETS+= ${target}
 ${target}: ${${target:U}_COOKIE}
 .elif !target(${target})
 ${target}: config-conditional
@@ -6609,7 +6608,7 @@ ${${target:U}_COOKIE}::
 
 .endfor
 
-.PHONY: check-sanity fetch pkg
+.PHONY: ${_PHONY_TARGETS} check-sanity fetch pkg
 
 .if !target(check-sanity)
 check-sanity: ${_SANITY_REAL_SEQ}
