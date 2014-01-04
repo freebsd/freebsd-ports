@@ -2,3 +2,4 @@ include/umidi20.h
 lib/libumidi20.a
 lib/libumidi20.so
 lib/libumidi20.so.1
+man/man3/umidi20.3.gz
