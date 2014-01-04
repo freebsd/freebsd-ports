@@ -1,0 +1,100 @@
+# HG changeset patch
+# User smarks
+# Date 1381854512 -3600
+#      Tue Oct 15 17:28:32 2013 +0100
+# Node ID a1bc92467cc07e1cb3c93d0b3b629eda4c45238f
+# Parent  1e7a5ebc8013b812de73e452e809a3b545dd252f
+8014987: Augment serialization handling
+Reviewed-by: alanb, coffeys, skoivu
+
+diff -r 1e7a5ebc8013 -r a1bc92467cc0 src/share/classes/java/io/ObjectInputStream.java
+--- jdk/src/share/classes/java/io/ObjectInputStream.java	Thu Jul 18 10:12:56 2013 +0200
++++ jdk/src/share/classes/java/io/ObjectInputStream.java	Tue Oct 15 17:28:32 2013 +0100
+@@ -489,11 +489,12 @@
+     public void defaultReadObject()
+         throws IOException, ClassNotFoundException
+     {
+-        if (curContext == null) {
++        SerialCallbackContext ctx = curContext;
++        if (ctx == null) {
+             throw new NotActiveException("not in call to readObject");
+         }
+-        Object curObj = curContext.getObj();
+-        ObjectStreamClass curDesc = curContext.getDesc();
++        Object curObj = ctx.getObj();
++        ObjectStreamClass curDesc = ctx.getDesc();
+         bin.setBlockDataMode(false);
+         defaultReadFields(curObj, curDesc);
+         bin.setBlockDataMode(true);
+@@ -527,11 +528,12 @@
+     public ObjectInputStream.GetField readFields()
+         throws IOException, ClassNotFoundException
+     {
+-        if (curContext == null) {
++        SerialCallbackContext ctx = curContext;
++        if (ctx == null) {
+             throw new NotActiveException("not in call to readObject");
+         }
+-        Object curObj = curContext.getObj();
+-        ObjectStreamClass curDesc = curContext.getDesc();
++        Object curObj = ctx.getObj();
++        ObjectStreamClass curDesc = ctx.getDesc();
+         bin.setBlockDataMode(false);
+         GetFieldImpl getField = new GetFieldImpl(curDesc);
+         getField.readFields();
+@@ -1964,7 +1966,6 @@
+     private void defaultReadFields(Object obj, ObjectStreamClass desc)
+         throws IOException
+     {
+-        // REMIND: is isInstance check necessary?
+         Class cl = desc.forClass();
+         if (cl != null && obj != null && !cl.isInstance(obj)) {
+             throw new ClassCastException();
+diff -r 1e7a5ebc8013 -r a1bc92467cc0 src/share/classes/java/io/ObjectOutputStream.java
+--- jdk/src/share/classes/java/io/ObjectOutputStream.java	Thu Jul 18 10:12:56 2013 +0200
++++ jdk/src/share/classes/java/io/ObjectOutputStream.java	Tue Oct 15 17:28:32 2013 +0100
+@@ -430,11 +430,12 @@
+      *          <code>OutputStream</code>
+      */
+     public void defaultWriteObject() throws IOException {
+-        if ( curContext == null ) {
++        SerialCallbackContext ctx = curContext;
++        if (ctx == null) {
+             throw new NotActiveException("not in call to writeObject");
+         }
+-        Object curObj = curContext.getObj();
+-        ObjectStreamClass curDesc = curContext.getDesc();
++        Object curObj = ctx.getObj();
++        ObjectStreamClass curDesc = ctx.getDesc();
+         bout.setBlockDataMode(false);
+         defaultWriteFields(curObj, curDesc);
+         bout.setBlockDataMode(true);
+@@ -452,11 +453,12 @@
+      */
+     public ObjectOutputStream.PutField putFields() throws IOException {
+         if (curPut == null) {
+-            if (curContext == null) {
++            SerialCallbackContext ctx = curContext;
++            if (ctx == null) {
+                 throw new NotActiveException("not in call to writeObject");
+             }
+-            Object curObj = curContext.getObj();
+-            ObjectStreamClass curDesc = curContext.getDesc();  
++            Object curObj = ctx.getObj();
++            ObjectStreamClass curDesc = ctx.getDesc();
+             curPut = new PutFieldImpl(curDesc);
+         }
+         return curPut;
+@@ -1516,7 +1518,11 @@
+     private void defaultWriteFields(Object obj, ObjectStreamClass desc)
+         throws IOException
+     {
+-        // REMIND: perform conservative isInstance check here?
++        Class<?> cl = desc.forClass();
++        if (cl != null && obj != null && !cl.isInstance(obj)) {
++            throw new ClassCastException();
++        }
++
+         desc.checkDefaultSerialize();
+ 
+         int primDataSize = desc.getPrimDataSize();

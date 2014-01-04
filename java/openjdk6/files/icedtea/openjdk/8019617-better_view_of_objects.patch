@@ -1,0 +1,68 @@
+# HG changeset patch
+# User malenkov
+# Date 1373994034 -14400
+#      Tue Jul 16 21:00:34 2013 +0400
+# Node ID 9cfb9105241489a5fbc3fcfdea15a6aee15b2cfc
+# Parent  d80e6f4a4eec26137af6726cfb8abfe108ce23ea
+8019617: Better view of objects
+Reviewed-by: art, skoivu
+
+diff -r d80e6f4a4eec -r 9cfb91052414 src/share/classes/javax/swing/text/html/ObjectView.java
+--- jdk/src/share/classes/javax/swing/text/html/ObjectView.java	Tue Aug 06 16:04:14 2013 +0200
++++ jdk/src/share/classes/javax/swing/text/html/ObjectView.java	Tue Jul 16 21:00:34 2013 +0400
+@@ -31,6 +31,9 @@
+ import java.beans.*;
+ import java.lang.reflect.*;
+ 
++import sun.reflect.misc.MethodUtil;
++import sun.reflect.misc.ReflectUtil;
++
+ /**
+  * Component decorator that implements the view interface
+  * for &lt;object&gt; elements.
+@@ -87,6 +90,7 @@
+         AttributeSet attr = getElement().getAttributes();
+         String classname = (String) attr.getAttribute(HTML.Attribute.CLASSID);
+         try {
++            ReflectUtil.checkPackageAccess(classname);
+             Class c = Class.forName(classname, true,Thread.currentThread().
+                                     getContextClassLoader());
+             Object o = c.newInstance();
+@@ -116,28 +120,6 @@
+     }
+ 
+     /**
+-     * Get a Class object to use for loading the
+-     * classid.  If possible, the Classloader
+-     * used to load the associated Document is used.
+-     * This would typically be the same as the ClassLoader
+-     * used to load the EditorKit.  If the documents
+-     * ClassLoader is null,
+-     * <code>Class.forName</code> is used.
+-     */
+-    private Class getClass(String classname) throws ClassNotFoundException {
+-        Class klass;
+-
+-        Class docClass = getDocument().getClass();
+-        ClassLoader loader = docClass.getClassLoader();
+-        if (loader != null) {
+-            klass = loader.loadClass(classname);
+-        } else {
+-            klass = Class.forName(classname);
+-        }
+-        return klass;
+-    }
+-
+-    /**
+      * Initialize this component according the KEY/VALUEs passed in
+      * via the &lt;param&gt; elements in the corresponding
+      * &lt;object&gt; element.
+@@ -170,7 +152,7 @@
+                 }
+                 Object [] args = { value };
+                 try {
+-                    writer.invoke(comp, args);
++                    MethodUtil.invoke(writer, comp, args);
+                 } catch (Exception ex) {
+                     System.err.println("Invocation failed");
+                     // invocation code

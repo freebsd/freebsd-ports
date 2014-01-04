@@ -1,0 +1,28 @@
+# HG changeset patch
+# User weijun
+# Date 1371090681 -28800
+#      Thu Jun 13 10:31:21 2013 +0800
+# Node ID e10e9bfb11b073ee1c108e7a51078d3ead7a2d72
+# Parent  a1bc92467cc07e1cb3c93d0b3b629eda4c45238f
+8015731: Subject java.security.auth.subject to improvements
+Reviewed-by: skoivu, mullan
+
+diff -r a1bc92467cc0 -r e10e9bfb11b0 src/share/classes/javax/security/auth/Subject.java
+--- jdk/src/share/classes/javax/security/auth/Subject.java	Tue Oct 15 17:28:32 2013 +0100
++++ jdk/src/share/classes/javax/security/auth/Subject.java	Thu Jun 13 10:31:21 2013 +0800
+@@ -1305,8 +1305,14 @@
+         {
+             ObjectInputStream.GetField fields = ois.readFields();
+             subject = (Subject) fields.get("this$0", null);
+-            elements = (LinkedList<E>) fields.get("elements", null);
+             which = fields.get("which", 0);
++
++            LinkedList<E> tmp = (LinkedList<E>) fields.get("elements", null);
++            if (tmp.getClass() != LinkedList.class) {
++                elements = new LinkedList<E>(tmp);
++            } else {
++                elements = tmp;
++            }
+         }
+     }
+ 

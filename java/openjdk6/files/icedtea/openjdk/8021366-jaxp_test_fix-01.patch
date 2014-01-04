@@ -1,0 +1,21 @@
+# HG changeset patch
+# User joehw
+# Date 1375178534 25200
+#      Tue Jul 30 03:02:14 2013 -0700
+# Node ID 674ada27a93f4ecd359617d5a27cb2dfe52c44b4
+# Parent  0927621944ccb163d7dcdea7b94b10dfab58f5f1
+8021366: java_util/Properties/PropertiesWithOtherEncodings fails during 7u45 nightly testing
+Reviewed-by: lancea, alanb, dfuchs, mullan
+
+diff -r 0927621944cc -r 674ada27a93f drop_included/jaxp_src/src/com/sun/xml/internal/stream/Entity.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/xml/internal/stream/Entity.java	Tue Oct 29 08:01:29 2013 +0000
++++ jaxp/drop_included/jaxp_src/src/com/sun/xml/internal/stream/Entity.java	Tue Jul 30 03:02:14 2013 -0700
+@@ -248,7 +248,7 @@
+         public int fBufferSize = DEFAULT_BUFFER_SIZE;
+ 
+         /** Default buffer size before we've finished with the XMLDecl:  */
+-        public static final int DEFAULT_XMLDECL_BUFFER_SIZE = 64;
++        public static final int DEFAULT_XMLDECL_BUFFER_SIZE = 28;
+ 
+         /** Default internal entity buffer size (1024). */
+         public static final int DEFAULT_INTERNAL_BUFFER_SIZE = 1024;

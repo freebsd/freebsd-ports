@@ -1,0 +1,156 @@
+# HG changeset patch
+# User sjiang
+# Date 1374135176 -7200
+#      Thu Jul 18 10:12:56 2013 +0200
+# Node ID 1e7a5ebc8013b812de73e452e809a3b545dd252f
+# Parent  698fe468e8b9385c2f74709dca823800b32e0b55
+8014534: Better profiling support
+Summary: Validation of parameters
+Reviewed-by: sspitsyn, skoivu, mchung
+
+diff -r 698fe468e8b9 -r 1e7a5ebc8013 src/share/classes/com/sun/demo/jvmti/hprof/Tracker.java
+--- jdk/src/share/classes/com/sun/demo/jvmti/hprof/Tracker.java	Tue Oct 15 17:01:56 2013 +0100
++++ jdk/src/share/classes/com/sun/demo/jvmti/hprof/Tracker.java	Thu Jul 18 10:12:56 2013 +0200
+@@ -53,7 +53,10 @@
+ 
+     public static void ObjectInit(Object obj)
+     {
+-        if ( engaged != 0 ) {
++        if ( engaged != 0) {
++            if (obj == null) {
++                throw new IllegalArgumentException("Null object.");
++            }
+             nativeObjectInit(Thread.currentThread(), obj);
+         }
+     }
+@@ -66,7 +69,10 @@
+ 
+     public static void NewArray(Object obj)
+     {
+-        if ( engaged != 0 ) {
++        if ( engaged != 0) {
++            if (obj == null) {
++                throw new IllegalArgumentException("Null object.");
++            }
+             nativeNewArray(Thread.currentThread(), obj);
+         }
+     }
+@@ -82,6 +88,14 @@
+     public static void CallSite(int cnum, int mnum)
+     {
+         if ( engaged != 0 ) {
++            if (cnum < 0) {
++                throw new IllegalArgumentException("Negative class index");
++            }
++
++            if (mnum < 0) {
++                throw new IllegalArgumentException("Negative method index");
++            }
++
+             nativeCallSite(Thread.currentThread(), cnum, mnum);
+         }
+     }
+@@ -95,6 +109,14 @@
+     public static void ReturnSite(int cnum, int mnum)
+     {
+         if ( engaged != 0 ) {
++            if (cnum < 0) {
++                throw new IllegalArgumentException("Negative class index");
++            }
++
++            if (mnum < 0) {
++                throw new IllegalArgumentException("Negative method index");
++            }
++
+             nativeReturnSite(Thread.currentThread(), cnum, mnum);
+         }
+     }
+diff -r 698fe468e8b9 -r 1e7a5ebc8013 src/share/demo/jvmti/hprof/hprof_class.c
+--- jdk/src/share/demo/jvmti/hprof/hprof_class.c	Tue Oct 15 17:01:56 2013 +0100
++++ jdk/src/share/demo/jvmti/hprof/hprof_class.c	Thu Jul 18 10:12:56 2013 +0200
+@@ -518,7 +518,12 @@
+     jmethodID  method;
+ 
+     info = get_info(index);
+-    HPROF_ASSERT(mnum < info->method_count);
++    if (mnum >= info->method_count) {
++        jclass newExcCls = (*env)->FindClass(env, "java/lang/IllegalArgumentException");
++        (*env)->ThrowNew(env, newExcCls, "Illegal mnum");
++
++        return NULL;
++    }
+     method = info->method[mnum].method_id;
+     if ( method == NULL ) {
+         char * name;
+@@ -526,7 +531,12 @@
+         jclass clazz;
+ 
+         name  = (char *)string_get(info->method[mnum].name_index);
+-        HPROF_ASSERT(name!=NULL);
++        if (name==NULL) {
++            jclass newExcCls = (*env)->FindClass(env, "java/lang/IllegalArgumentException");
++            (*env)->ThrowNew(env, newExcCls, "Name not found");
++
++            return NULL;
++        }
+         sig   = (char *)string_get(info->method[mnum].sig_index);
+         HPROF_ASSERT(sig!=NULL);
+         clazz = class_get_class(env, index);
+diff -r 698fe468e8b9 -r 1e7a5ebc8013 src/share/demo/jvmti/hprof/hprof_event.c
+--- jdk/src/share/demo/jvmti/hprof/hprof_event.c	Tue Oct 15 17:01:56 2013 +0100
++++ jdk/src/share/demo/jvmti/hprof/hprof_event.c	Thu Jul 18 10:12:56 2013 +0200
+@@ -186,7 +186,12 @@
+ 
+     HPROF_ASSERT(env!=NULL);
+     HPROF_ASSERT(thread!=NULL);
+-    HPROF_ASSERT(cnum!=0 && cnum!=gdata->tracker_cnum);
++    if (cnum == 0 || cnum == gdata->tracker_cnum) {
++        jclass newExcCls = (*env)->FindClass(env, "java/lang/IllegalArgumentException");
++        (*env)->ThrowNew(env, newExcCls, "Illegal cnum.");
++
++        return;
++    }
+ 
+     /* Prevent recursion into any BCI function for this thread (pstatus). */
+     if ( tls_get_tracker_status(env, thread, JNI_FALSE,
+@@ -195,8 +200,10 @@
+ 
+         (*pstatus) = 1;
+         method      = class_get_methodID(env, cnum, mnum);
+-        HPROF_ASSERT(method!=NULL);
+-        tls_push_method(tls_index, method);
++        if (method != NULL) {
++            tls_push_method(tls_index, method);
++        }
++
+         (*pstatus) = 0;
+     }
+ }
+@@ -239,7 +246,13 @@
+ 
+     HPROF_ASSERT(env!=NULL);
+     HPROF_ASSERT(thread!=NULL);
+-    HPROF_ASSERT(cnum!=0 && cnum!=gdata->tracker_cnum);
++
++    if (cnum == 0 || cnum == gdata->tracker_cnum) {
++        jclass newExcCls = (*env)->FindClass(env, "java/lang/IllegalArgumentException");
++        (*env)->ThrowNew(env, newExcCls, "Illegal cnum.");
++
++        return;
++    }
+ 
+     /* Prevent recursion into any BCI function for this thread (pstatus). */
+     if ( tls_get_tracker_status(env, thread, JNI_FALSE,
+@@ -248,8 +261,10 @@
+ 
+         (*pstatus) = 1;
+         method      = class_get_methodID(env, cnum, mnum);
+-        HPROF_ASSERT(method!=NULL);
+-        tls_pop_method(tls_index, thread, method);
++        if (method != NULL) {
++            tls_pop_method(tls_index, thread, method);
++        }
++
+         (*pstatus) = 0;
+     }
+ }

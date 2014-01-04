@@ -1,0 +1,25 @@
+# HG changeset patch
+# User malenkov
+# Date 1375879919 -14400
+#      Wed Aug 07 16:51:59 2013 +0400
+# Node ID 5896fe42b0a429fb5be7abee630b98fa2ec00df3
+# Parent  21358b9e406319f4d9ddfd663572dd71a093ce08
+8021969: The index_AccessAllowed jnlp can not load successfully with exception thrown in the log.
+Reviewed-by: art, skoivu
+
+diff -r 21358b9e4063 -r 5896fe42b0a4 src/share/classes/java/awt/datatransfer/DataFlavor.java
+--- jdk/src/share/classes/java/awt/datatransfer/DataFlavor.java	Mon Jul 29 04:43:41 2013 -0700
++++ jdk/src/share/classes/java/awt/datatransfer/DataFlavor.java	Wed Aug 07 16:51:59 2013 +0400
+@@ -145,11 +145,7 @@
+         } catch (SecurityException exception) {
+             // ignore secured class loaders
+         }
+-        if (fallback != null) {
+-            return Class.forName(className, true, fallback);
+-        } else {
+-            throw new ClassNotFoundException(className);
+-        }
++        return Class.forName(className, true, fallback);
+     }
+ 
+     /*

@@ -1,0 +1,55 @@
+# HG changeset patch
+# User erikj
+# Date 1381850834 -3600
+#      Tue Oct 15 16:27:14 2013 +0100
+# Node ID 8521d2f3d9640e6516d8b71aa2f553bc4028362f
+# Parent  7a6de63e89636f3bfb5b32e2a8d1ea3df1fe2d79
+8012147: Improve tool support
+Summary: Adding libjli to jdk lib dir and removing now redundant rpath entries from executables
+Reviewed-by: alanb, dholmes, ksrini, ahgross
+
+diff -r 7a6de63e8963 -r 8521d2f3d964 make/common/Program.gmk
+--- jdk/make/common/Program.gmk	Tue Oct 15 16:23:56 2013 +0100
++++ jdk/make/common/Program.gmk	Tue Oct 15 16:27:14 2013 +0100
+@@ -78,17 +78,14 @@
+     ifeq ($(PLATFORM), solaris)
+ 	ifeq ($(ARCH_DATA_MODEL), 32)
+ 		LDFLAGS += -R \$$ORIGIN/../lib/$(LIBARCH)/jli
+-		LDFLAGS += -R \$$ORIGIN/../jre/lib/$(LIBARCH)/jli
+ 	else
+ 		LDFLAGS += -R \$$ORIGIN/../../lib/$(LIBARCH)/jli
+-		LDFLAGS += -R \$$ORIGIN/../../jre/lib/$(LIBARCH)/jli
+ 	endif
+     endif
+     ifeq ($(PLATFORM), linux)
+ 	LDFLAGS += -Wl,-z -Wl,origin
+ 	LDFLAGS += -Wl,--allow-shlib-undefined
+ 	LDFLAGS += -Wl,-rpath -Wl,\$$ORIGIN/../lib/$(LIBARCH)/jli
+-	LDFLAGS += -Wl,-rpath -Wl,\$$ORIGIN/../jre/lib/$(LIBARCH)/jli
+     endif
+ endif
+ ifeq ($(PLATFORM), windows)
+diff -r 7a6de63e8963 -r 8521d2f3d964 make/common/Release.gmk
+--- jdk/make/common/Release.gmk	Tue Oct 15 16:23:56 2013 +0100
++++ jdk/make/common/Release.gmk	Tue Oct 15 16:27:14 2013 +0100
+@@ -855,6 +855,11 @@
+ 	      | $(CPIO) -pdum $(JDK_IMAGE_DIR)/jre )
+ 	$(RM) -rf $(JDK_IMAGE_DIR)/jre/man
+ 	$(CHMOD) a+rx `$(FIND) $(JDK_IMAGE_DIR) -type d`
++  ifneq (,$(findstring $(PLATFORM), linux solaris)) # If linux or solaris 
++	($(CD) $(LIBDIR)/.. && $(TAR) cf - \
++	    `$(FIND) lib -name $(LIB_PREFIX)jli.$(LIB_SUFFIX) -print `) | \
++	    ($(CD) $(JDK_IMAGE_DIR) && $(TAR) xf -)
++  endif # PLATFORM
+ 
+ initial-image-jdk64-bindemos:
+ 	for dir in bin demo ; do \
+@@ -891,7 +896,7 @@
+ initial-image-jdk:: initial-image-jdk-setup \
+ 		    initial-image-jdk-db \
+ 		    $(JDK_LICENSES) $(JDK_DOCFILES)
+-	$(MKDIR) $(JDK_IMAGE_DIR)/lib
++	$(MKDIR) -p $(JDK_IMAGE_DIR)/lib
+ 	@#
+ 	@# Copy in the jars in lib that only belong in the JDK
+ 	@#

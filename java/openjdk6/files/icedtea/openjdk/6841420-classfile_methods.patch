@@ -1,0 +1,34 @@
+# HG changeset patch
+# User jjg
+# Date 1242757993 25200
+#      Tue May 19 11:33:13 2009 -0700
+# Node ID 00870be9028f778a169bf9b843a994ec44258c22
+# Parent  c9b0fee44d446f902102462387c40ca9d1020b6e
+6841420: classfile: add new methods to ConstantClassInfo
+Reviewed-by: mcimadamore
+Contributed-by: kevin.t.looney@sun.com
+
+diff -r c9b0fee44d44 -r 00870be9028f src/share/classes/com/sun/tools/classfile/ConstantPool.java
+--- langtools/src/share/classes/com/sun/tools/classfile/ConstantPool.java	Wed Jun 18 16:53:08 2008 -0700
++++ langtools/src/share/classes/com/sun/tools/classfile/ConstantPool.java	Tue May 19 11:33:13 2009 -0700
+@@ -306,6 +306,20 @@
+             return cp.getUTF8Value(name_index);
+         }
+ 
++        public String getBaseName() throws ConstantPoolException {
++            String name = getName();
++            int index = name.indexOf("[L") + 1;
++            return name.substring(index);
++        }
++
++        public int getDimensionCount() throws ConstantPoolException {
++            String name = getName();
++            int count = 0;
++            while (name.charAt(count) == '[')
++                count++;
++            return count;
++        }
++
+         @Override
+         public String toString() {
+             return "CONSTANT_Class_info[name_index: " + name_index + "]";

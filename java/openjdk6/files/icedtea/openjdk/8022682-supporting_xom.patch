@@ -1,0 +1,250 @@
+# HG changeset patch
+# User joehw
+# Date 1383034215 0
+#      Tue Oct 29 08:10:15 2013 +0000
+# Node ID 20ffb814205c67b5ded678ee6c69b2aa0d6cebb1
+# Parent  dce0c261a1837e664e4d8739b97e8758a1fa0de2
+8022682: Supporting XOM
+Reviewed-by: alanb, chegar, lancea
+
+diff -r dce0c261a183 -r 20ffb814205c drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/impl/PropertyManager.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/impl/PropertyManager.java	Tue Jul 30 23:40:58 2013 -0700
++++ jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/impl/PropertyManager.java	Tue Oct 29 08:10:15 2013 +0000
+@@ -168,6 +168,17 @@
+             //add internal stax property
+             supportedProps.put( Constants.XERCES_PROPERTY_PREFIX + Constants.STAX_ENTITY_RESOLVER_PROPERTY , new StaxEntityResolverWrapper((XMLResolver)value)) ;
+         }
++
++        /**
++         * It's possible for users to set a security manager through the interface.
++         * If it's the old SecurityManager, convert it to the new XMLSecurityManager
++         */
++        if (property.equals(Constants.SECURITY_MANAGER)) {
++            fSecurityManager = XMLSecurityManager.convert(value, fSecurityManager);
++            supportedProps.put(Constants.SECURITY_MANAGER, fSecurityManager);
++            return;
++        }
++
+         supportedProps.put(property, value ) ;
+         if(equivalentProperty != null){
+             supportedProps.put(equivalentProperty, value ) ;
+diff -r dce0c261a183 -r 20ffb814205c drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/jaxp/validation/XMLSchemaFactory.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/jaxp/validation/XMLSchemaFactory.java	Tue Jul 30 23:40:58 2013 -0700
++++ jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/jaxp/validation/XMLSchemaFactory.java	Tue Oct 29 08:10:15 2013 +0000
+@@ -352,7 +352,7 @@
+                     "ProperyNameNull", null));
+         }
+         if (name.equals(SECURITY_MANAGER)) {
+-            fSecurityManager = (XMLSecurityManager) object;
++            fSecurityManager = XMLSecurityManager.convert(object, fSecurityManager);
+             fXMLSchemaLoader.setProperty(SECURITY_MANAGER, fSecurityManager);
+             return;
+         }
+diff -r dce0c261a183 -r 20ffb814205c drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/DOMParser.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/DOMParser.java	Tue Jul 30 23:40:58 2013 -0700
++++ jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/DOMParser.java	Tue Oct 29 08:10:15 2013 +0000
+@@ -28,6 +28,7 @@
+ import com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper;
+ import com.sun.org.apache.xerces.internal.util.SAXMessageFormatter;
+ import com.sun.org.apache.xerces.internal.util.SymbolTable;
++import com.sun.org.apache.xerces.internal.utils.XMLSecurityManager;
+ import com.sun.org.apache.xerces.internal.xni.XNIException;
+ import com.sun.org.apache.xerces.internal.xni.grammars.XMLGrammarPool;
+ import com.sun.org.apache.xerces.internal.xni.parser.XMLConfigurationException;
+@@ -528,7 +529,30 @@
+      */
+     public void setProperty(String propertyId, Object value)
+         throws SAXNotRecognizedException, SAXNotSupportedException {
++        /**
++         * It's possible for users to set a security manager through the interface.
++         * If it's the old SecurityManager, convert it to the new XMLSecurityManager
++         */
++        if (propertyId.equals(Constants.SECURITY_MANAGER)) {
++            securityManager = XMLSecurityManager.convert(value, securityManager);
++            setProperty0(Constants.SECURITY_MANAGER, securityManager);
++            return;
++        }
+ 
++        if (securityManager == null) {
++            securityManager = new XMLSecurityManager(true);
++            setProperty0(Constants.SECURITY_MANAGER, securityManager);
++        }
++
++	//check if the property is managed by security manager
++	if (!securityManager.setLimit(propertyId, XMLSecurityManager.State.APIPROPERTY, value)) {
++	    //fall back to the default configuration to handle the property
++	    setProperty0(propertyId, value);
++	}
++    }
++
++    public void setProperty0(String propertyId, Object value)
++        throws SAXNotRecognizedException, SAXNotSupportedException {
+         try {
+             fConfiguration.setProperty(propertyId, value);
+         }
+diff -r dce0c261a183 -r 20ffb814205c drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/DTDConfiguration.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/DTDConfiguration.java	Tue Jul 30 23:40:58 2013 -0700
++++ jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/DTDConfiguration.java	Tue Oct 29 08:10:15 2013 +0000
+@@ -181,6 +181,9 @@
+     protected static final String LOCALE =
+         Constants.XERCES_PROPERTY_PREFIX + Constants.LOCALE_PROPERTY;
+ 
++    /** Property identifier: Security manager. */
++    private static final String SECURITY_MANAGER = Constants.SECURITY_MANAGER;
++
+     // debugging
+ 
+     /** Set to true and recompile to print exception stack trace. */
+@@ -325,7 +328,8 @@
+             VALIDATION_MANAGER,
+             JAXP_SCHEMA_SOURCE,
+             JAXP_SCHEMA_LANGUAGE,
+-            LOCALE
++            LOCALE,
++            SECURITY_MANAGER
+         };
+         addRecognizedProperties(recognizedProperties);
+ 
+diff -r dce0c261a183 -r 20ffb814205c drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/NonValidatingConfiguration.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/NonValidatingConfiguration.java	Tue Jul 30 23:40:58 2013 -0700
++++ jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/NonValidatingConfiguration.java	Tue Oct 29 08:10:15 2013 +0000
+@@ -154,6 +154,9 @@
+     protected static final String LOCALE =
+         Constants.XERCES_PROPERTY_PREFIX + Constants.LOCALE_PROPERTY;
+ 
++    /** Property identifier: Security manager. */
++    private static final String SECURITY_MANAGER = Constants.SECURITY_MANAGER;
++
+     // debugging
+ 
+     /** Set to true and recompile to print exception stack trace. */
+@@ -307,7 +310,8 @@
+             XMLGRAMMAR_POOL,   
+             DATATYPE_VALIDATOR_FACTORY,
+             VALIDATION_MANAGER,
+-            LOCALE
++            LOCALE,
++            SECURITY_MANAGER
+         };
+         addRecognizedProperties(recognizedProperties);
+ 	
+diff -r dce0c261a183 -r 20ffb814205c drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/SAXParser.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/SAXParser.java	Tue Jul 30 23:40:58 2013 -0700
++++ jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/SAXParser.java	Tue Oct 29 08:10:15 2013 +0000
+@@ -74,7 +74,7 @@
+         XMLGRAMMAR_POOL,
+     };
+ 
+-    XMLSecurityManager securityManager;
++
+     //
+     // Constructors
+     //
+diff -r dce0c261a183 -r 20ffb814205c drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/XML11Configuration.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/XML11Configuration.java	Tue Jul 30 23:40:58 2013 -0700
++++ jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/XML11Configuration.java	Tue Oct 29 08:10:15 2013 +0000
+@@ -563,8 +563,6 @@
+         
+         fVersionDetector = new XMLVersionDetector();
+         
+-        fProperties.put(SECURITY_MANAGER, new XMLSecurityManager(true));
+-
+         // add message formatters
+         if (fErrorReporter.getMessageFormatter(XMLMessageFormatter.XML_DOMAIN) == null) {
+             XMLMessageFormatter xmft = new XMLMessageFormatter();
+diff -r dce0c261a183 -r 20ffb814205c drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/XMLParser.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/XMLParser.java	Tue Jul 30 23:40:58 2013 -0700
++++ jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/XMLParser.java	Tue Oct 29 08:10:15 2013 +0000
+@@ -23,6 +23,7 @@
+ import java.io.IOException;
+ 
+ import com.sun.org.apache.xerces.internal.impl.Constants;
++import com.sun.org.apache.xerces.internal.utils.XMLSecurityManager;
+ import com.sun.org.apache.xerces.internal.xni.XNIException;
+ import com.sun.org.apache.xerces.internal.xni.parser.XMLInputSource;
+ import com.sun.org.apache.xerces.internal.xni.parser.XMLParserConfiguration;
+@@ -78,6 +79,10 @@
+     /** The parser configuration. */
+     protected XMLParserConfiguration fConfiguration;
+ 
++    /** The XML Security Manager. */
++    XMLSecurityManager securityManager;
++
++
+     //
+     // Constructors
+     //
+@@ -118,6 +123,11 @@
+      */
+     public void parse(XMLInputSource inputSource) 
+         throws XNIException, IOException {
++        // null indicates that the parser is called directly, initialize them
++        if (securityManager == null) {
++            securityManager = new XMLSecurityManager(true);
++            fConfiguration.setProperty(Constants.SECURITY_MANAGER, securityManager);
++        }
+ 
+         reset();
+         fConfiguration.parse(inputSource);
+diff -r dce0c261a183 -r 20ffb814205c drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/utils/XMLLimitAnalyzer.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/utils/XMLLimitAnalyzer.java	Tue Jul 30 23:40:58 2013 -0700
++++ jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/utils/XMLLimitAnalyzer.java	Tue Oct 29 08:10:15 2013 +0000
+@@ -203,6 +203,9 @@
+     }
+ 
+     public boolean isTracking(String name) {
++        if (entityStart == null) {
++            return false;
++        }
+         return entityStart.equals(name);
+     }
+     /**
+diff -r dce0c261a183 -r 20ffb814205c drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/utils/XMLSecurityManager.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/utils/XMLSecurityManager.java	Tue Jul 30 23:40:58 2013 -0700
++++ jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/utils/XMLSecurityManager.java	Tue Oct 29 08:10:15 2013 +0000
+@@ -26,6 +26,7 @@
+ package com.sun.org.apache.xerces.internal.utils;
+ 
+ import com.sun.org.apache.xerces.internal.impl.Constants;
++import com.sun.org.apache.xerces.internal.util.SecurityManager;
+ 
+ /**
+  * This class manages standard and implementation-specific limitations.
+@@ -518,4 +519,37 @@
+         }
+         return false;
+     }
++
++
++    /**
++     * Convert a value set through setProperty to XMLSecurityManager.
++     * If the value is an instance of XMLSecurityManager, use it to override the default;
++     * If the value is an old SecurityManager, convert to the new XMLSecurityManager.
++     *
++     * @param value user specified security manager
++     * @param securityManager an instance of XMLSecurityManager
++     * @return an instance of the new security manager XMLSecurityManager
++     */
++    static public XMLSecurityManager convert(Object value, XMLSecurityManager securityManager) {
++        if (value == null) {
++            if (securityManager == null) {
++                securityManager = new XMLSecurityManager(true);
++            }
++            return securityManager;
++        }
++        if (XMLSecurityManager.class.isAssignableFrom(value.getClass())) {
++            return (XMLSecurityManager)value;
++        } else {
++            if (securityManager == null) {
++                securityManager = new XMLSecurityManager(true);
++            }
++            if (SecurityManager.class.isAssignableFrom(value.getClass())) {
++                SecurityManager origSM = (SecurityManager)value;
++                securityManager.setLimit(Limit.MAX_OCCUR_NODE_LIMIT, State.APIPROPERTY, origSM.getMaxOccurNodeLimit());
++                securityManager.setLimit(Limit.ENTITY_EXPANSION_LIMIT, State.APIPROPERTY, origSM.getEntityExpansionLimit());
++                securityManager.setLimit(Limit.ELEMENT_ATTRIBUTE_LIMIT, State.APIPROPERTY, origSM.getElementAttrLimit());
++            }
++            return securityManager;
++        }
++    }
+ }

@@ -1,0 +1,280 @@
+# HG changeset patch
+# User jjg
+# Date 1217887742 25200
+#      Mon Aug 04 15:09:02 2008 -0700
+# Node ID 6134c146043a3e9dd12ee73ca32ce56ac1c95e3a
+# Parent  17dfaebe23044c48bcd5ed0730ce2358543ac459
+4111861: static final field contents are not displayed
+Reviewed-by: ksrini
+
+diff -r 17dfaebe2304 -r 6134c146043a src/share/classes/com/sun/tools/javap/ClassWriter.java
+--- langtools/src/share/classes/com/sun/tools/javap/ClassWriter.java	Tue May 19 11:43:50 2009 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/ClassWriter.java	Mon Aug 04 15:09:02 2008 -0700
+@@ -35,6 +35,7 @@
+ import com.sun.tools.classfile.Code_attribute;
+ import com.sun.tools.classfile.ConstantPool;
+ import com.sun.tools.classfile.ConstantPoolException;
++import com.sun.tools.classfile.ConstantValue_attribute;
+ import com.sun.tools.classfile.Descriptor;
+ import com.sun.tools.classfile.DescriptorException;
+ import com.sun.tools.classfile.Exceptions_attribute;
+@@ -189,6 +190,14 @@
+         }
+         print(" ");
+         print(getFieldName(f));
++        if (options.showConstants && !options.compat) { // BUG 4111861 print static final field contents
++            Attribute a = f.attributes.get(Attribute.ConstantValue);
++            if (a instanceof ConstantValue_attribute) {
++                print(" = ");
++                ConstantValue_attribute cv = (ConstantValue_attribute) a;
++                print(getConstantValue(f.descriptor, cv.constantvalue_index));
++            }
++        }
+         print(";");
+         println();
+ 
+@@ -485,6 +494,81 @@
+         }
+     }
+ 
++    /**
++     * Get the value of an entry in the constant pool as a Java constant.
++     * Characters and booleans are represented by CONSTANT_Intgere entries.
++     * Character and string values are processed to escape characters outside
++     * the basic printable ASCII set.
++     * @param d the descriptor, giving the expected type of the constant
++     * @param index the index of the value in the constant pool
++     * @return a printable string containing the value of the constant.
++     */
++    String getConstantValue(Descriptor d, int index) {
++        try {
++            ConstantPool.CPInfo cpInfo = constant_pool.get(index);
++
++            switch (cpInfo.getTag()) {
++                case ConstantPool.CONSTANT_Integer: {
++                    ConstantPool.CONSTANT_Integer_info info =
++                            (ConstantPool.CONSTANT_Integer_info) cpInfo;
++                    String t = d.getValue(constant_pool);
++                    if (t.equals("C")) { // character
++                        return getConstantCharValue((char) info.value);
++                    } else if (t.equals("Z")) { // boolean
++                        return String.valueOf(info.value == 1);
++                    } else { // other: assume integer
++                        return String.valueOf(info.value);
++                    }
++                }
++
++                case ConstantPool.CONSTANT_String: {
++                    ConstantPool.CONSTANT_String_info info =
++                            (ConstantPool.CONSTANT_String_info) cpInfo;
++                    return getConstantStringValue(info.getString());
++                }
++
++                default:
++                    return constantWriter.stringValue(cpInfo);
++            }
++        } catch (ConstantPoolException e) {
++            return "#" + index;
++        }
++    }
++
++    private String getConstantCharValue(char c) {
++        StringBuilder sb = new StringBuilder();
++        sb.append('\'');
++        sb.append(esc(c, '\''));
++        sb.append('\'');
++        return sb.toString();
++    }
++
++    private String getConstantStringValue(String s) {
++        StringBuilder sb = new StringBuilder();
++        sb.append("\"");
++        for (int i = 0; i < s.length(); i++) {
++            sb.append(esc(s.charAt(i), '"'));
++        }
++        sb.append("\"");
++        return sb.toString();
++    }
++
++    private String esc(char c, char quote) {
++        if (32 <= c && c <= 126 && c != quote)
++            return String.valueOf(c);
++        else switch (c) {
++            case '\b': return "\\b";
++            case '\n': return "\\n";
++            case '\t': return "\\t";
++            case '\f': return "\\f";
++            case '\r': return "\\r";
++            case '\\': return "\\\\";
++            case '\'': return "\\'";
++            case '\"': return "\\\"";
++            default:   return String.format("\\u%04x", (int) c);
++        }
++    }
++
+     private Options options;
+     private AttributeWriter attrWriter;
+     private CodeWriter codeWriter;
+diff -r 17dfaebe2304 -r 6134c146043a src/share/classes/com/sun/tools/javap/JavapTask.java
+--- langtools/src/share/classes/com/sun/tools/javap/JavapTask.java	Tue May 19 11:43:50 2009 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/JavapTask.java	Mon Aug 04 15:09:02 2008 -0700
+@@ -222,6 +222,12 @@
+             void process(JavapTask task, String opt, String arg) {
+                 task.options.ignoreSymbolFile = true;
+             }
++        },
++
++        new Option(false, "-constants") {
++            void process(JavapTask task, String opt, String arg) {
++                task.options.showConstants = true;
++            }
+         }
+ 
+     };
+diff -r 17dfaebe2304 -r 6134c146043a src/share/classes/com/sun/tools/javap/Options.java
+--- langtools/src/share/classes/com/sun/tools/javap/Options.java	Tue May 19 11:43:50 2009 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/Options.java	Mon Aug 04 15:09:02 2008 -0700
+@@ -77,6 +77,7 @@
+     public boolean showDisassembled;
+     public boolean showInternalSignatures;
+     public boolean showAllAttrs;
++    public boolean showConstants;
+ 
+     public boolean compat;             // bug-for-bug compatibility mode with old javap
+     public boolean jsr277;
+diff -r 17dfaebe2304 -r 6134c146043a src/share/classes/com/sun/tools/javap/resources/javap.properties
+--- langtools/src/share/classes/com/sun/tools/javap/resources/javap.properties	Tue May 19 11:43:50 2009 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/resources/javap.properties	Mon Aug 04 15:09:02 2008 -0700
+@@ -58,5 +58,9 @@
+ main.opt.bootclasspath=\
+ \  -bootclasspath <path>    Override location of bootstrap class files
+ 
++main.opt.constants=\
++\  -constants               Show static final constants
+ 
+ 
++
++
+diff -r 17dfaebe2304 -r 6134c146043a test/tools/javap/4111861/A.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ langtools/test/tools/javap/4111861/A.java	Mon Aug 04 15:09:02 2008 -0700
+@@ -0,0 +1,14 @@
++class A {
++    public static final int i = 42;
++    public static final boolean b = true;
++    public static final float f = 1.0f;
++    public static final double d = 1.0d;
++    public static final short s = 1;
++    public static final long l = 1l;
++    public static final char cA = 'A';
++    public static final char c0 = '\u0000';
++    public static final char cn = '\n';
++    public static final char cq1 = '\'';
++    public static final char cq2 = '"';
++    public static final java.lang.String t1 = "abc \u0000 \f\n\r\t'\"";
++}
+diff -r 17dfaebe2304 -r 6134c146043a test/tools/javap/4111861/T4111861.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ langtools/test/tools/javap/4111861/T4111861.java	Mon Aug 04 15:09:02 2008 -0700
+@@ -0,0 +1,101 @@
++/*
++ * Copyright 2008 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++import java.io.*;
++
++/*
++ * @test
++ * @bug 4111861
++ * @summary static final field contents are not displayed
++ */
++public class T4111861 {
++    public static void main(String... args) throws Exception {
++        new T4111861().run();
++    }
++
++    void run() throws Exception {
++        File testSrc = new File(System.getProperty("test.src", "."));
++        File a_java = new File(testSrc, "A.java");
++        javac("-d", ".", a_java.getPath());
++
++        String out = javap("-classpath", ".", "-constants", "A");
++
++        String a = read(a_java);
++
++        if (!filter(out).equals(filter(read(a_java)))) {
++            System.out.println(out);
++            throw new Exception("unexpected output");
++        }
++    }
++
++    String javac(String... args) throws Exception {
++        StringWriter sw = new StringWriter();
++        PrintWriter pw = new PrintWriter(sw);
++        int rc = com.sun.tools.javac.Main.compile(args, pw);
++        if (rc != 0)
++            throw new Exception("javac failed, rc=" + rc);
++        return sw.toString();
++    }
++
++    String javap(String... args) throws Exception {
++        StringWriter sw = new StringWriter();
++        PrintWriter pw = new PrintWriter(sw);
++        int rc = com.sun.tools.javap.Main.run(args, pw);
++        if (rc != 0)
++            throw new Exception("javap failed, rc=" + rc);
++        return sw.toString();
++    }
++
++    String read(File f) throws IOException {
++        StringBuilder sb = new StringBuilder();
++        BufferedReader in = new BufferedReader(new FileReader(f));
++        try {
++            String line;
++            while ((line = in.readLine()) != null) {
++                sb.append(line);
++                sb.append('\n');
++            }
++        } finally {
++            in.close();
++        }
++        return sb.toString();
++    }
++
++    // return those lines beginning "public static final"
++    String filter(String s) throws IOException {
++        StringBuilder sb = new StringBuilder();
++        BufferedReader in = new BufferedReader(new StringReader(s));
++        try {
++            String line;
++            while ((line = in.readLine()) != null) {
++                if (line.indexOf("public static final") > 0) {
++                    sb.append(line);
++                    sb.append('\n');
++                }
++            }
++        } finally {
++            in.close();
++        }
++        return sb.toString();
++    }
++}

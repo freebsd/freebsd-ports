@@ -1,0 +1,183 @@
+# HG changeset patch
+# User msheppar
+# Date 1381847065 -3600
+#      Tue Oct 15 15:24:25 2013 +0100
+# Node ID 9e7e1b6ab5cdf0096c9c16d991e6a982771a15f1
+# Parent  14308db8214e69d7cad09a8f4d49d421b5b13ba0
+8011157: Improve CORBA portablility
+Summary: fix also reviewed by Alexander Fomin
+Reviewed-by: alanb, coffeys, skoivu
+
+diff -r 14308db8214e -r 9e7e1b6ab5cd src/share/classes/com/sun/corba/se/impl/transport/SelectorImpl.java
+--- corba/src/share/classes/com/sun/corba/se/impl/transport/SelectorImpl.java	Mon Jun 17 19:01:08 2013 +0200
++++ corba/src/share/classes/com/sun/corba/se/impl/transport/SelectorImpl.java	Tue Oct 15 15:24:25 2013 +0100
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2003, 2004, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2003, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -54,7 +54,7 @@
+ /**
+  * @author Harold Carr
+  */
+-public class SelectorImpl
++class SelectorImpl
+     extends
+         Thread
+     implements
+diff -r 14308db8214e -r 9e7e1b6ab5cd src/share/classes/sun/rmi/rmic/iiop/StubGenerator.java
+--- corba/src/share/classes/sun/rmi/rmic/iiop/StubGenerator.java	Mon Jun 17 19:01:08 2013 +0200
++++ corba/src/share/classes/sun/rmi/rmic/iiop/StubGenerator.java	Tue Oct 15 15:24:25 2013 +0100
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2012, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -34,6 +34,9 @@
+ 
+ import java.io.File;
+ import java.io.IOException;
++import java.io.SerializablePermission;
++import java.security.AccessController;
++import java.security.PrivilegedAction;
+ import java.util.Vector;
+ import java.util.Hashtable;
+ import java.util.Enumeration;
+@@ -49,6 +52,7 @@
+ import com.sun.corba.se.impl.util.PackagePrefixChecker;
+ import sun.rmi.rmic.Main;
+ 
++
+ /**
+  * An IIOP stub/tie generator for rmic.
+  *
+@@ -78,6 +82,7 @@
+     protected boolean castArray = false;
+     protected Hashtable transactionalObjects = new Hashtable() ;
+     protected boolean POATie = false ;
++    protected boolean emitPermissionCheck = false;
+ 
+     /**
+      * Default constructor for Main to use.
+@@ -193,6 +198,9 @@
+                     } else if (argv[i].equals("-standardPackage")) {
+                         standardPackage = true;
+                         argv[i] = null;
++                    } else if (argv[i].equals("-emitPermissionCheck")) {
++                        emitPermissionCheck = true;
++                        argv[i] = null;
+                     } else if (arg.equals("-xstubbase")) {
+                         argv[i] = null;
+                         if (++i < argv.length && argv[i] != null && !argv[i].startsWith("-")) {
+@@ -390,9 +398,22 @@
+ 
+         writePackageAndImports(p);
+ 
++//        generate
++//        import java.security.AccessController;
++//        import java.security.PrivilegedAction;
++//        import java.io.SerializablePermission;
++        if (emitPermissionCheck) {
++            p.pln("import java.security.AccessController;");
++            p.pln("import java.security.PrivilegedAction;");
++            p.pln("import java.io.SerializablePermission;");
++            p.pln();
++            p.pln();
++        }
++
+         // Declare the stub class; implement all remote interfaces.
+ 
+         p.p("public class " + currentClass);
++
+         p.p(" extends " + getName(stubBaseClass));
+         p.p(" implements ");
+         if (remoteInterfaces.length > 0) {
+@@ -422,6 +443,56 @@
+         writeIds( p, theType, false );
+         p.pln();
+ 
++        if (emitPermissionCheck) {
++
++            // produce the following generated code
++            // private static Void checkPermission() {
++            // SecurityManager sm = System.getSecurityManager();
++            // if (sm != null) {
++            //     sm.checkPermission(new SerializablePermission(
++            // "enableSubclassImplementation")); // testing
++            // }
++            // return null;
++            // }
++            //
++            // private _XXXXXX_Stub(Void ignore) {
++            // }
++            //
++            // public _XXXXXX_Stub() {
++            // this(checkPermission());
++            // }
++            // where XXXXXX is the name of the remote interface
++
++                p.pln();
++                p.plnI("private static Void checkPermission() {");
++                p.plnI("SecurityManager sm = System.getSecurityManager();");
++                p.pln("if (sm != null) {");
++                p.pI();
++                p.plnI("sm.checkPermission(new SerializablePermission(");
++                p.plnI("\"enableSubclassImplementation\"));");
++                p.pO();
++                p.pO();
++                p.pOln("}");
++                p.pln("return null;");
++                p.pO();
++                p.pOln("}");
++                p.pln();
++                p.pO();
++
++                p.pI();
++                p.pln("private " + currentClass + "(Void ignore) {  }");
++                p.pln();
++
++                p.plnI("public " + currentClass + "() { ");
++                p.pln("this(checkPermission());");
++                p.pOln("}");
++                p.pln();
++        }
++
++       if (!emitPermissionCheck) {
++            p.pI();
++       }
++
+         // Write the _ids() method...
+ 
+         p.plnI("public String[] _ids() { ");
+@@ -815,7 +886,6 @@
+                             CompoundType theType) throws IOException {
+ 
+         // Wtite the method declaration and opening brace...
+-
+         String methodName = method.getName();
+         String methodIDLName = method.getIDLName();
+ 
+@@ -1631,7 +1701,7 @@
+ 
+         // Write data members...
+         p.pln();
+-        p.pln("private " + getName(theType) + " target = null;");
++        p.pln("volatile private " + getName(theType) + " target = null;");
+         p.pln();
+ 
+         // Write the ids...
+@@ -1695,6 +1765,10 @@
+ 
+         if (remoteMethods.length > 0) {
+             p.plnI("try {");
++            p.pln(getName(theType) + " target = this.target;");
++            p.plnI("if (target == null) {");
++            p.pln("throw new java.io.IOException();");
++            p.pOln("}");
+             p.plnI(idExtInputStream + " "+in+" = ");
+             p.pln("(" + idExtInputStream + ") "+_in+";");
+             p.pO();
