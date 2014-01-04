@@ -15,7 +15,6 @@ COMMENT=	Integer-only fully Ogg Vorbis compliant decoder library
 SNAP_DATE=	02132004
 WRKSRC=		${WRKDIR}/Tremor
 USE_AUTOTOOLS=	automake autoconf libtool
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -28,17 +27,18 @@ pre-configure:
 
 do-install:
 	for i in ${WRKSRC}/.libs/libvorbisidec.so.1		\
-			${WRKSRC}/.libs/libvorbisidec.so	\
-			${WRKSRC}/.libs/libvorbisidec.a ; do	\
-		${INSTALL_SCRIPT} $$i ${PREFIX}/lib ;		\
+			${WRKSRC}/.libs/libvorbisidec.so; do	\
+		${INSTALL_LIB} $$i ${STAGEDIR}${PREFIX}/lib ;		\
 	done
-	@${MKDIR} ${PREFIX}/include/tremor
+	${INSTALL_DATA} ${WRKSRC}/.libs/libvorbisidec.a \
+		${STAGEDIR}${PREFIX}/lib
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/tremor
 	for i in ${WRKSRC}/config_types.h			\
 			${WRKSRC}/ivorbiscodec.h		\
 			${WRKSRC}/ivorbisfile.h			\
 			${WRKSRC}/ogg.h				\
 			${WRKSRC}/os_types.h ; do		\
-		${INSTALL_SCRIPT} $$i ${PREFIX}/include/tremor ; \
+		${INSTALL_SCRIPT} $$i ${STAGEDIR}${PREFIX}/include/tremor ; \
 	done
 
 .include <bsd.port.mk>
