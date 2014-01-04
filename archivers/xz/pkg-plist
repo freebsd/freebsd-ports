@@ -41,4 +41,27 @@ lib/liblzma.la
 lib/liblzma.so
 lib/liblzma.so.5
 libdata/pkgconfig/liblzma.pc
+man/man1/lzcat.1.gz
+man/man1/lzcmp.1.gz
+man/man1/lzdiff.1.gz
+man/man1/lzegrep.1.gz
+man/man1/lzfgrep.1.gz
+man/man1/lzgrep.1.gz
+man/man1/lzless.1.gz
+man/man1/lzma.1.gz
+man/man1/lzmadec.1.gz
+man/man1/lzmainfo.1.gz
+man/man1/lzmore.1.gz
+man/man1/unlzma.1.gz
+man/man1/unxz.1.gz
+man/man1/xz.1.gz
+man/man1/xzcat.1.gz
+man/man1/xzcmp.1.gz
+man/man1/xzdec.1.gz
+man/man1/xzdiff.1.gz
+man/man1/xzegrep.1.gz
+man/man1/xzfgrep.1.gz
+man/man1/xzgrep.1.gz
+man/man1/xzless.1.gz
+man/man1/xzmore.1.gz
 @dirrm include/lzma
