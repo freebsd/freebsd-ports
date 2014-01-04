@@ -35,6 +35,7 @@ NO_STAGE=	yes
 OPTIONS_DEFINE=	FAM TRASHQUOTA GDBM IPV6
 FAM_DESC=	Fam support for IDLE command
 TRASHQUOTA_DESC=	Include deleted mails in the quota
+FAM_USES=	fam
 
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.opt)
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.opt"
@@ -86,7 +87,6 @@ CONFIGURE_ARGS+=--with-trashquota
 .if ${PORT_OPTIONS:MFAM}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_FAM=	yes
 .endif
 
 MAN1=		couriertcpd.1 maildiracl.1 maildirkw.1 \

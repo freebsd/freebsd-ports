@@ -14,10 +14,9 @@ COMMENT=	SoulSeek client with separate terminal and Qt based interface
 LIB_DEPENDS=	xml\\+\\+:${PORTSDIR}/textproc/libxml++26
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
-USES=		pkgconfig
+USES=		fam pkgconfig
 USE_BZIP2=	yes
 USE_SCONS=	yes
-USE_FAM=	yes
 
 SCONS_ARGS=	QTDIR=${QT_PREFIX} QT_LIB=qt-mt PREFIX=${PREFIX} VORBIS=yes
 DATADIR=	share/museek

@@ -31,11 +31,9 @@ RUN_DEPENDS=	xdg-desktop-icon:${PORTSDIR}/devel/xdg-utils \
 		w3m:${PORTSDIR}/www/w3m
 
 USE_BZIP2=	yes
-USE_FAM=	yes
-WANT_FAM_SYSTEM=gamin
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomehack gnomeprefix ltasneededhack intltool ltverhack
-USES=		gettext gmake pkgconfig
+USES=		fam:gamin gettext gmake pkgconfig
 USE_LDCONFIG=	yes
 USE_GSTREAMER=	core
 INSTALLS_ICONS=	yes

@@ -11,8 +11,7 @@ COMMENT=	A C++ wrapper for fam from SGI
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
-USE_FAM=	yes
-WANT_FAM_SYSTEM=fam
+USES=		fam:fam
 
 NO_STAGE=	yes
 do-install:

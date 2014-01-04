@@ -28,16 +28,10 @@ CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc
 USES=		charsetfix gettext iconv pkgconfig
 
 OPTIONS_DEFINE=	FAM
+FAM_CONFIGURE_ENABLE=	fam
+FAM_USES=	fam
 
 NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MFAM}
-USE_FAM=	yes
-CONFIGURE_ARGS+=	--enable-fam
-.else
-CONFIGURE_ARGS+=	--disable-fam
-.endif
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/prelude-lml/prelude-lml.conf ]; then \

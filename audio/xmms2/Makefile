@@ -140,9 +140,8 @@ EXCLUDE+=	--without-plugins="faad" --without-plugins="mp4"
 PLIST_SUB+=	FAAD="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MDAM}
-USE_FAM=	yes
-WANT_FAM_SYSTEM=gamin
+.if ${PORT_OPTIONS:MFAM}
+USES+=		fam:gamin
 PLIST_SUB+=	FAM=""
 .else
 EXCLUDE+=	--without-optionals="medialib-updater"

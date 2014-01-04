@@ -133,6 +133,8 @@ QUOTAS_DESC=		Disk quota support
 SWAT_DESC=		SWAT WebGUI
 UTMP_DESC=		UTMP accounting support
 WINBIND_DESC=		WinBIND support
+
+FAM_SUPPORT_USES=	fam
 ##############################################################################
 OPTIONS_DEFINE+=	DEVELOPER MANPAGES EXP_MODULES
 
@@ -288,7 +290,6 @@ CONFIGURE_ARGS+=	--without-dnsupdate
 
 # https://bugzilla.samba.org/show_bug.cgi?id=9545
 .if ${PORT_OPTIONS:MFAM_SUPPORT}
-USE_FAM=		yes
 CONFIGURE_ARGS+=	--with-fam
 WANT_EXP_MODULES+=	vfs_notify_fam
 SAMBA4_MODULES+=	vfs_notify_fam
