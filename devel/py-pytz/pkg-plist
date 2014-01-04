@@ -318,9 +318,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Asia/Qyzylorda
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Asia/Rangoon
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Asia/Riyadh
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Asia/Riyadh87
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Asia/Riyadh88
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Asia/Riyadh89
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Asia/Saigon
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Asia/Sakhalin
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Asia/Samarkand
@@ -531,9 +528,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Mexico/BajaNorte
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Mexico/BajaSur
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Mexico/General
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Mideast/Riyadh87
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Mideast/Riyadh88
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Mideast/Riyadh89
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/NZ
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/NZ-CHAT
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Navajo
@@ -612,7 +606,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/zone.tab
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/US
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Pacific
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Mideast
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Mexico
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Indian
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pytz/zoneinfo/Europe
