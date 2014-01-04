@@ -1,6 +1,15 @@
---- Makefile.orig	Wed Dec 29 09:37:36 2004
-+++ Makefile	Wed Dec 29 09:52:11 2004
-@@ -333,7 +333,7 @@
+--- Makefile.orig	2013-12-17 14:29:31.000000000 -0700
++++ Makefile	2013-12-17 14:30:30.000000000 -0700
+@@ -212,7 +212,7 @@
+ 	chmod 755 choose
+ 
+ clientloc.o: \
+-compile clientloc.c open.h byte.h cdb.h ip6.h
++compile clientloc.c open.h byte.h cdb.h ip6.h uint32.h
+ 	./compile clientloc.c
+ 
+ compile: \
+@@ -337,7 +337,7 @@
  dns_transmit.o: \
  compile dns_transmit.c socket.h uint16.h alloc.h error.h byte.h \
  uint16.h dns.h stralloc.h gen_alloc.h iopause.h taia.h tai.h uint64.h \
@@ -9,7 +18,7 @@
  	./compile dns_transmit.c
  
  dns_txt.o: \
-@@ -855,15 +855,15 @@
+@@ -859,15 +859,15 @@
  	rm -f trylsock.o trylsock
  
  socket_accept.o: \
@@ -28,7 +37,7 @@
  	./compile socket_bind.c
  
  socket_bind6.o: \
-@@ -871,7 +871,7 @@
+@@ -875,7 +875,7 @@
  	./compile socket_bind6.c
  
  socket_conn.o: \
@@ -37,7 +46,7 @@
  	./compile socket_conn.c
  
  socket_connect6.o: \
-@@ -879,11 +879,11 @@
+@@ -883,11 +883,11 @@
  	./compile socket_connect6.c
  
  socket_listen.o: \
@@ -51,7 +60,7 @@
  	./compile socket_recv.c
  
  socket_recv6.o: \
-@@ -891,7 +891,7 @@
+@@ -895,7 +895,7 @@
  	./compile socket_recv6.c
  
  socket_send.o: \
@@ -60,7 +69,7 @@
  	./compile socket_send.c
  
  socket_send6.o: \
-@@ -899,7 +899,7 @@
+@@ -903,7 +903,7 @@
  	./compile socket_send6.c
  
  socket_tcp.o: \
@@ -69,7 +78,7 @@
  	./compile socket_tcp.c
  
  socket_tcp6.o: \
-@@ -907,7 +907,7 @@
+@@ -911,7 +911,7 @@
  	./compile socket_tcp6.c
  
  socket_udp.o: \
