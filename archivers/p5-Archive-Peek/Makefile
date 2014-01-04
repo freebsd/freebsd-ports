@@ -20,9 +20,6 @@ TEST_DEPENDS=	p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod
 
 USES=		perl5
 USE_PERL5=	configure
-NO_STAGE=	yes
-
-MAN3=		Archive::Peek.3
 
 regression-test: build
 	cd ${WRKSRC}/ && ${MAKE} test
