@@ -2,6 +2,7 @@
 %%SITE_PERL%%/Archive/Peek/Tar.pm
 %%SITE_PERL%%/Archive/Peek.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Peek/.packlist
+%%PERL5_MAN3%%/Archive::Peek.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive/Peek
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Archive
 @dirrmtry %%SITE_PERL%%/Archive/Peek
