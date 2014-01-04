@@ -12,9 +12,8 @@ COMMENT=	Fast Audio Playlist Generator
 LIB_DEPENDS=	liburiparser.so:${PORTSDIR}/net/uriparser
 
 MAKE_ARGS+=	CC="${CC}"
-NO_STAGE=	yes
 
-MAN1=		fapg.1
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
@@ -22,14 +21,12 @@ do-build:
 	@cd ${WRKSRC} && ${MAKE} ${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/fapg.1 ${MAN1PREFIX}/man/man1
-
-post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/fapg.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in COPYING README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
