@@ -3,7 +3,8 @@
 
 PORTNAME=	openjdk
 PORTVERSION=	${JDK_MAJOR_VERSION}.${PORT_MINOR_VERSION}.${PORT_BUILD_NUMBER}
-PORTREVISION=	1
+PORTREVISION=	2
+PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}/promoted/b${JDK_BUILD_NUMBER}/ \
 		http://download.java.net/jaxp/1.4.5/:jaxp \
@@ -20,8 +21,6 @@ EXTRACT_ONLY=	${JDK_SRC_DISTFILE}${EXTRACT_SUFX} \
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Java Development Kit 7
-
-FORBIDDEN=	Triggering a nasty FreeBSD bug
 
 LICENSE=	GPLv2
 
@@ -40,12 +39,12 @@ DEBUG_DESC=		Enable extra debugging info
 POLICY_DESC=		Install the Unlimited Strength Policy Files
 TZUPDATE_DESC=		Update the time zone data
 
-PORT_MINOR_VERSION=	45
-PORT_BUILD_NUMBER=	18
+PORT_MINOR_VERSION=	25
+PORT_BUILD_NUMBER=	15
 JDK_MAJOR_VERSION=	7
-JDK_MINOR_VERSION=	40
-JDK_BUILD_NUMBER=	43
-JDK_BUILD_DATE=		26_aug_2013
+JDK_MINOR_VERSION=	6
+JDK_BUILD_NUMBER=	24
+JDK_BUILD_DATE=		09_aug_2012
 JDK_SRC_DISTFILE=	${PORTNAME}-${JDK_MAJOR_VERSION}u${JDK_MINOR_VERSION}-fcs-src-b${JDK_BUILD_NUMBER}-${JDK_BUILD_DATE}
 
 # Use our own version of ant to avoid circular dependencies
@@ -105,6 +104,19 @@ BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk7 \
 		${LOCALBASE}/openjdk6 \
 		${LOCALBASE}/bootstrap-openjdk
 
+SECURITY_ICONS= security-icon-bw16.png \
+		security-icon-bw24.png \
+		security-icon-bw32.png \
+		security-icon-bw48.png \
+		security-icon-interim16.png \
+		security-icon-interim24.png \
+		security-icon-interim32.png \
+		security-icon-interim48.png \
+		security-icon-yellow16.png \
+		security-icon-yellow24.png \
+		security-icon-yellow32.png \
+		security-icon-yellow48.png
+
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
@@ -137,6 +149,14 @@ BUILD_DEPENDS+=		${BOOTSTRAPJDKDIR}/bin/javac:${PORTSDIR}/java/bootstrap-openjdk
 PATCH_DEPENDS+=	gpatch:${PORTSDIR}/devel/patch
 PATCH=		gpatch
 .endif
+
+post-extract:
+	# Move icons to their new home.
+	@${MKDIR} ${WRKSRC}/jdk/src/share/classes/sun/awt/resources
+.for icon in ${SECURITY_ICONS}
+	@${MV} ${WRKSRC}/jdk/src/solaris/classes/sun/awt/X11/${icon} \
+		${WRKSRC}/jdk/src/share/classes/sun/awt/resources/
+.endfor
 
 post-patch:
 	@${REINPLACE_CMD} "s|%%LOCALBASE%%|${LOCALBASE}|" \
