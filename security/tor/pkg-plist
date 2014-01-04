@@ -3,9 +3,9 @@ bin/tor
 bin/tor-gencert
 bin/tor-resolve
 bin/torify
-etc/tor/tor-tsocks.conf.sample
 etc/tor/torrc.sample
 %%DATADIR%%/geoip
+%%DATADIR%%/geoip6
 @dirrm %%DATADIR%%
 @dirrmtry etc/tor
 @cwd /
