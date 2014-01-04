@@ -7,7 +7,7 @@ CATEGORIES=	shells
 MASTER_SITES=	http://www.sourcefiles.org/Shells/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A ncurses-based restriction shell
+COMMENT=	Ncurses-based restriction shell
 
 USES=		gmake
 GNU_CONFIGURE=	yes
