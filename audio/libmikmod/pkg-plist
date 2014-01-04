@@ -4,4 +4,5 @@ lib/libmikmod.a
 lib/libmikmod.la
 lib/libmikmod.so
 lib/libmikmod.so.2
+man/man1/libmikmod-config.1.gz
 share/aclocal/libmikmod.m4
