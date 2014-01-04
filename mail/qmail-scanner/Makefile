@@ -19,7 +19,7 @@ BUILD_DEPENDS+=	reformime:${PORTSDIR}/mail/maildrop \
 		setuidgid:${PORTSDIR}/sysutils/daemontools \
 		bash:${PORTSDIR}/shells/bash
 
-CONFLICTS=	qmail-scanner-1.*
+CONFLICTS=	qmail-scanner-1.* qmail-scanner1-*
 
 USES=		qmail perl5
 

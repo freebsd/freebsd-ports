@@ -8,6 +8,7 @@ CATEGORIES=	mail security
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/}
 EXTRACT_SUFX=	.tgz
+PKGNAMESUFFIX=	1
 
 MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Content/Anti-virus Scanner for qmail
@@ -20,7 +21,6 @@ MANUAL_PACKAGE_BUILD=	Requires qmail built with non-standard setting
 SUB_FILES=	pkg-deinstall
 SUB_LIST=	SPOOLDIR=${SPOOLDIR}
 
-NO_LATEST_LINK=	yes
 CONFLICTS=	qmail-scanner-2.*
 
 USES=		qmail perl5
