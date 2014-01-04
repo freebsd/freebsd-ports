@@ -23,11 +23,6 @@ USE_BZIP2=	yes
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-.if defined(INSTALL_AS_NCFTP3)
-LATEST_LINK=	ncftp3
-.else
-LATEST_LINK=	ncftp
-.endif
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
