@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	clang
-DISTVERSION=	3.4rc2
+DISTVERSION=	3.4rc3
 CATEGORIES=	lang devel
-MASTER_SITES=	http://llvm.org/pre-releases/3.4/rc2/
+MASTER_SITES=	http://llvm.org/pre-releases/3.4/rc3/
 #MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 DISTNAME=	${CLANG_NAME}
@@ -13,10 +13,10 @@ DISTFILES=	${CLANG_SOURCE} \
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	C, Objective-C, and C++ compiler
 
-CLANG_NAME=	cfe.src-${DISTVERSION}-source
+CLANG_NAME=	cfe-${DISTVERSION}.source
 CLANG_SOURCE=	${CLANG_NAME}${EXTRACT_SUFX}
 CLANG_EXTRACT=	cfe.src
-LLVM_NAME=	llvm.src-${DISTVERSION}-source
+LLVM_NAME=	llvm-${DISTVERSION}.source
 LLVM_SOURCE=	${LLVM_NAME}${EXTRACT_SUFX}
 LLVM_EXTRACT=	llvm.src
 LIBNAME=	libLLVM-${DISTVERSION:C/rc[0-9]//}.so
@@ -38,7 +38,6 @@ GNU_CONFIGURE_PREFIX=	${LLVM_PREFIX}
 USES=		gmake perl5
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
-USE_XZ=		yes
 
 MAKE_ARGS=	CLANG_TBLGEN=${WRKSRC}/${RELTYPE}/bin/clang-tblgen \
 		LLVMIncDir=${LLVM_PREFIX}/include \
