@@ -393,7 +393,6 @@
     SUBDIR += xbmc-addon-pvr
     SUBDIR += xbmc-addon-xvdr
     SUBDIR += xbmc-pvr
-    SUBDIR += xfce4-media
     SUBDIR += xfce4-parole
     SUBDIR += xfce4-xmms-plugin
     SUBDIR += xine
