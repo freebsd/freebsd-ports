@@ -17,7 +17,7 @@ CONFLICTS=	avahi-libdns-[0-9]*
 BUILD_WRKSRC=	${WRKSRC}/mDNSPosix
 INSTALL_WRKSRC=	${WRKSRC}/mDNSPosix
 MAKE_ARGS=	LOCALBASE=${PREFIX} MANPATH=${MANPREFIX}/man os=freebsd
-USES=		bison gmake
+USES=		gmake
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	mdnsd mdnsresponder
 
