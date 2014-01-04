@@ -25,7 +25,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 USE_LDCONFIG=	yes
-#NO_STAGE=	yes
 USES=		gmake pathfix pkgconfig
 
 post-patch:
