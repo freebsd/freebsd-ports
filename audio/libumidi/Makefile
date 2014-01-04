@@ -10,28 +10,17 @@ MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Universal general purpose MIDI library
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 USE_BZIP2=	yes
-NO_STAGE=	yes
-MAN3=		umidi20.3
-MANCOMPRESSED=	yes
 
 OPTIONS_DEFINE=	DEBUG JACK
 OPTIONS_DEFAULT=JACK
 
-.include <bsd.port.options.mk>
+USES=		uidfix
 
-MAKE_ARGS+=" PTHREAD_LIBS=${PTHREAD_LIBS}"
-
-.if ${PORT_OPTIONS:MJACK}
-MAKE_ARGS+=" HAVE_JACK=YES"
-LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-MAKE_ARGS+=" HAVE_DEBUG=YES"
-.endif
-
+JACK_MAKE_ARGS=	" HAVE_JACK=YES"
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+DEBUG_MAKE_ARGS=	" HAVE_DEBUG=YES"
 MAKE_ARGS+=" HAVE_MAN=YES"
 
 .include <bsd.port.mk>
