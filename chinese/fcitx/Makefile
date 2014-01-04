@@ -22,8 +22,6 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libicuuc.so:${PORTSDIR}/devel/icu
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
-MAN1=		createPYMB.1 fcitx-remote.1 fcitx.1 mb2org.1 mb2txt.1 \
-		readPYBase.1 readPYMB.1 scel2org.1 txt2mb.1
 SUB_FILES=	pkg-message
 SUB_LIST+=	PORTSDIR=${PORTSDIR}
 
@@ -33,7 +31,7 @@ USE_XZ=		yes
 USE_GNOME=	pango intltool libxml2 introspection
 USE_XORG=	x11 xext xkbfile
 USE_LDCONFIG=	yes
-USES=		cmake gettext iconv pathfix pkgconfig
+USES=		cmake desktop-file-utils gettext iconv pathfix pkgconfig shared-mime-info
 INSTALLS_ICONS=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
@@ -46,7 +44,6 @@ QT4_DESC=	Enable Qt4 IM module
 OPENCC_DESC=	Enable OpenCC for Chinese Transform
 TPUNC_DESC=	Use traditional quotation marks
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CMAKE_ARGS+=	-DENABLE_XDGAUTOSTART=OFF -DFORCE_ENCHANT=ON
@@ -95,10 +92,6 @@ CMAKE_ARGS+=	-DENABLE_DEBUG=ON
 
 DOCS_EXTRA_PATCHES=	${FILESDIR}/nodocs-doc_CMakeLists.txt
 
-.if defined(NOPORTDATA)
-IGNORE=		code tables are required, undefine NOPORTDATA
-.endif
-
 _DICT_VER=	20120815
 
 post-patch:
@@ -110,16 +103,5 @@ post-patch:
 EXTRA_PATCHES+=	${FILESDIR}/getline-src_lib_fcitx-utils_utils.c \
 		${FILESDIR}/getline-src_lib_fcitx-utils_utils.h
 .endif
-
-post-install:
-.if ${PORT_OPTIONS:MGTK2}
-	-${LOCALBASE}/bin/gtk-query-immodules-2.0 > ${LOCALBASE}/etc/gtk-2.0/gtk.immodules
-.endif
-.if ${PORT_OPTIONS:MGTK3}
-	-${LOCALBASE}/bin/gtk-query-immodules-3.0 > ${LOCALBASE}/lib/gtk-3.0/${GTK3_VERSION}/immodules.cache
-.endif
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.mk>
