@@ -1,0 +1,224 @@
+# HG changeset patch
+# User joehw
+# Date 1381418310 -3600
+#      Thu Oct 10 16:18:30 2013 +0100
+# Node ID b5b1d1fa4bb4fcd8bc0602fd4f3523fe24d9f00b
+# Parent  7e2686f3328994b546b7a5d2f7ed5d994a9a724f
+8013503: Improve stream factories
+Reviewed-by: alanb, dfuchs, mullan
+
+diff -r 7e2686f33289 -r b5b1d1fa4bb4 drop_included/jaxp_src/src/javax/xml/stream/FactoryFinder.java
+--- jaxp/drop_included/jaxp_src/src/javax/xml/stream/FactoryFinder.java	Fri Oct 04 12:22:34 2013 -0400
++++ jaxp/drop_included/jaxp_src/src/javax/xml/stream/FactoryFinder.java	Thu Oct 10 16:18:30 2013 +0100
+@@ -204,13 +204,15 @@
+      *                              a property name
+      * @param fallbackClassName     Implementation class name, if nothing else
+      *                              is found.  Use null to mean no fallback.
++     * @param standardId            Indicate whether the factoryId is standard
++     *                              or user specified.
+      *
+      * Package private so this code can be shared.
+      */
+-    static Object find(String factoryId, String fallbackClassName)
++    static Object find(String factoryId, String fallbackClassName, boolean standardId)
+         throws ConfigurationError
+     {
+-        return find(factoryId, null, fallbackClassName);
++        return find(factoryId, null, fallbackClassName, standardId);
+     }
+ 
+     /**
+@@ -227,23 +229,34 @@
+      * @param fallbackClassName     Implementation class name, if nothing else
+      *                              is found.  Use null to mean no fallback.
+      *
++     * @param standardId            Indicate whether the factoryId is standard
++     *                              or user specified.
++     *
+      * Package private so this code can be shared.
+      */
+-    static Object find(String factoryId, ClassLoader cl, String fallbackClassName)
++    static Object find(String factoryId, ClassLoader cl, String fallbackClassName,
++            boolean standardId)
+         throws ConfigurationError
+     {
+         dPrint("find factoryId =" + factoryId);
+ 
+         // Use the system property first
+         try {
+-            String systemProp = ss.getSystemProperty(factoryId);
++            String systemProp;
++            if (standardId) {
++                systemProp = ss.getSystemProperty(factoryId);
++            } else {
++                systemProp = System.getProperty(factoryId);
++            }
++
+             if (systemProp != null) {
+                 dPrint("found system property, value=" + systemProp);
+                 return newInstance(systemProp, null, true);
+             }
+         }
+         catch (SecurityException se) {
+-            if (debug) se.printStackTrace();
++            throw new ConfigurationError(
++                "Failed to read factoryId '" + factoryId + "'", se);
+         }
+ 
+         // Try read $java.home/lib/stax.properties followed by
+diff -r 7e2686f33289 -r b5b1d1fa4bb4 drop_included/jaxp_src/src/javax/xml/stream/XMLEventFactory.java
+--- jaxp/drop_included/jaxp_src/src/javax/xml/stream/XMLEventFactory.java	Fri Oct 04 12:22:34 2013 -0400
++++ jaxp/drop_included/jaxp_src/src/javax/xml/stream/XMLEventFactory.java	Thu Oct 10 16:18:30 2013 +0100
+@@ -47,6 +47,9 @@
+  * @since 1.6
+  */
+ public abstract class XMLEventFactory {
++
++  static final String JAXPFACTORYID = "javax.xml.stream.XMLEventFactory";
++
+   protected XMLEventFactory(){}
+ 
+   /**
+@@ -57,8 +60,7 @@
+     throws FactoryConfigurationError
+   {
+     return (XMLEventFactory) FactoryFinder.find(
+-      "javax.xml.stream.XMLEventFactory",
+-      "com.sun.xml.internal.stream.events.XMLEventFactoryImpl");
++      JAXPFACTORYID, "com.sun.xml.internal.stream.events.XMLEventFactoryImpl", true);
+   }
+ 
+   /**
+@@ -91,7 +93,7 @@
+   {
+     return (XMLEventFactory) FactoryFinder.find(
+       "javax.xml.stream.XMLEventFactory",
+-      "com.sun.xml.internal.stream.events.XMLEventFactoryImpl");
++      "com.sun.xml.internal.stream.events.XMLEventFactoryImpl", true);
+   }
+ 
+   /**
+@@ -114,7 +116,8 @@
+           throws FactoryConfigurationError {
+       try {
+           //do not fallback if given classloader can't find the class, throw exception
+-          return (XMLEventFactory) FactoryFinder.newInstance(factoryId, classLoader, false);
++            return (XMLEventFactory) FactoryFinder.find(factoryId, classLoader,
++                    null, factoryId.equals(JAXPFACTORYID) ? true : false);
+       } catch (FactoryFinder.ConfigurationError e) {
+           throw new FactoryConfigurationError(e.getException(),
+                   e.getMessage());
+@@ -141,7 +144,8 @@
+           throws FactoryConfigurationError {
+       try {
+           //do not fallback if given classloader can't find the class, throw exception
+-          return (XMLEventFactory) FactoryFinder.newInstance(factoryId, classLoader, false);
++            return (XMLEventFactory) FactoryFinder.find(factoryId, classLoader,
++                    null, factoryId.equals(JAXPFACTORYID) ? true : false);
+       } catch (FactoryFinder.ConfigurationError e) {
+           throw new FactoryConfigurationError(e.getException(),
+                   e.getMessage());
+diff -r 7e2686f33289 -r b5b1d1fa4bb4 drop_included/jaxp_src/src/javax/xml/stream/XMLInputFactory.java
+--- jaxp/drop_included/jaxp_src/src/javax/xml/stream/XMLInputFactory.java	Fri Oct 04 12:22:34 2013 -0400
++++ jaxp/drop_included/jaxp_src/src/javax/xml/stream/XMLInputFactory.java	Thu Oct 10 16:18:30 2013 +0100
+@@ -139,6 +139,7 @@
+   public static final String ALLOCATOR=
+     "javax.xml.stream.allocator";
+ 
++  static final String JAXPFACTORYID = "javax.xml.stream.XMLInputFactory";
+   static final String DEFAULIMPL = "com.sun.xml.internal.stream.XMLInputFactoryImpl";
+ 
+   protected XMLInputFactory(){}
+@@ -150,9 +151,7 @@
+   public static XMLInputFactory newInstance()
+     throws FactoryConfigurationError
+   {
+-    return (XMLInputFactory) FactoryFinder.find(
+-      "javax.xml.stream.XMLInputFactory",
+-      DEFAULIMPL);
++    return (XMLInputFactory) FactoryFinder.find(JAXPFACTORYID, DEFAULIMPL, true);
+   }
+ 
+   /**
+@@ -183,9 +182,7 @@
+   public static XMLInputFactory newFactory()
+     throws FactoryConfigurationError
+   {
+-    return (XMLInputFactory) FactoryFinder.find(
+-      "javax.xml.stream.XMLInputFactory",
+-      DEFAULIMPL);
++    return (XMLInputFactory) FactoryFinder.find(JAXPFACTORYID, DEFAULIMPL, true);
+   }
+ 
+   /**
+@@ -208,7 +205,8 @@
+           throws FactoryConfigurationError {
+       try {
+           //do not fallback if given classloader can't find the class, throw exception
+-          return (XMLInputFactory) FactoryFinder.find(factoryId, classLoader, null);
++          return (XMLInputFactory) FactoryFinder.find(factoryId, classLoader,
++                  null, factoryId.equals(JAXPFACTORYID) ? true : false);
+       } catch (FactoryFinder.ConfigurationError e) {
+           throw new FactoryConfigurationError(e.getException(),
+                   e.getMessage());
+@@ -235,7 +233,8 @@
+           throws FactoryConfigurationError {
+       try {
+           //do not fallback if given classloader can't find the class, throw exception
+-          return (XMLInputFactory) FactoryFinder.find(factoryId, classLoader, null);
++          return (XMLInputFactory) FactoryFinder.find(factoryId, classLoader,
++                  null, factoryId.equals(JAXPFACTORYID) ? true : false);
+       } catch (FactoryFinder.ConfigurationError e) {
+           throw new FactoryConfigurationError(e.getException(),
+                   e.getMessage());
+diff -r 7e2686f33289 -r b5b1d1fa4bb4 drop_included/jaxp_src/src/javax/xml/stream/XMLOutputFactory.java
+--- jaxp/drop_included/jaxp_src/src/javax/xml/stream/XMLOutputFactory.java	Fri Oct 04 12:22:34 2013 -0400
++++ jaxp/drop_included/jaxp_src/src/javax/xml/stream/XMLOutputFactory.java	Thu Oct 10 16:18:30 2013 +0100
+@@ -115,6 +115,7 @@
+   public static final String IS_REPAIRING_NAMESPACES=
+     "javax.xml.stream.isRepairingNamespaces";
+ 
++  static final String JAXPFACTORYID = "javax.xml.stream.XMLOutputFactory";
+   static final String DEFAULIMPL = "com.sun.xml.internal.stream.XMLOutputFactoryImpl";
+ 
+   protected XMLOutputFactory(){}
+@@ -126,8 +127,7 @@
+   public static XMLOutputFactory newInstance() 
+     throws FactoryConfigurationError
+   {
+-    return (XMLOutputFactory) FactoryFinder.find("javax.xml.stream.XMLOutputFactory",
+-                                                 DEFAULIMPL);
++    return (XMLOutputFactory) FactoryFinder.find(JAXPFACTORYID, DEFAULIMPL, true);
+   }
+ 
+   /**
+@@ -158,8 +158,7 @@
+   public static XMLOutputFactory newFactory()
+     throws FactoryConfigurationError
+   {
+-    return (XMLOutputFactory) FactoryFinder.find("javax.xml.stream.XMLOutputFactory",
+-                                                 DEFAULIMPL);
++    return (XMLOutputFactory) FactoryFinder.find(JAXPFACTORYID, DEFAULIMPL, true);
+   }
+ 
+   /**
+@@ -181,7 +180,8 @@
+           throws FactoryConfigurationError {
+       try {
+           //do not fallback if given classloader can't find the class, throw exception
+-          return (XMLInputFactory) FactoryFinder.find(factoryId, classLoader, null);
++          return (XMLInputFactory) FactoryFinder.find(factoryId, classLoader,
++                  null, factoryId.equals(JAXPFACTORYID) ? true : false);
+       } catch (FactoryFinder.ConfigurationError e) {
+           throw new FactoryConfigurationError(e.getException(),
+                   e.getMessage());
+@@ -210,7 +210,8 @@
+           throws FactoryConfigurationError {
+       try {
+           //do not fallback if given classloader can't find the class, throw exception
+-          return (XMLOutputFactory) FactoryFinder.find(factoryId, classLoader, null);
++          return (XMLOutputFactory) FactoryFinder.find(factoryId, classLoader,
++                  null, factoryId.equals(JAXPFACTORYID) ? true : false);
+       } catch (FactoryFinder.ConfigurationError e) {
+           throw new FactoryConfigurationError(e.getException(),
+                   e.getMessage());

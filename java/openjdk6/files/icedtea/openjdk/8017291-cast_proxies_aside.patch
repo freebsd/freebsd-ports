@@ -1,0 +1,34 @@
+# HG changeset patch
+# User mchung
+# Date 1373884816 25200
+#      Mon Jul 15 03:40:16 2013 -0700
+# Node ID 011d86bdcbf8d4fe0016351b775ff1f48f3620a1
+# Parent  768afb4062fb6653278e5f7e5304a623fcd80c9c
+8017291: Cast Proxies Aside
+Reviewed-by: alanb, ahgross
+
+diff -r 768afb4062fb -r 011d86bdcbf8 src/share/classes/java/lang/ClassLoader.java
+--- jdk/src/share/classes/java/lang/ClassLoader.java	Fri Oct 25 21:19:26 2013 +0100
++++ jdk/src/share/classes/java/lang/ClassLoader.java	Mon Jul 15 03:40:16 2013 -0700
+@@ -54,6 +54,7 @@
+ import sun.misc.VM;
+ import sun.reflect.CallerSensitive;
+ import sun.reflect.Reflection;
++import sun.reflect.misc.ReflectUtil;
+ import sun.security.util.SecurityConstants;
+ 
+ /**
+@@ -338,6 +339,13 @@
+     private void checkPackageAccess(Class cls, ProtectionDomain pd) {
+         final SecurityManager sm = System.getSecurityManager();
+         if (sm != null) {
++            if (ReflectUtil.isNonPublicProxyClass(cls)) {
++                for (Class intf: cls.getInterfaces()) {
++                    checkPackageAccess(intf, pd);
++                }
++                return;
++            }
++
+             final String name = cls.getName();
+             final int i = name.lastIndexOf('.');
+             if (i != -1) {

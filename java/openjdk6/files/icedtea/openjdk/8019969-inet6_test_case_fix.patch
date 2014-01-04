@@ -1,0 +1,33 @@
+# HG changeset patch
+# User michaelm
+# Date 1373900457 -3600
+#      Mon Jul 15 16:00:57 2013 +0100
+# Node ID a8132d72370c1f2467c9bb966d9355b387c35039
+# Parent  bac5d0b011562017738501f02f7db4f39522a62e
+8019969: nioNetworkChannelInet6/SetOptionGetOptionTestInet6 test case crashes
+Reviewed-by: chegar
+
+diff -r bac5d0b01156 -r a8132d72370c src/windows/native/java/net/net_util_md.c
+--- jdk/src/windows/native/java/net/net_util_md.c	Tue Oct 29 01:32:58 2013 +0000
++++ jdk/src/windows/native/java/net/net_util_md.c	Mon Jul 15 16:00:57 2013 +0100
+@@ -879,7 +879,6 @@
+     family = (iafam == IPv4)? AF_INET : AF_INET6;
+     if (ipv6_available() && !(family == AF_INET && v4MappedAddress == JNI_FALSE)) {
+         struct SOCKADDR_IN6 *him6 = (struct SOCKADDR_IN6 *)him;
+-        jbyteArray ipaddress;
+         jbyte caddr[16];
+         jint address, scopeid = 0;
+         jint cached_scope_id = 0;
+@@ -900,10 +899,9 @@
+                 caddr[15] = (address & 0xff);
+             }
+         } else {
+-            ipaddress = (*env)->GetObjectField(env, iaObj, ia6_ipaddressID);
+-            scopeid = (jint)(*env)->GetIntField(env, iaObj, ia6_scopeidID);
++            getInet6Address_ipaddress(env, iaObj, (char *)caddr);
++            scopeid = getInet6Address_scopeid(env, iaObj);
+             cached_scope_id = (jint)(*env)->GetIntField(env, iaObj, ia6_cachedscopeidID);
+-            (*env)->GetByteArrayRegion(env, ipaddress, 0, 16, caddr);
+         }
+ 
+         memset((char *)him6, 0, sizeof(struct SOCKADDR_IN6));

@@ -1,0 +1,205 @@
+# HG changeset patch
+# User mchung
+# Date 1368826191 25200
+#      Fri May 17 14:29:51 2013 -0700
+# Node ID 0bf55b4c8a7bbea02a9d848b2a5451adbd6a6ac4
+# Parent  8733761ca20bb4e46405e274c514bda0e0616a21
+8014745: Provide a switch to allow stack walk search of resource bundle
+Reviewed-by: alanb, jgish
+
+diff -r 8733761ca20b -r 0bf55b4c8a7b make/java/java/mapfile-vers
+--- jdk/make/java/java/mapfile-vers	Wed Jun 26 22:50:47 2013 -0500
++++ jdk/make/java/java/mapfile-vers	Fri May 17 14:29:51 2013 -0700
+@@ -271,6 +271,7 @@
+ 		Java_sun_reflect_NativeConstructorAccessorImpl_newInstance0;
+ 		Java_sun_reflect_NativeMethodAccessorImpl_invoke0;
+ 		Java_sun_reflect_Reflection_getCallerClass;
++		Java_sun_reflect_Reflection_getCallerClass0;
+ 		Java_sun_reflect_Reflection_getClassAccessFlags;
+                 Java_sun_misc_Version_getJdkVersionInfo;
+                 Java_sun_misc_Version_getJdkSpecialVersion;
+diff -r 8733761ca20b -r 0bf55b4c8a7b src/share/classes/java/util/logging/Logger.java
+--- jdk/src/share/classes/java/util/logging/Logger.java	Wed Jun 26 22:50:47 2013 -0500
++++ jdk/src/share/classes/java/util/logging/Logger.java	Fri May 17 14:29:51 2013 -0700
+@@ -303,8 +303,13 @@
+     // null, we assume it's a system logger and add it to the system context.
+     // These system loggers only set the resource bundle to the given
+     // resource bundle name (rather than the default system resource bundle).
+-    private static class SystemLoggerHelper {
+-        static boolean disableCallerCheck = getBooleanProperty("sun.util.logging.disableCallerCheck");
++    private static class LoggerHelper {
++        static boolean disableCallerCheck =
++            getBooleanProperty("sun.util.logging.disableCallerCheck");
++
++        // workaround to turn on the old behavior for resource bundle search
++        static boolean allowStackWalkSearch =
++            getBooleanProperty("jdk.logging.allowStackWalkSearch");
+         private static boolean getBooleanProperty(final String key) {
+             String s = AccessController.doPrivileged(new PrivilegedAction<String>() {
+                 public String run() {
+@@ -318,7 +323,7 @@
+     private static Logger demandLogger(String name, String resourceBundleName, Class<?> caller) {
+         LogManager manager = LogManager.getLogManager();
+         SecurityManager sm = System.getSecurityManager();
+-        if (sm != null && !SystemLoggerHelper.disableCallerCheck) {
++        if (sm != null && !LoggerHelper.disableCallerCheck) {
+             if (caller.getClassLoader() == null) {
+                 return manager.demandSystemLogger(name, resourceBundleName);
+             }
+@@ -1407,25 +1412,61 @@
+         if (useCallersClassLoader) {
+             // Try with the caller's ClassLoader
+             ClassLoader callersClassLoader = getCallersClassLoader();
++            if (callersClassLoader != null && callersClassLoader != cl) {
++                try {
++                    catalog = ResourceBundle.getBundle(name, currentLocale,
++                                                       callersClassLoader);
++                    catalogName = name;
++                    catalogLocale = currentLocale;
++                    return catalog;
++                } catch (MissingResourceException ex) {
++                }
++            }
++        }
+ 
+-            if (callersClassLoader == null || callersClassLoader == cl) {
+-                return null;
+-            }
+-
+-            try {
+-                catalog = ResourceBundle.getBundle(name, currentLocale,
+-                                                   callersClassLoader);
+-                catalogName = name;
+-                catalogLocale = currentLocale;
+-                return catalog;
+-            } catch (MissingResourceException ex) {
+-                return null; // no luck
+-            }
++        // If -Djdk.logging.allowStackWalkSearch=true is set,
++        // does stack walk to search for the resource bundle
++        if (LoggerHelper.allowStackWalkSearch) {
++            return findResourceBundleFromStack(name, currentLocale, cl);
+         } else {
+             return null;
+         }
+     }
+ 
++    /**
++     * This method will fail when running with a VM that enforces caller-sensitive
++     * methods and only allows to get the immediate caller.
++     */
++    @CallerSensitive
++    private synchronized ResourceBundle findResourceBundleFromStack(String name,
++                                                                    Locale locale,
++                                                                    ClassLoader cl)
++    {
++        for (int ix = 0; ; ix++) {
++            Class<?> clz = sun.reflect.Reflection.getCallerClass(ix);
++            if (clz == null) {
++                break;
++            }
++            ClassLoader cl2 = clz.getClassLoader();
++            if (cl2 == null) {
++                cl2 = ClassLoader.getSystemClassLoader();
++            }
++            if (cl == cl2) {
++                // We've already checked this classloader.
++                continue;
++            }
++            cl = cl2;
++            try {
++                catalog = ResourceBundle.getBundle(name, locale, cl);
++                catalogName = name;
++                catalogLocale = locale;
++                return catalog;
++            } catch (MissingResourceException ex) {
++            }
++        }
++        return null;
++    }
++
+     // Private utility method to initialize our one entry
+     // resource bundle name cache and the callers ClassLoader
+     // Note: for consistency reasons, we are careful to check
+diff -r 8733761ca20b -r 0bf55b4c8a7b src/share/classes/sun/reflect/Reflection.java
+--- jdk/src/share/classes/sun/reflect/Reflection.java	Wed Jun 26 22:50:47 2013 -0500
++++ jdk/src/share/classes/sun/reflect/Reflection.java	Fri May 17 14:29:51 2013 -0700
+@@ -58,6 +58,21 @@
+     @CallerSensitive
+     public static native Class getCallerClass();
+ 
++    /**
++     * @deprecated No replacement.  This method will be removed in the next
++     * JDK 7 update release.
++     */
++    @Deprecated
++    @CallerSensitive
++    public static Class getCallerClass(int depth) {
++        return getCallerClass0(depth);
++    }
++
++    // If the VM enforces getting caller class with @CallerSensitive,
++    // this will fail anyway.
++    @CallerSensitive
++    private static native Class getCallerClass0(int depth);
++
+     /** Retrieves the access flags written to the class file. For
+         inner classes these flags may differ from those returned by
+         Class.getModifiers(), which searches the InnerClasses
+diff -r 8733761ca20b -r 0bf55b4c8a7b src/share/native/sun/reflect/Reflection.c
+--- jdk/src/share/native/sun/reflect/Reflection.c	Wed Jun 26 22:50:47 2013 -0500
++++ jdk/src/share/native/sun/reflect/Reflection.c	Fri May 17 14:29:51 2013 -0700
+@@ -34,6 +34,12 @@
+     return JVM_GetCallerClass(env, 2);
+ }
+ 
++JNIEXPORT jclass JNICALL Java_sun_reflect_Reflection_getCallerClass0
++(JNIEnv *env, jclass unused, jint depth)
++{
++    return JVM_GetCallerClass(env, depth);
++}
++
+ JNIEXPORT jint JNICALL Java_sun_reflect_Reflection_getClassAccessFlags
+ (JNIEnv *env, jclass unused, jclass cls)
+ {
+diff -r 8733761ca20b -r 0bf55b4c8a7b test/java/util/logging/bundlesearch/ResourceBundleSearchTest.java
+--- jdk/test/java/util/logging/bundlesearch/ResourceBundleSearchTest.java	Wed Jun 26 22:50:47 2013 -0500
++++ jdk/test/java/util/logging/bundlesearch/ResourceBundleSearchTest.java	Fri May 17 14:29:51 2013 -0700
+@@ -28,6 +28,7 @@
+  * @author  Jim Gish
+  * @build  ResourceBundleSearchTest IndirectlyLoadABundle LoadItUp1 LoadItUp2 TwiceIndirectlyLoadABundle LoadItUp2Invoker
+  * @run main/othervm ResourceBundleSearchTest
++ * @run main/othervm -Djdk.logging.allowStackWalkSearch=true ResourceBundleSearchTest
+  */
+ import java.net.URL;
+ import java.net.URLClassLoader;
+@@ -79,7 +80,15 @@
+ 
+         // Test 1 - can we find a Logger bundle from doing a stack search?
+         // We shouldn't be able to
+-        assertFalse(testGetBundleFromStackSearch(), "1-testGetBundleFromStackSearch");
++        // unless -Djdk.logging.allowStackWalkSearch=true is set
++
++        boolean allowStackWalkSearch = Boolean.getBoolean("jdk.logging.allowStackWalkSearch");
++        if (allowStackWalkSearch) {
++            assertTrue(testGetBundleFromStackSearch(), "1-testGetBundleFromStackSearch");
++        } else {
++            // default behavior
++            assertFalse(testGetBundleFromStackSearch(), "1-testGetBundleFromStackSearch");
++        }
+ 
+         // Test 2 - can we find a Logger bundle off of the Thread context class
+         // loader? We should be able to.
+@@ -111,8 +120,10 @@
+         // Test 6 - first call getLogger("myLogger").
+         // Then call getLogger("myLogger","bundleName") from a different ClassLoader
+         // Make sure we find the bundle
+-        assertTrue(testGetBundleFromSecondCallersClassLoader(),
+-                   "6-testGetBundleFromSecondCallersClassLoader");
++        if (!allowStackWalkSearch) {
++            assertTrue(testGetBundleFromSecondCallersClassLoader(),
++                       "6-testGetBundleFromSecondCallersClassLoader");
++        }
+ 
+         report();
+     }

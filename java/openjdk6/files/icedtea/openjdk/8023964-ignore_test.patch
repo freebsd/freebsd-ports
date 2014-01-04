@@ -1,0 +1,29 @@
+# HG changeset patch
+# User coffeys
+# Date 1378485490 25200
+#      Fri Sep 06 09:38:10 2013 -0700
+# Node ID 44a49c18eba21f97222a2cde09f6536a7f365363
+# Parent  6c0b775b1ff2a0a0ba0fe797cfe18c511f9ee3c1
+8023964: java/io/IOException/LastErrorString.java should be @ignore-d
+Reviewed-by: alanb
+
+diff -r 6c0b775b1ff2 -r 44a49c18eba2 test/java/io/IOException/LastErrorString.java
+--- jdk/test/java/io/IOException/LastErrorString.java	Fri Aug 09 13:50:13 2013 +0100
++++ jdk/test/java/io/IOException/LastErrorString.java	Fri Sep 06 09:38:10 2013 -0700
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -22,7 +22,8 @@
+  */
+ 
+ /* @test
+-   @bug 4167937
++   @bug 4167937 8023964
++   @ignore Test truncates system files when run as root, see 7042603
+    @summary Test code paths that use the JVM_LastErrorString procedure
+  */
+ 

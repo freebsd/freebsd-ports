@@ -1,0 +1,21 @@
+# HG changeset patch
+# User kevinw
+# Date 1379364550 25200
+#      Mon Sep 16 13:49:10 2013 -0700
+# Node ID e8d1979fe077eda9a94528c4b76dd4c5243d5dec
+# Parent  2660219948088d89dd3fc285e093dab2520349e5
+8023478: Test fails with HS crash in GCNotifier.
+Reviewed-by: sla
+
+diff -r 266021994808 -r e8d1979fe077 src/share/vm/services/gcNotifier.cpp
+--- hotspot/src/share/vm/services/gcNotifier.cpp	Fri Aug 02 12:26:46 2013 +0100
++++ hotspot/src/share/vm/services/gcNotifier.cpp	Mon Sep 16 13:49:10 2013 -0700
+@@ -209,7 +209,7 @@
+   GCNotificationRequest *request = getRequest();
+   if (request != NULL) {
+     NotificationMark nm(request);
+-    Handle objGcInfo = createGcInfo(request->gcManager, request->gcStatInfo, THREAD);
++    Handle objGcInfo = createGcInfo(request->gcManager, request->gcStatInfo, CHECK);
+ 
+     Handle objName = java_lang_String::create_from_str(request->gcManager->name(), CHECK);
+     Handle objAction = java_lang_String::create_from_str(request->gcAction, CHECK);

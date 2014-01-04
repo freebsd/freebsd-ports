@@ -1,0 +1,60 @@
+# HG changeset patch
+# User erikj
+# Date 1381419677 -3600
+#      Thu Oct 10 16:41:17 2013 +0100
+# Node ID 918a90950fa69e5247e3af2599d2e7674d64e3d6
+# Parent  d0b5dc55e72cde11331399cbb960458b8f45ea4a
+8015614: Update build settings
+Reviewed-by: tbell, dholmes, ahgross
+
+diff -r d0b5dc55e72c -r 918a90950fa6 make/windows/makefiles/compile.make
+--- hotspot/make/windows/makefiles/compile.make	Tue Sep 17 12:04:11 2013 +0200
++++ hotspot/make/windows/makefiles/compile.make	Thu Oct 10 16:41:17 2013 +0100
+@@ -140,6 +140,7 @@
+ !if "$(MSC_VER)" == "1600"
+ COMPILER_NAME=VS2010
+ !endif
++SAFESEH_FLAG = /SAFESEH
+ !endif
+ 
+ # By default, we do not want to use the debug version of the msvcrt.dll file
+@@ -170,6 +171,7 @@
+ PRODUCT_OPT_OPTION   = /O2 /Oy-
+ FASTDEBUG_OPT_OPTION = /O2 /Oy-
+ DEBUG_OPT_OPTION     = /Od
++SAFESEH_FLAG = /SAFESEH
+ !endif
+ 
+ !if "$(COMPILER_NAME)" == "VS2005"
+@@ -186,6 +188,7 @@
+ # Manifest Tool - used in VS2005 and later to adjust manifests stored
+ # as resources inside build artifacts.
+ MT=mt.exe
++SAFESEH_FLAG = /SAFESEH
+ !endif
+ 
+ !if "$(COMPILER_NAME)" == "VS2008"
+@@ -209,8 +212,8 @@
+ # as resources inside build artifacts.
+ MT=mt.exe
+ !if "$(BUILDARCH)" == "i486"
+-LD_FLAGS = /SAFESEH $(LD_FLAGS)
+-!endif
++LD_FLAGS = $(SAFESEH_FLAG) $(LD_FLAGS)
++SAFESEH_FLAG = /SAFESEH
+ !endif
+ 
+ # Compile for space above time.
+diff -r d0b5dc55e72c -r 918a90950fa6 make/windows/makefiles/sa.make
+--- hotspot/make/windows/makefiles/sa.make	Tue Sep 17 12:04:11 2013 +0200
++++ hotspot/make/windows/makefiles/sa.make	Thu Oct 10 16:41:17 2013 +0100
+@@ -107,6 +107,9 @@
+ !if "$(ENABLE_FULL_DEBUG_SYMBOLS)" == "1"
+ SA_LFLAGS = $(SA_LFLAGS) /map /debug
+ !endif
++!if "$(BUILDARCH)" == "i486"
++SA_LFLAGS = $(SAFESEH_FLAG) $(SA_LFLAGS)
++!endif
+ 
+ # Note that we do not keep sawindbj.obj around as it would then
+ # get included in the dumpbin command in build_vm_def.sh

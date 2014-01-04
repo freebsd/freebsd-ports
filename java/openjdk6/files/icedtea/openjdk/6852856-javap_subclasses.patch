@@ -1,0 +1,508 @@
+# HG changeset patch
+# User jjg
+# Date 1382677646 -3600
+#      Fri Oct 25 06:07:26 2013 +0100
+# Node ID a22d1b683f15e7f67d7d3de84f7c866a65c42552
+# Parent  dca34170f5f80bf30228c12a647b3f1a492b3eeb
+6852856: javap changes to facilitate subclassing javap for variants
+Reviewed-by: mcimadamore
+
+diff -r dca34170f5f8 -r a22d1b683f15 src/share/classes/com/sun/tools/classfile/AccessFlags.java
+--- langtools/src/share/classes/com/sun/tools/classfile/AccessFlags.java	Mon Aug 04 17:54:15 2008 -0700
++++ langtools/src/share/classes/com/sun/tools/classfile/AccessFlags.java	Fri Oct 25 06:07:26 2013 +0100
+@@ -58,7 +58,7 @@
+     public static final int ACC_ENUM          = 0x4000; // class, inner, field
+     public static final int ACC_MODULE        = 0x8000; // class, inner, field, method
+ 
+-    private static enum Type { Class, InnerClass, Field, Method};
++    public static enum Kind { Class, InnerClass, Field, Method};
+ 
+     AccessFlags(ClassReader cr) throws IOException {
+         this(cr.readUnsignedShort());
+@@ -87,11 +87,11 @@
+ 
+     public Set<String> getClassModifiers() {
+         int f = ((flags & ACC_INTERFACE) != 0 ? flags & ~ACC_ABSTRACT : flags);
+-        return getModifiers(f, classModifiers, Type.Class);
++        return getModifiers(f, classModifiers, Kind.Class);
+     }
+ 
+     public Set<String> getClassFlags() {
+-        return getFlags(classFlags, Type.Class);
++        return getFlags(classFlags, Kind.Class);
+     }
+ 
+     private static final int[] innerClassModifiers = {
+@@ -106,11 +106,11 @@
+ 
+     public Set<String> getInnerClassModifiers() {
+         int f = ((flags & ACC_INTERFACE) != 0 ? flags & ~ACC_ABSTRACT : flags);
+-        return getModifiers(f, innerClassModifiers, Type.InnerClass);
++        return getModifiers(f, innerClassModifiers, Kind.InnerClass);
+     }
+ 
+     public Set<String> getInnerClassFlags() {
+-        return getFlags(innerClassFlags, Type.InnerClass);
++        return getFlags(innerClassFlags, Kind.InnerClass);
+     }
+ 
+     private static final int[] fieldModifiers = {
+@@ -124,11 +124,11 @@
+     };
+ 
+     public Set<String> getFieldModifiers() {
+-        return getModifiers(fieldModifiers, Type.Field);
++        return getModifiers(fieldModifiers, Kind.Field);
+     }
+ 
+     public Set<String> getFieldFlags() {
+-        return getFlags(fieldFlags, Type.Field);
++        return getFlags(fieldFlags, Kind.Field);
+     }
+ 
+     private static final int[] methodModifiers = {
+@@ -143,18 +143,18 @@
+     };
+ 
+     public Set<String> getMethodModifiers() {
+-        return getModifiers(methodModifiers, Type.Method);
++        return getModifiers(methodModifiers, Kind.Method);
+     }
+ 
+     public Set<String> getMethodFlags() {
+-        return getFlags(methodFlags, Type.Method);
++        return getFlags(methodFlags, Kind.Method);
+     }
+ 
+-    private Set<String> getModifiers(int[] modifierFlags, Type t) {
++    private Set<String> getModifiers(int[] modifierFlags, Kind t) {
+         return getModifiers(flags, modifierFlags, t);
+     }
+ 
+-    private static Set<String> getModifiers(int flags, int[] modifierFlags, Type t) {
++    private static Set<String> getModifiers(int flags, int[] modifierFlags, Kind t) {
+         Set<String> s = new LinkedHashSet<String>();
+         for (int m: modifierFlags) {
+             if ((flags & m) != 0)
+@@ -163,7 +163,7 @@
+         return s;
+     }
+ 
+-    private Set<String> getFlags(int[] expectedFlags, Type t) {
++    private Set<String> getFlags(int[] expectedFlags, Kind t) {
+         Set<String> s = new LinkedHashSet<String>();
+         int f = flags;
+         for (int e: expectedFlags) {
+@@ -180,7 +180,7 @@
+         return s;
+     }
+ 
+-    private static String flagToModifier(int flag, Type t) {
++    private static String flagToModifier(int flag, Kind t) {
+         switch (flag) {
+             case ACC_PUBLIC:
+                 return "public";
+@@ -195,7 +195,7 @@
+             case ACC_SYNCHRONIZED:
+                 return "synchronized";
+             case 0x80:
+-                return (t == Type.Field ? "transient" : null);
++                return (t == Kind.Field ? "transient" : null);
+             case ACC_VOLATILE:
+                 return "volatile";
+             case ACC_NATIVE:
+@@ -211,7 +211,7 @@
+         }
+     }
+ 
+-    private static String flagToName(int flag, Type t) {
++    private static String flagToName(int flag, Kind t) {
+         switch (flag) {
+         case ACC_PUBLIC:
+             return "ACC_PUBLIC";
+@@ -224,11 +224,11 @@
+         case ACC_FINAL:
+             return "ACC_FINAL";
+         case 0x20:
+-            return (t == Type.Class ? "ACC_SUPER" : "ACC_SYNCHRONIZED");
++            return (t == Kind.Class ? "ACC_SUPER" : "ACC_SYNCHRONIZED");
+         case 0x40:
+-            return (t == Type.Field ? "ACC_VOLATILE" : "ACC_BRIDGE");
++            return (t == Kind.Field ? "ACC_VOLATILE" : "ACC_BRIDGE");
+         case 0x80:
+-            return (t == Type.Field ? "ACC_TRANSIENT" : "ACC_VARARGS");
++            return (t == Kind.Field ? "ACC_TRANSIENT" : "ACC_VARARGS");
+         case ACC_NATIVE:
+             return "ACC_NATIVE";
+         case ACC_INTERFACE:
+@@ -250,5 +250,5 @@
+         }
+     }
+ 
+-    final int flags;
++    public final int flags;
+ }
+diff -r dca34170f5f8 -r a22d1b683f15 src/share/classes/com/sun/tools/classfile/ConstantPool.java
+--- langtools/src/share/classes/com/sun/tools/classfile/ConstantPool.java	Mon Aug 04 17:54:15 2008 -0700
++++ langtools/src/share/classes/com/sun/tools/classfile/ConstantPool.java	Fri Oct 25 06:07:26 2013 +0100
+@@ -569,6 +569,11 @@
+             return visitor.visitNameAndType(this, data);
+         }
+ 
++        @Override
++        public String toString() {
++            return "CONSTANT_NameAndType_info[name_index: " + name_index + ", type_index: " + type_index + "]";
++        }
++
+         public final int name_index;
+         public final int type_index;
+     }
+@@ -596,6 +601,11 @@
+             return visitor.visitString(this, data);
+         }
+ 
++        @Override
++        public String toString() {
++            return "CONSTANT_String_info[class_index: " + string_index + "]";
++        }
++
+         public final int string_index;
+     }
+ 
+@@ -614,7 +624,19 @@
+ 
+         @Override
+         public String toString() {
+-            return "CONSTANT_Utf8_info[value: " + value + "]";
++            if (value.length() < 32 && isPrintableAscii(value))
++                return "CONSTANT_Utf8_info[value: \"" + value + "\"]";
++            else
++                return "CONSTANT_Utf8_info[value: (" + value.length() + " chars)]";
++        }
++
++        static boolean isPrintableAscii(String s) {
++            for (int i = 0; i < s.length(); i++) {
++                char c = s.charAt(i);
++                if (c < 32 || c >= 127)
++                    return false;
++            }
++            return true;
+         }
+ 
+         public <R, D> R accept(Visitor<R, D> visitor, D data) {
+diff -r dca34170f5f8 -r a22d1b683f15 src/share/classes/com/sun/tools/javap/AttributeWriter.java
+--- langtools/src/share/classes/com/sun/tools/javap/AttributeWriter.java	Mon Aug 04 17:54:15 2008 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/AttributeWriter.java	Fri Oct 25 06:07:26 2013 +0100
+@@ -74,7 +74,7 @@
+ public class AttributeWriter extends BasicWriter
+         implements Attribute.Visitor<Void,Void>
+ {
+-    static AttributeWriter instance(Context context) {
++    public static AttributeWriter instance(Context context) {
+         AttributeWriter instance = context.get(AttributeWriter.class);
+         if (instance == null)
+             instance = new AttributeWriter(context);
+diff -r dca34170f5f8 -r a22d1b683f15 src/share/classes/com/sun/tools/javap/ClassWriter.java
+--- langtools/src/share/classes/com/sun/tools/javap/ClassWriter.java	Mon Aug 04 17:54:15 2008 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/ClassWriter.java	Fri Oct 25 06:07:26 2013 +0100
+@@ -93,17 +93,25 @@
+         this.lastModified = lastModified;
+     }
+ 
+-    ClassFile getClassFile() {
++    protected ClassFile getClassFile() {
+         return classFile;
+     }
+ 
+-    Method getMethod() {
++    protected void setClassFile(ClassFile cf) {
++        classFile = cf;
++        constant_pool = classFile.constant_pool;
++    }
++
++    protected Method getMethod() {
+         return method;
+     }
+ 
++    protected void setMethod(Method m) {
++        method = m;
++    }
++
+     public void write(ClassFile cf) {
+-        classFile = cf;
+-        constant_pool = classFile.constant_pool;
++        setClassFile(cf);
+ 
+         if ((options.sysInfo || options.verbose) && !options.compat) {
+             if (uri != null) {
+@@ -201,13 +209,13 @@
+         println();
+     }
+ 
+-    void writeFields() {
++    protected void writeFields() {
+         for (Field f: classFile.fields) {
+             writeField(f);
+         }
+     }
+ 
+-    void writeField(Field f) {
++    protected void writeField(Field f) {
+         if (!options.checkAccess(f.access_flags))
+             return;
+ 
+@@ -263,12 +271,12 @@
+             println();
+     }
+ 
+-    void writeMethods() {
++    protected void writeMethods() {
+         for (Method m: classFile.methods)
+             writeMethod(m);
+     }
+ 
+-    void writeMethod(Method m) {
++    protected void writeMethod(Method m) {
+         if (!options.checkAccess(m.access_flags))
+             return;
+ 
+diff -r dca34170f5f8 -r a22d1b683f15 src/share/classes/com/sun/tools/javap/ConstantWriter.java
+--- langtools/src/share/classes/com/sun/tools/javap/ConstantWriter.java	Mon Aug 04 17:54:15 2008 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/ConstantWriter.java	Fri Oct 25 06:07:26 2013 +0100
+@@ -40,7 +40,7 @@
+  *  deletion without notice.</b>
+  */
+ public class ConstantWriter extends BasicWriter {
+-    static ConstantWriter instance(Context context) {
++    public static ConstantWriter instance(Context context) {
+         ConstantWriter instance = context.get(ConstantWriter.class);
+         if (instance == null)
+             instance = new ConstantWriter(context);
+@@ -54,7 +54,12 @@
+         options = Options.instance(context);
+     }
+ 
+-    void writeConstantPool() {
++    protected void writeConstantPool() {
++        ConstantPool constant_pool = classWriter.getClassFile().constant_pool;
++        writeConstantPool(constant_pool);
++    }
++
++    protected void writeConstantPool(ConstantPool constant_pool) {
+         ConstantPool.Visitor<Integer, Void> v = new ConstantPool.Visitor<Integer,Void>() {
+             public Integer visitClass(CONSTANT_Class_info info, Void p) {
+                 println("#" + info.name_index + ";\t//  " + stringValue(info));
+@@ -114,7 +119,6 @@
+ 
+         };
+         println("  Constant pool:");
+-        ConstantPool constant_pool = classWriter.getClassFile().constant_pool;
+         int cpx = 1;
+         while (cpx < constant_pool.size()) {
+             try {
+@@ -127,7 +131,7 @@
+         }
+     }
+ 
+-    void write(int cpx) {
++    protected void write(int cpx) {
+         ClassFile classFile = classWriter.getClassFile();
+         if (cpx == 0) {
+             print("#0");
+diff -r dca34170f5f8 -r a22d1b683f15 src/share/classes/com/sun/tools/javap/JavapTask.java
+--- langtools/src/share/classes/com/sun/tools/javap/JavapTask.java	Mon Aug 04 17:54:15 2008 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/JavapTask.java	Fri Oct 25 06:07:26 2013 +0100
+@@ -36,6 +36,7 @@
+ import java.io.Writer;
+ import java.security.DigestInputStream;
+ import java.security.MessageDigest;
++import java.security.NoSuchAlgorithmException;
+ import java.text.MessageFormat;
+ import java.util.ArrayList;
+ import java.util.Arrays;
+@@ -242,20 +243,27 @@
+ 
+     };
+ 
+-    JavapTask() {
++    public JavapTask() {
+         context = new Context();
+         options = Options.instance(context);
++        attributeFactory = new Attribute.Factory();
+     }
+ 
+-    JavapTask(Writer out,
++    public JavapTask(Writer out,
++            JavaFileManager fileManager,
++            DiagnosticListener<? super JavaFileObject> diagnosticListener) {
++        this();
++        this.log = getPrintWriterForWriter(out);
++        this.fileManager = fileManager;
++        this.diagnosticListener = diagnosticListener;
++    }
++
++    public JavapTask(Writer out,
+             JavaFileManager fileManager,
+             DiagnosticListener<? super JavaFileObject> diagnosticListener,
+             Iterable<String> options,
+             Iterable<String> classes) {
+-        this();
+-        this.log = getPrintWriterForWriter(out);
+-        this.fileManager = fileManager;
+-        this.diagnosticListener = diagnosticListener;
++        this(out, fileManager, diagnosticListener);
+ 
+         try {
+             handleOptions(options, false);
+@@ -464,29 +472,10 @@
+                        continue;
+                     }
+                 }
+-                Attribute.Factory attributeFactory = new Attribute.Factory();
+                 attributeFactory.setCompat(options.compat);
+                 attributeFactory.setJSR277(options.jsr277);
+ 
+-                InputStream in = fo.openInputStream();
+-                SizeInputStream sizeIn = null;
+-                MessageDigest md  = null;
+-                if (options.sysInfo || options.verbose) {
+-                    md = MessageDigest.getInstance("MD5");
+-                    in = new DigestInputStream(in, md);
+-                    in = sizeIn = new SizeInputStream(in);
+-                }
+-
+-                ClassFile cf = ClassFile.read(in, attributeFactory);
+-
+-                if (options.sysInfo || options.verbose) {
+-                    classWriter.setFile(fo.toUri());
+-                    classWriter.setLastModified(fo.getLastModified());
+-                    classWriter.setDigest("MD5", md.digest());
+-                    classWriter.setFileSize(sizeIn.size());
+-                }
+-
+-                classWriter.write(cf);
++                write(read(fo));
+ 
+             } catch (ConstantPoolException e) {
+                 diagnosticListener.report(createDiagnostic("err.bad.constant.pool", className, e.getLocalizedMessage()));
+@@ -517,6 +506,103 @@
+         return ok;
+     }
+ 
++    public static class ClassFileInfo {
++        ClassFileInfo(JavaFileObject fo, ClassFile cf, byte[] digest, int size) {
++            this.fo = fo;
++            this.cf = cf;
++            this.digest = digest;
++            this.size = size;
++        }
++        public final JavaFileObject fo;
++        public final ClassFile cf;
++        public final byte[] digest;
++        public final int size;
++    }
++
++    public ClassFileInfo read(JavaFileObject fo) throws IOException, ConstantPoolException {
++        InputStream in = fo.openInputStream();
++        try {
++            SizeInputStream sizeIn = null;
++            MessageDigest md  = null;
++            if (options.sysInfo || options.verbose) {
++                try {
++                    md = MessageDigest.getInstance("MD5");
++                } catch (NoSuchAlgorithmException ignore) {
++                }
++                in = new DigestInputStream(in, md);
++                in = sizeIn = new SizeInputStream(in);
++            }
++
++            ClassFile cf = ClassFile.read(in, attributeFactory);
++            byte[] digest = (md == null) ? null : md.digest();
++            int size = (sizeIn == null) ? -1 : sizeIn.size();
++            return new ClassFileInfo(fo, cf, digest, size);
++        } finally {
++            in.close();
++        }
++    }
++
++    public void write(ClassFileInfo info) {
++        ClassWriter classWriter = ClassWriter.instance(context);
++        if (options.sysInfo || options.verbose) {
++            classWriter.setFile(info.fo.toUri());
++            classWriter.setLastModified(info.fo.getLastModified());
++            classWriter.setDigest("MD5", info.digest);
++            classWriter.setFileSize(info.size);
++        }
++
++        classWriter.write(info.cf);
++    }
++
++    protected void setClassFile(ClassFile classFile) {
++        ClassWriter classWriter = ClassWriter.instance(context);
++        classWriter.setClassFile(classFile);
++    }
++
++    protected void setMethod(Method enclosingMethod) {
++        ClassWriter classWriter = ClassWriter.instance(context);
++        classWriter.setMethod(enclosingMethod);
++    }
++
++    protected void write(Attribute value) {
++        AttributeWriter attrWriter = AttributeWriter.instance(context);
++        ClassWriter classWriter = ClassWriter.instance(context);
++        ClassFile cf = classWriter.getClassFile();
++        attrWriter.write(cf, value, cf.constant_pool);
++    }
++
++    protected void write(Attributes attrs) {
++        AttributeWriter attrWriter = AttributeWriter.instance(context);
++        ClassWriter classWriter = ClassWriter.instance(context);
++        ClassFile cf = classWriter.getClassFile();
++        attrWriter.write(cf, attrs, cf.constant_pool);
++    }
++
++    protected void write(ConstantPool constant_pool) {
++        ConstantWriter constantWriter = ConstantWriter.instance(context);
++        constantWriter.writeConstantPool(constant_pool);
++    }
++
++    protected void write(ConstantPool constant_pool, int value) {
++        ConstantWriter constantWriter = ConstantWriter.instance(context);
++        constantWriter.write(value);
++    }
++
++    protected void write(ConstantPool.CPInfo value) {
++        ConstantWriter constantWriter = ConstantWriter.instance(context);
++        constantWriter.println(value);
++    }
++
++    protected void write(Field value) {
++        ClassWriter classWriter = ClassWriter.instance(context);
++        classWriter.writeField(value);
++    }
++
++    protected void write(Method value) {
++        ClassWriter classWriter = ClassWriter.instance(context);
++        classWriter.writeMethod(value);
++    }
++
+     private JavaFileManager getDefaultFileManager(final DiagnosticListener<? super JavaFileObject> dl, PrintWriter log) {
+         return JavapFileManager.create(dl, log, options);
+     }
+@@ -646,7 +732,7 @@
+         }
+     }
+ 
+-    Context context;
++    protected Context context;
+     JavaFileManager fileManager;
+     PrintWriter log;
+     DiagnosticListener<? super JavaFileObject> diagnosticListener;
+@@ -655,6 +741,7 @@
+     //ResourceBundle bundle;
+     Locale task_locale;
+     Map<Locale, ResourceBundle> bundles;
++    protected Attribute.Factory attributeFactory;
+ 
+     private static final String progname = "javap";
+ 

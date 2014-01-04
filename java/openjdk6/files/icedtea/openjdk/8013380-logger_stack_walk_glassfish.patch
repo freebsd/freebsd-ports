@@ -1,0 +1,941 @@
+# HG changeset patch
+# User andrew
+# Date 1372305047 18000
+#      Wed Jun 26 22:50:47 2013 -0500
+# Node ID 8733761ca20bb4e46405e274c514bda0e0616a21
+# Parent  a7048970934a1425d5486e6acd0b07558be038c4
+8013380: Removal of stack walk to find resource bundle breaks Glassfish startup
+Summary: Use caller's classloader to load resource as an alternative to thread context classloader and system classloader
+Reviewed-by: mchung, alanb
+
+diff -r a7048970934a -r 8733761ca20b src/share/classes/java/util/logging/LogManager.java
+--- jdk/src/share/classes/java/util/logging/LogManager.java	Tue Apr 16 16:34:14 2013 -0400
++++ jdk/src/share/classes/java/util/logging/LogManager.java	Wed Jun 26 22:50:47 2013 -0500
+@@ -377,11 +377,11 @@
+     // add a new Logger or return the one that has been added previously
+     // as a LogManager subclass may override the addLogger, getLogger,
+     // readConfiguration, and other methods.
+-    Logger demandLogger(String name, String resourceBundleName) {
++    Logger demandLogger(String name, String resourceBundleName, Class<?> caller) {
+         Logger result = getLogger(name);
+         if (result == null) {
+             // only allocate the new logger once
+-            Logger newLogger = new Logger(name, resourceBundleName);
++            Logger newLogger = new Logger(name, resourceBundleName, caller);
+             do {
+                 if (addLogger(newLogger)) {
+                     // We successfully added the new Logger that we
+@@ -465,7 +465,7 @@
+         Logger demandLogger(String name, String resourceBundleName) {
+             // a LogManager subclass may have its own implementation to add and
+             // get a Logger.  So delegate to the LogManager to do the work.
+-            return manager.demandLogger(name, resourceBundleName);
++            return manager.demandLogger(name, resourceBundleName, null);
+         }
+ 
+         synchronized Logger findLogger(String name) {
+diff -r a7048970934a -r 8733761ca20b src/share/classes/java/util/logging/Logger.java
+--- jdk/src/share/classes/java/util/logging/Logger.java	Tue Apr 16 16:34:14 2013 -0400
++++ jdk/src/share/classes/java/util/logging/Logger.java	Wed Jun 26 22:50:47 2013 -0500
+@@ -189,6 +189,7 @@
+     private ArrayList<LogManager.LoggerWeakRef> kids;   // WeakReferences to loggers that have us as parent
+     private Level levelObject;
+     private volatile int levelValue;  // current effective level value
++    private WeakReference<ClassLoader> callersClassLoaderRef;
+ 
+     /**
+      * GLOBAL_LOGGER_NAME is a name for the global logger.
+@@ -244,15 +245,31 @@
+      *             no corresponding resource can be found.
+      */
+     protected Logger(String name, String resourceBundleName) {
++        this(name, resourceBundleName, null);
++    }
++
++    Logger(String name, String resourceBundleName, Class<?> caller) {
+         this.manager = LogManager.getLogManager();
+-        if (resourceBundleName != null) {
+-            // Note: we may get a MissingResourceException here.
+-            setupResourceInfo(resourceBundleName);
+-        }
++        setupResourceInfo(resourceBundleName, caller);
+         this.name = name;
+         levelValue = Level.INFO.intValue();
+     }
+ 
++    private void setCallersClassLoaderRef(Class<?> caller) {
++        ClassLoader callersClassLoader = ((caller != null)
++                                         ? caller.getClassLoader()
++                                         : null);
++        if (callersClassLoader != null) {
++            this.callersClassLoaderRef = new WeakReference(callersClassLoader);
++        }
++    }
++
++    private ClassLoader getCallersClassLoader() {
++        return (callersClassLoaderRef != null)
++                ? callersClassLoaderRef.get()
++                : null;
++    }
++
+     // This constructor is used only to create the global Logger.
+     // It is needed to break a cyclic dependence between the LogManager
+     // and Logger static initializers causing deadlocks.
+@@ -306,7 +323,9 @@
+                 return manager.demandSystemLogger(name, resourceBundleName);
+             }
+         }
+-        return manager.demandLogger(name, resourceBundleName);
++        return manager.demandLogger(name, resourceBundleName, caller);
++        // ends up calling new Logger(name, resourceBundleName, caller)
++        // iff the logger doesn't exist already
+     }
+ 
+     /**
+@@ -382,11 +401,24 @@
+      */
+     @CallerSensitive
+     public static synchronized Logger getLogger(String name, String resourceBundleName) {
+-        Logger result = demandLogger(name, resourceBundleName, Reflection.getCallerClass());
++        Class<?> callerClass = Reflection.getCallerClass();
++        Logger result = demandLogger(name, resourceBundleName, callerClass);
++
+         if (result.resourceBundleName == null) {
++            // We haven't set a bundle name yet on the Logger, so it's ok to proceed.
++
++            // We have to set the callers ClassLoader here in case demandLogger
++            // above found a previously created Logger.  This can happen, for
++            // example, if Logger.getLogger(name) is called and subsequently
++            // Logger.getLogger(name, resourceBundleName) is called.  In this case
++            // we won't necessarily have the correct classloader saved away, so
++            // we need to set it here, too.
++
+             // Note: we may get a MissingResourceException here.
+-            result.setupResourceInfo(resourceBundleName);
++            result.setupResourceInfo(resourceBundleName, callerClass);
+         } else if (!result.resourceBundleName.equals(resourceBundleName)) {
++            // We already had a bundle name on the Logger and we're trying
++            // to change it here which is not allowed.
+             throw new IllegalArgumentException(result.resourceBundleName +
+                                 " != " + resourceBundleName);
+         }
+@@ -441,11 +473,13 @@
+      * @return a newly created private Logger
+      * @throws MissingResourceException if the named ResourceBundle cannot be found.
+      */
++    @CallerSensitive
+     public static synchronized Logger getAnonymousLogger(String resourceBundleName) {
+         LogManager manager = LogManager.getLogManager();
+         // cleanup some Loggers that have been GC'ed
+         manager.drainLoggerRefQueueBounded();
+-        Logger result = new Logger(null, resourceBundleName);
++        Logger result = new Logger(null, resourceBundleName,
++                                   Reflection.getCallerClass());
+         result.anonymous = true;
+         Logger root = manager.getLogger("");
+         result.doSetParent(root);
+@@ -461,7 +495,7 @@
+      * @return localization bundle (may be null)
+      */
+     public ResourceBundle getResourceBundle() {
+-        return findResourceBundle(getResourceBundleName());
++        return findResourceBundle(getResourceBundleName(), true);
+     }
+ 
+     /**
+@@ -548,7 +582,7 @@
+         String ebname = getEffectiveResourceBundleName();
+         if (ebname != null && !ebname.equals(SYSTEM_LOGGER_RB_NAME)) {
+             lr.setResourceBundleName(ebname);
+-            lr.setResourceBundle(findResourceBundle(ebname));
++            lr.setResourceBundle(findResourceBundle(ebname, true));
+         }
+         log(lr);
+     }
+@@ -765,7 +799,7 @@
+         lr.setLoggerName(name);
+         if (rbname != null) {
+             lr.setResourceBundleName(rbname);
+-            lr.setResourceBundle(findResourceBundle(rbname));
++            lr.setResourceBundle(findResourceBundle(rbname, false));
+         }
+         log(lr);
+     }
+@@ -789,7 +823,6 @@
+      *                         can be null
+      * @param   msg     The string message (or a key in the message catalog)
+      */
+-
+     public void logrb(Level level, String sourceClass, String sourceMethod,
+                                 String bundleName, String msg) {
+         if (level.intValue() < levelValue || levelValue == offValue) {
+@@ -1323,9 +1356,18 @@
+      * there is no suitable previous cached value.
+      *
+      * @param name the ResourceBundle to locate
++     * @param userCallersClassLoader if true search using the caller's ClassLoader
+      * @return ResourceBundle specified by name or null if not found
+      */
+-    private synchronized ResourceBundle findResourceBundle(String name) {
++    private synchronized ResourceBundle findResourceBundle(String name,
++                                                           boolean useCallersClassLoader) {
++        // For all lookups, we first check the thread context class loader
++        // if it is set.  If not, we use the system classloader.  If we
++        // still haven't found it we use the callersClassLoaderRef if it
++        // is set and useCallersClassLoader is true.  We set
++        // callersClassLoaderRef initially upon creating the logger with a
++        // non-null resource bundle name.
++
+         // Return a null bundle for a null name.
+         if (name == null) {
+             return null;
+@@ -1358,22 +1400,52 @@
+             catalogLocale = currentLocale;
+             return catalog;
+         } catch (MissingResourceException ex) {
++            // We can't find the ResourceBundle in the default
++            // ClassLoader.  Drop through.
++        }
++
++        if (useCallersClassLoader) {
++            // Try with the caller's ClassLoader
++            ClassLoader callersClassLoader = getCallersClassLoader();
++
++            if (callersClassLoader == null || callersClassLoader == cl) {
++                return null;
++            }
++
++            try {
++                catalog = ResourceBundle.getBundle(name, currentLocale,
++                                                   callersClassLoader);
++                catalogName = name;
++                catalogLocale = currentLocale;
++                return catalog;
++            } catch (MissingResourceException ex) {
++                return null; // no luck
++            }
++        } else {
+             return null;
+         }
+     }
+ 
+     // Private utility method to initialize our one entry
+-    // resource bundle cache.
++    // resource bundle name cache and the callers ClassLoader
+     // Note: for consistency reasons, we are careful to check
+     // that a suitable ResourceBundle exists before setting the
+-    // ResourceBundleName.
+-    private synchronized void setupResourceInfo(String name) {
++    // resourceBundleName field.
++    // Synchronized to prevent races in setting the fields.
++    private synchronized void setupResourceInfo(String name,
++                                                Class<?> callersClass) {
+         if (name == null) {
+             return;
+         }
+-        if (findResourceBundle(name) == null) {
++
++        setCallersClassLoaderRef(callersClass);
++        if (findResourceBundle(name, true) == null) {
+             // We've failed to find an expected ResourceBundle.
+-            throw new MissingResourceException("Can't find " + name + " bundle", name, "");
++            // unset the caller's ClassLoader since we were unable to find the
++            // the bundle using it
++            this.callersClassLoaderRef = null;
++            throw new MissingResourceException("Can't find " + name + " bundle",
++                                                name, "");
+         }
+         resourceBundleName = name;
+     }
+diff -r a7048970934a -r 8733761ca20b test/java/util/logging/bundlesearch/IndirectlyLoadABundle.java
+--- jdk/test/java/util/logging/bundlesearch/IndirectlyLoadABundle.java	Tue Apr 16 16:34:14 2013 -0400
++++ jdk/test/java/util/logging/bundlesearch/IndirectlyLoadABundle.java	Wed Jun 26 22:50:47 2013 -0500
+@@ -21,43 +21,28 @@
+  * questions.
+  */
+ 
+-import java.io.File;
+ import java.lang.reflect.InvocationTargetException;
+ import java.lang.reflect.Method;
++import java.net.MalformedURLException;
+ import java.net.URL;
+ import java.net.URLClassLoader;
++import java.nio.file.Paths;
++import java.util.logging.Logger;
+ 
+ /**
+  * This class is used to ensure that a resource bundle loadable by a classloader
+- * is on the caller's stack, but not on the classpath or TCCL to ensure that
+- * Logger.getLogger() can't load the bundle via a stack search
++ * is on the caller's stack, but not on the classpath or TCCL.  It tests that
++ * Logger.getLogger() can load the bundle via the immediate caller's classloader
+  *
+  * @author Jim Gish
+  */
+ public class IndirectlyLoadABundle {
+ 
+-    private final static String rbName = "StackSearchableResource";
++    private final static String rbName = "CallerSearchableResource";
+ 
+     public boolean loadAndTest() throws Throwable {
+-        // Find out where we are running from so we can setup the URLClassLoader URLs
+-        // test.src and test.classes will be set if running in jtreg, but probably
+-        // not otherwise
+-        String testDir = System.getProperty("test.src", System.getProperty("user.dir"));
+-        String testClassesDir = System.getProperty("test.classes",
+-                System.getProperty("user.dir"));
+-        String sep = System.getProperty("file.separator");
+-
+-        URL[] urls = new URL[2];
+-
+-        // Allow for both jtreg and standalone cases here
+-        urls[0] = new File( testDir + sep + "resources" + sep ).toURI().toURL();
+-        urls[1] = new File( testClassesDir + sep ).toURI().toURL();
+-
+-        System.out.println("INFO: urls[0] = " + urls[0]);
+-        System.out.println("INFO: urls[1] = " + urls[1]);
+-
+         // Make sure we can find it via the URLClassLoader
+-        URLClassLoader yetAnotherResourceCL = new URLClassLoader(urls, null);
++        URLClassLoader yetAnotherResourceCL = new URLClassLoader(getURLs(), null);
+         if (!testForValidResourceSetup(yetAnotherResourceCL)) {
+             throw new Exception("Couldn't directly load bundle " + rbName
+                     + " as expected. Test config problem");
+@@ -70,23 +55,109 @@
+                     + " able to. Test config problem");
+         }
+ 
+-        Class<?> loadItUpClazz = Class.forName("LoadItUp", true, yetAnotherResourceCL);
++        Class<?> loadItUpClazz = Class.forName("LoadItUp1", true,
++                                               yetAnotherResourceCL);
+         ClassLoader actual = loadItUpClazz.getClassLoader();
+         if (actual != yetAnotherResourceCL) {
+-            throw new Exception("LoadItUp was loaded by an unexpected CL: " + actual);
++            throw new Exception("LoadItUp1 was loaded by an unexpected CL: " + actual);
+         }
+         Object loadItUp = loadItUpClazz.newInstance();
+-        Method testMethod = loadItUpClazz.getMethod("test", String.class);
++        Method testMethod = loadItUpClazz.getMethod("getLogger", String.class, String.class);
+         try {
+-            return (Boolean) testMethod.invoke(loadItUp, rbName);
++            return (Logger)testMethod.invoke(loadItUp, "NestedLogger1", rbName) != null;
+         } catch (InvocationTargetException ex) {
+             throw ex.getTargetException();
+         }
+     }
+ 
++    public boolean testGetAnonymousLogger() throws Throwable {
++        // Test getAnonymousLogger()
++        URLClassLoader loadItUpCL = new URLClassLoader(getURLs(), null);
++        Class<?> loadItUpClazz = Class.forName("LoadItUp1", true, loadItUpCL);
++        ClassLoader actual = loadItUpClazz.getClassLoader();
++        if (actual != loadItUpCL) {
++            throw new Exception("LoadItUp1 was loaded by an unexpected CL: "
++                                 + actual);
++        }
++        Object loadItUpAnon = loadItUpClazz.newInstance();
++        Method testAnonMethod = loadItUpClazz.getMethod("getAnonymousLogger",
++                                                        String.class);
++        try {
++            return (Logger)testAnonMethod.invoke(loadItUpAnon, rbName) != null;
++        } catch (InvocationTargetException ex) {
++            throw ex.getTargetException();
++        }
++    }
++
++
++    public boolean testGetLoggerGetLoggerWithBundle() throws Throwable {
++        // test getLogger("NestedLogger2"); followed by
++        // getLogger("NestedLogger2", rbName) to see if the bundle is found
++        //
++        URL[] urls = getURLs();
++        if (getLoggerWithNewCL(urls, "NestedLogger2", null)) {
++            return getLoggerWithNewCL(urls, "NestedLogger2", rbName);
++
++        } else {
++            throw new Exception("TEST FAILED: first call to getLogger() failed "
++                                 + " in IndirectlyLoadABundle."
++                                 + "testGetLoggerGetLoggerWithBundle");
++        }
++    }
++
++    private URL[] getURLs() throws MalformedURLException {
++        // Find out where we are running from so we can setup the URLClassLoader URLs
++        // test.src and test.classes will be set if running in jtreg, but probably
++        // not otherwise
++        String testDir = System.getProperty("test.src", System.getProperty("user.dir"));
++        String testClassesDir = System.getProperty("test.classes",
++                                                   System.getProperty("user.dir"));
++        URL[] urls = new URL[2];
++        // Allow for both jtreg and standalone cases here
++        urls[0] = Paths.get(testDir, "resources").toUri().toURL();
++        urls[1] = Paths.get(testClassesDir).toUri().toURL();
++
++        return urls;
++    }
++
++    private boolean getLoggerWithNewCL(URL[] urls, String loggerName,
++                                         String bundleName) throws Throwable {
++        Logger result = null;;
++        // Test getLogger("foo"); getLogger("foo", "rbName");
++        // First do the getLogger() call with no bundle name
++        URLClassLoader getLoggerCL = new URLClassLoader(urls, null);
++        Class<?> loadItUpClazz1 = Class.forName("LoadItUp1", true, getLoggerCL);
++        ClassLoader actual = loadItUpClazz1.getClassLoader();
++        if (actual != getLoggerCL) {
++            throw new Exception("LoadItUp1 was loaded by an unexpected CL: "
++                                 + actual);
++        }
++        Object loadItUp1 = loadItUpClazz1.newInstance();
++        if (bundleName != null) {
++            Method getLoggerMethod = loadItUpClazz1.getMethod("getLogger",
++                                                              String.class,
++                                                              String.class);
++            try {
++                result = (Logger) getLoggerMethod.invoke(loadItUp1, loggerName,
++                                                         bundleName);
++            } catch (InvocationTargetException ex) {
++                throw ex.getTargetException();
++            }
++        } else {
++            Method getLoggerMethod = loadItUpClazz1.getMethod("getLogger",
++                                                              String.class);
++            try {
++                result = (Logger) getLoggerMethod.invoke(loadItUp1, loggerName);
++            } catch (InvocationTargetException ex) {
++                throw ex.getTargetException();
++            }
++        }
++        return result != null;
++    }
++
+     private boolean testForValidResourceSetup(ClassLoader cl) {
+-        // First make sure the test environment is setup properly and the bundle actually
+-        // exists
++        // First make sure the test environment is setup properly and the bundle
++        // actually exists
+         return ResourceBundleSearchTest.isOnClassPath(rbName, cl);
+     }
+ }
+diff -r a7048970934a -r 8733761ca20b test/java/util/logging/bundlesearch/LoadItUp.java
+--- jdk/test/java/util/logging/bundlesearch/LoadItUp.java	Tue Apr 16 16:34:14 2013 -0400
++++ jdk/test/java/util/logging/bundlesearch/LoadItUp.java	Wed Jun 26 22:50:47 2013 -0500
+@@ -20,43 +20,30 @@
+  * or visit www.oracle.com if you need additional information or have any
+  * questions.
+  */
+-import java.util.MissingResourceException;
+ import java.util.logging.Logger;
+ 
+ /*
+- * This class is loaded onto the call stack when the test method is called
+- * and then its classloader can be used to find a property bundle in the same
+- * directory as the class.  However, Logger is not allowed
++ * This class is loaded onto the call stack when the getLogger methods are
++ * called and then the classes classloader can be used to find a bundle in
++ * the same directory as the class.  However, Logger is not allowed
+  * to find the bundle by looking up the stack for this classloader.
+  * We verify that this cannot happen.
+  *
+  * @author Jim Gish
+  */
+-public class LoadItUp {
+-
+-    private final static boolean DEBUG = false;
+-
+-    public Boolean test(String rbName) throws Exception {
++public class LoadItUp1 {
++    public Logger getAnonymousLogger(String rbName) throws Exception {
+         // we should not be able to find the resource in this directory via
+         // getLogger calls.  The only way that would be possible given this setup
+         // is that if Logger.getLogger searched up the call stack
+-        return lookupBundle(rbName);
++        return Logger.getAnonymousLogger(rbName);
+     }
+ 
+-    private boolean lookupBundle(String rbName) {
+-        // See if Logger.getLogger can find the resource in this directory
+-        try {
+-            Logger aLogger = Logger.getLogger("NestedLogger", rbName);
+-        } catch (MissingResourceException re) {
+-            if (DEBUG) {
+-                System.out.println(
+-                    "As expected, LoadItUp.lookupBundle() did not find the bundle "
+-                    + rbName);
+-            }
+-            return false;
+-        }
+-        System.out.println("FAILED: LoadItUp.lookupBundle() found the bundle "
+-                + rbName + " using a stack search.");
+-        return true;
++    public Logger getLogger(String loggerName) {
++        return Logger.getLogger(loggerName);
++    }
++
++    public Logger getLogger(String loggerName,String bundleName) {
++        return Logger.getLogger(loggerName, bundleName);
+     }
+ }
+diff -r a7048970934a -r 8733761ca20b test/java/util/logging/bundlesearch/LoadItUp2.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ jdk/test/java/util/logging/bundlesearch/LoadItUp2.java	Wed Jun 26 22:50:47 2013 -0500
+@@ -0,0 +1,62 @@
++/*
++ * Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++import java.util.MissingResourceException;
++import java.util.logging.Logger;
++
++/*
++ * This class is loaded onto the call stack by LoadItUp2Invoker from a separate
++ * classloader.  LoadItUp2Invoker was loaded by a class loader that does have
++ * access to the bundle, but the class loader used to load this class does not.
++ * Thus the logging code should not be able to see the resource bundle unless
++ * it has more than a single level stack crawl, which is not allowed.
++ *
++ * @author Jim Gish
++ */
++public class LoadItUp2 {
++
++    private final static boolean DEBUG = false;
++
++    public Boolean test(String rbName) throws Exception {
++        // we should not be able to find the resource in this directory via
++        // getLogger calls.  The only way that would be possible given this setup
++        // is that if Logger.getLogger searched up the call stack
++        return lookupBundle(rbName);
++    }
++
++    private boolean lookupBundle(String rbName) {
++        // See if Logger.getLogger can find the resource in this directory
++        try {
++            Logger aLogger = Logger.getLogger("NestedLogger2", rbName);
++        } catch (MissingResourceException re) {
++            if (DEBUG) {
++                System.out.println(
++                    "As expected, LoadItUp2.lookupBundle() did not find the bundle "
++                    + rbName);
++            }
++            return false;
++        }
++        System.out.println("FAILED: LoadItUp2.lookupBundle() found the bundle "
++                + rbName + " using a stack search.");
++        return true;
++    }
++}
+diff -r a7048970934a -r 8733761ca20b test/java/util/logging/bundlesearch/LoadItUp2Invoker.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ jdk/test/java/util/logging/bundlesearch/LoadItUp2Invoker.java	Wed Jun 26 22:50:47 2013 -0500
+@@ -0,0 +1,60 @@
++/*
++ * Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++import java.lang.reflect.InvocationTargetException;
++import java.lang.reflect.Method;
++import java.net.URL;
++import java.net.URLClassLoader;
++
++/**
++ * This class is loaded by a class loader that can see the resource. It creates
++ * a new classloader for LoadItUp2 which cannot see the resource.  So, 2 levels
++ * up the call chain we have a class/classloader that can see the resource, but
++ * 1 level up the class/classloader cannot.
++ *
++ * @author Jim Gish
++ */
++public class LoadItUp2Invoker {
++    private URLClassLoader cl;
++    private String rbName;
++    private Object loadItUp2;
++    private Method testMethod;
++
++    public void setup(URL[] urls, String rbName) throws
++                       ReflectiveOperationException {
++        this.cl = new URLClassLoader(urls, null);
++        this.rbName = rbName;
++        // Using this new classloader, load the actual test class
++        // which is now two levels removed from the original caller
++        Class<?> loadItUp2Clazz = Class.forName("LoadItUp2", true , cl);
++        this.loadItUp2 = loadItUp2Clazz.newInstance();
++        this.testMethod = loadItUp2Clazz.getMethod("test", String.class);
++    }
++
++    public Boolean test() throws Throwable {
++        try {
++            return (Boolean) testMethod.invoke(loadItUp2, rbName);
++        } catch (InvocationTargetException ex) {
++            throw ex.getTargetException();
++        }
++    }
++}
+diff -r a7048970934a -r 8733761ca20b test/java/util/logging/bundlesearch/ResourceBundleSearchTest.java
+--- jdk/test/java/util/logging/bundlesearch/ResourceBundleSearchTest.java	Tue Apr 16 16:34:14 2013 -0400
++++ jdk/test/java/util/logging/bundlesearch/ResourceBundleSearchTest.java	Wed Jun 26 22:50:47 2013 -0500
+@@ -23,15 +23,15 @@
+ 
+ /*
+  * @test
+- * @bug     8010127
++ * @bug     8010127 8013380
+  * @summary Remove the stack search for a resource bundle Logger to use
+  * @author  Jim Gish
+- * @build  ResourceBundleSearchTest IndirectlyLoadABundle LoadItUp
+- * @run main ResourceBundleSearchTest
++ * @build  ResourceBundleSearchTest IndirectlyLoadABundle LoadItUp1 LoadItUp2 TwiceIndirectlyLoadABundle LoadItUp2Invoker
++ * @run main/othervm ResourceBundleSearchTest
+  */
+-import java.io.File;
+ import java.net.URL;
+ import java.net.URLClassLoader;
++import java.nio.file.Paths;
+ import java.util.ArrayList;
+ import java.util.List;
+ import java.util.Locale;
+@@ -39,6 +39,12 @@
+ import java.util.ResourceBundle;
+ import java.util.logging.Logger;
+ 
++/**
++ * This class tests various scenarios of loading resource bundles from
++ * java.util.logging.  Since jtreg uses the logging system, it is necessary to
++ * run these tests using othervm mode to ensure no interference from logging
++ * initialization by jtreg
++ */
+ public class ResourceBundleSearchTest {
+ 
+     private final static boolean DEBUG = false;
+@@ -49,7 +55,7 @@
+ 
+     private static int numPass = 0;
+     private static int numFail = 0;
+-    private static List<String> msgs = new ArrayList<String>();
++    private static List<String> msgs = new ArrayList<>();
+ 
+     public static void main(String[] args) throws Throwable {
+         ResourceBundleSearchTest test = new ResourceBundleSearchTest();
+@@ -60,47 +66,54 @@
+         // ensure we are using en as the default Locale so we can find the resource
+         Locale.setDefault(Locale.ENGLISH);
+ 
+-        String testClasses = System.getProperty("test.classes");
+-        System.out.println( "test.classes = " + testClasses );
+-
+         ClassLoader myClassLoader = ClassLoader.getSystemClassLoader();
+ 
+         // Find out where we are running from so we can setup the URLClassLoader URL
+         String userDir = System.getProperty("user.dir");
+         String testDir = System.getProperty("test.src", userDir);
+-        String sep = System.getProperty("file.separator");
+ 
+         URL[] urls = new URL[1];
+ 
+-        urls[0] = new File( testDir + sep + "resources" + sep ).toURI().toURL();
++        urls[0] = Paths.get(testDir, "resources").toUri().toURL();
+         URLClassLoader rbClassLoader = new URLClassLoader(urls);
+ 
+         // Test 1 - can we find a Logger bundle from doing a stack search?
+         // We shouldn't be able to
+-        assertFalse(testGetBundleFromStackSearch(), "testGetBundleFromStackSearch");
++        assertFalse(testGetBundleFromStackSearch(), "1-testGetBundleFromStackSearch");
+ 
+         // Test 2 - can we find a Logger bundle off of the Thread context class
+         // loader? We should be able to.
+-        assertTrue(
+-                testGetBundleFromTCCL(TCCL_TEST_BUNDLE, rbClassLoader),
+-                "testGetBundleFromTCCL");
++        assertTrue(testGetBundleFromTCCL(TCCL_TEST_BUNDLE, rbClassLoader),
++                   "2-testGetBundleFromTCCL");
+ 
+         // Test 3 - Can we find a Logger bundle from the classpath?  We should be
+-        // able to, but ....
+-        // We check to see if the bundle is on the classpath or not so that this
+-        // will work standalone.  In the case of jtreg/samevm,
+-        // the resource bundles are not on the classpath.  Running standalone
+-        // (or othervm), they are
++        // able to.  We'll first check to make sure the setup is correct and
++        // it actually is on the classpath before checking whether logging
++        // can see it there.
+         if (isOnClassPath(PROP_RB_NAME, myClassLoader)) {
+             debug("We should be able to see " + PROP_RB_NAME + " on the classpath");
+             assertTrue(testGetBundleFromSystemClassLoader(PROP_RB_NAME),
+-                    "testGetBundleFromSystemClassLoader");
++                       "3-testGetBundleFromSystemClassLoader");
+         } else {
+-            debug("We should not be able to see " + PROP_RB_NAME + " on the classpath");
+-            assertFalse(testGetBundleFromSystemClassLoader(PROP_RB_NAME),
+-                    "testGetBundleFromSystemClassLoader");
++            throw new Exception("TEST SETUP FAILURE: Cannot see " + PROP_RB_NAME
++                                 + " on the classpath");
+         }
+ 
++        // Test 4 - we should be able to find a bundle from the caller's
++        // classloader, but only one level up.
++        assertTrue(testGetBundleFromCallersClassLoader(),
++                   "4-testGetBundleFromCallersClassLoader");
++
++        // Test 5 - this ensures that getAnonymousLogger(String rbName)
++        // can find the bundle from the caller's classloader
++        assertTrue(testGetAnonymousLogger(), "5-testGetAnonymousLogger");
++
++        // Test 6 - first call getLogger("myLogger").
++        // Then call getLogger("myLogger","bundleName") from a different ClassLoader
++        // Make sure we find the bundle
++        assertTrue(testGetBundleFromSecondCallersClassLoader(),
++                   "6-testGetBundleFromSecondCallersClassLoader");
++
+         report();
+     }
+ 
+@@ -112,7 +125,7 @@
+                 System.out.println(msg);
+             }
+             throw new Exception(numFail + " out of " + (numPass + numFail)
+-                    + " tests failed.");
++                                 + " tests failed.");
+         }
+     }
+ 
+@@ -122,7 +135,7 @@
+         } else {
+             numFail++;
+             System.out.println("FAILED: " + testName
+-                    + " was supposed to return true but did NOT!");
++                               + " was supposed to return true but did NOT!");
+         }
+     }
+ 
+@@ -132,13 +145,20 @@
+         } else {
+             numFail++;
+             System.out.println("FAILED: " + testName
+-                    + " was supposed to return false but did NOT!");
++                               + " was supposed to return false but did NOT!");
+         }
+     }
+ 
+     public boolean testGetBundleFromStackSearch() throws Throwable {
+         // This should fail.  This was the old functionality to search up the
+         // caller's call stack
++        TwiceIndirectlyLoadABundle indirectLoader = new TwiceIndirectlyLoadABundle();
++        return indirectLoader.loadAndTest();
++    }
++
++    public boolean testGetBundleFromCallersClassLoader() throws Throwable {
++        // This should pass.  This exercises getting the bundle using the
++        // class loader of the caller (one level up)
+         IndirectlyLoadABundle indirectLoader = new IndirectlyLoadABundle();
+         return indirectLoader.loadAndTest();
+     }
+@@ -193,14 +213,29 @@
+                     bundleName);
+         } catch (MissingResourceException re) {
+             msgs.add("INFO: testGetBundleFromSystemClassLoader() did not find bundle "
+-                    + bundleName);
++                     + bundleName);
+             return false;
+         }
+         msgs.add("INFO: testGetBundleFromSystemClassLoader() found the bundle "
+-                + bundleName);
++                 + bundleName);
+         return true;
+     }
+ 
++    private boolean testGetAnonymousLogger() throws Throwable {
++        // This should pass.  This exercises getting the bundle using the
++        // class loader of the caller (one level up) when calling
++        // Logger.getAnonymousLogger(String rbName)
++        IndirectlyLoadABundle indirectLoader = new IndirectlyLoadABundle();
++        return indirectLoader.testGetAnonymousLogger();
++    }
++
++    private boolean testGetBundleFromSecondCallersClassLoader() throws Throwable {
++        // This should pass.  This exercises getting the bundle using the
++        // class loader of the caller (one level up)
++        IndirectlyLoadABundle indirectLoader = new IndirectlyLoadABundle();
++        return indirectLoader.testGetLoggerGetLoggerWithBundle();
++    }
++
+     public static class LoggingThread extends Thread {
+ 
+         boolean foundBundle = false;
+@@ -227,13 +262,13 @@
+                 // this should succeed if the bundle is on the system classpath.
+                 try {
+                     Logger aLogger = Logger.getLogger(ResourceBundleSearchTest.newLoggerName(),
+-                            bundleName);
+-                    msg = "INFO: LoggingRunnable() found the bundle " + bundleName
+-                            + (setTCCL ? " with " : " without ") + "setting the TCCL";
++                                                      bundleName);
++                    msg = "INFO: LoggingThread.run() found the bundle " + bundleName
++                          + (setTCCL ? " with " : " without ") + "setting the TCCL";
+                     foundBundle = true;
+                 } catch (MissingResourceException re) {
+-                    msg = "INFO: LoggingRunnable() did not find the bundle " + bundleName
+-                            + (setTCCL ? " with " : " without ") + "setting the TCCL";
++                    msg = "INFO: LoggingThread.run() did not find the bundle " + bundleName
++                          + (setTCCL ? " with " : " without ") + "setting the TCCL";
+                     foundBundle = false;
+                 }
+             } catch (Throwable e) {
+diff -r a7048970934a -r 8733761ca20b test/java/util/logging/bundlesearch/TwiceIndirectlyLoadABundle.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ jdk/test/java/util/logging/bundlesearch/TwiceIndirectlyLoadABundle.java	Wed Jun 26 22:50:47 2013 -0500
+@@ -0,0 +1,91 @@
++/*
++ * Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++import java.lang.reflect.InvocationTargetException;
++import java.lang.reflect.Method;
++import java.net.URL;
++import java.net.URLClassLoader;
++import java.nio.file.Paths;
++
++/**
++ * This class constructs a scenario where a bundle is accessible on the call
++ * stack two levels up from the call to getLogger(), but not on the immediate
++ * caller.  This tests that getLogger() isn't doing a stack crawl more than one
++ * level up to find a bundle.
++ *
++ * @author Jim Gish
++ */
++public class TwiceIndirectlyLoadABundle {
++
++    private final static String rbName = "StackSearchableResource";
++
++    public boolean loadAndTest() throws Throwable {
++        // Find out where we are running from so we can setup the URLClassLoader URLs
++        // test.src and test.classes will be set if running in jtreg, but probably
++        // not otherwise
++        String testDir = System.getProperty("test.src", System.getProperty("user.dir"));
++        String testClassesDir = System.getProperty("test.classes",
++                                                   System.getProperty("user.dir"));
++        URL[] urls = new URL[2];
++
++        // Allow for both jtreg and standalone cases here
++        // Unlike the 1-level test where we can get the bundle from the caller's
++        // class loader, for this one we don't want to expose the resource directory
++        // to the next class.  That way we're invoking the LoadItUp2Invoker class
++        // from this class that does have access to the resources (two levels
++        // up the call stack), but the Invoker itself won't have access to resource
++        urls[0] = Paths.get(testDir,"resources").toUri().toURL();
++        urls[1] = Paths.get(testClassesDir).toUri().toURL();
++
++        // Make sure we can find it via the URLClassLoader
++        URLClassLoader yetAnotherResourceCL = new URLClassLoader(urls, null);
++        Class<?> loadItUp2InvokerClazz = Class.forName("LoadItUp2Invoker", true,
++                                                       yetAnotherResourceCL);
++        ClassLoader actual = loadItUp2InvokerClazz.getClassLoader();
++        if (actual != yetAnotherResourceCL) {
++            throw new Exception("LoadItUp2Invoker was loaded by an unexpected CL: "
++                                 + actual);
++        }
++        Object loadItUp2Invoker = loadItUp2InvokerClazz.newInstance();
++
++        Method setupMethod = loadItUp2InvokerClazz.getMethod("setup",
++                urls.getClass(), String.class);
++        try {
++            // For the next class loader we create, we want to leave off
++            // the resources.  That way loadItUp2Invoker will have access to
++            // them, but the next class won't.
++            URL[] noResourceUrl = new URL[1];
++            noResourceUrl[0] = urls[1];  // from above -- just the test classes
++            setupMethod.invoke(loadItUp2Invoker, noResourceUrl, rbName);
++        } catch (InvocationTargetException ex) {
++            throw ex.getTargetException();
++        }
++
++        Method testMethod = loadItUp2InvokerClazz.getMethod("test");
++        try {
++            return (Boolean) testMethod.invoke(loadItUp2Invoker);
++        } catch (InvocationTargetException ex) {
++            throw ex.getTargetException();
++        }
++    }
++}
+diff -r a7048970934a -r 8733761ca20b test/java/util/logging/bundlesearch/resources/CallerSearchableResource_en.properties
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ jdk/test/java/util/logging/bundlesearch/resources/CallerSearchableResource_en.properties	Wed Jun 26 22:50:47 2013 -0500
+@@ -0,0 +1,25 @@
++# 
++# Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
++# DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++# 
++# This code is free software; you can redistribute it and/or modify it
++# under the terms of the GNU General Public License version 2 only, as
++# published by the Free Software Foundation.
++# 
++# This code is distributed in the hope that it will be useful, but WITHOUT
++# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++# version 2 for more details (a copy is included in the LICENSE file that
++# accompanied this code).
++# 
++# You should have received a copy of the GNU General Public License version
++# 2 along with this work; if not, write to the Free Software Foundation,
++# Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++# 
++# Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++# or visit www.oracle.com if you need additional information or have any
++# questions.
++#
++sample1=translation #4 for sample1
++sample2=translation #4 for sample2
++supports-test=ResourceBundleSearchTest

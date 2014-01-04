@@ -1,0 +1,288 @@
+# HG changeset patch
+# User jjg
+# Date 1217897655 25200
+#      Mon Aug 04 17:54:15 2008 -0700
+# Node ID dca34170f5f80bf30228c12a647b3f1a492b3eeb
+# Parent  6134c146043a3e9dd12ee73ca32ce56ac1c95e3a
+4884240: additional option required for javap
+Reviewed-by: ksrini
+
+diff -r 6134c146043a -r dca34170f5f8 src/share/classes/com/sun/tools/javap/ClassWriter.java
+--- langtools/src/share/classes/com/sun/tools/javap/ClassWriter.java	Mon Aug 04 15:09:02 2008 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/ClassWriter.java	Mon Aug 04 17:54:15 2008 -0700
+@@ -25,6 +25,7 @@
+ 
+ package com.sun.tools.javap;
+ 
++import java.net.URI;
+ import java.util.Collection;
+ import java.util.List;
+ 
+@@ -46,6 +47,8 @@
+ import com.sun.tools.classfile.SourceFile_attribute;
+ import com.sun.tools.classfile.Type;
+ 
++import java.text.DateFormat;
++import java.util.Date;
+ import static com.sun.tools.classfile.AccessFlags.*;
+ 
+ /*
+@@ -73,6 +76,23 @@
+         constantWriter = ConstantWriter.instance(context);
+     }
+ 
++    void setDigest(String name, byte[] digest) {
++        this.digestName = name;
++        this.digest = digest;
++    }
++
++    void setFile(URI uri) {
++        this.uri = uri;
++    }
++
++    void setFileSize(int size) {
++        this.size = size;
++    }
++
++    void setLastModified(long lastModified) {
++        this.lastModified = lastModified;
++    }
++
+     ClassFile getClassFile() {
+         return classFile;
+     }
+@@ -85,6 +105,32 @@
+         classFile = cf;
+         constant_pool = classFile.constant_pool;
+ 
++        if ((options.sysInfo || options.verbose) && !options.compat) {
++            if (uri != null) {
++                if (uri.getScheme().equals("file"))
++                    println("Classfile " + uri.getPath());
++                else
++                    println("Classfile " + uri);
++            }
++            if (lastModified != -1) {
++                Date lm = new Date(lastModified);
++                DateFormat df = DateFormat.getDateInstance();
++                if (size > 0) {
++                    println("Last modified " + df.format(lm) + "; size " + size + " bytes");
++                } else {
++                    println("Last modified " + df.format(lm));
++                }
++            } else if (size > 0) {
++                println("Size " + size + " bytes");
++            }
++            if (digestName != null && digest != null) {
++                StringBuilder sb = new StringBuilder();
++                for (byte b: digest)
++                    sb.append(String.format("%02x", b));
++                println(digestName + " checksum " + sb);
++            }
++        }
++
+         Attribute sfa = cf.getAttribute(Attribute.SourceFile);
+         if (sfa instanceof SourceFile_attribute) {
+             println("Compiled from \"" + getSourceFile((SourceFile_attribute) sfa) + "\"");
+@@ -574,6 +620,11 @@
+     private CodeWriter codeWriter;
+     private ConstantWriter constantWriter;
+     private ClassFile classFile;
++    private URI uri;
++    private long lastModified;
++    private String digestName;
++    private byte[] digest;
++    private int size;
+     private ConstantPool constant_pool;
+     private Method method;
+     private static final String NEWLINE = System.getProperty("line.separator", "\n");
+diff -r 6134c146043a -r dca34170f5f8 src/share/classes/com/sun/tools/javap/JavapTask.java
+--- langtools/src/share/classes/com/sun/tools/javap/JavapTask.java	Mon Aug 04 15:09:02 2008 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/JavapTask.java	Mon Aug 04 17:54:15 2008 -0700
+@@ -27,11 +27,15 @@
+ 
+ import java.io.EOFException;
+ import java.io.FileNotFoundException;
++import java.io.FilterInputStream;
++import java.io.InputStream;
+ import java.io.IOException;
+ import java.io.OutputStream;
+ import java.io.PrintWriter;
+ import java.io.StringWriter;
+ import java.io.Writer;
++import java.security.DigestInputStream;
++import java.security.MessageDigest;
+ import java.text.MessageFormat;
+ import java.util.ArrayList;
+ import java.util.Arrays;
+@@ -192,6 +196,12 @@
+             }
+         },
+ 
++        new Option(false, "-sysinfo") {
++            void process(JavapTask task, String opt, String arg) {
++                task.options.sysInfo = true;
++            }
++        },
++
+         new Option(false, "-Xold") {
+             void process(JavapTask task, String opt, String arg) throws BadArgs {
+                 // -Xold is only supported as first arg when invoked from
+@@ -457,8 +467,27 @@
+                 Attribute.Factory attributeFactory = new Attribute.Factory();
+                 attributeFactory.setCompat(options.compat);
+                 attributeFactory.setJSR277(options.jsr277);
+-                ClassFile cf = ClassFile.read(fo.openInputStream(), attributeFactory);
++
++                InputStream in = fo.openInputStream();
++                SizeInputStream sizeIn = null;
++                MessageDigest md  = null;
++                if (options.sysInfo || options.verbose) {
++                    md = MessageDigest.getInstance("MD5");
++                    in = new DigestInputStream(in, md);
++                    in = sizeIn = new SizeInputStream(in);
++                }
++
++                ClassFile cf = ClassFile.read(in, attributeFactory);
++
++                if (options.sysInfo || options.verbose) {
++                    classWriter.setFile(fo.toUri());
++                    classWriter.setLastModified(fo.getLastModified());
++                    classWriter.setDigest("MD5", md.digest());
++                    classWriter.setFileSize(sizeIn.size());
++                }
++
+                 classWriter.write(cf);
++
+             } catch (ConstantPoolException e) {
+                 diagnosticListener.report(createDiagnostic("err.bad.constant.pool", className, e.getLocalizedMessage()));
+                 ok = false;
+@@ -628,4 +657,31 @@
+     Map<Locale, ResourceBundle> bundles;
+ 
+     private static final String progname = "javap";
++
++    private static class SizeInputStream extends FilterInputStream {
++        SizeInputStream(InputStream in) {
++            super(in);
++        }
++
++        int size() {
++            return size;
++        }
++
++        @Override
++        public int read(byte[] buf, int offset, int length) throws IOException {
++            int n = super.read(buf, offset, length);
++            if (n > 0)
++                size += n;
++            return n;
++        }
++
++        @Override
++        public int read() throws IOException {
++            int b = super.read();
++            size += 1;
++            return b;
++        }
++
++        private int size;
++    }
+ }
+diff -r 6134c146043a -r dca34170f5f8 src/share/classes/com/sun/tools/javap/Options.java
+--- langtools/src/share/classes/com/sun/tools/javap/Options.java	Mon Aug 04 15:09:02 2008 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/Options.java	Mon Aug 04 17:54:15 2008 -0700
+@@ -78,6 +78,7 @@
+     public boolean showInternalSignatures;
+     public boolean showAllAttrs;
+     public boolean showConstants;
++    public boolean sysInfo;
+ 
+     public boolean compat;             // bug-for-bug compatibility mode with old javap
+     public boolean jsr277;
+diff -r 6134c146043a -r dca34170f5f8 src/share/classes/com/sun/tools/javap/resources/javap.properties
+--- langtools/src/share/classes/com/sun/tools/javap/resources/javap.properties	Mon Aug 04 15:09:02 2008 -0700
++++ langtools/src/share/classes/com/sun/tools/javap/resources/javap.properties	Mon Aug 04 17:54:15 2008 -0700
+@@ -62,5 +62,6 @@
+ \  -constants               Show static final constants
+ 
+ 
+-
+-
++main.opt.sysinfo=\
++\  -sysinfo                 Show system info (path, size, date, MD5 hash)\n\
++\                           of class being processed
+diff -r 6134c146043a -r dca34170f5f8 test/tools/javap/T4884240.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ langtools/test/tools/javap/T4884240.java	Mon Aug 04 17:54:15 2008 -0700
+@@ -0,0 +1,56 @@
++/*
++ * Copyright 2008 Sun Microsystems, Inc.  All Rights Reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Sun designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Sun in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-15301 USA.
++ *
++ * Please contact Sun Microsystems, Inc., 4150 Network Circle, Santa Clara,
++ * CA 95054 USA or visit www.sun.com if you need additional information or
++ * have any questions.
++ */
++
++/*
++ * @test
++ * @bug 4884240
++ * @summary additional option required for javap
++ */
++
++import java.io.*;
++
++public class T4884240 {
++    public static void main(String... args) throws Exception {
++        new T4884240().run();
++    }
++
++    public void run() throws Exception {
++        StringWriter sw = new StringWriter();
++        PrintWriter pw = new PrintWriter(sw);
++        String[] args = { "-sysinfo", "java.lang.Object" };
++        int rc = com.sun.tools.javap.Main.run(args, pw);
++        if (rc != 0)
++            throw new Exception("unexpected return code: " + rc);
++        pw.close();
++        String[] lines = sw.toString().split("\n");
++        if (lines.length < 3
++            || !lines[0].startsWith("Classfile")
++            || !lines[1].startsWith("Last modified")
++            || !lines[2].startsWith("MD5")) {
++            System.out.println(sw);
++            throw new Exception("unexpected output");
++        }
++    }
++}
+diff -r 6134c146043a -r dca34170f5f8 test/tools/javap/T6622260.java
+--- langtools/test/tools/javap/T6622260.java	Mon Aug 04 15:09:02 2008 -0700
++++ langtools/test/tools/javap/T6622260.java	Mon Aug 04 17:54:15 2008 -0700
+@@ -189,6 +189,10 @@
+ 
+     void verify(String output) {
+         System.out.println(output);
++        if (output.startsWith("Classfile")) {
++            // make sure to ignore filename
++            output = output.substring(output.indexOf('\n'));
++        }
+         if (output.indexOf("-") >= 0)
+             throw new Error("- found in output");
+         if (output.indexOf("FFFFFF") >= 0)

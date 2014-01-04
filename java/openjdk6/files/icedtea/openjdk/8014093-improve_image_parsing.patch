@@ -1,0 +1,719 @@
+# HG changeset patch
+# User bae
+# Date 1368794871 -14400
+#      Fri May 17 16:47:51 2013 +0400
+# Node ID 5405d79569f76d1285fd3c840489477a81bd9eff
+# Parent  a9be60a78488c7b261b92d927d1272afe2484e6b
+8014093: Improve parsing of images
+Reviewed-by: prr
+
+diff -r a9be60a78488 -r 5405d79569f7 src/share/native/sun/awt/image/awt_parseImage.c
+--- jdk/src/share/native/sun/awt/image/awt_parseImage.c	Thu Jun 20 08:51:47 2013 +0200
++++ jdk/src/share/native/sun/awt/image/awt_parseImage.c	Fri May 17 16:47:51 2013 +0400
+@@ -797,363 +797,204 @@
+     return 1;
+ }
+ 
+-/*
+- * This routine will fill in a buffer of data for either 1 band or all
+- * bands (if band == -1).
+- */
+ #define MAX_TO_GRAB (10240)
+ 
+-int awt_getPixelByte(JNIEnv *env, int band, RasterS_t *rasterP,
+-                     unsigned char *bufferP) {
+-    int w = rasterP->width;
+-    int h = rasterP->height;
+-    int numBands = rasterP->numBands;
++typedef union {
++    void *pv;
++    unsigned char *pb;
++    unsigned short *ps;
++} PixelData_t;
++
++
++int awt_getPixels(JNIEnv *env, RasterS_t *rasterP, void *bufferP) {
++    const int w = rasterP->width;
++    const int h = rasterP->height;
++    const int numBands = rasterP->numBands;
+     int y;
+     int i;
+-    int maxLines = (h < MAX_TO_GRAB/w ? h : MAX_TO_GRAB/w);
++    int maxLines;
+     jobject jsm;
+-    int off;
++    int off = 0;
+     jarray jdata = NULL;
+     jobject jdatabuffer;
+     int *dataP;
+-    int maxBytes = w;
++    int maxSamples;
++    PixelData_t p;
++
++    if (bufferP == NULL) {
++        return -1;
++    }
++
++    if (rasterP->dataType != BYTE_DATA_TYPE &&
++        rasterP->dataType != SHORT_DATA_TYPE)
++    {
++        return -1;
++    }
++
++    p.pv = bufferP;
++
++    if (!SAFE_TO_MULT(w, numBands)) {
++        return -1;
++    }
++    maxSamples = w * numBands;
++
++    maxLines = maxSamples > MAX_TO_GRAB ? 1 : (MAX_TO_GRAB / maxSamples);
++    if (maxLines > h) {
++        maxLines = h;
++    }
++
++    if (!SAFE_TO_MULT(maxSamples, maxLines)) {
++        return -1;
++    }
++
++    maxSamples *= maxLines;
+ 
+     jsm = (*env)->GetObjectField(env, rasterP->jraster, g_RasterSampleModelID);
+     jdatabuffer = (*env)->GetObjectField(env, rasterP->jraster,
+                                          g_RasterDataBufferID);
+-    jdata = (*env)->NewIntArray(env, maxBytes*rasterP->numBands*maxLines);
++
++    jdata = (*env)->NewIntArray(env, maxSamples);
+     if (JNU_IsNull(env, jdata)) {
+         JNU_ThrowOutOfMemoryError(env, "Out of Memory");
+         return -1;
+     }
+ 
+-    /* Here is the generic code */
+-    if (band >= 0) {
+-        int dOff;
+-        if (band >= numBands) {
++    for (y = 0; y < h; y += maxLines) {
++        if (y + maxLines > h) {
++            maxLines = h - y;
++            maxSamples = w * numBands * maxLines;
++        }
++
++        (*env)->CallObjectMethod(env, jsm, g_SMGetPixelsMID,
++                                 0, y, w,
++                                 maxLines, jdata, jdatabuffer);
++
++        if ((*env)->ExceptionOccurred(env)) {
+             (*env)->DeleteLocalRef(env, jdata);
+-            JNU_ThrowInternalError(env, "Band out of range.");
+             return -1;
+         }
+-        off = 0;
+-        for (y=0; y < h; ) {
+-            (*env)->CallObjectMethod(env, jsm, g_SMGetPixelsMID,
+-                                     0, y, w,
+-                                     maxLines, jdata, jdatabuffer);
+-            dataP = (int *) (*env)->GetPrimitiveArrayCritical(env, jdata,
+-                                                              NULL);
+-            if (dataP == NULL) {
+-                (*env)->DeleteLocalRef(env, jdata);
+-                return -1;
+-            }
+-            dOff = band;
+-            for (i=0; i < maxBytes; i++, dOff += numBands) {
+-                bufferP[off++] = (unsigned char) dataP[dOff];
+-            }
+ 
+-            (*env)->ReleasePrimitiveArrayCritical(env, jdata, dataP,
+-                                                  JNI_ABORT);
+-
+-            if (y+maxLines < h) {
+-                y += maxLines;
+-            }
+-            else {
+-                y++;
+-                maxBytes = w;
+-            }
+-        }
+-    }
+-    else {
+-        off = 0;
+-        maxBytes *= numBands;
+-        for (y=0; y < h; ) {
+-            (*env)->CallObjectMethod(env, jsm, g_SMGetPixelsMID,
+-                                     0, y, w,
+-                                     maxLines, jdata, jdatabuffer);
+-            dataP = (int *) (*env)->GetPrimitiveArrayCritical(env, jdata,
+-                                                              NULL);
+-            if (dataP == NULL) {
+-                (*env)->DeleteLocalRef(env, jdata);
+-                return -1;
+-            }
+-            for (i=0; i < maxBytes; i++) {
+-                bufferP[off++] = (unsigned char) dataP[i];
+-            }
+-
+-            (*env)->ReleasePrimitiveArrayCritical(env, jdata, dataP,
+-                                                  JNI_ABORT);
+-
+-            if (y+maxLines < h) {
+-                y += maxLines;
+-            }
+-            else {
+-                y++;
+-                maxBytes = w*numBands;
+-            }
++        dataP = (int *) (*env)->GetPrimitiveArrayCritical(env, jdata,
++                                                          NULL);
++        if (dataP == NULL) {
++            (*env)->DeleteLocalRef(env, jdata);
++            return -1;
+         }
+ 
++        switch (rasterP->dataType) {
++        case BYTE_DATA_TYPE:
++            for (i = 0; i < maxSamples; i ++) {
++                p.pb[off++] = (unsigned char) dataP[i];
++            }
++            break;
++        case SHORT_DATA_TYPE:
++            for (i = 0; i < maxSamples; i ++) {
++                p.ps[off++] = (unsigned short) dataP[i];
++            }
++            break;
++        }
++
++        (*env)->ReleasePrimitiveArrayCritical(env, jdata, dataP,
++                                              JNI_ABORT);
+     }
+     (*env)->DeleteLocalRef(env, jdata);
+ 
+-    return 0;
++    return 1;
+ }
+-int awt_setPixelByte(JNIEnv *env, int band, RasterS_t *rasterP,
+-                     unsigned char *bufferP) {
+-    int w = rasterP->width;
+-    int h = rasterP->height;
+-    int numBands = rasterP->numBands;
++
++int awt_setPixels(JNIEnv *env, RasterS_t *rasterP, void *bufferP) {
++    const int w = rasterP->width;
++    const int h = rasterP->height;
++    const int numBands = rasterP->numBands;
++
+     int y;
+     int i;
+-    int maxLines = (h < MAX_TO_GRAB/w ? h : MAX_TO_GRAB/w);
++    int maxLines;
+     jobject jsm;
+-    int off;
++    int off = 0;
+     jarray jdata = NULL;
+     jobject jdatabuffer;
+     int *dataP;
+-    int maxBytes = w;
++    int maxSamples;
++    PixelData_t p;
++
++    if (bufferP == NULL) {
++        return -1;
++    }
++
++    if (rasterP->dataType != BYTE_DATA_TYPE &&
++        rasterP->dataType != SHORT_DATA_TYPE)
++    {
++        return -1;
++    }
++
++    p.pv = bufferP;
++
++    if (!SAFE_TO_MULT(w, numBands)) {
++        return -1;
++    }
++    maxSamples = w * numBands;
++
++    maxLines = maxSamples > MAX_TO_GRAB ? 1 : (MAX_TO_GRAB / maxSamples);
++    if (maxLines > h) {
++        maxLines = h;
++    }
++
++    if (!SAFE_TO_MULT(maxSamples, maxLines)) {
++        return -1;
++    }
++
++    maxSamples *= maxLines;
+ 
+     jsm = (*env)->GetObjectField(env, rasterP->jraster, g_RasterSampleModelID);
+     jdatabuffer = (*env)->GetObjectField(env, rasterP->jraster,
+                                          g_RasterDataBufferID);
+-    /* Here is the generic code */
+-    jdata = (*env)->NewIntArray(env, maxBytes*rasterP->numBands*maxLines);
++
++    jdata = (*env)->NewIntArray(env, maxSamples);
+     if (JNU_IsNull(env, jdata)) {
+         JNU_ThrowOutOfMemoryError(env, "Out of Memory");
+         return -1;
+     }
+-    if (band >= 0) {
+-        int dOff;
+-        if (band >= numBands) {
++
++    for (y = 0; y < h; y += maxLines) {
++        if (y + maxLines > h) {
++            maxLines = h - y;
++            maxSamples = w * numBands * maxLines;
++        }
++        dataP = (int *) (*env)->GetPrimitiveArrayCritical(env, jdata,
++                                                          NULL);
++        if (dataP == NULL) {
+             (*env)->DeleteLocalRef(env, jdata);
+-            JNU_ThrowInternalError(env, "Band out of range.");
+             return -1;
+         }
+-        off = 0;
+-        for (y=0; y < h; y+=maxLines) {
+-            if (y+maxLines > h) {
+-                maxBytes = w*numBands;
+-                maxLines = h - y;
++
++        switch (rasterP->dataType) {
++        case BYTE_DATA_TYPE:
++            for (i = 0; i < maxSamples; i ++) {
++                dataP[i] = p.pb[off++];
+             }
+-            dataP = (int *) (*env)->GetPrimitiveArrayCritical(env, jdata,
+-                                                              NULL);
+-            if (dataP == NULL) {
+-                (*env)->DeleteLocalRef(env, jdata);
+-                return -1;
++            break;
++        case SHORT_DATA_TYPE:
++            for (i = 0; i < maxSamples; i ++) {
++                dataP[i] = p.ps[off++];
+             }
+-            dOff = band;
+-            for (i=0; i < maxBytes; i++, dOff += numBands) {
+-                dataP[dOff] = bufferP[off++];
+-            }
+-
+-            (*env)->ReleasePrimitiveArrayCritical(env, jdata, dataP,
+-                                                  JNI_ABORT);
+-
+-            (*env)->CallVoidMethod(env, jsm, g_SMSetPixelsMID,
+-                                   0, y, w,
+-                                   maxLines, jdata, jdatabuffer);
+-        }
+-    }
+-    else {
+-        off = 0;
+-        maxBytes *= numBands;
+-        for (y=0; y < h; y+=maxLines) {
+-            if (y+maxLines > h) {
+-                maxBytes = w*numBands;
+-                maxLines = h - y;
+-            }
+-            dataP = (int *) (*env)->GetPrimitiveArrayCritical(env, jdata,
+-                                                              NULL);
+-            if (dataP == NULL) {
+-                (*env)->DeleteLocalRef(env, jdata);
+-                return -1;
+-            }
+-            for (i=0; i < maxBytes; i++) {
+-                dataP[i] = bufferP[off++];
+-            }
+-
+-            (*env)->ReleasePrimitiveArrayCritical(env, jdata, dataP,
+-                                                  JNI_ABORT);
+-
+-            (*env)->CallVoidMethod(env, jsm, g_SMSetPixelsMID,
+-                                     0, y, w,
+-                                     maxLines, jdata, jdatabuffer);
++            break;
+         }
+ 
++        (*env)->ReleasePrimitiveArrayCritical(env, jdata, dataP,
++                                              JNI_ABORT);
++
++        (*env)->CallVoidMethod(env, jsm, g_SMSetPixelsMID,
++                               0, y, w,
++                               maxLines, jdata, jdatabuffer);
++
++        if ((*env)->ExceptionOccurred(env)) {
++            (*env)->DeleteLocalRef(env, jdata);
++            return -1;
++        }
+     }
+ 
+     (*env)->DeleteLocalRef(env, jdata);
+ 
+-    return 0;
++    return 1;
+ }
+-int awt_getPixelShort(JNIEnv *env, int band, RasterS_t *rasterP,
+-                     unsigned short *bufferP) {
+-    int w = rasterP->width;
+-    int h = rasterP->height;
+-    int numBands = rasterP->numBands;
+-    int y;
+-    int i;
+-    int maxLines = (h < MAX_TO_GRAB/w ? h : MAX_TO_GRAB/w);
+-    jobject jsm;
+-    int off;
+-    jarray jdata = NULL;
+-    jobject jdatabuffer;
+-    int *dataP;
+-    int maxBytes = w*maxLines;
+-
+-    jsm = (*env)->GetObjectField(env, rasterP->jraster, g_RasterSampleModelID);
+-    jdatabuffer = (*env)->GetObjectField(env, rasterP->jraster,
+-                                         g_RasterDataBufferID);
+-    jdata = (*env)->NewIntArray(env, maxBytes*rasterP->numBands*maxLines);
+-    if (JNU_IsNull(env, jdata)) {
+-        JNU_ThrowOutOfMemoryError(env, "Out of Memory");
+-        return -1;
+-    }
+-    /* Here is the generic code */
+-    if (band >= 0) {
+-        int dOff;
+-        if (band >= numBands) {
+-            (*env)->DeleteLocalRef(env, jdata);
+-            JNU_ThrowInternalError(env, "Band out of range.");
+-            return -1;
+-        }
+-        off = 0;
+-        for (y=0; y < h; y += maxLines) {
+-            if (y+maxLines > h) {
+-                maxBytes = w*numBands;
+-                maxLines = h - y;
+-            }
+-            (*env)->CallObjectMethod(env, jsm, g_SMGetPixelsMID,
+-                                     0, y, w,
+-                                     maxLines, jdata, jdatabuffer);
+-            dataP = (int *) (*env)->GetPrimitiveArrayCritical(env, jdata,
+-                                                              NULL);
+-            if (dataP == NULL) {
+-                (*env)->DeleteLocalRef(env, jdata);
+-                return -1;
+-            }
+-
+-            dOff = band;
+-            for (i=0; i < maxBytes; i++, dOff += numBands) {
+-                bufferP[off++] = (unsigned short) dataP[dOff];
+-            }
+-
+-            (*env)->ReleasePrimitiveArrayCritical(env, jdata, dataP,
+-                                                  JNI_ABORT);
+-        }
+-    }
+-    else {
+-        off = 0;
+-        maxBytes *= numBands;
+-        for (y=0; y < h; y+=maxLines) {
+-            if (y+maxLines > h) {
+-                maxBytes = w*numBands;
+-                maxLines = h - y;
+-            }
+-            (*env)->CallObjectMethod(env, jsm, g_SMGetPixelsMID,
+-                                     0, y, w,
+-                                     maxLines, jdata, jdatabuffer);
+-            dataP = (int *) (*env)->GetPrimitiveArrayCritical(env, jdata,
+-                                                              NULL);
+-            if (dataP == NULL) {
+-                (*env)->DeleteLocalRef(env, jdata);
+-                return -1;
+-            }
+-            for (i=0; i < maxBytes; i++) {
+-                bufferP[off++] = (unsigned short) dataP[i];
+-            }
+-
+-            (*env)->ReleasePrimitiveArrayCritical(env, jdata, dataP,
+-                                                  JNI_ABORT);
+-        }
+-
+-    }
+-
+-    (*env)->DeleteLocalRef(env, jdata);
+-    return 0;
+-}
+-int awt_setPixelShort(JNIEnv *env, int band, RasterS_t *rasterP,
+-                      unsigned short *bufferP) {
+-    int w = rasterP->width;
+-    int h = rasterP->height;
+-    int numBands = rasterP->numBands;
+-    int y;
+-    int i;
+-    int maxLines = (h < MAX_TO_GRAB/w ? h : MAX_TO_GRAB/w);
+-    jobject jsm;
+-    int off;
+-    jarray jdata = NULL;
+-    jobject jdatabuffer;
+-    int *dataP;
+-    int maxBytes = w;
+-
+-    jsm = (*env)->GetObjectField(env, rasterP->jraster, g_RasterSampleModelID);
+-    jdatabuffer = (*env)->GetObjectField(env, rasterP->jraster,
+-                                         g_RasterDataBufferID);
+-    if (band >= numBands) {
+-        JNU_ThrowInternalError(env, "Band out of range.");
+-        return -1;
+-    }
+-    /* Here is the generic code */
+-    jdata = (*env)->NewIntArray(env, maxBytes*rasterP->numBands*maxLines);
+-    if (JNU_IsNull(env, jdata)) {
+-        JNU_ThrowOutOfMemoryError(env, "Out of Memory");
+-        return -1;
+-    }
+-    if (band >= 0) {
+-        int dOff;
+-        off = 0;
+-        for (y=0; y < h; y+=maxLines) {
+-            if (y+maxLines > h) {
+-                maxBytes = w*numBands;
+-                maxLines = h - y;
+-            }
+-            dataP = (int *) (*env)->GetPrimitiveArrayCritical(env, jdata,
+-                                                              NULL);
+-            if (dataP == NULL) {
+-                (*env)->DeleteLocalRef(env, jdata);
+-                return -1;
+-            }
+-            dOff = band;
+-            for (i=0; i < maxBytes; i++, dOff += numBands) {
+-                dataP[dOff] = bufferP[off++];
+-            }
+-
+-            (*env)->ReleasePrimitiveArrayCritical(env, jdata, dataP,
+-                                                  JNI_ABORT);
+-
+-            (*env)->CallVoidMethod(env, jsm, g_SMSetPixelsMID,
+-                                   0, y, w,
+-                                   maxLines, jdata, jdatabuffer);
+-        }
+-    }
+-    else {
+-        off = 0;
+-        maxBytes *= numBands;
+-        for (y=0; y < h; y+=maxLines) {
+-            if (y+maxLines > h) {
+-                maxBytes = w*numBands;
+-                maxLines = h - y;
+-            }
+-            dataP = (int *) (*env)->GetPrimitiveArrayCritical(env, jdata,
+-                                                              NULL);
+-            if (dataP == NULL) {
+-                (*env)->DeleteLocalRef(env, jdata);
+-                return -1;
+-            }
+-            for (i=0; i < maxBytes; i++) {
+-                dataP[i] = bufferP[off++];
+-            }
+-
+-            (*env)->ReleasePrimitiveArrayCritical(env, jdata, dataP,
+-                                                  JNI_ABORT);
+-
+-            (*env)->CallVoidMethod(env, jsm, g_SMSetPixelsMID,
+-                                   0, y, w,
+-                                   maxLines, jdata, jdatabuffer);
+-        }
+-
+-    }
+-
+-    (*env)->DeleteLocalRef(env, jdata);
+-    return 0;
+-}
+diff -r a9be60a78488 -r 5405d79569f7 src/share/native/sun/awt/image/awt_parseImage.h
+--- jdk/src/share/native/sun/awt/image/awt_parseImage.h	Thu Jun 20 08:51:47 2013 +0200
++++ jdk/src/share/native/sun/awt/image/awt_parseImage.h	Fri May 17 16:47:51 2013 +0400
+@@ -188,13 +188,8 @@
+ 
+ void awt_freeParsedImage(BufImageS_t *imageP, int freeImageP);
+ 
+-int awt_getPixelByte(JNIEnv *env, int band, RasterS_t *rasterP,
+-                     unsigned char *bufferP);
+-int awt_setPixelByte(JNIEnv *env, int band, RasterS_t *rasterP,
+-                     unsigned char *bufferP);
+-int awt_getPixelShort(JNIEnv *env, int band, RasterS_t *rasterP,
+-                     unsigned short *bufferP);
+-int awt_setPixelShort(JNIEnv *env, int band, RasterS_t *rasterP,
+-                      unsigned short *bufferP);
++int awt_getPixels(JNIEnv *env, RasterS_t *rasterP, void *bufferP);
++
++int awt_setPixels(JNIEnv *env, RasterS_t *rasterP, void *bufferP);
+ 
+ #endif /* AWT_PARSE_IMAGE_H */
+diff -r a9be60a78488 -r 5405d79569f7 src/share/native/sun/awt/medialib/awt_ImagingLib.c
+--- jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c	Thu Jun 20 08:51:47 2013 +0200
++++ jdk/src/share/native/sun/awt/medialib/awt_ImagingLib.c	Fri May 17 16:47:51 2013 +0400
+@@ -700,22 +700,7 @@
+ 
+     /* Means that we couldn't write directly into the destination buffer */
+     if (ddata == NULL) {
+-        unsigned char *bdataP;
+-        unsigned short *sdataP;
+-
+-        /* Punt for now */
+-        switch (dstRasterP->dataType) {
+-        case BYTE_DATA_TYPE:
+-            bdataP  = (unsigned char *) mlib_ImageGetData(dst);
+-            retStatus = (awt_setPixelByte(env, -1, dstRasterP, bdataP) >= 0) ;
+-            break;
+-        case SHORT_DATA_TYPE:
+-            sdataP  = (unsigned short *) mlib_ImageGetData(dst);
+-            retStatus = (awt_setPixelShort(env, -1, dstRasterP, sdataP) >= 0) ;
+-            break;
+-        default:
+-            retStatus = 0;
+-        }
++        retStatus = awt_setPixels(env, dstRasterP, mlib_ImageGetData(dst));
+     }
+ 
+     /* Release the pinned memory */
+@@ -1119,24 +1104,9 @@
+ 
+     /* Means that we couldn't write directly into the destination buffer */
+     if (ddata == NULL) {
+-        unsigned char *bdataP;
+-        unsigned short *sdataP;
+-
+         /* Need to store it back into the array */
+         if (storeRasterArray(env, srcRasterP, dstRasterP, dst) < 0) {
+-            /* Punt for now */
+-            switch (dst->type) {
+-            case MLIB_BYTE:
+-                bdataP  = (unsigned char *) mlib_ImageGetData(dst);
+-                retStatus = (awt_setPixelByte(env, -1, dstRasterP, bdataP) >= 0) ;
+-                break;
+-            case MLIB_SHORT:
+-                sdataP  = (unsigned short *) mlib_ImageGetData(dst);
+-                retStatus = (awt_setPixelShort(env, -1, dstRasterP, sdataP) >= 0) ;
+-                break;
+-            default:
+-                retStatus = 0;
+-            }
++            retStatus = awt_setPixels(env, dstRasterP, mlib_ImageGetData(dst));
+         }
+     }
+ 
+@@ -1705,21 +1675,7 @@
+      * the destination buffer
+      */
+     if (ddata == NULL) {
+-        unsigned char*  bdataP;
+-        unsigned short* sdataP;
+-
+-        switch (dstRasterP->dataType) {
+-          case BYTE_DATA_TYPE:
+-            bdataP  = (unsigned char *) mlib_ImageGetData(dst);
+-            retStatus = (awt_setPixelByte(env, -1, dstRasterP, bdataP) >= 0) ;
+-            break;
+-          case SHORT_DATA_TYPE:
+-            sdataP  = (unsigned short *) mlib_ImageGetData(dst);
+-            retStatus = (awt_setPixelShort(env, -1, dstRasterP, sdataP) >= 0) ;
+-            break;
+-          default:
+-            retStatus = 0;
+-        }
++        retStatus = awt_setPixels(env, dstRasterP, mlib_ImageGetData(dst));
+     }
+ 
+     /* Release the LUT */
+@@ -2299,7 +2255,6 @@
+                     mlib_image **mlibImagePP, void **dataPP, int isSrc) {
+     void *dataP;
+     unsigned char *cDataP;
+-    unsigned short *sdataP;
+     int dataType = BYTE_DATA_TYPE;
+     int width;
+     int height;
+@@ -2485,8 +2440,7 @@
+             return -1;
+         }
+         if (isSrc) {
+-            cDataP  = (unsigned char *) mlib_ImageGetData(*mlibImagePP);
+-            if (awt_getPixelByte(env, -1, rasterP, cDataP) < 0) {
++            if (awt_getPixels(env, rasterP, mlib_ImageGetData(*mlibImagePP)) < 0) {
+                 (*sMlibSysFns.deleteImageFP)(*mlibImagePP);
+                 return -1;
+             }
+@@ -2500,8 +2454,7 @@
+             return -1;
+         }
+         if (isSrc) {
+-            sdataP  = (unsigned short *) mlib_ImageGetData(*mlibImagePP);
+-            if (awt_getPixelShort(env, -1, rasterP, sdataP) < 0) {
++            if (awt_getPixels(env, rasterP, mlib_ImageGetData(*mlibImagePP)) < 0) {
+                 (*sMlibSysFns.deleteImageFP)(*mlibImagePP);
+                 return -1;
+             }
+@@ -2551,60 +2504,6 @@
+     }
+ }
+ 
+-static int
+-storeDstArray(JNIEnv *env,  BufImageS_t *srcP, BufImageS_t *dstP,
+-              mlibHintS_t *hintP, mlib_image *mlibImP, void *ddata) {
+-    RasterS_t *rasterP = &dstP->raster;
+-
+-    /* Nothing to do since it is the same image type */
+-    if (srcP->imageType == dstP->imageType
+-        && srcP->imageType != java_awt_image_BufferedImage_TYPE_CUSTOM
+-        && srcP->imageType != java_awt_image_BufferedImage_TYPE_BYTE_INDEXED
+-        && srcP->imageType != java_awt_image_BufferedImage_TYPE_BYTE_BINARY) {
+-        /* REMIND: Should check the ICM LUTS to see if it is the same */
+-        return 0;
+-    }
+-
+-    /* These types are compatible with TYPE_INT_RGB */
+-    if (srcP->imageType == java_awt_image_BufferedImage_TYPE_INT_RGB
+-        && (dstP->imageType == java_awt_image_BufferedImage_TYPE_INT_ARGB ||
+-           dstP->imageType == java_awt_image_BufferedImage_TYPE_INT_ARGB_PRE)){
+-        return 0;
+-    }
+-
+-    if (hintP->cvtSrcToDefault &&
+-        (srcP->cmodel.isAlphaPre == dstP->cmodel.isAlphaPre)) {
+-        if (srcP->cmodel.isAlphaPre) {
+-            if (dstP->imageType ==
+-                java_awt_image_BufferedImage_TYPE_INT_ARGB_PRE)
+-            {
+-                return 0;
+-            }
+-            if (!srcP->cmodel.supportsAlpha &&
+-                dstP->imageType == java_awt_image_BufferedImage_TYPE_INT_RGB){
+-                return 0;
+-            }
+-        }
+-        else {
+-            /* REMIND: */
+-        }
+-    }
+-
+-    if (dstP->cmodel.cmType == DIRECT_CM_TYPE) {
+-        /* Just need to move bits */
+-        if (mlibImP->type == MLIB_BYTE) {
+-            return awt_setPixelByte(env, -1, &dstP->raster,
+-                                    (unsigned char *) mlibImP->data);
+-        }
+-        else if (mlibImP->type == MLIB_SHORT) {
+-            return awt_setPixelByte(env, -1, &dstP->raster,
+-                                    (unsigned char *) mlibImP->data);
+-        }
+-    }
+-
+-    return 0;
+-}
+-
+ #define ERR_BAD_IMAGE_LAYOUT (-2)
+ 
+ #define CHECK_DST_ARRAY(start_offset, elements_per_pixel)             \
+@@ -2717,8 +2616,7 @@
+             }
+         }
+         else if (mlibImP->type == MLIB_SHORT) {
+-            return awt_setPixelShort(env, -1, rasterP,
+-                                    (unsigned short *) mlibImP->data);
++            return awt_setPixels(env, rasterP, mlibImP->data);
+         }
+     }
+     else {

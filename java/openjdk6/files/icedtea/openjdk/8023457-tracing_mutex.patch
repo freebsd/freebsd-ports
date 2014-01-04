@@ -1,0 +1,79 @@
+# HG changeset patch
+# User mgronlun
+# Date 1382034480 -3600
+#      Thu Oct 17 19:28:00 2013 +0100
+# Node ID 4b3487aa553cca3fb7ecb74d284b9524d0bf5bf8
+# Parent  3091721c83780cbb9a946f05007651e0bd09490b
+8023457: Event based tracing framework needs a mutex for thread groups
+Reviewed-by: acorn, sla
+
+diff -r 3091721c8378 -r 4b3487aa553c src/share/vm/runtime/mutexLocker.cpp
+--- hotspot/src/share/vm/runtime/mutexLocker.cpp	Sat Aug 24 00:14:46 2013 -0700
++++ hotspot/src/share/vm/runtime/mutexLocker.cpp	Thu Oct 17 19:28:00 2013 +0100
+@@ -134,12 +134,16 @@
+ 
+ Mutex*   Management_lock              = NULL;
+ Monitor* Service_lock                 = NULL;
+-Mutex*   Stacktrace_lock              = NULL;
++Monitor* PeriodicTask_lock            = NULL;
+ 
++#ifdef INCLUDE_TRACE
+ Monitor* JfrQuery_lock                = NULL;
++Mutex*   JfrStacktrace_lock           = NULL;
+ Monitor* JfrMsg_lock                  = NULL;
+ Mutex*   JfrBuffer_lock               = NULL;
+ Mutex*   JfrStream_lock               = NULL;
++Mutex*   JfrThreadGroups_lock         = NULL;
++#endif
+ 
+ #define MAX_NUM_MUTEX 128
+ static Monitor * _mutex_array[MAX_NUM_MUTEX];
+@@ -215,7 +219,6 @@
+   def(Patching_lock                , Mutex  , special,     true ); // used for safepointing and code patching.
+   def(ObjAllocPost_lock            , Monitor, special,     false);
+   def(Service_lock                 , Monitor, special,     true ); // used for service thread operations
+-  def(Stacktrace_lock              , Mutex,   special,     true ); // used for JFR stacktrace database
+   def(JmethodIdCreation_lock       , Mutex  , leaf,        true ); // used for creating jmethodIDs.
+ 
+   def(SystemDictionary_lock        , Monitor, leaf,        true ); // lookups done by VM thread
+@@ -279,12 +282,18 @@
+   def(Debug2_lock                  , Mutex  , nonleaf+4,   true );
+   def(Debug3_lock                  , Mutex  , nonleaf+4,   true );
+   def(ProfileVM_lock               , Monitor, nonleaf+4,   false); // used for profiling of the VMThread
+-  def(CompileThread_lock           , Monitor, nonleaf+5,   false );
++  def(CompileThread_lock           , Monitor, nonleaf+5,   false);
++  def(PeriodicTask_lock            , Monitor, nonleaf+5,   true);
+ 
++#ifdef INCLUDE_TRACE
+   def(JfrQuery_lock                , Monitor, nonleaf,     true);  // JFR locks, keep these in consecutive order
+   def(JfrMsg_lock                  , Monitor, nonleaf+2,   true);
+   def(JfrBuffer_lock               , Mutex,   nonleaf+3,   true);
++  def(JfrThreadGroups_lock         , Mutex,   nonleaf+1,   true);
+   def(JfrStream_lock               , Mutex,   nonleaf+4,   true);
++  def(JfrStacktrace_lock           , Mutex,   special,     true );
++#endif
++
+ }
+ 
+ GCMutexLocker::GCMutexLocker(Monitor * mutex) {
+diff -r 3091721c8378 -r 4b3487aa553c src/share/vm/runtime/mutexLocker.hpp
+--- hotspot/src/share/vm/runtime/mutexLocker.hpp	Sat Aug 24 00:14:46 2013 -0700
++++ hotspot/src/share/vm/runtime/mutexLocker.hpp	Thu Oct 17 19:28:00 2013 +0100
+@@ -136,12 +136,16 @@
+ 
+ extern Mutex*   Management_lock;                 // a lock used to serialize JVM management
+ extern Monitor* Service_lock;                    // a lock used for service thread operation
+-extern Mutex*   Stacktrace_lock;                 // used to guard access to the stacktrace table
++extern Monitor* PeriodicTask_lock;               // protects the periodic task structure
+ 
++#ifdef INCLUDE_TRACE
++extern Mutex*   JfrStacktrace_lock;              // used to guard access to the JFR stacktrace table
+ extern Monitor* JfrQuery_lock;                   // protects JFR use
+ extern Monitor* JfrMsg_lock;                     // protects JFR messaging
+ extern Mutex*   JfrBuffer_lock;                  // protects JFR buffer operations
+ extern Mutex*   JfrStream_lock;                  // protects JFR stream access
++extern Mutex*   JfrThreadGroups_lock;            // protects JFR access to Thread Groups
++#endif
+ 
+ // A MutexLocker provides mutual exclusion with respect to a given mutex
+ // for the scope which contains the locker.  The lock is an OS lock, not
