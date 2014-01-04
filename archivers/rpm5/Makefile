@@ -3,7 +3,7 @@
 
 PORTNAME=	rpm
 PORTVERSION=	5.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm5.org/files/rpm/rpm-${PORTVERSION:R}/
 PKGNAMESUFFIX=	5
@@ -24,70 +24,49 @@ BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
 
 SH=		${LOCALBASE}/bin/bash
 
-OPTIONS_DEFINE=	PERL PYTHON LUA
+OPTIONS_DEFINE=	PERL PYTHON LUA DOCS
 OPTIONS_DEFAULT=	PYTHON LUA
 
-NO_STAGE=	yes
 DB_VERSION?=	47
 USE_BDB=	${DB_VERSION}
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure db3/configure db/dist/configure \
 		file/configure xar/configure
 CONFIGURE_ARGS=	--without-js
-USES=		gmake perl5
+USES=		gmake perl5 shebangfix
+SHEBANG_FILES=	scripts/*
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 CONFLICTS=	rpm-3.* rpm-4.* rpm4-*
 
-.include <bsd.port.options.mk>
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MLUA}
-CONFIGURE_ARGS+=--with-lua=external \
-		--with-syck=external
-USE_LUA=	5.1-
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libsyck.a:${PORTSDIR}/textproc/syck
-CPPFLAGS+=	-I${LUA_INCDIR}
-LDFLAGS+=	-L${LUA_LIBDIR}
-.else
-CONFIGURE_ARGS+=--without-lua \
-		--without-syck
-.endif
+LUA_USE=	LUA=5.1-
+LUA_BUILD_DEPENDS=	${LOCALBASE}/lib/libsyck.a:${PORTSDIR}/textproc/syck
+LUA_CPPFLAGS=	-I${LUA_INCDIR}
+LUA_LDFLAGS=	-L${LUA_LIBDIR}
+LUA_CONFIGURE_ON=	--with-lua=external --with-syck=external
+LUA_CONFIGURE_OFF=	--without-lua --without-syck
 
-.if ${PORT_OPTIONS:MPERL}
-CONFIGURE_ARGS+=--with-perl
-CONFIGURE_ENV+=	__PERL=${PERL}
-USE_PERL5+=	run
-PLIST_SUB+=	PERL=""
-.else
-CONFIGURE_ARGS+=--without-perl
-PLIST_SUB+=	PERL="@comment "
-.endif
+PERL_CONFIGURE_WITH=	perl
+PERL_USE=	PERL5=run
+PERL_CONFIGURE_ENV=	__PERL=${PERL}
 
-.if ${PORT_OPTIONS:MPYTHON}
-CONFIGURE_ARGS+=--with-python=${PYTHON_VER}
-CONFIGURE_ENV+=	__PYTHON=${PYTHON_CMD}
-USE_PYTHON=	yes
-PLIST_SUB+=	PYTHON=""
-CPPFLAGS+=	-I${PYTHON_INCLUDEDIR}
-LDFLAGS+=	-L${PYTHON_LIBDIR}
-.else
-CONFIGURE_ARGS+=--without-python
-PLIST_SUB+=	PYTHON="@comment "
-.endif
+PYTHON_USE=	PYTHON=yes
+PYTHON_CONFIGURE_ON=	--with-python=${PYTHON_VER}
+PYTHON_CONFIGURE_OFF=	--without-python
+PYTHON_CONFIGURE_ENV=	__PYTHON=${PYTHON_CMD}
+PYTHON_CPPFLAGS=	-I${PYTHON_INCLUDEDIR}
+PYTHON_LDFLAGS=		-L${PYTHON_LIBDIR}
 
-.if ${PORT_OPTIONS:MNLS}
-CONFIGURE_ARGS+=--enable-nls
-USES+=		gettext iconv
-.else
-CONFIGURE_ARGS+=--disable-nls
-.endif
+NLS_USES=	gettext iconv
+NLS_CONFIGURE_ENABLE=	nls
 
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
-		dot:${PORTSDIR}/graphics/graphviz \
-		${LOCALBASE}/lib/X11/fonts/freefont-ttf/FreeSans.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
-CONFIGURE_ARGS+=--with-apidocs
-.endif
+DOCS_BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
+			dot:${PORTSDIR}/graphics/graphviz \
+			${LOCALBASE}/lib/X11/fonts/freefont-ttf/FreeSans.ttf:${PORTSDIR}/x11-fonts/freefont-ttf
+DOCS_CONFIGURE_WITH=	apidocs
+PORTDOCS=	*
 
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include -I${LOCALBASE}/include/xar
 LDFLAGS+=	-L${BDB_LIB_DIR} -L${LOCALBASE}/lib
@@ -105,29 +84,9 @@ CONFIGURE_ARGS+=--with-db=external --with-bugreport="${MAINTAINER}" \
 		--with-path-cfg=${PREFIX}/etc/rpm \
 		--with-path-magic=${LOCALBASE}/share/file/magic
 
-MAN1=	gendiff.1 rpmgrep.1
-MAN8=	rpm.8 rpm2cpio.8 rpmbuild.8 rpmconstant.8 \
-	rpmcache.8 rpmdeps.8 rpmmtree.8
-.if defined(WITH_PERL)
-MAN3=	RPM.3 RPM::Constant.3 RPM::Dependencies.3 \
-	RPM::Files.3 RPM::Header.3 RPM::PackageIterator.3 \
-	RPM::Problems.3 RPM::Spec.3 RPM::Transaction.3
 MAN3PREFIX?=	${PREFIX}/lib/perl5/${PERL_VER}
-.endif
 
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	*
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=	liblzma.so:${PORTSDIR}/archivers/xz
-.endif
-
-.if ${OSVERSION} <= 701000
-MANUAL_PACKAGE_BUILD=	hangs on pointyhat
-.endif
+.include <bsd.port.options.mk>
 
 post-patch::
 	@${REINPLACE_CMD} -E -e \
@@ -138,8 +97,7 @@ post-patch::
 
 post-configure:
 .if ${PORT_OPTIONS:MPERL}
-	@cd ${CONFIGURE_WRKSRC}/perl && \
-		${PERL5} -pi -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' Makefile
+	@${REINPLACE_CMD} -e 's/ doc_(perl|site|\$$\(INSTALLDIRS\))_install$$//' ${CONFIGURE_WRKSRC}/perl/Makefile
 .endif
 	@echo "DOT_FONTPATH = ${LOCALBASE}/lib/X11/fonts/freefont-ttf" >> ${WRKSRC}/Doxyfile
 
@@ -151,12 +109,8 @@ post-build:
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	# Install documentation
-	${MKDIR} ${DOCSDIR}/apidocs/html
-	cd ${WRKSRC}/apidocs/html && ${FIND} . \
-		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} \
-			${DOCSDIR}/apidocs/html/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/apidocs/html
+	cd ${WRKSRC}/apidocs/html && ${COPYTREE_SHARE} . ${DOCSDIR}/apidocs/html/
 .endif
-	# Run package installation script
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
