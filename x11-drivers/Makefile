@@ -45,6 +45,7 @@
     SUBDIR += xf86-video-s3
     SUBDIR += xf86-video-s3virge
     SUBDIR += xf86-video-savage
+    SUBDIR += xf86-video-scfb
     SUBDIR += xf86-video-siliconmotion
     SUBDIR += xf86-video-sis
     SUBDIR += xf86-video-sis-intel
