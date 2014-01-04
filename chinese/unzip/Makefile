@@ -11,5 +11,4 @@ MASTERDIR=	${.CURDIR}/../../archivers/unzip
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-fileio.c
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
