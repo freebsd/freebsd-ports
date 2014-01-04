@@ -6474,7 +6474,8 @@ _EXTRACT_SEQ=	check-build-conflicts extract-message checksum extract-depends \
 				pre-extract pre-extract-script do-extract \
 				post-extract post-extract-script
 _PATCH_DEP=		extract
-_PATCH_SEQ=		ask-license patch-message patch-depends pathfix-pre-patch pre-patch \
+_PATCH_SEQ=		ask-license patch-message patch-depends pathfix-pre-patch dos2unix fix-shebang \
+				pre-patch \
 				pre-patch-script do-patch charsetfix-post-patch post-patch post-patch-script
 _CONFIGURE_DEP=	patch
 _CONFIGURE_SEQ=	build-depends lib-depends configure-message run-autotools-fixup \
@@ -6497,8 +6498,9 @@ _STAGE_SUSEQ=	create-users-groups do-install post-install post-install-script po
 _STAGE_SUSEQ+=	stage-qa
 .endif
 .else
-_STAGE_SEQ+=	create-users-groups do-install post-install post-install-script post-stage compress-man \
-				install-rc-script install-ldconfig-file install-license \
+_STAGE_SEQ+=	create-users-groups do-install desktop-file-post-install kmod-post-install \
+				shared-mime-post-install webplugin-post-install post-install post-install-script \
+				post-stage compress-man install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs add-plist-examples \
 				add-plist-data add-plist-post fix-plist-sequence
 .if defined(DEVELOPER)
@@ -6531,6 +6533,7 @@ _INSTALL_SEQ=	install-message check-install-conflicts run-depends lib-depends ap
 _INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
 				pre-su-install-script create-users-groups do-install \
 				install-desktop-entries install-license install-rc-script \
+				desktop-file-post-install kmod-post-install shared-mime-post-install webplugin-post-install \
 				post-install post-install-script add-plist-buildinfo \
 				add-plist-info add-plist-docs add-plist-examples \
 				add-plist-data add-plist-post fix-plist-sequence \
