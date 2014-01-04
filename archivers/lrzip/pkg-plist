@@ -30,5 +30,11 @@ lib/liblrzip.la
 lib/liblrzip.so
 lib/liblrzip.so.0
 libdata/pkgconfig/lrzip.pc
+man/man1/lrunzip.1.gz
+man/man1/lrzcat.1.gz
+man/man1/lrzip.1.gz
+man/man1/lrztar.1.gz
+man/man1/lrzuntar.1.gz
+man/man5/lrzip.conf.5.gz
 @dirrm %%DOCSDIR%%/lzma
 @dirrm %%DOCSDIR%%
