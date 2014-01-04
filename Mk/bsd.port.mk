@@ -1127,6 +1127,7 @@ SRC_BASE?=		/usr/src
 USESDIR?=		${PORTSDIR}/Mk/Uses
 SCRIPTSDIR?=	${PORTSDIR}/Mk/Scripts
 LIB_DIRS?=		/lib /usr/lib ${LOCALBASE}/lib
+NOTPHONY?=
 
 .if defined(FORCE_STAGE)
 .undef NO_STAGE
@@ -4256,7 +4257,6 @@ security-check:
 # call the necessary targets/scripts.
 ################################################################
 
-.PHONY: extract-message patch-message configure-message stage-message install-message package-message
 extract-message:
 	@${ECHO_MSG} "===>  Extracting for ${PKGNAME}"
 patch-message:
@@ -6545,16 +6545,24 @@ _PACKAGE_SEQ=	package-message pre-package pre-package-script \
 .for _t in ${_TARGETS_STAGES}
 .  for s in ${_${_t}_SEQ}
 .    if target(${s})
+.      if ! ${NOTPHONY:M${s}}
+_PHONY_TARGETS+= ${s}
+.      endif
 _${_t}_REAL_SEQ+=	${s}
 .    endif
 .  endfor
 .  for s in ${_${_t}_SUSEQ}
 .    if target(${s})
+.      if ! ${NOTPHONY:M${s}}
+_PHONY_TARGETS+= ${s}
+.       endif
 _${_t}_REAL_SUSEQ+=	${s}
 .    endif
 .  endfor
 .ORDER: ${_${_t}_DEP} ${_${_t}_REAL_SEQ}
 .endfor
+
+.PHONY: ${_PHONY_TARGETS}
 
 .for target in extract patch configure build stage install package
 
@@ -6600,6 +6608,8 @@ ${${target:U}_COOKIE}::
 .endif
 
 .endfor
+
+.PHONY: check-sanity fetch pkg
 
 .if !target(check-sanity)
 check-sanity: ${_SANITY_REAL_SEQ}
