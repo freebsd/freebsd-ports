@@ -22,6 +22,9 @@
 #			     default.
 # transmission_web_home:     Use alternative directory for the web interface
 #			     files, such as javascript, html and graphics.
+# transmission_chown:	     By default, transmission checks and fixes the
+#			     permissions for its home directory.  If this
+#			     causes problems, set this variable to no.
 #
 
 . /etc/rc.subr
@@ -36,6 +39,7 @@ load_rc_config $name
 : ${transmission_download_dir=%%PREFIX%%/etc/transmission/home/Downloads}
 : ${transmission_user:=transmission}
 transmission_group=${transmission_group:-$transmission_user}
+: ${transmission_chown:=yes}
 
 command=%%PREFIX%%/bin/transmission-daemon
 pidfile=/var/run/transmission/daemon.pid
@@ -51,11 +55,13 @@ transmission_flags=" \
 transmission_prestart()
 {
 	install -d -o $transmission_user ${pidfile%/*}
-	mkdir -p $transmission_conf_dir $transmission_download_dir
-	chown $transmission_user:$transmission_group $transmission_download_dir
-	chown -R $transmission_user:$transmission_group $transmission_conf_dir
-	chgrp $transmission_group $transmission_conf_dir
-	chmod 750 $transmission_conf_dir
+	if checkyesno transmission_chown; then
+		mkdir -p $transmission_conf_dir $transmission_download_dir
+		chown $transmission_user:$transmission_group $transmission_download_dir
+		chown -R $transmission_user:$transmission_group $transmission_conf_dir
+		chgrp $transmission_group $transmission_conf_dir
+		chmod 750 $transmission_conf_dir
+	fi
 	if [ -n "$transmission_web_home" ]; then
 		TRANSMISSION_WEB_HOME=$transmission_web_home
 		export TRANSMISSION_WEB_HOME
