@@ -13,16 +13,15 @@ COMMENT=	These trivial utilities can unpack and create PackdDir archives
 
 WRKSRC=		${WRKDIR}/src
 
-NO_STAGE=	yes
-PLIST_FILES=	bin/upackddir
-MAN1=		upackddir.1
-
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/upackddir \
+		man/man1/upackddir.1.gz
+MAKE_ARGS=	CC=${CC}
 
 post-patch:
-	${REINPLACE_CMD} -e 's|$$(DESTDIR)/usr|${PREFIX}|' ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|$$(DESTDIR)/usr|$$(DESTDIR)${PREFIX}|' ${WRKSRC}/Makefile
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/upackddir.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/upackddir.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/upackddir
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
