@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	nasm>=0:${PORTSDIR}/devel/nasm
 LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 
-NO_STAGE=		yes
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-asm
 GNU_CONFIGURE=	yes
@@ -24,12 +23,5 @@ USE_BZIP2=	yes
 USES=	gmake pathfix perl5
 USE_PERL5=	build
 USE_LDCONFIG=	yes
-
-MAN1=		lrunzip.1 \
-		lrzcat.1 \
-		lrzip.1 \
-		lrztar.1 \
-		lrzuntar.1
-MAN5=		lrzip.conf.5
 
 .include <bsd.port.mk>
