@@ -5358,3 +5358,4 @@ www/notftp||2014-01-01|Has expired: distfile unfetchable
 www/mod_lisp2||2014-01-01|Has expired: distfile unfetchable
 irc/xchat-gnome||2014-01-02|Has expired: broken and no release since 2009
 net-mgmt/unifi|net-mgmt/unifi3|2014-01-02|Rename to unifi3; unifi2 is coming to ports tree as well
+www/codeigniter17|www/codeigniter|2014-01-04|Unsupported upstream, consider using newer version
