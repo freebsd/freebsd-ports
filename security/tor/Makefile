@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-DISTVERSION=	0.2.3.25
-PORTREVISION=	1
+DISTVERSION=	0.2.4.20
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
@@ -49,7 +48,7 @@ MASTER_SITES=	https://www.torproject.org/dist/ \
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	An anonymizing overlay network for TCP
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
@@ -107,6 +106,10 @@ CONFIGURE_ARGS+=	--disable-gcc-hardening
 (${OSVERSION} >= 800000 && ${OSVERSION} < 802000) || \
 (${OSVERSION} >= 900000 && ${OSVERSION} < 900027) )
 WITH_OPENSSL_PORT=	yes
+.endif
+
+.if  ( ${OSVERSION} < 800038 )
+CPPFLAGS+=	-DSTAILQ_ENTRY=SIMPLEQ_ENTRY
 .endif
 
 .if ${PORT_OPTIONS:MBUFFEREVENTS}
@@ -171,12 +174,6 @@ CONFIGURE_ARGS+=	--disable-transparent
 .endif
 
 post-patch:
-	@${MV} ${WRKSRC}/contrib/tor-tsocks.conf \
-		${WRKSRC}/contrib/tor-tsocks.conf.sample
-	@${REINPLACE_CMD} -e "s|tor-tsocks.conf|tor-tsocks.conf.sample|g" \
-		${WRKSRC}/contrib/Makefile.in
-	@${REINPLACE_CMD} -e '\|^install-data-am:|s|install-docDATA||' \
-		${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -E -e "s@-ltcmalloc@${LOCALBASE}/lib/libtcmalloc.so@" \
 		-e "s@(-z) (relro|now)@-Wl,\1,\2@g" \
 		${WRKSRC}/configure
@@ -184,8 +181,8 @@ post-patch:
 post-configure:
 	@${FIND} -X ${WRKSRC} -type f -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
 		"s|-lpthread|${PTHREAD_LIBS}|g"
-	@${REINPLACE_CMD} -e '\|^nodist_man_MANS =|s|$$|${MAN1}|' \
-		${WRKSRC}/doc/Makefile
+	@${REINPLACE_CMD} -e '\|^nodist_man1_MANS =|s|$$|${MAN1:S@^@doc/@}|' \
+		${WRKSRC}/Makefile
 
 post-install:
 	${MKDIR} /var/run/tor

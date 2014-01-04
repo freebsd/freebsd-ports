@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tor
-DISTVERSION=	0.2.4.18-rc
+DISTVERSION=	0.2.4.20
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
@@ -47,7 +47,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	An anonymizing overlay network for TCP
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 GNU_CONFIGURE=	yes
