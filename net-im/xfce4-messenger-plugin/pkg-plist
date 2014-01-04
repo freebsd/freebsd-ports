@@ -1,6 +1,0 @@
-libexec/xfce4/panel-plugins/xfce4-messenger-plugin
-share/xfce4/panel-plugins/messenger.desktop
-@dirrmtry share/xfce4/panel-plugins
-@dirrmtry share/xfce4
-@dirrmtry libexec/xfce4/panel-plugins
-@dirrmtry libexec/xfce4
