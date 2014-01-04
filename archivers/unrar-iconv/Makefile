@@ -9,7 +9,6 @@ MASTERDIR=	${.CURDIR}/../unrar
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-iconv
 
-NO_STAGE=	yes
 CPPFLAGS+=	-DWITH_ICONV -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 USES+=		iconv

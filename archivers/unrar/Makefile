@@ -19,8 +19,7 @@ OPENSSL_AES_DESC=	Use OpenSSL implementation of AES
 
 CONFLICTS?=	zh-unrar-[0-9].* unrar-iconv-[0-9].*
 
-NO_STAGE=	yes
-MAKE_ARGS=	STRIP=${STRIP_CMD}
+MAKE_ARGS=	STRIP=${STRIP_CMD} CXX="${CXX}"
 MAKEFILE=	makefile.unix
 USES+=		gmake
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -30,22 +29,14 @@ PORTDOCS=	license.txt readme.txt
 
 SLAVEDIRS=	archivers/unrar-iconv chinese/unrar
 
-.include <bsd.port.options.mk>
+OPENSSL_AES_CPPFLAGS=	-DOPENSSL_AES -I${OPENSSLINC}
+OPENSSL_AES_USE=	OPENSSL=yes
+OPENSSL_AES_LDFLAGS=	-L${OPENSSLLIB} -lcrypto
 
-.if ${PORT_OPTIONS:MOPENSSL_AES}
-CPPFLAGS+=	-DOPENSSL_AES -I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB} -lcrypto
-USE_OPENSSL=	yes
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e '/^CXX/ s|^|#|' ${WRKSRC}/${MAKEFILE}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/unrar ${PREFIX}/bin/
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/unrar ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
