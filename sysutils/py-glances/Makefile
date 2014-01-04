@@ -21,27 +21,20 @@ OPTIONS_SUB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYDISTUTILS=easy_install
 PYDISTUTILS_PKGNAME=	Glances
-#NO_STAGE=	yes
 
 MANPAGES_MAN1=		glances.1
 NLS_TRANSLATIONS=	es fr it pt_BR zh_CN
 NLS_USES=		gettext
 
-.include <bsd.port.options.mk>
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/glances
 	${INSTALL_DATA} ${WRKSRC}/conf/glances.conf ${STAGEDIR}${PREFIX}/etc/glances/glances.conf.sample
-.if ${PORT_OPTIONS:MMANPAGES}
 	${INSTALL_MAN} ${WRKSRC}/man/glances.1 ${STAGEDIR}${MANPREFIX}/man/man1/
-.endif
-.if ${PORT_OPTIONS:MNLS}
 .for lang in ${NLS_TRANSLATIONS}
 	${INSTALL_DATA} ${WRKSRC}/i18n/${lang}/LC_MESSAGES/glances.mo \
 		${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/
 .endfor
-.endif
 
 .include <bsd.port.mk>
