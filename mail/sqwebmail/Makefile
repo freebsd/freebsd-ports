@@ -27,6 +27,7 @@ HTTPS_LOGIN_DESC=	Generate https:// URLs only for login
 MIMETYPES_DESC=	search for a mime.types file
 SENTRENAME_DESC=	Periodic rename the Sent folder
 CHARSET_DESC=	charsets
+FAM_USES=	fam
 
 NO_STAGE=	yes
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.opt"
@@ -86,10 +87,6 @@ INSTALL_TARGET=	install-strip install-configure
 
 .if exists(${.CURDIR}/../../security/courier-authlib/Makefile.dep)
 .include "${.CURDIR}/../../security/courier-authlib/Makefile.dep"
-.endif
-
-.if ${PORT_OPTIONS:MFAM}
-USE_FAM=	yes
 .endif
 
 .if ! ${PORT_OPTIONS:MCACHEDIR}

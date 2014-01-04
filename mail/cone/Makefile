@@ -19,8 +19,7 @@ LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell
 BUILD_DEPENDS=	gpgv:${PORTSDIR}/security/gnupg1
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_FAM=	yes
-USES=		gettext gmake iconv ncurses perl5
+USES=		fam gettext gmake iconv ncurses perl5
 USE_GNOME=	libxml2
 
 USE_BZIP2=	yes

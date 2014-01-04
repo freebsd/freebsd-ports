@@ -15,10 +15,9 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libfm-gtk.so.4:${PORTSDIR}/x11/libfm
 
-USES=		gmake pkgconfig
+USES=		fam gmake pkgconfig
 USE_GNOME=	gtk20
 USE_AUTOTOOLS=	libtool
-USE_FAM=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

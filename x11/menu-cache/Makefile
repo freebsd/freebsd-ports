@@ -9,11 +9,10 @@ MASTER_SITES=	SF/lxde/menu-cache/menu-cache%20$${PORTVERSION:R}.x/
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	The menu-cache portion of LXDE
 
-USES=		gmake pkgconfig
+USES=		fam gmake pkgconfig
 USE_GNOME=	gnomehack glib20
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USE_FAM=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

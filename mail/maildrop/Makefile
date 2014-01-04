@@ -93,7 +93,7 @@ CONFIGURE_ARGS+=	--enable-sendmail=/usr/sbin/sendmail
 .endif
 
 .if ${PORT_OPTIONS:MFAM} || exists(${LOCALBASE}/lib/libfam.so.0)
-USE_FAM=	yes
+USES+=			fam
 .endif
 
 .if defined(MAILDROP_TRUSTED_USERS)

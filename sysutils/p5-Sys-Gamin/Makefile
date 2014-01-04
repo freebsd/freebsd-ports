@@ -11,9 +11,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl interface to Gamin (File Access Monitor implementation)
 
-USES=		perl5
+USES=		fam perl5
 USE_PERL5=	configure
-USE_FAM=	yes
 
 pre-configure:
 	# Pass in include in LOCALBASE

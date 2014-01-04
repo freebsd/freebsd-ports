@@ -30,9 +30,8 @@ OPTIONS_DEFINE=	HAL
 HAL_DESC=	Enable HAL support
 
 USE_XORG=	xcomposite xft xinerama xpm xrandr
-USES=	pathfix gettext pkgconfig
+USES=		fam gettext pathfix pkgconfig
 USE_PYTHON=	yes
-USE_FAM=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-edelib_path=${EDELIB_WRKSRC} \
 		--with-fltk-path=${LOCALBASE}
