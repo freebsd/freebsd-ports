@@ -2109,7 +2109,6 @@ games/geki3||2011-05-02|Removed, Upstream disappeared and distfile is no longer 
 games/grande||2011-05-02|Removed, Upstream disappeared and distfile is no longer available
 games/spacearyarya||2011-05-02|Removed, Upstream disappeared and distfile is no longer available
 ftp/ftptool||2011-05-02|Removed, depend on this expired editors/textedit
-editors/textedit||2011-05-02|Has expired: Upstream disappeared and distfile is no longer available
 security/libfwbuilder||2011-05-02|libfwbuilder merged into fwbuilder
 games/monopd||2011-05-03|Removed, depends on an expired library: devel/libcapsinetwork
 devel/libcapsinetwork||2011-05-03|Has expired: Upstream disappeared and distfile is no longer available
@@ -3004,7 +3003,6 @@ mail/demime||2011-12-28|Has expired: No upstream development since 2007
 x11/wmmsg||2011-12-28|Has expired: No more public distfiles
 x11-toolkits/libgtkeditor||2011-12-28|Has expired: No longer supported upstream, not depended upon anymore
 misc/demoniac||2011-12-28|Has expired: No more upstream, no more public distfiles
-cad/gtkwave||2011-12-28|Has expired: No more public distfiles, no more upstream
 databases/clip||2011-12-28|Has expired: No upstream development for a long time
 x11-toolkits/gtkextra||2011-12-28|Has expired: no longer supported upstream, no more depend on
 www/xpi-mousegestures||2011-12-28|Has expired: Development has been ceased and not compatible with Firefox > 2
