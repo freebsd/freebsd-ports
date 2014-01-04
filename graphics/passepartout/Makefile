@@ -29,6 +29,8 @@ MAN1=		xml2ps.1 passepartout.1x
 
 NO_STAGE=	yes
 
+.include <bsd.port.options.mk>
+
 .if exists(${LOCALBASE}/lib/libfam.a) || defined(WITH_FAM)
 USES+=		fam
 .endif
