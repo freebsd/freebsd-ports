@@ -3,6 +3,7 @@
 
 PORTNAME=	pdftk
 PORTVERSION=	2.02
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -12,13 +13,13 @@ COMMENT=	Simple tool for doing everyday things with PDF documents
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgcj.so:${PORTSDIR}/lang/gcc${CSUFF} \
-		libstdc++.so:${PORTSDIR}/lang/gcc${CSUFF} \
-		libgcc_s.so:${PORTSDIR}/lang/gcc${CSUFF}
+LIB_DEPENDS=	libgcj.so:${PORTSDIR}/lang/${_GCC_PORT} \
+		libstdc++.so:${PORTSDIR}/lang/${_GCC_PORT} \
+		libgcc_s.so:${PORTSDIR}/lang/${_GCC_PORT}
 
-BUILD_DEPENDS=	gcj${CSUFF}:${PORTSDIR}/lang/gcc${CSUFF} \
-		gcjh${CSUFF}:${PORTSDIR}/lang/gcc${CSUFF} \
-		cpp${CSUFF}:${PORTSDIR}/lang/gcc${CSUFF}
+BUILD_DEPENDS=	gcj${CSUFF}:${PORTSDIR}/lang/${_GCC_PORT} \
+		gcjh${CSUFF}:${PORTSDIR}/lang/${_GCC_PORT} \
+		cpp${CSUFF}:${PORTSDIR}/lang/${_GCC_PORT}
 
 USE_ZIP=	yes
 
