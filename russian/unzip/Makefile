@@ -12,5 +12,4 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-ebcdic.h
 
 MASTERDIR=	${.CURDIR}/../../archivers/unzip
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
