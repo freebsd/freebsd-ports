@@ -18,5 +18,5 @@ lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-tim.so
 %%DATADIR%%/wubi.tim
 %%DATADIR%%/wubihua-n.tim
 @dirrm %%DATADIR%%
-@exec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
-@unexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
+@exec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
+@unexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache

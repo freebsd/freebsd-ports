@@ -6,6 +6,8 @@ lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-ja.so
 %%GNOMEPANEL%%libexec/im-ja/im-ja-applet
 libexec/im-ja/im-ja-helper
 libexec/im-ja/kpengine
+man/man1/im-ja-conf.1.gz
+man/man1/im-ja-xim-server.1.gz
 share/applications/im-ja.desktop
 %%GNOMEPANEL%%share/gnome-2.0/ui/GNOME_ImJaApplet.xml
 share/im-ja/01.unistrok
@@ -44,5 +46,5 @@ share/locale/hu/LC_MESSAGES/im-ja.mo
 share/locale/ja/LC_MESSAGES/im-ja.mo
 @dirrm share/im-ja
 @dirrm libexec/im-ja
-@exec if [ -f %D/bin/gtk-query-immodules-2.0 ]; then %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules; fi
-@unexec if [ -f %D/bin/gtk-query-immodules-2.0 ]; then %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules; fi
+@exec if [ -f %D/bin/gtk-query-immodules-2.0 ]; then %D/bin/gtk-query-immodules-2.0 --update-cache; fi
+@unexec if [ -f %D/bin/gtk-query-immodules-2.0 ]; then %D/bin/gtk-query-immodules-2.0 --update-cache; fi

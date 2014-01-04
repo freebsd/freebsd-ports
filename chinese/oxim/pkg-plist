@@ -23,6 +23,7 @@ lib/oxim/tables/cnscj.tab
 lib/oxim/tables/cnsphone.tab
 lib/oxim/tables/default.phr
 lib/oxim/tables/symbol.list
+man/man1/oxim.1.gz
 share/locale/zh_CN/LC_MESSAGES/oxim.mo
 share/locale/zh_HK/LC_MESSAGES/oxim.mo
 share/locale/zh_TW/LC_MESSAGES/oxim.mo
@@ -35,5 +36,5 @@ share/locale/zh_TW/LC_MESSAGES/oxim.mo
 @dirrmtry share/locale/zh_HK
 %%GTK2%%@dirrmtry lib/gtk-2.0/immodules
 %%GTK2%%@dirrmtry lib/gtk-2.0
-%%GTK2%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
-%%GTK2%%@unexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
+%%GTK2%%@exec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache
+%%GTK2%%@unexec %%LOCALBASE%%/bin/gtk-query-immodules-2.0 --update-cache

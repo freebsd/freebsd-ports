@@ -2,9 +2,9 @@ lib/gtk-%%GTKVER%%/immodules/im-hangul.a
 lib/gtk-%%GTKVER%%/immodules/im-hangul.la
 lib/gtk-%%GTKVER%%/immodules/im-hangul.so
 %%GTK2%%%%NLS%%share/locale/ko/LC_MESSAGES/im-hangul.mo
-%%GTK2%%@exec %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
-%%GTK2%%@unexec %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
+%%GTK2%%@exec %D/bin/gtk-query-immodules-2.0 --update-cache
+%%GTK2%%@unexec %D/bin/gtk-query-immodules-2.0 --update-cache
 %%GTK3%%%%NLS%%share/locale/ko/LC_MESSAGES/im-hangul-3.0.mo
-%%GTK3%%@exec %D/bin/gtk-query-immodules-3.0 > %D/lib/gtk-3.0/%%GTK3_VERSION%%/immodules.cache
-%%GTK3%%@unexec %D/bin/gtk-query-immodules-3.0 > %D/lib/gtk-3.0/%%GTK3_VERSION%%/immodules.cache
+%%GTK3%%@exec %D/bin/gtk-query-immodules-3.0 --update-cache
+%%GTK3%%@unexec %D/bin/gtk-query-immodules-3.0 --update-cache
 @dirrmtry lib/gtk-%%GTKVER%%/immodules

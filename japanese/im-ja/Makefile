@@ -8,7 +8,7 @@ CATEGORIES=	japanese x11-toolkits
 MASTER_SITES=	http://im-ja.sourceforge.net/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Japanese input module for GTK2
+COMMENT=	Japanese input module for GTK2
 
 OPTIONS_DEFINE=	ANTHY CANNA WNN GNOMEPANEL
 OPTIONS_DEFAULT=	ANTHY CANNA WNN
@@ -17,34 +17,33 @@ CANNA_DESC=		Use Canna
 WNN_DESC=		Use FreeWnn
 GNOMEPANEL_DESC=	Build GNOME Panel Applet
 
-USES=        pathfix perl5 gmake pkgconfig
+USES=		gmake pathfix perl5 pkgconfig
 USE_GNOME=	gconf2 gnomeprefix intlhack libglade2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-schemas-install # Avoid stage violation
 
-MAN1=		im-ja-conf.1 im-ja-xim-server.1
 GCONF_SCHEMAS=	im-ja.schemas
 
 CPPFLAGS+=	-I${LOCALBASE}/include -DNO_MALLOC_H
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MANTHY}
-LIB_DEPENDS+=	anthy.1:${PORTSDIR}/japanese/anthy
+LIB_DEPENDS+=	libanthy.so:${PORTSDIR}/japanese/anthy
 .else
 CONFIGURE_ARGS+=	--disable-anthy
 .endif
 
 .if ${PORT_OPTIONS:MCANNA}
-LIB_DEPENDS+=	RKC.1:${PORTSDIR}/japanese/canna-lib
+LIB_DEPENDS+=	libRKC.so:${PORTSDIR}/japanese/canna-lib
 .else
 CONFIGURE_ARGS+=	--disable-canna
 .endif
 
 .if ${PORT_OPTIONS:MWNN}
-LIB_DEPENDS+=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
+LIB_DEPENDS+=	libwnn.so:${PORTSDIR}/japanese/FreeWnn-lib
 .else
 CONFIGURE_ARGS+=	--disable-wnn
 .endif
@@ -66,9 +65,5 @@ post-patch:
 	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${TOUCH}
 	@${REINPLACE_CMD} -e 's|$$(datadir)/gconf|$$(sysconfdir)/gconf|g' \
 		${WRKSRC}/data/Makefile.in
-
-post-install:
-	${LOCALBASE}/bin/gtk-query-immodules-2.0 > \
-	    ${LOCALBASE}/etc/gtk-2.0/gtk.immodules
 
 .include <bsd.port.mk>
