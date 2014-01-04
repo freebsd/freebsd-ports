@@ -19,11 +19,6 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	decke
-GH_TAGNAME=	${GH_COMMIT}
-GH_COMMIT=	8a8c1a8
-
 USES=		pkgconfig gmake
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
