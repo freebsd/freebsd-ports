@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xstow
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -16,12 +16,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-PLIST_FILES=	bin/merge-info bin/xstow bin/xstow-static bin/xstow-stow \
+PLIST_FILES=	bin/merge-info bin/xstow \
 		man/man1/merge-info.1.gz man/man1/xstow.1.gz \
 		man/man5/xstow.ini.5.gz
-
-# This port always installs documentation, so we cannot respect NOPORTDOCS
 PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README TODO xstow.html xstow.ini xstow.ini.html
+
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	(cd ${WRKSRC} && \
