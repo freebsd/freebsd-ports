@@ -27,18 +27,4 @@ TEST_DEPENDS=	\
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HTTP::Session.3 \
-		HTTP::Session::State::Cookie.3 \
-		HTTP::Session::State::Null.3 \
-		HTTP::Session::State::Test.3 \
-		HTTP::Session::State::URI.3 \
-		HTTP::Session::Store::CHI.3 \
-		HTTP::Session::Store::DBM.3 \
-		HTTP::Session::Store::File.3 \
-		HTTP::Session::Store::Memcached.3 \
-		HTTP::Session::Store::Null.3 \
-		HTTP::Session::Store::OnMemory.3 \
-		HTTP::Session::Store::Test.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

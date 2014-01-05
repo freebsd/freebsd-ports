@@ -13,8 +13,4 @@ COMMENT=	Lightweight Parser for CGI Forms
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		CGI::Thin.3 \
-		CGI::Thin::Cookies.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

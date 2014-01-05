@@ -17,7 +17,4 @@ RUN_DEPENDS=	p5-Plack>=0.9937:${PORTSDIR}/www/p5-Plack \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Plack::Middleware::Expires.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

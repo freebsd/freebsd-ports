@@ -19,7 +19,4 @@ RUN_DEPENDS=	p5-Clone>=0.23:${PORTSDIR}/devel/p5-Clone \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HTML::Location.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
