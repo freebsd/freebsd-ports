@@ -5,6 +5,14 @@ bin/macsave
 bin/macstream
 bin/macunpack
 bin/tomac
+man/man1/binhex.1.gz
+man/man1/frommac.1.gz
+man/man1/hexbin.1.gz
+man/man1/macsave.1.gz
+man/man1/macstream.1.gz
+man/man1/macunpack.1.gz
+man/man1/macutil.1.gz
+man/man1/tomac.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.crc
 %%PORTDOCS%%%%DOCSDIR%%/README.crc.orig
