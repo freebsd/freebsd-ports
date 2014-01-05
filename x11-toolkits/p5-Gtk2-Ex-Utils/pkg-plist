@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Gtk2/Ex/Constants.pm
 %%SITE_PERL%%/Gtk2/Ex/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Ex/Utils/.packlist
+%%PERL5_MAN3%%/Gtk2::Ex::Constants.3.gz
+%%PERL5_MAN3%%/Gtk2::Ex::Utils.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Ex/Utils
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/Ex
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2

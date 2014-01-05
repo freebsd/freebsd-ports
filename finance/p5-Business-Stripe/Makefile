@@ -20,7 +20,4 @@ WRKSRC=		${WRKDIR}/aquaron-Business-Stripe-c067843
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Business::Stripe.3 Business::README.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

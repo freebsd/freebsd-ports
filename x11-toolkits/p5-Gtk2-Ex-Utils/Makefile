@@ -22,8 +22,4 @@ RUN_DEPENDS=	p5-Glib2>=1.00:${PORTSDIR}/devel/p5-Glib2 \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Gtk2::Ex::Constants.3 \
-	Gtk2::Ex::Utils.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
