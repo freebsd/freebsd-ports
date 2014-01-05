@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/APNS/.packlist
 %%SITE_PERL%%/Net/APNS.pm
 %%SITE_PERL%%/Net/APNS/Notification.pm
+%%PERL5_MAN3%%/Net::APNS.3.gz
+%%PERL5_MAN3%%/Net::APNS::Notification.3.gz
 @dirrm %%SITE_PERL%%/Net/APNS
 @dirrmtry %%SITE_PERL%%/Net
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/APNS

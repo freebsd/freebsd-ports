@@ -18,6 +18,25 @@
 %%SITE_PERL%%/Net/Google/Code/Wiki.pm
 %%SITE_PERL%%/Net/Google/Code/Wiki/Comment.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google/Code/.packlist
+%%PERL5_MAN3%%/Net::Google::Code.3.gz
+%%PERL5_MAN3%%/Net::Google::Code::AtomParser.3.gz
+%%PERL5_MAN3%%/Net::Google::Code::DateTime.3.gz
+%%PERL5_MAN3%%/Net::Google::Code::Download.3.gz
+%%PERL5_MAN3%%/Net::Google::Code::Issue.3.gz
+%%PERL5_MAN3%%/Net::Google::Code::Issue::Attachment.3.gz
+%%PERL5_MAN3%%/Net::Google::Code::Issue::Base.3.gz
+%%PERL5_MAN3%%/Net::Google::Code::Issue::Comment.3.gz
+%%PERL5_MAN3%%/Net::Google::Code::Issue::Search.3.gz
+%%PERL5_MAN3%%/Net::Google::Code::Issue::Util.3.gz
+%%PERL5_MAN3%%/Net::Google::Code::Role::Authentication.3.gz
+%%PERL5_MAN3%%/Net::Google::Code::Role::Fetchable.3.gz
+%%PERL5_MAN3%%/Net::Google::Code::Role::HTMLTree.3.gz
+%%PERL5_MAN3%%/Net::Google::Code::Role::Pageable.3.gz
+%%PERL5_MAN3%%/Net::Google::Code::Role::Predefined.3.gz
+%%PERL5_MAN3%%/Net::Google::Code::Role::URL.3.gz
+%%PERL5_MAN3%%/Net::Google::Code::TypicalRoles.3.gz
+%%PERL5_MAN3%%/Net::Google::Code::Wiki.3.gz
+%%PERL5_MAN3%%/Net::Google::Code::Wiki::Comment.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google/Code
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

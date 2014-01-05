@@ -1,6 +1,7 @@
 bin/wpfind
 %%SITE_PERL%%/Net/WhitePages.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/WhitePages/.packlist
+%%PERL5_MAN3%%/Net::WhitePages.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/WhitePages
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net

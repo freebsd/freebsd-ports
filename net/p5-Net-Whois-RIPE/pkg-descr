@@ -2,7 +2,4 @@ This is an object-orienated perl module that provides methods to query,
 retrieve and update RIPE-157 formated objects, from whois servers that
 support this format.
 
-WWW:	http://search.cpan.org/dist/Net-Whois-RIPE/
-
-	Michael L. Hostbaek
-	mich@FreeBSD.org
+WWW: http://search.cpan.org/dist/Net-Whois-RIPE/

@@ -17,7 +17,4 @@ RUN_DEPENDS=	 p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::LDAP::Makepath.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -10,3 +10,5 @@ perl -e 'use Net::Wake; Net::Wake::by_udp("192.168.0.1", "xx:xx:xx:xx:xx:xx");'
 
 You can also specify broadcast address for `host'. It is useful in a
 intelligent network.
+
+WWW: http://search.cpan.org/dist/Net-Wake/

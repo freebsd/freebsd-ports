@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/IPfree/.packlist
 %%SITE_PERL%%/Geo/IPfree.pm
 %%SITE_PERL%%/Geo/ipscountry.dat
+%%PERL5_MAN3%%/Geo::IPfree.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/IPfree
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
 @dirrmtry %%SITE_PERL%%/Geo

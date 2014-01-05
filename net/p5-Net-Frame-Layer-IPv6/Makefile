@@ -19,12 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Frame::Layer::IPv6.3 \
-		Net::Frame::Layer::IPv6::Fragment.3 \
-		Net::Frame::Layer::IPv6::Routing.3 \
-		Net::Frame::Layer::IPv6::HopByHop.3 \
-		Net::Frame::Layer::IPv6::Option.3 \
-		Net::Frame::Layer::IPv6::Destination.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
