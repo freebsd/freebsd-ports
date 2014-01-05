@@ -10,7 +10,7 @@ EXTRACT_SUFX=	.tar.gz
 MAINTAINER=	ray@FreeBSD.org
 COMMENT=	X.Org syscons display driver
 
-ONLY_FOR_ARCHS=	arm pcc ppc64 sparc64
+ONLY_FOR_ARCHS=	arm armv6 pcc ppc64 sparc64
 
 XORG_CAT=	driver
 USE_XORG=	xextproto videoproto
