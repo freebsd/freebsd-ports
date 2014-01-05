@@ -13,23 +13,20 @@ COMMENT=	Polkit authentication UI for KDE Workspaces
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	polkit-qt-agent-1:${PORTSDIR}/sysutils/polkit-qt
+LIB_DEPENDS=	libpolkit-qt-agent-1.so:${PORTSDIR}/sysutils/polkit-qt
 
 USE_BZIP2=	yes
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USES=		cmake
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CMAKE_ARGS+=	-DBUILD_po:BOOL=FALSE
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_CMAKE_OFF=	-DBUILD_po:BOOL=FALSE
+NLS_USES=	gettext
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e 's|$${LIB_INSTALL_DIR}/pkgconfig|libdata/pkgconfig|' \
