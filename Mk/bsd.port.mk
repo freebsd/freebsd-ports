@@ -3338,6 +3338,11 @@ check-vulnerable:
 			vlist=`${LOCALBASE}/sbin/portaudit -X 14 "${PKGNAME}" \
 				2>&1 | grep -vE '^[0-9]+ problem\(s\) found.' \
 				|| true`; \
+			if [ -n "$$vlist" ]; then \
+				vlist=`${LOCALBASE}/sbin/portaudit -X 14 "${PKGNAME}" \
+					2>&1 | grep -vE '^[0-9]+ problem\(s\) found.' \
+					|| true`; \
+			fi ; \
 		else \
 			${ECHO_MSG} "===>  portaudit database exists, however, portaudit is not installed!"; \
 		fi; \
