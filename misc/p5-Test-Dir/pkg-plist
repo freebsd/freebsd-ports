@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Test/Dir/Base.pm
 %%SITE_PERL%%/Test/Folder.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Dir/.packlist
+%%PERL5_MAN3%%/Test::Dir.3.gz
+%%PERL5_MAN3%%/Test::Dir::Base.3.gz
+%%PERL5_MAN3%%/Test::Folder.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Dir
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
 @dirrm %%SITE_PERL%%/Test/Dir

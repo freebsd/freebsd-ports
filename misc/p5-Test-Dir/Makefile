@@ -13,9 +13,4 @@ COMMENT=	Test directory attributes
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Test::Dir.3 \
-		Test::Dir::Base.3 \
-		Test::Folder.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -17,13 +17,5 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
-MAN3=		Gtk2::Ex::Dialogs::Question.3 \
-		Gtk2::Ex::Dialogs::ChooseDirectory.3 \
-		Gtk2::Ex::Dialogs::Message.3 \
-		Gtk2::Ex::Dialogs::ErrorMsg.3 \
-		Gtk2::Ex::Dialogs::ChooseFile.3 \
-		Gtk2::Ex::Dialogs::ChoosePreviewFile.3 \
-		Gtk2::Ex::Dialogs.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Bot/Training/StarCraft.pm
 %%SITE_PERL%%/auto/share/dist/Bot-Training-StarCraft/starcraft.trn
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bot/Training/StarCraft/.packlist
+%%PERL5_MAN3%%/Bot::Training::StarCraft.3.gz
 @dirrm %%SITE_PERL%%/auto/share/dist/Bot-Training-StarCraft
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bot/Training/StarCraft
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bot/Training

@@ -3,5 +3,9 @@
 %%SITE_PERL%%/No/PersonNr.pm
 %%SITE_PERL%%/No/Sort.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/No/.packlist
+%%PERL5_MAN3%%/No::Sort.3.gz
+%%PERL5_MAN3%%/No::KontoNr.3.gz
+%%PERL5_MAN3%%/No::PersonNr.3.gz
+%%PERL5_MAN3%%/No::Dato.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/No
 @dirrmtry %%SITE_PERL%%/No

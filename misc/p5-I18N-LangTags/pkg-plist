@@ -2,6 +2,9 @@
 %%SITE_PERL%%/I18N/LangTags/List.pm
 %%SITE_PERL%%/I18N/LangTags/Detect.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/I18N/LangTags/.packlist
+%%PERL5_MAN3%%/I18N::LangTags.3.gz
+%%PERL5_MAN3%%/I18N::LangTags::Detect.3.gz
+%%PERL5_MAN3%%/I18N::LangTags::List.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/I18N/LangTags
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/I18N
 @dirrm %%SITE_PERL%%/I18N/LangTags

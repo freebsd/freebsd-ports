@@ -2,6 +2,7 @@
 %%SITE_PERL%%/Business/ISBN/RangeMessage.xml
 %%SITE_PERL%%/Business/ISBN/make_data.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/ISBN/Data/.packlist
+%%PERL5_MAN3%%/Business::ISBN::Data.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/ISBN/Data
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/ISBN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business

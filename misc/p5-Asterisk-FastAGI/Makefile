@@ -21,7 +21,4 @@ RUN_DEPENDS=	p5-Asterisk>=0:${PORTSDIR}/misc/p5-Asterisk \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Asterisk::FastAGI.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

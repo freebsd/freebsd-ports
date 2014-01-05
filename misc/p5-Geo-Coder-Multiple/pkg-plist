@@ -6,6 +6,7 @@
 %%SITE_PERL%%/Geo/Coder/Multiple/Response.pm
 %%SITE_PERL%%/Geo/Coder/Multiple/Multimap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Multiple/.packlist
+%%PERL5_MAN3%%/Geo::Coder::Multiple.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder/Multiple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
