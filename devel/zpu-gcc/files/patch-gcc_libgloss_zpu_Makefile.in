@@ -1,0 +1,47 @@
+--- gcc/libgloss/zpu/Makefile.in.orig	2012-10-11 19:40:33.000000000 -0400
++++ gcc/libgloss/zpu/Makefile.in	2014-01-05 16:38:11.241591883 -0500
+@@ -48,12 +48,8 @@
+ RANLIB = @RANLIB@
+ AR_FLAGS = qv
+ 
+-OBJDUMP = `if [ -f ${objroot}/../binutils/objdump ] ; \
+-	then echo ${objroot}/../binutils/objdump ; \
+-	else t='$(program_transform_name)'; echo objdump | sed -e $$t ; fi`
+-OBJCOPY = `if [ -f ${objroot}/../binutils/objcopy ] ; \
+-	then echo ${objroot}/../binutils/objcopy ; \
+-	else t='$(program_transform_name)'; echo objcopy | sed -e $$t ; fi`
++OBJDUMP = $(prefix)/bin/zpu-elf-objdump
++OBJCOPY = $(prefix)/bin/zpu-elf-objcopy
+ 
+ SCRIPTS = 
+ 
+@@ -108,10 +104,10 @@
+ 
+ .PHONY: install info install-info clean-info
+ install:	install-scripts
+-	$(INSTALL_PROGRAM) $(CRT0) $(tooldir)/lib${MULTISUBDIR}/$(CRT0)
+-	$(INSTALL_PROGRAM) $(IO) $(tooldir)/lib${MULTISUBDIR}/$(IO)
++	$(INSTALL_PROGRAM) $(CRT0) $(DESTDIR)$(tooldir)/lib${MULTISUBDIR}/$(CRT0)
++	$(INSTALL_PROGRAM) $(IO) $(DESTDIR)$(tooldir)/lib${MULTISUBDIR}/$(IO)
+ 	@for bsp in ${BSP}; do\
+-	 $(INSTALL_PROGRAM) $${bsp} $(tooldir)/lib${MULTISUBDIR}; \
++	 $(INSTALL_PROGRAM) $${bsp} $(DESTDIR)$(tooldir)/lib${MULTISUBDIR}; \
+ 	done
+ 
+ # Install the linker script in the correct place.
+@@ -122,8 +118,6 @@
+ 	   t='$(program_transform_name)'; \
+ 	   objdump=`echo objdump | sed -e $$t`; \
+ 	fi ; \
+-	name=`$$objdump -f $(CRT0) | sed '/^$$/d'`; 
+-	name=`$$objdump -f $(IO) | sed '/^$$/d'`; 
+ 
+ doc:
+ info:
+@@ -139,4 +133,4 @@
+ .c.o:
+ 	$(CC) $(CFLAGS_FOR_TARGET)  $(INCLUDES) -c $(CFLAGS) -fomit-frame-pointer -ffunction-sections -fdata-sections $<
+ 
+-	
+\ No newline at end of file
++	
