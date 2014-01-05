@@ -3,6 +3,8 @@
 %%SITE_PERL%%/auto/HTML/Macro/Loop/autosplit.ix
 %%SITE_PERL%%/auto/HTML/Macro/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Macro/.packlist
+%%PERL5_MAN3%%/HTML::Macro.3.gz
+%%PERL5_MAN3%%/HTML::Macro::Loop.3.gz
 @dirrmtry %%SITE_PERL%%/HTML/Macro
 @dirrmtry %%SITE_PERL%%/HTML
 @dirrmtry %%SITE_PERL%%/auto/HTML/Macro/Loop

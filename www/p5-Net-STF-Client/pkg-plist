@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Net/STF/Bucket.pm
 %%SITE_PERL%%/Net/STF/Client.pm
 %%SITE_PERL%%/Net/STF/Object.pm
+%%PERL5_MAN3%%/Net::STF::Bucket.3.gz
+%%PERL5_MAN3%%/Net::STF::Client.3.gz
+%%PERL5_MAN3%%/Net::STF::Object.3.gz
 @dirrmtry %%SITE_PERL%%/Net/STF
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/STF/Client
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/STF

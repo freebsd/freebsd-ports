@@ -3,5 +3,7 @@
 %%SITE_PERL%%/pQuery.pod
 %%SITE_PERL%%/pQuery/DOM.pm
 %%SITE_PERL%%/pQuery/DOM.pod
+%%PERL5_MAN3%%/pQuery.3.gz
+%%PERL5_MAN3%%/pQuery::DOM.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/pQuery
 @dirrmtry %%SITE_PERL%%/pQuery
