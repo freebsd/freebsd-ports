@@ -3,6 +3,10 @@
 %%SITE_PERL%%/WebService/Google/Reader/Feed.pm
 %%SITE_PERL%%/WebService/Google/Reader/ListElement.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Google/Reader/.packlist
+%%PERL5_MAN3%%/WebService::Google::Reader.3.gz
+%%PERL5_MAN3%%/WebService::Google::Reader::Constants.3.gz
+%%PERL5_MAN3%%/WebService::Google::Reader::Feed.3.gz
+%%PERL5_MAN3%%/WebService::Google::Reader::ListElement.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Google/Reader
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Google
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService

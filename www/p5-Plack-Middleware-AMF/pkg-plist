@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/AMF/.packlist
 %%SITE_PERL%%/Plack/Middleware/AMF.pm
+%%PERL5_MAN3%%/Plack::Middleware::AMF.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/AMF
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware

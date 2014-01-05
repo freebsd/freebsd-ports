@@ -30,10 +30,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		WebService::Google::Reader.3 \
-		WebService::Google::Reader::Constants.3 \
-		WebService::Google::Reader::Feed.3 \
-		WebService::Google::Reader::ListElement.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
