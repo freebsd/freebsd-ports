@@ -14,6 +14,20 @@
 %%SITE_PERL%%/GunghoX/FollowLinks/Rule/HTML/SelectedTags.pm
 %%SITE_PERL%%/GunghoX/FollowLinks/Rule/MIME.pm
 %%SITE_PERL%%/GunghoX/FollowLinks/Rule/URI.pm
+%%PERL5_MAN3%%/GunghoX::FollowLinks.3.gz
+%%PERL5_MAN3%%/GunghoX::FollowLinks::Filter.3.gz
+%%PERL5_MAN3%%/GunghoX::FollowLinks::Parser.3.gz
+%%PERL5_MAN3%%/GunghoX::FollowLinks::Parser::HTML.3.gz
+%%PERL5_MAN3%%/GunghoX::FollowLinks::Parser::Text.3.gz
+%%PERL5_MAN3%%/GunghoX::FollowLinks::Rule.3.gz
+%%PERL5_MAN3%%/GunghoX::FollowLinks::Rule::Allow.3.gz
+%%PERL5_MAN3%%/GunghoX::FollowLinks::Rule::Deny.3.gz
+%%PERL5_MAN3%%/GunghoX::FollowLinks::Rule::Fresh.3.gz
+%%PERL5_MAN3%%/GunghoX::FollowLinks::Rule::Fresh::Cache.3.gz
+%%PERL5_MAN3%%/GunghoX::FollowLinks::Rule::Fresh::Memory.3.gz
+%%PERL5_MAN3%%/GunghoX::FollowLinks::Rule::HTML::SelectedTags.3.gz
+%%PERL5_MAN3%%/GunghoX::FollowLinks::Rule::MIME.3.gz
+%%PERL5_MAN3%%/GunghoX::FollowLinks::Rule::URI.3.gz
 @dirrm %%SITE_PERL%%/GunghoX/FollowLinks/Rule/HTML
 @dirrm %%SITE_PERL%%/GunghoX/FollowLinks/Rule/Fresh
 @dirrm %%SITE_PERL%%/GunghoX/FollowLinks/Rule

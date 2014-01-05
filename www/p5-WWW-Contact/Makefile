@@ -30,21 +30,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		WWW::Contact.3 \
-		WWW::Contact::AOL.3 \
-		WWW::Contact::BG::Abv.3 \
-		WWW::Contact::BG::Mail.3 \
-		WWW::Contact::Base.3 \
-		WWW::Contact::CN::163.3 \
-		WWW::Contact::Gmail.3 \
-		WWW::Contact::GoogleContactsAPI.3 \
-		WWW::Contact::Hotmail.3 \
-		WWW::Contact::Indiatimes.3 \
-		WWW::Contact::Lycos.3 \
-		WWW::Contact::Mail.3 \
-		WWW::Contact::Plaxo.3 \
-		WWW::Contact::Rediffmail.3 \
-		WWW::Contact::Yahoo.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

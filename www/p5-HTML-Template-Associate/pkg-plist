@@ -1,6 +1,9 @@
 %%SITE_PERL%%/HTML/Template/Associate.pm
 %%SITE_PERL%%/HTML/Template/Associate/DBI.pm
 %%SITE_PERL%%/HTML/Template/Associate/FormValidator.pm
+%%PERL5_MAN3%%/HTML::Template::Associate.3.gz
+%%PERL5_MAN3%%/HTML::Template::Associate::DBI.3.gz
+%%PERL5_MAN3%%/HTML::Template::Associate::FormValidator.3.gz
 @dirrm %%SITE_PERL%%/HTML/Template/Associate
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Associate/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Associate

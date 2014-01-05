@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication/Credential/HTTP/.packlist
 %%SITE_PERL%%/Catalyst/Authentication/Credential/HTTP.pm
+%%PERL5_MAN3%%/Catalyst::Authentication::Credential::HTTP.3.gz
 @dirrmtry %%SITE_PERL%%/Catalyst/Authentication/Credential
 @dirrmtry %%SITE_PERL%%/Catalyst/Authentication
 @dirrmtry %%SITE_PERL%%/Catalyst
