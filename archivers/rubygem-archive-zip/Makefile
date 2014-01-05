@@ -11,7 +11,6 @@ COMMENT=	Provides interface to working with ZIP archives
 
 RUN_DEPENDS=	rubygem-io-like>=0.3.0:${PORTSDIR}/devel/rubygem-io-like
 
-NO_STAGE=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
