@@ -3413,6 +3413,7 @@
     SUBDIR += pure-ffi
     SUBDIR += pure-gen
     SUBDIR += pure-readline
+    SUBDIR += pure-stldict
     SUBDIR += pure-stllib
     SUBDIR += pushmi
     SUBDIR += pwlib
