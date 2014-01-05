@@ -16,7 +16,4 @@ COMMENT=	Mail::Transport::Dbx - Parse Outlook Express mailboxes
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Mail::Transport::Dbx.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

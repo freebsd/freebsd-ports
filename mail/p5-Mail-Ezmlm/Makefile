@@ -25,7 +25,4 @@ USE_PERL5=	configure
 CONFIGURE_ENV=	BSD_BATCH_INSTALL=yes
 .endif
 
-MAN3=		Mail::Ezmlm.3 Mail::Ezmlm::GpgKeyRing.3 Mail::Ezmlm::GpgEzmlm.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

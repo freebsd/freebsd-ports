@@ -17,7 +17,4 @@ BUILD_DEPENDS=	p5-Mail-Cache>=0:${PORTSDIR}/mail/p5-Mail-Cache \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Mail::IMAPTalk::MailCache.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
