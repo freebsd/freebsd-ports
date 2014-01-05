@@ -10,19 +10,19 @@ MASTER_SITES=	http://sjeng.org/ftp/vorbis/
 MAINTAINER=	gamato@users.sf.net
 COMMENT=	Calculates the perceived sound level of an Ogg Vorbis file
 
+OPTIONS_DEFINE=	RECURSIVE
+RECURSIVE_DESC=	recursive processing and pattern matching
+
 LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		vorbisgain.1
-PLIST_FILES=	bin/vorbisgain
+PLIST_FILES=	bin/vorbisgain \
+		man/man1/vorbisgain.1.gz
 
-.if defined(WITH_RECURSIVE)
-CONFIGURE_ARGS=	--enable-recursive
-.endif
+RECURSIVE_CONFIGURE_ARGS=	--enable-recursive
 
 pre-configure:
 	@${CHMOD} +x ${WRKSRC}/configure
