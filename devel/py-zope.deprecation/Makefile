@@ -3,17 +3,17 @@
 
 PORTNAME=	zope.deprecation
 PORTVERSION=	3.5.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Zope 3 Deprecation Infrastructure
 
-DIST_SUBDIR=	zope
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-
-NO_STAGE=	yes
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

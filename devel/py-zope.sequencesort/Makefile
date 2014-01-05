@@ -2,6 +2,7 @@
 
 PORTNAME=	zope.sequencesort
 PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,9 +13,8 @@ COMMENT=	Very Advanced Sequence Sorting
 
 LICENSE=	ZPL21
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-
-NO_STAGE=	yes
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

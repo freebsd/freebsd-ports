@@ -3,6 +3,7 @@
 
 PORTNAME=	zope.event
 PORTVERSION=	3.5.2
+PORTREVISION=	1
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +14,8 @@ COMMENT=	Very basic event publishing system
 
 LICENSE=	ZPL21
 
-# Python3 ready
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-
-NO_STAGE=	yes
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
