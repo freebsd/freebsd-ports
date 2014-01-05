@@ -11,6 +11,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/RawIP/opt.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/RawIP/ethhdr.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Net/RawIP/tcphdr.pm
+%%PERL5_MAN3%%/Net::RawIP.3.gz
+%%PERL5_MAN3%%/Net::RawIP::libpcap.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RawIP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net/RawIP

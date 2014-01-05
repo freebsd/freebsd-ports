@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Session/.packlist
 %%SITE_PERL%%/IPC/Session.pm
+%%PERL5_MAN3%%/IPC::Session.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Session
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
 @dirrmtry %%SITE_PERL%%/IPC

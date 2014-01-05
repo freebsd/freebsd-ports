@@ -19,9 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::TiVo.3 \
-		Net::TiVo::Show.3 \
-		Net::TiVo::Folder.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -13,5 +13,4 @@ dealing with automation tasks involved with Telnet-based BBS systems.
 This module is the foundation of the BBSAgent back-end described in
 OurNet::BBS. Please consult its man page for more information.
 
-Author:	Autrijus Tang <autrijus@autrijus.org>
-WWW:	http://search.cpan.org/dist/OurNet-BBSAgent/
+WWW: http://search.cpan.org/dist/OurNet-BBSAgent/
