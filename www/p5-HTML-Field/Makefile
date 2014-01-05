@@ -8,13 +8,9 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sahil@FreeBSD.org
-COMMENT=	A perl module to generate HTML form elements
-
-MAN3=		HTML::Field.3 \
-		HTML::FieldForm.3
+COMMENT=	Perl module to generate HTML form elements
 
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

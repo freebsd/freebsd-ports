@@ -12,7 +12,4 @@ COMMENT=	Perl extension to matches language preference (HTTP Accept-Language)
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	I18N::AcceptLanguage.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
