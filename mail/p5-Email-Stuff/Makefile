@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	chifeng@gmail.com
-COMMENT=	A more casual approach to creating and sending Email
+COMMENT=	More casual approach to creating and sending Email
 
 BUILD_DEPENDS=	p5-prefork>=1.01:${PORTSDIR}/devel/p5-prefork \
 		p5-Params-Util>=0.23:${PORTSDIR}/devel/p5-Params-Util \
@@ -21,7 +21,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Email::Stuff.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

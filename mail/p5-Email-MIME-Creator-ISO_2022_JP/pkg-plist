@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/Creator/ISO_2022_JP/.packlist
 %%SITE_PERL%%/Email/MIME/Creator/ISO_2022_JP.pm
+%%PERL5_MAN3%%/Email::MIME::Creator::ISO_2022_JP.3.gz
 @dirrmtry %%SITE_PERL%%/Email/MIME/Creator
 @dirrmtry %%SITE_PERL%%/Email/MIME
 @dirrmtry %%SITE_PERL%%/Email

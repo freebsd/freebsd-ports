@@ -2,5 +2,8 @@
 %%SITE_PERL%%/Mail/Spool/Handle.pm
 %%SITE_PERL%%/Mail/Spool/Node.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Spool/.packlist
+%%PERL5_MAN3%%/Mail::Spool.3.gz
+%%PERL5_MAN3%%/Mail::Spool::Handle.3.gz
+%%PERL5_MAN3%%/Mail::Spool::Node.3.gz
 @dirrm %%SITE_PERL%%/Mail/Spool
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Spool

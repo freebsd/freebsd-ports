@@ -20,10 +20,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Mail::Folder.3 Mail::Folder::Emaul.3 Mail::Folder::Mbox.3 \
-		Mail::Folder::NNTP.3 Mail::Folder::Maildir.3
-
-NO_STAGE=	yes
 post-configure:
 	@${PERL} -pi -e 's/^FULLEXT.*/FULLEXT=Mail\/Folder/' \
 		${WRKSRC}/Makefile
