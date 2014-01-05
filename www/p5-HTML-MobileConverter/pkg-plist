@@ -1,5 +1,6 @@
 %%SITE_PERL%%/HTML/MobileConverter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/MobileConverter/.packlist
+%%PERL5_MAN3%%/HTML::MobileConverter.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/MobileConverter
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrmtry %%SITE_PERL%%/HTML

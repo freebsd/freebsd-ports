@@ -23,7 +23,4 @@ TEST_DEPENDS=	p5-Catalyst-View-JSON>=0:${PORTSDIR}/www/p5-Catalyst-View-JSON \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Catalyst::TraitFor::Controller::DBIC::DoesPaging.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

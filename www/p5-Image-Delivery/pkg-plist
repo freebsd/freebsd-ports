@@ -4,6 +4,8 @@
 %%SITE_PERL%%/Image/Delivery/Provider/IOHandle.pm
 %%SITE_PERL%%/Image/Delivery/Provider/Scalar.pm
 %%SITE_PERL%%/Image/Delivery/Provider/File.pm
+%%PERL5_MAN3%%/Image::Delivery.3.gz
+%%PERL5_MAN3%%/Image::Delivery::Provider.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Delivery
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
 @dirrmtry %%SITE_PERL%%/Image/Delivery/Provider

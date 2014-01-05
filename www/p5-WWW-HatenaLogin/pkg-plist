@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/HatenaLogin/.packlist
 %%SITE_PERL%%/WWW/HatenaLogin.pm
+%%PERL5_MAN3%%/WWW::HatenaLogin.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/HatenaLogin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 @dirrmtry %%SITE_PERL%%/WWW

@@ -5,4 +5,4 @@ This module helps you to map various DBIx::Class features to CGI
 parameters. For the most part that means it will help you search,
 sort, and paginate with a minimum of effort and thought.
 
-WWW:	http://search.cpan.org/dist/Catalyst-TraitFor-Controller-DBIC-DoesPaging/
+WWW: http://search.cpan.org/dist/Catalyst-TraitFor-Controller-DBIC-DoesPaging/
