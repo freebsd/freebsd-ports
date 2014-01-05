@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Multilingual/.packlist
 %%SITE_PERL%%/Template/Multilingual/Parser.pm
 %%SITE_PERL%%/Template/Multilingual.pm
+%%PERL5_MAN3%%/Template::Multilingual.3.gz
+%%PERL5_MAN3%%/Template::Multilingual::Parser.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Multilingual
 @dirrm %%SITE_PERL%%/Template/Multilingual
 @dirrmtry %%SITE_PERL%%/Template

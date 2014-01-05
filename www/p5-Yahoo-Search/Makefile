@@ -18,11 +18,4 @@ TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Yahoo::Search.3 \
-	Yahoo::Search::Request.3 \
-	Yahoo::Search::Response.3 \
-	Yahoo::Search::Result.3 \
-	Yahoo::Search::XML.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/NicoVideo/Download/.packlist
 %%SITE_PERL%%/WWW/NicoVideo/Download.pm
+%%PERL5_MAN3%%/WWW::NicoVideo::Download.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/NicoVideo/Download
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/NicoVideo
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
