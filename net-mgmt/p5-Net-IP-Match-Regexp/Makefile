@@ -14,7 +14,4 @@ COMMENT=	Efficiently match IP addresses against IP ranges via regexp
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::IP::Match::Regexp.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

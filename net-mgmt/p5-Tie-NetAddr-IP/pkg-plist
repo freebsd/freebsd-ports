@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/NetAddr/IP/.packlist
 %%SITE_PERL%%/Tie/NetAddr/IP.pm
+%%PERL5_MAN3%%/Tie::NetAddr::IP.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/NetAddr/IP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/NetAddr
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie

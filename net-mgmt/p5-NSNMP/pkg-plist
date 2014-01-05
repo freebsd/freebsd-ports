@@ -3,5 +3,7 @@
 %%SITE_PERL%%/NSNMP/Mapper.pm
 %%SITE_PERL%%/NSNMP/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NSNMP/.packlist
+%%PERL5_MAN3%%/NSNMP.3.gz
+%%PERL5_MAN3%%/NSNMP::Simple.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/NSNMP
 @dirrmtry %%SITE_PERL%%/NSNMP

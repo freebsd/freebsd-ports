@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Net/Telnet/Cisco.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Telnet/Cisco/.packlist
 %%SITE_PERL%%/auto/Net/Telnet/Cisco/autosplit.ix
+%%PERL5_MAN3%%/Net::Telnet::Cisco.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Telnet/Cisco
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Telnet
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

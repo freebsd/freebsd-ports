@@ -17,7 +17,4 @@ RUN_DEPENDS=	p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::SNMP::Util.3 Net::SNMP::Util::OID.3 Net::SNMP::Util::TC.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

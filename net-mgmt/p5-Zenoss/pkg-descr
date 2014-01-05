@@ -5,4 +5,4 @@ the Zenoss interface can be achieved via this module.  This is a
 full service implementation, providing the construction of the call
 to the API and the handling of the response.
 
-WWW:  http://search.cpan.org/dist/Zenoss/
+WWW: http://search.cpan.org/dist/Zenoss/
