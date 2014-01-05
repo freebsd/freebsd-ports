@@ -1555,5 +1555,3 @@ share/xsessions/ede.desktop
 @dirrm etc/xdg/ede
 @dirrmtry etc/xdg
 @dirrm etc/pekwm
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
