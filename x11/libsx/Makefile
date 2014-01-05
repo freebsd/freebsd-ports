@@ -13,27 +13,28 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple X11 library
 
-LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
+LIB_DEPENDS=	libXaw3d.so:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_XORG=	x11 xaw xext xmu xt
 ALL_TARGET=	src freq
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/src/libsx.a  ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/freq/libfreq.a  ${PREFIX}/lib
-	${MKDIR} ${PREFIX}/include/X11/libsx
-	${INSTALL_DATA} ${WRKSRC}/src/libsx.h ${PREFIX}/include/X11/libsx
-	${INSTALL_DATA} ${WRKSRC}/freq/freq.h ${PREFIX}/include/X11/libsx
+	${INSTALL_DATA} ${WRKSRC}/src/libsx.a  ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/freq/libfreq.a  ${STAGEDIR}${PREFIX}/lib
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/X11/libsx
+	${INSTALL_DATA} ${WRKSRC}/src/libsx.h ${STAGEDIR}${PREFIX}/include/X11/libsx
+	${INSTALL_DATA} ${WRKSRC}/freq/freq.h ${STAGEDIR}${PREFIX}/include/X11/libsx
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${PREFIX}/share/doc/libsx
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/libsx
-	${GZIP_CMD} ${PREFIX}/share/doc/libsx/*.doc
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/libsx
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${PREFIX}/share/doc/libsx
+	${GZIP_CMD} ${STAGEDIR}${PREFIX}/share/doc/libsx/*.doc
 .endif
 
 .include <bsd.port.mk>
