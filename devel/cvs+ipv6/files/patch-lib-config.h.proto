@@ -1,0 +1,28 @@
+--- lib/config.h.proto-	2014-01-05 14:36:51.665354819 +0900
++++ lib/config.h.proto	2014-01-05 14:38:44.557348262 +0900
+@@ -168,6 +168,9 @@
+ /* Define to 1 if you have the `krb_get_err_text' function. */
+ /* #undef HAVE_KRB_GET_ERR_TEXT */
+
++/* Define if IPv6 is supported.  */
++#define ENABLE_IPV6
++
+ /* Define to 1 if you have the `krb' library (-lkrb). */
+ /* #undef HAVE_LIBKRB */
+
+@@ -189,6 +192,15 @@
+ /* Define to 1 if you support file names longer than 14 characters. */
+ #define HAVE_LONG_FILE_NAMES 1
+
++/* Define if you have the getaddrinfo function.  */
++#define HAVE_GETADDRINFO
++
++/* Define if you have the getgroups function.  */
++#define HAVE_GETGROUPS
++
++/* Define if you have the getnameinfo function.  */
++#define HAVE_GETNAMEINFO
++
+ /* Define if you have memchr (always for CVS). */
+ #define HAVE_MEMCHR 1
+
