@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.8.1
+PORTVERSION=	3.8.2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/2013/ http://www2.sqlite.org/2013/ http://www3.sqlite.org/2013/
-DISTNAME=	sqlite-autoconf-3080100
+DISTNAME=	sqlite-autoconf-3080200
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	SQL database engine in a C library
@@ -24,8 +24,11 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 # Compilation Options For SQLite http://www.sqlite.org/compile.html
-OPTIONS_DEFINE=	FTS4 ICU UPD_DEL_LIMIT URI URI_AUTHORITY SOUNDEX METADATA \
+OPTIONS_DEFINE=	FTS4 UPD_DEL_LIMIT URI URI_AUTHORITY SOUNDEX METADATA \
 		DIRECT_READ MEMMAN SECURE_DELETE UNLOCK_NOTIFY THREADS EXTENSION
+OPTIONS_SINGLE=	RAMT
+OPTIONS_RADIO=	STAT
+OPTIONS_GROUP=	UNICODE RTREEG
 
 FTS4_DESC=		Enable FTS3/4 (Full Text Search) module
 UPD_DEL_LIMIT_DESC=	ORDER BY and LIMIT on UPDATE and DELETE
@@ -39,7 +42,6 @@ SECURE_DELETE_DESC=	Overwrite deleted information with zeros
 UNLOCK_NOTIFY_DESC=	Enable notification on unlocking
 EXTENSION_DESC=		Allow loadable extensions
 
-OPTIONS_SINGLE=		RAMT
 OPTIONS_SINGLE_RAMT=	TS0 TS1 TS2 TS3
 RAMT_DESC=		Where to store temporary files
 TS0_DESC=		Always use temporary files
@@ -47,19 +49,23 @@ TS1_DESC=		Files by default, allow changes with PRAGMA
 TS2_DESC=		Memory by default,allow changes with PRAGMA
 TS3_DESC=		Always use memory
 
-OPTIONS_RADIO=		STAT
 OPTIONS_RADIO_STAT=	STAT3 STAT4
 STAT_DESC=		Which query planner to use
 STAT3_DESC=		collect histogram data from leftmost column
 STAT4_DESC=		collect histogram data from all columns
 
-OPTIONS_GROUP=		RTREEG
+# http://www.sqlite.org/fts3.html#tokenizer
+OPTIONS_GROUP_UNICODE=	ICU UNICODE61
+UNICODE_DESC=		Unicode support
+UNICODE61_DESC=		Unicode Version 6.1 tokenizer
+
+# http://www.sqlite.org/rtree.html
 OPTIONS_GROUP_RTREEG=	RTREE RTREE_INT
 RTREEG_DESC=		Index type for range queries
 RTREE_DESC=		Enable R*Tree module
 RTREE_INT_DESC=		Store 32-bit sig int (no float) coordinates
 
-OPTIONS_DEFAULT=	FTS4 URI METADATA SECURE_DELETE UNLOCK_NOTIFY THREADS EXTENSION TS1 RTREE
+OPTIONS_DEFAULT=	FTS4 URI METADATA SECURE_DELETE UNLOCK_NOTIFY THREADS EXTENSION TS1
 
 PLIST_FILES=	bin/sqlite3 include/sqlite3.h include/sqlite3ext.h \
 		lib/libsqlite3.a lib/libsqlite3.la lib/libsqlite3.so \
@@ -110,6 +116,8 @@ ICU_BUILD_DEPENDS=	${LOCALBASE}/bin/icu-config:${PORTSDIR}/devel/icu
 ICU_LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
 ICU_CPPFLAGS=	`${LOCALBASE}/bin/icu-config --cppflags` -DSQLITE_ENABLE_ICU=1
 ICU_LDFLAGS=	`${LOCALBASE}/bin/icu-config --ldflags`
+
+UNICODE61_CPPFLAGS=	-DSQLITE_ENABLE_FTS4_UNICODE61=1
 
 .include <bsd.port.options.mk>
 
