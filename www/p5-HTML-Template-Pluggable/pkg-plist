@@ -1,6 +1,8 @@
 %%SITE_PERL%%/HTML/Template/Pluggable.pm
 %%SITE_PERL%%/HTML/Template/Plugin/Dot.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Pluggable/.packlist
+%%PERL5_MAN3%%/HTML::Template::Pluggable.3.gz
+%%PERL5_MAN3%%/HTML::Template::Plugin::Dot.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/Pluggable
 @dirrmtry %%SITE_PERL%%/HTML/Template/Plugin
 @dirrmtry %%SITE_PERL%%/HTML/Template
