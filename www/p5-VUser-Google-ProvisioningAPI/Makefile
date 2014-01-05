@@ -18,13 +18,4 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	VUser::Google::ProvisioningAPI::V2_0::EmailListEntry.3 \
-	VUser::Google::ProvisioningAPI::V2_0::NicknameEntry.3 \
-	VUser::Google::ProvisioningAPI::V2_0.3 \
-	VUser::Google::ProvisioningAPI::V1_0.3 \
-	VUser::Google::ProvisioningAPI.3 \
-	VUser::Google::ProvisioningAPI::V2_0::EmailListRecipientEntry.3 \
-	VUser::Google::ProvisioningAPI::V2_0::UserEntry.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

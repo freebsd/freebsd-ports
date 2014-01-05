@@ -9,6 +9,7 @@
 %%SITE_PERL%%/auto/share/dist/Plack-Middleware-InteractiveDebugger/more.png
 %%SITE_PERL%%/auto/share/dist/Plack-Middleware-InteractiveDebugger/source.png
 %%SITE_PERL%%/auto/share/dist/Plack-Middleware-InteractiveDebugger/style.css
+%%PERL5_MAN3%%/Plack::Middleware::InteractiveDebugger.3.gz
 @dirrm %%SITE_PERL%%/auto/share/dist/Plack-Middleware-InteractiveDebugger
 @dirrm %%SITE_PERL%%/Plack/Middleware/InteractiveDebugger
 @dirrmtry %%SITE_PERL%%/Plack/Middleware

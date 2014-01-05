@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Template/Plugin/VMethods.pm
 %%SITE_PERL%%/Template/Plugin/VMethods/VMethodContainer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/VMethods/.packlist
+%%PERL5_MAN3%%/Template::Plugin::VMethods.3.gz
 @dirrm %%SITE_PERL%%/Template/Plugin/VMethods
 @dirrm %%SITE_PERL%%/Template/Plugin
 @dirrm %%SITE_PERL%%/Template

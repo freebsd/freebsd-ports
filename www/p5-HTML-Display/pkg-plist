@@ -12,6 +12,19 @@
 %%SITE_PERL%%/HTML/Display/Win32.pm
 %%SITE_PERL%%/HTML/Display/Win32/IE.pm
 %%SITE_PERL%%/HTML/Display/Win32/OLE.pm
+%%PERL5_MAN3%%/HTML::Display.3.gz
+%%PERL5_MAN3%%/HTML::Display::Common.3.gz
+%%PERL5_MAN3%%/HTML::Display::Debian.3.gz
+%%PERL5_MAN3%%/HTML::Display::Dump.3.gz
+%%PERL5_MAN3%%/HTML::Display::Galeon.3.gz
+%%PERL5_MAN3%%/HTML::Display::Mozilla.3.gz
+%%PERL5_MAN3%%/HTML::Display::OSX.3.gz
+%%PERL5_MAN3%%/HTML::Display::Opera.3.gz
+%%PERL5_MAN3%%/HTML::Display::Phoenix.3.gz
+%%PERL5_MAN3%%/HTML::Display::TempFile.3.gz
+%%PERL5_MAN3%%/HTML::Display::Win32.3.gz
+%%PERL5_MAN3%%/HTML::Display::Win32::IE.3.gz
+%%PERL5_MAN3%%/HTML::Display::Win32::OLE.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Display
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrmtry %%SITE_PERL%%/HTML/Display/Win32

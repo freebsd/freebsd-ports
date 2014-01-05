@@ -18,7 +18,4 @@ RUN_DEPENDS=	p5-CGI-Application>4.01:${PORTSDIR}/www/p5-CGI-Application \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	CGI::Application::Plugin::Config::YAML.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

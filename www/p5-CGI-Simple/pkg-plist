@@ -3,6 +3,10 @@
 %%SITE_PERL%%/CGI/Simple/Standard.pm
 %%SITE_PERL%%/CGI/Simple/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Simple/.packlist
+%%PERL5_MAN3%%/CGI::Simple.3.gz
+%%PERL5_MAN3%%/CGI::Simple::Cookie.3.gz
+%%PERL5_MAN3%%/CGI::Simple::Standard.3.gz
+%%PERL5_MAN3%%/CGI::Simple::Util.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 @dirrm %%SITE_PERL%%/CGI/Simple

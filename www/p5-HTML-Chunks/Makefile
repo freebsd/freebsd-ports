@@ -17,7 +17,4 @@ USE_PERL5=	configure
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAN3=		HTML::Chunks.3 HTML::Chunks::Local.3 HTML::Chunks::Super.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -23,6 +23,30 @@
 %%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/ListEcho.pm
 %%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/RecentEcho.pm
 %%SITE_PERL%%/WWW/Mixi/Scraper/Plugin/ShowSchedule.pm
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Utils.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::NewMusic.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::NewBBS.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::ListComment.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Mech.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::ListMessage.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::ShowFriend.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::ViewEvent.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::ShowLog.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::ListDiary.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::ShowCalendar.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::ViewMessage.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::NewFriendDiary.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::ViewDiary.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::ViewBBS.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::NewVideo.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::ListBookmark.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::ResEcho.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::ViewEcho.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::ListEcho.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::RecentEcho.3.gz
+%%PERL5_MAN3%%/WWW::Mixi::Scraper::Plugin::ShowSchedule.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mixi/Scraper
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mixi
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW

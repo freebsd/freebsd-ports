@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Net/Flickr/RDF.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Flickr/RDF/.packlist
+%%PERL5_MAN3%%/Net::Flickr::RDF.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Flickr/RDF
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Flickr
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

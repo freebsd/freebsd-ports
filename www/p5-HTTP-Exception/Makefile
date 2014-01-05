@@ -20,14 +20,4 @@ TEST_DEPENDS=	\
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	HTTP::Exception.3 \
-	HTTP::Exception::1XX.3 \
-	HTTP::Exception::2XX.3 \
-	HTTP::Exception::3XX.3 \
-	HTTP::Exception::4XX.3 \
-	HTTP::Exception::5XX.3 \
-	HTTP::Exception::Base.3 \
-	HTTP::Exception::Loader.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -19,7 +19,4 @@ USES=		perl5
 USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN3=		Catalyst::Model::Tarantool.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

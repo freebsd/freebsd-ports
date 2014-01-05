@@ -3,6 +3,9 @@
 %%SITE_PERL%%/Lingua/JA/Jcode.pm
 %%SITE_PERL%%/Lingua/JA/Jtruncate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Summary/.packlist
+%%PERL5_MAN3%%/HTML::Summary.3.gz
+%%PERL5_MAN3%%/Text::Sentence.3.gz
+%%PERL5_MAN3%%/Lingua::JA::Jtruncate.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Summary
 @dirrm %%SITE_PERL%%/Lingua/JA
 @dirrm %%SITE_PERL%%/Lingua

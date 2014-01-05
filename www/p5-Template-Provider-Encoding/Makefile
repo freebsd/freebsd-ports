@@ -17,9 +17,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Template::Provider::Encoding.3 \
-	Template::Stash::ForceUTF8.3 \
-	Template::Plugin::encoding.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

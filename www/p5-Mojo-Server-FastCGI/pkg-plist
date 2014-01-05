@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojo/Server/FastCGI/.packlist
 %%SITE_PERL%%/Mojo/Server/FastCGI.pm
 %%SITE_PERL%%/Mojolicious/Command/fastcgi.pm
+%%PERL5_MAN3%%/Mojolicious::Command::fastcgi.3.gz
+%%PERL5_MAN3%%/Mojo::Server::FastCGI.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojo/Server/FastCGI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojo/Server
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojo

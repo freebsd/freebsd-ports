@@ -1,6 +1,8 @@
 %%SITE_PERL%%/POE/Component/Server/SOAP.pm
 %%SITE_PERL%%/POE/Component/Server/SOAP/Response.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/SOAP/.packlist
+%%PERL5_MAN3%%/POE::Component::Server::SOAP.3.gz
+%%PERL5_MAN3%%/POE::Component::Server::SOAP::Response.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/SOAP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component

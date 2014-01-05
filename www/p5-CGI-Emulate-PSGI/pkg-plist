@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Emulate/PSGI/.packlist
 %%SITE_PERL%%/CGI/Emulate/PSGI.pm
 %%SITE_PERL%%/CGI/Parse/PSGI.pm
+%%PERL5_MAN3%%/CGI::Emulate::PSGI.3.gz
+%%PERL5_MAN3%%/CGI::Parse::PSGI.3.gz
 @dirrmtry %%SITE_PERL%%/CGI/Parse
 @dirrmtry %%SITE_PERL%%/CGI/Emulate
 @dirrmtry %%SITE_PERL%%/CGI

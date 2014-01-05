@@ -6,6 +6,8 @@ bin/zcrss-managetemplates
 %%SITE_PERL%%/ZConf/RSS.pm
 %%SITE_PERL%%/ZConf/RSS/GUI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/RSS/.packlist
+%%PERL5_MAN3%%/ZConf::RSS.3.gz
+%%PERL5_MAN3%%/ZConf::RSS::GUI.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/RSS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf
 @dirrmtry %%SITE_PERL%%/ZConf/RSS

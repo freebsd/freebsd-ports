@@ -19,7 +19,4 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		IMDb.3 IMDb::People.3 IMDb::Title.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

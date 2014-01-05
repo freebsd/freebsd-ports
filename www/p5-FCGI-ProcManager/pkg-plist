@@ -1,6 +1,8 @@
 %%SITE_PERL%%/FCGI/ProcManager.pm
 %%SITE_PERL%%/FCGI/ProcManager/Constrained.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/ProcManager/.packlist
+%%PERL5_MAN3%%/FCGI::ProcManager.3.gz
+%%PERL5_MAN3%%/FCGI::ProcManager::Constrained.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI/ProcManager
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FCGI
 @dirrm %%SITE_PERL%%/FCGI/ProcManager

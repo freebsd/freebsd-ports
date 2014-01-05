@@ -3,5 +3,8 @@ bin/fliggy
 %%SITE_PERL%%/Fliggy.pm
 %%SITE_PERL%%/Fliggy/Server.pm
 %%SITE_PERL%%/Plack/Handler/Fliggy.pm
+%%PERL5_MAN3%%/Fliggy.3.gz
+%%PERL5_MAN3%%/Fliggy::Server.3.gz
+%%PERL5_MAN3%%/Plack::Handler::Fliggy.3.gz
 @dirrm %%SITE_PERL%%/Fliggy
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fliggy

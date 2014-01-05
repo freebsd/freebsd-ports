@@ -18,8 +18,4 @@ RUN_DEPENDS=	p5-Mojolicious>=3.21:${PORTSDIR}/www/p5-Mojolicious
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Mojolicious::Command::fastcgi.3 \
-		Mojo::Server::FastCGI.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

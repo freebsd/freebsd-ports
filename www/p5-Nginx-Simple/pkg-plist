@@ -6,6 +6,12 @@ bin/ngs
 %%SITE_PERL%%/Nginx/Simple/Cookie.pm
 %%SITE_PERL%%/Nginx/Simple/Dispatcher.pm
 %%SITE_PERL%%/Nginx/Simple/Dispatcher/Attributes.pm
+%%PERL5_MAN3%%/Nginx::Simple::Dispatch.3.gz
+%%PERL5_MAN3%%/Nginx::Simple::Cookie.3.gz
+%%PERL5_MAN3%%/Nginx::Simple::Ajax.3.gz
+%%PERL5_MAN3%%/Nginx::Simple.3.gz
+%%PERL5_MAN3%%/Nginx::Simple::Dispatcher::Attributes.3.gz
+%%PERL5_MAN3%%/Nginx::Simple::Dispatcher.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nginx/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nginx
 @dirrmtry %%SITE_PERL%%/Nginx/Simple/Dispatcher

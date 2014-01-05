@@ -26,6 +26,33 @@
 %%SITE_PERL%%/Facebook/Graph/Response.pm
 %%SITE_PERL%%/Facebook/Graph/Role/Uri.pm
 %%SITE_PERL%%/Facebook/Graph/Session.pm
+%%PERL5_MAN3%%/Facebook::Graph.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::AccessToken.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::AccessToken::Response.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Authorize.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::BatchRequests.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Cookbook.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Cookbook::Recipe1.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Cookbook::Recipe2.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Cookbook::Recipe3.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Picture.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Publish.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Publish::Checkin.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Publish::Comment.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Publish::Event.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Publish::Like.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Publish::Link.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Publish::Note.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Publish::Photo.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Publish::Post.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Publish::RSVPAttending.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Publish::RSVPDeclined.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Publish::RSVPMaybe.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Query.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Request.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Response.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Role::Uri.3.gz
+%%PERL5_MAN3%%/Facebook::Graph::Session.3.gz
 @dirrm %%SITE_PERL%%/Facebook/Graph/Role
 @dirrm %%SITE_PERL%%/Facebook/Graph/Publish
 @dirrm %%SITE_PERL%%/Facebook/Graph/Cookbook

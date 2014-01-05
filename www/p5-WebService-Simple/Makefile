@@ -26,14 +26,4 @@ TEST_DEPENDS=	p5-XML-Feed>=0:${PORTSDIR}/textproc/p5-XML-Feed \
 USE_PERL5=	configure
 USES=		perl5
 
-MAN3=		WebService::Simple.3 \
-		WebService::Simple::Parser.3 \
-		WebService::Simple::Parser::JSON.3 \
-		WebService::Simple::Parser::XML::Feed.3 \
-		WebService::Simple::Parser::XML::LibXML.3 \
-		WebService::Simple::Parser::XML::Lite.3 \
-		WebService::Simple::Parser::XML::Simple.3 \
-		WebService::Simple::Response.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

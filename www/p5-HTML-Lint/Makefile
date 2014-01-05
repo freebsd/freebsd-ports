@@ -19,11 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	HTML::Lint.3 \
-	HTML::Lint::Error.3 \
-	HTML::Lint::HTML4.3 \
-	HTML::Lint::Parser.3 \
-	Test::HTML::Lint.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
