@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IP/Match/Regexp/.packlist
 %%SITE_PERL%%/Net/IP/Match/Regexp.pm
+%%PERL5_MAN3%%/Net::IP::Match::Regexp.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IP/Match/Regexp
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IP/Match
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IP

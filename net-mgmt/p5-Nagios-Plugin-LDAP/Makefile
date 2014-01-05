@@ -20,9 +20,6 @@ BUILD_DEPENDS=	p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap \
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=		Nagios::Plugin::LDAP.3
-
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig" -delete
 

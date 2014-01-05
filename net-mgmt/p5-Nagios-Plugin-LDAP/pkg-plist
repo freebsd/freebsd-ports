@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nagios/Plugin/LDAP/.packlist
 bin/check_ldap_repl
 %%SITE_PERL%%/Nagios/Plugin/LDAP.pm
+%%PERL5_MAN3%%/Nagios::Plugin::LDAP.3.gz
 @dirrmtry %%SITE_PERL%%/Nagios/Plugin
 @dirrmtry %%SITE_PERL%%/Nagios
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nagios/Plugin/LDAP

@@ -17,7 +17,4 @@ RUN_DEPENDS=	p5-Net-Telnet>=3.02:${PORTSDIR}/net/p5-Net-Telnet \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Telnet::Cisco.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
