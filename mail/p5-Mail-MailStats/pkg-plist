@@ -4,6 +4,8 @@ bin/countmail
 %%SITE_PERL%%/Mail/Stats/Parser.pm
 %%SITE_PERL%%/Mail/Stats/Record.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Stats/.packlist
+%%PERL5_MAN3%%/Mail::Stats::Record.3.gz
+%%PERL5_MAN3%%/Mail::Stats.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Stats
 @dirrm %%SITE_PERL%%/Mail/Stats
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail

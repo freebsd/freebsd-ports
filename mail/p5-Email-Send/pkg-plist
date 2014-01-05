@@ -5,6 +5,12 @@
 %%SITE_PERL%%/Email/Send/Sendmail.pm
 %%SITE_PERL%%/Email/Send/Test.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Send/.packlist
+%%PERL5_MAN3%%/Email::Send.3.gz
+%%PERL5_MAN3%%/Email::Send::NNTP.3.gz
+%%PERL5_MAN3%%/Email::Send::Qmail.3.gz
+%%PERL5_MAN3%%/Email::Send::SMTP.3.gz
+%%PERL5_MAN3%%/Email::Send::Sendmail.3.gz
+%%PERL5_MAN3%%/Email::Send::Test.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Send
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
 @dirrmtry %%SITE_PERL%%/Email/Send

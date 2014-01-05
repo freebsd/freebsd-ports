@@ -3,6 +3,9 @@
 %%SITE_PERL%%/Net/SenderBase/Query.pm
 %%SITE_PERL%%/Net/SenderBase/Results.pm
 %%SITE_PERL%%/Net/SenderBase/Query/DNS.pm
+%%PERL5_MAN3%%/Net::SenderBase.3.gz
+%%PERL5_MAN3%%/Net::SenderBase::Query.3.gz
+%%PERL5_MAN3%%/Net::SenderBase::Results.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SenderBase
 @dirrm %%SITE_PERL%%/Net/SenderBase/Query
 @dirrm %%SITE_PERL%%/Net/SenderBase
