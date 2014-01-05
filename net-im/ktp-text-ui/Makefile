@@ -22,5 +22,4 @@ USES=		cmake gettext
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
