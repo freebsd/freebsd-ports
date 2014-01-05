@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Tk/Splashscreen.pm
 %%SITE_PERL%%/Tk/waitVariableX.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Splashscreen/.packlist
+%%PERL5_MAN3%%/Tk::Splashscreen.3.gz
+%%PERL5_MAN3%%/Tk::waitVariableX.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk/Splashscreen
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tk
 @dirrmtry %%SITE_PERL%%/Tk

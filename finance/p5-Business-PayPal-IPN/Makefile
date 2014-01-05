@@ -18,7 +18,4 @@ RUN_DEPENDS=	p5-Crypt-SSLeay>=0.56:${PORTSDIR}/security/p5-Crypt-SSLeay \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Business::PayPal::IPN.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
