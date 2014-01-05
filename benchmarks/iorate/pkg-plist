@@ -1,5 +1,6 @@
 bin/ior_rand
 bin/iorate
+man/man1/iorate.1.gz
 %%DATADIR%%/cycle
 %%DATADIR%%/devices.ior
 %%DATADIR%%/gen_dev.awk
