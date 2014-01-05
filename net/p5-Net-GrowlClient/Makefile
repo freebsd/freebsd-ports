@@ -15,7 +15,4 @@ COMMENT=	Perl implementation of Growl Network Notification Protocol
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::GrowlClient.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -16,15 +16,7 @@ BUILD_DEPENDS=	p5-Class-ErrorHandler>=0.01:${PORTSDIR}/devel/p5-Class-ErrorHandl
 RUN_DEPENDS=	p5-Class-ErrorHandler>=0.01:${PORTSDIR}/devel/p5-Class-ErrorHandler \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww
 
-MAN3=		Net::Trackback.3 \
-		Net::Trackback::Client.3 \
-		Net::Trackback::Data.3 \
-		Net::Trackback::Message.3 \
-		Net::Trackback::Ping.3 \
-		Net::Trackback::Server.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -7,6 +7,8 @@
 %%SITE_PERL%%/XML/Compile/SOAP/WSA/xsd/20070131-metadata.xsd
 %%SITE_PERL%%/XML/Compile/SOAP/WSA/xsd/20070619-wsa09.xsd
 %%SITE_PERL%%/XML/Compile/SOAP/WSA/xsd/20080723-wsa10.xsd
+%%PERL5_MAN3%%/XML::Compile::SOAP::WSA.3.gz
+%%PERL5_MAN3%%/XML::Compile::SOAP::WSA::Util.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP/WSA/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/SOAP/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Compile/
