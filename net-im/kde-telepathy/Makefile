@@ -21,6 +21,7 @@ RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/kcm_ktp_accounts.so:${PORTSDIR}/net-im/ktp-
 
 USE_KDE4=	kdeprefix
 NO_BUILD=	yes
+NO_MTREE=	yes
 
 OPTIONS_DEFINE=	PLASMA SEND_FILE
 OPTIONS_DEFAULT=PLASMA SEND_FILE
@@ -28,7 +29,6 @@ OPTIONS_DEFAULT=PLASMA SEND_FILE
 PLASMA_DESC=	Applets for KDE Plasma Desktop integration
 SEND_FILE_DESC=	Context menu plugin for sending files
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPLASMA}
