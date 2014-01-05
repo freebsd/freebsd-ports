@@ -5,6 +5,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/Pvm/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/Pvm/code2symbol.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/Pvm/code2text.al
+%%PERL5_MAN3%%/Parallel::Pvm.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel/Pvm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Parallel
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Parallel

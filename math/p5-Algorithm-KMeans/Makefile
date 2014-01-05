@@ -21,7 +21,4 @@ RUN_DEPENDS=	p5-Graphics-GnuplotIF>=1.4:${PORTSDIR}/graphics/p5-Graphics-Gnuplot
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Algorithm::KMeans.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
