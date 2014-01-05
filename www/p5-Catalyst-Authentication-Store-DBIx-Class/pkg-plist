@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Catalyst/Authentication/Store/DBIx/Class.pm
 %%SITE_PERL%%/Catalyst/Authentication/Store/DBIx/Class/User.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication/Store/DBIx/Class/.packlist
+%%PERL5_MAN3%%/Catalyst::Authentication::Realm::SimpleDB.3.gz
+%%PERL5_MAN3%%/Catalyst::Authentication::Store::DBIx::Class.3.gz
+%%PERL5_MAN3%%/Catalyst::Authentication::Store::DBIx::Class::User.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication/Store/DBIx/Class
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication/Store/DBIx
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Authentication/Store

@@ -15,10 +15,7 @@ BUILD_DEPENDS=	p5-libwww>=5.75:${PORTSDIR}/www/p5-libwww \
 		p5-WWW-Shorten>=0:${PORTSDIR}/www/p5-WWW-Shorten
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=		WWW::Shorten::NotLong.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
