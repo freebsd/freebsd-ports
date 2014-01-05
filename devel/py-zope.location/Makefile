@@ -2,6 +2,7 @@
 
 PORTNAME=	zope.location
 PORTVERSION=	3.9.1
+PORTREVISION=	1
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,9 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.component>=3.8:${PORTSDIR}/devel/py-zop
 		${PYTHON_PKGNAMEPREFIX}zope.proxy>3.3:${PORTSDIR}/net/py-zope.proxy \
 		${PYTHON_PKGNAMEPREFIX}zope.schema>=3.6:${PORTSDIR}/devel/py-zope.schema
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-
-NO_STAGE=	yes
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
