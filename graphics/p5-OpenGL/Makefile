@@ -21,11 +21,6 @@ USES=		perl5 display:install
 USE_PERL5=	configure
 USE_GL=		glut
 
-MAN3=		Array.3 \
-		OpenGL.3 \
-		Tessellation.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/Makefile.PL
 

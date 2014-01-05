@@ -26,6 +26,31 @@
 %%SITE_PERL%%/Bio/Das/AGPServer/SQLStorage/CSV/DB.pm
 %%SITE_PERL%%/Bio/Das/AGPServer/SQLStorage/MySQL/DB.pm
 %%SITE_PERL%%/Bio/Das/HTTP/Fetch.pm
+%%PERL5_MAN3%%/Bio::Das.3.gz
+%%PERL5_MAN3%%/Bio::Das::AGPServer::Config.3.gz
+%%PERL5_MAN3%%/Bio::Das::AGPServer::Daemon.3.gz
+%%PERL5_MAN3%%/Bio::Das::AGPServer::Parser.3.gz
+%%PERL5_MAN3%%/Bio::Das::AGPServer::SQLStorage.3.gz
+%%PERL5_MAN3%%/Bio::Das::AGPServer::SQLStorage::CSV::DB.3.gz
+%%PERL5_MAN3%%/Bio::Das::AGPServer::SQLStorage::MySQL::DB.3.gz
+%%PERL5_MAN3%%/Bio::Das::DSN.3.gz
+%%PERL5_MAN3%%/Bio::Das::Feature.3.gz
+%%PERL5_MAN3%%/Bio::Das::FeatureIterator.3.gz
+%%PERL5_MAN3%%/Bio::Das::HTTP::Fetch.3.gz
+%%PERL5_MAN3%%/Bio::Das::Map.3.gz
+%%PERL5_MAN3%%/Bio::Das::Request.3.gz
+%%PERL5_MAN3%%/Bio::Das::Request::Dnas.3.gz
+%%PERL5_MAN3%%/Bio::Das::Request::Dsn.3.gz
+%%PERL5_MAN3%%/Bio::Das::Request::Entry_points.3.gz
+%%PERL5_MAN3%%/Bio::Das::Request::Feature2Segments.3.gz
+%%PERL5_MAN3%%/Bio::Das::Request::Sequences.3.gz
+%%PERL5_MAN3%%/Bio::Das::Request::Stylesheet.3.gz
+%%PERL5_MAN3%%/Bio::Das::Request::Types.3.gz
+%%PERL5_MAN3%%/Bio::Das::Segment.3.gz
+%%PERL5_MAN3%%/Bio::Das::Stylesheet.3.gz
+%%PERL5_MAN3%%/Bio::Das::Type.3.gz
+%%PERL5_MAN3%%/Bio::Das::TypeHandler.3.gz
+%%PERL5_MAN3%%/Bio::Das::Util.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Das
 @dirrmtry %%SITE_PERL%%/Bio/Das/Request
 @dirrmtry %%SITE_PERL%%/Bio/Das/HTTP

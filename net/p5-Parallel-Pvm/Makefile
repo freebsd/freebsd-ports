@@ -20,9 +20,6 @@ PVM_ROOT=	${LOCALBASE}/lib/pvm
 CONFIGURE_ENV=	PVM_ROOT="${PVM_ROOT}" PVM_ARCH="${PVM_ROOT}/lib/pvmgetarch"
 CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include"
 
-MAN3=		Parallel::Pvm.3
-
 NOT_FOR_ARCHS=	amd64 ia64
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

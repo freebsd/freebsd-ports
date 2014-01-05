@@ -19,11 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Jifty::Plugin::Authentication::Ldap.3 \
-		Jifty::Plugin::Authentication::Ldap::Action::LDAPLogin.3 \
-		Jifty::Plugin::Authentication::Ldap::Action::LDAPLogout.3 \
-		Jifty::Plugin::Authentication::Ldap::View.3 \
-		Jifty::Plugin::Authentication::Ldap::Mixin::Model::User.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

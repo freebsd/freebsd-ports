@@ -10,13 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the libstree library
 
-LIB_DEPENDS=	stree.0:${PORTSDIR}/textproc/libstree
+LIB_DEPENDS=	libstree.so:${PORTSDIR}/textproc/libstree
 
 USES=		perl5
 USE_PERL5=	configure
 CFLAGS+=	-I${LOCALBASE}/include
 
-MAN3=		Tree::Suffix.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
