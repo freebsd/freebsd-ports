@@ -1,4 +1,9 @@
+info/zpuc/cpp.info
+info/zpuc/cppinternals.info
 info/zpuc/dir
+info/zpuc/gcc.info
+info/zpuc/gccinstall.info
+info/zpuc/gccint.info
 zpu/bin/zpu-elf-cpp
 zpu/bin/zpu-elf-gcc
 zpu/bin/zpu-elf-gcc-3.4.2
@@ -41,6 +46,12 @@ zpu/libexec/gcc/zpu-elf/3.4.2/install-tools/fixincl
 zpu/libexec/gcc/zpu-elf/3.4.2/install-tools/fixproto
 zpu/libexec/gcc/zpu-elf/3.4.2/install-tools/mkheaders
 zpu/libexec/gcc/zpu-elf/3.4.2/install-tools/mkinstalldirs
+zpu/man/man1/zpu-elf-cpp.1.gz
+zpu/man/man1/zpu-elf-gcc.1.gz
+zpu/man/man1/zpu-elf-gcov.1.gz
+zpu/man/man7/fsf-funding.7.gz
+zpu/man/man7/gfdl.7.gz
+zpu/man/man7/gpl.7.gz
 zpu/share/locale/be/LC_MESSAGES/gcc.mo
 zpu/share/locale/ca/LC_MESSAGES/gcc.mo
 zpu/share/locale/da/LC_MESSAGES/gcc.mo
@@ -135,50 +146,50 @@ zpu/zpu-elf/lib/libbcc.a
 zpu/zpu-elf/lib/libc.a
 zpu/zpu-elf/lib/libg.a
 zpu/zpu-elf/lib/libm.a
+@dirrmtry zpu/zpu-elf/bin
+@dirrmtry zpu/zpu-elf
+@dirrmtry zpu/share/locale/tr/LC_MESSAGES
+@dirrmtry zpu/share/locale/tr
+@dirrmtry zpu/share/locale/sv/LC_MESSAGES
+@dirrmtry zpu/share/locale/sv
+@dirrmtry zpu/share/locale/nl/LC_MESSAGES
+@dirrmtry zpu/share/locale/nl
+@dirrmtry zpu/share/locale/ja/LC_MESSAGES
+@dirrmtry zpu/share/locale/ja
+@dirrmtry zpu/share/locale/fr/LC_MESSAGES
+@dirrmtry zpu/share/locale/fr
+@dirrmtry zpu/share/locale/es/LC_MESSAGES
+@dirrmtry zpu/share/locale/es
+@dirrmtry zpu/share/locale/el/LC_MESSAGES
+@dirrmtry zpu/share/locale/el
+@dirrmtry zpu/share/locale/de/LC_MESSAGES
+@dirrmtry zpu/share/locale/de
+@dirrmtry zpu/share/locale/da/LC_MESSAGES
+@dirrmtry zpu/share/locale/da
+@dirrmtry zpu/share/locale/ca/LC_MESSAGES
+@dirrmtry zpu/share/locale/ca
+@dirrmtry zpu/share/locale/be/LC_MESSAGES
+@dirrmtry zpu/share/locale/be
+@dirrmtry zpu/share/locale
+@dirrmtry zpu/share
+@dirrmtry zpu/man/man7
+@dirrmtry zpu/man/man1
+@dirrmtry zpu/man
+@dirrmtry zpu/lib
 @dirrmtry zpu/bin
+@dirrmtry zpu
+@dirrm zpu/zpu-elf/include/sys
+@dirrm zpu/zpu-elf/include/machine
+@dirrm zpu/zpu-elf/include
+@dirrm zpu/libexec/gcc/zpu-elf/3.4.2/install-tools
+@dirrm zpu/libexec/gcc/zpu-elf/3.4.2
+@dirrm zpu/libexec/gcc/zpu-elf
+@dirrm zpu/libexec/gcc
+@dirrm zpu/libexec
 @dirrm zpu/lib/gcc/zpu-elf/3.4.2/install-tools/include
 @dirrm zpu/lib/gcc/zpu-elf/3.4.2/install-tools
 @dirrm zpu/lib/gcc/zpu-elf/3.4.2/include
 @dirrm zpu/lib/gcc/zpu-elf/3.4.2
 @dirrm zpu/lib/gcc/zpu-elf
 @dirrm zpu/lib/gcc
-@dirrmtry zpu/lib
-@dirrmtry zpu/zpu-elf/bin
-@dirrm zpu/zpu-elf/include/sys
-@dirrm zpu/zpu-elf/include/machine
-@dirrm zpu/zpu-elf/include
-@dirrmtry zpu/zpu-elf
-@dirrmtry zpu/share/locale/tr/LC_MESSAGES
-@dirrmtry zpu/share/locale/sv/LC_MESSAGES
-@dirrmtry zpu/share/locale/nl/LC_MESSAGES
-@dirrmtry zpu/share/locale/ja/LC_MESSAGES
-@dirrmtry zpu/share/locale/fr/LC_MESSAGES
-@dirrmtry zpu/share/locale/es/LC_MESSAGES
-@dirrmtry zpu/share/locale/el/LC_MESSAGES
-@dirrmtry zpu/share/locale/da/LC_MESSAGES
-@dirrmtry zpu/share/locale/de/LC_MESSAGES
-@dirrmtry zpu/share/locale/ca/LC_MESSAGES
-@dirrmtry zpu/share/locale/be/LC_MESSAGES
-@dirrmtry zpu/share/locale/tr
-@dirrmtry zpu/share/locale/sv
-@dirrmtry zpu/share/locale/nl
-@dirrmtry zpu/share/locale/ja
-@dirrmtry zpu/share/locale/fr
-@dirrmtry zpu/share/locale/es
-@dirrmtry zpu/share/locale/el
-@dirrmtry zpu/share/locale/de
-@dirrmtry zpu/share/locale/da
-@dirrmtry zpu/share/locale/ca
-@dirrmtry zpu/share/locale/be
-@dirrmtry zpu/share/locale
-@dirrmtry zpu/share
-@dirrm zpu/libexec/gcc/zpu-elf/3.4.2/install-tools
-@dirrm zpu/libexec/gcc/zpu-elf/3.4.2
-@dirrm zpu/libexec/gcc/zpu-elf
-@dirrm zpu/libexec/gcc
-@dirrm zpu/libexec
-@dirrm zpu/include
-@dirrmtry zpu/man/man1
-@dirrmtry zpu/man/man7
-@dirrmtry zpu/man
-@dirrmtry zpu
+@dirrm info/zpuc

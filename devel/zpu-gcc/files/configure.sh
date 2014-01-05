@@ -7,7 +7,7 @@ cd build
 #gmake install
 cd ..
 
-export PATH=`pwd`/install/bin:$PATH
+export PATH=/usr/local/zpu/bin:$PATH
 rm -rf gccbuild
 mkdir gccbuild
 cd gccbuild
