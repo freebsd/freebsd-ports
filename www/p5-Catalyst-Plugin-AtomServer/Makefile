@@ -22,9 +22,4 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime	\
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Catalyst::Plugin::AtomServer.3					\
-		Catalyst::Plugin::Authentication::Credential::Atom.3		\
-		Catalyst::View::Atom::XML.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

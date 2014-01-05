@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/jQuery/File/Upload/.packlist
 %%SITE_PERL%%/jQuery/File/Upload.pm
+%%PERL5_MAN3%%/jQuery::File::Upload.3.gz
 @dirrmtry %%SITE_PERL%%/jQuery/File
 @dirrmtry %%SITE_PERL%%/jQuery
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/jQuery/File/Upload
