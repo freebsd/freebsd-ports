@@ -15,27 +15,21 @@ MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CC}"
 NO_WRKSUBDIR=	yes
 
-MAN1=		${PORTNAME}.1
 PORTDOCS=	README README.versions
 
 OPTIONS_DEFINE=	DOCS
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^CFLAGS ,&+,' ${WRKSRC}/${MAKEFILE}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/iorate ${WRKSRC}/ior_rand ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
-	@${MKDIR} ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/iorate ${WRKSRC}/ior_rand ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/cycle ${WRKSRC}/gen_* ${WRKSRC}/run_* \
-		${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ior ${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+		${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ior ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
