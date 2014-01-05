@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Field/.packlist
 %%SITE_PERL%%/HTML/Field.pm
 %%SITE_PERL%%/HTML/FieldForm.pm
+%%PERL5_MAN3%%/HTML::Field.3.gz
+%%PERL5_MAN3%%/HTML::FieldForm.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Field
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrmtry %%SITE_PERL%%/HTML

@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/Precompressed/.packlist
 %%SITE_PERL%%/Plack/Middleware/Precompressed.pm
+%%PERL5_MAN3%%/Plack::Middleware::Precompressed.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/Precompressed
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware

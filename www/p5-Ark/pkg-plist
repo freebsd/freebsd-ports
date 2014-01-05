@@ -49,6 +49,12 @@ bin/ark.pl
 %%SITE_PERL%%/Ark/Test.pm
 %%SITE_PERL%%/Ark/View.pm
 %%SITE_PERL%%/Ark/View/MT.pm
+%%PERL5_MAN3%%/Ark::Command.3.gz
+%%PERL5_MAN3%%/Ark::Command::Controller.3.gz
+%%PERL5_MAN3%%/Ark::Command::Model.3.gz
+%%PERL5_MAN3%%/Ark::Command::Newapp.3.gz
+%%PERL5_MAN3%%/Ark::Command::Server.3.gz
+%%PERL5_MAN3%%/Ark::Command::View.3.gz
 @dirrm %%SITE_PERL%%/Ark/View
 @dirrm %%SITE_PERL%%/Ark/Plugin/Session/Store
 @dirrm %%SITE_PERL%%/Ark/Plugin/Session/State
