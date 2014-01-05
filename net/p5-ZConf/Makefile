@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:VVELOX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
-COMMENT=	A configuration system allowing for either file or LDAP backed storage
+COMMENT=	Configuration system allowing for either file or LDAP backed storage
 
 BUILD_DEPENDS=	p5-Chooser>=0:${PORTSDIR}/devel/p5-Chooser \
 		p5-Error-Helper>=0:${PORTSDIR}/devel/p5-Error-Helper \
@@ -26,9 +26,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		ZConf.3 \
-		ZConf::backends::file.3 \
-		ZConf::backends::ldap.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Prowl/.packlist
 %%SITE_PERL%%/WebService/Prowl.pm
 %%SITE_PERL%%/WebService/Prowl/AnyEventHTTP.pm
+%%PERL5_MAN3%%/WebService::Prowl.3.gz
+%%PERL5_MAN3%%/WebService::Prowl::AnyEventHTTP.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Prowl
 @dirrm %%SITE_PERL%%/WebService/Prowl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService

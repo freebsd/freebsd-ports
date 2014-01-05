@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BBS/UserInfo/Maple3itoc/.packlist
 %%SITE_PERL%%/BBS/UserInfo/Maple3itoc.pm
+%%PERL5_MAN3%%/BBS::UserInfo::Maple3itoc.3.gz
 @dirrmtry %%SITE_PERL%%/BBS/UserInfo
 @dirrmtry %%SITE_PERL%%/BBS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/BBS/UserInfo/Maple3itoc

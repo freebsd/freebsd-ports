@@ -5,6 +5,12 @@
 %%SITE_PERL%%/Net/Trackback/Ping.pm
 %%SITE_PERL%%/Net/Trackback/Server.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Trackback/.packlist
+%%PERL5_MAN3%%/Net::Trackback.3.gz
+%%PERL5_MAN3%%/Net::Trackback::Client.3.gz
+%%PERL5_MAN3%%/Net::Trackback::Data.3.gz
+%%PERL5_MAN3%%/Net::Trackback::Message.3.gz
+%%PERL5_MAN3%%/Net::Trackback::Ping.3.gz
+%%PERL5_MAN3%%/Net::Trackback::Server.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Trackback
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/Trackback
