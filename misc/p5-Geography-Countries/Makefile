@@ -14,7 +14,4 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS+=	INSTALLDIRS='site'
 
-MAN3=		Geography::Countries.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Net/FTP/Recursive.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTP/Recursive/.packlist
+%%PERL5_MAN3%%/Net::FTP::Recursive.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTP/Recursive
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTP

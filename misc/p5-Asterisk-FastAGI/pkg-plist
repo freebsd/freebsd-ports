@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Asterisk/FastAGI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Asterisk/FastAGI/.packlist
+%%PERL5_MAN3%%/Asterisk::FastAGI.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Asterisk/FastAGI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Asterisk
 @dirrmtry %%SITE_PERL%%/Asterisk

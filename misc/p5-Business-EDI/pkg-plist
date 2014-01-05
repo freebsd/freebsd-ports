@@ -651,6 +651,10 @@
 %%SITE_PERL%%/Business/EDI/data/edifact/untdid/IDSD.d99a.csv
 %%SITE_PERL%%/Business/EDI/data/edifact/untdid/IDSD.d99b.csv
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/EDI/.packlist
+%%PERL5_MAN3%%/Business::EDI.3.gz
+%%PERL5_MAN3%%/Business::EDI::CodeList.3.gz
+%%PERL5_MAN3%%/Business::EDI::Composite.3.gz
+%%PERL5_MAN3%%/Business::EDI::Spec.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/EDI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
 @dirrm %%SITE_PERL%%/Business/EDI/data/edifact/untdid

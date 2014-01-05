@@ -27,10 +27,4 @@ WRKSRC=		${WRKDIR}/atz-${PORTNAME}-327e01f
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Business::EDI.3 \
-		Business::EDI::CodeList.3 \
-		Business::EDI::Composite.3 \
-		Business::EDI::Spec.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
