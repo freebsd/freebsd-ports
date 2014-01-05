@@ -1,6 +1,8 @@
 %%SITE_PERL%%/URI/Template/Restrict/Expansion.pm
 %%SITE_PERL%%/URI/Template/Restrict.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Template/Restrict/.packlist
+%%PERL5_MAN3%%/URI::Template::Restrict.3.gz
+%%PERL5_MAN3%%/URI::Template::Restrict::Expansion.3.gz
 @dirrm %%SITE_PERL%%/URI/Template/Restrict
 @dirrmtry %%SITE_PERL%%/URI/Template
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Template/Restrict

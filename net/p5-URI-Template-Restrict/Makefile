@@ -23,8 +23,4 @@ BUILD_DEPENDS=	\
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		URI::Template::Restrict.3 \
-		URI::Template::Restrict::Expansion.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

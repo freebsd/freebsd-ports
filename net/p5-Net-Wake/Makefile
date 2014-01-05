@@ -13,7 +13,4 @@ COMMENT=	Send Wake On Lan (WOL) packets to power on computers
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Wake.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
