@@ -5,3 +5,5 @@ won't be able to use this module.
 This version supports only the information about domains.  Future work
 may include information about people and other entities about which
 the InterNIC keeps data.
+
+WWW: http://search.cpan.org/dist/Net-Whois/

@@ -10,6 +10,17 @@
 %%SITE_PERL%%/Net/Frame/Layer/ICMPv6/ParameterProblem.pm
 %%SITE_PERL%%/Net/Frame/Layer/ICMPv6/TooBig.pm
 %%SITE_PERL%%/Net/Frame/Layer/ICMPv6/TimeExceed.pm
+%%PERL5_MAN3%%/Net::Frame::Layer::ICMPv6.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::ICMPv6::DestUnreach.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::ICMPv6::Echo.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::ICMPv6::Option.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::ICMPv6::ParameterProblem.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::ICMPv6::NeighborAdvertisement.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::ICMPv6::NeighborSolicitation.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::ICMPv6::RouterAdvertisement.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::ICMPv6::RouterSolicitation.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::ICMPv6::TimeExceed.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::ICMPv6::TooBig.3.gz
 @dirrm %%SITE_PERL%%/Net/Frame/Layer/ICMPv6
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Frame/Layer/ICMPv6
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Frame/Layer

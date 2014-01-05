@@ -40,6 +40,47 @@
 %%SITE_PERL%%/Net/EPP/ResponseCodes.pm
 %%SITE_PERL%%/Net/EPP/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/EPP/.packlist
+%%PERL5_MAN3%%/Net::EPP.3.gz
+%%PERL5_MAN3%%/Net::EPP::Client.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Create::Domain.3.gz
+%%PERL5_MAN3%%/Net::EPP::Protocol.3.gz
+%%PERL5_MAN3%%/Net::EPP::ResponseCodes.3.gz
+%%PERL5_MAN3%%/Net::EPP::Simple.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Check.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Check::Contact.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Check::Domain.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Check::Host.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Create.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Create::Host.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Create::Contact.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Delete.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Delete::Contact.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Delete::Domain.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Delete::Host.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Renew::Domain.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Info.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Info::Contact.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Info::Domain.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Info::Host.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Login.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Logout.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Poll.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Renew.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Transfer.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Update.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Update::Contact.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Update::Domain.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Update::Host.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Greeting.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Hello.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::ObjectSpec.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Response.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Poll::Req.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Transfer::Domain.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Transfer::Contact.3.gz
+%%PERL5_MAN3%%/Net::EPP::Frame::Command::Poll::Ack.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/EPP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/EPP/Frame/Command/Update

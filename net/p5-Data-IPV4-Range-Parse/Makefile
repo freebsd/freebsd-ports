@@ -13,7 +13,4 @@ COMMENT=	Perl extension parsing IPv4 ranges
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Data::IPV4::Range::Parse.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

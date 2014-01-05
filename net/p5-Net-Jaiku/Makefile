@@ -9,7 +9,7 @@ PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	A perl interface to jaiku.com's API
+COMMENT=	Perl interface to jaiku.com's API
 
 RUN_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
 		p5-JSON-Any>0:${PORTSDIR}/converters/p5-JSON-Any \
@@ -21,7 +21,4 @@ BUILD_DEPENDS=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Net::Jaiku.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

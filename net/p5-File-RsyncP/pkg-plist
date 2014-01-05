@@ -9,6 +9,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/FileList/FileList.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/FileList/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/.packlist
+%%PERL5_MAN3%%/File::RsyncP.3.gz
+%%PERL5_MAN3%%/File::RsyncP::Digest.3.gz
+%%PERL5_MAN3%%/File::RsyncP::FileIO.3.gz
+%%PERL5_MAN3%%/File::RsyncP::FileList.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/Digest
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP/FileList
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/RsyncP
