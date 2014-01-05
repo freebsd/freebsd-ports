@@ -7,3 +7,4 @@ include/plist/swig/plist.i
 @dirrm %%PYTHON_SITELIBDIR%%/plist
 @dirrm include/plist/swig
 @dirrm include/plist/cython
+@dirrmtry include/plist
