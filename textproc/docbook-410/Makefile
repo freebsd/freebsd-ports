@@ -33,7 +33,7 @@ SGMLCAT_ADD=	${XMLCATMGR} -sc ${SGMLCAT} add CATALOG \
 SGMLCAT_RM=	${XMLCATMGR} -sc ${SGMLCAT} remove \
 		    ${PREFIX}/${DTDDIR}/catalog
 
-LATEST_LINK=	docbook-410
+PKGNAMESUFFIX=	${PKGORIGIN:T:S/docbook-//}
 
 NO_STAGE=	yes
 do-install:
