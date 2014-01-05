@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model/CDBI/Plain/.packlist
 %%SITE_PERL%%/Catalyst/Model/CDBI/Plain.pm
 %%SITE_PERL%%/Catalyst/Helper/Model/CDBI/Plain.pm
+%%PERL5_MAN3%%/Catalyst::Model::CDBI::Plain.3.gz
+%%PERL5_MAN3%%/Catalyst::Helper::Model::CDBI::Plain.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model/CDBI/Plain
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model/CDBI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model

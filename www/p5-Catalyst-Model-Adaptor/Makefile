@@ -19,13 +19,4 @@ TEST_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Catalyst::Helper::Model::Adaptor.3 \
-	Catalyst::Helper::Model::Factory.3 \
-	Catalyst::Helper::Model::Factory::PerRequest.3 \
-	Catalyst::Model::Adaptor.3 \
-	Catalyst::Model::Adaptor::Base.3 \
-	Catalyst::Model::Factory.3 \
-	Catalyst::Model::Factory::PerRequest.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
