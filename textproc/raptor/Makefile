@@ -11,9 +11,10 @@ MASTER_SITES=	SF/librdf/${PORTNAME}/${PORTVERSION} \
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	RDF Parser Toolkit for Redland
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
-USE_GNOME=	gnomehack libxml2
+USES=		pathfix
+USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xml2-config=${LOCALBASE}/bin/xml2-config \
 		--with-curl-config=${LOCALBASE}/bin/curl-config \
@@ -23,10 +24,6 @@ MAKE_ENV+=	DOC_MODULE_VERSION=1
 
 USE_LDCONFIG=	yes
 
-MAN1=		raptor-config.1
-MAN3=		libraptor.3
-
-NO_STAGE=	yes
 post-extract:
 	${REINPLACE_CMD} -e 's|utils ||' \
 		${WRKSRC}/Makefile.in
