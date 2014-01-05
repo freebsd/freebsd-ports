@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Twitter/.packlist
 %%SITE_PERL%%/POE/Component/Client/Twitter.pm
+%%PERL5_MAN3%%/POE::Component::Client::Twitter.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client/Twitter
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Client
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component

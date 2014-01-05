@@ -9,6 +9,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS/IPP/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS/PPD/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS/autosplit.ix
+%%PERL5_MAN3%%/Net::CUPS.3.gz
+%%PERL5_MAN3%%/Net::CUPS::Destination.3.gz
+%%PERL5_MAN3%%/Net::CUPS::IPP.3.gz
+%%PERL5_MAN3%%/Net::CUPS::PPD.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS/PPD
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS/IPP
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CUPS/Destination

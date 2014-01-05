@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Divert/.packlist
 %%SITE_PERL%%/Net/Divert.pm
 %%SITE_PERL%%/auto/Net/Divert/autosplit.ix
+%%PERL5_MAN3%%/Net::Divert.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Divert
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/auto/Net/Divert
