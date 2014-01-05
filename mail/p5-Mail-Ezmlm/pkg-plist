@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Mail/Ezmlm/GpgEzmlm.pm
 %%SITE_PERL%%/Mail/Ezmlm/GpgKeyRing.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Ezmlm/.packlist
+%%PERL5_MAN3%%/Mail::Ezmlm.3.gz
+%%PERL5_MAN3%%/Mail::Ezmlm::GpgKeyRing.3.gz
+%%PERL5_MAN3%%/Mail::Ezmlm::GpgEzmlm.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Ezmlm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
 @dirrmtry %%SITE_PERL%%/Mail/Ezmlm

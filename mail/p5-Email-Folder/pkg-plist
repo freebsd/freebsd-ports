@@ -5,6 +5,11 @@
 %%SITE_PERL%%/Email/Folder/Mbox.pm
 %%SITE_PERL%%/Email/Folder/Reader.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Folder/.packlist
+%%PERL5_MAN3%%/Email::Folder.3.gz
+%%PERL5_MAN3%%/Email::Folder::MH.3.gz
+%%PERL5_MAN3%%/Email::Folder::Maildir.3.gz
+%%PERL5_MAN3%%/Email::Folder::Mbox.3.gz
+%%PERL5_MAN3%%/Email::Folder::Reader.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Folder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
 @dirrmtry %%SITE_PERL%%/Email/Folder

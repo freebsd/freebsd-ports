@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Mail/Cache.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Cache/.packlist
+%%PERL5_MAN3%%/Mail::Cache.3.gz
 @dirrmtry %%SITE_PERL%%/Mail
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Cache
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
