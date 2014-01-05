@@ -16,12 +16,10 @@ USE_GNOME=	gtk20
 USES=		pkgconfig
 GNU_CONFIGURE=	yes
 
-MAN1=		wmblob.1
-PLIST_FILES=	bin/wmblob
+PLIST_FILES=	bin/wmblob man/man1/wmblob.1.gz
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/wmblob ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/doc/wmblob.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/wmblob ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/wmblob.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
