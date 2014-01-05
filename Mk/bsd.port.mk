@@ -385,12 +385,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- If set, the system should use OpenLDAP libraries
 #				  with SASL support.
 ##
-# USE_FAM		- If set, this port uses the File Alteration Monitor.
-#
-# WANT_FAM_SYSTEM
-#				- Legal values are: gamin (default),fam
-#				  If set to an unknown value, the port is marked IGNORE.
-##
 # USE_AUTOTOOLS	- If set, this port uses various GNU autotools
 #				  (libtool, autoconf, autoheader, automake et al.)
 #				  See bsd.autotools.mk for more details.
@@ -1737,46 +1731,6 @@ MAKE_ENV+=	${b}="${${b}}"
 .if defined(USE_OPENLDAP) || defined(WANT_OPENLDAP_VER)
 .include "${PORTSDIR}/Mk/bsd.ldap.mk"
 .endif
-
-.if defined(USE_FAM)
-DEFAULT_FAM_SYSTEM=	gamin
-# Currently supported FAM systems
-FAM_SYSTEM_FAM=		fam.0:${PORTSDIR}/devel/fam
-FAM_SYSTEM_GAMIN=	fam.0:${PORTSDIR}/devel/gamin
-
-.if exists(${LOCALBASE}/libexec/gam_server)
-_HAVE_FAM_SYSTEM=	gamin
-.elif exists(${LOCALBASE}/bin/fam)
-_HAVE_FAM_SYSTEM=	fam
-.endif
-
-.if defined(WANT_FAM_SYSTEM)
-.if defined(WITH_FAM_SYSTEM) && ${WITH_FAM_SYSTEM}!=${WANT_FAM_SYSTEM}
-IGNORE=		wants to use ${WANT_FAM_SYSTEM} as its FAM system, while you wish to use ${WITH_FAM_SYSTEM}
-.endif
-FAM_SYSTEM=	${WANT_FAM_SYSTEM}
-.elif defined(WITH_FAM_SYSTEM)
-FAM_SYSTEM=	${WITH_FAM_SYSTEM}
-.else
-.if defined(_HAVE_FAM_SYSTEM)
-FAM_SYSTEM=	${_HAVE_FAM_SYSTEM}
-.else
-FAM_SYSTEM=	${DEFAULT_FAM_SYSTEM}
-.endif
-.endif # WANT_FAM_SYSTEM
-
-.if defined(_HAVE_FAM_SYSTEM)
-.if ${_HAVE_FAM_SYSTEM}!= ${FAM_SYSTEM}
-BROKEN=		FAM system mismatch: ${_HAVE_FAM_SYSTEM} is installed, while desired FAM system is ${FAM_SYSTEM}
-.endif
-.endif
-
-.if defined(FAM_SYSTEM_${FAM_SYSTEM:U})
-LIB_DEPENDS+=	${FAM_SYSTEM_${FAM_SYSTEM:U}}
-.else
-IGNORE=		cannot be built with unknown FAM system: ${FAM_SYSTEM}
-.endif
-.endif # USE_FAM
 
 .if defined(USE_RC_SUBR) && ${USE_RC_SUBR:U} != "YES"
 SUB_FILES+=	${USE_RC_SUBR}
