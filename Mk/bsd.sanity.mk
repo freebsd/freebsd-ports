@@ -157,3 +157,7 @@ DEV_WARNING+=	"PYDISTUTILS_PKGNAME has no effect for USE_PYDISTUTILS=yes and PYD
 .if defined(USE_OPENAL)
 DEV_ERROR+=	"USE_OPENAL is unsupported, please use USES=openal"
 .endif
+
+.if defined(USE_FAM)
+DEV_ERROR+=	"USE_FAM is unsupported, please use USES=fam"
+.endif
