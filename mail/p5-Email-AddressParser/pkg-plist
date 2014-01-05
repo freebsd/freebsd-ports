@@ -2,6 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/AddressParser/AddressParser.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/AddressParser/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/Email/AddressParser.pm
+%%PERL5_MAN3%%/Email::AddressParser.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/AddressParser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Email

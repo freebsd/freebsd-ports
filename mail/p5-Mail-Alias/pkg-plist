@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Mail/Alias.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Alias/.packlist
+%%PERL5_MAN3%%/Mail::Alias.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Alias
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
 @dirrmtry %%SITE_PERL%%/Mail

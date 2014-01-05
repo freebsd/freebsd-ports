@@ -15,7 +15,4 @@ RUN_DEPENDS=	p5-MIME-Charset>=1.006.2:${PORTSDIR}/mail/p5-MIME-Charset
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MIME::EncWords.3 MIME::EncWords::JA_JP.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

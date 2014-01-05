@@ -6,6 +6,7 @@
 %%SITE_PERL%%/auto/Data/Validate/Email/is_domain.al
 %%SITE_PERL%%/auto/Data/Validate/Email/is_username.al
 %%SITE_PERL%%/auto/Data/Validate/Email/autosplit.ix
+%%PERL5_MAN3%%/Data::Validate::Email.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate/Email
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data

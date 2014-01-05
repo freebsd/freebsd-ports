@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Mail/DeliveryStatus/BounceParser.pm
 %%SITE_PERL%%/Mail/DeliveryStatus/Report.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/DeliveryStatus/BounceParser/.packlist
+%%PERL5_MAN3%%/Mail::DeliveryStatus::BounceParser.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/DeliveryStatus/BounceParser
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/DeliveryStatus
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail

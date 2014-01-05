@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Email/MIME/ContentType.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/ContentType/.packlist
+%%PERL5_MAN3%%/Email::MIME::ContentType.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/ContentType
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email

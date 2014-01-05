@@ -2,6 +2,8 @@
 %%SITE_PERL%%/MIME/EncWords/Defaults.pm.sample
 %%SITE_PERL%%/MIME/EncWords/JA_JP.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/EncWords/.packlist
+%%PERL5_MAN3%%/MIME::EncWords.3.gz
+%%PERL5_MAN3%%/MIME::EncWords::JA_JP.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/EncWords
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME
 @dirrmtry %%SITE_PERL%%/MIME/EncWords
