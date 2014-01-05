@@ -1,0 +1,10 @@
+man/man8/dnssec-zkt.8.gz
+man/man8/zkt-conf.8.gz
+man/man8/zkt-keyman.8.gz
+man/man8/zkt-ls.8.gz
+man/man8/zkt-signer.8.gz
+sbin/zkt-conf
+sbin/zkt-keyman
+sbin/zkt-ls
+sbin/zkt-signer
+sbin/zkt-soaserial
