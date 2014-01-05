@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libewf
-PORTVERSION=	20131210
+PORTVERSION=	20131230
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSMTdoaVExWWNsRjg/ \
 		LOCAL/antoine
