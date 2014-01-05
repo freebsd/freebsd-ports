@@ -412,12 +412,14 @@ llvm33/include/clang/Tooling/RefactoringCallbacks.h
 llvm33/include/clang/Tooling/Tooling.h
 llvm33/lib/clang/3.3/include/__wmmintrin_aes.h
 llvm33/lib/clang/3.3/include/__wmmintrin_pclmul.h
+llvm33/lib/clang/3.3/include/altivec.h
 llvm33/lib/clang/3.3/include/ammintrin.h
 llvm33/lib/clang/3.3/include/arm_neon.h
 llvm33/lib/clang/3.3/include/avx2intrin.h
 llvm33/lib/clang/3.3/include/avxintrin.h
 llvm33/lib/clang/3.3/include/bmi2intrin.h
 llvm33/lib/clang/3.3/include/bmiintrin.h
+llvm33/lib/clang/3.3/include/cpuid.h
 llvm33/lib/clang/3.3/include/emmintrin.h
 llvm33/lib/clang/3.3/include/f16cintrin.h
 llvm33/lib/clang/3.3/include/fma4intrin.h

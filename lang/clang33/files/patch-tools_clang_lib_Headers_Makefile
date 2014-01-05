@@ -8,7 +8,7 @@ $FreeBSD$
  HeaderDir := $(PROJ_OBJ_ROOT)/$(BuildMode)/lib/clang/$(CLANG_VERSION)/include
  
 -HEADERS := $(notdir $(wildcard $(PROJ_SRC_DIR)/*.h))
-+HEADERS := $(notdir $(wildcard $(PROJ_SRC_DIR)/*intrin*.h) mm3dnow.h mm_malloc.h)
++HEADERS := $(notdir $(wildcard $(PROJ_SRC_DIR)/*intrin*.h) altivec.h cpuid.h mm3dnow.h mm_malloc.h)
  
  OBJHEADERS := $(addprefix $(HeaderDir)/, $(HEADERS))
  
