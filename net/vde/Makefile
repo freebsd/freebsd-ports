@@ -10,17 +10,15 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	User-mode virtual ethernet infrastructure
 
+LICENSE=	GPLv2
+
 CONFLICTS=	vde2-[0-9]*
 
-USE_GMAKE=	yes
+MAKE_ARGS=	CC="${CC}"
 USE_LDCONFIG=	yes
 USE_CSTD=	gnu89
+USES=		gmake
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+CFLAGS+=	-fPIC
 
-CFLAGS+=	${CPPFLAGS} -fPIC
-
-MAN1=		dpipe.1 slirpvde.1 vdetaplib.1 vdeq.1 vde_plug.1 vde_switch.1
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

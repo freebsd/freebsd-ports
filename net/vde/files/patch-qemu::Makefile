@@ -1,8 +1,22 @@
---- qemu/Makefile	Sat Jan 29 15:02:08 2005
-+++ qemu/Makefile	Sun Jan 30 12:59:52 2005
+--- qemu/Makefile.orig	2004-08-27 10:34:33.000000000 +0300
++++ qemu/Makefile	2014-01-03 07:32:14.000000000 +0200
 @@ -1,4 +1,4 @@
 -ALL: vdeq
 +all: vdeq
  
  vdeq.o: vdeq.c ../vde.h
  
+@@ -6,10 +6,9 @@
+ 	$(CC) -o vdeq vdeq.o
+ 
+ install : vdeq
+-	install -d $(DESTDIR)$(BIN_DIR)
+-	install -s vdeq $(DESTDIR)$(BIN_DIR)
+-	rm -f $(DESTDIR)$(BIN_DIR)/vdeqemu
+-	ln -s $(DESTDIR)$(BIN_DIR)/vdeq $(DESTDIR)$(BIN_DIR)/vdeqemu
++	install -d $(BIN_DIR)
++	install -s vdeq $(BIN_DIR)
++	ln -sf vdeq $(BIN_DIR)/vdeqemu
+ 
+ clean:
+ 	rm -f *.o vdeq
