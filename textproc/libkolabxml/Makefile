@@ -31,5 +31,4 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	SHLIB_VER=${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
