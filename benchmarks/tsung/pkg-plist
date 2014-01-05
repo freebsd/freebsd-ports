@@ -298,6 +298,9 @@ lib/tsung/bin/tsung_percentile.pl
 lib/tsung/bin/tsung_stats.pl
 lib/tsung/tsung_plotter/__init__.py
 lib/tsung/tsung_plotter/tsung.py
+man/man1/tsplot.1.gz
+man/man1/tsung-recorder.1.gz
+man/man1/tsung.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/IDXDOC.css
 %%PORTDOCS%%%%DOCSDIR%%/images/connected.png
 %%PORTDOCS%%%%DOCSDIR%%/images/ldap-hierarchy.png

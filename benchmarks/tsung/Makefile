@@ -18,13 +18,11 @@ USE_PERL5=	run
 USE_PYTHON_RUN=	yes
 
 GNU_CONFIGURE=	yes
-USES=		gmake perl5
+USES=		gmake perl5 shebangfix
+SHEBANG_FILES=	src/*.pl.in src/tsung-plotter/tsung/tsung.py
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-MAN1=	tsplot.1 tsung-recorder.1 tsung.1
-
-NO_STAGE=	yes
 post-patch-script:
 	@${REINPLACE_CMD} -e 's|MAN_DIR   = $$(datadir)/man/man1/|MAN_DIR   = $$(prefix)/man/man1/|' \
 		${WRKSRC}/Makefile.in
