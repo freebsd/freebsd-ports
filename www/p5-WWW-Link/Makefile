@@ -7,7 +7,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Maintain information about the state of links
 
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
@@ -21,28 +21,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	WWW::Link.3 \
-	WWW::Link::Change.3 \
-	WWW::Link::Merge.3 \
-	WWW::Link::Redirect.3 \
-	WWW::Link::Repair.3 \
-	WWW::Link::Repair::ResourceMapper.3 \
-	WWW::Link::Repair::Substitutor.3 \
-	WWW::Link::Reporter.3 \
-	WWW::Link::Reporter::Compile.3 \
-	WWW::Link::Reporter::HTML.3 \
-	WWW::Link::Reporter::LongList.3 \
-	WWW::Link::Reporter::RepairForm.3 \
-	WWW::Link::Reporter::Text.3 \
-	WWW::Link::Reporter::URI.3 \
-	WWW::Link::Selector.3 \
-	WWW::Link::Test.3 \
-	WWW::Link::Test::Validate.3 \
-	WWW::Link::Tester.3 \
-	WWW::Link::Tester::Adaptive.3 \
-	WWW::Link::Tester::Base.3 \
-	WWW::Link::Tester::Complex.3 \
-	WWW::Link::Tester::Simple.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

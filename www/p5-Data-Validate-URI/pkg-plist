@@ -8,6 +8,7 @@
 %%SITE_PERL%%/auto/Data/Validate/URI/_split_uri.al
 %%SITE_PERL%%/auto/Data/Validate/URI/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate/URI/.packlist
+%%PERL5_MAN3%%/Data::Validate::URI.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate/URI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data

@@ -15,9 +15,6 @@ TEST_DEPENDS=	p5-libwww>=5.816:${PORTSDIR}/www/p5-libwww
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::SMS::Clickatell.3
-
-NO_STAGE=	yes
 post-patch:
 	${FIND} ${WRKSRC} -name "*.orig" -delete
 

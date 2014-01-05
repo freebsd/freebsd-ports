@@ -1,5 +1,6 @@
 %%SITE_PERL%%/LWP/ConnCache/MaxKeepAliveRequests.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/ConnCache/MaxKeepAliveRequests/.packlist
+%%PERL5_MAN3%%/LWP::ConnCache::MaxKeepAliveRequests.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/ConnCache/MaxKeepAliveRequests
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/ConnCache
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP

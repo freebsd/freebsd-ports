@@ -1,5 +1,6 @@
 %%SITE_PERL%%/MIME/Lite/TT.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Lite/TT/.packlist
+%%PERL5_MAN3%%/MIME::Lite::TT.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Lite/TT
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Lite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME
