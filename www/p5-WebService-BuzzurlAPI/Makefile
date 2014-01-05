@@ -26,10 +26,4 @@ RUN_DEPENDS=	p5-Class-Accessor>=0.25:${PORTSDIR}/devel/p5-Class-Accessor \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		WebService::BuzzurlAPI.3 \
-		WebService::BuzzurlAPI::Util.3 \
-		WebService::BuzzurlAPI::Response.3 \
-		WebService::BuzzurlAPI::Request.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

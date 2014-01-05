@@ -24,16 +24,4 @@ TEST_DEPENDS=	p5-DateTime-Format-DateParse>0:${PORTSDIR}/devel/p5-DateTime-Forma
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	RT::Client::REST.3 \
-	RT::Client::REST::Attachment.3 \
-	RT::Client::REST::Exception.3 \
-	RT::Client::REST::Group.3 \
-	RT::Client::REST::Object.3 \
-	RT::Client::REST::Queue.3 \
-	RT::Client::REST::SearchResult.3 \
-	RT::Client::REST::Ticket.3 \
-	RT::Client::REST::Transaction.3 \
-	RT::Client::REST::User.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
