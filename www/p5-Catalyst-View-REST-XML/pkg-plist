@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/REST/XML/.packlist
 %%SITE_PERL%%/Catalyst/View/REST/XML.pm
+%%PERL5_MAN3%%/Catalyst::View::REST::XML.3.gz
 @dirrmtry %%SITE_PERL%%/Catalyst/View/REST
 @dirrmtry %%SITE_PERL%%/Catalyst/View
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/View/REST/XML

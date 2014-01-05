@@ -4,6 +4,11 @@
 %%SITE_PERL%%/WWW/FreeProxy/PublicProxyServers.pm
 %%SITE_PERL%%/WWW/FreeProxy/Samair.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/FreeProxy/.packlist
+%%PERL5_MAN3%%/WWW::FreeProxy.3.gz
+%%PERL5_MAN3%%/WWW::FreeProxy::Proxy4Free.3.gz
+%%PERL5_MAN3%%/WWW::FreeProxy::Samair.3.gz
+%%PERL5_MAN3%%/WWW::FreeProxy::Look.3.gz
+%%PERL5_MAN3%%/WWW::FreeProxy::PublicProxyServers.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/FreeProxy
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 @dirrmtry %%SITE_PERL%%/WWW/FreeProxy
