@@ -13,7 +13,4 @@ COMMENT=	Process an SNMP trap with perl
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		SNMP::Trapinfo.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

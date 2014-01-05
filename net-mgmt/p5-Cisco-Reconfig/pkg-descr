@@ -12,4 +12,4 @@ Cisco::Reconfig can be used to modify configurations. The set() method
 will check the current configruation and return commands to change it
 if it is other than what is wanted (as passed to the set() method).
 
-WWW:	http://search.cpan.org/dist/Cisco-Reconfig/
+WWW: http://search.cpan.org/dist/Cisco-Reconfig/

@@ -20,7 +20,4 @@ TEST_DEPENDS=	p5-Test-POE-Client-TCP>=0:${PORTSDIR}/devel/p5-Test-POE-Client-TCP
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		POE::Filter::HTTP::Parser.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

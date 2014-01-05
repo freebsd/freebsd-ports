@@ -13,7 +13,4 @@ COMMENT=	Monta Method reproduced in web
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Acme::Monta.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

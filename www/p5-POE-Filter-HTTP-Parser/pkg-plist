@@ -1,5 +1,6 @@
 %%SITE_PERL%%/POE/Filter/HTTP/Parser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/HTTP/Parser/.packlist
+%%PERL5_MAN3%%/POE::Filter::HTTP::Parser.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/HTTP/Parser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter/HTTP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Filter
