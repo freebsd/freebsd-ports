@@ -26,7 +26,6 @@ GNU_CONFIGURE=	yes
 PORTDOCS=	ChangeLog INSTALL README
 PLIST_FILES=	bin/fbdesk
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMLIB2}
@@ -37,10 +36,8 @@ CONFIGURE_ARGS+=	--disable-imlib2
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
