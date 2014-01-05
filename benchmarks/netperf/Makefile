@@ -20,14 +20,13 @@ SOCKETS_DESC=	Enable Unix Domain socket support
 HISTOGRAM_DESC=	Enable optional histogram output
 EXS_DESC=	Enable ICSC async socket support
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	"transform="
 CONFIGURE_ARGS=	--program-prefix=""  --program-suffix="" --enable-dirty \
 		--enable-demo --enable-burst --enable-intervals
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSOCKETS}
 CONFIGURE_ARGS+=	--enable-unixdomain
@@ -59,8 +58,6 @@ CONFIGURE_ARGS+=	--enable-omni
 CONFIGURE_ARGS+=	--disable-omni
 .endif
 
-MAN1=		netperf.1 netserver.1
-INFO=		netperf
 SCRIPTS=	arr_script packet_byte_script sctp_stream_script snapshot_script \
 		tcp_range_script tcp_rr_script tcp_stream_script udp_rr_script \
 		udp_stream_script
@@ -71,9 +68,9 @@ post-patch:
 .endfor
 
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for i in ${SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/doc/examples/$i ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/doc/examples/$i ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
 .include <bsd.port.mk>

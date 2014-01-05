@@ -1,5 +1,7 @@
 bin/netperf
 bin/netserver
+man/man1/netperf.1.gz
+man/man1/netserver.1.gz
 %%EXAMPLESDIR%%/arr_script
 %%EXAMPLESDIR%%/packet_byte_script
 %%EXAMPLESDIR%%/sctp_stream_script
