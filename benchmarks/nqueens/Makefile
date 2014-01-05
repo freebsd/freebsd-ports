@@ -17,11 +17,10 @@ OPTIONS_DEFINE=	MPI STATIC OPTIMIZED_CFLAGS
 MPI_DESC=	Build distributed MPI version
 STATIC_DESC=	Link resulting binaries statically
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=	-O9 -pipe -s -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
+CFLAGS+=	-O3 -pipe -s -ffast-math -funroll-loops -fomit-frame-pointer -fexpensive-optimizations
 .endif
 .if ${PORT_OPTIONS:MSTATIC}
 CFLAGS+=	-static
@@ -50,7 +49,7 @@ PLIST_FILES=	${PROGS:S/^/bin\//}
 
 do-install:
 .for p in ${PROGS}
-	${INSTALL_PROGRAM} ${WRKSRC}/${p} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${p} ${STAGEDIR}${PREFIX}/bin/
 .endfor
 
 .include <bsd.port.mk>
