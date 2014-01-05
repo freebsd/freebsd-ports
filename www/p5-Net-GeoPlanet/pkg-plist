@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Net/GeoPlanet.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/GeoPlanet/.packlist
+%%PERL5_MAN3%%/Net::GeoPlanet.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/GeoPlanet
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

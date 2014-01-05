@@ -4,5 +4,10 @@
 %%SITE_PERL%%/Tenjin/Preprocessor.pm
 %%SITE_PERL%%/Tenjin/Template.pm
 %%SITE_PERL%%/Tenjin/Util.pm
+%%PERL5_MAN3%%/Tenjin.3.gz
+%%PERL5_MAN3%%/Tenjin::Context.3.gz
+%%PERL5_MAN3%%/Tenjin::Preprocessor.3.gz
+%%PERL5_MAN3%%/Tenjin::Template.3.gz
+%%PERL5_MAN3%%/Tenjin::Util.3.gz
 @dirrmtry %%SITE_PERL%%/Tenjin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tenjin

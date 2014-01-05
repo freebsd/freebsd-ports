@@ -4,6 +4,11 @@
 %%SITE_PERL%%/AnyEvent/HTTPD/Util.pm
 %%SITE_PERL%%/AnyEvent/HTTPD.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/HTTPD/.packlist
+%%PERL5_MAN3%%/AnyEvent::HTTPD.3.gz
+%%PERL5_MAN3%%/AnyEvent::HTTPD::Request.3.gz
+%%PERL5_MAN3%%/AnyEvent::HTTPD::Util.3.gz
+%%PERL5_MAN3%%/AnyEvent::HTTPD::HTTPServer.3.gz
+%%PERL5_MAN3%%/AnyEvent::HTTPD::HTTPConnection.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/HTTPD
 @dirrmtry %%SITE_PERL%%/AnyEvent/HTTPD
 @dirrmtry %%SITE_PERL%%/AnyEvent

@@ -8,6 +8,14 @@
 %%SITE_PERL%%/Continuity/Request.pm
 %%SITE_PERL%%/Continuity/RequestCallbacks.pm
 %%SITE_PERL%%/Continuity/RequestHolder.pm
+%%PERL5_MAN3%%/Continuity.3.gz
+%%PERL5_MAN3%%/Continuity::Adapt::FCGI.3.gz
+%%PERL5_MAN3%%/Continuity::Adapt::HttpDaemon.3.gz
+%%PERL5_MAN3%%/Continuity::Adapt::PSGI.3.gz
+%%PERL5_MAN3%%/Continuity::Inspector.3.gz
+%%PERL5_MAN3%%/Continuity::Mapper.3.gz
+%%PERL5_MAN3%%/Continuity::Request.3.gz
+%%PERL5_MAN3%%/Continuity::RequestCallbacks.3.gz
 @dirrmtry %%SITE_PERL%%/Continuity/Adapt
 @dirrmtry %%SITE_PERL%%/Continuity
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Continuity

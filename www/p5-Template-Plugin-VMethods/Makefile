@@ -15,7 +15,4 @@ RUN_DEPENDS=	p5-Template-Toolkit>0:${PORTSDIR}/www/p5-Template-Toolkit
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Template::Plugin::VMethods.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -18,7 +18,4 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Any::URI::Escape.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
 Plack::Middleware::XForwardedFor will look for X-Forwarded-For header
 in the incomming request and change REMOTE_ADDR to the real client IP.
 
-WWW:	http://search.cpan.org/dist/Plack-Middleware-XForwardedFor/
+WWW: http://search.cpan.org/dist/Plack-Middleware-XForwardedFor/

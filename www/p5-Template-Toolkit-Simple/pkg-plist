@@ -2,6 +2,7 @@ bin/tt-render
 %%SITE_PERL%%/Template/Toolkit/Simple.pm
 %%SITE_PERL%%/Template/Toolkit/Simple.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Toolkit/Simple/.packlist
+%%PERL5_MAN3%%/Template::Toolkit::Simple.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Toolkit/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Toolkit
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template

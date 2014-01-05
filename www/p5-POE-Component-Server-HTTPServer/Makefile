@@ -21,14 +21,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		POE::Component::Server::HTTPServer.3 \
-		POE::Component::Server::HTTPServer::BasicAuthenHandler.3 \
-		POE::Component::Server::HTTPServer::Examples.3 \
-		POE::Component::Server::HTTPServer::Handler.3 \
-		POE::Component::Server::HTTPServer::NotFoundHandler.3 \
-		POE::Component::Server::HTTPServer::ParameterParseHandler.3 \
-		POE::Component::Server::HTTPServer::StaticHandler.3 \
-		POE::Component::Server::HTTPServer::TemplateHandler.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

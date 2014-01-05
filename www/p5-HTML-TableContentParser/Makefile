@@ -15,7 +15,4 @@ RUN_DEPENDS=	p5-HTML-Parser>=3.68:${PORTSDIR}/www/p5-HTML-Parser
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HTML::TableContentParser.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Template/Provider/Encoding.pm
 %%SITE_PERL%%/Template/Stash/ForceUTF8.pm
 %%SITE_PERL%%/Template/Plugin/encoding.pm
+%%PERL5_MAN3%%/Template::Provider::Encoding.3.gz
+%%PERL5_MAN3%%/Template::Stash::ForceUTF8.3.gz
+%%PERL5_MAN3%%/Template::Plugin::encoding.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Provider/Encoding
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Provider
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template

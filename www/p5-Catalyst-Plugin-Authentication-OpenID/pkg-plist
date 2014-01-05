@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Authentication/OpenID/.packlist
 %%SITE_PERL%%/Catalyst/Plugin/Authentication/OpenID.pm
+%%PERL5_MAN3%%/Catalyst::Plugin::Authentication::OpenID.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Authentication/OpenID
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin/Authentication
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Plugin

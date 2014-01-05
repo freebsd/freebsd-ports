@@ -2,6 +2,9 @@
 %%SITE_PERL%%/WWW/TV.pm
 %%SITE_PERL%%/WWW/TV/Episode.pm
 %%SITE_PERL%%/WWW/TV/Series.pm
+%%PERL5_MAN3%%/WWW::TV.3.gz
+%%PERL5_MAN3%%/WWW::TV::Episode.3.gz
+%%PERL5_MAN3%%/WWW::TV::Series.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/TV
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 @dirrm %%SITE_PERL%%/WWW/TV

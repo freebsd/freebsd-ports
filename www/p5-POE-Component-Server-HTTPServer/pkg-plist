@@ -7,6 +7,14 @@
 %%SITE_PERL%%/POE/Component/Server/HTTPServer/StaticHandler.pm
 %%SITE_PERL%%/POE/Component/Server/HTTPServer/TemplateHandler.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/HTTPServer/.packlist
+%%PERL5_MAN3%%/POE::Component::Server::HTTPServer.3.gz
+%%PERL5_MAN3%%/POE::Component::Server::HTTPServer::BasicAuthenHandler.3.gz
+%%PERL5_MAN3%%/POE::Component::Server::HTTPServer::Examples.3.gz
+%%PERL5_MAN3%%/POE::Component::Server::HTTPServer::Handler.3.gz
+%%PERL5_MAN3%%/POE::Component::Server::HTTPServer::NotFoundHandler.3.gz
+%%PERL5_MAN3%%/POE::Component::Server::HTTPServer::ParameterParseHandler.3.gz
+%%PERL5_MAN3%%/POE::Component::Server::HTTPServer::StaticHandler.3.gz
+%%PERL5_MAN3%%/POE::Component::Server::HTTPServer::TemplateHandler.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/HTTPServer
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component

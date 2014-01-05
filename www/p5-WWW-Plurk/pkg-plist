@@ -3,6 +3,9 @@ bin/plurk
 %%SITE_PERL%%/WWW/Plurk/Friend.pm
 %%SITE_PERL%%/WWW/Plurk/Message.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Plurk/.packlist
+%%PERL5_MAN3%%/WWW::Plurk.3.gz
+%%PERL5_MAN3%%/WWW::Plurk::Friend.3.gz
+%%PERL5_MAN3%%/WWW::Plurk::Message.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Plurk
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 @dirrm %%SITE_PERL%%/WWW/Plurk

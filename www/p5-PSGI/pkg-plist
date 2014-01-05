@@ -3,5 +3,8 @@
 %%SITE_PERL%%/PSGI.pod
 %%SITE_PERL%%/PSGI/Extensions.pod
 %%SITE_PERL%%/PSGI/FAQ.pod
+%%PERL5_MAN3%%/PSGI::Extensions.3.gz
+%%PERL5_MAN3%%/PSGI::FAQ.3.gz
+%%PERL5_MAN3%%/PSGI.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PSGI
 @dirrmtry %%SITE_PERL%%/PSGI

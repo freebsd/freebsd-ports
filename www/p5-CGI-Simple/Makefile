@@ -9,17 +9,11 @@ MASTER_SITE_SUBDIR=	CPAN:ANDYA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
-COMMENT=	A simple totally OO CGI interface that is CGI.pm compliant
+COMMENT=	Simple totally OO CGI interface that is CGI.pm compliant
 
 TEST_DEPENDS=	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		CGI::Simple.3 \
-		CGI::Simple::Cookie.3 \
-		CGI::Simple::Standard.3 \
-		CGI::Simple::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

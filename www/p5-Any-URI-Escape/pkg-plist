@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Any/URI/Escape.pm
 %%SITE_PERL%%/mach/auto/Any/URI/Escape/.packlist
+%%PERL5_MAN3%%/Any::URI::Escape.3.gz
 @dirrm %%SITE_PERL%%/mach/auto/Any/URI/Escape
 @dirrmtry %%SITE_PERL%%/mach/auto/Any/URI
 @dirrmtry %%SITE_PERL%%/mach/auto/Any

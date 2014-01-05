@@ -2,6 +2,9 @@
 %%SITE_PERL%%/HTML/Chunks/Super.pm
 %%SITE_PERL%%/HTML/Chunks/Local.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Chunks/.packlist
+%%PERL5_MAN3%%/HTML::Chunks.3.gz
+%%PERL5_MAN3%%/HTML::Chunks::Local.3.gz
+%%PERL5_MAN3%%/HTML::Chunks::Super.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Chunks
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrm %%SITE_PERL%%/HTML/Chunks

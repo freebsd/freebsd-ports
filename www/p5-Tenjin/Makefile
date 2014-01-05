@@ -16,11 +16,4 @@ TEST_DEPENDS=	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Tenjin.3 \
-	Tenjin::Context.3 \
-	Tenjin::Preprocessor.3 \
-	Tenjin::Template.3 \
-	Tenjin::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

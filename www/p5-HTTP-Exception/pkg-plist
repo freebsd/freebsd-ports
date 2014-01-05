@@ -7,6 +7,14 @@
 %%SITE_PERL%%/HTTP/Exception/5XX.pm
 %%SITE_PERL%%/HTTP/Exception/Base.pm
 %%SITE_PERL%%/HTTP/Exception/Loader.pm
+%%PERL5_MAN3%%/HTTP::Exception.3.gz
+%%PERL5_MAN3%%/HTTP::Exception::1XX.3.gz
+%%PERL5_MAN3%%/HTTP::Exception::2XX.3.gz
+%%PERL5_MAN3%%/HTTP::Exception::3XX.3.gz
+%%PERL5_MAN3%%/HTTP::Exception::4XX.3.gz
+%%PERL5_MAN3%%/HTTP::Exception::5XX.3.gz
+%%PERL5_MAN3%%/HTTP::Exception::Base.3.gz
+%%PERL5_MAN3%%/HTTP::Exception::Loader.3.gz
 @dirrm %%SITE_PERL%%/HTTP/Exception
 @comment @dirrm %%SITE_PERL%%/HTTP
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Exception

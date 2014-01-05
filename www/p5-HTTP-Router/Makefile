@@ -26,13 +26,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HTTP::README.3 \
-		HTTP::Router.3 \
-		HTTP::Router::Debug.3 \
-		HTTP::Router::Declare.3 \
-		HTTP::Router::Match.3 \
-		HTTP::Router::Route.3 \
-		Test::HTTP::Router.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

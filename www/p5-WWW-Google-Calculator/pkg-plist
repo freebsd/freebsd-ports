@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Google/Calculator/.packlist
 %%SITE_PERL%%/WWW/Google/Calculator.pm
+%%PERL5_MAN3%%/WWW::Google::Calculator.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Google/Calculator
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Google
 @dirrmtry %%SITE_PERL%%/WWW/Google

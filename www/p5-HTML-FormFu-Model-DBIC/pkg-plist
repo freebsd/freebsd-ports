@@ -1,6 +1,8 @@
 %%SITE_PERL%%/HTML/FormFu/Constraint/DBIC/Unique.pm
 %%SITE_PERL%%/HTML/FormFu/Model/DBIC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu/Model/DBIC/.packlist
+%%PERL5_MAN3%%/HTML::FormFu::Constraint::DBIC::Unique.3.gz
+%%PERL5_MAN3%%/HTML::FormFu::Model::DBIC.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu/Model/DBIC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu/Model
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormFu

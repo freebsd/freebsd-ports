@@ -16,6 +16,23 @@
 %%SITE_PERL%%/CGI/Session/Test/Default.pm
 %%SITE_PERL%%/CGI/Session/Tutorial.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Session/.packlist
+%%PERL5_MAN3%%/CGI::Session.3.gz
+%%PERL5_MAN3%%/CGI::Session::Driver.3.gz
+%%PERL5_MAN3%%/CGI::Session::Driver::DBI.3.gz
+%%PERL5_MAN3%%/CGI::Session::Driver::db_file.3.gz
+%%PERL5_MAN3%%/CGI::Session::Driver::file.3.gz
+%%PERL5_MAN3%%/CGI::Session::Driver::mysql.3.gz
+%%PERL5_MAN3%%/CGI::Session::Driver::postgresql.3.gz
+%%PERL5_MAN3%%/CGI::Session::Driver::sqlite.3.gz
+%%PERL5_MAN3%%/CGI::Session::ErrorHandler.3.gz
+%%PERL5_MAN3%%/CGI::Session::ID::incr.3.gz
+%%PERL5_MAN3%%/CGI::Session::ID::md5.3.gz
+%%PERL5_MAN3%%/CGI::Session::ID::static.3.gz
+%%PERL5_MAN3%%/CGI::Session::Serialize::default.3.gz
+%%PERL5_MAN3%%/CGI::Session::Serialize::freezethaw.3.gz
+%%PERL5_MAN3%%/CGI::Session::Serialize::storable.3.gz
+%%PERL5_MAN3%%/CGI::Session::Test::Default.3.gz
+%%PERL5_MAN3%%/CGI::Session::Tutorial.3.gz
 @dirrm %%SITE_PERL%%/CGI/Session/Driver
 @dirrm %%SITE_PERL%%/CGI/Session/ID
 @dirrm %%SITE_PERL%%/CGI/Session/Serialize

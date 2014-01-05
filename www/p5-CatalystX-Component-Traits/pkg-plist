@@ -1,5 +1,6 @@
 %%SITE_PERL%%/CatalystX/Component/Traits.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CatalystX/Component/Traits/.packlist
+%%PERL5_MAN3%%/CatalystX::Component::Traits.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CatalystX/Component/Traits
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CatalystX/Component
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CatalystX
