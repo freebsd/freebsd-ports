@@ -18,5 +18,4 @@ USE_QT4=	corelib moc_build qmake_build rcc_build uic_build
 USES=		cmake gettext
 USE_BZIP2=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
