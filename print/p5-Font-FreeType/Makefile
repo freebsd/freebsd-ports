@@ -9,14 +9,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to read font files and render glyphs using FreeType2
 
-LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 USES=		pkgconfig perl5
 USE_PERL5=	configure
 
-MAN3=	Font::FreeType.3 \
-	Font::FreeType::Face.3 \
-	Font::FreeType::Glyph.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

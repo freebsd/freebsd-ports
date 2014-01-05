@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Date/Format/.packlist
 %%SITE_PERL%%/Email/Date/Format.pm
+%%PERL5_MAN3%%/Email::Date::Format.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Date/Format
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Date
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email
