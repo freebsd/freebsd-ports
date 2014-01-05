@@ -2,6 +2,8 @@
 %%SITE_PERL%%/WebService/Validator/HTML/W3C/Error.pm
 %%SITE_PERL%%/WebService/Validator/HTML/W3C.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Validator/HTML/W3C/.packlist
+%%PERL5_MAN3%%/WebService::Validator::HTML::W3C::Error.3.gz
+%%PERL5_MAN3%%/WebService::Validator::HTML::W3C.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Validator/HTML/W3C
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Validator/HTML
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Validator

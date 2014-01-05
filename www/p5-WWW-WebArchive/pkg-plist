@@ -3,6 +3,9 @@
 %%SITE_PERL%%/WWW/WebArchive/Agent.pm
 %%SITE_PERL%%/WWW/WebArchive/WaybackMachine.pm
 bin/webarchive
+%%PERL5_MAN3%%/WWW::WebArchive.3.gz
+%%PERL5_MAN3%%/WWW::WebArchive::Agent.3.gz
+%%PERL5_MAN3%%/WWW::WebArchive::WaybackMachine.3.gz
 @dirrmtry %%SITE_PERL%%/WWW/WebArchive
 @dirrmtry %%SITE_PERL%%/WWW
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW-WebArchive

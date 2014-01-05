@@ -13,9 +13,4 @@ COMMENT=	Simple standalone HTTP daemon
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	HTTP::Server::Simple.3 \
-	HTTP::Server::Simple::CGI.3 \
-	HTTP::Server::Simple::CGI::Environment.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

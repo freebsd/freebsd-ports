@@ -2,6 +2,9 @@
 %%SITE_PERL%%/HTTP/Server/Simple/CGI.pm
 %%SITE_PERL%%/HTTP/Server/Simple/CGI/Environment.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Server/Simple/.packlist
+%%PERL5_MAN3%%/HTTP::Server::Simple.3.gz
+%%PERL5_MAN3%%/HTTP::Server::Simple::CGI.3.gz
+%%PERL5_MAN3%%/HTTP::Server::Simple::CGI::Environment.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Server/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Server
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP

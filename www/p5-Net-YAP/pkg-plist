@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Net/YAP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/YAP/.packlist
+%%PERL5_MAN3%%/Net::YAP.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/YAP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

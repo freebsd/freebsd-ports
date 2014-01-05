@@ -1,6 +1,7 @@
 bin/goo.gl
 %%SITE_PERL%%/WWW/Shorten/Googl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten/Googl/.packlist
+%%PERL5_MAN3%%/WWW::Shorten::Googl.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten/Googl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW

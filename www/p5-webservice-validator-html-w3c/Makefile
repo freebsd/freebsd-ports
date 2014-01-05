@@ -19,8 +19,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	WebService::Validator::HTML::W3C::Error.3 \
-	WebService::Validator::HTML::W3C.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
