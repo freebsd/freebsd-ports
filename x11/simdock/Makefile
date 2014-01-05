@@ -11,17 +11,20 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and customizable dockbar
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig
+USES=		desktop-file-utils pathfix pkgconfig
 USE_GNOME=	gnomeprefix gconf2 libwnck
 USE_WX=		2.8
 WX_CONF_ARGS=	absolute
 
 WRKSRC=		${WRKDIR}/trunk
 
-PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL LICENSE NEWS README TODO
+PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README TODO
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -34,10 +37,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
