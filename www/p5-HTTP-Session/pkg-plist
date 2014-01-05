@@ -15,6 +15,18 @@
 %%SITE_PERL%%/HTTP/Session/Store/Test.pm
 %%SITE_PERL%%/HTTP/Session.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Session/.packlist
+%%PERL5_MAN3%%/HTTP::Session.3.gz
+%%PERL5_MAN3%%/HTTP::Session::State::Cookie.3.gz
+%%PERL5_MAN3%%/HTTP::Session::State::Null.3.gz
+%%PERL5_MAN3%%/HTTP::Session::State::Test.3.gz
+%%PERL5_MAN3%%/HTTP::Session::State::URI.3.gz
+%%PERL5_MAN3%%/HTTP::Session::Store::CHI.3.gz
+%%PERL5_MAN3%%/HTTP::Session::Store::DBM.3.gz
+%%PERL5_MAN3%%/HTTP::Session::Store::File.3.gz
+%%PERL5_MAN3%%/HTTP::Session::Store::Memcached.3.gz
+%%PERL5_MAN3%%/HTTP::Session::Store::Null.3.gz
+%%PERL5_MAN3%%/HTTP::Session::Store::OnMemory.3.gz
+%%PERL5_MAN3%%/HTTP::Session::Store::Test.3.gz
 @dirrm %%SITE_PERL%%/HTTP/Session/Store
 @dirrm %%SITE_PERL%%/HTTP/Session/State/Mixin
 @dirrm %%SITE_PERL%%/HTTP/Session/State
