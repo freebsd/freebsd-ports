@@ -7,6 +7,8 @@ bin/zselect
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Z3950/ZOOM/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Z3950/ZOOM/ZOOM.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Z3950/ZOOM/ZOOM.so
+%%PERL5_MAN3%%/Net::Z3950::ZOOM.3.gz
+%%PERL5_MAN3%%/ZOOM.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Z3950/ZOOM
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Z3950
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Net/Z3950

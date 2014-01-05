@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Net/TiVo/Folder.pm
 %%SITE_PERL%%/Net/TiVo/Show.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/TiVo/.packlist
+%%PERL5_MAN3%%/Net::TiVo.3.gz
+%%PERL5_MAN3%%/Net::TiVo::Show.3.gz
+%%PERL5_MAN3%%/Net::TiVo::Folder.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/TiVo
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/TiVo

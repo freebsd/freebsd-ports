@@ -13,7 +13,4 @@ COMMENT=	Drive ssh or other interactive shell, local or remote (like 'expect')
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	IPC::Session.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

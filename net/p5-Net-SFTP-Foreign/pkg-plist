@@ -10,6 +10,13 @@
 %%SITE_PERL%%/Net/SFTP/Foreign/Helpers.pm
 %%SITE_PERL%%/Net/SFTP/Foreign/Local.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SFTP/Foreign/.packlist
+%%PERL5_MAN3%%/Net::SFTP::Foreign.3.gz
+%%PERL5_MAN3%%/Net::SFTP::Foreign::Attributes.3.gz
+%%PERL5_MAN3%%/Net::SFTP::Foreign::Attributes::Compat.3.gz
+%%PERL5_MAN3%%/Net::SFTP::Foreign::Buffer.3.gz
+%%PERL5_MAN3%%/Net::SFTP::Foreign::Compat.3.gz
+%%PERL5_MAN3%%/Net::SFTP::Foreign::Constants.3.gz
+%%PERL5_MAN3%%/Net::SFTP::Foreign::Local.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SFTP/Foreign
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SFTP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

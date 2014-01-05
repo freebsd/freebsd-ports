@@ -2,6 +2,8 @@
 %%SITE_PERL%%/Net/CIDR/MobileJP.pm
 %%SITE_PERL%%/Net/CIDR/net-cidr-mobilejp-scraper.pl
 %%SITE_PERL%%/auto/share/dist/Net-CIDR-MobileJP/cidr.yaml
+%%PERL5_MAN3%%/Net::CIDR::MobileJP.3.gz
+%%PERL5_MAN3%%/Net::CIDR::net-cidr-mobilejp-scraper.3.gz
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Net-CIDR-MobileJP
 @dirrmtry %%SITE_PERL%%/Net/CIDR
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/CIDR/MobileJP
