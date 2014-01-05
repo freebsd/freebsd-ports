@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	zi@FreeBSD.org
-COMMENT=	A more casual approach to creating and sending Email
+COMMENT=	More casual approach to creating and sending Email
 
 BUILD_DEPENDS=	p5-Params-Util>=0.23:${PORTSDIR}/devel/p5-Params-Util \
 		p5-File-Type>=0.22:${PORTSDIR}/devel/p5-File-Type \
@@ -18,9 +18,5 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
-
-MAN3=		Email::Stuffer.3
-
-NO_STAGE=	yes
 
 .include <bsd.port.mk>

@@ -4,6 +4,9 @@
 %%SITE_PERL%%/Mail/SendEasy/Base64.pm
 %%SITE_PERL%%/Mail/SendEasy/IOScalar.pm
 %%SITE_PERL%%/Mail/SendEasy/SMTP.pm
+%%PERL5_MAN3%%/Mail::SendEasy.3.gz
+%%PERL5_MAN3%%/Mail::SendEasy::AUTH.3.gz
+%%PERL5_MAN3%%/Mail::SendEasy::SMTP.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SendEasy
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
 @dirrmtry %%SITE_PERL%%/Mail/SendEasy

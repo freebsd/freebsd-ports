@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Email/LocalDelivery/Ezmlm.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/LocalDelivery/Ezmlm/.packlist
+%%PERL5_MAN3%%/Email::LocalDelivery::Ezmlm.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/LocalDelivery/Ezmlm
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/LocalDelivery
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email

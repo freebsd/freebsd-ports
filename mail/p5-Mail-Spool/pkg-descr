@@ -6,3 +6,5 @@ daemon (based off of Net::Server::Fork) that can be used if necessary.
 It is also intended to be used as a quick spooling mechanism for perl
 scripts. As it can write straight to the queue without opening another
 process.
+
+WWW: http://search.cpan.org/dist/Mail-Spool/
