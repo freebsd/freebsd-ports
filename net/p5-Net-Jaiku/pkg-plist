@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Jaiku/.packlist
+%%PERL5_MAN3%%/Net::Jaiku.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Jaiku
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 %%SITE_PERL%%/Net/Jaiku.pm

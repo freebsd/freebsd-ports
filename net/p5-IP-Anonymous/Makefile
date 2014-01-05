@@ -15,7 +15,4 @@ RUN_DEPENDS=	p5-Crypt-Rijndael>=0:${PORTSDIR}/security/p5-Crypt-Rijndael
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		IP::Anonymous.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

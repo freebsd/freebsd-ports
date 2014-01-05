@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Net/SMS/PChome.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SMS/PChome/.packlist
+%%PERL5_MAN3%%/Net::SMS::PChome.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SMS/PChome
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SMS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

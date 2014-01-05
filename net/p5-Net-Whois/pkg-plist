@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Net/Whois.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Whois/.packlist
+%%PERL5_MAN3%%/Net::Whois.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Whois
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net

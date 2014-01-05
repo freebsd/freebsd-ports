@@ -19,17 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Frame::Layer::ICMPv6.3 \
-		Net::Frame::Layer::ICMPv6::DestUnreach.3 \
-		Net::Frame::Layer::ICMPv6::Echo.3 \
-		Net::Frame::Layer::ICMPv6::Option.3 \
-		Net::Frame::Layer::ICMPv6::ParameterProblem.3 \
-		Net::Frame::Layer::ICMPv6::NeighborAdvertisement.3 \
-		Net::Frame::Layer::ICMPv6::NeighborSolicitation.3 \
-  		Net::Frame::Layer::ICMPv6::RouterAdvertisement.3 \
-  		Net::Frame::Layer::ICMPv6::RouterSolicitation.3 \
-		Net::Frame::Layer::ICMPv6::TimeExceed.3 \
-		Net::Frame::Layer::ICMPv6::TooBig.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
