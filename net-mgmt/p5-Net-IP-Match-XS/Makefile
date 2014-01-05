@@ -13,7 +13,4 @@ COMMENT=	Efficiently match IP addresses against IP ranges
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Net::IP::Match::XS.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

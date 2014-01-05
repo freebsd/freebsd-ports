@@ -23,6 +23,30 @@
 %%SITE_PERL%%/Net/ACL/Set/Add.pm
 %%SITE_PERL%%/Net/ACL/Set/Scalar.pm
 %%SITE_PERL%%/Net/ACL/Set/Union.pm
+%%PERL5_MAN3%%/Net::ACL.3.gz
+%%PERL5_MAN3%%/Net::ACL::Bootstrap.3.gz
+%%PERL5_MAN3%%/Net::ACL::File.3.gz
+%%PERL5_MAN3%%/Net::ACL::File::ASPath.3.gz
+%%PERL5_MAN3%%/Net::ACL::File::Community.3.gz
+%%PERL5_MAN3%%/Net::ACL::File::IPAccess.3.gz
+%%PERL5_MAN3%%/Net::ACL::File::IPAccessExt.3.gz
+%%PERL5_MAN3%%/Net::ACL::File::Prefix.3.gz
+%%PERL5_MAN3%%/Net::ACL::File::RouteMap.3.gz
+%%PERL5_MAN3%%/Net::ACL::File::Standard.3.gz
+%%PERL5_MAN3%%/Net::ACL::IPAccessExtRule.3.gz
+%%PERL5_MAN3%%/Net::ACL::Match.3.gz
+%%PERL5_MAN3%%/Net::ACL::Match::IP.3.gz
+%%PERL5_MAN3%%/Net::ACL::Match::List.3.gz
+%%PERL5_MAN3%%/Net::ACL::Match::Member.3.gz
+%%PERL5_MAN3%%/Net::ACL::Match::Prefix.3.gz
+%%PERL5_MAN3%%/Net::ACL::Match::Regexp.3.gz
+%%PERL5_MAN3%%/Net::ACL::Match::Scalar.3.gz
+%%PERL5_MAN3%%/Net::ACL::RouteMapRule.3.gz
+%%PERL5_MAN3%%/Net::ACL::Rule.3.gz
+%%PERL5_MAN3%%/Net::ACL::Set.3.gz
+%%PERL5_MAN3%%/Net::ACL::Set::Add.3.gz
+%%PERL5_MAN3%%/Net::ACL::Set::Scalar.3.gz
+%%PERL5_MAN3%%/Net::ACL::Set::Union.3.gz
 @dirrmtry %%SITE_PERL%%/Net/ACL/Set
 @dirrmtry %%SITE_PERL%%/Net/ACL/Match
 @dirrmtry %%SITE_PERL%%/Net/ACL/File

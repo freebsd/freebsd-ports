@@ -17,7 +17,4 @@ TEST_DEPENDS=	p5-Plack>=0:${PORTSDIR}/www/p5-Plack
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HTML::Mason::PSGIHandler.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

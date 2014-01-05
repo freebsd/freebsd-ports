@@ -38,6 +38,9 @@
 %%SITE_PERL%%/auto/NetAddr/IP/UtilPP/simple_pack.al
 %%SITE_PERL%%/auto/NetAddr/IP/UtilPP/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Lite/.packlist
+%%PERL5_MAN3%%/NetAddr::IP::UtilPP.3.gz
+%%PERL5_MAN3%%/NetAddr::IP::Util.3.gz
+%%PERL5_MAN3%%/NetAddr::IP::Lite.3.gz
 @dirrm %%SITE_PERL%%/NetAddr/IP
 @dirrm %%SITE_PERL%%/auto/NetAddr/IP/UtilPP
 @dirrm %%SITE_PERL%%/auto/NetAddr/IP/Util
