@@ -149,6 +149,7 @@ MASTER_SITE_CSME+=	${MASTER_SITE_CENKES}
 
 .if !defined(IGNORE_MASTER_SITE_DEBIAN)
 MASTER_SITE_DEBIAN+= \
+	http://cdn.debian.net/debian/%SUBDIR%/ \
 	http://www.gtlib.gatech.edu/pub/debian/%SUBDIR%/ \
 	ftp://ftp.us.debian.org/debian/%SUBDIR%/ \
 	${MASTER_SITE_DEBIAN_NON_US:S,/debian-non-US/,/debian/,}
