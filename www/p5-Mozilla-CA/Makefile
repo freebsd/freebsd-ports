@@ -12,7 +12,4 @@ COMMENT=	Perl extension for Mozilla CA cert bundle in PEM format
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Mozilla::CA.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
