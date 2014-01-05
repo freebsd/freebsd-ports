@@ -24,7 +24,4 @@ TEST_DEPENDS=	p5-LWP-Online>0:${PORTSDIR}/www/p5-LWP-Online
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		WWW::LongURL.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

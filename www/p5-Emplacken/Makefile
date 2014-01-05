@@ -28,8 +28,4 @@ RUN_DEPENDS=	p5-Class-Load>=0:${PORTSDIR}/devel/p5-Class-Load \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Emplacken.3 \
-		Emplacken::Types.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
