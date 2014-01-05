@@ -9,12 +9,11 @@ MASTER_SITES=	http://arton.no-ip.info/data/lhalib/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	lhalib-${PORTVERSION}
 DIST_SUBDIR=	ruby
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby extension to unpack LHA-compressed files
 
-NO_STAGE=	yes
-USE_ZIP=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 RUBY_EXTCONF=	ext/extconf.rb
@@ -25,10 +24,8 @@ EXAMPLES=	test/test.rb
 RUBY_SHEBANG_FILES=	${EXAMPLES}
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_SCRIPT} ${EXAMPLES:S,^,${WRKSRC}/,} ${RUBY_MODEXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
+	${INSTALL_SCRIPT} ${EXAMPLES:S,^,${WRKSRC}/,} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
 
 .include <bsd.port.pre.mk>
 .if ${RUBY_VER} == 2.0
