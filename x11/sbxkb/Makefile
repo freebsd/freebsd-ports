@@ -16,7 +16,6 @@ CONFIGURE_ARGS=	--disable-silent-rules
 USE_GNOME=	gtk20
 USES=		pkgconfig
 
-NO_STAGE=	yes
 post-patch:
 # Remove debug flag (-g) from CFLAGS
 	@${REINPLACE_CMD} -e 's,-g$$,,' ${WRKSRC}/Makefile.in
