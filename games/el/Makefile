@@ -12,9 +12,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Eternal Lands is a free 3D MMORPG
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		cal3d.12:${PORTSDIR}/graphics/cal3d
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libvorbis.so.4:${PORTSDIR}/audio/libvorbis \
+		libcal3d.so.12:${PORTSDIR}/graphics/cal3d
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/el.ini:${PORTSDIR}/games/el-data
 
 PROJECTHOST=	bsdistfiles
@@ -23,6 +23,7 @@ USES=		gmake openal:al,alut
 USE_GNOME=	libxml2
 USE_SDL=	sdl net image
 USE_GL=		yes
+USES=		gmake
 
 ALL_TARGET=	el.bin
 MAKEFILE=	Makefile.bsd
@@ -31,8 +32,8 @@ PLIST=		${WRKDIR}/pkg-plist
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
+.if ${ARCH} == "sparc64" || ${ARCH} == "amd64"
+BROKEN=		Does not build on ${ARCH}
 .endif
 
 pre-install:
