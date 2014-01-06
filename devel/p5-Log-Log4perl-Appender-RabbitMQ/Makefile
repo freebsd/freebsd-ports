@@ -21,10 +21,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/l4p-tmpl:${PORTSDIR}/devel/p5-Log-Log4perl \
 		p5-Test-Output>0:${PORTSDIR}/devel/p5-Test-Output \
 		p5-Test-Net-RabbitMQ>0:${PORTSDIR}/devel/p5-Test-Net-RabbitMQ
 
-MAN3=		Log::Log4perl::Appender::RabbitMQ.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

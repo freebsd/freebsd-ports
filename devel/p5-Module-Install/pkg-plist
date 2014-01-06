@@ -38,6 +38,26 @@
 %%SITE_PERL%%/inc/Module/Install.pm
 %%SITE_PERL%%/inc/Module/Install/DSL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Install/.packlist
+%%PERL5_MAN3%%/inc::Module::Install.3.gz
+%%PERL5_MAN3%%/inc::Module::Install::DSL.3.gz
+%%PERL5_MAN3%%/Module::AutoInstall.3.gz
+%%PERL5_MAN3%%/Module::Install.3.gz
+%%PERL5_MAN3%%/Module::Install::Admin.3.gz
+%%PERL5_MAN3%%/Module::Install::API.3.gz
+%%PERL5_MAN3%%/Module::Install::Admin::Include.3.gz
+%%PERL5_MAN3%%/Module::Install::Admin::Manifest.3.gz
+%%PERL5_MAN3%%/Module::Install::Base.3.gz
+%%PERL5_MAN3%%/Module::Install::Bundle.3.gz
+%%PERL5_MAN3%%/Module::Install::Can.3.gz
+%%PERL5_MAN3%%/Module::Install::Compiler.3.gz
+%%PERL5_MAN3%%/Module::Install::Deprecated.3.gz
+%%PERL5_MAN3%%/Module::Install::External.3.gz
+%%PERL5_MAN3%%/Module::Install::FAQ.3.gz
+%%PERL5_MAN3%%/Module::Install::Makefile.3.gz
+%%PERL5_MAN3%%/Module::Install::PAR.3.gz
+%%PERL5_MAN3%%/Module::Install::Philosophy.3.gz
+%%PERL5_MAN3%%/Module::Install::Share.3.gz
+%%PERL5_MAN3%%/Module::Install::With.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Install
 @dirrm %%SITE_PERL%%/Module/Install/Admin
 @dirrm %%SITE_PERL%%/inc/Module/Install

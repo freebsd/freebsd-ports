@@ -13,6 +13,20 @@
 %%SITE_PERL%%/No/Worries/Syslog.pm
 %%SITE_PERL%%/No/Worries/Warn.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/No/Worries/.packlist
+%%PERL5_MAN3%%/No::Worries.3.gz
+%%PERL5_MAN3%%/No::Worries::DN.3.gz
+%%PERL5_MAN3%%/No::Worries::Date.3.gz
+%%PERL5_MAN3%%/No::Worries::Die.3.gz
+%%PERL5_MAN3%%/No::Worries::Dir.3.gz
+%%PERL5_MAN3%%/No::Worries::Export.3.gz
+%%PERL5_MAN3%%/No::Worries::File.3.gz
+%%PERL5_MAN3%%/No::Worries::Log.3.gz
+%%PERL5_MAN3%%/No::Worries::PidFile.3.gz
+%%PERL5_MAN3%%/No::Worries::Proc.3.gz
+%%PERL5_MAN3%%/No::Worries::Stat.3.gz
+%%PERL5_MAN3%%/No::Worries::String.3.gz
+%%PERL5_MAN3%%/No::Worries::Syslog.3.gz
+%%PERL5_MAN3%%/No::Worries::Warn.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/No/Worries
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/No
 @dirrmtry %%SITE_PERL%%/No/Worries

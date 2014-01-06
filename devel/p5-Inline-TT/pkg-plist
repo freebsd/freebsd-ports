@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/TT/.packlist
 %%SITE_PERL%%/Inline/TT.pm
+%%PERL5_MAN3%%/Inline::TT.3.gz
 @dirrmtry %%SITE_PERL%%/Inline
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline/TT
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Inline
