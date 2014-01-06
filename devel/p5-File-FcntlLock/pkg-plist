@@ -2,6 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/FcntlLock/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/FcntlLock/FcntlLock.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/FcntlLock/FcntlLock.bs
+%%PERL5_MAN3%%/File::FcntlLock.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/FcntlLock
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/File
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File

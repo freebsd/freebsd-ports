@@ -14,7 +14,4 @@ COMMENT=	Perl5 module which provides Multiplexed Fork Client
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Multiplex::CMD.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

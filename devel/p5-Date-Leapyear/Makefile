@@ -13,7 +13,4 @@ COMMENT=	Perl module to determine if a particular year a leap year
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Date::Leapyear.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

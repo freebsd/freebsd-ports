@@ -1,4 +1,5 @@
 %%SITE_PERL%%/orz.pm
 %%SITE_PERL%%/orz.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/orz/.packlist
+%%PERL5_MAN3%%/orz.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/orz
