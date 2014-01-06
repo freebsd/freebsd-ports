@@ -2,6 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Mknod/Mknod.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Mknod/Mknod.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Mknod/.packlist
+%%PERL5_MAN3%%/Unix::Mknod.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Mknod
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Unix

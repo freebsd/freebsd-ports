@@ -16,7 +16,4 @@ RUN_DEPENDS=	p5-Fuse>=0:${PORTSDIR}/sysutils/p5-Fuse
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Fuse::Simple.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

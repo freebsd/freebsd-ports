@@ -1,5 +1,6 @@
 %%SITE_PERL%%/File/Stat/ModeString.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Stat/ModeString/.packlist
+%%PERL5_MAN3%%/File::Stat::ModeString.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Stat/ModeString
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Stat
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File

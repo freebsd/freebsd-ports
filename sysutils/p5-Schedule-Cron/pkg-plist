@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Schedule/Cron/.packlist
 %%SITE_PERL%%/Schedule/Cron.pm
+%%PERL5_MAN3%%/Schedule::Cron.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Schedule/Cron
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Schedule
 @dirrmtry %%SITE_PERL%%/Schedule

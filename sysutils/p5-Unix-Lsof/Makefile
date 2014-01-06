@@ -18,6 +18,4 @@ RUN_DEPENDS=	p5-IPC-Run3>=0:${PORTSDIR}/devel/p5-IPC-Run3
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Unix::Lsof.3 Unix::Lsof::Result.3
-NO_STAGE=	yes
 .include <bsd.port.mk>

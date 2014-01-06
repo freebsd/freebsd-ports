@@ -7,5 +7,4 @@ the use of open filehandles as arguments.
 The module should work with all flavors of Unix, including Mac OS X 
 (Darwin, Tiger, etc), and Cygwin.
 
-Author: Ian Guthrie <IGuthrie@aol.com>
 WWW: http://search.cpan.org/dist/Filesys-Df/
