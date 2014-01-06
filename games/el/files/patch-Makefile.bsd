@@ -1,5 +1,5 @@
---- Makefile.bsd.orig	2011-10-20 11:30:54.000000000 -0500
-+++ Makefile.bsd	2011-10-20 11:40:50.000000000 -0500
+--- Makefile.bsd.orig	2014-01-06 15:25:15.000000000 +0100
++++ Makefile.bsd	2014-01-06 15:49:31.000000000 +0100
 @@ -2,17 +2,19 @@
  
  -include make.conf
@@ -12,21 +12,21 @@
 -_CFLAGS=$(PLATFORM) -O2 -fomit-frame-pointer -ffast-math -pipe $(OPTIONS) $(shell sdl-config --cflags) $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
 -CXXFLAGS=$(PLATFORM) $(CXXWARN) -O0 -ggdb -pipe $(OPTIONS) $(shell sdl-config --cflags) $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
 -_CXXFLAGS=$(PLATFORM) -O3 -fomit-frame-pointer -ffast-math -pipe $(OPTIONS) $(shell sdl-config --cflags) $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
-+CFLAGS+=$(CWARN) $(OPTIONS) `$(SDL_CONFIG) --cflags` $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
-+_CFLAGS=-fomit-frame-pointer -ffast-math -pipe $(OPTIONS) `$(SDL_CONFIG) --cflags` $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
-+CXXFLAGS+=$(CXXWARN) $(OPTIONS) `$(SDL_CONFIG) --cflags` $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
-+_CXXFLAGS=-fomit-frame-pointer -ffast-math $(OPTIONS) `$(SDL_CONFIG) --cflags` $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
++CFLAGS+=$(PLATFORM) $(CWARN) $(OPTIONS) $(shell sdl-config --cflags) $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
++_CFLAGS=-fomit-frame-pointer -ffast-math -pipe $(OPTIONS) $(shell sdl-config --cflags) $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
++CXXFLAGS+=$(CXXWARN) $(OPTIONS) $(shell sdl-config --cflags) $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
++_CXXFLAGS=-fomit-frame-pointer -ffast-math $(OPTIONS) $(shell sdl-config --cflags) $(shell xml2-config --cflags) -fno-strict-aliasing $(EXTRA_INCLUDES)
  
  PNG_SCREENSHOT_LIBS = -lpng
 -LDFLAGS=$(shell sdl-config --libs) $(shell xml2-config --libs) -lSDL_net -lSDL_image -lopenal $(XDIR) -lGL -lGLU -lcal3d -lm $(EXTRA_LIBS) -lz -lpng -lvorbis -lvorbisfile \
-+LDFLAGS+=`$(SDL_CONFIG) --libs` $(shell xml2-config --libs) -lSDL_net -lSDL_image -lopenal $(XDIR) -lGL -lGLU -lcal3d -lm $(EXTRA_LIBS) -lz -lpng -lvorbis -lvorbisfile \
++LDFLAGS+=$(shell sdl-config --libs) $(shell xml2-config --libs) -lSDL_net -lSDL_image -lopenal $(XDIR) -lGL -lGLU -lcal3d -lm $(EXTRA_LIBS) -lz -lpng -lvorbis -lvorbisfile \
  	$(foreach FEATURE, $(FEATURES), $($(FEATURE)_LIBS))
 -_LDFLAGS=$(XDIR) -lGL -lpthread -lstdc++
 +_LDFLAGS=$(XDIR) -lGL -pthread -lstdc++
  
  # This works on Ubuntu 8.04 (LTS) at least
  # Install these packages in addition to those required for a standard build
-@@ -87,16 +89,16 @@
+@@ -86,16 +88,16 @@
  DEP_FILES=$(foreach OBJ, $(COBJS), .deps/$(OBJ).P) $(foreach OBJ, $(CXXOBJS), .deps/$(OBJ).P)
  #(shell echo $OBJ |sed s/\.o/\.P/))
  

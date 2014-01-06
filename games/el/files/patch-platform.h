@@ -1,5 +1,5 @@
---- platform.h	2009-01-20 09:51:39.000000000 -0500
-+++ platform.h	2009-01-20 09:51:58.000000000 -0500
+--- platform.h.orig
++++ platform.h
 @@ -11,7 +11,7 @@
  // http://predef.sourceforge.net/prearch.html , these ought to work on
  // gcc, Sun Studio and Visual Studio.
