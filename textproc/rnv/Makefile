@@ -9,16 +9,14 @@ MASTER_SITES=	SF/${PORTNAME}/Sources/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Relax NG Compact Syntax validator
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-expat="${LOCALBASE}"
 
-MAN1=		rnv.1
-PLIST_FILES=	bin/arx bin/rnv bin/rvp bin/xsdck
+PLIST_FILES=	bin/arx bin/rnv bin/rvp bin/xsdck man/man1/rnv.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
