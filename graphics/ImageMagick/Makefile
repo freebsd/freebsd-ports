@@ -30,7 +30,7 @@ MASTER_SITES=	http://www.imagemagick.org/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image processing tools
 
-LICENSE_NAME=	APACHE20
+LICENSE=	APACHE20
 
 USES=		pkgconfig:both pathfix perl5
 USE_XZ=		yes
