@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
-COMMENT=	A Moose role for setting attributes from a simple configfile
+COMMENT=	Moose role for setting attributes from a simple configfile
 
 RUN_DEPENDS=	p5-Moose>=0.35:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-ConfigFromFile>=0.02:${PORTSDIR}/devel/p5-MooseX-ConfigFromFile \
@@ -18,9 +18,6 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MooseX::SimpleConfig.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/auto_install/d' -e '/Test::More/d' \
 		${WRKSRC}/Makefile.PL

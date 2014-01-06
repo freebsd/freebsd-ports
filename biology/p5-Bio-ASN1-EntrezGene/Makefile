@@ -16,10 +16,4 @@ WRKSRC=		${WRKDIR}/Bio-ASN1-EntrezGene-1.09
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Bio::ASN1::EntrezGene.3 \
-		Bio::ASN1::EntrezGene::Indexer.3 \
-		Bio::ASN1::Sequence.3 \
-		Bio::ASN1::Sequence::Indexer.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

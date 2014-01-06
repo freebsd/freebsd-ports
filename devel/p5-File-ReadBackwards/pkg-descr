@@ -9,5 +9,3 @@ OS. But you can set the input record separator string on a per file
 basis.
 
 WWW: http://search.cpan.org/dist/File-ReadBackwards/
-
--Anton
