@@ -1,5 +1,7 @@
 bin/arandr
 bin/unxrandr
+man/man1/arandr.1.gz
+man/man1/unxrandr.1.gz
 %%PYTHON_SITELIBDIR%%/screenlayout/__init__.py
 %%PYTHON_SITELIBDIR%%/screenlayout/__init__.pyc
 %%PYTHON_SITELIBDIR%%/screenlayout/__init__.pyo
