@@ -12,7 +12,4 @@ COMMENT=	Perl extension to set repository URL from svn/svk/Git checkout
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Module::Install::Repository.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

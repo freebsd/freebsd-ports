@@ -16,7 +16,4 @@ USES=		perl5
 USE_PERL5=	configure
 MAKE_JOBS_UNSAFE=	yes
 
-MAN3=	Data::MessagePack::Stream.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

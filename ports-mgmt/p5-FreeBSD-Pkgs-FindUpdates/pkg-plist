@@ -1,6 +1,7 @@
 bin/pkg_findupdates
 %%SITE_PERL%%/FreeBSD/Pkgs/FindUpdates.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Pkgs/FindUpdates/.packlist
+%%PERL5_MAN3%%/FreeBSD::Pkgs::FindUpdates.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Pkgs/FindUpdates
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Pkgs
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD

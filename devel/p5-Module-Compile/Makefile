@@ -16,11 +16,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Module::Compile.3 \
-		Module::Compile::Opt.3 \
-		Module::Install::Admin::PMC.3 \
-		Module::Install::PMC.3\
-		Module::Optimize.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

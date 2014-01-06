@@ -13,7 +13,4 @@ COMMENT=	Make a hash out of the index file for the ports tree
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		FreeBSD::Ports::INDEXhash.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

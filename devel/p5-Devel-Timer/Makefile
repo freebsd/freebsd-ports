@@ -14,7 +14,4 @@ COMMENT=	Track and report execution time for parts of code
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Devel::Timer.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

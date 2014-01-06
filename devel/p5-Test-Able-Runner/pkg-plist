@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Test/Able/Runner.pm
 %%SITE_PERL%%/Test/Able/Runner/Role/Meta/Class.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Able/Runner/.packlist
+%%PERL5_MAN3%%/Test::Able::Runner.3.gz
+%%PERL5_MAN3%%/Test::Able::Runner::Role::Meta::Class.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Able/Runner
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Able
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
