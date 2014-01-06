@@ -51,6 +51,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5aaa257e-772d-11e3-a65a-3c970e169bc2">
+    <topic>openssl -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>1.0.1_9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSSL development team reports:</p>
+	<blockquote cite="http://www.openssl.org/news/openssl-1.0.1-notes.html">
+	  <p>Major changes between OpenSSL 1.0.1e and OpenSSL 1.0.1f [6 Jan 2014]:</p>
+	  <ul>
+	    <li>Fix for TLS record tampering bug [CVE-2013-4353]</li>
+	    <li>Fix for TLS version checking bug [CVE-2013-6449]</li>
+	    <li>Fix for DTLS retransmission bug [CVE-2013-6450]</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4353</cvename>
+      <cvename>CVE-2013-6449</cvename>
+      <cvename>CVE-2013-6450</cvename>
+      <url>http://www.openssl.org/news/openssl-1.0.1-notes.html</url>
+    </references>
+    <dates>
+      <discovery>2014-01-06</discovery>
+      <entry>2014-01-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3e33a0bb-6b2f-11e3-b042-20cf30e32f6d">
     <topic>OpenX -- SQL injection vulnerability</topic>
     <affects>
