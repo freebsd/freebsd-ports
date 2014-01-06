@@ -7,8 +7,8 @@ CATEGORIES=	games
 MASTER_SITES=	http://el.beplacid.net/downloads/:data \
 		http://www.eternal-lands.com/:data \
 		http://el.rauchs-home.de/client/:data \
-		http://www.eternallands.co.uk/:sound \
-		http://www.eternallands.co.uk/:music
+		http://www.gm.fh-koeln.de/~linke/EL-Downloads/:sound \
+		http://www.gm.fh-koeln.de/~linke/EL-Downloads/:music
 PKGNAMEPREFIX=	el-
 DISTFILES=	${EL_DATA}:data
 DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
@@ -16,13 +16,11 @@ DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Eternal Lands data, sound, and music files
 
-DEPRECATED=	Broken for more than 6 month
-EXPIRATION_DATE=	2013-12-22
-
 USE_ZIP=	yes
 NO_PACKAGE=	Package will be 140MB, set FORCE_PACKAGE if you really want it
 NO_BUILD=	yes
-USE_DOS2UNIX=	*.ini *.txt
+USES=		dos2unix
+DOS2UNIX_GLOB=	*.ini *.txt
 
 DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX:S/-//}
 PLIST=		${WRKDIR}/pkg-plist
@@ -38,13 +36,12 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MELSOUND}
-BROKEN=		EL_sound_191.zip is unfetchable
 DISTFILES+=	EL_sound_191${EXTRACT_SUFX}:sound
 HAVE_ESOUND=	yes
 .endif
 
 .if ${PORT_OPTIONS:MELMUSIC}
-DISTFILES+=	music_full${EXTRACT_SUFX}:music
+DISTFILES+=	EL_music_full${EXTRACT_SUFX}:music
 HAVE_EMUSIC=	yes
 .endif
 
@@ -56,7 +53,7 @@ do-extract:
 .endif
 .if ${PORT_OPTIONS:MELMUSIC}
 	@${MKDIR} ${WRKSRC}/music
-	@${UNZIP_CMD} -q ${_DISTDIR}/music_full${EXTRACT_SUFX} -d ${WRKSRC}/music
+	@${UNZIP_CMD} -q ${_DISTDIR}/EL_music_full${EXTRACT_SUFX} -d ${WRKSRC}/music
 .endif
 
 post-extract:
