@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Tie/Simple/Hash.pm
 %%SITE_PERL%%/Tie/Simple/Scalar.pm
 %%SITE_PERL%%/Tie/Simple/Util.pm
+%%PERL5_MAN3%%/Tie::Simple.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie
 @dirrmtry %%SITE_PERL%%/Tie/Simple
