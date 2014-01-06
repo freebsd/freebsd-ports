@@ -9,9 +9,9 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kbyanc
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A simple epplet for launching arbitrary programs
+COMMENT=	Simple epplet for launching arbitrary programs
 
-LIB_DEPENDS=	epplet.3:${PORTSDIR}/x11-wm/epplets
+LIB_DEPENDS=	libepplet.so:${PORTSDIR}/x11-wm/epplets
 
 PLIST_FILES=	bin/E-Run.epplet
 
@@ -22,12 +22,11 @@ USE_EFL=	imlib2
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib -lepplet -lImlib2 -lGL ${PTHREAD_LIBS}
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} ${CPPFLAGS} -o ${PORTNAME}.epplet \
 		${PORTNAME}.c ${LDFLAGS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}.epplet ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}.epplet ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
