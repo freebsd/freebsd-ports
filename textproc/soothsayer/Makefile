@@ -4,13 +4,16 @@
 PORTNAME=	soothsayer
 PORTVERSION=	0.6.3
 CATEGORIES=	textproc
-MASTER_SITES=	# none known, please fix
+MASTER_SITES=	SF/presage/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intelligent predictive text entry platform
 
+LICENSE=	GPLv2 # (or later)
+
 BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
 
+USES=		pkgconfig
 USE_SQLITE=	3
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	ac_cv_path_CPPUNIT_CONFIG=no \
@@ -20,24 +23,15 @@ CONFIGURE_ENV=	ac_cv_path_CPPUNIT_CONFIG=no \
 		ac_cv_prog_HAVE_DOXYGEN=no
 CONFIGURE_ARGS=	--disable-python-binding
 USE_LDCONFIG=	yes
-USES=		pkgconfig
-
-MAN1=		soothsayer_demo.1 soothsayer_demo_text.1 \
-		soothsayer_simulator.1 text2ngram.1
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PORT_VERBS=	${PORTNAME} text2ngram
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|\$$\^|$${.ALLSRC}| ; \
 		 s|lib/soothsayer|soothsayer|g' ${WRKSRC}/resources/Makefile.in
 	@${REINPLACE_CMD} -e 's|lib/soothsayer|soothsayer|' \
 		${WRKSRC}/resources/profiles/Makefile.in
-	@${REINPLACE_CMD} -e '1s|/.*|/bin/sh|'\
-		${WRKSRC}/resources/profiles/generate_soothsayer_config.sh
 	@${REINPLACE_CMD} -E -e "s|(LIBS=.*)-lsqlite3(.*)|\1\`pkg-config --static --libs sqlite3\`\2|" \
 		-e "s|(.*SQLITE_LIBS=.*)-lsqlite3(.*)|\1\`pkg-config --static --libs sqlite3\`\2|" \
 		${WRKSRC}/configure
