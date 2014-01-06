@@ -17,11 +17,10 @@ NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 
-NO_STAGE=	yes
 .SILENT:
 
 do-install:
-	${MKDIR} ${PREFIX}/share/themes
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${PREFIX}/share/themes)
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/themes
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/themes)
 
 .include <bsd.port.mk>
