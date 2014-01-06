@@ -2,7 +2,7 @@
 
 PORTNAME?=	bind99
 PORTVERSION=	9.9.4
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -105,7 +105,7 @@ DLZ_FILESYSTEM_CONFIGURE_ON=	--with-dlz-filesystem=yes
 
 DLZ_STUB_CONFIGURE_ON=	--with-dlz-stub=yes
 
-GSSAPI_CONFIGURE_ENABLE=	gssapi
+GSSAPI_CONFIGURE_WITH=	gssapi
 
 .include <bsd.port.options.mk>
 
