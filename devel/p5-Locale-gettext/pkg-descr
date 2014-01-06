@@ -1,3 +1,5 @@
 This module permits from perl to the gettext() family of functions
 for retrieving message strings from databases constructed to
 internationalize software.
+
+WWW: http://search.cpan.org/dist/gettext/

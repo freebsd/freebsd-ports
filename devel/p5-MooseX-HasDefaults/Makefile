@@ -16,7 +16,5 @@ BUILD_DEPENDS=	p5-Moose>2:${PORTSDIR}/devel/p5-Moose \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MooseX::HasDefaults.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

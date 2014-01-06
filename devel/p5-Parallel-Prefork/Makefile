@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:KAZUHO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
-COMMENT=	A simple prefork server framework
+COMMENT=	Simple prefork server framework
 
 BUILD_DEPENDS=	p5-Proc-Wait3>=0.03:${PORTSDIR}/devel/p5-Proc-Wait3 \
 		p5-Class-Accessor-Lite>=0.04:${PORTSDIR}/devel/p5-Class-Accessor-Lite \
@@ -23,7 +23,4 @@ TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Parallel::Prefork.3 Parallel::Prefork::SpareWorkers.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
