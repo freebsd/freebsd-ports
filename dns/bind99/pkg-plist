@@ -3,8 +3,6 @@ bin/host
 bin/isc-config.sh
 bin/nslookup
 bin/nsupdate
-%%LINKS%%etc/named.conf
-%%LINKS%%etc/rndc.key
 include/bind9/check.h
 include/bind9/getaddresses.h
 include/bind9/version.h
@@ -337,10 +335,6 @@ sbin/named-journalprint
 sbin/nsec3hash
 sbin/rndc
 sbin/rndc-confgen
-%%LINKS%%@unexec rm -f /var/named/%D/etc/named.conf
-%%LINKS%%@unexec rm -f /var/named/%D/etc/rndc.key
-%%LINKS%%@unexec rm -rf /var/named/%D
-%%LINKS%%@unexec rmdir /var/named/usr 2>/dev/null || true
 @unexec rm -f %%BIND_DESTETC%%/rndc.conf.sample
 %%NOBASE%%etc/rc.d/named
 %%NOBASE%%@unexec if cmp -s %%BIND_DESTETC%%/named.conf.sample %%BIND_DESTETC%%/named.conf; then rm -f %%BIND_DESTETC%%/named.conf; fi

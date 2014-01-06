@@ -18,4 +18,9 @@ for DIR in ${PKG_PREFIX}/etc /var/named${PKG_PREFIX}/etc; do
 	done
 done
 
+if [ "$2" = 'POST-DEINSTALL' ]
+then
+	cd /var/named && /bin/rmdir -p ${PKG_PREFIX}/etc > /dev/null  2>&1 || :
+fi
+
 exit 0
