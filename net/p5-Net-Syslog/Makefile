@@ -13,7 +13,4 @@ COMMENT=	Perl extension for sending syslog messages to a remote syslogd
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Syslog.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

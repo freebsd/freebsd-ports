@@ -25,7 +25,6 @@ BUILD_DEPENDS=	p5-Any-Moose>=0.04:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-MockModule>=0:${PORTSDIR}/devel/p5-Test-MockModule \
 		p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject \
@@ -34,13 +33,4 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Google::DataAPI.3 \
-		Net::Google::DataAPI::Auth::ClientLogin::Multiple.3 \
-		Net::Google::DataAPI::Auth::OAuth.3 \
-		Net::Google::DataAPI::Auth::OAuth2.3 \
-		Net::Google::DataAPI::Role::Entry.3 \
-		Net::Google::DataAPI::Role::HasContent.3 \
-		Net::Google::DataAPI::Role::Service.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

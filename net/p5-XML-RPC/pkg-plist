@@ -1,4 +1,5 @@
 %%SITE_PERL%%/XML/RPC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML-RPC/.packlist
+%%PERL5_MAN3%%/XML::RPC.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML-RPC
 @dirrmtry %%SITE_PERL%%/XML

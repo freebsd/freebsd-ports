@@ -2,6 +2,8 @@
 %%SITE_PERL%%/Net/Rendezvous/Publish/Backend/Null.pm
 %%SITE_PERL%%/Net/Rendezvous/Publish/Service.pm
 %%SITE_PERL%%/Net/Rendezvous/Publish.pm
+%%PERL5_MAN3%%/Net::Rendezvous::Publish.3.gz
+%%PERL5_MAN3%%/Net::Rendezvous::Publish::Service.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Rendezvous/Publish
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Rendezvous
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

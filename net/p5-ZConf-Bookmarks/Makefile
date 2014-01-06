@@ -9,14 +9,11 @@ MASTER_SITE_SUBDIR=	CPAN:VVELOX
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	vvelox@vvelox.net
-COMMENT=	A system for bookmarking URIs using ZConf
+COMMENT=	System for bookmarking URIs using ZConf
 
 RUN_DEPENDS=	p5-ZConf>=0:${PORTSDIR}/net/p5-ZConf
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		ZConf::Bookmarks.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

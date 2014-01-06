@@ -18,9 +18,4 @@ RUN_DEPENDS=	p5-DateTime-Format-ISO8601>=0.06:${PORTSDIR}/devel/p5-DateTime-Form
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::LimeLight::Purge.3 \
-		Net::LimeLight::Purge::Request.3 \
-		Net::LimeLight::Purge::StatusResponse.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

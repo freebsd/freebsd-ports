@@ -1,4 +1,4 @@
 Net::FTP::AutoReconnect is a Perl5 module providing a FTP client class
 with automatic reconnect on failure.
 
-WWW:	http://search.cpan.org/dist/Net-FTP-AutoReconnect/
+WWW: http://search.cpan.org/dist/Net-FTP-AutoReconnect/
