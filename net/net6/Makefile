@@ -15,11 +15,10 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		gnutls.26:${PORTSDIR}/security/gnutls
 
-USES=	pathfix pkgconfig
+USES=		pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
