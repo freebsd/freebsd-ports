@@ -8,7 +8,9 @@ CATEGORIES=	x11
 MASTER_SITES=	http://www.bsd-geek.de/FreeBSD/distfiles/
 
 MAINTAINER=	lme@FreeBSD.org
-COMMENT=	A Run box for Blackbox
+COMMENT=	Run box for Blackbox
+
+OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/bbrun
 
@@ -20,12 +22,9 @@ USE_CSTD=	gnu89
 PORTDOCS=	README
 PLIST_FILES=	bin/bbrun
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bbrun ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/bbrun ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
