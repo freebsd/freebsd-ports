@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ftwin
-PORTVERSION=	0.8.5
-PORTREVISION=	11
+PORTVERSION=	0.8.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.etoilebsd.net/ftwin/ \
 		http://download.meroware.org/ftwin/
@@ -10,24 +9,33 @@ MASTER_SITES=	http://files.etoilebsd.net/ftwin/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Useful tool to find duplicate files
 
-LIB_DEPENDS=	libpuzzle.so:${PORTSDIR}/graphics/libpuzzle \
-		libapr-1.so:${PORTSDIR}/devel/apr1 \
-		libpcre.so:${PORTSDIR}/devel/pcre
+LICENSE=	APACHE20
+
+LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1 \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libpuzzle.so:${PORTSDIR}/graphics/libpuzzle
 
 OPTIONS_DEFINE=	DOCS
 
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf aclocal automake autoheader
+USE_AUTOTOOLS=	aclocal autoheader automake autoconf
 AUTOMAKE_ARGS=	--add-missing
-CONFIGURE_ARGS+=	--with-puzzle=${LOCALBASE}
-PLIST_FILES=	bin/ftwin \
-		man/man8/ftwin.8.gz
 
-PORTDOCS=	AUTHORS EXAMPLES TODO CHANGES KNOWN_BUGS VERSION LICENSE README
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+PORTDOCS=	AUTHORS EXAMPLES TODO CHANGES KNOWN_BUGS VERSION README
+PLIST_FILES=	bin/ftwin man/man8/ftwin.8.gz
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|-Werror -g -ggdb|| ; \
+		 s|-O0||' ${WRKSRC}/Makefile.am
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+.for i in ${PORTDOCS}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
+.endfor
 
 .include <bsd.port.mk>
