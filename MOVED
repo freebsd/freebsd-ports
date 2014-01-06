@@ -5359,3 +5359,4 @@ www/codeigniter17|www/codeigniter|2014-01-04|Unsupported upstream, consider usin
 net-im/xfce4-messenger-plugin||2014-01-04|Has expired: Deprecated and no update for 7 years
 multimedia/xfce4-media|multimedia/xfce4-parole|2014-01-04|Has expired: Upstream development dead, use multimedia/xfce4-parole instead
 devel/py-gevent-zeromq|devel/py-pyzmq|2014-01-06|Has expired: devel/py-pyzmq has gevent support built in
+net/erlyvideo||2014-01-06|Has expired: Development of erlyvideo is abandoned upstream. Use flussonic instead
