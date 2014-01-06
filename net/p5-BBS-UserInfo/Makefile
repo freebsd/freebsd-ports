@@ -14,7 +14,4 @@ COMMENT=	Base class of BBS::UserInfo::XXX
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		BBS::UserInfo.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

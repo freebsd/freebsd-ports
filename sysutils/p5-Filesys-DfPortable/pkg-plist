@@ -2,6 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/DfPortable/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/DfPortable/DfPortable.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/DfPortable/DfPortable.so
+%%PERL5_MAN3%%/Filesys::DfPortable.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/DfPortable
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Filesys

@@ -6,5 +6,4 @@ The results from gethostbyname are exported as gethostinfo
 and asciihostinfo as a convenience since they are available. 
 Similarly, the 'C' library functions inet_ntoa and inet_aton are exported.
 
-Author:	Michael Robinton <michael@bizsystems.com>
-WWW:	http://search.cpan.org/dist/Sys-Hostname-FQDN/
+WWW: http://search.cpan.org/dist/Sys-Hostname-FQDN/

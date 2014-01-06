@@ -8,12 +8,9 @@ MASTER_SITES=		CPAN
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		tj@FreeBSD.org
-COMMENT=		A simple Object Orientated Logger
+COMMENT=		Simple Object Orientated Logger
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=			File::Log.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

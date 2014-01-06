@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Net/Rsh.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Rsh/.packlist
+%%PERL5_MAN3%%/Net::Rsh.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Rsh
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/Net

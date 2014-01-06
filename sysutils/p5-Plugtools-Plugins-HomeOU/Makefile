@@ -16,8 +16,4 @@ RUN_DEPENDS=	p5-Plugtools>=0:${PORTSDIR}/sysutils/p5-Plugtools
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Plugtools::Plugins::HomeOU.3 \
-		Plugtools::Plugins::HomeOUremove.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
