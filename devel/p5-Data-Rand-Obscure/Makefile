@@ -20,8 +20,4 @@ RUN_DEPENDS=	p5-Carp-Clan>=6.04:${PORTSDIR}/devel/p5-Carp-Clan \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Data::Rand::Obscure.3 \
-		Data::Rand::Obscure::Generator.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,6 +1,8 @@
 %%SITE_PERL%%/constant/abs.pm
 %%SITE_PERL%%/constant/def.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/constant/def/.packlist
+%%PERL5_MAN3%%/constant::def.3.gz
+%%PERL5_MAN3%%/constant::abs.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/constant/def
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/constant
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%

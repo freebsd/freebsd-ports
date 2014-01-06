@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Test/POE/Client/TCP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/POE/Client/TCP/.packlist
+%%PERL5_MAN3%%/Test::POE::Client::TCP.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/POE/Client/TCP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/POE/Client
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/POE

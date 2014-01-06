@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Calendar/Discordian/.packlist
 %%SITE_PERL%%/DateTime/Calendar/Discordian.pm
+%%PERL5_MAN3%%/DateTime::Calendar::Discordian.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Calendar/Discordian
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Calendar
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime

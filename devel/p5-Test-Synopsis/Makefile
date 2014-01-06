@@ -17,7 +17,5 @@ RUN_DEPENDS=	p5-Filter>=1.35:${PORTSDIR}/devel/p5-Filter \
 
 USES=		perl5
 USE_PERL5=	configure
-MAN3=		Test::Synopsis.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

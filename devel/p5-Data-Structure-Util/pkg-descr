@@ -10,3 +10,5 @@ It can remove the blessing on any reference. It can collect all
 the objects or detect if there is a circular reference.
 
 It is written in C for decent speed.
+
+WWW: http://search.cpan.org/dist/Data-Structure-Util/
