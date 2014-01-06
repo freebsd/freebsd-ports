@@ -3,7 +3,7 @@
 
 PORTNAME=	asciidoc
 PORTVERSION=	8.6.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	python2:${PORTSDIR}/lang/python2
 
 GNU_CONFIGURE=	yes
 USE_PYTHON=	-2.7
-USES=		gmake
+USES=		gmake shebangfix
 
 CONF_FILES=	asciidoc.conf docbook45.conf filters/code/code-filter.conf \
 		filters/graphviz/graphviz-filter.conf \
@@ -30,14 +30,25 @@ CONF_FILES=	asciidoc.conf docbook45.conf filters/code/code-filter.conf \
 		lang-ru.conf lang-uk.conf latex.conf slidy.conf text.conf \
 		xhtml11.conf xhtml11-quirks.conf
 
+SHEBANG_FILES=	a2x.py \
+		asciidoc.py \
+		asciidocapi.py \
+		filters/latex/latex2png.py \
+		filters/graphviz/graphviz2png.py \
+		filters/music/music2png.py \
+		filters/code/code-filter.py
+python_OLD_CMD=	${SETENV} python
+python_CMD=	${PYTHON_CMD}
+
 post-patch:
 	@${REINPLACE_CMD} -e '/^INSTALL_PROG/ s|INSTALL_PROGRAM|INSTALL_SCRIPT|; s|\.conf|&.sample|' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e '1 s|${SETENV} python|&2|' ${WRKSRC}/a2x.py ${WRKSRC}/asciidoc.py
 .for conf_file in ${CONF_FILES}
 	@cd ${WRKSRC}/ && ${MV} ${conf_file} ${conf_file}.sample
 .endfor
 
 post-install:
+	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/
+	${INSTALL_DATA} ${WRKSRC}/asciidocapi.py ${STAGEDIR}${PYTHON_SITELIBDIR}/
 .for conf_file in ${CONF_FILES}
 	@if [ ! -f ${ETCDIR}/${conf_file} ]; then \
 		${CP} -p ${STAGEDIR}${ETCDIR}/${conf_file}.sample ${STAGEDIR}${ETCDIR}/${conf_file}; \
