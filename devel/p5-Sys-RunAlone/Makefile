@@ -14,7 +14,4 @@ COMMENT=	Make sure only one invocation of a script is active at a time
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Sys::RunAlone.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

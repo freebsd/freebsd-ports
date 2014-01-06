@@ -14,9 +14,6 @@ COMMENT=	Establish an ISA relationship with base classes at compile time
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		parent.3
-
-NO_STAGE=	yes
 regression-test:
 	cd ${WRKSRC} && ${MAKE} test
 

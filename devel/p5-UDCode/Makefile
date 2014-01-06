@@ -14,7 +14,4 @@ COMMENT=	Does a set of code words form a uniquely decodable code?
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	UDCode.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
