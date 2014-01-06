@@ -427,10 +427,14 @@ libdata/pkgconfig/MagickWand.pc
 libdata/pkgconfig/Wand-6.%%QBIT%%.pc
 libdata/pkgconfig/Wand.pc
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Image/Magick.pm
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/Image/Magick/%%QBIT%%.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/.packlist
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/autosplit.ix
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/%%QBIT%%/%%QBIT%%.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/%%QBIT%%/%%QBIT%%.so
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/%%QBIT%%/autosplit.ix
 %%DATADIR%%/english.xml
 %%DATADIR%%/francais.xml
 %%DATADIR%%/locale.xml
@@ -1449,8 +1453,10 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/%%QBIT%%
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick
 %%WITH_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
+%%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Image/Magick
 %%WITH_PERL%%@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Image
 @dirrmtry lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters
 @dirrmtry lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders
