@@ -14,19 +14,20 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/epinfo \
 		bin/photopc \
 		include/eph_io.h \
-		lib/libeph_io.a
-
-MAN1=		epinfo.1 photopc.1
+		lib/libeph_io.a \
+		man/man1/epinfo.1.gz \
+		man/man1/photopc.1.gz
 
 PORTDOCS=	README protocol.htm usage.htm
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|CFLAGS = @CFLAGS@|CFLAGS = @CFLAGS@ -w|' \
+		${WRKSRC}/Makefile.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
