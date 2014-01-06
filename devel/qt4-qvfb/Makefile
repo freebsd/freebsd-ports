@@ -3,14 +3,14 @@
 
 PORTNAME=	qvfb
 DISTVERSION=	${QT4_VERSION}
-CATEGORIES?=	devel
+PORTREVISION=	1
+CATEGORIES=	devel
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt virtual framebuffer utility
+COMMENT=	Qt 4 virtual framebuffer utility
 
 USE_QT4=	qmake_build moc_build rcc_build uic_build corelib gui opengl
-QT_NONSTANDARD=	yes
 QT_DIST=	yes
 USE_XORG=	xtst
 
@@ -21,9 +21,10 @@ CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib:$$LD_LIBRARY_PATH \
 		PATH=${WRKSRC}/bin:$$PATH
 
-DESKTOP_ENTRIES="Qt Virtual Framebuffer" "${COMMENT}" \
+DESKTOP_ENTRIES="Qt 4 Virtual Framebuffer" "" \
 		"${PREFIX}/share/pixmaps/qvfb-qt4.png" \
-		"${PREFIX}/bin/qvfb-qt4" "Development;Qt;" true
+		"${PREFIX}/${QT_BINDIR_REL}/qvfb${_QT_BINSUFX}" \
+		"Development;Qt;" true
 
 DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
 		src/activeqt src/dbus src/multimedia src/network src/opengl \
@@ -42,19 +43,17 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 CONFIGURE_ARGS+=	-I../../include/Qt -I../../include
 
-EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
-
 pre-configure:
 	${MKDIR} ${WRKSRC}/mkspecs
-	${REINPLACE_CMD} -e 's|^TARGET.*|TARGET=qvfb-qt4|g' \
+	${REINPLACE_CMD} -e 's|^TARGET.*|TARGET=qvfb${_QT_BINSUFX}|g' \
 		${BUILD_WRKSRC}/qvfb.pro
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
-	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/bin/uic
-	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
+	${LN} -sf ${QMAKE} ${WRKSRC}/bin/qmake
+	${LN} -sf ${MOC} ${WRKSRC}/bin/moc
+	${LN} -sf ${UIC} ${WRKSRC}/bin/uic
+	${LN} -sf ${RCC} ${WRKSRC}/bin/rcc
 
 post-install:
-	${INSTALL_DATA} ${BUILD_WRKSRC}/images/logo.png \
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/images/logo.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/qvfb-qt4.png
 
 .include <bsd.port.mk>

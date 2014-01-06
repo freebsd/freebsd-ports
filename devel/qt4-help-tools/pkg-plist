@@ -1,6 +1,6 @@
-bin/qhelpgenerator
-%%DEBUG%%bin/qhelpgenerator.debug
-bin/qcollectiongenerator
-%%DEBUG%%bin/qcollectiongenerator.debug
-bin/qhelpconverter
-%%DEBUG%%bin/qhelpconverter.debug
+%%QT_BINDIR%%/qhelpgenerator
+%%DEBUG%%%%QT_BINDIR%%/qhelpgenerator.debug
+%%QT_BINDIR%%/qcollectiongenerator
+%%DEBUG%%%%QT_BINDIR%%/qcollectiongenerator.debug
+%%QT_BINDIR%%/qhelpconverter
+%%DEBUG%%%%QT_BINDIR%%/qhelpconverter.debug

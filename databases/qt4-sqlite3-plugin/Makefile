@@ -6,16 +6,13 @@ DISTVERSION=	${QT4_VERSION}
 CATEGORIES=	databases
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt SQLite 3.x database plugin
+COMMENT=	Qt SQLite 3 database plugin
 
 DB=		sqlite
-DISTINFO_FILE=	${PORTSDIR}/devel/qt4/distinfo
-
-LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 USE_QT4=	moc_build sql
-QT_NONSTANDARD=	yes
 QT_DIST=	yes
+USE_SQLITE=	3
 
 DRIVER=		src/sql/drivers/${DB}
 PLUGIN=		src/plugins/sqldrivers/${DB}
@@ -25,11 +22,11 @@ EXTRACT_AFTER_ARGS?=	${DISTNAME}/${DRIVER} ${DISTNAME}/${PLUGIN} \
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ENV+=	DB="${DB}" DRIVER="${DRIVER}" MOC="${MOC}" \
 		PLUGIN="${PLUGIN}" \
-		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		QT_INCDIR="${QT_INCDIR}" \
 		QT_LIBDIR="${QT_LIBDIR}"
 PLIST_SUB=	DB=${DB}
+
+EXTRA_PATCHES=	# empty
 
 SQL_PLUGINDIR=	${PREFIX}/${QT_PLUGINDIR_REL}/sqldrivers
 

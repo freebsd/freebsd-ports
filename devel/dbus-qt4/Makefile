@@ -3,22 +3,21 @@
 
 PORTNAME=	dbus
 DISTVERSION=	${QT4_VERSION}
-CATEGORIES?=	devel
+CATEGORIES=	devel
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt4 bindings for the D-BUS messaging system
+COMMENT=	Qt D-Bus inter-process communication module
 
-LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 
 USES=		pkgconfig
 USE_QT4=	qmake_build moc_build rcc_build corelib xml
-QT_NONSTANDARD=	yes
 QT_DIST=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 HAS_CONFIGURE=	yes
-USE_LDCONFIG=	${PREFIX}/lib/qt4
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
@@ -40,8 +39,6 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/tools/qdbus
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
-
 .include <bsd.port.pre.mk>
 
 # Without this workaround, qdbus crashes.
@@ -55,17 +52,17 @@ CONFIGURE_ARGS+=	--no-gui \
 pre-configure:
 	${REINPLACE_CMD} -e 's|SUBDIRS = qdbus|SUBDIRS = ../../src/${PORTNAME} qdbus|g' \
 		${BUILD_WRKSRC}/qdbus.pro
-	${REINPLACE_CMD} -e 's|"/moc"|"/moc-qt4"|' \
+	${REINPLACE_CMD} -e 's|"/moc"|"/${MOC:T}"|' \
 		${BUILD_WRKSRC}/qdbuscpp2xml/qdbuscpp2xml.cpp
 	${MKDIR} ${WRKSRC}/mkspecs
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
-	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
+	${LN} -sf ${QMAKE} ${WRKSRC}/bin/qmake
+	${LN} -sf ${MOC} ${WRKSRC}/bin/moc
+	${LN} -sf ${RCC} ${WRKSRC}/bin/rcc
 
 post-configure:
-	${REINPLACE_CMD} -e 's|${PREFIX}/lib/qt4/pkgconfig|${PREFIX}/libdata/pkgconfig|g' ${WRKSRC}/src/${PORTNAME}/Makefile
+	${REINPLACE_CMD} -e 's|${PREFIX}/${QT_LIBDIR_REL}/pkgconfig|${PREFIX}/libdata/pkgconfig|g' ${WRKSRC}/src/${PORTNAME}/Makefile
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
-			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
+			-E -e 's|(.*location=).*moc|\1${PREFIX}/${QT_BINDIR_REL}/${MOC:T}|g' \
 		${WRKSRC}/lib/pkgconfig/QtDBus.pc
 
 .include <bsd.port.post.mk>

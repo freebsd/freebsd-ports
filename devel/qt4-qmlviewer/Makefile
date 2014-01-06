@@ -3,15 +3,15 @@
 
 PORTNAME=	qmlviewer
 DISTVERSION=	${QT4_VERSION}
-CATEGORIES?=	devel
+PORTREVISION=	1
+CATEGORIES=	devel
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt4 QML viewer
+COMMENT=	Qt 4 utility for QML application testing
 
 USE_QT4=	qmake_build moc_build rcc_build uic_build declarative script \
 		svg xmlpatterns sql opengl network corelib
-QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
@@ -22,9 +22,10 @@ MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib:$$LD_LIBRARY_PATH \
 		PATH=${WRKSRC}/bin:$$PATH
 
 # qtlogo.png is installed by qt4-gui
-DESKTOP_ENTRIES="Qt QML viewer" "${COMMENT}" \
-		"${LOCALBASE}/share/pixmaps/qtlogo.png" \
-		"${PREFIX}/bin/qmlviewer" "Development;Qt;" true
+DESKTOP_ENTRIES="Qt 4 QML viewer" "" \
+		"${QT_PREFIX}/share/pixmaps/qtlogo.png" \
+		"${PREFIX}/${QT_BINDIR_REL}/qmlviewer" \
+		"Development;Qt;" true
 
 DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
 		src/activeqt src/multimedia src/openvg \
@@ -41,13 +42,11 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/tools/qml/
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
-
 post-patch:
 	${MKDIR} ${WRKSRC}/mkspecs
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
-	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
-	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/bin/uic
+	${LN} -sf ${QMAKE} ${WRKSRC}/bin/qmake
+	${LN} -sf ${MOC} ${WRKSRC}/bin/moc
+	${LN} -sf ${RCC} ${WRKSRC}/bin/rcc
+	${LN} -sf ${UIC} ${WRKSRC}/bin/uic
 
 .include <bsd.port.mk>

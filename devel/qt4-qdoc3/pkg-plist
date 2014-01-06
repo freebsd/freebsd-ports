@@ -1,2 +1,2 @@
-bin/qdoc3
-%%DEBUG%%bin/qdoc3.debug
+%%QT_BINDIR%%/qdoc3
+%%DEBUG%%%%QT_BINDIR%%/qdoc3.debug

@@ -1,33 +1,34 @@
-# Created by: lofi@FreeBSD.org
+# Created by: Michael Nottebrock <lofi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	designer
 DISTVERSION=	${QT4_VERSION}
-CATEGORIES?=	devel
+PORTREVISION=	1
+CATEGORIES=	devel
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt ui editor
+COMMENT=	Qt 4 graphical user interface designer
 
 USE_QT4=	qmake_build moc_build rcc_build uic_build assistant_run \
 		qt3support corelib declarative gui network script sql xml \
-		webkit phonon
-QT_NONSTANDARD=	yes
+		webkit
 QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
-#Try to fix linking when previous version is installed
-CONFIGURE_ARGS+=	-L${WRKSRC}/lib
-USE_LDCONFIG=	${PREFIX}/lib/qt4
+# Try to fix linking when previous version is installed
+CONFIGURE_ARGS=	-L${WRKSRC}/lib -no-phonon
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib:$$LD_LIBRARY_PATH \
 		PATH=${WRKSRC}/bin:$$PATH
 
-DESKTOP_ENTRIES="Qt Designer" "${COMMENT}" \
+DESKTOP_ENTRIES="Qt 4 Designer" "" \
 		"${PREFIX}/share/pixmaps/designer-qt4.png" \
-		"${PREFIX}/bin/designer-qt4" "Development;Qt;" true
+		"${PREFIX}/${QT_BINDIR_REL}/designer${_QT_BINSUFX}" \
+		"Development;Qt;" true
 
 DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
 		src/activeqt src/dbus src/multimedia src/opengl src/openvg \
@@ -42,34 +43,34 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/tools/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
-
 pre-configure:
-	${REINPLACE_CMD} -e 's|^TARGET.*|TARGET=designer-qt4|g' \
+	${REINPLACE_CMD} -e 's|^TARGET.*|TARGET=designer${_QT_BINSUFX}|g' \
 		${BUILD_WRKSRC}/src/${PORTNAME}/${PORTNAME}.pro
+	${REINPLACE_CMD} -e '/QLatin1String/ s|("assistant")|("assistant${_QT_BINSUFX}")|' \
+		${BUILD_WRKSRC}/src/${PORTNAME}/assistantclient.cpp
 # fix build when previous version is installed
 	${REINPLACE_CMD} -e '/^CONFIG/s|depend_prl||' \
 		${BUILD_WRKSRC}/src/components/lib/lib.pro
 	${MKDIR} ${WRKSRC}/mkspecs/modules
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
-	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/bin/uic
-	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
+	${LN} -sf ${QMAKE} ${WRKSRC}/bin/qmake
+	${LN} -sf ${MOC} ${WRKSRC}/bin/moc
+	${LN} -sf ${UIC} ${WRKSRC}/bin/uic
+	${LN} -sf ${RCC} ${WRKSRC}/bin/rcc
 
 pre-install:
-	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
-			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
-			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
+	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-everywhere-opensource.[^[:space:]]*lib||g' \
+			-E -e 's|(.*location=).*moc|\1${PREFIX}/${QT_BINDIR_REL}/${MOC:T}|g' \
+			-E -e 's|(.*location=).*uic|\1${PREFIX}/${QT_BINDIR_REL}/${UIC:T}|g' \
 		${WRKSRC}/lib/pkgconfig/QtUiTools.pc \
 		${WRKSRC}/lib/pkgconfig/QtDesigner.pc \
 		${WRKSRC}/lib/pkgconfig/QtDesignerComponents.pc
-	${REINPLACE_CMD} -e 's|${PREFIX}/lib/qt4/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
+	${REINPLACE_CMD} -e 's|${PREFIX}/${QT_LIBDIR_REL}/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		${BUILD_WRKSRC}/src/lib/Makefile \
 		${BUILD_WRKSRC}/src/uitools/Makefile \
 		${BUILD_WRKSRC}/src/components/lib/Makefile
 
 post-install:
-	${INSTALL_DATA} ${BUILD_WRKSRC}/src/designer/images/designer.png \
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/src/designer/images/designer.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/designer-qt4.png
 
 .include <bsd.port.mk>

@@ -1,17 +1,17 @@
-include/qt4/QtAssistant/QAssistantClient
-include/qt4/QtAssistant/QtAssistant
-include/qt4/QtAssistant/qassistantclient.h
-include/qt4/QtAssistant/qassistantclient_global.h
-lib/qt4/libQtAssistantClient.prl
-lib/qt4/libQtAssistantClient.so
-lib/qt4/libQtAssistantClient.so.4
-lib/qt4/libQtAssistantClient.so.4.6
-lib/qt4/libQtAssistantClient.so.4.6.3
+%%QT_INCDIR%%/QtAssistant/QAssistantClient
+%%QT_INCDIR%%/QtAssistant/QtAssistant
+%%QT_INCDIR%%/QtAssistant/qassistantclient.h
+%%QT_INCDIR%%/QtAssistant/qassistantclient_global.h
+%%QT_LIBDIR%%/libQtAssistantClient.prl
+%%QT_LIBDIR%%/libQtAssistantClient.so
+%%QT_LIBDIR%%/libQtAssistantClient.so.4
+%%QT_LIBDIR%%/libQtAssistantClient.so.4.6
+%%QT_LIBDIR%%/libQtAssistantClient.so.4.6.3
 libdata/pkgconfig/QtAssistantClient.pc
-share/qt4/mkspecs/features/assistant.prf
-@dirrmtry share/qt4/mkspecs/features
-@dirrmtry share/qt4/mkspecs
-@dirrmtry share/qt4
-@dirrmtry lib/qt4
-@dirrm include/qt4/QtAssistant
-@dirrmtry include/qt4
+%%QT_MKSPECDIR%%/features/assistant.prf
+@dirrmtry %%QT_MKSPECDIR%%/features
+@dirrmtry %%QT_MKSPECDIR%%
+@dirrmtry %%QT_DATADIR%%
+@dirrmtry %%QT_LIBDIR%%
+@dirrm %%QT_INCDIR%%/QtAssistant
+@dirrmtry %%QT_INCDIR%%

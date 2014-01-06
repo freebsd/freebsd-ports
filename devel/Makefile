@@ -3963,7 +3963,6 @@
     SUBDIR += qt4-assistant
     SUBDIR += qt4-assistant-adp
     SUBDIR += qt4-corelib
-    SUBDIR += qt4-declarative
     SUBDIR += qt4-designer
     SUBDIR += qt4-help
     SUBDIR += qt4-help-tools
@@ -3976,13 +3975,13 @@
     SUBDIR += qt4-qdoc3
     SUBDIR += qt4-qmlviewer
     SUBDIR += qt4-qt3support
-    SUBDIR += qt4-qtestlib
     SUBDIR += qt4-qtsolutions-singleapplication
     SUBDIR += qt4-qtsolutions-soap
     SUBDIR += qt4-qvfb
     SUBDIR += qt4-rcc
     SUBDIR += qt4-script
     SUBDIR += qt4-scripttools
+    SUBDIR += qt4-testlib
     SUBDIR += qt4-uic
     SUBDIR += qt4-uic3
     SUBDIR += qtcreator

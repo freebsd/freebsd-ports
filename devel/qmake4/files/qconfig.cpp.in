@@ -1,0 +1,21 @@
+/*
+ * $FreeBSD$
+ */
+
+/* Installation date */
+static const char qt_configure_installation          [12+11]    = "qt_instdate=%%TODAY%%";
+
+#define QT_CONFIGURE_LICENSEE "Open Source";
+#define QT_CONFIGURE_LICENSED_PRODUCTS "OpenSource";
+#define QT_CONFIGURE_PREFIX_PATH "%%PREFIX%%";
+#define QT_CONFIGURE_DOCUMENTATION_PATH "%%PREFIX%%/%%QT_DOCDIR%%";
+#define QT_CONFIGURE_HEADERS_PATH "%%PREFIX%%/%%QT_INCDIR%%";
+#define QT_CONFIGURE_LIBRARIES_PATH "%%PREFIX%%/%%QT_LIBDIR%%";
+#define QT_CONFIGURE_BINARIES_PATH "%%PREFIX%%/%%QT_BINDIR%%";
+#define QT_CONFIGURE_PLUGINS_PATH "%%PREFIX%%/%%QT_PLUGINDIR%%";
+#define QT_CONFIGURE_IMPORTS_PATH "%%PREFIX%%/%%QT_IMPORTDIR%%";
+#define QT_CONFIGURE_DATA_PATH "%%PREFIX%%/%%QT_DATADIR%%";
+#define QT_CONFIGURE_TRANSLATIONS_PATH "%%PREFIX%%/%%QT_L10NDIR%%";
+#define QT_CONFIGURE_SETTINGS_PATH "%%PREFIX%%/%%QT_ETCDIR%%";
+#define QT_CONFIGURE_EXAMPLES_PATH "%%PREFIX%%/%%QT_EXAMPLEDIR%%/examples";
+#define QT_CONFIGURE_DEMOS_PATH "%%PREFIX%%/%%QT_EXAMPLEDIR%%/demos/";

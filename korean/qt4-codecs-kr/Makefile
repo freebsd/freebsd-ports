@@ -3,7 +3,7 @@
 
 PORTNAME=	codecs
 DISTVERSION=	${QT4_VERSION}
-CATEGORIES?=	korean
+CATEGORIES=	korean
 PKGNAMEPREFIX=	qt4-
 PKGNAMESUFFIX=	-kr
 
@@ -11,7 +11,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt EUC-KR codec plugin
 
 USE_QT4=	qmake_build corelib
-QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
@@ -36,10 +35,8 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/src/plugins/${PORTNAME}/kr
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
-
 pre-configure:
 	${MKDIR} ${WRKSRC}/mkspecs
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
+	${LN} -sf ${QMAKE} ${WRKSRC}/bin/qmake
 
 .include <bsd.port.mk>

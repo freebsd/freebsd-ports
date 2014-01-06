@@ -1,2 +1,2 @@
-bin/qmlviewer
-%%DEBUG%%bin/qmlviewer.debug
+%%QT_BINDIR%%/qmlviewer
+%%DEBUG%%%%QT_BINDIR%%/qmlviewer.debug

@@ -1,9 +1,0 @@
-lib/qt4/libQtCLucene.la
-lib/qt4/libQtCLucene.prl
-lib/qt4/libQtCLucene.so
-lib/qt4/libQtCLucene.so.4
-lib/qt4/libQtCLucene.so.%%SHLIB_SHVER%%
-lib/qt4/libQtCLucene.so.%%SHLIB_VER%%
-%%DEBUG%%lib/qt4/libQtCLucene.so.%%SHLIB_VER%%.debug
-libdata/pkgconfig/QtCLucene.pc
-@dirrmtry lib/qt4

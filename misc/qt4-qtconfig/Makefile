@@ -3,21 +3,16 @@
 
 PORTNAME=	qtconfig
 DISTVERSION=	${QT4_VERSION}
-CATEGORIES?=	misc
+PORTREVISION=	1
+CATEGORIES=	misc
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt graphical configuration utility
-
-OPTIONS_DEFINE=	PHONON
-OPTIONS_DEFAULT=PHONON
-
-PHONON_DESC=	Multimedia via Phonon (implies GStreamer)
+COMMENT=	Qt 4 graphical configuration utility
 
 USES=		pkgconfig
 USE_QT4=	qmake_build moc_build rcc_build uic_build \
-		dbus gui xml
-QT_NONSTANDARD=	yes
+		corelib dbus gui xml
 QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
@@ -27,9 +22,10 @@ CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib:$$LD_LIBRARY_PATH \
 		PATH=${WRKSRC}/bin:$$PATH
 
-DESKTOP_ENTRIES="Qt Configuration" "${COMMENT}" \
+DESKTOP_ENTRIES="Qt 4 Configuration" "" \
 		"${PREFIX}/share/pixmaps/qtconfig-qt4.png" \
-		"${PREFIX}/bin/qtconfig-qt4" "Settings;Qt;" true
+		"${PREFIX}/${QT_BINDIR_REL}/qtconfig${_QT_BINSUFX}" \
+		"Settings;Qt;" true
 
 DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
 		src/activeqt src/dbus src/multimedia src/network src/opengl \
@@ -42,32 +38,29 @@ DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
 EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 .endfor
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	PHONON
+OPTIONS_DEFAULT=PHONON
 
-.if ${PORT_OPTIONS:MPHONON}
-USE_QT4+=	phonon phonon-gst
-USE_GSTREAMER=	yes
-.else
-CONFIGURE_ARGS+=-no-phonon -no-gstreamer
-.endif
+PHONON_DESC=	Phonon multimedia framework support (implies GStreamer)
+PHONON_USE=	GSTREAMER=yes QT4=phonon,phonon-gst
+PHONON_CONFIGURE_ON=	-phonon -gstreamer
+PHONON_CONFIGURE_OFF=	-no-phonon -no-gstreamer
 
 BUILD_WRKSRC=	${WRKSRC}/tools/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
-
 pre-configure:
-	${REINPLACE_CMD} -e 's|^TARGET.*|TARGET=qtconfig-qt4|g' \
+	${REINPLACE_CMD} -e 's|^TARGET.*|TARGET=qtconfig${_QT_BINSUFX}|g' \
 		${BUILD_WRKSRC}/${PORTNAME}.pro
 	${ECHO_CMD} "INCLUDEPATH+=${EXTRA_INCL}" >> ${BUILD_WRKSRC}/${PORTNAME}.pro
 	${MKDIR} ${WRKSRC}/mkspecs
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
-	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/bin/uic
-	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
+	${LN} -sf ${QMAKE} ${WRKSRC}/bin/qmake
+	${LN} -sf ${MOC} ${WRKSRC}/bin/moc
+	${LN} -sf ${UIC} ${WRKSRC}/bin/uic
+	${LN} -sf ${RCC} ${WRKSRC}/bin/rcc
 
 post-install:
-	${INSTALL_DATA} ${BUILD_WRKSRC}/images/appicon.png \
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/images/appicon.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/qtconfig-qt4.png
 
 .include <bsd.port.mk>

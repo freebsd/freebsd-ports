@@ -1701,7 +1701,6 @@
     SUBDIR += pyweblib
     SUBDIR += qdecoder
     SUBDIR += qooxdoo
-    SUBDIR += qt4-webkit
     SUBDIR += quickie
     SUBDIR += quixote
     SUBDIR += qupzilla
@@ -2099,6 +2098,7 @@
     SUBDIR += webinject
     SUBDIR += webkit-gtk2
     SUBDIR += webkit-gtk3
+    SUBDIR += webkit-qt4
     SUBDIR += webkit-sharp
     SUBDIR += weblint
     SUBDIR += weblint++
