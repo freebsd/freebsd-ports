@@ -17,18 +17,17 @@ USE_BZIP2=	yes
 
 WRKSRC=		${WRKDIR}
 
-NO_STAGE=	yes
 do-install:
-		@${MKDIR} ${PREFIX}/lib/X11/icons/polar/cursors
-		cd ${WRKSRC}/PolarCursorTheme/cursors \
-			&& ${INSTALL_DATA} * ${PREFIX}/lib/X11/icons/polar/cursors
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/icons/polar/cursors
+	${INSTALL_DATA} ${WRKSRC}/PolarCursorTheme/cursors/* \
+		${STAGEDIR}${PREFIX}/lib/X11/icons/polar/cursors
 
-		@${MKDIR} ${PREFIX}/lib/X11/icons/polarblue/cursors
-		cd ${WRKSRC}/PolarCursorTheme-Blue/cursors \
-			&& ${INSTALL_DATA} * ${PREFIX}/lib/X11/icons/polarblue/cursors
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/icons/polarblue/cursors
+	${INSTALL_DATA} ${WRKSRC}/PolarCursorTheme-Blue/cursors/* \
+		${STAGEDIR}${PREFIX}/lib/X11/icons/polarblue/cursors
 
-		@${MKDIR} ${PREFIX}/lib/X11/icons/polargreen/cursors
-		cd ${WRKSRC}/PolarCursorTheme-Green/cursors \
-			&& ${INSTALL_DATA} * ${PREFIX}/lib/X11/icons/polargreen/cursors
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/icons/polargreen/cursors
+	${INSTALL_DATA} ${WRKSRC}/PolarCursorTheme-Green/cursors/* \
+		${STAGEDIR}${PREFIX}/lib/X11/icons/polargreen/cursors
 
 .include <bsd.port.mk>
