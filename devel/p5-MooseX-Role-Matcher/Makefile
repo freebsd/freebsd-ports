@@ -18,10 +18,7 @@ BUILD_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 
-NO_STAGE=	yes
 USE_PERL5=	configure
 USES=		perl5
-
-MAN3=		MooseX::Role::Matcher.3
 
 .include <bsd.port.mk>

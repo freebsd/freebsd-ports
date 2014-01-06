@@ -16,11 +16,10 @@ BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	libmenu-cache.so:${PORTSDIR}/x11/menu-cache \
 		libexif.so:${PORTSDIR}/graphics/libexif
 
-USES=		gmake pkgconfig
+USES=		fam gmake pkgconfig
 USE_GNOME=	gnomehack gtk20
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS+=--sysconfdir=${LOCALBASE}/etc
-USE_FAM=	yes
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

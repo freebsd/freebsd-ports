@@ -1,4 +1,4 @@
-bin/qt3to4
-%%DEBUG%%bin/qt3to4.debug
-share/qt4/q3porting.xml
-@dirrmtry share/qt4
+%%QT_BINDIR%%/qt3to4
+%%DEBUG%%%%QT_BINDIR%%/qt3to4.debug
+%%QT_DATADIR%%/q3porting.xml
+@dirrmtry %%QT_DATADIR%%

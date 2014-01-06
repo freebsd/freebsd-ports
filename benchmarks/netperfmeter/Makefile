@@ -12,18 +12,9 @@ COMMENT=	Network Performance Meter
 GNU_CONFIGURE=	yes
 USES=		gmake
 
-PLIST_FILES=	bin/netperfmeter
-MAN1=		netperfmeter.1
+PLIST_FILES=	bin/netperfmeter \
+		man/man1/netperfmeter.1.gz
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-IGNORE=	not supported on systems earlier than 7.x
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

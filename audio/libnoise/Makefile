@@ -6,12 +6,11 @@ DISTVERSION=	1.0.0
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20sources/${PORTVERSION}
 DISTNAME=	${PORTNAME}src-${DISTVERSION}
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates three-dimensional coherent noise
 
-USE_ZIP=	yes
-NO_STAGE=	yes
 USES=		gmake
 USE_AUTOTOOLS=	libtool:env
 USE_LDCONFIG=	yes
@@ -25,12 +24,12 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	@${CP} -R ${WRKSRC}/src/${PORTNAME}.* ${PREFIX}/lib/
-	@${CP} -R ${WRKSRC}/src/.libs/${PORTNAME}.so.* ${PREFIX}/lib/
-	@${INSTALL} -d ${PREFIX}/include/noise
-	@${CP} -R ${WRKSRC}/include/ ${PREFIX}/include/noise/
-	@${RM} -f ${PREFIX}/include/noise/Makefile
+	${CP} -R ${WRKSRC}/src/${PORTNAME}.* ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_LIB} ${WRKSRC}/src/.libs/${PORTNAME}.so.* ${STAGEDIR}${PREFIX}/lib/
+	@${INSTALL} -d ${STAGEDIR}${PREFIX}/include/noise
+	${CP} -R ${WRKSRC}/include/ ${STAGEDIR}${PREFIX}/include/noise/
+	${RM} -f ${STAGEDIR}${PREFIX}/include/noise/Makefile
 #	This line is here to preserve the old behavior of the port.
-	@${LN} -sf ${PREFIX}/lib/libnoise.so.0 ${PREFIX}/lib/libnoise.so.0.3
+	${LN} -sf libnoise.so.0 ${STAGEDIR}${PREFIX}/lib/libnoise.so.0.3
 
 .include <bsd.port.mk>

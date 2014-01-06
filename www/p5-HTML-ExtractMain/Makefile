@@ -23,7 +23,4 @@ TEST_DEPENDS=	p5-File-Slurp>=9999.12:${PORTSDIR}/devel/p5-File-Slurp \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	HTML::ExtractMain.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

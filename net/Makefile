@@ -128,7 +128,6 @@
     SUBDIR += enet
     SUBDIR += entitymib
     SUBDIR += erlang_xmlrpc
-    SUBDIR += erlyvideo
     SUBDIR += etherboot
     SUBDIR += etrace
     SUBDIR += exabgp

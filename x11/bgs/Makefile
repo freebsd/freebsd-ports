@@ -14,8 +14,10 @@ COMMENT=	Simple X11 BackGround Setter using Imlib2
 USE_XORG=	x11 xinerama
 USE_EFL=	imlib2
 
-MAN1=		bgs.1
-PLIST_FILES=	bin/bgs
+PLIST_FILES=	bin/bgs \
+		man/man1/bgs.1.gz
 
-NO_STAGE=	yes
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bgs
+
 .include <bsd.port.mk>

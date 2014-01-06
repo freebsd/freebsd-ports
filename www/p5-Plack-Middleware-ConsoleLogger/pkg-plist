@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/ConsoleLogger/.packlist
 %%SITE_PERL%%/Plack/Middleware/ConsoleLogger.pm
+%%PERL5_MAN3%%/Plack::Middleware::ConsoleLogger.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/ConsoleLogger
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware

@@ -3,7 +3,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	5.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 PKGNAMESUFFIX=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
@@ -64,7 +64,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 # NOTE: Plugins without dependencies are defined further down.
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-all-plugins \
-		--disable-getifaddrs \
 		--disable-static \
 		--without-java \
 		--without-libganglia \
@@ -146,7 +145,7 @@ PLIST_SUB+=	CGI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MCURL}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=--with-libcurl=${LOCALBASE} \
 		--enable-apache \
 		--enable-curl \
@@ -191,7 +190,7 @@ CONFIGURE_ARGS+=--disable-debug
 .endif
 
 .if ${PORT_OPTIONS:MDBI}
-LIB_DEPENDS+=	dbi:${PORTSDIR}/databases/libdbi
+LIB_DEPENDS+=	libdbi.so:${PORTSDIR}/databases/libdbi
 CONFIGURE_ARGS+=--with-libdbi=${LOCALBASE} --enable-dbi
 PLIST_SUB+=	DBI=""
 .else
@@ -200,7 +199,7 @@ PLIST_SUB+=	DBI="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGCRYPT}
-LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=--with-libgcrypt=${LOCALBASE}
 LDFLAGS+=	-lgcrypt
 .else
@@ -208,14 +207,14 @@ CONFIGURE_ARGS+=--without-libgcrypt
 .endif
 
 .if ${PORT_OPTIONS:MJSON}
-LIB_DEPENDS+=	yajl:${PORTSDIR}/devel/yajl
+LIB_DEPENDS+=	libyajl.so:${PORTSDIR}/devel/yajl
 CONFIGURE_ARGS+=--with-libyajl=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-libyajl
 .endif
 
 .if ${PORT_OPTIONS:MMEMCACHEC}
-LIB_DEPENDS+=	memcached:${PORTSDIR}/databases/libmemcached
+LIB_DEPENDS+=	libmemcached.so:${PORTSDIR}/databases/libmemcached
 CONFIGURE_ARGS+=--with-libmemcached=${LOCALBASE} --enable-memcachec
 PLIST_SUB+=	MEMCACHEC=""
 .else
@@ -224,7 +223,7 @@ PLIST_SUB+=	MEMCACHEC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMODBUS}
-LIB_DEPENDS+=	modbus:${PORTSDIR}/comms/libmodbus
+LIB_DEPENDS+=	libmodbus.so:${PORTSDIR}/comms/libmodbus
 CONFIGURE_ARGS+=--enable-modbus
 PLIST_SUB+=	MODBUS=""
 .else
@@ -241,7 +240,7 @@ PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNOTIFYDESKTOP}
-LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	libnotify.so:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--with-libnotify=${LOCALBASE} \
 		--enable-notify_desktop
 PLIST_SUB+=	NOTIFYDESKTOP=""
@@ -251,7 +250,7 @@ PLIST_SUB+=	NOTIFYDESKTOP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNOTIFYEMAIL}
-LIB_DEPENDS+=	esmtp:${PORTSDIR}/mail/libesmtp
+LIB_DEPENDS+=	libesmtp.so:${PORTSDIR}/mail/libesmtp
 CONFIGURE_ARGS+=--with-libesmtp=${LOCALBASE} \
 		--enable-notify_email
 PLIST_SUB+=	NOTIFYEMAIL=""
@@ -261,7 +260,7 @@ PLIST_SUB+=	NOTIFYEMAIL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNUTUPS}
-LIB_DEPENDS+=	upsclient:${PORTSDIR}/sysutils/nut
+LIB_DEPENDS+=	libupsclient.so:${PORTSDIR}/sysutils/nut
 CONFIGURE_ARGS+=--with-upsclient=${LOCALBASE} --enable-nut
 PLIST_SUB+=	NUTUPS=""
 .else
@@ -279,7 +278,7 @@ PLIST_SUB+=	PGSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPING}
-LIB_DEPENDS+=	oping:${PORTSDIR}/net/liboping
+LIB_DEPENDS+=	liboping.so:${PORTSDIR}/net/liboping
 CONFIGURE_ARGS+=--with-liboping=${LOCALBASE} --enable-ping
 PLIST_SUB+=	PING=""
 .else
@@ -297,7 +296,7 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MRABBITMQ}
-LIB_DEPENDS+=	rabbitmq:${PORTSDIR}/net/rabbitmq-c
+LIB_DEPENDS+=	librabbitmq.so:${PORTSDIR}/net/rabbitmq-c
 CONFIGURE_ARGS+=--with-librabbitmq=${LOCALBASE} \
 		--enable-rabbitmq
 PLIST_SUB+=	RABBITMQ=""
@@ -308,7 +307,7 @@ PLIST_SUB+=	RABBITMQ="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MREDIS}
-LIB_DEPENDS+=	credis:${PORTSDIR}/databases/credis
+LIB_DEPENDS+=	libcredis.so:${PORTSDIR}/databases/credis
 CONFIGURE_ARGS+=--with-libcredis=${LOCALBASE} \
 		--enable-redis \
 		--enable-write_redis
@@ -321,7 +320,7 @@ PLIST_SUB+=	REDIS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MROUTEROS}
-LIB_DEPENDS+=	routeros:${PORTSDIR}/net/librouteros
+LIB_DEPENDS+=	librouteros.so:${PORTSDIR}/net/librouteros
 CONFIGURE_ARGS+=--with-librouteros=${LOCALBASE} --enable-routeros
 PLIST_SUB+=	ROUTEROS=""
 .else
@@ -330,7 +329,7 @@ PLIST_SUB+=	ROUTEROS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MRRDTOOL}
-LIB_DEPENDS+=	rrd:${PORTSDIR}/databases/rrdtool
+LIB_DEPENDS+=	librrd.so:${PORTSDIR}/databases/rrdtool
 CONFIGURE_ARGS+=--with-librrd=${LOCALBASE} \
 		--enable-rrdcached \
 		--enable-rrdtool
@@ -344,7 +343,7 @@ PLIST_SUB+=	RRDTOOL="@comment "
 
 .if ${PORT_OPTIONS:MSTATGRAB}
 USES+=		pkgconfig
-LIB_DEPENDS+=	statgrab:${PORTSDIR}/devel/libstatgrab
+LIB_DEPENDS+=	libstatgrab.so:${PORTSDIR}/devel/libstatgrab
 CONFIGURE_ENV+= LIBS="`pkg-config --libs libstatgrab`"
 CONFIGURE_ARGS+=--with-libstatgrab=${LOCALBASE} \
 		--enable-disk \
@@ -366,7 +365,7 @@ PLIST_SUB+= USERS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSNMP}
-LIB_DEPENDS+=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=--with-libnetsnmp --enable-snmp
 PLIST_SUB+=	SNMP=""
 .else
@@ -375,7 +374,7 @@ PLIST_SUB+=	SNMP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTOKYOTYRANT}
-LIB_DEPENDS+=	tokyotyrant:${PORTSDIR}/databases/tokyotyrant
+LIB_DEPENDS+=	libtokyotyrant.so:${PORTSDIR}/databases/tokyotyrant
 CONFIGURE_ARGS+=--with-libtokyotyrant=${LOCALBASE} --enable-tokyotyrant
 PLIST_SUB+=	TOKYOTYRANT=""
 .else
@@ -396,12 +395,12 @@ PLIST_SUB+=	VIRT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MXML}
-LIB_DEPENDS+=	xml2:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS+=	libxml2.so:${PORTSDIR}/textproc/libxml2
 CONFIGURE_ARGS+=--with-libxml2=${LOCALBASE}
 .endif
 
 .if ${PORT_OPTIONS:MXMMS}
-LIB_DEPENDS+=	xmms:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS+=	libxmms.so:${PORTSDIR}/multimedia/xmms
 CONFIGURE_ARGS+=--with-libxmms=${LOCALBASE} --enable-xmms
 CFLAGS+=	`xmms-config --cflags`
 PLIST_SUB+=	XMMS=""

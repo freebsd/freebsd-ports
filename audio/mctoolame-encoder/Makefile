@@ -14,7 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG Layer II audio encoder with multi-channel support
 
 USES=		gmake
-NO_STAGE=	yes
 ALL_TARGET=	#
 MAKE_ARGS=	CC="${CC}" OPTIM="${CFLAGS}"
 PLIST_SUB=	PKGNAMESUFFIX="${PKGNAMESUFFIX}"
@@ -30,10 +29,10 @@ post-patch:
 			${WRKSRC}/config.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mctoolame ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mctoolame ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}${PKGNAMESUFFIX}/html
-	${INSTALL_DATA} ${WRKSRC}/html/* ${DOCSDIR}${PKGNAMESUFFIX}/html
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}${PKGNAMESUFFIX}/html
+	${INSTALL_DATA} ${WRKSRC}/html/* ${STAGEDIR}${DOCSDIR}${PKGNAMESUFFIX}/html
 .endif
 
 .include <bsd.port.mk>

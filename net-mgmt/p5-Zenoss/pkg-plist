@@ -19,6 +19,26 @@
 %%SITE_PERL%%/Zenoss/Router/Tree.pm
 %%SITE_PERL%%/Zenoss/Router/ZenPack.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Zenoss/.packlist
+%%PERL5_MAN3%%/Zenoss.3.gz
+%%PERL5_MAN3%%/Zenoss::Connector.3.gz
+%%PERL5_MAN3%%/Zenoss::Error.3.gz
+%%PERL5_MAN3%%/Zenoss::Examples.3.gz
+%%PERL5_MAN3%%/Zenoss::MetaHelper.3.gz
+%%PERL5_MAN3%%/Zenoss::Response.3.gz
+%%PERL5_MAN3%%/Zenoss::Router.3.gz
+%%PERL5_MAN3%%/Zenoss::Router::DetailNav.3.gz
+%%PERL5_MAN3%%/Zenoss::Router::Device.3.gz
+%%PERL5_MAN3%%/Zenoss::Router::Events.3.gz
+%%PERL5_MAN3%%/Zenoss::Router::Messaging.3.gz
+%%PERL5_MAN3%%/Zenoss::Router::Mib.3.gz
+%%PERL5_MAN3%%/Zenoss::Router::Network.3.gz
+%%PERL5_MAN3%%/Zenoss::Router::Process.3.gz
+%%PERL5_MAN3%%/Zenoss::Router::Report.3.gz
+%%PERL5_MAN3%%/Zenoss::Router::Search.3.gz
+%%PERL5_MAN3%%/Zenoss::Router::Service.3.gz
+%%PERL5_MAN3%%/Zenoss::Router::Template.3.gz
+%%PERL5_MAN3%%/Zenoss::Router::Tree.3.gz
+%%PERL5_MAN3%%/Zenoss::Router::ZenPack.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Zenoss
 @dirrm %%SITE_PERL%%/Zenoss/Router
 @dirrm %%SITE_PERL%%/Zenoss

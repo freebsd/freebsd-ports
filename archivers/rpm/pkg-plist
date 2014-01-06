@@ -56,6 +56,9 @@ lib/rpm/vpkg-provides.sh
 lib/rpm/vpkg-provides2.sh
 lib/rpmpopt
 lib/rpmrc
+man/man1/gendiff.1.gz
+man/man8/rpm.8.gz
+man/man8/rpm2cpio.8.gz
 %%NLS%%share/locale/cs/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/de/LC_MESSAGES/rpm.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/rpm.mo
@@ -71,47 +74,7 @@ lib/rpmrc
 %%NLS%%share/locale/tr/LC_MESSAGES/rpm.mo
 @dirrm lib/rpm
 @dirrm include/rpm
-@dirrmtry src/redhat/SRPMS
-@dirrmtry src/redhat/SPECS
-@dirrmtry src/redhat/SOURCES
-%%AMD64%%@dirrmtry src/redhat/RPMS/amd64
-%%X86%%@dirrmtry src/redhat/RPMS/athlon
-%%X86%%@dirrmtry src/redhat/RPMS/i386
-%%X86%%@dirrmtry src/redhat/RPMS/i486
-%%X86%%@dirrmtry src/redhat/RPMS/i586
-%%X86%%@dirrmtry src/redhat/RPMS/i686
-%%IA64%%@dirrmtry src/redhat/RPMS/ia64
-@dirrmtry src/redhat/RPMS/noarch
-%%PPC%%@dirrmtry src/redhat/RPMS/powerpc
-%%PPC%%@dirrmtry src/redhat/RPMS/ppc
-%%SPARC%%@dirrmtry src/redhat/RPMS/sparc
-%%SPARC%%@dirrmtry src/redhat/RPMS/sparcv9
-%%SPARC%%@dirrmtry src/redhat/RPMS/sparc64
-@dirrmtry src/redhat/RPMS
-@dirrmtry src/redhat/BUILD
-@dirrmtry src/redhat
-@dirrmtry src
 @unexec rmdir /var/lib/rpm 2>/dev/null || true
 @unexec rmdir /var/lib 2>/dev/null || true
 @exec mkdir -p /var/lib
 @exec mkdir -p /var/lib/rpm
-@exec mkdir -p %D/src
-@exec mkdir -p %D/src/redhat
-@exec mkdir -p %D/src/redhat/BUILD
-@exec mkdir -p %D/src/redhat/RPMS
-%%AMD64%%@exec mkdir -p %D/src/redhat/RPMS/amd64
-%%X86%%@exec mkdir -p %D/src/redhat/RPMS/athlon
-%%X86%%@exec mkdir -p %D/src/redhat/RPMS/i386
-%%X86%%@exec mkdir -p %D/src/redhat/RPMS/i486
-%%X86%%@exec mkdir -p %D/src/redhat/RPMS/i586
-%%X86%%@exec mkdir -p %D/src/redhat/RPMS/i686
-%%IA64%%@exec mkdir -p %D/src/redhat/RPMS/ia64
-@exec mkdir -p %D/src/redhat/RPMS/noarch
-%%PPC%%@exec mkdir -p %D/src/redhat/RPMS/powerpc
-%%PPC%%@exec mkdir -p %D/src/redhat/RPMS/ppc
-%%SPARC%%@exec mkdir -p %D/src/redhat/RPMS/sparc
-%%SPARC%%@exec mkdir -p %D/src/redhat/RPMS/sparcv9
-%%SPARC%%@exec mkdir -p %D/src/redhat/RPMS/sparc64
-@exec mkdir -p %D/src/redhat/SOURCES
-@exec mkdir -p %D/src/redhat/SPECS
-@exec mkdir -p %D/src/redhat/SRPMS

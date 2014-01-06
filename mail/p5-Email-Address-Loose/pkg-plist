@@ -2,6 +2,7 @@
 %%SITE_PERL%%/Email/Address/Loose.pm
 %%SITE_PERL%%/Email/Address/Loose/EmailAddress.pm
 %%SITE_PERL%%/Email/Address/Loose/EmailValidLoose.pm
+%%PERL5_MAN3%%/Email::Address::Loose.3.gz
 @dirrm %%SITE_PERL%%/Email/Address/Loose
 @dirrmtry %%SITE_PERL%%/Email/Address
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Address/Loose

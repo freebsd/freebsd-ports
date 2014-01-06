@@ -3,6 +3,7 @@
 
 PORTNAME=	inotify
 PORTVERSION=	0.1.6
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -14,7 +15,7 @@ COMMENT=	This extension allows to use inotify functions in a PHP scripts
 
 LICENSE=	PHP301
 
-LIB_DEPENDS=	inotify:${PORTSDIR}/devel/libinotify
+LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify
 
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
@@ -22,5 +23,4 @@ USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 IGNORE_WITH_PHP=4
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

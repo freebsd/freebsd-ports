@@ -14,6 +14,9 @@ COMMENT=	Futuristic, fast-paced first person shooter
 
 LICENSE=	GPLv2
 
+DEPRECATED=	depends on expired games/warsow-data
+EXPIRATION_DATE=2014-01-22
+
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	${DATADIR}/basewsw/data0_06.pk3:${PORTSDIR}/games/warsow-data
 

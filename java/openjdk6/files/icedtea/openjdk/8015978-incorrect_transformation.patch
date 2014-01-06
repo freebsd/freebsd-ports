@@ -1,0 +1,22 @@
+# HG changeset patch
+# User aefimov
+# Date 1383034304 0
+#      Tue Oct 29 08:11:44 2013 +0000
+# Node ID efb24af909a020f3a3b3d446f6db15fc8b1c309a
+# Parent  20ffb814205c67b5ded678ee6c69b2aa0d6cebb1
+8015978: Incorrect transformation of XPath expression "string(-0)"
+Reviewed-by: darcy, joehw
+
+diff -r 20ffb814205c -r efb24af909a0 drop_included/jaxp_src/src/com/sun/org/apache/xalan/internal/xsltc/runtime/BasisLibrary.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xalan/internal/xsltc/runtime/BasisLibrary.java	Tue Oct 29 08:10:15 2013 +0000
++++ jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xalan/internal/xsltc/runtime/BasisLibrary.java	Tue Oct 29 08:11:44 2013 +0000
+@@ -950,6 +950,9 @@
+ 	    if (Double.isNaN(d) || Double.isInfinite(d))
+ 		return(Double.toString(d));
+             
++            //Convert -0.0 to +0.0 other values remains the same
++            d = d + 0.0;
++
+             // Use the XPath formatter to ignore locales
+             StringBuffer result = threadLocalStringBuffer.get();
+             result.setLength(0);

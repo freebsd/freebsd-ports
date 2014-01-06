@@ -2,18 +2,17 @@
 
 PORTNAME=	multimedia
 DISTVERSION=	${QT4_VERSION}
-CATEGORIES?=	multimedia
+CATEGORIES=	multimedia
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt4 low-level multimedia API
+COMMENT=	Qt low-level multimedia API
 
 USE_QT4=	qmake_build moc_build uic_build corelib gui
-QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
-USE_LDCONFIG=	${PREFIX}/lib/qt4
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
@@ -35,21 +34,19 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
-
 pre-configure:
 	${MKDIR} ${WRKSRC}/mkspecs
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
-	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/bin/uic
+	${LN} -sf ${QMAKE} ${WRKSRC}/bin/qmake
+	${LN} -sf ${MOC} ${WRKSRC}/bin/moc
+	${LN} -sf ${UIC} ${WRKSRC}/bin/uic
 
 post-configure:
 	${REINPLACE_CMD} \
-		-e 's|${PREFIX}/lib/qt4/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
+		-e 's|${PREFIX}/${QT_LIBDIR_REL}/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		-e 's|.*$$(QMAKE).*||g' ${BUILD_WRKSRC}/Makefile
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
-			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
-			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
+			-E -e 's|(.*location=).*moc|\1${PREFIX}/${QT_BINDIR_REL}/${MOC:T}|g' \
+			-E -e 's|(.*location=).*uic|\1${PREFIX}/${QT_BINDIR_REL}/${UIC:T}|g' \
 		${WRKSRC}/lib/pkgconfig/QtMultimedia.pc
 
 .include <bsd.port.mk>

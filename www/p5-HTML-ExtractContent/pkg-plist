@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/ExtractContent/.packlist
 %%SITE_PERL%%/HTML/ExtractContent.pm
 %%SITE_PERL%%/HTML/ExtractContent/Util.pm
+%%PERL5_MAN3%%/HTML::ExtractContent.3.gz
 @dirrm %%SITE_PERL%%/HTML/ExtractContent
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/ExtractContent

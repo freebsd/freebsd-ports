@@ -3,6 +3,8 @@ bin/mibcompiler
 %%SITE_PERL%%/SNMP/MIB/Compiler.pm
 %%SITE_PERL%%/Bundle/SNMP/MIB/Compiler.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/MIB/Compiler/.packlist
+%%PERL5_MAN3%%/SNMP::MIB::Compiler.3.gz
+%%PERL5_MAN3%%/Bundle::SNMP::MIB::Compiler.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/MIB/Compiler
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/MIB
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP

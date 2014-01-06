@@ -7,5 +7,6 @@ bin/nuttcp
 etc/xinetd.d/nuttcp
 etc/xinetd.d/nuttcp4
 etc/xinetd.d/nuttcp6
+man/man8/nuttcp.8.gz
 @dirrm %%DATADIR%%
 @dirrmtry etc/xinetd.d

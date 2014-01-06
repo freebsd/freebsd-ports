@@ -1,6 +1,6 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/Expires/.packlist
 %%SITE_PERL%%/Plack/Middleware/Expires.pm
+%%PERL5_MAN3%%/Plack::Middleware::Expires.3.gz
 @dirrmtry %%SITE_PERL%%/Plack/Middleware
 @dirrmtry %%SITE_PERL%%/Plack
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/Expires

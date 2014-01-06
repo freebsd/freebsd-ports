@@ -3,6 +3,10 @@
 %%SITE_PERL%%/Bio/ASN1/Sequence.pm
 %%SITE_PERL%%/Bio/ASN1/Sequence/Indexer.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/ASN1/EntrezGene/.packlist
+%%PERL5_MAN3%%/Bio::ASN1::EntrezGene.3.gz
+%%PERL5_MAN3%%/Bio::ASN1::EntrezGene::Indexer.3.gz
+%%PERL5_MAN3%%/Bio::ASN1::Sequence.3.gz
+%%PERL5_MAN3%%/Bio::ASN1::Sequence::Indexer.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/ASN1/EntrezGene
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/ASN1
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio

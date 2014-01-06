@@ -13,7 +13,4 @@ COMMENT=	Fetch sysctl values from BSD-like systems
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		BSD::Sysctl.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

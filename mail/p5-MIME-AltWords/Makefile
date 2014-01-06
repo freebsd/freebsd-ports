@@ -13,10 +13,6 @@ COMMENT=	Perl module for encoding and decoding MIME words
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MIME::AltWords.3 \
-		MIME::AltWords0.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/NAME/ s|MIME-AltWords|MIME::AltWords|' ${WRKSRC}/Makefile.PL
 

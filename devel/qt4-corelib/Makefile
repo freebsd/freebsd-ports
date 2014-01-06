@@ -3,22 +3,22 @@
 
 PORTNAME=	corelib
 DISTVERSION=	${QT4_VERSION}
-CATEGORIES?=	devel
+PORTREVISION=	1
+CATEGORIES=	devel
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt core library
+COMMENT=	Qt core non-graphical module
 
-LIB_DEPENDS=	icui18n:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	libicui18n.so:${PORTSDIR}/devel/icu
 
-USES=		pkgconfig
 USE_GNOME=	glib20
 USE_QT4=	qmake_build moc_build
-QT_NONSTANDARD=	yes
 QT_DIST=	yes
+USES=		iconv pkgconfig
 
 HAS_CONFIGURE=	yes
-USE_LDCONFIG=	${PREFIX}/lib/qt4
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
@@ -39,8 +39,6 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
-
-EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
 .include "${.CURDIR}/../../devel/qt4/files/Makefile.options"
 
@@ -64,22 +62,22 @@ post-patch:
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/mkspecs
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
+	${LN} -sf ${QMAKE} ${WRKSRC}/bin/qmake
+	${LN} -sf ${MOC} ${WRKSRC}/bin/moc
 
 post-configure:
-	${REINPLACE_CMD} -e 's|${PREFIX}/lib/qt4/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
+	${REINPLACE_CMD} -e 's|${PREFIX}/${QT_LIBDIR_REL}/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		-e 's|.*$$(QMAKE).*||g' \
 		${BUILD_WRKSRC}/Makefile
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
-		-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
-		-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
+		-E -e 's|(.*location=).*moc|\1${PREFIX}/${QT_BINDIR_REL}/${MOC:T}|g' \
+		-E -e 's|(.*location=).*uic|\1${PREFIX}/${QT_BINDIR_REL}/${UIC:T}|g' \
 		${WRKSRC}/lib/pkgconfig/QtCore.pc
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/qt4/plugins
-	${TOUCH} ${STAGEDIR}${PREFIX}/lib/qt4/plugins/.keep_me
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/qt4/mkspecs
-	${INSTALL_DATA} ${WRKSRC}/mkspecs/qconfig.pri ${STAGEDIR}${PREFIX}/share/qt4/mkspecs/
+	${MKDIR} ${STAGEDIR}${PREFIX}/${QT_PLUGINDIR_REL}
+	${TOUCH} ${STAGEDIR}${PREFIX}/${QT_PLUGINDIR_REL}/.keep_me
+	${MKDIR} ${STAGEDIR}${PREFIX}/${QT_MKSPECDIR_REL}
+	${INSTALL_DATA} ${WRKSRC}/mkspecs/qconfig.pri ${STAGEDIR}${PREFIX}/${QT_MKSPECDIR_REL}/
 
 .include <bsd.port.mk>

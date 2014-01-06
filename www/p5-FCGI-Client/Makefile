@@ -18,12 +18,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	FCGI::Client.3 \
-	FCGI::Client::Connection.3 \
-	FCGI::Client::Constant.3 \
-	FCGI::Client::Record.3 \
-	FCGI::Client::RecordFactory.3 \
-	FCGI::Client::RecordHeader.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

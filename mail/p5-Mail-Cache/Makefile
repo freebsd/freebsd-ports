@@ -17,7 +17,4 @@ BUILD_DEPENDS=	p5-File-BaseDir>=0:${PORTSDIR}/devel/p5-File-BaseDir \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Mail::Cache.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

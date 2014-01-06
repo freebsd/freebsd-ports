@@ -14,7 +14,4 @@ COMMENT=	Utility subroutines for building "inside-out" objects
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Class::Std::Utils.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

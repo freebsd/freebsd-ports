@@ -1,0 +1,39 @@
+# HG changeset patch
+# User ksrini
+# Date 1381851019 -3600
+#      Tue Oct 15 16:30:19 2013 +0100
+# Node ID 8fb384d684f5b9bc76970bdc7e5603b9cd9944b8
+# Parent  337232ddaec36c6d9843ff35906e6160446844eb
+8013506: Better Pack200 data handling
+Reviewed-by: jrose, kizune, mschoene
+
+diff -r 337232ddaec3 -r 8fb384d684f5 src/share/native/com/sun/java/util/jar/pack/zip.cpp
+--- jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp	Fri May 31 20:43:32 2013 +0400
++++ jdk/src/share/native/com/sun/java/util/jar/pack/zip.cpp	Tue Oct 15 16:30:19 2013 +0100
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 2001, 2005, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 2001, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -339,6 +339,10 @@
+   time_t t = modtime;
+   struct tm sbuf;
+   struct tm* s = gmtime_r(&t, &sbuf);
++  if (s == NULL) {
++    fprintf(u->errstrm, "Error: gmtime failure, invalid input archive\n");
++    exit(2);
++  }
+   modtime_cache = modtime;
+   dostime_cache = dostime(s->tm_year + 1900, s->tm_mon + 1, s->tm_mday,
+                           s->tm_hour, s->tm_min, s->tm_sec);
+@@ -383,7 +387,7 @@
+   }
+ 
+   deflated.empty();
+-  zs.next_out  = (uchar*) deflated.grow(len + (len/2));
++  zs.next_out  = (uchar*) deflated.grow(add_size(len, (len/2)));
+   zs.avail_out = deflated.size();
+ 
+   zs.next_in = (uchar*)head.ptr;

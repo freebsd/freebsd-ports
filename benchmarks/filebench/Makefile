@@ -15,11 +15,4 @@ ONLY_FOR_ARCHS=	amd64 i386 ia64 ppc
 GNU_CONFIGURE=	yes
 LICENSE=	CDDL
 
-NO_STAGE=	yes
-do-install:
-	( cd ${WRKSRC} && make install-binPROGRAMS )
-.if !defined(NOPORTDATA)
-	(cd ${WRKSRC} && make install-data )
-.endif
-
 .include <bsd.port.mk>

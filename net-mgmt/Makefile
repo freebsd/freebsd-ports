@@ -228,6 +228,7 @@
     SUBDIR += p5-Net-Netmask
     SUBDIR += p5-Net-SNMP
     SUBDIR += p5-Net-SNMP-Util
+    SUBDIR += p5-Net-SNMPTrapd
     SUBDIR += p5-Net-Telnet-Cisco-IOS
     SUBDIR += p5-NetAddr-IP
     SUBDIR += p5-NetAddr-IP-Lite

@@ -7,6 +7,7 @@
     SUBDIR += adsuck
     SUBDIR += ares
     SUBDIR += autotrust
+    SUBDIR += bind10
     SUBDIR += bind96
     SUBDIR += bind98
     SUBDIR += bind99

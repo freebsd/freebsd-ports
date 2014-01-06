@@ -12,6 +12,19 @@
 %%SITE_PERL%%/Protocol/WebSocket/Stateful.pm
 %%SITE_PERL%%/Protocol/WebSocket/URL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol/WebSocket/.packlist
+%%PERL5_MAN3%%/Protocol::WebSocket.3.gz
+%%PERL5_MAN3%%/Protocol::WebSocket::Cookie.3.gz
+%%PERL5_MAN3%%/Protocol::WebSocket::Cookie::Request.3.gz
+%%PERL5_MAN3%%/Protocol::WebSocket::Cookie::Response.3.gz
+%%PERL5_MAN3%%/Protocol::WebSocket::Frame.3.gz
+%%PERL5_MAN3%%/Protocol::WebSocket::Handshake.3.gz
+%%PERL5_MAN3%%/Protocol::WebSocket::Handshake::Client.3.gz
+%%PERL5_MAN3%%/Protocol::WebSocket::Handshake::Server.3.gz
+%%PERL5_MAN3%%/Protocol::WebSocket::Message.3.gz
+%%PERL5_MAN3%%/Protocol::WebSocket::Request.3.gz
+%%PERL5_MAN3%%/Protocol::WebSocket::Response.3.gz
+%%PERL5_MAN3%%/Protocol::WebSocket::Stateful.3.gz
+%%PERL5_MAN3%%/Protocol::WebSocket::URL.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol/WebSocket
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Protocol
 @dirrm %%SITE_PERL%%/Protocol/WebSocket/Handshake

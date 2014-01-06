@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Handler/SCGI/.packlist
 %%SITE_PERL%%/Plack/Handler/SCGI.pm
+%%PERL5_MAN3%%/Plack::Handler::SCGI.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Handler/SCGI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Handler

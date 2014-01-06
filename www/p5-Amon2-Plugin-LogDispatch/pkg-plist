@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Amon2/Plugin/LogDispatch/.packlist
 %%SITE_PERL%%/Amon2/Plugin/LogDispatch.pm
 %%SITE_PERL%%/Amon2/Plugin/README.pod
+%%PERL5_MAN3%%/Amon2::Plugin::LogDispatch.3.gz
+%%PERL5_MAN3%%/Amon2::Plugin::README.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Amon2/Plugin/LogDispatch
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Amon2/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Amon2

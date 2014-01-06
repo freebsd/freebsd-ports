@@ -3,18 +3,18 @@
 
 PORTNAME=	qtdemo
 DISTVERSION=	${QT4_VERSION}
-CATEGORIES?=	misc
+PORTREVISION=	1
+CATEGORIES=	misc
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt demonstration and example programs
+COMMENT=	Qt 4 demonstration and example applications
 
 USES=		pkgconfig
 USE_QT4=	qmake_build moc_build rcc_build uic_build corelib designer \
 		gui network opengl sql svg qtestlib xml imageformats_run dbus \
 		script webkit phonon help assistant_run phonon-gst scripttools \
 		xmlpatterns multimedia
-QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
@@ -25,9 +25,10 @@ MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib:$$LD_LIBRARY_PATH \
 		PATH=${WRKSRC}/bin:$$PATH
 
 # qtlogo.png is installed by qt4-gui
-DESKTOP_ENTRIES="Qt Examples and Demos" "${COMMENT}" \
-		"${LOCALBASE}/share/pixmaps/qtlogo.png" \
-		"${PREFIX}/bin/qtdemo" "Development;Qt;" true
+DESKTOP_ENTRIES="Qt 4 Examples and Demos" "" \
+		"${QT_PREFIX}/share/pixmaps/qtlogo.png" \
+		"${PREFIX}/${QT_BINDIR_REL}/qtdemo" \
+		"Development;Qt;" true
 
 DO_NOT_EXTRACT=	doc mkspecs qmake translations \
 		src/activeqt src/openvg src/s60installs src/s60main src/tools \
@@ -41,26 +42,28 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/demos
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
-
 post-patch:
-	${REINPLACE_CMD} -e '/app +=/s|"assistant"|"assistant-qt4"|' \
+	${REINPLACE_CMD} -e '/app +=/s|"assistant"|"assistant${_QT_BINSUFX}"|' \
 		${BUILD_WRKSRC}/${PORTNAME}/menumanager.cpp \
 		${WRKSRC}/examples/help/remotecontrol/remotecontrol.cpp \
 		${WRKSRC}/examples/help/simpletextviewer/assistant.cpp
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/mkspecs/modules
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
-	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/bin/uic
-	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
+	${LN} -sf ${QMAKE} ${WRKSRC}/bin/qmake
+	${LN} -sf ${MOC} ${WRKSRC}/bin/moc
+	${LN} -sf ${UIC} ${WRKSRC}/bin/uic
+	${LN} -sf ${RCC} ${WRKSRC}/bin/rcc
 
 post-build:
-	cd ${WRKSRC}/examples && ${SETENV} MAKEOBJDIR=. ${MAKE} ${_MAKE_JOBS}
+	cd ${WRKSRC}/examples && \
+		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKEFLAGS} ${MAKEFILE} \
+		${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}
 
 post-install:
-	cd ${WRKSRC}/examples && ${SETENV} MAKEOBJDIR=. ${MAKE} ${MAKE_ARGS} install
+	cd ${WRKSRC}/examples && \
+		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKEFLAGS} ${MAKEFILE} \
+		${MAKE_ARGS} ${INSTALL_TARGET}
 	${FIND} -E ${STAGEDIR}${PREFIX}/share/examples/qt4/examples/declarative/cppextensions -regex ".*\.(moc|obj|pch|rcc)" -type d | ${XARGS} ${RM} -r
 
 .include <bsd.port.mk>

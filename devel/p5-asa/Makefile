@@ -13,7 +13,4 @@ COMMENT=	Perl extension to say your class/object working like something else
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	asa.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 %%SITE_PERL%%/File/Log.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Log/.packlist
+%%PERL5_MAN3%%/File::Log.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Log
 @dirrmtry %%SITE_PERL%%/File
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File

@@ -22,7 +22,4 @@ RUN_DEPENDS=	p5-Config-Any>=0:${PORTSDIR}/devel/p5-Config-Any \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Web::Scraper::Config.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

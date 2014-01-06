@@ -1,0 +1,499 @@
+# HG changeset patch
+# User andrew
+# Date 1382719863 -3600
+#      Fri Oct 25 17:51:03 2013 +0100
+# Node ID d4fca2113b280a7db03b67caae22e0ceafb51b89
+# Parent  566f427de7079a0ed32c2f625c952dcc45c348e3
+OPENJDK6-19: Fix test cases from 8010118 to work with OpenJDK 6
+Reviewed-by: omajid
+
+diff -r 566f427de707 -r d4fca2113b28 test/sun/reflect/CallerSensitive/CallerSensitiveFinder.java
+--- jdk/test/sun/reflect/CallerSensitive/CallerSensitiveFinder.java	Tue Jun 03 13:28:16 2008 -0700
++++ jdk/test/sun/reflect/CallerSensitive/CallerSensitiveFinder.java	Fri Oct 25 17:51:03 2013 +0100
+@@ -23,16 +23,12 @@
+ 
+ import com.sun.tools.classfile.*;
+ import static com.sun.tools.classfile.ConstantPool.*;
++
+ import java.io.File;
+ import java.io.IOException;
+ import java.lang.reflect.InvocationTargetException;
+-import java.nio.file.FileVisitResult;
+-import java.nio.file.Files;
+-import java.nio.file.Path;
+-import java.nio.file.Paths;
+-import java.nio.file.SimpleFileVisitor;
+-import java.nio.file.attribute.BasicFileAttributes;
+ import java.util.ArrayList;
++import java.util.Arrays;
+ import java.util.List;
+ import java.util.Set;
+ import java.util.concurrent.Callable;
+@@ -53,7 +49,7 @@
+     private static int numThreads = 3;
+     private static boolean verbose = false;
+     public static void main(String[] args) throws Exception {
+-        List<Path> classes = new ArrayList<>();
++        List<File> classes = new ArrayList<File>();
+         String testclasses = System.getProperty("test.classes", ".");
+         int i = 0;
+         while (i < args.length) {
+@@ -61,11 +57,11 @@
+             if (arg.equals("-v")) {
+                 verbose = true;
+             } else {
+-                Path p = Paths.get(testclasses, arg);
+-                if (!p.toFile().exists()) {
++                File f = new File(testclasses, arg);
++                if (!f.exists()) {
+                     throw new IllegalArgumentException(arg + " does not exist");
+                 }
+-                classes.add(p);
++                classes.add(f);
+             }
+         }
+         if (classes.isEmpty()) {
+@@ -81,7 +77,7 @@
+         }
+     }
+ 
+-    private final List<String> csMethodsMissingAnnotation = new ArrayList<>();
++    private final List<String> csMethodsMissingAnnotation = new ArrayList<String>();
+     private final java.lang.reflect.Method mhnCallerSensitiveMethod;
+     public CallerSensitiveFinder(String... methods) throws Exception {
+         super(methods);
+@@ -91,12 +87,114 @@
+     static java.lang.reflect.Method getIsCallerSensitiveMethod()
+             throws ClassNotFoundException, NoSuchMethodException
+     {
+-        Class<?> cls = Class.forName("java.lang.invoke.MethodHandleNatives");
++        Class<?> cls = CallerSensitiveFinder.class;
+         java.lang.reflect.Method m = cls.getDeclaredMethod("isCallerSensitiveMethod", Class.class, String.class);
+         m.setAccessible(true);
+         return m;
+     }
+ 
++    // Needs to match method in 7's java.lang.invoke.MethodHandleNatives
++    private static boolean isCallerSensitiveMethod(Class<?> defc, String method) {
++        if ("doPrivileged".equals(method) ||
++            "doPrivilegedWithCombiner".equals(method))
++            return defc == java.security.AccessController.class;
++        else if ("checkMemberAccess".equals(method))
++            return defc == java.lang.SecurityManager.class;
++        else if ("getUnsafe".equals(method))
++            return defc == sun.misc.Unsafe.class;
++        else if ("invoke".equals(method))
++            return defc == java.lang.reflect.Method.class;
++        else if ("get".equals(method) ||
++                 "getBoolean".equals(method) ||
++                 "getByte".equals(method) ||
++                 "getChar".equals(method) ||
++                 "getShort".equals(method) ||
++                 "getInt".equals(method) ||
++                 "getLong".equals(method) ||
++                 "getFloat".equals(method) ||
++                 "getDouble".equals(method) ||
++                 "set".equals(method) ||
++                 "setBoolean".equals(method) ||
++                 "setByte".equals(method) ||
++                 "setChar".equals(method) ||
++                 "setShort".equals(method) ||
++                 "setInt".equals(method) ||
++                 "setLong".equals(method) ||
++                 "setFloat".equals(method) ||
++                 "setDouble".equals(method))
++            return defc == java.lang.reflect.Field.class;
++        else if ("newInstance".equals(method)) {
++            if (defc == java.lang.reflect.Constructor.class)  return true;
++            if (defc == java.lang.Class.class)  return true;
++        } else if ("getFields".equals(method))
++            return defc == java.lang.Class.class ||
++                   defc == javax.sql.rowset.serial.SerialJavaObject.class;
++        else if ("forName".equals(method) ||
++                 "getClassLoader".equals(method) ||
++                 "getClasses".equals(method) ||
++                 "getMethods".equals(method) ||
++                 "getConstructors".equals(method) ||
++                 "getDeclaredClasses".equals(method) ||
++                 "getDeclaredFields".equals(method) ||
++                 "getDeclaredMethods".equals(method) ||
++                 "getDeclaredConstructors".equals(method) ||
++                 "getField".equals(method) ||
++                 "getMethod".equals(method) ||
++                 "getConstructor".equals(method) ||
++                 "getDeclaredField".equals(method) ||
++                 "getDeclaredMethod".equals(method) ||
++                 "getDeclaredConstructor".equals(method) ||
++                 "getDeclaringClass".equals(method) ||
++                 "getEnclosingClass".equals(method) ||
++                 "getEnclosingMethod".equals(method) ||
++                 "getEnclosingConstructor".equals(method))
++            return defc == java.lang.Class.class;
++        else if ("getConnection".equals(method) ||
++                 "getDriver".equals(method) ||
++                 "getDrivers".equals(method) ||
++                 "deregisterDriver".equals(method))
++                 return defc == java.sql.DriverManager.class;
++        else if ("newUpdater".equals(method)) {
++            if (defc == java.util.concurrent.atomic.AtomicIntegerFieldUpdater.class)  return true;
++            if (defc == java.util.concurrent.atomic.AtomicLongFieldUpdater.class)  return true;
++            if (defc == java.util.concurrent.atomic.AtomicReferenceFieldUpdater.class)  return true;
++        } else if ("getContextClassLoader".equals(method))
++            return defc == java.lang.Thread.class;
++        else if ("getPackage".equals(method) ||
++                 "getPackages".equals(method))
++            return defc == java.lang.Package.class;
++        else if ("getParent".equals(method) ||
++                 "getSystemClassLoader".equals(method))
++            return defc == java.lang.ClassLoader.class;
++        else if ("load".equals(method) ||
++                 "loadLibrary".equals(method)) {
++            if (defc == java.lang.Runtime.class)  return true;
++            if (defc == java.lang.System.class)  return true;
++        } else if ("getCallerClass".equals(method)) {
++            if (defc == sun.reflect.Reflection.class)  return true;
++            if (defc == java.lang.System.class)  return true;
++        } else if ("getCallerClassLoader".equals(method))
++            return defc == java.lang.ClassLoader.class;
++        else if ("registerAsParallelCapable".equals(method))
++            return defc == java.lang.ClassLoader.class;
++        else if ("getInvocationHandler".equals(method) ||
++                 "getProxyClass".equals(method) ||
++                 "newProxyInstance".equals(method))
++            return defc == java.lang.reflect.Proxy.class;
++        else if ("getBundle".equals(method) ||
++                 "clearCache".equals(method))
++            return defc == java.util.ResourceBundle.class;
++        else if ("getType".equals(method))
++            return defc == java.io.ObjectStreamField.class;
++        else if ("forClass".equals(method))
++            return defc == java.io.ObjectStreamClass.class;
++        else if ("getLogger".equals(method))
++            return defc == java.util.logging.Logger.class;
++        else if ("getAnonymousLogger".equals(method))
++            return defc == java.util.logging.Logger.class;
++        return false;
++    }
++
+     boolean inMethodHandlesList(String classname, String method)  {
+        Class<?> cls;
+         try {
+@@ -104,19 +202,21 @@
+                                 false,
+                                 ClassLoader.getSystemClassLoader());
+             return (Boolean) mhnCallerSensitiveMethod.invoke(null, cls, method);
+-        } catch (ClassNotFoundException|IllegalAccessException e) {
++        } catch (ClassNotFoundException e) {
++            throw new RuntimeException(e);
++        } catch (IllegalAccessException e) {
+             throw new RuntimeException(e);
+         } catch (InvocationTargetException e) {
+             throw new RuntimeException(e.getCause());
+         }
+     }
+ 
+-    public List<String> run(List<Path> classes) throws IOException, InterruptedException,
++    public List<String> run(List<File> classes) throws IOException, InterruptedException,
+             ExecutionException, ConstantPoolException
+     {
+         ExecutorService pool = Executors.newFixedThreadPool(numThreads);
+-        for (Path path : classes) {
+-            ClassFileReader reader = ClassFileReader.newInstance(path.toFile());
++        for (File path : classes) {
++            ClassFileReader reader = ClassFileReader.newInstance(path);
+             for (ClassFile cf : reader.getClassFiles()) {
+                 String classFileName = cf.getName();
+                 // for each ClassFile
+@@ -192,56 +292,46 @@
+     }
+ 
+     static class PlatformClassPath {
+-        static List<Path> getJREClasses() throws IOException {
+-            List<Path> result = new ArrayList<Path>();
+-            Path home = Paths.get(System.getProperty("java.home"));
++        static List<File> getJREClasses() throws IOException {
++            List<File> result = new ArrayList<File>();
++            File home = new File(System.getProperty("java.home"));
+ 
+-            if (home.endsWith("jre")) {
++            if (home.toString().endsWith("jre")) {
+                 // jar files in <javahome>/jre/lib
+                 // skip <javahome>/lib
+-                result.addAll(addJarFiles(home.resolve("lib")));
+-            } else if (home.resolve("lib").toFile().exists()) {
++                result.addAll(addJarFiles(new File(home, "lib")));
++            } else if (new File(home, "lib").exists()) {
+                 // either a JRE or a jdk build image
+-                File classes = home.resolve("classes").toFile();
++                File classes = new File(home, "classes");
+                 if (classes.exists() && classes.isDirectory()) {
+                     // jdk build outputdir
+-                    result.add(classes.toPath());
++                    result.add(classes);
+                 }
+                 // add other JAR files
+-                result.addAll(addJarFiles(home.resolve("lib")));
++                result.addAll(addJarFiles(new File(home, "lib")));
+             } else {
+                 throw new RuntimeException("\"" + home + "\" not a JDK home");
+             }
+             return result;
+         }
+ 
+-        static List<Path> addJarFiles(final Path root) throws IOException {
+-            final List<Path> result = new ArrayList<Path>();
+-            final Path ext = root.resolve("ext");
+-            Files.walkFileTree(root, new SimpleFileVisitor<Path>() {
+-                @Override
+-                public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs)
+-                        throws IOException {
+-                    if (dir.equals(root) || dir.equals(ext)) {
+-                        return FileVisitResult.CONTINUE;
+-                    } else {
+-                        // skip other cobundled JAR files
+-                        return FileVisitResult.SKIP_SUBTREE;
+-                    }
+-                }
+-
+-                @Override
+-                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
+-                        throws IOException {
+-                    File f = file.toFile();
++        static List<File> addJarFiles(final File root) throws IOException {
++            final List<File> result = new ArrayList<File>();
++            final File ext = new File(root, "ext");
++            final List<File> files = new ArrayList<File>();
++            for (String s : root.list())
++                files.add(new File(root, s));
++            for (String s : ext.list())
++                files.add(new File(ext, s));
++            for (File f : files) {
++                if (f.isFile()) {
+                     String fn = f.getName();
+                     // parse alt-rt.jar as well
+                     if (fn.endsWith(".jar") && !fn.equals("jfxrt.jar")) {
+-                        result.add(file);
++                        result.add(f);
+                     }
+-                    return FileVisitResult.CONTINUE;
+                 }
+-            });
++            }
+             return result;
+         }
+     }
+diff -r 566f427de707 -r d4fca2113b28 test/sun/reflect/CallerSensitive/ClassFileReader.java
+--- jdk/test/sun/reflect/CallerSensitive/ClassFileReader.java	Tue Jun 03 13:28:16 2008 -0700
++++ jdk/test/sun/reflect/CallerSensitive/ClassFileReader.java	Fri Oct 25 17:51:03 2013 +0100
+@@ -23,12 +23,8 @@
+ 
+ import com.sun.tools.classfile.ClassFile;
+ import com.sun.tools.classfile.ConstantPoolException;
++
+ import java.io.*;
+-import java.nio.file.FileVisitResult;
+-import java.nio.file.Files;
+-import java.nio.file.Path;
+-import java.nio.file.SimpleFileVisitor;
+-import java.nio.file.attribute.BasicFileAttributes;
+ import java.util.*;
+ import java.util.jar.JarEntry;
+ import java.util.jar.JarFile;
+@@ -47,28 +43,28 @@
+         }
+ 
+         if (path.isDirectory()) {
+-            return new DirectoryReader(path.toPath());
++            return new DirectoryReader(path);
+         } else if (path.getName().endsWith(".jar")) {
+-            return new JarFileReader(path.toPath());
++            return new JarFileReader(path);
+         } else {
+-            return new ClassFileReader(path.toPath());
++            return new ClassFileReader(path);
+         }
+     }
+ 
+     /**
+      * Returns a ClassFileReader instance of a given JarFile.
+      */
+-    public static ClassFileReader newInstance(Path path, JarFile jf) throws IOException {
++    public static ClassFileReader newInstance(File path, JarFile jf) throws IOException {
+         return new JarFileReader(path, jf);
+     }
+ 
+-    protected final Path path;
++    protected final File path;
+     protected final String baseFileName;
+-    private ClassFileReader(Path path) {
++    private ClassFileReader(File path) {
+         this.path = path;
+-        this.baseFileName = path.getFileName() != null
+-                                ? path.getFileName().toString()
+-                                : path.toString();
++        this.baseFileName = path.getName().equals("")
++                                ? path.toString()
++                                : path.getName();
+     }
+ 
+     public String getFileName() {
+@@ -104,10 +100,10 @@
+         };
+     }
+ 
+-    protected ClassFile readClassFile(Path p) throws IOException {
++    protected ClassFile readClassFile(File p) throws IOException {
+         InputStream is = null;
+         try {
+-            is = Files.newInputStream(p);
++            is = new FileInputStream(p);
+             return ClassFile.read(is);
+         } catch (ConstantPoolException e) {
+             throw new ClassFileError(e);
+@@ -150,7 +146,7 @@
+     }
+ 
+     private static class DirectoryReader extends ClassFileReader {
+-        DirectoryReader(Path path) throws IOException {
++        DirectoryReader(File path) throws IOException {
+             super(path);
+         }
+ 
+@@ -158,17 +154,17 @@
+             if (name.indexOf('.') > 0) {
+                 int i = name.lastIndexOf('.');
+                 String pathname = name.replace('.', File.separatorChar) + ".class";
+-                Path p = path.resolve(pathname);
+-                if (!p.toFile().exists()) {
+-                    p = path.resolve(pathname.substring(0, i) + "$" +
+-                                     pathname.substring(i+1, pathname.length()));
++                File p = new File(path, pathname);
++                if (!p.exists()) {
++                    p = new File(path, pathname.substring(0, i) + "$" +
++                                 pathname.substring(i+1, pathname.length()));
+                 }
+-                if (p.toFile().exists()) {
++                if (p.exists()) {
+                     return readClassFile(p);
+                 }
+             } else {
+-                Path p = path.resolve(name + ".class");
+-                if (p.toFile().exists()) {
++                File p = new File(path, name + ".class");
++                if (p.exists()) {
+                     return readClassFile(p);
+                 }
+             }
+@@ -184,22 +180,24 @@
+             };
+         }
+ 
+-        private List<Path> walkTree(Path dir) throws IOException {
+-            final List<Path> files = new ArrayList<Path>();
+-            Files.walkFileTree(dir, new SimpleFileVisitor<Path>() {
+-                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
+-                        throws IOException {
+-                    if (file.toFile().getName().endsWith(".class")) {
+-                        files.add(file);
++        private List<File> walkTree(File dir) throws IOException {
++            final List<File> files = new ArrayList<File>();
++            final List<String> dirContents = Arrays.asList(dir.list());
++            for (String file : dirContents) {
++                File f = new File(dir, file);
++                if (f.isDirectory())
++                    files.addAll(walkTree(f));
++                else {
++                    if (f.getName().endsWith(".class")) {
++                        files.add(f);
+                     }
+-                    return FileVisitResult.CONTINUE;
+                 }
+-            });
++            }
+             return files;
+         }
+ 
+         class DirectoryIterator implements Iterator<ClassFile> {
+-            private List<Path> entries;
++            private List<File> entries;
+             private int index = 0;
+             DirectoryIterator() throws IOException {
+                 entries = walkTree(path);
+@@ -214,7 +212,7 @@
+                 if (!hasNext()) {
+                     throw new NoSuchElementException();
+                 }
+-                Path path = entries.get(index++);
++                File path = entries.get(index++);
+                 try {
+                     return readClassFile(path);
+                 } catch (IOException e) {
+@@ -230,10 +228,10 @@
+ 
+     private static class JarFileReader extends ClassFileReader {
+         final JarFile jarfile;
+-        JarFileReader(Path path) throws IOException {
+-            this(path, new JarFile(path.toFile()));
++        JarFileReader(File path) throws IOException {
++            this(path, new JarFile(path));
+         }
+-        JarFileReader(Path path, JarFile jf) throws IOException {
++        JarFileReader(File path, JarFile jf) throws IOException {
+             super(path);
+             this.jarfile = jf;
+         }
+diff -r 566f427de707 -r d4fca2113b28 test/sun/reflect/CallerSensitive/MethodFinder.java
+--- jdk/test/sun/reflect/CallerSensitive/MethodFinder.java	Tue Jun 03 13:28:16 2008 -0700
++++ jdk/test/sun/reflect/CallerSensitive/MethodFinder.java	Fri Oct 25 17:51:03 2013 +0100
+@@ -121,10 +121,6 @@
+             return false;
+         }
+ 
+-        public Boolean visitInvokeDynamic(CONSTANT_InvokeDynamic_info info, Void p) {
+-            return false;
+-        }
+-
+         public Boolean visitLong(CONSTANT_Long_info info, Void p) {
+             return false;
+         }
+@@ -133,14 +129,6 @@
+             return false;
+         }
+ 
+-        public Boolean visitMethodHandle(CONSTANT_MethodHandle_info info, Void p) {
+-            return false;
+-        }
+-
+-        public Boolean visitMethodType(CONSTANT_MethodType_info info, Void p) {
+-            return false;
+-        }
+-
+         public Boolean visitString(CONSTANT_String_info info, Void p) {
+             return false;
+         }
+@@ -198,4 +186,3 @@
+         }
+     };
+ }
+-
+diff -r 566f427de707 -r d4fca2113b28 test/sun/reflect/CallerSensitive/MissingCallerSensitive.java
+--- jdk/test/sun/reflect/CallerSensitive/MissingCallerSensitive.java	Tue Jun 03 13:28:16 2008 -0700
++++ jdk/test/sun/reflect/CallerSensitive/MissingCallerSensitive.java	Fri Oct 25 17:51:03 2013 +0100
+@@ -30,14 +30,13 @@
+  * @run main/othervm MissingCallerSensitive
+  */
+ 
+-import java.nio.file.Path;
+-import java.nio.file.Paths;
++import java.io.File;
+ import java.util.*;
+ public class MissingCallerSensitive {
+     public static void main(String[] args) throws Exception {
+         String testclasses = System.getProperty("test.classes", ".");
+-        List<Path> classes = new ArrayList<>();
+-        classes.add(Paths.get(testclasses, "MissingCallerSensitive.class"));
++        List<File> classes = new ArrayList<File>();
++        classes.add(new File(testclasses, "MissingCallerSensitive.class"));
+ 
+         final String method = "sun/reflect/Reflection.getCallerClass";
+         CallerSensitiveFinder csfinder = new CallerSensitiveFinder(method);

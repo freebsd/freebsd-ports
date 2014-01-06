@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	symfony2
-PORTREVISION=	1
 PORTVERSION=	20110826
+PORTREVISION=	2
 CATEGORIES=	devel www pear
 
 MAINTAINER=	gasol.wu@gmail.com

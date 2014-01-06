@@ -17,17 +17,13 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		alltray.1
-
 OPTIONS_DEFINE=	KDE
 KDE_DESC=	Support only KDE desktop
+KDE_CONFIGURE_ON=	--disable-gconf
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MKDE}
-CONFIGURE_ARGS=	--disable-gconf
-.else
+.if ! ${PORT_OPTIONS:MKDE}
 USE_GNOME+=	gconf2
 .endif
 

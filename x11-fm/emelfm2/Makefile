@@ -38,8 +38,7 @@ MAK_ENV+=	DEBUG=1
 .endif
 
 .if ${PORT_OPTIONS:MGAMIN}
-USE_FAM=	yes
-WANT_FAM_SYSTEM=gamin
+USES+=		fam:gamin
 MAKE_ENV+=	USE_GAMIN=1
 .endif
 

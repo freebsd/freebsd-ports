@@ -39,6 +39,39 @@ bin/re.pl
 %%SITE_PERL%%/Devel/REPL/Profile/Minimal.pm
 %%SITE_PERL%%/Devel/REPL/Script.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/REPL/.packlist
+%%PERL5_MAN3%%/Devel::REPL.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Overview.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::B::Concise.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::Colors.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::Commands.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::Completion.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::CompletionDriver::Globals.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::CompletionDriver::INC.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::CompletionDriver::Keywords.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::CompletionDriver::LexEnv.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::CompletionDriver::Methods.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::CompletionDriver::Turtles.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::DDC.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::DDS.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::DumpHistory.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::FancyPrompt.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::FindVariable.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::History.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::Interrupt.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::LexEnv.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::MultiLine::PPI.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::NewlineHack.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::Nopaste.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::OutputCache.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::PPI.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::Packages.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::Peek.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::ReadLineHistory.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::Refresh.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::ShowClass.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::Timing.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Plugin::Turtles.3.gz
+%%PERL5_MAN3%%/Devel::REPL::Profile.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/REPL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
 @dirrmtry %%SITE_PERL%%/Devel/REPL/Profile

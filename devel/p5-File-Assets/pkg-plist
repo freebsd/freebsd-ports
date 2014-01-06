@@ -21,6 +21,8 @@
 %%SITE_PERL%%/File/Assets/Bucket.pm
 %%SITE_PERL%%/File/Assets.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Assets/.packlist
+%%PERL5_MAN3%%/File::Assets.3.gz
+%%PERL5_MAN3%%/File::Assets::Asset.3.gz
 @dirrmtry %%SITE_PERL%%/File/Assets/Filter/Minifier/CSS
 @dirrmtry %%SITE_PERL%%/File/Assets/Filter/Minifier/JavaScript
 @dirrmtry %%SITE_PERL%%/File/Assets/Filter/Minifier

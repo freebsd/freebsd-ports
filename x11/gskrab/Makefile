@@ -20,5 +20,4 @@ USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
 ADDITIONAL_LIB_DIRS+=	-L${WRKSRC}/GSKrabFramework/GSKrab.framework/Versions/Current
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

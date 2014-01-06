@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Net/Telnet/Cisco/IOS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Telnet/Cisco/IOS/.packlist
+%%PERL5_MAN3%%/Net::Telnet::Cisco::IOS.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Telnet/Cisco/IOS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Telnet/Cisco
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Telnet

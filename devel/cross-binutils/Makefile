@@ -3,6 +3,7 @@
 
 PORTNAME=	binutils
 PORTVERSION=	2.23.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -29,6 +30,7 @@ NO_STAGE=	yes
 
 CONFIGURE_ARGS+=	--disable-nls \
 			--with-system-zlib \
+			--with-sysroot=/ \
 			--target=${OURTARGET} \
 			--disable-werror
 

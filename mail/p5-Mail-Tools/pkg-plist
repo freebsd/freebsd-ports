@@ -29,6 +29,18 @@
 %%SITE_PERL%%/Mail/Util.pm
 %%SITE_PERL%%/Mail/Util.pod
 %%SITE_PERL%%/Mail/Mailer/qmail.pm
+%%PERL5_MAN3%%/Mail::Address.3.gz
+%%PERL5_MAN3%%/Mail::Cap.3.gz
+%%PERL5_MAN3%%/Mail::Field.3.gz
+%%PERL5_MAN3%%/Mail::Field::AddrList.3.gz
+%%PERL5_MAN3%%/Mail::Field::Date.3.gz
+%%PERL5_MAN3%%/Mail::Field::Generic.3.gz
+%%PERL5_MAN3%%/Mail::Filter.3.gz
+%%PERL5_MAN3%%/Mail::Header.3.gz
+%%PERL5_MAN3%%/Mail::Internet.3.gz
+%%PERL5_MAN3%%/Mail::Mailer.3.gz
+%%PERL5_MAN3%%/Mail::Send.3.gz
+%%PERL5_MAN3%%/Mail::Util.3.gz
 @dirrmtry %%SITE_PERL%%/Mail/Mailer
 @dirrmtry %%SITE_PERL%%/Mail/Field
 @dirrmtry %%SITE_PERL%%/Mail

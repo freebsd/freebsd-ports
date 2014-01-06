@@ -3,7 +3,7 @@
 
 PORTNAME=	clementine
 PORTVERSION=	1.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-player
@@ -30,7 +30,9 @@ PROJECTHOST=	${PORTNAME}${PKGNAMESUFFIX}
 USES=		compiler:c++11-lib cmake pkgconfig
 USE_GL=		glew
 USE_QT4=	dbus gui xml qmake_build uic_build moc_build rcc_build \
-		linguist_build network sql opengl qtestlib corelib webkit
+		linguist_build network sql opengl qtestlib corelib webkit \
+		imageformats
+
 INSTALLS_ICONS=	yes
 USE_GSTREAMER=	gio ogg mp3 flac soup vorbis
 CONFLICTS_BUILD=	qt-3.*

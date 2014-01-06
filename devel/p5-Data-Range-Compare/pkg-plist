@@ -6,6 +6,12 @@
 %%SITE_PERL%%/Data/Range/Compare/Cookbook/Recipe_DateTime.pod
 %%SITE_PERL%%/Data/Range/Compare/Cookbook/Recipe_a_to_z.pod
 %%SITE_PERL%%/Data/Range/Compare/Cookbook/Recipe_subclass_a_to_z.pod
+%%PERL5_MAN3%%/Data::Range::Compare.3.gz
+%%PERL5_MAN3%%/Data::Range::Compare::Cookbook.3.gz
+%%PERL5_MAN3%%/Data::Range::Compare::Cookbook::Instance_and_Constants.3.gz
+%%PERL5_MAN3%%/Data::Range::Compare::Cookbook::Recipe_DateTime.3.gz
+%%PERL5_MAN3%%/Data::Range::Compare::Cookbook::Recipe_a_to_z.3.gz
+%%PERL5_MAN3%%/Data::Range::Compare::Cookbook::Recipe_subclass_a_to_z.3.gz
 @dirrmtry %%SITE_PERL%%/Data/Range/Compare/Cookbook
 @dirrmtry %%SITE_PERL%%/Data/Range/Compare
 @dirrmtry %%SITE_PERL%%/Data/Range

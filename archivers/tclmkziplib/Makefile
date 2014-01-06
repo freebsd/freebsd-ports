@@ -7,19 +7,14 @@ PORTREVISION=	2
 CATEGORIES=	archivers tcl
 MASTER_SITES=	http://mkextensions.sourceforge.net/
 DISTNAME=	mkZiplib${PORTVERSION:S/.//}
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	GZIP and ZIP support for TCL; dynamically loadable
 
-LICENSE=	BSD
-
 USES+=		tcl
-USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/mkZiplib${PORTVERSION}
-NO_STAGE=	yes
-
-.include <bsd.port.options.mk>
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 MAKE_ENV=	VERSION=${PORTVERSION:S/.//} \
@@ -29,14 +24,10 @@ MAKE_ENV=	VERSION=${PORTVERSION:S/.//} \
 PLIST_SUB+=	VERSION=${PORTVERSION:S/.//}
 
 do-install:
-		@${MKDIR} ${PREFIX}/lib/mkZiplib
-		@${INSTALL_PROGRAM} ${WRKSRC}/mkZiplib${PORTVERSION:S/.//}.so ${PREFIX}/lib/mkZiplib
-		@${INSTALL_DATA} ${WRKSRC}/pkgIndex.tcl ${PREFIX}/lib/mkZiplib
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-		@ ${MKDIR} ${DOCSDIR}
-		@ ${INSTALL_DATA} ${WRKSRC}/mkZiplib${PORTVERSION:S/.//}.htm ${DOCSDIR}
-.endif
+		@${MKDIR} ${STAGEDIR}${PREFIX}/lib/mkZiplib
+		${INSTALL_LIB} ${WRKSRC}/mkZiplib${PORTVERSION:S/.//}.so ${STAGEDIR}${PREFIX}/lib/mkZiplib
+		${INSTALL_DATA} ${WRKSRC}/pkgIndex.tcl ${STAGEDIR}${PREFIX}/lib/mkZiplib
+		@${MKDIR} ${STAGEDIR}${DOCSDIR}
+		${INSTALL_DATA} ${WRKSRC}/mkZiplib${PORTVERSION:S/.//}.htm ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

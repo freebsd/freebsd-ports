@@ -18,10 +18,7 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	YAML::AppConfig.3
-
-NO_STAGE=	yes
 post-patch:
-	${FIND} ${WRKSRC} -name '*.orig' | ${XARGS} ${RM}
+	${FIND} ${WRKSRC} -name '*.orig' -delete
 
 .include <bsd.port.mk>

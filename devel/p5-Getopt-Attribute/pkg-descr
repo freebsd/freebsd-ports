@@ -7,4 +7,4 @@ As you can see from the Synopsis, the attribute takes an argument of
 the same format as you would give as the hash key for Getopt::Long.
 See the Getopt::Long manpage for details.
 
-WWW:	http://search.cpan.org/dist/Getopt-Attribute/
+WWW: http://search.cpan.org/dist/Getopt-Attribute/

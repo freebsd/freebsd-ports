@@ -49,6 +49,46 @@ bin/xql.pl
 %%SITE_PERL%%/XML/XQL/Parser.pm
 %%SITE_PERL%%/XML/XQL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/libxml-enno/.packlist
+%%PERL5_MAN3%%/XML::Checker.3.gz
+%%PERL5_MAN3%%/XML::Checker::Parser.3.gz
+%%PERL5_MAN3%%/XML::DOM.3.gz
+%%PERL5_MAN3%%/XML::DOM::AttDef.3.gz
+%%PERL5_MAN3%%/XML::DOM::AttlistDecl.3.gz
+%%PERL5_MAN3%%/XML::DOM::Attr.3.gz
+%%PERL5_MAN3%%/XML::DOM::CDATASection.3.gz
+%%PERL5_MAN3%%/XML::DOM::CharacterData.3.gz
+%%PERL5_MAN3%%/XML::DOM::Comment.3.gz
+%%PERL5_MAN3%%/XML::DOM::DOMImplementation.3.gz
+%%PERL5_MAN3%%/XML::DOM::Document.3.gz
+%%PERL5_MAN3%%/XML::DOM::DocumentFragment.3.gz
+%%PERL5_MAN3%%/XML::DOM::DocumentType.3.gz
+%%PERL5_MAN3%%/XML::DOM::Element.3.gz
+%%PERL5_MAN3%%/XML::DOM::ElementDecl.3.gz
+%%PERL5_MAN3%%/XML::DOM::Entity.3.gz
+%%PERL5_MAN3%%/XML::DOM::EntityReference.3.gz
+%%PERL5_MAN3%%/XML::DOM::NamedNodeMap.3.gz
+%%PERL5_MAN3%%/XML::DOM::Node.3.gz
+%%PERL5_MAN3%%/XML::DOM::NodeList.3.gz
+%%PERL5_MAN3%%/XML::DOM::Notation.3.gz
+%%PERL5_MAN3%%/XML::DOM::Parser.3.gz
+%%PERL5_MAN3%%/XML::DOM::PerlSAX.3.gz
+%%PERL5_MAN3%%/XML::DOM::ProcessingInstruction.3.gz
+%%PERL5_MAN3%%/XML::DOM::Text.3.gz
+%%PERL5_MAN3%%/XML::DOM::ValParser.3.gz
+%%PERL5_MAN3%%/XML::DOM::XMLDecl.3.gz
+%%PERL5_MAN3%%/XML::Filter::DetectWS.3.gz
+%%PERL5_MAN3%%/XML::Filter::Reindent.3.gz
+%%PERL5_MAN3%%/XML::Filter::SAXT.3.gz
+%%PERL5_MAN3%%/XML::Handler::BuildDOM.3.gz
+%%PERL5_MAN3%%/XML::Handler::Composer.3.gz
+%%PERL5_MAN3%%/XML::Handler::PrintEvents.3.gz
+%%PERL5_MAN3%%/XML::RegExp.3.gz
+%%PERL5_MAN3%%/XML::UM.3.gz
+%%PERL5_MAN3%%/XML::XQL.3.gz
+%%PERL5_MAN3%%/XML::XQL::DOM.3.gz
+%%PERL5_MAN3%%/XML::XQL::Date.3.gz
+%%PERL5_MAN3%%/XML::XQL::Query.3.gz
+%%PERL5_MAN3%%/XML::XQL::Tutorial.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/libxml-enno
 @dirrmtry %%SITE_PERL%%/XML/XQL
 @dirrmtry %%SITE_PERL%%/XML/Filter

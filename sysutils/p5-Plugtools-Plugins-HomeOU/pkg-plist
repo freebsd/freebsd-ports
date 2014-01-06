@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Plugtools/Plugins/HomeOU.pm
 %%SITE_PERL%%/Plugtools/Plugins/HomeOUremove.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plugtools/Plugins/HomeOU/.packlist
+%%PERL5_MAN3%%/Plugtools::Plugins::HomeOU.3.gz
+%%PERL5_MAN3%%/Plugtools::Plugins::HomeOUremove.3.gz
 @dirrmtry %%SITE_PERL%%/Plugtools/Plugins/
 @dirrmtry %%SITE_PERL%%/Plugtools/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plugtools/Plugins/HomeOU

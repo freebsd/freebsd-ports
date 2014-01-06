@@ -15,7 +15,4 @@ RUN_DEPENDS=	p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		WWW::Mechanize::SpamCop.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

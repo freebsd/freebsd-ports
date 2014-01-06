@@ -15,3 +15,5 @@ or other Sys V-derived operating systems, will work so long as the
 print spoolers are set up to understand the BSD protocol.  Most modern
 network-capable laser printers, such as those manufactured by HP and
 LexMark, also "speak" BSD.
+
+WWW: http://search.cpan.org/dist/Net-Printer/

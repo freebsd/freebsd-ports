@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Class/URI/.packlist
 %%SITE_PERL%%/Path/Class/URI.pm
 %%SITE_PERL%%/Path/Class/Unicode.pm
+%%PERL5_MAN3%%/Path::Class::URI.3.gz
+%%PERL5_MAN3%%/Path::Class::Unicode.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Class/URI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Class
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path

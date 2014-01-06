@@ -7,7 +7,6 @@ CATEGORIES=	astro kde
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE4 library for browsing photos on a map
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../graphics/digikam-kde4/Makefile.common"
 
 USE_KDE4+=	libkexiv2 marble

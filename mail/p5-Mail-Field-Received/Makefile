@@ -21,7 +21,4 @@ TEST_DEPENDS=	p5-Test-Differences>0:${PORTSDIR}/devel/p5-Test-Differences
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Mail::Field::Received.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

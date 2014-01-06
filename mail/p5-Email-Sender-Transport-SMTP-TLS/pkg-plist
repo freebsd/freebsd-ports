@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Email/Sender/Transport/SMTP/TLS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Sender/Transport/SMTP/TLS/.packlist
+%%PERL5_MAN3%%/Email::Sender::Transport::SMTP::TLS.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Sender/Transport/SMTP/TLS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Sender/Transport/SMTP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Sender/Transport

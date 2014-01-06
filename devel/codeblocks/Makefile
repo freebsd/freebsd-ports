@@ -19,8 +19,7 @@ LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 		librsync.so:${PORTSDIR}/net/librsync
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-USES=		pkgconfig
-USE_FAM=	yes
+USES=		fam pkgconfig
 USE_WX=		2.8
 WANT_UNICODE=	yes
 USE_GNOME=	gnomehack desktopfileutils

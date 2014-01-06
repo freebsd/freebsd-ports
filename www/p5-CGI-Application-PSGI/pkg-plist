@@ -1,3 +1,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/PSGI/.packlist
 %%SITE_PERL%%/CGI/Application/PSGI.pm
+%%PERL5_MAN3%%/CGI::Application::PSGI.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Application/PSGI

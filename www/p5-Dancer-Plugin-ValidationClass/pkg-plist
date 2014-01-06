@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/ValidationClass/.packlist
 %%SITE_PERL%%/Dancer/Plugin/ValidationClass.pm
+%%PERL5_MAN3%%/Dancer::Plugin::ValidationClass.3.gz
 @dirrmtry %%SITE_PERL%%/Dancer/Plugin
 @dirrm %%SITE_PERL%%/Dancer/Plugin
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer/Plugin/ValidationClass

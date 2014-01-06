@@ -3,6 +3,10 @@
 %%SITE_PERL%%/Catalyst/Engine/PSGI.pm
 %%SITE_PERL%%/Catalyst/Helper/PSGI.pm
 %%SITE_PERL%%/Plack/Test/Adopt/Catalyst.pm
+%%PERL5_MAN3%%/Catalyst::Controller::Metal.3.gz
+%%PERL5_MAN3%%/Catalyst::Engine::PSGI.3.gz
+%%PERL5_MAN3%%/Catalyst::Helper::PSGI.3.gz
+%%PERL5_MAN3%%/Plack::Test::Adopt::Catalyst.3.gz
 @dirrmtry %%SITE_PERL%%/Plack/Test/Adopt
 @dirrmtry %%SITE_PERL%%/Plack/Test
 @dirrmtry %%SITE_PERL%%/Plack

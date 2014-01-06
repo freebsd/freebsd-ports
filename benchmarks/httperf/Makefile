@@ -7,7 +7,7 @@ CATEGORIES=	benchmarks www
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	jlaffaye@FreeBSD.org
-COMMENT=	A tool for measuring webserver performance
+COMMENT=	Tool for measuring webserver performance
 
 LICENSE=	GPLv2
 
@@ -17,24 +17,16 @@ USES=		gmake
 MAKE_ARGS=	LIBUTIL_OBJS=ssl_writev.o \
 		exec_prefix=${PREFIX}
 
-PLIST_FILES=	bin/httperf
+PLIST_FILES=	bin/httperf \
+		man/man1/httperf.1.gz
 PORTDOCS=	ChangeLog NEWS README TODO
-MAN1=		httperf.1
-
-NO_STAGE=	yes
-
-.include <bsd.port.options.mk>
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
 
 do-install:
-	@${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_MAN} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>

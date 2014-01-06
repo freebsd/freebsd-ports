@@ -14,7 +14,4 @@ COMMENT=	Perl module to parse traceroute(8)
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Traceroute.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

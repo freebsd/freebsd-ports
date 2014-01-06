@@ -21,8 +21,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	XML::Compile::SOAP::WSA.3 \
-	XML::Compile::SOAP::WSA::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

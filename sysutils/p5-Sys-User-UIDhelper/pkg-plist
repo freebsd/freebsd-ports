@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Sys/User/UIDhelper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/User/UIDhelper/.packlist
+%%PERL5_MAN3%%/Sys::User::UIDhelper.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/User/UIDhelper
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/User/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/

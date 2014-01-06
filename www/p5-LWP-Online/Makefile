@@ -20,7 +20,4 @@ RUN_DEPENDS+=	p5-libwww>=5.805:${PORTSDIR}/www/p5-libwww \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		LWP::Online.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

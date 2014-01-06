@@ -1,6 +1,7 @@
 bin/axpoint
 %%SITE_PERL%%/XML/Handler/AxPoint.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/AxPoint/.packlist
+%%PERL5_MAN3%%/XML::Handler::AxPoint.3.gz
 @dirrmtry %%SITE_PERL%%/XML/Handler
 @dirrmtry %%SITE_PERL%%/XML
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Handler/AxPoint

@@ -4,6 +4,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/FreeType/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/FreeType/FreeType.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/FreeType/FreeType.so
+%%PERL5_MAN3%%/Font::FreeType.3.gz
+%%PERL5_MAN3%%/Font::FreeType::Face.3.gz
+%%PERL5_MAN3%%/Font::FreeType::Glyph.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/FreeType
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Font/FreeType

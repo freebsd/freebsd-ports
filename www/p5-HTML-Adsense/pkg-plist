@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Adsense/.packlist
 %%SITE_PERL%%/HTML/Adsense.pm
+%%PERL5_MAN3%%/HTML::Adsense.3.gz
 @dirrmtry %%SITE_PERL%%/HTML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Adsense
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML

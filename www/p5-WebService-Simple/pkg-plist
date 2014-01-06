@@ -7,6 +7,14 @@
 %%SITE_PERL%%/WebService/Simple/Parser/XML/LibXML.pm
 %%SITE_PERL%%/WebService/Simple/Parser/XML/Simple.pm
 %%SITE_PERL%%/WebService/Simple/Parser/XML/Feed.pm
+%%PERL5_MAN3%%/WebService::Simple.3.gz
+%%PERL5_MAN3%%/WebService::Simple::Parser.3.gz
+%%PERL5_MAN3%%/WebService::Simple::Parser::JSON.3.gz
+%%PERL5_MAN3%%/WebService::Simple::Parser::XML::Feed.3.gz
+%%PERL5_MAN3%%/WebService::Simple::Parser::XML::LibXML.3.gz
+%%PERL5_MAN3%%/WebService::Simple::Parser::XML::Lite.3.gz
+%%PERL5_MAN3%%/WebService::Simple::Parser::XML::Simple.3.gz
+%%PERL5_MAN3%%/WebService::Simple::Response.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService
 @dirrmtry %%SITE_PERL%%/WebService/Simple/Parser/XML

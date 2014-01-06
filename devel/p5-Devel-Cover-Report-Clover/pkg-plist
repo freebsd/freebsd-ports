@@ -8,6 +8,7 @@
 %%SITE_PERL%%/Devel/Cover/Report/Clover/Project.pm
 %%SITE_PERL%%/Devel/Cover/Report/Clover/Reportable.pm
 %%SITE_PERL%%/Devel/Cover/Report/Clover/clover.tt
+%%PERL5_MAN3%%/Devel::Cover::Report::Clover.3.gz
 @dirrm %%SITE_PERL%%/Devel/Cover/Report/Clover
 @dirrm %%SITE_PERL%%/Devel/Cover/Report
 @dirrmtry %%SITE_PERL%%/Devel/Cover

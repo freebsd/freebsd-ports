@@ -1,0 +1,87 @@
+# HG changeset patch
+# User malenkov
+# Date 1381850636 -3600
+#      Tue Oct 15 16:23:56 2013 +0100
+# Node ID 7a6de63e89636f3bfb5b32e2a8d1ea3df1fe2d79
+# Parent  468ec57a684409e4c7ed97be8ffa36322fb8a36b
+8012071: Better Building of Beans
+Reviewed-by: art, skoivu
+
+diff -r 468ec57a6844 -r 7a6de63e8963 src/share/classes/java/beans/Beans.java
+--- jdk/src/share/classes/java/beans/Beans.java	Tue Oct 15 15:59:47 2013 +0100
++++ jdk/src/share/classes/java/beans/Beans.java	Tue Oct 15 16:23:56 2013 +0100
+@@ -42,6 +42,8 @@
+ import java.io.ObjectStreamClass;
+ import java.io.StreamCorruptedException;
+ 
++import java.lang.reflect.Modifier;
++
+ import java.net.URL;
+ 
+ import java.security.AccessController;
+@@ -222,6 +224,10 @@
+                 throw ex;
+             }
+ 
++            if (!Modifier.isPublic(cl.getModifiers())) {
++                throw new ClassNotFoundException("" + cl + " : no public access");
++            }
++
+             /*
+              * Try to instantiate the class.
+              */
+diff -r 468ec57a6844 -r 7a6de63e8963 src/share/classes/java/beans/DefaultPersistenceDelegate.java
+--- jdk/src/share/classes/java/beans/DefaultPersistenceDelegate.java	Tue Oct 15 15:59:47 2013 +0100
++++ jdk/src/share/classes/java/beans/DefaultPersistenceDelegate.java	Tue Oct 15 16:23:56 2013 +0100
+@@ -235,6 +235,9 @@
+                     for(int i = 0; i < a.length; i = i + 3) {
+                         try {
+                            Field f = type.getField((String)a[i]);
++			   if (!ReflectUtil.isPackageAccessible(f.getDeclaringClass())) {
++			     continue;
++			   }
+                            if (f.get(null).equals(oldValue)) {
+                                out.remove(oldValue);
+                                out.writeExpression(new Expression(oldValue, f, "get", new Object[]{null}));
+diff -r 468ec57a6844 -r 7a6de63e8963 src/share/classes/java/beans/MetaData.java
+--- jdk/src/share/classes/java/beans/MetaData.java	Tue Oct 15 15:59:47 2013 +0100
++++ jdk/src/share/classes/java/beans/MetaData.java	Tue Oct 15 16:23:56 2013 +0100
+@@ -40,6 +40,7 @@
+ import java.lang.reflect.Constructor;
+ import java.lang.reflect.Field;
+ import java.lang.reflect.Method;
++import java.lang.reflect.Modifier;
+ 
+ import java.security.AccessController;
+ import java.security.PrivilegedAction;
+@@ -47,6 +48,7 @@
+ import java.sql.Timestamp;
+ 
+ import java.util.*;
++import static sun.reflect.misc.ReflectUtil.isPackageAccessible;
+ 
+ import javax.swing.Box;
+ import javax.swing.JLayeredPane;
+@@ -907,13 +909,15 @@
+ 
+ class StaticFieldsPersistenceDelegate extends PersistenceDelegate {
+     protected void installFields(Encoder out, Class<?> cls) {
+-        Field fields[] = cls.getFields();
+-        for(int i = 0; i < fields.length; i++) {
+-            Field field = fields[i];
+-            // Don't install primitives, their identity will not be preserved
+-            // by wrapping.
+-            if (Object.class.isAssignableFrom(field.getType())) {
+-                out.writeExpression(new Expression(field, "get", new Object[]{null}));
++        if (Modifier.isPublic(cls.getModifiers()) && isPackageAccessible(cls)) {
++            Field fields[] = cls.getFields();
++            for(int i = 0; i < fields.length; i++) {
++                Field field = fields[i];
++                // Don't install primitives, their identity will not be preserved
++                // by wrapping.
++                if (Object.class.isAssignableFrom(field.getType())) {
++                    out.writeExpression(new Expression(field, "get", new Object[]{null}));
++                }
+             }
+         }
+     }

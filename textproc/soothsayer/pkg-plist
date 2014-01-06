@@ -9,6 +9,10 @@ lib/libsoothsayer.a
 lib/libsoothsayer.la
 lib/libsoothsayer.so
 lib/libsoothsayer.so.0
+man/man1/soothsayer_demo.1.gz
+man/man1/soothsayer_demo_text.1.gz
+man/man1/soothsayer_simulator.1.gz
+man/man1/text2ngram.1.gz
 var/soothsayer/abbreviations_en.txt
 var/soothsayer/abbreviations_it.txt
 var/soothsayer/database_en.db

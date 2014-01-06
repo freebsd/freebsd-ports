@@ -6,6 +6,13 @@ bin/iptest
 bin/ipython
 bin/irunner
 bin/pycolor
+man/man1/ipcluster.1.gz
+man/man1/ipcontroller.1.gz
+man/man1/ipengine.1.gz
+man/man1/iplogger.1.gz
+man/man1/ipython.1.gz
+man/man1/irunner.1.gz
+man/man1/pycolor.1.gz
 %%PYTHON_SITELIBDIR%%/IPython/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/__init__.pyo

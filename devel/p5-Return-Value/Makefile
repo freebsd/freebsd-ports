@@ -15,9 +15,6 @@ COMMENT=	Return::Value - Polymorphic Return Values
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Return::Value.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's/^Carp::cluck/# Carp::cluck/' ${WRKSRC}/lib/Return/Value.pm
 

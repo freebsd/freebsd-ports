@@ -1,5 +1,6 @@
 %%SITE_PERL%%/URI/imaps.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/imaps/.packlist
+%%PERL5_MAN3%%/URI::imaps.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/imaps
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI
 @dirrmtry %%SITE_PERL%%/URI

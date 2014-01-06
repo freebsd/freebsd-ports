@@ -1,5 +1,5 @@
---- ./acinclude.m4.orig	2008-11-03 18:03:37.000000000 +0100
-+++ ./acinclude.m4	2009-06-08 11:04:57.456599653 +0200
+--- acinclude.m4.orig	2013-12-18 05:14:54.000000000 +0900
++++ acinclude.m4	2013-12-18 05:16:15.000000000 +0900
 @@ -141,8 +141,8 @@
      ])
  
@@ -11,30 +11,7 @@
                    [
                        HAVE_CHECK=yes
                        ], 
-@@ -173,9 +173,11 @@
- 	    # Make sure we have "puzzle.h".  If we don't, it means we probably
- 	    # don't have libpuzzle, so don't use it.
- 	    #
-+	    CPPFLAGS="$CPPFLAGS -I$puzzle/include"
- 	    AC_CHECK_HEADER(puzzle.h,
- 		[
- 		# Check if the lib is OK
-+		LDFLAGS="$LDFLAGS -L$puzzle/lib"
- 		AC_CHECK_LIB(puzzle, puzzle_init_context,
- 		    [
- 		     AC_DEFINE([HAVE_PUZZLE], 1, [for image comparison mode])
-@@ -216,16 +218,18 @@
- 	    # Make sure we have "archive.h".  If we don't, it means we probably
- 	    # don't have libarchive, so don't use it.
- 	    #
-+	    CPPFLAGS="$CPPFLAGS -I$archive/include"
- 	    AC_CHECK_HEADER(archive.h,
- 		[
- 		# Check if the lib is OK
-+		LDFLAGS="$LDFLAGS -L$archive/lib -lmd -lcrypto"
- 		AC_CHECK_LIB(archive, archive_version,
- 		    [
- 		     AC_DEFINE([HAVE_ARCHIVE], 1, [for inside archive comparison mode])
+@@ -225,7 +225,7 @@
  		     with_archive=yes
  		     ARCHIVE_CPPFLAGS="-I$archive/include"
  		     ARCHIVE_LDFLAGS="-L$archive/lib"

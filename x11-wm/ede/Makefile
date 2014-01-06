@@ -3,7 +3,7 @@
 
 PORTNAME=	ede
 PORTVERSION=	2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF \
 		SF/${PORTNAME}/${PORTNAME}lib/${PORTVERSION}:edelib
@@ -16,23 +16,20 @@ COMMENT=	Equinox Desktop Environment
 LICENSE=	GPLv2 LGPL20
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
-		doxygen:${PORTSDIR}/devel/doxygen \
+BUILD_DEPENDS=	doxygen:${PORTSDIR}/devel/doxygen \
 		jam:${PORTSDIR}/devel/jam \
-		update-mime-database:${PORTSDIR}/misc/shared-mime-info
-LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus \
-		curl:${PORTSDIR}/ftp/curl \
-		startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-		fltk.1:${PORTSDIR}/x11-toolkits/fltk
-RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
+		python:${PORTSDIR}/lang/python
+LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libcurl.so:${PORTSDIR}/ftp/curl \
+		libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
+		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
 OPTIONS_DEFINE=	HAL
 HAL_DESC=	Enable HAL support
 
+USES=		fam iconv gettext pathfix pkgconfig shared-mime-info
 USE_XORG=	xcomposite xft xinerama xpm xrandr
-USES=	pathfix gettext pkgconfig
 USE_PYTHON=	yes
-USE_FAM=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-edelib_path=${EDELIB_WRKSRC} \
 		--with-fltk-path=${LOCALBASE}
@@ -53,15 +50,16 @@ EDELIB_WRKSRC=	${WRKDIR}/${EDELIB_DISTNAME}
 HAL_LIB_DEPENDS=	libhal.so.1:${PORTSDIR}/sysutils/hal
 HAL_CONFIGURE_OFF=	--disable-hal
 
-# use multiple make jobs
-_make_jobs=	-j${MAKE_JOBS_NUMBER}
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/share|${LOCALBASE}/share| ; \
 		 /OPTIM_FLAGS=/s|-O2|-fPIC| ; \
 		 s|_daylight=yes|_daylight=no|' ${EDELIB_WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's| -liconv| ${ICONV_LIB}|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|$$(CC)|@CXX@| ; \
+		 s|-lstdc++||' ${WRKSRC}/Jamconfig.in
 
 pre-configure:
 	@(cd ${EDELIB_WRKSRC} \
@@ -75,14 +73,25 @@ pre-configure:
 
 pre-build:
 	@(cd ${EDELIB_WRKSRC} \
-		&& ${LOCALBASE}/bin/jam ${_make_jobs} \
+		&& ${LOCALBASE}/bin/jam -j${MAKE_JOBS_NUMBER} \
 		&& ${LOCALBASE}/bin/jam ${INSTALL_TARGET})
 
 do-build:
-	@(cd ${BUILD_WRKSRC} && ${LOCALBASE}/bin/jam ${_make_jobs})
+	@(cd ${BUILD_WRKSRC} && ${LOCALBASE}/bin/jam -j${MAKE_JOBS_NUMBER})
 
 do-install:
-	@(cd ${INSTALL_WRKSRC} && ${LOCALBASE}/bin/jam ${INSTALL_TARGET})
-	@-update-mime-database ${PREFIX}/share/mime
+	@(cd ${INSTALL_WRKSRC} && ${SETENV} DESTDIR="${STAGEDIR}" \
+		${LOCALBASE}/bin/jam ${INSTALL_TARGET})
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ede-2.0.0/manual/images
+	@(cd ${WRKSRC}/doc/manual/images && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${PREFIX}/share/doc/ede-2.0.0/manual/images)
+.for i in ede-about ede-autostart ede-bell-conf ede-bug-report ede-crasher \
+	ede-calc ede-conf ede-desktop ede-desktop-conf ede-dialog \
+	ede-keyboard-conf ede-notify-daemon ede-screensaver-conf \
+	ede-image-view ede-launch emountd ede-timedate ede-tip \
+	ede-tip-compiler ede-preferred-applications evoke ede-shutdown \
+	ede-panel ede-menu-spec-test pekwm
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
+.endfor
 
 .include <bsd.port.mk>

@@ -17,7 +17,4 @@ RUN_DEPENDS=	p5-Gtk2>=1.060:${PORTSDIR}/x11-toolkits/p5-Gtk2
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Gtk2::PathButtonBar.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

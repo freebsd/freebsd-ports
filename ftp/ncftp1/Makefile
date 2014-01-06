@@ -6,15 +6,11 @@ PORTVERSION=	1.9.5
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
 DISTNAME=	ncftp-${PORTVERSION}
+PKGNAMESUFFIX=	1
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	FTP replacement with advanced user interface
 
-.if defined(INSTALL_AS_NCFTP)
-LATEST_LINK=	ncftp
-.else
-LATEST_LINK=	ncftp1
-.endif
 PLIST_FILES=	bin/${LATEST_LINK}
 MAN1=		ncftp.1
 

@@ -3,18 +3,17 @@
 
 PORTNAME=	xmlpatterns
 DISTVERSION=	${QT4_VERSION}
-CATEGORIES?=	textproc
+CATEGORIES=	textproc
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	XQuery 1.0 and XPath 2.0 support for Qt4
+COMMENT=	Qt support for XPath, XQuery, XSLT and XML Schema
 
 USE_QT4=	qmake_build moc_build rcc_build corelib network
-QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
-USE_LDCONFIG=	${PREFIX}/lib/qt4
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
@@ -36,22 +35,20 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
-
 pre-configure:
 	${MKDIR} ${WRKSRC}/mkspecs
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
-	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
+	${LN} -sf ${QMAKE} ${WRKSRC}/bin/qmake
+	${LN} -sf ${MOC} ${WRKSRC}/bin/moc
+	${LN} -sf ${RCC} ${WRKSRC}/bin/rcc
 
 post-configure:
 	${REINPLACE_CMD} \
-		-e 's|${PREFIX}/lib/qt4/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
+		-e 's|${PREFIX}/${QT_LIBDIR_REL}/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		-e 's|.*$$(QMAKE).*||g' \
 		-e 's|-fno-exceptions ||g' \
 		${BUILD_WRKSRC}/Makefile
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
-			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
+			-E -e 's|(.*location=).*moc|\1${PREFIX}/${QT_BINDIR_REL}/${MOC:T}|g' \
 		${WRKSRC}/lib/pkgconfig/QtXmlPatterns.pc
 
 .include <bsd.port.mk>

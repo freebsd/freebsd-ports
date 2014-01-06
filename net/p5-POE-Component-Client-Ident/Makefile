@@ -17,9 +17,4 @@ TEST_DEPENDS=	p5-Test-POE-Server-TCP>=0:${PORTSDIR}/devel/p5-Test-POE-Server-TCP
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		POE::Component::Client::Ident.3 \
-		POE::Component::Client::Ident::Agent.3 \
-		POE::Filter::Ident.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

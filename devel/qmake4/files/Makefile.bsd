@@ -2,7 +2,7 @@
 
 _OBJS!=	${MAKE} -f Makefile.unix -V OBJS -V QOBJS
 # We'd like to avoid using qconfig.cpp, but can't -- see the comment
-# next to -DHAVE_CONFIG_CPP below: 
+# next to -DHAVE_CONFIG_CPP below:
 #_OBJS:=	${_OBJS:S/qconfig.o//}
 SRCS:=	${_OBJS:.o=.cpp}
 NO_MAN=	true	# qmake.1 anyone?
@@ -14,7 +14,7 @@ NO_MAN=	true	# qmake.1 anyone?
 	${.CURDIR:H}/src/3rdparty/md5 ${.CURDIR:H}/src/3rdparty/sha1 \
 	${.CURDIR:H}/tools/shared/symbian ${.CURDIR:H}/tools/shared/windows
 
-CXXFLAGS+=-I${.CURDIR:H}/mkspecs/freebsd-g++
+CXXFLAGS+=-I${.CURDIR:H}/mkspecs/freebsd-${QMAKE_COMPILER}
 
 .for s in src/corelib/arch/generic src/corelib/global src/corelib/tools \
 		src/corelib/kernel src/corelib/codecs \
@@ -41,7 +41,7 @@ CXXFLAGS+=-DQT_NO_TEXTCODEC -DQT_NO_UNICODETABLES -DQT_NO_COMPONENT \
 # it:
 # -DHAVE_QCONFIG_CPP
 
-PROG_CXX=	qmake-qt4
-BINDIR=	${PREFIX}/bin
+PROG_CXX=${QMAKE:T}
+BINDIR=	${PREFIX}/${QT_BINDIR_REL}
 
 .include <bsd.prog.mk>

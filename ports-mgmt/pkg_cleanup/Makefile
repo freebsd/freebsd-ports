@@ -2,20 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	pkg_cleanup
-PORTVERSION=	1.1
+PORTVERSION=	2.0
 CATEGORIES=	ports-mgmt
 DISTFILES=
 
 MAINTAINER=	shurd@sasktel.net
 COMMENT=	Interactive program for deinstalling 'leaf' packages
 
-MAN1=		pkg_cleanup.1
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-PLIST_FILES=	sbin/pkg_cleanup
+PLIST_FILES=	sbin/pkg_cleanup \
+		man/man1/pkg_cleanup.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900000 && ${OSVERSION} < 900038
@@ -33,7 +31,7 @@ do-build:
 	make -C ${WRKSRC}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pkg_cleanup ${PREFIX}/sbin/pkg_cleanup
-	${INSTALL_MAN} ${WRKSRC}/pkg_cleanup.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/pkg_cleanup ${STAGEDIR}${PREFIX}/sbin/pkg_cleanup
+	${INSTALL_MAN} ${WRKSRC}/pkg_cleanup.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.post.mk>

@@ -9,6 +9,11 @@
 %%SITE_PERL%%/Module/Install/PMC.pod
 %%SITE_PERL%%/Module/Optimize.pm
 %%SITE_PERL%%/Module/Optimize.pod
+%%PERL5_MAN3%%/Module::Compile.3.gz
+%%PERL5_MAN3%%/Module::Compile::Opt.3.gz
+%%PERL5_MAN3%%/Module::Install::Admin::PMC.3.gz
+%%PERL5_MAN3%%/Module::Install::PMC.3.gz
+%%PERL5_MAN3%%/Module::Optimize.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Compile
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
 @dirrmtry %%SITE_PERL%%/Module/Compile

@@ -17,7 +17,4 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>0:${PORTSDIR}/www/p5-Catalyst-Runtime \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Catalyst::Model::CDBI::Plain.3 Catalyst::Helper::Model::CDBI::Plain.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

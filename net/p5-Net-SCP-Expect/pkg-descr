@@ -1,3 +1,5 @@
 This module is simply a wrapper around the scp call.  The primary difference
 between this module and I<Net::SCP> is that you may send a password
 programmatically, instead of being forced to deal with interactive sessions.
+
+WWW: http://search.cpan.org/dist/Net-SCP-Expect/

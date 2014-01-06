@@ -2,9 +2,9 @@
 
 PORTNAME=	bibletime
 PORTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	SF/${PORTNAME}/BibleTime%202/BibleTime%202%20source%20code
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/_rc/}
 
 MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	Open source Bible study tool

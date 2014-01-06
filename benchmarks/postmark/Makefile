@@ -15,15 +15,14 @@ LICENSE_COMB=	multi
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN1=		postmark.1
-PLIST_FILES=	sbin/postmark
+PLIST_FILES=	sbin/postmark \
+		man/man1/postmark.1.gz
 
-NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o postmark postmark-${PORTVERSION}.c)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/postmark ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/postmark.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/postmark ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/postmark.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>

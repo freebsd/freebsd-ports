@@ -6,11 +6,10 @@ PORTVERSION=	3.0.1
 CATEGORIES=	security
 MASTER_SITES=	http://assets.keltia.net/calife/
 DISTNAME=	calife-3.0.1
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	thomas@FreeBSD.org
 COMMENT=	Lightweight alternative to sudo
-
-LATEST_LINK=	${PORTNAME}-devel
 
 USE_BZIP2=	yes
 

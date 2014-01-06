@@ -20,11 +20,6 @@ LICENSE_TEXT=	The license: ${_LICENSE} (${_LICENSE_NAME}) is standard, please re
 
 NO_WRKSUBDIR=	yes
 DIST_SUBDIR=	${PORTNAME}
-MAN1=		ttcp.1
-
-NO_STAGE=	yes
-
-.include <bsd.port.options.mk>
 
 post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/ttcp.c ${WRKSRC}
@@ -35,11 +30,9 @@ do-build:
 	${CC} ${CFLAGS} -o ${WRKSRC}/ttcp ${WRKSRC}/ttcp.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ttcp ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ttcp.1 ${PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/ttcp ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/ttcp.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

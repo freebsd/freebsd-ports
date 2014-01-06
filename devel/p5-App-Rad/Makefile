@@ -16,11 +16,4 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		App::Rad.3 \
-		App::Rad::Exclude.3 \
-		App::Rad::Help.3 \
-		App::Rad::Include.3 \
-		App::Rad::Plugin.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -17,7 +17,4 @@ TEST_DEPENDS=	p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Proc::Guard.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

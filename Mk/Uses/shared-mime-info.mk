@@ -19,10 +19,6 @@ IGNORE=	USES=shared-mime-info does not require args
 BUILD_DEPENDS+=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS+=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-# bolt our post-install target to post-install
-.PHONY: shared-mime-post-install
-post-install: shared-mime-post-install
-
 shared-mime-post-install:
 .if defined(NO_STAGE)
 # run for port post-install

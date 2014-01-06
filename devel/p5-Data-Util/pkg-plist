@@ -6,6 +6,11 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Util/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Util/Util.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Util/Util.so
+%%PERL5_MAN3%%/Data::Util.3.gz
+%%PERL5_MAN3%%/Data::Util::Curry.3.gz
+%%PERL5_MAN3%%/Data::Util::Error.3.gz
+%%PERL5_MAN3%%/Data::Util::JA.3.gz
+%%PERL5_MAN3%%/Data::Util::PurePerl.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Util
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Data/Util

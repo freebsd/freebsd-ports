@@ -163,7 +163,6 @@ lib/%%DISTNAME%%/doc/Manual/moduleop.html
 lib/%%DISTNAME%%/doc/Manual/modules.html
 lib/%%DISTNAME%%/doc/Manual/mt-xpce.html
 lib/%%DISTNAME%%/doc/Manual/mtoplevel.html
-lib/%%DISTNAME%%/doc/Manual/mtunbound.html
 lib/%%DISTNAME%%/doc/Manual/navigator.html
 lib/%%DISTNAME%%/doc/Manual/nb_set.html
 lib/%%DISTNAME%%/doc/Manual/next.gif

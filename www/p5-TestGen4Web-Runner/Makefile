@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	WWW/MACKERS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	eg@fbsd.lt
-COMMENT=	A PERL module to replay files recorded with TestGen4Web
+COMMENT=	Perl module to replay files recorded with TestGen4Web
 
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
@@ -20,7 +20,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		TestGen4Web::Runner.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

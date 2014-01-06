@@ -14,8 +14,7 @@ LIB_DEPENDS=	libargp.so:${PORTSDIR}/devel/argp-standalone
 BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man
 
 GNU_CONFIGURE=	yes
-USES=		gmake
-USE_FAM=	yes
+USES=		fam gmake
 CONFIGURE_ENV+=	LIBS="-largp"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

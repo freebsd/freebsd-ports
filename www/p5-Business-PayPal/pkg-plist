@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Business/PayPal.pm
 %%SITE_PERL%%/Business/getppcert.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/PayPal/.packlist
+%%PERL5_MAN3%%/Business::PayPal.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/PayPal
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business
 @dirrm %%SITE_PERL%%/Business

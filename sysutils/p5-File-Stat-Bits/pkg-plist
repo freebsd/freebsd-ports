@@ -1,6 +1,7 @@
 %%SITE_PERL%%/File/Stat/Bits.pm
 %%SITE_PERL%%/File/Stat/Bits/stat.ph
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Stat/Bits/.packlist
+%%PERL5_MAN3%%/File::Stat::Bits.3.gz
 @dirrm %%SITE_PERL%%/File/Stat/Bits
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Stat/Bits
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Stat

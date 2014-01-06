@@ -48,7 +48,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if exists(${LOCALBASE}/lib/libfam.so) || !defined(WITHOUT_FAM)
-USE_FAM=	yes
+USES+=		fam
 .endif
 
 .if exists(${LOCALBASE}/lib/libkrb5.so)

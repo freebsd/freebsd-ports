@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Net/Server/SS/PreFork.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Server/SS/PreFork/.packlist
+%%PERL5_MAN3%%/Net::Server::SS::PreFork.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Server/SS/PreFork
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Server/SS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Server

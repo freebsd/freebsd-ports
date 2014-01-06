@@ -1,2 +1,2 @@
-bin/moc-qt4
-%%DEBUG%%bin/moc-qt4.debug
+%%QT_BINDIR%%/moc-qt4
+%%DEBUG%%%%QT_BINDIR%%/moc-qt4.debug

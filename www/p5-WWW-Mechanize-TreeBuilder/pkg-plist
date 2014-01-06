@@ -1,5 +1,6 @@
 %%SITE_PERL%%/WWW/Mechanize/TreeBuilder.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/TreeBuilder/.packlist
+%%PERL5_MAN3%%/WWW::Mechanize::TreeBuilder.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/TreeBuilder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW

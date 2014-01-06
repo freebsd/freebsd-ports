@@ -15,8 +15,7 @@ OPTIONS_DEFINE=	NLS
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_GNOME=	intlhack libglade2 esound
-USES=		gmake pkgconfig
-USE_FAM=	yes
+USES=		fam gmake pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

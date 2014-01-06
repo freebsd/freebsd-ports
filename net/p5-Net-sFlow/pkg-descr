@@ -2,4 +2,4 @@ The sFlow module provides a mechanism to parse and decode sFlow datagrams.
 It supports sFlow version 2/4 (RFC 3176 - http://www.ietf.org/rfc/rfc3176.txt)
 and sFlow version 5 (Memo - http://sflow.org/sflow_version_5.txt).
 
-WWW:	http://search.cpan.org/dist/Net-sFlow/
+WWW: http://search.cpan.org/dist/Net-sFlow/

@@ -2,6 +2,7 @@ bin/zcgetmail
 bin/zcmailaccount
 %%SITE_PERL%%/ZConf/Mail.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Mail/.packlist
+%%PERL5_MAN3%%/ZConf::Mail.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Mail
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%

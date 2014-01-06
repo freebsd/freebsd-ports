@@ -1,12 +1,9 @@
-Qt is a C++ toolkit for application development.  It lets application
-developers target all major operating systems with a single application
-source code.
+Qt is a cross-platform application and UI framework for developers
+using C++ or QML, a CSS/JavaScript-like language.
 
-Qt provides a platform-independent API to all central platform functionality:
-GUI, database access, networking, file handling, etc.  The Qt library
-encapsulates the different APIs of different operating systems, providing
-the application programmer with a single, common API for all operating systems.
-The native C APIs are encapsulated in a set of well-designed, fully
-object-oriented C++ classes.
+With Qt, code can be reused efficiently to target multiple platforms
+with one code base. The modular C++ class library and developer tools
+easily enables developers to create applications for one platform and
+easily build and run to deploy on another platform.
 
-WWW: http://qt.nokia.com/products/qt/index.html
+WWW: http://qt-project.org

@@ -13,7 +13,4 @@ COMMENT=	Helper to smartly find libs to use in the filesystem tree
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Find::Lib.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

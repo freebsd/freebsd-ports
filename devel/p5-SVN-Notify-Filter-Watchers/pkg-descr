@@ -1,4 +1,4 @@
 This Perl module implements a Subversion property to control
 SVN::Notify commit message subscriptions.
 
-WWW:    http://search.cpan.org/dist/SVN-Notify-Filter-Watchers/
+WWW: http://search.cpan.org/dist/SVN-Notify-Filter-Watchers/

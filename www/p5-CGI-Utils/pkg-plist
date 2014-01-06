@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Utils/.packlist
 %%SITE_PERL%%/CGI/Utils.pm
 %%SITE_PERL%%/CGI/Utils/UploadFile.pm
+%%PERL5_MAN3%%/CGI::Utils.3.gz
+%%PERL5_MAN3%%/CGI::Utils::UploadFile.3.gz
 @dirrm    %%SITE_PERL%%/CGI/Utils
 @dirrmtry %%SITE_PERL%%/CGI
 @dirrm    %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Utils

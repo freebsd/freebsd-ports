@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/I18N/AcceptLanguage/.packlist
 %%SITE_PERL%%/I18N/AcceptLanguage.pm
+%%PERL5_MAN3%%/I18N::AcceptLanguage.3.gz
 @dirrmtry %%SITE_PERL%%/I18N
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/I18N/AcceptLanguage
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/I18N

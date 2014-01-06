@@ -1,0 +1,176 @@
+# HG changeset patch
+# User dxu
+# Date 1383018580 0
+#      Tue Oct 29 03:49:40 2013 +0000
+# Node ID 8459b68eb028734b2153266176538e1eddbb87be
+# Parent  8ad2eb12bf42f2564fdf80a7236e4046046a4f4e
+8013827: File.createTempFile hangs with temp file starting with 'com1.4'
+8011950: java.io.File.createTempFile enters infinite loop when passed invalid data
+Reviewed-by: alanb
+
+diff -r 8ad2eb12bf42 -r 8459b68eb028 src/share/classes/java/io/File.java
+--- jdk/src/share/classes/java/io/File.java	Tue Oct 29 03:05:18 2013 +0000
++++ jdk/src/share/classes/java/io/File.java	Tue Oct 29 03:49:40 2013 +0000
+@@ -1801,7 +1801,11 @@
+         } else {
+             n = Math.abs(n);
+         }
+-        return new File(dir, prefix + Long.toString(n) + suffix);
++            String name = prefix + Long.toString(n) + suffix;
++            File f = new File(dir, name);
++            if (!name.equals(f.getName()))
++                throw new IOException("Unable to create temporary file");
++            return f;
+     }
+ 
+     private static boolean checkAndCreate(String filename, SecurityManager sm,
+diff -r 8ad2eb12bf42 -r 8459b68eb028 src/windows/native/java/io/WinNTFileSystem_md.c
+--- jdk/src/windows/native/java/io/WinNTFileSystem_md.c	Tue Oct 29 03:05:18 2013 +0000
++++ jdk/src/windows/native/java/io/WinNTFileSystem_md.c	Tue Oct 29 03:49:40 2013 +0000
+@@ -356,6 +356,10 @@
+     WCHAR *pathbuf = pathToNTPath(env, path, JNI_FALSE);
+     if (pathbuf == NULL)
+         return JNI_FALSE;
++    if (isReservedDeviceNameW(pathbuf)) {
++        free(pathbuf);
++        return JNI_FALSE;
++    }
+     h = CreateFileW(
+         pathbuf,                             /* Wide char path name */
+         GENERIC_READ | GENERIC_WRITE,  /* Read and write permission */
+diff -r 8ad2eb12bf42 -r 8459b68eb028 test/java/io/File/CreateNewFile.java
+--- jdk/test/java/io/File/CreateNewFile.java	Tue Oct 29 03:05:18 2013 +0000
++++ jdk/test/java/io/File/CreateNewFile.java	Tue Oct 29 03:49:40 2013 +0000
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1998, 2001, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1998, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -22,7 +22,7 @@
+  */
+ 
+ /* @test
+-   @bug 4130498 4391178
++   @bug 4130498 4391178 6198547
+    @summary Basic test for createNewFile method
+  */
+ 
+@@ -51,5 +51,20 @@
+         } catch (IOException e) {
+             // Exception expected
+         }
++
++        testCreateExistingDir();
++    }
++
++    // Test JDK-6198547
++    private static void testCreateExistingDir() throws IOException {
++        File tmpFile = new File("hugo");
++        if (tmpFile.exists() && !tmpFile.delete())
++            throw new RuntimeException("Cannot delete " + tmpFile);
++        if (!tmpFile.mkdir())
++            throw new RuntimeException("Cannot create dir " + tmpFile);
++        if (!tmpFile.exists())
++            throw new RuntimeException("Cannot see created dir " + tmpFile);
++        if (tmpFile.createNewFile())
++            throw new RuntimeException("Should fail to create file " + tmpFile);
+     }
+ }
+diff -r 8ad2eb12bf42 -r 8459b68eb028 test/java/io/File/NulFile.java
+--- jdk/test/java/io/File/NulFile.java	Tue Oct 29 03:05:18 2013 +0000
++++ jdk/test/java/io/File/NulFile.java	Tue Oct 29 03:49:40 2013 +0000
+@@ -612,7 +612,7 @@
+             try {
+                 File.createTempFile(prefix, suffix, directory);
+             } catch (IOException ex) {
+-                if ("Unable to create temporary file".equals(ex.getMessage()))
++                if (ExceptionMsg.equals(ex.getMessage()))
+                     exceptionThrown = true;
+             }
+         }
+diff -r 8ad2eb12bf42 -r 8459b68eb028 test/java/io/File/createTempFile/SpecialTempFile.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ jdk/test/java/io/File/createTempFile/SpecialTempFile.java	Tue Oct 29 03:49:40 2013 +0000
+@@ -0,0 +1,80 @@
++/*
++ * Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++/*
++ * @test
++ * @bug 8013827 8011950
++ * @summary Check whether File.createTempFile can handle special parameters
++ *          on Windows platforms
++ * @author Dan Xu
++ */
++
++import java.io.File;
++import java.io.IOException;
++
++public class SpecialTempFile {
++
++    private static void test(String name, String[] prefix, String[] suffix) {
++        if (prefix == null || suffix == null
++            || prefix.length != suffix.length)
++        {
++            return;
++        }
++
++        final String exceptionMsg = "Unable to create temporary file";
++        final String errMsg = "IOException is expected";
++
++        for (int i = 0; i < prefix.length; i++) {
++            boolean exceptionThrown = false;
++            File f = null;
++            System.out.println("In test " + name
++                               + ", creating temp file with prefix, "
++                               + prefix[i] + ", suffix, " + suffix[i]);
++            try {
++                f = File.createTempFile(prefix[i], suffix[i]);
++            } catch (IOException e) {
++                if (exceptionMsg.equals(e.getMessage()))
++                    exceptionThrown = true;
++                else
++                    System.out.println("Wrong error message:" + e.getMessage());
++            }
++            if (!exceptionThrown || f != null)
++                throw new RuntimeException(errMsg);
++        }
++    }
++
++    public static void main(String[] args) throws Exception {
++        if (!System.getProperty("os.name").startsWith("Windows"))
++            return;
++
++        // Test JDK-8013827
++        String[] resvPre = { "LPT1.package.zip", "com7.4.package.zip" };
++        String[] resvSuf = { ".temp", ".temp" };
++        test("ReservedName", resvPre, resvSuf);
++
++        // Test JDK-8011950
++        String[] slashPre = { "///..///", "temp", "///..///" };
++        String[] slashSuf = { ".temp", "///..///..", "///..///.." };
++        test("SlashedName", slashPre, slashSuf);
++    }
++}

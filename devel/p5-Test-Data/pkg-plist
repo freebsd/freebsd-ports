@@ -4,6 +4,11 @@
 %%SITE_PERL%%/Test/Data/Hash.pm
 %%SITE_PERL%%/Test/Data/Scalar.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Data/.packlist
+%%PERL5_MAN3%%/Test::Data.3.gz
+%%PERL5_MAN3%%/Test::Data::Array.3.gz
+%%PERL5_MAN3%%/Test::Data::Function.3.gz
+%%PERL5_MAN3%%/Test::Data::Hash.3.gz
+%%PERL5_MAN3%%/Test::Data::Scalar.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Data
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
 @dirrmtry %%SITE_PERL%%/Test/Data

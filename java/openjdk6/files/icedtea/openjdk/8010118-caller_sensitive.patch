@@ -1,0 +1,2968 @@
+# HG changeset patch
+# User mchung
+# Date 1382375156 -3600
+#      Mon Oct 21 18:05:56 2013 +0100
+# Node ID d206cb658a9907c7842c8920f141b3c4eb5efc1f
+# Parent  e56220b54fe2d0f09ee151b28d6e8495cea2136f
+8010118: Annotate jdk caller sensitive methods with @sun.reflect.CallerSensitive
+Reviewed-by: alanb, twisti, jrose, kvn
+
+diff -r e56220b54fe2 -r d206cb658a99 make/java/java/FILES_c.gmk
+--- jdk/make/java/java/FILES_c.gmk	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/make/java/java/FILES_c.gmk	Mon Oct 21 18:05:56 2013 +0100
+@@ -48,7 +48,6 @@
+ 	Proxy.c \
+ 	RandomAccessFile.c \
+ 	RandomAccessFile_md.c \
+-	ResourceBundle.c \
+ 	Runtime.c \
+ 	SecurityManager.c \
+ 	Shutdown.c \
+@@ -68,7 +67,6 @@
+ 	jdk_util_md.c \
+ 	check_version.c \
+ 	java_props_md.c \
+-	DriverManager.c \
+ 	ConstantPool.c \
+ 	MessageUtils.c \
+ 	GC.c \
+diff -r e56220b54fe2 -r d206cb658a99 make/java/java/mapfile-vers
+--- jdk/make/java/java/mapfile-vers	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/make/java/java/mapfile-vers	Mon Oct 21 18:05:56 2013 +0100
+@@ -237,8 +237,6 @@
+ 		Java_java_security_AccessController_doPrivileged__Ljava_security_PrivilegedExceptionAction_2Ljava_security_AccessControlContext_2;
+ 		Java_java_security_AccessController_getStackAccessControlContext;
+ 		Java_java_security_AccessController_getInheritedAccessControlContext;
+-		Java_java_sql_DriverManager_getCallerClassLoader;
+-		Java_java_util_ResourceBundle_getClassContext;
+ 		Java_java_util_TimeZone_getSystemTimeZoneID;
+ 		Java_java_util_TimeZone_getSystemGMTOffsetID;
+ 		Java_java_util_concurrent_atomic_AtomicLong_VMSupportsCS8;
+diff -r e56220b54fe2 -r d206cb658a99 make/java/java/reorder-i586
+--- jdk/make/java/java/reorder-i586	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/make/java/java/reorder-i586	Mon Oct 21 18:05:56 2013 +0100
+@@ -73,7 +73,6 @@
+ # Test Sleep
+ # Test IntToString
+ # Test LoadToolkit
+-text: .text%Java_java_util_ResourceBundle_getClassContext;
+ text: .text%Java_java_security_AccessController_doPrivileged__Ljava_security_PrivilegedAction_2Ljava_security_AccessControlContext_2;
+ text: .text%JNU_GetEnv;
+ text: .text%Java_java_io_UnixFileSystem_checkAccess;
+diff -r e56220b54fe2 -r d206cb658a99 make/java/java/reorder-sparc
+--- jdk/make/java/java/reorder-sparc	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/make/java/java/reorder-sparc	Mon Oct 21 18:05:56 2013 +0100
+@@ -78,7 +78,6 @@
+ # Test Sleep
+ # Test IntToString
+ # Test LoadToolkit
+-text: .text%Java_java_util_ResourceBundle_getClassContext;
+ text: .text%Java_java_security_AccessController_doPrivileged__Ljava_security_PrivilegedAction_2Ljava_security_AccessControlContext_2;
+ text: .text%JNU_GetEnv;
+ text: .text%Java_java_io_UnixFileSystem_checkAccess;
+diff -r e56220b54fe2 -r d206cb658a99 make/java/java/reorder-sparcv9
+--- jdk/make/java/java/reorder-sparcv9	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/make/java/java/reorder-sparcv9	Mon Oct 21 18:05:56 2013 +0100
+@@ -74,7 +74,6 @@
+ # Test Sleep
+ # Test IntToString
+ # Test LoadToolkit
+-text: .text%Java_java_util_ResourceBundle_getClassContext;
+ text: .text%Java_java_security_AccessController_doPrivileged__Ljava_security_PrivilegedAction_2Ljava_security_AccessControlContext_2;
+ text: .text%JNU_GetEnv;
+ text: .text%Java_java_io_UnixFileSystem_checkAccess;
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/java/io/ObjectStreamClass.java
+--- jdk/src/share/classes/java/io/ObjectStreamClass.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/java/io/ObjectStreamClass.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -49,6 +49,8 @@
+ import java.util.concurrent.ConcurrentHashMap;
+ import java.util.concurrent.ConcurrentMap;
+ import sun.misc.Unsafe;
++import sun.reflect.CallerSensitive;
++import sun.reflect.Reflection;
+ import sun.reflect.ReflectionFactory;
+ import sun.reflect.misc.ReflectUtil;
+ 
+@@ -234,12 +236,13 @@
+      *
+      * @return  the <code>Class</code> instance that this descriptor represents
+      */
++    @CallerSensitive
+     public Class<?> forClass() {
+         if (cl == null) {
+             return null;
+         }
+-        ClassLoader ccl = ObjectStreamField.getCallerClassLoader();
+-        if (ReflectUtil.needsPackageAccessCheck(ccl, cl.getClassLoader())) {
++        Class<?> caller = Reflection.getCallerClass();
++        if (ReflectUtil.needsPackageAccessCheck(caller.getClassLoader(), cl.getClassLoader())) {
+             ReflectUtil.checkPackageAccess(cl);
+         }
+         return cl;
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/java/io/ObjectStreamField.java
+--- jdk/src/share/classes/java/io/ObjectStreamField.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/java/io/ObjectStreamField.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -26,6 +26,7 @@
+ package java.io;
+ 
+ import java.lang.reflect.Field;
++import sun.reflect.CallerSensitive;
+ import sun.reflect.Reflection;
+ import sun.reflect.misc.ReflectUtil;
+ 
+@@ -159,32 +160,15 @@
+      * @return  a <code>Class</code> object representing the type of the
+      *          serializable field
+      */
++    @CallerSensitive
+     public Class<?> getType() {
+-        ClassLoader ccl = getCallerClassLoader();
+-        if (ReflectUtil.needsPackageAccessCheck(ccl, type.getClassLoader())) {
++        Class<?> caller = Reflection.getCallerClass();
++        if (ReflectUtil.needsPackageAccessCheck(caller.getClassLoader(), type.getClassLoader())) {
+             ReflectUtil.checkPackageAccess(type);
+         }
+         return type;
+     }
+ 
+-    // Returns the invoker's class loader.
+-    // This is package private because it is accessed from ObjectStreamClass.
+-    // NOTE: This must always be invoked when there is exactly one intervening
+-    // frame from the core libraries on the stack between this method's
+-    // invocation and the desired invoker. The frame count of 3 is determined
+-    // as follows:
+-    //
+-    // 0: Reflection.getCallerClass
+-    // 1: getCallerClassLoader()
+-    // 2: ObjectStreamField.getType() or ObjectStreamClass.forClass()
+-    // 3: the caller we want to check
+-    //
+-    // NOTE: copied from java.lang.ClassLoader and modified.
+-    static ClassLoader getCallerClassLoader() {
+-        Class caller = Reflection.getCallerClass(3);
+-        return caller.getClassLoader();
+-    }
+-
+     /**
+      * Returns character encoding of field type.  The encoding is as follows:
+      * <blockquote><pre>
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/java/lang/Class.java
+--- jdk/src/share/classes/java/lang/Class.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/java/lang/Class.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -53,6 +53,7 @@
+ import java.util.Map;
+ import java.util.HashMap;
+ import sun.misc.Unsafe;
++import sun.reflect.CallerSensitive;
+ import sun.reflect.ConstantPool;
+ import sun.reflect.Reflection;
+ import sun.reflect.ReflectionFactory;
+@@ -183,9 +184,11 @@
+      *            by this method fails
+      * @exception ClassNotFoundException if the class cannot be located
+      */
++    @CallerSensitive
+     public static Class<?> forName(String className)
+                 throws ClassNotFoundException {
+-        return forName0(className, true, ClassLoader.getCallerClassLoader());
++        return forName0(className, true,
++                        ClassLoader.getClassLoader(Reflection.getCallerClass()));
+     }
+ 
+ 
+@@ -249,6 +252,7 @@
+      * @see       java.lang.ClassLoader
+      * @since     1.2
+      */
++    @CallerSensitive
+     public static Class<?> forName(String name, boolean initialize,
+                                    ClassLoader loader)
+         throws ClassNotFoundException
+@@ -256,7 +260,7 @@
+         if (loader == null) {
+             SecurityManager sm = System.getSecurityManager();
+             if (sm != null) {
+-                ClassLoader ccl = ClassLoader.getCallerClassLoader();
++                ClassLoader ccl = ClassLoader.getClassLoader(Reflection.getCallerClass());
+                 if (ccl != null) {
+                     sm.checkPermission(
+                         SecurityConstants.GET_CLASSLOADER_PERMISSION);
+@@ -318,18 +322,14 @@
+      *             </ul>
+      *
+      */
++    @CallerSensitive
+     public T newInstance()
+         throws InstantiationException, IllegalAccessException
+     {
+         if (System.getSecurityManager() != null) {
+-            checkMemberAccess(Member.PUBLIC, ClassLoader.getCallerClassLoader(), false);
++            checkMemberAccess(Member.PUBLIC, Reflection.getCallerClass(), false);
+         }
+-        return newInstance0();
+-    }
+ 
+-    private T newInstance0()
+-        throws InstantiationException, IllegalAccessException
+-    {
+         // NOTE: the following code may not be strictly correct under
+         // the current Java memory model.
+ 
+@@ -363,7 +363,7 @@
+         // Security check (same as in java.lang.reflect.Constructor)
+         int modifiers = tmpConstructor.getModifiers();
+         if (!Reflection.quickCheckMemberAccess(this, modifiers)) {
+-            Class caller = Reflection.getCallerClass(3);
++            Class<?> caller = Reflection.getCallerClass();
+             if (newInstanceCallerCache != caller) {
+                 Reflection.ensureMemberAccess(caller, this, null, modifiers);
+                 newInstanceCallerCache = caller;
+@@ -602,16 +602,14 @@
+      * @see SecurityManager#checkPermission
+      * @see java.lang.RuntimePermission
+      */
++    @CallerSensitive
+     public ClassLoader getClassLoader() {
+         ClassLoader cl = getClassLoader0();
+         if (cl == null)
+             return null;
+         SecurityManager sm = System.getSecurityManager();
+         if (sm != null) {
+-            ClassLoader ccl = ClassLoader.getCallerClassLoader();
+-            if (ccl != null && ccl != cl && !cl.isAncestor(ccl)) {
+-                sm.checkPermission(SecurityConstants.GET_CLASSLOADER_PERMISSION);
+-            }
++            ClassLoader.checkClassLoaderPermission(cl, Reflection.getCallerClass());
+         }
+         return cl;
+     }
+@@ -891,6 +889,7 @@
+      *     that class is a local or anonymous class; otherwise {@code null}.
+      * @since 1.5
+      */
++    @CallerSensitive
+     public Method getEnclosingMethod() {
+         EnclosingMethodInfo enclosingInfo = getEnclosingMethodInfo();
+ 
+@@ -920,7 +919,7 @@
+             //
+             // Note that we need to do this on the enclosing class
+             enclosingCandidate.checkMemberAccess(Member.DECLARED,
+-                        ClassLoader.getCallerClassLoader(), true);
++                                                 Reflection.getCallerClass(), true);
+             /*
+              * Loop over all declared methods; match method name,
+              * number of and type of parameters, *and* return
+@@ -1028,6 +1027,7 @@
+      *     that class is a local or anonymous class; otherwise {@code null}.
+      * @since 1.5
+      */
++    @CallerSensitive
+     public Constructor<?> getEnclosingConstructor() {
+         EnclosingMethodInfo enclosingInfo = getEnclosingMethodInfo();
+ 
+@@ -1056,7 +1056,7 @@
+             //
+             // Note that we need to do this on the enclosing class
+             enclosingCandidate.checkMemberAccess(Member.DECLARED,
+-                        ClassLoader.getCallerClassLoader(), true);
++                                                 Reflection.getCallerClass(), true);
+             /*
+              * Loop over all declared constructors; match number
+              * of and type of parameters.
+@@ -1103,6 +1103,7 @@
+      * @return the immediately enclosing class of the underlying class
+      * @since 1.5
+      */
++    @CallerSensitive
+     public Class<?> getEnclosingClass() {
+         // There are five kinds of classes (or interfaces):
+         // a) Top level classes
+@@ -1135,7 +1136,7 @@
+         // see java.lang.SecurityManager.checkMemberAccess
+         if (enclosingCandidate != null) {
+             enclosingCandidate.checkMemberAccess(Member.DECLARED,
+-                    ClassLoader.getCallerClassLoader(), true);
++                                                 Reflection.getCallerClass(), true);
+         }
+         return enclosingCandidate;
+     }
+@@ -1320,11 +1321,12 @@
+      *
+      * @since JDK1.1
+      */
++    @CallerSensitive
+     public Class<?>[] getClasses() {
+         // be very careful not to change the stack depth of this
+         // checkMemberAccess call for security reasons
+         // see java.lang.SecurityManager.checkMemberAccess
+-        checkMemberAccess(Member.PUBLIC, ClassLoader.getCallerClassLoader(), false);
++        checkMemberAccess(Member.PUBLIC, Reflection.getCallerClass(), false);
+ 
+         // Privileged so this implementation can look at DECLARED classes,
+         // something the caller might not have privilege to do.  The code here
+@@ -1398,11 +1400,12 @@
+      *
+      * @since JDK1.1
+      */
++    @CallerSensitive
+     public Field[] getFields() throws SecurityException {
+         // be very careful not to change the stack depth of this
+         // checkMemberAccess call for security reasons
+         // see java.lang.SecurityManager.checkMemberAccess
+-        checkMemberAccess(Member.PUBLIC, ClassLoader.getCallerClassLoader(), true);
++        checkMemberAccess(Member.PUBLIC, Reflection.getCallerClass(), true);
+         return copyFields(privateGetPublicFields(null));
+     }
+ 
+@@ -1449,11 +1452,12 @@
+      *
+      * @since JDK1.1
+      */
++    @CallerSensitive
+     public Method[] getMethods() throws SecurityException {
+         // be very careful not to change the stack depth of this
+         // checkMemberAccess call for security reasons
+         // see java.lang.SecurityManager.checkMemberAccess
+-        checkMemberAccess(Member.PUBLIC, ClassLoader.getCallerClassLoader(), true);
++        checkMemberAccess(Member.PUBLIC, Reflection.getCallerClass(), true);
+         return copyMethods(privateGetPublicMethods());
+     }
+ 
+@@ -1498,11 +1502,12 @@
+      *
+      * @since JDK1.1
+      */
++    @CallerSensitive
+     public Constructor<?>[] getConstructors() throws SecurityException {
+         // be very careful not to change the stack depth of this
+         // checkMemberAccess call for security reasons
+         // see java.lang.SecurityManager.checkMemberAccess
+-        checkMemberAccess(Member.PUBLIC, ClassLoader.getCallerClassLoader(), true);
++        checkMemberAccess(Member.PUBLIC, Reflection.getCallerClass(), true);
+         return copyConstructors(privateGetDeclaredConstructors(true));
+     }
+ 
+@@ -1556,12 +1561,13 @@
+      *
+      * @since JDK1.1
+      */
++    @CallerSensitive
+     public Field getField(String name)
+         throws NoSuchFieldException, SecurityException {
+         // be very careful not to change the stack depth of this
+         // checkMemberAccess call for security reasons
+         // see java.lang.SecurityManager.checkMemberAccess
+-        checkMemberAccess(Member.PUBLIC, ClassLoader.getCallerClassLoader(), true);
++        checkMemberAccess(Member.PUBLIC, Reflection.getCallerClass(), true);
+         Field field = getField0(name);
+         if (field == null) {
+             throw new NoSuchFieldException(name);
+@@ -1641,12 +1647,13 @@
+      *
+      * @since JDK1.1
+      */
++    @CallerSensitive
+     public Method getMethod(String name, Class<?>... parameterTypes)
+         throws NoSuchMethodException, SecurityException {
+         // be very careful not to change the stack depth of this
+         // checkMemberAccess call for security reasons
+         // see java.lang.SecurityManager.checkMemberAccess
+-        checkMemberAccess(Member.PUBLIC, ClassLoader.getCallerClassLoader(), true);
++        checkMemberAccess(Member.PUBLIC, Reflection.getCallerClass(), true);
+         Method method = getMethod0(name, parameterTypes);
+         if (method == null) {
+             throw new NoSuchMethodException(getName() + "." + name + argumentTypesToString(parameterTypes));
+@@ -1695,12 +1702,13 @@
+      *
+      * @since JDK1.1
+      */
++    @CallerSensitive
+     public Constructor<T> getConstructor(Class<?>... parameterTypes)
+         throws NoSuchMethodException, SecurityException {
+         // be very careful not to change the stack depth of this
+         // checkMemberAccess call for security reasons
+         // see java.lang.SecurityManager.checkMemberAccess
+-        checkMemberAccess(Member.PUBLIC, ClassLoader.getCallerClassLoader(), true);
++        checkMemberAccess(Member.PUBLIC, Reflection.getCallerClass(), true);
+         return getConstructor0(parameterTypes, Member.PUBLIC);
+     }
+ 
+@@ -1738,11 +1746,12 @@
+      *
+      * @since JDK1.1
+      */
++    @CallerSensitive
+     public Class<?>[] getDeclaredClasses() throws SecurityException {
+         // be very careful not to change the stack depth of this
+         // checkMemberAccess call for security reasons
+         // see java.lang.SecurityManager.checkMemberAccess
+-        checkMemberAccess(Member.DECLARED, ClassLoader.getCallerClassLoader(), false);
++        checkMemberAccess(Member.DECLARED, Reflection.getCallerClass(), false);
+         return getDeclaredClasses0();
+     }
+ 
+@@ -1782,11 +1791,12 @@
+      *
+      * @since JDK1.1
+      */
++    @CallerSensitive
+     public Field[] getDeclaredFields() throws SecurityException {
+         // be very careful not to change the stack depth of this
+         // checkMemberAccess call for security reasons
+         // see java.lang.SecurityManager.checkMemberAccess
+-        checkMemberAccess(Member.DECLARED, ClassLoader.getCallerClassLoader(), true);
++        checkMemberAccess(Member.DECLARED, Reflection.getCallerClass(), true);
+         return copyFields(privateGetDeclaredFields(false));
+     }
+ 
+@@ -1830,11 +1840,12 @@
+      *
+      * @since JDK1.1
+      */
++    @CallerSensitive
+     public Method[] getDeclaredMethods() throws SecurityException {
+         // be very careful not to change the stack depth of this
+         // checkMemberAccess call for security reasons
+         // see java.lang.SecurityManager.checkMemberAccess
+-        checkMemberAccess(Member.DECLARED, ClassLoader.getCallerClassLoader(), true);
++        checkMemberAccess(Member.DECLARED, Reflection.getCallerClass(), true);
+         return copyMethods(privateGetDeclaredMethods(false));
+     }
+ 
+@@ -1875,11 +1886,12 @@
+      *
+      * @since JDK1.1
+      */
++    @CallerSensitive
+     public Constructor<?>[] getDeclaredConstructors() throws SecurityException {
+         // be very careful not to change the stack depth of this
+         // checkMemberAccess call for security reasons
+         // see java.lang.SecurityManager.checkMemberAccess
+-        checkMemberAccess(Member.DECLARED, ClassLoader.getCallerClassLoader(), true);
++        checkMemberAccess(Member.DECLARED, Reflection.getCallerClass(), true);
+         return copyConstructors(privateGetDeclaredConstructors(false));
+     }
+ 
+@@ -1918,12 +1930,13 @@
+      *
+      * @since JDK1.1
+      */
++    @CallerSensitive
+     public Field getDeclaredField(String name)
+         throws NoSuchFieldException, SecurityException {
+         // be very careful not to change the stack depth of this
+         // checkMemberAccess call for security reasons
+         // see java.lang.SecurityManager.checkMemberAccess
+-        checkMemberAccess(Member.DECLARED, ClassLoader.getCallerClassLoader(), true);
++        checkMemberAccess(Member.DECLARED, Reflection.getCallerClass(), true);
+         Field field = searchFields(privateGetDeclaredFields(false), name);
+         if (field == null) {
+             throw new NoSuchFieldException(name);
+@@ -1973,12 +1986,13 @@
+      *
+      * @since JDK1.1
+      */
++    @CallerSensitive
+     public Method getDeclaredMethod(String name, Class<?>... parameterTypes)
+         throws NoSuchMethodException, SecurityException {
+         // be very careful not to change the stack depth of this
+         // checkMemberAccess call for security reasons
+         // see java.lang.SecurityManager.checkMemberAccess
+-        checkMemberAccess(Member.DECLARED, ClassLoader.getCallerClassLoader(), true);
++        checkMemberAccess(Member.DECLARED, Reflection.getCallerClass(), true);
+         Method method = searchMethods(privateGetDeclaredMethods(false), name, parameterTypes);
+         if (method == null) {
+             throw new NoSuchMethodException(getName() + "." + name + argumentTypesToString(parameterTypes));
+@@ -2023,12 +2037,13 @@
+      *
+      * @since JDK1.1
+      */
++    @CallerSensitive
+     public Constructor<T> getDeclaredConstructor(Class<?>... parameterTypes)
+         throws NoSuchMethodException, SecurityException {
+         // be very careful not to change the stack depth of this
+         // checkMemberAccess call for security reasons
+         // see java.lang.SecurityManager.checkMemberAccess
+-        checkMemberAccess(Member.DECLARED, ClassLoader.getCallerClassLoader(), true);
++        checkMemberAccess(Member.DECLARED, Reflection.getCallerClass(), true);
+         return getConstructor0(parameterTypes, Member.DECLARED);
+     }
+ 
+@@ -2186,23 +2201,40 @@
+      */
+     static native Class getPrimitiveClass(String name);
+ 
++    private static boolean isCheckMemberAccessOverridden(SecurityManager smgr) {
++        if (smgr.getClass() == SecurityManager.class) return false;
++
++        Class<?>[] paramTypes = new Class<?>[] {Class.class, int.class};
++        return smgr.getClass().getMethod0("checkMemberAccess", paramTypes).
++                getDeclaringClass() != SecurityManager.class;
++    }
++
+ 
+     /*
+      * Check if client is allowed to access members.  If access is denied,
+      * throw a SecurityException.
+      *
+-     * Be very careful not to change the stack depth of this checkMemberAccess
+-     * call for security reasons.
+-     * See java.lang.SecurityManager.checkMemberAccess.
+-     *
+      * <p> Default policy: allow all clients access with normal Java access
+      * control.
+      */
+-    private void checkMemberAccess(int which, ClassLoader ccl, boolean checkProxyInterfaces) {
+-        SecurityManager s = System.getSecurityManager();
++    private void checkMemberAccess(int which, Class<?> caller, boolean checkProxyInterfaces) {
++        final SecurityManager s = System.getSecurityManager();
+         if (s != null) {
+-            s.checkMemberAccess(this, which);
+-            ClassLoader cl = getClassLoader0();
++            final ClassLoader ccl = ClassLoader.getClassLoader(caller);
++            final ClassLoader cl = getClassLoader0();
++            if (!isCheckMemberAccessOverridden(s)) {
++                // Inlined SecurityManager.checkMemberAccess
++                if (which != Member.PUBLIC) {
++                    if (ccl != cl) {
++                        s.checkPermission(SecurityConstants.CHECK_MEMBER_ACCESS_PERMISSION);
++                    }
++                }
++            } else {
++                // Don't refactor; otherwise break the stack depth for
++                // checkMemberAccess of subclasses of SecurityManager as specified.
++                s.checkMemberAccess(this, which);
++            }
++
+             if (ReflectUtil.needsPackageAccessCheck(ccl, cl)) {
+ 
+                 String name = this.getName();
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/java/lang/ClassLoader.java
+--- jdk/src/share/classes/java/lang/ClassLoader.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/java/lang/ClassLoader.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -52,6 +52,7 @@
+ import sun.misc.Resource;
+ import sun.misc.URLClassPath;
+ import sun.misc.VM;
++import sun.reflect.CallerSensitive;
+ import sun.reflect.Reflection;
+ import sun.security.util.SecurityConstants;
+ 
+@@ -1214,15 +1215,13 @@
+      *
+      * @since  1.2
+      */
++    @CallerSensitive
+     public final ClassLoader getParent() {
+         if (parent == null)
+             return null;
+         SecurityManager sm = System.getSecurityManager();
+         if (sm != null) {
+-            ClassLoader ccl = getCallerClassLoader();
+-            if (ccl != null && !isAncestor(ccl)) {
+-                sm.checkPermission(SecurityConstants.GET_CLASSLOADER_PERMISSION);
+-            }
++            checkClassLoaderPermission(parent, Reflection.getCallerClass());
+         }
+         return parent;
+     }
+@@ -1282,6 +1281,7 @@
+      *
+      * @revised  1.4
+      */
++    @CallerSensitive
+     public static ClassLoader getSystemClassLoader() {
+         initSystemClassLoader();
+         if (scl == null) {
+@@ -1289,10 +1289,7 @@
+         }
+         SecurityManager sm = System.getSecurityManager();
+         if (sm != null) {
+-            ClassLoader ccl = getCallerClassLoader();
+-            if (ccl != null && ccl != scl && !scl.isAncestor(ccl)) {
+-                sm.checkPermission(SecurityConstants.GET_CLASSLOADER_PERMISSION);
+-            }
++            checkClassLoaderPermission(scl, Reflection.getCallerClass());
+         }
+         return scl;
+     }
+@@ -1341,13 +1338,25 @@
+         return false;
+     }
+ 
+-    // Returns the invoker's class loader, or null if none.
+-    // NOTE: This must always be invoked when there is exactly one intervening
+-    // frame from the core libraries on the stack between this method's
+-    // invocation and the desired invoker.
+-    static ClassLoader getCallerClassLoader() {
+-        // NOTE use of more generic Reflection.getCallerClass()
+-        Class caller = Reflection.getCallerClass(3);
++    // Tests if class loader access requires "getClassLoader" permission
++    // check.  A class loader 'from' can access class loader 'to' if
++    // class loader 'from' is same as class loader 'to' or an ancestor
++    // of 'to'.  The class loader in a system domain can access
++    // any class loader.
++    private static boolean needsClassLoaderPermissionCheck(ClassLoader from,
++                                                           ClassLoader to)
++    {
++        if (from == to)
++            return false;
++
++        if (from == null)
++            return false;
++
++        return !to.isAncestor(from);
++    }
++
++    // Returns the class's class loader, or null if none.
++    static ClassLoader getClassLoader(Class<?> caller) {
+         // This can be null if the VM is requesting it
+         if (caller == null) {
+             return null;
+@@ -1356,6 +1365,17 @@
+         return caller.getClassLoader0();
+     }
+ 
++    static void checkClassLoaderPermission(ClassLoader cl, Class<?> caller) {
++        SecurityManager sm = System.getSecurityManager();
++        if (sm != null) {
++            // caller can be null if the VM is requesting it
++            ClassLoader ccl = getClassLoader(caller);
++            if (needsClassLoaderPermissionCheck(ccl, cl)) {
++                sm.checkPermission(SecurityConstants.GET_CLASSLOADER_PERMISSION);
++            }
++        }
++    }
++
+     // The class loader for the system
+     private static ClassLoader scl;
+ 
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/java/lang/Package.java
+--- jdk/src/share/classes/java/lang/Package.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/java/lang/Package.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -47,9 +47,10 @@
+ import java.util.HashMap;
+ import java.util.Iterator;
+ 
++import java.lang.annotation.Annotation;
+ import sun.net.www.ParseUtil;
+-
+-import java.lang.annotation.Annotation;
++import sun.reflect.CallerSensitive;
++import sun.reflect.Reflection;
+ 
+ /**
+  * {@code Package} objects contain version information
+@@ -273,8 +274,9 @@
+      * @return the package of the requested name. It may be null if no package
+      *          information is available from the archive or codebase.
+      */
++    @CallerSensitive
+     public static Package getPackage(String name) {
+-        ClassLoader l = ClassLoader.getCallerClassLoader();
++        ClassLoader l = ClassLoader.getClassLoader(Reflection.getCallerClass());
+         if (l != null) {
+             return l.getPackage(name);
+         } else {
+@@ -294,8 +296,9 @@
+      * @return a new array of packages known to the callers {@code ClassLoader}
+      * instance.  An zero length array is returned if none are known.
+      */
++    @CallerSensitive
+     public static Package[] getPackages() {
+-        ClassLoader l = ClassLoader.getCallerClassLoader();
++        ClassLoader l = ClassLoader.getClassLoader(Reflection.getCallerClass());
+         if (l != null) {
+             return l.getPackages();
+         } else {
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/java/lang/Runtime.java
+--- jdk/src/share/classes/java/lang/Runtime.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/java/lang/Runtime.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -27,6 +27,8 @@
+ 
+ import java.io.*;
+ import java.util.StringTokenizer;
++import sun.reflect.CallerSensitive;
++import sun.reflect.Reflection;
+ 
+ /**
+  * Every Java application has a single instance of class
+@@ -771,8 +773,9 @@
+      * @see        java.lang.SecurityException
+      * @see        java.lang.SecurityManager#checkLink(java.lang.String)
+      */
++    @CallerSensitive
+     public void load(String filename) {
+-        load0(System.getCallerClass(), filename);
++        load0(Reflection.getCallerClass(), filename);
+     }
+ 
+     synchronized void load0(Class fromClass, String filename) {
+@@ -824,8 +827,9 @@
+      * @see        java.lang.SecurityException
+      * @see        java.lang.SecurityManager#checkLink(java.lang.String)
+      */
++    @CallerSensitive
+     public void loadLibrary(String libname) {
+-        loadLibrary0(System.getCallerClass(), libname);
++        loadLibrary0(Reflection.getCallerClass(), libname);
+     }
+ 
+     synchronized void loadLibrary0(Class fromClass, String libname) {
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/java/lang/System.java
+--- jdk/src/share/classes/java/lang/System.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/java/lang/System.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -35,6 +35,7 @@
+ import java.nio.channels.spi.SelectorProvider;
+ import sun.nio.ch.Interruptible;
+ import sun.net.InetAddressCachePolicy;
++import sun.reflect.CallerSensitive;
+ import sun.reflect.Reflection;
+ import sun.security.util.SecurityConstants;
+ import sun.reflect.annotation.AnnotationType;
+@@ -1018,8 +1019,9 @@
+      * @see        java.lang.Runtime#load(java.lang.String)
+      * @see        java.lang.SecurityManager#checkLink(java.lang.String)
+      */
++    @CallerSensitive
+     public static void load(String filename) {
+-        Runtime.getRuntime().load0(getCallerClass(), filename);
++        Runtime.getRuntime().load0(Reflection.getCallerClass(), filename);
+     }
+ 
+     /**
+@@ -1043,8 +1045,9 @@
+      * @see        java.lang.Runtime#loadLibrary(java.lang.String)
+      * @see        java.lang.SecurityManager#checkLink(java.lang.String)
+      */
++    @CallerSensitive
+     public static void loadLibrary(String libname) {
+-        Runtime.getRuntime().loadLibrary0(getCallerClass(), libname);
++        Runtime.getRuntime().loadLibrary0(Reflection.getCallerClass(), libname);
+     }
+ 
+     /**
+@@ -1157,10 +1160,4 @@
+             }
+         });
+     }
+-
+-    /* returns the class of the caller. */
+-    static Class getCallerClass() {
+-        // NOTE use of more generic Reflection.getCallerClass()
+-        return Reflection.getCallerClass(3);
+-    }
+ }
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/java/lang/Thread.java
+--- jdk/src/share/classes/java/lang/Thread.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/java/lang/Thread.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -34,6 +34,8 @@
+ import java.util.concurrent.locks.LockSupport;
+ import sun.misc.SoftCache;
+ import sun.nio.ch.Interruptible;
++import sun.reflect.CallerSensitive;
++import sun.reflect.Reflection;
+ import sun.security.util.SecurityConstants;
+ 
+ 
+@@ -1370,16 +1372,15 @@
+      *
+      * @since 1.2
+      */
++    @CallerSensitive
+     public ClassLoader getContextClassLoader() {
+         if (contextClassLoader == null)
+             return null;
++
+         SecurityManager sm = System.getSecurityManager();
+         if (sm != null) {
+-            ClassLoader ccl = ClassLoader.getCallerClassLoader();
+-            if (ccl != null && ccl != contextClassLoader &&
+-                    !contextClassLoader.isAncestor(ccl)) {
+-                sm.checkPermission(SecurityConstants.GET_CLASSLOADER_PERMISSION);
+-            }
++            ClassLoader.checkClassLoaderPermission(contextClassLoader,
++                                                   Reflection.getCallerClass());
+         }
+         return contextClassLoader;
+     }
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/java/lang/reflect/Constructor.java
+--- jdk/src/share/classes/java/lang/reflect/Constructor.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/java/lang/reflect/Constructor.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -25,6 +25,7 @@
+ 
+ package java.lang.reflect;
+ 
++import sun.reflect.CallerSensitive;
+ import sun.reflect.ConstructorAccessor;
+ import sun.reflect.Reflection;
+ import sun.reflect.generics.repository.ConstructorRepository;
+@@ -513,13 +514,14 @@
+      * @exception ExceptionInInitializerError if the initialization provoked
+      *              by this method fails.
+      */
++    @CallerSensitive
+     public T newInstance(Object ... initargs)
+         throws InstantiationException, IllegalAccessException,
+                IllegalArgumentException, InvocationTargetException
+     {
+         if (!override) {
+             if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
+-                Class caller = Reflection.getCallerClass(2);
++                Class<?> caller = Reflection.getCallerClass();
+                 if (securityCheckCache != caller) {
+                     Reflection.ensureMemberAccess(caller, clazz, null, modifiers);
+                     securityCheckCache = caller;
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/java/lang/reflect/Field.java
+--- jdk/src/share/classes/java/lang/reflect/Field.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/java/lang/reflect/Field.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -25,6 +25,7 @@
+ 
+ package java.lang.reflect;
+ 
++import sun.reflect.CallerSensitive;
+ import sun.reflect.FieldAccessor;
+ import sun.reflect.Reflection;
+ import sun.reflect.generics.repository.FieldRepository;
+@@ -370,9 +371,15 @@
+      * @exception ExceptionInInitializerError if the initialization provoked
+      *              by this method fails.
+      */
++    @CallerSensitive
+     public Object get(Object obj)
+         throws IllegalArgumentException, IllegalAccessException
+     {
++        if (!override) {
++            if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
++                checkAccess(Reflection.getCallerClass(), clazz, obj, modifiers);
++            }
++        }
+         return getFieldAccessor(obj).get(obj);
+     }
+ 
+@@ -397,9 +404,15 @@
+      *              by this method fails.
+      * @see       Field#get
+      */
++    @CallerSensitive
+     public boolean getBoolean(Object obj)
+         throws IllegalArgumentException, IllegalAccessException
+     {
++        if (!override) {
++            if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
++                checkAccess(Reflection.getCallerClass(), clazz, obj, modifiers);
++            }
++        }
+         return getFieldAccessor(obj).getBoolean(obj);
+     }
+ 
+@@ -424,9 +437,15 @@
+      *              by this method fails.
+      * @see       Field#get
+      */
++    @CallerSensitive
+     public byte getByte(Object obj)
+         throws IllegalArgumentException, IllegalAccessException
+     {
++        if (!override) {
++            if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
++                checkAccess(Reflection.getCallerClass(), clazz, obj, modifiers);
++            }
++        }
+         return getFieldAccessor(obj).getByte(obj);
+     }
+ 
+@@ -453,9 +472,15 @@
+      *              by this method fails.
+      * @see Field#get
+      */
++    @CallerSensitive
+     public char getChar(Object obj)
+         throws IllegalArgumentException, IllegalAccessException
+     {
++        if (!override) {
++            if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
++                checkAccess(Reflection.getCallerClass(), clazz, obj, modifiers);
++            }
++        }
+         return getFieldAccessor(obj).getChar(obj);
+     }
+ 
+@@ -482,9 +507,15 @@
+      *              by this method fails.
+      * @see       Field#get
+      */
++    @CallerSensitive
+     public short getShort(Object obj)
+         throws IllegalArgumentException, IllegalAccessException
+     {
++        if (!override) {
++            if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
++                checkAccess(Reflection.getCallerClass(), clazz, obj, modifiers);
++            }
++        }
+         return getFieldAccessor(obj).getShort(obj);
+     }
+ 
+@@ -511,9 +542,15 @@
+      *              by this method fails.
+      * @see       Field#get
+      */
++    @CallerSensitive
+     public int getInt(Object obj)
+         throws IllegalArgumentException, IllegalAccessException
+     {
++        if (!override) {
++            if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
++                checkAccess(Reflection.getCallerClass(), clazz, obj, modifiers);
++            }
++        }
+         return getFieldAccessor(obj).getInt(obj);
+     }
+ 
+@@ -540,9 +577,15 @@
+      *              by this method fails.
+      * @see       Field#get
+      */
++    @CallerSensitive
+     public long getLong(Object obj)
+         throws IllegalArgumentException, IllegalAccessException
+     {
++        if (!override) {
++            if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
++                checkAccess(Reflection.getCallerClass(), clazz, obj, modifiers);
++            }
++        }
+         return getFieldAccessor(obj).getLong(obj);
+     }
+ 
+@@ -569,9 +612,15 @@
+      *              by this method fails.
+      * @see Field#get
+      */
++    @CallerSensitive
+     public float getFloat(Object obj)
+         throws IllegalArgumentException, IllegalAccessException
+     {
++        if (!override) {
++            if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
++                checkAccess(Reflection.getCallerClass(), clazz, obj, modifiers);
++            }
++        }
+         return getFieldAccessor(obj).getFloat(obj);
+     }
+ 
+@@ -598,9 +647,15 @@
+      *              by this method fails.
+      * @see       Field#get
+      */
++    @CallerSensitive
+     public double getDouble(Object obj)
+         throws IllegalArgumentException, IllegalAccessException
+     {
++        if (!override) {
++            if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
++                checkAccess(Reflection.getCallerClass(), clazz, obj, modifiers);
++            }
++        }
+         return getFieldAccessor(obj).getDouble(obj);
+     }
+ 
+@@ -669,9 +724,15 @@
+      * @exception ExceptionInInitializerError if the initialization provoked
+      *              by this method fails.
+      */
++    @CallerSensitive
+     public void set(Object obj, Object value)
+         throws IllegalArgumentException, IllegalAccessException
+     {
++        if (!override) {
++            if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
++                checkAccess(Reflection.getCallerClass(), clazz, obj, modifiers);
++            }
++        }
+         getFieldAccessor(obj).set(obj, value);
+     }
+ 
+@@ -698,9 +759,15 @@
+      *              by this method fails.
+      * @see       Field#set
+      */
++    @CallerSensitive
+     public void setBoolean(Object obj, boolean z)
+         throws IllegalArgumentException, IllegalAccessException
+     {
++        if (!override) {
++            if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
++                checkAccess(Reflection.getCallerClass(), clazz, obj, modifiers);
++            }
++        }
+         getFieldAccessor(obj).setBoolean(obj, z);
+     }
+ 
+@@ -727,9 +794,15 @@
+      *              by this method fails.
+      * @see       Field#set
+      */
++    @CallerSensitive
+     public void setByte(Object obj, byte b)
+         throws IllegalArgumentException, IllegalAccessException
+     {
++        if (!override) {
++            if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
++                checkAccess(Reflection.getCallerClass(), clazz, obj, modifiers);
++            }
++        }
+         getFieldAccessor(obj).setByte(obj, b);
+     }
+ 
+@@ -756,9 +829,15 @@
+      *              by this method fails.
+      * @see       Field#set
+      */
++    @CallerSensitive
+     public void setChar(Object obj, char c)
+         throws IllegalArgumentException, IllegalAccessException
+     {
++        if (!override) {
++            if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
++                checkAccess(Reflection.getCallerClass(), clazz, obj, modifiers);
++            }
++        }
+         getFieldAccessor(obj).setChar(obj, c);
+     }
+ 
+@@ -785,9 +864,15 @@
+      *              by this method fails.
+      * @see       Field#set
+      */
++    @CallerSensitive
+     public void setShort(Object obj, short s)
+         throws IllegalArgumentException, IllegalAccessException
+     {
++        if (!override) {
++            if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
++                checkAccess(Reflection.getCallerClass(), clazz, obj, modifiers);
++            }
++        }
+         getFieldAccessor(obj).setShort(obj, s);
+     }
+ 
+@@ -814,9 +899,15 @@
+      *              by this method fails.
+      * @see       Field#set
+      */
++    @CallerSensitive
+     public void setInt(Object obj, int i)
+         throws IllegalArgumentException, IllegalAccessException
+     {
++        if (!override) {
++            if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
++                checkAccess(Reflection.getCallerClass(), clazz, obj, modifiers);
++            }
++        }
+         getFieldAccessor(obj).setInt(obj, i);
+     }
+ 
+@@ -843,9 +934,15 @@
+      *              by this method fails.
+      * @see       Field#set
+      */
++    @CallerSensitive
+     public void setLong(Object obj, long l)
+         throws IllegalArgumentException, IllegalAccessException
+     {
++        if (!override) {
++            if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
++                checkAccess(Reflection.getCallerClass(), clazz, obj, modifiers);
++            }
++        }
+         getFieldAccessor(obj).setLong(obj, l);
+     }
+ 
+@@ -872,9 +969,15 @@
+      *              by this method fails.
+      * @see       Field#set
+      */
++    @CallerSensitive
+     public void setFloat(Object obj, float f)
+         throws IllegalArgumentException, IllegalAccessException
+     {
++        if (!override) {
++            if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
++                checkAccess(Reflection.getCallerClass(), clazz, obj, modifiers);
++            }
++        }
+         getFieldAccessor(obj).setFloat(obj, f);
+     }
+ 
+@@ -901,20 +1004,25 @@
+      *              by this method fails.
+      * @see       Field#set
+      */
++    @CallerSensitive
+     public void setDouble(Object obj, double d)
+         throws IllegalArgumentException, IllegalAccessException
+     {
++        if (!override) {
++            if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
++                checkAccess(Reflection.getCallerClass(), clazz, obj, modifiers);
++            }
++        }
+         getFieldAccessor(obj).setDouble(obj, d);
+     }
+ 
+-    // Convenience routine which performs security checks
++    // security check is done before calling this method
+     private FieldAccessor getFieldAccessor(Object obj)
+         throws IllegalAccessException
+     {
+-        doSecurityCheck(obj);
+         boolean ov = override;
+-        FieldAccessor a = (ov)? overrideFieldAccessor : fieldAccessor;
+-        return (a != null)? a : acquireFieldAccessor(ov);
++        FieldAccessor a = (ov) ? overrideFieldAccessor : fieldAccessor;
++        return (a != null) ? a : acquireFieldAccessor(ov);
+     }
+ 
+     // NOTE that there is no synchronization used here. It is correct
+@@ -961,10 +1069,7 @@
+     // NOTE: be very careful if you change the stack depth of this
+     // routine. The depth of the "getCallerClass" call is hardwired so
+     // that the compiler can have an easier time if this gets inlined.
+-    private void doSecurityCheck(Object obj) throws IllegalAccessException {
+-        if (!override) {
+-            if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
+-                Class caller = Reflection.getCallerClass(4);
++    private void checkAccess(Class caller, Class clazz, Object obj, int modifiers) throws IllegalAccessException {
+                 Class targetClass = ((obj == null || !Modifier.isProtected(modifiers))
+                                      ? clazz
+                                      : obj.getClass());
+@@ -980,8 +1085,6 @@
+                     securityCheckCache = caller;
+                     securityCheckTargetClassCache = targetClass;
+                 }
+-            }
+-        }
+     }
+ 
+     /*
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/java/lang/reflect/Method.java
+--- jdk/src/share/classes/java/lang/reflect/Method.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/java/lang/reflect/Method.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -25,6 +25,7 @@
+ 
+ package java.lang.reflect;
+ 
++import sun.reflect.CallerSensitive;
+ import sun.reflect.MethodAccessor;
+ import sun.reflect.Reflection;
+ import sun.reflect.generics.repository.MethodRepository;
+@@ -587,13 +588,18 @@
+      * @exception ExceptionInInitializerError if the initialization
+      * provoked by this method fails.
+      */
++    @CallerSensitive
+     public Object invoke(Object obj, Object... args)
+         throws IllegalAccessException, IllegalArgumentException,
+            InvocationTargetException
+     {
+         if (!override) {
+             if (!Reflection.quickCheckMemberAccess(clazz, modifiers)) {
+-                Class caller = Reflection.getCallerClass(1);
++                // Until there is hotspot @CallerSensitive support
++                // can't call Reflection.getCallerClass() here
++                // Workaround for now: add a frame getCallerClass to
++                // make the caller at stack depth 2
++                Class<?> caller = getCallerClass();
+                 Class targetClass = ((obj == null || !Modifier.isProtected(modifiers))
+                                      ? clazz
+                                      : obj.getClass());
+@@ -616,6 +622,16 @@
+         return methodAccessor.invoke(obj, args);
+     }
+ 
++    /*
++     * This method makes the frame count to be 2 to find the caller
++     */
++    @CallerSensitive
++    private Class<?> getCallerClass() {
++        // Reflection.getCallerClass() currently returns the frame at depth 2
++        // before the hotspot support is in.
++        return Reflection.getCallerClass();
++    }
++
+     /**
+      * Returns {@code true} if this method is a bridge
+      * method; returns {@code false} otherwise.
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/java/lang/reflect/Proxy.java
+--- jdk/src/share/classes/java/lang/reflect/Proxy.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/java/lang/reflect/Proxy.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -38,6 +38,7 @@
+ import java.util.Set;
+ import java.util.WeakHashMap;
+ import sun.misc.ProxyGenerator;
++import sun.reflect.CallerSensitive;
+ import sun.reflect.Reflection;
+ import sun.reflect.misc.ReflectUtil;
+ import sun.security.util.SecurityConstants;
+@@ -404,28 +405,21 @@
+      * @throws  NullPointerException if the {@code interfaces} array
+      *          argument or any of its elements are {@code null}
+      */
++    @CallerSensitive
+     public static Class<?> getProxyClass(ClassLoader loader,
+                                          Class<?>... interfaces)
+         throws IllegalArgumentException
+     {
+-        return getProxyClass0(loader, interfaces); // stack walk magic: do not refactor
+-    }
+-
+-    private static void checkProxyLoader(ClassLoader ccl,
+-                                         ClassLoader loader)
+-    {
+         SecurityManager sm = System.getSecurityManager();
+         if (sm != null) {
+-            if (loader == null && ccl != null) {
+-                if (!ProxyAccessHelper.allowNullLoader) {
+-                    sm.checkPermission(SecurityConstants.GET_CLASSLOADER_PERMISSION);
+-                }
+-            }
++            checkProxyAccess(Reflection.getCallerClass(), loader, interfaces);
+         }
++
++        return getProxyClass0(loader, interfaces);
+     }
+  
+     /*
+-     * Generate a proxy class (caller-sensitive).
++     * Check permissions required to create a proxy class.
+      *
+      * To define a proxy class, it performs the access checks as in
+      * Class.forName (VM will invoke ClassLoader.checkPackageAccess):
+@@ -442,16 +436,28 @@
+      * will throw IllegalAccessError when the generated proxy class is
+      * being defined via the defineClass0 method.
+      */
++    private static void checkProxyAccess(Class<?> caller,
++                                         ClassLoader loader,
++                                         Class<?>... interfaces)
++    {
++        SecurityManager sm = System.getSecurityManager();
++        if (sm != null) {
++            ClassLoader ccl = caller.getClassLoader();
++            if (loader == null && ccl != null) {
++                if (!ProxyAccessHelper.allowNullLoader) {
++                    sm.checkPermission(SecurityConstants.GET_CLASSLOADER_PERMISSION);
++                }
++            }
++            ReflectUtil.checkProxyPackageAccess(ccl, interfaces);
++        }
++    }
++
++    /**
++     * Generate a proxy class.  Must call the checkProxyAccess method
++     * to perform permission checks before calling this.
++     */
+     private static Class<?> getProxyClass0(ClassLoader loader,
+                                            Class<?>... interfaces) {
+-        SecurityManager sm = System.getSecurityManager();
+-        if (sm != null) {
+-            final int CALLER_FRAME = 3; // 0: Reflection, 1: getProxyClass0 2: Proxy 3: caller
+-            final Class<?> caller = Reflection.getCallerClass(CALLER_FRAME);
+-            final ClassLoader ccl = caller.getClassLoader();
+-            checkProxyLoader(ccl, loader);
+-            ReflectUtil.checkProxyPackageAccess(ccl, interfaces);
+-        }
+         if (interfaces.length > 65535) {
+             throw new IllegalArgumentException("interface limit exceeded");
+         }
+@@ -692,6 +698,7 @@
+      *          if the invocation handler, {@code h}, is
+      *          {@code null}
+      */
++    @CallerSensitive
+     public static Object newProxyInstance(ClassLoader loader,
+                                           Class<?>[] interfaces,
+                                           InvocationHandler h)
+@@ -701,10 +708,15 @@
+             throw new NullPointerException();
+         }
+ 
++        final SecurityManager sm = System.getSecurityManager();
++        if (sm != null) {
++            checkProxyAccess(Reflection.getCallerClass(), loader, interfaces);
++        }
++
+         /*
+          * Look up or generate the designated proxy class.
+          */
+-        Class<?> cl = getProxyClass0(loader, interfaces); // stack walk magic: do not refactor
++        Class<?> cl = getProxyClass0(loader, interfaces);
+ 
+         /*
+          * Invoke its constructor with the designated invocation handler.
+@@ -712,7 +724,6 @@
+         try {
+             final Constructor<?> cons = cl.getConstructor(constructorParams);
+             final InvocationHandler ih = h;
+-            SecurityManager sm = System.getSecurityManager();
+             if (sm != null && ProxyAccessHelper.needsNewInstanceCheck(cl)) {
+                 // create proxy instance with doPrivilege as the proxy class may
+                 // implement non-public interfaces that requires a special permission
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/java/security/AccessController.java
+--- jdk/src/share/classes/java/security/AccessController.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/java/security/AccessController.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -26,6 +26,8 @@
+ package java.security;
+ 
+ import sun.security.util.Debug;
++import sun.reflect.CallerSensitive;
++import sun.reflect.Reflection;
+ 
+ /**
+  * <p> The AccessController class is used for access control operations
+@@ -264,6 +266,7 @@
+      * @see java.security.DomainCombiner
+      */
+ 
++    @CallerSensitive
+     public static native <T> T doPrivileged(PrivilegedAction<T> action);
+ 
+     /**
+@@ -288,14 +291,14 @@
+      *
+      * @since 1.6
+      */
++    @CallerSensitive
+     public static <T> T doPrivilegedWithCombiner(PrivilegedAction<T> action) {
+-
+         AccessControlContext acc = getStackAccessControlContext();
+         if (acc == null) {
+             return AccessController.doPrivileged(action);
+         }
+         DomainCombiner dc = acc.getAssignedCombiner();
+-        return AccessController.doPrivileged(action, preserveCombiner(dc));
++        return AccessController.doPrivileged(action, preserveCombiner(dc, Reflection.getCallerClass()));
+     }
+ 
+ 
+@@ -326,6 +329,7 @@
+      * @see #doPrivileged(PrivilegedAction)
+      * @see #doPrivileged(PrivilegedExceptionAction,AccessControlContext)
+      */
++    @CallerSensitive
+     public static native <T> T doPrivileged(PrivilegedAction<T> action,
+                                             AccessControlContext context);
+ 
+@@ -353,6 +357,7 @@
+      * @see #doPrivilegedWithCombiner(PrivilegedExceptionAction)
+      * @see java.security.DomainCombiner
+      */
++    @CallerSensitive
+     public static native <T> T
+         doPrivileged(PrivilegedExceptionAction<T> action)
+         throws PrivilegedActionException;
+@@ -383,6 +388,7 @@
+      *
+      * @since 1.6
+      */
++    @CallerSensitive
+     public static <T> T doPrivilegedWithCombiner
+         (PrivilegedExceptionAction<T> action) throws PrivilegedActionException {
+ 
+@@ -391,26 +397,18 @@
+             return AccessController.doPrivileged(action);
+         }
+         DomainCombiner dc = acc.getAssignedCombiner();
+-        return AccessController.doPrivileged(action, preserveCombiner(dc));
++        return AccessController.doPrivileged(action, preserveCombiner(dc, Reflection.getCallerClass()));
+     }
+ 
+     /**
+      * preserve the combiner across the doPrivileged call
+      */
+-    private static AccessControlContext preserveCombiner
+-                                        (DomainCombiner combiner) {
+-
+-        /**
+-         * callerClass[0] = Reflection.getCallerClass
+-         * callerClass[1] = AccessController.preserveCombiner
+-         * callerClass[2] = AccessController.doPrivileged
+-         * callerClass[3] = caller
+-         */
+-        final Class callerClass = sun.reflect.Reflection.getCallerClass(3);
++    private static AccessControlContext preserveCombiner(DomainCombiner combiner,
++                                                         final Class<?> caller) {
+         ProtectionDomain callerPd = doPrivileged
+             (new PrivilegedAction<ProtectionDomain>() {
+             public ProtectionDomain run() {
+-                return callerClass.getProtectionDomain();
++                return caller.getProtectionDomain();
+             }
+         });
+ 
+@@ -455,6 +453,7 @@
+      * @see #doPrivileged(PrivilegedAction)
+      * @see #doPrivileged(PrivilegedExceptionAction,AccessControlContext)
+      */
++    @CallerSensitive
+     public static native <T> T
+         doPrivileged(PrivilegedExceptionAction<T> action,
+                      AccessControlContext context)
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/java/sql/DriverManager.java
+--- jdk/src/share/classes/java/sql/DriverManager.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/java/sql/DriverManager.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -30,6 +30,8 @@
+ import java.util.ServiceLoader;
+ import java.security.AccessController;
+ import java.security.PrivilegedAction;
++import sun.reflect.CallerSensitive;
++import sun.reflect.Reflection;
+ 
+ 
+ /**
+@@ -159,14 +161,10 @@
+      * @return a Connection to the URL
+      * @exception SQLException if a database access error occurs
+      */
++    @CallerSensitive
+     public static Connection getConnection(String url,
+         java.util.Properties info) throws SQLException {
+-
+-        // Gets the classloader of the code that called this method, may
+-        // be null.
+-        ClassLoader callerCL = DriverManager.getCallerClassLoader();
+-
+-        return (getConnection(url, info, callerCL));
++        return (getConnection(url, info, Reflection.getCallerClass()));
+     }
+ 
+     /**
+@@ -182,14 +180,11 @@
+      * @return a connection to the URL
+      * @exception SQLException if a database access error occurs
+      */
++    @CallerSensitive
+     public static Connection getConnection(String url,
+         String user, String password) throws SQLException {
+         java.util.Properties info = new java.util.Properties();
+ 
+-        // Gets the classloader of the code that called this method, may
+-        // be null.
+-        ClassLoader callerCL = DriverManager.getCallerClassLoader();
+-
+         if (user != null) {
+             info.put("user", user);
+         }
+@@ -197,7 +192,7 @@
+             info.put("password", password);
+         }
+ 
+-        return (getConnection(url, info, callerCL));
++        return (getConnection(url, info, Reflection.getCallerClass()));
+     }
+ 
+     /**
+@@ -210,16 +205,12 @@
+      * @return a connection to the URL
+      * @exception SQLException if a database access error occurs
+      */
++    @CallerSensitive
+     public static Connection getConnection(String url)
+         throws SQLException {
+ 
+         java.util.Properties info = new java.util.Properties();
+-
+-        // Gets the classloader of the code that called this method, may
+-        // be null.
+-        ClassLoader callerCL = DriverManager.getCallerClassLoader();
+-
+-        return (getConnection(url, info, callerCL));
++        return (getConnection(url, info, Reflection.getCallerClass()));
+     }
+ 
+     /**
+@@ -233,6 +224,7 @@
+      * that can connect to the given URL
+      * @exception SQLException if a database access error occurs
+      */
++    @CallerSensitive
+     public static Driver getDriver(String url)
+         throws SQLException {
+         java.util.Vector drivers = null;
+@@ -248,9 +240,7 @@
+             drivers = readDrivers;
+         }
+ 
+-        // Gets the classloader of the code that called this method, may
+-        // be null.
+-        ClassLoader callerCL = DriverManager.getCallerClassLoader();
++        Class<?> callerClass = Reflection.getCallerClass();
+ 
+         // Walk through the loaded drivers attempting to locate someone
+         // who understands the given URL.
+@@ -258,7 +248,7 @@
+             DriverInfo di = (DriverInfo)drivers.elementAt(i);
+             // If the caller does not have permission to load the driver then
+             // skip it.
+-            if ( getCallerClass(callerCL, di.driverClassName ) !=
++            if ( getCallerClass(callerClass, di.driverClassName ) !=
+                  di.driverClass ) {
+                 println("    skipping: " + di);
+                 continue;
+@@ -319,11 +309,10 @@
+      * @param driver the JDBC Driver to drop
+      * @exception SQLException if a database access error occurs
+      */
++    @CallerSensitive
+     public static synchronized void deregisterDriver(Driver driver)
+         throws SQLException {
+-        // Gets the classloader of the code that called this method,
+-        // may be null.
+-        ClassLoader callerCL = DriverManager.getCallerClassLoader();
++        Class<?> callerClass = Reflection.getCallerClass();
+         println("DriverManager.deregisterDriver: " + driver);
+ 
+         // Walk through the loaded drivers.
+@@ -343,7 +332,7 @@
+ 
+         // If the caller does not have permission to load the driver then
+         // throw a security exception.
+-        if (getCallerClass(callerCL, di.driverClassName ) != di.driverClass ) {
++        if (getCallerClass(callerClass, di.driverClassName ) != di.driverClass) {
+             throw new SecurityException();
+         }
+ 
+@@ -363,6 +352,7 @@
+      *
+      * @return the list of JDBC Drivers loaded by the caller's class loader
+      */
++    @CallerSensitive
+     public static java.util.Enumeration<Driver> getDrivers() {
+         java.util.Vector<Driver> result = new java.util.Vector<Driver>();
+         java.util.Vector drivers = null;
+@@ -376,16 +366,14 @@
+             drivers  = readDrivers;
+        }
+ 
+-        // Gets the classloader of the code that called this method, may
+-        // be null.
+-        ClassLoader callerCL = DriverManager.getCallerClassLoader();
++        Class<?> callerClass = Reflection.getCallerClass();
+ 
+         // Walk through the loaded drivers.
+         for (int i = 0; i < drivers.size(); i++) {
+             DriverInfo di = (DriverInfo)drivers.elementAt(i);
+             // If the caller does not have permission to load the driver then
+             // skip it.
+-            if ( getCallerClass(callerCL, di.driverClassName ) != di.driverClass ) {
++            if ( getCallerClass(callerClass, di.driverClassName) != di.driverClass ) {
+                 println("    skipping: " + di);
+                 continue;
+             }
+@@ -481,6 +469,12 @@
+ 
+     //------------------------------------------------------------------------
+ 
++    private static Class getCallerClass(Class<?> caller,
++                                        String driverClassName) {
++        ClassLoader callerCL = caller != null ? caller.getClassLoader() : null;
++        return getCallerClass(callerCL, driverClassName);
++    }
++
+     // Returns the class object that would be created if the code calling the
+     // driver manager had loaded the driver class, or null if the class
+     // is inaccessible.
+@@ -573,7 +567,7 @@
+ 
+     //  Worker method called by the public getConnection() methods.
+     private static Connection getConnection(
+-        String url, java.util.Properties info, ClassLoader callerCL) throws SQLException {
++        String url, java.util.Properties info, Class<?> caller) throws SQLException {
+         java.util.Vector drivers = null;
+         /*
+          * When callerCl is null, we should check the application's
+@@ -581,11 +575,12 @@
+          * classloader, so that the JDBC driver class outside rt.jar
+          * can be loaded from here.
+          */
+-        synchronized(DriverManager.class) {
+-          // synchronize loading of the correct classloader.
+-          if(callerCL == null) {
+-              callerCL = Thread.currentThread().getContextClassLoader();
+-           }
++        ClassLoader callerCL = caller != null ? caller.getClassLoader() : null;
++        synchronized (DriverManager.class) {
++            // synchronize loading of the correct classloader.
++            if (callerCL == null) {
++                callerCL = Thread.currentThread().getContextClassLoader();
++            }
+         }
+ 
+         if(url == null) {
+@@ -666,10 +661,6 @@
+     private static boolean initialized = false;
+ 
+     private static Object logSync = new Object();
+-
+-    /* Returns the caller's class loader, or null if none */
+-    private static native ClassLoader getCallerClassLoader();
+-
+ }
+ 
+ // DriverInfo is a package-private support class.
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/java/util/ResourceBundle.java
+--- jdk/src/share/classes/java/util/ResourceBundle.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/java/util/ResourceBundle.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -56,6 +56,8 @@
+ import java.util.concurrent.ConcurrentMap;
+ import java.util.jar.JarEntry;
+ 
++import sun.reflect.CallerSensitive;
++import sun.reflect.Reflection;
+ 
+ /**
+  *
+@@ -421,14 +423,10 @@
+ 
+     /*
+      * Automatic determination of the ClassLoader to be used to load
+-     * resources on behalf of the client.  N.B. The client is getLoader's
+-     * caller's caller.
++     * resources on behalf of the client.
+      */
+-    private static ClassLoader getLoader() {
+-        Class[] stack = getClassContext();
+-        /* Magic number 2 identifies our caller's caller */
+-        Class c = stack[2];
+-        ClassLoader cl = (c == null) ? null : c.getClassLoader();
++    private static ClassLoader getLoader(Class<?> caller) {
++        ClassLoader cl = caller == null ? null : caller.getClassLoader();
+         if (cl == null) {
+             // When the caller's loader is the boot class loader, cl is null
+             // here. In that case, ClassLoader.getSystemClassLoader() may
+@@ -442,8 +440,6 @@
+         return cl;
+     }
+ 
+-    private static native Class[] getClassContext();
+-
+     /**
+      * A wrapper of ClassLoader.getSystemClassLoader().
+      */
+@@ -728,11 +724,12 @@
+      *     if no resource bundle for the specified base name can be found
+      * @return a resource bundle for the given base name and the default locale
+      */
++    @CallerSensitive
+     public static final ResourceBundle getBundle(String baseName)
+     {
+         return getBundleImpl(baseName, Locale.getDefault(),
+                              /* must determine loader here, else we break stack invariant */
+-                             getLoader(),
++                             getLoader(Reflection.getCallerClass()),
+                              Control.INSTANCE);
+     }
+ 
+@@ -770,11 +767,12 @@
+      *        needed.
+      * @since 1.6
+      */
++    @CallerSensitive
+     public static final ResourceBundle getBundle(String baseName,
+                                                  Control control) {
+         return getBundleImpl(baseName, Locale.getDefault(),
+                              /* must determine loader here, else we break stack invariant */
+-                             getLoader(),
++                             getLoader(Reflection.getCallerClass()),
+                              control);
+     }
+ 
+@@ -799,12 +797,13 @@
+      *        if no resource bundle for the specified base name can be found
+      * @return a resource bundle for the given base name and locale
+      */
++    @CallerSensitive
+     public static final ResourceBundle getBundle(String baseName,
+                                                  Locale locale)
+     {
+         return getBundleImpl(baseName, locale,
+                              /* must determine loader here, else we break stack invariant */
+-                             getLoader(),
++                             getLoader(Reflection.getCallerClass()),
+                              Control.INSTANCE);
+     }
+ 
+@@ -845,11 +844,12 @@
+      *        needed.
+      * @since 1.6
+      */
++    @CallerSensitive
+     public static final ResourceBundle getBundle(String baseName, Locale targetLocale,
+                                                  Control control) {
+         return getBundleImpl(baseName, targetLocale,
+                              /* must determine loader here, else we break stack invariant */
+-                             getLoader(),
++                             getLoader(Reflection.getCallerClass()),
+                              control);
+     }
+ 
+@@ -1716,8 +1716,9 @@
+      * @since 1.6
+      * @see ResourceBundle.Control#getTimeToLive(String,Locale)
+      */
++    @CallerSensitive
+     public static final void clearCache() {
+-        clearCache(getLoader());
++        clearCache(getLoader(Reflection.getCallerClass()));
+     }
+ 
+     /**
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/java/util/concurrent/atomic/AtomicIntegerFieldUpdater.java
+--- jdk/src/share/classes/java/util/concurrent/atomic/AtomicIntegerFieldUpdater.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/java/util/concurrent/atomic/AtomicIntegerFieldUpdater.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -34,8 +34,10 @@
+  */
+ 
+ package java.util.concurrent.atomic;
++import java.lang.reflect.*;
+ import sun.misc.Unsafe;
+-import java.lang.reflect.*;
++import sun.reflect.CallerSensitive;
++import sun.reflect.Reflection;
+ 
+ /**
+  * A reflection-based utility that enables atomic updates to
+@@ -69,8 +71,9 @@
+      * @throws RuntimeException with a nested reflection-based
+      * exception if the class does not hold field or is the wrong type
+      */
++    @CallerSensitive
+     public static <U> AtomicIntegerFieldUpdater<U> newUpdater(Class<U> tclass, String fieldName) {
+-        return new AtomicIntegerFieldUpdaterImpl<U>(tclass, fieldName);
++        return new AtomicIntegerFieldUpdaterImpl<U>(tclass, fieldName, Reflection.getCallerClass());
+     }
+ 
+     /**
+@@ -268,13 +271,11 @@
+         private final Class<T> tclass;
+         private final Class cclass;
+ 
+-        AtomicIntegerFieldUpdaterImpl(Class<T> tclass, String fieldName) {
++        AtomicIntegerFieldUpdaterImpl(Class<T> tclass, String fieldName, Class<?> caller) {
+             Field field = null;
+-            Class caller = null;
+             int modifiers = 0;
+             try {
+                 field = tclass.getDeclaredField(fieldName);
+-                caller = sun.reflect.Reflection.getCallerClass(3);
+                 modifiers = field.getModifiers();
+                 sun.reflect.misc.ReflectUtil.ensureMemberAccess(
+                     caller, tclass, null, modifiers);
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/java/util/concurrent/atomic/AtomicLongFieldUpdater.java
+--- jdk/src/share/classes/java/util/concurrent/atomic/AtomicLongFieldUpdater.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/java/util/concurrent/atomic/AtomicLongFieldUpdater.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -34,8 +34,10 @@
+  */
+ 
+ package java.util.concurrent.atomic;
++import java.lang.reflect.*;
+ import sun.misc.Unsafe;
+-import java.lang.reflect.*;
++import sun.reflect.CallerSensitive;
++import sun.reflect.Reflection;
+ 
+ /**
+  * A reflection-based utility that enables atomic updates to
+@@ -69,11 +71,13 @@
+      * @throws RuntimeException with a nested reflection-based
+      * exception if the class does not hold field or is the wrong type.
+      */
++    @CallerSensitive
+     public static <U> AtomicLongFieldUpdater<U> newUpdater(Class<U> tclass, String fieldName) {
++        Class<?> caller = Reflection.getCallerClass();
+         if (AtomicLong.VM_SUPPORTS_LONG_CAS)
+-            return new CASUpdater<U>(tclass, fieldName);
++            return new CASUpdater<U>(tclass, fieldName, caller);
+         else
+-            return new LockedUpdater<U>(tclass, fieldName);
++            return new LockedUpdater<U>(tclass, fieldName, caller);
+     }
+ 
+     /**
+@@ -267,13 +271,11 @@
+         private final Class<T> tclass;
+         private final Class cclass;
+ 
+-        CASUpdater(Class<T> tclass, String fieldName) {
++        CASUpdater(Class<T> tclass, String fieldName, Class<?> caller) {
+             Field field = null;
+-            Class caller = null;
+             int modifiers = 0;
+             try {
+                 field = tclass.getDeclaredField(fieldName);
+-                caller = sun.reflect.Reflection.getCallerClass(3);
+                 modifiers = field.getModifiers();
+                 sun.reflect.misc.ReflectUtil.ensureMemberAccess(
+                     caller, tclass, null, modifiers);
+@@ -350,13 +352,11 @@
+         private final Class<T> tclass;
+         private final Class cclass;
+ 
+-        LockedUpdater(Class<T> tclass, String fieldName) {
++        LockedUpdater(Class<T> tclass, String fieldName, Class<?> caller) {
+             Field field = null;
+-            Class caller = null;
+             int modifiers = 0;
+             try {
+                 field = tclass.getDeclaredField(fieldName);
+-                caller = sun.reflect.Reflection.getCallerClass(3);
+                 modifiers = field.getModifiers();
+                 sun.reflect.misc.ReflectUtil.ensureMemberAccess(
+                     caller, tclass, null, modifiers);
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/java/util/concurrent/atomic/AtomicReferenceFieldUpdater.java
+--- jdk/src/share/classes/java/util/concurrent/atomic/AtomicReferenceFieldUpdater.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/java/util/concurrent/atomic/AtomicReferenceFieldUpdater.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -34,8 +34,10 @@
+  */
+ 
+ package java.util.concurrent.atomic;
++import java.lang.reflect.*;
+ import sun.misc.Unsafe;
+-import java.lang.reflect.*;
++import sun.reflect.CallerSensitive;
++import sun.reflect.Reflection;
+ 
+ /**
+  * A reflection-based utility that enables atomic updates to
+@@ -89,10 +91,12 @@
+      * @throws RuntimeException with a nested reflection-based
+      * exception if the class does not hold field or is the wrong type.
+      */
++    @CallerSensitive
+     public static <U, W> AtomicReferenceFieldUpdater<U,W> newUpdater(Class<U> tclass, Class<W> vclass, String fieldName) {
+         return new AtomicReferenceFieldUpdaterImpl<U,W>(tclass,
+                                                         vclass,
+-                                                        fieldName);
++                                                        fieldName,
++                                                        Reflection.getCallerClass());
+     }
+ 
+     /**
+@@ -200,14 +204,13 @@
+ 
+         AtomicReferenceFieldUpdaterImpl(Class<T> tclass,
+                                         Class<V> vclass,
+-                                        String fieldName) {
++                                        String fieldName,
++                                        Class<?> caller) {
+             Field field = null;
+             Class fieldClass = null;
+-            Class caller = null;
+             int modifiers = 0;
+             try {
+                 field = tclass.getDeclaredField(fieldName);
+-                caller = sun.reflect.Reflection.getCallerClass(3);
+                 modifiers = field.getModifiers();
+                 sun.reflect.misc.ReflectUtil.ensureMemberAccess(
+                     caller, tclass, null, modifiers);
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/java/util/logging/Logger.java
+--- jdk/src/share/classes/java/util/logging/Logger.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/java/util/logging/Logger.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -298,13 +298,10 @@
+         }
+     }
+ 
+-    private static Logger demandLogger(String name, String resourceBundleName) {
++    private static Logger demandLogger(String name, String resourceBundleName, Class<?> caller) {
+         LogManager manager = LogManager.getLogManager();
+         SecurityManager sm = System.getSecurityManager();
+         if (sm != null && !SystemLoggerHelper.disableCallerCheck) {
+-            // 0: Reflection 1: Logger.getLoggerContext 2: Logger.getLogger 3: caller
+-            final int SKIP_FRAMES = 3;
+-            Class<?> caller = sun.reflect.Reflection.getCallerClass(SKIP_FRAMES);
+             if (caller.getClassLoader() == null) {
+                 return manager.demandSystemLogger(name, resourceBundleName);
+             }
+@@ -339,8 +336,9 @@
+      * @return a suitable Logger
+      * @throws NullPointerException if the name is null.
+      */
++    @CallerSensitive
+     public static synchronized Logger getLogger(String name) {
+-        return demandLogger(name, null);
++        return demandLogger(name, null, Reflection.getCallerClass());
+     }
+ 
+     /**
+@@ -382,8 +380,9 @@
+      *             a different resource bundle name.
+      * @throws NullPointerException if the name is null.
+      */
++    @CallerSensitive
+     public static synchronized Logger getLogger(String name, String resourceBundleName) {
+-        Logger result = demandLogger(name, resourceBundleName);
++        Logger result = demandLogger(name, resourceBundleName, Reflection.getCallerClass());
+         if (result.resourceBundleName == null) {
+             // Note: we may get a MissingResourceException here.
+             result.setupResourceInfo(resourceBundleName);
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/javax/sql/rowset/serial/SerialJavaObject.java
+--- jdk/src/share/classes/javax/sql/rowset/serial/SerialJavaObject.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/javax/sql/rowset/serial/SerialJavaObject.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -30,6 +30,8 @@
+ import java.util.Map;
+ import java.lang.reflect.*;
+ import javax.sql.rowset.RowSetWarning;
++import sun.reflect.CallerSensitive;
++import sun.reflect.misc.ReflectUtil;
+ 
+ /**
+  * A serializable mapping in the Java programming language of an SQL
+@@ -137,6 +139,7 @@
+      * @throws SerialException if an error is encountered accessing
+      * the serialized object
+      */
++    @CallerSensitive
+     public Field[] getFields() throws SerialException {
+         if (fields != null) {
+             Class c = this.obj.getClass();
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/sun/misc/Unsafe.java
+--- jdk/src/share/classes/sun/misc/Unsafe.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/sun/misc/Unsafe.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -28,6 +28,9 @@
+ import java.security.*;
+ import java.lang.reflect.*;
+ 
++import sun.reflect.CallerSensitive;
++import sun.reflect.Reflection;
++
+ 
+ /**
+  * A collection of methods for performing low-level, unsafe operations.
+@@ -80,8 +83,9 @@
+      *             <code>checkPropertiesAccess</code> method doesn't allow
+      *             access to the system properties.
+      */
++    @CallerSensitive
+     public static Unsafe getUnsafe() {
+-        Class cc = sun.reflect.Reflection.getCallerClass(2);
++        Class cc = Reflection.getCallerClass();
+         if (cc.getClassLoader() != null)
+             throw new SecurityException("Unsafe");
+         return theUnsafe;
+@@ -708,6 +712,12 @@
+                                     ClassLoader loader,
+                                     ProtectionDomain protectionDomain);
+ 
++    /**
++     * @deprecated Use defineClass(String, byte[], int, int, ClassLoader, ProtectionDomain)
++     *             instead. This method will be removed in JDK 8.
++     */
++    @Deprecated
++    @CallerSensitive
+     public native Class defineClass(String name, byte[] b, int off, int len);
+ 
+     /** Allocate an instance but do not run any constructor.
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/sun/reflect/CallerSensitive.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ jdk/src/share/classes/sun/reflect/CallerSensitive.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -0,0 +1,41 @@
++/*
++ * Copyright (c) 2012, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.  Oracle designates this
++ * particular file as subject to the "Classpath" exception as provided
++ * by Oracle in the LICENSE file that accompanied this code.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++package sun.reflect;
++
++import java.lang.annotation.*;
++import static java.lang.annotation.ElementType.*;
++
++/**
++ * A method annotated @CallerSensitive is sensitive to its calling class,
++ * via {@link sun.reflect.Reflection#getCallerClass Reflection.getCallerClass},
++ * or via some equivalent.
++ *
++ * @author John R. Rose
++ */
++@Retention(RetentionPolicy.RUNTIME)
++@Target({METHOD})
++public @interface CallerSensitive {
++}
+diff -r e56220b54fe2 -r d206cb658a99 src/share/classes/sun/reflect/Reflection.java
+--- jdk/src/share/classes/sun/reflect/Reflection.java	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/classes/sun/reflect/Reflection.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -52,16 +52,11 @@
+         methodFilterMap = new HashMap<Class,String[]>();
+     }
+ 
+-    /** Returns the class of the method <code>realFramesToSkip</code>
+-        frames up the stack (zero-based), ignoring frames associated
+-        with java.lang.reflect.Method.invoke() and its implementation.
+-        The first frame is that associated with this method, so
+-        <code>getCallerClass(0)</code> returns the Class object for
+-        sun.reflect.Reflection. Frames associated with
+-        java.lang.reflect.Method.invoke() and its implementation are
+-        completely ignored and do not count toward the number of "real"
+-        frames skipped. */
+-    public static native Class getCallerClass(int realFramesToSkip);
++    /** Returns the class of the caller of the method calling this method,
++        ignoring frames associated with java.lang.reflect.Method.invoke()
++        and its implementation. */
++    @CallerSensitive
++    public static native Class getCallerClass();
+ 
+     /** Retrieves the access flags written to the class file. For
+         inner classes these flags may differ from those returned by
+@@ -322,4 +317,27 @@
+         }
+         return newMembers;
+     }
++
++    /**
++     * Tests if the given method is caller-sensitive and the declaring class
++     * is defined by either the bootstrap class loader or extension class loader.
++     */
++    public static boolean isCallerSensitive(Method m) {
++        final ClassLoader loader = m.getDeclaringClass().getClassLoader();
++        if (loader == null || isExtClassLoader(loader))  {
++            return m.isAnnotationPresent(CallerSensitive.class);
++        }
++        return false;
++    }
++
++    private static boolean isExtClassLoader(ClassLoader loader) {
++        ClassLoader cl = ClassLoader.getSystemClassLoader();
++        while (cl != null) {
++            if (cl.getParent() == null && cl == loader) {
++                return true;
++            }
++            cl = cl.getParent();
++        }
++        return false;
++    }
+ }
+diff -r e56220b54fe2 -r d206cb658a99 src/share/native/java/lang/SecurityManager.c
+--- jdk/src/share/native/java/lang/SecurityManager.c	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/native/java/lang/SecurityManager.c	Mon Oct 21 18:05:56 2013 +0100
+@@ -29,7 +29,6 @@
+ 
+ #include "java_lang_SecurityManager.h"
+ #include "java_lang_ClassLoader.h"
+-#include "java_util_ResourceBundle.h"
+ 
+ /*
+  * Make sure a security manager instance is initialized.
+diff -r e56220b54fe2 -r d206cb658a99 src/share/native/sun/reflect/Reflection.c
+--- jdk/src/share/native/sun/reflect/Reflection.c	Wed Oct 16 05:39:53 2013 +0100
++++ jdk/src/share/native/sun/reflect/Reflection.c	Mon Oct 21 18:05:56 2013 +0100
+@@ -27,9 +27,11 @@
+ #include "sun_reflect_Reflection.h"
+ 
+ JNIEXPORT jclass JNICALL Java_sun_reflect_Reflection_getCallerClass
+-(JNIEnv *env, jclass unused, jint depth)
++(JNIEnv *env, jclass unused)
+ {
+-    return JVM_GetCallerClass(env, depth);
++    // Until there is hotspot @CallerSensitive support,
++    // depth must always be 2 to get the immediate caller
++    return JVM_GetCallerClass(env, 2);
+ }
+ 
+ JNIEXPORT jint JNICALL Java_sun_reflect_Reflection_getClassAccessFlags
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ jdk/test/sun/reflect/CallerSensitive/CallerSensitiveFinder.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -0,0 +1,248 @@
++/*
++ * Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++import com.sun.tools.classfile.*;
++import static com.sun.tools.classfile.ConstantPool.*;
++import java.io.File;
++import java.io.IOException;
++import java.lang.reflect.InvocationTargetException;
++import java.nio.file.FileVisitResult;
++import java.nio.file.Files;
++import java.nio.file.Path;
++import java.nio.file.Paths;
++import java.nio.file.SimpleFileVisitor;
++import java.nio.file.attribute.BasicFileAttributes;
++import java.util.ArrayList;
++import java.util.List;
++import java.util.Set;
++import java.util.concurrent.Callable;
++import java.util.concurrent.ExecutionException;
++import java.util.concurrent.ExecutorService;
++import java.util.concurrent.Executors;
++import java.util.concurrent.FutureTask;
++
++/*
++ * @test
++ * @bug 8010117
++ * @summary Verify if CallerSensitive methods are annotated with
++ *          sun.reflect.CallerSensitive annotation
++ * @build CallerSensitiveFinder MethodFinder ClassFileReader
++ * @run main/othervm/timeout=900 -mx800m CallerSensitiveFinder
++ */
++public class CallerSensitiveFinder extends MethodFinder {
++    private static int numThreads = 3;
++    private static boolean verbose = false;
++    public static void main(String[] args) throws Exception {
++        List<Path> classes = new ArrayList<>();
++        String testclasses = System.getProperty("test.classes", ".");
++        int i = 0;
++        while (i < args.length) {
++            String arg = args[i++];
++            if (arg.equals("-v")) {
++                verbose = true;
++            } else {
++                Path p = Paths.get(testclasses, arg);
++                if (!p.toFile().exists()) {
++                    throw new IllegalArgumentException(arg + " does not exist");
++                }
++                classes.add(p);
++            }
++        }
++        if (classes.isEmpty()) {
++            classes.addAll(PlatformClassPath.getJREClasses());
++        }
++        final String method = "sun/reflect/Reflection.getCallerClass";
++        CallerSensitiveFinder csfinder = new CallerSensitiveFinder(method);
++
++        List<String> errors = csfinder.run(classes);
++        if (!errors.isEmpty()) {
++            throw new RuntimeException(errors.size() +
++                    " caller-sensitive methods are missing @CallerSensitive annotation");
++        }
++    }
++
++    private final List<String> csMethodsMissingAnnotation = new ArrayList<>();
++    private final java.lang.reflect.Method mhnCallerSensitiveMethod;
++    public CallerSensitiveFinder(String... methods) throws Exception {
++        super(methods);
++        this.mhnCallerSensitiveMethod = getIsCallerSensitiveMethod();
++    }
++
++    static java.lang.reflect.Method getIsCallerSensitiveMethod()
++            throws ClassNotFoundException, NoSuchMethodException
++    {
++        Class<?> cls = Class.forName("java.lang.invoke.MethodHandleNatives");
++        java.lang.reflect.Method m = cls.getDeclaredMethod("isCallerSensitiveMethod", Class.class, String.class);
++        m.setAccessible(true);
++        return m;
++    }
++
++    boolean inMethodHandlesList(String classname, String method)  {
++       Class<?> cls;
++        try {
++            cls = Class.forName(classname.replace('/', '.'),
++                                false,
++                                ClassLoader.getSystemClassLoader());
++            return (Boolean) mhnCallerSensitiveMethod.invoke(null, cls, method);
++        } catch (ClassNotFoundException|IllegalAccessException e) {
++            throw new RuntimeException(e);
++        } catch (InvocationTargetException e) {
++            throw new RuntimeException(e.getCause());
++        }
++    }
++
++    public List<String> run(List<Path> classes) throws IOException, InterruptedException,
++            ExecutionException, ConstantPoolException
++    {
++        ExecutorService pool = Executors.newFixedThreadPool(numThreads);
++        for (Path path : classes) {
++            ClassFileReader reader = ClassFileReader.newInstance(path.toFile());
++            for (ClassFile cf : reader.getClassFiles()) {
++                String classFileName = cf.getName();
++                // for each ClassFile
++                //    parse constant pool to find matching method refs
++                //      parse each method (caller)
++                //      - visit and find method references matching the given method name
++                pool.submit(getTask(cf));
++            }
++        }
++        waitForCompletion();
++        pool.shutdown();
++        return csMethodsMissingAnnotation;
++    }
++
++    private static final String CALLER_SENSITIVE_ANNOTATION = "Lsun/reflect/CallerSensitive;";
++    private static boolean isCallerSensitive(Method m, ConstantPool cp)
++            throws ConstantPoolException
++    {
++        RuntimeAnnotations_attribute attr =
++            (RuntimeAnnotations_attribute)m.attributes.get(Attribute.RuntimeVisibleAnnotations);
++        int index = 0;
++        if (attr != null) {
++            for (int i = 0; i < attr.annotations.length; i++) {
++                Annotation ann = attr.annotations[i];
++                String annType = cp.getUTF8Value(ann.type_index);
++                if (CALLER_SENSITIVE_ANNOTATION.equals(annType)) {
++                    return true;
++                }
++            }
++        }
++        return false;
++    }
++
++    public void referenceFound(ClassFile cf, Method m, Set<Integer> refs)
++            throws ConstantPoolException
++    {
++        String name = String.format("%s#%s %s", cf.getName(),
++                                    m.getName(cf.constant_pool),
++                                    m.descriptor.getValue(cf.constant_pool));
++        if (!CallerSensitiveFinder.isCallerSensitive(m, cf.constant_pool)) {
++            csMethodsMissingAnnotation.add(name);
++            System.err.println("   Missing @CallerSensitive: " + name);
++        } else if (verbose) {
++            System.out.format("Caller found: %s%n", name);
++        }
++        if (m.access_flags.is(AccessFlags.ACC_PUBLIC)) {
++            if (!inMethodHandlesList(cf.getName(), m.getName(cf.constant_pool))) {
++                csMethodsMissingAnnotation.add(name);
++                System.err.println("   Missing in MethodHandleNatives list: " + name);
++            } else if (verbose) {
++                System.out.format("Caller found in MethodHandleNatives list: %s%n", name);
++
++            }
++        }
++    }
++
++    private final List<FutureTask<String>> tasks = new ArrayList<FutureTask<String>>();
++    private FutureTask<String> getTask(final ClassFile cf) {
++        FutureTask<String> task = new FutureTask<String>(new Callable<String>() {
++            public String call() throws Exception {
++                return parse(cf);
++            }
++        });
++        tasks.add(task);
++        return task;
++    }
++
++    private void waitForCompletion() throws InterruptedException, ExecutionException {
++        for (FutureTask<String> t : tasks) {
++            String s = t.get();
++        }
++        System.out.println("Parsed " + tasks.size() + " classfiles");
++    }
++
++    static class PlatformClassPath {
++        static List<Path> getJREClasses() throws IOException {
++            List<Path> result = new ArrayList<Path>();
++            Path home = Paths.get(System.getProperty("java.home"));
++
++            if (home.endsWith("jre")) {
++                // jar files in <javahome>/jre/lib
++                // skip <javahome>/lib
++                result.addAll(addJarFiles(home.resolve("lib")));
++            } else if (home.resolve("lib").toFile().exists()) {
++                // either a JRE or a jdk build image
++                File classes = home.resolve("classes").toFile();
++                if (classes.exists() && classes.isDirectory()) {
++                    // jdk build outputdir
++                    result.add(classes.toPath());
++                }
++                // add other JAR files
++                result.addAll(addJarFiles(home.resolve("lib")));
++            } else {
++                throw new RuntimeException("\"" + home + "\" not a JDK home");
++            }
++            return result;
++        }
++
++        static List<Path> addJarFiles(final Path root) throws IOException {
++            final List<Path> result = new ArrayList<Path>();
++            final Path ext = root.resolve("ext");
++            Files.walkFileTree(root, new SimpleFileVisitor<Path>() {
++                @Override
++                public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs)
++                        throws IOException {
++                    if (dir.equals(root) || dir.equals(ext)) {
++                        return FileVisitResult.CONTINUE;
++                    } else {
++                        // skip other cobundled JAR files
++                        return FileVisitResult.SKIP_SUBTREE;
++                    }
++                }
++
++                @Override
++                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
++                        throws IOException {
++                    File f = file.toFile();
++                    String fn = f.getName();
++                    // parse alt-rt.jar as well
++                    if (fn.endsWith(".jar") && !fn.equals("jfxrt.jar")) {
++                        result.add(file);
++                    }
++                    return FileVisitResult.CONTINUE;
++                }
++            });
++            return result;
++        }
++    }
++}
+diff -r e56220b54fe2 -r d206cb658a99 test/sun/reflect/CallerSensitive/ClassFileReader.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ jdk/test/sun/reflect/CallerSensitive/ClassFileReader.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -0,0 +1,338 @@
++/*
++ * Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++import com.sun.tools.classfile.ClassFile;
++import com.sun.tools.classfile.ConstantPoolException;
++import java.io.*;
++import java.nio.file.FileVisitResult;
++import java.nio.file.Files;
++import java.nio.file.Path;
++import java.nio.file.SimpleFileVisitor;
++import java.nio.file.attribute.BasicFileAttributes;
++import java.util.*;
++import java.util.jar.JarEntry;
++import java.util.jar.JarFile;
++
++/**
++ * ClassFileReader reads ClassFile(s) of a given path that can be
++ * a .class file, a directory, or a JAR file.
++ */
++public class ClassFileReader {
++    /**
++     * Returns a ClassFileReader instance of a given path.
++     */
++    public static ClassFileReader newInstance(File path) throws IOException {
++        if (!path.exists()) {
++            throw new FileNotFoundException(path.getAbsolutePath());
++        }
++
++        if (path.isDirectory()) {
++            return new DirectoryReader(path.toPath());
++        } else if (path.getName().endsWith(".jar")) {
++            return new JarFileReader(path.toPath());
++        } else {
++            return new ClassFileReader(path.toPath());
++        }
++    }
++
++    /**
++     * Returns a ClassFileReader instance of a given JarFile.
++     */
++    public static ClassFileReader newInstance(Path path, JarFile jf) throws IOException {
++        return new JarFileReader(path, jf);
++    }
++
++    protected final Path path;
++    protected final String baseFileName;
++    private ClassFileReader(Path path) {
++        this.path = path;
++        this.baseFileName = path.getFileName() != null
++                                ? path.getFileName().toString()
++                                : path.toString();
++    }
++
++    public String getFileName() {
++        return baseFileName;
++    }
++
++    /**
++     * Returns the ClassFile matching the given binary name
++     * or a fully-qualified class name.
++     */
++    public ClassFile getClassFile(String name) throws IOException {
++        if (name.indexOf('.') > 0) {
++            int i = name.lastIndexOf('.');
++            String pathname = name.replace('.', File.separatorChar) + ".class";
++            if (baseFileName.equals(pathname) ||
++                    baseFileName.equals(pathname.substring(0, i) + "$" +
++                                        pathname.substring(i+1, pathname.length()))) {
++                return readClassFile(path);
++            }
++        } else {
++            if (baseFileName.equals(name.replace('/', File.separatorChar) + ".class")) {
++                return readClassFile(path);
++            }
++        }
++        return null;
++    }
++
++    public Iterable<ClassFile> getClassFiles() throws IOException {
++        return new Iterable<ClassFile>() {
++            public Iterator<ClassFile> iterator() {
++                return new FileIterator();
++            }
++        };
++    }
++
++    protected ClassFile readClassFile(Path p) throws IOException {
++        InputStream is = null;
++        try {
++            is = Files.newInputStream(p);
++            return ClassFile.read(is);
++        } catch (ConstantPoolException e) {
++            throw new ClassFileError(e);
++        } finally {
++            if (is != null) {
++                is.close();
++            }
++        }
++    }
++
++    class FileIterator implements Iterator<ClassFile> {
++        int count;
++        FileIterator() {
++            this.count = 0;
++        }
++        public boolean hasNext() {
++            return count == 0 && baseFileName.endsWith(".class");
++        }
++
++        public ClassFile next() {
++            if (!hasNext()) {
++                throw new NoSuchElementException();
++            }
++            try {
++                ClassFile cf = readClassFile(path);
++                count++;
++                return cf;
++            } catch (IOException e) {
++                throw new ClassFileError(e);
++            }
++        }
++
++        public void remove() {
++            throw new UnsupportedOperationException("Not supported yet.");
++        }
++    }
++
++    public String toString() {
++        return path.toString();
++    }
++
++    private static class DirectoryReader extends ClassFileReader {
++        DirectoryReader(Path path) throws IOException {
++            super(path);
++        }
++
++        public ClassFile getClassFile(String name) throws IOException {
++            if (name.indexOf('.') > 0) {
++                int i = name.lastIndexOf('.');
++                String pathname = name.replace('.', File.separatorChar) + ".class";
++                Path p = path.resolve(pathname);
++                if (!p.toFile().exists()) {
++                    p = path.resolve(pathname.substring(0, i) + "$" +
++                                     pathname.substring(i+1, pathname.length()));
++                }
++                if (p.toFile().exists()) {
++                    return readClassFile(p);
++                }
++            } else {
++                Path p = path.resolve(name + ".class");
++                if (p.toFile().exists()) {
++                    return readClassFile(p);
++                }
++            }
++            return null;
++        }
++
++        public Iterable<ClassFile> getClassFiles() throws IOException {
++            final Iterator<ClassFile> iter = new DirectoryIterator();
++            return new Iterable<ClassFile>() {
++                public Iterator<ClassFile> iterator() {
++                    return iter;
++                }
++            };
++        }
++
++        private List<Path> walkTree(Path dir) throws IOException {
++            final List<Path> files = new ArrayList<Path>();
++            Files.walkFileTree(dir, new SimpleFileVisitor<Path>() {
++                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs)
++                        throws IOException {
++                    if (file.toFile().getName().endsWith(".class")) {
++                        files.add(file);
++                    }
++                    return FileVisitResult.CONTINUE;
++                }
++            });
++            return files;
++        }
++
++        class DirectoryIterator implements Iterator<ClassFile> {
++            private List<Path> entries;
++            private int index = 0;
++            DirectoryIterator() throws IOException {
++                entries = walkTree(path);
++                index = 0;
++            }
++
++            public boolean hasNext() {
++                return index != entries.size();
++            }
++
++            public ClassFile next() {
++                if (!hasNext()) {
++                    throw new NoSuchElementException();
++                }
++                Path path = entries.get(index++);
++                try {
++                    return readClassFile(path);
++                } catch (IOException e) {
++                    throw new ClassFileError(e);
++                }
++            }
++
++            public void remove() {
++                throw new UnsupportedOperationException("Not supported yet.");
++            }
++        }
++    }
++
++    private static class JarFileReader extends ClassFileReader {
++        final JarFile jarfile;
++        JarFileReader(Path path) throws IOException {
++            this(path, new JarFile(path.toFile()));
++        }
++        JarFileReader(Path path, JarFile jf) throws IOException {
++            super(path);
++            this.jarfile = jf;
++        }
++
++        public ClassFile getClassFile(String name) throws IOException {
++            if (name.indexOf('.') > 0) {
++                int i = name.lastIndexOf('.');
++                String entryName = name.replace('.', '/') + ".class";
++                JarEntry e = jarfile.getJarEntry(entryName);
++                if (e == null) {
++                    e = jarfile.getJarEntry(entryName.substring(0, i) + "$"
++                            + entryName.substring(i + 1, entryName.length()));
++                }
++                if (e != null) {
++                    return readClassFile(e);
++                }
++            } else {
++                JarEntry e = jarfile.getJarEntry(name + ".class");
++                if (e != null) {
++                    return readClassFile(e);
++                }
++            }
++            return null;
++        }
++
++        private ClassFile readClassFile(JarEntry e) throws IOException {
++            InputStream is = null;
++            try {
++                is = jarfile.getInputStream(e);
++                return ClassFile.read(is);
++            } catch (ConstantPoolException ex) {
++                throw new IOException(ex);
++            } finally {
++                if (is != null)
++                    is.close();
++            }
++        }
++
++        public Iterable<ClassFile> getClassFiles() throws IOException {
++            final Iterator<ClassFile> iter = new JarFileIterator();
++            return new Iterable<ClassFile>() {
++                public Iterator<ClassFile> iterator() {
++                    return iter;
++                }
++            };
++        }
++
++        class JarFileIterator implements Iterator<ClassFile> {
++            private Enumeration<JarEntry> entries;
++            private JarEntry nextEntry;
++            JarFileIterator() {
++                this.entries = jarfile.entries();
++                while (entries.hasMoreElements()) {
++                    JarEntry e = entries.nextElement();
++                    String name = e.getName();
++                    if (name.endsWith(".class")) {
++                        this.nextEntry = e;
++                        break;
++                    }
++                }
++            }
++
++            public boolean hasNext() {
++                return nextEntry != null;
++            }
++
++            public ClassFile next() {
++                if (!hasNext()) {
++                    throw new NoSuchElementException();
++                }
++
++                ClassFile cf;
++                try {
++                    cf = readClassFile(nextEntry);
++                } catch (IOException e) {
++                    throw new ClassFileError(e);
++                }
++                JarEntry entry = nextEntry;
++                nextEntry = null;
++                while (entries.hasMoreElements()) {
++                    JarEntry e = entries.nextElement();
++                    String name = e.getName();
++                    if (name.endsWith(".class")) {
++                        nextEntry = e;
++                        break;
++                    }
++                }
++                return cf;
++            }
++
++            public void remove() {
++                throw new UnsupportedOperationException("Not supported yet.");
++            }
++        }
++    }
++
++    public static class ClassFileError extends Error {
++        public ClassFileError(Throwable t) {
++            super(t);
++        }
++    }
++}
+diff -r e56220b54fe2 -r d206cb658a99 test/sun/reflect/CallerSensitive/MethodFinder.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ jdk/test/sun/reflect/CallerSensitive/MethodFinder.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -0,0 +1,201 @@
++/*
++ * Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++import java.util.*;
++import com.sun.tools.classfile.*;
++import static com.sun.tools.classfile.ConstantPool.*;
++import com.sun.tools.classfile.Instruction.TypeKind;
++
++/**
++ * MethodFinder utility class to find references to the given methods.
++ */
++public abstract class MethodFinder {
++    final List<String> methods;
++    public MethodFinder(String... methods) {
++        this.methods = Arrays.asList(methods);
++    }
++
++    /**
++     * A callback method will be invoked when a method referencing
++     * any of the lookup methods.
++     *
++     * @param cf ClassFile
++     * @param m Method
++     * @param refs Set of constant pool indices that reference the methods
++     *             matching the given lookup method names
++     */
++    public abstract void referenceFound(ClassFile cf, Method m, Set<Integer> refs)
++            throws ConstantPoolException;
++
++    public String parse(ClassFile cf) throws ConstantPoolException {
++        List<Integer> cprefs = new ArrayList<Integer>();
++        int index = 1;
++        for (ConstantPool.CPInfo cpInfo : cf.constant_pool.entries()) {
++            if (cpInfo.accept(cpVisitor, null)) {
++                cprefs.add(index);
++            }
++            index += cpInfo.size();
++        }
++
++        if (!cprefs.isEmpty()) {
++            for (Method m : cf.methods) {
++                Set<Integer> refs = new HashSet<Integer>();
++                Code_attribute c_attr = (Code_attribute) m.attributes.get(Attribute.Code);
++                if (c_attr != null) {
++                    for (Instruction instr : c_attr.getInstructions()) {
++                        int idx = instr.accept(codeVisitor, cprefs);
++                        if (idx > 0) {
++                            refs.add(idx);
++                        }
++                    }
++                }
++                if (refs.size() > 0) {
++                    referenceFound(cf, m, refs);
++                }
++            }
++        }
++        return cprefs.isEmpty() ? "" : cf.getName();
++    }
++
++    private ConstantPool.Visitor<Boolean,Void> cpVisitor =
++            new ConstantPool.Visitor<Boolean,Void>()
++    {
++        private boolean matches(CPRefInfo info) {
++            try {
++                CONSTANT_NameAndType_info nat = info.getNameAndTypeInfo();
++                return matches(info.getClassName(), nat.getName(), nat.getType());
++            } catch (ConstantPoolException ex) {
++                return false;
++            }
++        }
++
++        private boolean matches(String cn, String name, String type) {
++            return methods.contains(cn + "." + name);
++        }
++
++        public Boolean visitClass(CONSTANT_Class_info info, Void p) {
++            return false;
++        }
++
++        public Boolean visitInterfaceMethodref(CONSTANT_InterfaceMethodref_info info, Void p) {
++            return matches(info);
++        }
++
++        public Boolean visitMethodref(CONSTANT_Methodref_info info, Void p) {
++            return matches(info);
++        }
++
++        public Boolean visitDouble(CONSTANT_Double_info info, Void p) {
++            return false;
++        }
++
++        public Boolean visitFieldref(CONSTANT_Fieldref_info info, Void p) {
++            return false;
++        }
++
++        public Boolean visitFloat(CONSTANT_Float_info info, Void p) {
++            return false;
++        }
++
++        public Boolean visitInteger(CONSTANT_Integer_info info, Void p) {
++            return false;
++        }
++
++        public Boolean visitInvokeDynamic(CONSTANT_InvokeDynamic_info info, Void p) {
++            return false;
++        }
++
++        public Boolean visitLong(CONSTANT_Long_info info, Void p) {
++            return false;
++        }
++
++        public Boolean visitNameAndType(CONSTANT_NameAndType_info info, Void p) {
++            return false;
++        }
++
++        public Boolean visitMethodHandle(CONSTANT_MethodHandle_info info, Void p) {
++            return false;
++        }
++
++        public Boolean visitMethodType(CONSTANT_MethodType_info info, Void p) {
++            return false;
++        }
++
++        public Boolean visitString(CONSTANT_String_info info, Void p) {
++            return false;
++        }
++
++        public Boolean visitUtf8(CONSTANT_Utf8_info info, Void p) {
++            return false;
++        }
++    };
++
++    private Instruction.KindVisitor<Integer, List<Integer>> codeVisitor =
++            new Instruction.KindVisitor<Integer, List<Integer>>()
++    {
++        public Integer visitNoOperands(Instruction instr, List<Integer> p) {
++            return 0;
++        }
++
++        public Integer visitArrayType(Instruction instr, TypeKind kind, List<Integer> p) {
++            return 0;
++        }
++
++        public Integer visitBranch(Instruction instr, int offset, List<Integer> p) {
++            return 0;
++        }
++
++        public Integer visitConstantPoolRef(Instruction instr, int index, List<Integer> p) {
++            return p.contains(index) ? index : 0;
++        }
++
++        public Integer visitConstantPoolRefAndValue(Instruction instr, int index, int value, List<Integer> p) {
++            return p.contains(index) ? index : 0;
++        }
++
++        public Integer visitLocal(Instruction instr, int index, List<Integer> p) {
++            return 0;
++        }
++
++        public Integer visitLocalAndValue(Instruction instr, int index, int value, List<Integer> p) {
++            return 0;
++        }
++
++        public Integer visitLookupSwitch(Instruction instr, int default_, int npairs, int[] matches, int[] offsets, List<Integer> p) {
++            return 0;
++        }
++
++        public Integer visitTableSwitch(Instruction instr, int default_, int low, int high, int[] offsets, List<Integer> p) {
++            return 0;
++        }
++
++        public Integer visitValue(Instruction instr, int value, List<Integer> p) {
++            return 0;
++        }
++
++        public Integer visitUnknown(Instruction instr, List<Integer> p) {
++            return 0;
++        }
++    };
++}
++
+diff -r e56220b54fe2 -r d206cb658a99 test/sun/reflect/CallerSensitive/MissingCallerSensitive.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ jdk/test/sun/reflect/CallerSensitive/MissingCallerSensitive.java	Mon Oct 21 18:05:56 2013 +0100
+@@ -0,0 +1,73 @@
++/*
++ * Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++/*
++ * @test
++ * @bug 8010117
++ * @summary Test CallerSensitiveFinder to find missing annotation
++ * @compile -XDignore.symbol.file MissingCallerSensitive.java
++ * @build CallerSensitiveFinder MethodFinder ClassFileReader
++ * @run main/othervm MissingCallerSensitive
++ */
++
++import java.nio.file.Path;
++import java.nio.file.Paths;
++import java.util.*;
++public class MissingCallerSensitive {
++    public static void main(String[] args) throws Exception {
++        String testclasses = System.getProperty("test.classes", ".");
++        List<Path> classes = new ArrayList<>();
++        classes.add(Paths.get(testclasses, "MissingCallerSensitive.class"));
++
++        final String method = "sun/reflect/Reflection.getCallerClass";
++        CallerSensitiveFinder csfinder = new CallerSensitiveFinder(method);
++        List<String> errors = csfinder.run(classes);
++        /*
++         * Expected 1 method missing @CallerSenitive and 2 methods not in
++         * the MethodHandleNatives CS list
++         */
++        if (errors.size() != 3) {
++            throw new RuntimeException("Unexpected number of methods found: " + errors.size());
++        }
++        int count=0;
++        for (String e : errors) {
++            if (e.startsWith("MissingCallerSensitive#missingCallerSensitiveAnnotation ")) {
++                count++;
++            }
++        }
++        if (count != 2) {
++            throw new RuntimeException("Error: expected 1 method missing annotation & missing in the list");
++        }
++    }
++
++    @sun.reflect.CallerSensitive
++    public ClassLoader getCallerLoader() {
++        Class<?> c = sun.reflect.Reflection.getCallerClass();
++        return c.getClassLoader();
++    }
++
++    public ClassLoader missingCallerSensitiveAnnotation() {
++        Class<?> c = sun.reflect.Reflection.getCallerClass();
++        return c.getClassLoader();
++    }
++}

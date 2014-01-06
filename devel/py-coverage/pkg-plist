@@ -41,6 +41,9 @@ bin/coverage2
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/data.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/data.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/data.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/debug.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/debug.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/debug.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/execfile.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/execfile.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/execfile.pyo
@@ -52,9 +55,9 @@ bin/coverage2
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/html.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/htmlfiles/coverage_html.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/htmlfiles/index.html
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/htmlfiles/jquery-1.4.3.min.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/htmlfiles/jquery.hotkeys.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/htmlfiles/jquery.isonscreen.js
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/htmlfiles/jquery.min.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/htmlfiles/jquery.tablesorter.min.js
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/htmlfiles/keybd_closed.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/coverage/htmlfiles/keybd_open.png

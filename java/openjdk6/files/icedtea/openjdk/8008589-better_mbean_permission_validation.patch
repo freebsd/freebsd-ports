@@ -1,0 +1,61 @@
+# HG changeset patch
+# User dsamersoff
+# Date 1373279676 -14400
+#      Mon Jul 08 14:34:36 2013 +0400
+# Node ID db4712506571ae3ae2d37b91e63641b18c3258f2
+# Parent  f38a3c5421df4697851a4b4d491071c3a30e5378
+8008589: Better MBean permission validation
+Summary: Better MBean permission validation
+Reviewed-by: skoivu, dfuchs, mchung, sjiang
+
+diff -r f38a3c5421df -r db4712506571 src/share/classes/javax/management/MBeanTrustPermission.java
+--- jdk/src/share/classes/javax/management/MBeanTrustPermission.java	Fri Jul 19 15:32:01 2013 +0900
++++ jdk/src/share/classes/javax/management/MBeanTrustPermission.java	Mon Jul 08 14:34:36 2013 +0400
+@@ -26,6 +26,9 @@
+ package javax.management;
+ 
+ import java.security.BasicPermission;
++import java.io.IOException;
++import java.io.InvalidObjectException;
++import java.io.ObjectInputStream;
+ 
+ /**
+  * This permission represents "trust" in a signer or codebase.
+@@ -75,15 +78,31 @@
+      */
+     public MBeanTrustPermission(String name, String actions) {
+         super(name, actions);
++        validate(name,actions);
++    }
++
++    private static void validate(String name, String actions) {
+         /* Check that actions is a null empty string */
+-        if (actions != null && actions.length() > 0)
+-            throw new IllegalArgumentException("MBeanTrustPermission " +
+-                                               "actions must be null: " +
++        if (actions != null && actions.length() > 0) {
++            throw new IllegalArgumentException("MBeanTrustPermission actions must be null: " +
+                                                actions);
++        }
+ 
+-        if (!name.equals("register") && !name.equals("*"))
+-            throw new IllegalArgumentException("MBeanTrustPermission: " +
+-                                               "Unknown target name " +
++        if (!name.equals("register") && !name.equals("*")) {
++            throw new IllegalArgumentException("MBeanTrustPermission: Unknown target name " +
+                                                "[" + name + "]");
++        }
++    }
++
++    private void readObject(ObjectInputStream in)
++         throws IOException, ClassNotFoundException {
++
++        // Reading private fields of base class
++        in.defaultReadObject();
++        try {
++            validate(super.getName(),super.getActions());
++        } catch (IllegalArgumentException e) {
++            throw new InvalidObjectException(e.getMessage());
++        }
+     }
+ }

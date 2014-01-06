@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Count/.packlist
 %%SITE_PERL%%/NetAddr/IP/sample.pl
 %%SITE_PERL%%/NetAddr/IP/Count.pm
+%%PERL5_MAN3%%/NetAddr::IP::Count.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/NetAddr/IP/Count
 @dirrmtry %%SITE_PERL%%/NetAddr/IP
 @dirrmtry %%SITE_PERL%%/NetAddr

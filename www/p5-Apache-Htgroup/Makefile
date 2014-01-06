@@ -13,7 +13,4 @@ COMMENT=	Manage Apache authentication group files
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Apache::Htgroup.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

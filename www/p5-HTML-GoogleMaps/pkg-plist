@@ -1,5 +1,6 @@
 %%SITE_PERL%%/HTML/GoogleMaps.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/GoogleMaps/.packlist
+%%PERL5_MAN3%%/HTML::GoogleMaps.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/GoogleMaps
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrmtry %%SITE_PERL%%/HTML

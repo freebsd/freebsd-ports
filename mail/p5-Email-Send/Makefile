@@ -20,12 +20,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Email::Send.3 \
-	Email::Send::NNTP.3 \
-	Email::Send::Qmail.3 \
-	Email::Send::SMTP.3 \
-	Email::Send::Sendmail.3 \
-	Email::Send::Test.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

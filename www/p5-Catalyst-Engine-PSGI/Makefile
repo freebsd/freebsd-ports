@@ -18,10 +18,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Catalyst::Controller::Metal.3 \
-	Catalyst::Engine::PSGI.3 \
-	Catalyst::Helper::PSGI.3 \
-	Plack::Test::Adopt::Catalyst.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

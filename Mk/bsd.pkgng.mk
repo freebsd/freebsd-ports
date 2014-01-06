@@ -119,8 +119,8 @@ STAGE_ARGS=		-l
 STAGE_ARGS=		-i ${STAGEDIR}
 .endif
 
-fake-pkg: create-manifest
 .if !defined(NO_PKG_REGISTER)
+fake-pkg: create-manifest
 .if defined(INSTALLS_DEPENDS)
 	@${ECHO_MSG} "===>   Registering installation for ${PKGNAME} as automatic"
 .else
@@ -132,8 +132,6 @@ fake-pkg: create-manifest
 	@${SETENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CMD} ${STAGE_ARGS} -m ${METADIR} -f ${TMPPLIST}
 .endif
 	@${RM} -rf ${METADIR}
-.else
-	@${DO_NADA}
 .endif
 .endif
 
@@ -272,8 +270,8 @@ do-package: ${TMPPLIST}
 
 .if defined(WITH_PKGNG)
 .if !target(check-already-installed)
-check-already-installed:
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
+check-already-installed:
 		@${ECHO_MSG} "===>  Checking if ${PKGORIGIN} already installed"; \
 		pkgname=`${PKG_INFO} -q -O ${PKGORIGIN}`; \
 		if [ -n "$${pkgname}" ]; then \
@@ -290,8 +288,6 @@ check-already-installed:
 			${ECHO_MSG} "      in your environment or the \"make install\" command line."; \
 			exit 1; \
 		fi
-.else
-	@${DO_NADA}
 .endif
 .endif
 

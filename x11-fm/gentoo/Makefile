@@ -27,7 +27,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFAM}
-USE_FAM=	yes
+USES+=		fam
 .else
 CONFIGURE_ARGS+=	--disable-fam
 .endif

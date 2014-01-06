@@ -1,6 +1,6 @@
 --- ./config.m4.orig	2012-05-04 17:51:20.000000000 +0800
-+++ ./config.m4	2012-06-27 12:05:19.620198000 +0800
-@@ -1,22 +1,52 @@
++++ ./config.m4	2013-08-29 12:49:00.000000000 +0800
+@@ -1,22 +1,51 @@
  dnl $Id: config.m4 262896 2008-07-17 19:11:16Z lbarnaud $
  dnl config.m4 for extension inotify
  
@@ -44,8 +44,6 @@
 +    AC_MSG_ERROR([Cannot find libevent headers])
 +  fi
 +
-+  PHP_ADD_INCLUDE($LIBINOTIFY_DIR/include)
-+
 +  LIBNAME=inotify
 +  LIBSYMBOL=inotify_init
 +
@@ -55,13 +53,14 @@
 +
 +  PHP_CHECK_LIBRARY($LIBNAME,$LIBSYMBOL,
 +  [
-+    PHP_ADD_LIBRARY_WITH_PATH($LIBNAME, $LIBINOTIFY_DIR/$PHP_LIBDIR, LIBINOTIFY_SHARED_LIBADD)
++    PHP_ADD_INCLUDE($LIBINOTIFY_DIR/include)
++    PHP_ADD_LIBRARY_WITH_PATH($LIBNAME, $LIBINOTIFY_DIR/$PHP_LIBDIR, INOTIFY_SHARED_LIBADD)
 +  ],[
 +    AC_MSG_ERROR([Your system does not support inotify])
 +  ],[
-+    -L$LIBINOTIFY_DIR/$PHP_LIBDIR 
++    -L$LIBINOTIFY_DIR/$PHP_LIBDIR
    ])
  
-+  PHP_SUBST(LIBINOTIFY_SHARED_LIBADD)
++  PHP_SUBST(INOTIFY_SHARED_LIBADD)
    PHP_NEW_EXTENSION(inotify, inotify.c, $ext_shared)
  fi

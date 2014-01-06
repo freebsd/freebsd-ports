@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Calendar/Japanese/.packlist
 %%SITE_PERL%%/DateTime/Calendar/Japanese.pm
+%%PERL5_MAN3%%/DateTime::Calendar::Japanese.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Calendar/Japanese
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Calendar
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime

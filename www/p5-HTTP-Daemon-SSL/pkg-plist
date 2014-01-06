@@ -1,4 +1,5 @@
 %%SITE_PERL%%/HTTP/Daemon/SSL.pm
+%%PERL5_MAN3%%/HTTP::Daemon::SSL.3.gz
 @dirrmtry %%SITE_PERL%%/HTTP/Daemon
 @dirrmtry %%SITE_PERL%%/HTTP
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Daemon/SSL/.packlist

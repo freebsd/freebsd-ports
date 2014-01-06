@@ -14,10 +14,7 @@ COMMENT=	Cookie storage and management for w3m
 BUILD_DEPENDS=	p5-Module-Install>=0:${PORTSDIR}/devel/p5-Module-Install
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=		HTTP::Cookies::w3m.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

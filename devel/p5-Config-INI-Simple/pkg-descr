@@ -4,5 +4,4 @@ all the data read in from an INI which is used on the write method to
 write to the INI). It also keeps all your comments and original order
 intact.
 
-Author:	C. J. Kirsle <kirsle -at- rainbowboi.com>
-WWW:	http://search.cpan.org/dist/Config-INI-Simple/
+WWW: http://search.cpan.org/dist/Config-INI-Simple/

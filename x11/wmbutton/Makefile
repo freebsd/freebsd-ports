@@ -20,7 +20,8 @@ PORTDOCS=	README
 PORTEXAMPLES=	dot.wmbutton
 PLIST_FILES=	bin/wmbutton
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.options.mk>
 
 do-build:
@@ -30,15 +31,14 @@ do-build:
 		-L${LOCALBASE}/lib -lXpm -lXext -lX11
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmbutton ${PREFIX}/bin/wmbutton
+	${INSTALL_PROGRAM} ${WRKSRC}/wmbutton ${STAGEDIR}${PREFIX}/bin/wmbutton
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/.wmbutton ${EXAMPLESDIR}/dot.wmbutton
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/.wmbutton ${STAGEDIR}${EXAMPLESDIR}/dot.wmbutton
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

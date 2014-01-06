@@ -13,14 +13,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Magnifying utility which updates continuously
 
 ALL_TARGET=	dynamag
-NO_INSTALL_MANPAGES=	yes
 PLIST_FILES=	bin/dynamag
 USES=		imake
 USE_XORG=	x11 xaw xext xmu xt xpm sm ice
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/dynamag ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/dynamag ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

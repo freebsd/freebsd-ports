@@ -12,7 +12,7 @@ DISTNAME=	python-fam-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Interface to the File Alteration Monitor
 
-USE_FAM=	yes
+USES=		fam
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

@@ -25,7 +25,4 @@ TEST_DEPENDS=	p5-Test-Most>=0:${PORTSDIR}/devel/p5-Test-Most \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Path::Resource.3 Path::Resource::Base.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

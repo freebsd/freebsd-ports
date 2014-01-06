@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Apache2/SOAP.pm
 %%SITE_PERL%%/SOAP/Transport/HTTP2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2/SOAP/.packlist
+%%PERL5_MAN3%%/Apache2::SOAP.3.gz
 @dirrmtry %%SITE_PERL%%/Apache2
 @dirrmtry %%SITE_PERL%%/SOAP/Transport
 @dirrmtry %%SITE_PERL%%/SOAP

@@ -13,7 +13,5 @@ COMMENT=	Perl 5 module to walk Perls arena
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Devel::Gladiator.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

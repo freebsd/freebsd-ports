@@ -1,0 +1,66 @@
+# HG changeset patch
+# User weijun
+# Date 1381852916 -3600
+#      Tue Oct 15 17:01:56 2013 +0100
+# Node ID 698fe468e8b9385c2f74709dca823800b32e0b55
+# Parent  d55d40616754cd93aa396719ddfd81bae584d4f0
+8014341: Better service from Kerberos servers
+Summary: read incoming data safely and take care of null return value
+Reviewed-by: valeriep, ahgross
+
+diff -r d55d40616754 -r 698fe468e8b9 src/share/classes/sun/security/krb5/KrbKdcReq.java
+--- jdk/src/share/classes/sun/security/krb5/KrbKdcReq.java	Tue May 21 13:56:39 2013 +0400
++++ jdk/src/share/classes/sun/security/krb5/KrbKdcReq.java	Tue Oct 15 17:01:56 2013 +0100
+@@ -151,11 +151,15 @@
+                 savedException = e;
+             }
+         }
+-        if (ibuf == null && savedException != null) {
+-            if (savedException instanceof IOException) {
+-                throw (IOException) savedException;
++        if (ibuf == null) {
++            if (savedException != null) {
++                if (savedException instanceof IOException) {
++                    throw (IOException) savedException;
++                } else {
++                    throw (KrbException) savedException;
++                }
+             } else {
+-                throw (KrbException) savedException;
++                throw new IOException("Cannot get a KDC reply");
+             }
+         }
+         return tempKdc;
+diff -r d55d40616754 -r 698fe468e8b9 src/share/classes/sun/security/krb5/internal/TCPClient.java
+--- jdk/src/share/classes/sun/security/krb5/internal/TCPClient.java	Tue May 21 13:56:39 2013 +0400
++++ jdk/src/share/classes/sun/security/krb5/internal/TCPClient.java	Tue Oct 15 17:01:56 2013 +0100
+@@ -30,6 +30,8 @@
+ 
+ package sun.security.krb5.internal;
+ 
++import sun.misc.IOUtils;
++
+ import java.io.*;
+ import java.net.*;
+ 
+@@ -79,17 +81,15 @@
+             return null;
+         }
+ 
+-        byte data[] = new byte[len];
+-        count = readFully(data, len);
+-        if (count != len) {
++        try {
++            return IOUtils.readFully(in, len, true);
++        } catch (IOException ioe) {
+             if (Krb5.DEBUG) {
+                 System.out.println(
+                     ">>>DEBUG: TCPClient could not read complete packet (" +
+                     len + "/" + count + ")");
+             }
+             return null;
+-        } else {
+-            return data;
+         }
+     }
+ 

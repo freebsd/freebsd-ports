@@ -20,17 +20,4 @@ TEST_DEPENDS=	p5-Test-Signature>=1.04:${PORTSDIR}/devel/p5-Test-Signature
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::ACL.3 Net::ACL::Bootstrap.3 Net::ACL::File.3 \
-		Net::ACL::File::ASPath.3 Net::ACL::File::Community.3 \
-		Net::ACL::File::IPAccess.3 Net::ACL::File::IPAccessExt.3 \
-		Net::ACL::File::Prefix.3 Net::ACL::File::RouteMap.3 \
-		Net::ACL::File::Standard.3 Net::ACL::IPAccessExtRule.3 \
-		Net::ACL::Match.3 Net::ACL::Match::IP.3 \
-		Net::ACL::Match::List.3 Net::ACL::Match::Member.3 \
-		Net::ACL::Match::Prefix.3 Net::ACL::Match::Regexp.3 \
-		Net::ACL::Match::Scalar.3 Net::ACL::RouteMapRule.3 \
-		Net::ACL::Rule.3 Net::ACL::Set.3 Net::ACL::Set::Add.3 \
-		Net::ACL::Set::Scalar.3 Net::ACL::Set::Union.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

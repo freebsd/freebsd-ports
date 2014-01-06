@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Unix/Lsof.pm
 %%SITE_PERL%%/Unix/Lsof/Result.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Lsof/.packlist
+%%PERL5_MAN3%%/Unix::Lsof.3.gz
+%%PERL5_MAN3%%/Unix::Lsof::Result.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix/Lsof
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unix
 @dirrmtry %%SITE_PERL%%/Unix/Lsof

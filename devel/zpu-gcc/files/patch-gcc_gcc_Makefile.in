@@ -1,0 +1,44 @@
+--- gcc/gcc/Makefile.in.orig	2012-10-11 19:40:24.000000000 -0400
++++ gcc/gcc/Makefile.in	2014-01-05 15:29:59.371874048 -0500
+@@ -762,6 +762,7 @@
+ # subdirectories.
+ # ??? The choices here will need some experimenting with.
+ 
++DESTDIR=%%DESTDIR%%
+ export AR_FOR_TARGET
+ export AR_CREATE_FOR_TARGET
+ export AR_FLAGS_FOR_TARGET
+@@ -769,7 +770,7 @@
+ export AWK
+ export BUILD_PREFIX
+ export BUILD_PREFIX_1
+-export DESTDIR
++#export DESTDIR
+ export GCC_FOR_TARGET
+ export INCLUDES
+ export INSTALL_DATA
+@@ -2512,6 +2513,7 @@
+ 
+ .PHONY: install-gcc-tooldir
+ install-gcc-tooldir:
++	echo install-gcc-tooldir DESTDIR = ${DESTDIR}
+ 	$(SHELL) ${srcdir}/mkinstalldirs $(DESTDIR)$(gcc_tooldir)
+ 
+ # Build fixed copies of system files.
+@@ -2919,13 +2921,13 @@
+ 	-rm -f $(DESTDIR)$(bindir)/$(GCC_INSTALL_NAME)$(exeext)
+ 	-$(INSTALL_PROGRAM) xgcc$(exeext) $(DESTDIR)$(bindir)/$(GCC_INSTALL_NAME)$(exeext)
+ 	-rm -f $(DESTDIR)$(bindir)/$(target_noncanonical)-gcc-$(version)
++	ls -ld gcc-cross$(exeext)
+ 	-( cd $(DESTDIR)$(bindir) && \
+ 	   $(LN) $(GCC_INSTALL_NAME)$(exeext) $(target_noncanonical)-gcc-$(version) )
+ 	-if [ -f gcc-cross$(exeext) ] ; then \
+-	  if [ -d $(DESTDIR)$(gcc_tooldir)/bin/. ] ; then \
+-	    rm -f $(DESTDIR)$(gcc_tooldir)/bin/gcc$(exeext); \
++	mkdir -p $(DESTDIR)$(gcc_tooldir)/bin/.; \
++	  mkdir -p $(DESTDIR)$(gcc_tooldir)/bin/.;  \
+ 	    $(INSTALL_PROGRAM) gcc-cross$(exeext) $(DESTDIR)$(gcc_tooldir)/bin/gcc$(exeext); \
+-	  else true; fi; \
+ 	else \
+ 	  rm -f $(DESTDIR)$(bindir)/$(target_noncanonical)-gcc-tmp$(exeext); \
+ 	  ( cd $(DESTDIR)$(bindir) && \

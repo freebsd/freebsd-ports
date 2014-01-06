@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Xymon/Server/.packlist
 %%SITE_PERL%%/Xymon/Server.pm
+%%PERL5_MAN3%%/Xymon::Server.3.gz
 @dirrmtry %%SITE_PERL%%/Xymon
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Xymon/Server
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Xymon

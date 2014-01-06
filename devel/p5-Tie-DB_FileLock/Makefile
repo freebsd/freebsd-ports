@@ -13,7 +13,4 @@ COMMENT=	Locking access to Berkeley DB v1.x
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=			Tie::DB_FileLock.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

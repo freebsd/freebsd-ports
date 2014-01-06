@@ -1,5 +1,6 @@
 %%SITE_PERL%%/FreeBSD/Ports/INDEXhash.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Ports/INDEXhash/.packlist
+%%PERL5_MAN3%%/FreeBSD::Ports::INDEXhash.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Ports/INDEXhash
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/Ports
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD

@@ -4,6 +4,10 @@
 %%SITE_PERL%%/AnyEvent/MPRPC/CondVar.pm
 %%SITE_PERL%%/AnyEvent/MPRPC/Constant.pm
 %%SITE_PERL%%/AnyEvent/MPRPC/Server.pm
+%%PERL5_MAN3%%/AnyEvent::MPRPC.3.gz
+%%PERL5_MAN3%%/AnyEvent::MPRPC::Client.3.gz
+%%PERL5_MAN3%%/AnyEvent::MPRPC::CondVar.3.gz
+%%PERL5_MAN3%%/AnyEvent::MPRPC::Server.3.gz
 @dirrm %%SITE_PERL%%/AnyEvent/MPRPC
 @dirrmtry %%SITE_PERL%%/AnyEvent
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/MPRPC

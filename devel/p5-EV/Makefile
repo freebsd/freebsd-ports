@@ -19,9 +19,4 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ENV=	PERL_MM_USE_DEFAULT="YES"
 
-MAN3=		EV.3 \
-		EV::MakeMaker.3 \
-		EV::libev.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

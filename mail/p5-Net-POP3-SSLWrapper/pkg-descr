@@ -1,5 +1,4 @@
 Net::POP3::SSLWrapper is simple POP3S wrapper for Net::POP3.
-
 You can easy to support POP3S, with very small code change.
 
 WWW: http://search.cpan.org/dist/Net-POP3-SSLWrapper/

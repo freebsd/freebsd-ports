@@ -20,6 +20,25 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/WebKit/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/WebKit/WebKit.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/WebKit/WebKit.bs
+%%PERL5_MAN3%%/Gtk2::WebKit.3.gz
+%%PERL5_MAN3%%/Gtk2::WebKit::Download.3.gz
+%%PERL5_MAN3%%/Gtk2::WebKit::GeolocationPolicyDecision.3.gz
+%%PERL5_MAN3%%/Gtk2::WebKit::NetworkRequest.3.gz
+%%PERL5_MAN3%%/Gtk2::WebKit::NetworkResponse.3.gz
+%%PERL5_MAN3%%/Gtk2::WebKit::SecurityOrigin.3.gz
+%%PERL5_MAN3%%/Gtk2::WebKit::WebBackForwardList.3.gz
+%%PERL5_MAN3%%/Gtk2::WebKit::WebDataSource.3.gz
+%%PERL5_MAN3%%/Gtk2::WebKit::WebDatabase.3.gz
+%%PERL5_MAN3%%/Gtk2::WebKit::WebFrame.3.gz
+%%PERL5_MAN3%%/Gtk2::WebKit::WebHistoryItem.3.gz
+%%PERL5_MAN3%%/Gtk2::WebKit::WebInspector.3.gz
+%%PERL5_MAN3%%/Gtk2::WebKit::WebNavigationAction.3.gz
+%%PERL5_MAN3%%/Gtk2::WebKit::WebPolicyDecision.3.gz
+%%PERL5_MAN3%%/Gtk2::WebKit::WebResource.3.gz
+%%PERL5_MAN3%%/Gtk2::WebKit::WebSettings.3.gz
+%%PERL5_MAN3%%/Gtk2::WebKit::WebView.3.gz
+%%PERL5_MAN3%%/Gtk2::WebKit::WebWindowFeatures.3.gz
+%%PERL5_MAN3%%/Gtk2::WebKit::index.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit/Install
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2/WebKit
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Gtk2

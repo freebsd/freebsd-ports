@@ -17,11 +17,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Test::Data.3 \
-		Test::Data::Array.3 \
-		Test::Data::Function.3 \
-		Test::Data::Hash.3 \
-		Test::Data::Scalar.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

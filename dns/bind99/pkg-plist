@@ -3,8 +3,6 @@ bin/host
 bin/isc-config.sh
 bin/nslookup
 bin/nsupdate
-%%LINKS%%etc/named.conf
-%%LINKS%%etc/rndc.key
 include/bind9/check.h
 include/bind9/getaddresses.h
 include/bind9/version.h
@@ -205,6 +203,118 @@ lib/libisc.a
 lib/libisccc.a
 lib/libisccfg.a
 lib/liblwres.a
+%%SHARE_MAN%%man/man1/arpaname.1.gz
+%%SHARE_MAN%%man/man1/dig.1.gz
+%%SHARE_MAN%%man/man1/host.1.gz
+%%SHARE_MAN%%man/man1/isc-config.sh.1.gz
+%%SHARE_MAN%%man/man1/nslookup.1.gz
+%%SHARE_MAN%%man/man1/nsupdate.1.gz
+%%SHARE_MAN%%man/man3/lwres.3.gz
+%%SHARE_MAN%%man/man3/lwres_addr_parse.3.gz
+%%SHARE_MAN%%man/man3/lwres_buffer.3.gz
+%%SHARE_MAN%%man/man3/lwres_buffer_add.3.gz
+%%SHARE_MAN%%man/man3/lwres_buffer_back.3.gz
+%%SHARE_MAN%%man/man3/lwres_buffer_clear.3.gz
+%%SHARE_MAN%%man/man3/lwres_buffer_first.3.gz
+%%SHARE_MAN%%man/man3/lwres_buffer_forward.3.gz
+%%SHARE_MAN%%man/man3/lwres_buffer_getmem.3.gz
+%%SHARE_MAN%%man/man3/lwres_buffer_getuint16.3.gz
+%%SHARE_MAN%%man/man3/lwres_buffer_getuint32.3.gz
+%%SHARE_MAN%%man/man3/lwres_buffer_getuint8.3.gz
+%%SHARE_MAN%%man/man3/lwres_buffer_init.3.gz
+%%SHARE_MAN%%man/man3/lwres_buffer_invalidate.3.gz
+%%SHARE_MAN%%man/man3/lwres_buffer_putmem.3.gz
+%%SHARE_MAN%%man/man3/lwres_buffer_putuint16.3.gz
+%%SHARE_MAN%%man/man3/lwres_buffer_putuint32.3.gz
+%%SHARE_MAN%%man/man3/lwres_buffer_putuint8.3.gz
+%%SHARE_MAN%%man/man3/lwres_buffer_subtract.3.gz
+%%SHARE_MAN%%man/man3/lwres_conf_clear.3.gz
+%%SHARE_MAN%%man/man3/lwres_conf_get.3.gz
+%%SHARE_MAN%%man/man3/lwres_conf_init.3.gz
+%%SHARE_MAN%%man/man3/lwres_conf_parse.3.gz
+%%SHARE_MAN%%man/man3/lwres_conf_print.3.gz
+%%SHARE_MAN%%man/man3/lwres_config.3.gz
+%%SHARE_MAN%%man/man3/lwres_context.3.gz
+%%SHARE_MAN%%man/man3/lwres_context_allocmem.3.gz
+%%SHARE_MAN%%man/man3/lwres_context_create.3.gz
+%%SHARE_MAN%%man/man3/lwres_context_destroy.3.gz
+%%SHARE_MAN%%man/man3/lwres_context_freemem.3.gz
+%%SHARE_MAN%%man/man3/lwres_context_initserial.3.gz
+%%SHARE_MAN%%man/man3/lwres_context_nextserial.3.gz
+%%SHARE_MAN%%man/man3/lwres_context_sendrecv.3.gz
+%%SHARE_MAN%%man/man3/lwres_endhostent.3.gz
+%%SHARE_MAN%%man/man3/lwres_endhostent_r.3.gz
+%%SHARE_MAN%%man/man3/lwres_freeaddrinfo.3.gz
+%%SHARE_MAN%%man/man3/lwres_freehostent.3.gz
+%%SHARE_MAN%%man/man3/lwres_gabn.3.gz
+%%SHARE_MAN%%man/man3/lwres_gabnrequest_free.3.gz
+%%SHARE_MAN%%man/man3/lwres_gabnrequest_parse.3.gz
+%%SHARE_MAN%%man/man3/lwres_gabnrequest_render.3.gz
+%%SHARE_MAN%%man/man3/lwres_gabnresponse_free.3.gz
+%%SHARE_MAN%%man/man3/lwres_gabnresponse_parse.3.gz
+%%SHARE_MAN%%man/man3/lwres_gabnresponse_render.3.gz
+%%SHARE_MAN%%man/man3/lwres_gai_strerror.3.gz
+%%SHARE_MAN%%man/man3/lwres_getaddrinfo.3.gz
+%%SHARE_MAN%%man/man3/lwres_getaddrsbyname.3.gz
+%%SHARE_MAN%%man/man3/lwres_gethostbyaddr.3.gz
+%%SHARE_MAN%%man/man3/lwres_gethostbyaddr_r.3.gz
+%%SHARE_MAN%%man/man3/lwres_gethostbyname.3.gz
+%%SHARE_MAN%%man/man3/lwres_gethostbyname2.3.gz
+%%SHARE_MAN%%man/man3/lwres_gethostbyname_r.3.gz
+%%SHARE_MAN%%man/man3/lwres_gethostent.3.gz
+%%SHARE_MAN%%man/man3/lwres_gethostent_r.3.gz
+%%SHARE_MAN%%man/man3/lwres_getipnode.3.gz
+%%SHARE_MAN%%man/man3/lwres_getipnodebyaddr.3.gz
+%%SHARE_MAN%%man/man3/lwres_getipnodebyname.3.gz
+%%SHARE_MAN%%man/man3/lwres_getnamebyaddr.3.gz
+%%SHARE_MAN%%man/man3/lwres_getnameinfo.3.gz
+%%SHARE_MAN%%man/man3/lwres_getrrsetbyname.3.gz
+%%SHARE_MAN%%man/man3/lwres_gnba.3.gz
+%%SHARE_MAN%%man/man3/lwres_gnbarequest_free.3.gz
+%%SHARE_MAN%%man/man3/lwres_gnbarequest_parse.3.gz
+%%SHARE_MAN%%man/man3/lwres_gnbarequest_render.3.gz
+%%SHARE_MAN%%man/man3/lwres_gnbaresponse_free.3.gz
+%%SHARE_MAN%%man/man3/lwres_gnbaresponse_parse.3.gz
+%%SHARE_MAN%%man/man3/lwres_gnbaresponse_render.3.gz
+%%SHARE_MAN%%man/man3/lwres_herror.3.gz
+%%SHARE_MAN%%man/man3/lwres_hstrerror.3.gz
+%%SHARE_MAN%%man/man3/lwres_inetntop.3.gz
+%%SHARE_MAN%%man/man3/lwres_lwpacket_parseheader.3.gz
+%%SHARE_MAN%%man/man3/lwres_lwpacket_renderheader.3.gz
+%%SHARE_MAN%%man/man3/lwres_net_ntop.3.gz
+%%SHARE_MAN%%man/man3/lwres_noop.3.gz
+%%SHARE_MAN%%man/man3/lwres_nooprequest_free.3.gz
+%%SHARE_MAN%%man/man3/lwres_nooprequest_parse.3.gz
+%%SHARE_MAN%%man/man3/lwres_nooprequest_render.3.gz
+%%SHARE_MAN%%man/man3/lwres_noopresponse_free.3.gz
+%%SHARE_MAN%%man/man3/lwres_noopresponse_parse.3.gz
+%%SHARE_MAN%%man/man3/lwres_noopresponse_render.3.gz
+%%SHARE_MAN%%man/man3/lwres_packet.3.gz
+%%SHARE_MAN%%man/man3/lwres_resutil.3.gz
+%%SHARE_MAN%%man/man3/lwres_sethostent.3.gz
+%%SHARE_MAN%%man/man3/lwres_sethostent_r.3.gz
+%%SHARE_MAN%%man/man3/lwres_string_parse.3.gz
+%%SHARE_MAN%%man/man5/named.conf.5.gz
+%%SHARE_MAN%%man/man5/rndc.conf.5.gz
+%%SHARE_MAN%%man/man8/ddns-confgen.8.gz
+%%SHARE_MAN%%man/man8/dnssec-dsfromkey.8.gz
+%%SHARE_MAN%%man/man8/dnssec-keyfromlabel.8.gz
+%%SHARE_MAN%%man/man8/dnssec-keygen.8.gz
+%%SHARE_MAN%%man/man8/dnssec-revoke.8.gz
+%%SHARE_MAN%%man/man8/dnssec-settime.8.gz
+%%SHARE_MAN%%man/man8/dnssec-signzone.8.gz
+%%SHARE_MAN%%man/man8/dnssec-verify.8.gz
+%%SHARE_MAN%%man/man8/genrandom.8.gz
+%%SHARE_MAN%%man/man8/isc-hmac-fixup.8.gz
+%%SHARE_MAN%%man/man8/lwresd.8.gz
+%%SHARE_MAN%%man/man8/named-checkconf.8.gz
+%%SHARE_MAN%%man/man8/named-checkzone.8.gz
+%%SHARE_MAN%%man/man8/named-compilezone.8.gz
+%%SHARE_MAN%%man/man8/named-journalprint.8.gz
+%%SHARE_MAN%%man/man8/named.8.gz
+%%SHARE_MAN%%man/man8/nsec3hash.8.gz
+%%SHARE_MAN%%man/man8/rndc-confgen.8.gz
+%%SHARE_MAN%%man/man8/rndc.8.gz
 sbin/arpaname
 sbin/ddns-confgen
 sbin/dnssec-dsfromkey
@@ -225,23 +335,28 @@ sbin/named-journalprint
 sbin/nsec3hash
 sbin/rndc
 sbin/rndc-confgen
-%%LINKS%%@unexec rm -f /var/named/%D/etc/named.conf
-%%LINKS%%@unexec rm -f /var/named/%D/etc/rndc.key
-%%LINKS%%@unexec rm -rf /var/named/%D
-%%LINKS%%@unexec rmdir /var/named/usr 2>/dev/null || true
 @unexec rm -f %%BIND_DESTETC%%/rndc.conf.sample
 %%NOBASE%%etc/rc.d/named
 %%NOBASE%%@unexec if cmp -s %%BIND_DESTETC%%/named.conf.sample %%BIND_DESTETC%%/named.conf; then rm -f %%BIND_DESTETC%%/named.conf; fi
 %%NOBASE%%%%BIND_DESTETC%%/named.conf.sample
+%%NOBASE%%@exec if [ ! -f %%BIND_DESTETC%%/named.conf ] ; then cp -p %D/%F %B/named.conf; fi
 %%NOBASE%%%%BIND_DESTETC%%/named.root
 %%NOBASE%%%%BIND_DESTETC%%/master/empty.db
 %%NOBASE%%%%BIND_DESTETC%%/master/localhost-forward.db
 %%NOBASE%%%%BIND_DESTETC%%/master/localhost-reverse.db
-%%NOBASE%%@dirrm %%BIND_DESTETC%%/dynamic
-%%NOBASE%%@dirrm %%BIND_DESTETC%%/master
-%%NOBASE%%@dirrm %%BIND_DESTETC%%/slave
-%%NOBASE%%@dirrm %%BIND_DESTETC%%/working
-%%NOBASE%%@dirrm %%BIND_DESTETC%%
+%%NOBASE%%@exec mkdir %%BIND_DESTETC%%/dynamic
+%%NOBASE%%@exec chown bind:bind %%BIND_DESTETC%%/dynamic
+%%NOBASE%%@dirrmtry %%BIND_DESTETC%%/dynamic
+%%NOBASE%%@exec mkdir %%BIND_DESTETC%%/master
+%%NOBASE%%@exec chown bind:bind %%BIND_DESTETC%%/master
+%%NOBASE%%@dirrmtry %%BIND_DESTETC%%/master
+%%NOBASE%%@exec mkdir %%BIND_DESTETC%%/slave
+%%NOBASE%%@exec chown bind:bind %%BIND_DESTETC%%/slave
+%%NOBASE%%@dirrmtry %%BIND_DESTETC%%/slave
+%%NOBASE%%@exec mkdir %%BIND_DESTETC%%/working
+%%NOBASE%%@exec chown bind:bind %%BIND_DESTETC%%/working
+%%NOBASE%%@dirrmtry %%BIND_DESTETC%%/working
+%%NOBASE%%@dirrmtry %%BIND_DESTETC%%
 @dirrm include/bind9
 @dirrm include/dns
 @dirrm include/dst

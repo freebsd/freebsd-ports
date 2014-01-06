@@ -1,0 +1,58 @@
+# HG changeset patch
+# User jfranck
+# Date 1382726704 -3600
+#      Fri Oct 25 19:45:04 2013 +0100
+# Node ID a2b63addc0633a5ef8d196d1019d78b920cb4b1a
+# Parent  e7ed5dad88eefc49130ae02bcbf329d72f18f12e
+8011139: (reflect) Revise checking in getEnclosingClass
+Reviewed-by: darcy, mchung, ahgross
+
+diff -r e7ed5dad88ee -r a2b63addc063 src/share/classes/java/lang/Class.java
+--- jdk/src/share/classes/java/lang/Class.java	Fri Oct 25 19:37:20 2013 +0100
++++ jdk/src/share/classes/java/lang/Class.java	Fri Oct 25 19:45:04 2013 +0100
+@@ -1131,13 +1131,9 @@
+                 enclosingCandidate = enclosingClass;
+         }
+ 
+-        // be very careful not to change the stack depth of this
+-        // checkMemberAccess call for security reasons
+-        // see java.lang.SecurityManager.checkMemberAccess
+-        if (enclosingCandidate != null) {
+-            enclosingCandidate.checkMemberAccess(Member.DECLARED,
+-                                                 Reflection.getCallerClass(), true);
+-        }
++        if (enclosingCandidate != null)
++            enclosingCandidate.checkPackageAccess(
++                    ClassLoader.getClassLoader(Reflection.getCallerClass()), true);
+         return enclosingCandidate;
+     }
+ 
+@@ -2214,6 +2210,8 @@
+      * Check if client is allowed to access members.  If access is denied,
+      * throw a SecurityException.
+      *
++     * This method also enforces package access.
++     *
+      * <p> Default policy: allow all clients access with normal Java access
+      * control.
+      */
+@@ -2234,7 +2232,19 @@
+                 // checkMemberAccess of subclasses of SecurityManager as specified.
+                 s.checkMemberAccess(this, which);
+             }
++            this.checkPackageAccess(ccl, checkProxyInterfaces);
++        }
++    }
+ 
++    /*
++     * Checks if a client loaded in ClassLoader ccl is allowed to access this
++     * class under the current package access policy. If access is denied,
++     * throw a SecurityException.
++     */
++    private void checkPackageAccess(final ClassLoader ccl, boolean checkProxyInterfaces) {
++        final SecurityManager s = System.getSecurityManager();
++        if (s != null) {
++            final ClassLoader cl = getClassLoader0();
+             if (ReflectUtil.needsPackageAccessCheck(ccl, cl)) {
+ 
+                 String name = this.getName();

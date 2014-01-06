@@ -19,8 +19,7 @@ LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	lthack
-USE_GMAKE=	yes
-USES=		pkgconfig
+USES=		gmake pkgconfig
 
 #.if !defined(_BUILDING_LIGHTTPD_MODULE)
 #USE_AUTOTOOLS=	libtool
@@ -55,6 +54,10 @@ NODELAY_DESC=	Set TCP_NODELAY on listening sockets
 SPAWNFCGI_DESC=	Depend on spawn-fcgi utility
 VALGRIND_DESC=	valgrind support
 WEBDAV_DESC=	WebDAV support
+
+FAM_USES=	fam
+FAM_CONFIGURE_ON=	--with-fam
+FAM_CONFIGURE_ENV=	FAM_CFLAGS="-I${LOCALBASE}/include" FAM_LIBS="-L${LOCALBASE}/lib"
 
 LIGHTTPD_CONF_FILES=	lighttpd.conf modules.conf
 
@@ -101,12 +104,6 @@ CONFIGURE_ARGS+=	--with-openssl \
 
 .if ${PORT_OPTIONS:MBZIP2}
 CONFIGURE_ARGS+=	--with-bzip2
-.endif
-
-.if ${PORT_OPTIONS:MFAM}
-USE_FAM=		yes
-CONFIGURE_ARGS+=	--with-fam
-CONFIGURE_ENV+=		FAM_CFLAGS="-I${LOCALBASE}/include" FAM_LIBS="-L${LOCALBASE}/lib"
 .endif
 
 .if ${PORT_OPTIONS:MGDBM}

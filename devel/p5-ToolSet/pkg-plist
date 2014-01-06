@@ -3,5 +3,7 @@
 %%SITE_PERL%%/ToolSet/SWC.pm
 %%SITE_PERL%%/ToolSet/SWC.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ToolSet/.packlist
+%%PERL5_MAN3%%/ToolSet.3.gz
+%%PERL5_MAN3%%/ToolSet::SWC.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ToolSet
 @dirrmtry %%SITE_PERL%%/ToolSet

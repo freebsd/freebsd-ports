@@ -14,7 +14,4 @@ COMMENT=	Charset Informations for MIME
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MIME::Charset.3 MIME::Charset::JA_JP.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

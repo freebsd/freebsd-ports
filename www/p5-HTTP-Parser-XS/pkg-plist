@@ -3,6 +3,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Parser/XS/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Parser/XS/XS.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Parser/XS/XS.so
+%%PERL5_MAN3%%/HTTP::Parser::XS.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/HTTP/Parser/XS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTTP/Parser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTTP

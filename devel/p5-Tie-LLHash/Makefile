@@ -14,7 +14,4 @@ COMMENT=	Perl module which implements an ordered hash-like object
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Tie::LLHash.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -11,7 +11,6 @@ DISTNAME=	p7zip_${DISTVERSION}_src_all
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	High-ratio PPMD compressor
 
-NO_STAGE=	yes
 USE_BZIP2=	yes
 USES=		gmake
 WRKSRC=		${WRKDIR}/p7zip_${DISTVERSION}
@@ -27,7 +26,7 @@ post-patch:
 			${BUILD_WRKSRC}/${MAKEFILE}
 
 do-install:
-	@${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PKGBASE}
+	@${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PKGBASE}
 
 regression-test: build
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)

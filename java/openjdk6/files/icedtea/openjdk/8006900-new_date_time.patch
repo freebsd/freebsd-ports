@@ -1,0 +1,115 @@
+# HG changeset patch
+# User okutsu
+# Date 1374215521 -32400
+#      Fri Jul 19 15:32:01 2013 +0900
+# Node ID f38a3c5421df4697851a4b4d491071c3a30e5378
+# Parent  5d81a5f8a3791316367990b35b1ad5faef42d773
+8006900: Add new date/time capability
+Reviewed-by: mchung, hawtin
+
+diff -r 5d81a5f8a379 -r f38a3c5421df src/share/classes/java/util/TimeZone.java
+--- jdk/src/share/classes/java/util/TimeZone.java	Tue Oct 15 15:04:24 2013 +0100
++++ jdk/src/share/classes/java/util/TimeZone.java	Fri Jul 19 15:32:01 2013 +0900
+@@ -170,6 +170,11 @@
+     // Proclaim serialization compatibility with JDK 1.1
+     static final long serialVersionUID = 3581463369166924961L;
+ 
++    // TimeZone.setDefault maintains the compatible behavior of the AppContext-based
++    // default setting for untrusted code if allowSetDefault is true.
++    private static final boolean allowSetDefault = AccessController.doPrivileged(
++        new sun.security.action.GetPropertyAction("jdk.util.TimeZone.allowSetDefault")) != null;
++
+     /**
+      * Gets the time zone offset, for current date, modified in case of
+      * daylight savings. This is the offset to add to UTC to get local time.
+@@ -616,6 +621,9 @@
+                 sm.checkPermission(new PropertyPermission
+                                    ("user.timezone", "write"));
+             } catch (SecurityException e) {
++                if (!allowSetDefault) {
++                    throw e;
++                }
+                 hasPermission = false;
+             }
+         }
+@@ -646,6 +654,7 @@
+      * Returns the default TimeZone in an AppContext if any AppContext
+      * has ever used. null is returned if any AppContext hasn't been
+      * used or if the AppContext doesn't have the default TimeZone.
++     * null is also returned if allowSetDefault is false.
+      *
+      * Note that javaAWTAccess may be null if sun.awt.AppContext class hasn't
+      * been loaded. If so, it implies that AWTSecurityManager is not our
+@@ -653,18 +662,20 @@
+      * This works around a build time issue.
+      */
+     private static TimeZone getDefaultInAppContext() {
+-        // JavaAWTAccess provides access implementation-private methods without using reflection.
+-        JavaAWTAccess javaAWTAccess = SharedSecrets.getJavaAWTAccess();
+-        if (javaAWTAccess == null) {
+-            return mainAppContextDefault;
+-        } else {
+-            if (!javaAWTAccess.isDisposed()) {
+-                TimeZone tz = (TimeZone)
+-                    javaAWTAccess.get(TimeZone.class);
+-                if (tz == null && javaAWTAccess.isMainAppContext()) {
+-                    return mainAppContextDefault;
+-                } else {
+-                    return tz;
++        if (allowSetDefault) {
++            // JavaAWTAccess provides access implementation-private methods without using reflection.
++            JavaAWTAccess javaAWTAccess = SharedSecrets.getJavaAWTAccess();
++            if (javaAWTAccess == null) {
++                return mainAppContextDefault;
++            } else {
++                if (!javaAWTAccess.isDisposed()) {
++                    TimeZone tz = (TimeZone)
++                        javaAWTAccess.get(TimeZone.class);
++                    if (tz == null && javaAWTAccess.isMainAppContext()) {
++                        return mainAppContextDefault;
++                    } else {
++                        return tz;
++                    }
+                 }
+             }
+         }
+@@ -672,9 +683,9 @@
+     }
+ 
+     /**
+-     * Sets the default TimeZone in the AppContext to the given
+-     * tz. null is handled special: do nothing if any AppContext
+-     * hasn't been used, remove the default TimeZone in the
++     * Sets the default TimeZone in the AppContext to the given tz if
++     * allowSetDefault is true. null is handled special: do nothing if any
++     * AppContext hasn't been used, remove the default TimeZone in the
+      * AppContext otherwise.
+      *
+      * Note that javaAWTAccess may be null if sun.awt.AppContext class hasn't
+@@ -683,15 +694,17 @@
+      * This works around a build time issue.
+      */
+     private static void setDefaultInAppContext(TimeZone tz) {
+-        // JavaAWTAccess provides access implementation-private methods without using reflection.
+-        JavaAWTAccess javaAWTAccess = SharedSecrets.getJavaAWTAccess();
+-        if (javaAWTAccess == null) {
+-            mainAppContextDefault = tz;
+-        } else {
+-            if (!javaAWTAccess.isDisposed()) {
+-                javaAWTAccess.put(TimeZone.class, tz);
+-                if (javaAWTAccess.isMainAppContext()) {
+-                    mainAppContextDefault = null;
++        if (allowSetDefault) {
++            // JavaAWTAccess provides access implementation-private methods without using reflection.
++            JavaAWTAccess javaAWTAccess = SharedSecrets.getJavaAWTAccess();
++            if (javaAWTAccess == null) {
++                mainAppContextDefault = tz;
++            } else {
++                if (!javaAWTAccess.isDisposed()) {
++                    javaAWTAccess.put(TimeZone.class, tz);
++                    if (javaAWTAccess.isMainAppContext()) {
++                        mainAppContextDefault = null;
++                    }
+                 }
+             }
+         }

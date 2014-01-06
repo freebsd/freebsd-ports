@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	chifeng@gmail.com
-COMMENT=	A single-threaded multiplexing IMAP server implementation
+COMMENT=	Single-threaded multiplexing IMAP server implementation
 
 BUILD_DEPENDS=	p5-Net-Server-Coro>=0.6:${PORTSDIR}/net/p5-Net-Server-Coro \
 		p5-DateTime-Format-Mail>=0:${PORTSDIR}/devel/p5-DateTime-Format-Mail \
@@ -25,14 +25,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Net::IMAP::Server.3 \
-	Net::IMAP::Server::Command.3 \
-	Net::IMAP::Server::Connection.3 \
-	Net::IMAP::Server::DefaultAuth.3 \
-	Net::IMAP::Server::DefaultModel.3 \
-	Net::IMAP::Server::Error.3 \
-	Net::IMAP::Server::Mailbox.3 \
-	Net::IMAP::Server::Message.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

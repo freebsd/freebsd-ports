@@ -13,7 +13,4 @@ COMMENT=	This's FCKeditor Controller for Perl OOP
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		CGI::FCKeditor.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

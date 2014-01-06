@@ -12,27 +12,16 @@ COMMENT=	Simple forking web benchmark
 
 MAKE_ARGS+=	CFLAGS="${CPPFLAGS} ${CFLAGS}"
 
-.if !defined(NO_INSTALL_MANPAGES)
-MAN1=		webbench.1
-.endif
-
 PORTDOCS=	copyright changelog
 
-PLIST_FILES=	bin/webbench
-
-NO_STAGE=	yes
-
-.include <bsd.port.options.mk>
+PLIST_FILES=	bin/webbench \
+		man/man1/webbench.1.gz
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/webbench ${PREFIX}/bin
-.if !defined(NO_INSTALL_MANPAGES)
-		${INSTALL_MAN} ${WRKSRC}/webbench.1 ${MAN1PREFIX}/man/man1
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-		${MKDIR} ${DOCSDIR}
-		${INSTALL_DATA} ${WRKSRC}/debian/copyright ${DOCSDIR}
-		${INSTALL_DATA} ${WRKSRC}/debian/changelog ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/webbench ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/webbench.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/debian/copyright ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/debian/changelog ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

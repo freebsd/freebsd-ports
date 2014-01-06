@@ -3,6 +3,7 @@
 
 PORTNAME=	ccsrch
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://downloads.sourceforge.net/project/${MASTER_SITE_SUBDIR}/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/Version%20${PORTVERSION}
@@ -15,19 +16,19 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-
-PORTDOCS=	README readme.html
+PORTDOCS=	README
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+
+post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}; \
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}; \
 	for f in ${PORTDOCS}; do \
-		${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
+		${INSTALL_DATA} ${WRKSRC}/$$f ${STAGEDIR}${DOCSDIR}; \
 	done
 .endif
 

@@ -13,9 +13,4 @@ COMMENT=	Class and object builder
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Class::Gomor.3 \
-	Class::Gomor::Hash.3 \
-	Class::Gomor::Array.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

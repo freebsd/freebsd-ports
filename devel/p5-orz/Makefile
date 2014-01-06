@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN/INGY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	snowfly@yuntech.edu.tw
-COMMENT=	A method of annotation as /* */ in perl
+COMMENT=	Method of annotation as /* */ in perl
 
 BUILD_DEPENDS=	p5-Module-Compile>=0.21:${PORTSDIR}/devel/p5-Module-Compile
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -17,7 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		orz.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

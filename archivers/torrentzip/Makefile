@@ -11,7 +11,6 @@ DISTNAME=	trrntzip_v${PORTVERSION:S/.//}_src
 MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Efficient way to prepare zipfiles for BitTorrent
 
-NO_STAGE=	yes
 USE_AUTOTOOLS=	aclocal automake autoheader
 AUTOMAKE_ARGS=		-a
 
@@ -23,12 +22,8 @@ PORTDOCS=	README
 run-autotools:: run-autotools-aclocal run-autotools-autoheader \
 		run-autotools-autoconf run-autotools-automake
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 pre-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README
 
 .include <bsd.port.mk>

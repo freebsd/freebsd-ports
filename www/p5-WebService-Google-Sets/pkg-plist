@@ -1,6 +1,7 @@
 bin/get_gset
 %%SITE_PERL%%/WebService/Google/Sets.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Google/Sets/.packlist
+%%PERL5_MAN3%%/WebService::Google::Sets.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Google/Sets
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/Google
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService

@@ -11,7 +11,7 @@ COMMENT=	Qt4-based advanced keyboard layout switcher
 
 LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	xkbfile:${PORTSDIR}/x11/libxkbfile
+LIB_DEPENDS=	libxkbfile.so:${PORTSDIR}/x11/libxkbfile
 
 USE_BZIP2=	yes
 USES=		cmake
@@ -20,7 +20,6 @@ USE_QT4=	linguist_build moc_build qmake_build rcc_build uic_build \
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-patch:
 # Fix path to the translation files
 	@${REINPLACE_CMD} -e 's,\.\./,,' ${WRKSRC}/CMakeLists.txt

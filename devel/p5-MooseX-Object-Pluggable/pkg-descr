@@ -4,4 +4,4 @@ loading and handling of plugins and extensions for plugins. I
 understand that this may pollute your namespace, however I took great
 care in using the least ambiguous names possible.
 
-WWW:	http://search.cpan.org/dist/MooseX-Object-Pluggable/
+WWW: http://search.cpan.org/dist/MooseX-Object-Pluggable/

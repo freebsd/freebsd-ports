@@ -1,0 +1,515 @@
+# HG changeset patch
+# User prr
+# Date 1382993769 0
+#      Mon Oct 28 20:56:09 2013 +0000
+# Node ID 150e0c3e95ce6869f8e7b42c6d8683817433e124
+# Parent  9cfb9105241489a5fbc3fcfdea15a6aee15b2cfc
+8012617: ArrayIndexOutOfBoundsException with some fonts using LineBreakMeasurer
+Reviewed-by: bae, srl, omajid
+
+diff -r 9cfb91052414 -r 150e0c3e95ce src/share/classes/sun/font/ExtendedTextSourceLabel.java
+--- jdk/src/share/classes/sun/font/ExtendedTextSourceLabel.java	Tue Jul 16 21:00:34 2013 +0400
++++ jdk/src/share/classes/sun/font/ExtendedTextSourceLabel.java	Mon Oct 28 20:56:09 2013 +0000
+@@ -246,6 +246,10 @@
+     float aw = 0f;
+     float ah = cm.ascent + cm.descent;
+ 
++    if (charinfo == null || charinfo.length == 0) {
++        return new Rectangle2D.Float(al, at, aw, ah);
++    }
++
+     boolean lineIsLTR = (source.getLayoutFlags() & 0x8) == 0;
+     int rn = info.length - numvals;
+     if (lineIsLTR) {
+@@ -349,24 +353,42 @@
+ 
+   public float getCharX(int index) {
+     validate(index);
+-    return getCharinfo()[l2v(index) * numvals + posx];
++    float[] charinfo = getCharinfo();
++    int idx = l2v(index) * numvals + posx;
++    if (charinfo == null || idx >= charinfo.length) {
++        return 0f;
++    } else {
++        return charinfo[idx];
++    }
+   }
+ 
+   public float getCharY(int index) {
+     validate(index);
+-    return getCharinfo()[l2v(index) * numvals + posy];
++    float[] charinfo = getCharinfo();
++    int idx = l2v(index) * numvals + posy;
++    if (charinfo == null || idx >= charinfo.length) {
++        return 0f;
++    } else {
++        return charinfo[idx];
++    }
+   }
+ 
+   public float getCharAdvance(int index) {
+     validate(index);
+-    return getCharinfo()[l2v(index) * numvals + advx];
++    float[] charinfo = getCharinfo();
++    int idx = l2v(index) * numvals + advx;
++    if (charinfo == null || idx >= charinfo.length) {
++        return 0f;
++    } else {
++        return charinfo[idx];
++    }
+   }
+ 
+   public Rectangle2D handleGetCharVisualBounds(int index) {
+     validate(index);
+     float[] charinfo = getCharinfo();
+     index = l2v(index) * numvals;
+-    if ((index+vish) >= charinfo.length) {
++    if (charinfo == null || (index+vish) >= charinfo.length) {
+         return new Rectangle2D.Float();
+     }
+     return new Rectangle2D.Float(
+@@ -462,7 +484,7 @@
+       if (cidx >= charinfo.length) {
+           break; // layout bailed for some reason
+       }
+-      float adv = charinfo[l2v(start) * numvals + advx];
++      float adv = charinfo[cidx];
+       width -= adv;
+     }
+ 
+@@ -511,7 +533,13 @@
+       //    }
+       //}
+ 
+-      return getCharinfo()[v * numvals + advx] != 0;
++      int idx = v * numvals + advx;
++      float[] charinfo = getCharinfo();
++      if (charinfo == null || idx >= charinfo.length) {
++          return false;
++      } else {
++          return charinfo[idx] != 0;
++      }
+   }
+ 
+   private final float[] getCharinfo() {
+@@ -603,6 +631,9 @@
+     */
+ 
+     int numGlyphs = gv.getNumGlyphs();
++    if (numGlyphs == 0) {
++        return glyphinfo;
++    }
+     int[] indices = gv.getGlyphCharIndices(0, numGlyphs, null);
+ 
+     boolean DEBUG = false;
+diff -r 9cfb91052414 -r 150e0c3e95ce src/share/classes/sun/font/GlyphLayout.java
+--- jdk/src/share/classes/sun/font/GlyphLayout.java	Tue Jul 16 21:00:34 2013 +0400
++++ jdk/src/share/classes/sun/font/GlyphLayout.java	Mon Oct 28 20:56:09 2013 +0000
+@@ -76,9 +76,12 @@
+ import java.awt.geom.Point2D;
+ import java.util.ArrayList;
+ import java.util.concurrent.ConcurrentHashMap;
++import java.util.logging.Logger;
+ 
+ import static java.lang.Character.*;
+ 
++import sun.java2d.SunGraphicsEnvironment;
++
+ public final class GlyphLayout {
+     // data for glyph vector
+     private GVData _gvdata;
+@@ -461,7 +464,12 @@
+                     break;
+                 }
+                 catch (IndexOutOfBoundsException e) {
+-                    _gvdata.grow();
++                    if (_gvdata._count >=0) {
++                        _gvdata.grow();
++                    }
++                }
++                if (_gvdata._count < 0) {
++                    break;
+                 }
+             }
+         }
+@@ -470,7 +478,19 @@
+         //            _gvdata.adjustPositions(txinfo.invdtx);
+         //        }
+ 
+-        StandardGlyphVector gv = _gvdata.createGlyphVector(font, frc, result);
++        // If layout fails (negative glyph count) create an un-laid out GV instead.
++        // ie default positions. This will be a lot better than the alternative of
++        // a complete blank layout.
++        StandardGlyphVector gv;
++        if (_gvdata._count < 0) {
++            gv = new StandardGlyphVector(font, text, offset, count, frc);
++            if (SunGraphicsEnvironment.debugFonts) {
++               Logger.getLogger("sun.java2d").warning("OpenType layout failed on font: " +
++						      font);
++            }
++        } else {
++            gv = _gvdata.createGlyphVector(font, frc, result);
++        }
+         //        System.err.println("Layout returns: " + gv);
+         return gv;
+     }
+diff -r 9cfb91052414 -r 150e0c3e95ce src/share/native/sun/font/layout/ContextualSubstSubtables.cpp
+--- jdk/src/share/native/sun/font/layout/ContextualSubstSubtables.cpp	Tue Jul 16 21:00:34 2013 +0400
++++ jdk/src/share/native/sun/font/layout/ContextualSubstSubtables.cpp	Mon Oct 28 20:56:09 2013 +0000
+@@ -218,6 +218,9 @@
+ 
+     LEGlyphID glyph = glyphIterator->getCurrGlyphID();
+     le_int32 coverageIndex = getGlyphCoverage(lookupProcessor->getReference(), glyph, success);
++    if (LE_FAILURE(success)) {
++        return 0;
++    }
+ 
+     if (coverageIndex >= 0) {
+         le_uint16 srSetCount = SWAPW(subRuleSetCount);
+@@ -267,6 +270,9 @@
+ 
+     LEGlyphID glyph = glyphIterator->getCurrGlyphID();
+     le_int32 coverageIndex = getGlyphCoverage(lookupProcessor->getReference(), glyph, success);
++    if (LE_FAILURE(success)) {
++        return 0;
++    }
+ 
+     if (coverageIndex >= 0) {
+         const ClassDefinitionTable *classDefinitionTable =
+@@ -395,6 +401,9 @@
+ 
+     LEGlyphID glyph = glyphIterator->getCurrGlyphID();
+     le_int32 coverageIndex = getGlyphCoverage(lookupProcessor->getReference(), glyph, success);
++    if (LE_FAILURE(success)) {
++        return 0;
++    }
+ 
+     if (coverageIndex >= 0) {
+         le_uint16 srSetCount = SWAPW(chainSubRuleSetCount);
+@@ -466,6 +475,9 @@
+ 
+     LEGlyphID glyph = glyphIterator->getCurrGlyphID();
+     le_int32 coverageIndex = getGlyphCoverage(lookupProcessor->getReference(), glyph, success);
++    if (LE_FAILURE(success)) {
++        return 0;
++    }
+ 
+     if (coverageIndex >= 0) {
+         const ClassDefinitionTable *backtrackClassDefinitionTable =
+diff -r 9cfb91052414 -r 150e0c3e95ce src/share/native/sun/font/layout/CursiveAttachmentSubtables.cpp
+--- jdk/src/share/native/sun/font/layout/CursiveAttachmentSubtables.cpp	Tue Jul 16 21:00:34 2013 +0400
++++ jdk/src/share/native/sun/font/layout/CursiveAttachmentSubtables.cpp	Mon Oct 28 20:56:09 2013 +0000
+@@ -45,7 +45,7 @@
+     le_int32  coverageIndex = getGlyphCoverage(base, glyphID, success);
+     le_uint16 eeCount       = SWAPW(entryExitCount);
+ 
+-    if (coverageIndex < 0 || coverageIndex >= eeCount) {
++    if (coverageIndex < 0 || coverageIndex >= eeCount || LE_FAILURE(success)) {
+         glyphIterator->setCursiveGlyph();
+         return 0;
+     }
+diff -r 9cfb91052414 -r 150e0c3e95ce src/share/native/sun/font/layout/ExtensionSubtables.cpp
+--- jdk/src/share/native/sun/font/layout/ExtensionSubtables.cpp	Tue Jul 16 21:00:34 2013 +0400
++++ jdk/src/share/native/sun/font/layout/ExtensionSubtables.cpp	Mon Oct 28 20:56:09 2013 +0000
+@@ -44,10 +44,10 @@
+ #define READ_LONG(code) (le_uint32)((SWAPW(*(le_uint16*)&code) << 16) + SWAPW(*(((le_uint16*)&code) + 1)))
+ 
+ // FIXME: should look at the format too... maybe have a sub-class for it?
+-le_uint32 ExtensionSubtable::process(const LookupProcessor *lookupProcessor, le_uint16 lookupType,
++le_uint32 ExtensionSubtable::process(const LEReferenceTo<ExtensionSubtable> &thisRef,
++                                     const LookupProcessor *lookupProcessor, le_uint16 lookupType,
+                                       GlyphIterator *glyphIterator, const LEFontInstance *fontInstance, LEErrorCode& success) const
+ {
+-    const LEReferenceTo<ExtensionSubtable> thisRef(lookupProcessor->getReference(), success); // create a reference to this
+ 
+     if (LE_FAILURE(success)) {
+         return 0;
+@@ -57,7 +57,7 @@
+ 
+     if (elt != lookupType) {
+         le_uint32 extOffset = READ_LONG(extensionOffset);
+-        LEReferenceTo<LookupSubtable> subtable(thisRef, success, extOffset);
++        LEReferenceTo<LookupSubtable> subtable(thisRef, success,  extOffset);
+ 
+         if(LE_SUCCESS(success)) {
+           return lookupProcessor->applySubtable(subtable, elt, glyphIterator, fontInstance, success);
+diff -r 9cfb91052414 -r 150e0c3e95ce src/share/native/sun/font/layout/ExtensionSubtables.h
+--- jdk/src/share/native/sun/font/layout/ExtensionSubtables.h	Tue Jul 16 21:00:34 2013 +0400
++++ jdk/src/share/native/sun/font/layout/ExtensionSubtables.h	Mon Oct 28 20:56:09 2013 +0000
+@@ -52,7 +52,8 @@
+     le_uint16 extensionLookupType;
+     le_uint32 extensionOffset;
+ 
+-    le_uint32 process(const LookupProcessor *lookupProcessor, le_uint16 lookupType,
++    le_uint32 process(const LEReferenceTo<ExtensionSubtable> &extRef,
++                      const LookupProcessor *lookupProcessor, le_uint16 lookupType,
+                       GlyphIterator *glyphIterator, const LEFontInstance *fontInstance, LEErrorCode& success) const;
+ };
+ 
+diff -r 9cfb91052414 -r 150e0c3e95ce src/share/native/sun/font/layout/GlyphPosnLookupProc.cpp
+--- jdk/src/share/native/sun/font/layout/GlyphPosnLookupProc.cpp	Tue Jul 16 21:00:34 2013 +0400
++++ jdk/src/share/native/sun/font/layout/GlyphPosnLookupProc.cpp	Mon Oct 28 20:56:09 2013 +0000
+@@ -168,7 +168,7 @@
+     {
+         LEReferenceTo<ExtensionSubtable> subtable(lookupSubtable, success);
+ 
+-        delta = subtable->process(this, lookupType, glyphIterator, fontInstance, success);
++        delta = subtable->process(subtable, this, lookupType, glyphIterator, fontInstance, success);
+         break;
+     }
+ 
+diff -r 9cfb91052414 -r 150e0c3e95ce src/share/native/sun/font/layout/GlyphSubstLookupProc.cpp
+--- jdk/src/share/native/sun/font/layout/GlyphSubstLookupProc.cpp	Tue Jul 16 21:00:34 2013 +0400
++++ jdk/src/share/native/sun/font/layout/GlyphSubstLookupProc.cpp	Mon Oct 28 20:56:09 2013 +0000
+@@ -139,7 +139,7 @@
+     {
+         const LEReferenceTo<ExtensionSubtable> subtable(lookupSubtable, success);
+ 
+-        delta = subtable->process(this, lookupType, glyphIterator, fontInstance, success);
++        delta = subtable->process(subtable, this, lookupType, glyphIterator, fontInstance, success);
+         break;
+     }
+ 
+diff -r 9cfb91052414 -r 150e0c3e95ce src/share/native/sun/font/layout/LigatureSubstSubtables.cpp
+--- jdk/src/share/native/sun/font/layout/LigatureSubstSubtables.cpp	Tue Jul 16 21:00:34 2013 +0400
++++ jdk/src/share/native/sun/font/layout/LigatureSubstSubtables.cpp	Mon Oct 28 20:56:09 2013 +0000
+@@ -45,6 +45,10 @@
+     LEGlyphID glyph = glyphIterator->getCurrGlyphID();
+     le_int32 coverageIndex = getGlyphCoverage(base, glyph, success);
+ 
++    if (LE_FAILURE(success)) {
++      return 0;
++    }
++
+     if (coverageIndex >= 0) {
+         Offset ligSetTableOffset = SWAPW(ligSetTableOffsetArray[coverageIndex]);
+         const LigatureSetTable *ligSetTable = (const LigatureSetTable *) ((char *) this + ligSetTableOffset);
+diff -r 9cfb91052414 -r 150e0c3e95ce src/share/native/sun/font/layout/MarkToBasePosnSubtables.cpp
+--- jdk/src/share/native/sun/font/layout/MarkToBasePosnSubtables.cpp	Tue Jul 16 21:00:34 2013 +0400
++++ jdk/src/share/native/sun/font/layout/MarkToBasePosnSubtables.cpp	Mon Oct 28 20:56:09 2013 +0000
+@@ -56,6 +56,10 @@
+     LEGlyphID markGlyph = glyphIterator->getCurrGlyphID();
+     le_int32 markCoverage = getGlyphCoverage(base, (LEGlyphID) markGlyph, success);
+ 
++    if (LE_FAILURE(success)) {
++      return 0;
++    }
++
+     if (markCoverage < 0) {
+         // markGlyph isn't a covered mark glyph
+         return 0;
+diff -r 9cfb91052414 -r 150e0c3e95ce src/share/native/sun/font/layout/MarkToLigaturePosnSubtables.cpp
+--- jdk/src/share/native/sun/font/layout/MarkToLigaturePosnSubtables.cpp	Tue Jul 16 21:00:34 2013 +0400
++++ jdk/src/share/native/sun/font/layout/MarkToLigaturePosnSubtables.cpp	Mon Oct 28 20:56:09 2013 +0000
+@@ -55,6 +55,10 @@
+     LEGlyphID markGlyph = glyphIterator->getCurrGlyphID();
+     le_int32 markCoverage = getGlyphCoverage(base, (LEGlyphID) markGlyph, success);
+ 
++    if (LE_FAILURE(success)) {
++      return 0;
++    }
++
+     if (markCoverage < 0) {
+         // markGlyph isn't a covered mark glyph
+         return 0;
+diff -r 9cfb91052414 -r 150e0c3e95ce src/share/native/sun/font/layout/MarkToMarkPosnSubtables.cpp
+--- jdk/src/share/native/sun/font/layout/MarkToMarkPosnSubtables.cpp	Tue Jul 16 21:00:34 2013 +0400
++++ jdk/src/share/native/sun/font/layout/MarkToMarkPosnSubtables.cpp	Mon Oct 28 20:56:09 2013 +0000
+@@ -56,6 +56,10 @@
+     LEGlyphID markGlyph = glyphIterator->getCurrGlyphID();
+     le_int32 markCoverage = getGlyphCoverage(base, (LEGlyphID) markGlyph, success);
+ 
++    if (LE_FAILURE(success)) {
++        return 0;
++    }
++
+     if (markCoverage < 0) {
+         // markGlyph isn't a covered mark glyph
+         return 0;
+diff -r 9cfb91052414 -r 150e0c3e95ce src/share/native/sun/font/layout/MultipleSubstSubtables.cpp
+--- jdk/src/share/native/sun/font/layout/MultipleSubstSubtables.cpp	Tue Jul 16 21:00:34 2013 +0400
++++ jdk/src/share/native/sun/font/layout/MultipleSubstSubtables.cpp	Mon Oct 28 20:56:09 2013 +0000
+@@ -61,6 +61,10 @@
+     le_int32 coverageIndex = getGlyphCoverage(base, glyph, success);
+     le_uint16 seqCount = SWAPW(sequenceCount);
+ 
++    if (LE_FAILURE(success)) {
++        return 0;
++    }
++
+     if (coverageIndex >= 0 && coverageIndex < seqCount) {
+         Offset sequenceTableOffset = SWAPW(sequenceTableOffsetArray[coverageIndex]);
+         const SequenceTable *sequenceTable = (const SequenceTable *) ((char *) this + sequenceTableOffset);
+diff -r 9cfb91052414 -r 150e0c3e95ce src/share/native/sun/font/layout/PairPositioningSubtables.cpp
+--- jdk/src/share/native/sun/font/layout/PairPositioningSubtables.cpp	Tue Jul 16 21:00:34 2013 +0400
++++ jdk/src/share/native/sun/font/layout/PairPositioningSubtables.cpp	Mon Oct 28 20:56:09 2013 +0000
+@@ -126,6 +126,11 @@
+ {
+     LEGlyphID firstGlyph = glyphIterator->getCurrGlyphID();
+     le_int32 coverageIndex = getGlyphCoverage(base, firstGlyph, success);
++
++    if (LE_FAILURE(success)) {
++        return 0;
++    }
++
+     GlyphIterator tempIterator(*glyphIterator);
+ 
+     if (coverageIndex >= 0 && glyphIterator->next()) {
+diff -r 9cfb91052414 -r 150e0c3e95ce src/share/native/sun/font/layout/SinglePositioningSubtables.cpp
+--- jdk/src/share/native/sun/font/layout/SinglePositioningSubtables.cpp	Tue Jul 16 21:00:34 2013 +0400
++++ jdk/src/share/native/sun/font/layout/SinglePositioningSubtables.cpp	Mon Oct 28 20:56:09 2013 +0000
+@@ -70,6 +70,9 @@
+ {
+     LEGlyphID glyph = glyphIterator->getCurrGlyphID();
+     le_int32 coverageIndex = getGlyphCoverage(base, glyph, success);
++    if (LE_FAILURE(success)) {
++        return 0;
++    }
+ 
+     if (coverageIndex >= 0) {
+         valueRecord.adjustPosition(SWAPW(valueFormat), (const char *) this, *glyphIterator, fontInstance);
+@@ -84,6 +87,9 @@
+ {
+     LEGlyphID glyph = glyphIterator->getCurrGlyphID();
+     le_int16 coverageIndex = (le_int16) getGlyphCoverage(base, glyph, success);
++    if (LE_FAILURE(success)) {
++        return 0;
++    }
+ 
+     if (coverageIndex >= 0) {
+         valueRecordArray[0].adjustPosition(coverageIndex, SWAPW(valueFormat), (const char *) this, *glyphIterator, fontInstance);
+diff -r 9cfb91052414 -r 150e0c3e95ce src/share/native/sun/font/layout/SingleSubstitutionSubtables.cpp
+--- jdk/src/share/native/sun/font/layout/SingleSubstitutionSubtables.cpp	Tue Jul 16 21:00:34 2013 +0400
++++ jdk/src/share/native/sun/font/layout/SingleSubstitutionSubtables.cpp	Mon Oct 28 20:56:09 2013 +0000
+@@ -69,6 +69,9 @@
+ {
+     LEGlyphID glyph = glyphIterator->getCurrGlyphID();
+     le_int32 coverageIndex = getGlyphCoverage(base, glyph, success);
++    if (LE_FAILURE(success)) {
++        return 0;
++    }
+ 
+     if (coverageIndex >= 0) {
+         TTGlyphID substitute = ((TTGlyphID) LE_GET_GLYPH(glyph)) + SWAPW(deltaGlyphID);
+@@ -87,6 +90,9 @@
+ {
+     LEGlyphID glyph = glyphIterator->getCurrGlyphID();
+     le_int32 coverageIndex = getGlyphCoverage(base, glyph, success);
++    if (LE_FAILURE(success)) {
++        return 0;
++    }
+ 
+     if (coverageIndex >= 0) {
+         TTGlyphID substitute = SWAPW(substituteArray[coverageIndex]);
+diff -r 9cfb91052414 -r 150e0c3e95ce src/share/native/sun/font/layout/SunLayoutEngine.cpp
+--- jdk/src/share/native/sun/font/layout/SunLayoutEngine.cpp	Tue Jul 16 21:00:34 2013 +0400
++++ jdk/src/share/native/sun/font/layout/SunLayoutEngine.cpp	Mon Oct 28 20:56:09 2013 +0000
+@@ -203,16 +203,19 @@
+   getFloat(env, pt, x, y);
+   jboolean rtl = (typo_flags & TYPO_RTL) != 0;
+   int glyphCount = engine->layoutChars(chars, start - min, limit - start, len, rtl, x, y, success);
+-  //   fprintf(stderr, "sle nl len %d -> gc: %d\n", len, glyphCount); fflush(stderr);
++    // fprintf(stderr, "sle nl len %d -> gc: %d\n", len, glyphCount); fflush(stderr);
+ 
+   engine->getGlyphPosition(glyphCount, x, y, success);
+ 
+-  //  fprintf(stderr, "layout glyphs: %d x: %g y: %g\n", glyphCount, x, y); fflush(stderr);
+-
+-  if (putGV(env, gmask, baseIndex, gvdata, engine, glyphCount)) {
+-    // !!! hmmm, could use current value in positions array of GVData...
+-    putFloat(env, pt, x, y);
+-  }
++   // fprintf(stderr, "layout glyphs: %d x: %g y: %g\n", glyphCount, x, y); fflush(stderr);
++   if (LE_FAILURE(success)) {
++       env->SetIntField(gvdata, gvdCountFID, -1); // flag failure
++   } else {
++      if (putGV(env, gmask, baseIndex, gvdata, engine, glyphCount)) {
++        // !!! hmmm, could use current value in positions array of GVData...
++        putFloat(env, pt, x, y);
++      }
++   }
+ 
+   if (chars != buffer) {
+     free(chars);
+diff -r 9cfb91052414 -r 150e0c3e95ce test/java/awt/font/LineBreakMeasurer/AllFontsLBM.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ jdk/test/java/awt/font/LineBreakMeasurer/AllFontsLBM.java	Mon Oct 28 20:56:09 2013 +0000
+@@ -0,0 +1,78 @@
++/*
++ * Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++/*
++ * @test
++ * @bug 8012617
++ * @summary ArrayIndexOutOfBoundsException in LineBreakMeasurer
++ */
++
++import java.awt.*;
++import java.awt.image.*;
++import java.awt.font.*;
++import java.awt.geom.*;
++import java.text.*;
++import java.util.Hashtable;
++
++public class AllFontsLBM {
++
++    public static void main(String[] args) {
++        Font[] allFonts = GraphicsEnvironment.getLocalGraphicsEnvironment().getAllFonts();
++        for (int i=0;i<allFonts.length; i++) {
++           try {
++           Font f = allFonts[i].deriveFont(Font.PLAIN, 20);
++
++           if ( f.getFontName().startsWith("HiraKaku") ) {
++               continue;
++           }
++
++           System.out.println("Try : " + f.getFontName());
++           System.out.flush();
++           breakLines(f);
++           } catch (Exception e) {
++              System.out.println(allFonts[i]);
++           }
++        }
++    }
++
++     static void breakLines(Font font) {
++        AttributedString vanGogh = new AttributedString(
++        "Many people believe that Vincent van Gogh painted his best works " +
++        "during the two-year period he spent in Provence. Here is where he " +
++        "painted The Starry Night--which some consider to be his greatest " +
++        "work of all. However, as his artistic brilliance reached new " +
++        "heights in Provence, his physical and mental health plummeted. ",
++        new Hashtable());
++        vanGogh.addAttribute(TextAttribute.FONT, font);
++        BufferedImage bi = new BufferedImage(100, 100, BufferedImage.TYPE_INT_RGB);
++        Graphics2D g2d = bi.createGraphics();
++        AttributedCharacterIterator aci = vanGogh.getIterator();
++        FontRenderContext frc = new FontRenderContext(null, false, false);
++        LineBreakMeasurer lbm = new LineBreakMeasurer(aci, frc);
++        lbm.setPosition(aci.getBeginIndex());
++        while (lbm.getPosition() < aci.getEndIndex()) {
++             lbm.nextLayout(100f);
++        }
++
++    }
++}

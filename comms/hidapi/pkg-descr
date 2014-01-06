@@ -1,0 +1,6 @@
+HIDAPI is a platform independent library that allows applications to
+work with USB HID-Class devices.  While it can be used to communicate
+with standard HID devices like keyboards, mice, and joysticks, it is
+most useful when used with custom (Vendor-Defined) HID devices.
+
+WWW: http://www.signal11.us/oss/hidapi/

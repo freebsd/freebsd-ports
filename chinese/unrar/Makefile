@@ -12,5 +12,4 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-arcread.cpp \
 
 CONFLICTS=	unrar-[0-9]* unrar-iconv-[0-9]*
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -23,16 +23,4 @@ RUN_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		AnyEvent::Gearman.3 \
-		AnyEvent::Gearman::Client.3 \
-		AnyEvent::Gearman::Client::Connection.3 \
-		AnyEvent::Gearman::Connection.3 \
-		AnyEvent::Gearman::Constants.3 \
-		AnyEvent::Gearman::Job.3 \
-		AnyEvent::Gearman::Task.3 \
-		AnyEvent::Gearman::Types.3 \
-		AnyEvent::Gearman::Worker.3 \
-		AnyEvent::Gearman::Worker::Connection.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

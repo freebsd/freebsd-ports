@@ -3,6 +3,8 @@
 %%SITE_PERL%%/MIME/Charset/JA_JP.pod
 %%SITE_PERL%%/MIME/Charset/_Compat.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Charset/.packlist
+%%PERL5_MAN3%%/MIME::Charset.3.gz
+%%PERL5_MAN3%%/MIME::Charset::JA_JP.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Charset
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME
 @dirrmtry %%SITE_PERL%%/MIME/Charset

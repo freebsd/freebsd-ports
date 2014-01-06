@@ -2,6 +2,7 @@
 %%SITE_PERL%%/Template/Mustache.pod
 %%SITE_PERL%%/Template/benchmark.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Mustache/.packlist
+%%PERL5_MAN3%%/Template::Mustache.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Mustache
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
 @dirrmtry %%SITE_PERL%%/Template

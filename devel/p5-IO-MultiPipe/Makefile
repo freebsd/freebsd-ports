@@ -14,7 +14,4 @@ COMMENT=	Check for errors when running a command through multiple pipes
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		IO::MultiPipe.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

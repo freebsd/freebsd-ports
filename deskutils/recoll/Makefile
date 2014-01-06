@@ -83,7 +83,7 @@ INSTALLS_ICONS=	yes
 
 .if ${PORT_OPTIONS:MX11MON}
 USE_XORG+=	ice sm x11
-USE_FAM=	yes
+USES+=		fam
 CONFIGURE_ARGS+=--with-fam
 .endif
 

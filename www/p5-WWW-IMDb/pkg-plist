@@ -3,5 +3,8 @@
 %%SITE_PERL%%/IMDb/People.pm
 %%SITE_PERL%%/IMDb.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IMDb/.packlist
+%%PERL5_MAN3%%/IMDb.3.gz
+%%PERL5_MAN3%%/IMDb::People.3.gz
+%%PERL5_MAN3%%/IMDb::Title.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IMDb
 @dirrm %%SITE_PERL%%/IMDb

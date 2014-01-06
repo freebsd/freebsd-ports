@@ -18,7 +18,4 @@ TEST_DEPENDS=	p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MediaWiki::API.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -22,32 +22,4 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Whois::Object.3 \
-		Net::Whois::Object::AsBlock.3 \
-		Net::Whois::Object::AsSet.3 \
-		Net::Whois::Object::AutNum.3 \
-		Net::Whois::Object::Domain.3 \
-		Net::Whois::Object::FilterSet.3 \
-		Net::Whois::Object::Inet6Num.3 \
-		Net::Whois::Object::InetNum.3 \
-		Net::Whois::Object::InetRtr.3 \
-		Net::Whois::Object::Information.3 \
-		Net::Whois::Object::Irt.3 \
-		Net::Whois::Object::KeyCert.3 \
-		Net::Whois::Object::Limerick.3 \
-		Net::Whois::Object::Mntner.3 \
-		Net::Whois::Object::Organisation.3 \
-		Net::Whois::Object::PeeringSet.3 \
-		Net::Whois::Object::Person.3 \
-		Net::Whois::Object::Poem.3 \
-		Net::Whois::Object::PoeticForm.3 \
-		Net::Whois::Object::Response.3 \
-		Net::Whois::Object::Role.3 \
-		Net::Whois::Object::Route.3 \
-		Net::Whois::Object::Route6.3 \
-		Net::Whois::Object::RouteSet.3 \
-		Net::Whois::Object::RtrSet.3 \
-		Net::Whois::RIPE.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

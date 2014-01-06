@@ -17,7 +17,4 @@ RUN_DEPENDS=	p5-Paranoid>0:${PORTSDIR}/devel/p5-Paranoid \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Parse::PlainConfig.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

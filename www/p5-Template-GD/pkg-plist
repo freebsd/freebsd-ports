@@ -16,6 +16,23 @@
 %%SITE_PERL%%/Template/Plugin/GD/Text/Align.pm
 %%SITE_PERL%%/Template/Plugin/GD/Text/Wrap.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/GD/.packlist
+%%PERL5_MAN3%%/Template::Plugin::GD.3.gz
+%%PERL5_MAN3%%/Template::Plugin::GD::Constants.3.gz
+%%PERL5_MAN3%%/Template::Plugin::GD::Graph::area.3.gz
+%%PERL5_MAN3%%/Template::Plugin::GD::Graph::bars.3.gz
+%%PERL5_MAN3%%/Template::Plugin::GD::Graph::bars3d.3.gz
+%%PERL5_MAN3%%/Template::Plugin::GD::Graph::lines.3.gz
+%%PERL5_MAN3%%/Template::Plugin::GD::Graph::lines3d.3.gz
+%%PERL5_MAN3%%/Template::Plugin::GD::Graph::linespoints.3.gz
+%%PERL5_MAN3%%/Template::Plugin::GD::Graph::mixed.3.gz
+%%PERL5_MAN3%%/Template::Plugin::GD::Graph::pie.3.gz
+%%PERL5_MAN3%%/Template::Plugin::GD::Graph::pie3d.3.gz
+%%PERL5_MAN3%%/Template::Plugin::GD::Graph::points.3.gz
+%%PERL5_MAN3%%/Template::Plugin::GD::Image.3.gz
+%%PERL5_MAN3%%/Template::Plugin::GD::Polygon.3.gz
+%%PERL5_MAN3%%/Template::Plugin::GD::Text.3.gz
+%%PERL5_MAN3%%/Template::Plugin::GD::Text::Align.3.gz
+%%PERL5_MAN3%%/Template::Plugin::GD::Text::Wrap.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/GD
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
 @dirrmtry %%SITE_PERL%%/Template/Plugin/GD/Text

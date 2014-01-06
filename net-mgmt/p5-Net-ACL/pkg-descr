@@ -1,4 +1,4 @@
 This module represents a generic access-list and route-map. It uses
 the Net::ACL::Rule object to represent the rules.
 
-WWW:	http://search.cpan.org/dist/Net-ACL/
+WWW: http://search.cpan.org/dist/Net-ACL/

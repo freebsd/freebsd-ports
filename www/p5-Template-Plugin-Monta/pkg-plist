@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Monta/.packlist
 %%SITE_PERL%%/Template/Plugin/Monta.pm
+%%PERL5_MAN3%%/Template::Plugin::Monta.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Monta
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin
 @dirrmtry %%SITE_PERL%%/Template/Plugin

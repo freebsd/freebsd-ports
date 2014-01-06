@@ -34,6 +34,14 @@
 %%SITE_PERL%%/Net/IMAP/Server/DefaultAuth.pm
 %%SITE_PERL%%/Net/IMAP/Server.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IMAP/Server/.packlist
+%%PERL5_MAN3%%/Net::IMAP::Server.3.gz
+%%PERL5_MAN3%%/Net::IMAP::Server::Command.3.gz
+%%PERL5_MAN3%%/Net::IMAP::Server::Connection.3.gz
+%%PERL5_MAN3%%/Net::IMAP::Server::DefaultAuth.3.gz
+%%PERL5_MAN3%%/Net::IMAP::Server::DefaultModel.3.gz
+%%PERL5_MAN3%%/Net::IMAP::Server::Error.3.gz
+%%PERL5_MAN3%%/Net::IMAP::Server::Mailbox.3.gz
+%%PERL5_MAN3%%/Net::IMAP::Server::Message.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IMAP/Server
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/IMAP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

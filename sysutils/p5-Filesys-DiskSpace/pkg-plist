@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/DiskSpace/.packlist
 %%SITE_PERL%%/Filesys/DiskSpace.pm
+%%PERL5_MAN3%%/Filesys::DiskSpace.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/DiskSpace
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys
 @dirrm %%SITE_PERL%%/Filesys

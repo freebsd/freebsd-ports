@@ -4,6 +4,8 @@ bin/gzccrontab
 %%SITE_PERL%%/ZConf/Cron.pm
 %%SITE_PERL%%/ZConf/Cron/GUI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Cron/.packlist
+%%PERL5_MAN3%%/ZConf::Cron.3.gz
+%%PERL5_MAN3%%/ZConf::Cron::GUI.3.gz
 @dirrmtry %%SITE_PERL%%/ZConf/Cron
 @dirrmtry %%SITE_PERL%%/ZConf
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Cron

@@ -14,7 +14,4 @@ COMMENT=	Client interface to NNTP (RFC977)
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	News::NNTPClient.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -4,4 +4,4 @@ and here's some examples. The functions mostly stand alone (i.e. they
 don't need the rest of the module), so rather than creating a
 dependency in your code, just lift the parts you want).
 
-WWW:	http://search.cpan.org/dist/File-Find-Closures/
+WWW: http://search.cpan.org/dist/File-Find-Closures/

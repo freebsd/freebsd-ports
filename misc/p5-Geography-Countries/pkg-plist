@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Geography/Countries.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geography/Countries/.packlist
+%%PERL5_MAN3%%/Geography::Countries.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geography/Countries
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geography
 @dirrmtry %%SITE_PERL%%/Geography

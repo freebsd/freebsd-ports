@@ -23,6 +23,7 @@ bin/cif
 %%SITE_PERL%%/CIF/Client/Plugin/Table.pm
 %%SITE_PERL%%/CIF/Client/Support.pm
 %%SITE_PERL%%/mach/auto/CIF/Client/.packlist
+%%PERL5_MAN3%%/CIF::Client.3.gz
 @dirrm %%SITE_PERL%%/mach/auto/CIF/Client
 @dirrm %%SITE_PERL%%/mach/auto/CIF
 @dirrm %%SITE_PERL%%/CIF/Client/Plugin/Iodef

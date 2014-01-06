@@ -1,0 +1,42 @@
+# HG changeset patch
+# User coffeys
+# Date 1370453984 -3600
+#      Wed Jun 05 18:39:44 2013 +0100
+# Node ID 35c5b3f404aac29ec5cccaeb32106af47546b6db
+# Parent  20c88fd14959c6a4df2e0f36bd759b56efa6f2cb
+8015965: (process) Typo in name of property to allow ambiguous commands
+Reviewed-by: alanb
+
+diff -r 20c88fd14959 -r 35c5b3f404aa src/windows/classes/java/lang/ProcessImpl.java
+--- jdk/src/windows/classes/java/lang/ProcessImpl.java	Tue Oct 29 01:07:01 2013 +0000
++++ jdk/src/windows/classes/java/lang/ProcessImpl.java	Wed Jun 05 18:39:44 2013 +0100
+@@ -218,13 +218,13 @@
+     {
+         String cmdstr;
+         SecurityManager security = System.getSecurityManager();
+-        boolean allowAmbigousCommands = false;
++        boolean allowAmbiguousCommands = false;
+         if (security == null) {
+-            String value = System.getProperty("jdk.lang.Process.allowAmbigousCommands");
++            String value = System.getProperty("jdk.lang.Process.allowAmbiguousCommands");
+             if (value != null)
+-                allowAmbigousCommands = !"false".equalsIgnoreCase(value);
++                allowAmbiguousCommands = !"false".equalsIgnoreCase(value);
+         }
+-        if (allowAmbigousCommands) {
++        if (allowAmbiguousCommands) {
+             // Legacy mode.
+ 
+             // Normalize path if possible.
+diff -r 20c88fd14959 -r 35c5b3f404aa test/java/lang/Runtime/exec/ExecCommand.java
+--- jdk/test/java/lang/Runtime/exec/ExecCommand.java	Tue Oct 29 01:07:01 2013 +0000
++++ jdk/test/java/lang/Runtime/exec/ExecCommand.java	Wed Jun 05 18:39:44 2013 +0100
+@@ -129,7 +129,7 @@
+         for (int k = 0; k < 3; ++k) {
+             switch (k) {
+             case 1:
+-                System.setProperty("jdk.lang.Process.allowAmbigousCommands", "");
++                System.setProperty("jdk.lang.Process.allowAmbiguousCommands", "");
+                 break;
+             case 2:
+                 System.setSecurityManager( new SecurityMan() );

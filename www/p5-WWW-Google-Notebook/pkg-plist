@@ -2,6 +2,9 @@
 %%SITE_PERL%%/WWW/Google/Notebook/Note.pm
 %%SITE_PERL%%/WWW/Google/Notebook/Notebook.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Google/Notebook/.packlist
+%%PERL5_MAN3%%/WWW::Google::Notebook.3.gz
+%%PERL5_MAN3%%/WWW::Google::Notebook::Note.3.gz
+%%PERL5_MAN3%%/WWW::Google::Notebook::Notebook.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Google/Notebook
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Google
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW

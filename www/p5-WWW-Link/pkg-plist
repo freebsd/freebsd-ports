@@ -23,6 +23,28 @@
 %%SITE_PERL%%/WWW/Link/Tester/Complex.pm.extra
 %%SITE_PERL%%/WWW/Link/Tester/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW-Link/.packlist
+%%PERL5_MAN3%%/WWW::Link.3.gz
+%%PERL5_MAN3%%/WWW::Link::Change.3.gz
+%%PERL5_MAN3%%/WWW::Link::Merge.3.gz
+%%PERL5_MAN3%%/WWW::Link::Redirect.3.gz
+%%PERL5_MAN3%%/WWW::Link::Repair.3.gz
+%%PERL5_MAN3%%/WWW::Link::Repair::ResourceMapper.3.gz
+%%PERL5_MAN3%%/WWW::Link::Repair::Substitutor.3.gz
+%%PERL5_MAN3%%/WWW::Link::Reporter.3.gz
+%%PERL5_MAN3%%/WWW::Link::Reporter::Compile.3.gz
+%%PERL5_MAN3%%/WWW::Link::Reporter::HTML.3.gz
+%%PERL5_MAN3%%/WWW::Link::Reporter::LongList.3.gz
+%%PERL5_MAN3%%/WWW::Link::Reporter::RepairForm.3.gz
+%%PERL5_MAN3%%/WWW::Link::Reporter::Text.3.gz
+%%PERL5_MAN3%%/WWW::Link::Reporter::URI.3.gz
+%%PERL5_MAN3%%/WWW::Link::Selector.3.gz
+%%PERL5_MAN3%%/WWW::Link::Test.3.gz
+%%PERL5_MAN3%%/WWW::Link::Test::Validate.3.gz
+%%PERL5_MAN3%%/WWW::Link::Tester.3.gz
+%%PERL5_MAN3%%/WWW::Link::Tester::Adaptive.3.gz
+%%PERL5_MAN3%%/WWW::Link::Tester::Base.3.gz
+%%PERL5_MAN3%%/WWW::Link::Tester::Complex.3.gz
+%%PERL5_MAN3%%/WWW::Link::Tester::Simple.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW-Link
 @dirrm %%SITE_PERL%%/WWW/Link/Tester
 @dirrm %%SITE_PERL%%/WWW/Link/Test

@@ -2,49 +2,42 @@
 # $FreeBSD$
 
 PORTNAME=	rhtvision
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.2.1.1
 CATEGORIES=	devel
-MASTER_SITES=	SF/tvision/UNIX/${PORTVERSION}%20CVS20070425%20Source%20and%20Debian%204.0/
-DISTNAME=	rhtvision-${PORTVERSION}-3.src
+MASTER_SITES=	SF/tvision/UNIX/${PORTVERSION:R}%20CVS20100714%20Source%20and%20Debian%205.0
+DISTNAME=	${PORTNAME}_${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complete C++ Text User Interface (TUI) library
 
+OPTIONS_DEFINE=	NLS X11
+OPTIONS_SUB=	yes
+
 WRKSRC=		${WRKDIR}/tvision
-USES=		perl5
-USE_GMAKE=	yes
-USE_LDCONFIG=	yes
+
+USES=		gmake perl5 shebangfix
+SHEBANG_FILES=	config.pl confignt.pl conflib.pl linux/compress
+USE_GCC=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${STAGEDIR}${PREFIX} \
+		--real-prefix=${PREFIX} \
+		--no-libs-here
+USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11 xrender xmu sm xt ice
-PLIST_SUB+=	X11_ONLY=""
 CFLAGS+=	-I${LOCALBASE}/include
-.else
-PLIST_SUB+=	X11_ONLY="@comment "
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-pre-configure:
-	${ECHO} "HAVE_X11 => no" > ${WRKSRC}/configure.cache
-.endif
+PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
-post-patch:
-.for f in config.pl confignt.pl conflib.pl linux/compress Makefile.in
-	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL5},g' \
-		-e 's,/usr/local,${LOCALBASE},g' \
-		-e 's,/usr/X11R6,${LOCALBASE},g' \
-		-e 's,\(soname.*\)Version,\1VersionMajor,g' \
-		-e 's/\tmake/\t\\$$(MAKE)/g' \
-		-e 's/	make/	$$(MAKE)/g' \
-		${WRKSRC}/${f}
-.endfor
+NLS_USES=		gettext
+NLS_CONFIGURE_OFF=	--no-intl
+
+X11_USE=		XORG=x11,xmu
+X11_CONFIGURE_ON=	--x-include=${LOCALBASE}/include \
+			--x-lib=${LOCALBASE}/lib
+X11_CONFIGURE_OFF=	--X11lib=no
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rhtv-config
 
 .include <bsd.port.mk>

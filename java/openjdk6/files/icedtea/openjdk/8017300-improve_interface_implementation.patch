@@ -1,0 +1,129 @@
+# HG changeset patch
+# User sundar
+# Date 1382737389 -3600
+#      Fri Oct 25 22:43:09 2013 +0100
+# Node ID de490a43861e05f3da489db136687b1dc6f1949a
+# Parent  0b0490779c5b643b7a3e90ac6870c1ee4bd5a155
+8017300: Improve Interface Implementation
+Reviewed-by: ahgross, jlaskey, mchung
+
+diff -r 0b0490779c5b -r de490a43861e src/share/classes/com/sun/script/util/InterfaceImplementor.java
+--- jdk/src/share/classes/com/sun/script/util/InterfaceImplementor.java	Tue Jul 16 10:58:46 2013 +0100
++++ jdk/src/share/classes/com/sun/script/util/InterfaceImplementor.java	Fri Oct 25 22:43:09 2013 +0100
+@@ -28,6 +28,7 @@
+ import javax.script.*;
+ import java.lang.reflect.*;
+ import java.security.*;
++import sun.reflect.misc.ReflectUtil;
+ 
+ /*
+  * java.lang.reflect.Proxy based interface implementor. This is meant
+@@ -82,8 +83,18 @@
+         if (iface == null || !iface.isInterface()) {
+             throw new IllegalArgumentException("interface Class expected");
+         }
++
++        if (System.getSecurityManager() != null &&
++           !Modifier.isPublic(iface.getModifiers())) {
++            throw new SecurityException("attempt to implement non-public interface");
++        }
++
++        // make sure restricted package interfaces are not attempted.
++        ReflectUtil.checkPackageAccess(iface.getName());
++
+         AccessControlContext accCtxt = AccessController.getContext();
+-        return iface.cast(Proxy.newProxyInstance(iface.getClassLoader(),
++        return iface.cast(Proxy.newProxyInstance(
++            getLoaderForProxy(iface),
+             new Class[]{iface},
+             new InterfaceImplementorInvocationHandler(thiz, accCtxt)));
+     }
+@@ -101,4 +112,20 @@
+         // default is identity conversion
+         return args;
+     }
++
++    // get appropriate ClassLoader for generated Proxy class
++    private static ClassLoader getLoaderForProxy(Class<?> iface) {
++        ClassLoader loader = iface.getClassLoader();
++
++        // if bootstrap class, try TCCL
++        if (loader == null) {
++            loader = Thread.currentThread().getContextClassLoader();
++        }
++
++        // if TCCL is also null, try System class loader
++        if (loader == null) {
++            loader = ClassLoader.getSystemClassLoader();
++        }
++        return loader;
++    }
+ }
+diff -r 0b0490779c5b -r de490a43861e src/share/lib/security/java.security-linux
+--- jdk/src/share/lib/security/java.security-linux	Tue Jul 16 10:58:46 2013 +0100
++++ jdk/src/share/lib/security/java.security-linux	Fri Oct 25 22:43:09 2013 +0100
+@@ -133,6 +133,7 @@
+                com.sun.istack.internal.,\
+                com.sun.jmx.,\
+                com.sun.proxy.,\
++               com.sun.script.,\
+                com.sun.org.apache.bcel.internal.,\
+                com.sun.org.apache.regexp.internal.,\
+                com.sun.org.apache.xerces.internal.,\
+@@ -169,6 +170,7 @@
+                    com.sun.istack.internal.,\
+                    com.sun.jmx.,\
+                    com.sun.proxy.,\
++                   com.sun.script.,\
+                    com.sun.org.apache.bcel.internal.,\
+                    com.sun.org.apache.regexp.internal.,\
+                    com.sun.org.apache.xerces.internal.,\
+diff -r 0b0490779c5b -r de490a43861e src/share/lib/security/java.security-solaris
+--- jdk/src/share/lib/security/java.security-solaris	Tue Jul 16 10:58:46 2013 +0100
++++ jdk/src/share/lib/security/java.security-solaris	Fri Oct 25 22:43:09 2013 +0100
+@@ -134,6 +134,7 @@
+                com.sun.istack.internal.,\
+                com.sun.jmx.,\
+                com.sun.proxy.,\
++               com.sun.script.,\
+                com.sun.org.apache.bcel.internal.,\
+                com.sun.org.apache.regexp.internal.,\
+                com.sun.org.apache.xerces.internal.,\
+@@ -171,6 +172,7 @@
+                    com.sun.istack.internal.,\
+                    com.sun.jmx.,\
+                    com.sun.proxy.,\
++                   com.sun.script.,\
+                    com.sun.org.apache.bcel.internal.,\
+                    com.sun.org.apache.regexp.internal.,\
+                    com.sun.org.apache.xerces.internal.,\
+diff -r 0b0490779c5b -r de490a43861e src/share/lib/security/java.security-windows
+--- jdk/src/share/lib/security/java.security-windows	Tue Jul 16 10:58:46 2013 +0100
++++ jdk/src/share/lib/security/java.security-windows	Fri Oct 25 22:43:09 2013 +0100
+@@ -134,6 +134,7 @@
+                com.sun.istack.internal.,\
+                com.sun.jmx.,\
+                com.sun.proxy.,\
++               com.sun.script.,\
+                com.sun.org.apache.bcel.internal.,\
+                com.sun.org.apache.regexp.internal.,\
+                com.sun.org.apache.xerces.internal.,\
+@@ -172,6 +173,7 @@
+                    com.sun.istack.internal.,\
+                    com.sun.jmx.,\
+                    com.sun.proxy.,\
++                   com.sun.script.,\
+                    com.sun.org.apache.bcel.internal.,\
+                    com.sun.org.apache.regexp.internal.,\
+                    com.sun.org.apache.xerces.internal.,\
+diff -r 0b0490779c5b -r de490a43861e test/java/lang/SecurityManager/CheckPackageAccess.java
+--- jdk/test/java/lang/SecurityManager/CheckPackageAccess.java	Tue Jul 16 10:58:46 2013 +0100
++++ jdk/test/java/lang/SecurityManager/CheckPackageAccess.java	Fri Oct 25 22:43:09 2013 +0100
+@@ -74,6 +74,7 @@
+         "com.sun.org.apache.xml.internal.serializer.utils.",
+         "com.sun.org.apache.xml.internal.utils.",
+         "com.sun.org.glassfish.",
++        "com.sun.script.",
+         "oracle.jrockit.jfr.",
+         "org.jcp.xml.dsig.internal.",
+     };

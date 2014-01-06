@@ -16,7 +16,6 @@ LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 USES=		gmake pkgconfig
-NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

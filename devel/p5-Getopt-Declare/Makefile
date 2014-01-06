@@ -13,7 +13,4 @@ COMMENT=	Declaratively Expressed Command-Line Arguments via Regular Expressions
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Getopt::Declare.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

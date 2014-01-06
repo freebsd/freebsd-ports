@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/IPV4/Range/Parse/.packlist
 %%SITE_PERL%%/Data/IPV4/Range/Parse.pm
 %%SITE_PERL%%/Data/IPV4/Range/Parse.pod
+%%PERL5_MAN3%%/Data::IPV4::Range::Parse.3.gz
 @dirrmtry %%SITE_PERL%%/Data/IPV4/Range
 @dirrmtry %%SITE_PERL%%/Data/IPV4
 @dirrmtry %%SITE_PERL%%/Data

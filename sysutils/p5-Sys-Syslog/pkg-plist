@@ -2,6 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Syslog/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Syslog/Syslog.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Syslog/Syslog.so
+%%PERL5_MAN3%%/Sys::Syslog.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Syslog
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sys

@@ -10,6 +10,13 @@
 %%SITE_PERL%%/Net/Google/DataAPI/Role/Service.pm
 %%SITE_PERL%%/Net/Google/DataAPI/Types.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google/DataAPI/.packlist
+%%PERL5_MAN3%%/Net::Google::DataAPI.3.gz
+%%PERL5_MAN3%%/Net::Google::DataAPI::Auth::ClientLogin::Multiple.3.gz
+%%PERL5_MAN3%%/Net::Google::DataAPI::Auth::OAuth.3.gz
+%%PERL5_MAN3%%/Net::Google::DataAPI::Auth::OAuth2.3.gz
+%%PERL5_MAN3%%/Net::Google::DataAPI::Role::Entry.3.gz
+%%PERL5_MAN3%%/Net::Google::DataAPI::Role::HasContent.3.gz
+%%PERL5_MAN3%%/Net::Google::DataAPI::Role::Service.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google/DataAPI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

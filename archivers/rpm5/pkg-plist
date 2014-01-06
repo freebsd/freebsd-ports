@@ -3,7 +3,6 @@ bin/rpm
 bin/rpm2cpio
 bin/rpmbuild
 bin/rpmconstant
-
 include/rpm/db.h
 include/rpm/mire.h
 include/rpm/pkgio.h
@@ -35,7 +34,6 @@ include/rpm/rpmtypes.h
 include/rpm/rpmversion.h
 include/rpm/rpmzlog.h
 include/rpm/yarn.h
-
 lib/librpm-5.2.so
 lib/librpm.a
 lib/librpm.la
@@ -135,9 +133,7 @@ lib/rpm/u_pkg.sh
 lib/rpm/vcheck
 lib/rpm/vpkg-provides.sh
 lib/rpm/vpkg-provides2.sh
-
 libdata/pkgconfig/rpm.pc
-
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RPM.pm
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RPM/Constant.pm
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/RPM/Dependencies.pm
@@ -150,11 +146,19 @@ libdata/pkgconfig/rpm.pc
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RPM/.packlist
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RPM/RPM.bs
 %%PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/RPM/RPM.so
+%%PERL%%%%PERL5_MAN3%%/RPM.3.gz
+%%PERL%%%%PERL5_MAN3%%/RPM::Constant.3.gz
+%%PERL%%%%PERL5_MAN3%%/RPM::Dependencies.3.gz
+%%PERL%%%%PERL5_MAN3%%/RPM::Files.3.gz
+%%PERL%%%%PERL5_MAN3%%/RPM::Header.3.gz
+%%PERL%%%%PERL5_MAN3%%/RPM::PackageIterator.3.gz
+%%PERL%%%%PERL5_MAN3%%/RPM::Problems.3.gz
+%%PERL%%%%PERL5_MAN3%%/RPM::Spec.3.gz
+%%PERL%%%%PERL5_MAN3%%/RPM::Transaction.3.gz
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmmodule.a
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmmodule.la
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpmmodule.so
-
 share/locale/cs/LC_MESSAGES/rpm.mo
 share/locale/da/LC_MESSAGES/rpm.mo
 share/locale/de/LC_MESSAGES/rpm.mo
@@ -181,26 +185,33 @@ share/locale/tr/LC_MESSAGES/rpm.mo
 share/locale/uk/LC_MESSAGES/rpm.mo
 share/locale/vi/LC_MESSAGES/rpm.mo
 share/locale/zh_TW/LC_MESSAGES/rpm.mo
-
-man/fr/man8/rpm.8
-man/ja/man8/rpm.8
-man/ja/man8/rpm2cpio.8
-man/ja/man8/rpmbuild.8
-man/ja/man8/rpmcache.8
-man/ja/man8/rpmgraph.8
-man/ko/man8/rpm.8
-man/ko/man8/rpm2cpio.8
-man/pl/man1/gendiff.1
-man/pl/man8/rpm.8
-man/pl/man8/rpm2cpio.8
-man/pl/man8/rpmbuild.8
-man/pl/man8/rpmcache.8
-man/pl/man8/rpmdeps.8
-man/pl/man8/rpmgraph.8
-man/ru/man8/rpm.8
-man/ru/man8/rpm2cpio.8
-man/sk/man8/rpm.8
-
+man/fr/man8/rpm.8.gz
+man/ja/man8/rpm.8.gz
+man/ja/man8/rpm2cpio.8.gz
+man/ja/man8/rpmbuild.8.gz
+man/ja/man8/rpmcache.8.gz
+man/ja/man8/rpmgraph.8.gz
+man/ko/man8/rpm.8.gz
+man/ko/man8/rpm2cpio.8.gz
+man/man1/gendiff.1.gz
+man/man1/rpmgrep.1.gz
+man/man8/rpm.8.gz
+man/man8/rpm2cpio.8.gz
+man/man8/rpmbuild.8.gz
+man/man8/rpmcache.8.gz
+man/man8/rpmconstant.8.gz
+man/man8/rpmdeps.8.gz
+man/man8/rpmmtree.8.gz
+man/pl/man1/gendiff.1.gz
+man/pl/man8/rpm.8.gz
+man/pl/man8/rpm2cpio.8.gz
+man/pl/man8/rpmbuild.8.gz
+man/pl/man8/rpmcache.8.gz
+man/pl/man8/rpmdeps.8.gz
+man/pl/man8/rpmgraph.8.gz
+man/ru/man8/rpm.8.gz
+man/ru/man8/rpm2cpio.8.gz
+man/sk/man8/rpm.8.gz
 @dirrmtry man/fr/man8
 @dirrmtry man/ko/man8
 @dirrmtry man/pl/man1
@@ -212,40 +223,12 @@ man/sk/man8/rpm.8
 @dirrmtry man/pl
 @dirrmtry man/ru
 @dirrmtry man/sk
-
 @dirrm lib/rpm/bin
 @dirrm lib/rpm/helpers
 @dirrm lib/rpm/qf
 @dirrm lib/rpm
 %%PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/RPM
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/rpm
-@dirrmtry lib/pkgconfig
 @dirrm include/rpm
-@dirrmtry src/rpm/SRPMS
-@dirrmtry src/rpm/SPECS
-@dirrmtry src/rpm/SOURCES
-@dirrmtry src/rpm/RPMS/x86_64
-@dirrmtry src/rpm/RPMS/sparcv9
-@dirrmtry src/rpm/RPMS/sparcv8
-@dirrmtry src/rpm/RPMS/sparc64
-@dirrmtry src/rpm/RPMS/sparc
-@dirrmtry src/rpm/RPMS/ppc64
-@dirrmtry src/rpm/RPMS/ppc
-@dirrmtry src/rpm/RPMS/pentium4
-@dirrmtry src/rpm/RPMS/pentium3
-@dirrmtry src/rpm/RPMS/noarch
-@dirrmtry src/rpm/RPMS/ia64
-@dirrmtry src/rpm/RPMS/i686
-@dirrmtry src/rpm/RPMS/i586
-@dirrmtry src/rpm/RPMS/i486
-@dirrmtry src/rpm/RPMS/i386
-@dirrmtry src/rpm/RPMS/athlon
-@dirrmtry src/rpm/RPMS/amd64
-@dirrmtry src/rpm/RPMS/alphaev6
-@dirrmtry src/rpm/RPMS/alpha
-@dirrmtry src/rpm/RPMS
-@dirrmtry src/rpm/BUILD
-@dirrmtry src/rpm
-@dirrmtry src
 @dirrmtry var/spool/repackage
 @dirrmtry var/local/lib/rpm

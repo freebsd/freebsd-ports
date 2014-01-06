@@ -54,6 +54,7 @@
 %%SITE_PERL%%/OurNet/BBSAgent/ufo.bbs
 %%SITE_PERL%%/OurNet/BBSAgent/wretch.bbs
 %%SITE_PERL%%/OurNet/BBSAgent/zoo.bbs
+%%PERL5_MAN3%%/OurNet::BBSAgent.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OurNet/BBSAgent
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OurNet
 @dirrmtry %%SITE_PERL%%/OurNet/BBSAgent/firebird2

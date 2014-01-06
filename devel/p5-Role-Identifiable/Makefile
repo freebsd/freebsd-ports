@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:RJBS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	geraud@gcu.info
-COMMENT=	A thing with a list of tags
+COMMENT=	Thing with a list of tags
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
@@ -20,8 +20,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Role::Identifiable::HasIdent.3 \
-	Role::Identifiable::HasTags.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

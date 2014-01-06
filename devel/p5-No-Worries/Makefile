@@ -18,20 +18,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	No::Worries.3 \
-	No::Worries::DN.3 \
-	No::Worries::Date.3 \
-	No::Worries::Die.3 \
-	No::Worries::Dir.3 \
-	No::Worries::Export.3 \
-	No::Worries::File.3 \
-	No::Worries::Log.3 \
-	No::Worries::PidFile.3 \
-	No::Worries::Proc.3 \
-	No::Worries::Stat.3 \
-	No::Worries::String.3 \
-	No::Worries::Syslog.3 \
-	No::Worries::Warn.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

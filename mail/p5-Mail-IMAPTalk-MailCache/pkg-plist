@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Mail/IMAPTalk/MailCache.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/IMAPTalk/MailCache/.packlist
+%%PERL5_MAN3%%/Mail::IMAPTalk::MailCache.3.gz
 @dirrmtry %%SITE_PERL%%/Mail/IMAPTalk
 @dirrmtry %%SITE_PERL%%/Mail
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/IMAPTalk/MailCache

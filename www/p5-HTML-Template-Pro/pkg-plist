@@ -5,6 +5,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/HTML/Template/Pro.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/HTML/Template/Pro/WrapAssociate.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/HTML/Template/SYNTAX.pod
+%%PERL5_MAN3%%/HTML::Template::PerlInterface.3.gz
+%%PERL5_MAN3%%/HTML::Template::Pro.3.gz
+%%PERL5_MAN3%%/HTML::Template::SYNTAX.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/HTML/Template/Pro
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTML/Template
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/HTML

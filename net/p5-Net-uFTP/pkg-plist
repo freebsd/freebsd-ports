@@ -2,6 +2,7 @@
 %%SITE_PERL%%/Net/uFTP/FTP.pm
 %%SITE_PERL%%/Net/uFTP/SFTP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/uFTP/.packlist
+%%PERL5_MAN3%%/Net::uFTP.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/uFTP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/uFTP

@@ -21,7 +21,4 @@ RUN_DEPENDS=	p5-File-ChangeNotify>0:${PORTSDIR}/devel/p5-File-ChangeNotify \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		File::Tail::Dir.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

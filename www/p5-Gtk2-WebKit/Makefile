@@ -27,25 +27,4 @@ NO_PACKAGE=	Man page creation hangs on some systems for unknown reasons
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Gtk2::WebKit.3 \
-		Gtk2::WebKit::Download.3 \
-		Gtk2::WebKit::GeolocationPolicyDecision.3 \
-		Gtk2::WebKit::NetworkRequest.3 \
-		Gtk2::WebKit::NetworkResponse.3 \
-		Gtk2::WebKit::SecurityOrigin.3 \
-		Gtk2::WebKit::WebBackForwardList.3 \
-		Gtk2::WebKit::WebDataSource.3 \
-		Gtk2::WebKit::WebDatabase.3 \
-		Gtk2::WebKit::WebFrame.3 \
-		Gtk2::WebKit::WebHistoryItem.3 \
-		Gtk2::WebKit::WebInspector.3 \
-		Gtk2::WebKit::WebNavigationAction.3 \
-		Gtk2::WebKit::WebPolicyDecision.3 \
-		Gtk2::WebKit::WebResource.3 \
-		Gtk2::WebKit::WebSettings.3 \
-		Gtk2::WebKit::WebView.3 \
-		Gtk2::WebKit::WebWindowFeatures.3 \
-		Gtk2::WebKit::index.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

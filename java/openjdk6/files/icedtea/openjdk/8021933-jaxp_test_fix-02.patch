@@ -1,0 +1,33 @@
+# HG changeset patch
+# User joehw
+# Date 1375252858 25200
+#      Tue Jul 30 23:40:58 2013 -0700
+# Node ID dce0c261a1837e664e4d8739b97e8758a1fa0de2
+# Parent  674ada27a93f4ecd359617d5a27cb2dfe52c44b4
+8021933: Add extra check for fix # JDK-8014530
+Reviewed-by: alanb, lancea
+
+diff -r 674ada27a93f -r dce0c261a183 drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/impl/xs/traversers/XSAttributeChecker.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/impl/xs/traversers/XSAttributeChecker.java	Tue Jul 30 03:02:14 2013 -0700
++++ jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/impl/xs/traversers/XSAttributeChecker.java	Tue Jul 30 23:40:58 2013 -0700
+@@ -1237,7 +1237,7 @@
+                     //Revisit :: IMO this is not right place to check
+                     // maxOccurNodeLimit.
+                     int maxOccurNodeLimit = fSchemaHandler.fSecureProcessing.getLimit(XMLSecurityManager.Limit.MAX_OCCUR_NODE_LIMIT);
+-                    if (max > maxOccurNodeLimit) {
++                    if (max > maxOccurNodeLimit && !fSchemaHandler.fSecureProcessing.isNoLimit(maxOccurNodeLimit)) {
+                         reportSchemaFatalError("maxOccurLimit", new Object[] {new Integer(maxOccurNodeLimit)}, element);
+                     
+                         // reset max values in case processing continues on error
+diff -r 674ada27a93f -r dce0c261a183 drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/jaxp/validation/XMLSchemaFactory.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/jaxp/validation/XMLSchemaFactory.java	Tue Jul 30 03:02:14 2013 -0700
++++ jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/jaxp/validation/XMLSchemaFactory.java	Tue Jul 30 23:40:58 2013 -0700
+@@ -257,7 +257,7 @@
+                     "FeatureNameNull", null));
+         }
+         if (name.equals(XMLConstants.FEATURE_SECURE_PROCESSING)) {
+-            return (fSecurityManager != null);
++            return (fSecurityManager !=null && fSecurityManager.isSecureProcessing());
+         }
+         try {
+             return fXMLSchemaLoader.getFeature(name);

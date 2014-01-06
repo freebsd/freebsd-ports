@@ -1,12 +1,13 @@
 # Created by: kirk@strauser.com
 # $FreeBSD$
 
-PORTNAME=	bash-completion
+PORTNAME=		bash-completion
 PORTVERSION=	2.1
 PORTREVISION=	1
-PORTEPOCH=	1
-CATEGORIES=	shells
-MASTER_SITES=	http://bash-completion.alioth.debian.org/files/
+PORTEPOCH=		1
+CATEGORIES=		shells
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	adamw
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Programmable completion library for Bash
@@ -16,11 +17,10 @@ BASH_DEVEL_DESC=	Use shells/bash-devel instead of shells/bash
 
 CONFLICTS=	bash-completion-classic-[0-9]*
 
+USE_BZIP2=		yes
 USE_AUTOTOOLS=	aclocal automake
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-
-USE_BZIP2=	yes
+USES=			gmake
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	RUNFILE=${DATADIR}/bash_completion.sh
@@ -48,9 +48,9 @@ post-configure:
 		${WRKSRC}/completions/*
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.	for i in README doc/bash_completion.txt doc/bashrc doc/inputrc
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in README doc/bash_completion.txt doc/bashrc doc/inputrc
 		${INSTALL_DATA} ${WRKSRC}/$i ${STAGEDIR}${DOCSDIR}
-.	endfor
+.endfor
 
 .include <bsd.port.mk>

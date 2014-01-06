@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	geraud@gcu.info
-COMMENT=	An MVP config reader for .ini files
+COMMENT=	MVP config reader for .ini files
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
@@ -20,7 +20,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Config::MVP::Reader::INI.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

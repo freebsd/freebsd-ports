@@ -13,7 +13,4 @@ COMMENT=	Try every conceivable way to get full hostname
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Sys::Hostname::Long.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

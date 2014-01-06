@@ -17,13 +17,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Email::Abstract.3 \
-		Email::Abstract::EmailMIME.3 \
-		Email::Abstract::EmailSimple.3 \
-		Email::Abstract::MIMEEntity.3 \
-		Email::Abstract::MailInternet.3 \
-		Email::Abstract::MailMessage.3 \
-		Email::Abstract::Plugin.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -2,37 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	el
-PORTVERSION=	192
-PORTREVISION=	3
+PORTVERSION=	193
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
-		${MASTER_SITE_LOCAL:S,$,acm/${PORTNAME}/,}
-DIST_SUBDIR=	${PORTNAME}
+MASTER_SITES=	LOCAL/rene \
+		ftp://rene-ladan.nl/pub/distfiles/
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Eternal Lands is a free 3D MMORPG
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		vorbis.4:${PORTSDIR}/audio/libvorbis \
-		cal3d.12:${PORTSDIR}/graphics/cal3d
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libcal3d.so:${PORTSDIR}/graphics/cal3d
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/el.ini:${PORTSDIR}/games/el-data
 
-PROJECTHOST=	bsdistfiles
-USE_BZIP2=	yes
+USE_XZ=		yes
 USES=		gmake openal:al,alut
 USE_GNOME=	libxml2
 USE_SDL=	sdl net image
 USE_GL=		yes
+LDFLAGS+=	-L${LOCALBASE}/lib -lX11
 
 ALL_TARGET=	el.bin
 MAKEFILE=	Makefile.bsd
 PLIST=		${WRKDIR}/pkg-plist
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
+BROKEN=		Does not build on ${ARCH}
 .endif
 
 pre-install:
@@ -45,8 +42,8 @@ pre-install:
 	@${ECHO} "@dirrmtry %%DATADIR%%" >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/el ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/el.bin ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/el ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/el.bin ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.post.mk>

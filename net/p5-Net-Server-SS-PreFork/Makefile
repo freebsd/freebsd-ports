@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	catone@cpan.org
-COMMENT=	A hot-deployable variant of Net::Server::PreFork
+COMMENT=	Hot-deployable variant of Net::Server::PreFork
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
@@ -25,7 +25,4 @@ TEST_DEPENDS=	p5-HTTP-Server-Simple>0:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Server::SS::PreFork.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

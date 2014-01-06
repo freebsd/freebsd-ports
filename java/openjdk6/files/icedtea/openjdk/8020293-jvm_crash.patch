@@ -1,0 +1,40 @@
+# HG changeset patch
+# User jchen
+# Date 1374527199 25200
+#      Mon Jul 22 14:06:39 2013 -0700
+# Node ID 2adb9f71f6c0723acf40877f059d276557b71034
+# Parent  150e0c3e95ce6869f8e7b42c6d8683817433e124
+8020293: JVM crash
+Reviewed-by: prr, jgodinez
+
+diff -r 150e0c3e95ce -r 2adb9f71f6c0 src/share/classes/sun/font/GlyphLayout.java
+--- jdk/src/share/classes/sun/font/GlyphLayout.java	Mon Oct 28 20:56:09 2013 +0000
++++ jdk/src/share/classes/sun/font/GlyphLayout.java	Mon Jul 22 14:06:39 2013 -0700
+@@ -468,9 +468,10 @@
+                         _gvdata.grow();
+                     }
+                 }
+-                if (_gvdata._count < 0) {
+-                    break;
+-                }
++            }
++            // Break out of the outer for loop if layout fails.
++            if (_gvdata._count < 0) {
++                break;
+             }
+         }
+ 
+diff -r 150e0c3e95ce -r 2adb9f71f6c0 src/share/native/sun/font/layout/SunLayoutEngine.cpp
+--- jdk/src/share/native/sun/font/layout/SunLayoutEngine.cpp	Mon Oct 28 20:56:09 2013 +0000
++++ jdk/src/share/native/sun/font/layout/SunLayoutEngine.cpp	Mon Jul 22 14:06:39 2013 -0700
+@@ -104,6 +104,10 @@
+ 
+ int putGV(JNIEnv* env, jint gmask, jint baseIndex, jobject gvdata, const LayoutEngine* engine, int glyphCount) {
+     int count = env->GetIntField(gvdata, gvdCountFID);
++    if (count < 0) {
++      JNU_ThrowInternalError(env, "count negative");
++      return 0;
++    }
+ 
+     jarray glyphArray = (jarray)env->GetObjectField(gvdata, gvdGlyphsFID);
+     if (IS_NULL(glyphArray)) {

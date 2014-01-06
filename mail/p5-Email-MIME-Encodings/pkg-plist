@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Email/MIME/Encodings.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/Encodings/.packlist
+%%PERL5_MAN3%%/Email::MIME::Encodings.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/Encodings
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email

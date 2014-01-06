@@ -8,6 +8,15 @@
 %%SITE_PERL%%/Plack/Middleware/Proxy/Connect.pm
 %%SITE_PERL%%/Plack/Middleware/Proxy/LoadBalancer.pm
 %%SITE_PERL%%/Plack/Middleware/Proxy/RewriteLocation.pm
+%%PERL5_MAN3%%/Plack::App::Proxy.3.gz
+%%PERL5_MAN3%%/Plack::App::Proxy::Backend.3.gz
+%%PERL5_MAN3%%/Plack::App::Proxy::Backend::AnyEvent::HTTP.3.gz
+%%PERL5_MAN3%%/Plack::App::Proxy::Backend::LWP.3.gz
+%%PERL5_MAN3%%/Plack::App::Proxy::Test.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::Proxy::AddVia.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::Proxy::Connect.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::Proxy::LoadBalancer.3.gz
+%%PERL5_MAN3%%/Plack::Middleware::Proxy::RewriteLocation.3.gz
 @dirrmtry %%SITE_PERL%%/Plack/Middleware/Proxy
 @dirrm %%SITE_PERL%%/Plack/App/Proxy/Backend/AnyEvent
 @dirrm %%SITE_PERL%%/Plack/App/Proxy/Backend

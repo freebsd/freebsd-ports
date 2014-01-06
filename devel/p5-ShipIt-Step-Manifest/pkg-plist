@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ShipIt/Step/Manifest/.packlist
 %%SITE_PERL%%/ShipIt/Step/Manifest.pm
+%%PERL5_MAN3%%/ShipIt::Step::Manifest.3.gz
 @dirrmtry %%SITE_PERL%%/ShipIt/Step
 @dirrmtry %%SITE_PERL%%/ShipIt
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ShipIt/Step/Manifest

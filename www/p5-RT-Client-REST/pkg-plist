@@ -12,6 +12,16 @@
 %%SITE_PERL%%/RT/Client/REST/Transaction.pm
 %%SITE_PERL%%/RT/Client/REST/User.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/RT/Client/REST/.packlist
+%%PERL5_MAN3%%/RT::Client::REST.3.gz
+%%PERL5_MAN3%%/RT::Client::REST::Attachment.3.gz
+%%PERL5_MAN3%%/RT::Client::REST::Exception.3.gz
+%%PERL5_MAN3%%/RT::Client::REST::Group.3.gz
+%%PERL5_MAN3%%/RT::Client::REST::Object.3.gz
+%%PERL5_MAN3%%/RT::Client::REST::Queue.3.gz
+%%PERL5_MAN3%%/RT::Client::REST::SearchResult.3.gz
+%%PERL5_MAN3%%/RT::Client::REST::Ticket.3.gz
+%%PERL5_MAN3%%/RT::Client::REST::Transaction.3.gz
+%%PERL5_MAN3%%/RT::Client::REST::User.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RT/Client/REST
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RT/Client
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RT

@@ -5,6 +5,7 @@
 %%SITE_PERL%%/URI/Title/PDF.pm
 %%SITE_PERL%%/URI/title.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Title/.packlist
+%%PERL5_MAN3%%/URI::Title.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Title
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI
 @dirrmtry %%SITE_PERL%%/URI/Title

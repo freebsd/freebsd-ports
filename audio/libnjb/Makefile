@@ -16,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 OPTIONS_DEFINE=	DOCS
 
 USES=	pathfix
-NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
@@ -33,12 +32,10 @@ BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 CONFIGURE_ENV+=	ac_cv_prog_HAVE_DOXYGEN=no
 .endif
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^SHOW_DIRECTORIES/d' ${WRKSRC}/doc/Doxyfile.in
 	@${REINPLACE_CMD} -e \
 		'/pkgdocdir/s|-$$(VERSION)||g' ${WRKSRC}/doc/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

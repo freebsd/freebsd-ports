@@ -11,11 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pedersen@meridian-enviro.com
 COMMENT=	Perl5 module to read and write shapefiles via shapelib
 
-LIB_DEPENDS=	shp:${PORTSDIR}/devel/shapelib
+LIB_DEPENDS=	libshp.so:${PORTSDIR}/devel/shapelib
 
 USES=		perl5
 USE_PERL5=	configure
-MAN3=		Shape.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

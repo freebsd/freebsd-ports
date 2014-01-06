@@ -3,4 +3,4 @@ dependencies. Soo, you don't need to install libnet.
 
 It supports SMTP authentication and attachments.
 
-WWW:	http://search.cpan.org/dist/Mail-SendEasy/
+WWW: http://search.cpan.org/dist/Mail-SendEasy/

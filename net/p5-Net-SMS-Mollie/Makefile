@@ -17,7 +17,4 @@ BUILD_DEPENDS+= p5-ExtUtils-MakeMaker>=0:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
 RUN_DEPENDS+=	p5-Test-Simple>=0.44:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
 
-MAN3=		Net::SMS::Mollie.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

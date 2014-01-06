@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	leeym@FreeBSD.org
-COMMENT=	A simple wrapper around the Google Maps API
+COMMENT=	Simple wrapper around the Google Maps API
 
 RUN_DEPENDS=	p5-Geo-Coder-Google>=0.02:${PORTSDIR}/misc/p5-Geo-Coder-Google
 BUILD_DEPENDS:=	${RUN_DEPENDS}
@@ -16,9 +16,6 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HTML::GoogleMaps.3
-
-NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -name ".*.pm" -delete
 

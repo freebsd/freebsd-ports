@@ -2,6 +2,9 @@
 %%SITE_PERL%%/POE/Component/Client/Ident.pm
 %%SITE_PERL%%/POE/Component/Client/Ident/Agent.pm
 %%SITE_PERL%%/POE/Filter/Ident.pm
+%%PERL5_MAN3%%/POE::Component::Client::Ident.3.gz
+%%PERL5_MAN3%%/POE::Component::Client::Ident::Agent.3.gz
+%%PERL5_MAN3%%/POE::Filter::Ident.3.gz
 @dirrmtry %%SITE_PERL%%/POE/Filter
 @dirrmtry %%SITE_PERL%%/POE/Component/Client/Ident
 @dirrmtry %%SITE_PERL%%/POE/Component/Client

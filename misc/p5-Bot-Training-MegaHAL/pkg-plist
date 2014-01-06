@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Bot/Training/MegaHAL.pm
 %%SITE_PERL%%/auto/share/dist/Bot-Training-MegaHAL/megahal.trn
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bot/Training/MegaHAL/.packlist
+%%PERL5_MAN3%%/Bot::Training::MegaHAL.3.gz
 @dirrm %%SITE_PERL%%/auto/share/dist/Bot-Training-MegaHAL
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bot/Training/MegaHAL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bot/Training

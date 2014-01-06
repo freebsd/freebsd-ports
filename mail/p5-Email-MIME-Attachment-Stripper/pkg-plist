@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Email/MIME/Attachment/Stripper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/Attachment/Stripper/.packlist
+%%PERL5_MAN3%%/Email::MIME::Attachment::Stripper.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/Attachment/Stripper
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME/Attachment
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/MIME

@@ -31,25 +31,4 @@ RUN_DEPENDS=	p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Google::Code.3 \
-		Net::Google::Code::AtomParser.3 \
-		Net::Google::Code::DateTime.3 \
-		Net::Google::Code::Download.3 \
-		Net::Google::Code::Issue.3 \
-		Net::Google::Code::Issue::Attachment.3 \
-		Net::Google::Code::Issue::Base.3 \
-		Net::Google::Code::Issue::Comment.3 \
-		Net::Google::Code::Issue::Search.3 \
-		Net::Google::Code::Issue::Util.3 \
-		Net::Google::Code::Role::Authentication.3 \
-		Net::Google::Code::Role::Fetchable.3 \
-		Net::Google::Code::Role::HTMLTree.3 \
-		Net::Google::Code::Role::Pageable.3 \
-		Net::Google::Code::Role::Predefined.3 \
-		Net::Google::Code::Role::URL.3 \
-		Net::Google::Code::TypicalRoles.3 \
-		Net::Google::Code::Wiki.3 \
-		Net::Google::Code::Wiki::Comment.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

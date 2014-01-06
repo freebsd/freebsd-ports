@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Net/MAC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/MAC/.packlist
+%%PERL5_MAN3%%/Net::MAC.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/MAC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%

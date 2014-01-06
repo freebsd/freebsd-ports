@@ -21,7 +21,4 @@ RUN_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Bot::Training::MegaHAL.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

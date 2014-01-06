@@ -22,16 +22,11 @@ USES=		gmake pkgconfig
 USE_XORG=	x11 xtst xext
 INSTALLS_ICONS=	YES
 USE_LDCONFIG=	YES
+MAKE_JOBS_UNSAFE=	yes
 OPTIONS_DEFINE=	ANTHY QT_IM_MODULE
 ANTHY_DESC=	Japanese anthy IM module
 QT_IM_MODULE_DESC=	QT IM module
 
-MAN1=		gcin.1 gcin-exit.1 gcin2tab.1 gcin-gb-toggle.1 gcin-kbm-toggle.1 \
-		gcin-message.1 gcin-tools.1 gtab-merge.1 juyin-learn.1 \
-		phoa2d.1 sim2trad.1 tsa2d32.1 tslearn.1 \
-		ts-contribute.1 ts-edit.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MQT_IM_MODULE}
@@ -103,17 +98,8 @@ post-build:
 post-install:
 .if !defined(DEBUG_FLAGS)
 .for f in gcin* gtab-merge juyin-learn phoa2* sim2trad trad2sim ts-edit tsa2d32 tsd2a32 tsin2gtab-phrase tslearn
-	@${STRIP_CMD} ${PREFIX}/bin/${f}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for f in Changelog.html README.html
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
-.endif
-	@${LOCALBASE}/bin/gtk-query-immodules-2.0 > ${LOCALBASE}/etc/gtk-2.0/gtk.immodules
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO} To display this message again, type \`pkg_info -D ${PKGNAME}\'
 
 .include <bsd.port.post.mk>

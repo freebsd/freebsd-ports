@@ -9,6 +9,8 @@ bin/plurm
 %%SITE_PERL%%/Plugtools.pm
 %%SITE_PERL%%/Plugtools/Plugins/Dump.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plugtools/.packlist
+%%PERL5_MAN3%%/Plugtools.3.gz
+%%PERL5_MAN3%%/Plugtools::Plugins::Dump.3.gz
 @dirrmtry %%SITE_PERL%%/Plugtools/Plugins/
 @dirrmtry %%SITE_PERL%%/Plugtools/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plugtools/

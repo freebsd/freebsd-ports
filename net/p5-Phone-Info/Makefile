@@ -16,7 +16,4 @@ RUN_DEPENDS=	p5-Net-WhitePages>=0:${PORTSDIR}/net/p5-Net-WhitePages
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Phone::Info.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

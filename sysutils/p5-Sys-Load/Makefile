@@ -14,7 +14,4 @@ COMMENT=	Getting the current system load and uptime
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Sys::Load.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

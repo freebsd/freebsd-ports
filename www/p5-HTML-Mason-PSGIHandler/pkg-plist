@@ -1,6 +1,7 @@
 %%SITE_PERL%%/HTML/Mason/PSGIHandler/Streamy.pm
 %%SITE_PERL%%/HTML/Mason/PSGIHandler.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Mason/PSGIHandler/.packlist
+%%PERL5_MAN3%%/HTML::Mason::PSGIHandler.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Mason/PSGIHandler
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Mason
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML

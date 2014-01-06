@@ -3,6 +3,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Transport/Dbx/Dbx.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Transport/Dbx/Dbx.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Transport/Dbx/autosplit.ix
+%%PERL5_MAN3%%/Mail::Transport::Dbx.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Transport/Dbx
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Transport
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Mail/Transport

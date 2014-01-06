@@ -13,7 +13,4 @@ COMMENT=	Perl extension for simple and dumb file system watcher
 USES=	perl5
 USE_PERL5=	configure
 
-MAN3=	Filesys::Notify::Simple.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

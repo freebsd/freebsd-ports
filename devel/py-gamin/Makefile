@@ -13,12 +13,10 @@ BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
-USE_FAM=	yes
-WANT_FAM_SYSTEM=gamin
 
 GAMIN_SLAVE=	yes
 
-USES=	pathfix
+USES=		fam:gamin
 USE_PYTHON=	yes
 CONFIGURE_ARGS=	--with-python=${PYTHON_CMD} \
 		--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc

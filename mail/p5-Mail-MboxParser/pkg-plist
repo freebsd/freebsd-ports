@@ -4,6 +4,11 @@
 %%SITE_PERL%%/Mail/MboxParser/Mail/Convertable.pm
 %%SITE_PERL%%/Mail/MboxParser/Mail/Body.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/MboxParser/.packlist
+%%PERL5_MAN3%%/Mail::MboxParser.3.gz
+%%PERL5_MAN3%%/Mail::MboxParser::Base.3.gz
+%%PERL5_MAN3%%/Mail::MboxParser::Mail.3.gz
+%%PERL5_MAN3%%/Mail::MboxParser::Mail::Body.3.gz
+%%PERL5_MAN3%%/Mail::MboxParser::Mail::Convertable.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/MboxParser
 @dirrm %%SITE_PERL%%/Mail/MboxParser/Mail
 @dirrm %%SITE_PERL%%/Mail/MboxParser

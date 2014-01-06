@@ -15,7 +15,4 @@ USE_PERL5=	configure
 
 CONFIGURE_ARGS=	-noxs
 
-MAN3=		NetAddr::IP::UtilPP.3 NetAddr::IP::Util.3 NetAddr::IP::Lite.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

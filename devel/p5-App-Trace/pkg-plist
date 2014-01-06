@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/App-Trace/.packlist
 %%SITE_PERL%%/App/Trace.pm
+%%PERL5_MAN3%%/App::Trace.3.gz
 @dirrmtry %%SITE_PERL%%/App
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App-Trace

@@ -29,6 +29,29 @@
 %%SITE_PERL%%/PDF/Template/Iterator.pm
 %%SITE_PERL%%/PDF/Template/TextObject.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/Template/.packlist
+%%PERL5_MAN3%%/PDF::Template::Element::Weblink.3.gz
+%%PERL5_MAN3%%/PDF::Template::Container::Scope.3.gz
+%%PERL5_MAN3%%/PDF::Template::Container::Margin.3.gz
+%%PERL5_MAN3%%/PDF::Template::Container::Font.3.gz
+%%PERL5_MAN3%%/PDF::Template::Element::Bookmark.3.gz
+%%PERL5_MAN3%%/PDF::Template::Element::TextBox.3.gz
+%%PERL5_MAN3%%/PDF::Template::Element::Var.3.gz
+%%PERL5_MAN3%%/PDF::Template::Container::Header.3.gz
+%%PERL5_MAN3%%/PDF::Template::Container::PdfTemplate.3.gz
+%%PERL5_MAN3%%/PDF::Template::Container::Loop.3.gz
+%%PERL5_MAN3%%/PDF::Template::Container::Conditional.3.gz
+%%PERL5_MAN3%%/PDF::Template::Container::Always.3.gz
+%%PERL5_MAN3%%/PDF::Template::Element::HorizontalRule.3.gz
+%%PERL5_MAN3%%/PDF::Template::Container::Section.3.gz
+%%PERL5_MAN3%%/PDF::Template::Element::Image.3.gz
+%%PERL5_MAN3%%/PDF::Template::Element::Circle.3.gz
+%%PERL5_MAN3%%/PDF::Template::Element::PageBreak.3.gz
+%%PERL5_MAN3%%/PDF::Template::Container::PageDef.3.gz
+%%PERL5_MAN3%%/PDF::Template::Container::Row.3.gz
+%%PERL5_MAN3%%/PDF::Template::Container::Footer.3.gz
+%%PERL5_MAN3%%/PDF::Template::Element.3.gz
+%%PERL5_MAN3%%/PDF::Template.3.gz
+%%PERL5_MAN3%%/PDF::Template::Element::Line.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF/Template
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDF
 @dirrm %%SITE_PERL%%/PDF/Template/Element

@@ -8,4 +8,4 @@ can also tailor the environment through the use of profiles and run
 control files, for example to pre-load certain Perl modules when
 working on a particular project.
 
-WWW:	http://search.cpan.org/dist/Devel-REPL/
+WWW: http://search.cpan.org/dist/Devel-REPL/

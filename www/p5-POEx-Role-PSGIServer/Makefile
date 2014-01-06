@@ -32,10 +32,4 @@ TEST_DEPENDS=	p5-HTTP-Parser-XS>=0:${PORTSDIR}/www/p5-HTTP-Parser-XS \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	POEx::Role::PSGIServer.3 \
-	POEx::Role::PSGIServer::ProxyWriter.3 \
-	POEx::Role::PSGIServer::Streamer.3 \
-	POEx::Types::PSGIServer.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

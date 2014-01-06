@@ -1,0 +1,1026 @@
+# HG changeset patch
+# User dxu
+# Date 1383015918 0
+#      Tue Oct 29 03:05:18 2013 +0000
+# Node ID 8ad2eb12bf42f2564fdf80a7236e4046046a4f4e
+# Parent  44a49c18eba21f97222a2cde09f6536a7f365363
+8003992: File and other classes in java.io do not handle embedded nulls properly
+Summary: Have every file operation done with File, FileInputStream, FileOutputStream, or RandomAccessFile that involves a file path containing NUL fail. Also reviewed by fweimer@redhat.com
+Reviewed-by: alanb, sherman, ahgross, mduigou, dholmes, aph, plevart, martin
+
+diff -r 44a49c18eba2 -r 8ad2eb12bf42 src/share/classes/java/io/File.java
+--- jdk/src/share/classes/java/io/File.java	Fri Sep 06 09:38:10 2013 -0700
++++ jdk/src/share/classes/java/io/File.java	Tue Oct 29 03:05:18 2013 +0000
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1994, 2012, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1994, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -153,6 +153,32 @@
+     private String path;
+ 
+     /**
++     * Enum type that indicates the status of a file path.
++     */
++    private static enum PathStatus { INVALID, CHECKED };
++
++    /**
++     * The flag indicating whether the file path is invalid.
++     */
++    private transient PathStatus status = null;
++
++    /**
++     * Check if the file has an invalid path. Currently, the inspection of
++     * a file path is very limited, and it only covers Nul character check.
++     * Returning true means the path is definitely invalid/garbage. But
++     * returning false does not guarantee that the path is valid.
++     *
++     * @return true if the file path is invalid.
++     */
++    final boolean isInvalid() {
++        if (status == null) {
++            status = (this.path.indexOf('\u0000') < 0) ? PathStatus.CHECKED
++                                                       : PathStatus.INVALID;
++        }
++        return status == PathStatus.INVALID;
++    }
++
++    /**
+      * The length of this abstract pathname's prefix, or zero if it has no
+      * prefix.
+      */
+@@ -573,6 +599,9 @@
+      * @since   JDK1.1
+      */
+     public String getCanonicalPath() throws IOException {
++        if (isInvalid()) {
++            throw new IOException("Invalid file path");
++        }
+         return fs.canonicalize(fs.resolve(this));
+     }
+ 
+@@ -637,6 +666,9 @@
+      */
+     @Deprecated
+     public URL toURL() throws MalformedURLException {
++        if (isInvalid()) {
++            throw new MalformedURLException("Invalid file path");
++        }
+         return new URL("file", "", slashify(getAbsolutePath(), isDirectory()));
+     }
+ 
+@@ -705,6 +737,9 @@
+         if (security != null) {
+             security.checkRead(path);
+         }
++        if (isInvalid()) {
++            return false;
++        }
+         return fs.checkAccess(this, FileSystem.ACCESS_READ);
+     }
+ 
+@@ -727,6 +762,9 @@
+         if (security != null) {
+             security.checkWrite(path);
+         }
++        if (isInvalid()) {
++            return false;
++        }
+         return fs.checkAccess(this, FileSystem.ACCESS_WRITE);
+     }
+ 
+@@ -747,6 +785,9 @@
+         if (security != null) {
+             security.checkRead(path);
+         }
++        if (isInvalid()) {
++            return false;
++        }
+         return ((fs.getBooleanAttributes(this) & FileSystem.BA_EXISTS) != 0);
+     }
+ 
+@@ -768,6 +809,9 @@
+         if (security != null) {
+             security.checkRead(path);
+         }
++        if (isInvalid()) {
++            return false;
++        }
+         return ((fs.getBooleanAttributes(this) & FileSystem.BA_DIRECTORY)
+                 != 0);
+     }
+@@ -792,6 +836,9 @@
+         if (security != null) {
+             security.checkRead(path);
+         }
++        if (isInvalid()) {
++            return false;
++        }
+         return ((fs.getBooleanAttributes(this) & FileSystem.BA_REGULAR) != 0);
+     }
+ 
+@@ -818,6 +865,9 @@
+         if (security != null) {
+             security.checkRead(path);
+         }
++        if (isInvalid()) {
++            return false;
++        }
+         return ((fs.getBooleanAttributes(this) & FileSystem.BA_HIDDEN) != 0);
+     }
+ 
+@@ -840,6 +890,9 @@
+         if (security != null) {
+             security.checkRead(path);
+         }
++        if (isInvalid()) {
++            return 0L;
++        }
+         return fs.getLastModifiedTime(this);
+     }
+ 
+@@ -862,6 +915,9 @@
+         if (security != null) {
+             security.checkRead(path);
+         }
++        if (isInvalid()) {
++            return 0L;
++        }
+         return fs.getLength(this);
+     }
+ 
+@@ -897,6 +953,9 @@
+     public boolean createNewFile() throws IOException {
+         SecurityManager security = System.getSecurityManager();
+         if (security != null) security.checkWrite(path);
++        if (isInvalid()) {
++            throw new IOException("Invalid file path");
++        }
+         return fs.createFileExclusively(path, false);
+     }
+ 
+@@ -918,6 +977,9 @@
+         if (security != null) {
+             security.checkDelete(path);
+         }
++        if (isInvalid()) {
++            return false;
++        }
+         return fs.delete(this);
+     }
+ 
+@@ -953,6 +1015,9 @@
+         if (security != null) {
+             security.checkDelete(path);
+         }
++        if (isInvalid()) {
++            return;
++        }
+         DeleteOnExitHook.add(path);
+     }
+ 
+@@ -987,6 +1052,9 @@
+         if (security != null) {
+             security.checkRead(path);
+         }
++        if (isInvalid()) {
++            return null;
++        }
+         return fs.list(this);
+     }
+ 
+@@ -1168,6 +1236,9 @@
+         if (security != null) {
+             security.checkWrite(path);
+         }
++        if (isInvalid()) {
++            return false;
++        }
+         return fs.createDirectory(this);
+     }
+ 
+@@ -1239,6 +1310,12 @@
+             security.checkWrite(path);
+             security.checkWrite(dest.path);
+         }
++        if (dest == null) {
++            throw new NullPointerException();
++        }
++        if (this.isInvalid() || dest.isInvalid()) {
++            return false;
++        }
+         return fs.rename(this, dest);
+     }
+ 
+@@ -1274,6 +1351,9 @@
+         if (security != null) {
+             security.checkWrite(path);
+         }
++        if (isInvalid()) {
++            return false;
++        }
+         return fs.setLastModifiedTime(this, time);
+     }
+ 
+@@ -1299,6 +1379,9 @@
+         if (security != null) {
+             security.checkWrite(path);
+         }
++        if (isInvalid()) {
++            return false;
++        }
+         return fs.setReadOnly(this);
+     }
+ 
+@@ -1333,6 +1416,9 @@
+         if (security != null) {
+             security.checkWrite(path);
+         }
++        if (isInvalid()) {
++            return false;
++        }
+         return fs.setPermission(this, FileSystem.ACCESS_WRITE, writable, ownerOnly);
+     }
+ 
+@@ -1399,6 +1485,9 @@
+         if (security != null) {
+             security.checkWrite(path);
+         }
++        if (isInvalid()) {
++            return false;
++        }
+         return fs.setPermission(this, FileSystem.ACCESS_READ, readable, ownerOnly);
+     }
+ 
+@@ -1468,6 +1557,9 @@
+         if (security != null) {
+             security.checkWrite(path);
+         }
++        if (isInvalid()) {
++            return false;
++        }
+         return fs.setPermission(this, FileSystem.ACCESS_EXECUTE, executable, ownerOnly);
+     }
+ 
+@@ -1522,6 +1614,9 @@
+         if (security != null) {
+             security.checkExec(path);
+         }
++        if (isInvalid()) {
++            return false;
++        }
+         return fs.checkAccess(this, FileSystem.ACCESS_EXECUTE);
+     }
+ 
+@@ -1597,6 +1692,9 @@
+             sm.checkPermission(new RuntimePermission("getFileSystemAttributes"));
+             sm.checkRead(path);
+         }
++        if (isInvalid()) {
++            return 0L;
++        }
+         return fs.getSpace(this, FileSystem.SPACE_TOTAL);
+     }
+ 
+@@ -1613,7 +1711,7 @@
+      * makes no guarantee that write operations to this file system
+      * will succeed.
+      *
+-     * @return  The number of unallocated bytes on the partition <tt>0L</tt>
++     * @return  The number of unallocated bytes on the partition or <tt>0L</tt>
+      *          if the abstract pathname does not name a partition.  This
+      *          value will be less than or equal to the total file system size
+      *          returned by {@link #getTotalSpace}.
+@@ -1632,6 +1730,9 @@
+             sm.checkPermission(new RuntimePermission("getFileSystemAttributes"));
+             sm.checkRead(path);
+         }
++        if (isInvalid()) {
++            return 0L;
++        }
+         return fs.getSpace(this, FileSystem.SPACE_FREE);
+     }
+ 
+@@ -1670,6 +1771,9 @@
+             sm.checkPermission(new RuntimePermission("getFileSystemAttributes"));
+             sm.checkRead(path);
+         }
++        if (isInvalid()) {
++            return 0L;
++        }
+         return fs.getSpace(this, FileSystem.SPACE_USABLE);
+     }
+ 
+@@ -1682,9 +1786,9 @@
+ 
+         static final String temporaryDirectory = temporaryDirectory();
+         static String temporaryDirectory() {
+-            return fs.normalize(
++            return 
+                 AccessController.doPrivileged(
+-                    new GetPropertyAction("java.io.tmpdir")));
++                    new GetPropertyAction("java.io.tmpdir"));
+         }
+     }
+ 
+@@ -1735,6 +1839,9 @@
+         File f;
+         do {
+             f = generateFile(prefix, s, directory);
++            if (f.isInvalid()) {
++                throw new IOException("Unable to create temporary file");
++            }
+         } while (!checkAndCreate(f.getPath(), sm, restrictive));
+         return f;
+     }
+diff -r 44a49c18eba2 -r 8ad2eb12bf42 src/share/classes/java/io/FileInputStream.java
+--- jdk/src/share/classes/java/io/FileInputStream.java	Fri Sep 06 09:38:10 2013 -0700
++++ jdk/src/share/classes/java/io/FileInputStream.java	Tue Oct 29 03:05:18 2013 +0000
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1994, 2007, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1994, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -132,6 +132,9 @@
+         if (name == null) {
+             throw new NullPointerException();
+         }
++        if (file.isInvalid()) {
++            throw new FileNotFoundException("Invalid file path");
++        }
+         fd = new FileDescriptor();
+         fd.incrementAndGetUseCount();
+         open(name);
+diff -r 44a49c18eba2 -r 8ad2eb12bf42 src/share/classes/java/io/FileOutputStream.java
+--- jdk/src/share/classes/java/io/FileOutputStream.java	Fri Sep 06 09:38:10 2013 -0700
++++ jdk/src/share/classes/java/io/FileOutputStream.java	Tue Oct 29 03:05:18 2013 +0000
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1994, 2007, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1994, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -200,6 +200,9 @@
+         if (name == null) {
+             throw new NullPointerException();
+         }
++        if (file.isInvalid()) {
++            throw new FileNotFoundException("Invalid file path");
++        }
+         fd = new FileDescriptor();
+         fd.incrementAndGetUseCount();
+         this.append = append;
+diff -r 44a49c18eba2 -r 8ad2eb12bf42 src/share/classes/java/io/RandomAccessFile.java
+--- jdk/src/share/classes/java/io/RandomAccessFile.java	Fri Sep 06 09:38:10 2013 -0700
++++ jdk/src/share/classes/java/io/RandomAccessFile.java	Tue Oct 29 03:05:18 2013 +0000
+@@ -1,5 +1,5 @@
+ /*
+- * Copyright (c) 1994, 2007, Oracle and/or its affiliates. All rights reserved.
++ * Copyright (c) 1994, 2013, Oracle and/or its affiliates. All rights reserved.
+  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
+  *
+  * This code is free software; you can redistribute it and/or modify it
+@@ -228,6 +228,9 @@
+         if (name == null) {
+             throw new NullPointerException();
+         }
++        if (file.isInvalid()) {
++            throw new FileNotFoundException("Invalid file path");
++        }
+         fd = new FileDescriptor();
+         fd.incrementAndGetUseCount();
+         open(name, imode);
+diff -r 44a49c18eba2 -r 8ad2eb12bf42 test/java/io/File/NulFile.java
+--- /dev/null	Thu Jan 01 00:00:00 1970 +0000
++++ jdk/test/java/io/File/NulFile.java	Tue Oct 29 03:05:18 2013 +0000
+@@ -0,0 +1,625 @@
++/*
++ * Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
++ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
++ *
++ * This code is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License version 2 only, as
++ * published by the Free Software Foundation.
++ *
++ * This code is distributed in the hope that it will be useful, but WITHOUT
++ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
++ * version 2 for more details (a copy is included in the LICENSE file that
++ * accompanied this code).
++ *
++ * You should have received a copy of the GNU General Public License version
++ * 2 along with this work; if not, write to the Free Software Foundation,
++ * Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
++ *
++ * Please contact Oracle, 500 Oracle Parkway, Redwood Shores, CA 94065 USA
++ * or visit www.oracle.com if you need additional information or have any
++ * questions.
++ */
++
++/* @test
++ * @bug 8003992
++ * @summary Test a file whose path name is embedded with NUL character, and
++ *          ensure it is handled correctly.
++ * @author Dan Xu
++ */
++
++import java.io.File;
++import java.io.FileFilter;
++import java.io.FileInputStream;
++import java.io.FileOutputStream;
++import java.io.RandomAccessFile;
++import java.io.FileNotFoundException;
++import java.io.FilenameFilter;
++import java.io.IOException;
++import java.net.MalformedURLException;
++import java.nio.file.InvalidPathException;
++import java.io.ByteArrayInputStream;
++import java.io.ByteArrayOutputStream;
++import java.io.ObjectOutputStream;
++import java.io.ObjectInputStream;
++
++public class NulFile {
++
++    private static final char CHAR_NUL = '\u0000';
++
++    private static final String ExceptionMsg = "Invalid file path";
++
++    public static void main(String[] args) {
++        testFile();
++        testFileInUnix();
++        testFileInWindows();
++        testTempFile();
++    }
++
++    private static void testFile() {
++        test(new File(new StringBuilder().append(CHAR_NUL).toString()));
++        test(new File(
++                new StringBuilder().append("").append(CHAR_NUL).toString()));
++        test(new File(
++                new StringBuilder().append(CHAR_NUL).append("").toString()));
++    }
++
++    private static void testFileInUnix() {
++        String osName = System.getProperty("os.name");
++        if (osName.startsWith("Windows"))
++            return;
++
++        String unixFile = "/";
++        test(unixFile);
++
++        unixFile = "//";
++        test(unixFile);
++
++        unixFile = "data/info";
++        test(unixFile);
++
++        unixFile = "/data/info";
++        test(unixFile);
++
++        unixFile = "//data//info";
++        test(unixFile);
++    }
++
++    private static void testFileInWindows() {
++        String osName = System.getProperty("os.name");
++        if (!osName.startsWith("Windows"))
++            return;
++
++        String windowsFile = "\\";
++        test(windowsFile);
++
++        windowsFile = "\\\\";
++        test(windowsFile);
++
++        windowsFile = "/";
++        test(windowsFile);
++
++        windowsFile = "//";
++        test(windowsFile);
++
++        windowsFile = "/\\";
++        test(windowsFile);
++
++        windowsFile = "\\/";
++        test(windowsFile);
++
++        windowsFile = "data\\info";
++        test(windowsFile);
++
++        windowsFile = "\\data\\info";
++        test(windowsFile);
++
++        windowsFile = "\\\\server\\data\\info";
++        test(windowsFile);
++
++        windowsFile = "z:data\\info";
++        test(windowsFile);
++
++        windowsFile = "z:\\data\\info";
++        test(windowsFile);
++    }
++
++    private static void test(final String name) {
++        int length = name.length();
++
++        for (int i = 0; i <= length; i++) {
++            StringBuilder sbName = new StringBuilder(name);
++            sbName.insert(i, CHAR_NUL);
++            String curName = sbName.toString();
++
++            // test File(String parent, String child)
++            File testFile = new File(curName, "child");
++            test(testFile);
++            testFile = new File("parent", curName);
++            test(testFile);
++
++            // test File(String pathname)
++            testFile = new File(curName);
++            test(testFile);
++
++            // test File(File parent, String child)
++            testFile = new File(new File(curName), "child");
++            test(testFile);
++            testFile = new File(new File("parent"), curName);
++            test(testFile);
++
++            // test FileInputStream
++            testFileInputStream(curName);
++
++            // test FileOutputStream
++            testFileOutputStream(curName);
++
++            // test RandomAccessFile
++            testRandomAccessFile(curName);
++        }
++    }
++
++    private static void testFileInputStream(final String str) {
++        boolean exceptionThrown = false;
++        FileInputStream is = null;
++        try {
++            is = new FileInputStream(str);
++        } catch (FileNotFoundException ex) {
++            if (ExceptionMsg.equals(ex.getMessage()))
++                exceptionThrown = true;
++        }
++        if (!exceptionThrown) {
++            throw new RuntimeException("FileInputStream constructor"
++                    + " should throw FileNotFoundException");
++        }
++        if (is != null) {
++            throw new RuntimeException("FileInputStream constructor"
++                    + " should fail");
++        }
++
++        exceptionThrown = false;
++        is = null;
++        try {
++            is = new FileInputStream(new File(str));
++        } catch (FileNotFoundException ex) {
++            if (ExceptionMsg.equals(ex.getMessage()))
++                exceptionThrown = true;
++        }
++        if (!exceptionThrown) {
++            throw new RuntimeException("FileInputStream constructor"
++                    + " should throw FileNotFoundException");
++        }
++        if (is != null) {
++            throw new RuntimeException("FileInputStream constructor"
++                    + " should fail");
++        }
++    }
++
++    private static void testFileOutputStream(final String str) {
++        boolean exceptionThrown = false;
++        FileOutputStream os = null;
++        try {
++            os = new FileOutputStream(str);
++        } catch (FileNotFoundException ex) {
++            if (ExceptionMsg.equals(ex.getMessage()))
++                exceptionThrown = true;
++        }
++        if (!exceptionThrown) {
++            throw new RuntimeException("FileOutputStream constructor"
++                    + " should throw FileNotFoundException");
++        }
++        if (os != null) {
++            throw new RuntimeException("FileOutputStream constructor"
++                    + " should fail");
++        }
++
++        exceptionThrown = false;
++        os = null;
++        try {
++            os = new FileOutputStream(new File(str));
++        } catch (FileNotFoundException ex) {
++            if (ExceptionMsg.equals(ex.getMessage()))
++                exceptionThrown = true;
++        }
++        if (!exceptionThrown) {
++            throw new RuntimeException("FileOutputStream constructor"
++                    + " should throw FileNotFoundException");
++        }
++        if (os != null) {
++            throw new RuntimeException("FileOutputStream constructor"
++                    + " should fail");
++        }
++    }
++
++    private static void testRandomAccessFile(final String str) {
++        boolean exceptionThrown = false;
++        RandomAccessFile raf = null;
++        String[] modes = {"r", "rw", "rws", "rwd"};
++
++        for (String mode : modes) {
++            try {
++                raf = new RandomAccessFile(str, mode);
++            } catch (FileNotFoundException ex) {
++                if (ExceptionMsg.equals(ex.getMessage()))
++                    exceptionThrown = true;
++            }
++            if (!exceptionThrown) {
++                throw new RuntimeException("RandomAccessFile constructor"
++                        + " should throw FileNotFoundException");
++            }
++            if (raf != null) {
++                throw new RuntimeException("RandomAccessFile constructor"
++                        + " should fail");
++            }
++
++            exceptionThrown = false;
++            raf = null;
++            try {
++                raf = new RandomAccessFile(new File(str), mode);
++            } catch (FileNotFoundException ex) {
++                if (ExceptionMsg.equals(ex.getMessage()))
++                    exceptionThrown = true;
++            }
++            if (!exceptionThrown) {
++                throw new RuntimeException("RandomAccessFile constructor"
++                        + " should throw FileNotFoundException");
++            }
++            if (raf != null) {
++                throw new RuntimeException("RandomAccessFile constructor"
++                        + " should fail");
++            }
++        }
++    }
++
++    private static void test(File testFile) {
++        test(testFile, false);
++        // test serialization
++        testSerialization(testFile);
++    }
++
++    @SuppressWarnings("deprecation")
++    private static void test(File testFile, boolean derived) {
++        boolean exceptionThrown = false;
++
++        if (testFile == null) {
++            throw new RuntimeException("test file should not be null.");
++        }
++
++        // getPath()
++        if (testFile.getPath().indexOf(CHAR_NUL) < 0) {
++            throw new RuntimeException(
++                    "File path should contain Nul character");
++        }
++        // getAbsolutePath()
++        if (testFile.getAbsolutePath().indexOf(CHAR_NUL) < 0) {
++            throw new RuntimeException(
++                    "File absolute path should contain Nul character");
++        }
++        // getAbsoluteFile()
++        File derivedAbsFile = testFile.getAbsoluteFile();
++        if (derived) {
++            if (derivedAbsFile.getPath().indexOf(CHAR_NUL) < 0) {
++                throw new RuntimeException(
++                        "Derived file path should also contain Nul character");
++            }
++        } else {
++            test(derivedAbsFile, true);
++        }
++        // getCanonicalPath()
++        try {
++            exceptionThrown = false;
++            testFile.getCanonicalPath();
++        } catch (IOException ex) {
++            if (ExceptionMsg.equals(ex.getMessage()))
++                exceptionThrown = true;
++        }
++        if (!exceptionThrown) {
++            throw new RuntimeException(
++                    "getCanonicalPath() should throw IOException with"
++                        + " message \"" + ExceptionMsg + "\"");
++        }
++        // getCanonicalFile()
++        try {
++            exceptionThrown = false;
++            testFile.getCanonicalFile();
++        } catch (IOException ex) {
++            if (ExceptionMsg.equals(ex.getMessage()))
++                exceptionThrown = true;
++        }
++        if (!exceptionThrown) {
++            throw new RuntimeException(
++                    "getCanonicalFile() should throw IOException with"
++                        + " message \"" + ExceptionMsg + "\"");
++        }
++        // toURL()
++        try {
++            exceptionThrown = false;
++            testFile.toURL();
++        } catch (MalformedURLException ex) {
++            if (ExceptionMsg.equals(ex.getMessage()))
++                exceptionThrown = true;
++        }
++        if (!exceptionThrown) {
++            throw new RuntimeException("toURL() should throw IOException with"
++                + " message \"" + ExceptionMsg + "\"");
++        }
++        // canRead()
++        if (testFile.canRead())
++            throw new RuntimeException("File should not be readable");
++        // canWrite()
++        if (testFile.canWrite())
++            throw new RuntimeException("File should not be writable");
++        // exists()
++        if (testFile.exists())
++            throw new RuntimeException("File should not be existed");
++        // isDirectory()
++        if (testFile.isDirectory())
++            throw new RuntimeException("File should not be a directory");
++        // isFile()
++        if (testFile.isFile())
++            throw new RuntimeException("File should not be a file");
++        // isHidden()
++        if (testFile.isHidden())
++            throw new RuntimeException("File should not be hidden");
++        // lastModified()
++        if (testFile.lastModified() != 0L)
++            throw new RuntimeException("File last modified time should be 0L");
++        // length()
++        if (testFile.length() != 0L)
++            throw new RuntimeException("File length should be 0L");
++        // createNewFile()
++        try {
++            exceptionThrown = false;
++            testFile.createNewFile();
++        } catch (IOException ex) {
++            if (ExceptionMsg.equals(ex.getMessage()))
++                exceptionThrown = true;
++        }
++        if (!exceptionThrown) {
++            throw new RuntimeException(
++                    "createNewFile() should throw IOException with"
++                        + " message \"" + ExceptionMsg + "\"");
++        }
++        // delete()
++        if (testFile.delete())
++            throw new RuntimeException("Delete operation should fail");
++        // list()
++        if (testFile.list() != null)
++            throw new RuntimeException("File list() should return null");
++        // list(FilenameFilter)
++        FilenameFilter fnFilter = new FilenameFilter() {
++            @Override
++            public boolean accept(File dir, String name) {
++                return false;
++            }
++        };
++        if (testFile.list(fnFilter) != null) {
++            throw new RuntimeException("File list(FilenameFilter) should"
++                + " return null");
++        }
++        // listFiles()
++        if (testFile.listFiles() != null)
++            throw new RuntimeException("File listFiles() should return null");
++        // listFiles(FilenameFilter)
++        if (testFile.listFiles(fnFilter) != null) {
++            throw new RuntimeException("File listFiles(FilenameFilter)"
++                + " should return null");
++        }
++        // listFiles(FileFilter)
++        FileFilter fFilter = new FileFilter() {
++            @Override
++            public boolean accept(File file) {
++                return false;
++            }
++        };
++        if (testFile.listFiles(fFilter) != null) {
++            throw new RuntimeException("File listFiles(FileFilter)"
++                + " should return null");
++        }
++        // mkdir()
++        if (testFile.mkdir()) {
++            throw new RuntimeException("File should not be able to"
++                + " create directory");
++        }
++        // mkdirs()
++        if (testFile.mkdirs()) {
++            throw new RuntimeException("File should not be able to"
++                + " create directories");
++        }
++        // renameTo(File)
++        if (testFile.renameTo(new File("dest")))
++            throw new RuntimeException("File rename should fail");
++        if (new File("dest").renameTo(testFile))
++            throw new RuntimeException("File rename should fail");
++        try {
++            exceptionThrown = false;
++            testFile.renameTo(null);
++        } catch (NullPointerException ex) {
++            exceptionThrown = true;
++        }
++        if (!exceptionThrown) {
++            throw new RuntimeException("File rename should thrown NPE");
++        }
++        // setLastModified(long)
++        if (testFile.setLastModified(0L)) {
++            throw new RuntimeException("File should fail to set"
++                + " last modified time");
++        }
++        try {
++            exceptionThrown = false;
++            testFile.setLastModified(-1);
++        } catch (IllegalArgumentException ex) {
++            if ("Negative time".equals(ex.getMessage()))
++                exceptionThrown = true;
++        }
++        if (!exceptionThrown) {
++            throw new RuntimeException("File should fail to set"
++                + " last modified time with message \"Negative time\"");
++        }
++        // setReadOnly()
++        if (testFile.setReadOnly())
++            throw new RuntimeException("File should fail to set read-only");
++        // setWritable(boolean writable, boolean ownerOnly)
++        if (testFile.setWritable(true, true))
++            throw new RuntimeException("File should fail to set writable");
++        if (testFile.setWritable(true, false))
++            throw new RuntimeException("File should fail to set writable");
++        if (testFile.setWritable(false, true))
++            throw new RuntimeException("File should fail to set writable");
++        if (testFile.setWritable(false, false))
++            throw new RuntimeException("File should fail to set writable");
++        // setWritable(boolean writable)
++        if (testFile.setWritable(false))
++            throw new RuntimeException("File should fail to set writable");
++        if (testFile.setWritable(true))
++            throw new RuntimeException("File should fail to set writable");
++        // setReadable(boolean readable, boolean ownerOnly)
++        if (testFile.setReadable(true, true))
++            throw new RuntimeException("File should fail to set readable");
++        if (testFile.setReadable(true, false))
++            throw new RuntimeException("File should fail to set readable");
++        if (testFile.setReadable(false, true))
++            throw new RuntimeException("File should fail to set readable");
++        if (testFile.setReadable(false, false))
++            throw new RuntimeException("File should fail to set readable");
++        // setReadable(boolean readable)
++        if (testFile.setReadable(false))
++            throw new RuntimeException("File should fail to set readable");
++        if (testFile.setReadable(true))
++            throw new RuntimeException("File should fail to set readable");
++        // setExecutable(boolean executable, boolean ownerOnly)
++        if (testFile.setExecutable(true, true))
++            throw new RuntimeException("File should fail to set executable");
++        if (testFile.setExecutable(true, false))
++            throw new RuntimeException("File should fail to set executable");
++        if (testFile.setExecutable(false, true))
++            throw new RuntimeException("File should fail to set executable");
++        if (testFile.setExecutable(false, false))
++            throw new RuntimeException("File should fail to set executable");
++        // setExecutable(boolean executable)
++        if (testFile.setExecutable(false))
++            throw new RuntimeException("File should fail to set executable");
++        if (testFile.setExecutable(true))
++            throw new RuntimeException("File should fail to set executable");
++        // canExecute()
++        if (testFile.canExecute())
++            throw new RuntimeException("File should not be executable");
++        // getTotalSpace()
++        if (testFile.getTotalSpace() != 0L)
++            throw new RuntimeException("The total space should be 0L");
++        // getFreeSpace()
++        if (testFile.getFreeSpace() != 0L)
++            throw new RuntimeException("The free space should be 0L");
++        // getUsableSpace()
++        if (testFile.getUsableSpace() != 0L)
++            throw new RuntimeException("The usable space should be 0L");
++        // compareTo(File null)
++        try {
++            exceptionThrown = false;
++            testFile.compareTo(null);
++        } catch (NullPointerException ex) {
++            exceptionThrown = true;
++        }
++        if (!exceptionThrown) {
++            throw new RuntimeException("compareTo(null) should throw NPE");
++        }
++        // toString()
++        if (testFile.toString().indexOf(CHAR_NUL) < 0) {
++            throw new RuntimeException(
++                    "File path should contain Nul character");
++        }
++        // toPath()
++        try {
++            exceptionThrown = false;
++            testFile.toPath();
++        } catch (InvalidPathException ex) {
++            exceptionThrown = true;
++        }
++        if (!exceptionThrown) {
++            throw new RuntimeException("toPath() should throw"
++                + " InvalidPathException");
++        }
++    }
++
++    private static void testSerialization(File testFile) {
++        String path = testFile.getPath();
++        try {
++            // serialize test file
++            ByteArrayOutputStream baos = new ByteArrayOutputStream();
++            ObjectOutputStream oos = new ObjectOutputStream(baos);
++            oos.writeObject(testFile);
++            oos.close();
++            // deserialize test file
++            byte[] bytes = baos.toByteArray();
++            ByteArrayInputStream is = new ByteArrayInputStream(bytes);
++            ObjectInputStream ois = new ObjectInputStream(is);
++            File newFile = (File) ois.readObject();
++            // test
++            String newPath = newFile.getPath();
++            if (!path.equals(newPath)) {
++                throw new RuntimeException(
++                        "Serialization should not change file path");
++            }
++            test(newFile, false);
++        } catch (IOException | ClassNotFoundException ex) {
++            System.err.println("Exception happens in testSerialization");
++            System.err.println(ex.getMessage());
++        }
++    }
++
++    private static void testTempFile() {
++        final String[] names = {"x", "xx", "xxx", "xxxx"};
++        final String shortPrefix = "sp";
++        final String prefix = "prefix";
++        final String suffix = "suffix";
++        File tmpDir = new File("tmpDir");
++
++        for (String name : names) {
++            int length = name.length();
++            for (int i = 0; i <= length; i++) {
++                StringBuilder sbName = new StringBuilder(name);
++                sbName.insert(i, CHAR_NUL);
++                String curName = sbName.toString();
++
++                // test prefix
++                testCreateTempFile(curName, suffix, tmpDir);
++                // test suffix
++                testCreateTempFile(shortPrefix, curName, tmpDir);
++                testCreateTempFile(prefix, curName, tmpDir);
++                // test directory
++                testCreateTempFile(shortPrefix, suffix, new File(curName));
++                testCreateTempFile(prefix, suffix, new File(curName));
++            }
++        }
++    }
++
++    private static void testCreateTempFile(String prefix, String suffix,
++                                           File directory) {
++        // createTempFile(String prefix, String suffix, File directory)
++        boolean exceptionThrown = false;
++        boolean shortPrefix = (prefix.length() < 3);
++        if (shortPrefix) {
++            try {
++                File.createTempFile(prefix, suffix, directory);
++            } catch (IllegalArgumentException ex) {
++                if ("Prefix string too short".equals(ex.getMessage()))
++                    exceptionThrown = true;
++            } catch (IOException ioe) {
++                System.err.println("IOException happens in testCreateTempFile");
++                System.err.println(ioe.getMessage());
++            }
++        } else {
++            try {
++                File.createTempFile(prefix, suffix, directory);
++            } catch (IOException ex) {
++                if ("Unable to create temporary file".equals(ex.getMessage()))
++                    exceptionThrown = true;
++            }
++        }
++        if (!exceptionThrown) {
++            throw new RuntimeException("createTempFile() should throw"
++                    + (shortPrefix ? " IllegalArgumentException"
++                                   : " IOException"));
++        }
++    }
++}

@@ -7,6 +7,14 @@
 %%SITE_PERL%%/Jonk/Cookbook/ErrorHandling.pod
 %%SITE_PERL%%/Jonk/Cookbook/ForkModel.pod
 %%SITE_PERL%%/Jonk/Worker.pm
+%%PERL5_MAN3%%/Jonk.3.gz
+%%PERL5_MAN3%%/Jonk::Client.3.gz
+%%PERL5_MAN3%%/Jonk::Cookbook.3.gz
+%%PERL5_MAN3%%/Jonk::Cookbook::Basic.3.gz
+%%PERL5_MAN3%%/Jonk::Cookbook::DequeueSpecificJob.3.gz
+%%PERL5_MAN3%%/Jonk::Cookbook::ErrorHandling.3.gz
+%%PERL5_MAN3%%/Jonk::Cookbook::ForkModel.3.gz
+%%PERL5_MAN3%%/Jonk::Worker.3.gz
 @dirrm %%SITE_PERL%%/Jonk/Cookbook
 @dirrm %%SITE_PERL%%/Jonk
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jonk

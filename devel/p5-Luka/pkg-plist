@@ -5,5 +5,9 @@
 %%SITE_PERL%%/Luka/ExceptionBase.pm
 %%SITE_PERL%%/Luka/Exceptions.pm
 %%SITE_PERL%%/Luka/Mailer.pm
+%%PERL5_MAN3%%/Luka.3.gz
+%%PERL5_MAN3%%/Luka::Conf.3.gz
+%%PERL5_MAN3%%/Luka::Exceptions.3.gz
+%%PERL5_MAN3%%/Luka::Mailer.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Luka
 @dirrmtry %%SITE_PERL%%/Luka

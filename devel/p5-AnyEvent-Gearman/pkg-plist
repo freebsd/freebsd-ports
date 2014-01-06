@@ -9,6 +9,16 @@
 %%SITE_PERL%%/AnyEvent/Gearman/Types.pm
 %%SITE_PERL%%/AnyEvent/Gearman/Worker.pm
 %%SITE_PERL%%/AnyEvent/Gearman/Worker/Connection.pm
+%%PERL5_MAN3%%/AnyEvent::Gearman.3.gz
+%%PERL5_MAN3%%/AnyEvent::Gearman::Client.3.gz
+%%PERL5_MAN3%%/AnyEvent::Gearman::Client::Connection.3.gz
+%%PERL5_MAN3%%/AnyEvent::Gearman::Connection.3.gz
+%%PERL5_MAN3%%/AnyEvent::Gearman::Constants.3.gz
+%%PERL5_MAN3%%/AnyEvent::Gearman::Job.3.gz
+%%PERL5_MAN3%%/AnyEvent::Gearman::Task.3.gz
+%%PERL5_MAN3%%/AnyEvent::Gearman::Types.3.gz
+%%PERL5_MAN3%%/AnyEvent::Gearman::Worker.3.gz
+%%PERL5_MAN3%%/AnyEvent::Gearman::Worker::Connection.3.gz
 @dirrmtry %%SITE_PERL%%/AnyEvent/Gearman/Worker
 @dirrmtry %%SITE_PERL%%/AnyEvent/Gearman/Client
 @dirrmtry %%SITE_PERL%%/AnyEvent/Gearman

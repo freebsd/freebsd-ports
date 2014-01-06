@@ -8,6 +8,7 @@
 %%SITE_PERL%%/HTTP/MobileAgent/Plugin/Locator/SoftBank/BasicLocation.pm
 %%SITE_PERL%%/HTTP/MobileAgent/Plugin/Locator/SoftBank/GPS.pm
 %%SITE_PERL%%/HTTP/MobileAgent/Plugin/Locator/Willcom/BasicLocation.pm
+%%PERL5_MAN3%%/HTTP::MobileAgent::Plugin::Locator.3.gz
 @dirrm %%SITE_PERL%%/HTTP/MobileAgent/Plugin/Locator/Willcom
 @dirrm %%SITE_PERL%%/HTTP/MobileAgent/Plugin/Locator/SoftBank
 @dirrm %%SITE_PERL%%/HTTP/MobileAgent/Plugin/Locator/EZweb

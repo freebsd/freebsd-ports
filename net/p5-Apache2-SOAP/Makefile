@@ -19,7 +19,4 @@ USES=		perl5
 USE_PERL5=	configure
 USE_APACHE=	22+
 
-MAN3=		Apache2::SOAP.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

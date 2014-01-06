@@ -40,12 +40,10 @@ MAKE_ENV+=	NO_XREF=yes
 .if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_KMOD_POST_MK)
 _INCLUDE_USES_KMOD_POST_MK=	yes
 
-.PHONY: kmod-post-install
 pre-install: ${STAGEDIR}${KMODDIR}
 ${STAGEDIR}${KMODDIR}:
 	@${MKDIR} ${.TARGET}
 
-post-install: kmod-post-install
 kmod-post-install:
 	@${ECHO_CMD} "@exec /usr/sbin/kldxref ${KMODDIR}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec /usr/sbin/kldxref ${KMODDIR}" >> ${TMPPLIST}

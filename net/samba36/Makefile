@@ -239,7 +239,7 @@ WANT_EXP_MODULES+=	vfs_cacheprime vfs_catia vfs_commit vfs_dirsort \
 .endif
 
 .if ${PORT_OPTIONS:MFAM_SUPPORT}
-USE_FAM=		yes
+USES+=			fam
 WANT_EXP_MODULES+=	vfs_notify_fam
 CONFIGURE_ARGS+=	--enable-fam
 .else

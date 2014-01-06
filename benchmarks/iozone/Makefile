@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	Performance Test of Sequential File I/O
 
-CONFLICTS=	iozone-2.*
+CONFLICTS=	iozone-2.* iozone21-*
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src/current
 

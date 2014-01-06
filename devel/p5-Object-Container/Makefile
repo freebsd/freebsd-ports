@@ -15,8 +15,4 @@ RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Object::Container.3 \
-		Object::Container::ja.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

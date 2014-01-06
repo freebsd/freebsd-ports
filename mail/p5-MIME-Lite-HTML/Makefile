@@ -22,7 +22,4 @@ RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MIME::Lite::HTML.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

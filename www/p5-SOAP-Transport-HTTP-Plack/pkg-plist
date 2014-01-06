@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Transport/HTTP/Plack/.packlist
 %%SITE_PERL%%/SOAP/Transport/HTTP/Plack.pm
 %%SITE_PERL%%/XMLRPC/Transport/HTTP/Plack.pm
+%%PERL5_MAN3%%/SOAP::Transport::HTTP::Plack.3.gz
+%%PERL5_MAN3%%/XMLRPC::Transport::HTTP::Plack.3.gz
 @dirrmtry %%SITE_PERL%%/XMLRPC/Transport/HTTP
 @dirrmtry %%SITE_PERL%%/SOAP/Transport/HTTP
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SOAP/Transport/HTTP/Plack

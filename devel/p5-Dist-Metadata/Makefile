@@ -26,13 +26,4 @@ TEST_DEPENDS=	\
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Dist::Metadata.3 \
-	Dist::Metadata::Archive.3 \
-	Dist::Metadata::Dir.3 \
-	Dist::Metadata::Dist.3 \
-	Dist::Metadata::Struct.3 \
-	Dist::Metadata::Tar.3 \
-	Dist::Metadata::Zip.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

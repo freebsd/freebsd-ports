@@ -11,7 +11,5 @@ COMMENT=	Perl extension for telling fully qualified name of the method
 
 USES=		perl5
 USE_PERL5=	configure
-MAN3=		UNIVERSAL::which.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

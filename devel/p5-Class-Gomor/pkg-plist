@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Class/Gomor/Array.pm
 %%SITE_PERL%%/Class/Gomor/Hash.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Gomor/.packlist
+%%PERL5_MAN3%%/Class::Gomor.3.gz
+%%PERL5_MAN3%%/Class::Gomor::Hash.3.gz
+%%PERL5_MAN3%%/Class::Gomor::Array.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/Gomor
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
 @dirrmtry %%SITE_PERL%%/Class/Gomor

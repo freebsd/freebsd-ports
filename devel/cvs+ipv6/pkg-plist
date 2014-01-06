@@ -1,24 +1,26 @@
 bin/cvs
 bin/cvsbug
-bin/rcs2log
-share/cvs/contrib/README
-share/cvs/contrib/check_cvs
-share/cvs/contrib/clmerge
-share/cvs/contrib/cln_hist
-share/cvs/contrib/commit_prep
-share/cvs/contrib/cvs2vendor
-share/cvs/contrib/cvs_acls
-share/cvs/contrib/cvscheck
-share/cvs/contrib/cvscheck.man
-share/cvs/contrib/debug_check_log
-share/cvs/contrib/intro.doc
-share/cvs/contrib/log
-share/cvs/contrib/log_accum
-share/cvs/contrib/mfpipe
-share/cvs/contrib/pvcs2rcs
-share/cvs/contrib/rcs-to-cvs
-share/cvs/contrib/rcs2log
-share/cvs/contrib/rcslock
-share/cvs/contrib/sccs2rcs
-@dirrm share/cvs/contrib
-@dirrm share/cvs
+man/man1/cvs.1.gz
+man/man8/cvsbug.8.gz
+%%EXAMPLESDIR%%/contrib/README
+%%EXAMPLESDIR%%/contrib/clmerge
+%%EXAMPLESDIR%%/contrib/cln_hist
+%%EXAMPLESDIR%%/contrib/commit_prep
+%%EXAMPLESDIR%%/contrib/cvs2vendor
+%%EXAMPLESDIR%%/contrib/cvs_acls
+%%EXAMPLESDIR%%/contrib/cvscheck
+%%EXAMPLESDIR%%/contrib/intro.doc
+%%EXAMPLESDIR%%/contrib/log
+%%EXAMPLESDIR%%/contrib/log_accum
+%%EXAMPLESDIR%%/contrib/mfpipe
+%%EXAMPLESDIR%%/contrib/rcs-to-cvs
+%%EXAMPLESDIR%%/contrib/rcslock
+%%EXAMPLESDIR%%/contrib/sccs2rcs
+%%EXAMPLESDIR%%/contrib/rcs2log
+%%EXAMPLESDIR%%/contrib/easy-import
+%%EXAMPLESDIR%%/contrib/cvscheck.man
+%%EXAMPLESDIR%%/contrib/cvshelp.man
+%%EXAMPLESDIR%%/contrib/descend.man
+@exec mkdir -p %%EXAMPLESDIR%%/contrib
+@dirrm %%EXAMPLESDIR%%/contrib
+@dirrm %%EXAMPLESDIR%%

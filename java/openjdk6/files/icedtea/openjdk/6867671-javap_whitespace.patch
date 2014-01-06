@@ -1,0 +1,1041 @@
+# HG changeset patch
+# User jjg
+# Date 1382678228 -3600
+#      Fri Oct 25 06:17:08 2013 +0100
+# Node ID db86275eb3f82caf87fbe6c162dc776cb5ed85dc
+# Parent  a22d1b683f15e7f67d7d3de84f7c866a65c42552
+6867671: javap whitespace formatting issues
+Reviewed-by: mcimadamore
+
+diff -r a22d1b683f15 -r db86275eb3f8 src/share/classes/com/sun/tools/javap/AttributeWriter.java
+--- langtools/src/share/classes/com/sun/tools/javap/AttributeWriter.java	Fri Oct 25 06:07:26 2013 +0100
++++ langtools/src/share/classes/com/sun/tools/javap/AttributeWriter.java	Fri Oct 25 06:17:08 2013 +0100
+@@ -41,7 +41,6 @@
+ import com.sun.tools.classfile.Deprecated_attribute;
+ import com.sun.tools.classfile.EnclosingMethod_attribute;
+ import com.sun.tools.classfile.Exceptions_attribute;
+-import com.sun.tools.classfile.Field;
+ import com.sun.tools.classfile.InnerClasses_attribute;
+ import com.sun.tools.classfile.LineNumberTable_attribute;
+ import com.sun.tools.classfile.LocalVariableTable_attribute;
+@@ -147,22 +146,26 @@
+     }
+ 
+     public Void visitAnnotationDefault(AnnotationDefault_attribute attr, Void ignore) {
+-        println("  AnnotationDefault: ");
+-        print("    default_value: ");
++        println("AnnotationDefault:");
++        indent(+1);
++        print("default_value: ");
+         annotationWriter.write(attr.default_value);
++        indent(-1);
+         return null;
+     }
+ 
+     public Void visitCharacterRangeTable(CharacterRangeTable_attribute attr, Void ignore) {
+-        print("  CharacterRangeTable: ");
++        println("CharacterRangeTable:");
++        indent(+1);
+         for (int i = 0; i < attr.character_range_table.length; i++) {
+             CharacterRangeTable_attribute.Entry e = attr.character_range_table[i];
+             print("    " + e.start_pc + ", " +
+                     e.end_pc + ", " +
+                     Integer.toHexString(e.character_range_start) + ", " +
+                     Integer.toHexString(e.character_range_end) + ", " +
+-                    Integer.toHexString(e.flags) +
+-                    "\t// ");
++                    Integer.toHexString(e.flags));
++            tab();
++            print("// ");
+             print(e.start_pc + ", " +
+                     e.end_pc + ", " +
+                     (e.character_range_start >> 10) + ":" + (e.character_range_start & 0x3ff) + ", " +
+@@ -185,16 +188,13 @@
+                 print(", branch-true");
+             if ((e.flags & CharacterRangeTable_attribute.CRT_BRANCH_FALSE) != 0)
+                 print(", branch-false");
+-
+-
+-
+         }
++        indent(-1);
+         return null;
+     }
+ 
+     public Void visitCode(Code_attribute attr, Void ignore) {
+         codeWriter.write(attr, constant_pool);
+-        println();
+         return null;
+     }
+ 
+@@ -205,25 +205,23 @@
+ 
+     public Void visitConstantValue(ConstantValue_attribute attr, Void ignore) {
+         if (options.compat) // BUG 6622216 javap names some attributes incorrectly
+-            print("  Constant value: ");
++            print("Constant value: ");
+         else
+-            print("  ConstantValue: ");
++            print("ConstantValue: ");
+         constantWriter.write(attr.constantvalue_index);
+-        if (!options.compat) // BUG 6622232 javap gets whitespace confused
+-            println();
++        println();
+         return null;
+     }
+ 
+     public Void visitDeprecated(Deprecated_attribute attr, Void ignore) {
+-        if (!(options.compat && owner instanceof Field)) // BUG 6622232 javap gets whitespace confused
+-            print("  ");
+         println("Deprecated: true");
+         return null;
+     }
+ 
+     public Void visitEnclosingMethod(EnclosingMethod_attribute attr, Void ignore) {
+-        print("  EnclosingMethod: #" + attr.class_index + ".#" + attr.method_index
+-                + "\t// " + getJavaClassName(attr));
++        print("EnclosingMethod: #" + attr.class_index + ".#" + attr.method_index);
++        tab();
++        print("// " + getJavaClassName(attr));
+         if (attr.method_index != 0)
+             print("." + getMethodName(attr));
+         println();
+@@ -247,15 +245,16 @@
+     }
+ 
+     public Void visitExceptions(Exceptions_attribute attr, Void ignore) {
+-        println("  Exceptions: ");
+-        print("   throws ");
++        println("Exceptions:");
++        indent(+1);
++        print("throws ");
+         for (int i = 0; i < attr.number_of_exceptions; i++) {
+             if (i > 0)
+                 print(", ");
+             print(getJavaException(attr, i));
+         }
+-        if (!options.compat) // BUG 6622232 javap gets whitespace confused
+-            println();
++        println();
++        indent(-1);
+         return null;
+     }
+ 
+@@ -288,8 +287,7 @@
+                     writeInnerClassHeader();
+                     first = false;
+                 }
+-                if (!options.compat) // BUG 6622232: javap gets whitespace confused
+-                    print("   ");
++                print("   ");
+                 for (String name: access_flags.getInnerClassModifiers())
+                     print(name + " ");
+                 if (info.inner_name_index!=0) {
+@@ -311,6 +309,8 @@
+                 println();
+             }
+         }
++        if (!first)
++            indent(-1);
+         return null;
+     }
+ 
+@@ -323,26 +323,28 @@
+     }
+ 
+     private void writeInnerClassHeader() {
+-        print("  ");
+         if (options.compat) // BUG 6622216: javap names some attributes incorrectly
+             print("InnerClass");
+         else
+             print("InnerClasses");
+         println(": ");
++        indent(+1);
+     }
+ 
+     public Void visitLineNumberTable(LineNumberTable_attribute attr, Void ignore) {
+-        println("  LineNumberTable: ");
++        println("LineNumberTable:");
++        indent(+1);
+         for (LineNumberTable_attribute.Entry entry: attr.line_number_table) {
+-            println("   line " + entry.line_number + ": " + entry.start_pc);
++            println("line " + entry.line_number + ": " + entry.start_pc);
+         }
++        indent(-1);
+         return null;
+     }
+ 
+     public Void visitLocalVariableTable(LocalVariableTable_attribute attr, Void ignore) {
+-        println("  LocalVariableTable: ");
+-        println("   Start  Length  Slot  Name   Signature");
+-
++        println("LocalVariableTable:");
++        indent(+1);
++        println("Start  Length  Slot  Name   Signature");
+         for (LocalVariableTable_attribute.Entry entry : attr.local_variable_table) {
+             Formatter formatter = new Formatter();
+             println(formatter.format("%8d %7d %5d %5s   %s",
+@@ -350,25 +352,28 @@
+                     constantWriter.stringValue(entry.name_index),
+                     constantWriter.stringValue(entry.descriptor_index)));
+         }
++        indent(-1);
+         return null;
+     }
+ 
+     public Void visitLocalVariableTypeTable(LocalVariableTypeTable_attribute attr, Void ignore) {
+-        println("  LocalVariableTypeTable: ");
+-        println("   Start  Length  Slot  Name   Signature");
+-
++        println("LocalVariableTypeTable:");
++        indent(+1);
++        println("Start  Length  Slot  Name   Signature");
+         for (LocalVariableTypeTable_attribute.Entry entry : attr.local_variable_table) {
+-            Formatter formatter = new Formatter();
+-            println(formatter.format("%8d %7d %5d %5s   %s",
++            println(String.format("%5d %7d %5d %5s   %s",
+                     entry.start_pc, entry.length, entry.index,
+                     constantWriter.stringValue(entry.name_index),
+                     constantWriter.stringValue(entry.signature_index)));
+         }
++        indent(-1);
+         return null;
+     }
+ 
+     public Void visitModule(Module_attribute attr, Void ignore) {
+-        println("  Module: #" + attr.module_name + "\t// " + getModuleName(attr));
++        print("Module: #" + attr.module_name);
++        tab();
++        println("// " + getModuleName(attr));
+         return null;
+     }
+ 
+@@ -381,11 +386,15 @@
+     }
+ 
+     public Void visitModuleExportTable(ModuleExportTable_attribute attr, Void ignore) {
+-        println("  ModuleExportTable:");
+-        println("    Types: (" + attr.export_type_table.length + ")");
++        println("ModuleExportTable:");
++        indent(+1);
++        println("Types: (" + attr.export_type_table.length + ")");
+         for (int i = 0; i < attr.export_type_table.length; i++) {
+-            println("      #" + attr.export_type_table[i] + "\t// " + getExportTypeName(attr, i));
++            print("#" + attr.export_type_table[i]);
++            tab();
++            println("// " + getExportTypeName(attr, i));
+         }
++        indent(-1);
+         return null;
+     }
+ 
+@@ -398,11 +407,15 @@
+     }
+ 
+     public Void visitModuleMemberTable(ModuleMemberTable_attribute attr, Void ignore) {
+-        println("  ModuleMemberTable:");
+-        println("    Packages: (" + attr.package_member_table.length + ")");
++        println("ModuleMemberTable:");
++        indent(+1);
++        println("Packages: (" + attr.package_member_table.length + ")");
+         for (int i = 0; i < attr.package_member_table.length; i++) {
+-            println("      #" + attr.package_member_table[i] + "\t// " + getPackageMemberName(attr, i));
++            print("#" + attr.package_member_table[i]);
++            tab();
++            println("// " + getPackageMemberName(attr, i));
+         }
++        indent(-1);
+         return null;
+     }
+ 
+@@ -415,53 +428,67 @@
+     }
+ 
+     public Void visitRuntimeVisibleAnnotations(RuntimeVisibleAnnotations_attribute attr, Void ignore) {
+-        println("  RuntimeVisibleAnnotations: ");
++        println("RuntimeVisibleAnnotations:");
++        indent(+1);
+         for (int i = 0; i < attr.annotations.length; i++) {
+-            print("    " + i + ": ");
++            print(i + ": ");
+             annotationWriter.write(attr.annotations[i]);
+             println();
+         }
++        indent(-1);
+         return null;
+     }
+ 
+     public Void visitRuntimeInvisibleAnnotations(RuntimeInvisibleAnnotations_attribute attr, Void ignore) {
+-        println("  RuntimeInvisibleAnnotations: ");
++        println("RuntimeInvisibleAnnotations:");
++        indent(+1);
+         for (int i = 0; i < attr.annotations.length; i++) {
+-            print("    " + i + ": ");
++            print(i + ": ");
+             annotationWriter.write(attr.annotations[i]);
+             println();
+         }
++        indent(-1);
+         return null;
+     }
+ 
+     public Void visitRuntimeVisibleParameterAnnotations(RuntimeVisibleParameterAnnotations_attribute attr, Void ignore) {
+-        println("  RuntimeVisibleParameterAnnotations: ");
++        println("RuntimeVisibleParameterAnnotations:");
++        indent(+1);
+         for (int param = 0; param < attr.parameter_annotations.length; param++) {
+-            println("    parameter " + param + ": ");
++            println("parameter " + param + ": ");
++            indent(+1);
+             for (int i = 0; i < attr.parameter_annotations[param].length; i++) {
+-                print("    " + i + ": ");
++                print(i + ": ");
+                 annotationWriter.write(attr.parameter_annotations[param][i]);
+                 println();
+             }
++            indent(-1);
+         }
++        indent(-1);
+         return null;
+     }
+ 
+     public Void visitRuntimeInvisibleParameterAnnotations(RuntimeInvisibleParameterAnnotations_attribute attr, Void ignore) {
+-        println("  RuntimeInvisibleParameterAnnotations: ");
++        println("RuntimeInvisibleParameterAnnotations:");
++        indent(+1);
+         for (int param = 0; param < attr.parameter_annotations.length; param++) {
+-            println("    " + param + ": ");
++            println(param + ": ");
++            indent(+1);
+             for (int i = 0; i < attr.parameter_annotations[param].length; i++) {
+-                print("    " + i + ": ");
++                print(i + ": ");
+                 annotationWriter.write(attr.parameter_annotations[param][i]);
+                 println();
+             }
++            indent(-1);
+         }
++        indent(-1);
+         return null;
+     }
+ 
+     public Void visitSignature(Signature_attribute attr, Void ignore) {
+-        println("  Signature: #" + attr.signature_index + "\t// " + getSignature(attr));
++        print("Signature: #" + attr.signature_index);
++        tab();
++        println("// " + getSignature(attr));
+         return null;
+     }
+ 
+@@ -474,12 +501,12 @@
+     }
+ 
+     public Void visitSourceDebugExtension(SourceDebugExtension_attribute attr, Void ignore) {
+-        println("  SourceDebugExtension: " + attr.getValue());
++        println("SourceDebugExtension: " + attr.getValue());
+         return null;
+     }
+ 
+     public Void visitSourceFile(SourceFile_attribute attr, Void ignore) {
+-        println("  SourceFile: \"" + getSourceFile(attr) + "\"");
++        println("SourceFile: \"" + getSourceFile(attr) + "\"");
+         return null;
+     }
+ 
+@@ -497,24 +524,26 @@
+     }
+ 
+     public Void visitStackMap(StackMap_attribute attr, Void ignore) {
+-        println("  StackMap: number_of_entries = " + attr.number_of_entries);
+-
++        println("StackMap: number_of_entries = " + attr.number_of_entries);
++        indent(+1);
+         StackMapTableWriter w = new StackMapTableWriter();
+         for (StackMapTable_attribute.stack_map_frame entry : attr.entries) {
+             w.write(entry);
+         }
+         println();
++        indent(-1);
+         return null;
+     }
+ 
+     public Void visitStackMapTable(StackMapTable_attribute attr, Void ignore) {
+-        println("  StackMapTable: number_of_entries = " + attr.number_of_entries);
+-
++        println("StackMapTable: number_of_entries = " + attr.number_of_entries);
++        indent(+1);
+         StackMapTableWriter w = new StackMapTableWriter();
+         for (StackMapTable_attribute.stack_map_frame entry : attr.entries) {
+             w.write(entry);
+         }
+         println();
++        indent(-1);
+         return null;
+     }
+ 
+@@ -533,29 +562,37 @@
+         public Void visit_same_locals_1_stack_item_frame(StackMapTable_attribute.same_locals_1_stack_item_frame frame, Void p) {
+             printHeader(frame);
+             println(" /* same_locals_1_stack_item */");
++            indent(+1);
+             printMap("stack", frame.stack);
++            indent(-1);
+             return null;
+         }
+ 
+         public Void visit_same_locals_1_stack_item_frame_extended(StackMapTable_attribute.same_locals_1_stack_item_frame_extended frame, Void p) {
+             printHeader(frame);
+             println(" /* same_locals_1_stack_item_frame_extended */");
+-            println("     offset_delta = " + frame.offset_delta);
++            indent(+1);
++            println("offset_delta = " + frame.offset_delta);
+             printMap("stack", frame.stack);
++            indent(-1);
+             return null;
+         }
+ 
+         public Void visit_chop_frame(StackMapTable_attribute.chop_frame frame, Void p) {
+             printHeader(frame);
+             println(" /* chop */");
+-            println("     offset_delta = " + frame.offset_delta);
++            indent(+1);
++            println("offset_delta = " + frame.offset_delta);
++            indent(-1);
+             return null;
+         }
+ 
+         public Void visit_same_frame_extended(StackMapTable_attribute.same_frame_extended frame, Void p) {
+             printHeader(frame);
+             println(" /* same_frame_extended */");
+-            println("     offset_delta = " + frame.offset_delta);
++            indent(+1);
++            println("offset_delta = " + frame.offset_delta);
++            indent(-1);
+             return null;
+         }
+ 
+@@ -570,13 +607,16 @@
+         public Void visit_full_frame(StackMapTable_attribute.full_frame frame, Void p) {
+             printHeader(frame);
+             if (frame instanceof StackMap_attribute.stack_map_frame) {
+-                println("     offset = " + frame.offset_delta);
++                indent(+1);
++                println(" offset = " + frame.offset_delta);
+             } else {
+                 println(" /* full_frame */");
+-                println("     offset_delta = " + frame.offset_delta);
++                indent(+1);
++                println("offset_delta = " + frame.offset_delta);
+             }
+             printMap("locals", frame.locals);
+             printMap("stack", frame.stack);
++            indent(-1);
+             return null;
+         }
+ 
+@@ -585,7 +625,7 @@
+         }
+ 
+         void printMap(String name, StackMapTable_attribute.verification_type_info[] map) {
+-            print("     " + name + " = [");
++            print(name + " = [");
+             for (int i = 0; i < map.length; i++) {
+                 StackMapTable_attribute.verification_type_info info = map[i];
+                 int tag = info.tag;
+diff -r a22d1b683f15 -r db86275eb3f8 src/share/classes/com/sun/tools/javap/BasicWriter.java
+--- langtools/src/share/classes/com/sun/tools/javap/BasicWriter.java	Fri Oct 25 06:07:26 2013 +0100
++++ langtools/src/share/classes/com/sun/tools/javap/BasicWriter.java	Fri Oct 25 06:17:08 2013 +0100
+@@ -68,6 +68,18 @@
+         lineWriter.println();
+     }
+ 
++    protected void indent(int delta) {
++        lineWriter.indent(delta);
++    }
++
++    protected void tab() {
++        lineWriter.tab();
++    }
++
++    protected void setPendingNewline(boolean b) {
++        lineWriter.pendingNewline = b;
++    }
++
+     protected String report(AttributeException e) {
+         out.println("Error: " + e.getMessage()); // i18n?
+         return "???";
+@@ -101,19 +113,30 @@
+ 
+         protected LineWriter(Context context) {
+             context.put(LineWriter.class, this);
++            Options options = Options.instance(context);
++            indentWidth = options.indentWidth;
++            tabColumn = options.tabColumn;
+             out = context.get(PrintWriter.class);
+             buffer = new StringBuilder();
+         }
+ 
+         protected void print(String s) {
++            if (pendingNewline) {
++                println();
++                pendingNewline = false;
++            }
+             if (s == null)
+                 s = "null";
+             for (int i = 0; i < s.length(); i++) {
+                 char c = s.charAt(i);
+-                if (c == '\n') {
+-                    println();
+-                } else {
+-                    buffer.append(c);
++                switch (c) {
++                    case '\n':
++                        println();
++                        break;
++                    default:
++                        if (buffer.length() == 0)
++                            indent();
++                        buffer.append(c);
+                 }
+             }
+ 
+@@ -124,8 +147,31 @@
+             buffer.setLength(0);
+         }
+ 
++        protected void indent(int delta) {
++            indentCount += delta;
++        }
++
++        protected void tab() {
++            if (buffer.length() == 0)
++                indent();
++            space(indentCount * indentWidth + tabColumn - buffer.length());
++        }
++
++        private void indent() {
++            space(indentCount * indentWidth);
++        }
++
++        private void space(int n) {
++            for (int i = 0; i < n; i++)
++                buffer.append(' ');
++        }
++
+         private PrintWriter out;
+         private StringBuilder buffer;
++        private int indentCount;
++        private int indentWidth;
++        private int tabColumn;
++        private boolean pendingNewline;
+     }
+ }
+ 
+diff -r a22d1b683f15 -r db86275eb3f8 src/share/classes/com/sun/tools/javap/ClassWriter.java
+--- langtools/src/share/classes/com/sun/tools/javap/ClassWriter.java	Fri Oct 25 06:07:26 2013 +0100
++++ langtools/src/share/classes/com/sun/tools/javap/ClassWriter.java	Fri Oct 25 06:17:08 2013 +0100
+@@ -120,6 +120,7 @@
+                 else
+                     println("Classfile " + uri);
+             }
++            indent(+1);
+             if (lastModified != -1) {
+                 Date lm = new Date(lastModified);
+                 DateFormat df = DateFormat.getDateInstance();
+@@ -144,6 +145,10 @@
+             println("Compiled from \"" + getSourceFile((SourceFile_attribute) sfa) + "\"");
+         }
+ 
++        if ((options.sysInfo || options.verbose) && !options.compat) {
++            indent(-1);
++        }
++
+         String name = getJavaName(classFile);
+         AccessFlags flags = cf.access_flags;
+ 
+@@ -190,23 +195,24 @@
+ 
+         if (options.verbose) {
+             println();
++            indent(+1);
+             attrWriter.write(cf, cf.attributes, constant_pool);
+-            println("  minor version: " + cf.minor_version);
+-            println("  major version: " + cf.major_version);
++            println("minor version: " + cf.minor_version);
++            println("major version: " + cf.major_version);
+             if (!options.compat)
+-              writeList("  flags: ", flags.getClassFlags(), NEWLINE);
++              writeList("flags: ", flags.getClassFlags(), NEWLINE);
++            indent(-1);
+             constantWriter.writeConstantPool();
+-            println();
+         } else {
+-            if (!options.compat)
+-                print(" ");
++            print(" ");
+         }
+ 
+         println("{");
++        indent(+1);
+         writeFields();
+         writeMethods();
++        indent(-1);
+         println("}");
+-        println();
+     }
+ 
+     protected void writeFields() {
+@@ -219,14 +225,6 @@
+         if (!options.checkAccess(f.access_flags))
+             return;
+ 
+-        if (!(options.showLineAndLocalVariableTables
+-                || options.showDisassembled
+-                || options.verbose
+-                || options.showInternalSignatures
+-                || options.showAllAttrs)) {
+-            print("    ");
+-        }
+-
+         AccessFlags flags = f.access_flags;
+         writeModifiers(flags.getFieldModifiers());
+         Signature_attribute sigAttr = getSignature(f.attributes);
+@@ -255,11 +253,13 @@
+         print(";");
+         println();
+ 
++        indent(+1);
++
+         if (options.showInternalSignatures)
+-            println("  Signature: " + getValue(f.descriptor));
++            println("Signature: " + getValue(f.descriptor));
+ 
+         if (options.verbose && !options.compat)
+-            writeList("  flags: ", flags.getFieldFlags(), NEWLINE);
++            writeList("flags: ", flags.getFieldFlags(), NEWLINE);
+ 
+         if (options.showAllAttrs) {
+             for (Attribute attr: f.attributes)
+@@ -267,6 +267,8 @@
+             println();
+         }
+ 
++        indent(-1);
++
+         if (options.showDisassembled || options.showLineAndLocalVariableTables)
+             println();
+     }
+@@ -274,6 +276,7 @@
+     protected void writeMethods() {
+         for (Method m: classFile.methods)
+             writeMethod(m);
++        setPendingNewline(false);
+     }
+ 
+     protected void writeMethod(Method m) {
+@@ -282,14 +285,6 @@
+ 
+         method = m;
+ 
+-        if (!(options.showLineAndLocalVariableTables
+-                || options.showDisassembled
+-                || options.verbose
+-                || options.showInternalSignatures
+-                || options.showAllAttrs)) {
+-            print("    ");
+-        }
+-
+         AccessFlags flags = m.access_flags;
+ 
+         Descriptor d;
+@@ -337,16 +332,6 @@
+         if (e_attr != null) { // if there are generic exceptions, there must be erased exceptions
+             if (e_attr instanceof Exceptions_attribute) {
+                 Exceptions_attribute exceptions = (Exceptions_attribute) e_attr;
+-                if (options.compat) { // Bug XXXXXXX whitespace
+-                    if (!(options.showLineAndLocalVariableTables
+-                            || options.showDisassembled
+-                            || options.verbose
+-                            || options.showInternalSignatures
+-                            || options.showAllAttrs)) {
+-                        print("    ");
+-                    }
+-                    print("  ");
+-                }
+                 print(" throws ");
+                 if (methodExceptions != null) { // use generic list if available
+                     writeList("", methodExceptions, "");
+@@ -362,14 +347,17 @@
+             }
+         }
+ 
+-        print(";");
+-        println();
++        println(";");
+ 
+-        if (options.showInternalSignatures)
+-            println("  Signature: " + getValue(m.descriptor));
++        indent(+1);
+ 
+-        if (options.verbose && !options.compat)
+-            writeList("  flags: ", flags.getMethodFlags(), NEWLINE);
++        if (options.showInternalSignatures) {
++            println("Signature: " + getValue(m.descriptor));
++        }
++
++        if (options.verbose && !options.compat) {
++            writeList("flags: ", flags.getMethodFlags(), NEWLINE);
++        }
+ 
+         Code_attribute code = null;
+         Attribute c_attr = m.attributes.get(Attribute.Code);
+@@ -382,33 +370,35 @@
+ 
+         if (options.showDisassembled && !options.showAllAttrs) {
+             if (code != null) {
+-                println("  Code:");
++                println("Code:");
+                 codeWriter.writeInstrs(code);
+                 codeWriter.writeExceptionTable(code);
+             }
+-            println();
+         }
+ 
+         if (options.showLineAndLocalVariableTables) {
+-            if (code != null)
++            if (code != null) {
+                 attrWriter.write(code, code.attributes.get(Attribute.LineNumberTable), constant_pool);
+-            println();
+-            if (code != null)
+                 attrWriter.write(code, code.attributes.get(Attribute.LocalVariableTable), constant_pool);
+-            println();
+-            println();
++            }
+         }
+ 
+         if (options.showAllAttrs) {
+             Attribute[] attrs = m.attributes.attrs;
+             for (Attribute attr: attrs)
+                 attrWriter.write(m, attr, constant_pool);
++        }
+ 
+-//            // the following condition is to mimic old javap
+-//            if (!(attrs.length > 0 &&
+-//                    attrs[attrs.length - 1] instanceof Exceptions_attribute))
+-            println();
+-        }
++        indent(-1);
++
++        // set pendingNewline to write a newline before the next method (if any)
++        // if a separator is desired
++        setPendingNewline(
++                options.showDisassembled ||
++                options.showAllAttrs ||
++                options.showInternalSignatures ||
++                options.showLineAndLocalVariableTables ||
++                options.verbose);
+     }
+ 
+     void writeModifiers(Collection<String> items) {
+diff -r a22d1b683f15 -r db86275eb3f8 src/share/classes/com/sun/tools/javap/CodeWriter.java
+--- langtools/src/share/classes/com/sun/tools/javap/CodeWriter.java	Fri Oct 25 06:07:26 2013 +0100
++++ langtools/src/share/classes/com/sun/tools/javap/CodeWriter.java	Fri Oct 25 06:17:08 2013 +0100
+@@ -62,11 +62,13 @@
+     }
+ 
+     void write(Code_attribute attr, ConstantPool constant_pool) {
+-        println("  Code:");
++        println("Code:");
++        indent(+1);
+         writeVerboseHeader(attr, constant_pool);
+         writeInstrs(attr);
+         writeExceptionTable(attr);
+         attrWriter.write(attr, attr.attributes, constant_pool);
++        indent(-1);
+     }
+ 
+     public void writeVerboseHeader(Code_attribute attr, ConstantPool constant_pool) {
+@@ -83,9 +85,9 @@
+             argCount = report(e);
+         }
+ 
+-        println("   Stack=" + attr.max_stack +
+-                ", Locals=" + attr.max_locals +
+-                ", Args_size=" + argCount);
++        println("stack=" + attr.max_stack +
++                ", locals=" + attr.max_locals +
++                ", args_size=" + argCount);
+ 
+     }
+ 
+@@ -101,8 +103,7 @@
+     }
+ 
+     public void writeInstr(Instruction instr) {
+-        print("   " + instr.getPC() + ":\t");
+-        print(instr.getMnemonic());
++        print(String.format("%4d: %-12s ", instr.getPC(), instr.getMnemonic()));
+         instr.accept(instructionPrinter, null);
+         println();
+     }
+@@ -120,54 +121,62 @@
+         }
+ 
+         public Void visitBranch(Instruction instr, int offset, Void p) {
+-            print("\t" + (instr.getPC() + offset));
++            print((instr.getPC() + offset));
+             return null;
+         }
+ 
+         public Void visitConstantPoolRef(Instruction instr, int index, Void p) {
+-            print("\t#" + index + "; //");
++            print("#" + index + ";");
++            tab();
++            print("// ");
+             printConstant(index);
+             return null;
+         }
+ 
+         public Void visitConstantPoolRefAndValue(Instruction instr, int index, int value, Void p) {
+-            print("\t#" + index + ",  " + value + "; //");
++            print("#" + index + ",  " + value + ";");
++            tab();
++            print("// ");
+             printConstant(index);
+             return null;
+         }
+ 
+         public Void visitLocal(Instruction instr, int index, Void p) {
+-            print("\t" + index);
++            print(index);
+             return null;
+         }
+ 
+         public Void visitLocalAndValue(Instruction instr, int index, int value, Void p) {
+-            print("\t" + index + ", " + value);
++            print(index + ", " + value);
+             return null;
+         }
+ 
+         public Void visitLookupSwitch(Instruction instr, int default_, int npairs, int[] matches, int[] offsets) {
+             int pc = instr.getPC();
+-            print("{ //" + npairs);
++            print("{ // " + npairs);
++            indent(+1);
+             for (int i = 0; i < npairs; i++) {
+-                print("\n\t\t" + matches[i] + ": " + (pc + offsets[i]) + ";");
++                print("\n" + matches[i] + ": " + (pc + offsets[i]) + ";");
+             }
+-            print("\n\t\tdefault: " + (pc + default_) + " }");
++            print("\ndefault: " + (pc + default_) + " }");
++            indent(-1);
+             return null;
+         }
+ 
+         public Void visitTableSwitch(Instruction instr, int default_, int low, int high, int[] offsets) {
+             int pc = instr.getPC();
+             print("{ //" + low + " to " + high);
++            indent(+1);
+             for (int i = 0; i < offsets.length; i++) {
+-                print("\n\t\t" + (low + i) + ": " + (pc + offsets[i]) + ";");
++                print("\n" + (low + i) + ": " + (pc + offsets[i]) + ";");
+             }
+-            print("\n\t\tdefault: " + (pc + default_) + " }");
++            print("\ndefault: " + (pc + default_) + " }");
++            indent(-1);
+             return null;
+         }
+ 
+         public Void visitValue(Instruction instr, int value, Void p) {
+-            print("\t" + value);
++            print(value);
+             return null;
+         }
+ 
+@@ -179,13 +188,13 @@
+ 
+     public void writeExceptionTable(Code_attribute attr) {
+         if (attr.exception_table_langth > 0) {
+-            println("  Exception table:");
+-            println("   from   to  target type");
++            println("Exception table:");
++            indent(+1);
++            println(" from    to  target type");
+             for (int i = 0; i < attr.exception_table.length; i++) {
+                 Code_attribute.Exception_data handler = attr.exception_table[i];
+-                printFixedWidthInt(handler.start_pc, 6);
+-                printFixedWidthInt(handler.end_pc, 6);
+-                printFixedWidthInt(handler.handler_pc, 6);
++                print(String.format(" %5d %5d %5d",
++                        handler.start_pc, handler.end_pc, handler.handler_pc));
+                 print("   ");
+                 int catch_type = handler.catch_type;
+                 if (catch_type == 0) {
+@@ -193,9 +202,9 @@
+                 } else {
+                     print("Class ");
+                     println(constantWriter.stringValue(catch_type));
+-                    println("");
+                 }
+             }
++            indent(-1);
+         }
+ 
+     }
+@@ -204,13 +213,6 @@
+         constantWriter.write(index);
+     }
+ 
+-    private void printFixedWidthInt(int n, int width) {
+-        String s = String.valueOf(n);
+-        for (int i = s.length(); i < width; i++)
+-            print(" ");
+-        print(s);
+-    }
+-
+     private static int align(int n) {
+         return (n + 3) & ~3;
+     }
+diff -r a22d1b683f15 -r db86275eb3f8 src/share/classes/com/sun/tools/javap/ConstantWriter.java
+--- langtools/src/share/classes/com/sun/tools/javap/ConstantWriter.java	Fri Oct 25 06:07:26 2013 +0100
++++ langtools/src/share/classes/com/sun/tools/javap/ConstantWriter.java	Fri Oct 25 06:17:08 2013 +0100
+@@ -62,7 +62,9 @@
+     protected void writeConstantPool(ConstantPool constant_pool) {
+         ConstantPool.Visitor<Integer, Void> v = new ConstantPool.Visitor<Integer,Void>() {
+             public Integer visitClass(CONSTANT_Class_info info, Void p) {
+-                println("#" + info.name_index + ";\t//  " + stringValue(info));
++                print("#" + info.name_index + ";");
++                tab();
++                println("//  " + stringValue(info));
+                 return 1;
+             }
+ 
+@@ -72,7 +74,9 @@
+             }
+ 
+             public Integer visitFieldref(CONSTANT_Fieldref_info info, Void p) {
+-                println("#" + info.class_index + ".#" + info.name_and_type_index + ";\t//  " + stringValue(info));
++                print("#" + info.class_index + ".#" + info.name_and_type_index + ";");
++                tab();
++                println("//  " + stringValue(info));
+                 return 1;
+             }
+ 
+@@ -87,7 +91,9 @@
+             }
+ 
+             public Integer visitInterfaceMethodref(CONSTANT_InterfaceMethodref_info info, Void p) {
+-                println("#" + info.class_index + ".#" + info.name_and_type_index + ";\t//  " + stringValue(info));
++                print("#" + info.class_index + ".#" + info.name_and_type_index + ";");
++                tab();
++                println("//  " + stringValue(info));
+                 return 1;
+             }
+ 
+@@ -97,18 +103,23 @@
+             }
+ 
+             public Integer visitNameAndType(CONSTANT_NameAndType_info info, Void p) {
+-                String tab = (options.compat ? "" : "\t"); // BUG 6622232 javap gets whitespace confused
+-                println("#" + info.name_index + ":#" + info.type_index + ";" + tab + "//  " + stringValue(info));
++                print("#" + info.name_index + ":#" + info.type_index + ";");
++                tab();
++                println("//  " + stringValue(info));
+                 return 1;
+             }
+ 
+             public Integer visitMethodref(CONSTANT_Methodref_info info, Void p) {
+-                println("#" + info.class_index + ".#" + info.name_and_type_index + ";\t//  " + stringValue(info));
++                print("#" + info.class_index + ".#" + info.name_and_type_index + ";");
++                tab();
++                println("//  " + stringValue(info));
+                 return 1;
+             }
+ 
+             public Integer visitString(CONSTANT_String_info info, Void p) {
+-                println("#" + info.string_index + ";\t//  " + stringValue(info));
++                print("#" + info.string_index + ";");
++                tab();
++                println("//  " + stringValue(info));
+                 return 1;
+             }
+ 
+@@ -118,17 +129,21 @@
+             }
+ 
+         };
+-        println("  Constant pool:");
++        println("Constant pool:");
++        indent(+1);
++        int width = String.valueOf(constant_pool.size()).length() + 1;
+         int cpx = 1;
+         while (cpx < constant_pool.size()) {
++            print(String.format("const %" + width + "s", ("#" + cpx)));
+             try {
+                 CPInfo cpInfo = constant_pool.get(cpx);
+-                print("const #" + cpx + " = " + tagName(cpInfo.getTag()) + "\t");
++                print(String.format(" = %-15s ", tagName(cpInfo.getTag())));
+                 cpx += cpInfo.accept(v, null);
+             } catch (ConstantPool.InvalidIndex ex) {
+-                print("const #" + cpx); // should not happen
++                // should not happen
+             }
+         }
++        indent(-1);
+     }
+ 
+     protected void write(int cpx) {
+diff -r a22d1b683f15 -r db86275eb3f8 src/share/classes/com/sun/tools/javap/JavapTask.java
+--- langtools/src/share/classes/com/sun/tools/javap/JavapTask.java	Fri Oct 25 06:07:26 2013 +0100
++++ langtools/src/share/classes/com/sun/tools/javap/JavapTask.java	Fri Oct 25 06:17:08 2013 +0100
+@@ -239,6 +239,38 @@
+             void process(JavapTask task, String opt, String arg) {
+                 task.options.showConstants = true;
+             }
++        },
++
++        new Option(false, "-XDindent:") {
++            @Override
++            boolean matches(String opt) {
++                int sep = opt.indexOf(":");
++                return sep != -1 && super.matches(opt.substring(0, sep + 1));
++            }
++
++            void process(JavapTask task, String opt, String arg) throws BadArgs {
++                int sep = opt.indexOf(":");
++                try {
++                    task.options.indentWidth = Integer.valueOf(opt.substring(sep + 1));
++                } catch (NumberFormatException e) {
++                }
++            }
++        },
++
++        new Option(false, "-XDtab:") {
++            @Override
++            boolean matches(String opt) {
++                int sep = opt.indexOf(":");
++                return sep != -1 && super.matches(opt.substring(0, sep + 1));
++            }
++
++            void process(JavapTask task, String opt, String arg) throws BadArgs {
++                int sep = opt.indexOf(":");
++                try {
++                    task.options.tabColumn = Integer.valueOf(opt.substring(sep + 1));
++                } catch (NumberFormatException e) {
++                }
++            }
+         }
+ 
+     };
+diff -r a22d1b683f15 -r db86275eb3f8 src/share/classes/com/sun/tools/javap/Options.java
+--- langtools/src/share/classes/com/sun/tools/javap/Options.java	Fri Oct 25 06:07:26 2013 +0100
++++ langtools/src/share/classes/com/sun/tools/javap/Options.java	Fri Oct 25 06:17:08 2013 +0100
+@@ -79,6 +79,8 @@
+     public boolean showAllAttrs;
+     public boolean showConstants;
+     public boolean sysInfo;
++    public int indentWidth = 2;   // #spaces per indentWidth level
++    public int tabColumn = 40;    // column number for comments
+ 
+     public boolean compat;             // bug-for-bug compatibility mode with old javap
+     public boolean jsr277;

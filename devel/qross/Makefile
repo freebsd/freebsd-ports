@@ -14,7 +14,7 @@ USE_BZIP2=	yes
 USES=		cmake
 USE_LDCONFIG=	yes
 USE_QT4=	designer gui network xml qmake_build uic_build moc_build \
-		rcc_build script
+		rcc_build script testlib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

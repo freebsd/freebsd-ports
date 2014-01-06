@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.8.0-7
-PORTREVISION=	3
+#PORTREVISION=	1
+DISTVERSION=	6.8.8-1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
 		http://servingzone.com/mirrors/ImageMagick/ \
@@ -27,21 +27,23 @@ MASTER_SITES=	http://www.imagemagick.org/download/ \
 		ftp://ftp.is.co.za/pub/imagemagick/ \
 		ftp://ftp.fifi.org/pub/ImageMagick/
 
-MAINTAINER=	c.petrik.sosa@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image processing tools
 
-LICENSE=	APACHE20
+LICENSE_NAME=	APACHE20
 
 USES=		pkgconfig:both pathfix perl5
 USE_XZ=		yes
-USE_PERL5=	run build patch
+USE_PERL5=	run build patch install
 WANT_GNOME=	yes
 USE_AUTOTOOLS=	libltdl
 NO_STAGE=	yes
 # For some reason, using our libtool breaks the build into pieces:
 #USE_AUTOTOOLS+=	libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --without-dps --without-lcms
+CONFIGURE_ARGS=	--enable-shared \
+		--without-dps \
+		--without-lcms
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
@@ -60,8 +62,9 @@ OPTIONS_DEFINE=	16BIT_PIXEL BZIP2 DOCS DJVU FFTW FONTCONFIG FPX FREETYPE \
 		OPENEXR OPENMP PANGO PDF PERL PNG SVG TESTS TIFF WEBP WMF \
 		THREADS
 OPTIONS_DEFAULT=	16BIT_PIXEL BZIP2 FFTW FONTCONFIG FPX FREETYPE \
-		JASPER JBIG JPEG LCMS2 LZMA LQR MODULES PDF PERL PNG SVG \
-		TIFF WEBP WMF
+		JASPER JBIG JPEG LCMS2 LZMA LQR MODULES PDF PNG SVG TIFF \
+		WEBP WMF THREADS
+
 16BIT_PIXEL_DESC=	16bit pixel support
 DJVU_DESC=		DJVU format support (needs THREADS)
 GSLIB_DESC=		libgs (Postscript SHLIB) support
@@ -92,7 +95,7 @@ CONFIGURE_ARGS+=	--with-perl=${PERL5}
 PLIST_SUB+=		WITH_PERL=''
 MAN3=			Image::Magick.3
 MAN3PREFIX=		${PREFIX}/lib/perl5/${PERL_VER}
-# PerlMagick not works with threads, if perl is not threaded, and vice versa
+# PerlMagick does not work with threads, if perl is not threaded, and vice versa
 . if defined(PERL_THREADED)
 _IMAGEMAGICK_THREADS_PERL_MSG=Perl is threaded
 _IMAGEMAGICK_THREADS=yes
@@ -421,6 +424,8 @@ pre-configure:
 post-install: test
 .if ${PORT_OPTIONS:MPERL}
 	@${RM} -f ${PREFIX}/lib/perl5/${PERL_VER}/mach/perllocal.pod
+	${REINPLACE_CMD} '303 s/EXTRALIBS =/EXTRALIBS = -L${LOCALBASE}/lib/perl5/${PERL_VER}/mach/CORE/g' \
+		${WRKSRC}/PerlMagick/Makefile
 .endif
 .if ${PORT_OPTIONS:MMODULES}
 . if ${PORT_OPTIONS:M16BIT_PIXEL}

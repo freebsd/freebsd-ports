@@ -14,7 +14,4 @@ COMMENT=	Parse a MIME Content-Type Header
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Email::MIME::ContentType.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

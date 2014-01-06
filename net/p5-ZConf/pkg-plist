@@ -2,6 +2,9 @@
 %%SITE_PERL%%/ZConf/backends/ldap.pm
 %%SITE_PERL%%/ZConf/backends/file.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/.packlist
+%%PERL5_MAN3%%/ZConf.3.gz
+%%PERL5_MAN3%%/ZConf::backends::file.3.gz
+%%PERL5_MAN3%%/ZConf::backends::ldap.3.gz
 @dirrmtry %%SITE_PERL%%/ZConf/backends
 @dirrmtry %%SITE_PERL%%/ZConf
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf

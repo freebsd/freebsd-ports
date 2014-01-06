@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Template/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Simple/.packlist
+%%PERL5_MAN3%%/Template::Simple.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%

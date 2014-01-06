@@ -11,13 +11,12 @@ DISTNAME=	hpack79src
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Multi-System Archiver with open keys PGP-based security
 
-NO_STAGE=	yes
 USE_CSTD=	gnu89
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	freebsd
+MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX}
 INSTALL_TARGET=	freebsd.install
-MAN1=		hpack.1
 
 post-patch:
 .for f in language/language.c cli.c
@@ -25,6 +24,6 @@ post-patch:
 .endfor
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/docs/hpack.cfg ${PREFIX}/etc/hpack.cfg.dist
+	@${INSTALL_DATA} ${WRKSRC}/docs/hpack.cfg ${STAGEDIR}${PREFIX}/etc/hpack.cfg.dist
 
 .include <bsd.port.mk>

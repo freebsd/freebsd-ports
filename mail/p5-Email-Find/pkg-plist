@@ -1,5 +1,7 @@
 %%SITE_PERL%%/Email/Find.pm
 %%SITE_PERL%%/Email/Find/addrspec.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Find/.packlist
+%%PERL5_MAN3%%/Email::Find.3.gz
+%%PERL5_MAN3%%/Email::Find::addrspec.3.gz
 @dirrm %%SITE_PERL%%/Email/Find
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Find

@@ -676,6 +676,7 @@
     SUBDIR += pear-Net_Portscan
     SUBDIR += pear-Text_Password
     SUBDIR += pecl-crack
+    SUBDIR += pecl-crypto
     SUBDIR += pecl-gnupg
     SUBDIR += pecl-pam
     SUBDIR += pecl-scrypt

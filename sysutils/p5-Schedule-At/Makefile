@@ -13,7 +13,4 @@ COMMENT=	OS independent interface to the Unix 'at' command
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Schedule::At.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

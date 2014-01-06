@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Schedule/Match/.packlist
 %%SITE_PERL%%/Schedule/Match.pm
+%%PERL5_MAN3%%/Schedule::Match.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Schedule/Match
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Schedule
 @dirrmtry %%SITE_PERL%%/Schedule

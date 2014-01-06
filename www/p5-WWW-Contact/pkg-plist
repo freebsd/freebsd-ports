@@ -14,6 +14,21 @@
 %%SITE_PERL%%/WWW/Contact/BG/Abv.pm
 %%SITE_PERL%%/WWW/Contact/BG/Mail.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Contact/.packlist
+%%PERL5_MAN3%%/WWW::Contact.3.gz
+%%PERL5_MAN3%%/WWW::Contact::AOL.3.gz
+%%PERL5_MAN3%%/WWW::Contact::BG::Abv.3.gz
+%%PERL5_MAN3%%/WWW::Contact::BG::Mail.3.gz
+%%PERL5_MAN3%%/WWW::Contact::Base.3.gz
+%%PERL5_MAN3%%/WWW::Contact::CN::163.3.gz
+%%PERL5_MAN3%%/WWW::Contact::Gmail.3.gz
+%%PERL5_MAN3%%/WWW::Contact::GoogleContactsAPI.3.gz
+%%PERL5_MAN3%%/WWW::Contact::Hotmail.3.gz
+%%PERL5_MAN3%%/WWW::Contact::Indiatimes.3.gz
+%%PERL5_MAN3%%/WWW::Contact::Lycos.3.gz
+%%PERL5_MAN3%%/WWW::Contact::Mail.3.gz
+%%PERL5_MAN3%%/WWW::Contact::Plaxo.3.gz
+%%PERL5_MAN3%%/WWW::Contact::Rediffmail.3.gz
+%%PERL5_MAN3%%/WWW::Contact::Yahoo.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Contact
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 @dirrmtry %%SITE_PERL%%/WWW/Contact/BG

@@ -16,7 +16,4 @@ RUN_DEPENDS=	p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Todoist.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

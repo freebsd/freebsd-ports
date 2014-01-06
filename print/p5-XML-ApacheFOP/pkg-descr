@@ -1,2 +1,4 @@
 XML::ApacheFOP allows you to create PDFs (or other output types) using
 Apache FOP.
+
+WWW: http://search.cpan.org/dist/XML-ApacheFOP/

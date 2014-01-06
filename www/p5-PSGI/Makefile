@@ -13,9 +13,4 @@ COMMENT=	Pod documentation for Perl Web Server Gateway Interface Specification
 USES=	perl5
 USE_PERL5=	configure
 
-MAN3=	PSGI::Extensions.3 \
-	PSGI::FAQ.3 \
-	PSGI.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

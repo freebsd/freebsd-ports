@@ -36,12 +36,4 @@ RUN_DEPENDS=	\
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Ark::Command.3 \
-	Ark::Command::Controller.3 \
-	Ark::Command::Model.3 \
-	Ark::Command::Newapp.3 \
-	Ark::Command::Server.3 \
-	Ark::Command::View.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

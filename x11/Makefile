@@ -242,7 +242,6 @@
     SUBDIR += qimageblitz
     SUBDIR += qt4-graphicssystems-opengl
     SUBDIR += qt4-inputmethods
-    SUBDIR += qt4-opengl
     SUBDIR += qxkb
     SUBDIR += randrproto
     SUBDIR += recordproto

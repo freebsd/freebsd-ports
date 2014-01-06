@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/MemoryUsage/.packlist
 %%SITE_PERL%%/Plack/Middleware/MemoryUsage.pm
+%%PERL5_MAN3%%/Plack::Middleware::MemoryUsage.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/MemoryUsage
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware

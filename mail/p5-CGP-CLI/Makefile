@@ -14,7 +14,4 @@ COMMENT=	CommunigatePro Command Line Interface perl module
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	CGP::CLI.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

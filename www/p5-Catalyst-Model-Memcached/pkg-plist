@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model/Memcached/.packlist
+%%PERL5_MAN3%%/Catalyst::Model::Memcached.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model/Memcached
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Model
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst

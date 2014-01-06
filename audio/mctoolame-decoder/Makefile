@@ -13,7 +13,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MPEG Layer II audio decoder with multi-channel support
 
-NO_STAGE=	yes
 USES=		gmake
 ALL_TARGET=	#
 MAKE_ARGS=	CC="${CC}" OPTIM="${CFLAGS}"
@@ -30,10 +29,10 @@ post-patch:
 			${WRKSRC}/musicout.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mctoolamed ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mctoolamed ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}${PKGNAMESUFFIX}/html
-	${INSTALL_DATA} ${WRKSRC}/html/* ${DOCSDIR}${PKGNAMESUFFIX}/html
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}${PKGNAMESUFFIX}/html
+	${INSTALL_DATA} ${WRKSRC}/html/* ${STAGEDIR}${DOCSDIR}${PKGNAMESUFFIX}/html
 .endif
 
 .include <bsd.port.mk>

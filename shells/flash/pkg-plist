@@ -23,5 +23,6 @@ lib/flash/system.module
 lib/flash/system.module.9798
 lib/flash/system.rc
 lib/flash/system.rc.mailshell
+man/man1/flash.1.gz
 @dirrm lib/flash/flashdocs
 @dirrm lib/flash

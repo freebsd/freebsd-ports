@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:MIZZY
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sumikawa@FreeBSD.org
-COMMENT=	A wrapper class for ffmpeg command line utility
+COMMENT=	Wrapper class for ffmpeg command line utility
 
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-ErrorHandler>=0:${PORTSDIR}/devel/p5-Class-ErrorHandler \
@@ -20,7 +20,4 @@ RUN_DEPENDS+=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		FFmpeg::Command.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

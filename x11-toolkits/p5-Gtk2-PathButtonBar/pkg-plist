@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Gtk2/PathButtonBar.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/PathButtonBar/.packlist
+%%PERL5_MAN3%%/Gtk2::PathButtonBar.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2/PathButtonBar
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Gtk2
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%

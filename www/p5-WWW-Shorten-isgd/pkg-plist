@@ -1,5 +1,6 @@
 %%SITE_PERL%%/WWW/Shorten/isgd.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten/isgd/.packlist
+%%PERL5_MAN3%%/WWW::Shorten::isgd.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten/isgd
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Shorten
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW

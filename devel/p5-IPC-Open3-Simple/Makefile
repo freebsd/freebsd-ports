@@ -8,12 +8,9 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gslin@gslin.org
-COMMENT=	A simple alternative to IPC::Open3
+COMMENT=	Simple alternative to IPC::Open3
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		IPC::Open3::Simple.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

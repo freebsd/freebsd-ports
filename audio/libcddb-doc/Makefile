@@ -10,13 +10,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libcddb documentation
 
 USE_BZIP2=	yes
-NO_STAGE=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/output
 
 do-install:
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${FIND} . | \
-		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

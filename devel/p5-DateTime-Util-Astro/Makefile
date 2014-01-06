@@ -19,10 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		DateTime::Util::Astro.3 \
-		DateTime::Util::Astro::Common.3 \
-		DateTime::Util::Astro::Moon.3 \
-		DateTime::Util::Astro::Sun.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

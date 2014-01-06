@@ -1,24 +1,24 @@
-bin/lconvert
-%%DEBUG%%bin/lconvert.debug
-bin/linguist-qt4
-%%DEBUG%%bin/linguist-qt4.debug
-bin/lrelease-qt4
-%%DEBUG%%bin/lrelease-qt4.debug
-bin/lupdate-qt4
-%%DEBUG%%bin/lupdate-qt4.debug
+%%QT_BINDIR%%/lconvert
+%%DEBUG%%%%QT_BINDIR%%/lconvert.debug
+%%QT_BINDIR%%/linguist-qt4
+%%DEBUG%%%%QT_BINDIR%%/linguist-qt4.debug
+%%QT_BINDIR%%/lrelease-qt4
+%%DEBUG%%%%QT_BINDIR%%/lrelease-qt4.debug
+%%QT_BINDIR%%/lupdate-qt4
+%%DEBUG%%%%QT_BINDIR%%/lupdate-qt4.debug
 share/pixmaps/linguist-qt4.png
-share/qt4/phrasebooks/danish.qph
-share/qt4/phrasebooks/dutch.qph
-share/qt4/phrasebooks/finnish.qph
-share/qt4/phrasebooks/french.qph
-share/qt4/phrasebooks/german.qph
-share/qt4/phrasebooks/hungarian.qph
-share/qt4/phrasebooks/italian.qph
-share/qt4/phrasebooks/japanese.qph
-share/qt4/phrasebooks/norwegian.qph
-share/qt4/phrasebooks/polish.qph
-share/qt4/phrasebooks/russian.qph
-share/qt4/phrasebooks/spanish.qph
-share/qt4/phrasebooks/swedish.qph
-@dirrm share/qt4/phrasebooks
-@dirrmtry share/qt4
+%%QT_DATADIR%%/phrasebooks/danish.qph
+%%QT_DATADIR%%/phrasebooks/dutch.qph
+%%QT_DATADIR%%/phrasebooks/finnish.qph
+%%QT_DATADIR%%/phrasebooks/french.qph
+%%QT_DATADIR%%/phrasebooks/german.qph
+%%QT_DATADIR%%/phrasebooks/hungarian.qph
+%%QT_DATADIR%%/phrasebooks/italian.qph
+%%QT_DATADIR%%/phrasebooks/japanese.qph
+%%QT_DATADIR%%/phrasebooks/norwegian.qph
+%%QT_DATADIR%%/phrasebooks/polish.qph
+%%QT_DATADIR%%/phrasebooks/russian.qph
+%%QT_DATADIR%%/phrasebooks/spanish.qph
+%%QT_DATADIR%%/phrasebooks/swedish.qph
+@dirrm %%QT_DATADIR%%/phrasebooks
+@dirrmtry %%QT_DATADIR%%

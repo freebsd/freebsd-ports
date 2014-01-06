@@ -17,10 +17,9 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 RESTRICTED=	only unmodified original package can be distributed
-NO_STAGE=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/rar
-PLIST_FILES=	bin/rar lib/default.sfx etc/rarfiles.lst man/cat1/rar.1
+PLIST_FILES=	bin/rar lib/default.sfx etc/rarfiles.lst man/cat1/rar.1.gz
 PORTDOCS=	technote.txt license.txt whatsnew.txt order.htm \
 		readme.txt
 
@@ -38,17 +37,15 @@ IGNORE=	requires a kernel with compiled-in IA32 compatibility
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rar_static ${PREFIX}/bin/rar
-	${INSTALL_MAN} ${WRKSRC}/rar.txt ${PREFIX}/man/cat1/rar.1
-	${INSTALL_DATA} ${WRKSRC}/rarfiles.lst ${PREFIX}/etc
-	${INSTALL_DATA} ${WRKSRC}/default.sfx ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/rar_static ${STAGEDIR}${PREFIX}/bin/rar
+	${INSTALL_MAN} ${WRKSRC}/rar.txt ${STAGEDIR}${PREFIX}/man/cat1/rar.1
+	${INSTALL_DATA} ${WRKSRC}/rarfiles.lst ${STAGEDIR}${PREFIX}/etc
+	${INSTALL_DATA} ${WRKSRC}/default.sfx ${STAGEDIR}${PREFIX}/lib
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.post.mk>

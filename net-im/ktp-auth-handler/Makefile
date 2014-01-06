@@ -20,5 +20,4 @@ USE_QT4=	corelib dbus gui xml webkit \
 USES=		cmake gettext
 USE_BZIP2=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

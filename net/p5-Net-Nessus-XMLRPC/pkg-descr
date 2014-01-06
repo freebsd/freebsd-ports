@@ -2,4 +2,4 @@ This is Perl interface for communication with Nessus scanner over XMLRPC.
 You can start, stop, pause and resume scan. Watch progress and status of
 scan, download report, etc.
 
-WWW:  http://search.cpan.org/dist/Net-Nessus-XMLRPC/
+WWW: http://search.cpan.org/dist/Net-Nessus-XMLRPC/

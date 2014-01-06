@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/Join/.packlist
+%%PERL5_MAN3%%/Event::Join.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/Join
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event
 %%SITE_PERL%%/Event/Join.pm

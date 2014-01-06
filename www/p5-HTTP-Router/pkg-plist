@@ -6,6 +6,13 @@
 %%SITE_PERL%%/HTTP/Router.pm
 %%SITE_PERL%%/Test/HTTP/Router.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/Router/.packlist
+%%PERL5_MAN3%%/HTTP::README.3.gz
+%%PERL5_MAN3%%/HTTP::Router.3.gz
+%%PERL5_MAN3%%/HTTP::Router::Debug.3.gz
+%%PERL5_MAN3%%/HTTP::Router::Declare.3.gz
+%%PERL5_MAN3%%/HTTP::Router::Match.3.gz
+%%PERL5_MAN3%%/HTTP::Router::Route.3.gz
+%%PERL5_MAN3%%/Test::HTTP::Router.3.gz
 @dirrm %%SITE_PERL%%/HTTP/Router
 @dirrmtry %%SITE_PERL%%/Test/HTTP
 @dirrmtry %%SITE_PERL%%/Test

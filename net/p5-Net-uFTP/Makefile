@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:STRZELEC
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jase@FreeBSD.org
-COMMENT=	A universal interface for FTP-like modules (FTP, SFTP, SCP)
+COMMENT=	Universal interface for FTP-like modules (FTP, SFTP, SCP)
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
@@ -24,7 +24,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::uFTP.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- Makefile.orig	2011-12-19 10:45:09.000000000 +0800
-+++ Makefile	2012-02-03 08:29:40.000000000 +0800
-@@ -90,7 +90,7 @@ PROGS_CV=kbmcv pin-juyin
+--- ./Makefile.orig	2012-12-08 00:32:13.000000000 +0000
++++ ./Makefile	2014-01-04 22:34:02.000000000 +0000
+@@ -94,7 +94,7 @@
  all:	$(PROGS) trad2sim $(GCIN_SO) $(DATA) $(PROGS_CV) gcin.spec gcin-fedora.spec
  	$(MAKE) -C data
  	$(MAKE) -C gtk-im
@@ -9,7 +9,7 @@
  	if [ $(USE_I18N) = 'Y' ]; then $(MAKE) -C po; fi
  	if [ $(GTK3_IM) = 'Y' ]; then $(MAKE) -C gtk3-im; fi
  	if [ $(QT_IM) = 'Y' ]; then $(MAKE) -C qt-im; fi
-@@ -204,7 +204,7 @@ install:
+@@ -215,11 +215,11 @@
  	$(MAKE) -C data install
  	$(MAKE) -C im-client install
  	$(MAKE) -C gtk-im install
@@ -18,8 +18,13 @@
  	if [ $(GTK3_IM) = 'Y' ]; then $(MAKE) -C gtk3-im install; fi
  	if [ $(QT_IM) = 'Y' ]; then $(MAKE) -C qt-im install; fi
  	if [ $(QT4_IM) = 'Y' ]; then $(MAKE) -C qt4-im install; fi
-@@ -221,6 +221,7 @@ install:
- 	   rm -f $(bindir)/trad2sim; ln -sf sim2trad $(bindir)/trad2sim; \
+-	if [ $(prefix) = /usr/local ]; then \
++	if [ $(prefix) = /nonstaged ]; then \
+ 	   install -m 644 gcin.png /usr/share/icons; \
+ 	   install -d $(DOC_DIR); \
+ 	   install -m 644 README.html Changelog.html $(DOC_DIR); \
+@@ -234,6 +234,7 @@
+ 	   rm -f $(bindir)/ts-contribute; ln -sf ts-edit $(bindir)/ts-contribute; \
  	fi
  	$(MAKE) -C scripts install
 +	$(MAKE) -C man install

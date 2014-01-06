@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	SOAP
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	gslin@gslin.org
-COMMENT=	An extremely basic SOAP client module
+COMMENT=	Extremely basic SOAP client module
 
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
@@ -18,7 +18,4 @@ RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		SOAP::MySOAP.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

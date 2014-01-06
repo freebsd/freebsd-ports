@@ -61,8 +61,7 @@ USE_AUTOTOOLS=	libtool aclocal automake
 AUTOMAKE_ARGS=	--add-missing
 USE_BZIP2=	yes
 USE_GCC=	any
-USE_FAM=	yes
-USES=		gettext pkgconfig gmake perl5
+USES=		fam gettext gmake perl5 pkgconfig
 USE_OPENSSL=	yes
 USE_SUBMAKE=	yes
 

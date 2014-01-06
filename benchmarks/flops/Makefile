@@ -11,13 +11,12 @@ EXTRACT_ONLY=	#
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Floating point benchmark to give your MFLOPS rating
 
+OPTIONS_DEFINE=	DOCS
+
 NO_WRKSUBDIR=	yes
 
 PORTDOCS=	flops.doc
 PLIST_FILES=	bin/flops
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-extract:
 	@(cd ${DISTDIR} && ${TAR} -cf - ${DISTFILES}) | \
@@ -31,10 +30,8 @@ do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -DUNIX -o flops flops.c)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/flops ${PREFIX}/bin/
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/flops.doc ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/flops ${STAGEDIR}${PREFIX}/bin/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/flops.doc ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

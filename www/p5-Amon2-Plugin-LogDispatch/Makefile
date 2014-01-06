@@ -19,8 +19,4 @@ TEST_DEPENDS=	\
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Amon2::Plugin::LogDispatch.3 \
-	Amon2::Plugin::README.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

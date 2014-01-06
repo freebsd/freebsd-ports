@@ -23,10 +23,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Catalyst::Plugin::Session::FastMmap.3
-
 regression-test: build
 	cd ${WRKSRC}/ && ${MAKE} test
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

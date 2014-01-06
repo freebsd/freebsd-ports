@@ -11,7 +11,7 @@ MASTER_SITES=	http://people.gnome.org/~veillard/gamin/sources/
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A file and directory monitoring system
 
-USES=		gettext gmake pathfix pkgconfig
+USES+=		gettext gmake pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_GNOME?=	glib20
 USE_LDCONFIG=	yes

@@ -16,9 +16,7 @@ BUILD_DEPENDS=	p5-CPAN-Checksums>0:${PORTSDIR}/devel/p5-CPAN-Checksums \
 		p5-Term-Title>0:${PORTSDIR}/devel/p5-Term-Title
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=		CPAN::Reporter::Smoker.3
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -5,6 +5,12 @@
 %%SITE_PERL%%/Net/Frame/Layer/IPv6/Option.pm
 %%SITE_PERL%%/Net/Frame/Layer/IPv6.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Frame/Layer/IPv6/.packlist
+%%PERL5_MAN3%%/Net::Frame::Layer::IPv6.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::IPv6::Fragment.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::IPv6::Routing.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::IPv6::HopByHop.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::IPv6::Option.3.gz
+%%PERL5_MAN3%%/Net::Frame::Layer::IPv6::Destination.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Frame/Layer/IPv6
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Frame/Layer
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Frame

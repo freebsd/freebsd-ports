@@ -1,0 +1,380 @@
+# HG changeset patch
+# User joehw
+# Date 1383025844 0
+#      Tue Oct 29 05:50:44 2013 +0000
+# Node ID 7799c3bd00f5a4fda6448cb8bcd7768c66ec166d
+# Parent  b5b1d1fa4bb4fcd8bc0602fd4f3523fe24d9f00b
+8012425: Transform TransformerFactory
+Reviewed-by: alanb, dfuchs, mullan
+
+diff -r b5b1d1fa4bb4 -r 7799c3bd00f5 drop_included/jaxp_src/src/com/sun/org/apache/xalan/internal/xsltc/trax/TransformerImpl.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xalan/internal/xsltc/trax/TransformerImpl.java	Thu Oct 10 16:18:30 2013 +0100
++++ jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xalan/internal/xsltc/trax/TransformerImpl.java	Tue Oct 29 05:50:44 2013 +0000
+@@ -40,6 +40,7 @@
+ import java.util.Vector;
+ import java.lang.reflect.Constructor;
+ 
++import javax.xml.XMLConstants;
+ import javax.xml.parsers.DocumentBuilder;
+ import javax.xml.parsers.DocumentBuilderFactory;
+ import javax.xml.parsers.ParserConfigurationException;
+@@ -251,6 +252,7 @@
+ 	_propertiesClone = (Properties) _properties.clone();
+ 	_indentNumber = indentNumber;
+ 	_tfactory = tfactory;
++        _readerManager.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, _isSecureProcessing);
+ 	//_isIncremental = tfactory._incremental;
+     }
+ 
+@@ -266,6 +268,7 @@
+      */
+     public void setSecureProcessing(boolean flag) {
+         _isSecureProcessing = flag;
++        _readerManager.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, _isSecureProcessing);
+     }
+ 
+     /**
+diff -r b5b1d1fa4bb4 -r 7799c3bd00f5 drop_included/jaxp_src/src/com/sun/org/apache/xalan/internal/xsltc/trax/Util.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xalan/internal/xsltc/trax/Util.java	Thu Oct 10 16:18:30 2013 +0100
++++ jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xalan/internal/xsltc/trax/Util.java	Tue Oct 29 05:50:44 2013 +0000
+@@ -104,6 +104,13 @@
+                     if (reader == null) {
+                        try {
+                            reader= XMLReaderFactory.createXMLReader();
++                           try {
++                                reader.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING,
++                                            xsltc.isSecureProcessing());
++                           } catch (SAXNotRecognizedException e) {
++                                System.err.println("Warning:  " + reader.getClass().getName() + ": "
++                                        + e.getMessage());
++                           }
+                        } catch (Exception e ) {
+                            try {
+ 
+diff -r b5b1d1fa4bb4 -r 7799c3bd00f5 drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/jaxp/validation/StreamValidatorHelper.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/jaxp/validation/StreamValidatorHelper.java	Thu Oct 10 16:18:30 2013 +0100
++++ jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/jaxp/validation/StreamValidatorHelper.java	Tue Oct 29 05:50:44 2013 +0000
+@@ -20,9 +20,18 @@
+ 
+ package com.sun.org.apache.xerces.internal.jaxp.validation;
+ 
++import com.sun.org.apache.xerces.internal.impl.Constants;
++import com.sun.org.apache.xerces.internal.impl.XMLErrorReporter;
++import com.sun.org.apache.xerces.internal.impl.msg.XMLMessageFormatter;
++import com.sun.org.apache.xerces.internal.parsers.XML11Configuration;
++import com.sun.org.apache.xerces.internal.util.SecurityManager;
++import com.sun.org.apache.xerces.internal.xni.XNIException;
++import com.sun.org.apache.xerces.internal.xni.parser.XMLInputSource;
++import com.sun.org.apache.xerces.internal.xni.parser.XMLParseException;
++import com.sun.org.apache.xerces.internal.xni.parser.XMLParserConfiguration;
+ import java.lang.ref.SoftReference;
+ import java.io.IOException;
+-
++import javax.xml.XMLConstants;
+ import javax.xml.transform.Result;
+ import javax.xml.transform.Source;
+ import javax.xml.transform.sax.SAXTransformerFactory;
+@@ -32,15 +41,6 @@
+ import javax.xml.transform.TransformerConfigurationException;
+ import javax.xml.transform.TransformerException;
+ import javax.xml.transform.TransformerFactoryConfigurationError;
+-
+-import com.sun.org.apache.xerces.internal.impl.Constants;
+-import com.sun.org.apache.xerces.internal.impl.XMLErrorReporter;
+-import com.sun.org.apache.xerces.internal.impl.msg.XMLMessageFormatter;
+-import com.sun.org.apache.xerces.internal.parsers.XML11Configuration;
+-import com.sun.org.apache.xerces.internal.xni.XNIException;
+-import com.sun.org.apache.xerces.internal.xni.parser.XMLInputSource;
+-import com.sun.org.apache.xerces.internal.xni.parser.XMLParseException;
+-import com.sun.org.apache.xerces.internal.xni.parser.XMLParserConfiguration;
+ import org.xml.sax.SAXException;
+ 
+ /**
+@@ -84,6 +84,11 @@
+     private static final String VALIDATION_MANAGER =
+         Constants.XERCES_PROPERTY_PREFIX + Constants.VALIDATION_MANAGER_PROPERTY;
+     
++
++    /** Property id: security manager. */
++    private static final String SECURITY_MANAGER =
++        Constants.XERCES_PROPERTY_PREFIX + Constants.SECURITY_MANAGER_PROPERTY;
++
+     //
+     // Data
+     //
+@@ -161,6 +166,9 @@
+     
+     private XMLParserConfiguration initialize() {
+         XML11Configuration config = new XML11Configuration();
++        if (fComponentManager.getFeature(XMLConstants.FEATURE_SECURE_PROCESSING)) {
++            config.setProperty(SECURITY_MANAGER, new SecurityManager());
++        }
+         config.setProperty(ENTITY_RESOLVER, fComponentManager.getProperty(ENTITY_RESOLVER));
+         config.setProperty(ERROR_HANDLER, fComponentManager.getProperty(ERROR_HANDLER));
+         XMLErrorReporter errorReporter = (XMLErrorReporter) fComponentManager.getProperty(ERROR_REPORTER);
+diff -r b5b1d1fa4bb4 -r 7799c3bd00f5 drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/jaxp/validation/ValidatorHandlerImpl.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/jaxp/validation/ValidatorHandlerImpl.java	Thu Oct 10 16:18:30 2013 +0100
++++ jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/jaxp/validation/ValidatorHandlerImpl.java	Tue Oct 29 05:50:44 2013 +0000
+@@ -672,6 +672,8 @@
+                     SAXParserFactory spf = SAXParserFactory.newInstance();
+                     spf.setNamespaceAware(true);
+                     try {
++                        spf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING,
++                                fComponentManager.getFeature(XMLConstants.FEATURE_SECURE_PROCESSING));
+                         reader = spf.newSAXParser().getXMLReader();
+                         // If this is a Xerces SAX parser, set the security manager if there is one
+                         if (reader instanceof com.sun.org.apache.xerces.internal.parsers.SAXParser) {
+diff -r b5b1d1fa4bb4 -r 7799c3bd00f5 drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/AbstractSAXParser.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/AbstractSAXParser.java	Thu Oct 10 16:18:30 2013 +0100
++++ jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/AbstractSAXParser.java	Tue Oct 29 05:50:44 2013 +0000
+@@ -20,15 +20,12 @@
+ 
+ package com.sun.org.apache.xerces.internal.parsers;
+ 
+-import java.io.IOException;
+-import java.util.Locale;
+-
+ import com.sun.org.apache.xerces.internal.impl.Constants;
+-import com.sun.org.apache.xerces.internal.xs.PSVIProvider;
++import com.sun.org.apache.xerces.internal.util.EntityResolver2Wrapper;
+ import com.sun.org.apache.xerces.internal.util.EntityResolverWrapper;
+-import com.sun.org.apache.xerces.internal.util.EntityResolver2Wrapper;
+ import com.sun.org.apache.xerces.internal.util.ErrorHandlerWrapper;
+ import com.sun.org.apache.xerces.internal.util.SAXMessageFormatter;
++import com.sun.org.apache.xerces.internal.util.SecurityManager;
+ import com.sun.org.apache.xerces.internal.util.SymbolHash;
+ import com.sun.org.apache.xerces.internal.util.XMLSymbols;
+ import com.sun.org.apache.xerces.internal.xni.Augmentations;
+@@ -47,15 +44,17 @@
+ import com.sun.org.apache.xerces.internal.xni.parser.XMLParserConfiguration;
+ import com.sun.org.apache.xerces.internal.xs.AttributePSVI;
+ import com.sun.org.apache.xerces.internal.xs.ElementPSVI;
++import com.sun.org.apache.xerces.internal.xs.PSVIProvider;
++import java.io.IOException;
++import java.util.Locale;
++import javax.xml.XMLConstants;
+ import org.xml.sax.AttributeList;
+-import org.xml.sax.Attributes;
+ import org.xml.sax.ContentHandler;
+ import org.xml.sax.DTDHandler;
+ import org.xml.sax.DocumentHandler;
+ import org.xml.sax.EntityResolver;
+ import org.xml.sax.ErrorHandler;
+ import org.xml.sax.InputSource;
+-import org.xml.sax.Locator;
+ import org.xml.sax.Parser;
+ import org.xml.sax.SAXException;
+ import org.xml.sax.SAXNotRecognizedException;
+@@ -129,6 +128,10 @@
+     protected static final String DOM_NODE =
+         Constants.SAX_PROPERTY_PREFIX + Constants.DOM_NODE_PROPERTY;
+ 
++    /** Property id: security manager. */
++    private static final String SECURITY_MANAGER =
++        Constants.XERCES_PROPERTY_PREFIX + Constants.SECURITY_MANAGER_PROPERTY;
++
+     /** Recognized properties. */
+     private static final String[] RECOGNIZED_PROPERTIES = {
+         LEXICAL_HANDLER,
+@@ -1643,19 +1646,13 @@
+                 // Drop through and perform default processing
+                 //
+             }
+-
+-            //
+-            // Xerces Features
+-            //
+-
+-            /*
+-            else if (featureId.startsWith(XERCES_FEATURES_PREFIX)) {
+-                String feature = featureId.substring(XERCES_FEATURES_PREFIX.length());
+-                //
+-                // Drop through and perform default processing
+-                //
++            else if (featureId.equals(XMLConstants.FEATURE_SECURE_PROCESSING)) {
++                if (state) {
++                    if (fConfiguration.getProperty(SECURITY_MANAGER )==null) {
++                        fConfiguration.setProperty(SECURITY_MANAGER, new SecurityManager());
++                    }
++                }
+             }
+-            */
+ 
+             //
+             // Default handling
+diff -r b5b1d1fa4bb4 -r 7799c3bd00f5 drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/XML11Configuration.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/XML11Configuration.java	Thu Oct 10 16:18:30 2013 +0100
++++ jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xerces/internal/parsers/XML11Configuration.java	Tue Oct 29 05:50:44 2013 +0000
+@@ -20,11 +20,6 @@
+ 
+ package com.sun.org.apache.xerces.internal.parsers;
+ 
+-import java.io.IOException;
+-import java.util.ArrayList;
+-import java.util.HashMap;
+-import java.util.Locale;
+-
+ import com.sun.org.apache.xerces.internal.impl.Constants;
+ import com.sun.org.apache.xerces.internal.impl.XML11DTDScannerImpl;
+ import com.sun.org.apache.xerces.internal.impl.XML11DocumentScannerImpl;
+@@ -65,6 +60,11 @@
+ import com.sun.org.apache.xerces.internal.xni.parser.XMLErrorHandler;
+ import com.sun.org.apache.xerces.internal.xni.parser.XMLInputSource;
+ import com.sun.org.apache.xerces.internal.xni.parser.XMLPullParserConfiguration;
++import java.io.IOException;
++import java.util.ArrayList;
++import java.util.HashMap;
++import java.util.Locale;
++import javax.xml.XMLConstants;
+ 
+ /**
+  * This class is the configuration used to parse XML 1.0 and XML 1.1 documents.
+@@ -428,30 +428,30 @@
+         XMLGrammarPool grammarPool,
+         XMLComponentManager parentSettings) {
+ 		
+-		super(parentSettings);
++	super(parentSettings);
+ 
+-		// create a vector to hold all the components in use
+-		// XML 1.0 specialized components
+-		fComponents = new ArrayList();
+-		// XML 1.1 specialized components
+-		fXML11Components = new ArrayList();
+-		// Common components for XML 1.1. and XML 1.0
+-		fCommonComponents = new ArrayList();
++	// create a vector to hold all the components in use
++	// XML 1.0 specialized components
++	fComponents = new ArrayList();
++	// XML 1.1 specialized components
++	fXML11Components = new ArrayList();
++	// Common components for XML 1.1. and XML 1.0
++	fCommonComponents = new ArrayList();
+ 
+-		// create storage for recognized features and properties
+-		fRecognizedFeatures = new ArrayList();
+-		fRecognizedProperties = new ArrayList();
+-
+-		// create table for features and properties
+-		fFeatures = new HashMap();
+-		fProperties = new HashMap();
++	// create storage for recognized features and properties
++	fRecognizedFeatures = new ArrayList();
++	fRecognizedProperties = new ArrayList();
++	
++	// create table for features and properties
++	fFeatures = new HashMap();
++	fProperties = new HashMap();
+ 
+         // add default recognized features
+         final String[] recognizedFeatures =
+             {   
+             	CONTINUE_AFTER_FATAL_ERROR, LOAD_EXTERNAL_DTD, // from XMLDTDScannerImpl
+-				VALIDATION,                 
+-				NAMESPACES,
++		VALIDATION,                 
++		NAMESPACES,
+                 NORMALIZE_DATA, SCHEMA_ELEMENT_DEFAULT, SCHEMA_AUGMENT_PSVI,
+                 GENERATE_SYNTHETIC_ANNOTATIONS, VALIDATE_ANNOTATIONS,
+                 HONOUR_ALL_SCHEMALOCATIONS, USE_GRAMMAR_POOL_ONLY,
+@@ -460,26 +460,29 @@
+             	//       features might not have been set and it would cause a
+             	//       not-recognized exception to be thrown. -Ac
+             	XMLSCHEMA_VALIDATION, XMLSCHEMA_FULL_CHECKING, 			
+-				EXTERNAL_GENERAL_ENTITIES,  
+-				EXTERNAL_PARAMETER_ENTITIES,
+-				PARSER_SETTINGS
++		EXTERNAL_GENERAL_ENTITIES,  
++		EXTERNAL_PARAMETER_ENTITIES,
++		PARSER_SETTINGS,
++                XMLConstants.FEATURE_SECURE_PROCESSING
+ 			};
++
+         addRecognizedFeatures(recognizedFeatures);
+ 		// set state for default features
+-		fFeatures.put(VALIDATION, Boolean.FALSE);
+-		fFeatures.put(NAMESPACES, Boolean.TRUE);
+-		fFeatures.put(EXTERNAL_GENERAL_ENTITIES, Boolean.TRUE);
+-		fFeatures.put(EXTERNAL_PARAMETER_ENTITIES, Boolean.TRUE);
+-		fFeatures.put(CONTINUE_AFTER_FATAL_ERROR, Boolean.FALSE);
+-		fFeatures.put(LOAD_EXTERNAL_DTD, Boolean.TRUE);
+-		fFeatures.put(SCHEMA_ELEMENT_DEFAULT, Boolean.TRUE);
+-		fFeatures.put(NORMALIZE_DATA, Boolean.TRUE);
+-		fFeatures.put(SCHEMA_AUGMENT_PSVI, Boolean.TRUE);
++	fFeatures.put(VALIDATION, Boolean.FALSE);
++	fFeatures.put(NAMESPACES, Boolean.TRUE);
++	fFeatures.put(EXTERNAL_GENERAL_ENTITIES, Boolean.TRUE);
++	fFeatures.put(EXTERNAL_PARAMETER_ENTITIES, Boolean.TRUE);
++	fFeatures.put(CONTINUE_AFTER_FATAL_ERROR, Boolean.FALSE);
++	fFeatures.put(LOAD_EXTERNAL_DTD, Boolean.TRUE);
++	fFeatures.put(SCHEMA_ELEMENT_DEFAULT, Boolean.TRUE);
++	fFeatures.put(NORMALIZE_DATA, Boolean.TRUE);
++	fFeatures.put(SCHEMA_AUGMENT_PSVI, Boolean.TRUE);
+         fFeatures.put(GENERATE_SYNTHETIC_ANNOTATIONS, Boolean.FALSE);
+         fFeatures.put(VALIDATE_ANNOTATIONS, Boolean.FALSE);
+         fFeatures.put(HONOUR_ALL_SCHEMALOCATIONS, Boolean.FALSE);
+         fFeatures.put(USE_GRAMMAR_POOL_ONLY, Boolean.FALSE);
+-		fFeatures.put(PARSER_SETTINGS, Boolean.TRUE);
++	fFeatures.put(PARSER_SETTINGS, Boolean.TRUE);
++        fFeatures.put(XMLConstants.FEATURE_SECURE_PROCESSING, Boolean.TRUE);
+ 
+         // add default recognized properties
+         final String[] recognizedProperties =
+diff -r b5b1d1fa4bb4 -r 7799c3bd00f5 drop_included/jaxp_src/src/com/sun/org/apache/xml/internal/utils/XMLReaderManager.java
+--- jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xml/internal/utils/XMLReaderManager.java	Thu Oct 10 16:18:30 2013 +0100
++++ jaxp/drop_included/jaxp_src/src/com/sun/org/apache/xml/internal/utils/XMLReaderManager.java	Tue Oct 29 05:50:44 2013 +0000
+@@ -24,6 +24,7 @@
+ 
+ import java.util.HashMap;
+ 
++import javax.xml.XMLConstants;
+ import javax.xml.parsers.FactoryConfigurationError;
+ import javax.xml.parsers.ParserConfigurationException;
+ import javax.xml.parsers.SAXParserFactory;
+@@ -31,6 +32,7 @@
+ import org.xml.sax.XMLReader;
+ import org.xml.sax.helpers.XMLReaderFactory;
+ import org.xml.sax.SAXException;
++import org.xml.sax.SAXNotRecognizedException;
+ 
+ /**
+  * Creates XMLReader objects and caches them for re-use.
+@@ -60,6 +62,8 @@
+      */
+     private HashMap m_inUse;
+ 
++
++    private boolean _secureProcessing;
+     /**
+      * Hidden constructor
+      */
+@@ -109,7 +113,12 @@
+                     // TransformerFactory creates a reader via the
+                     // XMLReaderFactory if setXMLReader is not used
+                     reader = XMLReaderFactory.createXMLReader();
+-
++                    try {
++                        reader.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, _secureProcessing);
++                    } catch (SAXNotRecognizedException e) {
++                        System.err.println("Warning:  " + reader.getClass().getName() + ": "
++                                + e.getMessage());
++                    }
+                 } catch (Exception e) {
+                    try {
+                         // If unable to create an instance, let's try to use
+@@ -150,6 +159,15 @@
+         return reader;
+     }
+ 
++     /**
++     * Set feature
++     */
++    public void setFeature(String name, boolean value) {
++        if (name.equals(XMLConstants.FEATURE_SECURE_PROCESSING)) {
++            _secureProcessing = value;
++        }
++    }
++
+     /**
+      * Mark the cached XMLReader as available.  If the reader was not
+      * actually in the cache, do nothing.

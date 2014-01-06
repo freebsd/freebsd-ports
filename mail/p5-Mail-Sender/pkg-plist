@@ -2,6 +2,7 @@
 %%SITE_PERL%%/Mail/Sender/CType/Ext.pm
 %%SITE_PERL%%/Mail/Sender/CType/Win32.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Sender/.packlist
+%%PERL5_MAN3%%/Mail::Sender.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/Sender
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
 @dirrm %%SITE_PERL%%/Mail/Sender/CType
