@@ -337,26 +337,26 @@ sbin/rndc
 sbin/rndc-confgen
 @unexec rm -f %%BIND_DESTETC%%/rndc.conf.sample
 %%NOBASE%%etc/rc.d/named
-%%NOBASE%%@unexec if cmp -s %%BIND_DESTETC%%/named.conf.sample %%BIND_DESTETC%%/named.conf; then rm -f %%BIND_DESTETC%%/named.conf; fi
-%%NOBASE%%%%BIND_DESTETC%%/named.conf.sample
-%%NOBASE%%@exec if [ ! -f %%BIND_DESTETC%%/named.conf ] ; then cp -p %D/%F %B/named.conf; fi
-%%NOBASE%%%%BIND_DESTETC%%/named.root
-%%NOBASE%%%%BIND_DESTETC%%/master/empty.db
-%%NOBASE%%%%BIND_DESTETC%%/master/localhost-forward.db
-%%NOBASE%%%%BIND_DESTETC%%/master/localhost-reverse.db
-%%NOBASE%%@exec mkdir %%BIND_DESTETC%%/dynamic
-%%NOBASE%%@exec chown bind:bind %%BIND_DESTETC%%/dynamic
-%%NOBASE%%@dirrmtry %%BIND_DESTETC%%/dynamic
-%%NOBASE%%@exec mkdir %%BIND_DESTETC%%/master
-%%NOBASE%%@exec chown bind:bind %%BIND_DESTETC%%/master
-%%NOBASE%%@dirrmtry %%BIND_DESTETC%%/master
-%%NOBASE%%@exec mkdir %%BIND_DESTETC%%/slave
-%%NOBASE%%@exec chown bind:bind %%BIND_DESTETC%%/slave
-%%NOBASE%%@dirrmtry %%BIND_DESTETC%%/slave
-%%NOBASE%%@exec mkdir %%BIND_DESTETC%%/working
-%%NOBASE%%@exec chown bind:bind %%BIND_DESTETC%%/working
-%%NOBASE%%@dirrmtry %%BIND_DESTETC%%/working
-%%NOBASE%%@dirrmtry %%BIND_DESTETC%%
+%%NOBASE%%@unexec if cmp -s %D/%%ETCDIR%%/named.conf.sample %D/%%ETCDIR%%/named.conf; then rm -f %D/%%ETCDIR%%/named.conf; fi
+%%NOBASE%%%%ETCDIR%%/named.conf.sample
+%%NOBASE%%@exec if [ ! -f %D/%%ETCDIR%%/named.conf ] ; then cp -p %D/%F %B/named.conf; fi
+%%NOBASE%%%%ETCDIR%%/named.root
+%%NOBASE%%%%ETCDIR%%/master/empty.db
+%%NOBASE%%%%ETCDIR%%/master/localhost-forward.db
+%%NOBASE%%%%ETCDIR%%/master/localhost-reverse.db
+%%NOBASE%%@exec mkdir %D/%%ETCDIR%%/dynamic
+%%NOBASE%%@exec chown bind:bind %D/%%ETCDIR%%/dynamic
+%%NOBASE%%@dirrmtry %%ETCDIR%%/dynamic
+%%NOBASE%%@exec mkdir %D/%%ETCDIR%%/master
+%%NOBASE%%@exec chown bind:bind %D/%%ETCDIR%%/master
+%%NOBASE%%@dirrmtry %%ETCDIR%%/master
+%%NOBASE%%@exec mkdir %D/%%ETCDIR%%/slave
+%%NOBASE%%@exec chown bind:bind %D/%%ETCDIR%%/slave
+%%NOBASE%%@dirrmtry %%ETCDIR%%/slave
+%%NOBASE%%@exec mkdir %D/%%ETCDIR%%/working
+%%NOBASE%%@exec chown bind:bind %D/%%ETCDIR%%/working
+%%NOBASE%%@dirrmtry %%ETCDIR%%/working
+%%NOBASE%%@dirrmtry %%ETCDIR%%
 @dirrm include/bind9
 @dirrm include/dns
 @dirrm include/dst
