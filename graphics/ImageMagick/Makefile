@@ -406,6 +406,10 @@ post-patch:
 		${WRKSRC}/${i}
 . endfor
 .endif
+.if ${PORT_OPTIONS:MPERL}
+	${REINPLACE_CMD} -e "s|LIBS_magick = '|LIBS_magick = '-L${LOCALBASE}/lib/perl5/${PERL_VER}/mach/CORE |" \
+		${WRKSRC}/PerlMagick/Makefile.PL.in
+.endif
 # deprecated gvCleanup
 	@${REINPLACE_CMD} -e "s|gvCleanup|gvFreeContext|g" \
 		${WRKSRC}/coders/dot.c
@@ -424,8 +428,6 @@ pre-configure:
 post-install: test
 .if ${PORT_OPTIONS:MPERL}
 	@${RM} -f ${PREFIX}/lib/perl5/${PERL_VER}/mach/perllocal.pod
-	${REINPLACE_CMD} '303 s/EXTRALIBS =/EXTRALIBS = -L${LOCALBASE}/lib/perl5/${PERL_VER}/mach/CORE/g' \
-		${WRKSRC}/PerlMagick/Makefile
 .endif
 .if ${PORT_OPTIONS:MMODULES}
 . if ${PORT_OPTIONS:M16BIT_PIXEL}
