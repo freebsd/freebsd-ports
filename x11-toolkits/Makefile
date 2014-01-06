@@ -213,6 +213,7 @@
     SUBDIR += py-wxPython28-unicode
     SUBDIR += py-xlib
     SUBDIR += py31-tkinter
+    SUBDIR += qt4-declarative
     SUBDIR += qt4-gui
     SUBDIR += qt4pas
     SUBDIR += qtada

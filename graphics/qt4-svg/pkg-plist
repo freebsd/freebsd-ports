@@ -1,26 +1,26 @@
-include/qt4/Qt/QtSvg
-include/qt4/Qt/qgraphicssvgitem.h
-include/qt4/Qt/qsvggenerator.h
-include/qt4/Qt/qsvgrenderer.h
-include/qt4/Qt/qsvgwidget.h
-include/qt4/QtSvg/QGraphicsSvgItem
-include/qt4/QtSvg/QSvgGenerator
-include/qt4/QtSvg/QSvgRenderer
-include/qt4/QtSvg/QSvgWidget
-include/qt4/QtSvg/QtSvg
-include/qt4/QtSvg/qgraphicssvgitem.h
-include/qt4/QtSvg/qsvggenerator.h
-include/qt4/QtSvg/qsvgrenderer.h
-include/qt4/QtSvg/qsvgwidget.h
-lib/qt4/libQtSvg.la
-lib/qt4/libQtSvg.prl
-lib/qt4/libQtSvg.so
-lib/qt4/libQtSvg.so.4
-lib/qt4/libQtSvg.so.%%SHLIB_SHVER%%
-lib/qt4/libQtSvg.so.%%SHLIB_VER%%
-%%DEBUG%%lib/qt4/libQtSvg.so.%%SHLIB_VER%%.debug
+%%QT_INCDIR%%/Qt/QtSvg
+%%QT_INCDIR%%/Qt/qgraphicssvgitem.h
+%%QT_INCDIR%%/Qt/qsvggenerator.h
+%%QT_INCDIR%%/Qt/qsvgrenderer.h
+%%QT_INCDIR%%/Qt/qsvgwidget.h
+%%QT_INCDIR%%/QtSvg/QGraphicsSvgItem
+%%QT_INCDIR%%/QtSvg/QSvgGenerator
+%%QT_INCDIR%%/QtSvg/QSvgRenderer
+%%QT_INCDIR%%/QtSvg/QSvgWidget
+%%QT_INCDIR%%/QtSvg/QtSvg
+%%QT_INCDIR%%/QtSvg/qgraphicssvgitem.h
+%%QT_INCDIR%%/QtSvg/qsvggenerator.h
+%%QT_INCDIR%%/QtSvg/qsvgrenderer.h
+%%QT_INCDIR%%/QtSvg/qsvgwidget.h
+%%QT_LIBDIR%%/libQtSvg.la
+%%QT_LIBDIR%%/libQtSvg.prl
+%%QT_LIBDIR%%/libQtSvg.so
+%%QT_LIBDIR%%/libQtSvg.so.4
+%%QT_LIBDIR%%/libQtSvg.so.%%SHORTVER%%
+%%QT_LIBDIR%%/libQtSvg.so.%%FULLVER%%
+%%DEBUG%%%%QT_LIBDIR%%/libQtSvg.so.%%FULLVER%%.debug
 libdata/pkgconfig/QtSvg.pc
-@dirrmtry lib/qt4
-@dirrm include/qt4/QtSvg
-@dirrmtry include/qt4/Qt
-@dirrmtry include/qt4
+@dirrmtry %%QT_LIBDIR%%
+@dirrm %%QT_INCDIR%%/QtSvg
+@dirrmtry %%QT_INCDIR%%/Qt
+@dirrmtry %%QT_INCDIR%%

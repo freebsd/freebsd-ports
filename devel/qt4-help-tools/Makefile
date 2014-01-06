@@ -3,16 +3,15 @@
 
 PORTNAME=	help
 DISTVERSION=	${QT4_VERSION}
-CATEGORIES?=	devel
+CATEGORIES=	devel
 PKGNAMEPREFIX=	qt4-
 PKGNAMESUFFIX=	-tools
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	QtHelp tools to generate and convert documentation
+COMMENT=	Qt utilities for generating documentation
 
 USE_QT4=	qmake_build moc_build rcc_build uic_build corelib \
 		gui sql xml doc help
-QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
@@ -37,15 +36,13 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/tools/assistant/tools
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
-
 pre-configure:
 	${REINPLACE_CMD} -e 's|assistant||' \
 		${BUILD_WRKSRC}/tools.pro
 	${MKDIR} ${WRKSRC}/mkspecs
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
-	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/bin/uic
-	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
+	${LN} -sf ${QMAKE} ${WRKSRC}/bin/qmake
+	${LN} -sf ${MOC} ${WRKSRC}/bin/moc
+	${LN} -sf ${UIC} ${WRKSRC}/bin/uic
+	${LN} -sf ${RCC} ${WRKSRC}/bin/rcc
 
 .include <bsd.port.mk>

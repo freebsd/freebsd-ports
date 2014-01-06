@@ -2,15 +2,14 @@
 
 PORTNAME=	graphicssystems
 DISTVERSION=	${QT4_VERSION}
-CATEGORIES?=	x11
+CATEGORIES=	x11
 PKGNAMEPREFIX=	qt4-
 PKGNAMESUFFIX=	-opengl
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	OpenGL rendering engine (experimental)
+COMMENT=	Qt OpenGL rendering engine (experimental)
 
 USE_QT4=	qmake_build opengl
-QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
@@ -36,10 +35,8 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/src/plugins/${PORTNAME}/opengl
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
-
 pre-configure:
 	${MKDIR} ${WRKSRC}/mkspecs
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
+	${LN} -sf ${QMAKE} ${WRKSRC}/bin/qmake
 
 .include <bsd.port.mk>

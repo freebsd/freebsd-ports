@@ -1,15 +1,16 @@
 # $FreeBSD$
 #
-# Provide support for qmake based projects
+# Provide support for qmake-based projects
 #
 # MAINTAINER: kde@FreeBSD.org
 #
 # Feature:		qmake
 # Usage:		USES=qmake or USES=qmake:ARGS
-#			Must be used along with	'USE_QT4='
-# Valid ARGS:		norecursive
+#			Must be used along with	'USE_QT*=#'
+# Valid ARGS:		norecursive outsource
 # ARGS description:
 # norecursive		Don't pass -recursive argument to qmake binary
+# outsource		Perform an out-of-source build
 #
 #
 # Variables for ports:
@@ -18,7 +19,8 @@
 # QMAKE_ARGS		- Arguments passed to qmake.
 #			Default: see below
 # QMAKE_SOURCE_PATH	- Path to qmake project files.
-#			Default: empty (autodetect)
+#			Default: ${WRKSRC} if out-of-source build is
+#			requested, empty otherwise.
 #
 # User defined variables:
 # QMAKE_VERBOSE		- Enable verbose configure output.
@@ -27,25 +29,51 @@
 .if !defined(_INCLUDE_USES_QMAKE_MK)
 _INCLUDE_USES_QMAKE_MK=	yes
 
-.if !defined(NO_STAGE)
-DESTDIRNAME=	INSTALL_ROOT
+# _QT_VERSION is defined in bsd.qt.mk, only if a correct Qt version was selected
+# via USE_QT*.
+.if empty(_QT_VERSION)
+IGNORE=	'USES+= qmake' must be accompanied with 'USE_QT[${_QT_SUPPORTED:S/ //g}]= #'
 .endif
+
+# _env is a private argument used only by bsd.qt.mk to get variables and custom
+# targets (currently, only qmake-configure), without qmake being added to the
+# configure stage.
+_VALID_ARGS=	norecursive outsource _env
+_qmake_ARGS=	${qmake_ARGS:S/\:/ /g}
 
 .if defined(qmake_ARGS)
-. if ${qmake_ARGS} == "norecursive"
-QMAKE_NORECURSIVE=	yes
-. else
-IGNORE=	Incorrect 'USES+= qmake' usage: argument '${qmake_ARGS}' is not recognized
-. endif
+. for arg in ${_qmake_ARGS}
+.  if empty(_VALID_ARGS:M${arg})
+IGNORE=	Incorrect 'USES+= qmake' usage: argument '${arg}' is not recognized
+.  endif
+. endfor
 .endif
 
-.if !defined(USE_QT4)
-IGNORE=	'USES+= qmake' must be accompanied with 'USE_QT4= #'
+.if ! ${_qmake_ARGS:M_env}
+USE_QT${_QT_VERSION:R:R}+=	qmake_build
 .endif
 
-USE_QT4+=	qmake_build
+# QMAKESPEC belongs to bsd.qt.mk.
+QMAKE_ENV?=	${CONFIGURE_ENV}
+QMAKE_ARGS+=	-spec ${QMAKESPEC} \
+		QMAKE_CC="${CC}" QMAKE_CXX="${CXX}" \
+		QMAKE_LINK_C="${CC}" QMAKE_LINK_C_SHLIB="${CC}" \
+		QMAKE_LINK="${CXX}" QMAKE_LINK_SHLIB="${CXX}" \
+		QMAKE_CFLAGS="${CFLAGS}" \
+		QMAKE_CXXFLAGS="${CXXFLAGS}" \
+		QMAKE_LFLAGS="${LDFLAGS}" \
+		PREFIX="${PREFIX}"
 
-.if !defined(QMAKE_NORECURSIVE)
+.if defined(WITH_DEBUG)
+QMAKE_ARGS+=	CONFIG+="debug" \
+		CONFIG-="release"
+.else
+QMAKE_ARGS+=	CONFIG+="release" \
+		CONFIG-="debug separate_debug_info"
+.endif # defined(WITH_DEBUG)
+
+# We set -recursive by default to keep qmake from running in the build stage.
+.if ! ${_qmake_ARGS:Mnorecursive}
 QMAKE_ARGS+=	-recursive
 .endif
 
@@ -53,11 +81,33 @@ QMAKE_ARGS+=	-recursive
 QMAKE_ARGS+=	-d
 .endif
 
-QMAKE_SOURCE_PATH?=	${QMAKE_PRO}
-
-.if !target(do-configure)
-do-configure:
-	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${QMAKE_ENV} ${QMAKE} ${QMAKE_ARGS} ${QMAKE_SOURCE_PATH}
+# _QMAKE_WRKSRC (and _QMAKE, below) are needed to abstract the qmake target and
+# use it for both qtbase and USES=qmake ports. They are private, not supposed to
+# be used anywhere else.
+_QMAKE_WRKSRC?=	${CONFIGURE_WRKSRC}
+.if ${_qmake_ARGS:Moutsource}
+CONFIGURE_WRKSRC=	${WRKDIR}/.build
+BUILD_WRKSRC=		${CONFIGURE_WRKSRC}
+INSTALL_WRKSRC=		${BUILD_WRKSRC}
+QMAKE_SOURCE_PATH?=	${WRKSRC}
+.else
+QMAKE_SOURCE_PATH?=	# empty
 .endif
 
-.endif #!defined(_INCLUDE_USES_QMAKE_MK)
+.if !defined(NO_STAGE) && ! ${_qmake_ARGS:M_env}
+DESTDIRNAME=	INSTALL_ROOT
+.endif
+
+# Define a custom target to make it usable by bsd.qt.mk for internal Qt
+# configuration.
+qmake-configure:
+	@${MKDIR} ${_QMAKE_WRKSRC}
+	@cd ${_QMAKE_WRKSRC} && \
+		${SETENV} ${QMAKE_ENV} ${_QMAKE} ${QMAKE_ARGS} ${QMAKE_SOURCE_PATH}
+
+.if !target(do-configure) && ! ${_qmake_ARGS:M_env}
+do-configure: qmake-configure
+	@${DO_NADA}
+.endif
+
+.endif # !defined(_INCLUDE_USES_QMAKE_MK)

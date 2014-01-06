@@ -1,2 +1,2 @@
-bin/uic3
-%%DEBUG%%bin/uic3.debug
+%%QT_BINDIR%%/uic3
+%%DEBUG%%%%QT_BINDIR%%/uic3.debug

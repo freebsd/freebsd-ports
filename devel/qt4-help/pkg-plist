@@ -1,42 +1,42 @@
-include/qt4/Qt/QtHelp
-include/qt4/Qt/qhelp_global.h
-include/qt4/Qt/qhelpcontentwidget.h
-include/qt4/Qt/qhelpengine.h
-include/qt4/Qt/qhelpenginecore.h
-include/qt4/Qt/qhelpindexwidget.h
-include/qt4/Qt/qhelpsearchengine.h
-include/qt4/Qt/qhelpsearchquerywidget.h
-include/qt4/Qt/qhelpsearchresultwidget.h
-include/qt4/QtHelp/QHelpContentItem
-include/qt4/QtHelp/QHelpContentModel
-include/qt4/QtHelp/QHelpContentWidget
-include/qt4/QtHelp/QHelpGlobal
-include/qt4/QtHelp/QHelpEngine
-include/qt4/QtHelp/QHelpEngineCore
-include/qt4/QtHelp/QHelpIndexModel
-include/qt4/QtHelp/QHelpIndexWidget
-include/qt4/QtHelp/QHelpSearchEngine
-include/qt4/QtHelp/QHelpSearchQuery
-include/qt4/QtHelp/QHelpSearchQueryWidget
-include/qt4/QtHelp/QHelpSearchResultWidget
-include/qt4/QtHelp/QtHelp
-include/qt4/QtHelp/qhelp_global.h
-include/qt4/QtHelp/qhelpcontentwidget.h
-include/qt4/QtHelp/qhelpengine.h
-include/qt4/QtHelp/qhelpenginecore.h
-include/qt4/QtHelp/qhelpindexwidget.h
-include/qt4/QtHelp/qhelpsearchengine.h
-include/qt4/QtHelp/qhelpsearchquerywidget.h
-include/qt4/QtHelp/qhelpsearchresultwidget.h
-lib/qt4/libQtHelp.la
-lib/qt4/libQtHelp.prl
-lib/qt4/libQtHelp.so
-lib/qt4/libQtHelp.so.4
-lib/qt4/libQtHelp.so.%%SHLIB_SHVER%%
-lib/qt4/libQtHelp.so.%%SHLIB_VER%%
-%%DEBUG%%lib/qt4/libQtHelp.so.%%SHLIB_VER%%.debug
+%%QT_INCDIR%%/Qt/QtHelp
+%%QT_INCDIR%%/Qt/qhelp_global.h
+%%QT_INCDIR%%/Qt/qhelpcontentwidget.h
+%%QT_INCDIR%%/Qt/qhelpengine.h
+%%QT_INCDIR%%/Qt/qhelpenginecore.h
+%%QT_INCDIR%%/Qt/qhelpindexwidget.h
+%%QT_INCDIR%%/Qt/qhelpsearchengine.h
+%%QT_INCDIR%%/Qt/qhelpsearchquerywidget.h
+%%QT_INCDIR%%/Qt/qhelpsearchresultwidget.h
+%%QT_INCDIR%%/QtHelp/QHelpContentItem
+%%QT_INCDIR%%/QtHelp/QHelpContentModel
+%%QT_INCDIR%%/QtHelp/QHelpContentWidget
+%%QT_INCDIR%%/QtHelp/QHelpGlobal
+%%QT_INCDIR%%/QtHelp/QHelpEngine
+%%QT_INCDIR%%/QtHelp/QHelpEngineCore
+%%QT_INCDIR%%/QtHelp/QHelpIndexModel
+%%QT_INCDIR%%/QtHelp/QHelpIndexWidget
+%%QT_INCDIR%%/QtHelp/QHelpSearchEngine
+%%QT_INCDIR%%/QtHelp/QHelpSearchQuery
+%%QT_INCDIR%%/QtHelp/QHelpSearchQueryWidget
+%%QT_INCDIR%%/QtHelp/QHelpSearchResultWidget
+%%QT_INCDIR%%/QtHelp/QtHelp
+%%QT_INCDIR%%/QtHelp/qhelp_global.h
+%%QT_INCDIR%%/QtHelp/qhelpcontentwidget.h
+%%QT_INCDIR%%/QtHelp/qhelpengine.h
+%%QT_INCDIR%%/QtHelp/qhelpenginecore.h
+%%QT_INCDIR%%/QtHelp/qhelpindexwidget.h
+%%QT_INCDIR%%/QtHelp/qhelpsearchengine.h
+%%QT_INCDIR%%/QtHelp/qhelpsearchquerywidget.h
+%%QT_INCDIR%%/QtHelp/qhelpsearchresultwidget.h
+%%QT_LIBDIR%%/libQtHelp.la
+%%QT_LIBDIR%%/libQtHelp.prl
+%%QT_LIBDIR%%/libQtHelp.so
+%%QT_LIBDIR%%/libQtHelp.so.4
+%%QT_LIBDIR%%/libQtHelp.so.%%SHORTVER%%
+%%QT_LIBDIR%%/libQtHelp.so.%%FULLVER%%
+%%DEBUG%%%%QT_LIBDIR%%/libQtHelp.so.%%FULLVER%%.debug
 libdata/pkgconfig/QtHelp.pc
-@dirrmtry lib/qt4
-@dirrm include/qt4/QtHelp
-@dirrmtry include/qt4/Qt
-@dirrmtry include/qt4
+@dirrmtry %%QT_LIBDIR%%
+@dirrm %%QT_INCDIR%%/QtHelp
+@dirrmtry %%QT_INCDIR%%/Qt
+@dirrmtry %%QT_INCDIR%%

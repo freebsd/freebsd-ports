@@ -3,18 +3,17 @@
 
 PORTNAME=	xml
 DISTVERSION=	${QT4_VERSION}
-CATEGORIES?=	textproc
+CATEGORIES=	textproc
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt XML library
+COMMENT=	Qt SAX and DOM implementations
 
 USE_QT4=	qmake_build moc_build corelib
-QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
-USE_LDCONFIG=	${PREFIX}/lib/qt4
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 ALL_TARGET=	first
 CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
@@ -36,19 +35,17 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/src/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
-
 pre-configure:
 	${MKDIR} ${WRKSRC}/mkspecs
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
+	${LN} -sf ${QMAKE} ${WRKSRC}/bin/qmake
+	${LN} -sf ${MOC} ${WRKSRC}/bin/moc
 
 post-configure:
-	${REINPLACE_CMD} -e 's|${PREFIX}/lib/qt4/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
+	${REINPLACE_CMD} -e 's|${PREFIX}/${QT_LIBDIR_REL}/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		-e 's|.*$$(QMAKE).*||g' ${BUILD_WRKSRC}/Makefile
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
-			-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
-			-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
+			-E -e 's|(.*location=).*moc|\1${PREFIX}/${QT_BINDIR_REL}/${MOC:T}|g' \
+			-E -e 's|(.*location=).*uic|\1${PREFIX}/${QT_BINDIR_REL}/${UIC:T}|g' \
 		${WRKSRC}/lib/pkgconfig/QtXml.pc
 #disable installation of include/Qt/qxmlstream.h, it handled by qt-corelib package
 	${REINPLACE_CMD} -e '\,stream/qxmlstream.h.*${QT_INCDIR}/Qt/,d' ${WRKSRC}/src/xml/Makefile

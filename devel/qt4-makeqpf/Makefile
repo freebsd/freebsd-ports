@@ -3,16 +3,15 @@
 
 PORTNAME=	makeqpf
 DISTVERSION=	${QT4_VERSION}
-CATEGORIES?=	devel
+CATEGORIES=	devel
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt qtopia font creator
+COMMENT=	Qt QPF2 font generator
 
 BROKEN_sparc64=	does not compile
 
 USE_QT4=	qmake_build moc_build rcc_build uic_build corelib gui
-QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
@@ -37,15 +36,13 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/tools/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
-
 pre-configure:
-	${REINPLACE_CMD} -e 's|^TARGET[[:blank:]]*=[[:blank:]]*|TARGET=${PORTNAME}-qt4|g' \
+	${REINPLACE_CMD} -e 's|^TARGET[[:blank:]]*=[[:blank:]]*|TARGET=${PORTNAME}${_QT_BINSUFX}|g' \
 		${BUILD_WRKSRC}/${PORTNAME}.pro
 	${MKDIR} ${WRKSRC}/mkspecs
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
-	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/bin/uic
-	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
+	${LN} -sf ${QMAKE} ${WRKSRC}/bin/qmake
+	${LN} -sf ${MOC} ${WRKSRC}/bin/moc
+	${LN} -sf ${UIC} ${WRKSRC}/bin/uic
+	${LN} -sf ${RCC} ${WRKSRC}/bin/rcc
 
 .include <bsd.port.mk>

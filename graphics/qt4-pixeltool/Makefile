@@ -3,14 +3,14 @@
 
 PORTNAME=	pixeltool
 DISTVERSION=	${QT4_VERSION}
-CATEGORIES?=	graphics
+PORTREVISION=	1
+CATEGORIES=	graphics
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt screen magnification utility
+COMMENT=	Qt 4 screen magnifier
 
 USE_QT4=	qmake_build moc_build corelib gui network
-QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
@@ -21,9 +21,10 @@ MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib:$$LD_LIBRARY_PATH \
 		PATH=${WRKSRC}/bin:$$PATH
 
 # qtlogo.png is installed by qt4-gui
-DESKTOP_ENTRIES="Qt PixelTool" "${COMMENT}" \
-		"${LOCALBASE}/share/pixmaps/qtlogo.png" \
-		"${PREFIX}/bin/pixeltool" "Graphics;Qt;" true
+DESKTOP_ENTRIES="Qt 4 PixelTool" "" \
+		"${QT_PREFIX}/share/pixmaps/qtlogo.png" \
+		"${PREFIX}/${QT_BINDIR_REL}/pixeltool" \
+		"Graphics;Qt;" true
 
 DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
 		src/activeqt src/dbus src/multimedia src/network src/opengl \
@@ -40,13 +41,9 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/tools/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
-
 pre-configure:
-	${REINPLACE_CMD} -e 's|target.path.*|target.path=${PREFIX}/bin|g' \
-		${BUILD_WRKSRC}/${PORTNAME}.pro
 	${MKDIR} ${WRKSRC}/mkspecs
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
+	${LN} -sf ${QMAKE} ${WRKSRC}/bin/qmake
+	${LN} -sf ${MOC} ${WRKSRC}/bin/moc
 
 .include <bsd.port.mk>

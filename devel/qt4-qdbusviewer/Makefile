@@ -3,18 +3,18 @@
 
 PORTNAME=	qdbusviewer
 DISTVERSION=	${QT4_VERSION}
-CATEGORIES?=	devel
+PORTREVISION=	1
+CATEGORIES=	devel
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt4 D-Bus viewer
+COMMENT=	Qt 4 graphical interface to D-Bus
 
-LIB_DEPENDS=	dbus-1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus
 
 USES=		pkgconfig
 USE_QT4=	qmake_build moc_build rcc_build corelib dbus gui xml \
 		clucene
-QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
@@ -24,9 +24,10 @@ CONFIGURE_ENV?=	QTDIR=${WRKSRC} PATH=${WRKSRC}/bin:$$PATH
 MAKE_ENV?=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib:$$LD_LIBRARY_PATH \
 		PATH=${WRKSRC}/bin:$$PATH
 
-DESKTOP_ENTRIES="Qt D-Bus viewer" "${COMMENT}" \
-		"${PREFIX}/share/pixmaps/qdbusviewer.png" \
-		"${PREFIX}/bin/qdbusviewer" "Development;Qt;" true
+DESKTOP_ENTRIES="Qt 4 D-Bus viewer" "" \
+		"${PREFIX}/share/pixmaps/qdbusviewer-qt4.png" \
+		"${PREFIX}/${QT_BINDIR_REL}/qdbusviewer" \
+		"Development;Qt;" true
 
 DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
 		src/activeqt src/multimedia src/network src/opengl src/openvg \
@@ -43,16 +44,14 @@ EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 BUILD_WRKSRC=	${WRKSRC}/tools/qdbus/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
-
 post-patch:
 	${MKDIR} ${WRKSRC}/mkspecs
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
-	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
+	${LN} -sf ${QMAKE} ${WRKSRC}/bin/qmake
+	${LN} -sf ${MOC} ${WRKSRC}/bin/moc
+	${LN} -sf ${RCC} ${WRKSRC}/bin/rcc
 
 post-install:
-	${INSTALL_DATA} ${BUILD_WRKSRC}/images/qdbusviewer-128.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/qdbusviewer.png
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/images/qdbusviewer-128.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/qdbusviewer-qt4.png
 
 .include <bsd.port.mk>

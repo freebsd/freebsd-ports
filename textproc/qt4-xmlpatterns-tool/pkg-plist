@@ -1,2 +1,2 @@
-bin/xmlpatterns
-%%DEBUG%%bin/xmlpatterns.debug
+%%QT_BINDIR%%/xmlpatterns
+%%DEBUG%%%%QT_BINDIR%%/xmlpatterns.debug

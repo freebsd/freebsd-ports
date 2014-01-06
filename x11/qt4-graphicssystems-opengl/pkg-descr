@@ -1,11 +1,10 @@
-Qt provides a platform-independent API to all central platform
-functionality: GUI, database access, networking, file handling,
-etc.
+Qt is a cross-platform application and UI framework for developers
+using C++ or QML, a CSS/JavaScript-like language.
 
-This port provides OpenGL graphics backend, which is used for
+This port provides the OpenGL graphics backend, which is used for
 on-screen widgets and QPixmaps. See for details:
 
-http://doc.qt.nokia.com/4.7/qapplication.html#setGraphicsSystem
-http://labs.qt.nokia.com/2008/10/22/so-long-and-thanks-for-the-blit/
+http://qt-project.org/doc/qt-4.8/qapplication.html#setGraphicsSystem
+http://blog.qt.digia.com/blog/2008/10/22/so-long-and-thanks-for-the-blit
 
-WWW:	http://qt.nokia.com/products/qt/index.html
+WWW: http://qt-project.org

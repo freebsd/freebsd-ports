@@ -3,23 +3,22 @@
 
 PORTNAME=	gui
 DISTVERSION=	${QT4_VERSION}
-CATEGORIES?=	x11-toolkits
+CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt4-
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Qt graphical user interface library
+COMMENT=	Qt graphical user interface module
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 USE_QT4=	qmake_build moc_build rcc_build uic_build corelib
-QT_NONSTANDARD=	yes
 QT_DIST=	yes
+USES=		pkgconfig
 
 HAS_CONFIGURE=	yes
-USES=		pkgconfig
-USE_LDCONFIG=	${PREFIX}/lib/qt4
+USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 USE_XORG=	xrender xrandr xinerama inputproto xfixes \
 		sm xcursor xext x11 ice xi xt
 
@@ -46,8 +45,6 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 CONFIGURE_ARGS+=	-I../../include/QtCore -I../../include/QtGui \
 			-I../../include/Qt -I../../include
 
-EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
-
 FONTSCALE=	${LOCALBASE}/lib/X11/fonts/TTF/luximb.ttf
 FONTENCOD=	${LOCALBASE}/lib/X11/fonts/encodings/encodings.dir
 
@@ -59,7 +56,7 @@ CONFIGURE_ARGS+=-cups -L${LOCALBASE}/lib -I. -I${LOCALBASE}/include
 .endif
 
 .if ${QT4_OPTIONS:MNAS}
-LIB_DEPENDS+=	audio:${PORTSDIR}/audio/nas
+LIB_DEPENDS+=	libaudio.so:${PORTSDIR}/audio/nas
 CONFIGURE_ARGS+=-system-nas-sound
 .else
 CONFIGURE_ARGS+=-no-nas-sound
@@ -85,17 +82,17 @@ CFLAGS+=	-mminimal-toc
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/mkspecs
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
-	${LN} -sf ${LOCALBASE}/bin/moc-qt4 ${WRKSRC}/bin/moc
-	${LN} -sf ${LOCALBASE}/bin/rcc ${WRKSRC}/bin/rcc
-	${LN} -sf ${LOCALBASE}/bin/uic-qt4 ${WRKSRC}/bin/uic
+	${LN} -sf ${QMAKE} ${WRKSRC}/bin/qmake
+	${LN} -sf ${MOC} ${WRKSRC}/bin/moc
+	${LN} -sf ${RCC} ${WRKSRC}/bin/rcc
+	${LN} -sf ${UIC} ${WRKSRC}/bin/uic
 
 post-configure:
-	${REINPLACE_CMD} -e 's|${PREFIX}/lib/qt4/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
+	${REINPLACE_CMD} -e 's|${PREFIX}/${QT_LIBDIR_REL}/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		-e 's|.*$$(QMAKE).*||g' ${BUILD_WRKSRC}/Makefile
 	${REINPLACE_CMD} -E -e 's|-L.[^[:space:]]*qt-x11-opensource.[^[:space:]]*lib||g' \
-		-E -e 's|(.*location=).*moc|\1${PREFIX}/bin/moc-qt4|g' \
-		-E -e 's|(.*location=).*uic|\1${PREFIX}/bin/uic-qt4|g' \
+		-E -e 's|(.*location=).*moc|\1${PREFIX}/${QT_BINDIR_REL}/${MOC:T}|g' \
+		-E -e 's|(.*location=).*uic|\1${PREFIX}/${QT_BINDIR_REL}/${UIC:T}|g' \
 		${WRKSRC}/lib/pkgconfig/QtGui.pc
 
 post-install:

@@ -10,7 +10,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt documentation generator
 
 USE_QT4=	qmake_build corelib gui xml
-QT_NONSTANDARD=	yes
 QT_DIST=	yes
 
 HAS_CONFIGURE=	yes
@@ -27,13 +26,11 @@ DO_NOT_EXTRACT=	demos doc examples mkspecs qmake translations \
 EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/${dne}'
 .endfor
 
-EXTRA_PATCHES+=	${.CURDIR}/../../devel/qt4/files/patch-configure
-
 BUILD_WRKSRC=	${WRKSRC}/tools/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/mkspecs/modules
-	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
+	${LN} -sf ${QMAKE} ${WRKSRC}/bin/qmake
 
 .include <bsd.port.mk>
