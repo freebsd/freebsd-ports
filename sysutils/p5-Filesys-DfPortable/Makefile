@@ -9,12 +9,9 @@ MASTER_SITE_SUBDIR=	Filesys
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
-COMMENT=	Filesys::DfPortable - Perl extension for filesystem disk space information.
+COMMENT=	Perl extension for filesystem disk space information
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Filesys::DfPortable.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

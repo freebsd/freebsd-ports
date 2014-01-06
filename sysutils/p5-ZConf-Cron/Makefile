@@ -25,8 +25,4 @@ RUN_DEPENDS:=	p5-DateTime-Event-Cron>=0:${PORTSDIR}/devel/p5-DateTime-Event-Cron
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		ZConf::Cron.3 \
-		ZConf::Cron::GUI.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

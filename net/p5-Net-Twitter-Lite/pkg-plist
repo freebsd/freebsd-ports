@@ -6,6 +6,11 @@
 %%SITE_PERL%%/Net/Twitter/Lite/WithAPIv1_1.pm
 %%SITE_PERL%%/Net/Twitter/Lite/WithAPIv1_1.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Twitter/Lite/.packlist
+%%PERL5_MAN3%%/Net::Twitter::Lite.3.gz
+%%PERL5_MAN3%%/Net::Twitter::Lite::API::V1.3.gz
+%%PERL5_MAN3%%/Net::Twitter::Lite::API::V1_1.3.gz
+%%PERL5_MAN3%%/Net::Twitter::Lite::Error.3.gz
+%%PERL5_MAN3%%/Net::Twitter::Lite::WithAPIv1_1.3.gz
 @dirrmtry %%SITE_PERL%%/Net/Twitter/Lite/API
 @dirrmtry %%SITE_PERL%%/Net/Twitter/Lite
 @dirrmtry %%SITE_PERL%%/Net/Twitter

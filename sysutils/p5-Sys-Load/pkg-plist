@@ -2,6 +2,7 @@
 %%SITE_PERL%%/mach/auto/Sys/Load/Load.so
 %%SITE_PERL%%/mach/auto/Sys/Load/Load.bs
 %%SITE_PERL%%/mach/Sys/Load.pm
+%%PERL5_MAN3%%/Sys::Load.3.gz
 @dirrmtry %%SITE_PERL%%/mach/auto/Sys/Load
 @dirrmtry %%SITE_PERL%%/mach/auto/Sys
 @dirrmtry %%SITE_PERL%%/mach/Sys

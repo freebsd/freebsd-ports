@@ -1,4 +1,4 @@
-This module provides a portable way to obtain filesystem disk space
-information. 
+Filesys::DfPortable module provides a portable way to obtain filesystem disk
+space information. 
 
 WWW: http://search.cpan.org/dist/Filesys-DfPortable/

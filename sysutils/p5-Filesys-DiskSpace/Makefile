@@ -13,9 +13,6 @@ COMMENT=	Perl equivalent of statfs(2)
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Filesys::DiskSpace.3
-
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "*\.orig" -delete
 

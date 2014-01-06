@@ -5,5 +5,4 @@ owner has the mode string -rw-r--r--.  Stat::lsMode will either
 examine the file and produce the right mode string for you, or you
 can pass it the mode that you get back from Perl's stat call.
 
--Anton
-<tobez@FreeBSD.org>
+WWW: http://search.cpan.org/dist/Stat-lsMode/

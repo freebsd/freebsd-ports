@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	max@FreeBSD.org
-COMMENT=	A perl interface to the Twitter API
+COMMENT=	Perl interface to the Twitter API
 
 BUILD_DEPENDS=	p5-JSON>=2.02:${PORTSDIR}/converters/p5-JSON \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
@@ -28,9 +28,5 @@ RUN_DEPENDS=	p5-JSON>=2.02:${PORTSDIR}/converters/p5-JSON \
 
 USES=		perl5
 USE_PERL5=	configure
-MAN3=		Net::Twitter::Lite.3 Net::Twitter::Lite::API::V1.3 \
-		Net::Twitter::Lite::API::V1_1.3 Net::Twitter::Lite::Error.3 \
-		Net::Twitter::Lite::WithAPIv1_1.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
