@@ -10,22 +10,18 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Place launch icons and background directly on your desktop
 
-LIB_DEPENDS=	Xft:${PORTSDIR}/x11-fonts/libXft
+LIB_DEPENDS=	libXft.so:${PORTSDIR}/x11-fonts/libXft
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_EFL=	imlib2
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
-USES=		pkgconfig
+USES=		gmake pkgconfig
 
-OPTIONS_DEFINE=	SHAPE SN
+OPTIONS_DEFINE=	SHAPE SN DOCS
 SHAPE_DESC=	Support of XShape extension
 SN_DESC=	Startup notification support
 OPTIONS_DEFAULT=	SHAPE
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 CXXFLAGS+=	`imlib2-config --cflags` `freetype-config --cflags`
 MAKE_ARGS=	cc="${CXX}" cflags="${CXXFLAGS}"
@@ -33,25 +29,13 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSHAPE}
-CONFIGURE_ARGS+=	--enable-shape
-.else
-CONFIGURE_ARGS+=	--disable-shape
-.endif
-
-.if ${PORT_OPTIONS:MSN}
-LIB_DEPENDS+=	startup-notification:${PORTSDIR}/x11/startup-notification
-CONFIGURE_ARGS+=	--enable-libsn
-.endif
+SHAPE_CONFIGURE_ENABLE=	shape
+SN_LIB_DEPENDS=	libstartup-notification.so:${PORTSDIR}/x11/startup-notification
+SN_CONFIGURE_ENABLE=	libsn
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/src/idesk ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-		${MKDIR} ${DOCSDIR}
-		${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+		${INSTALL_PROGRAM} ${WRKSRC}/src/idesk ${STAGEDIR}${PREFIX}/bin
+		${MKDIR} ${STAGEDIR}${DOCSDIR}
+		${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
