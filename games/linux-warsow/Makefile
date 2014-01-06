@@ -23,6 +23,9 @@ COMMENT=	Free multiplayer first person shooter with cartoon design
 
 IGNORE=		is outdated, does not match games/warsow-data port
 
+DEPRECATED=	depends on expired games/warsow-data
+EXPIRATION_DATE=2014-01-22
+
 RUN_DEPENDS=	${DATADIR}/data0.pk3:${PORTSDIR}/games/warsow-data
 
 USE_LINUX=	yes
