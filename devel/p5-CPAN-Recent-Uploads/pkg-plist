@@ -1,6 +1,8 @@
 %%SITE_PERL%%/CPAN/Recent/Uploads/Retriever.pm
 %%SITE_PERL%%/CPAN/Recent/Uploads.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Recent/Uploads/.packlist
+%%PERL5_MAN3%%/CPAN::Recent::Uploads.3.gz
+%%PERL5_MAN3%%/CPAN::Recent::Uploads::Retriever.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Recent/Uploads
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Recent
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN

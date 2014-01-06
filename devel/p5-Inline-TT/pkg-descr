@@ -12,4 +12,4 @@ string. Note that leading and trailing spaces are trimmed, further the
 template toolkit options PRE_CHOMP and POST_CHOMP are set. Currently,
 there is no way to change these behaviors.
 
-WWW:	http://search.cpan.org/dist/Inline-TT/
+WWW: http://search.cpan.org/dist/Inline-TT/

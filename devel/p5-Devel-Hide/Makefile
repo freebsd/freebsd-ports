@@ -13,7 +13,4 @@ COMMENT=	Forces the unavailability of specified Perl modules (for testing)
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Devel::Hide.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

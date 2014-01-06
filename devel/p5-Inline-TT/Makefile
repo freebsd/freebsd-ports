@@ -17,7 +17,4 @@ RUN_DEPENDS=	p5-Inline>=0.42:${PORTSDIR}/devel/p5-Inline \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Inline::TT.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
