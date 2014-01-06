@@ -8,5 +8,6 @@ include/X11/pixmaps/clock.xpm
 include/X11/pixmaps/editor.xpm
 include/X11/pixmaps/mail.xpm
 include/X11/pixmaps/news.xpm
+man/man1/bricons.1.gz
 @dirrmtry include/X11/bitmaps
 @dirrmtry include/X11/pixmaps

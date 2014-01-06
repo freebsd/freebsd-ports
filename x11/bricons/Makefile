@@ -18,11 +18,6 @@ USES=		imake perl5
 USE_PERL5=	build
 USE_XORG=	xaw
 
-MAN1=		bricons.1
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/Xbricons
@@ -30,15 +25,10 @@ post-patch:
 		's|^unsigned int argc|int argc|' ${WRKSRC}/main.c
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/Xbricons ${PREFIX}/lib/X11/app-defaults
-	${MKDIR} ${PREFIX}/include/X11/bitmaps
-	${INSTALL_DATA} ${WRKSRC}/bitmaps/* ${PREFIX}/include/X11/bitmaps
-	${MKDIR} ${PREFIX}/include/X11/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/*.xpm ${PREFIX}/include/X11/pixmaps
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "     Use ./files/DOTbriconsrc as an example. This  file"
-	@${ECHO_MSG} "     should  be  stored in the same directory as the"
-	@${ECHO_MSG} "     program is executed from."
-	@${ECHO_MSG} ""
+	${INSTALL_DATA} ${WRKSRC}/Xbricons ${STAGEDIR}${PREFIX}/lib/X11/app-defaults
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/X11/bitmaps
+	${INSTALL_DATA} ${WRKSRC}/bitmaps/* ${STAGEDIR}${PREFIX}/include/X11/bitmaps
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/X11/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/*.xpm ${STAGEDIR}${PREFIX}/include/X11/pixmaps
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
