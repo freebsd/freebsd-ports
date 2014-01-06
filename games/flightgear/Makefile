@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear
-PORTVERSION=	2.12.0
+PORTVERSION=	2.12.1
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
-MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Source/ \
+MASTER_SITES=	http://mirrors.ibiblio.org/flightgear/ftp/Source/ \
 		http://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/Source/ \
 		ftp://ftp.kingmont.com/flightsims/flightgear/Source/ \
 		ftp://ftp.de.flightgear.org/pub/fgfs/Source/ \

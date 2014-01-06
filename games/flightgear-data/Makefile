@@ -2,16 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	flightgear-data
-PORTVERSION=	2.12.0
+PORTVERSION=	2.12.1
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
-MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Shared/ \
+MASTER_SITES=	http://mirrors.ibiblio.org/flightgear/ftp/Shared/ \
 		http://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/Shared/ \
 		ftp://ftp.kingmont.com/flightsims/flightgear/Shared/ \
 		ftp://ftp.de.flightgear.org/pub/fgfs/Shared/ \
 		ftp://flightgear.wo0t.de/flightgear-ftp/ftp/Shared/
-DISTNAME=	FlightGear-data-${PORTVERSION}
-EXTRACT_SUFX=	.tar.bz
+DISTNAME=	FlightGear-${PORTVERSION}-data
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	FlightGear scenery, textures, and aircraft models
