@@ -318,8 +318,6 @@ share/themes/Gray/index.theme
 @dirrm share/themes/Gray-Flat/gtk-2.0/Buttons
 @dirrm share/themes/Gray-Flat/gtk-2.0/Arrows
 @dirrm share/themes/Gray-Flat/gtk-2.0
-@dirrm share/themes/Gray-Flat
-@dirrm share/themes/Gray
 @dirrm share/themes/Gray/metacity-1
 @dirrm share/themes/Gray-Flat/metacity-1
 @dirrm share/themes/Gray-Flat

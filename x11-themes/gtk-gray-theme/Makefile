@@ -16,17 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/icons/Tango:${PORTSDIR}/x11-themes/icons-tango
 NO_BUILD=	yes
 USE_GNOME=	gtk20
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/share/themes/Gray/gtk-2.0
-	${MKDIR} ${PREFIX}/share/themes/Gray-Flat/gtk-2.0
-	${MKDIR} ${PREFIX}/share/themes/Gray/metacity-1
-	${MKDIR} ${PREFIX}/share/themes/Gray-Flat/metacity-1
-	@${CP} ${WRKDIR}/Gray/index.theme ${PREFIX}/share/themes/Gray
-	@${CP} -R ${WRKDIR}/Gray/gtk-2.0/* ${PREFIX}/share/themes/Gray/gtk-2.0
-	@${CP} ${WRKDIR}/Gray-Flat/index.theme ${PREFIX}/share/themes/Gray-Flat
-	@${CP} -R ${WRKDIR}/Gray-Flat/gtk-2.0/* ${PREFIX}/share/themes/Gray-Flat/gtk-2.0
-	@${CP} -R ${WRKDIR}/Gray/metacity-1/* ${PREFIX}/share/themes/Gray/metacity-1
-	@${CP} -R ${WRKDIR}/Gray-Flat/metacity-1/* ${PREFIX}/share/themes/Gray-Flat/metacity-1
+	cd ${WRKDIR} && ${COPYTREE_SHARE} "Gray Gray-Flat" ${STAGEDIR}${PREFIX}/share/themes
 
 .include <bsd.port.mk>
