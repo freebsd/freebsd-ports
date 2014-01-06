@@ -11,6 +11,9 @@ COMMENT=	A CORBA ORB implementation in Tcl
 
 LICENSE=	BSD
 
+DEPRECATED=	depends on expired devel/mico
+EXPIRATION_DATE=2014-01-22
+
 LIB_DEPENDS=	libitcl.so:${PORTSDIR}/lang/itcl
 RUN_DEPENDS=	idl:${PORTSDIR}/devel/mico
 
