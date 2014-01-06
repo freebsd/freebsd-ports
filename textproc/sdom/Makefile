@@ -7,7 +7,7 @@ CATEGORIES=	textproc scheme
 MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An implementation of the W3C DOM recommendation in Scheme
+COMMENT=	Implementation of the W3C DOM recommendation in Scheme
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -24,12 +24,11 @@ PLIST_FILES=	share/guile/sdom/common.scm \
 		share/guile/sdom/parser.scm
 PLIST_DIRS=	share/guile/sdom
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/share/guile/sdom
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/guile/sdom
 .for f in common.scm core.scm events.scm ls.scm parser.scm
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/guile/sdom
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/share/guile/sdom
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/sdom.info ${PREFIX}/${INFO_PATH}
+	${INSTALL_DATA} ${WRKSRC}/sdom.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
 
 .include <bsd.port.mk>
