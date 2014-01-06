@@ -4,6 +4,10 @@
 %%SITE_PERL%%/Log/Any/Adapter/Null.pm
 %%SITE_PERL%%/Log/Any/Adapter/Test.pm
 %%SITE_PERL%%/Log/Any/Test.pm
+%%PERL5_MAN3%%/Log::Any.3.gz
+%%PERL5_MAN3%%/Log::Any::Adapter::Core.3.gz
+%%PERL5_MAN3%%/Log::Any::Adapter::Null.3.gz
+%%PERL5_MAN3%%/Log::Any::Test.3.gz
 @dirrm %%SITE_PERL%%/Log/Any/Adapter
 @dirrm %%SITE_PERL%%/Log/Any
 @dirrmtry %%SITE_PERL%%/Log

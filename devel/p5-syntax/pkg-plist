@@ -1,3 +1,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/syntax/.packlist
 %%SITE_PERL%%/syntax.pm
+%%PERL5_MAN3%%/syntax.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/syntax

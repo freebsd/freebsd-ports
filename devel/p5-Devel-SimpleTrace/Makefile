@@ -16,7 +16,4 @@ USE_PERL5=	configure
 BUILD_DEPENDS=	p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=		Devel::SimpleTrace.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

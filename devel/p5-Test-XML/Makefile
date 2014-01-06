@@ -17,10 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Test::XML.3 \
-	Test::XML::SAX.3 \
-	Test::XML::Twig.3 \
-	Test::XML::XPath.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

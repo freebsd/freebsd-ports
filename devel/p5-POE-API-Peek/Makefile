@@ -23,9 +23,6 @@ USES=		perl5
 USE_PERL5=	configure
 INSTALL_TARGET=	pure_install
 
-MAN3=		POE::API::Peek.3
-
-NO_STAGE=	yes
 regression-test:
 	@(cd ${WRKSRC} && ${PERL} ${CONFIGURE_SCRIPT} && ${MAKE} test)
 

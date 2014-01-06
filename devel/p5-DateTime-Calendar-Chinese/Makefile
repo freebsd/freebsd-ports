@@ -20,7 +20,4 @@ RUN_DEPENDS=	p5-DateTime-Event-Chinese>=1.00:${PORTSDIR}/devel/p5-DateTime-Event
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		DateTime::Calendar::Chinese.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

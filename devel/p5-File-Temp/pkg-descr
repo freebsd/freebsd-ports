@@ -3,5 +3,4 @@ File::Temp is a Perl5 module which can be used to generate temporary files
 conditions are avoided and some security checks are performed (e.g. making
 sure the sticky bit is set on world writeable temp directories).
 
-Author: Tim Jenness <t.jenness@jach.hawaii.edu>
 WWW: http://search.cpan.org/dist/File-Temp/
