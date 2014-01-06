@@ -12,7 +12,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${THEME}${EXTRACT_SUFX}:theme
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simplistic GTK+ 2.x theme engine
+COMMENT=	Simplistic GTK+ 2.x theme engine
 
 USES=		pathfix pkgconfig
 USE_GNOME=	gtk20
@@ -21,19 +21,18 @@ USE_AUTOTOOLS=	libtool
 THEME=		cleanice-theme-1.2.7
 THEMEDIR=	${WRKDIR}/${THEME}/Theme
 
-NO_STAGE=	yes
 post-install:
-	@${MKDIR} ${PREFIX}/share/themes/CleanIce
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/themes/CleanIce
 	${INSTALL_DATA} ${THEMEDIR}/cleanice/index.theme \
-		${PREFIX}/share/themes/CleanIce
-	@${MKDIR} ${PREFIX}/share/themes/CleanIce/gtk-2.0
+		${STAGEDIR}${PREFIX}/share/themes/CleanIce
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/themes/CleanIce/gtk-2.0
 	${INSTALL_DATA} ${THEMEDIR}/cleanice/gtkrc \
-		${PREFIX}/share/themes/CleanIce/gtk-2.0
-	@${MKDIR} ${PREFIX}/share/themes/CleanIce/metacity-1
+		${STAGEDIR}${PREFIX}/share/themes/CleanIce/gtk-2.0
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/themes/CleanIce/metacity-1
 	${INSTALL_DATA} ${THEMEDIR}/cleanice/metacity-theme-1.xml \
-		${PREFIX}/share/themes/CleanIce/metacity-1
-	@${MKDIR} ${PREFIX}/share/themes/CleanIce-Dark/gtk-2.0
+		${STAGEDIR}${PREFIX}/share/themes/CleanIce/metacity-1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/themes/CleanIce-Dark/gtk-2.0
 	${INSTALL_DATA} ${THEMEDIR}/cleanice-dark/gtkrc \
-		${PREFIX}/share/themes/CleanIce-Dark/gtk-2.0
+		${STAGEDIR}${PREFIX}/share/themes/CleanIce-Dark/gtk-2.0
 
 .include <bsd.port.mk>
