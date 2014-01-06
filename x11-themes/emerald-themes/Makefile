@@ -12,16 +12,12 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake shebangfix
 USE_AUTOTOOLS=	autoconf:env automake:env aclocal:env autoheader:env
+SHEBANG_FILES=	themes/import.sh
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} 's|/bin/bash|${LOCALBASE}/bin/bash|' \
-			${WRKSRC}/themes/import.sh
 
 pre-configure:
 	@cd ${WRKSRC} && ./autogen.sh
