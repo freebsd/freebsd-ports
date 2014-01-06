@@ -1201,6 +1201,7 @@
     SUBDIR += maven-wrapper
     SUBDIR += maven2
     SUBDIR += maven3
+    SUBDIR += maven31
     SUBDIR += mcpp
     SUBDIR += mdds
     SUBDIR += meck
