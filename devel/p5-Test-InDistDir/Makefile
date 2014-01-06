@@ -14,10 +14,7 @@ COMMENT=	Test environment setup for development with IDE
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Test::InDistDir.3
-
 regression-test: build
 	cd ${WRKSRC}/ && ${MAKE} test
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

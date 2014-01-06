@@ -2,4 +2,4 @@ Data::Throttler::Memcached accepts the same arguments as Data::Throttler,
 plus the "cache" argument. The cache argument must be a hashref, which contains
 the arguments passed to the cache backend.
 
-WWW:	http://search.cpan.org/dist/Data-Throttler-Memcached/
+WWW: http://search.cpan.org/dist/Data-Throttler-Memcached/

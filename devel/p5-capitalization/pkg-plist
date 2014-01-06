@@ -1,3 +1,4 @@
 %%SITE_PERL%%/capitalization.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/capitalization/.packlist
+%%PERL5_MAN3%%/capitalization.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/capitalization

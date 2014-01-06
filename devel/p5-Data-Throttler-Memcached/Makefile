@@ -21,8 +21,4 @@ RUN_DEPENDS=	p5-Cache-Memcached-Managed>=0:${PORTSDIR}/databases/p5-Cache-Memcac
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Data::Throttler::Memcached.3 \
-		Data::Throttler::BucketChain::Memcached.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
