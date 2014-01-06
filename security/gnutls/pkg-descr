@@ -14,4 +14,4 @@ Important features of the GnuTLS library include:
 Additionaly GnuTLS provides an emulation API for the widely used 
 OpenSSL library, to ease integration with existing applications. 
 
-WWW:	http://www.gnutls.org/
+WWW: http://www.gnutls.org/
