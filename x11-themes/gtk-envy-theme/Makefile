@@ -20,12 +20,11 @@ USE_GNOME=	gtk20
 
 SNAPSHOT=	20060211
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/share/themes/Envy
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/themes/Envy
 	${INSTALL_DATA} ${FILESDIR}/index.theme.in \
-		${PREFIX}/share/themes/Envy/index.theme
+		${STAGEDIR}${PREFIX}/share/themes/Envy/index.theme
 	@(cd ${WRKSRC}/Envy \
-		&& ${COPYTREE_SHARE} . ${PREFIX}/share/themes/Envy)
+		&& ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/themes/Envy)
 
 .include <bsd.port.mk>
