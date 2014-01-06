@@ -12,7 +12,4 @@ COMMENT=	Perl extension to pass a file descriptor over a socket
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	IO::FDPass.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

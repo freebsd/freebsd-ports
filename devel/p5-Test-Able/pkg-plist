@@ -9,6 +9,16 @@
 %%SITE_PERL%%/Test/Able/Role/Meta/Class.pm
 %%SITE_PERL%%/Test/Able/Role/Meta/Method.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Able/.packlist
+%%PERL5_MAN3%%/Test::Able.3.gz
+%%PERL5_MAN3%%/Test::Able::Cookbook.3.gz
+%%PERL5_MAN3%%/Test::Able::FatalException.3.gz
+%%PERL5_MAN3%%/Test::Able::Helpers.3.gz
+%%PERL5_MAN3%%/Test::Able::Method::Array.3.gz
+%%PERL5_MAN3%%/Test::Able::Object.3.gz
+%%PERL5_MAN3%%/Test::Able::Planner.3.gz
+%%PERL5_MAN3%%/Test::Able::Role.3.gz
+%%PERL5_MAN3%%/Test::Able::Role::Meta::Class.3.gz
+%%PERL5_MAN3%%/Test::Able::Role::Meta::Method.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Able
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
 @dirrmtry %%SITE_PERL%%/Test/Able/Role/Meta

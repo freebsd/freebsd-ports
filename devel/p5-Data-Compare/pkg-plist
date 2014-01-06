@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Data/Compare/Plugins.pod
 %%SITE_PERL%%/Data/Compare/Plugins/Scalar/Properties.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Compare/.packlist
+%%PERL5_MAN3%%/Data::Compare.3.gz
+%%PERL5_MAN3%%/Data::Compare::Plugins.3.gz
+%%PERL5_MAN3%%/Data::Compare::Plugins::Scalar::Properties.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Compare
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrm %%SITE_PERL%%/Data/Compare/Plugins/Scalar

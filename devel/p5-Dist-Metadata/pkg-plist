@@ -6,6 +6,13 @@
 %%SITE_PERL%%/Dist/Metadata/Struct.pm
 %%SITE_PERL%%/Dist/Metadata/Tar.pm
 %%SITE_PERL%%/Dist/Metadata/Zip.pm
+%%PERL5_MAN3%%/Dist::Metadata.3.gz
+%%PERL5_MAN3%%/Dist::Metadata::Archive.3.gz
+%%PERL5_MAN3%%/Dist::Metadata::Dir.3.gz
+%%PERL5_MAN3%%/Dist::Metadata::Dist.3.gz
+%%PERL5_MAN3%%/Dist::Metadata::Struct.3.gz
+%%PERL5_MAN3%%/Dist::Metadata::Tar.3.gz
+%%PERL5_MAN3%%/Dist::Metadata::Zip.3.gz
 @dirrm %%SITE_PERL%%/Dist/Metadata
 @dirrmtry %%SITE_PERL%%/Dist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dist/Metadata
