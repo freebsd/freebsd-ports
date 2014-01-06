@@ -3,16 +3,17 @@
 
 PORTNAME=	bro
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.bro.org/downloads/release/
 
 MAINTAINER=	leres@ee.lbl.gov
 COMMENT=	System for detecting network intruders in real-time
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
-		swig:${PORTSDIR}/devel/swig13
+BUILD_DEPENDS=	${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison \
+		${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 
 USES=		cmake:outsource perl5
@@ -24,7 +25,10 @@ NO_MTREE=	yes
 .if defined(BRO_PREFIX)
 PREFIX=${BRO_PREFIX}
 PLIST_SUB+=	CLEANUP_PREFIX=""
-NEED_ROOT=	yes
+.if ! defined(WITH_PKGNG) && ! exists(${BRO_PREFIX})
+NEED_ROOT=      yes
+.endif
+NO_MTREE=	yes
 .else
 PLIST_SUB+=	CLEANUP_PREFIX="@comment "
 .endif
@@ -74,35 +78,35 @@ IGNORE=		the BROCTL option requires BROCCOLI
 .if empty(PORT_OPTIONS:MIPSUMDUMP)
 IGNORE=		the BROCTL option requires IPSUMDUMP
 .endif
-BUILD_DEPENDS+=		bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS+=		bash:${PORTSDIR}/shells/bash
-PLIST_SUB+=		BROCTL=""
-USE_LDCONFIG=		yes
-CMAKE_ARGS+=		-D INSTALL_BROCTL:BOOL=true
+BUILD_DEPENDS+=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS+=	${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
+PLIST_SUB+=	BROCTL=""
+USE_LDCONFIG=	yes
+CMAKE_ARGS+=	-D INSTALL_BROCTL:BOOL=true
 .else
-CMAKE_ARGS+=		-D INSTALL_BROCTL:BOOL=false
-PLIST_SUB+=		BROCTL="@comment "
+CMAKE_ARGS+=	-D INSTALL_BROCTL:BOOL=false
+PLIST_SUB+=	BROCTL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
-CMAKE_ARGS+=		-D ENABLE_DEBUG:BOOL=true
+CMAKE_ARGS+=	-D ENABLE_DEBUG:BOOL=true
 .else
-CMAKE_ARGS+=		-D ENABLE_DEBUG:BOOL=false
+CMAKE_ARGS+=	-D ENABLE_DEBUG:BOOL=false
 .endif
 
 .if ${PORT_OPTIONS:MLBL_HF}
-RUN_DEPENDS+=	hf:${PORTSDIR}/sysutils/lbl-hf
+RUN_DEPENDS+=	${LOCALBASE}/bin/hf:${PORTSDIR}/sysutils/lbl-hf
 .endif
 
 .if ${PORT_OPTIONS:MLBL_CF}
-RUN_DEPENDS+=	cf:${PORTSDIR}/sysutils/lbl-cf
+RUN_DEPENDS+=	${LOCALBASE}/bin/cf:${PORTSDIR}/sysutils/lbl-cf
 .endif
 
 .if ${PORT_OPTIONS:MPERFTOOLS}
-CMAKE_ARGS+=		-D ENABLE_PERFTOOLS:BOOL=true
-RUN_DEPENDS+=	pprof:${PORTSDIR}/devel/google-perftools
+CMAKE_ARGS+=	-D ENABLE_PERFTOOLS:BOOL=true
+RUN_DEPENDS+=	${LOCALBASE}/bin/pprof:${PORTSDIR}/devel/google-perftools
 .else
-CMAKE_ARGS+=		-D ENABLE_PERFTOOLS:BOOL=false
+CMAKE_ARGS+=	-D ENABLE_PERFTOOLS:BOOL=false
 .endif
 
 .if ${PORT_OPTIONS:MIPSUMDUMP}
@@ -111,8 +115,9 @@ RUN_DEPENDS+=	ipsumdump:${PORTSDIR}/net/ipsumdump
 .endif
 
 .if ${PORT_OPTIONS:MBROCTL}
-post-stage::
-.if defined(BRO_PREFIX)
+post-install:
+.if defined(BRO_PREFIX) && !defined(WITH_PKGNG) && !exists(${BRO_PREFIX})
+	# pkg_install needs PREFIX in order to make a package from STAGEDIR/PREFIX
 	@${MKDIR} ${PREFIX}
 .endif
 	@${MKDIR} ${STAGEDIR}${PREFIX}/spool/installed-scripts-do-not-touch/auto
@@ -121,7 +126,7 @@ post-stage::
 	@${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/aux/broctl/etc/${F} ${STAGEDIR}${PREFIX}/etc/${F}.example
 .endfor
 .for F in networks.cfg node.cfg
-	@${INSTALL_SCRIPT} ${WRKSRC}/aux/broctl/etc/${F} ${STAGEDIR}${PREFIX}/etc/${F}.example
+	@${MV} ${WRKSRC}/aux/broctl/etc/${F} ${STAGEDIR}${PREFIX}/etc/${F}.example
 .endfor
 .endif
 
