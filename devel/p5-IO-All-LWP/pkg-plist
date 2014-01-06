@@ -4,6 +4,10 @@
 %%SITE_PERL%%/IO/All/HTTPS.pm
 %%SITE_PERL%%/IO/All/LWP.pm
 %%SITE_PERL%%/IO/All/iocp.pl
+%%PERL5_MAN3%%/IO::All::FTP.3.gz
+%%PERL5_MAN3%%/IO::All::HTTP.3.gz
+%%PERL5_MAN3%%/IO::All::HTTPS.3.gz
+%%PERL5_MAN3%%/IO::All::LWP.3.gz
 @dirrmtry %%SITE_PERL%%/IO/All
 @dirrmtry %%SITE_PERL%%/IO
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/All/LWP

@@ -22,20 +22,4 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Moose::Autobox.3 \
-	Moose::Autobox::Array.3 \
-	Moose::Autobox::Code.3 \
-	Moose::Autobox::Defined.3 \
-	Moose::Autobox::Hash.3 \
-	Moose::Autobox::Indexed.3 \
-	Moose::Autobox::Item.3 \
-	Moose::Autobox::List.3 \
-	Moose::Autobox::Number.3 \
-	Moose::Autobox::Ref.3 \
-	Moose::Autobox::Scalar.3 \
-	Moose::Autobox::String.3 \
-	Moose::Autobox::Undef.3 \
-	Moose::Autobox::Value.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

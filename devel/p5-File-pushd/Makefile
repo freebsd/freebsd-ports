@@ -12,7 +12,4 @@ COMMENT=	File::pushd - temporary chdir for a limited scope
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	File::pushd.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

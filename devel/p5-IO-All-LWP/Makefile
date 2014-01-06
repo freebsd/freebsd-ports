@@ -17,10 +17,4 @@ RUN_DEPENDS=	p5-IO-All>=0.30:${PORTSDIR}/devel/p5-IO-All \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		IO::All::FTP.3 \
-		IO::All::HTTP.3 \
-		IO::All::HTTPS.3 \
-		IO::All::LWP.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
