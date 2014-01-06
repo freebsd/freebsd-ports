@@ -1,12 +1,24 @@
 bin/scan_prereqs
+bin/scan-perl-prereqs
 %%SITE_PERL%%/Perl/PrereqScanner.pm
 %%SITE_PERL%%/Perl/PrereqScanner/Scanner.pm
 %%SITE_PERL%%/Perl/PrereqScanner/Scanner/Aliased.pm
 %%SITE_PERL%%/Perl/PrereqScanner/Scanner/Moose.pm
 %%SITE_PERL%%/Perl/PrereqScanner/Scanner/POE.pm
 %%SITE_PERL%%/Perl/PrereqScanner/Scanner/Perl5.pm
+%%SITE_PERL%%/Perl/PrereqScanner/Scanner/Superclass.pm
 %%SITE_PERL%%/Perl/PrereqScanner/Scanner/TestMore.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/PrereqScanner/.packlist
+man/man1/scan-perl-prereqs.1.gz
+man/man1/scan_prereqs.1.gz
+%%PERL5_MAN3%%/Perl::PrereqScanner.3.gz
+%%PERL5_MAN3%%/Perl::PrereqScanner::Scanner.3.gz
+%%PERL5_MAN3%%/Perl::PrereqScanner::Scanner::Aliased.3.gz
+%%PERL5_MAN3%%/Perl::PrereqScanner::Scanner::Moose.3.gz
+%%PERL5_MAN3%%/Perl::PrereqScanner::Scanner::POE.3.gz
+%%PERL5_MAN3%%/Perl::PrereqScanner::Scanner::Perl5.3.gz
+%%PERL5_MAN3%%/Perl::PrereqScanner::Scanner::Superclass.3.gz
+%%PERL5_MAN3%%/Perl::PrereqScanner::Scanner::TestMore.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl/PrereqScanner
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Perl
 @dirrmtry %%SITE_PERL%%/Perl/PrereqScanner/Scanner
