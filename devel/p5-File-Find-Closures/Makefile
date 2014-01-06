@@ -14,7 +14,4 @@ COMMENT=	Functions you can use with File::Find
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		File::Find::Closures.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

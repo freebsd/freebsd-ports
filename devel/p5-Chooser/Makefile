@@ -18,7 +18,4 @@ RUN_DEPENDS=	p5-Net-CIDR-Lite>=0.21:${PORTSDIR}/net/p5-Net-CIDR-Lite \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Chooser.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

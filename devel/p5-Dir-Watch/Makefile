@@ -14,7 +14,4 @@ COMMENT=	Watches the current directory for file/dir additions or removals
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Dir::Watch.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
