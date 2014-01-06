@@ -3,7 +3,7 @@
 
 PORTNAME=	zabbix22
 PORTVERSION=	2.2.1
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/zabbix/ZABBIX%20Latest%20Stable/${PORTVERSION}
 PKGNAMESUFFIX?=	-server
@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	${PKGBASE}-1.[0-8]*
 
-IGNORE_WITH_PHP=	5 52
+IGNORE_WITH_PHP=	52
 IGNORE_WITH_MYSQL=      41
 
 .if ${PKGNAMESUFFIX} != "-agent"
@@ -59,7 +59,8 @@ MAKE_ARGS+=	ARCH=freebsd
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
 			--sysconfdir=${ETCDIR} \
-			--datadir=${ETCDIR}
+			--datadir=${ETCDIR} \
+			--with-iconv=${ICONV_PREFIX}
 
 .if ${ZABBIX_BUILD} != "agent"
 LIB_DEPENDS=	netsnmp:${PORTSDIR}/net-mgmt/net-snmp \
@@ -71,7 +72,7 @@ CONFIGURE_ARGS+=	--with-net-snmp
 
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
 
-OPTIONS_DEFINE=	IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP ODBC JAVAGW MYSQL
+OPTIONS_DEFINE=	IPV6 FPING JABBER CURL LDAP IPMI SSH NMAP ODBC JAVAGW MYSQL LIBXML2
 OPTIONS_DEFAULT=	MYSQL IPV6 FPING JABBER CURL
 
 CURL_DESC=	Support for web monitoring
@@ -85,6 +86,7 @@ ODBC_DESC=	Support for database checks via ODBC
 JAVAGW_DESC=	Support for Java gateway
 IODBC_DESC=	Use iODBC for ODBC support
 UNIXODBC_DESC=	Use UnixODBC for ODBC support
+LIBXML2_DESC=	Support for libxml2 (required by monitoring VMware)
 
 OPTIONS_SINGLE=	DB ODBC
 OPTIONS_SINGLE_DB=	MYSQL PGSQL SQLITE ORACLE
@@ -172,6 +174,11 @@ PLIST_SUB+=	ZABBIX_JAVA="sbin/zabbix_java"
 PLIST_SUB+=	JAVAGW=""
 .else
 PLIST_SUB+=	JAVAGW="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MLIBXML2}
+LIB_DEPENDS+=   xml2:${PORTSDIR}/textproc/libxml2
+CONFIGURE_ARGS+=	--with-libxml2
 .endif
 
 post-patch:
