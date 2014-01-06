@@ -2,7 +2,7 @@
 
 PORTNAME?=	bind99
 PORTVERSION=	9.9.4
-PORTREVISION?=	6
+PORTREVISION?=	7
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--disable-symtable \
 		--with-randomdev=/dev/random \
 		--without-python
+ETCDIR=		${PREFIX}/etc/namedb
 
 CONFLICTS=	bind9*-9.[45678].* bind9*-sdb-9.[45678].* bind-tools-9.*
 
@@ -113,13 +114,11 @@ GSSAPI_CONFIGURE_WITH=	gssapi
 ARCH=		x86_64
 .endif
 
-.if ${PORT_OPTIONS:MLINKS} && empty(PORT_OPTIONS:MREPLACE_BASE)
-PLIST_SUB+=	LINKS=""
-.else
-PLIST_SUB+=	LINKS="@comment "
+.if !${PORT_OPTIONS:MLINKS} || ${PORT_OPTIONS:MREPLACE_BASE}
+PKGINSTALL=${NONEXISTENT}
 .endif
 
-.if ${PORT_OPTIONS:MTHREADS} && empty(PORT_OPTIONS:MDLZ_MYSQL)
+.if ${PORT_OPTIONS:MTHREADS} && !${PORT_OPTIONS:MDLZ_MYSQL}
 CONFIGURE_ARGS+=	--enable-threads
 .else
 CONFIGURE_ARGS+=	--disable-threads
@@ -146,7 +145,7 @@ BIND_DESTETC=	/etc/namedb
 PLIST_SUB+=	SHARE_MAN=""
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 BIND_DESTETC=	${PREFIX}/etc/namedb
-PKGINSTALL=	/nonexistent
+PKGINSTALL=	${NONEXISTENT}
 .else
 BIND_DESTETC=	${PREFIX}/etc
 .endif
