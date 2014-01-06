@@ -15,7 +15,4 @@ RUN_DEPENDS=	p5-App-Options>=0:${PORTSDIR}/devel/p5-App-Options
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		App::Trace.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
