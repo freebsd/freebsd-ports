@@ -18,14 +18,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Jonk.3 \
-	Jonk::Client.3 \
-	Jonk::Cookbook.3 \
-	Jonk::Cookbook::Basic.3 \
-	Jonk::Cookbook::DequeueSpecificJob.3 \
-	Jonk::Cookbook::ErrorHandling.3 \
-	Jonk::Cookbook::ForkModel.3 \
-	Jonk::Worker.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

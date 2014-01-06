@@ -14,7 +14,4 @@ COMMENT=	Check Perl modules have version numbers
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Test::HasVersion.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

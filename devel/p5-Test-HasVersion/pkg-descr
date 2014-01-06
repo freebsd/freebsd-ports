@@ -1,4 +1,4 @@
 Test::HasVersion lets you check a Perl module has a version number in
 a Test::Simple fashion.
 
-WWW:	http://search.cpan.org/dist/Test-HasVersion/
+WWW: http://search.cpan.org/dist/Test-HasVersion/

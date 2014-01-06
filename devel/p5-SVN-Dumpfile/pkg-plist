@@ -1,6 +1,12 @@
 %%SITE_PERL%%/SVN/Dumpfile/Node/Properties.pm
 %%SITE_PERL%%/SVN/Dumpfile/Node/Headers.pm
 %%SITE_PERL%%/SVN/Dumpfile/Node/Content.pm
+%%PERL5_MAN3%%/SVN::Dumpfile.3.gz
+%%PERL5_MAN3%%/SVN::Dumpfile::Node.3.gz
+%%PERL5_MAN3%%/SVN::Dumpfile::Node::Content.3.gz
+%%PERL5_MAN3%%/SVN::Dumpfile::Node::Headers.3.gz
+%%PERL5_MAN3%%/SVN::Dumpfile::Node::Properties.3.gz
+%%PERL5_MAN3%%/SVN::Dumpfile::Tutorial.3.gz
 @dirrm %%SITE_PERL%%/SVN/Dumpfile/Node
 %%SITE_PERL%%/SVN/Dumpfile/Tutorial.pm
 %%SITE_PERL%%/SVN/Dumpfile/Node.pm
