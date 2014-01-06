@@ -8,6 +8,15 @@
 %%SITE_PERL%%/CPAN/Testers/Fact/TestOutput.pm
 %%SITE_PERL%%/CPAN/Testers/Fact/TestEnvironment.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Testers/Report/.packlist
+%%PERL5_MAN3%%/CPAN::Testers::Fact::LegacyReport.3.gz
+%%PERL5_MAN3%%/CPAN::Testers::Fact::TestEnvironment.3.gz
+%%PERL5_MAN3%%/CPAN::Testers::Fact::InstalledModules.3.gz
+%%PERL5_MAN3%%/CPAN::Testers::Report.3.gz
+%%PERL5_MAN3%%/CPAN::Testers::Fact::TestSummary.3.gz
+%%PERL5_MAN3%%/CPAN::Testers::Fact::TesterComment.3.gz
+%%PERL5_MAN3%%/CPAN::Testers::Fact::TestOutput.3.gz
+%%PERL5_MAN3%%/CPAN::Testers::Fact::Prereqs.3.gz
+%%PERL5_MAN3%%/CPAN::Testers::Fact::PerlConfig.3.gz
 @dirrmtry %%SITE_PERL%%/CPAN/Testers/Fact
 @dirrmtry %%SITE_PERL%%/CPAN/Testers
 @dirrmtry %%SITE_PERL%%/CPAN

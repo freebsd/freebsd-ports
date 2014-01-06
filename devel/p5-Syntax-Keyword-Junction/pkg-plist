@@ -6,6 +6,13 @@
 %%SITE_PERL%%/Syntax/Keyword/Junction/All.pm
 %%SITE_PERL%%/Syntax/Keyword/Junction.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Keyword/Junction/.packlist
+%%PERL5_MAN3%%/Syntax::Feature::Junction.3.gz
+%%PERL5_MAN3%%/Syntax::Keyword::Junction.3.gz
+%%PERL5_MAN3%%/Syntax::Keyword::Junction::All.3.gz
+%%PERL5_MAN3%%/Syntax::Keyword::Junction::Any.3.gz
+%%PERL5_MAN3%%/Syntax::Keyword::Junction::Base.3.gz
+%%PERL5_MAN3%%/Syntax::Keyword::Junction::None.3.gz
+%%PERL5_MAN3%%/Syntax::Keyword::Junction::One.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Keyword/Junction
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax/Keyword
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Syntax

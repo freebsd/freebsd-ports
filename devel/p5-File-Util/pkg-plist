@@ -30,6 +30,7 @@
 %%SITE_PERL%%/auto/File/Util/unlock_open_handle.al
 %%SITE_PERL%%/auto/File/Util/use_flock.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Util/.packlist
+%%PERL5_MAN3%%/File::Util.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Util
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%

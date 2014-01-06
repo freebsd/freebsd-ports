@@ -4,4 +4,4 @@ a very simple and straightforward manner. Just create an
 IPC::Mmap::Share object, and use set to store your data and get to get
 it back.
 
-WWW:	http://search.cpan.org/dist/IPC-Mmap-Share/
+WWW: http://search.cpan.org/dist/IPC-Mmap-Share/
