@@ -24,9 +24,8 @@ PLIST_FILES=	%%DATADIR%%/metacity-theme-1.xml
 PLIST_DIRS=	%%DATADIR%% \
 		share/themes/Clearlooks
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/metacity-theme-1.xml ${PREFIX}/${DATADIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/metacity-theme-1.xml ${STAGEDIR}${PREFIX}/${DATADIR}
 
 .include <bsd.port.mk>
