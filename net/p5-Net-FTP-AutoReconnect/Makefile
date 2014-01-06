@@ -9,12 +9,9 @@ MASTER_SITE_SUBDIR=	CPAN:GIFF
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jase@FreeBSD.org
-COMMENT=	A Perl5 FTP client class with automatic reconnect on failure
+COMMENT=	Perl5 FTP client class with automatic reconnect on failure
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::FTP::AutoReconnect.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

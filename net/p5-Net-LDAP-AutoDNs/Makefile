@@ -14,7 +14,4 @@ COMMENT=	Automatically make some default decisions some LDAP DNs and scopes
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::LDAP::AutoDNs.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

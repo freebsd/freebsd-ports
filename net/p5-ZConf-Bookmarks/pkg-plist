@@ -1,5 +1,6 @@
 %%SITE_PERL%%/ZConf/Bookmarks.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Bookmarks/.packlist
+%%PERL5_MAN3%%/ZConf::Bookmarks.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Bookmarks
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf
 @dirrmtry %%SITE_PERL%%/ZConf/

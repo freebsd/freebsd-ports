@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google/AuthSub/.packlist
 %%SITE_PERL%%/Net/Google/AuthSub.pm
 %%SITE_PERL%%/Net/Google/AuthSub/Response.pm
+%%PERL5_MAN3%%/Net::Google::AuthSub::Response.3.gz
+%%PERL5_MAN3%%/Net::Google::AuthSub.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google/AuthSub
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

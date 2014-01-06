@@ -6,6 +6,13 @@
 %%SITE_PERL%%/Net/Google/Spreadsheets/Table.pm
 %%SITE_PERL%%/Net/Google/Spreadsheets/Worksheet.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google/Spreadsheets/.packlist
+%%PERL5_MAN3%%/Net::Google::Spreadsheets.3.gz
+%%PERL5_MAN3%%/Net::Google::Spreadsheets::Cell.3.gz
+%%PERL5_MAN3%%/Net::Google::Spreadsheets::Record.3.gz
+%%PERL5_MAN3%%/Net::Google::Spreadsheets::Row.3.gz
+%%PERL5_MAN3%%/Net::Google::Spreadsheets::Spreadsheet.3.gz
+%%PERL5_MAN3%%/Net::Google::Spreadsheets::Table.3.gz
+%%PERL5_MAN3%%/Net::Google::Spreadsheets::Worksheet.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google/Spreadsheets
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Google
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
