@@ -20,11 +20,4 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Data::Util.3 \
-		Data::Util::Curry.3 \
-		Data::Util::Error.3 \
-		Data::Util::JA.3 \
-		Data::Util::PurePerl.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -8,12 +8,9 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	brad@kazrak.com
-COMMENT=	A Perl5 module to handle window size changes
+COMMENT=	Perl5 module to handle window size changes
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Term::Size.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

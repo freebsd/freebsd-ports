@@ -16,7 +16,4 @@ RUN_DEPENDS=	p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheri
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Class::Data::ConfigHash.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

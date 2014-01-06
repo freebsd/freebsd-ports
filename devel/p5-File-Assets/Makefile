@@ -40,7 +40,4 @@ RUN_DEPENDS=	p5-Test-Memory-Cycle>0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	File::Assets.3 File::Assets::Asset.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -3,4 +3,4 @@ application. It allows you to "publish" assests in one place after having
 specified them in different parts of the application (e.g. throughout request
 and template processing phases).
 
-WWW:    http://search.cpan.org/dist/File-Assets/
+WWW: http://search.cpan.org/dist/File-Assets/

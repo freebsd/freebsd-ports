@@ -17,7 +17,4 @@ RUN_DEPENDS=	p5-AnyEvent>=3.5:${PORTSDIR}/devel/p5-AnyEvent \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Object::Event.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
