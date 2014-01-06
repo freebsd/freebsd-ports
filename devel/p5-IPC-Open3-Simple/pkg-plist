@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Open3/Simple/.packlist
 %%SITE_PERL%%/IPC/Open3/Simple.pm
+%%PERL5_MAN3%%/IPC::Open3::Simple.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Open3/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC/Open3
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IPC
