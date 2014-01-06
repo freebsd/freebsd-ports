@@ -2,7 +2,7 @@
 
 PORTNAME?=	bind99
 PORTVERSION=	9.9.4
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind9/${ISCVERSION}
@@ -43,7 +43,6 @@ FIXED_RRSET_DESC=	Enable fixed rrset ordering
 SIGCHASE_DESC=		dig/host/nslookup will do DNSSEC validation
 FILTER_AAAA_DESC=	Enable filtering of AAAA records
 
-.if !defined(BIND_TOOLS_SLAVE)
 LINKS_DESC=		Create conf file symlinks in ${PREFIX}
 XML_DESC=		Support for xml statistics output
 RPZ_NSIP_DESC=		Enable RPZ NSIP trigger rules
@@ -57,103 +56,67 @@ DLZ_LDAP_DESC=		DLZ LDAP driver
 DLZ_FILESYSTEM_DESC=	DLZ filesystem driver
 DLZ_STUB_DESC=		DLZ stub driver
 
+.if !defined(BIND_TOOLS_SLAVE)
 CONFLICTS+=		bind-tools-9.*
 .endif	# BIND_TOOLS_SLAVE
 
-NO_STAGE=	yes
+SSL_CONFIGURE_ON=	--with-openssl=${OPENSSLBASE}
+SSL_USE=		openssl=yes
+SSL_CONFIGURE_OFF=	--disable-openssl-version-check --without-openssl
+
+XML_CONFIGURE_ON=	--with-libxml2=${LOCALBASE}
+XML_LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2
+XML_CONFIGURE_OFF=	--without-libxml2
+
+IDN_USES=		iconv
+IDN_CONFIGURE_ON=	--with-idn=${LOCALBASE} ${ICONV_CONFIGURE_BASE}
+IDN_LIB_DEPENDS=	libidnkit.so:${PORTSDIR}/dns/idnkit
+IDN_CONFIGURE_OFF=	--without-idn
+
+LARGE_FILE_CONFIGURE_ENABLE=	largefile
+
+SIGCHASE_CONFIGURE_ON=	STD_CDEFINES="-DDIG_SIGCHASE=1"
+
+IPV6_CONFIGURE_ENABLE=	ipv6
+
+FILTER_AAAA_CONFIGURE_ENABLE=	filter-aaaa
+
+DLZ_POSTGRESQL_CONFIGURE_ON=	--with-dlz-postgres=yes
+DLZ_POSTGRESQL_USE=		pgsql=yes
+
+FIXED_RRSET_CONFIGURE_ENABLE=	fixed-rrset
+
+RPZ_NSIP_CONFIGURE_ENABLE=	rpz-nsip
+
+RPZ_NSDNAME_CONFIGURE_ENABLE=	rpz-nsdname
+
+RRL_CONFIGURE_ENABLE=	rrl
+
+DLZ_MYSQL_CONFIGURE_ON=	--with-dlz-mysql=yes
+DLZ_MYSQL_USE=		mysql=yes
+
+DLZ_BDB_CONFIGURE_ON=	--with-dlz-bdb=yes
+DLZ_BDB_USE=		bdb=yes
+
+DLZ_LDAP_CONFIGURE_ON=	--with-dlz-ldap=yes
+DLZ_LDAP_USE=		openldap=yes
+
+DLZ_FILESYSTEM_CONFIGURE_ON=	--with-dlz-filesystem=yes
+
+DLZ_STUB_CONFIGURE_ON=	--with-dlz-stub=yes
+
+GSSAPI_CONFIGURE_ENABLE=	gssapi
+
 .include <bsd.port.options.mk>
 
 .if (${ARCH} == "amd64")
 ARCH=		x86_64
 .endif
 
-.if ${PORT_OPTIONS:MSSL}
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
-USE_OPENSSL=		yes
-.else
-CONFIGURE_ARGS+=	--disable-openssl-version-check
-CONFIGURE_ARGS+=	--without-openssl
-.endif
-
-.if ${PORT_OPTIONS:MXML} && !defined(BIND_TOOLS_SLAVE)
-CONFIGURE_ARGS+=	--with-libxml2=${LOCALBASE}
-LIB_DEPENDS+=		xml2.5:${PORTSDIR}/textproc/libxml2
-.else
-CONFIGURE_ARGS+=	--without-libxml2
-.endif
-
-.if ${PORT_OPTIONS:MIDN}
-USES+=			iconv
-CONFIGURE_ARGS+=	--with-idn=${LOCALBASE} ${ICONV_CONFIGURE_BASE}
-LIB_DEPENDS+=		idnkit.1:${PORTSDIR}/dns/idnkit
-.else
-CONFIGURE_ARGS+=	--without-idn
-.endif
-
 .if ${PORT_OPTIONS:MLINKS} && empty(PORT_OPTIONS:MREPLACE_BASE)
 PLIST_SUB+=	LINKS=""
 .else
 PLIST_SUB+=	LINKS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLARGE_FILE}
-CONFIGURE_ARGS+=	--enable-largefile
-.endif
-
-.if ${PORT_OPTIONS:MSIGCHASE}
-CONFIGURE_ARGS+=	STD_CDEFINES="-DDIG_SIGCHASE=1"
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.endif
-
-.if ${PORT_OPTIONS:MFILTER_AAAA}
-CONFIGURE_ARGS+=	--enable-filter-aaaa
-.endif
-
-.if ${PORT_OPTIONS:MDLZ_POSTGRESQL}
-CONFIGURE_ARGS+=	--with-dlz-postgres=yes
-USE_PGSQL=		yes
-.endif
-
-.if ${PORT_OPTIONS:MFIXED_RRSET}
-CONFIGURE_ARGS+=	--enable-fixed-rrset
-.endif
-
-.if ${PORT_OPTIONS:MRPZ_NSIP}
-CONFIGURE_ARGS+=	--enable-rpz-nsip
-.endif
-
-.if ${PORT_OPTIONS:MRPZ_NSDNAME}
-CONFIGURE_ARGS+=	--enable-rpz-nsdname
-.endif
-
-.if ${PORT_OPTIONS:MRRL}
-CONFIGURE_ARGS+=	--enable-rrl
-.endif
-
-.if ${PORT_OPTIONS:MDLZ_MYSQL}
-CONFIGURE_ARGS+=	--with-dlz-mysql=yes
-USE_MYSQL=		yes
-.endif
-
-.if ${PORT_OPTIONS:MDLZ_BDB}
-CONFIGURE_ARGS+=	--with-dlz-bdb=yes
-USE_BDB=		yes
-.endif
-
-.if ${PORT_OPTIONS:MDLZ_LDAP}
-CONFIGURE_ARGS+=	--with-dlz-ldap=yes
-USE_OPENLDAP=		yes
-.endif
-
-.if ${PORT_OPTIONS:MDLZ_FILESYSTEM}
-CONFIGURE_ARGS+=	--with-dlz-filesystem=yes
-.endif
-
-.if ${PORT_OPTIONS:MDLZ_STUB}
-CONFIGURE_ARGS+=	--with-dlz-stub=yes
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS} && empty(PORT_OPTIONS:MDLZ_MYSQL)
@@ -163,14 +126,11 @@ CONFIGURE_ARGS+=	--disable-threads
 .endif
 
 .if ${PORT_OPTIONS:MGSSAPI}
-CONFIGURE_ARGS+=	--with-gssapi
 .if defined(HEIMDAL_HOME)
 LDFLAGS+=		-L${LIBDIR} -lgssapi -lkrb5
 .else
 LDFLAGS+=		-L${LIBDIR} -lgssapi_krb5
 .endif
-.else
-CONFIGURE_ARGS+=        --without-gssapi
 .endif
 
 .if ${PORT_OPTIONS:MREPLACE_BASE}
@@ -179,14 +139,20 @@ IGNORE=		REPLACE_BASE option is not supported on this release
 .endif
 PKGNAMESUFFIX=	-base
 PREFIX=		/usr
+PLIST_SUB+=	SHARE_MAN="share/"
+NO_MTREE=	yes
 BIND_DESTETC=	/etc/namedb
 .else
+PLIST_SUB+=	SHARE_MAN=""
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 BIND_DESTETC=	${PREFIX}/etc/namedb
+PKGINSTALL=	/nonexistent
 .else
 BIND_DESTETC=	${PREFIX}/etc
 .endif
 .endif
+
+PKGDEINSTALL=	${PKGINSTALL}
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--sysconfdir=${BIND_DESTETC}
@@ -197,51 +163,6 @@ PLIST_SUB+=	NOBASE=""
 .else
 PLIST_SUB+=	NOBASE="@comment "
 .endif
-
-MAN1?=	arpaname.1 dig.1 host.1 isc-config.sh.1 nslookup.1 nsupdate.1
-.if !defined(BIND_TOOLS_SLAVE)
-MAN3=	lwres.3 lwres_addr_parse.3 lwres_buffer.3 lwres_buffer_add.3 \
-	lwres_buffer_back.3 lwres_buffer_clear.3 lwres_buffer_first.3 \
-	lwres_buffer_forward.3 lwres_buffer_getmem.3 lwres_buffer_getuint16.3 \
-	lwres_buffer_getuint32.3 lwres_buffer_getuint8.3 lwres_buffer_init.3 \
-	lwres_buffer_invalidate.3 lwres_buffer_putmem.3 \
-	lwres_buffer_putuint16.3 lwres_buffer_putuint32.3 \
-	lwres_buffer_putuint8.3 lwres_buffer_subtract.3 lwres_conf_clear.3 \
-	lwres_conf_get.3 lwres_conf_init.3 lwres_conf_parse.3 \
-	lwres_conf_print.3 lwres_config.3 lwres_context.3 \
-	lwres_context_allocmem.3 lwres_context_create.3 \
-	lwres_context_destroy.3 lwres_context_freemem.3 \
-	lwres_context_initserial.3 lwres_context_nextserial.3 \
-	lwres_context_sendrecv.3 lwres_endhostent.3 lwres_endhostent_r.3 \
-	lwres_freeaddrinfo.3 lwres_freehostent.3 lwres_gabn.3 \
-	lwres_gabnrequest_free.3 lwres_gabnrequest_parse.3 \
-	lwres_gabnrequest_render.3 lwres_gabnresponse_free.3 \
-	lwres_gabnresponse_parse.3 lwres_gabnresponse_render.3 \
-	lwres_gai_strerror.3 lwres_getaddrinfo.3 lwres_getaddrsbyname.3 \
-	lwres_gethostbyaddr.3 lwres_gethostbyaddr_r.3 lwres_gethostbyname.3 \
-	lwres_gethostbyname2.3 lwres_gethostbyname_r.3 lwres_gethostent.3 \
-	lwres_gethostent_r.3 lwres_getipnode.3 lwres_getipnodebyaddr.3 \
-	lwres_getipnodebyname.3 lwres_getnamebyaddr.3 lwres_getnameinfo.3 \
-	lwres_getrrsetbyname.3 lwres_gnba.3 lwres_gnbarequest_free.3 \
-	lwres_gnbarequest_parse.3 lwres_gnbarequest_render.3 \
-	lwres_gnbaresponse_free.3 lwres_gnbaresponse_parse.3 \
-	lwres_gnbaresponse_render.3 lwres_herror.3 lwres_hstrerror.3 \
-	lwres_inetntop.3 lwres_lwpacket_parseheader.3 \
-	lwres_lwpacket_renderheader.3 lwres_net_ntop.3 lwres_noop.3 \
-	lwres_nooprequest_free.3 lwres_nooprequest_parse.3 \
-	lwres_nooprequest_render.3 lwres_noopresponse_free.3 \
-	lwres_noopresponse_parse.3 lwres_noopresponse_render.3 \
-	lwres_packet.3 lwres_resutil.3 lwres_sethostent.3 \
-	lwres_sethostent_r.3 lwres_string_parse.3
-MAN5=	named.conf.5 rndc.conf.5
-MAN8=	ddns-confgen.8 dnssec-dsfromkey.8 dnssec-keyfromlabel.8 \
-	dnssec-keygen.8 dnssec-revoke.8 dnssec-settime.8 dnssec-signzone.8 \
-	dnssec-verify.8 \
-	genrandom.8 isc-hmac-fixup.8 lwresd.8 named-checkconf.8 \
-	named-checkzone.8 named-journalprint.8 named.8 nsec3hash.8 \
-	rndc-confgen.8 rndc.8
-MLINKS=	named-checkzone.8 named-compilezone.8
-.endif	# BIND_TOOLS_SLVE
 
 .if !defined(BIND_TOOLS_SLAVE)
 post-patch:
@@ -266,42 +187,33 @@ PORTDOCS=	*
 .endif
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/arm ${DOCSDIR}/misc
-	${INSTALL_DATA} ${WRKSRC}/doc/arm/*.html ${DOCSDIR}/arm
-	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM.pdf ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/misc/[a-z]* ${DOCSDIR}/misc
-	${CP} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
-		${WRKSRC}/HISTORY ${WRKSRC}/README ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/arm ${STAGEDIR}${DOCSDIR}/misc
+	${INSTALL_DATA} ${WRKSRC}/doc/arm/*.html ${STAGEDIR}${DOCSDIR}/arm
+	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/misc/[a-z]* ${STAGEDIR}${DOCSDIR}/misc
+	${INSTALL_DATA} ${WRKSRC}/CHANGES ${WRKSRC}/COPYRIGHT ${WRKSRC}/FAQ \
+		${WRKSRC}/HISTORY ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
+
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000100
 .for FILE in named named.conf
 	${SED} -e 's#%%PREFIX%%#${PREFIX}#g' \
 		-e 's#%%BIND_DESTETC%%#${BIND_DESTETC}#g' \
 		${FILESDIR}/${FILE} > ${WRKDIR}/${FILE}
 .endfor
-	${INSTALL_SCRIPT} ${WRKDIR}/named ${PREFIX}/etc/rc.d
-	${MKDIR} ${BIND_DESTETC}
-.for DIR in dynamic master slave working
-	${MKDIR} ${BIND_DESTETC}/${DIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/named ${STAGEDIR}${PREFIX}/etc/rc.d
+	${MKDIR} ${STAGEDIR}${BIND_DESTETC}
+.for i in dynamic master slave working
+	@${MKDIR} ${STAGEDIR}${BIND_DESTETC}/$i
 .endfor
-.for DIR in dynamic slave working
-	${CHOWN} bind:bind ${BIND_DESTETC}/${DIR}
-.endfor
-	${INSTALL_DATA} ${WRKDIR}/named.conf ${BIND_DESTETC}/named.conf.sample
-.if !exists(${BIND_DESTETC}/named.conf)
-	${INSTALL_DATA} ${WRKDIR}/named.conf ${BIND_DESTETC}/named.conf
+	${INSTALL_DATA} ${WRKDIR}/named.conf ${STAGEDIR}${BIND_DESTETC}/named.conf.sample
+	${INSTALL_DATA} ${FILESDIR}/named.root ${STAGEDIR}${BIND_DESTETC}
+	${INSTALL_DATA} ${FILESDIR}/empty.db ${STAGEDIR}${BIND_DESTETC}/master
+	${INSTALL_DATA} ${FILESDIR}/localhost-forward.db ${STAGEDIR}${BIND_DESTETC}/master
+	${INSTALL_DATA} ${FILESDIR}/localhost-reverse.db ${STAGEDIR}${BIND_DESTETC}/master
 .endif
-	${INSTALL_DATA} ${FILESDIR}/named.root ${BIND_DESTETC}
-	${INSTALL_DATA} ${FILESDIR}/empty.db ${BIND_DESTETC}/master
-	${INSTALL_DATA} ${FILESDIR}/localhost-forward.db ${BIND_DESTETC}/master
-	${INSTALL_DATA} ${FILESDIR}/localhost-reverse.db ${BIND_DESTETC}/master
-.elif ${PORT_OPTIONS:MLINKS} && empty(PORT_OPTIONS:MREPLACE_BASE)
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
-
 	${INSTALL_DATA} ${WRKSRC}/bin/rndc/rndc.conf \
-		${BIND_DESTETC}/rndc.conf.sample
-	@${CAT} ${PKGMESSAGE}
+		${STAGEDIR}${BIND_DESTETC}/rndc.conf.sample
 
 .endif	# BIND_TOOLS_SLAVE
 

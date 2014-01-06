@@ -1,12 +1,20 @@
 #!/bin/sh
 
-[ "$2" = 'POST-INSTALL' ] || exit 0
-
-/bin/mkdir -p /var/named${PKG_PREFIX}/etc
+if [ "$2" = 'POST-INSTALL' ]
+then
+	/bin/mkdir -p /var/named${PKG_PREFIX}/etc
+fi
 
 for DIR in ${PKG_PREFIX}/etc /var/named${PKG_PREFIX}/etc; do
 	for FILE in named.conf rndc.key; do
-		/bin/ln -sf /etc/namedb/${FILE} ${DIR}/${FILE}
+		if [ "$2" = 'POST-INSTALL' ]
+		then
+			/bin/ln -sf /etc/namedb/${FILE} ${DIR}/${FILE}
+		fi
+		if [ "$2" = 'POST-DEINSTALL' ]
+		then
+			[ -L ${DIR}/${FILE} ] && rm -f ${DIR}/${FILE}
+		fi
 	done
 done
 
