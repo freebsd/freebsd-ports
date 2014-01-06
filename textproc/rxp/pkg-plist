@@ -13,4 +13,5 @@ include/rxp/system.h
 include/rxp/url.h
 include/rxp/version.h
 include/rxp/xmlparser.h
+man/man1/rxp.1.gz
 @dirrm include/rxp
