@@ -1,3 +1,6 @@
 bin/dig
 bin/host
 bin/nslookup
+%%SHARE_MAN%%man/man1/dig.1.gz
+%%SHARE_MAN%%man/man1/host.1.gz
+%%SHARE_MAN%%man/man1/nslookup.1.gz
