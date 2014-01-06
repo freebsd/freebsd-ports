@@ -3563,6 +3563,7 @@ share/foomatic/db/source/opt/PJL-Duplex.xml
 share/foomatic/db/source/opt/PJL-PJLBinding.xml
 share/foomatic/db/source/opt/PJL-PJLDuplex.xml
 share/foomatic/db/source/opt/PageSize-A4only.xml
+share/foomatic/db/source/opt/Postscript-Color.xml
 share/foomatic/db/source/opt/Postscript-Duplex.xml
 share/foomatic/db/source/opt/Postscript-InputSlot.xml
 share/foomatic/db/source/opt/Postscript-PageSize.xml
@@ -4933,6 +4934,7 @@ share/foomatic/db/source/printer/Epson-XP-810_Series.xml
 share/foomatic/db/source/printer/Epson-XP-850_Series.xml
 share/foomatic/db/source/printer/Epson-XP-950_Series.xml
 share/foomatic/db/source/printer/Fuji_Xerox-DocuPrint_CM205.xml
+share/foomatic/db/source/printer/Fuji_Xerox-DocuPrint_CM305_df.xml
 share/foomatic/db/source/printer/Fujifilm-Printpix-CX-400.xml
 share/foomatic/db/source/printer/Fujifilm-Printpix-CX-550.xml
 share/foomatic/db/source/printer/Fujitsu-1200.xml
