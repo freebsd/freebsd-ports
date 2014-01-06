@@ -11,7 +11,8 @@ MASTER_SITES=	http://www.over-yonder.net/~fullermd/projects/bgrot/ \
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Program to handle your X background to prevent boredom
 
-USE_XORG=	xv
+RUN_DEPENDS=	xv:${PORTSDIR}/graphics/xv
+
 USES=		shebangfix perl5 uidfix
 SHEBANG_FILES=	*.pl
 MAKE_ARGS=	BINDIR=${STAGEDIR}${PREFIX}/bin \
