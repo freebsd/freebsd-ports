@@ -1,7 +1,4 @@
 Term::Encoding is a simple module to detect an encoding the current
 terminal expects, in various ways.
 
-Author:	Tatsuhiko Miyagawa <miyagawa@bulknews.net>
-	Audrey Tang <audreyt@audreyt.org>
-
-WWW:	http://search.cpan.org/dist/Term-Encoding/
+WWW: http://search.cpan.org/dist/Term-Encoding/
