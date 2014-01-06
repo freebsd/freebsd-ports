@@ -12,7 +12,4 @@ COMMENT=	Perl extension to encode/decode values in a structure
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Data::Recursive::Encode.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

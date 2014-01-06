@@ -4,6 +4,11 @@
 %%SITE_PERL%%/Date/DayOfWeek/Nails.pm
 %%SITE_PERL%%/Date/DayOfWeek/Sneeze.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/DayOfWeek/.packlist
+%%PERL5_MAN3%%/Date::DayOfWeek.3.gz
+%%PERL5_MAN3%%/Date::DayOfWeek::Birthday.3.gz
+%%PERL5_MAN3%%/Date::DayOfWeek::Nails.3.gz
+%%PERL5_MAN3%%/Date::DayOfWeek::Sneeze.3.gz
+%%PERL5_MAN3%%/Date::Doomsday.3.gz
 @dirrm %%SITE_PERL%%/Date/DayOfWeek
 @dirrmtry %%SITE_PERL%%/Date
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Date/DayOfWeek
