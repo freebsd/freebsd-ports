@@ -14,7 +14,7 @@ COMMENT=	Homogeneous values favoring maximum or minimum
 LICENSE=	ZPL21
 
 RUN_DEPENDS=	zodb${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/databases/zodb3 \
-		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.interface \
+		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.interface
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
