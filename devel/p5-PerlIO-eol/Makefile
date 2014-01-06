@@ -13,7 +13,4 @@ COMMENT=	PerlIO layer for normalizing line endings
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		PerlIO::eol.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

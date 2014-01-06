@@ -13,7 +13,4 @@ COMMENT=	Takes the drudgery out of Exporting symbols
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Exporter::Easy.3 Exporter::Easiest.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
