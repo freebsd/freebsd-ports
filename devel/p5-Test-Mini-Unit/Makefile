@@ -17,8 +17,4 @@ BUILD_DEPENDS=	p5-Devel-Declare>=0.6.0:${PORTSDIR}/devel/p5-Devel-Declare \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Test::Mini::README.3 \
-	Test::Mini::Unit.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

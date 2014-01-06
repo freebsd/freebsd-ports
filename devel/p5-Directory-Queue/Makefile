@@ -16,11 +16,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Directory::Queue.3 \
-	Directory::Queue::Normal.3 \
-	Directory::Queue::Null.3 \
-	Directory::Queue::Set.3 \
-	Directory::Queue::Simple.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

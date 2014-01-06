@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ashish@FreeBSD.org
-COMMENT=	A modern perl interactive shell
+COMMENT=	Modern Perl interactive shell
 
 BUILD_DEPENDS=	p5-Moose>=0.74:${PORTSDIR}/devel/p5-Moose \
 	p5-MooseX-Object-Pluggable>=0.0009:${PORTSDIR}/devel/p5-MooseX-Object-Pluggable \
@@ -32,39 +32,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Devel::REPL.3 \
-	Devel::REPL::Overview.3 \
-	Devel::REPL::Plugin::B::Concise.3 \
-	Devel::REPL::Plugin::Colors.3 \
-	Devel::REPL::Plugin::Commands.3 \
-	Devel::REPL::Plugin::Completion.3 \
-	Devel::REPL::Plugin::CompletionDriver::Globals.3 \
-	Devel::REPL::Plugin::CompletionDriver::INC.3 \
-	Devel::REPL::Plugin::CompletionDriver::Keywords.3 \
-	Devel::REPL::Plugin::CompletionDriver::LexEnv.3 \
-	Devel::REPL::Plugin::CompletionDriver::Methods.3 \
-	Devel::REPL::Plugin::CompletionDriver::Turtles.3 \
-	Devel::REPL::Plugin::DDC.3 \
-	Devel::REPL::Plugin::DDS.3 \
-	Devel::REPL::Plugin::DumpHistory.3 \
-	Devel::REPL::Plugin::FancyPrompt.3 \
-	Devel::REPL::Plugin::FindVariable.3 \
-	Devel::REPL::Plugin::History.3 \
-	Devel::REPL::Plugin::Interrupt.3 \
-	Devel::REPL::Plugin::LexEnv.3 \
-	Devel::REPL::Plugin::MultiLine::PPI.3 \
-	Devel::REPL::Plugin::NewlineHack.3 \
-	Devel::REPL::Plugin::Nopaste.3 \
-	Devel::REPL::Plugin::OutputCache.3 \
-	Devel::REPL::Plugin::PPI.3 \
-	Devel::REPL::Plugin::Packages.3 \
-	Devel::REPL::Plugin::Peek.3 \
-	Devel::REPL::Plugin::ReadLineHistory.3 \
-	Devel::REPL::Plugin::Refresh.3 \
-	Devel::REPL::Plugin::ShowClass.3 \
-	Devel::REPL::Plugin::Timing.3 \
-	Devel::REPL::Plugin::Turtles.3 \
-	Devel::REPL::Profile.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
