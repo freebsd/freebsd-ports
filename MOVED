@@ -5363,5 +5363,5 @@ net/erlyvideo||2014-01-06|Has expired: Development of erlyvideo is abandoned ups
 devel/qt4-declarative|x11-toolkits/qt4-declarative|2014-01-06|Moved to unify with Qt 5
 devel/qt4-qtestlib|devel/qt4-testlib|2014-01-06|Renamed to unify with Qt 5
 textproc/qt4-clucene|textproc/clucene-qt4|2014-01-06|Renamed to unify with Qt 5
-www/qt4-webkit|www/webkit-qt4||2014-01-06|Renamed to unify with Qt 5
+www/qt4-webkit|www/webkit-qt4|2014-01-06|Renamed to unify with Qt 5
 x11/qt4-opengl|graphics/qt4-opengl|2014-01-06|Moved to unify with Qt 5
