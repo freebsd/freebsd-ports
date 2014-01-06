@@ -2,6 +2,7 @@
 
 PORTNAME=	chocolate-doom
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.chocolate-doom.org/downloads/2.0.0/
 
@@ -10,9 +11,10 @@ COMMENT=	Doom/Heretic/Hexen/Strife engine port compatible with the original exes
 
 LICENSE=	GPLv2
 
-USE_GMAKE=	yes
+BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
+
+USES=		gmake
 USE_SDL=	mixer net sdl
-USE_PYTHON=	2.5+
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	CMDLINE.doom ChangeLog INSTALL.doom NEWS NOT-BUGS README README.OPL
