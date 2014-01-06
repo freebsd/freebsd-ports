@@ -7,6 +7,14 @@
 %%SITE_PERL%%/Set/Scalar/Virtual.pm
 %%SITE_PERL%%/Set/Scalar/Universe.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Scalar/.packlist
+%%PERL5_MAN3%%/Set::Scalar.3.gz
+%%PERL5_MAN3%%/Set::Scalar::Base.3.gz
+%%PERL5_MAN3%%/Set::Scalar::Null.3.gz
+%%PERL5_MAN3%%/Set::Scalar::Real.3.gz
+%%PERL5_MAN3%%/Set::Scalar::Virtual.3.gz
+%%PERL5_MAN3%%/Set::Scalar::Valued.3.gz
+%%PERL5_MAN3%%/Set::Scalar::ValuedUniverse.3.gz
+%%PERL5_MAN3%%/Set::Scalar::Universe.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set/Scalar
 @dirrm %%SITE_PERL%%/Set/Scalar
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Set

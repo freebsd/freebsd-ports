@@ -12,13 +12,10 @@ COMMENT=	Improved Perl interface to Ralf Engelschall's mm library
 
 BUILD_DEPENDS=	p5-Devel-CheckOS>=0:${PORTSDIR}/devel/p5-Devel-CheckOS
 RUN_DEPENDS=	p5-Devel-CheckOS>=0:${PORTSDIR}/devel/p5-Devel-CheckOS
-LIB_DEPENDS=	mm.14:${PORTSDIR}/devel/mm
+LIB_DEPENDS=	libmm.so:${PORTSDIR}/devel/mm
 TEST_DEPENDS=	p5-Test-Warn>=0:${PORTSDIR}/devel/p5-Test-Warn
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		IPC::MMA.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

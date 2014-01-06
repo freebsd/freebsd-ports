@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:MASAKI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
-COMMENT=	An abstract Mouse role for setting attributes from a configfile
+COMMENT=	Abstract Mouse role for setting attributes from a configfile
 
 BUILD_DEPENDS=	p5-Filter>=0:${PORTSDIR}/devel/p5-Filter \
 		p5-Mouse>=0.19:${PORTSDIR}/devel/p5-Mouse \
@@ -19,7 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MouseX::ConfigFromFile.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
