@@ -16,7 +16,4 @@ RUN_DEPENDS=	p5-Error-Helper>=0:${PORTSDIR}/devel/p5-Error-Helper
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		FreeBSD::Pkgs.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

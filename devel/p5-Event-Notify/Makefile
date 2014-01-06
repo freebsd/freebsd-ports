@@ -17,7 +17,4 @@ RUN_DEPENDS=	p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Event::Notify.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

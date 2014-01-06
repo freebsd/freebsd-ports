@@ -19,6 +19,26 @@
 %%SITE_PERL%%/Paranoid/Debug.pm
 %%SITE_PERL%%/Paranoid.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Paranoid/.packlist
+%%PERL5_MAN3%%/Paranoid::Data.3.gz
+%%PERL5_MAN3%%/Paranoid::Log::File.3.gz
+%%PERL5_MAN3%%/Paranoid::Log::Email.3.gz
+%%PERL5_MAN3%%/Paranoid::Args.3.gz
+%%PERL5_MAN3%%/Paranoid::Lockfile.3.gz
+%%PERL5_MAN3%%/Paranoid.3.gz
+%%PERL5_MAN3%%/Paranoid::Log.3.gz
+%%PERL5_MAN3%%/Paranoid::Glob.3.gz
+%%PERL5_MAN3%%/Paranoid::Input.3.gz
+%%PERL5_MAN3%%/Paranoid::Log::Syslog.3.gz
+%%PERL5_MAN3%%/Paranoid::Filesystem.3.gz
+%%PERL5_MAN3%%/Paranoid::Process.3.gz
+%%PERL5_MAN3%%/Paranoid::BerkeleyDB.3.gz
+%%PERL5_MAN3%%/Paranoid::Module.3.gz
+%%PERL5_MAN3%%/Paranoid::Network.3.gz
+%%PERL5_MAN3%%/Paranoid::Network::IPv4.3.gz
+%%PERL5_MAN3%%/Paranoid::Network::IPv6.3.gz
+%%PERL5_MAN3%%/Paranoid::Network::Socket.3.gz
+%%PERL5_MAN3%%/Paranoid::Log::Buffer.3.gz
+%%PERL5_MAN3%%/Paranoid::Debug.3.gz
 @dirrm %%SITE_PERL%%/Paranoid/Log
 @dirrm %%SITE_PERL%%/Paranoid/Network
 @dirrm %%SITE_PERL%%/Paranoid

@@ -23,26 +23,4 @@ TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Paranoid::Data.3 \
-		Paranoid::Log::File.3 \
-		Paranoid::Log::Email.3 \
-		Paranoid::Args.3 \
-		Paranoid::Lockfile.3 \
-		Paranoid.3 \
-		Paranoid::Log.3 \
-		Paranoid::Glob.3 \
-		Paranoid::Input.3 \
-		Paranoid::Log::Syslog.3 \
-		Paranoid::Filesystem.3 \
-		Paranoid::Process.3 \
-		Paranoid::BerkeleyDB.3 \
-		Paranoid::Module.3 \
-		Paranoid::Network.3 \
-		Paranoid::Network::IPv4.3 \
-		Paranoid::Network::IPv6.3 \
-		Paranoid::Network::Socket.3 \
-		Paranoid::Log::Buffer.3 \
-		Paranoid::Debug.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

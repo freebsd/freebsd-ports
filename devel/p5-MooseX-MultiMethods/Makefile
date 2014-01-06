@@ -23,8 +23,4 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MooseX::MultiMethods.3 \
-		MooseX::MultiMethods::Meta::Method.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

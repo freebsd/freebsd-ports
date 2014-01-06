@@ -7,5 +7,13 @@
 %%SITE_PERL%%/Memoize/SDBM_File.pm
 %%SITE_PERL%%/Memoize/ExpireFile.pm
 %%SITE_PERL%%/Memoize/NDBM_File.pm
+%%PERL5_MAN3%%/Memoize.3.gz
+%%PERL5_MAN3%%/Memoize::AnyDBM_File.3.gz
+%%PERL5_MAN3%%/Memoize::Expire.3.gz
+%%PERL5_MAN3%%/Memoize::ExpireFile.3.gz
+%%PERL5_MAN3%%/Memoize::ExpireTest.3.gz
+%%PERL5_MAN3%%/Memoize::NDBM_File.3.gz
+%%PERL5_MAN3%%/Memoize::SDBM_File.3.gz
+%%PERL5_MAN3%%/Memoize::Storable.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Memoize
 @dirrmtry %%SITE_PERL%%/Memoize

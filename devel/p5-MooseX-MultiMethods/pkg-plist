@@ -1,6 +1,8 @@
 %%SITE_PERL%%/MooseX/MultiMethods.pm
 %%SITE_PERL%%/MooseX/MultiMethods/Meta/Method.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/MultiMethods/.packlist
+%%PERL5_MAN3%%/MooseX::MultiMethods.3.gz
+%%PERL5_MAN3%%/MooseX::MultiMethods::Meta::Method.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/MultiMethods
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
 @dirrmtry %%SITE_PERL%%/MooseX/MultiMethods/Meta

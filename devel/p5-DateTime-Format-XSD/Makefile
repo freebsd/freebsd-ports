@@ -16,7 +16,4 @@ RUN_DEPENDS=	p5-DateTime-Format-ISO8601>=0:${PORTSDIR}/devel/p5-DateTime-Format-
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		DateTime::Format::XSD.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
