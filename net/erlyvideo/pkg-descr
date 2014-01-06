@@ -1,6 +1,0 @@
-Erlyvideo is an RTMP flash streaming server, written in erlang. It is a
-replacement to Adobe Flash Media Server, Red5 or Wowza. It is much more
-featured than free Red5, cheaper than others. It can utilize 1GB channel,
-serving from one computer to 4000 and more clients.
-
-WWW: http://erlyvideo.org/
