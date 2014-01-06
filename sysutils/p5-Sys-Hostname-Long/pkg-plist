@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Sys/Hostname/Long.pm
 %%SITE_PERL%%/Sys/Hostname/testall.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Hostname/Long/.packlist
+%%PERL5_MAN3%%/Sys::Hostname::Long.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Hostname/Long
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Hostname
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys

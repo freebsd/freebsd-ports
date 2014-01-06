@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fuse/Simple/.packlist
 %%SITE_PERL%%/Fuse/Simple.pm
+%%PERL5_MAN3%%/Fuse::Simple.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fuse/Simple
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Fuse
 @dirrmtry %%SITE_PERL%%/Fuse

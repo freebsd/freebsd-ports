@@ -13,9 +13,6 @@ COMMENT=	Perl equivalent of du(1)
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Filesys::DiskUsage.3
-
-NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/lib/Filesys/DiskUsage.pm.orig
 

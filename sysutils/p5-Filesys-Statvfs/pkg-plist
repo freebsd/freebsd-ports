@@ -2,6 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/Statvfs/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/Statvfs/Statvfs.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/Statvfs/Statvfs.so
+%%PERL5_MAN3%%/Filesys::Statvfs.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys/Statvfs
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Filesys
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Filesys
