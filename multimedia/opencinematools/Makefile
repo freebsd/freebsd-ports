@@ -25,13 +25,12 @@ MAKE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 PLIST_FILES=	bin/mkcpl bin/mkpkl bin/mkmap
 
-NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC}/build/unix && ${MAKE} ${MAKE_ENV}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/mkcpl ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/mkpkl ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/mkmap ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/mkcpl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/mkpkl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/mkmap ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
