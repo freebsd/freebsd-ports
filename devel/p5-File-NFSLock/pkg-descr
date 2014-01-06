@@ -9,5 +9,4 @@ the nlink status. Some ideologies were not complete (uncache mechanism,
 shared locking) and some coding was even incorrect (wrong stat index).
 File::NFSLock was written to be light, generic, and fast.
 
-Authors: Paul T Seamons (paul@seamons.com), Rob B Brown (bbb@cpan.org)
 WWW: http://search.cpan.org/dist/File-NFSLock/
