@@ -1,2 +1,3 @@
 bin/sgrep
+man/man1/sgrep.1.gz
 share/sgreprc
