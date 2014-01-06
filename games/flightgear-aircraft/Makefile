@@ -5,7 +5,7 @@ PORTNAME=	flightgear-aircraft
 PORTVERSION=	20131001
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
-MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Aircraft-2.12/ \
+MASTER_SITES=	http://mirrors.ibiblio.org/flightgear/ftp/Aircraft-2.12/ \
 		http://ftp.linux.kiev.ua/pub/mirrors/ftp.flightgear.org/flightgear/Aircraft-2.12/ \
 		ftp://ftp.kingmont.com/flightsims/flightgear/Aircraft-2.12/ \
 		ftp://ftp.de.flightgear.org/pub/fgfs/Aircraft-2.12/ \
