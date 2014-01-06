@@ -15,36 +15,29 @@ MAINTAINER=	schot@a-eskwadraat.nl
 COMMENT=	X11 menu application designed for the dwm window manager
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 OPTIONS_DEFINE=	XINERAMA XFT
 OPTIONS_DEFAULT=	XINERAMA
 
 USE_XORG=	x11
 
-MAN1=		dmenu.1 stest.1
-PLIST_FILES=	bin/dmenu bin/dmenu_run bin/stest
+PLIST_FILES=	bin/dmenu bin/dmenu_run bin/stest \
+		man/man1/dmenu.1.gz man/man1/stest.1.gz
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MXINERAMA}
-USE_XORG+=	xinerama
-.endif
-
-.if ${PORT_OPTIONS:MXFT}
-USE_XORG+=	xft
-PATCHFILES+=	${PORTNAME}-${PORTVERSION}-xft.diff
-.endif
+XINERAMA_USE=	XORG=xinerama
+XFT_USE=	XORG=xft
+XFT_PATCHFILES=	${PORTNAME}-${PORTVERSION}-xft.diff
 
 post-patch:
 	@${GREP} -Rl '%%[[:alpha:]]\+%%' ${WRKSRC}|${XARGS} ${REINPLACE_CMD} \
 	         -e "s,%%PREFIX%%,${PREFIX},g" \
 	         -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
 	         -e "s,%%MANPREFIX%%,${MANPREFIX},g"
-.if ! ${PORT_OPTIONS:MXINERAMA}
 	@${REINPLACE_CMD} -e 's,$${XINERAMALIBS},,g' \
 	         -e 's,$${XINERAMAFLAGS},,g' ${WRKSRC}/config.mk
-.endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dmenu \
+		${STAGEDIR}${PREFIX}/bin/stest
 
 .include <bsd.port.mk>
