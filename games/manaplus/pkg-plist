@@ -99,6 +99,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/graphics/gui/popupbrowserbox.xml
 %%DATADIR%%/data/graphics/gui/progress-indicator.png
 %%DATADIR%%/data/graphics/gui/progressbar.xml
+%%DATADIR%%/data/graphics/gui/progressbar_fill.xml
 %%DATADIR%%/data/graphics/gui/quests.xml
 %%DATADIR%%/data/graphics/gui/radio.xml
 %%DATADIR%%/data/graphics/gui/resize.xml
