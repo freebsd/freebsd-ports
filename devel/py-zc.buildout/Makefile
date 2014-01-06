@@ -2,6 +2,7 @@
 
 PORTNAME=	zc.buildout
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,9 +13,8 @@ COMMENT=	System for managing development buildouts
 
 LICENSE=	ZPL21
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-
-NO_STAGE=	yes
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
