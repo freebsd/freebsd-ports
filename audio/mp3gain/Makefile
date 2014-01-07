@@ -15,7 +15,7 @@ LICENSE=	LGPL21
 USES=		uidfix
 
 USE_ZIP=	yes
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/mp3gain
 
