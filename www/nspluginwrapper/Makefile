@@ -15,7 +15,7 @@ COMMENT=	Compatibility plugin for Mozilla NPAPI plugins
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 CONFLICTS=	nspluginwrapper-1.3.*
 
