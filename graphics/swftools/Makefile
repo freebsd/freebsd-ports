@@ -22,11 +22,8 @@ LIB_DEPENDS=	libt1.so:${PORTSDIR}/devel/t1lib \
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	LAME PDF
-
-USES=		pkgconfig
+USES=		pkgconfig gmake
 USE_GL=		glut
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_lib_zzip_zzip_file_open=no
 
@@ -37,22 +34,21 @@ MAN1=		as3compile.1 font2swf.1 gif2swf.1 jpeg2swf.1 pdf2swf.1 \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+OPTIONS_DEFINE=	LAME PDF
+OPTIONS_SUB=	yes
+LAME_LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame
+PDF_LIB_DEPENDS=	libpdf.so:${PORTSDIR}/print/pdflib
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MLAME}
-LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
-.else
-#CONFIGURE_ARGS+=	--disable-lame
+.if ! ${PORT_OPTIONS:MLAME}
 CONFIGURE_ENV+=	ac_cv_lib_mp3lame_lame_init=no
 .endif
 
 .if ${PORT_OPTIONS:MPDF}
-LIB_DEPENDS+=	pdf.6:${PORTSDIR}/print/pdflib
-PLIST_SUB+=	PDF=""
 MAN1+=		pdf2pdf.1
 .else
 CONFIGURE_ENV+=	ac_cv_lib_pdf_PDF_open_file=no
-PLIST_SUB+=	PDF="@comment "
 .endif
 
 post-patch:
