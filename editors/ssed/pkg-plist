@@ -1,4 +1,5 @@
 bin/ssed
+man/man1/ssed.1.gz
 %%NLS%%share/locale/af/LC_MESSAGES/ssed.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/ssed.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/ssed.mo
