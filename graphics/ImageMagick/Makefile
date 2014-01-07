@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-#PORTREVISION=	1
-DISTVERSION=	6.8.8-1
+DISTVERSION=	6.8.0-7
+PORTREVISION=	3
+PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
 		http://servingzone.com/mirrors/ImageMagick/ \
@@ -34,16 +35,14 @@ LICENSE=	APACHE20
 
 USES=		pkgconfig:both pathfix perl5
 USE_XZ=		yes
-USE_PERL5=	run build patch install
+USE_PERL5=	run build patch
 WANT_GNOME=	yes
 USE_AUTOTOOLS=	libltdl
 NO_STAGE=	yes
 # For some reason, using our libtool breaks the build into pieces:
 #USE_AUTOTOOLS+=	libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared \
-		--without-dps \
-		--without-lcms
+CONFIGURE_ARGS=	--enable-shared --without-dps --without-lcms
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
@@ -62,9 +61,8 @@ OPTIONS_DEFINE=	16BIT_PIXEL BZIP2 DOCS DJVU FFTW FONTCONFIG FPX FREETYPE \
 		OPENEXR OPENMP PANGO PDF PERL PNG SVG TESTS TIFF WEBP WMF \
 		THREADS
 OPTIONS_DEFAULT=	16BIT_PIXEL BZIP2 FFTW FONTCONFIG FPX FREETYPE \
-		JASPER JBIG JPEG LCMS2 LZMA LQR MODULES PDF PERL PNG SVG TIFF \
-		WEBP WMF THREADS
-
+		JASPER JBIG JPEG LCMS2 LZMA LQR MODULES PDF PERL PNG SVG \
+		TIFF WEBP WMF
 16BIT_PIXEL_DESC=	16bit pixel support
 DJVU_DESC=		DJVU format support (needs THREADS)
 GSLIB_DESC=		libgs (Postscript SHLIB) support
@@ -405,10 +403,6 @@ post-patch:
 		s|^(Cflags.+)$$|\1 ${PTHREAD_CFLAGS}|' \
 		${WRKSRC}/${i}
 . endfor
-.endif
-.if ${PORT_OPTIONS:MPERL}
-	${REINPLACE_CMD} -e "s|LIBS_magick = '|LIBS_magick = '-L${LOCALBASE}/lib/perl5/${PERL_VER}/mach/CORE |" \
-		${WRKSRC}/PerlMagick/Makefile.PL.in
 .endif
 # deprecated gvCleanup
 	@${REINPLACE_CMD} -e "s|gvCleanup|gvFreeContext|g" \
