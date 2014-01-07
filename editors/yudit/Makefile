@@ -13,13 +13,10 @@ COMMENT=	Multi-lingual Unicode text editor with TTF support
 CONFLICTS=	netatalk-[0-9]*
 
 USE_XORG=	x11
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LC_ALL=
 MAKE_ENV=	LC_ALL=
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=		mytool.1 uniconv.1 uniprint.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
