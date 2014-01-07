@@ -1,0 +1,5 @@
+Phonon is the framework responsible for an ubiquitous multimedia
+experience in KDE Software Compilation 4.
+This port installs Qt Designer plugin for Phonon.
+
+WWW: http://phonon.kde.org
