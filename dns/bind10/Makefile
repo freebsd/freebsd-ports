@@ -17,17 +17,19 @@ LICENSE_FILE=	${FILESDIR}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/interprocess/sync/interprocess_upgradable_mutex.hpp:${PORTSDIR}/devel/boost-libs \
-		${LOCALBASE}/include/botan/hash.h:${PORTSDIR}/security/botan \
 		${LOCALBASE}/include/log4cplus/logger.h:${PORTSDIR}/devel/log4cplus \
 		sqlite3>=3.3.9:${PORTSDIR}/databases/sqlite3
 LIB_DEPENDS=	libbotan.so:${PORTSDIR}/security/botan \
 		liblog4cplus.so:${PORTSDIR}/devel/log4cplus \
+		libicuuc.so:${PORTSDIR}/devel/icu \
+		libgmp.so:${PORTSDIR}/math/gmp \
 		libsqlite3.so:${PORTSDIR}/databases/sqlite3
 RUN_DEPENDS=	${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 
 USE_PYTHON=	3.3
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
+USES=	pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var	\
