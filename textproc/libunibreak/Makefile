@@ -3,6 +3,7 @@
 
 PORTNAME=	libunibreak
 PORTVERSION=	1.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/vimgadgets/${PORTNAME}/${PORTVERSION}
@@ -14,5 +15,4 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		pathfix
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
