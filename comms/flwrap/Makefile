@@ -15,9 +15,8 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
-USE_GMAKE=	yes
+USES=		gmake dos2unix
 GNU_CONFIGURE=	yes
-USE_DOS2UNIX=	yes
 CONFIGURE_ENV=	FLTK_CONFIG="${LOCALBASE}/bin/fltk-config"
 
 post-configure:
