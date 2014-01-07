@@ -25,11 +25,10 @@ USE_LDCONFIG=	yes
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGCRYPT}
-LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 CMAKE_ARGS+=	-DWITH_GCRYPT:BOOL=ON
 .else
 USE_OPENSSL=	yes
