@@ -116,7 +116,7 @@ PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 
 .if ${PORT_OPTIONS:MLLVM} && ( ${ARCH} == "i386" || ${ARCH} == "amd64" )
 CONFIGURE_ARGS+=--enable-llvm
-. if defined(WITH_TESTS)
+. if ${PORT_OPTIONS:MTESTS}
 USE_PYTHON_BUILD=	yes
 . endif
 .else
