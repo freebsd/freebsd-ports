@@ -263,6 +263,7 @@
     SUBDIR += p5-Umph-Prompt
     SUBDIR += p5-Video-OpenQuicktime
     SUBDIR += phonon
+    SUBDIR += phonon-designerplugin
     SUBDIR += phonon-gstreamer
     SUBDIR += phonon-vlc
     SUBDIR += phonon-xine
