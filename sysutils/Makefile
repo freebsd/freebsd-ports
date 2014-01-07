@@ -386,6 +386,7 @@
     SUBDIR += hoz
     SUBDIR += hpacucli
     SUBDIR += hploscripts
+    SUBDIR += hptcli
     SUBDIR += hs-angel
     SUBDIR += hs-cpu
     SUBDIR += htop
