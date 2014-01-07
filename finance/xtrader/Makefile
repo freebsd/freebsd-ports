@@ -10,21 +10,20 @@ MASTER_SITES=	SF/${PORTNAME}/OldFiles
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Technical analysis program for financial instruments
 
-LIB_DEPENDS=	ptypes.21:${PORTSDIR}/devel/ptypes \
-		fltk.1:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libptypes.so:${PORTSDIR}/devel/ptypes \
+		libfltk.so.1:${PORTSDIR}/x11-toolkits/fltk
 
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKEFILE=	Makefile.linux
 USE_XORG=	x11 xpm
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 NO_WRKSUBDIR=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/xtrader \
 		%%DATADIR%%/sample.xt
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|char|const char|' \
 	    ${WRKSRC}/xtrader/src/Resource.cpp
@@ -36,8 +35,8 @@ post-patch:
 	   ${REINPLACE_CMD} -e '/^#include <FL/s|.h>$$|.H>|; s|fl_file_chooser|Fl_File_Chooser|g'
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/sample.xt ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}/xtrader ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/sample.xt ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}/xtrader ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
