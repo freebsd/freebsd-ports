@@ -7,6 +7,14 @@
 %%SITE_PERL%%/Range/Integer/Parse.pm
 %%SITE_PERL%%/Range/Integer/Object.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Range/String/.packlist
+%%PERL5_MAN3%%/Range::Integer.3.gz
+%%PERL5_MAN3%%/Range::String.3.gz
+%%PERL5_MAN3%%/Range::String::Parse.3.gz
+%%PERL5_MAN3%%/Range::Interface::Object.3.gz
+%%PERL5_MAN3%%/Range::Interface::Parse.3.gz
+%%PERL5_MAN3%%/Range::String::Object.3.gz
+%%PERL5_MAN3%%/Range::Integer::Parse.3.gz
+%%PERL5_MAN3%%/Range::Integer::Object.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Range/String
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Range
 @dirrmtry %%SITE_PERL%%/Range/Interface

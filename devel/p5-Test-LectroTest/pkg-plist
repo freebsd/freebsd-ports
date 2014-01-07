@@ -7,6 +7,14 @@
 %%SITE_PERL%%/Test/LectroTest/TestRunner.pm
 %%SITE_PERL%%/Test/LectroTest/Tutorial.pod
 %%SITE_PERL%%/mach/auto/Test/LectroTest/.packlist
+%%PERL5_MAN3%%/Test::LectroTest.3.gz
+%%PERL5_MAN3%%/Test::LectroTest::Compat.3.gz
+%%PERL5_MAN3%%/Test::LectroTest::FailureRecorder.3.gz
+%%PERL5_MAN3%%/Test::LectroTest::Generator.3.gz
+%%PERL5_MAN3%%/Test::LectroTest::Property.3.gz
+%%PERL5_MAN3%%/Test::LectroTest::RegressionTesting.3.gz
+%%PERL5_MAN3%%/Test::LectroTest::TestRunner.3.gz
+%%PERL5_MAN3%%/Test::LectroTest::Tutorial.3.gz
 @dirrm %%SITE_PERL%%/Test/LectroTest
 @dirrm %%SITE_PERL%%/mach/auto/Test/LectroTest
 @dirrmtry %%SITE_PERL%%/Test
