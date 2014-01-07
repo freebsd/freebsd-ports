@@ -1,6 +1,6 @@
---- ./archival/unzip.c.orig	2012-07-02 14:08:25.000000000 +0000
-+++ ./archival/unzip.c	2012-07-17 02:08:37.000000000 +0000
-@@ -34,6 +34,8 @@
+--- ./archival/unzip.c.orig	2014-01-01 00:45:23.000000000 +0100
++++ ./archival/unzip.c	2014-01-08 00:00:07.000000000 +0100
+@@ -45,6 +45,8 @@
  #include "libbb.h"
  #include "bb_archive.h"
  
