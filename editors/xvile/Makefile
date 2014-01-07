@@ -27,7 +27,7 @@ XAW_DESC=	X Athena Widgets
 XAW3D_DESC=	X Athena Widgets with 3D effect
 
 USES=		pkgconfig shebangfix
-SHEBANG_FILES=	perl/vileget
+SHEBANG_FILES=	macros/lxvile macros/lxvile-fonts perl/vileget
 USE_XORG=	x11 xext xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-imake \
@@ -38,11 +38,8 @@ MAKEFILE=	makefile
 
 DATADIR=	${PREFIX}/share/vile
 
-MAN1=		xvile.1
-
 CONFLICTS_INSTALL=	vile-[0-9]*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFILTERS}
@@ -98,13 +95,13 @@ post-patch:
 		's|defined(FLEX_BETA)|0|' ${WRKSRC}/filters/filters.h
 
 post-install:
-	@${MKDIR} ${DATADIR}/macros
-	(cd ${WRKSRC}/macros && ${INSTALL_DATA} *.rc ${DATADIR}/macros)
-	@${MKDIR} ${DESKTOPDIR}
-	(cd ${WRKSRC}/macros && ${INSTALL_DATA} *.desktop ${DESKTOPDIR})
+	@${MKDIR} ${STAGEDIR}${DATADIR}/macros
+	${INSTALL_DATA} ${WRKSRC}/macros/*.rc ${STAGEDIR}${DATADIR}/macros
+	@${MKDIR} ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${WRKSRC}/macros/*.desktop ${STAGEDIR}${DESKTOPDIR}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} *.doc ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.doc ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
