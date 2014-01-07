@@ -5,6 +5,9 @@ man/man1/chattr.1.gz
 man/man1/lsattr.1.gz
 man/man5/e2fsck.conf.5.gz
 man/man5/mke2fs.conf.5.gz
+man/man5/ext2.5.gz
+man/man5/ext3.5.gz
+man/man5/ext4.5.gz
 man/man8/badblocks.8.gz
 man/man8/debugfs.8.gz
 man/man8/dumpe2fs.8.gz
