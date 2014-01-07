@@ -11,6 +11,8 @@ MASTER_SITE_SUBDIR=	jkim
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Utility for ASUS USB OLED Display
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	${FONTDIR}/TTF/luxisr.ttf:${PORTSDIR}/x11-fonts/font-bh-ttf
 
 USE_SDL=	image sdl ttf
@@ -25,25 +27,21 @@ MAKE_ARGS+=	TTF_FONT=${FONTDIR}/TTF/luxisr.ttf
 
 FONTDIR?=	${LOCALBASE}/lib/X11/fonts
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
-post-install:
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/asusoled ${STAGEDIR}${PREFIX}/sbin
 .if !defined(NOPORTDATA)
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for i in ${PORTDATA}
-	@${INSTALL_DATA} ${WRKSRC}/data/${i} ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/data/${i} ${STAGEDIR}${DATADIR}
 .endfor
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${CAT} ${PKGMESSAGE} > ${WRKSRC}/README.FreeBSD
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${PKGMESSAGE} ${STAGEDIR}${DOCSDIR}/README.FreeBSD
 .endif
-	@${ECHO}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO}
 
 .include <bsd.port.mk>
