@@ -3,7 +3,7 @@
 
 PORTNAME=	busybox
 PORTVERSION=	1.22.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	http://www.busybox.net/downloads/
 PKGNAMESUFFIX=	-unstable
