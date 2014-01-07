@@ -3,6 +3,7 @@
 
 PORTNAME=	hplip
 PORTVERSION=	3.13.6
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -22,9 +23,9 @@ RUN_DEPENDS=	espgs:${PORTSDIR}/print/cups-pstoraster \
 CONFLICTS_INSTALL=	hpijs-[0-9]*
 
 USE_GHOSTSCRIPT_RUN=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_GNOME=	pygobject
-USES=		pkgconfig
+USES=		pkgconfig dos2unix
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-foomatic-ppd-install \
@@ -45,7 +46,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message
-USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=.+\.(c|cpp|h|py)$
 
 FILES4FIX=	Makefile.in \
@@ -60,8 +60,10 @@ FILES4FIX=	Makefile.in \
 		installer/core_install.py \
 		installer/dcheck.py \
 		installer/distros.dat \
+		installer/pluginhandler.py \
 		io/hpmud/hp-mkuri.c \
 		prnt/cups.py \
+		prnt/filters/hpps \
 		prnt/hpcups/HPCupsFilter.cpp \
 		prnt/hpcups/Utils.cpp \
 		prnt/hpijs/globals.cpp \
@@ -74,65 +76,37 @@ FILES4FIX=	Makefile.in \
 
 OPTIONS_DEFINE=	QT FAX SNMP SCAN XSANE DOCS
 OPTIONS_DEFAULT=	QT
+OPTIONS_SUB=		yes # QT FAX SCAN
 
-QT_DESC=	Graphical User Interface (Qt4)
+QT_DESC=	Graphical User Interface (Qt 4)
+QT_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
+		${PYTHON_SITELIBDIR}/dbus/mainloop/qt.so:${PORTSDIR}/devel/py-qt4-dbussupport
+QT_CONFIGURE_ENABLE=	qt4 gui-build
+
 FAX_DESC=	PC Send Fax support
+FAX_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2
+FAX_CONFIGURE_ENABLE=	fax-build
+
 SNMP_DESC=	Network/JetDirect support
+SNMP_USE=	OPENSSL=yes
+SNMP_LIB_DEPENDS=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
+SNMP_CONFIGURE_ENABLE=	network-build
+
 SCAN_DESC=	Scanning support
+SCAN_LIB_DEPENDS=	libsane.so:${PORTSDIR}/graphics/sane-backends
+SCAN_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging
+SCAN_CONFIGURE_ENABLE=	scan-build
+
 XSANE_DESC=	Install XSane for scanning (requires SCAN)
 
+DOCS_CONFIGURE_ENABLE=	doc-build
+
 .include <bsd.port.options.mk>
-
-USB_INCLUDE=	/usr/include
-
-.if ${PORT_OPTIONS:MQT}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PYTHON_SITELIBDIR}/dbus/mainloop/qt.so:${PORTSDIR}/devel/py-qt4-dbussupport
-CONFIGURE_ARGS+=	--enable-qt4 \
-			--enable-gui-build
-PLIST_SUB+=	GUI=""
-.else
-CONFIGURE_ARGS+=	--disable-qt4 \
-			--disable-gui-build
-PLIST_SUB+=	GUI="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MFAX}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2
-CONFIGURE_ARGS+=	--enable-fax-build
-PLIST_SUB+=	FAX=""
-.else
-CONFIGURE_ARGS+=	--disable-fax-build
-PLIST_SUB+=	FAX="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSNMP}
-USE_OPENSSL=	yes
-LIB_DEPENDS+=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
-CONFIGURE_ARGS+=	--enable-network-build
-. if ${ARCH} == i386
-# http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/144833
-CONFIGURE_ENV+=	LIBS="-lssp_nonshared"
-. endif
-.else
-CONFIGURE_ARGS+=	--disable-network-build
-.endif
 
 .if ${PORT_OPTIONS:MSCAN}
 . if ${PORT_OPTIONS:MXSANE}
 RUN_DEPENDS+=	xsane:${PORTSDIR}/graphics/xsane
 . endif
-LIB_DEPENDS+=	libsane.so:${PORTSDIR}/graphics/sane-backends
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging
-CONFIGURE_ARGS+=	--enable-scan-build
-PLIST_SUB+=	SCAN=""
-.else
-CONFIGURE_ARGS+=	--disable-scan-build
-PLIST_SUB+=	SCAN="@comment "
-.endif
-
-.if !${PORT_OPTIONS:MDOCS}
-CONFIGURE_ARGS+=	--enable-doc-build=no
 .endif
 
 post-patch:
@@ -156,19 +130,11 @@ post-patch:
 		-e 's,/usr/share,${LOCALBASE}/share,g' \
 		-e 's,/usr/include,${LOCALBASE}/include,g' \
 		${FILES4FIX:S,^,${WRKSRC}/,}
-	${REINPLACE_CMD} -e 's,%USB_INCLUDE%,${USB_INCLUDE},' \
+	${REINPLACE_CMD} -e 's,%USB_INCLUDE%,/usr/include,' \
 		${WRKSRC}/installer/core_install.py
-	cd ${WRKSRC} && \
-		${REINPLACE_CMD} -e "s,^#!/usr/bin/python,#!/usr/bin/env python," \
-			base/magic.py \
-			config_usb_printer.py \
-			doctor.py \
-			logcapture.py \
-			makeuri.py \
-			setup.py \
-			ui/upgradeform.py \
-			uninstall.py \
-			upgrade.py
+	${FIND} ${WRKSRC} -name '*.py' | ${XARGS} ${SED} -i '' \
+		-e 's,^#!/usr/bin/python,#!${PYTHON_CMD},' \
+		-e 's,^#!/usr/bin/env python,#!${PYTHON_CMD},'
 .if !${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e '/[[:space:]]install-docDATA/ s|install-docDATA||' \
 		${WRKSRC}/Makefile.in
