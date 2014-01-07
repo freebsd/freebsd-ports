@@ -461,6 +461,7 @@ bin/moagg
 %%DATADIR%%/ghosts/unsorted/race02/Slash.dat
 %%DATADIR%%/ghosts/unsorted/race03/Slash.dat
 %%DATADIR%%/ghosts/unsorted/rescue06/Slash.dat
+%%DATADIR%%/hiscores.dat
 %%DATADIR%%/jar/GTGE_add_ons-0.2.3.jar
 %%DATADIR%%/jar/commons-lang-2.1.jar
 %%DATADIR%%/jar/golden-0.2.3.jar
@@ -470,6 +471,7 @@ bin/moagg
 %%DATADIR%%/jar/moagg-1.95.jar
 %%DATADIR%%/jar/timer-1.1.jar
 %%DATADIR%%/jar/timer.dll
+%%DATADIR%%/log4j.properties
 share/pixmaps/moagg.png
 @dirrm %%DATADIR%%/jar
 @dirrm %%DATADIR%%/ghosts/unsorted/rescue06
