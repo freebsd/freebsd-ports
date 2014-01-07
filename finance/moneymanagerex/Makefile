@@ -24,10 +24,6 @@ WX_UNICODE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 CPPFLAGS+=	-I${LOCALBASE}/include			# helps to find boost
 
-MAN1=		${PORTNAME}.1
-MANCOMPRESSED=	yes
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/man1/s,$$(datadir),${MANPREFIX},' \
 		${WRKSRC}/Makefile.in
