@@ -19,8 +19,6 @@ GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	20130402
 PLIST_FILES=	bin/keyconv bin/vanitygen
 
-NO_STAGE=	yes
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
@@ -30,7 +28,7 @@ post-patch:
 	    	${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/keyconv ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/vanitygen ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/keyconv ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/vanitygen ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
