@@ -12,18 +12,18 @@ COMMENT=	Tool for calculating dvdids
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||' ${WRKSRC}/Makefile.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} dvdid.tag ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/html/api
-	cd ${WRKSRC}/doc/html/api && ${INSTALL_DATA} * ${DOCSDIR}/html/api
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} dvdid.tag ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html/api
+	cd ${WRKSRC}/doc/html/api && ${INSTALL_DATA} * \
+		${STAGEDIR}${DOCSDIR}/html/api
 
 .include <bsd.port.mk>
