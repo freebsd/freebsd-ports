@@ -2,7 +2,6 @@ include/linebreak.h
 include/linebreakdef.h
 include/wordbreak.h
 include/wordbreakdef.h
-lib/liblinebreak.a
 lib/libunibreak.a
 lib/libunibreak.la
 lib/libunibreak.so
