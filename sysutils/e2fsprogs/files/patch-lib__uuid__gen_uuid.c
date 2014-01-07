@@ -1,5 +1,5 @@
---- ./lib/uuid/gen_uuid.c.orig	2013-04-22 01:05:50.000000000 +0200
-+++ ./lib/uuid/gen_uuid.c	2013-06-27 00:38:52.000000000 +0200
+--- ./lib/uuid/gen_uuid.c.orig	2013-12-16 07:32:00.000000000 +0100
++++ ./lib/uuid/gen_uuid.c	2014-01-06 23:26:48.000000000 +0100
 @@ -91,6 +91,7 @@
  #ifdef HAVE_SYS_RESOURCE_H
  #include <sys/resource.h>
