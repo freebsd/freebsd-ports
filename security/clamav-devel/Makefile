@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clamav
-PORTVERSION=	20131023
+PORTVERSION=	20140107
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		LOCAL/garga/clamav-devel
@@ -45,7 +45,6 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GCC=	any
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 
 PORTDOCS=	*
@@ -120,7 +119,7 @@ PORTSCOUT=	ignore:1
 
 .if ${PORT_OPTIONS:MLLVM} && ( ${ARCH} == "i386" || ${ARCH} == "amd64" )
 CONFIGURE_ARGS+=--enable-llvm
-. if defined(WITH_TESTS)
+. if ${PORT_OPTIONS:MTESTS}
 USE_PYTHON_BUILD=	yes
 . endif
 .else
