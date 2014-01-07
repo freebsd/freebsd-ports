@@ -32,6 +32,8 @@ libexec/lightsquid/ip2name.squidlist2
 %%DATADIR%%/lang/ru.lng
 %%DATADIR%%/lang/sp.lng
 %%DATADIR%%/lang/ua.lng
+@owner %%WWWOWN%%
+@group %%WWWGRP%%
 %%WWWDIR%%/tpl/base/bigfiles.html
 %%WWWDIR%%/tpl/base/day_detail.html
 %%WWWDIR%%/tpl/base/graph.html
@@ -72,13 +74,16 @@ libexec/lightsquid/ip2name.squidlist2
 %%WWWDIR%%/check-setup.pl
 %%WWWDIR%%/common.pl
 %%WWWDIR%%/lightparser.pl
-@dirrmtry %%ETCDIR%%
-@dirrmtry libexec/lightsquid
-@dirrmtry %%DATADIR%%/lang
-@dirrmtry %%DATADIR%%
+@exec %%CHOWN%% -R %%WWWOWN%%:%%WWWGRP%% %%WWWDIR%%
 @dirrmtry %%WWWDIR%%/tpl/base/images
 @dirrmtry %%WWWDIR%%/tpl/base
 @dirrmtry %%WWWDIR%%/tpl/text
 @dirrmtry %%WWWDIR%%/tpl
 @dirrmtry %%WWWDIR%%/report
 @dirrmtry %%WWWDIR%%
+@group
+@owner
+@dirrmtry %%DATADIR%%/lang
+@dirrmtry %%DATADIR%%
+@dirrmtry libexec/lightsquid
+@dirrmtry %%ETCDIR%%

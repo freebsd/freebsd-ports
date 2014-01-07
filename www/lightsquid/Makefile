@@ -18,6 +18,10 @@ USES=		perl5
 USE_PERL5=	run
 NO_BUILD=	yes
 
+PLIST_SUB+=	WWWOWN="${WWWOWN}" \
+		WWWGRP="${WWWGRP}" \
+		CHOWN="${CHOWN}"
+
 .include <bsd.port.options.mk>
 
 CONFIGS=	lightsquid.cfg realname.cfg skipuser.cfg group.cfg
@@ -74,7 +78,7 @@ do-install:
 	${FIND} -E . -maxdepth 1 -regex '.*\.(cgi|pl)' -exec \
 		${INSTALL_SCRIPT} "{}" "${STAGEDIR}/${WWWDIR}/{}" \; && \
 		${INSTALL_DATA} .htaccess ${STAGEDIR}/${WWWDIR}/
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}/${WWWDIR}
+#	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}/${WWWDIR}
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 .for i in ${PORTDOCS}
