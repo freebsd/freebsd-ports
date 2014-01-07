@@ -1,13 +1,22 @@
 #!/bin/sh
-# $FreeBSD: head/sysutils/ganglia-monitor-core/files/gmond.in 302141 2012-08-05 23:19:36Z dougb $
+# $FreeBSD$
 
 # PROVIDE: gmond
 # REQUIRE: DAEMON
 # KEYWORD: shutdown
 
-bname=`basename $0`
-
 . /etc/rc.subr
+
+case "$0" in
+/etc/rc*)
+	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+	# so get the name of the script from $_file
+	bname=`basename $_file`
+	;;
+*)
+	bname=`basename $0`
+	;;
+esac
 
 name=`echo "${bname}" | tr ".-" "__"`
 rcvar=${name}_enable
