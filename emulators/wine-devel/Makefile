@@ -30,7 +30,11 @@ CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-mpg123 --without-opencl \
 		--with-oss --without-sane --without-tiff \
 		--without-v4l --without-xcomposite --without-xinerama
-CONFIGURE_ENV=	FLEX="${LOCALBASE}/bin/flex"
+CONFIGURE_ENV=	FLEX="${LOCALBASE}/bin/flex" 
+# Wine expects the install script to make any missing directories, and the default
+# internal tool (/tools/install-sh) does that however the default install script used
+# by Ports does not.
+CONFIGURE_ENV+=	${SETENV} -u INSTALL -u INSTALL_PROGRAM -u INSTALL_SCRIPT -u INSTALL_DATA
 WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
@@ -94,10 +98,6 @@ PORTDATA=	l_intl.nls wine.inf
 
 pre-build:
 	cd ${WRKSRC} && ${GMAKE} depend
-
-pre-install:
-	${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} | ${GREP} ^@dirrm | \
-		${CUT} -f 2 -d ' ' | ${SORT} | ${XARGS} -R 1 -I % ${MKDIR} ${STAGEDIR}${PREFIX}/%
 
 post-install:
 	@${MV} -f ${STAGEDIR}${WINELIBDIR}/libwine.so.1.0 \
