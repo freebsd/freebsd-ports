@@ -1,4 +1,5 @@
 bin/mmex
+man/man1/mmex.1.gz
 share/applications/mmex.desktop
 share/doc/mmex/contrib.txt
 share/doc/mmex/help/budget.html
