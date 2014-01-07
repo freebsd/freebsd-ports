@@ -34,6 +34,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,test -d \.libs || mkdir,mkdir -p,' \
 		${WRKSRC}/libmp3lame/i386/Makefile.in
 
+.if !${PORT_OPTIONS:MDOCS}
 do-install:
 	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install-exec
@@ -41,7 +42,10 @@ do-install:
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install-data
 	@cd ${INSTALL_WRKSRC}/doc/man && ${SETENV} ${MAKE_ENV} ${GMAKE} \
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install-data
-.if ${PORT_OPTIONS:MDOCS}
+.else
+post-install: install-doc
+
+install-doc:
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOC_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
