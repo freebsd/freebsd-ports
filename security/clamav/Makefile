@@ -3,7 +3,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.98
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -44,7 +44,6 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GCC=	any
 USES=		gmake
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 
