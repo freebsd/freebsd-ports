@@ -12,7 +12,7 @@ COMMENT=	LXDE Common files
 
 LICENSE=	GPLv2
 
-USES=		iconv
+USES=		gmake iconv
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
@@ -21,31 +21,21 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		GMSGFMT="${LOCALBASE}/bin/msgfmt" \
 		--with-xsession-path=${PREFIX}/share/xsessions \
 		--with-xdg-path=${PREFIX}/share/applications
-USE_GMAKE=	yes
 
 DATADIR=	${PREFIX}/share/lxde
 INSTALLS_ICONS=	YES
-
-MAN1=		startlxde.1 lxde-logout.1 openbox-lxde.1
 
 PORTDOCS=	AUTHORS README
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/desktop.conf ${PREFIX}/etc/xdg/lxsession/LXDE/desktop.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/pcmanfm/pcmanfm.conf ${PREFIX}/etc/xdg/pcmanfm/LXDE/pcmanfm.conf.sample
-	@[ -f ${PREFIX}/etc/xdg/lxsession/LXDE/desktop.conf ] || \
-		${INSTALL_DATA} ${WRKSRC}/desktop.conf ${PREFIX}/etc/xdg/lxsession/LXDE/desktop.conf
-	@[ -f ${PREFIX}/etc/xdg/pcmanfm/LXDE/pcmanfm.conf ] || \
-		${INSTALL_DATA} ${WRKSRC}/pcmanfm/pcmanfm.conf ${PREFIX}/etc/xdg/pcmanfm/LXDE/pcmanfm.conf
+	${INSTALL_DATA} ${WRKSRC}/desktop.conf \
+		${STAGEDIR}${PREFIX}/etc/xdg/lxsession/LXDE/desktop.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/pcmanfm/pcmanfm.conf \
+		${STAGEDIR}${PREFIX}/etc/xdg/pcmanfm/LXDE/pcmanfm.conf.sample
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
