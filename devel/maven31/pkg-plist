@@ -67,5 +67,3 @@ etc/maven-wrapper/instances.d/030101-maven31-3.1.1
 @dirrmtry %%DATADIR%%/boot
 @dirrmtry %%DATADIR%%/bin
 @dirrmtry %%DATADIR%%
-@dirrmtry etc/maven-wrapper/instances.d
-@dirrmtry etc/maven-wrapper
