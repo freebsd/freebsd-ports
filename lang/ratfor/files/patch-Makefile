@@ -1,16 +1,22 @@
---- Makefile~	Sat Jan 13 18:13:44 2007
-+++ Makefile	Sat Jan 13 18:14:35 2007
-@@ -28,11 +28,11 @@
+--- Makefile.orig	2013-11-16 17:28:28.000000000 +0100
++++ Makefile	2013-11-16 17:27:51.000000000 +0100
+@@ -26,13 +26,15 @@
+ clean:
+ 	rm -f *.o *~ ratfor ratfor77 a.out test testw test.f testw.f
  
- test: ratfor
+-test: ratfor
++test: test.f
++
++test.f: ratfor
  	./ratfor -o test.f test.r
 -	f77 -o test test.f
-+	%%F77%% -o test test.f
  
- testw: ratfor
+-testw: ratfor
++testw: testw.f
++
++testw.f: ratfor
  	./ratfor -o testw.f testw.r
 -	f77 -o testw testw.f
-+	%%F77%% -o testw testw.f
  
  tests: test testw
  	./test
