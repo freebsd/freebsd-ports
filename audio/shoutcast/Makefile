@@ -14,7 +14,7 @@ COMMENT=	SHOUTcast Distributed Network Audio Server
 RESTRICTED=	redistribution of software is not permitted
 IA32_BINARY_PORT=	yes
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 NO_STAGE=	yes
 DOS2UNIX_REGEX=	.*\.(conf|css|html|js|txt|xml)
 
@@ -24,7 +24,7 @@ CONFLICTS=	linux-shoutcast-[0-9]*
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-OPTIONS_DEFINE=	CONFIG_BUILDER DOCS EXAMPLE
+OPTIONS_DEFINE=	CONFIG_BUILDER DOCS EXAMPLES
 CONFIG_BUILDER_DESC=	SHOUTcast Configuration Builder
 
 SHOUTCASTUSER=	${PORTNAME}
