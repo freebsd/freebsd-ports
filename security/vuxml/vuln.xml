@@ -51,6 +51,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="28c575fa-784e-11e3-8249-001cc0380077">
+    <topic>libXfont -- Stack buffer overflow in parsing of BDF font files in libXfont</topic>
+    <affects>
+      <package>
+	<name>libXfont</name>
+	<range><lt>1.4.7,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>freedesktop.org reports:</p>
+	<blockquote cite="http://lists.x.org/archives/xorg-announce/2014-January/002389.html">
+	  <p>A BDF font file containing a longer than expected string can cause
+	    a buffer overflow on the stack.  Testing in X servers built with
+	    Stack Protector restulted in an immediate crash when reading a
+	    user-proveded specially crafted font.</p>
+	  <p>As libXfont is used to read user-specified font files in all X
+	    servers distributed by X.Org, including the Xorg server which is
+	    often run with root privileges or as setuid-root in order to access
+	    hardware, this bug may lead to an unprivileged user acquiring root
+	    privileges in some systems.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6462</cvename>
+      <url>http://lists.x.org/archives/xorg-announce/2014-January/002389.html</url>
+    </references>
+    <dates>
+      <discovery>2013-12-24</discovery>
+      <entry>2014-01-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5aaa257e-772d-11e3-a65a-3c970e169bc2">
     <topic>openssl -- multiple vulnerabilities</topic>
     <affects>
