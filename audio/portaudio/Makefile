@@ -13,11 +13,10 @@ COMMENT=	Portable cross-platform Audio API
 
 LICENSE=	MIT
 
-USES=		gmake
+USES=		gmake dos2unix
 USE_ZIP=	yes
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
-USE_DOS2UNIX=	yes
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
