@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	owncloud-csync
-PORTVERSION=	0.90.4
+PORTVERSION=	0.91.4
 CATEGORIES=	net kde
-MASTER_SITES=	http://download.owncloud.com/download/
+MASTER_SITES=	http://download.owncloud.com/desktop/stable/
 DISTNAME=	ocsync-${PORTVERSION}
 
 MAINTAINER=	6yearold@gmail.com
@@ -38,5 +38,10 @@ BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc
 post-patch:
 	@${REINPLACE_CMD} -e 's/^add_subdirectory(doc)//' ${WRKSRC}/CMakeLists.txt
 .endif
+
+post-install:
+.for i in ocsync.conf ocsync_exclude.conf
+	@${MV} ${STAGEDIR}${ETCDIR}/$i ${STAGEDIR}${ETCDIR}/$i.sample
+.endfor
 
 .include <bsd.port.mk>
