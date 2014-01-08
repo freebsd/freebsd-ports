@@ -53,35 +53,47 @@ ask() {
 
 [ $# -ne 2 ] && err "Takes 2 arguments: <branch> <revnumber>"
 branch=$1
-rev=$2
-case $rev in
+rev=${2##r} # remove a leading "r"
+case ${rev} in
 ''|*[!0-9]*) err "revision should be a number" ;;
 esac
 
+svnserver="svn.FreeBSD.org"
+
+if [ -n "$(type svn 2>/dev/null)" ]; then
+	svn=svn
+elif [ -n "$(type svnlite 2>/dev/null)" ]; then
+	svn=svnlite
+else
+	err "svn(1) and svnlite(1) not found. please install devel/subversion"
+fi
+
+
 dir=$(mktemp -d /tmp/merge.XXX)
-cd $dir
-svn co --depth=empty svn+ssh://svn.FreeBSD.org/ports/branches/${branch}
+cd ${dir}
+${svn} co --depth=empty svn+ssh://${svnserver}/ports/branches/${branch}
 filelist=""
-for f in $(svn diff --summarize -c $rev svn://svn.FreeBSD.org/ports/head); do
+# svn:// is faster than svn+ssh://. Use it wherever it's possible.
+for f in $(${svn} diff --summarize -c ${rev} svn://${svnserver}/ports/head); do
 	case ${f} in
 	*/*) ;;
 	*)continue;;
 	esac
 	f=${f#*/ports/head/}
 	f=${f%/*}
-	filelist="$filelist\n$f"
+	filelist="${filelist}\n${f}"
 done
-filelist=$(echo -e $filelist | sort -u)
-echo "MFH: r$rev" > commit.txt
-svn log -r$rev svn://svn.freebsd.org/ports/head | sed '1,2d;$d;/^MFH:/d' >> commit.txt
+filelist=$(echo -e ${filelist} | sort -u)
+echo "MFH: r${rev}" > commit.txt
+${svn} log -r${rev} svn://${svnserver}/ports/head | sed '1,2d;$d;/^MFH:/d' >> commit.txt
 for f in ${filelist}; do
-	svn up --parents ${branch}/${f}
+	${svn} up --parents ${branch}/${f}
 done
-svn up --quiet ${branch}
-svn merge -c r${rev} ^/head/ ${branch}
-svn up --quiet ${branch}
-svn diff ${branch}
+${svn} up --quiet ${branch}
+${svn} merge -c r${rev} ^/head/ ${branch}
+${svn} up --quiet ${branch}
+${svn} diff ${branch}
 ask "Do you want to commit?" || clean
 ${EDITOR:-vi} commit.txt
-svn ci -F commit.txt ${branch}
-rm -rf $dir
+${svn} ci -F commit.txt ${branch}
+rm -rf ${dir}
