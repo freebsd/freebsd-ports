@@ -12,7 +12,7 @@ COMMENT=	Lightweight desktop-independent task manager
 
 LICENSE=	GPLv2
 
-USES=		iconv gmake pkgconfig
+USES=		gmake iconv pkgconfig
 USE_GNOME=	gtk20 intlhack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -24,7 +24,6 @@ OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -39,13 +38,7 @@ post-patch:
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
