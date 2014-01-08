@@ -16,5 +16,5 @@ libdata/pkgconfig/chewing.pc
 %%DATADIR%%/swkb.dat
 %%DATADIR%%/symbols.dat
 %%DATADIR%%/us_freq.dat
-@dirrm include/chewing
 @dirrm %%DATADIR%%
+@dirrm include/chewing

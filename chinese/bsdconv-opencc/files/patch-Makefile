@@ -1,0 +1,17 @@
+--- Makefile.orig	2013-09-20 02:35:00.000000000 +0800
++++ Makefile	2014-01-07 14:26:54.000000000 +0800
+@@ -35,9 +35,10 @@ clean:
+ 	rm -rf OPENCC OPENCC.so OPENCC-*
+ 
+ install:
++	mkdir -p $(DESTDIR)${PREFIX}/share/bsdconv/inter
+ 	for item in ${CONFIGS} ; do \
+-		install -m 444 OPENCC ${PREFIX}/share/bsdconv/inter/OPENCC-$${item} ; \
+-		install -m 444 OPENCC-$${item}.so ${PREFIX}/share/bsdconv/inter/OPENCC-$${item}.so ; \
++		install -m 444 OPENCC $(DESTDIR)${PREFIX}/share/bsdconv/inter/OPENCC-$${item} ; \
++		install -m 444 OPENCC-$${item}.so $(DESTDIR)${PREFIX}/share/bsdconv/inter/OPENCC-$${item}.so ; \
+ 	done
+-	install -m 444 OPENCC ${PREFIX}/share/bsdconv/inter/OPENCC
+-	install -m 444 OPENCC.so ${PREFIX}/share/bsdconv/inter/OPENCC.so
++	install -m 444 OPENCC $(DESTDIR)${PREFIX}/share/bsdconv/inter/OPENCC
++	install -m 444 OPENCC.so $(DESTDIR)${PREFIX}/share/bsdconv/inter/OPENCC.so

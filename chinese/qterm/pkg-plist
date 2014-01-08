@@ -6,38 +6,38 @@ share/icons/hicolor/22x22/apps/qterm.png
 share/icons/hicolor/32x32/apps/qterm.png
 share/icons/hicolor/48x48/apps/qterm.png
 share/icons/hicolor/64x64/apps/qterm.png
-share/qterm/address.xml
-share/qterm/credits
-share/qterm/doc/qterm.qhc
-share/qterm/keyboard_profiles/default.keytab
-share/qterm/keyboard_profiles/linux.keytab
-share/qterm/keyboard_profiles/solaris.keytab
-share/qterm/keyboard_profiles/vt420pc.keytab
-share/qterm/po/qterm_chs.qm
-share/qterm/po/qterm_cht.qm
-share/qterm/qterm.cfg
-share/qterm/scheme/Linux.scheme
-share/qterm/scheme/Softness.scheme
-share/qterm/scheme/VIM.scheme
-share/qterm/scheme/XTerm.scheme
-share/qterm/scheme/default.scheme
-share/qterm/scripts/article.js
-share/qterm/scripts/console.js
-share/qterm/scripts/google.js
-share/qterm/scripts/highlight.js
-share/qterm/scripts/ptt.js
-share/qterm/scripts/senddelay.js
-share/qterm/scripts/smth.js
-share/qterm/scripts/ui/senddelay.ui
-share/qterm/scripts/utils.js
-share/qterm/scripts/websnap.js
-@dirrm share/qterm/scripts/ui
-@dirrm share/qterm/scripts
-@dirrm share/qterm/scheme
-@dirrm share/qterm/po
-@dirrm share/qterm/keyboard_profiles
-@dirrm share/qterm/doc
-@dirrm share/qterm
+%%DATADIR%%/address.xml
+%%DATADIR%%/credits
+%%DATADIR%%/doc/qterm.qhc
+%%DATADIR%%/keyboard_profiles/default.keytab
+%%DATADIR%%/keyboard_profiles/linux.keytab
+%%DATADIR%%/keyboard_profiles/solaris.keytab
+%%DATADIR%%/keyboard_profiles/vt420pc.keytab
+%%DATADIR%%/po/qterm_chs.qm
+%%DATADIR%%/po/qterm_cht.qm
+%%DATADIR%%/qterm.cfg
+%%DATADIR%%/scheme/Linux.scheme
+%%DATADIR%%/scheme/Softness.scheme
+%%DATADIR%%/scheme/VIM.scheme
+%%DATADIR%%/scheme/XTerm.scheme
+%%DATADIR%%/scheme/default.scheme
+%%DATADIR%%/scripts/article.js
+%%DATADIR%%/scripts/console.js
+%%DATADIR%%/scripts/google.js
+%%DATADIR%%/scripts/highlight.js
+%%DATADIR%%/scripts/ptt.js
+%%DATADIR%%/scripts/senddelay.js
+%%DATADIR%%/scripts/smth.js
+%%DATADIR%%/scripts/ui/senddelay.ui
+%%DATADIR%%/scripts/utils.js
+%%DATADIR%%/scripts/websnap.js
+@dirrm %%DATADIR%%/scripts/ui
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/scheme
+@dirrm %%DATADIR%%/po
+@dirrm %%DATADIR%%/keyboard_profiles
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%
 @dirrmtry share/icons/hicolor/64x64/apps
 @dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor/48x48/apps
