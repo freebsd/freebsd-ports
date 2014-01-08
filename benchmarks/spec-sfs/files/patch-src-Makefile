@@ -1,0 +1,11 @@
+--- spec-sfs2008/src/Makefile.orig	2013-09-12 16:56:55.851060286 -0700
++++ spec-sfs2008/src/Makefile	2013-09-12 16:57:25.012057145 -0700
+@@ -216,7 +216,7 @@
+ 
+ ${RPCLIB}: FRC
+ 	@cd rpc; ${MAKE} MACHID="${MACHID}" \
+-		CC="${CC}" CFLAGS="${CFLAGS}" \
++		CC="${CC}" CFLAGS="${CFLAGS}" DEBUG="${DEBUG}" \
+ 		LDFLAGS="${LDFLAGS}" EXTRA_CFLAGS="${EXTRA_CFLAGS}" \
+ 		EXTRA_LDFLAGS="${EXTRA_LDFLAGS}" EXTRA_LIBS="${EXTRA_LIBS}" \
+ 		LIBS="${LIBS}" OSTYPE="${OSTYPE}" OPT="${OPT}" \
