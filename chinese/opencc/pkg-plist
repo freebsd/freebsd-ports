@@ -8,6 +8,8 @@ lib/libopencc.so
 lib/libopencc.so.1
 lib/libopencc.so.1.0.0
 libdata/pkgconfig/opencc.pc
+man/man1/opencc.1.gz
+man/man1/opencc_dict.1.gz
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/opencc.mo
 %%NLS%%share/locale/zh_HK/LC_MESSAGES/opencc.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/opencc.mo
@@ -34,11 +36,7 @@ libdata/pkgconfig/opencc.pc
 %%DATADIR%%/zhtw2zhcn_t.ini
 %%DATADIR%%/zhtw2zhs.ini
 %%DATADIR%%/zhtw2zht.ini
-%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_TW
+@dirrm %%DATADIR%%
 %%NLS%%@dirrmtry share/locale/zh_HK/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/zh_HK
-%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/zh_CN
-@dirrm %%DATADIR%%
 @dirrm include/opencc

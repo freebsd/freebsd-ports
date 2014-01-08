@@ -1,5 +1,4 @@
 share/bsdconv/inter/OPENCC
-share/bsdconv/inter/OPENCC.so
 share/bsdconv/inter/OPENCC-MIX2ZHS
 share/bsdconv/inter/OPENCC-MIX2ZHS.so
 share/bsdconv/inter/OPENCC-MIX2ZHT
@@ -9,17 +8,17 @@ share/bsdconv/inter/OPENCC-ZHS2ZHT.so
 share/bsdconv/inter/OPENCC-ZHS2ZHTW_P
 share/bsdconv/inter/OPENCC-ZHS2ZHTW_P.so
 share/bsdconv/inter/OPENCC-ZHS2ZHTW_V
+share/bsdconv/inter/OPENCC-ZHS2ZHTW_V.so
 share/bsdconv/inter/OPENCC-ZHS2ZHTW_VP
 share/bsdconv/inter/OPENCC-ZHS2ZHTW_VP.so
-share/bsdconv/inter/OPENCC-ZHS2ZHTW_V.so
 share/bsdconv/inter/OPENCC-ZHT2ZHS
 share/bsdconv/inter/OPENCC-ZHT2ZHS.so
 share/bsdconv/inter/OPENCC-ZHT2ZHTW_P
 share/bsdconv/inter/OPENCC-ZHT2ZHTW_P.so
 share/bsdconv/inter/OPENCC-ZHT2ZHTW_V
+share/bsdconv/inter/OPENCC-ZHT2ZHTW_V.so
 share/bsdconv/inter/OPENCC-ZHT2ZHTW_VP
 share/bsdconv/inter/OPENCC-ZHT2ZHTW_VP.so
-share/bsdconv/inter/OPENCC-ZHT2ZHTW_V.so
 share/bsdconv/inter/OPENCC-ZHTW2ZHCN_S
 share/bsdconv/inter/OPENCC-ZHTW2ZHCN_S.so
 share/bsdconv/inter/OPENCC-ZHTW2ZHCN_T
@@ -28,5 +27,6 @@ share/bsdconv/inter/OPENCC-ZHTW2ZHS
 share/bsdconv/inter/OPENCC-ZHTW2ZHS.so
 share/bsdconv/inter/OPENCC-ZHTW2ZHT
 share/bsdconv/inter/OPENCC-ZHTW2ZHT.so
+share/bsdconv/inter/OPENCC.so
 @dirrmtry share/bsdconv/inter
 @dirrmtry share/bsdconv

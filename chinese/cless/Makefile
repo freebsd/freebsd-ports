@@ -12,16 +12,13 @@ COMMENT=	A better pager utility (and it speaks Chinese)
 GNU_CONFIGURE=	yes
 CFLAGS+=	-DHANZI # LDFLAGS=-s datadir=/usr/local/lib/less
 CPP=		#
-MAN1=		cless.1 clesskey.1
-
-NO_STAGE=	yes
 
 .include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${PREFIX}/share/doc/cless
-	${INSTALL_DATA} ${WRKSRC}/README.CLESS ${PREFIX}/share/doc/cless
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/cless
+	${INSTALL_DATA} ${WRKSRC}/README.CLESS ${STAGEDIR}${PREFIX}/share/doc/cless
 .endif
 
 .include <bsd.port.mk>

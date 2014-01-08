@@ -11,6 +11,10 @@ lib/libpinyin.la
 lib/libpinyin.so
 lib/libpinyin.so.2
 libdata/pkgconfig/libpinyin.pc
+man/man1/gen_binary_files.1.gz
+man/man1/gen_unigram.1.gz
+man/man1/import_interpolation.1.gz
+man/man1/libpinyin.1.gz
 %%DATADIR%%/data/bigram.db
 %%DATADIR%%/data/gb_char.bin
 %%DATADIR%%/data/gbk_char.bin

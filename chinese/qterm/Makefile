@@ -27,7 +27,6 @@ PHONON_DESC=	Multimedia support via Phonon
 QTSCRIPT_DESC=	Scripting support via QtScript Bindings
 KDE_DESC=	Password management via KWallet
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}

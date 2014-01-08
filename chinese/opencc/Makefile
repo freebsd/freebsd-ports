@@ -11,12 +11,9 @@ COMMENT=	Open Chinese Convert library and utilities
 
 LICENSE=	APACHE20
 
-MAN1=	opencc.1 opencc_dict.1
-
 USES=		cmake
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
