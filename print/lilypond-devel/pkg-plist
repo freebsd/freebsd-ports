@@ -32,9 +32,12 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/fonts/otf/emmentaler-23.otf
 %%DATADIR%%/%%PORTVERSION%%/fonts/otf/emmentaler-26.otf
 %%DATADIR%%/%%PORTVERSION%%/fonts/otf/emmentaler-brace.otf
+%%DATADIR%%/%%PORTVERSION%%/fonts/source/common-modules-and-initialization.mf
+%%DATADIR%%/%%PORTVERSION%%/fonts/source/debugging-settings.mf
+%%DATADIR%%/%%PORTVERSION%%/fonts/source/declare-autometric-parameters.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-accidentals.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-accordion.mf
-%%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-alphabet.mf
+%%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-alphabet-generic.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-alphabet11.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-alphabet13.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-alphabet14.mf
@@ -43,6 +46,7 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-alphabet20.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-alphabet23.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-alphabet26.mf
+%%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-arrow.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-arrowheads.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-autometric.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-braces-a.mf
@@ -52,6 +56,7 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-braces-e.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-braces-f.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-braces-g.mf
+%%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-braces-generic.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-braces-h.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-braces-i.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-braces.mf
@@ -69,8 +74,9 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-flags20.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-flags23.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-flags26.mf
-%%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-generic.mf
+%%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-flats.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-macros.mf
+%%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-naturals.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-noteheads-generic.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-noteheads.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-noteheads11.mf
@@ -82,17 +88,13 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-noteheads23.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-noteheads26.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-numbers.mf
+%%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-other-generic.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-params.mf
+%%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-parenthesis.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-pedals.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-rests.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-scripts.mf
-%%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-test-generic.mf
-%%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-test11.mf
-%%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-test13.mf
-%%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-test16.mf
-%%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-test20.mf
-%%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-test23.mf
-%%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-test26.mf
+%%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-sharps.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-ties.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-timesignatures.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/feta-trills.mf
@@ -109,7 +111,6 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/parmesan-custodes.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/parmesan-dots.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/parmesan-flags.mf
-%%DATADIR%%/%%PORTVERSION%%/fonts/source/parmesan-generic.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/parmesan-macros.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/parmesan-noteheads-generic.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/parmesan-noteheads.mf
@@ -121,6 +122,7 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/parmesan-noteheads20.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/parmesan-noteheads23.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/parmesan-noteheads26.mf
+%%DATADIR%%/%%PORTVERSION%%/fonts/source/parmesan-other-generic.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/parmesan-rests.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/parmesan-scripts.mf
 %%DATADIR%%/%%PORTVERSION%%/fonts/source/parmesan-timesignatures.mf
@@ -191,6 +193,7 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/ly/predefined-mandolin-fretboards.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/predefined-ukulele-fretboards.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/property-init.ly
+%%DATADIR%%/%%PORTVERSION%%/ly/satb.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/scale-definitions-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/scheme-sandbox.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/script-init.ly
