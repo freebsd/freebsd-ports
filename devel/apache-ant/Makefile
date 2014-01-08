@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	apache-ant
-PORTVERSION=	1.8.4
+PORTVERSION=	1.9.3
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:bin,} \
 		LOCAL/hq:man
@@ -17,6 +17,8 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	classpath:${PORTSDIR}/java/javavmwrapper
 
+OPTIONS_DEFINE=	DOCS
+
 ANT_DISTFILE=	${PORTNAME}-${PORTVERSION}-bin.tar.bz2
 MANPAGE_DISTFILE=	${PORTNAME}-manpage-${MANPAGE_VERSION}.tgz
 MANPAGE_VERSION=	20030908
@@ -29,7 +31,9 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 READMES=	LICENSE README WHATSNEW
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 DISTFILES+=	${PORTNAME}-${PORTVERSION}-manual.tar.bz2:doc
 MASTER_SITES+=	${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/manual/:doc,}
 PORTDOCS=	*
@@ -40,42 +44,38 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MANPAGE_SUBDIR=	apache-ant-manpage
 MANPAGE_WRKSRC=	${WRKSRC}/${MANPAGE_SUBDIR}
 
-MAN1=		ant.1
-MAN5=		build.xml.5
-
 SUB_FILES=	ant.sh
 
-NO_STAGE=	yes
 post-extract:
 	@${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${MANPAGE_DISTFILE}
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing scripts..."
-	@${MKDIR} ${DATADIR}/bin
-	@${INSTALL_SCRIPT} ${WRKDIR}/ant.sh ${PREFIX}/bin/ant
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/antRun ${DATADIR}/bin/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/bin
+	@${INSTALL_SCRIPT} ${WRKDIR}/ant.sh ${STAGEDIR}${PREFIX}/bin/ant
+	@${INSTALL_SCRIPT} ${WRKSRC}/bin/antRun ${STAGEDIR}${DATADIR}/bin/
 	@${ECHO_MSG} " [ DONE ]"
 
 .for d in etc lib
 	@${ECHO_MSG} -n ">> Installing data directory '${d}'..."
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${DATADIR}/
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR}/
 	@${ECHO_MSG} " [ DONE ]"
 .endfor
 
 	@${ECHO_MSG} -n ">> Installing manpages..."
-	@${INSTALL_MAN} ${MANPAGE_WRKSRC}/ant.1 ${MAN1PREFIX}/man/man1
-	@${INSTALL_MAN} ${MANPAGE_WRKSRC}/build.xml.5 ${MAN5PREFIX}/man/man5
+	@${INSTALL_MAN} ${MANPAGE_WRKSRC}/ant.1 ${STAGEDIR}${PREFIX}/man/man1
+	@${INSTALL_MAN} ${MANPAGE_WRKSRC}/build.xml.5 ${STAGEDIR}${PREFIX}/man/man5
 	@${ECHO_MSG} " [ DONE ]"
 
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 
 	@${ECHO_MSG} -n ">> Installing readme files..."
-	@${INSTALL_DATA} ${READMES:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${INSTALL_DATA} ${READMES:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 	@${ECHO_MSG} " [ DONE ]"
 
 	@${ECHO_MSG} -n ">> Installing documentation files..."
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} manual ${DOCSDIR}/
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} manual ${STAGEDIR}${DOCSDIR}/
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
