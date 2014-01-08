@@ -5366,3 +5366,4 @@ textproc/qt4-clucene|textproc/clucene-qt4|2014-01-06|Renamed to unify with Qt 5
 www/qt4-webkit|www/webkit-qt4|2014-01-06|Renamed to unify with Qt 5
 x11/qt4-opengl|graphics/qt4-opengl|2014-01-06|Moved to unify with Qt 5
 graphics/wings-devel|graphics/wings|2014-01-07|Obsoleted by the main port
+devel/llvm|devel/llvm32|2014-01-08|Has expired: Migrate to devel/llvm32 or newer
