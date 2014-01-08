@@ -9,6 +9,7 @@ lib/seed7/lib/arc4.s7i
 lib/seed7/lib/asn1.s7i
 lib/seed7/lib/cc_conf.s7i
 lib/seed7/lib/cipher.s7i
+lib/seed7/lib/des.s7i
 lib/seed7/lib/gethttps.s7i
 lib/seed7/lib/hmac.s7i
 lib/seed7/lib/pkcs1.s7i
@@ -92,6 +93,7 @@ lib/seed7/lib/pic32.s7i
 lib/seed7/lib/pixmap_file.s7i
 lib/seed7/lib/pixmapfont.s7i
 lib/seed7/lib/poll.s7i
+lib/seed7/lib/process.s7i
 lib/seed7/lib/progs.s7i
 lib/seed7/lib/propertyfile.s7i
 lib/seed7/lib/rational.s7i
@@ -128,6 +130,7 @@ lib/seed7/lib/tar.s7i
 lib/seed7/lib/tee.s7i
 lib/seed7/lib/text.s7i
 lib/seed7/lib/time.s7i
+lib/seed7/lib/unicode.s7i
 lib/seed7/lib/upper.s7i
 lib/seed7/lib/utf16.s7i
 lib/seed7/lib/utf8.s7i
