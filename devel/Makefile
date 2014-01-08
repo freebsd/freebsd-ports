@@ -4001,7 +4001,6 @@
     SUBDIR += re2c
     SUBDIR += readline
     SUBDIR += rebar
-    SUBDIR += reflex
     SUBDIR += regexx
     SUBDIR += regexxer
     SUBDIR += remake

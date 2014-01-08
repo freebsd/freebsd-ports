@@ -1,5 +1,0 @@
-bin/reflex
-bin/reflex++
-include/reFlexLexer.h
-lib/librefl.a
-man/man1/reflex.1.gz
