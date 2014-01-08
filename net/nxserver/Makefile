@@ -18,7 +18,7 @@ DISTFILES=	nx-X11-${PORTVERSION}-3.tar.gz \
 		nxviewer-${PORTVERSION}-12.tar.gz
 DIST_SUBDIR=	NX
 
-MAINTAINER=	freenx@deweyonline.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Low-bandwidth X network server
 
 LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile \
@@ -75,12 +75,17 @@ do-configure:
 do-build:
 	cd ${WRKSRC}/nx-X11 && ${SETENV} ${MAKE_ENV} \
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
-.for i in nxproxy nxkill nxesd
+.for i in nxproxy nxkill
 	cd ${WRKSRC}/${i} && \
 		${CONFIGURE_ENV} ./configure --prefix=${NXPREFIX} && \
 		${SETENV} ${MAKE_ENV} \
 		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
 .endfor
+	cd ${WRKSRC}/nxesd && \
+		${CONFIGURE_ENV} AUDIOFILE_CONFIG="/usr/local/bin/pkgconf audiofile" \
+		./configure --disable-audiofiletest --prefix=${NXPREFIX} && \
+		${SETENV} ${MAKE_ENV} \
+		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
 	cd ${WRKSRC}/nxdesktop && ${CONFIGURE_ENV} ./configure \
 		--with-sound --prefix=${NXPREFIX} && \
 		${SETENV} ${MAKE_ENV} \
