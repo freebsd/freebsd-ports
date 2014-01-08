@@ -13,7 +13,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${PYTHON_SITELIBDIR}/PyQt4/QtHelp.so:${PORTSDIR}/devel/py-qt4-help \
 		${PYTHON_LIBDIR}/lib-dynload/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 
-USES=		desktop-file-utils shared-mime-info
+USES=		desktop-file-utils
 INSTALL_CMD=	install.py -c -f eric4config.freebsd -i ${STAGEDIR}
 PLIST_FILES=
 SUB_FILES=	eric4.desktop
