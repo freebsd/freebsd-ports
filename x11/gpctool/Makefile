@@ -3,7 +3,7 @@
 
 PORTNAME=	gpctool
 PORTVERSION=	1.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 math graphics
 MASTER_SITES=	ftp://ftp.cs.man.ac.uk/pub/toby/gpc/
 DISTNAME=	gpct${PORTVERSION:S/.//g}
@@ -11,8 +11,8 @@ DISTNAME=	gpct${PORTVERSION:S/.//g}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Evaluation tool for the Generic Polygon Clipper library
 
-LIB_DEPENDS=	gpc:${PORTSDIR}/devel/libgpc	\
-		formsGL.2:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	libgpc.so:${PORTSDIR}/devel/libgpc	\
+		libformsGL.so:${PORTSDIR}/x11-toolkits/xforms
 
 USE_ZIP=	yes
 USE_GL=		yes
