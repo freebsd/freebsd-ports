@@ -180,6 +180,7 @@ include/fox-%%MAJORVER%%/FXJP2Image.h
 include/fox-%%MAJORVER%%/FXJPGIcon.h
 include/fox-%%MAJORVER%%/FXJPGImage.h
 include/fox-%%MAJORVER%%/FXJSON.h
+include/fox-%%MAJORVER%%/FXJSONFile.h
 include/fox-%%MAJORVER%%/FXKOI8RCodec.h
 include/fox-%%MAJORVER%%/FXKnob.h
 include/fox-%%MAJORVER%%/FXLFQueue.h
@@ -289,7 +290,7 @@ include/fox-%%MAJORVER%%/FXStatusLine.h
 include/fox-%%MAJORVER%%/FXStream.h
 include/fox-%%MAJORVER%%/FXString.h
 include/fox-%%MAJORVER%%/FXStringDict.h
-include/fox-%%MAJORVER%%/FXStringMap.h
+include/fox-%%MAJORVER%%/FXStringDictionary.h
 include/fox-%%MAJORVER%%/FXSwitcher.h
 include/fox-%%MAJORVER%%/FXSystem.h
 include/fox-%%MAJORVER%%/FXTGAIcon.h
