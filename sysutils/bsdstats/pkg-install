@@ -1,86 +1,84 @@
 #!/bin/sh
-#
 # pkg-install : based off ${PORTSDIR}/mail/courier/files/pkg-install.in
-#
 
-# The default answer to "Would you like to enable monthly reporting in
-# /etc/periodic.conf?" is "yes", which you can override by setting the
-# BSDSTATS_MONTHLY_ENABLE environment variable to "no".
-#
-# The default answer to "Would you like to send a list of installed hardware
-# as well?" is "yes", which you can override by setting the
-# BSDSTATS_MONTHLY_DEVICES environment variable to "no".
-#
-# The default answer to "Would you like to send a list of installed ports as
-# well?" is "yes", which you can override by setting the BSDSTATS_MONTHLY_PORTS
-# environment variable to "no".
-#
-# The default answer to "Would you like to run it now?" is "yes", which you can
-# override by setting the BSDSTATS_MONTHLY_NOW environment variable to "no".
-#
-# The default answer to "Would you like to enable reporting on bootup in
-# /etc/rc.conf?" is "yes", which you can override by setting the
-# BSDSTATS_REBOOT_REPORTING environment variable to "no".
+# The default answer to each of the installation questions is "yes".  You can
+# override a questions's default by setting its environment variable to "no".
+# 
+# Environment Variable      | Question
+# --------------------------+------------------------------------------------------------------
+# BSDSTATS_MONTHLY_ENABLE   | Would you like to enable monthly reporting in /etc/periodic.conf?
+# BSDSTATS_MONTHLY_DEVICES  | Would you like to send a list of installed hardware as well?
+# BSDSTATS_MONTHLY_PORTS    | Would you like to send a list of installed ports as well?
+# BSDSTATS_MONTHLY_NOW      | Would you like to run it now?
+# BSDSTATS_REBOOT_REPORTING | Would you like to enable reporting on bootup in /etc/rc.conf?
 
-BSDSTATS_MONTHLY_ENABLE=${BSDSTATS_MONTHLY_ENABLE:=yes}
-BSDSTATS_MONTHLY_DEVICES=${BSDSTATS_MONTHLY_DEVICES:=yes}
-BSDSTATS_MONTHLY_PORTS=${BSDSTATS_MONTHLY_PORTS:=yes}
-BSDSTATS_MONTHLY_NOW=${BSDSTATS_MONTHLY_NOW:=yes}
-BSDSTATS_REBOOT_REPORTING=${BSDSTATS_REBOOT_REPORTING:=yes}
+if [ -n "$PACKAGE_BUILDING" ]; then
+	BSDSTATS_MONTHLY_ENABLE=${BSDSTATS_MONTHLY_ENABLE:=no}
+	BSDSTATS_MONTHLY_DEVICES=${BSDSTATS_MONTHLY_DEVICES:=no}
+	BSDSTATS_MONTHLY_PORTS=${BSDSTATS_MONTHLY_PORTS:=no}
+	BSDSTATS_MONTHLY_NOW=${BSDSTATS_MONTHLY_NOW:=no}
+	BSDSTATS_REBOOT_REPORTING=${BSDSTATS_REBOOT_REPORTING:=no}
+else
+	BSDSTATS_MONTHLY_ENABLE=${BSDSTATS_MONTHLY_ENABLE:=yes}
+	BSDSTATS_MONTHLY_DEVICES=${BSDSTATS_MONTHLY_DEVICES:=yes}
+	BSDSTATS_MONTHLY_PORTS=${BSDSTATS_MONTHLY_PORTS:=yes}
+	BSDSTATS_MONTHLY_NOW=${BSDSTATS_MONTHLY_NOW:=yes}
+	BSDSTATS_REBOOT_REPORTING=${BSDSTATS_REBOOT_REPORTING:=yes}
+fi
 
 ask() {
-    local question default answer
+	local question default answer
 
-    question=$1
-    default=$2
-    if [ -z "${PACKAGE_BUILDING}" ]; then
-        read -p "${question} [${default}]? " answer
-    fi
-    if [ -z "${answer}" ]; then
-        answer=${default}
-    fi
-    echo ${answer}
+	question=$1
+	default=$2
+	if [ -z "$BATCH" -a -z "$PACKAGE_BUILDING" ]; then
+		read -p "$question [$default]? " answer
+	fi
+	if [ -z "$answer" ]; then
+		answer=$default
+	fi
+	echo $answer
 }
 
 yesno() {
-    local question default answer
+	local question default answer
 
-    question=$1
-    default=$2
-    while :; do
-        answer=$(ask "${question}" "${default}")
-        case "${answer}" in
-        [Yy]*)	return 0;;
-        [Nn]*)	return 1;;
-        esac
-        echo "Please answer yes or no."
-    done
+	question=$1
+	default=$2
+	while :; do
+		answer=$(ask "$question" "$default")
+		case "$answer" in
+			[Yy]*) return 0;;
+			[Nn]*) return 1;;
+		esac
+		echo "Please answer yes or no."
+	done
 }
 
 if [ "$2" = "POST-INSTALL" ]; then
-    if [ ! -f "/etc/periodic.conf" ] || [ -z "`grep monthly_statistics /etc/periodic.conf`" ]; then
-        if yesno "Would you like to enable monthly reporting in /etc/periodic.conf" ${BSDSTATS_MONTHLY_ENABLE}; then
-            echo "monthly_statistics_enable=\"YES\"" >> /etc/periodic.conf
-            if yesno "Would you like to send a list of installed hardware as well" ${BSDSTATS_MONTHLY_DEVICES}; then
-                echo "monthly_statistics_report_devices=\"YES\"" >> /etc/periodic.conf
-            fi
-            if yesno "Would you like to send a list of installed ports as well" ${BSDSTATS_MONTHLY_PORTS}; then
-                echo "monthly_statistics_report_ports=\"YES\"" >> /etc/periodic.conf
-            fi
-            if yesno "Would you like to run it now" ${BSDSTATS_MONTHLY_NOW}; then
-               ${PKG_PREFIX}/etc/periodic/monthly/300.statistics -nodelay
-            fi
-        fi
-    fi
-    if [ ! -f "/etc/rc.conf" ] || [ -z "`grep bsdstats_enable /etc/rc.conf`" ]; then
-        echo ""
-        echo "If you're installing BSDstats on a system that won't always be on, such as a"
-        echo "desktop or a laptop, it is recommended that you enable it in /etc/rc.conf so"
-        echo "that it will run on bootup.  This will ensure that, even if your computer is"
-        echo "off when \"monthly\" runs, your computer will be counted properly."
-        echo ""
-        if yesno "Would you like to enable reporting on bootup in /etc/rc.conf" ${BSDSTATS_REBOOT_REPORTING}; then
-            echo "bsdstats_enable=\"YES\"" >> /etc/rc.conf
-        fi
-    fi
+	if [ ! -f "/etc/periodic.conf" ] || [ -z "`grep monthly_statistics /etc/periodic.conf`" ]; then
+		if yesno "Would you like to enable monthly reporting in /etc/periodic.conf" $BSDSTATS_MONTHLY_ENABLE; then
+			echo "monthly_statistics_enable=\"YES\"" >> /etc/periodic.conf
+			if yesno "Would you like to send a list of installed hardware as well" $BSDSTATS_MONTHLY_DEVICES; then
+				echo "monthly_statistics_report_devices=\"YES\"" >> /etc/periodic.conf
+			fi
+			if yesno "Would you like to send a list of installed ports as well" $BSDSTATS_MONTHLY_PORTS; then
+				echo "monthly_statistics_report_ports=\"YES\"" >> /etc/periodic.conf
+			fi
+			if yesno "Would you like to run it now" $BSDSTATS_MONTHLY_NOW; then
+				${PKG_PREFIX}/etc/periodic/monthly/300.statistics -nodelay
+			fi
+		fi
+	fi
+	if [ ! -f "/etc/rc.conf" ] || [ -z "`grep bsdstats_enable /etc/rc.conf`" ]; then
+		echo
+		echo "If you're installing BSDstats on a system that won't always be on, such as a"
+		echo "desktop or a laptop, it is recommended that you enable it in /etc/rc.conf so"
+		echo "that it will run on bootup.  This will ensure that, even if your computer is"
+		echo "off when \"monthly\" runs, your computer will be counted properly."
+		echo
+		if yesno "Would you like to enable reporting on bootup in /etc/rc.conf" $BSDSTATS_REBOOT_REPORTING; then
+			echo "bsdstats_enable=\"YES\"" >> /etc/rc.conf
+		fi
+	fi
 fi
