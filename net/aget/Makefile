@@ -7,15 +7,18 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.enderunix.org/aget/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A multithreaded HTTP download accelerator
+COMMENT=	Multithreaded HTTP download accelerator
 
-PLIST_FILES=	bin/aget
-MAN1=	aget.1
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-NO_STAGE=	yes
-post-patch:
-# fix man prefix and make portlint happy :)
-	@${REINPLACE_CMD} -e 's|/usr/share/man/man1/|${MANPREFIX}/man/man1/|g' -e \
-		's|/usr/local/bin/|${PREFIX}/bin/|g' ${WRKSRC}/Makefile
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+LDFLAGS+=	-pthread
+
+PLIST_FILES=	bin/aget man/man1/aget.1.gz
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/aget ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/aget.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
