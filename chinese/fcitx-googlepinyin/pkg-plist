@@ -1,9 +1,9 @@
 lib/fcitx/fcitx-googlepinyin.so
 share/fcitx/addon/fcitx-googlepinyin.conf
-share/fcitx/inputmethod/googlepinyin.conf
 share/fcitx/imicon/googlepinyin.png
-share/fcitx/skin/default/googlepinyin.png
+share/fcitx/inputmethod/googlepinyin.conf
 share/fcitx/skin/classic/googlepinyin.png
+share/fcitx/skin/default/googlepinyin.png
 share/icons/hicolor/16x16/apps/fcitx-googlepinyin.png
 share/icons/hicolor/48x48/apps/fcitx-googlepinyin.png
 share/locale/zh_CN/LC_MESSAGES/fcitx-googlepinyin.mo

@@ -20,5 +20,4 @@ STRIP=
 
 PROJECTHOST=	fcitx
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

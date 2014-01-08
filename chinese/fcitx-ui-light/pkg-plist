@@ -1,6 +1,6 @@
 lib/fcitx/fcitx-light-ui.so
+share/applications/fcitx-light.desktop
 share/fcitx/addon/fcitx-light-ui.conf
 share/fcitx/configdesc/fcitx-light-ui.desc
-share/applications/fcitx-light.desktop
 share/locale/zh_CN/LC_MESSAGES/fcitx-light-ui.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx-light-ui.mo
