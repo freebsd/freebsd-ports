@@ -20,9 +20,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-2.9.0
 USE_GNOME=	glib20
 
 NO_STAGE=	yes
+
 do-build:
 	cd ${WRKSRC} && ${CC} -c vortex.c -I${LOCALBASE}/include
-	cd ${WRKSRC} && ${CC} -o vortex vortex.o -L${LOCALBASE}/lib ${LOCALBASE}/lib/libnids.a `${LIBNET_CONFIG} --libs` -lgthread-2.0 -lpcap
+	cd ${WRKSRC} && ${CC} -v -o vortex vortex.o -L${LOCALBASE}/lib ${LOCALBASE}/lib/libnids.a `${LIBNET_CONFIG} --libs` -lglib-2.0 -lgthread-2.0 -lpcap
 	cd ${WRKSRC} && ${CC} -o xpipes xpipes.c ${PTHREAD_LIBS}
 
 do-install:
