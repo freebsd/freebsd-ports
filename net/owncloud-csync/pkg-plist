@@ -1,6 +1,10 @@
-bin/ocsync
-%%ETCDIR%%/ocsync.conf
-%%ETCDIR%%/ocsync_exclude.conf
+@unexec if cmp -s %D/%%ETCDIR%%/ocsync.conf.sample %D/%%ETCDIR%%/ocsync.conf; then rm -f %D/%%ETCDIR%%/ocsync.conf; fi
+%%ETCDIR%%/ocsync.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/ocsync.conf ] ; then cp -p %D/%F %B/ocsync.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/ocsync_exclude.conf.sample %D/%%ETCDIR%%/ocsync_exclude.conf; then rm -f %D/%%ETCDIR%%/ocsync_exclude.conf; fi
+%%ETCDIR%%/ocsync_exclude.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/ocsync_exclude.conf ] ; then cp -p %D/%F %B/ocsync_exclude.conf; fi
+include/httpbf.h
 include/ocsync/csync.h
 include/ocsync/csync_version.h
 include/ocsync/csync_vio.h
@@ -8,13 +12,10 @@ include/ocsync/csync_vio_file_stat.h
 include/ocsync/csync_vio_handle.h
 include/ocsync/csync_vio_method.h
 include/ocsync/csync_vio_module.h
-lib/libhttpbflib.a
+lib/libhttpbf.a
 lib/libocsync.so
 lib/libocsync.so.0
 lib/libocsync.so.0.2.1
-lib/ocsync-0/ocsync_owncloud.so
-lib/ocsync-0/ocsync_sftp.so
-lib/ocsync-0/ocsync_smb.so
 %%PORTDOCS%%man/man1/ocsync.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/userguide/csync.html
 %%PORTDOCS%%%%DOCSDIR%%/userguide/images/icons/README
@@ -48,6 +49,5 @@ lib/ocsync-0/ocsync_smb.so
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/userguide/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/userguide
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry lib/ocsync-0
 @dirrmtry include/ocsync
 @dirrmtry %%ETCDIR%%
