@@ -3,6 +3,7 @@
 
 PORTNAME=	libosmesa
 PORTVERSION=	10.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${PORTVERSION}/
 DISTNAME=	MesaLib-${PORTVERSION}
@@ -13,7 +14,7 @@ COMMENT=	Off-Screen Mesa implementation of the OpenGL API
 LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 
-USES+=		gmake pkgconfig
+USES+=		gmake pkgconfig compiler:c11
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	2
