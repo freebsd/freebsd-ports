@@ -19,21 +19,21 @@ BUILD_DEPENDS=	v4l_compat>=0:${PORTSDIR}/multimedia/v4l_compat
 
 USES=		qmake
 USE_QT4=	gui network moc_build rcc_build uic_build
+QMAKE_SOURCE_PATH=	${WRKSRC}/src
 
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
+.if defined(WITH_DEBUG)
+IGNORE=		sources need more patching for debug build
+.endif
+
 .if ! ${PORT_OPTIONS:MDOCS}
-INSTALL_WRKSRC=	${WRKSRC}/src
 INSTALL_TARGET=	install_target
 .endif
 
 post-patch:
 	@${RM} -f ${WRKSRC}/src/documentation/html/gettingstarted.html.orig
-	@${REINPLACE_CMD} -e 's|%%DOCSDIR%%|${DOCSDIR}|g' \
-	    ${WRKSRC}/src/configdialog.cpp ${WRKSRC}/src/src.pro
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-	    ${WRKSRC}/src/src.pro
 
 .include <bsd.port.mk>
