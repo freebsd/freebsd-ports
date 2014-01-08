@@ -1,4 +1,2 @@
-SHA256 (xforms-1.0.93sp1.tar.gz) = 0cbef8c16c478b7fc87cf24be618114f9b7d14dc0a06b61a352bb027dd3b2ca4
-SIZE (xforms-1.0.93sp1.tar.gz) = 2204088
-SHA256 (xforms-1.0-i18n_7.patch) = 337b32d46766184f24b409976ece77074db6f37612890c83ba8d352d5ee8ac2e
-SIZE (xforms-1.0-i18n_7.patch) = 48814
+SHA256 (xforms-1.2.1.tar.gz) = 59d7502493a8a6f071b6f9f1029956d3335b0ab91d39fb24b476ca790fd99e8d
+SIZE (xforms-1.2.1.tar.gz) = 2108744

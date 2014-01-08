@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xforms
-DISTVERSION=	1.0.93sp1
+DISTVERSION=	1.2.1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
@@ -13,8 +13,8 @@ COMMENT=	A graphical user interface toolkit for X Window System
 
 LICENSE=	LGPL21
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
 USE_XORG=	xpm
 USE_GL=		gl
@@ -23,22 +23,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
-MAN1=		fdesign.1 fd2ps.1
-MAN5=		xforms.5
-
-#
-# This patchset does not apply to this version
-#
-.if defined(WITH_I18N)
-PKGNAMESUFFIX=	-i18n
-BROKEN=		Does not work with latest xforms version
-#PATCH_SITES=	ftp://cellular.phys.pusan.ac.kr/CJK-LyX/xforms/ \
-#		http://www.otaru-uc.ac.jp/~yokota/comp/
-#PATCHFILES=	xforms-1.0-i18n_7.patch
-#PATCH_DIST_STRIP=	-p1
-.endif
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
