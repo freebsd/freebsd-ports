@@ -2,3 +2,5 @@ sbin/igmpproxy
 @unexec if cmp -s %D/etc/igmpproxy.conf.sample %D/etc/igmpproxy.conf; then rm -f %D/etc/igmpproxy.conf; fi
 etc/igmpproxy.conf.sample
 @exec if [ ! -f %D/etc/igmpproxy.conf ]; then cp -p %D/%F %B/igmpproxy.conf; fi
+man/man5/igmpproxy.conf.5.gz
+man/man8/igmpproxy.8.gz

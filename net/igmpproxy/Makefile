@@ -18,8 +18,4 @@ USE_RC_SUBR=	igmpproxy
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-MAN5=		igmpproxy.conf.5
-MAN8=		igmpproxy.8
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
