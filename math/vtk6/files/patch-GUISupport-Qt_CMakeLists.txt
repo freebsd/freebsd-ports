@@ -1,0 +1,31 @@
+--- GUISupport/Qt/CMakeLists.txt.orig	2013-06-12 21:47:10.000000000 +0200
++++ GUISupport/Qt/CMakeLists.txt	2013-09-13 11:24:33.000000000 +0200
+@@ -89,7 +89,7 @@
+ endif()
+ 
+ # This build plugin logic should just get migrated into a module I think.
+-if(BUILD_SHARED_LIBS)
++if(BUILD_SHARED_LIBS AND QT_DESIGNER_PLUGIN)
+   set(PluginLibSrcs Q4VTKWidgetPlugin.cxx)
+ 
+   set(PluginMocHeaders Q4VTKWidgetPlugin.h)
+@@ -100,16 +100,16 @@
+ 
+   # add QVTK plugin from sources
+   # stand-alone as it doesn't depend on QVTK library
+-  add_library(QVTKWidgetPlugin
++  add_library(QVTKWidgetPlugin-${VTK_MAJOR_VERSION}.${VTK_MINOR_VERSION}
+     SHARED
+     ${PluginLibSrcs}
+     ${PluginMocSrcs}
+     )
+ 
+-  set_target_properties(QVTKWidgetPlugin PROPERTIES COMPILE_DEFINITIONS QT_NO_DEBUG)
++  set_target_properties(QVTKWidgetPlugin-${VTK_MAJOR_VERSION}.${VTK_MINOR_VERSION} PROPERTIES COMPILE_DEFINITIONS QT_NO_DEBUG)
+ 
+   # link with Qt libs
+-  target_link_libraries(QVTKWidgetPlugin
++  target_link_libraries(QVTKWidgetPlugin-${VTK_MAJOR_VERSION}.${VTK_MINOR_VERSION}
+     ${QT_QTGUI_LIBRARY}
+     ${QT_QTCORE_LIBRARY}
+     )

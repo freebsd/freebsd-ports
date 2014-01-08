@@ -1,0 +1,25 @@
+--- ThirdParty/verdict/vtkverdict/CMakeLists.txt.orig	2013-06-26 09:41:53.000000000 +0200
++++ ThirdParty/verdict/vtkverdict/CMakeLists.txt	2013-06-26 09:42:13.000000000 +0200
+@@ -117,14 +117,14 @@
+ # Installation stuff
+ #
+ IF(NOT verdict_INSTALL_NO_DEVELOPMENT)
+-  install(FILES
+-    README
+-    Verdict.htm
+-    Verdict.doc
+-    verdict_test.cpp
+-    DESTINATION ${verdict_INSTALL_DOC_DIR}/verdict/${verdict_VERSION}/
+-    COMPONENT Development
+-  )
++#  install(FILES
++#    README
++#    Verdict.htm
++#    Verdict.doc
++#    verdict_test.cpp
++#    DESTINATION ${verdict_INSTALL_DOC_DIR}/verdict/${verdict_VERSION}/
++#    COMPONENT Development
++#  )
+ 
+   install(
+     FILES ${verdict_BINARY_DIR}/verdict.h
