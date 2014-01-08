@@ -134,6 +134,10 @@ lib/ngspice/digital.cm
 lib/ngspice/analog.cm
 lib/ngspice/xtradev.cm
 lib/ngspice/xtraevt.cm
+man/man1/ngmultidec.1.gz
+man/man1/ngnutmeg.1.gz
+man/man1/ngsconvert.1.gz
+man/man1/ngspice.1.gz
 @dirrm lib/ngspice
 @dirrm share/ngspice/scripts
 @dirrm share/ngspice/helpdir
