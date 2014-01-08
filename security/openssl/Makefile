@@ -58,14 +58,16 @@ MANPREFIX=	${PREFIX}
 
 FIX_POD=apps/cms.pod \
 	apps/smime.pod \
-	ssl/SSL_accept.pod \
-	ssl/SSL_clear.pod \
-	ssl/SSL_COMP_add_compression_method.pod ssl/SSL_connect.pod \
-	ssl/SSL_CTX_add_session.pod ssl/SSL_CTX_load_verify_locations.pod \
+	ssl/SSL_COMP_add_compression_method.pod \
+	ssl/SSL_CTX_add_session.pod \
+	ssl/SSL_CTX_load_verify_locations.pod \
 	ssl/SSL_CTX_set_client_CA_list.pod \
 	ssl/SSL_CTX_set_session_id_context.pod \
 	ssl/SSL_CTX_set_ssl_version.pod \
 	ssl/SSL_CTX_use_psk_identity_hint.pod \
+	ssl/SSL_accept.pod \
+	ssl/SSL_clear.pod \
+	ssl/SSL_connect.pod \
 	ssl/SSL_do_handshake.pod \
 	ssl/SSL_read.pod \
 	ssl/SSL_session_reused.pod \
@@ -1176,18 +1178,16 @@ pre-everything::
 
 .endif
 
-pre-patch:
-	${REINPLACE_CMD} -e 's|^=item \([0-9]\)$$|=item C<\1>|' \
-		${FIX_POD:S,^,${WRKSRC}/doc/,}
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|m4 -B 8192|m4|g' \
+	${REINPLACE_CMD} -E -e 's|^=item ([0-9])[[:blank:]]*$$|=item Z<>\1|' \
+		${FIX_POD:S,^,${WRKSRC}/doc/,}
+	${REINPLACE_CMD} -e 's|m4 -B 8192|m4|g' \
 		${WRKSRC}/crypto/des/Makefile
 	${REINPLACE_CMD} -e 's|SHLIB_VERSION_NUMBER "1.0.0"|SHLIB_VERSION_NUMBER "${OPENSSL_SHLIBVER}"|' \
 		${WRKSRC}/crypto/opensslv.h
 
 do-configure:
-	@${REINPLACE_CMD} -e "s|options 386|options|" \
+	${REINPLACE_CMD} -e "s|options 386|options|" \
 		${WRKSRC}/config
 .if ${PORT_OPTIONS:MTHREADS}
 	cd ${WRKSRC} \
@@ -1201,7 +1201,7 @@ do-configure:
 	./config --prefix=${PREFIX} --openssldir=${OPENSSLDIR} \
 		-L${PREFIX}/lib ${EXTRACONFIGURE}
 .endif
-	@${REINPLACE_CMD} \
+	${REINPLACE_CMD} \
 		-e 's|^MANDIR=.*$$|MANDIR=$$(MANPREFIX)/man|' \
 		-e 's|$$(LIBDIR)/pkgconfig|libdata/pkgconfig|g' \
 		-e 's|LIBVERSION=[^ ]* |LIBVERSION=$(OPENSSL_SHLIBVER) |' \
@@ -1210,15 +1210,15 @@ do-configure:
 post-install:
 .if ${PORT_OPTIONS:MSHARED}
 .for i in libcrypto libssl
-	@${INSTALL_DATA} ${WRKSRC}/$i.so.${OPENSSL_SHLIBVER} ${PREFIX}/lib
-	@${LN} -sf $i.so.${OPENSSL_SHLIBVER} ${PREFIX}/lib/$i.so
+	${INSTALL_DATA} ${WRKSRC}/$i.so.${OPENSSL_SHLIBVER} ${PREFIX}/lib
+	${LN} -sf $i.so.${OPENSSL_SHLIBVER} ${PREFIX}/lib/$i.so
 .endfor
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/openssl.txt ${DOCSDIR}/
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/openssl.txt ${DOCSDIR}/
 .endif
-	@${SED} -e 's#/usr/local#${PREFIX}#g' ${PKGMESSAGE}
+	@${SED} -e 's|/usr/local|${PREFIX}|g' ${PKGMESSAGE}
 
 test: build
 	cd ${WRKSRC} && ${MAKE} test
