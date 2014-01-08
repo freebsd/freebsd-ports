@@ -1,0 +1,40 @@
+--- ./Makefile.am.orig	2003-04-15 06:20:33.000000000 +0200
++++ ./Makefile.am	2014-01-03 02:35:10.000000000 +0100
+@@ -1,36 +1,3 @@
+ include $(top_srcdir)/common.am
+ 
+-SUBDIRS = util include support libfam fam man test build
+-
+-EXTRA_DIST = common.am INSTALL.rpm
+-
+-rpm: dist
+-	@cd build && $(MAKE) $(AM_MAKEFLAGS) rpm
+-
+-#  We proceed even if these commands fail because this might be an install
+-#  into $DESTDIR by a non-root user.
+-install-exec-hook:
+-	-@if test "no$(LDCONFIG)" != "no"; then \
+-##	    echo "Adding $(libdir) to ld.so.conf..."; \
+-	    $(EDITCONF) ld.so.conf add $(DESTDIR)$(libdir) $(DESTDIR)$(libdir); \
+-	    exec $(LDCONFIG); \
+-	fi
+-##	@echo "Adding fam to rpc..."
+-	-@$(EDITCONF) rpc add 391002 "sgi_fam		391002"
+-##	@echo "Adding fam to inetd.conf..."
+-	-@$(EDITCONF) inetd.conf add '\b(fam|FAM)\b' \
+-	    "#  fam, the File Alteration Monitor, http://oss.sgi.com/projects/fam/" \
+-	    "sgi_fam/1-2 stream rpc/tcp wait root $(DESTDIR)$(bindir)/fam fam"
+-	@echo "Restarting inetd..."
+-	-@killall -HUP inetd
+-
+-#  We don't remove $(libdir) from ld.so.conf here because we don't have
+-#  a way to tell whether we're the ones who added it, and other things
+-#  probably use it as well.
+-uninstall-local:
+-##	@echo "Removing fam from rpc..."
+-	-@$(EDITCONF) rpc remove 391002
+-##	@echo "Removing fam from inetd.conf..."
+-	-@$(EDITCONF) inetd.conf remove '\b(fam|FAM)\b'
+-	@echo "Restarting inetd..."
+-	-@killall -HUP inetd
++SUBDIRS =  include support libfam fam man test build

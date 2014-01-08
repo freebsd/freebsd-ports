@@ -1,5 +1,5 @@
---- fam/Directory.c++.orig	Tue Apr 15 10:21:29 2003
-+++ fam/Directory.c++	Sat Aug 12 00:10:16 2006
+--- ./fam/Directory.c++.orig	2003-04-15 06:21:29.000000000 +0200
++++ ./fam/Directory.c++	2014-01-03 02:35:10.000000000 +0100
 @@ -26,7 +26,7 @@
  #include <errno.h>
  #include <string.h>

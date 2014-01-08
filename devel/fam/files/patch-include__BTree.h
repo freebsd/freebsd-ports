@@ -1,5 +1,5 @@
---- include/BTree.h.orig	Tue Jul 16 14:23:25 2002
-+++ include/BTree.h	Sat Jul 31 13:13:24 2004
+--- ./include/BTree.h.orig	2003-04-15 06:21:19.000000000 +0200
++++ ./include/BTree.h	2014-01-03 02:35:37.000000000 +0100
 @@ -236,7 +236,7 @@
  //  to the right and returns them.
  
@@ -9,6 +9,15 @@
  BTree<Key, Value>::Node::remove(unsigned j)
  {
      Key k = key[j];
+@@ -318,7 +318,7 @@
+     assert(root->n);
+ 
+     Node *p, *q;
+-    for (p = root; q = p->link[0]; p = q)
++    for (p = root; (q = p->link[0]); p = q)
+ 	continue;
+     return p->key[0];
+ }
 @@ -348,7 +348,7 @@
  }
  

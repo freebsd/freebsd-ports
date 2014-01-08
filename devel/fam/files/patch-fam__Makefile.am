@@ -1,5 +1,5 @@
---- fam/Makefile.am.orig	Fri Aug 11 22:29:03 2006
-+++ fam/Makefile.am	Fri Aug 11 22:29:18 2006
+--- ./fam/Makefile.am.orig	2003-04-15 06:21:26.000000000 +0200
++++ ./fam/Makefile.am	2014-01-03 02:35:10.000000000 +0100
 @@ -72,6 +72,7 @@
    main.c++ \
    timeval.c++ \
