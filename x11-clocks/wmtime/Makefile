@@ -12,12 +12,13 @@ MASTER_SITES=	http://web.cs.mun.ca/~gstarkes/wmaker/dockapps/files/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Time/Date applet for WindowMaker
 
-PLIST_FILES=	bin/wmtime
 WRKSRC=		${WRKDIR}/wmtime.app/wmtime
 USES=		imake
 USE_XORG=	xpm
+USE_CSTD=	gnu89
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/wmtime
+
 post-extract:
 	${CP} ${WRKSRC}/../Imakefile ${WRKSRC}/Imakefile
 
