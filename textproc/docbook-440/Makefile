@@ -57,7 +57,6 @@ pre-install:
 		done;\
 	${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}" ) >> ${PLIST}
 	${ECHO_CMD} "@dirrm ${DOCSDIR:S!^${PREFIX}/!!:S!${PORTVERSION}!!}" >> ${PLIST}
-	${ECHO_CMD} "@dirrmtry ${DOCSDIR:S!^${PREFIX}/!!:S!${PORTNAME}${PORTVERSION}!!}" >> ${PLIST}
 .endif
 	${ECHO_CMD} "@exec ${XMLCATMGR} ${REGIST_CAT_FLAGS_SGML}" >> ${PLIST}
 	${ECHO_CMD} "@unexec ${XMLCATMGR} ${UNREGIST_CAT_FLAGS_SGML}" >> ${PLIST}
