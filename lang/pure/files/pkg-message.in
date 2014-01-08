@@ -12,7 +12,7 @@ interpreter. Check pure(1) for details.
 %%NOCLANG%%
 %%NOCLANG%%To enable the inline C/C++ code compilation,
 %%NOCLANG%%
-%%NOCLANG%%	clang:	lang/clang
+%%NOCLANG%%	clang:	lang/clang32
 %%NOCLANG%%
 %%NOCLANG%%is required.
 ====
