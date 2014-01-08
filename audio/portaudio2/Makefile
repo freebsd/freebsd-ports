@@ -23,8 +23,7 @@ CONFIGURE_ARGS+=PKG_CONFIG_LIBDIR=${PREFIX}/libdata/pkgconfig \
 			--libdir=${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX} \
 			--includedir=${PREFIX}/include/${PORTNAME}${PKGNAMESUFFIX}
 
-USES=		gmake pathfix pkgconfig
-USE_DOS2UNIX=	yes
+USES=		gmake pathfix pkgconfig dos2unix
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}${PKGNAMESUFFIX}
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
