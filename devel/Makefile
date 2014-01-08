@@ -159,6 +159,7 @@
     SUBDIR += bullet
     SUBDIR += bunny
     SUBDIR += busybee
+    SUBDIR += byacc
     SUBDIR += byaccj
     SUBDIR += bzapi
     SUBDIR += bzr
