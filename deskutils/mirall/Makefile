@@ -41,6 +41,7 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/doc/latex/ownCloudClientManual.pdf ${STAGEDIR}${DOCSDIR}
 	(cd ${INSTALL_WRKSRC}/doc/html/unthemed && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/html)
+	${MV} ${STAGEDIR}${PREFIX}/etc/ownCloud/sync-exclude.lst ${STAGEDIR}${PREFIX}/etc/ownCloud/sync-exclude.lst.sample
 .endif
 
 .include <bsd.port.mk>
