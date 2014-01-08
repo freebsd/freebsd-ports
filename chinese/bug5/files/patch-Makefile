@@ -1,0 +1,11 @@
+--- Makefile.orig	2014-01-07 14:46:08.000000000 +0800
++++ Makefile	2014-01-07 14:46:17.000000000 +0800
+@@ -6,7 +6,7 @@ all:
+ 	$(CC) ${CFLAGS} bug5.c -o bug5 ${LDFLAGS}
+ 
+ install:
+-	install -m 555 bug5 ${PREFIX}/bin
++	install -m 555 bug5 $(DESTDIR)${PREFIX}/bin
+ 
+ clean:
+ 	rm -f bug5
