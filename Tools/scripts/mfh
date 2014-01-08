@@ -73,7 +73,7 @@ for f in $(svn diff --summarize -c $rev svn://svn.FreeBSD.org/ports/head); do
 done
 filelist=$(echo -e $filelist | sort -u)
 echo "MFH: r$rev" > commit.txt
-svn log -r$rev svn://svn.freebsd.org/ports/head | sed '1,2d;$d' >> commit.txt
+svn log -r$rev svn://svn.freebsd.org/ports/head | sed '1,2d;$d;/^MFH:/d' >> commit.txt
 for f in ${filelist}; do
 	svn up --parents ${branch}/${f}
 done
