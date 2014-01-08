@@ -1,7 +1,7 @@
 lib/fcitx/fcitx-rime.so
 share/fcitx/addon/fcitx-rime.conf
-share/fcitx/inputmethod/rime.conf
 share/fcitx/imicon/rime.png
+share/fcitx/inputmethod/rime.conf
 share/fcitx/skin/classic/rime.png
 share/fcitx/skin/dark/rime.png
 share/fcitx/skin/default/rime.png
