@@ -3,21 +3,17 @@
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.1
-DISTVERSIONSUFFIX=	e
-PORTREVISION=	8
+DISTVERSIONSUFFIX=	f
+PORTREVISION=	9
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source
-DIST_SUBDIR=	${DISTNAME}2
+DIST_SUBDIR=	${DISTNAME}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SSL and crypto library
-
-PATCH_SITES+=	http://www.linuxfromscratch.org/patches/blfs/svn/:pod
-PATCHFILES+=	openssl-1.0.1e-fix_pod_syntax-1.patch:pod
-PATCH_DIST_STRIP=	-p1
 
 .ifdef USE_OPENSSL
 .error You have `USE_OPENSSL' variable defined either in environment or in make(1) arguments. Please undefine and try again.
@@ -59,6 +55,24 @@ MAKE_ENV+=	LIBRPATH="${PREFIX}/lib"
 SUB_FILES=	pkg-message
 OPENSSLDIR=	${PREFIX}/openssl
 MANPREFIX=	${PREFIX}
+
+FIX_POD=apps/cms.pod \
+	apps/smime.pod \
+	ssl/SSL_accept.pod \
+	ssl/SSL_clear.pod \
+	ssl/SSL_COMP_add_compression_method.pod ssl/SSL_connect.pod \
+	ssl/SSL_CTX_add_session.pod ssl/SSL_CTX_load_verify_locations.pod \
+	ssl/SSL_CTX_set_client_CA_list.pod \
+	ssl/SSL_CTX_set_session_id_context.pod \
+	ssl/SSL_CTX_set_ssl_version.pod \
+	ssl/SSL_CTX_use_psk_identity_hint.pod \
+	ssl/SSL_do_handshake.pod \
+	ssl/SSL_read.pod \
+	ssl/SSL_session_reused.pod \
+	ssl/SSL_set_fd.pod \
+	ssl/SSL_set_session.pod \
+	ssl/SSL_shutdown.pod \
+	ssl/SSL_write.pod
 
 MAN1=	CA.pl.1 asn1parse.1 ca.1 ciphers.1 cms.1 crl.1 crl2pkcs7.1 dgst.1 \
 	dhparam.1 dsa.1 dsaparam.1 ec.1 ecparam.1 enc.1 errstr.1 gendsa.1 \
@@ -1123,6 +1137,8 @@ PLIST_SUB+=	WITH_RC5="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPADLOCK}
+BROKEN=		does not build with openssl-1.0.1f
+PATCH_DIST_STRIP=	-p1
 PATCH_SITES+=	http://git.alpinelinux.org/cgit/aports/plain/main/openssl/:padlock
 PATCHFILES+=	0001-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch:padlock \
 		0002-engines-e_padlock-backport-cvs-head-changes.patch:padlock \
@@ -1131,7 +1147,7 @@ PATCHFILES+=	0001-crypto-hmac-support-EVP_MD_CTX_FLAG_ONESHOT-and-set-.patch:pad
 .endif
 
 .if ${PORT_OPTIONS:MGMP}
-EXTRACONFIGURE+=	enable-gmp
+EXTRACONFIGURE+=	enable-gmp -I${LOCALBASE}/include
 IGNORE=	GMP is LGPLv3 and can not be linked
 .else
 EXTRACONFIGURE+=	no-gmp
@@ -1159,6 +1175,10 @@ pre-everything::
 	@${FALSE}
 
 .endif
+
+pre-patch:
+	${REINPLACE_CMD} -e 's|^=item \([0-9]\)$$|=item C<\1>|' \
+		${FIX_POD:S,^,${WRKSRC}/doc/,}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|m4 -B 8192|m4|g' \
