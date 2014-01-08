@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	data
-PORTVERSION=	192
+PORTVERSION=	193
 CATEGORIES=	games
 MASTER_SITES=	http://el.beplacid.net/downloads/:data \
 		http://www.eternal-lands.com/:data \
@@ -16,8 +16,8 @@ DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Eternal Lands data, sound, and music files
 
+NO_ARCH=	yes
 USE_ZIP=	yes
-NO_PACKAGE=	Package will be 140MB, set FORCE_PACKAGE if you really want it
 NO_BUILD=	yes
 USES=		dos2unix
 DOS2UNIX_GLOB=	*.ini *.txt
@@ -32,7 +32,6 @@ OPTIONS_DEFAULT=	ELSOUND ELMUSIC
 ELSOUND_DESC=	Install additional sound files
 ELMUSIC_DESC=	Install additional music files
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MELSOUND}
@@ -74,9 +73,9 @@ pre-install:
 	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
 
 do-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC} && \
-		${FIND} * -type d -exec ${MKDIR} "${DATADIR}/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DATADIR}/{}" \;
+		${FIND} * -type d -exec ${MKDIR} "${STAGEDIR}${DATADIR}/{}" \; && \
+			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${STAGEDIR}${DATADIR}/{}" \;
 
 .include <bsd.port.mk>
