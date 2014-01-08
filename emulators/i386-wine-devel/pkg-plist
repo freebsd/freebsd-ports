@@ -180,6 +180,9 @@ include/wine/windows/ctxtcall.h
 include/wine/windows/ctxtcall.idl
 include/wine/windows/custcntl.h
 include/wine/windows/cvconst.h
+include/wine/windows/d2d1.h
+include/wine/windows/d2d1.idl
+include/wine/windows/d2dbasetypes.h
 include/wine/windows/d3d.h
 include/wine/windows/d3d10.h
 include/wine/windows/d3d10.idl
@@ -1427,6 +1430,7 @@ lib32/wine/fakedlls/tapi32.dll
 lib32/wine/fakedlls/taskkill.exe
 lib32/wine/fakedlls/tasklist.exe
 lib32/wine/fakedlls/taskmgr.exe
+lib32/wine/fakedlls/taskschd.dll
 lib32/wine/fakedlls/termsv.exe
 lib32/wine/fakedlls/toolhelp.dll16
 lib32/wine/fakedlls/traffic.dll
@@ -1970,6 +1974,7 @@ lib32/wine/tapi32.dll.so
 lib32/wine/taskkill.exe.so
 lib32/wine/tasklist.exe.so
 lib32/wine/taskmgr.exe.so
+lib32/wine/taskschd.dll.so
 lib32/wine/termsv.exe.so
 lib32/wine/toolhelp.dll16.so
 lib32/wine/traffic.dll.so
