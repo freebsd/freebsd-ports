@@ -8,7 +8,7 @@ BINDIR=		${PREFIX}/bin
 WARNS?=		2
 CFLAGS+=	-I${LOCALBASE}/include/X11 -I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lformsGL -lGLU
+LDFLAGS+=	-L${LOCALBASE}/lib -lforms -lformsGL -lGL -lGLU
 LDFLAGS+=	-L${LOCALBASE}/lib -lgpc -lm
 
 .include <bsd.prog.mk>

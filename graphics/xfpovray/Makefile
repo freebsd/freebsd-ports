@@ -3,7 +3,7 @@
 
 PORTNAME=	xfpovray
 PORTVERSION=	1.3.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.batse.msfc.nasa.gov/~mallozzi/home/software/xforms/src/ \
 		${MASTER_SITE_SUNSITE}
@@ -13,15 +13,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical interface to POV-Ray
 
-LIB_DEPENDS=	forms.2:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	libforms.so:${PORTSDIR}/x11-toolkits/xforms
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
 
 USES=		imake
 USE_XORG=	x11 xext xpm
-USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g;" ${WRKSRC}/src/xfpovray.h
 
