@@ -1,13 +1,13 @@
 =================================================================
           	**** NOTE ****
 1) Please add the following to your apache config, and restart.
-    [1;32m#
+    #
     # Directives to allow use of tikiwiki
     #
-    Alias /%%PORTNAME%% "%%PREFIX%%/%%TIKIWIKI_DIR%%/"[m
+    Alias /%%PORTNAME%% "%%PREFIX%%/%%TIKIWIKI_DIR%%/"
 
 2) Open the following page in your browser and follow the instructions:
-    [1;36mhttp://www.your.host/tikiwiki/[m
+    http://www.your.host/tikiwiki/
 
   For FULL configuration instructions see
   http://http://doc.tiki.org/Tiki+Installation+Guide
