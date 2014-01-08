@@ -24,7 +24,7 @@ USE_OPENAL=	al alut
 USE_GNOME=	libxml2
 USE_SDL=	sdl net image
 USE_GL=		yes
-USES=		gmake
+LDFLAGS+=	-L${LOCALBASE}/lib -lX11
 
 ALL_TARGET=	el.bin
 MAKEFILE=	Makefile.bsd
@@ -33,7 +33,7 @@ PLIST=		${WRKDIR}/pkg-plist
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64" || ${ARCH} == "amd64"
+.if ${ARCH} == "sparc64"
 BROKEN=		Does not build on ${ARCH}
 .endif
 
