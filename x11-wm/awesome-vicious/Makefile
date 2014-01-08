@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	awesome-vicious
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://git.sysphere.org/vicious/snapshot/ \
 		LOCAL/wg
