@@ -11,10 +11,12 @@ include/afnix/csm/Libcsm.hpp
 include/afnix/csm/LocalSpace.hpp
 include/afnix/csm/Predcsm.hpp
 include/afnix/csm/Rco.hpp
+include/afnix/csm/Saas.hpp
 include/afnix/csm/Session.hpp
 include/afnix/csm/SessionSet.hpp
 include/afnix/csm/Slot.hpp
 include/afnix/csm/WorkSpace.hpp
+include/afnix/csm/Xaas.hpp
 include/afnix/eng/ArgsList.hpp
 include/afnix/eng/Builtin.hpp
 include/afnix/eng/Class.hpp
@@ -77,29 +79,38 @@ include/afnix/itu/AsnUtils.hpp
 include/afnix/itu/Libitu.hpp
 include/afnix/itu/Oid.hpp
 include/afnix/itu/Preditu.hpp
-include/afnix/itu/X509.hpp
-include/afnix/itu/Xalgo.hpp
 include/afnix/mth/Algebra.hpp
+include/afnix/mth/Bcs.hpp
+include/afnix/mth/Cgs.hpp
+include/afnix/mth/Direct.hpp
 include/afnix/mth/Ippd.hpp
-include/afnix/mth/Krylov.hpp
+include/afnix/mth/Iterative.hpp
 include/afnix/mth/Libmth.hpp
 include/afnix/mth/Linear.hpp
+include/afnix/mth/LinearFactory.hpp
 include/afnix/mth/Mpia.hpp
-include/afnix/mth/MthCalls.hpp
 include/afnix/mth/Newton.hpp
+include/afnix/mth/Parallel.hpp
 include/afnix/mth/Predmth.hpp
 include/afnix/mth/Primality.hpp
+include/afnix/mth/Qr.hpp
 include/afnix/mth/Random.hpp
+include/afnix/mth/Rblock.hpp
 include/afnix/mth/Rfi.hpp
 include/afnix/mth/Rfunction.hpp
+include/afnix/mth/Rgivens.hpp
 include/afnix/mth/Rmatrix.hpp
 include/afnix/mth/Rmd.hpp
 include/afnix/mth/Rmi.hpp
 include/afnix/mth/Rni.hpp
+include/afnix/mth/Rpi.hpp
 include/afnix/mth/Rpolynom.hpp
 include/afnix/mth/Rsamples.hpp
 include/afnix/mth/Rvector.hpp
 include/afnix/mth/Rvi.hpp
+include/afnix/mth/Solver.hpp
+include/afnix/mth/SolverFactory.hpp
+include/afnix/mth/Tqmr.hpp
 include/afnix/net/Address.hpp
 include/afnix/net/Datagram.hpp
 include/afnix/net/Libnet.hpp
@@ -204,6 +215,7 @@ include/afnix/sps/Record.hpp
 include/afnix/sps/Sheet.hpp
 include/afnix/sps/SpsCalls.hpp
 include/afnix/sps/Xref.hpp
+include/afnix/std/AliasTable.hpp
 include/afnix/std/Ascii.hpp
 include/afnix/std/Bitset.hpp
 include/afnix/std/BlockBuffer.hpp
@@ -314,6 +326,19 @@ include/afnix/svg/Transform.hpp
 include/afnix/sys/Libsys.hpp
 include/afnix/sys/Predsys.hpp
 include/afnix/sys/SysCalls.hpp
+include/afnix/tls/Libtls.hpp
+include/afnix/tls/Predtls.hpp
+include/afnix/tls/TlsHandshake.hpp
+include/afnix/tls/TlsHeader.hpp
+include/afnix/tls/TlsMessage.hpp
+include/afnix/tls/TlsRecord.hpp
+include/afnix/tls/TlsServer.hpp
+include/afnix/tls/TlsSocket.hpp
+include/afnix/tls/X509.hpp
+include/afnix/tls/Xalgo.hpp
+include/afnix/tls/Xextn.hpp
+include/afnix/tls/Xkey.hpp
+include/afnix/tls/Xoid.hpp
 include/afnix/txt/Lexeme.hpp
 include/afnix/txt/Lexicon.hpp
 include/afnix/txt/Libtxt.hpp
@@ -418,6 +443,7 @@ include/afnix/xpe/XmlPrintTable.hpp
 include/afnix/xpe/XmlProcessor.hpp
 lib/afnix/afnix-std-adp.axl
 lib/afnix/afnix-std-axp.axl
+lib/afnix/afnix-std-tls.axl
 lib/libafnix-csm.a
 lib/libafnix-csm.so
 lib/libafnix-csm.so.2
@@ -463,6 +489,9 @@ lib/libafnix-svg.so.2
 lib/libafnix-sys.a
 lib/libafnix-sys.so
 lib/libafnix-sys.so.2
+lib/libafnix-tls.a
+lib/libafnix-tls.so
+lib/libafnix-tls.so.2
 lib/libafnix-txt.a
 lib/libafnix-txt.so
 lib/libafnix-txt.so.2
@@ -475,24 +504,76 @@ lib/libafnix-xml.so.2
 lib/libafnix-xpe.a
 lib/libafnix-xpe.so
 lib/libafnix-xpe.so.2
-@dirrm include/afnix/csm
-@dirrm include/afnix/eng
-@dirrm include/afnix/gfx
-@dirrm include/afnix/itu
-@dirrm include/afnix/mth
-@dirrm include/afnix/net
-@dirrm include/afnix/nwg
-@dirrm include/afnix/phy
-@dirrm include/afnix/plt
-@dirrm include/afnix/sec
-@dirrm include/afnix/sio
-@dirrm include/afnix/sps
-@dirrm include/afnix/std
-@dirrm include/afnix/svg
-@dirrm include/afnix/sys
-@dirrm include/afnix/txt
-@dirrm include/afnix/wax
-@dirrm include/afnix/xml
-@dirrm include/afnix/xpe
-@dirrm include/afnix
+man/man1/afnix::adp.1.gz
+man/man1/afnix::axp.1.gz
+man/man1/axc.1.gz
+man/man1/axd.1.gz
+man/man1/axi.1.gz
+man/man1/axl.1.gz
+man/man3/afnix::csm.3.gz
+man/man3/afnix::gfx.3.gz
+man/man3/afnix::itu.3.gz
+man/man3/afnix::mth.3.gz
+man/man3/afnix::net.3.gz
+man/man3/afnix::nwg.3.gz
+man/man3/afnix::sec.3.gz
+man/man3/afnix::sio.3.gz
+man/man3/afnix::sps.3.gz
+man/man3/afnix::sys.3.gz
+man/man3/afnix::txt.3.gz
+man/man3/afnix::wax.3.gz
+man/man3/afnix::xml.3.gz
+man/man3/afnix::xpe.3.gz
+man/man7/afnix::guide.7.gz
+man/man7/afnix::license.7.gz
+man/man7/afnix::notes.7.gz
+man/man7/afnix::reference.7.gz
+%%PORTDOCS%%%%DOCSDIR%%/adp.xht
+%%PORTDOCS%%%%DOCSDIR%%/afnix.png
+%%PORTDOCS%%%%DOCSDIR%%/axc.xht
+%%PORTDOCS%%%%DOCSDIR%%/axd.xht
+%%PORTDOCS%%%%DOCSDIR%%/axi.xht
+%%PORTDOCS%%%%DOCSDIR%%/axl.xht
+%%PORTDOCS%%%%DOCSDIR%%/axp.xht
+%%PORTDOCS%%%%DOCSDIR%%/csm.xht
+%%PORTDOCS%%%%DOCSDIR%%/eul.xht
+%%PORTDOCS%%%%DOCSDIR%%/gfx.xht
+%%PORTDOCS%%%%DOCSDIR%%/itu.xht
+%%PORTDOCS%%%%DOCSDIR%%/mth.xht
+%%PORTDOCS%%%%DOCSDIR%%/net.xht
+%%PORTDOCS%%%%DOCSDIR%%/nwg.xht
+%%PORTDOCS%%%%DOCSDIR%%/sec.xht
+%%PORTDOCS%%%%DOCSDIR%%/sio.xht
+%%PORTDOCS%%%%DOCSDIR%%/sps.xht
+%%PORTDOCS%%%%DOCSDIR%%/style.css
+%%PORTDOCS%%%%DOCSDIR%%/sys.xht
+%%PORTDOCS%%%%DOCSDIR%%/txt.xht
+%%PORTDOCS%%%%DOCSDIR%%/vol-0.xht
+%%PORTDOCS%%%%DOCSDIR%%/vol-1.xht
+%%PORTDOCS%%%%DOCSDIR%%/vol-2.xht
+%%PORTDOCS%%%%DOCSDIR%%/wax.xht
+%%PORTDOCS%%%%DOCSDIR%%/xml.xht
+%%PORTDOCS%%%%DOCSDIR%%/xpe.xht
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/afnix
+@dirrm include/afnix/xpe
+@dirrm include/afnix/xml
+@dirrm include/afnix/wax
+@dirrm include/afnix/txt
+@dirrm include/afnix/tls
+@dirrm include/afnix/sys
+@dirrm include/afnix/svg
+@dirrm include/afnix/std
+@dirrm include/afnix/sps
+@dirrm include/afnix/sio
+@dirrm include/afnix/sec
+@dirrm include/afnix/plt
+@dirrm include/afnix/phy
+@dirrm include/afnix/nwg
+@dirrm include/afnix/net
+@dirrm include/afnix/mth
+@dirrm include/afnix/itu
+@dirrm include/afnix/gfx
+@dirrm include/afnix/eng
+@dirrm include/afnix/csm
+@dirrm include/afnix
