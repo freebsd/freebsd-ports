@@ -8,12 +8,3 @@
  ENDIF()
  IF( WIN32 ) 
      set(libsync_SRCS ${libsync_SRCS} mirall/folderwatcher_win.cpp)
-@@ -140,7 +141,7 @@
- list(APPEND libsync_LINK_TARGETS
-     ${QT_LIBRARIES}
-     ${CSYNC_LIBRARY}
--    dl
-+    inotify
- )
- 
- if(QTKEYCHAIN_FOUND)

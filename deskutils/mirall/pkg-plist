@@ -1,10 +1,24 @@
 bin/owncloud
+bin/owncloudcmd
 @unexec if cmp -s %D/etc/ownCloud/sync-exclude.lst.sample %D/etc/ownCloud/sync-exclude.lst; then rm -f %D/etc/ownCloud/sync-exclude.lst; fi
 etc/ownCloud/sync-exclude.lst.sample
 @exec if [ ! -f %D/etc/ownCloud/sync-exclude.lst ] ; then cp -p %D/%F %B/sync-exclude.lst; fi
+include/owncloudsync/creds/abstractcredentials.h
+include/owncloudsync/creds/httpcredentials.h
+include/owncloudsync/mirall/account.h
+include/owncloudsync/mirall/csyncthread.h
+include/owncloudsync/mirall/folder.h
+include/owncloudsync/mirall/folderman.h
+include/owncloudsync/mirall/folderwatcher.h
+include/owncloudsync/mirall/mirallconfigfile.h
+include/owncloudsync/mirall/networkjobs.h
+include/owncloudsync/mirall/progressdispatcher.h
+include/owncloudsync/mirall/syncfileitem.h
+include/owncloudsync/mirall/syncjournaldb.h
+include/owncloudsync/mirall/syncresult.h
 lib/libowncloudsync.so
 lib/libowncloudsync.so.0
-lib/libowncloudsync.so.1.4.2
+lib/libowncloudsync.so.%%VERSION%%
 share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/.buildinfo
 %%PORTDOCS%%%%DOCSDIR%%/html/_images/icon.png
@@ -28,6 +42,7 @@ share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/introduction.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/options.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/owncloud.1.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/owncloudcmd.1.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/troubleshooting.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/visualtour.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/ajax-loader.gif
@@ -62,6 +77,7 @@ share/applications/owncloud.desktop
 %%PORTDOCS%%%%DOCSDIR%%/html/objects.inv
 %%PORTDOCS%%%%DOCSDIR%%/html/options.html
 %%PORTDOCS%%%%DOCSDIR%%/html/owncloud.1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/owncloudcmd.1.html
 %%PORTDOCS%%%%DOCSDIR%%/html/search.html
 %%PORTDOCS%%%%DOCSDIR%%/html/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/html/troubleshooting.html
@@ -120,4 +136,7 @@ share/owncloud/i18n/mirall_zh_TW.qm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/_images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry include/owncloudsync/mirall
+@dirrmtry include/owncloudsync/creds
+@dirrmtry include/owncloudsync
 @dirrmtry etc/ownCloud
