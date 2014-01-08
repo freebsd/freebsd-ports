@@ -71,7 +71,7 @@ SCONS_ARGS+=	LUA=0
 
 .if ${PORT_OPTIONS:MLOGO}
 SCONS_ARGS+=	LOGO=1 CREATE_AVI=1
-LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
 .else
 SCONS_ARG+=	LOGO=0
 .endif
