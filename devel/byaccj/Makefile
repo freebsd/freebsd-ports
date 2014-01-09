@@ -13,11 +13,10 @@ COMMENT=	Java extension of BSD YACC-compatible parser generator
 PLIST_FILES=	bin/byaccj
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/src
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's#<malloc.h>#<stdlib.h>#' ${WRKSRC}/defs.h ${WRKSRC}/*c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/yacc ${PREFIX}/bin/byaccj
+	${INSTALL_PROGRAM} ${WRKSRC}/yacc ${STAGEDIR}${PREFIX}/bin/byaccj
 
 .include <bsd.port.mk>
