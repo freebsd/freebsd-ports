@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.jar
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A GraphViz .dot file editor
+COMMENT=	GraphViz .dot file editor
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
@@ -28,9 +28,8 @@ PLIST_FILES=	%%JAVAJARDIR%%/${DISTNAME}.jar \
 SUB_FILES=	tintfu.sh
 SUB_LIST=	DISTNAME=${DISTNAME}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar ${JAVAJARDIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/tintfu.sh ${PREFIX}/bin/tintfu
+	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.jar ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/tintfu.sh ${STAGEDIR}${PREFIX}/bin/tintfu
 
 .include <bsd.port.mk>
