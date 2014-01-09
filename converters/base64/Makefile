@@ -13,8 +13,7 @@ COMMENT=	Utility to encode and decode base64 files
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	prog
-MAN1=		base64.1
-PLIST_FILES=	bin/base64
+PLIST_FILES=	bin/base64 \
+		man/man1/base64.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
