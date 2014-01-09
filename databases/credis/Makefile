@@ -9,10 +9,11 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Library for communicating with Redis servers
 
-USE_GMAKE=	yes
+LICENSE=	BSD3CLAUSE
+
+USES=	gmake
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
