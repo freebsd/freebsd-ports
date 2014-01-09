@@ -7,20 +7,17 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://cloud.github.com/downloads/samupl/bsdinfo/
 
 MAINTAINER=	s@samu.pl
-COMMENT=	A simple utility to display system-based information
+COMMENT=	Simple utility to display system-based information
 
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	X256
 X256_DESC=	Build the 256 color version
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MX256}
-CONFIGURE_ARGS+=--x256
-.endif
+X256_CONFIGURE_ON=	--x256
 
 PLIST_FILES+=	bin/bsdinfo
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/bsdinfo ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
