@@ -14,5 +14,4 @@ USE_XORG=	x11
 
 PLIST_FILES=	bin/sselp
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

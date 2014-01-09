@@ -1,5 +1,6 @@
 bin/imwheel
 etc/imwheelrc
-%%PORTDOCS%%%%DOCSDIR%%/README
+man/man1/imwheel.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/EMACS
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

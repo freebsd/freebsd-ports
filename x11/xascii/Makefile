@@ -15,8 +15,6 @@ COMMENT=	Display an ASCII table in decimal, octal, and hexadecimal.
 MAKE_ARGS+=	PREFIX=${PREFIX}
 USES=		imake
 USE_XORG=	x11 xt xaw
-MAN1=		xascii.1
-PLIST_FILES=	bin/xascii
+PLIST_FILES=	bin/xascii man/man1/xascii.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

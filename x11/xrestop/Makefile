@@ -19,8 +19,6 @@ CONFIGURE_ENV=	XLIBS="-L${LOCALBASE}/lib -lX11"
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		xrestop.1
-PLIST_FILES=	bin/xrestop
+PLIST_FILES=	bin/xrestop man/man1/xrestop.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

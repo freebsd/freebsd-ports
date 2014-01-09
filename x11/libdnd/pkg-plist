@@ -1,14 +1,14 @@
 include/OffiX/DragAndDrop.h
 include/OffiX/DragAndDropTypes.h
-lib/libDnd.a
 lib/libDnd++.a
-lib/libDnd.so
-lib/libDnd.so.1
 lib/libDnd++.so
 lib/libDnd++.so.1
+lib/libDnd.a
+lib/libDnd.so
+lib/libDnd.so.1
 %%PORTDOCS%%%%DOCSDIR%%/DND.dvi
 %%PORTDOCS%%%%DOCSDIR%%/DNDa4.ps
 %%PORTDOCS%%%%DOCSDIR%%/DNDletter.ps
 %%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm include/OffiX
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/OffiX

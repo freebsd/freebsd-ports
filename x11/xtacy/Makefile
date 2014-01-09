@@ -15,10 +15,8 @@ COMMENT=	X11 trippy color-cycling toy
 
 USES=		imake
 USE_XORG=	x11 xext
-MAN1=		xtacy.1
-PLIST_FILES=	bin/xtacy
+PLIST_FILES=	bin/xtacy man/man1/xtacy.1.gz
 
 WRKSRC=		${WRKDIR}/Xtacy
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

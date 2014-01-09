@@ -1,5 +1,5 @@
---- Makefile.orig	2009-10-22 02:19:16.000000000 -0400
-+++ Makefile	2012-02-14 19:03:52.000000000 -0500
+--- Makefile.orig	2009-10-22 14:19:16.000000000 +0800
++++ Makefile	2014-01-09 21:39:59.000000000 +0800
 @@ -1,9 +1,10 @@
 -prefix  = /usr/local
 -XROOT   = /usr/X11R6
@@ -13,4 +13,4 @@
  		$(CC) $(CFLAGS) *.c -o deskpaint
  
 +install:
-+		${BSD_INSTALL_PROGRAM} -s deskpaint $(prefix)/bin
++		${BSD_INSTALL_PROGRAM} -s deskpaint $(DESTDIR)$(prefix)/bin

@@ -17,13 +17,12 @@ USE_XORG=	x11 xtst xext xfixes xi
 
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC} && \
 		${CC} -L${LOCALBASE}/lib -I${LOCALBASE}/include click.c \
 			-lX11 -lXtst -o ${PORTNAME}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

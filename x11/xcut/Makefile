@@ -14,8 +14,6 @@ COMMENT=	Manipulate X cut buffers from the commandline
 
 USES=		imake
 USE_XORG=	x11
-MAN1=		xcut.1
-PLIST_FILES=	bin/xcut
+PLIST_FILES=	bin/xcut man/man1/xcut.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
