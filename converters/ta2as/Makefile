@@ -6,6 +6,7 @@ PORTVERSION=	0.8.2
 CATEGORIES=	converters devel
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/g}_src
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TASM to AT&T asm syntax converter (GNU AS)
@@ -14,13 +15,8 @@ OPTIONS_DEFINE=	DOCS
 
 NO_WRKSUBDIR=	yes
 
-USE_ZIP=	yes
-
 PORTDOCS=	*
 PLIST_FILES=	bin/${PORTNAME}
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-extract:
 	@${CP} -f ${FILESDIR}/strtolower.c ${WRKSRC}
@@ -34,10 +30,8 @@ do-build:
 		-o ${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
