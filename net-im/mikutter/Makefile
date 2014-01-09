@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mikutter
-PORTVERSION=	0.2.2.1430
+PORTVERSION=	0.2.2.1476
 CATEGORIES=	net-im ruby
 MASTER_SITES=	http://mikutter.hachune.net/bin/ \
 		LOCAL
@@ -56,7 +56,7 @@ RUN_DEPENDS+=	notify-send:${PORTSDIR}/devel/libnotify
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -i '' -e "s|%%RUBY_SITELIBDIR%%|${RUBY_SITELIBDIR}|" \
+	@${REINPLACE_CMD} -e "s|%%RUBY_SITELIBDIR%%|${RUBY_SITELIBDIR}|" \
 		${WRKSRC}/mikutter.rb
 	@${RM} -r ${WRKSRC}/vendor
 
