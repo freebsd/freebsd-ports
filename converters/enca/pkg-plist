@@ -11,6 +11,8 @@ libexec/enca/extconv/map
 libexec/enca/extconv/piconv
 libexec/enca/extconv/recode
 libexec/enca/extconv/umap
+man/man1/enca.1.gz
+man/man1/enconv.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/libenca/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/libenca/index.html
 %%PORTDOCS%%%%DOCSDIR%%/libenca/index.sgml
