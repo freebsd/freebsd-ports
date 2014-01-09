@@ -49,6 +49,5 @@ USE_CABAL=	async==2.0.1.4_2 \
 		alex==3.0.5_2 \
 		happy==1.18.10_4
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

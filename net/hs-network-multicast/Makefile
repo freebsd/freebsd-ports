@@ -10,6 +10,5 @@ COMMENT=	Simple multicast library
 
 USE_CABAL=	network
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

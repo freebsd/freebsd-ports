@@ -15,6 +15,5 @@ LICENSE=	BSD
 
 USE_CABAL=	cgi network>=2.2.3
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

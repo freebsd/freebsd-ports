@@ -12,6 +12,5 @@ LICENSE=	BSD
 
 USE_CABAL=	blaze-builder>=0.2 text>=0.10
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

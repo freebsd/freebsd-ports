@@ -12,10 +12,9 @@ COMMENT=	Binding for the OpenAL Utility Toolkit
 LICENSE=	BSD
 
 USE_CABAL=	OpenAL StateVar
-NO_STAGE=	yes
 USES=		openal:al,alut
 
-INSTALL_PORTEXAMPLES=	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+INSTALL_PORTEXAMPLES=	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

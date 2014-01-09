@@ -19,10 +19,9 @@ EXECUTABLE=	cabal-install
 SUB_FILES=	cabal
 SUB_LIST=	AR=${AR} CC=${CC} CPP=${CPP} LD=${LD} RANLIB=${RANLIB}
 
-NO_STAGE=	yes
 post-install::
-	@${MV} ${PREFIX}/bin/cabal ${PREFIX}/bin/cabal-install
-	${INSTALL_SCRIPT} ${WRKDIR}/cabal ${PREFIX}/bin
+	@${MV} ${STAGEDIR}${PREFIX}/bin/cabal ${STAGEDIR}${PREFIX}/bin/cabal-install
+	${INSTALL_SCRIPT} ${WRKDIR}/cabal ${STAGEDIR}${PREFIX}/bin
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

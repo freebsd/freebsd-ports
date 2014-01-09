@@ -12,6 +12,5 @@ LICENSE=	BSD
 
 USE_CABAL=	crypto-random-api>=0.2 vector
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -19,6 +19,5 @@ EXECUTABLE=	lhs2TeX
 
 MAN1=		lhs2TeX.1
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -14,6 +14,5 @@ USE_CABAL=	dataenc extensible-exceptions mmap>=0.5 mtl zlib
 
 CONFIGURE_ARGS+=	--flags="-test"
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

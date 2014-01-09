@@ -12,6 +12,5 @@ LICENSE=	BSD
 
 USE_CABAL=	blaze-builder mtl parsec syb text utf8-string void
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

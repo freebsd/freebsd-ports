@@ -12,6 +12,5 @@ LICENSE=	BSD
 
 USE_GL=		gl glut
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

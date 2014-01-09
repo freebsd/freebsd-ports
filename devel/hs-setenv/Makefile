@@ -10,6 +10,5 @@ COMMENT=	Cross-platform library for setting environment variables
 
 LICENSE=	MIT
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

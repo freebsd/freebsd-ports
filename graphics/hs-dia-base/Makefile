@@ -10,6 +10,5 @@ COMMENT=	EDSL for teaching Haskell with diagrams - data types
 
 LICENSE=	BSD
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

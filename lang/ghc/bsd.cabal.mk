@@ -10,14 +10,18 @@
 #
 
 .if !defined(METAPORT)
-MASTER_SITES?=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES?=	http://hackage.haskell.org/package/${PORTNAME}-${PORTVERSION}/
 .else
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 NO_FETCH=	yes
 NO_BUILD=	yes
+NO_INSTALL=	yes
+NO_MTREE=	yes
 .endif # !METAPORT
+
+MAKE_ENV+=	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 DESTDIR=${STAGEDIR}
 
 DIST_SUBDIR?=	cabal
 
@@ -76,7 +80,7 @@ BUILD_DEPENDS+=	ghc>=${GHC_VERSION}:${PORTSDIR}/lang/ghc
 .endif
 
 USE_BINUTILS=	yes
-USE_GCC=	4.6+
+USE_GCC=	yes
 
 CONFIGURE_ARGS+=	--with-gcc=${CC} --with-ld=${LD} --with-ar=${AR} \
 			--with-ranlib=${RANLIB}
@@ -104,6 +108,8 @@ CONFIGURE_ARGS+=	--with-c2hs=${C2HS_CMD}
 .if defined(EXECUTABLE)
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 USES+=		iconv
+
+CONFIGURE_ARGS+=	--enable-executable-stripping
 .endif
 
 .if defined(USE_CABAL)
@@ -162,7 +168,7 @@ HADDOCK_OPTS+=		--hyperlink-source --hscolour-css=${HSCOLOUR_DATADIR}/hscolour.c
 BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
 
-USE_GMAKE=	yes
+USES+=		gmake
 
 .endif # !XMLDOCS
 
@@ -197,9 +203,9 @@ post-patch::
 
 _BUILD_SETUP=	${GHC_CMD} -o ${SETUP_CMD} -package Cabal --make
 
+.if !defined(METAPORT)
 .if !target(do-configure)
 do-configure:
-.if !defined(METAPORT)
 	@if [ -f ${WRKSRC}/Setup.hs ]; then \
 	    cd ${WRKSRC} && ${_BUILD_SETUP} Setup.hs; fi
 	@if [ -f ${WRKSRC}/Setup.lhs ]; then \
@@ -219,14 +225,12 @@ do-configure:
 	cd ${WRKSRC}/doc && ${AUTOCONF} && ./configure --prefix=${PREFIX}
 .endif
 .endif # DOCS
-.else
-	${DO_NADA}
-.endif # !METAPORT
 .endif # target(do-configure)
+.endif # !METAPORT
 
+.if !defined(METAPORT)
 .if !target(do-build)
 do-build:
-.if !defined(METAPORT)
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SETUP_CMD} build
 .if !defined(STANDALONE)
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SETUP_CMD} register --gen-script
@@ -240,54 +244,62 @@ do-build:
 	@(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} html)
 .endif # XMLDOCS
 .endif # DOCS
-.else
-	${DO_NADA}
-.endif # !METAPORT
 .endif # target(do-build)
+.endif # !METAPORT
 
+.if defined(MAN1)
+.for man in ${MAN1}
+PLIST_FILES+=	man/man1/${man}.gz
+.endfor
+.endif
+
+.if defined(MAN5)
+.for man in ${MAN5}
+PLIST_FILES+=	man/man5/${man}.gz
+.endfor
+.endif
+
+.if !defined(METAPORT)
 .if !target(do-install)
 do-install:
-.if !defined(METAPORT)
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SETUP_CMD} install
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${SETUP_CMD} copy --destdir=${STAGEDIR}
 
 .if !defined(STANDALONE)
-	cd ${WRKSRC} && ${INSTALL_SCRIPT} register.sh ${CABAL_LIBDIR}/${CABAL_LIBSUBDIR}/register.sh
+	cd ${WRKSRC} && ${INSTALL_SCRIPT} register.sh ${STAGEDIR}${CABAL_LIBDIR}/${CABAL_LIBSUBDIR}/register.sh
 .endif
 
 .if !empty(INSTALL_PORTDATA)
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_PORTDATA}
 .endif
 
 .if !empty(INSTALL_PORTEXAMPLES) && ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_PORTEXAMPLES}
 .endif
 
 .if defined(MAN1SRC)
 .for man in ${MAN1}
-	@${INSTALL_MAN} ${WRKSRC}/${MAN1SRC}/${man} ${PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/${MAN1SRC}/${man} ${STAGEDIR}${PREFIX}/man/man1
 .endfor
 .endif # MAN1SRC
 
 .if ${PORT_OPTIONS:MDOCS}
 .if !empty(XMLDOCS)
 .for xmldoc in ${XMLDOCS}
-	@(cd ${WRKSRC}/${xmldoc:C/:.*$//g} && ${COPYTREE_SHARE} \* ${DOCSDIR}/${xmldoc:C/^.*://g})
+	@(cd ${WRKSRC}/${xmldoc:C/:.*$//g} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}/${xmldoc:C/^.*://g})
 .endfor
 .endif # XMLDOCS
-.endif
-.else
-	${DO_NADA}
-.endif # !METAPORT
+.endif # DOCS
 .endif # target(do-install)
+.endif # !METAPORT
 
 .if !target(post-install-script)
 post-install-script:
-	@for dir in ${CABAL_DIRS}; do if [ -d $${dir} ]; then ${FIND} -ds $${dir} \
-		-type f -print | ${SED} -E -e 's,^${PREFIX}/?,,' >> ${TMPPLIST}; fi ; \
-		if [ -d $${dir} ]; then ${FIND} -ds $${dir} \
-		-type d -print | ${SED} -E -e 's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}; fi ; done
+	@for dir in ${CABAL_DIRS}; do if [ -d ${STAGEDIR}$${dir} ]; then ${FIND} -ds ${STAGEDIR}$${dir} \
+		-type f -print | ${SED} -E -e 's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}; fi ; \
+		if [ -d ${STAGEDIR}$${dir} ]; then ${FIND} -ds ${STAGEDIR}$${dir} \
+		-type d -print | ${SED} -E -e 's,^${STAGEDIR}${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}; fi ; done
 .if defined(EXECUTABLE)
 .for exe in ${EXECUTABLE}
 	@${ECHO_CMD} 'bin/${exe}' >>${TMPPLIST}
@@ -296,46 +308,28 @@ post-install-script:
 
 .endif # target(post-install-script)
 
+.if !defined(METAPORT)
 add-plist-post: add-plist-cabal
 add-plist-cabal:
-.if !defined(METAPORT)
-	@if [ -f ${CABAL_LIBDIR}/${CABAL_LIBSUBDIR}/register.sh ]; then \
-		(${ECHO_CMD} '@exec ${SH} %D/${CABAL_LIBDIR_REL}/${CABAL_LIBSUBDIR}/register.sh'; \
-		 ${ECHO_CMD} '@unexec %D/bin/ghc-pkg unregister --force ${PORTNAME}-${PORTVERSION}') >> ${TMPPLIST}; fi
-.if defined(HADDOCK_AVAILABLE) && ${PORT_OPTIONS:MDOCS}
-	@(${ECHO_CMD} '@exec if [ -f %D/${GHC_LIB_DOCSDIR_REL}/gen_contents_index ]; then ${LN} -s ${DOCSDIR}/html %D/${GHC_LIB_DOCSDIR_REL}/${DISTNAME} && \
-		cd %D/${GHC_LIB_DOCSDIR_REL} && ${RM} -f doc-index*.html && ./gen_contents_index; fi' ; \
-	  ${ECHO_CMD} '@unexec ${RM} -f %D/${GHC_LIB_DOCSDIR_REL}/${DISTNAME}' ; \
-	  ${ECHO_CMD} '@unexec if [ -f %D/${GHC_LIB_DOCSDIR_REL}/gen_contents_index ]; then cd %D/${GHC_LIB_DOCSDIR_REL} && ${RM} -f doc-index*.html && ./gen_contents_index; fi') >>${TMPPLIST};
-.endif
-.else
-	${DO_NADA}
-.endif # !METAPORT
 
-post-install::
-.if !defined(METAPORT)
-.if defined(HADDOCK_AVAILABLE) && ${PORT_OPTIONS:MDOCS}
-	@if [ -f ${PREFIX}/${GHC_LIB_DOCSDIR_REL}/gen_contents_index ]; then \
-		${LN} -s ${DOCSDIR}/html ${PREFIX}/${GHC_LIB_DOCSDIR_REL}/${DISTNAME} && \
-		cd ${PREFIX}/${GHC_LIB_DOCSDIR_REL} && \
-		${RM} -f doc-index*.html && ./gen_contents_index; \
-	fi
+.if !defined(STANDALONE)
+	@${ECHO_CMD} '@unexec ${LOCALBASE}/bin/ghc-pkg unregister --force ${PORTNAME}-${PORTVERSION}' >> ${TMPPLIST}
 .endif
 
-.if defined(EXECUTABLE)
-.for exe in ${EXECUTABLE}
-	@${STRIP_CMD} ${PREFIX}/bin/${exe}
-	@${CHMOD} ${BINMODE} ${PREFIX}/bin/${exe}
-.endfor
-.endif # EXECUTABLE
+.if defined(HADDOCK_AVAILABLE) && ${PORT_OPTIONS:MDOCS}
+	@(${ECHO_CMD} '@unexec ${RM} -f ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL}/${DISTNAME}' ; \
+	  ${ECHO_CMD} '@unexec cd ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL} && \
+	    ${RM} -f doc-index*.html && ./gen_contents_index') >> ${TMPPLIST}
+.endif
 
-.if defined(SHOW_PKGMSG)
-	@${ECHO_MSG} -e "\a"
-	@${ECHO_MSG} "================================================================="
-	@${CAT}      "${PKGMESSAGE}"
-	@${ECHO_MSG} "================================================================="
-	@${ECHO_MSG}
-.endif # SHOW_PKGMSG
-.else
-	${DO_NADA}
+.if !defined(STANDALONE)
+	@${ECHO_CMD} '@exec ${SH} %D/${CABAL_LIBDIR_REL}/${CABAL_LIBSUBDIR}/register.sh' >> ${TMPPLIST}
+.endif
+
+.if defined(HADDOCK_AVAILABLE) && ${PORT_OPTIONS:MDOCS}
+	@(${ECHO_CMD} '@exec ${LN} -s ${DOCSDIR}/html ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL}/${DISTNAME} && \
+	  cd ${LOCALBASE}/${GHC_LIB_DOCSDIR_REL} && \
+	  ${RM} -f doc-index*.html && ./gen_contents_index') >> ${TMPPLIST}
+.endif
+
 .endif # !METAPORT

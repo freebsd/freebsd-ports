@@ -14,6 +14,5 @@ USE_CABAL=	ansi-terminal>=0.4.0
 
 CONFIGURE_ARGS+=	--flags="-Example"
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
