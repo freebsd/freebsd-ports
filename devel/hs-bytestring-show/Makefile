@@ -10,6 +10,5 @@ COMMENT=	Efficient conversion of values into readable byte strings
 
 LICENSE=	BSD
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

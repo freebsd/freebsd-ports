@@ -13,6 +13,5 @@ LICENSE=	LGPL21
 
 USE_CABAL=	HUnit mtl QuickCheck>=2.1.0.3 random
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

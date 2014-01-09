@@ -12,6 +12,5 @@ LICENSE=	LGPL21
 
 USE_CABAL=	text
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

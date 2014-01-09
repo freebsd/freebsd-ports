@@ -19,7 +19,6 @@ OPTIONS_DEFAULT=	XINERAMA
 
 XINERAMA_DESC=	Build with Xinerama support
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MXINERAMA}

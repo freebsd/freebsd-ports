@@ -137,6 +137,5 @@ USE_CABAL=	aeson==0.6.1.0_4 \
 		zlib-bindings==0.1.1.3_3 \
 		zlib-conduit==1.0.0_3
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

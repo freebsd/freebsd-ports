@@ -14,6 +14,5 @@ USE_CABAL=	regex-base>=0.93
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

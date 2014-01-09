@@ -11,6 +11,5 @@ COMMENT=	Access to the BSD sysctl(3) interface
 
 LICENSE=	BSD
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -10,6 +10,5 @@ COMMENT=	Type classes generalizing the functionality of the 'monad-par' library
 
 LICENSE=	BSD
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

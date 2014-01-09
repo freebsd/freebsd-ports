@@ -16,6 +16,5 @@ USE_CABAL=	attoparsec>=0.10 attoparsec-conduit>=1.0 blaze-builder>=0.2 \
 		resourcet>=0.3 system-filepath>=0.4 text>=0.7 \
 		transformers>=0.2 xml-types>=0.3.3
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -15,6 +15,5 @@ RUN_DEPENDS=	bibutils>=5.0:${PORTSDIR}/textproc/bibutils
 
 USE_CABAL=	syb
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

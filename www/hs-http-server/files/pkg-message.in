@@ -1,5 +1,8 @@
-  You have installed the directory:
+
+------------------------------------------------------------------------
+Note that the examples have been installed into this directory:
 
     %%EXAMPLESDIR%%
 
-  you'll have to install the port converters/hs-json to use it.
+The port converters/hs-json has to be installed in order to use them.
+------------------------------------------------------------------------

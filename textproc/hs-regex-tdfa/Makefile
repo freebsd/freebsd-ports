@@ -10,6 +10,5 @@ COMMENT=	Replaces/Enhances Text.Regex
 
 USE_CABAL=	mtl parsec regex-base>=0.93.1
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
