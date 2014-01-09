@@ -13,11 +13,11 @@ PKGNAMESUFFIX=	-engine
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Gtk+ 3.0 engine
 
+LICENSE=	LGPL3
+
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		pkgconfig
+USES=		pkgconfig gmake
 USE_GNOME=	cairo glib20 gtk30
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
