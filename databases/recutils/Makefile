@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recutils
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	databases
 MASTER_SITES=	GNU
 
@@ -11,32 +11,21 @@ COMMENT=	Tools and libraries to access human-editable, plain text databases
 
 LICENSE=	GPLv3
 
-OPTIONS_DEFINE=	NLS DOCS
-
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		charsetfix
 
-INFO=		${PORTNAME}
-MAN1=		csv2rec.1 rec2csv.1 recdel.1 recfix.1 recfmt.1 recinf.1 \
-		recins.1 recsel.1 recset.1
-PORTDOCS=	ChangeLog NEWS README
+INFO=		rec-mode recutils
+PORTDOCS=	AUTHORS ChangeLog NEWS README
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=		gettext
+NLS_CONFIGURE_OFF=	--disable-nls
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
