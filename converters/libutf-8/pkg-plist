@@ -1,3 +1,8 @@
 include/utf-8.h
 lib/libutf-8.so
 lib/libutf-8.so.1
+man/man3/fgetu8.3.gz
+man/man3/fputu8.3.gz
+man/man3/libutf-8.3.gz
+man/man3/sgetu8.3.gz
+man/man3/sputu8.3.gz
