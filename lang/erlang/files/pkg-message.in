@@ -5,7 +5,4 @@ You can find an emacs mode for Erlang here:
 
     %%LOCALBASE%%/lib/erlang/lib/tools-%%TOOLS_VSN%%/emacs
 
-You may wish to add the following line to /etc/manpath.config:
-
-OPTIONAL_MANPATH	%%LOCALBASE%%/lib/erlang/man
 ===========================================================================

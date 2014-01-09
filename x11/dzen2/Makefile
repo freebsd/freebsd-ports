@@ -17,29 +17,16 @@ PLIST_FILES=	bin/${PORTNAME}
 OPTIONS_DEFINE=	XPM XINERAMA
 OPTIONS_DEFAULT=	XPM XINERAMA
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+LDFLAGS=	-L${LOCALBASE}/lib
+CFLAGS=		-I${LOCALBASE}/include
+XPM_USE=	XORG=xpm
+XPM_CFLAGS=	-DDZEN_XPM
+XPM_LDFLAGS=	-lXpm
+XINERAMA_USE=	XORG=xinerama
+XINERAMA_LDFLAGS=	-lXinerama
+XINERAMA_CLAGS=	-DDZEN_XINERAMA
 
-.if ${PORT_OPTIONS:MXPM}
-USE_XORG+=	xpm
-.endif
-
-.if ${PORT_OPTIONS:MXINERAMA}
-USE_XORG+=	xinerama
-.endif
-
-post-patch:
-.if ${PORT_OPTIONS:MXPM}
-	${REINPLACE_CMD} -e 's/^LIBS =\(.*\)$$/LIBS =\1 -lXpm/g'	\
-	  	-e 's/^CFLAGS =\(.*\)$$/CFLAGS =\1 -DDZEN_XPM/g'	\
-		${WRKSRC}/config.mk
-.endif
-.if ${PORT_OPTIONS:MXINERAMA}
-	${REINPLACE_CMD} -e 's/^LIBS =\(.*\)$$/LIBS =\1 -lXinerama/g'	\
-	  	-e 's/^CFLAGS =\(.*\)$$/CFLAGS =\1 -DDZEN_XINERAMA/g'	\
-		${WRKSRC}/config.mk
-.endif
-	${REINPLACE_CMD} -e 's,/usr/X11R6,${LOCALBASE},g'       \
-		${WRKSRC}/config.mk
+MAKE_ARGS=	LDFLAGS="${LDFLAGS} \$${LIBS}" \
+		CFLAGS="${CFLAGS} ${INCS} -DVERSION=\\\"\$${VERSION}\\\""
 
 .include <bsd.port.mk>

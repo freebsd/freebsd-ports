@@ -18,7 +18,6 @@ GH_ACCOUNT=	buganini
 GH_COMMIT=	992e2d3
 
 MAKE_ARGS=	PREFIX=${PREFIX}
-NO_STAGE=	yes
 
 PLIST_FILES=	bin/bug5
 

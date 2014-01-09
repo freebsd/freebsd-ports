@@ -1,0 +1,41 @@
+--- py/config/Make.rules.orig	2013-03-11 15:19:47.000000000 +0000
++++ py/config/Make.rules	2013-05-20 14:21:13.335195726 +0000
+@@ -12,7 +12,8 @@
+ # if it does not exist.
+ #
+ 
+-prefix			?= /opt/Ice-$(VERSION)
++ICE_HOME		= %%LOCALBASE%%
++prefix			?= %%PREFIX%%
+ 
+ #
+ # The "root directory" for runpath embedded in executables. Can be unset
+@@ -96,8 +97,8 @@
+ 
+ libdir                  = $(top_srcdir)/python
+ ifneq ($(prefix), /usr)
+-install_pythondir       = $(prefix)/python
+-install_libdir          = $(prefix)/python
++install_pythondir       = %%PYTHON_SITELIBDIR%%/Ice
++install_libdir          = %%PYTHON_SITELIBDIR%%/Ice
+ else
+     ifeq ($(shell test -d $(prefix)/$(libsubdir)/$(PYTHON_VERSION)/dist-packages && echo 0),0)
+         install_pythondir       = $(prefix)/$(libsubdir)/$(PYTHON_VERSION)/dist-packages
+@@ -128,7 +129,7 @@
+     ICE_LIB_DIR = -L$(ice_dir)/$(libsubdir)
+     ICE_FLAGS	= -I$(ice_dir)/include
+ endif
+-ICE_LIBS = $(ICE_LIB_DIR) -lIce -lSlice -lIceUtil
++ICE_LIBS = $(ICE_LIB_DIR) -lIce -lSlice -lIceUtil %%ICONV_LIB%%
+ 
+ ifneq ($(embedded_runpath_prefix),)
+    runpath_libdir	:= $(embedded_runpath_prefix)/$(libsubdir)
+@@ -167,7 +167,7 @@
+ 
+ all:: $(SRCS)
+ 
+-%_ice.py: $(slicedir)/%.ice
++%_ice.py: $(ICE_HOME)/%.ice
+ 	rm -f $(*F).py
+ 	$(SLICE2PY) $(SLICE2PYFLAGS) $<
+ 

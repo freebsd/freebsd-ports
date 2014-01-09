@@ -12,12 +12,25 @@ lib/librec.a
 lib/librec.la
 lib/librec.so
 lib/librec.so.0
+man/man1/csv2rec.1.gz
+man/man1/rec2csv.1.gz
+man/man1/recdel.1.gz
+man/man1/recfix.1.gz
+man/man1/recfmt.1.gz
+man/man1/recinf.1.gz
+man/man1/recins.1.gz
+man/man1/recsel.1.gz
+man/man1/recset.1.gz
 share/emacs/site-lisp/ob-rec.el
 share/emacs/site-lisp/rec-mode.el
 %%NLS%%share/locale/de/LC_MESSAGES/recutils.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/recutils.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/recutils.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/recutils.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/recutils.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/recutils.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/recutils.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/recutils.mo
 share/recutils/etc/FSD.rec
 @dirrm share/recutils/etc
 @dirrm share/recutils

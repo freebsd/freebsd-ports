@@ -22,7 +22,6 @@ USES=		cmake gettext pkgconfig
 USE_GNOME=	intltool
 INSTALLS_ICONS=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${LN} -s ${_DISTDIR}/model.text.${MDVER}.tar.gz ${WRKSRC}/data
 

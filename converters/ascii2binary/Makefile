@@ -19,11 +19,10 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-PLIST_FILES=	bin/ascii2binary bin/binary2ascii
+PLIST_FILES=	bin/ascii2binary bin/binary2ascii \
+		man/man1/ascii2binary.1.gz \
+		man/man1/binary2ascii.1.gz
 
-MAN1=		ascii2binary.1 binary2ascii.1
-
-NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|" ${WRKSRC}/Makefile.in
 

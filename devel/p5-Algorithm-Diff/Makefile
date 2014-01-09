@@ -13,7 +13,4 @@ COMMENT=	Perl interface to compute differences between two objects
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Algorithm::Diff.3 Algorithm::DiffOld.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

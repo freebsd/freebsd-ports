@@ -23,8 +23,7 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 USE_CXXSTD=	gnu++0x
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		pkgconfig compiler:c++11-lib
+USES=		gmake pkgconfig compiler:c++11-lib
 CONFIGURE_ENV=	FLTK_CONFIG="${LOCALBASE}/bin/fltk-config" \
 		    EXTRA_LIBS="-lexecinfo"
 MAN1=		fldigi.1

@@ -10,14 +10,11 @@ MASTER_SITE_SUBDIR=	jkoshy
 DISTNAME=	sgrep-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A `grep' for structured text like SGML and HTML
+COMMENT=	Grep for structured text like SGML and HTML
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 
 CONFLICTS=	sgrep-0.*
 
-MAN1=		sgrep.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

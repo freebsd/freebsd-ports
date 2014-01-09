@@ -1,3 +1,5 @@
-bin/catgconf
-sbin/radsecproxy
+bin/radsecproxy-conf
 etc/radsecproxy.conf-example
+man/man1/radsecproxy-hash.1.gz
+man/man1/radsecproxy.1.gz
+sbin/radsecproxy

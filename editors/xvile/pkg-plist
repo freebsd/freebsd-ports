@@ -88,6 +88,7 @@ lib/vile/vile-xq-filt%%SO_EXT%%
 lib/vile/vile-xres-filt%%SO_EXT%%
 lib/vile/vile-xs-filt%%SO_EXT%%
 lib/vile/vile-yacc-filt%%SO_EXT%%
+man/man1/xvile.1.gz
 share/applications/lxvile.desktop
 share/applications/uxvile.desktop
 share/applications/xvile.desktop

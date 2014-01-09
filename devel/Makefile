@@ -159,6 +159,7 @@
     SUBDIR += bullet
     SUBDIR += bunny
     SUBDIR += busybee
+    SUBDIR += byacc
     SUBDIR += byaccj
     SUBDIR += bzapi
     SUBDIR += bzr
@@ -1146,7 +1147,6 @@
     SUBDIR += linux-kmod-compat
     SUBDIR += linux_kdump
     SUBDIR += lion
-    SUBDIR += llvm
     SUBDIR += llvm-devel
     SUBDIR += llvm31
     SUBDIR += llvm32

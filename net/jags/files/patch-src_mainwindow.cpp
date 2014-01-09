@@ -1,5 +1,5 @@
---- src/mainwindow.cpp.orig	2008-09-16 14:27:01.000000000 +0200
-+++ src/mainwindow.cpp	2008-09-16 14:58:48.000000000 +0200
+--- ./src/mainwindow.cpp.orig	2003-09-04 23:14:54.000000000 +0200
++++ ./src/mainwindow.cpp	2014-01-08 10:20:11.000000000 +0100
 @@ -299,6 +299,8 @@
    gchar *workgroup = NULL, *command = NULL, *comment = NULL, *comment2 = NULL;
    gint h;

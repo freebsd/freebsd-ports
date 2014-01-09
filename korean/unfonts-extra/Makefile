@@ -18,5 +18,4 @@ FONTLIST=	UnJamoBatang \
 
 MASTERDIR=	${.CURDIR}/../unfonts-core
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

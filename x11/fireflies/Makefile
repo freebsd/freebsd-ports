@@ -10,7 +10,7 @@ MASTER_SITES=	http://somewhere.fscked.org/proj/fireflies/files/
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	Extension of xscreensaver
 
-LIB_DEPENDS=	gfx:${PORTSDIR}/graphics/libgfx
+LIB_DEPENDS=	libgfx.so:${PORTSDIR}/graphics/libgfx
 
 GNU_CONFIGURE=	yes
 USE_GL=		yes
@@ -26,5 +26,4 @@ MAKE_ARGS=	CONFIGURE_ENV=${CONFIGURE_ENV:Q} \
 		CONFIGURE_SCRIPT=${CONFIGURE_SCRIPT:Q} \
 		CONFIGURE_ARGS=${CONFIGURE_ARGS:Q}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

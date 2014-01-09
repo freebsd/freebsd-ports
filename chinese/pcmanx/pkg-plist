@@ -1,6 +1,6 @@
 bin/pcmanx
+man/man1/pcmanx.1.gz
 share/applications/pcmanx.desktop
-share/pixmaps/pcmanx.svg
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pcmanx.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pcmanx.mo
 %%DATADIR%%/emoticons
@@ -11,6 +11,7 @@ share/pixmaps/pcmanx.svg
 %%DATADIR%%/nancy_bot/example_msg.data
 %%DATADIR%%/nancy_bot/example_usages.data
 %%DATADIR%%/sitelist
-@dirrmtry %%DATADIR%%/nancy_bot
+share/pixmaps/pcmanx.svg
 @dirrmtry %%DATADIR%%/script
+@dirrmtry %%DATADIR%%/nancy_bot
 @dirrmtry %%DATADIR%%

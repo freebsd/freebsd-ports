@@ -17,5 +17,4 @@ MAKE_ARGS=	INSTDIR="${PREFIX}"
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

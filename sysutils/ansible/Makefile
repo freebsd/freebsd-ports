@@ -1,9 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	ansible
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	sysutils python
-MASTER_SITES=	http://ansibleworks.com/releases/
+MASTER_SITES=	http://ansibleworks.com/releases/ \
+		http://releases.ansible.com/ansible/
 
 MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Simple ssh-based configuration management and orchestration system

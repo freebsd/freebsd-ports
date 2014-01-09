@@ -14,15 +14,13 @@ COMMENT=	Rotates a file so that lines become columns and vice versa
 ALL_TARGET=	${PORTNAME}
 CFLAGS+=	-Wno-return-type
 
-MAN1=		rot.1
-PLIST_FILES=	bin/rot
+PLIST_FILES=	bin/rot man/man1/rot.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} "s:^CFLAGS=:#CFLAGS=:" ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rot ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/rot.man ${MAN1PREFIX}/man/man1/rot.1
+	${INSTALL_PROGRAM} ${WRKSRC}/rot ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/rot.man ${STAGEDIR}${MAN1PREFIX}/man/man1/rot.1
 
 .include <bsd.port.mk>

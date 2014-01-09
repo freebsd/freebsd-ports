@@ -13,7 +13,4 @@ COMMENT=	Extremely fast configuration file parser
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Config::Fast.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

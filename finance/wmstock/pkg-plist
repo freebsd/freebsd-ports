@@ -1,2 +1,3 @@
 bin/wmstock
 bin/getquote
+man/man1/wmstock.1.gz

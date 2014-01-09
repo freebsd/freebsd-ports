@@ -1,3 +1,0 @@
-#!/bin/sh
-
-exec %%PREFIX%%/bin/erl -pa %%LOCALBASE%%/lib/erlang/lib/esdl/ebin -smp disable -run wings_start start_halt "$@"

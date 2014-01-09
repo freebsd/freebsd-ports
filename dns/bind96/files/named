@@ -98,14 +98,7 @@ named_prestart()
 		chown ${named_uid}:${named_uid} ${pidfile%/pid}
 	fi
 
-	command_args="-u ${named_uid:=root}"
-
-	if [ ! "$named_conf" = '/etc/namedb/named.conf' ]; then
-		case "$named_flags" in
-		-c*|*' -c'*) ;;		# No need to add it
-		*) command_args="-c $named_conf $command_args" ;;
-		esac
-	fi
+	command_args="-u ${named_uid:=root} -c $named_conf $command_args"
 
 	local line nsip firstns
 

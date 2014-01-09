@@ -1,0 +1,349 @@
+bin/rex
+bin/rexify
+%%PERL5_MAN3%%/Rex.3.gz
+%%PERL5_MAN3%%/Rex::Box::Amazon.3.gz
+%%PERL5_MAN3%%/Rex::Box::Base.3.gz
+%%PERL5_MAN3%%/Rex::Box::VBox.3.gz
+%%PERL5_MAN3%%/Rex::CMDB.3.gz
+%%PERL5_MAN3%%/Rex::Commands.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Box.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Cloud.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Cron.3.gz
+%%PERL5_MAN3%%/Rex::Commands::DB.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Download.3.gz
+%%PERL5_MAN3%%/Rex::Commands::File.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Fs.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Gather.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Host.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Inventory.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Iptables.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Kernel.3.gz
+%%PERL5_MAN3%%/Rex::Commands::LVM.3.gz
+%%PERL5_MAN3%%/Rex::Commands::MD5.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Network.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Partition.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Pkg.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Process.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Rsync.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Run.3.gz
+%%PERL5_MAN3%%/Rex::Commands::SCM.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Service.3.gz
+%%PERL5_MAN3%%/Rex::Commands::SimpleCheck.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Sync.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Sysctl.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Tail.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Upload.3.gz
+%%PERL5_MAN3%%/Rex::Commands::User.3.gz
+%%PERL5_MAN3%%/Rex::Commands::Virtualization.3.gz
+%%PERL5_MAN3%%/Rex::Config.3.gz
+%%PERL5_MAN3%%/Rex::FS::File.3.gz
+%%PERL5_MAN3%%/Rex::Group::Lookup::File.3.gz
+%%PERL5_MAN3%%/Rex::Group::Lookup::INI.3.gz
+%%PERL5_MAN3%%/Rex::Hardware.3.gz
+%%PERL5_MAN3%%/Rex::Helper::SSH2::Expect.3.gz
+%%PERL5_MAN3%%/Rex::Logger.3.gz
+%%PERL5_MAN3%%/Rex::Task.3.gz
+%%PERL5_MAN3%%/Rex::Template.3.gz
+%%PERL5_MAN3%%/Rex::Transaction.3.gz
+%%PERL5_MAN3%%/Rex::Virtualization::LibVirt.3.gz
+%%PERL5_MAN3%%/Rex::Virtualization::VBox.3.gz
+%%SITE_PERL%%/Rex.pm
+%%SITE_PERL%%/Rex/Args.pm
+%%SITE_PERL%%/Rex/Args/Integer.pm
+%%SITE_PERL%%/Rex/Args/Single.pm
+%%SITE_PERL%%/Rex/Args/String.pm
+%%SITE_PERL%%/Rex/Batch.pm
+%%SITE_PERL%%/Rex/Box.pm
+%%SITE_PERL%%/Rex/Box/Amazon.pm
+%%SITE_PERL%%/Rex/Box/Base.pm
+%%SITE_PERL%%/Rex/Box/VBox.pm
+%%SITE_PERL%%/Rex/CLI.pm
+%%SITE_PERL%%/Rex/CMDB.pm
+%%SITE_PERL%%/Rex/CMDB/YAML.pm
+%%SITE_PERL%%/Rex/Cloud.pm
+%%SITE_PERL%%/Rex/Cloud/Amazon.pm
+%%SITE_PERL%%/Rex/Cloud/Base.pm
+%%SITE_PERL%%/Rex/Cloud/Jiffybox.pm
+%%SITE_PERL%%/Rex/Commands.pm
+%%SITE_PERL%%/Rex/Commands/Box.pm
+%%SITE_PERL%%/Rex/Commands/Cloud.pm
+%%SITE_PERL%%/Rex/Commands/Cron.pm
+%%SITE_PERL%%/Rex/Commands/DB.pm
+%%SITE_PERL%%/Rex/Commands/Download.pm
+%%SITE_PERL%%/Rex/Commands/File.pm
+%%SITE_PERL%%/Rex/Commands/Fs.pm
+%%SITE_PERL%%/Rex/Commands/Gather.pm
+%%SITE_PERL%%/Rex/Commands/Host.pm
+%%SITE_PERL%%/Rex/Commands/Inventory.pm
+%%SITE_PERL%%/Rex/Commands/Iptables.pm
+%%SITE_PERL%%/Rex/Commands/Kernel.pm
+%%SITE_PERL%%/Rex/Commands/LVM.pm
+%%SITE_PERL%%/Rex/Commands/MD5.pm
+%%SITE_PERL%%/Rex/Commands/Network.pm
+%%SITE_PERL%%/Rex/Commands/Partition.pm
+%%SITE_PERL%%/Rex/Commands/Pkg.pm
+%%SITE_PERL%%/Rex/Commands/Process.pm
+%%SITE_PERL%%/Rex/Commands/Rsync.pm
+%%SITE_PERL%%/Rex/Commands/Run.pm
+%%SITE_PERL%%/Rex/Commands/SCM.pm
+%%SITE_PERL%%/Rex/Commands/Service.pm
+%%SITE_PERL%%/Rex/Commands/SimpleCheck.pm
+%%SITE_PERL%%/Rex/Commands/Sync.pm
+%%SITE_PERL%%/Rex/Commands/Sysctl.pm
+%%SITE_PERL%%/Rex/Commands/Tail.pm
+%%SITE_PERL%%/Rex/Commands/Upload.pm
+%%SITE_PERL%%/Rex/Commands/User.pm
+%%SITE_PERL%%/Rex/Commands/Virtualization.pm
+%%SITE_PERL%%/Rex/Commands/templates/append_if_no_such_line.tpl.pl
+%%SITE_PERL%%/Rex/Config.pm
+%%SITE_PERL%%/Rex/Cron.pm
+%%SITE_PERL%%/Rex/Cron/Base.pm
+%%SITE_PERL%%/Rex/Cron/Linux.pm
+%%SITE_PERL%%/Rex/Cron/SunOS.pm
+%%SITE_PERL%%/Rex/Exporter.pm
+%%SITE_PERL%%/Rex/FS/File.pm
+%%SITE_PERL%%/Rex/File/Parser/Data.pm
+%%SITE_PERL%%/Rex/File/Parser/Ini.pm
+%%SITE_PERL%%/Rex/Fork/Manager.pm
+%%SITE_PERL%%/Rex/Fork/Task.pm
+%%SITE_PERL%%/Rex/Group.pm
+%%SITE_PERL%%/Rex/Group/Entry/Server.pm
+%%SITE_PERL%%/Rex/Group/Lookup/File.pm
+%%SITE_PERL%%/Rex/Group/Lookup/INI.pm
+%%SITE_PERL%%/Rex/Hardware.pm
+%%SITE_PERL%%/Rex/Hardware/Host.pm
+%%SITE_PERL%%/Rex/Hardware/Kernel.pm
+%%SITE_PERL%%/Rex/Hardware/Memory.pm
+%%SITE_PERL%%/Rex/Hardware/Network.pm
+%%SITE_PERL%%/Rex/Hardware/Network/FreeBSD.pm
+%%SITE_PERL%%/Rex/Hardware/Network/Linux.pm
+%%SITE_PERL%%/Rex/Hardware/Network/NetBSD.pm
+%%SITE_PERL%%/Rex/Hardware/Network/OpenBSD.pm
+%%SITE_PERL%%/Rex/Hardware/Network/Solaris.pm
+%%SITE_PERL%%/Rex/Hardware/Swap.pm
+%%SITE_PERL%%/Rex/Hardware/VirtInfo.pm
+%%SITE_PERL%%/Rex/Helper/Array.pm
+%%SITE_PERL%%/Rex/Helper/Encode.pm
+%%SITE_PERL%%/Rex/Helper/Hash.pm
+%%SITE_PERL%%/Rex/Helper/INI.pm
+%%SITE_PERL%%/Rex/Helper/Path.pm
+%%SITE_PERL%%/Rex/Helper/Run.pm
+%%SITE_PERL%%/Rex/Helper/SSH2.pm
+%%SITE_PERL%%/Rex/Helper/SSH2/Expect.pm
+%%SITE_PERL%%/Rex/Helper/System.pm
+%%SITE_PERL%%/Rex/Interface/Cache.pm
+%%SITE_PERL%%/Rex/Interface/Cache/Base.pm
+%%SITE_PERL%%/Rex/Interface/Cache/YAML.pm
+%%SITE_PERL%%/Rex/Interface/Connection.pm
+%%SITE_PERL%%/Rex/Interface/Connection/Base.pm
+%%SITE_PERL%%/Rex/Interface/Connection/Fake.pm
+%%SITE_PERL%%/Rex/Interface/Connection/HTTP.pm
+%%SITE_PERL%%/Rex/Interface/Connection/HTTPS.pm
+%%SITE_PERL%%/Rex/Interface/Connection/Local.pm
+%%SITE_PERL%%/Rex/Interface/Connection/OpenSSH.pm
+%%SITE_PERL%%/Rex/Interface/Connection/SSH.pm
+%%SITE_PERL%%/Rex/Interface/Exec.pm
+%%SITE_PERL%%/Rex/Interface/Exec/Base.pm
+%%SITE_PERL%%/Rex/Interface/Exec/HTTP.pm
+%%SITE_PERL%%/Rex/Interface/Exec/Local.pm
+%%SITE_PERL%%/Rex/Interface/Exec/OpenSSH.pm
+%%SITE_PERL%%/Rex/Interface/Exec/SSH.pm
+%%SITE_PERL%%/Rex/Interface/Exec/Sudo.pm
+%%SITE_PERL%%/Rex/Interface/Executor.pm
+%%SITE_PERL%%/Rex/Interface/Executor/Base.pm
+%%SITE_PERL%%/Rex/Interface/Executor/Default.pm
+%%SITE_PERL%%/Rex/Interface/File.pm
+%%SITE_PERL%%/Rex/Interface/File/Base.pm
+%%SITE_PERL%%/Rex/Interface/File/HTTP.pm
+%%SITE_PERL%%/Rex/Interface/File/Local.pm
+%%SITE_PERL%%/Rex/Interface/File/OpenSSH.pm
+%%SITE_PERL%%/Rex/Interface/File/SSH.pm
+%%SITE_PERL%%/Rex/Interface/File/Sudo.pm
+%%SITE_PERL%%/Rex/Interface/Fs.pm
+%%SITE_PERL%%/Rex/Interface/Fs/Base.pm
+%%SITE_PERL%%/Rex/Interface/Fs/HTTP.pm
+%%SITE_PERL%%/Rex/Interface/Fs/Local.pm
+%%SITE_PERL%%/Rex/Interface/Fs/OpenSSH.pm
+%%SITE_PERL%%/Rex/Interface/Fs/SSH.pm
+%%SITE_PERL%%/Rex/Interface/Fs/Sudo.pm
+%%SITE_PERL%%/Rex/Interface/Shell.pm
+%%SITE_PERL%%/Rex/Interface/Shell/Ash.pm
+%%SITE_PERL%%/Rex/Interface/Shell/Bash.pm
+%%SITE_PERL%%/Rex/Interface/Shell/Csh.pm
+%%SITE_PERL%%/Rex/Interface/Shell/Default.pm
+%%SITE_PERL%%/Rex/Interface/Shell/Sh.pm
+%%SITE_PERL%%/Rex/Interface/Shell/Zsh.pm
+%%SITE_PERL%%/Rex/Inventory.pm
+%%SITE_PERL%%/Rex/Inventory/Bios.pm
+%%SITE_PERL%%/Rex/Inventory/DMIDecode.pm
+%%SITE_PERL%%/Rex/Inventory/DMIDecode/BaseBoard.pm
+%%SITE_PERL%%/Rex/Inventory/DMIDecode/Bios.pm
+%%SITE_PERL%%/Rex/Inventory/DMIDecode/CPU.pm
+%%SITE_PERL%%/Rex/Inventory/DMIDecode/Memory.pm
+%%SITE_PERL%%/Rex/Inventory/DMIDecode/MemoryArray.pm
+%%SITE_PERL%%/Rex/Inventory/DMIDecode/Section.pm
+%%SITE_PERL%%/Rex/Inventory/DMIDecode/SystemInformation.pm
+%%SITE_PERL%%/Rex/Inventory/HP/ACU.pm
+%%SITE_PERL%%/Rex/Inventory/Hal.pm
+%%SITE_PERL%%/Rex/Inventory/Hal/Object.pm
+%%SITE_PERL%%/Rex/Inventory/Hal/Object/Net.pm
+%%SITE_PERL%%/Rex/Inventory/Hal/Object/Storage.pm
+%%SITE_PERL%%/Rex/Inventory/Hal/Object/Volume.pm
+%%SITE_PERL%%/Rex/Inventory/SMBios.pm
+%%SITE_PERL%%/Rex/Inventory/SMBios/BaseBoard.pm
+%%SITE_PERL%%/Rex/Inventory/SMBios/Bios.pm
+%%SITE_PERL%%/Rex/Inventory/SMBios/CPU.pm
+%%SITE_PERL%%/Rex/Inventory/SMBios/Memory.pm
+%%SITE_PERL%%/Rex/Inventory/SMBios/MemoryArray.pm
+%%SITE_PERL%%/Rex/Inventory/SMBios/Section.pm
+%%SITE_PERL%%/Rex/Inventory/SMBios/SystemInformation.pm
+%%SITE_PERL%%/Rex/Logger.pm
+%%SITE_PERL%%/Rex/Output.pm
+%%SITE_PERL%%/Rex/Output/JUnit.pm
+%%SITE_PERL%%/Rex/Pkg.pm
+%%SITE_PERL%%/Rex/Pkg/ALT.pm
+%%SITE_PERL%%/Rex/Pkg/Base.pm
+%%SITE_PERL%%/Rex/Pkg/Debian.pm
+%%SITE_PERL%%/Rex/Pkg/FreeBSD.pm
+%%SITE_PERL%%/Rex/Pkg/Gentoo.pm
+%%SITE_PERL%%/Rex/Pkg/Mageia.pm
+%%SITE_PERL%%/Rex/Pkg/NetBSD.pm
+%%SITE_PERL%%/Rex/Pkg/OpenBSD.pm
+%%SITE_PERL%%/Rex/Pkg/OpenWrt.pm
+%%SITE_PERL%%/Rex/Pkg/Redhat.pm
+%%SITE_PERL%%/Rex/Pkg/SuSE.pm
+%%SITE_PERL%%/Rex/Pkg/SunOS.pm
+%%SITE_PERL%%/Rex/Pkg/SunOS/OpenCSW.pm
+%%SITE_PERL%%/Rex/Pkg/SunOS/pkg.pm
+%%SITE_PERL%%/Rex/Pkg/Ubuntu.pm
+%%SITE_PERL%%/Rex/Profiler.pm
+%%SITE_PERL%%/Rex/Report.pm
+%%SITE_PERL%%/Rex/Report/Base.pm
+%%SITE_PERL%%/Rex/Report/YAML.pm
+%%SITE_PERL%%/Rex/SCM/Git.pm
+%%SITE_PERL%%/Rex/SCM/Subversion.pm
+%%SITE_PERL%%/Rex/Service.pm
+%%SITE_PERL%%/Rex/Service/ALT.pm
+%%SITE_PERL%%/Rex/Service/ALT/systemd.pm
+%%SITE_PERL%%/Rex/Service/Debian.pm
+%%SITE_PERL%%/Rex/Service/FreeBSD.pm
+%%SITE_PERL%%/Rex/Service/Gentoo.pm
+%%SITE_PERL%%/Rex/Service/Mageia.pm
+%%SITE_PERL%%/Rex/Service/NetBSD.pm
+%%SITE_PERL%%/Rex/Service/OpenBSD.pm
+%%SITE_PERL%%/Rex/Service/OpenWrt.pm
+%%SITE_PERL%%/Rex/Service/Redhat.pm
+%%SITE_PERL%%/Rex/Service/Redhat/systemd.pm
+%%SITE_PERL%%/Rex/Service/SuSE.pm
+%%SITE_PERL%%/Rex/Service/SuSE/systemd.pm
+%%SITE_PERL%%/Rex/Service/SunOS.pm
+%%SITE_PERL%%/Rex/Service/SunOS/svcadm.pm
+%%SITE_PERL%%/Rex/Service/Ubuntu.pm
+%%SITE_PERL%%/Rex/Shared/Var.pm
+%%SITE_PERL%%/Rex/Shared/Var/Array.pm
+%%SITE_PERL%%/Rex/Shared/Var/Hash.pm
+%%SITE_PERL%%/Rex/Shared/Var/Scalar.pm
+%%SITE_PERL%%/Rex/Sudo/File.pm
+%%SITE_PERL%%/Rex/Task.pm
+%%SITE_PERL%%/Rex/TaskList.pm
+%%SITE_PERL%%/Rex/TaskList/Base.pm
+%%SITE_PERL%%/Rex/Template.pm
+%%SITE_PERL%%/Rex/Transaction.pm
+%%SITE_PERL%%/Rex/User.pm
+%%SITE_PERL%%/Rex/User/FreeBSD.pm
+%%SITE_PERL%%/Rex/User/Linux.pm
+%%SITE_PERL%%/Rex/User/NetBSD.pm
+%%SITE_PERL%%/Rex/User/OpenBSD.pm
+%%SITE_PERL%%/Rex/User/OpenWrt.pm
+%%SITE_PERL%%/Rex/User/SunOS.pm
+%%SITE_PERL%%/Rex/Value.pm
+%%SITE_PERL%%/Rex/Virtualization.pm
+%%SITE_PERL%%/Rex/Virtualization/Base.pm
+%%SITE_PERL%%/Rex/Virtualization/LibVirt.pm
+%%SITE_PERL%%/Rex/Virtualization/LibVirt/blklist.pm
+%%SITE_PERL%%/Rex/Virtualization/LibVirt/clone.pm
+%%SITE_PERL%%/Rex/Virtualization/LibVirt/create.pm
+%%SITE_PERL%%/Rex/Virtualization/LibVirt/delete.pm
+%%SITE_PERL%%/Rex/Virtualization/LibVirt/destroy.pm
+%%SITE_PERL%%/Rex/Virtualization/LibVirt/dumpxml.pm
+%%SITE_PERL%%/Rex/Virtualization/LibVirt/guestinfo.pm
+%%SITE_PERL%%/Rex/Virtualization/LibVirt/hypervisor.pm
+%%SITE_PERL%%/Rex/Virtualization/LibVirt/iflist.pm
+%%SITE_PERL%%/Rex/Virtualization/LibVirt/info.pm
+%%SITE_PERL%%/Rex/Virtualization/LibVirt/list.pm
+%%SITE_PERL%%/Rex/Virtualization/LibVirt/option.pm
+%%SITE_PERL%%/Rex/Virtualization/LibVirt/reboot.pm
+%%SITE_PERL%%/Rex/Virtualization/LibVirt/shutdown.pm
+%%SITE_PERL%%/Rex/Virtualization/LibVirt/start.pm
+%%SITE_PERL%%/Rex/Virtualization/LibVirt/vncdisplay.pm
+%%SITE_PERL%%/Rex/Virtualization/VBox.pm
+%%SITE_PERL%%/Rex/Virtualization/VBox/bridge.pm
+%%SITE_PERL%%/Rex/Virtualization/VBox/create.pm
+%%SITE_PERL%%/Rex/Virtualization/VBox/delete.pm
+%%SITE_PERL%%/Rex/Virtualization/VBox/destroy.pm
+%%SITE_PERL%%/Rex/Virtualization/VBox/forward_port.pm
+%%SITE_PERL%%/Rex/Virtualization/VBox/guestinfo.pm
+%%SITE_PERL%%/Rex/Virtualization/VBox/import.pm
+%%SITE_PERL%%/Rex/Virtualization/VBox/info.pm
+%%SITE_PERL%%/Rex/Virtualization/VBox/list.pm
+%%SITE_PERL%%/Rex/Virtualization/VBox/option.pm
+%%SITE_PERL%%/Rex/Virtualization/VBox/reboot.pm
+%%SITE_PERL%%/Rex/Virtualization/VBox/share_folder.pm
+%%SITE_PERL%%/Rex/Virtualization/VBox/shutdown.pm
+%%SITE_PERL%%/Rex/Virtualization/VBox/start.pm
+%%SITE_PERL%%/Rex/Virtualization/VBox/status.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Rex/.packlist
+man/man1/rex.1.gz
+man/man1/rexify.1.gz
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rex
+@dirrmtry %%SITE_PERL%%/Rex/Virtualization/VBox
+@dirrmtry %%SITE_PERL%%/Rex/Virtualization/LibVirt
+@dirrmtry %%SITE_PERL%%/Rex/Virtualization
+@dirrmtry %%SITE_PERL%%/Rex/User
+@dirrmtry %%SITE_PERL%%/Rex/TaskList
+@dirrmtry %%SITE_PERL%%/Rex/Sudo
+@dirrmtry %%SITE_PERL%%/Rex/Shared/Var
+@dirrmtry %%SITE_PERL%%/Rex/Shared
+@dirrmtry %%SITE_PERL%%/Rex/Service/SunOS
+@dirrmtry %%SITE_PERL%%/Rex/Service/SuSE
+@dirrmtry %%SITE_PERL%%/Rex/Service/Redhat
+@dirrmtry %%SITE_PERL%%/Rex/Service/ALT
+@dirrmtry %%SITE_PERL%%/Rex/Service
+@dirrmtry %%SITE_PERL%%/Rex/SCM
+@dirrmtry %%SITE_PERL%%/Rex/Report
+@dirrmtry %%SITE_PERL%%/Rex/Pkg/SunOS
+@dirrmtry %%SITE_PERL%%/Rex/Pkg
+@dirrmtry %%SITE_PERL%%/Rex/Output
+@dirrmtry %%SITE_PERL%%/Rex/Inventory/SMBios
+@dirrmtry %%SITE_PERL%%/Rex/Inventory/Hal/Object
+@dirrmtry %%SITE_PERL%%/Rex/Inventory/Hal
+@dirrmtry %%SITE_PERL%%/Rex/Inventory/HP
+@dirrmtry %%SITE_PERL%%/Rex/Inventory/DMIDecode
+@dirrmtry %%SITE_PERL%%/Rex/Inventory
+@dirrmtry %%SITE_PERL%%/Rex/Interface/Shell
+@dirrmtry %%SITE_PERL%%/Rex/Interface/Fs
+@dirrmtry %%SITE_PERL%%/Rex/Interface/File
+@dirrmtry %%SITE_PERL%%/Rex/Interface/Executor
+@dirrmtry %%SITE_PERL%%/Rex/Interface/Exec
+@dirrmtry %%SITE_PERL%%/Rex/Interface/Connection
+@dirrmtry %%SITE_PERL%%/Rex/Interface/Cache
+@dirrmtry %%SITE_PERL%%/Rex/Interface
+@dirrmtry %%SITE_PERL%%/Rex/Helper/SSH2
+@dirrmtry %%SITE_PERL%%/Rex/Helper
+@dirrmtry %%SITE_PERL%%/Rex/Hardware/Network
+@dirrmtry %%SITE_PERL%%/Rex/Hardware
+@dirrmtry %%SITE_PERL%%/Rex/Group/Lookup
+@dirrmtry %%SITE_PERL%%/Rex/Group/Entry
+@dirrmtry %%SITE_PERL%%/Rex/Group
+@dirrmtry %%SITE_PERL%%/Rex/Fork
+@dirrmtry %%SITE_PERL%%/Rex/File/Parser
+@dirrmtry %%SITE_PERL%%/Rex/File
+@dirrmtry %%SITE_PERL%%/Rex/FS
+@dirrmtry %%SITE_PERL%%/Rex/Cron
+@dirrmtry %%SITE_PERL%%/Rex/Commands/templates
+@dirrmtry %%SITE_PERL%%/Rex/Commands
+@dirrmtry %%SITE_PERL%%/Rex/Cloud
+@dirrmtry %%SITE_PERL%%/Rex/CMDB
+@dirrmtry %%SITE_PERL%%/Rex/Box
+@dirrmtry %%SITE_PERL%%/Rex/Args
+@dirrmtry %%SITE_PERL%%/Rex

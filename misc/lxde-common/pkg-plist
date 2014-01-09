@@ -8,6 +8,9 @@ etc/xdg/lxsession/LXDE/desktop.conf.sample
 @unexec if cmp -s %D/etc/xdg/pcmanfm/LXDE/pcmanfm.conf %D/etc/xdg/pcmanfm/LXDE/pcmanfm.conf.sample; then rm -f %D/etc/xdg/pcmanfm/LXDE/pcmanfm.conf; fi
 etc/xdg/pcmanfm/LXDE/pcmanfm.conf.sample
 @exec if [ ! -f %D/etc/xdg/pcmanfm/LXDE/pcmanfm.conf ] ; then cp -p %D/%F %B/pcmanfm.conf; fi
+man/man1/lxde-logout.1.gz
+man/man1/openbox-lxde.1.gz
+man/man1/startlxde.1.gz
 share/applications/lxde-logout.desktop
 share/lxde/images/logout-banner.png
 share/lxde/images/lxde-icon.png

@@ -1,18 +1,18 @@
---- ./misc/Makefile.in.orig	2013-04-22 01:05:50.000000000 +0200
-+++ ./misc/Makefile.in	2013-06-27 00:38:52.000000000 +0200
+--- ./misc/Makefile.in.orig	2013-12-26 06:26:22.000000000 +0100
++++ ./misc/Makefile.in	2014-01-06 23:26:48.000000000 +0100
 @@ -28,15 +28,15 @@
  
  SPROGS=		mke2fs badblocks tune2fs dumpe2fs $(BLKID_PROG) logsave \
  			$(E2IMAGE_PROG) @FSCK_PROG@ e2undo
 -USPROGS=	mklost+found filefrag e2freefrag $(UUIDD_PROG) $(E4DEFRAG_PROG)
-+USPROGS=	mklost+found e2freefrag $(E4DEFRAG_PROG)
++USPROGS=	mklost+found e2freefrag $(UUIDD_PROG) $(E4DEFRAG_PROG)
  SMANPAGES=	tune2fs.8 mklost+found.8 mke2fs.8 dumpe2fs.8 badblocks.8 \
  			e2label.8 $(FINDFS_MAN) $(BLKID_MAN) $(E2IMAGE_MAN) \
 -			logsave.8 filefrag.8 e2freefrag.8 e2undo.8 \
 -			$(UUIDD_MAN) $(E4DEFRAG_MAN) @FSCK_MAN@
 +			logsave.8 e2freefrag.8 e2undo.8 \
 +			$(E4DEFRAG_MAN) @FSCK_MAN@
- FMANPAGES=	mke2fs.conf.5
+ FMANPAGES=	mke2fs.conf.5 ext4.5
  
 -UPROGS=		chattr lsattr @UUID_CMT@ uuidgen
 -UMANPAGES=	chattr.1 lsattr.1 @UUID_CMT@ uuidgen.1
@@ -21,7 +21,7 @@
  
  LPROGS=		@E2INITRD_PROG@
  
-@@ -124,14 +124,14 @@
+@@ -125,14 +125,14 @@
  
  mke2fs.conf: $(srcdir)/mke2fs.conf.in
  	if test -f $(srcdir)/mke2fs.conf.custom.in ; then \
@@ -39,9 +39,9 @@
  		>  default_profile.c
  profile.o:
  	$(E) "	CC $<"
-@@ -488,34 +488,9 @@
- 		$(ES) "	INSTALL_DATA $(man5dir)/$$i"; \
- 		$(INSTALL_DATA) $$i $(DESTDIR)$(man5dir)/$$i; \
+@@ -498,34 +498,9 @@
+ 		(cd $(DESTDIR)$(man5dir); \
+ 			$(LN) $(LINK_INSTALL_FLAGS) ext4.5 $$i.5); \
  	done
 -	$(Q) if test -f $(DESTDIR)$(root_sysconfdir)/mke2fs.conf; then \
 -		if cmp -s $(DESTDIR)$(root_sysconfdir)/mke2fs.conf \

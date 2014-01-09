@@ -18,8 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libmiracl.a:${PORTSDIR}/math/miracl
 RUN_DEPENDS=	xchat:${PORTSDIR}/irc/xchat
 
 USE_ZIP=	yes
+USES=		dos2unix
 NO_WRKSUBDIR=	yes
-USE_DOS2UNIX=	yes
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 CCFLAGS+=	-Wall -O2 -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

@@ -55,6 +55,32 @@ bin/xgettext-perl
 %%SITE_PERL%%/Log/Report/Win32Locale.pod
 %%SITE_PERL%%/Log/Report/messages/log-report.utf-8.po
 %%SITE_PERL%%/Log/Report/messages/log-report/nl_NL.po
+%%PERL5_MAN3%%/Log::Report.3.gz
+%%PERL5_MAN3%%/Log::Report::Die.3.gz
+%%PERL5_MAN3%%/Log::Report::Dispatcher.3.gz
+%%PERL5_MAN3%%/Log::Report::Dispatcher::Callback.3.gz
+%%PERL5_MAN3%%/Log::Report::Dispatcher::File.3.gz
+%%PERL5_MAN3%%/Log::Report::Dispatcher::Log4perl.3.gz
+%%PERL5_MAN3%%/Log::Report::Dispatcher::LogDispatch.3.gz
+%%PERL5_MAN3%%/Log::Report::Dispatcher::Perl.3.gz
+%%PERL5_MAN3%%/Log::Report::Dispatcher::Syslog.3.gz
+%%PERL5_MAN3%%/Log::Report::Dispatcher::Try.3.gz
+%%PERL5_MAN3%%/Log::Report::Exception.3.gz
+%%PERL5_MAN3%%/Log::Report::Extract.3.gz
+%%PERL5_MAN3%%/Log::Report::Extract::PerlPPI.3.gz
+%%PERL5_MAN3%%/Log::Report::Extract::Template.3.gz
+%%PERL5_MAN3%%/Log::Report::Lexicon::Index.3.gz
+%%PERL5_MAN3%%/Log::Report::Lexicon::MOTcompact.3.gz
+%%PERL5_MAN3%%/Log::Report::Lexicon::PO.3.gz
+%%PERL5_MAN3%%/Log::Report::Lexicon::POT.3.gz
+%%PERL5_MAN3%%/Log::Report::Lexicon::POTcompact.3.gz
+%%PERL5_MAN3%%/Log::Report::Lexicon::Table.3.gz
+%%PERL5_MAN3%%/Log::Report::Message.3.gz
+%%PERL5_MAN3%%/Log::Report::Translator.3.gz
+%%PERL5_MAN3%%/Log::Report::Translator::Gettext.3.gz
+%%PERL5_MAN3%%/Log::Report::Translator::POT.3.gz
+%%PERL5_MAN3%%/Log::Report::Util.3.gz
+%%PERL5_MAN3%%/Log::Report::Win32Locale.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Report
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log
 @dirrmtry %%SITE_PERL%%/Log/Report/messages/log-report

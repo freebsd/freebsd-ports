@@ -1,8 +1,10 @@
 @comment $FreeBSD$
 bin/cless
 bin/clesskey
-share/cless.hlp
+man/man1/cless.1.gz
+man/man1/clesskey.1.gz
 share/cless.bg5
 share/cless.gb
-%%PORTDOCS%%share/doc/cless/README.CLESS
-%%PORTDOCS%%@dirrm share/doc/cless
+share/cless.hlp
+%%PORTDOCS%%%%DOCSDIR%%/README.CLESS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

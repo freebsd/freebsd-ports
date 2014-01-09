@@ -13,14 +13,4 @@ COMMENT=	Easy, automatic, specification-based tests
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Test::LectroTest.3 \
-		Test::LectroTest::Compat.3 \
-		Test::LectroTest::FailureRecorder.3 \
-		Test::LectroTest::Generator.3 \
-		Test::LectroTest::Property.3 \
-		Test::LectroTest::RegressionTesting.3 \
-		Test::LectroTest::TestRunner.3 \
-		Test::LectroTest::Tutorial.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

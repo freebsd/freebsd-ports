@@ -8,6 +8,16 @@ bin/abc2ly
 bin/convert-ly
 bin/etf2ly
 bin/midi2ly
+man/man1/lilymidi.1.gz
+man/man1/lilypond-book.1.gz
+man/man1/lilypond-invoke-editor.1.gz
+man/man1/lilypond.1.gz
+man/man1/lilysong.1.gz
+man/man1/convert-ly.1.gz
+man/man1/abc2ly.1.gz
+man/man1/etf2ly.1.gz
+man/man1/midi2ly.1.gz
+man/man1/musicxml2ly.1.gz
 lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/fonts/otf/CenturySchL-Bold.otf
 %%DATADIR%%/%%PORTVERSION%%/fonts/otf/CenturySchL-BoldItal.otf
@@ -222,6 +232,7 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/python/rational.pyc
 %%DATADIR%%/%%PORTVERSION%%/python/safeeval.py
 %%DATADIR%%/%%PORTVERSION%%/python/safeeval.pyc
+%%DATADIR%%/%%PORTVERSION%%/scm/accreg.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/auto-beam.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/autochange.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/backend-library.scm
@@ -300,7 +311,9 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/scm/ps-to-png.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/safe-lily.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/safe-utility-defs.scm
+%%DATADIR%%/%%PORTVERSION%%/scm/scheme-engravers.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/script.scm
+%%DATADIR%%/%%PORTVERSION%%/scm/skyline.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/song-util.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/song.scm
 %%DATADIR%%/%%PORTVERSION%%/scm/standalone.scm
@@ -328,6 +341,7 @@ share/emacs/site-lisp/lilypond-mode.el
 share/emacs/site-lisp/lilypond-song.el
 share/emacs/site-lisp/lilypond-what-beat.el
 share/emacs/site-lisp/lilypond-words.el
+%%NLS%%share/locale/ca/LC_MESSAGES/lilypond.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/lilypond.mo
 %%NLS%%share/locale/da/LC_MESSAGES/lilypond.mo
 %%NLS%%share/locale/de/LC_MESSAGES/lilypond.mo

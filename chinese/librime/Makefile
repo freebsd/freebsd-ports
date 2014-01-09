@@ -30,7 +30,6 @@ post-patch:     .SILENT
 	${FIND} ${WRKSRC} \( -name '*.cc' -or -name '*.h' \) \
 		-exec ${PERL} -i -pe '$$. == 1 && s/^\xef\xbb\xbf//;' '{}' \;
 
-NO_STAGE=	yes
 post-build:
 	@echo "building rime data."
 	@${MKDIR} ${DATASRC}
@@ -39,8 +38,8 @@ post-build:
 	${WRKSRC}/bin/rime_deployer --build ${DATASRC}
 
 post-install:
-	${MKDIR} ${DATADIR}/data
-	${INSTALL_DATA} ${DATASRC}/*.kct ${DATASRC}/*.bin ${DATADIR}/data/
+	${MKDIR} ${STAGEDIR}${DATADIR}/data
+	${INSTALL_DATA} ${DATASRC}/*.kct ${DATASRC}/*.bin ${STAGEDIR}${DATADIR}/data/
 
 PROJECTHOST=	rimeime
 DATA_VER=	0.16

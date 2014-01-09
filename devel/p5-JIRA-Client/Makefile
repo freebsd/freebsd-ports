@@ -8,8 +8,8 @@ MASTER_SITES=	GOOGLE_CODE \
 		LOCAL/glarkin
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An extended interface to JIRA's SOAP API
+MAINTAINER=	perl@FreeBSD.org
+COMMENT=	Extended interface to JIRA's SOAP API
 
 RUN_DEPENDS=	p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
 BUILD_DEPENDS:=	${RUN_DEPENDS}
@@ -18,7 +18,4 @@ USES=		perl5
 USE_PERL5=	configure
 PROJECTHOST=	jira-client
 
-MAN3=		JIRA::Client.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

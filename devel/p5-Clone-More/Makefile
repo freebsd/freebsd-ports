@@ -15,7 +15,4 @@ USE_PERL5=	configure
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAN3=		Clone::More.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	gnutls
 PORTVERSION=	2.12.23
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security net
 MASTER_SITES=	\
 	ftp://ftp.gnutls.org/gcrypt/gnutls/v${PORTVERSION:C/.[0-9]+$//}/
@@ -19,7 +19,8 @@ LIB_DEPENDS=	nettle:${PORTSDIR}/security/nettle \
 
 CONFLICTS=	gnutls-devel-[0-9]*
 
-USES=		pathfix pkgconfig iconv
+USES=		pathfix pkgconfig iconv gmake perl5
+USE_PERL5=	build
 USE_BZIP2=	yes
 USE_GNOME=	ltverhack
 GNU_CONFIGURE=	yes

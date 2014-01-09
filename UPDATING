@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140107:
+  AFFECTS: users of Qt 4 ports
+  AUTHOR: makc@FreeBSD.org
+
+  Qt 4 ports framework has been reworked, several ports have been renamed.
+  To ease upgrading run the following set of commands:
+
+  # pkg set -o devel/qt4-declarative:x11-toolkits/qt4-declarative
+  # pkg set -o devel/qt4-qtestlib:devel/qt4-testlib
+  # pkg set -o textproc/qt4-clucene:textproc/clucene-qt4
+  # pkg set -o www/qt4-webkit:www/webkit-qt4
+  # pkg set -o x11/qt4-opengl:graphics/qt4-opengl
+
 20140102:
   AFFECTS: users of archivers/p7zip
   AUTHOR: rakuco@FreeBSD.org

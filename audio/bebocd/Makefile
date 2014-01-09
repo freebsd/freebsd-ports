@@ -12,6 +12,9 @@ COMMENT=	GTK2 CD Player
 
 LIB_DEPENDS=	libcdaudio.so:${PORTSDIR}/audio/libcdaudio
 
+DEPRECATED=	abandoned by mainstream
+EXPIRATION_DATE=	2014-02-08
+
 USE_XORG=	x11
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	gtk20

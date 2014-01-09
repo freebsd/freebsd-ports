@@ -41,7 +41,7 @@ do-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "data ghosts jar" \
 		${STAGEDIR}${DATADIR})
 .for d in hiscores.dat log4j.properties
-	${INSTALL_DATA} ${WRKSRC}/${d} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DATADIR}
 .endfor
 
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \

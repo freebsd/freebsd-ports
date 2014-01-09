@@ -2,8 +2,8 @@ lib/fcitx/fcitx-chewing.so
 share/fcitx/addon/fcitx-chewing.conf
 share/fcitx/configdesc/fcitx-chewing.desc
 share/fcitx/inputmethod/chewing.conf
-share/fcitx/skin/default/chewing.png
 share/fcitx/skin/classic/chewing.png
 share/fcitx/skin/dark/chewing.png
+share/fcitx/skin/default/chewing.png
 share/locale/zh_CN/LC_MESSAGES/fcitx-chewing.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx-chewing.mo

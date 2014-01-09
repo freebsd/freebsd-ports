@@ -2,6 +2,9 @@ bin/mytool
 bin/uniconv
 bin/uniprint
 bin/yudit
+man/man1/mytool.1.gz
+man/man1/uniconv.1.gz
+man/man1/uniprint.1.gz
 %%DATADIR%%/config/yudit.properties
 %%DATADIR%%/data/ASCII-IPA.my
 %%DATADIR%%/data/ArabTeX.my

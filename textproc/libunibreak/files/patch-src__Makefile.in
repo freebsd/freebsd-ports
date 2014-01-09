@@ -1,0 +1,15 @@
+--- ./src/Makefile.in.bak	2013-09-28 20:29:36.000000000 +1100
++++ ./src/Makefile.in	2014-01-07 16:23:21.180600044 +1100
+@@ -521,9 +521,9 @@
+ 
+ 
+ install-exec-hook:
+-	- [ -f ${libdir}/libunibreak.a ] && \
+-	rm -f ${libdir}/liblinebreak.a && \
+-	${LN_S} ${libdir}/libunibreak.a ${libdir}/liblinebreak.a
++#	- [ -f ${libdir}/libunibreak.a ] && \
++#	rm -f ${libdir}/liblinebreak.a && \
++#	${LN_S} ${libdir}/libunibreak.a ${libdir}/liblinebreak.a
+ 
+ distclean-local:
+ 	rm -f LineBreak.txt WordBreakData.txt filter_dup${EXEEXT}

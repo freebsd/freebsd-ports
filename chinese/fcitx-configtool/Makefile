@@ -22,7 +22,6 @@ USES=		cmake gettext pkgconfig
 OPTIONS_DEFINE=	GTK2 GTK3
 OPTIONS_DEFAULT=GTK2
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}

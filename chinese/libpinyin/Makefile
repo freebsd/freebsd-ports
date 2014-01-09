@@ -9,9 +9,6 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Library to deal with pinyin
 
-MAN1=		libpinyin.1 gen_binary_files.1 gen_unigram.1 \
-		import_interpolation.1
-
 USE_BDB=	yes
 USE_GNOME=	glib20
 USES=		gettext gmake pathfix pkgconfig
@@ -25,7 +22,6 @@ CONFIGURE_ARGS+=CPPFLAGS="-I${LOCALBASE}/include \
 
 PLIST_SUB+=	VER=${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800107

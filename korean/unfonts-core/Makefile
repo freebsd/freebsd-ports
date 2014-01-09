@@ -14,7 +14,7 @@ COMMENT=	GPL'd Korean TrueType Fonts by UN Koaunghi (${FONTCAT})
 LICENSE=	GPLv2
 LICENSE_FILE=	${FILESDIR}/COPYING
 
-BUILD_DEPENDS+=	${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+BUILD_DEPENDS=	${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 DISTINFO_FILE=	${PKGDIR}/distinfo.${FONTCAT}-ttf
@@ -34,30 +34,18 @@ FONTLIST?=	UnBatang \
 		UnGungseo \
 		UnPilgi \
 		UnPilgiBold
+FONTFILES=	${FONTLIST:S/$/.ttf/} fonts.dir fonts.scale
 
-PLIST_DIRS=	${FONTSDIR}
-.for f in ${FONTLIST}
-PLIST_FILES+=	${FONTSDIR}/${f}.ttf
-.endfor
-PLIST_FILES+=	${FONTSDIR}/fonts.dir \
-		${FONTSDIR}/fonts.scale
-
-NO_STAGE=	yes
 do-build:
 	${LOCALBASE}/bin/mkfontscale ${WRKSRC}
 	${LOCALBASE}/bin/mkfontdir ${WRKSRC}
 
 do-install:
-	${MKDIR} ${PREFIX}/${FONTSDIR}
-.for f in ${FONTLIST}
-	${INSTALL_DATA} ${WRKSRC}/${f}.ttf ${PREFIX}/${FONTSDIR}
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/fonts.dir ${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/fonts.scale ${PREFIX}/${FONTSDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}
+	${INSTALL_DATA} ${FONTFILES:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/${FONTSDIR}
 
 post-install:
 	@${ECHO_CMD} "@exec fc-cache -s %D/${FONTSDIR} 2>/dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec fc-cache -s %D/${FONTSDIR} 2>/dev/null || true" >> ${TMPPLIST}
-	@-${LOCALBASE}/bin/fc-cache -s ${PREFIX}/${FONTSDIR} 2>/dev/null
 
 .include <bsd.port.mk>

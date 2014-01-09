@@ -14,10 +14,7 @@ COMMENT=	Set autoflush from the command line
 BUILD_DEPENDS=	p5-IO-CaptureOutput>0:${PORTSDIR}/devel/p5-IO-CaptureOutput
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=		Devel::Autoflush.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -10,21 +10,19 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compressing X protocol proxy designed to support X11 over slow links
 
-LIB_DEPENDS=	lzo2.2:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USE_XORG=	x11
 USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}
+MAKE_ARGS=	INSTALL="${INSTALL_PROGRAM}" \
+		bindir=${STAGEDIR}${PREFIX}/bin \
+		man1dir=${STAGEDIR}${MAN1PREFIX}/man/man1
 
-MAN1=		dxpc.1
-PLIST_FILES=	bin/dxpc
-
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e \
-		'/bindir/s|(INSTALL)|(INSTALL_PROGRAM)|g' ${WRKSRC}/Makefile.in
+PLIST_FILES=	bin/dxpc \
+		man/man1/dxpc.1.gz
 
 .include <bsd.port.mk>

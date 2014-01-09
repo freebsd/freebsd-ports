@@ -2,27 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	mawk
-PORTVERSION=	1.3.3
+DISTVERSION=	1.3.4-20131226
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.fu-berlin.de/unix/languages/mawk/ \
-		ftp://ftp.whidbey.net/pub/brennan/
+MASTER_SITES=	ftp://invisible-island.net/${PORTNAME}/
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ota@j.email.ne.jp
-COMMENT=	An implementation of new/posix awk
+MAINTAINER=	bapt@FreeBSD.org
+COMMENT=	Interpreter for the AWK Programming Language
+
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	MATHLIB="-lm"
-ALL_TARGET=	${PORTNAME}
 
-MAN1=		mawk.1
-PLIST_FILES=	bin/mawk
-
-regression-test: build
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} mawk_test fpe_test
-
-NO_STAGE=	yes
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mawk ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/mawk.1 ${MANPREFIX}/man/man1
+PLIST_FILES=	bin/mawk \
+		man/man1/mawk.1.gz
 
 .include <bsd.port.mk>

@@ -1,9 +1,0 @@
---- ./CMakeLists.txt.orig	2013-09-26 11:13:19.000000000 +0200
-+++ ./CMakeLists.txt	2013-10-16 15:10:00.000000000 +0200
-@@ -106,5 +106,5 @@
- if(BUILD_OWNCLOUD_OSX_BUNDLE)
-     configure_file(sync-exclude.lst ${OWNCLOUD_OSX_BUNDLE}/Contents/Resources/sync-exclude.lst COPYONLY)
- else()
--    install( FILES sync-exclude.lst DESTINATION ${SYSCONFDIR}/${APPLICATION_SHORTNAME} )
-+    install( FILES sync-exclude.lst DESTINATION ${SYSCONFDIR}/${APPLICATION_SHORTNAME} RENAME sync-exclude.lst.sample )
- endif()

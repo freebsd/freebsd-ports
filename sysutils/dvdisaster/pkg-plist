@@ -1,27 +1,11 @@
 bin/dvdisaster
-bin/dvdisaster-uninstall.sh
-locale/cs/LC_MESSAGES/dvdisaster.mo
-locale/de/LC_MESSAGES/dvdisaster.mo
-locale/it/LC_MESSAGES/dvdisaster.mo
-locale/ru/LC_MESSAGES/dvdisaster.mo
-locale/sv/LC_MESSAGES/dvdisaster.mo
-locale/pt_BR/LC_MESSAGES/dvdisaster.mo
-@dirrm locale/pt_BR/LC_MESSAGES
-@dirrm locale/pt_BR
-@dirrm locale/sv/LC_MESSAGES
-@dirrm locale/sv
-@dirrm locale/ru/LC_MESSAGES
-@dirrm locale/ru
-@dirrm locale/it/LC_MESSAGES
-@dirrm locale/it
-@dirrm locale/de/LC_MESSAGES
-@dirrm locale/de
-@dirrm locale/cs/LC_MESSAGES
-@dirrm locale/cs
-@dirrmtry locale
-@dirrmtry man/it/man1
-@dirrmtry man/it
-@dirrmtry man/de/man1
-@dirrmtry man/de
-@dirrmtry man/cs/man1
-@dirrmtry man/cs
+man/cs/man1/dvdisaster.1.gz
+man/de/man1/dvdisaster.1.gz
+man/it/man1/dvdisaster.1.gz
+man/man1/dvdisaster.1.gz
+%%NLS%%share/locale/cs/LC_MESSAGES/dvdisaster.mo
+%%NLS%%share/locale/de/LC_MESSAGES/dvdisaster.mo
+%%NLS%%share/locale/it/LC_MESSAGES/dvdisaster.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/dvdisaster.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/dvdisaster.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/dvdisaster.mo

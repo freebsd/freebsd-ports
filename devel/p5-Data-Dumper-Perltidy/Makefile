@@ -15,7 +15,4 @@ RUN_DEPENDS=	perltidy:${PORTSDIR}/devel/p5-Perl-Tidy
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Data::Dumper::Perltidy.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

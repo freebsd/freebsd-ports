@@ -11,29 +11,34 @@ COMMENT=	Hangul X Input Method for Everywhere
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	hangul:${PORTSDIR}/korean/libhangul
+LIB_DEPENDS=	libhangul.so:${PORTSDIR}/korean/libhangul
 
-USE_GMAKE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig
+USES=		gmake pathfix pkgconfig
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	NLS
+OPTIONS_RADIO=	LAYOUT
+OPTIONS_RADIO_LAYOUT=	LAYOUT_390 LAYOUT_FINAL
+LAYOUT_DESC=	Select 3-beolsik layout (default: 2-beolsik)
+LAYOUT_390_DESC=	3-beolsik 390 keyboard
+LAYOUT_FINAL_DESC=	3-beolsik final keyboard
+OPTIONS_SUB=	NLS
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-PLIST_SUB=	NLS=""
-.else
-PLIST_SUB=	NLS="@comment "
 .endif
 
-.if defined(WITH_LAYOUT_390)
+.if ${PORT_OPTIONS:MLAYOUT_390}
 CONFIGURE_ARGS=	--with-default-keyboard=39
-.elif defined(WITH_LAYOUT_3FINAL)
+.elif ${PORT_OPTIONS:MLAYOUT_FINAL}
 CONFIGURE_ARGS=	--with-default-keyboard=3f
+.else
+CONFIGURE_ARGS=	--with-default-keyboard=2
 .endif
 
 .include <bsd.port.mk>

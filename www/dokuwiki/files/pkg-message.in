@@ -1,13 +1,13 @@
 =================================================================
           	**** NOTE ****
 1) Please add the following to your apache config, and restart.
-    [1;32m#
+    
     # Directives to allow use of dokuwiki
     #
-    Alias /%%PORTNAME%% "%%WWWDIR%%/"[m
+    Alias /%%PORTNAME%% "%%WWWDIR%%/
 
 2) Open the following page in your browser and follow the instructions:
-    [1;36mhttp://www.your.host/dokuwiki/install.php[m
+    http://www.your.host/dokuwiki/install.php
 
   For FULL configuration instructions see
   http://wiki.splitbrain.org/wiki:config

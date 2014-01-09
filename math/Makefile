@@ -651,6 +651,7 @@
     SUBDIR += unuran
     SUBDIR += vtk5
     SUBDIR += vtk5-data
+    SUBDIR += vtk6
     SUBDIR += wcalc
     SUBDIR += wfmath
     SUBDIR += wingz

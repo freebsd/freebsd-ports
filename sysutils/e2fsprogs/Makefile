@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	e2fsprogs
-PORTVERSION=	1.42.8
+PORTVERSION=	1.42.9
 PORTREVISION?=	0
 CATEGORIES?=	sysutils
 MASTER_SITES=	KERNEL_ORG/linux/kernel/people/tytso/${PORTNAME}/v${PORTVERSION}
@@ -22,6 +22,7 @@ CONFIGURE_ARGS+=--disable-fsck --disable-e2initrd-helper \
 		--with-root-prefix='${PREFIX}'
 CPPFLAGS+=	-I${WRKSRC}/lib -I${LOCALBASE}/include # -D_EXT2_USE_C_VERSIONS
 MAKE_ARGS+=	LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
+MAKE_ENV+=	CHECK_CMD=@true
 
 .if !defined(MASTERDIR)
 OPTIONS_DEFINE=		DOCS NLS
@@ -120,6 +121,7 @@ post-build:
 	    || { head -n30000 ${WRKSRC}/tests/*.failed 2>/dev/null ; exit 1 ; }
 
 post-install:
+	${RM} -f ${STAGEDIR}${PREFIX}/sbin/uuidd
 	${INSTALL_PROGRAM} ${WRKSRC}/fsck_ext2fs ${STAGEDIR}${PREFIX}/sbin/
 	${INSTALL_MAN} ${FILESDIR}/fsck_ext2fs.8 ${STAGEDIR}${PREFIX}/man/man8/
 .if ${PORT_OPTIONS:MDOCS}

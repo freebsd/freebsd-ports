@@ -8,6 +8,7 @@ bin/escript
 bin/run_erl
 bin/to_erl
 bin/typer
+etc/man.d/erlang.conf
 @comment Insert PLIST here
 @comment -=[ begin PLIST.lib-erlang ]=-
 @comment -=[ end PLIST.lib-erlang ]=-

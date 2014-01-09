@@ -3,6 +3,7 @@
 
 PORTNAME=	modula3
 PORTVERSION=	5.8.6
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://modula3.elegosoft.com/cm3/releng/ \
 		http://downloads.dragonlace.net/m3/ \
@@ -26,6 +27,7 @@ USES=		gmake
 USE_PGSQL=	yes
 USE_XORG=	xaw xmu xext xt sm ice x11
 USE_GL=		gl glu
+USE_GCC=	any
 NO_MTREE=	yes
 
 MAKE_ENV+=	CM3_INSTALL="${STAGEDIR}${PREFIX}" \
@@ -70,11 +72,16 @@ do-extract:
 	@(cd ${WRKDIR} && tar -xf ${DISTDIR}/${BOOTDIST:C/:[^:]+$//})
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
+# Use sed -i instead of ${REINPLACE_CMD} because we don't want .bak files
+# installed in the final product which comes from config-no-install dir.
+	@${SED} -i "" -e 's|/usr/local|${PREFIX}|g' \
 	    -e 's|\\\\$$ORIGIN"|${PREFIX}/lib"|' \
 	    ${WRKSRC}/m3-sys/cminstall/src/config-no-install/FreeBSD.common
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${PREFIX}|g' \
+	@${SED} -i "" -e 's|/usr/X11R6|${PREFIX}|g' \
 	    ${WRKSRC}/m3-sys/cminstall/src/config-no-install/Unix.common
+	@${SED} -i "" -e 's/^SYSTEM_CC = ".* -gs/SYSTEM_CC = "${CC} -gs/' \
+	    ${WRKDIR}/bootstrap/etc/modula3/AMD64_FREEBSD \
+	    ${WRKSRC}/m3-sys/cminstall/src/config-no-install/AMD64_FREEBSD
 
 do-bootstrap:
 	@(cd ${WRKSRC}; ${SETENV} ${M3MAKE_ENV} ${BOOTCM3} SHIP=${TRUE} \

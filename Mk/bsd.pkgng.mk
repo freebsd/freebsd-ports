@@ -41,7 +41,7 @@ create-manifest:
 	@${ECHO_CMD} "version: ${PKGVERSION}" >> ${MANIFESTF}
 	@${ECHO_CMD} "origin: ${PKGORIGIN}" >> ${MANIFESTF}
 	@${ECHO_CMD} "comment: |" >> ${MANIFESTF}
-	@${ECHO_CMD} "  "${COMMENT:Q} >> ${MANIFESTF}
+	@${ECHO_CMD} "  "${COMMENT:Q} | ${AWK} -f ${SCRIPTSDIR}/pkgencode.awk >> ${MANIFESTF}
 	@${ECHO_CMD} "maintainer: ${MAINTAINER}" >> ${MANIFESTF}
 	@${ECHO_CMD} "prefix: ${PREFIX}" >> ${MANIFESTF}
 #.if defined(NO_ARCH)

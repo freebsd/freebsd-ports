@@ -9,7 +9,7 @@ Algorithmic Language Scheme with many extensions:
         Module language.
         Extension package system.
         An Lalr facility.
-        An Object sytem.
+        An Object system.
         A thread library.
         DSSSL support.
         Unicode characters and strings.

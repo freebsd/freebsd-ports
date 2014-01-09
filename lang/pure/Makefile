@@ -3,6 +3,7 @@
 
 PORTNAME=	pure
 PORTVERSION=	0.58
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://cdn.bitbucket.org/purelang/pure-lang/downloads/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz ${PORTNAME}-docs-${PORTVERSION}.tar.gz
@@ -14,9 +15,11 @@ COMMENT=	Modern-style functional programming language
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
+LLVM_VERSION=	32
+
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
 		libmpfr.so:${PORTSDIR}/math/mpfr
-BUILD_DEPENDS=	llvm>=3.2:${PORTSDIR}/devel/llvm
+BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:${PORTSDIR}/devel/llvm${LLVM_VERSION}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 SUB_FILES=	pkg-message
@@ -24,7 +27,8 @@ SUB_FILES=	pkg-message
 USES=		gmake iconv pathfix pkgconfig
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libgmp-prefix=${LOCALBASE} --enable-release
+CONFIGURE_ARGS=	--with-libgmp-prefix=${LOCALBASE} --enable-release \
+		--with-tool-prefix=${LOCALBASE}/llvm${LLVM_VERSION}/bin
 USE_LDCONFIG=	yes
 
 MAKE_ARGS+=	prefix=${PREFIX} mandir=${PREFIX}/man \
@@ -45,8 +49,7 @@ OPTIONS_DEFAULT=	ETC
 
 OPTIONS_SUB=	yes
 
-EMACS_CONFIGURE_ENABLE=		--with-elisp
-EMACS_CONFIGURE_DISABLE=	--without-elisp
+EMACS_CONFIGURE_WITH=	elisp
 
 .include <bsd.port.options.mk>
 
@@ -59,6 +62,12 @@ MAKE_ARGS+=	emacs_prefix=${PREFIX}
 SUB_LIST+=	NOCLANG=""
 .else
 SUB_LIST+=	NOCLANG="@comment "
+.endif
+
+.if ${PORT_OPTIONS:METC}
+SUB_LIST+=	ETC=""
+.else
+SUB_LIST+=	ETC="@comment "
 .endif
 
 # automatically disable readline support if editline support is available

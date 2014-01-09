@@ -9,7 +9,7 @@ MASTER_SITES=	http://rabbit.dereferenced.org/~nenolod/distfiles/ \
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Utility to help to configure compiler and linker flags
 
-LICENSE=	BSD
+LICENSE=	ISCL
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pkg-config-dir=${PREFIX}/libdata/pkgconfig:/usr/libdata/pkgconfig \

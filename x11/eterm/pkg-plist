@@ -2,7 +2,9 @@ bin/Esetroot
 bin/Etbg
 bin/Etbg_update_list
 bin/Etcolors
+@mode 4771
 bin/Eterm
+@mode
 bin/Etsearch
 bin/Ettable
 bin/kEsetroot
@@ -10,6 +12,7 @@ lib/libEterm.a
 lib/libEterm.la
 lib/libEterm.so
 lib/libEterm.so.9
+man/man1/Eterm.1.gz
 share/Eterm/gdb.scr
 share/Eterm/pix/bar_horizontal_1.png
 share/Eterm/pix/bar_horizontal_2.png

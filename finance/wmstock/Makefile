@@ -10,16 +10,15 @@ MASTER_SITES=	http://www.mattfischer.com/wmstock/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cool WindowMaker Dockapp that shows stock ticker(s)
 
+USES=		gmake shebangfix
 USE_XORG=	xpm
+SHEBANG_FILES=	getquote
 
 WRKSRC=		${WRKDIR}/wmstock/src
-USE_GMAKE=	yes
-MAN1=		wmstock.1
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmstock ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/getquote ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/wmstock.1x ${PREFIX}/man/man1/wmstock.1
+	${INSTALL_PROGRAM} ${WRKSRC}/wmstock ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/getquote ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/wmstock.1x ${STAGEDIR}${PREFIX}/man/man1/wmstock.1
 
 .include <bsd.port.mk>

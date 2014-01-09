@@ -20,5 +20,4 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_FILES=	bin/rcc-recode
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -26,8 +26,5 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 DESKTOP_ENTRIES=	"FQTerm" "BBS client" "${PREFIX}/share/FQTerm/pic/fqterm.png" \
 			"fqterm -caption \"%c\" %i %m %u" "Network;Qt;" ""
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
---- cnf/bin/afnix-setup.orig	2013-05-04 18:23:38.000000000 +0200
-+++ cnf/bin/afnix-setup	2013-05-04 18:23:42.000000000 +0200
-@@ -364,7 +364,7 @@ do
-     --pkgman=*)    pkgman="$argopt";;
-     --pkgdoc)      preopt=pkgdoc;;
+--- cnf/bin/afnix-setup.orig	2014-01-02 15:24:19.000000000 +0100
++++ cnf/bin/afnix-setup	2014-01-05 21:12:17.000000000 +0100
+@@ -378,7 +378,7 @@ do
      --pkgdoc=*)    pkgdoc="$argopt";;
+     --pkgwww)      preopt=pkgwww;;
+     --pkgwww=*)    pkgwww="$argopt";;
 -    --compiler)    preopt=compiler;;
 +    --compiler)    preopt=ccname;;
      --compiler=*)  ccname="$argopt";;

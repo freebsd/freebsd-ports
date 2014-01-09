@@ -3,8 +3,10 @@
 
 PORTNAME=	skencil
 PORTVERSION=	1.0.a784
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
+PROJECTHOST=	sk1
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/alpha_rev/}
 
 MAINTAINER=	nemysis@FreeBSD.org
@@ -14,21 +16,20 @@ LICENSE=	LGPL20
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
-		${PYTHON_PKGNAMEPREFIX}reportlab>0:${PORTSDIR}/print/py-reportlab \
+		${PYTHON_PKGNAMEPREFIX}reportlab2>=0:${PORTSDIR}/print/py-reportlab2 \
 		${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYXML}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}alpha
 
-PROJECTHOST=	sk1
 USE_XORG=	x11 xext
 USE_TCL_BUILD=	yes
 USE_TCL=	yes
 USE_TK_BUILD=	yes
 USE_TK=		yes
-USES=		gettext
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 PYDISTUTILS_EGGINFO=	${PORTNAME}-${PORTVERSION:R}alpha-py${PYTHON_VER}.egg-info
 
@@ -37,7 +38,10 @@ CFLAGS+=	-I${TK_INCLUDEDIR} -I${LOCALBASE}/include \
 
 PORTDOCS=	README
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS NLS
+
+NLS_USES=	gettext
+
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -49,10 +53,13 @@ post-patch:
 		 /libraries/s|tcl_ver\])|tcl_ver, 'intl'])|g ; \
 		 s|/usr/share|${PREFIX}/share|g" ${WRKSRC}/setup.py
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+.if ! ${PORT_OPTIONS:MNLS}
+	 @${REINPLACE_CMD} -e 's| + messages_dirs||' \
+		${WRKSRC}/setup.py
 .endif
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

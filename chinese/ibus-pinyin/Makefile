@@ -32,6 +32,12 @@ ANDROID_DB_DESC=	Build Android DB
 OPENPHRASE_DB_DESC=	Build Open Phrase DB
 OPENCC_DESC=		Use opencc
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000024
+USE_GCC=	yes
+.endif
+
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
@@ -78,4 +84,4 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|DATADIRNAME=lib|DATADIRNAME=share|' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

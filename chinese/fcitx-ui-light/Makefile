@@ -21,8 +21,4 @@ USE_GNOME=	intltool
 
 PROJECTHOST=	fcitx
 
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.mk>

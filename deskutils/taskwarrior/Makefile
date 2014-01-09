@@ -12,13 +12,13 @@ COMMENT=	A framework for supercharged task and contact management
 
 WRKSRC=		${WRKDIR}/task-${PORTVERSION}
 
-USES=		cmake:outsource
+USES=		cmake:outsource shebangfix
+SHEBANG_FILES=	scripts/*/*.pl \
+		scripts/*/*.rb \
+		scripts/*/*.py \
+		doc/rc/refresh
 CMAKE_ARGS+=	-DTASK_DOCDIR:STRING=${DATADIR:S/${PREFIX}\///} \
    		-DTASK_MAN1DIR:STRING=man/man1 \
 		-DTASK_MAN5DIR:STRING=man/man5
 
-MAN1=		task.1
-MAN5=		taskrc.5 task-faq.5 task-color.5 task-sync.5 task-tutorial.5
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

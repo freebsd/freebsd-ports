@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	openmsx
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.10.0
 CATEGORIES=	emulators
 MASTER_SITES=	SF
 
@@ -23,6 +22,7 @@ MAKE_ARGS+=	INSTALL_BINARY_DIR=${PREFIX}/bin \
 
 MAKEFILE=	GNUmakefile
 USES=		gmake tcl
+USE_GCC=	4.6+
 USE_GL=		glew
 USE_SDL=	sdl ttf
 USE_PYTHON=	2.5+
@@ -49,10 +49,6 @@ post-patch:
 		${WRKSRC}/build/custom.mk
 
 .include <bsd.port.pre.mk>
-
-.if (${ARCH} == "amd64")
-USE_GCC=	4.2+
-.endif
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on ia64, powerpc, or sparc64: uses i386-specific asm

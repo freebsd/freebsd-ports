@@ -18,7 +18,10 @@ USES=		perl5
 USE_PERL5=	run
 NO_BUILD=	yes
 
-NO_STAGE=	yes
+PLIST_SUB+=	WWWOWN="${WWWOWN}" \
+		WWWGRP="${WWWGRP}" \
+		CHOWN="${CHOWN}"
+
 .include <bsd.port.options.mk>
 
 CONFIGS=	lightsquid.cfg realname.cfg skipuser.cfg group.cfg
@@ -49,37 +52,37 @@ post-patch:
 	@${MV} ${WRKSRC}/group.cfg.src ${WRKSRC}/group.cfg
 
 do-install:
-	${MKDIR} ${DATADIR}/lang
+	${MKDIR} ${STAGEDIR}/${DATADIR}/lang
 	cd ${WRKSRC}/lang && \
 	${FIND} . -type f -regex '.*\.lng' -exec \
-		${INSTALL_DATA} "{}" "${DATADIR}/lang/{}" \;
-	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
+		${INSTALL_DATA} "{}" "${STAGEDIR}/${DATADIR}/lang/{}" \;
+	${MKDIR} ${STAGEDIR}/${PREFIX}/libexec/${PORTNAME}
 	cd ${WRKSRC}/ip2name && \
 	${FIND} . -type f -exec \
-		${INSTALL_DATA} "{}" "${PREFIX}/libexec/${PORTNAME}/{}" \;
-	${MKDIR} ${ETCDIR}
+		${INSTALL_DATA} "{}" "${STAGEDIR}/${PREFIX}/libexec/${PORTNAME}/{}" \;
+	${MKDIR} ${STAGEDIR}/${ETCDIR}
 .for i in ${CONFIGS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${ETCDIR}/${i}.dist
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}/${ETCDIR}/${i}.dist
 .if !exists(${ETCDIR}/${i})
-	${INSTALL_DATA} ${WRKSRC}/${i} ${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}/${ETCDIR}
 .endif
 .endfor
-	${MKDIR} ${WWWDIR}/report
-	${MKDIR} ${WWWDIR}/tpl
+	${MKDIR} ${STAGEDIR}/${WWWDIR}/report
+	${MKDIR} ${STAGEDIR}/${WWWDIR}/tpl
 	cd ${WRKSRC}/tpl && \
 	${FIND} . -type d ! -empty -exec \
-		${MKDIR} "${WWWDIR}/tpl/{}" \; && \
+		${MKDIR} "${STAGEDIR}/${WWWDIR}/tpl/{}" \; && \
 	${FIND} . -type f -exec \
-		${INSTALL_DATA} "{}" "${WWWDIR}/tpl/{}" \;
+		${INSTALL_DATA} "{}" "${STAGEDIR}/${WWWDIR}/tpl/{}" \;
 	cd ${WRKSRC} && \
 	${FIND} -E . -maxdepth 1 -regex '.*\.(cgi|pl)' -exec \
-		${INSTALL_SCRIPT} "{}" "${WWWDIR}/{}" \; && \
-		${INSTALL_DATA} .htaccess ${WWWDIR}/
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+		${INSTALL_SCRIPT} "{}" "${STAGEDIR}/${WWWDIR}/{}" \; && \
+		${INSTALL_DATA} .htaccess ${STAGEDIR}/${WWWDIR}/
+#	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}/${WWWDIR}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}/${DOCSDIR}
 .endfor
 .endif
 

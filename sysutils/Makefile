@@ -389,6 +389,7 @@
     SUBDIR += hoz
     SUBDIR += hpacucli
     SUBDIR += hploscripts
+    SUBDIR += hptcli
     SUBDIR += hs-angel
     SUBDIR += hs-cpu
     SUBDIR += htop
@@ -619,6 +620,7 @@
     SUBDIR += p5-Proc-PidUtil
     SUBDIR += p5-Proclet
     SUBDIR += p5-Quota
+    SUBDIR += p5-Rex
     SUBDIR += p5-Samba-SIDhelper
     SUBDIR += p5-Schedule-At
     SUBDIR += p5-Schedule-Cron

@@ -20,6 +20,9 @@ REDIRECT_SLASH_DESC=	do not require trailing slash on directories
 ENV_FILETYPES_DESC=	get mime types from the environment
 SSL_DESC=		provide SSL support through ucspi-ssl
 
+CONFLICTS=	xshttpd-3*
+LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
+
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 

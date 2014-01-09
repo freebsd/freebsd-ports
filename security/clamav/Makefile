@@ -3,7 +3,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.98
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -44,7 +44,6 @@ IPV6_CONFIGURE_ENABLE=	ipv6
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GCC=	any
 USES=		gmake
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 
@@ -117,7 +116,7 @@ PLIST_SUB+=	CLAMAVUSER=${CLAMAVUSER} \
 
 .if ${PORT_OPTIONS:MLLVM} && ( ${ARCH} == "i386" || ${ARCH} == "amd64" )
 CONFIGURE_ARGS+=--enable-llvm
-. if defined(WITH_TESTS)
+. if ${PORT_OPTIONS:MTESTS}
 USE_PYTHON_BUILD=	yes
 . endif
 .else

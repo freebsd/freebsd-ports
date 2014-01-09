@@ -12,7 +12,7 @@ MAINTAINER?=	olgeni@FreeBSD.org
 COMMENT?=	X11 terminal emulator based on rxvt/xterm
 
 BUILD_DEPENDS=	man2html:${PORTSDIR}/textproc/man2html
-LIB_DEPENDS=	ast:${PORTSDIR}/devel/libast
+LIB_DEPENDS=	libast.so:${PORTSDIR}/devel/libast
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
@@ -24,30 +24,20 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_CSTD=	gnu89
 
-OPTIONS_DEFINE=	MMX
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE_i386=	MMX
 
 USE_XORG=	x11 xt
 USES=		iconv
 USE_EFL=	imlib2
-
-MAN1=		Eterm.1
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MMMX} && (${ARCH} == "i386")
-CONFIGURE_ARGS+=--enable-mmx
-.endif
+MMX_CONFIGURE_ARGS=	--enable-mmx
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 post-install:
-	@${CHMOD} 4711 ${PREFIX}/bin/Eterm
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm_reference.html ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/Eterm_reference.html ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

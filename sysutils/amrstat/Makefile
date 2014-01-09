@@ -10,10 +10,16 @@ MASTER_SITE_SUBDIR=	jkim
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	Utility for LSI Logic's MegaRAID RAID controllers
 
+LICENSE=	BSD2CLAUSE
+
+PLIST_DIRSTRY=	etc/periodic/daily \
+		etc/periodic
+PLIST_FILES=	etc/periodic/daily/407.status-amr-raid \
+		sbin/amrstat
+
 OPTIONS_DEFINE=	MEGARC
 MEGARC_DESC=	Install LSI megarc binary port
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # We may want this for periodic script and to actually be able
@@ -35,9 +41,9 @@ post-extract:
 	${RM} -f ${WRKSRC}/amrstat
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/amrstat ${PREFIX}/sbin
-	${MKDIR} ${PREFIX}/etc/periodic/daily
+	${INSTALL_PROGRAM} ${WRKSRC}/amrstat ${STAGEDIR}${PREFIX}/sbin
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKDIR}/${PERIODICSCRIPT} \
-	    ${PREFIX}/etc/periodic/daily
+	    ${STAGEDIR}${PREFIX}/etc/periodic/daily
 
 .include <bsd.port.mk>

@@ -1,8 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	ImageMagick
-#PORTREVISION=	1
-DISTVERSION=	6.8.8-1
+DISTVERSION=	6.8.0-7
+PORTREVISION=	3
+PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.imagemagick.org/download/ \
 		http://servingzone.com/mirrors/ImageMagick/ \
@@ -30,20 +31,18 @@ MASTER_SITES=	http://www.imagemagick.org/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Image processing tools
 
-LICENSE_NAME=	APACHE20
+LICENSE=	APACHE20
 
 USES=		pkgconfig:both pathfix perl5
 USE_XZ=		yes
-USE_PERL5=	run build patch install
+USE_PERL5=	run build patch
 WANT_GNOME=	yes
 USE_AUTOTOOLS=	libltdl
 NO_STAGE=	yes
 # For some reason, using our libtool breaks the build into pieces:
 #USE_AUTOTOOLS+=	libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared \
-		--without-dps \
-		--without-lcms
+CONFIGURE_ARGS=	--enable-shared --without-dps --without-lcms
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
@@ -62,9 +61,8 @@ OPTIONS_DEFINE=	16BIT_PIXEL BZIP2 DOCS DJVU FFTW FONTCONFIG FPX FREETYPE \
 		OPENEXR OPENMP PANGO PDF PERL PNG SVG TESTS TIFF WEBP WMF \
 		THREADS
 OPTIONS_DEFAULT=	16BIT_PIXEL BZIP2 FFTW FONTCONFIG FPX FREETYPE \
-		JASPER JBIG JPEG LCMS2 LZMA LQR MODULES PDF PNG SVG TIFF \
-		WEBP WMF THREADS
-
+		JASPER JBIG JPEG LCMS2 LZMA LQR MODULES PDF PERL PNG SVG \
+		TIFF WEBP WMF
 16BIT_PIXEL_DESC=	16bit pixel support
 DJVU_DESC=		DJVU format support (needs THREADS)
 GSLIB_DESC=		libgs (Postscript SHLIB) support
@@ -133,10 +131,10 @@ CONFIGURE_ARGS+=	--enable-openmp
 CONFIGURE_ARGS+=	--disable-openmp
 .endif
 
-# Faster, but poor quality
 .if ${PORT_OPTIONS:M16BIT_PIXEL}
 PLIST_SUB+=		QBIT='Q16'
 .else
+# Faster, but poor quality
 CONFIGURE_ARGS+=	--with-quantum-depth=8
 PLIST_SUB+=		QBIT='Q8'
 .endif
@@ -424,8 +422,6 @@ pre-configure:
 post-install: test
 .if ${PORT_OPTIONS:MPERL}
 	@${RM} -f ${PREFIX}/lib/perl5/${PERL_VER}/mach/perllocal.pod
-	${REINPLACE_CMD} '303 s/EXTRALIBS =/EXTRALIBS = -L${LOCALBASE}/lib/perl5/${PERL_VER}/mach/CORE/g' \
-		${WRKSRC}/PerlMagick/Makefile
 .endif
 .if ${PORT_OPTIONS:MMODULES}
 . if ${PORT_OPTIONS:M16BIT_PIXEL}

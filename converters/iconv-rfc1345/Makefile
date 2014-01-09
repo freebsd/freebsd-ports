@@ -12,7 +12,6 @@ COMMENT=	Additional charset modules for the iconv library (from RFC1345)
 
 LIB_DEPENDS=	libbiconv.so:${PORTSDIR}/converters/iconv
 
-USES=		perl5
+USES=		perl5 uidfix
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

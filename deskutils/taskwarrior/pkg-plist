@@ -1,4 +1,10 @@
 bin/task
+man/man1/task.1.gz
+man/man5/taskrc.5.gz
+man/man5/task-faq.5.gz
+man/man5/task-color.5.gz
+man/man5/task-sync.5.gz
+man/man5/task-tutorial.5.gz
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/COPYING
 %%DATADIR%%/ChangeLog

@@ -13,11 +13,9 @@ USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-xim --enable-big5
 
-NO_STAGE=	yes
 post-install:
-	@${CHMOD} 4711 ${PREFIX}/bin/aterm
+	@${CHMOD} 4711 ${STAGEDIR}${PREFIX}/bin/aterm
 
-MAN1=		aterm.1
-PLIST_FILES=	bin/aterm
+PLIST_FILES=	bin/aterm man/man1/aterm.1.gz
 
 .include <bsd.port.mk>

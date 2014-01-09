@@ -6,15 +6,15 @@ lib/librime.so.0
 lib/librime.so.%%VER%%
 libdata/pkgconfig/rime.pc
 share/cmake/rime/RimeConfig.cmake
-share/rime/data/cangjie5.prism.bin
-share/rime/data/cangjie5.reverse.bin
-share/rime/data/cangjie5.table.bin
-share/rime/data/essay.kct
-share/rime/data/luna_pinyin.prism.bin
-share/rime/data/luna_pinyin.reverse.bin
-share/rime/data/luna_pinyin.table.bin
-share/rime/data/luna_pinyin_fluency.prism.bin
-share/rime/data/luna_pinyin_simp.prism.bin
-@dirrmtry share/rime/data
-@dirrmtry share/rime
+%%DATADIR%%/data/cangjie5.prism.bin
+%%DATADIR%%/data/cangjie5.reverse.bin
+%%DATADIR%%/data/cangjie5.table.bin
+%%DATADIR%%/data/essay.kct
+%%DATADIR%%/data/luna_pinyin.prism.bin
+%%DATADIR%%/data/luna_pinyin.reverse.bin
+%%DATADIR%%/data/luna_pinyin.table.bin
+%%DATADIR%%/data/luna_pinyin_fluency.prism.bin
+%%DATADIR%%/data/luna_pinyin_simp.prism.bin
+@dirrmtry %%DATADIR%%/data
+@dirrmtry %%DATADIR%%
 @dirrm share/cmake/rime

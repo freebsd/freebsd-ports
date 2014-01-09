@@ -2,67 +2,69 @@
 # $FreeBSD$
 
 PORTNAME=	lilypond
-PORTVERSION=	2.16.1
+PORTVERSION=	2.18.0
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	The GNU music typesetter
 
+LICENSE=	GPLv3
+
 BUILD_DEPENDS=	pdftexi2dvi:${PORTSDIR}/print/texinfo \
 		t1ascii:${PORTSDIR}/print/t1utils \
 		bash:${PORTSDIR}/shells/bash \
+		convert:${PORTSDIR}/graphics/ImageMagick \
+		dblatex:${PORTSDIR}/textproc/dblatex \
 		fontforge:${PORTSDIR}/print/fontforge \
+		help2man:${PORTSDIR}/misc/help2man \
+		pngtopnm:${PORTSDIR}/graphics/netpbm \
+		rsync:${PORTSDIR}/net/rsync \
+		zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/share/ghostscript/fonts/c059033l.pfb:${PORTSDIR}/print/gsfonts
-
-LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile \
-		gmp:${PORTSDIR}/math/gmp \
-		freetype:${PORTSDIR}/print/freetype2
 
 RUN_DEPENDS=	mftrace:${PORTSDIR}/print/mftrace \
 		${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSans-Bold.ttf:${PORTSDIR}/x11-fonts/dejavu
 
-MAN1=		lilymidi.1 lilypond-book.1 lilypond-invoke-editor.1 \
-		lilypond.1 lilysong.1 convert-ly.1 abc2ly.1 etf2ly.1 \
-		midi2ly.1 musicxml2ly.1
+LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile \
+		libgmp.so:${PORTSDIR}/math/gmp \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
-INFO=		lilypond-notation \
-		lilypond-usage \
-		lilypond-internals \
-		lilypond-learning \
+INFO=		internals \
 		lilypond-changes \
 		lilypond-contributor \
 		lilypond-essay \
 		lilypond-extending \
-		lilypond-snippets \
+		lilypond-internals \
+		lilypond-learning \
+		lilypond-notation \
+		lilypond-usage \
 		lilypond-web \
-		music-glossary \
-		internals
+		music-glossary
 
 USES=		bison:build gettext gmake pkgconfig perl5
 USE_GHOSTSCRIPT=9
 USE_TEX=	latex
-USE_PYTHON=	yes
+USE_PYTHON=	-3
 USE_PERL5=	build
 USE_GNOME=	pango
-USE_GCC=	any
 
 MAKEFILE=	GNUmakefile
 GNU_MAKEFILE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-ncsb-dir=${LOCALBASE}/share/ghostscript/fonts
+CONFIGURE_ARGS+=--with-ncsb-dir=${LOCALBASE}/share/ghostscript/fonts \
+		--with-python-include=${PYTHON_INCLUDEDIR}
 CONFIGURE_ENV+=	ac_cv_prog_MAKEINFO="${LOCALBASE}/bin/makeinfo" \
 		FLEX=${FLEX} YACC=${YACC}
 
 ALL_TARGET=	all
 
-NOCCACHE=	yes
+NO_CCACHE=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -74,11 +76,14 @@ PLIST_SUB+=	NLS="@comment "
 post-patch:
 	${REINPLACE_CMD} -e 's|<FlexLexer.h>|"/usr/include/FlexLexer.h"|' \
 	    ${WRKSRC}/lily/include/includable-lexer.hh
-.if empty(${PORT_OPTIONS:MNLS})
+.if !${PORT_OPTIONS:MNLS}
 	${REINPLACE_CMD} -e '/^PO_FILES/s|= |= #|' ${WRKSRC}/${MAKEFILE}.in
 .endif
 
 post-install:
-	@${LN} -fs ${DATADIR}/${PORTVERSION} ${DATADIR}/current
+	@${LN} -fs ${DATADIR}/${PORTVERSION} ${STAGEDIR}${DATADIR}/current
+
+regression-test: build
+	cd ${WRKSRC} && ${GMAKE} -f ${MAKEFILE} test
 
 .include <bsd.port.mk>

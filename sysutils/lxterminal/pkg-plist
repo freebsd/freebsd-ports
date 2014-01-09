@@ -1,4 +1,5 @@
 bin/lxterminal
+man/man1/lxterminal.1.gz
 share/applications/lxterminal.desktop
 %%NLS%%share/locale/af/LC_MESSAGES/lxterminal.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/lxterminal.mo

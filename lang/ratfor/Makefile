@@ -26,7 +26,6 @@ USE_FORTRAN=	yes
 NO_STAGE=	yes
 post-patch:
 	@cd ${WRKSRC} ; ${PATCH} --quiet < testw.patch
-	@${REINPLACE_CMD} -e 's|%%F77%%|${F77}|' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ratfor77 ${PREFIX}/bin

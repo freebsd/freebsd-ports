@@ -9,12 +9,9 @@ MASTER_SITE_SUBDIR=	CPAN:MAUKE
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	swills@FreeBSD.org
-COMMENT=	A __DIR__ constant for the directory your source file is in
+COMMENT=	__DIR__ constant for the directory your source file is in
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Dir::Self.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -16,8 +16,6 @@ BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang \
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang \
 		${LOCALBASE}/lib/erlang/lib/esdl/include/sdl.hrl:${PORTSDIR}/devel/esdl
 
-CONFLICTS=	${PORTNAME}-devel-[0-9]*
-
 MAKE_ENV=	ESDL_PATH=${LOCALBASE}/lib/erlang/lib/esdl
 PLIST_SUB=	VERSION="${PORTVERSION}"
 MAKE_JOBS_UNSAFE=yes

@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	CPAN:RJBS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	geraud@gcu.info
-COMMENT=	A thing with a message method
+COMMENT=	Thing with a message method
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
@@ -24,8 +24,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Role::HasMessage.3 \
-	Role::HasMessage::Errf.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

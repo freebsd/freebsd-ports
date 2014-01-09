@@ -11,6 +11,9 @@ DISTNAME=	netbeans-${PORTVERSION}-201310111528
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
 
+LICENSE=	CDDL GPLv2
+LICENSE_COMB=	multi
+
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.7+
@@ -26,7 +29,7 @@ DESKTOP_ENTRIES="NetBeans" \
 		${DATADIR}/nb/netbeans.png \
 		${PORTNAME}-${PORTVERSION} \
 		"Development;" \
-		${FALSE}
+		false
 
 post-patch:
 	@${REINPLACE_CMD} -i "" -e '57s|#||;57s|/path/to/jdk|${JAVA_HOME}|' \
