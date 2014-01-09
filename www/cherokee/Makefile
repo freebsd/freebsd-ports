@@ -11,8 +11,6 @@ MASTER_SITE_SUBDIR=cherokee/1.2/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast and flexible web server
 
-BROKEN=		Does not configure
-
 USES=		gettext gmake pathfix pkgconfig
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
@@ -92,7 +90,7 @@ PLIST_SUB+=	LDAP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGEOIP}
-LIB_DEPENDS+=	GeoIP:${PORTSDIR}/net/GeoIP
+LIB_DEPENDS+=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 CONFIGURE_ARGS+=--with-geoip=yes
 PLIST_SUB+=	GEOIP=""
 .else
@@ -101,9 +99,9 @@ PLIST_SUB+=	GEOIP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	avformat:${PORTSDIR}/multimedia/ffmpeg \
-		avcodec:${PORTSDIR}/multimedia/ffmpeg \
-		avutil:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavformat.so:${PORTSDIR}/multimedia/ffmpeg \
+		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
+		libavutil.so:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=--with-ffmpeg=yes
 .else
 CONFIGURE_ARGS+=--with-ffmpeg=no
@@ -119,7 +117,7 @@ PLIST_SUB+=	NLS="@comment "
 .if ${PORT_OPTIONS:MINTPCRE}
 CONFIGURE_ARGS+=--enable-internal-pcre
 .else
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 .endif
 
 .if ${PORT_OPTIONS:MRRDTOOL}
