@@ -1,0 +1,8 @@
+bin/o3read
+bin/o3tohtml
+bin/o3totxt
+bin/utf8tolatin1
+man/man1/o3read.1.gz
+man/man1/o3tohtml.1.gz
+man/man1/o3totxt.1.gz
+man/man1/utf8tolatin1.1.gz
