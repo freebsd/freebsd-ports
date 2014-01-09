@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.ircservices.za.net/download/ \
 		ftp://ftp.freenet.de/pub/ftp.ircservices.za.net/pub/ircservices/
 
 MAINTAINER=	rum1cro@yandex.ru
-COMMENT=	A system of IRC services for IRC networks
+COMMENT=	System of IRC services for IRC networks
 
 LICENSE=	GPLv2
 
@@ -24,7 +24,6 @@ DIST_SUBDIR=	${PORTNAME}
 CONFIGURE_ARGS=	-bindest ${PREFIX}/sbin -datdest ${PREFIX}/etc/ircservices \
 				-cflags "${CFLAGS}" -cc "${CC}"
 MAKE_JOBS_UNSAFE=	yes
-NEED_ROOT=	yes
 
 IRCSERVICES_LANG?=	EN_US
 
