@@ -11,11 +11,12 @@ MASTER_SITE_SUBDIR=	chris
 MAINTAINER=	chris@FreeBSD.org
 COMMENT=	Converts DOS or Mac-style files to Unix format, and vice-versa
 
-MAKE_ENV+=	INSTALLDIR=${PREFIX}/bin
+USES=		uidfix
 
-NO_STAGE=	yes
-post-extract:
-	@${REINPLACE_CMD} "s|^INSTALLDIR.*=|INSTALLDIR?=|" \
+MAKE_ARGS+=	INSTALLDIR=${STAGEDIR}${PREFIX}/bin
+
+post-patch:
+	@${REINPLACE_CMD} 's/root/${UID}/g; s/wheel/${GID}/g' \
 		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
