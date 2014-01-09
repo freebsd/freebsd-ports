@@ -4,14 +4,13 @@
 PORTNAME=	intel-pcm
 PORTVERSION=	2.6
 CATEGORIES=	sysutils
-MASTER_SITES=	GM
 
 MAINTAINER=	adrian@FreeBSD.org
 COMMENT=	Intel PCM toolkit
 
 LICENSE=	BSD4CLAUSE
 
-USES=		gmake
+USES=		gmake compiler:c++11-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	erikarn
