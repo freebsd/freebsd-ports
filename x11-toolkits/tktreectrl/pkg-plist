@@ -4,5 +4,6 @@ lib/%%TKPKG%%/htmldoc/treectrl.html
 lib/%%TKPKG%%/libtreectrl.so.1
 lib/%%TKPKG%%/pkgIndex.tcl
 lib/%%TKPKG%%/treectrl.tcl
+man/mann/treectrl.n.gz
 @dirrm lib/%%TKPKG%%/htmldoc
 @dirrm lib/%%TKPKG%%
