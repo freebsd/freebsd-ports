@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Array/Pack/.packlist
 %%SITE_PERL%%/Tie/Array/Pack.pm
+%%PERL5_MAN3%%/Tie::Array::Pack.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Array/Pack
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie/Array
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tie

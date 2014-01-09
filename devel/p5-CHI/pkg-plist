@@ -52,6 +52,21 @@
 %%SITE_PERL%%/CHI/t/Subcache.pm
 %%SITE_PERL%%/CHI/t/Subclass.pm
 %%SITE_PERL%%/CHI/t/Util.pm
+%%PERL5_MAN3%%/CHI.3.gz
+%%PERL5_MAN3%%/CHI::Benchmarks.3.gz
+%%PERL5_MAN3%%/CHI::CacheObject.3.gz
+%%PERL5_MAN3%%/CHI::Constants.3.gz
+%%PERL5_MAN3%%/CHI::Driver.3.gz
+%%PERL5_MAN3%%/CHI::Driver::Base::CacheContainer.3.gz
+%%PERL5_MAN3%%/CHI::Driver::CacheCache.3.gz
+%%PERL5_MAN3%%/CHI::Driver::Development.3.gz
+%%PERL5_MAN3%%/CHI::Driver::FastMmap.3.gz
+%%PERL5_MAN3%%/CHI::Driver::File.3.gz
+%%PERL5_MAN3%%/CHI::Driver::Memory.3.gz
+%%PERL5_MAN3%%/CHI::Driver::Metacache.3.gz
+%%PERL5_MAN3%%/CHI::Driver::Null.3.gz
+%%PERL5_MAN3%%/CHI::Driver::RawMemory.3.gz
+%%PERL5_MAN3%%/CHI::Stats.3.gz
 @dirrmtry %%SITE_PERL%%/CHI/t/Driver/Subcache
 @dirrmtry %%SITE_PERL%%/CHI/t/Driver/File
 @dirrmtry %%SITE_PERL%%/CHI/t/Driver

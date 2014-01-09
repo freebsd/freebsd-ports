@@ -17,7 +17,4 @@ RUN_DEPENDS=	p5-Params-Util>=0.20:${PORTSDIR}/devel/p5-Params-Util
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Params::Coerce.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

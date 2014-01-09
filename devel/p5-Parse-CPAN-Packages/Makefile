@@ -23,12 +23,7 @@ TEST_DEPENDS=	p5-Test-InDistDir>0:${PORTSDIR}/devel/p5-Test-InDistDir \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Parse::CPAN::Packages.3 \
-	Parse::CPAN::Packages::Distribution.3 \
-	Parse::CPAN::Packages::Package.3
-
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
