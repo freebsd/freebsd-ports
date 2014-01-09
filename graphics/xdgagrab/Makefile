@@ -14,8 +14,7 @@ USE_XORG=	x11 xxf86dga
 ALL_TARGET=	xdgagrab
 PLIST_FILES=	bin/xdgagrab
 
-NO_STAGE=	yes
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/xdgagrab ${PREFIX}/bin
+		${INSTALL_PROGRAM} ${WRKSRC}/xdgagrab ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
