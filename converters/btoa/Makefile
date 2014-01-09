@@ -12,9 +12,8 @@ MASTER_SITE_SUBDIR=	pgollucci
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Encode/decode binary to printable ASCII
 
-MAKE_FLAGS=	DESTDIR=${PREFIX} -f
+DESTDIRNAME=	IGNOREME
+MAKE_ARGS=	DESTDIR=${STAGEDIR}${PREFIX}
 MAKEFILE=	Makefile.sun
-MAN1=		btoa.1
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
