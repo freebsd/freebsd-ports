@@ -21,10 +21,8 @@ USES=		imake perl5
 USE_XORG=	ice sm x11 xaw xext xmu xt
 USE_PERL5=	build
 NO_WRKSUBDIR=	yes
-MAN1=		xmandel.1
-PLIST_FILES=	bin/xmandel
+PLIST_FILES=	bin/xmandel man/man1/xmandel.1.gz
 
-NO_STAGE=	yes
 pre-patch:
 	@${REINPLACE_CMD} -i '' -e 's|malloc.h|stdlib.h|' ${WRKSRC}/mandel.c
 
