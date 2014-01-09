@@ -3,7 +3,7 @@
 
 PORTNAME=	ccaudio2
 PORTVERSION=	2.0.5
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.gnutelephony.org/dist/tarballs/
 
@@ -17,7 +17,6 @@ LIB_DEPENDS=	libccgnu2.so:${PORTSDIR}/devel/commoncpp \
 
 CONFLICTS=	ccaudio-[0-9]*
 
-NO_STAGE=	yes
 USES=		pathfix cmake:outsource pkgconfig
 USE_LDCONFIG=	yes
 
