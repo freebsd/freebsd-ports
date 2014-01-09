@@ -1,5 +1,5 @@
---- configure.orig	2002-08-25 10:29:53.000000000 +0400
-+++ configure	2007-10-14 20:44:46.000000000 +0400
+--- configure.orig	2002-08-25 08:29:53.000000000 +0200
++++ configure	2014-01-09 09:46:12.000000000 +0100
 @@ -1798,7 +1798,7 @@
  AS="$AS" DLLTOOL="$DLLTOOL" OBJDUMP="$OBJDUMP" \
  objext="$OBJEXT" exeext="$EXEEXT" reload_flag="$reload_flag" \
@@ -14,7 +14,7 @@
  
  
 -PKG_TCL=${TCL_PACKAGE_PATH}/tkXwin
-+PKG_TCL=${TCL_PREFIX}/lib/tkXwin
++PKG_TCL=$prefix/lib/tkXwin
  
  
  
