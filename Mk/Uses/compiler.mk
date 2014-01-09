@@ -36,7 +36,7 @@ VALID_ARGS=	c++11-lib c++11-lang c11 features openmp env nestedfct c++0x
 
 .if ${compiler_ARGS} == c++11-lib
 _COMPILER_ARGS+=	features c++11-lib
-.elif ${compiler_ARGS} == features c++0x
+.elif ${compiler_ARGS} == c++0x
 _COMPILER_ARGS+=	features c++0x
 .elif ${compiler_ARGS} == c++11-lang
 _COMPILER_ARGS+=	features c++11-lang
