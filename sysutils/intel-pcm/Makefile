@@ -7,7 +7,7 @@ MASTER_SITES=	GM
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-MAINTAINER=	adrian@freebsd.org
+MAINTAINER=	adrian@FreeBSD.org
 COMMENT=	Intel PCM toolkit
 
 LICENSE=	BSD4CLAUSE
