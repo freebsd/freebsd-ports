@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mdcached
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.9
 CATEGORIES=	databases devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	php-
@@ -20,5 +20,4 @@ USE_PHPEXT=	yes
 CONFIGURE_ARGS=	--enable-mdcached
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}/client_php/${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
