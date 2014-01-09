@@ -9,8 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Multi-column hierarchical listbox widget
 
+USES=		tk:86
 USE_XORG=	x11
-USE_TK=		86
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
 		--with-tk=${TK_LIBDIR} \
@@ -19,7 +19,5 @@ CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
 TKPKG=		treectrl${PORTVERSION}
 USE_LDCONFIG=	${PREFIX}/lib/${TKPKG}
 PLIST_SUB=	TKPKG=${TKPKG}
-MANN=		treectrl.n
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
