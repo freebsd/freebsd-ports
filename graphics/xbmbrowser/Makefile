@@ -5,18 +5,14 @@ PORTNAME=	xbmbrowser
 PORTVERSION=	5.1
 PORTREVISION=	3
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITES=	XCONTRIB
 MASTER_SITE_SUBDIR=	utilities
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View complete directories of X bitmaps and X pixmaps
 
-USES=		imake
+USES=		gmake imake
 USE_XORG=	xaw xmu
-MAN1=		xbmbrowser.1
 
-USE_GMAKE=	yes
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
