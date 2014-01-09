@@ -2,27 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	clearlooks-phenix
-PORTVERSION=	3.0.15
+PORTVERSION=	3.0.16
 CATEGORIES=	x11-themes xfce
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	GENTOO
+MASTER_SITE_SUBDIR=	distfiles
 PKGNAMESUFFIX=	-theme
 
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Gtk3 port of Clearlooks theme for the Xfce Desktop
 
-RUN_DEPENDS=	gtk3-unico-engine>=1.0.1:${PORTSDIR}/x11-themes/gtk3-unico-engine
+RUN_DEPENDS=	gtk-engines2>=2.20.2:${PORTSDIR}/x11-themes/gtk-engines2
 
-PROJECTHOST=	olivier-freebsd-ports
-
-USE_XZ=	yes
+WRKSRC=	${WRKDIR}/projets-divers-${PORTNAME}
 NO_BUILD=	yes
 
-NO_STAGE=	yes
+post-patch:
+	@${RM} ${WRKSRC}/gtk-?.0/*.orig
+
 do-install:
-	@${MKDIR} ${PREFIX}/share/themes/Clearlooks-Phenix
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/themes/Clearlooks-Phenix
 .for dir in gtk-2.0 gtk-3.0 xfwm4
 	@cd ${WRKSRC} && \
-		${COPYTREE_SHARE} ${dir} ${PREFIX}/share/themes/Clearlooks-Phenix
+		${COPYTREE_SHARE} ${dir} \
+		${STAGEDIR}${PREFIX}/share/themes/Clearlooks-Phenix
 .endfor
 
 .include <bsd.port.mk>
