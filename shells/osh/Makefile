@@ -10,11 +10,12 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Implementation of the UNIX 6th Edition shell
 
 MAKE_ENV+=	DOCDIR=${DOCSDIR} \
-		DESTEXPDIR=${EXAMPLESDIR} \
+		EXPDIR=${EXAMPLESDIR} \
 		MANDIR=${MANPREFIX}/man/man1
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
+INSTALL_TARGET=	install install-doc install-exp
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|(DESTEXPDIR)=|\1?=|' \
