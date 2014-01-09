@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bmake
-PORTVERSION=	20131001
+PORTVERSION=	20140101
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/sjg/ \
 		http://www.gtlib.cc.gatech.edu/pub/NetBSD/misc/sjg/ \
@@ -31,13 +31,13 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/obj/bmake ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKDIR}/bmake/bmake.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	${SH} ${WRKDIR}/mk/install-mk ${STAGEDIR}${PREFIX}/share/mk
-	cd ${STAGEDIR}${PREFIX} ;						\
-	    ${FIND} share/mk -type f -o -type l			\
-	    	| ${SORT}					\
+	cd ${STAGEDIR}${PREFIX} ;					\
+	    ${FIND} share/mk -type f -o -type l				\
+	    	| ${SORT}						\
 	    	>${WRKDIR}/PLIST.share-mk
-	cd ${STAGEDIR}${PREFIX} ;						\
-	    ${FIND} share/mk/${_DATADIR} -type d		\
-	    	| ${SORT} -r | ${SED} -e 's/^/@dirrm /g'	\
+	cd ${STAGEDIR}${PREFIX} ;					\
+	    ${FIND} share/mk -type d					\
+	    	| ${SORT} -r | ${SED} -e 's/^/@dirrmtry /'		\
 		>>${WRKDIR}/PLIST.share-mk
 	${ECHO_CMD} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.share-mk"		>> ${WRKDIR}/ex.script
