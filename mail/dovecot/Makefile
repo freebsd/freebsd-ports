@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.dovecot.org/releases/${DOVECOTVERSION}/ \
 MAINTAINER=	yds@CoolRat.org
 COMMENT=	Secure and compact IMAP and POP3 servers
 
-CONFLICTS=	dovecot-2.*
+CONFLICTS=	dovecot2-*
 
 DOVECOTVERSION=	1.2
 
