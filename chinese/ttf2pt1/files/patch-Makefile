@@ -1,0 +1,18 @@
+--- Makefile.orig	2014-01-09 15:01:13.000000000 +0800
++++ Makefile	2014-01-09 15:02:05.000000000 +0800
+@@ -22,10 +22,11 @@ snapshot:
+ 	./mkrel snapshot
+ 
+ install:
+-	cp -p *.map $(SHAREDIR)/maps
+-	chown $(OWNER) $(SHAREDIR)/maps/*.map
+-	chgrp $(GROUP) $(SHAREDIR)/maps/*.map
+-	chmod 0644 $(SHAREDIR)/maps/*.map
++	mkdir -p $(DESTDIR)$(SHAREDIR)/maps
++	cp -p *.map $(DESTDIR)$(SHAREDIR)/maps
++	chown $(OWNER) $(DESTDIR)$(SHAREDIR)/maps/*.map
++	chgrp $(GROUP) $(DESTDIR)$(SHAREDIR)/maps/*.map
++	chmod 0644 $(DESTDIR)$(SHAREDIR)/maps/*.map
+ 
+ uninstall:
+ 	for i in *.map; do rm -f $(SHAREDIR)/maps/$$i || exit 1; done

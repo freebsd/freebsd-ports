@@ -1,0 +1,11 @@
+--- Makefile.orig	2014-01-07 14:47:56.000000000 +0800
++++ Makefile	2014-01-07 14:48:06.000000000 +0800
+@@ -9,7 +9,7 @@ chiconv: chiconv.c
+ 	$(CC) ${CFLAGS} -o chiconv chiconv.c ${LIBS}
+ 
+ install:
+-	install -m 555 chiconv ${PREFIX}/bin
++	install -m 555 chiconv $(DESTDIR)${PREFIX}/bin
+ 
+ clean:
+ 	rm -f chiconv

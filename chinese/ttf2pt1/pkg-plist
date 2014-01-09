@@ -1,7 +1,9 @@
-share/ttf2pt1/maps/cubg5plus.map
-share/ttf2pt1/maps/cubig5.map
-share/ttf2pt1/maps/cugb.map
-share/ttf2pt1/maps/cugbk.map
-share/ttf2pt1/maps/ubig5.map
-share/ttf2pt1/maps/ugb.map
-share/ttf2pt1/maps/ugbk.map
+%%DATADIR%%/maps/cubg5plus.map
+%%DATADIR%%/maps/cubig5.map
+%%DATADIR%%/maps/cugb.map
+%%DATADIR%%/maps/cugbk.map
+%%DATADIR%%/maps/ubig5.map
+%%DATADIR%%/maps/ugb.map
+%%DATADIR%%/maps/ugbk.map
+@dirrmtry %%DATADIR%%/maps
+@dirrmtry %%DATADIR%%

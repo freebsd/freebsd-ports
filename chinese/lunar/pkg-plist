@@ -1,4 +1,5 @@
 @comment $FreeBSD$
 bin/lunar
+man/man1/lunar.1.gz
 share/chinese/lunar.bitmap
 @dirrmtry share/chinese

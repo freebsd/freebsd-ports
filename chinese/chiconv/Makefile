@@ -18,7 +18,6 @@ GH_ACCOUNT=	buganini
 GH_COMMIT=	9501c80
 
 MAKE_ARGS=	PREFIX=${PREFIX}
-NO_STAGE=	yes
 
 PLIST_FILES=	bin/chiconv
 

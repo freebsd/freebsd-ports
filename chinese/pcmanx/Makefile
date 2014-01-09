@@ -29,9 +29,6 @@ EXTERNAL_DESC=	External SSH/Telnet support
 IPLOOKUP_DESC=	IP location lookup support
 PROXY_DESC=	Proxy support
 
-MAN1=		pcmanx.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -83,6 +80,6 @@ CONFIGURE_ARGS+=--enable-proxy
 
 post-install:
 	@# create directory for user friendly
-	${MKDIR} ${DATADIR}/script/
+	${MKDIR} ${STAGEDIR}${DATADIR}/script/
 
 .include <bsd.port.mk>

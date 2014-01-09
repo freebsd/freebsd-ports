@@ -23,7 +23,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 OPTIONS_DEFINE=	NLS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -33,8 +32,5 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

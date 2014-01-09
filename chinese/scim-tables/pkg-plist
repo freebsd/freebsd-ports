@@ -1,9 +1,9 @@
 share/scim/icons/Array30.png
+share/scim/icons/CNS11643.png
 share/scim/icons/CangJie.png
 share/scim/icons/CangJie3.png
 share/scim/icons/CantonHK.png
 share/scim/icons/Cantonese.png
-share/scim/icons/CNS11643.png
 share/scim/icons/Dayi.png
 share/scim/icons/EZ.png
 share/scim/icons/Erbi-QS.png
@@ -18,12 +18,12 @@ share/scim/icons/Wubi.png
 share/scim/icons/ZhuYin.png
 share/scim/icons/Ziranma.png
 share/scim/tables/Array30.bin
+share/scim/tables/CNS11643.bin
 share/scim/tables/CangJie.bin
 share/scim/tables/CangJie3.bin
 share/scim/tables/CangJie5.bin
 share/scim/tables/CantonHK.bin
 share/scim/tables/Cantonese.bin
-share/scim/tables/CNS11643.bin
 share/scim/tables/Dayi3.bin
 share/scim/tables/EZ-Big.bin
 share/scim/tables/Erbi-QS.bin
@@ -35,8 +35,8 @@ share/scim/tables/SmartCangJie6.bin
 share/scim/tables/Stroke5.bin
 share/scim/tables/Wu.bin
 share/scim/tables/Wubi.bin
-share/scim/tables/ZhuYin.bin
 share/scim/tables/ZhuYin-Big.bin
+share/scim/tables/ZhuYin.bin
 share/scim/tables/Ziranma.bin
-@dirrmtry share/scim/icons
 @dirrmtry share/scim/tables
+@dirrmtry share/scim/icons

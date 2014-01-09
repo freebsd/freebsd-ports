@@ -12,10 +12,10 @@ lib/scim-1.0/1.4.0/SetupUI/pinyin-imengine-setup.so
 %%NLS%%share/locale/nl/LC_MESSAGES/scim-pinyin.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/scim-pinyin.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/scim-pinyin.mo
+share/scim/icons/smart-pinyin.png
 share/scim/pinyin/phrase_lib
 share/scim/pinyin/pinyin_phrase_index
 share/scim/pinyin/pinyin_phrase_lib
 share/scim/pinyin/pinyin_table
 share/scim/pinyin/special_table
-share/scim/icons/smart-pinyin.png
 @dirrm share/scim/pinyin
