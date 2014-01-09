@@ -13,11 +13,9 @@ COMMENT=	SCIM table based Chinese input methods
 BUILD_DEPENDS=	scim-make-table:${PORTSDIR}/textproc/scim-table-imengine
 RUN_DEPENDS=	scim-make-table:${PORTSDIR}/textproc/scim-table-imengine
 
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		pkgconfig gmake
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__
@@ -27,11 +25,5 @@ CONFIGURE_ENV+=	SCIM_DATADIR=${PREFIX}/share/scim \
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
 CONFIGURE_ARGS+=	--disable-skim-support
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO}
-	@${ECHO} To display this message again, type \`pkg_info -D ${PKGNAME}\'
-	@${ECHO}
 
 .include <bsd.port.post.mk>
