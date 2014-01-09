@@ -7,6 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.whizkidtech.redprince.net/fports/
 DISTNAME=	tiff
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to merge TIFF files into multi-page TIFF files
@@ -14,18 +15,15 @@ COMMENT=	Library to merge TIFF files into multi-page TIFF files
 USES=		dos2unix
 DOS2UNIX_GLOB=	*.[ch]
 USE_LDCONFIG=	yes
-USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 DIST_SUBDIR=	tifmerge
 
 PLIST_FILES=	lib/libtifmerge.a \
-				include/tifmerge.h \
-				lib/libtifmerge.so \
-				lib/libtifmerge.so.1
+		include/tifmerge.h \
+		lib/libtifmerge.so \
+		lib/libtifmerge.so.1 \
+		man/man3/tifmerge.3.gz
 
-MAN3=		tifmerge.3
-
-NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKSRC}/TIFMERGE.H ${WRKSRC}/tifmerge.h
 	@${MV} ${WRKSRC}/TIFMERGE.C ${WRKSRC}/tifmerge.c
@@ -34,10 +32,10 @@ post-extract:
 		${WRKSRC}/tifmerge.3
 
 do-install:
-	${INSTALL_LIB} ${WRKSRC}/libtifmerge.so.1 ${PREFIX}/lib
-	${LN} -fs ${PREFIX}/lib/libtifmerge.so.1 ${PREFIX}/lib/libtifmerge.so
-	${INSTALL_DATA} ${WRKSRC}/libtifmerge.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/tifmerge.h ${PREFIX}/include
-	${INSTALL_MAN} ${WRKSRC}/tifmerge.3 ${MAN3PREFIX}/man/man3
+	${INSTALL_LIB} ${WRKSRC}/libtifmerge.so.1 ${STAGEDIR}${PREFIX}/lib
+	${LN} -fs libtifmerge.so.1 ${STAGEDIR}${PREFIX}/lib/libtifmerge.so
+	${INSTALL_DATA} ${WRKSRC}/libtifmerge.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/tifmerge.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_MAN} ${WRKSRC}/tifmerge.3 ${STAGEDIR}${MAN3PREFIX}/man/man3
 
 .include <bsd.port.mk>
