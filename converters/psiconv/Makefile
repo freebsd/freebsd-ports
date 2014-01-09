@@ -8,15 +8,12 @@ CATEGORIES=	converters devel
 MASTER_SITES=	http://software.frodo.looijaard.name/psiconv/files/
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A conversion utility to convert Psion 5(MX) files into other formats
+COMMENT=	Conversion utility to convert Psion 5(MX) files into other formats
 
+USEE=		gmake
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-imagemagick=no
 
-MAN1=		psiconv.1 psiconv-config.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

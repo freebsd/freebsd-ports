@@ -18,6 +18,8 @@ lib/libpsiconv.a
 lib/libpsiconv.la
 lib/libpsiconv.so
 lib/libpsiconv.so.10
+man/man1/psiconv-config.1.gz
+man/man1/psiconv.1.gz
 %%DATADIR%%/psion/ASCII_Codes.psi
 %%DATADIR%%/psion/Application_ID_Section.psi
 %%DATADIR%%/psion/Basic_Elements.psi
