@@ -15,13 +15,12 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 
 USES=		imake
 
-NO_STAGE=	yes
-do-install:
-	@${MKDIR} ${PREFIX}/lib/X11/fonts/jmk
-	@${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${PREFIX}/lib/X11/fonts/jmk
-	@${INSTALL_DATA} ${WRKSRC}/fonts.dir ${PREFIX}/lib/X11/fonts/jmk
+FONTDIR?=	${PREFIX}/lib/X11/fonts/${PORTNAME}
+PLIST_SUB=	FONTDIR="${FONTDIR:S|${PREFIX}/||}"
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
+do-install:
+	@${MKDIR} ${STAGEDIR}${FONTDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.pcf.gz ${STAGEDIR}${FONTDIR}
+	${INSTALL_DATA} ${WRKSRC}/fonts.dir ${STAGEDIR}${FONTDIR}
 
 .include <bsd.port.mk>
