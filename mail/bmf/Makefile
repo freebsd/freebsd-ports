@@ -8,7 +8,7 @@ CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A fast Bayesian Mail Filter compatible with maildrop and procmail
+COMMENT=	Fst Bayesian Mail Filter compatible with maildrop and procmail
 
 OPTIONS_DEFINE=		BDB MYSQL DEBUG
 OPTIONS_DEFAULT=	BDB
@@ -33,7 +33,6 @@ CONFIGURE_ARGS+=--with-mysql
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--without-package
-NEED_ROOT=	yes
 
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--debug=yes
@@ -41,6 +40,7 @@ CONFIGURE_ARGS+=	--debug=yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's/@@CC/${CC}/;s/@@CXX/${CXX}/' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's/: checkroot/: /g' ${WRKSRC}/Makefile.in
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bmf
