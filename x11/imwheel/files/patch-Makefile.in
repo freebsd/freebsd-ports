@@ -1,11 +1,24 @@
---- Makefile.in.orig    Sun Aug 29 06:36:33 2004
-+++ Makefile.in Sun Nov  7 08:30:31 2004
-@@ -215,7 +215,7 @@
+--- Makefile.in.orig	2004-08-29 18:36:33.000000000 +0800
++++ Makefile.in	2014-01-09 21:48:23.000000000 +0800
+@@ -215,7 +215,7 @@ imwheel_LDADD = @GETOPT_LIBS@ -L$(top_bu
  imwheel_DEPENDENCIES = imwheel.o util.o cfg.o jax/libjax.a
  man_MANS = imwheel.1
  EXTRA_DIST = BUGS FREEBSD EMACS M-BA47 BUGS see imwheel.1.html imwheel.1 TODO imwheelrc @extras_dist@ @mdump_dist@ lefty.sh imwheel.spec slack.sh
 -ETCDIR = /etc/X11/imwheel
 +ETCDIR = ${PREFIX}/etc
  all: config.h
-        $(MAKE) $(AM_MAKEFLAGS) all-recursive
+ 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+ 
+@@ -782,9 +782,9 @@ install-exec-hook:
+ @SUID_TRUE@	chown @suid@ $$progname ; \
+ @SUID_TRUE@	chmod u+s $$progname
+ 	$(mkinstalldirs) $(ETCDIR)
+-	-[ -f /etc/imwheelrc ] && mv /etc/imwheelrc $(ETCDIR)/imwheelrc || true
+-	-[ -f /etc/X11/imwheelrc ] && mv /etc/X11/imwheelrc $(ETCDIR)/imwheelrc || true
+-	-[ -f $(ETCDIR)/imwheelrc ] && install -m 644 imwheelrc $(ETCDIR)/imwheelrc.new || install -m 644 imwheelrc $(ETCDIR)/imwheelrc
++	-[ -f /etc/imwheelrc ] && mv /etc/imwheelrc $(DESTDIR)$(ETCDIR)/imwheelrc || true
++	-[ -f /etc/X11/imwheelrc ] && mv /etc/X11/imwheelrc $(DESTDIR)$(ETCDIR)/imwheelrc || true
++	-[ -f $(ETCDIR)/imwheelrc ] && install -m 644 imwheelrc $(DESTDIR)$(ETCDIR)/imwheelrc.new || install -m 644 imwheelrc $(DESTDIR)$(ETCDIR)/imwheelrc
+ 
+ extras: $(EXTRA_PROGRAMS)
  

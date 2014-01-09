@@ -14,10 +14,8 @@ COMMENT=	Animate your root-cursor
 
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
-MAN1=		xaniroc.1
-PLIST_FILES=	bin/xaniroc
+PLIST_FILES=	bin/xaniroc man/man1/xaniroc.1.gz
 
-NO_STAGE=	yes
 post-extract:
 	${MV} ${WRKSRC}/manpage.1 ${WRKSRC}/xaniroc.man
 

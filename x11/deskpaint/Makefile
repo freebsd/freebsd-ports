@@ -15,5 +15,4 @@ PLIST_FILES=	bin/deskpaint
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -16,11 +16,4 @@ RUN_DEPENDS=	xv:${PORTSDIR}/graphics/xv
 USES=		shebangfix perl5
 SHEBANG_FILES=	*.pl
 
-MAN1=		bgrot.1
-MANCOMPRESSED=	yes
-
-NO_STAGE=	yes
-post-install:
-	@${CAT} pkg-message
-
 .include <bsd.port.mk>
