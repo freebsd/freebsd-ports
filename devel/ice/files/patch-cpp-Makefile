@@ -17,7 +17,7 @@
  endif
 +endif
 +
-+ifeq ($(NOPORTDOCS),)
++ifeq ($(NOICEDOCS),)
 +SUBDIRS		:= $(SUBDIRS) doc
 +endif
 +

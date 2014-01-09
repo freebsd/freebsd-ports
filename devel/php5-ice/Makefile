@@ -1,10 +1,7 @@
 # Created by: DIrk Ye <dirk.ye@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	Ice
-PORTVERSION=	3.5.0
 CATEGORIES=	devel
-MASTER_SITES=	http://download.zeroc.com/Ice/3.5/
 PKGNAMEPREFIX=	php5-
 
 MAINTAINER=	freebsd@grem.de
@@ -12,15 +9,20 @@ COMMENT=	Ice (Internet Communications Engine) language mapping for PHP
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	mcpp:${PORTSDIR}/devel/mcpp
+BUILD_DEPENDS=	mcpp:${PORTSDIR}/devel/mcpp \
+		slice2php:${PORTSDIR}/devel/ice
 LIB_DEPENDS=	Ice.${LIB_VRS}:${PORTSDIR}/devel/ice
 
 OPTIONS_DEFINE=	DEBUG DOCS NAMESPACES
+OPTIONS_DEFAULT=
 NAMESPACES_DESC=	Use PHP namespaces (recommended)
 
-USE_GMAKE=	yes
-MAKE_ARGS+=	PHP_EXT_DIR=${PHP_EXT_DIR} ICE_HOME=${PREFIX} \
-		PHP_HOME=${PREFIX} OPTIMIZE=yes
+SLAVE_PORT=	yes
+MASTERDIR=	${.CURDIR}/../ice
+PLIST=		${.CURDIR}/pkg-plist
+
+MAKE_ARGS+=	PHP_EXT_DIR=${PHP_EXT_DIR} ICE_HOME=${LOCALBASE} \
+		PHP_HOME=${LOCALBASE} OPTIMIZE=yes
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 DEFAULT_PHP_VER=5
@@ -31,53 +33,8 @@ INSTALL_WRKSRC=	${WRKSRC}/php
 LIB_VRS=	${PORTVERSION:S|.||g:C|0$||}
 PHP_MODNAME?=	IcePHP
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT
-.if ${PORT_OPTIONS:MDEBUG}
-CFLAGS+=	-g
-.else
-CFLAGS+=	-DNDEBUG
-.endif
-
-.if ${ARCH} == "ia64"
-BROKEN=		does not compile on ia64
-.endif
-
-.if ((${ARCH} != i386) && (${ARCH} != powerpc))
-MAKE_ENV=	LP64=yes
-.endif
-
-.if ${PORT_OPTIONS:MNAMESPACES}
-MAKE_ARGS+=	USE_NAMESPACES=yes
-PLIST_SUB+=	NAMESPACES=""
-PLIST_SUB+=	NONAMESPACES="@comment "
-.else
-PLIST_SUB+=	NAMESPACES="@comment "
-PLIST_SUB+=	NONAMESPACES=""
-.endif
-
-.if empty(PORT_OPTIONS:MDOCS)
-MAKE_ENV+=	NOPORTDOCS=yes
-.endif
-
-post-patch:
-	@${SED} 's|%%PREFIX%%|${PREFIX}|g; \
-		s|%%DATADIR%%|${DATADIR}|g; \
-		s|%%DOCSDIR%%|${DOCSDIR}|g; \
-		s|%%INSTALL_PROGRAM%%|${INSTALL_PROGRAM}|g; \
-		s|%%INSTALL_DATA%%|${INSTALL_DATA}|g' \
-		${FILESDIR}/Make.rules.FreeBSD > ${WRKSRC}/cpp/config/Make.rules.FreeBSD
-	@${REINPLACE_CMD} 's|%%INSTALL_PROGRAM%%|${INSTALL_PROGRAM}|g; \
-		s|%%INSTALL_DATA%%|${INSTALL_DATA}|g; \
-		s|%%PREFIX%%|${PREFIX}|g ; \
-		s|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/php/config/Make.rules.php
-
 post-install:
-	@${MKDIR} ${PREFIX}/etc/php
-	@${ECHO_CMD} extension=${PHP_MODNAME}.so \
-		>> ${PREFIX}/etc/php/extensions.ini
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/php
 
 add-plist-info:
 	@${ECHO_CMD} "@exec mkdir -p %D/etc/php" \
@@ -105,4 +62,4 @@ security-check:
 	@${ECHO_CMD} ""
 	@${ECHO_CMD} "****************************************************************************"
 
-.include <bsd.port.mk>
+.include "${MASTERDIR}/Makefile"

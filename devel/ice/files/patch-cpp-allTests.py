@@ -9,6 +9,15 @@
      ("Ice/defaultServant", ["core"]),
      ("Ice/defaultValue", ["core"]),
      ("Ice/invoke", ["core", "novc6"]),
+@@ -85,7 +85,7 @@
+     ("IceStorm/federation2", ["service", "novc90", "nomingw"]),
+     ("IceStorm/stress", ["service", "stress", "novc90", "noappverifier", "nomingw"]), # Too slow with appverifier.
+     ("IceStorm/rep1", ["service", "novc90", "nomingw"]),
+-    ("IceStorm/repgrid", ["service", "novc90", "nomingw"]),
++    ("IceStorm/repgrid", ["service", "novc90", "nomingw", "nofreebsd"]),
+     ("IceStorm/repstress", ["service", "noipv6", "stress", "novc90", "nomingw"]),
+     ("FreezeScript/dbmap", ["once", "novc90", "nomingw"]),
+     ("FreezeScript/evictor", ["once", "novc90", "nomingw"]),
 @@ -106,8 +107,8 @@
  #
  if TestUtil.isWin32() or os.getuid() == 0:

@@ -4,13 +4,13 @@
  endif
  
  libdir			= $(top_srcdir)/lib
--install_phpdir		= $(prefix)/php
--install_libdir		= $(prefix)/php
+ ifneq ($(prefix), /usr)
+-install_phpdir      = $(prefix)/php
+-install_libdir      = $(prefix)/php
 +install_phpdir		= $(prefix)/share/pear
 +install_libdir		= $(prefix)/lib/php/$(PHP_EXT_DIR)
- 
- #
- # Platform specific definitions
+ else
+
 @@ -155,7 +155,8 @@
  endif
  
