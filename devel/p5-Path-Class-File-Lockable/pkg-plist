@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Path/Class/File/Lockable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Class/File/Lockable/.packlist
+%%PERL5_MAN3%%/Path::Class::File::Lockable.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Class/File/Lockable
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Class/File
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Class

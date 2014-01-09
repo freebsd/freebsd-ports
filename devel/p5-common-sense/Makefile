@@ -14,7 +14,4 @@ COMMENT=	Perl common defaults with lower memory usage
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		common::sense.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -37,21 +37,4 @@ TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 USES=	perl5
 USE_PERL5=	configure
 
-MAN3=	CHI.3 \
-	CHI::Benchmarks.3 \
-	CHI::CacheObject.3 \
-	CHI::Constants.3 \
-	CHI::Driver.3 \
-	CHI::Driver::Base::CacheContainer.3 \
-	CHI::Driver::CacheCache.3 \
-	CHI::Driver::Development.3 \
-	CHI::Driver::FastMmap.3 \
-	CHI::Driver::File.3 \
-	CHI::Driver::Memory.3 \
-	CHI::Driver::Metacache.3 \
-	CHI::Driver::Null.3 \
-	CHI::Driver::RawMemory.3 \
-	CHI::Stats.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

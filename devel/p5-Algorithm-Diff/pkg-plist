@@ -5,6 +5,8 @@
 %%SITE_PERL%%/Algorithm/diff.pl
 %%SITE_PERL%%/Algorithm/diffnew.pl
 %%SITE_PERL%%/Algorithm/htmldiff.pl
+%%PERL5_MAN3%%/Algorithm::Diff.3.gz
+%%PERL5_MAN3%%/Algorithm::DiffOld.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm/Diff
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Algorithm
 @dirrmtry %%SITE_PERL%%/Algorithm
