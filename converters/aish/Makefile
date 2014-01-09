@@ -10,14 +10,10 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}u
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ish/uuencode/Base64 converter
 
-NO_STAGE=	yes
-
-.include <bsd.port.options.mk>
+MAKE_ARGS=	DSTDIR=${STAGEDIR}${PREFIX}/bin
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${PREFIX}/share/doc/ja/aish
-	${INSTALL_DATA} ${WRKSRC}/aish.txt ${PREFIX}/share/doc/ja/aish
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/ja/aish
+	${INSTALL_DATA} ${WRKSRC}/aish.txt ${STAGEDIR}${PREFIX}/share/doc/ja/aish
 
 .include <bsd.port.mk>
