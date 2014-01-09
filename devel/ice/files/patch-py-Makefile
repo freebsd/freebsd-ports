@@ -1,0 +1,11 @@
+--- py/Makefile.orig	2013-10-04 15:48:15.000000000 +0000
++++ py/Makefile	2013-12-01 16:37:09.381657035 +0000
+@@ -15,7 +15,7 @@
+ 
+ INSTALL_SUBDIRS = $(install_pythondir) $(install_libdir)
+ 
+-install:: install-common
++install::
+ 	@for subdir in $(INSTALL_SUBDIRS); \
+ 	do \
+ 	    if test ! -d $(DESTDIR)$$subdir ; \

@@ -38,6 +38,7 @@ share/pear/Ice/PluginF.php
 share/pear/Ice/Process.php
 share/pear/Ice/ProcessF.php
 share/pear/Ice/Properties.php
+share/pear/Ice/PropertiesAdmin.php
 share/pear/Ice/PropertiesF.php
 share/pear/Ice/Router.php
 share/pear/Ice/RouterF.php
@@ -72,3 +73,5 @@ share/pear/IceStorm/Metrics.php
 @dirrmtry share/pear/IceStorm
 @dirrmtry share/pear
 @dirrmtry lib/php/%%PHP_EXT_DIR%%
+@dirrmtry lib/php
+@dirrmtry etc/php

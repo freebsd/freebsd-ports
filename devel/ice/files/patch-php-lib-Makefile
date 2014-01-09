@@ -4,9 +4,9 @@
  	@echo "Installing generated code"
  	@for i in $(MODULES) ; \
  	do \
--	    $(INSTALL_DATA) -r $$i $(install_phpdir) ; \
-+	    mkdir -p $(install_phpdir)/$$i ; \
-+	    $(INSTALL_DATA) $$i/*.php $(install_phpdir)/$$i ; \
+-	    $(INSTALL_DATA) -r $$i $(DESTDIR)$(install_phpdir) ; \
++	    mkdir -p $(DESTDIR)$(install_phpdir)/$$i ; \
++	    $(INSTALL_DATA) $$i/*.php $(DESTDIR)$(install_phpdir)/$$i ; \
  	done
  	@for i in $(MODULE_SRCS) ; \
  	do \
