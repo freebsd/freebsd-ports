@@ -1,0 +1,14 @@
+This is the Intel Performance Counter Monitoring toolkit.
+
+The original software is available here:
+
+http://software.intel.com/en-us/articles/intel-performance-counter-monitor
+
+This install comes from Adrian Chadd's copy, which includes some portability
+fixes related to FreeBSD.  This can be found in the local/freebsd branch of:
+
+http://github.com/erikarn/intel-pcm
+
+This requires the 'cpuctl' module to be loaded.
+
+WWW: http://github.com/erkarn/intel-pcm

@@ -1,0 +1,28 @@
+# $FreeBSD$
+
+PORTNAME=	intel-pcm
+PORTVERSION=	2.6
+CATEGORIES=	sysutils
+MASTER_SITES=	GM
+
+ONLY_FOR_ARCHS=	i386 amd64
+
+MAINTAINER=	adrian@freebsd.org
+COMMENT=	Intel PCM toolkit
+
+LICENSE=	BSD4CLAUSE
+
+USES=		gmake
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	erikarn
+GH_COMMIT=	9b302ef
+GH_TAGNAME=	${GH_COMMIT}
+
+WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${PORTNAME}-${GH_COMMIT}/src
+MAKE_ARGS=	CC="${CXX}" OPT="${CXXFLAGS}"
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/*.x ${STAGEDIR}${PREFIX}/sbin
+
+.include <bsd.port.mk>
