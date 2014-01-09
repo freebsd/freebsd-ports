@@ -12,7 +12,6 @@ COMMENT=	Additional charsets for the iconv library (those from the Unicode site)
 
 LIB_DEPENDS=	libbiconv.so:${PORTSDIR}/converters/iconv
 
-USES=		perl5
+USES=		perl5 uidfix
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
