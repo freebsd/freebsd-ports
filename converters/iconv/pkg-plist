@@ -13,28 +13,32 @@ libexec/iconv/iso-10646-ucs-2.so
 libexec/iconv/iso-10646-ucs-4.so
 libexec/iconv/ucs-2-internal.so
 libexec/iconv/utf-16.so
-share/iconv/big5.cct
-share/iconv/charset.aliases
-share/iconv/cns11643-plane1.cct
-share/iconv/cns11643-plane14.cct
-share/iconv/cns11643-plane2.cct
-share/iconv/cp775.cct
-share/iconv/cp850.cct
-share/iconv/cp852.cct
-share/iconv/cp855.cct
-share/iconv/cp866.cct
-share/iconv/gb_2312-80.cct
-share/iconv/iso-8859-1.cct
-share/iconv/iso-8859-15.cct
-share/iconv/iso-8859-2.cct
-share/iconv/iso-8859-4.cct
-share/iconv/iso-8859-5.cct
-share/iconv/jis_x0201.cct
-share/iconv/jis_x0208-1983.cct
-share/iconv/jis_x0212-1990.cct
-share/iconv/koi8-r.cct
-share/iconv/koi8-u.cct
-share/iconv/ksx1001.cct
-share/iconv/shift_jis.cct
-@dirrm libexec/iconv
-@dirrm share/iconv
+man/man1/biconv.1.gz
+man/man3/biconv.3.gz
+man/man3/biconv_close.3.gz
+man/man3/biconv_open.3.gz
+%%DATADIR%%/big5.cct
+%%DATADIR%%/charset.aliases
+%%DATADIR%%/cns11643-plane1.cct
+%%DATADIR%%/cns11643-plane14.cct
+%%DATADIR%%/cns11643-plane2.cct
+%%DATADIR%%/cp775.cct
+%%DATADIR%%/cp850.cct
+%%DATADIR%%/cp852.cct
+%%DATADIR%%/cp855.cct
+%%DATADIR%%/cp866.cct
+%%DATADIR%%/gb_2312-80.cct
+%%DATADIR%%/iso-8859-1.cct
+%%DATADIR%%/iso-8859-15.cct
+%%DATADIR%%/iso-8859-2.cct
+%%DATADIR%%/iso-8859-4.cct
+%%DATADIR%%/iso-8859-5.cct
+%%DATADIR%%/jis_x0201.cct
+%%DATADIR%%/jis_x0208-1983.cct
+%%DATADIR%%/jis_x0212-1990.cct
+%%DATADIR%%/koi8-r.cct
+%%DATADIR%%/koi8-u.cct
+%%DATADIR%%/ksx1001.cct
+%%DATADIR%%/shift_jis.cct
+@dirrmtry %%DATADIR%%
+@dirrmtry libexec/iconv
