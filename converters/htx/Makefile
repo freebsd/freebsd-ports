@@ -14,8 +14,7 @@ SHEBANG_FILES=	htx
 NO_BUILD=	yes
 PLIST_FILES=	bin/htx
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/htx ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/htx ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
