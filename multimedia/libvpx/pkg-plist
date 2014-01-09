@@ -1,12 +1,12 @@
 bin/vpxdec
 bin/vpxenc
 bin/vp8_scalable_patterns
+bin/vp9_spatial_scalable_encoder
+include/vpx/svc_context.h
 include/vpx/vp8.h
 include/vpx/vp8cx.h
 include/vpx/vp8dx.h
 include/vpx/vpx_codec.h
-include/vpx/vpx_codec_impl_bottom.h
-include/vpx/vpx_codec_impl_top.h
 include/vpx/vpx_decoder.h
 include/vpx/vpx_encoder.h
 include/vpx/vpx_image.h
@@ -15,6 +15,6 @@ lib/libvpx.a
 libdata/pkgconfig/vpx.pc
 %%SHARED%%lib/libvpx.so
 %%SHARED%%lib/libvpx.so.1
-%%SHARED%%lib/libvpx.so.1.2
-%%SHARED%%lib/libvpx.so.1.2.0
+%%SHARED%%lib/libvpx.so.1.3
+%%SHARED%%lib/libvpx.so.1.3.0
 @dirrm include/vpx
