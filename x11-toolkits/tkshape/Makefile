@@ -12,7 +12,7 @@ DISTNAME=		shape${PORTVERSION:S/.//g}
 MAINTAINER=		nivit@FreeBSD.org
 COMMENT=		A Tk library to access to X Shaped Window Extension
 
-USE_TK=			yes
+USES=			gmake tk:85+
 
 USE_XORG=		x11 xext
 
@@ -24,17 +24,16 @@ OPTIONS_DEFINE=		MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
 MANPAGES_DESC=	Install manual pages
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES}
-MAN3=			CombShape.3 QuryShape.3
-MANN=			shape.n
+PLIST_SUB+=		MAN=""
+.else
+PLIST_SUB+=		MAN="@comment "
 .endif
 
 WRKSRC=			${WRKDIR}/${PORTNAME:C/^tk//1}${PORTVERSION}
 
-USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--with-tclconf=${TCL_LIBDIR} \
 			--with-tkconf=${TK_LIBDIR}
@@ -60,8 +59,8 @@ FIND_IMAGES=		demos/images -type f \
 			-and \( -name "*.gif" -or -name "*.xbm" \
 			-or -name "*.cur" \)
 
-TARGET_DIR=		${PREFIX}/lib/${PORTNAME}
-MANPAGES=		${MAN3} ${MANN}
+TARGET_DIR=		${STAGEDIR}${PREFIX}/lib/${PORTNAME}
+MANPAGES=		CombShape.3 QuryShape.3 shape.n
 
 do-install:
 # script, library
@@ -87,7 +86,7 @@ do-install:
 	cd ${WRKSRC}; \
 	for m in ${MANPAGES} ; do \
 	    s=$${m##*.}; \
-	    ${INSTALL_MAN} doc/$${m} ${MANPREFIX}/man/man$${s}/$${m}; \
+	    ${INSTALL_MAN} doc/$${m} ${STAGEDIR}${PREFIX}/man/man$${s}/$${m}; \
 	done;
 .endif
 
