@@ -5,6 +5,7 @@ PORTNAME=	docbook-xml
 PORTVERSION=	4.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.oasis-open.org/docbook/xml/${PORTVERSION}/
+PKGNAMESUFFIX=	-430
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	DocBook/XML DTD V4.3, designed for technical documentation
@@ -14,7 +15,6 @@ RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-LATEST_LINK=	${PORTNAME}-430
 PLIST=		${WRKSRC}/pkg-plist
 
 XMLCATBASE=	share/xml
