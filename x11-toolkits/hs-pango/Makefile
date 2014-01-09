@@ -2,7 +2,7 @@
 
 PORTNAME=	pango
 PORTVERSION=	0.12.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org

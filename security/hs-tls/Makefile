@@ -2,7 +2,7 @@
 
 PORTNAME=	tls
 PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

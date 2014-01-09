@@ -2,7 +2,7 @@
 
 PORTNAME=	groupoids
 PORTVERSION=	3.0.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
