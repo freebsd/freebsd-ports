@@ -20,7 +20,6 @@ RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar \
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
 USES=		gmake iconv perl5 pkgconfig
-NEED_ROOT=	yes
 WRKSRC=		${WRKDIR}/dpkg-${PORTVERSION}
 
 DPKGDIR?=	/var/db/dpkg
@@ -47,8 +46,9 @@ post-patch:
 		${WRKSRC}/lib/dpkg/dpkg.h
 	@${REINPLACE_CMD} -E 's/(md5|sha1|sha256)sum/g&/g' \
 		${WRKSRC}/scripts/Dpkg/Checksums.pm
-
-post-install:
-	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${REINPLACE_CMD} -e '/echo.*RANLIB/,+1d' ${WRKSRC}/lib/*/Makefile.in
+	@${REINPLACE_CMD} -e 's/cp -p $$(DEST/mv $$(DEST/g; s/rm $$(/rm -f $$(/g' \
+		${WRKSRC}/scripts/mk/Makefile.in \
+		${WRKSRC}/scripts/Makefile.in
 
 .include <bsd.port.mk>
