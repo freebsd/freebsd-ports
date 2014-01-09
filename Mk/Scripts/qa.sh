@@ -54,9 +54,8 @@ symlinks() {
 
 paths() {
 	rc=0
-	dirs="${STAGEDIR} ${WRKDIR}"
 	IFS="$LF" ; for f in `find ${STAGEDIR} -type f`;do
-		for d in ${dirs}; do
+		for d in ${STAGEDIR} ${WRKDIR}; do
 			if grep -q ${d} ${f} ; then
 				err "${f} is referring to ${d}"
 				rc=1
