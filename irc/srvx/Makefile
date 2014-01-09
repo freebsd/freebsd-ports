@@ -19,14 +19,13 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	bin/srvx etc/srvx.conf.example etc/sockcheck.conf.example
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	BAHAMUT DEBUG
+OPTIONS_DEFINE=	BAHAMUT DEBUG DOCS
 OPTIONS_DEFAULT=	BAHAMUT
 BAHAMUT_DESC=	Enable Bahamut protocol (P10 is default)
 
 DEBUG_CONFIGURE_ON=	--enable-debug
 BAHAMUT_CONFIGURE_ON=	--with-protocol=bahamut
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -34,14 +33,11 @@ post-patch:
 		${WRKSRC}/src/main.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/srvx ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/*.conf.example ${PREFIX}/etc
+	${INSTALL_PROGRAM} ${WRKSRC}/src/srvx ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/*.conf.example ${STAGEDIR}${PREFIX}/etc
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/*.help ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/*.help ${STAGEDIR}${DOCSDIR}
 .endif
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 .include <bsd.port.mk>
