@@ -10,6 +10,8 @@ MASTER_SITES=	SF/fix-mime-chr/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	Fix incorrect Content-Type MIME headers of e-mail messages
 
+OPTIONS_DEFINE=	DOCS
+
 LIB_DEPENDS=	libenca.so:${PORTSDIR}/converters/enca
 
 PORTDOCS=	README.koi8r README
@@ -21,19 +23,13 @@ USE_PERL5=	build
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		fix-mime-charset.1
-PLIST_FILES=	bin/fix-mime-charset
-
-NO_STAGE=	yes
-
-.include <bsd.port.options.mk>
+PLIST_FILES=	bin/fix-mime-charset \
+		man/man1/fix-mime-charset.1.gz
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
