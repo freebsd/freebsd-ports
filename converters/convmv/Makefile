@@ -13,10 +13,8 @@ COMMENT=	Convert filenames from one encoding to another
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=		perl5
-PLIST_FILES=	bin/convmv
+USES=		perl5 shebangfix
+SHEBANG_FILES=	convmv
+PLIST_FILES=	bin/convmv man/man1/convmv.1.gz
 
-MAN1=		convmv.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
