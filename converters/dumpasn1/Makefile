@@ -12,7 +12,6 @@ EXTRACT_ONLY=	yes
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Dumps the contents of an ASN.1 encoded file, e.g. an SSL certificate
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/dumpasn1.c ${WRKSRC}
@@ -22,8 +21,8 @@ do-build:
 	${CC} ${CFLAGS} -DCONFIG_NAME=\"${PREFIX}/share/dumpasn1/dumpasn1.cfg\" -o dumpasn1 dumpasn1.c
 
 do-install:
-	${MKDIR} ${PREFIX}/share/dumpasn1
-	${INSTALL_PROGRAM} ${WRKSRC}/dumpasn1 ${PREFIX}/bin
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/dumpasn1.cfg ${PREFIX}/share/dumpasn1
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dumpasn1
+	${INSTALL_PROGRAM} ${WRKSRC}/dumpasn1 ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/dumpasn1.cfg ${STAGEDIR}${PREFIX}/share/dumpasn1
 
 .include <bsd.port.mk>
