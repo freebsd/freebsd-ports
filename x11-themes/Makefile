@@ -151,6 +151,7 @@
     SUBDIR += metacity-themes
     SUBDIR += murrine-configurator
     SUBDIR += nimbus
+    SUBDIR += numix-theme
     SUBDIR += openbox-themes
     SUBDIR += qt4-style-float
     SUBDIR += qt4-style-phase
