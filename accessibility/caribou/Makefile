@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/accessibility/caribou/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#    $MCom: ports/trunk/accessibility/caribou/Makefile 18969 2013-12-28 15:14:09Z kwm $
 
 PORTNAME=	caribou
 PORTVERSION=	0.4.10
@@ -32,12 +32,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-gtk2-module=no
 GLIB_SCHEMAS=	org.gnome.caribou.gschema.xml \
 		org.gnome.antler.gschema.xml
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|bin/python|bin/${PYTHON_VERSION}|g' \
-	${WRKSRC}/tools/fix_gir.py
-	@${REINPLACE_CMD} -e 's|bin/python|bin/${PYTHON_VERSION}|g' \
-	${WRKSRC}/tools/make_schema.py
+python_CMD=	${PYTHON_CMD}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcaribou.so.0

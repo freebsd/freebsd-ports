@@ -1,6 +1,6 @@
 # Created by: Pawel Worach <pawel.worach@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/lang/gjs/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/trunk/lang/gjs/Makefile 18969 2013-12-28 15:14:09Z kwm $
 
 PORTNAME=	gjs
 PORTVERSION=	1.34.0
@@ -27,10 +27,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 SHEBANG_FILES=	scripts/make-tests
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|env python|env ${PYTHON_VERSION}|g' \
-		${WRKSRC}/scripts/make-tests
+python_OLD_CMD=	/usr/bin/env python
+python_CMD=	${PYTHON_CMD}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so*

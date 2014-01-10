@@ -1,9 +1,10 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
 # $FreeBSD$
-#    $MCom: ports/trunk/sysutils/tracker/Makefile 18905 2013-11-19 10:31:31Z gusi $
+#    $MCom: ports/trunk/sysutils/tracker/Makefile 18968 2013-12-27 19:18:39Z kwm $
 
 PORTNAME=	tracker
 PORTVERSION=	0.14.4
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 

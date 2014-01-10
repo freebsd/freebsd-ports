@@ -16,7 +16,7 @@ USE_BZIP2=	yes
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ARGS+=--disable-pam --with-pythonsitedir=${PYTHON_SITELIBDIR}
+CONFIGURE_ARGS+=--disable-pam
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 # configure needs to be fixed
@@ -29,6 +29,7 @@ OPTIONS_DEFAULT=PYTHON
 
 .if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
+BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 CONFIGURE_ARGS+=--enable-python-bindings
 PLIST_SUB+=	PYTHON=""
 .else
@@ -37,11 +38,11 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|env python|env ${PYTHON_VERSION}|g' \
-	${WRKSRC}/python/setup.py
-	@${REINPLACE_CMD} -e 's|python setup.py|${PYTHON_VERSION} setup.py|g' \
-	${WRKSRC}/python/Makefile.am
-	@${REINPLACE_CMD} -e 's|python setup.py|${PYTHON_VERSION} setup.py|g' \
-	${WRKSRC}/python/Makefile.in
+	@${REINPLACE_CMD} -e 's|python setup.py build|${PYTHON_VERSION} setup.py build|g' \
+		${WRKSRC}/python/Makefile.in
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpwquality.so.1
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pwquality.so
 
 .include <bsd.port.mk>
