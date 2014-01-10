@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.crashmail.de/files/ \
 DISTFILES=	bsdgroup.src bsdgroup.png bsdgroup-wiki.src bsdgroup-wiki.png
 EXTRACT_ONLY=	yes
 
-MAINTAINER=	stefan.tell@crashmail.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Firefox search plugins for the www.BSDGroup.de board
 
 USE_FIREFOX=	yes
