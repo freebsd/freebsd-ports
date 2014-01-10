@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	lgi
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
@@ -14,13 +14,18 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pavouk
-GH_COMMIT=	1bbf1bc
+GH_COMMIT=	efa920a
+GH_TAGNAME=	0.7.2
 
-USES=		pkgconfig
-USE_LUA=	5.1+
-USE_GMAKE=	yes
+USES=		gmake lua pkgconfig
+MAKE_ARGS+=	PREFIX=${PREFIX} LUA_LIBDIR=${LUA_MODLIBDIR} \
+		LUA_INCDIR=${LUA_INCDIR} LUA_VERSION=${LUA_VER} \
+		CORE=corelgilua${LUA_VER_STR}.so
+MAKE_ENV+=	LUA_CFLAGS=-I${LUA_INCDIR}
 
-CPPFLAGS+=	-I${LOCALBASE}/include/${LUA_SUBDIR}
+post-patch:
+	@${REINPLACE_CMD} -e 's/51/${LUA_VER_STR}/g' \
+		${WRKSRC}/lgi/core.c \
+		${WRKSRC}/lgi/core.lua
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
