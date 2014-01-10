@@ -60,6 +60,7 @@
     SUBDIR += arpack++
     SUBDIR += arpack-ng
     SUBDIR += asir2000
+    SUBDIR += aspcud
     SUBDIR += asymptote
     SUBDIR += atlas
     SUBDIR += atlas-devel
