@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.crashmail.de/files/ \
 DISTFILES=	bsdforen.src bsdforen.png bsdforen-wiki.src bsdforen-wiki.png
 EXTRACT_ONLY=	yes
 
-MAINTAINER=	stefan.tell@crashmail.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Firefox search plugins for the www.bsdforen.de board and wiki
 
 USE_FIREFOX=	yes
