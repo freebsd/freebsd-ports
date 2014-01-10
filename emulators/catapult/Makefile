@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	catapult
-PORTVERSION=	0.9.1
-PORTREVISION=	4
+PORTVERSION=	0.10.0
 CATEGORIES=	emulators
 MASTER_SITES=	SF/openmsx/openmsx/${PORTVERSION}
 DISTNAME=	openmsx-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GUI for openMSX
 
 LICENSE=	GPLv2
@@ -19,8 +18,10 @@ RUN_DEPENDS=	openmsx:${PORTSDIR}/emulators/openmsx
 OPTIONS_DEFINE=	DEBUG DOCS
 
 USES=		gmake pkgconfig
+USE_GCC=	4.6+
+USE_CXXSTD=	gnu++0x
 USE_GNOME=	gtk20 libxml2
-USE_WX=		2.6+
+USE_WX=		2.8+
 USE_PYTHON_BUILD=yes
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	INSTALL_BASE="${STAGEDIR}${PREFIX}" \
@@ -47,10 +48,12 @@ post-extract:
 	${CP} ${WRKSRC}/build/platform-freebsd.mk \
 		${WRKSRC}/build/platform-dragonfly.mk
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} 's|$$(INSTALL_BASE)|${DATADIR}|' \
 		${WRKSRC}/build/info2code.mk
-	@${REINPLACE_CMD} '/--no-strict-aliasing/s|^CXXFLAGS|#CXXFLAGS| ; \
+	@${REINPLACE_CMD} '/-Wno-literal/s|^CXXFLAGS|#CXXFLAGS| ; \
 		 /--cxx/s|^CXX|#CXX| ; \
 		 /COMPILE=/s|g++|$$(CXX)| ; \
 		 s|@$$(CXX)|$$(CXX)|' ${WRKSRC}/build/main.mk
@@ -63,14 +66,16 @@ post-patch:
 	@${ECHO_CMD} > ${WRKSRC}/build/flavour-portbld.mk
 	@${ECHO_CMD} 'CXXFLAGS+=${CXXFLAGS}' \
 		>> ${WRKSRC}/build/flavour-portbld.mk
+	@${ECHO_CMD} 'LINK_FLAGS+=${LDFLAGS}' \
+		>> ${WRKSRC}/build/flavour-portbld.mk
 	@${ECHO_CMD} 'CATAPULT_STRIP:=${CATAPULT_STRIP}' \
 		>> ${WRKSRC}/build/flavour-portbld.mk
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/resources/icons
-	${INSTALL_DATA} ${WRKSRC}/src/catapult.xpm \
+	@${MKDIR} ${STAGEDIR}${DATADIR}/resources/icons
+	@${INSTALL_DATA} ${WRKSRC}/src/catapult.xpm \
 		${STAGEDIR}${DATADIR}/resources/icons
-	(cd ${WRKSRC}/desktop && ${INSTALL_DATA} openMSX-Catapult.desktop \
-		${STAGEDIR}${DESKTOPDIR})
+	@cd ${WRKSRC}/desktop && ${INSTALL_DATA} openMSX-Catapult.desktop \
+		${STAGEDIR}${DESKTOPDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
