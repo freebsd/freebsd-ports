@@ -2,7 +2,7 @@
 
 PORTNAME=	simple-sendfile
 PORTVERSION=	0.2.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,6 +12,5 @@ LICENSE=	BSD
 
 USE_CABAL=	network
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

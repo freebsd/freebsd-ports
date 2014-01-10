@@ -3,7 +3,7 @@
 
 PORTNAME=	xmobar
 PORTVERSION=	0.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,7 +17,7 @@ USE_XORG=	xrandr
 EXECUTABLE=	xmobar
 STANDALONE=	yes
 
-INSTALL_PORTDATA=	${INSTALL_DATA} ${WRKSRC}/samples/xmobar.config ${DATADIR}
+INSTALL_PORTDATA=	${INSTALL_DATA} ${WRKSRC}/samples/xmobar.config ${STAGEDIR}${DATADIR}
 
 OPTIONS_DEFINE=		XFT UTF8 MPD INOTIFY DATEZONE THREADED
 OPTIONS_DEFAULT=	UTF8
@@ -29,7 +29,6 @@ INOTIFY_DESC=		inotify support
 DATEZONE_DESC=		Localized date support
 THREADED_DESC=		Use threaded runtime
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 # Disable unsupported options

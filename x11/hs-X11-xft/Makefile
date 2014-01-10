@@ -2,7 +2,7 @@
 
 PORTNAME=	X11-xft
 PORTVERSION=	0.3.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11 haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -14,6 +14,5 @@ USES=		pkgconfig
 USE_CABAL=	utf8-string>=0.1 X11>=1.2.1
 USE_XORG=	xft xrender
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

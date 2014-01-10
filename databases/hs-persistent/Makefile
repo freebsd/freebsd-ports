@@ -2,7 +2,7 @@
 
 PORTNAME=	persistent
 PORTVERSION=	1.2.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,6 +17,5 @@ USE_CABAL=	aeson>=0.5 attoparsec base64-bytestring blaze-html>=0.5 \
 		transformers>=0.2.1 transformers-base unordered-containers \
 		vector
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

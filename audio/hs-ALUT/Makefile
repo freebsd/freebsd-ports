@@ -3,7 +3,7 @@
 
 PORTNAME=	ALUT
 PORTVERSION=	2.2.0.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,10 +12,9 @@ COMMENT=	Binding for the OpenAL Utility Toolkit
 LICENSE=	BSD
 
 USE_CABAL=	OpenAL StateVar
-NO_STAGE=	yes
 USES=		openal:al,alut
 
-INSTALL_PORTEXAMPLES=	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+INSTALL_PORTEXAMPLES=	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

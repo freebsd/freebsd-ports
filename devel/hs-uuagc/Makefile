@@ -3,7 +3,7 @@
 
 PORTNAME=	uuagc
 PORTVERSION=	0.9.42.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,6 +16,5 @@ USE_CABAL=	haskell-src-exts>=1.11.1 mtl>=1.1.1.1 uuagc-cabal>=1.0.2.0 \
 
 EXECUTABLE=	uuagc
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

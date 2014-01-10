@@ -1,0 +1,11 @@
+--- ./gtk-2.0/gtkrc.orig	2013-09-17 08:29:50.000000000 +0000
++++ ./gtk-2.0/gtkrc	2013-10-21 17:09:22.000000000 +0000
+@@ -528,7 +528,7 @@
+ 
+ style "xfwm-tabwin" {
+ 	Xfwm4TabwinWidget::border-width = 0
+-	Xfwm4TabwinWidget::icon-size = 64
++	#Xfwm4TabwinWidget::icon-size = 64
+ 
+ 	bg[NORMAL] = @menu_bg_color
+ 	fg[NORMAL] = @menu_fg_color

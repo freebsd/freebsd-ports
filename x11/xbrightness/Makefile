@@ -12,9 +12,6 @@ COMMENT=	Brightness and gamma correction through the X server
 USE_XORG=	x11 xxf86vm ice xmu xt xaw
 USES=		imake
 
-PLIST_FILES=	bin/xbrightness
+PLIST_FILES=	bin/xbrightness man/man1/xbrightness.1.gz
 
-MAN1=		xbrightness.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

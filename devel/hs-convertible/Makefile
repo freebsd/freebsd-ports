@@ -3,7 +3,7 @@
 
 PORTNAME=	convertible
 PORTVERSION=	1.0.11.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,6 +13,5 @@ LICENSE=	BSD
 
 USE_CABAL=	mtl text>=0.7
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -4,10 +4,6 @@
 #
 #
 
-.if ${USES:Mtcl} || ${USES:Mtcl\:*}
-IGNORE= Do not set both tcl and tk in USES
-.endif
-
 .if defined(tk_ARGS)
 tcl_ARGS:=	${tk_ARGS}
 .endif

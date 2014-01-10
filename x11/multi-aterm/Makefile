@@ -15,7 +15,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=--with-xpm=${LOCALBASE}
 
 DOCS=		AUTHORS ChangeLog INSTALL TODO
-MAN1=		multi-aterm.1
 
 .if defined(WITH_UTMP)
 CONFIGURE_ARGS+=	--enable-utmp
@@ -25,7 +24,6 @@ CONFIGURE_ARGS+=	--enable-utmp
 CONFIGURE_ARGS+=	--enable-wtmp
 .endif
 
-NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You can specify the following options:"
@@ -34,8 +32,8 @@ pre-everything::
 
 .if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

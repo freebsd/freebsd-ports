@@ -400,6 +400,7 @@
     SUBDIR += i7z
     SUBDIR += iat
     SUBDIR += installwatch
+    SUBDIR += intel-pcm
     SUBDIR += iogen
     SUBDIR += iograph
     SUBDIR += ioping

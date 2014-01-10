@@ -3,7 +3,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	7.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		${MASTER_SITE_LOCAL:S/$/:boot/}
@@ -63,7 +63,6 @@ OPTIONS_DEFINE+=	BOOT
 OPTIONS_DEFINE+=	BOOTH
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDYNAMIC}
@@ -109,13 +108,12 @@ IGNORE=		unsupported
 .endif # MBOOT
 
 DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
-GHC_LIBDIR=	${PREFIX}/lib/ghc-${GHC_VERSION}
+GHC_LIBDIR=	${STAGEDIR}${PREFIX}/lib/ghc-${GHC_VERSION}
 GHC_LIBDIR_REL=	lib/ghc-${GHC_VERSION}
 
 PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} GHC_LIBDIR=${GHC_LIBDIR_REL}
 
-HACKAGE_SITE?=		http://hackage.haskell.org/
-HACKAGE_ARCH?=		packages/archive/
+HACKAGE_SITE?=		http://hackage.haskell.org/package/
 
 CONFIGURE_ARGS=		--with-gcc=${CC} \
 			--with-ld=${LD} \
@@ -172,14 +170,12 @@ MAKE_ENV+=	TMPDIR=${TMPDIR}
 
 .if empty(PORT_OPTIONS:MBOOTH)
 
-MASTER_SITES+=	${HACKAGE_SITE}${HACKAGE_ARCH}hscolour/${HSCOLOUR_VERSION}/:docs
+MASTER_SITES+=	${HACKAGE_SITE}hscolour-${HSCOLOUR_VERSION}/:docs
 DISTFILES+=	hscolour-${HSCOLOUR_VERSION}.tar.gz:docs
 
 EXTRACT_ONLY=	${_DISTFILES:C/hscolour.*$//g}
 
 .endif # MBOOTH
-
-MAN1=		ghc.1
 
 .if empty(PORT_OPTIONS:MBOOTH)
 
@@ -235,27 +231,27 @@ post-extract:
 post-install-script:
 	@${FIND} -ds ${GHC_LIBDIR} -type f -print | ${SED} -E -e \
 		'/^${GHC_LIBDIR:C/\//\\\//g}\/package.conf.d\/package\.cache/d' -e \
-		's,^${PREFIX}/?,,' >> ${TMPPLIST}
-	@${FIND} -ds ${DOCSDIR} -type f -print | ${SED} -E -e \
-		'/^${DOCSDIR:C/\//\\\//g}\/html\/libraries\/doc-index-[^.]+\.html/d' -e \
-		'/^${DOCSDIR:C/\//\\\//g}\/html\/libraries\/index[^\/.]*\.html/d' -e \
-		'/^${DOCSDIR:C/\//\\\//g}\/html\/libraries\/[^\/]+\.png/d' -e \
-		's,^${PREFIX}/?,,' >> ${TMPPLIST}
+		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
+	@${FIND} -ds ${STAGEDIR}${DOCSDIR} -type f -print | ${SED} -E -e \
+		'/^${STAGEDIR:C/\//\\\//g}${DOCSDIR:C/\//\\\//g}\/html\/libraries\/doc-index-[^.]+\.html/d' -e \
+		'/^${STAGEDIR:C/\//\\\//g}${DOCSDIR:C/\//\\\//g}\/html\/libraries\/index[^\/.]*\.html/d' -e \
+		'/^${STAGEDIR:C/\//\\\//g}${DOCSDIR:C/\//\\\//g}\/html\/libraries\/[^\/]+\.png/d' -e \
+		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
 .if ${PORT_OPTIONS:MDOCS}
 	# Cleanup the indexen created by gen_contents_index
 	@${ECHO} "@unexec ${RM} -f %D/${DOCSDIR_REL}/html/libraries/doc-index-*.html" >> ${TMPPLIST}
 	@${ECHO} "@unexec ${RM} -f %D/${DOCSDIR_REL}/html/libraries/index*.html" >> ${TMPPLIST}
 	@${ECHO} "@unexec ${RM} -f %D/${DOCSDIR_REL}/html/libraries/*.png" >> ${TMPPLIST}
 .endif
+	@${ECHO} '@unexec ${RM} -f %D/${GHC_LIBDIR_REL}/package.conf.d/package.cache' >>${TMPPLIST}
 	@${ECHO} "@exec %D/bin/ghc-pkg recache" >>${TMPPLIST}
 .if ${PORT_OPTIONS:MDOCS}
 	@${ECHO} '@exec ${SH} -c "cd %D/${DOCSDIR_REL}/html/libraries && ./gen_contents_index"' >> ${TMPPLIST}
 .endif
-	@${ECHO} '@unexec ${RM} -f %D/${GHC_LIBDIR_REL}/package.conf.d/package.cache' >>${TMPPLIST}
-	@${FIND} -ds ${DOCSDIR} -type d -print | ${SED} -E -e \
-		's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
+	@${FIND} -ds ${STAGEDIR}${DOCSDIR} -type d -print | ${SED} -E -e \
+		's,^${STAGEDIR}${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
 	@${FIND} -ds ${GHC_LIBDIR} -type d -print | ${SED} -E -e \
-		's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
+		's,^${STAGEDIR}${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}
 
 #post-build:
 #	@(cd ${WRKSRC} && ${GMAKE} binary-dist)
@@ -316,16 +312,13 @@ pre-configure:
 
 post-install:
 	# cabalised hs-foo-ghc ports
-	@${MKDIR} ${PREFIX}/lib/cabal/ghc-${GHC_VERSION}
-	@${MKDIR} ${PREFIX}/share/cabal/ghc-${GHC_VERSION}
-	@${MKDIR} ${PREFIX}/share/doc/cabal/ghc-${GHC_VERSION}
-	@${MKDIR} ${PREFIX}/share/examples/cabal/ghc-${GHC_VERSION}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/cabal/ghc-${GHC_VERSION}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/cabal/ghc-${GHC_VERSION}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/cabal/ghc-${GHC_VERSION}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/cabal/ghc-${GHC_VERSION}
+	@${RM} -f ${STAGEDIR}${PREFIX}/bin/haddock
 .if ${PORT_OPTIONS:MDOCS}
-	cd ${DOCSDIR}/html/libraries && ./gen_contents_index
-.endif
-	@${RM} -f ${PREFIX}/bin/haddock
-.if ${PORT_OPTIONS:MDOCS}
-	@${LN} -sf ${PREFIX}/bin/haddock-ghc-${GHC_VERSION} ${PREFIX}/bin/haddock
+	@${LN} -sf haddock-ghc-${GHC_VERSION} ${STAGEDIR}${PREFIX}/bin/haddock
 .endif
 
 .include <bsd.port.mk>

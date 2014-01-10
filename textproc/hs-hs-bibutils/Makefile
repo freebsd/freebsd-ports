@@ -2,7 +2,7 @@
 
 PORTNAME=	hs-bibutils
 PORTVERSION=	5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,6 +15,5 @@ RUN_DEPENDS=	bibutils>=5.0:${PORTSDIR}/textproc/bibutils
 
 USE_CABAL=	syb
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

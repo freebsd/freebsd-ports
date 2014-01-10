@@ -16,14 +16,12 @@ COMMENT=	Rotating Object on the screen (Zalgaller polyhedra)
 USES=		imake
 USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAN1=		mxico.1
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}; ${INSTALL_DATA} polyhedron/READMEj ${DOCSDIR})
-	@(cd ${WRKSRC}; ${INSTALL_DATA} polyhedron/README ${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}; ${INSTALL_DATA} polyhedron/READMEj ${STAGEDIR}${DOCSDIR})
+	@(cd ${WRKSRC}; ${INSTALL_DATA} polyhedron/README ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>

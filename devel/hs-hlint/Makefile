@@ -2,7 +2,7 @@
 
 PORTNAME=	hlint
 PORTVERSION=	1.8.45
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,6 +15,5 @@ USE_CABAL=	cpphs>=1.11 haskell-src-exts>=1.11 hscolour>=1.17 \
 
 EXECUTABLE=	hlint
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

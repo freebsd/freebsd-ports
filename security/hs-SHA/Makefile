@@ -2,7 +2,7 @@
 
 PORTNAME=	SHA
 PORTVERSION=	1.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -14,7 +14,6 @@ OPTIONS_DEFINE=		EXE
 
 EXE_DESC=		Build a SHA2-384 executable similar to 'md5sum'
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 CONFIGURE_ARGS+=	--flags="-Test"

@@ -14,8 +14,6 @@ USES=		gmake pkgconfig
 USE_XORG=	x11
 USE_GNOME=	gtk20
 
-MAN1=		switch2.1
-PLIST_FILES=	bin/switch2
+PLIST_FILES=	bin/switch2 man/man1/switch2.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

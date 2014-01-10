@@ -3,7 +3,7 @@
 
 PORTNAME=	bytestring-csv
 PORTVERSION=	0.1.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,6 +13,5 @@ LICENSE=	BSD
 
 USE_CABAL=	dlist
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

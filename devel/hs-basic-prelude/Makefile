@@ -2,7 +2,7 @@
 
 PORTNAME=	basic-prelude
 PORTVERSION=	0.3.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,6 +13,5 @@ LICENSE=	MIT
 USE_CABAL=	hashable lifted-base ReadArgs>=1.2 system-filepath>=0.4 text \
 		transformers unordered-containers vector
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

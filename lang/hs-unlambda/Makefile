@@ -3,7 +3,7 @@
 
 PORTNAME=	unlambda
 PORTVERSION=	0.1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,6 +15,5 @@ USE_CABAL=	mtl
 
 EXECUTABLE=	unlambda
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

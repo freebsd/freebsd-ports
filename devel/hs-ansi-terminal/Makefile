@@ -2,7 +2,7 @@
 
 PORTNAME=	ansi-terminal
 PORTVERSION=	0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,6 +12,5 @@ LICENSE=	BSD
 
 CONFIGURE_ARGS+=	--flags="-Example"
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

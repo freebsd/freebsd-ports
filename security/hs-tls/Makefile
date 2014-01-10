@@ -2,7 +2,7 @@
 
 PORTNAME=	tls
 PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,6 +13,5 @@ LICENSE=	BSD
 USE_CABAL=	cereal>=0.3 certificate>=1.3.0 crypto-pubkey \
 		crypto-random-api>=0.2 cryptohash>=0.6 mtl network
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -8,8 +8,11 @@ MASTER_SITES=	http://www.freebsdhackers.net/destroy/ \
 		http://destroy.rider.us/ \
 		http://www.impurity.org/mirrors/destroy/
 
-MAINTAINER=	shane@freebsdhackers.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to securely destroy files on the hard disk
+
+DEPRECATED=	No longer under active development
+EXPIRATION_DATE=	20140201
 
 USE_GMAKE=	yes
 

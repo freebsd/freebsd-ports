@@ -3,7 +3,7 @@
 
 PORTNAME=	pandoc
 PORTVERSION=	1.11.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -31,7 +31,6 @@ OPTIONS_DEFINE=		EMBED_DATA_FILES
 
 EMBED_DATA_FILES_DESC=	Embed data files in binary for relocatable executable
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MEMBED_DATA_FILES}

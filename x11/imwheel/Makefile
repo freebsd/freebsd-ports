@@ -18,9 +18,6 @@ USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gpm
 
-MAN1=		imwheel.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -30,8 +27,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/EMACS ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/EMACS ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 
 PORTNAME=	datetime
 PORTVERSION=	0.2.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,6 +13,5 @@ LICENSE=	GPLv3
 
 USE_CABAL=	QuickCheck>=2
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

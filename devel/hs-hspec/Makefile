@@ -2,7 +2,7 @@
 
 PORTNAME=	hspec
 PORTVERSION=	1.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,6 +16,5 @@ USE_CABAL=	ansi-terminal>=0.5 hspec-expectations HUnit>=1.2.5 \
 
 EXECUTABLE=	hspec-discover
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

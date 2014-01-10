@@ -2,7 +2,7 @@
 
 PORTNAME=	system-filepath
 PORTVERSION=	0.4.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,6 +12,5 @@ LICENSE=	MIT
 
 USE_CABAL=	text>=0.7.1
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

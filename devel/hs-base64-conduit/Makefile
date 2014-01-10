@@ -2,7 +2,7 @@
 
 PORTNAME=	base64-conduit
 PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,6 +12,5 @@ LICENSE=	BSD
 
 USE_CABAL=	base64-bytestring>=0.1.1.1 conduit>=1.0
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

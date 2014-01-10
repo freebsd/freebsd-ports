@@ -3,7 +3,7 @@
 
 PORTNAME=	pcap
 PORTVERSION=	0.4.5.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,6 +13,5 @@ LICENSE=	BSD
 
 USE_CABAL=	network
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

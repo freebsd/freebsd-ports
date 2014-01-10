@@ -2,7 +2,7 @@
 
 PORTNAME=	fsnotify
 PORTVERSION=	0.0.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,6 +13,5 @@ LICENSE=	BSD
 USE_CABAL=	hinotify>=0.3.5 system-fileio>=0.3.8 system-filepath>=0.4.6 \
 		text>=0.11.0
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

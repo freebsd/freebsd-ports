@@ -1,7 +1,0 @@
-Hat is a source-level tracer for Haskell 98, the standard lazy functional
-programming language. Hat is a tool that gives the user access to otherwise
-invisible information about a computation.
-
-Hat works with both ghc and nhc98.
-
-WWW: http://www.haskell.org/hat/

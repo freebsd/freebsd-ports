@@ -754,8 +754,6 @@
     SUBDIR += hs-haskell-src-exts
     SUBDIR += hs-hasktags
     SUBDIR += hs-hastache
-    SUBDIR += hs-hat
-    SUBDIR += hs-hdoc
     SUBDIR += hs-hinotify
     SUBDIR += hs-hint
     SUBDIR += hs-hlibev
@@ -764,7 +762,6 @@
     SUBDIR += hs-hslogger
     SUBDIR += hs-hspec
     SUBDIR += hs-hspec-expectations
-    SUBDIR += hs-idoc
     SUBDIR += hs-kqueue
     SUBDIR += hs-language-c
     SUBDIR += hs-language-javascript
@@ -1421,6 +1418,7 @@
     SUBDIR += p5-App-Trace
     SUBDIR += p5-App-cpanminus
     SUBDIR += p5-App-cpanoutdated
+    SUBDIR += p5-App-scan_prereqs_cpanfile
     SUBDIR += p5-AppConfig
     SUBDIR += p5-AppConfig-Std
     SUBDIR += p5-Array-Group

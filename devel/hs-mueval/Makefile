@@ -3,7 +3,7 @@
 
 PORTNAME=	mueval
 PORTVERSION=	0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,6 +17,5 @@ EXECUTABLE=	mueval mueval-core
 
 CONFIGURE_ARGS+=	--ghc-options="-dynamic"
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

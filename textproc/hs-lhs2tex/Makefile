@@ -3,7 +3,7 @@
 
 PORTNAME=	lhs2tex
 PORTVERSION=	1.18.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -19,6 +19,5 @@ EXECUTABLE=	lhs2TeX
 
 MAN1=		lhs2TeX.1
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

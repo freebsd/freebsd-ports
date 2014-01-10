@@ -3,7 +3,7 @@
 
 PORTNAME=	xmonad-contrib
 PORTVERSION=	0.11.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -21,7 +21,6 @@ OPTIONS_DEFAULT=	XFT
 
 XFT_DESC=		Use Xft to render text
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MXFT}

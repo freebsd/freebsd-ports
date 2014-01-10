@@ -3,7 +3,7 @@
 
 PORTNAME=	json
 PORTVERSION=	0.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	converters haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,6 +15,5 @@ USE_CABAL=	mtl syb>=0.3.3 text
 
 CONFIGURE_ARGS+=	--flags="split-base generic -parsec -pretty -mapdict"
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

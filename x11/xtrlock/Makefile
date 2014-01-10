@@ -22,10 +22,9 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lX11 -lcrypt
 
 MAN1=		xtrlock.1
-PLIST_FILES=	bin/xtrlock
+PLIST_FILES=	bin/xtrlock man/man1/${PORTNAME}.1.gz
 BINMODE=	4555
 
-NO_STAGE=	yes
 post-extract:
 	@${LN} -sf xtrlock.man ${WRKSRC}/xtrlock.1
 
@@ -38,7 +37,7 @@ do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o xtrlock xtrlock.c ${LDFLAGS})
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} xtrlock ${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} xtrlock.1 ${MANPREFIX}/man/man1)
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} xtrlock ${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} xtrlock.1 ${STAGEDIR}${MANPREFIX}/man/man1)
 
 .include <bsd.port.mk>

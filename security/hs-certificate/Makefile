@@ -2,7 +2,7 @@
 
 PORTNAME=	certificate
 PORTVERSION=	1.3.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,7 +17,6 @@ OPTIONS_DEFINE=		EXECUTABLE
 
 EXECUTABLE_DESC=	Build the executable
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MEXECUTABLE}

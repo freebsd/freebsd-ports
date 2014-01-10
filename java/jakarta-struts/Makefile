@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=struts/binaries
 DIST_SUBDIR=	jakarta
 
-MAINTAINER=	toha@toha.org.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Struts framework
 
 USE_JAVA=	yes

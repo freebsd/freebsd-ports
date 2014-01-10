@@ -3,7 +3,7 @@
 
 PORTNAME=	BNFC
 PORTVERSION=	2.6.0.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,6 +15,5 @@ USE_CABAL=	mtl
 
 EXECUTABLE=	bnfc
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- Makefile.orig	Thu May 27 19:58:06 1999
-+++ Makefile	Sat Jul  1 17:48:44 2000
+--- Makefile.orig	1999-05-27 18:58:06.000000000 +0800
++++ Makefile	2014-01-10 14:20:30.000000000 +0800
 @@ -1,6 +1,6 @@
 -CC = gcc
 -CFLAGS = `gtk-config --cflags`
@@ -10,12 +10,12 @@
  
  all:	gmessage
  
-@@ -8,7 +8,7 @@
+@@ -8,7 +8,7 @@ gmessage:	gmessage.c
  	$(CC) $(CFLAGS) gmessage.c -o gmessage $(OBJS) $(LDLIBS)
  
  install: gmessage
 -	cp ./gmessage /usr/local/bin
-+	${BSD_INSTALL_PROGRAM} gmessage ${PREFIX}/bin
++	${BSD_INSTALL_PROGRAM} gmessage $(DESTDIR)${PREFIX}/bin
  
  clean:
  	$(RM) *.o core gmessage

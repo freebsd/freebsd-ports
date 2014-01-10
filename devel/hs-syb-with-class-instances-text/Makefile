@@ -2,7 +2,7 @@
 
 PORTNAME=	syb-with-class-instances-text
 PORTVERSION=	0.0.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,6 +12,5 @@ LICENSE=	BSD
 
 USE_CABAL=	syb-with-class text>=0.7.1
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

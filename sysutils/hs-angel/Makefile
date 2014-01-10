@@ -2,7 +2,7 @@
 
 PORTNAME=	angel
 PORTVERSION=	0.3.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,6 +17,5 @@ EXECUTABLE=	angel
 
 STANDALONE=	yes
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

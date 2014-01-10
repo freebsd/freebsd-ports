@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu May 22 21:18:22 1997
-+++ Makefile.in	Sat Sep 26 21:59:37 1998
-@@ -13,6 +13,10 @@
+--- Makefile.in.orig	1997-05-23 10:18:22.000000000 +0800
++++ Makefile.in	2014-01-09 20:47:32.000000000 +0800
+@@ -13,6 +13,10 @@ LDFLAGS = @LDFLAGS@
  RANLIB = @RANLIB@
  
  LIBS = @LIBS@ @X_LIBS@ @X_PRE_LIBS@ -lXmu -lXaw -lXt -lX11 @X_EXTRA_LIBS@
@@ -11,7 +11,7 @@
  
  prefix = @prefix@
  exec_prefix = @exec_prefix@
-@@ -23,20 +33,30 @@
+@@ -23,20 +27,30 @@ COMPILE = $(CC) $(INCLUDES) $(CFLAGS) -c
  CXXCOMPILE = $(CXX) $(INCLUDES) $(CXXFLAGS) -c
  LINK = $(CC) $(LDFLAGS) -o $@
  
@@ -24,15 +24,17 @@
 +all: libC libCpp dndtest libC-so libCpp-so
  
  install: libCpp libC
- 	install -d $(INC_DIR)
+-	install -d $(INC_DIR)
 -	install DragAndDrop.h DragAndDropTypes.h $(INC_DIR)
-+	install -c -m 644 DragAndDrop.h DragAndDropTypes.h $(INC_DIR)
- 	install -d $(LIB_DIR)
+-	install -d $(LIB_DIR)
 -	install libDnd.a libDnd++.a $(LIB_DIR)
-+	install -c -m 644 libDnd.a libDnd++.a $(LIB_DIR)
-+	install -c $(DNDLIB) $(DNDPLUSLIB) $(LIB_DIR)
-+	ln -sf $(DNDLIB) $(LIB_DIR)/libDnd.so
-+	ln -sf $(DNDPLUSLIB) $(LIB_DIR)/libDnd++.so
++	install -d $(DESTDIR)$(INC_DIR)
++	install -c -m 644 DragAndDrop.h DragAndDropTypes.h $(DESTDIR)$(INC_DIR)
++	install -d $(DESTDIR)$(LIB_DIR)
++	install -c -m 644 libDnd.a libDnd++.a $(DESTDIR)$(LIB_DIR)
++	install -c $(DNDLIB) $(DNDPLUSLIB) $(DESTDIR)$(LIB_DIR)
++	cd $(DESTDIR)/$(LIB_DIR); ln -sf $(DNDLIB) libDnd.so
++	cd $(DESTDIR)/$(LIB_DIR); ln -sf $(DNDPLUSLIB) libDnd++.so
  
  libC: libDnd.a
  
@@ -45,7 +47,7 @@
  dndtest: dndtest.c libDnd.a
  	rm -f dndtest
  	$(COMPILE) dndtest.c
-@@ -57,6 +77,16 @@
+@@ -57,6 +71,16 @@ libDnd++.a: DragAndDrop.c
  	$(AR) cru libDnd++.a DragAndDrop.o
  	$(RANLIB) libDnd++.a
  

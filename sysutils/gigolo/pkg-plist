@@ -1,45 +1,59 @@
 bin/gigolo
 man/man1/gigolo.1.gz
 share/applications/gigolo.desktop
+%%NLS%%share/locale/ar/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gigolo.mo
-%%NLS%%share/locale/da/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/el/LC_MESSAGES/gigolo.mo
+%%NLS%%share/locale/en_AU/LC_MESSAGES/gigolo.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/gigolo.mo
+%%NLS%%share/locale/he/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/id/LC_MESSAGES/gigolo.mo
+%%NLS%%share/locale/is/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/gigolo.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/gigolo.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gigolo.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/gigolo.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/gigolo.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gigolo.mo
+%%NLS%%share/locale/te/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/ur/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/gigolo.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gigolo.mo
-share/pixmaps/gigolo.png
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/gigolo.mo
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur_PK
 %%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur
 %%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ug
+%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/te
+%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/oc
 %%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/kk
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES

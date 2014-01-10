@@ -2,7 +2,7 @@
 
 PORTNAME=	ghc-events
 PORTVERSION=	0.4.2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -14,6 +14,5 @@ USE_CABAL=	mtl>=1.1
 
 EXECUTABLE=	ghc-events
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

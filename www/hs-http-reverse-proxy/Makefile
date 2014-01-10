@@ -2,7 +2,7 @@
 
 PORTNAME=	http-reverse-proxy
 PORTVERSION=	0.1.1.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,6 +15,5 @@ USE_CABAL=	blaze-builder>=0.3 case-insensitive>=0.4 classy-prelude>=0.3 \
 		lifted-base>=0.1 monad-control>=0.3 network network-conduit>=0.6 \
 		text>=0.11 wai>=1.3 warp>=1.3.4 word8>=0.0
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -1,107 +1,64 @@
-*** Makefile.orig	Tue May 13 00:55:59 1997
---- Makefile	Sat Dec 18 03:25:54 1999
-***************
-*** 6,27 ****
-  
-  .SUFFIXES: .c .o
-  
-! CC	=gcc
-  RM	=rm
-  LN	=ln
-! INSTALL	=install
-  CP	=cp
-  TAR	=tar
-  GZIP	=gzip
-  
-  # Binary directory for make install
-! BINDIR	=/usr/local/bin/X11
-  
-  # Library directories for Linux
-! XLIBDIR	=/usr/X11R6/lib
-  
-  # Include directory for gcc (if you get X11/Xlib.h: file not found)
-! #INCDIR =-I/usr/X11R6/include
-  
-  # Library directories for the Ultrix (probably most Unixes)
-  #XLIBDIR =/usr/lib/X11
---- 6,27 ----
-  
-  .SUFFIXES: .c .o
-  
-! CC	?=gcc
-  RM	=rm
-  LN	=ln
-! INSTALL	?=install
-  CP	=cp
-  TAR	=tar
-  GZIP	=gzip
-  
-  # Binary directory for make install
-! BINDIR	=$(PREFIX)/bin
-  
-  # Library directories for Linux
-! XLIBDIR	=$(LOCALBASE)/lib
-  
-  # Include directory for gcc (if you get X11/Xlib.h: file not found)
-! INCDIR =-I$(LOCALBASE)/include
-  
-  # Library directories for the Ultrix (probably most Unixes)
-  #XLIBDIR =/usr/lib/X11
-***************
-*** 34,40 ****
-  	$(CC) $(INCDIR) $(CFLAGS) $(XPM) -c $*.c
-  
-  # Linux CFLAGS (actually generic gcc)
-! CFLAGS=-Wall -O2
-  
-  # Want static binaries?
-  #CFLAGS=-Wall -O2 -static
---- 34,40 ----
-  	$(CC) $(INCDIR) $(CFLAGS) $(XPM) -c $*.c
-  
-  # Linux CFLAGS (actually generic gcc)
-! #CFLAGS=-Wall -O2
-  
-  # Want static binaries?
-  #CFLAGS=-Wall -O2 -static
-***************
-*** 48,54 ****
-  # Most Linux users won't be troubled by this. Actually almost nobody will
-  # be troubled by this. It just might save me a couple of emails...
-  # Just change it to wherever your libX11.a resides.
-! LDFLAGS=-L$(XLIBDIR)
-  
-  all: xbanner freetemp random_effect xb_check 
-  
---- 48,54 ----
-  # Most Linux users won't be troubled by this. Actually almost nobody will
-  # be troubled by this. It just might save me a couple of emails...
-  # Just change it to wherever your libX11.a resides.
-! LDFLAGS+=-L$(XLIBDIR)
-  
-  all: xbanner freetemp random_effect xb_check 
-  
-***************
-*** 70,79 ****
-  xb_check: xb_check.o 
-  	$(CC) $(CFLAGS) -o xb_check xb_check.o 
-  
-! install: freetemp xbanner xb_check 
-! 	$(INSTALL) --strip --mode "0755" --owner root --group bin freetemp $(BINDIR)/freetemp
-! 	$(INSTALL) --strip --mode "0755" --owner root --group bin xbanner $(BINDIR)/xbanner
-! 	$(INSTALL) --strip --mode "0755" --owner root --group bin xb_check $(BINDIR)/xb_check
-  
-  strip: exe
-  	strip xbanner freetemp xb_check random_effect
---- 70,80 ----
-  xb_check: xb_check.o 
-  	$(CC) $(CFLAGS) -o xb_check xb_check.o 
-  
-! install: freetemp xbanner xb_check random_effect 
-! 	${BSD_INSTALL_PROGRAM} freetemp $(BINDIR)/freetemp
-! 	${BSD_INSTALL_PROGRAM} xbanner $(BINDIR)/xbanner
-! 	${BSD_INSTALL_PROGRAM} xb_check $(BINDIR)/xb_check
-! 	${BSD_INSTALL_PROGRAM} random_effect $(BINDIR)/random_effect
-  
-  strip: exe
-  	strip xbanner freetemp xb_check random_effect
+--- Makefile.orig	1997-05-12 23:55:59.000000000 +0800
++++ Makefile	2014-01-09 21:06:36.000000000 +0800
+@@ -6,22 +6,22 @@
+ 
+ .SUFFIXES: .c .o
+ 
+-CC	=gcc
++CC	?=gcc
+ RM	=rm
+ LN	=ln
+-INSTALL	=install
++INSTALL	?=install
+ CP	=cp
+ TAR	=tar
+ GZIP	=gzip
+ 
+ # Binary directory for make install
+-BINDIR	=/usr/local/bin/X11
++BINDIR	=$(PREFIX)/bin
+ 
+ # Library directories for Linux
+-XLIBDIR	=/usr/X11R6/lib
++XLIBDIR	=$(LOCALBASE)/lib
+ 
+ # Include directory for gcc (if you get X11/Xlib.h: file not found)
+-#INCDIR =-I/usr/X11R6/include
++INCDIR =-I$(LOCALBASE)/include
+ 
+ # Library directories for the Ultrix (probably most Unixes)
+ #XLIBDIR =/usr/lib/X11
+@@ -34,7 +34,7 @@ XPMLIB  =-lXpm
+ 	$(CC) $(INCDIR) $(CFLAGS) $(XPM) -c $*.c
+ 
+ # Linux CFLAGS (actually generic gcc)
+-CFLAGS=-Wall -O2
++#CFLAGS=-Wall -O2
+ 
+ # Want static binaries?
+ #CFLAGS=-Wall -O2 -static
+@@ -48,7 +48,7 @@ CFLAGS=-Wall -O2
+ # Most Linux users won't be troubled by this. Actually almost nobody will
+ # be troubled by this. It just might save me a couple of emails...
+ # Just change it to wherever your libX11.a resides.
+-LDFLAGS=-L$(XLIBDIR)
++LDFLAGS+=-L$(XLIBDIR)
+ 
+ all: xbanner freetemp random_effect xb_check 
+ 
+@@ -70,10 +70,11 @@ random_effect: random_effect.o 
+ xb_check: xb_check.o 
+ 	$(CC) $(CFLAGS) -o xb_check xb_check.o 
+ 
+-install: freetemp xbanner xb_check 
+-	$(INSTALL) --strip --mode "0755" --owner root --group bin freetemp $(BINDIR)/freetemp
+-	$(INSTALL) --strip --mode "0755" --owner root --group bin xbanner $(BINDIR)/xbanner
+-	$(INSTALL) --strip --mode "0755" --owner root --group bin xb_check $(BINDIR)/xb_check
++install: freetemp xbanner xb_check random_effect 
++	${BSD_INSTALL_PROGRAM} freetemp $(DESTDIR)$(BINDIR)/freetemp
++	${BSD_INSTALL_PROGRAM} xbanner $(DESTDIR)$(BINDIR)/xbanner
++	${BSD_INSTALL_PROGRAM} xb_check $(DESTDIR)$(BINDIR)/xb_check
++	${BSD_INSTALL_PROGRAM} random_effect $(DESTDIR)$(BINDIR)/random_effect
+ 
+ strip: exe
+ 	strip xbanner freetemp xb_check random_effect

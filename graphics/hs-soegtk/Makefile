@@ -2,7 +2,7 @@
 
 PORTNAME=	soegtk
 PORTVERSION=	0.12.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,6 +13,5 @@ LICENSE=	LGPL21
 USE_CABAL=	cairo>=0.12 gtk>=0.11 mtl stm>=2
 USE_GNOME=	gtk20
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

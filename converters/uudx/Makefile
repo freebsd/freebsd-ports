@@ -14,14 +14,11 @@ BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
 USE_LHA=	yes
 NO_WRKSUBDIR=	yes
-MANLANG=	ja
-MAN1=		uudx.1
-PLIST_FILES=	bin/uudx
+PLIST_FILES=	bin/uudx \
+		man/ja/man1/uudx.1.gz
 
-NO_STAGE=	yes
 pre-patch:
-	@${ECHO_MSG} "===>  Installing custom Makefile for ${DISTNAME}"
-	@(${CP} ${FILESDIR}/Makefile ${WRKSRC})
+	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 post-patch:
 	@${REINPLACE_CMD} -e '/sprintf()/d' ${WRKSRC}/uudx.c

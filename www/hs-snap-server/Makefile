@@ -2,7 +2,7 @@
 
 PORTNAME=	snap-server
 PORTVERSION=	0.9.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -20,7 +20,6 @@ OPTIONS_DEFINE=		OPENSSL
 
 OPENSSL_DESC=		Enable HTTPS support using the HsOpenSSL library
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MOPENSSL}

@@ -2,7 +2,7 @@
 
 PORTNAME=	IfElse
 PORTVERSION=	0.85
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,6 +12,5 @@ LICENSE=	BSD
 
 USE_CABAL=	mtl
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

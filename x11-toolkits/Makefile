@@ -75,7 +75,6 @@
     SUBDIR += hs-GLUT
     SUBDIR += hs-OpenGL
     SUBDIR += hs-OpenGLRaw
-    SUBDIR += hs-frantk
     SUBDIR += hs-gtk
     SUBDIR += hs-gtk2hs
     SUBDIR += hs-gtkglext

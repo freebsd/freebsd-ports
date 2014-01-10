@@ -17,14 +17,10 @@ MAKE_ARGS+=	X11LIBDIR="${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
 USE_XORG=	x11 xscrnsaver
-PLIST_FILES=	bin/xidle
-MAN1=		xidle.1
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/xidle man/man1/xidle.1.gz
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xidle ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xidle.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/xidle ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xidle.1 ${STAGEDIR}${PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

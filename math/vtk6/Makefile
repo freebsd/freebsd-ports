@@ -136,6 +136,12 @@ CMAKE_ARGS+=	-DVTK_WRAP_TCL:BOOL=OFF \
 PLIST_SUB+=	TCLTK="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MJava} || ${PORT_OPTIONS:MPython} || ${PORT_OPTIONS:MTclTk}
+PLIST_SUB+=	WRAP=""
+.else
+PLIST_SUB+=	WRAP="@comment "
+.endif
+
 .if ${PORT_OPTIONS:MDOCS}
 CMAKE_ARGS+=	-DBUILD_DOCUMENTATION:BOOL=ON
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen

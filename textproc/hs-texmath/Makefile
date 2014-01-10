@@ -3,7 +3,7 @@
 
 PORTNAME=	texmath
 PORTVERSION=	0.6.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,7 +17,6 @@ OPTIONS_DEFINE=		CGI
 
 CGI_DESC=		Compile CGI executable
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MCGI}

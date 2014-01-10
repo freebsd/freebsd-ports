@@ -2,7 +2,7 @@
 
 PORTNAME=	hS3
 PORTVERSION=	0.5.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,6 +15,5 @@ USE_CABAL=	Crypto>=4.1.0 dataenc HTTP>=4000.0.0 hxt>=9.0.0 \
 
 EXECUTABLE=	hs3
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

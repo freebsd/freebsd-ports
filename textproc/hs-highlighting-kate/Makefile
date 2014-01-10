@@ -2,7 +2,7 @@
 
 PORTNAME=	highlighting-kate
 PORTVERSION=	0.5.3.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,7 +16,6 @@ OPTIONS_DEFINE=		EXECUTABLE
 
 EXECUTABLE_DESC=	Build the Highlight executable
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MEXECUTABLE}

@@ -3,7 +3,7 @@
 
 PORTNAME=	c2hs
 PORTVERSION=	0.16.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -21,6 +21,5 @@ EXECUTABLE=	c2hs
 MAN1=		c2hs.1
 MAN1SRC=	doc/man1
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

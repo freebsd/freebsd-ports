@@ -2,7 +2,7 @@
 
 PORTNAME=	lens
 PORTVERSION=	3.9.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -19,6 +19,5 @@ USE_CABAL=	bifunctors>=3 comonad>=3 comonad-transformers>=3 \
 		text>=0.11 transformers>=0.3 unordered-containers>=0.2 \
 		vector>=0.9 void>=0.5
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

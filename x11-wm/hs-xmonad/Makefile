@@ -3,7 +3,7 @@
 
 PORTNAME=	xmonad
 PORTVERSION=	0.11
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-wm haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -19,6 +19,5 @@ MAN1SRC=	man
 
 EXECUTABLE=	xmonad
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -11,9 +11,6 @@ COMMENT=	Program for setting the title of terminal emulator windows
 
 WRKSRC=		${WRKDIR}/settitle
 
-MAN1=		settitle.1
-MANCOMPRESSED=	maybe
-PLIST_FILES=	bin/settitle
+PLIST_FILES=	bin/settitle man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

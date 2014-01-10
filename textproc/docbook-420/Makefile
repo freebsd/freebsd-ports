@@ -5,6 +5,7 @@ PORTNAME=	docbook
 PORTVERSION=	4.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.docbook.org/sgml/4.2/
+PKGNAMESUFFIX=	-420
 
 MAINTAINER=	kutulu@kutulu.org
 COMMENT=	V4.2 of the DocBook DTD, designed for technical documentation
@@ -27,8 +28,6 @@ INSTDIR=	${STAGEDIR}${PREFIX}/share/sgml/docbook
 ISOCAT=		${LOCALBASE}/share/sgml/iso8879/catalog
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${LOCALBASE}/share/sgml/catalog.ports
-
-LATEST_LINK=	docbook-420
 
 do-extract:
 	${MKDIR} ${WRKSRC}

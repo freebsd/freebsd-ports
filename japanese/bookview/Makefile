@@ -11,9 +11,8 @@ MASTER_SITES=	ftp://ftp.sra.co.jp/pub/net/ndtp/bookview/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NDTP client written in Tcl/Tk
 
-USE_TK_WRAPPER=		yes
+USES=		tk:wrapper
 
-NO_STAGE=	yes
 do-build:
 .for i in bookview/bookview doc/bookview.html
 	cd ${WRKSRC} && ${SED} -e \
@@ -24,15 +23,15 @@ do-build:
 .endfor
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bookview/bookview ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/bitmap/*.gif ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/bitmap/*.xbm ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/bookview/*.tcl ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/bookview/*.mo ${DATADIR}
-	@${MKDIR} ${DATADIR}/doc
-	${INSTALL_DATA} ${WRKSRC}/doc/*.css ${DATADIR}/doc
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DATADIR}/doc
-	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DATADIR}/doc
+	${INSTALL_SCRIPT} ${WRKSRC}/bookview/bookview ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/bitmap/*.gif ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/bitmap/*.xbm ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/bookview/*.tcl ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/bookview/*.mo ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/doc
+	${INSTALL_DATA} ${WRKSRC}/doc/*.css ${STAGEDIR}${DATADIR}/doc
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DATADIR}/doc
+	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${STAGEDIR}${DATADIR}/doc
 
 .include <bsd.port.mk>

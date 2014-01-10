@@ -27,37 +27,38 @@ LDFLAGS+=	-L${TK_LIBDIR}
 
 PLIST_SUB+=	TK_VER=${TK_VER}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|wish |${WISH:T} |' ${WRKSRC}/*.tcl
 
 do-install:
-	@${MKDIR} ${TOGL_INSTDIR}
+	@${MKDIR} ${STAGEDIR}${TOGL_INSTDIR}
 .for i in togl.h togl_ws.h libTogl1.7.so pkgIndex.tcl
-	${INSTALL_DATA} ${WRKSRC}/${i} ${TOGL_INSTDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${TOGL_INSTDIR}
 .endfor
-	${LN} -s ${TOGL_INSTDIR}/libTogl1.7.so  ${TOGL_INSTDIR}/libtogl.so.1
-	${LN} -s ${TOGL_INSTDIR}/libTogl1.7.so  ${PREFIX}/lib/libtogl.so
-	${LN} -s ${TOGL_INSTDIR}/libTogl1.7.so  ${PREFIX}/lib/libtogl.so.1
+	${LN} -s libTogl1.7.so  ${STAGEDIR}${TOGL_INSTDIR}/libtogl.so.1
+	${LN} -s ${TOGL_INSTDIR}/libTogl1.7.so  ${STAGEDIR}${PREFIX}/lib/libtogl.so
+	${LN} -s ${TOGL_INSTDIR}/libTogl1.7.so  ${STAGEDIR}${PREFIX}/lib/libtogl.so.1
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Togl.html ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Togl.html ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/Makefile ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/ben.rgb ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/double.c ${WRKSRC}/double.tcl ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/gears.c ${WRKSRC}/gears.tcl ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/image.c ${WRKSRC}/image.h ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/index.c ${WRKSRC}/index.tcl ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/overlay.c ${WRKSRC}/overlay.tcl ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/stereo.c ${WRKSRC}/stereo.tcl ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/texture.c ${WRKSRC}/texture.tcl ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/togl.c ${WRKSRC}/togl.h ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/tree2.rgba ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/Makefile ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/ben.rgb ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/double.c ${WRKSRC}/double.tcl ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/gears.c ${WRKSRC}/gears.tcl ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/image.c ${WRKSRC}/image.h ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/index.c ${WRKSRC}/index.tcl ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/overlay.c ${WRKSRC}/overlay.tcl ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/stereo.c ${WRKSRC}/stereo.tcl ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/texture.c ${WRKSRC}/texture.tcl ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/togl.c ${WRKSRC}/togl.h ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/tree2.rgba ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	delphus@gmail.com
 COMMENT=	Unpack data in MS Outlook TNEF format
 
+OPTIONS_DEFINE=	DOCS
+
 LIB_DEPENDS=	libytnef.so:${PORTSDIR}/devel/libytnef
 RUN_DEPENDS=	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools
 
@@ -23,18 +25,12 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/ytnef bin/ytnefprocess.pl bin/ytnefprint
 PORTDOCS=	AUTHORS NEWS README
 
-NO_STAGE=	yes
-
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|^#!/usr/bin/perl|#!${PERL}|' \
 		${WRKSRC}/src/ytnef/ytnefprocess.pl
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -18,7 +18,6 @@ USES=		imake
 USE_XORG=	x11 xkbfile
 NO_WRKSUBDIR=	yes
 
-NO_STAGE=	yes
 do-extract:
 		@${RM} -rf ${WRKDIR}
 		@${MKDIR} ${WRKDIR}
@@ -27,6 +26,6 @@ do-extract:
 		done
 
 do-install:
-		@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+		@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

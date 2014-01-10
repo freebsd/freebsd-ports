@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
 PKGNAMEPREFIX?=	p5-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:apache,cpan
 
-MAINTAINER?=	beech@FreeBSD.org
+MAINTAINER?=	perl@FreeBSD.org
 COMMENT?=	A highly efficient mail filter for identifying spam
 
 LICENSE=	APACHE20
@@ -55,7 +55,6 @@ IPV6_DESC=		IPv6 sockets support
 SUB_FILES=	pkg-install
 SUB_LIST=	USER=${USERS} GROUP=${GROUPS} INSTALL="${INSTALL}"
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
@@ -138,8 +137,6 @@ RUN_DEPENDS+=	p5-IP-Country>=0:${PORTSDIR}/net/p5-IP-Country
 RUN_DEPENDS+=	dcc-dccd>=1.3.111:${PORTSDIR}/mail/dcc-dccd
 .endif
 
-.include "${FILESDIR}/manpages"
-
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${PREFIX}/share/spamassassin
 DOCS=		CREDITS Changes INSTALL NOTICE PACKAGING README TRADEMARK UPGRADE USAGE procmailrc.example
@@ -198,44 +195,26 @@ post-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} spamc/libsslspamc.so)
 .endif
 
-pre-su-install:
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_PROGRAM} ${WRKSRC}/spamc/libspamc.so ${PREFIX}/lib/libspamc.so.0
-	@${LN} -sf libspamc.so.0 ${PREFIX}/lib/libspamc.so
+pre-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/spamc/libspamc.so ${STAGEDIR}${PREFIX}/lib/libspamc.so.0
+	@${LN} -sf libspamc.so.0 ${STAGEDIR}${PREFIX}/lib/libspamc.so
 .if ${PORT_OPTIONS:MSSL}
-	@${INSTALL_PROGRAM} ${WRKSRC}/spamc/libsslspamc.so ${PREFIX}/lib/libsslspamc.so.0
-	@${LN} -sf libsslspamc.so.0 ${PREFIX}/lib/libsslspamc.so
+	@${INSTALL_PROGRAM} ${WRKSRC}/spamc/libsslspamc.so ${STAGEDIR}${PREFIX}/lib/libsslspamc.so.0
+	@${LN} -sf libsslspamc.so.0 ${STAGEDIR}${PREFIX}/lib/libsslspamc.so
 .endif
-	@${INSTALL_DATA} ${WRKSRC}/spamc/libspamc.h ${PREFIX}/include
+	@${INSTALL_DATA} ${WRKSRC}/spamc/libspamc.h ${STAGEDIR}${PREFIX}/include
 
 post-install::
 .if ${PORT_OPTIONS:MSPAMC}
-	@${STRIP_CMD} ${PREFIX}/bin/spamc
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/spamc
 .endif
-	@[ -f ${ETCDIR}/init.pre ] || \
-		${INSTALL_DATA} ${ETCDIR}/init.pre.sample \
-			${ETCDIR}/init.pre
-	@[ -f ${ETCDIR}/v310.pre ] || \
-		${INSTALL_DATA} ${ETCDIR}/v310.pre.sample \
-			${ETCDIR}/v310.pre
-	@[ -f ${ETCDIR}/v312.pre ] || \
-		${INSTALL_DATA} ${ETCDIR}/v312.pre.sample \
-			${ETCDIR}/v312.pre
-	@[ -f ${ETCDIR}/v320.pre ] || \
-		${INSTALL_DATA} ${ETCDIR}/v320.pre.sample \
-			${ETCDIR}/v320.pre
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@[ -f ${ETCDIR}/v330.pre ] || \
-		${INSTALL_DATA} ${ETCDIR}/v330.pre.sample \
-			${ETCDIR}/v330.pre
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/sql ${DOCSDIR}/ldap
-	@${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	@${INSTALL_DATA} ${DOCSSQL:S|^|${WRKSRC}/sql/|} ${DOCSDIR}/sql
-	@${INSTALL_DATA} ${DOCSLDAP:S|^|${WRKSRC}/ldap/|} ${DOCSDIR}/ldap
-
+	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR}/sql ${STAGEDIR}${DOCSDIR}/ldap
+	@${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${DOCSSQL:S|^|${WRKSRC}/sql/|} ${STAGEDIR}${DOCSDIR}/sql
+	@${INSTALL_DATA} ${DOCSLDAP:S|^|${WRKSRC}/ldap/|} ${STAGEDIR}${DOCSDIR}/ldap
 .endif
-	@${SED} -e 's#PREFIX#${PREFIX}#' ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

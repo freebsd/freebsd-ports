@@ -3,7 +3,7 @@
 
 PORTNAME=	X11
 PORTVERSION=	1.6.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -19,7 +19,6 @@ OPTIONS_DEFAULT=	XINERAMA
 
 XINERAMA_DESC=	Build with Xinerama support
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MXINERAMA}

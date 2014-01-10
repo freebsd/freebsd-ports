@@ -12,6 +12,7 @@ bin/ghci-%%GHC_VERSION%%
 bin/ghc-pkg-%%GHC_VERSION%%
 bin/haddock-ghc-%%GHC_VERSION%%
 bin/runghc-%%GHC_VERSION%%
+man/man1/ghc.1.gz
 @exec /bin/ln -sf %D/bin/haddock-ghc-%%GHC_VERSION%% %D/bin/haddock || return true
 @unexec /bin/rm -f %D/bin/haddock || return true
 @exec /bin/mkdir -p %D/lib/cabal/ghc-%%GHC_VERSION%%             || return true

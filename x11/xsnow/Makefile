@@ -12,10 +12,8 @@ COMMENT=	Create a snowy and Santa-y desktop
 
 USES=		imake
 USE_XORG=	xpm
-MAN6=		xsnow.6
-PLIST_FILES=	bin/xsnow
+PLIST_FILES=	bin/xsnow man/man6/xsnow.6.gz
 
-NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} \
 		-e 's: BINDIR .*:BINDIR=${PREFIX}/bin:' \

@@ -2,7 +2,7 @@
 
 PORTNAME=	wai-extra
 PORTVERSION=	1.3.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,6 +17,5 @@ USE_CABAL=	ansi-terminal blaze-builder>=0.2.1.4 blaze-builder-conduit>=0.5 \
 		text>=0.7 transformers>=0.2.2 void>=0.5 wai>=1.3 \
 		wai-logger>=0.2 word8 zlib-conduit>=0.5
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

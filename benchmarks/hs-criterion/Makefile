@@ -3,7 +3,7 @@
 
 PORTNAME=	criterion
 PORTVERSION=	0.6.2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	benchmarks haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,10 +16,9 @@ USE_CABAL=	aeson>=0.3.2.12 hastache>=0.5.0 mtl>=2 mwc-random>=0.8.0.3 \
 		vector>=0.7.1 vector-algorithms>=0.4
 
 INSTALL_PORTEXAMPLES=	\
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 
-INSTALL_PORTDATA= 	${INSTALL_DATA} ${WRKSRC}/README.markdown ${DATADIR}
+INSTALL_PORTDATA=	${INSTALL_DATA} ${WRKSRC}/README.markdown ${STAGEDIR}${DATADIR}
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

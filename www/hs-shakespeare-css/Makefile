@@ -2,7 +2,7 @@
 
 PORTNAME=	shakespeare-css
 PORTVERSION=	1.0.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,6 +12,5 @@ LICENSE=	MIT
 
 USE_CABAL=	parsec>=2 shakespeare>=1.0 text>=0.11.1.1 transformers
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

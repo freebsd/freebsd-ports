@@ -2,7 +2,7 @@
 
 PORTNAME=	ansi-wl-pprint
 PORTVERSION=	0.6.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -14,6 +14,5 @@ USE_CABAL=	ansi-terminal>=0.4.0
 
 CONFIGURE_ARGS+=	--flags="-Example"
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

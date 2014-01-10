@@ -1,0 +1,8 @@
+sbin/pcm-memory.x
+sbin/pcm-msr.x
+sbin/pcm-numa.x
+sbin/pcm-pcie.x
+sbin/pcm-power.x
+sbin/pcm-sensor.x
+sbin/pcm-tsx.x
+sbin/pcm.x

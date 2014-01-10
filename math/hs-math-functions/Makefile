@@ -3,7 +3,7 @@
 
 PORTNAME=	math-functions
 PORTVERSION=	0.1.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,6 +13,5 @@ LICENSE=	BSD
 
 USE_CABAL=	erf>=2 vector>=0.7
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

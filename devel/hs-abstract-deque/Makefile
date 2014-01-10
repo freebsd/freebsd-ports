@@ -2,7 +2,7 @@
 
 PORTNAME=	abstract-deque
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,7 +16,6 @@ OPTIONS_DEFINE=	USECAS
 
 USECAS_DESC=	Use hardware compare-and-swap
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MUSECAS}

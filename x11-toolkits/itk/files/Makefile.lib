@@ -3,7 +3,7 @@ LIB=		itk
 ITK_LIBRARY=	${PREFIX}/lib/itk${MAJOR}.${MINOR}
 CFLAGS+=	-I. -I./../generic \
 		-I${TCL_INCLUDEDIR}/generic \
-		-I ${PREFIX}/include/itcl${MAJOR}.*/ \
+		-I ${LOCALBASE}/include/itcl${MAJOR}.*/ \
 		-I${TK_INCLUDEDIR}/generic \
 		-I${LOCALBASE}/include \
 		-DHAVE_GETCWD=1 -DNO_VALUES_H=1 -DHAVE_UNISTD_H=1 -DUSE_TERMIOS=1\
@@ -21,9 +21,9 @@ LDADD+=		-L${PREFIX}/lib -litcl -L${LOCALBASE}/lib -lX11 -ltk${USE_TK}
 SRCS=		itk_cmds.c itk_option.c itk_archetype.c itk_util.c itkStubInit.c
 
 SCRIPTDIR=	lib/itk${MAJOR}.${MINOR}
-SCRIPTPATH=	${PREFIX}/${SCRIPTDIR}
+SCRIPTPATH=	${DESTDIR}${PREFIX}/${SCRIPTDIR}
 LIBDIR=		${PREFIX}/lib
-INCDIR=		${PREFIX}/include/itk${MAJOR}.${MINOR}
+INCDIR=		${DESTDIR}${PREFIX}/include/itk${MAJOR}.${MINOR}
 
 pkgIndex.tcl: pkgIndex.tcl.in
 	sed -e 's#"@PKG_LIB_FILE@"#.. ${SHLIB_NAME}#' -e "s#@PACKAGE_VERSION@#${MAJOR}.${MINOR}#" \
@@ -40,6 +40,6 @@ ${SCRIPTPATH} ${INCDIR}:
 beforeinstall: pkgIndex.tcl itkConfig.sh ${SCRIPTPATH} ${INCDIR}
 	${BSD_INSTALL_DATA} pkgIndex.tcl itkConfig.sh ${.CURDIR}/library/* ${SCRIPTPATH}
 	${BSD_INSTALL_DATA} ${.CURDIR}/generic/*.h ${INCDIR}
-	${BSD_INSTALL_MAN} ${.CURDIR}/doc/*.n ${PREFIX}/man/mann/
+	${BSD_INSTALL_MAN} ${.CURDIR}/doc/*.n ${DESTDIR}${PREFIX}/man/mann/
 
 .include <bsd.lib.mk>

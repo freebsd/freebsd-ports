@@ -6,7 +6,7 @@ PORTVERSION=	0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://backupme.org.ua/
 
-MAINTAINER=	yaroslav@berezhinskiy.org.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible and easy backup utility
 
 RUN_DEPENDS=	p5-Log-Log4perl>=0:${PORTSDIR}/devel/p5-Log-Log4perl \

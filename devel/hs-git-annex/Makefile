@@ -3,7 +3,7 @@
 
 PORTNAME=	git-annex
 PORTVERSION=	4.20130601
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,9 +16,10 @@ USE_CABAL=	bloomfilter dataenc dlist edit-distance extensible-exceptions \
 		monad-control mtl>=2 network>=2.0 QuickCheck>=2.1 random \
 		SafeSemaphore SHA text unix-compat utf8-string uuid
 
-USE_GMAKE=		yes
-USES=		perl5
+USES=		gmake perl5
 USE_PERL5=	build
+
+MAN1=		git-annex.1 git-annex-shell.1
 
 BUILD_DEPENDS+=	rsync:${PORTSDIR}/net/rsync \
 		git:${PORTSDIR}/devel/git \
@@ -42,7 +43,6 @@ PAIRING_DESC=		Enable pairing (requires web application)
 PRODUCTION_DESC=	Production build
 TDFA_DESC=		Use regex-tdfa for wildcards
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MS3}

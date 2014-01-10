@@ -3,7 +3,7 @@
 
 PORTNAME=	gtk2hs
 PORTVERSION=	0.12.4
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits haskell
 
@@ -25,7 +25,6 @@ VTE_DESC=		Terminal emulator
 WEBKIT_DESC=		WebKit rendering engine
 SOEGTK_DESC=		Examples for Haskell SoE
 
-NO_STAGE=	yes
 .include "../../lang/ghc/bsd.cabal.options.mk"
 
 .if ${PORT_OPTIONS:MGCONF}

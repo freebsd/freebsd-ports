@@ -3,7 +3,7 @@
 
 PORTNAME=	checkers
 PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -13,6 +13,5 @@ LICENSE=	BSD
 
 USE_CABAL=	QuickCheck>=2.3 random
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

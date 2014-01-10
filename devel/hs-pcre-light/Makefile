@@ -2,7 +2,7 @@
 
 PORTNAME=	pcre-light
 PORTVERSION=	0.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,6 +12,5 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

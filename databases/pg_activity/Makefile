@@ -23,16 +23,8 @@ GH_COMMIT=	ba36bae
 
 USE_PYTHON=	yes
 PYDISTUTILS_NOEGGINFO=	yes
-USE_PYDISTUTILS=	easy_install
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-MAN1=	pg_activity.1
-.else
-PYDISTUTILS_BUILDARGS=	--no-man
-.endif
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 post-patch-script:
 	${REINPLACE_CMD} -e 's|\/usr\/share|${MAN1PREFIX}|g' \

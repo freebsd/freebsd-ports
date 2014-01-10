@@ -2,7 +2,7 @@
 
 PORTNAME=	terminfo
 PORTVERSION=	0.3.2.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,6 +15,5 @@ USES=		ncurses
 CONFIGURE_ARGS+=	--configure-option=--with-curses-includes=${NCURSESINC} \
 			--configure-option=--with-curses-libraries=${NCURSESLIB}
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

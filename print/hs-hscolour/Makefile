@@ -3,7 +3,7 @@
 
 PORTNAME=	hscolour
 PORTVERSION=	1.20.3
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	print haskell
 
@@ -14,6 +14,5 @@ LICENSE=	GPLv2
 
 EXECUTABLE=	HsColour
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

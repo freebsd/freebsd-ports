@@ -21,8 +21,6 @@ XLOCK_DESC=	Force dependency on x11/xlockmore
 
 XLOCK_RUN_DEPENDS=	xlock:${PORTSDIR}/x11/xlockmore
 
-MAN1=		xautolock.1
-PLIST_FILES=	bin/xautolock
+PLIST_FILES=	bin/xautolock man/man1/xautolock.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
