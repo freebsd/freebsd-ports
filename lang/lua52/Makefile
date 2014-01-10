@@ -3,6 +3,7 @@
 
 PORTNAME=	lua
 PORTVERSION=	5.2.3
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/
 PKGNAMESUFFIX=	52
@@ -15,6 +16,8 @@ LICENSE=	MIT
 LUA_VER=	5.2
 USES=		pkgconfig readline
 USE_LDCONFIG=	yes
+SUB_FILES=	lua-${LUA_VER}.pc
+SUB_LIST=	LUA_VERSION=${PORTVERSION}
 
 # Overriding __MAKE_CONF makes sure that we don't re-parse
 # /etc/make.conf during do-build, which would jeopardize the build
@@ -53,6 +56,8 @@ post-patch:
 		${WRKSRC}/src/luaconf.h
 
 post-install:
+	@${MV} ${WRKDIR}/lua-${LUA_VER}.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblua-${LUA_VER}.so
 	@${MV} ${STAGEDIR}${PREFIX}/man/man1/lua.1 \
 		${STAGEDIR}${PREFIX}/man/man1/lua52.1
 	@${MV} ${STAGEDIR}${PREFIX}/man/man1/luac.1 \

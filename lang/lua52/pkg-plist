@@ -7,6 +7,7 @@ include/lua52/luaconf.h
 include/lua52/lualib.h
 lib/liblua-5.2.a
 lib/liblua-5.2.so
+libdata/pkgconfig/lua-5.2.pc
 man/man1/lua52.1.gz
 man/man1/luac52.1.gz
 @dirrmtry %%DATADIR%%/5.2
