@@ -3,5 +3,6 @@ etc/gdkxft.conf
 lib/libgdkxft.a
 lib/libgdkxft.la
 lib/libgdkxft.so
-%%PORTDOCS%%share/doc/gdkxft/README
-%%PORTDOCS%%@dirrm share/doc/gdkxft
+man/man8/gdkxft_sysinstall.8.gz
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

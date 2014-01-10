@@ -17,8 +17,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-PLIST_FILES=	bin/xtermcontrol
-MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/xtermcontrol man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

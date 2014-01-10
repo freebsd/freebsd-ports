@@ -41,9 +41,6 @@ CONFIGURE_ARGS=	--enable-utmp --enable-lastlog \
 		--enable-mousewheel --disable-languages
 USE_LDCONFIG=	yes
 
-MAN1=		rxvt.1
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900007
@@ -144,6 +141,6 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 
 post-install:
-	@${CHMOD} 4711 ${PREFIX}/bin/rxvt
+	@${CHMOD} 4711 ${STAGEDIR}${PREFIX}/bin/rxvt
 
 .include <bsd.port.post.mk>

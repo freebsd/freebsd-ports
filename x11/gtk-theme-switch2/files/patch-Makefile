@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Jun 11 01:16:36 2003
-+++ Makefile	Mon Dec 17 23:11:09 2007
+--- Makefile.orig	2003-06-11 13:16:36.000000000 +0800
++++ Makefile	2014-01-10 09:40:04.000000000 +0800
 @@ -1,13 +1,13 @@
 -GCC = cc
 -PREFIX=/usr/local
@@ -21,14 +21,18 @@
  	${GCC} -o switch2 switch.c ${CFLAGS} ${LIBS}
  
  clean:
-@@ -17,8 +17,8 @@
+@@ -15,10 +15,10 @@ clean:
+ 	
+ install: all
  	strip switch2
- 	mkdir -p ${PREFIX}/bin
- 	mkdir -p ${PREFIX}/man
+-	mkdir -p ${PREFIX}/bin
+-	mkdir -p ${PREFIX}/man
 -	install -c switch2 ${PREFIX}/bin
 -	install -c switch.1 ${PREFIX}/man
-+	install -c -m 555 switch2 ${PREFIX}/bin
-+	install -c -m 444 switch.1 ${PREFIX}/man/man1/switch2.1
++	mkdir -p $(DESTDIR)${PREFIX}/bin
++	mkdir -p $(DESTDIR)${PREFIX}/man
++	install -c -m 555 switch2 $(DESTDIR)${PREFIX}/bin
++	install -c -m 444 switch.1 $(DESTDIR)${PREFIX}/man/man1/switch2.1
  
  dist: clean
  	rm -rf /tmp/gtk-theme-switch-$(VERSION)

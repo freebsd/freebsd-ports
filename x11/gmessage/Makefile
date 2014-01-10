@@ -13,5 +13,4 @@ COMMENT=	Gtk+ clone of xmessage. displays a given text in a X11 window
 PLIST_FILES=	bin/gmessage
 USE_GNOME=	gtk12
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
