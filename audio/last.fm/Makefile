@@ -3,77 +3,80 @@
 
 PORTNAME=	last.fm
 PORTVERSION=	1.5.4.26862
+DISTVERSIONSUFFIX=	.src
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://cdn.last.fm/client/src/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Official last.fm radio player
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS=	libgpod.so:${PORTSDIR}/audio/libgpod \
-		libmad.so:${PORTSDIR}/audio/libmad \
-		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
-		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
-		libasound.so:${PORTSDIR}/audio/alsa-lib
-
 LICENSE=	GPLv2
 
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-SUB_FILES=	pkg-install pkg-deinstall
-USES=		dos2unix shebangfix
-NO_STAGE=	yes
+LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
+		libgpod.so:${PORTSDIR}/audio/libgpod \
+		libmad.so:${PORTSDIR}/audio/libmad \
+		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float
+
+WRKSRC=		${WRKDIR}/last.fm-${PORTVERSION}
+
 USE_BZIP2=	yes
-USE_QT4=	gui imageformats_run moc_build network qmake_build rcc_build \
-		sql uic_build xml
-HAS_CONFIGURE=	yes
+USES=		dos2unix qmake:norecursive
+DOS2UNIX_GLOB=	*.h *.cpp
+USE_QT4=	moc_build rcc_build uic_build \
+		gui network sql xml imageformats_run
+QMAKE_SOURCE_PATH=	${WRKSRC}/LastFM.pro
 USE_LDCONFIG=	yes
-DOS2UNIX_GLOB=	*.h
-SHEBANG_FILES=	dist/tarball_files/configure
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-USE_GCC=4.2+
-.endif
+SUB_FILES=	pkg-install pkg-deinstall
 
 post-patch:
-	${CP} ${WRKSRC}/dist/tarball_files/configure ${WRKSRC}/configure
-	${REINPLACE_CMD} -E -e 's|(.*"CONFIG-=debug")|\1 ${QMAKE_ARGS}|g' \
-			-e 's|function header|header()|g' \
-			-e 's|function middle|middle()|g' \
-			-e 's|-pthread|-pthread -R/usr/local/share/last.fm|g' \
-		${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|linux\*|unix|g' ${WRKSRC}/src/src.pro
-	${REINPLACE_CMD} -e 's|/usr/include/gpod|${LOCALBASE}/include/gpod|; \
-			s|/usr/include/glib|${LOCALBASE}/include/glib|;s|linux|freebsd|' \
-		${WRKSRC}/src/mediadevices/ipod/ipod.pro
-	${REINPLACE_CMD} -e 's|^RUNDIR.*|RUNDIR=${DATADIR}|' ${WRKSRC}/bin/last.fm.sh
-	${RM} ${WRKSRC}/bin/libmad.1.dylib ${WRKSRC}/bin/libmad.dylib \
-		${WRKSRC}/bin/last.fm.sh.bak \
-		${WRKSRC}/bin/*.dll ${WRKSRC}/bin/LastFM.exe.config
-	${RM} -rf ${WRKSRC}/bin/Microsoft* ${WRKSRC}/bin/sqldrivers
-	${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
+	@${REINPLACE_CMD} -e \
+		's|linux\*|unix|g' ${WRKSRC}/src/src.pro
+	@${REINPLACE_CMD} -e \
+		's|/usr/include/gpod|${LOCALBASE}/include/gpod| ; \
+		 s|/usr/include/glib|${LOCALBASE}/include/glib| ; \
+		 s|linux|freebsd|' ${WRKSRC}/src/mediadevices/ipod/ipod.pro
+	@${REINPLACE_CMD} -e \
+		's|^RUNDIR.*|RUNDIR=${PREFIX}/lib/last.fm|' \
+		${WRKSRC}/bin/last.fm.sh
+	@${REINPLACE_CMD} -e \
+		's|glib/.*\.h>|glib.h>|g' \
 		${WRKSRC}/src/mediadevices/ipod/IpodDevice.cpp
 
+pre-build:
+	@${MKDIR} ${WRKSRC}/build/fplib/release
+
 post-build:
-	cd ${WRKSRC}/src/output/RtAudio && \
-	${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS} && make
+	@(cd ${WRKSRC}/src/output/RtAudio \
+		&& ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKE_ARGS} \
+		&& ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS})
+	@${SED} -e 's|/usr/local/share/|${PREFIX}/lib/|' \
+		${FILESDIR}/last.fm.desktop > ${WRKDIR}/last.fm.desktop
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/last.fm.sh ${PREFIX}/bin/last.fm
-	${INSTALL_DATA} ${FILESDIR}/last.fm.desktop ${PREFIX}/share/applications
-	${MKDIR} ${PREFIX}/share/services
-	${INSTALL_DATA} ${FILESDIR}/lastfm.protocol ${PREFIX}/share/services
-	${MKDIR} ${DATADIR}
-	${CP} -Rp ${WRKSRC}/bin/* ${DATADIR}/
+	(cd ${WRKSRC}/bin && ${INSTALL_SCRIPT} last.fm.sh \
+		${STAGEDIR}${PREFIX}/bin/last.fm)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/last.fm
+	(cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} last.fm \
+		${STAGEDIR}${PREFIX}/lib/last.fm)
+.for i in libLastFmFingerprint libLastFmTools libMoose
+	(cd ${WRKSRC}/bin && ${INSTALL_LIB} ${i}.so.1.0.0 \
+		${STAGEDIR}${PREFIX}/lib/last.fm)
+	${LN} -sf ${i}.so.1.0.0 ${STAGEDIR}${PREFIX}/lib/last.fm/${i}.so.1.0
+	${LN} -sf ${i}.so.1.0.0 ${STAGEDIR}${PREFIX}/lib/last.fm/${i}.so.1
+	${LN} -sf ${i}.so.1.0.0 ${STAGEDIR}${PREFIX}/lib/last.fm/${i}.so
+.endfor
+	@(cd ${WRKSRC}/bin && ${COPYTREE_SHARE} data \
+		${STAGEDIR}${PREFIX}/lib/last.fm)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/last.fm/services
+	(cd ${WRKSRC}/bin/services && ${INSTALL_LIB} *.so \
+		${STAGEDIR}${PREFIX}/lib/last.fm/services)
+	(cd ${WRKDIR} && ${INSTALL_DATA} last.fm.desktop \
+		${STAGEDIR}${DESKTOPDIR})
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/services
+	(cd ${FILESDIR} && ${INSTALL_DATA} lastfm.protocol \
+		${STAGEDIR}${PREFIX}/share/services)
 
-post-install:
-.if !defined(PACKAGE_BUILDING)
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
