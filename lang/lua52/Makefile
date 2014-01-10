@@ -16,8 +16,6 @@ LICENSE=	MIT
 LUA_VER=	5.2
 USES=		pkgconfig readline
 USE_LDCONFIG=	yes
-SUB_FILES=	lua-${LUA_VER}.pc
-SUB_LIST=	LUA_VERSION=${PORTVERSION}
 
 # Overriding __MAKE_CONF makes sure that we don't re-parse
 # /etc/make.conf during do-build, which would jeopardize the build
@@ -43,11 +41,22 @@ MAKE_ARGS+=	MYCFLAGS="${CFLAGS} -DLUA_USE_LINUX" \
 		INSTALL_INC=${STAGEDIR}${PREFIX}/include/lua52 \
 		INSTALL_EXEC="${INSTALL_PROGRAM}"
 
-.include <bsd.port.options.mk>
+# Cope with the lack of support for Lua 5.2 in bsd.lua.mk.  These
+# overrides, which are required below, should be removed once bsd.lua.mk
+# understands this lua version.
+LUA_PREFIX?=	${PREFIX}
+LUA_SUBDIR?=	lua${PKGNAMESUFFIX}
+LUA_INCDIR?=	${LUA_PREFIX}/include/${LUA_SUBDIR}
+LUA_LIBDIR?=	${LUA_PREFIX}/lib
 
-.if ${ARCH} == "amd64" || ${ARCH} == "powerpc"
-CFLAGS+=	-fPIC
-.endif
+SUB_FILES=	lua-${LUA_VER}.pc
+SUB_LIST=	version=${PORTVERSION} \
+		includedir=${LUA_INCDIR} \
+		libdir=${LUA_LIBDIR} \
+		soname=lua-${LUA_VER}
+
+CFLAGS_amd64=	-fPIC
+CFLAGS_powerpc=	-fPIC
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,rand *(,random(,g' \
@@ -56,11 +65,12 @@ post-patch:
 		${WRKSRC}/src/luaconf.h
 
 post-install:
-	@${MV} ${WRKDIR}/lua-${LUA_VER}.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblua-${LUA_VER}.so
 	@${MV} ${STAGEDIR}${PREFIX}/man/man1/lua.1 \
 		${STAGEDIR}${PREFIX}/man/man1/lua52.1
 	@${MV} ${STAGEDIR}${PREFIX}/man/man1/luac.1 \
 		${STAGEDIR}${PREFIX}/man/man1/luac52.1
+	${INSTALL_DATA} ${WRKDIR}/lua-${LUA_VER}.pc \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
 .include <bsd.port.mk>

@@ -1,0 +1,10 @@
+version=%%version%%
+libdir=%%libdir%%
+includedir=%%includedir%%
+soname=%%soname%%
+
+Name: Lua
+Description: An Extensible Extension Language
+Version: ${version}
+Libs: -L${libdir} -l${soname} -lm
+Cflags: -I${includedir}
