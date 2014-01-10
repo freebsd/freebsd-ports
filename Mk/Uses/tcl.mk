@@ -57,7 +57,13 @@
 # Build-time / Run-time only dependencies can be specified with build or run.
 #
 
-.if !defined(_INCLUDE_USES_TCL_MK)
+.if ${USES:Mtk} || ${USES:Mtk\:*}
+.if !defined(_TCLTK_PORT)
+_TCLTK_IGNORE=	yes
+.endif
+.endif
+
+.if !defined(_INCLUDE_USES_TCL_MK) && !defined(_TCLTK_IGNORE)
 _INCLUDE_USES_TCL_MK=	yes
 
 #
@@ -200,3 +206,5 @@ LIB_DEPENDS+=	${_TCLTK_LIB_LINE}
 .endif
 
 .endif # defined(_INCLUDE_USES_TCL_MK)
+
+.undef _TCLTK_IGNORE
