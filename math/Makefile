@@ -159,6 +159,7 @@
     SUBDIR += graphthing
     SUBDIR += gretl
     SUBDIR += gri
+    SUBDIR += gringo
     SUBDIR += grpn
     SUBDIR += gsl
     SUBDIR += hs-Agda
