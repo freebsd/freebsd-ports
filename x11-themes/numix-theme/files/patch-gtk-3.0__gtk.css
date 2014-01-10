@@ -1,0 +1,8 @@
+--- ./gtk-3.0/gtk.css.orig	2013-09-17 08:29:50.000000000 +0000
++++ ./gtk-3.0/gtk.css	2013-10-21 17:10:43.000000000 +0000
+@@ -62,5 +62,4 @@
+ @import url("gtk-widgets-assets.css");
+ @import url("apps/gnome-applications.css");
+ @import url("apps/granite-widgets.css");
+-@import url("apps/unity.css");
+ @import url("apps/xfce.css");
