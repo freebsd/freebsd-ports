@@ -1,9 +1,0 @@
---- modemuncher.c	2003-11-05 19:14:10.000000000 -0500
-+++ modemuncher.c	2013-02-07 12:03:26.000000000 -0500
-@@ -36,5 +36,5 @@
- 	{'w',					S_IWOTH},
- 	{'x',					S_IXOTH},
--	{(char)NULL, 					(mode_t)-1} /* do not delete this line */
-+	{'\0', 					(mode_t)-1} /* do not delete this line */
- };
- 

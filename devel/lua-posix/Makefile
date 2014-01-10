@@ -2,37 +2,43 @@
 # $FreeBSD$
 
 PORTNAME=	posix
-PORTVERSION=	5.0
+PORTVERSION=	31
 CATEGORIES=	devel
-MASTER_SITES=	http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/5.0/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
-DISTFILES=	lposix.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A POSIX layer for Lua
+COMMENT=	POSIX layer for Lua
 
-USE_LUA?=	5.1
-WRKSRC=		${WRKDIR}/posix
+LICENSE=	MIT
 
-PLIST_FILES=	%%LUA_MODSHAREDIR%%/posix.lua \
-		%%LUA_MODLIBDIR%%/lposix.so
+USES=		lua
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LUA_INCLUDE=-I${LUA_INCDIR} \
+		LUA=${LOCALBASE}/bin/lua${LUA_VER_STR}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+USE_GITHUB=	yes
+GH_PROJECT=	luaposix
+GH_ACCOUNT=	luaposix
+GH_TAGNAME=	release-v31
+GH_COMMIT=	30b4b1e
 
-.if ${USE_LUA} == 5.1
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-51-lposix.c \
-		${FILESDIR}/extrapatch-51-posix.lua \
-		${FILESDIR}/extrapatch-51-test.lua
-.elif ${USE_LUA} == 5.0
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-50-Makefile
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc
-.endif
-.endif
+MAKE_ARGS=	POSIX_EXTRA_CFLAGS="" POSIX_EXTRA_LDFLAGS=""
+
+PLIST_FILES=	%%LUA_MODSHAREDIR%%/curses.lua \
+		%%LUA_MODLIBDIR%%/curses_c.so \
+		%%LUA_MODSHAREDIR%%/posix.lua \
+		%%LUA_MODLIBDIR%%/posix_c.so
+
+PORTDOCS=	*
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/posix.lua ${LUA_MODSHAREDIR}
-	@${INSTALL_PROGRAM} ${WRKSRC}/lposix.so ${LUA_MODLIBDIR}
+	@${MKDIR} ${STAGEDIR}${LUA_MODLIBDIR}
+	${INSTALL_LIB} ${WRKSRC}/ext/posix/.libs/posix_c.so ${STAGEDIR}${LUA_MODLIBDIR}/
+	${INSTALL_LIB} ${WRKSRC}/ext/curses/.libs/curses_c.so ${STAGEDIR}${LUA_MODLIBDIR}/
+	@${MKDIR} ${STAGEDIR}${LUA_MODSHAREDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/lib/curses.lua ${STAGEDIR}${LUA_MODSHAREDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/lib/posix.lua ${STAGEDIR}${LUA_MODSHAREDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc ; ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
