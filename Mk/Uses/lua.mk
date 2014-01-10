@@ -100,7 +100,7 @@ BUILD_DEPENDS=	${LUA_CMD}:${PORTSDIR}/lang/lua${LUA_VER_STR:51=}
 .elfif ${_LUA_ARGS:Mrun}
 RUN_DEPENDS=	${LUA_CMD}:${POTSDIR}/lang/lua${LUA_VER_STR:51=}
 .else
-LIB_DEPENDS=	liblua-${LUA_VER}.so:${PORTSDIR}/lang/lua${LUA_VERSTR:51=}
+LIB_DEPENDS=	liblua-${LUA_VER}.so:${PORTSDIR}/lang/lua${LUA_VER_STR:51=}
 .endif
 
 .endif
