@@ -7,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	http://ushare.geexbox.org/releases/
 
-MAINTAINER=	votdev@gmx.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight UPnP (TM) A/V Media Server
 
 LIB_DEPENDS=	upnp.9:${PORTSDIR}/devel/upnp
