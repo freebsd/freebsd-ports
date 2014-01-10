@@ -15,20 +15,19 @@ LICENSE_NAME=	Do What The [expletive] You Want To Public License, Version 2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		cmake:outsource
+USES=		cmake:outsource lua
 USE_LDCONFIG=	yes
-USE_LUA=	5.1
 
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
+post-patch:
+	@${REINPLACE_CMD} -e "s/5.1/${LUA_VER}/g" -e \
+		"s/51/${LUA_VER_STR}/g" ${WRKSRC}/cmake/FindLua51.cmake
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
