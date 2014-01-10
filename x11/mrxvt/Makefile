@@ -19,7 +19,6 @@ CONFLICTS=	mrxvt-0.5.*
 GNU_CONFIGURE=	yes
 USE_XORG=	x11
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900007
@@ -49,8 +48,6 @@ PORTDOCS=	TIPS \
 			mrxvtset.pl
 .endif
 
-MAN1=		mrxvt.1
-
 pre-everything::
 	@${ECHO_MSG} "=========================================>"
 	@${ECHO_MSG} "For Japanese support use make -DWITH_JAPANESE install"
@@ -64,6 +61,6 @@ post-patch:
 .endif
 
 post-install:
-	${CHMOD} 4511 ${PREFIX}/bin/mrxvt
+	${CHMOD} 4511 ${STAGEDIR}${PREFIX}/bin/mrxvt
 
 .include <bsd.port.post.mk>

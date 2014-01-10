@@ -15,7 +15,6 @@ USES=		imake
 USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/xfishtank2.0
 
-NO_STAGE=	yes
 post-patch:
 	cd  ${WRKDIR}/xfishtank2.0; make clean
 

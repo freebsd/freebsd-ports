@@ -18,8 +18,6 @@ CONFIGURE_ARGS=	 --with-xv-path=${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	bin/sisctrl
-MAN1=		sisctrl.1x
+PLIST_FILES=	bin/sisctrl man/man1/sisctrl.1x.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

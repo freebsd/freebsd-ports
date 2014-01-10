@@ -3,7 +3,7 @@
 
 PORTNAME=	gtk-theme-switch
 PORTVERSION=	1.0.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	http://www.muhri.net/
 PKGNAMESUFFIX=	1
@@ -14,15 +14,12 @@ COMMENT=	Command line tool for switching GTK+ themes
 USE_GNOME=	gtk12
 USES=		gmake
 
-MAN1=		gtk-theme-switch.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	${MKDIR} ${PREFIX}/share/gtk-theme-switch
-	${INSTALL_MAN} ${WRKSRC}/readme ${PREFIX}/share/gtk-theme-switch/README
+	${MKDIR} ${STAGEDIR}${PREFIX}/${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/readme ${STAGEDIR}${PREFIX}/${DOCSDIR}/README
 .endif
 
 .include <bsd.port.mk>

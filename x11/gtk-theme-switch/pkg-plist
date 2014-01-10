@@ -1,3 +1,4 @@
 bin/gtk-theme-switch
-%%PORTDOCS%%share/gtk-theme-switch/README
-@dirrm share/gtk-theme-switch
+man/man1/gtk-theme-switch.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

@@ -5,3 +5,4 @@ lib/librxvt.a
 lib/librxvt.la
 lib/librxvt.so
 lib/librxvt.so.1
+man/man1/rxvt.1.gz
