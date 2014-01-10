@@ -13,9 +13,9 @@ COMMENT=	IMAP mail filtering utility
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USE_LUA=	5.1
+USES=		lua
 USE_OPENSSL=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LUA_INCDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
@@ -40,18 +40,13 @@ PLIST_FILES=	bin/imapfilter \
 		%%EXAMPLESDIR%%/config.lua \
 		%%EXAMPLESDIR%%/extend.lua
 PLIST_DIRS=	%%DATADIR%% %%EXAMPLESDIR%%
-
-.include <bsd.port.pre.mk>
-
-post-patch:
-	${REINPLACE_CMD} -Ee ' \
-	    s|^(PREFIX =).*|\1${PREFIX}|; \
-	    s|^(MYCFLAGS =).*|\1${CPPFLAGS}|; \
-	    s|^(MYLDFLAGS =).*|\1${LDFLAGS}|; \
-	    s|^(BINDIR =).*|\1${PREFIX}/bin|; \
-	    s|^(SHAREDIR =).*|\1${DATADIR}|; \
-	    s|^(MANDIR =).*|\1${MANPREFIX}/man|' \
-	    ${WRKSRC}/src/Makefile
+MAKE_ARGS=	PREFIX=${PREFIX} \
+		MYCFLAGS="${CPPFLAGS}" \
+		MYLDFLAGS="${LDFLAGS}" \
+		BINDIR=${PREFIX}/bin \
+		SHAREDIR=${DATADIR} \
+		MANDIR=${MANPREFIX}/man \
+		LIBLUA=-llua-${LUA_VER}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}/${PREFIX}/bin/imapfilter
@@ -59,9 +54,7 @@ post-install:
 	cd ${WRKSRC}/samples && \
 		${INSTALL_DATA} config.lua extend.lua \
 			${STAGEDIR}/${EXAMPLESDIR}
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}/${DOCSDIR}
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
