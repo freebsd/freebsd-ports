@@ -19,7 +19,7 @@ LIB_DEPENDS=	nettle:${PORTSDIR}/security/nettle \
 
 CONFLICTS=	gnutls-devel-[0-9]*
 
-USES=		pathfix pkgconfig iconv gmake perl5
+USES=		pathfix pkgconfig iconv gmake perl5 shebangfix
 USE_PERL5=	build
 USE_BZIP2=	yes
 USE_GNOME=	ltverhack
@@ -27,6 +27,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure lib/configure libextra/configure
+SHEBANG_FILES=	doc/scripts/gdoc doc/scripts/sort2.pl
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-fPIC
@@ -79,6 +80,8 @@ PORTEXAMPLES=		*.c
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" -type f |\
 		${XARGS} ${REINPLACE_CMD} -e 's|[$$][(]LTLIBPTHREAD[)]||g'
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PREFIX}/bin/perl|g' \
+		${WRKSRC}/doc/doxygen/Doxyfile.in
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
