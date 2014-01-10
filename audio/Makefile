@@ -98,6 +98,7 @@
     SUBDIR += crip
     SUBDIR += cripple
     SUBDIR += csound
+    SUBDIR += csound6
     SUBDIR += ctronome
     SUBDIR += cuberok
     SUBDIR += cue2toc
