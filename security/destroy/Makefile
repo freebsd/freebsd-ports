@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to securely destroy files on the hard disk
 
 DEPRECATED=	No longer under active development
-EXPIRATION_DATE=	20130201
+EXPIRATION_DATE=	20140201
 
 USE_GMAKE=	yes
 
