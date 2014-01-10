@@ -12,7 +12,7 @@ PORTNAME=	vim
 #		! PATCHLEVEL to that level.
 PATCHLEVEL=	110
 PORTVERSION=	7.4.${PATCHLEVEL}
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	editors
 MASTER_SITES=	VIM
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
@@ -44,9 +44,9 @@ OPTIONS_DEFAULT+=	CSCOPE EXUBERANT_CTAGS PERL PYTHON RUBY \
 
 CONFLICTS=	vim6* vim*-gnome
 .if defined(LITE)
-CONFLICTS+=	vim*
+CONFLICTS_INSTALL+=	vim*
 .else
-CONFLICTS+=	vim*-lite
+CONFLICTS_INSTALL+=	vim*-lite
 .endif
 
 USES=		pkgconfig
@@ -96,7 +96,7 @@ MAKE_ARGS+=	CONF_OPT_TCL="--enable-tclinterp --with-tclsh="${TCLSH:S/${LOCALBASE
 .endif
 
 .if ${PORT_OPTIONS:MLUA}
-USE_LUA=	yes
+USES+=		lua
 MAKE_ARGS+=	CONF_OPT_LUA="--enable-luainterp=dynamic"
 MAKE_ARGS+=	CONF_OPT_LUA_PREFIX="--with-lua-prefix=${LOCALBASE}"
 .endif
@@ -180,7 +180,7 @@ pre-configure:
 		s|\$$gtk_config_prefix/bin/gtk-config|\$${GTK_CONFIG}|g; \
 		s|\$$gtk_config_exec_prefix/bin/gtk-config|\$${GTK_CONFIG}|g; \
 		s|/usr/local|${LOCALBASE}|g; \
-		s|set dummy lua;|set dummy lua-${LUA_VER};|g' \
+		s|set dummy lua;|set dummy ${LUA_CMD};|g' \
 		${WRKSRC}/auto/configure
 .if ${PORT_OPTIONS:MXTERM_SAVE}
 	@${REINPLACE_CMD} -e ' \
