@@ -1,4 +1,4 @@
-%%LUA_MODLIBDIR%%/lgi/corelgilua51.so
+%%LUA_MODLIBDIR%%/lgi/corelgilua%%LUA_VER_STR%%.so
 %%LUA_MODSHAREDIR%%/lgi.lua
 %%LUA_MODSHAREDIR%%/lgi/class.lua
 %%LUA_MODSHAREDIR%%/lgi/component.lua
