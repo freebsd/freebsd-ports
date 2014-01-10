@@ -1,3 +1,0 @@
-Package of routines for manipulating file names. Also contains convenience
-functions for querying the status of files in the filesystem named by those
-file names.
