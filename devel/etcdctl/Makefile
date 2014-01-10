@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	etcdctl
-PORTVERSION=	0.1.2
+PORTVERSION=	0.2.0
 CATEGORIES=	devel
 PKGNAMEPREFIX=	coreos-
 
@@ -13,7 +13,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 USE_GITHUB=	yes
 GH_ACCOUNT=	coreos
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	0aa41af
+GH_COMMIT=	ee09678
 
 PLIST_FILES=	bin/${PORTNAME}
 
@@ -27,7 +27,6 @@ DOCS_DESC=	Install etcdctl README file
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$VER|${DISTVERSION}|' ${WRKSRC}/scripts/release-version
 	@${REINPLACE_CMD} -e '/VER=/d' ${WRKSRC}/scripts/release-version
-	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!/bin/sh|' ${WRKSRC}/build
 
 do-build:
 	@(cd ${WRKSRC}; ${SH} build)
