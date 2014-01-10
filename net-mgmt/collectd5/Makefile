@@ -15,14 +15,16 @@ USES=		gmake pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal autoconf autoheader automake libltdl libtool
-USE_GNOME=	glib20
+
+# Only autoconf stage and sigrok plugin need GLIB:
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc:${PORTSDIR}/devel/glib20
 
 OPTIONS_DEFINE=		CGI DEBUG GCRYPT VIRT
 OPTIONS_GROUP=		INPUT OUTPUT
 OPTIONS_GROUP_OUTPUT=	RRDTOOL NOTIFYEMAIL NOTIFYDESKTOP
 OPTIONS_GROUP_INPUT=	CURL DBI JSON MEMCACHEC MODBUS MYSQL \
 			NUTUPS PGSQL PING PYTHON RABBITMQ REDIS \
-			ROUTEROS SNMP STATGRAB TOKYOTYRANT XML XMMS
+			ROUTEROS SIGROK SNMP STATGRAB TOKYOTYRANT XML XMMS
 
 CGI_DESC=		Install collection.cgi (requires rrdtool)
 CURL_DESC=		Enable curl-based plugins (apache, nginx, etc)
@@ -43,6 +45,7 @@ RABBITMQ_DESC=		Enable rabbitmq-based plugins
 REDIS_DESC=		Enable redis-based plugins
 ROUTEROS_DESC=		Enable routeros plugin
 RRDTOOL_DESC=		Enable rrdtool plugin (also rrdcached plugin)
+SIGROK_DESC=		Enable sigrok plugin
 SNMP_DESC=		Enable SNMP plugin
 STATGRAB_DESC=		Enable statgrab-based plugins (disk, interface, etc)
 TOKYOTYRANT_DESC=	Enable tokyotyrant plugin
@@ -362,6 +365,16 @@ CONFIGURE_ARGS+=--enable-users
 PLIST_SUB+= USERS=""
 .else
 PLIST_SUB+= USERS="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MSIGROK}
+USE_GNOME+=	glib20
+LIB_DEPENDS+=	libsigrok.so:${PORTSDIR}/devel/libsigrok
+CONFIGURE_ARGS+=--with-libsigrok --enable-sigrok
+PLIST_SUB+=     SIGROK=""
+.else
+CONFIGURE_ARGS+=--disable-sigrok
+PLIST_SUB+=     SIGROK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSNMP}

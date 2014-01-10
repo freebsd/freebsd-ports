@@ -154,6 +154,9 @@ lib/collectd/processes.la
 %%RRDTOOL%%lib/collectd/rrdtool.a
 %%RRDTOOL%%lib/collectd/rrdtool.so
 %%RRDTOOL%%lib/collectd/rrdtool.la
+%%SIGROK%%lib/collectd/sigrok.a
+%%SIGROK%%lib/collectd/sigrok.la
+%%SIGROK%%lib/collectd/sigrok.so
 %%SNMP%%lib/collectd/snmp.a
 %%SNMP%%lib/collectd/snmp.so
 %%SNMP%%lib/collectd/snmp.la
