@@ -1,0 +1,106 @@
+# $FreeBSD$
+#
+# Provide support for lua
+# 
+# MAINTAINER: lua@FreeBSD.org
+#
+
+.if !defined(_INCLUDE_USES_LUA_MK)
+_INCLUDE_USES_LUA_MK=	yes
+
+_LUA_VALID_VERSIONS=	52
+
+.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
+_LUA_DEFAULT_VERSION=	${LUA_DEFAULT:S/.//}
+.if ! ${_LUA_VALID_VERSIONS:M${_LUA_DEFAULT_VERSION}}
+IGNORE=	Invalid lua version ${LUA_DEFAULT}
+.endif
+
+_LUA_ARGS=	${lua_ARGS:S/,/ /g}
+
+#
+# Parse a ver+ argument
+#
+.if ${_LUA_ARGS:M*+}
+_LUA_MIN_VERSION:=	${_LUA_ARGS:M*+:S/+//}
+_LUA_WANTED_VERSION:=	${_LUA_DEFAULT_VERSION}
+.endif
+
+#
+# Parse one or more ver arguments
+#
+.if ${_LUA_ARGS:M5[1-2]}
+_LUA_WANTED_VERSIONS:=	${_LUA_ARGS:M5[1-2]}
+.endif
+
+#
+# If no version was specified with any of the ver or ver+ arguments, set the
+# default version.
+#
+.if !defined(_LUA_WANTED_VERSIONS)
+_LUA_WANTED_VERSIONS=	${_LUA_DEFAULT_VERSION}
+.endif
+
+#
+# Resolve minimum versions (ver+). Append anything greater or equal than the
+# specified minimum version to the list of wanted versions.
+#
+.if defined(_LUA_MIN_VERSION)
+.  for _v in ${_LUA_VALID_VERSIONS}
+.    if ${_LUA_MIN_VERSION} <= ${_v}
+_LUA_WANTED_VERSIONS+=${_v}
+.    endif
+.  endfor
+.endif
+
+#
+# Right now we have built a list of potential versions that we may depend on.
+# Let's sort them and remove any duplicates. We then locate the highest one
+# already installed, if any.
+#
+.for _v in ${_LUA_WANTED_VERSIONS:O:u}
+_LUA_HIGHEST_VERSION:=${_v}
+.  if exists(${LOCALBASE}/bin/lua${_v})
+_LUA_WANTED_VERSION:=	${_v}
+.  endif
+.endfor
+
+#
+# If we couldn't find any wanted version installed, depend on the highest one.
+.if !defined(_LUA_WANTED_VERSION)
+_LUA_WANTED_VERSION:= ${_LUA_HIGHEST_VERSION}
+.endif
+
+#
+# Exported variables
+#
+LUA_VER_STR=		${_LUA_WANTED_VERSION}
+LUA_VER=		${_LUA_WANTED_VERSION:S/5/5./}
+LUA_CMD=		lua${_LUA_WANTED_VERSION}
+LUAC_CMD=		luac${_LUA_WANTED_VERSION}
+LUA_INCDIR=		${LOCALBASE}/include/lua${_LUA_WANTED_VERSION}
+LUA_MODLIBDIR=		${LOCALBASE}/lib/lua/${LUA_VER}
+LUA_MODSHAREDIR=	${LOCALBASE}/share/lua/${LUA_VER}
+LUA_LIBDIR=		${LOCALBASE}/lib
+LUA_PKGNAMEPREFIX=	lua${LUA_VER_STR}-
+
+PLIST_SUB+=	LUA_MODLIBDIR=${LUA_MODLIBDIR:S,^${LOCALBASE}/,,} \
+		LUA_MODSHAREDIR=${LUA_MODSHAREDIR:S,^${LOCALBASE}/,,} \
+		LUA_VER=${LUA_VER} \
+		LUA_INCDIR=${LUA_INCDIR} \
+		LUA_LIBDIR=${LUA_LIBDIR}
+MAKE_ENV+=	LUA_MODLIBDIR=${LUA_MODLIBDIR} \
+		LUA_MODSHAREDIR=${LUA_MODSHAREDIR} \
+		LUA_VER=${LUA_VER} \
+		LUA_INCDIR=${LUA_INCDIR} \
+		LUA_LIBDIR=${LUA_LIBDIR}
+
+.if ${_LUA_ARGS:Mbuild}
+BUILD_DEPENDS=	${LUA_CMD}:${PORTSDIR}/lang/lua${LUA_VER_STR:51=}
+.elfif ${_LUA_ARGS:Mrun}
+RUN_DEPENDS=	${LUA_CMD}:${POTSDIR}/lang/lua${LUA_VER_STR:51=}
+.else
+LIB_DEPENDS=	liblua-${LUA_VER}.so:${PORTSDIR}/lang/lua${LUA_VERSTR:51=}
+.endif
+
+.endif
