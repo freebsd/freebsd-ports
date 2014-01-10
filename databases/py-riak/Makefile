@@ -7,7 +7,7 @@ CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	tj@harperdog.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python API for Riak, a Dynamo-inspired key/value store
 
 LICENSE=	APACHE20
