@@ -58,6 +58,7 @@ libdata/pkgconfig/weechat.pc
 %%DOCUMENTATION%%share/doc/weechat/weechat_user.fr.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_user.it.html
 %%DOCUMENTATION%%share/doc/weechat/weechat_user.ja.html
+%%DOCUMENTATION%%share/doc/weechat/weechat_user.pl.html
 %%ICON%%share/icons/hicolor/32x32/apps/weechat.png
 %%NLS%%share/locale/cs/LC_MESSAGES/weechat.mo
 %%NLS%%share/locale/de/LC_MESSAGES/weechat.mo
