@@ -1,0 +1,132 @@
+# Created by: trevor
+# $FreeBSD$
+
+PORTNAME=	csound
+PORTVERSION=	6.02
+CATEGORIES=	audio lang
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}6/${PORTNAME:S/c/C/}${PORTVERSION}
+DISTNAME=	${PORTNAME:S/c/C/}${PORTVERSION}
+DIST_SUBDIR=	csound
+
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Sound synthesizer
+
+LICENSE=	LGPL21
+
+BUILD_DEPENDS=	boost-libs>0:${PORTSDIR}/devel/boost-libs \
+		swig>2:${PORTSDIR}/devel/swig20 \
+		eigen>0:${PORTSDIR}/math/eigen3 \
+		gmm++>0:${PORTSDIR}/math/gmm++
+LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
+
+OPTIONS_DEFINE=	ALSA DSSI FLTK FLUIDSYNTH JACK LUA NLS OPENMP OSC PNG \
+		PORTAUDIO PULSEAUDIO
+OPTIONS_DEFAULT=FLTK OPENMP
+OPTIONS_SUB=	yes
+ALSA_DESC=	Build ALSA I/O module
+DSSI_DESC=	Build DSSI/LADSPA host opcodes
+FLTK_DESC=	Build FLTK plugin and GUI
+FLUIDSYNTH_DESC=Building FluidSynth opcodes
+JACK_DESC=	Build Jack I/O module and opcodes
+LUA_DESC=	Build Lua Interface and opcodes
+OSC_DESC=	Build OSC opcodes
+PNG_DESC=	Build Image opcodes
+PORTAUDIO_DESC=	Build PortAudio I/O module
+PULSEAUDIO_DESC=Build PulseAudio I/O module
+
+CONFLICTS_INSTALL=	outguess-*
+
+USES=		bison cmake gettext
+USE_PYTHON=	2
+CMAKE_ARGS=	-DBUILD_CSOUNDVST:BOOL=OFF \
+		-DBUILD_JAVA_INTERFACE:BOOL=OFF \
+		-DBUILD_PD_CLASS:BOOL=OFF \
+		-DBUILD_STK_OPCODES:BOOL=OFF \
+		-DBUILD_TESTS:BOOL=OFF \
+		-DPYTHON_MODULE_INSTALL_DIR:STRING="${PYTHONPREFIX_SITELIBDIR}"
+USE_LDCONFIG=	yes
+SSP_UNSAFE=	yes
+
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+SUB_FILES=	pkg-message
+
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_CMAKE_OFF=		-DUSE_ALSA:BOOL=OFF
+DSSI_BUILD_DEPENDS=	dssi>0:${PORTSDIR}/audio/dssi
+DSSI_RUN_DEPENDS=	dssi>0:${PORTSDIR}/audio/dssi
+DSSI_CMAKE_OFF=		-DBUILD_DSSI_OPCODES:BOOL=OFF
+FLTK_LIB_DEPENDS=	libfltk.so:${PORTSDIR}/x11-toolkits/fltk
+FLTK_CMAKE_ON=		-DBUILD_WINSOUND:BOOL=ON
+FLTK_CMAKE_OFF=		-DUSE_FLTK:BOOL=OFF
+FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
+FLUIDSYNTH_CMAKE_OFF=	-DBUILD_FLUID_OPCODES:BOOL=OFF
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_CMAKE_OFF=		-DBUILD_JACK_OPCODES:BOOL=OFF \
+			-DUSE_JACK:BOOL=OFF
+LUA_LIB_DEPENDS=	libluajit-5.1.so:${PORTSDIR}/lang/luajit
+LUA_CMAKE_OFF=		-DBUILD_CSOUND_AC_LUA_INTERFACE:BOOL=OFF \
+			-DBUILD_LUA_INTERFACE:BOOL=OFF \
+			-DBUILD_LUA_OPCODES:BOOL=OFF
+NLS_USES=		gettext
+NLS_CMAKE_OFF=		-DUSE_GETTEXT:BOOL=OFF
+OPENMP_USES=		compiler:openmp
+OPENMP_CMAKE_OFF=	-DUSE_OPEN_MP:BOOL=OFF
+OSC_LIB_DEPENDS=	liblo.so:${PORTSDIR}/audio/liblo
+OSC_CMAKE_OFF=		-DBUILD_OSC_OPCODES:BOOL=OFF
+PNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+PNG_CMAKE_OFF=		-DBUILD_IMAGE_OPCODES:BOOL=OFF
+PORTAUDIO_BUILD_DEPENDS=portaudio2>0:${PORTSDIR}/audio/portaudio2
+PORTAUDIO_RUN_DEPENDS=	portaudio2>0:${PORTSDIR}/audio/portaudio2
+PORTAUDIO_CMAKE_OFF=	-DUSE_PORTAUDIO:BOOL=OFF
+PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CMAKE_OFF=	-DUSE_PULSEAUDIO:BOOL=OFF
+
+.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000033
+BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
+CMAKE_ARGS+=	-DFLEX_EXECUTABLE:STRING="${LOCALBASE}/bin/flex"
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/-O3/s|^|#| ; \
+		 /PYTHON_MODULE_INSTALL_DIR/s|^|#| ; \
+		 /CMAKE_SYSTEM_NAME/s|"Linux"|"${OPSYS}"| ; \
+		 s|(LIBINTL_LIBRARY OR LINUX)|(LIBINTL_LIBRARY)| ; \
+		 s|(NOT LINUX)|(LINUX)| ; \
+		 s|-D_GNU_SOURCE|| ; \
+		 s| dl)|)|' \
+		${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e \
+		's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/InOut/CMakeLists.txt
+	@${REINPLACE_CMD} -e \
+		's|<portaudio.h>|<portaudio2/portaudio.h>|' \
+		${WRKSRC}/InOut/rtpa.c
+	@${REINPLACE_CMD} -e \
+		's|/usr/include/Python2.7|${PYTHON_INCLUDEDIR}| ; \
+		 s|/usr/local|${LOCALBASE}| ; \
+		 /linuxjoystick/s|^|#| ; \
+		 s| dl)|)|' \
+		${WRKSRC}/Opcodes/CMakeLists.txt
+	@${REINPLACE_CMD} -e \
+		'/CMAKE_SYSTEM_NAME/s|"Linux"|"${OPSYS}"| ; \
+		 s|--{WINSOUND_H}|$${WINSOUND_H}|' \
+		${WRKSRC}/frontends/CMakeLists.txt
+	@${REINPLACE_CMD} -e \
+		's| mixer)| csmixer)|' \
+		${WRKSRC}/util/CMakeLists.txt
+	@${REINPLACE_CMD} -e \
+		's|_IS_GNUCC)|_IS_GNUCC OR __COMPILER_CLANG)|' \
+		${WRKSRC}/util1/CMakeLists.txt
+
+post-install:
+.for i in libCsoundAC.so libcsnd6.so libcsound64.so
+	@${LN} -sf ${i}.6.0 ${STAGEDIR}${PREFIX}/lib/${i}.6
+.endfor
+
+.include <bsd.port.post.mk>
