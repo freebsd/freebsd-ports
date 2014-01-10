@@ -3,6 +3,7 @@
 
 PORTNAME=	numix
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	x11-themes xfce
 MASTER_SITES=	GH GHC
 PKGNAMESUFFIX=	-theme
@@ -23,6 +24,12 @@ USE_GITHUB=	yes
 NO_BUILD=	yes
 USE_GNOME=	gtk30
 
+OPTIONS_DEFINE=	NOTIFYD
+OPTIONS_DEFAULT=	NOTIFYD
+NOTIFYD_DESC=	Install xfce4-notifyd theme
+
+.include <bsd.port.options.mk>
+
 post-extract:
 # Remove Unity theme
 	@${RM} ${WRKSRC}/gtk-3.0/apps/unity.css
@@ -37,5 +44,14 @@ do-install:
 	@cd ${WRKSRC} && \
 		${COPYTREE_SHARE} ${dir} ${STAGEDIR}${PREFIX}/share/themes/Numix
 .endfor
+
+.if ${PORT_OPTIONS:MNOTIFYD}
+	@cd ${WRKSRC} && \
+		${COPYTREE_SHARE} xfce-notify-4.0 \
+		${STAGEDIR}${PREFIX}/share/themes/Numix
+PLIST_SUB+=	NOTIFYD=""
+.else
+PLIST_SUB+=	NOTIFYD="@comment "
+.endif
 
 .include <bsd.port.mk>
