@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.akherb.com/FreeBSD/source/ \
 		LOCAL/beech
 DISTNAME=	zen-cart-v1.3.9h-full-fileset-10262010
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PHP-based user-friendly, open source shopping cart
 
 LICENSE=	GPLv2
