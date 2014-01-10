@@ -7,7 +7,7 @@ PORTREVISION=	4
 CATEGORIES=	textproc kde
 MASTER_SITES=	SF
 
-MAINTAINER=	brucec@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A KDE4 graphical frontend for diff
 
 USE_KDE4=	kdelibs libkonq kdeprefix kdehier automoc4
