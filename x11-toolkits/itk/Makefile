@@ -11,13 +11,13 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Object-oriented extension to Tk [incr Tk]
 
-LIB_DEPENDS=	itcl.${MAJOR}:${PORTSDIR}/lang/itcl
+LIB_DEPENDS=	libitcl.so.${MAJOR}:${PORTSDIR}/lang/itcl
 
-USE_TK=		84+
+USES=		tk
 USE_LDCONFIG=	yes
 MAKE_ENV+=	${PLIST_SUB} \
 		SHLIB_MAJOR=${SHLIB_MAJOR} SHLIB_MINOR=${SHLIB_MINOR} \
-		USE_TK=${USE_TK} TCL_INCLUDEDIR=${TCL_INCLUDEDIR} \
+		USE_TK=${TK_SHLIB_VER} TCL_INCLUDEDIR=${TCL_INCLUDEDIR} \
 		TK_INCLUDEDIR=${TK_INCLUDEDIR}
 
 MAKEFILE=	${FILESDIR}/Makefile.lib
@@ -28,11 +28,8 @@ MINOR=		${PORTVERSION:E}
 PLIST_SUB+=	MAJOR=${MAJOR} MINOR=${MINOR}
 ITK_LIB=	libitk.so.${MAJOR}
 
-MANN=		Archetype.n Toplevel.n Widget.n itk.n itkvars.n usual.n
-
 ITK_LIB_FILE=	${ITK_LIB}.${SHLIB_MAJOR}
 
-NO_STAGE=	yes
 .if defined(DISPLAY)
 post-build:	test
 .else
