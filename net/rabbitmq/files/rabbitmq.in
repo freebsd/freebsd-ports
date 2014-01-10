@@ -36,6 +36,7 @@ extra_commands="rotate_logs status"
 rabbitmq_start()
 {
 	HOME=/var/db/rabbitmq
+	unset ERL_LIBS
 	su -m ${rabbitmq_user} \
 		-c "sh -c \"${rabbitmq_server} -detached\""
 # Grab pid (it appears that parsing the output of
