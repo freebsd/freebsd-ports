@@ -3595,7 +3595,7 @@ lib/vtk-6.0/libvtkzlib-6.0.so.1
 %%QT%%lib/cmake/vtk-6.0/Modules/vtkGUISupportQtWebkit.cmake
 %%QT%%lib/cmake/vtk-6.0/Modules/vtkRenderingQt.cmake
 %%QT%%lib/cmake/vtk-6.0/Modules/vtkViewsQt.cmake
-%%QT%%lib/tcltk/vtk-6.0/vtkrenderingqt/vtkrenderingqt.tcl
+%%QT%%%%TCLTK%%lib/tcltk/vtk-6.0/vtkrenderingqt/vtkrenderingqt.tcl
 %%QT%%lib/vtk-6.0/libvtkGUISupportQt-6.0.so
 %%QT%%lib/vtk-6.0/libvtkGUISupportQt-6.0.so.1
 %%QT%%lib/vtk-6.0/libvtkGUISupportQtOpenGL-6.0.so
@@ -3606,11 +3606,11 @@ lib/vtk-6.0/libvtkzlib-6.0.so.1
 %%QT%%lib/vtk-6.0/libvtkGUISupportQtWebkit-6.0.so.1
 %%QT%%lib/vtk-6.0/libvtkRenderingQt-6.0.so
 %%QT%%lib/vtk-6.0/libvtkRenderingQt-6.0.so.1
-%%QT%%lib/vtk-6.0/libvtkRenderingQtJava.so
+%%QT%%%%JAVA%%lib/vtk-6.0/libvtkRenderingQtJava.so
 %%PYTHON%%%%QT%%lib/vtk-6.0/libvtkRenderingQtPython27D-6.0.so
 %%PYTHON%%%%QT%%lib/vtk-6.0/libvtkRenderingQtPython27D-6.0.so.1
-%%QT%%lib/vtk-6.0/libvtkRenderingQtTCL-6.0.so
-%%QT%%lib/vtk-6.0/libvtkRenderingQtTCL-6.0.so.1
+%%QT%%%%TCLTK%%lib/vtk-6.0/libvtkRenderingQtTCL-6.0.so
+%%QT%%%%TCLTK%%lib/vtk-6.0/libvtkRenderingQtTCL-6.0.so.1
 %%QT%%lib/vtk-6.0/libvtkViewsQt-6.0.so
 %%QT%%lib/vtk-6.0/libvtkViewsQt-6.0.so.1
 %%TCLTK%%bin/vtk
@@ -4040,4 +4040,4 @@ lib/vtk-6.0/libvtkzlib-6.0.so.1
 %%TCLTK%%%%MPI%%@dirrm lib/tcltk/vtk-6.0/vtkfiltersparallelmpi
 %%TCLTK%%%%MPI%%@dirrm lib/tcltk/vtk-6.0/vtkfiltersparallelgeometry
 %%TCLTK%%@dirrmtry lib/tcltk/vtk-6.0/vtkioparallel
-%%QT%%@dirrm lib/tcltk/vtk-6.0/vtkrenderingqt
+%%QT%%%%TCLTK%%@dirrm lib/tcltk/vtk-6.0/vtkrenderingqt
