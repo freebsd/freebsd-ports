@@ -4,4 +4,4 @@
 #
 
 cd "%%DATADIR%%"
-exec ./blockrage
+exec ./blockrage "${@}"
