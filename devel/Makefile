@@ -1169,7 +1169,6 @@
     SUBDIR += lua-alien
     SUBDIR += lua-bitlib
     SUBDIR += lua-cjson
-    SUBDIR += lua-filename
     SUBDIR += lua-gettext
     SUBDIR += lua-lgi
     SUBDIR += lua-lunit
