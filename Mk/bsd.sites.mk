@@ -107,9 +107,12 @@ MASTER_SITE_APACHE_XML+= \
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_BERLIOS)
+.for mirror in heanet sunet iweb switch freefr garr aarnet jaist master \
+	nchc ncu internode waix hivelocity superb-dca3 ufpr tenet \
+	netcologne ignum kent kaz
 MASTER_SITE_BERLIOS+= \
-	http://download.berlios.de/%SUBDIR%/ \
-	http://download2.berlios.de/%SUBDIR%/
+	http://${mirror}.dl.sourceforge.net/project/%SUBDIR%/
+.endfor
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_CENKES)
@@ -1467,7 +1470,7 @@ MASTER_SITES_ABBREVS=	CPAN:PERL_CPAN \
 			RF:RUBYFORGE
 MASTER_SITES_SUBDIRS=	\
 			APACHE_JAKARTA:${PORTNAME:S,-,/,}/source \
-			BERLIOS:${PORTNAME:L} \
+			BERLIOS:${PORTNAME:L}.berlios \
 			CENKES:myports \
 			CHEESESHOP:source/${DISTNAME:C/(.).*/\1/}/${DISTNAME:C/(.*)-[0-9].*/\1/} \
 			CSME:myports \

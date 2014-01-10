@@ -57,6 +57,7 @@
 # Build-time / Run-time only dependencies can be specified with build or run.
 #
 
+.if ${USES:Mtk} || ${USES:Mtk\:*}
 .if !defined(_INCLUDE_USES_TCL_MK)
 _INCLUDE_USES_TCL_MK=	yes
 
