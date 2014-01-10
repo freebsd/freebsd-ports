@@ -12,17 +12,15 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Stopwatch enables hand timing much like a physical stopwatch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-3.4
-USE_TK_RUN=	yes
-USE_TK_WRAPPER=	yes
+USES=		tk:run
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/stopwatch
 
-NO_STAGE=	yes
 post-patch:
-	${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE}," ${WRKSRC}/stopwatch
+	${REINPLACE_CMD} -e "s,/depot/path/wish,${WISH}," ${WRKSRC}/stopwatch
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/stopwatch ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/stopwatch ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

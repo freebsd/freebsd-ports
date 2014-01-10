@@ -1,8 +1,0 @@
---- stopwatch.orig	2008-08-28 11:19:38.000000000 +1000
-+++ stopwatch	2008-08-28 11:19:54.000000000 +1000
-@@ -1,4 +1,4 @@
--#!/depot/path/wish -f
-+#!%%LOCALBASE%%/bin/wish -f
- ######################################################################
- # Name: Stopwatch
- # Author: Don Libes <libes@nist.gov>
