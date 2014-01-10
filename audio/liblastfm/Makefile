@@ -6,7 +6,7 @@ PORTVERSION=	1.0.6
 #PORTREVISION=	0
 CATEGORIES=	audio
 
-MAINTAINER=	datahead4@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt C++ library for the Last.fm webservices
 
 LICENSE=	GPLv3
