@@ -111,4 +111,3 @@ zpu/bin/zpu-elf-addr2line
 @dirrmtry zpu/lib
 @dirrmtry zpu/bin
 @dirrmtry zpu
-@dirrmtry info/zpu

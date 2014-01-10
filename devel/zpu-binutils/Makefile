@@ -18,7 +18,6 @@ MANDIRS=	${PREFIX}/zpu/man
 USES=		gettext gmake
 
 INFO=		zpu/as zpu/bfd zpu/binutils zpu/configure zpu/ld zpu/standards
-INFO_PATH=	PREFIX/info/zpu
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/%%CC%%/${CC}/' ${WRKSRC}/build.sh
