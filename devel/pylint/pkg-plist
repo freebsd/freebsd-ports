@@ -6,6 +6,9 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/__init__.py
 %%PYTHON_SITELIBDIR%%/pylint/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pylint/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pylint/__main__.py
+%%PYTHON_SITELIBDIR%%/pylint/__main__.pyc
+%%PYTHON_SITELIBDIR%%/pylint/__main__.pyo
 %%PYTHON_SITELIBDIR%%/pylint/__pkginfo__.py
 %%PYTHON_SITELIBDIR%%/pylint/__pkginfo__.pyc
 %%PYTHON_SITELIBDIR%%/pylint/__pkginfo__.pyo
@@ -105,6 +108,9 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/reporters/text.py
 %%PYTHON_SITELIBDIR%%/pylint/reporters/text.pyc
 %%PYTHON_SITELIBDIR%%/pylint/reporters/text.pyo
+%%PYTHON_SITELIBDIR%%/pylint/setup.py
+%%PYTHON_SITELIBDIR%%/pylint/setup.pyc
+%%PYTHON_SITELIBDIR%%/pylint/setup.pyo
 %%PYTHON_SITELIBDIR%%/pylint/test/data/__init__.py
 %%PYTHON_SITELIBDIR%%/pylint/test/data/classes_No_Name.dot
 %%PYTHON_SITELIBDIR%%/pylint/test/data/clientmodule_test.py
@@ -121,6 +127,7 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_attrs_definition_order.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_backtick_deprecated_py_30.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_bad_assigment_to_exception_var.py
+%%PYTHON_SITELIBDIR%%/pylint/test/input/func_bad_context_manager.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_bad_open_mode.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_bad_str_strip_call.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_base_stmt_without_effect.py
@@ -128,6 +135,7 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_block_disable_msg.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_break_or_return_in_try_finally.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_bug113231.py
+%%PYTHON_SITELIBDIR%%/pylint/test/input/func_catching_non_exception.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_class_access_protected_members.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_class_members.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_continue_not_in_loop.py
@@ -168,6 +176,7 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_i0013.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_i0014.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_i0020.py
+%%PYTHON_SITELIBDIR%%/pylint/test/input/func_i0022.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_import_syntax_error.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_indent.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_init_vars.py
@@ -178,10 +187,11 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_method_could_be_function.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_method_missing_self.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_method_without_self_but_self_assignment.py
-%%PYTHON_SITELIBDIR%%/pylint/test/input/func_missing_super_argument_py20.py
+%%PYTHON_SITELIBDIR%%/pylint/test/input/func_missing_super_argument_py_30.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_module___dict__.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_more_e0604.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_name_checking.py
+%%PYTHON_SITELIBDIR%%/pylint/test/input/func_namedtuple.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_nameerror_on_string_substitution.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_names_imported_from_module.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_newstyle___slots__.py
@@ -235,9 +245,12 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_noerror_static_method.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_noerror_staticmethod_as_decorator_py24.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_noerror_super_protected.py
+%%PYTHON_SITELIBDIR%%/pylint/test/input/func_noerror_used_before_assignment.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_noerror_w0232.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_noerror_yield_assign_py25.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_noerror_yield_return_mix.py
+%%PYTHON_SITELIBDIR%%/pylint/test/input/func_non_iterator_returned_py30.py
+%%PYTHON_SITELIBDIR%%/pylint/test/input/func_non_iterator_returned_py_30.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_nonregr___file___global.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_operators.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_r0901.py
@@ -253,7 +266,7 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_return_yield_mix.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_scope_regrtest.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_set_literal_as_default_py27.py
-%%PYTHON_SITELIBDIR%%/pylint/test/input/func_special_methods.py
+%%PYTHON_SITELIBDIR%%/pylint/test/input/func_superfluous_parens.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_syntax_error.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_tokenize_error.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_too_many_locals_arguments.py
@@ -267,6 +280,7 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_undefined_var.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_unknown_encoding.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_unpack_exception_py_30.py
+%%PYTHON_SITELIBDIR%%/pylint/test/input/func_unpacking_non_sequence.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_unreachable.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_unused_overridden_argument.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/func_use_for_or_listcomp_var.py
@@ -326,6 +340,7 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/input/similar1
 %%PYTHON_SITELIBDIR%%/pylint/test/input/similar2
 %%PYTHON_SITELIBDIR%%/pylint/test/input/syntax_error.py
+%%PYTHON_SITELIBDIR%%/pylint/test/input/unpacking.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/w0401_cycle.py
 %%PYTHON_SITELIBDIR%%/pylint/test/input/w0801_same.py
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/builtin_module.txt
@@ -338,6 +353,7 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_attrs_definition_order.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_backtick_deprecated_py_30.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_bad_assigment_to_exception_var.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/messages/func_bad_context_manager.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_bad_open_mode.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_bad_str_strip_call.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_bad_str_strip_call_py30.txt
@@ -346,10 +362,12 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_block_disable_msg.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_break_or_return_in_try_finally.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_bug113231.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/messages/func_catching_non_exception.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_class_access_protected_members.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_class_members.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_continue_not_in_loop.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_dangerous_default.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/messages/func_dangerous_default_py27.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_dangerous_default_py30.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_defining-attr-methods_order.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_deprecated_lambda_py_30.txt
@@ -388,6 +406,7 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_i0013.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_i0014.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_i0020.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/messages/func_i0022.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_import_syntax_error.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_import_syntax_error_py30.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_indent.txt
@@ -400,10 +419,11 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_method_could_be_function.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_method_missing_self.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_method_without_self_but_self_assignment.txt
-%%PYTHON_SITELIBDIR%%/pylint/test/messages/func_missing_super_argument_py20.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/messages/func_missing_super_argument_py_30.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_module___dict__.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_more_e0604.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_name_checking.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/messages/func_namedtuple.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_nameerror_on_string_substitution.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_names_imported_from_module.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_newstyle___slots__.txt
@@ -414,6 +434,8 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_newstyle_super_py30.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_no_dummy_redefined.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_no_final_new_line.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/messages/func_non_iterator_returned_py30.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/messages/func_non_iterator_returned_py_30.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_nonregr___file___global.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_operators.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_r0901.txt
@@ -429,12 +451,13 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_return_yield_mix.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_scope_regrtest.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_set_literal_as_default_py27.txt
-%%PYTHON_SITELIBDIR%%/pylint/test/messages/func_special_methods.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/messages/func_superfluous_parens.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_syntax_error.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_tokenize_error.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_too_many_locals_arguments.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_too_many_returns_yields.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_toolonglines.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/messages/func_toolonglines_py30.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_trailing_whitespace.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_typecheck_callfunc_assigment.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_typecheck_getattr.txt
@@ -444,6 +467,7 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_unknown_encoding_py29.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_unknown_encoding_py30.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_unpack_exception_py_30.txt
+%%PYTHON_SITELIBDIR%%/pylint/test/messages/func_unpacking_non_sequence.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_unreachable.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_unused_overridden_argument.txt
 %%PYTHON_SITELIBDIR%%/pylint/test/messages/func_use_for_or_listcomp_var_py29.txt
@@ -535,7 +559,6 @@ bin/symilar
 %%PYTHON_SITELIBDIR%%/pylint/test/unittest_pyreverse_diadefs.py
 %%PYTHON_SITELIBDIR%%/pylint/test/unittest_pyreverse_writer.py
 %%PYTHON_SITELIBDIR%%/pylint/test/unittest_reporting.py
-%%PYTHON_SITELIBDIR%%/pylint/test/utils.py
 %%PYTHON_SITELIBDIR%%/pylint/testutils.py
 %%PYTHON_SITELIBDIR%%/pylint/testutils.pyc
 %%PYTHON_SITELIBDIR%%/pylint/testutils.pyo
