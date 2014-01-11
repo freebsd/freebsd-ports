@@ -11,6 +11,7 @@ MASTER_SITE_SUBDIR=	potassco/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Advanced solver for package dependencies
 
+BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	gringo:${PORTSDIR}/math/gringo \
 				clasp:${PORTSDIR}/math/clasp \
