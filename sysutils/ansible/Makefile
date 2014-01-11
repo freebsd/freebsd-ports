@@ -9,8 +9,6 @@ MASTER_SITES=	http://ansibleworks.com/releases/ \
 MAINTAINER=	lifanov@mail.lifanov.com
 COMMENT=	Simple ssh-based configuration management and orchestration system
 
-BROKEN=		fails checksum
-
 LICENSE=	GPLv3
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml \
