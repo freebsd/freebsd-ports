@@ -1,4 +1,5 @@
-lib/libchipmunk.so.6.2.0
+%%DEMOS%%bin/chipmunk_demos
+lib/libchipmunk.so.%%VERSION%%
 lib/libchipmunk.so
 lib/libchipmunk.a
 include/chipmunk/cpVect.h
