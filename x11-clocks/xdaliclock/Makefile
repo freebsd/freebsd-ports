@@ -14,8 +14,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/X11
 
 GNU_CONFIGURE=	yes
 USE_XORG=	xt sm ice xext x11
-MAN1=		xdaliclock.1
-PLIST_FILES=	bin/xdaliclock
+PLIST_FILES=	bin/xdaliclock man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

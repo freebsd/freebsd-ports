@@ -19,11 +19,9 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		PREFIX="${PREFIX}"
 
-PLIST_FILES=	bin/osd_clock
-MAN1=		osd_clock.1
+PLIST_FILES=	bin/osd_clock man/man1/osd_clock.1.gz
 
-NO_STAGE=	yes
 post-install:
-	${STRIP_CMD} ${PREFIX}/bin/osd_clock
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/osd_clock
 
 .include <bsd.port.mk>

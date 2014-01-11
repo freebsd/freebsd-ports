@@ -3,6 +3,7 @@ bin/emiclock
 lib/X11/app-defaults/EmiClock
 lib/X11/ja_JP.EUC/app-defaults/EmiClock
 lib/X11/ja_JP.eucJP/app-defaults/EmiClock
+man/man1/emiclock.1.gz
 @dirrmtry lib/X11/ja_JP.eucJP/app-defaults
 @dirrmtry lib/X11/ja_JP.eucJP
 @dirrmtry lib/X11/ja_JP.EUC/app-defaults

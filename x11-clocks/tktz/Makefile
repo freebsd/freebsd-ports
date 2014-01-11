@@ -10,17 +10,18 @@ MASTER_SITES=	http://gromnizki.unixdev.net/soft/
 MAINTAINER=	gromnizki@unixdev.net
 COMMENT=	A Tcl/Tk-based timezone viewer
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
-
+USES=		tk:84+,run
 NO_BUILD=	yes
 
-NO_STAGE=	yes
+post-patch:
+	${REINPLACE_CMD} -e 's|%%TK_VER%%|${TK_VER}|' ${WRKSRC}/tktz
+
 do-install:
-	@ ${MKDIR} ${PREFIX}/lib/tktz
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/tktz ${PREFIX}/lib/tktz
-	@ ${LN} -sf ${PREFIX}/lib/tktz/tktz ${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/tktz
+	${INSTALL_SCRIPT} ${WRKSRC}/tktz ${STAGEDIR}${PREFIX}/lib/tktz
+	${LN} -sf ${PREFIX}/lib/tktz/tktz ${STAGEDIR}${PREFIX}/bin
 .for file in tktz.help README LICENSE NEWS
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib/tktz
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/lib/tktz
 .endfor
 
 .include <bsd.port.mk>
