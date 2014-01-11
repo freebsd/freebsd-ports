@@ -33,25 +33,20 @@ CGO_LDFLAGS+=	-L${LOCALBASE}/lib
 
 # Read-only variables
 GO_CMD=		${LOCALBASE}/bin/go
-GOROOT=		${LOCALBASE}/go
-GO_LIBDIR=	go/pkg/freebsd_${GOARCH}
-GO_SRCDIR=	go/src/pkg
-GO_LOCAL_LIBDIR=${LOCALBASE}/${GO_LIBDIR}
-GO_LOCAL_SRCDIR=${LOCALBASE}/${GO_SRCDIR}
+LOCAL_GOPATH=	${LOCALBASE}/share/go
+GO_LIBDIR=	share/go/pkg/freebsd_${GOARCH}
+GO_SRCDIR=	share/go/src
 GO_WRKSRC=	${GO_WRKDIR_SRC}/${GO_PKGNAME}
 GO_WRKDIR_BIN=	${WRKDIR}/bin
 GO_WRKDIR_SRC=	${WRKDIR}/src
 GO_WRKDIR_PKG=	${WRKDIR}/pkg/freebsd_${GOARCH}
 
 BUILD_DEPENDS+=	${GO_CMD}:${PORTSDIR}/lang/go
-GO_ENV+=	GOROOT=${GOROOT}	\
-		GOPATH=${WRKDIR}	\
-		GOARCH=${GOARCH}	\
-		GOOS=${OPSYS:L}		\
+GO_ENV+=	GOPATH="${WRKDIR}:${LOCAL_GOPATH}" \
 		CGO_CFLAGS="${CGO_CFLAGS}" \
 		CGO_LDFLAGS="${CGO_LDFLAGS}"
-PLIST_SUB+=	GO_LIBDIR=${GO_LIBDIR}	\
-		GO_SRCDIR=${GO_SRCDIR}	\
+PLIST_SUB+=	GO_LIBDIR=${GO_LIBDIR} \
+		GO_SRCDIR=${GO_SRCDIR} \
 		GO_PKGNAME=${GO_PKGNAME}
 
 .if !target(post-extract)
@@ -62,5 +57,22 @@ post-extract:
 
 .if !target(do-build)
 do-build:
-	@(cd ${GO_WRKSRC}; ${SETENV} ${GO_ENV} ${GO_CMD} install ${GO_TARGET})
+	@(cd ${GO_WRKSRC}; ${SETENV} ${GO_ENV} ${GO_CMD} install -v ${GO_TARGET})
+.endif
+
+.if !target(do-install)
+do-install:
+.for _TARGET in ${GO_TARGET}
+	@if [ -e "${GO_WRKDIR_PKG}/${_TARGET}.a" ]; then \
+		_TARGET_LIBDIR="${STAGEDIR}/${PREFIX}/${GO_LIBDIR}/${_TARGET:H}"; \
+		${MKDIR} $${_TARGET_LIBDIR}; \
+		${INSTALL_DATA} ${GO_WRKDIR_PKG}/${_TARGET}.a $${_TARGET_LIBDIR}; \
+		_TARGET_SRCDIR="${STAGEDIR}/${PREFIX}/${GO_SRCDIR}/${_TARGET}"; \
+		${MKDIR} $${_TARGET_SRCDIR}; \
+		(cd ${GO_WRKDIR_SRC}/${_TARGET}/ && ${COPYTREE_SHARE} \* $${_TARGET_SRCDIR}); \
+	fi; \
+	if [ -e "${GO_WRKDIR_BIN}/${_TARGET:T}" ]; then \
+		${INSTALL_PROGRAM} ${GO_WRKDIR_BIN}/${_TARGET:T} ${STAGEDIR}/${LOCALBASE}/bin; \
+	fi;
+.endfor
 .endif

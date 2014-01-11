@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140111:
+  AFFECTS: users of lang/go
+  AUTHOR: jlaffaye@FreeBSD.org
+
+  Third party Go packages installed via the ports tree are no longer installed
+  in GOROOT (PREFIX/go) but in a specific path: PREFIX/share/go
+
+  Affected ports had their PORTREVISION bumped.
+  To reinstall these packages via the ports tree, it is needed to deinstall
+  them first (the build will fail if the `go` command detects that they
+  already exists in GOROOT).
+
+  If you are using these third party Go packages for local Go development,
+  you have to add this new path to your GOPATH environment variable.
+
 20140107:
   AFFECTS: users of Qt 4 ports
   AUTHOR: makc@FreeBSD.org

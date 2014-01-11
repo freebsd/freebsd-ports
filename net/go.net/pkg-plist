@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/dict.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/spdy.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/websocket.a
@@ -15,12 +14,16 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/server.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/websocket.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/websocket_test.go
-@dirrm %%GO_LIBDIR%%/%%GO_PKGNAME%%
-@dirrmtry %%GO_LIBDIR%%/code.google.com/p
-@dirrmtry %%GO_LIBDIR%%/code.google.com
-@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/dict
-@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/spdy
-@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket
-@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/spdy
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/dict
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
 @dirrmtry %%GO_SRCDIR%%/code.google.com/p
 @dirrmtry %%GO_SRCDIR%%/code.google.com
+@dirrmtry %%GO_SRCDIR%%
+@dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%
+@dirrmtry %%GO_LIBDIR%%/code.google.com/p
+@dirrmtry %%GO_LIBDIR%%/code.google.com
+@dirrmtry %%GO_LIBDIR%%
+@dirrmtry share/go/pkg
+@dirrmtry share/go

@@ -1,9 +1,24 @@
-%%GO_LIBDIR%%/github.com/simonz05/godis.a
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/godis.go
+%%GO_LIBDIR%%/%%GO_PKGNAME%%.a
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/LICENSE
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/commands.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/commands_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/conn.go
-@dirrmtry %%GO_LIBDIR%%/github.com/simonz05
-@dirrmtry %%GO_LIBDIR%%/github.com
-@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/example/.gitignore
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/example/Makefile
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/example/list.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/example/string.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/example/transaction.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/godis.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/godis_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pool_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/readme.md
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/example
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
 @dirrmtry %%GO_SRCDIR%%/github.com/simonz05
 @dirrmtry %%GO_SRCDIR%%/github.com
+@dirrmtry %%GO_SRCDIR%%
+@dirrmtry %%GO_LIBDIR%%/github.com/simonz05
+@dirrmtry %%GO_LIBDIR%%/github.com
+@dirrmtry %%GO_LIBDIR%%
+@dirrmtry share/go/pkg
+@dirrmtry share/go
