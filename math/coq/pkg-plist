@@ -823,7 +823,7 @@ lib/coq/proofs/proofview.cmi
 lib/coq/proofs/redexpr.cmi
 lib/coq/proofs/refiner.cmi
 lib/coq/proofs/tacexpr.cmi
-lib/coq/proofs/tac%%PERL_ARCH%%.cmi
+lib/coq/proofs/tacmach.cmi
 lib/coq/proofs/tactic_debug.cmi
 lib/coq/proofs/proofs.cmxa
 lib/coq/proofs/proofs.a
@@ -950,6 +950,19 @@ lib/coq/libcoqrun.a
 %%IDE%%lib/coq/ide/command_windows.cmi
 %%IDE%%lib/coq/ide/coqide_ui.cmi
 %%IDE%%lib/coq/ide/coqide.cmi
+man/man1/coq-tex.1.gz
+man/man1/coq_makefile.1.gz
+man/man1/coqc.1.gz
+man/man1/coqchk.1.gz
+man/man1/coqdep.1.gz
+man/man1/coqdoc.1.gz
+man/man1/coqide.1.gz
+man/man1/coqmktop.1.gz
+man/man1/coqtop.1.gz
+man/man1/coqtop.byte.1.gz
+man/man1/coqtop.opt.1.gz
+man/man1/coqwc.1.gz
+man/man1/gallina.1.gz
 share/emacs/site-lisp/coq-db.el
 share/emacs/site-lisp/coq-font-lock.el
 share/emacs/site-lisp/coq-syntax.el
@@ -1041,3 +1054,4 @@ share/emacs/site-lisp/coqdoc.sty
 @dirrm lib/coq/tools
 @dirrm lib/coq
 @dirrm etc/xdg/coq
+@dirrmtry etc/xdg
