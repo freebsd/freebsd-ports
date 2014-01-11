@@ -14,6 +14,7 @@ LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
 
 LICENSE=	GPLv2
 
+USE_GCC=	yes
 USES=		cmake iconv
 WRKSRC=		${WRKDIR}/${DISTNAME}
 LICQ_PORT?=	net-im/licq
