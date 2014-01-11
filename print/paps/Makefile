@@ -10,13 +10,11 @@ MASTER_SITES=	SF
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	UTF-8 to PostScript converter using Pango
 
-PLIST_FILES=	bin/paps lib/libpaps.a include/libpaps.h
-
-MAN1=		paps.1
+PLIST_FILES=	bin/paps lib/libpaps.a include/libpaps.h \
+		man/man1/paps.1.gz
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	pango
 USES=		pkgconfig
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
