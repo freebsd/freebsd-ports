@@ -1,0 +1,15 @@
+bin/mcrypt
+bin/mdecrypt
+man/man1/mcrypt.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/FORMAT
+%%PORTDOCS%%%%DOCSDIR%%/magic
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.mcryptrc
+%%NLS%%share/locale/cs/LC_MESSAGES/mcrypt.mo
+%%NLS%%share/locale/de/LC_MESSAGES/mcrypt.mo
+%%NLS%%share/locale/el/LC_MESSAGES/mcrypt.mo
+%%NLS%%share/locale/es_AR/LC_MESSAGES/mcrypt.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/mcrypt.mo
+%%NLS%%@dirrmtry share/locale/es_AR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es_AR
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
