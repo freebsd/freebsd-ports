@@ -41,11 +41,7 @@ DATADIR=	${PREFIX}/share/games/${PORTNAME}
 
 PORTDOCS=	AUTHORS ChangeLog NEWS README SHORTLOG TODO
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=	Does not install on sparc64
-.endif
+BROKEN_sparc64=	Does not install on sparc64
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/fairymax/gnuchessx/' ${WRKSRC}/xboard.conf.in
@@ -53,6 +49,8 @@ post-patch:
 		${WRKSRC}/engineoutput.c ${WRKSRC}/uci.c
 	@${REINPLACE_CMD} -e 's:INSTALL.*sysconfdir):&/$$$$files.dist:' \
 		${WRKSRC}/Makefile.in
+
+.include <bsd.port.options.mk>
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/cmail ${STAGEDIR}${PREFIX}/bin/
@@ -63,4 +61,4 @@ post-install:
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
