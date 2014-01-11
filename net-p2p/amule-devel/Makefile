@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	amule
-PORTVERSION=	10802
-PORTREVISION=	2
+PORTVERSION=	10832
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://amule.sourceforge.net/tarballs/
 PKGNAMESUFFIX=	-devel
@@ -58,15 +57,15 @@ XAS_DESC=		Install XChat2 plugin
 OPTIONS_DEFAULT=ALC ALCC AMULECMD AMULEDAEMON AMULEGUI CAS ED2K \
 	FILEVIEW MONOLITHIC WEBSERVER WXCAS WXUNICODE XAS
 
-PORTDOCS=	ABOUT-NLS Changelog EC_Protocol.txt INSTALL README TODO \
-		amulesig.txt license.txt
-
 FLEX?=		${LOCALBASE}/bin/flex
 
 SHEBANG_FILES=	src/utils/scripts/*.pl src/utils/xas/*.pl src/libs/ec/*.pl
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == "i386" && ( ${OSVERSION} >= 1000024 || ${CXX:T} == "clang++" )
+CPPFLAGS+=	-DCRYPTOPP_DISABLE_ASM
+.endif
 
 .if empty(PORT_OPTIONS:MDEBUG)
 CONFIGURE_ARGS+=--disable-debug
@@ -220,9 +219,6 @@ CONFIGURE_ARGS+=	--disable-xas
 PLIST_SUB+=		XAS="@comment "
 .endif
 
-# Man pages management
-.include "Makefile.man"
-
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e '/LDFLAGS/s/-lpthread/${PTHREAD_LIBS}/' \
 		-e 's/test.*-print-file-name.*`/true/' \
@@ -240,16 +236,7 @@ post-patch:	.SILENT
 
 post-install:
 .if ${PORT_OPTIONS:MFILEVIEW}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/utils/fileview/mulefileview ${PREFIX}/bin
-.endif
-.if exists(${LOCALBASE}/bin/update-desktop-database)
-. if ${PORT_OPTIONS:MPLASMAMULE}
-	-update-desktop-database ${KDE4_PREFIX}/share/applications
-.  if exists(${LOCALBASE}/bin/update-mime-database)
-	-update-mime-database ${KDE4_PREFIX}/share/mime
-.  endif
-. endif
-	-update-desktop-database ${PREFIX}/share/applications
+	${INSTALL_PROGRAM} ${WRKSRC}/src/utils/fileview/mulefileview ${STAGEDIR}${PREFIX}/bin
 .endif
 
 .include <bsd.port.mk>

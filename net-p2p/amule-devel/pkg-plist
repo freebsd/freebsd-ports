@@ -9,8 +9,6 @@
 %%PLASMAMULE%%share/kde4/services/plasma-applet-plasmamule.desktop
 %%PLASMAMULE%%share/kde4/services/plasma-engine-plasmamule.desktop
 %%PLASMAMULE%%share/mime/amule.xml
-%%PLASMAMULE%%@exec [ -f %%LOCALBASE%%/bin/update-desktop-database ] && %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
-%%PLASMAMULE%%@unexec [ -f %%LOCALBASE%%/bin/update-desktop-database ] && %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
 %%PLASMAMULE%%@exec [ -f %%LOCALBASE%%/bin/update-mime-database ] && %%LOCALBASE%%/bin/update-mime-database %D/share/mime >/dev/null 2>&1 || true
 %%PLASMAMULE%%@unexec [ -f %%LOCALBASE%%/bin/update-mime-database ] && %%LOCALBASE%%/bin/update-mime-database %D/share/mime >/dev/null 2>&1 || true
 %%PLASMAMULE%%@cwd
@@ -27,6 +25,105 @@
 %%FILEVIEW%%bin/mulefileview
 %%WXCAS%%bin/wxcas
 %%XAS%%lib/xchat/plugins/xas.pl
+%%NLS%%%%ALC%%man/de/man1/alc.1.gz
+%%NLS%%%%ALCC%%man/de/man1/alcc.1.gz
+%%NLS%%%%MONOLITHIC%%man/de/man1/amule.1.gz
+%%NLS%%%%AMULECMD%%man/de/man1/amulecmd.1.gz
+%%NLS%%%%AMULEDAEMON%%man/de/man1/amuled.1.gz
+%%NLS%%%%AMULEGUI%%man/de/man1/amulegui.1.gz
+%%NLS%%%%WEBSERVER%%man/de/man1/amuleweb.1.gz
+%%NLS%%%%CAS%%man/de/man1/cas.1.gz
+%%NLS%%%%ED2K%%man/de/man1/ed2k.1.gz
+%%NLS%%%%WXCAS%%man/de/man1/wxcas.1.gz
+%%NLS%%%%XAS%%man/de/man1/xas.1.gz
+%%NLS%%%%ALC%%man/es/man1/alc.1.gz
+%%NLS%%%%ALCC%%man/es/man1/alcc.1.gz
+%%NLS%%%%MONOLITHIC%%man/es/man1/amule.1.gz
+%%NLS%%%%AMULECMD%%man/es/man1/amulecmd.1.gz
+%%NLS%%%%AMULEDAEMON%%man/es/man1/amuled.1.gz
+%%NLS%%%%AMULEGUI%%man/es/man1/amulegui.1.gz
+%%NLS%%%%WEBSERVER%%man/es/man1/amuleweb.1.gz
+%%NLS%%%%CAS%%man/es/man1/cas.1.gz
+%%NLS%%%%ED2K%%man/es/man1/ed2k.1.gz
+%%NLS%%%%WXCAS%%man/es/man1/wxcas.1.gz
+%%NLS%%%%XAS%%man/es/man1/xas.1.gz
+%%NLS%%%%ALC%%man/fr/man1/alc.1.gz
+%%NLS%%%%ALCC%%man/fr/man1/alcc.1.gz
+%%NLS%%%%MONOLITHIC%%man/fr/man1/amule.1.gz
+%%NLS%%%%AMULECMD%%man/fr/man1/amulecmd.1.gz
+%%NLS%%%%AMULEDAEMON%%man/fr/man1/amuled.1.gz
+%%NLS%%%%AMULEGUI%%man/fr/man1/amulegui.1.gz
+%%NLS%%%%WEBSERVER%%man/fr/man1/amuleweb.1.gz
+%%NLS%%%%CAS%%man/fr/man1/cas.1.gz
+%%NLS%%%%ED2K%%man/fr/man1/ed2k.1.gz
+%%NLS%%%%WXCAS%%man/fr/man1/wxcas.1.gz
+%%NLS%%%%XAS%%man/fr/man1/xas.1.gz
+%%NLS%%%%ALC%%man/hu/man1/alc.1.gz
+%%NLS%%%%ALCC%%man/hu/man1/alcc.1.gz
+%%NLS%%%%MONOLITHIC%%man/hu/man1/amule.1.gz
+%%NLS%%%%AMULECMD%%man/hu/man1/amulecmd.1.gz
+%%NLS%%%%AMULEDAEMON%%man/hu/man1/amuled.1.gz
+%%NLS%%%%AMULEGUI%%man/hu/man1/amulegui.1.gz
+%%NLS%%%%WEBSERVER%%man/hu/man1/amuleweb.1.gz
+%%NLS%%%%CAS%%man/hu/man1/cas.1.gz
+%%NLS%%%%ED2K%%man/hu/man1/ed2k.1.gz
+%%NLS%%%%WXCAS%%man/hu/man1/wxcas.1.gz
+%%NLS%%%%XAS%%man/hu/man1/xas.1.gz
+%%NLS%%%%ALC%%man/it/man1/alc.1.gz
+%%NLS%%%%ALCC%%man/it/man1/alcc.1.gz
+%%NLS%%%%MONOLITHIC%%man/it/man1/amule.1.gz
+%%NLS%%%%AMULECMD%%man/it/man1/amulecmd.1.gz
+%%NLS%%%%AMULEDAEMON%%man/it/man1/amuled.1.gz
+%%NLS%%%%AMULEGUI%%man/it/man1/amulegui.1.gz
+%%NLS%%%%WEBSERVER%%man/it/man1/amuleweb.1.gz
+%%NLS%%%%CAS%%man/it/man1/cas.1.gz
+%%NLS%%%%ED2K%%man/it/man1/ed2k.1.gz
+%%NLS%%%%WXCAS%%man/it/man1/wxcas.1.gz
+%%NLS%%%%XAS%%man/it/man1/xas.1.gz
+%%ALC%%man/man1/alc.1.gz
+%%ALCC%%man/man1/alcc.1.gz
+%%MONOLITHIC%%man/man1/amule.1.gz
+%%AMULECMD%%man/man1/amulecmd.1.gz
+%%AMULEDAEMON%%man/man1/amuled.1.gz
+%%AMULEGUI%%man/man1/amulegui.1.gz
+%%WEBSERVER%%man/man1/amuleweb.1.gz
+%%CAS%%man/man1/cas.1.gz
+%%ED2K%%man/man1/ed2k.1.gz
+%%WXCAS%%man/man1/wxcas.1.gz
+%%XAS%%man/man1/xas.1.gz
+%%NLS%%%%ALC%%man/ru/man1/alc.1.gz
+%%NLS%%%%ALCC%%man/ru/man1/alcc.1.gz
+%%NLS%%%%MONOLITHIC%%man/ru/man1/amule.1.gz
+%%NLS%%%%AMULECMD%%man/ru/man1/amulecmd.1.gz
+%%NLS%%%%AMULEDAEMON%%man/ru/man1/amuled.1.gz
+%%NLS%%%%AMULEGUI%%man/ru/man1/amulegui.1.gz
+%%NLS%%%%WEBSERVER%%man/ru/man1/amuleweb.1.gz
+%%NLS%%%%CAS%%man/ru/man1/cas.1.gz
+%%NLS%%%%ED2K%%man/ru/man1/ed2k.1.gz
+%%NLS%%%%WXCAS%%man/ru/man1/wxcas.1.gz
+%%NLS%%%%XAS%%man/ru/man1/xas.1.gz
+%%NLS%%%%ALC%%man/tr/man1/alc.1.gz
+%%NLS%%%%ALCC%%man/tr/man1/alcc.1.gz
+%%NLS%%%%MONOLITHIC%%man/tr/man1/amule.1.gz
+%%NLS%%%%AMULECMD%%man/tr/man1/amulecmd.1.gz
+%%NLS%%%%AMULEDAEMON%%man/tr/man1/amuled.1.gz
+%%NLS%%%%AMULEGUI%%man/tr/man1/amulegui.1.gz
+%%NLS%%%%WEBSERVER%%man/tr/man1/amuleweb.1.gz
+%%NLS%%%%CAS%%man/tr/man1/cas.1.gz
+%%NLS%%%%ED2K%%man/tr/man1/ed2k.1.gz
+%%NLS%%%%WXCAS%%man/tr/man1/wxcas.1.gz
+%%NLS%%%%XAS%%man/tr/man1/xas.1.gz
+%%NLS%%%%ALC%%man/zh_TW/man1/alc.1.gz
+%%NLS%%%%ALCC%%man/zh_TW/man1/alcc.1.gz
+%%NLS%%%%MONOLITHIC%%man/zh_TW/man1/amule.1.gz
+%%NLS%%%%AMULECMD%%man/zh_TW/man1/amulecmd.1.gz
+%%NLS%%%%AMULEDAEMON%%man/zh_TW/man1/amuled.1.gz
+%%NLS%%%%AMULEGUI%%man/zh_TW/man1/amulegui.1.gz
+%%NLS%%%%WEBSERVER%%man/zh_TW/man1/amuleweb.1.gz
+%%NLS%%%%CAS%%man/zh_TW/man1/cas.1.gz
+%%NLS%%%%ED2K%%man/zh_TW/man1/ed2k.1.gz
+%%NLS%%%%WXCAS%%man/zh_TW/man1/wxcas.1.gz
+%%NLS%%%%XAS%%man/zh_TW/man1/xas.1.gz
 %%DATADIR%%/skins/Mac_Gray.zip
 %%DATADIR%%/skins/gnome.zip
 %%DATADIR%%/skins/kde4.zip
@@ -107,6 +204,14 @@
 %%WXCAS%%share/applications/wxcas.desktop
 %%CAS%%share/cas/stat.png
 %%CAS%%share/cas/tmp.html
+%%PORTDOCS%%%%DOCSDIR%%/ABOUT-NLS
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/EC_Protocol.txt
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/amulesig.txt
+%%PORTDOCS%%%%DOCSDIR%%/license.txt
 %%NLS%%share/locale/ar/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/amule.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/amule.mo
@@ -147,36 +252,37 @@
 %%MONOLITHIC%%share/pixmaps/amule.xpm
 %%AMULEGUI%%share/pixmaps/amulegui.xpm
 %%WXCAS%%share/pixmaps/wxcas.xpm
-%%XAS%%@dirrmtry lib/xchat/plugins
-%%XAS%%@dirrmtry lib/xchat
-@dirrmtry man/de/man1
-@dirrmtry man/de
-@dirrmtry man/es/man1
-@dirrmtry man/es
-@dirrmtry man/fr/man1
-@dirrmtry man/fr
-@dirrmtry man/hu/man1
-@dirrmtry man/hu
-@dirrmtry man/it/man1
-@dirrmtry man/it
-@dirrmtry man/ru/man1
-@dirrmtry man/ru
-@dirrmtry man/tr/man1
-@dirrmtry man/tr
-@dirrmtry man/zh_TW/man1
-@dirrmtry man/zh_TW
-@dirrm %%DATADIR%%/skins
-%%WEBSERVER%%@dirrm %%DATADIR%%/webserver/default
-%%WEBSERVER%%@dirrm %%DATADIR%%/webserver
-@dirrm %%DATADIR%%
-%%CAS%%@dirrmtry share/cas
-%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/ast
-%%NLS%%@dirrmtry share/locale/et_EE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/et_EE
-%%NLS%%@dirrmtry share/locale/it_CH/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/it_CH
 %%NLS%%@dirrmtry share/locale/ko_KR/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ko_KR
+%%NLS%%@dirrmtry share/locale/it_CH/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it_CH
+%%NLS%%@dirrmtry share/locale/et_EE/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/et_EE
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+%%CAS%%@dirrmtry share/cas
+%%WEBSERVER%%@dirrmtry %%DATADIR%%/webserver/default
+%%WEBSERVER%%@dirrmtry %%DATADIR%%/webserver
+@dirrmtry %%DATADIR%%/skins
+@dirrmtry %%DATADIR%%
+@dirrmtry man/zh_TW/man1
+@dirrmtry man/zh_TW
+@dirrmtry man/tr/man1
+@dirrmtry man/tr
+@dirrmtry man/ru/man1
+@dirrmtry man/ru
+@dirrmtry man/it/man1
+@dirrmtry man/it
+@dirrmtry man/hu/man1
+@dirrmtry man/hu
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
+@dirrmtry man/es/man1
+@dirrmtry man/es
+@dirrmtry man/de/man1
+@dirrmtry man/de
+%%XAS%%@dirrmtry lib/xchat/plugins
+%%XAS%%@dirrmtry lib/xchat
 @exec [ -f %%LOCALBASE%%/bin/update-desktop-database ] && %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
 @unexec [ -f %%LOCALBASE%%/bin/update-desktop-database ] && %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
