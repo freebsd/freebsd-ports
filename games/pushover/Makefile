@@ -9,6 +9,8 @@ MASTER_SITES=	SF/${PORTNAME}/Pushover/${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A puzzle game where the goal is to push over all dominoes
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
