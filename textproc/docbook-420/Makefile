@@ -7,7 +7,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.docbook.org/sgml/4.2/
 PKGNAMESUFFIX=	-420
 
-MAINTAINER=	kutulu@kutulu.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	V4.2 of the DocBook DTD, designed for technical documentation
 
 EXTRACT_DEPENDS=${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
