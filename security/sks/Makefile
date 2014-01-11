@@ -13,23 +13,18 @@ PROJECTHOST=	sks-keyserver
 
 USE_OCAML=	yes
 USE_BDB=	5
-USES=		perl5
+USES=		perl5 gmake shebangfix
 USE_PERL5=	build
 MAKE_JOBS_UNSAFE=yes
+SHEBANG_FILES=	sks_build.sh
 
-USE_GMAKE=	yes
 MAKE_ENV=	BDBINCLUDE="-I${BDB_INCLUDE_DIR}" \
 		BDBLIB="-L${BDB_LIB_DIR}" \
 		LIBDB="-l${BDB_LIB_NAME}" \
 		MANDIR="${MANPREFIX}/man"
 
 SUB_FILES=	pkg-message
-PLIST_FILES=	bin/sks bin/sks_add_mail bin/sks_build.sh
-MAN8=		sks.8
-MANCOMPRESSED=	yes
-PORTDOCS=	BUGS README.md TODO UPGRADING
 
-NO_STAGE=	yes
 post-extract:
 	@: > ${WRKSRC}/Makefile.local
 	@${REINPLACE_CMD} 's/-ccopt -pg //' ${WRKSRC}/Makefile
@@ -38,13 +33,10 @@ post-extract:
 pre-build:
 	@cd ${WRKSRC} && test -f .depend || ${GMAKE} dep
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} BUGS README.md TODO UPGRADING \
+		 ${STAGEDIR}${DOCSDIR}
+	@cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} sks sks_add_mail
 
 .include <bsd.port.mk>
