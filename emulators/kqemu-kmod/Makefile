@@ -31,6 +31,7 @@ USE_RC_SUBR=	kqemu
 NO_STAGE=	yes
 
 USES=		kmod
+
 .include <bsd.port.pre.mk>
 
 PORTDOCS=	kqemu-doc.html kqemu-tech.html
@@ -42,13 +43,18 @@ PLIST_FILES+=	"@cwd"
 
 MAKEFILE=	Makefile.freebsd
 
-MAKE_ARGS+=	LDFLAGS=${LDFLAGS:S/^-Wl,//}
+MAKE_ARGS+=	LDFLAGS="${LDFLAGS:S/^-Wl,//}"
 
 .if ${ARCH} == "amd64"
 GMAKE_ARGS+=	ARCH=x86_64
 .endif
 
 CFLAGS+=	${DEBUG_FLAGS}
+
+# Not sure about the exact OSVERSION:
+.if ${OSVERSION} > 1000015
+BROKEN=		KPI changes in 10 and up, use bhyve or vbox
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/CC=/s,gcc,${CC},' ${WRKSRC}/common/Makefile
