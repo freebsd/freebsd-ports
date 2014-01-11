@@ -1,10 +1,19 @@
-%%GO_LIBDIR%%/github.com/kr/pretty.a
-%%GO_SRCDIR%%/github.com/kr/pretty/diff.go
-%%GO_SRCDIR%%/github.com/kr/pretty/formatter.go
-%%GO_SRCDIR%%/github.com/kr/pretty/pretty.go
-%%GO_SRCDIR%%/github.com/kr/pretty/zero.go
-@dirrmtry %%GO_LIBDIR%%/github.com/kr
-@dirrmtry %%GO_LIBDIR%%/github.com
-@dirrm %%GO_SRCDIR%%/github.com/kr/pretty
+%%GO_LIBDIR%%/%%GO_PKGNAME%%.a
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/License
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/Readme
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/diff.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/diff_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/example_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/formatter.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/formatter_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pretty.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/zero.go
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
 @dirrmtry %%GO_SRCDIR%%/github.com/kr
 @dirrmtry %%GO_SRCDIR%%/github.com
+@dirrmtry %%GO_SRCDIR%%
+@dirrmtry %%GO_LIBDIR%%/github.com/kr
+@dirrmtry %%GO_LIBDIR%%/github.com
+@dirrmtry %%GO_LIBDIR%%
+@dirrmtry share/go/pkg
+@dirrmtry share/go

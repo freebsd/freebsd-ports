@@ -1,17 +1,29 @@
-%%GO_LIBDIR%%/github.com/garyburd/redigo/redis.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%.a
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/conn.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/conn_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/doc.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/log.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/pool.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pool_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/pubsub.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/pubsub_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/redis.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/reply.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/reply_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/scan.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/scan_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/script.go
-@dirrm %%GO_LIBDIR%%/github.com/garyburd/redigo
-@dirrmtry %%GO_LIBDIR%%/github.com/garyburd
-@dirrmtry %%GO_LIBDIR%%/github.com
-@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%
-@dirrm %%GO_SRCDIR%%/github.com/garyburd/redigo
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/script_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/test_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/zpop_example_test.go
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
+@dirrmtry %%GO_SRCDIR%%/github.com/garyburd/redigo
 @dirrmtry %%GO_SRCDIR%%/github.com/garyburd
 @dirrmtry %%GO_SRCDIR%%/github.com
+@dirrmtry %%GO_SRCDIR%%
+@dirrmtry %%GO_LIBDIR%%/github.com/garyburd/redigo
+@dirrmtry %%GO_LIBDIR%%/github.com/garyburd
+@dirrmtry %%GO_LIBDIR%%/github.com
+@dirrmtry %%GO_LIBDIR%%
+@dirrmtry share/go/pkg
+@dirrmtry share/go
