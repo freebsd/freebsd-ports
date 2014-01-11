@@ -6451,19 +6451,20 @@ _STAGE_SEQ=		stage-message stage-dir run-depends lib-depends apply-slist pre-ins
 .if defined(NEED_ROOT)
 _STAGE_SUSEQ=	create-users-groups do-install desktop-file-post-install kmod-post-install \
 				shared-mime-post-install webplugin-post-install \
-				post-install post-install-script post-stage compress-man \
+				post-install post-install-script move-uniquefiles post-stage compress-man \
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs add-plist-examples \
-				add-plist-data add-plist-post fix-plist-sequence
+				add-plist-data add-plist-post move-uniquefiles-plist fix-plist-sequence
 .if defined(DEVELOPER)
 _STAGE_SUSEQ+=	stage-qa
 .endif
 .else
 _STAGE_SEQ+=	create-users-groups do-install desktop-file-post-install kmod-post-install \
 				shared-mime-post-install webplugin-post-install post-install post-install-script \
-				post-stage compress-man install-rc-script install-ldconfig-file install-license \
-				install-desktop-entries add-plist-info add-plist-docs add-plist-examples \
-				add-plist-data add-plist-post fix-plist-sequence
+				move-uniquefiles post-stage compress-man install-rc-script install-ldconfig-file \
+				install-license install-desktop-entries add-plist-info add-plist-docs \
+				add-plist-examples add-plist-data add-plist-post move-uniquefiles-plist \
+				fix-plist-sequence
 .if defined(DEVELOPER)
 _STAGE_SEQ+=	stage-qa
 .endif
