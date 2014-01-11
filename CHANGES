@@ -10,6 +10,44 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140111:
+AUTHOR: mva@FreeBSD.org
+
+  New USES=uniquefiles to make files or directories unique
+  by adding a prefix or suffix to them.
+
+  Files listed in UNIQUE_PREFIX_FILES will receive the prefix
+  set via UNIQUE_PREFIX. The same applies to UNIQUE_SUFFIX_FILES,
+  but with the chosen UNIQUE_SUFFIX. UNIQUE_PREFIX and
+  UNIQUE_SUFFIX are set to PKGNAMEPREFIX and PKGNAMESUFFIX by
+  default.
+  The uniquefiles USES enables ports to name files in special
+  ways, e.g. by outlining that the port does not support X11
+  (-nox11). A binary named bin/foo thus can be easily renamed
+  to bin/foo-featureA via
+
+  USES=			uniquefiles
+  UNIQUE_SUFFIX=	-featureA
+  UNIQUE_SUFFIX_FILES=	bin/foo
+
+  The uniquefiles USES automatically adjusts the plist at
+  installation time. There is no need to consider the prefix
+  or suffix in the pkg-plist file itself. If the original name
+  of the renamed file is bin/foo, this exact name should be put
+  into pkg-plist.
+
+  The dirs argument to USES=uniquefiles will cause certain
+  standard directories, such as DOCSDIR or EXAMPLESDIR to be
+  prepended with the UNIQUE_PREFIX. The change to the directories
+  will hapen prior to configuring or building the port, so that
+  the port Makefile as well as the port's build logic are aware
+  of the changed name.
+
+  Since the uniquefiles USES effectively manipulates the port's
+  installation and file layout, it will only be available for
+  stagedir-aware ports. Ports with NO_STAGE=yes will be unable
+  to use the uniquefiles USES.
+
 20131218:
 AUTHOR: mva@FreeBSD.org
 
