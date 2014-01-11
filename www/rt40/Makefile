@@ -6,13 +6,12 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		SF/requesttracker/
+PKGNAMESUFFIX=	40
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
-CONFLICTS=	rt-3.8* rt42-4.2* brlcad-[0-9]*
-PKGNAMESUFFIX=	40
-NEED_ROOT=	yes
+CONFLICTS_INSTALL=	rt-3.8* rt42-4.2* brlcad-[0-9]*
 
 NO_ARCH=	yes
 
@@ -34,7 +33,7 @@ NO_ARCH=	yes
 # mentioned in the docs is currently unsupported in the ports, but see
 # http://www.infracaninophile.co.uk/articles/sphinxse.html
 
-OPTIONS_DEFINE=	DEV GD GPG GRAPHVIZ SSL_MAILGATE
+OPTIONS_DEFINE=		DEV GD GPG GRAPHVIZ SSL_MAILGATE
 OPTIONS_SINGLE=		DB
 OPTIONS_SINGLE_DB=	MYSQL ORACLE PGSQL SQLITE
 OPTIONS_RADIO=		WEB
@@ -42,16 +41,8 @@ OPTIONS_RADIO_WEB=	AP_MODFASTCGI AP_MODPERL LIGHTTPD SPAWN_FCGI
 
 OPTIONS_DEFAULT=	AP_MODPERL GD GPG MYSQL
 
-AP_MODFASTCGI_DESC=	Deploy with apache and mod_fastcgi
-AP_MODPERL_DESC=	Deploy with apache and mod_perl
-DEV_DESC=		Configure for Developers
-GD_DESC=		Enable GD Graphs and Charts
-GPG_DESC=		Enable GnuPG support
-LIGHTTPD_DESC=		Deploy with lighttpd and mod_fastcgi
-SPAWN_FCGI_DESC=	Deploy with spawn_fcgi
-SSL_MAILGATE_DESC=	Enable HTTPS support for rt-mailgate
-
-GROUPS?=	rt
+USERS?=		www
+GROUPS?=	rt www
 
 BUILD_DEPENDS+=	${LOCALBASE}/bin/jsmin:${PORTSDIR}/devel/jsmin
 
@@ -73,35 +64,71 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES+=		perl5
 USE_AUTOTOOLS=	autoconf
 
+RT_ETC_PATH?=	${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX}
+RT_LAYOUT=	FreeBSD
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
+
+AP_MODPERL_DESC=		Deploy with apache and mod_perl
+AP_MODPERL_BUILD_DEPENDS=	${MODPERL2_DEPS}
+AP_MODPERL_RUN_DEPENDS=		${MODPERL2_DEPS}
+AP_MODPERL_CONFIGURE_ON=	--with-apachectl=${LOCALBASE}/sbin/apachectl
+
+AP_MODFASTCGI_DESC=		Deploy with apache and mod_fastcgi
+AP_MODFASTCGI_USE=		APACHE_RUN=22+
+AP_MODFASTCGI_BUILD_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
+AP_MODFASTCGI_RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi \
+				${FASTCGI_DEPS}
+AP_MODFASTCGI_CONFIGURE_ON=	--with-apachectl=${LOCALBASE}/sbin/apachectl
+
+LIGHTTPD_DESC=			Deploy with lighttpd and mod_fastcgi
+LIGHTTPD_BUILD_DEPENDS=		${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
+LIGHTTPD_RUN_DEPENDS=		${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
+
+SPAWN_FCGI_DESC=		Deploy with spawn_fcgi
+SPAWN_FCGI_BUILD_DEPENDS=	${LOCALBASE}/bin/spawn-fcgi:${PORTSDIR}/www/spawn-fcgi
+SPAWN_FCGI_RUN_DEPENDS=		${LOCALBASE}/bin/spawn-fcgi:${PORTSDIR}/www/spawn-fcgi
+
+MYSQL_USE=			MYSQL=yes
+MYSQL_BUILD_DEPENDS=		${MYSQL_DEPS}
+MYSQL_RUN_DEPENDS=		${MYSQL_DEPS}
+
+PGSQL_USE=			PGSQL=yes
+PGSQL_BUILD_DEPENDS=		${PGSQL_DEPS}
+PGSQL_RUN_DEPENDS=		${PGSQL_DEPS}
+
+ORACLE_BUILD_DEPENDS=		${ORACLE_DEPS}
+ORACLE_RUN_DEPENDS=		${ORACLE_DEPS}
+
+SQLITE_USE=			SQLITE=yes
+SQLITE_BUILD_DEPENDS=		${SQLITE_DEPS}
+SQLITE_RUN_DEPENDS=		${SQLITE_DEPS}
+
+DEV_DESC=			Configure for Developers
+DEV_BUILD_DEPENDS=		${DEV_DEPS}
+DEV_RUN_DEPENDS=		${DEV_DEPS}
+DEV_CONFIGURE_ON=		--enable-developer-mode
+
+SSL_MAILGATE_DESC=		Enable HTTPS support for rt-mailgate
+SSL_MAILGATE_BUILD_DEPENDS=	${SSL_MAILGATE_DEPS}
+SSL_MAILGATE_RUN_DEPENDS=	${SSL_MAILGATE_DEPS}
+SSL_MAILGATE_CONFIGURE_ENABLE=	ssl-mailgate
+
+GRAPHVIZ_BUILD_DEPENDS=		${GRAPHVIZ_DEPS}
+GRAPHVIZ_RUN_DEPENDS=		${GRAPHVIZ_DEPS}
+GRAPHVIZ_CONFIGURE_ENABLE=	graphviz
+
+GPG_DESC=			Enable GnuPG support
+GPG_BUILD_DEPENDS=		${GPG_DEPS}
+GPG_RUN_DEPENDS=		${GPG_DEPS}
+GPG_CONFIGURE_ENABLE=		gpg
+
+GD_DESC=			Enable GD Graphs and Charts
+GD_BUILD_DEPENDS=		${GD_DEPS}
+GD_RUN_DEPENDS=			${GD_DEPS}
+GD_CONFIGURE_ENABLE=		gd
+
 .include <bsd.port.options.mk>
-
-.if !${PORT_OPTIONS:MDOCS}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-noportdocs-Makefile.in
-.endif
-
-.if ${PORT_OPTIONS:MAP_MODPERL}
-BUILD_DEPENDS+=	${MODPERL2_DEPS}
-RUN_DEPENDS+=	${MODPERL2_DEPS}
-CONFIGURE_ARGS+=	--with-apachectl=${LOCALBASE}/sbin/apachectl
-.endif
-
-.if ${PORT_OPTIONS:MAP_MODFASTCGI}
-USE_APACHE_RUN=	22+
-BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
-RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi \
-		${FASTCGI_DEPS}
-CONFIGURE_ARGS+=	--with-apachectl=${LOCALBASE}/sbin/apachectl
-.endif
-
-.if ${PORT_OPTIONS:MLIGHTTPD}
-BUILD_DEPENDS+=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
-RUN_DEPENDS+=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
-.endif
-
-.if ${PORT_OPTIONS:MSPAWN_FCGI}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/spawn-fcgi:${PORTSDIR}/www/spawn-fcgi
-RUN_DEPENDS+=	${LOCALBASE}/bin/spawn-fcgi:${PORTSDIR}/www/spawn-fcgi
-.endif
 
 .if !${PORT_OPTIONS:MMYSQL} && !${PORT_OPTIONS:MPGSQL} && \
 	! ${PORT_OPTIONS:MORACLE} && !${PORT_OPTIONS:MSQLITE}
@@ -110,66 +137,26 @@ IGNORE=	please select one of MYSQL, PGSQL, ORACLE or SQLITE
 
 .if ${PORT_OPTIONS:MMYSQL}
 DB_TYPE=	mysql
-USE_MYSQL=	yes
-BUILD_DEPENDS+=	${MYSQL_DEPS}
-RUN_DEPENDS+=	${MYSQL_DEPS}
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 DB_TYPE=	Pg
-USE_PGSQL=	yes
-BUILD_DEPENDS+=	${PGSQL_DEPS}
-RUN_DEPENDS+=	${PGSQL_DEPS}
 .endif
 
 .if ${PORT_OPTIONS:MORACLE}
 DB_TYPE=	Oracle
-BUILD_DEPENDS+=	${ORACLE_DEPS}
-RUN_DEPENDS+=	${ORACLE_DEPS}
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
 DB_TYPE=	SQLite
-USE_SQLITE=	yes
-BUILD_DEPENDS+=	${SQLITE_DEPS}
-RUN_DEPENDS+=	${SQLITE_DEPS}
 .endif
 
-.if ${PORT_OPTIONS:MDEV}
-BUILD_DEPENDS+=	${DEV_DEPS}
-RUN_DEPENDS+=	${DEV_DEPS}
-CONFIGURE_ARGS+=	--enable-developer-mode
-.endif
 
-.if ${PORT_OPTIONS:MSSL_MAILGATE}
-BUILD_DEPENDS+=	${SSL_MAILGATE_DEPS}
-RUN_DEPENDS+=	${SSL_MAILGATE_DEPS}
-CONFIGURE_ARGS+=	--enable-ssl-mailgate
-.endif
-
-.if ${PORT_OPTIONS:MGRAPHVIZ}
-BUILD_DEPENDS+=	${GRAPHVIZ_DEPS}
-RUN_DEPENDS+=	${GRAPHVIZ_DEPS}
-CONFIGURE_ARGS+=	--enable-graphviz
-.endif
-
-.if ${PORT_OPTIONS:MGPG}
-BUILD_DEPENDS+=	${GPG_DEPS}
-RUN_DEPENDS+=	${GPG_DEPS}
-CONFIGURE_ARGS+=	--enable-gpg
-.endif
-
-.if ${PORT_OPTIONS:MGD}
-BUILD_DEPENDS+=	${GD_DEPS}
-RUN_DEPENDS+=	${GD_DEPS}
-CONFIGURE_ARGS+=	--enable-gd
-.endif
-
-RT_ETC_PATH?=	${PREFIX}/etc/${PORTNAME}40
-RT_LAYOUT=	FreeBSD
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}40
-
+.if ${PORT_OPTIONS:MPGSQL}
+DB_DBA_USER?=	pgsql
+.else
 DB_DBA_USER?=	root
+.endif
 DB_DBA_PASSWORD?=
 DB_USER?=	rt_user
 DB_PASSWORD?=	rt_pass
@@ -198,9 +185,8 @@ CONFIGURE_ARGS+=	--enable-layout=${RT_LAYOUT} \
 CONFIGURE_ENV+=	PERL=${LOCALBASE}/bin/perl
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_FILES=	pkg-message pkg-install
-SUB_LIST=	RT_ETC_PATH=${RT_ETC_PATH} \
-		CFG_FILE=${RT_ETC_PATH}/RT_SiteConfig.pm
+SUB_FILES=	pkg-message
+SUB_LIST=	RT_ETC_PATH=${RT_ETC_PATH}
 
 run-autotools:	run-autotools-autoconf
 
@@ -232,10 +218,8 @@ pre-install:
 	@${RM} -f ${WRKSRC}/lib/RT.pm.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/upgrade
 	(cd ${WRKSRC}/etc && \
 	    ${COPYTREE_SHARE} upgrade ${STAGEDIR}${DOCSDIR} "! -name *\.in")
-.endif
 
 .include <bsd.port.mk>
