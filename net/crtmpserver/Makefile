@@ -3,6 +3,7 @@
 
 PORTNAME=	crtmpserver
 PORTVERSION=	0.811
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://rtmpd.com/assets/sources/
 
@@ -13,12 +14,9 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
-USE_LUA=	5.1
-WANT_LUA_VER=	5.1
-
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
-USES=		cmake:outsource
+USES=		cmake:outsource lua
 CMAKE_SOURCE_PATH=	${WRKSRC}/builders/cmake
 CMAKE_ARGS=	-DCRTMPSERVER_INSTALL_PREFIX:STRING=${PREFIX} -DTEMP_FRAMEWORK_VER=${PORTVERSION}
 
@@ -26,6 +24,11 @@ USERS=	crtmpserver
 GROUPS=	crtmpserver
 
 USE_RC_SUBR=	crtmpserver
+
+post-patch:
+	@${REINPLACE_CMD} -e "s,/usr/local/include/lua51,${LUA_INCDIR},g" \
+		-e "s,lua$$,lua-${LUA_VER},g" \
+		${WRKSRC}/builders/cmake/cmake_find_modules/Find_lua.cmake
 
 pre-install:
 	@${SH} $(WRKSRC)/fixConfFile.sh "${WRKSRC}/builders/cmake/crtmpserver/crtmpserver.lua" "${PREFIX}" "${WRKSRC}"
