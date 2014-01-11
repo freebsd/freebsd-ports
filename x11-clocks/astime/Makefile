@@ -16,8 +16,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-xpm-library="${LOCALBASE}/lib" --with-xpm-includes="${LOCALBASE}/include/X11"
 INSTALL_TARGET=	install install.man
 
-MAN1=		astime.1
-PLIST_FILES=	bin/astime
+PLIST_FILES=	bin/astime man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,2 +1,3 @@
 @comment $FreeBSD$
 bin/wmbday
+man/man1/wmbday.1.gz

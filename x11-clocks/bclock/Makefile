@@ -13,10 +13,9 @@ COMMENT=	Round, analog X11 clock with Bezier curve hands
 
 USES=		imake
 USE_XORG=	ice sm x11 xext xmu xt
-MAN1=		bclock.1
 
 PLIST_FILES=	bin/bclock \
-		lib/X11/app-defaults/Clock-color
+		lib/X11/app-defaults/Clock-color \
+		man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

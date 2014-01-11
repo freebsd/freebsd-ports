@@ -22,8 +22,6 @@ NO_WRKSUBDIR=	yes
 USES=		imake
 USE_XORG=	x11 xext
 
-MAN1=		t3d.1
-PLIST_FILES=	bin/t3d
+PLIST_FILES=	bin/t3d man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

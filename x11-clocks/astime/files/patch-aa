@@ -1,11 +1,15 @@
---- autoconf/Makefile.common.in.orig	Thu Feb  4 17:44:50 1999
-+++ autoconf/Makefile.common.in	Thu Feb  4 17:45:18 1999
-@@ -13,7 +13,7 @@
- 		$(INSTALL_PROGRAM) $(PROG) $(AFTER_BIN_DIR)
+--- autoconf/Makefile.common.in.orig	1999-05-02 23:12:39.000000000 +0800
++++ autoconf/Makefile.common.in	2014-01-11 20:25:48.000000000 +0800
+@@ -10,10 +10,10 @@ install:	install.bin install.man
+ 
+ install.bin:	$(PROG)
+ 		$(STRIP) $(PROG)
+-		$(INSTALL_PROGRAM) $(PROG) $(AFTER_BIN_DIR)
++		$(INSTALL_PROGRAM) $(PROG) $(DESTDIR)$(AFTER_BIN_DIR)
  
  install.man:
 -		$(INSTALL_DATA) $(PROG).man $(AFTER_MAN_DIR)/$(PROG).1x
-+		$(INSTALL_DATA) $(PROG).man $(AFTER_MAN_DIR)/$(PROG).1
++		$(INSTALL_DATA) $(PROG).man $(DESTDIR)$(AFTER_MAN_DIR)/$(PROG).1
  
  uninstall:
  		$(RMF) $(AFTER_BIN_DIR)/$(PROG)

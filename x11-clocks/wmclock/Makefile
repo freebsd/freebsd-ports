@@ -13,11 +13,9 @@ COMMENT=	Dockable clock applet for Window Maker
 
 USES=		imake
 USE_XORG=	xpm
-MAN1=		wmclock.1
-PLIST_FILES=	bin/wmclock
+PLIST_FILES=	bin/wmclock man/man1/${PORTNAME}.1.gz
 WMCLOCK_LANG?=	english
 
-NO_STAGE=	yes
 pre-configure:
 	(cd ${WRKSRC}; \
 	${WRKSRC}/configure --lang ${WMCLOCK_LANG} > /dev/null )

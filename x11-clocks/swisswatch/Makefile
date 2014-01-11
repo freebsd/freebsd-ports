@@ -13,7 +13,5 @@ COMMENT=	Swiss railway clock emulation, and a fancy default appearance
 
 USES=		imake
 USE_XORG=	ice sm x11 xext xmu xt
-MAN1=		swisswatch.1
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
