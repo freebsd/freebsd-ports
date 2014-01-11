@@ -18,7 +18,7 @@ LIB_DEPENDS=	libmcrypt.so:${PORTSDIR}/security/libmcrypt \
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-static --with-catgets
 
 OPTIONS_DEFINE=	DOCS NLS EXAMPLES
@@ -29,16 +29,10 @@ NLS_CONFIGURE_ENABLE=	nls
 post-patch:
 	${REINPLACE_CMD} -e '/malloc\.h/d' ${WRKSRC}/src/rfc2440.c
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/sample.mcryptrc ${STAGEDIR}${EXAMPLESDIR}
-.endif
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@cd  ${WRKSRC}/doc && ${INSTALL_DATA} FORMAT magic ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
