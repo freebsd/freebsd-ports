@@ -11,6 +11,8 @@ MASTER_SITES=	http://offload1.icculus.org:9090/neverball/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tilt the floor to guide a ball through an obstacle course
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
