@@ -1,0 +1,10 @@
+#!/bin/sh
+
+USER=%%SMFUSER%%
+GROUP=%%SMFGROUP%%
+DIR=%%SMFDIR%%
+
+if [ "$2" = "PRE-INSTALL" ]; then
+    /usr/bin/install -o ${USER} -g ${GROUP} -m 755 -d ${DIR}
+    echo "Created \"${DIR}\" directory."
+fi
