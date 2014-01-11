@@ -2,6 +2,10 @@ bin/gcmp
 bin/gdiff
 bin/gdiff3
 bin/gsdiff
+man/man1/gcmp.1.gz
+man/man1/gdiff.1.gz
+man/man1/gdiff3.1.gz
+man/man1/gsdiff.1.gz
 %%NLS%%share/locale/ca/LC_MESSAGES/diffutils.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/diffutils.mo
 %%NLS%%share/locale/da/LC_MESSAGES/diffutils.mo
