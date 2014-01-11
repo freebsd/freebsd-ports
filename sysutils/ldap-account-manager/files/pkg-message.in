@@ -1,4 +1,4 @@
-  To use LDAP-account-manager, you have to install
+  To use LDAP account manager, you have to install
   and set up Samba 3.x schemas.
   Like this :
      include       %%PREFIX%%/etc/openldap/schema/core.schema
