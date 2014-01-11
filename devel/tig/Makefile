@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tig
-PORTVERSION=	1.1
+PORTVERSION=	1.2.1
 CATEGORIES=	devel
 MASTER_SITES=	http://jonas.nitro.dk/tig/releases/
 
@@ -13,23 +13,21 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	git:${PORTSDIR}/devel/git
 
-MAN1=		tig.1
-MAN5=		tigrc.5
-MAN7=		tigmanual.7
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_BASE}
-
-USE_GMAKE=	yes
-USES=		iconv
+USES=		iconv gmake
 
 PLIST_FILES=	bin/tig
 
-NO_STAGE=	yes
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}rc.5 ${MANPREFIX}/man/man5/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}manual.7 ${MANPREFIX}/man/man7
+OPTIONS_DEFINE=	MANPAGES
+OPTIONS_DEFAULT=MANPAGES
+
+MANPAGES_BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
+			xmlto:${PORTSDIR}/textproc/xmlto
+MANPAGES_ALL_TARGET=	tig doc-man
+MANPAGES_INSTALL_TARGET=install install-doc-man
+MANPAGES_PLIST_FILES=	man/man1/tig.1.gz \
+			man/man5/tigrc.5.gz \
+			man/man7/tigmanual.7.gz
 
 .include <bsd.port.mk>
