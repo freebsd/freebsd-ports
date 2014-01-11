@@ -414,6 +414,7 @@
 %%XPI_XPIDIR%%/skin/classic/firebug.png
 %%XPI_XPIDIR%%/skin/classic/firebug16.png
 %%XPI_XPIDIR%%/skin/classic/firebug16Disabled.png
+%%XPI_XPIDIR%%/skin/classic/firebug16EnabledInBackground.png
 %%XPI_XPIDIR%%/skin/classic/firebug32.png
 %%XPI_XPIDIR%%/skin/classic/firebug64.png
 %%XPI_XPIDIR%%/skin/classic/fontViewer.css
