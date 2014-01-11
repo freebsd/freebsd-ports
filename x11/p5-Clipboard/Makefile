@@ -18,8 +18,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	clipaccumulate.1 clipbrowse.1 clipedit.1 clipfilter.1 clipjoin.1
-MAN3=	Clipboard.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

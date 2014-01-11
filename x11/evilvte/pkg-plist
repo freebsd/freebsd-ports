@@ -1,7 +1,9 @@
 bin/evilvte
 bin/showvte
+man/man1/evilvte.1.gz
+man/man1/showvte.1.gz
 share/applications/evilvte.desktop
-share/pixmaps/evilvte.png
+share/gnome-control-center/default-apps/evilvte.xml
 share/icons/hicolor/16x16/apps/evilvte.png
 share/icons/hicolor/20x20/apps/evilvte.png
 share/icons/hicolor/22x22/apps/evilvte.png
@@ -14,12 +16,32 @@ share/icons/hicolor/64x64/apps/evilvte.png
 share/icons/hicolor/72x72/apps/evilvte.png
 share/icons/hicolor/96x96/apps/evilvte.png
 share/icons/hicolor/scalable/apps/evilvte.svg
-share/gnome-control-center/default-apps/evilvte.xml
-@dirrmtry share/pixmaps
-@dirrmtry share/icons/hicolor/20x20/apps
-@dirrmtry share/icons/hicolor/20x20
+share/pixmaps/evilvte.png
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/96x96/apps
+@dirrmtry share/icons/hicolor/96x96
+@dirrmtry share/icons/hicolor/72x72/apps
+@dirrmtry share/icons/hicolor/72x72
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor/40x40/apps
 @dirrmtry share/icons/hicolor/40x40
+@dirrmtry share/icons/hicolor/36x36/apps
+@dirrmtry share/icons/hicolor/36x36
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/20x20/apps
+@dirrmtry share/icons/hicolor/20x20
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/gnome-control-center/default-apps
+@dirrmtry share/gnome-control-center

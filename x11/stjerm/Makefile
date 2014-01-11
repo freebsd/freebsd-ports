@@ -17,9 +17,7 @@ USE_GNOME=	vte gtk20
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
 
-MAN8=		stjerm.8
 LICENSE_FILE=	${WRKSRC}/COPYING
-PLIST_FILES=	bin/stjerm
+PLIST_FILES=	bin/stjerm man/man8/${PORTNAME}.8.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

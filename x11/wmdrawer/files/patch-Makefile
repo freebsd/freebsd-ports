@@ -1,0 +1,17 @@
+--- Makefile.orig	2014-01-11 11:20:26.000000000 +0800
++++ Makefile	2014-01-11 11:20:56.000000000 +0800
+@@ -68,10 +68,10 @@ clean :
+ 	$(RM) *.o $(PRGS)
+ 
+ install : wmdrawer
+-	$(INSTALL) -m 755 wmdrawer $(PREFIX)/bin
+-	$(INSTALL) -m 644 doc/wmdrawer.1x.gz $(MANDIR)
+-	$(INSTALL) -d $(DOCDIR)/wmdrawer
+-	$(INSTALL) -m 644 wmdrawerrc.example AUTHORS ChangeLog COPYING INSTALL README TODO $(DOCDIR)/wmdrawer
++	$(INSTALL) -m 755 wmdrawer $(DESTDIR)$(PREFIX)/bin
++	$(INSTALL) -m 644 doc/wmdrawer.1x.gz $(DESTDIR)$(MANDIR)/wmdrawer.1.gz
++	$(INSTALL) -d $(DESTDIR)$(DOCDIR)/wmdrawer
++	$(INSTALL) -m 644 wmdrawerrc.example AUTHORS ChangeLog COPYING INSTALL README TODO $(DESTDIR)$(DOCDIR)/wmdrawer
+ 
+ uninstall: clean
+ 	$(RM) $(PREFIX)/bin/wmdrawer

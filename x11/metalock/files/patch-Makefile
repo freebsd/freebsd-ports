@@ -1,0 +1,27 @@
+--- Makefile.orig	2014-01-11 00:15:02.000000000 +0800
++++ Makefile	2014-01-11 00:16:03.000000000 +0800
+@@ -129,16 +129,16 @@ install: all
+ 	@echo "(the default theme is missing)"
+ .else
+ 	@echo installing executable file to ${DEST_PREFIX}/bin
+-	@mkdir -p ${DEST_PREFIX}/bin
+-	@cp -f metalock ${DEST_PREFIX}/bin
+-	@chmod 755 ${DEST_PREFIX}/bin/metalock
+-	@chmod u+s ${DEST_PREFIX}/bin/metalock
++	@mkdir -p $(DESTDIR)${DEST_PREFIX}/bin
++	@cp -f metalock $(DESTDIR)${DEST_PREFIX}/bin
++	@chmod 755 $(DESTDIR)${DEST_PREFIX}/bin/metalock
++	@chmod u+s $(DESTDIR)${DEST_PREFIX}/bin/metalock
+ 	@echo -n "installing theme to "
+ 	@echo "${DEST_PREFIX}/share/metalock/themes/${DEFAULT_THEME}"
+-	@mkdir -p ${DEST_PREFIX}/share/metalock/themes
+-	@cp -pRf ../themes/${DEFAULT_THEME} ${DEST_PREFIX}/share/metalock/themes
+-	@chown 0:0 ${DEST_PREFIX}/share/metalock/themes/${DEFAULT_THEME}/*
+-	@chmod 644 ${DEST_PREFIX}/share/metalock/themes/${DEFAULT_THEME}/*
++	@mkdir -p $(DESTDIR)${DEST_PREFIX}/share/metalock/themes
++	@cp -pRf ../themes/${DEFAULT_THEME} $(DESTDIR)${DEST_PREFIX}/share/metalock/themes
++	@chown 0:0 $(DESTDIR)${DEST_PREFIX}/share/metalock/themes/${DEFAULT_THEME}/*
++	@chmod 644 $(DESTDIR)${DEST_PREFIX}/share/metalock/themes/${DEFAULT_THEME}/*
+ 	@echo "finished installing metalock"
+ .endif
+ 

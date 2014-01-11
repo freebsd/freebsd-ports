@@ -3,10 +3,16 @@ bin/clipbrowse
 bin/clipedit
 bin/clipfilter
 bin/clipjoin
+%%PERL5_MAN3%%/Clipboard.3.gz
 %%SITE_PERL%%/Clipboard.pm
 %%SITE_PERL%%/Clipboard/MacPasteboard.pm
 %%SITE_PERL%%/Clipboard/Win32.pm
 %%SITE_PERL%%/Clipboard/Xclip.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clipboard/.packlist
+man/man1/clipaccumulate.1.gz
+man/man1/clipbrowse.1.gz
+man/man1/clipedit.1.gz
+man/man1/clipfilter.1.gz
+man/man1/clipjoin.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Clipboard
 @dirrmtry %%SITE_PERL%%/Clipboard

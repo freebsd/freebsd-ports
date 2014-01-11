@@ -12,21 +12,18 @@ COMMENT=	Record, repeat, and play key sequence from keyboard
 
 MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	x11 xt
-MAN1=		xkeywrap.1
-MANCOMPRESSED=	yes
 
 PORTDOCS=	README demo.dat xkeywrap_demo.c
 
-PLIST_FILES=	bin/xkeywrap
+PLIST_FILES=	bin/xkeywrap man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xkeywrap ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xkeywrap.1.gz ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/xkeywrap ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xkeywrap.1.gz ${STAGEDIR}${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docs in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

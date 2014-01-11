@@ -1,5 +1,5 @@
 bin/wmdrawer
-%%DATADIR%%/beastie.png
+man/man1/wmdrawer.1.gz
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/ChangeLog
@@ -7,5 +7,6 @@ bin/wmdrawer
 %%DOCSDIR%%/README
 %%DOCSDIR%%/TODO
 %%DOCSDIR%%/wmdrawerrc.example
-@dirrm %%DOCSDIR%%
+%%DATADIR%%/beastie.png
 @dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%

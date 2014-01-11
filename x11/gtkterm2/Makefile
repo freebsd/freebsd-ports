@@ -23,22 +23,21 @@ PLIST_DIRS=	%%DATADIR%%/pixmaps %%DATADIR%%
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=""||g' ${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/gtkterm2 ${PREFIX}/bin/gtkterm2
+	${INSTALL_PROGRAM} ${WRKSRC}/src/gtkterm2 ${STAGEDIR}${PREFIX}/bin/gtkterm2
 	${INSTALL_DATA} ${WRKSRC}/po/de.gmo \
-		${PREFIX}/share/locale/de/LC_MESSAGES/gtkterm2.mo
-	@${MKDIR} ${DATADIR}/pixmaps
+		${STAGEDIR}${PREFIX}/share/locale/de/LC_MESSAGES/gtkterm2.mo
+	@${MKDIR} ${STAGEDIR}${DATADIR}/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/gtkterm2.png \
-		${DATADIR}/pixmaps/gtkterm2.png
+		${STAGEDIR}${DATADIR}/pixmaps/gtkterm2.png
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

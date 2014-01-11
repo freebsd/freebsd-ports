@@ -15,9 +15,6 @@ GNU_CONFIGURE=	yes
 USE_XORG=	x11 xmu xext xt
 USE_GNOME=	glib20
 
-PLIST_FILES=	bin/wmctrl
+PLIST_FILES=	bin/wmctrl man/man1/${PORTNAME}.1.gz
 
-MAN1=		wmctrl.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

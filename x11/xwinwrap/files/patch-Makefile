@@ -1,5 +1,5 @@
---- Makefile.orig	2009-11-16 20:42:09.000000000 +0700
-+++ Makefile	2009-11-17 04:52:13.000000000 +0700
+--- Makefile.orig	2009-11-16 21:42:09.000000000 +0800
++++ Makefile	2014-01-11 00:00:12.000000000 +0800
 @@ -1,22 +1,23 @@
 -all: all64 all32
 -
@@ -38,7 +38,7 @@
 +	fi;
  
 +install:
-+	$(INSTALL) $(TARGET) $(PREFIX)/bin
++	$(INSTALL) $(TARGET) $(DESTDIR)$(PREFIX)/bin
  clean:
 -	-rm -rf x86_64/ i386/
 -

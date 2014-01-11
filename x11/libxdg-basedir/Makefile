@@ -9,11 +9,10 @@ MASTER_SITES=	http://nevill.ch/libxdg-basedir/downloads/
 MAINTAINER=	ntarmos@ceid.upatras.gr
 COMMENT=	Implementation of the XDG Base Directory specification
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e \
 		's|$$(libdir)/pkgconfig|$${prefix}/libdata/pkgconfig|' \

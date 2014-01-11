@@ -14,5 +14,4 @@ PLIST_FILES=	bin/kb2mb2
 USES=		imake
 USE_XORG=	x11 xext xtst
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

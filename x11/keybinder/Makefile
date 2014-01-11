@@ -14,10 +14,9 @@ BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_XORG=	x11 xext xrender
-USES=		pkgconfig pathfix
+USES=		gmake pkgconfig pathfix
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES PYTHON LUA
@@ -26,7 +25,6 @@ OPTIONS_DEFAULT=	PYTHON
 # Override LUA description
 LUA_DESC=	Lua bindings
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
@@ -61,8 +59,8 @@ PLIST_SUB+=	DOCS="@comment "
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${REINPLACE_CMD} -i '' -e 's|lua5.1|lua-5.1|g' ${WRKSRC}/examples/Makefile
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

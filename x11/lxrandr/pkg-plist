@@ -1,4 +1,5 @@
 bin/lxrandr
+man/man1/lxrandr.1.gz
 share/applications/lxrandr.desktop
 %%NLS%%share/locale/af/LC_MESSAGES/lxrandr.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/lxrandr.mo
@@ -60,11 +61,25 @@ share/applications/lxrandr.desktop
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lxrandr.mo
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur_PK
+%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur
 %%NLS%%@dirrmtry share/locale/tt_RU/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/tt_RU
+%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/te
+%%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sr@latin
+%%NLS%%@dirrmtry share/locale/ps/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ps
 %%NLS%%@dirrmtry share/locale/lg/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/lg
 %%NLS%%@dirrmtry share/locale/frp/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/frp
+%%NLS%%@dirrmtry share/locale/fo/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fo
 %%NLS%%@dirrmtry share/locale/es_VE/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/es_VE
+%%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/bn_IN
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast

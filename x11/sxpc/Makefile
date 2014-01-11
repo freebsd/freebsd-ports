@@ -18,8 +18,6 @@ EXTRACT_CMD=		${GZIP_CMD}
 EXTRACT_BEFORE_ARGS=	-dc
 EXTRACT_AFTER_ARGS=	| ${SH}
 
-MAN1=		sxpc.1
-PLIST_FILES=	bin/sxpc
+PLIST_FILES=	bin/sxpc man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
