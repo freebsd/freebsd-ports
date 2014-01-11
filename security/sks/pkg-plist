@@ -1,0 +1,9 @@
+bin/sks
+bin/sks_add_mail
+bin/sks_build.sh
+man/man8/sks.8.gz
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
