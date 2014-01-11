@@ -14,11 +14,7 @@ USES=		gmake pkgconfig perl5
 USE_XORG=	x11 xtst xinerama
 USE_PERL5=	build
 
-MAN1=		xdotool.1
-PLIST_FILES=	bin/xdotool lib/libxdo.so lib/libxdo.so.2 include/xdo.h
-
 # Older GCC on RELENG_6 doesn't like -Wno-missing-field-initializers
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,-Wno-missing-field-initializers,,' \
 		${WRKSRC}/Makefile

@@ -1,17 +1,5 @@
 bin/Xdialog
-%%NLS%%share/locale/ca/LC_MESSAGES/Xdialog.mo
-%%NLS%%share/locale/de/LC_MESSAGES/Xdialog.mo
-%%NLS%%share/locale/es/LC_MESSAGES/Xdialog.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/Xdialog.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/Xdialog.mo
-%%NLS%%share/locale/id/LC_MESSAGES/Xdialog.mo
-%%NLS%%share/locale/it/LC_MESSAGES/Xdialog.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/Xdialog.mo
-%%NLS%%share/locale/no_NO/LC_MESSAGES/Xdialog.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/Xdialog.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/Xdialog.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/Xdialog.mo
-%%NLS%%share/locale/sv_SE/LC_MESSAGES/Xdialog.mo
+man/man1/Xdialog.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/2ranges.png
 %%PORTDOCS%%%%DOCSDIR%%/authors.html
 %%PORTDOCS%%%%DOCSDIR%%/box.html
@@ -53,17 +41,6 @@ bin/Xdialog
 %%PORTDOCS%%%%DOCSDIR%%/range.png
 %%PORTDOCS%%%%DOCSDIR%%/rcfile.png
 %%PORTDOCS%%%%DOCSDIR%%/right.png
-%%PORTDOCS%%%%DOCSDIR%%/special.html
-%%PORTDOCS%%%%DOCSDIR%%/spinbox.png
-%%PORTDOCS%%%%DOCSDIR%%/syntax.html
-%%PORTDOCS%%%%DOCSDIR%%/tailbox.png
-%%PORTDOCS%%%%DOCSDIR%%/timebox.png
-%%PORTDOCS%%%%DOCSDIR%%/title.png
-%%PORTDOCS%%%%DOCSDIR%%/transient.html
-%%PORTDOCS%%%%DOCSDIR%%/treeview.png
-%%PORTDOCS%%%%DOCSDIR%%/withtags.png
-%%PORTDOCS%%%%DOCSDIR%%/yesno-wizard.png
-%%PORTDOCS%%%%DOCSDIR%%/yesno.png
 %%PORTDOCS%%%%DOCSDIR%%/samples/Xdialog.wrapper.c
 %%PORTDOCS%%%%DOCSDIR%%/samples/Xmessage
 %%PORTDOCS%%%%DOCSDIR%%/samples/Xmore
@@ -100,9 +77,33 @@ bin/Xdialog
 %%PORTDOCS%%%%DOCSDIR%%/samples/warning.xpm
 %%PORTDOCS%%%%DOCSDIR%%/samples/xlock-wrapper
 %%PORTDOCS%%%%DOCSDIR%%/samples/yesno
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/samples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%NLS%%@dirrmtry share/locale/no_NO/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/no_NO
+%%PORTDOCS%%%%DOCSDIR%%/special.html
+%%PORTDOCS%%%%DOCSDIR%%/spinbox.png
+%%PORTDOCS%%%%DOCSDIR%%/syntax.html
+%%PORTDOCS%%%%DOCSDIR%%/tailbox.png
+%%PORTDOCS%%%%DOCSDIR%%/timebox.png
+%%PORTDOCS%%%%DOCSDIR%%/title.png
+%%PORTDOCS%%%%DOCSDIR%%/transient.html
+%%PORTDOCS%%%%DOCSDIR%%/treeview.png
+%%PORTDOCS%%%%DOCSDIR%%/withtags.png
+%%PORTDOCS%%%%DOCSDIR%%/yesno-wizard.png
+%%PORTDOCS%%%%DOCSDIR%%/yesno.png
+%%NLS%%share/locale/ca/LC_MESSAGES/Xdialog.mo
+%%NLS%%share/locale/de/LC_MESSAGES/Xdialog.mo
+%%NLS%%share/locale/es/LC_MESSAGES/Xdialog.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/Xdialog.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/Xdialog.mo
+%%NLS%%share/locale/id/LC_MESSAGES/Xdialog.mo
+%%NLS%%share/locale/it/LC_MESSAGES/Xdialog.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/Xdialog.mo
+%%NLS%%share/locale/no_NO/LC_MESSAGES/Xdialog.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/Xdialog.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/Xdialog.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/Xdialog.mo
+%%NLS%%share/locale/sv_SE/LC_MESSAGES/Xdialog.mo
 %%NLS%%@dirrmtry share/locale/sv_SE/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sv_SE
+%%NLS%%@dirrmtry share/locale/no_NO/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/no_NO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/samples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

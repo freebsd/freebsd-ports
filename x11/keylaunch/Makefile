@@ -11,25 +11,18 @@ MAINTAINER=	mwm@mired.org
 COMMENT=	An X utility for binding commands to a hot key
 
 WRKSRC=		${WRKDIR}/keylaunch
-USE_GMAKE=	yes
-USES=		perl5
+USES=		perl5 gmake
 USE_PERL5=	build
 USE_XORG=	x11
 
-PKGMESSAGE=	${WRKSRC}/pkg-message
+SUB_FILES= 	pkg-message
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/keylaunch ${PREFIX}/bin
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/example_rc ${EXAMPLESDIR}/keylaunch.rc
-
-post-install:
-	@${SED} -e 's;/usr/X11R6;${LOCALBASE};g' < ${FILESDIR}/pkg-message.in > \
-		${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/keylaunch ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example_rc ${STAGEDIR}${EXAMPLESDIR}/keylaunch.rc
 
 .include <bsd.port.mk>

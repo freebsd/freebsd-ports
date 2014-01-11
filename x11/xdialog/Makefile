@@ -15,16 +15,13 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
-MAN1=		Xdialog.1
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if defined(.PARSEDIR)
-USE_GMAKE=	yes
+USES=		gmake
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MNLS)
@@ -46,10 +43,10 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/samples
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/* ${DOCSDIR}/samples
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/samples
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/* ${STAGEDIR}${DOCSDIR}/samples
 .endif
 
 .include <bsd.port.mk>

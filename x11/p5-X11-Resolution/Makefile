@@ -15,7 +15,4 @@ RUN_DEPENDS=	p5-X11-Protocol>=0:${PORTSDIR}/x11/p5-X11-Protocol
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		X11::Resolution.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

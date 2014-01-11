@@ -17,8 +17,6 @@ USE_XORG=	xrandr
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
-MAN1=		lxrandr.1
-
 PORTDOCS=	AUTHORS
 
 OPTIONS_DEFINE=	DOCS NLS
@@ -26,7 +24,6 @@ OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -42,8 +39,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

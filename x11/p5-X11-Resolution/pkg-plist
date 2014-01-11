@@ -1,5 +1,6 @@
+%%PERL5_MAN3%%/X11::Resolution.3.gz
 %%SITE_PERL%%/X11/Resolution.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/Resolution/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/Resolution
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/Resolution
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11
 @dirrmtry %%SITE_PERL%%/X11
