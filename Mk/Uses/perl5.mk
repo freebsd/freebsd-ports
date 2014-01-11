@@ -54,7 +54,7 @@ PERL_VERSION=	5.14.4
 .elif ${PERL5_DEFAULT} == 5.16
 PERL_VERSION=	5.16.3
 .elif ${PERL5_DEFAULT} == 5.18
-PERL_VERSION=	5.18.1
+PERL_VERSION=	5.18.2
 .else
 IGNORE=	Invalid perl5 version ${PERL5_DEFAULT}
 .endif
