@@ -3,7 +3,7 @@
 
 PORTNAME=	nmap
 DISTVERSION=	6.40
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		LOCAL/ohauer
@@ -19,10 +19,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-USE_LUA=	5.1 5.2
-LUA_COMPS=	lua
-USE_BZIP2=	yes
 USES=		gmake
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
 OPTIONS_SUB=	yes
@@ -47,10 +45,8 @@ CONFIGURE_ARGS+=--without-localdirs \
 		--without-zenmap \
 		--without-ndiff \
 		--with-libpcre=${LOCALBASE} \
-		--with-liblua=${LOCALBASE} \
+		--with-liblua=included \
 		--without-nmap-update
-
-CONFIGURE_ENV=	LUA_INCDIR="${LUA_INCDIR}" LUA_LIBDIR="${LUA_LIBDIR}"
 
 # fix for gcc from ports
 .if ${CC} != "cc" && ${CC} !="clang"
