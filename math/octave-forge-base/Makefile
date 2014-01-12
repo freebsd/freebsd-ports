@@ -12,6 +12,8 @@ EXTRACT_ONLY=	#none
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge baseport for all packages
 
+LICENSE=	BSD2CLAUSE
+
 RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave \
 		gmake:${PORTSDIR}/devel/gmake \
 		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
