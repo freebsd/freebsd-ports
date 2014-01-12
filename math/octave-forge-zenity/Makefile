@@ -9,6 +9,8 @@ CATEGORIES=	math
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 
 RUN_DEPENDS+=	zenity:${PORTSDIR}/x11/zenity
