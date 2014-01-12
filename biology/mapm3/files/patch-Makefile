@@ -1,5 +1,5 @@
---- Makefile.orig	2008-04-04 20:05:29.000000000 +0000
-+++ Makefile	2008-04-04 19:51:04.000000000 +0000
+--- Makefile.orig	1993-02-10 07:12:59.000000000 +0100
++++ Makefile	2014-01-12 18:47:03.605582463 +0100
 @@ -16,6 +16,7 @@
  ####
  #### For Macs with A/UX, use:	SYS= -D_SYS_AUX
@@ -17,15 +17,6 @@
  
  #### Next define the system libraries to link with Mapmaker. On SunOS, Ultrix
  #### and other vanilla-ish BSD systems, the correct setting is:
-@@ -46,7 +47,7 @@
- #### Be sure that you have write permission to this directory (e.g. you may
- #### need to be logged in as "root" to install MAPMAKER in some directories).
- 
--DIR= /usr/local/bin
-+DIR= ${PREFIX}/bin
- 
- #### RDLN below refers to the GNU Readline library, which can (optionally) be
- #### used by MAPMAKER to provide interactive command line editing. See the 
 @@ -70,9 +71,11 @@
  #### (see the end of readline/readline.c). Readline will not compile on
  #### A/UX without using GCC instead of A/UX's cc (because it needs alloca).
@@ -47,7 +38,7 @@
  
 -COMPILE= cc
 -LINKALL= cc
-+COMPILE= ${CC}
++COMPILE= ${CC} ${CFLAGS}
 +LINKALL= ${CC}
  LINKLIB= ld -r
  DELETE=  rm -f
