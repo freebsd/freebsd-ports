@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140112:
+  AFFECTS: users of devel/libical
+  AUTHOR: kwm@FreeBSD.org
+
+  The libical ports was updated to 1.0.0. Due to the shared library bump
+  and the removal of the .la file. All ports that use libical need to be
+  rebuild.
+
+  # portmaster -r libical
+   or
+  # pkg install -fR libical
+
 20140111:
   AFFECTS: users of lang/go
   AUTHOR: jlaffaye@FreeBSD.org
