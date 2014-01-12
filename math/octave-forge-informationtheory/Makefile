@@ -11,6 +11,5 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 .include <bsd.port.mk>

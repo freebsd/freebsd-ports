@@ -17,7 +17,6 @@ WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 BUILD_DEPENDS+=	gsed:${PORTSDIR}/textproc/gsed
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 post-patch:
