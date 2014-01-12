@@ -9,6 +9,8 @@ CATEGORIES=	math
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
+LICENSE=	GPLv3
+
 MAKE_JOBS_UNSAFE=	yes
 MAKE_ARGS=	CC="${CC}" CXX="${CXX}"
 

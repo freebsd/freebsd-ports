@@ -9,6 +9,8 @@ CATEGORIES=	math
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS+=	gdcmCommon:${PORTSDIR}/devel/gdcm
 
 # OCTSRC is the name of the directory of the package.
