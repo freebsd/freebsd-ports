@@ -13,6 +13,8 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		portaudio:${PORTSDIR}/audio/portaudio2 \
 		cblas:${PORTSDIR}/math/cblas
 
+MAKE_ARGS=	CC="${CC}"
+
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${OCTAVE_PKGNAME}
@@ -20,9 +22,6 @@ OCTSRC=		${OCTAVE_PKGNAME}
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e s/^CC/\#CC/ -e s/^CXX/\#CXX/ ${WRKSRC}/Makefile_unix
-
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 post-build:
