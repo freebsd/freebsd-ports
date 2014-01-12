@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bitlbee
-PORTVERSION=	3.2
-PORTREVISION=	2
+PORTVERSION=	3.2.1
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
 		${MASTER_SITE_LOCAL}
@@ -34,7 +33,7 @@ OPTIONS_SINGLE_SSL=	OPENSSL GNUTLS
 OPTIONS_MULTI=		PROTO
 OPTIONS_MULTI_PROTO=	JABBER LIBPURPLE MSN OSCAR TWITTER YAHOO
 
-OTR_DESC=		Off-the-Record Messaging support
+OTR_DESC=		Off-the-Record Messaging support (Requires GnuTLS)
 LIBPURPLE_DESC=		Use libpurple for protocol support
 MSN_DESC=		Microsoft Messenger support
 OSCAR_DESC=		OSCAR (ICQ, AIM) support
@@ -48,8 +47,11 @@ CONFIGURE_ARGS=	--config=/var/db/bitlbee --strip=0
 USERS=		bitlbee
 GROUPS=		bitlbee
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MOPENSSL} && ${PORT_OPTIONS:MOTR}
+IGNORE=Off-the-Record Messaging support requires GnuTLS support
+.endif
 
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=--debug=1
@@ -129,14 +131,14 @@ post-patch:
 		${WRKSRC}/doc/bitlbee.8
 
 post-install:
-	${MKDIR} ${PREFIX}/etc/bitlbee
+	${MKDIR} ${STAGEDIR}/${PREFIX}/etc/bitlbee
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/doc/@} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/doc/@} ${STAGEDIR}/${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S@^@${WRKSRC}/@} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S@^@${WRKSRC}/@} ${STAGEDIR}/${EXAMPLESDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
