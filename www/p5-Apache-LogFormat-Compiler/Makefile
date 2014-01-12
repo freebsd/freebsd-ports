@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Apache-LogFormat-Compiler
-PORTVERSION=	0.13
+PORTVERSION=	0.22
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,4 @@ TEST_DEPENDS=	\
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	Apache::LogFormat::Compiler.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
