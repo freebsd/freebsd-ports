@@ -3,22 +3,25 @@
 
 PORTNAME=	clay
 PORTVERSION=	0.1.2
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/jckarter/${PORTNAME}/tarball/v${PORTVERSION}/
 DISTNAME=	jckarter-${PORTNAME}-v${PORTVERSION}-0-g${GITVERSION}
 
 MAINTAINER=	jyyou@cs.nctu.edu.tw
-COMMENT=	A language designed for generic programming
+COMMENT=	Language designed for generic programming
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	llvm31>=3.1:${PORTSDIR}/devel/llvm31
+BUILD_DEPENDS=	llvm-config32:${PORTSDIR}/devel/llvm32 \
+		clang32:${PORTSDIR}/lang/clang32
+RUN_DEPENDS=	clang32:${PORTSDIR}/lang/clang32
 
 OPTIONS_DEFINE=		BINDGEN
-BINDGEN_DESC=		Build with binding generator
-OPTIONS_DEFAULT=	BINDGEN
+BINDGEN_DESC=		Build with binding generator (broken on 10.0+)
 
 GITVERSION=	751ebe3
+PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/jckarter-${PORTNAME}-${GITVERSION}
 
 ONLY_FOR_ARCHS=	i386 amd64
@@ -26,29 +29,10 @@ ONLY_FOR_ARCHS=	i386 amd64
 USES=		cmake
 CMAKE_ARGS+=	-G "Unix Makefiles" -DBUILD_FIX=false
 
-CC=		clang
-CXX=		clang++
+CC=		clang32
+CXX=		clang++32
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_SUB=	yes
+BINDGEN_CMAKE_OFF=	-DBUILD_BINDGEN=false
 
-.if ${PORT_OPTIONS:MBINDGEN}
-PLIST_SUB+=	BINDGEN=""
-.else
-PLIST_SUB+=	BINDGEN="@comment "
-CMAKE_ARGS+=	-DBUILD_BINDGEN=false
-.endif
-
-.if ${OSVERSION} < 900044 || ${PORT_OPTIONS:MBINDGEN}
-BUILD_DEPENDS+=	clang31>=3.1:${PORTSDIR}/lang/clang31
-RUN_DEPENDS+=	clang31>=3.1:${PORTSDIR}/lang/clang31
-.endif
-
-.if defined(NOPORTDOCS)
-pre-configure:
-	${REINPLACE_CMD} \
-	    -e 's|install(DIRECTORY doc/ DESTINATION share/doc/clay)||' \
-	    ${WRKSRC}/CMakeLists.txt
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
