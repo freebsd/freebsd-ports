@@ -1,7 +1,6 @@
 bin/turnserver
 bin/turnadmin
 bin/turnutils_peer
-bin/turnutils_rfc5769check
 bin/turnutils_stunclient
 bin/turnutils_uclient
 lib/libturnclient.a
@@ -10,6 +9,7 @@ etc/turnuserdb.conf.default
 %%DATADIR%%/schema.sql
 %%DATADIR%%/schema.userdb.redis
 %%DATADIR%%/schema.stats.redis
+%%DATADIR%%/testredisdbsetup.sh
 @dirrmtry %%DATADIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/etc/turnserver.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/etc/turnuserdb.conf
@@ -20,8 +20,8 @@ etc/turnuserdb.conf.default
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/etc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/peer.sh
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/rfc5769.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/basic/relay.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/basic/dos_attack.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/basic/tcp_client_c2c_tcp_relay.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/basic/udp_c2c_client.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/basic/udp_client.sh
@@ -32,30 +32,37 @@ etc/turnuserdb.conf.default
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/loadbalance/udp_c2c.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/loadbalance/tcp_c2c_tcp_relay.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_dtls_client.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_dtls_client_cert.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_relay.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_relay_cert.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_tcp_client_c2c_tcp_relay.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_tcp_client.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_tls_client_c2c_tcp_relay.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_tls_client.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_udp_c2c.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_udp_client.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecure/secure_dos_attack.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecuredb/secure_relay_with_db_psql.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecuredb/secure_relay_with_db_mysql.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/longtermsecuredb/secure_relay_with_db_redis.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/restapi/secure_relay_secret.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/restapi/secure_relay_secret_with_db_mysql.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/restapi/secure_relay_secret_with_db_psql.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/restapi/secure_relay_secret_with_db_redis.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/restapi/secure_udp_client_with_secret.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/restapi/shared_secret_maintainer.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shorttermsecure/secure_tcp_client_c2c_tcp_relay_short_term.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shorttermsecure/secure_udp_client_short_term.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/shorttermsecure/secure_relay_short_term_mech.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/selfloadbalance/secure_dos_attack.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/scripts/selfloadbalance/secure_relay.sh
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/basic
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/loadbalance
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/longtermsecure
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/longtermsecuredb
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/restapi
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/shorttermsecure
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts/selfloadbalance
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/scripts
 %%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 include/turn/ns_turn_defs.h
