@@ -16,6 +16,7 @@ OCTSRC=		${DISTNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
