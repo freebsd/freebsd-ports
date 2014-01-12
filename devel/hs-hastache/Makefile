@@ -2,7 +2,7 @@
 
 PORTNAME=	hastache
 PORTVERSION=	0.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org

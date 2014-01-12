@@ -2,7 +2,7 @@
 
 PORTNAME=	gtk2hs-buildtools
 PORTVERSION=	0.12.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
