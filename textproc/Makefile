@@ -212,6 +212,7 @@
     SUBDIR += gnome-translate
     SUBDIR += gnugrep
     SUBDIR += go-text
+    SUBDIR += go.text
     SUBDIR += goldendict
     SUBDIR += google-ctemplate
     SUBDIR += gpp
