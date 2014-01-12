@@ -706,7 +706,6 @@ GNUstep/System/Library/Images/common_TabDownUnSelectedToSelectedJunction.tiff
 GNUstep/System/Library/Images/common_TabSelectedLeft.tiff
 GNUstep/System/Library/Images/common_TabSelectedRight.tiff
 GNUstep/System/Library/Images/common_TabSelectedToUnSelectedJunction.tiff
-GNUstep/System/Library/Images/common_TabUnSelectToSelectedJunction.tiff
 GNUstep/System/Library/Images/common_TabUnSelectedJunction.tiff
 GNUstep/System/Library/Images/common_TabUnSelectedLeft.tiff
 GNUstep/System/Library/Images/common_TabUnSelectedRight.tiff
@@ -807,7 +806,6 @@ GNUstep/System/Library/Headers/AppKit/NSTreeController.h
 GNUstep/System/Library/Images/NSAddTemplate.tiff
 GNUstep/System/Library/Images/common_Info.tiff
 @exec mkdir -p %D/GNUstep/System/Library/Themes
-@dirrm GNUstep/System/Library/Headers/AppKit
 @dirrm GNUstep/System/Library/Themes
 @dirrm GNUstep/System/Library/Services/GSspell.service/Resources
 @dirrm GNUstep/System/Library/Services/GSspell.service
@@ -875,3 +873,17 @@ GNUstep/System/Library/Images/common_Info.tiff
 @dirrm GNUstep/System/Library/Bundles/AudioOutput.nssound
 @dirrm GNUstep/System/Applications/GSSpeechServer.app/Resources
 @dirrm GNUstep/System/Applications/GSSpeechServer.app
+GNUstep/System/Library/Headers/AppKit/NSCollectionView.h
+GNUstep/System/Library/Headers/AppKit/NSCollectionViewItem.h
+GNUstep/System/Library/Headers/AppKit/NSPopover.h
+GNUstep/System/Library/Headers/AppKit/NSStatusBar.h
+GNUstep/System/Library/Headers/AppKit/NSStatusItem.h
+GNUstep/System/Library/Headers/AppKit/NSTrackingArea.h
+GNUstep/System/Library/Headers/AppKit/NSTreeNode.h
+GNUstep/System/Library/Images/common_StepperDown.tiff
+GNUstep/System/Library/Images/common_StepperDownHighlighted.tiff
+GNUstep/System/Library/Images/common_StepperUp.tiff
+GNUstep/System/Library/Images/common_StepperUpHighlighted.tiff
+GNUstep/System/Library/Images/common_TabUnSelectedToSelectedJunction.tiff
+@dirrm GNUstep/System/Library/Headers/AppKit
+
