@@ -24,21 +24,14 @@ ALL_TARGET=	${PORTNAME}
 CXXFLAGS+=	$$(pkg-config --cflags libpng15) \
 		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	$$(pkg-config --libs libpng15) \
-		-L${LOCALBASE}/lib -lglut -lGLU -lGL -lbz2 -lm -lz ${PTHREAD_LIBS}
+		-L${LOCALBASE}/lib -lglut -lGLU -lGL -lbz2 -lm -lz -llzma \
+		${PTHREAD_LIBS}
 
 PORTDOCS=	AUTHORS ChangeLog README
 PLIST_FILES=	bin/${PORTNAME}
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ((${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || ${OSVERSION} < 800505)
-LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
-CXXFLAGS+=	$$(pkg-config --cflags liblzma)
-LDFLAGS+=	$$(pkg-config --libs liblzma)
-.else
-LDFLAGS+=	-llzma
-.endif
 
 .if !defined(WITH_DEBUG)
 CXXFLAGS+=	-DNDEBUG
