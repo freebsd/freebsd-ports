@@ -45,16 +45,16 @@ include/libical/vcaltmp.h
 include/libical/vcc.h
 include/libical/vobject.h
 lib/libical.a
-lib/libical.la
 lib/libical.so
-lib/libical.so.0
+lib/libical.so.1
+lib/libical.so.1.0.0
 lib/libicalss.a
-lib/libicalss.la
 lib/libicalss.so
-lib/libicalss.so.0
+lib/libicalss.so.1
+lib/libicalss.so.1.0.0
 lib/libicalvcal.a
-lib/libicalvcal.la
 lib/libicalvcal.so
-lib/libicalvcal.so.0
+lib/libicalvcal.so.1
+lib/libicalvcal.so.1.0.0
 libdata/pkgconfig/libical.pc
 @dirrm include/libical
