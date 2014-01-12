@@ -6,7 +6,7 @@ PORTVERSION=	1.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.sentia.org/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	ipfmeta - use objects in IPfilter files
 
 USES=		perl5
