@@ -10,25 +10,26 @@ MASTER_SITES=	SF/${PORTNAME}/Vavoom-source/${PORTVERSION}
 MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Doom, Doom II, Heretic, Hexen, and Strife source port
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake dos2unix
+DOS2UNIX_REGEX=	((.*\.(c|cpp|h|s|asm|inc|vc|ls|acs|cfg|txt|vs|mak|mgw"))$$|\/(makefile\..*|makefile|Makefile)$$)
 
-OPTIONS_SINGLE=	HWAPI
-OPTIONS_SINGLE_HWAPI=	ALLEGRO SDL
-OPTIONS_DEFINE=	ALLEGRO FLAC LAUNCHER MAD MIKMOD OPENAL OPENGL OPTIMIZED_CFLAGS VORBIS SDL WXUNICODE DOCS
+MAKE_JOBS_UNSAFE=	yes
+
+OPTIONS_DEFINE=	FLAC LAUNCHER MAD MIKMOD OPENAL OPTIMIZED_CFLAGS VORBIS SDL WXUNICODE DOCS
 OPTIONS_DEFAULT=	OPENGL SDL WXUNICODE
-ALLEGRO_DESC=	Use Allegro for hardware API
 LAUNCHER_DESC=	Build GUI launcher
 OPENAL_DESC=	Enable OpenAL support
-SDL_DESC=	Use SDL for hardware API
+SDL_DESC=	Use SDL for OpenGL support
 WXUNICODE_DESC=	Enable Unicode support
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # The `-fno-strict-aliasing' flag (default on FreeBSD 6.0+) produces
@@ -36,15 +37,8 @@ NO_STAGE=	yes
 CFLAGS:=	${CFLAGS:N-fno-strict-aliasing}
 CXXFLAGS:=	${CFLAGS:N-fno-strict-aliasing}
 
-.if ${PORT_OPTIONS:MALLEGRO}
-LIB_DEPENDS+=	alleg:${PORTSDIR}/devel/allegro
-CMAKE_ARGS+=	-DWITH_ALLEGRO=Y
-.else
-CMAKE_ARGS+=	-DWITH_ALLEGRO=N
-.endif
-
 .if ${PORT_OPTIONS:MFLAC}
-LIB_DEPENDS+=	FLAC:${PORTSDIR}/audio/flac
+LIB_DEPENDS+=	libFLAC.so:${PORTSDIR}/audio/flac
 CMAKE_ARGS+=	-DWITH_FLAC=Y
 .else
 CMAKE_ARGS+=	-DWITH_FLAC=N
@@ -61,14 +55,14 @@ PLIST_SUB+=	LAUNCHER="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMAD}
-LIB_DEPENDS+=	mad:${PORTSDIR}/audio/libmad
+LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad
 CMAKE_ARGS+=	-DWITH_LIBMAD=Y
 .else
 CMAKE_ARGS+=	-DWITH_LIBMAD=N
 .endif
 
 .if ${PORT_OPTIONS:MMIKMOD}
-LIB_DEPENDS+=	mikmod:${PORTSDIR}/audio/libmikmod
+LIB_DEPENDS+=	libmikmod.so:${PORTSDIR}/audio/libmikmod
 CMAKE_ARGS+=	-DWITH_MIKMOD=Y
 .else
 CMAKE_ARGS+=	-DWITH_MIKMOD=N
@@ -81,23 +75,12 @@ CMAKE_ARGS+=	-DWITH_OPENAL=Y
 CMAKE_ARGS+=	-DWITH_OPENAL=N
 .endif
 
-.if ${PORT_OPTIONS:MOPENGL}
-USE_GL=		yes
-. if ${PORT_OPTIONS:MALLEGRO}
-LIB_DEPENDS+=	agl:${PORTSDIR}/graphics/allegrogl
-BROKEN=		please use SDL instead of ALLEGRO, for OPENGL support
-. endif
-CMAKE_ARGS+=	-DWITH_OPENGL=Y
-.else
-CMAKE_ARGS+=	-DWITH_OPENGL=N
-.endif
-
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 CMAKE_ARGS+=	-DWITH_VORBIS=Y
 .else
 CMAKE_ARGS+=	-DWITH_VORBIS=N
@@ -106,8 +89,11 @@ CMAKE_ARGS+=	-DWITH_VORBIS=N
 .if ${PORT_OPTIONS:MSDL}
 USE_SDL=	mixer sdl
 CMAKE_ARGS+=	-DWITH_SDL=Y
+USE_GL=		yes
+CMAKE_ARGS+=	-DWITH_OPENGL=Y
 .else
 CMAKE_ARGS+=	-DWITH_SDL=N
+CMAKE_ARGS+=	-DWITH_OPENGL=N
 .endif
 
 .if ${PORT_OPTIONS:MWXUNICODE}
@@ -115,7 +101,6 @@ WX_UNICODE=yes
 .endif
 
 post-patch:
-	@cd ${WRKSRC} && ${SH} fixunix.sh
 	@${REINPLACE_CMD} -e 's|$$\* ||; s|$${IWADDIR}|-iwaddir ${DMDIR} $$*|' \
 		${WRKSRC}/source/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's/<malloc.h>/<stdlib.h>/' \
@@ -132,12 +117,11 @@ post-configure:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/vavoom.txt ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/vavoom.txt ${STAGEDIR}${DOCSDIR}
 .endif
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vavoom.bin
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vavoom-dedicated.bin
 
 .include "${PORTSDIR}/games/doom-data/Makefile.include"
 
