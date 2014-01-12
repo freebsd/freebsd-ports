@@ -3,7 +3,7 @@
 
 PORTNAME=	SpotifyWebsocketAPI
 PORTVERSION=	0.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,7 +19,7 @@ GH_PROJECT=	spotify-websocket-api
 GH_TAGNAME=	${GH_COMMIT}
 
 USES=		shebangfix
-SHEBANG_FILES=	spotify_web/spotify.py
+SHEBANG_FILES=	spotify_web/spotify.py ${CLIENTFILES}
 USE_PYTHON=	yes # tested with 2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
@@ -30,7 +30,8 @@ OPTIONS_DEFINE=	EXAMPLES
 PORTEXAMPLES=	blocking.py nonblocking.py decode_mercury.py play.py \
 		serve.py ctype.py gstreamer.py
 
-CLIENTFILES=	respotify.py respotify-helper.py
+CLIENTFILES=	clients/respotify/respotify.py \
+		clients/respotify/respotify-helper.py
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=1.1.0:${PORTSDIR}/www/py-requests \
 		${PYTHON_PKGNAMEPREFIX}ws4py>=0.2.4:${PORTSDIR}/www/py-ws4py \
@@ -51,7 +52,7 @@ post-patch:
 
 post-install:
 .for f in ${CLIENTFILES}
-	@${INSTALL_SCRIPT} ${WRKSRC}/clients/respotify/${f} ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	@${LN} -s ${PREFIX}/bin/respotify.py ${STAGEDIR}${PREFIX}/bin/respotify
 
