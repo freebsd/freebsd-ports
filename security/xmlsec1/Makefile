@@ -12,54 +12,35 @@ MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	XML Security Library
 
-BUILD_DEPENDS:=	${RUN_DEPENDS}
-
-OPTIONS_DEFINE=	GNUTLS NSS
-GNUTLS_DESC=	Enable GNUTLS support
-NSS_DESC=	Enable Mozilla's NSS support
+OPTIONS_DEFINE=	DOCS GNUTLS NSS
+OPTIONS_SUB=	yes
+GNUTLS_DESC=		Enable GNUTLS support
+GNUTLS_CONFIGURE_WITH=	gnutls="${LOCALBASE}"
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+NSS_DESC=		Enable Mozilla's NSS support
+NSS_CONFIGURE_WITH=	nss="${LOCALBASE}" nspr="${LOCALBASE}"
+NSS_LIB_DEPENDS=	libnss3.so:${PORTSDIR}/security/nss
 
 USE_OPENSSL=	yes
-USE_GNOME=	gnomehack lthack libxslt
+USE_GNOME=	lthack libxml2 libxslt
+USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		pkgconfig
+USES=		pkgconfig pathfix
 
-MAN1=	xmlsec1.1 xmlsec1-config.1
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_ENV+=	ABS_BUILDDIR=${WRKSRC} TMPFOLDER=${WRKSRC}
+MAKE_ENV+=	ABS_BUILDDIR=${WRKSRC} TMPFOLDER=${WRKSRC} DOCS=docs
+CONFIGURE_ARGS+=--with-openssl="${OPENSSLBASE}"
+
 .if !defined(.PARSEDIR)
 MAKE_ARGS+=	-EABS_BUILDDIR
 .endif
-USE_AUTOTOOLS=	libltdl
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	*
-MAKE_ENV+=	DOCS=docs
-.endif
-
-.if ${PORT_OPTIONS:MGNUTLS}
-CONFIGURE_ARGS+=	--with-gnutls="${LOCALBASE}"
-LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
-PLIST_SUB+=		GNUTLS=""
-.else
-CONFIGURE_ARGS+=	--without-gnutls
-PLIST_SUB+=		GNUTLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNSS}
-CONFIGURE_ARGS+=	--with-nss="${LOCALBASE}" --with-nspr="${LOCALBASE}"
-LIB_DEPENDS+=		nss3:${PORTSDIR}/security/nss
-PLIST_SUB+=		NSS=""
-.else
-CONFIGURE_ARGS+=	--without-nss
-PLIST_SUB+=		NSS="@comment "
-.endif
-
-CONFIGURE_ARGS+=	--with-openssl="${OPENSSLBASE}"
+# avoid --without-opt=PATH constructs
+CONFIGURE_ARGS:=${CONFIGURE_ARGS:C/without-([a-z]*)=.*/without-\1/}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|src apps man docs|src apps man \$${DOCS}|g' \
@@ -94,5 +75,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,^\(xmlsec1_LDADD = \)\\$$,\1 -L${LOCALBASE}/lib ${PTHREAD_LIBS}\\,' \
 		${WRKSRC}/apps/Makefile.in
 .endif
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxmlsec1*.so
 
 .include <bsd.port.mk>
