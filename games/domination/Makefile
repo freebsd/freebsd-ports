@@ -40,6 +40,9 @@ MAPS=		solar bigeurope google europass europe artic sudamerica \
 		simpsons_world simpsons germany2
 
 PORTDOCS=	ChangeLog.txt ReadMe.txt commands.txt todo.txt
+
+OPTIONS_DEFINE=	DOCS
+
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 SUB_FILES=	${PORTNAME}-FlashGUI \
@@ -47,12 +50,9 @@ SUB_FILES=	${PORTNAME}-FlashGUI \
 		${PORTNAME}-SimpleGUI \
 		${PORTNAME}-SwingGUI
 
-DESKTOP_ENTRIES="Domination" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}-SwingGUI" "Game;StrategyGame;" false
+DESKTOP_ENTRIES="Domination" "" "${PORTNAME}" \
+		"${PORTNAME}-SwingGUI" "Game;StrategyGame;" ""
 
-OPTIONS_DEFINE=	DOCS
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract-script:
@@ -61,15 +61,16 @@ post-extract-script:
 .endfor
 
 do-install:
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "help lib maps resources saves *.jar *.cmd *.htm *.txt *.ini" ${DATADIR})
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-* ${PREFIX}/bin
-	@(cd ${WRKSRC} && ${INSTALL_SCRIPT} *.sh ${DATADIR})
-	@(cd ${DATADIR} && ${CHMOD} 774 saves)
-	${LN} -sf ${DATADIR}/resources/icon.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
+		"help lib maps resources saves *.jar *.cmd *.htm *.txt *.ini" \
+			${STAGEDIR}${DATADIR})
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}-* ${STAGEDIR}${PREFIX}/bin/
+	@(cd ${WRKSRC} && ${INSTALL_SCRIPT} *.sh ${STAGEDIR}${DATADIR})
+	@(cd ${STAGEDIR}${DATADIR} && ${CHMOD} 774 saves)
+	${LN} -sf ${DATADIR}/resources/icon.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
