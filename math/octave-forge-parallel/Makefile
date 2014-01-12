@@ -16,7 +16,6 @@ OCTSRC=		${DISTNAME}
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 post-build:

@@ -13,6 +13,5 @@ GNU_CONFIGURE=	yes
 
 NO_CDROM=	Non-commercial use only
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 .include <bsd.port.mk>

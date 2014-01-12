@@ -12,7 +12,6 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${OCTAVE_PKGNAME}
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 do-build:

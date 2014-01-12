@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 USE_PGSQL=	yes
 ALL_TARGET=
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 post-build:

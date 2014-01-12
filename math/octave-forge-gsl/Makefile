@@ -13,7 +13,6 @@ LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} s+/bin/bash+${LOCALBASE}/bin/bash+g ${WRKSRC}/src/config*
 

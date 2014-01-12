@@ -15,7 +15,6 @@ OCTSRC=		${OCTAVE_PKGNAME}
 
 RUN_DEPENDS+=	dx:${PORTSDIR}/graphics/opendx
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 do-build:
