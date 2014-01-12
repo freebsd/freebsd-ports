@@ -1,0 +1,361 @@
+diff -nruEbw -I'[$]Id:.*' ./liblua/Makefile ./liblua/Makefile
+--- ./liblua/Makefile	2013-05-02 16:59:06.000000000 +0200
++++ ./liblua/Makefile	2014-01-12 15:13:44.000000000 +0100
+@@ -6,8 +6,8 @@
+ # Your platform. See PLATS for possible values.
+ PLAT= none
+ 
+-CC= gcc
+-CFLAGS= -O2 -Wall $(SYSCFLAGS) $(MYCFLAGS)
++CC?= gcc
++CFLAGS= -Wall -DLUA_COMPAT_ALL $(SYSCFLAGS) $(MYCFLAGS)
+ LDFLAGS= $(SYSLDFLAGS) $(MYLDFLAGS)
+ LIBS= -lm $(SYSLIBS) $(MYLIBS)
+ 
+@@ -106,7 +106,7 @@
+ 	$(MAKE) $(ALL) SYSCFLAGS="-DLUA_USE_LINUX" SYSLIBS="-Wl,-E -ldl -lreadline"
+ 
+ macosx:
+-	$(MAKE) $(ALL) SYSCFLAGS="-DLUA_USE_MACOSX" SYSLIBS="-lreadline"
++	$(MAKE) $(ALL) SYSCFLAGS="-DLUA_USE_MACOSX" SYSLIBS="-lreadline" CC=cc
+ 
+ mingw:
+ 	$(MAKE) "LUA_A=lua52.dll" "LUA_T=lua.exe" \
+diff -nruEbw -I'[$]Id:.*' ./liblua/lbitlib.c ./liblua/lbitlib.c
+--- ./liblua/lbitlib.c	2013-05-02 16:59:06.000000000 +0200
++++ ./liblua/lbitlib.c	2014-01-11 10:57:12.000000000 +0100
+@@ -129,6 +129,7 @@
+   b_uint r = luaL_checkunsigned(L, 1);
+   i &= (LUA_NBITS - 1);  /* i = i % NBITS */
+   r = trim(r);
++  if (i != 0)  /* avoid undefined shift of LUA_NBITS when i == 0 */
+   r = (r << i) | (r >> (LUA_NBITS - i));
+   lua_pushunsigned(L, trim(r));
+   return 1;
+diff -nruEbw -I'[$]Id:.*' ./liblua/ldebug.c ./liblua/ldebug.c
+--- ./liblua/ldebug.c	2013-05-02 16:59:06.000000000 +0200
++++ ./liblua/ldebug.c	2014-01-11 10:57:12.000000000 +0100
+@@ -327,12 +327,20 @@
+ }
+ 
+ 
++static int filterpc (int pc, int jmptarget) {
++  if (pc < jmptarget)  /* is code conditional (inside a jump)? */
++    return -1;  /* cannot know who sets that register */
++  else return pc;  /* current position sets that register */
++}
++
++
+ /*
+ ** try to find last instruction before 'lastpc' that modified register 'reg'
+ */
+ static int findsetreg (Proto *p, int lastpc, int reg) {
+   int pc;
+   int setreg = -1;  /* keep last instruction that changed 'reg' */
++  int jmptarget = 0;  /* any code before this address is conditional */
+   for (pc = 0; pc < lastpc; pc++) {
+     Instruction i = p->code[pc];
+     OpCode op = GET_OPCODE(i);
+@@ -341,33 +349,38 @@
+       case OP_LOADNIL: {
+         int b = GETARG_B(i);
+         if (a <= reg && reg <= a + b)  /* set registers from 'a' to 'a+b' */
+-          setreg = pc;
++          setreg = filterpc(pc, jmptarget);
+         break;
+       }
+       case OP_TFORCALL: {
+-        if (reg >= a + 2) setreg = pc;  /* affect all regs above its base */
++        if (reg >= a + 2)  /* affect all regs above its base */
++          setreg = filterpc(pc, jmptarget);
+         break;
+       }
+       case OP_CALL:
+       case OP_TAILCALL: {
+-        if (reg >= a) setreg = pc;  /* affect all registers above base */
++        if (reg >= a)  /* affect all registers above base */
++          setreg = filterpc(pc, jmptarget);
+         break;
+       }
+       case OP_JMP: {
+         int b = GETARG_sBx(i);
+         int dest = pc + 1 + b;
+         /* jump is forward and do not skip `lastpc'? */
+-        if (pc < dest && dest <= lastpc)
+-          pc += b;  /* do the jump */
++        if (pc < dest && dest <= lastpc) {
++          if (dest > jmptarget)
++            jmptarget = dest;  /* update 'jmptarget' */
++        }
+         break;
+       }
+       case OP_TEST: {
+-        if (reg == a) setreg = pc;  /* jumped code can change 'a' */
++        if (reg == a)  /* jumped code can change 'a' */
++          setreg = filterpc(pc, jmptarget);
+         break;
+       }
+       default:
+         if (testAMode(op) && reg == a)  /* any instruction that set A */
+-          setreg = pc;
++          setreg = filterpc(pc, jmptarget);
+         break;
+     }
+   }
+@@ -518,7 +531,7 @@
+ 
+ l_noret luaG_concaterror (lua_State *L, StkId p1, StkId p2) {
+   if (ttisstring(p1) || ttisnumber(p1)) p1 = p2;
+-  lua_assert(!ttisstring(p1) && !ttisnumber(p2));
++  lua_assert(!ttisstring(p1) && !ttisnumber(p1));
+   luaG_typeerror(L, p1, "concatenate");
+ }
+ 
+diff -nruEbw -I'[$]Id:.*' ./liblua/ldo.c ./liblua/ldo.c
+--- ./liblua/ldo.c	2013-05-02 16:59:06.000000000 +0200
++++ ./liblua/ldo.c	2014-01-11 10:57:12.000000000 +0100
+@@ -260,6 +260,7 @@
+   StkId base, fixed;
+   lua_assert(actual >= nfixargs);
+   /* move fixed parameters to final position */
++  luaD_checkstack(L, p->maxstacksize);  /* check again for new 'base' */
+   fixed = L->top - actual;  /* first fixed argument */
+   base = L->top;  /* final position of first argument */
+   for (i=0; i<nfixargs; i++) {
+@@ -324,12 +325,18 @@
+     case LUA_TLCL: {  /* Lua function: prepare its call */
+       StkId base;
+       Proto *p = clLvalue(func)->p;
+-      luaD_checkstack(L, p->maxstacksize);
+-      func = restorestack(L, funcr);
+       n = cast_int(L->top - func) - 1;  /* number of real arguments */
++      luaD_checkstack(L, p->maxstacksize);
+       for (; n < p->numparams; n++)
+         setnilvalue(L->top++);  /* complete missing arguments */
+-      base = (!p->is_vararg) ? func + 1 : adjust_varargs(L, p, n);
++      if (!p->is_vararg) {
++        func = restorestack(L, funcr);
++        base = func + 1;
++      }
++      else {
++        base = adjust_varargs(L, p, n);
++        func = restorestack(L, funcr);  /* previous call can change stack */
++      }
+       ci = next_ci(L);  /* now 'enter' new function */
+       ci->nresults = nresults;
+       ci->func = func;
+@@ -527,6 +534,7 @@
+ 
+ LUA_API int lua_resume (lua_State *L, lua_State *from, int nargs) {
+   int status;
++  int oldnny = L->nny;  /* save 'nny' */
+   lua_lock(L);
+   luai_userstateresume(L, nargs);
+   L->nCcalls = (from) ? from->nCcalls + 1 : 1;
+@@ -548,7 +556,7 @@
+     }
+     lua_assert(status == L->status);
+   }
+-  L->nny = 1;  /* do not allow yields */
++  L->nny = oldnny;  /* restore 'nny' */
+   L->nCcalls--;
+   lua_assert(L->nCcalls == ((from) ? from->nCcalls : 0));
+   lua_unlock(L);
+diff -nruEbw -I'[$]Id:.*' ./liblua/lgc.c ./liblua/lgc.c
+--- ./liblua/lgc.c	2013-05-02 16:59:06.000000000 +0200
++++ ./liblua/lgc.c	2014-01-11 10:57:12.000000000 +0100
+@@ -493,17 +493,24 @@
+ 
+ 
+ static lu_mem traversestack (global_State *g, lua_State *th) {
++  int n = 0;
+   StkId o = th->stack;
+   if (o == NULL)
+     return 1;  /* stack not completely built yet */
+-  for (; o < th->top; o++)
++  for (; o < th->top; o++)  /* mark live elements in the stack */
+     markvalue(g, o);
+   if (g->gcstate == GCSatomic) {  /* final traversal? */
+     StkId lim = th->stack + th->stacksize;  /* real end of stack */
+     for (; o < lim; o++)  /* clear not-marked stack slice */
+       setnilvalue(o);
+   }
+-  return sizeof(lua_State) + sizeof(TValue) * th->stacksize;
++  else {  /* count call infos to compute size */
++    CallInfo *ci;
++    for (ci = &th->base_ci; ci != th->ci; ci = ci->next)
++      n++;
++  }
++  return sizeof(lua_State) + sizeof(TValue) * th->stacksize +
++         sizeof(CallInfo) * n;
+ }
+ 
+ 
+diff -nruEbw -I'[$]Id:.*' ./liblua/liolib.c ./liblua/liolib.c
+--- ./liblua/liolib.c	2013-05-02 16:59:06.000000000 +0200
++++ ./liblua/liolib.c	2014-01-12 15:13:21.000000000 +0100
+@@ -6,11 +6,11 @@
+ 
+ 
+ /*
+-** POSIX idiosyncrasy!
+ ** This definition must come before the inclusion of 'stdio.h'; it
+ ** should not affect non-POSIX systems
+ */
+ #if !defined(_FILE_OFFSET_BITS)
++#define	_LARGEFILE_SOURCE	1
+ #define _FILE_OFFSET_BITS 64
+ #endif
+ 
+@@ -19,6 +19,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <unistd.h>
+ 
+ #define liolib_c
+ #define LUA_LIB
+@@ -80,36 +81,37 @@
+ 
+ /*
+ ** {======================================================
+-** lua_fseek/lua_ftell: configuration for longer offsets
++** lua_fseek: configuration for longer offsets
+ ** =======================================================
+ */
+ 
+-#if !defined(lua_fseek)	/* { */
++#if !defined(lua_fseek)	&& !defined(LUA_ANSI)	/* { */
+ 
+-#if defined(LUA_USE_POSIX)
++#if defined(LUA_USE_POSIX)	/* { */
+ 
+ #define l_fseek(f,o,w)		fseeko(f,o,w)
+ #define l_ftell(f)		ftello(f)
+ #define l_seeknum		off_t
+ 
+ #elif defined(LUA_WIN) && !defined(_CRTIMP_TYPEINFO) \
+-   && defined(_MSC_VER) && (_MSC_VER >= 1400)
++   && defined(_MSC_VER) && (_MSC_VER >= 1400)	/* }{ */
+ /* Windows (but not DDK) and Visual C++ 2005 or higher */
+ 
+ #define l_fseek(f,o,w)		_fseeki64(f,o,w)
+ #define l_ftell(f)		_ftelli64(f)
+ #define l_seeknum		__int64
+ 
+-#else
++#endif	/* } */
++
++#endif			/* } */
++
+ 
++#if !defined(l_fseek)		/* default definitions */
+ #define l_fseek(f,o,w)		fseek(f,o,w)
+ #define l_ftell(f)		ftell(f)
+ #define l_seeknum		long
+-
+ #endif
+ 
+-#endif			/* } */
+-
+ /* }====================================================== */
+ 
+ 
+diff -nruEbw -I'[$]Id:.*' ./liblua/llex.c ./liblua/llex.c
+--- ./liblua/llex.c	2013-05-02 16:59:06.000000000 +0200
++++ ./liblua/llex.c	2014-01-11 10:57:12.000000000 +0100
+@@ -133,6 +133,9 @@
+     setbvalue(o, 1);  /* t[string] = true */
+     luaC_checkGC(L);
+   }
++  else {  /* string already present */
++    ts = rawtsvalue(keyfromval(o));  /* re-use value previously stored */
++  }
+   L->top--;  /* remove string from stack */
+   return ts;
+ }
+diff -nruEbw -I'[$]Id:.*' ./liblua/lstate.c ./liblua/lstate.c
+--- ./liblua/lstate.c	2013-05-02 16:59:06.000000000 +0200
++++ ./liblua/lstate.c	2014-01-11 10:57:12.000000000 +0100
+@@ -192,6 +192,8 @@
+   g->memerrmsg = luaS_newliteral(L, MEMERRMSG);
+   luaS_fix(g->memerrmsg);  /* it should never be collected */
+   g->gcrunning = 1;  /* allow gc */
++  g->version = lua_version(NULL);
++  luai_userstateopen(L);
+ }
+ 
+ 
+@@ -222,6 +224,8 @@
+   global_State *g = G(L);
+   luaF_close(L, L->stack);  /* close all upvalues for this thread */
+   luaC_freeallobjects(L);  /* collect all objects */
++  if (g->version)  /* closing a fully built state? */
++    luai_userstateclose(L);
+   luaM_freearray(L, G(L)->strt.hash, G(L)->strt.size);
+   luaZ_freebuffer(L, &g->buff);
+   freestack(L);
+@@ -287,7 +291,7 @@
+   setnilvalue(&g->l_registry);
+   luaZ_initbuffer(L, &g->buff);
+   g->panic = NULL;
+-  g->version = lua_version(NULL);
++  g->version = NULL;
+   g->gcstate = GCSpause;
+   g->allgc = NULL;
+   g->finobj = NULL;
+@@ -306,8 +310,6 @@
+     close_state(L);
+     L = NULL;
+   }
+-  else
+-    luai_userstateopen(L);
+   return L;
+ }
+ 
+@@ -315,7 +317,6 @@
+ LUA_API void lua_close (lua_State *L) {
+   L = G(L)->mainthread;  /* only the main thread can be closed */
+   lua_lock(L);
+-  luai_userstateclose(L);
+   close_state(L);
+ }
+ 
+diff -nruEbw -I'[$]Id:.*' ./liblua/ltable.h ./liblua/ltable.h
+--- ./liblua/ltable.h	2012-05-27 10:53:32.000000000 +0200
++++ ./liblua/ltable.h	2014-01-11 10:57:12.000000000 +0100
+@@ -17,6 +17,10 @@
+ 
+ #define invalidateTMcache(t)	((t)->flags = 0)
+ 
++/* returns the key, given the value of a table entry */
++#define keyfromval(v) \
++  (gkey(cast(Node *, cast(char *, (v)) - offsetof(Node, i_val))))
++
+ 
+ LUAI_FUNC const TValue *luaH_getint (Table *t, int key);
+ LUAI_FUNC void luaH_setint (lua_State *L, Table *t, int key, TValue *value);
+diff -nruEbw -I'[$]Id:.*' ./liblua/lua.h ./liblua/lua.h
+--- ./liblua/lua.h	2013-05-02 16:59:06.000000000 +0200
++++ ./liblua/lua.h	2014-01-11 10:57:12.000000000 +0100
+@@ -19,7 +19,7 @@
+ #define LUA_VERSION_MAJOR	"5"
+ #define LUA_VERSION_MINOR	"2"
+ #define LUA_VERSION_NUM		502
+-#define LUA_VERSION_RELEASE	"2"
++#define LUA_VERSION_RELEASE	"3"
+ 
+ #define LUA_VERSION	"Lua " LUA_VERSION_MAJOR "." LUA_VERSION_MINOR
+ #define LUA_RELEASE	LUA_VERSION "." LUA_VERSION_RELEASE
+diff -nruEbw -I'[$]Id:.*' ./liblua/luac.c ./liblua/luac.c
+--- ./liblua/luac.c	2012-05-27 10:53:32.000000000 +0200
++++ ./liblua/luac.c	2014-01-11 10:57:12.000000000 +0100
+@@ -251,7 +251,7 @@
+ static void PrintConstant(const Proto* f, int i)
+ {
+  const TValue* o=&f->k[i];
+- switch (ttype(o))
++ switch (ttypenv(o))
+  {
+   case LUA_TNIL:
+ 	printf("nil");
