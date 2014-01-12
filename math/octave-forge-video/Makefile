@@ -9,6 +9,8 @@ CATEGORIES=	math
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
+LICENSE=	BSD2CLAUSE
+
 USES=		pkgconfig
 GNU_CONFIGURE=	yes
 
