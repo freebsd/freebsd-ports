@@ -19,6 +19,7 @@ post-patch:
 	@${REINPLACE_CMD} s+/bin/bash+${LOCALBASE}/bin/bash+g ${WRKSRC}/src/xraylib/src/Makefile
 	@${REINPLACE_CMD} s+/bin/bash+${LOCALBASE}/bin/bash+g ${WRKSRC}/src/xraylib/bin/xraylib
 	@${REINPLACE_CMD} s+/bin/bash+${LOCALBASE}/bin/bash+g ${WRKSRC}/src/xraylib/*.sh
+	@${REINPLACE_CMD} s/^CC/\#CC/ ${WRKSRC}/src/xraylib/src/Makefile
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 .include <bsd.port.mk>
