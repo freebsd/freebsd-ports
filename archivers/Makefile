@@ -218,7 +218,6 @@
     SUBDIR += xdms
     SUBDIR += xmill
     SUBDIR += xpk
-    SUBDIR += xz
     SUBDIR += zip
     SUBDIR += zip-ada
     SUBDIR += zipmix
