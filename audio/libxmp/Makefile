@@ -17,6 +17,6 @@ PLIST_FILES=	include/xmp.h lib/libxmp.so lib/libxmp.so.4 \
 		lib/libxmp.so.${PORTVERSION} libdata/pkgconfig/libxmp.pc
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxmp.so.4.2.2
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxmp.so.${PORTVERSION}
 
 .include <bsd.port.mk>
