@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_INCLUDEDIR%%/greenlet/greenlet.h
 %%PYTHON_SITELIBDIR%%/greenlet.so
 @dirrm %%PYTHON_INCLUDEDIR%%/greenlet
