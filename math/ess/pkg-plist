@@ -1,6 +1,12 @@
-%%EMACS_LIBDIR%%/etc/ess/ESSR.R
+%%EMACS_LIBDIR%%/etc/ess/ESSR/LOADREMOTE
+%%EMACS_LIBDIR%%/etc/ess/ESSR/R/.basic.R
+%%EMACS_LIBDIR%%/etc/ess/ESSR/R/.load.R
+%%EMACS_LIBDIR%%/etc/ess/ESSR/R/completion.R
+%%EMACS_LIBDIR%%/etc/ess/ESSR/R/debug.R
+%%EMACS_LIBDIR%%/etc/ess/ESSR/R/developer.R
+%%EMACS_LIBDIR%%/etc/ess/ESSR/R/misc.R
+%%EMACS_LIBDIR%%/etc/ess/ESSR/VERSION
 %%EMACS_LIBDIR%%/etc/ess/SVN-REVISION
-%%EMACS_LIBDIR%%/etc/ess/ess-developer.R
 %%EMACS_LIBDIR%%/etc/ess/ess-s4.S
 %%EMACS_LIBDIR%%/etc/ess/ess-sas-sh-command
 %%EMACS_LIBDIR%%/etc/ess/ess-sp3.S
@@ -132,6 +138,8 @@
 %%EMACS_SITE_LISPDIR%%/mouseme.elc
 %%EMACS_SITE_LISPDIR%%/msdos.el
 %%EMACS_SITE_LISPDIR%%/msdos.elc
-@dirrm %%EMACS_LIBDIR%%/etc/ess/icons
-@dirrm %%EMACS_LIBDIR%%/etc/ess
+@dirrmtry %%EMACS_LIBDIR%%/etc/ess/icons
+@dirrmtry %%EMACS_LIBDIR%%/etc/ess/ESSR/R
+@dirrmtry %%EMACS_LIBDIR%%/etc/ess/ESSR
+@dirrmtry %%EMACS_LIBDIR%%/etc/ess
 @dirrmtry %%EMACS_LIBDIR%%/etc
