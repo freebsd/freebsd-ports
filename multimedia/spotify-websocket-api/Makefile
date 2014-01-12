@@ -3,7 +3,7 @@
 
 PORTNAME=	SpotifyWebsocketAPI
 PORTVERSION=	0.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,11 +13,13 @@ COMMENT=	Websocket API and client for Spotify
 NO_ARCH=	yes
 
 USE_GITHUB=	yes
-GH_COMMIT=	08ee326
+GH_COMMIT=	5f3a646
 GH_ACCOUNT=	Hexxeh
 GH_PROJECT=	spotify-websocket-api
 GH_TAGNAME=	${GH_COMMIT}
 
+USES=		shebangfix
+SHEBANG_FILES=	spotify_web/spotify.py
 USE_PYTHON=	yes # tested with 2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
@@ -50,8 +52,6 @@ post-patch:
 post-install:
 .for f in ${CLIENTFILES}
 	@${INSTALL_SCRIPT} ${WRKSRC}/clients/respotify/${f} ${STAGEDIR}${PREFIX}/bin
-	@${PYTHON_CMD} -O -mcompileall ${STAGEDIR}${PREFIX}/bin/${f}
-	@${PYTHON_CMD} -mcompileall ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
 	@${LN} -s ${PREFIX}/bin/respotify.py ${STAGEDIR}${PREFIX}/bin/respotify
 

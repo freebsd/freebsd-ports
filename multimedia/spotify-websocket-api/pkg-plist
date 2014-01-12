@@ -1,7 +1,3 @@
 bin/respotify
 bin/respotify-helper.py
-bin/respotify-helper.pyc
-bin/respotify-helper.pyo
 bin/respotify.py
-bin/respotify.pyc
-bin/respotify.pyo
