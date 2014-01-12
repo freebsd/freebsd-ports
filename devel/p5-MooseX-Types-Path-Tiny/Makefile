@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Types-Path-Tiny
-PORTVERSION=	0.006
+PORTVERSION=	0.007
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,10 +19,7 @@ TEST_DEPENDS=	\
 	p5-File-pushd>0:${PORTSDIR}/devel/p5-File-pushd \
 	p5-Test-Fatal>0:${PORTSDIR}/devel/p5-Test-Fatal
 
-NO_STAGE=	yes
 USES=	perl5
 USE_PERL5=	modbuildtiny
-
-MAN3=	MooseX::Types::Path::Tiny.3
 
 .include <bsd.port.mk>
