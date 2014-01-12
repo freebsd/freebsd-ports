@@ -1,8 +1,8 @@
---- xbmc/threads/platform/pthreads/ThreadImpl.cpp.orig	2013-05-13 11:32:04.000000000 +0200
-+++ xbmc/threads/platform/pthreads/ThreadImpl.cpp	2013-05-13 11:47:27.000000000 +0200
+--- xbmc/threads/platform/pthreads/ThreadImpl.cpp.orig	2013-12-03 16:25:00.000000000 +0100
++++ xbmc/threads/platform/pthreads/ThreadImpl.cpp	2013-12-03 16:26:01.000000000 +0100
 @@ -29,12 +29,8 @@
  #include <string.h>
- #ifdef __FreeBSD__
+ #ifdef TARGET_FREEBSD
  #include <sys/param.h>
 -#if __FreeBSD_version < 900031
 -#include <sys/thr.h>
@@ -16,7 +16,7 @@
 @@ -59,11 +55,7 @@
  void CThread::SetThreadInfo()
  {
- #ifdef __FreeBSD__
+ #ifdef TARGET_FREEBSD
 -#if __FreeBSD_version < 900031
 -  long lwpid;
 -  thr_self(&lwpid);
