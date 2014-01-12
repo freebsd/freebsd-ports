@@ -55,6 +55,12 @@ USE_GCC=	yes
 .endif
 .endif
 
+# Workaround for GCC in 9.x post r260075
+# OSVERSION taken from r260135, the closest OSVERSION
+.if ${OSVERSION} >  902505 && ${OSVERSION} < 1000000
+CFLAGS+=	-flax-vector-conversions
+.endif
+
 .if ${OSVERSION} >= 1000000
 CONFIGURE_ARGS+=	--disable-unit-tests
 .endif
