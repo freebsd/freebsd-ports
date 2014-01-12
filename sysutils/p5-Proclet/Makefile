@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Proclet
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KAZEBURO
@@ -17,7 +17,8 @@ RUN_DEPENDS=	\
 	p5-Log-Minimal>=0.14:${PORTSDIR}/devel/p5-Log-Minimal \
 	p5-Mouse>0:${PORTSDIR}/devel/p5-Mouse \
 	p5-Parallel-Prefork>=0.13:${PORTSDIR}/devel/p5-Parallel-Prefork \
-	p5-YAML-LibYAML>=0.38:${PORTSDIR}/textproc/p5-YAML-LibYAML
+	p5-YAML-LibYAML>=0.38:${PORTSDIR}/textproc/p5-YAML-LibYAML \
+	p5-Time-Crontab>=0.01:${PORTSDIR}/devel/p5-Time-Crontab
 BUILD_DEPENDS=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-Parallel-Scoreboard>0:${PORTSDIR}/devel/p5-Parallel-Scoreboard \
@@ -28,9 +29,4 @@ TEST_DEPENDS=	\
 USES=	perl5
 USE_PERL5=	modbuild
 
-MAN1=	proclet.1
-MAN3=	Proclet.3 \
-	Proclet::Declare.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
