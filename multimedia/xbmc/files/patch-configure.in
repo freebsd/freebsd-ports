@@ -1,6 +1,6 @@
---- configure.in.orig	2012-10-01 01:08:50.000000000 +0200
-+++ configure.in	2012-10-03 12:17:13.000000000 +0200
-@@ -726,9 +726,9 @@
+--- configure.in.orig	2014-01-01 03:26:03.000000000 +0100
++++ configure.in	2014-01-05 00:33:52.000000000 +0100
+@@ -820,11 +820,16 @@
  # platform specific flags
  if echo "$ARCH" | grep -q "freebsd" ; then
    LOCALBASE="${LOCALBASE:-/usr/local}"
@@ -11,9 +11,17 @@
 +  CXXFLAGS="$CXXFLAGS -idirafter$LOCALBASE/include"
 +  CPPFLAGS="$CPPFLAGS -idirafter$LOCALBASE/include"
    LDFLAGS="$LDFLAGS -L$LOCALBASE/lib"
-   FFMPEG_EXTRACFLAGS="-I$LOCALBASE/include"
+-  FFMPEG_EXTRACFLAGS="-I$LOCALBASE/include"
++  FFMPEG_EXTRACFLAGS="-idirafter$LOCALBASE/include"
++  CC_FOR_BUILD="$CC"
++  CXX_FOR_BUILD="$CXX"
++  CFLAGS_FOR_BUILD="$CFLAGS"
++  CXXFLAGS_FOR_BUILD="$CXXFLAGS"
++  LDFLAGS_FOR_BUILD="$LDFLAGS"
  fi
-@@ -816,6 +816,7 @@
+ if test "$host_vendor" = "apple" ; then
+   # standard xbmc paths
+@@ -948,6 +953,7 @@
  
  # Check inotify availability
  AC_CHECK_HEADER([sys/inotify.h], AC_DEFINE([HAVE_INOTIFY],[1],[Define if we have inotify]),)
@@ -21,42 +29,22 @@
  
  # Checks for boost headers using CXX instead of CC
  AC_LANG_PUSH([C++])
-@@ -1491,15 +1492,15 @@
+@@ -1614,7 +1620,8 @@
+ if test "x$use_airtunes" != "xno"; then
+   AC_CHECK_HEADERS([shairplay/raop.h],,
+    [if test "x$use_airtunes" = "xyes"; then
+-      AC_MSG_ERROR($libshairplay_not_found)
++      AC_MSG_NOTICE($libshairplay_not_found)
++      use_airtunes="no"
+     elif test "x$use_airtunes" != "xno"; then
+       AC_MSG_NOTICE($libshairplay_not_found)
+       use_airtunes="no"
+@@ -1632,7 +1639,7 @@
  
- # External FFmpeg
- if test "$use_external_ffmpeg" = "yes"; then
--  FFMPEG_LIBNAMES="libavcodec libavfilter libavformat libavutil libpostproc libswscale"
-+  FFMPEG_LIBNAMES="libavcodec$FFMPEG_SUFFIX libavfilter$FFMPEG_SUFFIX libavformat$FFMPEG_SUFFIX libavutil$FFMPEG_SUFFIX libpostproc$FFMPEG_SUFFIX libswscale$FFMPEG_SUFFIX"
- 
-   # libavcore is optional
--  PKG_CHECK_EXISTS([libavcore], FFMPEG_LIBNAMES="$FFMPEG_LIBNAMES libavcore")
-+  PKG_CHECK_EXISTS([libavcore$FFMPEG_SUFFIX], FFMPEG_LIBNAMES="$FFMPEG_LIBNAMES libavcore$FFMPEG_SUFFIX")
- 
-   # one of libswresample or libavresample is needed
--  PKG_CHECK_EXISTS([libswresample], FFMPEG_LIBNAMES="$FFMPEG_LIBNAMES libswresample",
--                   [PKG_CHECK_EXISTS([libavresample],
--                                     FFMPEG_LIBNAMES="$FFMPEG_LIBNAMES libavresample",
-+  PKG_CHECK_EXISTS([libswresample$FFMPEG_SUFFIX], FFMPEG_LIBNAMES="$FFMPEG_LIBNAMES libswresample$FFMPEG_SUFFIX",
-+                   [PKG_CHECK_EXISTS([libavresample$FFMPEG_SUFFIX],
-+                                     FFMPEG_LIBNAMES="$FFMPEG_LIBNAMES libavresample$FFMPEG_SUFFIX",
-                                      AC_MSG_ERROR([You need either libswresample
-                                                    or libavresample.]))])
- 
-@@ -1509,7 +1510,7 @@
- 
-   # Determine whether AVPacket and relevant functions are defined in libavformat
-   # or libavcodec
--  AC_CHECK_LIB([avcodec], [av_free_packet],
-+  AC_CHECK_LIB(["avcodec$FFMPEG_SUFFIX"], [av_free_packet],
-   [AC_MSG_NOTICE(== AVPacket and relevant functions defined in libavcodec. ==)],
-   [AC_MSG_NOTICE(== AVPacket and relevant functions defined in libavformat. ==)
-    AC_DEFINE([AVPACKET_IN_AVFORMAT], [1], [Whether AVPacket is in libavformat.])])
-@@ -1558,7 +1559,7 @@
-   AC_DEFINE([USE_EXTERNAL_FFMPEG], [1], [Whether to use external FFmpeg libraries.])
- 
-   # Disable vdpau support if external libavcodec doesn't have it
--  AC_CHECK_LIB([avcodec], [ff_vdpau_vc1_decode_picture],,
-+  AC_CHECK_LIB(["avcodec$FFMPEG_SUFFIX"], [ff_vdpau_vc1_decode_picture],,
-     [if test "x$use_vdpau" = "xyes"; then
-       AC_MSG_ERROR($ffmpeg_vdpau_not_supported)
-     else
+   #libshairport - as a fallback for AirTunes
+   if test "x$USE_AIRTUNES" == "x0"; then
+-    AC_CHECK_HEADERS([shairport/shairport.h],,
++    AC_CHECK_HEADERS([shairport/shairport.h],[use_airtunes="yes"],
+      [if test "x$use_airtunes" = "xyes"; then
+         AC_MSG_ERROR($libshairport_not_found)
+       elif test "x$use_airtunes" != "xno"; then
