@@ -2945,6 +2945,7 @@
     SUBDIR += p5-Tie-Util
     SUBDIR += p5-Tie-iCal
     SUBDIR += p5-Time-Clock
+    SUBDIR += p5-Time-Crontab
     SUBDIR += p5-Time-Duration
     SUBDIR += p5-Time-Duration-Parse
     SUBDIR += p5-Time-Format
