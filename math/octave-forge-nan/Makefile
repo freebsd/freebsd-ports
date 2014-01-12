@@ -16,6 +16,9 @@ OCTSRC=		NaN
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e s/^CC/\#CC/ -e s/^CXX/\#CXX/ ${WRKSRC}/Makefile
+
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 ALL_TARGET=	octave
