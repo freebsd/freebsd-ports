@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	couchdb
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_APACHE}
@@ -16,15 +16,15 @@ LIB_DEPENDS=	libicudata.so:${PORTSDIR}/devel/icu \
 		libmozjs185.so:${PORTSDIR}/lang/spidermonkey185 \
 		libcurl.so:${PORTSDIR}/ftp/curl
 BUILD_DEPENDS=	${LOCALBASE}/bin/help2man:${PORTSDIR}/misc/help2man \
-		erlc:${PORTSDIR}/lang/erlang
-RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
+		erlang>=15.b.01,2:${PORTSDIR}/lang/erlang
+RUN_DEPENDS=	erlang>=15.b.01,2:${PORTSDIR}/lang/erlang
 
 USERS=		couchdb
 GROUPS=		couchdb
 
 USE_RC_SUBR=	couchdb
 SUB_FILES=	pkg-message
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-erlang=${LOCALBASE}/lib/erlang/usr/include \
@@ -32,16 +32,16 @@ CONFIGURE_ARGS=	--with-erlang=${LOCALBASE}/lib/erlang/usr/include \
 		--disable-init \
 		--with-js-include=${LOCALBASE}/include/js \
 		--with-js-lib=${LOCALBASE}/lib
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 # Override default value of ${STRIP} because the underlying Makefile
 # erroneously tries to install a shell script with ${STRIP}, causing
 # an install error.
 STRIP=	#empty
 
-MAN1=	couchdb.1 couchjs.1
+INFO=		CouchDB
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 # This stanza could be removed around version 1.7
@@ -55,13 +55,19 @@ pre-everything::
 
 pre-fetch:
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "If you are upgrading CouchDB, please double-check that the datafile is compatible"
-	@${ECHO_MSG} "and that you have BACKED UP YOUR DB directory before proceeding!"
+	@${ECHO_MSG} "If you are upgrading CouchDB, please double-check that the datafile is"
+	@${ECHO_MSG} "compatible and that you have BACKED UP YOUR DB directory before proceeding!"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Upgrading also might require you to rebuild your views entirely."
 	@${ECHO_MSG} ""
 
 post-patch:
+# DB files are stored by default in /var/db/couchdb
+# Ports framework expects info pages to have an info extension
+	@${REINPLACE_CMD} '/localstatelibdir=/s|/lib/|/db/|' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} 's|\(info_file_inst = CouchDB\)$$|\1.info|' \
+		${WRKSRC}/share/doc/build/Makefile.in
 .if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's/install-data-am$$//' ${WRKSRC}/Makefile.in
 .endif
@@ -69,25 +75,9 @@ post-patch:
 post-configure:
 # Cater for parallel Spidermonkey v1.7 and v1.8.5 installs by ensuring that
 # jsapi.h gets pulled from /usr/local/include/js/ instead of /usr/local/include 
-
 	@${FIND} ${WRKSRC} -name Makefile|${XARGS} ${REINPLACE_CMD} -e 's|include -I/usr/local/include/js|include/js -I/usr/local/include|'
 
-pre-install:
-	@${REINPLACE_CMD} -e '9s|database_dir = /var/lib/couchdb|database_dir = /var/db/couchdb|' ${WRKSRC}/etc/couchdb/default.ini
-	@${REINPLACE_CMD} -e '10s|view_index_dir = /var/lib/couchdb|view_index_dir = /var/db/couchdb|' ${WRKSRC}/etc/couchdb/default.ini
-	@${REINPLACE_CMD} -e '16s|uri_file = /usr/local/var/run/couchdb/couch.uri|view_index_dir = /var/run/couchdb/couch.uri|' ${WRKSRC}/etc/couchdb/default.ini
-	@${REINPLACE_CMD} -e '58s|file = /usr/local/var/log/couchdb/couch.log|file = /var/log/couchdb/couch.log|' ${WRKSRC}/etc/couchdb/default.ini
-
 post-install:
-.ifndef PACKAGE_BUILDING
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
-	@${CP} -p ${WRKSRC}/etc/couchdb/local.ini ${PREFIX}/etc/couchdb/local.ini.sample
-
-	@if [ ! -f ${PREFIX}/etc/couchdb/local.ini ]; then \
-		${CP} -p ${PREFIX}/etc/couchdb/local.ini.sample ${PREFIX}/etc/couchdb/local.ini; \
-		${CHOWN} couchdb:couchdb ${PREFIX}/etc/couchdb/local.ini; \
-	fi
-	@${CAT} ${PKGMESSAGE}
+	@${CP} -p ${WRKSRC}/etc/couchdb/local.ini ${STAGEDIR}${PREFIX}/etc/couchdb/local.ini.sample
 
 .include <bsd.port.mk>
