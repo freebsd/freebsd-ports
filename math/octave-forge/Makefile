@@ -11,6 +11,10 @@ EXTRACT_ONLY=	#none
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge metaport for math/octave
 
+NO_MTREE=	yes
+NO_BUILD=	yes
+NO_INSTALL=	yes
+
 OPTIONS_DEFINE=	ACTUARIAL AD AUDIO BENCHMARK BIM BIOINFO CGI \
 		CIVIL_ENGINEERING COMMUNICATIONS CONTROL DATA_SMOOTHING \
 		DATABASE DATAFRAME DICOM ECONOMETRICS ENGINE FENV FITS \
@@ -380,11 +384,5 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/zenity.tar.gz:${PORTSDIR}/math/octave-forge-zenity
 .endif
 
 TARBALLS_DIR=	${LOCALBASE}/share/octave/tarballs
-
-do-build:
-	@${DO_NADA}
-
-do-install:
-	@${DO_NADA}
 
 .include <bsd.port.mk>
