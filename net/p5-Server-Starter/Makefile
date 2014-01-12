@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Server-Starter
-PORTVERSION=	0.15
+PORTVERSION=	0.17
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KAZUHO
@@ -20,8 +20,4 @@ TEST_DEPENDS=	p5-Test-SharedFork>0:${PORTSDIR}/devel/p5-Test-SharedFork
 USES=	perl5
 USE_PERL5=	configure
 
-MAN1=	start_server.1
-MAN3=	Server::Starter.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
