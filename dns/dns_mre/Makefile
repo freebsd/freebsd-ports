@@ -8,7 +8,7 @@ CATEGORIES=	dns security
 MASTER_SITES=	http://www.securebits.org/tools/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DNS Cache Poisoner/Overwriter
 
 NO_WRKSUBDIR=	Yes
