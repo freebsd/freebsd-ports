@@ -1,0 +1,508 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 89930e5..99ef0cc 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -15,16 +15,16 @@
+ if(UNIX)
+     set(LLVM_DIR "/usr/local" CACHE PATH "llvm install path")
+ 
+-    find_program(LLVM_CONFIG llvm-config ${LLVM_DIR}/bin
+-        DOC "path to llvm-config")
++    find_program(LLVM_CONFIG llvm-config32 ${LLVM_DIR}/bin
++        DOC "path to llvm-config32")
+ 
+     execute_process(
+         COMMAND ${LLVM_CONFIG} --version
+         OUTPUT_VARIABLE LLVM_VERSION
+         OUTPUT_STRIP_TRAILING_WHITESPACE
+     )
+-    if(NOT ${LLVM_VERSION} STREQUAL "3.1")
+-        message(FATAL_ERROR "Clay requires LLVM 3.1.")
++    if(NOT ${LLVM_VERSION} STREQUAL "3.2")
++        message(FATAL_ERROR "Clay requires LLVM 3.2.")
+     endif()
+ 
+     execute_process(
+diff --git a/README.txt b/README.txt
+index 855a4ab..7999b24 100644
+--- a/README.txt
++++ b/README.txt
+@@ -9,7 +9,7 @@ Visit http://claylabs.com/clay for more information.
+ Pre-requisites
+ --------------
+ 
+-Clay requires LLVM 3.1, Clang 3.1, and CMake version 2.6 or later.
++Clay requires LLVM 3.2, Clang 3.2, and CMake version 2.6 or later.
+ 
+ CMake Configuration
+ -------------------
+@@ -20,7 +20,7 @@ be customized by passing cmake arguments of the form
+ CMake variables such as CMAKE_INSTALL_PREFIX and CMAKE_BUILD_TYPE, Clay's
+ build system uses the following variables:
+ 
+-* LLVM_DIR can be set to the install prefix of an LLVM 3.1 installation.
++* LLVM_DIR can be set to the install prefix of an LLVM 3.2 installation.
+   If not set, CMake will look for an 'llvm-config' script on the PATH.
+ * PYTHON_EXECUTABLE can be set to the path of a Python 2.x interpreter.
+   Clay uses a Python 2 script to drive its test suite. Some platforms
+@@ -70,7 +70,7 @@ and the MSVC compiler. There are some issues with Debug builds and
+ LLVM, so both LLVM and Clay will need to be built as Release. The
+ default LLVM install directory needs Administrator permissions, so
+ you may want to set a CMAKE_INSTALL_PREFIX as well. to change it.
+-Place the Clang repository in llvm-3.1/tools/clang so that LLVM builds
++Place the Clang repository in llvm-3.2/tools/clang so that LLVM builds
+ it automatically and compile LLVM with the following commands:
+ 
+     mkdir build
+diff --git a/compiler/src/clay.hpp b/compiler/src/clay.hpp
+index 339b262..2c95623 100644
+--- a/compiler/src/clay.hpp
++++ b/compiler/src/clay.hpp
+@@ -27,8 +27,6 @@
+ #endif
+ 
+ #include <llvm/ADT/Triple.h>
+-#include <llvm/Analysis/DebugInfo.h>
+-#include <llvm/Analysis/DIBuilder.h>
+ #include <llvm/Assembly/Writer.h>
+ #include <llvm/Assembly/Parser.h>
+ #include <llvm/Assembly/PrintModulePass.h>
+@@ -36,12 +34,16 @@
+ #include <llvm/Bitcode/ReaderWriter.h>
+ #include <llvm/CodeGen/LinkAllAsmWriterComponents.h>
+ #include <llvm/CodeGen/LinkAllCodegenComponents.h>
++#include <llvm/DataLayout.h>
++#include <llvm/DebugInfo.h>
+ #include <llvm/DerivedTypes.h>
++#include <llvm/DIBuilder.h>
+ #include <llvm/ExecutionEngine/ExecutionEngine.h>
+ #include <llvm/ExecutionEngine/GenericValue.h>
+ #include <llvm/ExecutionEngine/JIT.h>
+ #include <llvm/Function.h>
+ #include <llvm/Intrinsics.h>
++#include <llvm/IRBuilder.h>
+ #include <llvm/LinkAllVMCore.h>
+ #include <llvm/LLVMContext.h>
+ #include <llvm/Module.h>
+@@ -50,7 +52,6 @@
+ #include <llvm/Support/FileSystem.h>
+ #include <llvm/Support/FormattedStream.h>
+ #include <llvm/Support/Host.h>
+-#include <llvm/Support/IRBuilder.h>
+ #include <llvm/Support/MemoryBuffer.h>
+ #include <llvm/Support/Path.h>
+ #include <llvm/Support/PathV2.h>
+@@ -59,7 +60,6 @@
+ #include <llvm/Support/TargetSelect.h>
+ #include <llvm/Support/TargetSelect.h>
+ #include <llvm/Support/raw_ostream.h>
+-#include <llvm/Target/TargetData.h>
+ #include <llvm/Target/TargetOptions.h>
+ #include <llvm/Transforms/IPO/PassManagerBuilder.h>
+ #include <llvm/Transforms/IPO.h>
+@@ -3450,7 +3450,7 @@ static const unsigned short DW_LANG_user_CLAY = 0xC1A4;
+ 
+ extern llvm::Module *llvmModule;
+ extern llvm::DIBuilder *llvmDIBuilder;
+-extern const llvm::TargetData *llvmTargetData;
++extern const llvm::DataLayout *llvmDataLayout;
+ 
+ llvm::PointerType *exceptionReturnType();
+ llvm::Value *noExceptionReturnValue();
+diff --git a/compiler/src/codegen.cpp b/compiler/src/codegen.cpp
+index f6ed737..1fb574e 100644
+--- a/compiler/src/codegen.cpp
++++ b/compiler/src/codegen.cpp
+@@ -5,7 +5,7 @@ namespace clay {
+ llvm::Module *llvmModule = NULL;
+ llvm::DIBuilder *llvmDIBuilder = NULL;
+ llvm::ExecutionEngine *llvmEngine;
+-const llvm::TargetData *llvmTargetData;
++const llvm::DataLayout *llvmDataLayout;
+ 
+ static vector<CValuePtr> initializedGlobals;
+ static CodegenContextPtr constructorsCtx;
+@@ -2886,7 +2886,10 @@ void codegenCodeBody(InvokeEntryPtr entry)
+                                llvmModule);
+ 
+     for (unsigned i = 1; i <= llArgTypes.size(); ++i) {
+-        llFunc->addAttribute(i, llvm::Attribute::NoAlias);
++        llvm::Attributes attrs = llvm::Attributes::get(
++            llFunc->getContext(),
++            llvm::Attributes::NoAlias);
++        llFunc->addAttribute(i, attrs);
+     }
+ 
+     entry->llvmFunc = llFunc;
+@@ -2903,15 +2906,22 @@ void codegenCodeBody(InvokeEntryPtr entry)
+         for (unsigned i = 0; i < entry->argsKey.size(); ++i) {
+             llvm::DIType argType = llvmTypeDebugInfo(entry->argsKey[i]);
+             llvm::DIType argRefType
+-                = llvmDIBuilder->createReferenceType(argType);
++                = llvmDIBuilder->createReferenceType(
++                    llvm::dwarf::DW_TAG_reference_type,
++                    argType);
+             debugParamTypes.push_back(argRefType);
+         }
+         for (unsigned i = 0; i < entry->returnTypes.size(); ++i) {
+             llvm::DIType returnType = llvmTypeDebugInfo(entry->returnTypes[i]);
+             llvm::DIType returnRefType = entry->returnIsRef[i]
+                 ? llvmDIBuilder->createReferenceType(
+-                    llvmDIBuilder->createReferenceType(returnType))
+-                : llvmDIBuilder->createReferenceType(returnType);
++                    llvm::dwarf::DW_TAG_reference_type,
++                    llvmDIBuilder->createReferenceType(
++                        llvm::dwarf::DW_TAG_reference_type,
++                        returnType))
++                : llvmDIBuilder->createReferenceType(
++                    llvm::dwarf::DW_TAG_reference_type,
++                    returnType);
+ 
+             debugParamTypes.push_back(returnRefType);
+         }
+@@ -2983,6 +2993,7 @@ void codegenCodeBody(InvokeEntryPtr entry)
+                 file, // file
+                 line, // line
+                 llvmDIBuilder->createReferenceType(
++                    llvm::dwarf::DW_TAG_reference_type,
+                     llvmTypeDebugInfo(entry->fixedArgTypes[i])), // type
+                 true, // alwaysPreserve
+                 0, // flags
+@@ -3025,6 +3036,7 @@ void codegenCodeBody(InvokeEntryPtr entry)
+                     file, // file
+                     line, // line
+                     llvmDIBuilder->createReferenceType(
++                        llvm::dwarf::DW_TAG_reference_type,
+                         llvmTypeDebugInfo(entry->varArgTypes[i])), // type
+                     true, // alwaysPreserve
+                     0, // flags
+@@ -3084,6 +3096,7 @@ void codegenCodeBody(InvokeEntryPtr entry)
+                     file, // file
+                     line, // line
+                     llvmDIBuilder->createReferenceType(
++                        llvm::dwarf::DW_TAG_reference_type,
+                         llvmTypeDebugInfo(returns[i].type)), // type
+                     true, // alwaysPreserve
+                     0, // flags
+@@ -4076,6 +4089,7 @@ EnvPtr codegenBinding(BindingPtr x, EnvPtr env, CodegenContextPtr ctx)
+                     file, // file
+                     line, // line
+                     llvmDIBuilder->createReferenceType(
++                        llvm::dwarf::DW_TAG_reference_type,
+                         llvmTypeDebugInfo(pv->type)), // type
+                     true, // alwaysPreserve
+                     0, // flags
+@@ -4133,6 +4147,7 @@ EnvPtr codegenBinding(BindingPtr x, EnvPtr env, CodegenContextPtr ctx)
+                     pv->isTemp
+                         ? llvmTypeDebugInfo(pv->type)
+                         : llvmDIBuilder->createReferenceType(
++                            llvm::dwarf::DW_TAG_reference_type,
+                             llvmTypeDebugInfo(pv->type)), // type
+                     true, // alwaysPreserve
+                     0, // flags
+@@ -6464,8 +6479,8 @@ llvm::TargetMachine *initLLVM(std::string const &targetTriple,
+         targetTriple, "", "", llvm::TargetOptions(), reloc, codeModel);
+ 
+     if (targetMachine != NULL) {
+-        llvmTargetData = targetMachine->getTargetData();
+-        llvmModule->setDataLayout(llvmTargetData->getStringRepresentation());
++        llvmDataLayout = targetMachine->getDataLayout();
++        llvmModule->setDataLayout(llvmDataLayout->getStringRepresentation());
+     }
+ 
+     return targetMachine;
+diff --git a/compiler/src/externals.cpp b/compiler/src/externals.cpp
+index f7cd333..ba43797 100644
+--- a/compiler/src/externals.cpp
++++ b/compiler/src/externals.cpp
+@@ -23,11 +23,12 @@ static llvm::Value *promoteCVarArg(CallingConv conv,
+     }
+     case FLOAT_TYPE : {
+         FloatType *ft = (FloatType *)t.ptr();
+-        if (ft->bits == 32)
++        if (ft->bits == 32) {
+             if(ft->isImaginary)
+                 return ctx->builder->CreateFPExt(llv, llvmType(imag64Type));
+             else
+                 return ctx->builder->CreateFPExt(llv, llvmType(float64Type));
++        }
+         return llv;
+     }
+     default :
+@@ -43,8 +44,12 @@ llvm::Type *ExternalTarget::pushReturnType(CallingConv conv,
+     if (type == NULL)
+         return llvmVoidType();
+     else if (typeReturnsBySretPointer(conv, type)) {
+-        llArgTypes.push_back(llvmPointerType(type));
+-        llAttributes.push_back(make_pair(llArgTypes.size(), llvm::Attribute::StructRet));
++        llvm::Type *llType = llvmPointerType(type);
++        llArgTypes.push_back(llType);
++        llvm::Attributes attrs = llvm::Attributes::get(
++            llType->getContext(),
++            llvm::Attributes::StructRet);
++        llAttributes.push_back(make_pair(llArgTypes.size(), attrs));
+         return llvmVoidType();
+     } else {
+         llvm::Type *bitcastType = typeReturnsAsBitcastType(conv, type);
+@@ -61,8 +66,12 @@ void ExternalTarget::pushArgumentType(CallingConv conv,
+                                       vector< pair<unsigned, llvm::Attributes> > &llAttributes)
+ {
+     if (typePassesByByvalPointer(conv, type, false)) {
+-        llArgTypes.push_back(llvmPointerType(type));
+-        llAttributes.push_back(make_pair(llArgTypes.size(), llvm::Attribute::ByVal));
++        llvm::Type *llType = llvmPointerType(type);
++        llArgTypes.push_back(llType);
++        llvm::Attributes attrs = llvm::Attributes::get(
++            llType->getContext(),
++            llvm::Attributes::ByVal);
++        llAttributes.push_back(make_pair(llArgTypes.size(), attrs));
+     } else {
+         llvm::Type *bitcastType = typePassesAsBitcastType(conv, type, false);
+         if (bitcastType != NULL)
+@@ -171,7 +180,10 @@ void ExternalTarget::loadStructRetArgument(CallingConv conv,
+         CValuePtr out0 = out->values[0];
+         assert(out0->type == type);
+         llArgs.push_back(out0->llValue);
+-        llAttributes.push_back(make_pair(llArgs.size(), llvm::Attribute::StructRet));
++        llvm::Attributes attrs = llvm::Attributes::get(
++            out0->llValue->getContext(),
++            llvm::Attributes::StructRet);
++        llAttributes.push_back(make_pair(llArgs.size(), attrs));
+     }
+ }
+ 
+@@ -183,7 +195,10 @@ void ExternalTarget::loadArgument(CallingConv conv,
+ {
+     if (typePassesByByvalPointer(conv, cv->type, false)) {
+         llArgs.push_back(cv->llValue);
+-        llAttributes.push_back(make_pair(llArgs.size(), llvm::Attribute::ByVal));
++        llvm::Attributes attrs = llvm::Attributes::get(
++            cv->llValue->getContext(),
++            llvm::Attributes::ByVal);
++        llAttributes.push_back(make_pair(llArgs.size(), attrs));
+     } else {
+         llvm::Type *bitcastType = typePassesAsBitcastType(conv, cv->type, false);
+         if (bitcastType != NULL) {
+@@ -206,7 +221,10 @@ void ExternalTarget::loadVarArgument(CallingConv conv,
+ {
+     if (typePassesByByvalPointer(conv, cv->type, true)) {
+         llArgs.push_back(cv->llValue);
+-        llAttributes.push_back(make_pair(llArgs.size(), llvm::Attribute::ByVal));
++        llvm::Attributes attrs = llvm::Attributes::get(
++            cv->llValue->getContext(),
++            llvm::Attributes::ByVal);
++        llAttributes.push_back(make_pair(llArgs.size(), attrs));
+     } else {
+         llvm::Type *bitcastType = typePassesAsBitcastType(conv, cv->type, true);
+         if (bitcastType != NULL) {
+@@ -845,21 +863,26 @@ llvm::Type *X86_64_ExternalTarget::llvmWordType(TypePtr type)
+     llvm::StructType *llType = llvm::StructType::create(llvm::getGlobalContext(), "x86-64 " + typeName(type));
+     vector<llvm::Type*> llWordTypes;
+     vector<WordClass>::const_iterator i = wordClasses.begin();
++    size_t size = typeSize(type);
+     while (i != wordClasses.end()) {
++        assert(size > 0);
+         switch (*i) {
+         // docs don't cover this case. is it possible?
+         // e.g. struct { __m128 a; __m256 b; };
+         case NO_CLASS:
+             assert(false);
+             break;
+-        case INTEGER:
+-            llWordTypes.push_back(llvmIntType(64));
++        case INTEGER: {
++            size_t wordSize = size >= 8 ? 64 : size*8;
++            llWordTypes.push_back(llvmIntType(wordSize));
+             ++i;
+             break;
++        }
+         case SSE_INT_VECTOR: {
+             int vectorRun = 0;
+             do { ++vectorRun; ++i; } while (i != wordClasses.end() && *i == SSEUP);
+-            // 8-byte int vectors are allocated to MMX registers
++            // 8-byte int vectors are allocated to MMX registers, so always generate
++            // a <float x n> vector for 64-bit SSE words.
+             if (vectorRun == 1)
+                 llWordTypes.push_back(llvm::VectorType::get(llvmFloatType(64), vectorRun));
+             else
+@@ -913,6 +936,8 @@ llvm::Type *X86_64_ExternalTarget::llvmWordType(TypePtr type)
+             assert(false);
+             break;
+         }
++        assert(size >= 8 || i == wordClasses.end());
++        size -= 8;
+     }
+     llType->setBody(llWordTypes);
+     return llType;
+diff --git a/compiler/src/loader.cpp b/compiler/src/loader.cpp
+index cd90f58..78b6a18 100644
+--- a/compiler/src/loader.cpp
++++ b/compiler/src/loader.cpp
+@@ -70,8 +70,8 @@ static std::string getCPU(llvm::Triple const &triple) {
+     }
+ }
+ 
+-static std::string getPtrSize(const llvm::TargetData *targetData) {
+-    switch (targetData->getPointerSizeInBits()) {
++static std::string getPtrSize(const llvm::DataLayout *dataLayout) {
++    switch (dataLayout->getPointerSizeInBits()) {
+     case 32 : return "32";
+     case 64 : return "64";
+     default : assert(false); return "";
+@@ -84,7 +84,7 @@ static void initModuleSuffixes() {
+     string os = getOS(triple);
+     string osgroup = getOSGroup(triple);
+     string cpu = getCPU(triple);
+-    string bits = getPtrSize(llvmTargetData);
++    string bits = getPtrSize(llvmDataLayout);
+     moduleSuffixes.push_back("." + os + "." + cpu + "." + bits + ".clay");
+     moduleSuffixes.push_back("." + os + "." + cpu + ".clay");
+     moduleSuffixes.push_back("." + os + "." + bits + ".clay");
+diff --git a/compiler/src/main.cpp b/compiler/src/main.cpp
+index f2fbd85..a24c20f 100644
+--- a/compiler/src/main.cpp
++++ b/compiler/src/main.cpp
+@@ -72,12 +72,12 @@
+     llvm::PassManager passes;
+ 
+     string moduleDataLayout = module->getDataLayout();
+-    llvm::TargetData *td = new llvm::TargetData(moduleDataLayout);
+-    passes.add(td);
++    llvm::DataLayout *dl = new llvm::DataLayout(moduleDataLayout);
++    passes.add(dl);
+ 
+     llvm::FunctionPassManager fpasses(module);
+ 
+-    fpasses.add(new llvm::TargetData(*td));
++    fpasses.add(new llvm::DataLayout(*dl));
+ 
+     addOptimizationPasses(passes, fpasses, optLevel, internalize);
+ 
+@@ -116,7 +116,7 @@
+ 
+     llvm::FunctionPassManager fpasses(module);
+ 
+-    fpasses.add(new llvm::TargetData(module));
++    fpasses.add(new llvm::DataLayout(module));
+     fpasses.add(llvm::createVerifierPass());
+ 
+     targetMachine->setAsmVerbosityDefault(true);
+@@ -180,7 +180,7 @@
+     vector<const char *> clangArgs;
+     clangArgs.push_back(clangPath.c_str());
+ 
+-    switch (llvmTargetData->getPointerSizeInBits()) {
++    switch (llvmDataLayout->getPointerSizeInBits()) {
+     case 32 :
+         clangArgs.push_back("-m32");
+         break;
+@@ -943,7 +943,7 @@
+             clangPath = llvm::sys::Path();
+ #endif
+         if (!clangPath.isValid()) {
+-            clangPath = llvm::sys::Program::FindProgramByName("clang");
++            clangPath = llvm::sys::Program::FindProgramByName("clang32");
+         }
+         if (!clangPath.isValid()) {
+             cerr << "error: unable to find clang on the path\n";
+diff --git a/compiler/src/types.cpp b/compiler/src/types.cpp
+index 8f86faa..6990a15 100644
+--- a/compiler/src/types.cpp
++++ b/compiler/src/types.cpp
+@@ -43,11 +43,11 @@ static vector<vector<StaticTypePtr> > staticTypes;
+ //
+ 
+ static size_t llTypeSize(llvm::Type *llt) {
+-    return (size_t)llvmTargetData->getTypeAllocSize(llt);
++    return (size_t)llvmDataLayout->getTypeAllocSize(llt);
+ }
+ 
+ static size_t llTypeAlignment(llvm::Type *llt) {
+-    return (size_t)llvmTargetData->getABITypeAlignment(llt);
++    return (size_t)llvmDataLayout->getABITypeAlignment(llt);
+ }
+ 
+ static size_t debugTypeSize(llvm::Type *llt) {
+@@ -81,7 +81,7 @@ void initTypes() {
+     complex80Type = new ComplexType(80);
+ 
+     cIntType = int32Type;
+-    switch (llvmTargetData->getPointerSizeInBits()) {
++    switch (llvmDataLayout->getPointerSizeInBits()) {
+     case 32 :
+         cSizeTType = uint32Type;
+         cPtrDiffTType = int32Type;
+@@ -826,7 +826,7 @@ const llvm::StructLayout *tupleTypeLayout(TupleType *t) {
+     if (t->layout == NULL) {
+         llvm::StructType *st =
+             llvm::cast<llvm::StructType>(llvmType(t));
+-        t->layout = llvmTargetData->getStructLayout(st);
++        t->layout = llvmDataLayout->getStructLayout(st);
+     }
+     return t->layout;
+ }
+@@ -835,7 +835,7 @@ const llvm::StructLayout *complexTypeLayout(ComplexType *t) {
+     if (t->layout == NULL) {
+         llvm::StructType *st =
+             llvm::cast<llvm::StructType>(llvmType(t));
+-        t->layout = llvmTargetData->getStructLayout(st);
++        t->layout = llvmDataLayout->getStructLayout(st);
+     }
+     return t->layout;
+ }
+@@ -844,7 +844,7 @@ const llvm::StructLayout *recordTypeLayout(RecordType *t) {
+     if (t->layout == NULL) {
+         llvm::StructType *st =
+             llvm::cast<llvm::StructType>(llvmType(t));
+-        t->layout = llvmTargetData->getStructLayout(st);
++        t->layout = llvmDataLayout->getStructLayout(st);
+     }
+     return t->layout;
+ }
+@@ -1101,15 +1101,22 @@ static void declareLLVMType(TypePtr t) {
+             for (unsigned i = 0; i < x->argTypes.size(); ++i) {
+                 llvm::DIType argType = llvmTypeDebugInfo(x->argTypes[i]);
+                 llvm::DIType argRefType
+-                    = llvmDIBuilder->createReferenceType(argType);
++                    = llvmDIBuilder->createReferenceType(
++                        llvm::dwarf::DW_TAG_reference_type,
++                        argType);
+                 debugParamTypes.push_back(argRefType);
+             }
+             for (unsigned i = 0; i < x->returnTypes.size(); ++i) {
+                 llvm::DIType returnType = llvmTypeDebugInfo(x->returnTypes[i]);
+                 llvm::DIType returnRefType = x->returnIsRef[i]
+                     ? llvmDIBuilder->createReferenceType(
+-                        llvmDIBuilder->createReferenceType(returnType))
+-                    : llvmDIBuilder->createReferenceType(returnType);
++                        llvm::dwarf::DW_TAG_reference_type,
++                        llvmDIBuilder->createReferenceType(
++                            llvm::dwarf::DW_TAG_reference_type,
++                            returnType))
++                    : llvmDIBuilder->createReferenceType(
++                        llvm::dwarf::DW_TAG_reference_type,
++                        returnType);
+ 
+                 debugParamTypes.push_back(returnRefType);
+             }
+@@ -1259,7 +1266,8 @@ static void declareLLVMType(TypePtr t) {
+                 line,
+                 debugTypeSize(t->llType),
+                 debugTypeAlignment(t->llType),
+-                enumArray);
++                enumArray,
++                llvm::DIType());
+         }
+         break;
+     }
+@@ -1358,8 +1366,8 @@ static void defineLLVMType(TypePtr t) {
+         size_t maxSize = 0;
+         for (unsigned i = 0; i < x->memberTypes.size(); ++i) {
+             llvm::Type *llt = llvmType(x->memberTypes[i]);
+-            size_t align = (size_t)llvmTargetData->getABITypeAlignment(llt);
+-            size_t size = (size_t)llvmTargetData->getTypeAllocSize(llt);
++            size_t align = (size_t)llvmDataLayout->getABITypeAlignment(llt);
++            size_t size = (size_t)llvmDataLayout->getTypeAllocSize(llt);
+             if (align > maxAlign) {
+                 maxAlign = align;
+                 maxAlignType = llt;
