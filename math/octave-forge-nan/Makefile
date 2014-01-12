@@ -9,6 +9,9 @@ CATEGORIES=	math
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
+MAKE_JOBS_UNSAFE=	yes
+MAKE_ARGS=	CC="${CC}" CXX="${CXX}"
+
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		NaN
@@ -16,9 +19,6 @@ OCTSRC=		NaN
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e s/^CC/\#CC/ -e s/^CXX/\#CXX/ ${WRKSRC}/Makefile
-
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 ALL_TARGET=	octave
