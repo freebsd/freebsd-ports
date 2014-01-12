@@ -1,4 +1,4 @@
 go.net contains additional Go packages for net applications such as dict (the
 Dictionary Server Protocol), spdy and websocket.
 
-WWW:	http://code.google.com/p/go/source/browse?repo=net
+WWW: http://code.google.com/p/go/source/browse?repo=net
