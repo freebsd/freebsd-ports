@@ -335,6 +335,7 @@
     SUBDIR += hs-yesod-routes
     SUBDIR += hs-yesod-static
     SUBDIR += hs-yesod-test
+    SUBDIR += htdigest
     SUBDIR += htdump
     SUBDIR += html2hdml
     SUBDIR += html2wml
