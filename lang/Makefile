@@ -278,7 +278,6 @@
     SUBDIR += python-doc-pdf-letter
     SUBDIR += python-doc-text
     SUBDIR += python-mode.el
-    SUBDIR += python26
     SUBDIR += python27
     SUBDIR += python31
     SUBDIR += python32
