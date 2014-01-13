@@ -1,0 +1,57 @@
+--- jfsw_src_20051009/Makefile.orig	2005-10-09 15:28:24.000000000 +0200
++++ jfsw_src_20051009/Makefile	2005-10-10 15:02:08.000000000 +0200
+@@ -12,7 +12,7 @@
+ NOASM = 0
+ 
+ # Debugging options
+-RELEASE?=0
++RELEASE?=1
+ 
+ # build locations
+ SRC=source/
+@@ -56,11 +56,8 @@
+ AUDIOLIB_FX=$(OBJ)mv_mix.$o \
+ 	  $(OBJ)mv_mix16.$o \
+ 	  $(OBJ)mvreverb.$o \
+-	  $(OBJ)pitch.$o \
+-	  $(OBJ)multivoc.$o \
+ 	  $(OBJ)ll_man.$o \
+-	  $(OBJ)fx_man.$o \
+-	  $(OBJ)dsoundout.$o
++	  $(OBJ)fx_man.$o
+ AUDIOLIB_MUSIC=$(OBJ)midi.$o \
+ 	  $(OBJ)mpu401.$o \
+ 	  $(OBJ)music.$o
+@@ -157,9 +154,16 @@
+ 	EDITOROBJS+= $(OBJ)buildres.$o
+ endif
+ 
+-ifeq ($(RENDERTYPE),SDL)
+-	override CFLAGS+= $(subst -Dmain=SDL_main,,$(shell sdl-config --cflags))
+-	AUDIOLIBOBJ=$(AUDIOLIB_MUSIC_STUB) $(AUDIOLIB_FX_STUB)
++ifeq ($(RENDERTYPE),SDL)
++	override CFLAGS+= $(subst -Dmain=SDL_main,,$(shell sdl-config --cflags) -D__cdecl=" ") 
++	LIBS+= $(shell sdl-config --libs) -lSDL_mixer
++	AUDIOLIB_FX+= $(OBJ)dsl.$o \
++		      $(OBJ)nodpmi.$o \
++		      $(OBJ)unixpitch.$o \
++		      $(OBJ)unixvoc.$o
++		      
++	AUDIOLIB_MUSIC=$(OBJ)sdlmusic.$o $(OBJ)unixglob.$o
++	AUDIOLIBOBJ=$(AUDIOLIB_MUSIC) $(AUDIOLIB_FX)
+ 
+ 	ifeq (1,$(HAVE_GTK2))
+ 		override CFLAGS+= -DHAVE_GTK2 $(shell pkg-config --cflags gtk+-2.0)
+@@ -170,7 +174,11 @@
+ 	GAMEOBJS+= $(OBJ)game_icon.$o
+ 	EDITOROBJS+= $(OBJ)build_icon.$o
+ endif
+-ifeq ($(RENDERTYPE),WIN)
++ifeq ($(RENDERTYPE),WIN)
++	AUDIOLIB_FX+= $(OBJ)audiolib_fx_fmod.$o \
++	              $(OBJ)dsoundout.$o \
++	              $(OBJ)pitch.$o \
++	              $(OBJ)multivoc.$o
+ 	AUDIOLIBOBJ=$(AUDIOLIB_MUSIC) $(AUDIOLIB_FX)
+ endif
+ 
