@@ -65,7 +65,6 @@ CONFIGURE_ARGS+=	--with-openssl=no
 .endif
 
 .if ${PORT_OPTIONS:MTKINTER}
-WITH_TCL=		yes
 USE_PYTHON=		yes
 WITH_PYTHON=		yes
 BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter \
@@ -105,10 +104,10 @@ CONFIGURE_ARGS+=	--with-swig=no
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
-USE_TCL=		84
+USES+=			tcl
 CONFIGURE_ARGS+=	--with-tcl \
 			--with-tclcflags=-I${TCL_INCLUDEDIR} \
-			--with-tcllibs=-ltcl${TCL_VER:S/.//}
+			--with-tcllibs=-ltcl${TCL_SHLIB_VER}
 PLIST_SUB+=		TCL=""
 .else
 CONFIGURE_ARGS+=	--with-tcl=no
