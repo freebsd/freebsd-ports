@@ -47,11 +47,11 @@ inspircd_prestart()
 {
 	piddir=$(dirname ${inspircd_pidfile})
 	if [ ! -d ${piddir} ]; then
-		install -m 755 -o ${inspircd_user} -g ${inspircd_group} ${piddir}
+		install -d -m 755 -o ${inspircd_user} -g ${inspircd_group} ${piddir}
 	fi
 	logdir=$(dirname ${inspircd_logfile})
 	if [ ! -d ${logdir} ]; then
-		install -m 755 -o ${inspircd_user} -g ${inspircd_group} ${logdir}
+		install -d -m 755 -o ${inspircd_user} -g ${inspircd_group} ${logdir}
 	fi
 }
 
