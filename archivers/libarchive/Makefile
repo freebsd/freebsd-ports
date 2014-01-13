@@ -103,13 +103,7 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-openssl --without-nettle
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
-.endif
-
 check:
 	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} check)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

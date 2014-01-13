@@ -20,12 +20,7 @@ ACLOCAL_ARGS+=	-I ${ACLOCAL_DIR}
 AUTOMAKE_ARGS+=	--add-missing
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LZMA_LIBS=-llzma
-.if exists(/usr/include/lzma.h)
 CONFIGURE_ARGS+=	LZMA_CFLAGS=-I/usr/include
-.else
-LIB_DEPENDS+=	liblzma.so:${PORTSDIR}/archivers/xz
-CONFIGURE_ARGS+=	LZMA_CFLAGS=-I${LOCALBASE}/include
-.endif
 USE_AUTOTOOLS=	aclocal autoconf autoheader automake
 USES=		pkgconfig
 
