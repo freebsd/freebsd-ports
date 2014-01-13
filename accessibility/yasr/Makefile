@@ -3,7 +3,7 @@
 
 PORTNAME=	yasr
 PORTVERSION=	0.6.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	accessibility
 MASTER_SITES=	SF
 
@@ -20,6 +20,7 @@ SUB_FILES=	pkg-message
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
+OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
 PLIST_FILES=	bin/yasr \
@@ -28,9 +29,9 @@ PLIST_FILES=	bin/yasr \
 		%%NLS%%share/locale/fr/LC_MESSAGES/yasr.mo
 PLIST_DIRS=	%%DATADIR%%
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${OSVERSION} > 900007
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 900007
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-yasr__main.c
 .endif
 
@@ -43,4 +44,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
