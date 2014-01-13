@@ -1,0 +1,63 @@
+--- source3/wscript_build.orig	2013-09-06 09:39:57.000000000 +0000
++++ source3/wscript_build	2013-11-20 00:35:51.687173831 +0000
+@@ -1,7 +1,8 @@
+ #!/usr/bin/env python
+ 
+ from samba_utils import *
+-import samba_version, samba3
++import samba_version, samba3, sys
++host_os = sys.platform
+ 
+ TDB_LIB_SRC = '''
+ 	  lib/dbwrap/dbwrap_open.c
+@@ -654,7 +655,16 @@
+                     vnum='0',
+                     vars=locals())
+ 
+-bld.SAMBA3_LIBRARY('nss_wins',
++if (host_os.rfind('freebsd') > -1):
++        # FreeBSD winbind client is implemented as a wrapper around
++        # the Linux version.
++        bld.SAMBA3_LIBRARY('nss_wins',
++                  source=' '.join([WINBIND_WINS_NSS_SRC, '../nsswitch/wins_freebsd.c']),
++                  deps='''param libsmb LIBTSOCKET''',
++                  realname='nss_wins.so.1',
++                  vnum='1')
++else:
++        bld.SAMBA3_LIBRARY('nss_wins',
+                   source=WINBIND_WINS_NSS_SRC,
+                   deps='''param libsmb LIBTSOCKET''',
+                   realname='libnss_wins.so.2',
+@@ -976,11 +986,13 @@
+                     LIBAFS_SETTOKEN
+                     RPC_SERVER
+                     NDR_SMBXSRV
+-		    LIBASYS
++                    LIBASYS
+                     ccan-hash
+                     NDR_SMB_ACL
+                     netapi
+-		    NDR_IOCTL
++                    NDR_IOCTL
++                    inotify
++                    dns_sd
+                     ''' + bld.env['dmapi_lib'],
+                     private_library=True,
+                     vars=locals())
+@@ -1261,6 +1273,7 @@
+                  libsmb
+                  msrpc3
+                  RPC_NDR_SRVSVC
++                 dns_sd
+                  cli_smb_common''')
+ 
+ bld.SAMBA3_BINARY('net',
+@@ -1613,7 +1626,7 @@
+ 
+ bld.SAMBA3_PYTHON('pylibsmb',
+                   source='libsmb/pylibsmb.c',
+-                  deps='smbclient samba-credentials',
++                  deps='smbclient samba-credentials libsmb errors',
+                   realname='samba/samba3/libsmb_samba_internal.so'
+                   )
+ 

@@ -1078,6 +1078,7 @@
     SUBDIR += samba-smbclient
     SUBDIR += samba36
     SUBDIR += samba4
+    SUBDIR += samba41
     SUBDIR += samba4wins
     SUBDIR += samplicator
     SUBDIR += sbd
