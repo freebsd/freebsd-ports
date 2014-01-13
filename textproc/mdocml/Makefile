@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mdocml
-PORTVERSION=	1.12.2
+PORTVERSION=	1.12.3
 CATEGORIES=	textproc
 MASTER_SITES=	http://mdocml.bsd.lv/snapshots/ \
 		${MASTER_SITE_LOCAL}
