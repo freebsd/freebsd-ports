@@ -2,49 +2,52 @@
 # $FreeBSD$
 
 PORTNAME=	luasql
-PORTVERSION=	2.1.1
-PORTREVISION=	1
+PORTVERSION=	2.3.0
 CATEGORIES=	databases
-MASTER_SITES=	http://luaforge.net/frs/download.php/${DISTFILE_REV}/
 PKGNAMESUFFIX=	-${LUASQL_DRIVER}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lua@FreeBSD.org
 COMMENT?=	LuaSQL driver
 
 LICENSE=	MIT
 
-DISTFILE_REV=	2686
+USE_GITHUB=	yes
+GH_ACCOUNT=	keplerproject
+GH_COMMIT=	c527024
+GH_TAGNAME=	v${PORTVERSION}
 
-USE_LUA=	5.1
-USE_GMAKE=	yes
+USES=		lua gmake
 ALL_TARGET=	lib
 
 LUASQL_DRIVER?=	mysql
 
-MAKE_ENV+=	LUA_DIR=${LUA_SUBDIR} \
+MAKE_ARGS+=	LUA_DIR=${LUA_SUBDIR} \
 		LUA_INC=${LUA_INCDIR} \
 		LUA_LIBDIR=${LUA_LIBDIR} \
 		LUA_VERSION_NUM="${LUA_VER_STR}0" \
-		T=${LUASQL_DRIVER}
-LDFLAGS+=	-shared
-CFLAGS+=	-fPIC
+		T=${LUASQL_DRIVER} \
+		WARN="${CFLAGS}" \
+		CC="${CC}"
+
+USE_CSTD=	gnu89
+CFLAGS+=	-Wno-return-type
 
 PLIST_SUB+=	LUA_MIDLIBDIR=${LUA_MODLIBDIR}
 
 .if ${LUASQL_DRIVER} == "mysql"
 COMMENT=	Lua interface to MySQL
 USE_MYSQL=	yes
-MAKE_ENV+=	DRIVER_LIBS="-L ${LOCALBASE}/lib/mysql -lmysqlclient" \
+MAKE_ARGS+=	DRIVER_LIBS="-L ${LOCALBASE}/lib/mysql -lmysqlclient" \
 		DRIVER_INCS="-I ${LOCALBASE}/include/mysql"
 .elif ${LUASQL_DRIVER} == "postgres"
 COMMENT=	Lua interface to PostgreSQL
 USE_PGSQL=	yes
-MAKE_ENV+=	DRIVER_LIBS="-L ${LOCALBASE}/lib -lpq" \
+MAKE_ARGS+=	DRIVER_LIBS="-L ${LOCALBASE}/lib -lpq" \
 		DRIVER_INCS="-I ${LOCALBASE}/include"
 .elif ${LUASQL_DRIVER} == "sqlite3"
 COMMENT=	Lua interface to SQLite3
 USE_SQLITE=	3
-MAKE_ENV+=	DRIVER_LIBS="-L ${LOCALBASE}/lib -lsqlite3" \
+MAKE_ARGS+=	DRIVER_LIBS="-L ${LOCALBASE}/lib -lsqlite3" \
 		DRIVER_INCS="-I ${LOCALBASE}/include"
 .else
 IGNORE=		unknown or unsupported luasql driver
