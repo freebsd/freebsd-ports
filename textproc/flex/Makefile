@@ -30,6 +30,7 @@ NLS_CONFIGURE_ENABLE=	nls
 post-patch:	.SILENT
 	${REINPLACE_CMD} -Ee 's/tests//' \
 		-e 's/^([[:space:]]*)\$$\(RANLIB\) ([^ ;]*)/\1chmod u+w \2;&/' \
+		-e '/echo.*RANLIB/,+1d' \
 		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's/@MAKEINFO@/& --no-split/g' \
 		${WRKSRC}/doc/Makefile.in
