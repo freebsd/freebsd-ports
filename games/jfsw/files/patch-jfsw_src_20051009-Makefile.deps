@@ -1,0 +1,14 @@
+--- jfsw_src_20051009/Makefile.deps.orig	2005-10-09 15:28:24.000000000 +0200
++++ jfsw_src_20051009/Makefile.deps	2005-10-10 15:02:08.000000000 +0200
+@@ -95,6 +95,11 @@
+ $(OBJ)animlib.$o: $(SRC)jmact/animlib.c $(SRC)jmact/types.h $(SRC)jmact/develop.h $(SRC)jmact/util_lib.h $(SRC)jmact/animlib.h
+ 
+ # jAudioLib objects
++$(OBJ)dsl.$o: $(SRC)jaudiolib/dsl.c $(SRC)jaudiolib/util.h
++$(OBJ)nodpmi.$o: $(SRC)jaudiolib/nodpmi.c $(SRC)jaudiolib/dpmi.h
++$(OBJ)unixpitch.$o: $(SRC)jaudiolib/unixpitch.c $(SRC)jaudiolib/pitch.h
++$(OBJ)unixvoc.$o: $(SRC)jaudiolib/unixvoc.c $(SRC)jaudiolib/usrhooks.h $(SRC)jaudiolib/linklist.h $(SRC)jaudiolib/pitch.h $(SRC)jaudiolib/multivoc.h $(SRC)jaudiolib/_multivc.h
++
+ $(OBJ)audiolib_fxstub.$o: $(SRC)jaudiolib/audiolib_fxstub.c $(SRC)jaudiolib/fx_man.h
+ $(OBJ)audiolib_musicstub.$o: $(SRC)jaudiolib/audiolib_musicstub.c $(SRC)jaudiolib/music.h
+ 

@@ -1,0 +1,11 @@
+--- jfbuild_src_20051009/Makefile.orig	2005-10-09 15:23:00.000000000 +0200
++++ jfbuild_src_20051009/Makefile	2005-10-10 15:06:22.000000000 +0200
+@@ -27,7 +27,7 @@
+ # Debugging options
+ #  RELEASE - 1 = no debugging
+ #  EFENCE  - 1 = compile with Electric Fence for malloc() debugging
+-RELEASE?=0
++RELEASE?=1
+ EFENCE?=0
+ 
+ # SDK locations - adjust to match your setup

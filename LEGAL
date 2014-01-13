@@ -150,6 +150,7 @@ java3d-sdk-*-linux-i386* java/java3d		License does not allow distribution
 javax_comm-*-solsparc.*	comms/java-commapi	No commercial use
 jdk-6*-i586.bin		java/linux-sun-jdk16	Redistribution of repackaged binaries not permitted
 jdk-7*-i586.tar.gz	java/linux-sun-jdk17	Redistribution of repackaged binaries not permitted
+jfbuild_src_*		games/jfsw		Must be distributed only through the Internet and free of charge
 jmf-*-alljava.zip	java/jmf		Redistribution of pre-compiled binaries is not permitted
 jpgraph-2.*		graphics/jpgraph2	Not for commercial use
 jre-6*-i586.bin		java/linux-sun-jre16	License does not allow distribution with fee
