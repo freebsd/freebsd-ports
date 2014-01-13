@@ -51,6 +51,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cb252f01-7c43-11e3-b0a6-005056a37f68">
+    <topic>bind -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>bind99</name>
+	<name>bind99-base</name>
+	<range><lt>9.9.4.2</lt></range>
+      </package>
+      <package>
+	<name>bind98</name>
+	<name>bind98-base</name>
+	<range><lt>9.8.6.2</lt></range>
+      </package>
+      <package>
+	<name>bind96</name>
+	<name>bind96-base</name>
+	<range><lt>9.6.3.2.ESV.R10.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://kb.isc.org/article/AA-01078/74/">
+	  <p>Because of a defect in handling queries for NSEC3-signed zones,
+	    BIND can crash with an "INSIST" failure in name.c when processing
+	    queries possessing certain properties. By exploiting this defect
+	    an attacker deliberately constructing a query with the right
+	    properties could achieve denial of service against an authoritative
+	    nameserver serving NSEC3-signed zones.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0591</cvename>
+      <url>https://kb.isc.org/article/AA-01078/74/</url>
+    </references>
+    <dates>
+      <discovery>2014-01-08</discovery>
+      <entry>2014-01-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="28c575fa-784e-11e3-8249-001cc0380077">
     <topic>libXfont -- Stack buffer overflow in parsing of BDF font files in libXfont</topic>
     <affects>
