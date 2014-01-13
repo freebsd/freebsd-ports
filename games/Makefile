@@ -732,6 +732,7 @@
     SUBDIR += poker-engine
     SUBDIR += poker-eval
     SUBDIR += pokerth
+    SUBDIR += polyglot
     SUBDIR += polypuzzle
     SUBDIR += pongix
     SUBDIR += popstar
