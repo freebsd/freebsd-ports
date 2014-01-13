@@ -15,6 +15,8 @@ you update your ports collection, before attempting any port upgrades.
 
   # portmaster -r libical
    or
+  # portupgrade -fr libical
+   or
   # pkg install -fR libical
 
 20140111:
