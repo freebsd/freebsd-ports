@@ -15,12 +15,12 @@ LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 GNU_CONFIGURE=	yes
 USES=		gmake
-NO_STAGE=	yes
 
 PLIST_SUB=	PORTDOCS=${DISTNAME}
 
 CFLAGS_amd64=	-fPIC
 CFLAGS_ia64=	-fPIC
+MAKE_ARGS+=	CC="${CXX}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/*.c
