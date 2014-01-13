@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	packetfu
-PORTVERSION=	1.1.9
+PORTVERSION=	1.1.10
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
