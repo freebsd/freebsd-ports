@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ikiwiki
-PORTVERSION=	3.20130904.1
+PORTVERSION=	3.20140102
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL} \
 		http://kitenet.net/~joey/debian/unstable/
@@ -112,10 +112,14 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/ikiwiki
 	${INSTALL_DATA} ${WRKSRC}/auto.setup ${STAGEDIR}${PREFIX}/etc/ikiwiki
 	${INSTALL_DATA} ${WRKSRC}/auto-blog.setup ${STAGEDIR}${PREFIX}/etc/ikiwiki
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${STAGEDIR}${DOCSDIR}
+.endif
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/ikiwiki.setup ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/wikilist ${STAGEDIR}${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
