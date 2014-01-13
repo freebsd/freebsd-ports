@@ -5,6 +5,22 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140113:
+  AFFECTS: users of net/samba41
+  AUTHOR: timur@FreeBSD.org
+
+  With the introduction of Samba 4.1 corresponding port lost SWAT support
+  and made WINBIND support mandatory. As samba4 introduced additional 'samba'
+  daemon to the tripplet of nmbd/smbd/winbindd to avoid confusion startup
+  script for samba41 was renamed to 'samba_server'. To start the whole band
+  up it's enough to add to the rc.conf:
+
+  samba_server_enable="YES"
+
+  Startup script tries it's best to guess which out of samba/nmbd/smbd/winbindd
+  daemons have to be started, but you can fine tune this by specifying them in
+  rc.conf, just make sure that samba_server_enable is enabled(see entry for 20121022).
+
 20140112:
   AFFECTS: users of devel/libical
   AUTHOR: kwm@FreeBSD.org
