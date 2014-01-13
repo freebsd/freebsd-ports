@@ -160,10 +160,6 @@ lib/libkvutils.la
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/ecacontrol.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/eci.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/pyeca.py
-%%DATADIR%%/ecasound.el
-%%DATADIR%%/ecasoundrc
-%%DATADIR%%/effect_presets
-%%DATADIR%%/generic_oscillators
 man/man1/ecaconvert.1.gz
 man/man1/ecafixdc.1.gz
 man/man1/ecalength.1.gz
@@ -175,6 +171,10 @@ man/man1/ecasound-iam.1.gz
 man/man1/ecasound.1.gz
 man/man1/ecatools.1.gz
 man/man5/ecasoundrc.5.gz
+%%DATADIR%%/ecasound.el
+%%DATADIR%%/ecasoundrc
+%%DATADIR%%/effect_presets
+%%DATADIR%%/generic_oscillators
 @dirrm %%DATADIR%%
 @dirrm include/libecasoundc
 @dirrm include/libecasound
