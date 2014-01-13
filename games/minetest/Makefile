@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minetest
-PORTVERSION=	0.4.8
+PORTVERSION=	0.4.9
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libIrrlicht.so:${PORTSDIR}/x11-toolkits/irrlicht \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	minetest
-GH_COMMIT=	122875c
+GH_COMMIT=	ad11a9e
 
 USES=		cmake
 CMAKE_ARGS=	-DCUSTOM_MANDIR="${PREFIX}/man" \
