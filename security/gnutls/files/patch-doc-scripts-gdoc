@@ -1,0 +1,612 @@
+--- doc/scripts/gdoc.orig	2014-01-13 15:08:22.000000000 +0400
++++ doc/scripts/gdoc	2014-01-13 15:10:10.000000000 +0400
+@@ -7,6 +7,8 @@
+ ## Copyright (c) 2001, 2002 Nikos Mavrogiannopoulos
+ ##                    added -tex
+ ## Copyright (c) 1998 Michael Zucchi
++## Copyright (c) 2013 Adam Sampson
++##                    made highlighting not depend on hash order, for Perl 5.18
+ 
+ # This program is free software: you can redistribute it and/or modify
+ # it under the terms of the GNU General Public License as published by
+@@ -132,57 +134,59 @@
+ use POSIX qw(strftime);
+ 
+ # match expressions used to find embedded type information
+-$type_constant = "((?<!\")\\\%(\\w+))";
+-$type_func = "(\\w+\\(\\))";
+-$type_param = "\\\@(\\w+)";
+-$type_struct = "\\\#(\\w+)";
+-$type_env = "(\\\$\\w+)";
++$type_constant = "\\\%([A-Za-z0-9_]+)";
++$type_func = "([A-Za-z0-9_]+\\(\\))";
++$type_param = '\@([A-Za-z0-9_]+)\s*';
++$type_struct = "\\\#([A-Za-z0-9_]+)";
++$type_env = "(\\\$[A-Za-z0-9_]+)";
+ 
+ 
+ # Output conversion substitutions.
+ #  One for each output format
+ 
+ # these work fairly well
+-%highlights_html = ( $type_constant, "<i>\$2</i>",
+-		     $type_func, "<b>\$1</b>",
+-		     $type_struct, "<i>\$1</i>",
+-		     $type_param, "<tt><b>\$1</b></tt>" );
++@highlights_html = ( [$type_constant, '"<i>$1</i>"'],
++		     [$type_func, '"<b>$1</b>"'],
++		     [$type_struct, '"<i>$1</i>"'],
++		     [$type_param, '" <tt><b>$1</b></tt> "'] );
+ $blankline_html = "<p>";
+ 
+-%highlights_texinfo = ( $type_constant, "\\\@code{\$2}",
+-			$type_func, "\\\@code{\$1}",
+-			$type_struct, "\\\@code{\$1}",
+-			$type_param, "\\\@code{\$1}" );
++@highlights_texinfo = ( [$type_param, '" \@code{$1} "'],
++			[$type_constant, '"\@code{$1} "'],
++			[$type_func, '"\@code{$1} "'],
++			[$type_struct, '"\@code{$1} "'],
++			 );
+ $blankline_texinfo = "";
+ 
+-%highlights_tex = ( $type_constant, "{\\\\it \$2}",
+-		     $type_func, "{\\\\bf \$1}",
+-		     $type_struct, "{\\\\it \$1}",
+-		     $type_param, "{\\\\bf \$1}" );
++@highlights_tex = ( [$type_param, '" {\\\bf $1} "'],
++		[$type_constant, '"{\\\it $1}"'],
++		[$type_func, '"{\\\bf $1}"'],
++		[$type_struct, '"{\\\it $1}"'],
++		      );
+ $blankline_tex = "\\\\";
+ 
+ # sgml, docbook format
+-%highlights_sgml = ( $type_constant, "<replaceable class=\"option\">\$2</replaceable>",
+-		     $type_func, "<function>\$1</function>",
+-		     $type_struct, "<structname>\$1</structname>",
+-		     $type_env, "<envar>\$1</envar>",
+-		     $type_param, "<parameter>\$1</parameter>" );
++@highlights_sgml = ( [$type_constant, '"<replaceable class=\"option\">$1</replaceable>"'],
++		     [$type_func, '"<function>$1</function>"'],
++		     [$type_struct, '"<structname>$1</structname>"'],
++		     [$type_env, '"<envar>$1</envar>"'],
++		     [$type_param, '" <parameter>$1</parameter> "'] );
+ $blankline_sgml = "</para><para>\n";
+ 
+ # these are pretty rough
+-%highlights_man = ( $type_constant, "\\\\fB\$2\\\\fP",
+-		    $type_func, "\\\\fB\$1\\\\fP",
+-		    $type_struct, "\\\\fB\$1\\\\fP",
+-		    $type_param, "\\\\fI\$1\\\\fP" );
++@highlights_man = ( [$type_constant, '"\\\fB$1\\\fP"'],
++		    [$type_func, '"\\\fB$1\\\fP"'],
++		    [$type_struct, '"\\\fB$1\\\fP"'],
++		    [$type_param, '" \\\fI$1\\\fP "'] );
+ $blankline_man = "";
+ 
+ # text-mode
+-%highlights_text = ( $type_constant, "\$2",
+-		     $type_func, "\$1",
+-		     $type_struct, "\$1",
+-		     $type_param, "\$1" );
++@highlights_text = ( [$type_constant, '"$1"'],
++		     [$type_func, '"$1"'],
++		     [$type_struct, '"$1"'],
++		     [$type_param, '"$1 "'] );
+ $blankline_text = "";
+-
++my $lineprefix = "";
+ 
+ sub usage {
+     print "Usage: $0 [ -v ] [ -docbook | -html | -text | -man | -tex | -texinfo  -listfunc ]\n";
+@@ -201,7 +205,7 @@
+ 
+ $verbose = 0;
+ $output_mode = "man";
+-%highlights = %highlights_man;
++@highlights = @highlights_man;
+ $blankline = $blankline_man;
+ $modulename = "API Documentation";
+ $sourceversion = strftime "%Y-%m-%d", localtime;
+@@ -210,27 +214,27 @@
+     $cmd = shift @ARGV;
+     if ($cmd eq "-html") {
+ 	$output_mode = "html";
+-	%highlights = %highlights_html;
++	@highlights = @highlights_html;
+ 	$blankline = $blankline_html;
+     } elsif ($cmd eq "-man") {
+ 	$output_mode = "man";
+-	%highlights = %highlights_man;
++	@highlights = @highlights_man;
+ 	$blankline = $blankline_man;
+     } elsif ($cmd eq "-tex") {
+ 	$output_mode = "tex";
+-	%highlights = %highlights_tex;
++	@highlights = @highlights_tex;
+ 	$blankline = $blankline_tex;
+     } elsif ($cmd eq "-texinfo") {
+ 	$output_mode = "texinfo";
+-	%highlights = %highlights_texinfo;
++	@highlights = @highlights_texinfo;
+ 	$blankline = $blankline_texinfo;
+     } elsif ($cmd eq "-text") {
+ 	$output_mode = "text";
+-	%highlights = %highlights_text;
++	@highlights = @highlights_text;
+ 	$blankline = $blankline_text;
+     } elsif ($cmd eq "-docbook") {
+ 	$output_mode = "sgml";
+-	%highlights = %highlights_sgml;
++	@highlights = @highlights_sgml;
+ 	$blankline = $blankline_sgml;
+     } elsif ($cmd eq "-listfunc") {
+ 	$output_mode = "listfunc";
+@@ -270,6 +274,8 @@
+     my $name = shift @_;
+     my $contents = join "\n", @_;
+ 
++    $name = " $name";
++
+     if ($name =~ m/$type_constant/) {
+ 	$name = $1;
+ #	print STDERR "constant section '$1' = '$contents'\n";
+@@ -280,6 +286,7 @@
+ 	$parameters{$name} = $contents;
+     } else {
+ #	print STDERR "other section '$name' = '$contents'\n";
++	$name =~ tr/ //d;
+ 	$sections{$name} = $contents;
+ 	push @sectionlist, $name;
+     }
+@@ -296,35 +303,15 @@
+ #  sections => %descriont descriptions
+ #  
+ 
+-sub repstr {
+-    $pattern = shift;
+-    $repl = shift;
+-    $match1 = shift;
+-    $match2 = shift;
+-    $match3 = shift;
+-    $match4 = shift;
+-
+-    $output = $repl;
+-    $output =~ s,\$1,$match1,g;
+-    $output =~ s,\$2,$match2,g;
+-    $output =~ s,\$3,$match3,g;
+-    $output =~ s,\$4,$match4,g;
+-
+-    eval "\$return = qq/$output/";
+-
+-#    print "pattern $pattern matched 1=$match1 2=$match2 3=$match3 4=$match4 replace $repl yielded $output interpolated $return\n";
+-
+-    $return;
+-}
+-
+ sub just_highlight {
+     my $contents = join "\n", @_;
+     my $line;
+     my $ret = "";
+ 
+-    foreach $pattern (keys %highlights) {
+-#	print "scanning pattern $pattern ($highlights{$pattern})\n";
+-	$contents =~ s:$pattern:repstr($pattern, $highlights{$pattern}, $1, $2, $3, $4):gse;
++    foreach $highlight (@highlights) {
++	my ($pattern, $replace) = @$highlight;
++	#print "scanning pattern $pattern ($replace)\n";
++	$contents =~ s/$pattern/$replace/gees;
+     }
+     foreach $line (split "\n", $contents) {
+ 	if ($line eq ""){
+@@ -370,13 +357,45 @@
+ 	}
+     }
+     foreach $section (@{$args{'sectionlist'}}) {
++	$section =~ s/\@//g;
+ 	print "\n\@strong{$section:} " if $section ne $section_default;
+-	$args{'sections'}{$section} =~ s:([{}]):\@\1:gs;
++	$args{'sections'}{$section} =~ s:([{}]):\@$1:gs;
+ 	output_highlight($args{'sections'}{$section});
+     }
+     print "\@end deftypefun\n\n";
+ }
+ 
++sub output_enum_texinfo {
++    my %args = %{$_[0]};
++    my ($parameter, $section);
++    my $count;
++    my $name = $args{'enum'};
++    my $param;
++    my $param2;
++    my $sec;
++    my $check;
++    my $type;
++
++    print "\n\@c $name\n";
++    print "\@table \@code\n";
++
++    $check=0;
++    foreach $parameter (@{$args{'parameterlist'}}) {
++        $param1 = $parameter;
++	$param1 =~ s/_/_\@-/g;
++
++	$check = 1;
++	print "\@item ".$param1."\n";
++#	print "\n";
++
++        $param2 = $args{'parameters'}{$parameter};
++	$out = just_highlight($param2);
++	chomp $out;
++	print $out . "\n";
++    }
++    print "\@end table\n";
++}
++
+ # output in html
+ sub output_html {
+     my %args = %{$_[0]};
+@@ -428,7 +447,9 @@
+ 
+     $func =~ s/_/\\_/g;
+ 
+-    print "\n\n\\subsection{". $func . "}\n\\label{" . $args{'function'} . "}\n";
++    print "\n\n\\begin{function}\n";
++    print "\\functionTitle{". $func . "}\n";
++    print "\\index{". $func . "}\n";
+ 
+     $type = $args{'functiontype'};
+     $type =~ s/_/\\_/g;
+@@ -451,9 +472,8 @@
+     }
+     print ")\n";
+ 
+-    print "\n{\\large{Arguments}}\n";
++    print "\n\\begin{functionArguments}\n";
+ 
+-    print "\\begin{itemize}\n";
+     $check=0;
+     foreach $parameter (@{$args{'parameterlist'}}) {
+         $param1 = $args{'parametertypes'}{$parameter};
+@@ -462,11 +482,12 @@
+ 	$param2 =~ s/_/\\_/g;
+ 
+ 	$check = 1;
+-	print "\\item {\\it ".$param1."} {\\bf ".$param2."}: \n";
++	print "\\functionArgument {\\it ".$param1."} {\\bf ".$param2."}: \n";
+ #	print "\n";
+ 
+ 	$param3 = $args{'parameters'}{$parameter};
+-	$param3 =~ s/#([a-zA-Z\_]+)/{\\it \1}/g;
++	$param3 =~ s/\#([a-zA-Z\_]+)/{\\it $1}/g;
++	$param3 =~ s/\%([a-zA-Z\_]+)/{\\bf $1}/g;
+ 
+ 	$out = just_highlight($param3);
+ 	$out =~ s/_/\\_/g;
+@@ -475,31 +496,72 @@
+     if ($check==0) {
+ 	print "\\item void\n";
+     }
+-    print "\\end{itemize}\n";
++    print "\\end{functionArguments}\n";
+ 
+     foreach $section (@{$args{'sectionlist'}}) {
+ 	$sec = $section;
+ 	$sec =~ s/_/\\_/g;
+-	$sec =~ s/#([a-zA-Z\_]+)/{\\it \1}/g;
++	$sec =~ s/#([a-zA-Z\_]+)/{\\it $1}/g;
+ 
+-	print "\n{\\large{$sec}}\\\\\n";
+-	print "\\begin{rmfamily}\n";
++	print "\n\\begin{function${sec}}\n";
++	$out = $args{'sections'}{$section};
+ 
+-	$sec = $args{'sections'}{$section};
+-	$sec =~ s/\\:/:/g;
+-	$sec =~ s/#([a-zA-Z\_]+)/{\\it \1}/g;
+-	$sec =~ s/->/\$\\rightarrow\$/g;
+-	$sec =~ s/([0-9]+)\^([0-9]+)/\$\{\1\}\^\{\2\}\$/g;
+-
+-	$out = just_highlight($sec);
+-	$out =~ s/_/\\_/g;
++	$out =~ s/\#([a-zA-Z\_]+)/{\\it $1}/g;
++	$out =~ s/\%([a-zA-Z\_]+)/{\\bf $1}/g;
++	$out =~ s/\@([a-zA-Z\_]+)/{\\bf $1}/g;
++	$out =~ s/_/\\_\\-/g;
++        $out =~ s/\$/\\\$/g;
++	$out =~ s/#/\\#/g;
++	$out =~ s/\n\n/\n/g;
++	$out =~ s/\\:/:/g;
++	$out =~ s/\-\>/\$\\rightarrow\$/g;
++	$out =~ s/([0-9]+)\^([0-9]+)/\$\{$1\}\^\{$2\}\$/g;
+ 
+ 	print $out;
+-	print "\\end{rmfamily}\n";
++	print "\\end{function${sec}}\n";
+     }
+-    print "\n";
++    print "\\end{function}\n\n";
+ }
+ 
++sub output_enum_tex {
++    my %args = %{$_[0]};
++    my ($parameter, $section);
++    my $count;
++    my $name = $args{'enum'};
++    my $param;
++    my $param2;
++    my $sec;
++    my $check;
++    my $type;
++
++    print "\n\n\\begin{enum}\n";
++    $name =~ s/_/\\_/g;
++    print "\\enumTitle{". $name . "}\n";
++    print "\\index{". $name . "}\n";
++
++    print "\n\\begin{enumList}\n";
++
++    $check=0;
++    foreach $parameter (@{$args{'parameterlist'}}) {
++        $param1 = $parameter;
++	$param1 =~ s/_/\\_\\-/g;
++
++	$check = 1;
++	print "\\enumElement{".$param1."}{";
++#	print "\n";
++
++        $param2 = $args{'parameters'}{$parameter};
++	$param2 =~ s/\#([a-zA-Z\_]+)/{\\it $1}/g;
++	$param2 =~ s/\%([a-zA-Z\_]+)/{\\bf $1}/g;
++	$out = just_highlight($param2);
++	$out =~ s/_/\\_/g;
++	chomp $out;
++	print $out . "}\n";
++    }
++    print "\\end{enumList}\n";
++
++    print "\\end{enum}\n\n";
++}
+ 
+ # output in sgml DocBook
+ sub output_sgml {
+@@ -639,11 +701,14 @@
+     if ($args{'bugsto'}) {
+ 	print ".SH \"REPORTING BUGS\"\n";
+ 	print "Report bugs to <". $args{'bugsto'} . ">.\n";
++        print ".br\n";
++	print "General guidelines for reporting bugs: http://www.gnu.org/gethelp/\n";
++        print ".br\n";
+ 	if ($args{'pkgname'}) {
+ 	    print $args{'pkgname'} . " home page: " .
+ 		"http://www.gnu.org/software/" . $args{'module'} . "/\n";
+ 	}
+-	print "General help using GNU software: http://www.gnu.org/gethelp/\n";
++	print "\n";
+     }
+ 
+     if ($args{'copyright'}) {
+@@ -670,6 +735,10 @@
+ 	print ".B info " . $args{'seeinfo'} . "\n";
+ 	print ".PP\n";
+ 	print "should give you access to the complete manual.\n";
++	print "As an alternative you may obtain the manual from:\n";
++	print ".IP\n";
++	print ".B http://www.gnu.org/software/" . $args{'module'} . "/manual/\n";
++	print ".PP\n";
+     }
+ }
+ 
+@@ -705,6 +774,10 @@
+     eval "output_".$output_mode."(\@_);";
+ }
+ 
++sub output_enum {
++    eval "output_enum_".$output_mode."(\@_);";
++}
++
+ 
+ ##
+ # takes a function prototype and spits out all the details
+@@ -744,7 +817,7 @@
+ #	    print STDERR " :> @args\n";
+ 	    $type = join " ", @args;
+ 
+-	    if ($parameters{$param} eq "" && $param != "void") {
++	    if ((!defined($parameters{$param}) || $parameters{$param} eq "") && $param ne "void") {
+ 		$parameters{$param} = "-- undescribed --";
+ 		print STDERR "warning: $lineno: Function parameter '$param' not described in '$function_name'\n";
+ 	    }
+@@ -781,6 +854,56 @@
+     }
+ }
+ 
++sub dump_enum {
++    my $prototype = shift @_;
++
++    if (($prototype =~ m/^\s*typedef\s+enum\s*[a-zA-Z0-9_~:]*\s*\{([\-a-zA-Z0-9_~=,:\s\(\)\<]+)\s*\}\s*([a-zA-Z0-9_]+);.*/)) {
++#        || $prototype =~ m/^\s*enum\s+([a-zA-Z0-9_~:]+).*/) {
++        $args = $1;
++	$name = $2;
++
++	foreach $arg (split ',', $args) {
++	    # strip leading/trailing spaces
++	    $arg =~ s/^\s*//;
++	    $arg =~ s/\s*$//;
++	    $arg =~ s/([A-Za-z0-9_]+)\s*=.*/$1/g;
++#	    print STDERR "SCAN ARG: '$arg'\n";
++
++            next if $arg eq '';
++	    if ((!defined($parameters{$arg}) || $parameters{$arg} eq "")) {
++		$parameters{$arg} = "-- undescribed --";
++		print STDERR "warning: $lineno: Enumeration parameter '$arg' not described in '$name'\n";
++	    }
++
++	    push @parameterlist, $arg;
++
++#	    print STDERR "param = '$arg'\n";
++	}
++    } else {
++#	print STDERR "warning: $lineno: Cannot understand enumeration: '$prototype'\n";
++	return;
++    }
++
++    output_enum({'enum' => $name,
++			 'module' => $modulename,
++			 'sourceversion' => $sourceversion,
++			 'include' => $include,
++			 'includefuncprefix' => $includefuncprefix,
++			 'bugsto' => $bugsto,
++			 'pkgname' => $pkgname,
++			 'copyright' => $copyright,
++			 'verbatimcopying' => $verbatimcopying,
++			 'seeinfo' => $seeinfo,
++			 'functiontype' => $return_type,
++			 'parameterlist' => \@parameterlist,
++			 'parameters' => \%parameters,
++			 'parametertypes' => \%parametertypes,
++			 'sectionlist' => \@sectionlist,
++			 'sections' => \%sections,
++			 'purpose' => $function_purpose
++			 });
++}
++
+ ######################################################################
+ # main
+ # states
+@@ -797,7 +920,7 @@
+ $doc_end = "\\*/";
+ $doc_com = "\\s*\\*\\s*";
+ $doc_func = $doc_com."(\\w+):?";
+-$doc_sect = $doc_com."([".$doc_special."[:upper:]][\\w ]+):\\s*(.*)";
++$doc_sect = $doc_com."([".$doc_special."[:upper:]][\\w]+):\\s*(.*)";
+ $doc_content = $doc_com."(.*)";
+ 
+ %constants = ();
+@@ -809,6 +932,7 @@
+ $contents = "";
+ $section_default = "Description";	# default section
+ $section = $section_default;
++$enum = 0;
+ 
+ $lineno = 0;
+ foreach $file (@ARGV) {
+@@ -816,18 +940,21 @@
+ 	print STDERR "Error: Cannot open file $file\n";
+ 	next;
+     }
+-    while (<IN>) {
++    while ($line = <IN>) {
+ 	$lineno++;
+ 
+ 	if ($state == 0) {
+-	    if (/$doc_start/o) {
++	    if ($line =~ /$doc_start/o) {
+ 		$state = 1;		# next line is always the function name
++#	    print STDERR "XXX: start of doc comment\n";
+ 	    }
+ 	} elsif ($state == 1) {	# this line is the function name (always)
+-	    if (/$doc_func/o) {
++	    if ($line =~ /$doc_func/o) {
+ 		$function = $1;
+ 		$state = 2;
+-		if (/-\s*(.*)/) {
++#	    print STDERR "XXX: start of doc comment, looking for prototype\n";
++
++		if ($line =~ /-\s*(.*)/) {
+ 		    $function_purpose = $1;
+ 		} else {
+ 		    $function_purpose = "";
+@@ -841,11 +968,11 @@
+ 		$state = 0;
+ 	    }
+ 	} elsif ($state == 2) {	# look for head: lines, and include content
+-	    if (/$doc_sect/o) {
++	    if ($line =~ /$doc_sect/o) {
+ 		$newsection = $1;
+ 		$newcontents = $2;
+ 
+-		if ($contents ne "") {
++		if ($contents ne '') {
+ 		    dump_section($section, $contents);
+ 		    $section = $section_default;
+ 		}
+@@ -855,7 +982,7 @@
+ 		    $contents .= "\n";
+ 		}
+ 		$section = $newsection;
+-	    } elsif (/$doc_end/) {
++	    } elsif ($line =~ /$doc_end/) {
+ 
+ 		if ($contents ne "") {
+ 		    dump_section($section, $contents);
+@@ -863,13 +990,12 @@
+ 		    $contents = "";
+ 		}
+ 
+-#	    print STDERR "end of doc comment, looking for prototype\n";
+ 		$prototype = "";
+ 		$state = 3;
+-	    } elsif (/$doc_content/) {
++	    } elsif ($line =~ /$doc_content/) {
+ 		# miguel-style comment kludge, look for blank lines after
+ 		# @parameter line to signify start of description
+-		if ($1 eq "" && $section =~ m/^@/) {
++		if ($1 eq '' && $section =~ m/^@/) {
+ 		    dump_section($section, $contents);
+ 		    $section = $section_default;
+ 		    $contents = "";
+@@ -881,13 +1007,16 @@
+ 		print STDERR "warning: $lineno: Bad line: $_";
+ 	    }
+ 	} elsif ($state == 3) {	# scanning for function { (end of prototype)
+-	    if (m#\s*/\*\s+MACDOC\s*#io) {
++	    if ($line =~ m#\s*/\*\s+MACDOC\s*#io) {
+ 	      # do nothing
+ 	    }
+-	    elsif (/([^\{]*)/) {
++	    elsif ($enum == 1 && $line =~ /(^\s*\{).*/) {
++		$prototype .= "{";
++	    }
++	    elsif ($line =~ /([^\{]*)/) {
+ 		$prototype .= $1;
+ 	    }
+-	    if (/\{/) {
++	    if ($enum == 0 && $line =~ /\{/) {
+ 		$prototype =~ s@/\*.*?\*/@@gos;	# strip comments.
+ 		$prototype =~ s@[\r\n]+@ @gos; # strip newlines/cr's.
+ 		$prototype =~ s@^ +@@gos; # strip leading spaces
+@@ -901,9 +1030,32 @@
+ 		%sections = ();
+ 		@sectionlist = ();
+ 		$prototype = "";
++		$enum = 0;
+ 
+ 		$state = 0;
+ 	    }
++	    elsif ($enum == 1 && $line =~ /\}/) {
++		$prototype =~ s@/\*.*?\*/@@gos;	# strip comments.
++		$prototype =~ s@[\r\n]+@ @gos; # strip newlines/cr's.
++		$prototype =~ s@^ +@@gos; # strip leading spaces
++		dump_enum($prototype);
++
++		$function = "";
++		%constants = ();
++		%parameters = ();
++		%parametertypes = ();
++		@parameterlist = ();
++		%sections = ();
++		@sectionlist = ();
++		$prototype = "";
++		$enum = 0;
++
++		$state = 0;
++	    }
++	    elsif ($line =~ /([a-zA-Z\s]+)enum(.*)$/) {
++	        $enum = 1;
++	    }
++    
+ 	}
+     }
+ }
