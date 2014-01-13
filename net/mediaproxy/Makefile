@@ -13,7 +13,7 @@ COMMENT=	A far-end NAT traversal solution for SER/OpenSER
 
 USE_RC_SUBR=	mediaproxy proxydispatcher
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 

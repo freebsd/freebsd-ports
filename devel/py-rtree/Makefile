@@ -15,7 +15,7 @@ COMMENT=	R-Tree Spatial Index For Python GIS
 BUILD_DEPENDS+=	${LOCALBASE}/include/spatialindex/SpatialIndex.h:${PORTSDIR}/devel/spatialindex
 RUN_DEPENDS+=	${BUILD_DEPENDS}
 
-USE_PYTHON=		2.5+
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Rtree
 PYDISTUTILS_NOEGGINFO=	yes

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 BUILD_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 
-USE_PYTHON=		2.5+
+USE_PYTHON=		yes
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CPPFLAGS+=		-I${LOCALBASE}/include

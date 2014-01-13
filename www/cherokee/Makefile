@@ -58,7 +58,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MADMIN}
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 PLIST_SUB+=	ADMIN=""
 .else
 CONFIGURE_ARGS+=--disable-admin

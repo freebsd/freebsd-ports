@@ -12,7 +12,7 @@ DISTNAME=	Durus-${PORTVERSION}
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A persistent object storage system for Python
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 PYDISTUTILS_PKGNAME=	Durus

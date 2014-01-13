@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
 
 USE_BZIP2=	yes
-USE_PYTHON_RUN=	-2.7
+USE_PYTHON_RUN=	2
 GNU_CONFIGURE=	yes
 
 post-patch:

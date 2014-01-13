@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}five.localsitemanager>=0:${PORTSDIR}/devel/p
 		${PYTHON_PKGNAMEPREFIX}zope.app.publication>0:${PORTSDIR}/devel/py-zope.app.publication
 
 DIST_SUBDIR=	zope
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=easy_install
 #USES=		zope # cyclic dependency
 

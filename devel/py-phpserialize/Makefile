@@ -15,7 +15,7 @@ COMMENT=	A python implementation of PHP\'s native serialize() and unserialize()
 
 WRKSRC=		${WRKDIR}/v${PORTVERSION}
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PHPSerialize
 

@@ -13,7 +13,7 @@ COMMENT=	Plots data on map projections (with continental and political boundarie
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/matplotlib/:${PORTSDIR}/math/py-matplotlib
 
-USE_PYTHON=	2.2+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 DATADIR=	${PREFIX}/share/py-${PORTNAME}-data

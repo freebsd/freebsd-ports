@@ -69,7 +69,7 @@ PLIST_SUB+=	LOCAL="@comment "
 
 .if ${PORT_OPTIONS:MPYTHON}
 PLIST_SUB+=	PYTHON=""
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 # we need to manually include this, because USE_PYTHON is defined
 # after including bsd.port.pre.mk
 .include "${PORTSDIR}/Mk/bsd.python.mk"

@@ -44,7 +44,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
 LICENSE=	GPLv2
 
 USES=		bison
-USE_PYTHON=	2.6-2.7	# >2.5 and <3.0
+USE_PYTHON=	2	# >2.5 and <3.0
 USE_TK=		yes
 HAS_CONFIGURE=	yes
 REINPLACE_ARGS=	-i ""

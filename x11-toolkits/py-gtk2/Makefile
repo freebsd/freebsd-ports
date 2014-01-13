@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cair
 USE_BZIP2=	yes
 USES=		pathfix gettext gmake pkgconfig
 USE_GNOME=	libglade2 pygobject
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PYTHON="${PYTHON_VERSION}"
 CPPFLAGS+=	-I${LOCALBASE}/include

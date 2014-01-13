@@ -24,7 +24,7 @@ MAJOR_VERSION=	2.0
 MINOR_VERSION=	6
 
 USES=		desktop-file-utils gmake iconv pkgconfig perl5
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_QT4=	corelib gui moc_build uic_build rcc_build
 USE_XZ=		yes
 GNU_CONFIGURE=	yes

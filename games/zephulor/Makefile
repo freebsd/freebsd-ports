@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYGAME} \
 
 WRKSRC=		${WRKDIR}/zephulor-source
 
-USE_PYTHON=	2.7
+USE_PYTHON=	2
 NO_BUILD=	yes
 
 PORTDOCS=	*

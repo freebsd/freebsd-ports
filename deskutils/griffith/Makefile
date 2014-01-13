@@ -25,7 +25,7 @@ PYGNOMEEXTRAS_DESC=	Enable python-gnome-extras support
 
 USE_XZ=		yes
 USE_GNOME=	pygtk2
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USES=		gettext
 USE_GMAKE=	yes
 NO_BUILD=	yes

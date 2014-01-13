@@ -11,7 +11,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Job queue server
 
 USE_ZIP=	yes
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 NO_STAGE=	yes

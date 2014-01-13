@@ -12,7 +12,7 @@ COMMENT=	gpodder.net API client library for Python
 
 LICENSE=	GPLv3
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 
 NO_STAGE=	yes

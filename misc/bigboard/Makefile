@@ -28,7 +28,7 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/desktop-data-engine:${PORTSDIR}/net/desktop-da
 USES=		gmake pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_GNOME=	pygtk2 gtk20 gnomevfs2 gnomedesktop gnomepanel gconf2 pygnome2 gnomehack
 GCONF_SCHEMAS=	bigboard.schemas
 

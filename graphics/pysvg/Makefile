@@ -13,7 +13,7 @@ COMMENT=	pySVG - creating svg with python
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_ZIP=	yes
 
 .include <bsd.port.mk>

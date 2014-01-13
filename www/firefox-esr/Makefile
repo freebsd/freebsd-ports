@@ -22,7 +22,7 @@ BUILD_DEPENDS=	nspr>=4.10.2:${PORTSDIR}/devel/nspr \
 LIB_DEPENDS=	libv4l2.so:${PORTSDIR}/multimedia/libv4l
 
 USE_AUTOTOOLS=	autoconf213:env
-USE_PYTHON_BUILD=-2.7
+USE_PYTHON_BUILD=2
 OBJDIR_BUILD=	# in-tree build broken after bug 789837
 USE_GECKO=	gecko
 CONFLICTS=	firefox-2[0-35-9].* firefox-1[1-689].*

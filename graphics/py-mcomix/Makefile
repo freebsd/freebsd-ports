@@ -15,7 +15,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=		yes
 USE_GNOME=		pygtk2
-USE_PYTHON=		2.6+
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 
 NO_STAGE=	yes

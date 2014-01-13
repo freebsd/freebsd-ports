@@ -24,7 +24,7 @@ LIB_DEPENDS=	glib:${PORTSDIR}/devel/glib20 \
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		pkgconfig
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 NO_STAGE=	yes

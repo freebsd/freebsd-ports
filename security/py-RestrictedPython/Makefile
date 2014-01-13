@@ -13,7 +13,7 @@ COMMENT=	Restricted execution environment for Python
 
 LICENSE=	ZPL21
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 

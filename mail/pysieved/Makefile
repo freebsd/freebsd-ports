@@ -12,7 +12,7 @@ MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Python Managesieve Server
 
 USE_BZIP2=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_RC_SUBR=	${PORTNAME}
 
 PORTEXAMPLES=	pysieved.xinetd

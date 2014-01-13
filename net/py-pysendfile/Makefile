@@ -12,7 +12,7 @@ COMMENT=	A Python interface to sendfile(2)
 
 CONFLICTS_INSTALL=	py*-sendfile-[0-9]*
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 

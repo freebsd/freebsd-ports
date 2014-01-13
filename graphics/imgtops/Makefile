@@ -13,7 +13,7 @@ COMMENT=	Create efficient Encapsulated Postscript files from images
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 
 USE_GHOSTSCRIPT_RUN=	yes
-USE_PYTHON=		2.2+
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
 MAN1=		imgtops.1 epstoimg.1

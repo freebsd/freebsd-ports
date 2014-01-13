@@ -12,7 +12,7 @@ COMMENT=	Python ORM-like layer on top of pymongo
 
 RUN_DEPENDS=	pymongo>=2.0.1:${PORTSDIR}/databases/pymongo
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 
 NO_STAGE=	yes

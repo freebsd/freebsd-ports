@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/BeautifulSoup.py:${PORTSDIR}/www/py-beautifuls
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USE_GNOME=	desktopfileutils
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 NO_WRKSUBDIR=	yes
 USES=	desktop-file-utils

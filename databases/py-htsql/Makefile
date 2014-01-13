@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Database Query Language (Core & SQLite Backend)
 
-USE_PYTHON=		2.6-2.7
+USE_PYTHON=		2
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	${PORTNAME:U}
 

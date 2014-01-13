@@ -32,7 +32,7 @@ USE_LDCONFIG=	yes
 USE_GL=		yes
 USE_LUA=	5.1
 LUA_COMPS=	toluaxx
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USES=		pathfix pkgconfig
 PLIST_SUB+=	WITH_OGRE=""
 

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 USES=		cmake openal:al,alut
 USE_SDL=	sdl mixer ttf
 USE_LDCONFIG=	yes
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 CFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include
 CMAKE_C_FLAGS=	${CFLAGS}
 CMAKE_ARGS=	-DDOC_DIR="${DOCSDIR}" -DMAN_DIR="${MAN6PREFIX}/man/man6/" -DDISABLE_WERROR=1 -DINSOURCEBUILD=1

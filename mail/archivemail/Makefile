@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Archive or delete mail older than N days
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 NO_BUILD=	yes
 
 MAN1=		archivemail.1

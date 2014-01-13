@@ -13,7 +13,7 @@ COMMENT=	Collection of tools for internationalizing Python applications
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>0:${PORTSDIR}/devel/py-pytz
 
-USE_PYTHON=		2.7+
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_AUTOPLIST=	yes
 

@@ -98,7 +98,7 @@ CONFIGURE_ARGS+=	--without-ldap
 
 .if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=	--with-python --with-pythondir=${PYTHON_SITELIBDIR}
-USE_PYTHON=		2.5+
+USE_PYTHON=		yes
 PLIST_SUB+=		PYTHON=""
 .else
 CONFIGURE_ARGS+=	--without-python

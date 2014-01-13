@@ -25,7 +25,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pycairo.pc:${PORTSDIR}/graphics/py-c
 USE_XZ=		yes
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	glib20 introspection
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

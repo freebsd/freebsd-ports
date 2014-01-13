@@ -12,7 +12,7 @@ MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	GTK+ UI debugging tool
 
 USES=		pkgconfig
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_GNOME=	gtk20 pygtk2
 WRKSRC=		${WRKDIR}/chipx86-gtkparasite-a3d862d4a91ea27222e4273a6797f3e47efe6e83
 GNU_CONFIGURE=	yes

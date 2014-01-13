@@ -15,7 +15,7 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Babel>=0.9:${PORTSDIR}/devel/py-babel
 RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
 
 BROKEN=		Try to access network during install phase
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_ZIP=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	AnnouncerPlugin

@@ -14,7 +14,7 @@ COMMENT=	Plugin for adding navigation items into Trac navigation bars
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	NavAdd
 WRKSRC=			${WRKDIR}/${PORTNAME}plugin

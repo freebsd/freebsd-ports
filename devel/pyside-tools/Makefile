@@ -34,7 +34,7 @@ REINPLACE_ARGS=	-i.bak -e 's+/usr/bin/env python+&${PYTHON_VER}+' \
 
 USE_BZIP2=	yes
 USES=		cmake
-USE_PYTHON=	2.5-2.7
+USE_PYTHON=	2
 
 NO_STAGE=	yes
 post-patch:

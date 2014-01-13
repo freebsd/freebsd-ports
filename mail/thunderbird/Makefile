@@ -25,7 +25,7 @@ L_VERSION=	2.6.4
 
 SSP_UNSAFE=	yes
 USE_AUTOTOOLS=	autoconf213:env
-USE_PYTHON_BUILD=-2.7
+USE_PYTHON_BUILD=2
 OBJDIR_BUILD=	# in-tree build broken after bug 789837
 USE_GECKO=	gecko
 USE_MOZILLA=	# empty

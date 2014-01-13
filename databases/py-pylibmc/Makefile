@@ -15,7 +15,7 @@ LICENSE=	BSD
 LIB_DEPENDS=	libmemcached.so:${PORTSDIR}/databases/libmemcached
 
 MAKE_ENV+=	LIBMEMCACHED="${LOCALBASE}"
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>

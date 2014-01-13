@@ -17,7 +17,7 @@ EVO_DESC=	Evolution support
 THUNDER_DESC=	Thunderbird/Sunbird support
 
 USE_XZ=		yes
-USE_PYTHON_RUN=	-2.7
+USE_PYTHON_RUN=	2
 USE_GNOME=	pygtk2 desktopfileutils
 
 NO_STAGE=	yes

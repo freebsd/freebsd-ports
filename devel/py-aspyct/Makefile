@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME:C/a/A/}-${PORTVERSION}_beta_4
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Python library including an aspect-oriented programming (AOP) engine
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_EGGINFO=	${DISTNAME}-py${PYTHON_VER}.egg-info
 

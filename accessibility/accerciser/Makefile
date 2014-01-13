@@ -14,7 +14,7 @@ COMMENT=	Interactive Python accessibility explorer for GNOME
 
 USE_BZIP2=	yes
 USE_GNOME=	pygnomedesktop atspi intlhack
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USES=		display:configure gettext gmake pkgconfig
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes

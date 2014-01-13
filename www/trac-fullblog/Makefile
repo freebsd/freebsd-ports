@@ -16,7 +16,7 @@ COMMENT=	Plugin that provides a project Blog
 RUN_DEPENDS+=	htmldoc:${PORTSDIR}/textproc/htmldoc \
 		tracd:${PORTSDIR}/www/trac
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 NO_STAGE=	yes
 PYDISTUTILS_PKGNAME=	TracFullBlogPlugin

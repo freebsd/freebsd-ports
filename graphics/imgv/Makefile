@@ -14,7 +14,7 @@ COMMENT=	A unique and feature rich Image Viewer
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game \
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
-USE_PYTHON=	2.2+
+USE_PYTHON=	yes
 NO_BUILD=	yes
 
 NO_STAGE=	yes

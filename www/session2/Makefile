@@ -12,7 +12,7 @@ DISTNAME=	session2-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A quixote session manager with persistence support
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGVERSION=	0.6
 

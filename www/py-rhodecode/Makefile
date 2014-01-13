@@ -38,7 +38,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylons>=1.0:${PORTSDIR}/www/py-pylons \
 		${PYTHON_PKGNAMEPREFIX}celery>=0:${PORTSDIR}/devel/py-celery \
 		mercurial>=2.6:${PORTSDIR}/devel/mercurial
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 

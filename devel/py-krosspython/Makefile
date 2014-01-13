@@ -13,7 +13,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Kross Python scripting library
 
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_QT4=	corelib gui qmake_build moc_build uic_build rcc_build
 USE_XZ=		yes
 USES=		cmake:outsource

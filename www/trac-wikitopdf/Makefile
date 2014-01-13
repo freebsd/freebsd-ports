@@ -15,7 +15,7 @@ COMMENT=	Plugin to generate PDF documents from the Wiki
 RUN_DEPENDS+=	htmldoc:${PORTSDIR}/textproc/htmldoc \
 		tracd:${PORTSDIR}/www/trac
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracWikiToPdfPlugin
 PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

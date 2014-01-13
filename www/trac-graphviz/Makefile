@@ -16,7 +16,7 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urw
 		dot:${PORTSDIR}/graphics/graphviz \
 		tracd:${PORTSDIR}/www/trac
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	graphviz
 WRKSRC=			${WRKDIR}/${PORTNAME}plugin

@@ -17,7 +17,7 @@ EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 USES=			pkgconfig
 NO_STAGE=	yes
-USE_PYTHON=		2.5+
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	${PORTNAME}-python
 

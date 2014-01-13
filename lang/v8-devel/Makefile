@@ -20,7 +20,7 @@ USES=		gmake shebangfix
 SHEBANG_LANG=	sh
 SHEBANG_FILES=	${WRKSRC}/build/gyp/gyp
 USE_XZ=		yes
-USE_PYTHON=	2.6-2.7
+USE_PYTHON=	2
 USE_LDCONFIG=	yes
 ALL_TARGET=	native
 MAKE_ARGS=	library=shared use_system_icu=on

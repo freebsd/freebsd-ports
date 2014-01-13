@@ -14,7 +14,7 @@ COMMENT=	A Python module that provides access to XMLTV TV listings
 
 LICENSE=	LGPL21
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	python-xmltv
 

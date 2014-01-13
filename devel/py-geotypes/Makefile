@@ -12,7 +12,7 @@ DISTNAME=	GeoTypes-${PORTVERSION}
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Python Interface to Support PostGIS
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYTHON_PKGNAMEPREFIX=	yes
 PYDISTUTILS_EGGINFO=	GeoTypes-0.7.0-py${PYTHON_VER}.egg-info

@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}gui>=${PYQT4_VERSION}:${PORTSDIR}/x11-toolkits/py-q
 
 DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 HAS_CONFIGURE=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_QT4=	qmake_build gui moc_build network webkit
 
 OPTIONS_DEFINE=	API

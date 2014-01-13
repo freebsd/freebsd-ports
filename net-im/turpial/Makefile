@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify>=0.1.1:${PORTSDIR}/devel/py-notify \
 		${PYTHON_PKGNAMEPREFIX}setproctitle>=1.1.7:${PORTSDIR}/devel/py-setproctitle \
 		${PYTHON_PKGNAMEPREFIX}xdg>=0.19:${PORTSDIR}/devel/py-xdg
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_GNOME=	pygobject pygtk2
 USE_GSTREAMER=	python
 

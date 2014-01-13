@@ -12,7 +12,7 @@ COMMENT=	Band-oriented PDF report generation from database query
 
 LICENSE=	BSD
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/PollyReports.py \

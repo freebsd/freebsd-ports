@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}imaging>=1.1.5:${PORTSDIR}/graphics/py-imaging \
 
 UNIQUENAME=	py-${PORTNAME}
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 
 MAN1=	${PORTNAME}.1

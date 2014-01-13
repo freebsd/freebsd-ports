@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 USE_XZ=		yes
 USE_GNOME=	pygnome2
 USES=		desktop-file-utils gmake shared-mime-info
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 MAKE_ARGS=	prefix=${PREFIX}
 INSTALLS_ICONS=	yes
 INSTALLS_OMF=	yes

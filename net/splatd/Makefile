@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/zconfig:${PORTSDIR}/devel/py-zconfig \
 		${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	splat
 USE_RC_SUBR=	splatd

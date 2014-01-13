@@ -13,7 +13,7 @@ COMMENT=	Clipboard manager for the GNOME panel
 USE_BZIP2=	yes
 USES=		gettext gmake iconv pathfix pkgconfig
 USE_GNOME=	gnomeprefix intltool pygnomedesktop pygnomeextras
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec

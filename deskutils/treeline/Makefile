@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-g
 
 WRKSRC=		${WRKDIR}/TreeLine
 USE_QT4=	# empty
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 NO_BUILD=	yes
 
 DESKTOP_ENTRIES=	"TreeLine" "Structured information storage program" \

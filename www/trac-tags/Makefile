@@ -16,7 +16,7 @@ COMMENT=	Generic tags frontend for trac
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 USE_BZIP2=	yes
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracTags
 PYDISTUTILS_PKGVERSION=	${PORTVERSION:C/\.r.*/dev/}

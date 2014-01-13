@@ -22,7 +22,7 @@ POSIXGROUP_PATCH_DESC=	Use posixGroup for group membership
 OPTIONS_DEFAULT=	POSIXGROUP_PATCH
 
 DIST_SUBDIR=	zope
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=easy_install
 #USES=		zope
 

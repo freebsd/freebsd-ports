@@ -13,7 +13,7 @@ BUILD_DEPENDS=	xmllint:${PORTSDIR}/textproc/libxml2
 
 USE_BZIP2=	yes
 USES=		pathfix
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 
 DATADIR=	${PREFIX}/share/xcb

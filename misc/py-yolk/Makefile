@@ -29,7 +29,7 @@ MAN1=	${PORTNAME}.1
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 .endif
 
-USE_PYTHON=	2.6-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 
 post-install:

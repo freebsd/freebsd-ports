@@ -13,7 +13,7 @@ COMMENT=	WSGI application for a simple XMLRPC method dispatching
 
 LICENSE=	APACHE20
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 

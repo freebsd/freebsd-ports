@@ -16,7 +16,7 @@ RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 		trac-macropost>0:${PORTSDIR}/www/trac-macropost
 
 WRKSRC=		${WRKDIR}/${PORTNAME}macro
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracAddCommentMacro
 PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

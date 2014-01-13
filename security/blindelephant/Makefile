@@ -15,7 +15,7 @@ COMMENT=	Fingerprint the web applications used by a web site
 
 LICENSE=	LGPL3
 USE_BZIP2=	YES
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	YES
 
 SUB_FILES=	${PORTNAME}.sh

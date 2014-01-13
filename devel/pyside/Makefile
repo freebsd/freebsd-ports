@@ -34,7 +34,7 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 USE_BZIP2=	yes
 USES=		cmake
 USE_LDCONFIG=	yes
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

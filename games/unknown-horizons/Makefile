@@ -23,7 +23,7 @@ ONLY_FOR_ARCHS=		i386 amd64
 USE_XZ=			yes
 USE_GNOME=		intltool
 USES=			gettext:build
-USE_PYTHON=		-2.7
+USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	UnknownHorizons
 

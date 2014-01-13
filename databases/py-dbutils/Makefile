@@ -13,7 +13,7 @@ DISTNAME=	DBUtils-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Providing solid, persistent, and pooled connections to a database
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=easy_install
 PYDISTUTILS_PKGNAME=	DBUtils
 

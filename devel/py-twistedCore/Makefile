@@ -23,7 +23,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 #   separately if desired.
 
 USE_BZIP2=	yes
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	${PORTNAME:S/twisted/Twisted_/}
 REINPLACE_ARGS=	-i ''

@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 WANT_PGSQL_VER=	84
 
 NO_STAGE=	yes

@@ -10,7 +10,7 @@ MASTER_SITES=	SF/monast/MonAst%20for%20Asterisk%201.4_1.6/1.4
 MAINTAINER=	marcelorossi@gmail.com
 COMMENT=	A monitoring and an operator panel interface for AsteriskTM
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_RC_SUBR=	monast
 
 NO_BUILD=	YES

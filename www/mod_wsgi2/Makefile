@@ -19,7 +19,7 @@ CONFLICTS=	${PKGNAMEPREFIX}mod_wsgi-3.* ${PKGNAMEPREFIX}mod_wsgi3.* mod_wsgi-3.*
 PROJECTHOST=	modwsgi
 
 USE_APACHE=	22
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-apxs="${APXS}" --with-python="${PYTHON_CMD}"

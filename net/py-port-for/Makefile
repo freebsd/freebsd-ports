@@ -13,7 +13,7 @@ COMMENT=	Python utility and library that helps with TCP ports management
 LICENSE=	MIT
 
 # Python3 Ready
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 NO_STAGE=	yes

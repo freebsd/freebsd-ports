@@ -14,7 +14,7 @@ COMMENT=	Python bindings for the Qt4 toolkit, documentation
 
 DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 NO_BUILD=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-qt4
 PORTDOCS=	*

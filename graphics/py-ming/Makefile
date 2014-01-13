@@ -18,7 +18,7 @@ INSTALL_WRKSRC=	${WRKSRC}/py_ext
 PATCH_WRKSRC=	${WRKSRC}/py_ext
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 
 MASTERDIR=	${.CURDIR}/../../graphics/ming

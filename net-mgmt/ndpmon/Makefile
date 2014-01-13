@@ -25,7 +25,7 @@ NO_STAGE=	yes
 
 .if ${PORT_OPTIONS:MPY4SUITE}
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Ft/Xml/Domlette.py:${PORTSDIR}/textproc/py-4suite-xml
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 PLIST_SUB+=	PY=""
 .else
 PLIST_SUB+=	PY="@comment "

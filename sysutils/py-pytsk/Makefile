@@ -22,7 +22,7 @@ USES=		shebangfix
 SHEBANG_FILES=	samples/*.py
 python_OLD_CMD=	.*
 python_CMD=	${PYTHON_CMD}
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=yes
 

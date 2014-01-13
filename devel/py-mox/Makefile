@@ -11,7 +11,7 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Mock object framework for Python
 
 PROJECTHOST=	pymox
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 NO_STAGE=	yes

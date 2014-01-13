@@ -13,7 +13,7 @@ COMMENT=	A framework for developing web applications in Python
 
 RUN_DEPENDS+=	qpcheck.py:${PORTSDIR}/www/py-qpy
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Quixote
 

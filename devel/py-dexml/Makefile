@@ -12,7 +12,7 @@ COMMENT=	A dead-simple Object-XML mapper for Python
 
 LICENSE=	MIT
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 NO_STAGE=	yes

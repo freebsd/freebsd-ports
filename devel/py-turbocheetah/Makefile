@@ -15,7 +15,7 @@ COMMENT=	TurboGears plugin to support use of Cheetah templates
 
 RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
 NO_STAGE=	yes

@@ -15,7 +15,7 @@ COMMENT=	Lightweight aspect oriented programming library for Python
 LICENSE=	LGPL21
 
 USES=	gmake
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	python-${PORTNAME}
 

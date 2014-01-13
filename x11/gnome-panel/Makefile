@@ -23,7 +23,7 @@ LIB_DEPENDS=	gweather:${PORTSDIR}/net/libgweather \
 CONFLICTS=	gnome-panel-3.[0-9]*
 
 USE_XORG=	ice sm x11 xau xrandr
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

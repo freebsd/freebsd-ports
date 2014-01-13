@@ -15,7 +15,7 @@ COMMENT=	A python implementation of a JSON (http//:json.org) reader/writer
 
 NO_WRKSUBDIR=	yes
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_ZIP=	yes
 
 NO_STAGE=	yes

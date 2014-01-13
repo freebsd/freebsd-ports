@@ -18,7 +18,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/subvertpy/__init__.py:${PORTSDIR}/devel/py-su
 		bzr:${PORTSDIR}/devel/bzr
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	bzr_svn
 

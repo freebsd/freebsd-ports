@@ -49,7 +49,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant
 PLIST_SUB+=	WITH_PYTHON=""
 .else

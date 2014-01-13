@@ -21,7 +21,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/xdg/__init__.py:${PORTSDIR}/devel/py-xdg \
 		${LOCALBASE}/libdata/pkgconfig/notify-python.pc:${PORTSDIR}/devel/py-notify \
 		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 NO_STAGE=	yes
 USE_GNOME=	pygtk2
 USE_PYDISTUTILS=	easy_install

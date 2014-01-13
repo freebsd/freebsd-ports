@@ -14,7 +14,7 @@ DISTNAME=	CherryPy-${PORTVERSION:C/\.b$/beta/}
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	A pythonic, object-oriented web development framework
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	CherryPy
 

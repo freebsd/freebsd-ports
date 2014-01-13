@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goo
 		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
 		xdg-open:${PORTSDIR}/devel/xdg-utils
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig
 INSTALLS_OMF=	yes
