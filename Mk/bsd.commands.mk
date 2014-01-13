@@ -101,11 +101,8 @@ XMKMF?=		${LOCALBASE}/bin/xmkmf
 YACC?=		/usr/bin/yacc
 
 XZ?=	-Mmax
-.if exists(/usr/bin/xz)
+XZCAT=	/usr/bin/xzcat ${XZ}
 XZ_CMD?=	/usr/bin/xz ${XZ}
-.else
-XZ_CMD?=	${LOCALBASE}/bin/xz ${XZ}
-.endif
 
 MD5?=		/sbin/md5
 SHA256?=	/sbin/sha256
