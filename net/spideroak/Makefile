@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spideroak
-PORTVERSION=	5.0.3
+PORTVERSION=	5.1.1
 #PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	https://spideroak.com/getbuild?platform=slackware&arch=i386&dummy=/
@@ -41,11 +41,6 @@ USES=	desktop-file-utils
 post-patch:
 	${REINPLACE_CMD} ${WRKDIR}/usr/share/applications/SpiderOak.desktop \
 		${WRKDIR}/usr/bin/SpiderOak
-
-# waiting to find a proper value for ${MTREE_LINUX_ARGS}...
-stage-dir:
-	@${MKDIR} ${STAGEDIR}${PREFIX}
-	@${MTREE_CMD} ${MTREE_ARGS} ${STAGEDIR}${PREFIX} > /dev/null
 
 do-install:
 	@(cd ${WRKDIR}/etc && \

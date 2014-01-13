@@ -1,16 +1,8 @@
---- ./usr/share/applications/SpiderOak.desktop.orig	2013-01-20 00:39:05.000000000 +0100
-+++ ./usr/share/applications/SpiderOak.desktop	2013-01-20 00:39:22.000000000 +0100
-@@ -1,11 +1,10 @@
- [Desktop Entry]
- Version=1.0
--Encoding=UTF-8
- Name=SpiderOak Backup
- Type=Application
- Comment=SpiderOak Secure Backup and File Sharing Client
+--- ./usr/share/applications/SpiderOak.desktop.orig	2014-01-12 18:47:14.000000000 +0100
++++ ./usr/share/applications/SpiderOak.desktop	2014-01-12 18:49:53.000000000 +0100
+@@ -8,4 +8,4 @@
+ Icon=SpiderOak
+ Exec=SpiderOak
  Terminal=false
- Categories=Network;Archiving;Utility;
--Icon=/usr/share/pixmaps/SpiderOak.png
--Exec="/usr/bin/SpiderOak"
-+Icon=%%PREFIX%%/share/pixmaps/SpiderOak.png
-+Exec="%%PREFIX%%/bin/SpiderOak"
- Comment[en_US]=SpiderOak Secure Backup and File Sharing Client
+-Categories=Network;Archiving;Utility;
++Categories=Archiving;Utility;
