@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	kyua
 
-MAINTAINER=	asomers@FreeBSD.org
+MAINTAINER=	jmmv@FreeBSD.org
 COMMENT=	Kyua (automated testing framework) - Testers
 
 LICENSE=	BSD
