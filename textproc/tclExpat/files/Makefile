@@ -4,7 +4,7 @@
 SRCS=	tclexpat.c
 
 SHLIB_NAME=	libtclexpat.so.1
-LIBDIR=	${LOCALBASE}/lib
+LIBDIR=	${PREFIX}/lib
 
 TCL_VERSION?=	8.4
 TCL_DVER?=	${TCL_VERSION:S/.//}
