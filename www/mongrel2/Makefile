@@ -10,10 +10,12 @@ MASTER_SITES=	http://mongrel2.org/static/downloads/
 MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Is an application, language, and network arch
 
-LIB_DEPENDS=	zmq.1:${PORTSDIR}/net/libzmq2 \
-		sqlite3.8:${PORTSDIR}/databases/sqlite3
+LICENSE=	BSD3CLAUSE
 
-USE_GMAKE=	yes
+LIB_DEPENDS=	libzmq.so:${PORTSDIR}/net/libzmq2 \
+		libsqlite3.so:${PORTSDIR}/databases/sqlite3
+
+USES=	gmake
 USE_BZIP2=	yes
 MAKE_FLAGS=	freebsd
 EXAMPLES_LIST=	bbs \
@@ -29,7 +31,6 @@ EXAMPLES_LIST=	bbs \
 
 OPTIONS_DEFINE=		EXAMPLES
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}
@@ -42,10 +43,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/Makefile
 
 post-install:
-.if defined(WITH_EXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
 .for examples in ${EXAMPLES_LIST}
-	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} ${examples} ${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} ${examples} ${STAGEDIR}/${EXAMPLESDIR}
 .endfor
 .endif
 
