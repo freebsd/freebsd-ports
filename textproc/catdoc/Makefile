@@ -33,7 +33,7 @@ CFLAGS+=	-DLATIN1=1
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWORDVIEW}
-USE_TK=			84+
+USES+=			tk
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 CONFIGURE_ARGS+=	--with-wish=${WISH}
 .else
