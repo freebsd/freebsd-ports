@@ -13,7 +13,7 @@ COMMENT=	C++ bindings for libsexy
 LICENSE=	LGPL21
 
 LIB_DEPENDS=	libsexy.so:${PORTSDIR}/x11-toolkits/libsexy \
-		libgtkmm-2.4.s:${PORTSDIR}/x11-toolkits/gtkmm24
+		libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24
 
 USES=		gmake pathfix pkgconfig
 USE_AUTOTOOLS=	libtool
