@@ -16,13 +16,15 @@ USES=		qmake
 USE_QT4=	moc_build rcc_build uic_build gui network
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/qt-solutions-qt-solutions/qtsingleapplication
+WRKSRC=		${WRKDIR}/qt-solutions-qt-solutions/${SUB_PROJECT_NAME}
 BUILD_WRKSRC=	${WRKSRC}/buildlib
 CONFIGURE_WRKSRC=	${BUILD_WRKSRC}
 
 PLIST_FILES=	${LIBRARY_HEADERS:S,^,include/,} \
 		lib/${LIBRARY_NAME} \
 		lib/${LIBRARY_NAME}.1
+
+SUB_PROJECT_NAME=qtsingleapplication
 
 LIBRARY_NAME=	libQtSolutions_SingleApplication-head.so
 LIBRARY_HEADERS=	qtsingleapplication.h qtsinglecoreapplication.h
