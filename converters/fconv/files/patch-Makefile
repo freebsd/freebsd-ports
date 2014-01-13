@@ -1,0 +1,11 @@
+--- Makefile.orig	2000-12-07 23:29:34.000000000 +0000
++++ Makefile
+@@ -40,7 +40,7 @@ man:
+ 
+ install: links
+ .for TMPINS in ${LINKS}
+-	install -c -o root -g wheel -m 0755 ${TMPINS} ${INSTALLDIR}
++	${BSD_INSTALL_PROGRAM} ${TMPINS} ${INSTALLDIR}
+ .endfor
+ 
+ links:
