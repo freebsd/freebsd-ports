@@ -115,7 +115,7 @@ IGNORE?=		cannot install: does not work with postgresql${PGSQL_VER}-client (Post
 .	endfor
 .    endif # IGNORE_WITH_PGSQL
 
-LIB_DEPENDS+=	pq.${PGSQL${PGSQL_VER_NODOT}_LIBVER}:${PORTSDIR}/databases/postgresql${PGSQL_VERS_NODOT}-client
+LIB_DEPENDS+=	libpq.so.${PGSQL${PGSQL_VER_NODOT}_LIBVER}:${PORTSDIR}/databases/postgresql${PGSQL_VERS_NODOT}-client
 
 _USE_PGSQL_DEP=		contrib docs pgtcl pltcl plperl server
 _USE_PGSQL_DEP_contrib=	pgbench
