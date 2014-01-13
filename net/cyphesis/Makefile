@@ -25,7 +25,7 @@ USE_BZIP2=	yes
 USES=		gmake pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_PGSQL=	yes
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_GCC=	4.7+
 
 CFLAGS+=	-I${LOCALBASE}/include

@@ -26,7 +26,7 @@ RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		${PYTHON_PKGNAMEPREFIX}send2trash>0:${PORTSDIR}/deskutils/py-send2trash
 
 USES=		desktop-file-utils shared-mime-info
-USE_PYTHON=	2.7
+USE_PYTHON=	2
 USE_QT4=	network_run webkit_run
 
 OPTIONS_DEFINE=	NLS

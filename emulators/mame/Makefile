@@ -41,7 +41,7 @@ DOS2UNIX_FILES=	src/osd/sdl/input.c \
 		src/osd/sdl/testkeys.c
 USE_XORG=	xext xi xinerama xrender
 USE_GL=		gl
-USE_PYTHON_BUILD=-2.7
+USE_PYTHON_BUILD=2
 MAKE_ENV=	NOWERROR=1 USE_NETWORK=1 \
 		OPT_FLAGS="${CXXFLAGS}" GCC_LDFLAGS="${LDFLAGS}" \
 		TARGET="${PORTNAME}" FULLNAME="${PORTNAME}"

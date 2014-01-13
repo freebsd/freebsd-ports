@@ -33,7 +33,7 @@ CONFIGURE_ENV=	ac_cv_path_ARTSC_CONFIG=no ac_cv_path_LIBART_CONFIG=no
 
 USE_GNOME=	gnomehack libxml2
 USE_GMAKE=	yes
-USE_PYTHON=	2.0+
+USE_PYTHON=	yes
 USE_AUTOTOOLS=	libtool automake
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes

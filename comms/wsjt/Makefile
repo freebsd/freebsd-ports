@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--enable-gfortran --prefix=${LOCALBASE} \
 		--with-portaudio-lib-dir=${LOCALBASE}/lib/portaudio2
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_AUTOTOOLS=	libtool
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//} \
 		VERSION=${VERSION}

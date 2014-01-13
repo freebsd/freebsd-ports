@@ -13,7 +13,7 @@ COMMENT=	ICalendar library
 
 RUN_DEPENDS=	py*-dateutil>=1.1:${PORTSDIR}/devel/py-dateutil
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 
 NO_STAGE=	yes

@@ -23,7 +23,7 @@ GH_PROJECT=	schwarzweiss
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	d95263f
 
-USE_PYTHON=	2.7
+USE_PYTHON=	2
 
 PORTDOCS=	readme.txt
 

@@ -12,7 +12,7 @@ COMMENT=	Graphical designer for relational databases
 
 EXTRACT_AFTER_ARGS=	--exclude CVS
 
-USE_PYTHON=	2.2+
+USE_PYTHON=	yes
 USE_WX=		2.4
 WX_COMPS=	python
 REINPLACE_ARGS=	-i ""

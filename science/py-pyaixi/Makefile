@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	auto-accept dist-mirror pkg-mirror pkg-sell dist-sell
 
 USES=	dos2unix
-USE_PYTHON=		2.7
+USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 

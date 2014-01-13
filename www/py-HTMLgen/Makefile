@@ -14,7 +14,7 @@ DISTNAME=	HTMLgen
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	A Python library for the generation of HTML documents
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 NO_BUILD=	yes
 NO_STAGE=	yes
 

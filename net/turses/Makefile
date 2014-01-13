@@ -26,7 +26,7 @@ OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-USE_PYTHON=		-2.7
+USE_PYTHON=		2
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_AUTOPLIST=	yes
 

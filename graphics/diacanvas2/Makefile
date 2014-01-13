@@ -13,7 +13,7 @@ COMMENT=	General drawing canvas from dia dialog editor
 
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	pygnome2
-USE_PYTHON=	2.2+
+USE_PYTHON=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib

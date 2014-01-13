@@ -41,7 +41,7 @@ PORTDOCS=	ANTLRException.gif closure.gif cpp-runtime.html \
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	2.2+
+USE_PYTHON=	yes
 PORTDOCS+=	python-runtime.html
 ANTLR_PYTHON=	${WRKSRC}/lib/python
 PLIST_SUB+=	WITH_PYTHON=""

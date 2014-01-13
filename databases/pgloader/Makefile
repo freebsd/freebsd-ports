@@ -13,7 +13,7 @@ COMMENT=	Import CSV data and Large Object to PostgreSQL
 MAN1=		pgloader.1
 
 NO_BUILD=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:${PORTSDIR}/databases/py-psycopg2
 

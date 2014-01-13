@@ -31,7 +31,7 @@ PLIST_FILES=	lib/${PYTHON_VERSION}/site-packages/belier/corps.pyo \
 		share/locale/fr/LC_MESSAGES/bel.mo
 PLIST_DIRS=	lib/${PYTHON_VERSION}/site-packages/belier
 
-USE_PYTHON=		2.6+
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
 NO_STAGE=	yes

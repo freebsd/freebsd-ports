@@ -51,7 +51,7 @@ USE_XZ=		yes
 USES=		bison compiler:c++11-lang desktop-file-utils pkgconfig \
 		perl5 shebangfix
 USE_PERL5=	build
-USE_PYTHON_BUILD=	2.6-2.7
+USE_PYTHON_BUILD=	2
 USE_XORG=	scrnsaverproto x11 xproto xscrnsaver xtst
 USE_GNOME=	glib20 gtk20 dconf libxslt
 

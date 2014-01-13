@@ -25,7 +25,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 USES=		gettext
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 MAN1=		csv2po.1 csv2tbx.1 html2po.1 ical2po.1 ini2po.1 \

@@ -29,7 +29,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 USE_KDE4=	kdehier kdelibs kdeprefix okular pimlibs \
 		akonadi automoc4 soprano
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_QT4=	corelib dbus designer_build gui network xml \
 		qmake_build moc_build uic_build rcc_build
 USE_XZ=		yes

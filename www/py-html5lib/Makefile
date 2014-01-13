@@ -13,7 +13,7 @@ COMMENT=	Python based HTML parser based on the HTML5 spec
 
 LICENSE=	MIT
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 
 NO_STAGE=	yes

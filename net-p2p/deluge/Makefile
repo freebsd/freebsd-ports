@@ -27,7 +27,7 @@ USE_XZ=		yes
 WANT_GNOME=	yes
 USES=		gettext twisted:run,web
 USE_OPENSSL=	yes
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_BUILD_TARGET=	build bdist_egg
 

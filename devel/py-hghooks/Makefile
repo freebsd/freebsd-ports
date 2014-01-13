@@ -12,7 +12,7 @@ COMMENT=	Set of Mercurial hooks
 
 LICENSE=	LGPL3
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_AUTOPLIST=	yes
 

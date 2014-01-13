@@ -37,7 +37,7 @@ RUN_DEPENDS=	hachoir-core>=0:${PORTSDIR}/devel/hachoir-core \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml
 
-USE_PYTHON=	2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=easy_install
 PYDISTUTILS_PKGVERSION=${PORTVERSION}alpha
 WRKSRC=		${WRKDIR}/${PORTNAME}

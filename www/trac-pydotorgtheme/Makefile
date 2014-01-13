@@ -14,7 +14,7 @@ COMMENT=	Theme that emulates the look of python.org
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 		trac-themeengine>=2.0:${PORTSDIR}/www/trac-themeengine
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracPyDotOrgTheme
 WRKSRC=			${WRKDIR}/${PORTNAME}

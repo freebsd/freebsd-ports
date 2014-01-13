@@ -18,7 +18,7 @@ LIB_DEPENDS=	libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 USES=		fuse gettext iconv pathfix pkgconfig
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --with-libintl-prefix=${LOCALBASE} --with-libuuid=${LOCALBASE} ${ICONV_CONFIGURE_ARG}

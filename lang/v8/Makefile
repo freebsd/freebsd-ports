@@ -16,7 +16,7 @@ CONFLICTS=      v8-devel-*
 
 USES=		gmake
 USE_XZ=		yes
-USE_PYTHON=	2.6-2.7
+USE_PYTHON=	2
 USE_LDCONFIG=	yes
 ALL_TARGET=	native
 MAKE_ARGS=	library=shared

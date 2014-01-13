@@ -17,7 +17,7 @@ RUN_DEPENDS+=	spamassassin:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 
 DISTDATE=	20100303
 NO_BUILD=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 

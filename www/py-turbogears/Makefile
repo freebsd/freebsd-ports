@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cherrypy>=3.1.2:${PORTSDIR}/www/py-cherrypy 
 		${PYTHON_PKGNAMEPREFIX}TGScheduler>0:${PORTSDIR}/devel/py-TGScheduler
 
 USES=		gettext
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options

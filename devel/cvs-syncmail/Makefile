@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/cvsnt:${PORTSDIR}/devel/cvsnt
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_PYTHON=	2.0+
+USE_PYTHON=	yes
 
 PLIST_FILES=	bin/${DISTNAME}
 

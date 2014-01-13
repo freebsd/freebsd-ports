@@ -57,7 +57,7 @@ CONFIGURE_ARGS+=	--enable-python
 BUILD_DEPENDS+=	swig2.0:${PORTSDIR}/devel/swig20
 RUN_DEPENDS+=	swig2.0:${PORTSDIR}/devel/swig20
 CONFIGURE_ENV+=	SWIG="${LOCALBASE}/bin/swig2.0"
-USE_PYTHON=	2.6-2.7
+USE_PYTHON=	2
 PLIST_SUB+=	SAGA_PYTHON=""
 .else
 CONFIGURE_ARGS+=	--disable-python

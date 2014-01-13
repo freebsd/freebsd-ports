@@ -36,7 +36,7 @@ RUN_DEPENDS=	py*-beautifulsoup32>0:${PORTSDIR}/www/py-beautifulsoup32 \
 		unoconv:${PORTSDIR}/textproc/unoconv
 
 PYDISTUTILS_NOEGGINFO=	yes
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 USE_GSTREAMER=	good bad ugly
 USE_QT4=	linguist phonon-gst

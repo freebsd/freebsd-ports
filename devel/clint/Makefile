@@ -13,7 +13,7 @@ COMMENT=	Static source code checker for C++
 LICENSE=	GPLv2
 
 USE_AUTOTOOLS=	libtool
-USE_PYTHON=	2.7
+USE_PYTHON=	2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--enable-python=${LOCALBASE}/bin/python2

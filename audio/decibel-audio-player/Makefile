@@ -14,7 +14,7 @@ RUN_DEPENDS=	py*-dbus>=0.80:${PORTSDIR}/devel/py-dbus \
 
 LICENSE=	GPLv2
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_GNOME=	pygnome2 pygtk2
 USE_GSTREAMER=	python good bad
 USES=		gmake gettext

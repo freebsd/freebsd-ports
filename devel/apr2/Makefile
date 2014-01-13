@@ -32,7 +32,7 @@ NO_STAGE=	yes
 USES=		iconv perl5
 USE_AUTOTOOLS=	automake autoconf libtool:env
 USE_PERL5=	build
-USE_PYTHON_BUILD=	-2.7
+USE_PYTHON_BUILD=	2
 USE_LDCONFIG=		yes
 GNU_CONFIGURE=		yes
 

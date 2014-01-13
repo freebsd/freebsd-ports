@@ -31,7 +31,7 @@ SCONS_BUILDENV=		SWIG=${LOCALBASE}/bin/swig \
 SCONS_TARGET=		fife-python
 SCONS_INSTALL_TARGET=	install-python
 
-USE_PYTHON=		2.7
+USE_PYTHON=		2
 
 USE_XORG=		xcursor
 USE_GL=			gl

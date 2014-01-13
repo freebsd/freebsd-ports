@@ -12,7 +12,7 @@ COMMENT=	Simple construction, analysis, and modification of binary data
 
 LICENSE=	MIT
 
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_ZIP=	yes
 

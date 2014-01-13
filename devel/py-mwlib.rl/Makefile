@@ -20,7 +20,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_ZIP=	yes
 USES=		gettext
-USE_PYTHON=		2.5+
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 
 NO_STAGE=	yes

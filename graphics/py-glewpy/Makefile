@@ -18,7 +18,7 @@ COMMENT=	Advanced OpenGL extensions to Python
 BUILD_DEPENDS=	pyrex>=0.9.6.2:${PORTSDIR}/devel/pyrex
 
 USE_GL=		glew
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include

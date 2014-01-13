@@ -12,7 +12,7 @@ COMMENT=	Concurrent FreeBSD port builder
 
 LICENSE=	BSD
 
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_XZ=		yes
 

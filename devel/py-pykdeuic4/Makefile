@@ -14,7 +14,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Enhanced version of pyuic4
 
 USE_KDE4=	kdelibs automoc4 pykde4
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
 DISTINFO_FILE=	${PORTSDIR}/devel/py-pykde4/distinfo

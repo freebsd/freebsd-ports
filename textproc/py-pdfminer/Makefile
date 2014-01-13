@@ -12,7 +12,7 @@ COMMENT=	PDF parser and analyzer
 
 LICENSE=	MIT
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 
 .include <bsd.port.mk>

@@ -11,7 +11,7 @@ DIST_SUBDIR=	python
 MAINTAINER=	niwi@niwi.be
 COMMENT=	Simple Library to Allow Python Applications to Use CouchDB
 
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PYTHON_PREFIX=	yes
 

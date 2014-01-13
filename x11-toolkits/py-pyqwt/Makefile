@@ -26,7 +26,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 LIB_DEPENDS=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5
 
 USES=		gmake
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 MAKEFILE=	GNUmakefile
 MAKE_JOBS_UNSAFE=	yes
 

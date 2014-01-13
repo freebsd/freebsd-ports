@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/pilconvert.py:${PORTSDIR}/graphics/py-imaging \
 
 NO_BUILD=	yes
 USE_GNOME=	pygtk2 librsvg2
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 
 MANCOMPRESSED=	yes
 MAN1=		tucan.1

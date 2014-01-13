@@ -9,7 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Python source code checking tool to help hunting common bugs
 
-USE_PYTHON=		-2.7
+USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 NO_STAGE=	yes
 

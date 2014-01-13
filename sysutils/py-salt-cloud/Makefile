@@ -12,7 +12,7 @@ COMMENT=	Provisioning salted minions to various cloud providers
 
 LICENSE=	APACHE20
 
-USE_PYTHON=	2.6-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
 
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}

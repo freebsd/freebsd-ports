@@ -28,7 +28,7 @@ GH_ACCOUNT=	OfflineIMAP
 GH_TAGNAME=	v${DISTVERSION}
 GH_COMMIT=	8bc2f35
 
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 DOC_FILES=	Changelog.maint.rst Changelog.rst \

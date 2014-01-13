@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb \
 		${PYXML}
 
 USE_BDB=	43
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USE_GMAKE=	yes
 USES=		desktop-file-utils gettext pathfix shared-mime-info
 USE_GNOME=	pygnome2 pygnomeextras gnomedocutils

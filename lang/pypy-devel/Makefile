@@ -71,7 +71,7 @@ PYTHON_CMD?=	${LOCALBASE}/bin/pypy
 .elif ${PORT_OPTIONS:MPYPY_MINMEM}
 PYTHON_CMD?=	"${SETENV} PYPY_GC_MAX_DELTA=200MB ${LOCALBASE}/bin/pypy --jit loop_longevity=300"
 .else
-USE_PYTHON_BUILD=	-2.7
+USE_PYTHON_BUILD=	2
 .endif
 
 # List of PyPy instances

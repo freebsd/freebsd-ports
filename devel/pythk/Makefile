@@ -12,7 +12,7 @@ COMMENT=	A collection of Python functions
 
 LICENSE=	BSD
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 
 NO_STAGE=	yes

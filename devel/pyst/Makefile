@@ -12,7 +12,7 @@ COMMENT=	Python interface to allow Asterisk programming
 LICENSE=	LGPL21 PSFL
 LICENSE_COMB=	dual
 
-USE_PYTHON=	2.5-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
 
 PORTDOCS=	README README.html ChangeLog

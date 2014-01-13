@@ -12,7 +12,7 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A python library to access freedesktop.org standards
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	pyxdg
 

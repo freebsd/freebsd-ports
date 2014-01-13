@@ -21,7 +21,7 @@ QXDDIRS=	component framework tool
 
 REINPLACE_ARGS=	-e 's,/usr/bin/env python,&${PYTHON_VER},' -i.bak
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_ZIP=	yes
 
 SHAREMODE=	644

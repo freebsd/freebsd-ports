@@ -20,7 +20,7 @@ RUN_DEPENDS=	socat:${PORTSDIR}/net/socat \
 USES=		gmake pkgconfig
 USE_GNOME=	gtk20 pygtk2
 USE_LDCONFIG=	yes
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 
 GITDATE=	2012.05.14
 GITVERSION=	228bc38

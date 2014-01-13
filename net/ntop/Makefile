@@ -22,7 +22,7 @@ DBDIR?=		/var/db
 
 USE_AUTOTOOLS=	libtool automake autoconf
 USE_GNOME=	libxml2
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes

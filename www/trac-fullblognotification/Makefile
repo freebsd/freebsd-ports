@@ -15,7 +15,7 @@ COMMENT=	Plugin that provides a project Blog
 
 RUN_DEPENDS+=	trac-fullblog>=0.1.1:${PORTSDIR}/www/trac-fullblog
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 NO_STAGE=	yes
 PYDISTUTILS_PKGNAME=	TracFullBlogNotificationPlugin

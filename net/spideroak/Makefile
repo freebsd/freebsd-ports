@@ -33,7 +33,7 @@ REINPLACE_ARGS=	-e 's,%%PREFIX%%,${PREFIX},1' \
 
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
-USE_PYTHON=	2.7
+USE_PYTHON=	2
 USES=	desktop-file-utils
 
 .include <bsd.port.options.mk>

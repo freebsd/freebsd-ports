@@ -13,7 +13,7 @@ COMMENT=	Memcache client written in highly optimized C++ with Python bindings
 LICENSE=	BSD
 
 USE_DOS2UNIX=		yes
-USE_PYTHON=		-2.7
+USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 USE_ZIP=		yes
 

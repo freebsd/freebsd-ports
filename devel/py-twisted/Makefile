@@ -16,7 +16,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twistedCore>=${PORTVERSION}:${PORTSDIR}/devel/py-twistedCore
 
 NO_BUILD=	yes
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 
 # Bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options

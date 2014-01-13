@@ -12,7 +12,7 @@ COMMENT=	Python shell which is designed to be reliable and fun
 LICENSE=	GPLv3
 
 USE_GNOME=	pygtk2 pygtksourceview
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 
 MAN1=		dreampie.1

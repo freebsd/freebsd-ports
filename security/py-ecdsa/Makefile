@@ -12,7 +12,7 @@ COMMENT=	ECDSA cryptographic signature library (pure python)
 
 LICENSE=	MIT
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
 
 regression-test: build

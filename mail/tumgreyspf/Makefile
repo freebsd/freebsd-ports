@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/spf.py:${PORTSDIR}/mail/py-spf
 OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USES=		shebangfix
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall

@@ -22,7 +22,7 @@ USES=		desktop-file-utils gettext
 
 INSTALLS_ICONS=	yes
 USE_GNOME=	pygtk2
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 

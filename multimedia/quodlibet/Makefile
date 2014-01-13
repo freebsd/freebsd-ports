@@ -13,7 +13,7 @@ COMMENT=	A GTK+-based audio player written in Python
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_GNOME=	pygtk2
 USES=		gettext
 USE_PYDISTUTILS=	yes

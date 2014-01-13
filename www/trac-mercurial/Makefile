@@ -15,7 +15,7 @@ COMMENT=	Plugin to use Mercurial instead of Subversion in Trac
 RUN_DEPENDS+=	hg:${PORTSDIR}/devel/mercurial \
 		tracd:${PORTSDIR}/www/trac
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 NO_STAGE=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracMercurial

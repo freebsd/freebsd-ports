@@ -21,7 +21,7 @@ RM_FILES=	CHANGES.txt FAL.txt  GPL.txt
 RM_OPTS=	-f
 
 USES=		gettext
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
 PYDISTUTILS_PKGNAME=	Kana-no-quiz

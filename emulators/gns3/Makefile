@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4
 		dynagen:${PORTSDIR}/emulators/dynagen \
 		xdotool:${PORTSDIR}/x11/xdotool
 
-USE_PYTHON=		2.6+
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	GNS3
 

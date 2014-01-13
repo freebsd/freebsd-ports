@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/freetype-config:${PORTSDIR}/print/freetype2 \
 USE_BZIP2=	yes
 USES=		pkgconfig scons
 USE_GNOME=	libxml2
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 WARNING_CXXFLAGS?=	-w
 

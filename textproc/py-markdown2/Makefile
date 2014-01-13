@@ -11,7 +11,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A fast and complete Python implementation of Markdown
 
 USE_ZIP=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 NO_STAGE=	yes

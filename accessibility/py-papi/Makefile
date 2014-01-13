@@ -12,7 +12,7 @@ COMMENT=	ATK accessibility wrapper for python
 
 USES=		pkgconfig
 USE_GNOME=	atk
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes
 

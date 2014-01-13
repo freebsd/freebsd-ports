@@ -16,7 +16,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython 
 		${PYTHON_SITELIBDIR}/ldns.py:${PORTSDIR}/dns/py-ldns
 
 NO_BUILD=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	xelerance
 GH_TAGNAME=	${PORTVERSION}

@@ -16,7 +16,7 @@ COMMENT=	Rule-based Dispatching and Generic Functions
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}PyProtocols>=1.0.a0.r2302:${PORTSDIR}/devel/py-protocols-devel \
 		${PYTHON_PKGNAMEPREFIX}Extremes>=1.1:${PORTSDIR}/devel/py-extremes
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGVERSION=	0.5a1.dev_r2506
 PYEASYINSTALL_ARCHDEP=	yes

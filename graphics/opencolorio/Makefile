@@ -40,7 +40,7 @@ CMAKE_ARGS+=	-DOCIO_USE_SSE:BOOL=OFF
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	libtinyxml.so:${PORTSDIR}/textproc/tinyxml \
 		libyaml-cpp.so:${PORTSDIR}/devel/yaml-cpp
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DOCIO_BUILD_APPS:BOOL=OFF \
 		-DOCIO_BUILD_SHARED:BOOL=ON \

@@ -11,7 +11,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Provide Dependencies for mwlib
 
 USE_ZIP=		yes
-USE_PYTHON=		2.5+
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 

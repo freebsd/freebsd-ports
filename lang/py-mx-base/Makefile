@@ -11,7 +11,7 @@ DISTNAME=	egenix-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	5u623l20@gmail.com
 COMMENT=	eGenix mx-Extension Series for Python
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 
 PYDISTUTILS_PKGNAME=	egenix-mx-base

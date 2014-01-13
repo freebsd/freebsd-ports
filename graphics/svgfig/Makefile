@@ -14,7 +14,7 @@ COMMENT=	Draw mathematical figures in SVG using Python
 
 WRKSRC=		${WRKDIR}/${PORTNAME:L}
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 NO_STAGE=	yes

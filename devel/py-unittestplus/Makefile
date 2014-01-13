@@ -11,7 +11,7 @@ MAINTAINER=		hsmtkk@gmail.com
 COMMENT=		Test utilities built on unittest
 
 USE_ZIP=		yes
-USE_PYTHON=		2.6+
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
 NO_STAGE=	yes

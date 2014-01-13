@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 USE_KDE4=	kdehier kdelibs kdeprefix
 USE_OCAML=	yes
 NO_OCAML_RUNDEPENDS=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_QT4=	corelib gui linguist_build svg webkit xml \
 		moc_build qmake_build uic_build
 USES=		pkgconfig shebangfix

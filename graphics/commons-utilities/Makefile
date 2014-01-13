@@ -21,7 +21,7 @@ RUN_DEPENDS=	p5-Image-ExifTool>=0:${PORTSDIR}/graphics/p5-Image-ExifTool \
 NO_BUILD=	yes
 USES=		perl5
 USE_PERL5=	run
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 
 LICENSE=	GPLv3
 

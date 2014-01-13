@@ -23,7 +23,7 @@ LIB_DEPENDS=	libgnuradio-core.so:${PORTSDIR}/comms/gnuradio \
 
 USES=	pkgconfig cmake
 USE_LDCONFIG=	yes
-USE_PYTHON=	2.7+
+USE_PYTHON=	yes
 
 CMAKE_ARGS+=	-DENABLE_DEFAULT:BOOL=OFF \
 		-DENABLE_FCD:BOOL=ON \

@@ -16,7 +16,7 @@ LICENSE_COMB=	multi
 RUN_DEPENDS=	python2:${PORTSDIR}/lang/python2
 
 GNU_CONFIGURE=	yes
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USES=		gmake shebangfix
 
 CONF_FILES=	asciidoc.conf docbook45.conf filters/code/code-filter.conf \

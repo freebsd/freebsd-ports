@@ -12,7 +12,7 @@ COMMENT=	Web of trust statistics and pathfinder
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging
 
-USE_PYTHON_RUN=	-2.7
+USE_PYTHON_RUN=	2
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/pks2wot bin/wotsap

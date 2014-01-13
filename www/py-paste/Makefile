@@ -13,7 +13,7 @@ COMMENT=	Tools for using a Web Server Gateway Interface stack
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_NOEGGINFO=	yes
 NO_STAGE=	yes

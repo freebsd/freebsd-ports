@@ -14,7 +14,7 @@ COMMENT=	Trac plugin for listing released downloads
 
 RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracDown
 PYDISTUTILS_PKGVERSION=	0.0.1

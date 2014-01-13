@@ -15,7 +15,7 @@ LICENSE=	BSD
 
 RUN_DEPENDS=	${LOCALBASE}/bin/pildriver.py:${PORTSDIR}/graphics/py-imaging
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}

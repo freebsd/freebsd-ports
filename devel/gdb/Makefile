@@ -63,7 +63,7 @@ EXCLUDE+=	readline
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	2.5-2.7
+USE_PYTHON=	2
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS}

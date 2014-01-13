@@ -13,7 +13,7 @@ COMMENT=	Implements the JSON-RPC 2.0 proposed specification in pure Python
 
 LICENSE=	APACHE20
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options

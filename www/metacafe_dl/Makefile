@@ -16,7 +16,7 @@ COMMENT=	A program for downloading videos from metacafe.com
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 
 PLIST_FILES=	bin/metacafe-dl
 

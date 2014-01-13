@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 USE_GNOME=	pygtk2 librsvg2
 

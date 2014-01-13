@@ -16,7 +16,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USES=		gettext
 USE_GNOME=	pygtk2
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 
 INSTALLS_EGGINFO=	yes
 

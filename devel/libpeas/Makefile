@@ -15,7 +15,7 @@ BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
 		valac:${PORTSDIR}/lang/vala
 
 USE_XZ=		yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USES=		pathfix gettext gmake pkgconfig

@@ -16,7 +16,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USE_PYTHON_RUN=	2.6-2.7
+USE_PYTHON_RUN=	2
 ALL_TARGET=	youtube-dl
 
 OPTIONS_DEFINE=	BASH RTMPDUMP FFMPEG

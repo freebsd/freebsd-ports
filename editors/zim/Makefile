@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>=0:${PORTSDIR}/devel/py-xdg \
 INSTALLS_ICONS=	yes
 USES=		gettext desktop-file-utils
 USE_GNOME=	gtk20 pygtk2 pygobject
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
 
 MAN1=		zim.1

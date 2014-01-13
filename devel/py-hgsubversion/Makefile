@@ -16,7 +16,7 @@ OPTIONS_DEFINE=	SUBVERTPY
 OPTIONS_DEFAULT=SUBVERTPY
 SUBVERTPY_DESC=	Use subvertpy python bindings
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 
 .include <bsd.port.options.mk>

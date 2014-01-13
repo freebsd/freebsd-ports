@@ -12,7 +12,7 @@ MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	An interactive shell for PHP
 
 USE_BZIP2=	yes
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 USE_PHP=	pcre posix tokenizer
 

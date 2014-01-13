@@ -15,7 +15,7 @@ LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		fuse gettext iconv pathfix pkgconfig
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

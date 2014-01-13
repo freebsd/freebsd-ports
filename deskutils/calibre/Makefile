@@ -56,7 +56,7 @@ SHEBANG_FILES=	src/calibre/ebooks/metadata/odt.py \
 		src/calibre/utils/*.py \
 		src/odf/*.py
 USE_XZ=		yes
-USE_PYTHON=	2.7
+USE_PYTHON=	2
 USE_QT4=	dbus qmake_build moc_build
 INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-src

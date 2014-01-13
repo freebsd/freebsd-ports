@@ -31,7 +31,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.4.3<1.5:${PORTSDIR}/www/py-djang
 		${PYTHON_PKGNAMEPREFIX}djblets>=0.7.7:${PORTSDIR}/www/py-djblets \
 		${PYTHON_PKGNAMEPREFIX}jsmin>0:${PORTSDIR}/devel/py-jsmin
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	ReviewBoard
 

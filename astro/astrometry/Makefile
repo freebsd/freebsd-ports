@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy
 
 NO_STAGE=	yes
 USES=		gmake pkgconfig
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 ALL_TARGET=	all extra
 MAKE_ENV=	INSTALL_DIR=${PREFIX}/astrometry
 MAKE_JOBS_UNSAFE=	yes

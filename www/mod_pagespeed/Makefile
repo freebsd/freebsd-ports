@@ -29,7 +29,7 @@ USES=		gmake pkgconfig
 USE_XZ=		yes
 USE_BINUTILS=	yes
 USE_APACHE=	22
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 
 # debugging
 #MAKE_ENV+=     V=1

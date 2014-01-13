@@ -44,7 +44,7 @@ REINPLACE_FILES=	guake guake-prefs prefs.py
 
 #USE_GITHUB=	yes
 USE_GNOME=	gtk20 pygnome2
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USES=	desktop-file-utils gmake pkgconfig
 
 WRKSRC=	${WRKDIR}/${DISTNAME}

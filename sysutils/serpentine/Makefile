@@ -20,6 +20,6 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	pygnomedesktop intlhack
 USE_GMAKE=	yes
 USE_GSTREAMER=	core gnomevfs python
-USE_PYTHON=	2.4+
+USE_PYTHON=	yes
 
 .include <bsd.port.mk>

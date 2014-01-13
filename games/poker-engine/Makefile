@@ -23,7 +23,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake pkgconfig gettext
-USE_PYTHON=	2.5-2.7
+USE_PYTHON=	2
 GNU_CONFIGURE=	yes
 
 post-patch:
