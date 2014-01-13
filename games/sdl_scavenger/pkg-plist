@@ -1,0 +1,34 @@
+bin/sdl_scavenger
+share/pixmaps/sdl_scavenger.png
+%%DATADIR%%/data/badguy.lbm
+%%DATADIR%%/data/brownblue.lbm
+%%DATADIR%%/data/death.wav
+%%DATADIR%%/data/devil.xpm
+%%DATADIR%%/data/dig.wav
+%%DATADIR%%/data/fall.wav
+%%DATADIR%%/data/highrc
+%%DATADIR%%/data/highstreet.lbm
+%%DATADIR%%/data/leprechaun.lbm
+%%DATADIR%%/data/levels.scl
+%%DATADIR%%/data/masters.scl
+%%DATADIR%%/data/microman.lbm
+%%DATADIR%%/data/microman.xpm
+%%DATADIR%%/data/micromanrc
+%%DATADIR%%/data/microrc
+%%DATADIR%%/data/pop.wav
+%%DATADIR%%/data/redbrick.lbm
+%%DATADIR%%/data/reddevil.lbm
+%%DATADIR%%/data/reddevilrc
+%%DATADIR%%/data/regularguy.lbm
+%%DATADIR%%/data/scav.bmp
+%%DATADIR%%/data/scav.png
+%%DATADIR%%/data/scav.xpm
+%%DATADIR%%/data/scavrc
+%%DATADIR%%/data/shamrc
+%%DATADIR%%/data/shamrock.lbm
+%%DATADIR%%/data/shamrock.xpm
+%%DATADIR%%/data/spiral.lbm
+%%DATADIR%%/data/spiralthing.lbm
+%%DATADIR%%/data/victory.wav
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
