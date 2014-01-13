@@ -43,13 +43,6 @@ CONFLICTS=	gnugrep-*
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-.if !(${OSVERSION} >= 900012 || (${OSVERSION} < 900000 && ${OSVERSION} >= 800505))
-LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
-CFLAGS+=	-I${PREFIX}/include
-LDFLAGS+=	-L${PREFIX}/lib
-BROKEN=		overwrites files installed by dependency
-.endif
-
 .if ${PORT_OPTIONS:MNLS}
 PLIST_SUB+=	NLS=""
 .else

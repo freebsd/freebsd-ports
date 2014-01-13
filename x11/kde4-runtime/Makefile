@@ -71,10 +71,6 @@ RUN_DEPENDS+=	zeitgeist-daemon:${PORTSDIR}/sysutils/zeitgeist
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
-.endif
-
 .if ${KDE4_PREFIX} != ${LOCALBASE}
 PLIST_SUB+=	HACK=""
 .else

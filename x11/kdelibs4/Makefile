@@ -84,10 +84,6 @@ AVAHI_DESC=	Use Avahi's mDNSResponder (otherwise Apple's)
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
-.endif
-
 .if ${OSVERSION} < 900004
 LIB_DEPENDS+=	utempter:${PORTSDIR}/sysutils/libutempter
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-ConfigureChecks.cmake
