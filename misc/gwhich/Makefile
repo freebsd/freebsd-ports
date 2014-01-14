@@ -8,22 +8,18 @@ MASTER_SITES=	GNU/which \
 		http://www.xs4all.nl/~carlo17/which/
 DISTNAME=	which-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU Which - Everything you never wanted in a which
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 
-MAN1=		gwhich.1
 INFO=		which
 PORTEXAMPLES=	EXAMPLES
-PLIST_FILES=	bin/gwhich
+PLIST_FILES=	bin/gwhich man/man1/gwhich.1.gz
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/EXAMPLES ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/EXAMPLES ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
