@@ -1,13 +1,5 @@
-mksh is the MirBSD enhanced version of the Public Domain Korn
-shell (pdksh), a bourne-compatible shell which is largely si-
-milar to the original AT&T Korn shell.  It includes bug fixes
-and feature improvements in order to produce a modern, robust
-shell good for interactive and especially script use.  It has
-UTF-8 support in the emacs command line editing mode; corres-
-ponds to OpenBSD 4.1-beta ksh (minus GNU bash-like $PS1); the
-build environment requirements are autoconfigured; throughout
-code simplification/bugfix/enhancement has been done.
-
-A sample ~/.mkshrc is included in ${PREFIX}/share/examples/mksh/
+The MirBSD Korn Shell (mksh) is enhanced of the Public Domain
+Korn shell (pdksh), a bourne-compatible shell which is largely
+similar to the original AT&T Korn shell.
 
 WWW: http://mirbsd.de/mksh
