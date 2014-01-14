@@ -51,6 +51,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ba04a373-7d20-11e3-8992-00132034b086">
+    <topic>nagios -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>nagios</name>
+	<range><lt>3.5.1_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Eric Stanley reports:</p>
+	<blockquote cite="http://sourceforge.net/p/nagios/nagioscore/ci/d97e03f32741a7d851826b03ed73ff4c9612a866/">
+	  <p>Most CGIs previously incremented the input variable counter twice
+	    when it encountered a long key value. This could cause the CGI to
+	    read past the end of the list of CGI variables.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-7108</cvename>
+      <cvename>CVE-2013-7205</cvename>
+      <url>http://sourceforge.net/p/nagios/nagioscore/ci/d97e03f32741a7d851826b03ed73ff4c9612a866/</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1046113</url>
+    </references>
+    <dates>
+      <discovery>2013-12-20</discovery>
+      <entry>2014-01-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cb252f01-7c43-11e3-b0a6-005056a37f68">
     <topic>bind -- denial of service vulnerability</topic>
     <affects>
