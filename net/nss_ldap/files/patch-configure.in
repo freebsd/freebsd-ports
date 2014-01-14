@@ -1,6 +1,6 @@
---- configure.in.orig	2007-10-29 06:30:12.000000000 -0700
-+++ configure.in	2008-09-26 20:38:20.000000000 -0700
-@@ -96,11 +96,15 @@
+--- configure.in.orig
++++ configure.in
+@@ -97,11 +97,15 @@
  linux*) nss_ldap_so_LDFLAGS="-shared -Wl,-Bdynamic -Wl,--version-script,\$(srcdir)/exports.linux" ;;
  *) nss_ldap_so_LDFLAGS="-shared -Wl,-Bdynamic" ;;
  esac
@@ -16,7 +16,7 @@
  
  AM_CONDITIONAL(USE_NATIVE_LINKER, test -n "$nss_ldap_so_LD")
  
-@@ -152,7 +156,6 @@
+@@ -153,7 +157,6 @@
    aix*) AC_CHECK_HEADERS(irs.h usersec.h) ;;
    hpux*) AC_CHECK_HEADERS(nsswitch.h) ;;
    *) AC_CHECK_HEADERS(nss.h)
@@ -24,7 +24,21 @@
       AC_CHECK_HEADERS(irs.h) ;;
  esac
  AC_CHECK_HEADERS(thread.h)
-@@ -227,7 +230,6 @@
+@@ -188,6 +191,13 @@
+ AC_CHECK_HEADERS(gssapi/gssapi_krb5.h gssapi.h)
+ AC_CHECK_HEADERS(krb5.h)
+ 
++AC_MSG_CHECKING([if Kerberos is Heimdal])
++AC_TRY_LINK([#include <krb5.h>],
++	    [const char hv = heimdal_version;],
++	    [AC_MSG_RESULT(yes)
++	     AC_DEFINE(HEIMDAL,1,[Define if Kerberos is Heimdal])],
++	    [AC_MSG_RESULT(no)])
++
+ AC_CHECK_LIB(resolv, main)
+ AC_CHECK_LIB(nsl, main)
+ AC_CHECK_LIB(socket, main)
+@@ -230,7 +240,6 @@
  AC_CHECK_FUNCS(gethostbyname)
  AC_CHECK_FUNCS(nsdispatch)
  AC_CHECK_LIB(pthread_nonshared, main)
