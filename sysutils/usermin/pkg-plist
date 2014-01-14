@@ -105,6 +105,8 @@ lib/usermin/at/lang/it
 lib/usermin/at/lang/it.UTF-8
 lib/usermin/at/lang/ms
 lib/usermin/at/lang/ms.UTF-8
+lib/usermin/at/lang/ms_MY
+lib/usermin/at/lang/ms_MY.UTF-8
 lib/usermin/at/lang/nl
 lib/usermin/at/lang/nl.UTF-8
 lib/usermin/at/lang/no
@@ -418,6 +420,7 @@ lib/usermin/blue-theme/lang/de
 lib/usermin/blue-theme/lang/en
 lib/usermin/blue-theme/lang/fr
 lib/usermin/blue-theme/lang/ja_JP.euc
+lib/usermin/blue-theme/lang/ms_MY
 lib/usermin/blue-theme/lang/nl
 lib/usermin/blue-theme/lang/no
 lib/usermin/blue-theme/lang/pl
@@ -1253,6 +1256,8 @@ lib/usermin/commands/lang/ja_JP.UTF-8
 lib/usermin/commands/lang/ja_JP.euc
 lib/usermin/commands/lang/ko_KR.UTF-8
 lib/usermin/commands/lang/ko_KR.euc
+lib/usermin/commands/lang/ms_MY
+lib/usermin/commands/lang/ms_MY.UTF-8
 lib/usermin/commands/lang/nl
 lib/usermin/commands/lang/nl.UTF-8
 lib/usermin/commands/lang/no
@@ -1455,6 +1460,8 @@ lib/usermin/cron/lang/ko_KR.UTF-8
 lib/usermin/cron/lang/ko_KR.euc
 lib/usermin/cron/lang/ms
 lib/usermin/cron/lang/ms.UTF-8
+lib/usermin/cron/lang/ms_MY
+lib/usermin/cron/lang/ms_MY.UTF-8
 lib/usermin/cron/lang/nl
 lib/usermin/cron/lang/nl.UTF-8
 lib/usermin/cron/lang/no
@@ -2341,7 +2348,7 @@ lib/usermin/gray-theme/gnupg/images/keys.gif
 lib/usermin/gray-theme/gnupg/images/secret.gif
 lib/usermin/gray-theme/gnupg/images/sign.gif
 lib/usermin/gray-theme/gnupg/images/verify.gif
-lib/usermin/gray-theme/gray-less.css
+lib/usermin/gray-theme/gray-left.css
 lib/usermin/gray-theme/grub/images/chain.gif
 lib/usermin/gray-theme/grub/images/icon.gif
 lib/usermin/gray-theme/grub/images/kernel.gif
@@ -2966,6 +2973,8 @@ lib/usermin/htaccess-htpasswd/lang/ko_KR.UTF-8
 lib/usermin/htaccess-htpasswd/lang/ko_KR.euc
 lib/usermin/htaccess-htpasswd/lang/ms
 lib/usermin/htaccess-htpasswd/lang/ms.UTF-8
+lib/usermin/htaccess-htpasswd/lang/ms_MY
+lib/usermin/htaccess-htpasswd/lang/ms_MY.UTF-8
 lib/usermin/htaccess-htpasswd/lang/nl
 lib/usermin/htaccess-htpasswd/lang/nl.UTF-8
 lib/usermin/htaccess-htpasswd/lang/no
@@ -3071,6 +3080,8 @@ lib/usermin/htaccess/lang/ja_JP.UTF-8
 lib/usermin/htaccess/lang/ja_JP.euc
 lib/usermin/htaccess/lang/ko_KR.UTF-8
 lib/usermin/htaccess/lang/ko_KR.euc
+lib/usermin/htaccess/lang/ms_MY
+lib/usermin/htaccess/lang/ms_MY.UTF-8
 lib/usermin/htaccess/lang/nl
 lib/usermin/htaccess/lang/nl.UTF-8
 lib/usermin/htaccess/lang/no
@@ -3260,10 +3271,13 @@ lib/usermin/lang/ko_KR.euc
 lib/usermin/lang/lt
 lib/usermin/lang/ms
 lib/usermin/lang/ms.UTF-8
+lib/usermin/lang/ms_MY
+lib/usermin/lang/ms_MY.UTF-8
 lib/usermin/lang/nl
 lib/usermin/lang/nl.UTF-8
 lib/usermin/lang/no
 lib/usermin/lang/no.UTF-8
+lib/usermin/lang/nota-bahasa-malaysia.txt
 lib/usermin/lang/pl
 lib/usermin/lang/pl.UTF-8
 lib/usermin/lang/pt
@@ -3870,6 +3884,8 @@ lib/usermin/man/lang/ko_KR.UTF-8
 lib/usermin/man/lang/ko_KR.euc
 lib/usermin/man/lang/ms
 lib/usermin/man/lang/ms.UTF-8
+lib/usermin/man/lang/ms_MY
+lib/usermin/man/lang/ms_MY.UTF-8
 lib/usermin/man/lang/nl
 lib/usermin/man/lang/nl.UTF-8
 lib/usermin/man/lang/no
@@ -5548,6 +5564,8 @@ lib/usermin/quota/lang/ja_JP.UTF-8
 lib/usermin/quota/lang/ja_JP.euc
 lib/usermin/quota/lang/ko_KR.UTF-8
 lib/usermin/quota/lang/ko_KR.euc
+lib/usermin/quota/lang/ms_MY
+lib/usermin/quota/lang/ms_MY.UTF-8
 lib/usermin/quota/lang/nl
 lib/usermin/quota/lang/nl.UTF-8
 lib/usermin/quota/lang/no
@@ -5662,6 +5680,8 @@ lib/usermin/shell/lang/ko_KR.UTF-8
 lib/usermin/shell/lang/ko_KR.euc
 lib/usermin/shell/lang/ms
 lib/usermin/shell/lang/ms.UTF-8
+lib/usermin/shell/lang/ms_MY
+lib/usermin/shell/lang/ms_MY.UTF-8
 lib/usermin/shell/lang/nl
 lib/usermin/shell/lang/nl.UTF-8
 lib/usermin/shell/lang/no
@@ -5808,6 +5828,8 @@ lib/usermin/ssh/lang/ja_JP.UTF-8
 lib/usermin/ssh/lang/ja_JP.euc
 lib/usermin/ssh/lang/ko_KR.UTF-8
 lib/usermin/ssh/lang/ko_KR.euc
+lib/usermin/ssh/lang/ms_MY
+lib/usermin/ssh/lang/ms_MY.UTF-8
 lib/usermin/ssh/lang/nl
 lib/usermin/ssh/lang/nl.UTF-8
 lib/usermin/ssh/lang/no
@@ -5874,6 +5896,8 @@ lib/usermin/telnet/lang/ko_KR.UTF-8
 lib/usermin/telnet/lang/ko_KR.euc
 lib/usermin/telnet/lang/ms
 lib/usermin/telnet/lang/ms.UTF-8
+lib/usermin/telnet/lang/ms_MY
+lib/usermin/telnet/lang/ms_MY.UTF-8
 lib/usermin/telnet/lang/nl
 lib/usermin/telnet/lang/nl.UTF-8
 lib/usermin/telnet/lang/no
@@ -6014,6 +6038,8 @@ lib/usermin/updown/lang/ko_KR.UTF-8
 lib/usermin/updown/lang/ko_KR.euc
 lib/usermin/updown/lang/ms
 lib/usermin/updown/lang/ms.UTF-8
+lib/usermin/updown/lang/ms_MY
+lib/usermin/updown/lang/ms_MY.UTF-8
 lib/usermin/updown/lang/nl
 lib/usermin/updown/lang/nl.UTF-8
 lib/usermin/updown/lang/no
