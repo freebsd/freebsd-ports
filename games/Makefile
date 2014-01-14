@@ -911,6 +911,7 @@
     SUBDIR += stransball2
     SUBDIR += stratagus
     SUBDIR += sudoku
+    SUBDIR += sudoku-sensei
     SUBDIR += sudoku_solver
     SUBDIR += sudsol
     SUBDIR += sumwars

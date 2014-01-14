@@ -1,0 +1,6 @@
+The engine solves sudokus by applying complex logical rules a few times,
+instead of applying simpler rules (like guessing and backtracking) many
+times. These complex logical rules are exactly the same ones that people
+use with paper and pen.
+
+WWW: http://sudoku-sensei.sourceforge.net/
