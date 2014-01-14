@@ -590,6 +590,7 @@
     SUBDIR += mscgen
     SUBDIR += mtpaint
     SUBDIR += multican
+    SUBDIR += multiraw
     SUBDIR += mupdf
     SUBDIR += mxp
     SUBDIR += mypaint
