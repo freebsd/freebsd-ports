@@ -9,27 +9,24 @@ MASTER_SITES=	http://beepcore-tcl.sourceforge.net/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dsh@vlink.ru
-COMMENT=	A Tcl interface to the Cyrus SASLv2 library
+COMMENT=	Tcl interface to the Cyrus SASLv2 library
 
-LIB_DEPENDS=	sasl2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 
+USES=		tcl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_TCL=	yes
-USE_TCL_BUILD=	yes
 
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 		--with-tclinclude=${TCL_INCLUDEDIR} \
-		--with-cyrus-sasl=${LOCALBASE}
-CONFIGURE_ENV=	INSTALL="${INSTALL_DATA}"
+		--with-cyrus-sasl=${LOCALBASE} \
+		--prefix=${PREFIX}
+CONFIGURE_ENV=	INSTALL="${INSTALL_DATA}" STAGEDIR="${STAGEDIR}"
 
 PORTDOCS=	tclsasl.html
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/tclsasl.html ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/tclsasl.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
