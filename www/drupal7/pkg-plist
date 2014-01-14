@@ -581,6 +581,9 @@
 %%DRUPAL_BASE%%/modules/shortcut/shortcut.test
 %%DRUPAL_BASE%%/modules/simpletest/drupal_web_test_case.php
 %%DRUPAL_BASE%%/modules/simpletest/files/README.txt
+%%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/css_subfolder/css_input_with_import.css
+%%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/css_subfolder/css_input_with_import.css.optimized.css
+%%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/css_subfolder/css_input_with_import.css.unoptimized.css
 %%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/comment_hacks.css
 %%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/comment_hacks.css.optimized.css
 %%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/comment_hacks.css.unoptimized.css
@@ -793,6 +796,8 @@
 %%DRUPAL_BASE%%/modules/statistics/statistics.pages.inc
 %%DRUPAL_BASE%%/modules/statistics/statistics.test
 %%DRUPAL_BASE%%/modules/statistics/statistics.tokens.inc
+%%DRUPAL_BASE%%/modules/statistics/statistics.js
+%%DRUPAL_BASE%%/modules/statistics/statistics.php
 %%DRUPAL_BASE%%/modules/syslog/syslog.info
 %%DRUPAL_BASE%%/modules/syslog/syslog.install
 %%DRUPAL_BASE%%/modules/syslog/syslog.module
@@ -1127,6 +1132,7 @@
 @dirrm %%DRUPAL_BASE%%/modules/simpletest/lib/Drupal/simpletest
 @dirrm %%DRUPAL_BASE%%/modules/simpletest/lib/Drupal
 @dirrm %%DRUPAL_BASE%%/modules/simpletest/lib
+@dirrm %%DRUPAL_BASE%%/modules/simpletest/files/css_test_files/css_subfolder
 @dirrm %%DRUPAL_BASE%%/modules/simpletest/files/css_test_files
 @dirrm %%DRUPAL_BASE%%/modules/simpletest/files
 @dirrm %%DRUPAL_BASE%%/modules/simpletest
