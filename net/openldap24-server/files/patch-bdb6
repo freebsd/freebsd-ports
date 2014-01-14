@@ -1,0 +1,18 @@
+--- build/openldap.m4.orig	2013-11-15 12:31:27.000000000 +0900
++++ build/openldap.m4	2014-01-10 15:21:33.000000000 +0900
+@@ -357,7 +357,14 @@
+ AC_DEFUN([OL_BERKELEY_DB_LINK],
+ [ol_cv_lib_db=no
+ 
+-if test $ol_cv_bdb_major = 5 ; then
++if test $ol_cv_bdb_major = 6 ; then
++	OL_BERKELEY_DB_TRY(ol_cv_db_db_6_dot_m,[-ldb-6.$ol_cv_bdb_minor])
++	OL_BERKELEY_DB_TRY(ol_cv_db_db6m,[-ldb6$ol_cv_bdb_minor])
++	OL_BERKELEY_DB_TRY(ol_cv_db_db_6m,[-ldb-6$ol_cv_bdb_minor])
++	OL_BERKELEY_DB_TRY(ol_cv_db_db_6_m,[-ldb-6-$ol_cv_bdb_minor])
++	OL_BERKELEY_DB_TRY(ol_cv_db_db_6,[-ldb-6])
++	OL_BERKELEY_DB_TRY(ol_cv_db_db6,[-ldb6])
++elif test $ol_cv_bdb_major = 5 ; then
+ 	OL_BERKELEY_DB_TRY(ol_cv_db_db_5_dot_m,[-ldb-5.$ol_cv_bdb_minor])
+ 	OL_BERKELEY_DB_TRY(ol_cv_db_db5m,[-ldb5$ol_cv_bdb_minor])
+ 	OL_BERKELEY_DB_TRY(ol_cv_db_db_5m,[-ldb-5$ol_cv_bdb_minor])
