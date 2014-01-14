@@ -33,7 +33,7 @@ COMMENT=	Image processing tools
 
 LICENSE=	APACHE20
 
-USES=		pkgconfig:both pathfix perl5
+USES=		gmake pkgconfig:both pathfix perl5
 USE_XZ=		yes
 USE_PERL5=	run build patch
 WANT_GNOME=	yes
@@ -43,7 +43,6 @@ NO_STAGE=	yes
 #USE_AUTOTOOLS+=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --without-dps --without-lcms
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 Wand-config.1 \
