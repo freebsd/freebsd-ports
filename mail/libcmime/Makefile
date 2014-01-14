@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libcmime
-PORTVERSION=	0.1.10
+PORTVERSION=	0.1.11
 CATEGORIES=	mail
 MASTER_SITES=	http://www.libcmime.org/files/
 
