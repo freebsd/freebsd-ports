@@ -22,7 +22,7 @@ BUILD_DEPENDS=	a2ps:${PORTSDIR}/print/a2ps \
 #RUN_DEPENDS=	ifhp:${PORTSDIR}/print/ifhp
 
 USE_GHOSTSCRIPT_BUILD=	yes
-USE_TK_BUILD=	yes
+USES=		tk
 
 .if defined(SYSCONFDIR)
 PLIST_SUB+=	CWD="" SYSCONFDIR="${SYSCONFDIR:S,^/,,}"
