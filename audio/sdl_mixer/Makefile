@@ -14,7 +14,6 @@ COMMENT=	A sample multi-channel audio mixer library
 LICENSE=	ZLIB
 
 USE_AUTOTOOLS=	libtool
-NO_STAGE=	yes
 USE_SDL=	sdl
 USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
@@ -60,6 +59,8 @@ CONFIG_FILE=	${LOCALBASE}/lib/timidity/timidity.cfg
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|\($$(prefix)/libdata/pkgconfig\)|$$(DESTDIR)\1|' \
+		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%CONFIG_FILE%%|${CONFIG_FILE}|g' \
 		${WRKSRC}/timidity/config.h
 
