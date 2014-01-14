@@ -5374,3 +5374,4 @@ x11-toolkits/hs-frantk||2014-01-09|Outdated and bitrotted
 devel/lua-filename||2014-01-10|Abandonware
 archivers/xz||2014-01-12|Included in base system on all supported releases
 lang/python26|lang/python27|2014-01-13|Python 2.6 is now end-of-life, please migrate to lang/python27
+sysutils/lavaps||2014-01-14|Abandonware, segfaults
