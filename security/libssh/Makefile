@@ -3,6 +3,7 @@
 
 PORTNAME=	libssh
 DISTVERSION=	0.5.5
+PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://red.libssh.org/attachments/download/51/ \
 		LOCAL/fluffy
@@ -47,7 +48,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/add_subdirectory.*s)/d' \
 		-e 's|LIB_INSTALL_DIR}|CMAKE_INSTALL_PREFIX}/libdata|' \
 		${PATCH_WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|ssh_static|ssh|' \
+	@${REINPLACE_CMD} -e '/CMAKE_HAVE_THREADS_LIBRARY/d' \
 		${PATCH_WRKSRC}/src/CMakeLists.txt
 
 .include <bsd.port.mk>
