@@ -12,7 +12,7 @@ COMMENT=	Enhanced su, allows users to su with own password + more
 
 PATCH_DEPENDS=	rcsdiff:${PORTSDIR}/devel/rcs
 
-NO_CDROM=	Don't sell for profit
+NO_CDROM=	Do not sell for profit
 
 PLIST_FILES=	bin/su2 \
 		man/man1/su2.1.gz
