@@ -526,7 +526,6 @@
 @dirrm %%DATADIR%%/demos/rio_de_hola/scripts/common
 @dirrm %%DATADIR%%/demos/rio_de_hola/scripts/agents
 @dirrm %%DATADIR%%/demos/rio_de_hola/scripts
-@dirrm %%DATADIR%%/demos/rio_de_hola/saves
 @dirrm %%DATADIR%%/demos/rio_de_hola/objects/crates/empty_lid
 @dirrm %%DATADIR%%/demos/rio_de_hola/objects/crates/dynamites_lid
 @dirrm %%DATADIR%%/demos/rio_de_hola/objects/crates
@@ -558,11 +557,9 @@
 @dirrm %%DATADIR%%/demos/rio_de_hola/misc/current_rendersetup
 @dirrm %%DATADIR%%/demos/rio_de_hola/misc
 @dirrm %%DATADIR%%/demos/rio_de_hola/maps
-@dirrm %%DATADIR%%/demos/rio_de_hola/imports
 @dirrm %%DATADIR%%/demos/rio_de_hola/gui/icons
 @dirrm %%DATADIR%%/demos/rio_de_hola/gui
 @dirrm %%DATADIR%%/demos/rio_de_hola/fonts
-@dirrm %%DATADIR%%/demos/rio_de_hola/cursors
 @dirrm %%DATADIR%%/demos/rio_de_hola
 @dirrm %%DATADIR%%/demos/pychan_demo/gui/icons
 @dirrm %%DATADIR%%/demos/pychan_demo/gui/backgrounds

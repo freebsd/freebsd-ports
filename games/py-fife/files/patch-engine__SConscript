@@ -1,0 +1,14 @@
+# Add in -Iengine/core to includes can be found
+# Backport https://github.com/fifengine/fifengine/issues/792
+
+--- ./engine/SConscript.orig	2014-01-11 21:05:39.567308621 +1100
++++ ./engine/SConscript	2014-01-11 21:06:18.367282812 +1100
+@@ -161,7 +161,7 @@
+                                            os.path.join('swigwrappers', 'python' ,'fife_wrap.h'),
+                                            os.path.join('python', 'fife', 'fife.py')],
+ 							  source = os.path.join('swigwrappers', 'python' ,'fife.i'),
+-							  SWIGFLAGS=['-python','-c++','-w511'],
++							  SWIGFLAGS=['-python','-c++','-w511','-w473', '-w404','-Iengine/core','-outdir','engine/python/fife'],
+ 							  SWIGPATH='core',
+ 							  SWIGOUTDIR=Dir('#/engine/python/fife').srcnode().path)
+ 							  
