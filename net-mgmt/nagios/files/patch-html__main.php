@@ -1,5 +1,5 @@
---- html/main.php.orig	2013-08-30 21:46:14.000000000 +0400
-+++ html/main.php	2013-09-16 17:35:29.000000000 +0400
+--- ./html/main.php.orig	2013-08-30 19:46:14.000000000 +0200
++++ ./html/main.php	2014-01-14 13:57:06.000000000 +0100
 @@ -40,36 +40,10 @@
  <div class="product">Nagios<sup><span style="font-size: small;">&reg;</span></sup> Core<sup><span style="font-size: small;">&trade;</span></sup></div>
  <div class="version">Version 3.5.1</div>

@@ -1,6 +1,15 @@
---- html/Makefile.in.orig	2012-02-14 07:10:42.000000000 +1030
-+++ html/Makefile.in	2012-05-21 21:34:09.000000000 +0930
-@@ -34,55 +34,55 @@
+--- ./html/Makefile.in.orig	2013-08-30 19:46:14.000000000 +0200
++++ ./html/Makefile.in	2014-01-14 13:57:06.000000000 +0100
+@@ -10,8 +10,6 @@
+ CGIDIR=@sbindir@
+ HTMLDIR=@datadir@
+ INSTALL=@INSTALL@
+-INSTALL_OPTS=@INSTALL_OPTS@
+-COMMAND_OPTS=@COMMAND_OPTS@
+ 
+ CP=@CP@
+ 
+@@ -34,55 +32,55 @@
  devclean: distclean
  
  install:

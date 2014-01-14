@@ -1,6 +1,15 @@
---- cgi/Makefile.in.orig	Wed Dec 13 02:57:57 2006
-+++ cgi/Makefile.in	Fri Jul 20 13:35:18 2007
-@@ -190,9 +190,9 @@
+--- ./cgi/Makefile.in.orig	2013-08-30 19:46:14.000000000 +0200
++++ ./cgi/Makefile.in	2014-01-14 13:57:06.000000000 +0100
+@@ -18,8 +18,6 @@
+ CGIDIR=@sbindir@
+ HTMLDIR=@datarootdir@
+ INSTALL=@INSTALL@
+-INSTALL_OPTS=@INSTALL_OPTS@
+-COMMAND_OPTS=@COMMAND_OPTS@
+ STRIP=@STRIP@
+ 
+ CGIEXTRAS=@CGIEXTRAS@
+@@ -201,9 +199,9 @@
  	$(MAKE) install-basic
  
  install-basic:

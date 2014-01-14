@@ -1,5 +1,5 @@
---- sample-config/template-object/templates.cfg.in.orig	Fri Jul 20 13:46:57 2007
-+++ sample-config/template-object/templates.cfg.in	Fri Jul 20 13:47:52 2007
+--- ./sample-config/template-object/templates.cfg.in.orig	2013-08-30 19:46:14.000000000 +0200
++++ ./sample-config/template-object/templates.cfg.in	2014-01-14 13:57:06.000000000 +0100
 @@ -63,17 +63,17 @@
          }
  

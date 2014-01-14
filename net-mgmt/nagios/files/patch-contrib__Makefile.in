@@ -1,6 +1,14 @@
---- contrib/Makefile.in.orig	Tue Nov 15 12:19:36 2005
-+++ contrib/Makefile.in	Wed Dec 28 17:49:25 2005
-@@ -46,10 +46,10 @@
+--- ./contrib/Makefile.in.orig	2013-08-30 19:46:14.000000000 +0200
++++ ./contrib/Makefile.in	2014-01-14 13:57:06.000000000 +0100
+@@ -16,7 +16,6 @@
+ # Generated automatically from configure script
+ SNPRINTF_O=@SNPRINTF_O@
+ INSTALL=@INSTALL@
+-INSTALL_OPTS=@INSTALL_OPTS@
+ 
+ 
+ prefix=@prefix@
+@@ -51,10 +50,10 @@
  devclean: distclean
  
  install:
