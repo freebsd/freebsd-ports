@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pptpclient
-PORTVERSION=	1.7.2
-PORTREVISION=	6
+PORTVERSION=	1.8.0
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/pptp/pptp-${PORTVERSION}
 DISTNAME=	pptp-${PORTVERSION}
@@ -11,19 +10,22 @@ DISTNAME=	pptp-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PPTP client for establishing a VPN link with an NT server
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # (or later)
 
 USES=		perl5
-MAKE_ARGS=	DEBUG="" CC="${CC}"
+MAKE_ARGS=	CC="${CC}" OPTIMIZE="${CFLAGS}" DEBUG="" PPPD="/usr/sbin/ppp"
+CFLAGS+=	-DUSER_PPP
 
-MAN8=		pptp.8
+PLIST_FILES=	sbin/pptp man/man8/pptp.8.gz
+PORTEXAMPLES=	README ppp.conf
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	EXAMPLES
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pptp ${PREFIX}/sbin
-	@${MKDIR} ${PREFIX}/share/examples/pptpclient
-	${INSTALL_DATA} ${FILESDIR}/README ${PREFIX}/share/examples/pptpclient
-	${INSTALL_DATA} ${FILESDIR}/ppp.conf ${PREFIX}/share/examples/pptpclient
-	${INSTALL_MAN} ${WRKSRC}/pptp.8 ${PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/pptp ${STAGEDIR}${PREFIX}/sbin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/README ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${FILESDIR}/ppp.conf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/pptp.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>
