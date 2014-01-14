@@ -242,6 +242,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING-3.8
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING-4.0
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING.mysql
+%%PORTDOCS%%%%DOCSDIR%%/automating_rt.pod
 %%PORTDOCS%%%%DOCSDIR%%/backups.pod
 %%PORTDOCS%%%%DOCSDIR%%/customizing/approvals.pod
 %%PORTDOCS%%%%DOCSDIR%%/customizing/articles_introduction.pod
@@ -360,6 +361,8 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.13/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.13/schema.Oracle
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.18/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.19/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.19/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/sanity-check-stylesheets.pl
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/shrink_cgm_table.pl
@@ -1102,6 +1105,7 @@ sbin/standalone_httpd
 %%DATADIR%%/html/NoAuth/css/base/login.css
 %%DATADIR%%/html/NoAuth/css/base/main.css
 %%DATADIR%%/html/NoAuth/css/base/misc.css
+%%DATADIR%%/html/NoAuth/css/base/msie6.css
 %%DATADIR%%/html/NoAuth/css/base/nav.css
 %%DATADIR%%/html/NoAuth/css/base/portlets.css
 %%DATADIR%%/html/NoAuth/css/base/rights-editor.css
@@ -1676,6 +1680,7 @@ sbin/standalone_httpd
 @dirrmtry %%DATADIR%%/fonts
 @dirrmtry %%DATADIR%%/etc
 @dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.19
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.18
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.13
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.12
