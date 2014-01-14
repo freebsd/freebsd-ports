@@ -10,16 +10,15 @@ MASTER_SITES=	SF
 MAINTAINER=	frank@fenor.de
 COMMENT=	UDP extension for TCL
 
-USE_TCL=	84+
+USES=		tcl
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR}
+CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
+		--exec-prefix=${PREFIX}
 USE_LDCONFIG=	${PREFIX}/lib/udp${PORTVERSION}
-MANN=		udp.n
-MANCOMPRESSED=	no
 
 PLIST_FILES=	lib/udp1.0.8/libudp1.0.8.so \
-		lib/udp1.0.8/pkgIndex.tcl
+		lib/udp1.0.8/pkgIndex.tcl \
+		man/mann/udp.n.gz
 PLIST_DIRS=	lib/udp1.0.8
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
