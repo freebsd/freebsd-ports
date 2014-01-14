@@ -1,5 +1,5 @@
---- ./src/Makefile.am.orig	2011-03-29 07:51:32.000000000 +0200
-+++ ./src/Makefile.am	2013-08-18 22:37:41.000000000 +0200
+--- src/Makefile.am-dist	2013-09-25 02:41:53.000000000 -0400
++++ src/Makefile.am	2014-01-14 11:20:54.178664699 -0500
 @@ -3,9 +3,9 @@
  lib_LTLIBRARIES = mod_authnz_crowd.la
  mod_authnz_crowd_la_SOURCES = mod_authnz_crowd.c mod_authnz_crowd.h crowd_client.c crowd_client.h cache.c cache.h util.c util.h
@@ -7,8 +7,8 @@
 -AM_CFLAGS = `apr-1-config --cflags`
 +AM_CFLAGS = `apr-1-config --cflags | sed -e 's/O[[:digit:]]/O1/'`
  AM_CPPFLAGS = -I@APACHE_INCLUDE_DIR@ `apr-1-config --cppflags --includes` `xml2-config --cflags`
--CFLAGS=-g -O1   # -O2 causes mysterious crashes
-+#CFLAGS=-g -O1   # -O2 causes mysterious crashes
+-CFLAGS=-g -Wmissing-prototypes -O1   # -O2 causes mysterious crashes
++#CFLAGS=-g -Wmissing-prototypes -O1   # -O2 causes mysterious crashes
  TESTS = test.py
  TESTS_ENVIRONMENT = APACHE_BIN_DIR=@APACHE_BIN_DIR@
  
