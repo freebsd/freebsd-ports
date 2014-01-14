@@ -17,12 +17,18 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libitk.so:${PORTSDIR}/x11-toolkits/itk \
 		${LOCALBASE}/lib/libitcl.so:${PORTSDIR}/lang/itcl
 
 WRKSRC=		${WRKDIR}/smm/Install.unix
-USE_GMAKE=	yes
-USE_TK=		84+
+USES=		gmake tk
 EXTRACT_AFTER_ARGS=--exclude CVS
 
-NO_STAGE=	yes
+MAKE_ENV+=	STAGEDIR=${STAGEDIR}
+
 post-patch:
 	${REINPLACE_CMD} -e 's,itkarray=.*,itkarray=${WISH},' ${WRKSRC}/itk.sh
+
+post-install:
+	${FIND} ${STAGEDIR}${PREFIX}/lib/smm -type f | ${XARGS} \
+	    ${CHMOD} ${SHAREMODE}
+	${FIND} ${STAGEDIR}${PREFIX}/lib/smm -type d | ${XARGS} \
+	    ${CHMOD} 755
 
 .include <bsd.port.mk>
