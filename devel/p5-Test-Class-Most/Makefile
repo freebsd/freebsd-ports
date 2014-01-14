@@ -21,10 +21,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-PLIST_FILES=	%%SITE_PERL%%/Test/Class/Most.pm
+PLIST_FILES=	%%SITE_PERL%%/Test/Class/Most.pm \
+		%%PERL5_MAN3%%/Test::Class::Most.3.gz
 PLIST_DIRSTRY=	%%SITE_PERL%%/Test/Class %%SITE_PERL%%/Test
 
-MAN3=		Test::Class::Most.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
