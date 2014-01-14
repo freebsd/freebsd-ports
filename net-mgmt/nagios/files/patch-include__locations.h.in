@@ -1,5 +1,5 @@
---- include/locations.h.in.orig	Tue May  1 08:15:57 2007
-+++ include/locations.h.in	Fri Jul 20 15:52:49 2007
+--- ./include/locations.h.in.orig	2013-08-30 19:46:14.000000000 +0200
++++ ./include/locations.h.in	2014-01-14 13:57:06.000000000 +0100
 @@ -20,7 +20,7 @@
  
  #define DEFAULT_TEMP_FILE			"@localstatedir@/tempfile"

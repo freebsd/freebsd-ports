@@ -1,6 +1,6 @@
---- sample-config/cgi.cfg.in.orig	2007-10-08 05:12:52.000000000 +0930
-+++ sample-config/cgi.cfg.in	2008-10-23 10:31:31.000000000 +1030
-@@ -229,7 +229,7 @@
+--- ./sample-config/cgi.cfg.in.orig	2013-08-30 19:46:14.000000000 +0200
++++ ./sample-config/cgi.cfg.in	2014-01-14 13:57:06.000000000 +0100
+@@ -264,7 +264,7 @@
  # OS and distribution, so you may have to tweak this to
  # work on your system.
  
