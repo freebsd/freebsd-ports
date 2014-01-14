@@ -52,7 +52,7 @@ do-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${DATADIR}
-	${LN} -sf ${WRKSRC}/data/balloon.png \
+	${LN} -sf ${DATADIR}/data/balloon.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.6 \
