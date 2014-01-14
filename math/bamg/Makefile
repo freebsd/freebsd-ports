@@ -14,7 +14,7 @@ EXTRACT_ONLY=	${PORTNAME}-v${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Bidimensional Anisotropic Mesh Generator
 
-RESTRICTED=	No resale, contact author for commercial usage
+RESTRICTED=	Contact author personally regarding commercial use
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
