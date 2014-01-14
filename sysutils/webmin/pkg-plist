@@ -106,6 +106,8 @@ lib/webmin/acl/config.info.ja_JP.UTF-8
 lib/webmin/acl/config.info.ja_JP.euc
 lib/webmin/acl/config.info.ko_KR.UTF-8
 lib/webmin/acl/config.info.ko_KR.euc
+lib/webmin/acl/config.info.ms_MY
+lib/webmin/acl/config.info.ms_MY.UTF-8
 lib/webmin/acl/config.info.nl
 lib/webmin/acl/config.info.nl.UTF-8
 lib/webmin/acl/config.info.no
@@ -158,6 +160,8 @@ lib/webmin/acl/help/ips.it.UTF-8.html
 lib/webmin/acl/help/ips.it.html
 lib/webmin/acl/help/ips.ko_KR.UTF-8.html
 lib/webmin/acl/help/ips.ko_KR.euc.html
+lib/webmin/acl/help/ips.ms_MY.UTF-8.html
+lib/webmin/acl/help/ips.ms_MY.html
 lib/webmin/acl/help/ips.nl.UTF-8.html
 lib/webmin/acl/help/ips.nl.html
 lib/webmin/acl/help/ips.no.UTF-8.html
@@ -210,6 +214,8 @@ lib/webmin/acl/lang/ja_JP.UTF-8
 lib/webmin/acl/lang/ja_JP.euc
 lib/webmin/acl/lang/ko_KR.UTF-8
 lib/webmin/acl/lang/ko_KR.euc
+lib/webmin/acl/lang/ms_MY
+lib/webmin/acl/lang/ms_MY.UTF-8
 lib/webmin/acl/lang/nl
 lib/webmin/acl/lang/nl.UTF-8
 lib/webmin/acl/lang/no
@@ -282,6 +288,8 @@ lib/webmin/adsl-client/config.info.it
 lib/webmin/adsl-client/config.info.it.UTF-8
 lib/webmin/adsl-client/config.info.ja_JP.UTF-8
 lib/webmin/adsl-client/config.info.ja_JP.euc
+lib/webmin/adsl-client/config.info.ms_MY
+lib/webmin/adsl-client/config.info.ms_MY.UTF-8
 lib/webmin/adsl-client/config.info.nl
 lib/webmin/adsl-client/config.info.nl.UTF-8
 lib/webmin/adsl-client/config.info.no
@@ -302,6 +310,8 @@ lib/webmin/adsl-client/help/connect.de.html
 lib/webmin/adsl-client/help/connect.html
 lib/webmin/adsl-client/help/connect.it.UTF-8.html
 lib/webmin/adsl-client/help/connect.it.html
+lib/webmin/adsl-client/help/connect.ms_MY.UTF-8.html
+lib/webmin/adsl-client/help/connect.ms_MY.html
 lib/webmin/adsl-client/help/connect.nl.UTF-8.html
 lib/webmin/adsl-client/help/connect.nl.html
 lib/webmin/adsl-client/help/connect.pl.UTF-8.html
@@ -314,6 +324,8 @@ lib/webmin/adsl-client/help/demand.de.html
 lib/webmin/adsl-client/help/demand.html
 lib/webmin/adsl-client/help/demand.it.UTF-8.html
 lib/webmin/adsl-client/help/demand.it.html
+lib/webmin/adsl-client/help/demand.ms_MY.UTF-8.html
+lib/webmin/adsl-client/help/demand.ms_MY.html
 lib/webmin/adsl-client/help/demand.nl.UTF-8.html
 lib/webmin/adsl-client/help/demand.nl.html
 lib/webmin/adsl-client/help/demand.pl.UTF-8.html
@@ -326,6 +338,8 @@ lib/webmin/adsl-client/help/dns.de.html
 lib/webmin/adsl-client/help/dns.html
 lib/webmin/adsl-client/help/dns.it.UTF-8.html
 lib/webmin/adsl-client/help/dns.it.html
+lib/webmin/adsl-client/help/dns.ms_MY.UTF-8.html
+lib/webmin/adsl-client/help/dns.ms_MY.html
 lib/webmin/adsl-client/help/dns.nl.UTF-8.html
 lib/webmin/adsl-client/help/dns.nl.html
 lib/webmin/adsl-client/help/dns.pl.UTF-8.html
@@ -338,6 +352,8 @@ lib/webmin/adsl-client/help/eth.de.html
 lib/webmin/adsl-client/help/eth.html
 lib/webmin/adsl-client/help/eth.it.UTF-8.html
 lib/webmin/adsl-client/help/eth.it.html
+lib/webmin/adsl-client/help/eth.ms_MY.UTF-8.html
+lib/webmin/adsl-client/help/eth.ms_MY.html
 lib/webmin/adsl-client/help/eth.nl.UTF-8.html
 lib/webmin/adsl-client/help/eth.nl.html
 lib/webmin/adsl-client/help/eth.pl.UTF-8.html
@@ -350,6 +366,8 @@ lib/webmin/adsl-client/help/fw.de.html
 lib/webmin/adsl-client/help/fw.html
 lib/webmin/adsl-client/help/fw.it.UTF-8.html
 lib/webmin/adsl-client/help/fw.it.html
+lib/webmin/adsl-client/help/fw.ms_MY.UTF-8.html
+lib/webmin/adsl-client/help/fw.ms_MY.html
 lib/webmin/adsl-client/help/fw.nl.UTF-8.html
 lib/webmin/adsl-client/help/fw.nl.html
 lib/webmin/adsl-client/help/fw.pl.UTF-8.html
@@ -362,6 +380,8 @@ lib/webmin/adsl-client/help/intro.de.html
 lib/webmin/adsl-client/help/intro.html
 lib/webmin/adsl-client/help/intro.it.UTF-8.html
 lib/webmin/adsl-client/help/intro.it.html
+lib/webmin/adsl-client/help/intro.ms_MY.UTF-8.html
+lib/webmin/adsl-client/help/intro.ms_MY.html
 lib/webmin/adsl-client/help/intro.nl.UTF-8.html
 lib/webmin/adsl-client/help/intro.nl.html
 lib/webmin/adsl-client/help/intro.pl.UTF-8.html
@@ -374,6 +394,8 @@ lib/webmin/adsl-client/help/mss.de.html
 lib/webmin/adsl-client/help/mss.html
 lib/webmin/adsl-client/help/mss.it.UTF-8.html
 lib/webmin/adsl-client/help/mss.it.html
+lib/webmin/adsl-client/help/mss.ms_MY.UTF-8.html
+lib/webmin/adsl-client/help/mss.ms_MY.html
 lib/webmin/adsl-client/help/mss.nl.UTF-8.html
 lib/webmin/adsl-client/help/mss.nl.html
 lib/webmin/adsl-client/help/mss.pl.UTF-8.html
@@ -386,6 +408,8 @@ lib/webmin/adsl-client/help/sec.de.html
 lib/webmin/adsl-client/help/sec.html
 lib/webmin/adsl-client/help/sec.it.UTF-8.html
 lib/webmin/adsl-client/help/sec.it.html
+lib/webmin/adsl-client/help/sec.ms_MY.UTF-8.html
+lib/webmin/adsl-client/help/sec.ms_MY.html
 lib/webmin/adsl-client/help/sec.nl.UTF-8.html
 lib/webmin/adsl-client/help/sec.nl.html
 lib/webmin/adsl-client/help/sec.pl.UTF-8.html
@@ -398,6 +422,8 @@ lib/webmin/adsl-client/help/user.de.html
 lib/webmin/adsl-client/help/user.html
 lib/webmin/adsl-client/help/user.it.UTF-8.html
 lib/webmin/adsl-client/help/user.it.html
+lib/webmin/adsl-client/help/user.ms_MY.UTF-8.html
+lib/webmin/adsl-client/help/user.ms_MY.html
 lib/webmin/adsl-client/help/user.nl.UTF-8.html
 lib/webmin/adsl-client/help/user.nl.html
 lib/webmin/adsl-client/help/user.pl.UTF-8.html
@@ -425,6 +451,8 @@ lib/webmin/adsl-client/lang/it
 lib/webmin/adsl-client/lang/it.UTF-8
 lib/webmin/adsl-client/lang/ja_JP.UTF-8
 lib/webmin/adsl-client/lang/ja_JP.euc
+lib/webmin/adsl-client/lang/ms_MY
+lib/webmin/adsl-client/lang/ms_MY.UTF-8
 lib/webmin/adsl-client/lang/nl
 lib/webmin/adsl-client/lang/nl.UTF-8
 lib/webmin/adsl-client/lang/no
@@ -473,6 +501,8 @@ lib/webmin/ajaxterm/config.info.ca.UTF-8
 lib/webmin/ajaxterm/config.info.de
 lib/webmin/ajaxterm/config.info.de.UTF-8
 lib/webmin/ajaxterm/config.info.hu
+lib/webmin/ajaxterm/config.info.ms_MY
+lib/webmin/ajaxterm/config.info.ms_MY.UTF-8
 lib/webmin/ajaxterm/config.info.nl
 lib/webmin/ajaxterm/config.info.nl.UTF-8
 lib/webmin/ajaxterm/config.info.no
@@ -490,6 +520,8 @@ lib/webmin/ajaxterm/lang/en
 lib/webmin/ajaxterm/lang/en.UTF-8
 lib/webmin/ajaxterm/lang/hu
 lib/webmin/ajaxterm/lang/hu.UTF-8
+lib/webmin/ajaxterm/lang/ms_MY
+lib/webmin/ajaxterm/lang/ms_MY.UTF-8
 lib/webmin/ajaxterm/lang/nl
 lib/webmin/ajaxterm/lang/nl.UTF-8
 lib/webmin/ajaxterm/lang/no
@@ -589,6 +621,8 @@ lib/webmin/apache/config.info.hu
 lib/webmin/apache/config.info.hu.UTF-8
 lib/webmin/apache/config.info.ja_JP.UTF-8
 lib/webmin/apache/config.info.ja_JP.euc
+lib/webmin/apache/config.info.ms_MY
+lib/webmin/apache/config.info.ms_MY.UTF-8
 lib/webmin/apache/config.info.nl
 lib/webmin/apache/config.info.nl.UTF-8
 lib/webmin/apache/config.info.no
@@ -693,6 +727,8 @@ lib/webmin/apache/lang/ja_JP.UTF-8
 lib/webmin/apache/lang/ja_JP.euc
 lib/webmin/apache/lang/ko_KR.UTF-8
 lib/webmin/apache/lang/ko_KR.euc
+lib/webmin/apache/lang/ms_MY
+lib/webmin/apache/lang/ms_MY.UTF-8
 lib/webmin/apache/lang/nl
 lib/webmin/apache/lang/nl.UTF-8
 lib/webmin/apache/lang/no
@@ -858,6 +894,8 @@ lib/webmin/at/config.info.it
 lib/webmin/at/config.info.it.UTF-8
 lib/webmin/at/config.info.ms
 lib/webmin/at/config.info.ms.UTF-8
+lib/webmin/at/config.info.ms_MY
+lib/webmin/at/config.info.ms_MY.UTF-8
 lib/webmin/at/config.info.nl
 lib/webmin/at/config.info.nl.UTF-8
 lib/webmin/at/config.info.no
@@ -907,6 +945,8 @@ lib/webmin/at/lang/it
 lib/webmin/at/lang/it.UTF-8
 lib/webmin/at/lang/ms
 lib/webmin/at/lang/ms.UTF-8
+lib/webmin/at/lang/ms_MY
+lib/webmin/at/lang/ms_MY.UTF-8
 lib/webmin/at/lang/nl
 lib/webmin/at/lang/nl.UTF-8
 lib/webmin/at/lang/no
@@ -962,6 +1002,8 @@ lib/webmin/backup-config/config.info.ja_JP.UTF-8
 lib/webmin/backup-config/config.info.ja_JP.euc
 lib/webmin/backup-config/config.info.ko_KR.UTF-8
 lib/webmin/backup-config/config.info.ko_KR.euc
+lib/webmin/backup-config/config.info.ms_MY
+lib/webmin/backup-config/config.info.ms_MY.UTF-8
 lib/webmin/backup-config/config.info.nl
 lib/webmin/backup-config/config.info.nl.UTF-8
 lib/webmin/backup-config/config.info.no
@@ -1010,6 +1052,8 @@ lib/webmin/backup-config/lang/ja_JP.UTF-8
 lib/webmin/backup-config/lang/ja_JP.euc
 lib/webmin/backup-config/lang/ko_KR.UTF-8
 lib/webmin/backup-config/lang/ko_KR.euc
+lib/webmin/backup-config/lang/ms_MY
+lib/webmin/backup-config/lang/ms_MY.UTF-8
 lib/webmin/backup-config/lang/nl
 lib/webmin/backup-config/lang/nl.UTF-8
 lib/webmin/backup-config/lang/no
@@ -1072,6 +1116,8 @@ lib/webmin/bacula-backup/config.info.ca.UTF-8
 lib/webmin/bacula-backup/config.info.de
 lib/webmin/bacula-backup/config.info.de.UTF-8
 lib/webmin/bacula-backup/config.info.fr
+lib/webmin/bacula-backup/config.info.ms_MY
+lib/webmin/bacula-backup/config.info.ms_MY.UTF-8
 lib/webmin/bacula-backup/config.info.nl
 lib/webmin/bacula-backup/config.info.nl.UTF-8
 lib/webmin/bacula-backup/config.info.pl
@@ -1330,6 +1376,8 @@ lib/webmin/bacula-backup/lang/es
 lib/webmin/bacula-backup/lang/es.UTF-8
 lib/webmin/bacula-backup/lang/fr
 lib/webmin/bacula-backup/lang/fr.UTF-8
+lib/webmin/bacula-backup/lang/ms_MY
+lib/webmin/bacula-backup/lang/ms_MY.UTF-8
 lib/webmin/bacula-backup/lang/nl
 lib/webmin/bacula-backup/lang/nl.UTF-8
 lib/webmin/bacula-backup/lang/pl
@@ -1401,6 +1449,8 @@ lib/webmin/bandwidth/config.info.fr.UTF-8
 lib/webmin/bandwidth/config.info.hr
 lib/webmin/bandwidth/config.info.hu
 lib/webmin/bandwidth/config.info.hu.UTF-8
+lib/webmin/bandwidth/config.info.ms_MY
+lib/webmin/bandwidth/config.info.ms_MY.UTF-8
 lib/webmin/bandwidth/config.info.nl
 lib/webmin/bandwidth/config.info.nl.UTF-8
 lib/webmin/bandwidth/config.info.no
@@ -1437,6 +1487,8 @@ lib/webmin/bandwidth/lang/fr.UTF-8
 lib/webmin/bandwidth/lang/hr
 lib/webmin/bandwidth/lang/hu
 lib/webmin/bandwidth/lang/hu.UTF-8
+lib/webmin/bandwidth/lang/ms_MY
+lib/webmin/bandwidth/lang/ms_MY.UTF-8
 lib/webmin/bandwidth/lang/nl
 lib/webmin/bandwidth/lang/nl.UTF-8
 lib/webmin/bandwidth/lang/no
@@ -1546,6 +1598,8 @@ lib/webmin/bind8/config.info.fr.UTF-8
 lib/webmin/bind8/config.info.hu
 lib/webmin/bind8/config.info.ja_JP.UTF-8
 lib/webmin/bind8/config.info.ja_JP.euc
+lib/webmin/bind8/config.info.ms_MY
+lib/webmin/bind8/config.info.ms_MY.UTF-8
 lib/webmin/bind8/config.info.nl
 lib/webmin/bind8/config.info.nl.UTF-8
 lib/webmin/bind8/config.info.no
@@ -1685,6 +1739,8 @@ lib/webmin/bind8/lang/ja_JP.euc
 lib/webmin/bind8/lang/ja_JP.jis
 lib/webmin/bind8/lang/ko_KR.UTF-8
 lib/webmin/bind8/lang/ko_KR.euc
+lib/webmin/bind8/lang/ms_MY
+lib/webmin/bind8/lang/ms_MY.UTF-8
 lib/webmin/bind8/lang/nl
 lib/webmin/bind8/lang/nl.UTF-8
 lib/webmin/bind8/lang/no
@@ -2058,6 +2114,7 @@ lib/webmin/blue-theme/lang/de
 lib/webmin/blue-theme/lang/en
 lib/webmin/blue-theme/lang/fr
 lib/webmin/blue-theme/lang/ja_JP.euc
+lib/webmin/blue-theme/lang/ms_MY
 lib/webmin/blue-theme/lang/nl
 lib/webmin/blue-theme/lang/no
 lib/webmin/blue-theme/lang/pl
@@ -2668,6 +2725,8 @@ lib/webmin/burner/lang/hu
 lib/webmin/burner/lang/hu.UTF-8
 lib/webmin/burner/lang/it
 lib/webmin/burner/lang/it.UTF-8
+lib/webmin/burner/lang/ms_MY
+lib/webmin/burner/lang/ms_MY.UTF-8
 lib/webmin/burner/lang/nl
 lib/webmin/burner/lang/nl.UTF-8
 lib/webmin/burner/lang/no
@@ -3136,6 +3195,8 @@ lib/webmin/change-user/lang/ko_KR.UTF-8
 lib/webmin/change-user/lang/ko_KR.euc
 lib/webmin/change-user/lang/ms
 lib/webmin/change-user/lang/ms.UTF-8
+lib/webmin/change-user/lang/ms_MY
+lib/webmin/change-user/lang/ms_MY.UTF-8
 lib/webmin/change-user/lang/nl
 lib/webmin/change-user/lang/nl.UTF-8
 lib/webmin/change-user/lang/no
@@ -3166,6 +3227,8 @@ lib/webmin/cluster-copy/config.info.ca.UTF-8
 lib/webmin/cluster-copy/config.info.de
 lib/webmin/cluster-copy/config.info.de.UTF-8
 lib/webmin/cluster-copy/config.info.hu
+lib/webmin/cluster-copy/config.info.ms_MY
+lib/webmin/cluster-copy/config.info.ms_MY.UTF-8
 lib/webmin/cluster-copy/config.info.nl
 lib/webmin/cluster-copy/config.info.nl.UTF-8
 lib/webmin/cluster-copy/config.info.no
@@ -3270,6 +3333,8 @@ lib/webmin/cluster-passwd/config.info.hr
 lib/webmin/cluster-passwd/config.info.hu
 lib/webmin/cluster-passwd/config.info.ms
 lib/webmin/cluster-passwd/config.info.ms.UTF-8
+lib/webmin/cluster-passwd/config.info.ms_MY
+lib/webmin/cluster-passwd/config.info.ms_MY.UTF-8
 lib/webmin/cluster-passwd/config.info.nl
 lib/webmin/cluster-passwd/config.info.nl.UTF-8
 lib/webmin/cluster-passwd/config.info.no
@@ -3299,6 +3364,8 @@ lib/webmin/cluster-passwd/lang/hu
 lib/webmin/cluster-passwd/lang/hu.UTF-8
 lib/webmin/cluster-passwd/lang/ms
 lib/webmin/cluster-passwd/lang/ms.UTF-8
+lib/webmin/cluster-passwd/lang/ms_MY
+lib/webmin/cluster-passwd/lang/ms_MY.UTF-8
 lib/webmin/cluster-passwd/lang/nl
 lib/webmin/cluster-passwd/lang/nl.UTF-8
 lib/webmin/cluster-passwd/lang/no
@@ -3361,6 +3428,8 @@ lib/webmin/cluster-software/config.info.es.UTF-8
 lib/webmin/cluster-software/config.info.fr
 lib/webmin/cluster-software/config.info.fr.UTF-8
 lib/webmin/cluster-software/config.info.hr
+lib/webmin/cluster-software/config.info.ms_MY
+lib/webmin/cluster-software/config.info.ms_MY.UTF-8
 lib/webmin/cluster-software/config.info.nl
 lib/webmin/cluster-software/config.info.nl.UTF-8
 lib/webmin/cluster-software/config.info.no
@@ -3479,6 +3548,8 @@ lib/webmin/cluster-useradmin/config.info.fr
 lib/webmin/cluster-useradmin/config.info.fr.UTF-8
 lib/webmin/cluster-useradmin/config.info.hr
 lib/webmin/cluster-useradmin/config.info.hu
+lib/webmin/cluster-useradmin/config.info.ms_MY
+lib/webmin/cluster-useradmin/config.info.ms_MY.UTF-8
 lib/webmin/cluster-useradmin/config.info.nl
 lib/webmin/cluster-useradmin/config.info.nl.UTF-8
 lib/webmin/cluster-useradmin/config.info.no
@@ -3552,6 +3623,8 @@ lib/webmin/cluster-usermin/config.info.fr
 lib/webmin/cluster-usermin/config.info.fr.UTF-8
 lib/webmin/cluster-usermin/config.info.hr
 lib/webmin/cluster-usermin/config.info.hu
+lib/webmin/cluster-usermin/config.info.ms_MY
+lib/webmin/cluster-usermin/config.info.ms_MY.UTF-8
 lib/webmin/cluster-usermin/config.info.nl
 lib/webmin/cluster-usermin/config.info.nl.UTF-8
 lib/webmin/cluster-usermin/config.info.no
@@ -3615,6 +3688,8 @@ lib/webmin/cluster-webmin/config.info.fr
 lib/webmin/cluster-webmin/config.info.fr.UTF-8
 lib/webmin/cluster-webmin/config.info.hr
 lib/webmin/cluster-webmin/config.info.hu
+lib/webmin/cluster-webmin/config.info.ms_MY
+lib/webmin/cluster-webmin/config.info.ms_MY.UTF-8
 lib/webmin/cluster-webmin/config.info.nl
 lib/webmin/cluster-webmin/config.info.nl.UTF-8
 lib/webmin/cluster-webmin/config.info.no
@@ -3735,6 +3810,8 @@ lib/webmin/cpan/config.info.ko_KR.UTF-8
 lib/webmin/cpan/config.info.ko_KR.euc
 lib/webmin/cpan/config.info.ms
 lib/webmin/cpan/config.info.ms.UTF-8
+lib/webmin/cpan/config.info.ms_MY
+lib/webmin/cpan/config.info.ms_MY.UTF-8
 lib/webmin/cpan/config.info.nl
 lib/webmin/cpan/config.info.nl.UTF-8
 lib/webmin/cpan/config.info.no
@@ -3785,6 +3862,8 @@ lib/webmin/cpan/lang/ko_KR.UTF-8
 lib/webmin/cpan/lang/ko_KR.euc
 lib/webmin/cpan/lang/ms
 lib/webmin/cpan/lang/ms.UTF-8
+lib/webmin/cpan/lang/ms_MY
+lib/webmin/cpan/lang/ms_MY.UTF-8
 lib/webmin/cpan/lang/nl
 lib/webmin/cpan/lang/nl.UTF-8
 lib/webmin/cpan/lang/no
@@ -3866,6 +3945,8 @@ lib/webmin/cron/config.info.ja_JP.UTF-8
 lib/webmin/cron/config.info.ja_JP.euc
 lib/webmin/cron/config.info.ms
 lib/webmin/cron/config.info.ms.UTF-8
+lib/webmin/cron/config.info.ms_MY
+lib/webmin/cron/config.info.ms_MY.UTF-8
 lib/webmin/cron/config.info.nl
 lib/webmin/cron/config.info.nl.UTF-8
 lib/webmin/cron/config.info.no
@@ -3971,6 +4052,8 @@ lib/webmin/cron/lang/ko_KR.UTF-8
 lib/webmin/cron/lang/ko_KR.euc
 lib/webmin/cron/lang/ms
 lib/webmin/cron/lang/ms.UTF-8
+lib/webmin/cron/lang/ms_MY
+lib/webmin/cron/lang/ms_MY.UTF-8
 lib/webmin/cron/lang/nl
 lib/webmin/cron/lang/nl.UTF-8
 lib/webmin/cron/lang/no
@@ -4026,6 +4109,8 @@ lib/webmin/custom/config.info.it
 lib/webmin/custom/config.info.it.UTF-8
 lib/webmin/custom/config.info.ko_KR.UTF-8
 lib/webmin/custom/config.info.ko_KR.euc
+lib/webmin/custom/config.info.ms_MY
+lib/webmin/custom/config.info.ms_MY.UTF-8
 lib/webmin/custom/config.info.nl
 lib/webmin/custom/config.info.nl.UTF-8
 lib/webmin/custom/config.info.no
@@ -4476,6 +4561,8 @@ lib/webmin/custom/lang/ja_JP.UTF-8
 lib/webmin/custom/lang/ja_JP.euc
 lib/webmin/custom/lang/ko_KR.UTF-8
 lib/webmin/custom/lang/ko_KR.euc
+lib/webmin/custom/lang/ms_MY
+lib/webmin/custom/lang/ms_MY.UTF-8
 lib/webmin/custom/lang/nl
 lib/webmin/custom/lang/nl.UTF-8
 lib/webmin/custom/lang/no
@@ -4861,7 +4948,8 @@ lib/webmin/dhcpd/config-CentOS-Linux-5
 lib/webmin/dhcpd/config-CentOS-Linux-6.0-*
 lib/webmin/dhcpd/config-Redhat-Enterprise-Linux-6.0-*
 lib/webmin/dhcpd/config-Scientific-Linux-6.0-*
-lib/webmin/dhcpd/config-Ubuntu-Linux-8.10-*
+lib/webmin/dhcpd/config-Ubuntu-Linux-12.04-*
+lib/webmin/dhcpd/config-Ubuntu-Linux-8.10-10.04.4
 lib/webmin/dhcpd/config-cobalt-linux
 lib/webmin/dhcpd/config-coherent-linux
 lib/webmin/dhcpd/config-corel-linux
@@ -5323,6 +5411,8 @@ lib/webmin/exports/config.info.it
 lib/webmin/exports/config.info.it.UTF-8
 lib/webmin/exports/config.info.ms
 lib/webmin/exports/config.info.ms.UTF-8
+lib/webmin/exports/config.info.ms_MY
+lib/webmin/exports/config.info.ms_MY.UTF-8
 lib/webmin/exports/config.info.nl
 lib/webmin/exports/config.info.nl.UTF-8
 lib/webmin/exports/config.info.no
@@ -5651,6 +5741,8 @@ lib/webmin/exports/lang/ko_KR.UTF-8
 lib/webmin/exports/lang/ko_KR.euc
 lib/webmin/exports/lang/ms
 lib/webmin/exports/lang/ms.UTF-8
+lib/webmin/exports/lang/ms_MY
+lib/webmin/exports/lang/ms_MY.UTF-8
 lib/webmin/exports/lang/nl
 lib/webmin/exports/lang/nl.UTF-8
 lib/webmin/exports/lang/no
@@ -6338,6 +6430,7 @@ lib/webmin/file/list_exports.cgi
 lib/webmin/file/list_shares.cgi
 lib/webmin/file/log_parser.pl
 lib/webmin/file/makelink.cgi
+lib/webmin/file/manifest.txt
 lib/webmin/file/mkdir.cgi
 lib/webmin/file/module.info
 lib/webmin/file/mount.cgi
@@ -7581,7 +7674,7 @@ lib/webmin/gray-theme/gnupg/images/keys.gif
 lib/webmin/gray-theme/gnupg/images/secret.gif
 lib/webmin/gray-theme/gnupg/images/sign.gif
 lib/webmin/gray-theme/gnupg/images/verify.gif
-lib/webmin/gray-theme/gray-less.css
+lib/webmin/gray-theme/gray-left.css
 lib/webmin/gray-theme/grub/images/chain.gif
 lib/webmin/gray-theme/grub/images/icon.gif
 lib/webmin/gray-theme/grub/images/kernel.gif
@@ -8195,6 +8288,8 @@ lib/webmin/grub/config.info.it
 lib/webmin/grub/config.info.it.UTF-8
 lib/webmin/grub/config.info.ms
 lib/webmin/grub/config.info.ms.UTF-8
+lib/webmin/grub/config.info.ms_MY
+lib/webmin/grub/config.info.ms_MY.UTF-8
 lib/webmin/grub/config.info.nl
 lib/webmin/grub/config.info.nl.UTF-8
 lib/webmin/grub/config.info.no
@@ -8241,6 +8336,8 @@ lib/webmin/grub/lang/ko_KR.UTF-8
 lib/webmin/grub/lang/ko_KR.euc
 lib/webmin/grub/lang/ms
 lib/webmin/grub/lang/ms.UTF-8
+lib/webmin/grub/lang/ms_MY
+lib/webmin/grub/lang/ms_MY.UTF-8
 lib/webmin/grub/lang/nl
 lib/webmin/grub/lang/nl.UTF-8
 lib/webmin/grub/lang/no
@@ -8618,6 +8715,8 @@ lib/webmin/htaccess-htpasswd/lang/ko_KR.UTF-8
 lib/webmin/htaccess-htpasswd/lang/ko_KR.euc
 lib/webmin/htaccess-htpasswd/lang/ms
 lib/webmin/htaccess-htpasswd/lang/ms.UTF-8
+lib/webmin/htaccess-htpasswd/lang/ms_MY
+lib/webmin/htaccess-htpasswd/lang/ms_MY.UTF-8
 lib/webmin/htaccess-htpasswd/lang/nl
 lib/webmin/htaccess-htpasswd/lang/nl.UTF-8
 lib/webmin/htaccess-htpasswd/lang/no
@@ -9088,6 +9187,8 @@ lib/webmin/inittab/config.info.ko_KR.UTF-8
 lib/webmin/inittab/config.info.ko_KR.euc
 lib/webmin/inittab/config.info.ms
 lib/webmin/inittab/config.info.ms.UTF-8
+lib/webmin/inittab/config.info.ms_MY
+lib/webmin/inittab/config.info.ms_MY.UTF-8
 lib/webmin/inittab/config.info.nl
 lib/webmin/inittab/config.info.nl.UTF-8
 lib/webmin/inittab/config.info.pl
@@ -9210,6 +9311,8 @@ lib/webmin/inittab/lang/ko_KR.UTF-8
 lib/webmin/inittab/lang/ko_KR.euc
 lib/webmin/inittab/lang/ms
 lib/webmin/inittab/lang/ms.UTF-8
+lib/webmin/inittab/lang/ms_MY
+lib/webmin/inittab/lang/ms_MY.UTF-8
 lib/webmin/inittab/lang/nl
 lib/webmin/inittab/lang/nl.UTF-8
 lib/webmin/inittab/lang/pl
@@ -9519,6 +9622,8 @@ lib/webmin/iscsi-target/config.info.ca
 lib/webmin/iscsi-target/config.info.ca.UTF-8
 lib/webmin/iscsi-target/config.info.de
 lib/webmin/iscsi-target/config.info.de.UTF-8
+lib/webmin/iscsi-target/config.info.no
+lib/webmin/iscsi-target/config.info.no.UTF-8
 lib/webmin/iscsi-target/delete_allows.cgi
 lib/webmin/iscsi-target/delete_targets.cgi
 lib/webmin/iscsi-target/down_allow.cgi
@@ -9550,6 +9655,8 @@ lib/webmin/iscsi-target/lang/de
 lib/webmin/iscsi-target/lang/de.UTF-8
 lib/webmin/iscsi-target/lang/en
 lib/webmin/iscsi-target/lang/en.UTF-8
+lib/webmin/iscsi-target/lang/no
+lib/webmin/iscsi-target/lang/no.UTF-8
 lib/webmin/iscsi-target/list_allow.cgi
 lib/webmin/iscsi-target/log_parser.pl
 lib/webmin/iscsi-target/module.info
@@ -9849,10 +9956,13 @@ lib/webmin/lang/ko_KR.euc
 lib/webmin/lang/lt
 lib/webmin/lang/ms
 lib/webmin/lang/ms.UTF-8
+lib/webmin/lang/ms_MY
+lib/webmin/lang/ms_MY.UTF-8
 lib/webmin/lang/nl
 lib/webmin/lang/nl.UTF-8
 lib/webmin/lang/no
 lib/webmin/lang/no.UTF-8
+lib/webmin/lang/nota-bahasa-malaysia.txt
 lib/webmin/lang/pl
 lib/webmin/lang/pl.UTF-8
 lib/webmin/lang/pt
@@ -10574,6 +10684,8 @@ lib/webmin/lvm/config.info.ca
 lib/webmin/lvm/config.info.ca.UTF-8
 lib/webmin/lvm/config.info.de
 lib/webmin/lvm/config.info.de.UTF-8
+lib/webmin/lvm/config.info.ms_MY
+lib/webmin/lvm/config.info.ms_MY.UTF-8
 lib/webmin/lvm/config.info.nl
 lib/webmin/lvm/config.info.nl.UTF-8
 lib/webmin/lvm/config.info.no
@@ -10991,6 +11103,8 @@ lib/webmin/mailcap/config.info.de.UTF-8
 lib/webmin/mailcap/config.info.hu
 lib/webmin/mailcap/config.info.ko_KR.UTF-8
 lib/webmin/mailcap/config.info.ko_KR.euc
+lib/webmin/mailcap/config.info.ms_MY
+lib/webmin/mailcap/config.info.ms_MY.UTF-8
 lib/webmin/mailcap/config.info.nl
 lib/webmin/mailcap/config.info.nl.UTF-8
 lib/webmin/mailcap/config.info.no
@@ -11190,6 +11304,8 @@ lib/webmin/man/config.info.it
 lib/webmin/man/config.info.it.UTF-8
 lib/webmin/man/config.info.ms
 lib/webmin/man/config.info.ms.UTF-8
+lib/webmin/man/config.info.ms_MY
+lib/webmin/man/config.info.ms_MY.UTF-8
 lib/webmin/man/config.info.nl
 lib/webmin/man/config.info.nl.UTF-8
 lib/webmin/man/config.info.no
@@ -11259,6 +11375,8 @@ lib/webmin/man/lang/ko_KR.UTF-8
 lib/webmin/man/lang/ko_KR.euc
 lib/webmin/man/lang/ms
 lib/webmin/man/lang/ms.UTF-8
+lib/webmin/man/lang/ms_MY
+lib/webmin/man/lang/ms_MY.UTF-8
 lib/webmin/man/lang/nl
 lib/webmin/man/lang/nl.UTF-8
 lib/webmin/man/lang/no
@@ -12850,6 +12968,8 @@ lib/webmin/openslp/config.info.de
 lib/webmin/openslp/config.info.de.UTF-8
 lib/webmin/openslp/config.info.ms
 lib/webmin/openslp/config.info.ms.UTF-8
+lib/webmin/openslp/config.info.ms_MY
+lib/webmin/openslp/config.info.ms_MY.UTF-8
 lib/webmin/openslp/config.info.nl
 lib/webmin/openslp/config.info.nl.UTF-8
 lib/webmin/openslp/config.info.no
@@ -12887,6 +13007,8 @@ lib/webmin/openslp/lang/en
 lib/webmin/openslp/lang/en.UTF-8
 lib/webmin/openslp/lang/ms
 lib/webmin/openslp/lang/ms.UTF-8
+lib/webmin/openslp/lang/ms_MY
+lib/webmin/openslp/lang/ms_MY.UTF-8
 lib/webmin/openslp/lang/nl
 lib/webmin/openslp/lang/nl.UTF-8
 lib/webmin/openslp/lang/no
@@ -13232,6 +13354,8 @@ lib/webmin/passwd/config.info.ko_KR.UTF-8
 lib/webmin/passwd/config.info.ko_KR.euc
 lib/webmin/passwd/config.info.ms
 lib/webmin/passwd/config.info.ms.UTF-8
+lib/webmin/passwd/config.info.ms_MY
+lib/webmin/passwd/config.info.ms_MY.UTF-8
 lib/webmin/passwd/config.info.nl
 lib/webmin/passwd/config.info.nl.UTF-8
 lib/webmin/passwd/config.info.no
@@ -13279,6 +13403,8 @@ lib/webmin/passwd/lang/ko_KR.UTF-8
 lib/webmin/passwd/lang/ko_KR.euc
 lib/webmin/passwd/lang/ms
 lib/webmin/passwd/lang/ms.UTF-8
+lib/webmin/passwd/lang/ms_MY
+lib/webmin/passwd/lang/ms_MY.UTF-8
 lib/webmin/passwd/lang/nl
 lib/webmin/passwd/lang/nl.UTF-8
 lib/webmin/passwd/lang/no
@@ -17121,6 +17247,8 @@ lib/webmin/quota/lang/ja_JP.UTF-8
 lib/webmin/quota/lang/ja_JP.euc
 lib/webmin/quota/lang/ko_KR.UTF-8
 lib/webmin/quota/lang/ko_KR.euc
+lib/webmin/quota/lang/ms_MY
+lib/webmin/quota/lang/ms_MY.UTF-8
 lib/webmin/quota/lang/nl
 lib/webmin/quota/lang/nl.UTF-8
 lib/webmin/quota/lang/no
@@ -18063,6 +18191,8 @@ lib/webmin/sendmail/help/opt_MaxQueueRunSize.sv.UTF-8.html
 lib/webmin/sendmail/help/opt_MaxQueueRunSize.sv.html
 lib/webmin/sendmail/help/opt_MaxQueueRunSize.zh_TW.Big5.html
 lib/webmin/sendmail/help/opt_MaxQueueRunSize.zh_TW.UTF-8.html
+lib/webmin/sendmail/help/opt_MaxRecipientsPerMessage.ca.UTF-8.html
+lib/webmin/sendmail/help/opt_MaxRecipientsPerMessage.ca.html
 lib/webmin/sendmail/help/opt_MaxRecipientsPerMessage.html
 lib/webmin/sendmail/help/opt_MinFreeBlocks.ca.UTF-8.html
 lib/webmin/sendmail/help/opt_MinFreeBlocks.ca.html
@@ -18492,6 +18622,8 @@ lib/webmin/servers/config.info.ko_KR.UTF-8
 lib/webmin/servers/config.info.ko_KR.euc
 lib/webmin/servers/config.info.ms
 lib/webmin/servers/config.info.ms.UTF-8
+lib/webmin/servers/config.info.ms_MY
+lib/webmin/servers/config.info.ms_MY.UTF-8
 lib/webmin/servers/config.info.nl
 lib/webmin/servers/config.info.nl.UTF-8
 lib/webmin/servers/config.info.no
@@ -18569,6 +18701,8 @@ lib/webmin/servers/lang/ko_KR.UTF-8
 lib/webmin/servers/lang/ko_KR.euc
 lib/webmin/servers/lang/ms
 lib/webmin/servers/lang/ms.UTF-8
+lib/webmin/servers/lang/ms_MY
+lib/webmin/servers/lang/ms_MY.UTF-8
 lib/webmin/servers/lang/nl
 lib/webmin/servers/lang/nl.UTF-8
 lib/webmin/servers/lang/no
@@ -18647,6 +18781,8 @@ lib/webmin/shell/config.info.ja_JP.UTF-8
 lib/webmin/shell/config.info.ja_JP.euc
 lib/webmin/shell/config.info.ko_KR.UTF-8
 lib/webmin/shell/config.info.ko_KR.euc
+lib/webmin/shell/config.info.ms_MY
+lib/webmin/shell/config.info.ms_MY.UTF-8
 lib/webmin/shell/config.info.nl
 lib/webmin/shell/config.info.nl.UTF-8
 lib/webmin/shell/config.info.no
@@ -18680,6 +18816,8 @@ lib/webmin/shell/lang/ko_KR.UTF-8
 lib/webmin/shell/lang/ko_KR.euc
 lib/webmin/shell/lang/ms
 lib/webmin/shell/lang/ms.UTF-8
+lib/webmin/shell/lang/ms_MY
+lib/webmin/shell/lang/ms_MY.UTF-8
 lib/webmin/shell/lang/nl
 lib/webmin/shell/lang/nl.UTF-8
 lib/webmin/shell/lang/no
@@ -18712,6 +18850,8 @@ lib/webmin/shorewall/config.info.es
 lib/webmin/shorewall/config.info.es.UTF-8
 lib/webmin/shorewall/config.info.fr
 lib/webmin/shorewall/config.info.fr.UTF-8
+lib/webmin/shorewall/config.info.ms_MY
+lib/webmin/shorewall/config.info.ms_MY.UTF-8
 lib/webmin/shorewall/config.info.nl
 lib/webmin/shorewall/config.info.nl.UTF-8
 lib/webmin/shorewall/config.info.no
@@ -18795,6 +18935,8 @@ lib/webmin/shorewall6/config.info.es
 lib/webmin/shorewall6/config.info.es.UTF-8
 lib/webmin/shorewall6/config.info.fr
 lib/webmin/shorewall6/config.info.fr.UTF-8
+lib/webmin/shorewall6/config.info.ms_MY
+lib/webmin/shorewall6/config.info.ms_MY.UTF-8
 lib/webmin/shorewall6/config.info.nl
 lib/webmin/shorewall6/config.info.nl.UTF-8
 lib/webmin/shorewall6/defaultacl
@@ -18863,6 +19005,8 @@ lib/webmin/smart-status/config.info.de.UTF-8
 lib/webmin/smart-status/config.info.es
 lib/webmin/smart-status/config.info.es.UTF-8
 lib/webmin/smart-status/config.info.fr
+lib/webmin/smart-status/config.info.ms_MY
+lib/webmin/smart-status/config.info.ms_MY.UTF-8
 lib/webmin/smart-status/config.info.nl
 lib/webmin/smart-status/config.info.nl.UTF-8
 lib/webmin/smart-status/config.info.no
@@ -19057,6 +19201,8 @@ lib/webmin/software/config.info.ko_KR.UTF-8
 lib/webmin/software/config.info.ko_KR.euc
 lib/webmin/software/config.info.ms
 lib/webmin/software/config.info.ms.UTF-8
+lib/webmin/software/config.info.ms_MY
+lib/webmin/software/config.info.ms_MY.UTF-8
 lib/webmin/software/config.info.nl
 lib/webmin/software/config.info.nl.UTF-8
 lib/webmin/software/config.info.no
@@ -19175,6 +19321,8 @@ lib/webmin/software/help/delete.fr.html
 lib/webmin/software/help/delete.html
 lib/webmin/software/help/delete.hu.UTF-8.html
 lib/webmin/software/help/delete.hu.html
+lib/webmin/software/help/delete.no.UTF-8.html
+lib/webmin/software/help/delete.no.html
 lib/webmin/software/help/delete.pl.UTF-8.html
 lib/webmin/software/help/delete.pl.html
 lib/webmin/software/help/delete.sv.UTF-8.html
@@ -19409,6 +19557,8 @@ lib/webmin/software/lang/ko_KR.UTF-8
 lib/webmin/software/lang/ko_KR.euc
 lib/webmin/software/lang/ms
 lib/webmin/software/lang/ms.UTF-8
+lib/webmin/software/lang/ms_MY
+lib/webmin/software/lang/ms_MY.UTF-8
 lib/webmin/software/lang/nl
 lib/webmin/software/lang/nl.UTF-8
 lib/webmin/software/lang/no
@@ -19648,7 +19798,6 @@ lib/webmin/squid/delete_pools.cgi
 lib/webmin/squid/delete_refreshes.cgi
 lib/webmin/squid/edit_acl.cgi
 lib/webmin/squid/edit_admin.cgi
-lib/webmin/squid/edit_auth.cgi
 lib/webmin/squid/edit_authparam.cgi
 lib/webmin/squid/edit_cache.cgi
 lib/webmin/squid/edit_cache_host.cgi
@@ -19667,8 +19816,6 @@ lib/webmin/squid/edit_pool.cgi
 lib/webmin/squid/edit_ports.cgi
 lib/webmin/squid/edit_progs.cgi
 lib/webmin/squid/edit_refresh.cgi
-lib/webmin/squid/edit_smem.cgi
-lib/webmin/squid/edit_user.cgi
 lib/webmin/squid/help/edit_acl.ca.UTF-8.html
 lib/webmin/squid/help/edit_acl.ca.html
 lib/webmin/squid/help/edit_acl.es.UTF-8.html
@@ -19971,7 +20118,6 @@ lib/webmin/squid/pool_access_save.cgi
 lib/webmin/squid/purge.cgi
 lib/webmin/squid/restart.cgi
 lib/webmin/squid/save_admin.cgi
-lib/webmin/squid/save_auth.cgi
 lib/webmin/squid/save_authparam.cgi
 lib/webmin/squid/save_cache.cgi
 lib/webmin/squid/save_cache_host.cgi
@@ -19989,8 +20135,6 @@ lib/webmin/squid/save_pool.cgi
 lib/webmin/squid/save_ports.cgi
 lib/webmin/squid/save_progs.cgi
 lib/webmin/squid/save_refresh.cgi
-lib/webmin/squid/save_smem.cgi
-lib/webmin/squid/save_user.cgi
 lib/webmin/squid/squid-auth.pl
 lib/webmin/squid/squid-lib.pl
 lib/webmin/squid/start.cgi
@@ -20229,6 +20373,8 @@ lib/webmin/sshd/lang/ja_JP.UTF-8
 lib/webmin/sshd/lang/ja_JP.euc
 lib/webmin/sshd/lang/ko_KR.UTF-8
 lib/webmin/sshd/lang/ko_KR.euc
+lib/webmin/sshd/lang/ms_MY
+lib/webmin/sshd/lang/ms_MY.UTF-8
 lib/webmin/sshd/lang/nl
 lib/webmin/sshd/lang/nl.UTF-8
 lib/webmin/sshd/lang/no
@@ -20363,6 +20509,8 @@ lib/webmin/status/lang/ja_JP.UTF-8
 lib/webmin/status/lang/ja_JP.euc
 lib/webmin/status/lang/ko_KR.UTF-8
 lib/webmin/status/lang/ko_KR.euc
+lib/webmin/status/lang/ms_MY
+lib/webmin/status/lang/ms_MY.UTF-8
 lib/webmin/status/lang/nl
 lib/webmin/status/lang/nl.UTF-8
 lib/webmin/status/lang/no
@@ -20464,6 +20612,8 @@ lib/webmin/stunnel/config.info.es.UTF-8
 lib/webmin/stunnel/config.info.fr
 lib/webmin/stunnel/config.info.fr.UTF-8
 lib/webmin/stunnel/config.info.ms
+lib/webmin/stunnel/config.info.ms_MY
+lib/webmin/stunnel/config.info.ms_MY.UTF-8
 lib/webmin/stunnel/config.info.nl
 lib/webmin/stunnel/config.info.nl.UTF-8
 lib/webmin/stunnel/config.info.no
@@ -20497,6 +20647,8 @@ lib/webmin/stunnel/lang/fr
 lib/webmin/stunnel/lang/fr.UTF-8
 lib/webmin/stunnel/lang/ms
 lib/webmin/stunnel/lang/ms.UTF-8
+lib/webmin/stunnel/lang/ms_MY
+lib/webmin/stunnel/lang/ms_MY.UTF-8
 lib/webmin/stunnel/lang/nl
 lib/webmin/stunnel/lang/nl.UTF-8
 lib/webmin/stunnel/lang/no
@@ -20590,6 +20742,8 @@ lib/webmin/syslog-ng/lang/en
 lib/webmin/syslog-ng/lang/en.UTF-8
 lib/webmin/syslog-ng/lang/hu
 lib/webmin/syslog-ng/lang/hu.UTF-8
+lib/webmin/syslog-ng/lang/ms_MY
+lib/webmin/syslog-ng/lang/ms_MY.UTF-8
 lib/webmin/syslog-ng/lang/nl
 lib/webmin/syslog-ng/lang/nl.UTF-8
 lib/webmin/syslog-ng/lang/no
@@ -20716,6 +20870,8 @@ lib/webmin/syslog/lang/ja_JP.UTF-8
 lib/webmin/syslog/lang/ja_JP.euc
 lib/webmin/syslog/lang/ko_KR.UTF-8
 lib/webmin/syslog/lang/ko_KR.euc
+lib/webmin/syslog/lang/ms_MY
+lib/webmin/syslog/lang/ms_MY.UTF-8
 lib/webmin/syslog/lang/nl
 lib/webmin/syslog/lang/nl.UTF-8
 lib/webmin/syslog/lang/no
@@ -20767,6 +20923,8 @@ lib/webmin/tcpwrappers/config.info.de.UTF-8
 lib/webmin/tcpwrappers/config.info.fr
 lib/webmin/tcpwrappers/config.info.fr.UTF-8
 lib/webmin/tcpwrappers/config.info.hu
+lib/webmin/tcpwrappers/config.info.ms_MY
+lib/webmin/tcpwrappers/config.info.ms_MY.UTF-8
 lib/webmin/tcpwrappers/config.info.nl
 lib/webmin/tcpwrappers/config.info.nl.UTF-8
 lib/webmin/tcpwrappers/config.info.no
@@ -20794,6 +20952,8 @@ lib/webmin/tcpwrappers/lang/fr
 lib/webmin/tcpwrappers/lang/fr.UTF-8
 lib/webmin/tcpwrappers/lang/hu
 lib/webmin/tcpwrappers/lang/hu.UTF-8
+lib/webmin/tcpwrappers/lang/ms_MY
+lib/webmin/tcpwrappers/lang/ms_MY.UTF-8
 lib/webmin/tcpwrappers/lang/nl
 lib/webmin/tcpwrappers/lang/nl.UTF-8
 lib/webmin/tcpwrappers/lang/no
@@ -20823,6 +20983,8 @@ lib/webmin/telnet/config.info.ko_KR.UTF-8
 lib/webmin/telnet/config.info.ko_KR.euc
 lib/webmin/telnet/config.info.ms
 lib/webmin/telnet/config.info.ms.UTF-8
+lib/webmin/telnet/config.info.ms_MY
+lib/webmin/telnet/config.info.ms_MY.UTF-8
 lib/webmin/telnet/config.info.nl
 lib/webmin/telnet/config.info.nl.UTF-8
 lib/webmin/telnet/config.info.no
@@ -20870,6 +21032,8 @@ lib/webmin/telnet/lang/ko_KR.UTF-8
 lib/webmin/telnet/lang/ko_KR.euc
 lib/webmin/telnet/lang/ms
 lib/webmin/telnet/lang/ms.UTF-8
+lib/webmin/telnet/lang/ms_MY
+lib/webmin/telnet/lang/ms_MY.UTF-8
 lib/webmin/telnet/lang/nl
 lib/webmin/telnet/lang/nl.UTF-8
 lib/webmin/telnet/lang/no
@@ -20933,6 +21097,8 @@ lib/webmin/time/config.info.ko_KR.UTF-8
 lib/webmin/time/config.info.ko_KR.euc
 lib/webmin/time/config.info.ms
 lib/webmin/time/config.info.ms.UTF-8
+lib/webmin/time/config.info.ms_MY
+lib/webmin/time/config.info.ms_MY.UTF-8
 lib/webmin/time/config.info.nl
 lib/webmin/time/config.info.nl.UTF-8
 lib/webmin/time/config.info.no
@@ -21100,6 +21266,8 @@ lib/webmin/time/lang/ko_KR.UTF-8
 lib/webmin/time/lang/ko_KR.euc
 lib/webmin/time/lang/ms
 lib/webmin/time/lang/ms.UTF-8
+lib/webmin/time/lang/ms_MY
+lib/webmin/time/lang/ms_MY.UTF-8
 lib/webmin/time/lang/nl
 lib/webmin/time/lang/nl.UTF-8
 lib/webmin/time/lang/no
@@ -21146,6 +21314,8 @@ lib/webmin/tunnel/config.info.it
 lib/webmin/tunnel/config.info.it.UTF-8
 lib/webmin/tunnel/config.info.ko_KR.UTF-8
 lib/webmin/tunnel/config.info.ko_KR.euc
+lib/webmin/tunnel/config.info.ms_MY
+lib/webmin/tunnel/config.info.ms_MY.UTF-8
 lib/webmin/tunnel/config.info.nl
 lib/webmin/tunnel/config.info.nl.UTF-8
 lib/webmin/tunnel/images/icon.gif
@@ -21167,6 +21337,8 @@ lib/webmin/tunnel/lang/it
 lib/webmin/tunnel/lang/it.UTF-8
 lib/webmin/tunnel/lang/ko_KR.UTF-8
 lib/webmin/tunnel/lang/ko_KR.euc
+lib/webmin/tunnel/lang/ms_MY
+lib/webmin/tunnel/lang/ms_MY.UTF-8
 lib/webmin/tunnel/lang/nl
 lib/webmin/tunnel/lang/nl.UTF-8
 lib/webmin/tunnel/lang/tr
@@ -21214,6 +21386,8 @@ lib/webmin/updown/lang/ko_KR.UTF-8
 lib/webmin/updown/lang/ko_KR.euc
 lib/webmin/updown/lang/ms
 lib/webmin/updown/lang/ms.UTF-8
+lib/webmin/updown/lang/ms_MY
+lib/webmin/updown/lang/ms_MY.UTF-8
 lib/webmin/updown/lang/nl
 lib/webmin/updown/lang/nl.UTF-8
 lib/webmin/updown/lang/no
@@ -22163,6 +22337,8 @@ lib/webmin/usermin/config.info.it
 lib/webmin/usermin/config.info.it.UTF-8
 lib/webmin/usermin/config.info.ja_JP.UTF-8
 lib/webmin/usermin/config.info.ja_JP.euc
+lib/webmin/usermin/config.info.ms_MY
+lib/webmin/usermin/config.info.ms_MY.UTF-8
 lib/webmin/usermin/config.info.nl
 lib/webmin/usermin/config.info.nl.UTF-8
 lib/webmin/usermin/config.info.no
@@ -22266,6 +22442,8 @@ lib/webmin/usermin/lang/it
 lib/webmin/usermin/lang/it.UTF-8
 lib/webmin/usermin/lang/ja_JP.UTF-8
 lib/webmin/usermin/lang/ja_JP.euc
+lib/webmin/usermin/lang/ms_MY
+lib/webmin/usermin/lang/ms_MY.UTF-8
 lib/webmin/usermin/lang/nl
 lib/webmin/usermin/lang/nl.UTF-8
 lib/webmin/usermin/lang/no
@@ -22324,6 +22502,8 @@ lib/webmin/vgetty/config.info.es
 lib/webmin/vgetty/config.info.es.UTF-8
 lib/webmin/vgetty/config.info.hu
 lib/webmin/vgetty/config.info.hu.UTF-8
+lib/webmin/vgetty/config.info.ms_MY
+lib/webmin/vgetty/config.info.ms_MY.UTF-8
 lib/webmin/vgetty/config.info.nl
 lib/webmin/vgetty/config.info.nl.UTF-8
 lib/webmin/vgetty/config.info.no
@@ -22407,6 +22587,8 @@ lib/webmin/webalizer/config.info.fr.UTF-8
 lib/webmin/webalizer/config.info.hr
 lib/webmin/webalizer/config.info.hu
 lib/webmin/webalizer/config.info.hu.UTF-8
+lib/webmin/webalizer/config.info.ms_MY
+lib/webmin/webalizer/config.info.ms_MY.UTF-8
 lib/webmin/webalizer/config.info.nl
 lib/webmin/webalizer/config.info.nl.UTF-8
 lib/webmin/webalizer/config.info.no
@@ -22444,6 +22626,8 @@ lib/webmin/webalizer/lang/fr.UTF-8
 lib/webmin/webalizer/lang/hr
 lib/webmin/webalizer/lang/hu
 lib/webmin/webalizer/lang/hu.UTF-8
+lib/webmin/webalizer/lang/ms_MY
+lib/webmin/webalizer/lang/ms_MY.UTF-8
 lib/webmin/webalizer/lang/nl
 lib/webmin/webalizer/lang/nl.UTF-8
 lib/webmin/webalizer/lang/no
@@ -22497,7 +22681,6 @@ lib/webmin/webmin/change_session.cgi
 lib/webmin/webmin/change_ssl.cgi
 lib/webmin/webmin/change_startpage.cgi
 lib/webmin/webmin/change_status.cgi
-lib/webmin/webmin/change_syslet.cgi
 lib/webmin/webmin/change_theme.cgi
 lib/webmin/webmin/change_twofactor.cgi
 lib/webmin/webmin/change_ui.cgi
@@ -22528,6 +22711,8 @@ lib/webmin/webmin/config.info.ko_KR.UTF-8
 lib/webmin/webmin/config.info.ko_KR.euc
 lib/webmin/webmin/config.info.ms
 lib/webmin/webmin/config.info.ms.UTF-8
+lib/webmin/webmin/config.info.ms_MY
+lib/webmin/webmin/config.info.ms_MY.UTF-8
 lib/webmin/webmin/config.info.nl
 lib/webmin/webmin/config.info.nl.UTF-8
 lib/webmin/webmin/config.info.no
@@ -22574,7 +22759,6 @@ lib/webmin/webmin/edit_session.cgi
 lib/webmin/webmin/edit_ssl.cgi
 lib/webmin/webmin/edit_startpage.cgi
 lib/webmin/webmin/edit_status.cgi
-lib/webmin/webmin/edit_syslet.cgi
 lib/webmin/webmin/edit_themes.cgi
 lib/webmin/webmin/edit_twofactor.cgi
 lib/webmin/webmin/edit_ui.cgi
@@ -22585,7 +22769,11 @@ lib/webmin/webmin/export_mod.cgi
 lib/webmin/webmin/feedback_files.pl
 lib/webmin/webmin/fix_os.cgi
 lib/webmin/webmin/gnupg-lib.pl
+lib/webmin/webmin/help/twofactor.ca.UTF-8.html
+lib/webmin/webmin/help/twofactor.ca.html
 lib/webmin/webmin/help/twofactor.html
+lib/webmin/webmin/help/twofactor.ms_MY.UTF-8.html
+lib/webmin/webmin/help/twofactor.ms_MY.html
 lib/webmin/webmin/images/access.gif
 lib/webmin/webmin/images/advanced.gif
 lib/webmin/webmin/images/anon.gif
@@ -22611,7 +22799,6 @@ lib/webmin/webmin/images/smallicon.gif
 lib/webmin/webmin/images/ssl.gif
 lib/webmin/webmin/images/startpage.gif
 lib/webmin/webmin/images/status.gif
-lib/webmin/webmin/images/syslet.gif
 lib/webmin/webmin/images/themes.gif
 lib/webmin/webmin/images/twofactor.gif
 lib/webmin/webmin/images/ui.gif
@@ -22649,6 +22836,8 @@ lib/webmin/webmin/lang/ko_KR.UTF-8
 lib/webmin/webmin/lang/ko_KR.euc
 lib/webmin/webmin/lang/ms
 lib/webmin/webmin/lang/ms.UTF-8
+lib/webmin/webmin/lang/ms_MY
+lib/webmin/webmin/lang/ms_MY.UTF-8
 lib/webmin/webmin/lang/nl
 lib/webmin/webmin/lang/nl.UTF-8
 lib/webmin/webmin/lang/no
@@ -22713,6 +22902,8 @@ lib/webmin/webmincron/lang/en
 lib/webmin/webmincron/lang/en.UTF-8
 lib/webmin/webmincron/lang/hu
 lib/webmin/webmincron/lang/hu.UTF-8
+lib/webmin/webmincron/lang/ms_MY
+lib/webmin/webmincron/lang/ms_MY.UTF-8
 lib/webmin/webmincron/lang/nl
 lib/webmin/webmincron/lang/nl.UTF-8
 lib/webmin/webmincron/lang/no
@@ -22740,6 +22931,8 @@ lib/webmin/webminlog/config.info.hu
 lib/webmin/webminlog/config.info.hu.UTF-8
 lib/webmin/webminlog/config.info.ko_KR.UTF-8
 lib/webmin/webminlog/config.info.ko_KR.euc
+lib/webmin/webminlog/config.info.ms_MY
+lib/webmin/webminlog/config.info.ms_MY.UTF-8
 lib/webmin/webminlog/config.info.nl
 lib/webmin/webminlog/config.info.nl.UTF-8
 lib/webmin/webminlog/config.info.no
@@ -22780,6 +22973,8 @@ lib/webmin/webminlog/lang/ko_KR.UTF-8
 lib/webmin/webminlog/lang/ko_KR.euc
 lib/webmin/webminlog/lang/ms
 lib/webmin/webminlog/lang/ms.UTF-8
+lib/webmin/webminlog/lang/ms_MY
+lib/webmin/webminlog/lang/ms_MY.UTF-8
 lib/webmin/webminlog/lang/nl
 lib/webmin/webminlog/lang/nl.UTF-8
 lib/webmin/webminlog/lang/no
@@ -22846,6 +23041,8 @@ lib/webmin/wuftpd/config.info.fr.UTF-8
 lib/webmin/wuftpd/config.info.hr
 lib/webmin/wuftpd/config.info.hu
 lib/webmin/wuftpd/config.info.hu.UTF-8
+lib/webmin/wuftpd/config.info.ms_MY
+lib/webmin/wuftpd/config.info.ms_MY.UTF-8
 lib/webmin/wuftpd/config.info.nl
 lib/webmin/wuftpd/config.info.nl.UTF-8
 lib/webmin/wuftpd/config.info.no
@@ -23076,6 +23273,8 @@ lib/webmin/wuftpd/lang/ja_JP.euc
 lib/webmin/wuftpd/lang/ja_JP.jis
 lib/webmin/wuftpd/lang/ko_KR.UTF-8
 lib/webmin/wuftpd/lang/ko_KR.euc
+lib/webmin/wuftpd/lang/ms_MY
+lib/webmin/wuftpd/lang/ms_MY.UTF-8
 lib/webmin/wuftpd/lang/nl
 lib/webmin/wuftpd/lang/nl.UTF-8
 lib/webmin/wuftpd/lang/no
@@ -23148,6 +23347,8 @@ lib/webmin/xinetd/config.info.ko_KR.UTF-8
 lib/webmin/xinetd/config.info.ko_KR.euc
 lib/webmin/xinetd/config.info.ms
 lib/webmin/xinetd/config.info.ms.UTF-8
+lib/webmin/xinetd/config.info.ms_MY
+lib/webmin/xinetd/config.info.ms_MY.UTF-8
 lib/webmin/xinetd/config.info.nl
 lib/webmin/xinetd/config.info.nl.UTF-8
 lib/webmin/xinetd/config.info.no
@@ -23196,6 +23397,8 @@ lib/webmin/xinetd/lang/ko_KR.UTF-8
 lib/webmin/xinetd/lang/ko_KR.euc
 lib/webmin/xinetd/lang/ms
 lib/webmin/xinetd/lang/ms.UTF-8
+lib/webmin/xinetd/lang/ms_MY
+lib/webmin/xinetd/lang/ms_MY.UTF-8
 lib/webmin/xinetd/lang/nl
 lib/webmin/xinetd/lang/nl.UTF-8
 lib/webmin/xinetd/lang/no
