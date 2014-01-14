@@ -9,6 +9,10 @@ lib/libssh.a
 lib/libssh.so
 lib/libssh.so.4
 lib/libssh.so.4.2.5
+lib/libssh_threads.a
+lib/libssh_threads.so
+lib/libssh_threads.so.4
+lib/libssh_threads.so.4.2.5
 libdata/pkgconfig/libssh.pc
 libdata/pkgconfig/libssh_threads.pc
 @dirrm include/libssh
