@@ -6,7 +6,7 @@ PORTVERSION=	2.7.1
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU patch utility
 
 LICENSE=	GPLv3
