@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	swig
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.11
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -11,26 +11,22 @@ COMMENT=	Generate wrappers for calling C/C++ code from other languages
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
+USES=		gmake
 USE_AUTOTOOLS=	autoconf:env libtool
 
-MAN1=		ccache-swig${VER}.1
-
 VER=		${PORTVERSION:R}
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+PLIST_SUB+=	PORTVERSION=${PORTVERSION} VER="${VER}"
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
 CFLAGS+=	-fPIC -DPIC
-ALL_TARGET=	swig
-PLIST_SUB+=	VER="${VER}"
+ALL_TARGET=	# none
 
 WANT_LUA=	yes
 WANT_LUA_VER=	5.0+
 
 CONFIGURE_ARGS+=--program-suffix=${VER}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_LUA:Mlua-5.*} != ""
@@ -59,18 +55,21 @@ post-configure:
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}/${PORTVERSION}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}
 	cd ${WRKSRC}/Examples && ${FIND} . -type d \
-		-exec ${INSTALL} -d ${EXAMPLESDIR}/${PORTVERSION}/{} \;
+		-exec ${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}/{} \;
 	cd ${WRKSRC}/Examples && ${FIND} . -type f \
-		-exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/${PORTVERSION}/{} \;
+		-exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/${PORTVERSION}/{} \;
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/${PORTVERSION}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/${PORTVERSION}
 	cd ${WRKSRC}/Doc && ${FIND} . -type d \
-		-exec ${INSTALL} -d ${DOCSDIR}/${PORTVERSION}/{} \;
+		-exec ${INSTALL} -d ${STAGEDIR}${DOCSDIR}/${PORTVERSION}/{} \;
 	cd ${WRKSRC}/Doc && ${FIND} . -type f \
-		-exec ${INSTALL_DATA} {} ${DOCSDIR}/${PORTVERSION}/{} \;
+		-exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/${PORTVERSION}/{} \;
 .endif
+
+regression-test: build
+	cd ${WRKSRC} && ${GMAKE} check
 
 .include <bsd.port.post.mk>
