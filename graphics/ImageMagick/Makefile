@@ -33,22 +33,17 @@ COMMENT=	Image processing tools
 
 LICENSE=	APACHE20
 
-USES=		gmake pkgconfig:both pathfix perl5
+USES=		gmake pkgconfig:both pathfix perl5 shebangfix
+SHEBANG_FILES=	www/source/examples.pl
 USE_XZ=		yes
 USE_PERL5=	run build patch
 WANT_GNOME=	yes
 USE_AUTOTOOLS=	libltdl
-NO_STAGE=	yes
 # For some reason, using our libtool breaks the build into pieces:
 #USE_AUTOTOOLS+=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --without-dps --without-lcms
 USE_LDCONFIG=	yes
-
-MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 Wand-config.1 \
-		animate.1 conjure.1 compare.1 composite.1 convert.1 display.1 \
-		MagickCore-config.1 MagickWand-config.1 \
-		identify.1 import.1 mogrify.1 montage.1 stream.1
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -416,15 +411,16 @@ pre-configure:
 
 post-install: test
 .if ${PORT_OPTIONS:MPERL}
-	@${RM} -f ${PREFIX}/lib/perl5/${PERL_VER}/mach/perllocal.pod
+	@${RM} -f ${STAGEDIR}${PREFIX}/lib/perl5/${PERL_VER}/mach/perllocal.pod
+	${REINPLACE_CMD} -i '' -e 's}^${STAGEDIR}}}' ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Image/Magick/.packlist
 .endif
 .if ${PORT_OPTIONS:MMODULES}
 . if ${PORT_OPTIONS:M16BIT_PIXEL}
-	@${TOUCH} ${PREFIX}/lib/ImageMagick-${PORTVERSION:R}/modules-Q16/coders/.keep
-	@${TOUCH} ${PREFIX}/lib/ImageMagick-${PORTVERSION:R}/modules-Q16/filters/.keep
+	@${TOUCH} ${STAGEDIR}${PREFIX}/lib/ImageMagick-${PORTVERSION:R}/modules-Q16/coders/.keep
+	@${TOUCH} ${STAGEDIR}${PREFIX}/lib/ImageMagick-${PORTVERSION:R}/modules-Q16/filters/.keep
 . else
-	@${TOUCH} ${PREFIX}/lib/ImageMagick-${PORTVERSION:R}/modules-Q8/coders/.keep
-	@${TOUCH} ${PREFIX}/lib/ImageMagick-${PORTVERSION:R}/modules-Q8/filters/.keep
+	@${TOUCH} ${STAGEDIR}${PREFIX}/lib/ImageMagick-${PORTVERSION:R}/modules-Q8/coders/.keep
+	@${TOUCH} ${STAGEDIR}${PREFIX}/lib/ImageMagick-${PORTVERSION:R}/modules-Q8/filters/.keep
 . endif
 .endif
 
