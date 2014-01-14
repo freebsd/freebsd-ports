@@ -13,22 +13,19 @@ COMMENT=	High performance XML data processing with Tcl (ARGS for OpenACS)
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/unix
 TDOMBASE=	${PREFIX}/lib/tdom${PORTVERSION}
 
-USE_TCL=	84+
+OPTIONS_DEFINE=	DOCS
 
-USE_GMAKE=	yes
+USES=		gmake tcl
+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure
 
-NO_STAGE=	yes
 pre-configure:
 	${RM} -f ${WRKSRC}/../generic/domalloc.?
 
 USE_LDCONFIG=	${TDOMBASE}
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-
-MANN=		dom.n domDoc.n domNode.n expat.n expatapi.n tdomcmd.n tnc.n
-MANCOMPRESSED=	no
 
 DOCS=		CHANGES LICENSE README README.AOL
 HTMLDOCS=	category-index.html dom.html domDoc.html domNode.html \
@@ -38,21 +35,22 @@ HTMLDOCS=	category-index.html dom.html domDoc.html domNode.html \
 post-build test:
 	${SETENV} LANG=C ${MAKE} -C ${WRKSRC} test
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-CONFIGURE_ARGS+=	--enable-threads --disable-tdomalloc \
+CONFIGURE_ARGS+=--enable-threads --disable-tdomalloc \
 		--with-tcl=${TCL_LIBDIR} \
-		--with-tclinclude=${TCL_INCLUDEDIR} --prefix=${PREFIX}
+		--with-tclinclude=${TCL_INCLUDEDIR} \
+		--prefix=${PREFIX} --exec-prefix=${PREFIX}
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/html
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 . for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/../${FILE} ${DOCSDIR}/${FILE}
+	@${INSTALL_DATA} ${WRKSRC}/../${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
 . endfor
 . for FILE in ${HTMLDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/../doc/${FILE} ${DOCSDIR}/html/${FILE}
+	@${INSTALL_DATA} ${WRKSRC}/../doc/${FILE} ${STAGEDIR}${DOCSDIR}/html/${FILE}
 . endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
