@@ -23,7 +23,7 @@ RUN_DEPENDS=	ssh-askpass:${PORTSDIR}/security/openssh-askpass
 WRKSRC=		${WRKDIR}/usr/local
 NO_BUILD=	yes
 
-USE_TK_WRAPPER=	yes
+USES=		tk:wrapper
 
 DESKTOP_ENTRIES="SecPanel" "${COMMENT}" "${PORTNAME}" \
 		"${PORTNAME}" "" "false"
