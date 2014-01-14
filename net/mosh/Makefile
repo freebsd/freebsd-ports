@@ -16,8 +16,9 @@ LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
 
 USE_PERL5=	run
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-utempter
-CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
+CONFIGURE_ARGS=	--with-utempter --without-ncurses
+CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
+		TINFO_CFLAGS="-I/usr/include"
 INSTALL_TARGET=	install-strip
 USE_OPENSSL=	yes
 USES=		pkgconfig perl5
