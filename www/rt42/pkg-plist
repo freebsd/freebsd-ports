@@ -253,7 +253,9 @@ sbin/rt-email-dashboards
 sbin/rt-email-digest
 sbin/rt-email-group-admin
 sbin/rt-fulltext-indexer
+sbin/rt-importer
 sbin/rt-preferences-viewer
+sbin/rt-serializer
 sbin/rt-server
 sbin/rt-server.fcgi
 sbin/rt-session-viewer
@@ -404,6 +406,8 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.13/schema.Pg
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.13/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.18/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.19/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.19/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.3/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.4/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.0.6/content
@@ -466,6 +470,8 @@ sbin/standalone_httpd
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.1.8/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.1.9/content
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/4.2.1/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.2.2/content
+%%PORTDOCS%%%%DOCSDIR%%/upgrade/4.2.2/schema.mysql
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/generate-rtaddressregexp
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/sanity-check-stylesheets.pl
 %%PORTDOCS%%%%DOCSDIR%%/upgrade/shrink_cgm_table.pl
@@ -873,7 +879,6 @@ sbin/standalone_httpd
 %%DATADIR%%/html/REST/1.0/dhandler
 %%DATADIR%%/html/REST/1.0/logout
 %%DATADIR%%/html/REST/1.0/search/dhandler
-%%DATADIR%%/html/REST/1.0/search/ticket
 %%DATADIR%%/html/REST/1.0/ticket/comment
 %%DATADIR%%/html/REST/1.0/ticket/link
 %%DATADIR%%/html/REST/1.0/ticket/merge
@@ -1363,6 +1368,7 @@ sbin/standalone_httpd
 %%DATADIR%%/static/css/base/login.css
 %%DATADIR%%/static/css/base/main.css
 %%DATADIR%%/static/css/base/misc.css
+%%DATADIR%%/static/css/base/msie6.css
 %%DATADIR%%/static/css/base/nav.css
 %%DATADIR%%/static/css/base/portlets.css
 %%DATADIR%%/static/css/base/print.css
@@ -1685,6 +1691,7 @@ sbin/standalone_httpd
 @dirrmtry %%DATADIR%%/fonts
 @dirrmtry %%DATADIR%%/etc
 @dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.2.2
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.2.1
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.9
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.1.8
@@ -1712,6 +1719,7 @@ sbin/standalone_httpd
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.6
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.4
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.3
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.19
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.18
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.13
 %%PORTDOCS%%@dirrmtry %%DOCSDIR%%/upgrade/4.0.12
