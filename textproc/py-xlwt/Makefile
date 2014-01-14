@@ -10,10 +10,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	dikshie@sfc.wide.ad.jp
 COMMENT=	Writing data and formatting information from Excel files
 
-PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
+LICENSE=	BSD4CLAUSE
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
