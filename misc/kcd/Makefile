@@ -12,33 +12,29 @@ COMMENT=	Change directory in full-screen visual mode
 
 LICENSE=	GPLv2
 
-USES=		gettext perl5
+USES=		gettext ncurses perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 
-MAN1=		kcd.1
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/kcd-inst ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/kcdscr ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/kcdmain ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/kcd.1 ${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/kcd-inst ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/kcdscr ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/kcdmain ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/kcd.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .for i in en_GB en_GB.UTF-8 en_US.UTF-8
-	@${MKDIR} ${PREFIX}/share/locale/${i}/LC_MESSAGES
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${i}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${i}.gmo \
-		${PREFIX}/share/locale/${i}/LC_MESSAGES/kcd.mo
+		${STAGEDIR}${PREFIX}/share/locale/${i}/LC_MESSAGES/kcd.mo
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/kcd.csh.init ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/kcd.sh.init ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/kcd.csh.init ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/kcd.sh.init ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
