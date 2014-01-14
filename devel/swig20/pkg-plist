@@ -1,5 +1,6 @@
-bin/ccache-swig2.0
-bin/swig2.0
+bin/ccache-swig%%VER%%
+bin/swig%%VER%%
+man/man1/ccache-swig2.0.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Devel/cmdopt.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Devel/engineering.html
 %%PORTDOCS%%%%DOCSDIR%%/%%PORTVERSION%%/Devel/file.html
@@ -122,11 +123,11 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/class/example.cxx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/class/example.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/class/example.i
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/class/test-lowlevel-class.scm
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/class/test-tinyclos-class.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/class/runme-lowlevel.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/class/runme-tinyclos.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/constants/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/constants/example.i
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/constants/test-constants.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/constants/runme.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/egg/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/egg/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/egg/mod1.i
@@ -139,18 +140,18 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/multimap/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/multimap/example.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/multimap/example.i
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/multimap/test-multimap.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/multimap/runme.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/overload/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/overload/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/overload/example.cxx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/overload/example.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/overload/example.i
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/overload/test-overload.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/overload/runme.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/simple/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/simple/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/simple/example.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/simple/example.i
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/simple/test-simple.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/chicken/simple/runme.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/contract/simple_c/example.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/contract/simple_c/example.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/contract/simple_c/runme1.py
@@ -351,20 +352,22 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/go/variables/example.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/go/variables/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/go/variables/runme.go
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/Makefile.in
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/check.list
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/class/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/class/example.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/class/example.h
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/class/example.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/class/runme.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/constants/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/constants/constants.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/constants/example.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/constants/runme.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/matrix/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/matrix/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/matrix/main.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/matrix/example.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/matrix/matrix.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/matrix/matrix.i
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/matrix/matrix.scm
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/matrix/package.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/matrix/runme.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/matrix/vector.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/matrix/vector.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/matrix/vector.i
@@ -378,14 +381,14 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/multivalue/runme.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/port/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/port/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/port/port.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/port/port.i
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/port/port.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/port/example.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/port/example.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/port/runme.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/simple/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/simple/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/simple/example.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/simple/example.i
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/simple/example.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/simple/runme.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/std_vector/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/std_vector/example.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/guile/std_vector/example.i
@@ -575,16 +578,16 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/multimap/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/multimap/example.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/multimap/example.i
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/multimap/example.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/multimap/runme.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/simple/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/simple/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/simple/example.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/simple/example.i
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/simple/example.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/simple/runme.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/std_vector/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/std_vector/example.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/std_vector/example.i
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/std_vector/example.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/mzscheme/std_vector/runme.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/ocaml/argout_ref/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/ocaml/argout_ref/example.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/ocaml/argout_ref/example.i
@@ -1341,6 +1344,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/arrays_scope.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/autodoc.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/bloody_hell.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/bom_utf8.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/bools.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/callback.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/cast_operator.i
@@ -1356,6 +1360,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/casts_runme.ss
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/char_constant_runme.ss
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/chicken_ext_test_external.cxx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/chicken_ext_test_runme.ss
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/class_ignore_runme.ss
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/clientdata_prop_runme_proxy.ss
@@ -1365,7 +1370,6 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/cpp_enum_runme.ss
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/cpp_namespace_runme.ss
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/dynamic_cast_runme.ss
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/ext_test_external.cxx
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/global_vars_runme.ss
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/global_vars_runme_proxy.ss
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/chicken/import_nomodule_runme.ss
@@ -1463,6 +1467,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/director_nspace_runme.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/director_primitives_runme.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/director_protected_runme.cs
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/director_smartptr_runme.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/director_string_runme.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/enum_forward_runme.cs
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/csharp/enum_thorough_runme.cs
@@ -1635,6 +1640,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_namespace_clash.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_nested.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_nspace.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_nspace_director_name_collision.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_overload.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_overload2.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_primitives.i
@@ -1642,6 +1648,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_protected.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_protected_overloaded.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_redefined.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_smartptr.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_stl.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_string.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/director_thread.i
@@ -1653,6 +1660,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/dynamic_cast.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/empty.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/enum_forward.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/enum_macro.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/enum_plus.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/enum_rename.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/enum_scope_template.i
@@ -1743,6 +1751,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors/pp_unterm_string.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors/pp_variable_args.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors/swig_apply_nargs.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors/swig_extend.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors/swig_identifier.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors/swig_insert_bad.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors/swig_typemap_copy.i
@@ -1937,6 +1946,8 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile/cpp_enum_runme.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile/cpp_namespace_runme.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile/dynamic_cast_runme.scm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile/guile_ext_test_external.cxx
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile/guile_ext_test_runme.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile/import_nomodule_runme.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile/imports_runme.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile/inherit_missing_runme.scm
@@ -1958,11 +1969,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile/typedef_inherit_runme.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile/typename_runme.scm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile/unions_runme.scm
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guilescm/Makefile
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guilescm/Makefile.in
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guilescm/ext_test_external.cxx
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guilescm/guilescm_ext_test_runme.scm
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guilescm_ext_test.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile_ext_test.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/iadd.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ignore_parameter.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/ignore_template_constructor.i
@@ -2020,12 +2027,14 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/director_nspace_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/director_primitives_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/director_protected_runme.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/director_smartptr_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/director_string_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/director_thread_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/director_unroll_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/director_wombat_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/dynamic_cast_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/enum_forward_runme.java
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/enum_macro_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/enum_thorough_proper_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/enum_thorough_runme.java
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java/enum_thorough_simple_runme.java
@@ -2127,6 +2136,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_lib_arrays.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_lib_arrays_dimensionless.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_lib_various.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_nspacewithoutpackage.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_pgcpp.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_pragmas.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java_prepost.i
@@ -2139,6 +2149,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/langobj.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lextype.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_attribute.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_attribute_template.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_boost_intrusive_ptr.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_boost_shared_ptr.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_boost_shared_ptr_bits.i
@@ -2160,6 +2171,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_containers_int.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_deque.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_except.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_except_as_class.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_functors.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_list.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/li_std_map.i
@@ -2473,6 +2485,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/overload_extend.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/overload_extendc.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/overload_method.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/overload_numeric.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/overload_rename.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/overload_return_type.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/overload_simple.i
@@ -2730,6 +2743,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/kwargs_feature_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/langobj_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_attribute_runme.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_attribute_template_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_boost_shared_ptr_bits_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_boost_shared_ptr_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_boost_shared_ptr_template_runme.py
@@ -2743,6 +2757,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_implicit_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_carray_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_containers_int_runme.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_except_as_class_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_map_member_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_map_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/li_std_pair_extra_runme.py
@@ -2771,6 +2786,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/overload_copy_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/overload_extend_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/overload_extendc_runme.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/overload_numeric_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/overload_rename_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/overload_simple_runme.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/python/overload_subtype_runme.py
@@ -2884,6 +2900,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/r/r_copy_struct_runme.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/r/r_double_delete_runme.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/r/r_legacy_runme.R
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/r/r_sexp_runme.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/r/rename_simple_runme.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/r/simple_array_runme.R
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/r/unions_runme.R
@@ -2892,6 +2909,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/r_double_delete.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/r_legacy.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/r_overload_array.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/r_sexp.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/redefined.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/redefined_not.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/refcount.h
@@ -3169,6 +3187,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_default.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_default2.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_default_arg.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_default_arg_virtual_destructor.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_default_class_parms.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_default_class_parms_typedef.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_default_inherit.i
@@ -3239,13 +3258,14 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_using_directive_and_declaration_forward.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_virtual.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/template_whitespace.i
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/subdir1/hello.i
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/subdir1/imports.i
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/subdir1/subinc1.i
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/subdir2/hello.i
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/subdir2/imports.i
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/subdir2/subinc2.i
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/test.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/inctest/subdir1/hello.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/inctest/subdir1/imports.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/inctest/subdir1/subinc1.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/inctest/subdir2/hello.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/inctest/subdir2/imports.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/inctest/subdir2/subinc2.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/inctest/test.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/threads.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/threads_exception.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/throw_exception.i
@@ -3259,6 +3279,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/typedef_scope.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/typedef_sizet.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/typedef_struct.i
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/typemap_array_qualifiers.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/typemap_arrays.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/typemap_delete.i
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/typemap_directorout.i
@@ -3429,10 +3450,7 @@ bin/swig2.0
 %%DATADIR%%/%%PORTVERSION%%/go/typemaps.i
 %%DATADIR%%/%%PORTVERSION%%/guile/common.scm
 %%DATADIR%%/%%PORTVERSION%%/guile/cplusplus.i
-%%DATADIR%%/%%PORTVERSION%%/guile/ghinterface.i
 %%DATADIR%%/%%PORTVERSION%%/guile/guile.i
-%%DATADIR%%/%%PORTVERSION%%/guile/guile_gh.swg
-%%DATADIR%%/%%PORTVERSION%%/guile/guile_gh_run.swg
 %%DATADIR%%/%%PORTVERSION%%/guile/guile_scm.swg
 %%DATADIR%%/%%PORTVERSION%%/guile/guile_scm_run.swg
 %%DATADIR%%/%%PORTVERSION%%/guile/guilemain.i
@@ -3710,6 +3728,7 @@ bin/swig2.0
 %%DATADIR%%/%%PORTVERSION%%/python/stl.i
 %%DATADIR%%/%%PORTVERSION%%/python/typemaps.i
 %%DATADIR%%/%%PORTVERSION%%/python/wchar.i
+%%DATADIR%%/%%PORTVERSION%%/r/boost_shared_ptr.i
 %%DATADIR%%/%%PORTVERSION%%/r/cdata.i
 %%DATADIR%%/%%PORTVERSION%%/r/exception.i
 %%DATADIR%%/%%PORTVERSION%%/r/r.swg
@@ -3952,8 +3971,9 @@ bin/swig2.0
 @dirrm %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/xml
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/uffi
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/subdir2
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/subdir1
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/inctest/subdir2
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/inctest/subdir1
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir/inctest
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/testdir
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/tcl
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/schemerunme
@@ -3968,7 +3988,6 @@ bin/swig2.0
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/mzscheme
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/lua
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/java
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guilescm
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/guile
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/go
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/test-suite/errors
@@ -4177,6 +4196,7 @@ bin/swig2.0
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/guile/multimap
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/guile/matrix
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/guile/constants
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/guile/class
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/guile
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/go/variables
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/go/template
@@ -4244,7 +4264,6 @@ bin/swig2.0
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/simple/res/values
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/simple/res/layout
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/simple/res
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/simple/libs
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/simple/jni
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/simple
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/%%PORTVERSION%%/android/extend/src/org/swig/extendexample
@@ -4272,4 +4291,3 @@ bin/swig2.0
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%PORTVERSION%%/Devel
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/%%PORTVERSION%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/%%PORTVERSION%%/android/simple/libs
