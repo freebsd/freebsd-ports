@@ -3,7 +3,7 @@
 PORTNAME=	igor
 PORTVERSION=	1.397
 CATEGORIES=	textproc
-MASTER_SITES=	https://docscripts.glenbarber.us/tags/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	http://docscripts.glenbarber.us/tags/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	wblock@FreeBSD.org
 COMMENT=	FreeBSD Documentation Project sanity check script
