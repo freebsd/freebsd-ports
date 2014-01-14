@@ -4,4 +4,4 @@
 #
 
 cd "%%DATADIR%%"/bin
-exec /usr/bin/env perl ./pangzero "${@}"
+exec %%PERL%% ./pangzero "${@}"
