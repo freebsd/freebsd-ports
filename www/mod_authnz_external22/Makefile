@@ -5,11 +5,14 @@ PORTNAME=	mod_authnz_external
 PORTVERSION=	3.1.2
 PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
+PKGNAMESUFFIX=	22
 DIST_SUBDIR=	apache2
 
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	Allows users authentication based on external mechanisms on apache 2.2
+
+LICENSE=	APACHE20
 
 USE_APACHE=	22
 AP_FAST_BUILD=	yes

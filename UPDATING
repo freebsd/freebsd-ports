@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140114:
+  AFFECTS: users of www/mod_authnz_external
+  AUTHOR: ohauer@FreeBSD.org
+
+  www/mod_authnz_external was moved to www/mod_authnz_external22
+  Please do the following according to package manager used.
+
+  # portmaster -o www/mod_authnz_external22 www/mod_authnz_external
+    or
+  # portupgrade -fo www/mod_authnz_external22 www/mod_authnz_external
+    or
+  # pkg set -o www/mod_authnz_external:www/mod_authnz_external22
+
 20140113:
   AFFECTS: users of net/samba41
   AUTHOR: timur@FreeBSD.org
@@ -222,10 +235,10 @@ you update your ports collection, before attempting any port upgrades.
 
   # pkg_delete -f vte\*
    or
-  # pkg delete -fg vte\* 
+  # pkg delete -fg vte\*
    followed by
-  # portmaster x11-toolkits/vte 
-   or 
+  # portmaster x11-toolkits/vte
+   or
   # portupgrade x11-toolkits/vte
 
 20131207:
@@ -250,7 +263,7 @@ you update your ports collection, before attempting any port upgrades.
   # portmaster -a
     or
   # portupgrade -a
-  
+
 20131127:
   AFFECTS: users of devel/py-distribute (i.e you)
   AUTHOR: wg@FreeBSD.org
@@ -318,9 +331,9 @@ you update your ports collection, before attempting any port upgrades.
 
   dns/nsd was updated to the new 4.0.0 major release.
 
-  This version replaces the nsdc control program with nsd-control. 
+  This version replaces the nsdc control program with nsd-control.
   This requires some manual setup with nsd-control-setup and editing
-  of the config files. nsd-control is incompatible with nsdc so when 
+  of the config files. nsd-control is incompatible with nsdc so when
   that is used in scripts, these should be adapted.  More information:
   http://www.nlnetlabs.nl/svn/nsd/tags/NSD_4_0_0_REL/doc/NSD-4-features
 
