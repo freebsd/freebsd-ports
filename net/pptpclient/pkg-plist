@@ -1,4 +1,0 @@
-sbin/pptp
-%%EXAMPLESDIR%%/README
-%%EXAMPLESDIR%%/ppp.conf
-@dirrm %%EXAMPLESDIR%%
