@@ -25,23 +25,21 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 SUB_FILES=	${PORTNAME}
 
-DESKTOP_ENTRIES="Rescue! Max" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;StrategyGame;" false
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+DESKTOP_ENTRIES="Rescue! Max" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;StrategyGame;" ""
 
 post-extract:
 	@(cd ${WRKSRC} && ${UNZIP_CMD} -j Rescue.jar rescue/gui/logo.png)
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "help lib missions *.jar" ${DATADIR})
-	${INSTALL_DATA} ${WRKSRC}/logo.png ${PREFIX}/share/pixmaps/${PORTNAME}.png
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+.for d in help lib missions *.jar
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/logo.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
