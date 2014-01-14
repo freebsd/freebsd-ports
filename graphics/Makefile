@@ -113,6 +113,7 @@
     SUBDIR += dc20ctrl
     SUBDIR += dc20pack
     SUBDIR += dcraw
+    SUBDIR += dcraw-m
     SUBDIR += deegree-csw
     SUBDIR += deegree-igeoportal
     SUBDIR += deegree-wcs
