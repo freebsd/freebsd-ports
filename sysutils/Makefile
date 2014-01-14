@@ -443,7 +443,6 @@
     SUBDIR += krename-kde4
     SUBDIR += kshutdown-kde4
     SUBDIR += ksysguardd
-    SUBDIR += lavaps
     SUBDIR += lbl-cf
     SUBDIR += lbl-hf
     SUBDIR += lcdproc

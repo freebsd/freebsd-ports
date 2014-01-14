@@ -1,5 +1,0 @@
-bin/lavaps
-%%NLS%%share/locale/es/LC_MESSAGES/lavaps.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/lavaps.mo
-@exec chgrp kmem %D/bin/lavaps
-@exec chmod g+s %D/bin/lavaps
