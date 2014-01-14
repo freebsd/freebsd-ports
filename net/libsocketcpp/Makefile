@@ -7,10 +7,11 @@ CATEGORIES=	net
 MASTER_SITES=	SF/libsocket/${PORTNAME}-stable/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A C++ wrapper library to the sockets
+COMMENT=	C++ wrapper library to the sockets
+
+LICENSE=	LGPL21 # (or later)
 
 USE_AUTOTOOLS=	libtool
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
