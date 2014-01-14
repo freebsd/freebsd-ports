@@ -13,15 +13,15 @@ COMMENT?=	C++ library implementing a BitTorrent client
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
+LIB_DEPENDS?=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
 		libGeoIP.so:${PORTSDIR}/net/GeoIP
 
-USES=		compiler:c++11-lang pathfix pkgconfig iconv
+USES=		compiler:c++11-lib pathfix pkgconfig iconv
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CONFIGURE_ARGS+=	--disable-debug \
+CONFIGURE_ARGS=	--disable-debug \
 		--disable-static \
 		--enable-dht \
 		--enable-encryption \
@@ -69,6 +69,7 @@ post-install:
 	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} \
+		${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
