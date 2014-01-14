@@ -3,13 +3,13 @@
 
 PORTNAME=	nss_ldap
 PORTVERSION=	1.${NSS_LDAP_VERSION}
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net
 MASTER_SITES=	http://www.padl.com/download/ \
 		LOCAL/martymac
 DISTNAME=	${PORTNAME}-${NSS_LDAP_VERSION}
 
-MAINTAINER=	mikeg@bsd-box.net
+MAINTAINER=	des@FreeBSD.org
 COMMENT=	RFC 2307 NSS module
 
 LICENSE=	GPLv2
@@ -24,10 +24,12 @@ AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
 USE_OPENLDAP=	yes
 
-OPTIONS_DEFINE=	LCLASS KERBEROS
+OPTIONS_DEFINE=	LCLASS KERBEROS SASL
 OPTIONS_DEFAULT=LCLASS KERBEROS
 
 LCLASS_DESC=	Enable login classes via the loginClass attribute
+
+SASL_DESC=	Use the SASL-enabled version of OpenLDAP
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -Wl,-rpath,${LOCALBASE}/lib
@@ -41,15 +43,19 @@ MAN5=	nss_ldap.5
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MKERBEROS}
-CONFIGURE_ARGS+=--enable-configurable-krb5-ccname-env
+CONFIGURE_ARGS+=--enable-configurable-krb5-ccname-gssapi \
+		--enable-configurable-krb5-keytab
 .endif
 
 .if ${PORT_OPTIONS:MLCLASS}
 CFLAGS+="-DHAVE_LOGIN_CLASSES"
+.endif
+
+.if ${PORT_OPTIONS:MSASL}
+WANT_OPENLDAP_SASL	 = YES
 .endif
 
 post-extract:
@@ -73,16 +79,8 @@ post-configure:
 	@${ECHO} "#define HAVE_RESOLV_H 1" >> ${WRKSRC}/config.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/nss_ldap.so ${PREFIX}/lib/nss_ldap.so.1
-	${INSTALL_DATA} ${WRKSRC}/ldap.conf ${PREFIX}/etc/nss_ldap.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/${MAN5} ${MAN5PREFIX}/man/man5
-
-post-install:
-	@if [ ! -f ${PREFIX}/etc/nss_ldap.conf ]; then \
-		${CP} -pv ${PREFIX}/etc/nss_ldap.conf.sample ${PREFIX}/etc/nss_ldap.conf ; \
-	fi
-.if !defined(PACKAGE_BUILDING)
-	@${CAT} ${PKGMESSAGE}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/nss_ldap.so ${STAGEDIR}/${PREFIX}/lib/nss_ldap.so.1
+	${INSTALL_DATA} ${WRKSRC}/ldap.conf ${STAGEDIR}/${PREFIX}/etc/nss_ldap.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/${MAN5} ${STAGEDIR}/${MAN5PREFIX}/man/man5
 
 .include <bsd.port.mk>

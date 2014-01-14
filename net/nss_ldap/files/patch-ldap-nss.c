@@ -1,5 +1,5 @@
---- ldap-nss.c.orig	Sat May 27 16:23:40 2006
-+++ ldap-nss.c	Sat May 27 16:23:52 2006
+--- ldap-nss.c.orig
++++ ldap-nss.c
 @@ -69,7 +69,7 @@
  #endif
  
@@ -9,3 +9,18 @@
  #include <sasl/sasl.h>
  #elif defined(HAVE_SASL_H)
  #include <sasl.h>
+@@ -78,11 +78,11 @@
+ #ifndef HAVE_SNPRINTF
+ #include "snprintf.h"
+ #endif
+-#ifdef HAVE_GSSAPI_H
+-#include <gssapi.h>
+-#elif defined(HAVE_GSSAPI_GSSAPI_KRB5_H)
++#ifdef HAVE_GSSAPI_GSSAPI_KRB5_H
+ #include <gssapi/gssapi.h>
+ #include <gssapi/gssapi_krb5.h>
++#elif defined(HAVE_GSSAPI_H)
++#include <gssapi.h>
+ #endif
+ #ifdef CONFIGURE_KRB5_CCNAME
+ #include <krb5.h>
