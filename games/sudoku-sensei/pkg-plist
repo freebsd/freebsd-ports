@@ -1,0 +1,136 @@
+bin/sudoku-sensei
+share/pixmaps/sudoku-sensei.png
+%%DATADIR%%/SudokuSensei
+%%DATADIR%%/SudokuSensei.rc
+%%DATADIR%%/board/2x3TripleX.brd
+%%DATADIR%%/board/3x3cua.brd
+%%DATADIR%%/board/board.brd
+%%DATADIR%%/board/cuatro.brd
+%%DATADIR%%/board/diamond3.brd
+%%DATADIR%%/board/dobleX.brd
+%%DATADIR%%/board/heart.brd
+%%DATADIR%%/board/line.brd
+%%DATADIR%%/board/smile.brd
+%%DATADIR%%/board/tripleX.brd
+%%DATADIR%%/board/v.brd
+%%DATADIR%%/board/w.brd
+%%DATADIR%%/doc/About_en.html
+%%DATADIR%%/doc/About_es.html
+%%DATADIR%%/doc/LogoUAH.bmp
+%%DATADIR%%/doc/Manual_en.html
+%%DATADIR%%/doc/Manual_es.html
+%%DATADIR%%/doc/Tutorial1.bmp
+%%DATADIR%%/doc/Tutorial2.bmp
+%%DATADIR%%/doc/Tutorial3.bmp
+%%DATADIR%%/doc/Tutorial4.bmp
+%%DATADIR%%/doc/Tutorial5.bmp
+%%DATADIR%%/doc/Tutorial_en.html
+%%DATADIR%%/doc/Tutorial_es.html
+%%DATADIR%%/doc/manual_en/2Introduccion.html
+%%DATADIR%%/doc/manual_en/6ReporteErrores.html
+%%DATADIR%%/doc/manual_en/1Instalacion.html
+%%DATADIR%%/doc/manual_en/7LicenseGPL.html
+%%DATADIR%%/doc/manual_en/5Glosario.html
+%%DATADIR%%/doc/manual_en/4descripcion.html
+%%DATADIR%%/doc/manual_en/3SistemaJuego.html
+%%DATADIR%%/doc/manual_es/4descripcion_html_m1973b546.png
+%%DATADIR%%/doc/manual_es/3SistemaJuego_html_mdf7fa06.png
+%%DATADIR%%/doc/manual_es/4descripcion_html_m290420f7.png
+%%DATADIR%%/doc/manual_es/4descripcion_html_m26c1431e.png
+%%DATADIR%%/doc/manual_es/2Introduccion_html_m28c7ffa7.png
+%%DATADIR%%/doc/manual_es/2Introduccion_html_m542ae663.png
+%%DATADIR%%/doc/manual_es/2Introduccion.html
+%%DATADIR%%/doc/manual_es/6ReporteErrores.html
+%%DATADIR%%/doc/manual_es/1Instalacion.html
+%%DATADIR%%/doc/manual_es/4descripcion_html_5a3cf324.png
+%%DATADIR%%/doc/manual_es/2Introduccion_html_m2def4f34.png
+%%DATADIR%%/doc/manual_es/3SistemaJuego_html_m5ef5060d.png
+%%DATADIR%%/doc/manual_es/5Glosario.html
+%%DATADIR%%/doc/manual_es/4descripcion_html_3f011949.png
+%%DATADIR%%/doc/manual_es/7LicenseGPL.html
+%%DATADIR%%/doc/manual_es/4descripcion_html_m2f12683.png
+%%DATADIR%%/doc/manual_es/3SistemaJuego_html_m79bedd81.png
+%%DATADIR%%/doc/manual_es/4descripcion_html_43feae4f.png
+%%DATADIR%%/doc/manual_es/4descripcion_html_m6db82d32.png
+%%DATADIR%%/doc/manual_es/4descripcion_html_m51c7468c.png
+%%DATADIR%%/doc/manual_es/2Introduccion_html_m6c839d90.png
+%%DATADIR%%/doc/manual_es/3SistemaJuego_html_m29000c8a.png
+%%DATADIR%%/doc/manual_es/2Introduccion_html_59dfe02b.png
+%%DATADIR%%/doc/manual_es/4descripcion_html_154e00b0.png
+%%DATADIR%%/doc/manual_es/3SistemaJuego_html_693179c8.png
+%%DATADIR%%/doc/manual_es/4descripcion.html
+%%DATADIR%%/doc/manual_es/4descripcion_html_m79d65a9f.png
+%%DATADIR%%/doc/manual_es/3SistemaJuego_html_m645574e0.png
+%%DATADIR%%/doc/manual_es/3SistemaJuego.html
+%%DATADIR%%/images/SudokuSensei.ico
+%%DATADIR%%/language/sudoku_en.qm
+%%DATADIR%%/language/sudoku_en.ts
+%%DATADIR%%/language/sudoku_es.qm
+%%DATADIR%%/language/sudoku_es.ts
+%%DATADIR%%/license.txt
+%%DATADIR%%/saves/25simbolos.sdk
+%%DATADIR%%/saves/30simbolos.sdk
+%%DATADIR%%/saves/30simbolos_2.sdk
+%%DATADIR%%/saves/30simbolos_3.sdk
+%%DATADIR%%/saves/redundant1.sdk
+%%DATADIR%%/saves/samurai.sdk
+%%DATADIR%%/saves/samurai2.sdk
+%%DATADIR%%/saves/smile1.sdk
+%%DATADIR%%/saves/tutorial/level1/child1.sdk
+%%DATADIR%%/saves/tutorial/level1/child2.sdk
+%%DATADIR%%/saves/tutorial/level1/child3.sdk
+%%DATADIR%%/saves/tutorial/level1/child4.sdk
+%%DATADIR%%/saves/tutorial/level1/child5.sdk
+%%DATADIR%%/saves/tutorial/level2/line1.sdk
+%%DATADIR%%/saves/tutorial/level2/line2.sdk
+%%DATADIR%%/saves/tutorial/level2/line3.sdk
+%%DATADIR%%/saves/tutorial/level2/line4.sdk
+%%DATADIR%%/saves/tutorial/level2/line5.sdk
+%%DATADIR%%/saves/tutorial/level3/minisam1.sdk
+%%DATADIR%%/saves/tutorial/level3/minisam2.sdk
+%%DATADIR%%/saves/tutorial/level3/minisam3.sdk
+%%DATADIR%%/saves/tutorial/level3/minisam4.sdk
+%%DATADIR%%/saves/tutorial/level3/minisam5.sdk
+%%DATADIR%%/saves/tutorial/level4/hchild1.sdk
+%%DATADIR%%/saves/tutorial/level4/hchild2.sdk
+%%DATADIR%%/saves/tutorial/level4/hchild3.sdk
+%%DATADIR%%/saves/tutorial/level4/hchild4.sdk
+%%DATADIR%%/saves/tutorial/level4/hchild5.sdk
+%%DATADIR%%/saves/tutorial/level5/4x3easy1.sdk
+%%DATADIR%%/saves/tutorial/level5/4x3easy2.sdk
+%%DATADIR%%/saves/tutorial/level5/4x3easy3.sdk
+%%DATADIR%%/saves/tutorial/level5/4x3easy4.sdk
+%%DATADIR%%/saves/tutorial/level5/4x3easy5.sdk
+%%DATADIR%%/system/noerrsav.sdk
+%%DATADIR%%/system/save0.sdk
+%%DATADIR%%/system/save1.sdk
+%%DATADIR%%/system/save2.sdk
+%%DATADIR%%/system/save3.sdk
+%%DATADIR%%/system/save4.sdk
+%%DATADIR%%/system/save5.sdk
+%%DATADIR%%/system/save6.sdk
+%%DATADIR%%/system/save7.sdk
+%%DATADIR%%/system/save8.sdk
+%%DATADIR%%/system/save9.sdk
+%%DATADIR%%/system/savea.sdk
+%%DATADIR%%/system/saveb.sdk
+%%DATADIR%%/system/savec.sdk
+%%DATADIR%%/system/saved.sdk
+%%DATADIR%%/system/savee.sdk
+%%DATADIR%%/system/savef.sdk
+%%DATADIR%%/system/saveg.sdk
+@dirrm %%DATADIR%%/system
+@dirrm %%DATADIR%%/saves/tutorial/level5
+@dirrm %%DATADIR%%/saves/tutorial/level4
+@dirrm %%DATADIR%%/saves/tutorial/level3
+@dirrm %%DATADIR%%/saves/tutorial/level2
+@dirrm %%DATADIR%%/saves/tutorial/level1
+@dirrm %%DATADIR%%/saves/tutorial
+@dirrm %%DATADIR%%/saves
+@dirrm %%DATADIR%%/language
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%/doc/manual_es
+@dirrm %%DATADIR%%/doc/manual_en
+@dirrm %%DATADIR%%/doc
+@dirrm %%DATADIR%%/board
+@dirrm %%DATADIR%%
