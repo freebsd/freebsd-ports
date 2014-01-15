@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	markaby
-PORTVERSION=	0.7.2
+PORTVERSION=	0.8.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ RUN_DEPENDS=	rubygem-builder>=2.0.0:${PORTSDIR}/devel/rubygem-builder
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 USE_RAKE=	yes
-RUBYGEM_AUTOPLIST=  yes
+RUBYGEM_AUTOPLIST=	yes
 
 NO_STAGE=	yes
 .include <bsd.port.mk>
