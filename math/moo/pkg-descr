@@ -6,4 +6,4 @@ and binary (0b1001). All numerical operators (+, -, *, /, %), bit operators
 (|, ^, &, ~, <<, >>), and logical operators (==, !=, <, >, <=, >=, !, &&, ||)
 are supported.
 
-WWW: http://cyth.net/~ray/moo/
+WWW: http://www.cyth.net/moo/
