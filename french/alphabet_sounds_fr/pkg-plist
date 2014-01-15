@@ -37,3 +37,5 @@ share/childsplay/Data/AlphabetSounds/fr/z.ogg
 share/childsplay/Data/AlphabetSounds/fr/10.ogg
 @dirrm share/childsplay/Data/AlphabetSounds/fr
 @dirrmtry share/childsplay/Data/AlphabetSounds
+@dirrmtry share/childsplay/Data
+@dirrmtry share/childsplay
