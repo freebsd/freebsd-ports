@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An SQL database engine in a C library
+COMMENT=	SQL database engine in a C library
 
 USES=		gmake pkgconfig
 USE_AUTOTOOLS=	libtool
@@ -36,7 +36,6 @@ USES+=		tcl:build
 .endif
 .endif
 
-.include <bsd.port.pre.mk>
 .if ${PORT_OPTIONS:MTCL}
 CATEGORIES+=	lang tcl
 COMMENT+=	with TCL wrapper
@@ -87,4 +86,4 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/example.tcl ${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
