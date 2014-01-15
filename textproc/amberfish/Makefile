@@ -7,29 +7,36 @@ CATEGORIES=	textproc databases
 MASTER_SITES=	SF/${PORTNAME}/Amberfish%20source%20-%20stable/${PORTVERSION}	\
 		http://etymon.com/software/amberfish/stable/
 
-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose text retrieval Software
 
-LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2
+LIB_DEPENDS=	libxerces-c.so.27:${PORTSDIR}/textproc/xerces-c2
 
+USES=		gmake
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+ALL_TARGET=	all html
 
-MAN1=	af.1
+PLIST_FILES=	bin/af man/man1/af.1.gz
+PORTDOCS=	*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	${INSTALL_DATA} ${FILESDIR}/porter.cc ${WRKSRC}/src
 
-.if !defined(NOPORTDOCS)
-post-build:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} html)
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|$${MAKEFLAGS} ||' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		's|cp |$${BSD_INSTALL_MAN} |' ${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|-O3 |@CFLAGS@ | ; \
+		s|make strip|| ; \
+		s|cp |$${BSD_INSTALL_PROGRAM} |' ${WRKSRC}/src/Makefile.in
 
 post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/amberfish.png ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/html/*.html ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/amberfish.png ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/html/*.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
