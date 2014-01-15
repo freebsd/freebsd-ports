@@ -3,14 +3,31 @@
 @@ -1,10 +1,10 @@
 -CC	= gcc
 -COPTS	= -O2 -g
+-CFLAGS	= $(COPTS) -I.. -I../../include -fPIC
 +CC	?= gcc
 +CPP	?= $(CXX)
- CFLAGS	= $(COPTS) -I.. -I../../include -fPIC
++CFLAGS	+= $(COPTS) -I.. -I../../include -fPIC
  LDFLAGS	= -shared
  LDADD   = -lutil
- INSTALL	= install -o root
+-INSTALL	= install -o root
 -prefix  = /usr/local
++INSTALL	?= install -o root
 +prefix  = $(PREFIX)
  
  PLUGINS = pptpd-logwtmp.so
  
+@@ -18,11 +18,11 @@
+ %.so: %.c
+ 	$(CC) -o $@ $(LDFLAGS) $(CFLAGS) $^ $(LDADD)
+ 
+-LIBDIR	?= $(DESTDIR)$(prefix)/lib/pptpd
++LIBDIR	?= $(prefix)/lib/pptpd
+ 
+ install: $(PLUGINS)
+-	$(INSTALL) -d $(LIBDIR)
+-	$(INSTALL) $? $(LIBDIR)
++	$(INSTALL) -d $(DESTDIR)$(LIBDIR)
++	$(INSTALL) $? $(DESTDIR)$(LIBDIR)
+ 
+ uninstall:
+ 	rm -f $(LIBDIR)$(PLUGINS)
