@@ -10,5 +10,4 @@ LIB_DEPENDS=	gnome-keyring:${PORTSDIR}/security/libgnome-keyring
 
 MASTERDIR=	${.CURDIR}/../remmina-plugins
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

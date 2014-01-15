@@ -9,5 +9,6 @@ RUN_DEPENDS=	Xephyr:${PORTSDIR}/x11-servers/xephyr
 
 MASTERDIR=	${.CURDIR}/../remmina-plugins
 
-NO_STAGE=	yes
+PLIST_SUB+=	ICONS="" SSH=""
+
 .include "${MASTERDIR}/Makefile"

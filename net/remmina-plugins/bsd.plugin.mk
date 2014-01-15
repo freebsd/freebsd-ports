@@ -1,9 +1,9 @@
 .if defined(PKGNAMESUFFIX)
 
 PORTNAME=	remmina-plugin
+PATCHDIR=	${.CURDIR}/../remmina/files
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/${PORTNAME}s/COPYING
 
 BUILD_DEPENDS+=	remmina>=${PORTVERSION}:${PORTSDIR}/net/remmina
 RUN_DEPENDS+=	remmina>=${PORTVERSION}:${PORTSDIR}/net/remmina
@@ -23,6 +23,25 @@ CMAKE_ARGS+=    --build=build
 # prefer gtk2 rather than gtk3
 CMAKE_ARGS+=    -DGTK_VERSION=2
 
+SSH_DESC=	Build with SSH tunneling support
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSSH}
+LIB_DEPENDS+=	libssh.so:${PORTSDIR}/security/libssh
+PLIST_SUB+=	SSH=""
+.if ${OSVERSION} >= 800040
+LDFLAGS+=	-fstack-protector
+.endif
+.else
+CMAKE_ARGS+=	-DWITH_LIBSSH=OFF
+PLIST_SUB+=	SSH="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MNLS}
+RUN_DEPENDS+=	${LOCALBASE}/share/locale/bg/LC_MESSAGES/remmina-plugins.mo:${PORTSDIR}/net/remmina-plugin-i18n
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${PKGNAMESUFFIX} == "-i18n" || ${PKGNAMESUFFIX} == "-gnome"
@@ -30,31 +49,6 @@ PLIST=		${.CURDIR}/pkg-plist
 .else
 PLIST_SUB+=	PLUGIN="${PKGNAMESUFFIX:S,-,,}"
 PLIST=		${PKGDIR}/pkg-plist.plugin
-
-.if ${PORT_OPTIONS:MTELEP}
-PLIST_SUB+=	TELEP="" ICONS="@comment "
-.else
-PLIST_SUB+=	TELEP="@comment " ICONS=""
-.endif
-.if ${PORT_OPTIONS:MTELEP}
-LIB_DEPENDS+=	ssh.4:${PORTSDIR}/security/libssh
-PLIST_SUB+=	SSH="@comment "
-.if ${OSVERSION} >= 800040
-LDFLAGS+=	-fstack-protector
-.endif
-.else
-PLIST_SUB+=	SSH=""
-.endif
-.if ${PORT_OPTIONS:MNX}
-PLIST_SUB+=	ICONS="" SSH="@comment "
-.else
-PLIST_SUB+=	ICONS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-RUN_DEPENDS+=	${LOCALBASE}/share/locale/bg/LC_MESSAGES/remmina-plugins.mo:${PORTSDIR}/net/remmina-plugin-i18n
-.endif
-
 .endif
 
 post-patch:
@@ -76,7 +70,7 @@ post-patch:
 .endif
 .if ${PKGNAMESUFFIX:S,-,,} != "vnc"
 	${REINPLACE_CMD} -e 's|find_suggested_package(GCRYPT)||' ${WRKSRC}/CMakeLists.txt
-	${REINPLACE_CMD} -e 's|add_subdirectory(vnc/libvncserver)||' ${WRKSRC}/remmina-plugins/CMakeLists.txt
+	${REINPLACE_CMD} -e' s|find_required_package(LIBVNCSERVER)||' ${WRKSRC}/remmina-plugins/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|add_subdirectory(vnc)||' ${WRKSRC}/remmina-plugins/CMakeLists.txt
 .endif
 .if ${PKGNAMESUFFIX:S,-,,} != "xdmcp"
