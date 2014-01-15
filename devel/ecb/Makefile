@@ -12,8 +12,10 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Emacs Code Browser
 
+LICENSE=	GPLv2
+
+USES=		gmake
 USE_EMACS=	yes
-USE_GMAKE=	yes
 
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 ICONSRC=	${WRKSRC}/ecb-images
@@ -22,7 +24,6 @@ ICONSUBDIRS=	height-10 height-14 height-15 height-16 height-17 height-18 \
 		height-19 height-20 height-21
 
 ALL_TARGET=	ecb
-
 INFO=		ecb
 
 OPTIONS_DEFINE=		CEDET ICONS DOCS
@@ -31,7 +32,6 @@ CEDET_DESC=	Use the Cedet library
 
 PORTDOCS=	NEWS README RELEASE_NOTES
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCEDET}
@@ -59,30 +59,28 @@ post-build:
 	cd ${WRKSRC} && makeinfo --no-split ecb.texi
 
 do-install:
-	${MKDIR} ${LISPDIR}
+	${MKDIR} ${STAGEDIR}${LISPDIR}
 .for i in *.el *.elc
-	${INSTALL_DATA} ${WRKSRC}/${i} ${LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${LISPDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/ecb.info ${PREFIX}/info
+	${INSTALL_DATA} ${WRKSRC}/ecb.info ${STAGEDIR}${PREFIX}/info
 
 .if ${PORT_OPTIONS:MICONS}
 .for i in ${ICONSUBDIRS}
-	${MKDIR} ${ICONDIR}/default/${i}
-	${INSTALL_DATA} ${ICONSRC}/default/${i}/*.xpm ${ICONDIR}/default/${i}
-	${MKDIR} ${ICONDIR}/directories/${i}
+	${MKDIR} ${STAGEDIR}${ICONDIR}/default/${i}
+	${INSTALL_DATA} ${ICONSRC}/default/${i}/*.xpm ${STAGEDIR}${ICONDIR}/default/${i}
+	${MKDIR} ${STAGEDIR}${ICONDIR}/directories/${i}
 	${INSTALL_DATA} ${ICONSRC}/directories/${i}/*.xpm \
-		${ICONDIR}/directories/${i}
+		${STAGEDIR}${ICONDIR}/directories/${i}
 .endfor
-	${MKDIR} ${ICONDIR}/methods/height-14_to_21
+	${MKDIR} ${STAGEDIR}${ICONDIR}/methods/height-14_to_21
 	${INSTALL_DATA} ${ICONSRC}/methods/height-14_to_21/*.xpm \
-		${ICONDIR}/methods/height-14_to_21
+		${STAGEDIR}${ICONDIR}/methods/height-14_to_21
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
