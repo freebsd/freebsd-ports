@@ -30,7 +30,6 @@ OPTIONS_DEFAULT=	MPG123
 MMPG123_RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 .include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
 IGNORE=		may not be automatically fetched due to licensing\
@@ -51,4 +50,4 @@ do-install:
 .endif
 	@[ -f /compat/linux/proc/stat ] || ${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
