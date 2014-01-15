@@ -53,6 +53,9 @@ DISTFILES=	${SRCDISTFILE} ${DST1} ${DST2}
 . if ${OPSYS} == FreeBSD
 BOOTDIST=	${DST1}
 MARCH=		AMD64
+.  if !exists(/usr/include/xlocale/_ctype.h)
+IGNORE=		the bootstrap compiler only runs on FreeBSD 9.0 or later
+.  endif
 . endif
 
 . if ${OPSYS} == DragonFly
