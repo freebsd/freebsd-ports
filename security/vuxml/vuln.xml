@@ -135,6 +135,13 @@ Note:  Please add new entries to the beginning of this file.
 	<name>bind96-base</name>
 	<range><lt>9.6.3.2.ESV.R10.2</lt></range>
       </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><gt>9.2</gt><lt>9.2_3</lt></range>
+	<range><gt>9.1</gt><lt>9.1_10</lt></range>
+	<range><gt>8.4</gt><lt>8.4_7</lt></range>
+	<range><gt>8.3</gt><lt>8.3_14</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -150,12 +157,14 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <freebsdsa>SA-13:07.bind</freebsdsa>
       <cvename>CVE-2014-0591</cvename>
       <url>https://kb.isc.org/article/AA-01078/74/</url>
     </references>
     <dates>
       <discovery>2014-01-08</discovery>
       <entry>2014-01-13</entry>
+      <modified>2014-01-15</modified>
     </dates>
   </vuln>
 
