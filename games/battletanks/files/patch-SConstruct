@@ -44,15 +44,6 @@
  		
  	env.Append(CPPFLAGS=['-Wall', '-Wno-deprecated', '-pedantic', '-Wno-long-long', '-pipe', '-pthread'])
  	env.Append(CCFLAGS=['-Wall', '-Wno-deprecated', '-pedantic', '-Wno-long-long', '-pipe', '-pthread'])
-@@ -221,7 +221,7 @@ except : 
- 			if len(env['resources_dir']):
- 				resources_dir = env['resources_dir']
- 			else: 
--				resources_dir = prefix + "/share/btanks"
-+				resources_dir = prefix + "/share/btankS"
- 
- 			if len(env['lib_dir']):
- 				lib_dir = env['lib_dir']
 @@ -253,24 +253,28 @@ env.Append(CPPPATH=['#'])
  
  if (os.path.exists('private')):
