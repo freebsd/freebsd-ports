@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	freerdp
-PORTVERSION=	1.1.0.b20130711
-DISTVERSION=	1.1.0-beta+2013071101
+PORTVERSION=	1.1.0
+DISTVERSIONSUFFIX=	-beta+2013071101
 CATEGORIES=	net comms ipv6
 
 MAINTAINER=	fluffy@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig compiler:c11
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	FreeRDP
@@ -24,79 +24,49 @@ GH_TAGNAME=	${GH_COMMIT}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include
 
-OPTIONS_DEFINE=	ALSA CUPS DIRECTFB FFMPEG GSTREAMER PULSEAUDIO SSE X11
-OPTIONS_DEFAULT=	CUPS GSTREAMER PULSEAUDIO X11
-X11_DESC=	Build FreeRDP X11 client
-DIRECTFB_DESC=	Build FreeRDP DirectFB client
+OPTIONS_DEFINE=		ALSA CUPS DIRECTFB FFMPEG GSTREAMER PULSEAUDIO SSE X11
+OPTIONS_DEFAULT=	CUPS GSTREAMER X11
+OPTIONS_SUB=		yes
+
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_CMAKE_ON=		-DWITH_ALSA=ON
+ALSA_CMAKE_OFF=		-DWITH_ALSA=OFF
+
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_CMAKE_ON=		-DWITH_CUPS=ON
+CUPS_CMAKE_OFF=		-DWITH_CUPS=OFF
+
+# outdated and unmaintained upstream
+DIRECTFB_DESC=		Build FreeRDP DirectFB client (outdated)
+DIRECTFB_LIB_DEPENDS=	libdirectfb.so:${PORTSDIR}/devel/directfb
+DIRECTFB_CMAKE_ON=	-DWITH_DIRECTFB=ON
+DIRECTFB_CMAKE_OFF=	-DWITH_DIRECTFB=OFF
+# currently DirectFB option fails with clang
+DIRECTFB_USE=		gcc=yes
+
+FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
+			libavutil.so:${PORTSDIR}/multimedia/ffmpeg
+FFMPEG_CMAKE_ON=	-DWITH_FFMPEG=ON
+FFMPEG_CMAKE_OFF=	-DWITH_FFMPEG=OFF
+
+GSTREAMER_CMAKE_ON=	-DWITH_GSTREAMER=ON
+GSTREAMER_CMAKE_OFF=	-DWITH_GSTREAMER=OFF
+GSTREAMER_USE=		gstreamer=yes xorg=x11,xextproto,xext,xrandr
+
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CMAKE_ON=	-DWITH_PULSE=ON
+PULSEAUDIO_CMAKE_OFF=	-DWITH_PULSE=OFF
+
+SSE_CMAKE_ON=		-DWITH_SSE2=ON
+SSE_CMAKE_OFF=		-DWITH_SSE2=OFF
+
+X11_DESC=		Build FreeRDP X11 client
+X11_BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto
+X11_CMAKE_ON=		-DWITH_X11=ON
+X11_CMAKE_OFF=		-DWITH_X11=OFF -DWITH_XKBFILE=OFF
+X11_USE=		xorg=x11,xkbfile,xcursor,xextproto,xv,xinerama,xext,xcursor,xrandr
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11 xkbfile xcursor xextproto xv xinerama xext xcursor
-CMAKE_ARGS+=	-DWITH_X11=ON
-BUILD_DEPENDS+=	xmlto:${PORTSDIR}/textproc/xmlto
-MAN1=		xfreerdp.1
-PLIST_SUB+=	X11=""
-.else
-CMAKE_ARGS+=	-DWITH_X11=OFF -DWITH_XKBFILE=OFF
-PLIST_SUB+=	X11="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDIRECTFB}
-LIB_DEPENDS+=	libdirectfb.so:${PORTSDIR}/devel/directfb
-CMAKE_ARGS+=	-DWITH_DIRECTFB=ON
-PLIST_SUB+=	DIRECTFB=""
-# currently DirectFB option fails with clang
-USE_GCC=	yes
-.else
-PLIST_SUB+=	DIRECTFB="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
-PLIST_SUB+=	ALSA=""
-.else
-PLIST_SUB+=	ALSA="@comment "
-CMAKE_ARGS+=	-DWITH_ALSA=OFF
-.endif
-
-.if ${PORT_OPTIONS:MFFMPEG}
-LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
-		libavutil.so:${PORTSDIR}/multimedia/ffmpeg
-PLIST_SUB+=	FFMPEG=""
-.else
-CMAKE_ARGS+=	-DWITH_FFMPEG=OFF
-PLIST_SUB+=	FFMPEG="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MGSTREAMER}
-CMAKE_ARGS+=	-DWITH_GSTREAMER=ON
-USE_GSTREAMER=	yes
-.else
-CMAKE_ARGS+=	-DWITH_GSTREAMER=OFF
-.endif
-
-.if ${PORT_OPTIONS:MCUPS}
-CMAKE_ARGS+=	-DWITH_CUPS=ON
-LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
-.else
-CMAKE_ARGS+=	-DWITH_CUPS=OFF
-.endif
-
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-CMAKE_ARGS+=	-DWITH_PULSE=ON
-LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
-PLIST_SUB+=	PULSE=""
-.else
-PLIST_SUB+=	PULSE="@comment "
-CMAKE_ARGS+=	-DWITH_PULSE=OFF
-.endif
-
-.if ${PORT_OPTIONS:MSSE}
-CMAKE_ARGS+=	-DWITH_SSE2=ON
-.else
-CMAKE_ARGS+=	-DWITH_SSE2=OFF
-.endif
 
 post-extract:
 	${REINPLACE_CMD} -e 's|$${CMAKE_INSTALL_LIBDIR}/pkgconfig|libdata/pkgconfig|' \
