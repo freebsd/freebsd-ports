@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sword
-PORTVERSION=	1.7.0
+PORTVERSION=	1.7.2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v${PORTVERSION:R}/ \
 		http://crosswire.org/ftpmirror/pub/sword/source/v${PORTVERSION:R}/
@@ -29,7 +29,6 @@ OPTIONS_DEFINE=	CURL CLUCENE
 CLUCENE_DESC=	Include indexing capability
 OPTIONS_DEFAULT=CURL CLUCENE
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCURL}
@@ -43,10 +42,8 @@ CONFIGURE_ARGS+=	--without-curl
 LIB_DEPENDS+=	libclucene-core.so:${PORTSDIR}/textproc/clucene \
 		libicudata.so:${PORTSDIR}/devel/icu
 CONFIGURE_ARGS+=	--with-clucene=${LOCALBASE} --with-icu
-PLIST_SUB+=		ICU="" ICUVER="`${LOCALBASE}/bin/icu-config --version`"
 .else
 CONFIGURE_ARGS+=	--without-clucene --without-icu
-PLIST_SUB+=		ICU="@comment "
 .endif
 
 run-autotools::	run-autotools-aclocal
@@ -56,6 +53,7 @@ run-autotools::	run-autotools-aclocal
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|${PREFIX}/libdata/pkgconfig|g' \
 		-e's|-O3||g' \
+		-e 's|%%DESTDIR%%|${STAGEDIR}|g' \
 		${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
 
 post-install:
@@ -69,8 +67,5 @@ post-install:
 	@${ECHO_CMD}
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_CMD}
-
-register:
-	${MAKE_CMD} register -C ${WRKSRC}
 
 .include <bsd.port.mk>
