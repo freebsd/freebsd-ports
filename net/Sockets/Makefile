@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.alhem.net/Sockets/ \
 		http://www.netfence.it/Sockets/
 
 MAINTAINER=	ml@netfence.it
-COMMENT=	A C++ wrapper for BSD-style sockets
+COMMENT=	C++ wrapper for BSD-style sockets
 
 #execinfo is optional and currently not configured (would need to patch source's #ifdef LINUX)
 #LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
@@ -17,7 +17,7 @@ COMMENT=	A C++ wrapper for BSD-style sockets
 #CFLAGS+=	-I${LOCALBASE}/include
 #LDFLAGS+=	-L${LOCALBASE}/lib
 
-USE_GMAKE=	yes
+USES+=		gmake
 USE_GNOME=	libxml2
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
@@ -25,7 +25,6 @@ USE_LDCONFIG=	yes
 ALL_TARGET=	all shared
 INSTALL_TARGET=	install_shared
 
-NO_STAGE=	yes
 post-patch:
 # PREFIX safeness
 	@${CP} ${PATCHDIR}/Makefile.Defines.freebsd ${WRKSRC}
