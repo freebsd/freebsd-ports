@@ -1,0 +1,65 @@
+bin/oneisenough
+%%DATADIR%%/bin/background.py
+%%DATADIR%%/bin/background.pyc
+%%DATADIR%%/bin/background.pyo
+%%DATADIR%%/bin/bank.py
+%%DATADIR%%/bin/bank.pyc
+%%DATADIR%%/bin/bank.pyo
+%%DATADIR%%/bin/camp.py
+%%DATADIR%%/bin/camp.pyc
+%%DATADIR%%/bin/camp.pyo
+%%DATADIR%%/bin/data/Vera.ttf
+%%DATADIR%%/bin/enemy.py
+%%DATADIR%%/bin/enemy.pyc
+%%DATADIR%%/bin/enemy.pyo
+%%DATADIR%%/bin/follower.py
+%%DATADIR%%/bin/follower.pyc
+%%DATADIR%%/bin/follower.pyo
+%%DATADIR%%/bin/game.py
+%%DATADIR%%/bin/game.pyc
+%%DATADIR%%/bin/game.pyo
+%%DATADIR%%/bin/locals.py
+%%DATADIR%%/bin/locals.pyc
+%%DATADIR%%/bin/locals.pyo
+%%DATADIR%%/bin/main.py
+%%DATADIR%%/bin/main.pyc
+%%DATADIR%%/bin/main.pyo
+%%DATADIR%%/bin/mainmenu.py
+%%DATADIR%%/bin/mainmenu.pyc
+%%DATADIR%%/bin/mainmenu.pyo
+%%DATADIR%%/bin/object.py
+%%DATADIR%%/bin/object.pyc
+%%DATADIR%%/bin/object.pyo
+%%DATADIR%%/bin/pictures/ball1.png
+%%DATADIR%%/bin/pictures/ball2.png
+%%DATADIR%%/bin/pictures/balldollar.png
+%%DATADIR%%/bin/pictures/ballinvincible.png
+%%DATADIR%%/bin/pictures/bank.png
+%%DATADIR%%/bin/pictures/bg.png
+%%DATADIR%%/bin/pictures/camp.png
+%%DATADIR%%/bin/pictures/gameover.png
+%%DATADIR%%/bin/pictures/star.png
+%%DATADIR%%/bin/pictures/staricon.png
+%%DATADIR%%/bin/player.py
+%%DATADIR%%/bin/player.pyc
+%%DATADIR%%/bin/player.pyo
+%%DATADIR%%/bin/setup.py
+%%DATADIR%%/bin/setup.pyc
+%%DATADIR%%/bin/setup.pyo
+%%DATADIR%%/bin/sound.py
+%%DATADIR%%/bin/sound.pyc
+%%DATADIR%%/bin/sound.pyo
+%%DATADIR%%/bin/sounds/whau.wav
+%%DATADIR%%/bin/sounds/woosh.wav
+%%DATADIR%%/bin/util.py
+%%DATADIR%%/bin/util.pyc
+%%DATADIR%%/bin/util.pyo
+%%DATADIR%%/run_game.py
+%%DATADIR%%/run_game.pyc
+%%DATADIR%%/run_game.pyo
+share/pixmaps/oneisenough.png
+@dirrm %%DATADIR%%/bin/sounds
+@dirrm %%DATADIR%%/bin/pictures
+@dirrm %%DATADIR%%/bin/data
+@dirrm %%DATADIR%%/bin
+@dirrm %%DATADIR%%

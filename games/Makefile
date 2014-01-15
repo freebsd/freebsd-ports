@@ -658,6 +658,7 @@
     SUBDIR += odamex
     SUBDIR += oldrunner
     SUBDIR += omega
+    SUBDIR += oneisenough
     SUBDIR += oneko
     SUBDIR += oneko-sakura
     SUBDIR += oolite
