@@ -119,7 +119,6 @@ include/sword/swoptfilter.h
 include/sword/swobject.h
 include/sword/swsearchable.h
 include/sword/swtext.h
-include/sword/swunicod.h
 include/sword/swversion.h
 include/sword/sysdata.h
 include/sword/thmlfootnotes.h
@@ -197,7 +196,6 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/ar_EG-utf8.conf
 %%DATADIR%%/locales.d/az-utf8.conf
 %%DATADIR%%/locales.d/bg_BG-cp1251.conf
-%%DATADIR%%/locales.d/bg_BG-utf8.conf
 %%DATADIR%%/locales.d/cs-utf8.conf
 %%DATADIR%%/locales.d/cs.conf
 %%DATADIR%%/locales.d/cy-utf8.conf
@@ -269,7 +267,6 @@ libdata/pkgconfig/sword.pc
 %%DATADIR%%/locales.d/th-utf8.conf
 %%DATADIR%%/locales.d/uk_UA-cp1251.conf
 %%DATADIR%%/locales.d/uk_UA-koi8-u.conf
-%%DATADIR%%/locales.d/uk_UA-utf8.conf
 %%DATADIR%%/locales.d/vi-utf8.conf
 %%DATADIR%%/locales.d/zh_CN-utf8.conf
 %%DATADIR%%/locales.d/zh_Hans-utf8.conf
