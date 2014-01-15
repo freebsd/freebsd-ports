@@ -106,8 +106,6 @@ FIXREFS=	${SH} -c '${REINPLACE_CMD} -E \
 		-e "s,(@file)\{$$0\},\1\{${OURTARGET}-$$0\},g" \
 		-e "s,\($$0\),\(${OURTARGET}-$$0\),g" $$*' --
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 #
 # Patch and rename info files
@@ -154,4 +152,4 @@ post-install:
 	@${FIND} -ds ${PREFIX}/${OURTARGET} -type d | \
 		${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
