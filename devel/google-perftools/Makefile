@@ -2,27 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	google-perftools
-PORTVERSION=	1.8.3
+PORTVERSION=	2.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	vd/${PORTNAME}
+DISTNAME=	gperftools-${PORTVERSION}
 
 MAINTAINER=	yuri@tsoft.com
 COMMENT=	Fast, multi-threaded malloc() and nifty performance analysis tools
 
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-MAN1=		pprof.1
-
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=	pathfix
+PROJECTHOST=	gperftools
 
-NO_STAGE=	yes
+WRKSRC=		${WRKDIR}/gperftools-${PORTVERSION}
+DOCSDIR=	${PREFIX}/share/doc/gperftools
+
+BUILD_DEPENDS+=	${LOCALBASE}/include/execinfo.h:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+
+GNU_CONFIGURE=	yes
+USE_GCC=	any # clang causes 7 more test case failures in "make check"
+USE_LDCONFIG=	yes
+
+CONFIGURE_ARGS+=CPPFLAGS=-I${LOCALBASE}/include LIBS=-lexecinfo LDFLAGS=-L${LOCALBASE}/lib
+
+.include <bsd.port.options.mk>
+
 post-patch:
-.if defined(NOPORTDOCS)
+.if empty(PORT_OPTIONS:MDOCS)
 	${REINPLACE_CMD} -e \
 		'/^install-data-am:/ s|install-dist_docDATA||' \
 		${WRKSRC}/Makefile.in
@@ -30,9 +40,13 @@ post-patch:
 
 post-build:
 	@${ECHO}
-	@${ECHO} "Please run 'make check' and verify there are no failing testcases on your system."
+	@${ECHO} "Please run 'make check'. Two testcases are known to fail."
 	@${ECHO} "Report any testcase failures to http://code.google.com/p/google-perftools/issues/list"
 	@${ECHO}
+
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/libdata
+	${MV} ${STAGEDIR}${PREFIX}/lib/pkgconfig ${STAGEDIR}${PREFIX}/libdata
 
 # four of the tests are known to fail on 7.0, uncomment this as soon as this is fixed
 #regression-test: check
