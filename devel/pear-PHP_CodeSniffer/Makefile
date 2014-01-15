@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PHP_CodeSniffer
-PORTVERSION=	1.4.5
+PORTVERSION=	1.5.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
