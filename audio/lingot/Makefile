@@ -12,7 +12,6 @@ MAINTAINER=	coder@tuxfamily.org
 COMMENT=	LINGOT is a musical instrument tuner
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	gtk20 libglade2
 NO_STAGE=	yes
@@ -42,10 +41,8 @@ CONFIGURE_ARGS+=--enable-alsa
 CONFIGURE_ARGS+=--disable-alsa
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if ${OSVERSION} < 802502 || (${OSVERSION} > 900000 && ${OSVERSION} < 900027)
 EXTRA_PATCHES+=	${FILESDIR}/extra-lingot-config-scale.h
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
