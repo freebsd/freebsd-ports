@@ -23,7 +23,6 @@ OPTIONS_DEFINE=	X11 SDL DEBUG
 OPTIONS_DEFAULT=	X11 SDL
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 
 ONLY_FOR_ARCHS=		i386 amd64
@@ -53,4 +52,4 @@ MAKE_ARGS+=	DEBUG=1
 MAKE_ARGS+=	RELEASE=1
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
