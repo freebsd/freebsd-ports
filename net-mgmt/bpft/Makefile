@@ -21,11 +21,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKE_JOBS_UNSAFE=	yes
 
-MANCOMPRESSED=	yes
-MAN1=		traflog.1 trafstat.1
-MAN8=		trafstatd.8 trafd.8
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -33,20 +28,23 @@ post-patch:
 		's|/usr/local|${PREFIX}|g' ${WRKSRC}/include/pathnames.h
 	@${REINPLACE_CMD} -e \
 		'/^PATH_TOSAVE/s|=.*|= ${PREFIX}/var/bpft| ; \
-		 /^INSTALL_DIRECTORY/s|=.*|= ${MKDIR}|' ${WRKSRC}/Makefile
+		 /^INSTALL_DIRECTORY/s|=.*|= ${MKDIR}| ; \
+		 s|please!|&"| ; \
+		 s| $${PATH_| $${DESTDIR}$${PATH_|g ; \
+		 s| $${PREFIX_| $${DESTDIR}$${PREFIX_|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		's|bpf_dump.[co]||' ${WRKSRC}/lib/Makefile
 	@${REINPLACE_CMD} -e \
 		's|<net/slip.h>|"../linux-include/net/slip.h"|' \
 		${WRKSRC}/lib/interfaces.c
 
 post-install:
 .for i in bin/traflog bin/trafstat sbin/trafd sbin/trafstatd
-	@${STRIP_CMD} ${PREFIX}/${i}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${i}
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README WhatsNew
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
-.endif
 
 .include <bsd.port.mk>
