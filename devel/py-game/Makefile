@@ -12,23 +12,24 @@ DISTNAME=	py${PORTNAME}-${PORTVERSION}release
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A module designed to write games in Python
 
-LIB_DEPENDS=	smpeg:${PORTSDIR}/multimedia/smpeg
+LICENSE=	LGPL21
+
+LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
 RUN_DEPENDS=	${PYNUMPY}
 
 USE_SDL=	ttf image mixer sdl
 USE_GCC=	any
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-
-PYDISTUTILS_PKGNAME=	pygame
-PYDISTUTILS_PKGVERSION=	${PORTVERSION}release
+PYDISTUTILS_AUTOPLIST=	yes
 
 SDLNOX11=	sdl-nox11-[0-9]*
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^_camera|#_camera|' \
 		-e 's|^pypm|#pypm|' ${WRKSRC}/Setup.in
@@ -45,14 +46,12 @@ pre-configure:
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} config.py -auto
 
-.if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${TAR} -C ${WRKSRC}/examples -cf - . | \
-		${TAR} --unlink -C ${EXAMPLESDIR} -xf -
-	${MKDIR} ${DOCSDIR}
+		${TAR} --unlink -C ${STAGEDIR}${EXAMPLESDIR} -xf -
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${TAR} -C ${WRKSRC}/docs -cf - . | \
-		${TAR} --unlink -C ${DOCSDIR} -xf -
-.endif
+		${TAR} --unlink -C ${STAGEDIR}${DOCSDIR} -xf -
 
 .include <bsd.port.mk>
