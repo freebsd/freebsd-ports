@@ -50,11 +50,9 @@ post-patch:
 		${WRKSRC}/libcharset/configure \
 		${WRKSRC}/preload/configure
 
-.include <bsd.port.pre.mk>
-
 .if exists(/usr/include/iconv.h)
 IGNORE=		converters/libiconv should not be used with iconv from base. \
 Please fix the port which tries to use it
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
