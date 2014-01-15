@@ -1,6 +1,4 @@
 bin/bugsquish
-%%DATADIR%%/embedded/images/.xvpics/start-cont.png
-%%DATADIR%%/embedded/images/.xvpics/title.png
 %%DATADIR%%/embedded/images/arm1.png
 %%DATADIR%%/embedded/images/arm2.png
 %%DATADIR%%/embedded/images/arm3.png
@@ -100,8 +98,8 @@ bin/bugsquish
 %%DATADIR%%/images/times2.png
 %%DATADIR%%/images/title.png
 %%DATADIR%%/images/wavebox.png
-%%DATADIR%%/music/adventures.mod
-%%DATADIR%%/music/corpses.mod
+%%DATADIR%%/music/adventures.ogg
+%%DATADIR%%/music/corpses.ogg
 %%DATADIR%%/sounds/ah.wav
 %%DATADIR%%/sounds/bonus.wav
 %%DATADIR%%/sounds/glug.wav
@@ -114,7 +112,6 @@ share/pixmaps/bugsquish.png
 @dirrm %%DATADIR%%/sounds
 @dirrm %%DATADIR%%/music
 @dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/embedded/images/.xvpics
 @dirrm %%DATADIR%%/embedded/images
 @dirrm %%DATADIR%%/embedded
 @dirrm %%DATADIR%%
