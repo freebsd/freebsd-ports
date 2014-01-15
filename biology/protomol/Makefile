@@ -31,7 +31,6 @@ OPTIONS_DEFINE=	GLUT
 OPTIONS_DEFAULT=	GLUT
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGLUT}
@@ -48,4 +47,4 @@ post-install:
 		${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
