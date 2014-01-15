@@ -87,7 +87,6 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse-simple.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CMAKE_OFF=	-DUSE_PULSEAUDIO:BOOL=OFF
 
 .include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000033
 BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
@@ -132,4 +131,4 @@ post-install:
 	@${LN} -sf ${i}.6.0 ${STAGEDIR}${PREFIX}/lib/${i}.6
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
