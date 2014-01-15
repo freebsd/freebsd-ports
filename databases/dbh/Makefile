@@ -32,6 +32,11 @@ OPTIONS_DEFINE=	GTKDOC EXAMPLES
 GTKDOC_DESC=	Enable GTK html documentation
 
 NO_STAGE=	yes
+
+.for a in ia64 powerpc sparc64
+BROKEN_${a}=	Does not compile on ia64, powerpc, or sparc64
+.endfor
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTKDOC}
@@ -54,10 +59,4 @@ post-install:
 	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} '*.c' ${EXAMPLESDIR})
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile on ia64, powerpc, or sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
