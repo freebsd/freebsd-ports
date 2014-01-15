@@ -3,6 +3,7 @@
 
 PORTNAME=	libobjc2
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	http://download.gna.org/gnustep/
 
