@@ -1161,6 +1161,7 @@
     SUBDIR += p5-Reaction
     SUBDIR += p5-Reddit
     SUBDIR += p5-Rose-HTML-Objects
+    SUBDIR += p5-Router-Boom
     SUBDIR += p5-Router-Simple
     SUBDIR += p5-Router-Simple-Sinatraish
     SUBDIR += p5-SCGI
