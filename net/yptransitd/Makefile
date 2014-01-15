@@ -3,27 +3,44 @@
 
 PORTNAME=	yptransitd
 PORTVERSION=	0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A replacement for nss_ldap
+COMMENT=	Replacement for nss_ldap
 
-USE_OPENLDAP=	yes
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USES=		bison
-USE_LDCONFIG=	yes
+USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-ldap-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE}
+USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
+PLIST_FILES=	%%ETCDIR%%/ldap.conf %%ETCDIR%%/modules/ldap.so \
+		%%ETCDIR%%/yptransitd.conf sbin/yptransitd
+PLIST_DIRS=	%%ETCDIR%%/modules %%ETCDIR%%
+
 post-patch:
+	@${REINPLACE_CMD} -e 's, $$(CONFDIR), $${DESTDIR}$$(CONFDIR),' \
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's,=gcc,=@CC@,' \
+		${WRKSRC}/lib/Makefile.in
+	@${REINPLACE_CMD} -e 's,-O2 -g,@CFLAGS@, ; \
+		 s, $${BINDIR}, $${DESTDIR}$${BINDIR},' \
+		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -E 's,^([[:blank:]]+)\([^\)]+\) ,\1,' \
 		${WRKSRC}/src/modules.c
+	@${REINPLACE_CMD} -e 's,-O2 -g,@CFLAGS@, ; \
+		 s, $$(CONFDIR), $${DESTDIR}$$(CONFDIR),' \
+		${WRKSRC}/src/modules/ldap/Makefile.in
 	@${REINPLACE_CMD} -e 's,(void \*) ,,g' \
 		${WRKSRC}/src/modules/ldap/cache.c
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
+pre-install:
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/modules
 
 .include <bsd.port.mk>
