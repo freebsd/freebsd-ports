@@ -1,15 +1,8 @@
 lib/remmina/plugins/remmina-plugin-%%PLUGIN%%.so
-%%ICONS%%%%SSH%%share/remmina/icons/hicolor/22x22/emblems/remmina-%%PLUGIN%%-ssh.png
-%%ICONS%%share/remmina/icons/hicolor/22x22/emblems/remmina-%%PLUGIN%%.png
-%%ICONS%%%%SSH%%share/remmina/icons/hicolor/16x16/emblems/remmina-%%PLUGIN%%-ssh.png
-%%ICONS%%share/remmina/icons/hicolor/16x16/emblems/remmina-%%PLUGIN%%.png
-@dirrmtry share/remmina/icons/hicolor/22x22/emblems
-@dirrmtry share/remmina/icons/hicolor/22x22
-@dirrmtry share/remmina/icons/hicolor/16x16/emblems
-@dirrmtry share/remmina/icons/hicolor/16x16
-@dirrmtry share/remmina/icons/hicolor
-@dirrmtry share/remmina/icons
-@dirrmtry share/remmina
+%%ICONS%%%%SSH%%share/icons/hicolor/22x22/emblems/remmina-%%PLUGIN%%-ssh.png
+%%ICONS%%share/icons/hicolor/22x22/emblems/remmina-%%PLUGIN%%.png
+%%ICONS%%%%SSH%%share/icons/hicolor/16x16/emblems/remmina-%%PLUGIN%%-ssh.png
+%%ICONS%%share/icons/hicolor/16x16/emblems/remmina-%%PLUGIN%%.png
 @dirrmtry lib/remmina/plugins
 @dirrmtry lib/remmina
 @dirrmtry include/remmina

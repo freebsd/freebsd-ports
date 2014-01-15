@@ -5,11 +5,11 @@ PKGNAMESUFFIX=	-telepathy
 
 COMMENT=	Remmina plugin for Telepathy support
 
+USE_GNOME+=	gtk30
 LIB_DEPENDS=	telepathy-glib.0:${PORTSDIR}/net-im/telepathy-glib
 
 MASTERDIR=	${.CURDIR}/../remmina-plugins
 
-WITH_TELEP=	yes
+PLIST_SUB+=	ICONS="@comment "
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

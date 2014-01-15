@@ -10,7 +10,6 @@ USE_XORG+=	xkbfile
 
 MASTERDIR=	${.CURDIR}/../remmina-plugins
 
-WITH_NX=	yes
+PLIST_SUB+=	ICONS="" SSH="@comment "
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

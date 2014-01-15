@@ -9,5 +9,4 @@ MASTERDIR=	${.CURDIR}/../remmina-plugins
 
 USES+=	gettext
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

@@ -1,86 +1,49 @@
 bin/remmina
 libdata/pkgconfig/remmina.pc
 share/applications/remmina.desktop
-share/icons/hicolor/48x48/apps/remmina.png
-share/icons/hicolor/24x24/apps/remmina.png
-share/icons/hicolor/scalable/apps/remmina.svg
-share/icons/hicolor/32x32/apps/remmina.png
-share/icons/hicolor/22x22/apps/remmina.png
-share/icons/hicolor/22x22/actions/remmina-switch-page.png
+share/icons/hicolor/16x16/actions/remmina-fit-window.png
+share/icons/hicolor/16x16/actions/remmina-fullscreen.png
+share/icons/hicolor/16x16/actions/remmina-pin-down.png
+share/icons/hicolor/16x16/actions/remmina-pin-up.png
+share/icons/hicolor/16x16/actions/remmina-scale.png
+share/icons/hicolor/16x16/actions/remmina-switch-page.png
+share/icons/hicolor/16x16/apps/remmina.png
+share/icons/hicolor/16x16/emblems/remmina-sftp.png
 share/icons/hicolor/22x22/actions/remmina-fit-window.png
 share/icons/hicolor/22x22/actions/remmina-fullscreen.png
 share/icons/hicolor/22x22/actions/remmina-scale.png
+share/icons/hicolor/22x22/actions/remmina-switch-page.png
+share/icons/hicolor/22x22/apps/remmina.png
 share/icons/hicolor/22x22/emblems/remmina-sftp.png
-share/icons/hicolor/16x16/apps/remmina.png
-share/icons/hicolor/16x16/emblems/remmina-sftp.png
-share/icons/hicolor/16x16/actions/remmina-switch-page.png
-share/icons/hicolor/16x16/actions/remmina-fullscreen.png
-share/icons/hicolor/16x16/actions/remmina-scale.png
-share/icons/hicolor/16x16/actions/remmina-fit-window.png
-share/icons/hicolor/16x16/actions/remmina-pin-up.png
-share/icons/hicolor/16x16/actions/remmina-pin-down.png
-%%NLS%%share/locale/th/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/el/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/de/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/id/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/eu/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/kk/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/it/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/ca/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/da/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/sk/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/remmina.mo
+share/icons/hicolor/24x24/apps/remmina.png
+share/icons/hicolor/32x32/apps/remmina.png
+share/icons/hicolor/48x48/apps/remmina.png
+share/icons/hicolor/scalable/apps/remmina.svg
 %%NLS%%share/locale/bg/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/es/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/pt_PT/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/lt/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/remmina.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/da/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/de/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/el/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/es/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/remmina.mo
-%%DATADIR%%/icons/hicolor/24x24/apps/remmina.png
-%%DATADIR%%/icons/hicolor/48x48/apps/remmina.png
-%%DATADIR%%/icons/hicolor/scalable/apps/remmina.svg
-%%DATADIR%%/icons/hicolor/16x16/apps/remmina.png
-%%DATADIR%%/icons/hicolor/16x16/emblems/remmina-sftp.png
-%%DATADIR%%/icons/hicolor/16x16/actions/remmina-pin-down.png
-%%DATADIR%%/icons/hicolor/16x16/actions/remmina-fit-window.png
-%%DATADIR%%/icons/hicolor/16x16/actions/remmina-fullscreen.png
-%%DATADIR%%/icons/hicolor/16x16/actions/remmina-scale.png
-%%DATADIR%%/icons/hicolor/16x16/actions/remmina-pin-up.png
-%%DATADIR%%/icons/hicolor/16x16/actions/remmina-switch-page.png
-%%DATADIR%%/icons/hicolor/32x32/apps/remmina.png
-%%DATADIR%%/icons/hicolor/22x22/apps/remmina.png
-%%DATADIR%%/icons/hicolor/22x22/actions/remmina-scale.png
-%%DATADIR%%/icons/hicolor/22x22/actions/remmina-switch-page.png
-%%DATADIR%%/icons/hicolor/22x22/actions/remmina-fullscreen.png
-%%DATADIR%%/icons/hicolor/22x22/actions/remmina-fit-window.png
-%%DATADIR%%/icons/hicolor/22x22/emblems/remmina-sftp.png
+%%NLS%%share/locale/hu/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/id/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/it/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/pt_PT/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/th/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/remmina.mo
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@dirrmtry %%DATADIR%%/icons/hicolor/scalable/apps
-@dirrmtry %%DATADIR%%/icons/hicolor/scalable
-@dirrmtry %%DATADIR%%/icons/hicolor/48x48/apps
-@dirrmtry %%DATADIR%%/icons/hicolor/48x48
-@dirrmtry %%DATADIR%%/icons/hicolor/32x32/apps
-@dirrmtry %%DATADIR%%/icons/hicolor/32x32
-@dirrmtry %%DATADIR%%/icons/hicolor/24x24/apps
-@dirrmtry %%DATADIR%%/icons/hicolor/24x24
-@dirrmtry %%DATADIR%%/icons/hicolor/22x22/actions
-@dirrmtry %%DATADIR%%/icons/hicolor/22x22/apps
-@dirrmtry %%DATADIR%%/icons/hicolor/22x22/emblems
-@dirrmtry %%DATADIR%%/icons/hicolor/22x22
-@dirrmtry %%DATADIR%%/icons/hicolor/16x16/actions
-@dirrmtry %%DATADIR%%/icons/hicolor/16x16/apps
-@dirrmtry %%DATADIR%%/icons/hicolor/16x16/emblems
-@dirrmtry %%DATADIR%%/icons/hicolor/16x16
-@dirrmtry %%DATADIR%%/icons/hicolor
-@dirrmtry %%DATADIR%%/icons
-@dirrmtry %%DATADIR%%
 @dirrmtry include/remmina
