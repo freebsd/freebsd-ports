@@ -18,27 +18,23 @@ LIB_DEPENDS=	libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20 \
 
 USES=		openal:al pkgconfig
 USE_BZIP2=	yes
-USE_GCC=	yes
 USE_LDCONFIG=	yes
 USE_LUA=	5.0+
 USE_SDL=	image sdl
 USE_SCONS=	yes
-USE_PYTHON=	yes
-SCONS_ARGS=	prefix=${PREFIX} resources_dir=${DATADIR}
+USE_PYTHON_BUILD=	yes
+SCONS_ARGS=	prefix=${PREFIX} resources_dir=${DATADIR} \
+		--install-sandbox=${STAGEDIR}
 SCONS_BUILDENV=	CC="${CC}" CXX="${CXX}" \
 		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS} -fpermissive" \
 		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" \
 		CPPPATH="${LOCALBASE}/include" LIBPATH="${LOCALBASE}/lib"
 
-MAN6=		${PORTNAME}.6
-
 PORTDOCS=	LICENSE LICENSE.EXCEPTION README-en.txt README-linux.txt \
 		donate.url homepage.url project_page.url video.txt
 
-DESKTOP_ENTRIES="Battle Tanks" "${COMMENT}" "" "${PORTNAME}" \
-		"Game;ArcadeGame;" false
+DESKTOP_ENTRIES="Battle Tanks" "" "" "${PORTNAME}" "Game;ArcadeGame;" ""
 
-NO_STAGE=	yes
 pre-build:
 # Regenerate `sl08.h' after we patch `sl08.py' (as patching the header itself
 # would have resulted in a larger diff and gratuitous difference with Debian)
@@ -48,11 +44,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/build/release/clunk/libclunk.so \
 		${WRKSRC}/build/release/engine/libbtanks_engine.so \
 		${WRKSRC}/build/release/mrt/libmrt.so \
-		${WRKSRC}/build/release/sdlx/libsdlx.so ${PREFIX}/lib
-	${INSTALL_MAN} ${FILESDIR}/${MAN6} ${MANPREFIX}/man/man6
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+		${WRKSRC}/build/release/sdlx/libsdlx.so \
+			${STAGEDIR}${PREFIX}/lib
+	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.6 \
+		${STAGEDIR}${MANPREFIX}/man/man6
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
