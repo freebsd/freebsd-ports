@@ -38,12 +38,6 @@ CONFIGURE_ARGS+=	--use_qt4=N
 PLIST_SUB+=	QT_IM_MODULE="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile
-.endif
-
 .if ${PORT_OPTIONS:MANTHY}
 BUILD_DEPENDS+=	${LOCALBASE}/include/anthy/anthy.h:${PORTSDIR}/japanese/anthy
 LIB_DEPENDS+=	libanthy.so:${PORTSDIR}/japanese/anthy
@@ -102,4 +96,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
