@@ -1,5 +1,5 @@
 %%DIRECTFB%%bin/dfreerdp
-bin/xfreerdp
+%%X11%%bin/xfreerdp
 include/freerdp/addin.h
 include/freerdp/altsec.h
 include/freerdp/api.h
@@ -273,11 +273,11 @@ lib/libwinpr-winhttp.so.0.1.0
 lib/libwinpr-winsock.so
 lib/libwinpr-winsock.so.0.1
 lib/libwinpr-winsock.so.0.1.0
-lib/libxfreerdp-client.so
-lib/libxfreerdp-client.so.1.1
-lib/libxfreerdp-client.so.1.1.0
+%%X11%%lib/libxfreerdp-client.so
+%%X11%%lib/libxfreerdp-client.so.1.1
+%%X11%%lib/libxfreerdp-client.so.1.1.0
 libdata/pkgconfig/freerdp.pc
-man/man1/xfreerdp.1.gz
+%%X11%%man/man1/xfreerdp.1.gz
 @dirrmtry include/winpr
 @dirrmtry include/freerdp/utils
 @dirrmtry include/freerdp/server
