@@ -3,7 +3,6 @@
 
 PKGNAMESUFFIX=	-nx
 
-MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	Remmina plugin for NX
 
 USE_XORG+=	xkbfile
