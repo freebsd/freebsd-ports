@@ -71,8 +71,6 @@ CONFIGURE_ARGS+=	--disable-python
 ALL_TARGET=		build
 INSTALL_TARGET=		install
 
-.include <bsd.port.pre.mk>
-
 IGNORE_NONTHREAD_PYTHON=needs port lang/python${PYTHON_SUFFIX} to be build with THREADS support
 
 post-patch:
@@ -108,4 +106,4 @@ do-build:
 do-install:
 			@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${INSTALL_WRKSRC}/${WAF_TOOL} ${MAKE_ARGS} ${INSTALL_TARGET})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
