@@ -13,9 +13,14 @@ COMMENT=	Simulation of a full-scale war between two emperors
 
 LICENSE=	GPLv2
 
+CFLAGS+=	-w
+
 PORTDOCS=	AUTHORS BUGS NEWS README
 
 OPTIONS_DEFINE=	DOCS
+
+# Wrong versioning upstream
+PORTSCOUT=      skipv:1.11
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man6/${PORTNAME}.6.gz \
@@ -23,14 +28,15 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/pixmaps/${PORTNAME}.png
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/^CFLAGS/#CFLAGS/ ; \
-		 s/-lncurses/-lcurses/' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's/static void/void/g' ${WRKSRC}/game.c
+	@${REINPLACE_CMD} -e 's|^CFLAGS|#CFLAGS| ; \
+		s|-lncurses|-lcurses|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|static void|void|g' ${WRKSRC}/game.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vms-empire ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/empire-logo.png ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+	${INSTALL_DATA} ${WRKSRC}/empire-logo.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
