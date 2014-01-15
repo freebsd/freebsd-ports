@@ -38,10 +38,6 @@ CMAKE_ARGS+=	-DWITH_LIBSSH=OFF
 PLIST_SUB+=	SSH="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MNLS}
-RUN_DEPENDS+=	${LOCALBASE}/share/locale/bg/LC_MESSAGES/remmina-plugins.mo:${PORTSDIR}/net/remmina-plugin-i18n
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${PKGNAMESUFFIX} == "-i18n" || ${PKGNAMESUFFIX} == "-gnome"

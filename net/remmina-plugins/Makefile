@@ -20,8 +20,8 @@ COMMENT?=	Remmina plugin system
 .include "${.CURDIR}/../remmina-plugins/bsd.plugin.mk"
 .else
 
-OPTIONS_DEFINE=	KEYRING RDP VNC XDMCP TELEP NX
-OPTIONS_DEFAULT=	KEYRING RDP VNC XDMCP TELEP
+OPTIONS_DEFINE=	KEYRING RDP VNC XDMCP TELEP NX NLS
+OPTIONS_DEFAULT=	KEYRING RDP VNC XDMCP TELEP NLS
 KEYRING_DESC=	GNOME Keyring plugin
 RDP_DESC=	RDP protocol plugin
 VNC_DESC=	VNC protocol plugin
@@ -56,6 +56,10 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-telepathy.so:${POR
 
 .if ${PORT_OPTIONS:MNX}
 RUN_DEPENDS+=	${LOCALBASE}/lib/remmina/plugins/remmina-plugin-nx.so:${PORTSDIR}/net/remmina-plugin-nx
+.endif
+
+.if ${PORT_OPTIONS:MNLS}
+RUN_DEPENDS+=	${LOCALBASE}/share/locale/bg/LC_MESSAGES/remmina-plugins.mo:${PORTSDIR}/net/remmina-plugin-i18n
 .endif
 
 do-install:	# empty
