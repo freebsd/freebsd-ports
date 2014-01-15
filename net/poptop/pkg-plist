@@ -1,6 +1,9 @@
-@unexec %D/etc/rc.d/pptpd.sh stop > /dev/null 2>&1 || true
-sbin/pptpd
-sbin/pptpctrl
-lib/pptpd/pptpd-logwtmp.so
 etc/pptpd.conf.sample
-@dirrmtry lib/pptpd
+lib/pptpd/pptpd-logwtmp.so
+man/man5/pptpd.conf.5.gz
+man/man8/bcrelay.8.gz
+man/man8/pptpctrl.8.gz
+man/man8/pptpd.8.gz
+sbin/pptpctrl
+sbin/pptpd
+@dirrm lib/pptpd

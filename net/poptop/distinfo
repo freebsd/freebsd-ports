@@ -1,2 +1,4 @@
-SHA256 (pptpd-1.3.4.tar.gz) = c23a9bdd219a0a36ae7ca20e7c9749f2efdcdbf108aabeeeb5066ba442ec88b6
-SIZE (pptpd-1.3.4.tar.gz) = 240942
+SHA256 (pptpd-1.4.0.tar.gz) = 8fcd8b8a42de2af59e9fe8cbaa9f894045c977f4d038bbd6346a8522bb7f06c0
+SIZE (pptpd-1.4.0.tar.gz) = 252167
+SHA256 (ppp-2.4.5.tar.gz) = 43317afec9299f9920b96f840414c977f0385410202d48e56d2fdb8230003505
+SIZE (ppp-2.4.5.tar.gz) = 684342

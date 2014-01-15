@@ -2,37 +2,45 @@
 # $FreeBSD$
 
 PORTNAME=	poptop
-PORTVERSION=	1.3.4
-PORTREVISION=	3
+PORTVERSION=	1.4.0
 CATEGORIES=	net
-MASTER_SITES=	SF/${PORTNAME}/pptpd/pptpd-${PORTVERSION}
-DISTNAME=	pptpd-${PORTVERSION:S/.b/-b/}
+MASTER_SITES=	SF/${PORTNAME}/pptpd/pptpd-${PORTVERSION} \
+		SAMBA/ppp:pppd
+DISTFILES=	pptpd-${PORTVERSION}${EXTRACT_SUFX} \
+		${PPPD_DISTNAME}${EXTRACT_SUFX}:pppd
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Windows 9x compatible PPTP (VPN) server
 
-USE_GMAKE=	yes
+LICENSE=	GPLv2
+LICENSE_DISTFILES=	pptpd-${PORTVERSION}${EXTRACT_SUFX}
+
+OPTIONS_DEFINE=	KERNPPP
+KERNPPP_DESC=	Use kernel-space PPP
+
+WRKSRC=		${WRKDIR}/pptpd-${PORTVERSION}
+
+USES=		gmake
 GNU_CONFIGURE=	yes
-MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
-		AUTOHEADER="${TRUE}"
+CONFIGURE_ARGS=	--with-libwrap
 
 USE_RC_SUBR=	pptpd
 
-MAN5=		pptpd.conf.5
-MAN8=		pptpd.8 pptpctrl.8
+CFLAGS+=	-I${WRKDIR}/${PPPD_DISTNAME}
 
-.if !defined(WITH_KERNPPP)
-CONFIGURE_ARGS+=	--with-bsdppp
-.endif
+KERNPPP_CONFIGURE_OFF=	--with-bsdppp
 
-NO_STAGE=	yes
+PPPD_DISTNAME=	ppp-2.4.5
+
+.include <bsd.port.options.mk>
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/pptpctrl.c
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/pptpd.8
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/pptpd.conf.5
+.for i in pptpctrl.c pptpd.8 pptpd.conf.5
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/${i}
+.endfor
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/samples/pptpd.conf \
-		${PREFIX}/etc/pptpd.conf.sample
+	(cd ${WRKSRC}/samples && ${INSTALL_DATA} pptpd.conf \
+		${STAGEDIR}${PREFIX}/etc/pptpd.conf.sample)
 
 .include <bsd.port.mk>

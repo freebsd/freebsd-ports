@@ -6,5 +6,5 @@
  #include <unistd.h>
 -#include <utmp.h>
  #include <string.h>
- #include "pppd.h"
+ #include <pppd/pppd.h>
  
