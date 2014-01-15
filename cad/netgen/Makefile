@@ -8,7 +8,7 @@ CATEGORIES=	cad
 MASTER_SITES=	SF/netgen-mesher/netgen-mesher/${PORTVERSION:S|.0$||}/
 
 MAINTAINER=	stephen@FreeBSD.org
-COMMENT=	An automatic 3D tetrahedral mesh generator
+COMMENT=	Automatic 3D tetrahedral mesh generator
 
 LIB_DEPENDS=	libTix8.4.3.so:${PORTSDIR}/x11-toolkits/tix \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
@@ -33,6 +33,8 @@ FFMPEG_DESC=		video recording with FFmpeg
 OPTIONS_DEFAULT=	OCC
 
 NO_STAGE=	yes
+
+BROKEN_sparc64=	internal gcc error (Bug 23159)
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOCC}
@@ -54,11 +56,6 @@ MAKE_ENV=	TK_VER=${TK_VER} TCL_VER=${TCL_VER}	\
 		TCL_INCLUDEDIR="${TCL_INCLUDEDIR}"	\
 		TK_INCLUDEDIR="${TK_INCLUDEDIR}"	\
 		MACHINE=${MACHINE} MAKE=${GMAKE}
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		internal gcc error (Bug 23159)
-.endif
 
 pre-configure:
 	${REINPLACE_CMD} -e "s|%%DATADIR%%|${DATADIR}|"		\
@@ -71,4 +68,4 @@ post-install:
 	${LN} ${PREFIX}/lib/libnglib.so  ${PREFIX}/lib/libnglib.so.1
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
