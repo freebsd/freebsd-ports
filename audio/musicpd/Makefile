@@ -143,8 +143,6 @@ SUB_LIST+=	MPDDIR=${MPDDIR}
 IGNORE=Please remove the MPDCONF line from make.conf, then rename ${PREFIX}/etc/${MPDCONF} to musicpd.conf, if it exists
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if exists(${PREFIX}/etc/mpd.conf)
 MSG=You still have ${PREFIX}/etc/mpd.conf in existence-- this file is no longer used by musicpd.
 .if !exists(${PREFIX}/etc/musicpd.conf)
@@ -233,4 +231,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/mpdconf.example \
 		${STAGEDIR}/${PREFIX}/etc/${PORTNAME}.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
