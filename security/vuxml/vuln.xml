@@ -51,6 +51,87 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5acf4638-7e2c-11e3-9fba-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>32.0.1700.77</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>11 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[249502] High CVE-2013-6646: Use-after-free in web workers.
+	      Credit to Collin Payne.</li>
+	    <li>[326854] High CVE-2013-6641: Use-after-free related to forms.
+	      Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[324969] High CVE-2013-6642: Address bar spoofing in Chrome for
+	      Android. Credit to lpilorz.</li>
+	    <li>[321940] High CVE-2013-6643: Unprompted sync with an attacker’s
+	      Google account. Credit to Joao Lucas Melo Brasio.</li>
+	    <li>[318791] Medium CVE-2013-6645 Use-after-free related to speech
+	      input elements. Credit to Khalil Zhani.</li>
+	    <li>[333036] CVE-2013-6644: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6641</cvename>
+      <cvename>CVE-2013-6642</cvename>
+      <cvename>CVE-2013-6643</cvename>
+      <cvename>CVE-2013-6644</cvename>
+      <cvename>CVE-2013-6645</cvename>
+      <cvename>CVE-2013-6646</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-01-14</discovery>
+      <entry>2014-01-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3d95c9a7-7d5c-11e3-a8c1-206a8a720317">
+    <topic>ntpd DRDoS / Amplification Attack using ntpdc monlist command</topic>
+    <affects>
+      <package>
+	<name>ntp</name>
+	<range><lt>4.2.7p26</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ntp.org reports:</p>
+	<blockquote cite="http://support.ntp.org/bin/view/Main/SecurityNotice#DRDoS_Amplification_Attack_using">
+	  <p>Unrestricted access to the monlist feature in
+	    ntp_request.c in ntpd in NTP before 4.2.7p26 allows remote
+	    attackers to cause a denial of service (traffic
+	    amplification) via forged (1) REQ_MON_GETLIST or (2)
+	    REQ_MON_GETLIST_1 requests, as exploited in the wild in
+	    December 2013</p>
+	  <p>Use noquery to your default restrictions to block all
+	    status queries.</p>
+	  <p>Use disable monitor to disable the ``ntpdc -c monlist''
+	    command while still allowing other status queries.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-5211</cvename>
+      <freebsdsa>SA-14:02.ntpd</freebsdsa>
+      <url>http://support.ntp.org/bin/view/Main/SecurityNotice#DRDoS_Amplification_Attack_using</url>
+    </references>
+    <dates>
+      <discovery>2014-01-01</discovery>
+      <entry>2014-01-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ba04a373-7d20-11e3-8992-00132034b086">
     <topic>nagios -- denial of service vulnerability</topic>
     <affects>
