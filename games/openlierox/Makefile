@@ -60,7 +60,7 @@ post-patch:
 		${REINPLACE_CMD} -e '/include.*curl\/types.h/ d'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/openliero ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/openlierox ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/share/openlierox-openlierox.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/
 	${INSTALL_DATA} ${WRKSRC}/share/OpenLieroX.svg \
