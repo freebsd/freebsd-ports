@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Net_SMTP
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	net mail www pear
 
 MAINTAINER=	miwi@FreeBSD.org
