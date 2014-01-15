@@ -1,5 +1,5 @@
---- ./Makefile.orig	2013-12-23 22:12:37.000000000 +0100
-+++ ./Makefile	2013-12-24 15:01:35.000000000 +0100
+--- ./Makefile.orig	2013-12-28 17:42:18.000000000 +0100
++++ ./Makefile	2014-01-15 20:20:49.000000000 +0100
 @@ -34,9 +34,9 @@
  datadir = $(datarootdir)
  bindir = $(exec_prefix)/bin
@@ -7,35 +7,22 @@
 -mandir = $(datarootdir)/man
 -localstatedir = $(prefix)/var
 -gamesdir = $(localstatedir)/games
-+#mandir = $(datarootdir)/man
++mandir =$(prefix)/man
 +#localstatedir = $(prefix)/var
 +gamesdir = $(datarootdir)/$(PACKAGENAME)
  
  NEWD=$(PACKAGENAME)-$(VERSION)
  COMPILEDATE=$(shell date '+%Y-%m-%d')
-@@ -54,7 +54,7 @@
- 	mood_item.o sparkles.o \
- 	u-iff.o \
- 	rockdodger_globals.o intro.o main.o
--MANPAGE=rockdodger.6
-+#MANPAGE=rockdodger.6
- 
- ifeq ($(profile),1)
- 	OPTIONS+=-pg
-@@ -103,11 +103,11 @@
+@@ -103,9 +103,9 @@
  	-chgrp games $(bindir)/$(EXENAME)
  	chmod g+s $(bindir)/$(EXENAME)
  	$(MAKE) -C data install
 -	touch $(gamesdir)/rockdodger.scores
 -	-chgrp games $(gamesdir)/rockdodger.scores
 -	chmod g+rw $(gamesdir)/rockdodger.scores
--	mkdir -p $(mandir)/man6
--	gzip  < $(MANPAGE) > $(mandir)/man6/$(MANPAGE).gz
 +#	touch $(gamesdir)/rockdodger.scores
 +#	-chgrp games $(gamesdir)/rockdodger.scores
 +#	chmod g+rw $(gamesdir)/rockdodger.scores
-+#	mkdir -p $(mandir)/man6
-+#	gzip  < $(MANPAGE) > $(mandir)/man6/$(MANPAGE).gz
+ 	mkdir -p $(mandir)/man6
+ 	gzip  < $(MANPAGE) > $(mandir)/man6/$(MANPAGE).gz
  
- uninstall:
- 	rm -f $(gamesdir)/rockdodger.scores
