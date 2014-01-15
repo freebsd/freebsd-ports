@@ -19,37 +19,22 @@ OPTIONS_DEFINE=	MYSQL \
 OPTIONS_DEFAULT=MYSQL SQLITE PGSQL
 
 NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
-USES=	pathfix
-USE_GMAKE=	yes
+USES=	gmake pathfix
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
+MYSQL_USE=	mysql=yes
+MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
+MYSQL_CONFIGURE_OFF=	--without-mysql
+SQLITE_USE=	sqlite=3
+SQLITE_CONFIGURE_ON=	--with-sqlite=${LOCALBASE}
+SQLITE_CONFIGURE_OFF=	--without-sqlite
+PGSQL_USE=	pgsql=yes
+PGSQL_CONFIGURE_ON=	--with-postgresql=${LOCALBASE}/bin/pg_config
+PGSQL_CONFIGURE_OFF=	--without-postgresql
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}/bin/mysql_config
-.else
-CONFIGURE_ARGS+=	--without-mysql
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=	3
-CONFIGURE_ARGS+=	--with-sqlite=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--without-sqlite
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-CONFIGURE_ARGS+=	--with-postgresql=${LOCALBASE}/bin/pg_config
-.else
-CONFIGURE_ARGS+=	--without-postgresql
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
