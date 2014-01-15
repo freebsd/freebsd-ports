@@ -10,19 +10,24 @@ DISTNAME=	cvstrac-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Web-Based Bug And Patch-Set Tracking System For CVS
 
-WRKSRC=		${WRKDIR}/cvstrac-${PORTVERSION}
-USE_SQLITE=	yes
-USES=		gmake pkgconfig
+LICENSE=	GPLv2
 
-MAKE_ARGS+=	SRCDIR=${WRKSRC} PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}
+WRKSRC=		${WRKDIR}/${DISTNAME}
+
+USES=		gmake pkgconfig
+USE_SQLITE=	yes
+MAKEFILE=	bsd-gcc.mk
+MAKE_ARGS+=	BCC="${CC} ${CPPFLAGS}" TCC="${CC} ${CPPFLAGS}" \
+		LIBSQLITE="${LDFLAGS}"
 MAKE_JOBS_UNSAFE=	yes
 
-NOMAN=
+CPPFLAGS+=	$$(pkg-config --cflags sqlite3)
+LDFLAGS+=	$$(pkg-config --libs sqlite3) -lcrypt -lm
+
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	@${CAT} ${PKGMESSAGE}
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin)
 
 .include <bsd.port.mk>
