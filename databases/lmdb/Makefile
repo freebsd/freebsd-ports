@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lmdb
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.11
 CATEGORIES=	databases
 MASTER_SITES=	https://gitorious.org/${GO_ACCOUNT}/${GO_PROJECT}/archive/${GO_TAGNAME}.tar.gz?dummy= \
 		LOCAL/delphij
