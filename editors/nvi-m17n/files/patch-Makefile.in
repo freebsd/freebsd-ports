@@ -1,0 +1,100 @@
+--- Makefile.in.orig	2014-01-15 15:12:44.000000000 +0000
++++ Makefile.in
+@@ -61,14 +61,14 @@ tknvi: $(TKALL)
+ chmod=	@vi_cv_path_chmod@
+ cp=	@vi_cv_path_cp@
+ ln=	@vi_cv_path_ln@
+-mkdir=	@vi_cv_path_mkdir@
++mkdir=	@vi_cv_path_mkdir@ -p
+ rm=	@vi_cv_path_rm@
+ strip=	@vi_cv_path_strip@
+ 
+ prefix=	@prefix@
+-bindir=	@bindir@
+-datadir=@datadir@
+-mandir=	@mandir@
++bindir=	$(DESTDIR)@bindir@
++datadir=$(DESTDIR)@datadir@
++mandir=	$(DESTDIR)@mandir@
+ exec_prefix=@exec_prefix@
+ 
+ dmode=	755
+@@ -79,8 +79,6 @@ transform=@program_transform_name@
+ 
+ install: all install_common
+ 	@echo "Installing vi, ex, view: $(bindir) ..."
+-	[ -d $(bindir) ] || \
+-	    ($(mkdir) $(bindir) && $(chmod) $(dmode) $(bindir))
+ 	cd $(bindir) && $(rm) -f `echo vi | sed '$(transform)'`
+ 	$(cp) nvi $(bindir)/`echo vi | sed '$(transform)'`
+ 	cd $(bindir) && [ -f $(strip) ] && \
+@@ -88,55 +86,28 @@ install: all install_common
+ 	cd $(bindir) && $(chmod) $(emode) `echo vi | sed '$(transform)'`
+ 	cd $(bindir) && $(rm) -f `echo ex | sed '$(transform)'`
+ 	cd $(bindir) && $(rm) -f `echo view | sed '$(transform)'`
+-	cd $(bindir) && $(ln) \
++	cd $(bindir) && $(ln) -s \
+ 		`echo vi | sed '$(transform)'` `echo ex | sed '$(transform)'`
+-	cd $(bindir) && $(ln) \
++	cd $(bindir) && $(ln) -s \
+ 		`echo vi | sed '$(transform)'` `echo view | sed '$(transform)'`
+ 	cd $(bindir) && $(rm) -f regular qregular
+ 	$(cp) regular $(bindir)/regular
+ 	$(cp) qregular $(bindir)/qregular
+ 	cd $(bindir) && $(chmod) $(emode) regular qregular
+-	[ -d $(mandir) ] || \
+-	    ($(mkdir) $(mandir) && $(chmod) $(dmode) $(mandir))
+-	[ -d $(mandir)/cat1 ] || \
+-	    ($(mkdir) $(mandir)/cat1 && $(chmod) $(dmode) $(mandir)/cat1)
+ 	@echo "Installing man pages: $(mandir) ..."
+-	cd $(mandir)/cat1 && $(rm) -f `echo vi.0 | sed '$(transform)'`
+-	$(cp) $(srcdir)/docs/USD.doc/vi.man/vi.0 \
+-	    $(mandir)/cat1/`echo vi.0 | sed '$(transform)'`
+-	cd $(mandir)/cat1 && $(chmod) $(fmode) `echo vi.0 | sed '$(transform)'`
+-	cd $(mandir)/cat1 && $(rm) -f `echo ex.0 | sed '$(transform)'`
+-	cd $(mandir)/cat1 && $(rm) -f `echo view.0 | sed '$(transform)'`
+-	cd $(mandir)/cat1 && $(ln) \
+-	    `echo vi.0 | sed '$(transform)'` `echo ex.0 | sed '$(transform)'`
+-	cd $(mandir)/cat1 && $(ln) \
+-	    `echo vi.0 | sed '$(transform)'` `echo view.0 | sed '$(transform)'`
+-	[ -d $(mandir)/man1 ] || \
+-	    ($(mkdir) $(mandir)/man1 && $(chmod) $(dmode) $(mandir)/man1)
+ 	cd $(mandir)/man1 && $(rm) -f `echo vi.1 | sed '$(transform)'`
+ 	$(cp) $(srcdir)/docs/USD.doc/vi.man/vi.1 \
+ 	    $(mandir)/man1/`echo vi.1 | sed '$(transform)'`
+ 	cd $(mandir)/man1 && $(chmod) $(fmode) `echo vi.1 | sed '$(transform)'`
+ 	cd $(mandir)/man1 && $(rm) -f `echo ex.1 | sed '$(transform)'`
+ 	cd $(mandir)/man1 && $(rm) -f `echo view.1 | sed '$(transform)'`
+-	cd $(mandir)/man1 && $(ln) \
++	cd $(mandir)/man1 && $(ln) -s \
+ 	    `echo vi.1 | sed '$(transform)'` `echo ex.1 | sed '$(transform)'`
+-	cd $(mandir)/man1 && $(ln) \
++	cd $(mandir)/man1 && $(ln) -s \
+ 	    `echo vi.1 | sed '$(transform)'` `echo view.1 | sed '$(transform)'`
+ 
+ cat=	dutch english french german ru_SU.KOI8-R spanish swedish
+ install_common:
+-	[ -f $(chmod) ]
+-	[ -f $(cp) ]
+-	[ -f $(ln) ]
+-	[ -f $(mkdir) ]
+-	[ -f $(rm) ]
+-	[ -d $(prefix) ] || \
+-	    ($(mkdir) $(prefix) && $(chmod) $(dmode) $(prefix))
+-	[ -d $(exec_prefix) ] || \
+-	    ($(mkdir) $(exec_prefix) && $(chmod) $(dmode) $(exec_prefix))
+-	[ -d $(datadir) ] || \
+-	    ($(mkdir) $(datadir) && $(chmod) $(dmode) $(datadir))
+ 	$(rm) -rf $(datadir)/vi
+ 	$(mkdir) $(datadir)/vi && $(chmod) $(dmode) $(datadir)/vi
+ 	@echo "Installing message catalogs: $(datadir)/vi/catalog ..."
+@@ -164,9 +135,6 @@ uninstall:
+ 	cd $(bindir) && $(rm) -f `echo vi | sed '$(transform)'`
+ 	cd $(bindir) && $(rm) -f `echo view | sed '$(transform)'`
+ 	cd $(bindir) && $(rm) -f regular qregular
+-	cd $(mandir)/cat1 && $(rm) -f `echo ex.0 | sed '$(transform)'`
+-	cd $(mandir)/cat1 && $(rm) -f `echo vi.0 | sed '$(transform)'`
+-	cd $(mandir)/cat1 && $(rm) -f `echo view.0 | sed '$(transform)'`
+ 	cd $(mandir)/man1 && $(rm) -f `echo ex.1 | sed '$(transform)'`
+ 	cd $(mandir)/man1 && $(rm) -f `echo vi.1 | sed '$(transform)'`
+ 	cd $(mandir)/man1 && $(rm) -f `echo view.1 | sed '$(transform)'`
