@@ -2,6 +2,7 @@
 
 PORTNAME=	gnustep-back
 PORTVERSION=	0.24.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -44,15 +45,12 @@ BREAKS_IF_PEDANTIC=	yes
 CFLAGS+=		-I${LOCALBASE}/include/freetype2
 LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
 LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
-CONFIGURE_ARGS+=	--enable-graphics=cairo --with-name=cairo
+CONFIGURE_ARGS+=	--enable-graphics=cairo 
 CONFIGURE_ARGS+=	--disable-glitz
-PLIST_SUB+=		BACK=cairo-${BACKVERSION}
-BACK_SUFFIX?=		-cairo
+PLIST_SUB+=		BACK=back-${BACKVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-MAKE_FLAGS+=		messages=yes
 PLIST_SUB+=		BACKVERSION=${PORTVERSION:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 
 pre-configure:
