@@ -13,22 +13,18 @@ LICENSE=	GPLv2 # (or later)
 
 OPTIONS_DEFINE=	SDL
 
-BROKEN=		Does not build
-
 USE_BZIP2=	yes
+USES=		compiler gmake
 USE_XORG=	x11
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CFLAGS+=	-Wno-deprecated-writable-strings
 CONFIGURE_ARGS=	--enable-alternate-scoresdir=${SCOREDIR} \
 		--enable-alternate-gameuser=root \
 		--enable-alternate-gamegroup=games
-MAKE_ARGS=	GAMEPERM=2755 DIRPERM=775 FILEPERM=664
+MAKE_ARGS=	GAMEPERM=755 DIRPERM=775 FILEPERM=664
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	SCOREDIR="${SCOREDIR}"
 
-MAN6=		xconq.6
 INFO=		xconq
 
 DESKTOP_ENTRIES="${PORTNAME}" "${COMMENT}" "" "${PORTNAME}" \
@@ -36,7 +32,6 @@ DESKTOP_ENTRIES="${PORTNAME}" "${COMMENT}" "" "${PORTNAME}" \
 
 SCOREDIR?=	/var/games/xconq
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSDL}
@@ -44,12 +39,19 @@ USE_SDL=	sdl
 CONFIGURE_ARGS+=--enable-default-ui=sdl
 PLIST_SUB+=	NOSDL="@comment "
 .else
+USES+=		tk
 USE_XORG+=	xext xmu xt xaw
-USE_TK_BUILD=	yes
-USE_TK=		yes
 CONFIGURE_ARGS+=--with-tclconfig=${TCL_LIBDIR} \
 		--with-tkconfig=${TK_LIBDIR}
 PLIST_SUB+=	NOSDL=""
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang
+CFLAGS+=	-Wno-deprecated-writable-strings
+.else
+CFLAGS+=	-Wno-write-strings
 .endif
 
 post-patch:
@@ -63,13 +65,14 @@ post-build:
 	(cd ${WRKSRC}/doc && makeinfo xconq.texi)
 
 post-install:
-	(cd ${WRKSRC}/doc && ${INSTALL_DATA} xconq.info ${PREFIX}/${INFO_PATH})
-	${STRIP_CMD} ${PREFIX}/bin/xconq
+	${INSTALL_DATA} ${WRKSRC}/doc/xconq.info \
+		${STAGEDIR}${PREFIX}/${INFO_PATH}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xconq
 .if empty(PORT_OPTIONS:MSDL)
 .for i in imf2x imfapp x2imf
-	${STRIP_CMD} ${PREFIX}/bin/${i}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
 .endif
-	@${FIND} ${DATADIR} -empty -delete
+	@${FIND} ${STAGEDIR}${DATADIR} -empty -delete
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

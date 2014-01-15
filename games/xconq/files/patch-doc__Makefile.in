@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig
++++ doc/Makefile.in
+@@ -95,7 +95,7 @@
+ 
+ install-info: info
+ 	for i in *.info* ; do \
+-		$(INSTALL_DATA) $$i $(infodir)/$$i ; \
++		$(INSTALL_DATA) $$i $(DESTDIR)$(infodir)/$$i ; \
+ 	done
+ 
+ # Generation of DVI files.
