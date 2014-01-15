@@ -14,7 +14,7 @@ EXTRACT_ONLY=	${EBFILES}
 MAINTAINER=	yasu@utahime.org
 COMMENT=	C library for accessing EB, EBG, EBXA, and EPWING CD-ROM dictionaries
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 EBFILES=	${DISTNAME}${EXTRACT_SUFX}
 APPENDIXFILES=	appendix/cencro-1.0.tar.gz \
