@@ -41,11 +41,6 @@ pre-build:
 	@cd ${WRKSRC} && ${PYTHON_CMD} engine/sl08/sl08.py > engine/sl08/sl08.h
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/build/release/clunk/libclunk.so \
-		${WRKSRC}/build/release/engine/libbtanks_engine.so \
-		${WRKSRC}/build/release/mrt/libmrt.so \
-		${WRKSRC}/build/release/sdlx/libsdlx.so \
-			${STAGEDIR}${PREFIX}/lib
 	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.6 \
 		${STAGEDIR}${MANPREFIX}/man/man6
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
