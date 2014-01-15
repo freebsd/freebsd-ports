@@ -204,6 +204,7 @@
     SUBDIR += charva
     SUBDIR += checkbashisms
     SUBDIR += checkheaders
+    SUBDIR += cherivis-devel
     SUBDIR += chrpath
     SUBDIR += chruby
     SUBDIR += cil
