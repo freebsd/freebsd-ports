@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bcrypt
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	security python
 MASTER_SITES=	GOOGLE_CODE \
 		http://www.mindrot.org/files/py-bcrypt/
