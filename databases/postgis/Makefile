@@ -50,8 +50,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	DATADIR=${DATADIR} DOCSDIR=${DOCSDIR}
 MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.pre.mk>
-
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/html/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl
@@ -84,4 +82,4 @@ post-install:
 	@${LN} -s ${PREFIX}/lib/postgresql/postgis-1.5.so ${PREFIX}/lib/postgresql/liblwgeom.so.1
 	@${LN} -s ${PREFIX}/lib/postgresql/postgis-1.5.so ${PREFIX}/lib/postgresql/liblwgeom.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
