@@ -22,7 +22,6 @@ USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXMLPARSER}
@@ -62,4 +61,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.rd.ja ${RUBY_MODDOCDIR}/ja/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
