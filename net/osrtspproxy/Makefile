@@ -11,11 +11,22 @@ DISTNAME=	${PORTNAME}_2_0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The RTSP Proxy Kit - A reference implementation of an RTSP proxy
 
-HAS_CONFIGURE=	YES
+HAS_CONFIGURE=	yes
 
-NO_STAGE=	yes
+PLIST_FILES=	sbin/rtspproxy etc/rc.d/rtspproxy.sh.sample
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/CC=/s|^|#| ; \
+		 /CXX=/s|^|#| ; \
+		 /LD=/s|^|#| ; \
+		 s|-I/usr/local/include|| ; \
+		 s|-L/usr/local/lib||' ${WRKSRC}/configure
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rtspproxy/rtspproxy ${PREFIX}/sbin
-	${INSTALL_SCRIPT} ${FILESDIR}/rtspproxy.sh ${PREFIX}/etc/rc.d/rtspproxy.sh.sample
+	(cd ${WRKSRC}/rtspproxy && ${INSTALL_PROGRAM} rtspproxy \
+		${STAGEDIR}${PREFIX}/sbin)
+	(cd ${FILESDIR} && ${INSTALL_SCRIPT} rtspproxy.sh \
+		${STAGEDIR}${PREFIX}/etc/rc.d/rtspproxy.sh.sample)
 
 .include <bsd.port.mk>
