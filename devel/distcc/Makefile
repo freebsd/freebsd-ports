@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gprof --disable-Werror
 WANT_GNOME=	yes
@@ -36,7 +36,6 @@ COMPILER_LINKS=	Create symlinks to distcc
 OPTIONS_DEFAULT=	COMPILER_LINKS
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAVAHI}
@@ -116,4 +115,4 @@ post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
