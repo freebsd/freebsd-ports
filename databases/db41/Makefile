@@ -38,7 +38,6 @@ PORTDOCS=	*
 .endif
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
 CONFIGURE_ARGS+=	--with-mutex=x86/gcc-assembly
@@ -48,4 +47,4 @@ post-patch:
 	@${REINPLACE_CMD} -Ee \
 		's|-l?pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
