@@ -1,120 +1,174 @@
 bin/kdiff3
-lib/kde4/libkdiff3part.so
-lib/kde4/libkdiff3plugin.so
+lib/kde4/kdiff3fileitemaction.so
 share/applications/kde4/kdiff3.desktop
-share/apps/kdiff3/kdiff3_part.rc
 share/apps/kdiff3/kdiff3_shell.rc
-share/doc/HTML/da/kdiff3/common
-share/doc/HTML/da/kdiff3/index.cache.bz2
-share/doc/HTML/da/kdiff3/index.docbook
-share/doc/HTML/de/kdiff3/common
-share/doc/HTML/de/kdiff3/index.cache.bz2
-share/doc/HTML/de/kdiff3/index.docbook
-share/doc/HTML/en/kdiff3/common
-share/doc/HTML/en/kdiff3/dirbrowser.png
-share/doc/HTML/en/kdiff3/dirmergebig.png
-share/doc/HTML/en/kdiff3/index.cache.bz2
-share/doc/HTML/en/kdiff3/index.docbook
-share/doc/HTML/en/kdiff3/iteminfo.png
-share/doc/HTML/en/kdiff3/letter_by_letter.png
-share/doc/HTML/en/kdiff3/merge_current.png
-share/doc/HTML/en/kdiff3/new.png
-share/doc/HTML/en/kdiff3/open_dialog.png
-share/doc/HTML/en/kdiff3/screenshot_diff.png
-share/doc/HTML/en/kdiff3/screenshot_merge.png
-share/doc/HTML/en/kdiff3/triple_diff.png
-share/doc/HTML/en/kdiff3/white_space.png
-share/doc/HTML/es/kdiff3/common
-share/doc/HTML/es/kdiff3/index.cache.bz2
-share/doc/HTML/es/kdiff3/index.docbook
-share/doc/HTML/et/kdiff3/common
-share/doc/HTML/et/kdiff3/index.cache.bz2
-share/doc/HTML/et/kdiff3/index.docbook
-share/doc/HTML/fr/kdiff3/common
-share/doc/HTML/fr/kdiff3/index.cache.bz2
-share/doc/HTML/fr/kdiff3/index.docbook
-share/doc/HTML/it/kdiff3/common
-share/doc/HTML/it/kdiff3/index.cache.bz2
-share/doc/HTML/it/kdiff3/index.docbook
-share/doc/HTML/nl/kdiff3/common
-share/doc/HTML/nl/kdiff3/index.cache.bz2
-share/doc/HTML/nl/kdiff3/index.docbook
-share/doc/HTML/pt/kdiff3/common
-share/doc/HTML/pt/kdiff3/index.cache.bz2
-share/doc/HTML/pt/kdiff3/index.docbook
+share/apps/kdiff3part/kdiff3_part.rc
+%%PORTDOCS%%share/doc/HTML/da/kdiff3/common
+%%PORTDOCS%%share/doc/HTML/da/kdiff3/index.cache.bz2
+%%PORTDOCS%%share/doc/HTML/da/kdiff3/index.docbook
+%%PORTDOCS%%share/doc/HTML/de/kdiff3/common
+%%PORTDOCS%%share/doc/HTML/de/kdiff3/index.cache.bz2
+%%PORTDOCS%%share/doc/HTML/de/kdiff3/index.docbook
+%%PORTDOCS%%share/doc/HTML/en/kdiff3/common
+%%PORTDOCS%%share/doc/HTML/en/kdiff3/dirbrowser.png
+%%PORTDOCS%%share/doc/HTML/en/kdiff3/dirmergebig.png
+%%PORTDOCS%%share/doc/HTML/en/kdiff3/index.cache.bz2
+%%PORTDOCS%%share/doc/HTML/en/kdiff3/index.docbook
+%%PORTDOCS%%share/doc/HTML/en/kdiff3/iteminfo.png
+%%PORTDOCS%%share/doc/HTML/en/kdiff3/letter_by_letter.png
+%%PORTDOCS%%share/doc/HTML/en/kdiff3/merge_current.png
+%%PORTDOCS%%share/doc/HTML/en/kdiff3/new.png
+%%PORTDOCS%%share/doc/HTML/en/kdiff3/open_dialog.png
+%%PORTDOCS%%share/doc/HTML/en/kdiff3/screenshot_diff.png
+%%PORTDOCS%%share/doc/HTML/en/kdiff3/screenshot_merge.png
+%%PORTDOCS%%share/doc/HTML/en/kdiff3/triple_diff.png
+%%PORTDOCS%%share/doc/HTML/en/kdiff3/white_space.png
+%%PORTDOCS%%share/doc/HTML/es/kdiff3/common
+%%PORTDOCS%%share/doc/HTML/es/kdiff3/index.cache.bz2
+%%PORTDOCS%%share/doc/HTML/es/kdiff3/index.docbook
+%%PORTDOCS%%share/doc/HTML/et/kdiff3/common
+%%PORTDOCS%%share/doc/HTML/et/kdiff3/index.cache.bz2
+%%PORTDOCS%%share/doc/HTML/et/kdiff3/index.docbook
+%%PORTDOCS%%share/doc/HTML/fr/kdiff3/common
+%%PORTDOCS%%share/doc/HTML/fr/kdiff3/index.cache.bz2
+%%PORTDOCS%%share/doc/HTML/fr/kdiff3/index.docbook
+%%PORTDOCS%%share/doc/HTML/it/kdiff3/common
+%%PORTDOCS%%share/doc/HTML/it/kdiff3/index.cache.bz2
+%%PORTDOCS%%share/doc/HTML/it/kdiff3/index.docbook
+%%PORTDOCS%%share/doc/HTML/nl/kdiff3/common
+%%PORTDOCS%%share/doc/HTML/nl/kdiff3/index.cache.bz2
+%%PORTDOCS%%share/doc/HTML/nl/kdiff3/index.docbook
+%%PORTDOCS%%share/doc/HTML/pt/kdiff3/common
+%%PORTDOCS%%share/doc/HTML/pt/kdiff3/index.cache.bz2
+%%PORTDOCS%%share/doc/HTML/pt/kdiff3/index.docbook
 share/icons/hicolor/16x16/apps/kdiff3.png
 share/icons/hicolor/32x32/apps/kdiff3.png
 share/icons/locolor/16x16/apps/kdiff3.png
 share/icons/locolor/32x32/apps/kdiff3.png
-share/kde4/services/kdiff3_plugin.desktop
 share/kde4/services/kdiff3part.desktop
-share/locale/ar/LC_MESSAGES/kdiff3.mo
-share/locale/bg/LC_MESSAGES/kdiff3.mo
-share/locale/br/LC_MESSAGES/kdiff3.mo
-share/locale/cs/LC_MESSAGES/kdiff3.mo
-share/locale/cs/LC_MESSAGES/kdiff3plugin.mo
-share/locale/cy/LC_MESSAGES/kdiff3.mo
-share/locale/da/LC_MESSAGES/kdiff3.mo
-share/locale/de/LC_MESSAGES/kdiff3.mo
-share/locale/de/LC_MESSAGES/kdiff3plugin.mo
-share/locale/el/LC_MESSAGES/kdiff3.mo
-share/locale/el/LC_MESSAGES/kdiff3plugin.mo
-share/locale/en_GB/LC_MESSAGES/kdiff3.mo
-share/locale/es/LC_MESSAGES/kdiff3.mo
-share/locale/es/LC_MESSAGES/kdiff3plugin.mo
-share/locale/et/LC_MESSAGES/kdiff3.mo
-share/locale/et/LC_MESSAGES/kdiff3plugin.mo
-share/locale/fr/LC_MESSAGES/kdiff3.mo
-share/locale/fr/LC_MESSAGES/kdiff3plugin.mo
-share/locale/ga/LC_MESSAGES/kdiff3.mo
-share/locale/ga/LC_MESSAGES/kdiff3plugin.mo
-share/locale/gl/LC_MESSAGES/kdiff3.mo
-share/locale/gl/LC_MESSAGES/kdiff3plugin.mo
-share/locale/hi/LC_MESSAGES/kdiff3.mo
-share/locale/hu/LC_MESSAGES/kdiff3.mo
-share/locale/it/LC_MESSAGES/kdiff3.mo
-share/locale/ja/LC_MESSAGES/kdiff3.mo
-share/locale/ka/LC_MESSAGES/kdiff3.mo
-share/locale/lt/LC_MESSAGES/kdiff3.mo
-share/locale/nb/LC_MESSAGES/kdiff3.mo
-share/locale/nb/LC_MESSAGES/kdiff3plugin.mo
-share/locale/nds/LC_MESSAGES/kdiff3.mo
-share/locale/nds/LC_MESSAGES/kdiff3plugin.mo
-share/locale/nl/LC_MESSAGES/kdiff3.mo
-share/locale/nl/LC_MESSAGES/kdiff3plugin.mo
-share/locale/pl/LC_MESSAGES/kdiff3.mo
-share/locale/pt/LC_MESSAGES/kdiff3.mo
-share/locale/pt/LC_MESSAGES/kdiff3plugin.mo
-share/locale/pt_BR/LC_MESSAGES/kdiff3.mo
-share/locale/pt_BR/LC_MESSAGES/kdiff3plugin.mo
-share/locale/ro/LC_MESSAGES/kdiff3.mo
-share/locale/ro/LC_MESSAGES/kdiff3plugin.mo
-share/locale/ru/LC_MESSAGES/kdiff3.mo
-share/locale/rw/LC_MESSAGES/kdiff3.mo
-share/locale/sv/LC_MESSAGES/kdiff3.mo
-share/locale/sv/LC_MESSAGES/kdiff3plugin.mo
-share/locale/ta/LC_MESSAGES/kdiff3.mo
-share/locale/tg/LC_MESSAGES/kdiff3.mo
-share/locale/tr/LC_MESSAGES/kdiff3.mo
-share/locale/tr/LC_MESSAGES/kdiff3plugin.mo
-share/locale/uk/LC_MESSAGES/kdiff3.mo
-share/locale/uk/LC_MESSAGES/kdiff3plugin.mo
-share/locale/zh_CN/LC_MESSAGES/kdiff3.mo
-share/locale/zh_CN/LC_MESSAGES/kdiff3plugin.mo
-@dirrm share/locale/rw/LC_MESSAGES
-@dirrm share/locale/rw
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/doc/HTML/pt/kdiff3
-@dirrm share/doc/HTML/nl/kdiff3
-@dirrm share/doc/HTML/it/kdiff3
-@dirrm share/doc/HTML/fr/kdiff3
-@dirrm share/doc/HTML/et/kdiff3
-@dirrm share/doc/HTML/es/kdiff3
-@dirrm share/doc/HTML/en/kdiff3
-@dirrm share/doc/HTML/de/kdiff3
-@dirrm share/doc/HTML/da/kdiff3
-@dirrm share/apps/kdiff3
+share/kde4/services/kdiff3fileitemaction.desktop
+%%NLS%%share/locale/ar/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/br/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/bs/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/bs/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/bs/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/da/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/da/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/da/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/de/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/de/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/de/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/el/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/el/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/el/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/es/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/es/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/es/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/et/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/et/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/et/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/ga/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/ga/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/hne/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/is/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/is/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/it/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/it/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/it/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/mai/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/ml/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/ml/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/nds/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/nds/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/nds/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/rw/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/tg/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/kdiff3.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/kdiff3plugin.mo
+%%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/rw
+@dirrmtry share/icons/locolor/32x32/apps
+@dirrmtry share/icons/locolor/32x32
+@dirrmtry share/icons/locolor/16x16/apps
+@dirrmtry share/icons/locolor/16x16
+@dirrmtry share/icons/locolor
+%%PORTDOCS%%@dirrmtry share/doc/HTML/pt/kdiff3
+%%PORTDOCS%%@dirrmtry share/doc/HTML/nl/kdiff3
+%%PORTDOCS%%@dirrmtry share/doc/HTML/it/kdiff3
+%%PORTDOCS%%@dirrmtry share/doc/HTML/fr/kdiff3
+%%PORTDOCS%%@dirrmtry share/doc/HTML/et/kdiff3
+%%PORTDOCS%%@dirrmtry share/doc/HTML/es/kdiff3
+%%PORTDOCS%%@dirrmtry share/doc/HTML/en/kdiff3
+%%PORTDOCS%%@dirrmtry share/doc/HTML/de/kdiff3
+%%PORTDOCS%%@dirrmtry share/doc/HTML/da/kdiff3
+@dirrmtry share/apps/kdiff3part
+@dirrmtry share/apps/kdiff3
