@@ -769,7 +769,6 @@ MASTER_SITE_MOZILLA+= \
 	http://kyoto-mz-dl.sinet.ad.jp/pub/mozilla.org/%SUBDIR%/ \
 	http://jp-nii01.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
 	http://jp-nii02.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
-	http://mozilla.mtk.nao.ac.jp/pub/mozilla.org/%SUBDIR%/ \
 	http://mirror.internode.on.net/pub/mozilla/%SUBDIR%/ \
 	http://ftp.acc.umu.se/pub/mozilla.org/%SUBDIR%/ \
 	http://mozilla.c3sl.ufpr.br/releases/%SUBDIR%/ \
@@ -779,6 +778,14 @@ MASTER_SITE_MOZILLA+= \
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.mozilla.org/pub/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/mozilla/&,} \
 	http://ftp.twaren.net/Unix/Mozilla/%SUBDIR%/
+.endif
+
+.if !defined(IGNORE_MASTER_SITE_BUGZILLA)
+MASTER_SITE_BUGZILLA+= \
+	https://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
+	http://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
+	ftp://ftp.mozilla.org/pub/mozilla.org/%SUBDIR%/ \
+	http://mirror.internode.on.net/pub/mozilla/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_MOZILLA_EXTENDED)
