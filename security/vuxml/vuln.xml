@@ -157,8 +157,8 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
-      <freebsdsa>SA-13:07.bind</freebsdsa>
       <cvename>CVE-2014-0591</cvename>
+      <freebsdsa>SA-13:07.bind</freebsdsa>
       <url>https://kb.isc.org/article/AA-01078/74/</url>
     </references>
     <dates>
