@@ -1,6 +1,6 @@
---- configure.bad	Fri Jun 26 02:22:51 1998
-+++ configure	Fri Jun 26 02:23:39 1998
-@@ -1686,10 +1686,8 @@
+--- configure.orig	2014-01-15 15:12:44.000000000 +0000
++++ configure
+@@ -1805,10 +1805,8 @@ if test "$vi_cv_canna" = "yes"; then
  		case "$host_os" in
  		bsdi2.1)
  			vi_cannapath="/usr/contrib/canna";;
@@ -8,7 +8,7 @@
 -			vi_cannapath="/usr/local";;
 -		freebsd2*)
 -			vi_cannapath="/usr/local/canna";;
-+		freebsd*)
++		freebsd*|dragonfly*)
 +			vi_cannapath="${prefix}";;
  		*)
  			vi_cannapath="/usr/local/canna";;
