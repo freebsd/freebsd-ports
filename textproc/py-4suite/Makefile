@@ -22,6 +22,9 @@ PYDISTUTILS_PKGNAME=	4Suite
 PYDISTUTILS_PKGVERSION=	1.0b1
 
 CONFLICTS=	py*-4Suite-1* py*-xml-0.7*
+DEPRECATED=	only builds with Python up to version 2.4
+EXPIRATION_DATE=2014-02-01
+BROKEN=		only builds with Python up to version 2.4	
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	fails self-tests on 64-bit platforms
