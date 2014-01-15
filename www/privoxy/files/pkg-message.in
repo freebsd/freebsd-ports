@@ -3,10 +3,11 @@
   to /etc/rc.conf.
 
   To start Privoxy manually, run:
-  /usr/local/etc/rc.d/privoxy forcestart
-  The script understands most of the commands listed
-  in rc(8), it also contains a list of other rc
-  variables you can use.
+  service privoxy forcestart
+
+  The rc script understands most of the commands listed
+  in rc(8), it also contains a list of other rc variables
+  you can use.
 
   Privoxy's example files were copied to:
   %%EXAMPLESDIR%%
@@ -18,10 +19,5 @@
   overwritten with each Privoxy update. Instead of
   changing them you should use your own action and
   filter files as described in Privoxy's manual.
-
-  If you installed Privoxy as package and are using
-  the default configuration, you have to make sure
-  the directory /var/run/privoxy exists and is owned
-  by privoxy:privoxy.
 
 ***********************************************************

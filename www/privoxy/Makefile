@@ -3,6 +3,7 @@
 
 PORTNAME=	privoxy
 PORTVERSION=	3.0.21
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	SF/ijbswa/Sources/${PORTVERSION}%20%28stable%29
 DISTNAME=	privoxy-${PORTVERSION}-stable-src
@@ -26,8 +27,6 @@ MAKEFILE=	GNUmakefile
 # It's not (yet) part of the FreeBSD ports collection.
 CONFLICTS=	privoxy-devel-[0-9]*
 
-MAN1=		privoxy.1
-
 USERS=		privoxy
 GROUPS=		privoxy
 
@@ -48,7 +47,6 @@ TOGGLE_DESC=		Support for remote toggling
 
 OPTIONS_DEFAULT=	BROKEN_STRPTIME EDITOR DOCS FORCE TOGGLE
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MACCEPT_FILTER}
@@ -88,6 +86,8 @@ PLIST_SUB+=	PRIVOXY_TOOLS=""
 PLIST_SUB+=	PRIVOXY_TOOLS="@comment "
 .endif
 
+PLIST_SUB+=	MAN1PREFIX=${MAN1PREFIX}
+
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's,^\(confdir\) \.,\1 ${PREFIX}/etc/privoxy,' \
@@ -107,36 +107,26 @@ pre-configure:
 	@cd ${WRKSRC}; ${AUTOHEADER}
 
 do-install:
-	@${MKDIR} ${PREFIX}/etc/privoxy/templates
-	@${INSTALL_PROGRAM} ${WRKSRC}/privoxy ${PREFIX}/sbin
-	@${INSTALL_DATA} ${WRKSRC}/templates/[a-z]* ${PREFIX}/etc/privoxy/templates
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/privoxy/templates
+	@${INSTALL_PROGRAM} ${WRKSRC}/privoxy ${STAGEDIR}${PREFIX}/sbin
+	@${INSTALL_DATA} ${WRKSRC}/templates/[a-z]* ${STAGEDIR}${PREFIX}/etc/privoxy/templates
 .if ${PORT_OPTIONS:MPRIVOXY_TOOLS}
 .for privoxy_tool in privoxy-log-parser.pl privoxy-regression-test.pl uagen.pl
-	@${INSTALL_SCRIPT} ${WRKSRC}/tools/${privoxy_tool} ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/tools/${privoxy_tool} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .endif
 .for defaultfile in default.action default.filter regression-tests.action
-	@${INSTALL_DATA} ${WRKSRC}/${defaultfile} ${PREFIX}/etc/privoxy
-	@${CHOWN} privoxy:privoxy ${PREFIX}/etc/privoxy/${defaultfile}
-	@${CHMOD} 0444 ${PREFIX}/etc/privoxy/${defaultfile}
+	@${INSTALL_DATA} ${WRKSRC}/${defaultfile} ${STAGEDIR}${PREFIX}/etc/privoxy
 .endfor
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for examplefile in config match-all.action trust user.action
-	@${INSTALL_DATA} ${WRKSRC}/${examplefile} ${EXAMPLESDIR}/
-	@${CHOWN} privoxy:privoxy ${EXAMPLESDIR}/${examplefile}
-	@${CHMOD} 0640 ${EXAMPLESDIR}/${examplefile}
+	@${INSTALL_DATA} ${WRKSRC}/${examplefile} ${STAGEDIR}${EXAMPLESDIR}/
 .endfor
-	@${INSTALL_MAN}  ${WRKSRC}/privoxy.1 ${MANPREFIX}/man/man1
+	@${INSTALL_MAN}  ${WRKSRC}/privoxy.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/user-manual
-	@${INSTALL_DATA} ${WRKSRC}/doc/webserver/user-manual/[a-z]* ${DOCSDIR}/user-manual
-	@${INSTALL_DATA} ${WRKSRC}/doc/webserver/p_doc.css ${DOCSDIR}/user-manual
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/user-manual
+	@${INSTALL_DATA} ${WRKSRC}/doc/webserver/user-manual/[a-z]* ${STAGEDIR}${DOCSDIR}/user-manual
+	@${INSTALL_DATA} ${WRKSRC}/doc/webserver/p_doc.css ${STAGEDIR}${DOCSDIR}/user-manual
 .endif
-
-post-install:
-	@${MKDIR} /var/run/privoxy
-	@${CHOWN} privoxy:privoxy /var/run/privoxy
-	@${CHMOD} 0750 /var/run/privoxy
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
