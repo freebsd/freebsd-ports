@@ -52,8 +52,6 @@ PLIST_SUB+=	BASH_COMPLETIONS=""
 PLIST_SUB+=	BASH_COMPLETIONS="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e "s|/share/man/man1|/man/man1|g" ${WRKSRC}/install-sh
 	@${REINPLACE_CMD} -e "s|/usr/local|${LOCALBASE}|g" \
@@ -84,4 +82,4 @@ post-install:
 	@${ECHO_MSG} "===> Docs installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
