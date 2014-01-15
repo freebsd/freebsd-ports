@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML_Template_Sigma
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	devel www pear
 
 MAINTAINER=	miwi@FreeBSD.org
