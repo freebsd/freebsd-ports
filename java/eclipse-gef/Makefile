@@ -15,6 +15,8 @@ COMMENT=	Graphical Editing Framework for the Eclipse IDE
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
+BROKEN=		No longer fetches from MASTER_SITES, mismatched checksum from FreeBSD
+
 WRKSRC=		${WRKDIR}/eclipse
 USE_ZIP=	yes
 
