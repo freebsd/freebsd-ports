@@ -1,0 +1,28 @@
+--- Makefile.orig	2013-04-29 02:23:49.000000000 +0200
++++ Makefile	2013-12-10 10:06:34.000000000 +0100
+@@ -1,8 +1,9 @@
+ CC=cc
+-CFLAGS=-O -I../..
++CFLAGS=-O -I/usr/local
++LDFLAGS=-L/usr/lib -lz
+ 
+-UNZ_OBJS = miniunz.o unzip.o ioapi.o ../../libz.a
+-ZIP_OBJS = minizip.o zip.o   ioapi.o ../../libz.a
++UNZ_OBJS = miniunz.o unzip.o ioapi.o
++ZIP_OBJS = minizip.o zip.o   ioapi.o
+ 
+ .c.o:
+ 	$(CC) -c $(CFLAGS) $*.c
+@@ -10,10 +11,10 @@
+ all: miniunz minizip
+ 
+ miniunz:  $(UNZ_OBJS)
+-	$(CC) $(CFLAGS) -o $@ $(UNZ_OBJS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(UNZ_OBJS)
+ 
+ minizip:  $(ZIP_OBJS)
+-	$(CC) $(CFLAGS) -o $@ $(ZIP_OBJS)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(ZIP_OBJS)
+ 
+ test:	miniunz minizip
+ 	./minizip test readme.txt

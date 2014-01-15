@@ -1,0 +1,4 @@
+bin/minizip
+bin/miniunz
+man/man1/miniunzip.1.gz
+man/man1/minizip.1.gz
