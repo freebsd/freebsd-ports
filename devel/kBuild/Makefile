@@ -29,6 +29,7 @@ KBUILD_ENV=	ACLOCAL=${ACLOCAL} \
 		AUTORECONF=${AUTORECONF} \
 		AUTOPOINT=true
 USE_GCC=	any
+KBUILD_TARGET=	${OPSYS:tl}
 
 KBUILD_BINS=	kDepIDB kDepPre kObjCache kmk kmk_append kmk_ash kmk_cat \
 		kmk_chmod kmk_cmp kmk_cp kmk_echo kmk_expr kmk_gmake \
@@ -65,14 +66,14 @@ do-build:
 
 do-install:
 .for bin in ${KBUILD_BINS}
-	${INSTALL_PROGRAM} ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release/stage${PREFIX}/bin/${bin} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/out/${KBUILD_TARGET}.${KBUILD_ARCH}/release/stage${PREFIX}/bin/${bin} ${PREFIX}/bin
 .endfor
 	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release/stage${PREFIX}/share/kBuild && ${COPYTREE_SHARE} \* ${DATADIR})
+	(cd ${WRKSRC}/out/${KBUILD_TARGET}.${KBUILD_ARCH}/release/stage${PREFIX}/share/kBuild && ${COPYTREE_SHARE} \* ${DATADIR})
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for doc in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/out/freebsd.${KBUILD_ARCH}/release/stage${PREFIX}/share/doc/${PORTNAME}-${KBUILD_VERSION}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/out/${KBUILD_TARGET}.${KBUILD_ARCH}/release/stage${PREFIX}/share/doc/${PORTNAME}-${KBUILD_VERSION}/${doc} ${DOCSDIR}
 .endfor
 .endif
 
