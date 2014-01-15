@@ -29,21 +29,10 @@ USE_MYSQL=	yes
 USE_PHP=	ctype dom gd iconv json mcrypt mysql pdo_mysql simplexml spl xml zip
 WANT_PHP_WEB=	yes
 
-.include <bsd.port.options.mk>
+APC_USE=	php=apc
+LDAP_USE=	php=ldap
+MEMCACHE_USE=	php=memcache
 
-.if ${PORT_OPTIONS:MAPC}
-USE_PHP+=	apc
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_PHP+=	ldap
-.endif
-
-.if ${PORT_OPTIONS:MMEMCACHE}
-USE_PHP+=	memcache
-.endif
-
-.include <bsd.port.pre.mk>
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}/${PORTNAME}
@@ -56,4 +45,4 @@ do-install:
 post-install:
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
