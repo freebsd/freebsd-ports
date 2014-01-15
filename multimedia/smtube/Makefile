@@ -23,7 +23,7 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|qmake|${QMAKE} ${QMAKE_ARGS}|' \
+	@${REINPLACE_CMD} -e 's|qmake|${QMAKE} ${QMAKE_ARGS:S,\$(,\$\$(,g}|' \
 		-e 's|lrelease|${LRELEASE}|g' \
 		-e 's|PREFIX=/usr/local|PREFIX=${PREFIX}|g' \
 		-e 's|$$(PREFIX)/share/smtube|${DATADIR}|g' \
