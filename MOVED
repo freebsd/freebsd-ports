@@ -5377,3 +5377,4 @@ lang/python26|lang/python27|2014-01-13|Python 2.6 is now end-of-life, please mig
 sysutils/lavaps||2014-01-14|Abandonware, segfaults
 www/mod_authnz_external|www/mod_authnz_external22|2014-01-14|Port was renamed to reflect the supported Apache version
 games/deng|games/doomsday|2014-01-16|Renamed to follow upstream naming
+misc/sword17|misc/sword|2014-01-16|Has expired: use misc/sword
