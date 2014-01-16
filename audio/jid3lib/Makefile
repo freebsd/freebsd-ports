@@ -11,17 +11,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java ID3 Tag Library
 
 USE_JAVA=	yes
-NO_STAGE=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/jid3lib.jar
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/jid3lib.jar..."
-	@${MKDIR} ${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/dist/jid3lib-${PORTVERSION}.jar \
-	${JAVAJARDIR}/jid3lib.jar
-	@${ECHO_MSG} " [ DONE ]"
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/dist/jid3lib-${PORTVERSION}.jar \
+		${STAGEDIR}${JAVAJARDIR}/jid3lib.jar
 
 .include <bsd.port.mk>
