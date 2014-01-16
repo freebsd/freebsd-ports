@@ -23,7 +23,6 @@ bin/re.pl
 %%SITE_PERL%%/Devel/REPL/Plugin/Interrupt.pm
 %%SITE_PERL%%/Devel/REPL/Plugin/LexEnv.pm
 %%SITE_PERL%%/Devel/REPL/Plugin/MultiLine/PPI.pm
-%%SITE_PERL%%/Devel/REPL/Plugin/NewlineHack.pm
 %%SITE_PERL%%/Devel/REPL/Plugin/Nopaste.pm
 %%SITE_PERL%%/Devel/REPL/Plugin/OutputCache.pm
 %%SITE_PERL%%/Devel/REPL/Plugin/PPI.pm
@@ -60,7 +59,6 @@ bin/re.pl
 %%PERL5_MAN3%%/Devel::REPL::Plugin::Interrupt.3.gz
 %%PERL5_MAN3%%/Devel::REPL::Plugin::LexEnv.3.gz
 %%PERL5_MAN3%%/Devel::REPL::Plugin::MultiLine::PPI.3.gz
-%%PERL5_MAN3%%/Devel::REPL::Plugin::NewlineHack.3.gz
 %%PERL5_MAN3%%/Devel::REPL::Plugin::Nopaste.3.gz
 %%PERL5_MAN3%%/Devel::REPL::Plugin::OutputCache.3.gz
 %%PERL5_MAN3%%/Devel::REPL::Plugin::PPI.3.gz
