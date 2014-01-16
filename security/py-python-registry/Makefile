@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	python-registry
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	security devel python
 MASTER_SITES=	GH \
 		LOCAL/antoine
@@ -16,7 +16,7 @@ LICENSE=	APACHE20
 USE_GITHUB=	yes
 GH_ACCOUNT=	williballenthin
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	1d16db8
+GH_COMMIT=	0817990
 
 USES=		shebangfix
 SHEBANG_FILES=	samples/*.py
@@ -24,24 +24,18 @@ python_OLD_CMD=	.*
 python_CMD=	${PYTHON_CMD}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYTHON_PY3K_PLIST_HACK=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGELOG.TXT ${WRKSRC}/CONTRIBUTORS.TXT ${WRKSRC}/README.txt \
 		${WRKSRC}/documentation/* ${STAGEDIR}${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/samples/*.py ${STAGEDIR}${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.mk>
