@@ -7,7 +7,7 @@ CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tjs@cdpa.nsysu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A non-blocking traceroute client
 
 RUN_DEPENDS=	p5-POE>=0.11:${PORTSDIR}/devel/p5-POE

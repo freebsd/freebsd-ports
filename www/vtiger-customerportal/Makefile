@@ -9,7 +9,7 @@ MASTER_SITES=	SF/vtigercrm/vtiger%20CRM%20${PORTVERSION}/Add-ons
 PKGNAMEPREFIX=	vtiger-
 DISTNAME=	vtigercrm-customerportal-${DISTVERSION}
 
-MAINTAINER=	as@bsdgroup.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vtiger Customer Portal is an add-on package for vtiger CRM
 
 NO_BUILD=	YES
