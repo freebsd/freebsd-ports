@@ -1,5 +1,6 @@
 lib/xbmc/addons/pvr.argustv/XBMC_ArgusTV.pvr
 lib/xbmc/addons/pvr.demo/XBMC_Demo.pvr
+lib/xbmc/addons/pvr.dvblink/XBMC_DVBLink.pvr
 lib/xbmc/addons/pvr.dvbviewer/XBMC_dvbviewer.pvr
 lib/xbmc/addons/pvr.hts/XBMC_Tvheadend.pvr
 lib/xbmc/addons/pvr.mediaportal.tvserver/XBMC_Mediaportal.pvr
@@ -7,6 +8,7 @@ lib/xbmc/addons/pvr.nextpvr/XBMC_NextPVR.pvr
 lib/xbmc/addons/pvr.njoy/XBMC_Njoy.pvr
 lib/xbmc/addons/pvr.vdr.vnsi/XBMC_VDR_vnsi.pvr
 lib/xbmc/addons/pvr.vuplus/XBMC_vuplus.pvr
+lib/xbmc/addons/pvr.wmc/XBMC_WMC.pvr
 share/xbmc/addons/pvr.argustv/addon.xml
 share/xbmc/addons/pvr.argustv/addon.xml.in
 share/xbmc/addons/pvr.argustv/changelog.txt
@@ -65,6 +67,13 @@ share/xbmc/addons/pvr.argustv/resources/settings.xml
 share/xbmc/addons/pvr.demo/PVRDemoAddonSettings.xml
 share/xbmc/addons/pvr.demo/addon.xml
 share/xbmc/addons/pvr.demo/addon.xml.in
+share/xbmc/addons/pvr.dvblink/addon.xml
+share/xbmc/addons/pvr.dvblink/addon.xml.in
+share/xbmc/addons/pvr.dvblink/changelog.txt
+share/xbmc/addons/pvr.dvblink/icon.png
+share/xbmc/addons/pvr.dvblink/resources/settings.xml
+share/xbmc/addons/pvr.dvblink/resources/language/Danish/strings.po
+share/xbmc/addons/pvr.dvblink/resources/language/English/strings.po
 share/xbmc/addons/pvr.dvbviewer/addon.xml
 share/xbmc/addons/pvr.dvbviewer/addon.xml.in
 share/xbmc/addons/pvr.dvbviewer/changelog.txt
@@ -279,6 +288,7 @@ share/xbmc/addons/pvr.nextpvr/resources/language/Spanish (Mexico)/strings.po
 share/xbmc/addons/pvr.nextpvr/resources/language/Spanish/strings.po
 share/xbmc/addons/pvr.nextpvr/resources/language/Swedish/strings.po
 share/xbmc/addons/pvr.nextpvr/resources/settings.xml
+share/xbmc/addons/pvr.nextpvr/resources/skins/skin.confluence/720p/RecordPrefs.xml
 share/xbmc/addons/pvr.njoy/addon.xml
 share/xbmc/addons/pvr.njoy/addon.xml.in
 share/xbmc/addons/pvr.njoy/icon.png
@@ -338,7 +348,9 @@ share/xbmc/addons/pvr.vdr.vnsi/resources/language/Thai/strings.po
 share/xbmc/addons/pvr.vdr.vnsi/resources/language/Turkish/strings.po
 share/xbmc/addons/pvr.vdr.vnsi/resources/language/Ukrainian/strings.po
 share/xbmc/addons/pvr.vdr.vnsi/resources/settings.xml
-share/xbmc/addons/pvr.vdr.vnsi/resources/skins/Confluence/720p/ChannelScan.xml
+share/xbmc/addons/pvr.vdr.vnsi/resources/skins/skin.aeon.nox/1080i/Admin.xml
+share/xbmc/addons/pvr.vdr.vnsi/resources/skins/skin.confluence/720p/Admin.xml
+share/xbmc/addons/pvr.vdr.vnsi/resources/skins/skin.confluence/720p/ChannelScan.xml
 share/xbmc/addons/pvr.vuplus/addon.xml
 share/xbmc/addons/pvr.vuplus/addon.xml.in
 share/xbmc/addons/pvr.vuplus/changelog.txt
@@ -396,6 +408,20 @@ share/xbmc/addons/pvr.vuplus/resources/language/Thai/strings.po
 share/xbmc/addons/pvr.vuplus/resources/language/Turkish/strings.po
 share/xbmc/addons/pvr.vuplus/resources/language/Ukrainian/strings.po
 share/xbmc/addons/pvr.vuplus/resources/settings.xml
+share/xbmc/addons/pvr.wmc/addon.xml
+share/xbmc/addons/pvr.wmc/addon.xml.in
+share/xbmc/addons/pvr.wmc/icon.png
+share/xbmc/addons/pvr.wmc/resources/settings.xml
+share/xbmc/addons/pvr.wmc/resources/language/English/strings.po
+share/xbmc/addons/pvr.wmc/resources/skins/skin.confluence/720p/DeleteTimer.xml
+share/xbmc/addons/pvr.wmc/resources/skins/skin.confluence/720p/RecordPrefs.xml
+@dirrm share/xbmc/addons/pvr.wmc/resources/skins/skin.confluence/720p
+@dirrm share/xbmc/addons/pvr.wmc/resources/skins/skin.confluence
+@dirrm share/xbmc/addons/pvr.wmc/resources/skins
+@dirrm share/xbmc/addons/pvr.wmc/resources/language/English
+@dirrm share/xbmc/addons/pvr.wmc/resources/language
+@dirrm share/xbmc/addons/pvr.wmc/resources
+@dirrm share/xbmc/addons/pvr.wmc
 @dirrm share/xbmc/addons/pvr.vuplus/resources/language/Ukrainian
 @dirrm share/xbmc/addons/pvr.vuplus/resources/language/Turkish
 @dirrm share/xbmc/addons/pvr.vuplus/resources/language/Thai
@@ -451,8 +477,10 @@ share/xbmc/addons/pvr.vuplus/resources/settings.xml
 @dirrm share/xbmc/addons/pvr.vuplus/resources/language
 @dirrm share/xbmc/addons/pvr.vuplus/resources
 @dirrm share/xbmc/addons/pvr.vuplus
-@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/skins/Confluence/720p
-@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/skins/Confluence
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/skins/skin.confluence/720p
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/skins/skin.confluence
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/skins/skin.aeon.nox/1080i
+@dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/skins/skin.aeon.nox
 @dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/skins
 @dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Ukrainian
 @dirrm share/xbmc/addons/pvr.vdr.vnsi/resources/language/Turkish
@@ -511,6 +539,9 @@ share/xbmc/addons/pvr.vuplus/resources/settings.xml
 @dirrm share/xbmc/addons/pvr.njoy/resources/language
 @dirrm share/xbmc/addons/pvr.njoy/resources
 @dirrm share/xbmc/addons/pvr.njoy
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/skins/skin.confluence/720p
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/skins/skin.confluence
+@dirrm share/xbmc/addons/pvr.nextpvr/resources/skins
 @dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Swedish
 @dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Spanish (Mexico)
 @dirrm share/xbmc/addons/pvr.nextpvr/resources/language/Spanish (Argentina)
@@ -717,6 +748,11 @@ share/xbmc/addons/pvr.vuplus/resources/settings.xml
 @dirrm share/xbmc/addons/pvr.dvbviewer/resources/language
 @dirrm share/xbmc/addons/pvr.dvbviewer/resources
 @dirrm share/xbmc/addons/pvr.dvbviewer
+@dirrm share/xbmc/addons/pvr.dvblink/resources/language/English
+@dirrm share/xbmc/addons/pvr.dvblink/resources/language/Danish
+@dirrm share/xbmc/addons/pvr.dvblink/resources/language
+@dirrm share/xbmc/addons/pvr.dvblink/resources
+@dirrm share/xbmc/addons/pvr.dvblink
 @dirrm share/xbmc/addons/pvr.demo
 @dirrm share/xbmc/addons/pvr.argustv/resources/language/Ukrainian
 @dirrm share/xbmc/addons/pvr.argustv/resources/language/Turkish
@@ -771,6 +807,7 @@ share/xbmc/addons/pvr.vuplus/resources/settings.xml
 @dirrm share/xbmc/addons/pvr.argustv/resources/language
 @dirrm share/xbmc/addons/pvr.argustv/resources
 @dirrm share/xbmc/addons/pvr.argustv
+@dirrm lib/xbmc/addons/pvr.wmc
 @dirrm lib/xbmc/addons/pvr.vuplus
 @dirrm lib/xbmc/addons/pvr.vdr.vnsi
 @dirrm lib/xbmc/addons/pvr.njoy
@@ -778,5 +815,6 @@ share/xbmc/addons/pvr.vuplus/resources/settings.xml
 @dirrm lib/xbmc/addons/pvr.mediaportal.tvserver
 @dirrm lib/xbmc/addons/pvr.hts
 @dirrm lib/xbmc/addons/pvr.dvbviewer
+@dirrm lib/xbmc/addons/pvr.dvblink
 @dirrm lib/xbmc/addons/pvr.demo
 @dirrm lib/xbmc/addons/pvr.argustv

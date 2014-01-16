@@ -3,16 +3,21 @@
 
 PORTNAME=	xbmc-pvr-addons
 PORTVERSION=	12.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freebsd.org/~decke/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-Frodo
+DISTNAME=	${PORTNAME}-${PORTVERSION}-20140104
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	XBMC PVR addons for various backends
 
 BUILD_DEPENDS+=	xbmc:${PORTSDIR}/multimedia/xbmc
 RUN_DEPENDS+=	xbmc:${PORTSDIR}/multimedia/xbmc
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	opdenkamp
+GH_COMMIT=	9021115
+GH_TAGNAME=	9021115
 
 USES=		pkgconfig
 USE_GL=		gl
