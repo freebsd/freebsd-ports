@@ -19,7 +19,6 @@ USE_BZIP2=	yes
 
 GNU_CONFIGURE=	yes
 
-MAN1=		srm.1
-PLIST_FILES=	bin/srm
+PLIST_FILES=	bin/srm man/man1/srm.1.gz
 
 .include <bsd.port.mk>
