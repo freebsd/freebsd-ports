@@ -7,29 +7,13 @@ share/apps/rekonq/htmls/home.html
 share/apps/rekonq/htmls/jquery-1.7.2.min.js
 share/apps/rekonq/htmls/jquery-ui-1.8.20.custom.min.js
 share/apps/rekonq/htmls/rekonqinfo.html
-share/apps/rekonq/opensearch/beolingus.xml
-share/apps/rekonq/opensearch/bing.xml
-share/apps/rekonq/opensearch/db_opensearch.json
-share/apps/rekonq/opensearch/de2en.xml
-share/apps/rekonq/opensearch/dictfr.xml
-share/apps/rekonq/opensearch/facebook.xml
-share/apps/rekonq/opensearch/google.xml
-share/apps/rekonq/opensearch/kde_techbase.xml
-share/apps/rekonq/opensearch/kde_userbase.xml
-share/apps/rekonq/opensearch/voila.xml
-share/apps/rekonq/opensearch/wikia.xml
-share/apps/rekonq/opensearch/wikipedia.xml
-share/apps/rekonq/opensearch/wiktionary.xml
-share/apps/rekonq/opensearch/wr_english.xml
-share/apps/rekonq/opensearch/yahoo.xml
-share/apps/rekonq/opensearch/youtube.xml
 share/apps/rekonq/pics/autoscroll.png
 share/apps/rekonq/pics/background.png
 share/apps/rekonq/pics/bg2.png
 share/apps/rekonq/pics/busywidget.gif
 share/apps/rekonq/pics/button.png
 share/apps/rekonq/pics/category.png
-share/apps/rekonq/pics/loading.mng
+share/apps/rekonq/pics/loading.gif
 share/apps/rekonq/pics/tile.gif
 share/apps/rekonq/pics/webkit-icon.png
 share/apps/rekonq/rekonqui.rc
@@ -69,7 +53,6 @@ share/doc/HTML/en/rekonq/Rekonq-kget.png
 share/doc/HTML/en/rekonq/Rekonq-manualplugins-youtube.png
 share/doc/HTML/en/rekonq/Rekonq-manualplugins.png
 share/doc/HTML/en/rekonq/Rekonq-newtab.png
-share/doc/HTML/en/rekonq/Rekonq-notabs.png
 share/doc/HTML/en/rekonq/Rekonq-okularkpart.png
 share/doc/HTML/en/rekonq/Rekonq-panels.png
 share/doc/HTML/en/rekonq/Rekonq-privatebrowsing.png
@@ -77,8 +60,6 @@ share/doc/HTML/en/rekonq/Rekonq-sslinfo.png
 share/doc/HTML/en/rekonq/Rekonq-tabpreview.png
 share/doc/HTML/en/rekonq/Rekonq-toolbar.png
 share/doc/HTML/en/rekonq/Rekonq-urlbar.png
-share/doc/HTML/en/rekonq/Rekonq-windowtabbing.png
-share/doc/HTML/en/rekonq/Systemsettings-enablewindowtabbing.png
 share/doc/HTML/en/rekonq/advanced.png
 share/doc/HTML/en/rekonq/appearance.png
 share/doc/HTML/en/rekonq/common
@@ -128,9 +109,7 @@ share/doc/HTML/uk/rekonq/Rekonq-panels.png
 share/doc/HTML/uk/rekonq/Rekonq-privatebrowsing.png
 share/doc/HTML/uk/rekonq/Rekonq-sslinfo.png
 share/doc/HTML/uk/rekonq/Rekonq-tabpreview.png
-share/doc/HTML/uk/rekonq/Rekonq-windowtabbing.png
 share/doc/HTML/uk/rekonq/Rekonq-zoom.png
-share/doc/HTML/uk/rekonq/Systemsettings-enablewindowtabbing.png
 share/doc/HTML/uk/rekonq/advanced.png
 share/doc/HTML/uk/rekonq/appearance.png
 share/doc/HTML/uk/rekonq/common
@@ -192,6 +171,5 @@ share/locale/zh_TW/LC_MESSAGES/rekonq.mo
 @dirrm share/doc/HTML/el/rekonq
 @dirrm share/doc/HTML/de/rekonq
 @dirrm share/apps/rekonq/pics
-@dirrm share/apps/rekonq/opensearch
 @dirrm share/apps/rekonq/htmls
 @dirrm share/apps/rekonq
