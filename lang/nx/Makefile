@@ -10,9 +10,9 @@ DISTNAME=	nsf${DISTVERSION}
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Highly flexible, Tcl-based, object-oriented scripting language
 
-OPTIONS_DEFINE=	DOCS
-
 LICENSE=	MIT
+
+OPTIONS_DEFINE=	DOCS
 
 CONFLICTS=	xotcl-1.*
 
@@ -25,16 +25,12 @@ CONFIGURE_ARGS+=--exec-prefix=${PREFIX} \
 PLIST_SUB+=	PKGNAME=${DISTNAME}
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${CP} ${FILESDIR}/genStubs.tcl ${WRKSRC}
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
-.endif
 
 regression-test: build
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test
