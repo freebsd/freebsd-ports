@@ -35,7 +35,7 @@ if [ ! -d "${sdir}" ]; then
 		cp "${datadir}/flash-50g" "${sdir}/"
 
 		if [ "`uname  -p`" = "amd64" ]; then
-			cp "${datadir}/hp50g-hack.png" "${sdir}/"
+			cp "${datadir}/hp50g-hack.png" "${sdir}/hp50g.png"
 		else
 			cp "${datadir}/hp50g.png" "${sdir}/"
 		fi

@@ -15,6 +15,7 @@ COMMENT=	HP 49g+/50g graphics calculator emulator
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 WRKSRC=		${WRKDIR}/x49gp/x49gp-code
+HAVE_CONFIGURE=	yes
 
 USE_GCC=	any
 USE_XORG=	x11
@@ -40,6 +41,8 @@ MAKE_ENV+=	DEBUGB=1
 
 .include <bsd.port.options.mk>
 
+MAKE_ARGS+=CC="${CC}"
+
 .if ${PORT_OPTIONS:MFIRMWARE_215H3} || ${PORT_OPTIONS:MFIRMWARE_215}
 MAKE_ARGS+=FIRMWARE=4950_215.bin
 DISTFILES+=hp4950v215.zip
@@ -62,6 +65,9 @@ post-patch:
 #.if ${PORT_OPTIONS:MFIRMWARE_215H3}
 #	@${CP} ${WRKDIR}/rom215_hpgcc3_R004/hpgccrom.bin ${WRKSRC}/4950_215.bin
 #.endif
+
+do-configure:
+	cd ${WRKSRC}/qemu/qemu-git && ./configure-small --extra-cflags=-DX49GP --cc="${CC}"
 
 do-build:
 	cd ${WRKSRC} && ${GMAKE} ${MAKE_ARGS}
