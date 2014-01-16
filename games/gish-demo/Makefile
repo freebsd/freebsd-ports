@@ -8,7 +8,7 @@ MASTER_SITES=	http://s159260531.onlinehome.us/demos/
 DISTNAME=	gishdemo
 
 MAINTAINER=	mva@FreeBSD.org
-COMMENT=	A platform game with a gelatinous 12-pound ball of tar named Gish (Demo version)
+COMMENT=	Platform game with a gelatinous 12-pound ball of tar (Demo version)
 
 RESTRICTED=	(c) Copyright 2004 Chronic Logic All rights reserved
 ONLY_FOR_ARCHS=	i386 amd64
@@ -20,12 +20,11 @@ DATADIR=	${PREFIX}/lib/${PORTNAME}
 SUB_FILES=	rungish.sh
 SUB_LIST=	LINUXBASE=${LINUXBASE}
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/* ${DATADIR}
-	${BRANDELF} -t Linux ${DATADIR}/gishdemo
-	${BRANDELF} -t Linux ${DATADIR}/gishdemo
-	${INSTALL_SCRIPT} ${WRKDIR}/rungish.sh ${PREFIX}/bin/gish
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -R ${WRKSRC}/* ${STAGEDIR}${DATADIR}
+	${BRANDELF} -t Linux ${STAGEDIR}${DATADIR}/gishdemo
+	${BRANDELF} -t Linux ${STAGEDIR}${DATADIR}/gishdemo
+	${INSTALL_SCRIPT} ${WRKDIR}/rungish.sh ${STAGEDIR}${PREFIX}/bin/gish
 
 .include <bsd.port.mk>
