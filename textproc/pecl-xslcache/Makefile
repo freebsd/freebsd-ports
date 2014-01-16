@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xslcache
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	textproc pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
