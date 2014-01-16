@@ -73,11 +73,9 @@ PLIST_SUB+=	INSIGHT='@comment '
 CONFLICTS+=	gdb-insight*
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "ia64" || ${ARCH} == "powerpc"
-BROKEN=		Does not configure on ia64 or powerpc
-.endif
+.for a in ia64 powerpc
+BROKEN_${a}=	Does not configure on ia64 or powerpc
+.endfor
 
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
@@ -113,4 +111,4 @@ do-install:
 			${PREFIX}/lib/insight1.0
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
