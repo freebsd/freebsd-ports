@@ -20,7 +20,6 @@ RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity++
 NO_CDROM=	Some of the patches are marked no-commercial-use
 
 NO_BUILD=	yes
-NO_STAGE=	yes
 
 WRKSRC=		${WRKDIR}/timidity
 PLIST_SUB=	TIMIDITY_DATADIR=${TIMIDITY_DATADIR}
@@ -28,10 +27,10 @@ PLIST_SUB=	TIMIDITY_DATADIR=${TIMIDITY_DATADIR}
 TIMIDITY_DATADIR=	share/timidity
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${DATADIR}
-	@${MKDIR} ${PREFIX}/${TIMIDITY_DATADIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} timidity.cfg \
-		${PREFIX}/${TIMIDITY_DATADIR}/timidity.cfg-guspat
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${TIMIDITY_DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/timidity.cfg \
+		${STAGEDIR}${PREFIX}/${TIMIDITY_DATADIR}/timidity.cfg-guspat
 
 .include <bsd.port.mk>
