@@ -81,6 +81,7 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/devtools_extension_api.js
 %%DATADIR%%/resources/inspector/elementsPanel.css
 %%DATADIR%%/resources/inspector/ElementsPanel.js
+%%DATADIR%%/resources/inspector/filter.css
 %%DATADIR%%/resources/inspector/filteredItemSelectionDialog.css
 %%DATADIR%%/resources/inspector/heapProfiler.css
 %%DATADIR%%/resources/inspector/HeapSnapshotWorker.js
@@ -148,12 +149,6 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/Images/searchSmallBrightBlue.png
 %%DATADIR%%/resources/inspector/Images/searchSmallGray.png
 %%DATADIR%%/resources/inspector/Images/searchSmallWhite.png
-%%DATADIR%%/resources/inspector/Images/segment.png
-%%DATADIR%%/resources/inspector/Images/segmentEnd.png
-%%DATADIR%%/resources/inspector/Images/segmentHover.png
-%%DATADIR%%/resources/inspector/Images/segmentHoverEnd.png
-%%DATADIR%%/resources/inspector/Images/segmentSelected.png
-%%DATADIR%%/resources/inspector/Images/segmentSelectedEnd.png
 %%DATADIR%%/resources/inspector/Images/sessionStorage.png
 %%DATADIR%%/resources/inspector/Images/settingsListRemove.png
 %%DATADIR%%/resources/inspector/Images/settingsListRemove_2x.png
@@ -197,6 +192,7 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/networkLogView.css
 %%DATADIR%%/resources/inspector/networkPanel.css
 %%DATADIR%%/resources/inspector/NetworkPanel.js
+%%DATADIR%%/resources/inspector/overrides.css
 %%DATADIR%%/resources/inspector/panelEnablerView.css
 %%DATADIR%%/resources/inspector/profilesPanel.css
 %%DATADIR%%/resources/inspector/ProfilesPanel.js
@@ -208,9 +204,9 @@ share/applications/chromium-browser.desktop
 %%DATADIR%%/resources/inspector/screencastView.css
 %%DATADIR%%/resources/inspector/sourcesPanel.css
 %%DATADIR%%/resources/inspector/SourcesPanel.js
+%%DATADIR%%/resources/inspector/sourcesView.css
 %%DATADIR%%/resources/inspector/spectrum.css
 %%DATADIR%%/resources/inspector/splitView.css
-%%DATADIR%%/resources/inspector/tabbedPane.css
 %%DATADIR%%/resources/inspector/textPrompt.css
 %%DATADIR%%/resources/inspector/timelinePanel.css
 %%DATADIR%%/resources/inspector/TimelinePanel.js
