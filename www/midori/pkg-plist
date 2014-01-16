@@ -14,6 +14,7 @@ lib/midori/libcopy-tabs.so
 lib/midori/libdelayed-load.so
 lib/midori/libexternal-download-manager.so
 lib/midori/libfeed-panel.so
+lib/midori/libflummi.so
 lib/midori/libformhistory.so
 lib/midori/libhistory-list.so
 lib/midori/libmouse-gestures.so
@@ -49,7 +50,6 @@ share/applications/midori.desktop
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/katze-gtk3-compat.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/katze-katze-arrayaction.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/katze-katze-http-auth.html
-%%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/katze-katze-throbber.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/katze-katze-utils.html
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/katze.devhelp2
 %%APIDOCS%%share/gtk-doc/html/midori-%%VERSION%%/katze/left.png
@@ -161,17 +161,23 @@ share/locale/zh_TW/LC_MESSAGES/midori.mo
 %%DATADIR%%/res/bookmarks/Import_old_db_bookmarks.sql
 %%DATADIR%%/res/close.png
 %%DATADIR%%/res/error.html
+%%DATADIR%%/res/flummi/Create.sql
 %%DATADIR%%/res/forms/Create.sql
 %%DATADIR%%/res/gtk3.css
 %%DATADIR%%/res/history/Create.sql
 %%DATADIR%%/res/history/Day.sql
 %%DATADIR%%/res/logo-shade.png
+%%DATADIR%%/res/nojs/nojs-statusicon-allowed.png
+%%DATADIR%%/res/nojs/nojs-statusicon-denied.png
+%%DATADIR%%/res/nojs/nojs-statusicon-mixed.png
 %%DATADIR%%/res/speeddial-head.html
 %%DATADIR%%/res/tabby/Create.sql
 %%DATADIR%%/res/tabby/Update1.sql
 @dirrm %%DATADIR%%/res/tabby
+@dirrm %%DATADIR%%/res/nojs
 @dirrm %%DATADIR%%/res/history
 @dirrm %%DATADIR%%/res/forms
+@dirrm %%DATADIR%%/res/flummi
 @dirrm %%DATADIR%%/res/bookmarks
 @dirrm %%DATADIR%%/res
 @dirrm %%DATADIR%%
