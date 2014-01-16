@@ -18,8 +18,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/mbrolavox:${PORTSDIR}/audio/mbrolavox
 
 CONFLICTS=	mbrola-*
 NO_BUILD=	yes
+ONLY_FOR_ARCHS=	amd64 i386
 NO_WRKSUBDIR=	yes
-IA32_BINARY_PORT=	yes
 USE_LINUX=	yes
 RESTRICTED=	for non-commercial, non-military applications only
 

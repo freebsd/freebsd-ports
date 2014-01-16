@@ -11,10 +11,11 @@ DISTNAME=	la04
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free lossless audio codec
 
+ONLY_FOR_ARCHS=	amd64 i386
+
 USE_BZIP2=	yes
 USE_LINUX=	yes
 NO_BUILD=	yes
-IA32_BINARY_PORT=	yes
 
 PLIST_FILES=	bin/laudio
 PORTDOCS=	readme.txt
