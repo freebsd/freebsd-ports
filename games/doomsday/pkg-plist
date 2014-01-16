@@ -1,0 +1,87 @@
+bin/doomsday
+bin/doomsday-server
+%%OPENAL%%lib/doomsday/libaudio_openal.so
+%%OPENAL%%lib/doomsday/libaudio_openal.so.1
+%%OPENAL%%lib/doomsday/libaudio_openal.so.1.2
+%%OPENAL%%lib/doomsday/libaudio_openal.so.1.2.4
+lib/doomsday/libdehread.so
+lib/doomsday/libdehread.so.2
+lib/doomsday/libdehread.so.2.0
+lib/doomsday/libdehread.so.2.0.0
+lib/doomsday/libdoom.so
+lib/doomsday/libdoom.so.1
+lib/doomsday/libdoom.so.1.12
+lib/doomsday/libdoom.so.1.12.2
+lib/doomsday/libdoom64.so
+lib/doomsday/libdoom64.so.1
+lib/doomsday/libdoom64.so.1.12
+lib/doomsday/libdoom64.so.1.12.2
+lib/doomsday/libexample.so
+lib/doomsday/libexample.so.1
+lib/doomsday/libexample.so.1.2
+lib/doomsday/libexample.so.1.2.0
+lib/doomsday/libheretic.so
+lib/doomsday/libheretic.so.1
+lib/doomsday/libheretic.so.1.12
+lib/doomsday/libheretic.so.1.12.2
+lib/doomsday/libhexen.so
+lib/doomsday/libhexen.so.1
+lib/doomsday/libhexen.so.1.12
+lib/doomsday/libhexen.so.1.12.2
+lib/doomsday/libwadmapconverter.so
+lib/doomsday/libwadmapconverter.so.1
+lib/doomsday/libwadmapconverter.so.1.1
+lib/doomsday/libwadmapconverter.so.1.1.0
+lib/libdeng1.so
+lib/libdeng1.so.1
+lib/libdeng1.so.1.12
+lib/libdeng1.so.1.12.2
+lib/libdeng2.so
+lib/libdeng2.so.2
+lib/libdeng2.so.2.0
+lib/libdeng2.so.2.0.0
+lib/libdeng_gui.so
+lib/libdeng_gui.so.1
+lib/libdeng_gui.so.1.12
+lib/libdeng_gui.so.1.12.2
+lib/libdeng_shell.so
+lib/libdeng_shell.so.0
+lib/libdeng_shell.so.0.1
+lib/libdeng_shell.so.0.1.0
+man/man6/doomsday.6.gz
+%%DATADIR%%/data/doomsday.pk3
+%%DATADIR%%/data/fonts/console11.dfn
+%%DATADIR%%/data/fonts/console14.dfn
+%%DATADIR%%/data/fonts/console18.dfn
+%%DATADIR%%/data/fonts/normal12.dfn
+%%DATADIR%%/data/fonts/normal18.dfn
+%%DATADIR%%/data/fonts/normal24.dfn
+%%DATADIR%%/data/fonts/normalbold12.dfn
+%%DATADIR%%/data/fonts/normalbold18.dfn
+%%DATADIR%%/data/fonts/normalbold24.dfn
+%%DATADIR%%/data/fonts/normallight12.dfn
+%%DATADIR%%/data/fonts/normallight18.dfn
+%%DATADIR%%/data/fonts/normallight24.dfn
+%%DATADIR%%/data/graphics/background.pcx
+%%DATADIR%%/data/graphics/loading1.png
+%%DATADIR%%/data/graphics/loading2.png
+%%DATADIR%%/data/graphics/logo.png
+%%DATADIR%%/data/jdoom/libdoom.pk3
+%%DATADIR%%/data/jdoom64/libdoom64.pk3
+%%DATADIR%%/data/jheretic/libheretic.pk3
+%%DATADIR%%/data/jhexen/libhexen.pk3
+%%DATADIR%%/modules/Config.de
+%%DATADIR%%/modules/appconfig.de
+%%DATADIR%%/modules/bootstrap.de
+%%DATADIR%%/modules/gui.de
+%%DATADIR%%/modules/recutil.de
+@dirrm %%DATADIR%%/modules
+@dirrm %%DATADIR%%/data/jhexen
+@dirrm %%DATADIR%%/data/jheretic
+@dirrm %%DATADIR%%/data/jdoom64
+@dirrm %%DATADIR%%/data/jdoom
+@dirrm %%DATADIR%%/data/graphics
+@dirrm %%DATADIR%%/data/fonts
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
+@dirrm lib/doomsday

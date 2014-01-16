@@ -187,7 +187,6 @@
     SUBDIR += dcross
     SUBDIR += deal
     SUBDIR += defendguin
-    SUBDIR += deng
     SUBDIR += diameter
     SUBDIR += digger-vgl
     SUBDIR += djgame2
@@ -203,6 +202,7 @@
     SUBDIR += doom-hr2
     SUBDIR += doom-wolfendoom
     SUBDIR += doomlegacy
+    SUBDIR += doomsday
     SUBDIR += dopewars
     SUBDIR += drcreep
     SUBDIR += drm
