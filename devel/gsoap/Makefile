@@ -14,8 +14,6 @@ COMMENT=	Generator Tools for Coding SOAP/XML Web Services in C and C++
 LICENSE=	GPLv2
 
 CONFIGURE_ENV=	LEX=flex YACC=yacc
-CPPFLAGS+=	-DWSDL_TYPEMAP_FILE=\\\"${DATADIR}/WS/typemap.dat\\\" \
-		-DSOAPCPP2_IMPORT_PATH=\\\"${DATADIR}/import\\\"
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 USES=		pathfix
@@ -40,7 +38,10 @@ CONFIGURE_ARGS=	--disable-ssl
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's| sys/timeb.h | |' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	${REINPLACE_CMD} -e 's| sys/timeb.h | |' \
+	    -e 's|-DSOAPCPP_IMPORT_PATH=|-DSOAPCPP2_IMPORT_PATH=|' \
+	    -e 's|-DWSDL_IMPORT_PATH=|-DWSDL2H_IMPORT_PATH=|' \
+	    ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gsoap
