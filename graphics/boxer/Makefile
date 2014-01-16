@@ -3,9 +3,10 @@
 
 PORTNAME=	boxer
 PORTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/boxc/${PORTNAME:C/^b/B/}%20-%20the%20Box%20GUI/${DISTNAME}/ \
-		SF/nemysisfreebsdp/:icons
+		SF/nemysisfreebsdp/${CATEGORIES}/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 DIST_SUBDIR=	box
@@ -21,29 +22,23 @@ RUN_DEPENDS=	box:${PORTSDIR}/graphics/box
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 USE_LDCONFIG=	yes
 
 PORTDOCS=	ChangeLog
-PORTEXAMPLES=	*
 
-DESKTOP_ENTRIES="Boxer" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Application;Graphics;" false
+DESKTOP_ENTRIES="Boxer" "" "${PORTNAME}" \
+		"${PORTNAME}" "Application;Graphics;" ""
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+PLIST_FILES=	share/pixmaps/${PORTNAME}.png
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/src/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
