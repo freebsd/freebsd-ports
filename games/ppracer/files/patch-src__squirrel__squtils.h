@@ -1,5 +1,5 @@
---- src/squirrel/squtils.h.orig	2013-08-28 21:59:50.137272814 +0400
-+++ src/squirrel/squtils.h	2013-08-28 22:00:43.376227477 +0400
+--- ./src/squirrel/squtils.h.orig	2014-01-16 15:30:36.000000000 +0100
++++ ./src/squirrel/squtils.h	2014-01-16 15:30:36.000000000 +0100
 @@ -2,6 +2,10 @@
  #ifndef _SQUTILS_H_
  #define _SQUTILS_H_
