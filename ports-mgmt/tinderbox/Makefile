@@ -8,7 +8,7 @@ MASTER_SITES=	http://tinderbox.marcuscom.com/ \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Port build tinderbox system
 
 RUN_DEPENDS=	dialog4ports-static:${PORTSDIR}/ports-mgmt/dialog4ports-static
