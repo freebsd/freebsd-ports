@@ -11,31 +11,20 @@ DISTNAME=	la04
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free lossless audio codec
 
-ONLY_FOR_ARCHS=	amd64 i386
-
 USE_BZIP2=	yes
-NO_STAGE=	yes
-
+USE_LINUX=	yes
 NO_BUILD=	yes
+IA32_BINARY_PORT=	yes
 
 PLIST_FILES=	bin/laudio
 PORTDOCS=	readme.txt
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/la ${PREFIX}/bin/laudio
-	${BRANDELF} -t Linux ${PREFIX}/bin/laudio
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/readme.txt ${DOCSDIR}
-.endif
-
-post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	${BRANDELF} -t Linux ${WRKDIR}/la
+	${INSTALL_PROGRAM} ${WRKDIR}/la ${STAGEDIR}${PREFIX}/bin/laudio
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/readme.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
