@@ -195,7 +195,6 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/de/man8/dpkg-statoverride.8.gz
 %%NLS%%man/de/man8/start-stop-daemon.8.gz
 %%NLS%%man/de/man8/update-alternatives.8.gz
-%%NLS%%man/es/man1/dpkg-buildpackage.1.gz
 %%NLS%%man/es/man1/dpkg-deb.1.gz
 %%NLS%%man/es/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/es/man1/dpkg-genchanges.1.gz
@@ -232,7 +231,6 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/es/man8/dpkg-divert.8.gz
 %%NLS%%man/es/man8/start-stop-daemon.8.gz
 %%NLS%%man/es/man8/update-alternatives.8.gz
-%%NLS%%man/fr/man1/dpkg-buildpackage.1.gz
 %%NLS%%man/fr/man1/dpkg-deb.1.gz
 %%NLS%%man/fr/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/fr/man1/dpkg-genchanges.1.gz
@@ -271,7 +269,6 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/fr/man8/update-alternatives.8.gz
 %%NLS%%man/hu/man5/dpkg.cfg.5.gz
 %%NLS%%man/hu/man5/dselect.cfg.5.gz
-%%NLS%%man/it/man1/dpkg-buildpackage.1.gz
 %%NLS%%man/it/man1/dpkg-deb.1.gz
 %%NLS%%man/it/man1/dpkg-name.1.gz
 %%NLS%%man/it/man1/dpkg-parsechangelog.1.gz
@@ -297,7 +294,6 @@ libexec/pkgconfig/libdpkg.pc
 %%NLS%%man/it/man5/dselect.cfg.5.gz
 %%NLS%%man/it/man8/start-stop-daemon.8.gz
 %%NLS%%man/it/man8/update-alternatives.8.gz
-%%NLS%%man/ja/man1/dpkg-buildpackage.1.gz
 %%NLS%%man/ja/man1/dpkg-deb.1.gz
 %%NLS%%man/ja/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/ja/man1/dpkg-genchanges.1.gz
@@ -411,7 +407,6 @@ man/man8/dpkg-divert.8.gz
 man/man8/dpkg-statoverride.8.gz
 man/man8/start-stop-daemon.8.gz
 man/man8/update-alternatives.8.gz
-%%NLS%%man/pl/man1/dpkg-buildpackage.1.gz
 %%NLS%%man/pl/man1/dpkg-deb.1.gz
 %%NLS%%man/pl/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/pl/man1/dpkg-genchanges.1.gz
@@ -448,12 +443,15 @@ man/man8/update-alternatives.8.gz
 %%NLS%%man/pl/man8/dpkg-divert.8.gz
 %%NLS%%man/pl/man8/start-stop-daemon.8.gz
 %%NLS%%man/pl/man8/update-alternatives.8.gz
-%%NLS%%man/sv/man1/dpkg-buildpackage.1.gz
+%%NLS%%man/sv/man1/dpkg-architecture.1.gz
+%%NLS%%man/sv/man1/dpkg-buildflags.1.gz
+%%NLS%%man/sv/man1/dpkg-checkbuilddeps.1.gz
 %%NLS%%man/sv/man1/dpkg-deb.1.gz
 %%NLS%%man/sv/man1/dpkg-distaddfile.1.gz
 %%NLS%%man/sv/man1/dpkg-genchanges.1.gz
 %%NLS%%man/sv/man1/dpkg-gencontrol.1.gz
 %%NLS%%man/sv/man1/dpkg-gensymbols.1.gz
+%%NLS%%man/sv/man1/dpkg-maintscript-helper.1.gz
 %%NLS%%man/sv/man1/dpkg-mergechangelogs.1.gz
 %%NLS%%man/sv/man1/dpkg-name.1.gz
 %%NLS%%man/sv/man1/dpkg-parsechangelog.1.gz
@@ -483,6 +481,7 @@ man/man8/update-alternatives.8.gz
 %%NLS%%man/sv/man5/dpkg.cfg.5.gz
 %%NLS%%man/sv/man5/dselect.cfg.5.gz
 %%NLS%%man/sv/man8/dpkg-divert.8.gz
+%%NLS%%man/sv/man8/dpkg-statoverride.8.gz
 %%NLS%%man/sv/man8/start-stop-daemon.8.gz
 %%NLS%%man/sv/man8/update-alternatives.8.gz
 sbin/start-stop-daemon
