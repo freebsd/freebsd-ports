@@ -9,19 +9,3 @@
  man_MANS = nap.1
  html_DATA = userguide.html
  all: all-am
-@@ -208,6 +208,7 @@
- 	  rm -f $(DESTDIR)$(man1dir)/$$inst; \
- 	done
- install-htmlDATA: $(html_DATA)
-+.ifndef(NOPORTDOCS)
- 	@$(NORMAL_INSTALL)
- 	$(mkdir_p) $(DESTDIR)$(htmldir)
- 	@list='$(html_DATA)'; for p in $$list; do \
-@@ -216,6 +217,7 @@
- 	  echo " $(htmlDATA_INSTALL) $$d$$p $(DESTDIR)$(htmldir)/$$f"; \
- 	  $(htmlDATA_INSTALL) $$d$$p $(DESTDIR)$(htmldir)/$$f; \
- 	done
-+.endif
- 
- uninstall-htmlDATA:
- 	@$(NORMAL_UNINSTALL)

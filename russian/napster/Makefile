@@ -13,7 +13,6 @@ CONFLICTS=	nap-[0-9]*
 
 WITH_ENCODING_PATCH=	yes
 
-NO_STAGE=	yes
 pre-configure:
 	@${PATCH} ${PATCH_ARGS} < ${.CURDIR}/files/extra-win2koi
 
