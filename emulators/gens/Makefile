@@ -2,42 +2,44 @@
 # $FreeBSD$
 
 PORTNAME=	gens
-PORTVERSION=	2.12a
-PORTREVISION=	10
+PORTVERSION=	2.15.5
 CATEGORIES=	emulators
-MASTER_SITES=	SF/${PORTNAME}/Gens%20Source%20Code/Gens%20WIP%20linux
-DISTNAME=	Gens212a1SrcL
+MASTER_SITES=	SF/${PORTNAME}/Gens%20Source%20Code/Gens%20${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sega Genesis/CD/32X emulator
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_linux/${PORTNAME}
-USE_ZIP=	yes
-USE_SDL=	sdl
-USE_GNOME=	gtk20
-USE_GMAKE=	yes
+OPTIONS_DEFINE=	DOCS
 
 ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS_REASON=	uses i386 assembly code
 
-NO_STAGE=	yes
+USES=		gmake pkgconfig
+USE_GNOME=	gtk20
+USE_GL=		gl
+USE_SDL=	sdl
+GNU_CONFIGURE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+DESKTOP_ENTRIES="Gens" "" "${DATADIR}/gens_small.png" "${PORTNAME}" "" ""
+
+.include <bsd.port.options.mk>
+
 post-patch:
-	${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's|g++|${CXX}|' ${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's|%%LDFLAGS%%|${LDFLAGS}|' ${WRKSRC}/Makefile
-	@${CAT} ${FILESDIR}/gens.in | ${SED} -e 's,%%PREFIX%%,${PREFIX},g' > ${WRKDIR}/gens
+.for i in gens_core/sound/ym2612.h mp3_dec/mpg123.h
+	@${REINPLACE_CMD} -e \
+		's|\(^#define INLINE\).*|\1 static inline|' \
+		${WRKSRC}/src/gens/${i}
+.endfor
 
-do-install:
-	${MKDIR} ${PREFIX}/share/gens
-	${MKDIR} ${PREFIX}/share/gens/resource
-	${INSTALL_SCRIPT} ${WRKDIR}/gens ${PREFIX}/bin/gens
-	${INSTALL_PROGRAM} ${WRKSRC}/gens ${PREFIX}/share/gens/gens
-	${INSTALL_DATA} ${WRKSRC}/resource/* ${PREFIX}/share/gens/resource
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_linux/README ${DOCSDIR}/README
-.endif
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} README ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
