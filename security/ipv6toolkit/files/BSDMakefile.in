@@ -10,13 +10,13 @@ addr6 flow6 frag6 icmp6 jumbo6 na6 ni6 ns6 ra6 rd6 rs6 scan6 tcp6: libipv6
 
 FILESGROUPS=	CONF DB
 CONF=		data/ipv6toolkit.conf
-CONFDIR?=	/etc
+CONFDIR?=	${PREFIX}/etc
 DB=		data/oui.txt
-DBDIR?=		/share/ipv6toolkit
+DBDIR?=		${PREFIX}/share/ipv6toolkit
 
 PREFIX?=	/usr/local
-DESTDIR=	${PREFIX}
-MANDIR?=	/man/man
+BINDIR?=	${PREFIX}/bin
+MANDIR?=	${PREFIX}/man/man
 MAN=		ipv6toolkit.conf.5
 NO_MANCOMPRESS=
 

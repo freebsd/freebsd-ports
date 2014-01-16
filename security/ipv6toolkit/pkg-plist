@@ -13,5 +13,19 @@ sbin/rs6
 sbin/scan6
 sbin/tcp6
 etc/ipv6toolkit.conf
+man/man1/addr6.1.gz
+man/man1/flow6.1.gz
+man/man1/frag6.1.gz
+man/man1/icmp6.1.gz
+man/man1/jumbo6.1.gz
+man/man1/na6.1.gz
+man/man1/ni6.1.gz
+man/man1/ns6.1.gz
+man/man1/ra6.1.gz
+man/man1/rd6.1.gz
+man/man1/rs6.1.gz
+man/man1/scan6.1.gz
+man/man1/tcp6.1.gz
+man/man5/ipv6toolkit.conf.5.gz
 %%DATADIR%%/oui.txt
 @dirrm %%DATADIR%%
