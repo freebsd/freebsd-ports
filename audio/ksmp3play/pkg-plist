@@ -1,4 +1,5 @@
 bin/ksmp3play
+man/man1/ksmp3play.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ksmp3play.html/ch-usage.html
 %%PORTDOCS%%%%DOCSDIR%%/ksmp3play.html/footnotes.html
 %%PORTDOCS%%%%DOCSDIR%%/ksmp3play.html/ch-intro.html
