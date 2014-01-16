@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.2.20
+DISTVERSION=	4.2.22
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
