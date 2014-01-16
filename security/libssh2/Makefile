@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.libssh2.org/download/ \
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Library implementing the SSH2 protocol
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	autoconf
