@@ -1,11 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	llvm
-DISTVERSION=	3.4rc3
+PORTVERSION=	3.4
 CATEGORIES=	devel lang
-MASTER_SITES=	http://llvm.org/pre-releases/3.4/rc3/
-#MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${DISTVERSION}.source
+MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
 MAINTAINER=	brooks@FreeBSD.org
@@ -19,7 +18,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 UNIQUENAME=	${PORTNAME}${LLVM_SUFFIX}
 
-WRKSRC=		${WRKDIR}/llvm.src
+WRKSRC=		${WRKDIR}/llvm-${PORTVERSION}
 
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
