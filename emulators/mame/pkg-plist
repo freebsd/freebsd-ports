@@ -11,6 +11,7 @@ libexec/mame/unidasm
 %%PORTDOCS%%%%DOCSDIR%%/docs/hlsl.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/imgtool.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/licenseinfo.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/m6502.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/mame.txt
 %%PORTDOCS%%%%DOCSDIR%%/docs/newvideo.txt
@@ -31,6 +32,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/abc1600.xml
 %%DATADIR%%/hash/abc80.xml
 %%DATADIR%%/hash/abc800.xml
+%%DATADIR%%/hash/abc800_hdd.xml
 %%DATADIR%%/hash/abc806.xml
 %%DATADIR%%/hash/adam_cart.xml
 %%DATADIR%%/hash/adam_cass.xml
@@ -127,7 +129,9 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/ibm5140.xml
 %%DATADIR%%/hash/ibm5150.xml
 %%DATADIR%%/hash/ibm5150_cass.xml
+%%DATADIR%%/hash/ibm5160_flop.xml
 %%DATADIR%%/hash/ibm5170.xml
+%%DATADIR%%/hash/ibm5170_cdrom.xml
 %%DATADIR%%/hash/ibmpcjr_cart.xml
 %%DATADIR%%/hash/ibmpcjr_flop.xml
 %%DATADIR%%/hash/interact.xml
@@ -171,6 +175,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/msx1_cass.xml
 %%DATADIR%%/hash/msx2.hsi
 %%DATADIR%%/hash/msx2_cart.xml
+%%DATADIR%%/hash/myvision.xml
 %%DATADIR%%/hash/mz2000_cass.xml
 %%DATADIR%%/hash/mz2000_flop.xml
 %%DATADIR%%/hash/mz2500.xml
@@ -215,6 +220,7 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/pentagon_cass.xml
 %%DATADIR%%/hash/pet_cass.xml
 %%DATADIR%%/hash/pet_flop.xml
+%%DATADIR%%/hash/pet_hdd.xml
 %%DATADIR%%/hash/pet_rom.xml
 %%DATADIR%%/hash/pico.xml
 %%DATADIR%%/hash/pippin.xml
@@ -293,7 +299,8 @@ libexec/mame/unidasm
 %%DATADIR%%/hash/tvc_cart.xml
 %%DATADIR%%/hash/ut88.xml
 %%DATADIR%%/hash/uzebox.xml
-%%DATADIR%%/hash/v1050.xml
+%%DATADIR%%/hash/v1050_flop.xml
+%%DATADIR%%/hash/v1050_hdd.xml
 %%DATADIR%%/hash/vboy.xml
 %%DATADIR%%/hash/vc4000.xml
 %%DATADIR%%/hash/vectrex.xml
