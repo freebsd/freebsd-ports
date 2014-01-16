@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	clamav
-PORTVERSION=	0.98
-PORTREVISION=	3
+PORTVERSION=	0.98.1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -13,7 +12,7 @@ COMMENT=	Command line virus scanner written entirely in C
 LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	ARC ARJ LHA UNZOO UNRAR LLVM TESTS MILTER LDAP ICONV STDERR \
-		EXPERIMENTAL DOCS IPV6
+		EXPERIMENTAL DOCS IPV6 DMG_XAR
 
 ARC_DESC=		Enable arch archives support
 ARJ_DESC=		Enable arj archives support
@@ -25,8 +24,9 @@ TESTS_DESC=		Run compile-time tests (req. python)
 MILTER_DESC=		Compile the milter interface
 STDERR_DESC=		Print logs to stderr instead of stdout
 EXPERIMENTAL_DESC=	Build experimental code
+DMG_XAR_DESC=		Enable DMG and XAR archives support
 
-OPTIONS_DEFAULT=	ARC ARJ LHA UNZOO UNRAR LLVM DOCS IPV6
+OPTIONS_DEFAULT=	ARC ARJ LHA UNZOO UNRAR LLVM DOCS IPV6 DMG_XAR
 
 ARC_RUN_DEPENDS=	arc:${PORTSDIR}/archivers/arc
 ARJ_RUN_DEPENDS=	arj:${PORTSDIR}/archivers/arj
@@ -41,6 +41,8 @@ ICONV_CONFIGURE_OFF=	--without-iconv
 ICONV_USES=		iconv
 EXPERIMENTAL_CONFIGURE_ENABLE=	experimental
 IPV6_CONFIGURE_ENABLE=	ipv6
+DMG_XAR_CONFIGURE_ENABLE=	xml
+DMG_XAR_USE=		GNOME=libxml2
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
