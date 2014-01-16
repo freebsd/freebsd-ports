@@ -34,6 +34,7 @@ IGNORE= supplied binaries compiled for FreeBSD 9
 .endif
 
 .if ${OSVERSION} >= 1000054
+BROKEN=	Waiting for Plex to include Python patch http://bugs.python.org/issue18178
 RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
 .endif
 
