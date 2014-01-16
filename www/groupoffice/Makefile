@@ -7,7 +7,7 @@ DISTVERSION=	3.7.24
 CATEGORIES=	www
 MASTER_SITES=	SF/group-office/3.7
 
-MAINTAINER=	as@bsdgroup.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modular web application framework vor office
 
 RESTRICTED=	Free for personal use only

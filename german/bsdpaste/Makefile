@@ -7,7 +7,7 @@ CATEGORIES=	german ruby
 MASTER_SITES=	http://people.bsdgroup.de/~as/bsdpaste/
 DISTNAME=	${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	as@bsdgroup.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Pastebin web application to upload and read text on a webserver
 
 NO_BUILD=	yes
