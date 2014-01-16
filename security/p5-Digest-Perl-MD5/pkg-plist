@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Digest/Perl/MD5.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Perl/MD5/.packlist
+%%PERL5_MAN3%%/Digest::Perl::MD5.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Perl/MD5/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Perl/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/
