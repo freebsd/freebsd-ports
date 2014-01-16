@@ -1,6 +1,6 @@
 # Created by: Chao Shin <quakelee@cn.freebsd.org>
 # $FreeBSD$
- 
+
 PORTNAME=	mdtest
 PORTVERSION=	1.9.3
 CATEGORIES=	benchmarks
@@ -12,15 +12,15 @@ COMMENT=	Filesystem metadata benchmark utility
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	OPENMPI EXAMPLES
-OPENMPI_DESC=	Use Open MPI instead of MPICH2
-
 NO_WRKSUBDIR=	yes
 
 CFLAGS+=	-DDarwin
 
-PORTEXAMPLES=	*
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
+PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	OPENMPI EXAMPLES
+OPENMPI_DESC=	Use Open MPI instead of MPICH2
 
 .include <bsd.port.options.mk>
 
@@ -38,12 +38,9 @@ do-build:
 	(cd ${WRKSRC} && ${MPICC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c -lm)
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} ${PORTNAME}.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1)
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/scripts && ${INSTALL_DATA} * \
-		${STAGEDIR}${EXAMPLESDIR})
+	${INSTALL_DATA} ${WRKSRC}/scripts/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
