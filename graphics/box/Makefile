@@ -22,31 +22,21 @@ CONFIGURE_ARGS=	--with-cairo
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
 
-MAN1=		${PORTNAME}.1
-
 PORTDOCS=	AUTHORS ChangeLog README STYLE TODO
 PORTEXAMPLES=	*
 
-PLIST_SUB+=	PLIST_VER=${PORTVERSION:R}
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+PLIST_SUB+=	PLIST_VER=${PORTVERSION:R}
 
 post-patch:
 	${TOUCH} ${WRKSRC}/man/${PORTNAME}.sgml
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
-.endif
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 regression-test: build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} check)
