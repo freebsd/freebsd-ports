@@ -14,7 +14,7 @@ CFLAGS+=	-I. -I./../generic \
 		-DHAVE_SYS_FILIO_H=1 \
 		-DRETSIGTYPE=void \
 		-DITK_LIBRARY=\"${ITK_LIBRARY}\"
-LDADD+=		-L${PREFIX}/lib -litcl -L${LOCALBASE}/lib -lX11 -ltk${USE_TK}
+LDADD+=		-L${PREFIX}/lib -litcl -L${LOCALBASE}/lib -lX11 -ltk${TK_SHLIB_VER}
 
 .PATH:		${.CURDIR}/generic
 
