@@ -5,13 +5,12 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	31.0.1650.63
+DISTVERSION=	32.0.1700.77
 CATEGORIES=	www
 MASTER_SITES=	http://commondatastorage.googleapis.com/chromium-browser-official/:testdata \
 		http://download.goodking.org/downloads/:browser \
-		${MASTER_SITE_LOCAL}:browser \
+		LOCAL/rene:browser \
 		http://files.etoilebsd.net/goodking/:browser
-MASTER_SITE_SUBDIR=rene
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:browser
 
 MAINTAINER=	chromium@FreeBSD.org
@@ -27,7 +26,6 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		bash:${PORTSDIR}/shells/bash \
 		yasm:${PORTSDIR}/devel/yasm \
 		flock:${PORTSDIR}/sysutils/flock \
-		ninja:${PORTSDIR}/devel/ninja \
 		v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
 
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
@@ -48,14 +46,14 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/a
 ONLY_FOR_ARCHS=	i386 amd64
 USE_XZ=		yes
 USES=		bison compiler:c++11-lang desktop-file-utils pkgconfig \
-		perl5 shebangfix
+		perl5 shebangfix ninja
 USE_PERL5=	build
 USE_PYTHON_BUILD=	2.6-2.7
 USE_XORG=	scrnsaverproto x11 xproto xscrnsaver xtst
 USE_GNOME=	glib20 gtk20 dconf libxslt
 
 SHEBANG_FILES=	chrome/tools/build/linux/chrome-wrapper
-NINJA_TARGETS=	chrome
+ALL_TARGET=	chrome
 
 # See build/common.gypi for all the available variables.
 GYP_DEFINES+=	use_cups=1 \
@@ -143,7 +141,7 @@ TEST_TARGETS=	base_unittests \
 		net_unittests \
 		content_unittests
 EXCLUDED_TESTS=	GpuDriverBugListTest.CurrentDriverBugListValidation
-NINJA_TARGETS+=	${TEST_TARGETS}
+ALL_TARGET+=	${TEST_TARGETS}
 DISTFILES+=	${PORTNAME}-${DISTVERSION}-testdata${EXTRACT_SUFX}:testdata
 .endif
 
@@ -168,6 +166,7 @@ CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE} \
 		GPERF=${LOCALBASE}/bin/gperf
+MAKE_ARGS+=	-C out/${BUILDTYPE}
 
 .include <bsd.port.pre.mk>
 
@@ -202,7 +201,8 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|" \
 		${WRKSRC}/chrome/common/chrome_paths.cc
 	@${REINPLACE_CMD} -e "s|/usr/bin/gcc|${CC}|" \
-		${WRKSRC}/third_party/WebKit/Source/core/core.gypi
+		${WRKSRC}/third_party/WebKit/Source/build/scripts/preprocessor.pm \
+		${WRKSRC}/third_party/WebKit/Source/build/scripts/scripts.gypi
 	@${REINPLACE_CMD} -e "s|'../courgette/courgette.gyp:courgette_lib',||" \
 		${WRKSRC}/chrome/chrome_tests_unit.gypi
 	@${REINPLACE_CMD} -e "s|linux|freebsd|" \
@@ -222,10 +222,6 @@ post-patch:
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
 		./build/gyp_chromium chrome/chrome.gyp --depth .
-
-do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ninja \
-		${_MAKE_JOBS} -C out/${BUILDTYPE} ${NINJA_TARGETS}
 
 test regression-test: build
 .for t in ${TEST_TARGETS}
