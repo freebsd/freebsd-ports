@@ -1,15 +1,15 @@
---- chrome/browser/chrome_content_browser_client.cc.orig	2013-09-25 22:01:36.000000000 +0300
-+++ chrome/browser/chrome_content_browser_client.cc	2013-09-25 22:11:33.000000000 +0300
-@@ -480,7 +480,7 @@
+--- chrome/browser/chrome_content_browser_client.cc.orig	2014-01-07 21:01:57.000000000 +0100
++++ chrome/browser/chrome_content_browser_client.cc	2014-01-11 01:50:13.000000000 +0100
+@@ -492,7 +492,7 @@
    }
  }
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_BSD)
- int GetCrashSignalFD(const CommandLine& command_line) {
-   if (command_line.HasSwitch(switches::kExtensionProcess)) {
-     ExtensionCrashHandlerHostLinux* crash_handler =
-@@ -505,7 +505,7 @@
+ breakpad::CrashHandlerHostLinux* CreateCrashHandlerHost(
+     const std::string& process_type) {
+   base::FilePath dumps_path;
+@@ -548,7 +548,7 @@
  
    return -1;
  }
@@ -18,17 +18,17 @@
  
  #if !defined(OS_CHROMEOS)
  GURL GetEffectiveURLForSignin(const GURL& url) {
-@@ -1346,7 +1346,7 @@
-     command_line->AppendSwitchASCII(switches::kEnableCrashReporter,
-                                     child_process_logging::GetClientId());
-   }
--#elif defined(OS_POSIX)
-+#elif defined(OS_POSIX) && !defined(OS_BSD)
-   if (IsCrashReporterEnabled()) {
-     command_line->AppendSwitchASCII(switches::kEnableCrashReporter,
-         child_process_logging::GetClientId() + "," + base::GetLinuxDistro());
-@@ -2461,7 +2461,7 @@
-   additional_backends->push_back(new sync_file_system::SyncFileSystemBackend());
+@@ -1397,7 +1397,7 @@
+ 
+ void ChromeContentBrowserClient::AppendExtraCommandLineSwitches(
+     CommandLine* command_line, int child_process_id) {
+-#if defined(OS_POSIX)
++#if defined(OS_POSIX) && !defined(OS_BSD)
+   if (breakpad::IsCrashReporterEnabled()) {
+     std::string enable_crash_reporter;
+     GoogleUpdateSettings::GetMetricsId(&enable_crash_reporter);
+@@ -2529,7 +2529,7 @@
+           Profile::FromBrowserContext(browser_context)));
  }
  
 -#if defined(OS_POSIX) && !defined(OS_MACOSX)
@@ -36,7 +36,7 @@
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const CommandLine& command_line,
      int child_process_id,
-@@ -2521,7 +2521,7 @@
+@@ -2584,7 +2584,7 @@
    }
  #endif  // defined(OS_ANDROID)
  }

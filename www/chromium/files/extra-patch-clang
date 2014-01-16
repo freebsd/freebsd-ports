@@ -250,3 +250,25 @@
  #if defined(__GCC__)
  #pragma GCC diagnostic pop
  #endif
+--- v8/src/unique.h.orig	2014-01-07 21:03:55.000000000 +0100
++++ v8/src/unique.h	2014-01-13 00:41:59.000000000 +0100
+@@ -130,7 +130,7 @@
+ 
+   // TODO(titzer): this is a hack to migrate to Unique<T> incrementally.
+   static Unique<T> CreateUninitialized(Handle<T> handle) {
+-    return Unique<T>(reinterpret_cast<Address>(NULL), handle);
++    return Unique<T>(static_cast<Address>(NULL), handle);
+   }
+ 
+   static Unique<T> CreateImmovable(Handle<T> handle) {
+--- content/browser/renderer_host/render_widget_host_view_guest.cc.orig	2014-01-07 21:02:28.000000000 +0100
++++ content/browser/renderer_host/render_widget_host_view_guest.cc	2014-01-13 13:48:52.000000000 +0100
+@@ -254,7 +254,7 @@
+ gfx::NativeViewId RenderWidgetHostViewGuest::GetNativeViewId() const {
+   if (guest_->GetEmbedderRenderWidgetHostView())
+     return guest_->GetEmbedderRenderWidgetHostView()->GetNativeViewId();
+-  return static_cast<gfx::NativeViewId>(NULL);
++  return reinterpret_cast<gfx::NativeViewId>(NULL);
+ }
+ 
+ gfx::NativeViewAccessible RenderWidgetHostViewGuest::GetNativeViewAccessible() {
