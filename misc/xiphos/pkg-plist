@@ -1,15 +1,15 @@
 bin/xiphos
 bin/xiphos-nav
 share/applications/xiphos.desktop
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/RELEASE-NOTES
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/Xiphos.ogg
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE-NOTES
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/Xiphos.ogg
 share/gnome/help/xiphos/C/figures/first_start.png
 share/gnome/help/xiphos/C/figures/gtkhtml3-vs-mozembed.png
 share/gnome/help/xiphos/C/figures/interface.png
@@ -121,6 +121,7 @@ share/gnome/help/xiphos/fr/figures/sword_install.png
 share/gnome/help/xiphos/fr/figures/sword_remove.png
 share/gnome/help/xiphos/fr/figures/sword_sources.png
 share/gnome/help/xiphos/fr/xiphos.xml
+share/icons/hicolor/icon-theme.cache
 share/icons/hicolor/scalable/apps/xiphos.svg
 share/locale/ar/LC_MESSAGES/xiphos.mo
 share/locale/cs/LC_MESSAGES/xiphos.mo
@@ -184,6 +185,8 @@ share/omf/xiphos/xiphos-fr.omf
 %%DATADIR%%/gs2-48x48.ico
 %%DATADIR%%/gs2-48x48.png
 %%DATADIR%%/gs2.xpm
+%%DATADIR%%/gtk2_webedit.ui
+%%DATADIR%%/gtk_webedit.ui
 %%DATADIR%%/indexed-16.png
 %%DATADIR%%/indexed.png
 %%DATADIR%%/init-settings.png
@@ -219,14 +222,145 @@ share/omf/xiphos/xiphos-fr.omf
 %%DATADIR%%/xiphos-button-125.png
 %%DATADIR%%/xiphos-x-16.png
 %%DATADIR%%/xiphos.xpm
-@dirrm %%DATADIR%%
-@dirrm share/pixmaps/xiphos
-@dirrm share/omf/xiphos
-@dirrm share/gnome/help/xiphos/fr/figures
-@dirrm share/gnome/help/xiphos/fr
-@dirrm share/gnome/help/xiphos/fa/figures
-@dirrm share/gnome/help/xiphos/fa
-@dirrm share/gnome/help/xiphos/C/figures
-@dirrm share/gnome/help/xiphos/C
-@dirrm share/gnome/help/xiphos
-@dirrm %%DOCSDIR%%
+@dirrmtry share/xmodmap
+@dirrmtry %%DATADIR%%
+@dirrmtry share/vfolders
+@dirrmtry share/vala/vapi
+@dirrmtry share/vala
+@dirrmtry share/sounds
+@dirrmtry share/sgml/docbook/gnome-customization-0.1
+@dirrmtry share/sgml/docbook
+@dirrmtry share/pixmaps/splash
+@dirrmtry share/pixmaps/document-icons
+@dirrmtry share/omf/xiphos
+@dirrmtry share/omf
+@dirrmtry share/oaf
+@dirrmtry share/mime-info
+@dirrmtry share/mc/templates
+@dirrmtry share/mc
+@dirrmtry share/mate/help
+@dirrmtry share/mate-control-center/keybindings
+@dirrmtry share/mate-control-center
+@dirrmtry share/mate-2.0/ui
+@dirrmtry share/mate-2.0
+@dirrmtry share/mate
+@dirrmtry share/images
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/gnome/wm-properties
+@dirrmtry share/gnome/ui
+@dirrmtry share/gnome/panel
+@dirrmtry share/gnome/help/xiphos/fr/figures
+@dirrmtry share/gnome/help/xiphos/fr
+@dirrmtry share/gnome/help/xiphos/fa/figures
+@dirrmtry share/gnome/help/xiphos/fa
+@dirrmtry share/gnome/help/xiphos/C/figures
+@dirrmtry share/gnome/help/xiphos/C
+@dirrmtry share/gnome/help/xiphos
+@dirrmtry share/gnome/help/lgpl/C
+@dirrmtry share/gnome/help/lgpl
+@dirrmtry share/gnome/help/gpl/C
+@dirrmtry share/gnome/help/gpl
+@dirrmtry share/gnome/help/fdl/C
+@dirrmtry share/gnome/help/fdl
+@dirrmtry share/gnome/help
+@dirrmtry share/gnome/autostart
+@dirrmtry share/gnome/apps/Utilities
+@dirrmtry share/gnome/apps/System
+@dirrmtry share/gnome/apps/Settings/Session
+@dirrmtry share/gnome/apps/Settings/Peripherals
+@dirrmtry share/gnome/apps/Settings/Documents
+@dirrmtry share/gnome/apps/Settings/Desktop
+@dirrmtry share/gnome/apps/Settings
+@dirrmtry share/gnome/apps/Multimedia
+@dirrmtry share/gnome/apps/Internet
+@dirrmtry share/gnome/apps/Graphics
+@dirrmtry share/gnome/apps/Games
+@dirrmtry share/gnome/apps/Development
+@dirrmtry share/gnome/apps/Audio
+@dirrmtry share/gnome/apps/Applications
+@dirrmtry share/gnome/apps
+@dirrmtry share/gnome-settings-daemon-3.0
+@dirrmtry share/gnome-control-center/keybindings
+@dirrmtry share/gnome-control-center
+@dirrmtry share/gnome-about
+@dirrmtry share/gnome-2.0/ui
+@dirrmtry share/gnome-2.0
+@dirrmtry share/gnome
+@dirrmtry share/gir-1.0
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@dirrmtry share/doc/libgda
+@dirrmtry share/control-center/keybindings/gtk-modules
+@dirrmtry share/control-center/keybindings
+@dirrmtry share/control-center/capplets
+@dirrmtry share/control-center/Session
+@dirrmtry share/control-center/Peripherals
+@dirrmtry share/control-center/Documents
+@dirrmtry share/control-center/Desktop
+@dirrmtry share/control-center-2.0/capplets
+@dirrmtry share/control-center-2.0
+@dirrmtry share/control-center
+@dirrmtry share/capplets
+@dirrmtry share/application-registry
+@dirrmtry share/applets/Utility
+@dirrmtry share/applets/Network
+@dirrmtry share/applets/Multimedia
+@dirrmtry share/applets/Monitors
+@dirrmtry share/applets/Clocks
+@dirrmtry share/applets/Amusements
+@dirrmtry share/applets
+@dirrmtry share/MateConf/gsettings
+@dirrmtry share/MateConf
+@dirrmtry libdata/matecomponent/servers
+@dirrmtry libdata/matecomponent
+@dirrmtry libdata/bonobo/servers
+@dirrmtry libdata/bonobo
+@dirrmtry lib/vfs/modules
+@dirrmtry lib/vfs
+@dirrmtry lib/matecomponent/monikers
+@dirrmtry lib/matecomponent-2.0/samples
+@dirrmtry lib/matecomponent-2.0
+@dirrmtry lib/matecomponent
+@dirrmtry lib/mate-vfs-2.0/modules
+@dirrmtry lib/mate-vfs-2.0
+@dirrmtry lib/gnome-vfs-2.0/modules
+@dirrmtry lib/gnome-vfs-2.0
+@dirrmtry lib/girepository-1.0
+@dirrmtry lib/bonobo/plugin
+@dirrmtry lib/bonobo/monikers
+@dirrmtry lib/bonobo
+@dirrmtry lib/GConf
+@dirrmtry include/gnome-1.0
+@dirrmtry include/gdkcardimage
+@dirrmtry include/gconf
+@dirrmtry etc/xdg/autostart
+@dirrmtry etc/xdg
+@dirrmtry etc/vfs/modules
+@dirrmtry etc/vfs
+@dirrmtry etc/sound/events
+@dirrmtry etc/sound
+@dirrmtry etc/mateconf/schemas
+@dirrmtry etc/mateconf/mateconf.xml.system
+@dirrmtry etc/mateconf/mateconf.xml.mandatory
+@dirrmtry etc/mateconf/mateconf.xml.defaults
+@dirrmtry etc/mateconf
+@dirrmtry etc/gnome/config
+@dirrmtry etc/gnome-vfs-2.0/modules
+@dirrmtry etc/gnome-vfs-2.0
+@dirrmtry etc/gnome
+@dirrmtry etc/gconf/schemas
+@dirrmtry etc/gconf/gconf.xml.system
+@dirrmtry etc/gconf/gconf.xml.mandatory
+@dirrmtry etc/gconf/gconf.xml.defaults
+@dirrmtry etc/gconf
+@dirrmtry etc/dconf/profile
+@dirrmtry etc/dconf/db
+@dirrmtry etc/dconf
+@dirrmtry etc/X11/sysconfig
+@dirrmtry etc/X11/starthere
+@dirrmtry etc/X11/serverconfig
+@dirrmtry etc/X11
+@dirrmtry etc/CORBA/servers
+@dirrmtry etc/CORBA
