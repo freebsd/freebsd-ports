@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.2.20
-PORTREVISION=	2
+DISTVERSION=	4.2.22
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -38,7 +37,7 @@ USE_GCC=	any
 USE_GNOME=	libidl
 USE_BZIP2=	yes
 USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	vboxapi
 PYDISTUTILS_PKGVERSION=	1.0
 PYDISTUTILS_NOEGGINFO=	yes
@@ -124,7 +123,7 @@ CONFIGURE_ARGS+=--build-headless
 
 .if ${PORT_OPTIONS:MQT4}
 QT_NONSTANDARD=	yes
-USE_QT4=	gui network moc_build uic_build rcc_build linguist
+USE_QT4=	gui network moc_build opengl uic_build rcc_build linguist
 INSTALLS_ICONS=	yes
 VBOX_FRONTENDS+=VirtualBox VBoxTestOGL
 .else
