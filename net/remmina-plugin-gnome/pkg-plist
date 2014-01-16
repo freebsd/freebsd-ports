@@ -1,4 +1,3 @@
 lib/remmina/plugins/remmina-plugins-gnome.so
 @dirrmtry lib/remmina/plugins
 @dirrmtry lib/remmina
-@dirrmtry include/remmina
