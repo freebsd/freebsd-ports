@@ -11,7 +11,7 @@ MASTER_SITES=	http://tinderbox.marcuscom.com/ \
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Port build tinderbox system, devel version
 
 CONFLICTS=	tinderbox-[0-9]*
