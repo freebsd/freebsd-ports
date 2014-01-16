@@ -14,5 +14,3 @@ platform independent log format (meta log format), and generates meaningful
   * Provides an UnrealScript module (aeonsdmmod.u) that will generate
     extra log info, since Unreal does not provide any frag obituaries by
     default.
-
-WWW: http://aeons.poweredbylasers.com/aestats/
