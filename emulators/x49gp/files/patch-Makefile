@@ -1,0 +1,32 @@
+--- Makefile.orig	2014-01-09 18:03:02.000000000 +0000
++++ Makefile	2014-01-09 18:04:14.000000000 +0000
+@@ -31,10 +31,14 @@
+ 	-DDEBUG_X49GP_ENABLE_IRQ \
+ 	-DDEBUG_X49GP_UI
+ 
++ifdef DEBUGB
+ DEBUG = -g # -pg
++else
++DEBUG =
++endif
+ 
+ #2.09
+-FIRMWARE = 4950_92.bin
++#FIRMWARE = 4950_92.bin
+ #2.10-7
+ #FIRMWARE = hp49g-u.bin
+ #HPGCC3 (copy HPGCC3 ROM first)
+@@ -53,9 +57,12 @@
+ 	-fno-strict-aliasing
+ 
+ # Use this to debug
+-# DEFINES = $(X49GP_DEBUG) $(QEMU_DEFINES)
++ifdef DEBUGB
++DEFINES = $(X49GP_DEBUG) $(QEMU_DEFINES)
++else
+ # Use this for speed
+ DEFINES = $(QEMU_DEFINES)
++endif
+ 
+ ifdef QEMU_OLD
+ QEMUSRC = qemu/prepare.sh \

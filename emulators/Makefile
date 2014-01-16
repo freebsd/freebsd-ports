@@ -181,6 +181,7 @@
     SUBDIR += wine-mono-devel
     SUBDIR += wxmupen64plus
     SUBDIR += x48
+    SUBDIR += x49gp
     SUBDIR += xbraitenberg
     SUBDIR += xcpc
     SUBDIR += xhomer
