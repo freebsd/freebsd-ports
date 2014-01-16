@@ -8,7 +8,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://www.stasyan.com/devel/distfiles/
 DISTNAME=	omniNotify-2-latest
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CORBA Notification Service (CosNotification) for omniORB
 
 LIB_DEPENDS=	omniORB4.1:${PORTSDIR}/devel/omniORB
