@@ -51,6 +51,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="81f1fdc2-7ec7-11e3-a6c6-00163e1ed244">
+    <topic>virtualbox-ose -- local vulnerability</topic>
+    <affects>
+      <package>
+	<name>virtualbox-ose</name>
+	<range><lt>4.2.22</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="http://www.oracle.com/technetwork/topics/security/cpujan2014-1972949.html">
+	  <p>Unspecified vulnerability in the Oracle VM VirtualBox
+	   component in Oracle Virtualization VirtualBox prior to
+	   3.2.20, 4.0.22, 4.1.30, 4.2.22, and 4.3.6 allows local
+	   users to affect confidentiality, integrity, and availability
+	   via unknown vectors related to Core.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-5892</cvename>
+      <url>http://www.oracle.com/technetwork/topics/security/cpujan2014-1972949.html</url>
+    </references>
+    <dates>
+      <discovery>2014-01-15</discovery>
+      <entry>2014-01-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5acf4638-7e2c-11e3-9fba-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
