@@ -1,9 +1,9 @@
---- a/Makefile
-+++ b/Makefile
-@@ -127,7 +127,11 @@ $(I18Npot): $(wildcard *.cc)
+--- Makefile.orig
++++ Makefile
+@@ -134,7 +134,11 @@ $(I18Npot): $(wildcard *.c)
  	@touch $@
  
- $(I18Nmsgs): $(LOCDIR)/%/LC_MESSAGES/vdr-$(PLUGIN).mo: $(PODIR)/%.mo
+ $(I18Nmsgs): $(DESTDIR)$(LOCDIR)/%/LC_MESSAGES/vdr-$(PLUGIN).mo: $(PODIR)/%.mo
 +ifdef FREEBSD
 +	install -m644 $< $@
 +else
@@ -12,20 +12,20 @@
  
  .PHONY: i18n
  i18n: $(I18Nmo) $(I18Npot)
-@@ -140,7 +144,11 @@ $(SOFILE): $(OBJS)
+@@ -147,7 +151,11 @@ $(SOFILE): $(OBJS)
  	$(CXX) $(CXXFLAGS) $(LDFLAGS) -shared $(OBJS) -o $@
  
  install-lib: $(SOFILE)
 +ifdef FREEBSD
-+	install $^ $(LIBDIR)/$^.$(APIVERSION)
++	install $^ $(DESTDIR)$(LIBDIR)/$^.$(APIVERSION)
 +else
- 	install -D $^ $(LIBDIR)/$^.$(APIVERSION)
+ 	install -D $^ $(DESTDIR)$(LIBDIR)/$^.$(APIVERSION)
 +endif
  
  install: install-lib install-i18n
  
-@@ -157,3 +165,6 @@ clean:
- 	@-rm -f $(OBJS) $(DEPFILE) *.so *.so.* *.tgz core* *~
+@@ -164,3 +164,6 @@ clean:
+ 	@-rm -f $(OBJS) $(DEPFILE) *.so *.tgz core* *~
  
  compile: $(SOFILE)
 +
