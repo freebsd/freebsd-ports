@@ -26,27 +26,15 @@ X11_DESC=	X11 textmode support
 NOT_FOR_ARCHS=	ia64
 NOT_FOR_ARCHS_REASON=	does not build on ia64
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+LZO2_LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
+LZO2_CONFIGURE_OFF=	--with-included-lzo
+X11_USE=		XORG=x11
+X11_CPPFLAGS=		-I${LOCALBASE}/include
+X11_LDFLAGS=		-L${LOCALBASE}/lib
+X11_CONFIGURE_ENABLE=	x11-textmode
 
-.if ${PORT_OPTIONS:MLZO2}
-LIB_DEPENDS+=	lzo2:${PORTSDIR}/archivers/lzo2
-.else
-CONFIGURE_ARGS=	--with-included-lzo
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.else
-CONFIGURE_ARGS+=--disable-x11-textmode
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	README
 INFO=		ht
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CXXFLAGS=.*$$|CXXFLAGS="$$CXXFLAGS"|g ; \
@@ -55,11 +43,10 @@ post-patch:
 			${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ht ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/hthelp.info ${PREFIX}/${INFO_PATH}/ht.info
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/ht ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/hthelp.info \
+		${STAGEDIR}${PREFIX}/${INFO_PATH}/ht.info
 
 .include <bsd.port.mk>
