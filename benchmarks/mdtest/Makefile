@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mdtest
-PORTVERSION=	1.9.2
+PORTVERSION=	1.9.3
 CATEGORIES=	benchmarks
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20latest/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -15,12 +15,12 @@ LICENSE=	GPLv2
 OPTIONS_DEFINE=	OPENMPI EXAMPLES
 OPENMPI_DESC=	Use Open MPI instead of MPICH2
 
-PORTEXAMPLES=	*
-PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/mdtest.1.gz
-
 NO_WRKSUBDIR=	yes
+
 CFLAGS+=	-DDarwin
+
+PORTEXAMPLES=	*
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 
 .include <bsd.port.options.mk>
 
@@ -38,9 +38,12 @@ do-build:
 	(cd ${WRKSRC} && ${MPICC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c -lm)
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} ${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1)
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} ${PORTNAME}.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/scripts && ${INSTALL_DATA} * ${STAGEDIR}${EXAMPLESDIR})
+	(cd ${WRKSRC}/scripts && ${INSTALL_DATA} * \
+		${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
