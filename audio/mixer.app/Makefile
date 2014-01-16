@@ -18,9 +18,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lXpm -lXext -lX11
 MAKE_ARGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" LDFLAGS="${LDFLAGS}"
 
 USE_XORG=	xpm xext x11
-NO_STAGE=	yes
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Mixer.app ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/Mixer.app ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
