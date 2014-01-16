@@ -3,6 +3,7 @@
 
 PORTNAME=	yconalyzer
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,10 +15,10 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/yconalyzer
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+NO_STAGE=	yes
 
 MAN8=		yconalyzer.8
 
-NO_STAGE=	yes
 pre-install:
 	${CHMOD} a+x ${WRKSRC}/install-sh
 
