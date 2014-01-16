@@ -15,15 +15,14 @@ COMMENT=	Application for generating MusicIP puids
 USE_LINUX=		yes
 NO_BUILD=		yes
 IA32_BINARY_PORT=	yes
-NO_STAGE=	yes
 
 PLIST_FILES=	bin/genpuid bin/mipcore libexec/mipcore
 
 do-install:
 	${BRANDELF} -t Linux ${WRKDIR}/${PORTNAME}-${PORTVERSION}/genpuid
 	${BRANDELF} -t Linux ${WRKDIR}/${PORTNAME}-${PORTVERSION}/mipcore
-	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/genpuid ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/mipcore ${PREFIX}/libexec
-	${LN} -fhs ${PREFIX}/libexec/mipcore ${PREFIX}/bin/mipcore
+	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/genpuid ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/mipcore ${STAGEDIR}${PREFIX}/libexec
+	${LN} -fhs ${PREFIX}/libexec/mipcore ${STAGEDIR}${PREFIX}/bin/mipcore
 
 .include <bsd.port.mk>
