@@ -9,6 +9,7 @@ MASTER_SITES=	http://tcts.fpms.ac.be/synthesis/mbrola/bin/pclinux/ \
 PKGNAMEPREFIX=	linux-
 DISTNAME=	mbr301h
 DIST_SUBDIR=	mbrola-linux
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MBROLA speech synthesizer for Linux
@@ -17,33 +18,17 @@ RUN_DEPENDS=	${LOCALBASE}/share/mbrolavox:${PORTSDIR}/audio/mbrolavox
 
 CONFLICTS=	mbrola-*
 NO_BUILD=	yes
-ONLY_FOR_ARCHS=	amd64 i386
+NO_WRKSUBDIR=	yes
+IA32_BINARY_PORT=	yes
 USE_LINUX=	yes
-NO_STAGE=	yes
-USE_ZIP=	yes
 RESTRICTED=	for non-commercial, non-military applications only
-WRKSRC=		${WRKDIR}/mbr301h
-PLIST=		${WRKDIR}/plist
 
-PLIST_DIRS=	share/doc/mbrola
 PLIST_FILES=	bin/mbrola
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-PLIST_FILES+=	share/doc/mbrola/readme.txt
-.endif
-
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	@${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.zip -d ${WRKSRC}
+PORTDOCS=	readme.txt
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/mbrola-linux-i386 ${PREFIX}/bin/mbrola
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/mbrola-linux-i386 ${STAGEDIR}${PREFIX}/bin/mbrola
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
