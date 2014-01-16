@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	exult
-PORTVERSION=	1.2
-PORTREVISION=	6
+PORTVERSION=	1.5.0.20130315
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-all-versions/${PORTVERSION}
+MASTER_SITES=	http://www.math.leidenuniv.nl/~wpalenst/cvs/
+DISTNAME=	exult-20130315-0400
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ultima VII engine
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
@@ -16,30 +18,32 @@ RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 USE_SDL=	sdl mixer
 USE_XORG=	x11
 USES=		gmake pkgconfig
-USE_AUTOTOOLS=	libtool
+USE_AUTOTOOLS=	libtool autoconf automake aclocal autoheader libtoolize
+AUTOMAKE_ARGS=	--add-missing
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAKE_JOBS_UNSAFE=	yes
 
-MAN1=	expack.1 ipack.1 shp2pcx.1 splitshp.1 textpack.1
-MAN6=	exult.6
+WRKSRC=		${WRKDIR}/exult
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	STUDIO
+OPTIONS_DEFAULT=STUDIO
+OPTIONS_SUB=	yes
+STUDIO_DESC=	Install Exult Studio
+
 .include <bsd.port.options.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|desktop||' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/configure
+.if ${PORT_OPTIONS:MSTUDIO}
+CONFIGURE_ARGS+=--enable-exult-studio \
+		--enable-exult-studio-support
+USE_GNOME+=	libglade2
+.endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in FAQ NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
