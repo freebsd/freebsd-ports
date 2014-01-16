@@ -492,6 +492,8 @@ bin/lostfeathers
 %%DATADIR%%/pyglet/window/xlib/xsync.pyc
 %%DATADIR%%/pyglet/window/xlib/xsync.pyo
 %%DATADIR%%/run_game.py
+%%DATADIR%%/run_game.pyc
+%%DATADIR%%/run_game.pyo
 share/pixmaps/lostfeathers.png
 @dirrm %%DATADIR%%/pyglet/window/xlib
 @dirrm %%DATADIR%%/pyglet/window/win32

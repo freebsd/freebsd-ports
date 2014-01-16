@@ -5,7 +5,7 @@ PORTNAME=	lostfeathers
 PORTVERSION=	1.0b
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE \
-		SF/nemysisfreebsdp/:icons
+		SF/nemysisfreebsdp/${CATEGORIES}/${PORTNAME}/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}.png:icons
 DIST_SUBDIR=	python
@@ -14,7 +14,7 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Help a bird to recover his magical feathers
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	avbin>=0:${PORTSDIR}/multimedia/avbin
 
@@ -24,12 +24,19 @@ USE_PYTHON=	yes
 
 PORTDOCS=	README.txt
 
+OPTIONS_DEFINE=	DOCS
+
+# Wrong versioning upstream
+PORTSCOUT=	skipv:1.0
+
 SUB_FILES=	${PORTNAME}
 
-DESKTOP_ENTRIES="The Lost Feathers" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
+DESKTOP_ENTRIES="The Lost Feathers" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
-OPTIONS_DEFINE=	DOCS
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|' \
+		${WRKSRC}/run_game.py
 
 do-build:
 	@${PYTHON_CMD} -m compileall ${WRKSRC}
@@ -41,9 +48,13 @@ do-install:
 .for d in cocos data gamelib pyglet
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
 .endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/run_game.py ${STAGEDIR}${DATADIR}
 
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+.for f in  *.py *.pyc *.pyo
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${DATADIR}
+.endfor
+
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
