@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	PPIx-Regexp
-PORTVERSION=	0.029
+PORTVERSION=	0.036
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:WYANT
@@ -19,64 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	PPIx::Regexp.3 \
-	PPIx::Regexp::Constant.3 \
-	PPIx::Regexp::Dumper.3 \
-	PPIx::Regexp::Element.3 \
-	PPIx::Regexp::Lexer.3 \
-	PPIx::Regexp::Node.3 \
-	PPIx::Regexp::Node::Range.3 \
-	PPIx::Regexp::Structure.3 \
-	PPIx::Regexp::Structure::Assertion.3 \
-	PPIx::Regexp::Structure::BranchReset.3 \
-	PPIx::Regexp::Structure::Capture.3 \
-	PPIx::Regexp::Structure::CharClass.3 \
-	PPIx::Regexp::Structure::Code.3 \
-	PPIx::Regexp::Structure::Main.3 \
-	PPIx::Regexp::Structure::Modifier.3 \
-	PPIx::Regexp::Structure::NamedCapture.3 \
-	PPIx::Regexp::Structure::Quantifier.3 \
-	PPIx::Regexp::Structure::Regexp.3 \
-	PPIx::Regexp::Structure::Replacement.3 \
-	PPIx::Regexp::Structure::Subexpression.3 \
-	PPIx::Regexp::Structure::Switch.3 \
-	PPIx::Regexp::Structure::Unknown.3 \
-	PPIx::Regexp::Support.3 \
-	PPIx::Regexp::Token.3 \
-	PPIx::Regexp::Token::Assertion.3 \
-	PPIx::Regexp::Token::Backreference.3 \
-	PPIx::Regexp::Token::Backtrack.3 \
-	PPIx::Regexp::Token::CharClass.3 \
-	PPIx::Regexp::Token::CharClass::POSIX.3 \
-	PPIx::Regexp::Token::CharClass::POSIX::Unknown.3 \
-	PPIx::Regexp::Token::CharClass::Simple.3 \
-	PPIx::Regexp::Token::Code.3 \
-	PPIx::Regexp::Token::Comment.3 \
-	PPIx::Regexp::Token::Condition.3 \
-	PPIx::Regexp::Token::Control.3 \
-	PPIx::Regexp::Token::Delimiter.3 \
-	PPIx::Regexp::Token::Greediness.3 \
-	PPIx::Regexp::Token::GroupType.3 \
-	PPIx::Regexp::Token::GroupType::Assertion.3 \
-	PPIx::Regexp::Token::GroupType::BranchReset.3 \
-	PPIx::Regexp::Token::GroupType::Code.3 \
-	PPIx::Regexp::Token::GroupType::Modifier.3 \
-	PPIx::Regexp::Token::GroupType::NamedCapture.3 \
-	PPIx::Regexp::Token::GroupType::Subexpression.3 \
-	PPIx::Regexp::Token::GroupType::Switch.3 \
-	PPIx::Regexp::Token::Interpolation.3 \
-	PPIx::Regexp::Token::Literal.3 \
-	PPIx::Regexp::Token::Modifier.3 \
-	PPIx::Regexp::Token::Operator.3 \
-	PPIx::Regexp::Token::Quantifier.3 \
-	PPIx::Regexp::Token::Recursion.3 \
-	PPIx::Regexp::Token::Reference.3 \
-	PPIx::Regexp::Token::Structure.3 \
-	PPIx::Regexp::Token::Unknown.3 \
-	PPIx::Regexp::Token::Unmatched.3 \
-	PPIx::Regexp::Token::Whitespace.3 \
-	PPIx::Regexp::Tokenizer.3 \
-	PPIx::Regexp::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
