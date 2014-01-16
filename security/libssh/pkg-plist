@@ -18,4 +18,5 @@ lib/libssh_threads.so.4.3.0
 libdata/pkgconfig/libssh.pc
 libdata/pkgconfig/libssh_threads.pc
 @dirrm lib/cmake/libssh
+@dirrmtry lib/cmake
 @dirrm include/libssh
