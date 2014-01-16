@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	qsynth
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.8
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt fluidsynth front-end application
@@ -15,16 +15,14 @@ LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
 
 OPTIONS_DEFINE=	GRADIENT SYSTEM_TRAY
 OPTIONS_DEFAULT=	GRADIENT SYSTEM_TRAY
-
 GRADIENT_DESC=		Gradient eye-candy
-GRADIENT_CONFIGURE_OFF=	--disable-gradient
-
+GRADIENT_CONFIGURE_ENABLE=	gradient
 SYSTEM_TRAY_DESC=	System-tray icon
-SYSTEM_TRAY_CONFIGURE_OFF=	--disable-system-tray
+SYSTEM_TRAY_CONFIGURE_ENABLE=	system-tray
 
+USES=		gmake
 USE_QT4=	gui linguist_build moc_build qmake_build rcc_build uic_build
 QT_NONSTANDARD=	yes
-USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_ac_moc=${MOC} \
 		ac_cv_path_ac_uic=${UIC} \
