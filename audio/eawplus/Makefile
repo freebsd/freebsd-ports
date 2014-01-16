@@ -16,14 +16,13 @@ RUN_DEPENDS=	${LOCALBASE}/share/eawpats/acbass.pat:${PORTSDIR}/audio/eawpats \
 		${LOCALBASE}/share/guspat/inst/GUS/acbass.pat:${PORTSDIR}/audio/guspat
 
 NO_CDROM=	Some of the patches are marked no-commercial-use
-NO_STAGE=	yes
 
 NO_WRKSUBDIR=	yes
 
 TIMIDITY_DATADIR=	share/timidity
 PLIST_SUB=	TIMIDITY_DATADIR=${TIMIDITY_DATADIR}
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${RM} -f ${WRKSRC}/timidity/inst/GUS/power/h-hihatp.pat.orig
@@ -35,14 +34,12 @@ do-build:
 		${FILESDIR}/timidity.cfg > ${WRKDIR}/timidity.cfg
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@${CP} -pr ${WRKSRC}/timidity/* ${DATADIR}
-	@${MKDIR} ${PREFIX}/${TIMIDITY_DATADIR}
-	@${INSTALL_DATA} ${WRKDIR}/timidity.cfg \
-			${PREFIX}/${TIMIDITY_DATADIR}/timidity.cfg-eawplus
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/doc/*/*.txt.gz ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -pr ${WRKSRC}/timidity/* ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${TIMIDITY_DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/timidity.cfg \
+		${STAGEDIR}${PREFIX}/${TIMIDITY_DATADIR}/timidity.cfg-eawplus
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*/*.txt.gz ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
