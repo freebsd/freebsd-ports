@@ -16,21 +16,16 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 RESTRICTED=	License allows only use in a firewall or with RA products.
 
-NO_STAGE=	yes
-PLIST_FILES=	libexec/raproxy
+PLIST_FILES=	libexec/raproxy man/man8/raproxy.8.gz
 PORTDOCS=	*
-MAN8=		raproxy.8
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/raproxy ${PREFIX}/libexec
-	${INSTALL_MAN} ${WRKSRC}/raproxy.man ${PREFIX}/man/man8/raproxy.8
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${PREFIX}/share/doc/raproxy
-	@${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.pdf \
-		${PREFIX}/share/doc/raproxy
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/raproxy ${STAGEDIR}${PREFIX}/libexec
+	${INSTALL_MAN} ${WRKSRC}/raproxy.man ${STAGEDIR}${PREFIX}/man/man8/raproxy.8
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.pdf \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
