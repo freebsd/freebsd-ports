@@ -331,16 +331,16 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_ctpp2-${NGINX_CTPP2_VERSION}
 .endif
 
 .if ${PORT_OPTIONS:MECHO}
-NGINX_ECHO_VERSION=	0.50
-GIT_ECHO_VERSION=	0-gf827a4f
+NGINX_ECHO_VERSION=	0.51
+GIT_ECHO_VERSION=	0-g44c92a5
 MASTER_SITES+=	https://github.com/agentzh/echo-nginx-module/tarball/v${NGINX_ECHO_VERSION}/:echo
 DISTFILES+=	agentzh-echo-nginx-module-v${NGINX_ECHO_VERSION}-${GIT_ECHO_VERSION}.tar.gz:echo
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-echo-nginx-module-${GIT_ECHO_VERSION:S/^0-g//}
 .endif
 
 .if ${PORT_OPTIONS:MHEADERS_MORE}
-NGINX_HEADERS_MORE_VERSION=	0.24
-GIT_HEADERS_MORE_VERSION=	0-g7a6fd11
+NGINX_HEADERS_MORE_VERSION=	0.25
+GIT_HEADERS_MORE_VERSION=	0-g0c6e05d
 MASTER_SITES+=	https://github.com/agentzh/headers-more-nginx-module/tarball/v${NGINX_HEADERS_MORE_VERSION}/:headers_more
 DISTFILES+=	agentzh-headers-more-nginx-module-v${NGINX_HEADERS_MORE_VERSION}-${GIT_HEADERS_MORE_VERSION}.tar.gz:headers_more
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-headers-more-nginx-module-${GIT_HEADERS_MORE_VERSION:S/^0-g//}
@@ -552,8 +552,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_VERSION}
 
 .if ${PORT_OPTIONS:MDRIZZLE}
 LIB_DEPENDS+=	libdrizzle.so:${PORTSDIR}/databases/libdrizzle
-NGINX_DRIZZLE_VERSION=	0.1.6
-GIT_DRIZZLE_VERSION=	0-ge6937ba
+NGINX_DRIZZLE_VERSION=	0.1.7
+GIT_DRIZZLE_VERSION=	0-gb83a8a9
 MASTER_SITES+=	https://github.com/chaoslawful/drizzle-nginx-module/tarball/v${NGINX_DRIZZLE_VERSION}/:drizzle
 DISTFILES+=	chaoslawful-drizzle-nginx-module-v${NGINX_DRIZZLE_VERSION}-${GIT_DRIZZLE_VERSION}.tar.gz:drizzle
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}
@@ -690,15 +690,15 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_
 .endif
 
 .if ${PORT_OPTIONS:MRTMP}
-NGINX_RTMP_VERSION=	1.0.8
+NGINX_RTMP_VERSION=	1.1.2
 MASTER_SITES+=	https://github.com/arut/nginx-rtmp-module/archive/v${NGINX_RTMP_VERSION}/:rtmp
 DISTFILES+=	rtmp-nginx-module-v${NGINX_RTMP_VERSION}.tar.gz:rtmp
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx-rtmp-module-${NGINX_RTMP_VERSION}
 .endif
 
 .if ${PORT_OPTIONS:MSET_MISC}
-NGINX_SET_MISC_VERSION=	0.23
-GIT_SET_MISC_VERSION=	0-g6ce586e
+NGINX_SET_MISC_VERSION=	0.24
+GIT_SET_MISC_VERSION=	0-g36fd035
 MASTER_SITES+=	https://github.com/agentzh/set-misc-nginx-module/tarball/v${NGINX_SET_MISC_VERSION}/:setmisc
 DISTFILES+=	agentzh-set-misc-nginx-module-v${NGINX_SET_MISC_VERSION}-${GIT_SET_MISC_VERSION}.tar.gz:setmisc
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-set-misc-nginx-module-${GIT_SET_MISC_VERSION:S/^0-g//}
@@ -722,8 +722,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_VER
 .endif
 
 .if ${PORT_OPTIONS:MSRCACHE}
-NGINX_SRCACHE_VERSION=	0.24
-GIT_SRCACHE_VERSION=	0-g33f0f29
+NGINX_SRCACHE_VERSION=	0.25
+GIT_SRCACHE_VERSION=	0-gf25fe90
 MASTER_SITES+=	https://github.com/agentzh/srcache-nginx-module/tarball/v${NGINX_SRCACHE_VERSION}/:srcache
 DISTFILES+=	agentzh-srcache-nginx-module-v${NGINX_SRCACHE_VERSION}-${GIT_SRCACHE_VERSION}.tar.gz:srcache
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-srcache-nginx-module-${GIT_SRCACHE_VERSION:S/^0-g//}
@@ -928,7 +928,7 @@ post-patch:
 .endif
 .if ${PORT_OPTIONS:MSPDY}
 .if ${PORT_OPTIONS:MDRIZZLE}
-	@${REINPLACE_CMD} '584d' \
+	@${REINPLACE_CMD} '589d' \
 		${WRKDIR}/chaoslawful-drizzle-nginx-module-${GIT_DRIZZLE_VERSION:S/^0-g//}/src/ngx_http_drizzle_util.c
 .endif
 .if ${PORT_OPTIONS:MLUA}
