@@ -6,7 +6,7 @@ PORTVERSION=	${KDEVELOP_VERSION:S/4./1./}
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDEVELOP_BRANCH}/kdevelop/${KDEVELOP_VERSION}/src
-DIST_SUBDIR=	KDE
+DIST_SUBDIR=	KDE/kdevelop/${KDEVELOP_VERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Set of libraries for KDE IDE-like programs
@@ -26,14 +26,10 @@ USE_LDCONFIG=	yes
 PLIST_SUB+=	SHLIB_VER=7.0.0 \
 		SHLIB_SHVER=7
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CMAKE_ARGS+=	-DBUILD_po:BOOL=Off
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=	gettext
+NLS_CMAKE_OFF=	-DBUILD_po:BOOL=Off
 
 .include <bsd.port.mk>
