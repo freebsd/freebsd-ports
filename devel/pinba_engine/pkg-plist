@@ -2,5 +2,5 @@ lib/mysql/plugin/libpinba_engine.so
 lib/mysql/plugin/libpinba_engine.so.0
 lib/mysql/plugin/libpinba_engine.la
 lib/mysql/plugin/libpinba_engine.a
-%%PORTDATA%%%%DATADIR%%/default_tables.sql
-%%PORTDATA%%@dirrm %%DATADIR%%
+%%DATADIR%%/default_tables.sql
+@dirrm %%DATADIR%%
