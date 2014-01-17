@@ -17,8 +17,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_LINUX=	yes
 
-NO_STAGE=	yes
 do-install:
-		@${SH} ${FILESDIR}/do-install ${PREFIX} ${DISTDIR}
+		@${SH} ${FILESDIR}/do-install ${STAGEDIR} ${PREFIX} ${DISTDIR}
 
 .include <bsd.port.mk>
