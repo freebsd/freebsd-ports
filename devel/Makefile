@@ -1145,6 +1145,7 @@
     SUBDIR += linux-kmod-compat
     SUBDIR += linux_kdump
     SUBDIR += lion
+    SUBDIR += llnextgen
     SUBDIR += llvm-devel
     SUBDIR += llvm31
     SUBDIR += llvm32
