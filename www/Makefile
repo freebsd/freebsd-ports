@@ -179,6 +179,7 @@
     SUBDIR += dwoo
     SUBDIR += e107
     SUBDIR += eaccelerator
+    SUBDIR += edbrowse
     SUBDIR += efront
     SUBDIR += egueb
     SUBDIR += eldav.el
