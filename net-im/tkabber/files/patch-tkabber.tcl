@@ -4,7 +4,7 @@
  #!/bin/sh
  # the next line restarts using the correct interpreter \
 -exec wish "$0" -name tkabber "$@"
-+exec wish8.4 "$0" -name tkabber "$@"
++exec %%WISH%% "$0" -name tkabber "$@"
  
  # $Id: tkabber.tcl,v 1.236 2006/06/08 20:21:44 aleksey Exp $
  
