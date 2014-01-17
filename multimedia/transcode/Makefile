@@ -27,11 +27,6 @@ CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--enable-oss
 
-MAN1=	avifix.1 aviindex.1 avimerge.1 avisplit.1 avisync.1 tccat.1 tcdemux.1 \
-	tcprobe.1 tcscan.1 transcode.1 tcextract.1 tcdecode.1 tcmodinfo.1 \
-	tcpvmexportd.1 tcxmlcheck.1 transcode_export.1 transcode_filter.1 \
-	transcode_import.1 tcexport.1 tcmodchain.1
-
 NO_OPTIONS_SORT=	yes
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS X11 MPEG2 BKTR POSTPROC FREETYPE LAME XVID \
 		X264 OGG VORBIS THEORA DVDREAD DV QUICKTIME LZO LIBA52 \
@@ -44,7 +39,6 @@ LZO_DESC=	LZO compression support
 LIBA52_DESC=	a52 support (as default decoder)
 XML_DESC=	Libxml2 XML support
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MX11}
@@ -55,7 +49,7 @@ CONFIGURE_ARGS+=	--without-x
 .endif
 
 .if ${PORT_OPTIONS:MMPEG2}
-LIB_DEPENDS+=	mpeg2:${PORTSDIR}/multimedia/libmpeg2
+LIB_DEPENDS+=	libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2
 CONFIGURE_ARGS+=	--enable-libmpeg2 --enable-libmpeg2convert
 .else
 CONFIGURE_ARGS+=	--disable-libmpeg2
@@ -72,77 +66,77 @@ CONFIGURE_ARGS+=	--disable-libpostproc
 .endif
 
 .if ${PORT_OPTIONS:MFREETYPE}
-LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
 CONFIGURE_ARGS+=	--enable-freetype2
 .else
 CONFIGURE_ARGS+=	--disable-freetype2
 .endif
 
 .if ${PORT_OPTIONS:MLAME}
-LIB_DEPENDS+=	mp3lame:${PORTSDIR}/audio/lame
+LIB_DEPENDS+=	libmp3lame.so:${PORTSDIR}/audio/lame
 CONFIGURE_ARGS+=	--with-lame-prefix=${LOCALBASE} --enable-lame
 .else
 CONFIGURE_ARGS+=	--disable-lame
 .endif
 
 .if ${PORT_OPTIONS:MXVID}
-LIB_DEPENDS+=	xvidcore:${PORTSDIR}/multimedia/xvid
+LIB_DEPENDS+=	libxvidcore.so:${PORTSDIR}/multimedia/xvid
 CONFIGURE_ARGS+=	--with-xvid-prefix=${LOCALBASE} --enable-xvid
 .else
 CONFIGURE_ARGS+=	--disable-xvid
 .endif
 
 .if ${PORT_OPTIONS:MX264}
-LIB_DEPENDS+=	x264:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	libx264.so:${PORTSDIR}/multimedia/x264
 CONFIGURE_ARGS+=	--enable-x264
 .else
 CONFIGURE_ARGS+=	--disable-x264
 .endif
 
 .if ${PORT_OPTIONS:MOGG}
-LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg
+LIB_DEPENDS+=	libogg.so:${PORTSDIR}/audio/libogg
 CONFIGURE_ARGS+=	--enable-ogg
 .else
 CONFIGURE_ARGS+=	--disable-ogg
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=	--enable-vorbis
 .else
 CONFIGURE_ARGS+=	--disable-vorbis
 .endif
 
 .if ${PORT_OPTIONS:MTHEORA}
-LIB_DEPENDS+=	theora:${PORTSDIR}/multimedia/libtheora
+LIB_DEPENDS+=	libtheora.so:${PORTSDIR}/multimedia/libtheora
 CONFIGURE_ARGS+=	--enable-theora
 .else
 CONFIGURE_ARGS+=	--disable-theora
 .endif
 
 .if ${PORT_OPTIONS:MDVDREAD}
-LIB_DEPENDS+=	dvdread:${PORTSDIR}/multimedia/libdvdread
+LIB_DEPENDS+=	libdvdread.so:${PORTSDIR}/multimedia/libdvdread
 CONFIGURE_ARGS+=	--with-libdvdread-prefix=${LOCALBASE} --enable-libdvdread
 .else
 CONFIGURE_ARGS+=	--disable-libdvdread
 .endif
 
 .if ${PORT_OPTIONS:MDV}
-LIB_DEPENDS+=	dv:${PORTSDIR}/multimedia/libdv
+LIB_DEPENDS+=	libdv.so:${PORTSDIR}/multimedia/libdv
 CONFIGURE_ARGS+=	--enable-libdv
 .else
 CONFIGURE_ARGS+=	--disable-libdv
 .endif
 
 .if ${PORT_OPTIONS:MQUICKTIME}
-LIB_DEPENDS+=	quicktime:${PORTSDIR}/multimedia/libquicktime
+LIB_DEPENDS+=	libquicktime.so:${PORTSDIR}/multimedia/libquicktime
 CONFIGURE_ARGS+=	--enable-libquicktime
 .else
 CONFIGURE_ARGS+=	--disable-libquicktime
 .endif
 
 .if ${PORT_OPTIONS:MLZO}
-LIB_DEPENDS+=	lzo2:${PORTSDIR}/archivers/lzo2
+LIB_DEPENDS+=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 CONFIGURE_ARGS+=	--with-lzo-prefix=${LOCALBASE} --with-lzo-includes=${LOCALBASE} \
 			--enable-lzo
 .else
@@ -150,14 +144,14 @@ CONFIGURE_ARGS+=	--disable-lzo
 .endif
 
 .if ${PORT_OPTIONS:MLIBA52}
-LIB_DEPENDS+=	a52:${PORTSDIR}/audio/liba52
+LIB_DEPENDS+=	liba52.so:${PORTSDIR}/audio/liba52
 CONFIGURE_ARGS+=	--with-a52-prefix=${LOCALBASE} --enable-a52
 .else
 CONFIGURE_ARGS+=	--disable-a52
 .endif
 
 .if ${PORT_OPTIONS:MFAAC}
-LIB_DEPENDS+=	faac:${PORTSDIR}/audio/faac
+LIB_DEPENDS+=	libfaac.so:${PORTSDIR}/audio/faac
 CONFIGURE_ARGS+=	--with-faac-prefix=${LOCALBASE} --enable-faac
 .else
 CONFIGURE_ARGS+=	--disable-faac
@@ -171,7 +165,7 @@ CONFIGURE_ARGS+=	--disable-libxml2
 .endif
 
 .if ${PORT_OPTIONS:MMJPEGTOOLS}
-LIB_DEPENDS+=	lavjpeg-2.0:${PORTSDIR}/multimedia/mjpegtools
+LIB_DEPENDS+=	liblavjpeg-2.0.so:${PORTSDIR}/multimedia/mjpegtools
 CONFIGURE_ARGS+=	--enable-mjpegtools
 .else
 CONFIGURE_ARGS+=	--disable-mjpegtools
@@ -185,14 +179,14 @@ CONFIGURE_ARGS+=	--disable-sdl
 .endif
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
-LIB_DEPENDS+=	MagickWand:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	libMagickWand.so:${PORTSDIR}/graphics/ImageMagick
 CONFIGURE_ARGS+=	--with-imagemagick-prefix=${LOCALBASE} --enable-imagemagick
 .else
 CONFIGURE_ARGS+=	--disable-imagemagick
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=	--with-libjpeg-prefix=${LOCALBASE} --enable-libjpeg
 .else
 CONFIGURE_ARGS+=	--disable-libjpeg
@@ -251,12 +245,14 @@ pre-install:
 	${MKDIR} ${FAKEDIR}
 	${TOUCH} -f ${PLIST}
 	@(cd ${WRKSRC} && ${GMAKE} install prefix=${FAKEDIR} mandir=${FAKEDIR}/man)
-	${RM} -rf ${FAKEDIR}/man # let bsd.port.mk handle man files
 .for dir in bin share/doc lib
 	@(cd ${FAKEDIR}/${dir} && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|${dir}/|' >> ${PLIST})
 	@(cd ${FAKEDIR}/${dir} && ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${dir}/|' >> ${PLIST})
 .endfor
+	@(cd ${FAKEDIR}/man && ${FIND} -s * -type f -o -type l | \
+		${SED}  -e 's|^|man/|' \
+			-e 's|$$|.gz|' >> ${PLIST})
 
 .include <bsd.port.post.mk>
