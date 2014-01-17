@@ -12,6 +12,7 @@
 +    $options{LIBS} = "-L%%LOCALBASE%%/lib -lstdc++ -losp";
  }
   WriteMakefile(
+
 @@ -26,6 +26,10 @@
        Test::Exception => 0,
        File::Temp      => 0,
