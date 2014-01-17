@@ -18,8 +18,7 @@ CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}/bin \
 		--with-tclconfig=${TCL_LIBDIR} \
 		--with-iconv=${ICONV_PREFIX} --with-expat=${LOCALBASE}
 
-USES=		iconv
+USES=		iconv tcl
 USE_LDCONFIG=	yes
-USE_TCL=	yes
 
 .include <bsd.port.mk>
