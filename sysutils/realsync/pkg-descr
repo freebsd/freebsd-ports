@@ -1,0 +1,7 @@
+realsync daemon with rsync and python:
+- config support /usr/local/etc/realsync.cfg
+- e-mail stats support
+- threads support
+- threads wait support
+
+WWW: http://www.it-sys.org/realsync

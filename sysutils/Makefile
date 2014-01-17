@@ -774,6 +774,7 @@
     SUBDIR += rdiff-backup-devel
     SUBDIR += rdup
     SUBDIR += readlink
+    SUBDIR += realsync
     SUBDIR += recoverdm
     SUBDIR += reed
     SUBDIR += rej
