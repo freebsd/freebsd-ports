@@ -3,20 +3,20 @@
 #   $MCom: ports/devel/dbus/Makefile,v 1.58 2013/02/15 15:06:49 kwm Exp $
 
 PORTNAME=	dbus
-PORTVERSION=	1.6.12
+PORTVERSION=	1.6.18
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A message bus system for inter-application communication
+COMMENT=	Message bus system for inter-application communication
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 PORTSCOUT=	limitw:1,even
 
-USE_GNOME=	gnomehack libxml2 ltverhack
-USE_GMAKE=	yes
-USE_AUTOTOOLS=	libtool
+USE_GNOME=	libxml2 ltverhack
+USES=		gmake pathfix
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=--localstatedir=/var \
 	        --with-test-socket-dir=${WRKDIR} \
@@ -36,14 +36,10 @@ GROUPS=		messagebus
 
 PLIST_SUB=	VERSION="1.0"
 
-MAN1=		dbus-cleanup-sockets.1 dbus-daemon.1 dbus-launch.1 \
-		dbus-monitor.1 dbus-send.1 dbus-uuidgen.1
-
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
 X11_DESC=	Support X11 Desktop Environments
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
@@ -67,9 +63,7 @@ post-patch:
 		${WRKSRC}/tools/Makefile.in
 
 post-install:
-.if !defined(PACKAGE_BUILDING)
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
-	${MKDIR} ${PREFIX}/share/dbus-1/interfaces
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/dbus-1/interfaces
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libdbus-1.so.3
 
 .include <bsd.port.mk>

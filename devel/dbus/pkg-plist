@@ -30,6 +30,12 @@ lib/libdbus-1.so
 lib/libdbus-1.so.3
 libdata/pkgconfig/dbus-1.pc
 libexec/dbus-daemon-launch-helper
+man/man1/dbus-cleanup-sockets.1.gz
+man/man1/dbus-daemon.1.gz
+man/man1/dbus-launch.1.gz
+man/man1/dbus-monitor.1.gz
+man/man1/dbus-send.1.gz
+man/man1/dbus-uuidgen.1.gz
 @exec mkdir -p %D/etc/dbus-1/system.d
 @exec mkdir -p %D/share/dbus-1/interfaces
 @exec mkdir -p %D/share/dbus-1/services
