@@ -11,8 +11,10 @@ MASTER_SITES=	GOOGLE_CODE \
 MAINTAINER=	kaiwang27@gmail.com
 COMMENT=	Userland USB HID device driver using libusb20
 
+LICENSE=	BSD2CLAUSE
+
 BUILD_DEPENDS=	cuse4bsd-kmod>=0.1.24:${PORTSDIR}/multimedia/cuse4bsd-kmod
-LIB_DEPENDS=	cuse4bsd:${PORTSDIR}/multimedia/cuse4bsd-kmod
+LIB_DEPENDS=	libcuse4bsd.so:${PORTSDIR}/multimedia/cuse4bsd-kmod
 
 OPTIONS_DEFINE=	DEVD
 OPTIONS_DEFAULT=	DEVD
