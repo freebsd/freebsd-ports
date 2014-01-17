@@ -3,7 +3,7 @@
 
 PORTNAME=	lua
 PORTVERSION=	5.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.lua.org/ftp/
 PKGNAMESUFFIX=	52
@@ -35,6 +35,7 @@ MAKE_ARGS+=	MYCFLAGS="${CFLAGS} -DLUA_USE_LINUX" \
 		LUAC_T=luac52 \
 		LUA_A=liblua-${LUA_VER}.a \
 		LUA_SO=liblua-${LUA_VER}.so \
+		LUA_SONAME=liblua-${LUA_VER}.so \
 		TO_BIN="lua52 luac52" \
 		TO_LIB="liblua-${LUA_VER}.a liblua-${LUA_VER}.so" \
 		INSTALL_TOP=${STAGEDIR}${PREFIX} \
