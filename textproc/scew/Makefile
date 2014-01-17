@@ -2,29 +2,32 @@
 # $FreeBSD$
 
 PORTNAME=	scew
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	textproc
 MASTER_SITES=	SAVANNAH/${PORTNAME}/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Simple C Expat Wrapper
 
-LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
+LICENSE=	LGPL21
+
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USES=		pathfix
+USES=		gmake pathfix
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 SCEW_EXAMPLES=	print stream write
 
-NO_STAGE=	yes
 post-install:
 .for ex in ${SCEW_EXAMPLES}
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/${PORTNAME}_${ex}/${PORTNAME}_${ex} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/${PORTNAME}_${ex}/${PORTNAME}_${ex} ${STAGEDIR}${PREFIX}/bin
 .endfor
+
+regression-test: build
+	cd ${WRKSRC}/tests && ${GMAKE} check
 
 .include <bsd.port.pre.mk>
 
