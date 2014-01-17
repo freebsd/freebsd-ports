@@ -22,7 +22,6 @@ DATADIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	majesty
 PORTDOCS=	README README.licenses EULA
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-extract:
@@ -35,15 +34,14 @@ do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/bin/Linux/x86/maj_demo.dynamic
 
 do-install:
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/bin/Linux/x86 && \
-		${INSTALL_PROGRAM} maj_demo maj_demo.dynamic ${DATADIR}
-	@${INSTALL_PROGRAM} ${WRKDIR}/majesty ${PREFIX}/bin/${PKGNAMEPREFIX}majesty
-	@${CP} -R ${WRKSRC}/quests ${DATADIR}
-	@${CP} -R ${WRKSRC}/data ${DATADIR}
-.if !defined (NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+		${INSTALL_PROGRAM} maj_demo maj_demo.dynamic ${STAGEDIR}${DATADIR}
+	@${INSTALL_PROGRAM} ${WRKDIR}/majesty \
+		${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}majesty
+	@${CP} -R ${WRKSRC}/quests ${STAGEDIR}${DATADIR}
+	@${CP} -R ${WRKSRC}/data ${STAGEDIR}${DATADIR}
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

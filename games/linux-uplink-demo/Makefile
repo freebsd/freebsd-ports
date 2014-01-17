@@ -28,7 +28,6 @@ DOCFILES=	license.txt mods.txt Readme-UplinkSupport.txt readme.txt
 OPTIONS_DEFINE=	NVIDIA
 NVIDIA_DESC=	support for nvidia
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNVIDIA}
@@ -47,17 +46,16 @@ do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/lib/uplink.bin.x86
 
 do-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/lib && \
-		${INSTALL_PROGRAM} uplink.bin.x86 libftgl.so.0 ${DATADIR} && \
-		${INSTALL_DATA} *.dat ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKDIR}/uplink ${PREFIX}/bin/${PKGNAMEPREFIX}uplink
-.if !defined (NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+		${INSTALL_PROGRAM} uplink.bin.x86 libftgl.so.0 ${STAGEDIR}${DATADIR} && \
+		${INSTALL_DATA} *.dat ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKDIR}/uplink \
+		${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}uplink
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}/${file}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}/${file}
 .endfor
-.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

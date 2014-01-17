@@ -22,7 +22,6 @@ DATADIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	hdb
 PORTDOCS=	README README.licenses README.unixthanks license.txt
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-extract:
@@ -35,16 +34,15 @@ do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/bin/Linux/x86/hdb_demo.dynamic
 
 do-install:
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/bin/Linux/x86 && \
-		${INSTALL_PROGRAM} hdb_demo hdb_demo.dynamic ${DATADIR}
-	@${INSTALL_PROGRAM} ${WRKDIR}/hdb ${PREFIX}/bin/${PKGNAMEPREFIX}hdb
-	@${CP} -R ${WRKSRC}/Resources ${DATADIR}
-	@${CP} -R ${WRKSRC}/music ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/hyperdemo.mpc ${DATADIR}
-.if !defined (NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+		${INSTALL_PROGRAM} hdb_demo hdb_demo.dynamic ${STAGEDIR}${DATADIR}
+	@${INSTALL_PROGRAM} ${WRKDIR}/hdb \
+		${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}hdb
+	@${CP} -R ${WRKSRC}/Resources ${STAGEDIR}${DATADIR}
+	@${CP} -R ${WRKSRC}/music ${STAGEDIR}${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/hyperdemo.mpc ${STAGEDIR}${DATADIR}
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

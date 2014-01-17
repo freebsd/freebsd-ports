@@ -24,9 +24,6 @@ PORTDOCS=	README README.licenses README.unixthanks license.txt
 LIBFILES=	libcrypto.so.0.9.8 libgrapple-0.9.so.2 liblua.so liblualib.so \
 		libssl.so.0.9.8
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@cd ${WRKSRC} && ${TAIL} +377 ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
@@ -36,17 +33,16 @@ do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/bin/Linux/x86/Bin/candycruncher_demo
 
 do-install:
-	@${MKDIR} ${DATADIR}/Bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Bin
 	@cd ${WRKSRC}/bin/Linux/x86/Bin && \
-		${INSTALL_PROGRAM} candycruncher_demo ${DATADIR}/Bin
-	@${INSTALL_PROGRAM} ${WRKDIR}/candycruncher ${PREFIX}/bin/${PKGNAMEPREFIX}candycruncher
-	@${CP} -R ${WRKSRC}/Resources ${DATADIR}
-	@${MKDIR} ${DATADIR}/lib/lib1
+		${INSTALL_PROGRAM} candycruncher_demo ${STAGEDIR}${DATADIR}/Bin
+	@${INSTALL_PROGRAM} ${WRKDIR}/candycruncher \
+		${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}candycruncher
+	@${CP} -R ${WRKSRC}/Resources ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/lib/lib1
 	@cd ${WRKSRC}/lib/lib1/ && \
-		${CP} ${LIBFILES} ${DATADIR}/lib/lib1
-.if !defined (NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+		${CP} ${LIBFILES} ${STAGEDIR}${DATADIR}/lib/lib1
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

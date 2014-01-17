@@ -25,7 +25,6 @@ DATFILES=	adjust.dat demo1.jpg demo2.jpg demo3.jpg
 OPTIONS_DEFINE=	NVIDIA DOCS
 NVIDIA_DESC=	Enable nvidia graphics driver support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNVIDIA}
@@ -46,18 +45,18 @@ do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/bin/Linux/x86/gorky17_demo.dynamic
 
 do-install:
-	@${MKDIR} ${DATADIR}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}/bin
 	@cd ${WRKSRC}/bin/Linux/x86 && \
-		${INSTALL_PROGRAM} gorky17_demo gorky17_demo.dynamic ${DATADIR}/bin
-	@${CP} -R ${WRKSRC}/data/avi ${DATADIR}/
-	@${CP} -R ${WRKSRC}/data/dat ${DATADIR}/
+		${INSTALL_PROGRAM} gorky17_demo gorky17_demo.dynamic \
+		${STAGEDIR}${DATADIR}/bin
+	@${CP} -R ${WRKSRC}/data/avi ${STAGEDIR}${DATADIR}/
+	@${CP} -R ${WRKSRC}/data/dat ${STAGEDIR}${DATADIR}/
 .for file in ${DATFILES}
-	@${INSTALL_DATA} ${WRKSRC}/data/${file} ${DATADIR}/${file}
+	@${INSTALL_DATA} ${WRKSRC}/data/${file} ${STAGEDIR}${DATADIR}/${file}
 .endfor
-	@${INSTALL_PROGRAM} ${WRKDIR}/gorky17 ${PREFIX}/bin/${PKGNAMEPREFIX}gorky17
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	@${INSTALL_PROGRAM} ${WRKDIR}/gorky17 \
+		${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}gorky17
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

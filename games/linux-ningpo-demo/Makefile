@@ -22,7 +22,6 @@ DATADIR=	${PREFIX}/lib/${PKGNAMEPREFIX}${PORTNAME}
 SUB_FILES=	ningpo
 PORTDOCS=	README README.licenses license.txt
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-extract:
@@ -35,14 +34,14 @@ do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/bin/Linux/x86/Bin/ningpo_demo.dynamic
 
 do-install:
-	@${MKDIR} ${DATADIR}/Bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Bin
 	@cd ${WRKSRC}/bin/Linux/x86/Bin && \
-		${INSTALL_PROGRAM} ningpo_demo ningpo_demo.dynamic ${DATADIR}/Bin
-	@${INSTALL_PROGRAM} ${WRKDIR}/ningpo ${PREFIX}/bin/${PKGNAMEPREFIX}ningpo
-	@${CP} -R ${WRKSRC}/Resources ${DATADIR}
-.if !defined (NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+		${INSTALL_PROGRAM} ningpo_demo ningpo_demo.dynamic \
+		${STAGEDIR}${DATADIR}/Bin
+	@${INSTALL_PROGRAM} ${WRKDIR}/ningpo \
+		${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}ningpo
+	@${CP} -R ${WRKSRC}/Resources ${STAGEDIR}${DATADIR}
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
