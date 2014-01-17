@@ -1913,7 +1913,6 @@
     SUBDIR += squirm
     SUBDIR += srg
     SUBDIR += subsonic
-    SUBDIR += suphp
     SUBDIR += surf
     SUBDIR += surfraw
     SUBDIR += sventon
