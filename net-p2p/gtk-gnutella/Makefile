@@ -24,9 +24,6 @@
 #
 # WITH_DBUS: Enable D-Bus IPC support. No further information available.
 #
-# WITH_SQLITE: Enable to support storage of run-time information to a SQLite
-#       database file. Should ideally save some memory.
-#
 # WITH_DEBUG: Compile with debugging symbols. Useful if you intend to make
 #	a bug report.
 #
@@ -36,8 +33,7 @@
 #
 
 PORTNAME=	gtk-gnutella
-PORTVERSION=	0.98.4
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF
 
@@ -46,29 +42,32 @@ COMMENT=	GTK based Gnutella client
 
 LICENSE=	GPLv2 # (or later)
 
-OPTIONS_DEFINE=	GUI TLS NLS IPV6 DBUS SQLITE DEBUG PORTABILITY
+OPTIONS_DEFINE=	GUI TLS NLS IPV6 DBUS DEBUG PORTABILITY
 OPTIONS_DEFAULT=GUI TLS
+OPTIONS_SUB=	yes
 PORTABILITY_DESC=	Use the PATH variable at run-time
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-NO_STAGE=	yes
 USE_BZIP2=	yes
+USES=		iconv perl5 pkgconfig
 USE_GNOME=	glib20 libxml2
-USES=		bison perl5 pkgconfig
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
-CONFIGURE_ARGS=	-O -Dyacc='bison -y' -Dprefix=${PREFIX} \
-		-Dprivlib=${DATADIR} -Dsysman=${MANPREFIX}/man/man1 \
-		-Dlocale=${PREFIX}/share/locale -Dcc='${CC}' \
-		-Dccflags='${CFLAGS} -I${LOCALBASE}/include' \
-		-Doptimize='undef'
+CONFIGURE_ARGS=	-O -Dyacc='byacc' \
+		-Dprefix=${STAGEDIR}${PREFIX} \
+		-Dprivlib=${STAGEDIR}${DATADIR} \
+		-Dmansrc=${STAGEDIR}${MANPREFIX}/man/man1 \
+		-Dlocale=${PREFIX}/share/locale \
+		-Dcc='${CC}' -Doptimize='${CFLAGS}' \
+		-Dccflags='${CPPFLAGS}' -Dldflags='${LDFLAGS}'
 INSTALL_TARGET=	install install.man
 MAKE_JOBS_UNSAFE=	yes
 
-PLIST_SUB=	ARCH="${ARCH}"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		gtk-gnutella.1
+PLIST_SUB=	ARCH="${ARCH}"
 
 .include <bsd.port.options.mk>
 
@@ -77,51 +76,57 @@ CONFIGURE_ARGS+=	-ders
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	-D optimize=-g  -D official=false
-.else
-CONFIGURE_ARGS+=	-D official=true
+CONFIGURE_ARGS+=	-Ud_official
 .endif
 
 .if ${PORT_OPTIONS:MGUI}
 USE_GNOME+=		gtk20
-CONFIGURE_ARGS+=	-D gtkversion=2
+INSTALLS_ICONS=	yes
 .else
-CONFIGURE_ARGS+=	-D d_headless
+CONFIGURE_ARGS+=	-Dd_headless
 .endif
 
 .if ${PORT_OPTIONS:MPORTABILITY}
-CONFIGURE_ARGS+=	-D d_portable
+CONFIGURE_ARGS+=	-Dd_portable
 .endif
 
 .if ${PORT_OPTIONS:MTLS}
-LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		libgnutls.so:${PORTSDIR}/security/gnutls
 .else
-CONFIGURE_ARGS+=	-U d_gnutls
+CONFIGURE_ARGS+=	-Ud_gnutls
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
-CONFIGURE_ARGS+=	-D d_nls
-PLIST_SUB+=		NLS=""
 .else
-CONFIGURE_ARGS+=	-U d_nls
-PLIST_SUB+=		NLS="@comment "
+CONFIGURE_ARGS+=	-Ud_nls
 .endif
 
 .if empty(PORT_OPTIONS:MIPV6)
-CONFIGURE_ARGS+=	-D ipv6=false
+CONFIGURE_ARGS+=	-Ud_ipv6
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=		dbus:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=		libdbus.so:${PORTSDIR}/devel/dbus
 .else
-CONFIGURE_ARGS+=	-U d_dbus
+CONFIGURE_ARGS+=	-Ud_dbus
 .endif
 
-.if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=		yes
-.else
-CONFIGURE_ARGS+=	-U d_sqlite
+post-patch:
+	@${FIND} ${WRKSRC} -name "Makefile.SH" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|@exit 0|@echo done|'
+
+post-install:
+.if ${PORT_OPTIONS:MGUI}
+.for i in 16 32 128 256 512
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}x${i}/apps
+	(cd ${WRKSRC}/extra_files && ${INSTALL_DATA} gtk-gnutella.${i}.png \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/${i}x${i}/apps/gtk-gnutella.png)
+.endfor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	(cd ${WRKSRC}/extra_files && ${INSTALL_DATA} gtk-gnutella.svg \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/gtk-gnutella.svg)
 .endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gtk-gnutella
 
 .include <bsd.port.mk>
