@@ -1,5 +1,5 @@
---- src/HeadMMX.h.orig	Thu Aug 30 19:26:59 2007
-+++ src/HeadMMX.h	Thu Aug 30 19:27:59 2007
+--- ./src/HeadMMX.h.orig	2000-12-06 05:55:28.000000000 +0100
++++ ./src/HeadMMX.h	2014-01-17 03:59:56.000000000 +0100
 @@ -51,7 +51,7 @@
  
  /* Fix the underscore business with ELF compilers */
