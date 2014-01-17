@@ -38,9 +38,9 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of devel/libical
   AUTHOR: kwm@FreeBSD.org
 
-  The libical ports was updated to 1.0.0. Due to the shared library bump
-  and the removal of the .la file. All ports that use libical need to be
-  rebuild.
+  The libical port was updated to 1.0.0. Due to the shared library bump
+  and the removal of the .la file, all ports that use libical need to be
+  rebuilt.
 
   # portmaster -r libical
    or
