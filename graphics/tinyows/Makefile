@@ -2,19 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=		tinyows
-PORTVERSION=		1.0.0
-PORTREVISION=		2
+PORTVERSION=		1.1.0
 CATEGORIES=		graphics www geography
-MASTER_SITES=		http://tinyows.org/release/
+MASTER_SITES=		http://download.osgeo.org/mapserver/
 
 MAINTAINER=		joris.dedieu@gmail.com
 COMMENT=		High Performance WFS-T server
 
-LIB_DEPENDS=		xml2:${PORTSDIR}/textproc/libxml2
-BUILD_DEPENDS=		${LOCALBASE}/lib/postgresql/postgis-1.5.so:${PORTSDIR}/databases/postgis
-
-DEPRECATED=		Depends on expired databases/postgis
-EXPIRATION_DATE=	2014-01-16
+LIB_DEPENDS=		libxml2.so:${PORTSDIR}/textproc/libxml2
+BUILD_DEPENDS=		${LOCALBASE}/lib/postgresql/postgis-2.1.so:${PORTSDIR}/databases/postgis21
 
 USE_BZIP2=		YES
 GNU_CONFIGURE=		YES
@@ -22,7 +18,6 @@ GNU_CONFIGURE=		YES
 OPTIONS_DEFINE=		FASTCGI
 OPTIONS_DEFAULT=	FASTCGI
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFASTCGI}
@@ -31,7 +26,7 @@ CONFIGURE_ARGS+=	--with-fastcgi=${LOCALBASE}
 .endif
 
 post-install:
-	${MKDIR} ${WWWDIR}/cgi-bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/tinyows ${WWWDIR}/cgi-bin/tinyows
+	${MKDIR} ${STAGEDIR}${WWWDIR}/cgi-bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/tinyows ${STAGEDIR}${WWWDIR}/cgi-bin/tinyows
 
 .include <bsd.port.mk>
