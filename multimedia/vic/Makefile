@@ -14,10 +14,9 @@ COMMENT=	MBone video conferencing tool
 BUILD_DEPENDS=	v4l_compat>=1.0.20060801:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	libuclmmbase.so:${PORTSDIR}/devel/uclmmbase
 
-USES=		gmake	# parallel builds (-jX) are broken with BSD make(1)
+USES=		gmake tk:84 # parallel builds (-jX) are broken with BSD make(1)
+USE_OPENSSL=	yes
 USE_AUTOTOOLS=	autoconf213
-USE_TK=		84
-USE_TK_BUILD=	84
 USE_XORG=	xext
 CONFIGURE_ARGS=	-x-libraries=${LOCALBASE}/lib \
 		-x-includes=${LOCALBASE}/include \
@@ -26,10 +25,8 @@ CONFIGURE_ARGS=	-x-libraries=${LOCALBASE}/lib \
 		-without-ucltk \
 		-with-tk=${LOCALBASE} \
 		-enable-ipv6
+MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 
-MAN1=		vic.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,^main,int &,' ${WRKSRC}/tcl/tcl2cpp/tcl2cpp.c
 	${RM} ${WRKSRC}/md5*

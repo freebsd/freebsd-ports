@@ -46,9 +46,9 @@
 -	 chown bin @prefix@/bin/histtolut
 -	 chgrp bin @prefix@/bin/histtolut
 -	 chmod 555 @prefix@/bin/histtolut
-+	 ${BSD_INSTALL_PROGRAM} vic @prefix@/bin/vic
-+	 ${BSD_INSTALL_MAN} vic.1 @prefix@/man/man1/vic.1
-+	 ${BSD_INSTALL_PROGRAM} histtolut @prefix@/bin/histtolut
++	 ${BSD_INSTALL_PROGRAM} vic ${STAGEDIR}@prefix@/bin/vic
++	 ${BSD_INSTALL_MAN} vic.1 ${STAGEDIR}@prefix@/man/man1/vic.1
++	 ${BSD_INSTALL_PROGRAM} histtolut ${STAGEDIR}@prefix@/bin/histtolut
  
  clean:
  	rm -f *.o codec/jpeg/*.o codec/p64/*.o codec/h263/*.o \
