@@ -9,7 +9,7 @@ COMMENT=	Feature-rich compositing window manager for X11
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	config:${PORTSDIR}/devel/libconfig
+LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig
 RUN_DEPENDS=	xprop:${PORTSDIR}/x11/xprop \
 		xwininfo:${PORTSDIR}/x11/xwininfo
 
@@ -32,17 +32,16 @@ PCRE_DESC=	Blacklist support (via libpcre)
 DRM_DESC=	DRM support
 DOCS_DESC=	Build manpages (requires AsciiDoc/DocBook)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 .else
 MAKE_ARGS+=	NO_REGEX_PCRE=yes
 .endif
 
 .if ${PORT_OPTIONS:MDRM}
-LIB_DEPENDS+=	drm:${PORTSDIR}/graphics/libdrm
+LIB_DEPENDS+=	libdrm.so:${PORTSDIR}/graphics/libdrm
 .else
 MAKE_ARGS+=	NO_VSYNC_DRM=yes
 .endif
@@ -54,7 +53,7 @@ MAKE_ARGS+=	NO_VSYNC_OPENGL=yes
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus-1:${PORTSDIR}/devel/dbus
+LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus
 .else
 MAKE_ARGS+=	NO_DBUS=yes
 .endif
@@ -66,7 +65,7 @@ BUILD_DEPENDS=	a2x:${PORTSDIR}/textproc/asciidoc \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 MAKE_ARGS+=	DOCDIR=${DOCSDIR} MANDIR=${MANPREFIX}/man/man1
 ALL_TARGET+=	docs
-MAN1=		compton.1 compton-trans.1
+PLIST_FILES+=	man/man1/compton.1.gz man/man1/compton-trans.1.gz
 PORTDOCS=	README.md cdbus-driver.sh
 .endif
 
