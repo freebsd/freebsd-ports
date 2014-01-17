@@ -863,7 +863,6 @@ otrs/scripts/test/Encode.t
 otrs/scripts/test/FileTemp.t
 otrs/scripts/test/GenericAgent.t
 otrs/scripts/test/Group.t
-otrs/scripts/test/HTMLUtils.t
 otrs/scripts/test/JSON.t
 otrs/scripts/test/Language.t
 otrs/scripts/test/Layout.t
