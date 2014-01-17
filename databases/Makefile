@@ -656,7 +656,6 @@
     SUBDIR += phpminiadmin
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
-    SUBDIR += postgis
     SUBDIR += postgis20
     SUBDIR += postgis21
     SUBDIR += postgis-jdbc
