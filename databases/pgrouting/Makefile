@@ -21,8 +21,6 @@ USES=		cmake pkgconfig
 USE_PGSQL=	yes
 USE_LDCONFIG=	yes
 
-FETCH_ARGS=	-Fpr
-
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
