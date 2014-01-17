@@ -12,7 +12,6 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MOD/S3M player
 
-NO_STAGE=	yes
 ALL_TARGET=	freebsd
 PLIST_FILES=	bin/s3mod
 
@@ -20,6 +19,6 @@ pre-patch:
 	@${CP} ${WRKSRC}/DspDrivers/linux_dsp.c ${WRKSRC}/dsp.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/s3mod ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/s3mod ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
