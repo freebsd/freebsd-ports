@@ -12,7 +12,7 @@ DISTFILES=	gnubg-source-MAIN-20070601.tar.gz:src \
 		gnubg_ts0.bd.gz:ts
 EXTRACT_ONLY=	gnubg-source-MAIN-20070601.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	GNU Backgammon
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
