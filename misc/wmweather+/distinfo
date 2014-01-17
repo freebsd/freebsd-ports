@@ -1,2 +1,4 @@
-SHA256 (wmweather%2B-2.13.tar.gz) = d15d8f491022e2f092d91a3a463b3200a4ac620ac93b0ecff796751d28e997d2
-SIZE (wmweather%2B-2.13.tar.gz) = 195094
+SHA256 (wmweather+-2.15.tar.gz) = 3e7931527a1b5e8def17abc2987ec43508a2cc3394c2f340b6e0062e5bfadbd1
+SIZE (wmweather+-2.15.tar.gz) = 209258
+SHA256 (wmweather+.png) = 4330af568e7b460882c6afeee9aadd2b71ec01cbbdc649819b96d049be48288b
+SIZE (wmweather+.png) = 5730
