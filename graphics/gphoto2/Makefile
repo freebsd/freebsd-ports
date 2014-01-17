@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gphoto2
-PORTVERSION=	2.4.14
+PORTVERSION=	2.5.3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/gphoto/${PORTVERSION}
 
@@ -14,26 +14,33 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
 
-USES=		gmake pkgconfig
 USE_BZIP2=	yes
+USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	POPT_CFLAGS="$$(pkg-config --cflags popt)" \
+		POPT_LIBS="$$(pkg-config --libs popt)"
 CONFIGURE_ARGS=	--without-cdk
-CONFIGURE_ENV=	POPT_CFLAGS="-I${LOCALBASE}/include" \
-		POPT_LIBS="-L${LOCALBASE}/lib -lpopt"
 
-OPTIONS_DEFINE=	AALIB DOCS NLS
-OPTIONS_DEFAULT=	AALIB
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		AALIB DOCS NLS READLINE
+OPTIONS_DEFAULT=	AALIB READLINE
+OPTIONS_SUB=		yes
 
-AALIB_DESC=	Text mode capture preview support
-
+AALIB_DESC=		Text mode capture preview support
 AALIB_LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib
-AALIB_CONFIGURE_OFF=	--without-aalib
+AALIB_CONFIGURE_WITH=	aalib
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+READLINE_USES=		readline
+READLINE_CONFIGURE_WITH=	readline
 
-NLS_USES=	gettext
-NLS_CONFIGURE_OFF=	--disable-nls
+.include <bsd.port.options.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|-lpthread|-pthread|' \
+		${WRKSRC}/configure
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} NEWS ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
