@@ -1,4 +1,5 @@
 bin/dvdstyler
+man/man1/dvdstyler.1.gz
 share/applications/dvdstyler.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -97,6 +98,7 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/docs/help_en.zip
 %%DATADIR%%/docs/help_fi.zip
 %%DATADIR%%/docs/help_fr.zip
+%%DATADIR%%/docs/help_hu.zip
 %%DATADIR%%/docs/help_it.zip
 %%DATADIR%%/docs/help_ja.zip
 %%DATADIR%%/docs/help_nb.zip
@@ -126,6 +128,9 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/rc/dvdstyler.png
 %%DATADIR%%/rc/files.png
 %%DATADIR%%/rc/help.png
+%%DATADIR%%/rc/justifyCenter.png
+%%DATADIR%%/rc/justifyLeft.png
+%%DATADIR%%/rc/justifyRight.png
 %%DATADIR%%/rc/logo.png
 %%DATADIR%%/rc/logoSmall.png
 %%DATADIR%%/rc/minus.png
@@ -158,7 +163,11 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/templates/Travel/travel.png
 %%DATADIR%%/templates/Travel/travelWS.dvdt
 %%DATADIR%%/templates/Travel/travelWS.png
-man/man1/dvdstyler.1.gz
+%%DATADIR%%/transitions/fade.xml
+%%DATADIR%%/transitions/wipeBottomToTop.xml
+%%DATADIR%%/transitions/wipeLeftToRight.xml
+%%DATADIR%%/transitions/wipeRightToLeft.xml
+%%DATADIR%%/transitions/wipeTopToBottom.xml
 share/locale/ar/LC_MESSAGES/dvdstyler.mo
 share/locale/ca/LC_MESSAGES/dvdstyler.mo
 share/locale/cs/LC_MESSAGES/dvdstyler.mo
@@ -198,6 +207,7 @@ share/pixmaps/dvdstyler.png
 @dirrmtry share/locale/hy
 @dirrmtry share/locale/es_ar/LC_MESSAGES
 @dirrmtry share/locale/es_ar
+@dirrm %%DATADIR%%/transitions
 @dirrm %%DATADIR%%/templates/Travel
 @dirrm %%DATADIR%%/templates/Basic
 @dirrm %%DATADIR%%/templates
