@@ -1,30 +1,30 @@
 bin/gtkam
 %%GIMP%%libexec/gimp/2.2/plug-ins/gtkam-gimp
+man/man1/gtkam.1.gz
+share/applications/gtkam.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-share/applications/gtkam.desktop
-%%GNOME:%%share/gnome/help/gtkam/C/figures/gtkam_add_camera_enhanced_window.png
-%%GNOME:%%share/gnome/help/gtkam/C/figures/gtkam_add_camera_window.png
-%%GNOME:%%share/gnome/help/gtkam/C/figures/gtkam_fileinfo.png
-%%GNOME:%%share/gnome/help/gtkam/C/figures/gtkam_makedir.png
-%%GNOME:%%share/gnome/help/gtkam/C/figures/gtkam_save.png
-%%GNOME:%%share/gnome/help/gtkam/C/figures/gtkam_save_all.png
-%%GNOME:%%share/gnome/help/gtkam/C/figures/gtkam_start_window.png
-%%GNOME:%%share/gnome/help/gtkam/C/gtkam.xml
-%%GNOME:%%share/gnome/help/gtkam/C/legal.xml
-%%GNOME:%%share/gnome/help/gtkam/ru/figures/gtkam_add_camera_enhanced_window.png
-%%GNOME:%%share/gnome/help/gtkam/ru/figures/gtkam_add_camera_window.png
-%%GNOME:%%share/gnome/help/gtkam/ru/figures/gtkam_fileinfo.png
-%%GNOME:%%share/gnome/help/gtkam/ru/figures/gtkam_makedir.png
-%%GNOME:%%share/gnome/help/gtkam/ru/figures/gtkam_save.png
-%%GNOME:%%share/gnome/help/gtkam/ru/figures/gtkam_save_all.png
-%%GNOME:%%share/gnome/help/gtkam/ru/figures/gtkam_start_window.png
-%%GNOME:%%share/gnome/help/gtkam/ru/gtkam.xml
-%%GNOME:%%share/gnome/help/gtkam/ru/legal.xml
-%%GNOME:%%share/omf/gtkam/gtkam-C.omf
-%%GNOME:%%share/omf/gtkam/gtkam-ru.omf
-share/pixmaps/gtkam.png
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%GNOME%%share/gnome/help/gtkam/C/figures/gtkam_add_camera_enhanced_window.png
+%%GNOME%%share/gnome/help/gtkam/C/figures/gtkam_add_camera_window.png
+%%GNOME%%share/gnome/help/gtkam/C/figures/gtkam_fileinfo.png
+%%GNOME%%share/gnome/help/gtkam/C/figures/gtkam_makedir.png
+%%GNOME%%share/gnome/help/gtkam/C/figures/gtkam_save.png
+%%GNOME%%share/gnome/help/gtkam/C/figures/gtkam_save_all.png
+%%GNOME%%share/gnome/help/gtkam/C/figures/gtkam_start_window.png
+%%GNOME%%share/gnome/help/gtkam/C/gtkam.xml
+%%GNOME%%share/gnome/help/gtkam/C/legal.xml
+%%GNOME%%share/gnome/help/gtkam/ru/figures/gtkam_add_camera_enhanced_window.png
+%%GNOME%%share/gnome/help/gtkam/ru/figures/gtkam_add_camera_window.png
+%%GNOME%%share/gnome/help/gtkam/ru/figures/gtkam_fileinfo.png
+%%GNOME%%share/gnome/help/gtkam/ru/figures/gtkam_makedir.png
+%%GNOME%%share/gnome/help/gtkam/ru/figures/gtkam_save.png
+%%GNOME%%share/gnome/help/gtkam/ru/figures/gtkam_save_all.png
+%%GNOME%%share/gnome/help/gtkam/ru/figures/gtkam_start_window.png
+%%GNOME%%share/gnome/help/gtkam/ru/gtkam.xml
+%%GNOME%%share/gnome/help/gtkam/ru/legal.xml
 %%DATADIR%%/images/gtkam-audio.png
 %%DATADIR%%/images/gtkam-camera.png
 %%DATADIR%%/images/gtkam-folder-camera.png
@@ -59,17 +59,20 @@ share/locale/ru/LC_MESSAGES/gtkam.mo
 share/locale/sk/LC_MESSAGES/gtkam.mo
 share/locale/sl/LC_MESSAGES/gtkam.mo
 share/locale/sv/LC_MESSAGES/gtkam.mo
-share/locale/vi/LC_MESSAGES/gtkam.mo
 share/locale/uk/LC_MESSAGES/gtkam.mo
+share/locale/vi/LC_MESSAGES/gtkam.mo
 share/locale/zh_CN/LC_MESSAGES/gtkam.mo
+%%GNOME%%share/omf/gtkam/gtkam-C.omf
+%%GNOME%%share/omf/gtkam/gtkam-ru.omf
+share/pixmaps/gtkam.png
 share/pixmaps/gtkam-camera.png
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
-%%GNOME:%%@dirrm share/omf/gtkam
-%%GNOME:%%@dirrm share/gnome/help/gtkam/ru/figures
-%%GNOME:%%@dirrm share/gnome/help/gtkam/ru
-%%GNOME:%%@dirrm share/gnome/help/gtkam/C/figures
-%%GNOME:%%@dirrm share/gnome/help/gtkam/C
-%%GNOME:%%@dirrm share/gnome/help/gtkam
+%%GNOME%%@dirrm share/omf/gtkam
+%%GNOME%%@dirrm share/gnome/help/gtkam/ru/figures
+%%GNOME%%@dirrm share/gnome/help/gtkam/ru
+%%GNOME%%@dirrm share/gnome/help/gtkam/C/figures
+%%GNOME%%@dirrm share/gnome/help/gtkam/C
+%%GNOME%%@dirrm share/gnome/help/gtkam
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

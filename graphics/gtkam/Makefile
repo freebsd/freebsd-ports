@@ -2,77 +2,48 @@
 # $FreeBSD$
 
 PORTNAME=	gtkam
-PORTVERSION=	0.1.18
-PORTREVISION=	3
+PORTVERSION=	0.2.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/gphoto/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download and view files from various digital cameras
 
-LIB_DEPENDS=	exif-gtk:${PORTSDIR}/graphics/libexif-gtk \
-		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
+LICENSE=	GPLv2 # (or later)
 
-WANT_GNOME=	yes
-USES=        pathfix pkgconfig
+LIB_DEPENDS=	libexif-gtk.so:${PORTSDIR}/graphics/libexif-gtk \
+		libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
+
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	gnomehier gtk20
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		gtkam.1
+OPTIONS_DEFINE=	DOCS GIMP GNOME
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+GIMP_DESC=		GIMP plugin support
+GIMP_LIB_DEPENDS=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp
+GIMP_CONFIGURE_WITH=	gimp
 
-.if exists(${LOCALBASE}/lib/libgimp-2.0.so) && !defined(WITHOUT_GIMP)
-WITH_GIMP=	yes
-.endif
+GNOME_USE=		GNOME=gnomeprefix,libgnomeui
+GNOME_CONFIGURE_OFF=	--without-bonobo --without-gnome
+GNOME_MAKE_ENV=		GNOME_SUBDIRS="help omf-install"
 
-.if defined(WITH_GIMP)
-LIB_DEPENDS+=	gimp-2.0:${PORTSDIR}/graphics/gimp
-PLIST_SUB+=	GIMP=""
-.else
-CONFIGURE_ARGS+=	--without-gimp
-PLIST_SUB+=	GIMP="@comment "
-.endif
+.include <bsd.port.options.mk>
 
-.if ${HAVE_GNOME:Mlibgnomeui}!=""
-PKGNAMESUFFIX=	-gnome
-USE_GNOME+=	gnomeprefix libgnomeui
+.if ${PORT_OPTIONS:MGNOME}
 INSTALLS_OMF=	yes
-MAKE_ENV+=	GNOME_SUBDIRS="help omf-install"
-.else
-CONFIGURE_ARGS+=	--without-bonobo --without-gnome
-MAKE_ENV+=	GNOME_SUBDIRS=""
-.endif
-
-pre-everything::
-.if !defined(WITH_GIMP)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want to compile with plugin for The GIMP,"
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_GIMP=yes\""
-	@${ECHO_MSG}
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|GIMP_VERSION="2.0"|GIMP_VERSION="2.2"|g ; \
-		 s|images/gtkam|gtkam/images|g' ${WRKSRC}/configure
+		 s|images/gtkam|gtkam/images|g ; \
+		 s|FLAGS -g|FLAGS|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|images/gtkam|gtkam/images|g ; \
 		 s|$$(libdir)/gimp/|$$(libexecdir)/gimp/|g'
 
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/gtkam.desktop \
-		${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/gtkam.png \
-		${PREFIX}/share/pixmaps
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
