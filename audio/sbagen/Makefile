@@ -16,23 +16,16 @@ PORTDOCS=	ChangeLog.txt README.txt SBAGEN.txt TODO.txt focus.txt \
 		focus2.txt holosync.txt theory.txt theory2.txt wave.txt
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
-NO_STAGE=	yes
-
-.include <bsd.port.options.mk>
 
 do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -DT_LINUX -pthread -lm \
 		sbagen.c -o sbagen)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sbagen ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/sbagen ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
