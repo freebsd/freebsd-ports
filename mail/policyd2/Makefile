@@ -3,6 +3,7 @@
 
 PORTNAME=	policyd2
 PORTVERSION=	2.0.12
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://devlabs.linuxassist.net/attachments/download/${DOWNLOAD_FOLDER}/
 DISTNAME=	cluebringer-${PORTVERSION}
@@ -10,17 +11,24 @@ DISTNAME=	cluebringer-${PORTVERSION}
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	Policyd v2 is a multi-platform policy server for popular MTAs
 
+OPTIONS_DEFINE=	DOCS
+
 RUN_DEPENDS=	p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
 		p5-Net-CIDR>=0:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
 		p5-Config-IniFiles>=0:${PORTSDIR}/devel/p5-Config-IniFiles \
 		p5-Cache-FastMmap>=0:${PORTSDIR}/devel/p5-Cache-FastMmap
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PHP=	yes
 NO_BUILD=	yes
-USE_RC_SUBR=	policyd2
 BINMODE=	0755
+USE_RC_SUBR=	policyd2
 DOWNLOAD_FOLDER=	222
+BASH_CMD=	/bin/sh
+SHEBANG_FILES=	cbpadmin \
+		cbpolicyd \
+		database/convert-tsql \
+		database/whitelists/parse*
 
 WEBUIDIR=	${PREFIX}/www/policyd
 PORTDOCS=	AUTHORS ChangeLog INSTALL TODO WISHLIST
@@ -29,49 +37,30 @@ PORTDATA=	*
 OPTIONS_DEFINE=	MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	MYSQL
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 USE_PHP=	pdo_mysql
-.if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
-.endif
-.if ${PORT_OPTIONS:MSQLITE}
-RUN_DEPENDS+=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
-.endif
-.if ${PORT_OPTIONS:MPGSQL}
-RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
-.endif
+MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+SQLITE_RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
+PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 
 post-patch:
 	@${REINPLACE_CMD} 's|/etc|${PREFIX}/etc|' ${WRKSRC}/cbpadmin \
 		${WRKSRC}/cbpolicyd
 
 do-install:
-	@${INSTALL} -d ${WEBUIDIR} ${SITE_PERL}/cbp
-	@cd ${WRKSRC}/webui && ${COPYTREE_SHARE} \* ${WEBUIDIR}
-	@cd ${WRKSRC}/cbp && ${COPYTREE_SHARE} \* ${SITE_PERL}/cbp
-	${INSTALL_SCRIPT} ${WRKSRC}/cbpadmin ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/cbpolicyd ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/cluebringer.conf ${PREFIX}/etc/cluebringer.conf.sample
-
-post-install:
-	@if [ ! -f ${PREFIX}/etc/cluebringer.conf ]; then \
-		${INSTALL_DATA} -m 666 ${PREFIX}/etc/cluebringer.conf.sample ${PREFIX}/etc/cluebringer.conf ;\
-	fi
-
-.if !defined(NOPORTDATA)
-	@${INSTALL} -d ${DATADIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} contrib ${DATADIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} database ${DATADIR}
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	@${INSTALL} -d ${STAGEDIR}${WEBUIDIR} ${STAGEDIR}${SITE_PERL}/cbp
+	cd ${WRKSRC}/webui && ${COPYTREE_SHARE} \* ${STAGEDIR}${WEBUIDIR}
+	cd ${WRKSRC}/cbp && ${COPYTREE_SHARE} \* ${STAGEDIR}${SITE_PERL}/cbp
+	${INSTALL_SCRIPT} ${WRKSRC}/cbpadmin ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/cbpolicyd ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/cluebringer.conf ${STAGEDIR}${PREFIX}/etc/cluebringer.conf.sample
+	@${INSTALL} -d ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} contrib ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} database ${STAGEDIR}${DATADIR}
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Please check INSTALL file to configure!"
 	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
