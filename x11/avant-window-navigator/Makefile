@@ -57,8 +57,6 @@ CONFIGURE_ARGS+=	--with-gconf
 CONFIGURE_ARGS+=	--without-gconf
 .endif
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|#!/usr/bin/python|#!/usr/bin/env python|' \
 		${WRKSRC}/awn-manager/awnManager.py.in \
@@ -72,4 +70,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|glib/gutils.h>|glib.h>|g' \
 		${WRKSRC}/libawn/awn-config-client-gkeyfile.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
