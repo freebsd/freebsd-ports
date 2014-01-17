@@ -1,5 +1,5 @@
---- src/HeadX86.h.orig	Thu Aug 30 19:28:22 2007
-+++ src/HeadX86.h	Thu Aug 30 19:28:44 2007
+--- ./src/HeadX86.h.orig	2000-12-06 05:55:28.000000000 +0100
++++ ./src/HeadX86.h	2014-01-17 03:59:56.000000000 +0100
 @@ -83,7 +83,7 @@
  
  /* Now fix up the ELF underscore problem */
