@@ -1,5 +1,5 @@
---- src/pngwriter.cc.orig	2009-02-10 22:45:16.000000000 +0100
-+++ src/pngwriter.cc	2012-05-07 20:50:38.000000000 +0200
+--- ./src/pngwriter.cc.orig	2009-02-10 22:45:16.000000000 +0100
++++ ./src/pngwriter.cc	2014-01-17 01:17:46.000000000 +0100
 @@ -988,19 +988,19 @@
     time(&gmt);
     png_convert_from_time_t(&mod_time, gmt);

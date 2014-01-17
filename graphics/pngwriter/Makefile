@@ -10,14 +10,14 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	C++ library for creating PNG images
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 USES=		pkgconfig
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-CXXFLAGS+=	`pkg-config --cflags freetype2 libpng15` -I${LOCALBASE}/include
+CXXFLAGS+=	`pkg-config --cflags freetype2 libpng15` -I${LOCALBASE}/include -w
 
 PLIST_FILES=	include/pngwriter.h \
 		lib/libpngwriter.a \
@@ -29,8 +29,7 @@ PLIST_DIRS=	%%DATADIR%%/fonts \
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-extract:
 	@${FIND} ${WRKSRC} -name "\.*" -delete
@@ -41,18 +40,11 @@ do-build:
 		&& ${AR} rv libpngwriter.a pngwriter.o
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/src/pngwriter.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/src/libpngwriter.a ${PREFIX}/lib
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} fonts ${DATADIR})
+	${INSTALL_DATA} ${WRKSRC}/src/pngwriter.h ${STAGEDIR}${PREFIX}/include/
+	${INSTALL_DATA} ${WRKSRC}/src/libpngwriter.a ${STAGEDIR}${PREFIX}/lib/
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} fonts ${STAGEDIR}${DATADIR})
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR})
-.endif
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
-.endif
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
