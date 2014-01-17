@@ -7,12 +7,9 @@ CATEGORIES=	devel
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A set of portable software build utilities
+COMMENT=	Set of portable software build utilities
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-p ${PREFIX} -d ${DOCSDIR}
 
-MAN1=		buildtool.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
