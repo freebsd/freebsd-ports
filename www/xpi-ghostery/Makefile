@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	ghostery
-PORTVERSION=	5.0.4
-DISTVERSIONSUFFIX=-fx+an
+PORTVERSION=	5.0.6
+DISTVERSIONSUFFIX= -an+fx
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clutton@zoho.com
 COMMENT=	Alerts/Block web bugs, ad and widgets
 
 XPI_NUM=	9609
