@@ -18,40 +18,29 @@ GNU_CONFIGURE=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=		le.1
 PORTDOCS=	*
 PORTDATA=	*
-PLIST_FILES=	bin/le
+PLIST_FILES=	bin/le \
+		man/man1/le.1.gz
 
 MISC_DATA=	colors-black colors-blue colors-defbg colors-green \
 		colors-white keymap-emacs mainmenu mainmenu-ru syntax
 SRC_DATA=	le.hlp
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-BROKEN=		does not compile on FreeBSD 7.x
-.endif
-
 do-install:
-	cd ${WRKSRC}/src && ${INSTALL_PROGRAM} le ${PREFIX}/bin
-	cd ${WRKSRC}/doc && ${INSTALL_MAN} le.1 ${MANPREFIX}/man/man1
-.if !defined(NOPORTDATA)
-	@${MKDIR} ${DATADIR}
-.for file in ${MISC_DATA}
-	cd ${WRKSRC}/misc && ${INSTALL_DATA} ${file} ${DATADIR}
+	cd ${WRKSRC}/src && ${INSTALL_PROGRAM} le ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC}/doc && ${INSTALL_MAN} le.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+.for file in ${STAGEDIR}${MISC_DATA}
+	cd ${WRKSRC}/misc && ${INSTALL_DATA} ${file} ${STAGEDIR}${DATADIR}
 .endfor
 	@(cd ${WRKSRC}/misc && ${COPYTREE_SHARE} syntax.d ${DATADIR})
 .for file in ${SRC_DATA}
-	cd ${WRKSRC}/src && ${INSTALL_DATA} ${file} ${DATADIR}
+	cd ${WRKSRC}/src && ${INSTALL_DATA} ${file} ${STAGEDIR}${DATADIR}
 .endfor
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in FEATURES HISTORY NEWS README TODO
-	cd ${WRKSRC} && ${INSTALL_DATA} ${file} ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
