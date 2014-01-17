@@ -11,15 +11,13 @@ MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Fast MP3 encoder kit
 
 USES=		gmake iconv
-NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-nasm --enable-mp3rtp --disable-gtktest
+CONFIGURE_ARGS_PREFIX=	${STAGEDIR}${PREFIX}
 
 RESTRICTED=	patent issues, see http://www.mp3licensing.com/
-
-MAN1=		lame.1
 
 DOC_FILES=	API LICENSE README TODO USAGE
 
@@ -46,9 +44,9 @@ do-install:
 post-install: install-doc
 
 install-doc:
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
