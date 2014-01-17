@@ -9,7 +9,7 @@ MASTER_SITES=	http://launchpadlibrarian.net/100761063/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A bzr plugin to construct a bzr branch based on a "recipe"
+COMMENT=	Bzr plugin to construct a bzr branch based on a "recipe"
 
 LICENSE=	GPLv3
 
@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	bzr_builder
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
