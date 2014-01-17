@@ -13,14 +13,14 @@ DISTNAME=	OpenSceneGraph-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ OpenGL scene graph library for real-time rendering
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
 CONFLICTS=	osg-[0-9]*
 
 USE_ZIP=	yes
-USES=		cmake pkgconfig
+USES=		cmake:outsource pkgconfig
 USE_GL=		gl glu
 USE_XORG=	x11
 USE_LDCONFIG=	yes
@@ -45,7 +45,6 @@ OPTIONS_DEFAULT=	FREETYPE GIF XRANDR
 # broken (openvrml from ports is too old)
 #		OPENVRML "Support for OpenVRML"             off
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # GUI toolkits are only needed for building examples, which are not even installed
@@ -56,7 +55,7 @@ FORCE_REQUIRE=	Threads OpenGL X11 JPEG PNG TIFF ZLIB        # common & lightweig
 # options that affect FIND_PACKAGE
 .if ${PORT_OPTIONS:MCURL}
 FORCE_REQUIRE+=	CURL
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 PLIST_SUB+=	CURL=""
 .else
 FORCE_IGNORE+=	CURL
@@ -65,7 +64,7 @@ PLIST_SUB+=	CURL="@comment "
 
 .if ${PORT_OPTIONS:MFREETYPE}
 FORCE_REQUIRE+=	FreeType
-LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
 PLIST_SUB+=	FREETYPE=""
 .else
 FORCE_IGNORE+=	FreeType
@@ -74,7 +73,7 @@ PLIST_SUB+=	FREETYPE="@comment "
 
 .if ${PORT_OPTIONS:MGDAL}
 FORCE_REQUIRE+=	GDAL
-LIB_DEPENDS+=	gdal:${PORTSDIR}/graphics/gdal
+LIB_DEPENDS+=	libgdal.so:${PORTSDIR}/graphics/gdal
 PLIST_SUB+=	GDAL=""
 .else
 FORCE_IGNORE+=	GDAL
@@ -83,7 +82,7 @@ PLIST_SUB+=	GDAL="@comment "
 
 .if ${PORT_OPTIONS:MGIF}
 FORCE_REQUIRE+=	GIFLIB
-LIB_DEPENDS+=	gif:${PORTSDIR}/graphics/giflib
+LIB_DEPENDS+=	libgif.so:${PORTSDIR}/graphics/giflib
 PLIST_SUB+=	GIF=""
 .else
 FORCE_IGNORE+=	GIFLIB
@@ -102,7 +101,7 @@ PLIST_SUB+=	INVENTOR="@comment "
 
 .if ${PORT_OPTIONS:MJASPER}
 FORCE_REQUIRE+=	Jasper
-LIB_DEPENDS+=	jasper:${PORTSDIR}/graphics/jasper
+LIB_DEPENDS+=	libjasper.so:${PORTSDIR}/graphics/jasper
 PLIST_SUB+=	JASPER=""
 .else
 FORCE_IGNORE+=	Jasper
@@ -111,7 +110,7 @@ PLIST_SUB+=	JASPER="@comment "
 
 #.if ${PORT_OPTIONS:MOPENVRML}
 #FORCE_REQUIRE+=	OpenVRML
-#LIB_DEPENDS+=	openvrml:${PORTSDIR}/www/openvrml
+#LIB_DEPENDS+=	libopenvrml.so:${PORTSDIR}/www/openvrml
 #PLIST_SUB+=	OPENVRML=""
 #.else
 FORCE_IGNORE+=	OpenVRML
@@ -120,7 +119,7 @@ PLIST_SUB+=	OPENVRML="@comment "
 
 .if ${PORT_OPTIONS:MXINE}
 FORCE_REQUIRE+=	Xine
-LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine
+LIB_DEPENDS+=	libxine.so:${PORTSDIR}/multimedia/libxine
 PLIST_SUB+=	XINE=""
 .else
 FORCE_IGNORE+=	Xine
@@ -140,7 +139,7 @@ PLIST_SUB+=	ITK="@comment "
 
 .if ${PORT_OPTIONS:MVNC}
 FORCE_REQUIRE+=	LibVNCServer
-LIB_DEPENDS+=	vncserver:${PORTSDIR}/net/libvncserver
+LIB_DEPENDS+=	libvncserver.so:${PORTSDIR}/net/libvncserver
 PLIST_SUB+=	VNC=""
 .else
 FORCE_IGNORE+=	LibVNCServer
@@ -149,7 +148,7 @@ PLIST_SUB+=	VNC="@comment "
 
 .if ${PORT_OPTIONS:MOPENEXR}
 FORCE_REQUIRE+=	OpenEXR
-LIB_DEPENDS+=	IlmImf:${PORTSDIR}/graphics/OpenEXR
+LIB_DEPENDS+=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
 PLIST_SUB+=	OPENEXR=""
 .else
 FORCE_IGNORE+=	OpenEXR
@@ -158,7 +157,7 @@ PLIST_SUB+=	OPENEXR="@comment "
 
 .if ${PORT_OPTIONS:MFFMPEG}
 FORCE_REQUIRE+=	FFmpeg
-LIB_DEPENDS+=	avcodec:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 PLIST_SUB+=	FFMPEG=""
 .else
 FORCE_IGNORE+=	FFmpeg
@@ -175,7 +174,7 @@ FORCE_IGNORE+=	SDL
 # options that affect PKG_CHECK_MODULES
 .if ${PORT_OPTIONS:MSVG}
 FORCE_REQUIRE+=	RSVG
-LIB_DEPENDS+=	rsvg-2:${PORTSDIR}/graphics/librsvg2
+LIB_DEPENDS+=	librsvg-2.so:${PORTSDIR}/graphics/librsvg2
 PLIST_SUB+=	SVG=""
 .else
 FORCE_IGNORE+=	RSVG
@@ -192,7 +191,7 @@ PLIST_SUB+=	PDF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSVG} || ${PORT_OPTIONS:MPDF}
-LIB_DEPENDS+=	cairo:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS+=	libcairo.so:${PORTSDIR}/graphics/cairo
 .endif
 
 # other options
