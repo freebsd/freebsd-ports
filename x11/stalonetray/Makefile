@@ -17,23 +17,21 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-native-kde \
 		--disable-debug
 
-MAN1=		stalonetray.1
 PORTDOCS=	AUTHORS ChangeLog NEWS README TODO stalonetray.html
 PORTEXAMPLES=	stalonetrayrc.sample
-PLIST_FILES=	bin/stalonetray
+PLIST_FILES=	bin/stalonetray man/man1/stalonetray.1.gz
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 .if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for file in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .endif
 
