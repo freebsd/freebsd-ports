@@ -35,14 +35,7 @@ PKGMESSAGE?=	${WRKDIR}/pkg-message
 SUB_FILES?=		pkg-message
 .endif
 
-.if defined(WITH_SUPHP) && !defined(WITHOUT_SUPHP)
-RUN_DEPENDS+=	${LOCALBASE}/sbin/suphp:${PORTSDIR}/www/suphp
-WANT_PHP_CGI=	yes
-HORDEADMUSR?=	horde
-SUB_LIST+=		WITH_SUPHP=yes
-.else
 WANT_PHP_WEB=	yes
-.endif
 
 HOSTNAME?=	`/bin/hostname`
 SERVOS?=	${OPSYS}-${OSREL}
