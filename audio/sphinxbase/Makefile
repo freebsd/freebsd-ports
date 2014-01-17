@@ -10,8 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CMU Sphinx Speech recognition system base
 
 USE_LDCONFIG=	yes
-NO_STAGE=	yes
-USES=		gmake bison
+USES=		bison gmake pathfix
 USE_AUTOTOOLS=	libtool
 
 CONFIGURE_ARGS+=	--without-python --without-lapack
@@ -45,8 +44,5 @@ CONFIGURE_ARGS+=	--enable-threads
 .else
 CONFIGURE_ARGS+=	--disable-threads
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
