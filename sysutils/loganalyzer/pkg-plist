@@ -8,8 +8,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/textfiles.html
 %%PORTDOCS%%%%DOCSDIR%%/troubleshoot.html
 %%PORTDOCS%%%%DOCSDIR%%/windowsevent.html
-%%PORTDATA%%%%DATADIR%%/configure.sh
-%%PORTDATA%%%%DATADIR%%/secure.sh
+%%DATADIR%%/configure.sh
+%%DATADIR%%/secure.sh
 %%ANALYZERDIR%%/.htaccess
 %%ANALYZERDIR%%/BitstreamVeraFonts/COPYRIGHT.TXT
 %%ANALYZERDIR%%/BitstreamVeraFonts/README.TXT
@@ -413,5 +413,5 @@
 @dirrm %%ANALYZERDIR%%/admin
 @dirrm %%ANALYZERDIR%%/BitstreamVeraFonts
 @dirrmtry %%ANALYZERDIR%%
-%%PORTDATA%%@dirrm %%DATADIR%%
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
