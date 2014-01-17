@@ -14,31 +14,23 @@ MAKE_JOBS_UNSAFE=yes
 
 SUB_FILES=	pkg-message
 
-MAN8=		fistgen.8
 PORTDATA=	*
 PORTDOCS=	*
 PORTEXAMPLES=	*
-PLIST_FILES=	sbin/fistgen
+PLIST_FILES=	sbin/fistgen \
+		man/man8/fistgen.8.gz
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDATA)
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for dir in templates
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${DATADIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DATADIR})
 .endfor
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README \
+		${WRKSRC}/INSTALL ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for dir in copyfs cryptfs gzipfs uuencodefs tests
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${EXAMPLESDIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${EXAMPLESDIR})
 .endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
