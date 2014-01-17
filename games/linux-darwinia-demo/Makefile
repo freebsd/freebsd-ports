@@ -24,7 +24,6 @@ SUB_FILES=	darwinia
 OPTIONS_DEFINE=	NVIDIA DOCS
 NVIDIA_DESC=	Enable nvidia graphics driver support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNVIDIA}
@@ -43,16 +42,15 @@ do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/lib/darwinia.bin.x86
 
 do-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/lib && \
-		${INSTALL_PROGRAM} darwinia.bin.x86 ${DATADIR} && \
-		${INSTALL_DATA} *.dat open-www.sh ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKDIR}/darwinia ${PREFIX}/bin/${PKGNAMEPREFIX}darwinia
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}/LICENSE
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
-.endif
+		${INSTALL_PROGRAM} darwinia.bin.x86 ${STAGEDIR}${DATADIR} && \
+		${INSTALL_DATA} *.dat open-www.sh ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKDIR}/darwinia \
+		${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}darwinia
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${STAGEDIR}${DOCSDIR}/LICENSE
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
