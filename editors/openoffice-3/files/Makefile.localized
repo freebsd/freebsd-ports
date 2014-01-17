@@ -1,9 +1,10 @@
-# localized makefile
-# Whom:         Maho Nakata <maho@FreeBSD.org>
+# Created by: Maho Nakata <maho@FreeBSD.org>
 # $FreeBSD$
+#
+# Localized makefile
 
 ################################################################
-#See solenv/inc/postset.mk for details	
+# See solenv/inc/postset.mk for details
 ################################################################
 .if defined(LOCALIZED_LANG)
 .if ${LOCALIZED_LANG} == "af"
@@ -152,7 +153,7 @@ LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "hu"
-CATEGORIES+=     hungarian
+CATEGORIES+=	hungarian
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
@@ -179,7 +180,7 @@ LANG_PKGNAME=	kn
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "ko"
-CATEGORIES+=     korean
+CATEGORIES+=	korean
 LANG_PKGNAME=	${LOCALIZED_LANG}
 .endif
 ################################################################
@@ -268,7 +269,7 @@ LANG_CONFIGURE_ARG=	PORT
 .endif
 ################################################################
 .if ${LOCALIZED_LANG} == "pt-BR"
-COMMENT=        Editor texto/grBaGico, banco de dados/planilha/navegador integrado
+COMMENT=	Editor texto/grBaGico, banco de dados/planilha/navegador integrado
 CATEGORIES+=	portuguese
 LANG_PKGNAME=	pt
 LANG_SUFFIX=	BR
