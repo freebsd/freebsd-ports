@@ -70,7 +70,7 @@ bin/soapui.sh
 %%DATADIR%%/bin/loadtestrunner.sh
 %%DATADIR%%/bin/mockservicerunner.sh
 %%DATADIR%%/bin/securitytestrunner.sh
-%%DATADIR%%/bin/soapui-4.6.3.jar
+%%DATADIR%%/bin/soapui-4.6.4.jar
 %%DATADIR%%/bin/soapui-errors.log
 %%DATADIR%%/bin/soapui-log4j.xml
 %%DATADIR%%/bin/soapui-splash.png
