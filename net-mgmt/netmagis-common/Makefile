@@ -11,7 +11,7 @@ PKGNAMESUFFIX?=	-common
 MAINTAINER?=	pdagog@gmail.com
 COMMENT?=	Netmagis common infrastructure
 
-USE_TCL=	85+
+USES=		tcl:85+
 
 USE_PGSQL=	pgtcl
 WANT_PGSQL_VER=	91+
@@ -45,7 +45,7 @@ RUN_DEPENDS+=	rancid-run:${PORTSDIR}/net-mgmt/rancid \
 .endif
 
 .if ${PKGNAMESUFFIX} == -metro
-USES=		perl5
+USES+=		perl5
 
 RUN_DEPENDS+=	p5-DBD-Pg>0:${PORTSDIR}/databases/p5-DBD-Pg \
 		p5-Net-SNMP>=0:${PORTSDIR}/net-mgmt/p5-Net-SNMP \
