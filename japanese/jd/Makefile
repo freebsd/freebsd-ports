@@ -1,12 +1,12 @@
 # Created by: Takashi Kato <townwear@gmail.com>
 # $FreeBSD$
 
-PORTNAME=		jd
-PORTVERSION=		2.8.6
-CATEGORIES=		japanese www
-MASTER_SITES=		SFJP
-MASTER_SITE_SUBDIR=	jd4linux/58841
-DISTNAME=	${PORTNAME}-${PORTVERSION}-130518
+PORTNAME=	jd
+PORTVERSION=	2.8.7
+CATEGORIES=	japanese www
+MASTER_SITES=	SFJP
+MASTER_SITE_SUBDIR=	jd4linux/60198
+DISTNAME=	${PORTNAME}-${PORTVERSION}-140104
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	townwear@gmail.com
@@ -33,6 +33,10 @@ ONIGURUMA_CONFIGURE_WITH=	oniguruma
 ONIGURUMA_LIB_DEPENDS=		libonig.so:${PORTSDIR}/devel/oniguruma5
 
 PANGOLAYOUT_CONFIGURE_WITH=	pangolayout
+
+PLIST_FILES=	bin/jd \
+		share/applications/jd.desktop \
+		share/pixmaps/jd.png
 
 pre-configure:
 	@cd ${WRKSRC} && ${AUTORECONF} -i
