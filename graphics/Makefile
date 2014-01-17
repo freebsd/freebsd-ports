@@ -989,6 +989,7 @@
     SUBDIR += swfdec
     SUBDIR += swfmill
     SUBDIR += swftools
+    SUBDIR += sxiv
     SUBDIR += synaesthesia
     SUBDIR += synfigstudio
     SUBDIR += telak
