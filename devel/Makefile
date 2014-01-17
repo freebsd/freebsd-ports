@@ -904,6 +904,7 @@
     SUBDIR += kdevelop-php
     SUBDIR += kdevelop-php-docs
     SUBDIR += kdevplatform
+    SUBDIR += kickassembler
     SUBDIR += kimwitu
     SUBDIR += kyra
     SUBDIR += kyua
