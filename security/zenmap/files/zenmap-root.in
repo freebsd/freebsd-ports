@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+cd "%%DATADIR%%" ; exec su-to-zenmap.sh zenmap
+
+
