@@ -20,7 +20,7 @@ EMICLOCKDIR=	${LOCALBASE}/lib/X11/EmiClock
 
 PORTDOCS=	COPYRIGHT COPYRIGHT.en
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} != "i386"
 PLIST_SUB=	SOUND="@comment "
@@ -28,17 +28,13 @@ PLIST_SUB=	SOUND="@comment "
 PLIST_SUB=	SOUND=""
 .endif
 
-.include <bsd.port.options.mk>
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${EMICLOCKDIR}
 	@${MKDIR} ${STAGEDIR}${LANGDIR}
 	@${MKDIR} ${STAGEDIR}${LANGDIR2}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${LANGRES} ${STAGEDIR}${LANGDIR}/EmiClock
 	cd ${WRKSRC} && ${INSTALL_DATA} ${LANGRES} ${STAGEDIR}${LANGDIR2}/EmiClock
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
