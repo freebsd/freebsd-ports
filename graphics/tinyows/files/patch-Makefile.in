@@ -1,0 +1,17 @@
+--- Makefile.in.orig	2012-11-13 16:07:34.000000000 +0100
++++ Makefile.in	2014-01-17 03:16:24.000000000 +0100
+@@ -43,10 +43,10 @@
+ 
+ install:
+ 	@echo "-----"
+-	@echo "TinyOWS Schema install dir in $(PREFIX)/share/tinyows/schema"
+-	mkdir -p $(PREFIX)/share/tinyows
+-	rm -rf $(PREFIX)/share/tinyows/schema
+-	cp -rf schema $(PREFIX)/share/tinyows/
++	@echo "TinyOWS Schema install dir in $(DESTDIR)$(PREFIX)/share/tinyows/schema"
++	mkdir -p $(DESTDIR)$(PREFIX)/share/tinyows
++	rm -rf $(DESTDIR)$(PREFIX)/share/tinyows/schema
++	cp -rf schema $(DESTDIR)$(PREFIX)/share/tinyows/
+ 	@echo "-----"
+ 	@echo "Now:"
+ 	@echo " 1) copy 'tinyows' binary to cgi-bin directory"
