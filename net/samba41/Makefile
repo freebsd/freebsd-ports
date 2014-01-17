@@ -3,7 +3,7 @@
 
 PORTNAME?=		${SAMBA4_BASENAME}41
 PORTVERSION?=		${SAMBA4_VERSION}
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	samba/stable samba/rc
@@ -146,13 +146,6 @@ OPTIONS_RADIO_ZEROCONF=	AVAHI MDNSRESPONDER
 OPTIONS_DEFAULT+=	AVAHI
 
 .include <bsd.port.options.mk>
-
-# !SAMBA4_SUBPORT
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if !defined(SAMBA4_SUBPORT)
 
 CONFIGURE_ARGS+=	\
 			--with-pam \
@@ -340,6 +333,13 @@ CONFIGURE_ARGS+=	--without-ldap
 PLIST_SUB+=		LDAP="@comment "
 .endif
 
+.if ! ${PORT_OPTIONS:MMANPAGES}
+CONFIGURE_ENV+=		XSLTPROC="true"
+.else
+BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
+			xsltproc:${PORTSDIR}/textproc/libxslt
+.endif
+
 .if defined(WANT_EXP_MODULES) && !empty(WANT_EXP_MODULES)
 SAMBA4_MODULES+=	${WANT_EXP_MODULES}
 CONFIGURE_ARGS+=	--with-shared-modules="${WANT_EXP_MODULES:Q:C|(\\\\ )+|,|g:S|\\||g}"
@@ -355,12 +355,12 @@ PLIST_REINPLACE+=	${m}
 PLIST_REINPLACE_${m:U}=	s|^@comment ${m} ||g
 .endfor
 ##############################################################################
-.if ! ${PORT_OPTIONS:MMANPAGES}
-CONFIGURE_ENV+=		XSLTPROC="true"
-.else
-BUILD_DEPENDS+=		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
-			xsltproc:${PORTSDIR}/textproc/libxslt
+# !SAMBA4_SUBPORT
 .endif
+
+.include <bsd.port.pre.mk>
+
+.if !defined(SAMBA4_SUBPORT)
 
 SAMBA4_SUB=		SAMBA4_LOGDIR="${SAMBA4_LOGDIR}" \
 			SAMBA4_RUNDIR="${SAMBA4_RUNDIR}" \
@@ -532,7 +532,6 @@ post-install:
 .for dir in auth bind9 gensec gpext idmap ldb nss_info pdb perfcount process_model service vfs
 			@${MKDIR} "${STAGEDIR}${SAMBA4_MODULEDIR}/${dir}"
 .endfor
-
 
 .if ${PORT_OPTIONS:MDEVELOPER}
 test: build
