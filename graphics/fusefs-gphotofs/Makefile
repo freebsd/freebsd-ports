@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	gphotofs
-PORTVERSION=	0.4.0
-PORTREVISION=	1
+PORTVERSION=	0.5
 CATEGORIES=	graphics sysutils
-MASTER_SITES=	SF/gphoto/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/gphoto/${PORTNAME}/${PORTVERSION}.0
 PKGNAMEPREFIX=	fusefs-
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,7 +12,7 @@ COMMENT=	Mount PTP camera as a file system
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gphoto2:${PORTSDIR}/graphics/libgphoto2
+LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
 
 USES=		fuse pkgconfig
 USE_BZIP2=	yes
@@ -22,5 +21,4 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/gphotofs
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
