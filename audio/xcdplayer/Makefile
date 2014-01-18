@@ -12,12 +12,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD player for X
 
 USES=		imake
-NO_STAGE=	yes
 USE_XORG=	xbitmaps xaw
 
-MAN1=		xcdplayer.1
-
-PLIST_FILES=	bin/xcdplayer lib/X11/app-defaults/XCdplayer
+PLIST_FILES=	bin/xcdplayer lib/X11/app-defaults/XCdplayer \
+		man/man1/xcdplayer.1.gz
 
 post-extract:
 	${CP} ${FILESDIR}/cdrom_freebsd.[ch] ${FILESDIR}/app.h ${WRKSRC}
