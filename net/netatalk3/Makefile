@@ -3,7 +3,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	3.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF
@@ -15,8 +15,8 @@ COMMENT=	File server for Mac OS X
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \
-    		event-2:${PORTSDIR}/devel/libevent2
+LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+    		libevent-2.so:${PORTSDIR}/devel/libevent2
 
 USE_AUTOTOOLS=	libtool
 USE_BDB=	46+
