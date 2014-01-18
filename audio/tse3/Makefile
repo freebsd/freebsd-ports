@@ -12,7 +12,6 @@ COMMENT=	MIDI library
 
 LICENSE=	GPLv2
 
-NO_STAGE=	yes
 USES=		gmake
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--without-doc-install \
@@ -23,23 +22,16 @@ MAKE_JOBS_UNSAFE=	yes
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
-MAN1=		tse3play.1
-MAN3=		tse3.3
-
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.gif ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.jpeg ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/History ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/songs
-	${INSTALL_DATA} ${WRKSRC}/demos/*.tse3 ${DOCSDIR}/songs
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.gif ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.jpeg ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/History ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/songs
+	${INSTALL_DATA} ${WRKSRC}/demos/*.tse3 ${STAGEDIR}${DOCSDIR}/songs
 
 .include <bsd.port.mk>

@@ -109,6 +109,8 @@ lib/libtse3.a
 lib/libtse3.la
 lib/libtse3.so
 lib/libtse3.so.0
+man/man1/tse3play.1.gz
+man/man3/tse3.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/About.html
 %%PORTDOCS%%%%DOCSDIR%%/Article.html
 %%PORTDOCS%%%%DOCSDIR%%/Bugs.html
