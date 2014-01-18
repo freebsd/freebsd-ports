@@ -15,15 +15,14 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/fhourstones lib/fhourstones/SearchGame lib/fhourstones/inputs
 PLIST_DIRS=	lib/fhourstones
 
-NO_STAGE=	yes
 post-patch:
-		@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile
-		@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/fhourstones
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/fhourstones
 
 do-install:
-		${MKDIR} ${PREFIX}/lib/fhourstones
-		${INSTALL_SCRIPT} ${WRKDIR}/fhourstones ${PREFIX}/bin
-		${INSTALL_PROGRAM} ${WRKDIR}/SearchGame ${PREFIX}/lib/fhourstones/
-		${INSTALL_DATA} ${WRKDIR}/inputs ${PREFIX}/lib/fhourstones
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/fhourstones
+	${INSTALL_SCRIPT} ${WRKDIR}/fhourstones ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/SearchGame ${STAGEDIR}${PREFIX}/lib/fhourstones
+	${INSTALL_DATA} ${WRKDIR}/inputs ${STAGEDIR}${PREFIX}/lib/fhourstones
 
 .include <bsd.port.mk>
