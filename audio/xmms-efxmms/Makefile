@@ -14,7 +14,6 @@ COMMENT=	Send the XMMS audio output through a queue of multiple effect plugins
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 USES=		gmake
-NO_STAGE=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
