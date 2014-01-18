@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	spmfilter
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.${PORTNAME}.org/files/
 
@@ -10,11 +10,10 @@ COMMENT=	Spmfilter is a high-performance mail filtering framework, written in C
 
 LICENSE=	LGPL3
 
-BUILD_DEPENDS=	libcmime>=0.1:${PORTSDIR}/mail/libcmime \
+BUILD_DEPENDS=	libcmime>=0.1.10:${PORTSDIR}/mail/libcmime \
 		libesmtp>=1.0:${PORTSDIR}/mail/libesmtp
 
-RUN_DEPENDS=	libcmime>=0.1:${PORTSDIR}/mail/libcmime \
-		libesmtp>=1.0:${PORTSDIR}/mail/libesmtp
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 SMFUSER?=	nobody
 SMFGROUP?=	mail
@@ -33,8 +32,6 @@ DB4_DESC=	DB4 backend
 
 # Default requirement for spmfilter rc script
 _REQUIRE=	LOGIN
-
-NO_STAGE=	yes
 
 SUB_FILES=	pkg-install pkg-deinstall
 
@@ -67,13 +64,13 @@ CMAKE_ARGS+=	-DWITHOUT_LDAP=TRUE
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-LIB_DEPENDS+=	zdb:${PORTSDIR}/databases/libzdb
+LIB_DEPENDS+=	libzdb.so:${PORTSDIR}/databases/libzdb
 USE_MYSQL=	yes
 _REQUIRE+=	mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-LIB_DEPENDS+=	zdb:${PORTSDIR}/databases/libzdb
+LIB_DEPENDS+=	libzdb.so:${PORTSDIR}/databases/libzdb
 USE_PGSQL=	yes
 _REQUIRE+=	postgresql
 .endif
@@ -81,10 +78,6 @@ _REQUIRE+=	postgresql
 .if !${PORT_OPTIONS:MMYSQL} && !${PORT_OPTIONS:MPGSQL}
 CMAKE_ARGS+=	-DWITHOUT_ZDB=TRUE
 .endif
-
-MAN1=		${PORTNAME}.1
-MAN5=		${PORTNAME}.conf.5
-MANCOMPRESSED=	yes
 
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
 
@@ -96,16 +89,11 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|\$${CMAKE_INSTALL_LIBDIR}(/pkgconfig)|$${CMAKE_INSTALL_PREFIX}/libdata\1|' \
 		-e 's|(COMMON_LIBS )db|\1${BDB_LIB_NAME}|' \
 		${WRKSRC}/src/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|clamav;spamassassin||' \
-		${WRKSRC}/spmfilter.conf.sample
 
 pre-install:
 	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample ${PREFIX}/etc/
-	@if [ ! -f ${PREFIX}/etc/${PORTNAME}.conf ]; then \
-		${CP} -p ${PREFIX}/etc/${PORTNAME}.conf.sample ${PREFIX}/etc/${PORTNAME}.conf ; \
-	fi
+	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample ${STAGEDIR}${PREFIX}/etc/
 
 .include <bsd.port.mk>

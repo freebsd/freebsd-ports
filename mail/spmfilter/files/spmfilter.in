@@ -21,6 +21,7 @@ name=spmfilter
 rcvar=spmfilter_enable
 
 command=%%PREFIX%%/sbin/spmfilter
+sig_stop=KILL
 
 load_rc_config $name
 
