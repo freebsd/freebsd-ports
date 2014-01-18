@@ -21,6 +21,7 @@ lib/emelfm2/plugins/e2p_times.so
 lib/emelfm2/plugins/e2p_unpack.so
 lib/emelfm2/plugins/e2p_upgrade.so
 lib/emelfm2/plugins/e2p_view.so
+man/man1/emelfm2.1.gz
 share/application-registry/emelfm2.applications
 share/applications/emelfm2.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ACTIONS
