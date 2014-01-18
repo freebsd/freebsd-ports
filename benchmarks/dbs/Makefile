@@ -26,9 +26,6 @@ PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local/bin/perl|${PERL}|' ${WRKSRC}/script/dbs_view
@@ -38,22 +35,18 @@ pre-build:
 
 do-install:
 .for bin in dbsc dbsd
-	cd ${INSTALL_WRKSRC}; ${INSTALL_PROGRAM} ${bin} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${bin} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for bin in dbs_view
-	cd ${WRKSRC}/script; ${INSTALL_SCRIPT} ${bin} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/script/${bin} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in Copyright dbs.man dbs.man.jis dbs_paper.ps
-	cd ${WRKSRC}/doc; ${INSTALL_DATA} ${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for ex in TCP2.cmd TCPvsMPEG.cmd
-	cd ${WRKSRC}/sample; ${INSTALL_DATA} ${ex} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample/${ex} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
