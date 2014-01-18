@@ -11,15 +11,15 @@ MASTER_SITES=	https://s3.amazonaws.com/stockfish/:src \
 DISTNAME=	stockfish-${PORTVERSION:S/.//g}-win
 DISTFILES=	stockfish-${PORTVERSION:S/.//g}-win.zip:src \
 		stockfish-231-book.zip:book
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	execve@gmail.com
 COMMENT=	Open source chess engine
 
 LICENSE=	GPLv3
 
-USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-USES=		gmake
+USES=		gmake compiler
 MYARCH=		${ARCH}
 BOOKDIR=	.
 PORTDOCS=	Readme.md polyglot.ini
@@ -28,11 +28,7 @@ PORTDATA=	Book.bin
 PLIST_FILES=	bin/stockfish
 
 TGTBLD=		build
-MYCC=		gcc
-
-.if ${CC} == "clang" || ${CXX} == "clang++"
-MYCC=	clang
-.endif
+MYCC=		${COMPILER_TYPE}
 
 OPTIONS_DEFINE=	DOCS POPCNT_ENABLED PROFILE_BUILD
 POPCNT_ENABLED_DESC=	Use the POPCNT instruction
@@ -50,8 +46,6 @@ BROKEN=		POPCNT_ENABLED compiles only on amd64
 .endif
 .endif
 
-.include <bsd.port.pre.mk>
-
 # workaround the ARCH usage in the stockfish Makefile
 .if ${ARCH} == "i386"
 MYARCH=		x86-32
@@ -68,10 +62,6 @@ ALL_TARGET=	${TGTBLD} ARCH=${MYARCH} COMP=${MYCC}
 BROKEN=		Does not compile on ia64, powerpc, or sparc64
 .endif
 
-.if exists(/usr/bin/clang) && ${OSVERSION} > 1000024
-MYCC=	clang
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e "s/^PREFIX =/PREFIX ?=/" ${WRKSRC}/Makefile
 
@@ -81,9 +71,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/Readme.md ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/polyglot.ini ${STAGEDIR}${DOCSDIR}
-.if !defined(NOPORTDATA)
 	${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKDIR}/${BOOKDIR}/${PORTDATA} ${STAGEDIR}${DATADIR}/
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
