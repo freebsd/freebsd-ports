@@ -3,6 +3,7 @@
 
 PORTNAME=	gbirthday
 PORTVERSION=	0.6.7
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF
 
@@ -11,43 +12,24 @@ COMMENT=	Birthday reminder for Evolution and some others
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	EVO THUNDER MYSQL NOTIFY
-OPTIONS_DEFAULT=EVO
-EVO_DESC=	Evolution support
-THUNDER_DESC=	Thunderbird/Sunbird support
+OPTIONS_DEFINE=			EVOLUTION MYSQL NLS NOTIFY THUNDERBIRD
+OPTIONS_SUB=			yes
+EVOLUTION_DESC=			Evolution support
+THUNDERBIRD_DESC=		Thunderbird/Sunbird support
+EVOLUTION_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb
+EVOLUTION_USE=			GNOME=evolutiondataserver
+MYSQL_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
+NLS_USES=			gettext
+NLS_USE=			GNOME=intltool
+NOTIFY_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}notify>0:${PORTSDIR}/devel/py-notify
+THUNDERBIRD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
 
 USE_XZ=		yes
 USE_PYTHON_RUN=	2
-USE_GNOME=	pygtk2 desktopfileutils
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-USE_GNOME+=	intltool
+USE_GNOME=	pygtk2
 LANGUAGES=	de en es fr gl it pl pt ru sk
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
 
-.if ${PORT_OPTIONS:MEVO}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}bsddb>0:${PORTSDIR}/databases/py-bsddb
-USE_GNOME+=	evolutiondataserver
-.endif
-
-.if ${PORT_OPTIONS:MTHUNDER}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
-.endif
-
-.if ${PORT_OPTIONS:MNOTIFY}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}notify>0:${PORTSDIR}/devel/py-notify
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|.mozilla-thunderbird|.thunderbird|g' \
@@ -71,26 +53,23 @@ do-build:
 .endif
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/pics/${PORTNAME}.png ${PREFIX}/share/pixmaps
-	${INSTALL_SCRIPT} ${WRKSRC}/src/gb ${PREFIX}/bin/${PORTNAME}
-	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/databases
-	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/pics
-	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}/*.py ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}/databases/*.py ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/databases
-	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}/pics/*.png ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/pics
+	${INSTALL_DATA} ${WRKSRC}/pics/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_SCRIPT} ${WRKSRC}/src/gb ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/databases
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/pics
+	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}/*.py ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}/databases/*.py ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/databases
+	${INSTALL_DATA} ${WRKSRC}/src/${PORTNAME}/pics/*.png ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/pics
 .if ${PORT_OPTIONS:MNLS}
 	@(for lang in ${LANGUAGES} ; do \
-		${MKDIR} ${PREFIX}/share/locale/$$lang/LC_MESSAGES ; \
+		${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/$$lang/LC_MESSAGES ; \
 		${INSTALL_DATA} ${WRKSRC}/po/$$lang.mo \
-		${PREFIX}/share/locale/$$lang/LC_MESSAGES/${PORTNAME}.mo ; \
+		${STAGEDIR}${PREFIX}/share/locale/$$lang/LC_MESSAGES/${PORTNAME}.mo ; \
 	done)
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications
 .else
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop.in \
-		${PREFIX}/share/applications/${PORTNAME}.desktop
+		${STAGEDIR}${PREFIX}/share/applications/${PORTNAME}.desktop
 .endif
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>
