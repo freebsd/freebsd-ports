@@ -15,26 +15,23 @@ PATCHFILES=	${PORTNAME}_${PORTVERSION:R}p${PORTVERSION:E}-4.2.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	turutani@scphys.kyoto-u.ac.jp
-COMMENT=	A text converter from plain to any format
+COMMENT=	Text converter from plain to any format
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}p${PORTVERSION:E}.orig
 BUILD_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:R}p${PORTVERSION:E}.orig/src
 PLIST_FILES=	bin/plain2
 PORTDATA=	OHP.p2 OHP_t.p2 header.p2 header_t.p2 jbook.p2 supsnum.p2
 
-CFLAGS+=	-DBSD -DKANJI -DPICTURE -DHTML
+CFLAGS+=	-DBSD -DKANJI -DPICTURE -DHTML -Wno-return-type
 ALL_TARGET=	${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/lib/plain2|${DATADIR}|g' ${BUILD_WRKSRC}/plain2.h
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if !defined(NOPORTDATA)
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/*.p2 ${DATADIR}
-.endif
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/*.p2 ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
