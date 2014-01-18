@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.7.10
+DISTVERSION=	1.7.11
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -31,10 +31,6 @@ CONFIGURE_ARGS+=--verbose --disable-tests \
 		--with-oss --without-sane --without-tiff \
 		--without-v4l --without-xcomposite --without-xinerama
 CONFIGURE_ENV=	FLEX="${LOCALBASE}/bin/flex" 
-# Wine expects the install script to make any missing directories, and the default
-# internal tool (/tools/install-sh) does that however the default install script used
-# by Ports does not.
-CONFIGURE_ENV+=	${SETENV} -u INSTALL -u INSTALL_PROGRAM -u INSTALL_SCRIPT -u INSTALL_DATA
 WINELIBDIR?=	${PREFIX}/lib
 .if !defined(USE_LDCONFIG32)
 USE_LDCONFIG=	${WINELIBDIR} ${WINELIBDIR}/wine
