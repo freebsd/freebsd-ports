@@ -16,7 +16,7 @@ COMMENT=	File server for Mac OS X
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
-    		libevent-2.so:${PORTSDIR}/devel/libevent2
+    		libevent-2.0.so:${PORTSDIR}/devel/libevent2
 
 USE_AUTOTOOLS=	libtool
 USE_BDB=	46+
