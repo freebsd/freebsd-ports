@@ -40,7 +40,6 @@ bin/tred
 bin/twopi
 bin/unflatten
 %%PANGOCAIRO%%%%XPM%%bin/vimdot
-include/graphviz/agxbuf.h
 include/graphviz/arith.h
 include/graphviz/ast_common.h
 include/graphviz/cdt.h
@@ -65,17 +64,14 @@ include/graphviz/gvplugin_loadimage.h
 include/graphviz/gvplugin_textlayout.h
 include/graphviz/gvplugin_device.h
 include/graphviz/gvpr.h
-include/graphviz/libgraph.h
 include/graphviz/logic.h
 include/graphviz/pack.h
-include/graphviz/parser.h
 include/graphviz/pathgeom.h
 include/graphviz/pathplan.h
 include/graphviz/pathutil.h
 include/graphviz/solvers.h
-include/graphviz/textpara.h
+include/graphviz/textspan.h
 include/graphviz/tri.h
-include/graphviz/triefa.h
 include/graphviz/types.h
 include/graphviz/usershape.h
 include/graphviz/vis.h
@@ -121,10 +117,10 @@ lib/graphviz/libgvplugin_gd.a
 %%MING%%lib/graphviz/libgvplugin_ming.la
 %%MING%%lib/graphviz/libgvplugin_ming.so
 %%MING%%lib/graphviz/libgvplugin_ming.so.6
-%%GDK_PIXBUF%%lib/graphviz/libgvplugin_gdk_pixbuf.a
-%%GDK_PIXBUF%%lib/graphviz/libgvplugin_gdk_pixbuf.la
-%%GDK_PIXBUF%%lib/graphviz/libgvplugin_gdk_pixbuf.so
-%%GDK_PIXBUF%%lib/graphviz/libgvplugin_gdk_pixbuf.so.6
+%%GDK%%lib/graphviz/libgvplugin_gdk.a
+%%GDK%%lib/graphviz/libgvplugin_gdk.la
+%%GDK%%lib/graphviz/libgvplugin_gdk.so
+%%GDK%%lib/graphviz/libgvplugin_gdk.so.6
 lib/graphviz/libgvplugin_neato_layout.so
 lib/graphviz/libgvplugin_neato_layout.so.6
 lib/graphviz/libgvplugin_neato_layout.la
@@ -153,6 +149,7 @@ lib/graphviz/libgvpr.so.2
 %%PHP%%lib/graphviz/php/libgv_php.a
 %%PHP%%lib/graphviz/php/libgv_php.la
 %%PHP%%lib/graphviz/php/libgv_php.so
+%%PHP%%lib/php/%%PHP_EXT_DIR%%/gv.so
 %%TCL%%lib/graphviz/tcl/libgdtclft.a
 %%TCL%%lib/graphviz/tcl/libgdtclft.la
 %%TCL%%lib/graphviz/tcl/libgdtclft.so
@@ -173,7 +170,30 @@ lib/graphviz/libgvpr.so.2
 %%TCL%%lib/graphviz/tcl/libtclplan.so
 %%TCL%%lib/graphviz/tcl/libtclplan.so.0
 %%TCL%%lib/graphviz/tcl/pkgIndex.tcl
-%%TCL%%lib/tcl%%TCL_VER%%/graphviz
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libgdtclft.a
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libgdtclft.la
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libgdtclft.so
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libgdtclft.so.0
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libgv_tcl.a
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libgv_tcl.la
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libgv_tcl.so
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libtcldot.a
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libtcldot.la
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libtcldot.so
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libtcldot.so.0
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libtcldot_builtin.a
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libtcldot_builtin.la
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libtcldot_builtin.so
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libtcldot_builtin.so.0
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libtclplan.a
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libtclplan.la
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libtclplan.so
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libtclplan.so.0
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libtkspline.a
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libtkspline.la
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libtkspline.so
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/libtkspline.so.0
+%%TCL%%lib/tcl%%TCL_VER%%/graphviz/pkgIndex.tcl
 %%TK%%lib/graphviz/tcl/libtkspline.a
 %%TK%%lib/graphviz/tcl/libtkspline.la
 %%TK%%lib/graphviz/tcl/libtkspline.so
@@ -265,7 +285,6 @@ man/man3/cdt.3.gz
 man/man3/cgraph.3.gz
 man/man3/expr.3.gz
 %%TCL%%man/man3/gdtclft.3tcl.gz
-man/man3/graph.3.gz
 %%GUILE%%man/man3/gv.3guile.gz
 %%LUA%%man/man3/gv.3lua.gz
 %%PERL%%man/man3/gv.3perl.gz
@@ -274,6 +293,7 @@ man/man3/graph.3.gz
 %%RUBY%%man/man3/gv.3ruby.gz
 %%TCL%%man/man3/gv.3tcl.gz
 man/man3/gvc.3.gz
+man/man3/gvpr.3.gz
 man/man3/pack.3.gz
 man/man3/pathplan.3.gz
 %%TCL%%man/man3/tcldot.3tcl.gz
@@ -399,6 +419,7 @@ man/man7/graphviz.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/trapezium.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/triangle.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/tripleoctagon.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/underline.gif
 %%PORTDOCS%%%%DOCSDIR%%/latex_suggestions.txt
 %%PORTDOCS%%%%DOCSDIR%%/pdf/Agraph.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/acyclic.1.pdf
@@ -443,6 +464,7 @@ man/man7/graphviz.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gvmap.sh.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gvpack.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gvpr.1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/pdf/gvpr.3.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/gxl2gv.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/lefty.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/leftyguide.pdf
@@ -467,8 +489,8 @@ man/man7/graphviz.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/pdf/tred.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/twopi.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/unflatten.1.pdf
-%%PORTDOCS%%%%DOCSDIR%%/pdf/xdot.3.pdf
 %%PORTDOCS%%%%DOCSDIR%%/pdf/vimdot.1.pdf
+%%PORTDOCS%%%%DOCSDIR%%/pdf/xdot.3.pdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/entities.tcl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/entities.tcl.README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/doted.tcl
@@ -491,6 +513,7 @@ man/man7/graphviz.7.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pathplan.tcl.README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spline.tcl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/spline.tcl.README
+%%PHP%%share/php/gv.php
 %%LUA%%%%DATADIR%%/demo/modgraph.lua
 %%PERL%%%%DATADIR%%/demo/modgraph.pl
 %%PHP%%%%DATADIR%%/demo/modgraph.php
@@ -639,10 +662,12 @@ man/man7/graphviz.7.gz
 %%DATADIR%%/gvpr/attr
 %%DATADIR%%/gvpr/bb
 %%DATADIR%%/gvpr/bbox
+%%DATADIR%%/gvpr/chkclusters
 %%DATADIR%%/gvpr/cliptree
 %%DATADIR%%/gvpr/col
 %%DATADIR%%/gvpr/collapse
 %%DATADIR%%/gvpr/color
+%%DATADIR%%/gvpr/cycle
 %%DATADIR%%/gvpr/dechain
 %%DATADIR%%/gvpr/deghist
 %%DATADIR%%/gvpr/deledges
@@ -672,6 +697,8 @@ man/man7/graphviz.7.gz
 %%SMYRNA%%%%DATADIR%%/smyrna/ltwopi.png
 %%SMYRNA%%%%DATADIR%%/smyrna/selectr.png
 %%SMYRNA%%%%DATADIR%%/smyrna/single_select.png
+%%TCL%%@dirrm lib/tcl%%TCL_VER%%/graphviz
+%%PHP%%@dirrmtry lib/php/%%PHP_EXT_DIR%%
 %%TCL%%@dirrm lib/graphviz/tcl
 %%RUBY%%@dirrm lib/graphviz/ruby
 %%PYTHON%%@dirrm lib/graphviz/python
@@ -700,6 +727,7 @@ man/man7/graphviz.7.gz
 %%RUBY%%@dirrmtry %%DATADIR%%/demo
 %%TCL%%@dirrmtry %%DATADIR%%/demo
 @dirrm %%DATADIR%%
+%%PHP%%@dirrmtry share/php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/pathplan_data
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html

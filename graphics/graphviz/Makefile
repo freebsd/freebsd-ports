@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	graphviz
-PORTVERSION=	2.34.0
-PORTREVISION=	1
+PORTVERSION=	2.36.0
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -17,7 +16,7 @@ LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libexpat.so:${PORTSDIR}/textproc/expat2 \
 		libgd.so:${PORTSDIR}/${GD_PORT}
 
-USES=		bison gmake pkgconfig
+USES=		bison gmake pkgconfig shebangfix
 USE_AUTOTOOLS=	libltdl libtool
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
@@ -27,18 +26,12 @@ PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 MAKE_ENV=	EXPR_COMPAT=yes MISSING=${TRUE}
 
-MLINKS=		dot.1 circo.1 \
-		dot.1 fdp.1 \
-		dot.1 neato.1 \
-		dot.1 sfdp.1 \
-		dot.1 twopi.1 \
-		gml2gv.1 gv2gml.1 \
-		gv2gxl.1 gxl2gv.1
+SHEBANG_LANG=	tcl
+tcl_OLD_CMD=	/usr/bin/tclsh
+tcl_CMD=	${TCLSH}
 
 FIX_INCLUDE=	ast_common.h \
 		lib/cdt/dthdr.h \
-		lib/graph/libgraph.h lib/graph/triefa.h \
-		lib/graph/parser.h lib/graph/agxbuf.h \
 		lib/pathplan/tri.h lib/pathplan/pathplan.h \
 		lib/pathplan/pathutil.h lib/pathplan/solvers.h \
 		lib/pathplan/vis.h lib/pathplan/vispath.h \
@@ -58,9 +51,9 @@ PDOCS_HTML=	doc/*.html doc/info/*.gif
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
 OPTIONS_DEFINE=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO LIBRSVG2 POPPLER \
-		ANN GTS GTK2 GDK_PIXBUF GNOMEUI SMYRNA GVEDIT MING DEVIL \
+		ANN GTS GTK2 GDK GDK_PIXBUF GNOMEUI SMYRNA GVEDIT MING DEVIL \
 		GHOSTSCRIPT PERL PHP PYTHON RUBY LUA TCL TK GUILE NVTHREADS
-OPTIONS_DEFAULT?=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO
+OPTIONS_DEFAULT=	XPM DIGCOLA IPSEPCOLA ICONV NLS PANGOCAIRO
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
 DIGCOLA_DESC=	neato layout engine wiwth DIGCOLA features
@@ -69,7 +62,8 @@ PANGOCAIRO_DESC=pangocairo support
 ANN_DESC=	ANN edge bundling support
 GTS_DESC=	GNU Triangulated Surface Library support
 GTK2_DESC=	gtk2 plugin (requires PANGOCAIRO)
-GDK_PIXBUF_DESC=gdk pixbuf support
+GDK_DESC=	gdk library support (requires GTK2)
+GDK_PIXBUF_DESC=gdk pixbuf support (requires GDK)
 GNOMEUI_DESC=	libgnomeui support
 SMYRNA_DESC=	SMYRNA graph viewer (requires GTK2)
 GVEDIT_DESC=	gvedit (requires qt)
@@ -102,12 +96,8 @@ PHP_USE=	PHP=yes PHP_BUILD=yes
 PYTHON_USE=	PYTHON_BUILD=yes
 RUBY_USE=	RUBY=yes
 LUA_USE=	LUA=yes
-# broken: Do not set both tcl and tk in USES
-#TCL_USES=	tcl:84+,build
-#TK_USES= 	tk:84+,build
-TCL_USE=	TCL_BUILD=84+
-TK_USE=		TK_BUILD=84+
-
+TCL_USES=	tcl:build
+TK_USES= 	tk:build
 POPPLER_LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
 ANN_LIB_DEPENDS=	libann.so:${PORTSDIR}/math/ann
 GTS_LIB_DEPENDS=	libgts.so:${PORTSDIR}/graphics/gts
@@ -128,6 +118,7 @@ ANN_CONFIGURE_WITH=		ann
 ANN_CONFIGURE_ENV=	ANN_CFLAGS=-I${LOCALBASE}/include ANN_LIBS=-lann
 GTS_CONFIGURE_WITH=		gts
 GTK2_CONFIGURE_WITH=		gtk
+GDK_CONFIGURE_WITH=		gdk
 GDK_PIXBUF_CONFIGURE_WITH=	gdk-pixbuf
 GNOMEUI_CONFIGURE_WITH=		gnomeui
 SMYRNA_CONFIGURE_WITH=		smyrna glade gtkgl gtkglext
@@ -159,7 +150,6 @@ GUILE_CONFIGURE_ENABLE=		guile
 NVTHREADS_CFLAGS+=	${PTHREAD_CFLAGS}
 NVTHREADS_LDFLAGS+=	${PTHREAD_LIBS}
 
-
 .include <bsd.port.options.mk>
 
 # allow the use localized gd ports in Makefile.local or slave ports.
@@ -177,10 +167,20 @@ CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
 
 CONFIGURE_ENV+=	MISSING=${TRUE}
 
+.if ${PORT_OPTIONS:MGUILE}
+BROKEN=	guile is too old
+.endif
+
+.if ${PORT_OPTIONS:MMING}
+BROKEN=	incomplete, uses removed libgraph
+.endif
+
 .if ${PORT_OPTIONS:MTK}
 .if empty(PORT_OPTIONS:MTCL)
 IGNORE=	option TCL is required for option TK
 .endif
+# USES=tk:build is BROKEN: Does not allow to set both tcl and tk depedencies
+BUILD_DEPENDS+=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${_TCLTK_WANTED_VERSION}
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
@@ -205,11 +205,17 @@ IGNORE=	option PANGOCAIRO is required for option LIBRVG2
 IGNORE=	option PANGOCAIRO is required for option GTK2
 .endif
 .else
-.if ${PORT_OPTIONS:MGDK_PIXBUF}
-IGNORE=	option GTK2 is required for option GDK_PIXBUF
-.endif
 .if ${PORT_OPTIONS:MGNOMEUI}
 IGNORE=	option GTK2 is required for option GNOMEUI
+.endif
+.endif
+
+.if ${PORT_OPTIONS:MGDK_PIXBUF}
+.if empty(PORT_OPTIONS:MGTK2)
+IGNORE=	option GTK2 is required for option GDK_PIXBUF
+.endif
+.if empty(PORT_OPTIONS:MGDK)
+IGNORE=	option GDK is required for option GDK_PIXBUF
 .endif
 .endif
 
@@ -240,6 +246,23 @@ CONFIGURE_ARGS+=	--disable-swig
 CONFIGURE_ENV+=		SWIG="/nonexistent"
 .endif
 
+.if ${PORT_OPTIONS:MPHP}
+SHEBANG_FILES+=	tclpkg/gv/demo/modgraph.php
+.endif
+
+.if ${PORT_OPTIONS:MRUBY}
+SHEBANG_FILES+=	tclpkg/gv/demo/modgraph.rb
+.endif
+
+.if ${PORT_OPTIONS:MLUA}
+SHEBANG_FILES+=	tclpkg/gv/demo/modgraph.lua
+.endif
+
+.if ${PORT_OPTIONS:MTCL}
+SHEBANG_FILES+=	tclpkg/gv/demo/modgraph.tcl
+.endif
+
+
 post-patch:
 	${FIND} ${WRKSRC} -name Makefile.in | \
 		${XARGS} ${REINPLACE_CMD} \
@@ -267,6 +290,8 @@ post-patch:
 		-e "s|vendorarchdir|sitearchdir|g" \
 		-e "s|-lruby|-lruby${RUBY_SUFFIX}|g" \
 		-e "s|Config::|RbConfig::|" \
+		-e 's|PHP_INSTALL_DIR=.*|PHP_INSTALL_DIR="${PREFIX}/lib/php/${PHP_EXT_DIR}"|' \
+		-e 's|PHP_INSTALL_DATADIR=.*|PHP_INSTALL_DATADIR="${PREFIX}/share/php"|' \
 		-e '/if test/ s| == | = |g' ${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's|#include "gui.h"|#include "gui/gui.h"|' \
 		${WRKSRC}/cmd/smyrna/tvnodes.h
