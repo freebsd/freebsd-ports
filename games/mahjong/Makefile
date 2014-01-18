@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mahjong
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	games net
 MASTER_SITES=	http://mahjong.julianbradfield.org/Source/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Old
@@ -32,6 +32,9 @@ post-patch:
 		 s|^PERL|#PERL|g ; \
 		 s|^INST|#INST|g ; \
 		 s|make |$$(MAKE) |g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|"gcc"|"${CC}"| ; \
+		 s|^gcc |${CC} |' ${WRKSRC}/makedep
 	@${REINPLACE_CMD} -e \
 		's|SOL_TCP|IPPROTO_TCP|' ${WRKSRC}/sysdep.c
 
