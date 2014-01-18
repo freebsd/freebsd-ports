@@ -4,7 +4,7 @@
 PORTNAME=	doomsday
 PORTVERSION=	1.12.2
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/Doomsday%20Engine/${PORTVERSION}
+MASTER_SITES=	SF/deng/Doomsday%20Engine/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enhanced Doom, Heretic, and Hexen source port
