@@ -3,7 +3,7 @@
 
 PORTNAME=	dogecoin
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~swills/ \
