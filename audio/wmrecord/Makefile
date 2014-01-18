@@ -12,15 +12,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose audio recording utility for the WindowMaker dock
 
 USE_XORG=	xpm x11 xext
-NO_STAGE=	yes
 MAKE_ARGS=	LIBS="-L${LOCALBASE}/lib -lXpm -lX11 -lXext" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LIBDIR=""
 
-MAN1=		wmrecord.1
-PLIST_FILES=	bin/wmrecord
+PLIST_FILES=	bin/wmrecord man/man1/wmrecord.1.gz
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/wmrecord ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/man/wmrecord.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/wmrecord ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/wmrecord.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
