@@ -4,10 +4,10 @@ request logging into a MySQL database.
 Key features are:
     * Seamless integration into the standard Apache logging
       configuration.
-    * Only one configuration line needed to start logging.
+    * Only a single configuration line needed to start logging.
     * Free SQL use.
     * Multiple databases, database users and/or database servers.
-    * Connection pooling, only one connection per log target per
+    * Connection pooling, only one connection per log target, per
       child process.
     * Logs data as it is: e.g. times as SQL DATETIME and n/a items
       as SQL NULL.
