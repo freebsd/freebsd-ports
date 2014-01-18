@@ -16,7 +16,6 @@ LIB_DEPENDS?=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 HAS_CONFIGURE=	yes
 USE_CSTD=	gnu89
-NO_STAGE=	yes
 USES=		pkgconfig
 
 APP?=		xmms
@@ -30,24 +29,20 @@ PLIST_FILES=	${PLUGDIR}/libcrossfade.so
 DOCSDIR?=	${PREFIX}/share/doc/${UNIQUENAME}
 CONFIGURE_ARGS+=	--enable-player=${APP}
 
-OPTIONS_DEFINE=	SAMPLERATE
+OPTIONS_DEFINE=	DOCS SAMPLERATE
 SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 SAMPLERATE_CPPFLAGS=	-I${LOCALBASE}/include
 SAMPLERATE_LDFLAGS=		-L${LOCALBASE}/lib
 SAMPLERATE_CONFIGURE_ENABLE=	samplerate
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/objformat=/s|aout|elf|; \
 		s|dummy audacious|&2|g' ${WRKSRC}/configure
 
 do-install:
-	@${MKDIR} ${PREFIX}/${PLUGDIR}/
-	${INSTALL_PROGRAM} ${WRKSRC}/.libs/libcrossfade.so ${PREFIX}/${PLUGDIR}/
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${PLUGDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/.libs/libcrossfade.so ${STAGEDIR}${PREFIX}/${PLUGDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
