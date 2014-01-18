@@ -9,6 +9,8 @@ MASTER_SITES=	http://kcat.strangesoft.net/openal-releases/
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A software implementation of the OpenAL specification
 
+LICENSE=	LGPL20
+
 CONFLICTS=	openal-200[0-9]*
 
 USE_BZIP2=	yes
