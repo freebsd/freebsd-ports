@@ -17,26 +17,18 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-1.5
 
 USES=		bison
 
-PLIST_FILES+=	bin/chemeq
-MAN1=		chemeq.1
+PLIST_FILES=	bin/chemeq man/man1/chemeq.1.gz
 PORTDOCS=	README
 PORTEXAMPLES=	chemreport chemreport.pl chemtest chemtest.pl test.stuff
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/chemeq ${PREFIX}/bin
-	${INSTALL_MAN}	${WRKSRC}/chemeq.1 ${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/tests/,} ${EXAMPLESDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/src/chemeq ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN}	${WRKSRC}/chemeq.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/tests/,} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
