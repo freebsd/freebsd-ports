@@ -1,4 +1,5 @@
 bin/terminatorX
+man/man1/terminatorX.1.gz
 share/applications/terminatorX.desktop
 share/gnome/help/terminatorX/C/figures/signalflow.png
 share/gnome/help/terminatorX/C/terminatorX.xml
