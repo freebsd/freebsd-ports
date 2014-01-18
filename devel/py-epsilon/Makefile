@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	epsilon
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Epsilon-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Epsilon is a set of Python utility modules used by DivMod projects
+COMMENT=	Set of Python utility modules used by DivMod projects
 
 LICENSE=	MIT
 
