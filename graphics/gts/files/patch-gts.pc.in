@@ -1,0 +1,10 @@
+--- ./gts.pc.in.orig	2005-01-19 04:48:19.000000000 +0000
++++ ./gts.pc.in	2013-12-29 08:54:18.000000000 +0000
+@@ -6,6 +6,6 @@
+ Name: GTS
+ Description: GNU Triangulated Surface Library
+ Version: @VERSION@
+ Requires: glib-2.0,gthread-2.0,gmodule-2.0
+-Libs: -L${libdir} @LIBS@ -lgts
++Libs: -L${libdir} @LIBS@ -lgts -lm
+ Cflags: -I${includedir}
