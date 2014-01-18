@@ -1,7 +1,7 @@
                      !!!! WARNING !!!!
      mod_log_config and mod_log_config-st are conflicting.
 
-In order to use correctly mod_log_config-st, you have to replace:
+In order to use mod_log_config-st correctly, you have to replace:
 LoadModule log_config_module  libexec/apache2/mod_log_config.so
 by
 LoadModule log_config_module  libexec/apache2/mod_log_config-st.so
