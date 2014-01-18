@@ -1,0 +1,71 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: zetacoin
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# zetacoin_enable (bool):	Set to NO by default.
+#				Set it to YES to enable zetacoin.
+# zetacoin_config (path):	Set to %%PREFIX%%/etc/zetacoin.conf
+#				by default.
+# zetacoin_datadir (str):	Default to "/var/db/zetacoin"
+#				Base data directory.
+
+. /etc/rc.subr
+
+name=zetacoin
+rcvar=zetacoin_enable
+
+: ${zetacoin_enable:=NO}
+: ${zetacoin_config=%%PREFIX%%/etc/zetacoin.conf}
+: ${zetacoin_datadir=/var/db/zetacoin}
+
+required_files=${zetacoin_config}
+command=%%PREFIX%%/bin/zetacoind
+zetacoin_chdir=${zetacoin_datadir}
+pidfile="${zetacoin_datadir}/zetacoind.pid"
+stop_cmd=zetacoin_stop
+command_args="-conf=${zetacoin_config} -datadir=${zetacoin_datadir} -noupnp -daemon -pid=${pidfile}"
+start_precmd="${name}_prestart"
+
+zetacoin_create_datadir()
+{
+	echo "Creating data directory"
+	eval mkdir -p ${zetacoin_datadir}
+}
+
+zetacoin_prestart()
+{
+	if [ ! -d "${zetacoin_datadir}/." ]; then
+		zetacoin_create_datadir || return 1
+	fi
+}
+
+zetacoin_requirepidfile()
+{
+	if [ ! "0`check_pidfile ${pidfile} ${command}`" -gt 1 ]; then
+		echo "${name} not running? (check $pidfile)."
+		exit 1
+	fi
+}
+
+zetacoin_stop()
+{
+    zetacoin_requirepidfile
+
+    if checkyesno ${rcvar}; then
+		echo "Stopping ${name}."
+		eval ${command} -conf=${zetacoin_config} -datadir=${zetacoin_datadir} stop
+		wait_for_pids ${pidfile}
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"

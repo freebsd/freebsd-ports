@@ -113,5 +113,6 @@
     SUBDIR += vhcp
     SUBDIR += vuze
     SUBDIR += xnap
+    SUBDIR += zetacoin
 
 .include <bsd.port.subdir.mk>
