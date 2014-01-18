@@ -4,7 +4,8 @@
 PORTNAME=	minizip
 PORTVERSION=	1.2.8
 CATEGORIES=	archivers
-MASTER_SITES=	https://github.com/madler/zlib/archive/
+MASTER_SITES=	https://github.com/madler/zlib/archive/ \
+		LOCAL/mandree/${PORTNAME}
 DISTNAME=	v${PORTVERSION}
 DIST_SUBDIR=	${PORTNAME}
 
@@ -13,10 +14,11 @@ COMMENT=	Minizip and miniunz programs from Zlib contributions
 
 LICENSE=	ZLIB
 
-WRKSRC=		${WRKDIR}/zlib-${PORTVERSION}/contrib/minizip
+PLIST_FILES=	bin/minizip bin/miniunz \
+		man/man1/miniunzip.1.gz man/man1/minizip.1.gz
 MAKE_ARGS=	CFLAGS="${CPPFLAGS} ${CFLAGS} -include sys/stat.h -include stdint.h"
-
 USE_ZIP=	yes
+WRKSRC=		${WRKDIR}/zlib-${PORTVERSION}/contrib/minizip
 
 .include <bsd.port.pre.mk>
 
