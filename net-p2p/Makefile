@@ -21,6 +21,7 @@
     SUBDIR += ctorrent
     SUBDIR += dclib
     SUBDIR += deluge
+    SUBDIR += digitalcoin
     SUBDIR += dogecoin
     SUBDIR += ed2k
     SUBDIR += edonkey-tool-hash
