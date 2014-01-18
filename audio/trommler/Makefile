@@ -13,7 +13,6 @@ COMMENT=	GTK+2 based drum machine
 
 LICENSE=	GPLv2
 
-NO_STAGE=	yes
 USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 
@@ -28,12 +27,12 @@ post-patch:
 		${WRKSRC}/gui.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/playsample ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/trommler ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/wav2smp ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/trommler/Drums
-	@${MKDIR} ${PREFIX}/share/trommler/Songs
-	${INSTALL_DATA} ${WRKSRC}/Drums/*.smp ${PREFIX}/share/trommler/Drums
-	${INSTALL_DATA} ${WRKSRC}/Songs/*.sng ${PREFIX}/share/trommler/Songs
+	${INSTALL_PROGRAM} ${WRKSRC}/playsample ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/trommler ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/wav2smp ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/trommler/Drums
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/trommler/Songs
+	${INSTALL_DATA} ${WRKSRC}/Drums/*.smp ${STAGEDIR}${PREFIX}/share/trommler/Drums
+	${INSTALL_DATA} ${WRKSRC}/Songs/*.sng ${STAGEDIR}${PREFIX}/share/trommler/Songs
 
 .include <bsd.port.mk>
