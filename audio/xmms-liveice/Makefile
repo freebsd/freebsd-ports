@@ -19,7 +19,6 @@ WRKSRC=		${WRKDIR}/LiveIce-${PORTVERSION}
 PLIST_FILES=	lib/xmms/Effect/libliveice.la \
 		lib/xmms/Effect/libliveice.so
 USE_LDCONFIG=	yes
-NO_STAGE=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
