@@ -1,6 +1,6 @@
 --- ./Makefile.orig	Sun Feb 22 03:54:24 2004
 +++ ./Makefile	Wed Jan 16 18:29:09 2008
-@@ -1,8 +1,8 @@
+@@ -1,22 +1,22 @@
  # makefile for species
  
 -CC = gcc
@@ -10,9 +10,11 @@
 +CPP = $(CXX)
 +LD = $(CXX)
  
- OPT = -O4
+-OPT = -O4
++#OPT = -O4
  DBG =
-@@ -11,12 +11,12 @@
+ # Recommended extra options for gcc:
+ #OPT += -fomit-frame-pointer -fforce-addr -finline-functions -funroll-loops
  #OPT += -mcpu=i686 -march=i686
  #DBG += -W -Wall -pedantic -ansi
  
