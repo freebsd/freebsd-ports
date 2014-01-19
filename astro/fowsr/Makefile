@@ -16,12 +16,9 @@ FILEVER=	1.0
 FILEDATE=	20100718
 WRKSRC=		${WRKDIR}/${PORTNAME}-${FILEVER}
 
-USES=		gmake
-NO_STAGE=	yes
+USES=		gmake dos2unix
 
 PLIST_FILES=	bin/fowsr
-
-USE_DOS2UNIX=	yes
 
 post-patch:
 	${REINPLACE_CMD} 's:gcc:${CC}:g' ${WRKSRC}/Makefile
@@ -29,6 +26,6 @@ post-patch:
 	    ${WRKSRC}/*.sh ${WRKSRC}/fowsr.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fowsr ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/fowsr ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
