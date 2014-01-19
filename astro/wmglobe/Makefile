@@ -8,12 +8,12 @@ CATEGORIES=	astro windowmaker geography
 MASTER_SITES=	http://hamete.org/static/wmg/
 
 MAINTAINER=	will@FreeBSD.org
-COMMENT=	A neat xearth-like WindowMaker dockapp
+COMMENT=	Neat xearth-like WindowMaker dockapp
 
-LIB_DEPENDS=	libwraster.so:${PORTSDIR}/x11-wm/windowmaker
+LIB_DEPENDS=	libwraster.so:${PORTSDIR}/x11-wm/libwraster
 
-NO_STAGE=	yes
-MAN1=		wmglobe.1
-PLIST_FILES=	bin/wmglobe
+PLIST_FILES=	bin/wmglobe \
+		man/man1/wmglobe.1.gz
+MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>
