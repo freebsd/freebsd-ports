@@ -6,7 +6,7 @@ PORTVERSION=	0.2.4
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lxde/GPicView%20%28image%20Viewer%29/GpicView%20${PORTVERSION}/
 
-MAINTAINER=	jmohacsi@bsd.hu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple and fast image viewer for X11
 
 LICENSE=	GPLv2
