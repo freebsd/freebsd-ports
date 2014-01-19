@@ -11,7 +11,6 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_unix
 MAINTAINER=	slaven@rezic.de
 COMMENT=	An interactive terminal-based astronomical ephemeris program
 
-NO_STAGE=	yes
 NO_WRKSUBDIR=	yes
 ALL_TARGET=
 
@@ -19,11 +18,11 @@ CFLAGS+=	-Wno-implicit -Wno-return-type
 
 do-install:
 	-cd ${WRKSRC}; \
-	${INSTALL_PROGRAM} ephem ${PREFIX}/bin; \
-	${MKDIR} ${PREFIX}/share/ephem; \
-	${INSTALL_DATA} Man.txt ${PREFIX}/share/ephem/; \
-	[ ! -f ${PREFIX}/share/ephem/ephem.db ] && ${INSTALL_DATA} ephem.db ${PREFIX}/share/ephem/; \
-	[ ! -f ${PREFIX}/share/ephem/ephem.cfg ] && ${INSTALL_DATA} ephem.cfg ${PREFIX}/share/ephem/
+	${INSTALL_PROGRAM} ephem ${STAGEDIR}${PREFIX}/bin; \
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/ephem; \
+	${INSTALL_DATA} Man.txt ${STAGEDIR}${PREFIX}/share/ephem/; \
+	[ ! -f ${PREFIX}/share/ephem/ephem.db ] && ${INSTALL_DATA} ephem.db ${STAGEDIR}${PREFIX}/share/ephem/; \
+	[ ! -f ${PREFIX}/share/ephem/ephem.cfg ] && ${INSTALL_DATA} ephem.cfg ${STAGEDIR}${PREFIX}/share/ephem/
 
 post-install:
 	@${ECHO_MSG} Don\'t forget to edit ${PREFIX}/share/ephem/ephem.cfg!
