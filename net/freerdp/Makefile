@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-USES=		cmake pkgconfig compiler:c11
+USES=		cmake:outsource pkgconfig compiler:c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	FreeRDP
 GH_PROJECT=	FreeRDP
@@ -76,6 +76,8 @@ post-extract:
 		${WRKSRC}/client/X11/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|HW_AVAILCPU|HW_NCPU|' \
 		${WRKSRC}/winpr/libwinpr/sysinfo/sysinfo.c
+	${REINPLACE_CMD} -e 's/NetBSD__)/NetBSD__) || defined(__FreeBSD__)/' \
+		${WRKSRC}/winpr/libwinpr/utils/trio/triodef.h
 	${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|' \
 		${WRKSRC}/winpr/libwinpr/crt/alignment.c \
 		${WRKSRC}/channels/drive/client/statvfs.c
