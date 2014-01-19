@@ -10,5 +10,4 @@ LICENSE=	GPLv2
 _BUILDING_NSCA_CLIENT=	yes
 MASTERDIR=	${.CURDIR}/../nsca
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
