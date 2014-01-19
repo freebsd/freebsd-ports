@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	atop
-PORTVERSION=	2.0.2.b2
+PORTVERSION=	2.0.2.b3
 CATEGORIES=	sysutils
 
 MAINTAINER=	samm@os2.kiev.ua
@@ -14,18 +14,16 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	samm-git
 GH_PROJECT=	atop-freebsd
 GH_TAGNAME=	${PORTNAME}-${PORTVERSION:C|b|fbsd.beta|}
-GH_COMMIT=	f9357ca
+GH_COMMIT=	840de1c
 
 USES=		ncurses
 MAKEFILE=	BSDmakefile
-MAN1=		atop.1 atopsar.1
-MAN5=		atoprc.5
 LOGDIR?=	/var/log/atop
+PLIST_SUB+=	LOGDIR="${LOGDIR}"
+SUB_LIST=	LOGDIR="${LOGDIR}"
 
 USE_RC_SUBR=	atop
-PLIST_SUB+=	LOGDIR="${LOGDIR}"
 SUB_FILES=	pkg-message
-SUB_LIST=	LOGDIR="${LOGDIR}"
 
 PORTDOCS=	AUTHOR \
 		ChangeLog \
@@ -33,21 +31,17 @@ PORTDOCS=	AUTHOR \
 		README \
 		README.FreeBSD
 
-NO_STAGE=	yes
 do-install:
-		@${INSTALL_PROGRAM} ${WRKSRC}/atop ${PREFIX}/bin
-		@${LN} -sf ${PREFIX}/bin/atop ${PREFIX}/bin/atopsar
-.for manpage in ${MAN1}
-		@${INSTALL_MAN} ${WRKSRC}/man/${manpage} ${MAN1PREFIX}/man/man1/
+		${INSTALL_PROGRAM} ${WRKSRC}/atop ${STAGEDIR}${PREFIX}/bin
+		${LN} -sf atop ${STAGEDIR}${PREFIX}/bin/atopsar
+.for manpage in atop.1 atopsar.1
+		${INSTALL_MAN} ${WRKSRC}/man/${manpage} ${STAGEDIR}${MAN1PREFIX}/man/man1/
 .endfor
-		@${INSTALL_MAN} ${WRKSRC}/man/${MAN5} ${MAN5PREFIX}/man/man5/
-		@${MKDIR} ${LOGDIR}
-.if !defined(NOPORTDOCS)
-		${MKDIR} ${DOCSDIR}
+		${INSTALL_MAN} ${WRKSRC}/man/atoprc.5 ${STAGEDIR}${MAN5PREFIX}/man/man5/
+		@${MKDIR} ${STAGEDIR}${LOGDIR}
+		@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-		${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+		${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-		@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
