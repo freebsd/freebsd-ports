@@ -15,8 +15,8 @@ COMMENT=	Terminal emulator for the X Window System
 
 CONFLICTS=	x11iraf-[0-9]*
 
+USES=		desktop-file-utils
 USE_XORG=	xaw xft
-WANT_GNOME=	desktopfileutils
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
@@ -26,7 +26,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 ICONVERSION=	1
 
-OPTIONS_DEFINE=	WCHAR LUIT DECTERM PCRE GNOME DABBREV 256COLOR SIXEL
+OPTIONS_DEFINE=	WCHAR LUIT DECTERM PCRE DABBREV 256COLOR SIXEL
 
 DABBREV_DESC=	Enable support for dabbrev-expand
 DECTERM_DESC=	Enable DECterm Locator support
@@ -46,7 +46,6 @@ PCRE_CONFIGURE_WITH=	pcre
 PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 DABBREV_CONFIGURE_ENABLE=	dabbrev
 SIXEL_CONFIGURE_ENABLE=	sixel-graphics
-GNOME_USES=	desktop-file-utils
 
 .include <bsd.port.options.mk>
 
