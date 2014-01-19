@@ -10,7 +10,14 @@
  
  CPPFLAGS = -I../belgolib
  
-@@ -34,7 +33,7 @@
+@@ -28,13 +27,13 @@
+ 
+ test: $(OFILES)
+ 	$(CC) -o $(OEXE) $(OFILES) $(LDFLAGS)
+-	strip $(OEXE)
++#	strip $(OEXE)
+ 
+ clean:
  	-/bin/rm -f $(OFILES) $(OEXE)
  
  depend: 
