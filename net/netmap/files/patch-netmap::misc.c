@@ -1,6 +1,21 @@
 --- netmap/misc.c.orig	Sun Dec 15 14:54:26 2002
 +++ netmap/misc.c	Sun Dec 15 14:54:26 2002
-@@ -54,7 +54,7 @@
+@@ -1,4 +1,4 @@
+-#include <strstream>
++#include <sstream>
+ #include <string>
+ 
+ #include "misc.h"
+@@ -17,7 +17,7 @@
+ 
+ string int_to_str(int i) 
+ {
+-    strstream ost;
++    stringstream ost;
+ 
+     ost << i << char(0);
+ 
+@@ -55,7 +55,7 @@
  	return false;
      
      bool had_point = false;

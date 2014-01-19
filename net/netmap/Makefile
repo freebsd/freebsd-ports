@@ -10,15 +10,18 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/NetMap%20${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Make a graphical representation of the surrounding network
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	dotty:${PORTSDIR}/graphics/graphviz
 
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/makelist bin/netmap
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/makelist/makelist ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/netmap/netmap ${PREFIX}/bin
+.for i in makelist netmap
+	(cd ${WRKSRC}/${i} && ${INSTALL_PROGRAM} ${i} \
+		${STAGEDIR}${PREFIX}/bin)
+.endfor
 
 .include <bsd.port.mk>
