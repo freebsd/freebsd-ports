@@ -22,40 +22,21 @@ MAKE_ENV+=	CONFDIR=${PREFIX}/etc/gather DATADIR=${DATADIR}
 
 SUB_FILES=	pkg-message
 
-MAN1=		gather.1
-
-.if !defined(NOPORTDOCS)
-PORTDOCS=	Changelog README
-.endif
-.if !defined(NOPORTEXAMPLES)
-PORTEXAMPLES=	*
-.endif
-
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/gather ${PREFIX}/bin/
-	@${INSTALL_MAN} ${WRKSRC}/gather.1 ${PREFIX}/man/man1
-.if !exists(${PREFIX}/etc/gather)
-	@${MKDIR} ${PREFIX}/etc/gather
-.endif
-	@${INSTALL_DATA} ${WRKSRC}/gather.cfg ${PREFIX}/etc/gather/gather.cfg.sample
-.if !exists(${CONFDIR}/gather.cfg)
-	@${INSTALL_DATA} ${WRKSRC}/gather.cfg ${PREFIX}/etc/gather/gather.cfg
-.endif
-	@${INSTALL_DATA} ${WRKSRC}/examples/gather.map.freebsd ${PREFIX}/etc/gather/gather.map.sample
-.if !exists(${PREFIX}/etc/gather/gather.cfg)
-	@${INSTALL_DATA} ${WRKSRC}/examples/gather.map.freebsd ${PREFIX}/etc/gather/gather.map
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_SCRIPT} ${WRKSRC}/gather ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/gather.1 ${STAGEDIR}${PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/gather
+	${INSTALL_DATA} ${WRKSRC}/gather.cfg \
+	    ${STAGEDIR}${PREFIX}/etc/gather/gather.cfg.sample
+	${INSTALL_DATA} ${WRKSRC}/examples/gather.map.freebsd \
+	    ${STAGEDIR}${PREFIX}/etc/gather/gather.map.sample
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Changelog ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/gather.map.freebsd \
+	    ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/gather.map.linux \
+	    ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
