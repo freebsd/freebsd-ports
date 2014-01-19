@@ -21,7 +21,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 MAN1=		dircproxy.1 dircproxy-crypt.1
 .endif
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NO_INSTALL_MANPAGES)
 		@cd ${WRKSRC}/doc && make install-man
