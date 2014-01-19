@@ -11,18 +11,20 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Players are cars throwing a magnetic fuzzy ball into a goal
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	${JAM}:${PORTSDIR}/devel/jam \
 		${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode \
 		${LOCALBASE}/lib/libplibsg.a:${PORTSDIR}/x11-toolkits/plib
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
 USE_BZIP2=	yes
 USE_GL=		gl
 USE_SDL=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 JAM?=		${LOCALBASE}/bin/jam
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|SDL/||g' ${WRKSRC}/src/*
 	@${REINPLACE_CMD} -e 's|%%SDL_CFLAGS%%|`${SDL_CONFIG} --cflags`|' \
@@ -33,11 +35,11 @@ post-patch:
 do-build:
 	cd ${WRKSRC} && ${SETENV} "C++=${CC}" "LOCALBASE=${LOCALBASE}" \
 		"CFLAGS=${CFLAGS} -DDATADIR=\\\"${PREFIX}/share\\\"" \
-	${JAM} -dx -sPREFIX=${PREFIX}
+		${JAM} -dx -sPREFIX=${PREFIX}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/gillo3 ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/data/*.* ${DATADIR}
+	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} gillo3 ${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/data && ${INSTALL_DATA} *.* ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
