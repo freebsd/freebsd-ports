@@ -13,19 +13,20 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone library to control various mpc8xx boards
 
 WRKSRC=		${WRKDIR}/libmpc8xx
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+
+USES=		gmake
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	amd64 i386
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -E -e 's,(objformat=).*,\1elf,' \
-		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's| $$(includedir)| $$(DESTDIR)$$(includedir)|' \
+		${WRKSRC}/libmpc8xx/Makefile.in
 
 post-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/Flash.dev ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} Flash.dev ${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>
