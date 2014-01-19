@@ -13,8 +13,6 @@ const char *revision = "$Revision: 0.1 $";
 const char *copyright = "2009";
 const char *email = "hirose31 _at_ gmail.com";
 
-#include <unistd.h>
-
 #include "common.h"
 #include "utils.h"
 #include "utils_base.h"
@@ -257,12 +255,6 @@ void print_help(void)
   printf (_(UT_WARN_CRIT_RANGE));
   printf (_(UT_HOST_PORT), 'P', mcport);
   printf (" -E, --expire=INTEGER\n    expire time(second) for SET command (default: 0)\n");
-
-#ifdef NP_EXTRA_OPTS
-  printf ("\n");
-  printf ("%s\n", _("Notes:"));
-  printf (_(UT_EXTRA_OPTS_NOTES));
-#endif
 
   /* printf (_(UT_SUPPORT)); */
   puts("\nRepository:\n  http://github.com/hirose31/nagios-check_memcached_paranoid/tree/master\n\n");
