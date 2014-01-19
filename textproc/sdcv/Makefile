@@ -10,33 +10,33 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text-based utility for work with dictionaries in StarDict's format
 
-OPTIONS_DEFINE=	NLS
+LICENSE=	GPLv2 # (or later)
 
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
+USES=		gettext pkgconfig readline
 USE_GNOME=	glib20
-USES=		pkgconfig iconv
+USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
+LIBTOOLIZE_ARGS=--copy --force
+ACLOCAL_ARGS=	--automake-acdir=${ACLOCAL_DIR} -I m4
+AUTOMAKE_ARGS=	--add-missing --copy
+
 SUB_FILES=	pkg-message
 
-NLS_USES=	gettext
-NLS_CPPFLAGS=	-I${LOCALBASE}/include
-NLS_LDFLAGS=	-L${LOCALBASE}/lib
-NLS_CONFIGURE_ENABLE=	nls
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
-		${WRKSRC}/doc/sdcv.1
-	@${REINPLACE_CMD} -e '1425 s, install-data,,' \
-		${WRKSRC}/po/Makefile.in.in
-	@${REINPLACE_CMD} -e 's, getopt.h,,g' ${WRKSRC}/src/Makefile.in
-	@${REINPLACE_CMD} -e '146 s|()|(int, char * const [], const char *)|g' \
-		${WRKSRC}/src/getopt.h
-	@${REINPLACE_CMD} -e '516 s|sizeof|(guint32)sizeof|g' \
-		${WRKSRC}/src/lib/lib.cpp
-	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
-		${WRKSRC}/src/sdcv.cpp
-	@${REINPLACE_CMD} -e 's,@mandir@/uk,@mandir@,' \
-		${WRKSRC}/doc/uk/Makefile.in
+.for i in doc/sdcv.1 src/sdcv.cpp
+	@${REINPLACE_CMD} -e \
+		's|/usr/share|${PREFIX}/share|' ${WRKSRC}/${i}
+.endfor
+	@${REINPLACE_CMD} -e \
+		's|@mandir@/uk|@mandir@|' ${WRKSRC}/doc/uk/Makefile.am
+	@${REINPLACE_CMD} -e \
+		's|getopt1.c getopt.h||' ${WRKSRC}/src/Makefile.am
+
+pre-configure:
+	@${RM} -f ${WRKSRC}/m4/gettext.m4
+	@${RM} -f ${WRKSRC}/src/getopt.h
 
 .include <bsd.port.mk>
