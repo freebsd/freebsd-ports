@@ -2,11 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	omni-bot
-PORTVERSION=	0.820
+PORTVERSION=	0.831
 CATEGORIES=	games linux
-MASTER_SITES=	http://www.omni-bot.com/forum/downloads/
+MASTER_SITES=	http://googledrive.com/host/0BzZDKd40GAICUkZTaDJQQ2FKRTg/
 PKGNAMEPREFIX=	linux-enemyterritory-
-DISTNAME=	Omni-bot_0.82_ET_Linux
+DISTFILES=	omni-bot_0_831_ET_linux.zip \
+			omni-bot_0_83_ET_waypoint_mod.zip
 
 MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Omni-Bot is a bot for Enemy Territory
@@ -20,7 +21,6 @@ NO_WRKSUBDIR=	yes
 DATADIR=	${PREFIX}/lib/enemyterritory/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/enemyterritory-${PORTNAME}
 
-NO_STAGE=	yes
 do-build:
 .for f in et etded
 	@(${ECHO_CMD} "#!/bin/sh"; \
@@ -30,19 +30,14 @@ do-build:
 
 do-install:
 .for f in et etded
-	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${f}-${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	${MV} ${WRKSRC}/omni-bot/et/user/omni-bot.cfg \
 		${WRKSRC}/omni-bot/et/user/omni-bot.cfg.sample
-	${CP} -R ${WRKSRC}/omni-bot/* ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/omnibot/qagame.mp.i386.so ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/omnibot/omnibot_et.pk3 ${DATADIR}
-
-post-install:
-	@if [ ! -f ${DATADIR}/et/user/omni-bot.cfg ]; then \
-		${CP} -p ${DATADIR}/et/user/omni-bot.cfg.sample \
-			${DATADIR}/et/user/omni-bot.cfg ; \
-	fi
+	${CP} -R ${WRKSRC}/omni-bot/* ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/omnibot/qagame.mp.i386.so ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/omnibot/ui.mp.i386.so ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/omnibot/omnibot_et.pk3 ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
