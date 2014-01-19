@@ -49,3 +49,4 @@ bin/etded-omni-bot-%%VERSTR%%
 @dirrm %%DATADIR%%/et/nav
 @dirrm %%DATADIR%%/et
 @dirrm %%DATADIR%%
+@dirrmtry lib/enemyterritory
