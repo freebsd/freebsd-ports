@@ -2,6 +2,7 @@
 
 PORTNAME=	rt
 DISTVERSION=	4.2.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
 PKGNAMESUFFIX=	42
@@ -31,7 +32,7 @@ NO_ARCH=	yes
 # mentioned in the docs is currently unsupported in the ports, but see
 # http://www.infracaninophile.co.uk/articles/sphinxse.html
 
-OPTIONS_DEFINE=		DEV GD GPG GRAPHVIZ SMIME
+OPTIONS_DEFINE=		DEVELOPER GD GPG GRAPHVIZ SMIME
 OPTIONS_SINGLE=		DB
 OPTIONS_SINGLE_DB=	MYSQL ORACLE PGSQL SQLITE
 OPTIONS_RADIO=		WEB
@@ -42,18 +43,17 @@ OPTIONS_DEFAULT=	AP_MODPERL GD GPG MYSQL
 USERS?=		www
 GROUPS?=	rt www
 
-BUILD_DEPENDS+=	${LOCALBASE}/bin/jsmin:${PORTSDIR}/devel/jsmin
+RUN_DEPENDS+=	${LOCALBASE}/bin/jsmin:${PORTSDIR}/devel/jsmin
 
 .include "${.CURDIR}/Makefile.cpan"
 
-BUILD_DEPENDS+=	${CLI_DEPS}        \
+RUN_DEPENDS+=	${CLI_DEPS}        \
 		${CORE_DEPS}       \
 		${DASHBOARDS_DEPS} \
 		${ICAL_DEPS}       \
 		${MAILGATE_DEPS}   \
-		${USERLOGO_DEPS}
-
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+		${USERLOGO_DEPS}   \
+		${HTML_DOC_DEPS}
 
 USES+=		perl5
 USE_AUTOTOOLS=	autoconf
@@ -64,61 +64,50 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 
 AP_MODPERL_DESC=		Deploy with apache and mod_perl
-AP_MODPERL_BUILD_DEPENDS=	${MODPERL2_DEPS}
 AP_MODPERL_RUN_DEPENDS=		${MODPERL2_DEPS}
 
 AP_MODFASTCGI_DESC=		Deploy with apache and mod_fastcgi
 AP_MODFASTCGI_USE=		APACHE_RUN=22+
-AP_MODFASTCGI_BUILD_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
 AP_MODFASTCGI_RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi \
 				${FASTCGI_DEPS}
 
 LIGHTTPD_DESC=			Deploy with lighttpd and mod_fastcgi
-LIGHTTPD_BUILD_DEPENDS=		${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
 LIGHTTPD_RUN_DEPENDS=		${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
 
 SPAWN_FCGI_DESC=		Deploy with spawn_fcgi
-SPAWN_FCGI_BUILD_DEPENDS=	${LOCALBASE}/bin/spawn-fcgi:${PORTSDIR}/www/spawn-fcgi
 SPAWN_FCGI_RUN_DEPENDS=		${LOCALBASE}/bin/spawn-fcgi:${PORTSDIR}/www/spawn-fcgi
 
 MYSQL_USE=			MYSQL=yes
-MYSQL_BUILD_DEPENDS=		${MYSQL_DEPS}
 MYSQL_RUN_DEPENDS=		${MYSQL_DEPS}
 
 PGSQL_USE=			PGSQL=yes
-PGSQL_BUILD_DEPENDS=		${PGSQL_DEPS}
-RUN_DEPENDS=			${PGSQL_DEPS}
+PGSQL_RUN_DEPENDS=		${PGSQL_DEPS}
 
-ORACLE_BUILD_DEPENDS=		${ORACLE_DEPS}
 ORACLE_RUN_DEPENDS=		${ORACLE_DEPS}
 
 SQLITE_USE=			SQLITE=yes
-SQLITE_BUILD_DEPENDS=		${SQLITE_DEPS}
 SQLITE_RUN_DEPENDS=		${SQLITE_DEPS}
 
-DEV_DESC=			Configure for Developers
-DEV_BUILD_DEPENDS=		${DEVELOPER_DEPS}
-DEV_RUN_DEPENDS=		${DEVELOPER_DEPS}
-DEV_CONFIGURE_ENABLE=		developer
+DEVELOPER_DESC=			Configure for Developers
+DEVELOPER_RUN_DEPENDS=		${DEVELOPER_DEPS}
+DEVELOPER_CONFIGURE_ENABLE=		developer
 
 SMIME_DESC=			Enable Secure MIME support
-SMIME_BUILD_DEPENDS=		${SMIME_DEPS}
 SMIME_RUN_DEPENDS=		${SMIME_DEPS}
 SMIME_CONFIGURE_ENABLE=		smime
 
-GRAPHVIZ_BUILD_DEPENDS=		${GRAPHVIZ_DEPS}
 GRAPHVIZ_RUN_DEPENDS=		${GRAPHVIZ_DEPS}
 GRAPHVIZ_CONFIGURE_ENABLE=	graphviz
 
 GPG_DESC=			Enable GnuPG support
-GPG_BUILD_DEPENDS=		${GPG_DEPS}
 GPG_RUN_DEPENDS=		${GPG_DEPS}
 GPG_CONFIGURE_ENABLE=		gpg
 
 GD_DESC=			Enable GD Graphs and Charts
-GD_BUILD_DEPENDS=		${GD_DEPS}
 GD_RUN_DEPENDS=			${GD_DEPS}
 GD_CONFIGURE_ENABLE=		gd
+
+BUILD_DEPENDS+=	${RUN_DEPENDS}
 
 .include <bsd.port.options.mk>
 
@@ -209,10 +198,8 @@ pre-install:
 	@${RM} -f ${WRKSRC}/lib/RT.pm.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/upgrade
 	(cd ${WRKSRC}/etc && \
 	    ${COPYTREE_SHARE} upgrade ${STAGEDIR}${DOCSDIR} "! -name *\.in")
-.endif
 
 .include <bsd.port.mk>
