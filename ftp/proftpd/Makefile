@@ -3,7 +3,7 @@
 
 PORTNAME?=	proftpd
 PORTVERSION?=	1.3.4d
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		https://github.com/downloads/proftpd/proftpd.github.com/ \
@@ -23,7 +23,6 @@ LICENSE?=	GPLv2
 LICENSE_FILE?=	${WRKSRC}/COPYING
 
 .if defined(_BUILDING_PROFTPD_MODULE)
-BUILD_DEPENDS+=	${LOCALBASE}/sbin/proftpd:${PORTSDIR}/ftp/proftpd
 RUN_DEPENDS+=	${LOCALBASE}/sbin/proftpd:${PORTSDIR}/ftp/proftpd
 .endif
 
@@ -40,10 +39,6 @@ DISTFILES+=	${_PROFTPD_MODULE_DISTFILES}
 .endif
 
 .if !defined(_BUILDING_PROFTPD_MODULE)
-MAN1=	ftpcount.1 ftpmail.1 ftpasswd.1 ftpquota.1 ftpwho.1 ftptop.1
-MAN5=	xferlog.5
-MAN8=	proftpd.8 ftpscrub.8 ftpshut.8 ftpdctl.8
-
 PORTDOCS=	*
 .endif
 
