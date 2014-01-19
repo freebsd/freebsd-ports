@@ -16,5 +16,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-registration>=0:${PORTSDIR}/www/py-dj
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
