@@ -20,7 +20,6 @@ USE_KDE4=	automoc4 kdelibs kdeprefix libkonq
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 INSTALLS_ICONS=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^Categories/s|=.*|=Qt;KDE;Utility;|' \
@@ -30,6 +29,6 @@ post-patch:
 		${WRKSRC}/src/kdirreadjob.cpp
 
 post-install:
-	@${LN} -sf k4dirstat ${PREFIX}/bin/kdirstat
+	@${LN} -sf k4dirstat ${STAGEDIR}${PREFIX}/bin/kdirstat
 
 .include <bsd.port.mk>
