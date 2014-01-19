@@ -2,6 +2,7 @@
 
 PORTNAME=	relayd
 PORTVERSION=	5.4.20131122
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GH
 
@@ -54,7 +55,7 @@ post-patch:
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/../etc/relayd.conf \
 		${STAGEDIR}${PREFIX}/etc/relayd.conf.sample
-	@${CP} -n ${STAGEDIR}${PREFIX}/etc/relayd.conf.sample \
+	@${CP} -n ${WRKSRC}/../etc/relayd.conf \
 		${STAGEDIR}${PREFIX}/etc/relayd.conf || ${TRUE}
 
 .include <bsd.port.post.mk>
