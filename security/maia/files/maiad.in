@@ -13,34 +13,39 @@
 
 . /etc/rc.subr
 
-name="maiad"
+name=maiad
 rcvar=maiad_enable
 
 load_rc_config $name
 
-: ${maiad_enable="NO"}
-: ${maiad_pidfile="%%MAIADIR%%/maiad.pid"}
+: ${maiad_enable:=NO}
+: ${maiad_pidfile="/var/run/maia/maiad.pid"}
 
-required_files=%%PREFIX%%/etc/maiad.conf
+required_files=%%ETCDIR%%/maiad.conf
 
-start_cmd=${name}_start
-stop_cmd=${name}_stop
-
+start_cmd="%%PREFIX%%/sbin/maiad start"
+start_precmd="start_precmd"
+extra_commands="status"
 pidfile=${maiad_pidfile}
-procname=${maiad_procname}
+procname=maiad
 
-start_precmd=${name}_prestart
+start_precmd()
+{
+	for i in db tmp var virusmails; do
+		if [ ! -e %%MAIAHOME%%/${i} ]; then
+			install -d -o %%USERS%% -g %%GROUPS%% -m 750 %%MAIAHOME%%/${i}
+		fi
+	done
+			
+	for i in log run lock; do
+		if [ ! -e /var/${i}/maia ]; then
+			install -d -o %%USERS%% -g %%GROUPS%% /var/${i}/maia
+		fi
+	done
 
-maiad_prestart() {
-	rm -rf %%MAIADIR%%/tmp/* %%MAIADIR%%/tmp/.* 2>/dev/null || true
-}
-
-maiad_start() {
-	%%PREFIX%%/sbin/maiad start
-}
-
-maiad_stop() {
-	%%PREFIX%%/sbin/maiad stop
+	# not sure why, but previous maintainer had this in the rc script
+	rm -rf %%MAIAHOME%%/tmp/* %%MAIAHOME%%/tmp/.* 2>/dev/null || true
 }
 
 run_rc_command "$1"
+
