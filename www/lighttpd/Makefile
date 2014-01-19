@@ -83,7 +83,6 @@ PLIST_SUB+=		LOGROOT="${LIGHTTPD_LOGROOT}" \
 
 .endif # !defined(_BUILDING_LIGHTTPD_MODULE)
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
@@ -201,37 +200,37 @@ post-patch:
 		${WRKSRC}/doc/config/lighttpd.conf
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc/lighttpd/conf.d ${PREFIX}/etc/lighttpd/vhosts.d
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d ${STAGEDIR}${PREFIX}/etc/lighttpd/vhosts.d
 .for FILE in ${LIGHTTPD_CONF_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/doc/config/${FILE} \
-		${PREFIX}/etc/lighttpd/${FILE}.sample
-.if !exists(${PREFIX}/etc/lighttpd/${FILE})
+		${STAGEDIR}${PREFIX}/etc/lighttpd/${FILE}.sample
+.if !exists(${STAGEDIR}${PREFIX}/etc/lighttpd/${FILE})
 	@${INSTALL_DATA} ${WRKSRC}/doc/config/${FILE} \
-		${PREFIX}/etc/lighttpd/${FILE}
+		${STAGEDIR}${PREFIX}/etc/lighttpd/${FILE}
 .endif
 .endfor
 .for FILE in ${LIGHTTPD_CONF_D_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/doc/config/conf.d/${FILE} \
-		${PREFIX}/etc/lighttpd/conf.d/${FILE}.sample
-.if !exists(${PREFIX}/etc/lighttpd/conf.d/${FILE})
+		${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d/${FILE}.sample
+.if !exists(${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d/${FILE})
 	@${INSTALL_DATA} ${WRKSRC}/doc/config/conf.d/${FILE} \
-		${PREFIX}/etc/lighttpd/conf.d/${FILE}
+		${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d/${FILE}
 .endif
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/doc/config/vhosts.d/vhosts.template \
-		${PREFIX}/etc/lighttpd/vhosts.d/vhosts.template
-	@${MKDIR} -m 0700 ${LIGHTTPD_LOGROOT}
-	@${CHOWN} ${LIGHTTPD_USER}:${LIGHTTPD_GROUP} ${LIGHTTPD_LOGROOT}
+		${STAGEDIR}${PREFIX}/etc/lighttpd/vhosts.d/vhosts.template
+	@${MKDIR} -m 0700 ${STAGEDIR}${LIGHTTPD_LOGROOT}
+	@${CHOWN} ${LIGHTTPD_USER}:${LIGHTTPD_GROUP} ${STAGEDIR}${LIGHTTPD_LOGROOT}
 
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${DOCSDIR}
 . for FILE in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/${FILE}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
 . endfor
 .endif
 .if ${PORT_OPTIONS:MMYSQLAUTH}
 . for FILE in README.mysqlauth mysql_auth.sql
-	@${INSTALL_DATA} ${FILESDIR}/${FILE} ${DOCSDIR}/${FILE}
+	@${INSTALL_DATA} ${FILESDIR}/${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
 . endfor
 .endif
 
