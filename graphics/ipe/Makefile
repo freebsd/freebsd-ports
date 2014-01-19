@@ -24,12 +24,13 @@ USES=		gmake iconv pkgconfig
 USE_QT4=	gui moc_build qmake_build rcc_build uic_build
 USE_TEX=	latex
 MAKE_ENV=	DLL_CFLAGS="-fPIC" \
-		ICONV_CFLAGS="-I${LOCALBASE}/include" \
-		ICONV_LIBS="-L${LOCALBASE}/lib ${ICONV_LIB}" \
+		ICONV_CFLAGS="-I${ICONV_PREFIX}/include" \
+		ICONV_LIBS="-L${ICONV_PREFIX}/lib ${ICONV_LIB}" \
 		INSTALL_DIR="${MKDIR}" \
 		INSTALL_FILES="${INSTALL_DATA}" \
 		INSTALL_SCRIPTS="${INSTALL_SCRIPT}" \
 		INSTALL_PROGRAMS="${INSTALL_PROGRAM}" \
+		INSTALL_ROOT="${STAGEDIR}" \
 		IPE_USE_ICONV="-DIPE_USE_ICONV" \
 		IPEDOCDIR="${DOCSDIR}" \
 		IPEMANDIR="${MANPREFIX}/man/man1" \
@@ -41,14 +42,11 @@ USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-MAN1=		ipe.1 ipe6upgrade.1 ipeextract.1 iperender.1 ipetoipe.1 \
-		ipescript.1
 PORTDOCS=	*
 
 DESKTOP_ENTRIES="Ipe" "" "${DATADIR}/${PORTVERSION}/ipe.png" \
 		"${PORTNAME}" "" true
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -68,10 +66,9 @@ post-patch:
 
 post-install:
 	(cd ${WRKSRC}/../fontmaps && ${INSTALL_DATA} fontmap.xml \
-		${DATADIR}/${PORTVERSION})
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/../build/doc && ${COPYTREE_SHARE} . ${DOCSDIR})
-.endif
+		${STAGEDIR}${DATADIR}/${PORTVERSION})
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC}/../build/doc && ${COPYTREE_SHARE} . \
+		${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
