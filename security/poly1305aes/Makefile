@@ -7,23 +7,36 @@ CATEGORIES=	security
 MASTER_SITES=	http://cr.yp.to/mac/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The poly1305 message authentication reference implementation using AES
+COMMENT=	Poly1305 message authentication reference implementation using AES
 
-CC+=		${CPPFLAGS} ${CFLAGS} ${LDFLAGS} ${STRIP}
 ALL_TARGET=	default
 
-REPLACE_HDRS=	aes.h cpucycles.h poly1305aes.h
-PROGRAM_FILES=	poly1305aes-speed test-aes test-poly1305aes
+CC+=		${CPPFLAGS} ${CFLAGS} ${LDFLAGS}
 
-NO_STAGE=	yes
-do-install:
-		${MKDIR} ${PREFIX}/include/poly1305
-		${INSTALL_DATA} ${WRKSRC}/*_*.h ${PREFIX}/include/poly1305/
-.for i in ${REPLACE_HDRS}
-		${REINPLACE_CMD} -e "s,#include \",#include \"poly1305/," ${WRKSRC}/$i > ${WRKSRC}/$i.fixed
-		${INSTALL_DATA} ${WRKSRC}/$i.fixed ${PREFIX}/include/poly1305/$i
-		${INSTALL_DATA} ${WRKSRC}/*.a ${PREFIX}/lib/
-		${INSTALL_DATA} ${PROGRAM_FILES:S,^,${WRKSRC}/,} ${PREFIX}/bin/
+NOT_FOR_ARCHS=	amd64
+
+.include <bsd.port.pre.mk>
+
+pre-build:
+.if ${ARCH} == "i386"
+	@${ECHO_CMD} "ppro" > ${WRKSRC}/poly1305aes.impl
+.endif
+
+post-build:
+.for i in aes.h cpucycles.h poly1305aes.h
+	@${REINPLACE_CMD} -e \
+		's|#include "|#include "poly1305/|' ${WRKSRC}/${i}
 .endfor
 
-.include <bsd.port.mk>
+do-install:
+.for i in poly1305aes-speed test-aes test-poly1305aes
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${i} \
+		${STAGEDIR}${PREFIX}/bin)
+.endfor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/poly1305
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.h \
+		${STAGEDIR}${PREFIX}/include/poly1305)
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.a \
+		${STAGEDIR}${PREFIX}/lib)
+
+.include <bsd.port.post.mk>
