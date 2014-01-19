@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	herbstluftwm
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://herbstluftwm.org/tarballs/
 
@@ -25,7 +25,6 @@ MAN7=		herbstluftwm-tutorial.7
 
 OPTIONS_DEFINE=	BASH ZSH DOCS EXAMPLES
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBASH}
