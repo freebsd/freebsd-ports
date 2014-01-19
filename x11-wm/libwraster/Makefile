@@ -34,8 +34,6 @@ CONFIGURE_ARGS=	--with-pixmapdir=${PREFIX}/include/X11/pixmaps \
 CPPFLAGS+=	-DPREFIX=\\\"${PREFIX}\\\" -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		get-wraster-flags.1
-
 pre-build:
 	cd ${WRKSRC} && ${MAKE} config-paths.h
 
