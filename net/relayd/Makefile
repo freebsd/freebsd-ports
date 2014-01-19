@@ -30,7 +30,6 @@ GROUPS=		_relayd
 OPTIONS_DEFINE=	LIBEVENT_STATIC
 LIBEVENT_STATIC_DESC=	Build with static libevent
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MLIBEVENT_STATIC}
@@ -54,8 +53,9 @@ post-patch:
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/../etc/relayd.conf \
-		${PREFIX}/etc/relayd.conf.sample
-	@${CP} -n ${PREFIX}/etc/relayd.conf.sample \
-		${PREFIX}/etc/relayd.conf || ${TRUE}
+		${STAGEDIR}${PREFIX}/etc/relayd.conf.sample
+	@${CP} -n ${STAGEDIR}${PREFIX}/etc/relayd.conf.sample \
+		${STAGEDIR}${PREFIX}/etc/relayd.conf || ${TRUE}
 
 .include <bsd.port.post.mk>
+
