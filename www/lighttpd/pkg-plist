@@ -171,6 +171,7 @@ lib/lighttpd/mod_usertrack.so
 lib/lighttpd/mod_webdav.a
 lib/lighttpd/mod_webdav.la
 lib/lighttpd/mod_webdav.so
+man/man8/lighttpd.8.gz
 sbin/lighttpd
 sbin/lighttpd-angel
 @dirrm lib/lighttpd
