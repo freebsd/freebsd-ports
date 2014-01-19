@@ -27,7 +27,7 @@
  then
  
  
-@@ -8657,7 +8659,7 @@
+@@ -8657,13 +8657,13 @@
  
  		 fi
  	 ;;
@@ -36,7 +36,15 @@
  	  echo "FreeBSD build enabled"
  
  		 	 HUGO_TARGET_MACHINE="FREEBSD"
-@@ -8675,6 +8677,35 @@
+ 
+- 			 CFLAGS="$CFLAGS `sdl-config --cflags`"
+-       LIBS="$LIBS `sdl-config --libs`"
++ 			 CFLAGS="$CFLAGS `${SDL_CONFIG} --cflags`"
++       LIBS="$LIBS `${SDL_CONFIG} --libs`"
+ 
+ 
+ 
+@@ -8675,6 +8675,35 @@
    SDL_FREEBSD_FALSE=
  fi
  

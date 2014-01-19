@@ -16,12 +16,12 @@
 -	if test -d $(srcdir)/doc; then \
 -	  $(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/doc; \
 -	  for doc in $(srcdir)/doc/*.{html,txt,css}; do \
-+	if test -d $(srcdir)/doc && ${PORTDOCS}; then \
-+	  $(mkinstalldirs) ${DOCSDIR}; \
++	if test -d $(srcdir)/doc; then \
++	  $(mkinstalldirs) $(DESTDIR)$(datadir)/doc/hugo; \
 +	  for doc in $(srcdir)/doc/*.html $(srcdir)/doc/*.txt $(srcdir)/doc/*.css; do \
  	    if test -f $$doc; then \
 -	      $(INSTALL_DATA) $$doc $(DESTDIR)$(pkgdatadir)/doc; \
-+	      $(INSTALL_DATA) $$doc ${DOCSDIR}; \
++	      $(INSTALL_DATA) $$doc $(DESTDIR)$(datadir)/doc/hugo; \
  	    fi \
  	  done \
  	fi
