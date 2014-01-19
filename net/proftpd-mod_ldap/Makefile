@@ -24,5 +24,4 @@ LIBDIRS=	${LOCALBASE}/lib
 _BUILDING_PROFTPD_MODULE=	${PORTNAME} \
 				mod_quotatab_ldap
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

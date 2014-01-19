@@ -25,5 +25,4 @@ LIBDIRS=	${LOCALBASE}/lib
 
 _BUILDING_PROFTPD_MODULE=	${PORTNAME}
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
