@@ -4,6 +4,7 @@ bin/map2jnx
 bin/map2rmap
 bin/map2rmp
 bin/qlandkartegt
+man/man1/qlandkartegt.1.gz
 share/applications/qlandkartegt.desktop
 share/pixmaps/qlandkartegt.png
 %%DATADIR%%/translations/qlandkartegt_cs.qm
