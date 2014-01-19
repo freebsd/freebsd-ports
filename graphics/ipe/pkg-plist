@@ -56,6 +56,12 @@ lib/libipelua.so
 lib/libipelua.so.%%VERSION%%
 lib/libipeui.so
 lib/libipeui.so.%%VERSION%%
+man/man1/ipe.1.gz
+man/man1/ipe6upgrade.1.gz
+man/man1/ipeextract.1.gz
+man/man1/iperender.1.gz
+man/man1/ipescript.1.gz
+man/man1/ipetoipe.1.gz
 %%DATADIR%%/%%VERSION%%/fontmap.xml
 %%DATADIR%%/%%VERSION%%/icons/copy.png
 %%DATADIR%%/%%VERSION%%/icons/cut.png
