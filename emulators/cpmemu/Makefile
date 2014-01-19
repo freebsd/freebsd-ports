@@ -18,5 +18,13 @@ COMMENT=	Cpm emulator
 
 ONLY_FOR_ARCHS=	i386
 
-NO_STAGE=	yes
-.include <bsd.port.mk>
+USES=		compiler
+
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == "clang"
+USE_BINUTILS=	yes
+CPPFLAGS+=	-no-integrated-as
+.endif
+
+.include <bsd.port.post.mk>
