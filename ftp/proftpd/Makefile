@@ -23,6 +23,7 @@ LICENSE?=	GPLv2
 LICENSE_FILE?=	${WRKSRC}/COPYING
 
 .if defined(_BUILDING_PROFTPD_MODULE)
+BUILD_DEPENDS+=	${LOCALBASE}/sbin/proftpd:${PORTSDIR}/ftp/proftpd
 RUN_DEPENDS+=	${LOCALBASE}/sbin/proftpd:${PORTSDIR}/ftp/proftpd
 .endif
 
