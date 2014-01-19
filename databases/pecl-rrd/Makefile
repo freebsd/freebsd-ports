@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rrd
-DISTVERSION=	1.1.1
+DISTVERSION=	1.1.3
 CATEGORIES=	databases pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -20,5 +20,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
