@@ -1,19 +1,43 @@
 --- ./ddclient.orig	2011-07-25 19:41:39.000000000 -0700
 +++ ./ddclient	2011-07-25 19:41:48.000000000 -0700
-@@ -1,4 +1,3 @@
+@@ -1,5 +1,4 @@
 -#!/usr/bin/perl -w
- #!/usr/local/bin/perl -w
+-#!/usr/local/bin/perl -w
++#!%%PERL%% -w
  ######################################################################
- # $Id: ddclient 130 2011-07-11 21:02:07Z wimpunk $
+ # $Id: ddclient 157 2013-12-26 09:02:05Z wimpunk $
+ #
 @@ -19,6 +18,7 @@
  use Getopt::Long;
  use Sys::Hostname;
  use IO::Socket;
 +use POSIX 'setsid';
  
- my ($VERSION) = q$Revision: 130 $ =~ /(\d+)/;
+ my ($VERSION) = q$Revision: 157 $ =~ /(\d+)/;
  
-@@ -668,6 +668,9 @@
+@@ -29,9 +29,9 @@
+ $program  =~ s/d$//;
+ my $now       = time;
+ my $hostname  = hostname();
+-my $etc       = ($program =~ /test/i) ? './'   : '/etc/ddclient/';
+-my $cachedir  = ($program =~ /test/i) ? './'   : '/var/cache/ddclient/';
+-my $savedir   = ($program =~ /test/i) ? 'URL/' : '/tmp/';
++my $etc       = ($program =~ /test/i) ? './'   : '%%ETCDIR%%/';
++my $cachedir  = ($program =~ /test/i) ? './'   : '/var/tmp/';
++my $savedir   = ($program =~ /test/i) ? 'URL/' : '/var/tmp/';
+ my $msgs      = '';
+ my $last_msgs = '';
+ 
+@@ -39,7 +39,7 @@
+ local $file   = '';
+ local $lineno = '';
+ 
+-$ENV{'PATH'} = (exists($ENV{PATH}) ? "$ENV{PATH}:" : "") . "/sbin:/usr/sbin:/bin:/usr/bin:/etc:/usr/lib:";
++$ENV{'PATH'} = (exists($ENV{PATH}) ? "$ENV{PATH}:" : "") . "/sbin:/usr/sbin:/bin:";
+ 
+ sub T_ANY	{'any'};
+ sub T_STRING	{'string'};
+@@ -678,6 +678,9 @@
      ;
  } elsif (opt('daemon')) {
      $SIG{'CHLD'}   = 'IGNORE';
@@ -23,7 +47,7 @@
      my $pid = fork;
      if ($pid < 0) {
  	print STDERR "${program}: can not fork ($!)\n";
-@@ -675,10 +678,9 @@
+@@ -685,10 +688,9 @@
      } elsif ($pid) {
  	exit 0;
      }
@@ -36,7 +60,7 @@
  }
  
  # write out the pid file if we're daemon'ized
-@@ -1463,17 +1465,17 @@
+@@ -1478,17 +1480,17 @@
      ## execute the command.
      local *FD;
      if (! open(FD, $cmd)) {
@@ -58,3 +82,11 @@
  
      } else {
  	$ok = 1;
+@@ -1878,6 +1880,7 @@
+ 	    $sd = IO::Socket::SSL->new(
+             PeerAddr => $peer,
+             PeerPort => $port,
++            SSL_ca_file => '%%LOCALBASE%%/share/certs/ca-root-nss.crt',
+             Proto => 'tcp',
+             MultiHomed => 1,
+             Timeout => opt('timeout'),
