@@ -22,7 +22,6 @@ USE_SDL=	sdl
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--without-alsa
-#USE_AUTOTOOLS=	autoconf aclocal
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/gtk
 
