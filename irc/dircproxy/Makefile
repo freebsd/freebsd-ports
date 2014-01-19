@@ -3,9 +3,9 @@
 
 PORTNAME=	dircproxy
 DISTVERSION=	1.2.0-RC1
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://dircproxy.googlecode.com/files/
-PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	A detachable irc proxy server with many features
@@ -16,15 +16,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 GNU_CONFIGURE=	yes
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
-
-.if !defined(NO_INSTALL_MANPAGES)
 MAN1=		dircproxy.1 dircproxy-crypt.1
-.endif
 
 post-install:
-.if !defined(NO_INSTALL_MANPAGES)
-		@cd ${WRKSRC}/doc && make install-man
-.endif
+	@cd ${WRKSRC}/doc && make install-man DESTDIR=${STAGEDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
