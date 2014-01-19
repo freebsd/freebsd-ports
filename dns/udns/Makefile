@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	udns
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	dns
 MASTER_SITES=	http://www.corpit.ru/mjt/udns/
 
@@ -26,7 +26,6 @@ SHLIB_MAJOR=	0
 MAN1=		dnsget.1 rblcheck.1
 MAN3=		udns.3
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}
@@ -40,25 +39,25 @@ post-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libudns.so.${SHLIB_MAJOR} \
-		${PREFIX}/lib/libudns.so.${SHLIB_MAJOR}
-	${LN} -sf ${PREFIX}/lib/libudns.so.${SHLIB_MAJOR} \
-		${PREFIX}/lib/libudns.so
-	${INSTALL_DATA} ${WRKSRC}/udns.h ${PREFIX}/include/udns.h
-	${INSTALL_DATA} ${WRKSRC}/libudns.a ${PREFIX}/lib/libudns.a
-	${INSTALL_PROGRAM} ${WRKSRC}/dnsget_s ${PREFIX}/bin/dnsget
-	${INSTALL_PROGRAM} ${WRKSRC}/rblcheck_s ${PREFIX}/bin/rblcheck
+		${STAGEDIR}${PREFIX}/lib/libudns.so.${SHLIB_MAJOR}
+	${LN} -sf ${STAGEDIR}${PREFIX}/lib/libudns.so.${SHLIB_MAJOR} \
+		${STAGEDIR}${PREFIX}/lib/libudns.so
+	${INSTALL_DATA} ${WRKSRC}/udns.h ${STAGEDIR}${PREFIX}/include/udns.h
+	${INSTALL_DATA} ${WRKSRC}/libudns.a ${STAGEDIR}${PREFIX}/lib/libudns.a
+	${INSTALL_PROGRAM} ${WRKSRC}/dnsget_s ${STAGEDIR}${PREFIX}/bin/dnsget
+	${INSTALL_PROGRAM} ${WRKSRC}/rblcheck_s ${STAGEDIR}${PREFIX}/bin/rblcheck
 .for FILE in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/${FILE} ${MANPREFIX}/man/man1/${FILE}
+	${INSTALL_MAN} ${WRKSRC}/${FILE} ${STAGEDIR}${MANPREFIX}/man/man1/${FILE}
 .endfor
 .for FILE in ${MAN3}
-	${INSTALL_MAN} ${WRKSRC}/${FILE} ${MANPREFIX}/man/man3/${FILE}
+	${INSTALL_MAN} ${WRKSRC}/${FILE} ${STAGEDIR}${MANPREFIX}/man/man3/${FILE}
 .endfor
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in NEWS NOTES TODO
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}/${FILE}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
 .endfor
 .endif
 
