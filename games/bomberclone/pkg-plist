@@ -1,182 +1,174 @@
 bin/bomberclone
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/bomberclone.nsi
-@dirrm %%DOCSDIR%%
-share/bomberclone/tileset/zbb_frog/stone.png
-share/bomberclone/tileset/zbb_frog/block.png
-share/bomberclone/tileset/zbb_frog/background.png
-share/bomberclone/tileset/uccia_garbage/stone.png
-share/bomberclone/tileset/uccia_garbage/dead.wav
-share/bomberclone/tileset/uccia_garbage/block.png
-share/bomberclone/tileset/uccia_garbage/background.png
-share/bomberclone/tileset/tricked/stone.png
-share/bomberclone/tileset/tricked/dead.wav
-share/bomberclone/tileset/tricked/block.png
-share/bomberclone/tileset/tricked/background.png
-share/bomberclone/tileset/supermario/stone.png
-share/bomberclone/tileset/supermario/block.png
-share/bomberclone/tileset/supermario/background.png
-share/bomberclone/tileset/sheep/stone.png
-share/bomberclone/tileset/sheep/map.nfo
-share/bomberclone/tileset/sheep/block.png
-share/bomberclone/tileset/sheep/background.png
-share/bomberclone/tileset/radioactive/stone.png
-share/bomberclone/tileset/radioactive/block.png
-share/bomberclone/tileset/radioactive/background.png
-share/bomberclone/tileset/modern/stone.png
-share/bomberclone/tileset/modern/dead.wav
-share/bomberclone/tileset/modern/block.png
-share/bomberclone/tileset/modern/background.png
-share/bomberclone/tileset/jungle/stone.png
-share/bomberclone/tileset/jungle/block.png
-share/bomberclone/tileset/jungle/background.png
-share/bomberclone/tileset/hell/stone.png
-share/bomberclone/tileset/hell/map.nfo
-share/bomberclone/tileset/hell/block.png
-share/bomberclone/tileset/hell/background.png
-share/bomberclone/tileset/farm/stone.png
-share/bomberclone/tileset/farm/map.nfo
-share/bomberclone/tileset/farm/block96.png
-share/bomberclone/tileset/farm/background.png
-share/bomberclone/tileset/default/tunnel.png
-share/bomberclone/tileset/default/stone.png
-share/bomberclone/tileset/default/sptrigger.png
-share/bomberclone/tileset/default/sprow.png
-share/bomberclone/tileset/default/sppush.png
-share/bomberclone/tileset/default/spmoved.png
-share/bomberclone/tileset/default/spliquid.png
-share/bomberclone/tileset/default/spkick.png
-share/bomberclone/tileset/default/pwshoe.png
-share/bomberclone/tileset/default/pwfire.png
-share/bomberclone/tileset/default/pwdeath.png
-share/bomberclone/tileset/default/pwbomb.png
-share/bomberclone/tileset/default/powerup.png
-share/bomberclone/tileset/default/powersp.png
-share/bomberclone/tileset/default/powerbad.png
-share/bomberclone/tileset/default/fire.png
-share/bomberclone/tileset/default/explode.wav
-share/bomberclone/tileset/default/drop.wav
-share/bomberclone/tileset/default/dead.wav
-share/bomberclone/tileset/default/bomb.png
-share/bomberclone/tileset/default/block.png
-share/bomberclone/tileset/default/background.png
-share/bomberclone/tileset/cucumber/stone.png
-share/bomberclone/tileset/cucumber/powerup.png
-share/bomberclone/tileset/cucumber/powersp.png
-share/bomberclone/tileset/cucumber/powerbad.png
-share/bomberclone/tileset/cucumber/fire.png
-share/bomberclone/tileset/cucumber/drop.wav
-share/bomberclone/tileset/cucumber/dead.wav
-share/bomberclone/tileset/cucumber/block.png
-share/bomberclone/tileset/cucumber/background.png
-share/bomberclone/tileset/classic/stone.png
-share/bomberclone/tileset/classic/block.png
-share/bomberclone/tileset/classic/background.png
-share/bomberclone/tileset/cementery/stone96.png
-share/bomberclone/tileset/cementery/map.nfo
-share/bomberclone/tileset/cementery/block96.png
-share/bomberclone/tileset/cementery/background.png
-share/bomberclone/player/respawn.png
-share/bomberclone/player/playersick.png
-share/bomberclone/player/player7.png
-share/bomberclone/player/player6.png
-share/bomberclone/player/player5.png
-share/bomberclone/player/player4.png
-share/bomberclone/player/player3.png
-share/bomberclone/player/player2.png
-share/bomberclone/player/player1.png
-share/bomberclone/player/player0.png
-share/bomberclone/player/dead0.png
-share/bomberclone/player/ghost.png
-share/bomberclone/pixmaps/bomberclone.png
-share/bomberclone/pixmaps/bomberclone.ico
-share/bomberclone/music/zb-tnt.xm
-share/bomberclone/music/slice_me_nice.xm
-share/bomberclone/music/mario_is_a_weenie.xm
-share/bomberclone/music/cinderella_clown.mod
-share/bomberclone/music/cerror-bomberclone_numero_2.xm
-share/bomberclone/music/cerror-bobmberclone.xm
-share/bomberclone/maps/third.map
-share/bomberclone/maps/smalfull.map
-share/bomberclone/maps/smal.map
-share/bomberclone/maps/second.map
-share/bomberclone/maps/kitutou2.map
-share/bomberclone/maps/kitutou1.map
-share/bomberclone/maps/fourth.map
-share/bomberclone/maps/firstmap.map
-share/bomberclone/maps/first.map
-share/bomberclone/gfx/menuselect.png
-share/bomberclone/gfx/menulist1_8.png
-share/bomberclone/gfx/menulist1_7.png
-share/bomberclone/gfx/menulist1_6.png
-share/bomberclone/gfx/menulist1_5.png
-share/bomberclone/gfx/menulist1_4.png
-share/bomberclone/gfx/menulist1_3.png
-share/bomberclone/gfx/menulist1_2.png
-share/bomberclone/gfx/menulist1_1.png
-share/bomberclone/gfx/menulist1_0.png
-share/bomberclone/gfx/menulist0_8.png
-share/bomberclone/gfx/menulist0_7.png
-share/bomberclone/gfx/menulist0_6.png
-share/bomberclone/gfx/menulist0_5.png
-share/bomberclone/gfx/menulist0_4.png
-share/bomberclone/gfx/menulist0_3.png
-share/bomberclone/gfx/menulist0_2.png
-share/bomberclone/gfx/menulist0_1.png
-share/bomberclone/gfx/menulist0_0.png
-share/bomberclone/gfx/menuentry1_2.png
-share/bomberclone/gfx/menuentry1_1.png
-share/bomberclone/gfx/menuentry1_0.png
-share/bomberclone/gfx/menuentry0_2.png
-share/bomberclone/gfx/menuentry0_1.png
-share/bomberclone/gfx/menuentry0_0.png
-share/bomberclone/gfx/menubutton2_2.png
-share/bomberclone/gfx/menubutton2_1.png
-share/bomberclone/gfx/menubutton2_0.png
-share/bomberclone/gfx/menubutton1_2.png
-share/bomberclone/gfx/menubutton1_1.png
-share/bomberclone/gfx/menubutton1_0.png
-share/bomberclone/gfx/menubutton0_2.png
-share/bomberclone/gfx/menubutton0_1.png
-share/bomberclone/gfx/menubutton0_0.png
-share/bomberclone/gfx/menu8.png
-share/bomberclone/gfx/menu7.png
-share/bomberclone/gfx/menu6.png
-share/bomberclone/gfx/menu5.png
-share/bomberclone/gfx/menu4.png
-share/bomberclone/gfx/menu3.png
-share/bomberclone/gfx/menu2.png
-share/bomberclone/gfx/menu1.png
-share/bomberclone/gfx/menu0.png
-share/bomberclone/gfx/logo1.png
-share/bomberclone/gfx/logo.png
-share/bomberclone/gfx/font2.png
-share/bomberclone/gfx/font1.png
-share/bomberclone/gfx/font0.png
-@dirrm share/bomberclone/tileset/zbb_frog
-@dirrm share/bomberclone/tileset/uccia_garbage
-@dirrm share/bomberclone/tileset/tricked
-@dirrm share/bomberclone/tileset/supermario
-@dirrm share/bomberclone/tileset/sheep
-@dirrm share/bomberclone/tileset/radioactive
-@dirrm share/bomberclone/tileset/modern
-@dirrm share/bomberclone/tileset/jungle
-@dirrm share/bomberclone/tileset/hell
-@dirrm share/bomberclone/tileset/farm
-@dirrm share/bomberclone/tileset/default
-@dirrm share/bomberclone/tileset/cucumber
-@dirrm share/bomberclone/tileset/classic
-@dirrm share/bomberclone/tileset/cementery
-@dirrm share/bomberclone/tileset
-@dirrm share/bomberclone/player
-@dirrm share/bomberclone/pixmaps
-@dirrm share/bomberclone/music
-@dirrm share/bomberclone/maps
-@dirrm share/bomberclone/gfx
-@dirrm share/bomberclone
+%%DATADIR%%/gfx/font0.png
+%%DATADIR%%/gfx/font1.png
+%%DATADIR%%/gfx/font2.png
+%%DATADIR%%/gfx/logo.png
+%%DATADIR%%/gfx/logo1.png
+%%DATADIR%%/gfx/menu0.png
+%%DATADIR%%/gfx/menu1.png
+%%DATADIR%%/gfx/menu2.png
+%%DATADIR%%/gfx/menu3.png
+%%DATADIR%%/gfx/menu4.png
+%%DATADIR%%/gfx/menu5.png
+%%DATADIR%%/gfx/menu6.png
+%%DATADIR%%/gfx/menu7.png
+%%DATADIR%%/gfx/menu8.png
+%%DATADIR%%/gfx/menubutton0_0.png
+%%DATADIR%%/gfx/menubutton0_1.png
+%%DATADIR%%/gfx/menubutton0_2.png
+%%DATADIR%%/gfx/menubutton1_0.png
+%%DATADIR%%/gfx/menubutton1_1.png
+%%DATADIR%%/gfx/menubutton1_2.png
+%%DATADIR%%/gfx/menubutton2_0.png
+%%DATADIR%%/gfx/menubutton2_1.png
+%%DATADIR%%/gfx/menubutton2_2.png
+%%DATADIR%%/gfx/menuentry0_0.png
+%%DATADIR%%/gfx/menuentry0_1.png
+%%DATADIR%%/gfx/menuentry0_2.png
+%%DATADIR%%/gfx/menuentry1_0.png
+%%DATADIR%%/gfx/menuentry1_1.png
+%%DATADIR%%/gfx/menuentry1_2.png
+%%DATADIR%%/gfx/menulist0_0.png
+%%DATADIR%%/gfx/menulist0_1.png
+%%DATADIR%%/gfx/menulist0_2.png
+%%DATADIR%%/gfx/menulist0_3.png
+%%DATADIR%%/gfx/menulist0_4.png
+%%DATADIR%%/gfx/menulist0_5.png
+%%DATADIR%%/gfx/menulist0_6.png
+%%DATADIR%%/gfx/menulist0_7.png
+%%DATADIR%%/gfx/menulist0_8.png
+%%DATADIR%%/gfx/menulist1_0.png
+%%DATADIR%%/gfx/menulist1_1.png
+%%DATADIR%%/gfx/menulist1_2.png
+%%DATADIR%%/gfx/menulist1_3.png
+%%DATADIR%%/gfx/menulist1_4.png
+%%DATADIR%%/gfx/menulist1_5.png
+%%DATADIR%%/gfx/menulist1_6.png
+%%DATADIR%%/gfx/menulist1_7.png
+%%DATADIR%%/gfx/menulist1_8.png
+%%DATADIR%%/gfx/menuselect.png
+%%DATADIR%%/maps/first.map
+%%DATADIR%%/maps/firstmap.map
+%%DATADIR%%/maps/fourth.map
+%%DATADIR%%/maps/kitutou1.map
+%%DATADIR%%/maps/kitutou2.map
+%%DATADIR%%/maps/second.map
+%%DATADIR%%/maps/smal.map
+%%DATADIR%%/maps/smalfull.map
+%%DATADIR%%/maps/third.map
+%%DATADIR%%/music/cerror-bobmberclone.xm
+%%DATADIR%%/music/cerror-bomberclone_numero_2.xm
+%%DATADIR%%/music/cinderella_clown.mod
+%%DATADIR%%/music/mario_is_a_weenie.xm
+%%DATADIR%%/music/slice_me_nice.xm
+%%DATADIR%%/music/zb-tnt.xm
+%%DATADIR%%/pixmaps/bomberclone.ico
+%%DATADIR%%/pixmaps/bomberclone.png
+%%DATADIR%%/player/dead0.png
+%%DATADIR%%/player/ghost.png
+%%DATADIR%%/player/player0.png
+%%DATADIR%%/player/player1.png
+%%DATADIR%%/player/player2.png
+%%DATADIR%%/player/player3.png
+%%DATADIR%%/player/player4.png
+%%DATADIR%%/player/player5.png
+%%DATADIR%%/player/player6.png
+%%DATADIR%%/player/player7.png
+%%DATADIR%%/player/playersick.png
+%%DATADIR%%/player/respawn.png
+%%DATADIR%%/tileset/cementery/background.png
+%%DATADIR%%/tileset/cementery/block96.png
+%%DATADIR%%/tileset/cementery/map.nfo
+%%DATADIR%%/tileset/cementery/stone96.png
+%%DATADIR%%/tileset/classic/background.png
+%%DATADIR%%/tileset/classic/block.png
+%%DATADIR%%/tileset/classic/stone.png
+%%DATADIR%%/tileset/cucumber/background.png
+%%DATADIR%%/tileset/cucumber/block.png
+%%DATADIR%%/tileset/cucumber/dead.wav
+%%DATADIR%%/tileset/cucumber/drop.wav
+%%DATADIR%%/tileset/cucumber/fire.png
+%%DATADIR%%/tileset/cucumber/powerbad.png
+%%DATADIR%%/tileset/cucumber/powersp.png
+%%DATADIR%%/tileset/cucumber/powerup.png
+%%DATADIR%%/tileset/cucumber/stone.png
+%%DATADIR%%/tileset/default/background.png
+%%DATADIR%%/tileset/default/block.png
+%%DATADIR%%/tileset/default/bomb.png
+%%DATADIR%%/tileset/default/dead.wav
+%%DATADIR%%/tileset/default/drop.wav
+%%DATADIR%%/tileset/default/explode.wav
+%%DATADIR%%/tileset/default/fire.png
+%%DATADIR%%/tileset/default/powerbad.png
+%%DATADIR%%/tileset/default/powersp.png
+%%DATADIR%%/tileset/default/powerup.png
+%%DATADIR%%/tileset/default/pwbomb.png
+%%DATADIR%%/tileset/default/pwdeath.png
+%%DATADIR%%/tileset/default/pwfire.png
+%%DATADIR%%/tileset/default/pwshoe.png
+%%DATADIR%%/tileset/default/spkick.png
+%%DATADIR%%/tileset/default/spliquid.png
+%%DATADIR%%/tileset/default/spmoved.png
+%%DATADIR%%/tileset/default/sppush.png
+%%DATADIR%%/tileset/default/sprow.png
+%%DATADIR%%/tileset/default/sptrigger.png
+%%DATADIR%%/tileset/default/stone.png
+%%DATADIR%%/tileset/default/tunnel.png
+%%DATADIR%%/tileset/farm/background.png
+%%DATADIR%%/tileset/farm/block96.png
+%%DATADIR%%/tileset/farm/map.nfo
+%%DATADIR%%/tileset/farm/stone.png
+%%DATADIR%%/tileset/hell/background.png
+%%DATADIR%%/tileset/hell/block.png
+%%DATADIR%%/tileset/hell/map.nfo
+%%DATADIR%%/tileset/hell/stone.png
+%%DATADIR%%/tileset/jungle/background.png
+%%DATADIR%%/tileset/jungle/block.png
+%%DATADIR%%/tileset/jungle/stone.png
+%%DATADIR%%/tileset/modern/background.png
+%%DATADIR%%/tileset/modern/block.png
+%%DATADIR%%/tileset/modern/dead.wav
+%%DATADIR%%/tileset/modern/stone.png
+%%DATADIR%%/tileset/radioactive/background.png
+%%DATADIR%%/tileset/radioactive/block.png
+%%DATADIR%%/tileset/radioactive/stone.png
+%%DATADIR%%/tileset/sheep/background.png
+%%DATADIR%%/tileset/sheep/block.png
+%%DATADIR%%/tileset/sheep/map.nfo
+%%DATADIR%%/tileset/sheep/stone.png
+%%DATADIR%%/tileset/supermario/background.png
+%%DATADIR%%/tileset/supermario/block.png
+%%DATADIR%%/tileset/supermario/stone.png
+%%DATADIR%%/tileset/tricked/background.png
+%%DATADIR%%/tileset/tricked/block.png
+%%DATADIR%%/tileset/tricked/dead.wav
+%%DATADIR%%/tileset/tricked/stone.png
+%%DATADIR%%/tileset/uccia_garbage/background.png
+%%DATADIR%%/tileset/uccia_garbage/block.png
+%%DATADIR%%/tileset/uccia_garbage/dead.wav
+%%DATADIR%%/tileset/uccia_garbage/stone.png
+%%DATADIR%%/tileset/zbb_frog/background.png
+%%DATADIR%%/tileset/zbb_frog/block.png
+%%DATADIR%%/tileset/zbb_frog/stone.png
+share/pixmaps/bomberclone.png
+@dirrm %%DATADIR%%/tileset/zbb_frog
+@dirrm %%DATADIR%%/tileset/uccia_garbage
+@dirrm %%DATADIR%%/tileset/tricked
+@dirrm %%DATADIR%%/tileset/supermario
+@dirrm %%DATADIR%%/tileset/sheep
+@dirrm %%DATADIR%%/tileset/radioactive
+@dirrm %%DATADIR%%/tileset/modern
+@dirrm %%DATADIR%%/tileset/jungle
+@dirrm %%DATADIR%%/tileset/hell
+@dirrm %%DATADIR%%/tileset/farm
+@dirrm %%DATADIR%%/tileset/default
+@dirrm %%DATADIR%%/tileset/cucumber
+@dirrm %%DATADIR%%/tileset/classic
+@dirrm %%DATADIR%%/tileset/cementery
+@dirrm %%DATADIR%%/tileset
+@dirrm %%DATADIR%%/player
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/maps
+@dirrm %%DATADIR%%/gfx
+@dirrm %%DATADIR%%
