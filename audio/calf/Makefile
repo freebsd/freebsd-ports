@@ -20,33 +20,51 @@ LIB_DEPENDS=	libfluidsynth.so:${PORTSDIR}/audio/fluidsynth \
 
 OPTIONS_DEFINE=	LASH LV2
 OPTIONS_DEFAULT=LASH LV2
+OPTIONS_SUB=	yes
 LV2_DESC=	LV2 audio plugin
 
 USES=		gmake pkgconfig
 USE_GNOME=	gtk20
-USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_SUB=	yes
 LASH_LIB_DEPENDS=	liblash.so:${PORTSDIR}/audio/lash
 LASH_CONFIGURE_WITH=	lash
-LV2_BUILD_DEPENDS+=	lv2core>0:${PORTSDIR}/audio/lv2core
-LV2_RUN_DEPENDS+=	lv2core>0:${PORTSDIR}/audio/lv2core
+LV2_BUILD_DEPENDS=	lv2core>0:${PORTSDIR}/audio/lv2core
+LV2_RUN_DEPENDS=	lv2core>0:${PORTSDIR}/audio/lv2core
 LV2_CONFIGURE_WITH=	lv2
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${FIND} ${BUILD_WRKSRC} -name '*.cpp' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc.h>|<stdlib.h>|'
 	@${REINPLACE_CMD} -e '/CXXFLAGS/s|-O3||' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/^install-data-am:/s|install-data-local||' \
-		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/calf.so/s|$$(pkglibdir)|../../calf|' \
+		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|src\.size();|src->size();|' \
+		${WRKSRC}/src/calf/buffer.h
+	@${REINPLACE_CMD} -e 's|data\[(1<<IntBits)+1\]|data[]|' \
+		${WRKSRC}/src/calf/fixed_point.h
+
+pre-build:
+.if ${PORT_OPTIONS:MLV2}
+	@${MKDIR} ${WRKDIR}/calfmakerdf
+	@(cd ${WRKSRC} && ${PAX} -rw . ${WRKDIR}/calfmakerdf)
+	@${REINPLACE_CMD} -e 's|\(PKGLIBDIR\).*|\1 "${STAGEDIR}${DATADIR}"|' \
+		${WRKDIR}/calfmakerdf/config.h
+	@(cd ${WRKDIR}/calfmakerdf/src && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
+		${MAKE_FLAGS} ${MAKEFILE} -j${MAKE_JOBS_NUMBER} ${MAKE_ARGS} \
+		calfmakerdf)
+.endif
 
 post-install:
-	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} \
-		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install-data-local)
+.if ${PORT_OPTIONS:MLV2}
+	@(cd ${WRKDIR}/calfmakerdf/src && ./calfmakerdf -m ttl \
+		-p ${STAGEDIR}${PREFIX}/lib/lv2/calf.lv2)
+.endif
 
 .include <bsd.port.mk>
