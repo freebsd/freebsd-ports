@@ -12,21 +12,23 @@ DISTNAME=	${PORTNAME}${PKGNAMEPREFIX}2.05
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ModPlug-based plugin for XMMS
 
-LIB_DEPENDS?=	libxmms.so:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS+=	modplug:${PORTSDIR}/audio/libmodplug
+BUILD_DEPENDS=	xmms>0:${PORTSDIR}/multimedia/xmms
+LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug
+RUN_DEPENDS=	xmms>0:${PORTSDIR}/multimedia/xmms
 
 USES=		pkgconfig
-NO_STAGE=	yes
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-HAS_CONFIGURE=	yes
-PLUGDIR?=	lib/xmms/Input
-PLIST_FILES=	${PLUGDIR}/libmodplugxmms.so
+
+PLIST_FILES=	lib/xmms/Input/libmodplugxmms.so
 
 post-patch:
-	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|-lstdc++||' ${WRKSRC}/modplugxmms/Makefile.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/modplugxmms/.libs/libmodplugxmms.so \
-		${PREFIX}/${PLUGDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Input
+	(cd ${WRKSRC}/modplugxmms/.libs && ${INSTALL_LIB} libmodplugxmms.so \
+		${STAGEDIR}${PREFIX}/lib/xmms/Input)
 
 .include <bsd.port.mk>
