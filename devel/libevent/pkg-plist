@@ -20,3 +20,5 @@ lib/libevent_extra.so
 lib/libevent.a
 lib/libevent.la
 lib/libevent.so
+man/man3/event.3.gz
+man/man3/evdns.3.gz
