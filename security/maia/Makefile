@@ -3,7 +3,7 @@
 
 PORTNAME=	maia
 DISTVERSION=	1.0.3-${SVNREVISION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://www.purplehat.org/downloads/maia/
 
@@ -35,9 +35,10 @@ DOCS=	LICENSE README maiad.conf.dist maia-mysql.sql maia-pgsql.sql maia.conf.dis
 
 USERS=	vscan
 GROUPS=	vscan
-MAIADIR?=	/var/maiad
+MAIAHOME=	/var/maiad
 MAIAQUARANTINE?=	/var/maiad/virusmails
 PEAR_DIR?=	${LOCALBASE}/share/pear
+PLIST_SUB+=	USERS="${USERS}" GROUPS="${GROUPS}" WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 
 OPTIONS_DEFINE=	APACHE LIGHTTPD WEBHOST MYSQL MYSQLSERVER PGSQL PGSQLSERVER DOVECOT \
 		POSTFIX PFA FUZZYOCR CLAMAV SPAMASSASSIN GRAPHICS BDB ALTERMIME CRYPT \
@@ -83,14 +84,14 @@ FREEZE_DESC=		FREEZE support with archivers/freeze
 P7ZIP_DESC=		P7ZIP support with archivers/p7zip
 TNEF_DESC=		Add external tnef decoder
 
-SUB_FILES=	pkg-install pkg-deinstall pkg-message
-SUB_LIST+=	MAIAUSER=${USERS} \
-		MAIAGROUP=${GROUPS} \
-		MAIADIR=${MAIADIR} \
-		MAIAQUARANTINE=${MAIAQUARANTINE}
+SUB_FILES=	maiad pkg-message
+SUB_LIST+=	USERS=${USERS} \
+		GROUPS=${GROUPS} \
+		MAIAHOME=${MAIAHOME} \
+		MAIAQUARANTINE=${MAIAQUARANTINE} \
+		ETCDIR=${ETCDIR}
 USE_RC_SUBR+=	maiad
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Code is a bit fiddly here; we can't use USE variables after pre.mk so we have
@@ -117,8 +118,6 @@ USE_PGSQL=	yes
 USE_PHP+=	pgsql
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if ${PORT_OPTIONS:MLIGHTTPD}
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .endif
@@ -139,7 +138,7 @@ RUN_DEPENDS+=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
 .if ${PORT_OPTIONS:MMYSQLSERVER}
-RUN_DEPENDS+=	${LOCALBASE}/bin/mysqld_safe:${PORTSDIR}/databases/mysql55-server
+USE_MYSQL=	server
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
@@ -147,7 +146,7 @@ RUN_DEPENDS+=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
 .endif
 
 .if ${PORT_OPTIONS:MPGSQLSERVER}
-RUN_DEPENDS+=	${LOCALBASE}/bin/pg_ctl:${PORTSDIR}/databases/postgresql84-server
+USE_PGSQL=	server
 .endif
 
 .if ${PORT_OPTIONS:MDOVECOT}
@@ -282,85 +281,65 @@ RUN_DEPENDS+=	7zr:${PORTSDIR}/archivers/p7zip
 RUN_DEPENDS+=	tnef:${PORTSDIR}/converters/tnef
 .endif
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 .for m in scripts/configtest.pl scripts/expire-quarantine-cache.pl \
 	scripts/generate-key.pl scripts/load-sa-rules.pl scripts/maiadbtool.pl \
 	scripts/process-quarantine.pl scripts/resend.pl scripts/send-quarantine-digests.pl \
 	scripts/send-quarantine-reminders.pl scripts/stats-snapshot.pl
-		@${REINPLACE_CMD} -e "s|/etc/maia/maia.conf|${PREFIX}/etc/maia.conf|" \
+		@${REINPLACE_CMD} -e "s|/etc/maia/maia.conf|${ETCDIR}/maia.conf|" \
 			${WRKSRC}/${m}
-
 .endfor
-.for a in maiad.conf.dist
+
+.for i in digest.tpl newuser.tpl reminder.tpl
+	${MV} ${WRKSRC}/templates/${i} ${WRKSRC}/templates/${i}.dist
+.endfor
+
 	@${REINPLACE_CMD} -e "s|daemon_user  = 'maia'|daemon_user  = '${USERS}'|" \
 		-e "s|daemon_group = 'maia'|daemon_group = '${GROUPS}'|" \
-		-e "s|/var/lib/maia|${MAIADIR}|" \
-		-e "s|/var/log/maia|${MAIADIR}|" ${WRKSRC}/${a}
-.endfor
-.for i in maia.conf.dist
-	@${REINPLACE_CMD} -e "s|/etc/maia.conf|${PREFIX}/etc/maia.conf|" \
+		-e "s|/var/lib/maia|${MAIAHOME}|" ${WRKSRC}/maiad.conf.dist
+
+	@${REINPLACE_CMD} -e "s|/etc/maia.conf|${ETCDIR}/maia.conf|" \
 		-e "s|username = 'maia'|username = '${USERS}'|" \
-		-e "s|/var/lib/maia|${MAIADIR}/maia|" \
-		-e "s|/usr/bin/sa-learn|/usr/local/bin/sa-learn|" \
+		-e "s|/var/lib/maia|${DATADIR}|" \
+		-e "s|/usr/bin/sa-learn|${PREFIX}/bin/sa-learn|" \
 		-e "s|local_cf_dir = undef|local_cf_dir = '${PREFIX}/etc/mail/spamassassin'|" \
 		-e "s|system_rules_dir = undef|system_rules_dir = '/var/db/spamassassin'|" \
-		-e "s|user_rules_dir = undef|user_rules_dir = '${MAIADIR}/.spamassassin'|" \
-		-e "s|pid_dir = '/var/run/maia/'|pid_dir = '${MAIADIR}/'|" \
-		-e "s|log_dir = '/var/log/maia'|log_dir = '${MAIADIR}'|" \
-		-e "s|template_dir = '/etc/maia/templates/'|template_dir = '${MAIADIR}/maia/templates/'|" \
-			${WRKSRC}/${i}
-.endfor
-.for a in maiad
-	@${REINPLACE_CMD} -e "s|/etc/maia/maiad.conf|${PREFIX}/etc/maiad.conf|" \
-		-e "s|/var/lib/maia|${MAIADIR}|" \
-		-e "s@'zoo'\]@['zoo','unzoo'] ]@" ${WRKSRC}/${a}
-.endfor
+		-e "s|user_rules_dir = undef|user_rules_dir = '${DATADIR}/.spamassassin'|" \
+		-e "s|template_dir = '/etc/maia/templates/'|template_dir = '${ETCDIR}/templates/'|" \
+			${WRKSRC}/maia.conf.dist
+
+	@${REINPLACE_CMD} -e "s|/etc/maia/maiad.conf|${ETCDIR}/maiad.conf|" \
+		-e "s|/var/lib/maia|${DATADIR}|" \
+		-e "s@'zoo'\]@['zoo','unzoo'] ]@" ${WRKSRC}/maiad
+
 	@${FIND} -E ${WRKSRC} -iregex '.*(bak|~)$$' -delete
 
-pre-install:
-	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
-
 do-install:
-	@${INSTALL} -d ${WWWDIR}
-	@cd ${WRKSRC}/php && ${FIND} . | ${CPIO} --quiet -pdm -L ${WWWDIR}
-	@cd ${WRKSRC}/scripts && ${FIND} . | ${CPIO} --quiet -pdm -L ${MAIADIR}/maia/scripts
-	@cd ${WRKSRC}/templates && ${FIND} . | ${CPIO} --quiet -pdm -L ${MAIADIR}/maia/templates
-
-.for i in maiad
-	@${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/sbin
+	${MKDIR} -p ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC}/php && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
+	${MKDIR} -p ${STAGEDIR}${DATADIR}
+	@cd ${WRKSRC}/scripts && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/scripts
+	${MKDIR} -p ${STAGEDIR}${ETCDIR}/templates
+.for i in digest.tpl newuser.tpl reminder.tpl
+	${INSTALL} -m 644 ${WRKSRC}/templates/${i}.dist ${STAGEDIR}${ETCDIR}/templates
 .endfor
-	@${INSTALL_SCRIPT} -m 640 ${WRKSRC}/maiad.conf.dist ${PREFIX}/etc/maiad.conf.dist
-	@${INSTALL_SCRIPT} -m 640 ${WRKSRC}/maia.conf.dist ${PREFIX}/etc/maia.conf.dist
-#
-#  This can contain sensitive information, e.g. SQL passwords, so it should be handled
-#  with care.
-#
-.if !exists(${PREFIX}/www/${PORTNAME}/config.php)
-	@${INSTALL} -o ${WWWOWN} -g ${WWWGRP} -m 640 \
-		${WRKSRC}/php/config.php.dist \
-		${PREFIX}/www/${PORTNAME}/config.php
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/maiad ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL} -m 644 ${WRKSRC}/maiad.conf.dist ${STAGEDIR}${ETCDIR}/maiad.conf.dist
+	${INSTALL} -m 644 ${WRKSRC}/maia.conf.dist ${STAGEDIR}${ETCDIR}/maia.conf.dist
+	${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/themes/*/compiled
+	${LN} -s ${PREFIX}/share/smarty ${STAGEDIR}${WWWDIR}/libs/Smarty
+
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
 post-install:
-.for maiaconf in maia maiad
-	@if [ ! -f ${PREFIX}/etc/${maiaconf}.conf ]; then \
-		${CP} -p ${PREFIX}/etc/${maiaconf}.conf.dist \
-		${PREFIX}/etc/${maiaconf}.conf ; \
-	fi
-	@${CHOWN} ${USERS}:${GROUPS} ${PREFIX}/etc/${maiaconf}.conf \
-		${PREFIX}/etc/${maiaconf}.conf.dist
-.endfor
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${CHOWN} -R ${USERS}:${GROUPS} ${MAIADIR}/
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${USERS}:${GROUPS} ${MAIADIR}' >> ${TMPPLIST}
-	@${LN} -s ${PREFIX}/share/smarty ${PREFIX}/www/${PORTNAME}/libs/Smarty
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
+
