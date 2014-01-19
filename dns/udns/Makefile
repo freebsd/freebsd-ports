@@ -23,9 +23,6 @@ PORTDOCS=	*
 
 SHLIB_MAJOR=	0
 
-MAN1=		dnsget.1 rblcheck.1
-MAN3=		udns.3
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}
@@ -46,10 +43,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libudns.a ${STAGEDIR}${PREFIX}/lib/libudns.a
 	${INSTALL_PROGRAM} ${WRKSRC}/dnsget_s ${STAGEDIR}${PREFIX}/bin/dnsget
 	${INSTALL_PROGRAM} ${WRKSRC}/rblcheck_s ${STAGEDIR}${PREFIX}/bin/rblcheck
-.for FILE in ${MAN1}
+.for FILE in dnsget.1 rblcheck.1
 	${INSTALL_MAN} ${WRKSRC}/${FILE} ${STAGEDIR}${MANPREFIX}/man/man1/${FILE}
 .endfor
-.for FILE in ${MAN3}
+.for FILE in udns.3
 	${INSTALL_MAN} ${WRKSRC}/${FILE} ${STAGEDIR}${MANPREFIX}/man/man3/${FILE}
 .endfor
 
