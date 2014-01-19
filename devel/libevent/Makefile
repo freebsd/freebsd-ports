@@ -85,7 +85,6 @@ MLINKS=	event.3 event_init.3 \
 	- evdns_config_windows_nameservers.3
 .endif
 
-NO_STAGE=	yes
 pre-configure:
 	@${MKDIR} ${WRKSRC}/m4
 
