@@ -3,6 +3,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	1.7.0
+PORTREISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/:release \
 		LOCAL/nox:snapshot
@@ -22,8 +23,6 @@ USE_XORG=	pixman
 USE_GNOME+=	glib20
 PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}"
-MAN1=		qemu.1 qemu-img.1
-MAN8=		qemu-nbd.8
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 # XXX someone wants to debug sparc64 hosts?
 CONFLICTS_INSTALL=	qemu-[0-9]*
 
@@ -37,15 +36,12 @@ JPEG_DESC=		jpeg dependency (vnc lossy compression)
 PNG_DESC=		png dependency (vnc compression)
 CDROM_DMA_DESC=		IDE CDROM DMA
 PCAP_DESC=		pcap dependency (networking with bpf)
-SEABIOS_GIT_DESC=	add seabios snapshot (-bios bios.bin-1.6.3.1)
 USBREDIR_DESC=		usb device network redirection (experimental!)
 GNS3_DESC=		gns3 patches (promiscuous multicast)
 X86_TARGETS_DESC=	Don't build non-x86 system targets
 BSD_USER_DESC=		Also build bsd-user targets (for testing)
 STATIC_LINK_DESC=	Statically link the executables
 OPTIONS_DEFAULT=X11 GTK2 OPENGL GNUTLS SASL JPEG PNG CDROM_DMA CURL PCAP
-
-NO_STAGE=	yes
 
 .include <bsd.port.options.mk>
 
@@ -150,31 +146,31 @@ PLIST_SUB+=	GTK2=""
 .if empty(PORT_OPTIONS:MGNUTLS)
 CONFIGURE_ARGS+=	--disable-vnc-tls
 .else
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 .endif
 
 .if empty(PORT_OPTIONS:MSASL)
 CONFIGURE_ARGS+=	--disable-vnc-sasl
 .else
-LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 .endif
 
 .if empty(PORT_OPTIONS:MJPEG)
 CONFIGURE_ARGS+=	--disable-vnc-jpeg
 .else
-LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 .endif
 
 .if empty(PORT_OPTIONS:MPNG)
 CONFIGURE_ARGS+=	--disable-vnc-png
 .else
-LIB_DEPENDS+=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png
 .endif
 
 .if empty(PORT_OPTIONS:MCURL)
 CONFIGURE_ARGS+=	--disable-curl
 .else
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 .endif
 
 .if empty(PORT_OPTIONS:MOPENGL)
@@ -205,14 +201,10 @@ CONFIGURE_ARGS+=	--static
 RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba36
 .endif
 
-.if ${PORT_OPTIONS:MSEABIOS_GIT}
-RUN_DEPENDS+=	seabios-devel>=1.6.3.1:${PORTSDIR}/emulators/seabios-devel
-.endif
-
-.if defined(NOPORTDOCS)
-MAKE_ARGS+=	NOPORTDOCS=1
-.else
+.if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
+.else
+MAKE_ARGS+=	NOPORTDOCS=1
 .endif
 
 .if !defined(STRIP) || ${STRIP} == ""
@@ -287,16 +279,15 @@ post-configure:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${DOCSDIR}/)
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR}/)
 .endif
-	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${PREFIX}/etc
-	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${PREFIX}/etc
+	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${STAGEDIR}${PREFIX}/etc
+	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${STAGEDIR}${PREFIX}/etc
 	@if [ ! -f ${PREFIX}/etc/qemu-ifup ]; then \
-	    ${CP} -p ${PREFIX}/etc/qemu-ifup.sample ${PREFIX}/etc/qemu-ifup ; \
+	    ${CP} -p ${STAGEDIR}${PREFIX}/etc/qemu-ifup.sample ${STAGEDIR}${PREFIX}/etc/qemu-ifup ; \
 	fi
 	@if [ ! -f ${PREFIX}/etc/qemu-ifdown ]; then \
-	    ${CP} -p ${PREFIX}/etc/qemu-ifdown.sample ${PREFIX}/etc/qemu-ifdown ; \
+	    ${CP} -p ${STAGEDIR}${PREFIX}/etc/qemu-ifdown.sample ${STAGEDIR}${PREFIX}/etc/qemu-ifdown ; \
 	fi
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
