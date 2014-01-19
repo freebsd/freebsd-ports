@@ -8,12 +8,16 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.lcdf.org/~eddietwo/xbraitenberg/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Braitenberg vehicle simulator with pseudo-physics
+COMMENT=	Braitenberg vehicle simulator with pseudo-physics
 
 USE_XORG=	x11 ice sm xext
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	ac_cv_fpermissive=no
 
 PLIST_FILES=	bin/xbraitenberg
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/operator bool() const/d' ${WRKSRC}/operator.hh
+
 .include <bsd.port.mk>
