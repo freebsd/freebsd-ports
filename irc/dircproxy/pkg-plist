@@ -1,5 +1,7 @@
 bin/dircproxy
 bin/dircproxy-crypt
+man/man1/dircproxy.1.gz
+man/man1/dircproxy-crypt.1.gz
 %%DATADIR%%/cronchk.sh
 %%DATADIR%%/dircproxyrc.sample
 %%DATADIR%%/log.pl
