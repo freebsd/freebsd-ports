@@ -3,6 +3,7 @@
 
 PORTNAME=	ddclient
 PORTVERSION=	3.8.2
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -39,7 +40,7 @@ post-patch:
 		's|/usr|${PREFIX}|g'
 	@${REINPLACE_CMD} -e \
 		's|%%PERL%%|${PERL}| ; \
-		 s|%%ETCDIR%%|${ETCDIR}| ; \
+		 s|%%ETCDIR%%|${PREFIX}/etc| ; \
 		 s|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/ddclient
 
 do-install:
