@@ -1,3 +1,4 @@
+# Created by: Andrey Zakhvatov <andy@icc.surw.chel.su>
 # $FreeBSD$
 
 PORTNAME=	3dpong
@@ -21,25 +22,29 @@ USES=		gmake
 USE_XORG=	x11
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		XLIB="-L${LOCALBASE}/lib -lX11"
+USE_CSTD=	gnu89
 
 PORTDOCS=	AUTHORS.txt CHANGES.txt README.txt TODO.txt
 PORTEXAMPLES=	*
 
-DESKTOP_ENTRIES="3D Pong" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+DESKTOP_ENTRIES="3D Pong" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|cat sounds/|cat ${DATADIR}/|g' ${WRKSRC}/src/3dpong.c
+	@${REINPLACE_CMD} -e 's|cat sounds/|cat ${DATADIR}/|g' \
+		${WRKSRC}/src/3dpong.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/sounds/*.au ${STAGEDIR}${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/src/${PORTNAME}.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_MAN} ${WRKSRC}/src/${PORTNAME}.6 \
+		${STAGEDIR}${MAN6PREFIX}/man/man6/
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/docs/|} ${STAGEDIR}${DOCSDIR}
