@@ -5381,3 +5381,4 @@ misc/sword17|misc/sword|2014-01-16|Has expired: use misc/sword
 www/suphp||2014-01-17|Has expired: Upstream dead, EOL: https://lists.marsching.com/pipermail/suphp/2013-May/002554.html
 databases/postgis||2014-01-17|Has expired: EOLed upstream
 textproc/redland-bindings-python||2014-01-19|Use textproc/redland-bindings directly instead
+emulators/seabios-devel||2014-01-19|Has expired: Outdated, no longer needed, broken on 10+

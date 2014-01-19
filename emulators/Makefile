@@ -135,7 +135,6 @@
     SUBDIR += quasi88
     SUBDIR += raine
     SUBDIR += rtc
-    SUBDIR += seabios-devel
     SUBDIR += sim6811
     SUBDIR += simh
     SUBDIR += ski
