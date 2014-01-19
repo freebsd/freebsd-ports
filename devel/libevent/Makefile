@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}-stable
 MAINTAINER=	mm@FreeBSD.org
 COMMENT?=	Provides an API to execute callback functions on certain events
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
 .if !defined(_BUILDING_LIBEVENT_HIPHOP)
