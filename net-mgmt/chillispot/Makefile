@@ -14,11 +14,12 @@ COMMENT=	Wireless LAN Access Point Controller
 
 CONFLICTS=	coovachilli-[0-9]*
 
+USES=		shebangfix
+SHEBANG_FILES=	doc/hotspotlogin.cgi
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=-sysconfdir=${PREFIX}/etc
 USE_RC_SUBR=	chillispot
 SUB_FILES=	pkg-message installguide.txt
-MAN8=		chilli.8
 USE_GCC=	any
 
 OPTIONS_DEFINE=	APACHE RADIUS
@@ -28,32 +29,18 @@ OPTIONS_SINGLE_RADIUS= FREERADIUS OPENRADIUS
 FREERADIUS_DESC=depend on FreeRADIUS
 OPENRADIUS_DESC=depend on OpenRADIUS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE_RUN=	22+
-.endif
-
-.if ${PORT_OPTIONS:MFREERADIUS}
-RUN_DEPENDS+=	radiusd:${PORTSDIR}/net/freeradius
-.endif
-
-.if ${PORT_OPTIONS:MOPENRADIUS}
-RUN_DEPENDS+=	radiusd:${PORTSDIR}/net/openradius
-.endif
+APACHE_USE=	apache_run=22+
+FREERADIUS_RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius
+OPENRADIUS_RUN_DEPENDS=	radiusd:${PORTSDIR}/net/openradius
 
 post-install:
-.if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/chilli.conf ${DATADIR}/chilli.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/doc/dictionary.chillispot ${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/freeradius.users ${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/hotspotlogin.cgi ${DATADIR}
-	${INSTALL_MAN} ${WRKDIR}/installguide.txt ${DATADIR}
-	${INSTALL_MAN} ${FILESDIR}/pf.conf.sample ${DATADIR}
-	${INSTALL_MAN} ${FILESDIR}/ipfw-config.sample ${DATADIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/chilli.conf ${STAGEDIR}${DATADIR}/chilli.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/doc/dictionary.chillispot ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/freeradius.users ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/hotspotlogin.cgi ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/installguide.txt ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${FILESDIR}/pf.conf.sample ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${FILESDIR}/ipfw-config.sample ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

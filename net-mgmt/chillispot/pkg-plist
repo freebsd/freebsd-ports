@@ -1,5 +1,6 @@
 @stopdaemon chillispot
 sbin/chilli
+man/man8/chilli.8.gz
 %%PORTDATA%%%%DATADIR%%/chilli.conf.sample
 %%PORTDATA%%%%DATADIR%%/dictionary.chillispot
 %%PORTDATA%%%%DATADIR%%/freeradius.users
