@@ -15,4 +15,9 @@ PLIST_FILES=	sbin/bsdcrashtar \
 
 MAKE_ENV+=	NO_OBJ=yes
 
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/bsdcrashtar.sh \
+	    ${STAGEDIR}${PREFIX}/sbin/bsdcrashtar
+	${INSTALL_MAN} ${WRKSRC}/bsdcrashtar.8 ${STAGEDIR}${PREFIX}/man/man8
+
 .include <bsd.port.mk>
