@@ -2,12 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	snes9x
-PORTVERSION=	1.52r79
-PORTREVISION=	4
+PORTVERSION=	1.53r81
 CATEGORIES=	emulators
 MASTER_SITES=	http://snes9x-gtk.googlecode.com/files/
 PKGNAMESUFFIX=	-gtk
-DISTNAME=	snes9x-1.52-src
+DISTNAME=	snes9x-1.53-src
 
 MAINTAINER=	root@cooltrainer.org
 COMMENT=	Super Nintendo Entertainment System(SNES) Emulator
@@ -23,38 +22,23 @@ USE_SDL=	sdl
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--without-alsa
+#USE_AUTOTOOLS=	autoconf aclocal
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/gtk
 
 OPTIONS_DEFINE=	DEBUG OPENGL JMA NETPLAY XV XRANDR
 OPTIONS_DEFAULT=	JMA NETPLAY XV XRANDR
-OPTIONS_DEFINE_i386=	ASM MMX
-OPTIONS_DEFAULT_i386=	ASM
 JMA_DESC=	Enable JMA archive decompression support
 NETPLAY_DESC=	Enable network support
 XV_DESC=	Enable XVideo output on GTK
 XRANDR_DESC=	Enable XRandR support on GTK
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
 CONFIGURE_ARGS+=	--with-debug
 .else
 CONFIGURE_ARGS+=	--without-debug
-.endif
-
-.if ${PORT_OPTIONS:MASM}
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
-CONFIGURE_ARGS+=	--with-assembler
-.else
-CONFIGURE_ARGS+=	--without-assembler
-.endif
-
-.if ${PORT_OPTIONS:MMMX} && !defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=	--with-mmx
-.else
-CONFIGURE_ARGS+=	--without-mmx
 .endif
 
 .if ${PORT_OPTIONS:MOPENGL}
@@ -97,9 +81,12 @@ CONFIGURE_ARGS+=	--without-joystick
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX} ${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
-	${INSTALL_DATA} ${WRKSRC}/data/snes9x.svg ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/data/snes9x.desktop ${PREFIX}/share/applications
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}${PKGNAMESUFFIX} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}${PKGNAMESUFFIX}
+	${INSTALL_DATA} ${WRKSRC}/data/snes9x.svg \
+		${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/data/snes9x.desktop \
+		${STAGEDIR}${PREFIX}/share/applications
 
 post-install:
 	-@update-desktop-database
