@@ -13,11 +13,7 @@ COMMENT=	Archive FreeBSD kernel crash files
 PLIST_FILES=	sbin/bsdcrashtar \
 		man/man8/bsdcrashtar.8.gz
 
+USES=		uidfix
 MAKE_ENV+=	NO_OBJ=yes
-
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bsdcrashtar.sh \
-	    ${STAGEDIR}${PREFIX}/sbin/bsdcrashtar
-	${INSTALL_MAN} ${WRKSRC}/bsdcrashtar.8 ${STAGEDIR}${PREFIX}/man/man8
 
 .include <bsd.port.mk>
