@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.lemke-it.com/
 MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	Combined C++ scanner/parser generator for LR compliant grammars
 
-LIB_DEPENDS=	lfcbase:${PORTSDIR}/devel/lfcbase
+LIB_DEPENDS=	liblfcbase.so:${PORTSDIR}/devel/lfcbase
 
 LICENSE=	GPLv3
 GNU_CONFIGURE=	yes
@@ -17,5 +17,4 @@ PLIST_FILES=	bin/dragon
 
 MAKE_JOBS_UNSAFE=yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
