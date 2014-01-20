@@ -10,8 +10,6 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	An emphatic message generator
 
 GNU_CONFIGURE=	yes
-MAN1=		fist.1
-PLIST_FILES=	bin/fist
+PLIST_FILES=	bin/fist man/man1/fist.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
