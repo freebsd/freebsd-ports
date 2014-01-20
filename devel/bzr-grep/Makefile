@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bazaar plugin to grep files
 
 BROKEN=		conflicts with dependency bzr
+DEPRECATED=	Broken for more than 4 months
+EXPIRATION_DATE=2014-02-20
 
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
 RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
