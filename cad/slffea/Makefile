@@ -32,7 +32,6 @@ EXEC=	beam/beam/bm beam/beam_gr/bmpost brick/brick/br \
 	truss/truss_gr/tspost
 PLIST_FILES=	${EXEC:T:S/^/bin\//}
 
-NO_STAGE=	yes
 post-patch:
 	@(${FIND} ${WRKSRC} -name Makefile | ${XARGS} \
 		${REINPLACE_CMD} -E -e "s|^CC = .*|CC = ${CC} ${CFLAGS}|g" \
@@ -44,7 +43,7 @@ post-patch:
 
 do-install:
 .for file in ${EXEC}
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 
 .include <bsd.port.mk>
