@@ -39,11 +39,11 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^Categories=.*|Categories=Education;Languages;KDE;Qt;Game;|' \
 		${WRKSRC}/${PORTNAME}.desktop
-	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}| ; \
-		s|/usr/share/anki|/usr/local/share/anki|' \
+	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|; \
+		s|/usr/share/anki|${DATADIR}|' \
 		${WRKSRC}/runanki
 	@${REINPLACE_CMD} -e \
-		's|/usr/share/anki/locale|/usr/local/share/locale|' \
+		's|/usr/share/anki/locale|${PREFIX}/share/locale|' \
 		${WRKSRC}/anki/lang.py
 	@${FIND} ${WRKSRC} -name "*.bak" -delete -or -name "*.orig" -delete
 
