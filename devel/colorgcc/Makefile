@@ -15,6 +15,9 @@ COMMENT=	Perl script to colorize the terminal output of GCC
 RUN_DEPENDS=	p5-Term-ANSIColor>=0:${PORTSDIR}/devel/p5-Term-ANSIColor
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
+USES=		shebangfix
+SHEBANG_FILES=	colorgcc
+
 PLIST_FILES=	bin/${PORTNAME} \
 		share/examples/${PORTNAME}/${PORTNAME}rc
 PLIST_DIRS=	share/examples/${PORTNAME}
@@ -22,19 +25,13 @@ SUB_FILES=	pkg-message
 
 NO_BUILD=yes
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${_DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${WRKSRC}/${PORTNAME}
 
 do-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	@${INSTALL_DATA} ${FILESDIR}/${PORTNAME}rc ${EXAMPLESDIR}/
-
-post-install:
-.if !defined(BATCH)
-	@${CAT} ${PKGMESSAGE}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	@${INSTALL_DATA} ${FILESDIR}/${PORTNAME}rc ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
