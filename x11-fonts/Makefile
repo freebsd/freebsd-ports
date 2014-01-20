@@ -35,6 +35,7 @@
     SUBDIR += ecofont
     SUBDIR += encodings
     SUBDIR += farsifonts
+    SUBDIR += fira
     SUBDIR += fntsample
     SUBDIR += font-adobe-100dpi
     SUBDIR += font-adobe-75dpi
