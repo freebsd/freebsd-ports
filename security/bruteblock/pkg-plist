@@ -6,4 +6,5 @@ etc/bruteblock/proftpd.conf.dist
 @unexec if cmp -s %D/etc/bruteblock/ssh.conf.dist %D/etc/bruteblock/ssh.conf; then rm -f %D/etc/bruteblock/ssh.conf; fi
 etc/bruteblock/ssh.conf.dist
 @exec if [ ! -f %B/ssh.conf ]; then cp -p %D/%F %B/ssh.conf; fi
+man/man8/bruteblock.8.gz
 @dirrmtry etc/bruteblock
