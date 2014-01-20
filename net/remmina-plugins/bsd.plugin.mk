@@ -27,17 +27,6 @@ SSH_DESC=	Build with SSH tunneling support
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MSSH}
-LIB_DEPENDS+=	libssh.so:${PORTSDIR}/security/libssh
-PLIST_SUB+=	SSH=""
-.if ${OSVERSION} >= 800040
-LDFLAGS+=	-fstack-protector
-.endif
-.else
-CMAKE_ARGS+=	-DWITH_LIBSSH=OFF
-PLIST_SUB+=	SSH="@comment "
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${PKGNAMESUFFIX} == "-i18n" || ${PKGNAMESUFFIX} == "-gnome"
