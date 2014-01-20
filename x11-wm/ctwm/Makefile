@@ -12,13 +12,11 @@ MASTER_SITES=	http://ctwm.free.lp.se/dist/ \
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Extension to twm, with support for multiple virtual screens, etc
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USES=		imake
 USE_XORG=	xpm xmu
-MAN1=		ctwm.1
 
-NO_STAGE=	yes
 pre-configure:
 	${CP} ${WRKSRC}/Imakefile.local-template ${WRKSRC}/Imakefile.local
 	${CAT} ${FILESDIR}/Imakefile.local-additional >> ${WRKSRC}/Imakefile.local
