@@ -11,7 +11,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	konstantin.lepa@gmail.com
 COMMENT=	C++ XML parser library
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 USES=		cmake iconv
 USE_LDCONFIG=	yes
@@ -22,7 +22,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 CMAKE_ARGS+=	-DDEBUG_MODE:BOOL=ON
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|; \
 		/set.*CMAKE_BUILD_TYPE/d' ${WRKSRC}/CMakeLists.txt \
