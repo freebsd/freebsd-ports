@@ -24,6 +24,10 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libmpeg3.a:${PORTSDIR}/multimedia/libmpeg3 \
 		${LOCALBASE}/lib/libquicktime/lqt_lame.so:${PORTSDIR}/multimedia/libquicktime-lame
 RUN_DEPENDS=	${LOCALBASE}/lib/libquicktime/lqt_lame.so:${PORTSDIR}/multimedia/libquicktime-lame
 
+BROKEN=		segfaults, upstread development ceased
+DEPRECATED=	segfaults, upstread development ceased
+EXPIRATION_DATE=2014-02-03
+
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 USE_GL=		yes
