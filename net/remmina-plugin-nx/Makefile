@@ -9,6 +9,8 @@ USE_XORG+=	xkbfile
 
 MASTERDIR=	${.CURDIR}/../remmina-plugins
 
+LIB_DEPENDS+=	libssh.so:${PORTSDIR}/security/libssh
+
 PLIST_SUB+=	ICONS="" SSH="@comment "
 
 .include "${MASTERDIR}/Makefile"
