@@ -6,6 +6,7 @@ PORTVERSION=	1.51
 CATEGORIES=	sysutils
 MASTER_SITES=	# not available
 DISTNAME=	dr_freebsd_${PORTVERSION}
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LSI Logic's MegaRAID controlling software
@@ -13,7 +14,6 @@ COMMENT=	LSI Logic's MegaRAID controlling software
 OPTIONS_DEFINE=	DOCS
 
 USES=		dos2unix
-USE_ZIP=	yes
 DOS2UNIX_GLOB=	*.txt
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -26,7 +26,8 @@ PLIST_FILES=	sbin/megarc
 PORTDOCS=	*
 
 post-extract:
-	@cd ${WRKSRC} && ${UNZIP_CMD} ${EXTRACT_BEFORE_ARGS} 'MegaRC 1.04.zip'
+	@cd ${WRKSRC} && \
+		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} 'MegaRC 1.04.zip' -C ${WRKSRC}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/megarc ${STAGEDIR}${PREFIX}/sbin
