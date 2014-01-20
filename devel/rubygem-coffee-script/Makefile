@@ -10,6 +10,8 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby CoffeeScript is a bridge to the JS CoffeeScript compiler
 
+LICENSE=	MIT
+
 RUN_DEPENDS=	rubygem-coffee-script-source>=1.4.0:${PORTSDIR}/devel/rubygem-coffee-script-source \
 		rubygem-execjs>=0:${PORTSDIR}/devel/rubygem-execjs
 
