@@ -16,7 +16,7 @@ COMMENT=	Iconv wrapper with Unicode codec for Python
 USES=		iconv
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||g}
+PYDISTUTILS_AUTOPLIST=	yes
 
 .if empty(ICONV_LIB)
 SETUPINFO=	,library_dirs=["${LOCALBASE}/lib"],\
@@ -26,9 +26,8 @@ SETUPINFO=	,libraries=["iconv"],library_dirs=["${LOCALBASE}/lib"],\
 		include_dirs=["${LOCALBASE}/include"]
 .endif
 
-NO_STAGE=	yes
 post-patch:
-	cd ${WRKSRC} && ${SED} 's!^\(.*ext_mod.*\)\()]\)$$!\1${SETUPINFO}\2!g'\
-		setup.py > setup.py.tmp && ${CAT} setup.py.tmp > setup.py
+	${REINPLACE_CMD} 's!^\(.*ext_mod.*\)\()]\)$$!\1${SETUPINFO}\2!g'\
+		${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
