@@ -12,8 +12,7 @@ COMMENT=	Discrete event simulator for networking research
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
 
-USES=		gmake
-USE_TK=		85+
+USES=		gmake tk:85+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl-ver=${TCL_VER} \
 		--with-tk-ver=${TK_VER} \
@@ -22,11 +21,8 @@ CONFIGURE_ARGS=	--with-tcl-ver=${TCL_VER} \
 
 WRKSRC=		${WRKDIR}/ns-${PORTVERSION}
 
-MAN1=		ns.1
-
 OPTIONS_DEFINE=	EXAMPLES
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -42,11 +38,11 @@ post-patch:
 		${WRKSRC}/indep-utils/webtrace-conv/ucb/Makefile.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ns ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ns.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/ns ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/ns.1 ${STAGEDIR}${PREFIX}/man/man1
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/tcl/ex/*.tcl ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/tcl/ex/*.tcl ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
