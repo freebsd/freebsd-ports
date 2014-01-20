@@ -18,8 +18,7 @@ RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	BzrPipeline
+PYDISTUTILS_AUTOPLIST=	yes
 WRKSRC=			${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
