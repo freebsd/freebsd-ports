@@ -3,7 +3,7 @@
 
 PORTNAME=	signing-party
 PORTVERSION=	1.1.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/signing-party/ \
 		${MASTER_SITE_DEBIAN}
