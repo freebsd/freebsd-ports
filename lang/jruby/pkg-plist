@@ -10,11 +10,7 @@ bin/jruby
 %%JRUBY_HOME%%/bin/jruby.bash
 %%JRUBY_HOME%%/bin/jruby.dll
 %%JRUBY_HOME%%/bin/jruby.sh
-%%JRUBY_HOME%%/bin/jruby_visualizer
 %%JRUBY_HOME%%/bin/jrubyc
-%%JRUBY_HOME%%/bin/jrubyfx-compile
-%%JRUBY_HOME%%/bin/jrubyfx-generator
-%%JRUBY_HOME%%/bin/jrubyfx-jarify
 %%JRUBY_HOME%%/bin/rake
 %%JRUBY_HOME%%/bin/rdoc
 %%JRUBY_HOME%%/bin/ri
@@ -674,29 +670,6 @@ bin/jruby
 %%JRUBY_HOME%%/lib/ruby/1.9/irb/workspace.rb
 %%JRUBY_HOME%%/lib/ruby/1.9/irb/ws-for-case-2.rb
 %%JRUBY_HOME%%/lib/ruby/1.9/irb/xmp.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json/add/bigdecimal.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json/add/complex.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json/add/core.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json/add/date.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json/add/date_time.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json/add/exception.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json/add/ostruct.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json/add/range.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json/add/rational.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json/add/regexp.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json/add/struct.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json/add/symbol.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json/add/time.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json/common.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json/ext.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json/ext/generator.jar
-%%JRUBY_HOME%%/lib/ruby/1.9/json/ext/parser.jar
-%%JRUBY_HOME%%/lib/ruby/1.9/json/generic_object.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json/pure.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json/pure/generator.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json/pure/parser.rb
-%%JRUBY_HOME%%/lib/ruby/1.9/json/version.rb
 %%JRUBY_HOME%%/lib/ruby/1.9/kconv.rb
 %%JRUBY_HOME%%/lib/ruby/1.9/logger.rb
 %%JRUBY_HOME%%/lib/ruby/1.9/mathn.rb
@@ -1646,163 +1619,17 @@ bin/jruby
 %%JRUBY_HOME%%/lib/ruby/2.0/yaml.rb
 %%JRUBY_HOME%%/lib/ruby/2.0/yaml/dbm.rb
 %%JRUBY_HOME%%/lib/ruby/2.0/yaml/store.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/cache/rake-10.1.0.gem
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/.gemtest
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/CHANGES
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/MIT-LICENSE
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/README.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/Rakefile
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/TODO
 %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/bin/rake
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/command_line_usage.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/example/Rakefile1
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/example/Rakefile2
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/example/a.c
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/example/b.c
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/example/main.c
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/glossary.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/jamis.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/proto_rake.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/rake.1.gz
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/rakefile.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/rational.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.4.14.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.4.15.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.5.0.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.5.3.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.5.4.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.6.0.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.7.0.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.7.1.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.7.2.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.7.3.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.8.0.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.8.2.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.8.3.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.8.4.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.8.5.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.8.6.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.8.7.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.9.0.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.9.1.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.9.2.2.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.9.2.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.9.3.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.9.4.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.9.5.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-0.9.6.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-10.0.0.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-10.0.1.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-10.0.2.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-10.0.3.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes/rake-10.1.0.rdoc
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/install.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/alt_system.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/application.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/backtrace.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/clean.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/cloneable.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/contrib/compositepublisher.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/contrib/ftptools.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/contrib/publisher.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/contrib/rubyforgepublisher.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/contrib/sshpublisher.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/contrib/sys.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/default_loader.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/dsl_definition.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/early_time.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/ext/core.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/ext/module.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/ext/string.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/ext/time.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/file_creation_task.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/file_list.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/file_task.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/file_utils.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/file_utils_ext.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/gempackagetask.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/invocation_chain.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/invocation_exception_mixin.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/linked_list.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/loaders/makefile.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/multi_task.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/name_space.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/packagetask.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/pathmap.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/phony.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/private_reader.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/promise.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/pseudo_status.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/rake_module.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/rake_test_loader.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/rdoctask.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/ruby182_test_unit_fix.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/rule_recursion_overflow_error.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/runtest.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/scope.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/task.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/task_argument_error.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/task_arguments.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/task_manager.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/tasklib.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/testtask.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/thread_history_display.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/thread_pool.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/trace_output.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/version.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/win32.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/file_creation.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/helper.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/support/rakefile_definitions.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/support/ruby_runner.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_private_reader.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_application.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_application_options.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_backtrace.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_clean.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_definitions.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_directory_task.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_dsl.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_early_time.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_extension.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_file_creation_task.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_file_list.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_file_list_path_map.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_file_task.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_file_utils.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_ftp_file.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_functional.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_invocation_chain.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_linked_list.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_makefile_loader.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_multi_task.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_name_space.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_package_task.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_path_map.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_path_map_explode.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_path_map_partial.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_pseudo_status.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_rake_test_loader.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_reduce_compat.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_require.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_rules.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_scope.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_task.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_task_argument_parsing.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_task_arguments.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_task_lib.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_task_manager.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_task_manager_argument_resolution.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_task_with_arguments.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_test_task.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_thread_pool.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_top_level_functions.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_rake_win32.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_thread_history_display.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/test_trace_output.rb
-%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/rake-10.1.0.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rdoc-4.0.1/bin/rdoc
+%%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rdoc-4.0.1/bin/ri
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/bouncy-castle-java-1.5.0147.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/jruby-openssl-0.9.3.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/json-1.8.0-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/krypt-0.0.1.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/krypt-core-0.0.1-universal-java.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/krypt-provider-jdk-0.0.1.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/rake-10.1.0.gemspec
+%%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default/rdoc-4.0.1.gemspec
 %%JRUBY_HOME%%/lib/ruby/shared/Win32API.rb
 %%JRUBY_HOME%%/lib/ruby/shared/ant.rb
 %%JRUBY_HOME%%/lib/ruby/shared/ant/ant.rb
@@ -2041,6 +1868,29 @@ bin/jruby
 %%JRUBY_HOME%%/lib/ruby/shared/jruby/thread_dump.rb
 %%JRUBY_HOME%%/lib/ruby/shared/jruby/vm.rb
 %%JRUBY_HOME%%/lib/ruby/shared/jruby/win32ole/stub.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json/add/bigdecimal.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json/add/complex.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json/add/core.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json/add/date.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json/add/date_time.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json/add/exception.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json/add/ostruct.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json/add/range.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json/add/rational.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json/add/regexp.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json/add/struct.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json/add/symbol.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json/add/time.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json/common.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json/ext.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json/ext/generator.jar
+%%JRUBY_HOME%%/lib/ruby/shared/json/ext/parser.jar
+%%JRUBY_HOME%%/lib/ruby/shared/json/generic_object.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json/pure.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json/pure/generator.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json/pure/parser.rb
+%%JRUBY_HOME%%/lib/ruby/shared/json/version.rb
 %%JRUBY_HOME%%/lib/ruby/shared/krypt-core.rb
 %%JRUBY_HOME%%/lib/ruby/shared/krypt-provider-jdk.rb
 %%JRUBY_HOME%%/lib/ruby/shared/krypt.rb
@@ -2344,6 +2194,10 @@ bin/jruby
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/krypt/codec
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/krypt/asn1
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/krypt
+@dirrm %%JRUBY_HOME%%/lib/ruby/shared/json/pure
+@dirrm %%JRUBY_HOME%%/lib/ruby/shared/json/ext
+@dirrm %%JRUBY_HOME%%/lib/ruby/shared/json/add
+@dirrm %%JRUBY_HOME%%/lib/ruby/shared/json
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/jruby/win32ole
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/jruby/profiler
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/jruby/core_ext
@@ -2388,22 +2242,13 @@ bin/jruby
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/ant/tasks
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared/ant
 @dirrm %%JRUBY_HOME%%/lib/ruby/shared
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/specifications/default
 @dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/specifications
-@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test/support
-@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/test
-@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/loaders
-@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/ext
-@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake/contrib
-@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib/rake
-@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/lib
-@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/release_notes
-@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc/example
-@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/doc
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rdoc-4.0.1/bin
+@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rdoc-4.0.1
 @dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0/bin
 @dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems/rake-10.1.0
 @dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/gems
-@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/doc
-@dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared/cache
 @dirrm %%JRUBY_HOME%%/lib/ruby/gems/shared
 @dirrm %%JRUBY_HOME%%/lib/ruby/gems
 @dirrm %%JRUBY_HOME%%/lib/ruby/2.0/yaml
@@ -2512,10 +2357,6 @@ bin/jruby
 @dirrm %%JRUBY_HOME%%/lib/ruby/1.9/net
 @dirrm %%JRUBY_HOME%%/lib/ruby/1.9/minitest
 @dirrm %%JRUBY_HOME%%/lib/ruby/1.9/matrix
-@dirrm %%JRUBY_HOME%%/lib/ruby/1.9/json/pure
-@dirrm %%JRUBY_HOME%%/lib/ruby/1.9/json/ext
-@dirrm %%JRUBY_HOME%%/lib/ruby/1.9/json/add
-@dirrm %%JRUBY_HOME%%/lib/ruby/1.9/json
 @dirrm %%JRUBY_HOME%%/lib/ruby/1.9/irb/lc/ja
 @dirrm %%JRUBY_HOME%%/lib/ruby/1.9/irb/lc
 @dirrm %%JRUBY_HOME%%/lib/ruby/1.9/irb/ext
@@ -2633,10 +2474,8 @@ bin/jruby
 %%PORTDOCS%%%%DOCSDIR%%/jvyaml/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/jvyaml/README
 %%PORTDOCS%%%%DOCSDIR%%/man/pom.xml
-%%PORTDOCS%%%%DOCSDIR%%/man/pom.xml.versionsBackup
 %%PORTDOCS%%%%DOCSDIR%%/man/src/docbkx/jruby.xml
 %%PORTDOCS%%%%DOCSDIR%%/pom.xml
-%%PORTDOCS%%%%DOCSDIR%%/pom.xml.versionsBackup
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/man/src/docbkx
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/man/src
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/man
