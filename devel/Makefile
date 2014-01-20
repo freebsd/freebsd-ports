@@ -554,6 +554,7 @@
     SUBDIR += git-merge-changelog
     SUBDIR += git-review
     SUBDIR += git-subversion
+    SUBDIR += gitg0
     SUBDIR += gitg
     SUBDIR += gitolite
     SUBDIR += gitolite2
