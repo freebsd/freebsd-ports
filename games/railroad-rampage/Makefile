@@ -3,7 +3,7 @@
 
 PORTNAME=	railroad-rampage
 PORTVERSION=	1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	RailroadRampage_${PORTVERSION}_Linux
@@ -12,9 +12,9 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tower Defence-like Arcade and Strategy combination
 
 BUILD_DEPENDS=	bgdc:${PORTSDIR}/devel/bennugd-core \
-		${LOCALBASE}/lib/bennugd/mod_grproc.so:${PORTSDIR}/devel/bennugd-modules
+		${LOCALBASE}/lib/bennugd/libmod_grproc.so:${PORTSDIR}/devel/bennugd-modules
 RUN_DEPENDS=	bgdi:${PORTSDIR}/devel/bennugd-core \
-		${LOCALBASE}/lib/bennugd/mod_grproc.so:${PORTSDIR}/devel/bennugd-modules
+		${LOCALBASE}/lib/bennugd/libmod_grproc.so:${PORTSDIR}/devel/bennugd-modules
 
 USE_ZIP=	yes
 
@@ -30,24 +30,21 @@ DESKTOP_ENTRIES="Railroad Rampage" \
 		"Game;StrategyGame;ArcadeGame;" \
 		false
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} \
-		LD_LIBRARY_PATH=${LOCALBASE}/lib/bennugd \
-		BENNUDIR=${LOCALBASE}/lib/bennugd \
-		${LOCALBASE}/bin/bgdc RailroadRampage.prg || true
+		LD_LIBRARY_PATH="${LOCALBASE}/lib/bennugd" \
+		BENNUDIR="${LOCALBASE}/lib/bennugd" \
+		"${LOCALBASE}/bin/bgdc" RailroadRampage.prg || true; \
+		[ -e RailroadRampage.dcb ]
 
 do-install:
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "Music Sound" ${DATADIR}/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "Music Sound" ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/traintd.fpg ${WRKSRC}/RailroadRampage.dcb \
-		${WRKSRC}/RailroadRampage.png ${DATADIR}/
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ReadMe.txt ${DOCSDIR}/
-.endif
+		${WRKSRC}/RailroadRampage.png ${STAGEDIR}${DATADIR}/
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ReadMe.txt ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
