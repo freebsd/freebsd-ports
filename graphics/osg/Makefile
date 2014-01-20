@@ -2,15 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	osg
-PORTVERSION=	3.0.1
-PORTREVISION=	9
+PORTVERSION=	3.2.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.openscenegraph.org/downloads/stable_releases/OpenSceneGraph-${PORTVERSION}/source/ \
+MASTER_SITES=	http://trac.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/distfiles/
 DISTNAME=	OpenSceneGraph-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ OpenGL scene graph library for real-time rendering
+
+LICENSE=	OSGPL
+LICENSE_NAME=	OpenSceneGraph Public License
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng.so:${PORTSDIR}/graphics/png \
@@ -19,27 +23,28 @@ LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 CONFLICTS=	osg-devel-[0-9]*
 
 USE_ZIP=	yes
-USES=		cmake pkgconfig
+USES=		cmake:outsource pkgconfig
 USE_GL=		gl glu
 USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
-		OSG_SHLIBVER=80 \
-		OPENTHREADS_VERSION=2.6.0 \
-		OPENTHREADS_SHLIBVER=12
+		OSG_SHLIBVER=100 \
+		OPENTHREADS_VERSION=${PORTVERSION} \
+		OPENTHREADS_SHLIBVER=13
 
 PORTSCOUT=	limitw:1,even
 
-OPTIONS_DEFINE=	CURL FREETYPE GDAL GIF INVENTOR JASPER XINE ITK \
-		VNC OPENEXR FFMPEG SVG PDF XRANDR SDL
+OPTIONS_DEFINE=	CURL FREETYPE GDAL GIF INVENTOR JASPER XINE GTA \
+		VNC OPENEXR FFMPEG SVG PDF SDL NVTT QT4 XRANDR
 OPTIONS_DEFAULT=FREETYPE GIF FFMPEG XRANDR
 
 GDAL_DESC=	GDAL support
 INVENTOR_DESC=	SGI OpenInventor support
-ITK_DESC=	InsightToolkit support
+GTA_DESC=	GTA file format support
 VNC_DESC=	LibVNCServer support
 SDL_DESC=	Use SDL (joystick support in present3d)
+NVTT_DESC=	Use NVidia texture tools
 
 OPTIONS_SUB=	yes
 
@@ -50,21 +55,27 @@ GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
 INVENTOR_LIB_DEPENDS=	libInventor.so:${PORTSDIR}/graphics/inventor
 JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
 XINE_LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
-ITK_BUILD_DEPENDS=	${LOCALBASE}/lib/InsightToolkit/UseITK.cmake:${PORTSDIR}/science/InsightToolkit
-ITK_RUN_DEPENDS=	${LOCALBASE}/lib/InsightToolkit/UseITK.cmake:${PORTSDIR}/science/InsightToolkit
+GTA_LIB_DEPENDS=	libgta.so:${PORTSDIR}/devel/libgta
 VNC_LIB_DEPENDS=	libvncserver.so:${PORTSDIR}/net/libvncserver
 OPENEXR_LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
 FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 SVG_LIB_DEPENDS=	librsvg-2.so:${PORTSDIR}/graphics/librsvg2
 PDF_LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
+SDL_USE=		SDL=sdl
+NVTT_LIB_DEPENDS=	libnvtt.so:${PORTSDIR}/graphics/nvidia-texture-tools
 XRANDR_CMAKE_ON=	-DOSGVIEWER_USE_XRANDR:BOOL=ON
 XRANDR_CMAKE_OFF=	-DOSGVIEWER_USE_XRANDR:BOOL=OFF
+QT4_USE=		QT4=corelib,gui,opengl,qmake_build,moc_build,uic_build,rcc_build
+QT4_CMAKE_ON=		-DOSG_USE_QT=ON
+QT4_CMAKE_OFF=		-DOSG_USE_QT=OFF
 
 .include <bsd.port.options.mk>
 
 # GUI toolkits are only needed for building examples, which are not even installed
-FORCE_IGNORE=	FLTK GLUT FOX Qt3 Qt4 wxWidgets OpenAL GtkGl # only for examples
+FORCE_IGNORE=	FLTK GLUT FOX Qt3 Qt5Widgets wxWidgets OpenAL GtkGl # only for examples
 FORCE_IGNORE+=	COLLADA Performer OurDCMTK XUL FBX           # not in ports
+FORCE_IGNORE+=	OpenVRML                                     # ports version too old
+FORCE_IGNORE+=	ITK                                          # ports version doesn't build on 10.x
 FORCE_REQUIRE=	Threads OpenGL X11 JPEG PNG TIFF ZLIB        # common & lightweight
 
 # options that affect FIND_PACKAGE
@@ -104,20 +115,16 @@ FORCE_REQUIRE+=	Jasper
 FORCE_IGNORE+=	Jasper
 .endif
 
-# broken (openvrml from ports is too old)
-FORCE_IGNORE+=	OpenVRML
-
 .if ${PORT_OPTIONS:MXINE}
 FORCE_REQUIRE+=	Xine
 .else
 FORCE_IGNORE+=	Xine
 .endif
 
-.if ${PORT_OPTIONS:MITK}
-FORCE_REQUIRE+=	ITK
-CXXFLAGS+=	-DVCL_CAN_STATIC_CONST_INIT_FLOAT=0
+.if ${PORT_OPTIONS:MGTA}
+FORCE_REQUIRE+=	GTA
 .else
-FORCE_IGNORE+=	ITK
+FORCE_IGNORE+=	GTA
 .endif
 
 .if ${PORT_OPTIONS:MVNC}
@@ -140,9 +147,14 @@ FORCE_IGNORE+=	FFmpeg
 
 .if ${PORT_OPTIONS:MSDL}
 FORCE_REQUIRE+=	SDL
-USE_SDL=	sdl
 .else
 FORCE_IGNORE+=	SDL
+.endif
+
+.if ${PORT_OPTIONS:MNVTT}
+FORCE_REQUIRE+=	NVTT
+.else
+FORCE_IGNORE+=	NVTT
 .endif
 
 # options that affect PKG_CHECK_MODULES
