@@ -1825,7 +1825,9 @@ RUN_DEPENDS+=	${_GL_${_component}_RUN_DEPENDS}
 # Ignore STAGEDIR if set from make.conf
 .undef STAGEDIR
 # From command line it is impossible to undefined so we must raise an error
+.if defined(STAGEDIR)
 IGNORE=	Do not define STAGEDIR in command line
+.endif
 .endif
 
 .if defined(WITH_PKGNG)
