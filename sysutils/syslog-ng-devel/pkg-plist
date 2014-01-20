@@ -106,7 +106,7 @@ include/syslog-ng/rewrite/rewrite-set.h
 include/syslog-ng/rewrite/rewrite-subst.h
 include/syslog-ng/rewrite/rewrite-expr-parser.h
 include/syslog-ng/template/templates.h
-lib/libsyslog-ng-3.5.2.so
+lib/libsyslog-ng-3.5.3.so
 lib/libsyslog-ng.la
 lib/libsyslog-ng.so
 lib/syslog-ng/libafamqp.la
@@ -120,6 +120,8 @@ lib/syslog-ng/libafprog.so
 lib/syslog-ng/libafsocket-notls.la
 lib/syslog-ng/libafsocket-notls.so
 lib/syslog-ng/libafsocket.so
+lib/syslog-ng/libafstomp.la
+lib/syslog-ng/libafstomp.so
 lib/syslog-ng/libafuser.la
 lib/syslog-ng/libafuser.so
 lib/syslog-ng/libbasicfuncs.la
@@ -132,6 +134,8 @@ lib/syslog-ng/libcsvparser.la
 lib/syslog-ng/libcsvparser.so
 lib/syslog-ng/libdbparser.la
 lib/syslog-ng/libdbparser.so
+lib/syslog-ng/liblinux-kmsg-format.la
+lib/syslog-ng/liblinux-kmsg-format.so
 lib/syslog-ng/libsyslog-ng-crypto.la
 lib/syslog-ng/libsyslog-ng-crypto.so
 lib/syslog-ng/libsyslogformat.la
@@ -139,6 +143,11 @@ lib/syslog-ng/libsyslogformat.so
 lib/syslog-ng/libsystem-source.la
 lib/syslog-ng/libsystem-source.so
 libdata/pkgconfig/syslog-ng.pc
+man/man1/loggen.1.gz
+man/man1/pdbtool.1.gz
+man/man1/syslog-ng-ctl.1.gz
+man/man5/syslog-ng.conf.5.gz
+man/man8/syslog-ng.8.gz
 sbin/syslog-ng
 sbin/syslog-ng-ctl
 share/include/scl/pacct/plugin.conf
