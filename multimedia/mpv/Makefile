@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpv
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.3
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	GH:0 GHC:0 https://waf.googlecode.com/files/:1
@@ -22,9 +22,9 @@ BUILD_DEPENDS=	rst2man:${PORTSDIR}/textproc/py-docutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	mpv-player
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	6b20c24
+GH_COMMIT=	d276f75
 
-WAF_VERSION=	1.7.14
+WAF_VERSION=	1.7.15
 
 USES=		compiler:c11 desktop-file-utils gmake iconv pkgconfig
 USE_PYTHON_BUILD=	yes
@@ -43,9 +43,10 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 
 OPTIONS_DEFINE=		BS2B ENCA LADSPA LCMS2 LIRC
 OPTIONS_GROUP=		IN VO AO
-OPTIONS_GROUP_IN=	CDIO DVDNAV LIBBLURAY V4L QUVI
+OPTIONS_GROUP_IN=	CDIO DVDNAV LIBBLURAY V4L QUVI SMB
 OPTIONS_GROUP_VO=	CACA OPENGL VAAPI VDPAU XINERAMA
 OPTIONS_GROUP_AO=	JACK PULSEAUDIO
+OPTIONS_DEFAULT=	SMB
 
 BS2B_DESC=	Enable Bauer Stereophonic-to-Binaural DSP support
 DVDNAV_DESC=	Enable DVD navigation menus support
@@ -119,11 +120,11 @@ LIB_DEPENDS+=		libquvi.so:${PORTSDIR}/multimedia/libquvi
 CONFIGURE_ARGS+=	--disable-libquvi
 .endif
 
-#.if ${PORT_OPTIONS:MSMB}
-#LIB_DEPENDS+=		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
-#.else
+.if ${PORT_OPTIONS:MSMB}
+LIB_DEPENDS+=		libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+.else
 CONFIGURE_ARGS+=	--disable-libsmbclient
-#.endif
+.endif
 
 .if ${PORT_OPTIONS:MCACA}
 LIB_DEPENDS+=		libcaca.so:${PORTSDIR}/graphics/libcaca
