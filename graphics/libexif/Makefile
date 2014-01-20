@@ -13,10 +13,9 @@ LICENSE=	LGPL21
 
 OPTIONS_DEFINE=	DOCS NLS
 
-USES=		pkgconfig
+USES=		gmake pathfix pkgconfig
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack ltverhack
-USE_GMAKE=	yes
+USE_GNOME=	ltverhack
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
