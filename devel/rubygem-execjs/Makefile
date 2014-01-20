@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	execjs
-PORTVERSION=	1.4.0
+PORTVERSION=	2.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
