@@ -22,18 +22,11 @@ PORTDOCS=	*
 PLIST_FILES=	bin/dasm \
 		bin/ftohex
 
-NO_STAGE=	yes
 do-install:
 .for filename in dasm ftohex
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${filename} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/${filename} ${STAGEDIR}${PREFIX}/bin
 .endfor
-
-.include <bsd.port.options.mk>
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
