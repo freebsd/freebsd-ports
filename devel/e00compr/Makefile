@@ -9,27 +9,20 @@ MASTER_SITES=	http://avce00.maptools.org/dl/
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Library to Read/Write Compressed E00 Files
 
-USE_GMAKE=	yes
+OPTIONS_DEFINE=	DOCS
+
+USES=		gmake
 WRKSRC=		${WRKDIR}/${DISTNAME}
 PLIST_FILES=	bin/e00conv include/e00compr.h \
 		lib/e00compr.a
 PORTDOCS=	e00compr.html
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-post-extract:
-	${REINPLACE_CMD} -e 's#gcc#${CC}#g' ${WRKSRC}/Makefile
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/e00conv ${PREFIX}/bin/e00conv
-	${INSTALL_DATA} ${WRKSRC}/e00compr.h ${PREFIX}/include/e00compr.h
-	${INSTALL_DATA} ${WRKSRC}/e00compr.a ${PREFIX}/lib/e00compr.a
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/e00compr.html ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/e00conv ${STAGEDIR}${PREFIX}/bin/e00conv
+	${INSTALL_DATA} ${WRKSRC}/e00compr.h ${STAGEDIR}${PREFIX}/include/e00compr.h
+	${INSTALL_DATA} ${WRKSRC}/e00compr.a ${STAGEDIR}${PREFIX}/lib/e00compr.a
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/e00compr.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
