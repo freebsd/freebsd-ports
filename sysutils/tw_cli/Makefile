@@ -10,7 +10,7 @@ DISTNAME=	cli_freebsd_10.2.1_9.5.4
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	3ware storage controllers management CLI
 
-EXTRACT_SUFX:=	.zip
+EXTRACT_SUFX=	.zip
 
 RESTRICTED=	Redistribution is not allowed
 # i386 binary should work on ia64, but not tested
@@ -22,8 +22,6 @@ BINSUFFIX=	${ARCH:S,i386,x86,:S,amd64,x86_64,:S,ia64,x86,}
 SUB_FILES=	407.status-3ware-raid
 PORTDOCS=	tw_cli.8.html
 
-.include <bsd.port.pre.mk>
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${BINSUFFIX}/tw_cli\
 		${STAGEDIR}/${PREFIX}/sbin/
@@ -32,11 +30,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}/${PREFIX}/etc/periodic/daily
 	${INSTALL_SCRIPT} ${WRKDIR}/407.status-3ware-raid \
 		${STAGEDIR}/${PREFIX}/etc/periodic/daily/
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/tw_cli.8.html ${STAGEDIR}/${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>
