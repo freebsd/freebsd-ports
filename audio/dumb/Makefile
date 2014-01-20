@@ -11,7 +11,6 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	IT, XM, S3M, and MOD player library
 
 USES=		gmake
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	ALLEGRO
 ALLEGRO_DESC=	Enable allegro support
@@ -22,7 +21,8 @@ ALLEGRO_DESC=	Enable allegro support
 LIB_DEPENDS+=	liballeg.so:${PORTSDIR}/devel/allegro
 PLIST_SUB+=	ALLEGRO=""
 MAKE_ARGS=	_PORT_ALLEGRO_CFLAGS="`allegro-config --cflags`"
-MAKE_ARGS+=	LINK_ALLEGRO="-lm -L${LOCALBASE}/lib -lalleg"
+MAKE_ARGS+=	LINK_ALLEGRO="`allegro-config --libs`"
+PKGNAMESUFFIX=	-allegro
 CONFLICTS=	dumb-[0-9]*
 .else
 PLIST_SUB+=	ALLEGRO="@comment "
@@ -34,13 +34,14 @@ CONFLICTS=	dumb-allegro-[0-9]*
 CFLAGS+=	-fPIC
 .endif
 
-pre-configure:
-	@${CP} ${FILESDIR}/config.txt ${WRKSRC}/make
-	@${REINPLACE_CMD} -e "s,@LOCALBASE@,${LOCALBASE}," ${WRKSRC}/make/config.txt
+post-patch:
+	@${REINPLACE_CMD} -e 's|_INSTALL_PATH := |&$${DESTDIR}|' ${WRKSRC}/Makefile
+
+do-configure:
+	@${ECHO_CMD} 'include make/unix.inc' > ${WRKSRC}/make/config.txt
+	@${ECHO_CMD} 'ALL_TARGETS := core core-examples core-headers' >> ${WRKSRC}/make/config.txt
 .if ${PORT_OPTIONS:MALLEGRO}
-	@${REINPLACE_CMD} -e "s,@ALLEGRO@,," ${WRKSRC}/make/config.txt
-.else
-	@${REINPLACE_CMD} -e "s,@ALLEGRO@,#," ${WRKSRC}/make/config.txt
+	@${ECHO_CMD} 'ALL_TARGETS += allegro allegro-examples allegro-headers' >> ${WRKSRC}/make/config.txt
 .endif
 
 .include <bsd.port.mk>
