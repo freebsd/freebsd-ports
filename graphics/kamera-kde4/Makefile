@@ -12,7 +12,7 @@ COMMENT=	Digital camera manager for KDE 4
 
 LATEST_LINK=	${PORTNAME}-kde4
 
-LIB_DEPENDS=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
+LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
 
 CONFLICTS=	kdegraphics-4.[0-6].*
 
