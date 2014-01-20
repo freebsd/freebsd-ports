@@ -1,0 +1,11 @@
+--- wscript.orig	2014-01-20 18:59:38.000000000 +0100
++++ wscript	2014-01-20 19:00:04.000000000 +0100
+@@ -806,7 +806,7 @@
+     ctx.load('detections.devices')
+ 
+     if ctx.env.DEST_OS in ('freebsd', 'openbsd'):
+-        ctx.env.CFLAGS += ['-I/usr/local/include']
++        ctx.env.CFLAGS += ['-I..', '-I/usr/local/include']
+         ctx.env.LINKFLAGS += ['-L/usr/local/lib']
+ 
+     if ctx.env.DEST_OS == 'netbsd':
