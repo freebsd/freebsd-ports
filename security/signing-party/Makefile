@@ -55,6 +55,7 @@ post-patch:
 			-e 's|make pgpring|make|' \
 		${WRKSRC}/gpgwrap/Makefile \
 		${WRKSRC}/keyanalyze/Makefile
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/gpgwrap/src/Makefile
 	# Rename pgpring to pgppubring to avoid conflict with mail/mutt
 	@${REINPLACE_CMD} -e 's|pgpring|pgppubring|g' \
 		${WRKSRC}/keyanalyze/pgpring/Makefile.in
