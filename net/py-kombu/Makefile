@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	kombu
-PORTVERSION=	3.0.8
+PORTVERSION=	3.0.10
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,9 +10,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wg@FreeBSD.org
 COMMENT=	AMQP messaging framework for Python
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}amqp>=1.3.2:${PORTSDIR}/net/py-amqp \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}amqp>=1.4.1:${PORTSDIR}/net/py-amqp \
 		${PYTHON_PKGNAMEPREFIX}anyjson>=0.3.3:${PORTSDIR}/devel/py-anyjson
 
 OPTIONS_DEFINE=	BEANSTALK BOTO MONGODB REDIS SQLALCHEMY ZMQ
@@ -38,10 +38,4 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 270
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ordereddict>=0:${PORTSDIR}/devel/py-ordereddict
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
