@@ -1,0 +1,37 @@
+# Created by: kipz <somicide@gmail.com>
+# $FreeBSD$
+
+PORTNAME=	gitg
+PORTVERSION=	0.0.8
+CATEGORIES=	devel deskutils gnome
+MASTER_SITES=	GNOME
+PKGNAMESUFFIX=	0
+
+MAINTAINER=	amdmi3@FreeBSD.org
+COMMENT=	GTK-based git repository viewer (gtk2 version)
+
+LICENSE=	GPLv2
+
+RUN_DEPENDS=	git:${PORTSDIR}/devel/git
+
+CONFLICTS=	gitg-[0-9]*
+
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+USE_GNOME=	gconf2 gtk20 gtksourceview2 gnomehack
+USES=		gmake pkgconfig
+
+INSTALLS_ICONS=	yes
+GCONF_SCHEMAS=	gitg.schemas
+
+PORTSCOUT=	limit:^0\.
+
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=nls
+NLS_CPPFLAGS=	-I${LOCALBASE}/include
+NLS_LDFLAGS=	-L${LOCALBASE}/lib
+
+.include <bsd.port.mk>
