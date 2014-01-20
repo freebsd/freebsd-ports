@@ -26,6 +26,7 @@ LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack \
 USES=		gmake cmake openal:soft pkgconfig
 USE_XORG=	x11 xpm xext xcursor xxf86vm xxf86dga
 USE_GL=		gl glu
+USE_GNOME=	gtk20
 USE_FREETYPE=	yes
 USE_LDCONFIG=	yes
 
@@ -38,7 +39,7 @@ SHLIB_VER1=	${PORTVERSION:R}
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 # Wrong versioning upstream
-PORTSCOUT=	skipv:5.0.10
+PORTSCOUT=	limitw:1,even skipv:5.0.10
 
 OPTIONS_DEFINE=	ALSA DOCS PULSEAUDIO
 OPTIONS_GROUP=	DEMOS_EXAMPLES
