@@ -23,7 +23,6 @@ GNU_CONFIGURE=	yes
 INFO=		dinotrace
 PLIST_FILES=	bin/dinotrace
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEMACS}
@@ -40,11 +39,10 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MEMACS}
-	@${MKDIR} ${PREFIX}/${EMACS_SITE_LISPDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 .for F in dinotrace.el sim-log.el
-	${INSTALL_DATA} ${WRKSRC}/lisp/${F} ${PREFIX}/${EMACS_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/lisp/${F} ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 .endfor
-	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.mk>
