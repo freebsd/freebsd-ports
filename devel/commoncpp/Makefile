@@ -13,8 +13,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	GNU project portable class framework for C++
 
 USE_LDCONFIG=	yes
-USES=	pathfix
-USE_GMAKE=	yes
+USES=		gmake pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_DOXYGEN=no
 
@@ -23,5 +22,4 @@ INFO=		commoncpp2
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
