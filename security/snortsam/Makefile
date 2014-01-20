@@ -16,24 +16,17 @@ OPTIONS_DEFAULT=	IPFW SAMTOOL
 IPFW_DESC=	checks if configured tables are available
 SAMTOOL_DESC=	install samtool
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 USE_RC_SUBR=	snortsam
 SUB_FILES=	pkg-message \
 		pkg-install
 
-HAS_CONFIGURE=	yes
-NO_BUILD=	yes
-CONFIGURE_SCRIPT=	src/Makefile
-
-CONFIG_DIR?=	${PREFIX}/etc/snortsam
-
 PLIST_DIRS=	etc/snortsam
 PLIST_FILES=	sbin/snortsam \
-		etc/snortsam/snortsam.conf.sample \
-		etc/snortsam/country-rootservers.conf.sample \
-		etc/snortsam/rootservers.cfg.sample
+		%%ETCDIR%%/snortsam.conf.sample \
+		%%ETCDIR%%/country-rootservers.conf.sample \
+		%%ETCDIR%%/rootservers.cfg.sample
 
 .if ${PORT_OPTIONS:MSAMTOOL}
 PLIST_FILES+=	sbin/samtool
@@ -52,40 +45,34 @@ EXTRA_PATCHES+=	${FILESDIR}/ssp_ipfw2_no_table_check.patch
 DEBUG=-DDEBUG
 .endif
 
+# This seems silly, but the RC file gets into ${WRKDIR}/${PORTNAME} which
+# without this, would exist and be a directory.
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
-pre-configure:
-	@${REINPLACE_CMD} -e "s|/etc/snortsam.conf|${CONFIG_DIR}/snortsam.conf|g" ${WRKSRC}/conf/snortsam.conf.sample
-	@${REINPLACE_CMD} -e "s|/etc/snortsam.conf|${CONFIG_DIR}/snortsam.conf|g" ${WRKSRC}/docs/README.conf
-	@${REINPLACE_CMD} -e "s|/etc/snortsam.conf|${CONFIG_DIR}/snortsam.conf|g" ${WRKSRC}/src/snortsam.h
-	@${REINPLACE_CMD} -e "s|/etc/snortsam.conf|${CONFIG_DIR}/snortsam.conf|g" ${WRKSRC}/contrib/snortsam-state.c
+post-patch:
+	@${REINPLACE_CMD} -e '/^CC/d' ${WRKSRC}/src/Makefile
+	@${REINPLACE_CMD} -e "s|/etc/snortsam.conf|${ETCDIR}/snortsam.conf|g" ${WRKSRC}/conf/snortsam.conf.sample
+	@${REINPLACE_CMD} -e "s|/etc/snortsam.conf|${ETCDIR}/snortsam.conf|g" ${WRKSRC}/docs/README.conf
+	@${REINPLACE_CMD} -e "s|/etc/snortsam.conf|${ETCDIR}/snortsam.conf|g" ${WRKSRC}/src/snortsam.h
+	@${REINPLACE_CMD} -e "s|/etc/snortsam.conf|${ETCDIR}/snortsam.conf|g" ${WRKSRC}/contrib/snortsam-state.c
 	@${CHMOD} +x ${WRKSRC}/makesnortsam.sh
 
-do-configure:
+do-build:
 	@cd ${WRKSRC}/src && ${MAKE} ${DEBUG}
 	@cd ${WRKSRC}/src && ${MAKE} samtool ${DEBUG}
 
-# no access to snortsam.conf and samtool for non root users!
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/snortsam ${PREFIX}/sbin
-.if ${PORT_OPTIONS:MSAMTOOL}
-	@${INSTALL} -o root -g wheel -m 500 ${WRKSRC}/samtool ${PREFIX}/sbin
-.endif
-	@${MKDIR} -m 700 ${CONFIG_DIR}
-	@${INSTALL_DATA} -m 600 ${WRKSRC}/conf/snortsam.conf.sample ${CONFIG_DIR}/snortsam.conf.sample
-	@${INSTALL_DATA} ${WRKSRC}/conf/rootservers.cfg ${CONFIG_DIR}/rootservers.cfg.sample
-	@${INSTALL_DATA} ${WRKSRC}/conf/country-rootservers.conf ${CONFIG_DIR}/country-rootservers.conf.sample
+	${INSTALL_PROGRAM} ${WRKSRC}/snortsam ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/samtool ${STAGEDIR}${PREFIX}/sbin
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/conf/snortsam.conf.sample ${STAGEDIR}${ETCDIR}/snortsam.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/conf/rootservers.cfg ${STAGEDIR}${ETCDIR}/rootservers.cfg.sample
+	${INSTALL_DATA} ${WRKSRC}/conf/country-rootservers.conf ${STAGEDIR}${ETCDIR}/country-rootservers.conf.sample
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-
-post-install:
-	@${SH} ${PKGINSTALL} ${DISTNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
