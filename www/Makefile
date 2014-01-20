@@ -210,6 +210,7 @@
     SUBDIR += feedonfeeds
     SUBDIR += ffproxy
     SUBDIR += fhttpd
+    SUBDIR += fira-webfont
     SUBDIR += firefox
     SUBDIR += firefox-esr
     SUBDIR += firefox-esr-i18n
