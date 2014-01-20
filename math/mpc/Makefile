@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpc
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.multiprecision.org/mpc/download/
 
@@ -22,8 +22,6 @@ USE_LDCONFIG=	yes
 INFO=		mpc
 PLIST_FILES=	include/mpc.h \
 		lib/libmpc.a lib/libmpc.la lib/libmpc.so lib/libmpc.so.3
-
-LATEST_LINK=	math_mpc
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
