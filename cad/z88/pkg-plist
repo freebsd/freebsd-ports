@@ -10,7 +10,6 @@ bin/z88i2
 bin/z88n
 bin/z88o
 bin/z88v
-bin/z88v
 bin/z88x
 %%DATADIR%%/b10_2.txt
 %%DATADIR%%/b10_3.txt
