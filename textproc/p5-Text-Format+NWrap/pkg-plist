@@ -1,3 +1,5 @@
+%%PERL5_MAN3%%/Text::Format.3.gz
+%%PERL5_MAN3%%/Text::NWrap.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text-Format+NWrap/.packlist
 %%SITE_PERL%%/Text/Format.pm
 %%SITE_PERL%%/Text/NWrap.pm
