@@ -11,24 +11,23 @@ DISTNAME=	Markdown_${PORTVERSION}
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	A text-to-HTML conversion tool for web writers
 
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/License.text
+
 USE_ZIP=	yes
 NO_BUILD=	yes
 USES=		shebangfix perl5
 SHEBANG_FILES=	Markdown.pl
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	License.text Markdown-Readme.text
-.endif
+OPTIONS_DEFINE=	DOCS
+
+PORTDOCS=	Markdown-Readme.text
 
 PLIST_FILES=	bin/markdown
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/Markdown.pl ${PREFIX}/bin/markdown
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} "${WRKSRC}/License.text" ${DOCSDIR}/License.text
-	${INSTALL_DATA} "${WRKSRC}/Markdown Readme.text" ${DOCSDIR}/Markdown-Readme.text
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/Markdown.pl ${STAGEDIR}${PREFIX}/bin/markdown
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} "${WRKSRC}/Markdown Readme.text" ${STAGEDIR}${DOCSDIR}/Markdown-Readme.text
 
 .include <bsd.port.mk>
