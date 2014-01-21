@@ -20,7 +20,4 @@ USES=		perl5
 USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAN3=		Solr.3 Solr::HTTPUpdateHandler.3 Solr::Schema.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
