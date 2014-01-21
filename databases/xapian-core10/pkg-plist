@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/quartzcheck
 bin/quartzcompact
 bin/quartzdump

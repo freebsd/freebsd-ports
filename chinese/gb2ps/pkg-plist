@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/gb2ps
 share/chinese/cover.ps
 share/chinese/gb/cfan24.ccf

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.txt
 %%PORTDOCS%%%%DOCSDIR%%/bg5ps.sgml
 %%PORTDOCS%%%%DOCSDIR%%/bg5ps.txt

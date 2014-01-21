@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 etc/swift/account-server.conf-sample
 etc/swift/container-server.conf-sample
 etc/swift/dispersion.conf-sample

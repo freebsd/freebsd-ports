@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/gn/gnABISource.h
 include/gn/gnBaseFeature.h
 include/gn/gnBaseFilter.h

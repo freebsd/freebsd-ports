@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/gdbm_dump
 bin/gdbm_load
 bin/gdbmtool

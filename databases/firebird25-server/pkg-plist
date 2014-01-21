@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/fbguard
 bin/fbsplit
 bin/fbstat

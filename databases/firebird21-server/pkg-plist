@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/fb_inet_server
 bin/fb_lock_mgr
 bin/fb_lock_print

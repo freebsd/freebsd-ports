@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/gpre
 bin/isql-fb
 bin/qli

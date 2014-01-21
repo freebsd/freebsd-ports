@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/session_handler.php
 %%DATADIR%%/sharedance.php
 %%DATADIR%%/test_session.php
