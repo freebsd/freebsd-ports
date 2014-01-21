@@ -17,20 +17,18 @@ COMMENT=	YALI: Yet Another LOLCODE Interpreter
 RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-Parse-RecDescent>=0:${PORTSDIR}/devel/p5-Parse-RecDescent
 
-USES=		perl5
+USES=		perl5 dos2unix shebangfix
 USE_PERL5=	run
-
-USE_DOS2UNIX=	yes
+SHEBANG_FILES=	${WRKSRC}
 
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/yali
 
-NO_STAGE=	yes
 post-extract:
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${WRKSRC}
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC} ${PREFIX}/bin/yali
+	@${INSTALL_SCRIPT} ${WRKSRC} ${STAGEDIR}${PREFIX}/bin/yali
 
 .include <bsd.port.mk>
