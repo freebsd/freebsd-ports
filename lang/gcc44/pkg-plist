@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/%%GNU_HOST%%-c++%%SUFFIX%%
 bin/%%GNU_HOST%%-g++%%SUFFIX%%
 bin/%%GNU_HOST%%-gcc%%SUFFIX%%

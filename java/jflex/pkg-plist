@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/jflex
 %%JAVAJARDIR%%/JFlex.jar
 %%EXAMPLESDIR%%/binary/Makefile

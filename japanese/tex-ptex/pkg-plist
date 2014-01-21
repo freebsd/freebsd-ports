@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/ptex
 bin/eptex
 bin/uptex

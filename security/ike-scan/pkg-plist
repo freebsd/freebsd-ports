@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/ike-scan
 bin/psk-crack
 %%DATADIR%%/ike-backoff-patterns

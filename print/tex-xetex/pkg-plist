@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/xetex
 %%TEXMFDISTDIR%%/tex/generic/xetexconfig/unicode-letters.tex
 @dirrm %%TEXMFDISTDIR%%/tex/generic/xetexconfig

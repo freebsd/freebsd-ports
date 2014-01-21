@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/amap
 bin/amap6
 bin/amapcrap

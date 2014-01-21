@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/_libnet.so
 %%PYTHON_SITELIBDIR%%/libnet.py
 %%PYTHON_SITELIBDIR%%/libnet.pyc

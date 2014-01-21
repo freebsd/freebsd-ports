@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/sqlmap
 %%ETCDIR%%.conf-dist
 %%PYTHON_SITELIBDIR%%/sqlmap/extra/__init__.py

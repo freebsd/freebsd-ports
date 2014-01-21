@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/IPsec.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/caveat.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ipsec-must/code.html

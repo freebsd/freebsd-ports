@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/raggle
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS

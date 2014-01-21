@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if [ -e %D/%%WWWDIR%%/install.php  ];then rm -f %D/%%WWWDIR%%/install.php ;fi
 @unexec if [ -e %D/%%WWWDIR%%/install.done ];then rm -f %D/%%WWWDIR%%/install.done;fi
 @exec if [ -e %D/%%WWWDIR%%/include/config.php ];then mv %D/%%WWWDIR%%/install.php %D/%%WWWDIR%%/install.done;fi

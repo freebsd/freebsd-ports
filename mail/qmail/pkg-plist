@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%RCDLINK%%@unexec rm -f %%LOCALBASE%%/etc/rc.d/qmailsmtpd
 %%LDAP%%bin/auth_imap
 %%LDAP%%bin/auth_pop

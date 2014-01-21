@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/MTLc3m.ttf
 %%DATADIR%%/MTLmr3m.ttf
 @dirrm %%DATADIR%%

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/cut-diff
 bin/cutter
 include/cutter/cppcutter.h

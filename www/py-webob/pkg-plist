@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 %%PORTDOCS%%%%DOCSDIR%%/.buildinfo
 %%PORTDOCS%%%%DOCSDIR%%/_sources/comment-example.txt

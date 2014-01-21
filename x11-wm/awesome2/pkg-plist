@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/awesome2
 bin/awesome2-client
 bin/awesome2-menu

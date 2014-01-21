@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DOCSDIR%%/.buildinfo
 %%DOCSDIR%%/_sources/api.txt
 %%DOCSDIR%%/_sources/changelog.txt

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/preps
 share/gnome/apps/Development/PRepS.desktop
 share/gnome/help/preps/C/figures/arch_dlg.png

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/scanhill
 @unexec if cmp -s %D/etc/scanhill.conf-dist %D/etc/scanhill.conf; then rm -f %D/etc/scanhill.conf; fi
 etc/scanhill.conf-dist

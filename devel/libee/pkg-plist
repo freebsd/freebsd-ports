@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/libee/apache.h
 include/libee/ctx.h
 include/libee/event.h

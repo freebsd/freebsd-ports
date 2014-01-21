@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/abut
 bin/anova
 bin/calc

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp -s %D/%%EXAMPLESDIR%%/etc/jabber-pyaim.xml %D/etc/jabber-pyaim.xml; then rm -f %D/etc/jabber-pyaim.xml; fi
 %%EXAMPLESDIR%%/etc/jabber-pyaim.xml
 @exec [ -f %D/etc/jabber-pyaim.xml ] || cp %B/%f %D/etc/jabber-pyaim.xml

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/pancho
 etc/pancho.conf.sample
 %%SITE_PERL%%/Pancho/Util.pm

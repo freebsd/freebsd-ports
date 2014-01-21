@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/GChartWrapper/GChart.py
 %%PYTHON_SITELIBDIR%%/GChartWrapper/GChart.pyc
 %%PYTHON_SITELIBDIR%%/GChartWrapper/GChart.pyo

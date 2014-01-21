@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%USE_LOGDIR%%@exec if [ ! -d %%LOGDIR%% ];then mkdir %%LOGDIR%%; chown pandora:www %%LOGDIR%%;fi
 %%USE_LOGDIR%%@unexec rmdir %%LOGDIR%% 2>/dev/null || true
 @exec if [ ! -d %%SPOOLDIR%% ];then mkdir -pm 770 %%SPOOLDIR%%; chown pandora:www %%SPOOLDIR%%;fi

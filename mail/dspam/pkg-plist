@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%HASH%%bin/cssstat
 %%HASH%%bin/csscompress
 %%HASH%%bin/cssclean

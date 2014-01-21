@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PORTDOCS%%%%DOCSDIR%%/ifluatex.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%CLASSDIR%%/ifluatex.dtx

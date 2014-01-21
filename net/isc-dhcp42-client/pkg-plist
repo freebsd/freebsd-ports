@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 sbin/dhclient
 sbin/dhclient-script
 @unexec if cmp -s %D/etc/dhclient.conf.example %D/etc/dhclient.conf; then rm -f %D/etc/dhclient.conf; fi

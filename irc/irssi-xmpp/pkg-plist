@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/help/roster
 %%DATADIR%%/help/xmppconnect
 %%DATADIR%%/help/xmppserver

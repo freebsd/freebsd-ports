@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec cmp -s %D/%%ETCDIR%%/1 %D/%%ETCDIR%%/1.sample && rm -f %D/%%ETCDIR%%/1
 %%ETCDIR%%/1.sample
 @exec [ ! -f %D/%%ETCDIR%%/1 ] && cp -p %D/%F %B/1

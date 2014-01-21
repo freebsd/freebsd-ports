@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 sbin/abuse.Reporting.system.pl
 sbin/abuse.dshield.pl
 sbin/abuse.ipflog.rotate.pl

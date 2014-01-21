@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/fuse
 man/man1/fuse.1.gz
 %%ICONS%%share/applications/fuse.desktop

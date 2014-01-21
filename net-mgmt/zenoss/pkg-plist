@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec find %D/%%ZENHOME%% -type f -name '*.py[co]' -delete
 %%ZENHOME%%/.profile
 %%ZENHOME%%/Licenses.html

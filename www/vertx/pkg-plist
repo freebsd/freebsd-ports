@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/vertx
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/allclasses-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/groovy/api/deprecated-list.html

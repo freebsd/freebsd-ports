@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/tmac/vgrind
 %%DATADIR%%/tmac/v
 %%DATADIR%%/tmac/thesis.me

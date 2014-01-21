@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp -s %D/%%ETCDIR%%/hsflowd.conf %D/%%ETCDIR%%/hsflowd.conf.sample; then rm -f %D/%%ETCDIR%%/hsflowd.conf; fi
 %%ETCDIR%%/hsflowd.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/hsflowd.conf ]; then cp -p %D/%F %B/hsflowd.conf; fi

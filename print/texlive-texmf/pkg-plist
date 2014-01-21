@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%TEXMFDISTDIR%%/doc/.keep_me
 %%TEXMFDISTDIR%%/pbibtex/bib/jxampl.bib
 %%TEXMFDISTDIR%%/pbibtex/bst/tieice.bst

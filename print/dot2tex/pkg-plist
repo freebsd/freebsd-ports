@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/dot2tex
 %%PYTHON_SITELIBDIR%%/dot2tex/__init__.py
 %%PYTHON_SITELIBDIR%%/dot2tex/__init__.pyc

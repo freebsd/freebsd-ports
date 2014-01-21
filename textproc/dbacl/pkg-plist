@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/bayesol
 bin/dbacl
 bin/hmine

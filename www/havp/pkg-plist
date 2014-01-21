@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 sbin/havp
 @unexec if cmp -s %D/etc/havp/havp.config %D/etc/havp/havp.config.default; then rm -f %D/etc/havp/havp.config; fi
 etc/havp/havp.config.default

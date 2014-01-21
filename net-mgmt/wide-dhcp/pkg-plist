@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 etc/rc.d/wide-dhcps.sh.sample
 sbin/dhcpc
 sbin/dhcpm

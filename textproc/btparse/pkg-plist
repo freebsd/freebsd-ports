@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/bibparse
 include/btparse.h
 lib/libbtparse.so.0

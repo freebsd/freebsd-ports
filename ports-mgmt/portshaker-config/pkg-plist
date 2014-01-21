@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 etc/portshaker.conf
 etc/portshaker.d/bsd_sharp
 etc/portshaker.d/bsd_sharp_releng_2_0

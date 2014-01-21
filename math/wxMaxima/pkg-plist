@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/wxmaxima
 %%DESKTOPDIR%%/wxmaxima.desktop
 share/locale/ca/LC_MESSAGES/wxMaxima.mo

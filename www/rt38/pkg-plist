@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp -s %D/etc/rt38/RT_SiteConfig.pm %D/etc/rt38/RT_SiteConfig.pm-dist; then rm -f %D/etc/rt38/RT_SiteConfig.pm; fi
 @exec [ -f %D/etc/rt38/RT_SiteConfig.pm ] || cp %D/rt38/RT_SiteConfig.pm-dist %D/etc/rt38/RT_SiteConfig.pm
 bin/fastcgi_server

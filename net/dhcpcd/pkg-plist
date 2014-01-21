@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 etc/dhcpcd.conf
 sbin/dhcpcd
 libexec/dhcpcd-hooks/50-ypbind

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/aps2file
 bin/apsfilter-bug
 bin/apspreview

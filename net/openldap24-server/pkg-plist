@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec %%RC_DIR%%/etc/rc.d/slapd stop 2>&1 >/dev/null || true
 etc/openldap/slapd.ldif.default
 etc/openldap/slapd.ldif

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%ASVN%%bin/asvn
 bin/svn
 %%TOOLS%%bin/svn-populate-node-origins-index

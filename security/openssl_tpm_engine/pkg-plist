@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/create_tpm_key
 lib/openssl/engines/libtpm.a
 lib/openssl/engines/libtpm.la

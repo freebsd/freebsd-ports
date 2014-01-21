@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DOCSDIR%%/%%DOCLANG%%/articles/building-products/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.txt

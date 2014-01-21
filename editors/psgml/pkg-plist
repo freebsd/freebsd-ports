@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%EMACS_VERSION_SITE_LISPDIR%%/psgml/iso88591.map
 %%EMACS_VERSION_SITE_LISPDIR%%/psgml/psgml-api.el
 %%EMACS_VERSION_SITE_LISPDIR%%/psgml/psgml-api.elc

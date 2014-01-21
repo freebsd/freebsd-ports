@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/kochi-mincho-subst.ttf
 %%DATADIR%%/kochi-gothic-subst.ttf
 @dirrm %%DATADIR%%

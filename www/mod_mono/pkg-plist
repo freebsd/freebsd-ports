@@ -1,3 +1,2 @@
-@comment $FreeBSD$
 %%MOD_MONOCONFDIR%%/mod_mono.conf
 %%APACHEMODDIR%%/%%AP_MODULE%%

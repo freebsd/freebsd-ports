@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/CastPodder
 bin/castpodder
 bin/iPodder

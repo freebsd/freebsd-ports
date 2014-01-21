@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/nxml.h
 lib/libnxml.a
 lib/libnxml.la

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%BINUTILS_TARG%%/bin/addr2line
 %%BINUTILS_TARG%%/bin/ar
 %%BINUTILS_TARG%%/bin/as

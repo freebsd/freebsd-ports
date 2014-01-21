@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/addwords
 bin/canlisp
 bin/cannacheck

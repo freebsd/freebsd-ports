@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/new-users
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/articles

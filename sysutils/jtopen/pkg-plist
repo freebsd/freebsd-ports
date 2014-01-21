@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%JAVAJARDIR%%/composer.jar
 %%JAVAJARDIR%%/jt400.jar
 %%JAVAJARDIR%%/jt400Proxy.jar

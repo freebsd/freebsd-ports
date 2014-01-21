@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%CLASSDIR%%/bytefield.dtx
 %%CLASSDIR%%/bytefield.sty
 %%CLASSDIR%%/bytefield.ins

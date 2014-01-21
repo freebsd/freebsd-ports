@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/VL-PGothic-Regular.ttf
 %%DATADIR%%/VL-Gothic-Regular.ttf
 @dirrm %%DATADIR%%

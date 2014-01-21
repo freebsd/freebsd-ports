@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/dissy
 %%PYTHON_SITELIBDIR%%/dissy/Bookmark.py
 %%PYTHON_SITELIBDIR%%/dissy/Bookmark.pyc

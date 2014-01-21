@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/xpn
 %%PORTDOCS%%%%DOCSDIR%%/xpn.html
 %%DATADIR%%/lang/de/LC_MESSAGES/xpn.mo

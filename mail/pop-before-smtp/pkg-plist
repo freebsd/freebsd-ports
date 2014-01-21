@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 etc/pop-before-smtp-conf.pl.sample
 sbin/pop-before-smtp
 %%PORTDOCS%%%%DOCSDIR%%/COPYING

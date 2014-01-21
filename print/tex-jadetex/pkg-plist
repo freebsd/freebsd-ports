@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%TEXMFDISTDIR%%/source/jadetex/base/jadetex.dtx
 %%TEXMFDISTDIR%%/source/jadetex/base/jadetex.ins
 %%TEXMFDISTDIR%%/source/jadetex/base/Makefile

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/gapi2-codegen
 bin/gapi2-fixup
 bin/gapi2-parser

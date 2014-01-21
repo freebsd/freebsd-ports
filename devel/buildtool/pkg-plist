@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/buildtool
 libexec/buildtool/bt_config
 libexec/buildtool/bt_dist

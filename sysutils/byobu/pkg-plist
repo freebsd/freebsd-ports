@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/ec2/rates.eu_ie
 %%DATADIR%%/ec2/rates.us_ca
 %%DATADIR%%/ec2/rates.us_va

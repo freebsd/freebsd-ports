@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @comment keep the next three lines on top (only required for old pkg_... tools)
 @exec mkdir -p %D/%%ETCDIR%%/envvars.d
 @exec mkdir -p %D/%%ETCDIR%%/extra

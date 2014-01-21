@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/prelude-lml
 @unexec if cmp -s %D/etc/prelude-lml/plugins.rules %D/etc/prelude-lml/plugins.rules-dist; then rm -f %D/etc/prelude-lml/plugins.rules; fi
 etc/prelude-lml/plugins.rules-dist

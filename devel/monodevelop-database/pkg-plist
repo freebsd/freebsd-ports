@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.CodeGenerator.dll
 lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.CodeGenerator.dll.mdb
 lib/monodevelop/AddIns/MonoDevelop.Database/MonoDevelop.Database.Components.dll

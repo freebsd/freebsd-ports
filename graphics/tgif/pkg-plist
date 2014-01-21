@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/tgif
 lib/X11/tgif/hicolor/22x22/apps/tgificon.png
 @dirrm lib/X11/tgif/hicolor/22x22/apps

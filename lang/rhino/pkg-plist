@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/rhinoc
 bin/rhinodbg
 bin/rhinosh

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/paperconf
 etc/papersize.a4
 etc/papersize.letter

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/opencdk-config
 include/opencdk.h
 lib/libopencdk.a

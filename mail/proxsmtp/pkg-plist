@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec [ ! -f /var/run/proxsmtpd.pid ] || %%PREFIX%%/etc/rc.d/proxsmtpd.sh stop || true
 @unexec if cmp -s %D/etc/proxsmtpd.conf-sample %D/etc/proxsmtpd.conf; then rm -f %D/etc/proxsmtpd.conf; fi
 etc/proxsmtpd.conf-sample

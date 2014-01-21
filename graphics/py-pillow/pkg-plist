@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/pilconvert.py
 bin/pildriver.py
 bin/pilfile.py

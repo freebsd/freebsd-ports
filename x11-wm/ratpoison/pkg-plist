@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/ratpoison
 %%PORTDATA%%bin/rpws
 %%PORTDATA%%%%DATADIR%%/allwindows.sh

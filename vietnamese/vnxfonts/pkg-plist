@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 lib/X11/fonts/vietnamese/fonts.alias
 lib/X11/fonts/vietnamese/fonts.dir
 lib/X11/fonts/vietnamese/Rom14-VN.pcf.Z

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/compiz/compiz-animationaddon.h
 lib/compiz/lib3d.so
 lib/compiz/lib3d.la

@@ -1,3 +1,2 @@
-@comment $FreeBSD$
 %%DATADIR%%/zookeeper-api.php
 @dirrmtry %%DATADIR%%

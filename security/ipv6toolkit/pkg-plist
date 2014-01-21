@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/addr6
 sbin/flow6
 sbin/frag6

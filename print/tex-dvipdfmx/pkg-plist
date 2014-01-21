@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/dvipdfm
 bin/dvipdfmx
 bin/dvipdft

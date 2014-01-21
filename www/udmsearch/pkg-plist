@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/create/ibase/create.sql
 %%DATADIR%%/create/msql/crc-multi.txt
 %%DATADIR%%/create/msql/crc.txt

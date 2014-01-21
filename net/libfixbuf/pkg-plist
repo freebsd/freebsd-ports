@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/fixbuf/autoinc.h
 include/fixbuf/public.h
 include/fixbuf/private.h

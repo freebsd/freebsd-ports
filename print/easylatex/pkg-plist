@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/easylatex
 %%PORTDOCS%%%%DOCSDIR%%/TUTORIAL
 %%DATADIR%%/disabled/30autoAlignEquationsOutsideOfMathMode.pl

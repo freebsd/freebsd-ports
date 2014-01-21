@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/pandora_exec
 bin/pandora_server
 %%TENTACLE%%bin/tentacle_server

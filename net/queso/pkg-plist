@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 sbin/queso
 @unexec if cmp -s %D/etc/etc/queso.conf %D/etc/etc/queso.conf.sample; then rm -f %D/etc/queso.conf.sample; fi
 etc/queso.conf.sample

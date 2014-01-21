@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sendfile.so
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sendfile.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sendfile.pyc

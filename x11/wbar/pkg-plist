@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/wbar
 %%WBARCONFIG%%bin/wbar-config
 etc/bash_completion.d/wbar

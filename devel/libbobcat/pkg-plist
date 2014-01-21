@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/bobcat/a2x
 include/bobcat/align
 include/bobcat/arg

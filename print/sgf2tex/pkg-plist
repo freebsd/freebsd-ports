@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/sgf2tex
 bin/sgfsplit
 share/texmf/fonts/tfm/public/GOOE/gobl.tfm

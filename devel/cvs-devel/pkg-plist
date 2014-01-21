@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/cvs
 bin/cvsbug
 bin/rcs2log

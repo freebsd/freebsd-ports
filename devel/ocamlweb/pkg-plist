@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/ocamlweb
 %%TEXMFDIR%%/tex/latex/ocamlweb/ocamlweb.sty
 @dirrm %%TEXMFDIR%%/tex/latex/ocamlweb

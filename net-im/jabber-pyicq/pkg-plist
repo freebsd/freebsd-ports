@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp -s %D/%%EXAMPLESDIR%%/etc/jabber-pyicq.xml %D/etc/jabber-pyicq.xml; then rm -f %D/etc/jabber-pyicq.xml; fi
 %%EXAMPLESDIR%%/db-setup.mysql
 %%EXAMPLESDIR%%/etc/jabber-pyicq.xml

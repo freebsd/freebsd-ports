@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/ptexenc/ptexenc.h
 include/ptexenc/unicode.h
 @dirrm include/ptexenc

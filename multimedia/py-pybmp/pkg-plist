@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/bmp/__init__.py
 %%PYTHON_SITELIBDIR%%/bmp/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bmp/__init__.pyo

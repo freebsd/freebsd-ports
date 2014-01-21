@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/wax/__init__.py
 %%PYTHON_SITELIBDIR%%/wax/application.py
 %%PYTHON_SITELIBDIR%%/wax/artprovider.py

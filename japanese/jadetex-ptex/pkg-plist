@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @exec ln -s -f %D/bin/ptex %D/bin/jadetex-ptex
 @unexec rm -f %D/bin/jadetex-ptex
 %%TEXMFLOCALDIR%%/ptex/jadetex/dsssl-ptex.def

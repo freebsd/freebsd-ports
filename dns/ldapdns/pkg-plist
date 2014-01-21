@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/ldapdns
 bin/ldapaxfr
 bin/ldapdns-conf

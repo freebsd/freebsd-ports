@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/jbibtex
 bin/pdvitype
 bin/platex

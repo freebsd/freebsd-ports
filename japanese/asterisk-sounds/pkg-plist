@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 share/asterisk/sounds/ja/1-for-am-2-for-pm.gsm
 share/asterisk/sounds/ja/agent-alreadyon.gsm
 share/asterisk/sounds/ja/agent-incorrect.gsm

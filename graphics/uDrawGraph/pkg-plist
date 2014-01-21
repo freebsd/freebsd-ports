@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/uDrawGraph
 %%PORTDOCS%%%%DOCSDIR%%/api.html
 %%PORTDOCS%%%%DOCSDIR%%/api_answ.html

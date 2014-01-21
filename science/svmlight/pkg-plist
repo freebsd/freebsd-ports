@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/svm_classify
 bin/svm_learn
 include/svmlight/kernel.h

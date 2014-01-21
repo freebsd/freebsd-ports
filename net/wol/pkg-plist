@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/wol
 bin/wol-bootptab
 bin/wol-dhcpdconf

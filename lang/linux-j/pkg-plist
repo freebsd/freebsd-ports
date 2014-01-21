@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/j-jconsole
 bin/jw
 lib/j/j.jar

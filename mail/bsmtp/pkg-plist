@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @owner uucp
 @mode 4555
 bin/_bqueue

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DBL%%%%INSTALL_DIR%%/dbl/FAST
 %%DBL%%%%INSTALL_DIR%%/dbl/FULL
 %%DBL%%@dirrmtry %%INSTALL_DIR%%/dbl/NEW

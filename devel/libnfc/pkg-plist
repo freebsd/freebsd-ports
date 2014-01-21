@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/nfc-anticol
 bin/nfc-dep-initiator
 bin/nfc-dep-target

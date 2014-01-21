@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/breve_server
 bin/html2breve
 bin/soup2breve

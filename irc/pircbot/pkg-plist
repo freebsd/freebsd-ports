@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%JAVAJARDIR%%/pircbot.jar
 %%PORTDOCS%%%%DOCSDIR%%/constant-values.html
 %%PORTDOCS%%%%DOCSDIR%%/org/jibble/pircbot/class-use/NickAlreadyInUseException.html

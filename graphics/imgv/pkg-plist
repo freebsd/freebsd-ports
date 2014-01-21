@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/imgv
 %%DATADIR%%/data/Vera.ttf
 %%DATADIR%%/data/arrow_left_black.xbm

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 compat/svr4/README
 compat/svr4/dev/SVR4_MAKEDEV
 compat/svr4/etc/default/init

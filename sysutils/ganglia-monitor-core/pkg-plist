@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/ganglia-config
 bin/gstat
 bin/gmetric

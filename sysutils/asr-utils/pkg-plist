@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%X11%%bin/dptmgr
 %%X11%%bin/dptscom
 bin/raidutil

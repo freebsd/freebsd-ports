@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/compiz/compiz-animation.h
 include/compiz/compiz-mousepoll.h
 include/compiz/compiz-text.h

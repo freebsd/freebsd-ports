@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove CATALOG %%XMLDIR%%/catalog
 share/xml/xmlcharent/catalog
 @exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%XMLDIR%%/catalog

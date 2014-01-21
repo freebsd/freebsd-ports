@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/skalibs/alloc.h
 include/skalibs/allreadwrite.h
 include/skalibs/avlnode.h

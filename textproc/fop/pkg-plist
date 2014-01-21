@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/fop
 %%DATADIR%%/fop
 %%DATADIR%%/status.xml

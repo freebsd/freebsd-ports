@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%EMACS_VERSION_SITE_LISPDIR%%/nxml/nxml-enc.el
 %%EMACS_VERSION_SITE_LISPDIR%%/nxml/nxml-enc.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/nxml/nxml-glyph.el

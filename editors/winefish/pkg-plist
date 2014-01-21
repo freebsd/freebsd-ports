@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/winefish
 share/application-registry/winefish.applications
 share/applications/winefish.desktop

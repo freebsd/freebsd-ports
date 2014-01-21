@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/%%PROGRAM_PREFIX%%texi2html
 man/man1/%%PROGRAM_PREFIX%%texi2html.1.gz
 %%DATADIR%%/i18n/de.thl

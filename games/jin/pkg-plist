@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/jin
 %%DATADIR%%/actions/askquestion.jar
 %%DATADIR%%/actions/getserverhelp.jar

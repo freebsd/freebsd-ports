@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 sbin/cpupowerd
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/COPYING

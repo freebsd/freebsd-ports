@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp -s %D/etc/razorback/virustotal.conf %D/etc/razorback/virustotal.conf.sample; then rm -f %D/etc/razorback/virustotal.conf; fi
 etc/razorback/virustotal.conf.sample
 @exec if [ ! -f %D/etc/razorback/virustotal.conf ] ; then cp -p %D/%F %B/virustotal.conf; fi

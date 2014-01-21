@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/shnm6x12a.pcf.gz
 %%DATADIR%%/shnm6x12ab.pcf.gz
 %%DATADIR%%/shnm6x12abi.pcf.gz

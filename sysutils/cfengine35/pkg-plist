@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 libexec/cfengine/libpromises.la
 libexec/cfengine/libpromises.so
 libexec/cfengine/libpromises.so.3

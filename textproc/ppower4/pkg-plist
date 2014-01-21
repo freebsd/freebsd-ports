@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/ppower4
 %%PORTDOCS%%%%DOCSDIR%%/manual.pdf
 %%PORTDOCS%%%%EXAMPLESDIR%%/leveldemo.tex

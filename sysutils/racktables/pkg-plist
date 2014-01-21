@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%WWWDIR_REL%%/gateways/netcat
 %%WWWDIR_REL%%/gateways/ssh
 %%WWWDIR_REL%%/gateways/sshnokey

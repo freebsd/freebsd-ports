@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/jadetex
 bin/pdfjadetex
 share/texmf/tex/jadetex/dsssl.def

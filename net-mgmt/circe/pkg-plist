@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 sbin/circe-redirect
 sbin/circe-context-daemon
 sbin/circe-daemon

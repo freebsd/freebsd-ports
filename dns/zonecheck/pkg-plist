@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/zonecheck
 etc/zonecheck-dist/de.profile
 etc/zonecheck-dist/default.profile

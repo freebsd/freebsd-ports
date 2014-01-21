@@ -1,4 +1,3 @@
-@comment $FreeBSD: /tmp/pcvs/ports/japanese/font-mona-ipa/pkg-plist,v 1.2 2010-09-30 19:40:16 hrs Exp $
 %%DATADIR%%/ppd/OPVP-HP-Color_LaserJet_5500.ppd
 %%DATADIR%%/ppd/OPVP-HP-Color_LaserJet_4600.ppd
 %%DATADIR%%/ppd/Makefile.in

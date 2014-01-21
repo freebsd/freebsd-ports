@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/ski
 bin/bski
 bin/bskinc
