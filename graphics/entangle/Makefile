@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2 \
 
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk30
+USE_GNOME=	gtk30 introspection:build
 
 # XXX: it would be nice if one day this option would be passed automatically
 # to configure scripts that support it :)
