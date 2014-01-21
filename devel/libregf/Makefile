@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libregf
-DISTVERSION=	alpha-20140112
+DISTVERSION=	alpha-20140118
 CATEGORIES=	devel
 MASTER_SITES=	https://googledrive.com/host/0B3fBvzttpiiSSC1yUDZpb3l0UHM/ \
 		LOCAL/antoine
@@ -23,12 +23,8 @@ PORTDOCS=	AUTHORS ChangeLog
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
