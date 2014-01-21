@@ -13,17 +13,8 @@ OPTIONS_DEFINE=	DOCS
 
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=	pathfix
+USES=		pathfix gmake
 USE_LDCONFIG=	yes
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-post-patch:
-.if empty(PORT_OPTIONS:MDOCS)
-	@${REINPLACE_CMD} -e '/^SUBDIRS = / s|doc||' ${WRKSRC}/Makefile.in
-.endif
 
 regression-test test: build
 	cd ${WRKSR}/ && ${SETENV} ${MAKE_ENV} ${MAKE} check
