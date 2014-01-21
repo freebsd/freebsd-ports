@@ -12,7 +12,7 @@ COMMENT=	An Open Source IDE for C/C++
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
 
 OPTIONS_DEFINE=	CSCOPE CLANG
@@ -22,9 +22,8 @@ CLANG_DESC=	Clang code-completion
 
 USE_WX=		2.9
 WX_UNICODE=	yes
-USE_DOS2UNIX=	*.cpp
-USES=		gettext cmake:outsource
-USE_LDCONFIG=	lib/codelite
+USES=		gettext cmake:outsource dos2unix
+USE_LDCONFIG=	${PREFIX}/lib/codelite
 CMAKE_ARGS+=	-DIS_FREEBSD=1 \
 		-DPREFIX=${PREFIX}
 
@@ -32,7 +31,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 SVN_REVISION=	6213
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCSCOPE}
@@ -40,8 +38,8 @@ RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
 .endif
 
 .if ${PORT_OPTIONS:MCLANG}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libclang.so:${PORTSDIR}/lang/clang-devel
-RUN_DEPENDS+=	${LOCALBASE}/lib/libclang.so:${PORTSDIR}/lang/clang-devel
+BUILD_DEPENDS+=	${LOCALBASE}/llvm-devel/lib/libclang.so:${PORTSDIR}/lang/clang-devel
+RUN_DEPENDS+=	${LOCALBASE}/llvm-devel/lib/libclang.so:${PORTSDIR}/lang/clang-devel
 PLIST_SUB+=	CLANG=""
 CMAKE_ARGS+=	-DENABLE_CLANG=1
 .else
