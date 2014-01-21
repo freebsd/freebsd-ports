@@ -10,5 +10,6 @@ lib/libautotrace.la
 lib/libautotrace.so
 lib/libautotrace.so.3
 libdata/pkgconfig/autotrace.pc
+man/man1/autotrace.1.gz
 share/aclocal/autotrace.m4
 @dirrm include/autotrace
