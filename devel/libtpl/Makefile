@@ -9,6 +9,8 @@ MASTER_SITES=	GH
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Tpl is a library for serializing C data
 
+OPTIONS_DEFINE=	DOCS
+
 LICENSE=	BSD
 
 USE_BZIP2=	yes
@@ -27,15 +29,10 @@ PLIST_FILES=	lib/libtpl.la lib/libtpl.a \
 
 PORTDOCS=	ChangeLog.txt examples.txt userguide.txt compiling.txt
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
