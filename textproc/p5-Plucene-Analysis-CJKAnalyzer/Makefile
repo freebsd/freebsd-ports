@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Analyzer for CJK texts
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	p5-Plucene>=0:${PORTSDIR}/textproc/p5-Plucene
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 TEST_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
@@ -18,8 +21,4 @@ TEST_DEPENDS=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Plucene::Analysis::CJKAnalyzer.3 \
-		Plucene::Analysis::CJKTokenizer.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

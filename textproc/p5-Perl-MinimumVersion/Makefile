@@ -9,6 +9,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Find a minimum required version of perl for Perl code
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-File-Find-Rule>=0.32:${PORTSDIR}/devel/p5-File-Find-Rule \
 		p5-File-Find-Rule-Perl>=1.04:${PORTSDIR}/devel/p5-File-Find-Rule-Perl \
 		p5-PPI>=1.215:${PORTSDIR}/textproc/p5-PPI \
@@ -22,10 +25,6 @@ TEST_DEPENDS=	p5-Test-Script>=0:${PORTSDIR}/devel/p5-Test-Script
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	perlver.1
-MAN3=	Perl::MinimumVersion.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' -e '/Test::/d' ${WRKSRC}/Makefile.PL
 

@@ -1,3 +1,13 @@
+%%PERL5_MAN3%%/PPIx::EditorTools.3.gz
+%%PERL5_MAN3%%/PPIx::EditorTools::FindUnmatchedBrace.3.gz
+%%PERL5_MAN3%%/PPIx::EditorTools::FindVariableDeclaration.3.gz
+%%PERL5_MAN3%%/PPIx::EditorTools::IntroduceTemporaryVariable.3.gz
+%%PERL5_MAN3%%/PPIx::EditorTools::Lexer.3.gz
+%%PERL5_MAN3%%/PPIx::EditorTools::Outline.3.gz
+%%PERL5_MAN3%%/PPIx::EditorTools::RenamePackage.3.gz
+%%PERL5_MAN3%%/PPIx::EditorTools::RenamePackageFromPath.3.gz
+%%PERL5_MAN3%%/PPIx::EditorTools::RenameVariable.3.gz
+%%PERL5_MAN3%%/PPIx::EditorTools::ReturnObject.3.gz
 %%SITE_PERL%%/PPIx/EditorTools.pm
 %%SITE_PERL%%/PPIx/EditorTools/FindUnmatchedBrace.pm
 %%SITE_PERL%%/PPIx/EditorTools/FindVariableDeclaration.pm
