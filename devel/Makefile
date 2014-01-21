@@ -3266,6 +3266,7 @@
     SUBDIR += pear-channel-symfony
     SUBDIR += pear-channel-symfony2
     SUBDIR += pear-channel-theseer
+    SUBDIR += pear-channel-twig
     SUBDIR += pear-codegen
     SUBDIR += pear-ezc_Base
     SUBDIR += pear-ezc_ConsoleTools
