@@ -232,28 +232,28 @@ diff -Naur new/lighttpd-1.4.23/src/http_auth.h old/lighttpd-1.4.23/src/http_auth
  
  typedef struct {
 diff -Naur new/lighttpd-1.4.23/src/Makefile.am old/lighttpd-1.4.23/src/Makefile.am
---- src/Makefile.am	2009-06-16 17:45:42.000000000 +0400
-+++ src/Makefile.am	2009-10-08 10:26:56.000000000 +0400
-@@ -242,7 +242,7 @@
+--- src/Makefile.am.orig	2013-12-03 17:17:52.000000000 +0100
++++ src/Makefile.am	2014-01-21 20:48:24.645439249 +0100
+@@ -243,7 +243,7 @@
  lib_LTLIBRARIES += mod_auth.la
- mod_auth_la_SOURCES = mod_auth.c http_auth_digest.c http_auth.c
- mod_auth_la_LDFLAGS = -module -export-dynamic -avoid-version -no-undefined
--mod_auth_la_LIBADD = $(CRYPT_LIB) $(LDAP_LIB) $(LBER_LIB) $(common_libadd)
-+mod_auth_la_LIBADD = $(MYSQL_LIBS) $(CRYPT_LIB) $(LDAP_LIB) $(LBER_LIB) $(common_libadd)
+ mod_auth_la_SOURCES = mod_auth.c http_auth.c
+ mod_auth_la_LDFLAGS = -module -export-dynamic -avoid-version
+-mod_auth_la_LIBADD = $(CRYPT_LIB) $(SSL_LIB) $(LDAP_LIB) $(LBER_LIB) $(common_libadd)
++mod_auth_la_LIBADD = $(MYSQL_LIBS) $(CRYPT_LIB) $(SSL_LIB) $(LDAP_LIB) $(LBER_LIB) $(common_libadd)
  
  lib_LTLIBRARIES += mod_rewrite.la
  mod_rewrite_la_SOURCES = mod_rewrite.c
 diff -Naur lighttpd-1.4.23/src/Makefile.in old/lighttpd-1.4.23/src/Makefile.in
---- src/Makefile.in	2009-06-19 23:19:22.000000000 +0400
-+++ src/Makefile.in	2009-10-08 10:26:25.000000000 +0400
-@@ -706,7 +706,7 @@
+--- src/Makefile.in.orig	2014-01-20 13:09:11.000000000 +0100
++++ src/Makefile.in	2014-01-21 20:48:37.115438375 +0100
+@@ -852,7 +852,7 @@
  mod_compress_la_LIBADD = $(Z_LIB) $(BZ_LIB) $(common_libadd)
- mod_auth_la_SOURCES = mod_auth.c http_auth_digest.c http_auth.c
- mod_auth_la_LDFLAGS = -module -export-dynamic -avoid-version -no-undefined
--mod_auth_la_LIBADD = $(CRYPT_LIB) $(LDAP_LIB) $(LBER_LIB) $(common_libadd)
-+mod_auth_la_LIBADD = $(MYSQL_LIBS) $(CRYPT_LIB) $(LDAP_LIB) $(LBER_LIB) $(common_libadd)
+ mod_auth_la_SOURCES = mod_auth.c http_auth.c
+ mod_auth_la_LDFLAGS = -module -export-dynamic -avoid-version
+-mod_auth_la_LIBADD = $(CRYPT_LIB) $(SSL_LIB) $(LDAP_LIB) $(LBER_LIB) $(common_libadd)
++mod_auth_la_LIBADD = $(MYSQL_LIBS) $(CRYPT_LIB) $(SSL_LIB) $(LDAP_LIB) $(LBER_LIB) $(common_libadd)
  mod_rewrite_la_SOURCES = mod_rewrite.c
- mod_rewrite_la_LDFLAGS = -module -export-dynamic -avoid-version -no-undefined
+ mod_rewrite_la_LDFLAGS = -module -export-dynamic -avoid-version
  mod_rewrite_la_LIBADD = $(PCRE_LIB) $(common_libadd)
 diff -Naur new/lighttpd-1.4.23/src/mod_auth.c old/lighttpd-1.4.23/src/mod_auth.c
 --- src/mod_auth.c	2009-04-11 16:08:19.000000000 +0400
