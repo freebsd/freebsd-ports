@@ -10,9 +10,8 @@ DISTNAME=	libmonetra-${PORTVERSION}
 MAINTAINER=	brad@monetra.com
 COMMENT=	Library for credit card processing through Monetra (formerly MCVE)
 
+USES=		gmake
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
