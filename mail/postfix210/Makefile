@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-PORTVERSION=	2.11.0
+PORTVERSION=	2.10.3
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -11,6 +11,7 @@ MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
 		ftp://ftp.samurai.com/pub/postfix/official/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/postfix/official/&,}
 MASTER_SITE_SUBDIR=	. old related/postfix
+PKGNAMESUFFIX=	210
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sahil@FreeBSD.org
@@ -22,9 +23,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 VDAVERSION=	2.10.0
-CONFLICTS=	courier-0.* postfix-1.* postfix2?-* postfix21?-* \
-		postfix-current-2.* postfix-current-base-2.* sendmail-8.* \
-		sendmail+*-8.* smail-3.* zmailer-2.* opensmtpd-[0-9]*
+CONFLICTS=	courier-0.* postfix-1.* postfix2[789]-* \
+		postfix-2.11.* postfix-base-2.11.* postfix-current-2.* \
+		postfix-current-base-2.* sendmail-8.* sendmail+*-8.* \
+		smail-3.* zmailer-2.* opensmtpd-[0-9]*
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
@@ -34,7 +36,7 @@ USE_PERL5=	build
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
 OPTIONS_DEFINE=	PCRE SASL2 TLS BDB MYSQL PGSQL SQLITE OPENLDAP LDAP_SASL \
-		CDB NIS VDA TEST SPF INST_BASE LMDB
+		CDB NIS VDA TEST SPF INST_BASE
 PCRE_DESC=	Perl Compatible Regular Expressions
 SASL2_DESC=	Cyrus SASLv2 (Simple Auth. and Sec. Layer)
 DOVECOT_DESC=	Dovecot 1.x SASL authentication method
@@ -54,7 +56,6 @@ VDA_DESC=	VDA (Virtual Delivery Agent 32Bit)
 TEST_DESC=	SMTP/LMTP test server and generator
 SPF_DESC=	SPF support (via libspf2 1.2.x)
 INST_BASE_DESC=	Install into /usr and /etc/postfix
-LMDB_DESC=	LMDB maps
 
 OPTIONS_RADIO=	RG1 RG2
 OPTIONS_RADIO_RG1=	DOVECOT DOVECOT2
@@ -72,10 +73,9 @@ MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \
 	sendmail.1 qshape.1
 
 MAN5=	access.5 aliases.5 bounce.5 canonical.5 cidr_table.5 generic.5 \
-	header_checks.5 ldap_table.5 lmdb_table.5 master.5 memcache_table.5 \
-	mysql_table.5 nisplus_table.5 pcre_table.5 pgsql_table.5 postconf.5 \
-	postfix-wrapper.5 regexp_table.5 relocated.5 socketmap_table.5 \
-	sqlite_table.5 tcp_table.5 transport.5 virtual.5
+	header_checks.5 ldap_table.5 master.5 memcache_table.5 mysql_table.5 \
+	nisplus_table.5 pcre_table.5 pgsql_table.5 postconf.5 postfix-wrapper.5 \
+	regexp_table.5 relocated.5 sqlite_table.5 tcp_table.5 transport.5 virtual.5
 
 MAN8=	anvil.8 bounce.8 cleanup.8 discard.8 dnsblog.8 error.8 flush.8 local.8 master.8 \
 	oqmgr.8 pickup.8 pipe.8 postscreen.8 proxymap.8 qmgr.8 qmqpd.8 scache.8 showq.8 \
@@ -251,7 +251,7 @@ PLIST_SUB+=	TEST="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MINST_BASE}
-PKGNAMESUFFIX=	-base
+PKGNAMESUFFIX=	210base
 PREFIX=		/usr
 ETCDIR=		/etc/postfix
 USE_RCORDER=	postfix
@@ -259,12 +259,6 @@ PLIST_SUB+=	BASE=""
 .else
 USE_RC_SUBR=	postfix
 PLIST_SUB+=	BASE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLMDB}
-LIB_DEPENDS+=		liblmdb.so:${PORTSDIR}/databases/lmdb
-POSTFIX_CCARGS+=	-DHAS_LMDB -I${LOCALBASE}/include
-POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -llmdb
 .endif
 
 PLIST_SUB+=	PFETC=${ETCDIR}
