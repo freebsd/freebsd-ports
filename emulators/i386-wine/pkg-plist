@@ -803,7 +803,7 @@ lib32/libgnutls.so.26
 lib32/libiconv.so.3
 lib32/libintl.so.9
 lib32/libjpeg.so.11
-lib32/liblcms.so.1
+lib32/liblcms2.so.2
 lib32/libopenal.so.1
 lib32/libpng15.so.15
 lib32/libpthread-stubs.so.0
@@ -2032,6 +2032,12 @@ lib32/wine/xmllite.dll.so
 lib32/wine/xolehlp.dll.so
 lib32/wine/xpsprint.dll.so
 lib32/wine/xpssvcs.dll.so
+man/de.UTF-8/man1/wine.1.gz
+man/de.UTF-8/man1/winemaker.1.gz
+man/de.UTF-8/man1/wineserver.1.gz
+man/fr.UTF-8/man1/wine.1.gz
+man/fr.UTF-8/man1/winemaker.1.gz
+man/fr.UTF-8/man1/wineserver.1.gz
 man/man1/msiexec.1.gz
 man/man1/notepad.1.gz
 man/man1/regedit.1.gz
@@ -2054,6 +2060,8 @@ man/man1/winepath.1.gz
 man/man1/wineserver.1.gz
 man/man1/wmc.1.gz
 man/man1/wrc.1.gz
+man/pl.UTF-8/man1/wine.1.gz
+share/applications/wine.desktop
 share/doc/wine/ANNOUNCE
 share/doc/wine/AUTHORS
 share/doc/wine/README
@@ -2118,9 +2126,16 @@ share/wine/generic.ppd
 share/wine/l_intl.nls
 share/wine/patch-nvidia.sh
 share/wine/wine.inf
+@dirrm share/wine/fonts/
 @dirrm share/wine/fonts
 @dirrm share/wine
 @dirrm share/doc/wine
+@dirrm man/pl.UTF-8/man1
+@dirrm man/pl.UTF-8
+@dirrm man/fr.UTF-8/man1
+@dirrm man/fr.UTF-8
+@dirrm man/de.UTF-8/man1
+@dirrm man/de.UTF-8
 @dirrm lib32/wine/fakedlls
 @dirrm lib32/wine
 @dirrm lib32/.libGL/dri
