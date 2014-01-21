@@ -9,10 +9,7 @@ PKGNAMESUFFIX=	-webfont
 MAINTAINER=	horia@racoviceanu.com
 COMMENT=	Sans-serif and monospaced Web Font for small screens
 
-LICENSE=	OFL
-LICENSE_NAME=	SIL OPEN FONT LICENSE Version 1.1
-LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+LICENSE=	OFL11
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mozilla
