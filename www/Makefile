@@ -1787,6 +1787,7 @@
     SUBDIR += rubygem-gon
     SUBDIR += rubygem-haml
     SUBDIR += rubygem-haml-coderay
+    SUBDIR += rubygem-haml-contrib
     SUBDIR += rubygem-haml-rails
     SUBDIR += rubygem-hpricot
     SUBDIR += rubygem-http-cookie
