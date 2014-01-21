@@ -1,3 +1,11 @@
+%%PERL5_MAN3%%/MDOM::Dumper.3.gz
+%%PERL5_MAN3%%/MDOM::Element.3.gz
+%%PERL5_MAN3%%/MDOM::Node.3.gz
+%%PERL5_MAN3%%/MDOM::Token.3.gz
+%%PERL5_MAN3%%/MDOM::Token::Comment.3.gz
+%%PERL5_MAN3%%/MDOM::Token::Separator.3.gz
+%%PERL5_MAN3%%/MDOM::Token::Whitespace.3.gz
+%%PERL5_MAN3%%/Makefile::DOM.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/DOM/.packlist
 %%SITE_PERL%%/MDOM/Assignment.pm
 %%SITE_PERL%%/MDOM/Command.pm

@@ -13,7 +13,4 @@ COMMENT=	A module for manipulating bibliographic records in the USMARC format
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MARC.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,5 +1,33 @@
 bin/langident
 bin/make-lingua-identify-language
+%%PERL5_MAN3%%/Lingua::Identify.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::BG.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::CS.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::CY.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::DA.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::DE.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::EL.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::EN.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::ES.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::FI.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::FR.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::HR.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::HI.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::HU.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::ID.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::IT.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::LA.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::NL.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::Nothing.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::PL.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::PT.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::RO.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::RU.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::SL.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::SQ.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::SV.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::TR.3.gz
+%%PERL5_MAN3%%/Lingua::Identify::UK.3.gz
 %%SITE_PERL%%/Lingua/Identify.pm
 %%SITE_PERL%%/Lingua/Identify/BG.pm
 %%SITE_PERL%%/Lingua/Identify/CS.pm
@@ -29,6 +57,8 @@ bin/make-lingua-identify-language
 %%SITE_PERL%%/Lingua/Identify/TR.pm
 %%SITE_PERL%%/Lingua/Identify/UK.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Identify/.packlist
+man/man1/langident.1.gz
+man/man1/make-lingua-identify-language.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/Identify
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
 @dirrmtry %%SITE_PERL%%/Lingua/Identify

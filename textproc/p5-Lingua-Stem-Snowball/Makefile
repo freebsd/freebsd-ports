@@ -10,10 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Lingua::Stem::Snowball - Perl interface to Snowball stemmers
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	Lingua::Stem::Snowball.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
