@@ -13,8 +13,8 @@ COMMENT=	C++ code generator for CPython extensions
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
-		xslt:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
+		libxslt.so:${PORTSDIR}/textproc/libxslt
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION} \
 		PYTHON_VERSION=${PYTHON_VERSION}
