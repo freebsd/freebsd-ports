@@ -15,13 +15,12 @@ BUILD_DEPENDS=	formail:${PORTSDIR}/mail/procmail
 GNU_CONFIGURE=	yes
 PLIST_SUB=	DISTNAME="${DISTNAME}"
 NO_BUILD=	yes
+USES=		tk
 
 MAN1=		dotfile.1
 
 OPTIONS_DEFINE=	JAPANESE
 JAPANESE_DESC=	Use Japanese as default language
-
-USE_TK=		yes
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
