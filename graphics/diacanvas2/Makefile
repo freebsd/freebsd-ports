@@ -26,7 +26,6 @@ OPTIONS_DEFINE=	PRINT
 OPTIONS_DEFAULT=PRINT
 PRINT_DESC=	GNOME print support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPRINT}
