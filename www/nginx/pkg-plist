@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp -s %D/%%ETCDIR%%/fastcgi_params-dist %D/%%ETCDIR%%/fastcgi_params; then rm -f %D/%%ETCDIR%%/fastcgi_params; fi
 %%ETCDIR%%/fastcgi_params-dist
 @exec if [ ! -f %D/%%ETCDIR%%/fastcgi_params ] ; then cp -p %D/%F %B/fastcgi_params; fi

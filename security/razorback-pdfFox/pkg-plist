@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp -s %D/etc/razorback/pdffox.conf %D/etc/razorback/pdffox.conf.sample; then rm -f %D/etc/razorback/pdffox.conf; fi
 etc/razorback/pdffox.conf.sample
 @exec if [ ! -f %D/etc/razorback/pdffox.conf ]; then cp -p %D/%F %B/pdffox.conf; fi

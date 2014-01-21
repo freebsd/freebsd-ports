@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/bino
 share/applications/bino.desktop
 %%DOCSDIR%%/bino.html

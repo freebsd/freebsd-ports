@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/processing
 libexec/processing/java
 libexec/processing/start-processing

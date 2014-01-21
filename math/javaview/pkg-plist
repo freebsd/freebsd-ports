@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/javaview
 %%DATADIR%%/_jarVersion.txt
 %%DATADIR%%/bin/javaview

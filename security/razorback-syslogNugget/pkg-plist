@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp -s %D/etc/razorback/syslog.conf %D/etc/razorback/syslog.conf.sample; then rm -f %D/etc/razorback/syslog.conf; fi
 etc/razorback/syslog.conf.sample
 @exec if [ ! -f %D/etc/razorback/syslog.conf ]; then cp -p %D/%F %B/syslog.conf; fi

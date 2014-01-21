@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%CLI%%sbin/osiris
 %%PRINTDB%%bin/printdb
 %%OSIRISD%%sbin/osirisd

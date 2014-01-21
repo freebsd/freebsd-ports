@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/nacl-sha256
 bin/nacl-sha512
 include/cpucycles.h

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 libexec/psif
 libexec/lprps
 libexec/psof

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%GNOME:%%bin/gtkmorph
 bin/morph
 bin/xmorph

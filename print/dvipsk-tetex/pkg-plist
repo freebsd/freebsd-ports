@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/afm2tfm
 bin/dvips
 bin/odvips

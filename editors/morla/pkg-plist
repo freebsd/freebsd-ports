@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/morla
 include/morla-module.h
 lib/morla/index.xml

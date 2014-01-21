@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/cmew
 bin/incm
 bin/mew-pinentry

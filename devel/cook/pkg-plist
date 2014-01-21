@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/c_incl
 bin/cook
 bin/cook_bom

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/starlogo
 %%DATADIR%%/LICENSE.txt
 %%DATADIR%%/README.txt

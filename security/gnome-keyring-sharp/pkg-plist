@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 lib/libgnome-keyring-sharp-glue.a
 lib/libgnome-keyring-sharp-glue.la
 lib/libgnome-keyring-sharp-glue.so

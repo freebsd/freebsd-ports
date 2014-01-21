@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/unroff
 %%PORTDOCS%%%%DOCSDIR%%/manual.ms
 %%DATADIR%%/misc/sample.unroff

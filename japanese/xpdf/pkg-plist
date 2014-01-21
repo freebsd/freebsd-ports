@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/japanese/Adobe-Japan1.cidToUnicode
 %%DATADIR%%/japanese/EUC-JP.unicodeMap
 %%DATADIR%%/japanese/ISO-2022-JP.unicodeMap

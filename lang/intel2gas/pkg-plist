@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/intel2gas
 %%PORTDOCS%%share/doc/intel2gas/BUGS
 %%PORTDOCS%%share/doc/intel2gas/DATAFILES

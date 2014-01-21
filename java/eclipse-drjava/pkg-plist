@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/%%EPLUGINID%%_%%PORTVERSION%%/META-INF/MANIFEST.MF
 %%DATADIR%%/%%EPLUGINID%%_%%PORTVERSION%%/drjava-eclipse.jar
 %%DATADIR%%/%%EPLUGINID%%_%%PORTVERSION%%/icons/drjava16.gif

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/Xlib/X.py
 %%PYTHON_SITELIBDIR%%/Xlib/X.pyc
 %%PYTHON_SITELIBDIR%%/Xlib/X.pyo

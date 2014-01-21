@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp %D/%%ETCDIR%%/ae_ua.config %D/%%ETCDIR%%/ae_ua.config.default; then rm %D/%%ETCDIR%%/ae_ua.config; fi
 @unexec if cmp %D/%%ETCDIR%%/cache.config %D/%%ETCDIR%%/cache.config.default; then rm %D/%%ETCDIR%%/cache.config; fi
 @unexec if cmp %D/%%ETCDIR%%/cluster.config %D/%%ETCDIR%%/cluster.config.default; then rm %D/%%ETCDIR%%/cluster.config; fi

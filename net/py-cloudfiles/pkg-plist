@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/cloudfiles/__init__.py
 %%PYTHON_SITELIBDIR%%/cloudfiles/__init__.pyc
 %%PYTHON_SITELIBDIR%%/cloudfiles/__init__.pyo

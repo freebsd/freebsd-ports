@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/al
 bin/al2
 bin/caspol

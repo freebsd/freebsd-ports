@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec gacutil -u policy.4.3.FSharp.Core,Version=0.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a
 @unexec gacutil -u policy.2.3.FSharp.Core,Version=0.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a
 @unexec gacutil -u policy.4.0.FSharp.Core,Version=0.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a

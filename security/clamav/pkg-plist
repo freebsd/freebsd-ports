@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/clamav-config
 bin/clambc
 bin/clamconf

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/egg-helper
 %%ELISPDIR%%/egg/egg-cnv.el
 %%ELISPDIR%%/egg/egg-cnv.elc

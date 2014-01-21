@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/nemiver
 include/nemiver/common/config.h
 include/nemiver/common/nmv-address.h

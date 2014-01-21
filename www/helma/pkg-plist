@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp -s %D/%%ETCDIR%%/apps.properties.sample %D/%%ETCDIR%%/apps.properties; then rm -f %D/%%ETCDIR%%/apps.properties; fi
 %%ETCDIR%%/apps.properties.sample
 @exec if [ ! -f %D/%%ETCDIR%%/apps.properties ] ; then cp -p %D/%%ETCDIR%%/apps.properties.sample %D/%%ETCDIR%%/apps.properties; fi

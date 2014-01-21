@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/convey
 %%DATADIR%%/lib/convey-0.3.jar
 %%DATADIR%%/lib/crimson-1.1.3.jar

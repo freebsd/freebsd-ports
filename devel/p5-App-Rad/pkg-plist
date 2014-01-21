@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/Rad/.packlist
 %%SITE_PERL%%/App/Rad.pm
 %%SITE_PERL%%/App/Rad/Config.pm

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/pdfmod
 lib/pdfmod/Hyena.Gui.dll
 lib/pdfmod/Hyena.Gui.dll.config

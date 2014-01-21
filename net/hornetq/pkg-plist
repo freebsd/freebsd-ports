@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/bin/run.sh
 %%DATADIR%%/bin/stop.sh
 %%DATADIR%%/lib/hornetq-bootstrap.jar

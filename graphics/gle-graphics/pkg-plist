@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/gle
 bin/manip
 %%DATADIR%%/bin/gle

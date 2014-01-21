@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 sbin/exim
 sbin/exim-%%EXIM_VERSION%%
 sbin/exim_checkaccess

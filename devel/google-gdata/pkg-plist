@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 lib/mono/GData-Sharp/Google.GData.AccessControl.dll
 lib/mono/GData-Sharp/Google.GData.Apps.dll
 lib/mono/GData-Sharp/Google.GData.Blogger.dll

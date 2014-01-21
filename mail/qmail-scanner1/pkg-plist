@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/qmail-scanner-queue.pl
 bin/qs2mrtg.pl
 share/examples/qs2mrtg/mrtg-qmail-scanner.cfg

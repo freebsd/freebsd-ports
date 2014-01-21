@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/kiwi-i18n
 bin/kiwi-ui-test
 lib/glade3/modules/kiwiwidgets.py

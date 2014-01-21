@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/console-server/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/console-server/tk0231-9-1.png

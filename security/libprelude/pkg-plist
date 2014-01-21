@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/libprelude-config
 bin/prelude-adduser
 bin/prelude-admin

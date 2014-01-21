@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/libestr.h
 lib/libestr.a
 lib/libestr.la

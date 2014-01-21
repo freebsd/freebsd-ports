@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp -s %D/%%ETCDIR%%/pandora_agent.conf.sample %D/%%ETCDIR%%/pandora_agent.conf;then rm -f %D/%%ETCDIR%%/pandora_agent.conf; fi
 %%ETCDIR%%/pandora_agent.conf.sample
 @exec [ -e %D/%F ] || cp -p %D/%F %B/pandora_agent.conf

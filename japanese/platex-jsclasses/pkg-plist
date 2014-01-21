@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%CLASSDIR%%/jsarticle.cls
 %%CLASSDIR%%/jsbook.cls
 %%CLASSDIR%%/jsclasses.dtx

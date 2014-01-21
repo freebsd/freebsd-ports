@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/firestring.h
 lib/libfirestring.a
 lib/libfirestring.so

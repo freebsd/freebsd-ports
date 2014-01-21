@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/muParser.h
 include/muParserBase.h
 include/muParserBytecode.h

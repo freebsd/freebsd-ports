@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/xcb/xcb_icccm.h
 include/xcb/xcb_ewmh.h
 lib/libxcb-icccm.so.4

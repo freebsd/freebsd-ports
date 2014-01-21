@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp -s %D/etc/lighttpd/lighttpd.conf %D/etc/lighttpd/lighttpd.conf.sample; then rm -f %D/etc/lighttpd/lighttpd.conf; fi
 etc/lighttpd/lighttpd.conf.sample
 @exec [ -f %B/lighttpd.conf ] || cp %B/%f %B/lighttpd.conf

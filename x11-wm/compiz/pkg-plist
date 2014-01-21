@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/compiz
 bin/compiz-manager
 %%GTK2%%bin/gtk-window-decorator

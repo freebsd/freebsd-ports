@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%X11%%bin/VBoxClient-all
 %%X11%%bin/VBoxClient
 %%X11%%etc/xdg/autostart/vboxclient.desktop

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/mediatomb
 %%DATADIR%%/js/import.js
 %%DATADIR%%/js/playlists.js

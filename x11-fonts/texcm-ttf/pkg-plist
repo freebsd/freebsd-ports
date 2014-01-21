@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%FONTSDIR%%/fonts.dir
 %%FONTSDIR%%/fonts.scale
 %%FONTSDIR%%/cmsy10.ttf

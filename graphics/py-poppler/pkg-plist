@@ -1,3 +1,2 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/poppler.la
 %%PYTHON_SITELIBDIR%%/poppler.so

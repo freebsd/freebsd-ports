@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/bdftops
 bin/dvipdf
 bin/eps2eps

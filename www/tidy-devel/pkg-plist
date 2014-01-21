@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/tab2space
 bin/tidy
 include/tidy/buffio.h

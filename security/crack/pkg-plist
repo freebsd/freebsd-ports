@@ -1,3 +1,2 @@
-@comment $FreeBSD$
 @unexec /bin/rm -rf %D/crack
 crack

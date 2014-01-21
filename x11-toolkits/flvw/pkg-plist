@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%INCSDIR%%/Flv_CStyle.H
 @exec ln -fs %f %B/Flv_CStyle.h
 @unexec rm -f %B/Flv_CStyle.h

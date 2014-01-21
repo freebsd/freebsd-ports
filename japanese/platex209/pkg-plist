@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/platex209
 %%PLATEX209DIR%%/README.txt
 %%PLATEX209DIR%%/doc/art10.doc

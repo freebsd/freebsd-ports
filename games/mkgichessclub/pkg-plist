@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PORTDOCS%%%%DOCSDIR%%/README.INSTALL
 %%DATADIR%%/create_database.sql
 %%DATADIR%%/db_migrate_1.5_to_1.6.sql

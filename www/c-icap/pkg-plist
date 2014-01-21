@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/c-icap
 bin/c-icap-client
 bin/c-icap-config

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 sbin/portfwd
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS

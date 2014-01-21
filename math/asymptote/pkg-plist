@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/asy
 bin/xasy
 %%DATADIR%%/CAD.asy

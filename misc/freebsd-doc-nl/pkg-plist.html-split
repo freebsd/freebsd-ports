@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/adopt-port.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/create-port.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing-ports/fix-broken.html

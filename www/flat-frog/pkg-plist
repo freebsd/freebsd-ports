@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/class.compiler.php
 %%DATADIR%%/class.config.php
 %%DATADIR%%/class.template.php

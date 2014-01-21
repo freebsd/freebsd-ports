@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/slsh
 etc/slsh.rc
 include/slang.h

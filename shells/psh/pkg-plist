@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/psh
 %%DATADIR%%/complete/debian
 %%DATADIR%%/complete/perl

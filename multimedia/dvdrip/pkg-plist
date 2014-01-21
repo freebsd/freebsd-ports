@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/dvdrip
 bin/dvdrip-exec
 bin/dvdrip-master

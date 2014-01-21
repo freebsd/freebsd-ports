@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/getzone
 bin/posadis
 bin/posadis-config

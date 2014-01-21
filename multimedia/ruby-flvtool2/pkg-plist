@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%RUBY_SITELIBDIR%%/flv.rb
 %%RUBY_SITELIBDIR%%/flv/amf_string_buffer.rb
 %%RUBY_SITELIBDIR%%/flv/audio_tag.rb

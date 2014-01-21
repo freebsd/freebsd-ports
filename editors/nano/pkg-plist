@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/nano
 bin/rnano
 man/man1/nano.1.gz

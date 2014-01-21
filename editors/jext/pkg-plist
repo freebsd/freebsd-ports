@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/jext
 %%DATADIR%%/History.txt
 %%DATADIR%%/Jython-LICENSE

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/ldapadd
 bin/ldapcompare
 bin/ldapdelete

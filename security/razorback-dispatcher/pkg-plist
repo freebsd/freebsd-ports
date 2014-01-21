@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/dispatcher
 bin/dispatcher_safed
 @unexec if cmp -s %D/etc/razorback/dispatcher.conf %D/etc/razorback/dispatcher.conf.sample; then rm -f %D/etc/razorback/dispatcher.conf; fi

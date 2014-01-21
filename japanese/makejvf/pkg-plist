@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/makejvf
 bin/makejvfh
 bin/makejvfk

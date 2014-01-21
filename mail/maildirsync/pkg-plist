@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/maildirsync
 %%EXAMPLESDIR%%/sample.sh
 %%EXAMPLESDIR%%/mailbalance/PREPPED.USERS.db

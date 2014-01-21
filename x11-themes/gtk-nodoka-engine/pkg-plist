@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 lib/gtk-2.0/2.10.0/engines/libnodoka.la
 lib/gtk-2.0/2.10.0/engines/libnodoka.so
 share/themes/Nodoka-Aqua/gtk-2.0/gtkrc

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DOCSDIR%%/%%DOCLANG%%/articles/bsdl-gpl/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/compiz-fusion/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.txt

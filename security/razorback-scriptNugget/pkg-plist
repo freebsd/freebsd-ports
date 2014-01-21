@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp -s %D/etc/razorback/scriptNugget.conf %D/etc/razorback/scriptNugget.conf.sample; then rm -f %D/etc/razorback/scriptNugget.conf; fi
 etc/razorback/scriptNugget.conf.sample
 @exec if [ ! -f %D/etc/razorback/scriptNugget.conf ] ; then cp -p %D/%F %B/scriptNugget.conf; fi

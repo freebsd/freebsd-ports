@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/pybaz/__init__.py
 %%PYTHON_SITELIBDIR%%/pybaz/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pybaz/__init__.pyo

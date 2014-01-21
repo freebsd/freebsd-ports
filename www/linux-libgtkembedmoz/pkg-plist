@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%MOZLIBDIR%%/components/accessibility-atk.xpt
 %%MOZLIBDIR%%/components/accessibility.xpt
 %%MOZLIBDIR%%/components/appshell.xpt

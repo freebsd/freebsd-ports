@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PNEWSDIR%%/.htaccess
 %%PNEWSDIR%%/auth.php
 %%PNEWSDIR%%/auth/ftp.inc.php

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%INSTALLDIR%%/CHANGELOG
 %%INSTALLDIR%%/config.php
 %%INSTALLDIR%%/index.php

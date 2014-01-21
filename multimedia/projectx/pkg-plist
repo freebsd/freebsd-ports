@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/project-x
 %%DATADIR%%/ReadMe.txt
 %%DATADIR%%/ReleaseNotes_0.91.0.txt

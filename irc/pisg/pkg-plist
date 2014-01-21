@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/pisg
 etc/pisg/pisg.cfg.sample
 %%SITE_PERL%%/Pisg.pm

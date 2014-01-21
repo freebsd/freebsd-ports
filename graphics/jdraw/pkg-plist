@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/jdraw
 %%JAVASHAREDIR%%/jdraw/jdraw_v1.1.5.jar
 @dirrm %%JAVASHAREDIR%%/jdraw

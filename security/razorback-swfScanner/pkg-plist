@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp -s %D/etc/razorback/swf_scanner.conf %D/etc/razorback/swf_scanner.conf.sample; then rm -f %D/etc/razorback/swf_scanner.conf; fi
 etc/razorback/swf_scanner.conf.sample
 @exec if [ ! -f %D/etc/razorback/swf_scanner.conf ] ; then cp -p %D/%F %B/swf_scanner.conf; fi

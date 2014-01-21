@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/qmail-notify
 %%EXAMPLESDIR%%/cron.hourly
 %%EXAMPLESDIR%%/message.txt

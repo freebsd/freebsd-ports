@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%JAVAJARDIR%%/axis.jar
 %%JAVAJARDIR%%/jaxrpc.jar
 %%JAVAJARDIR%%/saaj.jar

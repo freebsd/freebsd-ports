@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PORTDOCS%%%%DOCSDIR%%/book.rst
 %%PORTDOCS%%%%DOCSDIR%%/common-knowledge.rst
 %%PORTDOCS%%%%DOCSDIR%%/getting-lasso.rst

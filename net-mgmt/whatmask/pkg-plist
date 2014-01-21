@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/whatmask
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

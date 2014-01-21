@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/portshaker
 etc/portshaker.conf.sample
 %%DATADIR%%/merge-updating.awk

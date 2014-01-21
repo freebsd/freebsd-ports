@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/caldelay
 bin/delayrun
 bin/maxinterval

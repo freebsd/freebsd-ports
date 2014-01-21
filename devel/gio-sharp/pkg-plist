@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 lib/gio-sharp/gio-sharp.dll
 lib/gio-sharp/gio-sharp.dll.config
 lib/gio-sharp/gio-sharp.dll.mdb

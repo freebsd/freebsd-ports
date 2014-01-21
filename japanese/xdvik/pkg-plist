@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/t1mapper
 bin/xdvi
 bin/xdvizilla

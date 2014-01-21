@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/xcb/xcb_keysyms.h
 lib/libxcb-keysyms.so.1
 lib/libxcb-keysyms.so

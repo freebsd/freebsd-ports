@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%TEXMFDISTDIR%%/source/xmltex/xmlplay/play.dtd
 %%TEXMFDISTDIR%%/tex/xmltex/base/iso-8859-1.xmt
 %%TEXMFDISTDIR%%/tex/xmltex/base/utf-16.xmt

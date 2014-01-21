@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/ipagui.ttf
 @dirrm %%DATADIR%%
 %%LOCAL_FONTSDIR%%/TTF/ipagui.ttf

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%X11%%bin/ots_gui
 bin/taxsolve_CA_540_%%TAXYEAR%%
 bin/taxsolve_MA_1_%%TAXYEAR%%

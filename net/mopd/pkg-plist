@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 sbin/mopd
 sbin/mopprobe
 sbin/moptrace

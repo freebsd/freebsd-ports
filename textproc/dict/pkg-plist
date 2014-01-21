@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/dict
 bin/dict_lookup
 bin/dictl

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/bottle.py
 %%PYTHON_SITELIBDIR%%/bottle.py
 %%PYTHON_SITELIBDIR%%/bottle.pyc

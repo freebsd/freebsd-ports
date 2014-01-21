@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/xre-client
 bin/xre-hello_client
 bin/xre-hello_server

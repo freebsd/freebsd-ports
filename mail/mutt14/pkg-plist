@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/mutt
 bin/mutt_dotlock
 bin/pgpewrap

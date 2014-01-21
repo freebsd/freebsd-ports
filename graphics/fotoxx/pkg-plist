@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/fotoxx
 %%DATADIR%%/icons/arrow.png
 %%DATADIR%%/icons/busy.png

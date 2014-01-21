@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PORTDOCS%%%%DOCSDIR%%/README.html
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/hackers.html

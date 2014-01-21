@@ -1,3 +1,2 @@
-@comment $FreeBSD$
 %%DATADIR%%/cs.inc.php
 @dirrm %%DATADIR%%

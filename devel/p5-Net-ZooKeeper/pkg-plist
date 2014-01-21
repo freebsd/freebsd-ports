@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/ZooKeeper/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/ZooKeeper/ZooKeeper.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/ZooKeeper/ZooKeeper.bs

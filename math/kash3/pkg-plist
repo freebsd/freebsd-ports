@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/kash3
 %%PORTDOCS%%%%DOCSDIR%%/html/.001535.html
 %%PORTDOCS%%%%DOCSDIR%%/html/.004a5f.html

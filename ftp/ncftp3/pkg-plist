@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 lib/libStrn.so
 lib/libStrn.so.1
 lib/libncftp.so

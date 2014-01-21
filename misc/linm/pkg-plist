@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/linm
 bin/linm.csh
 bin/linm.sh

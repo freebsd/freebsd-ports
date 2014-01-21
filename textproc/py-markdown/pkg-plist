@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/markdown_py
 %%PYTHON_SITELIBDIR%%/markdown/__init__.py
 %%PYTHON_SITELIBDIR%%/markdown/__init__.pyc

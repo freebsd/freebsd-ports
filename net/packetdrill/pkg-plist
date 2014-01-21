@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/packetdrill
 bin/checksum_test
 bin/packet_parser_test

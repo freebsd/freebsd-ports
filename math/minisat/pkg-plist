@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 
 bin/minisat
 include/minisat/mtl/XAlloc.h

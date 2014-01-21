@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 lib/monodoc/sources/ndesk-options-docs.source
 lib/monodoc/sources/ndesk-options-docs.tree
 lib/monodoc/sources/ndesk-options-docs.zip

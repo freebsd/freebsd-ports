@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/stunnel
 bin/stunnel3
 %%ETCDIR%%/stunnel.conf-sample

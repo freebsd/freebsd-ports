@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/fvdeinfo
 bin/fvdemount
 include/libfvde.h

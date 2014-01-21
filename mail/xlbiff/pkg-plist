@@ -1,3 +1,2 @@
-@comment $FreeBSD$
 bin/xlbiff
 lib/X11/app-defaults/XLbiff

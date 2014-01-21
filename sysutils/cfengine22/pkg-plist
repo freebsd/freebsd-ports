@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 lib/libcfengine.la
 lib/libcfengine.a
 sbin/cfagent

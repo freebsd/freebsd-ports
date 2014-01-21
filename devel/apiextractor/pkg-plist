@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/apiextractor/abstractmetalang.h
 include/apiextractor/apiextractor.h
 include/apiextractor/apiextractormacros.h

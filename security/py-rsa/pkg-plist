@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/pyrsa-encrypt-bigfile
 bin/pyrsa-encrypt
 bin/pyrsa-verify

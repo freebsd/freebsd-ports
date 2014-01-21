@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/clamz
 share/applications/clamz.desktop
 share/mime/packages/clamz.xml

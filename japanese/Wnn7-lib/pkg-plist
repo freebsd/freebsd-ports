@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/wnn7/wnn/commonhd.h
 include/wnn7/wnn/config.h
 include/wnn7/wnn/copyright.h

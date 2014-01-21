@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/popt.h
 lib/libpopt.a
 lib/libpopt.la

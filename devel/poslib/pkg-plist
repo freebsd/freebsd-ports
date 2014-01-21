@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/poslib-config
 include/poslib-%%VERSION%%/poslib/bits.h
 include/poslib-%%VERSION%%/poslib/dnsdefs.h

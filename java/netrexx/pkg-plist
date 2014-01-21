@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/NetRexxC.sh
 bin/nrc
 %%PORTDOCS%%%%DOCSDIR%%/netrexx/lang/RexxWords.class

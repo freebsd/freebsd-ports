@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/svn
 %%TOOLS%%bin/svn-tools/diff
 %%TOOLS%%bin/svn-tools/diff3

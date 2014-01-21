@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/bash
 bin/rbash
 bin/bashbug
