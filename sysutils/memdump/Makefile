@@ -7,28 +7,23 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.porcupine.org/forensics/
 
 MAINTAINER=	onatan@gmail.com
-COMMENT=	Forensic utility for memory-dumping
+COMMENT=	Forensic utility for memory dumping
+
+LICENSE=	IBM
+LICENSE_NAME=	IBM Public License 1.0
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ALL_TARGET=	what
+MAKE_ARGS=	OPT="${CFLAGS}" DEBUG=''
 
-PLIST_FILES=	bin/memdump
-PORTDOCS=	README LICENSE
-MAN1=		memdump.1
+PORTDOCS=	README
+PLIST_FILES=	bin/memdump man/man1/memdump.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/memdump ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/memdump.1 ${MANPREFIX}/man/man1
-.	if !defined(NOPORTDOCS)
-		${MKDIR} ${DOCSDIR}
-		${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-		${INSTALL_DATA} ${WRKSRC}/LICENSE ${DOCSDIR}
-.	endif
+	${INSTALL_PROGRAM} ${WRKSRC}/memdump ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/memdump.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-BROKEN=		unsupported FreeBSD version
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
