@@ -1,5 +1,2 @@
-
-Security Warning:
-This port requires that you mount procfs(5) filesystem in /proc.
-Please note that this can pose a security risk.
-
+    This port requires procfs(5) filesystem mounted under /proc.
+    Please note that this can pose a security risk.
