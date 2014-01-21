@@ -22,10 +22,7 @@ USE_LDCONFIG=	yes
 # LDFLAGS detection wrong
 LDFLAGS=	-L${LOCALBASE}/lib
 
-MAN1=	jep.1
-
-NO_STAGE=	yes
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/jep.jar ${JAVAJARDIR}/
+	${INSTALL_DATA} ${WRKSRC}/jep.jar ${STAGEDIR}${JAVAJARDIR}/
 
 .include <bsd.port.mk>
