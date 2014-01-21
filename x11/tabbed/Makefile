@@ -6,7 +6,7 @@ PORTVERSION=	0.3
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/
 
-MAINTAINER=	winstonw@lavabit.com
+MAINTAINER=	mp39590@gmail.com
 COMMENT=	Simple generic tabbed fronted to xembed aware applications
 
 LICENSE=	MIT
