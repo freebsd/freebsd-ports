@@ -16,10 +16,7 @@ LICENSE_COMB=	dual
 BUILD_DEPENDS=	p5-HTML-Fraction>=0.40:${PORTSDIR}/textproc/p5-HTML-Fraction
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	String::Fraction.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
