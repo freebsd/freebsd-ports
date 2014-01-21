@@ -9,8 +9,8 @@ MASTER_SITES=	SF/g19linux/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	armin@frozen-zone.org
 COMMENT=	G19 draw library
 
-LIB_DEPENDS=	g19.1:${PORTSDIR}/devel/libg19 \
-		freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libg19.so:${PORTSDIR}/devel/libg19 \
+		libfreetype.so.9:${PORTSDIR}/print/freetype2
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
@@ -24,5 +24,4 @@ PLIST_FILES=	include/libg19draw.h \
 		lib/libg19draw.so \
 		lib/libg19draw.so.1
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
