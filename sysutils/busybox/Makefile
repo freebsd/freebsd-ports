@@ -2,31 +2,29 @@
 # $FreeBSD$
 
 PORTNAME=	busybox
-PORTVERSION=	1.21.1
+PORTVERSION=	1.22.1
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	http://www.busybox.net/downloads/
 
 PATCH_SITES=	http://www.busybox.net/downloads/fixes-${PORTVERSION}/
 PATCH_DIST_STRIP=	-p1
-PATCHFILES=
+PATCHFILES=	busybox-1.22.1-ash.patch
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Busybox for FreeBSD
 
 LICENSE=	GPLv2
 
-PORTSCOUT=	skipv:1.22.0
+PORTSCOUT=	skipv:1.23.0
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
 CONFLICTS_INSTALL=	busybox-unstable-*
 
 MAKE_ARGS+=	SKIP_STRIP=y CC="${CC}" HOSTCC="${CC}" CXX="${CXX}" HOSTCXX="${CXX}"
-USES=		gmake
 USE_BZIP2=	yes
-# avoid clang, breaks in findutils/find.c l. 752+,
-# uses a GCC extension/invalid C code:
-USE_GCC?=	4.2+
+# findutils/find.c l. 752+, uses a GCC extension/invalid C code:
+USES=		compiler:nestedfct gmake
 
 PLIST_FILES=	bin/busybox
 
@@ -35,7 +33,7 @@ PLIST_FILES=	bin/busybox
 .if ${PORT_OPTIONS:MDOCS}
 USES+=		perl5
 USE_PERL5=	build
-PORTDOCS=		*
+PORTDOCS=	*
 .endif
 
 post-patch:
