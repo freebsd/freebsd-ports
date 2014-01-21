@@ -46,30 +46,9 @@ TEST_DEPENDS=	p5-DBD-SQLite>=1.29:${PORTSDIR}/databases/p5-DBD-SQLite \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		hailo.1
-
-MAN3=		Hailo.3 \
-		Hailo::Command.3 \
-		Hailo::Engine::Default.3 \
-		Hailo::Engine::Scored.3 \
-		Hailo::Role::Arguments.3 \
-		Hailo::Role::Engine.3 \
-		Hailo::Role::Storage.3 \
-		Hailo::Role::Tokenizer.3 \
-		Hailo::Role::UI.3 \
-		Hailo::Storage.3 \
-		Hailo::Storage::MySQL.3 \
-		Hailo::Storage::PostgreSQL.3 \
-		Hailo::Storage::SQLite.3 \
-		Hailo::Storage::Schema.3 \
-		Hailo::Tokenizer::Chars.3 \
-		Hailo::Tokenizer::Words.3 \
-		Hailo::UI::ReadLine.3
-
 OPTIONS_DEFINE=	SQLITE PGSQL MYSQL
 OPTIONS_DEFAULT=	SQLITE
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 

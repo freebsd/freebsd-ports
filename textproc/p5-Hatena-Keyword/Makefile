@@ -30,7 +30,4 @@ RUN_DEPENDS=	p5-Cache>=0:${PORTSDIR}/devel/p5-Cache \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Hatena::Keyword.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
