@@ -13,16 +13,13 @@ COMMENT=	Graphics viewer for viewing netpbm format on console or X using aalib
 
 RUN_DEPENDS=	anytopnm:${PORTSDIR}/graphics/netpbm \
 		convert:${PORTSDIR}/graphics/ImageMagick
-LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib
+LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-x=no
 
-MAN1=		asciiview.1 aview.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bash|/sh|g' ${WRKSRC}/asciiview
 	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
