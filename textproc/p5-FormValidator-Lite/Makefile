@@ -26,20 +26,6 @@ TEST_DEPENDS=	p5-Text-TestBase>0:${PORTSDIR}/textproc/p5-Text-TestBase \
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		FormValidator::Lite.3 \
-		FormValidator::Lite::Constraint.3 \
-		FormValidator::Lite::Constraint::Date.3 \
-		FormValidator::Lite::Constraint::Default.3 \
-		FormValidator::Lite::Constraint::Email.3 \
-		FormValidator::Lite::Constraint::File.3 \
-		FormValidator::Lite::Constraint::Japanese.3 \
-		FormValidator::Lite::Constraint::Number.3 \
-		FormValidator::Lite::Constraint::Time.3 \
-		FormValidator::Lite::Constraint::URL.3 \
-		FormValidator::Lite::Messages::en.3 \
-		FormValidator::Lite::Messages::ja.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

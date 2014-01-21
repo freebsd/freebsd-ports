@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Getopt::Lucid - Clear, readable syntax for command line processing
 
+LICENSE=	APACHE20
+
 BUILD_DEPENDS=	p5-Exception-Class>=1.23:${PORTSDIR}/devel/p5-Exception-Class \
 		p5-Exception-Class-TryCatch>=1.10:${PORTSDIR}/devel/p5-Exception-Class-TryCatch \
 		p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper \
@@ -20,7 +22,4 @@ RUN_DEPENDS=	p5-Exception-Class>=1.23:${PORTSDIR}/devel/p5-Exception-Class \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Getopt::Lucid.3 Getopt::Lucid::Exception.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

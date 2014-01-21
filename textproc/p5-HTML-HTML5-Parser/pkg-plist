@@ -1,5 +1,8 @@
 bin/html2xhtml
 bin/html5debug
+%%PERL5_MAN3%%/HTML::HTML5::Parser.3.gz
+%%PERL5_MAN3%%/HTML::HTML5::Parser::Error.3.gz
+%%PERL5_MAN3%%/HTML::HTML5::Parser::UA.3.gz
 %%SITE_PERL%%/HTML/HTML5/Parser/Charset/DecodeHandle.pm
 %%SITE_PERL%%/HTML/HTML5/Parser/Charset/Info.pm
 %%SITE_PERL%%/HTML/HTML5/Parser/Charset/UnicodeChecker.pm
