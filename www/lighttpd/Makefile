@@ -229,6 +229,7 @@ post-install:
 	@${INSTALL_DATA} ${FILESDIR}/${FILE} ${STAGEDIR}${DOCSDIR}/${FILE}
 . endfor
 .endif
+	@${MKDIR} -m 0700 ${STAGEDIR}${LIGHTTPD_LOGROOT}
 
 test: build
 	@cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MAKE} \
