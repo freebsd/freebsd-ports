@@ -12,10 +12,11 @@ COMMENT=		Powerful security programming toolkit
 
 ONLY_FOR_ARCHS=		i386 amd64
 
+OPTIONS_DEFINE=		DOCS
+
 USE_ZIP=		yes
 EXTRACT_BEFORE_ARGS=	-aq
 NO_WRKSUBDIR=		yes
-USES=			gmake
 MAKEFILE=		makefile
 ALL_TARGET=		default FreeBSD shared
 USE_LDCONFIG=		yes
@@ -27,9 +28,6 @@ PLIST_FILES=		include/cryptlib.h \
 
 PORTDOCS=		README
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's/%%CFLAGS%%/${CFLAGS}/' ${WRKSRC}/makefile
 	@${REINPLACE_CMD} -e 's/%%PTHREAD_CFLAGS%%/${PTHREAD_CFLAGS}/' ${WRKSRC}/makefile
@@ -37,15 +35,13 @@ post-patch:
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libcl.a ${WRKSRC}/libcl.so.${PORTVERSION} \
-		${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/libcl.so.${PORTVERSION} ${PREFIX}/lib/libcl.so.3
-	${LN} -sf ${PREFIX}/lib/libcl.so.3 ${PREFIX}/lib/libcl.so
-	${INSTALL_DATA} ${WRKSRC}/cryptlib.h ${PREFIX}/include
+		${STAGEDIR}${PREFIX}/lib
+	${LN} -sf ${PREFIX}/lib/libcl.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libcl.so.3
+	${LN} -sf ${PREFIX}/lib/libcl.so.3 ${STAGEDIR}${PREFIX}/lib/libcl.so
+	${INSTALL_DATA} ${WRKSRC}/cryptlib.h ${STAGEDIR}${PREFIX}/include
 
-.if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
