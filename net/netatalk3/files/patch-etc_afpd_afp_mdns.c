@@ -1,6 +1,6 @@
---- etc/afpd/afp_mdns.c.orig	2013-10-28 06:43:13.000000000 -0700
-+++ etc/afpd/afp_mdns.c	2014-01-17 22:10:59.000000000 -0800
-@@ -37,17 +37,15 @@
+--- etc/afpd/afp_mdns.c.orig	2014-01-21 15:12:49.465373000 +0000
++++ etc/afpd/afp_mdns.c	2014-01-21 15:15:03.618213000 +0000
+@@ -36,18 +36,16 @@ static pthread_t       poller;
  /*
   * Its easier to use asprintf to set the TXT record values
   */
@@ -26,7 +26,7 @@
      }
  
  static struct pollfd *fds;
-@@ -134,7 +132,7 @@
+@@ -134,7 +132,7 @@ static void register_stuff(const AFPObj 
  
      /* Register our service, prepare the TXT record */
      TXTRecordCreate(&txt_adisk, 0, NULL);
