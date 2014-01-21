@@ -34,10 +34,10 @@ VORBIS_LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
 VORBIS_CONFIGURE_OFF=	--without-ogg
 
 FLAC_LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
-FLAC_CONFIGURE_ARGS=	--without-flac
+FLAC_CONFIGURE_OFF=	--without-flac
 
 CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
-CURL_CONFIGURE_ARGS=	--without-curl
+CURL_CONFIGURE_OFF=	--without-curl
 
 post-patch:
 # Install locale files correctly (to share dir instead of lib dir)
