@@ -14,26 +14,17 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
-PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
+PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
+
+PORTDOCS=	*
+
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR in ${JAVAJARDIR}..."
-	@cd ${WRKSRC} && \
-		${INSTALL_DATA} ${PORTNAME}-${PORTVERSION}.jar \
-			${JAVAJARDIR}/${PORTNAME}.jar
-	@${ECHO_MSG} " [ DONE ]"
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${DOCSDIR}
-	@cd ${WRKSRC}/docs && ${FIND} . | \
-		${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > \
-			/dev/null 2>&1
-	@${ECHO_MSG} " [ DONE ]"
-.endif
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.jar \
+			${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
