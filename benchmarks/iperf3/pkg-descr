@@ -1,0 +1,12 @@
+iperf is a tool for measuring the maximum TCP and UDP bandwidth along
+a path between two hosts.  It allows the tuning of various
+parameters and UDP characteristics, and reports bandwidth, delay
+jitter, datagram loss.  iperf was originally developed by NLANR/DAST.
+
+iperf3 is a new implementation from scratch, with the goal of a
+smaller, simpler code base, and a library version of the functionality
+that can be used in other programs.  iperf3 also a number of features
+found in other tools such as nuttcp and netperf, but were missing from
+iperf 2.x.  iperf3 is not backwards compatible with iperf 2.x.
+
+WWW: https://code.google.com/p/iperf/
