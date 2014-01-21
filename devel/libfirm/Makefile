@@ -7,27 +7,20 @@ CATEGORIES=	devel lang
 MASTER_SITES=	SF
 
 MAINTAINER=	sperber@FreeBSD.org
-COMMENT=	A graph-based SSA intermediate representation library for compilers
+COMMENT=	Graph-based SSA intermediate representation library for compilers
+
+OPTIONS_DEFINE=	DEBUG
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
 USE_AUTOTOOLS=	autoconf
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
-USES=		pkgconfig
+USES=		gmake pathfix pkgconfig
 
 OPTIONS_DEFINE=	DEBUG
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug
-.else
-CONFIGURE_ARGS+=	--disable-debug
-.endif
+DEBUG_CONFIGURE_ENABLE=	debug
 
 .include <bsd.port.mk>
