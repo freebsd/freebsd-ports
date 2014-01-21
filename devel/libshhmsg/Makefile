@@ -10,19 +10,17 @@ DISTNAME=	shhmsg-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for displaying messages
 
+OPTIONS_DEFINE=	DOCS
+
+USES=	uidfix
 MAKEFILE=	${FILESDIR}/Makefile.lib
 USE_LDCONFIG=	yes
 MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in CREDITS README shhmsg.txt
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
