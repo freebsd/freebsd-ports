@@ -12,7 +12,7 @@
 #	net/libkvkontakte
 #	net/libmediawiki
 
-DIGIKAM_VER=	3.2.0
+DIGIKAM_VER=	3.5.0
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/digikam
 
@@ -33,6 +33,7 @@ KIPI_PLUGINS_ALL=	acquireimages \
 			imageviewer \
 			imgurexport \
 			ipodexport \
+			jalbumexport \
 			jpeglossless \
 			kioexport \
 			kmlexport \
@@ -75,13 +76,14 @@ expoblending_DESC=	Create pseudo HDR image with a stack of bracketed images
 facebook_DESC=		Import/export images to/from a remote Facebook web service
 flashexport_DESC=	Export images to Flash using SimpleViewer
 flickrexport_DESC=	Export images to a remote Flickr based web service
-gpssync_DESC=		Geolocalize pictures
+gpssync_DESC=		Geolocalize images
 galleryexport_DESC=	Export images to a remote Gallery
 htmlexport_DESC=	Export images collections into a static XHTML page
 imageshackexport_DESC=	Export images to ImageShack web service
 imageviewer_DESC=	Preview images using OpenGL
 imgurexport_DESC=	Export images to ImgUr web service
-ipodexport_DESC=	Export pictures to an Ipod device
+ipodexport_DESC=	Export images to an Ipod device
+jalbumexport_DESC=	Export images to jAlbum
 jpeglossless_DESC=	Rotate/flip images without losing quality
 kioexport_DESC=		Export images to remote computer using network protocol
 kmlexport_DESC=		Create KML files to present images with coordinates
@@ -130,7 +132,7 @@ USES+=		pkgconfig
 
 .if ${KIPI_PLUGIN} != "libkipiplugins"
 EXTRA_PATCHES=	${.CURDIR}/../../graphics/kipi-plugins-kde4/files/extrapatch-CMakeLists.txt
-LIB_DEPENDS+=	kipiplugins:${PORTSDIR}/graphics/libkipiplugins
+LIB_DEPENDS+=	libkipiplugins.so:${PORTSDIR}/graphics/libkipiplugins
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/extra/kipi-plugins

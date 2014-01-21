@@ -8,7 +8,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	${${KIPI_PLUGIN}_DESC}
 
 KIPI_PLUGIN=	libkipiplugins
-NO_STAGE=	yes
 .include "${.CURDIR}/../digikam-kde4/Makefile.common"
 
 USE_KDE4+=	libkdcraw libkexiv2 libkipi

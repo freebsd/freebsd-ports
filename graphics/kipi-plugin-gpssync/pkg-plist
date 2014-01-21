@@ -3,7 +3,7 @@ share/apps/gpssync/bookmarks-marker.png
 share/apps/gpssync/searchmarker-normal.png
 share/apps/gpssync/searchmarker-selected.png
 share/apps/kipi/kipiplugin_gpssyncui.rc
-share/icons/hicolor/16x16/actions/gpsimagetag.png
-share/icons/hicolor/32x32/actions/gpsimagetag.png
+share/icons/hicolor/16x16/apps/kipi-gpsimagetag.png
+share/icons/hicolor/32x32/apps/kipi-gpsimagetag.png
 share/kde4/services/kipiplugin_gpssync.desktop
 @dirrm share/apps/gpssync

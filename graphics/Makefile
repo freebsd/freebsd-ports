@@ -440,6 +440,7 @@
     SUBDIR += kipi-plugin-imageviewer
     SUBDIR += kipi-plugin-imgurexport
     SUBDIR += kipi-plugin-ipodexport
+    SUBDIR += kipi-plugin-jalbumexport
     SUBDIR += kipi-plugin-jpeglossless
     SUBDIR += kipi-plugin-kioexport
     SUBDIR += kipi-plugin-kmlexport
