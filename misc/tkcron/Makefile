@@ -15,16 +15,19 @@ EXTRACT_SUFX=	.tcl.gz
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A frontend to crontab
 
-USE_TK_RUN=	85
+USES=		tk:85,run
 
 EXTRACT_CMD=	${GZIP_CMD}
 EXTRACT_BEFORE_ARGS= -cd
 EXTRACT_AFTER_ARGS= > tkcron.tcl
+NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/tkcron
 
-NO_STAGE=	yes
-post-extract:
-	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
+post-patch:
+	${REINPLACE_CMD} -e 's|%%WISH%%|${WISH}|' ${WRKSRC}/tkcron.tcl
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/tkcron.tcl ${STAGEDIR}${PREFIX}/bin/tkcron
 
 .include <bsd.port.mk>
