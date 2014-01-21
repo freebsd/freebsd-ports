@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-PORTVERSION=	2.7.15
+PORTVERSION=	2.7.16
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -11,8 +11,8 @@ MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
 		ftp://ftp.samurai.com/pub/postfix/official/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/postfix/official/&,}
 MASTER_SITE_SUBDIR=	. old related/postfix
-DIST_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	27
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	Secure alternative to widely-used Sendmail
@@ -22,9 +22,12 @@ LICENSE_NAME=	IBM PUBLIC LICENSE VERSION 1.0
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=		No longer supported by upstream
+EXPIRATION_DATE=	2014-07-30
+
 VDAVERSION=	2.7.13
-CONFLICTS=	courier-0.* postfix-1.* postfix2[89]-* \
-		postfix-2.10.* postfix-base-2.10.* postfix-current-2.* \
+CONFLICTS=	courier-0.* postfix-1.* postfix2[89]-* postfix21?-* \
+		postfix-2.* postfix-base-2.* postfix-current-2.* \
 		postfix-current-base-2.* sendmail-8.* sendmail+*-8.* \
 		smail-3.* zmailer-2.* opensmtpd-[0-9]*
 
@@ -98,7 +101,8 @@ MAKEFILEFLAGS+=	DEBUG=
 
 MAKEFILEFLAGS+=	CC="${CC}" OPT="${CFLAGS}"
 
-POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
+POSTFIX_CCARGS+=	\$$(WARN) \
+			-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
 			-DDEF_DAEMON_DIR=\\\"${DAEMONDIR}\\\" \
 			-DDEF_COMMAND_DIR=\\\"${PREFIX}/sbin\\\" \
 			-DDEF_SENDMAIL_PATH=\\\"${PREFIX}/sbin/sendmail\\\" \
@@ -116,7 +120,7 @@ POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
 _REQUIRE=		LOGIN cleanvar
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=		pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre
 POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
 .else
@@ -124,7 +128,7 @@ POSTFIX_CCARGS+=	-DNO_PCRE
 .endif
 
 .if ${PORT_OPTIONS:MSASL2}
-LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
 .endif
@@ -144,7 +148,7 @@ POSTFIX_AUXLIBS+=	-lkrb5 ${KRB5_EXTR} -lcrypto -lcrypt -lcom_err -lasn1 -lroken
 .endif
 
 .if ${PORT_OPTIONS:MSASLKMIT}
-LIB_DEPENDS+=		krb5:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=		libkrb5.so:${PORTSDIR}/security/krb5
 POSTFIX_AUXLIBS+=	-Wl,--rpath,$${KRB5_HOME:-${LOCALBASE}}/lib -lkrb5 -lcrypto -lcrypt -lcom_err
 .endif
 
@@ -155,7 +159,7 @@ POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} ${LDFLAGS} -lssl -lcrypto
 .endif
 
 .if ${PORT_OPTIONS:MSPF}
-LIB_DEPENDS+=		spf2:${PORTSDIR}/mail/libspf2
+LIB_DEPENDS+=		libspf2.so:${PORTSDIR}/mail/libspf2
 PATCH_SITES+=		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	mm
 PATCHFILES+=		postfix-2.7.1-libspf2-1.2.x-4.patch.gz
