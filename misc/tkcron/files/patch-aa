@@ -4,7 +4,7 @@
 -#!/usr/local/bin/wish
 +#! /bin/sh
 +# the next line restarts using wish \
-+exec /usr/local/bin/wish8.5 $0 ${1+"$@"}
++exec %%WISH%% $0 ${1+"$@"}
  
  # A simple interface to ease the creation of crontab jobs
  # Cedric BEUST (beust@sophia.inria.fr)
