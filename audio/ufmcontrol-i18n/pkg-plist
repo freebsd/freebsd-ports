@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/tkradio
 bin/ufmcontrol
 include/libufm.h

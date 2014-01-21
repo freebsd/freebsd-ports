@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/ao/ao.h
 include/ao/os_types.h
 include/ao/plugin.h

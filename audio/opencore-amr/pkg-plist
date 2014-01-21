@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/opencore-amrnb/interf_dec.h
 include/opencore-amrnb/interf_enc.h
 include/opencore-amrwb/dec_if.h

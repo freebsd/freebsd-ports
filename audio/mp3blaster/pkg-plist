@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/mp3blaster
 bin/mp3tag
 bin/nmixer

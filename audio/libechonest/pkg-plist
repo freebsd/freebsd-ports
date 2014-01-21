@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/echonest/Artist.h
 include/echonest/ArtistTypes.h
 include/echonest/AudioSummary.h

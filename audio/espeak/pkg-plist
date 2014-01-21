@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/espeak
 include/espeak/speak_lib.h
 lib/libespeak.a
