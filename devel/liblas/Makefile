@@ -8,14 +8,12 @@ MASTER_SITES=	http://trac.liblas.org/raw-attachment/wiki/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
-COMMENT=	A Library For Reading And Writing LAS-Format Data
+COMMENT=	Library For Reading And Writing LAS-Format Data
 
-#USE_BZIP2=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/liblas-src-${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
