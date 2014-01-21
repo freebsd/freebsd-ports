@@ -11,12 +11,10 @@ COMMENT=	Simple library for manipulating structured configuration files
 
 CONFLICTS=	wand-libconfig-[0-9]*
 
-USES=	pathfix
+USES=		gmake pathfix
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --infodir=${PREFIX}/${INFO_PATH}
 INFO=		libconfig
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
