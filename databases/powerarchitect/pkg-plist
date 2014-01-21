@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/powerarchitect
 %%DATADIR%%/architect.jar
 %%DATADIR%%/jdbc/sqlserver_2005.jar

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 alliance/lib/libMph.la
 alliance/lib/libMph.a
 alliance/lib/libMpu.la

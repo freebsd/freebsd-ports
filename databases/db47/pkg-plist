@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/berkeley_db_svc-4.7
 bin/db47/berkeley_db_svc
 bin/db47/db_archive

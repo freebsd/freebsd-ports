@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/COPYING
 %%DATADIR%%/ChangeLog
 %%DATADIR%%/THANKS

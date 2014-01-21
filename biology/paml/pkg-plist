@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/baseml
 bin/basemlg
 bin/chi2

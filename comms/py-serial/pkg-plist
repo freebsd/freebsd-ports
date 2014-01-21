@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/miniterm.py
 %%PYTHON_SITELIBDIR%%/serial/__init__.py
 %%PYTHON_SITELIBDIR%%/serial/__init__.pyc

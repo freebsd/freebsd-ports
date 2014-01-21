@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/edit-pr
 bin/getclose
 bin/install-sid

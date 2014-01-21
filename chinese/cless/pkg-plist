@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/cless
 bin/clesskey
 man/man1/cless.1.gz

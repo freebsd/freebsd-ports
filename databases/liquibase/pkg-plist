@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/liquibase.jar
 bin/liquibase
 @dirrmtry %%DATADIR%%

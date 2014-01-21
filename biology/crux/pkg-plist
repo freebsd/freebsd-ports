@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/crux
 bin/redpoint
 bin/MrRogers
