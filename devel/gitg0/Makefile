@@ -24,7 +24,7 @@ USES=		gmake pkgconfig
 INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	gitg.schemas
 
-PORTSCOUT=	limit:^0\.
+PORTSCOUT=	limit:^0\.0\.
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
