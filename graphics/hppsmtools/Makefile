@@ -12,25 +12,22 @@ COMMENT=	Tool for HP PhotoSmart C5340A & Konica Q-EZ digital cameras
 
 LICENSE=	GPLv2
 
-PORTDOCS=	README changes.txt
 PLIST_FILES=	bin/psmdel bin/psmdir bin/psmget bin/psmsho
+PORTDOCS=	README changes.txt
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CC=|#CC=|g ; \
 		 s|-Wall -pedantic|$$(CFLAGS)|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e '/typedef unsigned char/d' ${WRKSRC}/exif.h
 	@${REINPLACE_CMD} -e '/<malloc.h>/d' ${WRKSRC}/psm*.c
 
-.include <bsd.port.options.mk>
-
 do-install:
 .for file in psmdel psmdir psmget psmsho
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
