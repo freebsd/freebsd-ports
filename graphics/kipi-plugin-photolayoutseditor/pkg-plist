@@ -4,7 +4,7 @@ lib/libPropertyBrowser.a
 share/applications/kde4/photolayoutseditor.desktop
 share/apps/kipi/kipiplugin_photolayoutseditorui.rc
 share/apps/photolayoutseditor/photolayoutseditorui.rc
-share/config.kcfg/PLEConfigSkeleton.kcfgc
+share/config.kcfg/photolayoutseditor.kcfg
 share/icons/hicolor/128x128/apps/photolayoutseditor.png
 share/icons/hicolor/16x16/apps/photolayoutseditor.png
 share/icons/hicolor/22x22/apps/photolayoutseditor.png
