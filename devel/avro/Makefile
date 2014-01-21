@@ -12,6 +12,8 @@ MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Data serialization system
 
 NO_BUILD=	yes
+NO_MTREE=	yes
+NO_INSTALL=	yes
 
 OPTIONS_DEFINE=	C CPP PYTHON
 C_DESC=		Install ANSI C library
@@ -20,21 +22,8 @@ PYTHON_DESC=	Install Python library
 
 OPTIONS_DEFAULT=C CPP PYTHON
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MC}
-LIB_DEPENDS+=	avro:${PORTSDIR}/devel/avro-c
-.endif
-
-.if ${PORT_OPTIONS:MCPP}
-LIB_DEPENDS+=	avrocpp:${PORTSDIR}/devel/avro-cpp
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}avro:${PORTSDIR}/devel/py-avro
-.endif
-
-do-install:	# empty
+MC_LIB_DEPENDS=	libavro.so:${PORTSDIR}/devel/avro-c
+CPP_LIB_DEPENDS=	libavrocpp.so:${PORTSDIR}/devel/avro-cpp
+PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}avro:${PORTSDIR}/devel/py-avro
 
 .include <bsd.port.mk>
