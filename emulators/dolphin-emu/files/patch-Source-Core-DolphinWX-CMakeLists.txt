@@ -14,12 +14,12 @@
  else()
 -	set(LIBS ${LIBS} png iconv)
 +	set(LIBS ${LIBS} png)
-+	set(USE_ICONV True)
++	set(ICONV_LINK True)
 +endif()
 +
-+if(USE_ICONV)
-+	message( "-- Adding iconv")
-+	set(LIBS  ${LIBS} iconv)
++if(ICONV_LINK)
++	message( "-- Linking to libiconv")
++	set(LIBS ${LIBS} iconv)
  endif()
  
  if(LIBAV_FOUND)
