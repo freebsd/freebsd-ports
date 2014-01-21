@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	treetop
-PORTVERSION=	1.4.14
+PORTVERSION=	1.4.15
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
