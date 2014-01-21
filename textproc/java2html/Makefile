@@ -11,17 +11,15 @@ MASTER_SITE_SUBDIR=	apps/www/converters
 MAINTAINER=		mkamm@gmx.net
 COMMENT=	Java sources to HTML converter
 
+LICENSE=	GPLv2
+
 USE_AUTOTOOLS=	autoconf213
-NO_STAGE=	yes
 
-MAN1=			java2html.1
+PORTDOCS=	AUTHORS NEWS README
+PLIST_FILES=	bin/java2html man/man1/java2html.1.gz
 
-.if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${DOCSDIR}
-.for file in AUTHORS NEWS README
-	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
