@@ -10,11 +10,11 @@ MAINTAINER?=	mm@FreeBSD.org
 COMMENT?=	Secure, fast, compliant, and flexible Web Server
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 .endif
 
-LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -39,7 +39,7 @@ USE_RC_SUBR=	lighttpd
 OPTIONS_DEFINE=	BZIP2 FAM GDBM IPV6 LIBEV LUA MEMCACHE MYSQL MYSQLAUTH \
 		NODELAY LDAP OPENSSL SPAWNFCGI VALGRIND WEBDAV
 
-OPTIONS_DEFAULT=	IPV6 OPENSSL 
+OPTIONS_DEFAULT=	IPV6 OPENSSL
 
 BZIP2_DESC=	bzip2 support (mod_compress)
 GDBM_DESC=	gdbm storage (mod_trigger_b4_dl)
@@ -104,7 +104,7 @@ CONFIGURE_ARGS+=	--with-bzip2
 .endif
 
 .if ${PORT_OPTIONS:MGDBM}
-LIB_DEPENDS+=		gdbm:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		libgdbm.so:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	--with-gdbm
 .endif
 
@@ -114,7 +114,7 @@ CONFIGURE_ARGS+=	--disable-ipv6
 
 .if ${PORT_OPTIONS:MLIBEV}
 CONFIGURE_ARGS+=	--with-libev=${LOCALBASE}
-LIB_DEPENDS+=		ev.4:${PORTSDIR}/devel/libev
+LIB_DEPENDS+=		libev.so:${PORTSDIR}/devel/libev
 .endif
 
 .if ${PORT_OPTIONS:MLUA}
@@ -124,7 +124,7 @@ CONFIGURE_ENV+=		LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua"
 .endif
 
 .if ${PORT_OPTIONS:MMEMCACHE}
-LIB_DEPENDS+=		memcache.4:${PORTSDIR}/databases/libmemcache
+LIB_DEPENDS+=		libmemcache.so:${PORTSDIR}/databases/libmemcache
 CONFIGURE_ARGS+=	--with-memcache
 .endif
 
@@ -165,8 +165,8 @@ CONFIGURE_ARGS+=	--with-valgrind
 
 .if ${PORT_OPTIONS:MWEBDAV}
 USE_GNOME+=		libxml2
-LIB_DEPENDS+=		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid \
-			sqlite3.8:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid \
+			libsqlite3.so:${PORTSDIR}/databases/sqlite3
 CONFIGURE_ARGS+=	--with-webdav-props --with-webdav-locks
 .endif
 
@@ -217,8 +217,6 @@ post-install:
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/doc/config/vhosts.d/vhosts.template \
 		${STAGEDIR}${PREFIX}/etc/lighttpd/vhosts.d/vhosts.template
-	@${MKDIR} -m 0700 ${STAGEDIR}${LIGHTTPD_LOGROOT}
-	@${CHOWN} ${LIGHTTPD_USER}:${LIGHTTPD_GROUP} ${STAGEDIR}${LIGHTTPD_LOGROOT}
 
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
