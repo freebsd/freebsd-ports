@@ -10,14 +10,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows information about Java class, dependencies, and more
 
 USE_AUTOTOOLS=	libtool
-USES=	pathfix pkgconfig
+USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-MAN1=	jclassinfo.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s, docs,," ${WRKSRC}/Makefile.in
 
