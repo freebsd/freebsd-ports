@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postfix
-DISTVERSION=	2.11-20131001
+DISTVERSION=	2.12-20140109
 PORTEPOCH=	4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
@@ -23,7 +23,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.* postfix-base-2.* postfix2[789]-* \
-		sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.* opensmtpd-[0-9]*
+		postfix21?-* sendmail-8.* sendmail+*-8.* smail-3.* zmailer-2.* \
+		opensmtpd-[0-9]*
 
 USERS=		postfix
 GROUPS=		mail maildrop postfix
@@ -33,7 +34,7 @@ USE_SUBMAKE=	yes
 SCRIPTS_ENV+=	POSTFIX_DEFAULT_MTA="${POSTFIX_DEFAULT_MTA}"
 
 OPTIONS_DEFINE=	PCRE SASL2 TLS BDB MYSQL PGSQL SQLITE OPENLDAP LDAP_SASL \
-		CDB NIS VDA TEST SPF INST_BASE
+		CDB NIS VDA TEST SPF INST_BASE LMDB
 PCRE_DESC=	Perl Compatible Regular Expressions
 SASL2_DESC=	Cyrus SASLv2 (Simple Auth. and Sec. Layer)
 DOVECOT_DESC=	Dovecot 1.x SASL authentication method
@@ -53,6 +54,7 @@ VDA_DESC=	VDA (Virtual Delivery Agent 32Bit)
 TEST_DESC=	SMTP/LMTP test server and generator
 SPF_DESC=	SPF support (via libspf2 1.2.x)
 INST_BASE_DESC=	Install into /usr and /etc/postfix
+LMDB_DESC=	LMDB maps
 
 OPTIONS_RADIO=	RG1 RG2
 OPTIONS_RADIO_RG1=	DOVECOT DOVECOT2
@@ -70,9 +72,10 @@ MAN1=	postalias.1 postcat.1 postconf.1 postdrop.1 postfix.1 postkick.1 \
 	sendmail.1 qshape.1
 
 MAN5=	access.5 aliases.5 bounce.5 canonical.5 cidr_table.5 generic.5 \
-	header_checks.5 ldap_table.5 master.5 memcache_table.5 mysql_table.5 \
-	nisplus_table.5 pcre_table.5 pgsql_table.5 postconf.5 postfix-wrapper.5 \
-	regexp_table.5 relocated.5 sqlite_table.5 tcp_table.5 transport.5 virtual.5
+	header_checks.5 ldap_table.5 lmdb_table.5 master.5 memcache_table.5 \
+	mysql_table.5 nisplus_table.5 pcre_table.5 pgsql_table.5 postconf.5 \
+	postfix-wrapper.5 regexp_table.5 relocated.5 socketmap_table.5 \
+	sqlite_table.5 tcp_table.5 transport.5 virtual.5
 
 MAN8=	anvil.8 bounce.8 cleanup.8 discard.8 dnsblog.8 error.8 flush.8 local.8 master.8 \
 	oqmgr.8 pickup.8 pipe.8 postscreen.8 proxymap.8 qmgr.8 qmqpd.8 scache.8 showq.8 \
@@ -89,7 +92,7 @@ HTML1=	body_checks.5.html bounce.5.html postfix-power.png \
 	scache.8.html tlsmgr.8.html
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING) && exists(/etc/mail/mailer.conf)
-OLD_MAILER!=	${GREP} -m 1 '^purgestat' /etc/mail/mailer.conf || true
+OLD_MAILER!=	${GREP} -m 1 '^purgestat' /etc/mail/mailer.conf || ${ECHO_CMD}
 .if !empty(OLD_MAILER)
 IS_INTERACTIVE=	yes
 .endif
@@ -101,7 +104,8 @@ MAKEFILEFLAGS+=	DEBUG=
 
 MAKEFILEFLAGS+=	CC="${CC}" OPT="${CFLAGS}"
 
-POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
+POSTFIX_CCARGS+=	\$$(WARN) \
+			-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
 			-DDEF_DAEMON_DIR=\\\"${DAEMONDIR}\\\" \
 			-DDEF_COMMAND_DIR=\\\"${PREFIX}/sbin\\\" \
 			-DDEF_SENDMAIL_PATH=\\\"${PREFIX}/sbin/sendmail\\\" \
@@ -119,7 +123,7 @@ POSTFIX_CCARGS+=	-DDEF_CONFIG_DIR=\\\"${ETCDIR}\\\" \
 _REQUIRE=	LOGIN cleanvar
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=		pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=		libpcre.so:${PORTSDIR}/devel/pcre
 POSTFIX_CCARGS+=	-DHAS_PCRE -I${LOCALBASE}/include
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lpcre
 .else
@@ -127,7 +131,7 @@ POSTFIX_CCARGS+=	-DNO_PCRE
 .endif
 
 .if ${PORT_OPTIONS:MSASL2}
-LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl
 POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2 -lpam -lcrypt
 .endif
@@ -150,7 +154,7 @@ POSTFIX_AUXLIBS+=	-lkrb5 ${KRB5_EXTR} -lcrypto -lcrypt -lcom_err -lasn1 -lroken
 .endif
 
 .if ${PORT_OPTIONS:MSASLKMIT}
-LIB_DEPENDS+=		krb5:${PORTSDIR}/security/krb5
+LIB_DEPENDS+=		libkrb5.so:${PORTSDIR}/security/krb5
 POSTFIX_AUXLIBS+=	-Wl,--rpath,$${KRB5_HOME:-${LOCALBASE}}/lib -lkrb5 -lcrypto -lcrypt -lcom_err
 .endif
 
@@ -161,7 +165,7 @@ POSTFIX_AUXLIBS+=	-L${OPENSSLLIB} ${LDFLAGS} -lssl -lcrypto
 .endif
 
 .if ${PORT_OPTIONS:MSPF}
-LIB_DEPENDS+=		spf2:${PORTSDIR}/mail/libspf2
+LIB_DEPENDS+=		libspf2.so:${PORTSDIR}/mail/libspf2
 PATCH_SITES+=		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	mm
 PATCHFILES+=		postfix-2.8.0-libspf2-1.2.x-0.patch.gz
@@ -175,6 +179,7 @@ PLIST_SUB+=		SPF="@comment "
 
 .if ${PORT_OPTIONS:MBDB}
 USE_BDB=		yes
+INVALID_BDB_VER=	6
 POSTFIX_CCARGS+=	-I${BDB_INCLUDE_DIR}
 POSTFIX_AUXLIBS+=	-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}
 .endif
@@ -209,7 +214,7 @@ POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
 _REQUIRE+=		slapd
 .if ${PORT_OPTIONS:MLDAP_SASL}
 .if ! ${PORT_OPTIONS:MSASL2}
-LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 .endif
 POSTFIX_CCARGS+=	-I${LOCALBASE}/include/sasl -DUSE_LDAP_SASL
 .endif
@@ -248,6 +253,12 @@ PLIST_SUB+=	BASE=""
 .else
 USE_RC_SUBR=	postfix
 PLIST_SUB+=	BASE="@comment "
+.endif
+
+.if ${PORT_OPTIONS:MLMDB}
+LIB_DEPENDS+=		liblmdb.so:${PORTSDIR}/databases/lmdb
+POSTFIX_CCARGS+=	-DHAS_LMDB -I${LOCALBASE}/include
+POSTFIX_AUXLIBS+=	-L${LOCALBASE}/lib -llmdb
 .endif
 
 PLIST_SUB+=	PFETC=${ETCDIR}
