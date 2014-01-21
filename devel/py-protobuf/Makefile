@@ -16,9 +16,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/python
 PROJECTHOST=	protobuf
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST= 	yes
 
-NO_STAGE=	yes
 pre-build:
 	@${MKDIR} ${WRKSRC}/google/protobuf/compiler
 
