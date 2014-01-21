@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A graphical background manager for the Blackbox window manager
+COMMENT=	Graphical background manager for the Blackbox window manager
 
 RUN_DEPENDS=	xv:${PORTSDIR}/graphics/xv \
 		blackbox:${PORTSDIR}/x11-wm/blackbox
@@ -16,5 +16,4 @@ RUN_DEPENDS=	xv:${PORTSDIR}/graphics/xv \
 USE_GNOME=	imlib
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
