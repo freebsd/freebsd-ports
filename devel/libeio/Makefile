@@ -23,5 +23,4 @@ AUTOMAKE_ARGS=	--add-missing
 PLIST_FILES=	include/eio.h lib/libeio.a lib/libeio.la \
 		lib/libeio.so lib/libeio.so.1
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
