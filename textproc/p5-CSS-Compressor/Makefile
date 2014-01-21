@@ -14,10 +14,7 @@ COMMENT=	Perl extension for CSS minification
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/csscompressor ${PREFIX}/bin
-
-MAN3=		CSS::Compressor.3
+	${INSTALL_SCRIPT} ${FILESDIR}/csscompressor ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

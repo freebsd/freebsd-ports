@@ -18,9 +18,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Data::SpreadPagination.3
-
-NO_STAGE=	yes
 test:
 	cd ${WRKSRC} && ${MAKE} test
 
