@@ -12,6 +12,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	Pluggable RSS/Atom feed aggregator written in Perl
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-TimeZone>=0:${PORTSDIR}/devel/p5-DateTime-TimeZone \
@@ -38,19 +41,29 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-URI-Fetch>=0:${PORTSDIR}/www/p5-URI-Fetch \
 		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
 
+SHEBANG_FILES=	assets/plugins/CustomFeed-Script/domain-expire.pl \
+		assets/plugins/CustomFeed-Script/jsports-football.pl \
+		assets/plugins/CustomFeed-Script/ssl-expire.pl \
+		assets/plugins/CustomFeed-Script/slims_calendar.pl \
+		assets/plugins/CustomFeed-Script/wowow-hv-51ch.pl \
+		assets/plugins/CustomFeed-Script/wowow-liga-espanola.pl
 
-OPTIONS_DEFINE=	BETTERENCODING PODTESTING COOKIESHARING LIBERALXML XPATH BETTERHTML PRSJPNDATE \
-		PRSJPNDATE PUBLISHEXCEL FILTERPIPE PUBLISHPLANET PUBLISHCSV FILDEGYT AUTHORNAME \
-		GUESSLANG GUESSTZ HTMLTIDY PUBLISHMT PUBSERLZR PUBICAL ROMANIZE JAVASCRIPT \
-		EMOTICON FILHATENA FILHATKTAG RULEFRESH SUBSCOPML HATENABKMK PALMDOC PUBLISHSWF \
-		SUBSCRDBI NOTIFYBEEP FILTERPPT KINOSEARCH PUBLISHGMAIL PUBDELICIOUS ESTRAIER \
-		SRCHGREP PUBJSON FILSPAMASSN PROFANITY HATENARSS SUBSCRFOAF NOTIFYIRC HATENADIARY \
-		LIVEDOOR PINGSERVER IMAGEINFO FILMRKDWN PUBLISHIMAP PUBLISHPDF BLOGLINES BABELFISH \
-		CUSFEEDMIXI CUSTOMSVNLOG NTFYNETSEND FILHTMLSCRB PLANETINI SUMMARYENG SUMJPN SUMTEXTORG \
-		DOCS EXAMPLES
+OPTIONS_DEFINE=	AUTHORNAME BABELFISH BETTERENCODING BETTERHTML BLOGLINES \
+		COOKIESHARING CUSFEEDMIXI CUSTOMSVNLOG EMOTICON ESTRAIER \
+		FILDEGYT FILHATENA FILHATKTAG FILHTMLSCRB FILMRKDWN \
+		FILSPAMASSN FILTERPIPE FILTERPPT FLICKRSEARCH GUESSLANG \
+		GUESSTZ HATENABKMK HATENADIARY HATENARSS HTMLTIDY IMAGEINFO \
+		JAVASCRIPT KINOSEARCH LIBERALXML LIVEDOOR NOTIFYBEEP \
+		NOTIFYIRC NTFYNETSEND PALMDOC PINGSERVER PLANETINI PODTESTING \
+		PROFANITY PRSJPNDATE PRSJPNDATE PUBDELICIOUS PUBICAL PUBJSON \
+		PUBLISHCSV PUBLISHEXCEL PUBLISHGMAIL PUBLISHIMAP PUBLISHMT \
+		PUBLISHPDF PUBLISHPLANET PUBLISHSWF PUBSERLZR ROMANIZE \
+		RULEFRESH SRCHGREP SUBSCOPML SUBSCRDBI SUBSCRFOAF SUMJPN \
+		SUMMARYENG SUMTEXTORG XPATH DOCS EXAMPLES
+
 BETTERENCODING_DESC=	Better Encoding detection Support
 PODTESTINGPOD_DESC=	Testing Support
 COOKIESHARING_DESC=	Cookie sharing with Firefox Support
@@ -113,12 +126,11 @@ SUMMARYENG_DESC=	Summary-English Support
 SUMJPN_DESC=	Summary::Japanes
 SUMTEXTORG_DESC=	Summary-TextOriginal Support
 
-OPTIONS_DEFAULT=	BETTERENCODING LIBERALXML XPATH BETTERHTML PUBLISHPLANET GUESSTZ \
-		EMOTICON RULEFRESH SUBSCOPML SUBSCRDBI PUBLISHGMAIL HATENARSS SUBSCRFOAF \
-		LIVEDOOR PINGSERVER BLOGLINES FILHTMLSCRB PLANETINI
+OPTIONS_DEFAULT=	BETTERENCODING LIBERALXML XPATH BETTERHTML \
+			PUBLISHPLANET GUESSTZ EMOTICON RULEFRESH SUBSCOPML \
+			SUBSCRDBI PUBLISHGMAIL HATENARSS SUBSCRFOAF LIVEDOOR \
+			PINGSERVER BLOGLINES FILHTMLSCRB PLANETINI
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBETTERENCODING}
@@ -379,193 +391,14 @@ BUILD_DEPENDS+=	p5-Text-Original>=0:${PORTSDIR}/textproc/p5-Text-Original
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=		Plagger.3 \
-		Plagger::Cookies.3 \
-		Plagger::Date.3 \
-		Plagger::Plugin.3 \
-		Plagger::Plugin::Aggregator::Null.3 \
-		Plagger::Plugin::Aggregator::Simple.3 \
-		Plagger::Plugin::Bundle::Defaults.3 \
-		Plagger::Plugin::Bundle::Planet.3 \
-		Plagger::Plugin::CustomFeed::2chSearch.3 \
-		Plagger::Plugin::CustomFeed::AmazonAssociateReportJP.3 \
-		Plagger::Plugin::CustomFeed::BloglinesCitations.3 \
-		Plagger::Plugin::CustomFeed::Debug.3 \
-		Plagger::Plugin::CustomFeed::FlickrSearch.3 \
-		Plagger::Plugin::CustomFeed::Frepa.3 \
-		Plagger::Plugin::CustomFeed::GoogleNews.3 \
-		Plagger::Plugin::CustomFeed::Mailman.3 \
-		Plagger::Plugin::CustomFeed::Mixi.3 \
-		Plagger::Plugin::CustomFeed::MixiDiarySearch.3 \
-		Plagger::Plugin::CustomFeed::POP3.3 \
-		Plagger::Plugin::CustomFeed::PerlMonks.3 \
-		Plagger::Plugin::CustomFeed::SVNLog.3 \
-		Plagger::Plugin::CustomFeed::Script.3 \
-		Plagger::Plugin::CustomFeed::Simple.3 \
-		Plagger::Plugin::CustomFeed::YouTube.3 \
-		Plagger::Plugin::CustomFeed::iTunesRecentPlay.3 \
-		Plagger::Plugin::Filter::2chNewsokuTitle.3 \
-		Plagger::Plugin::Filter::2chRSSContent.3 \
-		Plagger::Plugin::Filter::AtomLinkRelated.3 \
-		Plagger::Plugin::Filter::Babelfish.3 \
-		Plagger::Plugin::Filter::Base.3 \
-		Plagger::Plugin::Filter::BlogPet.3 \
-		Plagger::Plugin::Filter::BloglinesContentNormalize.3 \
-		Plagger::Plugin::Filter::BreakEntriesToFeeds.3 \
-		Plagger::Plugin::Filter::BulkfeedsTerms.3 \
-		Plagger::Plugin::Filter::CompositeFeed.3 \
-		Plagger::Plugin::Filter::DegradeYouTube.3 \
-		Plagger::Plugin::Filter::Delicious.3 \
-		Plagger::Plugin::Filter::DeliciousFeedTags.3 \
-		Plagger::Plugin::Filter::Emoticon.3 \
-		Plagger::Plugin::Filter::EntryFullText.3 \
-		Plagger::Plugin::Filter::ExtractAuthorName.3 \
-		Plagger::Plugin::Filter::FeedBurnerPermalink.3 \
-		Plagger::Plugin::Filter::FeedFlareStripper.3 \
-		Plagger::Plugin::Filter::FetchEnclosure.3 \
-		Plagger::Plugin::Filter::FetchEnclosure::Curl.3 \
-		Plagger::Plugin::Filter::FetchEnclosure::ParallelUA.3 \
-		Plagger::Plugin::Filter::FetchEnclosure::Wget.3 \
-		Plagger::Plugin::Filter::FindEnclosures.3 \
-		Plagger::Plugin::Filter::FloatingDateTime.3 \
-		Plagger::Plugin::Filter::ForceTimeZone.3 \
-		Plagger::Plugin::Filter::GuessLanguage.3 \
-		Plagger::Plugin::Filter::GuessTimeZoneByDomain.3 \
-		Plagger::Plugin::Filter::HEADEnclosureMetadata.3 \
-		Plagger::Plugin::Filter::HTMLScrubber.3 \
-		Plagger::Plugin::Filter::HTMLTidy.3 \
-		Plagger::Plugin::Filter::HatenaBookmarkTag.3 \
-		Plagger::Plugin::Filter::HatenaBookmarkUsersCount.3 \
-		Plagger::Plugin::Filter::HatenaDiaryKeywordLink.3 \
-		Plagger::Plugin::Filter::HatenaDiaryKeywordUnlink.3 \
-		Plagger::Plugin::Filter::HatenaFormat.3 \
-		Plagger::Plugin::Filter::HatenaKeywordTag.3 \
-		Plagger::Plugin::Filter::ImageInfo.3 \
-		Plagger::Plugin::Filter::Kansai.3 \
-		Plagger::Plugin::Filter::LivedoorClipUsersCount.3 \
-		Plagger::Plugin::Filter::LivedoorKeywordUnlink.3 \
-		Plagger::Plugin::Filter::Markdown.3 \
-		Plagger::Plugin::Filter::POPFile.3 \
-		Plagger::Plugin::Filter::Pipe.3 \
-		Plagger::Plugin::Filter::Profanity.3 \
-		Plagger::Plugin::Filter::RSSLiberalDateTime.3 \
-		Plagger::Plugin::Filter::RSSTimeZoneString.3 \
-		Plagger::Plugin::Filter::Regexp.3 \
-		Plagger::Plugin::Filter::ResolveRelativeLink.3 \
-		Plagger::Plugin::Filter::RewriteEnclosureURL.3 \
-		Plagger::Plugin::Filter::Rule.3 \
-		Plagger::Plugin::Filter::SpamAssassin.3 \
-		Plagger::Plugin::Filter::StripRSSAd.3 \
-		Plagger::Plugin::Filter::StripTagsFromTitle.3 \
-		Plagger::Plugin::Filter::TTP.3 \
-		Plagger::Plugin::Filter::TagsToTitle.3 \
-		Plagger::Plugin::Filter::Thumbnail.3 \
-		Plagger::Plugin::Filter::TruePermalink.3 \
-		Plagger::Plugin::Filter::UnicodeNormalize.3 \
-		Plagger::Plugin::Filter::tDiaryComment.3 \
-		Plagger::Plugin::Namespace::ApplePhotocast.3 \
-		Plagger::Plugin::Namespace::HatenaFotolife.3 \
-		Plagger::Plugin::Namespace::MediaRSS.3 \
-		Plagger::Plugin::Notify::Audio.3 \
-		Plagger::Plugin::Notify::Balloon.3 \
-		Plagger::Plugin::Notify::Beep.3 \
-		Plagger::Plugin::Notify::Campfire.3 \
-		Plagger::Plugin::Notify::Command.3 \
-		Plagger::Plugin::Notify::Eject.3 \
-		Plagger::Plugin::Notify::Eject::darwin.3 \
-		Plagger::Plugin::Notify::Eject::freebsd.3 \
-		Plagger::Plugin::Notify::Eject::linux.3 \
-		Plagger::Plugin::Notify::Eject::mswin32.3 \
-		Plagger::Plugin::Notify::IRC.3 \
-		Plagger::Plugin::Notify::MSAgent.3 \
-		Plagger::Plugin::Notify::NetSend.3 \
-		Plagger::Plugin::Notify::OpenBrowser.3 \
-		Plagger::Plugin::Notify::OpenBrowser::FirefoxRemote.3 \
-		Plagger::Plugin::Notify::SSTP.3 \
-		Plagger::Plugin::Notify::Tiarra.3 \
-		Plagger::Plugin::Notify::UpdatePing.3 \
-		Plagger::Plugin::Publish::2chdat.3 \
-		Plagger::Plugin::Publish::CSV.3 \
-		Plagger::Plugin::Publish::Delicious.3 \
-		Plagger::Plugin::Publish::Excel.3 \
-		Plagger::Plugin::Publish::FOAFRoll.3 \
-		Plagger::Plugin::Publish::Feed.3 \
-		Plagger::Plugin::Publish::Gmail.3 \
-		Plagger::Plugin::Publish::HatenaBookmark.3 \
-		Plagger::Plugin::Publish::IMAP.3 \
-		Plagger::Plugin::Publish::JSON.3 \
-		Plagger::Plugin::Publish::JavaScript.3 \
-		Plagger::Plugin::Publish::LivedoorClip.3 \
-		Plagger::Plugin::Publish::MT.3 \
-		Plagger::Plugin::Publish::MTWidget.3 \
-		Plagger::Plugin::Publish::Maildir.3 \
-		Plagger::Plugin::Publish::OPML.3 \
-		Plagger::Plugin::Publish::OutlineText.3 \
-		Plagger::Plugin::Publish::PDF.3 \
-		Plagger::Plugin::Publish::PalmDoc.3 \
-		Plagger::Plugin::Publish::Pipe.3 \
-		Plagger::Plugin::Publish::Planet.3 \
-		Plagger::Plugin::Publish::Playlog.3 \
-		Plagger::Plugin::Publish::PowerPoint.3 \
-		Plagger::Plugin::Publish::SWF.3 \
-		Plagger::Plugin::Publish::Serializer.3 \
-		Plagger::Plugin::Publish::Speech::MacOSX.3 \
-		Plagger::Plugin::Publish::Takahashi.3 \
-		Plagger::Plugin::Publish::iCal.3 \
-		Plagger::Plugin::Search::Estraier.3 \
-		Plagger::Plugin::Search::Grep.3 \
-		Plagger::Plugin::Search::KinoSearch.3 \
-		Plagger::Plugin::Search::Namazu.3 \
-		Plagger::Plugin::Search::Rast.3 \
-		Plagger::Plugin::Search::Spotlight.3 \
-		Plagger::Plugin::Subscription::Bloglines.3 \
-		Plagger::Plugin::Subscription::Bookmarks.3 \
-		Plagger::Plugin::Subscription::Config.3 \
-		Plagger::Plugin::Subscription::DBI.3 \
-		Plagger::Plugin::Subscription::FOAF.3 \
-		Plagger::Plugin::Subscription::Feed.3 \
-		Plagger::Plugin::Subscription::File.3 \
-		Plagger::Plugin::Subscription::HatenaGroup.3 \
-		Plagger::Plugin::Subscription::HatenaRSS.3 \
-		Plagger::Plugin::Subscription::LivedoorReader.3 \
-		Plagger::Plugin::Subscription::OPML.3 \
-		Plagger::Plugin::Subscription::Odeo.3 \
-		Plagger::Plugin::Subscription::PingServer.3 \
-		Plagger::Plugin::Subscription::Planet.3 \
-		Plagger::Plugin::Subscription::PlanetINI.3 \
-		Plagger::Plugin::Subscription::XOXO.3 \
-		Plagger::Plugin::Subscription::XPath.3 \
-		Plagger::Plugin::Summary::AppleScript.3 \
-		Plagger::Plugin::Summary::Auto.3 \
-		Plagger::Plugin::Summary::English.3 \
-		Plagger::Plugin::Summary::GetSen.3 \
-		Plagger::Plugin::Summary::HatenaBookmark.3 \
-		Plagger::Plugin::Summary::Japanese.3 \
-		Plagger::Plugin::Summary::Simple.3 \
-		Plagger::Plugin::Summary::TextOriginal.3 \
-		Plagger::Plugin::Summary::TrackbackRDF.3 \
-		Plagger::Plugin::UserAgent::AuthenRequest.3 \
-		Plagger::Plugin::UserAgent::RequestHeader.3 \
-		Plagger::Plugin::Widget::BloglinesSubscription.3 \
-		Plagger::Plugin::Widget::BulkfeedsSpamReport.3 \
-		Plagger::Plugin::Widget::Delicious.3 \
-		Plagger::Plugin::Widget::HatenaBookmarkUsersCount.3 \
-		Plagger::Plugin::Widget::Simple.3 \
-		Plagger::Rule::Deduped.3 \
-		Plagger::Rule::Fresh.3 \
-		Plagger::Rule::URLBL.3 \
-		Plagger::Template.3
-
 post-patch:
 	@${REINPLACE_CMD} -i '' '/auto_install/d' ${WRKSRC}/Makefile.PL
 	@${RM} ${WRKSRC}/lib/Plagger/Plugin/Publish/Feed.pm.orig
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.yaml ${EXAMPLESDIR}
-.endif
-	@${MKDIR} ${DATADIR}/assets
-	(cd ${WRKSRC}/assets; ${TAR} cfz - . | ${TAR} zxf - -C ${DATADIR}/assets)
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.yaml ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/assets
+	(cd ${WRKSRC}/assets; ${TAR} cfz - . | ${TAR} zxf - -C ${STAGEDIR}${DATADIR}/assets)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
