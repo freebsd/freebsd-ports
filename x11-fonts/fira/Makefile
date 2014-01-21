@@ -8,10 +8,7 @@ CATEGORIES=	x11-fonts
 MAINTAINER=	horia@racoviceanu.com
 COMMENT=	Sans-serif and monospaced typeface for small screens
 
-LICENSE=	OFL
-LICENSE_NAME=	SIL OPEN FONT LICENSE Version 1.1
-LICENSE_FILE=	${WRKSRC}/LICENSE
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+LICENSE=	OFL11
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
