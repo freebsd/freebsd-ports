@@ -22,14 +22,7 @@ USE_PERL5=	configure
 OPTIONS_DEFINE=	XMLSIMPLE
 XMLSIMPLE_DESC=	Support for XML config files
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MXMLSIMPLE}
-BUILD_DEPENDS+=	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
-RUN_DEPENDS+=	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
-.endif
-
-MAN3=		Config::Auto.3
+XMLSIMPLE_BUILD_DEPENDS=	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
+XMLSIMPLE_RUN_DEPENDS=	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple
 
 .include <bsd.port.mk>
