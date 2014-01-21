@@ -18,14 +18,13 @@ PLIST_FILES=	lib/lib${PORTNAME}.so lib/lib${PORTNAME}.so.0 \
 ALL_TARGET=	default
 CFLAGS+=	-fPIC -I.
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/=/?=/;s/\.a/.so/g;s/CPPFL/CXXFL/g;\
 		s/{AR}/{CC} $${CFLAGS} -lz -shared -o/' ${WRKSRC}/${MAKEFILE}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/lib${PORTNAME}.so ${PREFIX}/lib/
-	@${LN} -sf lib${PORTNAME}.so ${PREFIX}/lib/lib${PORTNAME}.so.0
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.h ${PREFIX}/include/
+	${INSTALL_PROGRAM} ${WRKSRC}/lib${PORTNAME}.so ${STAGEDIR}${PREFIX}/lib/
+	${LN} -sf lib${PORTNAME}.so ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.0
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.h ${STAGEDIR}${PREFIX}/include/
 
 .include <bsd.port.mk>
