@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/gimmix
 man/man1/gimmix.1.gz
 %%NLS%%share/locale/de/LC_MESSAGES/gimmix.mo

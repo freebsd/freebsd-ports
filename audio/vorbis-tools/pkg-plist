@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/ogg123
 bin/oggdec
 bin/oggenc

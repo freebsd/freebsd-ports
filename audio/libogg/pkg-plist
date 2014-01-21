@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/ogg/config_types.h
 include/ogg/ogg.h
 include/ogg/os_types.h

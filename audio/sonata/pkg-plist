@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/sonata
 %%PYTHON_SITELIBDIR%%/mmkeys.so
 %%PYTHON_SITELIBDIR%%/sonata/__init__.py

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/tomahawk
 include/libtomahawk/AclRegistry.h
 include/libtomahawk/ActionCollection.h
