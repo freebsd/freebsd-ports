@@ -21,7 +21,6 @@ USE_LDCONFIG=	yes
 
 WANT_GNOME=	yes
 
-NO_STAGE=	yes
 pre-patch:
 	${gnomehack_PRE_PATCH}
 
