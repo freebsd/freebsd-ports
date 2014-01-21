@@ -11,7 +11,7 @@ COMMENT=	Parallel Events and Asynchronous tasKing Library
 
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -22,5 +22,4 @@ regression-test: build
 	    ${MAKE} $$alltests && ./test-suite.pl $$alltests \
 	)
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
