@@ -19,7 +19,6 @@ MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/backfract
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		"/'-O3'/s|^|#| ; \
@@ -27,6 +26,6 @@ post-patch:
 		 s|linux/soundcard.h|sys/soundcard.h|" ${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/backfract ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/backfract ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
