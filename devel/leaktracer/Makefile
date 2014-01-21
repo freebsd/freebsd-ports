@@ -11,21 +11,20 @@ DISTNAME=	LeakTracer
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trace and analyze memory leaks in C++ programs
 
-USES=		perl5
+OPTIONS_DEFINE=	DOCS
+
+USES=		gmake perl5 shebangfix
+SHEBANG_FILES=	leak-analyze
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
 USE_PERL5=	run
 PLIST_FILES=	bin/LeakCheck bin/leak-analyze lib/LeakTracer.so
 PORTDOCS=	README README.html
 
-NO_STAGE=	yes
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/LeakCheck ${WRKSRC}/leak-analyze \
-		${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/LeakTracer.so ${PREFIX}/lib
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/README.html ${DOCSDIR}
-.endif
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_LIB} ${WRKSRC}/LeakTracer.so ${STAGEDIR}${PREFIX}/lib
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/README.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
