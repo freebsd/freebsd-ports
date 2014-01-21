@@ -3255,6 +3255,7 @@
     SUBDIR += pear-channel-doctrine
     SUBDIR += pear-channel-ezc
     SUBDIR += pear-channel-horde
+    SUBDIR += pear-channel-htmlpurifier
     SUBDIR += pear-channel-openpear
     SUBDIR += pear-channel-pdepend
     SUBDIR += pear-channel-phing
