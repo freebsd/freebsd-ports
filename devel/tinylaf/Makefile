@@ -6,11 +6,13 @@ PORTVERSION=	1.4.0
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.muntjak.de/hans/java/tinylaf/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ayu@commun.jp
-COMMENT=	A pluggable Look and Feel for Java
+COMMENT=	Pluggable Look and Feel for Java
 
-USE_ZIP=	yes
+OPTIONS_DEFINE=	DOCS
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
@@ -19,15 +21,11 @@ JARFILE=	${PORTNAME}.jar tinycp.jar
 PORTDOCS=	readme.html gpl.txt lgpl.txt
 PLIST_FILES=	${JARFILE:S|^|%%JAVAJARDIR%%/|}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${JARFILE:S|^|${WRKSRC}/|} ${JAVAJARDIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${JARFILE:S|^|${WRKSRC}/|} ${STAGEDIR}${JAVAJARDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in readme.html license/gpl.txt license/lgpl.txt
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
 
 .include <bsd.port.mk>
