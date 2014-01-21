@@ -12,32 +12,27 @@ COMMENT=	An implementation of Kernigan & Bentley's grap language
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=--with-freebsd-ports
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .if defined(.PARSEDIR)
 USE_GMAKE=	yes
 .endif
 
 CONFLICTS_INSTALL=heirloom-doctools-[0-9]*
 
-MAN1=		grap.1
 PORTDOCS=	README CHANGES COPYRIGHT grap.man
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+PORTEXAMPLES=	*
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.doc \
-		${MAN1PREFIX}/man/man1/${PORTNAME}.1
-	${MKDIR} ${DATADIR}
+		${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/grap.defines ${WRKSRC}/grap.tex.defines \
-		${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.  for d in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/$d ${DOCSDIR}
-.  endfor
-.endif
-	${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+		${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

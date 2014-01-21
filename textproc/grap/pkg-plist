@@ -1,22 +1,5 @@
 bin/grap
+man/man1/grap.1.gz
 %%DATADIR%%/grap.defines
 %%DATADIR%%/grap.tex.defines
-%%EXAMPLESDIR%%/400mpairs.d
-%%EXAMPLESDIR%%/400mtimes.d
-%%EXAMPLESDIR%%/400wpairs.d
-%%EXAMPLESDIR%%/Makefile
-%%EXAMPLESDIR%%/army.d
-%%EXAMPLESDIR%%/boyhts.d
-%%EXAMPLESDIR%%/example.ms
-%%EXAMPLESDIR%%/internet.d
-%%EXAMPLESDIR%%/prof2.d
-%%EXAMPLESDIR%%/states.d
-%%EXAMPLESDIR%%/states2.d
-%%EXAMPLESDIR%%/states3.d
-%%EXAMPLESDIR%%/usapop.d
-%%EXAMPLESDIR%%/cy_fatal.d
-%%EXAMPLESDIR%%/result.SQ_MESH.Fail1.S3.R0.Global.Random1500.succ.result
-%%EXAMPLESDIR%%/result.SQ_MESH.Fail1.S3.R0.Local.Random1500.succ.result
-%%EXAMPLESDIR%%/result.SQ_MESH.Fail1.S3.R0.Hybrid.Random1500.succ.result
-@dirrm %%EXAMPLESDIR%%
 @dirrm %%DATADIR%%
