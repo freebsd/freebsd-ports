@@ -12,6 +12,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Read the data from a spreadsheet
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-IO-stringy>0:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-Text-CSV_XS>0:${PORTSDIR}/textproc/p5-Text-CSV_XS \
 		p5-Text-CSV>0:${PORTSDIR}/textproc/p5-Text-CSV \
@@ -23,7 +26,4 @@ TEST_DEPENDS=	p5-Test-NoWarnings>0:${PORTSDIR}/devel/p5-Test-NoWarnings
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Spreadsheet::Read.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

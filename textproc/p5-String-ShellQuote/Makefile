@@ -13,8 +13,4 @@ COMMENT=	Perl module for quote strings for passing through the shell
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	shell-quote.1
-MAN3=	String::ShellQuote.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

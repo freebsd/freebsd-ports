@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perlish declarative templates
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 COMMON_DEPENDS=	p5-Test-Warn>=0.11:${PORTSDIR}/devel/p5-Test-Warn \
 		p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-Data-Inheritable>0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
@@ -22,14 +25,4 @@ RUN_DEPENDS=	${COMMON_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Template::Declare.3 \
-	Template::Declare::Buffer.3 \
-	Template::Declare::TagSet.3 \
-	Template::Declare::TagSet::HTML.3 \
-	Template::Declare::TagSet::RDF.3 \
-	Template::Declare::TagSet::RDF::EM.3 \
-	Template::Declare::TagSet::XUL.3 \
-	Template::Declare::Tags.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

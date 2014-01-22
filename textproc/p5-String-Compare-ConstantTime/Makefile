@@ -12,8 +12,4 @@ COMMENT=	Perl extension for timing side-channel protected string compare
 USES=	perl5
 USE_PERL5=	configure
 
-MAN3=	String::Compare::ConstantTime.3 \
-	String::Compare::README.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

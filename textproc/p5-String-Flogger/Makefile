@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	String munging for loggers
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Params-Util>0:${PORTSDIR}/devel/p5-Params-Util \
 		p5-Sub-Exporter>0:${PORTSDIR}/devel/p5-Sub-Exporter \
 		p5-JSON>0:${PORTSDIR}/converters/p5-JSON
@@ -20,7 +23,4 @@ TEST_DEPENDS=	p5-Test-Simple>=0.82:${PORTSDIR}/devel/p5-Test-Simple
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	String::Flogger.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
