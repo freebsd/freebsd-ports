@@ -10,5 +10,5 @@
  
  clit: clit.o hexdump.o drm5.o explode.o transmute.o display.o utils.o manifest.o ../lib/openclit.a 
 -	gcc -o clit $^  ../libtommath-0.30/libtommath.a
-+	gcc -o clit $^  ../libtommath-0.33/libtommath.a
++	${CC} -o clit $^  ../libtommath-0.33/libtommath.a
  
