@@ -58,7 +58,7 @@ USE_GSTREAMER+=	faad
 .endif
 
 .if ${PORT_OPTIONS:MOGG}
-USE_GSTREAMER+=	libogg.so
+USE_GSTREAMER+=	ogg
 .endif
 
 .if ${PORT_OPTIONS:MSPEEX}
