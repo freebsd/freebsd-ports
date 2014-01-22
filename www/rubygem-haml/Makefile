@@ -2,18 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	haml
-PORTVERSION=	3.1.7
+PORTVERSION=	4.0.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	gogolok+freebsd@gmail.com
-COMMENT=	Markup language to describe XHTML
+COMMENT=	Markup language to describe HTML
 
+LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-tilt>=0:${PORTSDIR}/devel/rubygem-tilt
+
+USE_RAKE=	yes
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-PLIST_FILES=	bin/haml bin/html2haml
+PLIST_FILES=	bin/haml
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
