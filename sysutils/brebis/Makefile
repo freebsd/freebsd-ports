@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	brebis
-PORTVERSION=	0.8
+PORTVERSION=	0.9
 CATEGORIES=	sysutils archivers
-MASTER_SITES=	http://brebisproject.org/attachments/download/9/ \
+MASTER_SITES=	http://brebisproject.org/attachments/download/18/ \
 		LOCAL/martymac
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -15,7 +15,9 @@ LICENSE=	GPLv3
 USE_PYTHON=	3.3+
 USE_PYDISTUTILS=	yes
 
-PLIST_SUB+=	PYTHON_SUFFIX=${PYTHON_SUFFIX}
+PLIST_SUB+=	PYTHON_SUFFIX=${PYTHON_SUFFIX} \
+		PYDISTUTILS_EGGINFO=${PYDISTUTILS_EGGINFO}
+PYDISTUTILS_NOEGGINFO=	yes
 
 PORTDOCS=	README
 
