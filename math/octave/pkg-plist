@@ -2,10 +2,11 @@ bin/mkoctfile
 bin/mkoctfile-%%OCTAVE_VERSION%%
 bin/octave
 bin/octave-%%OCTAVE_VERSION%%
+bin/octave-cli
+bin/octave-cli-%%OCTAVE_VERSION%%
 bin/octave-config
 bin/octave-config-%%OCTAVE_VERSION%%
 share/applications/www.octave.org-octave.desktop
-%%PORTDOCS%%%%DOCSDIR%%/OctaveFAQ.ps
 %%PORTDOCS%%%%DOCSDIR%%/liboctave.ps
 %%PORTDOCS%%%%DOCSDIR%%/refcard-a4.ps
 %%PORTDOCS%%%%DOCSDIR%%/refcard-legal.ps
