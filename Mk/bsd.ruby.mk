@@ -440,6 +440,7 @@ GEMFILES=	${DISTNAME}${EXTRACT_SUFX}
 RUBYGEM_ARGS=-l --no-update-sources --no-ri --install-dir ${PREFIX}/lib/ruby/gems/${RUBY_VER}
 .else
 RUBYGEM_ARGS=-l --no-update-sources --no-ri --install-dir ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER} --ignore-dependencies --bindir=${STAGEDIR}${PREFIX}/bin
+GEM_ENV+=	RB_USER_INSTALL=yes
 .endif
 .if defined(NOPORTDOCS)
 RUBYGEM_ARGS+=	--no-rdoc
