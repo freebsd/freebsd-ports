@@ -11,8 +11,7 @@ COMMENT=	Display last modification for each line in an RCS file
 
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
-MAN1=		blame.1
-PLIST_FILES=	bin/blame
+PLIST_FILES=	bin/blame \
+		man/man1/blame.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
