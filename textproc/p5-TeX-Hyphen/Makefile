@@ -12,7 +12,4 @@ COMMENT=	Hyphenate words using TeX's patterns
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		TeX::Hyphen.3 TeX::Hyphen::czech.3 TeX::Hyphen::german.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
