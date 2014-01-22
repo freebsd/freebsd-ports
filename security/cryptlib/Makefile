@@ -36,8 +36,8 @@ post-patch:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libcl.a ${WRKSRC}/libcl.so.${PORTVERSION} \
 		${STAGEDIR}${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/libcl.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libcl.so.3
-	${LN} -sf ${PREFIX}/lib/libcl.so.3 ${STAGEDIR}${PREFIX}/lib/libcl.so
+	${LN} -sf libcl.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libcl.so.3
+	${LN} -sf libcl.so.3 ${STAGEDIR}${PREFIX}/lib/libcl.so
 	${INSTALL_DATA} ${WRKSRC}/cryptlib.h ${STAGEDIR}${PREFIX}/include
 
 post-install:
