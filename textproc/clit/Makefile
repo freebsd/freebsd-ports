@@ -22,16 +22,12 @@ MIN_VER=	8
 
 PLIST_FILES=	bin/clit
 
+USES=	dos2unix gmake
 USE_ZIP=	yes
-USE_GMAKE=	yes
 
-NO_STAGE=	yes
 post-extract:
 	cd ${WRKDIR} && ${BZIP2_CMD} -dc "${DISTDIR}/ltm-0.33.tar.bz2" | \
 		${TAR} -xf -
-
-post-patch:
-	@${FIND} ${WRKDIR} -name *.c -or -name *.h | ${XARGS} ${REINPLACE_CMD} -e 's|||'
 
 do-build:
 	cd ${WRKDIR}/libtommath-0.33 && \
@@ -42,6 +38,6 @@ do-build:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKDIR}/${PORTNAME}${MAJ_VER}${MIN_VER}/clit \
-		${LOCALBASE}/bin
+		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
