@@ -13,18 +13,14 @@ COMMENT=	Manual for adabooch
 
 LICENSE=	GPLv2
 
-USE_ZIP=	yes
 NO_BUILD=	yes
 NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/adabooch-doc-html
-EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
-
-NO_STAGE=	yes
-pre-extract:
-	@${MKDIR} ${WRKSRC}
+EXTRACT_AFTER_ARGS=	-C ${WRKSRC}
+EXTRACT_CMD=	${MKDIR} ${WRKSRC}; ${TAR}
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/doc/adabooch/html
-	@(cd ${WRKSRC} && ${PAX} -r -w * ${PREFIX}/share/doc/adabooch/html)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/adabooch/html
+	(cd ${WRKSRC} && ${PAX} -r -w . ${STAGEDIR}${PREFIX}/share/doc/adabooch/html)
 
 .include <bsd.port.mk>
