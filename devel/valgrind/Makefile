@@ -3,6 +3,7 @@
 
 PORTNAME=	valgrind
 PORTVERSION=	3.8.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/stass/valgrind-freebsd/downloads/ \
