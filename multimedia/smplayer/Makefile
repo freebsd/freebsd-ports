@@ -3,6 +3,7 @@
 
 PORTNAME=	smplayer
 DISTVERSION=	0.8.6
+PORTREVISION=	1
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION}
 
@@ -10,6 +11,7 @@ MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Complete front-end based on Qt4 for mplayer
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
+		${LOCALBASE}/share/smplayer/themes:${PORTSDIR}/multimedia/smplayer-skins \
 		${LOCALBASE}/share/smplayer/themes:${PORTSDIR}/multimedia/smplayer-themes
 
 USE_QT4=	gui network script xml moc_build rcc_build uic_build \
@@ -26,6 +28,10 @@ INSTALLS_ICONS=	yes
 PORTDOCS=	Changelog Copying.txt Install.txt Not_so_obvious_things.txt \
 		Readme.txt Release_notes.txt
 
+OPTIONS_DEFINE=	DOCS
+
+SUB_FILES=      pkg-message
+
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -36,9 +42,9 @@ post-patch:
 		${WRKSRC}/Makefile
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
