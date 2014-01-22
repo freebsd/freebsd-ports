@@ -1,3 +1,8 @@
+%%PERL5_MAN3%%/Text::ClearSilver.3.gz
+%%PERL5_MAN3%%/Text::ClearSilver::Compat.3.gz
+%%PERL5_MAN3%%/Text::ClearSilver::FunctionSet.3.gz
+%%PERL5_MAN3%%/Text::ClearSilver::FunctionSet::html.3.gz
+%%PERL5_MAN3%%/Text::ClearSilver::FunctionSet::string.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ClearSilver/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ClearSilver/ClearSilver.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ClearSilver/ClearSilver.so

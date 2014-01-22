@@ -9,20 +9,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension to the ClearSilver template engine
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 TEST_DEPENDS=	\
 	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \
 	p5-Mouse>0:${PORTSDIR}/devel/p5-Mouse
 
-USES=		perl5
+USES=		perl5 gmake
 USE_PERL5=	configure
-USE_GMAKE=	yes
-CONFIGURE_ENV=	MAKE=${LOCALBASE}/bin/gmake
 
-MAN3=	Text::ClearSilver.3 \
-	Text::ClearSilver::Compat.3 \
-	Text::ClearSilver::FunctionSet.3 \
-	Text::ClearSilver::FunctionSet::html.3 \
-	Text::ClearSilver::FunctionSet::string.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
