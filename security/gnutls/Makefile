@@ -6,7 +6,8 @@ PORTVERSION=	2.12.23
 PORTREVISION=	3
 CATEGORIES=	security net
 MASTER_SITES=	\
-	ftp://ftp.gnutls.org/gcrypt/gnutls/v${PORTVERSION:C/.[0-9]+$//}/
+	ftp://ftp.gnutls.org/gcrypt/gnutls/v${PORTVERSION:C/.[0-9]+$//}/ \
+	http://www.ring.gr.jp/pub/net/gnupg/gnutls/v${PORTVERSION:C/.[0-9]+$//}/
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
