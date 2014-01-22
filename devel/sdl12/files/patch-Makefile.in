@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2014-01-22 22:33:52.000000000 +0100
++++ Makefile.in	2014-01-22 22:34:15.000000000 +0100
+@@ -49,7 +49,7 @@
+ LT_CURRENT  = @LT_CURRENT@
+ LT_RELEASE  = @LT_RELEASE@
+ LT_REVISION = @LT_REVISION@
+-LT_LDFLAGS  = -no-undefined -rpath $(DESTDIR)$(libdir) -release $(LT_RELEASE) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
++LT_LDFLAGS  = -no-undefined -rpath $(libdir) -release $(LT_RELEASE) -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ all: $(srcdir)/configure Makefile $(objects) $(objects)/$(TARGET) $(objects)/$(SDLMAIN_TARGET)
+ 
