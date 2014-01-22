@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://pgfoundry.org/frs/download.php/1387/
 
-MAINTAINER=	gogo@cs.uni-sb.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Logs changes on a table in PostgreSQL
 
 WRKSRC=		${WRKDIR}/table_log-${DISTVERSION}
