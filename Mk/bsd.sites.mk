@@ -198,9 +198,6 @@ MASTER_SITE_DEBIAN_POOL+= \
 
 .if !defined(IGNORE_MASTER_SITE_EASYSW)
 MASTER_SITE_EASYSW+= \
-	http://ftp.easysw.com/pub/%SUBDIR%/ \
-	ftp://ftp.easysw.com/pub/%SUBDIR%/ \
-	ftp://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/%SUBDIR%/ \
 	http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/%SUBDIR%/
 .endif

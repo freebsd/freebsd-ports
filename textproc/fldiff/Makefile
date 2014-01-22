@@ -5,8 +5,7 @@ PORTNAME=	fldiff
 PORTVERSION=	1.1
 PORTREVISION=	8
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.easysw.com/~mike/fldiff/ \
-		CRITICAL
+MASTER_SITES=	CRITICAL
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	ehaupt@FreeBSD.org
