@@ -1,3 +1,4 @@
+# $FreeBSD$
 MAN1+= afslog.1
 MAN1+= ftp.1
 MAN1+= kdestroy.1
