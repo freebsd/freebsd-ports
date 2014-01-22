@@ -10,24 +10,19 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Create a nice formatted table using ASCII characters
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Text::ASCIITable.3 \
-	Text::ASCIITable::Wrap.3
+OPTIONS_DEFINE=	EXAMPLES
 
-NO_STAGE=	yes
-post-extract:
-	@${MKDIR} ${WRKSRC}/example
-	@${MV} ${WRKSRC}/ansi-example.pl ${WRKSRC}/example
-	@${REINPLACE_CMD} -i '' '/ansi-example.pl/d' ${WRKSRC}/MANIFEST
+PORTEXAMPLES=	ansi-example.pl
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/example/ansi-example.pl ${EXAMPLESDIR}
-	@${ECHO_MSG} "===> Example installed in ${EXAMPLESDIR}."
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/ansi-example.pl ${STAGEDIR}${EXAMPLESDIR}
 
 regression-test: build
 	cd ${WRKSRC}/ && ./Build test
