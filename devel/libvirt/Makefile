@@ -3,6 +3,7 @@
 
 PORTNAME=	libvirt
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/ \
 		ftp://libvirt.org/libvirt/
@@ -19,19 +20,24 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libssh2.so:${PORTSDIR}/security/libssh2
 
 OPTIONS_DEFINE=	QEMU DOCS NLS
-QEMU_DESC=	QEMU bindings
+QEMU_DESC=	QEMU driver
 
 OPTIONS_SUB=	yes
 
-QEMU_CONFIGURE_WITH=	qemu
+QEMU_CONFIGURE_WITH=	qemu yajl
+QEMU_CFLAGS=	-I${LOCALBASE}/include
+QEMU_LIB_DEPENDS=	libyajl.so:${PORTSDIR}/devel/yajl
+QEMU_RUN_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode \
+			qemu-io:${PORTSDIR}/emulators/qemu-devel
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 NLS_CONFIGURE_ON=	--with-libintl-prefix=${LOCALBASE}
 
+USE_RC_SUBR=	libvirtd
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-sasl \
-		--without-yajl \
 		--without-avahi \
 		--without-polkit \
 		--without-hal \
@@ -59,6 +65,13 @@ SHLIB_VER=	1002
 PLIST_SUB=	PORTVERSION="-${PORTVERSION}" \
 		SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
+STRIP_FILES=	libvirt.so.${SHLIB_VER} \
+		libvirt-qemu.so.${SHLIB_VER} \
+		libvirt-lxc.so.${SHLIB_VER} \
+		libvirt/lock-driver/lockd.so \
+		libvirt/connection-driver/libvirt_driver_vbox.so \
+		libvirt/connection-driver/libvirt_driver_secret.so \
+		libvirt/connection-driver/libvirt_driver_storage.so
 
 .include <bsd.port.options.mk>
 
@@ -90,12 +103,14 @@ post-install:
 			${ECHO_MSG} "	Preserving local configuration file: ${STAGEDIR}${ETCDIR}/$${configuration}.conf"; \
 	fi; \
 	done
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in AUTHORS ChangeLog INSTALL NEWS README TODO
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
+
+.for lib in ${STRIP_FILES}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/${lib}
+.endfor
 
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} check
