@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	valgrind
-PORTVERSION=	3.8.1
+DISTVERSIONPREFIX=	freebsd-
+DISTVERSION=	3.8.1
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/stass/valgrind-freebsd/downloads/ \
 		http://mirror.shatow.net/freebsd/${PORTNAME}/
-DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
 
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Memory debugging and profiling tool
