@@ -131,9 +131,9 @@ _WX_Definitions_Done=	yes
 
 _WX_COMPS_ALL=			wx contrib python svg
 _WX_DEP_TYPES_ALL=		build lib run
-_WX_VERS_ALL=			2.6 2.8 2.9
-_WX_VERS_UC_ALL=		2.6 2.8 2.9
-_WX_VERS_SKIP=			2.9
+_WX_VERS_ALL=			2.6 2.8 2.9 3.0
+_WX_VERS_UC_ALL=		2.6 2.8 2.9 3.0
+_WX_VERS_SKIP=			2.9 3.0
 _WX_VERS_LISTS=			WANT_WX_VER WITH_WX_VER _WX_VER_INSTALLED
 
 #
@@ -171,6 +171,10 @@ _WX_LIB_svg_2.8=		wxsvg
 # wxgtk 2.9
 _WX_PORT_wx_2.9=		x11-toolkits/wxgtk29
 _WX_LIB_wx_2.9=			wx_baseu-2.9
+
+# wxgtk 3.0
+_WX_PORT_wx_3.0=		x11-toolkits/wxgtk30
+_WX_LIB_wx_3.0=			wx_baseu-3.0
 
 # Set _WX_SHVER_comp_ver to 0 and _WX_FILE_comp_ver for libs appropiately.
 # Set _WX_DEPTYPE_comp_ver for "python" to "run", and others to "lib".
