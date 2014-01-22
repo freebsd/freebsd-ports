@@ -1,0 +1,26 @@
+--- po/Makefile.orig	2013-03-30 02:31:41.000000000 +0100
++++ po/Makefile	2014-01-20 17:52:17.051238058 +0100
+@@ -1,4 +1,4 @@
+-prefix = /usr
++prefix = ${PREFIX}
+ 
+ INSTALL= install
+ 
+@@ -10,6 +10,8 @@
+ 
+ POTFILES=../whois.c ../mkpasswd.c
+ 
++.SUFFIXES:      .po .mo
++
+ all: $(PACKAGE).pot $(CATALOGS)
+ 
+ $(PACKAGE).pot: $(POTFILES)
+@@ -34,7 +36,7 @@
+ 	  fi; \
+ 	done
+ 
+-%.mo: %.po
++.po.mo:
+ 	msgfmt --statistics --check --verbose --output-file=$@ $<
+ 
+ clean:

@@ -1,0 +1,33 @@
+--- Makefile.orig	2013-03-30 02:31:42.000000000 +0100
++++ Makefile	2014-01-20 18:16:15.000000000 +0100
+@@ -1,6 +1,8 @@
+-prefix = /usr
++prefix = ${PREFIX}
+ 
+ CFLAGS ?= -g -O2
++LDFLAGS += -L/usr/local/lib -lintl
++CFLAGS += -I/usr/local/include
+ 
+ PERL = perl
+ INSTALL = install
+@@ -92,15 +94,15 @@
+ 
+ install-whois: whois
+ 	$(INSTALL) -d $(BASEDIR)$(prefix)/bin/
+-	$(INSTALL) -d $(BASEDIR)$(prefix)/share/man/man1/
+-	$(INSTALL) -m 0755 whois $(BASEDIR)$(prefix)/bin/
+-	$(INSTALL) -m 0644 whois.1 $(BASEDIR)$(prefix)/share/man/man1/
++	$(INSTALL) -d $(BASEDIR)$(prefix)/man/man1/
++	$(INSTALL) -m 0755 whois $(BASEDIR)$(prefix)/bin/mwhois
++	$(INSTALL) -m 0644 whois.1 $(BASEDIR)$(prefix)/man/man1/mwhois.1
+ 
+ install-mkpasswd: mkpasswd
+ 	$(INSTALL) -d $(BASEDIR)$(prefix)/bin/
+-	$(INSTALL) -d $(BASEDIR)$(prefix)/share/man/man1/
++	$(INSTALL) -d $(BASEDIR)$(prefix)/man/man1/
+ 	$(INSTALL) -m 0755 mkpasswd $(BASEDIR)$(prefix)/bin/
+-	$(INSTALL) -m 0644 mkpasswd.1 $(BASEDIR)$(prefix)/share/man/man1/
++	$(INSTALL) -m 0644 mkpasswd.1 $(BASEDIR)$(prefix)/man/man1/
+ 
+ install-pos:
+ 	cd po && $(MAKE) install
