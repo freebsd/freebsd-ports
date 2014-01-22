@@ -163,10 +163,10 @@ lib/cmake/phonon/PhononTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/phonon/PhononTargets.cmake
 lib/libphonon.so
 lib/libphonon.so.4
-lib/libphonon.so.4.7.0
+lib/libphonon.so.%%SHLIB_VER%%
 lib/libphononexperimental.so
 lib/libphononexperimental.so.4
-lib/libphononexperimental.so.4.7.0
+lib/libphononexperimental.so.%%SHLIB_VER%%
 libdata/pkgconfig/phonon.pc
 share/dbus-1/interfaces/org.kde.Phonon.AudioOutput.xml
 %%DATADIR%%/buildsystem/COPYING-CMAKE-SCRIPTS
