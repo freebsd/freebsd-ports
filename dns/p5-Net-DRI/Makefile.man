@@ -1,3 +1,4 @@
+# $FreeBSD$
 MAN3=	Net::DRI::BaseClass.3
 MAN3+=	Net::DRI::Cache.3
 MAN3+=	Net::DRI::DRD.3
