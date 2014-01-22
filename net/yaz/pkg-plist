@@ -15,6 +15,7 @@ include/yaz/ccl.h
 include/yaz/ccl_xml.h
 include/yaz/charneg.h
 include/yaz/comstack.h
+include/yaz/cookie.h
 include/yaz/copy_types.h
 include/yaz/cql.h
 include/yaz/daemon.h
