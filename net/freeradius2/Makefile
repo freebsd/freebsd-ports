@@ -3,6 +3,7 @@
 
 PORTNAME=	freeradius
 DISTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -22,7 +23,7 @@ LOGDIR?=	/var/log
 KRB5_CONFIG?=	/usr/bin/krb5-config --libs
 
 CONFLICTS=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].* \
-		freeradius-mysql-[0-9].* freeradius-[013-9].*
+		freeradius-mysql-[0-9].* freeradius-[013-9].* freeradius3-3.*
 
 USE_RC_SUBR=	radiusd
 
