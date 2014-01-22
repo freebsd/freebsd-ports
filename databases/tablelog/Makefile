@@ -14,21 +14,21 @@ WRKSRC=		${WRKDIR}/table_log-${DISTVERSION}
 
 USES=		gmake
 USE_PGSQL=	yes
-WANT_PGSQL_VER=	91-
 MAKE_ARGS=	USE_PGXS=1
 
-PORTDOCS=	README.table_log table_log.sql
+.include <bsd.port.options.mk>
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/lib/postgresql/
-	@${INSTALL_PROGRAM} ${WRKSRC}/table_log.so ${PREFIX}/lib/postgresql/
-	@${MKDIR} ${PREFIX}/share/postgresql/contrib/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/postgresql/
+	@${INSTALL_PROGRAM} ${WRKSRC}/table_log.so \
+		${STAGEDIR}${PREFIX}/lib/postgresql/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/postgresql/contrib/
 	@${INSTALL_DATA} ${WRKSRC}/table_log_init.sql \
-		${PREFIX}/share/postgresql/contrib/
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+		${STAGEDIR}${PREFIX}/share/postgresql/contrib/
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC} && ${INSTALL_DATA} README.table_log table_log.sql \
+		${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
