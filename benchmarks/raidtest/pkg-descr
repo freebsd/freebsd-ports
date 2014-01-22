@@ -1,5 +1,3 @@
-$FreeBSD$
-
 This utility can be used to test performance of storage devices.
 First, one need to generate file with I/O operations:
 
