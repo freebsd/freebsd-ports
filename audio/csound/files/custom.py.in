@@ -7,6 +7,6 @@ customCCFLAGS = [  ]
 customCXXFLAGS = [ ]
 customLIBS = [ 'intl' ]
 customLIBPATH = [ '%%PORTAUDIO_L%%', '%%LOCALBASE%%/lib' ]
-customSHLINKFLAGS = [ '%%PORTAUDIO_R%%', '%%PTHREAD_LIBS%%' ]
+customSHLINKFLAGS = [ '%%PORTAUDIO_R%%' ]
 customSWIGFLAGS = []
 platform = 'linux'
