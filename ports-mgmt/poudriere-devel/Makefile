@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	poudriere
-PORTVERSION=	3.0.99.20140122
+PORTVERSION=	3.0.99.20140123
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://fossil.etoilebsd.net/poudriere/tarball/ \
 		LOCAL/bdrewery/${PORTNAME}/
@@ -13,7 +13,7 @@ COMMENT=	Port build and test system
 
 LICENSE=	BSD2CLAUSE
 
-FSL_CHKIN=	32dddce6d7
+FSL_CHKIN=	4fad732f19
 
 OPTIONS_DEFINE=	ZSH
 
