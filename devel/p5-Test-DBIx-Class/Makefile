@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-DBIx-Class
-PORTVERSION=	0.40
+PORTVERSION=	0.41
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,6 +22,7 @@ BUILD_DEPENDS=	p5-Config-Any>=0.19:${PORTSDIR}/devel/p5-Config-Any \
 		p5-Data-Visitor>=0.27:${PORTSDIR}/devel/p5-Data-Visitor \
 		p5-Hash-Merge>=0.11:${PORTSDIR}/textproc/p5-Hash-Merge \
 		p5-List-MoreUtils>=0.22:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Module-Runtime>=0.013:${PORTSDIR}/devel/p5-Module-Runtime \
 		p5-Moose>=1.10:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Attribute-ENV>=0.01:${PORTSDIR}/devel/p5-MooseX-Attribute-ENV \
 		p5-MooseX-Types>=0.23:${PORTSDIR}/devel/p5-MooseX-Types \
