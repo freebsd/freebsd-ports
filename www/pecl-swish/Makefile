@@ -20,5 +20,4 @@ USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--enable-swish --with-swish=${LOCALBASE}/bin
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

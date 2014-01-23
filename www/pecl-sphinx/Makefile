@@ -22,6 +22,5 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 CFLAGS+=	-I${LOCALBASE}/include
-NO_STAGE=	yes
 
 .include <bsd.port.mk>
