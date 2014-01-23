@@ -18,6 +18,7 @@ bin/morbo
 %%SITE_PERL%%/Mojo/DOM.pm
 %%SITE_PERL%%/Mojo/DOM/CSS.pm
 %%SITE_PERL%%/Mojo/DOM/HTML.pm
+%%SITE_PERL%%/Mojo/DOM/Node.pm
 %%SITE_PERL%%/Mojo/Date.pm
 %%SITE_PERL%%/Mojo/EventEmitter.pm
 %%SITE_PERL%%/Mojo/Exception.pm
@@ -182,6 +183,7 @@ bin/morbo
 %%PERL5_MAN3%%/Mojo::DOM.3.gz
 %%PERL5_MAN3%%/Mojo::DOM::CSS.3.gz
 %%PERL5_MAN3%%/Mojo::DOM::HTML.3.gz
+%%PERL5_MAN3%%/Mojo::DOM::Node.3.gz
 %%PERL5_MAN3%%/Mojo::Date.3.gz
 %%PERL5_MAN3%%/Mojo::EventEmitter.3.gz
 %%PERL5_MAN3%%/Mojo::Exception.3.gz
