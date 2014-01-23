@@ -13,11 +13,11 @@ COMMENT=	Library for the multilingual text handling
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
 		m17n-db>=1.6.4:${PORTSDIR}/devel/m17n-db
-LIB_DEPENDS=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		freetype:${PORTSDIR}/print/freetype2 \
-		fribidi:${PORTSDIR}/converters/fribidi \
-		gd:${PORTSDIR}/graphics/gd \
-		otf:${PORTSDIR}/print/libotf
+LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libfribidi.so:${PORTSDIR}/converters/fribidi \
+		libgd.so:${PORTSDIR}/graphics/gd \
+		libotf.so:${PORTSDIR}/print/libotf
 RUN_DEPENDS=	m17n-db>=1.6.4:${PORTSDIR}/devel/m17n-db
 
 MAKE_JOBS_UNSAFE=	yes
@@ -36,27 +36,15 @@ ANTHY_DESC=	Kana-Kanji conversion support via Anthy
 ISPELL_DESC=	Spell checking support via Ispell
 THAI_DESC=	Thai language support via libThai
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+ANTHY_LIB_DEPENDS=	libanthy.so:${PORTSDIR}/japanese/anthy
+ANTHY_CONFIGURE_OFF+=	--without-anthy
 
-.if ${PORT_OPTIONS:MANTHY}
-LIB_DEPENDS+=	anthy:${PORTSDIR}/japanese/anthy
-.else
-CONFIGURE_ARGS+=	--without-anthy
-.endif
+ISPELL_BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+ISPELL_RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+ISPELL_CONFIGURE_OFF=	HAVE_ISPELL=no
 
-.if ${PORT_OPTIONS:MISPELL}
-BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
-RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
-.else
-CONFIGURE_ENV+=	HAVE_ISPELL=no
-.endif
-
-.if ${PORT_OPTIONS:MTHAI}
-LIB_DEPENDS+=	thai:${PORTSDIR}/devel/libthai
-.else
-CONFIGURE_ARGS+=	--without-libthai
-.endif
+THAI_LIB_DEPENDS=	libthai.so:${PORTSDIR}/devel/libthai
+THAI_CONFIGURE_OFF=	--without-libthai
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
