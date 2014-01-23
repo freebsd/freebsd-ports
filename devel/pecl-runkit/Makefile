@@ -20,5 +20,4 @@ DEFAULT_PHP_VER=53
 
 CONFIGURE_ARGS=	--enable-runkit=classkit
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

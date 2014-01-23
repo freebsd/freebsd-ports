@@ -21,5 +21,4 @@ PHP_MODNAME=	automap
 
 CONFIGURE_ARGS=	--enable-automap
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

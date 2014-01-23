@@ -24,7 +24,6 @@ IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS+=--with-shp=${LOCALBASE}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|include/libshp|include|g' ${WRKSRC}/config.m4
 	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/config.m4

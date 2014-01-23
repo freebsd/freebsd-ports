@@ -22,7 +22,6 @@ DEFAULT_PHP_VER=53
 IGNORE_WITH_PHP=5
 CONFIGURE_ARGS+=--with-mcve="${LOCALBASE}"
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/SEARCH_PATH/ s,=",="${LOCALBASE} ${PREFIX} ,' \
 		${WRKSRC}/config.m4

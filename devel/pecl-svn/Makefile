@@ -19,5 +19,4 @@ LIB_DEPENDS=	svn_client-1:${PORTSDIR}/devel/subversion16
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
