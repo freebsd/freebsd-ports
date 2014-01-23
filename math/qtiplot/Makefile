@@ -26,7 +26,7 @@ QMAKE_ARGS+=	LOCALBASE=${LOCALBASE} PYTHON_CMD=${PYTHON_CMD}
 DOS2UNIX_GLOB=	*.pro
 
 DESKTOP_ENTRIES="QtiPlot" "Data analysis and plotting" \
-		"${DATADIR}/qtiplot.png" \
+		"${PREFIX}/share/pixmaps/qtiplot.png" \
 		"qtiplot" "" true
 
 OPTIONS_DEFINE=	DOCS PYTHON NLS DEBUG
@@ -101,7 +101,7 @@ pre-configure:
 
 post-install:
 	${STRIP_CMD} ${STRIP_FILES:S,^,${STAGEDIR}${PREFIX}/,}
-	${INSTALL_DATA} ${WRKSRC}/qtiplot_logo.png ${STAGEDIR}${DATADIR}/qtiplot.png
+	${INSTALL_DATA} ${WRKSRC}/qtiplot_logo.png ${STAGEDIR}${PREFIX}share/pixmaps/qtiplot.png
 .if ${PORT_OPTIONS:MPYTHON}
 .for s in qtiplotrc.py qtiUtil.py
 	cd ${WRKSRC}/qtiplot && ${PYTHON_CMD} -c "import py_compile; py_compile.compile('${s}')"
