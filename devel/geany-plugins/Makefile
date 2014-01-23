@@ -28,6 +28,6 @@ ${plugin:U}_DESC=	${${plugin}_DESC}
 ${plugin:U}_RUN_DEPENDS=	geany-plugin-${plugin}>=0:${PORTSDIR}/devel/geany-plugin-${plugin}
 .endfor
 
-NLS_DEP=		geany-plugins-l10n>=0:${PORTSDIR}/devel/geany-plugins-l10n
+NLS_RUN_DEPENDS=	geany-plugins-l10n>=0:${PORTSDIR}/devel/geany-plugins-l10n
 
 .include <bsd.port.mk>
