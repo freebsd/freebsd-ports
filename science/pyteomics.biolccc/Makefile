@@ -11,5 +11,6 @@ COMMENT=	Python bindings for BioLCCC
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
