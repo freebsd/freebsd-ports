@@ -10,16 +10,17 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	A ncurses-based client for the Music Player Daemon
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
 
 USES=		pkgconfig
-NO_STAGE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 
-MAN1=	${PORTNAME}.1
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/pms.1.gz
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
