@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.2.22
+DISTVERSION=	4.3.6
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -27,6 +27,7 @@ USES=		iconv kmod
 USE_GCC=	any
 ONLY_FOR_ARCHS=	i386 amd64
 USE_BZIP2=	yes
+USE_PYTHON_BUILD=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 HAS_CONFIGURE=	yes

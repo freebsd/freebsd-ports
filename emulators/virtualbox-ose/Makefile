@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.2.22
+DISTVERSION=	4.3.6
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -22,8 +22,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		xsltproc:${PORTSDIR}/textproc/libxslt \
 		kmk:${PORTSDIR}/devel/kBuild \
 		gtar:${PORTSDIR}/archivers/gtar \
-		cdrecord:${PORTSDIR}/sysutils/cdrtools \
-		python:${PORTSDIR}/lang/python
+		cdrecord:${PORTSDIR}/sysutils/cdrtools
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
 		libxslt.so:${PORTSDIR}/textproc/libxslt \
 		libcurl.so:${PORTSDIR}/ftp/curl
@@ -36,18 +35,14 @@ USES=		iconv pkgconfig
 USE_GCC=	any
 USE_GNOME=	libidl
 USE_BZIP2=	yes
-USE_PYTHON=	2
-USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	vboxapi
-PYDISTUTILS_PKGVERSION=	1.0
-PYDISTUTILS_NOEGGINFO=	yes
+USE_PYTHON_BUILD=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --passive-mesa
 USE_LDCONFIG=	${PREFIX}/lib/virtualbox
 
 CONFLICTS=	bcc-[0-9]*
-CONFLICTS_INSTALL=	virtualbox-ose-devel-[3,4]* virtualbox-ose-legacy-[3,4]* virtualbox-ose-additions-[3,4]* virtualbox-ose-additions-devel-[3,4]*
+CONFLICTS_INSTALL=	virtualbox-ose-devel-4* virtualbox-ose-legacy-4* virtualbox-ose-additions-4* virtualbox-ose-additions-devel-4*
 
 VBOXUSER?=	vboxusers
 VBOXWSUSER?=	vboxusers
@@ -57,9 +52,9 @@ GROUPS=		${VBOXGROUP}
 VBOX_FRONTENDS=	VBoxAutostart VBoxHeadless
 VBOX_GUEST_VER=	${PORTVERSION}
 
-OPTIONS_DEFINE=	QT4 DEBUG GUESTADDITIONS DBUS PULSEAUDIO UDPTUNNEL VDE VNC WEBSERVICE NLS X11
-OPTIONS_DEFAULT=	QT4 DBUS X11 UDPTUNNEL VNC
-OPTIONS_SUB=	X11 QT4 GUESTADDITIONS VNC NLS WEBSERVICE
+OPTIONS_DEFINE=	QT4 DEBUG GUESTADDITIONS DBUS PULSEAUDIO UDPTUNNEL VDE VNC WEBSERVICE NLS X11 VPX PYTHON
+OPTIONS_DEFAULT=	QT4 DBUS X11 UDPTUNNEL VNC WEBSERVICE PYTHON
+OPTIONS_SUB=	X11 QT4 GUESTADDITIONS VNC NLS WEBSERVICE PYTHON
 DEBUG_DESC=	Debug symbols, additional logs and assertions
 QT4_DESC=	Build with QT4 Frontend
 GUESTADDITIONS_DESC=	Build with Guest Additions
@@ -67,6 +62,7 @@ UDPTUNNEL_DESC=	Build with UDP tunnel support
 VDE_DESC=	Build with VDE support
 VNC_DESC=	Build with VNC support
 WEBSERVICE_DESC=	Build Webservice
+VPX_DESC=	Use vpx for video capturing
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
@@ -76,6 +72,9 @@ DBUS_CONFIGURE_OFF=	--disable-dbus
 
 VNC_LIB_DEPENDS=	libvncserver.so:${PORTSDIR}/net/libvncserver
 VNC_CONFIGURE_ON=	--enable-vnc
+
+VPX_LIB_DEPENDS=	libvpx.so:${PORTSDIR}/multimedia/libvpx
+VPX_CONFIGURE_OFF=	--disable-libvpx
 
 VDE_RUN_DEPENDS=	vde_switch:${PORTSDIR}/net/vde2
 VDE_CONFIGURE_ON=	--enable-vde
@@ -116,7 +115,7 @@ BROKEN=		QT4 frontend requires X11 support. Run 'make config' again!
 .if ${PORT_OPTIONS:MX11}
 USE_SDL=	sdl
 USE_XORG=	xcursor xmu inputproto xinerama
-VBOX_FRONTENDS+=VBoxBFE VBoxSDL
+VBOX_FRONTENDS+=VBoxSDL
 .else
 CONFIGURE_ARGS+=--build-headless
 .endif
@@ -128,6 +127,16 @@ INSTALLS_ICONS=	yes
 VBOX_FRONTENDS+=VirtualBox VBoxTestOGL
 .else
 CONFIGURE_ARGS+=--disable-qt4
+.endif
+
+.if ${PORT_OPTIONS:MPYTHON}
+USE_PYTHON=	2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	vboxapi
+PYDISTUTILS_PKGVERSION=	1.0
+PYDISTUTILS_NOEGGINFO=	yes
+.else
+CONFIGURE_ARGS+=--disable-python
 .endif
 
 .if ${PORT_OPTIONS:MGUESTADDITIONS}
@@ -160,8 +169,9 @@ PLIST_SUB+=	ARCH="${KMK_ARCH}"
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 900000 && ${OSVERSION} > 801500
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-src-VBox-Devices-PC-vbox.dsl
+.if ${OSVERSION} < 900000
+EXTRA_PATCHES+=	${FILESDIR}/extrapatch-src-VBox-Main-src-server-generic-NetIf-generic.cpp \
+		${FILESDIR}/extrapatch-src-VBox-Devices-PC-vbox.dsl
 .endif
 
 pre-everything::
@@ -256,8 +266,8 @@ do-install:
 
 .if ${PORT_OPTIONS:MWEBSERVICE}
 	${MKDIR} ${DATADIR}/sdk/bindings/webservice
-.for f in vboxweb.wsdl vboxwebService.wsdl
-	${INSTALL_DATA} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/bindings/webservice/${f} ${DATADIR}/sdk/bindings/webservice/
+.for f in vboxweb.wsdl
+	${INSTALL_DATA} ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/obj/webservice/${f} ${DATADIR}/sdk/bindings/webservice/
 .endfor
 .endif
 
@@ -267,12 +277,14 @@ do-install:
 	${LN} -sf ${PREFIX}/lib/virtualbox/additions/${GUESTADDITIONS} ${PREFIX}/lib/virtualbox/additions/VBoxGuestAdditions.iso
 .endif
 
+.if ${PORT_OPTIONS:MPYTHON}
 	cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/installer && \
 	VBOX_INSTALL_PATH="${PREFIX}/lib/virtualbox" ${PYTHON_CMD} vboxapisetup.py install
 
 	@${MKDIR} ${PYTHON_SITELIBDIR}
 	(cd ${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/sdk/bindings/xpcom/python && ${COPYTREE_SHARE} "*" ${PYTHON_SITELIBDIR})
 	${PYTHON_CMD} -mcompileall ${PYTHON_SITELIBDIR}/xpcom/
+.endif
 
 post-install:
 .for f in VBoxManage VBoxNetDHCP VBoxSVC VBoxXPCOMIPCD VBoxExtPackHelperApp VBoxBalloonCtrl ${VBOX_FRONTENDS}

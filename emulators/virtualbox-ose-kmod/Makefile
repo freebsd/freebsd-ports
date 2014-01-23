@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	4.2.22
+DISTVERSION=	4.3.6
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.virtualbox.org/virtualbox/${DISTVERSION}/ \
 		http://tmp.chruetertee.ch/ \
@@ -20,6 +20,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 		as86:${PORTSDIR}/devel/dev86 \
 		kmk:${PORTSDIR}/devel/kBuild
 
+USES=		kmod
 UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 USE_RC_SUBR=	vboxnet
@@ -33,15 +34,13 @@ CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal \
 		--build-headless
 
 CONFLICTS=	bcc-[0-9]*
-CONFLICTS_INSTALL=	virtualbox-ose-kmod-devel-[3,4]* virtualbox-ose-kmod-legacy-[3,4]*
+CONFLICTS_INSTALL=	virtualbox-ose-kmod-devel-4* virtualbox-ose-kmod-legacy-4*
 
 OPTIONS_DEFINE=	DEBUG VIMAGE
 DEBUG_DESC=	Debug symbols, additional logs and assertions
 VIMAGE_DESC=	VIMAGE virtual networking support
 
 NO_STAGE=	yes
-
-USES=		kmod
 .include <bsd.port.options.mk>
 
 VBOX_BIN=	${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/src
