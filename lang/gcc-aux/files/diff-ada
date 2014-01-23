@@ -512,7 +512,7 @@
      || (defined (__alpha__)  && defined (_osf_)) || defined (__APPLE__)
    cores = (int) sysconf (_SC_NPROCESSORS_ONLN);
  
-@@ -3530,26 +3575,214 @@
+@@ -3530,37 +3575,6 @@
  }
  #endif
  
@@ -535,217 +535,62 @@
 -/* Dummy function to satisfy g-trasym.o. See the preprocessor conditional
 -   just above for a list of native platforms that provide a non-dummy
 -   version of this procedure in libaddr2line.a.  */
-+/* run-time symbolic traceback support */
-+#if defined (__DragonFly__) \
-+ || defined (__FreeBSD__) \
-+ || defined (__OpenBSD__) \
-+ || defined (__NetBSD__) \
-+ || (defined (__sun__) && defined (__i386__) && defined (__SVR4))
+-
+-void
+-convert_addresses (const char *file_name ATTRIBUTE_UNUSED,
+-		   void *addrs ATTRIBUTE_UNUSED,
+-		   int n_addr ATTRIBUTE_UNUSED,
+-		   void *buf ATTRIBUTE_UNUSED,
+-		   int *len ATTRIBUTE_UNUSED)
+-{
+-  *len = 0;
+-}
+-#endif
+-
+ #if defined (_WIN32)
+ int __gnat_argument_needs_quote = 1;
+ #else
+@@ -3864,6 +3878,17 @@
+   CPU_SET (cpu - 1, set);
+ }
+ #endif
 +
-+/* The above platforms use the external program /usr/bin/addr2line */
-+#define EXTERNAL_SYMTRACE
-+
-+#elif defined (VMS) \
-+   || defined (_AIX) \
-+   || defined (__Lynx__) \
-+   || defined (__hpux__)  \
-+   || defined (__APPLE__) \
-+   || defined (__MINGW32__) \
-+   || (defined (__mips)    && defined (__sgi)) \
-+   || (defined (__alpha__) && defined (__osf__)) \
-+   || (defined (linux)     && defined (i386)) \
-+   || (defined (linux)     && defined (powerpc)) \
-+   || (defined (linux)     && defined (__ia64__)) \
-+   || (defined (linux)     && defined (__x86_64__)) \
-+   || (defined (__SVR4)    && defined (__sun__) && defined (sparc))
-+
-+/* The above platforms use the system library libaddr2line.a */
-+#define NATIVE_SYMTRACE
-+#endif
-+
-+#if defined (EXTERNAL_SYMTRACE) && !defined (IS_CROSS)
-+
-+/*
-+  Copyright (C) 1999 by Juergen Pfeifer <juergen.pfeifer@gmx.net>
-+  Ada for Linux Team (ALT)
-+  Heavily modified by John Marino <http://www.dragonlace.net>
-+
-+  Permission is hereby granted, free of charge, to any person obtaining a
-+  copy of this software and associated documentation files (the
-+  "Software"), to deal in the Software without restriction, including
-+  without limitation the rights to use, copy, modify, merge, publish,
-+  distribute, distribute with modifications, sublicense, and/or sell
-+  copies of the Software, and to permit persons to whom the Software is
-+  furnished to do so, subject to the following conditions:
-+
-+  The above copyright notice and this permission notice shall be included
-+  in all copies or substantial portions of the Software.
-+
-+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-+  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-+  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-+  IN NO EVENT SHALL THE ABOVE COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-+  DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-+  OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
-+  THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-+
-+  Except as contained in this notice, the name(s) of the above copyright
-+  holders shall not be used in advertising or otherwise to promote the
-+  sale, use or other dealings in this Software without prior written
-+  authorization.
-+*/
-+
-+#include <sys/types.h>
-+#include <stdlib.h>
-+#include <unistd.h>
-+#include <string.h>
-+#include <signal.h>
-+
-+#define CLOSE_SENDPIPE close(sendpipe[0]); close(sendpipe[1])
-+#define CLOSE_READPIPE close(readpipe[0]); close(readpipe[1])
-+#define DUP2CLOSE(oldfd, newfd) dup2(oldfd, newfd); close(oldfd);
-+#define RESTSIG sigaction(SIGPIPE,&oact,NULL)
-+
-+#define MAX_LINE     1024
-+#define PARENT_READ  readpipe[0]
-+#define CHILD_WRITE  readpipe[1]
-+#define CHILD_READ   sendpipe[0]
-+#define PARENT_WRITE sendpipe[1]
-+
-+#if defined (__sun__)
-+#define ADDR2LINE_PROG	"/usr/gnu/bin/addr2line"
-+#else
-+#define ADDR2LINE_PROG	"/usr/bin/addr2line"
-+#endif
-+
-+void
-+convert_addresses (const char *file_name,
-+		   void *addrs,
-+		   int   n_addr,
-+		   void *buf,
-+		   int  *len)
++#ifdef __ANDROID__
++/* No-op, Android doesn't support pthread_rwlockattr_setkind_np, but we want
++   to use the s-taprop-linux.ads without modification */
++int __gnat_set_threadlock_kind (pthread_rwlockattr_t *attr ATTRIBUTE_UNUSED,
++    int pref ATTRIBUTE_UNUSED)
 +{
-+  int max_len = *len;
-+  pid_t childpid;
-+
-+  struct sigaction act, oact;
-+
-+  int sendpipe[2] = {-1,-1},	/* parent -> child */
-+      readpipe[2] = {-1,-1};	/* parent <- child */
-+
-+  *len = 0;
-+  act.sa_handler = SIG_IGN;
-+  sigemptyset(&act.sa_mask);
-+  act.sa_flags = 0;
-+  if (sigaction(SIGPIPE,&act,&oact) < 0)
-+    return;
-+
-+  if (pipe(sendpipe) < 0) { RESTSIG; return; }
-+  if (pipe(readpipe) < 0) { CLOSE_SENDPIPE; RESTSIG; return; }
-+  if ((childpid = fork()) < 0) {
-+    CLOSE_READPIPE;
-+    CLOSE_SENDPIPE;
-+    RESTSIG;
-+    return;
-+  }
-+
-+  if (childpid == 0) {    /* child process */
-+    close(PARENT_WRITE);
-+    close(PARENT_READ);
-+    if ((CHILD_READ != STDIN_FILENO) && (CHILD_WRITE != STDOUT_FILENO)) {
-+      if ((CHILD_READ == STDOUT_FILENO) && (CHILD_WRITE == STDIN_FILENO)) {
-+        const int temp_fd = dup(CHILD_WRITE);
-+        close (CHILD_WRITE);
-+        DUP2CLOSE (CHILD_READ, STDIN_FILENO);
-+        DUP2CLOSE (temp_fd,    STDOUT_FILENO);
-+      }
-+      else if ((CHILD_READ == STDIN_FILENO) && (CHILD_WRITE > 1)) {
-+        DUP2CLOSE (CHILD_WRITE, STDOUT_FILENO);
-+      }
-+      else if ((CHILD_READ > 1) && (CHILD_WRITE == STDOUT_FILENO)) {
-+        DUP2CLOSE (CHILD_READ, STDIN_FILENO);
-+      }
-+      else if ((CHILD_READ > 1) && (CHILD_WRITE == STDIN_FILENO)) {
-+        DUP2CLOSE (CHILD_WRITE, STDOUT_FILENO);
-+        DUP2CLOSE (CHILD_READ,  STDIN_FILENO);
-+      }
-+      else {
-+        /* CHILD_READ >= 1 and CHILD_WRITE > 1 */
-+        DUP2CLOSE (CHILD_READ,  STDIN_FILENO);
-+        DUP2CLOSE (CHILD_WRITE, STDOUT_FILENO);
-+      }
-+    }
-+    /* As pointed out by Florian Weimer to JP, it is a security threat to call
-+       the script with a user defined environment and using the path. That
-+       would be Trojans pleasure.  Therefore the absolute path to addr2line
-+       and an empty environment is used. That should be safe.
-+    */
-+    char *const argv[] = { "addr2line",
-+                           "-e", file_name,
-+                           "--demangle=gnat",
-+                           "--functions",
-+                           "--basenames",
-+                           NULL };
-+    char *const envp[] = { NULL };
-+    if (execve(ADDR2LINE_PROG, argv, envp) < 0) {
-+      close (CHILD_WRITE);
-+      close (CHILD_READ);
-+      RESTSIG;
-+      exit (1);
-+    }
-+  }
-+
-+  /* Below this line is parent process */
-+  int i, n;
-+  char hex[16];
-+  char line[MAX_LINE + 1];
-+  char *p;
-+  char *s = buf;
-+  long *trace_address = addrs;
-+
-+  close(CHILD_WRITE);
-+  close(CHILD_READ);
-+
-+  for(i=0; i < n_addr; i++) {
-+    snprintf(hex,sizeof(hex),"%#lx\n",*trace_address);
-+    write(PARENT_WRITE,hex,strlen(hex));
-+    n = read(PARENT_READ,line,MAX_LINE);
-+    if (n<=0)
-+      break;
-+
-+    line[n]=0;
-+    /* We have approx. 16 additional chars for "%#lx in " clause.
-+       We use this info to prevent a buffer overrun. */
-+    if (n + 16 + (*len) > max_len)
-+      break;
-+
-+    p = strchr(line,'\n');
-+    if (p) {
-+      if (*(p+1)) {
-+        *p = 0;
-+        *len += snprintf(s, (max_len - (*len)), "%#lx in %s at %s",
-+                         *trace_address, line, p+1);
-+      }
-+      else {
-+        *len += snprintf(s, (max_len - (*len)), "%#lx at %s",
-+                         *trace_address, line);
-+      }
-+      s = buf + (*len);
-+    }
-+    trace_address += 1;
-+  }
-+  close (PARENT_WRITE);
-+  close (PARENT_READ);
-+  RESTSIG;
++  return 0;
 +}
++#endif
 +
-+#elif defined (IS_CROSS) || !defined (NATIVE_SYMTRACE)
+ #endif
  
-+/* run-time symbolic traceback support
-+   Dummy function to satisfy g-trasym.o. */
- void
- convert_addresses (const char *file_name ATTRIBUTE_UNUSED,
- 		   void *addrs ATTRIBUTE_UNUSED,
+ #ifdef __cplusplus
+--- gcc/ada/adaint.h.orig
++++ gcc/ada/adaint.h
+@@ -257,6 +257,20 @@
+ 
+ #include <sched.h>
+ 
++#ifdef __ANDROID__
++struct pthread_rwlockattr;
++typedef struct	pthread_rwlockattr	*pthread_rwlockattr_t;
++typedef struct {
++	unsigned long int  __bits[ 1 ];
++} cpu_set_t;
++#  define __CPU_MASK(x)		((unsigned long int)1 << ((x) & 31))
++#  define CPU_ZERO(set_)	do { (set_)->__bits[0] = 0; } while(0)
++#  define CPU_SET(cpu_,set_) \
++	do { size_t __cpu = (cpu_); \
++	if (__cpu < 32) (set_)->__bits[0] |= __CPU_MASK(__cpu); } while (0)
++int __gnat_set_threadlock_kind (pthread_rwlockattr_t *, int);
++#endif
++
+ extern cpu_set_t *__gnat_cpu_alloc                 (size_t);
+ extern size_t __gnat_cpu_alloc_size                (size_t);
+ extern void   __gnat_cpu_free                  (cpu_set_t *);
 --- gcc/ada/cio.c.orig
 +++ gcc/ada/cio.c
 @@ -46,7 +46,8 @@
@@ -2361,7 +2206,7 @@
        --  Take a task lock, to protect the global data value Open_Files
 --- /dev/null
 +++ gcc/ada/s-osinte-android.ads
-@@ -0,0 +1,566 @@
+@@ -0,0 +1,647 @@
 +------------------------------------------------------------------------------
 +--                                                                          --
 +--                 GNAT RUN-TIME LIBRARY (GNARL) COMPONENTS                 --
@@ -2371,25 +2216,23 @@
 +--                                  S p e c                                 --
 +--                                                                          --
 +--             Copyright (C) 1991-1994, Florida State University            --
-+--          Copyright (C) 1995-2010, Free Software Foundation, Inc.         --
++--          Copyright (C) 1995-2011, Free Software Foundation, Inc.         --
 +--                                                                          --
-+-- GNARL is free software; you can  redistribute it  and/or modify it under --
++-- GNAT is free software;  you can  redistribute it  and/or modify it under --
 +-- terms of the  GNU General Public License as published  by the Free Soft- --
-+-- ware  Foundation;  either version 2,  or (at your option) any later ver- --
-+-- sion. GNARL is distributed in the hope that it will be useful, but WITH- --
++-- ware  Foundation;  either version 3,  or (at your option) any later ver- --
++-- sion.  GNAT is distributed in the hope that it will be useful, but WITH- --
 +-- OUT ANY WARRANTY;  without even the  implied warranty of MERCHANTABILITY --
-+-- or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License --
-+-- for  more details.  You should have  received  a copy of the GNU General --
-+-- Public License  distributed with GNARL; see file COPYING.  If not, write --
-+-- to  the  Free Software Foundation,  51  Franklin  Street,  Fifth  Floor, --
-+-- Boston, MA 02110-1301, USA.                                              --
++-- or FITNESS FOR A PARTICULAR PURPOSE.                                     --
 +--                                                                          --
-+-- As a special exception,  if other files  instantiate  generics from this --
-+-- unit, or you link  this unit with other files  to produce an executable, --
-+-- this  unit  does not  by itself cause  the resulting  executable  to  be --
-+-- covered  by the  GNU  General  Public  License.  This exception does not --
-+-- however invalidate  any other reasons why  the executable file  might be --
-+-- covered by the  GNU Public License.                                      --
++-- As a special exception under Section 7 of GPL version 3, you are granted --
++-- additional permissions described in the GCC Runtime Library Exception,   --
++-- version 3.1, as published by the Free Software Foundation.               --
++--                                                                          --
++-- You should have received a copy of the GNU General Public License and    --
++-- a copy of the GCC Runtime Library Exception along with this program;     --
++-- see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see    --
++-- <http://www.gnu.org/licenses/>.                                          --
 +--                                                                          --
 +-- GNARL was developed by the GNARL team at Florida State University.       --
 +-- Extensive contributions were provided by Ada Core Technologies, Inc.     --
@@ -2407,6 +2250,7 @@
 +with Ada.Unchecked_Conversion;
 +with Interfaces.C;
 +with System.Linux;
++with System.OS_Constants;
 +
 +package System.OS_Interface is
 +   pragma Preelaborate;
@@ -2484,12 +2328,12 @@
 +   SIGLTHRDBG : constant := System.Linux.SIGLTHRDBG;
 +
 +   SIGADAABORT : constant := SIGABRT;
-+   --  Change this if you want to use another signal for task abort.
-+   --  SIGTERM might be a good one.
++   --  Change this to use another signal for task abort. SIGTERM might be a
++   --  good one.
 +
 +   type Signal_Set is array (Natural range <>) of Signal;
 +
-+   Unmasked    : constant Signal_Set := (
++   Unmasked : constant Signal_Set := (
 +      SIGTRAP,
 +      --  To enable debugging on multithreaded applications, mark SIGTRAP to
 +      --  be kept unmasked.
@@ -2497,24 +2341,22 @@
 +      SIGBUS,
 +
 +      SIGTTIN, SIGTTOU, SIGTSTP,
-+      --  Keep these three signals unmasked so that background processes
-+      --  and IO behaves as normal "C" applications
++      --  Keep these three signals unmasked so that background processes and IO
++      --  behaves as normal "C" applications
 +
 +      SIGPROF,
 +      --  To avoid confusing the profiler
 +
 +      SIGKILL, SIGSTOP,
-+      --  These two signals actually cannot be masked;
-+      --  POSIX simply won't allow it.
++      --  These two signals actually can't be masked (POSIX won't allow it)
 +
 +      SIGLTHRRES, SIGLTHRCAN, SIGLTHRDBG);
-+      --  These three signals are used by GNU/LinuxThreads starting from
-+      --  glibc 2.1 (future 2.2).
++      --  These three signals are used by GNU/LinuxThreads starting from glibc
++      --  2.1 (future 2.2).
 +
-+   Reserved    : constant Signal_Set :=
-+   --  I am not sure why the following two signals are reserved.
-+   --  I guess they are not supported by this version of GNU/Linux.
-+     (SIGVTALRM, SIGUNUSED);
++   Reserved : constant Signal_Set := (SIGVTALRM, SIGUNUSED);
++   --  Not clear why these two signals are reserved. Perhaps they are not
++   --  supported by this version of GNU/Linux ???
 +
 +   type sigset_t is private;
 +
@@ -2632,17 +2474,19 @@
 +     Ada.Unchecked_Conversion (System.Address, Thread_Body);
 +
 +   type pthread_t is new unsigned_long;
-+   subtype Thread_Id        is pthread_t;
++   subtype Thread_Id is pthread_t;
 +
-+   function To_pthread_t is new Ada.Unchecked_Conversion
-+     (unsigned_long, pthread_t);
++   function To_pthread_t is
++     new Ada.Unchecked_Conversion (unsigned_long, pthread_t);
 +
-+   type pthread_mutex_t     is limited private;
-+   type pthread_cond_t      is limited private;
-+   type pthread_attr_t      is limited private;
-+   type pthread_mutexattr_t is limited private;
-+   type pthread_condattr_t  is limited private;
-+   type pthread_key_t       is private;
++   type pthread_mutex_t      is limited private;
++   type pthread_rwlock_t     is limited private;
++   type pthread_cond_t       is limited private;
++   type pthread_attr_t       is limited private;
++   type pthread_mutexattr_t  is limited private;
++   type pthread_rwlockattr_t is limited private;
++   type pthread_condattr_t   is limited private;
++   type pthread_key_t        is private;
 +
 +   PTHREAD_CREATE_DETACHED : constant := 1;
 +
@@ -2722,6 +2566,42 @@
 +
 +   function pthread_mutex_unlock (mutex : access pthread_mutex_t) return int;
 +   pragma Import (C, pthread_mutex_unlock, "pthread_mutex_unlock");
++
++   function pthread_rwlockattr_init
++     (attr : access pthread_rwlockattr_t) return int;
++   pragma Import (C, pthread_rwlockattr_init, "pthread_rwlockattr_init");
++
++   function pthread_rwlockattr_destroy
++     (attr : access pthread_rwlockattr_t) return int;
++   pragma Import (C, pthread_rwlockattr_destroy, "pthread_rwlockattr_destroy");
++
++   PTHREAD_RWLOCK_PREFER_READER_NP              : constant := 0;
++   PTHREAD_RWLOCK_PREFER_WRITER_NP              : constant := 1;
++   PTHREAD_RWLOCK_PREFER_WRITER_NONRECURSIVE_NP : constant := 2;
++
++   function pthread_rwlockattr_setkind_np
++     (attr : access pthread_rwlockattr_t;
++      pref : int) return int;
++   pragma Import
++     (C, pthread_rwlockattr_setkind_np, "__gnat_set_threadlock_kind");
++
++   function pthread_rwlock_init
++     (mutex : access pthread_rwlock_t;
++      attr  : access pthread_rwlockattr_t) return int;
++   pragma Import (C, pthread_rwlock_init, "pthread_rwlock_init");
++
++   function pthread_rwlock_destroy
++     (mutex : access pthread_rwlock_t) return int;
++   pragma Import (C, pthread_rwlock_destroy, "pthread_rwlock_destroy");
++
++   function pthread_rwlock_rdlock (mutex : access pthread_rwlock_t) return int;
++   pragma Import (C, pthread_rwlock_rdlock, "pthread_rwlock_rdlock");
++
++   function pthread_rwlock_wrlock (mutex : access pthread_rwlock_t) return int;
++   pragma Import (C, pthread_rwlock_wrlock, "pthread_rwlock_wrlock");
++
++   function pthread_rwlock_unlock (mutex : access pthread_rwlock_t) return int;
++   pragma Import (C, pthread_rwlock_unlock, "pthread_rwlock_unlock");
 +
 +   function pthread_condattr_init
 +     (attr : access pthread_condattr_t) return int;
@@ -2837,6 +2717,10 @@
 +   pragma Import (C, pthread_key_create, "pthread_key_create");
 +
 +   CPU_SETSIZE : constant := 1_024;
++   --  Size of the cpu_set_t mask on most linux systems (SUSE 11 uses 4_096).
++   --  This is kept for backward compatibility (System.Task_Info uses it), but
++   --  the run-time library does no longer rely on static masks, using
++   --  dynamically allocated masks instead.
 +
 +   type bit_field is array (1 .. CPU_SETSIZE) of Boolean;
 +   for bit_field'Size use CPU_SETSIZE;
@@ -2848,10 +2732,36 @@
 +   end record;
 +   pragma Convention (C, cpu_set_t);
 +
++   type cpu_set_t_ptr is access all cpu_set_t;
++   --  In the run-time library we use this pointer because the size of type
++   --  cpu_set_t varies depending on the glibc version. Hence, objects of type
++   --  cpu_set_t are allocated dynamically using the number of processors
++   --  available in the target machine (value obtained at execution time).
++
++   function CPU_ALLOC (count : size_t) return cpu_set_t_ptr;
++   pragma Import (C, CPU_ALLOC, "__gnat_cpu_alloc");
++   --  Wrapper around the CPU_ALLOC C macro
++
++   function CPU_ALLOC_SIZE (count : size_t) return size_t;
++   pragma Import (C, CPU_ALLOC_SIZE, "__gnat_cpu_alloc_size");
++   --  Wrapper around the CPU_ALLOC_SIZE C macro
++
++   procedure CPU_FREE (cpuset : cpu_set_t_ptr);
++   pragma Import (C, CPU_FREE, "__gnat_cpu_free");
++   --  Wrapper around the CPU_FREE C macro
++
++   procedure CPU_ZERO (count : size_t; cpuset : cpu_set_t_ptr);
++   pragma Import (C, CPU_ZERO, "__gnat_cpu_zero");
++   --  Wrapper around the CPU_ZERO_S C macro
++
++   procedure CPU_SET (cpu : int; count : size_t; cpuset : cpu_set_t_ptr);
++   pragma Import (C, CPU_SET, "__gnat_cpu_set");
++   --  Wrapper around the CPU_SET_S C macro
++
 +   function pthread_setaffinity_np
 +     (thread     : pthread_t;
 +      cpusetsize : size_t;
-+      cpuset     : access cpu_set_t) return int;
++      cpuset     : cpu_set_t_ptr) return int;
 +   pragma Import (C, pthread_setaffinity_np, "pthread_setaffinity_np");
 +   pragma Weak_External (pthread_setaffinity_np);
 +   --  Use a weak symbol because this function may be available or not,
@@ -2860,7 +2770,7 @@
 +   function pthread_attr_setaffinity_np
 +     (attr       : access pthread_attr_t;
 +      cpusetsize : size_t;
-+      cpuset     : access cpu_set_t) return int;
++      cpuset     : cpu_set_t_ptr) return int;
 +   pragma Import (C, pthread_attr_setaffinity_np,
 +                    "pthread_attr_setaffinity_np");
 +   pragma Weak_External (pthread_attr_setaffinity_np);
@@ -2869,7 +2779,8 @@
 +
 +private
 +
-+   type sigset_t is array (0 .. 127) of unsigned_char;
++   type sigset_t is
++     array (0 .. OS_Constants.SIZEOF_sigset - 1) of unsigned_char;
 +   pragma Convention (C, sigset_t);
 +   for sigset_t'Alignment use Interfaces.C.unsigned_long'Alignment;
 +
@@ -2893,35 +2804,50 @@
 +   end record;
 +   pragma Convention (C, timespec);
 +
++   type unsigned_long_long_t is mod 2 ** 64;
++   --  Local type only used to get the alignment of this type below
++
++   subtype char_array is Interfaces.C.char_array;
++
 +   type pthread_attr_t is record
-+      detachstate   : int;
-+      schedpolicy   : int;
-+      schedparam    : struct_sched_param;
-+      inheritsched  : int;
-+      scope         : int;
-+      guardsize     : size_t;
-+      stackaddr_set : int;
-+      stackaddr     : System.Address;
-+      stacksize     : size_t;
++      Data : char_array (1 .. OS_Constants.PTHREAD_ATTR_SIZE);
 +   end record;
 +   pragma Convention (C, pthread_attr_t);
++   for pthread_attr_t'Alignment use Interfaces.C.unsigned_long'Alignment;
 +
 +   type pthread_condattr_t is record
-+      dummy : int;
++      Data : char_array (1 .. OS_Constants.PTHREAD_CONDATTR_SIZE);
 +   end record;
 +   pragma Convention (C, pthread_condattr_t);
++   for pthread_condattr_t'Alignment use Interfaces.C.int'Alignment;
 +
 +   type pthread_mutexattr_t is record
-+      mutexkind : int;
-+   end record;
++      Data : char_array (1 .. OS_Constants.PTHREAD_MUTEXATTR_SIZE);
++   end  record;
 +   pragma Convention (C, pthread_mutexattr_t);
++   for pthread_mutexattr_t'Alignment use Interfaces.C.int'Alignment;
 +
-+   type pthread_mutex_t is new System.Linux.pthread_mutex_t;
++   type pthread_mutex_t is record
++      Data : char_array (1 .. OS_Constants.PTHREAD_MUTEX_SIZE);
++   end record;
++   pragma Convention (C, pthread_mutex_t);
++   for pthread_mutex_t'Alignment use Interfaces.C.unsigned_long'Alignment;
 +
-+   type unsigned_long_long_t is mod 2 ** 64;
-+   --  Interfaces.C.Extensions isn't preelaborated so cannot be with-ed
++   type pthread_rwlockattr_t is record
++      Data : char_array (1 .. OS_Constants.PTHREAD_RWLOCKATTR_SIZE);
++   end record;
++   pragma Convention (C, pthread_rwlockattr_t);
++   for pthread_rwlockattr_t'Alignment use Interfaces.C.unsigned_long'Alignment;
 +
-+   type pthread_cond_t is array (0 .. 47) of unsigned_char;
++   type pthread_rwlock_t is record
++      Data : char_array (1 .. OS_Constants.PTHREAD_RWLOCK_SIZE);
++   end record;
++   pragma Convention (C, pthread_rwlock_t);
++   for pthread_rwlock_t'Alignment use Interfaces.C.unsigned_long'Alignment;
++
++   type pthread_cond_t is record
++      Data : char_array (1 .. OS_Constants.PTHREAD_COND_SIZE);
++   end record;
 +   pragma Convention (C, pthread_cond_t);
 +   for pthread_cond_t'Alignment use unsigned_long_long_t'Alignment;
 +
@@ -8993,6 +8919,224 @@
 +   ZCX_By_Default            : constant Boolean := False;
 +
 +end System;
+--- gcc/ada/terminals.c.orig
++++ gcc/ada/terminals.c
+@@ -1015,7 +1015,11 @@
+ #   include <sys/stropts.h>
+ #endif
+ 
++#ifdef __ANDROID__
++#define CDISABLE _PC_VDISABLE
++#else
+ #define CDISABLE _POSIX_VDISABLE
++#endif
+ 
+ /* On HP-UX and Sun system, there is a bzero function but with a different
+    signature. Use memset instead */
+--- /dev/null
++++ gcc/ada/traceback_symbolic.c
+@@ -0,0 +1,201 @@
++/*
++  Copyright (C) 1999 by Juergen Pfeifer <juergen.pfeifer@gmx.net>
++  Ada for Linux Team (ALT)
++  Heavily modified by John Marino <http://www.dragonlace.net>
++
++  Permission is hereby granted, free of charge, to any person obtaining a
++  copy of this software and associated documentation files (the
++  "Software"), to deal in the Software without restriction, including
++  without limitation the rights to use, copy, modify, merge, publish,
++  distribute, distribute with modifications, sublicense, and/or sell
++  copies of the Software, and to permit persons to whom the Software is
++  furnished to do so, subject to the following conditions:
++
++  The above copyright notice and this permission notice shall be included
++  in all copies or substantial portions of the Software.
++
++  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
++  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
++  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
++  IN NO EVENT SHALL THE ABOVE COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
++  DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
++  OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR
++  THE USE OR OTHER DEALINGS IN THE SOFTWARE.
++
++  Except as contained in this notice, the name(s) of the above copyright
++  holders shall not be used in advertising or otherwise to promote the
++  sale, use or other dealings in this Software without prior written
++  authorization.
++*/
++
++#ifdef IS_CROSS
++
++
++/*
++ * Running addr2line doesn't make sense for cross-compiled objects.
++ * Create a dummy function to satisfy g-trasym.o
++ */
++
++void
++convert_addresses (const char *file_name ATTRIBUTE_UNUSED,
++                   void *addrs ATTRIBUTE_UNUSED,
++                   int n_addr ATTRIBUTE_UNUSED,
++                   void *buf ATTRIBUTE_UNUSED,
++                   int *len ATTRIBUTE_UNUSED)
++{
++  *len = 0;
++}
++
++#else
++
++
++/*
++ * use the external program /usr/bin/addr2line to convert addresses
++ * into file names and line numbers
++ */
++
++#include <sys/types.h>
++#include <stdlib.h>
++#include <unistd.h>
++#include <string.h>
++#include <signal.h>
++
++#define CLOSE_SENDPIPE close(sendpipe[0]); close(sendpipe[1])
++#define CLOSE_READPIPE close(readpipe[0]); close(readpipe[1])
++#define DUP2CLOSE(oldfd, newfd) dup2(oldfd, newfd); close(oldfd);
++#define RESTSIG sigaction(SIGPIPE,&oact,NULL)
++
++#define MAX_LINE     1024
++#define PARENT_READ  readpipe[0]
++#define CHILD_WRITE  readpipe[1]
++#define CHILD_READ   sendpipe[0]
++#define PARENT_WRITE sendpipe[1]
++
++#if defined (__sun__)
++#define ADDR2LINE_PROG        "/usr/gnu/bin/addr2line"
++#else
++#define ADDR2LINE_PROG        "/usr/bin/addr2line"
++#endif
++
++void
++convert_addresses (const char *file_name,
++                   void *addrs,
++                   int   n_addr,
++                   void *buf,
++                   int  *len)
++{
++  int max_len = *len;
++  pid_t childpid;
++
++  struct sigaction act, oact;
++
++  int sendpipe[2] = {-1,-1},        /* parent -> child */
++      readpipe[2] = {-1,-1};        /* parent <- child */
++
++  *len = 0;
++  act.sa_handler = SIG_IGN;
++  sigemptyset(&act.sa_mask);
++  act.sa_flags = 0;
++  if (sigaction(SIGPIPE,&act,&oact) < 0)
++    return;
++
++  if (pipe(sendpipe) < 0) { RESTSIG; return; }
++  if (pipe(readpipe) < 0) { CLOSE_SENDPIPE; RESTSIG; return; }
++  if ((childpid = fork()) < 0) {
++    CLOSE_READPIPE;
++    CLOSE_SENDPIPE;
++    RESTSIG;
++    return;
++  }
++
++  if (childpid == 0) {    /* child process */
++    close(PARENT_WRITE);
++    close(PARENT_READ);
++    if ((CHILD_READ != STDIN_FILENO) && (CHILD_WRITE != STDOUT_FILENO)) {
++      if ((CHILD_READ == STDOUT_FILENO) && (CHILD_WRITE == STDIN_FILENO)) {
++        const int temp_fd = dup(CHILD_WRITE);
++        close (CHILD_WRITE);
++        DUP2CLOSE (CHILD_READ, STDIN_FILENO);
++        DUP2CLOSE (temp_fd,    STDOUT_FILENO);
++      }
++      else if ((CHILD_READ == STDIN_FILENO) && (CHILD_WRITE > 1)) {
++        DUP2CLOSE (CHILD_WRITE, STDOUT_FILENO);
++      }
++      else if ((CHILD_READ > 1) && (CHILD_WRITE == STDOUT_FILENO)) {
++        DUP2CLOSE (CHILD_READ, STDIN_FILENO);
++      }
++      else if ((CHILD_READ > 1) && (CHILD_WRITE == STDIN_FILENO)) {
++        DUP2CLOSE (CHILD_WRITE, STDOUT_FILENO);
++        DUP2CLOSE (CHILD_READ,  STDIN_FILENO);
++      }
++      else {
++        /* CHILD_READ >= 1 and CHILD_WRITE > 1 */
++        DUP2CLOSE (CHILD_READ,  STDIN_FILENO);
++        DUP2CLOSE (CHILD_WRITE, STDOUT_FILENO);
++      }
++    }
++    /* As pointed out by Florian Weimer to JP, it is a security threat to call
++       the script with a user defined environment and using the path. That
++       would be Trojans pleasure.  Therefore the absolute path to addr2line
++       and an empty environment is used. That should be safe.
++    */
++    char *const argv[] = { "addr2line",
++                           "-e", file_name,
++                           "--demangle=gnat",
++                           "--functions",
++                           "--basenames",
++                           NULL };
++    char *const envp[] = { NULL };
++    if (execve(ADDR2LINE_PROG, argv, envp) < 0) {
++      close (CHILD_WRITE);
++      close (CHILD_READ);
++      RESTSIG;
++      exit (1);
++    }
++  }
++
++  /* Below this line is parent process */
++  int i, n;
++  char hex[16];
++  char line[MAX_LINE + 1];
++  char *p;
++  char *s = buf;
++  long *trace_address = addrs;
++
++  close(CHILD_WRITE);
++  close(CHILD_READ);
++
++  for(i=0; i < n_addr; i++) {
++    snprintf(hex,sizeof(hex),"%#lx\n",*trace_address);
++    write(PARENT_WRITE,hex,strlen(hex));
++    n = read(PARENT_READ,line,MAX_LINE);
++    if (n<=0)
++      break;
++
++    line[n]=0;
++    /* We have approx. 16 additional chars for "%#lx in " clause.
++       We use this info to prevent a buffer overrun. */
++    if (n + 16 + (*len) > max_len)
++      break;
++
++    p = strchr(line,'\n');
++    if (p) {
++      if (*(p+1)) {
++        *p = 0;
++        *len += snprintf(s, (max_len - (*len)), "%#lx in %s at %s",
++                         *trace_address, line, p+1);
++      }
++      else {
++        *len += snprintf(s, (max_len - (*len)), "%#lx at %s",
++                         *trace_address, line);
++      }
++      s = buf + (*len);
++    }
++    trace_address += 1;
++  }
++  close (PARENT_WRITE);
++  close (PARENT_READ);
++  RESTSIG;
++}
++
++#endif
 --- gcc/ada/tracebak.c.orig
 +++ gcc/ada/tracebak.c
 @@ -217,6 +217,23 @@
@@ -9029,7 +9173,16 @@
    s-inmaop.adb<s-inmaop-posix.adb \
    s-intman.adb<s-intman-solaris.adb \
    s-mudido.adb<s-mudido-affinity.adb \
-@@ -1205,14 +1206,21 @@
+@@ -1080,6 +1081,8 @@
+   TOOLS_TARGET_PAIRS=mlib-tgt-specific.adb<mlib-tgt-specific-solaris.adb
+ 
+   EH_MECHANISM=-gcc
++  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
++  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
+   THREADSLIB = -lposix4 -lthread
+   MISCLIB = -lposix4 -lnsl -lsocket
+   SO_OPTS = -Wl,-h,
+@@ -1205,14 +1208,21 @@
    LIBRARY_VERSION := $(LIB_VERSION)
  endif
  
@@ -9053,7 +9206,7 @@
    s-taprop.adb<s-taprop-posix.adb \
    s-taspri.ads<s-taspri-posix.ads \
    s-tpopsp.adb<s-tpopsp-posix.adb \
-@@ -1220,10 +1228,11 @@
+@@ -1220,10 +1230,13 @@
    $(X86_TARGET_PAIRS) \
    system.ads<system-freebsd-x86.ads
  
@@ -9061,13 +9214,15 @@
 -  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
    GNATLIB_SHARED = gnatlib-shared-dual
  
++  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
++  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
 +  EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
 +  EXTRA_GNATRTL_TASKING_OBJS=a-exetim.o
 +
    EH_MECHANISM=-gcc
    THREADSLIB= -lpthread
    GMEM_LIB = gmemlib
-@@ -1231,14 +1240,21 @@
+@@ -1231,14 +1244,21 @@
    MISCLIB = -lutil
  endif
  
@@ -9091,7 +9246,7 @@
    s-taprop.adb<s-taprop-posix.adb \
    s-taspri.ads<s-taspri-posix.ads \
    s-tpopsp.adb<s-tpopsp-posix.adb \
-@@ -1246,10 +1262,11 @@
+@@ -1246,10 +1266,13 @@
    $(X86_64_TARGET_PAIRS) \
    system.ads<system-freebsd-x86_64.ads
  
@@ -9099,13 +9254,15 @@
 -  mlib-tgt-specific.adb<mlib-tgt-specific-linux.adb
    GNATLIB_SHARED = gnatlib-shared-dual
  
++  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
++  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
 +  EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
 +  EXTRA_GNATRTL_TASKING_OBJS=a-exetim.o
 +
    EH_MECHANISM=-gcc
    THREADSLIB= -lpthread
    GMEM_LIB = gmemlib
-@@ -1257,6 +1274,268 @@
+@@ -1257,6 +1280,278 @@
    MISCLIB = -lutil
  endif
  
@@ -9133,6 +9290,8 @@
 +
 +  GNATLIB_SHARED = gnatlib-shared-dual
 +
++  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
++  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
 +  EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
 +  EXTRA_GNATRTL_TASKING_OBJS=a-exetim.o
 +
@@ -9167,6 +9326,8 @@
 +
 +  GNATLIB_SHARED = gnatlib-shared-dual
 +
++  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
++  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
 +  EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
 +  EXTRA_GNATRTL_TASKING_OBJS=a-exetim.o
 +
@@ -9201,6 +9362,8 @@
 +
 +  GNATLIB_SHARED = gnatlib-shared-dual
 +
++  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
++  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
 +  EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
 +  EXTRA_GNATRTL_TASKING_OBJS=a-exetim.o
 +
@@ -9235,6 +9398,8 @@
 +
 +  GNATLIB_SHARED = gnatlib-shared-dual
 +
++  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
++  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
 +  EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
 +  EXTRA_GNATRTL_TASKING_OBJS=a-exetim.o
 +
@@ -9278,6 +9443,8 @@
 +
 +  GNATLIB_SHARED = gnatlib-shared-dual
 +
++  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
++  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
 +  EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
 +  EXTRA_GNATRTL_TASKING_OBJS=a-exetim.o
 +
@@ -9321,6 +9488,8 @@
 +
 +  GNATLIB_SHARED = gnatlib-shared-dual
 +
++  EXTRA_LIBGNAT_SRCS+= traceback_symbolic.c
++  EXTRA_LIBGNAT_OBJS+= traceback_symbolic.o
 +  EXTRA_GNATRTL_NONTASKING_OBJS=g-sse.o g-ssvety.o
 +  EXTRA_GNATRTL_TASKING_OBJS=a-exetim.o
 +
@@ -9336,8 +9505,6 @@
 +ifeq ($(strip $(filter-out arm% android eabi,$(targ))),)
 +  LIBGNAT_TARGET_PAIRS = \
 +  a-intnam.ads<a-intnam-linux.ads \
-+  g-trasym.ads<g-trasym-unimplemented.ads \
-+  g-trasym.adb<g-trasym-unimplemented.adb \
 +  s-inmaop.adb<s-inmaop-posix.adb \
 +  s-intman.adb<s-intman-posix.adb \
 +  s-linux.ads<s-linux.ads \

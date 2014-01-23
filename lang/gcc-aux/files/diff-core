@@ -49,41 +49,44 @@
    tmake_file="t-slibgcc"
    gas=yes
    gnu_ld=yes
-@@ -903,7 +927,32 @@
+@@ -903,7 +927,35 @@
  	tm_file="dbxelf.h elfos.h arm/unknown-elf.h arm/elf.h arm/aout.h arm/arm.h arm/rtems-elf.h rtems.h newlib-stdint.h"
  	tmake_file="arm/t-arm arm/t-arm-elf t-rtems arm/t-rtems"
  	;;
 -arm*-*-eabi* | arm*-*-symbianelf* | arm*-*-rtems*)
 +arm*-android-eabi*)
-+  gas=yes
-+  gnu_ld=yes
-+  case ${enable_threads} in
-+    "" | yes | posix) thread_file='posix' ;;
-+  esac
-+  tm_file="dbxelf.h elfos.h gnu-user.h linux.h linux-android.h glibc-stdint.h"
-+  tm_file="$tm_file arm/elf.h arm/linux-gas.h arm/linux-elf.h arm/bpabi.h arm/linux-eabi.h"
-+  tm_file="$tm_file ../../libgcc/config/arm/bpabi-lib.h arm/aout.h arm/arm.h"
++	gas=yes
++	gnu_ld=yes
++	case ${enable_threads} in
++	  "" | yes | posix) thread_file='posix' ;;
++	esac
++	tm_file="dbxelf.h elfos.h gnu-user.h linux.h linux-android.h glibc-stdint.h"
++	tm_file="$tm_file arm/elf.h arm/linux-gas.h arm/linux-elf.h"
++	tm_file="$tm_file arm/bpabi.h arm/linux-eabi.h arm/aout.h arm/arm.h"
 +
-+  tm_defines="$tm_defines DEFAULT_LIBC=LIBC_BIONIC ANDROID_DEFAULT=1"
-+  case $target in
-+  arm*b-*)
-+    tm_defines="$tm_defines TARGET_BIG_ENDIAN_DEFAULT=1"
-+    ;;
-+  esac
-+  extra_options="$extra_options linux.opt linux-android.opt"
-+  default_use_cxa_atexit=yes
-+  use_gcc_tgmath=no
-+  use_gcc_stdint=wrap
++	tmake_file="${tmake_file} arm/t-arm arm/t-arm-elf"
++	tmake_file="$tmake_file arm/t-bpabi arm/t-linux-eabi"
 +
-+  # The BPABI long long divmod functions return a 128-bit value in registers r0-r3.
-+  # Correctly modeling that requires the use of TImode.
-+  need_64bit_hwint=yes
-+  ;;
++	tm_defines="$tm_defines DEFAULT_LIBC=LIBC_BIONIC ANDROID_DEFAULT=1"
++	case $target in
++	arm*b-*)
++	    tm_defines="$tm_defines TARGET_BIG_ENDIAN_DEFAULT=1"
++	    ;;
++	esac
++	extra_options="$extra_options linux.opt linux-android.opt"
++	default_use_cxa_atexit=yes
++	use_gcc_tgmath=no
++	use_gcc_stdint=wrap
++
++	# The BPABI long long divmod functions return a 128-bit value in registers r0-r3.
++	# Correctly modeling that requires the use of TImode.
++	need_64bit_hwint=yes
++	;;
 +arm*-*-symbianelf* | arm*-*-rtems*)
  	# The BPABI long long divmod functions return a 128-bit value in
  	# registers r0-r3.  Correctly modeling that requires the use of
  	# TImode.
-@@ -912,11 +961,6 @@
+@@ -912,11 +964,6 @@
  	tm_file="dbxelf.h elfos.h arm/unknown-elf.h arm/elf.h arm/bpabi.h"
  	tmake_file="arm/t-arm arm/t-arm-elf"
  	case ${target} in
@@ -95,7 +98,7 @@
  	arm*-*-rtems*)
  	  tm_file="${tm_file} rtems.h arm/rtems-eabi.h newlib-stdint.h"
  	  tmake_file="${tmake_file} arm/t-bpabi t-rtems arm/t-rtems-eabi"
-@@ -1216,19 +1260,31 @@
+@@ -1216,19 +1263,31 @@
  x86_64-*-elf*)
  	tm_file="${tm_file} i386/unix.h i386/att.h dbxelf.h elfos.h newlib-stdint.h i386/i386elf.h i386/x86-64.h"
  	;;
@@ -129,7 +132,7 @@
  	;;
  i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
  	tm_file="i386/i386.h i386/unix.h i386/bsd.h i386/gas.h i386/gstabs.h openbsd-oldgas.h openbsd.h i386/openbsd.h"
-@@ -3577,6 +3633,8 @@
+@@ -3577,6 +3636,8 @@
  		;;
  	i[34567]86-*-cygwin* | i[34567]86-*-mingw* | x86_64-*-mingw*)
  		;;
@@ -727,16 +730,10 @@
  /* Do not allow basename to be used if there is no prototype seen.  We
 --- libgcc/config.host.orig
 +++ libgcc/config.host
-@@ -174,6 +174,17 @@
+@@ -174,6 +174,11 @@
    tmake_file="$tmake_file t-darwin ${cpu_type}/t-darwin t-libgcc-pic t-slibgcc-darwin"
    extra_parts="crt3.o crttms.o crttme.o"
    ;;
-+arm*-android-eabi*)
-+  tmake_file="t-slibgcc-elf-ver t-linux arm/t-arm"
-+  tmake_file="$tmake_file arm/t-arm-elf arm/t-bpabi arm/t-linux-eabi t-slibgcc-libgcc"
-+  tmake_file="$tmake_file arm/t-linux-androideabi arm/t-arm-softfp soft-fp/t-softfp"
-+  extra_parts="crtbegin.o crtbeginS.o crtbeginT.o crtend.o crtendS.o"
-+  ;;
 +*-*-dragonfly*)
 +  tmake_file="$tmake_file t-crtstuff-pic t-libgcc-pic t-eh-dw2-dip"
 +  tmake_file="$tmake_file t-slibgcc t-slibgcc-gld t-slibgcc-elf-ver"
@@ -745,7 +742,7 @@
  *-*-freebsd*)
    # This is the generic ELF configuration of FreeBSD.  Later
    # machine-specific sections may refine and add to this
-@@ -202,7 +213,8 @@
+@@ -202,7 +207,8 @@
    extra_parts="crtbegin.o crtbeginS.o crtend.o crtendS.o"
    ;;
  *-*-netbsd*)
@@ -755,7 +752,7 @@
    # NetBSD 1.7 and later are set up to use GCC's crtstuff for
    # ELF configurations.  We will clear extra_parts in the
    # a.out configurations.
-@@ -266,8 +278,10 @@
+@@ -266,8 +272,10 @@
  esac
  
  case ${host} in
@@ -768,7 +765,25 @@
    enable_execute_stack=enable-execute-stack-mprotect.c
    ;;
  i[34567]86-*-mingw* | x86_64-*-mingw*)
-@@ -358,11 +372,11 @@
+@@ -318,6 +326,17 @@
+ 	tmake_file="$tmake_file arm/t-arm arm/t-vxworks t-fdpbit"
+ 	extra_parts="$extra_parts crti.o crtn.o"
+ 	;;
++arm*-android-eabi*)
++	extra_parts="crtbegin.o crtbeginS.o crtbeginT.o crtend.o crtendS.o"
++
++	tmake_file="$tmake_file t-crtstuff-pic t-libgcc-pic t-eh-dw2-dip t-slibgcc t-slibgcc-gld t-slibgcc-elf-ver"
++	tmake_file="$tmake_file arm/t-arm t-fixedpoint-gnu-prefix"
++	tmake_file="$tmake_file arm/t-elf arm/t-bpabi arm/t-linux-eabi t-slibgcc-libgcc"
++	tmake_file="$tmake_file t-softfp-sfdf t-softfp-excl arm/t-softfp t-softfp"
++
++	tm_file="$tm_file arm/bpabi-lib.h"
++	unwind_header=config/arm/unwind-arm.h
++	;;
+ arm*-*-freebsd*)
+ 	tmake_file="$tmake_file arm/t-arm arm/t-strongarm-elf t-fdpbit"
+ 	;;
+@@ -358,11 +377,11 @@
  	tmake_file="$tmake_file arm/t-arm arm/t-elf t-softfp-sfdf t-softfp-excl arm/t-softfp t-softfp"
  	extra_parts="$extra_parts crti.o crtn.o"
  	;;
@@ -782,7 +797,7 @@
  	  tmake_file="${tmake_file} arm/t-bpabi"
  	  extra_parts="crtbegin.o crtend.o crti.o crtn.o"
  	  ;;
-@@ -526,16 +540,29 @@
+@@ -526,16 +545,29 @@
  x86_64-*-elf*)
  	tmake_file="$tmake_file i386/t-crtstuff t-crtstuff-pic t-libgcc-pic"
  	;;
@@ -812,7 +827,7 @@
  	;;
  i[34567]86-*-openbsd2.*|i[34567]86-*openbsd3.[0123])
  	;;
-@@ -1167,6 +1194,7 @@
+@@ -1167,6 +1199,7 @@
    i[34567]86-*-gnu* | \
    i[34567]86-*-solaris2* | x86_64-*-solaris2.1[0-9]* | \
    i[34567]86-*-cygwin* | i[34567]86-*-mingw* | x86_64-*-mingw* | \
