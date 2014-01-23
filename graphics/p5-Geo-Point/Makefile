@@ -2,13 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Geo-Point
-PORTVERSION=	0.94
+PORTVERSION=	0.96
 CATEGORIES=	graphics devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Module Tries To Abstract Coordinate Systems
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Geo-Distance>=0.06:${PORTSDIR}/math/p5-Geo-Distance \
 		p5-Geo-Proj4>=1.00:${PORTSDIR}/graphics/p5-Geo-Proj4 \
