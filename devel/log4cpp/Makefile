@@ -7,17 +7,15 @@ CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}.x%20%28new%29/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
-COMMENT=	A library of C++ classes for flexible logging
+COMMENT=	Library of C++ classes for flexible logging
 
+USES=		gmake pathfix
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pthreads --disable-html-docs
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-#.include "Makefile.man"
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # doxygen build is BROKEN atm
@@ -40,6 +38,5 @@ CONFIGURE_ARGS+=	--disable-doxygen
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| -pedantic||g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
