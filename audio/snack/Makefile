@@ -13,42 +13,30 @@ COMMENT=	A sound toolkit for scripting languages
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 
-USE_TK=		84+
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	VORBIS DOCS
+OPTIONS_SUB=	yes
 
+USES=		tk
+USE_LDCONFIG=	${PREFIX}/lib/snack${PORTVERSION:R}
 GNU_CONFIGURE=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	*
-.endif
-
-PLIST_SUB=	SNACK_VER=${PORTVERSION:R}
-
 CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 		--with-tk=${TK_LIBDIR}
 MAKE_ENV=	prefix=${PREFIX} exec_prefix=${PREFIX}
 
-CFLAGS+=	-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} \
-		-I${LOCALBASE}/include
+PLIST_SUB=	SNACK_VER=${PORTVERSION:R}
+PORTDOCS=	*
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MVORBIS}
 LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
-CONFIGURE_ARGS+=	--with-ogg-include=${LOCALBASE}/include \
-			--with-ogg-lib=${LOCALBASE}/lib
+CONFIGURE_ARGS+=--with-ogg-include=${LOCALBASE}/include \
+		--with-ogg-lib=${LOCALBASE}/lib
 ALL_TARGET=	all libsnackogg.so
-PLIST_SUB+=	VORBIS=""
-.else
-PLIST_SUB+=	VORBIS="@comment "
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../doc/* ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../doc/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
