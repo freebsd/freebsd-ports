@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	meld
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.4
 CATEGORIES=	textproc devel python
 MASTER_SITES=	GNOME
 
@@ -13,7 +13,10 @@ LICENSE=	GPLv2
 
 USE_XZ=		yes
 USE_GNOME=	pygnome2
-USES=		desktop-file-utils gmake shared-mime-info
+USES=		desktop-file-utils gmake shared-mime-info shebangfix
+python_OLD_CMD=	${SETENV} python
+python_CMD=	${PYTHON_CMD}
+SHEBANG_FILES=	bin/meld
 USE_PYTHON=	2
 MAKE_ARGS=	prefix=${PREFIX}
 INSTALLS_ICONS=	yes
@@ -25,21 +28,12 @@ OPTIONS_SUB=		yes
 NLS_USES=		gettext
 
 PYGNOMEDESKTOP_DESC=	Code syntax highlighting (many dependencies)
-PYGNOMEDESKTOP_USE=	gnome=pygnomedesktop
-
-.include <bsd.port.options.mk>
+PYGNOMEDESKTOP_USE=	GNOME=pygnomedesktop
 
 post-patch:
-	@${REINPLACE_CMD} '/docdir_/d' ${WRKSRC}/Makefile
-.if !${PORT_OPTIONS:MNLS}
-	@${REINPLACE_CMD} '/po install/d' ${WRKSRC}/Makefile
-.endif
-
-.for file in help/C/Makefile help/es/Makefile help/fr/Makefile
-	@${REINPLACE_CMD} -e \
-		's|$$(localstatedir)/lib/scrollkeeper|/var/db/scrollkeeper|g ; \
-		 s|^LANG :=|LANG_ :=|g ; \
-		 s|$$(LANG)|$$(LANG_)|g' ${WRKSRC}/${file}
-.endfor
+	@${REINPLACE_CMD} -e 's|^LANG :=|LANG_ :=|g ; s|$$(LANG)|$$(LANG_)|g ; \
+		s|$$(localstatedir)/lib/scrollkeeper|/var/db/scrollkeeper|g' \
+		${WRKSRC}/help/C/Makefile ${WRKSRC}/help/es/Makefile \
+		${WRKSRC}/help/fr/Makefile
 
 .include <bsd.port.mk>
