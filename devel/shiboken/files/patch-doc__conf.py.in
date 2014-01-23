@@ -1,0 +1,11 @@
+--- doc/conf.py.in.orig	2013-12-25 19:56:52.000000000 +0200
++++ doc/conf.py.in	2013-12-25 19:57:00.000000000 +0200
+@@ -22,7 +22,7 @@
+ 
+ # Add any Sphinx extension module names here, as strings. They can be extensions
+ # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
+-extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.ifconfig', 'sphinx.ext.refcounting', 'sphinx.ext.coverage']
++extensions = ['sphinx.ext.autodoc', 'sphinx.ext.doctest', 'sphinx.ext.ifconfig', 'sphinx.ext.coverage']
+ 
+ rst_epilog = """
+ .. |project| replace:: Shiboken
