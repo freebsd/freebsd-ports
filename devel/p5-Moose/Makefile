@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Moose
-PORTVERSION=	2.1005
+PORTVERSION=	2.1202
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -20,9 +20,11 @@ BUILD_DEPENDS=	p5-Class-Load>=0.09:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Class-Load-XS>=0.01:${PORTSDIR}/devel/p5-Class-Load-XS \
 		p5-Data-OptList>=0.107:${PORTSDIR}/devel/p5-Data-OptList \
 		p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
+		p5-Devel-StackTrace>=1.30:${PORTSDIR}/devel/p5-Devel-StackTrace \
 		p5-Eval-Closure>=0.04:${PORTSDIR}/devel/p5-Eval-Closure \
 		p5-List-MoreUtils>=0.28:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-MRO-Compat>=0.05:${PORTSDIR}/devel/p5-MRO-Compat \
+		p5-Module-Runtime>=0.012:${PORTSDIR}/devel/p5-Module-Runtime \
 		p5-Package-DeprecationManager>=0.10:${PORTSDIR}/devel/p5-Package-DeprecationManager \
 		p5-Package-Stash>=0.32:${PORTSDIR}/devel/p5-Package-Stash \
 		p5-Package-Stash-XS>=0.24:${PORTSDIR}/devel/p5-Package-Stash-XS \
@@ -32,13 +34,11 @@ BUILD_DEPENDS=	p5-Class-Load>=0.09:${PORTSDIR}/devel/p5-Class-Load \
 		p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
 		p5-Try-Tiny>=0.02:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.007:${PORTSDIR}/devel/p5-CPAN-Meta-Check \
-		p5-DateTime-Format-MySQL>=0:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \
+TEST_DEPENDS=	p5-DateTime-Format-MySQL>=0:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \
 		p5-Declare-Constraints-Simple>=0:${PORTSDIR}/devel/p5-Declare-Constraints-Simple \
 		p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String \
 		p5-Module-Refresh>=0:${PORTSDIR}/devel/p5-Module-Refresh \
 		p5-SUPER>=0:${PORTSDIR}/devel/p5-SUPER \
-		p5-Test-CheckDeps>=0.006:${PORTSDIR}/devel/p5-Test-CheckDeps \
 		p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-Test-Fatal>=0.001:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
