@@ -1,0 +1,36 @@
+# Created by: David Naylor <dbn@FreeBSD.org>
+# $FreeBSD$
+
+PORTNAME=	ffmpeg
+PORTVERSION=	1.2.4
+CATEGORIES=	multimedia python
+MASTER_SITES=	LOCAL/dbn/${PORTNAME}
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME}-android-${PORTVERSION}
+
+MAINTAINER=	dbn@FreeBSD.org
+COMMENT=	Python bindings for FFmpeg
+
+LICENSE=	LGPL20 LGPL21 LGPL3
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython
+LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+
+MAKE_ENV=	FFMPEG_LIBRARIES="SDL SDL_mixer" FFMPEG_LIBRARY_DIRS=${LOCALBASE}/lib \
+		FFMPEG_INCLUDES=${LOCALBASE}/include/SDL FFMPEG_ROOT=${LOCALBASE}
+GH_ACCOUNT=	tito
+GH_PROJECT=	${PORTNAME}-android
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	6636c3a
+USE_GITHUB=	yes
+USE_PYTHON=	2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+USE_SDL=	mixer
+WRKSRC_SUBDIR=	python
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/ffmpeg/_ffmpeg.so
+
+.include <bsd.port.mk>
