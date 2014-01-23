@@ -11,9 +11,9 @@ COMMENT=		USB radio control utility
 
 RUN_DEPENDS=		snack>=2.2.10_4:${PORTSDIR}/audio/snack
 
+USES=			tcl
 USE_LDCONFIG=		yes
 NO_STAGE=	yes
-USE_TCL=		yes
 MAKE_ENV=		NO_PROFILE=yes
 
 MAN1=			ufmcontrol.1
