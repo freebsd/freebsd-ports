@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	anki
-PORTVERSION=	2.0.20
+PORTVERSION=	2.0.21
 CATEGORIES=	games python
 MASTER_SITES=	http://ankisrs.net/download/mirror/
 EXTRACT_SUFX=	.tgz
@@ -24,7 +24,8 @@ RUN_DEPENDS=	lame:${PORTSDIR}/audio/lame \
 		${PYTHON_PKGNAMEPREFIX}qt4-webkit>=4.4:${PORTSDIR}/www/py-qt4-webkit \
 		${PYTHON_PKGNAMEPREFIX}send2trash>0:${PORTSDIR}/deskutils/py-send2trash
 
-USES=		desktop-file-utils shared-mime-info
+USES=		desktop-file-utils shared-mime-info shebangfix
+SHEBANG_FILES=	tools/build_ui.sh tools/tests.sh
 USE_PYTHON=	2
 USE_QT4=	network_run webkit_run
 
