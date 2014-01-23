@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Business-ISBN
-PORTVERSION=	2.06
+PORTVERSION=	2.07
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,16 +24,9 @@ XISBN_DESC=	xISBN support
 USES=		perl5
 USE_PERL5=	configure
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBARCODE}
-BUILD_DEPENDS+=	p5-GD-Barcode>=0:${PORTSDIR}/graphics/p5-GD-Barcode
-RUN_DEPENDS+=	p5-GD-Barcode>=0:${PORTSDIR}/graphics/p5-GD-Barcode
-.endif
-
-.if ${PORT_OPTIONS:MXISBN}
-BUILD_DEPENDS+=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS+=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-.endif
+BARCODE_BUILD_DEPENDS=	p5-GD-Barcode>=0:${PORTSDIR}/graphics/p5-GD-Barcode
+BARCODE_RUN_DEPENDS=	p5-GD-Barcode>=0:${PORTSDIR}/graphics/p5-GD-Barcode
+XISBN_BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
+XISBN_RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 .include <bsd.port.mk>
