@@ -10,9 +10,13 @@ DISTNAME=	${PORTNAME:S|^c||}-${PORTVERSION:R}-${PORTVERSION:E}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	sylvio@FreeBSD.org
-COMMENT=	An enhanced version of 'dialog' to work with ncurses
+COMMENT=	Enhanced version of 'dialog' to work with ncurses
+
+OPTIONS_DEFINE=	EXAMPLES
 
 LICENSE=	LGPL21
+
+USES=		ncurses
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
@@ -20,25 +24,18 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-widec \
 		--includedir=${PREFIX}/include/${PORTNAME} \
 		--with-libtool \
+		--with-curses-dir=${NCURSESBASE} \
 		--with-ncursesw \
 		--with-package=${PORTNAME}
 MAKEFILE=	makefile
 
-MAN1=		cdialog.1
-MAN3=		cdialog.3
-MANCOMPRESSED=	no
-
 INSTALL_TARGET=	install-strip install-man install-lib
 
-NO_STAGE=	yes
-.if !defined(NOPORTEXAMPLES)
 post-patch:
 	@${FIND} ${WRKSRC}/samples/ -type f -exec ${REINPLACE_CMD} -i "" "s|dialog|cdialog|g" {} \;
 
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/samples && ${FIND} . | \
-		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/samples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
