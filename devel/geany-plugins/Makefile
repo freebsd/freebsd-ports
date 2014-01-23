@@ -25,17 +25,9 @@ NO_OPTIONS_SORT=	yes
 .for plugin in ${GEANY_PLUGINS_ALL}
 OPTIONS_DEFINE+=	${plugin:U}
 ${plugin:U}_DESC=	${${plugin}_DESC}
-${plugin:U}_DEP=	geany-plugin-${plugin}>=0:${PORTSDIR}/devel/geany-plugin-${plugin}
+${plugin:U}_RUN_DEPENDS=	geany-plugin-${plugin}>=0:${PORTSDIR}/devel/geany-plugin-${plugin}
 .endfor
 
 NLS_DEP=		geany-plugins-l10n>=0:${PORTSDIR}/devel/geany-plugins-l10n
-
-.include <bsd.port.options.mk>
-
-.for opt in ${OPTIONS_DEFINE}
-. if ${PORT_OPTIONS:M${opt}}
-RUN_DEPENDS+=	${${opt}_DEP}
-. endif
-.endfor
 
 .include <bsd.port.mk>
