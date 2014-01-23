@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	phpvirtualbox
-DISTVERSION=	4.2-8
+DISTVERSION=	4.3-1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME} \
 		LOCAL/decke
@@ -17,8 +17,6 @@ USE_PHP=	json session soap simplexml
 NO_BUILD=	yes
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(php|txt|js|css|html)
-NO_WRKSUBDIR=	yes
-STAGEDIR=	${WRKDIR}/.stage
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
