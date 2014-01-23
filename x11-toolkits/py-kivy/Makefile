@@ -31,13 +31,13 @@ USE_PYTHON=	2
 SHEBANG_FILES=	kivy/lib/osc/OSC.py
 
 OPTIONS_DEFINE=	DOCS PDF TEST
-OPTIONS_SET=	ENCHANT OPENCV PYGAME # FFMPEG
+OPTIONS_SET=	ENCHANT OPENCV PYGAME
 OPTIONS_SUB=	yes
 OPTIONS_GROUP=	VIDEO AUDIO IMAGE CAMERA SPELLING CLIPBOARD
 OPTIONS_MULTI=	WINDOW TEXT
 OPTIONS_MULTI_WINDOW=	PYGAME X11  SDL2
 OPTIONS_MULTI_TEXT=	PIL PYGAME SDL2
-OPTIONS_GROUP_VIDEO=	GSTREAMER # FFMPEG
+OPTIONS_GROUP_VIDEO=	GSTREAMER FFMPEG
 OPTIONS_GROUP_AUDIO=	GSTREAMER PYGAME SDL2
 OPTIONS_GROUP_IMAGE=	PIL PYGAME
 OPTIONS_GROUP_CAMERA=	OPENCV GSTREAMER
@@ -64,10 +64,12 @@ WINDOW_DESC=	Window support (compulsory)
 DOCS_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
 ENCHANT_DESC=		Spell checking support via Enchant
 ENCHANT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=0:${PORTSDIR}/textproc/py-enchant
+FFMPEG_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ffmpeg/__init__.py:${PORTSDIR}/multimedia/py-ffmpeg
 GSTREAMER_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygst.py:${PORTSDIR}/multimedia/py-gstreamer
 OPENCV_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cv.py:${PORTSDIR}/graphics/py-opencv
 PDF_DESC=		Build PDF documentation (required TeXLive, DOCS)
 PDF_BUILD_DEPENDS=	sphinx-build:${PORTSDIR}/textproc/py-sphinx
+PDF_USE=		TEX=texlive,pdftex:build,dvipsk:build
 PDF_USES=		gmake
 PIL_DESC=		Text and window rendering support via PIL
 PIL_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL:${PORTSDIR}/graphics/py-imaging
@@ -76,18 +78,15 @@ PYGAME_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame:${PORTSDIR}/devel/py-game
 PYGLET_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyglet:${PORTSDIR}/graphics/py-pyglet
 SDL2_DESC=		Simple Direct Media Layer v2.0 support
 SDL2_MAKE_ENV=		USE_SDL=1
+SDL2_USE=		SDL=sdl2,ttf2,mixer2
 TEST_BUILD_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose
 TEST_USES=		display:build
-X11_MAKE_ENV+=		USE_X11=1
-
-.if defined(NOT_IMPLEMENTED)
-FFMPEG_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/ffmpeg:${PORTSDIR}/multimedia/py-ffmpeg
-.endif
+X11_MAKE_ENV=		USE_X11=1
+X11_USE=		XORG=x11
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPDF}
-USE_TEX=	texlive pdftex:build dvipsk:build
 .if empty(PORT_OPTIONS:MDOCS)
 IGNORE=		option PDF requires DOCS
 .endif
@@ -95,14 +94,6 @@ IGNORE=		option PDF requires DOCS
 
 .if empty(PORT_OPTIONS:MPYGAME)
 NOSE_ARGS+=	--exclude=test_fbo_pixels
-.endif
-
-.if ${PORT_OPTIONS:MSDL2}
-USE_SDL=	sdl2 ttf2 mixer2
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11
 .endif
 
 .if ${PORT_OPTIONS:MTEST}
