@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	hplip
-PORTVERSION=	3.13.6
-PORTREVISION=	1
+PORTVERSION=	3.14.1
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -25,7 +24,7 @@ CONFLICTS_INSTALL=	hpijs-[0-9]*
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
 USE_GNOME=	pygobject
-USES=		pkgconfig dos2unix
+USES=		dos2unix pkgconfig shebangfix
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-foomatic-ppd-install \
@@ -38,6 +37,7 @@ CONFIGURE_ARGS=	--enable-foomatic-ppd-install \
 		--with-hpppddir=${PREFIX}/share/ppd/HP \
 		--with-mimedir=${PREFIX}/etc/cups \
 		--with-docdir=${DOCSDIR} \
+		--with-htmldir=${DOCSDIR} \
 		--with-drvdir=${PREFIX}/libexec/cups/driver \
 		--enable-libusb01_build
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -47,32 +47,40 @@ USE_LDCONFIG=	yes
 
 SUB_FILES=	pkg-message
 DOS2UNIX_REGEX=.+\.(c|cpp|h|py)$
-
+SHEBANG_FILES=	prnt/hpijs/foomatic-rip-hplip
 FILES4FIX=	Makefile.in \
 		base/codes.py \
 		base/g.py \
+		base/password.py \
 		base/pkit.py \
-		base/status.py \
+		base/queues.py \
+		base/services.py \
 		base/utils.py \
 		check.py \
 		fax/backend/hpfax.py \
+		fax/coverpages.py \
+		fax/filters/pstotiff \
 		hplip.list.in \
 		installer/core_install.py \
 		installer/dcheck.py \
-		installer/distros.dat \
 		installer/pluginhandler.py \
-		io/hpmud/hp-mkuri.c \
+		logcapture.py \
 		prnt/cups.py \
 		prnt/filters/hpps \
 		prnt/hpcups/HPCupsFilter.cpp \
-		prnt/hpcups/Utils.cpp \
+		prnt/hpijs/foomatic-rip-hplip \
 		prnt/hpijs/globals.cpp \
 		prnt/hpijs/hpcupsfax.cpp \
 		prnt/hpijs/hpijs.cpp \
-		setup.py \
 		ui/devmgr4.py \
-		ui/setupform.py \
 		ui4/devmgr5.py
+
+PYTHON_SITELIBDIR_REL=	${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
+STRIP_FILES=	lib/libhpip.so.0 \
+		lib/libhpmud.so.0 \
+		${PYTHON_SITELIBDIR_REL}/pcardext.so \
+		${PYTHON_SITELIBDIR_REL}/hpmudext.so \
+		${PYTHON_SITELIBDIR_REL}/cupsext.so
 
 OPTIONS_DEFINE=	QT FAX SNMP SCAN XSANE DOCS
 OPTIONS_DEFAULT=	QT
@@ -107,6 +115,9 @@ DOCS_CONFIGURE_ENABLE=	doc-build
 . if ${PORT_OPTIONS:MXSANE}
 RUN_DEPENDS+=	xsane:${PORTSDIR}/graphics/xsane
 . endif
+
+STRIP_FILES+=	${PYTHON_SITELIBDIR_REL}/scanext.so \
+		lib/sane/libsane-hpaio.so.1
 .endif
 
 post-patch:
@@ -125,6 +136,7 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's,/etc/hp,${PREFIX}&,g' \
 		-e 's,/etc/cups,${LOCALBASE}&,g' \
+		-e 's,/etc/foomatic,${LOCALBASE}&,g' \
 		-e 's,/etc/init.d,${LOCALBASE}/etc/rc.d,g' \
 		-e 's,/etc/sane.d,${LOCALBASE}&,g' \
 		-e 's,/usr/share,${LOCALBASE}/share,g' \
@@ -134,7 +146,8 @@ post-patch:
 		${WRKSRC}/installer/core_install.py
 	${FIND} ${WRKSRC} -name '*.py' | ${XARGS} ${SED} -i '' \
 		-e 's,^#!/usr/bin/python,#!${PYTHON_CMD},' \
-		-e 's,^#!/usr/bin/env python,#!${PYTHON_CMD},'
+		-e 's,^#!/usr/bin/env python,#!${PYTHON_CMD},' \
+		-e 's,^#!/bin/env python,#!${PYTHON_CMD},'
 .if !${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e '/[[:space:]]install-docDATA/ s|install-docDATA||' \
 		${WRKSRC}/Makefile.in
@@ -147,5 +160,6 @@ post-install:
 .endif
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/hp
 	${INSTALL_DATA} ${WRKSRC}/hplip.conf ${STAGEDIR}${PREFIX}/etc/hp/hplip.conf.sample
+	${STRIP_CMD} ${STRIP_FILES:S,^,${STAGEDIR}${PREFIX}/,}
 
 .include <bsd.port.mk>

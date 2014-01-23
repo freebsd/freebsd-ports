@@ -4,8 +4,8 @@
  #include "ErnieFilter.h"
  
  
--#if defined(__APPLE__) || defined(__linux)
-+#if defined(__APPLE__) || defined(__linux) || (__FreeBSD__)
+-#if defined(__APPLE__) || defined(__linux) || defined(__GLIBC__) || defined(__NetBSD__)
++#if defined(__APPLE__) || defined(__linux) || defined(__GLIBC__) || defined(__NetBSD__) || (__FreeBSD__)
  #include <math.h>
  #endif
  
