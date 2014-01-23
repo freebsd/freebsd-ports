@@ -30,6 +30,7 @@ TARBALLS_DIR=	${LOCALBASE}/share/octave/tarballs
 INSTALL_TARBALLS_DIR=	${STAGEDIR}${PREFIX}/share/octave/tarballs
 
 MAKE_ENV+=	PACKAGE=${WRKDIR}/${DISTNAME}.tar.gz
+MAKE_ARGS=	CC="${CC}" CXX="${CXX}" LD_CXX="${CXX}" DL_LD="${CXX}"
 
 LOAD_OCTAVE_PKG_CMD=	${LOCALBASE}/libexec/octave/load-octave-pkg
 

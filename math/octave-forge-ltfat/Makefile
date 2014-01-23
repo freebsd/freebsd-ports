@@ -15,8 +15,6 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		portaudio:${PORTSDIR}/audio/portaudio2 \
 		cblas:${PORTSDIR}/math/cblas
 
-MAKE_ARGS=	CC="${CC}"
-
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
 OCTSRC=		${OCTAVE_PKGNAME}
