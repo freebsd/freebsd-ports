@@ -7,8 +7,10 @@ PORTREVISION=	1
 CATEGORIES=	multimedia audio kde
 MASTER_SITES=	SF/${PORTNAME}/SMPlayer/${PORTVERSION}
 
-MAINTAINER=	dhn@FreeBSD.org
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Complete front-end based on Qt4 for mplayer
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \
 		${LOCALBASE}/share/smplayer/themes:${PORTSDIR}/multimedia/smplayer-skins \
@@ -21,24 +23,23 @@ ALL_TARGET=	src/smplayer
 CONFIGURE_WRKSRC=	${WRKSRC}/src
 MAKE_ARGS+=	PREFIX=${PREFIX} DESTDIR=${STAGEDIR}
 
-USES=		gmake qmake
 USE_BZIP2=	yes
+USES=		desktop-file-utils dos2unix gmake qmake
+DOS2UNIX_REGEX=	.*.[^p][^n][^g]$
 INSTALLS_ICONS=	yes
 
-PORTDOCS=	Changelog Copying.txt Install.txt Not_so_obvious_things.txt \
-		Readme.txt Release_notes.txt
+PORTDOCS=	Changelog Not_so_obvious_things.txt Readme.txt \
+		Release_notes.txt Watching_TV.txt
 
 OPTIONS_DEFINE=	DOCS
 
-SUB_FILES=      pkg-message
-
-.include <bsd.port.options.mk>
+SUB_FILES=	pkg-message
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|&& $$(QMAKE) $$(QMAKE_OPTS)||' \
-		-e 's|lrelease|${LRELEASE}|g' \
-		-e 's,/share/man,/man,g' \
-		-e 's, make, ${MAKE_CMD},g' \
+	@${REINPLACE_CMD} -e 's|&& $$(QMAKE) $$(QMAKE_OPTS)||; \
+		s|lrelease|${LRELEASE}|; \
+		s|/share/man|/man|g; \
+		s| make| ${MAKE_CMD}|g' \
 		${WRKSRC}/Makefile
 
 post-install:
