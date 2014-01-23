@@ -8,10 +8,9 @@ CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A library for desktop notifications
+COMMENT=	Library for desktop notifications
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_XZ=		yes
 USE_GNOME=	intlhack glib20 gdkpixbuf2 ltverhack introspection:build
@@ -21,5 +20,4 @@ USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
