@@ -21,5 +21,4 @@ IGNORE_WITH_PHP=5
 CONFIGURE_ARGS=	--enable-amf
 CPPFLAGS+=	-I${LOCALBASE}/include/php/ext/standard
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

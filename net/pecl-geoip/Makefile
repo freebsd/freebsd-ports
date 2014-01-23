@@ -17,7 +17,6 @@ LIB_DEPENDS=	GeoIP:${PORTSDIR}/net/GeoIP
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's/-ldl//g' ${WRKSRC}/config.m4
 
