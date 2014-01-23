@@ -1,0 +1,35 @@
+--- uwsgitop.bak
++++ uwsgitop
+@@ -82,12 +82,8 @@ except:
+     pass
+ screen.clear()
+ 
+-def reqcount(a, b):
+-    if a['requests'] > b['requests']:
+-        return -1
+-    if a['requests'] < b['requests']:
+-        return 1
+-    return 0
++def reqcount(item):
++    return item['requests']
+ 
+ def calc_percent(tot, req):
+     if tot == 0:
+@@ -112,7 +108,7 @@ while True:
+             data = s.recv(4096)
+             if len(data) < 1:
+                 break
+-            js += data
++            js += data.decode('utf8')
+     except:
+         raise Exception("unable to get uWSGI statistics")
+ 
+@@ -175,7 +171,7 @@ while True:
+         screen.addstr(2, 0, " WID\t%\tPID\tREQ\tRPS\tEXC\tSIG\tSTATUS\tAVG\tRSS\tVSZ\tTX\tRunT\t", curses.A_REVERSE)
+         pos = 3
+ 
+-        dd['workers'].sort(reqcount)
++        dd['workers'].sort(key=reqcount)
+         for worker in dd['workers']:
+             sigs = 0
+             wtx = human_size(worker['tx'])
