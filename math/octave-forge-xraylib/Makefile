@@ -12,7 +12,6 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-MAKE_ARGS=	CC="${CC}"
 
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 
