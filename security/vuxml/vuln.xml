@@ -63,8 +63,12 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Michael Sweet reports:</p>
 	<blockquote cite="http://www.msweet.org/projects.php?Z1">
-	  <p>HTMLDOC 1.8.28 fixes some known security issues and formatting bugs. Changes include:</p>
-	  <ul><li>...</li><li>SECURITY: Fixed three buffer overflow issues when reading AFM files and parsing page sizes.</li><li>...</li></ul>
+	  <p>HTMLDOC 1.8.28 fixes some known security issues and
+	    formatting bugs. Changes include:</p>
+	  <ul>
+	    <li>SECURITY: Fixed three buffer overflow issues when
+	      reading AFM files and parsing page sizes.</li>
+	  </ul>
 	</blockquote>
       </body>
     </description>
@@ -74,6 +78,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2014-01-06</discovery>
       <entry>2014-01-22</entry>
+      <modified>2014-01-23</modified>
     </dates>
   </vuln>
 
@@ -90,10 +95,10 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Oracle reports:</p>
 	<blockquote cite="http://www.oracle.com/technetwork/topics/security/cpujan2014-1972949.html">
 	  <p>Unspecified vulnerability in the Oracle VM VirtualBox
-	   component in Oracle Virtualization VirtualBox prior to
-	   3.2.20, 4.0.22, 4.1.30, 4.2.22, and 4.3.6 allows local
-	   users to affect confidentiality, integrity, and availability
-	   via unknown vectors related to Core.</p>
+	    component in Oracle Virtualization VirtualBox prior to
+	    3.2.20, 4.0.22, 4.1.30, 4.2.22, and 4.3.6 allows local
+	    users to affect confidentiality, integrity, and availability
+	    via unknown vectors related to Core.</p>
 	</blockquote>
       </body>
     </description>
