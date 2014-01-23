@@ -8,7 +8,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://kornelix.squarespace.com/downloads/ \
 		http://www.rodperson.com/DL/
 
-MAINTAINER=	rodperson@rodperson.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application to organize and edit image collections
 
 BROKEN=		Does not fetch
