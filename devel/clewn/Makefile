@@ -10,11 +10,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 MAINTAINER=	giacomomariani@yahoo.it
 COMMENT=	Clewn provides Gdb support within Vim
 
-RUN_DEPENDS=	vim>=6.3:${PORTSDIR}/editors/vim
+RUN_DEPENDS=	vim:${PORTSDIR}/editors/vim
 
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	vimdir=${PREFIX}/share/vim/vimfiles
-USE_GMAKE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
