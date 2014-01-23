@@ -3,7 +3,7 @@
 
 PORTNAME=	smasher
 PORTVERSION=	1.1.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -16,8 +16,8 @@ LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 		libcsound64.so:${PORTSDIR}/audio/csound
 
 GNU_CONFIGURE=	yes
-USES=		gmake pkgconfig
-NO_STAGE=	yes
+USES=		desktop-file-utils gmake pkgconfig
+#USE_GCC=	yes
 USE_WX=		yes
 WX_CONF_ARGS=	absolute
 
