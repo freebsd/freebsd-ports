@@ -38,7 +38,7 @@ include/gssrpc/svc_auth.h
 include/gssrpc/types.h
 include/gssrpc/xdr.h
 include/krb5.h
-%%LDAP%%include/krb5/ccselect_plugin.h
+include/krb5/ccselect_plugin.h
 include/krb5/kadm5_hook_plugin.h
 include/krb5/krb5.h
 include/krb5/locate_plugin.h
