@@ -21,5 +21,4 @@ PLIST_FILES=	include/ekhtml.h lib/libekhtml.a \
 		lib/libekhtml.la lib/libekhtml.so \
 		lib/libekhtml.so.0
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
