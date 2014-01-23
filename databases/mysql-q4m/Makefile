@@ -3,6 +3,7 @@
 
 PORTNAME=	q4m
 PORTVERSION=	0.9.10
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://q4m.kazuhooku.com/dist/
 PKGNAMEPREFIX=	mysql${MYSQL_VER}-
@@ -13,13 +14,13 @@ COMMENT=	A message queue that works as a pluggable storage engine of MySQL
 FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/databases/mysql${MYSQL_VER}-server:build
 RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 
-USE_PERL5=	yes
-USE_GMAKE=	yes
+USES=		gmake perl5
 USE_AUTOTOOLS=	libtool
 USE_MYSQL=	yes
+USE_GCC=	4.2+
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include -DDBUG_OFF
+CPPFLAGS+=	-I${LOCALBASE}/include -DDBUG_OFF
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--libdir="${PREFIX}/lib/mysql/plugin" \
@@ -56,7 +57,7 @@ post-install:
 .endif
 
 install-functions:
-	mysql -u root -f mysql < ${EXAMPLESDIR}/install.sql
+	mysql -u root -p -f mysql < ${EXAMPLESDIR}/install.sql
 
 test:
 	cd ${WRKSRC}; ./run_tests.pl
