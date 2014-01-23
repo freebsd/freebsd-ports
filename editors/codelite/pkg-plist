@@ -1,4 +1,6 @@
 bin/codelite
+bin/codelite-make
+bin/codelite-terminal
 %%CLANG%%bin/codelite-clang
 bin/clg++
 bin/clgcc
@@ -9,6 +11,7 @@ bin/codelite_indexer
 bin/codelite_kill_children
 bin/codelite_xterm
 bin/codelitegcc
+lib/codelite/CMakePlugin.so
 lib/codelite/CallGraph.so
 lib/codelite/CodeFormatter.so
 lib/codelite/ContinuousBuild.so
@@ -19,6 +22,7 @@ lib/codelite/Outline.so
 lib/codelite/QMakePlugin.so
 lib/codelite/SnipWiz.so
 lib/codelite/Subversion.so
+lib/codelite/Tweaks.so
 lib/codelite/UnitTestsPP.so
 lib/codelite/Wizards.so
 lib/codelite/ZoomNavigator.so
@@ -125,10 +129,10 @@ lib/codelite/wxFormBuilder.so
 %%DATADIR%%/templates/gizmos/wxmain.project.wizard
 %%DATADIR%%/templates/gizmos/wxproject-fb.project.wizard
 %%DATADIR%%/templates/gizmos/wxproject.project.wizard
-%%DATADIR%%/templates/projects/ConsoleClang/ConsoleClang.project
-%%DATADIR%%/templates/projects/ConsoleClang/main.c
 %%DATADIR%%/templates/projects/ConsoleClang++/ConsoleClang++.project
 %%DATADIR%%/templates/projects/ConsoleClang++/main.cpp
+%%DATADIR%%/templates/projects/ConsoleClang/ConsoleClang.project
+%%DATADIR%%/templates/projects/ConsoleClang/main.c
 %%DATADIR%%/templates/projects/UnitTest++/UnitTest++.project
 %%DATADIR%%/templates/projects/UnitTest++/icon.png
 %%DATADIR%%/templates/projects/UnitTest++/main.cpp
@@ -157,8 +161,10 @@ lib/codelite/wxFormBuilder.so
 %%DATADIR%%/templates/projects/custom-makefile/custom-makefile.project
 %%DATADIR%%/templates/projects/custom-makefile/icon.png
 %%DATADIR%%/templates/projects/dynamic-library-wx-enabled/dynamic-library-wx-enabled.project
+%%DATADIR%%/templates/projects/dynamic-library-wx-enabled/dynamic-library-wx-enabled.project.windows
 %%DATADIR%%/templates/projects/dynamic-library-wx-enabled/icon.png
 %%DATADIR%%/templates/projects/dynamic-library/dynamic-library.project
+%%DATADIR%%/templates/projects/dynamic-library/dynamic-library.project.windows
 %%DATADIR%%/templates/projects/dynamic-library/icon.png
 %%DATADIR%%/templates/projects/executable-cobra/executable-cobra.project
 %%DATADIR%%/templates/projects/executable-cobra/main.cobra
@@ -181,6 +187,7 @@ lib/codelite/wxFormBuilder.so
 %%DATADIR%%/templates/projects/executable-wx-dialog/icon.png
 %%DATADIR%%/templates/projects/executable-wx-dialog/main.cpp
 %%DATADIR%%/templates/projects/executable-wx-dialog/main.h
+%%DATADIR%%/templates/projects/executable-wx-dialog/win_resources.rc
 %%DATADIR%%/templates/projects/executable-wx-enabled/executable-wx-enabled.project
 %%DATADIR%%/templates/projects/executable-wx-enabled/icon.png
 %%DATADIR%%/templates/projects/executable-wx-enabled/main.cpp
@@ -191,6 +198,7 @@ lib/codelite/wxFormBuilder.so
 %%DATADIR%%/templates/projects/executable-wx-frame/icon.png
 %%DATADIR%%/templates/projects/executable-wx-frame/main.cpp
 %%DATADIR%%/templates/projects/executable-wx-frame/main.h
+%%DATADIR%%/templates/projects/executable-wx-frame/win_resources.rc
 %%DATADIR%%/templates/projects/executable-wxcrafter-dialog/MainDialog.cpp
 %%DATADIR%%/templates/projects/executable-wxcrafter-dialog/MainDialog.h
 %%DATADIR%%/templates/projects/executable-wxcrafter-dialog/icon.png
@@ -227,14 +235,20 @@ lib/codelite/wxFormBuilder.so
 %%DATADIR%%/templates/projects/vc-executable/vc-executable.project
 %%DATADIR%%/templates/projects/vc-static-lib/icon.png
 %%DATADIR%%/templates/projects/vc-static-lib/vc-static-lib.project
+%%DATADIR%%/templates/projects/wxWidgets_ConsoleApp/icon.png
+%%DATADIR%%/templates/projects/wxWidgets_ConsoleApp/main_app.cpp
+%%DATADIR%%/templates/projects/wxWidgets_ConsoleApp/main_app.h
+%%DATADIR%%/templates/projects/wxWidgets_ConsoleApp/wxWidgets_ConsoleApp.project
 %%DATADIR%%/templates/qmake/qmake.project
 %%DATADIR%%/unittest++1.3.tar.gz
-share/locale/cs/LC_MESSAGES/codelite.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/codelite.mo
+%%NLS%%share/locale/cz/LC_MESSAGES/codelite.mo
 share/applications/codelite.desktop
 @dirrm lib/codelite/resources
 @dirrm lib/codelite/debuggers
 @dirrm lib/codelite
 @dirrm %%DATADIR%%/templates/qmake
+@dirrm %%DATADIR%%/templates/projects/wxWidgets_ConsoleApp
 @dirrm %%DATADIR%%/templates/projects/vc-static-lib
 @dirrm %%DATADIR%%/templates/projects/vc-executable
 @dirrm %%DATADIR%%/templates/projects/vc-dynamic-library
@@ -279,3 +293,5 @@ share/applications/codelite.desktop
 @dirrm %%DATADIR%%/gdb_printers
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/cz/LC_MESSAGES
+@dirrmtry share/locale/cz
