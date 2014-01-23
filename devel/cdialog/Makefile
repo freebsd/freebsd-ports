@@ -24,12 +24,17 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-widec \
 		--includedir=${PREFIX}/include/${PORTNAME} \
 		--with-libtool \
-		--with-curses-dir=${NCURSESBASE} \
 		--with-ncursesw \
 		--with-package=${PORTNAME}
 MAKEFILE=	makefile
 
 INSTALL_TARGET=	install-strip install-man install-lib
+
+.include <bsd.port.pre.mk>
+
+.if ${NCURSESBASE} != /usr
+CONFIGURE_ARGS=	--with-curses-dir=${NCURSESBASE}
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC}/samples/ -type f -exec ${REINPLACE_CMD} -i "" "s|dialog|cdialog|g" {} \;
@@ -38,4 +43,4 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/samples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
