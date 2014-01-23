@@ -1,0 +1,45 @@
+--- Makefile.rules.gnu.in.orig	2014-01-22 17:53:46.492137556 +0800
++++ Makefile.rules.gnu.in	2014-01-22 17:58:12.855113204 +0800
+@@ -179,17 +179,17 @@ menuconfig:
+ 
+ install-bin: @INSTALL_PLUGINS@
+ 	cd $(GOLEM_HOME)
+-	@INSTALL@ -d $(bindir)
+-	@INSTALL@ build-bin/golem $(bindir)
+-	@INSTALL@ build-bin/golem.install $(bindir)
++	@INSTALL@ -d $(DESTDIR)$(bindir)
++	@INSTALL@ build-bin/golem $(DESTDIR)$(bindir)
++	@INSTALL@ build-bin/golem.install $(DESTDIR)$(bindir)
+ 
+ install-plugins: all
+-	@INSTALL@ -d $(libdir)/golem/plugins
++	@INSTALL@ -d $(DESTDIR)$(libdir)/golem/plugins
+ 	files=`( cd $(GOLEM_HOME)/src ; perl ./listmods.pl $(GOLEM_HOME) dynamic )` ; \
+ 	for i in $$files ; do \
+       cd $(GOLEM_HOME); \
+ 		if [ -f build-plugin/$$i.so ] ; then \
+-			@INSTALL@ build-plugin/$$i.so $(libdir)/golem/plugins/ ; \
++			@INSTALL@ build-plugin/$$i.so $(DESTDIR)$(libdir)/golem/plugins/ ; \
+ 		fi ; \
+ 	done
+ 
+@@ -197,15 +197,15 @@ install-data:
+ 	cd $(GOLEM_HOME); \
+ 	cd sample.golem ; \
+ 	for i in `find . -type d | grep -v CVS` ; do \
+-		@INSTALL@ -d $(datadir)/golem/$$i ; \
++		@INSTALL@ -d $(DESTDIR)$(datadir)/golem/$$i ; \
+ 	done ; \
+ 	for i in `find . -type f | grep -v CVS` ; do \
+-		@INSTALL@ -m 444 $$i $(datadir)/golem/$$i ; \
++		@INSTALL@ -m 444 $$i $(DESTDIR)$(datadir)/golem/$$i ; \
+ 	done
+ 
+ install-man:
+-	@INSTALL@ -d $(mandir)/man1
+-	@INSTALL@ -m 444 doc/golem.1.gz $(mandir)/man1/
++	@INSTALL@ -d $(DESTDIR)$(mandir)/man1
++	@INSTALL@ -m 444 doc/golem.1.gz $(DESTDIR)$(mandir)/man1/
+ 
+ ifeq ($(shell echo $$PWD),$(GOLEM_HOME))
+   install: all install-bin install-data install-man

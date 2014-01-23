@@ -14,20 +14,15 @@ LICENSE=	BSD
 OPTIONS_DEFINE=	ESOUND XINERAMA
 OPTIONS_DEFAULT=	XINERAMA
 
-USES=		perl5
+USES=		perl5 gmake
 USE_PERL5=	build
 USE_BZIP2=	yes
 USE_XORG=	xpm
 WANT_GNOME=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-i18n
 MAKE_ARGS=	DEVEL=1
 
-MANCOMPRESSED=	yes
-MAN1=		golem.1
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
