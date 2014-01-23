@@ -15,7 +15,7 @@ LIB_DEPENDS=	libwnck-1.so:${PORTSDIR}/x11-toolkits/libwnck \
 		libcairo.so:${PORTSDIR}/graphics/cairo \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
-USES=	desktop-file-utils gmake pathfix perl5 pkgconfig
+USES=		desktop-file-utils gmake pathfix perl5 pkgconfig compiler
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
@@ -28,7 +28,13 @@ CONFIGURE_ARGS+=--enable-gio-unix
 
 OPTIONS_DEFINE=		NLS DOCS
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1000000
+.if ${COMPILER_TYPE} == clang
+CFLAGS_amd64=	-fPIC
+.endif
+.endif
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
@@ -47,4 +53,4 @@ CONFIGURE_ARGS+=--without-html-dir
 PLIST_SUB+=	APIDOCS="@comment "
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
