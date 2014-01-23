@@ -1,3 +1,0 @@
-%%PYTHON_SITELIBDIR%%/shout.so
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/example.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%

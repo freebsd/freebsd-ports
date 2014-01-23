@@ -11,20 +11,21 @@ DISTNAME=	${PORTNAME}-python-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python bindings for libshout2
 
+LICENSE=	LGPL20
+
 LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout2
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 USES=			pkgconfig
-NO_STAGE=	yes
-USE_PYTHON=		yes
+USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	${PORTNAME}-python
+PYDISTUTILS_AUTOPLIST=	yes
 
-.if !defined(NOPORTEXAMPLES)
+PORTEXAMPLES=	example.py
+
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	${CP} ${WRKSRC}/example.py ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${CP} ${WRKSRC}/example.py ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
