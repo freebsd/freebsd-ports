@@ -1,4 +1,4 @@
-The gnatdroid-armv7 port builds a C/Ada cross-compiler based on GCC 4.6 that
+The gnatdroid-armv7 port builds a C/Ada cross-compiler based on GCC 4.7 that
 targets the Android operating system (version 2.3, API level 9) running on
 ARM architecture (version 7).  This produces binaries that run natively on
 Android devices built with Cortex-A series chips.
