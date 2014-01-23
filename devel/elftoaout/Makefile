@@ -13,12 +13,11 @@ COMMENT=	ELF to a.out conversion tool by Jakub Jelinek and Pete Zaitcev
 
 WRKSRC=		${WRKDIR}/sparc-utils-1.9.orig/elftoaout-2.3
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
-MAN1=		elftoaout.1
-PLIST_FILES=	bin/elftoaout
+PLIST_FILES=	bin/elftoaout \
+		man/man1/elftoaout.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/elftoaout ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/elftoaout.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/elftoaout ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/elftoaout.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
