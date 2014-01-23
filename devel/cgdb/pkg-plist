@@ -1,3 +1,4 @@
 bin/cgdb
 %%DATADIR%%/cgdb.txt
+man/man1/cgdb.1.gz
 @dirrm %%DATADIR%%
