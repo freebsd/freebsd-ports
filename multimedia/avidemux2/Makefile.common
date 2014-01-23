@@ -8,12 +8,12 @@ MASTER_SITES=	BERLIOS \
 DISTNAME=	avidemux_${PORTVERSION}
 
 BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
-LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
-		a52.0:${PORTSDIR}/audio/liba52 \
-		png15:${PORTSDIR}/graphics/png \
-		samplerate.1:${PORTSDIR}/audio/libsamplerate \
-		dca.0:${PORTSDIR}/multimedia/libdca \
-		execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/libmad \
+		liba52.so:${PORTSDIR}/audio/liba52 \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
+		libdca.so:${PORTSDIR}/multimedia/libdca \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 LICENSE=	GPLv2
 
@@ -22,9 +22,8 @@ CONFLICTS=	avidemux2-2.[0-46-9].*
 USE_GNOME=	libxml2
 USE_QT4=	# empty
 
-USE_GMAKE=	yes
 WANT_SDL=	yes
-USES=		cmake:outsource pkgconfig iconv
+USES=		cmake:outsource pkgconfig iconv gmake compiler:features
 CMAKE_USE_PTHREAD=yes
 CMAKE_ARGS+=	-DTHREADS_HAVE_PTHREAD_ARG:STRING="${PTHREAD_LIBS}"
 CFLAGS+=	-Wno-return-type
@@ -58,6 +57,15 @@ PLIST_SUB+=	NLS="@comment " QT_NLS="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
+
+# is this kosher?  the result seems to run tho...  (see ports/185997)
+.if $(COMPILER_FEATURES:Mlibc++)
+LDFLAGS+=	-lc++
+.endif
+
+.if ${COMPILER_TYPE} == clang
+USE_GCC=	yes
+.endif
 
 # for libexecinfo: (so that __builtin_frame_address() finds the top
 # of the stack)
@@ -106,7 +114,7 @@ PLIST_SUB+=	ESD="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
 PLIST_SUB+=	JACK=""
 .else
 CMAKE_ARGS+=	-DJACK:BOOL=OFF
@@ -114,7 +122,7 @@ PLIST_SUB+=	JACK="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
+LIB_DEPENDS+=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PLIST_SUB+=	PULSE=""
 .else
 CMAKE_ARGS+=	-DPULSEAUDIOSIMPLE:BOOL=OFF
@@ -122,7 +130,7 @@ PLIST_SUB+=	PULSE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFREETYPE}
-LIB_DEPENDS+=	freetype:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
 PLIST_SUB+=	FREETYPE=""
 .else
 CMAKE_ARGS+=	-DFREETYPE2:BOOL=OFF
@@ -130,19 +138,20 @@ PLIST_SUB+=	FREETYPE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFONTCONFIG}
-LIB_DEPENDS+=	fontconfig:${PORTSDIR}/x11-fonts/fontconfig
+LIB_DEPENDS+=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 .else
 CMAKE_ARGS+=	-DFONTCONFIG:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MXVIDEO}
-LIB_DEPENDS+=	Xv:${PORTSDIR}/x11/libXv
+#LIB_DEPENDS+=	Xv:${PORTSDIR}/x11/libXv
+USE_XORG+=	xv
 .else
 CMAKE_ARGS+=	-DXVIDEO:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MFAAC}
-LIB_DEPENDS+=	faac:${PORTSDIR}/audio/faac
+LIB_DEPENDS+=	libfaac.so:${PORTSDIR}/audio/faac
 PLIST_SUB+=	FAAC=""
 .else
 CMAKE_ARGS+=	-DFAAC:BOOL=OFF
@@ -150,7 +159,7 @@ PLIST_SUB+=	FAAC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLAME}
-LIB_DEPENDS+=	mp3lame:${PORTSDIR}/audio/lame
+LIB_DEPENDS+=	libmp3lame.so:${PORTSDIR}/audio/lame
 PLIST_SUB+=	LAME=""
 .else
 CMAKE_ARGS+=	-DLAME:BOOL=OFF
@@ -158,7 +167,7 @@ PLIST_SUB+=	LAME="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFAAD}
-LIB_DEPENDS+=	faad:${PORTSDIR}/audio/faad
+LIB_DEPENDS+=	libfaad.so:${PORTSDIR}/audio/faad
 PLIST_SUB+=	FAAD=""
 .else
 CMAKE_ARGS+=	-DFAAD:BOOL=OFF -DNeAAC:BOOL=OFF
@@ -166,7 +175,7 @@ PLIST_SUB+=	FAAD="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MX264}
-LIB_DEPENDS+=	x264:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	libx264.so:${PORTSDIR}/multimedia/x264
 PLIST_SUB+=	X264=""
 .else
 CMAKE_ARGS+=	-DX264:BOOL=OFF
@@ -174,13 +183,13 @@ PLIST_SUB+=	X264="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVPX}
-LIB_DEPENDS+=	vpx:${PORTSDIR}/multimedia/libvpx
+LIB_DEPENDS+=	libvpx.so:${PORTSDIR}/multimedia/libvpx
 .else
 CMAKE_ARGS+=	-DVPXDEC:BOOL=OFF
 .endif
 
 .if ${PORT_OPTIONS:MXVID}
-LIB_DEPENDS+=	xvidcore:${PORTSDIR}/multimedia/xvid
+LIB_DEPENDS+=	libxvidcore.so:${PORTSDIR}/multimedia/xvid
 PLIST_SUB+=	XVID=""
 .else
 CMAKE_ARGS+=	-DXVID:BOOL=OFF
@@ -196,7 +205,7 @@ PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 PLIST_SUB+=	VORBIS=""
 .else
 CMAKE_ARGS+=	-DLIBVORBIS:BOOL=OFF -DVORBIS:BOOL=OFF
@@ -204,7 +213,7 @@ PLIST_SUB+=	VORBIS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MAMR}
-LIB_DEPENDS+=	opencore-amrnb:${PORTSDIR}/audio/opencore-amr
+LIB_DEPENDS+=	libopencore-amrnb.so:${PORTSDIR}/audio/opencore-amr
 PLIST_SUB+=	AMRNB=""
 PLIST_SUB+=	AMRWB=""
 .else
