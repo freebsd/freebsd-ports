@@ -25,5 +25,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS}
 
 CONFIGURE_ARGS=	--with-cTemplate=${LOCALBASE}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

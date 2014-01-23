@@ -20,5 +20,4 @@ IGNORE_WITH_PHP=5 53
 
 CONFIGURE_ARGS=	--with-fileinfo=/usr
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

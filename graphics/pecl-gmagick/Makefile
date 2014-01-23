@@ -21,5 +21,4 @@ IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--with-gmagick=${LOCALBASE}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

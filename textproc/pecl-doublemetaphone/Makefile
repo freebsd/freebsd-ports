@@ -18,5 +18,4 @@ USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--enable-doublemetaphone
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
