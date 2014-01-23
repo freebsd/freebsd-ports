@@ -14,15 +14,14 @@ LICENSE=	BSD
 
 WRKSRC=		${WRKDIR}/Modules
 NO_BUILD=	yes
-NO_STAGE=	yes
 REINPLACE_ARGS=	-i ''
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|date --utc|date -u|' ${WRKSRC}/DateTimeFormat.cmake
 
 do-install:
-	${MKDIR} ${PREFIX}/share/cmake/Modules
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/cmake/Modules
 	cd ${WRKSRC}/ && \
-		${INSTALL_DATA} * ${PREFIX}/share/cmake/Modules
+		${INSTALL_DATA} * ${STAGEDIR}${PREFIX}/share/cmake/Modules
 
 .include <bsd.port.mk>
