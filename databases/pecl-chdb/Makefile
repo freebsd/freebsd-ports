@@ -29,5 +29,4 @@ GH_COMMIT=	169f45d
 
 CONFIGURE_ARGS=	--with-libcmph-dir=${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

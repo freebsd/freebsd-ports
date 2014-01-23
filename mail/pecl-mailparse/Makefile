@@ -18,5 +18,4 @@ USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	mailparse
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

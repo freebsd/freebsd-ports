@@ -20,5 +20,4 @@ DEFAULT_PHP_VER=53
 
 USES=		perl5
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

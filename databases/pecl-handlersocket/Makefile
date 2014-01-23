@@ -23,5 +23,4 @@ CONFIGURE_ARGS=	--with-handlersocket=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${EXTRA_LIBS}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

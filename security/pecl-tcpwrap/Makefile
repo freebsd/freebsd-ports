@@ -17,7 +17,6 @@ USE_PHPEXT=	yes
 DEFAULT_PHP_VER=53
 IGNORE_WITH_PHP=5
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's, -ldl,,' ${WRKSRC}/config.m4
 

@@ -15,7 +15,6 @@ COMMENT=	A PECL extension which provides word stemming
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
-NO_STAGE=	yes
 post-configure:
 	echo "#define HAVE_XDL_ALLOCATOR_PRIV 1" >>${WRKSRC}/config.h
 .include <bsd.port.mk>

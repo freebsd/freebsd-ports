@@ -20,11 +20,9 @@ LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick
 LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick-nox11
 .endif
 
-
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--with-imagick=${LOCALBASE}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
