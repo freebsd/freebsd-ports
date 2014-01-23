@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	alegreya-sans
-PORTVERSION=	20130313
+PORTVERSION=	20140108
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.huertatipografica.com/free_download/G4oDzW61NXb23OxBa8XL?dummy=
 
