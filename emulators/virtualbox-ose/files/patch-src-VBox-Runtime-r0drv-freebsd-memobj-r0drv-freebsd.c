@@ -7,17 +7,11 @@ From Alan L. Cox on FreeBSD-current:
     answer that question.
 
 [1] http://lists.freebsd.org/pipermail/freebsd-current/2012-November/037963.html
----
- src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
-
-diff --git a/src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c b/src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c
-index 5c90cf3..1176b51 100644
---- src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c
-+++ src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c
-@@ -164,14 +164,19 @@ DECLHIDDEN(int) rtR0MemObjNativeFree(RTR0MEMOBJ pMem)
-         {
+--- src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c.orig	2013-11-29 12:04:53.000000000 +0100
++++ src/VBox/Runtime/r0drv/freebsd/memobj-r0drv-freebsd.c	2013-11-29 12:37:29.000000000 +0100
+@@ -168,14 +168,19 @@
              VM_OBJECT_LOCK(pMemFreeBSD->pObject);
+ #endif
              vm_page_t pPage = vm_page_find_least(pMemFreeBSD->pObject, 0);
 +#if __FreeBSD_version < 900000
 +            /* See http://lists.freebsd.org/pipermail/freebsd-current/2012-November/037963.html */
@@ -32,10 +26,10 @@ index 5c90cf3..1176b51 100644
 +#if __FreeBSD_version < 900000
              vm_page_unlock_queues();
 +#endif
-             VM_OBJECT_UNLOCK(pMemFreeBSD->pObject);
-             vm_object_deallocate(pMemFreeBSD->pObject);
-             break;
-@@ -263,11 +268,15 @@ static int rtR0MemObjFreeBSDPhysAllocHelper(vm_object_t pObject, u_long cPages,
+ #if __FreeBSD_version >= 1000030
+             VM_OBJECT_WUNLOCK(pMemFreeBSD->pObject);
+ #else
+@@ -291,11 +296,15 @@
              while (iPage-- > 0)
              {
                  pPage = vm_page_lookup(pObject, iPage);
@@ -49,8 +43,5 @@ index 5c90cf3..1176b51 100644
                  vm_page_unlock_queues();
 +#endif
              }
-             VM_OBJECT_UNLOCK(pObject);
-             return rcNoMem;
--- 
-1.7.11.5
-
+ #if __FreeBSD_version >= 1000030
+             VM_OBJECT_WUNLOCK(pObject);
