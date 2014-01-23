@@ -23,7 +23,6 @@ IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--enable-bbcode
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/#include <malloc.h>/\/\/#include <malloc.h>/g' ${WRKSRC}/lib/bbcode2.c
 
