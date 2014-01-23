@@ -5,6 +5,7 @@ PORTNAME=	subversion
 PORTVERSION=	#please edit Makefile.inc for PORTVERSION, so ../svnmerge can stay in sync.
 PORTREVISION?=	2
 CATEGORIES+=	devel
+PKGNAMESUFFIX=	16
 MASTER_SITES=	http://subversion.tigris.org/downloads/
 DIST_SUBDIR=	subversion
 
@@ -18,8 +19,6 @@ USES+=		pkgconfig
 LICENSE=	APACHE20
 
 CONFLICTS_INSTALL+=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-1.[^6].[0-9]*
-
-LATEST_LINK=		${PKGNAMEPREFIX}${PORTNAME}16${PKGNAMESUFFIX}
 
 LIB_DEPENDS+=		libapr-1.so:${PORTSDIR}/devel/apr1 \
 			libsqlite3.so:${PORTSDIR}/databases/sqlite3 \
