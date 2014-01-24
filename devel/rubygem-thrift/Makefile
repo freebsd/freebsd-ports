@@ -14,6 +14,5 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include "../thrift/bsd.thrift.mk"
 .include <bsd.port.mk>

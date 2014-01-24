@@ -24,7 +24,6 @@ TERMINFO_DESC=		terminal information support
 
 OPTIONS_DEFAULT=	IPADDRESSES TERMINFO
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}rubygem-

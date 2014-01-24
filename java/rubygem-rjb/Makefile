@@ -18,5 +18,4 @@ GEM_ENV=	JAVA_HOME=${JAVA_HOME}
 #On amd64, rjb hangs in umtxn
 ONLY_FOR_ARCHS=	i386
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
