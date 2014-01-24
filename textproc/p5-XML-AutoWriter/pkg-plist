@@ -1,3 +1,8 @@
+%%PERL5_MAN3%%/XML::AutoWriter.3.gz
+%%PERL5_MAN3%%/XML::Doctype::AttDef.3.gz
+%%PERL5_MAN3%%/XML::ValidWriter.3.gz
+%%PERL5_MAN3%%/XML::Doctype::ElementDecl.3.gz
+%%PERL5_MAN3%%/XML::Doctype.3.gz
 %%SITE_PERL%%/XML/AutoWriter.pm
 %%SITE_PERL%%/XML/Doctype.pm
 %%SITE_PERL%%/XML/Doctype/AttDef.pm
