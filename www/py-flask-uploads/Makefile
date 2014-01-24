@@ -7,15 +7,15 @@ CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	duchateau.olivier@gmail.com
+MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Flexible and efficient upload handling for Flask
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.6:${PORTSDIR}/www/py-flask
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.10:${PORTSDIR}/www/py-flask
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=	2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
