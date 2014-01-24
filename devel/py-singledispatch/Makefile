@@ -13,7 +13,7 @@ COMMENT=	provides single-dispatch generic functions
 LICENSE=	MIT
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
