@@ -7,7 +7,7 @@ CATEGORIES=	devel java
 MASTER_SITES=	LOCAL/olgeni
 DISTNAME=	zeromq-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	olgeni@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java bindings for ZeroMQ
 
 LIB_DEPENDS=	zmq.1:${PORTSDIR}/net/libzmq2
