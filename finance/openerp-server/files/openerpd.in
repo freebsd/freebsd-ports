@@ -48,6 +48,8 @@ stop_cmd="${name}_stop"
 status_cmd="${name}_status"
 getval_cmd="${name}_getval"
 
+export PYTHON_EGG_DIR=/tmp
+
 openerpd_prestart()
 {
     local d

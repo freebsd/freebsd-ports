@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	openerp-server
-PORTVERSION=	6.0.3
-PORTREVISION=	2
+PORTVERSION=	7.0
 PORTEPOCH=	1
 CATEGORIES=	finance python
-MASTER_SITES=	http://www.openerp.com/download/stable/source/
+MASTER_SITES=	http://nightly.openerp.com/7.0/nightly/src/
+DISTNAME=       openerp-${PORTVERSION}-${NIGHTLY}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	pakhom706@gmail.com
 COMMENT=	Open source application ERP & CRM in Python using Postgresql
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
@@ -24,8 +24,13 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imag
 		${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}mako>0:${PORTSDIR}/textproc/py-mako \
 		${PYTHON_PKGNAMEPREFIX}dateutil>0:${PORTSDIR}/devel/py-dateutil \
+		${PYTHON_PKGNAMEPREFIX}ldap2>0:${PORTSDIR}/net/py-ldap2 \
 		${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab2
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+NIGHTLY=	20140115-002435
+NIGHTLY_=	${NIGHTLY:S/-/_/g}
+WRKSRC=         ${WRKDIR}/openerp-${PORTVERSION}-${NIGHTLY}
 
 USE_RC_SUBR=	openerpd
 SUB_FILES=	openerp-server.conf pkg-message
@@ -33,52 +38,18 @@ SUB_LIST=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
 
 USE_PYTHON=			yes
 USE_PYDISTUTILS=		yes
-PYDISTUTILS_EGGINFODIR=		${PYTHON_SITELIBDIR}/openerp_server-${PORTVERSION}-${PYTHON_VERSION:S/thon//}.egg-info
-PYDISTUTILS_EGGINFO=		PKG-INFO
+PYDISTUTILS_NOEGGINFO=		yes
+PYDISTUTILS_AUTOPLIST=		yes
 
 USERS=		openerpd
 GROUPS=		openerpd
 
-MAN1=		openerp-server.1
-MAN5=		openerp_serverrc.5
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/env python|${PYTHON_CMD}|g' ${WRKSRC}/bin/openerp-server.py
-
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
-	@${FIND} -s -d ${DOCSDIR} -type f | ${SED} 's#${PREFIX}/##g' >> ${TMPPLIST}
-	@${FIND} -s -d ${DOCSDIR} -type d | ${SED} 's#${PREFIX}/#@dirrm #g' >> ${TMPPLIST}
-.endif
-
-	${INSTALL_MAN} ${WRKSRC}/man/openerp-server.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/openerp_serverrc.5 ${PREFIX}/man/man5
-
-	${INSTALL_DATA} ${WRKDIR}/openerp-server.conf ${PREFIX}/etc/openerp-server.conf.sample
-	@if  [ ! -f ${PREFIX}/etc/openerp-server.conf ]; then \
-		${CP} -p ${PREFIX}/etc/openerp-server.conf.sample ${PREFIX}/etc/openerp-server.conf ; \
-	fi
-	@${ECHO} '@unexec if cmp -s %D/etc/openerp-server.conf.sample %D/etc/openerp-server.conf; then rm -f %D/etc/openerp-server.conf; fi' >> ${TMPPLIST}
+	@${REINPLACE_CMD} -e 's|site-packages/openerp-server|site-packages/openerp-${PORTVERSION}_${NIGHTLY_}-${PYTHON_VERSION:S/thon//}.egg/openerp|g' \
+		${WRKDIR}/openerp-server.conf
+	${INSTALL_DATA} ${WRKDIR}/openerp-server.conf \
+		${STAGEDIR}${PREFIX}/etc/openerp-server.conf.sample
 	@${ECHO} etc/openerp-server.conf.sample >> ${TMPPLIST}
-	@${ECHO} '@exec if [ ! -f %D/etc/openerp-server.conf ]; then cp -p %D/%F %B/openerp-server.conf; fi' >> ${TMPPLIST}
+	@${CHMOD} a+x ${STAGEDIR}${PREFIX}/bin/openerp-server
 
-	@${CHMOD} a+x ${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/openerp-server.py
-
-	@${ECHO} bin/openerp-server >> ${TMPPLIST}
-	@${FIND} -s -d ${PYTHON_SITELIBDIR}/${PORTNAME} \
-		-type f | ${SED} 's#${PREFIX}/##g' >> ${TMPPLIST}
-	@${FIND} -s -d ${PYTHON_SITELIBDIR}/${PORTNAME} \
-		-type d | ${SED} 's#${PREFIX}/#@dirrm #g' >> ${TMPPLIST}
-	@${FIND} -s -d ${PYDISTUTILS_EGGINFODIR} \
-		-type f -print |grep -v PKG-INFO| ${SED} 's#${PREFIX}/##g' >> ${TMPPLIST}
-	@${FIND} -s -d ${PYDISTUTILS_EGGINFODIR} \
-		-type d | ${SED} 's#${PREFIX}/#@dirrm #g' >> ${TMPPLIST}
-
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

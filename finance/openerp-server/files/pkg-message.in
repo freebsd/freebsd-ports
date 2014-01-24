@@ -16,4 +16,10 @@ You can try something like this :
 [PGSQL] $ createuser $openerp_dbuser
 [PGSQL] $ createdb --owner=${openerp_dbuser} --encoding=UTF-8 --locale=en_EN.UTF-8 ${openerp_dbname} "OpenERP initial database"
 
+Setuping you first database
+---------------------------
+
+Point your browser to http://localhost:8069/ and click "Manage Databases", the
+default master password is "admin".
+
 ************************************************************************
