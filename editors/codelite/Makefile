@@ -35,8 +35,6 @@ CXXFLAGS+=	-I${LOCALBASE}/include
 CMAKE_ARGS+=	-DIS_FREEBSD=1 \
 		-DPREFIX=${PREFIX}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCSCOPE}
