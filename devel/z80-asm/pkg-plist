@@ -1,0 +1,18 @@
+bin/z80-asm
+bin/z80-mon
+man/man1/z80-asm.1.gz
+man/man1/z80-mon.1.gz
+man/man3/z80-cpu.3.gz
+man/man3/z80-memory.3.gz
+man/man5/z80-asm.5.gz
+man/man5/z80-banks.5.gz
+man/man5/z80-file.5.gz
+man/man5/z80-keyboard.5.gz
+man/man5/z80-memory.5.gz
+man/man5/z80-ports.5.gz
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/z80-asm.html
+%%PORTDOCS%%%%DOCSDIR%%/z80-mon.html
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
