@@ -3,6 +3,7 @@
 
 PORTNAME=	xgalaga++
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://marc.mongenet.ch/OSS/XGalaga/ \
 		SF/nemysisfreebsdp/:icons
@@ -20,39 +21,32 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		gmake
 ALL_TARGET=	${PORTNAME}
 USE_XORG=	x11 xpm
-MAN6=		xgalaga++.6
-
-SUB_FILES=	pkg-install
+CFLAGS+=	-w
 
 PLIST_FILES=	bin/${PORTNAME} \
+		man/man6/${PORTNAME}.6.gz \
 		share/pixmaps/${PORTNAME}.png
 
 PORTDOCS=	README
 
-DESKTOP_ENTRIES="XGalaga++" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
-
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+DESKTOP_ENTRIES="XGalaga++" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CXX =/ d; s|/usr/local|${LOCALBASE}|' \
+	@${REINPLACE_CMD} -e 's|CXX =|CXX ?=|; \
+		s|HIGH_SCORES_FILE=/|#HIGH_SCORES_FILE=/|; \
+		s|#HIGH_SCORES_FILE=.|HIGH_SCORES_FILE=.|; \
+		s|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/xgalaga++.6x ${MAN6PREFIX}/man/man6/xgalaga++.6
-	@${CHGRP} games ${PREFIX}/bin/${PORTNAME}
-	@${CHMOD} g+s ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${PREFIX}/share/pixmaps/
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/xgalaga++.6x ${STAGEDIR}${MAN6PREFIX}/man/man6/xgalaga++.6
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
