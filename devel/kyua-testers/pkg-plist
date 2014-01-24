@@ -1,0 +1,19 @@
+@comment $FreeBSD$
+libdata/pkgconfig/kyua-testers.pc
+libexec/kyua-atf-tester
+libexec/kyua-plain-tester
+libexec/kyua-tap-tester
+man/man1/kyua-atf-tester.1.gz
+man/man1/kyua-plain-tester.1.gz
+man/man1/kyua-tap-tester.1.gz
+man/man1/kyua-tester.1.gz
+man/man5/kyua-tester-list.5.gz
+man/man5/kyua-tester-result.5.gz
+man/man7/kyua-atf-interface.7.gz
+man/man7/kyua-plain-interface.7.gz
+man/man7/kyua-tap-interface.7.gz
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

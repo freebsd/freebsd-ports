@@ -19,7 +19,6 @@ USES=		pkgconfig
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
@@ -29,18 +28,10 @@ CONFIGURE_ARGS+=	--without-atf
 .if ! ${PORT_OPTIONS:MDOCS}
 MAKE_FLAGS+=	doc_DATA=
 .endif
-PLIST_SUBST+=	TESTS="@comment "
 
-PORTDATA=	lib.subr tests_lib.subr
-PORTDOCS=	AUTHORS COPYING NEWS README
-MAN1=	atf-report.1 atf-run.1 atf2kyua.1
-
-# Eliminate empty directories
-remove-docsdir: .SILENT
-	${RMDIR} ${DOCSDIR}
-
-.if ! ${PORT_OPTIONS:MDOCS}
-post-install: remove-docsdir
-.endif
+post-stage:
+	# TODO(jmmv): Should not be necessary after updating this to 0.2.
+	rmdir ${STAGEDIR}${PREFIX}/tests/kyua-atf-compat
+	rmdir ${STAGEDIR}${PREFIX}/tests
 
 .include <bsd.port.mk>
