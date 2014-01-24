@@ -16,7 +16,7 @@ GH_TAG=		${PORTVERSION}
 GH_COMMIT=		9814531
 
 USE_RC_SUBR=	yes
-USES=	cmake
+USES=	cmake bison
 USE_OPENSSL=	yes
 
 PLIST_FILES=	sbin/rmilter etc/rc.d/rmilter.sh \
