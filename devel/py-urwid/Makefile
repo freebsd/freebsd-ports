@@ -16,8 +16,9 @@ LICENSE=	LGPL21
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	EXAMPLES
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 PORTEXAMPLES=	bigtext.py \
 		browse.py \
@@ -35,7 +36,6 @@ PORTEXAMPLES=	bigtext.py \
 		treesample.py
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -44,8 +44,8 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}/
-	@cd ${WRKSRC}/examples && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	(cd ${WRKSRC}/examples && ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}/)
 .endif
 
 regression-test: build
