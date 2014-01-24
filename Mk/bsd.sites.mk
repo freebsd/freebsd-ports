@@ -665,9 +665,63 @@ MASTER_SITE_KENAI+= \
 	http://projectkenai.com/downloads/%SUBDIR%/
 .endif
 
+# List:		http://download.kde.org/extra/mirrors.html
+# Updated:	2012-10-26
 .if !defined(IGNORE_MASTER_SITE_KDE)
 MASTER_SITE_KDE+= \
-	http://download.kde.org/%SUBDIR%/
+	http://download.kde.org/%SUBDIR%/ \
+	ftp://ftp.gtlib.gatech.edu/pub/kde/%SUBDIR%/ \
+	ftp://ftp.informatik.hu-berlin.de/pub/Mirrors/ftp.kde.org/%SUBDIR%/ \
+	http://ftp.gtlib.gatech.edu/pub/kde/%SUBDIR%/ \
+	ftp://ftp.solnet.ch/mirror/KDE/%SUBDIR%/ \
+	ftp://gd.tuwien.ac.at/kde/%SUBDIR%/ \
+	http://gd.tuwien.ac.at/kde/%SUBDIR%/ \
+	http://kde.mirrors.tds.net/pub/kde/%SUBDIR%/ \
+	ftp://ftp.rz.uni-wuerzburg.de/pub/unix/kde/%SUBDIR%/ \
+	http://mirrors.dotsrc.org/kde/%SUBDIR%/ \
+	ftp://mirrors.dotsrc.org/kde/%SUBDIR%/ \
+	ftp://ftp.fi.muni.cz/pub/kde/%SUBDIR%/ \
+	http://ftp.fi.muni.cz/pub/kde/%SUBDIR%/ \
+	ftp://sunsite.icm.edu.pl/pub/unix/kde/%SUBDIR%/ \
+	http://sunsite.icm.edu.pl/pub/unix/kde/%SUBDIR%/ \
+	ftp://ftp.sunet.se/pub/X11/kde/%SUBDIR%/ \
+	http://ftp.sunet.se/pub/X11/kde/%SUBDIR%/ \
+	ftp://ftp.kde.org/pub/kde/%SUBDIR%/ \
+	ftp://ftp.belnet.be/packages/kde/%SUBDIR%/ \
+	http://ftp.belnet.be/packages/kde/%SUBDIR%/ \
+	ftp://ftp.lip6.fr/pub/X11/kde/%SUBDIR%/ \
+	http://www-ftp.lip6.fr/pub/X11/kde/%SUBDIR%/ \
+	ftp://ftp.rhnet.is/pub/kde/%SUBDIR%/ \
+	http://ftp.rhnet.is/pub/kde/%SUBDIR%/ \
+	http://ftp-stud.fht-esslingen.de/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
+	ftp://ftp.cronyx.ru/pub/mirror/kde/%SUBDIR%/ \
+	http://ftp.twaren.net/Unix/X/KDE/%SUBDIR%/ \
+	ftp://ftp.na.kde.org/pub/kde/%SUBDIR%/ \
+	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/%SUBDIR%/ \
+	ftp://sunsite.informatik.rwth-aachen.de/pub/Linux/kde/%SUBDIR%/ \
+	ftp://ftp.ntua.gr/pub/X11/kde/%SUBDIR%/ \
+	http://ftp.ntua.gr/pub/X11/kde/%SUBDIR%/ \
+	ftp://ftp.heanet.ie/mirrors/ftp.kde.org/%SUBDIR%/ \
+	http://ftp.heanet.ie/mirrors/ftp.kde.org/%SUBDIR%/ \
+	ftp://ftp.kddlabs.co.jp/pub/X11/kde/%SUBDIR%/ \
+	http://ftp.kddlabs.co.jp/pub/X11/kde/%SUBDIR%/ \
+	http://kde.mirror.uber.com.au/%SUBDIR%/ \
+	ftp://ftp.ussg.iu.edu/pub/kde/%SUBDIR%/ \
+	http://ftp.ussg.iu.edu/kde/%SUBDIR%/ \
+	ftp://ftp.sayclub.com/pub/X/KDE/%SUBDIR%/ \
+	http://ftp.sayclub.com/pub/X/KDE/%SUBDIR%/ \
+	ftp://carroll.aset.psu.edu/pub/kde/%SUBDIR%/ \
+	http://mirror.cc.columbia.edu/pub/software/kde/%SUBDIR%/ \
+	ftp://ftp.mirrorservice.org/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
+	http://www.mirrorservice.org/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
+	http://master.kde.org/%SUBDIR%/ \
+	http://ftp.icm.edu.pl/pub/unix/kde/%SUBDIR%/ \
+	http://kde-mirror.freenux.org/%SUBDIR%/ \
+	http://ftp.fi.muni.cz/pub/kde/%SUBDIR%/ \
+	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/kde/&,} \
+	ftp://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
+	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_LOGILAB)
@@ -999,7 +1053,16 @@ MASTER_SITE_QMAIL+= \
 
 .if !defined(IGNORE_MASTER_SITE_QT)
 MASTER_SITE_QT+= \
-	http://download.qt-project.org/%SUBDIR%/
+	http://download.qt-project.org/%SUBDIR%/ \
+	http://master.qt-project.org/%SUBDIR%/ \
+	http://www.mirrorservice.org/sites/download.qt-project.org/%SUBDIR%/ \
+	http://www.nic.funet.fi/pub/mirrors/download.qt-project.org/%SUBDIR%/ \
+	http://qtmirror.ics.com/pub/qtproject/%SUBDIR%/ \
+	http://anychimirror101.mirrors.tds.net/pub/Qt/%SUBDIR%/ \
+	http://www.las.ic.unicamp.br/pub/qtproject/%SUBDIR%/ \
+	http://linorg.usp.br/Qt/%SUBDIR%/ \
+	http://ftp.jaist.ac.jp/pub/qtproject/%SUBDIR%/ \
+	http://mirrors.neusoft.edu.cn/qt/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_REDHAT_LINUX)
