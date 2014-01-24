@@ -2,19 +2,23 @@
 # $FreeBSD$
 
 PORTNAME=	osg
-PORTVERSION=	3.1.3
-PORTREVISION=	6
+PORTVERSION=	3.3.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.openscenegraph.org/downloads/developer_releases/ \
+MASTER_SITES=	http://trac.openscenegraph.org/downloads/developer_releases/ \
 		http://mirror.amdmi3.ru/distfiles/
-PKGNAMESUFFIX=	-devel
 DISTNAME=	OpenSceneGraph-${PORTVERSION}
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	C++ OpenGL scene graph library for real-time rendering
 
+LICENSE=	OSGPL
+LICENSE_NAME=	OpenSceneGraph Public License
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		libpng15.so:${PORTSDIR}/graphics/png \
+		libpng.so:${PORTSDIR}/graphics/png \
 		libtiff.so:${PORTSDIR}/graphics/tiff
 
 CONFLICTS=	osg-[0-9]*
@@ -26,187 +30,179 @@ USE_XORG=	x11
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
-		OSG_SHLIBVER=93 \
-		OPENTHREADS_VERSION=2.6.0 \
-		OPENTHREADS_SHLIBVER=12
+		OSG_SHLIBVER=110 \
+		OPENTHREADS_VERSION=${PORTVERSION} \
+		OPENTHREADS_SHLIBVER=14
 
 PORTSCOUT=	limitw:1,odd
 
-OPTIONS_DEFINE=	CURL FREETYPE GDAL GIF INVENTOR JASPER XINE ITK \
-		VNC OPENEXR FFMPEG SVG PDF XRANDR SDL
+OPTIONS_DEFINE=	CURL FREETYPE GDAL GIF INVENTOR JASPER XINE GTA \
+		VNC OPENEXR FFMPEG SVG PDF SDL NVTT QT4 XRANDR \
+		LUA V8 PYTHON
+OPTIONS_DEFAULT=FREETYPE GIF FFMPEG XRANDR
+
 GDAL_DESC=	GDAL support
 INVENTOR_DESC=	SGI OpenInventor support
-ITK_DESC=	InsightToolkit support
+GTA_DESC=	GTA file format support
 VNC_DESC=	LibVNCServer support
 SDL_DESC=	Use SDL (joystick support in present3d)
+NVTT_DESC=	Use NVidia texture tools
+LUA_DESC=	Lua strict engine support
+V8_DESC=	V8 script  engine support
+PYTHON_DESC=	Python strict engine support
 
-OPTIONS_DEFAULT=	FREETYPE GIF XRANDR
+OPTIONS_SUB=	yes
 
-# broken (openvrml from ports is too old)
-#		OPENVRML "Support for OpenVRML"             off
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+FREETYPE_LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
+GDAL_LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
+GIF_LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib
+INVENTOR_LIB_DEPENDS=	libInventor.so:${PORTSDIR}/graphics/inventor
+JASPER_LIB_DEPENDS=	libjasper.so:${PORTSDIR}/graphics/jasper
+XINE_LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine
+GTA_LIB_DEPENDS=	libgta.so:${PORTSDIR}/devel/libgta
+VNC_LIB_DEPENDS=	libvncserver.so:${PORTSDIR}/net/libvncserver
+OPENEXR_LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
+FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
+SVG_LIB_DEPENDS=	librsvg-2.so:${PORTSDIR}/graphics/librsvg2
+PDF_LIB_DEPENDS=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
+SDL_USE=		SDL=sdl
+NVTT_LIB_DEPENDS=	libnvtt.so:${PORTSDIR}/graphics/nvidia-texture-tools
+XRANDR_CMAKE_ON=	-DOSGVIEWER_USE_XRANDR:BOOL=ON
+XRANDR_CMAKE_OFF=	-DOSGVIEWER_USE_XRANDR:BOOL=OFF
+QT4_USE=		QT4=corelib,gui,opengl,qmake_build,moc_build,uic_build,rcc_build
+QT4_CMAKE_ON=		-DOSG_USE_QT=ON
+QT4_CMAKE_OFF=		-DOSG_USE_QT=OFF
+LUA_USE=		LUA=5.1
+V8_LIB_DEPENDS=		libv8.so:${PORTSDIR}/lang/v8
+PYTHON_USE=		PYTHON=2
 
 .include <bsd.port.options.mk>
 
 # GUI toolkits are only needed for building examples, which are not even installed
-FORCE_IGNORE=	FLTK GLUT FOX Qt3 Qt4 wxWidgets OpenAL GtkGl # only for examples
-FORCE_IGNORE+=	COLLADA Performer OurDCMTK XUL FBX GTA       # not in ports
+FORCE_IGNORE=	FLTK GLUT FOX Qt3 Qt5Widgets wxWidgets OpenAL GtkGl # only for examples
+FORCE_IGNORE+=	COLLADA Performer OurDCMTK XUL FBX           # not in ports
+FORCE_IGNORE+=	OpenVRML                                     # ports version too old
+FORCE_IGNORE+=	ITK                                          # ports version doesn't build on 10.x
 FORCE_REQUIRE=	Threads OpenGL X11 JPEG PNG TIFF ZLIB        # common & lightweight
 
 # options that affect FIND_PACKAGE
 .if ${PORT_OPTIONS:MCURL}
 FORCE_REQUIRE+=	CURL
-LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
-PLIST_SUB+=	CURL=""
 .else
 FORCE_IGNORE+=	CURL
-PLIST_SUB+=	CURL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFREETYPE}
 FORCE_REQUIRE+=	FreeType
-LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
-PLIST_SUB+=	FREETYPE=""
 .else
 FORCE_IGNORE+=	FreeType
-PLIST_SUB+=	FREETYPE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGDAL}
 FORCE_REQUIRE+=	GDAL
-LIB_DEPENDS+=	libgdal.so:${PORTSDIR}/graphics/gdal
-PLIST_SUB+=	GDAL=""
 .else
 FORCE_IGNORE+=	GDAL
-PLIST_SUB+=	GDAL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGIF}
 FORCE_REQUIRE+=	GIFLIB
-LIB_DEPENDS+=	libgif.so:${PORTSDIR}/graphics/giflib
-PLIST_SUB+=	GIF=""
 .else
 FORCE_IGNORE+=	GIFLIB
-PLIST_SUB+=	GIF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MINVENTOR}
 FORCE_REQUIRE+=	Inventor
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libInventor.so:${PORTSDIR}/graphics/inventor
-RUN_DEPENDS+=	${LOCALBASE}/lib/libInventor.so:${PORTSDIR}/graphics/inventor
-PLIST_SUB+=	INVENTOR=""
 .else
 FORCE_IGNORE+=	Inventor
-PLIST_SUB+=	INVENTOR="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MJASPER}
 FORCE_REQUIRE+=	Jasper
-LIB_DEPENDS+=	libjasper.so:${PORTSDIR}/graphics/jasper
-PLIST_SUB+=	JASPER=""
 .else
 FORCE_IGNORE+=	Jasper
-PLIST_SUB+=	JASPER="@comment "
 .endif
-
-#.if ${PORT_OPTIONS:MOPENVRML}
-#FORCE_REQUIRE+=	OpenVRML
-#LIB_DEPENDS+=	libopenvrml.so:${PORTSDIR}/www/openvrml
-#PLIST_SUB+=	OPENVRML=""
-#.else
-FORCE_IGNORE+=	OpenVRML
-PLIST_SUB+=	OPENVRML="@comment "
-#.endif
 
 .if ${PORT_OPTIONS:MXINE}
 FORCE_REQUIRE+=	Xine
-LIB_DEPENDS+=	libxine.so:${PORTSDIR}/multimedia/libxine
-PLIST_SUB+=	XINE=""
 .else
 FORCE_IGNORE+=	Xine
-PLIST_SUB+=	XINE="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MITK}
-FORCE_REQUIRE+=	ITK
-BUILD_DEPENDS+=	${LOCALBASE}/lib/InsightToolkit/UseITK.cmake:${PORTSDIR}/science/InsightToolkit
-RUN_DEPENDS+=	${LOCALBASE}/lib/InsightToolkit/UseITK.cmake:${PORTSDIR}/science/InsightToolkit
-PLIST_SUB+=	ITK=""
-CXXFLAGS+=	-DVCL_CAN_STATIC_CONST_INIT_FLOAT=0
+.if ${PORT_OPTIONS:MGTA}
+FORCE_REQUIRE+=	GTA
 .else
-FORCE_IGNORE+=	ITK
-PLIST_SUB+=	ITK="@comment "
+FORCE_IGNORE+=	GTA
 .endif
 
 .if ${PORT_OPTIONS:MVNC}
 FORCE_REQUIRE+=	LibVNCServer
-LIB_DEPENDS+=	libvncserver.so:${PORTSDIR}/net/libvncserver
-PLIST_SUB+=	VNC=""
 .else
 FORCE_IGNORE+=	LibVNCServer
-PLIST_SUB+=	VNC="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENEXR}
 FORCE_REQUIRE+=	OpenEXR
-LIB_DEPENDS+=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR
-PLIST_SUB+=	OPENEXR=""
 .else
 FORCE_IGNORE+=	OpenEXR
-PLIST_SUB+=	OPENEXR="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MFFMPEG}
 FORCE_REQUIRE+=	FFmpeg
-LIB_DEPENDS+=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
-PLIST_SUB+=	FFMPEG=""
 .else
 FORCE_IGNORE+=	FFmpeg
-PLIST_SUB+=	FFMPEG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSDL}
 FORCE_REQUIRE+=	SDL
-USE_SDL=	sdl
 .else
 FORCE_IGNORE+=	SDL
+.endif
+
+.if ${PORT_OPTIONS:MNVTT}
+FORCE_REQUIRE+=	NVTT
+.else
+FORCE_IGNORE+=	NVTT
+.endif
+
+.if ${PORT_OPTIONS:MLUA}
+FORCE_REQUIRE+=	Lua51
+.else
+FORCE_IGNORE+=	Lua51
+.endif
+
+.if ${PORT_OPTIONS:MV8}
+FORCE_REQUIRE+=	V8
+.else
+FORCE_IGNORE+=	V8
+.endif
+
+.if ${PORT_OPTIONS:MPYTHON}
+FORCE_REQUIRE+=	PythonLibs
+.else
+FORCE_IGNORE+=	PythonLibs
 .endif
 
 # options that affect PKG_CHECK_MODULES
 .if ${PORT_OPTIONS:MSVG}
 FORCE_REQUIRE+=	RSVG
-LIB_DEPENDS+=	librsvg-2.so:${PORTSDIR}/graphics/librsvg2
-PLIST_SUB+=	SVG=""
 .else
 FORCE_IGNORE+=	RSVG
-PLIST_SUB+=	SVG="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPDF}
 FORCE_REQUIRE+=	Poppler-glib
-LIB_DEPENDS+=	libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib
-PLIST_SUB+=	PDF=""
 .else
 FORCE_IGNORE+=	Poppler-glib
-PLIST_SUB+=	PDF="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSVG} || ${PORT_OPTIONS:MPDF}
-LIB_DEPENDS+=	libcairo.so:${PORTSDIR}/graphics/cairo
+USE_GNOME=	cairo
 .endif
 
 # other options
 .if ${PORT_OPTIONS:MXRANDR}
-CMAKE_ARGS+=	-DOSGVIEWER_USE_XRANDR:BOOL=ON
 USE_XORG+=	xrandr
-.else
-CMAKE_ARGS+=	-DOSGVIEWER_USE_XRANDR:BOOL=OFF
-.endif
-
-.if ${PORT_OPTIONS:MXRANDR}
-CMAKE_ARGS+=	-DOSGVIEWER_USE_XRANDR:BOOL=ON
-USE_XORG+=	xrandr
-.else
-CMAKE_ARGS+=	-DOSGVIEWER_USE_XRANDR:BOOL=OFF
 .endif
 
 post-patch:

@@ -34,7 +34,6 @@ include/osg/BoundsChecking
 include/osg/BufferIndexBinding
 include/osg/BufferObject
 include/osg/Camera
-include/osg/CameraNode
 include/osg/CameraView
 include/osg/ClampColor
 include/osg/ClearNode
@@ -112,6 +111,7 @@ include/osg/OccluderNode
 include/osg/OcclusionQueryNode
 include/osg/OperationThread
 include/osg/PagedLOD
+include/osg/PatchParameter
 include/osg/Plane
 include/osg/Point
 include/osg/PointSprite
@@ -120,6 +120,7 @@ include/osg/PolygonOffset
 include/osg/PolygonStipple
 include/osg/Polytope
 include/osg/PositionAttitudeTransform
+include/osg/PrimitiveRestartIndex
 include/osg/PrimitiveSet
 include/osg/Program
 include/osg/Projection
@@ -127,7 +128,9 @@ include/osg/ProxyNode
 include/osg/Quat
 include/osg/Referenced
 include/osg/RenderInfo
+include/osg/SampleMaski
 include/osg/Scissor
+include/osg/ScriptEngine
 include/osg/Sequence
 include/osg/ShadeModel
 include/osg/Shader
@@ -157,6 +160,7 @@ include/osg/Texture2D
 include/osg/Texture2DArray
 include/osg/Texture2DMultisample
 include/osg/Texture3D
+include/osg/TextureBuffer
 include/osg/TextureCubeMap
 include/osg/TextureRectangle
 include/osg/Timer
@@ -171,18 +175,29 @@ include/osg/Vec2
 include/osg/Vec2b
 include/osg/Vec2d
 include/osg/Vec2f
+include/osg/Vec2i
 include/osg/Vec2s
+include/osg/Vec2ub
+include/osg/Vec2ui
+include/osg/Vec2us
 include/osg/Vec3
 include/osg/Vec3b
 include/osg/Vec3d
 include/osg/Vec3f
+include/osg/Vec3i
 include/osg/Vec3s
+include/osg/Vec3ub
+include/osg/Vec3ui
+include/osg/Vec3us
 include/osg/Vec4
 include/osg/Vec4b
 include/osg/Vec4d
 include/osg/Vec4f
+include/osg/Vec4i
 include/osg/Vec4s
 include/osg/Vec4ub
+include/osg/Vec4ui
+include/osg/Vec4us
 include/osg/Version
 include/osg/VertexProgram
 include/osg/View
@@ -288,6 +303,7 @@ include/osgFX/Version
 include/osgGA/AnimationPathManipulator
 include/osgGA/CameraManipulator
 include/osgGA/CameraViewSwitchManipulator
+include/osgGA/Device
 include/osgGA/DriveManipulator
 include/osgGA/EventQueue
 include/osgGA/EventVisitor
@@ -379,12 +395,36 @@ include/osgParticle/SmokeTrailEffect
 include/osgParticle/VariableRateCounter
 include/osgParticle/Version
 include/osgParticle/range
+include/osgPresentation/Action
 include/osgPresentation/AnimationMaterial
+include/osgPresentation/Audio
 include/osgPresentation/CompileSlideCallback
+include/osgPresentation/Cursor
+include/osgPresentation/Element
 include/osgPresentation/Export
+include/osgPresentation/Group
+include/osgPresentation/Image
+include/osgPresentation/KeyEventHandler
+include/osgPresentation/Layer
+include/osgPresentation/Model
+include/osgPresentation/Movie
 include/osgPresentation/PickEventHandler
+include/osgPresentation/Presentation
+include/osgPresentation/PropertyManager
+include/osgPresentation/Section
+include/osgPresentation/Slide
 include/osgPresentation/SlideEventHandler
 include/osgPresentation/SlideShowConstructor
+include/osgPresentation/Text
+include/osgPresentation/Timeout
+include/osgPresentation/Volume
+%%QT4%%include/osgQt/Export
+%%QT4%%include/osgQt/GraphicsWindowQt
+%%QT4%%include/osgQt/QFontImplementation
+%%QT4%%include/osgQt/QGraphicsViewAdapter
+%%QT4%%include/osgQt/QWebViewImage
+%%QT4%%include/osgQt/QWidgetImage
+include/osgDB/PropertyInterface
 include/osgShadow/ConvexPolyhedron
 include/osgShadow/DebugShadowMap
 include/osgShadow/Export
@@ -474,6 +514,7 @@ include/osgUtil/PlaneIntersector
 include/osgUtil/PolytopeIntersector
 include/osgUtil/PositionalStateContainer
 include/osgUtil/PrintVisitor
+include/osgUtil/RayIntersector
 include/osgUtil/ReflectionMapGenerator
 include/osgUtil/RenderBin
 include/osgUtil/RenderLeaf
@@ -496,6 +537,7 @@ include/osgUtil/Version
 include/osgViewer/CompositeViewer
 include/osgViewer/Export
 include/osgViewer/GraphicsWindow
+include/osgViewer/Keystone
 include/osgViewer/Renderer
 include/osgViewer/Scene
 include/osgViewer/Version
@@ -567,6 +609,9 @@ lib/libosgParticle.so.%%OSG_SHLIBVER%%
 lib/libosgPresentation.so
 lib/libosgPresentation.so.%%OSG_VERSION%%
 lib/libosgPresentation.so.%%OSG_SHLIBVER%%
+%%QT4%%lib/libosgQt.so
+%%QT4%%lib/libosgQt.so.%%OSG_VERSION%%
+%%QT4%%lib/libosgQt.so.%%OSG_SHLIBVER%%
 lib/libosgShadow.so
 lib/libosgShadow.so.%%OSG_VERSION%%
 lib/libosgShadow.so.%%OSG_SHLIBVER%%
@@ -618,24 +663,28 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_dxf.so
 %%FFMPEG%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_ffmpeg.so
 %%FREETYPE%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_freetype.so
 %%GDAL%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_gdal.so
-lib/osgPlugins-%%OSG_VERSION%%/osgdb_geo.so
 %%GIF%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_gif.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_glsl.so
+%%GTA%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_gta.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_gz.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_hdr.so
 %%INVENTOR%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_iv.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_ive.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_jpeg.so
 %%JASPER%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_jp2.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_ktx.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_logo.so
+%%LUA%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_lua.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_lwo.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_lws.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_md2.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_mdl.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_normals.so
+%%NVTT%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_nvtt.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_obj.so
 %%GDAL%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_ogr.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_openflight.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_osc.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osg.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osga.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_osgshadow.so
@@ -650,6 +699,8 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_png.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_pnm.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_pov.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_pvr.so
+%%PYTHON%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_python.so
+%%QT4%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_qfont.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_revisions.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_rgb.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_rot.so
@@ -657,13 +708,17 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_scale.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_serializers_osg.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_serializers_osganimation.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_serializers_osgfx.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_serializers_osgga.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_serializers_osgmanipulator.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_serializers_osgparticle.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_serializers_osgpresentation.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_serializers_osgshadow.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_serializers_osgsim.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_serializers_osgterrain.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_serializers_osgtext.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_serializers_osgviewer.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_serializers_osgvolume.so
+%%SDL%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_sdl.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_shp.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_stl.so
 %%SVG%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_svg.so
@@ -671,10 +726,11 @@ lib/osgPlugins-%%OSG_VERSION%%/osgdb_tga.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_tgz.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_tiff.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_trans.so
+lib/osgPlugins-%%OSG_VERSION%%/osgdb_trk.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_txf.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_txp.so
+%%V8%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_v8.so
 %%VNC%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_vnc.so
-%%OPENVRML%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_vrml.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_vtf.so
 lib/osgPlugins-%%OSG_VERSION%%/osgdb_x.so
 %%XINE%%lib/osgPlugins-%%OSG_VERSION%%/osgdb_xine.so
@@ -686,6 +742,7 @@ libdata/pkgconfig/openscenegraph-osgFX.pc
 libdata/pkgconfig/openscenegraph-osgGA.pc
 libdata/pkgconfig/openscenegraph-osgManipulator.pc
 libdata/pkgconfig/openscenegraph-osgParticle.pc
+%%QT4%%libdata/pkgconfig/openscenegraph-osgQt.pc
 libdata/pkgconfig/openscenegraph-osgShadow.pc
 libdata/pkgconfig/openscenegraph-osgSim.pc
 libdata/pkgconfig/openscenegraph-osgTerrain.pc
@@ -707,6 +764,7 @@ libdata/pkgconfig/openthreads.pc
 @dirrm include/osgTerrain
 @dirrm include/osgSim
 @dirrm include/osgShadow
+%%QT4%%@dirrm include/osgQt
 @dirrm include/osgPresentation
 @dirrm include/osgParticle
 @dirrm include/osgManipulator
