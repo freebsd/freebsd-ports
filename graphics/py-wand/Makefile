@@ -9,14 +9,14 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	MagickWand Python binding
 
-LIB_DEPENDS=	MagickWand:${PORTSDIR}/graphics/ImageMagick
+LICENSE=	MIT
+
+LIB_DEPENDS=	libMagickWand.so:${PORTSDIR}/graphics/ImageMagick
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|cmdclass={'upload_doc': upload_doc}||" \
 		${WRKSRC}/setup.py

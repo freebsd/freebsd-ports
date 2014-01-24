@@ -27,7 +27,6 @@ OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MM2CRYPTO}
@@ -42,8 +41,9 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gmpy>0:${PORTSDIR}/math/py-gmpy
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}/
-	${CP} -R ${WRKSRC}/samples/ ${EXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	@cd ${WRKSRC}/samples && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

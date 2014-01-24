@@ -14,13 +14,7 @@ COMMENT=	Lazy string Python module for translations
 LICENSE=	BSD
 
 USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 320
-.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
