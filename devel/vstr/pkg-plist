@@ -12,6 +12,8 @@ lib/libvstr.a
 lib/libvstr.la
 lib/libvstr.so
 libdata/pkgconfig/vstr.pc
+man/man3/vstr.3.gz
+man/man3/vstr_const.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/basic_cat.c.html
 %%PORTDOCS%%%%DOCSDIR%%/compare_licenses/SafeStr.txt
 %%PORTDOCS%%%%DOCSDIR%%/compare_licenses/bstring.txt
