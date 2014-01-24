@@ -139,6 +139,7 @@
     SUBDIR += nagios-snmp-plugins
     SUBDIR += nagios-snmp-plugins-extras
     SUBDIR += nagios-spamd-plugin
+    SUBDIR += nagios4
     SUBDIR += nagiosagent
     SUBDIR += nagiosgraph
     SUBDIR += nagiosql

@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	nagios
-PORTVERSION=	3.5.1
-PORTREVISION=	4
+PORTVERSION=	4.0.2
+PKGNAMESUFFIX=	4
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3.x/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-4.x/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Powerful network monitoring system
@@ -13,15 +13,14 @@ COMMENT=	Powerful network monitoring system
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
-RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
-USES=		iconv perl5 uidfix
+USES=		gmake iconv perl5 uidfix
 USE_PERL5=	build
 USE_AUTOTOOLS=	autoconf libltdl
 USE_PHP=	yes
 USE_RC_SUBR=	nagios
 
-CONFLICTS=	nagios-[12].* nagios-devel-* nagios4-*
+CONFLICTS=	nagios-[12].* nagios-devel-*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
@@ -44,8 +43,6 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
 
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
 CFLAGS+=	${CPPFLAGS}
-
-MAKE_JOBS_UNSAFE=	yes
 
 INSTALL_TARGET=	install install-commandmode install-config
 PLIST_SUB=	NAGIOSDIR=${NAGIOSDIR} \
@@ -73,22 +70,15 @@ NAGIOSCGIURL?=	${NAGIOSHTMURL}/cgi-bin
 USERS=		${NAGIOSUSER}
 GROUPS=		${NAGIOSGROUP}
 
-OPTIONS_DEFINE=	EMBEDDED_PERL NANOSLEEP EVENT_BROKER UNHANDLED_HACK
-EMBEDDED_PERL_DESC=	Enable embedded Perl [requires Perl 5.8.0+]
+OPTIONS_DEFINE=	NANOSLEEP EVENT_BROKER UNHANDLED_HACK
 NANOSLEEP_DESC=		Use nanosleep in event timing
 EVENT_BROKER_DESC=	Enable event broker functionality
 UNHANDLED_HACK_DESC=	Display passive checks in unhandled queries
 
 OPTIONS_SUB=
 
-EMBEDDED_PERL_USE=	perl5=run
-EMBEDDED_PERL_CONFIGURE_ENABLE=	embedded-perl
-EMBEDDED_PERL_CONFIGURE_WITH=	perlcache
 NANOSLEEP_CONFIGURE_ENABLE=	nanosleep
 EVENT_BROKER_CONFIGURE_ENABLE=	event-broker
-
-post-extract:
-	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 .include <bsd.port.options.mk>
 
