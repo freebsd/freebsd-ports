@@ -13,7 +13,4 @@ COMMENT=	Yet another Perl module for template processing
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::SimpleTemplate.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

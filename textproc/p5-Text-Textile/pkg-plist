@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Text::Textile.3.gz
 %%SITE_PERL%%/Text/Textile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Textile/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Textile

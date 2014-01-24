@@ -1,3 +1,7 @@
+%%PERL5_MAN3%%/Data::Section::TestBase.3.gz
+%%PERL5_MAN3%%/Test::Base::Less.3.gz
+%%PERL5_MAN3%%/Text::TestBase.3.gz
+%%PERL5_MAN3%%/Text::TestBase::Block.3.gz
 %%SITE_PERL%%/Data/Section/TestBase.pm
 %%SITE_PERL%%/Test/Base/Less.pm
 %%SITE_PERL%%/Text/TestBase.pm

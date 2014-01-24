@@ -10,10 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	hcoyote@ghostar.org
 COMMENT=	A perl-based implementation of the Textile syntax by Dean Allen
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Text::Textile.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
