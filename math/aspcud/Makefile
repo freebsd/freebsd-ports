@@ -11,6 +11,8 @@ MASTER_SITE_SUBDIR=	potassco/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Advanced solver for package dependencies
 
+LICENSE=	GPLv3
+
 BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c
 LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	gringo:${PORTSDIR}/math/gringo \
@@ -18,7 +20,7 @@ RUN_DEPENDS=	gringo:${PORTSDIR}/math/gringo \
 				bash:${PORTSDIR}/shells/bash
 
 USE_PYTHON_RUN=	yes
-USES=	cmake:outsource shebangfix
+USES=	compiler:c++11-lang cmake:outsource shebangfix
 SHEBANG_FILES=	${WRKSRC}/scripts/aspcud.sh
 
 post-patch:
