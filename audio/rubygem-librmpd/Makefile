@@ -10,7 +10,6 @@ MAINTAINER=	vg@FreeBSD.org
 COMMENT=	Is a simple yet powerful Music Player Daemon library
 
 USE_RUBY=	yes
-NO_STAGE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
