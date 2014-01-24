@@ -14,7 +14,4 @@ COMMENT=	Perl functions used to manipulate IP addresses, masks and FQDN's
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::IPAddress.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
