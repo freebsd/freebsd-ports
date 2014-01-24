@@ -12,10 +12,7 @@ COMMENT=	Determine positions for hyphens inside words
 
 LICENSE=	BSD
 
-NO_STAGE=	yes
 USE_PERL5=	configure
 USES=		perl5
-
-MAN3=		Text::Hyphen.3
 
 .include <bsd.port.mk>

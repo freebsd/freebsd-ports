@@ -15,7 +15,4 @@ BUILD_DEPENDS=	p5-Text-Filter>=0:${PORTSDIR}/textproc/p5-Text-Filter
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::Filter::Chain.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

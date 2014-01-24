@@ -17,10 +17,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::Graphics.3
-
-NO_STAGE=	yes
-post-patch:
-	@${RM} ${WRKSRC}/lib/Text/Graphics.pm.orig
-
 .include <bsd.port.mk>

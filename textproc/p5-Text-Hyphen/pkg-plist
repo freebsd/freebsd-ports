@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Text::Hyphen.3.gz
 %%SITE_PERL%%/Text/Hyphen.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Hyphen/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Hyphen

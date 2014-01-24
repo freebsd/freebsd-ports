@@ -13,7 +13,4 @@ COMMENT=	Base class for objects that can read and write text lines
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::Filter.3 Text::Filter::Cooked.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
