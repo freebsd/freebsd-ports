@@ -23,7 +23,7 @@ IGNORE=	requires kernel source files in ${SRC_BASE}
 
 CATEGORIES+=	kld
 
-SSP_UNSAFE=	kernel module does not support SSP
+SSP_UNSAFE=	kernel module supports SSP natively
 
 KMODDIR?=	/boot/modules
 .if ${KMODDIR} == /boot/kernel
@@ -51,7 +51,7 @@ kmod-post-install:
 	/usr/sbin/kldxref ${KMODDIR}
 .endif
 .if ${KMODDIR} != /boot/modules
-	@${ECHO_CMD} "@unexec rmdir ${KMODDIR} 2>/dev/null || true" \
+	@${ECHO_CMD} "@unexec rmdir -p ${KMODDIR} 2>/dev/null || true" \
 		>> ${TMPPLIST}
 .endif
 
