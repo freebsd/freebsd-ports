@@ -17,7 +17,7 @@ LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gmake pkgconfig
-#USE_GCC=	yes
+USE_GCC=	yes
 USE_WX=		yes
 WX_CONF_ARGS=	absolute
 
