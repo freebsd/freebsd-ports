@@ -14,6 +14,6 @@ BUILD_DEPENDS=	p5-Text-FixedLength>=0:${PORTSDIR}/textproc/p5-Text-FixedLength
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
-USE_PERL5=	configure patch
+USE_PERL5=	configure
 
 .include <bsd.port.mk>
