@@ -22,5 +22,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/vmail bin/vmail_client bin/vmailsend
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

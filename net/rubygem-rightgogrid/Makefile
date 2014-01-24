@@ -18,5 +18,4 @@ GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
 UNIQUENAME=	${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

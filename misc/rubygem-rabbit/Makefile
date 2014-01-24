@@ -34,7 +34,6 @@ PLIST_FILES=	bin/rabbit bin/rabbirc bin/rabbit-command bin/rabbit-slide \
 OPTIONS_DEFINE=	MIMETEX
 MIMETEX_DESC=	Run with mimetex
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMIMETEX}

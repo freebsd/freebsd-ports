@@ -18,5 +18,4 @@ USE_RUBYGEMS=	yes
 GEM_NAME=	${PORTNAME}-${DISTVERSION}
 RUBYGEM_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
