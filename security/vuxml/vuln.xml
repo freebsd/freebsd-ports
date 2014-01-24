@@ -51,6 +51,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c0ef849e-84ac-11e3-bec4-9c4e36909cc0">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>11.2r202.335</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="http://helpx.adobe.com/security/products/flash-player/apsb14-02.html">
+	  <p>These updates address vulnerabilities that could cause a crash
+	    and potentially allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0491</cvename>
+      <cvename>CVE-2014-0492</cvename>
+      <url>http://helpx.adobe.com/security/products/flash-player/apsb14-02.html</url>
+    </references>
+    <dates>
+      <discovery>2014-01-14</discovery>
+      <entry>2014-01-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6d08fa63-83bf-11e3-bdba-080027ef73ec">
     <topic>HTMLDOC -- buffer overflow issues when reading AFM files and parsing page sizes</topic>
     <affects>
