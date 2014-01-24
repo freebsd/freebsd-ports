@@ -27,6 +27,6 @@ aureal_viakx133fix="YES"
 
 in your /etc/rc.conf.
 
-Please note that you also need to have the 'sound.ko' moduld loaded already.
+Please note that you also need to have the 'sound.ko' module loaded already.
 
 -------------------------------------------------------------------------------
