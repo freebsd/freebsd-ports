@@ -18,6 +18,9 @@ GNU_CONFIGURE=	yes
 
 MAN6=	xarchon.6
 
+DEPRECATED=	Unusable, development ceased, not works with stage
+EXPIRATION_DATE=	2014-03-25
+
 NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
