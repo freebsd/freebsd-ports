@@ -5397,3 +5397,4 @@ cad/salome-randomizer||2014-01-24|Has expired: depends on expired cad/salome-ker
 cad/salome-sierpinsky||2014-01-24|Has expired: depends on expired cad/salome-kernel
 cad/salome-geom||2014-01-24|Has expired: depends on expired cad/salome-kernel
 devel/combat||2014-01-24|Has expired: depends on expired devel/mico
+net-mgmt/nagios-devel|net-mgmt/nagios|2014-01-25|Master site gone, outdated
