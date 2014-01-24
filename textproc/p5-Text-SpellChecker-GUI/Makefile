@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vvelox@vvelox.net
 COMMENT=	Implements a user interface to Text::SpellChecker using ZConf::GUI
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Curses-UI>=0:${PORTSDIR}/devel/p5-Curses-UI \
 		p5-String-ShellQuote>=0:${PORTSDIR}/textproc/p5-String-ShellQuote \
 		p5-ZConf-GUI>=0:${PORTSDIR}/devel/p5-ZConf-GUI \
@@ -19,8 +22,4 @@ BUILD_DEPENDS=	p5-Curses-UI>=0:${PORTSDIR}/devel/p5-Curses-UI \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::SpellChecker::GUI.3 \
-		Text::SpellChecker::GUI::Curses.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

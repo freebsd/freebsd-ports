@@ -1,3 +1,14 @@
+%%PERL5_MAN3%%/Text::Query.3.gz
+%%PERL5_MAN3%%/Text::Query::Build.3.gz
+%%PERL5_MAN3%%/Text::Query::BuildAdvancedString.3.gz
+%%PERL5_MAN3%%/Text::Query::BuildSimpleString.3.gz
+%%PERL5_MAN3%%/Text::Query::Optimize.3.gz
+%%PERL5_MAN3%%/Text::Query::Parse.3.gz
+%%PERL5_MAN3%%/Text::Query::ParseAdvanced.3.gz
+%%PERL5_MAN3%%/Text::Query::ParseSimple.3.gz
+%%PERL5_MAN3%%/Text::Query::Solve.3.gz
+%%PERL5_MAN3%%/Text::Query::SolveAdvancedString.3.gz
+%%PERL5_MAN3%%/Text::Query::SolveSimpleString.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Query/.packlist
 %%SITE_PERL%%/Text/Query.pm
 %%SITE_PERL%%/Text/Query/Advanced.pm

@@ -1,3 +1,6 @@
+%%PERL5_MAN3%%/Text::Sass.3.gz
+%%PERL5_MAN3%%/Text::Sass::Expr.3.gz
+%%PERL5_MAN3%%/Text::Sass::Functions.3.gz
 bin/sass2css.pl
 %%SITE_PERL%%/Text/Sass.pm
 %%SITE_PERL%%/Text/Sass/Expr.pm

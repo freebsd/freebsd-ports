@@ -10,10 +10,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	gslin@gslin.org
 COMMENT=	Parses folksonomy space-separated tags
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::Tags.3 Text::Tags::Parser.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
