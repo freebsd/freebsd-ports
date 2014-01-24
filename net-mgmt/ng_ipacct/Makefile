@@ -15,7 +15,7 @@ LICENSE=	BSD
 
 USES=	kmod uidfix
 
-MAKE_ENV=	BINDIR="${PREFIX}/sbin" KMODDIR=${KMODDIR} NO_XREF=yes
+MAKE_ENV=	BINDIR="${PREFIX}/sbin"
 
 USE_RC_SUBR=	ng_ipacct
 SUB_FILES=	pkg-message
