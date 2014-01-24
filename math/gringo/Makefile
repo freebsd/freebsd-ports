@@ -4,6 +4,7 @@
 PORTNAME=	gringo
 PORTVERSION=	4.2.1
 DISTVERSIONSUFFIX=	-source
+PORTREVISION=	1
 CATEGORIES=	math devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	potassco/${PORTNAME}/${PORTVERSION}
@@ -11,17 +12,24 @@ MASTER_SITE_SUBDIR=	potassco/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	vsevolod@FreeBSD.org
 COMMENT=	Grounding algorithm based on semi-naive database evaluation
 
+LICENSE=	GPLv3
+
 BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c
 
-USES=	scons lua:51+ bison
+USES=	scons bison
 
-MAKE_ARGS+=	${MAKE_ENV} WITH_LUA="lua-${LUA_VER}"
-CXXFLAGS+=	-std=c++11 -I${LUA_INCDIR}
-LDFLAGS+=	-L${LUA_LIBDIR}
+MAKE_ARGS+=	${MAKE_ENV}
+CXXFLAGS+=	-std=c++11
 
 PLIST_FILES=	bin/${PORTNAME}
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000000
+USE_GCC=	4.8+
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/build/release/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
