@@ -6,7 +6,7 @@ PORTVERSION=	1.5
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	https://www.monitoring-plugins.org/download/
+MASTER_SITES=	https://www.nagios-plugins.org/download/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Plugins for Nagios
