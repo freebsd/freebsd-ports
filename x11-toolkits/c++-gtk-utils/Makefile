@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	c++-gtk-utils
-PORTVERSION=	2.2.4
+PORTVERSION=	2.2.5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/cxx-gtk-utils/cxx-gtk-utils/${PORTVERSION}/
 DISTNAME=	c%2B%2B-gtk-utils-${PORTVERSION}
@@ -27,5 +27,12 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DEBUG DOCS
 
 DEBUG_CONFIGURE_ON=	--enable-debug
+
+.include <bsd.port.options.mk>
+
+post-install:
+.if ! ${PORT_OPTIONS:MDEBUG}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcxx-gtk-utils-2-2.2.so.1
+.endif
 
 .include <bsd.port.mk>

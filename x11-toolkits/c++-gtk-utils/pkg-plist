@@ -6,6 +6,7 @@ include/c++-gtk-utils-2-2.2/c++-gtk-utils/cgu_config.h
 include/c++-gtk-utils-2-2.2/c++-gtk-utils/convert.h
 include/c++-gtk-utils-2-2.2/c++-gtk-utils/do_if.h
 include/c++-gtk-utils-2-2.2/c++-gtk-utils/emitter.h
+include/c++-gtk-utils-2-2.2/c++-gtk-utils/extension.h
 include/c++-gtk-utils-2-2.2/c++-gtk-utils/fdstream.h
 include/c++-gtk-utils-2-2.2/c++-gtk-utils/fdstream.tpp
 include/c++-gtk-utils-2-2.2/c++-gtk-utils/file_print_manager.h
