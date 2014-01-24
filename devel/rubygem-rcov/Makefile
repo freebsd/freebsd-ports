@@ -17,8 +17,6 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/rcov
 
-NO_STAGE=	yes
-
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} == 2.0

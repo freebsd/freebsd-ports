@@ -27,5 +27,4 @@ USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/webby bin/webby-gen
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
