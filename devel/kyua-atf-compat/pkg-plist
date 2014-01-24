@@ -1,5 +1,15 @@
+@comment $FreeBSD$
 bin/atf-report
 bin/atf-run
 bin/atf2kyua
-@dirrmtry tests/kyua-atf-compat
-@dirrmtry tests
+man/man1/atf-report.1.gz
+man/man1/atf-run.1.gz
+man/man1/atf2kyua.1.gz
+%%DATADIR%%/lib.subr
+%%DATADIR%%/tests_lib.subr
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%

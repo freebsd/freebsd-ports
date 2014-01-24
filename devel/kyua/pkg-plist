@@ -1,0 +1,36 @@
+@comment $FreeBSD$
+bin/kyua
+etc/kyua/kyua.conf
+man/man1/kyua-about.1.gz
+man/man1/kyua-config.1.gz
+man/man1/kyua-db-exec.1.gz
+man/man1/kyua-db-migrate.1.gz
+man/man1/kyua-debug.1.gz
+man/man1/kyua-help.1.gz
+man/man1/kyua-list.1.gz
+man/man1/kyua-report-html.1.gz
+man/man1/kyua-report.1.gz
+man/man1/kyua-test.1.gz
+man/man1/kyua.1.gz
+man/man5/kyua.conf.5.gz
+man/man5/kyuafile.5.gz
+man/man7/kyua-build-root.7.gz
+man/man7/kyua-test-filters.7.gz
+%%DATADIR%%/misc/context.html
+%%DATADIR%%/misc/index.html
+%%DATADIR%%/misc/report.css
+%%DATADIR%%/misc/test_result.html
+%%DATADIR%%/store/migrate_v1_v2.sql
+%%DATADIR%%/store/schema_v2.sql
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Kyuafile.top
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kyua.conf
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%/store
+@dirrm %%DATADIR%%/misc
+@dirrm %%DATADIR%%
+@dirrm etc/kyua
