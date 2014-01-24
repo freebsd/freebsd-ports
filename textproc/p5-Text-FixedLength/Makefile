@@ -13,7 +13,4 @@ COMMENT=	Parse and create fixed length field records
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::FixedLength.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

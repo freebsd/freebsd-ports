@@ -1,6 +1,8 @@
+%%PERL5_MAN3%%/Text::Language::Guess.3.gz
 bin/language-guess
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Language/Guess/.packlist
 %%SITE_PERL%%/Text/Language/Guess.pm
+man/man1/language-guess.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Language/Guess
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Language
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
