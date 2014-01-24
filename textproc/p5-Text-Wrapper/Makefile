@@ -9,10 +9,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Simple word wrapping routine
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::Wrapper.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

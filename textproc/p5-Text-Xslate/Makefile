@@ -28,35 +28,6 @@ MAKE_JOBS_UNSAFE=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	xslate.1
-MAN3=	Text::Xslate.3 \
-	Text::Xslate::Bridge.3 \
-	Text::Xslate::Bridge::Star.3 \
-	Text::Xslate::Compiler.3 \
-	Text::Xslate::HashWithDefault.3 \
-	Text::Xslate::Manual.3 \
-	Text::Xslate::Manual::Builtin.3 \
-	Text::Xslate::Manual::Cookbook.3 \
-	Text::Xslate::Manual::Debugging.3 \
-	Text::Xslate::Manual::FAQ.3 \
-	Text::Xslate::PP.3 \
-	Text::Xslate::PP::Const.3 \
-	Text::Xslate::PP::Method.3 \
-	Text::Xslate::PP::Opcode.3 \
-	Text::Xslate::PP::State.3 \
-	Text::Xslate::PP::Type::Macro.3 \
-	Text::Xslate::PP::Type::Pair.3 \
-	Text::Xslate::PP::Type::Raw.3 \
-	Text::Xslate::Parser.3 \
-	Text::Xslate::Runner.3 \
-	Text::Xslate::Symbol.3 \
-	Text::Xslate::Syntax::Kolon.3 \
-	Text::Xslate::Syntax::Metakolon.3 \
-	Text::Xslate::Syntax::TTerse.3 \
-	Text::Xslate::Type::Raw.3 \
-	Text::Xslate::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501600

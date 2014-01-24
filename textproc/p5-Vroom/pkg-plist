@@ -1,4 +1,5 @@
 bin/vroom
+%%PERL5_MAN3%%/Vroom.3.gz
 %%SITE_PERL%%/Vroom.pm
 %%SITE_PERL%%/Vroom.pod
 %%SITE_PERL%%/Vroom/Mo.pm

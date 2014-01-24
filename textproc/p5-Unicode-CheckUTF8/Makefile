@@ -13,7 +13,4 @@ COMMENT=	Check if scalar is valid UTF-8
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Unicode::CheckUTF8.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

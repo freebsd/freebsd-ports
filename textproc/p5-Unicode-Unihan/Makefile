@@ -13,10 +13,4 @@ COMMENT=	The Unihan Data Base 5.1.0
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Unicode::Unihan.3
-
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e '/use 5.008001;/d' ${WRKSRC}/Unihan.pm
-
 .include <bsd.port.mk>
