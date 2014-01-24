@@ -1,11 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
 #   $MCom: ports/trunk/x11-themes/gnome-themes-standard/Makefile 18572 2013-06-18 10:03:30Z kwm $
-# Updated by Joe Maloney to support GTK 3.10 <pkgdemonteam@gmail.com>
 
 PORTNAME=       gnome-themes-standard
 PORTVERSION=    3.10.0
-PORTREVISION=   1
 CATEGORIES=     x11-themes gnome
 MASTER_SITES=   GNOME
 DIST_SUBDIR=    gnome3
@@ -15,7 +13,6 @@ COMMENT=        Standard themes for GNOME
 
 CONFLICTS=      gnome-themes-2.[0-9]*
 
-NO_STAGE=       yes
 USE_XZ=         yes
 USES=           gettext:build gmake pathfix pkgconfig
 INSTALLS_ICONS= yes
@@ -24,7 +21,8 @@ GNU_CONFIGURE=  yes
 CPPFLAGS+=      -I${LOCALBASE}/include
 LDFLAGS+=       -L${LOCALBASE}/lib
 
-LIBTOOL_FLAGS=  --tag-disable-static
-CONFIGURE_ARGS= --disable-static
+post-install:
+        @${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtk-3.0/3.0.0/theming-engines/libadwaita.so
+        @${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtk-2.0/2.10.0/engines/libadwaita.so
 
 .include <bsd.port.mk>
