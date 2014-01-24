@@ -255,7 +255,6 @@
     SUBDIR += codeworker
     SUBDIR += colorgcc
     SUBDIR += colormake
-    SUBDIR += combat
     SUBDIR += commit-patch
     SUBDIR += common_lib
     SUBDIR += commoncpp
@@ -1212,7 +1211,6 @@
     SUBDIR += mercurial
     SUBDIR += mercurialeclipse
     SUBDIR += meta-cvs
-    SUBDIR += mico
     SUBDIR += mime
     SUBDIR += mimir
     SUBDIR += mingw32-bin-msvcrt
