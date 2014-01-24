@@ -18,5 +18,4 @@ PLIST_FILES=	bin/racc bin/racc2y bin/y2racc
 
 CONFLICTS=	ruby1[89]-racc-1\.4\*
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
