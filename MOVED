@@ -5382,3 +5382,19 @@ www/suphp||2014-01-17|Has expired: Upstream dead, EOL: https://lists.marsching.c
 databases/postgis||2014-01-17|Has expired: EOLed upstream
 textproc/redland-bindings-python||2014-01-19|Use textproc/redland-bindings directly instead
 emulators/seabios-devel||2014-01-19|Has expired: Outdated, no longer needed, broken on 10+
+devel/mico||2014-01-24|Has expired: Broken for more than 6 month
+cad/salome||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-netgenplugin||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-jobmanager||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-visu||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-kernel||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-multipr||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-smesh||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-gui||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-yacs||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-med||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-light||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-randomizer||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-sierpinsky||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-geom||2014-01-24|Has expired: depends on expired cad/salome-kernel
+devel/combat||2014-01-24|Has expired: depends on expired devel/mico
