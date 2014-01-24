@@ -10,7 +10,7 @@ DISTNAME=	upslug2-11
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Firmware upload tool for Linksys NSLU2
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--with-libpcap
@@ -19,5 +19,4 @@ NO_MAN=		defined
 
 PLIST_FILES=	sbin/upslug2
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
