@@ -4964,7 +4964,6 @@ ftp/ncftp2|ftp/ncftp3|2013-10-02|Outdated, consider using a newer version
 irc/keitairc|irc/keitairc2|2013-10-02|Outdated, consider using a newer version
 java/netbeans55|java/netbeans|2013-10-02|Outdated, consider using a newer version
 java/netbeans61|java/netbeans|2013-10-02|Outdated, consider using a newer version
-devel/ppl||2013-10-02|expired: fails to build
 devel/py-importlib||2013-10-02|expired: Python 2.6 port will reach it's EoL upstream soon
 graphics/gkrellkam|graphics/gkrellkam2|2013-10-02|Outdated, consider using a newer version
 mail/gkrellmmailwatch|mail/gkrellmmailwatch2|2013-10-02|Outdated, consider using a newer version
@@ -5297,7 +5296,7 @@ games/flare|games/flare-game|2013-12-10|Flare port was split into engine and gam
 audio/liteamp||2013-12-15|Has expired: Dead upstream since 2004, does not build with clang
 security/opieprint||2013-12-15|Has expired: No more active upstream
 security/bubblegum||2013-12-15|Has expired: No more active upstream
-security/snortsms||2013-12-15|Has expired: Not active since several years.
+security/snortsms||2013-12-15|Has expired: Not active since several years
 sysutils/hammerhead||2013-12-15|Has expired: Development no more active
 net-p2p/libtorrent-rasterbar-15-python||2013-12-15|Has expired: Unusable, development ceased
 graphics/openexr_ctl||2013-12-15|Has expired: Now distributed with ampasCTL-1.5
@@ -5340,13 +5339,13 @@ math/freemat-mpi||2013-12-23|Obsolete since FreeMat 3.0
 devel/py-pmock||2013-12-27|Does not work with python 2.6 and beyond
 devel/ncurses-devel|devel/ncurses|2013-12-28|regular ncurses ports is more recent
 databases/mird||2013-12-28|Has expired: No longer maintained upstream
-net-mgmt/unifi|net-mgmt/unifi3|2014-01-01|Rename to unifi3; unifi2 is coming to ports tree as well
 security/dazuko||2013-12-31|Has expired: Currently, the project has not an active development and maintainer
 mail/p5-Mail-SPF-Query||2013-12-31|Has expired: Use mail/p5-Mail-SPF instead
 x11-fonts/etlfonts||2013-12-31|Has expired: master site gone
 net/gateway6||2013-12-31|Has expired: Unsupported upstream, consider using net/gogoc
 misc/bibletime-devel|misc/bibletime|2013-12-31|Has expired: use misc/bibletime
 multimedia/linux-ov511-kmod||2013-12-31|Removed, broken and only for 6.X / 7.X
+net-mgmt/unifi|net-mgmt/unifi3|2014-01-01|Rename to unifi3; unifi2 is coming to ports tree as well
 net/pypvm||2014-01-01|Has expired: Dead upstream and suspected that there are no users of port
 www/mawstats||2014-01-01|Has expired: Upstream development dead, use www/[j]awstats instead
 devel/p5-Dialog|devel/p5-UI-Dialog|2014-01-01|Has expired
