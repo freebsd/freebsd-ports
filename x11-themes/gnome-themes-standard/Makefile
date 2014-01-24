@@ -22,7 +22,7 @@ CPPFLAGS+=      -I${LOCALBASE}/include
 LDFLAGS+=       -L${LOCALBASE}/lib
 
 post-install:
-        @${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtk-3.0/3.0.0/theming-engines/libadwaita.so
-        @${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtk-2.0/2.10.0/engines/libadwaita.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtk-3.0/3.0.0/theming-engines/libadwaita.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtk-2.0/2.10.0/engines/libadwaita.so
 
 .include <bsd.port.mk>
