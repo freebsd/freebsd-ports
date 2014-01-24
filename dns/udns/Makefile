@@ -3,6 +3,7 @@
 
 PORTNAME=	udns
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.corpit.ru/mjt/udns/
 
@@ -37,7 +38,7 @@ post-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/libudns.so.${SHLIB_MAJOR} \
 		${STAGEDIR}${PREFIX}/lib/libudns.so.${SHLIB_MAJOR}
-	${LN} -sf ${STAGEDIR}${PREFIX}/lib/libudns.so.${SHLIB_MAJOR} \
+	${LN} -sf libudns.so.${SHLIB_MAJOR} \
 		${STAGEDIR}${PREFIX}/lib/libudns.so
 	${INSTALL_DATA} ${WRKSRC}/udns.h ${STAGEDIR}${PREFIX}/include/udns.h
 	${INSTALL_DATA} ${WRKSRC}/libudns.a ${STAGEDIR}${PREFIX}/lib/libudns.a
