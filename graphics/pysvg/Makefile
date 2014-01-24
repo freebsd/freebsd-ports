@@ -2,18 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	pysvg
-PORTVERSION=	0.2.1
-PORTREVISION=	1
+PORTVERSION=	0.2.2
 CATEGORIES=	graphics python
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	CHEESESHOP
 
-MAINTAINER=	duchateau.olivier@gmail.com
+MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	pySVG - creating svg with python
 
+LICENSE=	BSD2CLAUSE
+
+USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
-USE_PYTHON=	2
 USE_ZIP=	yes
 
 .include <bsd.port.mk>
