@@ -2,6 +2,7 @@
 
 PORTNAME=	DateTime
 PORTVERSION=	3.0.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
@@ -16,10 +17,9 @@ LICENSE=	ZPL21
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytz>=0:${PORTSDIR}/devel/py-pytz \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>=0:${PORTSDIR}/devel/py-zope.interface
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=easy_install
-USE_ZIP=	yes
-
-NO_STAGE=	yes
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+USE_ZIP=		yes
 
 .include <bsd.port.mk>
