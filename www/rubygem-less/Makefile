@@ -19,5 +19,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/lessc
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
