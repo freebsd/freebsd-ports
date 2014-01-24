@@ -15,7 +15,6 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-nasm --enable-mp3rtp --disable-gtktest
-CONFIGURE_ARGS_PREFIX=	${STAGEDIR}${PREFIX}
 
 RESTRICTED=	patent issues, see http://www.mp3licensing.com/
 
@@ -32,22 +31,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,test -d \.libs || mkdir,mkdir -p,' \
 		${WRKSRC}/libmp3lame/i386/Makefile.in
 
-.if !${PORT_OPTIONS:MDOCS}
-do-install:
-	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} \
-		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install-exec
-	@cd ${INSTALL_WRKSRC}/include && ${SETENV} ${MAKE_ENV} ${GMAKE} \
-		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install-data
-	@cd ${INSTALL_WRKSRC}/doc/man && ${SETENV} ${MAKE_ENV} ${GMAKE} \
-		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install-data
-.else
-post-install: install-doc
-
-install-doc:
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmp3lame.so.0
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.post.mk>
