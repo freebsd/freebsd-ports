@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xbindkeys
-PORTVERSION=	1.8.5
+PORTVERSION=	1.8.6
 CATEGORIES=	x11
 MASTER_SITES=	http://www.nongnu.org/xbindkeys/
 
