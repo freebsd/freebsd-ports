@@ -12,9 +12,8 @@ COMMENT=	General-purpose tool for parameter handling in C++
 
 LICENSE=	GPLv2 # (or later)
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
