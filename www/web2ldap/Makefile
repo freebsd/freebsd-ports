@@ -5,7 +5,8 @@ PORTNAME=	web2ldap
 PORTVERSION=	1.1.47
 CATEGORIES=	www
 MASTER_SITES=	http://www.web2ldap.de/download/ \
-		http://www.sfr-fresh.com/unix/www/
+		http://www.sfr-fresh.com/unix/www/ \
+		LOCAL/bsam
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Python-based WWW gateway to LDAP servers
