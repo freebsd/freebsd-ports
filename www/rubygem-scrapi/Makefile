@@ -18,12 +18,11 @@ USE_LDCONFIG=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	${GEM_LIB_DIR}/lib/tidy/libtidy.so
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:
 	${RM} -f ${LOCALBASE}/${GEM_LIB_DIR}/lib/tidy/libtidy.dll
 	${RM} -f ${LOCALBASE}/${GEM_LIB_DIR}/lib/tidy/libtidy.so
-	${LN} -sf ${LOCALBASE}/lib/libtidy.so ${PREFIX}/${GEM_LIB_DIR}/lib/tidy/
+	${LN} -sf ${LOCALBASE}/lib/libtidy.so ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/lib/tidy/
 
 .include <bsd.port.post.mk>
