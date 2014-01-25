@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 libdata/pkgconfig/kyua-testers.pc
 libexec/kyua-atf-tester
 libexec/kyua-plain-tester
