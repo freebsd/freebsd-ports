@@ -6,5 +6,4 @@ PORTSCOUT=	ignore:1
 
 MASTERDIR=	${.CURDIR}/../ImageMagick
 
-NO_STAGE=	yes
 .include        "${MASTERDIR}/Makefile"
