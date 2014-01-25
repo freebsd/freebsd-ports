@@ -51,6 +51,9 @@ include/libregfish.h
 include/libtzo.h
 %%DATADIR%%/interface.pl
 %%DATADIR%%/ipserv.pl
+man/man1/updatedd-wrapper.1.gz
+man/man1/updatedd.1.gz
+man/man5/updatedd-wrapper.conf.5.gz
 @dirrm %%DATADIR%%
 %%PORTDOCS%%%%DOCSDIR%%/updatedd-2.4-english.pdf
 %%PORTDOCS%%%%DOCSDIR%%/updatedd-2.4-german.pdf
