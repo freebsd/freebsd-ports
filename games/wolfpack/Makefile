@@ -27,11 +27,6 @@ GROUPS=		wolfpack
 USE_RC_SUBR=	wolfpack
 SUB_FILES+=	pkg-message
 
-MAN6=		empire.6 emp_server.6 empdump.6 empsched.6 \
-		fairland.6 files.6 pconfig.6
-
-NO_STAGE=	yes
-
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -43,12 +38,13 @@ post-patch:
 .endif
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}
-	@${LN} -s ${BINDIR}/emp_server ${PREFIX}/bin/emp_server
-	@${LN} -s ${BINDIR}/empire ${PREFIX}/bin/emp_client
-	@${PREFIX}/lib/wolfpack/pconfig > ${ETCDIR}/econfig.orig
-	@${CHOWN} -R ${USERS}:${GROUPS} ${DATADIR} ${ETCDIR} ${VARDIR}
-	@${CHMOD} -R u+w,o-rx ${DATADIR} ${ETCDIR} ${VARDIR}
-	@${CAT} ${WRKDIR}/pkg-message
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DATADIR}
+	@${LN} -s ${BINDIR}/emp_server ${STAGEDIR}${PREFIX}/bin/emp_server
+	@${LN} -s ${BINDIR}/empire ${STAGEDIR}${PREFIX}/bin/emp_client
+	@${PREFIX}/lib/wolfpack/pconfig > ${STAGEDIR}${ETCDIR}/econfig.orig
+	@${CHOWN} -R ${USERS}:${GROUPS} ${STAGEDIR}${DATADIR} \
+		${STAGEDIR}${ETCDIR} ${STAGEDIR}${VARDIR}
+	@${CHMOD} -R u+w,o-rx ${STAGEDIR}${DATADIR} \
+		${STAGEDIR}${ETCDIR} ${STAGEDIR}${VARDIR}
 
 .include <bsd.port.post.mk>
