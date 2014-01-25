@@ -12,7 +12,7 @@ COMMENT=	Tools Interface Java Memory Profiler
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
@@ -28,22 +28,15 @@ PLIST_FILES=	lib/lib${PORTNAME}.la \
 		lib/lib${PORTNAME}.so lib/lib${PORTNAME}.so.0 \
 		%%JAVAJARDIR%%/${PORTNAME}.jar
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS?=	-O3
-.endif
+OPTIMIZED_CFLAGS_CFLAGS=	-O3
 
 post-extract::
 	@${SED} -i "" -e 's|/../share/java|${JAVAJARDIR}|' ${WRKSRC}/src/tijmp.c
 
 do-install::
-	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${JAVAJARDIR}/${PORTNAME}.jar
-	${INSTALL_DATA} ${WRKSRC}/src/.libs/lib${PORTNAME}.la ${PREFIX}/lib/
-	${INSTALL_PROGRAM} ${WRKSRC}/src/.libs/lib${PORTNAME}.so.0 ${PREFIX}/lib/
-	cd ${PREFIX}/lib && ${LN} -sf lib${PORTNAME}.so.0 lib${PORTNAME}.so
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+	${INSTALL_DATA} ${WRKSRC}/src/.libs/lib${PORTNAME}.la ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/.libs/lib${PORTNAME}.so.0 ${STAGEDIR}${PREFIX}/lib/
+	${LN} -sf lib${PORTNAME}.so.0 ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
