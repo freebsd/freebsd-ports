@@ -24,10 +24,10 @@ PLIST_FILES=	bin/Xvfb man/man1/Xvfb.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hw/vfb/Xvfb ${STAGEDIR}${PREFIX}/bin/
-.if defined(WITH_NEW_XORG)
-	${INSTALL_MAN} ${WRKSRC}/hw/vfb/man/Xvfb.1 ${STAGEDIR}${PREFIX}/man/man1/
-.else
-	${INSTALL_MAN} ${WRKSRC}/hw/vfb/Xvfb.1 ${STAGEDIR}${PREFIX}/man/man1/
-.endif
+	if [ -f ${WRKSRC}/hw/vfb/man/Xvfb.1 ] ; then \
+		${INSTALL_MAN} ${WRKSRC}/hw/vfb/man/Xvfb.1 ${STAGEDIR}${PREFIX}/man/man1/ ; \
+	else \
+		${INSTALL_MAN} ${WRKSRC}/hw/vfb/Xvfb.1 ${STAGEDIR}${PREFIX}/man/man1/ ; \
+	fi
 
 .include "${MASTERDIR}/Makefile"
