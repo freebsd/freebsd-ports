@@ -23,12 +23,36 @@
 %%DATADIR%%/icons/unticked-small.png
 %%DATADIR%%/icons/xpra.png
 %%DATADIR%%/webm/LICENSE
+%%DATADIR%%/www/favicon.ico
+%%DATADIR%%/www/favicon.png
+%%DATADIR%%/www/include/bencode.js
+%%DATADIR%%/www/include/close.png
+%%DATADIR%%/www/include/deflate.min.js
+%%DATADIR%%/www/include/inflate.min.js
+%%DATADIR%%/www/include/keycodes.js
+%%DATADIR%%/www/include/maximize.png
+%%DATADIR%%/www/include/minimize.png
+%%DATADIR%%/www/include/protocol.js
+%%DATADIR%%/www/include/shapes.js
+%%DATADIR%%/www/include/util.js
+%%DATADIR%%/www/include/web-socket-js/README.txt
+%%DATADIR%%/www/include/web-socket-js/WebSocketMain.swf
+%%DATADIR%%/www/include/web-socket-js/swfobject.js
+%%DATADIR%%/www/include/web-socket-js/web_socket.js
+%%DATADIR%%/www/include/websock.js
+%%DATADIR%%/www/include/webutil.js
+%%DATADIR%%/www/include/window.js
+%%DATADIR%%/www/index.html
 @unexec if cmp -s %D/etc/xpra/xpra.conf.sample %D/etc/xpra/xpra.conf ; then rm -f %D/etc/xpra/xpra.conf; fi
 @unexec if cmp -s %D/etc/xpra/xorg.conf.sample %D/etc/xpra/xorg.conf ; then rm -f %D/etc/xpra/xorg.conf; fi
 %%ETCDIR%%/xpra.conf.sample
 @exec if [ ! -f %D/etc/xpra/xpra.conf ]; then cp -p %D/%F %B/xpra.conf; fi
 %%ETCDIR%%/xorg.conf.sample
 @exec if [ ! -f %D/etc/xpra/xorg.conf ]; then cp -p %D/%F %B/xorg.conf; fi
+%%PYTHON_LIBDIR%%/site-packages/xpra-0.11.1-py2.7.egg-info/PKG-INFO
+%%PYTHON_LIBDIR%%/site-packages/xpra-0.11.1-py2.7.egg-info/SOURCES.txt
+%%PYTHON_LIBDIR%%/site-packages/xpra-0.11.1-py2.7.egg-info/dependency_links.txt
+%%PYTHON_LIBDIR%%/site-packages/xpra-0.11.1-py2.7.egg-info/top_level.txt
 %%PYTHON_LIBDIR%%/site-packages/xpra/__init__.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/__init__.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/__init__.pyo
@@ -80,6 +104,9 @@
 %%PYTHON_LIBDIR%%/site-packages/xpra/client/gtk2/client.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/client/gtk2/client.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/client/gtk2/client.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/client/gtk2/client_launcher.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/client/gtk2/client_launcher.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/client/gtk2/client_launcher.pyo
 %%PYTHON_LIBDIR%%/site-packages/xpra/client/gtk2/client_window.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/client/gtk2/client_window.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/client/gtk2/client_window.pyo
@@ -128,9 +155,6 @@
 %%PYTHON_LIBDIR%%/site-packages/xpra/client/gtk_base/cairo_backing.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/client/gtk_base/cairo_backing.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/client/gtk_base/cairo_backing.pyo
-%%PYTHON_LIBDIR%%/site-packages/xpra/client/gtk_base/client_launcher.py
-%%PYTHON_LIBDIR%%/site-packages/xpra/client/gtk_base/client_launcher.pyc
-%%PYTHON_LIBDIR%%/site-packages/xpra/client/gtk_base/client_launcher.pyo
 %%PYTHON_LIBDIR%%/site-packages/xpra/client/gtk_base/gtk_client_base.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/client/gtk_base/gtk_client_base.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/client/gtk_base/gtk_client_base.pyo
@@ -216,6 +240,19 @@
 %%PYTHON_LIBDIR%%/site-packages/xpra/codecs/codec_constants.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/codecs/codec_constants.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/codecs/codec_constants.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/csc_cython/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/csc_cython/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/csc_cython/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/csc_cython/colorspace_converter.so
+%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/csc_opencl/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/csc_opencl/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/csc_opencl/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/csc_opencl/colorspace_converter.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/csc_opencl/colorspace_converter.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/csc_opencl/colorspace_converter.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/csc_opencl/opencl_kernels.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/csc_opencl/opencl_kernels.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/csc_opencl/opencl_kernels.pyo
 %%PYTHON_LIBDIR%%/site-packages/xpra/codecs/csc_swscale/__init__.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/codecs/csc_swscale/__init__.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/codecs/csc_swscale/__init__.pyo
@@ -231,9 +268,12 @@
 %%PYTHON_LIBDIR%%/site-packages/xpra/codecs/image_wrapper.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/codecs/image_wrapper.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/codecs/image_wrapper.pyo
-%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/video_enc_pipeline.py
-%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/video_enc_pipeline.pyc
-%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/video_enc_pipeline.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/loader.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/loader.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/loader.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/video_helper.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/video_helper.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/codecs/video_helper.pyo
 %%PYTHON_LIBDIR%%/site-packages/xpra/codecs/vpx/__init__.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/codecs/vpx/__init__.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/codecs/vpx/__init__.pyo
@@ -325,15 +365,25 @@
 %%PYTHON_LIBDIR%%/site-packages/xpra/net/__init__.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/net/__init__.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/net/__init__.pyo
-%%PYTHON_LIBDIR%%/site-packages/xpra/net/bencode.py
-%%PYTHON_LIBDIR%%/site-packages/xpra/net/bencode.pyc
-%%PYTHON_LIBDIR%%/site-packages/xpra/net/bencode.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/net/avahi_publisher.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/net/avahi_publisher.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/net/avahi_publisher.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/net/bencode/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/net/bencode/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/net/bencode/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/net/bencode/bencode.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/net/bencode/bencode.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/net/bencode/bencode.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/net/bencode/cython_bencode.so
 %%PYTHON_LIBDIR%%/site-packages/xpra/net/bytestreams.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/net/bytestreams.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/net/bytestreams.pyo
 %%PYTHON_LIBDIR%%/site-packages/xpra/net/mmap_pipe.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/net/mmap_pipe.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/net/mmap_pipe.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/net/net_util.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/net/net_util.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/net/net_util.pyo
 %%PYTHON_LIBDIR%%/site-packages/xpra/net/protocol.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/net/protocol.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/net/protocol.pyo
@@ -377,6 +427,9 @@
 %%PYTHON_LIBDIR%%/site-packages/xpra/platform/shadow_server.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/platform/shadow_server.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/platform/shadow_server.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/platform/ui_thread_watcher.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/platform/ui_thread_watcher.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/platform/ui_thread_watcher.pyo
 %%PYTHON_LIBDIR%%/site-packages/xpra/platform/xposix/__init__.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/platform/xposix/__init__.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/platform/xposix/__init__.pyo
@@ -422,27 +475,60 @@
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/__init__.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/__init__.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/__init__.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/__init__.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/__init__.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/allow_auth.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/allow_auth.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/allow_auth.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/fail_auth.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/fail_auth.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/fail_auth.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/file_auth.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/file_auth.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/file_auth.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/pam.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/pam.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/pam.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/pam_auth.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/pam_auth.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/pam_auth.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/sys_auth_base.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/sys_auth_base.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/sys_auth_base.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/win32_auth.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/win32_auth.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/auth/win32_auth.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/background_worker.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/background_worker.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/background_worker.pyo
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/batch_config.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/batch_config.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/batch_config.pyo
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/batch_delay_calculator.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/batch_delay_calculator.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/batch_delay_calculator.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/gtk_root_window_model.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/gtk_root_window_model.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/gtk_root_window_model.pyo
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/gtk_server_base.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/gtk_server_base.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/gtk_server_base.pyo
-%%PYTHON_LIBDIR%%/site-packages/xpra/server/gtk_shadow_server_base.py
-%%PYTHON_LIBDIR%%/site-packages/xpra/server/gtk_shadow_server_base.pyc
-%%PYTHON_LIBDIR%%/site-packages/xpra/server/gtk_shadow_server_base.pyo
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/proxy.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/proxy.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/proxy.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/proxy_server.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/proxy_server.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/proxy_server.pyo
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/region.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/region.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/region.pyo
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/server_base.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/server_base.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/server_base.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/server_core.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/server_core.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/server/server_core.pyo
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/server_uuid.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/server_uuid.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/server/server_uuid.pyo
@@ -519,6 +605,13 @@
 %%PYTHON_LIBDIR%%/site-packages/xpra/x11/bindings/randr_bindings.so
 %%PYTHON_LIBDIR%%/site-packages/xpra/x11/bindings/wait_for_x_server.so
 %%PYTHON_LIBDIR%%/site-packages/xpra/x11/bindings/window_bindings.so
+%%PYTHON_LIBDIR%%/site-packages/xpra/x11/bindings/ximage.so
+%%PYTHON_LIBDIR%%/site-packages/xpra/x11/dbus_common.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/x11/dbus_common.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/x11/dbus_common.pyo
+%%PYTHON_LIBDIR%%/site-packages/xpra/x11/dbus_helper.py
+%%PYTHON_LIBDIR%%/site-packages/xpra/x11/dbus_helper.pyc
+%%PYTHON_LIBDIR%%/site-packages/xpra/x11/dbus_helper.pyo
 %%PYTHON_LIBDIR%%/site-packages/xpra/x11/dbus_notifications_forwarder.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/x11/dbus_notifications_forwarder.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/x11/dbus_notifications_forwarder.pyo
@@ -595,11 +688,13 @@ man/man1/xpra_launcher.1.gz
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/x11
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/sound
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/server/stats
+@dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/server/auth
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/server
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/scripts
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/platform/xposix
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/platform
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/net/rencode
+@dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/net/bencode
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/net
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/keyboard
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/gtk_common
@@ -610,6 +705,8 @@ man/man1/xpra_launcher.1.gz
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/codecs/dec_avcodec
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/codecs/csc_swscale
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/codecs/argb
+@dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/codecs/csc_opencl
+@dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/codecs/csc_cython
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/codecs
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/clipboard
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/client/qt4
@@ -619,10 +716,14 @@ man/man1/xpra_launcher.1.gz
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/client/gtk2
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/client/gl
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/client
+@dirrm %%PYTHON_LIBDIR%%/site-packages/xpra-0.11.1-py2.7.egg-info
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra
 @dirrm %%PYTHON_LIBDIR%%/site-packages
 @dirrm %%PYTHON_LIBDIR%%
 @dirrm %%LOCALBASE%%/%%ETCDIR%%
 @dirrm %%DATADIR%%/webm
 @dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/www/include/web-socket-js
+@dirrm %%DATADIR%%/www/include
+@dirrm %%DATADIR%%/www
 @dirrm %%DATADIR%%

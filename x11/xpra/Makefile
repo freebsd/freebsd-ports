@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xpra
-PORTVERSION=	0.10.10
-PORTREVISION=	1
+PORTVERSION=	0.11.1
 CATEGORIES=	x11
 MASTER_SITES=	http://xpra.org/src/
 
@@ -20,7 +19,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolki
 		Xvfb:${PORTSDIR}/x11-servers/xorg-vfbserver \
 		xauth:${PORTSDIR}/x11/xauth \
 		setxkbmap:${PORTSDIR}/x11/setxkbmap \
-		pulseaudio:${PORTSDIR}/audio/pulseaudio
+		pulseaudio:${PORTSDIR}/audio/pulseaudio \
+		ssh-askpass:${PORTSDIR}/security/openssh-askpass
 LIB_DEPENDS=	libx264.so:${PORTSDIR}/multimedia/x264 \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg \
 		libvpx.so:${PORTSDIR}/multimedia/libvpx
