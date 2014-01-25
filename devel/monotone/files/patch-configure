@@ -1,0 +1,13 @@
+--- configure.orig	2014-01-22 00:48:12.855108408 +0100
++++ configure	2014-01-22 00:48:54.244105202 +0100
+@@ -4594,9 +4594,7 @@ fi
+ 
+ # The dummy "pkg-config" package is guaranteed to exist.
+ if test -n "$PKG_CONFIG"; then
+-  mtn__full_pkg_config_path=`$PKG_CONFIG --debug pkg-config 2>&1 |
+-    sed -ne "/^Scanning directory '/{; s///; s/'$//; p;}" |
+-    tr "$as_nl" ':' | sed 's/:$//'`
++  mtn__full_pkg_config_path=`$PKG_CONFIG --variable=pc_path pkg-config 2>&1 | sed 's/:.*$//'`
+   #AC_MSG_NOTICE([detected pkg-config path: $mtn__full_pkg_config_path])
+ fi
+ 
