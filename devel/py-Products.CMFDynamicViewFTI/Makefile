@@ -2,9 +2,11 @@
 
 PORTNAME=	Products.CMFDynamicViewFTI
 PORTVERSION=	4.0.5
+PORTREVISION=	1
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Product for dynamic views in CMF
@@ -19,12 +21,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.browsermenu>0:${PORTSDIR}/devel/py-zope
 		${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisition \
 		${PYTHON_PKGNAMEPREFIX}ExtensionClass>=0:${PORTSDIR}/devel/py-ExtensionClass
 
-DIST_SUBDIR=	zope
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-USE_ZIP=	yes
-#USES=		zope
-
-NO_STAGE=	yes
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+USE_ZIP=		yes
+#USES=			zope
 
 .include <bsd.port.mk>
