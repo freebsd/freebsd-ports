@@ -30,12 +30,16 @@ post-extract:
 	@${REINPLACE_CMD} 's/-ccopt -pg //' ${WRKSRC}/Makefile
 	@cd ${WRKSRC} && ${RM} -f .depend
 
+post-patch:
+	@${REINPLACE_CMD} '/^CC=/d; /^CFLAGS=/s/=/+=/' \
+		${WRKSRC}/Makefile ${WRKSRC}/bdb/Makefile
+
 pre-build:
 	@cd ${WRKSRC} && test -f .depend || ${GMAKE} dep
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} BUGS README.md TODO UPGRADING \
+	cd ${WRKSRC} && ${INSTALL_DATA} BUGS README.md TODO UPGRADING \
 		 ${STAGEDIR}${DOCSDIR}
 	@cd ${STAGEDIR}${PREFIX}/bin && ${STRIP_CMD} sks sks_add_mail
 
