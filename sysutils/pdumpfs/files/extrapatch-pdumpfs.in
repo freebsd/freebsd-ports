@@ -1,0 +1,91 @@
+--- pdumpfs.in.orig	2004-12-21 11:43:12.000000000 +0900
++++ pdumpfs.in	2013-06-22 08:58:34.000000000 +0900
+@@ -48,21 +48,21 @@
+ #
+ 
+ require 'find'
+-require 'ftools'
++require 'fileutils'
+ require 'getoptlong'
+ require 'date'
+ 
+ class File
+   def self.real_file? (path)
+-    File.file?(path) and not File.symlink?(path)
++    FileTest.file?(path) and not FileTest.symlink?(path)
+   end
+ 
+   def self.anything_exist? (path)
+-    File.exist?(path) or File.symlink?(path)
++    FileTest.exist?(path) or FileTest.symlink?(path)
+   end
+ 
+   def self.real_directory? (path)
+-    File.directory?(path) and not File.symlink?(path)
++    FileTest.directory?(path) and not FileTest.symlink?(path)
+   end
+ 
+   def self.force_symlink (src, dest)
+@@ -79,7 +79,7 @@
+   end
+ 
+   def self.readable_file? (path)
+-    File.file?(path) and File.readable?(path)
++    FileTest.file?(path) and FileTest.readable?(path)
+   end
+ 
+   def self.split_all (path)
+@@ -129,7 +129,7 @@
+   GetVolumeInformation = Win32API.new("kernel32", "GetVolumeInformation",
+                                       "PPLPPPPL", "I")
+   def get_filesystem_type (path)
+-    return nil unless(File.exist?(path))
++    return nil unless(FileTest.exist?(path))
+ 
+     drive = File.expand_path(path)[0..2]
+     buff = "\0" * 1024
+@@ -868,7 +868,7 @@
+       today  = File.join(dest, datedir(start_time), base)
+ 
+       File.umask(0077)
+-      File.mkpath(today) unless @dry_run
++      FileUtils.mkpath(today) unless @dry_run
+       if latest
+         update_snapshot(src, latest, today)
+       else
+@@ -1018,7 +1018,7 @@
+ 
+       case type
+       when "directory"
+-        File.mkpath(today)
++        FileUtils.mkpath(today)
+       when "unchanged"
+         File.force_link(latest, today)
+       when "updated"
+@@ -1052,7 +1052,7 @@
+ 
+       Find.find(src) do |s|      # path of the source file
+         if @matcher.exclude?(s)
+-          if File.lstat(s).directory? then Find.prune() else next end
++          if FileTest.directory?(s) then Find.prune() else next end
+         end
+         r = make_relative_path(s, src)
+         l = File.join(latest, r)  # path of the latest  snapshot
+@@ -1077,7 +1077,7 @@
+ 
+       Find.find(src) do |s|
+         if @matcher.exclude?(s)
+-          if File.lstat(s).directory? then Find.prune() else next end
++          if FileTest.directory?(s) then Find.prune() else next end
+         end
+         r = make_relative_path(s, src)
+         t = File.join(dest, r)
+@@ -1089,7 +1089,7 @@
+ 
+           case type
+           when "directory"
+-            File.mkpath(t)
++            FileUtils.mkpath(t)
+           when "new_file"
+             copy(s, t)
+           when "symlink"
