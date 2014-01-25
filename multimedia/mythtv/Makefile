@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mythtv
-PORTVERSION=	0.27
+PORTVERSION=	0.27.0.20140121
 CATEGORIES=	multimedia
+MASTER_SITES=	http://people.freebsd.org/~decke/distfiles/
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	MythTV is a homebrew PVR project
@@ -21,11 +22,11 @@ CONFLICTS=	mythtv-frontend-[0-9]*
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
-GH_TAGNAME=	v${PORTVERSION}
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	5a5e1cd
 
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-e9545c0/${GH_PROJECT}
+WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}/${GH_PROJECT}
 
-USE_GCC=	any
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		gmake pkgconfig perl5
 USE_QT4=	gui sql network script linguist_build l10n sql-mysql_run \
@@ -56,7 +57,8 @@ CONFIGURE_ARGS=	--prefix="${PREFIX}" --cc="${CC}" --cxx="${CXX}" --dvb-path="${L
 QMAKESPEC?=	${LOCALBASE}/share/qt4/mkspecs/freebsd-g++
 
 OPTIONS_DEFINE=	BINDINGS LIRC MYSQL OPENGL VDPAU
-OPTIONS_DEFAULT=	BINDINGS OPENGL
+OPTIONS_DEFAULT=	BINDINGS OPENGL VDPAU
+OPTIONS_SUB=	BINDINGS
 BINDINGS_DESC=	Perl and Python bindings
 
 LIRC_LIB_DEPENDS=	liblirc_client.so:${PORTSDIR}/comms/lirc
@@ -103,10 +105,8 @@ RUN_DEPENDS+=	py*-lxml>=0:${PORTSDIR}/devel/py-lxml \
 		p5-IO-Socket-INET6>=2.51:${PORTSDIR}/net/p5-IO-Socket-INET6 \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-DBD-mysql>0:${PORTSDIR}/databases/p5-DBD-mysql
-PLIST_SUB+=	BINDINGS=""
 .else
 CONFIGURE_ARGS+=--without-bindings=perl,python
-PLIST_SUB+=	BINDINGS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOPENGL}
