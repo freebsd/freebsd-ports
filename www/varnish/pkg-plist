@@ -43,6 +43,20 @@ lib/varnish/vmods/libvmod_std.so
 lib/libvarnishapi.so.1
 lib/libvarnishapi.so
 libdata/pkgconfig/varnishapi.pc
+man/man1/varnishadm.1.gz
+man/man1/varnishd.1.gz
+man/man1/varnishhist.1.gz
+man/man1/varnishlog.1.gz
+man/man1/varnishncsa.1.gz
+man/man1/varnishreplay.1.gz
+man/man1/varnishsizes.1.gz
+man/man1/varnishstat.1.gz
+man/man1/varnishtest.1.gz
+man/man1/varnishtop.1.gz
+man/man3/vmod_std.3.gz
+man/man7/varnish-cli.7.gz
+man/man7/varnish-counters.7.gz
+man/man7/vcl.7.gz
 sbin/varnishd
 share/varnish/vmod.py
 @exec [ -d %D/varnish ] || mkdir %D/varnish
