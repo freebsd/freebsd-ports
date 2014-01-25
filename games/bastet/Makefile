@@ -9,36 +9,45 @@ MASTER_SITES=	http://fph.altervista.org/prog/files/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An ncurses Tetris clone which is harder than every other Tetris
+COMMENT=	Ncurses Tetris clone which is harder than every other Tetris
 
 LICENSE=	GPLv3 # (or later)
 
 LIB_DEPENDS=	libboost_program_options.so:${PORTSDIR}/devel/boost-libs
 
-USES=		ncurses
-USE_GMAKE=	yes
+USES=		gmake ncurses
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN6=		bastet.6
-PLIST_FILES=	bin/bastet
+PLIST_FILES=	bin/bastet man/man6/bastet.6.gz
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
+.if ${OSVERSION} < 1000024
+.if exists(/usr/bin/clang)
+CC=		clang
+CXX=		clang++
+CPP=		clang-cpp
+.else
+.if ${ARCH} == "i386"
+CXXFLAGS+=	-fexceptions
+.else
 USE_GCC=	yes
+.endif
+.endif
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CXXFLAGS+=-D|CXXFLAGS+=$$(CPPFLAGS) -D| ; \
-		 s|$$(CXX) -MM|$$(CXX) $$(CPPFLAGS) -MM| ; \
+		 s|$$(CXX) -MM|$$(CXX) $$(CXXFLAGS) -MM| ; \
 		 s| -ggdb | |' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bastet ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/bastet.6 ${MAN6PREFIX}/man/man6
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} bastet \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} bastet.6 \
+		${STAGEDIR}${MAN6PREFIX}/man/man6)
 
 .include <bsd.port.post.mk>
