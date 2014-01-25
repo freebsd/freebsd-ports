@@ -3,21 +3,40 @@
 
 PORTNAME=	tuxnes
 PORTVERSION=	0.75
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/TuxNES/TuxNES%20v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Nintendo Entertainment System 8-bit emulator
+COMMENT=	Nintendo Entertainment System 8-bit emulator
+
+LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	uses i386 assembly code
 
+USES=		compiler gmake
 USE_XORG=	x11 ice sm xext xpm
-USE_GMAKE=	yes
+USE_BINUTILS=	yes
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/romfixer bin/tuxnes
+PLIST_FILES=	bin/romfixer bin/tuxnes share/pixmaps/tuxnes.xpm
 
-NO_STAGE=	yes
-.include <bsd.port.mk>
+DESKTOP_ENTRIES="TuxNES" "" "${PREFIX}/share/pixmaps/tuxnes.xpm" \
+		"${PORTNAME}" "" ""
+
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == "clang"
+CPPFLAGS+=	-no-integrated-as
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|^CFLAGS=|#CFLAGS=|' ${WRKSRC}/configure
+
+post-install:
+	(cd ${WRKSRC} && ${INSTALL_DATA} tuxnes.xpm \
+		${STAGEDIR}${PREFIX}/share/pixmaps)
+
+.include <bsd.port.post.mk>
