@@ -10,21 +10,12 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic configuration management library
 
-LIB_DEPENDS=	strfunc.9:${PORTSDIR}/devel/libstrfunc
+OPTIONS_DEFINE=	DOCS
+
+LIB_DEPENDS=	libstrfunc.so:${PORTSDIR}/devel/libstrfunc
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	YES
 GNU_CONFIGURE=	yes
-
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
-
-.include <bsd.port.options.mk>
-
-post-patch:
-.if ! ${PORT_OPTIONS:MDOCS}
-	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/doc//' ${WRKSRC}/Makefile.in
-.endif
 
 .include <bsd.port.mk>
