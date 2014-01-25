@@ -3,3 +3,4 @@ bin/jewel-appbar
 bin/jewel-fspanel
 bin/jewel-setrootimage
 bin/jewel-xsession
+man/man1/jewel.1x.gz
