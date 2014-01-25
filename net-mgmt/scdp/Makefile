@@ -14,9 +14,8 @@ COMMENT=	Tool that sends CDP (CISCO Discovery Protocol) Packets
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet10
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	libnet_config="${LIBNET_CONFIG}"
 CFLAGS+=	`${LIBNET_CONFIG} --cflags`
