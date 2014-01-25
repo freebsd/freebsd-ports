@@ -11,13 +11,15 @@ MASTER_SITES=	GNU/gnu-arch \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The original arch source control management CLI written in C
 
+OPTIONS_DEFINE=	DOCS
+
 BUILD_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \
 		gdiff:${PORTSDIR}/textproc/diffutils \
 		gtar:${PORTSDIR}/archivers/gtar
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+USES=		gmake
 HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 CONFIGURE_SCRIPT=	../configure
@@ -30,10 +32,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 ORIGWRKSRC=	${WRKDIR}/${DISTNAME}/src
 PATCH_WRKSRC=	${ORIGWRKSRC}/..
 WRKSRC=		${ORIGWRKSRC}/=build
-PLIST=		${WRKDIR}/plist
-PLIST_FILES=	bin/tla bin/tla-gpg-check
 
-NO_STAGE=	yes
 pre-patch:
 	${MKDIR} ${WRKSRC}
 
@@ -41,26 +40,16 @@ test:
 	cd ${WRKSRC} ; ${GMAKE} test
 
 pre-install:
-.if !defined(NOPORTDOCS)
 	${RM} -rf ${ORIGWRKSRC}/docs-tla/PLUGIN \
 		${ORIGWRKSRC}/docs-tla/{arch} ${ORIGWRKSRC}/docs-tla/.arch-ids
-	cd ${ORIGWRKSRC}/docs-tla && ${FIND} . -type f -name '*.html' \
-		-exec ${ECHO_CMD} "%%DOCSDIR%%/{}" \; > ${PLIST}
-	cd ${ORIGWRKSRC}/docs-tla && ${FIND} -d . -mindepth 1 -maxdepth 1 \
-		-type d -exec ${ECHO_CMD} "@dirrm %%DOCSDIR%%/{}" \; >> ${PLIST}
-	${ECHO} @dirrm %%DOCSDIR%% >> ${PLIST}
-.endif
 
 do-install:
-	${INSTALL_PROGRAM} ${ORIGWRKSRC}/=build/tla/tla/tla ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${ORIGWRKSRC}/=build/tla/tla/tla ${STAGEDIR}${PREFIX}/bin
 	${SED} 's,^#!.*$$,#!${AWK} -f,' ${ORIGWRKSRC}/tla/=gpg-check.awk \
 		> ${WRKDIR}/tla-gpg-check
-	${INSTALL_SCRIPT} ${WRKDIR}/tla-gpg-check ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/tla-gpg-check ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${ORIGWRKSRC}/docs-tla && ${FIND} . -name '*.html' | \
-		${CPIO} -pdm -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-	${CHMOD} -R a=rX ${DOCSDIR}
-.endif
+		${CPIO} -pdm -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

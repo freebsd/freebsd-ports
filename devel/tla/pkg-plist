@@ -1,0 +1,45 @@
+bin/tla
+bin/tla-gpg-check
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.html
+%%PORTDOCS%%%%DOCSDIR%%/archreg/coords.html
+%%PORTDOCS%%%%DOCSDIR%%/archreg/mirrormgt.html
+%%PORTDOCS%%%%DOCSDIR%%/archreg/register.html
+%%PORTDOCS%%%%DOCSDIR%%/archreg/top-nav.html
+%%PORTDOCS%%%%DOCSDIR%%/build/help.html
+%%PORTDOCS%%%%DOCSDIR%%/build/install.html
+%%PORTDOCS%%%%DOCSDIR%%/build/othertools.html
+%%PORTDOCS%%%%DOCSDIR%%/build/sources.html
+%%PORTDOCS%%%%DOCSDIR%%/build/top-nav.html
+%%PORTDOCS%%%%DOCSDIR%%/build/why.html
+%%PORTDOCS%%%%DOCSDIR%%/checkout/checkout-config.html
+%%PORTDOCS%%%%DOCSDIR%%/checkout/checkout.html
+%%PORTDOCS%%%%DOCSDIR%%/checkout/top-nav.html
+%%PORTDOCS%%%%DOCSDIR%%/checkout/tree-state.html
+%%PORTDOCS%%%%DOCSDIR%%/hacking/branch-publishing.html
+%%PORTDOCS%%%%DOCSDIR%%/hacking/changes.html
+%%PORTDOCS%%%%DOCSDIR%%/hacking/commit.html
+%%PORTDOCS%%%%DOCSDIR%%/hacking/merge-from-upstream.html
+%%PORTDOCS%%%%DOCSDIR%%/hacking/my-archive.html
+%%PORTDOCS%%%%DOCSDIR%%/hacking/my-branch.html
+%%PORTDOCS%%%%DOCSDIR%%/hacking/my-config.html
+%%PORTDOCS%%%%DOCSDIR%%/hacking/top-nav.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/my/archloc.html
+%%PORTDOCS%%%%DOCSDIR%%/my/id.html
+%%PORTDOCS%%%%DOCSDIR%%/my/mirrorloc.html
+%%PORTDOCS%%%%DOCSDIR%%/my/revlib.html
+%%PORTDOCS%%%%DOCSDIR%%/my/top-nav.html
+%%PORTDOCS%%%%DOCSDIR%%/top-nav.html
+%%PORTDOCS%%%%DOCSDIR%%/treedelta/add.html
+%%PORTDOCS%%%%DOCSDIR%%/treedelta/delete.html
+%%PORTDOCS%%%%DOCSDIR%%/treedelta/inventory.html
+%%PORTDOCS%%%%DOCSDIR%%/treedelta/naming-conventions.html
+%%PORTDOCS%%%%DOCSDIR%%/treedelta/rename.html
+%%PORTDOCS%%%%DOCSDIR%%/treedelta/top-nav.html
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/treedelta
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/my
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/hacking
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/checkout
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/build
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/archreg
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
