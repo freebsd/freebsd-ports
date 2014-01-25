@@ -3,7 +3,7 @@
 
 PORTNAME=	tarantool
 PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://tarantool.org/dist/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${TR_REV}-src
@@ -34,14 +34,11 @@ PGSQL_DESC=	Install PostgreSQL plugin
 
 OPTIONS_DEFAULT=CLIENT
 
-MAN1=		tarantool_box.1
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCLIENT}
 CMAKE_ARGS+=	-DENABLE_CLIENT=true
 PLIST_SUB+=	CLIENT=""
-MAN1+=		tarantool.1
 .else
 PLIST_SUB+=	CLIENT="@comment "
 .endif
@@ -77,8 +74,5 @@ PLIST_SUB+=	PLUGINS=""
 .else
 PLIST_SUB+=	PLUGINS="@comment "
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
