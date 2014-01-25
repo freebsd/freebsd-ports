@@ -51,6 +51,111 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d9dbe6e8-84da-11e3-98bd-080027f2d077">
+    <topic>varnish -- DoS vulnerability in Varnish HTTP cache</topic>
+    <affects>
+      <package>
+	<name>varnish</name>
+	<range><lt>3.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Varnish Cache Project reports:</p>
+	<blockquote cite="https://www.varnish-cache.org/lists/pipermail/varnish-announce/2013-October/000686.html">
+	  <p>If Varnish receives a certain illegal request, and the subroutine
+	    'vcl_error{}' restarts the request, the varnishd worker process
+	    will crash with an assert.
+	  </p>
+	  <p>The varnishd management process will restart the worker process, but
+	    there will be a brief interruption of service and the cache will be
+	    emptied, causing more traffic to go to the backend.
+	  </p>
+	  <p>We are releasing this advisory because restarting from vcl_error{} is both fairly common and documented.</p>
+	  <p>This is purely a denial of service vulnerability, there is no risk of privilege escalation.</p>
+	  <p>Workaround</p>
+	  <p>Insert this at the top of your VCL file:</p>
+	  <pre>
+		sub vcl_error {
+			if (obj.status == 400 || obj.status == 413) {
+				return(deliver);
+			}
+		}
+
+		Or add this test at the top of your existing vcl_error{}.
+	  </pre>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4484</cvename>
+      <mlist>https://www.varnish-cache.org/lists/pipermail/varnish-announce/2013-October/000686.html</mlist>
+    </references>
+    <dates>
+      <discovery>2013-10-30</discovery>
+      <entry>2014-01-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c0ef849e-84ac-11e3-bec4-9c4e36909cc0">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>11.2r202.335</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="http://helpx.adobe.com/security/products/flash-player/apsb14-02.html">
+	  <p>These updates address vulnerabilities that could cause a crash
+	    and potentially allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0491</cvename>
+      <cvename>CVE-2014-0492</cvename>
+      <url>http://helpx.adobe.com/security/products/flash-player/apsb14-02.html</url>
+    </references>
+    <dates>
+      <discovery>2014-01-14</discovery>
+      <entry>2014-01-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6d08fa63-83bf-11e3-bdba-080027ef73ec">
+    <topic>HTMLDOC -- buffer overflow issues when reading AFM files and parsing page sizes</topic>
+    <affects>
+      <package>
+	<name>htmldoc</name>
+	<range><lt>1.8.28</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Michael Sweet reports:</p>
+	<blockquote cite="http://www.msweet.org/projects.php?Z1">
+	  <p>HTMLDOC 1.8.28 fixes some known security issues and
+	    formatting bugs. Changes include:</p>
+	  <ul>
+	    <li>SECURITY: Fixed three buffer overflow issues when
+	      reading AFM files and parsing page sizes.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.msweet.org/projects.php?Z1</url>
+    </references>
+    <dates>
+      <discovery>2014-01-06</discovery>
+      <entry>2014-01-22</entry>
+      <modified>2014-01-23</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="81f1fdc2-7ec7-11e3-a6c6-00163e1ed244">
     <topic>virtualbox-ose -- local vulnerability</topic>
     <affects>
@@ -64,10 +169,10 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Oracle reports:</p>
 	<blockquote cite="http://www.oracle.com/technetwork/topics/security/cpujan2014-1972949.html">
 	  <p>Unspecified vulnerability in the Oracle VM VirtualBox
-	   component in Oracle Virtualization VirtualBox prior to
-	   3.2.20, 4.0.22, 4.1.30, 4.2.22, and 4.3.6 allows local
-	   users to affect confidentiality, integrity, and availability
-	   via unknown vectors related to Core.</p>
+	    component in Oracle Virtualization VirtualBox prior to
+	    3.2.20, 4.0.22, 4.1.30, 4.2.22, and 4.3.6 allows local
+	    users to affect confidentiality, integrity, and availability
+	    via unknown vectors related to Core.</p>
 	</blockquote>
       </body>
     </description>
