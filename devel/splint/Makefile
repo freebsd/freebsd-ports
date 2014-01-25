@@ -10,11 +10,9 @@ EXTRACT_SUFX=	.src.tgz
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Tool for statically checking sourcecode for security vulnerabilities
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
-
-MAN1=		splint.1
 
 post-patch:
 	@${REINPLACE_CMD} -e \
