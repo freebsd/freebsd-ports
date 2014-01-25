@@ -23,12 +23,10 @@ JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MXQUERY_TOOL}
-RUN_DEPENDS+=	${JAVALIBDIR}/getopt.jar:${PORTSDIR}/java/java-getopt \
+RUN_DEPENDS+=	${JAVALIBDIR}/java-getopt.jar:${PORTSDIR}/java/java-getopt \
 		classpath:${PORTSDIR}/java/javavmwrapper
 .endif
 
@@ -46,20 +44,14 @@ SUB_FILES=	fire-xquery.sh
 .endif
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${MKDIR} ${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}.jar ${JAVAJARDIR}/
-	@${ECHO_MSG} " [ DONE ]"
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}.jar ${STAGEDIR}${JAVAJARDIR}
 .if ${PORT_OPTIONS:MXQUERY_TOOL}
-	@${ECHO_MSG} -n ">> Installing XQuery command-line tool as ${PREFIX}/bin/fire-xquery..."
-	@${INSTALL_SCRIPT} ${WRKDIR}/fire-xquery.sh ${PREFIX}/bin/fire-xquery
-	@${ECHO_MSG} " [ DONE ]"
+	${INSTALL_SCRIPT} ${WRKDIR}/fire-xquery.sh ${STAGEDIR}${PREFIX}/bin/fire-xquery
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@cd ${WRKSRC}/doc/ && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
-	@cd ${WRKSRC}/doc/ && ${FIND} ${PORTDOCS} -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-	@${ECHO_MSG} " [ DONE ]"
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
