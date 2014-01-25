@@ -10,12 +10,11 @@ DISTNAME=	${PORTNAME}_src-${PORTVERSION}
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	Library to convert clothoid splines into Bezier splines
 
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
