@@ -14,7 +14,7 @@ COMMENT=	First person shooter based on Cube
 LICENSE_COMB=	multi
 LICENSE=	MIT ZLIB
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 CONFIGURE_ENV=	ACLOCAL=true AUTOCONF=true AUTOMAKE=true
