@@ -9,27 +9,26 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses-based program for the creation and editing of ASCII art
 
+OPTIONS_DEFINE=	DOCS
+
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
-MAN1=		aecat.1 aewan.1 aemakeflic.1
-MAN5=		aewan.5
-PLIST_FILES=	bin/aecat bin/aewan bin/aemakeflic
+PLIST_FILES=	bin/aecat bin/aewan bin/aemakeflic \
+		man/man1/aecat.1.gz \
+		man/man1/aewan.1.gz \
+		man/man1/aemakeflic.1.gz \
+		man/man5/aewan.5.gz
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|OSTYPE == |OSTYPE = |g' ${WRKSRC}/configure
 
-.if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
