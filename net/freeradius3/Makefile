@@ -3,7 +3,7 @@
 
 PORTNAME=	freeradius
 DISTVERSION=	3.0.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -40,12 +40,11 @@ MAKE_JOBS_SAFE=	yes
 PLIST_SUB=	PORTVERSION=${DISTVERSION} LIBVER=0${PORTVERSION:C/\./0/g}
 
 OPTIONS_DEFINE=	USER KERBEROS HEIMDAL HEIMDAL_PORT LDAP MYSQL \
-		PGSQL UNIXODBC FIREBIRD REDIS PYTHON RUBY DHCP \
+		PGSQL UNIXODBC FIREBIRD REDIS PYTHON RUBY \
 		EXPERIMENTAL UDPFROMTO DEVELOPER EDIR PERL REST \
 		FREETDS IDN SSL_PORT
 OPTIONS_DEFAULT=USER PERL
 
-DHCP_DESC=		With DHCP support (EXPERIMENTAL)
 USER_DESC=		Run as user freeradius, group freeradius
 HEIMDAL_DESC=		With Heimdal Kerberos support
 HEIMDAL_PORT_DESC=	With Heimdal Kerberos from ports
@@ -199,18 +198,6 @@ PLIST_SUB+=	RLMRUBY="@comment "
 
 # rlm_ruby module is still experimental
 .if ${PORT_OPTIONS:MRUBY} && empty(PORT_OPTIONS:MEXPERIMENTAL)
-EXPM=		yes
-.endif
-
-.if ${PORT_OPTIONS:MDHCP}
-IGNORE=		currently fails to build properly with DHCP support
-CONFIGURE_ARGS+=--with-dhcp
-.else
-CONFIGURE_ARGS+=--without-dhcp --without-rlm_dhcp --without-proto_dhcp
-.endif
-
-# DHCP is still experimental
-.if ${PORT_OPTIONS:MDHCP} && empty(PORT_OPTIONS:MEXPERIMENTAL)
 EXPM=		yes
 .endif
 
@@ -410,17 +397,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|LIBS|KRB5LIBS|g' ${WRKSRC}/src/modules/rlm_krb5/configure
 	@${REINPLACE_CMD} -e 's|-lkrb5|$$(${KRB5_CONFIG})|g' \
 		${WRKSRC}/src/modules/rlm_krb5/configure
-.endif
-# If DHCP is enabled, enable the DHCP dictionary
-.if ${PORT_OPTIONS:MDHCP}
-	@${REINPLACE_CMD} -Ee 's:^#(.+ dictionary\.dhcp)$$:\1:g' \
-		${WRKSRC}/share/dictionary
-# Clean up (so as not to get an unwanted file in share)
-	@${FIND} -E ${WRKSRC}/share \
-		-regex '.*/dictionary\.(orig|bak)$$' \
-		-delete
-.else
-	@${RM} -fr ${WRKSRC}/src/modules/proto_dhcp/
 .endif
 .if empty(PORT_OPTIONS:MRUBY)
 	@${RM} -fr ${WRKSRC}/src/modules/rlm_ruby/
