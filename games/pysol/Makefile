@@ -23,6 +23,9 @@ NO_BUILD=	yes
 
 MAN6=		pysol.6
 
+DEPRECATED=	Broken, abondonware, use pysolfc
+EXPIRATION_DATE=	2014-03-27
+
 NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/src/tk/soundoptionsdialog.py.orig
