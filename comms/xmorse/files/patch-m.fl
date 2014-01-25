@@ -1,5 +1,23 @@
---- m.fl.orig	2011-07-17 14:56:20.000000000 -0400
-+++ m.fl	2011-07-17 14:56:31.000000000 -0400
+--- m.fl.orig	2004-08-13 16:38:24.000000000 -0700
++++ m.fl	2014-01-01 10:25:10.000000000 -0800
+@@ -188,7 +188,7 @@
+         }
+         menuitem {} {
+           label Numbers
+-          callback {char* nrs = "0123456789";
++          callback {const char* nrs = "0123456789";
+ if (o->mvalue()->value())
+   Lesson->enable(nrs);
+ else
+@@ -199,7 +199,7 @@
+         }
+         menuitem {} {
+           label Symbols
+-          callback {char* syms = "./=?";
++          callback {const char* syms = "./=?";
+ if (o->mvalue()->value())
+   Lesson->enable(syms);
+ else
 @@ -231,7 +231,7 @@
        }
      }
