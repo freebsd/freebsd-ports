@@ -21,10 +21,9 @@ SHEBANG_FILES=	align width
 
 PLIST_FILES=	bin/align bin/width
 
-NO_STAGE=	yes
 do-install:
 .for i in align width
-	(cd ${WRKSRC} && ${INSTALL_SCRIPT} ${i} ${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_SCRIPT} ${i} ${STAGEDIR}${PREFIX}/bin)
 .endfor
 
 .include <bsd.port.mk>

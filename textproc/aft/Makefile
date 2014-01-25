@@ -10,13 +10,16 @@ MASTER_SITES=	http://www.maplefish.com/todd/
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	A document preparation system using an Almost Free Text input format
 
-USES=		perl5
-USE_GMAKE=	yes
+LICENSE=	CART
+LICENSE_GROUPS=	FSF OSI
+LICENSE_NAME=	Clarified Artistic License
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_PERMS=	auto-accept
+
+USES=		perl5 gmake
 GNU_CONFIGURE=	yes
+OPTIONS_DEFINE=	DOCS
 
-.if defined(NOPORTDOCS)
-INSTALL_TARGET=	install-binSCRIPTS install-pkgdataDATA install-pkgdataSCRIPTS
-.endif
+PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

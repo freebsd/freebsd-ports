@@ -9,6 +9,8 @@ MASTER_SITES=	http://download.augeas.net/
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	A configuration editing tool
 
+LICENSE=	LGPL21
+
 TEST_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		gsed:${PORTSDIR}/textproc/gsed
 
@@ -19,12 +21,8 @@ ACLOCAL_ARGS=	-I . -I gnulib/m4 -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing
 USE_LDCONFIG=	yes
 
-MAN1=		augparse.1 augtool.1
-MANCOMPRESSED=	no
-
 LENSESDIR=	${PREFIX}/share/augeas/lenses
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's:$$(libdir)/pkgconfig:${PREFIX}/libdata/pkgconfig:' ${WRKSRC}/Makefile.am
 	@${REINPLACE_CMD} -e 's:/bin/bash:/usr/bin/env bash:' ${WRKSRC}/tests/*.sh
