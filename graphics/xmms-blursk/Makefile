@@ -12,22 +12,34 @@ DISTNAME=	Blursk-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS plugin inspired by "Blur Scope"
 
-BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
-RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
+LICENSE=	GPLv2 # (or later)
 
-PLIST_FILES=	lib/xmms/Visualization/libblursk.so
-USE_GNOME=	gtk12
+BUILD_DEPENDS=	xmms>0:${PORTSDIR}/multimedia/xmms
+RUN_DEPENDS=	xmms>0:${PORTSDIR}/multimedia/xmms
+
+USES=		compiler
 USE_XORG=	x11 xv
-GNU_CONFIGURE=	yes
+USE_GNOME=	gtk12
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	${CFLAGS} ${PTHREAD_CFLAGS}
+PLIST_FILES=	lib/xmms/Visualization/libblursk.so
 
-NO_STAGE=	yes
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386" && ${COMPILER_TYPE} == "clang"
+USE_BINUTILS=	yes
+CPPFLAGS+=	-no-integrated-as
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2||' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT} \
-		${BUILD_WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|-O2|| ; \
+		 s|@PTHREAD_LIBS@||' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Visualization
+	(cd ${WRKSRC}/.libs && ${INSTALL_LIB} libblursk.so \
+		${STAGEDIR}${PREFIX}/lib/xmms/Visualization)
+		
+.include <bsd.port.post.mk>
