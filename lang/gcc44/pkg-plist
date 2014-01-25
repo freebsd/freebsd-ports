@@ -1,7 +1,7 @@
 bin/%%GNU_HOST%%-c++%%SUFFIX%%
 bin/%%GNU_HOST%%-g++%%SUFFIX%%
 bin/%%GNU_HOST%%-gcc%%SUFFIX%%
-bin/%%GNU_HOST%%-gcc-%%GCC_VER%%
+bin/%%GNU_HOST%%-gcc-%%GCC_VERSION%%
 bin/%%GNU_HOST%%-gfortran%%SUFFIX%%
 bin/c++%%SUFFIX%%
 bin/cpp%%SUFFIX%%
@@ -11,4 +11,9 @@ bin/gccbug%%SUFFIX%%
 bin/gcov%%SUFFIX%%
 bin/gfortran%%SUFFIX%%
 info/gcc%%SUFFIX%%/dir
+man/man1/cpp%%SUFFIX%%.1.gz
+man/man1/g++%%SUFFIX%%.1.gz
+man/man1/gcc%%SUFFIX%%.1.gz
+man/man1/gcov%%SUFFIX%%.1.gz
+man/man1/gfortran%%SUFFIX%%.1.gz
 @comment Insert PLIST.lib here
