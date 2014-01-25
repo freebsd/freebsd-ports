@@ -1,4 +1,5 @@
 @stopdaemon radiusd
+bin/dhcpclient
 bin/radcrypt
 bin/radclient
 bin/radconf2xml
@@ -25,6 +26,9 @@ bin/smbencrypt
 %%LIBDIR%%/libfreeradius-server.a
 %%LIBDIR%%/libfreeradius-server.la
 %%LIBDIR%%/libfreeradius-server.so
+%%LIBDIR%%/proto_dhcp.a
+%%LIBDIR%%/proto_dhcp.la
+%%LIBDIR%%/proto_dhcp.so
 %%LIBDIR%%/proto_vmps.a
 %%LIBDIR%%/proto_vmps.la
 %%LIBDIR%%/proto_vmps.so
@@ -49,6 +53,9 @@ bin/smbencrypt
 %%LIBDIR%%/rlm_detail.a
 %%LIBDIR%%/rlm_detail.la
 %%LIBDIR%%/rlm_detail.so
+%%LIBDIR%%/rlm_dhcp.a
+%%LIBDIR%%/rlm_dhcp.la
+%%LIBDIR%%/rlm_dhcp.so
 %%LIBDIR%%/rlm_digest.a
 %%LIBDIR%%/rlm_digest.la
 %%LIBDIR%%/rlm_digest.so
