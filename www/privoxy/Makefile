@@ -47,46 +47,25 @@ TOGGLE_DESC=		Support for remote toggling
 
 OPTIONS_DEFAULT=	BROKEN_STRPTIME EDITOR DOCS FORCE TOGGLE
 
-.include <bsd.port.options.mk>
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MACCEPT_FILTER}
-CONFIGURE_ARGS+=	 --enable-accept-filter
-.endif
+ACCEPT_FILTER_CONFIGURE_ON=	--enable-accept-filter
 
-.if ${PORT_OPTIONS:MCOMPRESSION}
-CONFIGURE_ARGS+=	 --enable-compression
-.endif
+BROKEN_STRPTIME_CONFIGURE_ON=	--enable-strptime-sanity-checks
 
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--with-debug
-.endif
+COMPRESSION_CONFIGURE_ON=	--enable-compression
 
-.if ! ${PORT_OPTIONS:MEDITOR}
-CONFIGURE_ARGS+=	--disable-editor
-.endif
+DEBUG_CONFIGURE_ON=	--with-debug
 
-.if ! ${PORT_OPTIONS:MFORCE}
-CONFIGURE_ARGS+=	--disable-force
-.endif
+EDITOR_CONFIGURE_OFF=	--disable-editor
 
-.if ${PORT_OPTIONS:MBROKEN_STRPTIME}
-CONFIGURE_ARGS+=	--enable-strptime-sanity-checks
-.endif
+FORCE_CONFIGURE_OFF=	--disable-force
 
-.if ! ${PORT_OPTIONS:MTOGGLE}
-CONFIGURE_ARGS+=	--disable-toggle
-.endif
+TOGGLE_CONFIGURE_OFF=	--disable-toggle
 
-.if ${PORT_OPTIONS:MPRIVOXY_TOOLS}
-USES+=		perl5
-USE_PERL5=	run
-RUN_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-PLIST_SUB+=	PRIVOXY_TOOLS=""
-.else
-PLIST_SUB+=	PRIVOXY_TOOLS="@comment "
-.endif
-
-PLIST_SUB+=	MAN1PREFIX=${MAN1PREFIX}
+PRIVOXY_TOOLS_USES=	perl5
+PRIVOXY_TOOLS_USE=	PERL5=run
+PRIVOXY_TOOLS_RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 post-patch:
 	${REINPLACE_CMD} \
@@ -94,39 +73,33 @@ post-patch:
 		-e 's,^\(logdir\) \.,\1 /var/log/privoxy,' \
 		-e 's,^\(actionsfile user\),#\1,' \
 		-e 's,^\(filterfile user\),#\1,' \
-	${WRKSRC}/config
-.if ${PORT_OPTIONS:MDOCS}
+		${WRKSRC}/config
 	${REINPLACE_CMD} \
 		-e 's,^#\(user-manual\) http://www.privoxy.org/user-manual/,\1 ${DOCSDIR}/user-manual,' \
-	${WRKSRC}/config
-.endif
+		${WRKSRC}/config
 	${REINPLACE_CMD} \
 		-e 's,\(/etc/privoxy\),${PREFIX}\1,' ${WRKSRC}/tools/uagen.pl
 
 pre-configure:
-	@cd ${WRKSRC}; ${AUTOHEADER}
+	@(cd ${WRKSRC}; ${AUTOHEADER})
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/privoxy/templates
-	@${INSTALL_PROGRAM} ${WRKSRC}/privoxy ${STAGEDIR}${PREFIX}/sbin
-	@${INSTALL_DATA} ${WRKSRC}/templates/[a-z]* ${STAGEDIR}${PREFIX}/etc/privoxy/templates
-.if ${PORT_OPTIONS:MPRIVOXY_TOOLS}
+	${INSTALL_PROGRAM} ${WRKSRC}/privoxy ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/templates/[a-z]* ${STAGEDIR}${PREFIX}/etc/privoxy/templates
 .for privoxy_tool in privoxy-log-parser.pl privoxy-regression-test.pl uagen.pl
-	@${INSTALL_SCRIPT} ${WRKSRC}/tools/${privoxy_tool} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/${privoxy_tool} ${STAGEDIR}${PREFIX}/bin
 .endfor
-.endif
 .for defaultfile in default.action default.filter regression-tests.action
-	@${INSTALL_DATA} ${WRKSRC}/${defaultfile} ${STAGEDIR}${PREFIX}/etc/privoxy
+	${INSTALL_DATA} ${WRKSRC}/${defaultfile} ${STAGEDIR}${PREFIX}/etc/privoxy
 .endfor
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for examplefile in config match-all.action trust user.action
-	@${INSTALL_DATA} ${WRKSRC}/${examplefile} ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${examplefile} ${STAGEDIR}${EXAMPLESDIR}/
 .endfor
-	@${INSTALL_MAN}  ${WRKSRC}/privoxy.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
+	${INSTALL_MAN}  ${WRKSRC}/privoxy.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/user-manual
-	@${INSTALL_DATA} ${WRKSRC}/doc/webserver/user-manual/[a-z]* ${STAGEDIR}${DOCSDIR}/user-manual
-	@${INSTALL_DATA} ${WRKSRC}/doc/webserver/p_doc.css ${STAGEDIR}${DOCSDIR}/user-manual
-.endif
+	${INSTALL_DATA} ${WRKSRC}/doc/webserver/user-manual/[a-z]* ${STAGEDIR}${DOCSDIR}/user-manual
+	${INSTALL_DATA} ${WRKSRC}/doc/webserver/p_doc.css ${STAGEDIR}${DOCSDIR}/user-manual
 
 .include <bsd.port.mk>
