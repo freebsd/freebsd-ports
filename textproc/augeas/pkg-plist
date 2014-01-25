@@ -12,6 +12,8 @@ lib/libfa.la
 lib/libfa.so
 lib/libfa.so.5
 libdata/pkgconfig/augeas.pc
+man/man1/augparse.1.gz
+man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/access.aug
 %%DATADIR%%/lenses/dist/activemq_conf.aug
 %%DATADIR%%/lenses/dist/activemq_xml.aug

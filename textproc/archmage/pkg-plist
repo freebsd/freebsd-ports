@@ -1,5 +1,6 @@
 bin/archmage
 etc/archmage/arch.conf
+man/man1/archmage.1.gz
 %%PYTHON_SITELIBDIR%%/archmod/CHM.py
 %%PYTHON_SITELIBDIR%%/archmod/CHM.pyc
 %%PYTHON_SITELIBDIR%%/archmod/CHM.pyo

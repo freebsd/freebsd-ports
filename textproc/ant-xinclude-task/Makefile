@@ -17,27 +17,17 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 USE_ANT=	yes
 
-ALL_TARGET=	jar
-.if !defined(NOPORTDOCS)
-ALL_TARGET+=	apidocs
+OPTIONS_DEFINE=	DOCS
+
+ALL_TARGET=	jar apidocs
 PORTDOCS=	*
-.endif
-MAKE_ENV+=	CLASSPATH=${JAVAJARDIR}/xincluder.jar
+MAKE_ENV=	CLASSPATH=${JAVAJARDIR}/xincluder.jar
 
-PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}.jar
+PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
-NO_STAGE=	yes
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${MKDIR} ${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/build/${PORTNAME}.jar ${JAVAJARDIR}/
-	@${ECHO_MSG} " [ DONE ]"
-
-.if !defined(NOPORTDOCS)
-	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@cd ${WRKSRC}/build/apidocs && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} ";"
-	@cd ${WRKSRC}/build/apidocs && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} ";"
-	@${ECHO_MSG} " [ DONE ]"
-.endif
+	${INSTALL_DATA} ${WRKSRC}/build/${PORTNAME}.jar ${STAGEDIR}${JAVAJARDIR}/
+	cd ${WRKSRC}/build/apidocs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible reader/decompiler of files in CHM format
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/chm/chm.py:${PORTSDIR}/textproc/pychm \
 		${PYTHON_SITELIBDIR}/BeautifulSoup.py:${PORTSDIR}/www/py-beautifulsoup32
 
@@ -17,9 +19,7 @@ NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-MAN1=	${PORTNAME}.1
 
-NO_STAGE=	yes
 post-extract:
 	@${GUNZIP_CMD} ${WRKSRC}/${PORTNAME}.1.gz
 
@@ -29,6 +29,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,/etc,etc,;/archmage.1/d" ${WRKSRC}/setup.py
 
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1/
+	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.mk>
