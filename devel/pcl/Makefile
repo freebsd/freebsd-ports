@@ -9,19 +9,12 @@ MASTER_SITES=	http://www.xmailserver.org/
 MAINTAINER=	manuel.giraud@gmail.com
 COMMENT=	Portable Coroutine Library
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-MAN3=		pcl.3
-
 WRKSRC=		${WRKDIR}/lib${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+BROKEN_sparc64=	Does not compile on sparc64
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
