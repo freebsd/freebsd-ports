@@ -18,6 +18,9 @@ PLIST_FILES=	lib/libeatmydata.so \
 		lib/libeatmydata.so.1.0
 
 NO_STAGE=	yes
+post-patch:
+	${SED} -i '' -e 's/gcc/${CC}/' ${WRKSRC}/Makefile
+
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libeatmydata.so.1.0 ${PREFIX}/lib
 
