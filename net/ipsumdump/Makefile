@@ -3,7 +3,7 @@
 
 PORTNAME=	ipsumdump
 PORTVERSION=	1.82
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.cs.ucla.edu/~kohler/ipsumdump/
 
@@ -14,10 +14,10 @@ USES=		gmake perl5
 GNU_CONFIGURE=	yes
 USE_PERL5=	build
 
-MAN1=		${PORTNAME}.1 ipaggcreate.1 ipaggmanip.1
-
 PORTDOCS=	README
-PLIST_FILES=	bin/ipaggcreate bin/ipsumdump bin/ipaggmanip
+PLIST_FILES=	bin/ipaggcreate bin/ipsumdump bin/ipaggmanip \
+		man/man1/${PORTNAME}.1 man/man1/ipaggmanip.1 \
+		man/man1/ipaggcreate.1
 
 OPTIONS_DEFINE=	IPV6 DOCS
 OPTIONS_SUB=	yes
@@ -37,8 +37,8 @@ CATEGORIES+=	ipv6
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
