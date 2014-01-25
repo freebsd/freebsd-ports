@@ -9,12 +9,24 @@
  #include <time.h>
  
  static int lptbdm_read( void );
-@@ -252,7 +252,7 @@
+@@ -52,8 +52,9 @@
+ 
+ static uid_t lptbdm_euid = -1;
+ 
+-#define INB(x,port)	asm volatile("inb %1, %0" : "=a" (x) : "d" (port))
+-#define OUTB(x,port)	asm volatile("outb %0, %1" : : "a" (x), "d" (port))
++#include <machine/cpufunc.h>
++#define INB(x,port)	x = inb(port)
++#define OUTB(x,port)	outb(port,x)
+ 
+ /* in case of asm trouble (red hat 7.0?) try the code below and compile with -O option */
+ /*#include <asm/io.h>
+@@ -252,7 +253,7 @@
  		}
  	}
  
 -	nResult = ioperm( lptbdm_port.DATAAddr, 3, 1 );
-+	nResult = i386_set_ioperm( lptbdm_port.DATAAddr, 3, 1 );
++	nResult = sysarch( I386_SET_IOPERM, (void *) ( lptbdm_port.DATAAddr, 3, 1 ) );
  
  	seteuid( getuid() );
  
