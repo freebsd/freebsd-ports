@@ -16,12 +16,12 @@
 
 name="prosody"
 rcvar=prosody_enable
-pidfile="%%PREFIX%%/var/lib/prosody/prosody.pid"
 command="%%PREFIX%%/bin/prosodyctl"
 
 load_rc_config $name
 
-prosody=${prosody_enable-"NO"}
+prosody_enable=${prosody_enable:-"NO"}
+pidfile=${prosody_pidfile:-"%%PREFIX%%/var/lib/prosody/prosody.pid"}
 
 extra_commands="status"
 

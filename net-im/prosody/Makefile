@@ -26,7 +26,7 @@ WANT_LUA_VER=	5.1
 USE_GMAKE=	yes
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS+="--ostype=freebsd"
+CONFIGURE_ARGS+=	--ostype=freebsd --c-compiler="${CC}" --linker="${LD}"
 CONFIGURE_ENV+=	LOCALBASE="${LOCALBASE}" PREFIX="${PREFIX}" LUA_SUFFIX="-${LUA_VER}" LUA_LIBDIR="${LUA_LIBDIR}" LUA_INCDIR="${LUA_INCDIR}"
 
 SUB_FILES=	pkg-install pkg-deinstall
