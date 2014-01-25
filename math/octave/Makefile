@@ -3,6 +3,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	3.8.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	octave
@@ -46,7 +47,6 @@ CONFIGURE_ENV+=	JAVA_HOME=${JAVA_HOME}
 USE_QT4=	gui network
 
 INFO=		octave liboctave
-MAN1=		octave.1 mkoctfile.1 octave-config.1
 
 .include <bsd.port.pre.mk>
 
