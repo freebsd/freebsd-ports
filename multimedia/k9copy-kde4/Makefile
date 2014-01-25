@@ -11,6 +11,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 MAINTAINER=	egoliveira@gmail.com
 COMMENT=	DVD-9 to DVD-5 shrinking application for KDE
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine \
 		libmpeg2.so:${PORTSDIR}/multimedia/libmpeg2 \
 		libavcodec0.so:${PORTSDIR}/multimedia/ffmpeg0
@@ -18,8 +20,6 @@ LIB_DEPENDS=	libxine.so:${PORTSDIR}/multimedia/libxine \
 USES=		cmake gettext
 USE_KDE4=	kdeprefix kdelibs automoc4
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-
-LATEST_LINK=	${PORTNAME}-kde4
 
 CFLAGS=		-I${LOCALBASE}/include/ffmpeg0
 CPPFLAGS=	-I${LOCALBASE}/include/ffmpeg0
@@ -30,20 +30,9 @@ MENCODER_DESC=	MEncoder support
 MPLAYER_DESC=	MPlayer support
 DVDAUTHOR_DESC=	DVD Author support
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMENCODER}
-RUN_DEPENDS+=	mencoder:${PORTSDIR}/multimedia/mencoder
-.endif
-
-.if ${PORT_OPTIONS:MMPLAYER}
-RUN_DEPENDS+=	mplayer:${PORTSDIR}/multimedia/mplayer
-.endif
-
-.if ${PORT_OPTIONS:MDVDAUTHOR}
-RUN_DEPENDS+=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor
-.endif
+MENCODER_RUN_DEPENDS=	mencoder:${PORTSDIR}/multimedia/mencoder
+MPLAYER_RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
+DVDAUTHOR_RUN_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' ${WRKSRC}/cmake/*.cmake
