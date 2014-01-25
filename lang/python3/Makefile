@@ -25,22 +25,27 @@ PLIST_FILES=	bin/2to3-${PYTHON_MAJOR_VER} \
 		bin/python-shared${PYTHON_MAJOR_VER}-config \
 		libdata/pkgconfig/python${PYTHON_MAJOR_VER}.pc
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 RUN_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
 
 do-install:
 .for file in python python-shared
-	${LN} -sf ${PREFIX}/bin/${file}${PYTHON_VER} ${PREFIX}/bin/${file}${PYTHON_MAJOR_VER}
+	${LN} -sf ${PREFIX}/bin/${file}${PYTHON_VER} \
+		${STAGEDIR}${PREFIX}/bin/${file}${PYTHON_MAJOR_VER}
 .endfor
-	${LN} -sf ${PREFIX}/bin/2to3-${PYTHON_VER} ${PREFIX}/bin/2to3-${PYTHON_MAJOR_VER}
+	${LN} -sf ${PREFIX}/bin/2to3-${PYTHON_VER} \
+		${STAGEDIR}${PREFIX}/bin/2to3-${PYTHON_MAJOR_VER}
 .for file in idle pydoc
-	${LN} -sf ${PREFIX}/bin/${file}${PYTHON_MAJOR_VER}-${PYTHON_VER} ${PREFIX}/bin/${file}${PYTHON_MAJOR_VER}
+	${LN} -sf ${PREFIX}/bin/${file}${PYTHON_MAJOR_VER}-${PYTHON_VER} \
+		${STAGEDIR}${PREFIX}/bin/${file}${PYTHON_MAJOR_VER}
 .endfor
-	${LN} -sf ${PREFIX}/bin/python${PYTHON_VER}-config ${PREFIX}/bin/python${PYTHON_MAJOR_VER}-config
-	${LN} -sf ${PREFIX}/bin/python-shared${PYTHON_VER}-config ${PREFIX}/bin/python-shared${PYTHON_MAJOR_VER}-config
-	${LN} -sf ${PREFIX}/libdata/pkgconfig/python-${PYTHON_VER}.pc ${PREFIX}/libdata/pkgconfig/python${PYTHON_MAJOR_VER}.pc
+	${LN} -sf ${PREFIX}/bin/python${PYTHON_VER}-config \
+		${STAGEDIR}${PREFIX}/bin/python${PYTHON_MAJOR_VER}-config
+	${LN} -sf ${PREFIX}/bin/python-shared${PYTHON_VER}-config \
+		${STAGEDIR}${PREFIX}/bin/python-shared${PYTHON_MAJOR_VER}-config
+	${LN} -sf ${PREFIX}/libdata/pkgconfig/python-${PYTHON_VER}.pc \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig/python${PYTHON_MAJOR_VER}.pc
 
 # Major upgrade support
 PORTUPGRADE_CMD=	${LOCALBASE}/sbin/portupgrade
