@@ -25,7 +25,6 @@ PLIST_FILES=	bin/2to3 \
 		bin/python-shared \
 		bin/python-shared-config
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_MAJOR_VER} == 2
@@ -37,21 +36,28 @@ RUN_DEPENDS+=	python3:${PORTSDIR}/lang/python3
 
 do-install:
 .for file in python python-shared
-	${LN} -sf ${PREFIX}/bin/${file}${PYTHON_MAJOR_VER} ${PREFIX}/bin/${file}
+	${LN} -sf ${PREFIX}/bin/${file}${PYTHON_MAJOR_VER} \
+		${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
-	${LN} -sf ${PREFIX}/bin/2to3-${PYTHON_MAJOR_VER} ${PREFIX}/bin/2to3
+	${LN} -sf ${PREFIX}/bin/2to3-${PYTHON_MAJOR_VER} \
+		${STAGEDIR}${PREFIX}/bin/2to3
 .if ${PYTHON_MAJOR_VER} == 2
-	${LN} -sf ${PREFIX}/bin/smtpd${PYTHON_MAJOR_VER}.py ${PREFIX}/bin/smtpd.py
+	${LN} -sf ${PREFIX}/bin/smtpd${PYTHON_MAJOR_VER}.py \
+		${STAGEDIR}${PREFIX}/bin/smtpd.py
 .for file in idle pydoc
-	${LN} -sf ${PREFIX}/bin/${file}${PYTHON_MAJOR_VER} ${PREFIX}/bin/${file}
+	${LN} -sf ${PREFIX}/bin/${file}${PYTHON_MAJOR_VER} \
+		${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
 .elif ${PYTHON_MAJOR_VER} == 3
 .for file in idle pydoc
-	${LN} -sf ${PREFIX}/bin/${file}${PYTHON_MAJOR_VER}-${PYTHON_VER} ${PREFIX}/bin/${file}
+	${LN} -sf ${PREFIX}/bin/${file}${PYTHON_MAJOR_VER}-${PYTHON_VER} \
+		${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
 .endif
-	${LN} -sf ${PREFIX}/bin/python${PYTHON_MAJOR_VER}-config ${PREFIX}/bin/python-config
-	${LN} -sf ${PREFIX}/bin/python-shared${PYTHON_MAJOR_VER}-config ${PREFIX}/bin/python-shared-config
+	${LN} -sf ${PREFIX}/bin/python${PYTHON_MAJOR_VER}-config \
+		${STAGEDIR}${PREFIX}/bin/python-config
+	${LN} -sf ${PREFIX}/bin/python-shared${PYTHON_MAJOR_VER}-config \
+		${STAGEDIR}${PREFIX}/bin/python-shared-config
 
 # Major upgrade support
 PORTUPGRADE_CMD=	${LOCALBASE}/sbin/portupgrade
