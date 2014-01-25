@@ -7,11 +7,13 @@ MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
 MASTER_SITE_SUBDIR=	software/network/tftp/tftp-hpa
 
 MAINTAINER=	brooks@FreeBSD.org
-COMMENT=	An advanced tftp server
+COMMENT=	Advanced tftp server
+
+OPTIONS_DEFINE=	DOCS
 
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_RC_SUBR=	tftpd
 
 DESTDIRNAME=	INSTALLROOT
@@ -34,12 +36,10 @@ post-patch:
 	    -e 's,openlog(,tzset();openlog(,g' \
 	    ${WRKSRC}/tftpd/tftpd.c
 
-.ifdef PORTDOCS
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docfile in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
