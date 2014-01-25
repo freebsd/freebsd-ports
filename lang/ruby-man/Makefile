@@ -23,6 +23,10 @@ NO_BUILD=	yes
 PLIST_SUB=	LANGSUFFIX="${LANGSUFFIX}"
 
 NO_STAGE=	yes
+
+DEPRECATED=		Documents EOLd version of Ruby and unmaintained
+EXPIRATION_DATE=	2014-02-25
+
 do-install:
 	${MKDIR} ${RUBY_MODDOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.html ${RUBY_MODDOCDIR}

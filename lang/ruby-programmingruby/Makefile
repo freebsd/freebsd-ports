@@ -24,6 +24,10 @@ NO_WRKSUBDIR=	yes
 DOCSDIR=	${RUBY_MODDOCDIR}
 
 NO_STAGE=	yes
+
+DEPRECATED=		Documents EOLd version of Ruby and unmaintained
+EXPIRATION_DATE=	2014-02-25
+
 do-install:
 	${MKDIR} ${RUBY_MODDOCDIR}
 	@${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} -C ${RUBY_MODDOCDIR}
