@@ -5,8 +5,13 @@ bin/form_generator.pl
 %%SITE_PERL%%/HTML/FormHandler/TraitFor/DBICFields.pm
 %%SITE_PERL%%/HTML/FormHandler/TraitFor/Model/DBIC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormHandler/Model/DBIC/.packlist
+%%PERL5_MAN3%%/HTML::FormHandler::Generator::DBIC.3.gz
+%%PERL5_MAN3%%/HTML::FormHandler::Model::DBIC.3.gz
+%%PERL5_MAN3%%/HTML::FormHandler::Model::DBIC::TypeMap.3.gz
+%%PERL5_MAN3%%/HTML::FormHandler::TraitFor::DBICFields.3.gz
+%%PERL5_MAN3%%/HTML::FormHandler::TraitFor::Model::DBIC.3.gz
+man/man1/form_generator.pl.1.gz
 @dirrm    %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormHandler/Model/DBIC
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormHandler/Generator
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormHandler/Model
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormHandler
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
