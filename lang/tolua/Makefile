@@ -2,46 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	tolua
-PORTVERSION=	5.1.3
+PORTVERSION=	5.2.0
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/users/celes/tolua/ \
-		http://www.tecgraf.puc-rio.br/~celes/tolua/
+MASTER_SITES=	http://www.tecgraf.puc-rio.br/~celes/tolua/ \
+		ftp://ftp.tecgraf.puc-rio.br/pub/users/celes/tolua/
 
-MAINTAINER=	edwin@mavetju.org
+MAINTAINER=	lua@FreeBSD.org
 COMMENT=	toLua: accessing C/C++ code from Lua
 
-USE_GMAKE=	yes
-USE_LUA=	5.1
-WRKSRC=		${WRKDIR}/${PORTNAME}-5.1.3
+USES=		gmake lua
 
-NO_STAGE=	yes
-post-extract:
-	${RM} ${WRKSRC}/src/bin/tolua_lua.o
+MAKE_ARGS=	CC="${CC}" CCPP="${CXX}" \
+		LUAINC="${LUA_INCDIR}" \
+		LUALIB="${LUA_LIBDIR}" \
+		WARN="${CFLAGS}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|make|$${MAKE}|' ${WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} -Ee \
-		's|^(CC=).*|\1 ${CC}|; \
-		 s|^(CCPP =).*|\1 ${CXX}|; \
-		 s|^(LUA=).*|\1 ${LOCALBASE}|; \
-		 s|^(LUA(INC\|LIB)=).*|\1 $${LUA_\2DIR}|; \
-		 s|^(CPPFLAGS)(=.*)|\1+\2 -lstdc++|; \
-		 s|^(CFLAGS)(=.*)|\1+\2|;' \
-		${WRKSRC}/config
+	@${REINPLACE_CMD} -e 's|llua|llua-${LUA_VER}|' \
+		${WRKSRC}/src/bin/${MAKEFILE} \
+		${WRKSRC}/src/tests/${MAKEFILE}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/tolua ${LUA_BINDIR}
-	${LN} -sf ${LUA_SUBDIR}/tolua ${PREFIX}/bin/tolua-${LUA_VER}
-	${INSTALL_DATA} ${WRKSRC}/include/tolua.h ${LUA_INCDIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/libtolua.a ${LUA_LIBDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/tolua ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/include/tolua.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/lib/libtolua.a ${STAGEDIR}${PREFIX}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc
-.endif
-.if ${ARCH} == "sparc64" && ${OSVERSION} > 900000
-BROKEN=		Does not install on sparc64-9
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
