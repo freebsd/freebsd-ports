@@ -152,7 +152,7 @@ you update your ports collection, before attempting any port upgrades.
   The default xorg version has been switched on FreeBSD CURRENT.
 
   To upgrade graphics/libGL, graphics/dri and related MESA ports, it is
-  neccessary to first remove the old versions of those ports.
+  necessary to first remove the old versions of those ports.
   No special upgrade procedure is needed for xorg port but it is
   necessary to recompile all xorg drivers (xf86-*) and other ports that
   depend on the xserver version, including
