@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/kyua
 etc/kyua/kyua.conf
 man/man1/kyua-about.1.gz

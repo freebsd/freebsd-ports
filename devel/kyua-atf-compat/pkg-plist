@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/atf-report
 bin/atf-run
 bin/atf2kyua

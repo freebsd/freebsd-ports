@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/lutok/c_gate.hpp
 include/lutok/debug.hpp
 include/lutok/exceptions.hpp
