@@ -36,27 +36,23 @@ RUN_DEPENDS+=	python3:${PORTSDIR}/lang/python3
 
 do-install:
 .for file in python python-shared
-	${LN} -sf ${PREFIX}/bin/${file}${PYTHON_MAJOR_VER} \
-		${STAGEDIR}${PREFIX}/bin/${file}
+	${LN} -sf ${file}${PYTHON_MAJOR_VER} ${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
-	${LN} -sf ${PREFIX}/bin/2to3-${PYTHON_MAJOR_VER} \
-		${STAGEDIR}${PREFIX}/bin/2to3
+	${LN} -sf 2to3-${PYTHON_MAJOR_VER} ${STAGEDIR}${PREFIX}/bin/2to3
 .if ${PYTHON_MAJOR_VER} == 2
-	${LN} -sf ${PREFIX}/bin/smtpd${PYTHON_MAJOR_VER}.py \
-		${STAGEDIR}${PREFIX}/bin/smtpd.py
+	${LN} -sf smtpd${PYTHON_MAJOR_VER}.py ${STAGEDIR}${PREFIX}/bin/smtpd.py
 .for file in idle pydoc
-	${LN} -sf ${PREFIX}/bin/${file}${PYTHON_MAJOR_VER} \
-		${STAGEDIR}${PREFIX}/bin/${file}
+	${LN} -sf ${file}${PYTHON_MAJOR_VER} ${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
 .elif ${PYTHON_MAJOR_VER} == 3
 .for file in idle pydoc
-	${LN} -sf ${PREFIX}/bin/${file}${PYTHON_MAJOR_VER}-${PYTHON_VER} \
+	${LN} -sf ${file}${PYTHON_MAJOR_VER}-${PYTHON_VER} \
 		${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
 .endif
-	${LN} -sf ${PREFIX}/bin/python${PYTHON_MAJOR_VER}-config \
+	${LN} -sf python${PYTHON_MAJOR_VER}-config \
 		${STAGEDIR}${PREFIX}/bin/python-config
-	${LN} -sf ${PREFIX}/bin/python-shared${PYTHON_MAJOR_VER}-config \
+	${LN} -sf python-shared${PYTHON_MAJOR_VER}-config \
 		${STAGEDIR}${PREFIX}/bin/python-shared-config
 
 # Major upgrade support
