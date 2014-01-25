@@ -17,7 +17,6 @@ RUN_DEPENDS=	interdiff:${PORTSDIR}/misc/patchutils \
 USE_GITHUB=	yes
 USES=		gmake perl5
 USE_PERL5=	build # pod2man
-MAKE_ARGS=	BASEDIR="${STAGEDIR}"
 
 GH_ACCOUNT=	caldwell
 GH_PROJECT=	commit-patch
@@ -32,7 +31,7 @@ PORTDOCS=	*
 post-patch:
 		${REINPLACE_CMD} -e 's/share[/]man/man/' \
 			-e 's/PREFIX=/PREFIX?=/' \
-			-e 's/$$(PREFIX)/$$(BASEDIR)$$(PREFIX)/' \
+			-e 's/$$(PREFIX)/$$(DESTDIR)$$(PREFIX)/' \
 			${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
