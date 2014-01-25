@@ -4,4 +4,6 @@ lib/libpthsem.a
 lib/libpthsem.la
 lib/libpthsem.so
 lib/libpthsem.so.20
+man/man1/pthsem-config.1.gz
+man/man3/pthsem.3.gz
 share/aclocal/pthsem.m4

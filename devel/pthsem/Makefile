@@ -11,12 +11,8 @@ COMMENT=	GNU Portable Threads with semaphores
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-
-MAN1=		pthsem-config.1
-MAN3=		pthsem.3
+USES=		gmake
 
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
