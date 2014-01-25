@@ -11,6 +11,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sascha@root-login.org
 COMMENT=	Monitor your favorite web image
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-25
+
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/wmGrabImage
