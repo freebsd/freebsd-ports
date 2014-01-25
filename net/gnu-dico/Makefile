@@ -3,7 +3,7 @@
 
 PORTNAME=	dico
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,10 +14,11 @@ COMMENT=	Flexible modular implementation of DICT server
 
 USE_XZ=		yes
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=	libltdl libtool
 
 GNU_CONFIGURE=	yes
+CFLAGS+=	-Wno-error=return-type
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--localstatedir=/var
@@ -26,11 +27,11 @@ OPTIONS_DEFINE=	PYTHON GUILE PCRE GSASL PAM LDAP
 OPTIONS_DEFAULT=	PYTHON GUILE PCRE
 GSASL_DESC=	GSASL support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
+CONFIGURE_ENV+=	PYTHON_CONFIG=${PYTHON_CMD}-config
 PLIST_SUB+=	PYTHON=""
 .else
 CONFIGURE_ARGS+=--without-python
@@ -38,7 +39,7 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGUILE}
-LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	libguile.so:${PORTSDIR}/lang/guile
 PLIST_SUB+=	GUILE=""
 .else
 CONFIGURE_ARGS+=--without-guile
@@ -46,7 +47,7 @@ PLIST_SUB+=	GUILE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 PLIST_SUB+=	PCRE=""
 .else
 CONFIGURE_ARGS+=--without-pcre
@@ -54,7 +55,7 @@ PLIST_SUB+=	PCRE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGSASL}
-LIB_DEPENDS+=	gsasl.16:${PORTSDIR}/security/gsasl
+LIB_DEPENDS+=	libgsasl.so:${PORTSDIR}/security/gsasl
 CONFIGURE_ARGS+=--with-gsasl
 .else
 CONFIGURE_ARGS+=--without-gsasl
@@ -94,9 +95,9 @@ post-patch:
 	@${REINPLACE_CMD} 's/@bindir@/@sbindir@/' ${WRKSRC}/dicod/Makefile.in
 	@${REINPLACE_CMD} 's/(bindir)..dir/&\/gdico/' ${WRKSRC}/dico/Makefile.in
 	@${REINPLACE_CMD} '/INSTALL.*charset/d' ${WRKSRC}/gnu/Makefile.in
+	@${REINPLACE_CMD} 's/python-config/$${PYTHON_CONFIG}/' ${WRKSRC}/configure
 
 post-install:
-	@${INSTALL_DATA} ${FILESDIR}/dicod.conf ${PREFIX}/etc/dicod.conf.sample
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL_DATA} ${FILESDIR}/dicod.conf ${STAGEDIR}${PREFIX}/etc/dicod.conf.sample
 
 .include <bsd.port.mk>
