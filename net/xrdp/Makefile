@@ -3,7 +3,7 @@
 
 PORTNAME=	xrdp
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	GH
@@ -13,7 +13,6 @@ MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	Open source Remote Desktop Protocol (RDP) server
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		pkgconfig
 USE_XORG=	x11 xfixes
@@ -22,17 +21,15 @@ GNU_CONFIGURE=	yes
 USE_RC_SUBR=	xrdp
 USE_LDCONFIG=	${STAGEDIR}${PREFIX}/lib/xrdp
 USE_GITHUB=	yes
-GH_ACCOUNT=	FreeRDP
+GH_ACCOUNT=	neutrinolabs
 GH_PROJECT=	xrdp
 GH_COMMIT=	5d53758
 GH_TAGNAME=	${GH_COMMIT}
 
-CONFIGURE_ARGS=	--localstatedir=/var \
-		--enable-freerdp1
+CONFIGURE_ARGS=	--localstatedir=/var
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFLICTS=	xrdp-devel-[0-9]*
-BUILD_DEPENDS+=	freerdp>=1.0.2:${PORTSDIR}/net/freerdp
 
 OPTIONS_DEFINE=	DEBUG
 OPTIONS_DEFAULT=	JP106 TIGERVNC
