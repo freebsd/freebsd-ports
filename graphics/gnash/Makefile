@@ -73,6 +73,10 @@ CYGNAL_CONFIGURE_ENABLE=	cygnal
 
 .include <bsd.port.options.mk>
 
+.if ${OSVERSION} > 1000000
+BROKEN=	unable to link in libboost_system
+.endif
+
 # Cygnal option processing
 .if ${PORT_OPTIONS:MCYGNAL}
 CONFIG_FILES+=	cygnalrc
