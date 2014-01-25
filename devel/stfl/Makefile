@@ -10,19 +10,15 @@ MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Structured Terminal Forms Language/Library
 
 LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
-USES=		iconv ncurses
+USES=		gmake iconv ncurses
 ALL_TARGET=	libstfl.so
 PLIST_FILES=	lib/libstfl.so.1 lib/libstfl.so include/stfl.h \
 		libdata/pkgconfig/stfl.pc
 CFLAGS+=	-I${LOCALBASE}/include
 LDLIBS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	LDLIBS="${LDLIBS}"
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\.a|.so|g;/ranlib/d;\
@@ -43,9 +39,9 @@ post-build:
 		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} stfl.pc
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/libstfl.so ${STAGEDIR}${PREFIX}/lib/libstfl.so.1
-	@${LN} -sf ${PREFIX}/lib/libstfl.so.1 ${STAGEDIR}${PREFIX}/lib/libstfl.so
-	@${INSTALL_DATA} ${WRKSRC}/stfl.h ${STAGEDIR}${PREFIX}/include/
-	@${INSTALL_DATA} ${WRKSRC}/stfl.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
+	${INSTALL_PROGRAM} ${WRKSRC}/libstfl.so ${STAGEDIR}${PREFIX}/lib/libstfl.so.1
+	${LN} -sf ${PREFIX}/lib/libstfl.so.1 ${STAGEDIR}${PREFIX}/lib/libstfl.so
+	${INSTALL_DATA} ${WRKSRC}/stfl.h ${STAGEDIR}${PREFIX}/include/
+	${INSTALL_DATA} ${WRKSRC}/stfl.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
