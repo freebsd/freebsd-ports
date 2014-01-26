@@ -1,5 +1,6 @@
-@exec /bin/ln -s %%PREFIX%%/bin/bsddiff %%PREFIX%%/bin/diff
-@exec /bin/ln -s /usr/bin/diff %%PREFIX%%/bin/gnudiff
+@unexec rm -f %D/bin/diff
+@exec /bin/ln -s %D/bin/bsddiff %D/bin/diff
+@unexec rm -f %D/bin/gnudiff
+@exec /bin/ln -s /usr/bin/diff %D/bin/gnudiff
 bin/bsddiff
-bin/diff
-bin/gnudiff
+man/man1/bsddiff.1.gz

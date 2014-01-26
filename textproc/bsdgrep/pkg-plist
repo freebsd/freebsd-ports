@@ -1,12 +1,12 @@
-@exec /bin/ln -s %%PREFIX%%/bin/grep %%PREFIX%%/bin/bsdgrep
-@exec /bin/ln -s /usr/bin/grep %%PREFIX%%/bin/gnugrep
-bin/bsdgrep
+@unexec rm -f %D/bin/bsdgrep
+@exec /bin/ln -s %D/bin/grep %D/bin/bsdgrep
+@unexec rm -f %D/bin/gnugrep
+@exec /bin/ln -s /usr/bin/grep %D/bin/gnugrep
 bin/bzegrep
 bin/bzfgrep
 bin/bzgrep
 bin/egrep
 bin/fgrep
-bin/gnugrep
 bin/grep
 bin/lzegrep
 bin/lzfgrep
@@ -17,6 +17,21 @@ bin/xzgrep
 bin/zgrep
 bin/zegrep
 bin/zfgrep
+man/man1/bzegrep.1.gz
+man/man1/bzfgrep.1.gz
+man/man1/bzgrep.1.gz
+man/man1/egrep.1.gz
+man/man1/fgrep.1.gz
+man/man1/grep.1.gz
+man/man1/lzegrep.1.gz
+man/man1/lzfgrep.1.gz
+man/man1/lzgrep.1.gz
+man/man1/xzegrep.1.gz
+man/man1/xzfgrep.1.gz
+man/man1/xzgrep.1.gz
+man/man1/zegrep.1.gz
+man/man1/zfgrep.1.gz
+man/man1/zgrep.1.gz
 %%NLS%%share/nls/es_ES.ISO8859-1/grep.cat
 %%NLS%%share/nls/gl_ES.ISO8859-1/grep.cat
 %%NLS%%share/nls/hu_HU.ISO8859-2/grep.cat
