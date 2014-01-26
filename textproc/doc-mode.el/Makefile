@@ -15,8 +15,7 @@ COMMENT=	Asciidoc fontlocking for emacs
 USE_EMACS=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/doc-mode.el ${PREFIX}/${EMACS_SITE_LISPDIR}/doc-mode.el
+	${INSTALL_DATA} ${WRKSRC}/doc-mode.el ${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}/doc-mode.el
 
 .include <bsd.port.mk>
