@@ -2,6 +2,7 @@
 
 PORTNAME=	bitlbee
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://get.bitlbee.org/src/ \
 		${MASTER_SITE_LOCAL}
@@ -13,14 +14,11 @@ COMMENT=	An IRC to other chat networks gateway
 LICENSE=	GPLv2
 
 SUB_FILES=	pkg-message
-MAN5=		bitlbee.conf.5
-MAN8=		bitlbee.8
 PORTDOCS=	AUTHORS CHANGES CREDITS FAQ README
 PORTEXAMPLES=	bitlbee.conf motd.txt
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
 USE_GNOME=	glib20
 USE_RC_SUBR=	bitlbee
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -69,13 +67,13 @@ CONFIGURE_ARGS+=--ipv6=0
 CONFIGURE_ARGS+=--ssl=openssl
 .elif ${PORT_OPTIONS:MGNUTLS}
 CONFIGURE_ARGS+=--ssl=gnutls
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls \
-		gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 .endif
 
 .if ${PORT_OPTIONS:MOTR}
 CONFIGURE_ARGS+=--otr=1
-LIB_DEPENDS+=	otr.4:${PORTSDIR}/security/libotr3
+LIB_DEPENDS+=	libotr.so.4:${PORTSDIR}/security/libotr3
 .else
 CONFIGURE_ARGS+=--otr=0
 .endif
@@ -112,7 +110,7 @@ CONFIGURE_ARGS+=--twitter=0
 
 .if ${PORT_OPTIONS:MLIBPURPLE}
 CONFIGURE_ARGS+=--purple=1
-LIB_DEPENDS+=	purple:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS+=	libpurple.so:${PORTSDIR}/net-im/libpurple
 .else
 CONFIGURE_ARGS+=--purple=0
 .endif
@@ -140,6 +138,5 @@ post-install:
 	${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
 	${INSTALL_DATA} ${PORTEXAMPLES:S@^@${WRKSRC}/@} ${STAGEDIR}/${EXAMPLESDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
