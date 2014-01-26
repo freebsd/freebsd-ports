@@ -3,7 +3,7 @@
 
 PORTNAME=	policyd2
 PORTVERSION=	2.0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://devlabs.linuxassist.net/attachments/download/${DOWNLOAD_FOLDER}/
 DISTNAME=	cluebringer-${PORTVERSION}
@@ -11,15 +11,12 @@ DISTNAME=	cluebringer-${PORTVERSION}
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	Policyd v2 is a multi-platform policy server for popular MTAs
 
-OPTIONS_DEFINE=	DOCS
-
 RUN_DEPENDS=	p5-Net-Server>=0:${PORTSDIR}/net/p5-Net-Server \
 		p5-Net-CIDR>=0:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
 		p5-Config-IniFiles>=0:${PORTSDIR}/devel/p5-Config-IniFiles \
 		p5-Cache-FastMmap>=0:${PORTSDIR}/devel/p5-Cache-FastMmap
 
 USES=		perl5 shebangfix
-USE_PHP=	yes
 NO_BUILD=	yes
 BINMODE=	0755
 USE_RC_SUBR=	policyd2
@@ -34,13 +31,26 @@ WEBUIDIR=	${PREFIX}/www/policyd
 PORTDOCS=	AUTHORS ChangeLog INSTALL TODO WISHLIST
 PORTDATA=	*
 
-OPTIONS_DEFINE=	MYSQL PGSQL SQLITE
-OPTIONS_DEFAULT=	MYSQL
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE WEBUI
+OPTIONS_DEFAULT=MYSQL WEBUI
 
-USE_PHP=	pdo_mysql
 MYSQL_RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
 SQLITE_RUN_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 PGSQL_RUN_DEPENDS=	p5-DBD-Pg>=0:${PORTSDIR}/databases/p5-DBD-Pg
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MWEBUI}
+. if ${PORT_OPTIONS:MMYSQL}
+USE_PHP=	pdo_mysql
+. endif
+. if ${PORT_OPTIONS:MSQLITE}
+USE_PHP=	pdo_sqlite
+. endif
+. if ${PORT_OPTIONS:MPGSQL}
+USE_PHP=	pdo_pgsql
+. endif
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} 's|/etc|${PREFIX}/etc|' ${WRKSRC}/cbpadmin \
