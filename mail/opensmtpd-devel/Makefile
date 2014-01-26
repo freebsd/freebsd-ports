@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	opensmtpd
-PORTVERSION=	201312142054
+PORTVERSION=	201401241552
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.opensmtpd.org/archives/ \
@@ -61,7 +61,7 @@ PGSQL_CONFIGURE_ON=	--with-experimental-postgres
 
 LDAP_CONFIGURE_ON=	--with-experimental-ldap
 
-PAM_CONFIGURE_ON=	--with-pam
+PAM_CONFIGURE_ON=	--with-pam --with-pam-service=smtpd
 
 .include <bsd.port.options.mk>
 
