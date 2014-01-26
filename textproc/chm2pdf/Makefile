@@ -10,6 +10,8 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	A Python script that converts CHM files into PDF files
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	htmldoc:${PORTSDIR}/textproc/htmldoc \
 		${PYTHON_SITELIBDIR}/chm/chm.py:${PORTSDIR}/textproc/pychm
 
@@ -19,5 +21,4 @@ PYDISTUTILS_PKGVERSION=	0.9
 
 PLIST_FILES=	bin/chm2pdf
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

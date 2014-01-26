@@ -17,34 +17,29 @@ USE_PYTHON=	3.1+
 USE_PYTHON_RUN=	yes
 USE_XZ=		yes
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 PLIST_FILES=	bin/codespell
 PORTDOCS=	COPYING README TODO
 PORTEXAMPLES=	*
 
 SUB_FILES+=	pkg-message
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 do-build:
 	${REINPLACE_CMD} 's|#!/usr/bin/env python3|#!${LOCALBASE}/bin/${PYTHON_VERSION}|' \
 		${WRKSRC}/codespell.py
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/codespell.py ${PREFIX}/bin/codespell
+	${INSTALL_SCRIPT} ${WRKSRC}/codespell.py ${STAGEDIR}${PREFIX}/bin/codespell
 
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 . endfor
-.endif
 
 .for i in data example
-	@${MKDIR} ${EXAMPLESDIR}/${i}
-	@${INSTALL_DATA} ${WRKSRC}/${i}/* ${EXAMPLESDIR}/${i}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${i}
+	${INSTALL_DATA} ${WRKSRC}/${i}/* ${STAGEDIR}${EXAMPLESDIR}/${i}
 .endfor
-	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

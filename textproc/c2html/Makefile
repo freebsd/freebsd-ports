@@ -10,17 +10,17 @@ MASTER_SITE_SUBDIR=	apps/www/converters
 MAINTAINER=		mkamm@gmx.net
 COMMENT=	C-language sources to HTML converter
 
+LICENSE=	GPLv2
+
 USE_AUTOTOOLS=	autoconf213
 
-MAN1=			c2html.1
+PLIST_FILES=	bin/c2html man/man1/c2html.1.gz
+PORTDOCS=	AUTHORS NEWS README
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in AUTHORS NEWS README
-	${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_MAN} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
