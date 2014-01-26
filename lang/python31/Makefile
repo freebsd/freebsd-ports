@@ -26,7 +26,6 @@ CONFIGURE_ENV=		OPT="" SVNVERSION="echo freebsd" ac_cv_opt_olimit_ok=no
 MAKE_ENV=		VPATH="${PYTHON_WRKSRC}"
 
 INSTALL_TARGET=	altinstall
-MAN1=		${PYTHON_VERSION}.1
 
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
@@ -62,7 +61,6 @@ OPTIONS_DEFAULT=	THREADS UCS4 PYMALLOC IPV6
 
 NLS_DESC=	Enable Gettext support for the locale module
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -179,10 +177,10 @@ pre-build:
 
 pre-su-install:
 .for platform in ${PLATFORMS}
-	${MKDIR} ${PYTHONPREFIX_LIBDIR}/${platform}
+	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_LIBDIR}/${platform}
 .for file in IN.py regen
 	${INSTALL_DATA} ${WRKSRC}/Lib/${platform}/${file} \
-		${PYTHONPREFIX_LIBDIR}/${platform}/
+		${STAGEDIR}${PYTHONPREFIX_LIBDIR}/${platform}/
 .endfor
 .endfor
 
@@ -199,39 +197,38 @@ pre-install:
 
 post-install:
 	@# install config providers
-	${INSTALL_SCRIPT} ${WRKDIR}/${PYTHON_VERSION}-config ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKDIR}/${PYTHON_VERSION:S/thon/thon-shared/}-config ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${PYTHON_VERSION}-config \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKDIR}/${PYTHON_VERSION:S/thon/thon-shared/}-config \
+		${STAGEDIR}${PREFIX}/bin
 
 	@# shared version of executable and library
 	${INSTALL_PROGRAM} ${SHARED_WRKSRC}/lib${PYTHON_VERSION}.so.1 \
-		${PREFIX}/lib
-	cd ${PREFIX}/lib; ${LN} -sf lib${PYTHON_VERSION}.so.1 \
-		lib${PYTHON_VERSION}.so
-	${LN} -sf ${PREFIX}/lib/lib${PYTHON_VERSION}.so ${PYTHONPREFIX_LIBDIR}/config
+		${STAGEDIR}${PREFIX}/lib
+	(cd ${STAGEDIR}${PREFIX}/lib; ${LN} -sf lib${PYTHON_VERSION}.so.1 \
+		lib${PYTHON_VERSION}.so)
+	${LN} -sf lib${PYTHON_VERSION}.so ${STAGEDIR}${PYTHONPREFIX_LIBDIR}/config
 	${INSTALL_PROGRAM} \
 		${SHARED_WRKSRC}/${PYTHON_VERSION:S/thon/thon-shared/} \
-		${PREFIX}/bin
+		${STAGEDIR}${PREFIX}/bin
 
 	@# additional files installing by ports
 .for script in ${BIN_SCRIPTS}
 	${INSTALL_SCRIPT} \
 		${WRKDIR}/`${ECHO_CMD} ${script} | ${SED} -E ${BINLINKS_SUB}` \
-		${PREFIX}/bin
+		${STAGEDIR}${PREFIX}/bin
 .endfor
-	@${MKDIR} ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${PYTHON_WRKSRC}/Misc/python.man \
-		${MANPREFIX}/man/man1/${PYTHON_VERSION}.1
+		${STAGEDIR}${MAN1PREFIX}/man/man1/${PYTHON_VERSION}.1
 
 .if !defined(NOPORTDATA)
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${PYTHON_WRKSRC}; ${TAR} -cf - Tools | \
-		(cd ${DATADIR}; ${TAR} -xf -)
+		(cd ${STAGEDIR}${DATADIR}; ${TAR} -xf -)
 .endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@cd ${PYTHON_WRKSRC}/Demo; ${TAR} -cf - * | \
-		(cd ${EXAMPLESDIR}; ${TAR} -xf -)
-.endif
+		(cd ${STAGEDIR}${EXAMPLESDIR}; ${TAR} -xf -)
 
 	@${CAT} ${PKGMESSAGE}
 

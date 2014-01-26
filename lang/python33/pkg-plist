@@ -11,6 +11,7 @@ lib/lib%%PYTHON_VERSION%%%%PYABIVER%%.a
 lib/lib%%PYTHON_VERSION%%%%PYABIVER%%.so
 lib/lib%%PYTHON_VERSION%%%%PYABIVER%%.so.1
 libdata/pkgconfig/python-%%PYVER%%.pc
+man/man1/python3.3.1.gz
 %%PYTHON_INCLUDEDIR%%%%PYABIVER%%/accu.h
 %%PYTHON_INCLUDEDIR%%%%PYABIVER%%/Python-ast.h
 %%PYTHON_INCLUDEDIR%%%%PYABIVER%%/Python.h
