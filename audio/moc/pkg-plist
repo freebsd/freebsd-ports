@@ -1,4 +1,5 @@
 bin/mocp
+man/man1/mocp.1.gz
 share/doc/moc/config.example
 share/doc/moc/THANKS
 share/doc/moc/README
