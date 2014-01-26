@@ -11,6 +11,5 @@ COMMENT=	Load only the images that you want in Firefox
 
 XPI_ID=		imglikeopera@imfo.ru
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../www/xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

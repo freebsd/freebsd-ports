@@ -16,7 +16,6 @@ XPI_FILES=	chrome/imagezoom.jar defaults/preferences/imagezoom-defaults.js \
 		gpl.txt chrome.manifest install.js install.rdf
 XPI_DIRS=	chrome defaults/preferences defaults
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/maxVersion/s|3.0b4|3.0.\*|' ${WRKSRC}/install.rdf
 	@${RM} -f ${WRKSRC}/install.rdf.bak
