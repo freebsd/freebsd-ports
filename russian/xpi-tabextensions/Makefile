@@ -20,6 +20,5 @@ XPI_FILES=	chrome/tabextensions.jar chrome.manifest install.js install.rdf \
 		locale.inf options.inf
 XPI_DIRS=	chrome
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../www/xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
