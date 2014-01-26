@@ -138,19 +138,19 @@ XPI_SLDIRS_ALL=	${XPI_APPS_ALL:S.^.${XPI_SLDIR}/.}
 XPI_SLDIRS=		${USE_XPI:S.^.${XPI_SLDIR}/.}
 XPI_LINKFARMS=	${XPI_APPS} ${XPI_SLDIRS}
 
-XPI_LIBDIR?=	${PREFIX}/lib/xpi
-XPI_SLDIR?=		${XPI_LIBDIR}/symlinks
+XPI_LIBDIR?=	${STAGEDIR}${PREFIX}/lib/xpi
+XPI_SLDIR?=		${STAGEDIR}${XPI_LIBDIR}/symlinks
 .ifndef XPI_DISTNAMES
 XPI_XPIDIR?=	${XPI_LIBDIR}/${XPI_ID}
 .endif
-XPI_DIRS_TRY=	${XPI_SLDIRS_ALL:S,^${PREFIX}/,,} \
-				${XPI_SLDIR:S,^${PREFIX}/,,} \
-				${XPI_LIBDIR:S,^${PREFIX}/,,}
+XPI_DIRS_TRY=	${XPI_SLDIRS_ALL:S,^${STAGEDIR}${PREFIX}/,,} \
+				${XPI_SLDIR:S,^${STAGEDIR}${PREFIX}/,,} \
+				${XPI_LIBDIR:S,^${STAGEDIR}${PREFIX}/,,}
 
-PLIST_SUB+=		XPI_LIBDIR="${XPI_LIBDIR:S,^${PREFIX}/,,}" \
-				XPI_XPIDIR="${XPI_XPIDIR:S,^${PREFIX}/,,}"
+PLIST_SUB+=		XPI_LIBDIR="${XPI_LIBDIR:S,^${STAGEDIR}${PREFIX}/,,}" \
+				XPI_XPIDIR="${XPI_XPIDIR:S,^${STAGEDIR}${PREFIX}/,,}"
 
-_TD=		${XPI_XPIDIR:S,^${PREFIX}/,,}
+_TD=		${XPI_XPIDIR:S,^${STAGEDIR}${PREFIX}/,,}
 _TD_FULL=	${XPI_XPIDIR}
 _A=	>> ${TMPPLIST}
 _Q=	2>/dev/null || true
@@ -159,7 +159,7 @@ PLIST_DIRS+=	${XPI_DIRS:S!^!${_TD}/!} ${_TD}
 
 .for dist in ${XPI_DISTNAMES}
 XPI_XPIDIR_${dist}=	${XPI_LIBDIR}/${XPI_ID_${dist}}
-_TD_${dist}=	${XPI_XPIDIR_${dist}:S,^${PREFIX}/,,}
+_TD_${dist}=	${XPI_XPIDIR_${dist}:S,^${STAGEDIR}${PREFIX}/,,}
 PLIST_FILES+=	${XPI_FILES_${dist}:S!^!${_TD_${dist}}/!}
 PLIST_DIRS+=	${XPI_DIRS_${dist}:S!^!${_TD_${dist}}/!} ${_TD_${dist}}
 .endfor
@@ -173,7 +173,7 @@ do-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${_TD_FULL}/
 	@${CHMOD} -R a+rX,go-w ${_TD_FULL}/
 	@for _dir in ${XPI_LINKFARMS} ; { ${LN} -sf ${_TD_FULL} $$_dir/ ${_Q} ; }
-	@${ECHO_CMD} '@exec ${INSTALL} -d ${XPI_SLDIRS_ALL:S,^${PREFIX},%D,}' ${_A}
+	@${ECHO_CMD} '@exec ${INSTALL} -d ${XPI_SLDIRS_ALL:S,^${STAGEDIR}${PREFIX},%D,}' ${_A}
 	@${ECHO_CMD} '@exec for _dir in ${XPI_LINKFARMS} ; { ${LN} -sf ${_TD_FULL} $$_dir/ ${_Q}; }' ${_A}
 	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS} ; { ${RM} -f $$_dir/${XPI_ID} ; }' ${_A}
 	@${ECHO_CMD} '@unexec rmdir ${XPI_DIRS_TRY:S,^,%D/,} ${_Q}' ${_A}
