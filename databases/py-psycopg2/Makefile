@@ -1,4 +1,4 @@
-# Created by: Martin Wilke 	<miwi@FreeBSD.org>
+# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	psycopg2
@@ -9,35 +9,28 @@ MASTER_SITES=	http://initd.org/psycopg/tarballs/PSYCOPG-2-5/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	miwi@FreeBSD.org
-COMMENT=	The high performance Python adapter for PostgreSQL
+COMMENT=	High performance Python adapter for PostgreSQL
 
-USE_PGSQL=	yes
-# Python3 ready
-USE_PYTHON=	yes
+USE_PGSQL=		yes
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-psycopg2
 EXAMPLESDIR=	${PREFIX}/share/examples/py-psycopg2
 
-EXAMPLES=	binary.py copy_from.py copy_to.py cursor.py dialtone.py \
+PORTEXAMPLES=	binary.py copy_from.py copy_to.py cursor.py dialtone.py \
 		dict.py dt.py encoding.py fetch.py lastrowid.py lobject.py \
 		mogrify.py myfirstrecipe.py notify.py simple.py somehackers.jpg \
 		threads.py typecast.py tz.py usercast.py whereareyou.jpg
 
-DOCS=		AUTHORS INSTALL README NEWS PKG-INFO
+PORTDOCS=	AUTHORS INSTALL README NEWS PKG-INFO
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.for f in ${EXAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/examples/${f} ${STAGEDIR}${EXAMPLESDIR}
-.endfor
-.endif
-.if !defined(NOPORTDOCS)
+	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/examples/,} ${STAGEDIR}${EXAMPLESDIR}
+
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
