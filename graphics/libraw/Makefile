@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	libraw
-PORTVERSION=	0.14.7
+PORTVERSION=	0.15.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.libraw.su/data/
+MASTER_SITES=	http://www.libraw.org/data/
 DISTNAME=	LibRaw-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -14,15 +14,16 @@ COMMENT=	Library for manipulating raw images
 LICENSE=	LGPL21 CDDL
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USE_LDCONFIG=	yes
-USES=		pkgconfig
+USES=		pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-examples --disable-jasper
 CFLAGS+=	-fPIC
 
-OPTIONS_DEFINE=	DEMOSAIC_PACK_GPL2 DEMOSAIC_PACK_GPL3 LCMS2 OPTIMIZED_CFLAGS OPENMP
+OPTIONS_DEFINE=	DEMOSAIC_PACK_GPL2 DEMOSAIC_PACK_GPL3 DOCS EXAMPLES LCMS2 \
+		OPTIMIZED_CFLAGS OPENMP
 OPTIONS_DEFAULT=	LCMS2
 
 DEMOSAIC_PACK_GPL2_DESC=	Enable GPLv2 demosaic pack
@@ -30,7 +31,17 @@ DEMOSAIC_PACK_GPL3_DESC=	Enable GPLv3 demosaic pack
 OPTIMIZED_CFLAGS_DESC=		Enable optimizations (on x86)
 OPENMP_DESC=			Enable OpenMP (implies GCC 4.6+)
 
-NO_STAGE=	yes
+DEMOSAIC_PACK_GPL2_CONFIGURE_OFF=	--disable-demosaic-pack-gpl2
+DEMOSAIC_PACK_GPL2_CONFIGURE_ON=	--enable-demosaic-pack-gpl2=../LibRaw-demosaic-pack-GPL2-${PORTVERSION}
+DEMOSAIC_PACK_GPL2_DISTFILES=		LibRaw-demosaic-pack-GPL2-${PORTVERSION}.tar.gz
+DEMOSAIC_PACK_GPL3_CONFIGURE_OFF=	--disable-demosaic-pack-gpl3
+DEMOSAIC_PACK_GPL3_CONFIGURE_ON=	--enable-demosaic-pack-gpl3=../LibRaw-demosaic-pack-GPL3-${PORTVERSION}
+DEMOSAIC_PACK_GPL3_DISTFILES=		LibRaw-demosaic-pack-GPL3-${PORTVERSION}.tar.gz
+LCMS2_CONFIGURE_ENABLE=			lcms
+LCMS2_LIB_DEPENDS=			liblcms2.so:${PORTSDIR}/graphics/lcms2
+OPENMP_CONFIGURE_ENABLE=		openmp
+OPENMP_USE=				GCC=yes
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
@@ -39,78 +50,30 @@ CFLAGS+=	-O3
 .endif
 .endif
 
-.if ${PORT_OPTIONS:MOPENMP}
-USE_GCC=	yes
-CONFIGURE_ARGS+=--enable-openmp
-.else
-CONFIGURE_ARGS+=--disable-openmp
-.endif
-
-.if ${PORT_OPTIONS:MLCMS2}
-LIB_DEPENDS+=	lcms2.2:${PORTSDIR}/graphics/lcms2
-CONFIGURE_ARGS+=--enable-lcms
-.else
-CONFIGURE_ARGS+=--disable-lcms
-.endif
-
 .if ${PORT_OPTIONS:MDEMOSAIC_PACK_GPL2}
 LICENSE=	GPLv2
 LICENSE_COMB=	single
-DISTFILES+=	LibRaw-demosaic-pack-GPL2-${PORTVERSION}.tar.gz
-CONFIGURE_ARGS+=--enable-demosaic-pack-gpl2=../LibRaw-demosaic-pack-GPL2-${PORTVERSION}
-.else
-CONFIGURE_ARGS+=--disable-demosaic-pack-gpl2
 .endif
 
 .if ${PORT_OPTIONS:MDEMOSAIC_PACK_GPL3}
 LICENSE=	GPLv3
 LICENSE_COMB=	single
-DISTFILES+=	LibRaw-demosaic-pack-GPL3-${PORTVERSION}.tar.gz
-CONFIGURE_ARGS+=--enable-demosaic-pack-gpl3=../LibRaw-demosaic-pack-GPL3-${PORTVERSION}
-.else
-CONFIGURE_ARGS+=--disable-demosaic-pack-gpl3
 .endif
 
-PORTDOCS=	API-C-eng.html API-C-rus.html API-CXX-eng.html \
-		API-CXX-rus.html API-datastruct-eng.html \
-		API-datastruct-rus.html API-notes-eng.html API-notes-rus.html \
-		API-overview-eng.html API-overview-rus.html \
-		Install-LibRaw-eng.html Install-LibRaw-rus.html \
-		Samples-LibRaw-eng.html Samples-LibRaw-rus.html \
-		Why-LibRaw-eng.html Why-LibRaw-rus.html \
-		index-eng.html index-rus.html index.html
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
-PORTEXAMPLES=	Makefile README-samples.rus 4channels.cpp dcraw_emu.cpp \
-		dcraw_half.c half_mt.c mem_image.cpp \
-		multirender_test.cpp postprocessing_benchmark.cpp \
-		raw-identify.cpp simple_dcraw.cpp unprocessed_raw.cpp
-
-do-install:
-	@${MKDIR} ${PREFIX}/include/libraw
-
-.for f in libraw.h libraw_alloc.h libraw_const.h libraw_datastream.h \
-	libraw_internal.h libraw_types.h libraw_version.h
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${f} ${PREFIX}/include/libraw
-.endfor
-.for f in libraw.a libraw_r.a libraw.so.5 libraw_r.so.5
-	${INSTALL_DATA} ${WRKSRC}/lib/.libs/${f} ${PREFIX}/lib
-.endfor
-.for f in libraw libraw_r
-	@cd ${PREFIX}/lib ; ${LN} -sf ${f}.so.5 ${f}.so
-.endfor
-
-.for f in libraw.pc libraw_r.pc
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/libdata/pkgconfig
-.endfor
-
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${DOCSDIR}
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && \
+		${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
 .endif
 
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/samples/,} ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/samples && \
+		${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 post-patch:
