@@ -17,12 +17,12 @@ ONLY_FOR_ARCHS=	i386 amd64
 PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/linux_v4l2
 
-NO_STAGE=	yes
 # Remember to remove references to Makefile.sub in other ports...
 DEPRECATED=	Included now in all supported FreeBSD versions
 EXPIRATION_DATE=	2014-03-15
 
 USES=		kmod
+
 .include <bsd.port.pre.mk>
 
 PLIST_FILES+=	"@cwd /"
