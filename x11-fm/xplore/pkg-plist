@@ -333,6 +333,8 @@ lib/X11/xplore/schemes/Xplore.ad
 lib/X11/xplore/setup
 lib/X11/xplore/startup
 lib/X11/xplore/system.xplorerc
+man/man1/xplore.1.gz
+man/man1/xploretype.1.gz
 @dirrm lib/X11/xplore/shelf/Trash
 @dirrm lib/X11/xplore/shelf/Programs
 @dirrm lib/X11/xplore/shelf/Desk

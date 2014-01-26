@@ -3,7 +3,7 @@
 
 PORTNAME=	xplore
 PORTVERSION=	1.2a
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.musikwissenschaft.uni-mainz.de/~ag/${PORTNAME}/
 
@@ -17,9 +17,6 @@ USE_XORG=	xpm
 MAKE_JOBS_UNSAFE=yes
 CFLAGS+=	-Wno-return-type
 
-MAN1=		xplore.1 xploretype.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's| read| read dummy|g' ${WRKSRC}/system.xplorerc
 
