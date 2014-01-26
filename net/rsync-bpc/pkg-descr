@@ -1,0 +1,13 @@
+Rsync-bpc is a customized version of rsync that is used as part of BackupPC,
+an open source backup system.
+
+The main change to rsync is adding a shim layer that emulates the system calls
+for accessing the file system so that rsync can directly read/write files in
+BackupPC's format.
+
+Rsync-bpc is fully line-compatible with vanilla rsync, so it can talk to rsync
+servers and clients.
+
+Rsync-bpc serves no purpose outside of BackupPC.
+
+WWW: http://backuppc.sourceforge.net/
