@@ -13,6 +13,5 @@ XPI_DISTNAME=	menu_editor
 XPI_ID=		{EDA7B1D7-F793-4e03-B074-E6F303317FB0}
 XPI_NUM=	710
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
