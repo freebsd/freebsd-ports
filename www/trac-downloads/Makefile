@@ -16,7 +16,6 @@ COMMENT=	Trac plugin providing a downloads section
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 TRAC_VERSION=	0.12
-NO_STAGE=	yes
 PLUGIN_VERSION=	0.3
 SVN_REV=	10047
 
