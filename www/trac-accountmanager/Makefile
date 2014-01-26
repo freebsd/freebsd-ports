@@ -36,5 +36,4 @@ WRKSRC=			${WRKDIR}/accountmanagerplugin/trunk
 # --- httpd.conf
 # SetEnv PYTHON_EGG_CACHE "/tmp/cache"
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
