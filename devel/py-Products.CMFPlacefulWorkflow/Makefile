@@ -2,9 +2,11 @@
 
 PORTNAME=	Products.CMFPlacefulWorkflow
 PORTVERSION=	1.5.9
+PORTREVISION=	1
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Workflow policies for CMF and Plone
@@ -19,11 +21,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.component>=0:${PORTSDIR}/devel/py-zope.
 		${PYTHON_PKGNAMEPREFIX}zope.testing>=0:${PORTSDIR}/devel/py-zope.testing \
 		${PYTHON_PKGNAMEPREFIX}Products.PloneTestCase>=0:${PORTSDIR}/devel/py-Products.PloneTestCase
 
-DIST_SUBDIR=	zope
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-USE_ZIP=	yes
-
-NO_STAGE=	yes
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+USE_ZIP=		yes
 
 .include <bsd.port.mk>
