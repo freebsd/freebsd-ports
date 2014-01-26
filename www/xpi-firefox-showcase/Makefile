@@ -16,6 +16,5 @@ XPI_FILES=	chrome/showcase.jar components/showcase-clhandler.js defaults/prefere
 		install.rdf chrome.manifest LICENSE
 XPI_DIRS=	chrome components defaults/preferences defaults
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
