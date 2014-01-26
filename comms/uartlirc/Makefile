@@ -13,7 +13,6 @@ EXTRACT_SUFX=	.shar
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Driver for "homebrew" serial LIRC receivers
 
-SSP_UNSAFE=	kernel module does not support ssp
 USES=		kmod
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
