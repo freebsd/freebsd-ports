@@ -32,7 +32,6 @@ PYDISTUTILS_NOEGGINFO=	yes
 
 BROKEN=		fails to build
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMINFOENH}
