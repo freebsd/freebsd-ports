@@ -308,6 +308,7 @@
     SUBDIR += libgnetwork
     SUBDIR += libgweather
     SUBDIR += libilbc
+    SUBDIR += libkfbapi
     SUBDIR += libkvkontakte
     SUBDIR += libmateweather
     SUBDIR += libmediawiki
