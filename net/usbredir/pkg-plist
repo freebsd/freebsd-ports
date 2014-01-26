@@ -12,4 +12,5 @@ lib/libusbredirhost.so
 lib/libusbredirhost.so.1
 libdata/pkgconfig/libusbredirparser-0.5.pc
 libdata/pkgconfig/libusbredirhost.pc
+man/man1/usbredirserver.1.gz
 sbin/usbredirserver
