@@ -13,16 +13,13 @@ EXTRACT_ONLY=	sgrep-${SGREP_VER}.tar.gz
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python wrappers for Sgrep
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/sgreplib.so
 SGREP_VER=	1.94a
 WRKSRC=		${WRKDIR}/sgrep-${SGREP_VER}
 GNU_CONFIGURE=	yes
-USE_PYTHON=	yes
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	pysgrep
-PYDISTUTILS_PKGVERSION=	1.0a
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 post-extract:
 	@${TAR} -zxf ${DISTDIR}/pysgrep-${PORTVERSION}.tar.gz -C ${WRKSRC}
 
