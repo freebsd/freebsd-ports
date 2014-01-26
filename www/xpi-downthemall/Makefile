@@ -15,6 +15,5 @@ XPI_DISTNAME=	downthemall
 
 XPI_ID=		{DDC359D1-844A-42a7-9AA1-88A850A938A8}
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
