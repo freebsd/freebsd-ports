@@ -16,7 +16,6 @@ RUN_DEPENDS+=	hg:${PORTSDIR}/devel/mercurial \
 		tracd:${PORTSDIR}/www/trac
 
 USE_PYTHON=	2
-NO_STAGE=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracMercurial
 PYDISTUTILS_PKGVERSION=	0.12.0.23dev
