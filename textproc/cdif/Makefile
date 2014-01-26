@@ -16,7 +16,8 @@ USES=		perl5
 NO_WRKSUBDIR=		yes
 NO_BUILD=		yes
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/cdif
+
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}/${DISTNAME}.dist
@@ -26,6 +27,6 @@ do-patch:
 		< ${WRKSRC}/${DISTNAME}.dist > ${WRKSRC}/${DISTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin/cdif
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin/cdif
 
 .include <bsd.port.mk>

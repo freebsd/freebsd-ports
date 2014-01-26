@@ -1,8 +1,0 @@
-bin/confetti
-%%EXAMPLES%%%%EXAMPLESDIR%%/example/example.c
-%%EXAMPLES%%%%EXAMPLESDIR%%/example/Makefile
-%%EXAMPLES%%%%EXAMPLESDIR%%/example/my_my_product.cfg
-%%EXAMPLES%%%%EXAMPLESDIR%%/example/example_buffer.c
-%%EXAMPLES%%%%EXAMPLESDIR%%/example/example.cfgtmpl
-%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%/example
-%%EXAMPLES%%@dirrm %%EXAMPLESDIR%%

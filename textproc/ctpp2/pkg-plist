@@ -65,10 +65,13 @@ include/ctpp2/STLOstream.hpp
 include/ctpp2/STLPair.hpp
 include/ctpp2/STLString.hpp
 include/ctpp2/STLVector.hpp
-%%DOCS%%%%DOCSDIR%%/template_language.html
 lib/libctpp2-st.a
 lib/libctpp2.so
 lib/libctpp2.so.2
 lib/libctpp2.so.%%PORTVERSION%%
-%%DOCS%%@dirrm %%DOCSDIR%%
+man/man1/ctpp2c.1.gz
+man/man1/ctpp2vm.1.gz
+man/man1/ctpp2i.1.gz
+man/man1/ctpp2json.1.gz
+man/man1/ctpp2-config.1.gz
 @dirrm include/ctpp2

@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sat Apr 15 17:16:25 2000
-+++ Makefile.in	Sun Apr 23 15:53:23 2000
+--- ./Makefile.in.orig	2006-03-28 10:26:30.000000000 +0000
++++ ./Makefile.in	2014-01-26 10:48:24.000000000 +0000
 @@ -27,7 +27,7 @@
  # for gzip because otherwise the load on the web server
  # grows without having big benefits.
@@ -25,10 +25,12 @@
 -install: $(TARGET) install-doc
 +install: $(TARGET)
  	@echo "Installing" $(TARGET) "to" $(bindir)
- 	-mkdir -p $(bindir)
- 	$(INSTALL_PROGRAM) $(TARGET) $(bindir)/$(TARGET)
-+	-mkdir -p $(man1dir)
-+	$(INSTALL_DATA) $(srcdir)/$(MANPAGE) $(man1dir)/$(MANPAGE)
+-	-mkdir -p $(bindir)
+-	$(INSTALL_PROGRAM) $(TARGET) $(bindir)/$(TARGET)
++	-mkdir -p $(DESTDIR)$(bindir)
++	$(INSTALL_PROGRAM) $(TARGET) $(DESTDIR)$(bindir)/$(TARGET)
++	-mkdir -p $(DESTDIR)$(man1dir)
++	$(INSTALL_DATA) $(srcdir)/$(MANPAGE) $(DESTDIR)$(man1dir)/$(MANPAGE)
  
  install-strip: $(TARGET) install-doc
  	@echo "Installing" $(TARGET) "to" $(bindir)
