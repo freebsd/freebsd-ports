@@ -16,6 +16,5 @@ XPI_FILES=	LICENSE chrome/passwdmaker.jar chrome.manifest \
 		install.js install.rdf
 XPI_DIRS=	chrome components defaults/preferences defaults
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
