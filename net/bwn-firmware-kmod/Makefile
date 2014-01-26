@@ -47,10 +47,9 @@ PLIST_SUB=	KMODNAME="${KMODNAME}" \
 
 NO_PACKAGE=	this is a modified version of a restricted firmware
 
-NO_STAGE=	yes
-
 USES=		kmod
-.include <bsd.port.pre.mk>
+
+NEED_ROOT=	yes
 
 do-build:
 	cd ${WRKSRC} && \
@@ -64,7 +63,7 @@ do-build:
 	@${ECHO_CMD} "FIRMWS= ${FIRMWARES:C/.*/&.fw:${FWNAME}_&/}" >> \
 		${WRKSRC}/bg/v4/Makefile
 	@${ECHO_CMD} ".include <bsd.kmod.mk>" >> ${WRKSRC}/bg/v4/Makefile
-	@cd ${WRKSRC}/bg/v4; ${SETENV} KMODDIR="${KMODDIR}" make all
+	@cd ${WRKSRC}/bg/v4; make all
 
 	cd ${WRKSRC} && \
 	tar xjf ${DISTDIR}/${FWFILE_LP}
@@ -76,10 +75,10 @@ do-build:
 	@${ECHO_CMD} "FIRMWS= ${FIRMWARES_LP:C/.*/&.fw:${FWNAME_LP}_&/}" >> \
 		${WRKSRC}/lp/v4/Makefile
 	@${ECHO_CMD} ".include <bsd.kmod.mk>" >> ${WRKSRC}/lp/v4/Makefile
-	@cd ${WRKSRC}/lp/v4; ${SETENV} KMODDIR="${KMODDIR}" make all
+	@cd ${WRKSRC}/lp/v4; make all
 
 do-install:
-	@cd ${WRKSRC}/bg/v4; ${SETENV} KMODDIR="${KMODDIR}" make install
-	@cd ${WRKSRC}/lp/v4; ${SETENV} KMODDIR="${KMODDIR}" make install
+	@cd ${WRKSRC}/bg/v4; ${SETENV} KMODDIR="${STAGEDIR}${KMODDIR}" make install
+	@cd ${WRKSRC}/lp/v4; ${SETENV} KMODDIR="${STAGEDIR}${KMODDIR}" make install
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
