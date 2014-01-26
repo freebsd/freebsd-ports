@@ -1,0 +1,22 @@
+--- ./Makefile.in.orig	2012-02-06 09:39:54.000000000 +0000
++++ ./Makefile.in	2014-01-25 22:42:26.000000000 +0000
+@@ -19,16 +19,16 @@
+ #########################################
+ 
+ # where to put executable files
+-prefix=@prefix@
++prefix=$(DESTDIR)@prefix@
+ exec_prefix=@exec_prefix@
+ BINDIR=@bindir@
+ EXE=@EXE@
+ 
+ # where to install the man pages
+-MANDIR = @mandir@
++MANDIR = $(DESTDIR)@mandir@
+ 
+ # where to install the doc
+-DOCDIR = $(prefix)/doc/bibtex2html
++DOCDIR = $(prefix)/share/doc/bibtex2html
+ 
+ #########################################
+ # End of configuration part
