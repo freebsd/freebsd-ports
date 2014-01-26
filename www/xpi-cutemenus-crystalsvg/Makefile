@@ -16,6 +16,5 @@ XPI_FILES=	chrome/cutemenus.jar chrome.manifest components/cutemenus.js\
 		defaults/preferences/cutemenus.js install.js install.rdf
 XPI_DIRS=	chrome components defaults/preferences defaults
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

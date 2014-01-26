@@ -23,7 +23,6 @@ XPI_FILES=	chrome/cookiesafe.jar defaults/preferences/cookiesafe.js \
 		chrome.manifest install.js install.rdf
 XPI_DIRS=	chrome components defaults/preferences defaults
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|0\.7|1.*|' ${WRKSRC}/install.rdf
 	@${RM} -f ${WRKSRC}/install.rdf.bak
