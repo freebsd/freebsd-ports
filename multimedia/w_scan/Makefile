@@ -14,7 +14,6 @@ BUILD_DEPENDS=  v4l_compat>=1.0.20120501:${PORTSDIR}/multimedia/v4l_compat
 OPTIONS_DEFINE=	LINUX
 LINUX_DESC=	Install Linux binary too (linux-w_scan)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 USE_BZIP2=	yes
@@ -25,7 +24,7 @@ CPPFLAGS+=	-I"${LOCALBASE}/include"
 LDFLAGS+=	-L"${LOCALBASE}/lib\ ${ICONV_LIB}"
 PORTDOCS=	COPYING ChangeLog README
 PLIST_FILES=	bin/${PORTNAME}
-MAN1=		w_scan.1
+PLIST_FILES+=	man/man1/${PORTNAME}.1.gz
 WRKSRC=		${WRKDIR}
 
 .if ${PORT_OPTIONS:MLINUX}
@@ -40,11 +39,11 @@ post-patch:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 .endif
 .if ${PORT_OPTIONS:MLINUX}
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} linux-${PORTNAME} ${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} linux-${PORTNAME} ${STAGEDIR}${PREFIX}/bin)
 .endif
 
 .include <bsd.port.mk>
