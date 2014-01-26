@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libpst
-PORTVERSION=	0.6.61
+PORTVERSION=	0.6.63
 CATEGORIES=	mail converters
 MASTER_SITES=	http://www.five-ten-sg.com/libpst/packages/ \
 		http://fossies.org/unix/privat/
@@ -29,7 +29,6 @@ PORTDOCS=	*
 OPTIONS_DEFINE=	DOCS PST2DII
 PST2DII_DESC=	Allow Summation Document Image Information output
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPST2DII}
