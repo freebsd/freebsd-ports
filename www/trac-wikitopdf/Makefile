@@ -21,5 +21,4 @@ PYDISTUTILS_PKGNAME=	TracWikiToPdfPlugin
 PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 WRKSRC=			${WRKDIR}/${PORTNAME}plugin
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
