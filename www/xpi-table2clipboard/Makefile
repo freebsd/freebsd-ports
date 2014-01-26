@@ -16,6 +16,5 @@ XPI_FILES=	chrome.manifest chrome/t2c.jar \
 		install.rdf
 XPI_DIRS=	chrome defaults/preferences defaults
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
