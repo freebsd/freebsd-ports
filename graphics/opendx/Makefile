@@ -28,7 +28,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 NO_MTREE=	yes
 PLIST_SUB=	ARCH=${OPSYS:L}
 PKGMESSAGE=	${WRKDIR}/pkg-message
-MANL=		dx.l
 
 .if defined(WITH_HDF) && !defined(WITHOUT_NETCDF)
 IGNORE=	HDF and NETCDF are conflicting
@@ -63,7 +62,6 @@ PLIST_SUB+=	JAVA="@comment "
 
 PLIST_SUB+=	UNAMEP=${ARCH}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_JAVA) && ${ARCH} != "i386"
@@ -87,8 +85,8 @@ post-patch:
 post-install:
 	@${CP} ${FILESDIR}/pkg-message.in ${PKGMESSAGE}
 .if defined(WITH_JAVA)
-	${CHMOD} 0775 ${PREFIX}/dx/java/server/nets
-	${TOUCH} ${DIR2PRUNE:S|^|${PREFIX}/|:S|$|/.keepme|}
+	${CHMOD} 0775 ${STAGEDIR}${PREFIX}/dx/java/server/nets
+	${TOUCH} ${DIR2PRUNE:S|^|${STAGEDIR}${PREFIX}/|:S|$|/.keepme|}
 	@${ECHO} "---------------------------------------------------------"	\
 		>> ${PKGMESSAGE}
 	@${ECHO} "Before starting ${PREFIX}/dx/java/server/bin/startserver"	\
@@ -98,6 +96,5 @@ post-install:
 .endif
 	@${ECHO} "---------------------------------------------------------"	\
 		>> ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
