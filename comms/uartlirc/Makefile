@@ -34,6 +34,5 @@ BROKEN=		Does not compile on powerpc or sparc64
 
 do-install:
 	${INSTALL} ${WRKSRC}/${PORTNAME}.ko ${STAGEDIR}${KMODDIR}
-	kldxref ${KMODDIR}
 
 .include <bsd.port.post.mk>
