@@ -17,6 +17,5 @@ XPI_FILES=	chrome/imdb_preview.jar chrome.manifest \
 		defaults/preferences/defaults.js install.rdf
 XPI_DIRS=	chrome defaults/preferences defaults
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
