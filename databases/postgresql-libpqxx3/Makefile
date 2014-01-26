@@ -27,5 +27,4 @@ python_CMD=	${PYTHON_CMD}
 
 CONFIGURE_ARGS=	--enable-shared
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
