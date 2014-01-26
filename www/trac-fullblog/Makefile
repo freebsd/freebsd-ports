@@ -18,7 +18,6 @@ RUN_DEPENDS+=	htmldoc:${PORTSDIR}/textproc/htmldoc \
 
 USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
-NO_STAGE=	yes
 PYDISTUTILS_PKGNAME=	TracFullBlogPlugin
 
 .if defined(BOOTSTRAP)
