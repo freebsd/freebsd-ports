@@ -15,7 +15,6 @@ XPI_DISTNAME=	speed_dial
 XPI_ID=		{64161300-e22b-11db-8314-0800200c9a66}
 XPI_NUM=	4810
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i "" -e '/loadInNewTab/s|false|true|' \
 		${WRKSRC}/defaults/preferences/speeddial.js
