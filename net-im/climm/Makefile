@@ -3,7 +3,7 @@
 
 PORTNAME=	climm
 PORTVERSION=	0.7.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.climm.org/source/ \
 		http://http.bg.climm.org/source/
@@ -15,10 +15,6 @@ COMMENT=	CLI-based Multi-Messenger
 USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-MAN1=		climm.1
-MAN5=		climmrc.5
-MAN7=		climmcmds.7
 
 OPTIONS_DEFINE=	ICONV P2P TCL OTR REMOTE XMPP
 OPTIONS_DEFAULT=ICONV P2P TCL OTR REMOTE
