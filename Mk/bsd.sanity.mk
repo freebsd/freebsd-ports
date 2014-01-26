@@ -116,6 +116,12 @@ DEV_WARNING+=	"USE_TCL and USE_TK are deprecated, please use USES=tcl or USES=tk
 DEV_WARNING+=	"USE_SCONS=yes is deprecated, please use USES=scons"
 .endif
 
+# print warning if no reason given for NO_STAGE
+.if defined(NO_STAGE) && ${NO_STAGE:L} == yes
+DEV_WARNING+=	"NO_STAGE is deprecated, convert port to stage directory:"
+DEV_WARNING+=	"https://wiki.freebsd.org/action/diff/ports/StageDir"
+.endif
+
 .if !defined(NO_STAGE)
 .for a in 1 2 3 4 5 6 7 8 9 L N
 .if defined(MAN${a})
