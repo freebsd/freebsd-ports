@@ -11,11 +11,10 @@ COMMENT=	Text processor which analyses text and generates random sentences
 
 PLIST_FILES=	bin/dadadodo
 
-NO_STAGE=	yes
 pre-patch:
 	${REINPLACE_CMD} -E "s/^(CC|CFLAGS).+//" ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dadadodo ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/dadadodo ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
