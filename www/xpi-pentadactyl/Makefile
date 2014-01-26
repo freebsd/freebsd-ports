@@ -13,6 +13,5 @@ COMMENT=	Firefox for Vim and Links addicts
 XPI_NUM=	235854
 XPI_ID=		pentadactyl@dactyl.googlecode.com
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
