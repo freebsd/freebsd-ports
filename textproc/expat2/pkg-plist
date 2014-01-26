@@ -6,3 +6,4 @@ lib/libexpat.la
 lib/libexpat.so
 lib/libexpat.so.%%SHLIB_MAJOR%%
 libdata/pkgconfig/expat.pc
+man/man1/xmlwf.1.gz
