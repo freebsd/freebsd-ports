@@ -13,14 +13,12 @@ GNU_CONFIGURE=	yes
 ALL_TARGET=	default
 USES=		pathfix
 USE_LDCONFIG=	yes
-MAN1=		xmlwf.1
 
 # Increment only when there are incompatible API changes.
 SHLIB_MAJOR=	6
 
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's/@LIBCURRENT.*@/${SHLIB_MAJOR}/' \
