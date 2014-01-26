@@ -26,4 +26,7 @@ PORTDOCS=	*
 PLIST_FILES=	bin/aux2bib bin/bib2bib bin/bibtex2html \
 		man/man1/bibtex2html.1.gz man/man1/bib2bib.1.gz man/man1/aux2bib.1.gz
 
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+
 .include <bsd.port.mk>
