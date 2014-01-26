@@ -13,14 +13,13 @@ DISTNAME=	TurboMail-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Multi-threaded mail queue manager for TurboGears applications
 
+LICENSE=	MIT
+
 BUILD_DEPENDS=	tg-admin:${PORTSDIR}/www/py-turbogears
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	TurboMail
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
