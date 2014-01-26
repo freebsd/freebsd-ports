@@ -12,6 +12,5 @@ COMMENT=	An extension to display form's action
 XPI_NUM=	1579
 XPI_ID=		formfox@daniel.steinbrook
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
