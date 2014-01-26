@@ -2321,6 +2321,7 @@ dx/ui/testimp.net
 dx/ui/testssheet.net
 dx/ui/ui.mdf
 dx/ui/viewer.net
+man/manl/dx.l.gz
 @dirrm dx/ui
 @dirrm dx/lib_%%ARCH%%
 @dirrm dx/lib
@@ -2345,3 +2346,6 @@ dx/ui/viewer.net
 @dirrm dx/bin_%%ARCH%%
 @dirrm dx/bin
 @dirrm dx
+@dirrmtry man/manl
+@dirrmtry man
+@dirrmtry bin
