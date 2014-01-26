@@ -7,7 +7,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mcampos@bpsw.biz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module for abstracting information about a physical person
 
 RUN_DEPENDS=	p5-Geography-Countries>=0:${PORTSDIR}/misc/p5-Geography-Countries
