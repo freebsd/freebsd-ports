@@ -13,6 +13,5 @@ COMMENT=	An extension to allow notetaking while browsing
 
 XPI_ID=		notebook@google.com
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

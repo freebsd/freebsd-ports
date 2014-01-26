@@ -12,6 +12,5 @@ COMMENT=	Alerts/Block web bugs, ad and widgets
 XPI_NUM=	9609
 XPI_ID=		firefox@ghostery.com
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

@@ -16,6 +16,5 @@ XPI_FILES=	chrome.manifest chrome/grabanddrag.jar \
 		icon.png install.rdf license.txt
 XPI_DIRS=	chrome defaults/preferences defaults
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
