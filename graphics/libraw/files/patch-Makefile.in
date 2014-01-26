@@ -1,0 +1,16 @@
+--- Makefile.in.orig	2013-12-23 02:36:04.000000000 +0200
++++ Makefile.in	2013-12-23 02:36:23.000000000 +0200
+@@ -462,12 +462,7 @@
+ 
+ 
+ # Docs
+-doc_DATA = COPYRIGHT \
+-			LICENSE.CDDL \
+-			LICENSE.LGPL \
+-			LICENSE.LibRaw.pdf \
+-			Changelog.txt
+-
++doc_DATA =
+ 
+ # pkg-config .pc files
+ pkgconfigdir = $(libdir)/pkgconfig
