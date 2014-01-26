@@ -1,2 +1,3 @@
 bin/xkbset
 %%GUI%%bin/xkbset-gui
+man/man1/xkbset.1.gz
