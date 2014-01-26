@@ -22,11 +22,9 @@ JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/yuicompressor %%JAVAJARDIR%%/yuicompressor.jar
-PLIST_DIRS=	%%JAVAJARDIR%%
 SUB_FILES=	yuicompressor
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${STAGEDIR}${JAVAJARDIR}/yuicompressor.jar
 	${INSTALL_SCRIPT} ${WRKDIR}/yuicompressor ${STAGEDIR}${PREFIX}/bin
 
