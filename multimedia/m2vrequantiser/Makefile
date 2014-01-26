@@ -15,5 +15,7 @@ CFLAGS+=	-Duint=unsigned
 MAKE_ARGS+=	CC=${CC} CXX=${CXX}
 PLIST_FILES+=	bin/M2VRequantiser
 
-NO_STAGE=	yes
+post-patch:
+	${REINPLACE_CMD} 's|$$(PREFIX)|$${DESTDIR}$$(PREFIX)|' ${WRKSRC}/Makefile
+
 .include <bsd.port.mk>
