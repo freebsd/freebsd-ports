@@ -19,7 +19,6 @@ XPI_NUM=	2076
 XPI_FILES=	chrome/jsview.jar chrome.manifest defaults/preferences/jsview.js install.js install.rdf
 XPI_DIRS=	chrome defaults/preferences defaults
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|<em:maxVersion>9\.0a1<|<em:maxVersion>99.*<|' ${WRKSRC}/install.rdf
 
