@@ -14,6 +14,5 @@ XPI_FILES=	chrome/wmlbrowser.jar components/wml-service.js defaults/preferences/
 		install.js install.rdf chrome.manifest
 XPI_DIRS=	chrome components defaults/preferences defaults
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
