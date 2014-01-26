@@ -13,20 +13,16 @@ LICENSE=	ISCL
 
 BUILD_DEPENDS=	help2man:${PORTSDIR}/misc/help2man \
 		${LOCALBASE}/include/xorg/xserver-properties.h:${PORTSDIR}/x11-servers/xorg-server
-LIB_DEPENDS=	libgtkmm-3.so:${PORTSDIR}/x11-toolkits/gtkmm30 \
-		libdbus-glib.so:${PORTSDIR}/devel/dbus-glib \
+LIB_DEPENDS=	libgtkmm-3.0.so:${PORTSDIR}/x11-toolkits/gtkmm30 \
+		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libboost_serialization.so:${PORTSDIR}/devel/boost-libs
 
-MAN1=		easystroke.1
-
-USE_GCC=	any
 USE_XORG=	x11 xtst
 USES=		gettext gmake pkgconfig
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -44,14 +40,14 @@ pre-build:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications/
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.svg ${PREFIX}/share/pixmaps/
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.svg ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .if ${PORT_OPTIONS:MNLS}
 	(cd ${WRKSRC}/po/ && \
-		${COPYTREE_SHARE} \* ${PREFIX}/share/locale/ "-name *.mo")
+		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/locale/ "-name *.mo")
 .endif
 
 .include <bsd.port.mk>
