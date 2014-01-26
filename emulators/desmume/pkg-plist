@@ -1,6 +1,9 @@
 bin/desmume
 bin/desmume-cli
 bin/desmume-glade
+man/man1/desmume-cli.1.gz
+man/man1/desmume-glade.1.gz
+man/man1/desmume.1.gz
 share/applications/desmume-glade.desktop
 share/applications/desmume.desktop
 %%DATADIR%%/glade/DeSmuME.xpm
