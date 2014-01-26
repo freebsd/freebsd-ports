@@ -66,7 +66,6 @@ XPI_DIRS=	chrome/content/bindings \
 		defaults/preferences \
 		defaults
 
-NO_STAGE=	yes
 post-patch:
 		@${FIND} ${WRKSRC} -name \*.orig -exec ${RM} \{} \;
 

@@ -16,6 +16,5 @@ XPI_FILES=	chrome/content/switch-tbird.xul chrome/content/switch.js \
 		chrome/content/switch.xul chrome.manifest install.rdf
 XPI_DIRS=	chrome/content chrome
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../www/xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
