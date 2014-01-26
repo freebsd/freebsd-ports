@@ -13,6 +13,5 @@ XPI_DISTNAME=	quick_locale_switcher
 XPI_ID=		{25A1388B-6B18-46c3-BEBA-A81915D0DE8F}
 XPI_NUM=	1333
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

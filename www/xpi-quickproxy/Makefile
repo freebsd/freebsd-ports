@@ -14,6 +14,5 @@ XPI_NUM=	1557
 XPI_FILES=	chrome/quickproxy.jar chrome.manifest install.rdf
 XPI_DIRS=	chrome
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

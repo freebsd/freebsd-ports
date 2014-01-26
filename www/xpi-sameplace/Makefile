@@ -17,6 +17,5 @@ XPI_FILES=	chrome/sameplace.jar chrome.manifest components/CommandLine.js\
 		components/ProtocolHandler.js defaults/preferences/sameplace.js install.rdf
 XPI_DIRS=	chrome components defaults/preferences defaults
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
