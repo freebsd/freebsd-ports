@@ -1009,6 +1009,7 @@
     SUBDIR += rsmb
     SUBDIR += rsplib
     SUBDIR += rsync
+    SUBDIR += rsync-bpc
     SUBDIR += rtg
     SUBDIR += rtpbreak
     SUBDIR += rtpproxy
