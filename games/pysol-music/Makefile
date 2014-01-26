@@ -16,6 +16,9 @@ RUN_DEPENDS=	pysol:${PORTSDIR}/games/pysol
 USE_BZIP2=	yes
 NO_BUILD=	yes
 
+DEPRECATED=	Broken, abondonware, use pysolfc 
+EXPIRATION_DATE=	2014-03-27
+
 NO_STAGE=	yes
 do-install:
 	@${MKDIR} ${PREFIX}/share/pysol
