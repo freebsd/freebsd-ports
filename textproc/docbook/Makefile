@@ -37,7 +37,6 @@ SDB_XML_DESC=	Simplified DocBook XML DTD
 SGMLCHARENT_DESC=	ISO 8879:1986 character entity sets (SGML)
 XMLCHARENT_DESC=	ISO 8879:1986 character entity sets (XML)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDB241}
