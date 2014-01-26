@@ -159,7 +159,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/audit.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/backup-basics.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/backup-strategies.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/backups-floppybackups.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/backups-tapebackups.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/basics-daemons.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/basics-devices.html
@@ -229,6 +228,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disk-organization.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-adding.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-encrypting.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-hast.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-naming.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-virtual.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks.html
@@ -387,7 +387,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/printing-using.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/printing.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/quotas.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/raid.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/scanners.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/securing-freebsd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security-accounting.html
@@ -427,18 +426,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-user.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-bsdinstall.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-live-cd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-localization.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-sysinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/video-playback.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-access-bottlenecks.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-config.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-data-integrity.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-examples.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-intro.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-object-naming.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-objects.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-root.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum-vinum.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-guest.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization-host.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/virtualization.html

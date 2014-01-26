@@ -512,14 +512,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/usb-disks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/userppp.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-groups.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-introduction.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-limiting.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-modifying.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-superuser.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-system.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-user.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/users.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-synopsis.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-bsdinstall.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-live-cd.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/using-localization.html
