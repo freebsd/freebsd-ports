@@ -7,5 +7,5 @@
 -INSTPREFIX	= /usr/local
 +INSTPREFIX	= $(PREFIX)
  endif
- 
+
  ifndef INSTLIBPATH
