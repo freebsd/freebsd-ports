@@ -1,0 +1,11 @@
+--- INSTALL/Makefile.orig	2013-11-16 19:14:28.000000000 +0100
++++ INSTALL/Makefile	2013-11-16 19:14:58.000000000 +0100
+@@ -17,7 +17,7 @@
+ 
+ slamch.o: slamch.c ; $(CC) $(NOOPTS) -c $<
+ dlamch.o: dlamch.c ; $(CC) $(NOOPTS) -c $<
+-superlu_timer.o: superlu_timer.c; $(CC) $(NOOPTS) -c $<
++superlu_timer.o: superlu_timer.c; $(CC) $(LDFLAGS) $(NOOPTS) -c $<
+ 
+ .c.o: ; $(CC) $(CFLAGS) -c $<
+ 

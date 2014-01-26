@@ -88,8 +88,8 @@ post-patch:
 		${WRKSRC_SHARED}/make.inc
 
 do-build:
-	cd ${WRKSRC} ; ${GMAKE}
-	cd ${WRKSRC_SHARED} ; ${GMAKE}
+	cd ${WRKSRC} ; ${GMAKE} LDFLAGS="${LDFLAGS}"
+	cd ${WRKSRC_SHARED} ; ${GMAKE} LDFLAGS="${LDFLAGS}"
 	${RM} -rf ${WRKDIR}/tmp_static
 	${MKDIR} ${WRKDIR}/tmp_static
 	cd ${WRKDIR}/tmp_static
