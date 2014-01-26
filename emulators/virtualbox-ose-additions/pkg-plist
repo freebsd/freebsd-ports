@@ -19,6 +19,8 @@ sbin/VBoxService
 %%X11%%@dirrmtry lib/xorg/modules/input
 %%X11%%@dirrmtry lib/xorg/modules
 %%X11%%@dirrmtry lib/xorg
+%%X11%%@dirrmtry etc/xdg/autostart
+%%X11%%@dirrmtry etc/xdg
 %%OPENGL%%@dirrmtry lib/dri
 %%X11%%@dirrmtry lib
 @cwd /

@@ -42,7 +42,6 @@ OPTIONS_DEFINE=	DEBUG X11 OPENGL
 OPTIONS_DEFAULT=	X11
 OPTIONS_SUB=	DEBUG X11 OPENGL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 VIDEODIR=	${PREFIX}/lib/xorg/modules/drivers
@@ -121,62 +120,56 @@ do-build:
 	cd ${VBOX_BIN}/src && make ${MAKE_FLAGS}
 
 do-install:
-	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko ${KMODDIR}
+	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko ${STAGEDIR}${KMODDIR}
 .if ${PORT_OPTIONS:MDEBUG}
-	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko.symbols ${KMODDIR}
+	${INSTALL_KLD} ${VBOX_BIN}/src/vboxguest/vboxguest.ko.symbols ${STAGEDIR}${KMODDIR}
 .endif
 .if ${PORT_OPTIONS:MX11}
-	${INSTALL_KLD} ${VBOX_BIN}/vboxvideo.ko ${KMODDIR}
-.if ${PORT_OPTIONS:MDEBUG}
-	${INSTALL_KLD} ${VBOX_BIN}/vboxvideo.ko.symbols ${KMODDIR}
-.endif
+	${INSTALL_KLD} ${VBOX_BIN}/vboxvideo.ko ${STAGEDIR}${KMODDIR}
 .endif
 
-	${MKDIR} ${PREFIX}/etc/rc.d/
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/rc.d/
 
-	${MKDIR} ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${VBOX_BIN}/VBoxControl ${PREFIX}/sbin/
-	${INSTALL_PROGRAM} ${VBOX_BIN}/VBoxService ${PREFIX}/sbin/
+	${MKDIR} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${VBOX_BIN}/VBoxControl ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${VBOX_BIN}/VBoxService ${STAGEDIR}${PREFIX}/sbin/
 
 .if ${PORT_OPTIONS:MX11}
-	${INSTALL_PROGRAM} ${VBOX_BIN}/VBoxClient ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${VBOX_BIN}/VBoxClient ${STAGEDIR}${PREFIX}/bin/
 
-	${MKDIR} ${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/src/VBox/Additions/x11/Installer/98vboxadd-xclient \
-		${PREFIX}/bin/VBoxClient-all
+		${STAGEDIR}${PREFIX}/bin/VBoxClient-all
 
 	# X11 autostart
-	${MKDIR} ${PREFIX}/etc/xdg/autostart/
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/xdg/autostart/
 	${INSTALL_DATA} ${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop \
-		${PREFIX}/etc/xdg/autostart/
+		${STAGEDIR}${PREFIX}/etc/xdg/autostart/
 
 	# KDE autostart
-	${MKDIR} ${PREFIX}/share/autostart/
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/autostart/
 	${INSTALL_DATA} ${WRKSRC}/src/VBox/Additions/x11/Installer/vboxclient.desktop \
-		${PREFIX}/share/autostart/
+		${STAGEDIR}${PREFIX}/share/autostart/
 
-	${MKDIR} ${VIDEODIR}
-	${INSTALL_DATA} ${VBOX_BIN}/vboxvideo_drv_${XSERVER_ABI}.so ${VIDEODIR}/vboxvideo_drv.so
+	${MKDIR} ${STAGEDIR}${VIDEODIR}
+	${INSTALL_DATA} ${VBOX_BIN}/vboxvideo_drv_${XSERVER_ABI}.so ${STAGEDIR}${VIDEODIR}/vboxvideo_drv.so
 
-	${MKDIR} ${INPUTDIR}
-	${INSTALL_DATA} ${VBOX_BIN}/vboxmouse_drv_${XSERVER_ABI}.so ${INPUTDIR}/vboxmouse_drv.so
+	${MKDIR} ${STAGEDIR}${INPUTDIR}
+	${INSTALL_DATA} ${VBOX_BIN}/vboxmouse_drv_${XSERVER_ABI}.so ${STAGEDIR}${INPUTDIR}/vboxmouse_drv.so
 .endif
 
 .if ${PORT_OPTIONS:MOPENGL}
-	${MKDIR} ${PREFIX}/lib
-	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGL.so ${PREFIX}/lib/
-	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGLarrayspu.so ${PREFIX}/lib/
-	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGLcrutil.so ${PREFIX}/lib/
-	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGLerrorspu.so ${PREFIX}/lib/
-	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGLfeedbackspu.so ${PREFIX}/lib/
-	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGLpackspu.so ${PREFIX}/lib/
-	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGLpassthroughspu.so ${PREFIX}/lib/
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGL.so ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGLarrayspu.so ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGLcrutil.so ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGLerrorspu.so ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGLfeedbackspu.so ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGLpackspu.so ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${VBOX_BIN}/VBoxOGLpassthroughspu.so ${STAGEDIR}${PREFIX}/lib/
 
-	${MKDIR} ${PREFIX}/lib/dri
-	${LN} -sf ${PREFIX}/lib/VBoxOGL.so ${PREFIX}/lib/dri/vboxvideo_dri.so
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/dri
+	${LN} -sf ${PREFIX}/lib/VBoxOGL.so ${STAGEDIR}${PREFIX}/lib/dri/vboxvideo_dri.so
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
