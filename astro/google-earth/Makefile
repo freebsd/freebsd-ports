@@ -14,17 +14,14 @@ MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Explore, Search, and Discover
 
 EXTRACT_DEPENDS=	unmakeself:${PORTSDIR}/archivers/unmakeself
-RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 RESTRICTED=	Not really sure about the redistribution terms
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\..*//g}/
 
-NO_STAGE=	yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
-USE_GNOME=	desktopfileutils
-USES=		perl5
+USES=		perl5 shared-mime-info desktop-file-utils
 USE_PERL5=	patch build
 
 .include <bsd.port.pre.mk>
@@ -67,14 +64,18 @@ pre-su-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/googleearth-mimetypes.xml ${PREFIX}/share/mime/packages/
-	${INSTALL_DATA} ${WRKSRC}/Google-googleearth.desktop ${PREFIX}/share/applications/googleearth.desktop
-	${CP} -rp ${WRKSRC}/* ${DATADIR}
-	${RM} -f ${DATADIR}/googleearth-mimetypes.xml ${DATADIR}/googleearth.desktop
-	${INSTALL_SCRIPT} ${FILESDIR}/browserwrapper ${DATADIR}/bin
-	${LN} -sf ${DATADIR}/bin/googleearth ${PREFIX}/bin/
-	-@update-mime-database ${PREFIX}/share/mime
-	-@update-desktop-database
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/mime/packages
+	${INSTALL_DATA} ${WRKSRC}/googleearth-mimetypes.xml \
+		${STAGEDIR}${PREFIX}/share/mime/packages/
+	${INSTALL_DATA} ${WRKSRC}/Google-googleearth.desktop \
+		${STAGEDIR}${PREFIX}/share/applications/googleearth.desktop
+	${CP} -rp ${WRKSRC}/* ${STAGEDIR}${DATADIR}
+	${RM} -f ${STAGEDIR}${DATADIR}/googleearth-mimetypes.xml \
+		${STAGEDIR}${DATADIR}/googleearth.desktop
+	${INSTALL_SCRIPT} ${FILESDIR}/browserwrapper \
+		${STAGEDIR}${DATADIR}/bin/
+	${LN} -sf ${DATADIR}/bin/googleearth \
+		${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.post.mk>
