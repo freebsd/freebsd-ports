@@ -28,8 +28,6 @@ CONFLICTS=	kqemu-kmod-devel-[0-9]*
 
 USE_RC_SUBR=	kqemu
 
-NO_STAGE=	yes
-
 USES=		kmod
 
 .include <bsd.port.pre.mk>
@@ -39,7 +37,7 @@ PLIST_FILES=	"include/kqemu/kqemu.h"
 PLIST_FILES+=	"@dirrm include/kqemu"
 PLIST_FILES+=	"@cwd /"
 PLIST_FILES+=	${KMODDIR:C,^/,,}/kqemu.ko
-PLIST_FILES+=	"@cwd"
+PLIST_FILES+=	"@cwd ${PREFIX}"
 
 MAKEFILE=	Makefile.freebsd
 
@@ -65,13 +63,13 @@ do-build:
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 do-install:
-	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
-	${MKDIR} ${PREFIX}/include/kqemu
-	${INSTALL_DATA} ${WRKSRC}/kqemu.h ${PREFIX}/include/kqemu
+	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} DESTDIR=${STAGEDIR} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/kqemu
+	${INSTALL_DATA} ${WRKSRC}/kqemu.h ${STAGEDIR}${PREFIX}/include/kqemu
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/kqemu-doc.html ${WRKSRC}/kqemu-tech.html \
-		${DOCSDIR}
+		${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
