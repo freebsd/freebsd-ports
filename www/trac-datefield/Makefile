@@ -22,5 +22,4 @@ WRKSRC=		${WRKDIR}/datefieldplugin/0.11
 REL=		7267
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
