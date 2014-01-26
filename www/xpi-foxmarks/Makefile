@@ -14,6 +14,5 @@ XPI_DISTNAME=	foxmarks_bookmark_synchronizer
 XPI_ID=		foxmarks@kei.com
 XPI_NUM=	2410
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
