@@ -5,7 +5,7 @@
  all: bamg cvmsh2 $(FLAGFILE)
  
 -INSTALLDIR=/usr/local/bin
-+INSTALLDIR=$(PREFIX)/bin
++INSTALLDIR=$(DESTDIR)$(PREFIX)/bin
  FLAGFILE=FLAG.$(HOSTTYPE)
  
  include $(FLAGFILE)
