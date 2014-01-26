@@ -17,6 +17,5 @@ XPI_FILES=	chrome.manifest \
 		license.txt
 XPI_DIRS=	chrome
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
