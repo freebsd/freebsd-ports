@@ -32,7 +32,6 @@ PYDISTUTILS_NOEGGINFO=	yes
 USE_RC_SUBR=	tracd
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSILVERCITY}
@@ -78,20 +77,17 @@ pre-install:
 	    ${WRKSRC}/contrib/cgi-bin/trac.cgi
 
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}/sample-plugins
-	@${MKDIR} ${EXAMPLESDIR}/rpm
-	@${INSTALL_DATA} ${WRKSRC}/contrib/rpm/* ${EXAMPLESDIR}/rpm
-	@${FIND} ${WRKSRC}/contrib -type f -maxdepth 1 -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/ \;
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/sample-plugins
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/rpm
+	@${INSTALL_DATA} ${WRKSRC}/contrib/rpm/* ${STAGEDIR}${EXAMPLESDIR}/rpm
+	@${FIND} ${WRKSRC}/contrib -type f -maxdepth 1 -exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/ \;
 . for d in permissions workflow
-	@${MKDIR} ${EXAMPLESDIR}/sample-plugins/${d}
-	@${INSTALL_DATA} ${WRKSRC}/sample-plugins/${d}/* ${EXAMPLESDIR}/sample-plugins/${d}/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/sample-plugins/${d}
+	@${INSTALL_DATA} ${WRKSRC}/sample-plugins/${d}/* ${STAGEDIR}${EXAMPLESDIR}/sample-plugins/${d}/
 	@${RM} -rf ${WRKSRC}/contrib/${d}
 . endfor
-	@${INSTALL_DATA} ${WRKSRC}/sample-plugins/*.py ${EXAMPLESDIR}/sample-plugins/
-	@${MKDIR} ${DATADIR}/cgi-bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/cgi-bin/* ${DATADIR}/cgi-bin
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	@${INSTALL_DATA} ${WRKSRC}/sample-plugins/*.py ${STAGEDIR}${EXAMPLESDIR}/sample-plugins/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/cgi-bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/cgi-bin/* ${STAGEDIR}${DATADIR}/cgi-bin
 
 .include <bsd.port.mk>
