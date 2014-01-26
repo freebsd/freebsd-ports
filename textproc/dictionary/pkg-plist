@@ -6,5 +6,3 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/dictionary/link.el
 %%EMACS_VERSION_SITE_LISPDIR%%/dictionary/link.elc
 @dirrm %%EMACS_VERSION_SITE_LISPDIR%%/dictionary
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
