@@ -22,7 +22,6 @@ PYDISTUTILS_PKGNAME=	TracTags
 PYDISTUTILS_PKGVERSION=	${PORTVERSION:C/\.r.*/dev/}
 PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(SVN_REV)
