@@ -1,6 +1,9 @@
 bin/dict
 bin/dict_lookup
 bin/dictl
+man/man1/dict.1.gz
+man/man1/dictl.1.gz
+man/man1/dict_lookup.1.gz
 @unexec if cmp -s %D/etc/dict.conf.sample %D/etc/dict.conf; then rm -f %D/etc/dict.conf; fi
 etc/dict.conf.sample
 @exec [ -f %B/dict.conf ] || cp %B/%f %B/dict.conf
