@@ -3,6 +3,7 @@
 
 PORTNAME=	miniupnpd
 PORTVERSION=	1.8
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.tuxfamily.org/files/ \
