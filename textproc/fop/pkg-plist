@@ -86,13 +86,8 @@ bin/fop
 %%DATADIR%%/lib/xml-apis-1.3.04.jar
 %%DATADIR%%/lib/xml-apis-ext-1.3.04.jar
 %%DATADIR%%/lib/xmlgraphics-commons-1.5.jar
-%%PORTDOCS%%%%DOCSDIR%%/KEYS
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE
-%%PORTDOCS%%%%DOCSDIR%%/NOTICE
-%%PORTDOCS%%%%DOCSDIR%%/README
 @dirrm %%DATADIR%%/lib
 @dirrm %%DATADIR%%/hyph
 @dirrm %%DATADIR%%/conf
 @dirrm %%DATADIR%%/build
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
