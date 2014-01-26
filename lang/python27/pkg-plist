@@ -1824,6 +1824,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/xmlrpclib.py
 %%PYTHON_LIBDIR%%/zipfile.py
 lib/libpython2.7.a
+man/man1/python2.7.1.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cgi/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cgi/cgi0.sh
