@@ -20,23 +20,15 @@ CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 MAKEFILE=	makefile
 INSTALL_TARGET=	install install.man
 
-MAN1=		bibtool.1
+PORTDOCS=	bibtool.dvi ref_card.dvi c_lib.dvi
 
-TXT_DOCS=	Doc/bibtool.dvi Doc/ref_card.dvi Doc/c_lib.dvi
-.if !defined(NOPORTDOCS)
-PORTDOCS=	${TXT_DOCS:S/^Doc\///}
-.endif
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+post-build:
+	cd ${WRKSRC} && ${MAKE} doc && ${MAKE} doc
 
 post-install:
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC} && ${MAKE} doc && ${MAKE} doc
-	${MKDIR} ${DOCSDIR}
-	for f in ${TXT_DOCS}; do \
-	  ${INSTALL_MAN} ${WRKSRC}/$$f ${DOCSDIR}; \
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	for f in ${PORTDOCS}; do \
+	  ${INSTALL_MAN} ${WRKSRC}/Doc/$$f ${STAGEDIR}${DOCSDIR}; \
 	done
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
