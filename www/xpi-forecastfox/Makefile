@@ -15,6 +15,5 @@ XPI_NUM=	398
 XPI_FILES=	chrome/forecastfox.jar chrome.manifest icon.png install.rdf
 XPI_DIRS=	chrome
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
