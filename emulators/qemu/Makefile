@@ -94,7 +94,6 @@ CONFIGURE_ARGS+=	--disable-kqemu
 BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
 .else
 MAKE_ARGS+=	NOPORTDOCS=1
-.else
 .endif
 
 .if !defined(STRIP) || ${STRIP} == ""
