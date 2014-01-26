@@ -18,12 +18,11 @@ PLIST_FILES=	bin/diffsplit
 USES=		shebangfix perl5
 SHEBANG_FILES=	diffsplit
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/diffsplit ${WRKDIR}
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/diffsplit ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKDIR}/diffsplit ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
