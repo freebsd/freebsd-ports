@@ -14,6 +14,5 @@ RUN_DEPENDS=	xpi-firebug>=1.3.0:${PORTSDIR}/www/xpi-firebug
 XPI_NUM=	5369
 XPI_ID=		yslow@yahoo-inc.com
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
