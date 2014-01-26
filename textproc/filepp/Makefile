@@ -9,11 +9,13 @@ MASTER_SITES=	http://www-users.york.ac.uk/~dm26/filepp/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A generic file preprocessor
 
-USES=		perl5
+USES=		perl5 shebangfix
 GNU_CONFIGURE=	yes
 NO_BUILD=	yes
+CONFIGURE_ENV=	PERL=${PERL}
 
-MAN1=	filepp.1
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$(moduledir)|$$(DESTDIR)$$(moduledir)|' \
+		${WRKSRC}/modules/*/Makefile.in
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
