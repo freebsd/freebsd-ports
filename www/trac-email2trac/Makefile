@@ -27,7 +27,6 @@ USE_PYTHON=	2
 
 PORTDOCS=	AUTHORS ChangeLog INSTALL README
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPOSTFIX}
@@ -37,20 +36,20 @@ MTAUSER?=	mailnull
 .endif
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/delete_spam.py ${PREFIX}/bin/delete_spam
-	@${INSTALL_SCRIPT} ${WRKSRC}/email2trac.py ${PREFIX}/bin/email2trac
+	@${INSTALL_SCRIPT} ${WRKSRC}/delete_spam.py ${STAGEDIR}${PREFIX}/bin/delete_spam
+	@${INSTALL_SCRIPT} ${WRKSRC}/email2trac.py ${STAGEDIR}${PREFIX}/bin/email2trac
 	@${INSTALL} ${COPY} ${STRIP} ${_BINOWNGRP} -m 4111 \
-	    ${WRKSRC}/run_email2trac ${PREFIX}/bin
+	    ${WRKSRC}/run_email2trac ${STAGEDIR}${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/email2trac.conf \
-	    ${PREFIX}/etc/email2trac.conf.sample
-	@if [ ! -e ${PREFIX}/etc/email2trac.conf ]; then \
-		${CP} -p ${PREFIX}/etc/email2trac.conf.sample \
-		    ${PREFIX}/etc/email2trac.conf ; \
+	    ${STAGEDIR}${PREFIX}/etc/email2trac.conf.sample
+	@if [ ! -e ${STAGEDIR}${PREFIX}/etc/email2trac.conf ]; then \
+		${CP} -p ${STAGEDIR}${PREFIX}/etc/email2trac.conf.sample \
+		    ${STAGEDIR}${PREFIX}/etc/email2trac.conf ; \
 	fi
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
