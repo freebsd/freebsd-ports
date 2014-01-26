@@ -126,6 +126,7 @@ include/gmsh/simple3D.h
 include/gmsh/simpleFunction.h
 include/gmsh/sparsityPattern.h
 include/gmsh/yamakawa.h
+man/man1/gmsh.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
