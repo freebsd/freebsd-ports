@@ -15,45 +15,35 @@ COMMENT=	Create and use hyperlinks and simple formatting in plain text files
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21
 
+OPTIONS_DEFINE=	CONTRIB
+CONTRIB_DESC=	Install extra packages. This can shadow versions already there.
+OPTIONS_SUB=	yes
+
 .if ${EMACS_PORT_NAME} != "emacs21"
 PORTNAMESUFFIX=	${PKGNAMESUFFIX}
 .endif
 
-RUN_DEPENDS+=	${PREFIX}/${EMACS_SITE_LISPDIR}/xml-parse.el:${PORTSDIR}/textproc/xml-parse.el
-RUN_DEPENDS+=	${PREFIX}/${EMACS_SITE_LISPDIR}/htmlize.el:${PORTSDIR}/textproc/htmlize.el
-
-.if defined(WITH_CONTRIB)
-PLIST_SUB+=	CONTRIB=""
-.else
-PLIST_SUB+=	CONTRIB="@comment "
-.endif
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/xml-parse.el:${PORTSDIR}/textproc/xml-parse.el
+RUN_DEPENDS+=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/htmlize.el:${PORTSDIR}/textproc/htmlize.el
 
 INFO=		emacs-wiki
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 
-NO_STAGE=	yes
-pre-everything::
-.if !defined(WITH_CONTRIB)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You may want to build with WITH_CONTRIB=yes"
-	@${ECHO_MSG} "to install some extra packages. Note this may"
-	@${ECHO_MSG} "shadow the versions you already installed elsewhere."
-	@${ECHO_MSG} ""
-.endif
+.include <bsd.port.options.mk>
 
 do-build:
 	cd ${WRKSRC}; makeinfo --no-split emacs-wiki.texi
 
 do-install:
-	${MKDIR} ${LISPDIR}
+	${MKDIR} ${STAGEDIR}${LISPDIR}
 .for i in *.el
-	${INSTALL_DATA} ${WRKSRC}/${i} ${LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${LISPDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/emacs-wiki.info ${PREFIX}/info
-.if defined(WITH_CONTRIB)
-	${MKDIR} ${LISPDIR}/contrib
+	${INSTALL_DATA} ${WRKSRC}/emacs-wiki.info ${STAGEDIR}${PREFIX}/info
+.if ${PORT_OPTIONS:MCONTRIB}
+	${MKDIR} ${STAGEDIR}${LISPDIR}/contrib
 .for i in *.el
-	${INSTALL_DATA} ${WRKSRC}/contrib/${i} ${LISPDIR}/contrib
+	${INSTALL_DATA} ${WRKSRC}/contrib/${i} ${STAGEDIR}${LISPDIR}/contrib
 .endfor
 .endif
 
