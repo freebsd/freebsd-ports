@@ -1,13 +1,21 @@
---- CMakeLists.txt.orig	2010-12-15 10:31:17.000000000 +0600
-+++ CMakeLists.txt	2010-12-15 10:32:02.000000000 +0600
-@@ -410,8 +410,8 @@
+--- ./CMakeLists.txt.orig	2010-09-19 18:31:26.000000000 +0000
++++ ./CMakeLists.txt	2014-01-09 19:17:45.443017601 +0000
+@@ -410,16 +410,11 @@
  
  # Installing on *nix
  IF(UNIX)
 -  SET(GAME_INSTALL_DIR "/usr/share/${GAME_UNIXNAME}")
 -  SET(GAME_FINAL_DIR "/usr/bin")
 +  SET(GAME_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/share/${GAME_UNIXNAME}")
-+  SET(GAME_FINAL_DIR "{CMAKE_INSTALL_PREFIX}/bin")
++  SET(GAME_FINAL_DIR "${CMAKE_INSTALL_PREFIX}/bin")
  
    INSTALL(CODE "MESSAGE(\"Installing ${GAME_NAME} ${GAME_VERSION}... Make sure you have root privileges.\")")
    INSTALL(TARGETS ${GAME_UNIXNAME} RUNTIME DESTINATION ${GAME_INSTALL_DIR})
+   INSTALL(FILES license.txt readme.html DESTINATION ${GAME_INSTALL_DIR})
+   INSTALL(DIRECTORY objects sprites config images levels licenses musics quests samples screenshots themes languages DESTINATION ${GAME_INSTALL_DIR} PATTERN ".svn" EXCLUDE)
+-
+-  INSTALL(CODE "MESSAGE(\"Creating files at ${GAME_FINAL_DIR}...\")")
+-  INSTALL(CODE "EXECUTE_PROCESS(COMMAND \"cmake\" \"-E\" \"copy\" \"${GAME_INSTALL_DIR}/${GAME_UNIXNAME}\" \"${GAME_FINAL_DIR}/${GAME_UNIXNAME}\")")
+-
+-  INSTALL(CODE "MESSAGE(\"Done! Please run ${GAME_UNIXNAME} to start ${GAME_NAME}.\")")
+ ENDIF(UNIX)
