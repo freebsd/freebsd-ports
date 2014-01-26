@@ -1,5 +1,0 @@
-bin/git-review
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/HACKING.rst
-%%PORTDOCS%%%%DOCSDIR%%/README.rst
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
