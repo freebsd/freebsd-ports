@@ -47,9 +47,7 @@ PLIST_SUB=	KMODNAME="${KMODNAME}" \
 
 NO_PACKAGE=	this is a modified version of a restricted firmware
 
-USES=		kmod
-
-NEED_ROOT=	yes
+USES=		kmod uidfix
 
 do-build:
 	cd ${WRKSRC} && \
@@ -78,7 +76,7 @@ do-build:
 	@cd ${WRKSRC}/lp/v4; make all
 
 do-install:
-	@cd ${WRKSRC}/bg/v4; ${SETENV} KMODDIR="${STAGEDIR}${KMODDIR}" make install
-	@cd ${WRKSRC}/lp/v4; ${SETENV} KMODDIR="${STAGEDIR}${KMODDIR}" make install
+	@cd ${WRKSRC}/bg/v4; ${SETENV} ${MAKE_ENV} KMODDIR="${STAGEDIR}${KMODDIR}" make install
+	@cd ${WRKSRC}/lp/v4; ${SETENV} ${MAKE_ENV} KMODDIR="${STAGEDIR}${KMODDIR}" make install
 
 .include <bsd.port.mk>
