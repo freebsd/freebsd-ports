@@ -29,7 +29,6 @@ LDFLAGS+=	`${LOCALBASE}/bin/pkgconf --libs SDL_image gl` \
 		`${LOCALBASE}/bin/smpeg-config --libs` \
 		-L ${LOCALBASE}/lib -lGLU -lglut -lm
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-build:
@@ -37,10 +36,10 @@ do-build:
 		-o ${PORTNAME} ${LDFLAGS})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>

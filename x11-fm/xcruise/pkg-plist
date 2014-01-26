@@ -1,4 +1,5 @@
 bin/xcruiser
 share/doc/xcruise/README
 lib/X11/app-defaults/XCruiser
+man/man1/xcruiser.1.gz
 @dirrm share/doc/xcruise
