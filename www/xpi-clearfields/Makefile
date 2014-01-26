@@ -13,6 +13,5 @@ XPI_DISTNAME=	clear_fields
 XPI_ID=		clearfields@alex.alexander.googlepages.com
 XPI_NUM=	2408
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
