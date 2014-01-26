@@ -18,7 +18,6 @@ XPI_DIRS=	chrome defaults/preferences defaults
 
 REINPLACE_ARGS=	-i ""
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} '/em:maxVersion/s/"[^"][^"]*"/"3.6.*"/' ${WRKSRC}/install.rdf
 
