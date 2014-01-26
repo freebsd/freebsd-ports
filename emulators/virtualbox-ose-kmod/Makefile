@@ -40,7 +40,6 @@ OPTIONS_DEFINE=	DEBUG VIMAGE
 DEBUG_DESC=	Debug symbols, additional logs and assertions
 VIMAGE_DESC=	VIMAGE virtual networking support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 VBOX_BIN=	${WRKSRC}/out/${KMK_ARCH}/${KMK_BUILDTYPE}/bin/src
@@ -91,13 +90,13 @@ do-build:
 	cd ${VBOX_BIN} && make ${MAKE_FLAGS}
 
 do-install:
-	${INSTALL_KLD} ${VBOX_BIN}/vboxdrv/vboxdrv.ko ${KMODDIR}
-	${INSTALL_KLD} ${VBOX_BIN}/vboxnetadp/vboxnetadp.ko ${KMODDIR}
-	${INSTALL_KLD} ${VBOX_BIN}/vboxnetflt/vboxnetflt.ko ${KMODDIR}
+	${INSTALL_KLD} ${VBOX_BIN}/vboxdrv/vboxdrv.ko ${STAGEDIR}${KMODDIR}
+	${INSTALL_KLD} ${VBOX_BIN}/vboxnetadp/vboxnetadp.ko ${STAGEDIR}${KMODDIR}
+	${INSTALL_KLD} ${VBOX_BIN}/vboxnetflt/vboxnetflt.ko ${STAGEDIR}${KMODDIR}
 .if ${PORT_OPTIONS:MDEBUG}
-	${INSTALL_KLD} ${VBOX_BIN}/vboxdrv/vboxdrv.ko.symbols ${KMODDIR}
-	${INSTALL_KLD} ${VBOX_BIN}/vboxnetadp/vboxnetadp.ko.symbols ${KMODDIR}
-	${INSTALL_KLD} ${VBOX_BIN}/vboxnetflt/vboxnetflt.ko.symbols ${KMODDIR}
+	${INSTALL_KLD} ${VBOX_BIN}/vboxdrv/vboxdrv.ko.symbols ${STAGEDIR}${KMODDIR}
+	${INSTALL_KLD} ${VBOX_BIN}/vboxnetadp/vboxnetadp.ko.symbols ${STAGEDIR}${KMODDIR}
+	${INSTALL_KLD} ${VBOX_BIN}/vboxnetflt/vboxnetflt.ko.symbols ${STAGEDIR}${KMODDIR}
 .endif
 
 .include <bsd.port.post.mk>
