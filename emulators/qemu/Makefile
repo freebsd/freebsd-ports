@@ -19,7 +19,6 @@ USES=		gmake perl5
 USE_PERL5=	build
 PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}"
-MAN1=		qemu.1 qemu-img.1
 ONLY_FOR_ARCHS=	amd64 i386
 CONFLICTS=	qemu-devel-[0-9]*
 
@@ -38,7 +37,6 @@ ADD_AUDIO_DESC=		Emulate more audio hardware (experimental!)
 ALL_TARGETS_DESC=	Also build non-x86 targets
 OPTIONS_DEFAULT=	SDL GNUTLS CURL PCAP GNS3 CDROM_DMA ALL_TARGETS
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if empty(PORT_OPTIONS:MALL_TARGETS)
@@ -61,13 +59,13 @@ USE_SDL=	sdl
 .if empty(PORT_OPTIONS:MGNUTLS)
 CONFIGURE_ARGS+=	--disable-vnc-tls
 .else
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 .endif
 
 .if empty(PORT_OPTIONS:MCURL)
 CONFIGURE_ARGS+=	--disable-curl
 .else
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 .endif
 
 .if ${PORT_OPTIONS:MPCAP}
@@ -92,10 +90,11 @@ RUN_DEPENDS+=	kqemu-kmod-devel>=1.4.0pre1:${PORTSDIR}/emulators/kqemu-kmod-devel
 CONFIGURE_ARGS+=	--disable-kqemu
 .endif
 
-.if defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
+BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
+.else
 MAKE_ARGS+=	NOPORTDOCS=1
 .else
-BUILD_DEPENDS+=	texi2html:${PORTSDIR}/textproc/texi2html
 .endif
 
 .if !defined(STRIP) || ${STRIP} == ""
@@ -154,14 +153,7 @@ post-configure:
 .endif
 
 post-install:
-	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${PREFIX}/etc
-	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${PREFIX}/etc
-	@if [ ! -f ${PREFIX}/etc/qemu-ifup ]; then \
-	    ${CP} -p ${PREFIX}/etc/qemu-ifup.sample ${PREFIX}/etc/qemu-ifup ; \
-	fi
-	@if [ ! -f ${PREFIX}/etc/qemu-ifdown ]; then \
-	    ${CP} -p ${PREFIX}/etc/qemu-ifdown.sample ${PREFIX}/etc/qemu-ifdown ; \
-	fi
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${STAGEDIR}${PREFIX}/etc
+	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.post.mk>
