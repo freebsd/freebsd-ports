@@ -25,5 +25,4 @@ WRKSRC=			${WRKDIR}/${PORTNAME}plugin/tags/${PORTVERSION}
 
 PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
