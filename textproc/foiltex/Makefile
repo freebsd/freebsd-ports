@@ -23,12 +23,13 @@ FOIL_DIR=	share/texmf/tex/latex/${PORTNAME}
 FOIL_FILES=	foil17.clo foil20.clo foil25.clo foil30.clo foils.cls \
 		foils.sty foilshrt.clo fltfonts.def
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 PORTDOCS=	foiltex.dtx foiltex.dvi
 PORTEXAMPLES=	sampfoil.tex
 PLIST_FILES=	${FOIL_FILES:S,^,${FOIL_DIR}/,}
 PLIST_DIRS=	${FOIL_DIR}
 
-NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${CP} ${DISTDIR}/foiltex.ins ${WRKDIR}/foiltex.ins
@@ -41,29 +42,17 @@ do-build:
 		${LATEX_CMD} foiltex.dtx
 
 do-install:
-# install data files
-	@${MKDIR} ${PREFIX}/${FOIL_DIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${FOIL_DIR}
 .for file in ${FOIL_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/${FOIL_DIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/${FOIL_DIR}
 .endfor
-# install docs and example file?
-.if !defined(NOPORTDOCS)
-# install docs...
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-.if !defined(NOPORTEXAMPLES)
-# ...and examples
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for file in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
-
-post-install:
-	${SETENV} LOCALBASE=${LOCALBASE} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
