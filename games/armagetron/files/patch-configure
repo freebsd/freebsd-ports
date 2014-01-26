@@ -1,11 +1,21 @@
---- configure.orig	2006-08-05 03:15:57.000000000 +0800
-+++ configure	2008-06-08 14:32:47.000000000 +0800
-@@ -17362,7 +17362,7 @@
- echo "     Static data will be installed in   : `eval echo ${aa_datadir}`"
- echo "     Configuration will be installed in : `eval echo ${aa_sysconfdir}`"
- echo "     Documentation will be installed in : `eval echo ${aa_docdir}`"
--test "x$enable_etc" = "xyes" && echo "     Link to configuration will go to   : /etc/${progname}"
-+test "x$enable_etc" = "xyes" && echo "     Link to configuration will go to   : $prefix/etc/${progname}"
- echo "     Music support: $enable_music"
- echo "     Build with Krawall authentication support: $enable_krawall"
- echo "     Use dirty SDL initialization: $enable_dirty"
+diff -Nur configure.orig configure
+--- configure.orig	2013-12-16 15:45:20.000000000 +0400
++++ configure	2013-12-16 15:46:48.000000000 +0400
+@@ -10629,12 +10629,12 @@
+ CPPFLAGS="$CPPFLAGS `libpng-config --cflags`"
+ LIBS="$LIBS $PNGLIBS"
+ 
+-ac_fn_c_check_func "$LINENO" "png_check_sig" "ac_cv_func_png_check_sig"
+-if test "x$ac_cv_func_png_check_sig" = x""yes; then :
++# ac_fn_c_check_func "$LINENO" "png_check_sig" "ac_cv_func_png_check_sig"
++# if test "x$ac_cv_func_png_check_sig" = x""yes; then :
+ 
+-else
+-  as_fn_error "You need libpng to compile Armagetron." "$LINENO" 5
+-fi
++# else
++#   as_fn_error "You need libpng to compile Armagetron." "$LINENO" 5
++# fi
+ 
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -ljpeg" >&5
