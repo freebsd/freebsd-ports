@@ -20,6 +20,5 @@ XPI_FILES=	LICENSE.rtf chrome/TwitterFox.jar chrome.manifest \
 		defaults/twitterfox_1.8.sqlite install.rdf
 XPI_DIRS=	chrome components defaults/preferences defaults
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
