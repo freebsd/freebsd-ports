@@ -1,4 +1,5 @@
 bin/xppaut
+man/man1/xppaut.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/tree.pdf
 %%PORTDOCS%%%%DOCSDIR%%/html/keys.html
