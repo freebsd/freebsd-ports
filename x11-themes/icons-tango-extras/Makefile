@@ -18,9 +18,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libexec/icon-name-mapping:${PORTSDIR}/x11-themes/ico
 RUN_DEPENDS=	${LOCALBASE}/share/icons/Tango/16x16/actions/add.png:${PORTSDIR}/x11-themes/icons-tango
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=	gmake
 USE_GNOME=	intlhack
 INSTALLS_ICONS=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
