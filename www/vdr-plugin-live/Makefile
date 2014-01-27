@@ -2,24 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	vdr-plugin-live
-PORTVERSION=	0.2.0s20120325
-PORTREVISION=	2
+PORTVERSION=	0.3.0
 CATEGORIES=	www multimedia
 MASTER_SITES=	http://live.vdr-developer.org/downloads/:release \
 		LOCAL/nox/:snapshot
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:snapshot
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Video Disk Recorder - live web plugin
 
-LIB_DEPENDS+=	tntnet:${PORTSDIR}/www/tntnet \
-		pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libtntnet.so:${PORTSDIR}/www/tntnet \
+		libpcre.so:${PORTSDIR}/devel/pcre
 
-USE_BZIP2=	yes
 PATCH_STRIP=	-p1
 PORTDOCS=	COPYING README HISTORY
-WRKSRC=		${WRKDIR}/vdr-plugin-${PLUGIN}
+WRKSRC=		${WRKDIR}/${PLUGIN}-${PORTVERSION}
 VDR_PLUGIN_MAKEFILES=	${WRKSRC}/httpd/Makefile ${WRKSRC}/pages/Makefile
 MAKE_ARGS+=	INCLUDES="-I$(LOCALBASE)/include -I${WRKSRC}"
 MAKE_ARGS+=	PREFIX="${PREFIX}"
@@ -46,7 +44,7 @@ post-install: post-install-pluginlocales
 	(cd ${WRKSRC}/${PLUGIN} && \
 		${COPYTREE_SHARE} \* ${PREFIX}/etc/vdr/plugins/${PLUGIN} )
 	${CHOWN} -R ${VDR_USER}:${VDR_GROUP} ${PREFIX}/etc/vdr/plugins/${PLUGIN}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 .endif

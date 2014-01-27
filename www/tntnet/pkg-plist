@@ -4,15 +4,9 @@ bin/ecppll
 bin/tntnet
 bin/tntnet-config
 %%ETCDIR%%/tntnet
-@unexec if cmp -s %D/etc/tntnet/mime.conf.sample %D/etc/tntnet/mime.conf; then rm -f %D/etc/tntnet/mime.conf; fi
-%%ETCDIR%%/mime.conf.sample
-@exec if [ ! -f %D/etc/tntnet/mime.conf ] ; then cp -p %D/%F %B/mime.conf; fi
-@unexec if cmp -s %D/etc/tntnet/tntnet.conf.sample %D/etc/tntnet/tntnet.conf; then rm -f %D/etc/tntnet/tntnet.conf; fi
-%%ETCDIR%%/tntnet.conf.sample
-@exec if [ ! -f %D/etc/tntnet/tntnet.conf ] ; then cp -p %D/%F %B/tntnet.conf; fi
-@unexec if cmp -s %D/etc/tntnet/tntnet.properties.sample %D/etc/tntnet/tntnet.properties; then rm -f %D/etc/tntnet/tntnet.properties; fi
-%%ETCDIR%%/tntnet.properties.sample
-@exec if [ ! -f %D/etc/tntnet/tntnet.properties ] ; then cp -p %D/%F %B/tntnet.properties; fi
+@unexec if cmp -s %D/%%ETCDIR%%/tntnet.xml.sample %D/%%ETCDIR%%/tntnet.xml; then rm -f %D/%%ETCDIR%%/tntnet.xml; fi
+%%ETCDIR%%/tntnet.xml.sample
+@exec if [ ! -f %D/%%ETCDIR%%/tntnet.xml ] ; then cp -p %D/%F %B/tntnet.xml; fi
 include/tnt/applicationunlocker.h
 include/tnt/backgroundworker.h
 include/tnt/cmd.h
@@ -69,14 +63,10 @@ include/tnt/worker.h
 include/tnt/zdata.h
 lib/libtntnet.la
 lib/libtntnet.so
-lib/libtntnet.so.10
-lib/libtntnet_cgi.a
-lib/libtntnet_cgi.la
-lib/libtntnet_cgi.so
-lib/libtntnet_cgi.so.10
+lib/libtntnet.so.12
 lib/libtntnet_sdk.la
 lib/libtntnet_sdk.so
-lib/libtntnet_sdk.so.10
+lib/libtntnet_sdk.so.12
 lib/tntnet/alldemos.la
 lib/tntnet/alldemos.so
 lib/tntnet/alldemos.so.0
@@ -134,10 +124,20 @@ lib/tntnet/strings.so
 lib/tntnet/strings.so.0
 lib/tntnet/tntnet.la
 lib/tntnet/tntnet.so
-lib/tntnet/tntnet.so.10
+lib/tntnet/tntnet.so.12
 lib/tntnet/upload.la
 lib/tntnet/upload.so
 lib/tntnet/upload.so.0
+man/man1/ecppc.1.gz
+man/man1/ecppl.1.gz
+man/man1/ecppll.1.gz
+man/man1/tntnet-config.1.gz
+man/man7/ecpp.7.gz
+man/man7/tntnet.properties.7.gz
+man/man7/tntnet.xml.7.gz
+man/man8/tntnet.8.gz
+%%DATADIR%%/tntnet-conf2xml.pl
+@dirrm %%DATADIR%%
 @dirrm lib/tntnet
 @dirrm include/tnt
-@dirrm %%ETCDIR%%
+@dirrmtry %%ETCDIR%%
