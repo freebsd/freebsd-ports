@@ -15,17 +15,9 @@ USES=		perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 
-MAN1=		shtool-arx.1 shtool-echo.1 shtool-fixperm.1 shtool-install.1 \
-		shtool-mdate.1 shtool-mkdir.1 shtool-mkln.1 shtool-mkshadow.1 \
-		shtool-move.1 shtool-path.1 shtool-platform.1 shtool-prop.1 \
-		shtool-rotate.1 shtool-scpp.1 shtool-slo.1 shtool-subst.1 \
-		shtool-table.1 shtool-tarball.1 shtool-version.1 \
-		shtool.1 shtoolize.1
-
 regression-test: test
 
 test: build
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
