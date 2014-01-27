@@ -13,10 +13,7 @@ COMMENT=	Library for communicating with network devices by MikroTik
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
-
-MAN1=		ros.1
-MAN3=		librouteros.3
+LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
@@ -27,11 +24,12 @@ CFLAGS+=	-I${LOCALBASE}/include -Wno-error
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
