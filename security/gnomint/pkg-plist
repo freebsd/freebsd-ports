@@ -72,3 +72,5 @@ etc/gconf/schemas/gnomint.schemas
 %%NLS%%@dirrmtry lib/locale/sv/LC_MESSAGES
 %%NLS%%@dirrmtry lib/locale/sv
 %%NLS%%@dirrmtry lib/locale
+@dirrmtry etc/gconf/schemas
+@dirrmtry etc/gconf
