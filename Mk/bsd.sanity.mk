@@ -117,7 +117,7 @@ DEV_WARNING+=	"USE_SCONS=yes is deprecated, please use USES=scons"
 .endif
 
 # print warning if no reason given for NO_STAGE
-.if defined(NO_STAGE) && ${NO_STAGE:L} == yes
+.if defined(NO_STAGE)
 DEV_WARNING+=	"NO_STAGE is deprecated, convert port to stage directory:"
 DEV_WARNING+=	"https://wiki.freebsd.org/ports/StageDir"
 .endif
