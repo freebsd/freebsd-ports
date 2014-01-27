@@ -3,15 +3,18 @@
 
 PORTNAME=	freedroid
 PORTVERSION=	1.0.2
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}Classic/FreedroidClassic-${PORTVERSION}
 
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	Clone of the Commodore game Paradroid
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png
 
 USES=		iconv
 USE_SDL=	mixer image sdl
@@ -23,16 +26,11 @@ DESKTOP_ENTRIES=	"Freedroid Classic" "${COMMENT}" \
 			"${DATADIR}/graphics/999.png" \
 			"freedroid" "Game;ArcadeGame;" false
 
-MAN6=		freedroid.6
-
-NO_STAGE=	yes
 post-extract:
 .for d in graphics map sound
 	@${FIND} ${WRKSRC}/${d} -type f -name "Makefile*" -print0 | \
 		${XARGS} -0 ${RM}
 .endfor
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#-lSDL # #;' \
@@ -42,4 +40,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's#\#include \"mac-osx/getopt\.h\"##;' \
 				${WRKSRC}/src/system.h
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

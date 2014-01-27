@@ -1,4 +1,5 @@
 bin/freedroid
+man/man6/freedroid.6.gz
 %%DATADIR%%/graphics/001.jpg
 %%DATADIR%%/graphics/001.png
 %%DATADIR%%/graphics/123.jpg
@@ -104,9 +105,9 @@ bin/freedroid
 %%DATADIR%%/sound/dreamfish-uridium2_loader.mod
 %%DATADIR%%/sound/kollaps-tron.mod
 %%DATADIR%%/sound/starpaws.mod
-@dirrm %%DATADIR%%/sound
-@dirrm %%DATADIR%%/map
-@dirrm %%DATADIR%%/graphics/lanzz_theme
-@dirrm %%DATADIR%%/graphics/classic_theme
-@dirrm %%DATADIR%%/graphics
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/sound
+@dirrmtry %%DATADIR%%/map
+@dirrmtry %%DATADIR%%/graphics/lanzz_theme
+@dirrmtry %%DATADIR%%/graphics/classic_theme
+@dirrmtry %%DATADIR%%/graphics
+@dirrmtry %%DATADIR%%
