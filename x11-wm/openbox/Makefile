@@ -18,40 +18,31 @@ USE_GNOME=	glib20 libxml2 gnomehack ltverhack
 USE_XORG=	xft
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CFLAGS+="-I${LOCALBASE}/include" \
-		LDFLAGS+="-L${LOCALBASE}/lib"
-MAN1=		openbox.1 openbox-session.1 obxprop.1 \
-		openbox-gnome-session.1 openbox-kde-session.1
+
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	VERSION=${PORTVERSION:C/.[0-9]+\$//}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	NLS IMLIB PANGO NOTIFY
+OPTIONS_DEFAULT=	IMLIB PANGO NOTIFY
+OPTIONS_SUB=	yes
+
+NLS_USES=		gettext
+NLS_CONFIGURE_OFF=	--disable-nls
+
+PANGO_USE=		GNOME=pango
+PANG_CONFIGURE_OFF=	--disable-pango
+
+NOTIFY_LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification
+NOTIFY_CONFIGURE_OFF=	--disable-startup-notification
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if !defined(WITHOUT_IMLIB)
+.if ${PORT_OPTIONS:MIMLIB}
 USE_EFL=	imlib2
 .else
 CONFIGURE_ARGS+=	--disable-imlib2
-.endif
-
-.if !defined(WITHOUT_PANGO)
-USE_GNOME+=	pango
-.else
-CONFIGURE_ARGS+=	--disable-pango
-.endif
-
-.if !defined(WITHOUT_STARTUP_NOTIFICATION)
-LIB_DEPENDS+=	startup-notification-1:${PORTSDIR}/x11/startup-notification
-.else
-CONFIGURE_ARGS+=	--disable-startup-notification
 .endif
 
 post-configure:
