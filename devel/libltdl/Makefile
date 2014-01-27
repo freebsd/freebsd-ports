@@ -7,7 +7,8 @@ MASTERDIR=	${.CURDIR}/../../devel/libtool
 COMMENT=	System independent dlopen wrapper
 
 LICENSE=	LGPL21
-LICENSE_FILE=	${CONFIGURE_WRKSRC}/COPYING.LIB
+CONFIGURE_ENV=	LTVERHACK=1
+MAKE_ENV=	LTVERHACK=1
 USE_GNOME=	ltverhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
@@ -21,5 +22,4 @@ DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 INFO=		# empty
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
