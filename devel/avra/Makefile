@@ -12,10 +12,12 @@ COMMENT=	Macro Assembler for Atmel AVR microcontrollers
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 MAKEFILE=	${WRKSRC}/makefiles/Makefile.linux
 MAKE_ARGS=	CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS}" LDFLAGS=""
 
@@ -23,16 +25,11 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/avra
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/avra ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/../doc && ${COPYTREE_SHARE} . ${DOCSDIR})
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@(cd ${WRKSRC}/../examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/avra ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/../doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/../examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
