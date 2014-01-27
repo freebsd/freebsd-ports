@@ -14,7 +14,7 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Device independent view of the CDF data model
 
-MAKE_FLAGS=	INSTALLDIR=${PREFIX} OS=${OPSYS:L} ENV=gnu      \
+MAKE_FLAGS=	INSTALLDIR=${STAGEDIR}${PREFIX} OS=${OPSYS:L} ENV=gnu      \
 		FORTRAN=yes FC_freebsd=${F77}
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
@@ -30,7 +30,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 DEFS=		B C K
 PORTDOCS=	CDF_copyright.txt CHANGES.txt Release.notes Welcome.txt
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
@@ -44,21 +43,16 @@ pre-configure:
 .endfor
 
 post-install:
-	${MV} ${PREFIX}/lib/libcdf.so ${PREFIX}/lib/libcdf.so.0
-	${LN} -sf ${PREFIX}/lib/libcdf.so.0 ${PREFIX}/lib/libcdf.so
+	${MV} ${STAGEDIR}${PREFIX}/lib/libcdf.so ${STAGEDIR}${PREFIX}/lib/libcdf.so.0
+	${LN} -sf ${STAGEDIR}${PREFIX}/lib/libcdf.so.0 ${STAGEDIR}${PREFIX}/lib/libcdf.so
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/* ${EXAMPLESDIR}
-	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 regression-test:
 	(cd ${BUILD_WRKSRC} ;	\
