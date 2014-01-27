@@ -4,3 +4,5 @@ lib/libstr.a
 lib/libstr.la
 lib/libstr.so
 lib/libstr.so.9
+man/man1/str-config.1.gz
+man/man3/str.3.gz

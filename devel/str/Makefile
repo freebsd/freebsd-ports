@@ -10,13 +10,10 @@ MASTER_SITE_SUBDIR=	lib/${PORTNAME}
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Generic String Library
 
+USES=		desthack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-MAN1=		str-config.1
-MAN3=		str.3
-
-NO_STAGE=	yes
 post-build:
 	@${ECHO_MSG} "===>  Use 'make check' to run a quick test suite."
 
