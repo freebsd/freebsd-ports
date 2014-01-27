@@ -108,18 +108,18 @@ Note:  Please add new entries to the beginning of this file.
 	<p>strongSwan Project reports:</p>
 	<blockquote cite="http://www.strongswan.org/blog/2013/11/01/strongswan-denial-of-service-vulnerability-%28cve-2013-6076%29.html">
 	  <p>A DoS vulnerability triggered by crafted IKEv1 fragmentation
-	     payloads was discovered in strongSwan's IKE daemon charon. All
-	     versions since 5.0.2 are affected.</p>
+	    payloads was discovered in strongSwan's IKE daemon charon. All
+	    versions since 5.0.2 are affected.</p>
 	</blockquote>
 	<blockquote cite="http://www.strongswan.org/blog/2013/11/01/strongswan-denial-of-service-vulnerability-%28cve-2013-6075%29.html">
 	  <p>A DoS vulnerability and potential authorization bypass triggered
-	     by a crafted ID_DER_ASN1_DN ID payload was discovered in strongSwan.
-	     All versions since 4.3.3 are affected.</p>
+	    by a crafted ID_DER_ASN1_DN ID payload was discovered in strongSwan.
+	    All versions since 4.3.3 are affected.</p>
 	</blockquote>
 	<blockquote cite="http://www.strongswan.org/blog/2013/08/01/strongswan-denial-of-service-vulnerability-%28cve-2013-5018%29.html">
 	  <p>A DoS vulnerability in strongSwan was discovered, which is
-	     triggered by XAuth usernames and EAP identities in versions
-	     5.0.3 and 5.0.4.</p>
+	    triggered by XAuth usernames and EAP identities in versions
+	    5.0.3 and 5.0.4.</p>
 	</blockquote>
       </body>
     </description>
@@ -127,7 +127,9 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2013-5018</cvename>
       <cvename>CVE-2013-6075</cvename>
       <cvename>CVE-2013-6076</cvename>
-      <url>http://www.strongswan.org/blog/2013/11/01/strongswan-5.1.1-released.html</url>
+      <url>http://www.strongswan.org/blog/2013/08/01/strongswan-denial-of-service-vulnerability-%28cve-2013-5018%29.html</url>
+      <url>http://www.strongswan.org/blog/2013/11/01/strongswan-denial-of-service-vulnerability-%28cve-2013-6075%29.html</url>
+      <url>http://www.strongswan.org/blog/2013/11/01/strongswan-denial-of-service-vulnerability-%28cve-2013-6076%29.html</url>
     </references>
     <dates>
       <discovery>2013-11-01</discovery>
