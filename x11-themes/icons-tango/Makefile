@@ -20,5 +20,4 @@ USE_GNOME=	intlhack
 USES+=		pathfix gmake pkgconfig
 INSTALLS_ICONS=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
