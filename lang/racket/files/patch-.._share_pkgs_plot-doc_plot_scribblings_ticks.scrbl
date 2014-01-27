@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- ../../collects/plot/scribblings/ticks.scrbl.orig
-+++ ../../collects/plot/scribblings/ticks.scrbl
-@@ -182,22 +182,6 @@
+--- ../share/pkgs/plot-doc/plot/scribblings/ticks.scrbl.orig
++++ ../share/pkgs/plot-doc/plot/scribblings/ticks.scrbl
+@@ -183,22 +183,6 @@
  @doc-apply[plot-y-far-ticks]
  @doc-apply[plot-z-ticks]
  @doc-apply[plot-z-far-ticks]{
