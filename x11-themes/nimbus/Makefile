@@ -22,5 +22,4 @@ INSTALLS_ICONS=		yes
 USE_LDCONFIG=		yes
 USE_GNOME=		gtk20
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
