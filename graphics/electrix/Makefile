@@ -7,17 +7,16 @@ CATEGORIES=	graphics print
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTVERSION}
 
 MAINTAINER=	olivierd@FreeBSD.org
-COMMENT=	An application to view PDF files
+COMMENT=	Application to view PDF files
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		pkgconfig
+USES=		pkgconfig desktop-file-utils
 USE_BZIP2=	yes
-USE_GNOME=	gtk20 desktopfileutils intltool intlhack
-USE_PYTHON=	yes
+USE_GNOME=	gtk20 glib20 intltool intlhack
+USE_PYTHON=	2
 
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${STAGEDIR}${PREFIX}
 
 OPTIONS_DEFINE=	DBUS NLS PDF PS
 OPTIONS_DEFAULT=	DBUS PDF
@@ -25,11 +24,10 @@ OPTIONS_DEFAULT=	DBUS PDF
 PDF_DESC=	Portable Document Format Support
 PS_DESC=	PostScript Support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 .else
 CONFIGURE_ARGS+=	--disable-dbus
 .endif
@@ -49,7 +47,7 @@ CONFIGURE_ARGS+=	--disable-pdf
 .endif
 
 .if ${PORT_OPTIONS:MPS}
-LIB_DEPENDS+=	spectre:${PORTSDIR}/print/libspectre
+LIB_DEPENDS+=	libspectre.so:${PORTSDIR}/print/libspectre
 .else
 CONFIGURE_ARGS+=	--disable-ps
 .endif
@@ -63,8 +61,5 @@ do-build:
 
 do-install:
 	@cd ${WRKSRC} && ${SETENV} ${PYTHON_CMD} waf install && ${TRUE}
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>

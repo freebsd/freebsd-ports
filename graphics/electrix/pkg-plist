@@ -3,5 +3,3 @@ share/applications/electrix.desktop
 %%NLS%%share/locale/ru/LC_MESSAGES/electrix.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/electrix.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/electrix.mo
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
