@@ -4792,11 +4792,14 @@ pre-repackage:
 
 .if !target(package-noinstall)
 package-noinstall:
+.if defined(NO_STAGE)
 	@${MKDIR} ${WRKDIR}
-	@cd ${.CURDIR} && ${MAKE} pre-package \
-		pre-package-script do-package post-package-script
+	@cd ${.CURDIR} && ${MAKE} ${_PACKAGE_REAL_SEQ}
 	@${RM} -f ${TMPPLIST}
 	-@${RMDIR} ${WRKDIR}
+.else
+	@cd ${.CURDIR} && ${MAKE} package
+.endif
 .endif
 
 ################################################################
