@@ -22,7 +22,6 @@ USES=		gmake pkgconfig
 OPTIONS_DEFINE=	ANIMATION
 ANIMATION_DESC=	Animation support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MANIMATION} 
