@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	commons-beanutils
-PORTVERSION=	1.8.3
+PORTVERSION=	1.9.1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
@@ -28,24 +28,20 @@ MAKE_ARGS+=	-Dcommons-collections.jar=${JAVALIBDIR}/commons-collections.jar \
 
 JARFILE=	${PORTNAME}.jar
 PLIST_FILES=	%%JAVAJARDIR%%/${JARFILE}
+
 .if !defined(NOPORTDOCS)
 APIDOCS=	api
 OTHERDOCS=	LICENSE.txt NOTICE.txt README.txt RELEASE-NOTES.txt
 PORTDOCS=	${APIDOCS} ${OTHERDOCS}
 .endif
 
-NO_STAGE=	yes
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${JARFILE}..."
-	@${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}-${PORTVERSION}.jar ${JAVAJARDIR}/${JARFILE}
-	@${ECHO_MSG} " [ DONE ]"
+	${INSTALL_DATA} ${WRKSRC}/dist/${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${JARFILE}
 .if !defined(NOPORTDOCS)
-	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
-	@cd ${WRKSRC}/dist/docs \
-	  && ${FIND} ${APIDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
-	  && ${FIND} ${APIDOCS} -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-	@${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-	@${ECHO_MSG} " [ DONE ]"
+	cd ${WRKSRC}/dist/docs \
+	  && ${FIND} ${APIDOCS} -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/{} \; \
+	  && ${FIND} ${APIDOCS} -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${DOCSDIR}/{} \;
+	${INSTALL_DATA} ${OTHERDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
