@@ -3,7 +3,7 @@
 
 PORTNAME=	crossfire-client
 PORTVERSION=	1.70.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	SF/crossfire/crossfire-${PORTVERSION}
 
@@ -13,9 +13,10 @@ COMMENT=	Cooperative multiplayer graphical RPG and adventure game
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 
 GNU_CONFIGURE=	yes
+USES=		pkgconfig
 USE_GL=		glut
 USE_GNOME=	gtk20 libglade2
 USE_SDL=	sdl image mixer
@@ -24,9 +25,6 @@ CONFIGURE_ARGS+=	--disable-alsa --disable-alsa9
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN6=	crossfire-client-gtk2.6
-
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/#include <curl\/types.h>/d' \
 		${WRKSRC}/common/metaserver.c
@@ -36,8 +34,8 @@ post-patch:
 post-install:
 	${CP} ${WRKSRC}/pixmaps/48x48.png ${WRKSRC}/pixmaps/crossfire-client.png
 	${INSTALL_DATA} ${WRKSRC}/gtk-v2/crossfire-client.desktop \
-		${PREFIX}/share/applications
+		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/crossfire-client.png \
-		${PREFIX}/share/pixmaps
+		${STAGEDIR}${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>
