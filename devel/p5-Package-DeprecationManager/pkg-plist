@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Package::DeprecationManager.3.gz
 %%SITE_PERL%%/Package/DeprecationManager.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/DeprecationManager/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Package/DeprecationManager

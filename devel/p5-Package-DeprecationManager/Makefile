@@ -25,9 +25,6 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 USES=		perl5
 USE_PERL5=	configure extract
 
-MAN3=		Package::DeprecationManager.3
-
-NO_STAGE=	yes
 post-extract:
 	@${PERL} -i -ne "print unless /'BUILD_REQUIRES'/../},/" ${WRKSRC}/Makefile.PL
 
