@@ -1,3 +1,6 @@
+%%PERL5_MAN3%%/MooseX::StrictConstructor.3.gz
+%%PERL5_MAN3%%/MooseX::StrictConstructor::Trait::Class.3.gz
+%%PERL5_MAN3%%/MooseX::StrictConstructor::Trait::Method::Constructor.3.gz
 %%SITE_PERL%%/MooseX/StrictConstructor.pm
 %%SITE_PERL%%/MooseX/StrictConstructor/Trait/Class.pm
 %%SITE_PERL%%/MooseX/StrictConstructor/Trait/Method/Constructor.pm
