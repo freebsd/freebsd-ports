@@ -13,6 +13,8 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	v4l2:${PORTSDIR}/multimedia/libv4l \
 		fltk:${PORTSDIR}/x11-toolkits/fltk
 
+BROKEN=		Recent versions of libv4l do not include necessary headers
+
 GNU_CONFIGURE=	yes
 
 # OCTSRC is the name of the directory of the package.
