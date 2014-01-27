@@ -28,5 +28,4 @@ PLIST_FILES=	lib/irssi/modules/libotr.so \
 		%%DOCSDIR%%/LICENSE %%DOCSDIR%%/README
 PLIST_DIRS=	%%DOCSDIR%%
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
