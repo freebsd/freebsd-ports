@@ -90,7 +90,8 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>rt42</name>
-	<range><ge>4.2</ge><lt>4.2.2_2</lt></range>
+	<range><ge>4.2</ge><lt>4.2.1_3</lt></range>
+	<range><ge>4.2.2</ge><lt>4.2.2_2</lt></range>
       </package>
       <package>
 	<name>p5-Email-Address-List</name>
