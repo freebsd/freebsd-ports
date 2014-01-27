@@ -306,6 +306,7 @@
     SUBDIR += octave-forge-gsl
     SUBDIR += octave-forge-ident
     SUBDIR += octave-forge-image
+    SUBDIR += octave-forge-image-acquisition
     SUBDIR += octave-forge-informationtheory
     SUBDIR += octave-forge-integration
     SUBDIR += octave-forge-io
