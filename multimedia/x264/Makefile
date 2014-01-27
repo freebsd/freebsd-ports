@@ -3,7 +3,7 @@
 
 PORTNAME=	x264
 PORTVERSION=	0.${X264_BUILD}.${X264_REV}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
@@ -33,7 +33,7 @@ USE_LDCONFIG=	yes
 HAS_CONFIGURE=	yes
 
 OPTIONS_DEFINE=		ASM DEBUG HI10P PGO GCC GPAC X11_OUTPUT
-OPTIONS_DEFAULT=	ASM GPAC HI10P
+OPTIONS_DEFAULT=	ASM GPAC
 ASM_DESC=		Enable Assembly Optimizations
 GCC_DESC=		Use current GCC
 HI10P_DESC=		Enable High 10 Profile 10-bit encoding
