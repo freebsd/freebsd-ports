@@ -1,21 +1,16 @@
+# Created by: Timothy Beyer <beyert@cs.ucr.edu>
 # $FreeBSD$
-
-# Date created:				15 Aug 2010
-# Whom:					Timothy Beyer <beyert@cs.ucr.edu>
-#
-# $FreeBSD$
-#
 
 PORTNAME=	zinnia
 PORTVERSION=	0.06
 CATEGORIES=	japanese python
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	beyert@cs.ucr.edu
-COMMENT=	Zinnna Python Interface
+COMMENT=	Python interface for Zinnia
 
-LIB_DEPENDS=	zinnia.0:${PORTSDIR}/japanese/zinnia
+LIB_DEPENDS=	libzinnia.so:${PORTSDIR}/japanese/zinnia
 RUN_DEPENDS=	zinnia:${PORTSDIR}/japanese/zinnia
 
 LICENSE=	BSD
@@ -26,13 +21,10 @@ USE_PYDISTUTILS=yes
 PYDISTUTILS_PKGNAME=	${PORTNAME}_python
 PYDISTUTILS_PKGVERSION=	0.0.0
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV:=	${CONFIGURE_ENV}
 
 post-extract:
-	${CP} -pR ${WRKSRC}/python/* ${WRKSRC}/
+	${CP} -a ${WRKSRC}/python/* ${WRKSRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
