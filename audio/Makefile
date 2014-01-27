@@ -408,6 +408,7 @@
     SUBDIR += libshout2
     SUBDIR += libsidplay
     SUBDIR += libsidplay2
+    SUBDIR += libsidplayfp
     SUBDIR += libsmf
     SUBDIR += libsndfile
     SUBDIR += libtremor
