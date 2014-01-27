@@ -51,6 +51,40 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f9810c43-87a5-11e3-9214-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>32.0.1700.102</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>14 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[330420] High CVE-2013-6649: Use-after-free in SVG images.
+	      Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[331444] High CVE-2013-6650: Memory corruption in V8. This
+	      issue was fixed in v8 version 3.22.24.16. Credit to Christian
+	      Holler.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6649</cvename>
+      <cvename>CVE-2013-6650</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-01-27</discovery>
+      <entry>2014-01-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d1dfc4c7-8791-11e3-a371-6805ca0b3d42">
     <topic>rt42 -- denial-of-service attack via the email gateway</topic>
     <affects>
