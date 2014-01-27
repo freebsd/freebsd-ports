@@ -3,7 +3,7 @@
 
 PORTNAME=	shellinabox
 PORTVERSION=	2.14
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	GOOGLE_CODE
 
@@ -12,7 +12,7 @@ COMMENT=	Publish command line shell through AJAX interface
 
 LICENSE=	GPLv2
 
-OPTIONS_DEFINE=	CORES DOCS NOLOGIN
+OPTIONS_DEFINE=	CORES NOLOGIN
 CORES_DESC=	Patch shellinaboxd to enable core dumps
 NOLOGIN_DESC=	Login through ssh (not through login)
 
@@ -26,27 +26,16 @@ USE_RC_SUBR=	shellinaboxd
 USERS?=		shellinabox
 GROUPS?=	shellinabox
 
-MAN1=	shellinaboxd.1
-
-PORTDOCS=	AUTHORS ChangeLog INSTALL README COPYING GPL-2 NEWS TODO
-
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
 SUB_FILES=	pkg-deinstall
 SUB_LIST=	USERS=${USERS} GROUPS=${GROUPS}
 
-NO_STAGE=	yes
+NOLOGIN_CONFIGURE_ON=	--disable-login
+
+BROKEN_powerpc=	Does not load on powerpc
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNOLOGIN}
-CONFIGURE_ARGS+=--disable-login
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not load on powerpc
-.endif
 
 post-patch:
 .if ${PORT_OPTIONS:MCORES}
@@ -57,16 +46,10 @@ post-patch:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/shellinaboxd ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/shellinaboxd ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/shellinaboxd.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-.endif
-	${MKDIR} ${ETCDIR}/
-	${CHMOD} 700 ${ETCDIR}/
-	${CHOWN} ${USERS}:${GROUPS} ${ETCDIR}/
-	${INSTALL_MAN} ${WRKSRC}/shellinaboxd.1 ${MANPREFIX}/man/man1/
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
