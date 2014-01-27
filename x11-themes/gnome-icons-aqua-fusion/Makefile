@@ -21,6 +21,5 @@ RESTRICTED=	${REASON}
 USE_BZIP2=	yes
 WRKSRC=		"${WRKDIR}/AquaFusion"
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"
 .include <bsd.port.mk>

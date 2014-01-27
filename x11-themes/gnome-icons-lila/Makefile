@@ -20,6 +20,5 @@ NO_WRKSUBDIR=	yes
 
 USE_BZIP2=	yes
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"
 .include <bsd.port.mk>
