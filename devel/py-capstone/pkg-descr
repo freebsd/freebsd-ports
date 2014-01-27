@@ -1,0 +1,6 @@
+Python bindings for the Capstone Disassembly Engine
+
+Capstone is a disassembly framework with the target of becoming the ultimate
+disasm engine for binary analysis and reversing in the security community.
+
+WWW: http://www.capstone-engine.org
