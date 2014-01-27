@@ -8,18 +8,17 @@ CATEGORIES=	devel
 MASTER_SITES=	LOCAL/gabor
 
 MAINTAINER=	aehlig@linta.de
-COMMENT=	A simple program to administrate users of a CVS repository
+COMMENT=	Simple program to administrate users of a CVS repository
 
 GNU_CONFIGURE=	yes
 
-MAN1=		cvsadmin.1
-PLIST_FILES=	bin/cvsadmin
+PLIST_FILES=	bin/cvsadmin \
+		man/man1/cvsadmin.1.gz
 
-NO_STAGE=	yes
 post-configure:
 	${ECHO_CMD} "#define HAVE_MKDTEMP 1" >> ${WRKSRC}/config.h
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/man/cvsadmin.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/cvsadmin.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
