@@ -51,6 +51,126 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f9810c43-87a5-11e3-9214-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>32.0.1700.102</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>14 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[330420] High CVE-2013-6649: Use-after-free in SVG images.
+	      Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[331444] High CVE-2013-6650: Memory corruption in V8. This
+	      issue was fixed in v8 version 3.22.24.16. Credit to Christian
+	      Holler.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6649</cvename>
+      <cvename>CVE-2013-6650</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-01-27</discovery>
+      <entry>2014-01-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d1dfc4c7-8791-11e3-a371-6805ca0b3d42">
+    <topic>rt42 -- denial-of-service attack via the email gateway</topic>
+    <affects>
+      <package>
+	<name>rt42</name>
+	<range><ge>4.2</ge><lt>4.2.2_2</lt></range>
+      </package>
+      <package>
+	<name>p5-Email-Address-List</name>
+	<range><lt>0.02</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The RT development team reports:</p>
+	<blockquote cite="http://blog.bestpractical.com/2014/01/security-vulnerability-in-rt-42.html">
+	  <p>Versions of RT between 4.2.0 and 4.2.2 (inclusive) are
+	    vulnerable to a denial-of-service attack via the email
+	    gateway; any installation which accepts mail from untrusted
+	    sources is vulnerable, regardless of the permissions
+	    configuration inside RT. This vulnerability is assigned
+	    CVE-2014-1474.</p>
+	  <p>This vulnerability is caused by poor parsing performance
+	    in the Email::Address::List module, which RT depends on. We
+	    recommend that affected users upgrade their version of
+	    Email::Address::List to v0.02 or above, which resolves the
+	    issue. Due to a communications mishap, the release on CPAN
+	    will temporarily appear as "unauthorized," and the
+	    command-line cpan client will hence not install it. We
+	    expect this to be resolved shortly; in the meantime, the
+	    release is also available from our server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1474</cvename>
+      <url>http://blog.bestpractical.com/2014/01/security-vulnerability-in-rt-42.html</url>
+    </references>
+    <dates>
+      <discovery>2014-01-27</discovery>
+      <entry>2014-01-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="efa663eb-8754-11e3-9a47-00163e1ed244">
+    <topic>strongswan -- multiple DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>strongswan</name>
+	<range><lt>5.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>strongSwan Project reports:</p>
+	<blockquote cite="http://www.strongswan.org/blog/2013/11/01/strongswan-denial-of-service-vulnerability-%28cve-2013-6076%29.html">
+	  <p>A DoS vulnerability triggered by crafted IKEv1 fragmentation
+	    payloads was discovered in strongSwan's IKE daemon charon. All
+	    versions since 5.0.2 are affected.</p>
+	</blockquote>
+	<blockquote cite="http://www.strongswan.org/blog/2013/11/01/strongswan-denial-of-service-vulnerability-%28cve-2013-6075%29.html">
+	  <p>A DoS vulnerability and potential authorization bypass triggered
+	    by a crafted ID_DER_ASN1_DN ID payload was discovered in strongSwan.
+	    All versions since 4.3.3 are affected.</p>
+	</blockquote>
+	<blockquote cite="http://www.strongswan.org/blog/2013/08/01/strongswan-denial-of-service-vulnerability-%28cve-2013-5018%29.html">
+	  <p>A DoS vulnerability in strongSwan was discovered, which is
+	    triggered by XAuth usernames and EAP identities in versions
+	    5.0.3 and 5.0.4.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-5018</cvename>
+      <cvename>CVE-2013-6075</cvename>
+      <cvename>CVE-2013-6076</cvename>
+      <url>http://www.strongswan.org/blog/2013/08/01/strongswan-denial-of-service-vulnerability-%28cve-2013-5018%29.html</url>
+      <url>http://www.strongswan.org/blog/2013/11/01/strongswan-denial-of-service-vulnerability-%28cve-2013-6075%29.html</url>
+      <url>http://www.strongswan.org/blog/2013/11/01/strongswan-denial-of-service-vulnerability-%28cve-2013-6076%29.html</url>
+    </references>
+    <dates>
+      <discovery>2013-11-01</discovery>
+      <entry>2014-01-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d9dbe6e8-84da-11e3-98bd-080027f2d077">
     <topic>varnish -- DoS vulnerability in Varnish HTTP cache</topic>
     <affects>
