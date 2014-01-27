@@ -19,7 +19,6 @@ USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MANIMATION}
