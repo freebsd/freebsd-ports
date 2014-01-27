@@ -12,12 +12,10 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A collection of backgrounds for GNOME 2
 
 USE_BZIP2=	yes
-USES=		gettext
+USES=		gettext gmake pathfix
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack
+USE_GNOME=	gnomeprefix intlhack
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
