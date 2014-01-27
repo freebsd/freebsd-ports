@@ -18,9 +18,8 @@ NO_BUILD=	yes
 SKIN=		Bluecurve-xmms.zip
 PLIST_FILES=	share/xmms/Skins/${SKIN}
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/share/xmms/Skins
-	${INSTALL_DATA} ${WRKSRC}/art/xmms/${SKIN} ${PREFIX}/share/xmms/Skins
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/xmms/Skins
+	${INSTALL_DATA} ${WRKSRC}/art/xmms/${SKIN} ${STAGEDIR}${PREFIX}/share/xmms/Skins
 
 .include "${MASTERDIR}/Makefile"
