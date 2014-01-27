@@ -59,6 +59,11 @@ if [ $makeplist = 0 ] ; then
 			*)  echo >&3 "$cwd/$line" ;;
 			esac
 		;;
+		@info*)
+			set -- $line
+			shift
+			echo "$cwd/$@"
+		;;
 		# order matters here - we must check @cwd first because
 		# otherwise the @cwd* would also match it first, shadowing the
 		# @cwd) line.
