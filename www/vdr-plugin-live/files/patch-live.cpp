@@ -1,15 +1,22 @@
 --- a/live.cpp
 +++ b/live.cpp
-@@ -42,7 +42,13 @@ bool Plugin::ProcessArgs(int argc, char 
+@@ -46,10 +46,19 @@ bool Plugin::ProcessArgs(int argc, char 
  
  bool Plugin::Start(void)
  {
+-	m_configDirectory = canonicalize_file_name(cPlugin::ConfigDirectory( PLUGIN_NAME_I18N ));
 +#ifdef __FreeBSD__
 +	char buf[PATH_MAX];
 +
 +	m_configDirectory = realpath(cPlugin::ConfigDirectory( PLUGIN_NAME_I18N ), buf);
++#if APIVERSNUM > 10729
++	m_resourceDirectory = realpath(cPlugin::ResourceDirectory( PLUGIN_NAME_I18N ));
++#endif
 +#else
- 	m_configDirectory = canonicalize_file_name(cPlugin::ConfigDirectory( PLUGIN_NAME_I18N ));
++ 	m_configDirectory = canonicalize_file_name(cPlugin::ConfigDirectory( PLUGIN_NAME_I18N ));
+ #if APIVERSNUM > 10729
+ 	m_resourceDirectory = canonicalize_file_name(cPlugin::ResourceDirectory( PLUGIN_NAME_I18N ));
+ #endif
 +#endif
  
  #if VDRVERSNUM < 10507
