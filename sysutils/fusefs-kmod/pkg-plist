@@ -1,6 +1,5 @@
 sbin/mount_fusefs
-@exec ln -fs %D/%F /usr/sbin
-@unexec rm -f /usr/sbin/mount_fusefs
+man/man8/mount_fusefs.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/kmod/doc.text
 %%PORTDOCS%%%%DOCSDIR%%/kmod/html/Faq.html
 %%PORTDOCS%%%%DOCSDIR%%/kmod/html/Implementation.html
@@ -19,6 +18,7 @@ sbin/mount_fusefs
 %%PORTDOCS%%%%DOCSDIR%%/kmod/html/tabbar-right.css
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/kmod/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/kmod
-@dirrmtry %%DOCSDIR%%
-@cwd /%%KMODDIR%%
-fuse.ko
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@cwd /
+usr/sbin/mount_fusefs
+%%KMODDIR%%/fuse.ko
