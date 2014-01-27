@@ -1,0 +1,18 @@
+bin/cvsgraph
+etc/cvsgraph.conf.sample
+man/man1/cvsgraph.1.gz
+man/man5/cvsgraph.conf.5.gz
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/automatic_documentation/README.Automatic_documentation
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/automatic_documentation/checkoutlist
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/automatic_documentation/commit_action.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/automatic_documentation/commitinfo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/automatic_documentation/cvswrappers
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/automatic_documentation/tag_action.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/automatic_documentation/taginfo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cvsgraphwrapper.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mkimage.php
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/automatic_documentation
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
