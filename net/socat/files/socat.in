@@ -22,13 +22,18 @@ load_rc_config $name
 
 : ${socat_enable="NO"}
 
-start_cmd="${name}_start"
+start_precmd="socat_prestart"
 pidfile=/var/run/socat.pid
-command="%%PREFIX%%/bin/socat"
+command=/usr/sbin/daemon
+command_args=" -f -p ${pidfile} /usr/local/bin/socat ${socat_flags}"
+procname=/usr/local/bin/socat
 
-socat_start() {
-	echo "Starting ${name}."
-	/usr/sbin/daemon -f -p ${pidfile} ${command} ${socat_flags}
+socat_prestart()
+{
+	# socat_flags gets applied too early if we don't do this.
+	# I didn't want to force people to update their rc.conf files
+	# and change the socat_flags to something else.
+	rc_flags=""
 }
 
 run_rc_command "$1"
