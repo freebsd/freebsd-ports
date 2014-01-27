@@ -31,14 +31,12 @@ WRKSRC=		${WRKDIR}/${DISTNAME:C/_/-/}
 BUILD_WRKSRC=	${WRKSRC}/examples
 MAKE_ENV=	X11PATH=${LOCALBASE} LOCALBASE=${LOCALBASE}
 CPPFLAGS+=	${CFLAGS} ${PTHREAD_CFLAGS}
-LDFLAGS+=	${PTHREAD_LIBS}
+LDFLAGS+=	${PTHREAD_LIBS} -Wl,--verbose
 
 .if !defined(NOPORTDOCS)
 USES=		gmake
 REINPLACE_ARGS=	-i ""
 LIB_DEPENDS+=	libboard.so:${PORTSDIR}/graphics/libboard
-
-USE_FORTRAN=	yes
 
 . if !defined(WITH_DEBUG)
 LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png		\
@@ -97,8 +95,7 @@ LAPACK_LIB=	-L${LOCALBASE}/lib -llapack -lblas
 
 pre-configure:
 .if !defined(NOPORTDOCS)
-	${DIRNAME} `${LOCALBASE}/bin/${FC} -print-libgcc-file-name` > ${WRKSRC}/LIBDIR
-	${REINPLACE_CMD} -e 's|make|${GMAKE}|' ${BUILD_WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's|make|${MAKE_CMD}|' ${BUILD_WRKSRC}/Makefile
 .else
 	${REINPLACE_CMD} -e 's|^OPTFLAGS|#OPTFLAGS|' ${BUILD_WRKSRC}/Makefile
 .endif
@@ -127,10 +124,8 @@ do-install:
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${CP} -R ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
-	@(cd ${STAGEDIR}${EXAMPLESDIR} && ${GMAKE} clean)
+	@(cd ${STAGEDIR}${EXAMPLESDIR} && ${MAKE_CMD} clean)
 	@${RM} ${STAGEDIR}${EXAMPLESDIR}/*.orig
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${EXAMPLESDIR}
-	${FIND} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${EXAMPLESDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
 .endif
 
 .include <bsd.port.post.mk>
