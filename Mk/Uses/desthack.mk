@@ -14,16 +14,9 @@
 _INCLUDE_USES_DESTHACK_MK=	yes
 
 .if defined(_desthack_ARGS)
-IGNORE=	USES=desthack does not require args
+IGNORE=	USES=desthack valide args are none or 'la'
 .endif
 
-_USES_POST=	desthack
 GNU_CONFIGURE_PREFIX=	\$${${DESTDIRNAME}}${PREFIX}
 GNU_CONFIGURE_MANPREFIX=	\$${${DESTDIRNAME}}${MANPREFIX}
-.endif
-
-.if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_DESTHACK_POST_MK)
-_INCLUDE_USES_DESTHACK_POST_MK=	yes
-post-stage:
-	@${SED} -i '' -e 's,${STAGEDIR},,g' ${STAGEDIR}${PREFIX}/lib/*.la
 .endif
