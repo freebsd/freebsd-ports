@@ -19,8 +19,8 @@ PROJECTVERSION=	17.1
 
 USES=		dos2unix gmake
 WRKSRC=		${WRKDIR}/ghost/bncsutil/src/bncsutil
+MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
