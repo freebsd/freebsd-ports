@@ -535,6 +535,7 @@
     SUBDIR += optimfrog
     SUBDIR += opus
     SUBDIR += opus-tools
+    SUBDIR += opusfile
     SUBDIR += osalp
     SUBDIR += osd-lyrics
     SUBDIR += osdmixer

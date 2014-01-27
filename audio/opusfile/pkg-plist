@@ -1,0 +1,13 @@
+include/opus/opusfile.h
+lib/libopusfile.a
+lib/libopusfile.la
+lib/libopusfile.so
+lib/libopusfile.so.3
+lib/libopusurl.a
+lib/libopusurl.la
+lib/libopusurl.so
+lib/libopusurl.so.3
+libdata/pkgconfig/opusfile.pc
+libdata/pkgconfig/opusurl.pc
+@comment Insert PLIST.doc here
+@dirrmtry include/opus
