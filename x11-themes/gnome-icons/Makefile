@@ -35,5 +35,4 @@ NO_BUILD=	yes
 
 do-install:	# empty
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

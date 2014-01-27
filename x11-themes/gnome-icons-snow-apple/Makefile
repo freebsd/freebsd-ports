@@ -20,6 +20,5 @@ RESTRICTED=	${REASON}
 
 WRKSRC=		"${WRKDIR}/Snow-Apple"
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../gnome-icons/bsd.gnome-icons.mk"
 .include <bsd.port.mk>
