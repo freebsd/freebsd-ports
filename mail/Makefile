@@ -494,7 +494,6 @@
     SUBDIR += pine-pgp-filters
     SUBDIR += pm-lib
     SUBDIR += policyd2
-    SUBDIR += pop-before-smtp
     SUBDIR += pop3gwd
     SUBDIR += pop3lite
     SUBDIR += pop3proxy
