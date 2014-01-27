@@ -19,12 +19,11 @@ NO_BUILD=	yes
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/files/${PORTNAME} ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/files/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	@${INSTALL_DATA} ${WRKSRC}/files/${PORTNAME}.png \
-		${PREFIX}/share/pixmaps
+		${STAGEDIR}${PREFIX}/share/pixmaps
 	@${INSTALL_DATA} ${WRKSRC}/files/${PORTNAME}.desktop \
-		${PREFIX}/share/applications
+		${STAGEDIR}${PREFIX}/share/applications
 
 .include <bsd.port.mk>
