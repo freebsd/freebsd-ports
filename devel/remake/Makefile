@@ -13,8 +13,6 @@ COMMENT=	Fork of gmake with debugger
 
 GNU_CONFIGURE=	yes
 USES=		gettext
-MAN1=		remake.1
 INFO=		remake
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
