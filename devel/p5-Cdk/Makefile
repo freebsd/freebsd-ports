@@ -12,10 +12,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module for Curses Development Kit
 
-LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	BSD4CLAUSE
 
-LIB_DEPENDS=	cdk:${PORTSDIR}/devel/cdk
+LIB_DEPENDS=	libcdk.so:${PORTSDIR}/devel/cdk
 
 USES=		perl5
 GNU_CONFIGURE=	yes
@@ -24,5 +23,7 @@ INSTALL_TARGET=	pure_install
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+post-stage:
+	@${SED} -i '' -e 's,${STAGEDIR},,g' ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Cdk/.packlist
+
 .include <bsd.port.mk>
