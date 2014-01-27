@@ -25,13 +25,12 @@ THEME_DIR=	share/themes/Beastie/
 PLIST_FILES=	${THEME_FILES:S|^|${THEME_DIR}|}
 PLIST_DIRS=	${THEME_DIR}/gtk-2.0 ${THEME_DIR}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:
-	${MKDIR} ${PREFIX}/${THEME_DIR}/gtk-2.0
+	${MKDIR} ${STAGEDIR}${PREFIX}/${THEME_DIR}/gtk-2.0
 .for f in ${THEME_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/${THEME_DIR}/${f}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/${THEME_DIR}/${f}
 .endfor
 
 .include <bsd.port.post.mk>
