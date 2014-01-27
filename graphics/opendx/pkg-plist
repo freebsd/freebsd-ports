@@ -2346,6 +2346,3 @@ man/manl/dx.l.gz
 @dirrm dx/bin_%%ARCH%%
 @dirrm dx/bin
 @dirrm dx
-@dirrmtry man/manl
-@dirrmtry man
-@dirrmtry bin
