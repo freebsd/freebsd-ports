@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	default
-PORTVERSION=	0.4.8.2
+PORTVERSION=	0.4.9.3
 CATEGORIES=	games
 PKGNAMEPREFIX=	freeminer-
 DIST_SUBDIR=	freeminer
@@ -17,7 +17,7 @@ RUN_DEPENDS=	freeminer:${PORTSDIR}/games/freeminer
 USE_GITHUB=	yes
 GH_ACCOUNT=	freeminer
 GH_PROJECT=	${PORTNAME}
-GH_COMMIT=	6261db9
+GH_COMMIT=	c2c50e8
 
 NO_BUILD=	yes
 DATADIR=	${PREFIX}/share/freeminer/games/${PORTNAME}
