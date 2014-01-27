@@ -1,4 +1,24 @@
-share/ngspice/include/ngspice/tclspice.h
+bin/cmpp
+bin/ngmakeidx
+bin/ngmultidec
+bin/ngnutmeg
+bin/ngproc2mod
+bin/ngsconvert
+bin/ngspice
+lib/ngspice/analog.cm
+lib/ngspice/digital.cm
+lib/ngspice/spice2poly.cm
+lib/ngspice/xtradev.cm
+lib/ngspice/xtraevt.cm
+man/man1/ngmultidec.1.gz
+man/man1/ngnutmeg.1.gz
+man/man1/ngsconvert.1.gz
+man/man1/ngspice.1.gz
+share/ngspice/dlmain.c
+share/ngspice/helpdir/ngspice.idx
+share/ngspice/helpdir/ngspice.txt
+share/ngspice/include/ngspice/1-f-code.h
+share/ngspice/include/ngspice/FastNorm3.h
 share/ngspice/include/ngspice/acdefs.h
 share/ngspice/include/ngspice/bdrydefs.h
 share/ngspice/include/ngspice/bool.h
@@ -7,12 +27,13 @@ share/ngspice/include/ngspice/ciderinp.h
 share/ngspice/include/ngspice/cidersupt.h
 share/ngspice/include/ngspice/cktdefs.h
 share/ngspice/include/ngspice/cluster.h
-share/ngspice/include/ngspice/cmconstants.h
 share/ngspice/include/ngspice/cm.h
+share/ngspice/include/ngspice/cmconstants.h
 share/ngspice/include/ngspice/cmproto.h
 share/ngspice/include/ngspice/cmtypes.h
 share/ngspice/include/ngspice/compatmode.h
 share/ngspice/include/ngspice/complex.h
+share/ngspice/include/ngspice/config.h
 share/ngspice/include/ngspice/const.h
 share/ngspice/include/ngspice/contdefs.h
 share/ngspice/include/ngspice/cpdefs.h
@@ -32,14 +53,15 @@ share/ngspice/include/ngspice/enh.h
 share/ngspice/include/ngspice/evt.h
 share/ngspice/include/ngspice/evtproto.h
 share/ngspice/include/ngspice/evtudn.h
+share/ngspice/include/ngspice/fftext.h
 share/ngspice/include/ngspice/ftedbgra.h
 share/ngspice/include/ngspice/ftedebug.h
 share/ngspice/include/ngspice/ftedefs.h
-share/ngspice/include/ngspice/fteoptdefs.h
 share/ngspice/include/ngspice/ftedev.h
 share/ngspice/include/ngspice/fteext.h
 share/ngspice/include/ngspice/fteinp.h
 share/ngspice/include/ngspice/fteinput.h
+share/ngspice/include/ngspice/fteoptdefs.h
 share/ngspice/include/ngspice/fteparse.h
 share/ngspice/include/ngspice/gendefs.h
 share/ngspice/include/ngspice/gendev.h
@@ -64,9 +86,9 @@ share/ngspice/include/ngspice/memory.h
 share/ngspice/include/ngspice/meshdefs.h
 share/ngspice/include/ngspice/meshext.h
 share/ngspice/include/ngspice/methdefs.h
+share/ngspice/include/ngspice/mif.h
 share/ngspice/include/ngspice/mifcmdat.h
 share/ngspice/include/ngspice/mifdefs.h
-share/ngspice/include/ngspice/mif.h
 share/ngspice/include/ngspice/mifparse.h
 share/ngspice/include/ngspice/mifproto.h
 share/ngspice/include/ngspice/miftypes.h
@@ -102,6 +124,7 @@ share/ngspice/include/ngspice/spmatrix.h
 share/ngspice/include/ngspice/stringutil.h
 share/ngspice/include/ngspice/suffix.h
 share/ngspice/include/ngspice/swec.h
+share/ngspice/include/ngspice/tclspice.h
 share/ngspice/include/ngspice/tfdefs.h
 share/ngspice/include/ngspice/trandefs.h
 share/ngspice/include/ngspice/trcvdefs.h
@@ -109,38 +132,15 @@ share/ngspice/include/ngspice/tskdefs.h
 share/ngspice/include/ngspice/twodev.h
 share/ngspice/include/ngspice/twomesh.h
 share/ngspice/include/ngspice/typedefs.h
-share/ngspice/include/ngspice/wordlist.h
-share/ngspice/include/ngspice/1-f-code.h
-share/ngspice/include/ngspice/FastNorm3.h
-share/ngspice/include/ngspice/fftext.h
 share/ngspice/include/ngspice/wallace.h
+share/ngspice/include/ngspice/wordlist.h
 share/ngspice/include/ngspice/wstdio.h
-share/ngspice/include/ngspice/config.h
-share/ngspice/dlmain.c
-share/ngspice/helpdir/ngspice.txt
-share/ngspice/helpdir/ngspice.idx
-share/ngspice/scripts/spinit
 share/ngspice/scripts/setplot
 share/ngspice/scripts/spectrum
-bin/cmpp
-bin/ngspice
-bin/ngnutmeg
-bin/ngsconvert
-bin/ngproc2mod
-bin/ngmultidec
-bin/ngmakeidx
-lib/ngspice/spice2poly.cm
-lib/ngspice/digital.cm
-lib/ngspice/analog.cm
-lib/ngspice/xtradev.cm
-lib/ngspice/xtraevt.cm
-man/man1/ngmultidec.1.gz
-man/man1/ngnutmeg.1.gz
-man/man1/ngsconvert.1.gz
-man/man1/ngspice.1.gz
-@dirrm lib/ngspice
-@dirrm share/ngspice/scripts
-@dirrm share/ngspice/helpdir
-@dirrm share/ngspice/include/ngspice
-@dirrm share/ngspice/include
-@dirrm share/ngspice
+share/ngspice/scripts/spinit
+@dirrmtry share/ngspice/scripts
+@dirrmtry share/ngspice/include/ngspice
+@dirrmtry share/ngspice/include
+@dirrmtry share/ngspice/helpdir
+@dirrmtry share/ngspice
+@dirrmtry lib/ngspice
