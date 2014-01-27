@@ -1310,7 +1310,7 @@ WITH_DEBUG=	yes
 # Reset value from bsd.own.mk.
 .if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
 STRIP=	#none
-MAKE_ENV=	DONTSTRIP=yes
+MAKE_ENV+=	DONTSTRIP=yes
 .endif
 
 .include "${PORTSDIR}/Mk/bsd.options.mk"
