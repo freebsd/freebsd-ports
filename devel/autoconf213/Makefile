@@ -23,7 +23,7 @@ RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 BUILD_VERSION=	2.13
 PLIST_SUB=	BUILD_VERSION=${BUILD_VERSION}
 USE_BZIP2=	yes
-USES=		perl5
+USES=		perl5 desthack
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CONFIG_SHELL=${SH} M4=${LOCALBASE}/bin/gm4 AWK=${AWK}
 CONFIGURE_ARGS=	--program-suffix=-${BUILD_VERSION}
@@ -32,13 +32,12 @@ INFO=		autoconf-${BUILD_VERSION}
 
 STRIP=		# none
 
-NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/*.info* >/dev/null 2>&1 || true
 
 post-install:
-	@${CHMOD} +x ${PREFIX}/share/autoconf-${BUILD_VERSION}/config.*
-	@${INSTALL_SCRIPT} ${WRKSRC}/install-sh \
-		${PREFIX}/share/autoconf-${BUILD_VERSION}
+	${CHMOD} +x ${STAGEDIR}${PREFIX}/share/autoconf-${BUILD_VERSION}/config.*
+	${INSTALL_SCRIPT} ${WRKSRC}/install-sh \
+		${STAGEDIR}${PREFIX}/share/autoconf-${BUILD_VERSION}
 
 .include <bsd.port.mk>
