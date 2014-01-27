@@ -11,6 +11,8 @@ MAINTAINER=	sixxgate@hotmail.com
 COMMENT=	Motif/X file/stream viewer
 
 BROKEN=		unfetchable, MASTER_SITES is parked
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2014-02-27
 USES=		imake motif
 USE_BZIP2=	yes
 USE_XORG=	x11 xmu xt

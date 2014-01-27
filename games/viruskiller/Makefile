@@ -19,6 +19,8 @@ USE_SDL=	mixer image ttf net
 USES=		gmake
 
 BROKEN=		Does not build
+DEPRECATED=	Broken for more then 6 month
+EXPIRATION_DATE=	2014-02-27
 
 INSTALLS_ICONS=	yes
 

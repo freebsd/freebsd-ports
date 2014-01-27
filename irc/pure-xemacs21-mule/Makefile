@@ -4,6 +4,8 @@
 MASTERDIR=	${.CURDIR}/../pure-emacs21
 
 BROKEN=		fails to install
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2014-02-27
 
 USE_EMACS=	yes
 EMACS_PORT_NAME=	xemacs21-mule

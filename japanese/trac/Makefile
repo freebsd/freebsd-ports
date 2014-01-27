@@ -27,6 +27,8 @@ SVN_DESC=	Support for subversion RCS
 OPTIONS_DEFAULT=	SILVERCITY DOCUTILS PYGMENTS TZ SVN
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2014-02-27
 
 CONFLICTS=	trac-0.*
 

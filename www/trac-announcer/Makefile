@@ -15,6 +15,8 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Babel>=0.9:${PORTSDIR}/devel/py-babel
 RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
 
 BROKEN=		Try to access network during install phase
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2014-02-27
 USE_PYTHON=	yes
 USE_ZIP=	yes
 USE_PYDISTUTILS=	yes

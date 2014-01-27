@@ -23,6 +23,8 @@ AGENT_DESC=	Install NetXMS agent
 NXHTTPD_DESC=	Install web-interface
 
 BROKEN=		Does not fetch
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2014-02-27
 
 NO_PACKAGE=	yes
 

@@ -31,6 +31,8 @@ PLIST_SUB+=	EGGVERSION="${PORTVERSION}dev" PYTHONVERSION=${PYTHON_VER}
 PYDISTUTILS_NOEGGINFO=	yes
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 months
+EXPIRATION_DATE=	2014-02-27
 
 .include <bsd.port.options.mk>
 

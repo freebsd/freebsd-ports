@@ -12,6 +12,8 @@ COMMENT=	XBox xdvdfs iso extraction utility
 LIB_DEPENDS=	ftp.3:${PORTSDIR}/ftp/ftplib
 
 BROKEN=		Does not compile with ftplib>=4.0
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE= 2014-02-27
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

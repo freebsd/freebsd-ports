@@ -13,6 +13,8 @@ MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	The "Sensible" Unix Password Cracker
 
 BROKEN=		Fail to package
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2014-02-27
 
 WRKSRC=		${WRKDIR}/c50a
 
