@@ -38,7 +38,7 @@ CFLAGS+=	-fPIC
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}| ; s|-g root|-g wheel|' \
+	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}| ; s|-o root -g root ||' \
 		${WRKSRC}/Makefile.gnu ${WRKSRC}/Makefile.fip
 
 post-build:
