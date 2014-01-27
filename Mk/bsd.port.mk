@@ -5360,7 +5360,7 @@ actual-package-depends:
 
 package-recursive: package
 	@for dir in $$(${ALL-DEPENDS-LIST}); do \
-		(cd $$dir; ${MAKE} package clean); \
+		(cd $$dir; ${MAKE} package-noinstall); \
 	done
 
 # Show missing dependencies
