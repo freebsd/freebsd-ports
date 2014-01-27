@@ -1,5 +1,5 @@
---- libtemplate/template/Makefile.in~	Thu Apr  8 23:16:06 1999
-+++ libtemplate/template/Makefile.in	Thu Apr  8 23:16:17 1999
+--- ./libtemplate/template/Makefile.in.orig	1999-11-03 21:41:04.000000000 +0000
++++ ./libtemplate/template/Makefile.in	2014-01-27 21:42:55.000000000 +0000
 @@ -24,7 +24,7 @@
  DEBUG		= $(DEBUG_TOP) #-O #-g #-DDEBUG
  DEBUG_LIBS	=

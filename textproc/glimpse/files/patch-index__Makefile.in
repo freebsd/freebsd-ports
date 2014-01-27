@@ -1,0 +1,39 @@
+--- ./index/Makefile.in.orig	1999-11-01 21:16:29.000000000 +0000
++++ ./index/Makefile.in	2014-01-27 21:42:55.000000000 +0000
+@@ -38,9 +38,9 @@
+ LIBAGREP	= agrep
+ LIBTEMPLATE	= template
+ LIBUTIL		= util
+-DESTDIR         = $(srcdir)/../bin
++SRCDIR         = $(srcdir)/../bin
+ 
+-CFLAGS = @CFLAGS@ -O -DSTRUCTURED_QUERIES=1
++CFLAGS = -O @CFLAGS@ -DSTRUCTURED_QUERIES=1
+ ALL_CFLAGS    = $(CFLAGS) $(DEFS) -I$(AGREPSRC) -I$(TEMPLATESRC)/include
+ LINKFLAGS	= @LINKFLAGS@ -I$(INDEXSRC) -I$(AGREPSRC) -I$(TEMPLATESRC)/include
+ 
+@@ -66,18 +66,18 @@
+ 
+ $(CASTPROG):	buildcast.o $(OBJS) $(AGREPDIR)/lib$(LIBAGREP).a $(TEMPLATEDIR)/$(LIBTEMPLATE)/lib$(LIBTEMPLATE).a $(TEMPLATEDIR)/$(LIBUTIL)/lib$(LIBUTIL).a $(TCOMPDIR)/lib$(TCOMP).a
+ 	$(CC) $(CFLAGS) -L$(AGREPDIR) -L$(TEMPLATEDIR)/$(LIBTEMPLATE) -L$(TEMPLATEDIR)/$(LIBUTIL) -L$(TCOMPDIR) -o $(CASTPROG) buildcast.o $(OBJS) -l$(LIBAGREP) -l$(LIBTEMPLATE) -l$(LIBUTIL)
+-	$(CP) $(CASTPROG) $(DESTDIR)
+-	if test -n "$(STRIP)" ; then $(STRIP) $(DESTDIR)/$(CASTPROG) ; fi
++	$(CP) $(CASTPROG) $(SRCDIR)
++	if test -n "$(STRIP)" ; then $(STRIP) $(SRCDIR)/$(CASTPROG) ; fi
+ 
+ $(PROG):	glimpse.o $(OBJS) $(AGREPDIR)/lib$(LIBAGREP).a $(TEMPLATEDIR)/$(LIBTEMPLATE)/lib$(LIBTEMPLATE).a $(TEMPLATEDIR)/$(LIBUTIL)/lib$(LIBUTIL).a $(TCOMPDIR)/lib$(TCOMP).a
+ 	$(CC) $(CFLAGS) -L$(AGREPDIR) -L$(TEMPLATEDIR)/$(LIBTEMPLATE) -L$(TEMPLATEDIR)/$(LIBUTIL) -L$(TCOMPDIR) -o $(PROG) glimpse.o $(OBJS) -l$(LIBAGREP) -l$(LIBTEMPLATE) -l$(LIBUTIL)
+-	$(CP) $(PROG) $(DESTDIR)
+-	if test -n "$(STRIP)" ; then $(STRIP) $(DESTDIR)/$(PROG) ; fi
++	$(CP) $(PROG) $(SRCDIR)
++	if test -n "$(STRIP)" ; then $(STRIP) $(SRCDIR)/$(PROG) ; fi
+ 
+ wgconvert:	convert.o io.o simpletest.o filetype.o region.o memlook.o getword.o $(AGREPDIR)/lib$(LIBAGREP).a $(TEMPLATEDIR)/$(LIBTEMPLATE)/lib$(LIBTEMPLATE).a $(TEMPLATEDIR)/$(LIBUTIL)/lib$(LIBUTIL).a $(TCOMPDIR)/lib$(TCOMP).a
+ 	$(CC) $(CFLAGS) -L$(AGREPDIR) -L$(TEMPLATEDIR)/$(LIBTEMPLATE) -L$(TEMPLATEDIR)/$(LIBUTIL) -L$(TCOMPDIR) -o wgconvert convert.o io.o simpletest.o filetype.o region.o memlook.o getword.o -l$(LIBAGREP) -l$(LIBTEMPLATE) -l$(LIBUTIL)
+-	$(CP) wgconvert $(DESTDIR)
+-	if test -n "$(STRIP)" ; then $(STRIP) $(DESTDIR)/wgconvert ; fi
++	$(CP) wgconvert $(SRCDIR)
++	if test -n "$(STRIP)" ; then $(STRIP) $(SRCDIR)/wgconvert ; fi
+ 
+ $(TEMPLATEDIR)/$(LIBTEMPLATE)/lib$(LIBTEMPLATE).a:
+ 	cd $(TEMPLATEDIR) ; $(MAKE)

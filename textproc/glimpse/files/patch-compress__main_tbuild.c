@@ -1,5 +1,5 @@
---- compress/main_tbuild.c.orig	2012-09-02 23:50:51.000000000 +0000
-+++ compress/main_tbuild.c	2012-09-02 23:52:17.000000000 +0000
+--- ./compress/main_tbuild.c.orig	1999-11-03 20:40:10.000000000 +0000
++++ ./compress/main_tbuild.c	2014-01-27 21:40:18.000000000 +0000
 @@ -25,7 +25,7 @@
  int
  main(argc, argv)

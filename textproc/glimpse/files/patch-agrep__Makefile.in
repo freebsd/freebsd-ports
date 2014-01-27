@@ -1,0 +1,36 @@
+--- ./agrep/Makefile.in.orig	1999-11-01 20:33:54.000000000 +0000
++++ ./agrep/Makefile.in	2014-01-27 21:42:55.000000000 +0000
+@@ -30,9 +30,9 @@
+ TCOMPDIR      = ../compress
+ TCOMPSRC      = $(srcdir)/../compress
+ TEMPLATESRC   = $(srcdir)/../libtemplate
+-DESTDIR       = $(srcdir)/../bin
++SRCDIR       = $(srcdir)/../bin
+ 
+-CFLAGS = @CFLAGS@ -O -DDOTCOMPRESSED=0 -I$(TEMPLATESRC)/include
++CFLAGS = -O @CFLAGS@ -DDOTCOMPRESSED=0 -I$(TEMPLATESRC)/include
+ ALL_CFLAGS    = $(CFLAGS) $(DEFS)
+ LINKFLAGS	= @LINKFLAGS@ -I$(INDEXSRC) -I$(AGREPSRC) -I$(TEMPLATESRC)/include
+ 
+@@ -87,8 +87,8 @@
+ 		$(CC) -L$(TCOMPDIR) $(CFLAGS) -o $@ $(OBJS) main.o -l$(TCOMP)
+ 		$(AR) rcv $(LIB) $(OBJS)
+ 		$(RANLIB) $(LIB)
+-		$(CP) $(PROG) $(DESTDIR)
+-		if test -n "$(STRIP)" ; then $(STRIP) $(DESTDIR)/$(PROG) ; fi
++		$(CP) $(PROG) $(SRCDIR)
++		if test -n "$(STRIP)" ; then $(STRIP) $(SRCDIR)/$(PROG) ; fi
+ 
+ $(TCOMPDIR)/lib$(TCOMP).a:
+ 		cd $(TCOMPDIR) ; $(MAKE)
+@@ -97,8 +97,8 @@
+ 		$(CC) $(CFLAGS) -o $(PROG) $(OBJS) dummyfilters.o main.o
+ 		$(AR) rcv $(LIB) $(OBJS) dummyfilters.o
+ 		$(RANLIB) $(LIB)
+-		$(CP) $(PROG) $(DESTDIR)
+-		if test -n "$(STRIP)" ; then $(STRIP) $(DESTDIR)/$(PROG) ; fi
++		$(CP) $(PROG) $(SRCDIR)
++		if test -n "$(STRIP)" ; then $(STRIP) $(SRCDIR)/$(PROG) ; fi
+ 
+ clean:
+ 		-rm -f $(LIB) $(OBJS) dummyfilters.o main.o core a.out $(PROG)

@@ -1,0 +1,40 @@
+--- ./compress/Makefile.in.orig	1999-11-03 20:40:10.000000000 +0000
++++ ./compress/Makefile.in	2014-01-27 21:42:55.000000000 +0000
+@@ -34,10 +34,10 @@
+ AGREPSRC = $(srcdir)/$(AGREP)
+ TEMPLATE = ../libtemplate
+ TEMPLATESRC = $(srcdir)/$(TEMPLATE)
+-DESTDIR = $(srcdir)/../bin
++SRCDIR = $(srcdir)/../bin
+ all: lib tbuild cast uncast test
+ 
+-CFLAGS = @CFLAGS@ -O
++CFLAGS = -O @CFLAGS@
+ ALL_CFLAGS    = $(CFLAGS) $(DEFS) -I$(INDEXSRC) -I$(AGREPSRC) -I$(TEMPLATESRC)/include
+ 
+ .c.o:
+@@ -56,18 +56,18 @@
+ 
+ tbuild: hash.o string.o misc.o tbuild.o main_tbuild.o defs.h
+ 	 $(CC) -o tbuild hash.o string.o misc.o tbuild.o main_tbuild.o
+-	 $(CP) tbuild $(DESTDIR)
+-	 if test -n "$(STRIP)" ; then $(STRIP) $(DESTDIR)/tbuild ; fi
++	 $(CP) tbuild $(SRCDIR)
++	 if test -n "$(STRIP)" ; then $(STRIP) $(SRCDIR)/tbuild ; fi
+ 
+ cast: main_cast.o $(LIB)
+ 	 $(CC) -o cast main_cast.o $(LIBOBJ)
+-	 $(CP) cast $(DESTDIR)
+-	 if test -n "$(STRIP)" ; then $(STRIP) $(DESTDIR)/cast ; fi
++	 $(CP) cast $(SRCDIR)
++	 if test -n "$(STRIP)" ; then $(STRIP) $(SRCDIR)/cast ; fi
+ 
+ uncast: main_uncast.o $(LIB)
+ 	$(CC) -o uncast main_uncast.o $(LIBOBJ)
+-	$(CP) uncast $(DESTDIR)
+-	if test -n "$(STRIP)" ; then $(STRIP) $(DESTDIR)/uncast ; fi
++	$(CP) uncast $(SRCDIR)
++	if test -n "$(STRIP)" ; then $(STRIP) $(SRCDIR)/uncast ; fi
+ 
+ hash.o: defs.h $(INDEXSRC)/glimpse.h
+ string.o: defs.h $(INDEXSRC)/glimpse.h

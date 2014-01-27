@@ -1,0 +1,58 @@
+--- ./Makefile.in.orig	1999-11-01 20:34:49.000000000 +0000
++++ ./Makefile.in	2014-01-27 21:42:55.000000000 +0000
+@@ -33,9 +33,9 @@
+ TEMPLATESRC     = $(srcdir)/$(TEMPLATEDIR)
+ COMPRESSDIR	= compress
+ COMPRESSSRC	= $(srcdir)/$(COMPRESSDIR)
+-DESTDIR		= $(srcdir)/bin
++SRCDIR		= $(srcdir)/bin
+ 
+-CFLAGS		= @CFLAGS@ -O -DSTRUCTURED_QUERIES=1
++CFLAGS		= -O @CFLAGS@ -DSTRUCTURED_QUERIES=1
+ ALL_CFLAGS      = $(CFLAGS) $(DEFS) -I$(INDEXSRC) -I$(AGREPSRC) -I$(TEMPLATESRC)/include
+ LINKFLAGS	= @LDFLAGS@ -I$(INDEXSRC) -I$(AGREPSRC) -I$(TEMPLATESRC)/include
+ 
+@@ -83,13 +83,13 @@
+ all:		$(PROGINDEX) $(PROGAGREP) $(PROG) $(PROGSERVER)
+ 
+ install:	all installdirs
+-		cd $(DESTDIR) ;\
++		cd $(SRCDIR) ;\
+ 		for f in $(ALL_PROGS) ; do \
+-			$(INSTALL_PROGRAM) $$f $(bindir)/$(binprefix)$(f) ;\
++			$(INSTALL_PROGRAM) $$f $(bindir)/$(binprefix) ;\
+ 		done
+ 		cd $(srcdir) ;\
+ 		for f in $(ALL_MANS) ; do \
+-			$(INSTALL_DATA) $$f $(mandir)/$(manprefix)$(f).$(manext) ;\
++			$(INSTALL_DATA) $$f $(mandir)/$(manprefix) ;\
+ 		done
+ #		$(INSTALL_PROGRAM) $(PROGINDEX) $(bindir)/$(binprefix)glimpseindex
+ #		$(INSTALL_PROGRAM) $(PROGAGREP) $(bindir)/$(binprefix)agrep
+@@ -114,13 +114,13 @@
+ 
+ $(PROG):	main.o $(OBJS) $(SRC) $(HDRS) $(AGREPDIR)/lib$(LIBAGREP).a $(TEMPLATEDIR)/$(LIBTEMPLATE)/lib$(LIBTEMPLATE).a $(TEMPLATEDIR)/$(LIBUTIL)/lib$(LIBUTIL).a $(COMPRESSDIR)/lib$(LIBCOMPRESS).a
+ 	 $(CC) $(LINKFLAGS) -L$(AGREPDIR) -L$(COMPRESSDIR) -L$(TEMPLATEDIR)/$(LIBTEMPLATE) -L$(TEMPLATEDIR)/$(LIBUTIL) -o $(PROG) main.o $(OBJS) -l$(LIBAGREP) -l$(LIBTEMPLATE) -l$(LIBUTIL) $(LIBS)
+-	 $(CP) $(PROG) $(DESTDIR)
+-	 if test -n "$(STRIP)" ; then $(STRIP) $(DESTDIR)/$(PROG) ; fi
++	 $(CP) $(PROG) $(SRCDIR)
++	 if test -n "$(STRIP)" ; then $(STRIP) $(SRCDIR)/$(PROG) ; fi
+ 
+ $(PROGSERVER):	main_server.o $(OBJS) $(SRC) $(HDRS) $(AGREPDIR)/lib$(LIBAGREP).a $(TEMPLATEDIR)/$(LIBTEMPLATE)/lib$(LIBTEMPLATE).a $(TEMPLATEDIR)/$(LIBUTIL)/lib$(LIBUTIL).a $(COMPRESSDIR)/lib$(LIBCOMPRESS).a
+ 	 $(CC) $(LINKFLAGS) -L$(COMPRESSDIR) -L$(AGREPDIR) -L$(TEMPLATEDIR)/$(LIBTEMPLATE) -L$(TEMPLATEDIR)/$(LIBUTIL) -o $(PROGSERVER) main_server.o $(OBJS) -l$(LIBAGREP) -l$(LIBTEMPLATE) -l$(LIBUTIL) $(LIBS)
+-	 $(CP) $(PROGSERVER) $(DESTDIR)
+-	 if test -n "$(STRIP)" ; then $(STRIP) $(DESTDIR)/$(PROGSERVER) ; fi
++	 $(CP) $(PROGSERVER) $(SRCDIR)
++	 if test -n "$(STRIP)" ; then $(STRIP) $(SRCDIR)/$(PROGSERVER) ; fi
+ 
+ $(TEMPLATEDIR)/$(LIBTEMPLATE)/lib$(LIBTEMPLATE).a:
+ 	cd $(TEMPLATEDIR) ; $(MAKE)
+@@ -137,7 +137,7 @@
+ 	cd $(INDEXDIR) ; $(MAKE) clean
+ 	cd $(COMPRESSDIR); $(MAKE) clean
+ 	cd $(TEMPLATEDIR); $(MAKE) clean
+-	cd $(DESTDIR) ; rm -f $(ALL_PROGS)
++	cd $(SRCDIR) ; rm -f $(ALL_PROGS)
+ 
+ distclean: clean
+ 	-rm -f Makefile config.cache config.status
