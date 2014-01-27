@@ -13,17 +13,10 @@ ONLY_FOR_ARCHS=	i386 amd64 arm
 
 USE_BZIP2=	yes
 SUB_FILES=	pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
 
-NO_STAGE=	yes
-
-USES=		kmod
-.include <bsd.port.pre.mk>
+USES=		kmod uidfix
 
 PLIST_FILES=	"@cwd /%%KMODDIR%%"
 PLIST_FILES+=	mono.ko
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
