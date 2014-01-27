@@ -104,7 +104,6 @@ GSSAPI_CONFIGURE_WITH=	gssapi
 
 .if (${ARCH} == "amd64")
 ARCH=		x86_64
-CFLAGS+=	-fPIC
 .endif
 
 .if !${PORT_OPTIONS:MLINKS} || ${PORT_OPTIONS:MREPLACE_BASE}
