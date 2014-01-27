@@ -1,5 +1,5 @@
---- libtemplate/include/autoconf.h.in.orig	Thu Nov 21 05:28:49 1996
-+++ libtemplate/include/autoconf.h.in	Fri May  5 21:23:48 2000
+--- ./libtemplate/include/autoconf.h.in.orig	1999-11-03 21:40:56.000000000 +0000
++++ ./libtemplate/include/autoconf.h.in	2014-01-27 21:40:18.000000000 +0000
 @@ -108,7 +108,7 @@
  #undef HAVE_BZERO
  

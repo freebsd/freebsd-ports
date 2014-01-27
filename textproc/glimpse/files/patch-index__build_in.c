@@ -1,5 +1,5 @@
---- index/build_in.c.orig	2012-09-03 00:03:28.000000000 +0000
-+++ index/build_in.c	2012-09-03 00:15:01.000000000 +0000
+--- ./index/build_in.c.orig	1999-11-01 21:19:27.000000000 +0000
++++ ./index/build_in.c	2014-01-27 21:40:18.000000000 +0000
 @@ -44,8 +44,12 @@
  extern struct stat excstbuf;
  extern struct stat incstbuf;

@@ -1,5 +1,5 @@
---- libtemplate/util/Makefile.in~	Thu Apr  8 23:14:47 1999
-+++ libtemplate/util/Makefile.in	Thu Apr  8 23:15:06 1999
+--- ./libtemplate/util/Makefile.in.orig	1999-11-03 20:42:14.000000000 +0000
++++ ./libtemplate/util/Makefile.in	2014-01-27 21:42:55.000000000 +0000
 @@ -19,7 +19,7 @@
  RANLIB		= @RANLIB@
  
