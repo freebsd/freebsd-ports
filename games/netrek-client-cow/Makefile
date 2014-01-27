@@ -3,7 +3,7 @@
 
 PORTNAME=	netrek-client-cow
 PORTVERSION=	3.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.netrek.org/files/COW/ \
 		http://quozl.us.netrek.org/netrek/
@@ -11,7 +11,9 @@ MASTER_SITES=	http://www.netrek.org/files/COW/ \
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	Multi-player battle simulation with a Star Trek theme
 
-LIB_DEPENDS=	Imlib2:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS=	libImlib2.so:${PORTSDIR}/graphics/imlib2
+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USES=		gmake
@@ -19,7 +21,6 @@ USE_SDL=	sdl mixer
 
 CONFIGURE_ARGS+=	NORSA='\#'
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|ushort  damage|unsigned short damage|' \
 		${WRKSRC}/short.c
