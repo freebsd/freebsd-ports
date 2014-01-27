@@ -3,29 +3,23 @@
 
 PORTNAME=	Atlas
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/worldforge/${PORTNAME}-C%2B%2B%20%28protocol%20lib%29/${PORTVERSION}
 DISTNAME=	${PORTNAME}-C++-${PORTVERSION:S/.r/rc/}
 
 MAINTAINER=	oliver@FreeBSD.org
-COMMENT=	A C++ reference implementation of the Atlas protocol
+COMMENT=	C++ reference implementation of the Atlas protocol
+
+OPTIONS_DEFINE=	DOCS
 
 PKGNAMESUFFIX=	-devel
 GNU_CONFIGURE=	yes
+USES=	pathfix compiler:c++11-lang
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	YES
 USE_BZIP2=	YES
-USES=	pathfix
-USE_GCC=	4.7+
-
+MAKE_ARGS=	docdir=${DOCSDIR}
 CONFIGURE_ARGS+=--program-transform-name=
-
-NO_STAGE=	yes
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for docfile in README COPYING AUTHORS THANKS NEWS ChangeLog TODO HACKING ROADMAP
-	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
-.endfor
-.endif
 
 .include <bsd.port.mk>
