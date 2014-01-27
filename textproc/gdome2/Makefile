@@ -10,24 +10,25 @@ MASTER_SITES=	http://gdome2.cs.unibo.it/tarball/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome DOM Engine
 
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
-
-USE_AUTOTOOLS=	libtool
 USES=		pathfix pkgconfig
-USE_GNOME=	glib20
+USE_AUTOTOOLS=	libtool
+USE_GNOME=	glib20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GLIB_CONFIG="${LOCALBASE}/bin/pkg-config glib-2.0"
 CPPFLAGS+=	-I${LOCALBASE}/include
-PLIST_SUB=	DOCSDIR="share/doc/${DISTNAME}"
+DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
 USE_LDCONFIG=	yes
 
-MAN1=	gdome-config.1
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
+PORTDOCS=	*
+
+.include <bsd.port.options.mk>
+
 post-patch:
-.ifndef(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -E -e \
-		's,^(HTML_DIR *= *).*,\1\$$(prefix)/share/doc,' \
+		's,^(HTML_DIR *= *).*,\1\$$(DESTDIR)$$(prefix)/share/doc,' \
 		${WRKSRC}/gtk-doc/Makefile.in
 .else
 	@${REINPLACE_CMD} '/gtk-doc/d' ${WRKSRC}/Makefile.in
