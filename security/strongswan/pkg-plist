@@ -1,5 +1,3 @@
-etc/ipsec.conf
-etc/strongswan.conf
 lib/ipsec/libcharon.a
 lib/ipsec/libcharon.la
 lib/ipsec/libcharon.so
@@ -97,12 +95,18 @@ lib/ipsec/plugins/libstrongswan-pkcs7.so
 lib/ipsec/plugins/libstrongswan-pkcs8.a
 lib/ipsec/plugins/libstrongswan-pkcs8.la
 lib/ipsec/plugins/libstrongswan-pkcs8.so
+lib/ipsec/plugins/libstrongswan-pkcs12.a
+lib/ipsec/plugins/libstrongswan-pkcs12.la
+lib/ipsec/plugins/libstrongswan-pkcs12.so
 lib/ipsec/plugins/libstrongswan-pubkey.a
 lib/ipsec/plugins/libstrongswan-pubkey.la
 lib/ipsec/plugins/libstrongswan-pubkey.so
 lib/ipsec/plugins/libstrongswan-random.a
 lib/ipsec/plugins/libstrongswan-random.la
 lib/ipsec/plugins/libstrongswan-random.so
+lib/ipsec/plugins/libstrongswan-rc2.a
+lib/ipsec/plugins/libstrongswan-rc2.la
+lib/ipsec/plugins/libstrongswan-rc2.so
 lib/ipsec/plugins/libstrongswan-resolve.a
 lib/ipsec/plugins/libstrongswan-resolve.la
 lib/ipsec/plugins/libstrongswan-resolve.so
@@ -118,6 +122,9 @@ lib/ipsec/plugins/libstrongswan-sha2.so
 lib/ipsec/plugins/libstrongswan-socket-default.a
 lib/ipsec/plugins/libstrongswan-socket-default.la
 lib/ipsec/plugins/libstrongswan-socket-default.so
+lib/ipsec/plugins/libstrongswan-sshkey.a
+lib/ipsec/plugins/libstrongswan-sshkey.la
+lib/ipsec/plugins/libstrongswan-sshkey.so
 lib/ipsec/plugins/libstrongswan-stroke.a
 lib/ipsec/plugins/libstrongswan-stroke.la
 lib/ipsec/plugins/libstrongswan-stroke.so
@@ -141,6 +148,13 @@ libexec/ipsec/starter
 libexec/ipsec/stroke
 libexec/ipsec/whitelist
 sbin/ipsec
+sbin/charon-cmd
+share/examples/strongswan/ipsec.conf
+share/examples/strongswan/strongswan.conf
+%%EAPRADIUS%%lib/ipsec/libradius.a
+%%EAPRADIUS%%lib/ipsec/libradius.la
+%%EAPRADIUS%%lib/ipsec/libradius.so
+%%EAPRADIUS%%lib/ipsec/libradius.so.0
 %%SIMAKA%%lib/ipsec/libsimaka.a
 %%SIMAKA%%lib/ipsec/libsimaka.la
 %%SIMAKA%%lib/ipsec/libsimaka.so
@@ -154,6 +168,12 @@ sbin/ipsec
 %%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-gmp.a
 %%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-gmp.la
 %%EAPAKA3GPP2%%lib/ipsec/plugins/libstrongswan-gmp.so
+%%EAPDYNAMIC%%lib/ipsec/plugins/libstrongswan-eap-dynamic.a
+%%EAPDYNAMIC%%lib/ipsec/plugins/libstrongswan-eap-dynamic.la
+%%EAPDYNAMIC%%lib/ipsec/plugins/libstrongswan-eap-dynamic.so
+%%EAPRADIUS%%lib/ipsec/plugins/libstrongswan-eap-radius.a
+%%EAPRADIUS%%lib/ipsec/plugins/libstrongswan-eap-radius.la
+%%EAPRADIUS%%lib/ipsec/plugins/libstrongswan-eap-radius.so
 %%EAPSIMFILE%%lib/ipsec/plugins/libstrongswan-eap-sim.a
 %%EAPSIMFILE%%lib/ipsec/plugins/libstrongswan-eap-sim.la
 %%EAPSIMFILE%%lib/ipsec/plugins/libstrongswan-eap-sim.so
@@ -166,6 +186,20 @@ sbin/ipsec
 %%IKEv1%%lib/ipsec/plugins/libstrongswan-xauth-generic.a
 %%IKEv1%%lib/ipsec/plugins/libstrongswan-xauth-generic.la
 %%IKEv1%%lib/ipsec/plugins/libstrongswan-xauth-generic.so
+%%IPSECKEY%%lib/ipsec/plugins/libstrongswan-ipseckey.a
+%%IPSECKEY%%lib/ipsec/plugins/libstrongswan-ipseckey.la
+%%IPSECKEY%%lib/ipsec/plugins/libstrongswan-ipseckey.so
+%%KERNELLIBIPSEC%%lib/ipsec/libipsec.a
+%%KERNELLIBIPSEC%%lib/ipsec/libipsec.la
+%%KERNELLIBIPSEC%%lib/ipsec/libipsec.so
+%%KERNELLIBIPSEC%%lib/ipsec/libipsec.so.0
+%%KERNELLIBIPSEC%%lib/ipsec/plugins/libstrongswan-kernel-libipsec.a
+%%KERNELLIBIPSEC%%lib/ipsec/plugins/libstrongswan-kernel-libipsec.la
+%%KERNELLIBIPSEC%%lib/ipsec/plugins/libstrongswan-kernel-libipsec.so
+%%LOADTESTER%%lib/ipsec/plugins/libstrongswan-load-tester.a
+%%LOADTESTER%%lib/ipsec/plugins/libstrongswan-load-tester.la
+%%LOADTESTER%%lib/ipsec/plugins/libstrongswan-load-tester.so
+%%LOADTESTER%%libexec/ipsec/load-tester
 %%LDAP%%lib/ipsec/plugins/libstrongswan-ldap.a
 %%LDAP%%lib/ipsec/plugins/libstrongswan-ldap.la
 %%LDAP%%lib/ipsec/plugins/libstrongswan-ldap.so
@@ -182,6 +216,16 @@ sbin/ipsec
 %%SQLITE%%lib/ipsec/plugins/libstrongswan-sqlite.a
 %%SQLITE%%lib/ipsec/plugins/libstrongswan-sqlite.la
 %%SQLITE%%lib/ipsec/plugins/libstrongswan-sqlite.so
+%%TESTVECTOR%%lib/ipsec/plugins/libstrongswan-test-vectors.a
+%%TESTVECTOR%%lib/ipsec/plugins/libstrongswan-test-vectors.la
+%%TESTVECTOR%%lib/ipsec/plugins/libstrongswan-test-vectors.so
+%%UNBOUND%%lib/ipsec/plugins/libstrongswan-unbound.a
+%%UNBOUND%%lib/ipsec/plugins/libstrongswan-unbound.la
+%%UNBOUND%%lib/ipsec/plugins/libstrongswan-unbound.so
+%%XAUTH%%lib/ipsec/plugins/libstrongswan-xauth-eap.a
+%%XAUTH%%lib/ipsec/plugins/libstrongswan-xauth-eap.la
+%%XAUTH%%lib/ipsec/plugins/libstrongswan-xauth-eap.so
+@dirrm share/examples/strongswan
 @dirrm libexec/ipsec
 @dirrm lib/ipsec/plugins
 @dirrm lib/ipsec

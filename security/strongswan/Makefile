@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	strongswan
-PORTVERSION=	5.0.4
-PORTREVISION=	1
+PORTVERSION=	5.1.1
 CATEGORIES=	security
 MASTER_SITES=	http://download.strongswan.org/ \
 		http://download2.strongswan.org/
@@ -37,6 +36,7 @@ CONFIGURE_ARGS=	--enable-kernel-pfkey \
 		--enable-blowfish \
 		--enable-addrblock \
 		--enable-whitelist \
+		--enable-cmd \
 		--with-group=wheel  \
 		--with-lib-prefix=${PREFIX}
 
@@ -44,74 +44,52 @@ CONFIGURE_ARGS=	--enable-kernel-pfkey \
 MAN5=	ipsec.conf.5 ipsec.secrets.5 strongswan.conf.5
 MAN8=	ipsec.8 _updown.8 _updown_espmark.8
 
-OPTIONS_DEFINE=	CURL EAPAKA3GPP2 EAPSIMFILE IKEv1 LDAP MYSQL SQLITE
+OPTIONS_DEFINE=	CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS EAPSIMFILE IKEv1 \
+		IPSECKEY KERNELLIBIPSEC LOADTESTER LDAP MYSQL SQLITE \
+		TESTVECTOR UNBOUND XAUTH
+OPTIONS_SUB=	${OPTIONS_DEFINE}
 CURL_DESC=	Enable CURL to fetch CRL/OCSP
 EAPAKA3GPP2_DESC=	Enable EAP AKA with 3gpp2 backend
+EAPDYNAMIC_DESC=	Enable EAP dynamic proxy module
+EAPRADIUS_DESC=		Enable EAP Radius proxy authentication
 EAPSIMFILE_DESC=	Enable EAP SIM with file backend
-IKEv1_DESC=	Enable IKEv1 support (Experimental)
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+IKEv1_DESC=	Enable IKEv1 support
+IPSECKEY_DESC=	Enable authentication with IPSECKEY resource records with DNSSEC
+KERNELLIBIPSEC_DESC=	Enable IPSec userland backend
+LOADTESTER_DESC=	Enable load testing plugin
+TESTVECTOR_DESC=	Enable crypto test vectors
+UNBOUND_DESC=	Enable DNSSEC-enabled resolver
+XAUTH_DESC=	Enable XAuth password verification
 
 # Extra options
-.if ${PORT_OPTIONS:MCURL}
-CONFIGURE_ARGS+=	--enable-curl
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-PLIST_SUB+=	CURL=""
-.else
-PLIST_SUB+=	CURL="@comment "
-.endif
+CURL_CONFIGURE_ON=	--enable-curl
+CURL_LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+EAPAKA3GPP2_CONFIGURE_ON=	--enable-eap-aka --enable-eap-aka-3gpp2
+EAPAKA3GPP2_LIB_DEPENDS=gmp:${PORTSDIR}/math/gmp
+EAPDYNAMIC_CONFIGURE_ON=--enable-eap-dynamic
+EAPRADIUS_CONFIGURE_ON=	--enable-eap-radius
+EAPSIMFILE_CONFIGURE_ON=--enable-eap-sim --enable-eap-sim-file
+IKEv1_CONFIGURE_OFF=	--disable-ikev1
+IPSECKEY_CONFIGURE_ON=	--enable-ipseckey
+KERNELLIBIPSEC_CONFIGURE_ON=	--enable-kernel-libipsec
+LOADTESTER_CONFIGURE_ON=--enable-load-tester
+LDAP_CONFIGURE_ON=	--enable-ldap
+LDAP_USE=		USE_OPENLDAP=yes
+MYSQL_CONFIGURE_ON=	--enable-mysql
+MYSQL_USE=		USE_MYSQL=yes
+SQLITE_CONFIGURE_ON=	--enable-sqlite
+SQLITE_LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
+TESTVECTOR_CONFIGURE_ON=--enable-test-vectors
+UNBOUND_CONFIGURE_ON=	--enable-unbound
+UNBOUND_LIB_DEPENDS=	unbound:${PORTSDIR}/dns/unbound
+XAUTH_CONFIGURE_ON=	--enable-xauth-eap --enable-xauth-generic
 
-.if ${PORT_OPTIONS:MEAPSIMFILE}
-CONFIGURE_ARGS+=	--enable-eap-sim --enable-eap-sim-file
-PLIST_SUB+=	EAPSIMFILE=""
-.else
-PLIST_SUB+=	EAPSIMFILE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MEAPAKA3GPP2}
-CONFIGURE_ARGS+=	--enable-eap-aka --enable-eap-aka-3gpp2
-LIB_DEPENDS+=	gmp:${PORTSDIR}/math/gmp
-PLIST_SUB+=	EAPAKA3GPP2=""
-.else
-PLIST_SUB+=	EAPAKA3GPP2="@comment "
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEAPSIMFILE} || ${PORT_OPTIONS:MEAPAKA3GPP2}
 PLIST_SUB+=SIMAKA=""
 .else
 PLIST_SUB+=SIMAKA="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MIKEv1}
-PLIST_SUB+=	IKEv1=""
-.else
-CONFIGURE_ARGS+=	--disable-ikev1
-PLIST_SUB+=	IKEv1="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=	--enable-ldap
-PLIST_SUB+=	LDAP=""
-.else
-PLIST_SUB+=	LDAP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-CONFIGURE_ARGS+=	--enable-mysql
-USE_MYSQL=	yes
-PLIST_SUB+=	MYSQL=""
-.else
-PLIST_SUB+=	MYSQL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-CONFIGURE_ARGS+=	--enable-sqlite
-LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
-PLIST_SUB+=	SQLITE=""
-.else
-PLIST_SUB+=	SQLITE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MSQLITE}
@@ -121,11 +99,9 @@ PLIST_SUB+=	SQL=""
 PLIST_SUB+=	SQL="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
+post-install:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${MV} ${STAGEDIR}${PREFIX}/etc/strongswan.conf ${STAGEDIR}${EXAMPLESDIR}
+	${MV} ${STAGEDIR}${PREFIX}/etc/ipsec.conf ${STAGEDIR}${EXAMPLESDIR}
 
-# Requires FreeBSD 8 and above to work
-.if ${OSVERSION} < 800000
-IGNORE=		requires at least FreeBSD 8.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
