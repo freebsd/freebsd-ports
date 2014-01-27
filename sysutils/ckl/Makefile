@@ -12,6 +12,8 @@ MAINTAINER=	kami@k5-storitve.net
 COMMENT=	A command line tool for noting when something was changed on a machine
 
 BROKEN=		unfetchable, MASTER_SITES redirects to Rackspace
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2014-02-27
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_SCONS=	yes

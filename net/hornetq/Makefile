@@ -17,6 +17,8 @@ BUILD_DEPENDS=	${MAVEN3}:${PORTSDIR}/devel/maven3 \
 		ant:${PORTSDIR}/devel/apache-ant
 
 BROKEN=		Uses home directory during build (PR ports/178529)
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2014-02-27
 PORTDOCS=	quickstart-guide api rest-api user-manual \
 		rest-interface-manual README.html
 

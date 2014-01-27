@@ -13,6 +13,8 @@ COMMENT=	Library of GUI and non-GUI C-sharp code
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 BROKEN=		Does not build with recent mono
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2014-02-27
 
 USES=		gmake
 GNU_CONFIGURE=	yes

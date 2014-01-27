@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application to organize and edit image collections
 
 BROKEN=		Does not fetch
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2014-02-27
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \

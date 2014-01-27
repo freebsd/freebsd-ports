@@ -13,8 +13,9 @@ COMMENT=	S-Lang System Monitor
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop \
 		slang.2:${PORTSDIR}/devel/libslang2
 
-
 BROKEN=		Does not build
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2014-02-27
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

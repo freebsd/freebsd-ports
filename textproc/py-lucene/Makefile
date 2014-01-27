@@ -17,6 +17,8 @@ BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/textproc/lucene:extract
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2014-02-27
 
 USE_PYTHON=	yes
 USE_GCC=	4.2+

@@ -15,6 +15,8 @@ LIB_DEPENDS=	cdio.13:${PORTSDIR}/sysutils/libcdio \
 		vorbis.4:${PORTSDIR}/audio/libvorbis
 
 BROKEN=		Does not build
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2014-02-27
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		gmake
