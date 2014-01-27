@@ -1,5 +1,7 @@
 bin/libtool
 bin/libtoolize
+man/man1/libtool.1.gz
+man/man1/libtoolize.1.gz
 share/aclocal/argz.m4
 share/aclocal/libtool.m4
 share/aclocal/ltdl.m4
