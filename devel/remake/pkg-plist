@@ -1,4 +1,5 @@
 bin/remake
+man/man1/remake.1.gz
 share/locale/be/LC_MESSAGES/remake.mo
 share/locale/da/LC_MESSAGES/remake.mo
 share/locale/de/LC_MESSAGES/remake.mo
