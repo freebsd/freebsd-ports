@@ -1,2 +1,3 @@
 bin/avrdude
 etc/avrdude.conf
+man/man1/avrdude.1.gz

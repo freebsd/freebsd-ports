@@ -12,13 +12,9 @@ COMMENT=	Program for programming the on-chip memory of Atmel AVR CPUs
 
 LICENSE=	GPLv2
 
-MAN1=		avrdude.1
-MANCOMPRESSED=	no
-
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
