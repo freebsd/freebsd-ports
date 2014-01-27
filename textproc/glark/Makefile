@@ -12,8 +12,8 @@ COMMENT=	Search text files for complex regular expressions
 USE_RUBY=	yes
 NO_BUILD=	yes
 
-MAN1=		glark.1
 PLIST_FILES=	bin/glark \
+		man/man1/glark.1.gz \
 		share/glark/env.rb \
 		share/glark/extensions.rb \
 		share/glark/filetest.rb \
@@ -27,11 +27,10 @@ PLIST_FILES=	bin/glark \
 		share/glark/text.rb
 PLIST_DIRS=	share/glark
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/glark ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/share/glark/* ${DATADIR}
-	${INSTALL_MAN} ${WRKSRC}/glark.1 ${MANPREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/glark ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/share/glark/* ${STAGEDIR}${DATADIR}
+	${INSTALL_MAN} ${WRKSRC}/glark.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
