@@ -182,6 +182,7 @@
     SUBDIR += c-unit
     SUBDIR += c4
     SUBDIR += calibrator
+    SUBDIR += capstone
     SUBDIR += cbind
     SUBDIR += cbrowser
     SUBDIR += cc65
