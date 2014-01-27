@@ -12,9 +12,8 @@ COMMENT=	Small program that finds definitions of arbitrary (English) words
 
 USE_GNOME=	gtk12
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gdict ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/dict ${PREFIX}/bin/cdict
+	${INSTALL_PROGRAM} ${WRKSRC}/gdict ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/dict ${STAGEDIR}${PREFIX}/bin/cdict
 
 .include <bsd.port.mk>
