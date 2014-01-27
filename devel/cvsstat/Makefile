@@ -17,7 +17,6 @@ USES=		perl5
 NO_BUILD=	yes
 PLIST_FILES=	bin/cvsstat
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} -p ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} ${WRKSRC}
@@ -26,6 +25,6 @@ post-patch:
 	@${REINPLACE_CMD} -i '' -e 's|perl -S|${PERL} -S|' ${WRKSRC}/cvsstat
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/cvsstat ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/cvsstat ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
