@@ -1,11 +1,12 @@
 # Created by: Olivier Duchateau <duchateau.olivier@gmail.com>
 # $FreeBSD$
 
-PORTNAME=	requests1
+PORTNAME=	requests
 PORTVERSION=	1.2.3
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	1
 
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	HTTP library written in Python for human beings (Version 1.x)
