@@ -82,7 +82,7 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <cvename>CVE-2013-5018</cvename>
       <cvename>CVE-2013-6075</cvename>
-      <cvename>CVE-2013-6076-</cvename>
+      <cvename>CVE-2013-6076</cvename>
       <url>http://www.strongswan.org/blog/2013/11/01/strongswan-5.1.1-released.html</url>
     </references>
     <dates>
