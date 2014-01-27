@@ -1,10 +1,8 @@
-Tegaki:
+Tegaki is an open-source, multi-platform Chinese and Japanese handwriting
+recognition system.  Some of its features:
 
-    * is free and open-source
-    * is multi-plaform
-    * focuses on Chinese (simplified and traditional) and Japanese characters
-    * supports 2 different recognition engines
-    * aspires to work on both desktop-PCs and mobile devices
+  * Focuses on Chinese (simplified and traditional) and Japanese characters
+  * Supports 2 different recognition engines
+  * Aspires to work on both desktop PCs and mobile devices
 
 WWW: http://www.tegaki.org/
-
