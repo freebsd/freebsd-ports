@@ -1,5 +1,7 @@
 bin/aflex
 bin/ayacc
+man/man1/aflex.1.gz
+man/man1/ayacc.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/READ_ME.aflex
 %%PORTDOCS%%%%DOCSDIR%%/READ_ME.ayacc
 %%PORTDOCS%%%%DOCSDIR%%/aflex.html
