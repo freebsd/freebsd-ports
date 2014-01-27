@@ -10,6 +10,17 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20140127:
+AUTHOR: mat@FreeBSD.org
+
+  Add two new options helpers:
+ 
+  ${OPT}_${TYPE}_DEPENDS_OFF=<something> will automatically add:
+  ${TYPE_DEPENDS}+=<something> in case OPT is 'off'
+
+  ${OPT}_${FLAG}_OFF=<something> will automatically add:
+  ${FLAG}+=<something> in case OPT is 'off'
+
 20140111:
 AUTHOR: mva@FreeBSD.org
 
