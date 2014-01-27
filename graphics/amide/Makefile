@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	amide
-PORTVERSION=	1.0.4
-PORTREVISION=	2
+PORTVERSION=	1.0.5
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -53,7 +52,7 @@ post-patch:
 	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in \
 		${WRKSRC}/amide_config.h.in
 	@${REINPLACE_CMD} \
-		-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		-e 's|libavcodec|libavcodec0|g' \
 		-e 's|libavutil|libavutil0|g' \
 		${WRKSRC}/configure
