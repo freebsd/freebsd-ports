@@ -13,7 +13,7 @@ DISTNAME=	Quantis-${DISTVERSION}-src
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Kernel driver for Quantis PCI/PCIe random number generator
 
-LICENSE=	BSD GPLv2
+LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKDIR}/Quantis-${DISTVERSION}/License.txt
 
@@ -26,12 +26,6 @@ PLIST_FILES=	"@cwd ${KMODDIR}" \
 		"quantis.ko" \
 		"@cwd ${PREFIX}"
 
-NO_STAGE=	yes
+USES=		kmod uidfix
 
-USES=		kmod
-.include <bsd.port.pre.mk>
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
