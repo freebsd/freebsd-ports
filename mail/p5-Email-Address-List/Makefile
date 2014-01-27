@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	Email-Address-List
-PORTVERSION=	0.01
-PORTREVISION=	1
+PORTVERSION=	0.03
 CATEGORIES=	mail perl5
-MASTER_SITES=	CPAN
+MASTER_SITES=	http://download.bestpractical.com/mirror/ \
+		CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	matthew@FreeBSD.org
