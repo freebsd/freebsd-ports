@@ -3,7 +3,7 @@
 
 PORTNAME=	subliminal
 PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ LICENSE=	LGPL3
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/bs4/__init__.py:${PORTSDIR}/www/py-beautifulsoup \
 		${PYTHON_PKGNAMEPREFIX}enzyme>=0.4.0:${PORTSDIR}/multimedia/py-enzyme \
 		${PYTHON_PKGNAMEPREFIX}guessit>=0.6.1:${PORTSDIR}/multimedia/py-guessit \
-		${PYTHON_PKGNAMEPREFIX}requests>=1.1:${PORTSDIR}/www/py-requests \
+		${PYTHON_PKGNAMEPREFIX}requests1>=1.1:${PORTSDIR}/www/py-requests1 \
 		${PYTHON_PKGNAMEPREFIX}html5lib>0:${PORTSDIR}/www/py-html5lib \
 		${PYTHON_PKGNAMEPREFIX}charade>0:${PORTSDIR}/textproc/py-charade \
 		${PYTHON_PKGNAMEPREFIX}pysrt>0:${PORTSDIR}/textproc/py-pysrt \
