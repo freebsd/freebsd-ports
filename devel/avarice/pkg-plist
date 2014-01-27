@@ -3,5 +3,8 @@ bin/start-avarice
 bin/kill-avarice
 bin/ice-gdb
 bin/ice-insight
+man/man1/avarice.1.gz
+man/man1/ice-gdb.1.gz
+man/man1/ice-insight.1.gz
 share/avarice/gdb-avarice-script
 @dirrm share/avarice

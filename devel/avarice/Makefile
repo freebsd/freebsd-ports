@@ -18,9 +18,5 @@ USE_BZIP2=	yes
 USES=		perl5
 
 GNU_CONFIGURE=	yes
-#CONFIGURE_ENV=	LDFLAGS=-L${LOCALBASE}/lib CPPFLAGS=-I${LOCALBASE}/include
 
-MAN1=		avarice.1 ice-gdb.1 ice-insight.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
