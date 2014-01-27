@@ -3,6 +3,7 @@
 
 PORTNAME=		radicale
 PORTVERSION=		0.8
+PORTREVISION=		1
 CATEGORIES=		www python
 MASTER_SITES=		CHEESESHOP
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +30,7 @@ HTTP_DESC=		HTTP authentication support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHTTP}
-RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}requests>=0:${PORTSDIR}/www/py-requests
+RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}requests1>=0:${PORTSDIR}/www/py-requests1
 USE_PYTHON=		2
 .endif
 

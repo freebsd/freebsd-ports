@@ -4,6 +4,7 @@
 
 PORTNAME=	stripe
 PORTVERSION=	1.9.8
+PORTREVISION=	1
 CATEGORIES=	finance python
 MASTER_SITES=	https://code.stripe.com/stripe/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ COMMENT=	Python bindings for the Stripe.com payment system
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0.8.8:${PORTSDIR}/www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests1>=0.8.8:${PORTSDIR}/www/py-requests1
 TEST_DEPENDS:=	${RUN_DEPENDS}
 
 USE_PYTHON=		yes

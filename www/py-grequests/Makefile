@@ -3,6 +3,7 @@
 
 PORTNAME=	grequests
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +13,7 @@ COMMENT=	Requests with Gevent to make asyncronous HTTP requests
 LICENSE=	BSD
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent>0:${PORTSDIR}/devel/py-gevent \
-		${PYTHON_PKGNAMEPREFIX}requests>=1.0.0:${PORTSDIR}/www/py-requests
+		${PYTHON_PKGNAMEPREFIX}requests1>=1.0.0:${PORTSDIR}/www/py-requests1
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	kennethreitz
