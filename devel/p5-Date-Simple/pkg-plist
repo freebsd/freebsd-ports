@@ -1,3 +1,8 @@
+%%PERL5_MAN3%%/Date::Simple.3.gz
+%%PERL5_MAN3%%/Date::Simple::D8.3.gz
+%%PERL5_MAN3%%/Date::Simple::Fmt.3.gz
+%%PERL5_MAN3%%/Date::Simple::ISO.3.gz
+%%PERL5_MAN3%%/Date::Simple::NoXS.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/Date/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Date/Simple/NoXS.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Date/Simple/ISO.pm
