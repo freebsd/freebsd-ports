@@ -1,7 +1,5 @@
-$FreeBSD$
-
---- Makefile.in.orig	Sat Aug 25 15:56:14 2001
-+++ Makefile.in	Tue Mar 16 17:58:19 2004
+--- ./Makefile.in.orig	2001-08-25 21:56:14.000000000 +0000
++++ ./Makefile.in	2014-01-28 15:44:55.000000000 +0000
 @@ -34,7 +34,7 @@
  ###	install			install htmlpty in system directories
  ###	install-exe		install only htmlpty executable
@@ -56,7 +54,7 @@ $FreeBSD$
  LIBS            = @LIBS@
  
  VPATH           = @srcdir@
-@@ -743,7 +743,7 @@
+@@ -743,32 +743,22 @@
  	$(ZOO) v htmlpty-$(VERSION).zoo >htmlpty-$(VERSION).zoo-lst
  	$(LN) htmlpty-$(VERSION).zoo htmlpty.zoo
  
@@ -65,35 +63,38 @@ $FreeBSD$
  
  ### Remove the old executable before installing the new one, so as to
  ### preserve the link to the old version.  We first rename the file
-@@ -755,20 +755,15 @@
- 		$(MV) $(BINDIR)/$(PROGRAM) $(BINDIR)/$(PROGRAM).tmp ; \
- 		$(RM) $(BINDIR)/$(PROGRAM).tmp ; \
- 	fi
+ ### before deleting it, to deal with systems that do not permit
+ ### deletion of an executable that is in use.
+ install-exe:
+-	if test -f $(BINDIR)/$(PROGRAM) ; \
+-	then \
+-		$(MV) $(BINDIR)/$(PROGRAM) $(BINDIR)/$(PROGRAM).tmp ; \
+-		$(RM) $(BINDIR)/$(PROGRAM).tmp ; \
+-	fi
 -	$(CP) htmlpty $(BINDIR)/$(PROGRAM)
 -	-$(CHMOD) 775 $(BINDIR)/$(PROGRAM)
 -	-$(RM) $(BINDIR)/$(PROGRAM)-$(VERSION)
 -	$(LN) $(BINDIR)/$(PROGRAM) $(BINDIR)/$(PROGRAM)-$(VERSION)
-+	$(INSTALL) -m 755 htmlpty $(BINDIR)/$(PROGRAM)
++	$(INSTALL) -m 755 htmlpty $(DESTDIR)$(BINDIR)/$(PROGRAM)
  
  install-man:
 -	-$(RM) $(MANDIR)/cat$(MANEXT)/$(PROGRAM).$(MANEXT)
 -	$(CP) htmlpty.man $(MANDIR)/man$(MANEXT)/$(PROGRAM).$(MANEXT)
 -	-$(CHMOD) 664 $(MANDIR)/man$(MANEXT)/$(PROGRAM).$(MANEXT)
--
++	-$(MKDIR) $(DESTDIR)$(MANDIR)/man$(MANEXT)
++	$(INSTALL_DATA) htmlpty.man $(DESTDIR)$(MANDIR)/man$(MANEXT)/$(PROGRAM).$(MANEXT)
+ 
 -install-lib:
 -	-$(MKDIR) $(LIBDIR)/$(PROGRAM)
 -	$(CP) Styles/catalog Styles/*.sty $(LIBDIR)/$(PROGRAM)/
 -	$(CHMOD) 664 $(LIBDIR)/$(PROGRAM)/*
-+	-$(MKDIR) $(MANDIR)/man$(MANEXT)
-+	$(INSTALL_DATA) htmlpty.man $(MANDIR)/man$(MANEXT)/$(PROGRAM).$(MANEXT)
-+
 +install-data:
-+	-$(MKDIR) $(DATADIR)/$(PROGRAM)
-+	$(INSTALL_DATA) Styles/catalog Styles/*.sty $(DATADIR)/$(PROGRAM)/
++	-$(MKDIR) $(DESTDIR)$(DATADIR)/$(PROGRAM)
++	$(INSTALL_DATA) Styles/catalog Styles/*.sty $(DESTDIR)$(DATADIR)/$(PROGRAM)/
  
  install-ftp:	htmlpty.tar htmlpty.zip htmlpty.zoo
  	$(TAR) tvf htmlpty-$(VERSION).tar >$(FTPDIR)/htmlpty-$(VERSION).tar-lst
-@@ -827,14 +822,14 @@
+@@ -827,14 +817,14 @@
  test-version:
  	@echo "Version number is ""'"$(VERSION)"'"
  
