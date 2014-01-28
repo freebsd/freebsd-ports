@@ -30,40 +30,20 @@ SCRIPTS=	chromeclock chromeclock_L crystalclock crystalclock_L \
 TEXTURES=	light.ppm marble.ppm sky.ppm wood.ppm detail.pgm \
 		detail2.pgm detail_b.pgm filter.pgm
 
-PLIST_FILES=
-.for f in ${PROGRAMS}
-PLIST_FILES+=	bin/${f}
-.endfor
-.for f in ${SCRIPTS}
-PLIST_FILES+=	bin/${f}
-.endfor
-.for f in ${TEXTURES}
-PLIST_FILES+=	lib/X11/glclock/${f}
-.endfor
-
+PLIST_FILES=	${PROGRAMS:S,^,bin/,} ${SCRIPTS:S,^,bin/,} \
+		${TEXTURES:S,^,lib/X11/glclock/,}
 PLIST_DIRS=	lib/X11/glclock
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
-.if defined(WITH_OPTIMIZED_CFLAGS)
-CFLAGS+=	-O3 -fexpensive-optimizations \
-		-fomit-frame-pointer -fforce-mem -fforce-addr
-.if (${ARCH} != "alpha")
-CFLAGS+=	-ffast-math
-.endif
-.endif
+OPTIMIZED_CFLAGS_CFLAGS=	-O3 -fexpensive-optimizations \
+		-ffast-math -fomit-frame-pointer -fforce-mem -fforce-addr
 
 do-install:
-.for f in ${PROGRAMS}
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
-.endfor
-.for f in ${SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin
-.endfor
-	@${MKDIR} ${PREFIX}/lib/X11/glclock
-.for f in ${TEXTURES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/lib/X11/glclock
-.endfor
+	${INSTALL_PROGRAM} ${PROGRAMS:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/glclock
+	${INSTALL_DATA} ${TEXTURES:S,^,${WRKSRC}/,} \
+		${STAGEDIR}${PREFIX}/lib/X11/glclock
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
