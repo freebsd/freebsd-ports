@@ -16,6 +16,8 @@ RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
 		sqlite3:${PORTSDIR}/databases/sqlite3
 LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
 
+IGNORE=		Fails to work properly
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	olevole
 GH_PROJECT=	cbsd
