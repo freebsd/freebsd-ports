@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libIL.so:${PORTSDIR}/graphics/devil \
 		libprotobuf.so:${PORTSDIR}/devel/protobuf \
-		libglfw.so:${PORTSDIR}/graphics/glfw \
+		libglfw.so:${PORTSDIR}/graphics/glfw2 \
 		libHalf.so:${PORTSDIR}/graphics/ilmbase \
 		libftgl.so:${PORTSDIR}/graphics/ftgl \
 		libsigc-2.0.so:${PORTSDIR}/devel/libsigc++20
