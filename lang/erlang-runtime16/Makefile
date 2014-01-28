@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	erlang
-PORTVERSION=	16.b.03
+PORTVERSION=	16.b.03.1
 CATEGORIES=	lang parallel java
 MASTER_SITES=	http://www.erlang.org/download/:erlangorg		\
 		http://erlang.stacken.kth.se/download/:erlangorg	\
@@ -19,7 +19,7 @@ PATCH_SITES=	http://www.erlang.org/download
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A functional programming language from Ericsson
 
-WRKSRC=		${WRKDIR}/otp_src_R16B03
+WRKSRC=		${WRKDIR}/otp_src_${ERL_RELEASE}
 
 ERLANG_LIB=	${PORTNAME}${PORTVERSION:C/\..*//}
 
@@ -44,7 +44,7 @@ DTRACE_DESC=	Enable DTrace support (experimental)
 
 OPTIONS_DEFAULT=SMP OPENSSL THREADS SCTP KQUEUE
 
-ERL_RELEASE=	R${PORTVERSION:S/.//g:U}
+ERL_RELEASE=	R${PORTVERSION:S/.//g:U:S/1$/-1/}
 
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
@@ -167,7 +167,7 @@ MAKE_ARGS+=	ARCH=x86
 # links in the documentation.
 
 post-install:
-	@for SECTION in 1 3 4 6 7; do \
+	for SECTION in 1 3 4 6 7; do \
 		${TAR} --unlink -xzpf ${DISTDIR}/${DIST_SUBDIR}/${ERLANG_MAN} \
 			-C ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB} \
 			"man/man$${SECTION}/*.$${SECTION}" || ${TRUE}; \
