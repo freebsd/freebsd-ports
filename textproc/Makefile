@@ -31,6 +31,7 @@
     SUBDIR += asciidoc
     SUBDIR += asm-xml
     SUBDIR += aspell
+    SUBDIR += aspell-ispell
     SUBDIR += ast-aspell
     SUBDIR += atom
     SUBDIR += ats-contrib-parcomb

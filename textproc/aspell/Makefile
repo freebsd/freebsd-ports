@@ -3,20 +3,17 @@
 
 PORTNAME=	aspell
 PORTVERSION=	0.60.6.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	aspell
+MASTER_SITES=	GNU/aspell
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Spelling checker with better suggestion logic than ispell
 
 LICENSE=	LGPL21
 
-OPTIONS_DEFINE=	NLS DOCS ISPELL
+OPTIONS_DEFINE=	NLS DOCS
 OPTIONS_SUB=	yes
-
-ISPELL_DESC=	Install the ispell wrapper
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-dict-dir=${DATADIR}	\
@@ -28,6 +25,7 @@ USES=		gmake iconv perl5 shebangfix
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	scripts/aspell-import
 
+INSTALL_TARGET=	install-strip
 VERINST=	${PORTVERSION:R:R}
 SUB_FILES=	aspell.ver
 PLIST_SUB=	VER=${VERINST}
@@ -35,28 +33,16 @@ SUB_LIST=	VERINST=${VERINST}
 INFO=	aspell-dev aspell
 
 NLS_USES=		gettext
-NLS_CONFIGURE_ARGS=	--disable-nls
+NLS_CONFIGURE_ENABLE=	nls
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MISPELL}
-CONFLICTS+=	ispell* ??-ispell*
-SCRIPTS=	ispell spell
-.endif
 
 # Does not link without at least -O
 .if !defined(CFLAGS) || ${CFLAGS:M-O*} == ""
 CFLAGS+=		-O
 .endif
 
-post-install:	${DICT_TARGET}
+post-install:
 	@${INSTALL_DATA} ${WRKDIR}/aspell.ver ${STAGEDIR}${PREFIX}/etc
-.if ${PORT_OPTIONS:MISPELL}
-	@${INSTALL_SCRIPT} ${SCRIPTS:S|^|${WRKSRC}/scripts/|} ${STAGEDIR}${PREFIX}/bin
-.endif
-	@${ECHO_CMD} "@dirrm share/aspell" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrm lib/aspell-${VERINST}" >> ${TMPPLIST}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libaspell.so.16 \
-		${STAGEDIR}${PREFIX}/lib/libpspell.so.16
 
 .include <bsd.port.mk>
