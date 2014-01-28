@@ -1,5 +1,6 @@
 bin/wget
 etc/wgetrc.sample
+man/man1/wget.1.gz
 %%NLS%%share/locale/be/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/wget.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/wget.mo
