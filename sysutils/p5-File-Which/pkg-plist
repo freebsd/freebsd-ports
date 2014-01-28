@@ -1,4 +1,6 @@
 bin/pwhich
+%%PERL5_MAN3%%/File::Which.3.gz
+man/man1/pwhich.1.gz
 %%SITE_PERL%%/File/Which.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Which/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Which
