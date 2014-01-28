@@ -10,6 +10,7 @@
 .if !defined(_INCLUDE_USES_LIBTOOL_MK)
 _INCLUDE_USES_LIBTOOL_MK=	yes
 _USES_POST+=	libtool
+libtool_ARGS?=
 .endif
 
 .if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_LIBTOOL_POST_MK)
@@ -21,7 +22,7 @@ patch-libtool:
 		-e '/link_all_deplibs=/s/=unknown/=no/'			\
 		-e '/objformat=/s/echo aout/echo elf/'
 
-.if "${libtool_ARGS}" != oldver
+.if ! ${libtool_ARGS:Moldver}
 	@${FIND} ${WRKDIR} -type f -name configure |			\
 		${XARGS} ${REINPLACE_CMD}				\
 		-e "/freebsd-elf\*)/,+1 s/library_names_spec=.*/	\
