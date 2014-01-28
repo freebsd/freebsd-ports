@@ -3,6 +3,7 @@
 
 PORTNAME=	capstone
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +13,8 @@ MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Python bindings for the Capstone Disassembly Engine
 
 LICENSE=	BSD3CLAUSE
+
+LIB_DEPENDS=	libcapstone.so:${PORTSDIR}/devel/capstone
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
