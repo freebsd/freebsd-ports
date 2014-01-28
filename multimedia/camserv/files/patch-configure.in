@@ -1,5 +1,5 @@
---- configure.in.orig	Sun May 12 20:06:12 2002
-+++ configure.in	Fri Mar 19 19:26:43 2004
+--- configure.in.orig	2002-05-13 03:06:12.000000000 +0900
++++ configure.in	2014-01-04 04:57:50.000000000 +0900
 @@ -12,12 +12,12 @@
  AM_ACLOCAL_INCLUDE(macros)
  
@@ -25,3 +25,12 @@
  		 GDKPIXBUF_CFLAGS=`$GDKPIXBUF_CONFIG --cflags`
  		 GDKPIXBUF_LIBS=`$GDKPIXBUF_CONFIG --libs`
  		 CFLAGS="$CFLAGS $GDKPIXBUF_CFLAGS"
+@@ -93,7 +93,7 @@
+ [video_v4l=yes],[video_v4l=no])
+ AM_CONDITIONAL(VIDEO_V4L, test $video_v4l = yes)
+ 
+-AC_CHECK_HEADERS(machine/ioctl_bt848.h,
++AC_CHECK_HEADERS(dev/bktr/ioctl_bt848.h,
+ [video_fbsd_bttv=yes],[video_fbsd_bttv=no])
+ AM_CONDITIONAL(VIDEO_FBSD_BTTV, test $video_fbsd_bttv = yes)
+ 
