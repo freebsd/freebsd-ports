@@ -12,10 +12,11 @@ USE_FPC=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR+=	${WRKUNITDIR}
+EXTRACTUNITDIR=	${WRKUNITDIR}
 
 OPTIONS_DEFINE=	ODBC
 ODBC_DESC=	Install ODBC library suite for Unix
 
-NO_STAGE=	yes
+ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+
 .include "${MASTERDIR}/Makefile"

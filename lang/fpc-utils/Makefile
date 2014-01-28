@@ -12,7 +12,7 @@ USE_FPC=	chm fcl-base fcl-net fcl-process fcl-res fppkg libcurl
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR+=	${WRKUNITDIR}
+EXTRACTUNITDIR=	${WRKUNITDIR}
+OPT=		-Fu../fcl/*
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

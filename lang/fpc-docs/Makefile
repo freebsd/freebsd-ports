@@ -24,13 +24,8 @@ DOCSDIR=	${PREFIX}/share/doc/fpdocs-${PORTVERSION}
 PORTDOCS=	chart.pdf fcl.pdf fpdoc.pdf prog.pdf ref.pdf rtl.pdf user.pdf
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKDIR}/doc && \
-		${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${DOCSDIR}/{}" \;
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKDIR}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

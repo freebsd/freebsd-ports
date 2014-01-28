@@ -12,7 +12,6 @@ USE_FPC=	x11 sdl pthreads
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR+=	${WRKUNITDIR}
+EXTRACTUNITDIR=	${WRKUNITDIR}
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

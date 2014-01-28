@@ -12,11 +12,12 @@ USE_FPC=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR+=	${WRKUNITDIR}
+EXTRACTUNITDIR=	${WRKUNITDIR}
 
 OPTIONS_DEFINE=	X11
 X11_DESC=	Install X libraries
 OPTIONS_DEFAULT=	X11
 
-NO_STAGE=	yes
+X11_USE=	XORG=xcursor,xfont,xxf86dga,xxf86vm,xi,xinerama,xkbfile,xrandr,xrender,xres,xv
+
 .include "${MASTERDIR}/Makefile"

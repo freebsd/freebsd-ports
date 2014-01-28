@@ -12,10 +12,11 @@ USE_FPC=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR+=	${WRKUNITDIR}
+EXTRACTUNITDIR=	${WRKUNITDIR}
 
 OPTIONS_DEFINE=	SVGA
 SVGA_DESC=	Install svgalib low level console graphics library
 
-NO_STAGE=	yes
+SVGA_LIB_DEPENDS=	libvga.so:${PORTSDIR}/graphics/svgalib
+
 .include "${MASTERDIR}/Makefile"

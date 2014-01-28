@@ -15,6 +15,8 @@ COMMENT=	A meta port to install Free Pascal units
 
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
+NO_INSTALL=	yes
+NO_MTREE=	yes
 
 BUILDNAME=	${ARCH}-freebsd
 
@@ -105,7 +107,6 @@ ZLIB_DESC=	Interface to the zlib compression library
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 OPTIONS_DEFAULT=A52 ASPELL BFD BZIP2 CAIRO CHM DBUS DBLIB DTS FASTCGI FCL-ASYNC FCL-BASE \
@@ -124,8 +125,5 @@ UNITS_SELECTED+=	${OPT:L}
 .	endif
 .endfor
 USE_FPC=	${UNITS_SELECTED}
-
-do-install: build
-	@${DO_NADA}
 
 .include <bsd.port.mk>
