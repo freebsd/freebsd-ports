@@ -25,9 +25,11 @@ RUN_DEPENDS=	onsgmls:${PORTSDIR}/textproc/opensp \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML
 
-USES=		perl5
+USES=		perl5 shebangfix
 NO_BUILD=	yes
 USE_PERL5=	run
+SHEBANG_FILES=	httpd/cgi-bin/check \
+		httpd/cgi-bin/sendfeedback.pl
 
 SUB_FILES=	pkg-message validator.conf.sample
 
@@ -35,12 +37,7 @@ OPTIONS_DEFINE=	HTML_TIDY
 OPTIONS_DEFAULT=HTML_TIDY
 HTML_TIDY_DESC=	Enable HTML Markup Cleaning
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MHTML_TIDY}
-RUN_DEPENDS+=	p5-HTML-Tidy>=0:${PORTSDIR}/textproc/p5-HTML-Tidy
-.endif
+HTML_TIDY_RUN_DEPENDS=	p5-HTML-Tidy>=0:${PORTSDIR}/textproc/p5-HTML-Tidy
 
 post-extract:
 	@${RM} ${WRKSRC}/README.cvs
@@ -49,17 +46,14 @@ post-extract:
 	@${RM} ${WRKSRC}/htdocs/config/validator.conf
 
 pre-install:
-	@${CP} ${WRKDIR}/validator.conf.sample ${WRKSRC}/htdocs/config/
+	${CP} -f ${WRKDIR}/validator.conf.sample ${WRKSRC}/htdocs/config/
 
 do-install:
-	${MKDIR} ${PREFIX}/www/validator/htdocs
-	${MKDIR} ${PREFIX}/www/validator/httpd/cgi-bin
-	${MKDIR} ${PREFIX}/www/validator/share
-	(cd ${WRKSRC}/htdocs && ${COPYTREE_SHARE} \* ${PREFIX}/www/validator/htdocs/)
-	${INSTALL_SCRIPT} ${WRKSRC}/httpd/cgi-bin/* ${PREFIX}/www/validator/httpd/cgi-bin
-	(cd ${WRKSRC}/share && ${COPYTREE_SHARE} \* ${PREFIX}/www/validator/share/)
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/validator/htdocs
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/validator/httpd/cgi-bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/www/validator/share
+	(cd ${WRKSRC}/htdocs && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/www/validator/htdocs/)
+	${INSTALL_SCRIPT} ${WRKSRC}/httpd/cgi-bin/* ${STAGEDIR}${PREFIX}/www/validator/httpd/cgi-bin
+	(cd ${WRKSRC}/share && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/www/validator/share/)
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
