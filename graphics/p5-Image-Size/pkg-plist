@@ -1,4 +1,6 @@
 bin/imgsize
+%%PERL5_MAN3%%/Image::Size.3.gz
+man/man1/imgsize.1.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Size/.packlist
 %%SITE_PERL%%/Image/Size.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Size
