@@ -11,10 +11,12 @@ bin/htnotify
 bin/htpurge
 bin/htstat
 bin/rundig
-etc/htdig/HtFileType-magic.mime
-etc/htdig/cookies.txt
-etc/htdig/htdig.conf.sample
-etc/htdig/mime.types
+%%ETCDIR%%/HtFileType-magic.mime
+%%ETCDIR%%/cookies.txt
+@unexec if cmp -s %D/%%ETCDIR%%/htdig.conf.sample %D/%%ETCDIR%%/htdig.conf; then rm -f %D/%%ETCDIR%%/htdig.conf; fi
+%%ETCDIR%%/htdig.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/htdig.conf ] ; then cp -p %D/%F %B/htdig.conf; fi
+%%ETCDIR%%/mime.types
 include/htdig/Configuration.h
 include/htdig/Connection.h
 include/htdig/DB2_db.h
@@ -155,6 +157,18 @@ lib/htdig_db/libhtdb-3.2.0.so
 lib/htdig_db/libhtdb.a
 lib/htdig_db/libhtdb.la
 lib/htdig_db/libhtdb.so
+man/man1/htdig-pdfparser.1.gz
+man/man1/htdig.1.gz
+man/man1/htdump.1.gz
+man/man1/htfuzzy.1.gz
+man/man1/htload.1.gz
+man/man1/htmerge.1.gz
+man/man1/htnotify.1.gz
+man/man1/htpurge.1.gz
+man/man1/htsearch.1.gz
+man/man1/htstat.1.gz
+man/man1/rundig.1.gz
+man/man8/htdigconfig.8.gz
 %%DATADIR%%/common/bad_words
 %%DATADIR%%/common/english.0
 %%DATADIR%%/common/english.aff
@@ -199,78 +213,15 @@ www/icons/htdig/star.gif
 www/icons/htdig/star.png
 www/icons/htdig/star_blank.gif
 www/icons/htdig/star_blank.png
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.0
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/STATUS
-%%PORTDOCS%%%%DOCSDIR%%/html/FAQ.html
-%%PORTDOCS%%%%DOCSDIR%%/html/RELEASE.html
-%%PORTDOCS%%%%DOCSDIR%%/html/THANKS.html
-%%PORTDOCS%%%%DOCSDIR%%/html/TODO.html
-%%PORTDOCS%%%%DOCSDIR%%/html/all.html
-%%PORTDOCS%%%%DOCSDIR%%/html/attrs.html
-%%PORTDOCS%%%%DOCSDIR%%/html/attrs_head.html
-%%PORTDOCS%%%%DOCSDIR%%/html/attrs_tail.html
-%%PORTDOCS%%%%DOCSDIR%%/html/author.html
-%%PORTDOCS%%%%DOCSDIR%%/html/bdot.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/bugs.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cf_blocks.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cf_byname.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cf_byname_head.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cf_byname_tail.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cf_byprog.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cf_byprog_head.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cf_byprog_tail.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cf_general.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cf_types.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cf_variables.html
-%%PORTDOCS%%%%DOCSDIR%%/html/config.html
-%%PORTDOCS%%%%DOCSDIR%%/html/confindex.html
-%%PORTDOCS%%%%DOCSDIR%%/html/confmenu.html
-%%PORTDOCS%%%%DOCSDIR%%/html/contents.html
-%%PORTDOCS%%%%DOCSDIR%%/html/dot.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/htdig.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/htdig.html
-%%PORTDOCS%%%%DOCSDIR%%/html/htdig_big.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/htdump.html
-%%PORTDOCS%%%%DOCSDIR%%/html/htfuzzy.html
-%%PORTDOCS%%%%DOCSDIR%%/html/htload.html
-%%PORTDOCS%%%%DOCSDIR%%/html/htmerge.html
-%%PORTDOCS%%%%DOCSDIR%%/html/htnotify.html
-%%PORTDOCS%%%%DOCSDIR%%/html/htpurge.html
-%%PORTDOCS%%%%DOCSDIR%%/html/hts_form.html
-%%PORTDOCS%%%%DOCSDIR%%/html/hts_general.html
-%%PORTDOCS%%%%DOCSDIR%%/html/hts_menu.html
-%%PORTDOCS%%%%DOCSDIR%%/html/hts_method.html
-%%PORTDOCS%%%%DOCSDIR%%/html/hts_selectors.html
-%%PORTDOCS%%%%DOCSDIR%%/html/hts_templates.html
-%%PORTDOCS%%%%DOCSDIR%%/html/htsearch.html
-%%PORTDOCS%%%%DOCSDIR%%/html/htstat.html
-%%PORTDOCS%%%%DOCSDIR%%/html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/install.html
-%%PORTDOCS%%%%DOCSDIR%%/html/isp.html
-%%PORTDOCS%%%%DOCSDIR%%/html/ma_menu.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mailarchive.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mailing.html
-%%PORTDOCS%%%%DOCSDIR%%/html/main.html
-%%PORTDOCS%%%%DOCSDIR%%/html/meta.html
-%%PORTDOCS%%%%DOCSDIR%%/html/notification.html
-%%PORTDOCS%%%%DOCSDIR%%/html/require.html
-%%PORTDOCS%%%%DOCSDIR%%/html/rundig.html
-%%PORTDOCS%%%%DOCSDIR%%/html/running.html
-%%PORTDOCS%%%%DOCSDIR%%/html/triangle.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/up.gif
-%%PORTDOCS%%%%DOCSDIR%%/html/upgrade.html
-%%PORTDOCS%%%%DOCSDIR%%/html/uses.html
-%%PORTDOCS%%%%DOCSDIR%%/html/where.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm include/htdig
-@dirrm include/htdig_db
-@dirrm lib/htdig
-@dirrm lib/htdig_db
-@dirrm www/icons/htdig
-@dirrmtry %%DATADIR%%/common
+@dirrmtry www/icons/htdig
+@dirrmtry www/icons
+@dirrmtry www/data
+@dirrmtry www/cgi-bin
 @dirrmtry %%DATADIR%%/database
+@dirrmtry %%DATADIR%%/common
 @dirrmtry %%DATADIR%%
-@dirrmtry etc/htdig
+@dirrmtry lib/htdig_db
+@dirrmtry lib/htdig
+@dirrmtry include/htdig_db
+@dirrmtry include/htdig
+@dirrmtry %%ETCDIR%%
