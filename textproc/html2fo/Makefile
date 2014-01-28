@@ -14,8 +14,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/html2fo ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/html2fo ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
