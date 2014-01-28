@@ -1,0 +1,9 @@
+A port of BrowserScope's user agent string parser.
+
+The crux of the original parser -- the data collected by Steve Souders over
+the years -- has been extracted into a separate YAML file so as to be reusable
+as is by implementations in other programming languages.
+
+ua-parser is just a small wrapper around this data.
+
+WWW: https://github.com/tobie/ua-parser
