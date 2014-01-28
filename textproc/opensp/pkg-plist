@@ -151,36 +151,6 @@ lib/libosp.so.5
 %%NLS%%share/locale/ja/LC_MESSAGES/sp5.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/sp5.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/sp5.mo
-@comment the following lines used for installation of doc files
-@comment INSTALL_DATA: doc/archform.htm %%DOCSDIR%%/archform.htm
-@comment INSTALL_DATA: doc/autoconf.htm %%DOCSDIR%%/autoconf.htm
-@comment INSTALL_DATA: doc/build.htm %%DOCSDIR%%/build.htm
-@comment INSTALL_DATA: doc/catalog.htm %%DOCSDIR%%/catalog.htm
-@comment INSTALL_DATA: doc/charset.htm %%DOCSDIR%%/charset.htm
-@comment INSTALL_DATA: doc/features.htm %%DOCSDIR%%/features.htm
-@comment INSTALL_DATA: doc/generic.htm %%DOCSDIR%%/generic.htm
-@comment INSTALL_DATA: doc/ideas.htm %%DOCSDIR%%/ideas.htm
-@comment INSTALL_DATA: doc/index.htm %%DOCSDIR%%/index.htm
-@comment INSTALL_DATA: doc/new.htm %%DOCSDIR%%/new.htm
-@comment INSTALL_DATA: doc/nsgmls.htm %%DOCSDIR%%/nsgmls.htm
-@comment INSTALL_DATA: doc/sgmldecl.htm %%DOCSDIR%%/sgmldecl.htm
-@comment INSTALL_DATA: doc/sgmlnorm.htm %%DOCSDIR%%/sgmlnorm.htm
-@comment INSTALL_DATA: doc/sgmlsout.htm %%DOCSDIR%%/sgmlsout.htm
-@comment INSTALL_DATA: doc/spam.htm %%DOCSDIR%%/spam.htm
-@comment INSTALL_DATA: doc/spcat.htm %%DOCSDIR%%/spcat.htm
-@comment INSTALL_DATA: doc/spent.htm %%DOCSDIR%%/spent.htm
-@comment INSTALL_DATA: doc/sx.htm %%DOCSDIR%%/sx.htm
-@comment INSTALL_DATA: doc/sysdecl.htm %%DOCSDIR%%/sysdecl.htm
-@comment INSTALL_DATA: doc/sysid.htm %%DOCSDIR%%/sysid.htm
-@comment INSTALL_DATA: doc/xml.htm %%DOCSDIR%%/xml.htm
-@comment INSTALL_DATA: doc/xmlwarn.htm %%DOCSDIR%%/xmlwarn.htm
-@comment INSTALL_DATA: NEWS %%DOCSDIR%%/NEWS
-@comment INSTALL_DATA: AUTHORS %%DOCSDIR%%/AUTHORS
-@comment INSTALL_DATA: README %%DOCSDIR%%/README
-@comment INSTALL_DATA: ABOUT-NLS %%DOCSDIR%%/ABOUT-NLS
-@comment INSTALL_DATA: BUGS %%DOCSDIR%%/BUGS
-@comment INSTALL_DATA: COPYING %%DOCSDIR%%/COPYING
-@comment INSTALL_DATA: ChangeLog %%DOCSDIR%%/ChangeLog
 share/sgml/openjade/OpenSP/HTML32.dcl
 share/sgml/openjade/OpenSP/HTML32.dtd
 share/sgml/openjade/OpenSP/HTML32.soc
