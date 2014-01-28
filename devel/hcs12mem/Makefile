@@ -9,11 +9,11 @@ MASTER_SITES=	SF
 MAINTAINER=	mk@capri.pl
 COMMENT=	Software to manipulate EEPROM/FLASH memory
 
-GNU_CONFIGURE=		yes
-USE_GMAKE=		yes
-MANCOMPRESSED=		no
+OPTIONS_DEFINE=	DOCS
 
-MAN1=		hcs12mem.1
+USES=		gmake
+GNU_CONFIGURE=	yes
+
 DOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 DATS=	mc9s12a32.dat mc9s12a64.dat mc9s12a128.dat \
 	mc9s12a256.dat mc9s12a512.dat mc9s12d32.dat \
@@ -26,14 +26,12 @@ DATS=	mc9s12a32.dat mc9s12a64.dat mc9s12a128.dat \
 	mc9s12h256.dat mc9s12ne64.dat mc9s12uf32.dat \
 	mc9s12xd256.dat mc9s12xd512.dat
 
-NO_STAGE=	yes
 do-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-.endif
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${DATS:S,^,${WRKSRC}/target/,} ${DATADIR}/
-	@${INSTALL_MAN}	${MAN1:S,^,${WRKSRC}/doc/,} ${MAN1PREFIX}/man/man1
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${DATS:S,^,${WRKSRC}/target/,} ${STAGEDIR}${DATADIR}/
+	${INSTALL_MAN}	${WRKSRC}/doc/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+
 .include <bsd.port.mk>
