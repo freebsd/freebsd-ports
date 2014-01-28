@@ -283,8 +283,8 @@
     SUBDIR += pwcview
     SUBDIR += py-enzyme
     SUBDIR += py-ffmpeg
-    SUBDIR += py-guessit
     SUBDIR += py-gstreamer
+    SUBDIR += py-guessit
     SUBDIR += py-kaa-base
     SUBDIR += py-kaa-imlib2
     SUBDIR += py-kaa-metadata

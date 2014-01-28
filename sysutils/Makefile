@@ -107,8 +107,8 @@
     SUBDIR += cdroot
     SUBDIR += cdrtools
     SUBDIR += cdrtools-devel
-    SUBDIR += cfengine-devel
     SUBDIR += cfengine
+    SUBDIR += cfengine-devel
     SUBDIR += cfengine22
     SUBDIR += cfengine32
     SUBDIR += cfengine33
@@ -214,8 +214,8 @@
     SUBDIR += eiciel
     SUBDIR += eject
     SUBDIR += endian
-    SUBDIR += entr
     SUBDIR += enteruser
+    SUBDIR += entr
     SUBDIR += env4801
     SUBDIR += epylog
     SUBDIR += eroaster
@@ -370,8 +370,8 @@
     SUBDIR += hal-info
     SUBDIR += hardlink
     SUBDIR += hatop
-    SUBDIR += hdup
     SUBDIR += hdrecover
+    SUBDIR += hdup
     SUBDIR += healthd
     SUBDIR += heartbeat
     SUBDIR += heirloom
@@ -726,9 +726,9 @@
     SUBDIR += pstree
     SUBDIR += ptools
     SUBDIR += puppet
+    SUBDIR += puppet-lint
     SUBDIR += puppet-mode.el
     SUBDIR += puppet27
-    SUBDIR += puppet-lint
     SUBDIR += pv
     SUBDIR += pwd_unmkdb
     SUBDIR += pwgen
@@ -764,8 +764,8 @@
     SUBDIR += qsynergy
     SUBDIR += quicksynergy
     SUBDIR += qzeitgeist
-    SUBDIR += radeontool
     SUBDIR += racktables
+    SUBDIR += radeontool
     SUBDIR += radmind
     SUBDIR += raincoat
     SUBDIR += rclean
