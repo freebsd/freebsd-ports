@@ -12,8 +12,4 @@ COMMENT=	A nice Highlighting Hack for grep
 
 WRKSRC=		${WRKDIR}/hgrep
 
-MAN1=		hgrep.1
-MANCOMPRESSED=	no
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
