@@ -3,7 +3,7 @@
 
 PORTNAME=	buildbot
 PORTVERSION=	0.8.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	GOOGLE_CODE
 
@@ -24,17 +24,16 @@ TEST_DEPENDS:=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}twistedWeb>=9.0.0:${PORTSDIR}/www/py-twistedWeb \
 		${PYTHON_PKGNAMEPREFIX}twistedWords>=9.0.0:${PORTSDIR}/net-im/py-twistedWords
 
-USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
 USES=			twisted:run,conch,mail,web,words
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 MAKE_ENV+=		NO_INSTALL_REQS=1
 
 OPTIONS_DEFINE=		TESTS
 TESTS_DESC=		Install py-mock for test suite
-OPTIONSFILE?=		${PORT_DBDIR}/py-${PORTNAME}/options
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTESTS}
