@@ -114,4 +114,7 @@ post-patch:
 		s|$${libdir}/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile
 
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/x264
+
 .include <bsd.port.mk>
