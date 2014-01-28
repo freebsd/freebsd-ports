@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	shotwell
-PORTVERSION=	0.14.1
-PORTREVISION=	1
+PORTVERSION=	0.15.1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.yorba.org/download/shotwell/${PORTVERSION:R}/
 
@@ -15,16 +14,16 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	vala>=0.18.0:${PORTSDIR}/lang/vala \
 		bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib \
-		gee:${PORTSDIR}/devel/libgee06 \
-		json-glib-1.0:${PORTSDIR}/devel/json-glib \
-		soup-2.4:${PORTSDIR}/devel/libsoup \
-		gexiv2:${PORTSDIR}/graphics/gexiv2 \
-		exif:${PORTSDIR}/graphics/libexif \
-		gphoto2:${PORTSDIR}/graphics/libgphoto2 \
-		webkitgtk-3.0:${PORTSDIR}/www/webkit-gtk3 \
-		unique-1.0:${PORTSDIR}/x11-toolkits/unique \
-		raw:${PORTSDIR}/graphics/libraw \
-		rest:${PORTSDIR}/devel/librest
+		libgee-0.8.so:${PORTSDIR}/devel/libgee \
+		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib \
+		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
+		libgexiv2.so:${PORTSDIR}/graphics/gexiv2 \
+		libexif.so:${PORTSDIR}/graphics/libexif \
+		libgphoto2.so:${PORTSDIR}/graphics/libgphoto2 \
+		libwebkitgtk-3.0.so:${PORTSDIR}/www/webkit-gtk3 \
+		libunique-1.0.so:${PORTSDIR}/x11-toolkits/unique \
+		libraw.so:${PORTSDIR}/graphics/libraw \
+		librest-0.7.so:${PORTSDIR}/devel/librest
 
 USE_XZ=		yes
 USES=		shebangfix gettext desktop-file-utils gmake pkgconfig
@@ -36,11 +35,21 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-icon-update
 CONFIGURE_ENV+=	--define=NO_CAMERA
 INSTALLS_ICONS=	yes
 
+OPTIONS_DEFINE=	OPENMP
+OPTIONS_DEFAULT=
+OPENMP_DESC=	libraw uses OpenMP (implies GCC 4.6+)
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MOPENMP}
+USE_GCC=	yes
+LDFLAGS+=	-lc++
+.endif
+
 SHEBANG_FILES=	${WRKSRC}/${CONFIGURE_SCRIPT} ${WRKSRC}/chkver
 
 GLIB_SCHEMAS=	org.yorba.shotwell.gschema.xml org.yorba.shotwell-extras.gschema.xml
 
-NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} -E \
 		-e 's|share/shotwell|${DATADIR_REL}|g' \
