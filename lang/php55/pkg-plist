@@ -258,9 +258,9 @@ man/man1/phpize.1.gz
 @dirrmtry include/php/ext
 @dirrm include/php/main/streams
 @dirrm include/php/main
-@dirrm include/php/sapi/cli
+%%CLI%%@dirrm include/php/sapi/cli
 %%EMBED%%@dirrm include/php/sapi/embed
-@dirrm include/php/sapi
+%%SAPI_INC%%@dirrm include/php/sapi
 @dirrmtry include/php
 @dirrm lib/php/build
 @dirrmtry lib/php

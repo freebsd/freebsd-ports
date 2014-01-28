@@ -39,6 +39,7 @@ USE_GNOME=	libxml2
 
 OPTIONS_DEFINE=	CLI CGI FPM APACHE AP2FILTER EMBED DEBUG DTRACE IPV6 MAILHEAD LINKTHR ZTS
 OPTIONS_DEFAULT=CLI CGI IPV6 LINKTHR
+OPTIONS_SUB=	yes
 
 CLI_DESC=	Build CLI version
 CGI_DESC=	Build CGI version
@@ -71,17 +72,13 @@ PATCH_SITES+=	http://choon.net/opensource/php/:mail
 
 .if ${PORT_OPTIONS:MCLI}
 PHP_SAPI+=	cli
-PLIST_SUB+=	CLI=""
 .else
-PLIST_SUB+=	CLI="@comment "
 CONFIGURE_ARGS+=--disable-cli
 .endif
 
 .if ${PORT_OPTIONS:MCGI}
 PHP_SAPI+=	cgi
-PLIST_SUB+=	CGI=""
 .else
-PLIST_SUB+=	CGI="@comment "
 CONFIGURE_ARGS+=--disable-cgi
 .endif
 
@@ -91,9 +88,6 @@ USE_RC_SUBR+=	php-fpm
 CONFIGURE_ARGS+=--enable-fpm \
 		--with-fpm-user=${WWWOWN} \
 		--with-fpm-group=${WWWGRP}
-PLIST_SUB+=	FPM=""
-.else
-PLIST_SUB+=	FPM="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MAPACHE} && ${PORT_OPTIONS:MEMBED}
@@ -112,17 +106,17 @@ CONFIGURE_ARGS+=--with-apxs2=${APXS}
 PKGMESSAGE=	${PKGDIR}/pkg-message.mod
 MODULENAME=	libphp5
 SHORTMODNAME=	php5
-PLIST_SUB+=	APACHE=""
-.else
-PLIST_SUB+=	APACHE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MEMBED}
 PHP_SAPI+=	embed
 CONFIGURE_ARGS+=--enable-embed
-PLIST_SUB+=	EMBED=""
+.endif
+
+.if ${PORT_OPTIONS:MCLI} || ${PORT_OPTIONS:MEMBED}
+PLIST_SUB+=	SAPI_INC=""
 .else
-PLIST_SUB+=	EMBED="@comment "
+PLIST_SUB+=	SAPI_INC="@comment "
 .endif
 
 .if !defined(WITH_REGEX_TYPE) || ${WITH_REGEX_TYPE} == "php"
@@ -169,7 +163,6 @@ CONFIGURE_ARGS+=--disable-ipv6
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/ext/php_config.h
-	@${REINPLACE_CMD} -e 's|freetype/||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} "s|^\(extension_dir\)|; \1|" ${WRKSRC}/php.ini-*
 .if ${PORT_OPTIONS:MFPM}
 	@${REINPLACE_CMD} -e "s|^;\(pid\)|\1|;s|^;\(pm\.[a-z_]*_servers\)|\1|" \
