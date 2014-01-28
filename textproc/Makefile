@@ -507,9 +507,9 @@
     SUBDIR += p5-Dev-Bollocks
     SUBDIR += p5-Devel-TraceSAX
     SUBDIR += p5-DocSet
+    SUBDIR += p5-EBook-Tools
     SUBDIR += p5-ElasticSearch
     SUBDIR += p5-ElasticSearch-SearchBuilder
-    SUBDIR += p5-EBook-Tools
     SUBDIR += p5-Excel-Template
     SUBDIR += p5-Excel-Writer-XLSX
     SUBDIR += p5-File-Inplace

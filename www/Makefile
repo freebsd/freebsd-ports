@@ -697,8 +697,8 @@
     SUBDIR += p5-CGI-Session
     SUBDIR += p5-CGI-Session-ExpireSessions
     SUBDIR += p5-CGI-Simple
-    SUBDIR += p5-CGI-Struct
     SUBDIR += p5-CGI-SpeedyCGI
+    SUBDIR += p5-CGI-Struct
     SUBDIR += p5-CGI-Thin
     SUBDIR += p5-CGI-Untaint
     SUBDIR += p5-CGI-Untaint-date
@@ -1665,9 +1665,9 @@
     SUBDIR += py-rackspace-monitoring
     SUBDIR += py-recaptcha
     SUBDIR += py-requests
-    SUBDIR += py-requests1
     SUBDIR += py-requests-oauth-hook
     SUBDIR += py-requests-oauthlib
+    SUBDIR += py-requests1
     SUBDIR += py-restclient
     SUBDIR += py-rhodecode
     SUBDIR += py-routes
@@ -1825,7 +1825,6 @@
     SUBDIR += rubygem-passenger
     SUBDIR += rubygem-rabbirack
     SUBDIR += rubygem-rack
-    SUBDIR += rubygem-rack15
     SUBDIR += rubygem-rack-accept
     SUBDIR += rubygem-rack-attack
     SUBDIR += rubygem-rack-cache
@@ -1835,6 +1834,7 @@
     SUBDIR += rubygem-rack-protection
     SUBDIR += rubygem-rack-ssl
     SUBDIR += rubygem-rack-test
+    SUBDIR += rubygem-rack15
     SUBDIR += rubygem-rails
     SUBDIR += rubygem-railties
     SUBDIR += rubygem-raindrops

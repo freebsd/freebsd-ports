@@ -7,12 +7,12 @@
     SUBDIR += adsuck
     SUBDIR += ares
     SUBDIR += autotrust
+    SUBDIR += bind-tools
     SUBDIR += bind10
     SUBDIR += bind96
     SUBDIR += bind98
     SUBDIR += bind99
     SUBDIR += bindgraph
-    SUBDIR += bind-tools
     SUBDIR += c-ares
     SUBDIR += checkdns
     SUBDIR += credns

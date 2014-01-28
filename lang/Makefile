@@ -271,14 +271,14 @@
     SUBDIR += pypy-devel
     SUBDIR += pypy3-devel
     SUBDIR += python
-    SUBDIR += python2
-    SUBDIR += python3
     SUBDIR += python-doc-html
     SUBDIR += python-doc-pdf-a4
     SUBDIR += python-doc-pdf-letter
     SUBDIR += python-doc-text
     SUBDIR += python-mode.el
+    SUBDIR += python2
     SUBDIR += python27
+    SUBDIR += python3
     SUBDIR += python31
     SUBDIR += python32
     SUBDIR += python33
