@@ -1,3 +1,14 @@
+%%PERL5_MAN3%%/Heap.3.gz
+%%PERL5_MAN3%%/Heap::Binary.3.gz
+%%PERL5_MAN3%%/Heap::Binomial.3.gz
+%%PERL5_MAN3%%/Heap::Elem.3.gz
+%%PERL5_MAN3%%/Heap::Elem::Num.3.gz
+%%PERL5_MAN3%%/Heap::Elem::NumRev.3.gz
+%%PERL5_MAN3%%/Heap::Elem::Ref.3.gz
+%%PERL5_MAN3%%/Heap::Elem::RefRev.3.gz
+%%PERL5_MAN3%%/Heap::Elem::Str.3.gz
+%%PERL5_MAN3%%/Heap::Elem::StrRev.3.gz
+%%PERL5_MAN3%%/Heap::Fibonacci.3.gz
 %%SITE_PERL%%/Heap.pm
 %%SITE_PERL%%/Heap/Binary.pm
 %%SITE_PERL%%/Heap/Binomial.pm
