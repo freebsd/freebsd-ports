@@ -5401,3 +5401,4 @@ net-mgmt/nagios-devel|net-mgmt/nagios|2014-01-25|Master site gone, outdated
 math/math/octave-forge-image-acquisition||2014-01-27|Depends on multimedia/libv4l which no longer has necessary headers
 lang/racket-textual|lang/racket-minimal|2014-01-27|Renamed upstream
 mail/pop-before-smtp||2014-01-27|Removed
+graphics/glfw-devel||2014-01-28|Removed
