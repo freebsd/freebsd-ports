@@ -18,15 +18,12 @@ PLIST_FILES=	sbin/gpart man/man8/gpart.8.gz
 CFLAGS+=	-std=c99
 
 OPTIONS_DEFINE=	STATIC
+STATIC_LDFLAGS=	-static
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} != "i386" && ${ARCH} != "alpha" && ${ARCH} != "amd64"
-BROKEN=		Only compiles on i386, amd64 and alpha.
-.endif
-
-.if ${PORT_OPTIONS:MSTATIC}
-LDFLAGS+=	-static
+.if ${ARCH} != "i386" && ${ARCH} != "amd64"
+BROKEN=		only compiles on i386 and amd64
 .endif
 
 .include <bsd.port.mk>
