@@ -1,0 +1,31 @@
+--- configure.bak	2013-03-26 21:08:51.000000000 +0100
++++ configure	2014-01-28 10:49:58.000000000 +0100
+@@ -5635,6 +5635,28 @@
+ fi
+ 
+ if test "x$found_strnvis" = xyes; then
++   { $as_echo "$as_me:${as_lineno-$LINENO}: checking if strnvis is broken" >&5
++$as_echo_n "checking if strnvis is broken... " >&6; }
++   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++/* end confdefs.h.  */
++#include <vis.h>
++
++_ACEOF
++if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
++  $EGREP "strnvis\(char \*, const char \*, size_t, int\)" >/dev/null 2>&1; then :
++  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
++$as_echo "no" >&6; }
++else
++  found_strnvis=no
++fi
++rm -f conftest*
++
++   if test "x$found_strnvis" = xno; then
++       { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++$as_echo "yes" >&6; }
++   fi
++fi
++if test "x$found_strnvis" = xyes; then
+ 	$as_echo "#define HAVE_VIS 1" >>confdefs.h
+ 
+ fi
