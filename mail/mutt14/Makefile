@@ -57,8 +57,8 @@ NO_STAGE=	yes
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 .if defined(PACKAGE_BUILDING) && !defined (MUTT_LITE)
 WITH_SLANG=	yes
-BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
-RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell \
+BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/aspell-ispell
+RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/aspell-ispell \
 		urlview:${PORTSDIR}/textproc/urlview
 .endif
 
