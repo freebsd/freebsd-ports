@@ -113,8 +113,8 @@ CONFIGURE_ARGS+=	--without-gzip
 .endif
 
 .if ${PORT_OPTIONS:MISPELL}
-BUILD_DEPENDS+=		${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
-RUN_DEPENDS+=		${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
+BUILD_DEPENDS+=		${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/aspell-ispell
+RUN_DEPENDS+=		${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/aspell-ispell
 CONFIGURE_ARGS+=	--with-ispell=${LOCALBASE}/bin/ispell
 .else
 CONFIGURE_ARGS+=	--without-ispell

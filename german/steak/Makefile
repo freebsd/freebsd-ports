@@ -3,7 +3,7 @@
 
 PORTNAME=	steak
 PORTVERSION=	1.7.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	german
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Steak%20${PORTVERSION} \
 		http://www.tm.informatik.uni-frankfurt.de/%7Erazi/steak/program/
@@ -12,7 +12,7 @@ DISTNAME=	Steak.${PORTVERSION}
 MAINTAINER=	conrads@cox.net
 COMMENT=	English <-> German dictionary under the GPL
 
-RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/aspell-ispell
 
 USE_XORG=	xt
 MAKE_JOBS_UNSAFE=	yes
