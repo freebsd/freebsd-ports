@@ -23,8 +23,4 @@ TEST_DEPENDS=	p5-Web-Query>=0:${PORTSDIR}/www/p5-Web-Query
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		HTML::TreeBuilder::LibXML::Node.3 \
-		HTML::TreeBuilder::LibXML.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
