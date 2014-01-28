@@ -14,14 +14,12 @@ RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/netrik
-
-MAN1=		netrik.1
-MAN5=		netrikrc.5
+PLIST_FILES=	bin/netrik \
+		man/man1/netrik.1.gz \
+		man/man5/netrikrc.5.gz
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} "s/#include <ncursesw\//#include </" \
 		${WRKSRC}/*.c
