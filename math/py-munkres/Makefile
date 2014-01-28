@@ -21,5 +21,4 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/munkres.py \
 		%%PYTHON_SITELIBDIR%%/munkres.pyc \
 		%%PYTHON_SITELIBDIR%%/munkres.pyo
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
