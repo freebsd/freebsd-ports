@@ -39,8 +39,8 @@ THAI_DESC=	Thai language support via libThai
 ANTHY_LIB_DEPENDS=	libanthy.so:${PORTSDIR}/japanese/anthy
 ANTHY_CONFIGURE_OFF+=	--without-anthy
 
-ISPELL_BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
-ISPELL_RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
+ISPELL_BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/aspell-ispell
+ISPELL_RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/aspell-ispell
 ISPELL_CONFIGURE_OFF=	HAVE_ISPELL=no
 
 THAI_LIB_DEPENDS=	libthai.so:${PORTSDIR}/devel/libthai
