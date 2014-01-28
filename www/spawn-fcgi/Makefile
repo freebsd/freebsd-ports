@@ -16,11 +16,9 @@ USE_RC_SUBR=	spawn-fcgi
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		spawn-fcgi.1
+PLIST_FILES=	bin/spawn-fcgi \
+		man/man1/spawn-fcgi.1.gz
 
-PLIST_FILES=	bin/spawn-fcgi
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SUB_LIST+=	REQUIRE="DAEMON"
