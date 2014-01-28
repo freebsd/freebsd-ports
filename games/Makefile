@@ -873,6 +873,7 @@
     SUBDIR += senken
     SUBDIR += sets
     SUBDIR += sex
+    SUBDIR += sgt-puzzles
     SUBDIR += shaaft
     SUBDIR += shootingstar
     SUBDIR += simplevaders
