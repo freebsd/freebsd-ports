@@ -71,7 +71,7 @@ CONFIGURE_ARGS+=	--disable-pgp-gpg
 .endif
 
 .if ${PORT_OPTIONS:MISPELL}
-RUN_DEPENDS+=		ispell:${PORTSDIR}/textproc/ispell
+RUN_DEPENDS+=		ispell:${PORTSDIR}/textproc/aspell-ispell
 CONFIGURE_ARGS+=	--with-ispell=${PREFIX}/bin/ispell
 .endif
 
