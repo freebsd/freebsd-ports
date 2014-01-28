@@ -14,11 +14,10 @@ LICENSE=	GPLv3
 
 PLIST_FILES=	bin/hexcompare
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
