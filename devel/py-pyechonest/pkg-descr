@@ -1,4 +1,3 @@
-Bluelet is a simple, pure-Python solution for writing intelligible asynchronous
-socket applications.
+Pyechonest is an open source Python library for the Echo Nest API.
 
-WWW: https://github.com/sampsyo/bluelet
+WWW: https://github.com/echonest/pyechonest
