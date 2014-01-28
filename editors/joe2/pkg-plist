@@ -9,6 +9,7 @@ etc/joe/jmacsrc
 etc/joe/jstarrc
 etc/joe/rjoerc
 etc/joe/jpicorc
+man/man1/joe.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/CommandList
 %%PORTDOCS%%%%DOCSDIR%%/INFO
