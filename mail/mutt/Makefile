@@ -150,8 +150,8 @@ RUN_DEPENDS+=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 BUILD_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 RUN_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 .elif ${PORT_OPTIONS:MISPELL}
-BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
-RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
+BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/aspell-ispell
+RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/aspell-ispell
 .endif
 .if defined(PACKAGE_BUILDING)
 RUN_DEPENDS+=	urlview:${PORTSDIR}/textproc/urlview
