@@ -12,11 +12,12 @@ USE_FPC=	fcl-base
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR+=	${WRKUNITDIR}
+EXTRACTUNITDIR=	${WRKUNITDIR}
 
 OPTIONS_DEFINE=	TCL
 TCL_DESC=	Install tool commnad language
 OPTIONS_DEFAULT=	TCL
 
-NO_STAGE=	yes
+TCL_USES=	tk:84,run
+
 .include "${MASTERDIR}/Makefile"

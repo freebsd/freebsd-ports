@@ -12,10 +12,12 @@ USE_FPC=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR+=	${WRKUNITDIR}
+EXTRACTUNITDIR=	${WRKUNITDIR}
 
 OPTIONS_DEFINE=	ORACLE
 ORACLE_DESC=	Install oracle client
 
-NO_STAGE=	yes
+ORACLE8_LIB=	${LOCALBASE}/oracle8-client/rdbms/lib
+ORACLE_RUN_DEPENDS=	${ORACLE8_LIB}/env_rdbms.mk:${PORTSDIR}/databases/oracle8-client
+
 .include "${MASTERDIR}/Makefile"

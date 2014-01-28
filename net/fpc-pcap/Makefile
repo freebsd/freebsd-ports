@@ -12,11 +12,12 @@ USE_FPC=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR+=	${WRKUNITDIR}
+EXTRACTUNITDIR=	${WRKUNITDIR}
 
 OPTIONS_DEFINE=	LIBPCAP
 LIBPCAP_DESC=	Install ubiquitous network traffic capture library
 OPTIONS_DEFAULT=	LIBPCAP
 
-NO_STAGE=	yes
+LIBPCAP_LIB_DEPENDS=	libpcap.so:${PORTSDIR}/net/libpcap
+
 .include "${MASTERDIR}/Makefile"

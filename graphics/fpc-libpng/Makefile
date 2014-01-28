@@ -12,11 +12,12 @@ USE_FPC=	zlib
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR+=	${WRKUNITDIR}
+EXTRACTUNITDIR=	${WRKUNITDIR}
 
 OPTIONS_DEFINE=	LIBPNG
 LIBPNG_DESC=	Install png library for manipulating PNG images
 OPTIONS_DEFAULT=	LIBPNG
 
-NO_STAGE=	yes
+LIBPNG_LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
+
 .include "${MASTERDIR}/Makefile"

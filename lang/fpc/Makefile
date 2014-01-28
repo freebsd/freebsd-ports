@@ -32,7 +32,6 @@ OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
 OPT?=-CX
 FPCSRCDIR=	${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -48,6 +47,7 @@ PLIST_SUB=	FPC_I386="@comment " \
 .endif
 
 .if !defined(PKGNAMESUFFIX)
+NO_STAGE=	yes
 SUB_FILES=	pkg-message
 
 BUILDNAME=	${FPC_ARCH}-freebsd

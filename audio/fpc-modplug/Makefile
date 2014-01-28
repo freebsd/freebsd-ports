@@ -9,14 +9,15 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to modplug library
 
 USE_FPC=	yes
-NO_STAGE=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR+=	${WRKUNITDIR}
+EXTRACTUNITDIR=	${WRKUNITDIR}
 
 OPTIONS_DEFINE=	LIBMODPLUG
 LIBMODPLUG_DESC=	Install modplug library
 OPTIONS_DEFAULT=	LIBMODPLUG
+
+LIBMODPLUG_LIB_DEPENDS=	libmodplug.so:${PORTSDIR}/audio/libmodplug
 
 .include "${MASTERDIR}/Makefile"

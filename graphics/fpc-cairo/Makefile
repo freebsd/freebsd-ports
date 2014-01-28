@@ -13,11 +13,12 @@ USE_FPC=	fcl-async fcl-base fcl-image hash pasjpeg paszlib pthreads \
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR+=	${WRKUNITDIR}
+EXTRACTUNITDIR=	${WRKUNITDIR}
 
 OPTIONS_DEFINE=	LIBCAIRO
 LIBCAIRO_DESC=	Install cairo vector graphics library
 OPTIONS_DEFAULT=	LIBCAIRO
 
-NO_STAGE=	yes
+LIBCAIRO_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
+
 .include "${MASTERDIR}/Makefile"

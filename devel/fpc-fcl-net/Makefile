@@ -12,7 +12,7 @@ USE_FPC=	fcl-async fcl-base fcl-xml fcl-passrc hash paszlib pthreads
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR+=	${WRKUNITDIR}
+EXTRACTUNITDIR=	${WRKUNITDIR}
+OPT=		-Fu${WRKDIR}/${WRKUNITDIR}/*
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

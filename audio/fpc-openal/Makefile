@@ -9,11 +9,10 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to openal library
 
 USE_FPC=	yes
-NO_STAGE=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR+=	${WRKUNITDIR}
+EXTRACTUNITDIR=	${WRKUNITDIR}
 
 OPTIONS_DEFINE=	OPENAL
 OPENAL_DESC=	Install openal library

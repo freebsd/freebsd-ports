@@ -9,14 +9,15 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal Interface to sndfile library
 
 USE_FPC=	yes
-NO_STAGE=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR+=	${WRKUNITDIR}
+EXTRACTUNITDIR=	${WRKUNITDIR}
 
 OPTIONS_DEFINE=	LIBSNDFILE
 LIBSNDFILE_DESC=	Install sndfile library
 OPTIONS_DEFAULT=	LIBSNDFILE
+
+LIBSNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 .include "${MASTERDIR}/Makefile"
