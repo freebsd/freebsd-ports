@@ -281,6 +281,7 @@
     SUBDIR += glew
     SUBDIR += glexcess
     SUBDIR += glfw
+    SUBDIR += glfw2
     SUBDIR += glide3
     SUBDIR += glitz
     SUBDIR += gliv
