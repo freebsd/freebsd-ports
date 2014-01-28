@@ -15,8 +15,7 @@ LIB_DEPENDS=	libTix8.4.3.so:${PORTSDIR}/x11-toolkits/tix \
 		libtogl.so:${PORTSDIR}/graphics/togl
 
 USE_LDCONFIG=	yes
-USES=		gmake
-USE_TK=		yes
+USES=		gmake tk
 USE_GL=		yes
 USE_XORG=	xmu xi
 GNU_CONFIGURE=	yes
@@ -31,8 +30,6 @@ OPTIONS_DEFINE=		OCC FFMPEG
 OCC_DESC=		Compile with OpenCascade geometry kernel
 FFMPEG_DESC=		video recording with FFmpeg
 OPTIONS_DEFAULT=	OCC
-
-NO_STAGE=	yes
 
 BROKEN_sparc64=	internal gcc error (Bug 23159)
 .include <bsd.port.options.mk>
@@ -63,9 +60,9 @@ pre-configure:
 
 post-install:
 #	copy some additional headers for build cad/salome-netgenplugin
-	${MKDIR} ${DATADIR}/include
-	${SH} ${FILESDIR}/netgen_copy_include_for_salome ${WRKSRC} ${PREFIX}
-	${LN} ${PREFIX}/lib/libnglib.so  ${PREFIX}/lib/libnglib.so.1
+	${MKDIR} ${STAGEDIR}${DATADIR}/include
+	${SH} ${FILESDIR}/netgen_copy_include_for_salome ${WRKSRC} ${STAGEDIR}${PREFIX}
+	${LN} ${STAGEDIR}${PREFIX}/lib/libnglib.so ${STAGEDIR}${PREFIX}/lib/libnglib.so.1
 	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
