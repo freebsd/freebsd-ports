@@ -20,6 +20,13 @@ libexec/estproxy.cgi
 libexec/estscout.cgi
 libexec/estseek.cgi
 libexec/estsupt.cgi
+man/man1/estcall.1.gz
+man/man1/estcmd.1.gz
+man/man1/estconfig.1.gz
+man/man1/estmaster.1.gz
+man/man1/estwaver.1.gz
+man/man3/estnode.3.gz
+man/man3/estraier.3.gz
 %%DATADIR%%/COPYING
 %%DATADIR%%/ChangeLog
 %%DATADIR%%/THANKS
