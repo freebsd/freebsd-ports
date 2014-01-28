@@ -13,7 +13,7 @@ COMMENT=	A full-text search system
 
 BUILD_DEPENDS=	qdbm>=1.8.77:${PORTSDIR}/databases/qdbm
 # check configure for min version of qdbm.
-LIB_DEPENDS=	qdbm.14:${PORTSDIR}/databases/qdbm
+LIB_DEPENDS=	libqdbm.so.14:${PORTSDIR}/databases/qdbm
 
 USES=		iconv
 USE_LDCONFIG=	yes
@@ -26,26 +26,16 @@ OPTIONS_DEFINE=	LZO MECAB
 LZO_DESC=	Enable lzo support
 MECAB_DESC=	Enable mecab support
 
-MAN1=		estcall.1 estcmd.1 estconfig.1 estmaster.1 estwaver.1
-MAN3=		estnode.3 estraier.3
+LZO_CONFIGURE_ENABLE=	lzo
+LZO_LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MLZO}
-CONFIGURE_ARGS+=	--enable-lzo
-LIB_DEPENDS+=	lzo2:${PORTSDIR}/archivers/lzo2
-.endif
-
-.if ${PORT_OPTIONS:MMECAB}
-CONFIGURE_ARGS+=	--enable-mecab
-LIB_DEPENDS+=	mecab:${PORTSDIR}/japanese/mecab
-RUN_DEPENDS+=	${LOCALBASE}/lib/mecab/dic/ipadic/matrix.bin:${PORTSDIR}/japanese/mecab-ipadic
-.endif
+MECAB_CONFIGURE_ENABLE=	mecab
+MECAB_LIB_DEPENDS=	libmecab.so:${PORTSDIR}/japanese/mecab
+MECAB_RUN_DEPENDS=	${LOCALBASE}/lib/mecab/dic/ipadic/matrix.bin:${PORTSDIR}/japanese/mecab-ipadic
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|${PREFIX}/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
 	${RM} -f ${WRKSRC}/doc/intro-en.html~ ${WRKSRC}/doc/intro-ja.html~
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
