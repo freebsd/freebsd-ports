@@ -3,6 +3,10 @@ bin/crsh
 bin/cscp
 bin/cssh
 bin/ctel
+man/man1/ccon.1.gz
+man/man1/crsh.1.gz
+man/man1/cssh.1.gz
+man/man1/ctel.1.gz
 %%SITE_PERL%%/App/ClusterSSH.pm
 %%SITE_PERL%%/App/ClusterSSH/Base.pm
 %%SITE_PERL%%/App/ClusterSSH/Cluster.pm
@@ -12,6 +16,14 @@ bin/ctel
 %%SITE_PERL%%/App/ClusterSSH/L10N.pm
 %%SITE_PERL%%/App/ClusterSSH/L10N/en.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/ClusterSSH/.packlist
+%%PERL5_MAN3%%/App::ClusterSSH.3.gz
+%%PERL5_MAN3%%/App::ClusterSSH::Base.3.gz
+%%PERL5_MAN3%%/App::ClusterSSH::Cluster.3.gz
+%%PERL5_MAN3%%/App::ClusterSSH::Config.3.gz
+%%PERL5_MAN3%%/App::ClusterSSH::Helper.3.gz
+%%PERL5_MAN3%%/App::ClusterSSH::Host.3.gz
+%%PERL5_MAN3%%/App::ClusterSSH::L10N.3.gz
+%%PERL5_MAN3%%/App::ClusterSSH::L10N::en.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/ClusterSSH
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
 @dirrmtry %%SITE_PERL%%/App/ClusterSSH/L10N
