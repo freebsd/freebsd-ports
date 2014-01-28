@@ -11,6 +11,5 @@ COMMENT=	Aspell Brazilian Portuguese dictionary
 
 DICT=	 	pt_BR
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../textproc/aspell/Makefile.inc"
 .include <bsd.port.post.mk>
