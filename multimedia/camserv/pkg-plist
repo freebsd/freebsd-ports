@@ -1,13 +1,13 @@
 bin/camserv
 bin/relay
-lib/camserv/libgdk_pixbuf_filter.a
-lib/camserv/libgdk_pixbuf_filter.la
-lib/camserv/libgdk_pixbuf_filter.so
-lib/camserv/libgdk_pixbuf_filter.so.0
-lib/camserv/libimlib2_filter.a
-lib/camserv/libimlib2_filter.la
-lib/camserv/libimlib2_filter.so
-lib/camserv/libimlib2_filter.so.0
+%%PIXBUF%%lib/camserv/libgdk_pixbuf_filter.a
+%%PIXBUF%%lib/camserv/libgdk_pixbuf_filter.la
+%%PIXBUF%%lib/camserv/libgdk_pixbuf_filter.so
+%%PIXBUF%%lib/camserv/libgdk_pixbuf_filter.so.0
+%%IMLIB2%%lib/camserv/libimlib2_filter.a
+%%IMLIB2%%lib/camserv/libimlib2_filter.la
+%%IMLIB2%%lib/camserv/libimlib2_filter.so
+%%IMLIB2%%lib/camserv/libimlib2_filter.so.0
 lib/camserv/libjpg_filter.a
 lib/camserv/libjpg_filter.la
 lib/camserv/libjpg_filter.so
@@ -24,14 +24,18 @@ lib/camserv/libvideo_basic.a
 lib/camserv/libvideo_basic.la
 lib/camserv/libvideo_basic.so
 lib/camserv/libvideo_basic.so.0
-%%BKTR%%lib/camserv/libvideo_fbsd_bttv.a
-%%BKTR%%lib/camserv/libvideo_fbsd_bttv.la
-%%BKTR%%lib/camserv/libvideo_fbsd_bttv.so
-%%BKTR%%lib/camserv/libvideo_fbsd_bttv.so.0
+lib/camserv/libvideo_fbsd_bttv.a
+lib/camserv/libvideo_fbsd_bttv.la
+lib/camserv/libvideo_fbsd_bttv.so
+lib/camserv/libvideo_fbsd_bttv.so.0
+%%V4L%%lib/camserv/libvideo_v4l.a
+%%V4L%%lib/camserv/libvideo_v4l.la
+%%V4L%%lib/camserv/libvideo_v4l.so
+%%V4L%%lib/camserv/libvideo_v4l.so.0
 %%DATADIR%%/camserv.cfg.dist
 %%DATADIR%%/defpage.html
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/javascript.txt
-@dirrm lib/camserv
-@dirrm share/camserv
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
+@dirrm lib/camserv

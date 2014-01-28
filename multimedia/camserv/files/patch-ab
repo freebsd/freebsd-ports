@@ -1,15 +1,18 @@
---- camserv/video_fbsd_bttv.c.orig	Mon May 12 23:13:31 2003
-+++ camserv/video_fbsd_bttv.c	Mon May 12 23:13:00 2003
-@@ -27,6 +27,7 @@
+--- camserv/video_fbsd_bttv.c.orig	2002-09-16 07:01:56.000000000 +0900
++++ camserv/video_fbsd_bttv.c	2014-01-04 04:56:21.000000000 +0900
+@@ -27,8 +27,9 @@
  #include <fcntl.h>
  #include <errno.h>
  #include <sys/mman.h>
+-#include <machine/ioctl_bt848.h>
+-#include <machine/ioctl_meteor.h>
 +#include <sys/types.h>
- #include <machine/ioctl_bt848.h>
- #include <machine/ioctl_meteor.h>
++#include <dev/bktr/ioctl_bt848.h>
++#include <dev/bktr/ioctl_meteor.h>
  #include <signal.h>
-@@ -644,7 +644,7 @@
-   if( !fbttv_dev->autobright || --fbttv_dev->autoleft > 0 )
+ #include <sys/ioctl.h>
+ #include <unistd.h>
+@@ -642,7 +643,7 @@
      return 0;
  
    totmean = camserv_get_pic_mean( width, height, picbuf, 1, 0, 0, 
