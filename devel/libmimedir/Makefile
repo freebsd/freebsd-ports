@@ -9,11 +9,13 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for parsing RFC2425 MIME Directory Profile information
 
-USES=		bison
-USE_AUTOTOOLS=	libtool
+USES=		bison desthack libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
+post-patch:
+	${REINPLACE_CMD} -e 's/444/644/g' ${WRKSRC}/Makefile.in
+
 regression-test:
 	cd ${WRKSRC} && ./test
 
