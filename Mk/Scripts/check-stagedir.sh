@@ -24,7 +24,7 @@ esac
 # validate environment
 envfault=
 for i in STAGEDIR PREFIX LOCALBASE WRKDIR WRKSRC MTREE_FILE \
-    TMPPLIST DATADIR DOCSDIR EXAMPLESDIR
+    TMPPLIST DOCSDIR EXAMPLESDIR PLIST_SUB
 do
     if ! ( eval ": \${${i}?}" ) 2>/dev/null ; then
 		envfault="${envfault}${envfault:+" "}${i}"
@@ -98,14 +98,27 @@ fi
 	done
 } > ${WRKDIR}/.mtree
 
+for i in $PLIST_SUB
+do
+	echo $i
+done | awk -F= '{print length($2), $1, $2 | "sort -nr" }' | while read l k v
+do
+	if [ $l -ne 0 ]
+	then
+		echo "s,${v},%%${k}%%,g;"
+	fi
+done > ${WRKDIR}/.plist_sub
+
+sed_plist_sub=`cat ${WRKDIR}/.plist_sub`
+
 ### HANDLE FILES
 find ${STAGEDIR} -type f -o -type l | sort | sed -e "s,${STAGEDIR},," >${WRKDIR}/.staged-files
 comm -13 ${WRKDIR}/.plist-files ${WRKDIR}/.staged-files \
 	| sed \
 	-e "s,${DOCSDIR},%%PORTDOCS%%%%DOCSDIR%%,g" \
 	-e "s,${EXAMPLESDIR},%%PORTEXAMPLES%%%%EXAMPLESDIR%%,g" \
-	-e "s,${DATADIR},%%DATADIR%%,g" \
-	-e "s,${PREFIX}/,,g" | grep -v "^share/licenses" || [ $? = 1 ]
+	-e "s,${PREFIX}/,,g" \
+	-e "${sed_plist_sub}" | grep -v "^share/licenses" || [ $? = 1 ]
 
 ### HANDLE DIRS
 cat ${WRKDIR}/.plist-dirs-unsorted ${WRKDIR}/.mtree | sort -u >${WRKDIR}/.traced-dirs
@@ -115,6 +128,6 @@ comm -13 ${WRKDIR}/.traced-dirs ${WRKDIR}/.staged-dirs \
 	-e 's,^,@dirrmtry ,' \
 	-e "s,\(.*\)${DOCSDIR},%%PORTDOCS%%\1%%DOCSDIR%%,g" \
 	-e "s,\(.*\)${EXAMPLESDIR},%%PORTEXAMPLES%%\1%%EXAMPLESDIR%%,g" \
-	-e "s,${DATADIR},%%DATADIR%%,g" \
 	-e "s,${PREFIX}/,,g" \
+	-e "${sed_plist_sub}" \
 	-e 's,@dirrmtry \(/.*\),@unexec rmdir >/dev/null 2>\&1 \1 || :,' | grep -v "^@dirrmtry share/licenses" || [ $? = 1 ]
