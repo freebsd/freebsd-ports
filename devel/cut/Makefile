@@ -9,21 +9,16 @@ MASTER_SITES=	http://www.falvotech.com/content/cut/${PORTVERSION}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unit Testing Framework for C, C++, and Objective-C
 
+USES=		shebangfix
+SHEBANG_FILES=	*.py
 USE_PYTHON_RUN=	yes
 ALL_TARGET=	build
 
-NO_STAGE=	yes
-post-patch:
-.for FILE in common.py cutgen.py options.py parser.py
-	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PREFIX}/bin/python|' \
-		${WRKSRC}/${FILE}
-.endfor
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/build/bin/cutgen ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/build/bin/cutgen.py ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/build/bin/cutgen ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/build/bin/cutgen.py ${STAGEDIR}${PREFIX}/bin
 .for FILE in common.py lexer.py options.py parser.py
-	${INSTALL_SCRIPT} ${WRKSRC}/build/bin/${FILE} ${PREFIX}/bin/cutgen_${FILE}
+	${INSTALL_SCRIPT} ${WRKSRC}/build/bin/${FILE} ${STAGEDIR}${PREFIX}/bin/cutgen_${FILE}
 .endfor
 
 .include <bsd.port.mk>
