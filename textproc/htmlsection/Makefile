@@ -12,27 +12,24 @@ COMMENT=	Insert section numbers in HTML and make a table of contents
 USES=		perl5
 USE_PERL5=	build
 
-MAN1=		htmlsection.1
-MANCOMPRESSED=	yes
+JADOCSDIR=	share/doc/ja/${PORTNAME}
+PLIST_SUB=	JADOCSDIR=${JADOCSDIR}
 
-NO_STAGE=	yes
 pre-build:
 		@(echo perl is set ${PERL} in pre-build:)
 		@(cd ${WRKSRC}; ./findperl.sh ${PERL} > whereperl)
 		@(cd ${WRKSRC}; ${CAT} whereperl)
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/htmlsection ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/htmlsection.1.gz ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/htmlsection ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/htmlsection.1.gz ${STAGEDIR}${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in INSTALL README htmlsection_orig.html htmlsection.html
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${MKDIR} ${PREFIX}/share/doc/ja/htmlsection
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${JADOCSDIR}
 .for file in INSTALL-j README-j htmlsection-j_orig.html htmlsection-j.html
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/ja/htmlsection
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/${JADOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
