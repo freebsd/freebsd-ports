@@ -1,13 +1,11 @@
 bin/aspell
 bin/aspell-import
-%%ISPELL%%bin/ispell
 bin/precat
 bin/preunzip
 bin/prezip
 bin/prezip-bin
 bin/pspell-config
 bin/run-with-aspell
-%%ISPELL%%bin/spell
 bin/word-list-compress
 etc/aspell.ver
 include/aspell.h
@@ -133,3 +131,5 @@ man/man1/word-list-compress.1.gz
 %%NLS%%@dirrmtry share/locale/fi
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
+@dirrmtry %%DATADIR%%
+@dirrm lib/aspell-%%VER%%
