@@ -3829,6 +3829,7 @@
     SUBDIR += py-twistedCore
     SUBDIR += py-twistedFlow
     SUBDIR += py-twistedRunner
+    SUBDIR += py-ua-parser
     SUBDIR += py-ujson
     SUBDIR += py-uncompyle2
     SUBDIR += py-unittest2
