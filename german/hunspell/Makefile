@@ -14,8 +14,8 @@ COMMENT=	German hunspell dictionaries
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/buildhash:${PORTSDIR}/textproc/ispell \
-		${LOCALBASE}/bin/hunspell:${PORTSDIR}/textproc/hunspell
+BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell \
+		hunspell:${PORTSDIR}/textproc/hunspell
 
 USES=		gmake perl5 shebangfix
 USE_BZIP2=	yes
@@ -38,8 +38,12 @@ PLIST_FILES+=	%%DATADIR%%/${ALIAS}.aff \
 		%%DATADIR%%/${ALIAS}.dic
 .endfor
 
+post-patch:
+	@${REINPLACE_CMD} -e "s/AFFIX_EXPANDER = ispell/AFFIX_EXPANDER = aspell/g" \
+		${WRKSRC}/Makefile
+
 do-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/hunspell/de_AT.aff ${WRKSRC}/hunspell/de_AT.dic \
 		${WRKSRC}/hunspell/de_CH.aff ${WRKSRC}/hunspell/de_CH.dic \
 		${WRKSRC}/hunspell/de_DE.aff ${WRKSRC}/hunspell/de_DE.dic ${STAGEDIR}${DATADIR}/
