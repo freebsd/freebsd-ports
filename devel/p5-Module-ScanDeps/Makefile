@@ -14,10 +14,6 @@ COMMENT=	Recursively scan Perl code for dependencies
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		scandeps.pl.1
-MAN3=		Module::ScanDeps.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/bin/perl|${PERL}|' ${WRKSRC}/script/scandeps.pl \
