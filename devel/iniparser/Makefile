@@ -10,22 +10,20 @@ MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	Free stand-alone ini file parsing library
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_LDCONFIG=	yes
-MAKE_ARGS=	CC=${CC}
+MAKE_ARGS=	CC="${CC}"
 ALL_TARGET=	
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	include/dictionary.h include/iniparser.h lib/libiniparser.a \
 		lib/libiniparser.so lib/libiniparser.so.0
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/src/dictionary.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/src/iniparser.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/libiniparser.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libiniparser.so.0 ${PREFIX}/lib
-	@${LN} -sf libiniparser.so.0 ${PREFIX}/lib/libiniparser.so
+	${INSTALL_DATA} ${WRKSRC}/src/dictionary.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/src/iniparser.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/libiniparser.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/libiniparser.so.0 ${STAGEDIR}${PREFIX}/lib
+	@${LN} -sf libiniparser.so.0 ${STAGEDIR}${PREFIX}/lib/libiniparser.so
 
 .include <bsd.port.mk>
