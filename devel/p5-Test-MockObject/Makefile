@@ -21,9 +21,6 @@ USES=		perl5
 USE_PERL5=	configure
 INSTALL_TARGET=	pure_install
 
-MAN3=		Test::MockObject.3 Test::MockObject::Extends.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400
