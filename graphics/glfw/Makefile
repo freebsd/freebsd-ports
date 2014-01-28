@@ -1,8 +1,8 @@
-# Created by: Igor Pokrovsky <tiamat@comset.net>
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	glfw
-PORTVERSION=	2.7.9
+PORTVERSION=	3.0.4
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -11,72 +11,57 @@ COMMENT=	Portable framework for OpenGL development
 
 LICENSE=	ZLIB
 
-USE_BZIP2=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_SCRIPT=	compile.sh
-ALL_TARGET=	x11
-INSTALL_TARGET=	x11-install
+USES=		cmake
 USE_XORG=	xi xrandr
 USE_GL=		glu
+USE_GCC=	yes
 USE_LDCONFIG=	yes
-MAKE_JOBS_UNSAFE=	yes
 
-PLIST_FILES=	include/GL/glfw.h \
-		lib/libglfw.a \
-		lib/libglfw.so \
-		lib/libglfw.so.0 \
-		libdata/pkgconfig/libglfw.pc
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	*
 
 DOCSRCDIR1=	${WRKSRC}
-DOC_FILES1=	*.html
+DOC_FILES1=	README.md
 
-DOCSRCDIR2=	${WRKSRC}/docs
-DOCSDIR2=	${DOCSDIR}/docs
-DOC_FILES2=	*.pdf *.sty *.tex *.txt
+DOCSRCDIR2=	${WRKSRC}/docs/html/search
+DOCSDIR2=	${DOCSDIR}/docs/html/search
+DOC_FILES2=	*
+
+DOCSRCDIR3=	${WRKSRC}/docs/html
+DOCSDIR3=	${DOCSDIR}/docs/html
+DOC_FILES3=	*.html *.png *.css *.js
 
 PORTEXAMPLES=	*
 
 EXAMPLESSRCDIR1=	${WRKSRC}/examples
-EXAMPLES_FILES1=	boing gears heightmap listmodes mipmaps mtbench mthello \
-			pong3d splitview triangle wave
+EXAMPLES_FILES1=	boing gears heightmap simple splitview wave
 
 EXAMPLESSRCDIR2=	${WRKSRC}/tests
 EXAMPLESDIR2=		${EXAMPLESDIR}/tests
-EXAMPLES_FILES2=	accuracy defaults dynamic events fsaa fsinput iconify \
-			joysticks peter reopen tearing version
+EXAMPLES_FILES2=	accuracy clipboard defaults events fsaa  gamma glfwinfo \
+			iconify joysticks modes peter reopen sharing tearing \
+			threads title windows
 
-# Restrict to stable (even) versions, indicated by the second component.
-PORTSCOUT=    limit:^2\..*
-
-post-extract:
-	@${CHMOD} ${BINMODE} ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|/usr/X11R6|${LOCALBASE}| ; \
-		 /SOFLAGS/s|-soname |-Wl,-soname,| ; \
-		 /CFLAGS_THREAD/s|"-pthread"|"${PTHREAD_CFLAGS}"| ; \
-		 /LFLAGS_THREAD/s|"-pthread"|"${PTHREAD_LIBS}"|' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} \
-		-e 's|lib/pkgconfig|libdata/pkgconfig|g' \
-		${WRKSRC}/lib/x11/Makefile.x11.in
+	@${REINPLACE_CMD} -e 's|lib$${LIB_SUFFIX}/pkgconfig|libdata/pkgconfig|' \
+		${WRKSRC}/CMakeLists.txt
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/x11/libglfw.so ${STAGEDIR}${PREFIX}/lib/libglfw.so.0
-	${LN} -sf ${PREFIX}/lib/libglfw.so.0 ${STAGEDIR}${PREFIX}/lib/libglfw.so
-
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
 	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES3:S|^|${DOCSRCDIR3}/|} ${STAGEDIR}${DOCSDIR3}
 
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_PROGRAM} ${EXAMPLES_FILES1:S|^|${EXAMPLESSRCDIR1}/|} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${EXAMPLESSRCDIR1}/*.tga ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${EXAMPLES_FILES1:S|^|${EXAMPLESSRCDIR1}/|} \
+		${STAGEDIR}${EXAMPLESDIR}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR2}
-	${INSTALL_PROGRAM} ${EXAMPLES_FILES2:S|^|${EXAMPLESSRCDIR2}/|} ${STAGEDIR}${EXAMPLESDIR2}
+	${INSTALL_PROGRAM} ${EXAMPLES_FILES2:S|^|${EXAMPLESSRCDIR2}/|} \
+		${STAGEDIR}${EXAMPLESDIR2}
 
 .include <bsd.port.mk>
