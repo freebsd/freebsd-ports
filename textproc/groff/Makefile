@@ -3,7 +3,7 @@
 
 PORTNAME=	groff
 PORTVERSION=	1.21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	groff
@@ -13,10 +13,10 @@ COMMENT=	Software typesetting package
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/gs:${PORTSDIR}/print/ghostscript8 \
-		${LOCALBASE}/bin/psselect:${PORTSDIR}/print/psutils
+BUILD_DEPENDS=	${LOCALBASE}/bin/psselect:${PORTSDIR}/print/psutils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
+USE_GHOSTSCRIPT_RUN= yes
 USES=		gmake perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-awk=/usr/bin/awk
