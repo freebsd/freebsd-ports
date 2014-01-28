@@ -35,7 +35,6 @@ OPTIONS_DEFINE=	GSTREAMER WEBP
 
 WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGSTREAMER}
