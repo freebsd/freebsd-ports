@@ -1,16 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	fossil
-PORTVERSION=	20130911114349
-PORTEPOCH=	1
+PORTVERSION=	1.28
+DISTVERSION=	20140127173344
+PORTEPOCH=	2
 CATEGORIES=	devel www
 MASTER_SITES=	http://www.fossil-scm.org/download/
-DISTNAME=	${PORTNAME}-src-${PORTVERSION}
+DISTVERSIONPREFIX=	src-
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	DSCM with built-in wiki, http interface and server, tickets database
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 PLIST_FILES=	bin/fossil
 
@@ -22,5 +23,8 @@ JSON_DESC=	JSON API support
 
 JSON_CONFIGURE_ON=	--json
 STATIC_CONFIGURE_ON=	--static
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/fossil
 
 .include <bsd.port.mk>
