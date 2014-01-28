@@ -16,7 +16,6 @@ LICENSE=	MIT
 LIB_DEPENDS=	libchromaprint.so:${PORTSDIR}/audio/chromaprint
 
 USE_PYTHON=	yes
-NO_STAGE=	yes
 USE_PYDISTUTILS=	easy_install
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
