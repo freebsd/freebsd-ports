@@ -15,17 +15,18 @@ LICENSE=	GPLv1
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	run
+SHEBANG_FILES=	bin/lcov bin/gendesc bin/genhtml bin/genpng bin/geninfo
 
-PLIST_FILES=	bin/lcov bin/gendesc bin/genhtml bin/genpng bin/geninfo
-MAN1=		gendesc.1 genhtml.1 geninfo.1 genpng.1 lcov.1
-MAN5=		lcovrc.5
+PLIST_FILES=	bin/lcov bin/gendesc bin/genhtml bin/genpng bin/geninfo \
+		man/man1/gendesc.1.gz man/man1/genhtml.1.gz \
+		man/man1/geninfo.1.gz man/man1/genpng.1.gz \
+		man/man1/lcov.1.gz man/man5/lcovrc.5.gz
 
-NO_STAGE=	yes
 do-install:
-	cd ${WRKSRC}/bin && ${COPYTREE_BIN} "gendesc genhtml geninfo genpng lcov" ${PREFIX}/bin
-	cd ${WRKSRC}/man && ${INSTALL_MAN} *.1 ${MANPREFIX}/man/man1
-	cd ${WRKSRC}/man && ${INSTALL_MAN} *.5 ${MANPREFIX}/man/man5
+	cd ${WRKSRC}/bin && ${COPYTREE_BIN} "gendesc genhtml geninfo genpng lcov" ${STAGEDIR}${PREFIX}/bin
+	cd ${WRKSRC}/man && ${INSTALL_MAN} *.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	cd ${WRKSRC}/man && ${INSTALL_MAN} *.5 ${STAGEDIR}${MANPREFIX}/man/man5
 
 .include <bsd.port.mk>
