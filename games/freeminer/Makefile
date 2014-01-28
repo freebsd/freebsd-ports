@@ -3,6 +3,7 @@
 
 PORTNAME=	freeminer
 PORTVERSION=	0.4.9.3
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -82,5 +83,8 @@ post-patch:
 	@${REINPLACE_CMD} -e '/find_/ s|LUA_|NO&|g' \
 		${WRKSRC}/src/CMakeLists.txt
 .endif
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DATADIR}/games
 
 .include <bsd.port.mk>
