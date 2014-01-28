@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	memcached
-PORTVERSION=	1.4.15
+PORTVERSION=	1.4.17
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_GENTOO}
@@ -19,9 +19,8 @@ TEST_DEPENDS=	prove:${PORTSDIR}/lang/${PERL_PORT} \
 CONFLICTS=	memcached-1.2*
 
 # Dtrace option disabled until it is fixed upstream
-OPTIONS_DEFINE=	REPCACHED SASL
+OPTIONS_DEFINE=	SASL
 DTRACE_DESC=	Enable dtrace probes
-REPCACHED_DESC=	Enable data replication feature
 SASL_DESC=	Enable SASL Authentication
 
 USE_RC_SUBR=	memcached
@@ -57,14 +56,6 @@ BROKEN=			DTRACE broken with gcc/clang - reported upstream
 CONFIGURE_ARGS+=	--enable-dtrace
 .else
 CONFIGURE_ARGS+=	--disable-dtrace
-.endif
-
-.if ${PORT_OPTIONS:MREPCACHED}
-PATCH_SITES+=		${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	swills
-PATCH_DIST_STRIP+=	-p1
-PATCHFILES+=		repcached-2.3.1-${PORTVERSION}.patch.gz
-CONFIGURE_ARGS+=	--enable-replication
 .endif
 
 .if ${PORT_OPTIONS:MSASL} && !defined(WITHOUT_SASL)
