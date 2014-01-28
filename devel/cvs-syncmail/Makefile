@@ -11,35 +11,21 @@ EXTRACT_SUFX=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CVS notification tool
 
-.if defined(WITH_CVSNT)
-# Use the CVSNT binary when generating diffs instead of the system CVS
-RUN_DEPENDS=	${LOCALBASE}/bin/cvsnt:${PORTSDIR}/devel/cvsnt
-.endif
+RUN_DEPENDS=	cvs:${PORTSDIR}/devel/cvs
 
+USES=		shebangfix
+SHEBANG_FILES=	${DISTNAME}
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 USE_PYTHON=	yes
 
 PLIST_FILES=	bin/${DISTNAME}
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
-
-do-patch:
-	@${REINPLACE_CMD} -e "s| /usr/bin/python|${PYTHON_CMD}|" \
-		${WRKSRC}/${DISTNAME}
-
-	@${REINPLACE_CMD} -e "s|cvs -fn update|/usr/bin/cvs -fn update|" \
-		${WRKSRC}/${DISTNAME}
-
-.if defined(WITH_CVSNT)
-	@${REINPLACE_CMD} -e "s|/usr/bin/cvs|${LOCALBASE}/bin/cvsnt|" \
-	    ${WRKSRC}/${DISTNAME}
-.endif
+	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin/${DISTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin/${DISTNAME}
 
 .include <bsd.port.mk>
