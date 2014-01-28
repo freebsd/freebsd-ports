@@ -1,11 +1,14 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/vCard/.packlist
-%%SITE_PERL%%/Text/vCard/Node.pm
-%%SITE_PERL%%/Text/vCard/Addressbook.pm
-%%SITE_PERL%%/Text/vCard.pm
-%%PERL5_MAN3%%/Text::vCard::Node.3.gz
 %%PERL5_MAN3%%/Text::vCard.3.gz
 %%PERL5_MAN3%%/Text::vCard::Addressbook.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/vCard
-@dirrm %%SITE_PERL%%/Text/vCard
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
-@dirrmtry %%SITE_PERL%%/Text
+%%PERL5_MAN3%%/Text::vCard::Node.3.gz
+%%PERL5_MAN3%%/vCard.3.gz
+%%PERL5_MAN3%%/vCard::AddressBook.3.gz
+%%SITE_PERL%%/vCard.pm
+%%SITE_PERL%%/Text/vCard.pm
+%%SITE_PERL%%/Text/vCard/Addressbook.pm
+%%SITE_PERL%%/Text/vCard/Node.pm
+%%SITE_PERL%%/mach/auto/Text/vCard/.packlist
+%%SITE_PERL%%/vCard/AddressBook.pm
+@dirrmtry %%SITE_PERL%%/vCard
+@dirrmtry %%SITE_PERL%%/mach/auto/Text/vCard
+@dirrmtry %%SITE_PERL%%/Text/vCard
