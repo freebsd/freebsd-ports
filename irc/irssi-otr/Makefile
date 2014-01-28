@@ -3,7 +3,7 @@
 
 PORTNAME=	irssi-otr
 PORTVERSION=	0.3
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	irc
 MASTER_SITES=	ftp://download.tuxfamily.org/${MASTER_SITE_SUBDIR}/
 MASTER_SITE_SUBDIR=	irssiotr
@@ -26,6 +26,6 @@ USE_GNOME=	glib20
 
 PLIST_FILES=	lib/irssi/modules/libotr.so \
 		%%DOCSDIR%%/LICENSE %%DOCSDIR%%/README
-PLIST_DIRS=	%%DOCSDIR%%
+PLIST_DIRS=	lib/irssi lib/irssi/modules/ %%DOCSDIR%%
 
 .include <bsd.port.mk>
