@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcbsd-utils
-PORTVERSION=	1386348303
-PORTREVISION=	1
+PORTVERSION=	1390905942
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pcbsd.org/~kris/software/ \
 		ftp://ftp.pcbsd.org/pub/software/
