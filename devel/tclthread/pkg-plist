@@ -1,5 +1,9 @@
 lib/thread%%VERSION%%/libthread.so.1
 lib/thread%%VERSION%%/ttrace.tcl
 lib/thread%%VERSION%%/pkgIndex.tcl
+man/mann/thread.n.gz
+man/mann/tpool.n.gz
+man/mann/tsv.n.gz
+man/mann/ttrace.n.gz
 include/tclThread.h
 @dirrm lib/thread%%VERSION%%
