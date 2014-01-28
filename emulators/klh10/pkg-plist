@@ -4,46 +4,51 @@ bin/udlconv
 bin/vdkfmt
 bin/wfconv
 bin/wxtest
+@group network
+@mode 4554
 libexec/klh10-ks-its/dpimp
+@mode
+@group
 libexec/klh10-ks-its/dprpxx
 libexec/klh10-ks-its/dptm03
-share/klh10-ks-its/@.ddt-u
-share/klh10-ks-its/@.its-647kn-u
-share/klh10-ks-its/@.nsalv-260-u
-share/klh10-ks-its/itsbin.647kn-u
-share/klh10-ks-its/klh10-kn.ini
-%%PORTDOCS%%share/doc/klh10-ks-its/pubits/adm/hosts.its
-%%PORTDOCS%%share/doc/klh10-ks-its/pubits/adm/its.ipfw
-%%PORTDOCS%%share/doc/klh10-ks-its/pubits/adm/rc.firewall-its
-%%PORTDOCS%%share/doc/klh10-ks-its/pubits/adm/router.notes
-%%PORTDOCS%%share/doc/klh10-ks-its/pubits/doc/bootload.files
-%%PORTDOCS%%share/doc/klh10-ks-its/pubits/doc/distrib.its
-%%PORTDOCS%%share/doc/klh10-ks-its/pubits/doc/dumpsys.help
-%%PORTDOCS%%share/doc/klh10-ks-its/Intro.txt
-%%PORTDOCS%%share/doc/klh10-ks-its/backgrnd.txt
-%%PORTDOCS%%share/doc/klh10-ks-its/cmdref.txt
-%%PORTDOCS%%share/doc/klh10-ks-its/cmdsum.txt
-%%PORTDOCS%%share/doc/klh10-ks-its/coding.txt
-%%PORTDOCS%%share/doc/klh10-ks-its/dfkfb.txt
-%%PORTDOCS%%share/doc/klh10-ks-its/dvhost.txt
-%%PORTDOCS%%share/doc/klh10-ks-its/history.txt
-%%PORTDOCS%%share/doc/klh10-ks-its/install.txt
-%%PORTDOCS%%share/doc/klh10-ks-its/kldiff.txt
-%%PORTDOCS%%share/doc/klh10-ks-its/klt10.txt
-%%PORTDOCS%%share/doc/klh10-ks-its/klt20.txt
-%%PORTDOCS%%share/doc/klh10-ks-its/ksits.txt
-%%PORTDOCS%%share/doc/klh10-ks-its/kst10.txt
-%%PORTDOCS%%share/doc/klh10-ks-its/kst20.txt
-%%PORTDOCS%%share/doc/klh10-ks-its/news.txt
-%%PORTDOCS%%share/doc/klh10-ks-its/PDPs
-%%PORTDOCS%%share/doc/klh10-ks-its/README
-%%PORTDOCS%%share/doc/klh10-ks-its/usage.txt
-%%PORTDOCS%%share/doc/klh10-ks-its/utils.txt
-%%PORTDOCS%%share/doc/klh10-ks-its/vtape.txt
-@dirrm share/klh10-ks-its/flushed
-@dirrm share/klh10-ks-its
+%%PORTDOCS%%%%DOCSDIR%%/Intro.txt
+%%PORTDOCS%%%%DOCSDIR%%/PDPs
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/backgrnd.txt
+%%PORTDOCS%%%%DOCSDIR%%/cmdref.txt
+%%PORTDOCS%%%%DOCSDIR%%/cmdsum.txt
+%%PORTDOCS%%%%DOCSDIR%%/coding.txt
+%%PORTDOCS%%%%DOCSDIR%%/dfkfb.txt
+%%PORTDOCS%%%%DOCSDIR%%/dvhost.txt
+%%PORTDOCS%%%%DOCSDIR%%/history.txt
+%%PORTDOCS%%%%DOCSDIR%%/install.txt
+%%PORTDOCS%%%%DOCSDIR%%/kldiff.txt
+%%PORTDOCS%%%%DOCSDIR%%/klt10.txt
+%%PORTDOCS%%%%DOCSDIR%%/klt20.txt
+%%PORTDOCS%%%%DOCSDIR%%/ksits.txt
+%%PORTDOCS%%%%DOCSDIR%%/kst10.txt
+%%PORTDOCS%%%%DOCSDIR%%/kst20.txt
+%%PORTDOCS%%%%DOCSDIR%%/news.txt
+%%PORTDOCS%%%%DOCSDIR%%/pubits/adm/hosts.its
+%%PORTDOCS%%%%DOCSDIR%%/pubits/adm/its.ipfw
+%%PORTDOCS%%%%DOCSDIR%%/pubits/adm/rc.firewall-its
+%%PORTDOCS%%%%DOCSDIR%%/pubits/adm/router.notes
+%%PORTDOCS%%%%DOCSDIR%%/pubits/doc/bootload.files
+%%PORTDOCS%%%%DOCSDIR%%/pubits/doc/distrib.its
+%%PORTDOCS%%%%DOCSDIR%%/pubits/doc/dumpsys.help
+%%PORTDOCS%%%%DOCSDIR%%/usage.txt
+%%PORTDOCS%%%%DOCSDIR%%/utils.txt
+%%PORTDOCS%%%%DOCSDIR%%/vtape.txt
+%%DATADIR%%/@.ddt-u
+%%DATADIR%%/@.its-647kn-u
+%%DATADIR%%/@.nsalv-260-u
+%%DATADIR%%/itsbin.647kn-u
+%%DATADIR%%/klh10-kn.ini
+@exec mkdir -p %D/%%DATADIR%%/flushed
+@dirrmtry %%DATADIR%%/flushed
+@dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pubits/doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pubits/adm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/pubits
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libexec/klh10-ks-its
-%%PORTDOCS%%@dirrm share/doc/klh10-ks-its/pubits/adm
-%%PORTDOCS%%@dirrm share/doc/klh10-ks-its/pubits/doc
-%%PORTDOCS%%@dirrm share/doc/klh10-ks-its/pubits
-%%PORTDOCS%%@dirrm share/doc/klh10-ks-its

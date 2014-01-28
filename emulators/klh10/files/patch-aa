@@ -5,7 +5,7 @@
  # Build definitions
  SRC = ../../src
 -CFLAGS = -c -g3 -O -I. -I$(SRC)
-+CFLAGS += -c -g3 -O -I. -I$(SRC)
++CFLAGS += -c -I. -I$(SRC)
  CFLAGS_LINT = -ansi -pedantic -Wall -Wshadow \
                 -Wstrict-prototypes -Wmissing-prototypes \
                 -Wmissing-declarations -Wredundant-decls
