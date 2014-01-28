@@ -16,6 +16,8 @@ MASTER_SITES=	http://m1cro.tk/dialog4ports/ \
 MAINTAINER=	rum1cro@yandex.ru
 COMMENT?=	Console Interface to configure ports
 
+LICENSE=	BSD2CLAUSE
+
 USES=		uidfix
 
 # CCACHE has options, so may need d4p, make d4p not ccache friendly
