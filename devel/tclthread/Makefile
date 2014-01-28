@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Scripting level thread extension for Tcl
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.terms
 
 USES+=		tcl
@@ -24,11 +24,7 @@ USE_LDCONFIG=	${PREFIX}/lib/thread${PORTVERSION}
 
 PLIST_SUB+=	VERSION="${PORTVERSION}"
 
-INSTALL_TARGET=		install-binaries install-libraries
-.if !defined(NO_INSTALL_MANPAGES)
-MANN=		thread.n tpool.n tsv.n ttrace.n
-INSTALL_TARGET+=install-doc
-.endif
+INSTALL_TARGET=	install-binaries install-libraries install-doc
 
 OPTIONS_DEFINE=	GDBM DOCS
 OPTIONS_DEFAULT=GDBM
@@ -36,11 +32,10 @@ GDBM_DESC=	Persistent shared variables using GDBM
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGDBM}
-LIB_DEPENDS+=	gdbm:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	libgdbm.so:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=--with-gdbm
 .endif
 
@@ -49,14 +44,12 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/html
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 .for FILE in ChangeLog README
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for FILE in thread.html tpool.html tsv.html ttrace.html
-	${INSTALL_DATA} ${WRKSRC}/doc/html/${FILE} ${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/doc/html/${FILE} ${STAGEDIR}${DOCSDIR}/html
 .endfor
-.endif
 
 .include <bsd.port.mk>
