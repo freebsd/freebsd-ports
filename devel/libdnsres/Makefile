@@ -12,20 +12,14 @@ COMMENT=	Provides a non-blocking thread-safe API for resolving DNS names
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 
+USES=		libtool
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=--with-libevent=${LOCALBASE}
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
-MAN3=	dnsres.3
-MLINKS=	dnsres.3 dnsres_init.3 dnsres.3 dnsres_gethostbyname.3 \
-	dnsres.3 dnsres_gethostbyname2.3 dnsres.3 dnsres_gethostbyaddr.3 \
-	dnsres.3 dnsres_getaddrinfo.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,CFLAGS =,CFLAGS +=, ; s|top_buildir|top_builddir|g' \
 		${WRKSRC}/Makefile.in
