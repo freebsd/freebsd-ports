@@ -51,6 +51,57 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c7b5d72b-886a-11e3-9533-60a44c524f57">
+    <topic>otrs -- SQL injection issue</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><lt>3.2.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OTRS Project reports:</p>
+	<blockquote cite="https://www.otrs.com/security-advisory-2014-02-sql-injection-issue/">
+	  <p>SQL injection issue</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1471</cvename>
+      <url>https://www.otrs.com/security-advisory-2014-02-sql-injection-issue/</url>
+    </references>
+    <dates>
+      <discovery>2014-01-28</discovery>
+      <entry>2014-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="080c5370-886a-11e3-9533-60a44c524f57">
+    <topic>otrs -- CSRF issue in customer web interface</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><lt>3.2.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OTRS Project reports:</p>
+	<blockquote cite="https://www.otrs.com/security-advisory-2014-01-csrf-issue-customer-web-interface/">
+	  <p>An attacker that managed to take over the session of a logged in customer could create tickets and/or send follow-ups to existing tickets due to missing challenge token checks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.otrs.com/security-advisory-2014-01-csrf-issue-customer-web-interface/</url>
+    </references>
+    <dates>
+      <discovery>2014-01-28</discovery>
+      <entry>2014-01-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f9810c43-87a5-11e3-9214-00262d5ed8ee">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
