@@ -6,11 +6,12 @@ PORTVERSION=	2.32
 CATEGORIES=	devel math graphics
 MASTER_SITES=	ftp://ftp.cs.man.ac.uk/pub/toby/gpc/
 DISTNAME=	gpc${PORTVERSION:S/.//}
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Generic Polygon Clipper
 
-USE_ZIP=	yes
+USES=		dos2unix uidfix
 PLIST_FILES=	lib/libgpc.so.2	\
 		lib/libgpc.so	lib/libgpc.a	\
 		include/gpc.h
@@ -19,7 +20,4 @@ NO_CDROM=	Can't be used for profit without permission
 
 MAKEFILE=	${FILESDIR}/BSDmakefile
 
-EXTRACT_BEFORE_ARGS=-qoa
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
