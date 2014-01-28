@@ -6,7 +6,7 @@ PORTVERSION=	0.9.10
 PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://q4m.kazuhooku.com/dist/
-PKGNAMEPREFIX=	mysql${MYSQL_VER}-
+PKGNAMEPREFIX=	${_MYSQL_SERVER:T:C/-server$/-/}
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A message queue that works as a pluggable storage engine of MySQL
@@ -24,7 +24,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include -DDBUG_OFF
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib -L${LOCALBASE}/lib/mysql
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \
 		--libdir="${PREFIX}/lib/mysql/plugin" \
-		--with-mysql="$$(cd ${PORTSDIR}/databases/mysql${MYSQL_VER}-server; ${MAKE} -V WRKSRC)"
+		--with-mysql="$$(cd ${PORTSDIR}/${_MYSQL_SERVER}; ${MAKE} -V WRKSRC)"
 
 COPYTREE_AUTO=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 					2>&1) && \
