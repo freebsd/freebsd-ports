@@ -5,4 +5,5 @@ lib/libburn.so
 lib/libburn.so.4
 lib/libburn.la
 libdata/pkgconfig/libburn-1.pc
+man/man1/cdrskin.1.gz
 @dirrm include/libburn
