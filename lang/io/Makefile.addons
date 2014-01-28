@@ -120,7 +120,7 @@ LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
 # GLFW
 #
 .if ${PORT_OPTIONS:MGLFW}
-LIB_DEPENDS+=	libglfw.so.0:${PORTSDIR}/graphics/glfw
+LIB_DEPENDS+=	libglfw.so.0:${PORTSDIR}/graphics/glfw2
 .endif
 
 #
