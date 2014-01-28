@@ -20,15 +20,11 @@ CONFIGURE_ARGS=	--enable-ipv6 --without-gssapi \
 		--with-editor="vi" \
 		--with-tmpdir="/tmp"
 
-MAN1=		cvs.1
-MAN5=		cvs.5
-MAN8=		cvsbug.8
 INFO=		cvs cvsclient
 
 CVS_SITE?=	:pserver:anoncvs@anoncvs.jp.FreeBSD.org:/home/ncvs
 CVS_VER?=	v${PORTVERSION:S//_/g}
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} 's/${PORTVERSION:S/./\./g}/&-devel/g' \
 		${WRKSRC}/configure
