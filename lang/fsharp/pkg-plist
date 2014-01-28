@@ -1,122 +1,147 @@
-@unexec gacutil -u policy.4.3.FSharp.Core,Version=0.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a
-@unexec gacutil -u policy.2.3.FSharp.Core,Version=0.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a
-@unexec gacutil -u policy.4.0.FSharp.Core,Version=0.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a
-@unexec gacutil -u policy.2.0.FSharp.Core,Version=0.0.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a
-@unexec gacutil -u fsiAnyCpu,Version=4.3.0.0,Culture=neutral,PublicKeyToken=f536804aa0eb945b
-@unexec gacutil -u fsi,Version=4.3.0.0,Culture=neutral,PublicKeyToken=f536804aa0eb945b
-@unexec gacutil -u FSharp.Compiler.Server.Shared,Version=4.3.0.0,Culture=neutral,PublicKeyToken=f536804aa0eb945b
-@unexec gacutil -u FSharp.Compiler.Interactive.Settings,Version=4.3.0.0,Culture=neutral,PublicKeyToken=f536804aa0eb945b
-@unexec gacutil -u fsc,Version=4.3.0.0,Culture=neutral,PublicKeyToken=f536804aa0eb945b
-@unexec gacutil -u FSharp.Compiler,Version=4.3.0.0,Culture=neutral,PublicKeyToken=f536804aa0eb945b
-@unexec gacutil -u FSharp.Build,Version=4.3.0.0,Culture=neutral,PublicKeyToken=f536804aa0eb945b
-@unexec gacutil -u FSharp.Build,Version=2.3.0.0,Culture=neutral,PublicKeyToken=f536804aa0eb945b
-@unexec gacutil -u FSharp.Core,Version=4.3.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a
-@unexec gacutil -u FSharp.Core,Version=2.3.1.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a
-@unexec gacutil -u FSharp.Core,Version=2.3.0.0,Culture=neutral,PublicKeyToken=b03f5f7f11d50a3a
+@comment $FreeBSD: lang/fsharp/pkg-plist 315634 2013-03-31 13:11:04Z pgj $
 bin/fsharpc
 bin/fsharpi
 bin/fsharpiAnyCpu
-%%LB%%lib/mono/2.0/FSharp.Build.dll
-%%LB%%lib/mono/2.0/FSharp.Core.dll
-%%LB%%lib/mono/2.0/FSharp.Core.optdata
-%%LB%%lib/mono/2.0/FSharp.Core.sigdata
-%%LB%%lib/mono/2.0/Microsoft.FSharp.Targets
-%%LB%%lib/mono/2.0/policy.2.0.FSharp.Core.dll
-%%LB%%lib/mono/2.0/policy.2.3.FSharp.Core.dll
-%%LB%%lib/mono/2.0/policy.4.0.FSharp.Core.dll
-%%LB%%lib/mono/2.0/policy.4.3.FSharp.Core.dll
-%%LB%%lib/mono/2.1/FSharp.Core.dll
-%%LB%%lib/mono/2.1/FSharp.Core.optdata
-%%LB%%lib/mono/2.1/FSharp.Core.sigdata
-%%LB%%lib/mono/2.1/FSharp.Core.xml
-%%LB%%lib/mono/4.0/FSharp.Build.dll
-%%LB%%lib/mono/4.0/FSharp.Build.xml
-%%LB%%lib/mono/4.0/FSharp.Compiler.Interactive.Settings.dll
-%%LB%%lib/mono/4.0/FSharp.Compiler.Interactive.Settings.xml
-%%LB%%lib/mono/4.0/FSharp.Compiler.Server.Shared.dll
-%%LB%%lib/mono/4.0/FSharp.Compiler.Server.Shared.xml
-%%LB%%lib/mono/4.0/FSharp.Compiler.dll
-%%LB%%lib/mono/4.0/FSharp.Compiler.xml
-%%LB%%lib/mono/4.0/FSharp.Core.dll
-%%LB%%lib/mono/4.0/FSharp.Core.optdata
-%%LB%%lib/mono/4.0/FSharp.Core.sigdata
-%%LB%%lib/mono/4.0/FSharp.Core.xml
-%%LB%%lib/mono/4.0/Microsoft.FSharp.Targets
-%%LB%%lib/mono/4.0/fsc.exe
-%%LB%%lib/mono/4.0/fsc.xml
-%%LB%%lib/mono/4.0/fsi.exe
-%%LB%%lib/mono/4.0/fsi.xml
-%%LB%%lib/mono/4.0/fsiAnyCpu.exe
-%%LB%%lib/mono/4.0/fsiAnyCpu.xml
-%%LB%%lib/mono/4.0/policy.2.0.FSharp.Core.dll
-%%LB%%lib/mono/4.0/policy.2.3.FSharp.Core.dll
-%%LB%%lib/mono/4.0/policy.4.0.FSharp.Core.dll
-%%LB%%lib/mono/4.0/policy.4.3.FSharp.Core.dll
-%%LB%%lib/mono/4.5/FSharp.Build.dll
-%%LB%%lib/mono/4.5/FSharp.Build.xml
-%%LB%%lib/mono/4.5/FSharp.Compiler.Interactive.Settings.dll
-%%LB%%lib/mono/4.5/FSharp.Compiler.Interactive.Settings.xml
-%%LB%%lib/mono/4.5/FSharp.Compiler.Server.Shared.dll
-%%LB%%lib/mono/4.5/FSharp.Compiler.Server.Shared.xml
-%%LB%%lib/mono/4.5/FSharp.Compiler.dll
-%%LB%%lib/mono/4.5/FSharp.Compiler.xml
-%%LB%%lib/mono/4.5/FSharp.Core.dll
-%%LB%%lib/mono/4.5/FSharp.Core.optdata
-%%LB%%lib/mono/4.5/FSharp.Core.sigdata
-%%LB%%lib/mono/4.5/FSharp.Core.xml
-%%LB%%lib/mono/4.5/fsc.exe
-%%LB%%lib/mono/4.5/fsc.xml
-%%LB%%lib/mono/4.5/fsi.exe
-%%LB%%lib/mono/4.5/fsi.xml
-%%LB%%lib/mono/4.5/fsiAnyCpu.exe
-%%LB%%lib/mono/4.5/fsiAnyCpu.xml
-%%LB%%lib/mono/Microsoft F#/v2.0/FSharp.Build.dll
-%%LB%%lib/mono/Microsoft F#/v2.0/FSharp.Core.dll
-%%LB%%lib/mono/Microsoft F#/v2.0/Microsoft.FSharp.Targets
-%%LB%%lib/mono/Microsoft F#/v2.0/policy.2.0.FSharp.Core.dll
-%%LB%%lib/mono/Microsoft F#/v2.0/policy.2.3.FSharp.Core.dll
-%%LB%%lib/mono/Microsoft F#/v2.0/policy.4.0.FSharp.Core.dll
-%%LB%%lib/mono/Microsoft F#/v2.0/policy.4.3.FSharp.Core.dll
-%%LB%%lib/mono/Microsoft F#/v4.0/FSharp.Build.dll
-%%LB%%lib/mono/Microsoft F#/v4.0/FSharp.Compiler.Interactive.Settings.dll
-%%LB%%lib/mono/Microsoft F#/v4.0/FSharp.Compiler.Server.Shared.dll
-%%LB%%lib/mono/Microsoft F#/v4.0/FSharp.Compiler.dll
-%%LB%%lib/mono/Microsoft F#/v4.0/FSharp.Core.dll
-%%LB%%lib/mono/Microsoft F#/v4.0/Microsoft.FSharp.Targets
-%%LB%%lib/mono/Microsoft F#/v4.0/fsc.exe
-%%LB%%lib/mono/Microsoft F#/v4.0/fsi.exe
-%%LB%%lib/mono/Microsoft F#/v4.0/fsiAnyCpu.exe
-%%LB%%lib/mono/Microsoft F#/v4.0/policy.2.0.FSharp.Core.dll
-%%LB%%lib/mono/Microsoft F#/v4.0/policy.2.3.FSharp.Core.dll
-%%LB%%lib/mono/Microsoft F#/v4.0/policy.4.0.FSharp.Core.dll
-%%LB%%lib/mono/Microsoft F#/v4.0/policy.4.3.FSharp.Core.dll
-%%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v2.0/FSharp.Build.dll
-%%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v2.0/FSharp.Core.dll
-%%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v2.0/Microsoft.FSharp.Targets
-%%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v2.0/policy.2.0.FSharp.Core.dll
-%%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v2.0/policy.2.3.FSharp.Core.dll
-%%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v2.0/policy.4.0.FSharp.Core.dll
-%%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v2.0/policy.4.3.FSharp.Core.dll
-%%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.0/FSharp.Build.dll
-%%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.0/FSharp.Compiler.Interactive.Settings.dll
-%%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.0/FSharp.Compiler.Server.Shared.dll
-%%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.0/FSharp.Compiler.dll
-%%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.0/FSharp.Core.dll
-%%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.0/Microsoft.FSharp.Targets
-%%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.0/fsc.exe
-%%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.0/fsi.exe
-%%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.0/fsiAnyCpu.exe
-%%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.0/policy.2.0.FSharp.Core.dll
-%%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.0/policy.2.3.FSharp.Core.dll
-%%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.0/policy.4.0.FSharp.Core.dll
-%%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.0/policy.4.3.FSharp.Core.dll
-@dirrm %%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.0
-@dirrm %%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework/v2.0
-@dirrm %%LB%%lib/mono/Microsoft SDKs/F#/3.0/Framework
-@dirrm %%LB%%lib/mono/Microsoft SDKs/F#/3.0
-@dirrm %%LB%%lib/mono/Microsoft SDKs/F#
-@dirrm %%LB%%lib/mono/Microsoft SDKs
-@dirrm %%LB%%lib/mono/Microsoft F#/v4.0
-@dirrm %%LB%%lib/mono/Microsoft F#/v2.0
-@dirrm %%LB%%lib/mono/Microsoft F#
-@dirrmtry %%LB%%lib/mono/2.1
+lib/mono/2.0/FSharp.Core.dll
+lib/mono/2.0/FSharp.Core.optdata
+lib/mono/2.0/FSharp.Core.sigdata
+lib/mono/2.0/policy.2.0.FSharp.Core.dll
+lib/mono/2.0/policy.2.3.FSharp.Core.dll
+lib/mono/2.0/policy.4.0.FSharp.Core.dll
+lib/mono/2.0/policy.4.3.FSharp.Core.dll
+lib/mono/2.1/FSharp.Core.dll
+lib/mono/2.1/FSharp.Core.optdata
+lib/mono/2.1/FSharp.Core.sigdata
+lib/mono/2.1/FSharp.Core.xml
+lib/mono/4.0/FSharp.Build.dll
+lib/mono/4.0/FSharp.Build.xml
+lib/mono/4.0/FSharp.Compiler.Interactive.Settings.dll
+lib/mono/4.0/FSharp.Compiler.Interactive.Settings.xml
+lib/mono/4.0/FSharp.Compiler.Server.Shared.dll
+lib/mono/4.0/FSharp.Compiler.Server.Shared.xml
+lib/mono/4.0/FSharp.Compiler.dll
+lib/mono/4.0/FSharp.Compiler.xml
+lib/mono/4.0/FSharp.Core.dll
+lib/mono/4.0/FSharp.Core.optdata
+lib/mono/4.0/FSharp.Core.sigdata
+lib/mono/4.0/FSharp.Core.xml
+lib/mono/4.0/FSharp.Data.TypeProviders.dll
+lib/mono/4.0/FSharp.Data.TypeProviders.xml
+lib/mono/4.0/Microsoft.FSharp.Targets
+lib/mono/4.0/Microsoft.Portable.FSharp.Targets
+lib/mono/4.0/fsc.exe
+lib/mono/4.0/fsc.xml
+lib/mono/4.0/fsi.exe
+lib/mono/4.0/fsi.xml
+lib/mono/4.0/fsiAnyCpu.exe
+lib/mono/4.0/fsiAnyCpu.xml
+lib/mono/4.0/policy.2.0.FSharp.Core.dll
+lib/mono/4.0/policy.2.3.FSharp.Core.dll
+lib/mono/4.0/policy.4.0.FSharp.Core.dll
+lib/mono/4.0/policy.4.3.FSharp.Core.dll
+lib/mono/Microsoft F#/v4.0/Microsoft.FSharp.Targets
+lib/mono/Microsoft F#/v4.0/Microsoft.Portable.FSharp.Targets
+lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.0/Microsoft.FSharp.Targets
+lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.0/Microsoft.Portable.FSharp.Targets
+lib/mono/Microsoft SDKs/F#/3.1/Framework/v4.0/Microsoft.FSharp.Targets
+lib/mono/Microsoft SDKs/F#/3.1/Framework/v4.0/Microsoft.Portable.FSharp.Targets
+lib/mono/gac/FSharp.Build/4.3.0.0__f536804aa0eb945b/FSharp.Build.dll
+lib/mono/gac/FSharp.Build/4.3.0.0__f536804aa0eb945b/FSharp.Build.dll.mdb
+lib/mono/gac/FSharp.Build/4.3.0.0__f536804aa0eb945b/FSharp.Build.xml
+lib/mono/gac/FSharp.Compiler.Interactive.Settings/4.3.0.0__f536804aa0eb945b/FSharp.Compiler.Interactive.Settings.dll
+lib/mono/gac/FSharp.Compiler.Interactive.Settings/4.3.0.0__f536804aa0eb945b/FSharp.Compiler.Interactive.Settings.dll.mdb
+lib/mono/gac/FSharp.Compiler.Interactive.Settings/4.3.0.0__f536804aa0eb945b/FSharp.Compiler.Interactive.Settings.xml
+lib/mono/gac/FSharp.Compiler.Server.Shared/4.3.0.0__f536804aa0eb945b/FSharp.Compiler.Server.Shared.dll
+lib/mono/gac/FSharp.Compiler.Server.Shared/4.3.0.0__f536804aa0eb945b/FSharp.Compiler.Server.Shared.dll.mdb
+lib/mono/gac/FSharp.Compiler.Server.Shared/4.3.0.0__f536804aa0eb945b/FSharp.Compiler.Server.Shared.xml
+lib/mono/gac/FSharp.Compiler/4.3.0.0__f536804aa0eb945b/FSharp.Compiler.dll
+lib/mono/gac/FSharp.Compiler/4.3.0.0__f536804aa0eb945b/FSharp.Compiler.dll.mdb
+lib/mono/gac/FSharp.Compiler/4.3.0.0__f536804aa0eb945b/FSharp.Compiler.xml
+lib/mono/gac/FSharp.Core/2.3.0.0__b03f5f7f11d50a3a/FSharp.Core.dll
+lib/mono/gac/FSharp.Core/2.3.0.0__b03f5f7f11d50a3a/FSharp.Core.dll.mdb
+lib/mono/gac/FSharp.Core/2.3.0.0__b03f5f7f11d50a3a/FSharp.Core.optdata
+lib/mono/gac/FSharp.Core/2.3.0.0__b03f5f7f11d50a3a/FSharp.Core.sigdata
+lib/mono/gac/FSharp.Core/2.3.1.0__b03f5f7f11d50a3a/FSharp.Core.dll
+lib/mono/gac/FSharp.Core/2.3.1.0__b03f5f7f11d50a3a/FSharp.Core.dll.mdb
+lib/mono/gac/FSharp.Core/2.3.1.0__b03f5f7f11d50a3a/FSharp.Core.optdata
+lib/mono/gac/FSharp.Core/2.3.1.0__b03f5f7f11d50a3a/FSharp.Core.sigdata
+lib/mono/gac/FSharp.Core/2.3.1.0__b03f5f7f11d50a3a/FSharp.Core.xml
+lib/mono/gac/FSharp.Core/4.3.0.0__b03f5f7f11d50a3a/FSharp.Core.dll
+lib/mono/gac/FSharp.Core/4.3.0.0__b03f5f7f11d50a3a/FSharp.Core.dll.mdb
+lib/mono/gac/FSharp.Core/4.3.0.0__b03f5f7f11d50a3a/FSharp.Core.optdata
+lib/mono/gac/FSharp.Core/4.3.0.0__b03f5f7f11d50a3a/FSharp.Core.sigdata
+lib/mono/gac/FSharp.Core/4.3.0.0__b03f5f7f11d50a3a/FSharp.Core.xml
+lib/mono/gac/FSharp.Data.TypeProviders/4.3.0.0__f536804aa0eb945b/FSharp.Data.TypeProviders.dll
+lib/mono/gac/FSharp.Data.TypeProviders/4.3.0.0__f536804aa0eb945b/FSharp.Data.TypeProviders.dll.mdb
+lib/mono/gac/FSharp.Data.TypeProviders/4.3.0.0__f536804aa0eb945b/FSharp.Data.TypeProviders.xml
+lib/mono/gac/fsc/4.3.0.0__f536804aa0eb945b/fsc.exe
+lib/mono/gac/fsc/4.3.0.0__f536804aa0eb945b/fsc.exe.mdb
+lib/mono/gac/fsc/4.3.0.0__f536804aa0eb945b/fsc.xml
+lib/mono/gac/fsi/4.3.0.0__f536804aa0eb945b/fsi.exe
+lib/mono/gac/fsi/4.3.0.0__f536804aa0eb945b/fsi.exe.mdb
+lib/mono/gac/fsi/4.3.0.0__f536804aa0eb945b/fsi.xml
+lib/mono/gac/fsiAnyCpu/4.3.0.0__f536804aa0eb945b/fsiAnyCpu.exe
+lib/mono/gac/fsiAnyCpu/4.3.0.0__f536804aa0eb945b/fsiAnyCpu.exe.mdb
+lib/mono/gac/fsiAnyCpu/4.3.0.0__f536804aa0eb945b/fsiAnyCpu.xml
+lib/mono/gac/policy.2.0.FSharp.Core/0.0.0.0__b03f5f7f11d50a3a/policy.2.0.FSharp.Core.dll
+lib/mono/gac/policy.2.0.FSharp.Core/0.0.0.0__b03f5f7f11d50a3a/policy.2.0.FSharp.Core.dll.config
+lib/mono/gac/policy.2.3.FSharp.Core/0.0.0.0__b03f5f7f11d50a3a/policy.2.3.FSharp.Core.dll
+lib/mono/gac/policy.2.3.FSharp.Core/0.0.0.0__b03f5f7f11d50a3a/policy.2.3.FSharp.Core.dll.config
+lib/mono/gac/policy.4.0.FSharp.Core/0.0.0.0__b03f5f7f11d50a3a/policy.4.0.FSharp.Core.dll
+lib/mono/gac/policy.4.0.FSharp.Core/0.0.0.0__b03f5f7f11d50a3a/policy.4.0.FSharp.Core.dll.config
+lib/mono/gac/policy.4.3.FSharp.Core/0.0.0.0__b03f5f7f11d50a3a/policy.4.3.FSharp.Core.dll
+lib/mono/gac/policy.4.3.FSharp.Core/0.0.0.0__b03f5f7f11d50a3a/policy.4.3.FSharp.Core.dll.config
+lib/mono/xbuild/Microsoft/VisualStudio/v/FSharp/Microsoft.FSharp.Targets
+lib/mono/xbuild/Microsoft/VisualStudio/v/FSharp/Microsoft.Portable.FSharp.Targets
+lib/mono/xbuild/Microsoft/VisualStudio/v12.0/FSharp/Microsoft.FSharp.Targets
+lib/mono/xbuild/Microsoft/VisualStudio/v12.0/FSharp/Microsoft.Portable.FSharp.Targets
+@dirrmtry lib/mono/xbuild/Microsoft/VisualStudio/v12.0/FSharp
+@dirrmtry lib/mono/xbuild/Microsoft/VisualStudio/v12.0
+@dirrmtry lib/mono/xbuild/Microsoft/VisualStudio/v/FSharp
+@dirrmtry lib/mono/xbuild/Microsoft/VisualStudio/v
+@dirrmtry lib/mono/xbuild/Microsoft/VisualStudio
+@dirrmtry lib/mono/xbuild/Microsoft
+@dirrmtry lib/mono/xbuild
+@dirrmtry lib/mono/gac/policy.4.3.FSharp.Core/0.0.0.0__b03f5f7f11d50a3a
+@dirrmtry lib/mono/gac/policy.4.3.FSharp.Core
+@dirrmtry lib/mono/gac/policy.4.0.FSharp.Core/0.0.0.0__b03f5f7f11d50a3a
+@dirrmtry lib/mono/gac/policy.4.0.FSharp.Core
+@dirrmtry lib/mono/gac/policy.2.3.FSharp.Core/0.0.0.0__b03f5f7f11d50a3a
+@dirrmtry lib/mono/gac/policy.2.3.FSharp.Core
+@dirrmtry lib/mono/gac/policy.2.0.FSharp.Core/0.0.0.0__b03f5f7f11d50a3a
+@dirrmtry lib/mono/gac/policy.2.0.FSharp.Core
+@dirrmtry lib/mono/gac/fsiAnyCpu/4.3.0.0__f536804aa0eb945b
+@dirrmtry lib/mono/gac/fsiAnyCpu
+@dirrmtry lib/mono/gac/fsi/4.3.0.0__f536804aa0eb945b
+@dirrmtry lib/mono/gac/fsi
+@dirrmtry lib/mono/gac/fsc/4.3.0.0__f536804aa0eb945b
+@dirrmtry lib/mono/gac/fsc
+@dirrmtry lib/mono/gac/FSharp.Data.TypeProviders/4.3.0.0__f536804aa0eb945b
+@dirrmtry lib/mono/gac/FSharp.Data.TypeProviders
+@dirrmtry lib/mono/gac/FSharp.Core/4.3.0.0__b03f5f7f11d50a3a
+@dirrmtry lib/mono/gac/FSharp.Core/2.3.1.0__b03f5f7f11d50a3a
+@dirrmtry lib/mono/gac/FSharp.Core/2.3.0.0__b03f5f7f11d50a3a
+@dirrmtry lib/mono/gac/FSharp.Core
+@dirrmtry lib/mono/gac/FSharp.Compiler/4.3.0.0__f536804aa0eb945b
+@dirrmtry lib/mono/gac/FSharp.Compiler.Server.Shared/4.3.0.0__f536804aa0eb945b
+@dirrmtry lib/mono/gac/FSharp.Compiler.Server.Shared
+@dirrmtry lib/mono/gac/FSharp.Compiler.Interactive.Settings/4.3.0.0__f536804aa0eb945b
+@dirrmtry lib/mono/gac/FSharp.Compiler.Interactive.Settings
+@dirrmtry lib/mono/gac/FSharp.Compiler
+@dirrmtry lib/mono/gac/FSharp.Build/4.3.0.0__f536804aa0eb945b
+@dirrmtry lib/mono/gac/FSharp.Build
+@dirrmtry lib/mono/gac
+@dirrmtry lib/mono/Microsoft SDKs/F#/3.1/Framework/v4.0
+@dirrmtry lib/mono/Microsoft SDKs/F#/3.1/Framework
+@dirrmtry lib/mono/Microsoft SDKs/F#/3.1
+@dirrmtry lib/mono/Microsoft SDKs/F#/3.0/Framework/v4.0
+@dirrmtry lib/mono/Microsoft SDKs/F#/3.0/Framework
+@dirrmtry lib/mono/Microsoft SDKs/F#/3.0
+@dirrmtry lib/mono/Microsoft SDKs/F#
+@dirrmtry lib/mono/Microsoft SDKs
+@dirrmtry lib/mono/Microsoft F#/v4.0
+@dirrmtry lib/mono/Microsoft F#
+@dirrmtry lib/mono/4.0
+@dirrmtry lib/mono/2.1
+@dirrmtry lib/mono/2.0
+@dirrmtry lib/mono
