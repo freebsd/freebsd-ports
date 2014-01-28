@@ -1,4 +1,6 @@
 bin/ocre
+man/es/man1/ocre.1.gz
+man/man1/ocre.1.gz
 share/locale/es/LC_MESSAGES/ocre.mo
 %%DATADIR%%/conv/cod39a2c
 %%DATADIR%%/conv/maymin
