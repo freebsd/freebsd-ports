@@ -1,6 +1,9 @@
 bin/cvs
 bin/cvsbug
 bin/rcs2log
+man/man1/cvs.1.gz
+man/man5/cvs.5.gz
+man/man8/cvsbug.8.gz
 share/cvs/contrib/README
 share/cvs/contrib/clmerge
 share/cvs/contrib/cln_hist
