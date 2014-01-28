@@ -3,6 +3,7 @@
 
 PORTNAME=	klh10
 PORTVERSION=	2.0a
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://klh10.trailing-edge.com/
 DISTFILES=	${DISTNAME}.tgz klh10-2.0a-aux.tgz
@@ -15,19 +16,17 @@ ONLY_FOR_ARCHS=	i386
 BUILD_WRKSRC=	${WRKSRC}/bld/fbx86
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-# KSITS_ prefix for Komputer Small Incompatible Timesharing System
-# a KLH10 configuration.
+# someday add support for base-kl and base-ks targets
+MAKE_ENV=		KLH10_HOME="${DATADIR}"
+ALL_TARGET=		base-ks-its
 
-# KSITS_KLH10_HOME and KSITS_DRIVER_DIR must be set to the same
-# locations that the its port uses.
+SUB_FILES=		pkg-message
+
+DATADIR=		${PREFIX}/share/${KSITS_KLH10_DIR}
+DOCSDIR=		${PREFIX}/share/doc/${KSITS_KLH10_DIR}
 
 KSITS_KLH10_DIR=	klh10-ks-its
-KSITS_KLH10_HOME=	${PREFIX}/share/${KSITS_KLH10_DIR}
 KSITS_DRIVER_DIR=	${PREFIX}/libexec/${KSITS_KLH10_DIR}
-KSITS_DOCDIR=		${PREFIX}/share/doc/${KSITS_KLH10_DIR}
-# someday add support for base-kl and base-ks targets
-MAKE_ENV+=		KLH10_HOME=${KSITS_KLH10_HOME}
-ALL_TARGET=		base-ks-its
 
 KSITS_NATIVE_PROGS=	kn10-ks \
 			tapedd \
@@ -76,47 +75,47 @@ KSITS_DOCS=		Intro.txt \
 			utils.txt \
 			vtape.txt
 
-NO_STAGE=	yes
-pre-install:
-	@ ${MKDIR} ${KSITS_KLH10_HOME}
-	@ ${MKDIR} ${KSITS_DRIVER_DIR}
-	@ ${MKDIR} ${KSITS_DOCDIR}
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|logf |log_f |g ; \
+		 s|logf,|log_f,|g ; \
+		 s|logf;|log_f;|g ; \
+		 s|logf)|log_f)|g'
 
-post-install:
-.for file in ${KSITS_NATIVE_PROGS} ${KSITS_EM_DRIVERS} ${KSITS_EM_SDRIVERS}
-	@ ${STRIP_CMD} ${KSITS_KLH10_HOME}/${file}
+do-install:
+.for i in ${KSITS_NATIVE_PROGS}
+	cd ${INSTALL_WRKSRC} && ${INSTALL_PROGRAM} ${i} \
+		${STAGEDIR}${PREFIX}/bin
 .endfor
-.for file in ${KSITS_NATIVE_PROGS}
-	@ ${MV} ${KSITS_KLH10_HOME}/${file} ${PREFIX}/bin
+	@ ${MKDIR} ${STAGEDIR}${KSITS_DRIVER_DIR}
+.for i in ${KSITS_EM_DRIVERS} ${KSITS_EM_SDRIVERS}
+	cd ${INSTALL_WRKSRC} && ${INSTALL_PROGRAM} ${i} \
+		${STAGEDIR}${KSITS_DRIVER_DIR}
 .endfor
-.for file in ${KSITS_EM_DRIVERS} ${KSITS_EM_SDRIVERS}
-	@ ${MV} ${KSITS_KLH10_HOME}/${file} ${KSITS_DRIVER_DIR}
+	@ ${MKDIR} ${STAGEDIR}${DATADIR}
+.for i in ${KSITS_EM_DAT}
+	cd ${WRKSRC}/run/ksits && ${INSTALL_DATA} ${i} \
+		${STAGEDIR}${DATADIR}
 .endfor
-.for file in ${KSITS_EM_SDRIVERS}
-	@ ${CHGRP} network ${KSITS_DRIVER_DIR}/${file}
-	@ ${CHMOD} 4754 ${KSITS_DRIVER_DIR}/${file}
+	@ ${MKDIR} ${STAGEDIR}${DATADIR}/flushed
+	@ ${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${FILESDIR} && ${INSTALL_DATA} PDPs \
+		${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/run/ksits && ${INSTALL_DATA} README \
+		${STAGEDIR}${DOCSDIR}
+.for i in ${KSITS_DOCS}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${i} \
+		${STAGEDIR}${DOCSDIR}
 .endfor
-.for file in ${KSITS_EM_DAT}
-	@ ${INSTALL_DATA} ${WRKSRC}/run/ksits/${file} ${KSITS_KLH10_HOME}
+	@ ${MKDIR} ${STAGEDIR}${DOCSDIR}/pubits/adm
+.for i in ${KSITS_PUBADM}
+	cd ${WRKSRC}/run/ksits/pubits/adm && ${INSTALL_DATA} ${i} \
+		${STAGEDIR}${DOCSDIR}/pubits/adm
 .endfor
-	@ ${INSTALL_MAN} ${WRKSRC}/run/ksits/README ${KSITS_DOCDIR}
-	@ ${MKDIR} ${KSITS_DOCDIR}/pubits/adm
-	@ ${MKDIR} ${KSITS_DOCDIR}/pubits/doc
-.for file in ${KSITS_DOCS}
-	@ ${INSTALL_MAN} ${WRKSRC}/doc/${file} ${KSITS_DOCDIR}
+	@ ${MKDIR} ${STAGEDIR}${DOCSDIR}/pubits/doc
+.for i in ${KSITS_PUBDOC}
+	cd ${WRKSRC}/run/ksits/pubits/doc && ${INSTALL_DATA} ${i} \
+		${STAGEDIR}${DOCSDIR}/pubits/doc
 .endfor
-.for file in ${KSITS_PUBADM}
-	@ ${INSTALL_MAN} ${WRKSRC}/run/ksits/pubits/adm/${file} \
-		${KSITS_DOCDIR}/pubits/adm
-.endfor
-.for file in ${KSITS_PUBDOC}
-	@ ${INSTALL_MAN} ${WRKSRC}/run/ksits/pubits/doc/${file} \
-		${KSITS_DOCDIR}/pubits/doc
-.endfor
-	@ ${INSTALL_MAN} ${FILESDIR}/PDPs ${KSITS_DOCDIR}
-	@ ${ECHO} !!! KLH10 contains a setuid that accepts network connections.
-	@ ${ECHO} !!! Consider using a firewall to limit access to KLH10.
-	@ ${ECHO} !!! See the ${KSITS_DOCDIR}/pubits/adm
-	@ ${ECHO} !!! for firewall documentation.
 
 .include <bsd.port.mk>
