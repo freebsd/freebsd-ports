@@ -12,7 +12,6 @@ COMMENT=	Windows application management for the GNOME Desktop
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gtksourceview.so:${PORTSDIR}/x11-toolkits/py-gnome-desktop \
 		bash:${PORTSDIR}/shells/bash \
 		cabextract:${PORTSDIR}/archivers/cabextract \
 		orange:${PORTSDIR}/archivers/liborange \
