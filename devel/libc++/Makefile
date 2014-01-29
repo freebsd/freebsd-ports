@@ -4,41 +4,36 @@
 PORTNAME=	libc++
 PORTVERSION=	${SVN_REV}
 CATEGORIES=	devel
-MASTER_SITES=	LOCAL/kwm
+MASTER_SITES=	http://files.etoilebsd.net/libc++/ \
+		LOCAL/bapt
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Llvm's C++ standard library with c++11 support
 
-BUILD_DEPENDS=	clang33:${PORTSDIR}/lang/clang33
+LIB_DEPENDS=	libcxxrt.so:${PORTSDIR}/devel/libcxxrt
 
 LICENSE_GROUP=	MIT UIUC
 LICENSE_NAME_UIUC=	University of Illinois/NCSA Open Source License
 LICENSE_PERMS_UIUC=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USE_BZIP2=	yes
-USES=		cmake:outsource
+USE_XZ=	yes
+USES=		cmake:outsource compiler:c++11-lang
 USE_LDCONFIG=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-CC=	clang33
-CXX=	clang++33
-CPP=	clang-cpp33
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} <  901502
-IGNORE=		Doesn't build due to lack of aligned_alloc()
+.if exists(/usr/lib/libcxxrt.so)
+CXXRT_INCS=	/usr/include/c++/v1/
+.else
+CXXRT_INCS=	/usr/local/include/cxxrt/
 .endif
 
-# This check can be replaced with a compiler groks c++11. Suggestions welcome.
-.if ${OSVERSION} >= 1000019 
-IGNORE=		libc++ is in base please use that
-.endif
+CMAKE_ARGS=	-DLIBCXX_CXX_ABI=libcxxrt -DLIBCXX_LIBCXXRT_INCLUDE_PATHS=${CXXRT_INCS}
 
 .if !defined(SVN_REV)
 .if defined(BOOTSTRAP)
-LANG=           "C"
-SVN_REV!=       svn info http://llvm.org/svn/llvm-project/ | ${GREP} Revision | cut -d' ' -f2
+SVN_REV!=       LC_ALL=C svn info http://llvm.org/svn/llvm-project/ | ${GREP} Revision | cut -d' ' -f2
 .else
 .include "Makefile.svn_rev"
 .endif
@@ -50,10 +45,18 @@ FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion
 do-fetch:
 	${MKDIR} ${WRKDIR}
 	svn export -r ${SVN_REV} \
-		http://llvm.org/svn/llvm-project/libcxx/trunk ${WRKSRC}
-	cd ${WRKDIR}; tar cvfy ${DISTDIR}/${DISTNAME}.tar.bz2 ${DISTNAME}
+		http://llvm.org/svn/llvm-project/libcxx/trunk \
+		${WRKSRC}
+	cd ${WRKDIR}; tar cfJ ${DISTDIR}/${DISTNAME}.tar.xz ${DISTNAME}
 	echo "SVN_REV=  ${SVN_REV}" > ${MASTERDIR}/Makefile.svn_rev
 .endif
+
+post-install:
+	${LN} -sf c++/v1 ${STAGEDIR}${PREFIX}/include/c++/v1/tr1
+	${RM} ${STAGEDIR}${PREFIX}/lib/libc++.so
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/c++/
+	${ECHO} 'GROUP ( ${PREFIX}/lib/libc++.so.1 ${LOCALBASE}/lib/libcxxrt.so)' > ${STAGEDIR}${PREFIX}/lib/libc++.so
+	${ECHO} 'GROUP ( ${PREFIX}/lib/libc++.so.1 ${LOCALBASE}/lib/libcxxrt.so)' > ${STAGEDIR}${PREFIX}/lib/c++/libstdc++.so
 
 regression-test: build
 	cd ${WRKSRC}/test && ${SH} ./testit
