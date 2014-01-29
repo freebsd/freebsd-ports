@@ -74,7 +74,7 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <cvename>CVE-2014-0019</cvename>
-      <url>https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2014-0019</url>
+      <url>http://www.dest-unreach.org/socat/contrib/socat-secadv5.txt</url>
     </references>
     <dates>
       <discovery>2014-01-24</discovery>
