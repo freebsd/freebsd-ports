@@ -12,12 +12,12 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Quicklauncher plugin for Xfce
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USES=		gettext pkgconfig
-USE_GMAKE=	yes
+USES=		gettext pkgconfig gmake
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libgui panel
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

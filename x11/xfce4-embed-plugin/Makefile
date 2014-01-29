@@ -11,18 +11,18 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Embed arbitrary windows into the Xfce panel
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=	pkgconfig
+USES=	pkgconfig gmake
 USE_XORG=	x11
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel
 
 OPTIONS_DEFINE=	NLS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
