@@ -15,6 +15,7 @@ GH_COMMIT=	9a3562c
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--full \
+		--enable-utf8 \
 		--enable-shared \
 		--disable-docs
 
