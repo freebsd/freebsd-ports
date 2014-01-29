@@ -134,6 +134,7 @@
     SUBDIR += findmtu
     SUBDIR += flowgrep
     SUBDIR += fonulator
+    SUBDIR += foreman-proxy
     SUBDIR += forg
     SUBDIR += fpc-ldap
     SUBDIR += fpc-pcap
