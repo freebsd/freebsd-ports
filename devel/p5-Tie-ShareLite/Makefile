@@ -16,7 +16,4 @@ RUN_DEPENDS=	p5-IPC-ShareLite>=0:${PORTSDIR}/devel/p5-IPC-ShareLite
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Tie::ShareLite.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

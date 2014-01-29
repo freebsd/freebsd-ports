@@ -25,11 +25,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Algorithm::Accounting.3 \
-		Algorithm::Accounting::Report.3 \
-		Algorithm::Accounting::Report::Imager.3 \
-		Algorithm::Accounting::Report::GDGraph.3 \
-		Algorithm::Accounting::Report::Text.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

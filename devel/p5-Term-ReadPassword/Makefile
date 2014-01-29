@@ -11,7 +11,5 @@ COMMENT=	Perl module for asking the user for a password
 
 USES=		perl5
 USE_PERL5=	configure
-MAN3=		Term::ReadPassword.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
