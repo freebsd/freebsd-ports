@@ -13,13 +13,11 @@ COMMENT=	Do a POST operaion and Dump http-contents to stdout
 WRKSRC=		${WRKDIR}/http_post
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
-MAN1=		http_post.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/http_post
+PLIST_FILES=	bin/http_post \
+		man/man1/http_post.1.gz
 
 .ifndef NO_OPENSSL
 USE_OPENSSL=	yes
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
