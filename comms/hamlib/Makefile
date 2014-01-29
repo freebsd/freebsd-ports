@@ -13,9 +13,8 @@ LICENSE=	LGPL20
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
-USES=		perl5 pkgconfig pathfix
+USES=		perl5 pkgconfig pathfix tcl
 USE_GNOME=	libxml2
-USE_TCL=	yes
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	autoconf libtool libltdl
 USE_LDCONFIG=	yes
