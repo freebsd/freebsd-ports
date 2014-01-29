@@ -1,4 +1,10 @@
 bin/jemplate
+%%PERL5_MAN3%%/Jemplate.3.gz
+%%PERL5_MAN3%%/Jemplate::Directive.3.gz
+%%PERL5_MAN3%%/Jemplate::Parser.3.gz
+%%PERL5_MAN3%%/Jemplate::Runtime.3.gz
+%%PERL5_MAN3%%/Jemplate::Runtime::Compact.3.gz
+man/man1/jemplate.1.gz
 %%SITE_PERL%%/Jemplate.pm
 %%SITE_PERL%%/Jemplate.pod
 %%SITE_PERL%%/Jemplate/Directive.pm
