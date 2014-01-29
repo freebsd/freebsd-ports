@@ -2,6 +2,7 @@
 
 PORTNAME=	libcxxrt
 PORTVERSION=	20131225
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -15,6 +16,7 @@ GH_COMMIT=	2f150a6
 GH_TAGNAME=	${GH_COMMIT}
 
 USES=		cmake
+CXXFLAGS+=	-nostdlib
 
 do-install:
 	${INSTALL_LIB} ${WRKSRC}/lib/libcxxrt.so ${STAGEDIR}${PREFIX}/lib
