@@ -16,7 +16,4 @@ RUN_DEPENDS=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	XML::DOM::XPath.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

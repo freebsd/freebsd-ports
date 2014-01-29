@@ -18,7 +18,4 @@ RUN_DEPENDS=	p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Jabber::Lite.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

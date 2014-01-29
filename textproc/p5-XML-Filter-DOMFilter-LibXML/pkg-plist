@@ -1,4 +1,5 @@
 %%SITE_PERL%%/XML/Filter/DOMFilter/LibXML.pm
+%%PERL5_MAN3%%/XML::Filter::DOMFilter::LibXML.3.gz
 @dirrm %%SITE_PERL%%/XML/Filter/DOMFilter
 @dirrm %%SITE_PERL%%/XML/Filter
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Filter/DOMFilter/LibXML/.packlist

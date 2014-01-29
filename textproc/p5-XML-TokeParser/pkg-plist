@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/TokeParser/.packlist
 %%SITE_PERL%%/XML/TokeParser.pm
+%%PERL5_MAN3%%/XML::TokeParser.3.gz
 @dirrmtry %%SITE_PERL%%/XML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/TokeParser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML

@@ -1,4 +1,5 @@
 %%SITE_PERL%%/XML/FeedPP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML-FeedPP/.packlist
+%%PERL5_MAN3%%/XML::FeedPP.3.gz
 @dirrm    %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML-FeedPP
 @dirrmtry %%SITE_PERL%%/XML

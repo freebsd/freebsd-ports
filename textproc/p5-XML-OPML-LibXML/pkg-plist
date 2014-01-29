@@ -2,6 +2,7 @@
 %%SITE_PERL%%/XML/OPML/LibXML/Document.pm
 %%SITE_PERL%%/XML/OPML/LibXML/Outline.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/OPML/LibXML/.packlist
+%%PERL5_MAN3%%/XML::OPML::LibXML.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/OPML/LibXML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/OPML
 @dirrm %%SITE_PERL%%/XML/OPML/LibXML

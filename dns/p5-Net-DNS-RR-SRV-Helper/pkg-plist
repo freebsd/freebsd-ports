@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Net/DNS/RR/SRV/Helper.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/RR/SRV/Helper/.packlist
+%%PERL5_MAN3%%/Net::DNS::RR::SRV::Helper.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/RR/SRV/Helper
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/RR/SRV
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/RR

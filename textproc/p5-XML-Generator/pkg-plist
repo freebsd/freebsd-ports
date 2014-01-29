@@ -1,6 +1,8 @@
 %%SITE_PERL%%/XML/Generator.pm
 %%SITE_PERL%%/XML/Generator/DOM.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Generator/.packlist
+%%PERL5_MAN3%%/XML::Generator.3.gz
+%%PERL5_MAN3%%/XML::Generator::DOM.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Generator
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/Generator

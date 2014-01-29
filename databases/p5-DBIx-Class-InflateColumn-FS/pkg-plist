@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/InflateColumn/FS/.packlist
 %%SITE_PERL%%/DBIx/Class/InflateColumn/FS.pm
 %%SITE_PERL%%/DBIx/Class/InflateColumn/FS/ResultSet.pm
+%%PERL5_MAN3%%/DBIx::Class::InflateColumn::FS.3.gz
+%%PERL5_MAN3%%/DBIx::Class::InflateColumn::FS::ResultSet.3.gz
 @dirrm %%SITE_PERL%%/DBIx/Class/InflateColumn/FS
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/InflateColumn/FS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/InflateColumn
