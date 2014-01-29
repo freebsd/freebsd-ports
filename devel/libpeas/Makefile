@@ -14,7 +14,7 @@ COMMENT=	Next evolution of the Gedit plugins engine
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 
 USE_XZ=		yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.5+
 USE_LDCONFIG=	yes
 USES=		gettext gmake pathfix pkgconfig
 USE_GNOME=	gtk30 ltverhack introspection:build

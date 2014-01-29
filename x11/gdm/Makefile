@@ -24,7 +24,7 @@ LIB_DEPENDS=	libck-connector.so:${PORTSDIR}/sysutils/consolekit \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
 RUN_DEPENDS=	zenity3>=3.0.0:${PORTSDIR}/x11/zenity3 \
 		gnome-settings-daemon>=3.0.0:${PORTSDIR}/sysutils/gnome-settings-daemon \
-		gnome-keyring-3:${PORTSDIR}/security/gnome-keyring3 \
+		gnome-keyring-3:${PORTSDIR}/security/gnome-keyring \
 		gnome-session>=3.0.0:${PORTSDIR}/x11/gnome-session \
 		gnome-icon-theme-symbolic>=0:${PORTSDIR}/x11-themes/gnome-icon-theme-symbolic \
 		polkit-gnome>=0.105:${PORTSDIR}/sysutils/polkit-gnome \

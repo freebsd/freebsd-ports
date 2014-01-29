@@ -35,6 +35,10 @@ lib/mutter/Meta-3.0.typelib
 lib/mutter/plugins/default.so
 libdata/pkgconfig/libmutter.pc
 libdata/pkgconfig/mutter-plugins.pc
+man/man1/mutter-message.1.gz
+man/man1/mutter-theme-viewer.1.gz
+man/man1/mutter-window-demo.1.gz
+man/man1/mutter.1.gz
 share/GConf/gsettings/mutter-schemas.convert
 share/applications/mutter.desktop
 share/gnome/wm-properties/mutter-wm.desktop

@@ -1,0 +1,7 @@
+Gnome-screensaver is GNOME-based screen saver and locker that aims to have
+simple, sane, secure defaults and be well integrated with the desktop.
+It is designed to support:
+
+        * the ability to lock down configuration settings
+        * translation into other languages
+        * user switching

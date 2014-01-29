@@ -17,7 +17,7 @@ LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	pam_helper:${PORTSDIR}/security/pam_helper \
 		gsettings-desktop-schemas>=3.2.0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		${LOCALBASE}/lib/pam_gnome_keyring.so:${PORTSDIR}/security/gnome-keyring3
+		${LOCALBASE}/lib/pam_gnome_keyring.so:${PORTSDIR}/security/gnome-keyring
 
 USE_XZ=		yes
 USES=		gettext gmake pathfix pkgconfig

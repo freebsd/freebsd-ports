@@ -31,6 +31,7 @@
     SUBDIR += cfortran
     SUBDIR += chicken
     SUBDIR += cint
+    SUBDIR += cjs
     SUBDIR += clang-devel
     SUBDIR += clang31
     SUBDIR += clang32
@@ -361,6 +362,7 @@
     SUBDIR += ucc
     SUBDIR += urweb
     SUBDIR += v8
+    SUBDIR += v8-devel
     SUBDIR += vala
     SUBDIR += vala-vapigen
     SUBDIR += visualworks

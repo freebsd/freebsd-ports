@@ -146,7 +146,6 @@
     SUBDIR += bsdcflow
     SUBDIR += bsdlibdwarf
     SUBDIR += bufferpool
-    SUBDIR += bug-buddy
     SUBDIR += bugzilla40
     SUBDIR += bugzilla42
     SUBDIR += bugzilla44
@@ -3392,6 +3391,7 @@
     SUBDIR += poco-ssl
     SUBDIR += popt
     SUBDIR += poslib
+    SUBDIR += ppl
     SUBDIR += premake
     SUBDIR += premake4
     SUBDIR += preps-gui

@@ -1,8 +1,9 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
+#    $MCom: ports/trunk/x11-fm/nemo/Makefile 18985 2014-01-21 12:30:41Z gusi $
 
 PORTNAME=	nemo
-PORTVERSION=	1.8.5
+PORTVERSION=	2.0.8
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
@@ -15,12 +16,12 @@ BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome
 		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
+		libcinnamon-desktop.so:${PORTSDIR}/x11/cinnamon-desktop \
 		libnotify.so:${PORTSDIR}/devel/libnotify \
 		libexempi.so:${PORTSDIR}/textproc/exempi
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme \
 		${LOCALBASE}/libdata/pkgconfig/gsettings-desktop-schemas.pc:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-FETCH_ARGS=	-Fpr
 INSTALLS_ICONS=	yes
 USES=		desktop-file-utils gettext gmake pathfix \
 		pkgconfig shared-mime-info
@@ -31,7 +32,6 @@ USE_AUTOTOOLS=	libtool autoconf automake
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CONFIGURE_ARGS=	--enable-static --disable-packagekit --disable-tracker
-MAKE_ENV=	G_CHARSET_ALIAS="${LOCALBASE}/libdata/charset.alias"
 
 GLIB_SCHEMAS=	org.nemo.gschema.xml
 
@@ -48,6 +48,9 @@ post-patch:
 
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
 		${WRKSRC}/src/nemo-properties-window.c
+
+	@${REINPLACE_CMD} -e 's|"-DG_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED -DGDK_DISABLE_DEPRECATED -DGDK_PIXBUF_DISABLE_DEPRECATED"|""|g' \
+		${WRKSRC}/configure.in
 
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g ;\
 		s|@INTROSPECTION_TYPELIBDIR@|$$(libdir)/girepository-1.0|g ;\

@@ -74,7 +74,7 @@ libexec/gnome-fallback-mount-helper
 libexec/gnome-settings-daemon
 libexec/gsd-input-sources-switcher
 libexec/gsd-locate-pointer
-libexec/gsd-printer
+%%CUPS%%libexec/gsd-printer
 libexec/gsd-test-a11y-keyboard
 libexec/gsd-test-a11y-settings
 libexec/gsd-test-background
@@ -83,8 +83,8 @@ libexec/gsd-test-keyboard
 libexec/gsd-test-media-keys
 libexec/gsd-test-mouse
 libexec/gsd-test-power
-libexec/gsd-test-print-notifications
-libexec/gsd-test-smartcard
+%%CUPS%%libexec/gsd-test-print-notifications
+%%SMARTCARD%%libexec/gsd-test-smartcard
 libexec/gsd-test-sound
 libexec/gsd-test-xsettings
 man/man1/gnome-settings-daemon.1.gz

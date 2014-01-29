@@ -1,9 +1,9 @@
 # Created by: Gustau Perez i Querol <gustau.perez@gmail.com>
 # $FreeBSD$
-#   $MCom$
+#   $MCom: ports/trunk/sysutils/cinnamon-control-center/Makefile 18985 2014-01-21 12:30:41Z gusi $
 
 PORTNAME=	cinnamon-control-center
-PORTVERSION=	1.8.2
+PORTVERSION=	2.0.9
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://github.com/linuxmint/${PORTNAME}/archive/${PORTVERSION}.tar.gz?dummy=/
 DIST_SUBDIR=	gnome3
@@ -12,7 +12,7 @@ MAINTAINER=	gustau.perez@gmail.com
 COMMENT=	gnome-control-center replacement for Cinnamon
 
 BUILD_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
-		gnome-settings-daemon>=3.4.0:${PORTSDIR}/sysutils/gnome-settings-daemon \
+		cinnamon-settings-daemon>=0:${PORTSDIR}/sysutils/cinnamon-settings-daemon \
 		gnome-autogen.sh:${PORTSDIR}/devel/gnome-common
 LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libupower-glib.so:${PORTSDIR}/sysutils/upower \
@@ -32,18 +32,17 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 		libclutter-gst-2.0.so:${PORTSDIR}/multimedia/clutter-gst \
 		libgjs.so:${PORTSDIR}/lang/gjs
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
-		gnome-settings-daemon>=3.4.0:${PORTSDIR}/sysutils/gnome-settings-daemon \
+		cinnamon-settings-daemon>=0:${PORTSDIR}/sysutils/cinnamon-settings-daemon \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
 		py*-lxml>=0:${PORTSDIR}/devel/py-lxml
 
-FETCH_ARGS=	-Fpr
 USE_XORG=	x11 xfixes sm
 USES=		gettext gmake pathfix pkgconfig
-USE_GNOME=	gnomeprefix intlhack gtk30 gconf2 gnomemenus3 \
-		gnomedesktop3 evolutiondataserver3
+USE_GNOME=	evolutiondataserver3 gconf2 gnomemenus3 gnomeprefix \
+		gtk30 intlhack libgnomekbd
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf:env automake:env aclocal:env autoheader:env
+USE_AUTOTOOLS=	libtool autoconf automake
 USE_PYTHON=	yes
 INSTALLS_ICONS=	yes
 
@@ -69,11 +68,14 @@ PLIST_SUB+=	CUPS="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e 's|find|find ${WRKSRC}/files|g' \
 		${WRKSRC}/files/Makefile.in
-
 	@${REINPLACE_CMD} -e 's|/usr/share/|${PREFIX}/share/|g' \
 		${WRKSRC}/panels/common/cc-common-language.c
 
 pre-configure:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/autoreconf
+	cd ${WRKSRC} && NOCONFIGURE=yes ${SH} ./autogen.sh
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/cinnamon-control-center-1/panels/lib*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcinnamon-control-center.so.1
 
 .include <bsd.port.mk>

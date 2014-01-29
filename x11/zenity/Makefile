@@ -1,6 +1,6 @@
 # Created by: Franz Klammer <klammer@webonaut.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/zenity/Makefile 18393 2013-04-26 21:23:07Z kwm $
+#   $MCom: ports/trunk/x11/zenity/Makefile 18972 2014-01-16 21:18:10Z kwm $
 
 PORTNAME=	zenity
 PORTVERSION=	2.32.1
@@ -15,7 +15,8 @@ COMMENT=	Display GNOME dialogs from the command line
 BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
-NO_STAGE=	yes
+CONFLICTS=	gtkada-1.2.* zenity3-*
+
 USE_GNOME=	gnomeprefix gtk20 gnomedocutils intlhack
 USE_BZIP2=	yes
 USES=		gettext gmake pathfix pkgconfig
@@ -23,11 +24,6 @@ GNU_CONFIGURE=	yes
 INSTALLS_OMF=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	LIBS="-lintl ${PTHREAD_LIBS}"
-
-MAN1=		zenity.1
-
-CONFLICTS=	gtkada-1.2.*
 
 OPTIONS_DEFINE=	NOTIFY
 OPTIONS_DEFAULT=NOTIFY
@@ -35,7 +31,7 @@ OPTIONS_DEFAULT=NOTIFY
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=		notify:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=		libnotify.so:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=	--enable-libnotify
 .else
 CONFIGURE_ARGS+=	--disable-libnotify

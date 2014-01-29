@@ -1,6 +1,6 @@
 # Created by: fenner
 # $FreeBSD$
-#    $MCom: ports/trunk/textproc/gtk-doc/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#    $MCom: ports/trunk/textproc/gtk-doc/Makefile 18976 2014-01-17 16:45:08Z kwm $
 
 PORTNAME=	gtk-doc
 PORTVERSION=	1.18
@@ -25,9 +25,9 @@ CATALOG_DIR=		${PREFIX}/share/sgml/${PORTNAME}
 XMLCATMGR=		${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 
-NO_STAGE=	yes
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
+USE_PYTHON=	yes
 USES=		gmake pathfix perl5 pkgconfig
 USE_GNOME=	gnomeprefix libxslt gnomedocutils
 INSTALLS_OMF=	yes
@@ -36,8 +36,5 @@ CONFIGURE_ARGS=	--with-xml-catalog=${LOCALBASE}/share/xml/catalog.ports
 PLIST_SUB=	XMLCATMGR=${XMLCATMGR} \
 		CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML} \
 		CATALOG_DIR=${CATALOG_DIR}
-
-post-install:
-	-@${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${CATALOG_DIR}/gtk-doc.cat
 
 .include <bsd.port.mk>

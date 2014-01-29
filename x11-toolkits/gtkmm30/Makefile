@@ -1,6 +1,6 @@
 # Created by: Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-toolkits/gtkmm30/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/x11-toolkits/gtkmm30/Makefile 18972 2014-01-16 21:18:10Z kwm $
 
 PORTNAME=	gtkmm
 PORTVERSION=	3.8.1
@@ -14,7 +14,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrapper for Gtk+3
 
 USE_XZ=		yes
-NO_STAGE=	yes
 
 .if !defined(REFERENCE_PORT)
 
@@ -23,12 +22,11 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 USES=		gettext gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
 USE_GNOME=	gtk30 ltverhack glibmm cairomm atkmm pangomm
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--disable-documentation \
-		--enable-static=yes
+CONFIGURE_ARGS=	--disable-documentation
+ltverhack_PATCH_FILES=	build/ltmain.sh
 
 PLIST_SUB=	VERSION="3.0" API_VERSION="3.0"
 

@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11/gnome3/Makefile 18918 2013-11-24 07:02:55Z kwm $
+#   $MCom: ports/trunk/x11/gnome3/Makefile 18983 2014-01-19 22:23:50Z kwm $
 
 PORTNAME=	gnome3
 PORTVERSION=	3.6.2
@@ -21,7 +21,7 @@ RUN_DEPENDS?=	gnome-panel>=3.0.0:${PORTSDIR}/x11/gnome-panel \
 		gnome-themes-standard>=3.0.0:${PORTSDIR}/x11-themes/gnome-themes-standard \
 		gnome-icon-theme-extras>=3.0.0:${PORTSDIR}/misc/gnome-icon-theme-extras \
 		gnome-icon-theme-symbolic>=3.0.0:${PORTSDIR}/x11-themes/gnome-icon-theme-symbolic \
-		gnome-keyring3>=3.0.0:${PORTSDIR}/security/gnome-keyring3 \
+		gnome-keyring>=3.0.0:${PORTSDIR}/security/gnome-keyring \
 		gnome-power-manager>=3.0.0:${PORTSDIR}/sysutils/gnome-power-manager \
 		orca>=3.0.0:${PORTSDIR}/accessibility/orca \
 		gnome-mount:${PORTSDIR}/sysutils/gnome-mount \
@@ -54,7 +54,7 @@ MAPI_DESC=	Depend on evolution-mapi (pulls in samba4)" off
 .if ${.CURDIR:T}!="gnome3-lite"
 RUN_DEPENDS+=	empathy>=3.0.0:${PORTSDIR}/net-im/empathy \
 		epiphany>=3.0.0:${PORTSDIR}/www/epiphany \
-		epiphany-extensions3>=3.0.0:${PORTSDIR}/www/epiphany-extensions \
+		epiphany-extensions>=3.0.0:${PORTSDIR}/www/epiphany-extensions \
 		gnome-screensaver>=3.0.0:${PORTSDIR}/x11/gnome-screensaver \
 		gucharmap>=3.0.0:${PORTSDIR}/deskutils/gucharmap \
 		eog>=3.0.0:${PORTSDIR}/graphics/eog \

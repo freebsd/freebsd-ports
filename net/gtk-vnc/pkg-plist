@@ -1,9 +1,9 @@
 bin/gvnccapture
-include/gtk-vnc-1.0/gtk-vnc.h
-include/gtk-vnc-1.0/vncdisplay.h
-include/gtk-vnc-1.0/vncdisplayenums.h
-include/gtk-vnc-1.0/vncgrabsequence.h
-include/gtk-vnc-1.0/vncimageframebuffer.h
+include/gtk-vnc-2.0/gtk-vnc.h
+include/gtk-vnc-2.0/vncdisplay.h
+include/gtk-vnc-2.0/vncdisplayenums.h
+include/gtk-vnc-2.0/vncgrabsequence.h
+include/gtk-vnc-2.0/vncimageframebuffer.h
 include/gvnc-1.0/gvnc.h
 include/gvnc-1.0/vncbaseframebuffer.h
 include/gvnc-1.0/vnccolormap.h
@@ -14,18 +14,18 @@ include/gvnc-1.0/vncframebuffer.h
 include/gvnc-1.0/vncpixelformat.h
 include/gvnc-1.0/vncutil.h
 lib/girepository-1.0/GVnc-1.0.typelib
-lib/girepository-1.0/GtkVnc-1.0.typelib
-lib/libgtk-vnc-1.0.la
-lib/libgtk-vnc-1.0.so
-lib/libgtk-vnc-1.0.so.0
+lib/girepository-1.0/GtkVnc-2.0.typelib
+lib/libgtk-vnc-2.0.la
+lib/libgtk-vnc-2.0.so
+lib/libgtk-vnc-2.0.so.0
 lib/libgvnc-1.0.la
 lib/libgvnc-1.0.so
 lib/libgvnc-1.0.so.0
-libdata/pkgconfig/gtk-vnc-1.0.pc
+libdata/pkgconfig/gtk-vnc-2.0.pc
 libdata/pkgconfig/gvnc-1.0.pc
 man/man1/gvnccapture.1.gz
 share/gir-1.0/GVnc-1.0.gir
-share/gir-1.0/GtkVnc-1.0.gir
+share/gir-1.0/GtkVnc-2.0.gir
 share/locale/ca/LC_MESSAGES/gtk-vnc.mo
 share/locale/ca@valencia/LC_MESSAGES/gtk-vnc.mo
 share/locale/cs/LC_MESSAGES/gtk-vnc.mo
@@ -58,11 +58,12 @@ share/locale/tr/LC_MESSAGES/gtk-vnc.mo
 share/locale/zh_CN/LC_MESSAGES/gtk-vnc.mo
 share/locale/zh_HK/LC_MESSAGES/gtk-vnc.mo
 share/locale/zh_TW/LC_MESSAGES/gtk-vnc.mo
-@dirrmtry share/locale/zh_HK/LC_MESSAGES
-@dirrmtry share/locale/zh_HK
+share/vala/vapi/gtk-vnc-2.0.deps
+share/vala/vapi/gtk-vnc-2.0.vapi
+share/vala/vapi/gvnc-1.0.vapi
+@dirrm include/gtk-vnc-2.0
+@dirrm include/gvnc-1.0
 @dirrmtry share/locale/nds/LC_MESSAGES
 @dirrmtry share/locale/nds
 @dirrmtry share/locale/ca@valencia/LC_MESSAGES
 @dirrmtry share/locale/ca@valencia
-@dirrm include/gtk-vnc-1.0
-@dirrm include/gvnc-1.0

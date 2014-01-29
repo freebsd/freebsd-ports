@@ -157,7 +157,6 @@
     SUBDIR += gnome-gpg
     SUBDIR += gnome-keyring
     SUBDIR += gnome-keyring-sharp
-    SUBDIR += gnome-keyring3
     SUBDIR += gnome-password-generator
     SUBDIR += gnome-ssh-askpass
     SUBDIR += gnomint

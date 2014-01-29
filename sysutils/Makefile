@@ -117,6 +117,7 @@
     SUBDIR += cfengine35
     SUBDIR += chgrep
     SUBDIR += cinnamon-control-center
+    SUBDIR += cinnamon-settings-daemon
     SUBDIR += ciso
     SUBDIR += ck4up
     SUBDIR += ckl

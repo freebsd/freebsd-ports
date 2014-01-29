@@ -12,7 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	VNC client for the GNOME Desktop
 
 BUILD_DEPENDS=	itstool:${PORTSDIR}/textproc/itstool
-LIB_DEPENDS=	libgtk-vnc-2.0.so:${PORTSDIR}/net/gtk-vnc3 \
+LIB_DEPENDS=	libgtk-vnc-2.0.so:${PORTSDIR}/net/gtk-vnc \
     		libavahi-core.so:${PORTSDIR}/net/avahi-app \
 		libavahi-ui-gtk3.so:${PORTSDIR}/net/avahi-gtk3 \
 		libgdbm.so:${PORTSDIR}/databases/gdbm \

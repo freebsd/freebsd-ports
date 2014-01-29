@@ -1,6 +1,7 @@
 # Created by: Vanilla I. Shu <vanilla@MinJe.com.TW>
 # $FreeBSD$
 #   $MCom: ports/trunk/x11-toolkits/gtk30/Makefile 18610 2013-06-30 16:33:05Z marcus $
+# Please keep gtk30 and x11-themes/gnome-themes-standard minor version in sync
 
 PORTNAME=	gtk
 PORTVERSION=	3.10.6

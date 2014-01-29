@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2013-12-15 11:10:12.000000000 +0100
-+++ src/Makefile.in	2013-12-15 11:07:30.000000000 +0100
-@@ -95,10 +95,13 @@
+--- src/Makefile.in.orig	2014-01-18 14:22:53.000000000 +0100
++++ src/Makefile.in	2014-01-18 14:26:22.000000000 +0100
+@@ -51,10 +51,13 @@
  @WITH_PYTHON_TRUE@am__append_11 = vnc.defs vncmodule.defs.c
  @WITH_PYTHON_TRUE@am__append_12 = vnc.override
  @WITH_PYTHON_FALSE@am__append_13 = vnc.override vncmodule.c
@@ -15,9 +15,9 @@
 +@HAVE_GTK_2_FALSE@@HAVE_INTROSPECTION_TRUE@am__append_17 = GtkVnc-2.0.gir
 +@HAVE_INTROSPECTION_TRUE@am__append_18 = $(gir_DATA) $(typelibs_DATA)
  subdir = src
- DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
- 	$(top_srcdir)/build-aux/mkinstalldirs \
-@@ -355,8 +358,6 @@
+ DIST_COMMON = $(gtk_vnc_include_HEADERS) $(gvnc_include_HEADERS) \
+ 	$(srcdir)/Makefile.am $(srcdir)/Makefile.in
+@@ -272,8 +275,6 @@
  GNUTLS_LIBS = @GNUTLS_LIBS@
  GNUTLS_REQUIRED = @GNUTLS_REQUIRED@
  GOBJECT_CFLAGS = @GOBJECT_CFLAGS@
@@ -26,7 +26,7 @@
  GOBJECT_LIBS = @GOBJECT_LIBS@
  GOBJECT_REQUIRED = @GOBJECT_REQUIRED@
  GREP = @GREP@
-@@ -367,8 +368,6 @@
+@@ -284,8 +285,6 @@
  GTK_LIBS = @GTK_LIBS@
  GTK_REQUIRED = @GTK_REQUIRED@
  GTK_VNC_API_VERSION = @GTK_VNC_API_VERSION@
@@ -35,7 +35,7 @@
  INSTALL = @INSTALL@
  INSTALL_DATA = @INSTALL_DATA@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
-@@ -380,6 +379,14 @@
+@@ -297,6 +296,14 @@
  INTLTOOL_MERGE = @INTLTOOL_MERGE@
  INTLTOOL_PERL = @INTLTOOL_PERL@
  INTLTOOL_UPDATE = @INTLTOOL_UPDATE@
@@ -50,7 +50,7 @@
  LD = @LD@
  LDFLAGS = @LDFLAGS@
  LIBOBJS = @LIBOBJS@
-@@ -613,7 +620,7 @@
+@@ -530,7 +537,7 @@
  	vncconnectionenums.h vncconnectionenums.c
  
  CLEANFILES = $(MARSHAL_FILES) $(ENUM_FILES) $(am__append_11) \
@@ -59,7 +59,7 @@
  @WITH_PYTHON_TRUE@pyexec_LTLIBRARIES = gtkvnc.la
  @WITH_PYTHON_TRUE@gtkvnc_la_LIBADD = libgtk-vnc-$(GTK_VNC_API_VERSION).la @PYGTK_LIBS@
  @WITH_PYTHON_TRUE@gtkvnc_la_CFLAGS = @GTK_CFLAGS@ @PYTHON_INCLUDES@ \
-@@ -624,31 +631,62 @@
+@@ -541,31 +548,62 @@
  @WITH_PYTHON_TRUE@nodist_gtkvnc_la_SOURCES = vncmodule.defs.c
  @WITH_PYTHON_TRUE@CODEGENDIR = $(shell pkg-config --variable=codegendir pygtk-2.0)
  @WITH_PYTHON_TRUE@DEFSDIR = $(shell pkg-config --variable=defsdir pygtk-2.0)
@@ -126,20 +126,20 @@
 +@HAVE_INTROSPECTION_TRUE@GVnc_1_0_gir_FILES = $(GVNC_INTROSPECTION_SRCS)
 +@HAVE_INTROSPECTION_TRUE@GVnc_1_0_gir_CFLAGS = $(libgvnc_1_0_la_CFLAGS)
 +@HAVE_INTROSPECTION_TRUE@GVnc_1_0_gir_SCANNERFLAGS = --c-include="gvnc.h"
-+@HAVE_GTK_2_TRUE@@HAVE_INTROSPECTION_TRUE@GtkVnc_1_0_gir_INCLUDES = GObject-2.0 GVnc-1.0
++@HAVE_GTK_2_TRUE@@HAVE_INTROSPECTION_TRUE@GtkVnc_1_0_gir_INCLUDES = GObject-2.0
 +@HAVE_GTK_2_TRUE@@HAVE_INTROSPECTION_TRUE@GtkVnc_1_0_gir_PACKAGES = gobject-2.0 gtk+-$(GTK_API_VERSION)
 +@HAVE_GTK_2_TRUE@@HAVE_INTROSPECTION_TRUE@GtkVnc_1_0_gir_EXPORT_PACKAGES = gtk-vnc-$(GTK_VNC_API_VERSION)
 +@HAVE_GTK_2_TRUE@@HAVE_INTROSPECTION_TRUE@GtkVnc_1_0_gir_LIBS = libgvnc-1.0.la libgtk-vnc-$(GTK_VNC_API_VERSION).la
 +@HAVE_GTK_2_TRUE@@HAVE_INTROSPECTION_TRUE@GtkVnc_1_0_gir_FILES = $(GTK_VNC_INTROSPECTION_SRCS)
 +@HAVE_GTK_2_TRUE@@HAVE_INTROSPECTION_TRUE@GtkVnc_1_0_gir_CFLAGS = $(libgvnc_1_0_la_CFLAGS) $(libgvncpulse_1_0_la_CFLAGS)
-+@HAVE_GTK_2_TRUE@@HAVE_INTROSPECTION_TRUE@GtkVnc_1_0_gir_SCANNERFLAGS = --c-include="gtk-vnc.h"
-+@HAVE_GTK_2_FALSE@@HAVE_INTROSPECTION_TRUE@GtkVnc_2_0_gir_INCLUDES = GObject-2.0 GVnc-1.0
++@HAVE_GTK_2_TRUE@@HAVE_INTROSPECTION_TRUE@GtkVnc_1_0_gir_SCANNERFLAGS = --c-include="gtk-vnc.h" --include-uninstalled=$(top_builddir)/src/GVnc-1.0.gir
++@HAVE_GTK_2_FALSE@@HAVE_INTROSPECTION_TRUE@GtkVnc_2_0_gir_INCLUDES = GObject-2.0
 +@HAVE_GTK_2_FALSE@@HAVE_INTROSPECTION_TRUE@GtkVnc_2_0_gir_PACKAGES = gobject-2.0 gtk+-$(GTK_API_VERSION)
 +@HAVE_GTK_2_FALSE@@HAVE_INTROSPECTION_TRUE@GtkVnc_2_0_gir_EXPORT_PACKAGES = gtk-vnc-$(GKT_VNC_API_VERSION)
 +@HAVE_GTK_2_FALSE@@HAVE_INTROSPECTION_TRUE@GtkVnc_2_0_gir_LIBS = libgvnc-1.0.la libgtk-vnc-$(GTK_VNC_API_VERSION).la
 +@HAVE_GTK_2_FALSE@@HAVE_INTROSPECTION_TRUE@GtkVnc_2_0_gir_FILES = $(GTK_VNC_INTROSPECTION_SRCS)
 +@HAVE_GTK_2_FALSE@@HAVE_INTROSPECTION_TRUE@GtkVnc_2_0_gir_CFLAGS = $(libgvnc_1_0_la_CFLAGS) $(libgvncpulse_1_0_la_CFLAGS)
-+@HAVE_GTK_2_FALSE@@HAVE_INTROSPECTION_TRUE@GtkVnc_2_0_gir_SCANNERFLAGS = --c-include="gtk-vnc.h"
++@HAVE_GTK_2_FALSE@@HAVE_INTROSPECTION_TRUE@GtkVnc_2_0_gir_SCANNERFLAGS = --c-include="gtk-vnc.h" --include-uninstalled=$(top_builddir)/src/GVnc-1.0.gir
 +@HAVE_INTROSPECTION_TRUE@girdir = $(datadir)/gir-1.0
 +@HAVE_INTROSPECTION_TRUE@gir_DATA = $(INTROSPECTION_GIRS)
 +@HAVE_INTROSPECTION_TRUE@typelibsdir = $(libdir)/girepository-1.0
@@ -147,7 +147,7 @@
  all: $(BUILT_SOURCES)
  	$(MAKE) $(AM_MAKEFLAGS) all-am
  
-@@ -1452,50 +1490,12 @@
+@@ -1380,50 +1418,12 @@
  @WITH_PYTHON_TRUE@			  --register $(DEFSDIR)/gtk-types.defs \
  @WITH_PYTHON_TRUE@			  --override $(srcdir)/vnc.override vnc.defs > $@
  

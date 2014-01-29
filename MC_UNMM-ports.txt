@@ -28,6 +28,7 @@ deskutils/gnome-tweak-tool
 deskutils/gnome-utils
 deskutils/gnote
 deskutils/gucharmap
+deskutils/nemo-extensions
 deskutils/notification-daemon
 devel/anjuta
 devel/anjuta-extras
@@ -88,6 +89,7 @@ graphics/libchamplain
 graphics/libchamplain08
 graphics/librsvg2
 graphics/shared-color-profiles
+lang/cjs
 lang/gjs
 lang/vala
 lang/vala-vapigen
@@ -97,6 +99,7 @@ mail/evolution-exchange
 mail/evolution-kolab
 mail/evolution-mapi
 math/gcalctool
+misc/cinnamon-translations
 misc/gnome-devel-docs
 misc/gnome-icon-theme
 misc/gnome-icon-theme-extras
@@ -113,7 +116,6 @@ net/gnome-online-accounts
 net/grilo
 net/grilo-plugins
 net/gtk-vnc
-net/gtk-vnc3
 net/libgweather
 net/libproxy
 net/libzapojit
@@ -141,7 +143,6 @@ ports-mgmt/packagekit
 ports-mgmt/packagekit-qt4
 security/gcr
 security/gnome-keyring
-security/gnome-keyring3
 security/libcryptui
 security/libgnome-keyring
 security/libpwquality
@@ -151,6 +152,7 @@ security/seahorse-sharing
 sysutils/accountsservice
 sysutils/brasero
 sysutils/cinnamon-control-center
+sysutils/cinnamon-settings-daemon
 sysutils/consolekit
 sysutils/drwright
 sysutils/gconf-editor
@@ -178,6 +180,9 @@ www/libsocialweb
 www/webkit-gtk2
 www/webkit-gtk3
 x11/cinnamon
+x11/cinnamon-desktop
+x11/cinnamon-screensaver
+x11/cinnamon-session
 x11/gdm
 x11/gnome-desktop
 x11/gnome-menus
@@ -200,7 +205,6 @@ x11-themes/gnome-backgrounds
 x11-themes/gnome-icon-theme-symbolic
 x11-themes/gnome-themes
 x11-themes/gnome-themes-standard
-x11-themes/gtk-theme-engine-clearlooks
 x11-toolkits/gdl
 x11-toolkits/gtk30
 x11-toolkits/gtkmm30

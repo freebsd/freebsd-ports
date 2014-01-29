@@ -1,0 +1,8 @@
+bin/cinnamon-screensaver
+bin/cinnamon-screensaver-command
+etc/pam.d/cinnamon-screensaver
+libexec/cinnamon-screensaver-dialog
+man/man1/cinnamon-screensaver-command.1.gz
+man/man1/cinnamon-screensaver.1.gz
+share/applications/cinnamon-screensaver.desktop
+share/dbus-1/services/org.cinnamon.ScreenSaver.service

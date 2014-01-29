@@ -1,6 +1,6 @@
 # Created by: Pawel Worach <pawel.worach@gmail.com>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-wm/mutter/Makefile 18577 2013-06-21 18:20:24Z kwm $
+#   $MCom: ports/trunk/x11-wm/mutter/Makefile 18972 2014-01-16 21:18:10Z kwm $
 
 PORTNAME=	mutter
 PORTVERSION=	3.6.2
@@ -19,13 +19,12 @@ LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
 RUN_DEPENDS=	zenity3>=3.0.0:${PORTSDIR}/x11/zenity3 \
 		gsettings-desktop-schemas>=3.4.0:${PORTSDIR}/devel/gsettings-desktop-schemas
 
-NO_STAGE=	yes
 USE_XZ=		yes
 USE_XORG=	x11 xext xrandr xcomposite xcursor xinerama ice sm xfixes \
 		xrender xdamage
 USE_PYTHON=	2.5+
 USES=		gettext gmake pathfix pkgconfig
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehier gnomeprefix gtk30 intlhack introspection:build \
 		ltverhack
 USE_LDCONFIG=	yes
@@ -33,9 +32,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include -fno-omit-frame-pointer
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-compile-warnings=maximum
 GLIB_SCHEMAS=	org.gnome.mutter.gschema.xml
-
-MAN1=		mutter-message.1 mutter-theme-viewer.1 \
-		mutter-window-demo.1 mutter.1
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
