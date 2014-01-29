@@ -13,7 +13,4 @@ COMMENT=	Proc::Queue - limit the number of child processes running
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Proc::Queue.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

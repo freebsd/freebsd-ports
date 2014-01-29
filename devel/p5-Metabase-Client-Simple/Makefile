@@ -22,7 +22,4 @@ RUN_DEPENDS=	p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Metabase::Client::Simple.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

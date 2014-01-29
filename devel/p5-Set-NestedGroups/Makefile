@@ -13,7 +13,4 @@ COMMENT=	Perl module for grouped data eg ACL's, city/state/country etc
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Set::NestedGroups.3 Set::NestedGroups::Member.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

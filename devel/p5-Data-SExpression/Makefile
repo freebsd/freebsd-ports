@@ -17,9 +17,4 @@ TEST_DEPENDS=	p5-Test-Deep>=0:${PORTSDIR}/devel/p5-Test-Deep
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Data::SExpression.3 \
-	Data::SExpression::Cons.3 \
-	Data::SExpression::Symbol.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
