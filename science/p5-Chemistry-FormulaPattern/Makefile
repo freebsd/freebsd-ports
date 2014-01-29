@@ -16,10 +16,7 @@ BUILD_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
 RUN_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
 		p5-Chemistry-Pattern>=0:${PORTSDIR}/science/p5-Chemistry-Pattern
 
-MAN3=	Chemistry::FormulaPattern.3 Chemistry::File::FormulaPattern.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -17,9 +17,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-1.02
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MIME::Base32.3
-
-NO_STAGE=	yes
 post-extract:
 	@${RM} ${WRKSRC}/test1.pl
 

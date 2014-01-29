@@ -17,9 +17,6 @@ RUN_DEPENDS=	recode:${PORTSDIR}/converters/recode
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Convert::Recode.3
-
-NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} -i '' -e 's|recode -\$$|${LOCALBASE}/bin/recode -\$$|' \
 			${WRKSRC}/Recode.pm

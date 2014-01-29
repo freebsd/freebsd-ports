@@ -1,5 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Ring/.packlist
 %%SITE_PERL%%/Chemistry/Ring/Find.pm
 %%SITE_PERL%%/Chemistry/Ring.pm
+%%PERL5_MAN3%%/Chemistry::Ring.3.gz
+%%PERL5_MAN3%%/Chemistry::Ring::Find.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Ring
 @dirrmtry %%SITE_PERL%%/Chemistry/Ring

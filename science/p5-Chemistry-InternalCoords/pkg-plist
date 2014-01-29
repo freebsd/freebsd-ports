@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/InternalCoords/.packlist
 %%SITE_PERL%%/Chemistry/InternalCoords/Builder.pm
 %%SITE_PERL%%/Chemistry/InternalCoords.pm
+%%PERL5_MAN3%%/Chemistry::InternalCoords.3.gz
+%%PERL5_MAN3%%/Chemistry::InternalCoords::Builder.3.gz
 @dirrmtry %%SITE_PERL%%/Chemistry/InternalCoords
 @dirrmtry %%SITE_PERL%%/Chemistry
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/InternalCoords

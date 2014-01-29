@@ -13,9 +13,4 @@ COMMENT=	Perl module provides read access to GRIB files
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Geo::ReadGRIB.3 \
-		Geo::ReadGRIB::Place.3 \
-		Geo::ReadGRIB::PlaceIterator.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

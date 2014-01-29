@@ -17,6 +17,23 @@
 %%SITE_PERL%%/Boulder/String.pm
 %%SITE_PERL%%/Stone.pm
 %%SITE_PERL%%/Boulder.pod
+%%PERL5_MAN3%%/Boulder.3.gz
+%%PERL5_MAN3%%/Boulder::Blast.3.gz
+%%PERL5_MAN3%%/Boulder::Blast::NCBI.3.gz
+%%PERL5_MAN3%%/Boulder::Blast::WU.3.gz
+%%PERL5_MAN3%%/Boulder::Genbank.3.gz
+%%PERL5_MAN3%%/Boulder::Medline.3.gz
+%%PERL5_MAN3%%/Boulder::LocusLink.3.gz
+%%PERL5_MAN3%%/Boulder::Omim.3.gz
+%%PERL5_MAN3%%/Boulder::Store.3.gz
+%%PERL5_MAN3%%/Boulder::Stream.3.gz
+%%PERL5_MAN3%%/Boulder::String.3.gz
+%%PERL5_MAN3%%/Boulder::Swissprot.3.gz
+%%PERL5_MAN3%%/Boulder::Unigene.3.gz
+%%PERL5_MAN3%%/Boulder::XML.3.gz
+%%PERL5_MAN3%%/Stone.3.gz
+%%PERL5_MAN3%%/Stone::Cursor.3.gz
+%%PERL5_MAN3%%/Stone::GB_Sequence.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Boulder
 @dirrm %%SITE_PERL%%/Boulder/Blast
 @dirrm %%SITE_PERL%%/Boulder

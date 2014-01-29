@@ -1,5 +1,6 @@
 %%SITE_PERL%%/MIME/Base32.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Base32/.packlist
+%%PERL5_MAN3%%/MIME::Base32.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/Base32
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME
 @dirrmtry %%SITE_PERL%%/MIME

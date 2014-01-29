@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Isotope/.packlist
 %%SITE_PERL%%/Chemistry/Isotope.pm
+%%PERL5_MAN3%%/Chemistry::Isotope.3.gz
 @dirrmtry %%SITE_PERL%%/Chemistry
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Isotope
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry

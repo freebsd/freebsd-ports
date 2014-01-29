@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Chemistry/Pattern/Bond.pm
 %%SITE_PERL%%/Chemistry/Pattern.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Pattern/.packlist
+%%PERL5_MAN3%%/Chemistry::Pattern.3.gz
+%%PERL5_MAN3%%/Chemistry::Pattern::Atom.3.gz
+%%PERL5_MAN3%%/Chemistry::Pattern::Bond.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Pattern
 @dirrmtry %%SITE_PERL%%/Chemistry/Pattern
 @dirrmtry %%SITE_PERL%%/Chemistry

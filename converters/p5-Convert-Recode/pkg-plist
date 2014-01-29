@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Convert/Recode.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Recode/.packlist
+%%PERL5_MAN3%%/Convert::Recode.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/Recode
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert
 @dirrm %%SITE_PERL%%/Convert
