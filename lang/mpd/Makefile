@@ -11,9 +11,9 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	kaiw27@gmail.com
-COMMENT=	A concurrent programming language
+COMMENT=	Concurrent programming language
 
-ONLY_FOR_ARCHS=	alpha i386
+ONLY_FOR_ARCHS=	i386
 ONLY_FOR_ARCHS_REASON=	uses assembly code for the target machine
 
 # net/mpd
