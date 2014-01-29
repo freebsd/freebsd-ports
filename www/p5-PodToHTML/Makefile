@@ -21,9 +21,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		podtohtml.1
-MAN3=		Pod::HTML_Elements.3 \
-		Pod::Links.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
