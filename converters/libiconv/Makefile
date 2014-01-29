@@ -11,25 +11,20 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A character set conversion library
 
 GNU_CONFIGURE=	yes
-LIBTOOLFILES=	configure libcharset/configure preload/configure
 CONFIGURE_ARGS=	--enable-static \
 		--without-libintl-prefix \
 		--docdir=${DOCSDIR}
-USE_LDCONFIG=	yes
 CONFIGURE_ENV=	gl_cv_cc_visibility="no" \
 		am_cv_func_iconv="yes" \
 		am_cv_proto_iconv_arg1="const"
 MAKE_JOBS_UNSAFE=	yes
-
-MAN1=		iconv.1
-MAN3=		iconv.3 iconv_open.3 iconv_open_into.3 iconv_close.3 iconvctl.3
+USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	ENCODINGS PATCHES
 OPTIONS_DEFAULT=ENCODINGS
 ENCODINGS_DESC=	Include extra character sets
 PATCHES_DESC=	Apply patches to fix CP932, add EUCJP-MS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MENCODINGS}
@@ -49,10 +44,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's:gawk:awk:g' ${WRKSRC}/configure \
 		${WRKSRC}/libcharset/configure \
 		${WRKSRC}/preload/configure
-
-.if exists(/usr/include/iconv.h)
-IGNORE=		converters/libiconv should not be used with iconv from base. \
-Please fix the port which tries to use it
-.endif
 
 .include <bsd.port.mk>
