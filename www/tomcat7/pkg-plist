@@ -44,7 +44,7 @@
 %%T%%/lib/catalina-ha.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
-%%T%%/lib/ecj-4.2.2.jar
+%%T%%/lib/ecj-4.3.1.jar
 %%T%%/lib/el-api.jar
 %%T%%/lib/jasper-el.jar
 %%T%%/lib/jasper.jar
@@ -104,12 +104,12 @@
 %%T%%/webapps/docs/apr.html
 %%T%%/webapps/docs/architecture/index.html
 %%T%%/webapps/docs/architecture/overview.html
+%%T%%/webapps/docs/architecture/requestProcess.html
 %%T%%/webapps/docs/architecture/requestProcess/requestProcess.pdf
 %%T%%/webapps/docs/architecture/requestProcess/roseModel.mdl
-%%T%%/webapps/docs/architecture/requestProcess.html
+%%T%%/webapps/docs/architecture/startup.html
 %%T%%/webapps/docs/architecture/startup/serverStartup.pdf
 %%T%%/webapps/docs/architecture/startup/serverStartup.txt
-%%T%%/webapps/docs/architecture/startup.html
 %%T%%/webapps/docs/balancer-howto.html
 %%T%%/webapps/docs/building.html
 %%T%%/webapps/docs/cgi-howto.html
@@ -118,6 +118,7 @@
 %%T%%/webapps/docs/cluster-howto.html
 %%T%%/webapps/docs/comments.html
 %%T%%/webapps/docs/config/ajp.html
+%%T%%/webapps/docs/config/automatic-deployment.html
 %%T%%/webapps/docs/config/cluster-channel.html
 %%T%%/webapps/docs/config/cluster-deployer.html
 %%T%%/webapps/docs/config/cluster-interceptor.html
@@ -204,6 +205,7 @@
 %%T%%/webapps/docs/tribes/transport.html
 %%T%%/webapps/docs/virtual-hosting-howto.html
 %%T%%/webapps/docs/web-socket-howto.html
+%%T%%/webapps/docs/websocketapi/index.html
 %%T%%/webapps/docs/windows-auth-howto.html
 %%T%%/webapps/docs/windows-service-howto.html
 %%T%%/webapps/examples/WEB-INF/classes/CookieExample.class
@@ -290,7 +292,6 @@
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/ValuesBean.class
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/ValuesBean.java
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/el/Functions.class
-
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/el/Functions.java
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/EchoAttributesTag.class
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/simpletag/EchoAttributesTag.java
@@ -590,15 +591,15 @@
 %%T%%/webapps/examples/servlets/reqinfo.html
 %%T%%/webapps/examples/servlets/reqparams.html
 %%T%%/webapps/examples/servlets/sessions.html
+%%T%%/webapps/examples/websocket-deprecated/chat.html
+%%T%%/webapps/examples/websocket-deprecated/echo.html
+%%T%%/webapps/examples/websocket-deprecated/index.html
+%%T%%/webapps/examples/websocket-deprecated/snake.html
 %%T%%/webapps/examples/websocket/chat.xhtml
 %%T%%/webapps/examples/websocket/drawboard.xhtml
 %%T%%/webapps/examples/websocket/echo.xhtml
 %%T%%/webapps/examples/websocket/index.xhtml
 %%T%%/webapps/examples/websocket/snake.xhtml
-%%T%%/webapps/examples/websocket-deprecated/chat.html
-%%T%%/webapps/examples/websocket-deprecated/echo.html
-%%T%%/webapps/examples/websocket-deprecated/index.html
-%%T%%/webapps/examples/websocket-deprecated/snake.html
 %%T%%/webapps/host-manager/META-INF/context.xml
 %%T%%/webapps/host-manager/WEB-INF/jsp/401.jsp
 %%T%%/webapps/host-manager/WEB-INF/jsp/403.jsp
@@ -634,7 +635,7 @@
 %%T%%/webapps/manager/index.jsp
 %%T%%/webapps/manager/status.xsd
 %%T%%/webapps/manager/xform.xsl
-@exec mkdir %D/%%T%%/endorsed 2>/dev/null || true  
+@exec mkdir %D/%%T%%/endorsed 2>/dev/null || true
 @exec mkdir %D/%%T%%/logs 2>/dev/null || true
 @exec mkdir %D/%%T%%/work 2>/dev/null || true
 @exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%T%%/conf %D/%%T%%/logs %D/%%T%%/temp %D/%%T%%/webapps %D/%%T%%/work
