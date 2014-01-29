@@ -3,7 +3,7 @@
 
 PORTNAME=	praw
 PORTVERSION=	2.1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,7 +18,7 @@ TEST_DEPENDS:=	${RUN_DEPENDS}
 
 USE_GITHUB=		yes
 USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
 GH_ACCOUNT=	praw-dev
@@ -28,5 +28,4 @@ GH_COMMIT=	a36c3f1
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
