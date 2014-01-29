@@ -34,13 +34,10 @@ PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
+USES+=		tcl:84
 CATEGORIES+=	tcl
-USE_TCL=	84+
-.endif
-
-.if defined(USE_TCL)
-CONFIGURE_ARGS+=	--with-tcl=${TCL_INCLUDEDIR}
-CONFIGURE_ENV+=		TCL_LIBDIR=${TCL_LIBDIR}
+CONFIGURE_ARGS+=--with-tcl=${TCL_INCLUDEDIR}
+CONFIGURE_ENV+=	TCL_LIBDIR=${TCL_LIBDIR}
 PLIST_SUB+=	TCL_V="${TCL_VER}"
 PLIST_SUB+=	WITH_TCL=""
 .else
@@ -49,14 +46,10 @@ PLIST_SUB+=	WITH_TCL="@comment "
 
 pre-patch:
 	${REINPLACE_CMD} -e "s=doc/==" ${WRKSRC}/../Metakit.html
-.if defined(USE_TCL)
-	${REINPLACE_CMD} -e "s/= tclsh/=tclsh${TCL_VER}/" \
+	${REINPLACE_CMD} -e "s|= tclsh|=${TCLSH}|" \
 		${WRKSRC}/../unix/Makefile.in
-.endif
-.if ${PORT_OPTIONS:MPYTHON}
 	${REINPLACE_CMD} -e "s=python2.[0-9]=${PYTHON_VERSION}=" \
 		${WRKSRC}/../unix/Makefile.in ${WRKSRC}/../unix/configure
-.endif
 
 post-build:
 .if ${PORT_OPTIONS:MPYTHON}
@@ -82,7 +75,7 @@ post-install:
 test:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
-.if defined(USE_TCL)
+.if ${PORT_OPTIONS:MTCL}
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test-tcl)
 .endif
