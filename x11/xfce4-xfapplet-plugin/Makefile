@@ -12,7 +12,9 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Xfapplet plugin for Xfce
 
-LIB_DEPENDS=	panelappletmm-2.6:${PORTSDIR}/x11-toolkits/libpanelappletmm
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libpanelappletmm-2.6.so:${PORTSDIR}/x11-toolkits/libpanelappletmm
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -20,5 +22,4 @@ USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20 intltool intlhack orbit2
 USE_XFCE=	configenv libgui libutil panel
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

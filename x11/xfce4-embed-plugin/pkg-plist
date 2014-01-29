@@ -27,5 +27,7 @@ lib/xfce4/panel/plugins/libembed.so
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-embed-plugin.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-embed-plugin.mo
 share/xfce4/panel/plugins/embed.desktop
+@dirrmtry share/xfce4/panel/plugins
 %%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ug
+@dirrmtry lib/xfce4/panel/plugins
