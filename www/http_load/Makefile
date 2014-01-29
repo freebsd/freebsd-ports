@@ -12,13 +12,11 @@ COMMENT=	Multiprocessing http performance test client
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
-MAN1=		http_load.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/http_load
+PLIST_FILES=	bin/http_load \
+		man/man1/http_load.1.gz
 
 .ifndef NO_OPENSSL
 USE_OPENSSL=	yes
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

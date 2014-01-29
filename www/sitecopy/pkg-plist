@@ -1,4 +1,5 @@
 bin/sitecopy
+man/man1/sitecopy.1.gz
 %%DOCSDIR%%/NEWS
 %%DOCSDIR%%/README
 %%DOCSDIR%%/THANKS
