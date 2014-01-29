@@ -63,7 +63,12 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Florian Weimer of the Red Hat Product Security Team reports:</p>
 	<blockquote cite="http://www.dest-unreach.org/socat/contrib/socat-secadv5.txt">
-	  <p>Due to a missing check during assembly of the HTTP request line a long target server name in the PROXY-CONNECT address can cause a stack buffer overrun. Exploitation requires that the attacker is able to provide the target server name to the PROXY-CONNECT address in the command line. This can happen for example in scripts that receive data from untrusted sources.</p>
+	  <p>Due to a missing check during assembly of the HTTP request line a long
+	    target server name in the PROXY-CONNECT address can cause a stack buffer
+	    overrun. Exploitation requires that the attacker is able to provide the
+	    target server name to the PROXY-CONNECT address in the command line.
+	    This can happen for example in scripts that receive data from untrusted
+	    sources.</p>
 	</blockquote>
       </body>
     </description>
@@ -115,7 +120,9 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The OTRS Project reports:</p>
 	<blockquote cite="https://www.otrs.com/security-advisory-2014-01-csrf-issue-customer-web-interface/">
-	  <p>An attacker that managed to take over the session of a logged in customer could create tickets and/or send follow-ups to existing tickets due to missing challenge token checks.</p>
+	  <p>An attacker that managed to take over the session of a logged in customer
+	    could create tickets and/or send follow-ups to existing tickets due to
+	    missing challenge token checks.</p>
 	</blockquote>
       </body>
     </description>
@@ -269,8 +276,10 @@ Note:  Please add new entries to the beginning of this file.
 	    there will be a brief interruption of service and the cache will be
 	    emptied, causing more traffic to go to the backend.
 	  </p>
-	  <p>We are releasing this advisory because restarting from vcl_error{} is both fairly common and documented.</p>
-	  <p>This is purely a denial of service vulnerability, there is no risk of privilege escalation.</p>
+	  <p>We are releasing this advisory because restarting from vcl_error{} is
+	    both fairly common and documented.</p>
+	  <p>This is purely a denial of service vulnerability, there is no risk of
+	    privilege escalation.</p>
 	  <p>Workaround</p>
 	  <p>Insert this at the top of your VCL file:</p>
 	  <pre>
