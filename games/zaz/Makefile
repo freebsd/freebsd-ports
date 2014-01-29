@@ -44,5 +44,7 @@ PLIST_SUB+=	NLS="@comment "
 post-patch:
 	@${REINPLACE_CMD} -e '/^zazdocdir =/ s|$${prefix}/doc|$${prefix}/share/doc|' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/PKG_CONFIG/ s|vorbisfile |&vorbis |' \
+		${WRKSRC}/configure.ac ${WRKSRC}/configure
 
 .include <bsd.port.mk>
