@@ -3,7 +3,7 @@
 
 PORTNAME=	sorl-thumbnail
 PORTVERSION=	3.2.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +17,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/pildriver.py:${PORTSDIR}/graphics/py-imaging
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
@@ -28,7 +29,6 @@ WORD_DESC=	Word Document thumbnail handling
 
 OPTIONS_DEFAULT=	DJANGO
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDJANGO}
