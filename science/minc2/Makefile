@@ -11,32 +11,28 @@
 # Of course, the netcdf port must be installed first.
 
 PORTNAME=	minc
-PORTVERSION=	2.2.00
-PORTREVISION=	1
+PORTVERSION=	2.0.18
+PORTEPOCH=	1
 CATEGORIES=	science biology
-MASTER_SITES=	http://packages.bic.mni.mcgill.ca/tgz/
+MASTER_SITES=	http://packages.bic.mni.mcgill.ca/tgz/ \
+		http://www.nitrc.org/frs/download.php/801/
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	jwbacon@tds.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Medical Imaging NetCDF
-
-BROKEN=		Does not build with new hdf5 version
 
 LICENSE=	BSD
 
-LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf \
-		hdf5:${PORTSDIR}/science/hdf5
+LIB_DEPENDS=	libnetcdf.so.4:${PORTSDIR}/science/netcdf \
+		libhdf5.so.0:${PORTSDIR}/science/hdf5
 
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USES=		cmake:outsource bison:build
 CPPFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include -DH5_USE_16_API
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CMAKE_ARGS=	-DMINC2_BUILD_SHARED_LIBS:BOOL=YES
+CONFIGURE_ARGS=	--enable-shared=yes --enable-static=yes
 
 CONFLICTS=	minc-1* zh-tk-[0-9]*
-
-NO_STAGE=	yes
-post-install:
-	${CAT} ${PKGMESSAGE}
+LATEST_LINK=	minc2
 
 .include <bsd.port.mk>
