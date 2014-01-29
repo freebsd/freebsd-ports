@@ -18,19 +18,20 @@ RUN_DEPENDS=	m4>=1.4.11:${PORTSDIR}/devel/m4 \
 		${LOCALBASE}/libdata/pkgconfig/dbus-1.pc:${PORTSDIR}/devel/dbus
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
+CONFLICTS=	gts-[0-9]*
+
 USE_AUTOTOOLS=	autoconf
-USES=		gmake pkgconfig
-USE_TK_RUN=	yes
+USES=		gmake pkgconfig tk:run
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	INSTALL_DATA="${BSD_INSTALL_DATA}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-pthread -L${LOCALBASE}/lib
-CONFIGURE_ARGS= --docdir=${DOCSDIR}
+CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 
-PORTDOCS= pcb.html pcb.pdf refcard.pdf pad.png puller.png thermal.png	\
-	examples tutorial gcode.png gcode_control_img.png		\
-	gcode_tool_path.png
+PORTDOCS=	pcb.html pcb.pdf refcard.pdf pad.png puller.png thermal.png	\
+		examples tutorial gcode.png gcode_control_img.png		\
+		gcode_tool_path.png
 
 OPTIONS_DEFINE=	DOCS NLS X11
 OPTIONS_SINGLE=	GUI
@@ -40,8 +41,6 @@ MOTIF_DESC=	Motif widgets
 GTK_DESC=	GIMP ToolKit widgets
 NONE_DESC=	No GUI support
 
-NO_STAGE=	yes
-
 .for a in ia64 powerpc sparc64
 BROKEN_${a}=	Does not compile on ia64, powerpc, or sparc64
 .endfor
@@ -49,19 +48,17 @@ BROKEN_${a}=	Does not compile on ia64, powerpc, or sparc64
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
-CONFIGURE_ARGS+= \
-	--enable-nls \
-	${ICONV_CONFIGURE_ARG} \
-	--with-libintl-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=--enable-nls \
+		${ICONV_CONFIGURE_ARG} \
+		--with-libintl-prefix=${LOCALBASE}
 USES+=		gettext iconv
 .for L in fr nl ru
 PLIST_FILES+=	share/locale/${L}/LC_MESSAGES/pcb.mo
 .endfor
 .else
-CONFIGURE_ARGS+= \
-	--disable-nls \
-	--without-libiconv \
-	--without-libintl
+CONFIGURE_ARGS+=--disable-nls \
+		--without-libiconv \
+		--without-libintl
 .endif
 
 .if ${PORT_OPTIONS:MX11}
@@ -70,12 +67,10 @@ CONFIGURE_ARGS+=	--without-gui
 CONFIGURE_ENV+=		WISH=${TRUE}
 .elif ${PORT_OPTIONS:MMOTIF}
 USES+=		motif
-USE_TK_RUN=	yes
 CONFIGURE_ARGS+=	--with-gui=lesstif
 CONFIGURE_ENV+=		WISH=${WISH}
 .elif ${PORT_OPTIONS:MGTK}
 USE_GNOME=	gtk20 desktopfileutils
-USE_TK_RUN=	yes
 CONFIGURE_ARGS+=	--with-gui=gtk
 CONFIGURE_ENV+=		WISH=${WISH}
 .endif
@@ -83,7 +78,6 @@ CONFIGURE_ENV+=		WISH=${WISH}
 
 .if ${PORT_OPTIONS:MDOCS}
 INFO=		pcb
-MAN1=		pcb.1
 .else
 CONFIGURE_ARGS+=	--disable-doc
 .endif
