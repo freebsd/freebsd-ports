@@ -20,7 +20,4 @@ TEST_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		DBICx::MapMaker.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

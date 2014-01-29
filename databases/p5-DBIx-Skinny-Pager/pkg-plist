@@ -9,6 +9,13 @@
 %%SITE_PERL%%/DBIx/Skinny/Pager/Page/Default.pm
 %%SITE_PERL%%/DBIx/Skinny/Pager/Page/PlusOne.pm
 %%SITE_PERL%%/DBIx/Skinny/Pager/ResultSet.pm
+%%PERL5_MAN3%%/DBIx::Skinny::Mixin::Pager.3.gz
+%%PERL5_MAN3%%/DBIx::Skinny::Mixin::SearchWithPager.3.gz
+%%PERL5_MAN3%%/DBIx::Skinny::Pager.3.gz
+%%PERL5_MAN3%%/DBIx::Skinny::Pager::Logic::Count.3.gz
+%%PERL5_MAN3%%/DBIx::Skinny::Pager::Logic::MySQLFoundRows.3.gz
+%%PERL5_MAN3%%/DBIx::Skinny::Pager::Logic::PlusOne.3.gz
+%%PERL5_MAN3%%/DBIx::Skinny::Pager::Page.3.gz
 @dirrmtry %%SITE_PERL%%/DBIx/Skinny/Pager/Page
 @dirrmtry %%SITE_PERL%%/DBIx/Skinny/Pager/Logic
 @dirrmtry %%SITE_PERL%%/DBIx/Skinny/Pager

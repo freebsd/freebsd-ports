@@ -4,6 +4,7 @@
 %%SITE_PERL%%/DBIx/Skinny/Schema/Loader/DBI/Pg.pm
 %%SITE_PERL%%/DBIx/Skinny/Schema/Loader/DBI/SQLite.pm
 %%SITE_PERL%%/DBIx/Skinny/Schema/Loader/DBI/mysql.pm
+%%PERL5_MAN3%%/DBIx::Skinny::Schema::Loader.3.gz
 @dirrm %%SITE_PERL%%/DBIx/Skinny/Schema/Loader/DBI
 @dirrmtry %%SITE_PERL%%/DBIx/Skinny/Schema/Loader
 @dirrmtry %%SITE_PERL%%/DBIx/Skinny/Schema
