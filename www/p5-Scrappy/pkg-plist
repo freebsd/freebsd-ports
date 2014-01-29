@@ -21,6 +21,13 @@ bin/scrappy
 %%SITE_PERL%%/auto/share/dist/Scrappy/support/opera.txt
 %%SITE_PERL%%/auto/share/dist/Scrappy/support/safari.txt
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Scrappy/.packlist
+%%PERL5_MAN3%%/Scrappy.3.gz
+%%PERL5_MAN3%%/Scrappy::Logger.3.gz
+%%PERL5_MAN3%%/Scrappy::Queue.3.gz
+%%PERL5_MAN3%%/Scrappy::Scraper::Control.3.gz
+%%PERL5_MAN3%%/Scrappy::Scraper::Parser.3.gz
+%%PERL5_MAN3%%/Scrappy::Session.3.gz
+man/man1/scrappy.1.gz
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Scrappy/support
 @dirrmtry %%SITE_PERL%%/auto/share/dist/Scrappy
 @dirrmtry %%SITE_PERL%%/auto/share/dist

@@ -1,6 +1,8 @@
 bin/mork
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Mork/.packlist
 %%SITE_PERL%%/File/Mork.pm
+%%PERL5_MAN3%%/File::Mork.3.gz
+man/man1/mork.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Mork
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
 @dirrmtry %%SITE_PERL%%/File

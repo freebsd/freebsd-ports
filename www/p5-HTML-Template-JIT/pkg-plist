@@ -2,6 +2,9 @@
 %%SITE_PERL%%/HTML/Template/JIT/Base.pm
 %%SITE_PERL%%/HTML/Template/JIT/Compiler.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/JIT/.packlist
+%%PERL5_MAN3%%/HTML::Template::JIT.3.gz
+%%PERL5_MAN3%%/HTML::Template::JIT::Base.3.gz
+%%PERL5_MAN3%%/HTML::Template::JIT::Compiler.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template/JIT
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Template
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
