@@ -11,13 +11,13 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Timer plugin for Xfce
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel
-USES=		pkgconfig gettext
+USES=		pkgconfig gettext gmake
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
