@@ -3,6 +3,7 @@
 
 PORTNAME=	selector
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,9 +16,9 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}resolver>=0.2.1:${PORTSDIR}/devel/py-resolver
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's/license="MIT",/license="MIT", zip_safe=False,/' \
 		${WRKSRC}/setup.py

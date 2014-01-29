@@ -3,6 +3,7 @@
 
 PORTNAME=	django-mezzanine-filebrowser
 PORTVERSION=	0.2.27
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +14,8 @@ COMMENT=	Fork of django-filebrowser for Mezzanine CMS
 
 USE_PYTHON=	yes
 USES=		gettext
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGNAME=	filebrowser_safe
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
