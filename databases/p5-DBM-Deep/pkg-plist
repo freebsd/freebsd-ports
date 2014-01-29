@@ -28,6 +28,17 @@
 %%SITE_PERL%%/DBM/Deep.pod
 %%SITE_PERL%%/DBM/Deep.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBM/Deep/.packlist
+%%PERL5_MAN3%%/DBM::Deep.3.gz
+%%PERL5_MAN3%%/DBM::Deep::Cookbook.3.gz
+%%PERL5_MAN3%%/DBM::Deep::Internals.3.gz
+%%PERL5_MAN3%%/DBM::Deep::Iterator::File::BucketList.3.gz
+%%PERL5_MAN3%%/DBM::Deep::Iterator.3.gz
+%%PERL5_MAN3%%/DBM::Deep::Storage::File.3.gz
+%%PERL5_MAN3%%/DBM::Deep::Engine.3.gz
+%%PERL5_MAN3%%/DBM::Deep::Storage.3.gz
+%%PERL5_MAN3%%/DBM::Deep::Iterator::File::Index.3.gz
+%%PERL5_MAN3%%/DBM::Deep::Null.3.gz
+%%PERL5_MAN3%%/DBM::Deep::Engine::File.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBM/Deep
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBM
 @dirrm %%SITE_PERL%%/DBM/Deep/Engine

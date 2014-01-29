@@ -1,5 +1,6 @@
 %%SITE_PERL%%/DBICx/MapMaker.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBICx/MapMaker/.packlist
+%%PERL5_MAN3%%/DBICx::MapMaker.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBICx/MapMaker
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBICx
 @dirrmtry %%SITE_PERL%%/DBICx

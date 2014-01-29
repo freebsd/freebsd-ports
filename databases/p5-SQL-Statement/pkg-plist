@@ -19,6 +19,26 @@
 %%SITE_PERL%%/SQL/Statement/Term.pm
 %%SITE_PERL%%/SQL/Statement/TermFactory.pm
 %%SITE_PERL%%/SQL/Statement/Util.pm
+%%PERL5_MAN3%%/SQL::Dialects::ANSI.3.gz
+%%PERL5_MAN3%%/SQL::Dialects::AnyData.3.gz
+%%PERL5_MAN3%%/SQL::Dialects::CSV.3.gz
+%%PERL5_MAN3%%/SQL::Dialects::Role.3.gz
+%%PERL5_MAN3%%/SQL::Eval.3.gz
+%%PERL5_MAN3%%/SQL::Parser.3.gz
+%%PERL5_MAN3%%/SQL::Statement.3.gz
+%%PERL5_MAN3%%/SQL::Statement::Embed.3.gz
+%%PERL5_MAN3%%/SQL::Statement::Function.3.gz
+%%PERL5_MAN3%%/SQL::Statement::Functions.3.gz
+%%PERL5_MAN3%%/SQL::Statement::GetInfo.3.gz
+%%PERL5_MAN3%%/SQL::Statement::Operation.3.gz
+%%PERL5_MAN3%%/SQL::Statement::Placeholder.3.gz
+%%PERL5_MAN3%%/SQL::Statement::RAM.3.gz
+%%PERL5_MAN3%%/SQL::Statement::Roadmap.3.gz
+%%PERL5_MAN3%%/SQL::Statement::Structure.3.gz
+%%PERL5_MAN3%%/SQL::Statement::Syntax.3.gz
+%%PERL5_MAN3%%/SQL::Statement::Term.3.gz
+%%PERL5_MAN3%%/SQL::Statement::TermFactory.3.gz
+%%PERL5_MAN3%%/SQL::Statement::Util.3.gz
 @dirrmtry %%SITE_PERL%%/SQL/Statement
 @dirrmtry %%SITE_PERL%%/SQL/Dialects
 @dirrmtry %%SITE_PERL%%/SQL
