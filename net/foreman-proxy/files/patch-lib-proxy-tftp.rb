@@ -5,7 +5,7 @@
        FileUtils.mkdir_p destination.parent
  
 -      cmd = "wget --timeout=10 --tries=3 --no-check-certificate -nv -c #{src} -O \"#{destination}\""
-+      cmd = "/usr/bin/fetch --timeout=10 -a --no-verify-hostname --no-verify-peer -a -m -o \"#{destination}\" #{src}"
++      cmd = "/usr/bin/fetch --timeout=10 --no-verify-hostname --no-verify-peer -a -m -q -o \"#{destination}\" #{src}"
        Proxy::Util::CommandTask.new(cmd)
      end
    end
