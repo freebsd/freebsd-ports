@@ -34,41 +34,4 @@ TEST_DEPENDS=	p5-Test-Class-Most>=0:${PORTSDIR}/devel/p5-Test-Class-Most \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		mason.pl.1
-MAN3=		Mason.3 \
-		Mason::App.3 \
-		Mason::CodeCache.3 \
-		Mason::Compilation.3 \
-		Mason::Component.3 \
-		Mason::Component::ClassMeta.3 \
-		Mason::Component::Import.3 \
-		Mason::Component::Moose.3 \
-		Mason::Exceptions.3 \
-		Mason::Filters::Standard.3 \
-		Mason::Interp.3 \
-		Mason::Manual.3 \
-		Mason::Manual::Components.3 \
-		Mason::Manual::Cookbook.3 \
-		Mason::Manual::FAQ.3 \
-		Mason::Manual::Filters.3 \
-		Mason::Manual::Intro.3 \
-		Mason::Manual::Plugins.3 \
-		Mason::Manual::RequestDispatch.3 \
-		Mason::Manual::Setup.3 \
-		Mason::Manual::Subclasses.3 \
-		Mason::Manual::Syntax.3 \
-		Mason::Manual::Tutorial.3 \
-		Mason::Manual::UpgradingFromMason1.3 \
-		Mason::Moose.3 \
-		Mason::Moose::Role.3 \
-		Mason::Plugin::Defer.3 \
-		Mason::Plugin::DollarDot.3 \
-		Mason::Plugin::LvalueAttributes.3 \
-		Mason::Plugin::TidyObjectFiles.3 \
-		Mason::PluginBundle::Default.3 \
-		Mason::PluginRole.3 \
-		Mason::Request.3 \
-		Mason::Result.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
