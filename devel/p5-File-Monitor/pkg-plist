@@ -3,6 +3,10 @@
 %%SITE_PERL%%/File/Monitor/Base.pm
 %%SITE_PERL%%/File/Monitor/Delta.pm
 %%SITE_PERL%%/File/Monitor/Object.pm
+%%PERL5_MAN3%%/File::Monitor::Base.3.gz
+%%PERL5_MAN3%%/File::Monitor.3.gz
+%%PERL5_MAN3%%/File::Monitor::Delta.3.gz
+%%PERL5_MAN3%%/File::Monitor::Object.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Monitor
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
 @dirrmtry %%SITE_PERL%%/File/Monitor

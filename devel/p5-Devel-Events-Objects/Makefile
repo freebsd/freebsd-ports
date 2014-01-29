@@ -24,9 +24,4 @@ TEST_DEPENDS=	p5-Test-use-ok>=0:${PORTSDIR}/devel/p5-Test-use-ok
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Devel::Events::Generator::Objects.3 \
-		Devel::Events::Handler::ObjectTracker.3 \
-		Devel::Events::Objects.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

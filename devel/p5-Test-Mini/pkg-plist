@@ -12,6 +12,13 @@
 %%SITE_PERL%%/Test/Mini/TestCase.pod
 %%SITE_PERL%%/Test/README.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mini/.packlist
+%%PERL5_MAN3%%/Test::Mini.3.gz
+%%PERL5_MAN3%%/Test::Mini::Assertions.3.gz
+%%PERL5_MAN3%%/Test::Mini::Logger.3.gz
+%%PERL5_MAN3%%/Test::Mini::Logger::TAP.3.gz
+%%PERL5_MAN3%%/Test::Mini::Runner.3.gz
+%%PERL5_MAN3%%/Test::Mini::TestCase.3.gz
+%%PERL5_MAN3%%/Test::README.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Mini
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
 @dirrmtry %%SITE_PERL%%/Test/Mini/Logger

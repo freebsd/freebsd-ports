@@ -16,10 +16,4 @@ RUN_DEPENDS=	p5-version>=0:${PORTSDIR}/devel/p5-version
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		File::Monitor::Base.3 \
-		File::Monitor.3 \
-		File::Monitor::Delta.3 \
-		File::Monitor::Object.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

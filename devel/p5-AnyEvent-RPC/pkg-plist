@@ -4,6 +4,9 @@
 %%SITE_PERL%%/AnyEvent/RPC/Enc/YAML.pm
 %%SITE_PERL%%/AnyEvent/RPC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/RPC/.packlist
+%%PERL5_MAN3%%/AnyEvent::RPC.3.gz
+%%PERL5_MAN3%%/AnyEvent::RPC::Enc::YAML.3.gz
+%%PERL5_MAN3%%/AnyEvent::RPC::Enc::REST.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/RPC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
