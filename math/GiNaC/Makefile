@@ -9,30 +9,27 @@ MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/GiNaC/ \
 DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 
 MAINTAINER=	stephen@FreeBSD.org
-COMMENT=	A C++ library for symbolic mathematical calculations
+COMMENT=	C++ library for symbolic mathematical calculations
 
-LIB_DEPENDS=	cln.6:${PORTSDIR}/math/cln
+LIB_DEPENDS=	libcln.so:${PORTSDIR}/math/cln
 
 USE_BZIP2=	yes
 USES=		pkgconfig pathfix gmake
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-INFO=	ginac ginac-examples
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+INFO=		ginac ginac-examples
 
-.if ${ARCH} == "alpha"
-BROKEN=		Does not build on alpha
-.endif
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/configure
 .if ${ARCH} != "i386"
-	@${REINPLACE_CMD} -e 's|unsigned|size_t|g' ${WRKSRC}/ginac/parser/parser.cpp
+	@${REINPLACE_CMD} -e 's|unsigned|size_t|g' \
+		${WRKSRC}/ginac/parser/parser.cpp
 .endif
 
 .include <bsd.port.post.mk>
