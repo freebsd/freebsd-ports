@@ -1,20 +1,23 @@
-Don't build/use our own (Alladin's rather) MD5 and RC4 code. Use
-OpenSSL's -- we link with OpenSSL anyway...
-
-	-mi
-
---- htmldoc/ps-pdf.cxx	Tue Aug  1 12:58:50 2006
-+++ htmldoc/ps-pdf.cxx	Tue Apr  3 00:26:54 2007
-@@ -136,6 +136,6 @@
+--- ./htmldoc/ps-pdf.cxx.orig	2014-01-06 04:42:43.000000000 +0100
++++ ./htmldoc/ps-pdf.cxx	2014-01-28 04:47:41.000000000 +0100
+@@ -120,13 +120,9 @@
+ 
  /*#define DEBUG*/
  #include "htmldoc.h"
--#include "md5.h"
+-#include "md5-private.h"
+-#define md5_append _cupsMD5Append
+-#define md5_finish _cupsMD5Finish
+-#define md5_init _cupsMD5Init
+ typedef unsigned char md5_byte_t;
+-#define md5_state_t _cups_md5_state_t
 -#include "rc4.h"
 +#include <openssl/md5.h>
 +#include <openssl/rc4.h>
  #include <stdarg.h>
  #include <ctype.h>
-@@ -342,6 +342,6 @@
+ #include <time.h>
+@@ -331,8 +327,8 @@
+ static uchar		comp_buffer[8192];
  static uchar		encrypt_key[16];
  static int		encrypt_len;
 -static rc4_context_t	encrypt_state;
@@ -23,14 +26,18 @@ OpenSSL's -- we link with OpenSSL anyway...
 +static unsigned char	file_id[16];
  
  
-@@ -10582,5 +10582,5 @@
+ /*
+@@ -10545,7 +10541,7 @@
+ 	    {
  	      // Encrypt the colormap...
  	      encrypt_init();
 -	      rc4_encrypt(&encrypt_state, cmap[0], cmap[0], ncolors * 3);
 +	      RC4(&encrypt_state, ncolors * 3, cmap[0], cmap[0]);
  	    }
  
-@@ -11203,7 +11203,7 @@
+ 	    fprintf(out, "/ColorSpace[/Indexed/DeviceRGB %d<", ncolors - 1);
+@@ -11166,9 +11162,9 @@
+   int		font_desc[TYPE_MAX][STYLE_MAX];
  					/* Font descriptor objects */
    char		temp[1024];		/* Temporary string */
 -  md5_state_t	md5;			/* MD5 state */
@@ -41,7 +48,9 @@ OpenSSL's -- we link with OpenSSL anyway...
 +  RC4_KEY	rc4;			/* RC4 context */
    uchar		owner_pad[32],		/* Padded owner password */
  		owner_key[32],		/* Owner key */
-@@ -11604,8 +11604,8 @@
+ 		user_pad[32],		/* Padded user password */
+@@ -11568,10 +11564,10 @@
+     * Compute the file ID...
      */
  
 -    md5_init(&md5);
@@ -54,7 +63,9 @@ OpenSSL's -- we link with OpenSSL anyway...
 +    MD5_Final(file_id, &md5);
  
     /*
-@@ -11663,7 +11663,7 @@
+     * Setup encryption stuff as necessary...
+@@ -11627,18 +11623,18 @@
+       * Compute the owner key...
        */
  
 -      md5_init(&md5);
@@ -65,7 +76,8 @@ OpenSSL's -- we link with OpenSSL anyway...
 +      MD5_Final(digest, &md5);
  
        if (encrypt_len > 5)
-@@ -11672,7 +11672,7 @@
+       {
+         // MD5 the result 50 more times...
  	for (i = 0; i < 50; i ++)
  	{
 -          md5_init(&md5);
@@ -76,7 +88,9 @@ OpenSSL's -- we link with OpenSSL anyway...
 +          MD5_Final(digest, &md5);
  	}
  
-@@ -11687,12 +11687,12 @@
+         // Copy the padded user password...
+@@ -11651,14 +11647,14 @@
+ 	  for (j = 0; j < encrypt_len; j ++)
  	    encrypt_key[j] = digest[j] ^ i;
  
 -          rc4_init(&rc4, encrypt_key, encrypt_len);
@@ -93,7 +107,9 @@ OpenSSL's -- we link with OpenSSL anyway...
 +        RC4(&rc4, 32, user_pad, owner_key);
        }
  
-@@ -11716,7 +11716,7 @@
+      /*
+@@ -11680,27 +11676,27 @@
+       * Compute the encryption key...
        */
  
 -      md5_init(&md5);
@@ -104,7 +120,8 @@ OpenSSL's -- we link with OpenSSL anyway...
 +      MD5_Update(&md5, owner_key, 32);
  
        perm_bytes[0] = perm_value;
-@@ -11725,7 +11725,7 @@
+       perm_bytes[1] = perm_value >> 8;
+       perm_bytes[2] = perm_value >> 16;
        perm_bytes[3] = perm_value >> 24;
  
 -      md5_append(&md5, perm_bytes, 4);
@@ -115,7 +132,8 @@ OpenSSL's -- we link with OpenSSL anyway...
 +      MD5_Final(digest, &md5);
  
        if (encrypt_len > 5)
-@@ -11734,7 +11734,7 @@
+       {
+         // MD5 the result 50 times..
          for (i = 0; i < 50; i ++)
  	{
 -	  md5_init(&md5);
@@ -126,7 +144,9 @@ OpenSSL's -- we link with OpenSSL anyway...
 +	  MD5_Final(digest, &md5);
  	}
        }
-@@ -11748,8 +11748,8 @@
+ 
+@@ -11712,10 +11708,10 @@
+ 
        if (encrypt_len > 5)
        {
 -        md5_init(&md5);
@@ -139,7 +159,9 @@ OpenSSL's -- we link with OpenSSL anyway...
 +        MD5_Final(user_key, &md5);
  
          memset(user_key + 16, 0, 16);
-@@ -11762,12 +11762,12 @@
+ 
+@@ -11726,14 +11722,14 @@
+ 	  for (j = 0; j < encrypt_len; j ++)
  	    digest[j] = encrypt_key[j] ^ i;
  
 -          rc4_init(&rc4, digest, encrypt_len);
@@ -156,28 +178,36 @@ OpenSSL's -- we link with OpenSSL anyway...
 +        RC4(&rc4, 32, pad, user_key);
        }
  
-@@ -11956,5 +11956,5 @@
+      /*
+@@ -11920,7 +11916,7 @@
+       else
          bytes = len;
  
 -      rc4_encrypt(&encrypt_state, s, news, bytes);
 +      RC4(&encrypt_state, bytes, s, news);
  
        for (i = 0; i < bytes; i ++)
-@@ -12619,5 +12619,5 @@
+         fprintf(out, "%02x", news[i]);
+@@ -12585,7 +12581,7 @@
+     unicode[0] = 0xfe;			// Start with BOM
      unicode[1] = 0xff;
  
 -    rc4_encrypt(&encrypt_state, unicode, enicode, 2);
 +    RC4(&encrypt_state, 2, unicode, enicode);
  
      fprintf(out, "%02x%02x", enicode[0], enicode[1]);
-@@ -12629,5 +12629,5 @@
+ 
+@@ -12595,7 +12591,7 @@
+       unicode[0] = ch >> 8;
        unicode[1] = ch;
  
 -      rc4_encrypt(&encrypt_state, unicode, enicode, 2);
 +      RC4(&encrypt_state, 2, unicode, enicode);
  
        fprintf(out, "%02x%02x", enicode[0], enicode[1]);
-@@ -12661,6 +12661,6 @@
+     }
+@@ -12627,8 +12623,8 @@
+   int		i;			/* Looping var */
    uchar		data[21],		/* Key data */
  		*dataptr;		/* Pointer to key data */
 -  md5_state_t	md5;			/* MD5 state */
@@ -186,7 +216,9 @@ OpenSSL's -- we link with OpenSSL anyway...
 +  unsigned char	digest[16];		/* MD5 digest value */
  
  
-@@ -12682,7 +12682,7 @@
+  /*
+@@ -12648,18 +12644,18 @@
+   * Hash it...
    */
  
 -  md5_init(&md5);
@@ -197,7 +229,8 @@ OpenSSL's -- we link with OpenSSL anyway...
 +  MD5_Final(digest, &md5);
  
   /*
-@@ -12691,7 +12691,7 @@
+   * Initialize the RC4 context using the first N+5 bytes of the digest...
+   */
  
    if (encrypt_len > 11)
 -    rc4_init(&encrypt_state, digest, 16);
@@ -207,7 +240,9 @@ OpenSSL's -- we link with OpenSSL anyway...
 +    RC4_set_key(&encrypt_state, encrypt_len + 5, digest);
  }
  
-@@ -12761,6 +12761,6 @@
+ 
+@@ -12727,8 +12723,8 @@
+     else
      {
        if (Encryption)
 -        rc4_encrypt(&encrypt_state, comp_buffer, comp_buffer,
@@ -216,7 +251,9 @@ OpenSSL's -- we link with OpenSSL anyway...
 +	    comp_buffer, comp_buffer);
  
        fwrite(comp_buffer, (uchar *)compressor.next_out - (uchar *)comp_buffer,
-@@ -12785,6 +12785,6 @@
+              1, out);
+@@ -12751,8 +12747,8 @@
+     else
      {
        if (Encryption)
 -        rc4_encrypt(&encrypt_state, comp_buffer, comp_buffer,
@@ -225,7 +262,9 @@ OpenSSL's -- we link with OpenSSL anyway...
 +	    comp_buffer, comp_buffer);
  
        fwrite(comp_buffer, (uchar *)compressor.next_out - (uchar *)comp_buffer,
-@@ -12878,6 +12878,6 @@
+              1, out);
+@@ -12844,8 +12840,8 @@
+ 	else
  	{
  	  if (Encryption)
 -            rc4_encrypt(&encrypt_state, comp_buffer, comp_buffer,
@@ -234,26 +273,13 @@ OpenSSL's -- we link with OpenSSL anyway...
 +		    comp_buffer, comp_buffer);
  
  	  fwrite(comp_buffer,
-@@ -12912,5 +12912,5 @@
+ 	         (uchar *)compressor.next_out - (uchar *)comp_buffer, 1, out);
+@@ -12878,7 +12874,7 @@
+       if ((bytes = length - i) > (int)sizeof(newbuf))
          bytes = sizeof(newbuf);
  
 -      rc4_encrypt(&encrypt_state, buf + i, newbuf, bytes);
 +      RC4(&encrypt_state, bytes, buf + i, newbuf);
        fwrite(newbuf, bytes, 1, out);
      }
---- htmldoc/http.h	Mon Apr  3 11:41:08 2006
-+++ htmldoc/http.h	Tue Apr  3 00:24:01 2007
-@@ -61,5 +61,5 @@
- #  endif /* WIN32 */
- 
--#  include "md5.h"
-+#  include <openssl/md5.h>
- 
- /*
-@@ -345,5 +345,5 @@
- 					/* Buffer for incoming data */
-   int			auth_type;	/* Authentication in use */
--  md5_state_t		md5_state;	/* MD5 state */
-+  MD5_CTX		md5_state;	/* MD5 state */
-   char			nonce[HTTP_MAX_VALUE];
- 					/* Nonce value */
+   }

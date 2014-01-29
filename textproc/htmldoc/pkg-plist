@@ -1,4 +1,5 @@
 bin/htmldoc
+man/man1/htmldoc.1.gz
 %%DOCSDIR%%/help.html
 %%DOCSDIR%%/htmldoc.pdf
 %%DATADIR%%/fonts/Courier-Bold.afm
