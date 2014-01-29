@@ -6,14 +6,14 @@ PORTVERSION=	2008.10.28
 CATEGORIES=	textproc java
 MASTER_SITES=	http://jing-trang.googlecode.com/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	A RELAX NG validator in Java
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${FILESDIR}/doc/copying.html
+LICENSE_FILE=	${WRKSRC}/doc/copying.html
 
-USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
