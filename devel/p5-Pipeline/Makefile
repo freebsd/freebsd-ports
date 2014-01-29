@@ -23,15 +23,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Pipeline::Segment.3 Pipeline::Store::ISA.3 Pipeline.3 \
-		Pipeline::Segment::Async::Handler.3 Pipeline::Analyser.3 \
-		Pipeline::Production.3 Pipeline::Store::Simple.3 \
-		Pipeline::Segment::Async.3 Pipeline::Store.3 \
-		Pipeline::Error::Construction.3 Pipeline::Dispatch.3 \
-		Pipeline::Base.3 Pipeline::Segment::Async::Fork.3 \
-		Pipeline::Error::Abstract.3 Pipeline::Dumper.3 \
-		Pipeline::Error::AsyncResults.3 Pipeline::Segment::Tester.3 \
-		Pipeline::Segment::Async::IThreads.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

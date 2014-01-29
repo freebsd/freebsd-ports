@@ -11,6 +11,18 @@
 %%SITE_PERL%%/MouseX/AttributeHelpers/Number.pm
 %%SITE_PERL%%/MouseX/AttributeHelpers/String.pm
 %%SITE_PERL%%/MouseX/README.pod
+%%PERL5_MAN3%%/MouseX::AttributeHelpers.3.gz
+%%PERL5_MAN3%%/MouseX::AttributeHelpers::Base.3.gz
+%%PERL5_MAN3%%/MouseX::AttributeHelpers::Bool.3.gz
+%%PERL5_MAN3%%/MouseX::AttributeHelpers::Collection::Array.3.gz
+%%PERL5_MAN3%%/MouseX::AttributeHelpers::Collection::Bag.3.gz
+%%PERL5_MAN3%%/MouseX::AttributeHelpers::Collection::Hash.3.gz
+%%PERL5_MAN3%%/MouseX::AttributeHelpers::Collection::ImmutableHash.3.gz
+%%PERL5_MAN3%%/MouseX::AttributeHelpers::Collection::List.3.gz
+%%PERL5_MAN3%%/MouseX::AttributeHelpers::Counter.3.gz
+%%PERL5_MAN3%%/MouseX::AttributeHelpers::Number.3.gz
+%%PERL5_MAN3%%/MouseX::AttributeHelpers::String.3.gz
+%%PERL5_MAN3%%/MouseX::README.3.gz
 @dirrm %%SITE_PERL%%/MouseX/AttributeHelpers/Collection
 @dirrm %%SITE_PERL%%/MouseX/AttributeHelpers
 @dirrmtry %%SITE_PERL%%/MouseX

@@ -14,7 +14,4 @@ COMMENT=	A grammar-based, user-friendly config parser
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Config::Grammar.3 Config::Grammar::Dynamic.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

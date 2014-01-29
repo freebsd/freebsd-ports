@@ -1,6 +1,8 @@
 %%SITE_PERL%%/IO/LockedFile.pm
 %%SITE_PERL%%/IO/LockedFile/Flock.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/LockedFile/.packlist
+%%PERL5_MAN3%%/IO::LockedFile.3.gz
+%%PERL5_MAN3%%/IO::LockedFile::Flock.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/LockedFile
 @dirrmtry %%SITE_PERL%%/IO/LockedFile
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
