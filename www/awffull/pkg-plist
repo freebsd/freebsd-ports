@@ -1,4 +1,6 @@
 bin/awffull
+man/man1/awffull.1.gz
+man/man5/awffull.conf.5.gz
 share/locale/ca/LC_MESSAGES/awffull.mo
 share/locale/cs/LC_MESSAGES/awffull.mo
 share/locale/da/LC_MESSAGES/awffull.mo
