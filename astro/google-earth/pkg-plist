@@ -106,7 +106,6 @@ bin/googleearth
 %%DATADIR%%/libcommon_platform.so
 %%DATADIR%%/libcommon_webbrowser.so
 %%DATADIR%%/libcomponentframework.so
-%%DATADIR%%/libcurl.so.4
 %%DATADIR%%/libevll.so
 %%DATADIR%%/libflightsim.so
 %%DATADIR%%/libfusioncommon.so
