@@ -1,3 +1,6 @@
+%%PERL5_MAN3%%/POE::Component::Server::SimpleHTTP.3.gz
+%%PERL5_MAN3%%/POE::Component::Server::SimpleHTTP::Connection.3.gz
+%%PERL5_MAN3%%/POE::Component::Server::SimpleHTTP::Response.3.gz
 %%SITE_PERL%%/POE/Component/Server/SimpleHTTP.pm
 %%SITE_PERL%%/POE/Component/Server/SimpleHTTP/Connection.pm
 %%SITE_PERL%%/POE/Component/Server/SimpleHTTP/Response.pm
