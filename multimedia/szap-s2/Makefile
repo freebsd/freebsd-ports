@@ -22,13 +22,14 @@ MAKE_ARGS+=	CXX=${CXX}
 WRKSRC=		${WRKDIR}/szap-s2-e34f73b254db
 PORTDOCS=	README
 PLIST_FILES=	bin/szap-s2
-NO_STAGE=	yes
+
+.include <bsd.port.options.mk>
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} szap-s2 ${STAGEDIR}/${PREFIX}/bin)
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>
