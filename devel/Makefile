@@ -949,6 +949,7 @@
     SUBDIR += libconfig
     SUBDIR += libconfuse
     SUBDIR += libcwd
+    SUBDIR += libcxxrt
     SUBDIR += libdaemon
     SUBDIR += libdap
     SUBDIR += libdasm
