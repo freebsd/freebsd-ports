@@ -14,7 +14,7 @@ All ports committers are allowed to commit to this file.
 AUTHOR: mat@FreeBSD.org
 
   Add two new options helpers:
- 
+
   ${OPT}_${TYPE}_DEPENDS_OFF=<something> will automatically add:
   ${TYPE_DEPENDS}+=<something> in case OPT is 'off'
 
@@ -111,13 +111,13 @@ AUTHOR: mva@FreeBSD.org
     USES=	twisted
     USES=	twisted:conch,names
     USES=	twisted:run
-  
+
 20131119:
 AUTHOR: kwm@FreeBSD.org
 
-  The USE_GNOME component ltverhack no longer has a hard dependancy on 
+  The USE_GNOME component ltverhack no longer has a hard dependancy on
   libtool.
-  
+
   If USE_AUTOTOOLS=libtool isn't defined it will try to patch ltmain.sh
   and or libtool in ${WRKSRC}. If those files are located somewhere else
   in ${WRKSRC} then it is possible to overwrite ltverhack_PATCH_FILES
@@ -251,7 +251,7 @@ AUTHOR: bdrewery@FreeBSD.org
 
   On FreeBSD 10, this uses an ldscript in /usr/lib/libc.so to pull in
   libssp_nonshared.a to address issues linking on i386 [1].
-  
+
   On earlier FreeBSD versions the WITH_SSP_PORTS knob will add -lssp_nonshared
   to LDFLAGS on i386. This is not needed on amd64. However, several hundred
   ports do not currently respect LDFLAGS, so this support is disabled currently
@@ -359,9 +359,9 @@ AUTHOR: rene@FreeBSD.org
    - USE_KDEBASE_VER
    - USE_KDELIBS_VER
    - USE_QT_VER
- 
+
   Mk/bsd.kde.mk has been removed, it was only used for QT 3/KDE 3.
- 
+
 20130628:
 AUTHOR: bapt@FreeBSD.org
 
@@ -467,14 +467,14 @@ AUTHOR: kwm@FreeBSD.org
   * Two new USES macros to handle mime data of ports.
 
   USES= desktop-file-utils
-	Handles MimeType in .desktop files that are installed in 
+	Handles MimeType in .desktop files that are installed in
 	share/applications.
   USES= shared-mime-info
-	For supporting mime xml files installed in 
+	For supporting mime xml files installed in
 	share/mime/packages.
 
   The desktop-file-utils USES is only needed if the .desktop files
-  installed by the port has a MimeType field. 
+  installed by the port has a MimeType field.
   USE_GNOME=desktopfileutils is deprecated.
 
   The shared-mime-info USES handles mime types xml files.
@@ -483,7 +483,7 @@ AUTHOR: kwm@FreeBSD.org
   directories and generated files.
 
   Both USES have there own post-install and code that adds @exec/@unexec
-  lines to the pkg-plist. This means that when a port switches to the 
+  lines to the pkg-plist. This means that when a port switches to the
   USES macro, the related post-install command  and @exec/@unexec
   lines can be removed from the prot.
 
