@@ -14,30 +14,19 @@ NO_BUILD=	yes
 OPTIONS_DEFINE=	JAPANESE
 JAPANESE_DESC=	Japanese documentation (HTML and PDF)
 
-NO_STAGE=	yes
-.include "${.CURDIR}/Makefile.man"
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MJAPANESE}
-PLIST_SUB+=	JAPANESE=""
-.else
-PLIST_SUB+=	JAPANESE="@comment "
-.endif
+OPTIONS_SUB=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/m17n
 
 do-install:
-	${MKDIR} ${DOCSDIR}/en
-	@${INSTALL_MAN} ${MAN1:S|^|${WRKSRC}/man/man1/|} ${MANPREFIX}/man/man1
-	@${INSTALL_MAN} ${MAN3:S|^|${WRKSRC}/man/man3/|} ${MANPREFIX}/man/man3
-	@${INSTALL_MAN} ${MAN5:S|^|${WRKSRC}/man/man5/|} ${MANPREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/usr/latex/m17n-lib.pdf ${DOCSDIR}/en
-	(cd ${WRKSRC}/usr/ && ${COPYTREE_SHARE} html ${DOCSDIR}/en/)
-.if defined(WITH_JAPANESE)
-	${MKDIR} ${DOCSDIR}/ja
-	${INSTALL_MAN} ${WRKSRC}/ja/latex/m17n-lib.pdf ${DOCSDIR}/ja
-	(cd ${WRKSRC}/ja/ && ${COPYTREE_SHARE} html ${DOCSDIR}/ja/)
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/en
+	${INSTALL_MAN} ${WRKSRC}/man/man1/* ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/man/man3/* ${STAGEDIR}${MAN3PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/man/man5/* ${STAGEDIR}${MAN5PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/usr/latex/m17n-lib.pdf ${STAGEDIR}${DOCSDIR}/en
+	(cd ${WRKSRC}/usr/ && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}/en/)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/ja
+	${INSTALL_MAN} ${WRKSRC}/ja/latex/m17n-lib.pdf ${STAGEDIR}${DOCSDIR}/ja
+	(cd ${WRKSRC}/ja/ && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}/ja/)
 
 .include <bsd.port.mk>
