@@ -1,5 +1,5 @@
---- configure.orig	2014-01-25 23:25:33.000000000 +0100
-+++ configure	2014-01-27 16:03:41.403133047 +0100
+--- configure.orig	2014-01-27 04:04:34.000000000 +0100
++++ configure	2014-01-29 13:12:46.268622841 +0100
 @@ -16216,7 +16216,7 @@
                 DATADIRNAME=share
  else
@@ -60,11 +60,3 @@
  
  int
  main ()
-@@ -22121,7 +22123,3 @@
-   { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
- $as_echo "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
- fi
--
--
--echo "Moving SPEC file to base directory"
--mv etc/amide.spec ./
