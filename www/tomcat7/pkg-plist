@@ -667,6 +667,7 @@
 @dirrm %%T%%/webapps/docs/jspapi
 @dirrm %%T%%/webapps/docs/servletapi
 @dirrm %%T%%/webapps/docs/tribes
+@dirrm %%T%%/webapps/docs/websocketapi
 @dirrm %%T%%/webapps/docs
 @dirrm %%T%%/webapps/examples/WEB-INF/classes/async
 @dirrm %%T%%/webapps/examples/WEB-INF/classes/cal
