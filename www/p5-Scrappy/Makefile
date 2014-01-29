@@ -33,15 +33,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	scrappy.1
-MAN3=	Scrappy.3 \
-	Scrappy::Logger.3 \
-	Scrappy::Queue.3 \
-	Scrappy::Scraper::Control.3 \
-	Scrappy::Scraper::Parser.3 \
-	Scrappy::Session.3
-
-NO_STAGE=	yes
 post-patch:
 	rm -f ${WRKSRC}/perltidy.pl
 	rm -f ${WRKSRC}/lib/Scrappy.pm.bak

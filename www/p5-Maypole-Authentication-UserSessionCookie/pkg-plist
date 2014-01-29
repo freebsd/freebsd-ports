@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Maypole/Authentication/UserSessionCookie.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Maypole/Authentication/UserSessionCookie/.packlist
+%%PERL5_MAN3%%/Maypole::Authentication::UserSessionCookie.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Maypole/Authentication/UserSessionCookie
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Maypole/Authentication
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Maypole
