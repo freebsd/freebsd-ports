@@ -3,6 +3,7 @@
 
 PORTNAME=	apachelog
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://freebsd.unixfreunde.de/sources/
@@ -13,6 +14,6 @@ COMMENT=	Python access log parser.
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

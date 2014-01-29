@@ -29,5 +29,4 @@ TEST_DEPENDS:=	${RUN_DEPENDS} \
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
