@@ -5,6 +5,8 @@
 %%SITE_PERL%%/Class/DBI/Plugin/Iterator/mysql4.pm
 %%SITE_PERL%%/Class/DBI/Plugin/Iterator/subquery.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin/Iterator/.packlist
+%%PERL5_MAN3%%/Class::DBI::Plugin::Iterator.3.gz
+%%PERL5_MAN3%%/Class::DBI::Plugin::Iterator::Nihongo.3.gz
 @dirrm %%SITE_PERL%%/Class/DBI/Plugin/Iterator
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin/Iterator
 @dirrmtry %%SITE_PERL%%/Class/DBI/Plugin

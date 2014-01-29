@@ -20,7 +20,4 @@ BUILD_DEPENDS:=	p5-DBIx-Class-DynamicDefault>=0.03:${PORTSDIR}/databases/p5-DBIx
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		DBIx::Class::InflateColumn::Authen::Passphrase.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

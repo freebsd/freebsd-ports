@@ -13,7 +13,4 @@ COMMENT=	Perl5 interface to the CDB package
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		CDB_File.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

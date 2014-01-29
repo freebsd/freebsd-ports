@@ -9,4 +9,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/tcftest.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/tchtest.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/tcttest.pl
+%%PERL5_MAN3%%/TokyoCabinet.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/TokyoCabinet

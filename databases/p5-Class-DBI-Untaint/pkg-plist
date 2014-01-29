@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Class/DBI/Untaint.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Untaint/.packlist
+%%PERL5_MAN3%%/Class::DBI::Untaint.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Untaint
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class
