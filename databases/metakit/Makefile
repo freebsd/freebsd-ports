@@ -8,20 +8,19 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.equi4.com/pub/mk/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	C++ embedded database engine, supports Python and Tcl
+COMMENT=	C++ embedded database engine with Python and Tcl support
 
 LICENSE=	MIT
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/builds
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../unix/configure
 USE_LDCONFIG=	yes
-ONLY_FOR_ARCHS=	i386 alpha amd64
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/builds
 
 OPTIONS_DEFINE=	PYTHON TCL DOCS
 OPTIONS_DEFAULT=	PYTHON
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
@@ -67,24 +66,25 @@ post-build:
 		${WRKSRC}/../python
 .endif
 
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+
 post-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/libmk4.so \
-		${PREFIX}/lib/libmk4.so.0
-	@${LN} -sf libmk4.so.0 ${PREFIX}/lib/libmk4.so
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/libmk4.so \
+		${STAGEDIR}${PREFIX}/lib/libmk4.so.0
+	${LN} -sf libmk4.so.0 ${STAGEDIR}${PREFIX}/lib/libmk4.so
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${TAR} -C ${WRKSRC}/../doc --exclude "*CVS" -cf - . | \
-		${TAR} -C ${DOCSDIR} --unlink -xf -
+		${TAR} -C ${STAGEDIR}${DOCSDIR} --unlink -xf -
 	${INSTALL_DATA} ${WRKSRC}/../Metakit.html ${WRKSRC}/../CHANGES \
-		${WRKSRC}/../README ${DOCSDIR}/
-.endif
+		${WRKSRC}/../README ${STAGEDIR}${DOCSDIR}
 
 test:
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
 .if defined(USE_TCL)
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test-tcl)
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test-tcl)
 .endif
 
 .include <bsd.port.mk>
