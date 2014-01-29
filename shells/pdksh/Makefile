@@ -14,7 +14,7 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	${DISTNAME}-patches.1 ${DISTNAME}-patches.2
 PATCH_DIST_STRIP=	-p2
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	The Public Domain Korn Shell
 
 LICENSE=	BSD

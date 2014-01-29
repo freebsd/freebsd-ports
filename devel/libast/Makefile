@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.eterm.org/download/ \
 		CRITICAL
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library of assorted spiffy things
 
 LICENSE=	BSD

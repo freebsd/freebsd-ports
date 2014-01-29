@@ -6,7 +6,7 @@ PORTVERSION=	0.6.4
 CATEGORIES=	devel
 MASTER_SITES=	SF/najitool/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library that generates, converts, and filters files
 
 MAKE_ARGS=	cc="${CC}"

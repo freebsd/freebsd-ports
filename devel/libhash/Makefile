@@ -6,7 +6,7 @@ PORTVERSION=	1.0.3
 CATEGORIES=	devel
 MASTER_SITES=	GENTOO/distfiles
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library for manipulating hash tables
 
 WRKSRC=		${WRKDIR}/libhash
