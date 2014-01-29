@@ -15,7 +15,7 @@ GH_ACCOUNT=	pathscale
 GH_COMMIT=	2f150a6
 GH_TAGNAME=	${GH_COMMIT}
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 CXXFLAGS+=	-nostdlib
 
 do-install:
