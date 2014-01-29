@@ -16,11 +16,10 @@ RUN_DEPENDS+=	p5-Badger>0.0:${PORTSDIR}/devel/p5-Badger \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HTML::Query.3
 PLIST_FILES=	%%SITE_PERL%%/HTML/Query.pm \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML-Query/.packlist
+		%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML-Query/.packlist \
+		%%PERL5_MAN3%%/HTML::Query.3.gz
 PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML-Query \
 		%%SITE_PERL%%/HTML
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,6 +1,9 @@
 %%SITE_PERL%%/HTML/FillInForm/Lite.pm
 %%SITE_PERL%%/HTML/FillInForm/Lite/Compat.pm
 %%SITE_PERL%%/HTML/FillInForm/Lite/JA.pod
+%%PERL5_MAN3%%/HTML::FillInForm::Lite.3.gz
+%%PERL5_MAN3%%/HTML::FillInForm::Lite::Compat.3.gz
+%%PERL5_MAN3%%/HTML::FillInForm::Lite::JA.3.gz
 @dirrm %%SITE_PERL%%/HTML/FillInForm/Lite
 @dirrmtry %%SITE_PERL%%/HTML/FillInForm
 @dirrmtry %%SITE_PERL%%/HTML
