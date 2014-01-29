@@ -20,7 +20,4 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		CGI::Application::Plugin::DBH.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
