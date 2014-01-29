@@ -1,4 +1,4 @@
-# Created by: jkoshy
+# Created by: Joseph Koshy <jkoshy@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	smlnj
@@ -12,7 +12,7 @@ DIST_SUBDIR=	sml-nj/${PORTVERSION}
 EXTRACT_ONLY=	config.tgz
 
 MAINTAINER=	joemann@beefree.free.de
-COMMENT=	A popular functional language from Bell Labs
+COMMENT=	Popular functional language from Bell Labs
 
 NO_WRKSUBDIR=	yes
 USE_GMAKE=	yes
@@ -34,9 +34,6 @@ NO_STAGE=	yes
 .if (${ARCH} == "i386")
 MLARCH=		x86
 DISTFILES+=	boot.x86-unix.tgz
-#.elif (${ARCH} == "alpha")
-#MLARCH=		alpha32
-#DISTFILES+=	boot.alpha32-unix.tgz
 .endif
 DISTFILES+=	MLRISC.tgz ckit.tgz cml.tgz heap2asm.tgz ml-lpt.tgz \
 		ml-lex.tgz ml-yacc.tgz smlnj-lib.tgz trace-debug-profile.tgz
