@@ -51,6 +51,32 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a4c9e12d-88b7-11e3-8ada-10bf48e1088e">
+    <topic>socat -- buffer overflow with data from command line</topic>
+    <affects>
+      <package>
+	<name>socat</name>
+	<range><lt>1.7.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Florian Weimer of the Red Hat Product Security Team reports:</p>
+	<blockquote cite="http://www.dest-unreach.org/socat/contrib/socat-secadv5.txt">
+	  <p>Due to a missing check during assembly of the HTTP request line a long target server name in the PROXY-CONNECT address can cause a stack buffer overrun. Exploitation requires that the attacker is able to provide the target server name to the PROXY-CONNECT address in the command line. This can happen for example in scripts that receive data from untrusted sources.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0019</cvename>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2014-0019</url>
+    </references>
+    <dates>
+      <discovery>2014-01-24</discovery>
+      <entry>2014-01-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c7b5d72b-886a-11e3-9533-60a44c524f57">
     <topic>otrs -- SQL injection issue</topic>
     <affects>
