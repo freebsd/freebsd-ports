@@ -13,13 +13,11 @@ COMMENT=	Dump http-contents to stdout
 WRKSRC=		${WRKDIR}/http_get
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
-MAN1=		http_get.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/http_get
+PLIST_FILES=	bin/http_get \
+		man/man1/http_get.1.gz
 
 .ifndef NO_OPENSSL
 USE_OPENSSL=	yes
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

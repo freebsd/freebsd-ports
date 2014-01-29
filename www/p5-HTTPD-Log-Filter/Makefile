@@ -15,8 +15,5 @@ RUN_DEPENDS=	p5-IO-Zlib>=0:${PORTSDIR}/archivers/p5-IO-Zlib
 
 USES=		perl5
 USE_PERL5=	configure
-MAN1=		exclude_robots.1
-MAN3=		HTTPD::Log::Filter.3
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
