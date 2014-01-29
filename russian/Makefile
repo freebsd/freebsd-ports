@@ -38,7 +38,6 @@
     SUBDIR += pscyr
     SUBDIR += rubygem-russian
     SUBDIR += rubygem-rutils
-    SUBDIR += rus-ispell
     SUBDIR += rux
     SUBDIR += stardict-bars
     SUBDIR += stardict-computer

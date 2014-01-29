@@ -5402,3 +5402,18 @@ math/math/octave-forge-image-acquisition||2014-01-27|Depends on multimedia/libv4
 lang/racket-textual|lang/racket-minimal|2014-01-27|Renamed upstream
 mail/pop-before-smtp||2014-01-27|Removed
 graphics/glfw-devel||2014-01-28|Removed
+french/ispell|french/aspell|2014-01-29|Removed, consider using aspell instead
+german/ispell|german/aspell|2014-01-29|Removed, consider using aspell instead
+german/ispell-alt|german/aspell|2014-01-29|Removed, consider using aspell instead
+german/ispell-neu|german/aspell|2014-01-29|Removed, consider using aspell instead
+hungarian/ispell|hungarian/aspell|2014-01-29|Removed, consider using aspell instead
+polish/ispell|polish/aspell|2014-01-28|Removed, consider using aspell instead
+portuguese/ispell-pt_BR|portuguese/aspell-pt_BR|2014-01-28|Removed, consider using aspell instead
+russian/rus-ispell|russian/aspell|2014-01-29|Removed, consider using aspell instead
+textproc/british-ispell|textroc/en-aspell|2014-01-29|Removed, consider using aspell instead
+textproc/es-ispell|textproc/es-aspell|2014-01-29|Removed, consider using aspell instead
+textproc/ispell|textproc/aspell-ispell|2014-01-29|Removed, consider using aspell instead
+textproc/it-ispell|textproc/it-aspell|2014-01-29|Removed, consider using aspell instead
+textproc/nl-ispell|textproc/nl-ispell|2014-01-29|Removed, consider using aspell instead
+textproc/sk-ispell|textproc/sk-ispell|2014-01-29|Removed, consider using aspell instead
+ukrainian/ispell|ukrainian/aspell|2014-01-29|Removed, consider using aspell instead

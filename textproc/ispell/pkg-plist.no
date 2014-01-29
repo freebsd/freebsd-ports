@@ -1,5 +1,0 @@
-share/ispell/norsk.aff
-share/ispell/norsk.hash
-share/ispell/norsk.munch.hash
-share/ispell/nynorsk.hash
-share/ispell/nynorsk.aff

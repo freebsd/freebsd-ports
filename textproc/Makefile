@@ -52,7 +52,6 @@
     SUBDIR += bn-aspell
     SUBDIR += bomstrip
     SUBDIR += br-aspell
-    SUBDIR += british-ispell
     SUBDIR += bsddiff
     SUBDIR += bsdgrep
     SUBDIR += bsdsort
@@ -168,7 +167,6 @@
     SUBDIR += es-aspell
     SUBDIR += es-hunspell
     SUBDIR += es-hyphen
-    SUBDIR += es-ispell
     SUBDIR += es-mythes
     SUBDIR += estraier
     SUBDIR += et-aspell
@@ -321,11 +319,9 @@
     SUBDIR += iso-schematron-xslt
     SUBDIR += iso12083
     SUBDIR += iso8879
-    SUBDIR += ispell
     SUBDIR += it-aspell
     SUBDIR += it-hunspell
     SUBDIR += it-hyphen
-    SUBDIR += it-ispell
     SUBDIR += it-mythes
     SUBDIR += itstool
     SUBDIR += jade
@@ -456,7 +452,6 @@
     SUBDIR += nl-aspell
     SUBDIR += nl-hunspell
     SUBDIR += nl-hyphen
-    SUBDIR += nl-ispell
     SUBDIR += nl-mythes
     SUBDIR += nltk
     SUBDIR += nn-aspell
@@ -1395,7 +1390,6 @@
     SUBDIR += sk-aspell
     SUBDIR += sk-hunspell
     SUBDIR += sk-hyphen
-    SUBDIR += sk-ispell
     SUBDIR += sk-mythes
     SUBDIR += sl-aspell
     SUBDIR += sl-hyphen
