@@ -11,15 +11,15 @@ DISTNAME=	${PORTNAME}-x11-src-${PORTVERSION}
 MAINTAINER=	m.sund@arcor.de
 COMMENT=	Ultimate++, a BSD-licensed, cross-platform, C/C++ RAD suite
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
-		expat:${PORTSDIR}/textproc/expat2 \
-		notify:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libnotify.so:${PORTSDIR}/devel/libnotify
 
+USES=		gmake
 USE_XORG=	xft
 USE_GNOME=	gtk20
-USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 BUILD_WRKSRC=	${WRKSRC}/uppsrc
@@ -44,21 +44,15 @@ DESKTOP_ENTRIES="TheIDE" "IDE for cross-platform C++ development" \
 OPTIONS_DEFINE=	SDL OPENGL MYSQL PGSQL USEMALLOC
 USEMALLOC_DESC=	Compile without U++ heap allocator
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/theide
+
+SDL_USE=	sql
+OPENGL_USE=	gl
+MYSQL_USE=	mysql=yes
+PHSQL_USE=	pgsql=yes
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL=	sdl
-.endif
-.if ${PORT_OPTIONS:MOPENGL}
-USE_GL=	gl
-.endif
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-.endif
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-.endif
 .if ${PORT_OPTIONS:MUSEMALLOC}
 MACRO_FLAGS+=	-DflagUSEMALLOC
 .endif
@@ -97,14 +91,9 @@ post-build: .SILENT
 	${ECHO_CMD} "REMOTE_MAP = \"\";" >> ${WRKSRC}/GCC.bm
 	${ECHO_CMD} "LINKMODE_LOCK = \"0\";" >> ${WRKSRC}/GCC.bm
 
-do-install: .SILENT
-	${INSTALL_PROGRAM} ${WRKSRC}/theide ${PREFIX}/bin
-.if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${DATADIR}
-.endif
-
-post-install:
-	@${ECHO_CMD} bin/theide >> ${TMPPLIST}
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/theide ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

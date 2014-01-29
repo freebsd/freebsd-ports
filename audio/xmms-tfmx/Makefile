@@ -13,14 +13,13 @@ COMMENT=	XMMS Input plugin for playing TFMX tunes
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 USE_GNOME=	gtk12 lthack
-NO_STAGE=	yes
 USES=		gmake
 USE_AUTOTOOLS=	libtool
 
 PLIST_FILES=	lib/xmms/Input/libtfmx.so
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/xmms/Input
-	${INSTALL_DATA} ${WRKSRC}/src/.libs/libtfmx.so ${PREFIX}/lib/xmms/Input
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Input
+	${INSTALL_DATA} ${WRKSRC}/src/.libs/libtfmx.so ${STAGEDIR}${PREFIX}/lib/xmms/Input
 
 .include <bsd.port.mk>

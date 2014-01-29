@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp -s %D/etc/lighttpd/lighttpd.conf %D/etc/lighttpd/lighttpd.conf.sample; then rm -f %D/etc/lighttpd/lighttpd.conf; fi
 etc/lighttpd/lighttpd.conf.sample
 @exec [ -f %B/lighttpd.conf ] || cp %B/%f %B/lighttpd.conf
@@ -171,6 +170,7 @@ lib/lighttpd/mod_usertrack.so
 lib/lighttpd/mod_webdav.a
 lib/lighttpd/mod_webdav.la
 lib/lighttpd/mod_webdav.so
+man/man8/lighttpd.8.gz
 sbin/lighttpd
 sbin/lighttpd-angel
 @dirrm lib/lighttpd
@@ -180,4 +180,4 @@ sbin/lighttpd-angel
 @cwd /
 @exec %%MKDIR%% -m 0700 %%LOGROOT%%
 @exec %%CHOWN%% %%USER%%:%%GROUP%% %%LOGROOT%%
-@dirrmtry %%LOGROOT%%
+@unexec rmdir %%LOGROOT%% >/dev/null 2>&1 || :

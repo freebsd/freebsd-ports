@@ -16,6 +16,5 @@ USE_XPI=	*firefox*
 
 LICENSE=	GPLv2
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

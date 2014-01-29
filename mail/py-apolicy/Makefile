@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/spf.py:${PORTSDIR}/mail/py-spf \
 		${PYTHON_SITELIBDIR}/IPy.py:${PORTSDIR}/net-mgmt/py-ipy
 
 USES=		twisted
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 NO_BUILD=	yes
 USE_RC_SUBR=	apolicyd

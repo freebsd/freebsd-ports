@@ -7,7 +7,7 @@ CATEGORIES=	dns mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tjs@cdpa.nsysu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gather DNSBL Statistics
 
 RUN_DEPENDS=	p5-Net-DNS-Codes>=0.09:${PORTSDIR}/dns/p5-Net-DNS-Codes \

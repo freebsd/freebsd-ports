@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mbox & Maildir to Gmail loader
 
-USE_PYTHON_RUN=	-2.7
+USE_PYTHON_RUN=	2
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USES=		dos2unix

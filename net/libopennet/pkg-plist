@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/opennet.h
 lib/libopennet.a
 lib/libopennet.so

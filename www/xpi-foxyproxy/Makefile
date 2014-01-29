@@ -16,7 +16,6 @@ XPI_DISTNAME=	foxyproxy_standard
 XPI_NUM=	2464
 XPI_ID=		foxyproxy@eric.h.jung
 
-NO_STAGE=	yes
 xpi-post-extract:
 	@${FIND} ${WRKSRC} -type f -name '*.js' |${XARGS} ${SED} -i '' -e 's/[[:space:]]*$$//g'
 

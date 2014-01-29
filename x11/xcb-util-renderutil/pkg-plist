@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/xcb/xcb_renderutil.h
 lib/libxcb-render-util.so.0
 lib/libxcb-render-util.so

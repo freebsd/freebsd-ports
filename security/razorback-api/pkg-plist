@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp -s %D/etc/razorback/api.conf %D/etc/razorback/api.conf.sample; then rm -f %D/etc/razorback/api.conf; fi
 etc/razorback/api.conf.sample
 @exec if [ ! -f %D/etc/razorback/api.conf ]; then cp -p %D/%F %B/api.conf; fi

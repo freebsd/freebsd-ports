@@ -1,0 +1,15 @@
+--- Makefile.in.orig	2014-01-11 19:17:22.000000000 +0800
++++ Makefile.in	2014-01-11 19:17:41.000000000 +0800
+@@ -79,10 +79,10 @@ install-strip:
+ 		install
+ 
+ install-program: xdaliclock
+-	$(INSTALL_PROGRAM) xdaliclock $(install_prefix)$(bindir)/xdaliclock
++	$(INSTALL_PROGRAM) xdaliclock $(DESTDIR)$(install_prefix)$(bindir)/xdaliclock
+ 
+ install-man: xdaliclock.man
+-	$(INSTALL_DATA) $(srcdir)/xdaliclock.man $(install_prefix)$(man1dir)/xdaliclock.1
++	$(INSTALL_DATA) $(srcdir)/xdaliclock.man $(DESTDIR)$(install_prefix)$(man1dir)/xdaliclock.1
+ 
+ uninstall-program:
+ 	rm -f $(install_prefix)$(bindir)/xdaliclock

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mDNSResponder
-PORTVERSION=	541
+PORTVERSION=	544
 CATEGORIES=	net dns
 MASTER_SITES=	http://opensource.apple.com/tarballs/${PORTNAME}/
 

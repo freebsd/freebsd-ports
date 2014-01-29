@@ -22,7 +22,6 @@ PLIST_FILES=	lib/xmms/Input/libxmms_sndfile.so \
 		lib/xmms/Input/libxmms_sndfile.la
 
 USES=		pkgconfig
-NO_STAGE=	yes
 USE_GNOME=	gtk12
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

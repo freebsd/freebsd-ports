@@ -1,4 +1,6 @@
 bin/scandeps.pl
+%%PERL5_MAN3%%/Module::ScanDeps.3.gz
+man/man1/scandeps.pl.1.gz
 %%SITE_PERL%%/Module/ScanDeps.pm
 %%SITE_PERL%%/Module/ScanDeps/Cache.pm
 %%SITE_PERL%%/Module/ScanDeps/DataFeed.pm

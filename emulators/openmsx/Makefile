@@ -27,7 +27,7 @@ USES=		gmake tcl
 USE_GCC=	4.6+
 USE_GL=		glew
 USE_SDL=	sdl ttf
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 
 PLIST_FILES=	bin/openmsx
 PORTDATA=	*

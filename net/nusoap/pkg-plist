@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/changelog
 %%DATADIR%%/class.nusoap_base.php
 %%DATADIR%%/class.soap_fault.php

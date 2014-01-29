@@ -32,7 +32,7 @@ USE_XORG=	x11 xau xcb xdmcp
 USE_WX=		2.6+
 WX_COMPS=	python:lib
 
-USE_PYTHON=		-2.7
+USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	py${PORTNAME}
 

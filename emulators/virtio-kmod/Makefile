@@ -17,8 +17,6 @@ WRKSRC=		${WRKDIR}
 NEEDSUBDIRS=	amd64 cam conf contrib dev/pci geom i386 kern net netinet netinet6 \
 	sys tools vm x86
 
-NO_STAGE=	yes
-
 USES=		kmod
 .include <bsd.port.pre.mk>
 
@@ -59,12 +57,9 @@ do-build:
 
 do-install:
 .for f in pci/virtio_pci virtio/virtio block/virtio_blk balloon/virtio_balloon network/if_vtnet
-	${INSTALL_KLD} ${WRKSRC}/sys/modules/virtio/${f}.ko ${KMODDIR}
-	${INSTALL_KLD} ${WRKSRC}/sys/modules/virtio/${f}.ko.symbols ${KMODDIR}
+	${INSTALL_KLD} ${WRKSRC}/sys/modules/virtio/${f}.ko ${STAGEDIR}${KMODDIR}
+	${INSTALL_KLD} ${WRKSRC}/sys/modules/virtio/${f}.ko.symbols ${STAGEDIR}${KMODDIR}
 .endfor
-
-post-install:
-	${CAT} ${PKGMESSAGE}
 
 # For maintainer only.
 SVN_MIRROR?=	http://svn.freebsd.org/base

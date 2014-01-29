@@ -25,6 +25,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 BROKEN=	Does not build
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2014-02-27
 
 OPTIONS_DEFINE=	SMLNJ MINGW32
 SMLNJ_DESC=	Bootstrap with SML/NJ (can take >15 hours)

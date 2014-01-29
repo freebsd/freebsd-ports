@@ -17,7 +17,7 @@ GNU_CONFIGURE=	yes
 USES=		gettext gmake pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_GNOME=	gtk20 pygtk2 desktopfileutils
 INSTALL_ICONS=	yes
 

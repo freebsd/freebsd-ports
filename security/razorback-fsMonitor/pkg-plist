@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/fsMonitor
 @unexec if cmp -s %D/etc/razorback/fsMonitor.conf %D/etc/razorback/fsMonitor.conf.sample; then rm -f %D/etc/razorback/fsMonitor.conf; fi
 etc/razorback/fsMonitor.conf.sample

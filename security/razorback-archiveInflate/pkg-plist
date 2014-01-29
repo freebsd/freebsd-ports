@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp -s %D/etc/razorback/archive_inflate.conf %D/etc/razorback/archive_inflate.conf.sample; then rm -f %D/etc/razorback/archive_inflate.conf; fi
 etc/razorback/archive_inflate.conf.sample
 @exec if [ ! -f %D/etc/razorback/archive_inflate.conf ]; then cp -p %D/%F %B/archive_inflate.conf; fi

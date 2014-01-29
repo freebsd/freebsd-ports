@@ -1,3 +1,2 @@
-@comment $FreeBSD$
 bin/xosview
 lib/X11/app-defaults/XOsview

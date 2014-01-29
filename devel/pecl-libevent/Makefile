@@ -22,5 +22,4 @@ USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	libevent
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

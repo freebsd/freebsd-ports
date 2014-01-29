@@ -1,7 +1,6 @@
 %%SITE_PERL%%/DBIx/Abstract.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Abstract/.packlist
+%%PERL5_MAN3%%/DBIx::Abstract.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Abstract
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Abstract
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
-@dirrmtry %%SITE_PERL%%/DBIx/Abstract
 @dirrmtry %%SITE_PERL%%/DBIx

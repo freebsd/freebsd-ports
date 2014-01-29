@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-tsa
-PORTVERSION=	4.2.4
-PORTREVISION=	2
+PORTVERSION=	4.2.7
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
+
+LICENSE=	GPLv3
 
 # OCTSRC is the name of the directory of the package.
 # It is usually ${OCTAVE_PKGNAME} or ${DISTNAME}.
@@ -15,7 +16,6 @@ OCTSRC=		${OCTAVE_PKGNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 ALL_TARGET=	octave

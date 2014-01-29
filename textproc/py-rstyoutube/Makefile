@@ -7,13 +7,15 @@ CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	duchateau.olivier@gmail.com
+MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Embed YouTube videos in reStructuredText documents
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/docutils/__init__.py:${PORTSDIR}/textproc/py-docutils
+LICENSE=	MIT
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0.11:${PORTSDIR}/textproc/py-docutils
 
-NO_STAGE=	yes
+USE_PYTHON=	2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+
 .include <bsd.port.mk>

@@ -14,11 +14,15 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	tphilipp@potion-studios.com
 COMMENT=	Constructs linkage maps of markers segregating in experimental crosses
 
+USE_CSTD=	gnu89
+CFLAGS+=	-Wno-return-type
 NO_WRKSUBDIR=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 post-patch:
 	${CP} ${WRKSRC}/sun/* ${WRKSRC}
+
+pre-install:
+	@${REINPLACE_CMD} -e 's|/usr/local|${STAGEDIR}${PREFIX}|' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

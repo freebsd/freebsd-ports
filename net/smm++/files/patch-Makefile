@@ -1,5 +1,5 @@
---- Makefile.orig	Wed May  1 17:15:20 2002
-+++ Makefile	Wed Jun 12 20:02:20 2002
+--- Makefile.orig	2002-05-01 23:15:20.000000000 +0200
++++ Makefile	2014-01-14 17:56:34.000000000 +0100
 @@ -11,8 +11,8 @@
  
  # --- The default settings will install SMM++ nicely into an
@@ -11,12 +11,37 @@
  
  # --- If you don't have root access, you could choose to install
  #     SMM++ locally in your home directory. Therefore use the
-@@ -57,6 +57,8 @@
- # ---  You don't need to edit/understand/read the rest of
+@@ -58,6 +58,8 @@
  #      this Makefile. If you can read Makefiles, feel free
  #      to do whatever you like.
-+
-+all: smm
  
++all: smm
++
  smm: Makefile
  	@echo "--- Building startup file."
+ 	@if [ -z ${ITKWISH} ] ; then \
+@@ -80,18 +82,18 @@
+ 	@echo "--- Installing startup file to '${BIN}'."
+ 	@echo "    Please make sure, that '${BIN}' is part of your PATH variable."
+ 	@echo "    Or start SMM++ with ${BIN}/smm."
+-	@install -d ${BIN}
+-	@install -c smm ${BIN}
++	@install -d ${STAGEDIR}${BIN}
++	@install -c smm ${STAGEDIR}${BIN}
+ uninstall-bin:
+ 	@echo "--- Uninstalling startup file from '${BIN}'."
+ 	@echo "    Leaving the bin-dir untouched."
+ 	@rm -f ${BIN}/smm
+ install-src:
+ 	@echo "--- Installing libraries to ${SRC}."
+-	@install -d ${SRC}
+-	@cp -Rp ../sources ${SRC} 
+-	@cp -Rp ../images ${SRC} 
+-	@cp -Rp ../config ${SRC} 
++	@install -d ${STAGEDIR}${SRC}
++	@cp -Rp ../sources ${STAGEDIR}${SRC} 
++	@cp -Rp ../images ${STAGEDIR}${SRC} 
++	@cp -Rp ../config ${STAGEDIR}${SRC} 
+ uninstall-src:
+ 	@echo "--- Uninstalling libraries from ${SRC}."
+ 	@rm -rf ${SRC}

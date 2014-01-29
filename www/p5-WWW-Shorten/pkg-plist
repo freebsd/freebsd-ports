@@ -1,4 +1,16 @@
 bin/shorten
+%%PERL5_MAN3%%/WWW::Shorten.3.gz
+%%PERL5_MAN3%%/WWW::Shorten::LinkToolbot.3.gz
+%%PERL5_MAN3%%/WWW::Shorten::Linkz.3.gz
+%%PERL5_MAN3%%/WWW::Shorten::MakeAShorterLink.3.gz
+%%PERL5_MAN3%%/WWW::Shorten::Metamark.3.gz
+%%PERL5_MAN3%%/WWW::Shorten::TinyClick.3.gz
+%%PERL5_MAN3%%/WWW::Shorten::TinyURL.3.gz
+%%PERL5_MAN3%%/WWW::Shorten::Tinylink.3.gz
+%%PERL5_MAN3%%/WWW::Shorten::UserAgent.3.gz
+%%PERL5_MAN3%%/WWW::Shorten::_dead.3.gz
+%%PERL5_MAN3%%/WWW::Shorten::generic.3.gz
+man/man1/shorten.1.gz
 %%SITE_PERL%%/WWW/Shorten.pm
 %%SITE_PERL%%/WWW/Shorten/LinkToolbot.pm
 %%SITE_PERL%%/WWW/Shorten/Linkz.pm

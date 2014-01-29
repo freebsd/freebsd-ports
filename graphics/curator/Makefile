@@ -12,23 +12,22 @@ COMMENT=	Static Image Gallery Generator for web or CD-ROM galleries
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 OPTIONS_DEFINE=	PIL
 PIL_DESC=	Use Python Imaging Library instead of ImageMagick
 
-PLIST_FILES=	bin/curator
-MAN1=		curator.1
+PLIST_FILES=	man/man1/curator.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPIL}
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging
 .else
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 .endif
 
 post-install:
-	${INSTALL_MAN} ${FILESDIR}/curator.1 ${PREFIX}/man/man1/curator.1
+	${INSTALL_MAN} ${FILESDIR}/curator.1 ${STAGEDIR}${PREFIX}/man/man1/curator.1
 
 .include <bsd.port.mk>

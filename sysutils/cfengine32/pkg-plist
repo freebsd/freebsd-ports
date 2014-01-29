@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 lib/libpromises.la
 lib/libpromises.so
 lib/libpromises.so.1

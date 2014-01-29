@@ -1,42 +1,30 @@
+# Created by: Timothy Beyer <beyert@cs.ucr.edu>
 # $FreeBSD$
-
-# Date created:				15 Aug 2010
-# Whom:					Timothy Beyer <beyert@cs.ucr.edu>
-#
-# $FreeBSD$
-#
 
 PORTNAME=	zinnia
 PORTVERSION=	0.06
 CATEGORIES=	japanese
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	beyert@cs.ucr.edu
-COMMENT=	Simple, customizable, and portable online hand recognition system
+COMMENT=	Simple, customizable, and portable online handwriting recognition system
 
-LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	BSD3CLAUSE
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+PORTDOCS=	index-ja.html index.html
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^pkgconfigdir/s!=.*!= ${PREFIX}/libdata/pkgconfig!' \
-	${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/^pkgconfigdir/s!=.*!= ${PREFIX}/libdata/pkgconfig!' \
+			${WRKSRC}/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/index.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/index-ja.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/index-ja.html ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/doc/,} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

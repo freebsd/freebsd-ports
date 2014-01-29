@@ -12,7 +12,7 @@ DISTNAME=	Rabbyt-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A fast sprite library for Python
 
-USE_PYTHON=		2.5+
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Rabbyt
 PYEASYINSTALL_ARCHDEP=	yes

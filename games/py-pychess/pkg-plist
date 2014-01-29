@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/pychess
 %%PYTHON_SITELIBDIR%%/pychess/Main.py
 %%PYTHON_SITELIBDIR%%/pychess/Main.pyc

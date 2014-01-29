@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 sbin/babeld
 sbin/bgpd
 %%ISISD%%sbin/isisd

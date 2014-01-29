@@ -10,36 +10,35 @@ PKGNAMESUFFIX=	-gtk2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic Book Viewer
 
-LIB_DEPENDS=	eb:${PORTSDIR}/japanese/eb
+LICENSE=	GPLv2 # (or later)
 
-CONFLICTS=	ja-ebview-0*
+LIB_DEPENDS=	libeb.so:${PORTSDIR}/japanese/eb
 
-USES=		pkgconfig
-USE_GNOME=	gtk20
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+CONFLICTS=	ja-ebview-[0-9]*
+
+USES=		gettext gmake pkgconfig
+USE_GNOME=	gtk20 pangox-compat
 USE_CSTD=	gnu89
-CONFIGURE_ARGS+=--with-eb-conf=${LOCALBASE}/etc/eb.conf
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-eb-conf=${LOCALBASE}/etc/eb.conf
 
 SUB_FILES=	ebview.desktop
 
-NO_STAGE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-pthread|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|#define GTK_DISABLE_DEPRECATED 1||g' \
 		${WRKSRC}/src/ebview.c
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/ebview.xpm ${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${WRKDIR}/${SUB_FILES} ${PREFIX}/share/applications/
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in ChangeLog README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	(cd ${WRKDIR} && ${INSTALL_DATA} ${SUB_FILES} \
+		${STAGEDIR}${DESKTOPDIR})
+	(cd ${WRKSRC}/pixmaps && ${INSTALL_DATA} ebview.xpm \
+		${STAGEDIR}${PREFIX}/share/pixmaps)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in ChangeLog README
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
-.endif
 
 .include <bsd.port.mk>

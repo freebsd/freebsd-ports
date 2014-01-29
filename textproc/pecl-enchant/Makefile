@@ -22,5 +22,4 @@ PHP_MODNAME=	${PORTNAME}
 DEFAULT_PHP_VER=53
 IGNORE_WITH_PHP=5
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@ CATEGORIES=	net
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Internet Low Bit Rate codec (RFC3951)
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	ilbc-r[0-9]*
@@ -20,7 +20,6 @@ GH_TAGNAME=	${GH_COMMIT}
 USES=		cmake
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|lib/$${CMAKE_LIBRARY_ARCHITECTURE}/pkgconfig|libdata/pkgconfig|' ${WRKSRC}/CMakeLists.txt
 

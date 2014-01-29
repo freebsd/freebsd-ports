@@ -3,7 +3,7 @@
 
 PORTNAME=	etktab
 PORTVERSION=	3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio tcl tk
 MASTER_SITES=	SF/${PORTNAME}/eTktab/${PORTVERSION} \
 		SF/${PORTNAME}/keyboard%20layout%20support/${PORTVERSION}:keyboard
@@ -16,9 +16,8 @@ COMMENT=	Guitar tablature editor
 
 OPTIONS_DEFINE=	DOCS
 
-USES+=		tk
+USES=		tk
 NO_BUILD=	yes
-NO_STAGE=	yes
 WRKSRC=		${WRKDIR}/eTktab-${PORTVERSION}
 
 PLIST_FILES=	bin/${PORTNAME}
@@ -34,7 +33,7 @@ DISTFILES+=	canada_multi-3.2.etk:keyboard \
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|wish8.4|${WISH}|g' ${WRKSRC}/eTktab
+	${REINPLACE_CMD} -e 's|wish|${WISH}|g' ${WRKSRC}/eTktab
 
 post-extract:
 .for FILE in canada_multi-3.2.etk dvorak-3.2.etk uk-3.2.etk us-3.2.etk
@@ -42,12 +41,12 @@ post-extract:
 .endfor
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/eTktab ${PREFIX}/bin/etktab
+	${INSTALL_SCRIPT} ${WRKSRC}/eTktab ${STAGEDIR}${PREFIX}/bin/etktab
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in CHANGES.html LICENSE.html README.html eTktab-small.xpm eTktab.xpm \
 		canada_multi-3.2.etk dvorak-3.2.etk uk-3.2.etk us-3.2.etk
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

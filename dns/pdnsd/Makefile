@@ -24,9 +24,6 @@ OPTIONS_DEFINE=	IPV6 DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN5=		pdnsd.conf.5
-MAN8=		pdnsd.8 pdnsd-ctl.8
-
 PDNSDB=		/var/db/pdnsd
 DOCSRCDIR=	${WRKSRC}/doc
 DOC_FILES=	html/dl.html html/doc.html html/faq.html html/index.html
@@ -34,20 +31,14 @@ DOC_FILES+=	txt/faq.txt txt/intro.txt txt/manual.txt
 
 CFLAGS+=	-pthread
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+IPV6_CONFIGURE_ENABLE=	ipv6
 
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.endif
+.include <bsd.port.options.mk>
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DOC_FILES:S@^@${DOCSRCDIR}/@} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${DOC_FILES:S@^@${DOCSRCDIR}/@} ${STAGEDIR}${DOCSDIR}
 .endif
-	@[ -f ${PREFIX}/etc/pdnsd.conf ] || \
-		${INSTALL_DATA} ${PREFIX}/etc/pdnsd.conf.sample ${PREFIX}/etc/pdnsd.conf
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

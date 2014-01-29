@@ -6,19 +6,19 @@ PORTVERSION=	2.2.26
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION}
 DISTNAME=	dktools-${PORTVERSION}
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert bitmap images (PNG/JPEG/NetPBM) to EPS
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/bsdlic.txt
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
 USES=		perl5
-USE_ZIP=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_header_sys_termios_h=no
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/dktools\
@@ -31,8 +31,8 @@ ALL_TARGET=	stc ${PORTNAME}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		bmeps.1
 PLIST_FILES=	bin/bmeps \
+		man/man1/bmeps.1.gz \
 		%%DATADIR%%/bmeps.str \
 		%%DATADIR%%/bmeps.stt.bz2 \
 		%%DATADIR%%/bmeps.txt \
@@ -41,19 +41,18 @@ PLIST_FILES=	bin/bmeps \
 PLIST_DIRS=	%%DATADIR%%/de \
 		%%DATADIR%%
 
-NO_STAGE=	yes
 post-build:
 	@(cd ${WRKSRC} && ./stc --/log/stderr/level=error \
 		--log/stdout/level=none --/log/file/keep=none \
 		bmeps.str share/dktools)
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} bmeps ${PREFIX}/bin)
-	(cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} bmeps.1 ${MANPREFIX}/man/man1)
-	@${MKDIR} ${DATADIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} bmeps.str ${DATADIR})
-	(cd ${WRKSRC}/share/dktools/en && ${INSTALL_DATA} bmeps.* ${DATADIR})
-	@${MKDIR} ${DATADIR}/de
-	(cd ${WRKSRC}/share/dktools/de && ${INSTALL_DATA} bmeps.* ${DATADIR}/de)
+	${INSTALL_PROGRAM} ${WRKSRC}/bmeps ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/man1/bmeps.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/bmeps.str ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/share/dktools/en/bmeps.* ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/de
+	${INSTALL_DATA} ${WRKSRC}/share/dktools/de/bmeps.* ${STAGEDIR}${DATADIR}/de
 
 .include <bsd.port.mk>

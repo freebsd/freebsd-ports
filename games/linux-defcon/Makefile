@@ -23,7 +23,6 @@ SUB_FILES=	defcon
 OPTIONS_DEFINE=	NVIDIA
 NVIDIA_DESC=	support for nvidia
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNVIDIA}
@@ -37,16 +36,15 @@ do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/lib/defcon.bin.x86
 
 do-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}/lib && \
-		${INSTALL_PROGRAM} defcon.bin.x86 ${DATADIR} && \
-		${INSTALL_DATA} *.dat open-www.sh ${DATADIR}
-	${INSTALL_PROGRAM} ${WRKDIR}/defcon ${PREFIX}/bin/${PKGNAMEPREFIX}defcon
-.if !defined (NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/license.txt ${DOCSDIR}/license.txt
-	${INSTALL_DATA} ${WRKSRC}/manual.pdf ${DOCSDIR}/manual.pdf
-.endif
+		${INSTALL_PROGRAM} defcon.bin.x86 ${STAGEDIR}${DATADIR} && \
+		${INSTALL_DATA} *.dat open-www.sh ${STAGEDIR}${DATADIR}
+	${INSTALL_PROGRAM} ${WRKDIR}/defcon \
+		${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}defcon
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/license.txt ${STAGEDIR}${DOCSDIR}/license.txt
+	${INSTALL_DATA} ${WRKSRC}/manual.pdf ${STAGEDIR}${DOCSDIR}/manual.pdf
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

@@ -17,7 +17,6 @@ USE_XORG=	x11 xau xdmcp
 PLIST_FILES=	bin/mlclock %%DATADIR%%/mlclockrc %%DATADIR%%/mlclockrc-kanji
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^void main|int main| ; \
@@ -29,10 +28,10 @@ do-build:
 		-L${LOCALBASE}/lib -lX11
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mlclock ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/mlclock ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for i in mlclockrc mlclockrc-kanji
-	${INSTALL_DATA} ${WRKSRC}/rcfile/${i} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/rcfile/${i} ${STAGEDIR}${DATADIR}
 .endfor
 
 .include <bsd.port.mk>

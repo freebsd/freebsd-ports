@@ -1,4 +1,5 @@
 bin/anyremote
+man/man1/anyremote.1.gz
 %%DATADIR%%/cfg-data/Utils/weather.sh
 %%DATADIR%%/cfg-data/Utils/imdb-mf.sh
 %%DATADIR%%/cfg-data/Utils/generate_cover.sh

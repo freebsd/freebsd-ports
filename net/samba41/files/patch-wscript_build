@@ -1,0 +1,10 @@
+--- ./wscript_build.orig	2013-01-27 22:58:14.032166250 +0000
++++ ./wscript_build	2013-01-27 23:03:34.089892588 +0000
+@@ -130,7 +130,6 @@
+ if bld.AD_DC_BUILD_IS_ENABLED():
+     bld.RECURSE('source4/setup')
+ bld.RECURSE('source4/scripting')
+-bld.RECURSE('pidl')
+ bld.RECURSE('lib')
+ bld.RECURSE('libds/common')
+ bld.RECURSE('source3')

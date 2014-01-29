@@ -9,12 +9,16 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Electronic Book Viewer
 
-LIB_DEPENDS=	eb:${PORTSDIR}/japanese/eb
+LICENSE=	GPLv2 # (or later)
 
-CONFLICTS=	ja-ebview-gtk2-*
+LIB_DEPENDS=	libeb.so:${PORTSDIR}/japanese/eb
 
+OPTIONS_DEFINE=	DOCS
+
+CONFLICTS=	ja-ebview-gtk2-[0-9]*
+
+USES=		gettext gmake
 USE_GNOME=	imlib
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
@@ -22,21 +26,16 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-pre-build:
-.for file in src/dictheading.c
-	cd ${WRKSRC} && ${MV} ${file} ${file}.pre_iconv \
-		&& iconv -c -t ascii ${file}.pre_iconv > ${file} || ${TRUE}
-.endfor
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|// .*||' ${WRKSRC}/src/dictheading.c
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ChangeLog README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

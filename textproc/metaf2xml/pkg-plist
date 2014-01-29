@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/metaf-fullhtml.xsl
 %%DATADIR%%/metaf-html.xsl
 %%DATADIR%%/metaf-lang.xsl

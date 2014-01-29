@@ -60,17 +60,8 @@ LINUX_DIST?=		fedora
 LINUX_DIST_VER?=	10
 .   if  !defined(OVERRIDE_LINUX_NONBASE_PORTS) && \
         ${LINUX_DIST_VER} != 10
-IGNORE=		bsd.linux-rpm.mk test failed: default package building at OSVERSION>=800076 was changed to linux-f10 ports, please define OVERRIDE_LINUX_NONBASE_PORTS to build other linux infrastructure ports
+IGNORE=		bsd.linux-rpm.mk test failed: package building defaults to linux-f10 ports, please define OVERRIDE_LINUX_NONBASE_PORTS to build other linux infrastructure ports
 .   endif
-
-# linux Fedora 10 infrastructure ports should be used with compat.linux.osrelease=2.6.16,
-# linux_base-f10 (or greater) port
-.  if ${LINUX_DIST_VER} == 10
-# let's check for apropriate compat.linux.osrelease
-.    if (${LINUX_OSRELEASE} != "2.6.16")
-IGNORE=		bsd.linux-rpm.mk test failed: the port should be used with compat.linux.osrelease=2.6.16, which is supported by FreeBSD 8 and above
-.    endif
-.  endif
 
 .  if defined(LINUX_DIST)
 DIST_SUBDIR?=	rpm/${LINUX_RPM_ARCH}/${LINUX_DIST}/${LINUX_DIST_VER}

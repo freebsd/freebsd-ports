@@ -3,7 +3,7 @@
 
 PORTNAME=	SpotifyWebsocketAPI
 PORTVERSION=	0.2
-PORTREVISION=	6
+PORTREVISION=	9
 CATEGORIES=	multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,11 +13,13 @@ COMMENT=	Websocket API and client for Spotify
 NO_ARCH=	yes
 
 USE_GITHUB=	yes
-GH_COMMIT=	08ee326
+GH_COMMIT=	5f3a646
 GH_ACCOUNT=	Hexxeh
 GH_PROJECT=	spotify-websocket-api
 GH_TAGNAME=	${GH_COMMIT}
 
+USES=		shebangfix
+SHEBANG_FILES=	spotify_web/spotify.py ${CLIENTFILES}
 USE_PYTHON=	yes # tested with 2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
@@ -28,9 +30,10 @@ OPTIONS_DEFINE=	EXAMPLES
 PORTEXAMPLES=	blocking.py nonblocking.py decode_mercury.py play.py \
 		serve.py ctype.py gstreamer.py
 
-CLIENTFILES=	respotify.py respotify-helper.py
+CLIENTFILES=	clients/respotify/respotify.py \
+		clients/respotify/respotify-helper.py
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=1.1.0:${PORTSDIR}/www/py-requests \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests1>=1.1.0:${PORTSDIR}/www/py-requests1 \
 		${PYTHON_PKGNAMEPREFIX}ws4py>=0.2.4:${PORTSDIR}/www/py-ws4py \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=2.4.1:${PORTSDIR}/devel/py-protobuf \
 		${PYTHON_PKGNAMEPREFIX}lxml>=3.1:${PORTSDIR}/devel/py-lxml \
@@ -49,9 +52,7 @@ post-patch:
 
 post-install:
 .for f in ${CLIENTFILES}
-	@${INSTALL_SCRIPT} ${WRKSRC}/clients/respotify/${f} ${STAGEDIR}${PREFIX}/bin
-	@${PYTHON_CMD} -O -mcompileall ${STAGEDIR}${PREFIX}/bin/${f}
-	@${PYTHON_CMD} -mcompileall ${STAGEDIR}${PREFIX}/bin/${f}
+	@${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 	@${LN} -s ${PREFIX}/bin/respotify.py ${STAGEDIR}${PREFIX}/bin/respotify
 

@@ -1,0 +1,5 @@
+===
+With Capistrano version 3.1, deploy:restart task is no longer run by default.
+From this version, developers who restart the app on each deploy need to declare
+it in their deploy flow (eg after 'deploy:publishing', 'deploy:restart').
+===

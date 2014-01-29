@@ -4964,7 +4964,6 @@ ftp/ncftp2|ftp/ncftp3|2013-10-02|Outdated, consider using a newer version
 irc/keitairc|irc/keitairc2|2013-10-02|Outdated, consider using a newer version
 java/netbeans55|java/netbeans|2013-10-02|Outdated, consider using a newer version
 java/netbeans61|java/netbeans|2013-10-02|Outdated, consider using a newer version
-devel/ppl||2013-10-02|expired: fails to build
 devel/py-importlib||2013-10-02|expired: Python 2.6 port will reach it's EoL upstream soon
 graphics/gkrellkam|graphics/gkrellkam2|2013-10-02|Outdated, consider using a newer version
 mail/gkrellmmailwatch|mail/gkrellmmailwatch2|2013-10-02|Outdated, consider using a newer version
@@ -5365,7 +5364,7 @@ games/flare|games/flare-game|2013-12-10|Flare port was split into engine and gam
 audio/liteamp||2013-12-15|Has expired: Dead upstream since 2004, does not build with clang
 security/opieprint||2013-12-15|Has expired: No more active upstream
 security/bubblegum||2013-12-15|Has expired: No more active upstream
-security/snortsms||2013-12-15|Has expired: Not active since several years.
+security/snortsms||2013-12-15|Has expired: Not active since several years
 sysutils/hammerhead||2013-12-15|Has expired: Development no more active
 net-p2p/libtorrent-rasterbar-15-python||2013-12-15|Has expired: Unusable, development ceased
 graphics/openexr_ctl||2013-12-15|Has expired: Now distributed with ampasCTL-1.5
@@ -5463,13 +5462,13 @@ math/freemat-mpi||2013-12-23|Obsolete since FreeMat 3.0
 devel/py-pmock||2013-12-27|Does not work with python 2.6 and beyond
 devel/ncurses-devel|devel/ncurses|2013-12-28|regular ncurses ports is more recent
 databases/mird||2013-12-28|Has expired: No longer maintained upstream
-net-mgmt/unifi|net-mgmt/unifi3|2014-01-01|Rename to unifi3; unifi2 is coming to ports tree as well
 security/dazuko||2013-12-31|Has expired: Currently, the project has not an active development and maintainer
 mail/p5-Mail-SPF-Query||2013-12-31|Has expired: Use mail/p5-Mail-SPF instead
 x11-fonts/etlfonts||2013-12-31|Has expired: master site gone
 net/gateway6||2013-12-31|Has expired: Unsupported upstream, consider using net/gogoc
 misc/bibletime-devel|misc/bibletime|2013-12-31|Has expired: use misc/bibletime
 multimedia/linux-ov511-kmod||2013-12-31|Removed, broken and only for 6.X / 7.X
+net-mgmt/unifi|net-mgmt/unifi3|2014-01-01|Rename to unifi3; unifi2 is coming to ports tree as well
 net/pypvm||2014-01-01|Has expired: Dead upstream and suspected that there are no users of port
 www/mawstats||2014-01-01|Has expired: Upstream development dead, use www/[j]awstats instead
 devel/p5-Dialog|devel/p5-UI-Dialog|2014-01-01|Has expired
@@ -5494,3 +5493,35 @@ devel/hs-hat||2014-01-09|Upstream has vanished
 devel/hs-hdoc||2014-01-09|Removed
 devel/hs-idoc||2014-01-09|Removed
 x11-toolkits/hs-frantk||2014-01-09|Outdated and bitrotted
+devel/lua-filename||2014-01-10|Abandonware
+archivers/xz||2014-01-12|Included in base system on all supported releases
+lang/python26|lang/python27|2014-01-13|Python 2.6 is now end-of-life, please migrate to lang/python27
+sysutils/lavaps||2014-01-14|Abandonware, segfaults
+www/mod_authnz_external|www/mod_authnz_external22|2014-01-14|Port was renamed to reflect the supported Apache version
+games/deng|games/doomsday|2014-01-16|Renamed to follow upstream naming
+misc/sword17|misc/sword|2014-01-16|Has expired: use misc/sword
+www/suphp||2014-01-17|Has expired: Upstream dead, EOL: https://lists.marsching.com/pipermail/suphp/2013-May/002554.html
+databases/postgis||2014-01-17|Has expired: EOLed upstream
+textproc/redland-bindings-python||2014-01-19|Use textproc/redland-bindings directly instead
+emulators/seabios-devel||2014-01-19|Has expired: Outdated, no longer needed, broken on 10+
+devel/mico||2014-01-24|Has expired: Broken for more than 6 month
+cad/salome||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-netgenplugin||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-jobmanager||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-visu||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-kernel||2014-01-24|Has expired: does not configure
+cad/salome-multipr||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-smesh||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-gui||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-yacs||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-med||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-light||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-randomizer||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-sierpinsky||2014-01-24|Has expired: depends on expired cad/salome-kernel
+cad/salome-geom||2014-01-24|Has expired: depends on expired cad/salome-kernel
+devel/combat||2014-01-24|Has expired: depends on expired devel/mico
+net-mgmt/nagios-devel|net-mgmt/nagios|2014-01-25|Master site gone, outdated
+math/math/octave-forge-image-acquisition||2014-01-27|Depends on multimedia/libv4l which no longer has necessary headers
+lang/racket-textual|lang/racket-minimal|2014-01-27|Renamed upstream
+mail/pop-before-smtp||2014-01-27|Removed
+graphics/glfw-devel||2014-01-28|Removed

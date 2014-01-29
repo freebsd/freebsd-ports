@@ -3,7 +3,7 @@
 
 PORTNAME?=	proftpd
 PORTVERSION?=	1.3.4d
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		https://github.com/downloads/proftpd/proftpd.github.com/ \
@@ -40,10 +40,6 @@ DISTFILES+=	${_PROFTPD_MODULE_DISTFILES}
 .endif
 
 .if !defined(_BUILDING_PROFTPD_MODULE)
-MAN1=	ftpcount.1 ftpmail.1 ftpasswd.1 ftpquota.1 ftpwho.1 ftptop.1
-MAN5=	xferlog.5
-MAN8=	proftpd.8 ftpscrub.8 ftpshut.8 ftpdctl.8
-
 PORTDOCS=	*
 .endif
 
@@ -96,7 +92,6 @@ PLIST_SUB+=	LOCALSTATEDIR="${LOCALSTATEDIR}"
 
 .endif #!defined(_BUILDING_PROFTPD_MODULE)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(USE_OPENSSL)
@@ -246,25 +241,29 @@ post-configure:
 .if defined(_BUILDING_PROFTPD_MODULE)
 pre-build:
 	@cd ${WRKSRC} && ${MAKE} include/buildstamp.h
+
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/proftpd
+
 .else
 post-install:
-	@cd  ${PREFIX}/etc/ && ${CP} -n proftpd.conf.sample proftpd.conf || ${TRUE}
-	@${MKDIR} ${LOCALSTATEDIR}/proftpd
-	@cd  ${PREFIX}/etc/proftpd && ${CP} -n dhparams.pem.sample dhparams.pem || ${TRUE}
-	@cd  ${PREFIX}/etc/proftpd && ${CP} -n blacklist.dat.sample blacklist.dat || ${TRUE}
+	@cd  ${STAGEDIR}${PREFIX}/etc/ && ${CP} -n proftpd.conf.sample proftpd.conf || ${TRUE}
+	@${MKDIR} ${STAGEDIR}${LOCALSTATEDIR}/proftpd
+	@cd  ${STAGEDIR}${PREFIX}/etc/proftpd && ${CP} -n dhparams.pem.sample dhparams.pem || ${TRUE}
+	@cd  ${STAGEIDR}${PREFIX}/etc/proftpd && ${CP} -n blacklist.dat.sample blacklist.dat || ${TRUE}
 .if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${CP} README* RELEASE_NOTES ${DOCSDIR}
-	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} license.txt ${DOCSDIR}
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${CP} README* RELEASE_NOTES ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} license.txt ${STAGEDIR}${DOCSDIR}
 . if ${PORT_OPTIONS:MHTMLDOCS}
-	@${INSTALL} -d ${DOCSDIR}/html
-	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} Configuration.html faq.html ${DOCSDIR}/html
-	@${CP} -RP ${WRKSRC}/doc/contrib ${DOCSDIR}/html/contrib
-	@${CP} -RP ${WRKSRC}/doc/modules ${DOCSDIR}/html/modules
-	@${CP} -RP ${WRKSRC}/doc/howto ${DOCSDIR}/html/howto
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/html
+	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} Configuration.html faq.html ${STAGEDIR}${DOCSDIR}/html
+	@${CP} -RP ${WRKSRC}/doc/contrib ${STAGEDIR}${DOCSDIR}/html/contrib
+	@${CP} -RP ${WRKSRC}/doc/modules ${STAGEDIR}${DOCSDIR}/html/modules
+	@${CP} -RP ${WRKSRC}/doc/howto ${STAGEDIR}${DOCSDIR}/html/howto
 . endif
 .endif
-	@${INSTALL_MAN} ${WRKSRC}/src/ftpdctl.8 ${MAN8PREFIX}/man/man8/
+	@${INSTALL_MAN} ${WRKSRC}/src/ftpdctl.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
 .endif #!defined(_BUILDING_PROFTPD_MODULE)
 
 .include <bsd.port.mk>

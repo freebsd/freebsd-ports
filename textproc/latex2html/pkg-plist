@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/latex2html
 bin/pstoimg
 bin/texexpand

@@ -49,7 +49,7 @@
  	#mkdir -p /usr/X11R6/man/man1
  	mkdir -p $(DESTDIR)$(MANDIR)
 +.ifndef NOPORTEXAMPLES
-+	mkdir -p $(EXAMPLESDIR)
++	mkdir -p $(DESTDIR)$(EXAMPLESDIR)
 +.endif
 +
  # Put everything home
@@ -57,7 +57,7 @@
  	install -m 755 xppaut $(DESTDIR)$(BINDIR)
 -	cp -r ode* $(DESTDIR)$(DOCDIR)/examples
 +.ifndef NOPORTEXAMPLES
-+	cp -r ode* $(EXAMPLESDIR)
++	cp -r ode* $(DESTDIR)$(EXAMPLESDIR)
 +.endif
 +.ifndef NOPORTDOCS
  	cp -r help/* $(DESTDIR)$(DOCDIR)/html

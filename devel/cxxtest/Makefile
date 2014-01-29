@@ -9,31 +9,29 @@ MASTER_SITES=	SF
 MAINTAINER=	drewish@katherinehouse.com
 COMMENT=	Simple and powerful JUnit/CppUnit/xUnit-like framework for C++
 
+OPTIONS_DEFINE=	DOCS
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
-USES=		perl5
+USES=		gmake perl5 shebangfix
 USE_PERL5=	run
-USE_GMAKE=	yes
+SHEBANG_FILES=	cxxtestgen.pl cxxtestgen.py
 
 DOCS=		README TODO docs/*.html docs/*.png
 EXAMPLES=	sample/*.cpp sample/*.h sample/*.tpl sample/Construct \
 		sample/Makefile.unix sample/gui/GreenYellowRed.h
 
-NO_STAGE=	yes
 do-install:
 # scripts
-	@${MKDIR} ${PREFIX}/include/cxxtest
-	${INSTALL_DATA} ${WRKSRC}/cxxtest/* ${PREFIX}/include/cxxtest/
-	${INSTALL_SCRIPT} ${WRKSRC}/cxxtestgen.pl ${PREFIX}/bin/
-	${INSTALL_SCRIPT} ${WRKSRC}/cxxtestgen.py ${PREFIX}/bin/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/cxxtest
+	${INSTALL_DATA} ${WRKSRC}/cxxtest/* ${STAGEDIR}${PREFIX}/include/cxxtest/
+	${INSTALL_SCRIPT} ${WRKSRC}/cxxtestgen.pl ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/cxxtestgen.py ${STAGEDIR}${PREFIX}/bin/
 # docs and examples (minus the win ddk stuff)
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-	@${ECHO_MSG} "* Documentation has been installed in ${DOCSDIR}"
-.endif
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	@@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 	@${ECHO_MSG} "* Samples have been installed in ${EXAMPLESDIR}"
 	@${ECHO_MSG} "* The CxxTest scripts have been installed into ${PREFIX}/bin/."
 	@${ECHO_MSG} "* The include files are in ${PREFIX}/include/cxxtest/"

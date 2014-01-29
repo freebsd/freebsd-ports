@@ -21,14 +21,13 @@ RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.12
 USE_ZIP=	yes
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 PYDISTUTILS_PKGNAME=	TracWatchlistPlugin
 PYDISTUTILS_PKGVERSION=	${PORTVERSION:C/.${SVN_REV}//g}
 
-NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${CHMOD} 644
 	@${FIND} ${WRKSRC} -type d | ${XARGS} ${CHMOD} 755

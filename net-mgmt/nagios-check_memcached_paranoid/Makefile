@@ -2,9 +2,10 @@
 
 PORTNAME=	check_memcached_paranoid
 PORTVERSION=	0.20131004
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF/nagiosplug/nagiosplug/1.4.16
-DISTFILES=	nagios-plugins-1.4.16.tar.gz
+MASTER_SITES=	SF/nagiosplug/nagiosplug/1.5
+DISTFILES=	nagios-plugins-1.5.tar.gz
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Nagios plugin for checking memcached
@@ -34,7 +35,8 @@ do-build:
 		-I$${NDIR} -I$${NDIR}/plugins -I$${NDIR}/gl -I$${NDIR}/lib -I${LOCALBASE}/include \
 		-o ${PORTNAME} \
 		$${NDIR}/plugins/netutils.o $${NDIR}/plugins/utils.o \
-		$${NDIR}/lib/utils_base.o $${NDIR}/gl/getopt.o $${NDIR}/gl/getopt1.o \
+		$${NDIR}/lib/utils_base.o $${NDIR}/lib/extra_opts.o $${NDIR}/lib/parse_ini.o \
+		$${NDIR}/gl/getopt.o $${NDIR}/gl/getopt1.o \
 		$${NDIR}/gl/sha1.o \
 		-L${LOCALBASE}/lib -lintl -lmemcached ${FILE}
 

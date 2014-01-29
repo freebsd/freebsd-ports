@@ -21,9 +21,8 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/tenr.de-styles-pkg
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${INSTALL_DIR}
-	cd ${WRKSRC}; ${COPYTREE_SHARE} \* ${INSTALL_DIR}
+	${MKDIR} ${STAGEDIR}${INSTALL_DIR}
+	cd ${WRKSRC}; ${COPYTREE_SHARE} \* ${STAGEDIR}${INSTALL_DIR}
 
 .include <bsd.port.mk>

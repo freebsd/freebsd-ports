@@ -15,9 +15,9 @@ COMMENT=	Linux Infrared Remote Control
 BUILD_DEPENDS=	v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
 
 USE_AUTOTOOLS=	libtool automake autoheader aclocal autoconf
+USES=		gmake
 ACLOCAL_ARGS=	-I "${ACLOCAL_DIR}" -I ${LOCALBASE}/share/aclocal
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_XORG=	sm x11
 USE_PYTHON=	yes
 USE_CSTD=	gnu89
@@ -39,7 +39,6 @@ PORTDOCS=	html images irxevent.keys lirc.css lirc.hwdb
 PORTEXAMPLES=	remotes
 SUB_FILES=	pkg-message lircd.conf
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libvga.so.1)
@@ -65,10 +64,6 @@ CONFIGURE_ARGS+=	--enable-debug
 RUN_DEPENDS+=		uartlirc>=0.3:${PORTSDIR}/comms/uartlirc
 .endif
 
-MAN1=		ircat.1 irexec.1 irpty.1 irrecord.1 irsend.1 irw.1 \
-		irxevent.1 lircrcd.1 mode2.1 smode2.1 xmode2.1
-MAN8=		lircd.8 lircmd.8
-
 # XXX: work around an issue with automake-1.13 erroring out on a
 #      non-existent m4 directory before libtoolize creates it
 pre-configure::
@@ -76,18 +71,14 @@ pre-configure::
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${DOCSDIR}/)
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} images ${DOCSDIR}/)
-	@(cd ${WRKSRC}/doc && ${INSTALL_DATA} irxevent.keys lirc.css lirc.hwdb ${DOCSDIR}/)
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}/)
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} images ${STAGEDIR}${DOCSDIR}/)
+	@(cd ${WRKSRC}/doc && ${INSTALL_DATA} irxevent.keys lirc.css lirc.hwdb ${STAGEDIR}${DOCSDIR}/)
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} remotes ${EXAMPLESDIR}/)
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} remotes ${STAGEDIR}${EXAMPLESDIR}/)
 .endif
-	@${INSTALL_DATA} ${WRKDIR}/lircd.conf ${PREFIX}/etc/lircd.conf.sample
-	@if [ ! -f ${PREFIX}/etc/lircd.conf ]; then \
-	    ${INSTALL_DATA} ${WRKDIR}/lircd.conf ${PREFIX}/etc; \
-	fi
-	@${MKDIR} /var/run/lirc
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL_DATA} ${WRKDIR}/lircd.conf ${STAGEDIR}${PREFIX}/etc/lircd.conf.sample
+	@${MKDIR} ${STAGEDIR}/var/run/lirc
 
 .include <bsd.port.post.mk>

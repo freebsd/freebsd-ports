@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=		c6
-PORTVERSION=		6.2
+PORTVERSION=		6.4
 CATEGORIES=		emulators linux
 MASTER_SITES=		http://vault.centos.org/${PORTVERSION}/os/i386/Packages/
 PKGNAMEPREFIX=		linux_base-
@@ -14,85 +14,85 @@ MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Base set of packages needed in Linux mode for i386/amd64 (Linux CentOS 6.2)
 
 BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
-		bash-4.1.2-8.el6.centos.${LINUX_RPM_ARCH}.rpm \
+		bash-4.1.2-14.el6.${LINUX_RPM_ARCH}.rpm \
 		bzip2-1.0.5-7.el6_0.${LINUX_RPM_ARCH}.rpm \
 		bzip2-libs-1.0.5-7.el6_0.${LINUX_RPM_ARCH}.rpm \
 		compat-db43-4.3.29-15.el6.${LINUX_RPM_ARCH}.rpm \
 		compat-libstdc++-33-3.2.3-69.el6.${LINUX_RPM_ARCH}.rpm \
 		compat-libstdc++-296-2.96-144.el6.${LINUX_RPM_ARCH}.rpm \
-		coreutils-8.4-16.el6.${LINUX_RPM_ARCH}.rpm \
-		db4-4.7.25-16.el6.${LINUX_RPM_ARCH}.rpm \
-		e2fsprogs-1.41.12-11.el6.${LINUX_RPM_ARCH}.rpm \
-		e2fsprogs-libs-1.41.12-11.el6.${LINUX_RPM_ARCH}.rpm \
+		coreutils-8.4-19.el6.${LINUX_RPM_ARCH}.rpm \
+		db4-4.7.25-17.el6.${LINUX_RPM_ARCH}.rpm \
+		e2fsprogs-1.41.12-14.el6.${LINUX_RPM_ARCH}.rpm \
+		e2fsprogs-libs-1.41.12-14.el6.${LINUX_RPM_ARCH}.rpm \
 		elfutils-0.152-1.el6.${LINUX_RPM_ARCH}.rpm \
-		centos-release-6-2.el6.centos.7.${LINUX_RPM_ARCH}.rpm \
+		centos-release-6-4.el6.centos.10.${LINUX_RPM_ARCH}.rpm \
 		filesystem-2.4.30-3.el6.${LINUX_RPM_ARCH}.rpm \
-		freetype-2.3.11-6.el6_1.7.${LINUX_RPM_ARCH}.rpm \
+		freetype-2.3.11-6.el6_2.9.${LINUX_RPM_ARCH}.rpm \
 		gdbm-1.8.0-36.el6.${LINUX_RPM_ARCH}.rpm \
-		glib2-2.22.5-6.el6.${LINUX_RPM_ARCH}.rpm \
-		glibc-2.12-1.47.el6.${LINUX_RPM_ARCH}.rpm \
-		glibc-common-2.12-1.47.el6.${LINUX_RPM_ARCH}.rpm \
-		grep-2.6.3-2.el6.${LINUX_RPM_ARCH}.rpm \
+		glib2-2.22.5-7.el6.${LINUX_RPM_ARCH}.rpm \
+		glibc-2.12-1.107.el6.${LINUX_RPM_ARCH}.rpm \
+		glibc-common-2.12-1.107.el6.${LINUX_RPM_ARCH}.rpm \
+		grep-2.6.3-3.el6.${LINUX_RPM_ARCH}.rpm \
 		info-4.13a-8.el6.${LINUX_RPM_ARCH}.rpm \
-		keyutils-1.4-3.el6.${LINUX_RPM_ARCH}.rpm \
-		krb5-libs-1.9-22.el6.${LINUX_RPM_ARCH}.rpm \
+		keyutils-1.4-4.el6.${LINUX_RPM_ARCH}.rpm \
+		krb5-libs-1.10.3-10.el6.${LINUX_RPM_ARCH}.rpm \
 		libacl-2.2.49-6.el6.${LINUX_RPM_ARCH}.rpm \
 		libattr-2.4.44-7.el6.${LINUX_RPM_ARCH}.rpm \
 		libcap-2.16-5.5.el6.${LINUX_RPM_ARCH}.rpm \
-		libgcc-4.4.6-3.el6.${LINUX_RPM_ARCH}.rpm \
+		libgcc-4.4.7-3.el6.${LINUX_RPM_ARCH}.rpm \
 		libidn-1.18-2.el6.${LINUX_RPM_ARCH}.rpm \
-		libselinux-2.0.94-5.2.el6.${LINUX_RPM_ARCH}.rpm \
+		libselinux-2.0.94-5.3.el6.${LINUX_RPM_ARCH}.rpm \
 		libsepol-2.0.41-4.el6.${LINUX_RPM_ARCH}.rpm \
-		libstdc++-4.4.6-3.el6.${LINUX_RPM_ARCH}.rpm \
+		libstdc++-4.4.7-3.el6.${LINUX_RPM_ARCH}.rpm \
 		ncurses-5.7-3.20090208.el6.${LINUX_RPM_ARCH}.rpm \
 		ncurses-libs-5.7-3.20090208.el6.${LINUX_RPM_ARCH}.rpm \
-		pcre-7.8-3.1.el6.${LINUX_RPM_ARCH}.rpm \
+		pcre-7.8-6.el6.${LINUX_RPM_ARCH}.rpm \
 		popt-1.13-7.el6.${LINUX_RPM_ARCH}.rpm \
-		readline-6.0-3.el6.${LINUX_RPM_ARCH}.rpm \
+		readline-6.0-4.el6.${LINUX_RPM_ARCH}.rpm \
 		setserial-2.17-25.el6.${LINUX_RPM_ARCH}.rpm \
-		setup-2.8.14-13.el6.noarch.rpm \
+		setup-2.8.14-20.el6.noarch.rpm \
 		slang-2.2.1-1.el6.${LINUX_RPM_ARCH}.rpm \
-		zlib-1.2.3-27.el6.${LINUX_RPM_ARCH}.rpm
+		zlib-1.2.3-29.el6.${LINUX_RPM_ARCH}.rpm
 
 .if defined(PACKAGE_BUILDING)
 
 MASTER_SITES+=	http://vault.centos.org/${PORTVERSION}/os/Source/SPackages/
 
 SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm \
-		bash-4.1.2-8.el6.centos.src.rpm \
+		bash-4.1.2-14.el6.src.rpm \
 		bzip2-1.0.5-7.el6_0.src.rpm \
-		coreutils-8.4-16.el6.src.rpm \
+		coreutils-8.4-19.el6.src.rpm \
 		compat-db-4.6.21-15.el6.src.rpm \
 		compat-gcc-296-2.96-144.el6.src.rpm \
 		compat-gcc-32-3.2.3-69.el6.src.rpm \
-		db4-4.7.25-16.el6.src.rpm \
-		e2fsprogs-1.41.12-11.el6.src.rpm \
+		db4-4.7.25-17.el6.src.rpm \
+		e2fsprogs-1.41.12-14.el6.src.rpm \
 		elfutils-0.152-1.el6.src.rpm \
-		centos-release-6-2.el6.centos.7.src.rpm \
+		centos-release-6-4.el6.centos.10.src.rpm \
 		filesystem-2.4.30-3.el6.src.rpm \
-		freetype-2.3.11-6.el6_1.7.src.rpm \
+		freetype-2.3.11-6.el6_2.9.src.rpm \
 		gdbm-1.8.0-36.el6.src.rpm \
-		glib2-2.22.5-6.el6.src.rpm \
-		glibc-2.12-1.47.el6.src.rpm \
-		grep-2.6.3-2.el6.src.rpm \
+		glib2-2.22.5-7.el6.src.rpm \
+		glibc-2.12-1.107.el6.src.rpm \
+		grep-2.6.3-3.el6.src.rpm \
 		texinfo-4.13a-8.el6.src.rpm \
-		keyutils-1.4-3.el6.src.rpm \
-		krb5-1.9-22.el6.src.rpm \
+		keyutils-1.4-4.el6.src.rpm \
+		krb5-1.10.3-10.el6.src.rpm \
 		acl-2.2.49-6.el6.src.rpm \
 		attr-2.4.44-7.el6.src.rpm \
 		libcap-2.16-5.5.el6.src.rpm \
-		gcc-4.4.6-3.el6.src.rpm \
+		gcc-4.4.7-3.el6.src.rpm \
 		libidn-1.18-2.el6.src.rpm \
-		libselinux-2.0.94-5.2.el6.src.rpm \
+		libselinux-2.0.94-5.3.el6.src.rpm \
 		libsepol-2.0.41-4.el6.src.rpm \
 		ncurses-5.7-3.20090208.el6.src.rpm \
-		pcre-7.8-3.1.el6.src.rpm \
+		pcre-7.8-6.el6.src.rpm \
 		popt-1.13-7.el6.src.rpm \
-		readline-6.0-3.el6.src.rpm \
+		readline-6.0-4.el6.src.rpm \
 		setserial-2.17-25.el6.src.rpm \
-		setup-2.8.14-13.el6.src.rpm \
+		setup-2.8.14-20.el6.src.rpm \
 		slang-2.2.1-1.el6.src.rpm \
-		zlib-1.2.3-27.el6.src.rpm
+		zlib-1.2.3-29.el6.src.rpm
 
 ALWAYS_KEEP_DISTFILES=	yes
 .endif

@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.miek.nl/projects/hdup2/ \
 		http://www.miek.nl/projects/hdup2/previous/
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The little, spiffy, backup tool
 
 #WRKSRC=		${WRKDIR}/hdup2

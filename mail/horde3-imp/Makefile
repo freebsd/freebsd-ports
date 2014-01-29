@@ -55,7 +55,7 @@ RUN_DEPENDS+=	${PEARDIR}/Mail/mimeDecode.php:${PORTSDIR}/mail/pear-Mail_mimeDeco
 .if !defined(WITHOUT_ASPELL)
 RUN_DEPENDS+=	${LOCALBASE}/bin/aspell:${PORTSDIR}/textproc/aspell
 .elif defined(WITH_ISPELL)
-RUN_DEPENDS+=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
+RUN_DEPENDS+=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/aspell-ispell
 .endif
 
 .if defined(WITH_HTML)

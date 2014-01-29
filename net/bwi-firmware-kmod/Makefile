@@ -30,10 +30,7 @@ PLIST_SUB=	KMODNAME="${KMODNAME}"
 
 NO_PACKAGE=	this is a modified version of a restricted firmware
 
-NO_STAGE=	yes
-
-USES=		kmod
-.include <bsd.port.pre.mk>
+USES=		kmod uidfix
 
 do-build:
 	cd ${WRKSRC} &&  \
@@ -44,9 +41,9 @@ do-build:
 	@${ECHO_CMD} "FIRMWS= ${FIRMWARES:C/.*/&.fw:${FWNAME}_&/}" >> \
 		${WRKSRC}/v3/Makefile
 	@${ECHO_CMD} ".include <bsd.kmod.mk>" >> ${WRKSRC}/v3/Makefile
-	@cd ${WRKSRC}/v3; ${SETENV} KMODDIR="${KMODDIR}" make all
+	@cd ${WRKSRC}/v3; make all
 
 do-install:
-	@cd ${WRKSRC}/v3; ${SETENV} KMODDIR="${KMODDIR}" make install
+	@cd ${WRKSRC}/v3; ${SETENV} ${MAKE_ENV} KMODDIR="${STAGEDIR}${KMODDIR}" make install
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

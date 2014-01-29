@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/mapsid
 bin/num2dot
 bin/rwaddrcount

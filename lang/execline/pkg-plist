@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/background
 bin/backtick
 bin/cd

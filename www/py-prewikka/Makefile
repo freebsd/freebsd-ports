@@ -14,7 +14,7 @@ BUILD_DEPENDS=	cheetah-compile:${PORTSDIR}/devel/py-cheetah
 LIB_DEPENDS=	libprelude.so:${PORTSDIR}/security/libprelude \
 		libpreludedb.so:${PORTSDIR}/security/libpreludedb
 
-USE_PYTHON=		-2.7
+USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.options.mk>

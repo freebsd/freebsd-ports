@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/kana-no-quiz
 %%PYTHON_SITELIBDIR%%/kananoquiz/__init__.py
 %%PYTHON_SITELIBDIR%%/kananoquiz/__init__.pyc

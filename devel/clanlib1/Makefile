@@ -13,7 +13,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform game SDK
 
 LICENSE=	ZLIB
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpng15.so:${PORTSDIR}/graphics/png \
@@ -43,7 +42,6 @@ CONFIGURE_ARGS=	--disable-docs \
 
 PLIST_SUB+=	VER=${PORTVERSION:R}
 
-NO_STAGE=	yes
 post-patch:
 	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|SDL/SDL|SDL|g'

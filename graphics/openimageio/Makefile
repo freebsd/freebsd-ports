@@ -48,7 +48,7 @@ CMAKE_ARGS+=	-DUSE_PYTHON:BOOL=OFF -DOIIO_BUILD_TOOLS:BOOL=ON
 .else
 LIB_DEPENDS=	libOpenImageIO.so:${PORTSDIR}/graphics/openimageio \
 		libboost_python.so:${PORTSDIR}/devel/boost-python-libs
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 PLIST=		${PKGDIR}/pkg-plist-pybind
 CMAKE_ARGS+=	-DUSE_PYTHON:BOOL=ON -DOIIO_BUILD_TOOLS:BOOL=OFF
 .endif

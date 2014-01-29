@@ -5,7 +5,7 @@ PORTNAME=	skkinput3
 PORTVERSION=	3.0.6
 PORTREVISION=	2
 CATEGORIES=	japanese x11
-MASTER_SITES=	SFJP/skkinput3/2222
+MASTER_SITES=	SFJP/${PORTNAME}/2222
 DISTNAME=	skkinput-${PORTVERSION}
 
 MAINTAINER=	koma2@lovepeers.org
@@ -18,16 +18,15 @@ USE_XORG=	ice sm x11 xext xmu xt
 
 PORTDOCS=	*.jis dot.skkinput ChangeLog
 
-OPTIONS_DEFINE=	SKK10
-OPTIONS_RADIO=	RG1
-OPTIONS_RADIO_RG1=	DBSKKD RSKKSERV
+OPTIONS_DEFINE=	SKK10 DOCS
+OPTIONS_RADIO=	SKKSERVER
+OPTIONS_RADIO_SKKSERVER=	DBSKKD RSKKSERV
 
-RG1_DESC=	Skkserver selection
+SKKSERVER_DESC=	Skkserver selection
 DBSKKD_DESC=	Use ja-dbskkd-cdb as skkserver
 RSKKSERV_DESC=	Use ja-rskkserv as skkserver
 SKK10_DESC=	Install SKK10 elisp files
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSKK10}
@@ -52,9 +51,7 @@ post-patch:
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

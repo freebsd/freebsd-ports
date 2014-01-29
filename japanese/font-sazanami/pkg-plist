@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/sazanami-mincho.ttf
 %%DATADIR%%/sazanami-gothic.ttf
 @dirrm %%DATADIR%%

@@ -22,6 +22,8 @@ USERS=	netmon
 GROUPS=	${USERS}
 
 BROKEN=		Does not patch
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2014-02-27
 
 #MK_IFGRAPH=	yes
 PATCHDIR=	${WRKDIR}/patches

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%JAVAJARDIR%%/apache-solr-%%PORTVERSION%%.war
 %%JAVAJARDIR%%/apache-solr-analysis-extras-%%PORTVERSION%%.jar
 %%JAVAJARDIR%%/apache-solr-cell-%%PORTVERSION%%.jar

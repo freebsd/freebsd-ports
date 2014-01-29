@@ -27,30 +27,12 @@ share/doc/HTML/en/skanlite/scanning.png
 share/doc/HTML/en/skanlite/settings.png
 share/doc/HTML/en/skanlite/zoom-in.png
 share/doc/HTML/en/skanlite/zoom-to-fit.png
-share/doc/HTML/es/skanlite/common
-share/doc/HTML/es/skanlite/index.cache.bz2
-share/doc/HTML/es/skanlite/index.docbook
-share/doc/HTML/et/skanlite/common
-share/doc/HTML/et/skanlite/index.cache.bz2
-share/doc/HTML/et/skanlite/index.docbook
 share/doc/HTML/fr/skanlite/common
 share/doc/HTML/fr/skanlite/index.cache.bz2
 share/doc/HTML/fr/skanlite/index.docbook
-share/doc/HTML/it/skanlite/common
-share/doc/HTML/it/skanlite/index.cache.bz2
-share/doc/HTML/it/skanlite/index.docbook
 share/doc/HTML/nl/skanlite/common
 share/doc/HTML/nl/skanlite/index.cache.bz2
 share/doc/HTML/nl/skanlite/index.docbook
-share/doc/HTML/pt/skanlite/common
-share/doc/HTML/pt/skanlite/index.cache.bz2
-share/doc/HTML/pt/skanlite/index.docbook
-share/doc/HTML/pt_BR/skanlite/common
-share/doc/HTML/pt_BR/skanlite/index.cache.bz2
-share/doc/HTML/pt_BR/skanlite/index.docbook
-share/doc/HTML/sv/skanlite/common
-share/doc/HTML/sv/skanlite/index.cache.bz2
-share/doc/HTML/sv/skanlite/index.docbook
 share/doc/HTML/uk/skanlite/buttons-main.png
 share/doc/HTML/uk/skanlite/choose-scanner.png
 share/doc/HTML/uk/skanlite/common
@@ -120,13 +102,7 @@ share/locale/zh_TW/LC_MESSAGES/skanlite.mo
 @dirrmtry share/locale/ia/LC_MESSAGES
 @dirrmtry share/locale/ia
 @dirrm share/doc/HTML/uk/skanlite
-@dirrm share/doc/HTML/sv/skanlite
-@dirrm share/doc/HTML/pt_BR/skanlite
-@dirrm share/doc/HTML/pt/skanlite
 @dirrm share/doc/HTML/nl/skanlite
-@dirrm share/doc/HTML/it/skanlite
 @dirrm share/doc/HTML/fr/skanlite
-@dirrm share/doc/HTML/et/skanlite
-@dirrm share/doc/HTML/es/skanlite
 @dirrm share/doc/HTML/en/skanlite
 @dirrm share/doc/HTML/de/skanlite

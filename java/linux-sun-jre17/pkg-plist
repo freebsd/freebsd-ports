@@ -285,7 +285,6 @@
 %%T%%/lib/zi/Africa/Gaborone
 %%T%%/lib/zi/Africa/Harare
 %%T%%/lib/zi/Africa/Johannesburg
-%%T%%/lib/zi/Africa/Juba
 %%T%%/lib/zi/Africa/Kampala
 %%T%%/lib/zi/Africa/Khartoum
 %%T%%/lib/zi/Africa/Kigali
@@ -314,7 +313,6 @@
 %%T%%/lib/zi/Africa/Windhoek
 %%T%%/lib/zi/America/Adak
 %%T%%/lib/zi/America/Anchorage
-%%T%%/lib/zi/America/Anguilla
 %%T%%/lib/zi/America/Antigua
 %%T%%/lib/zi/America/Araguaina
 %%T%%/lib/zi/America/Argentina/Buenos_Aires
@@ -329,7 +327,6 @@
 %%T%%/lib/zi/America/Argentina/San_Luis
 %%T%%/lib/zi/America/Argentina/Tucuman
 %%T%%/lib/zi/America/Argentina/Ushuaia
-%%T%%/lib/zi/America/Aruba
 %%T%%/lib/zi/America/Asuncion
 %%T%%/lib/zi/America/Atikokan
 %%T%%/lib/zi/America/Bahia
@@ -358,7 +355,6 @@
 %%T%%/lib/zi/America/Dawson_Creek
 %%T%%/lib/zi/America/Denver
 %%T%%/lib/zi/America/Detroit
-%%T%%/lib/zi/America/Dominica
 %%T%%/lib/zi/America/Edmonton
 %%T%%/lib/zi/America/Eirunepe
 %%T%%/lib/zi/America/El_Salvador
@@ -367,8 +363,6 @@
 %%T%%/lib/zi/America/Godthab
 %%T%%/lib/zi/America/Goose_Bay
 %%T%%/lib/zi/America/Grand_Turk
-%%T%%/lib/zi/America/Grenada
-%%T%%/lib/zi/America/Guadeloupe
 %%T%%/lib/zi/America/Guatemala
 %%T%%/lib/zi/America/Guayaquil
 %%T%%/lib/zi/America/Guyana
@@ -407,7 +401,6 @@
 %%T%%/lib/zi/America/Monterrey
 %%T%%/lib/zi/America/Montevideo
 %%T%%/lib/zi/America/Montreal
-%%T%%/lib/zi/America/Montserrat
 %%T%%/lib/zi/America/Nassau
 %%T%%/lib/zi/America/New_York
 %%T%%/lib/zi/America/Nipigon
@@ -439,17 +432,12 @@
 %%T%%/lib/zi/America/Scoresbysund
 %%T%%/lib/zi/America/Sitka
 %%T%%/lib/zi/America/St_Johns
-%%T%%/lib/zi/America/St_Kitts
-%%T%%/lib/zi/America/St_Lucia
-%%T%%/lib/zi/America/St_Thomas
-%%T%%/lib/zi/America/St_Vincent
 %%T%%/lib/zi/America/Swift_Current
 %%T%%/lib/zi/America/Tegucigalpa
 %%T%%/lib/zi/America/Thule
 %%T%%/lib/zi/America/Thunder_Bay
 %%T%%/lib/zi/America/Tijuana
 %%T%%/lib/zi/America/Toronto
-%%T%%/lib/zi/America/Tortola
 %%T%%/lib/zi/America/Vancouver
 %%T%%/lib/zi/America/Whitehorse
 %%T%%/lib/zi/America/Winnipeg
@@ -460,7 +448,6 @@
 %%T%%/lib/zi/Antarctica/DumontDUrville
 %%T%%/lib/zi/Antarctica/Macquarie
 %%T%%/lib/zi/Antarctica/Mawson
-%%T%%/lib/zi/Antarctica/McMurdo
 %%T%%/lib/zi/Antarctica/Palmer
 %%T%%/lib/zi/Antarctica/Rothera
 %%T%%/lib/zi/Antarctica/Syowa
@@ -639,7 +626,6 @@
 %%T%%/lib/zi/Europe/Tallinn
 %%T%%/lib/zi/Europe/Tirane
 %%T%%/lib/zi/Europe/Uzhgorod
-%%T%%/lib/zi/Europe/Vaduz
 %%T%%/lib/zi/Europe/Vienna
 %%T%%/lib/zi/Europe/Vilnius
 %%T%%/lib/zi/Europe/Volgograd
@@ -678,7 +664,6 @@
 %%T%%/lib/zi/Pacific/Guadalcanal
 %%T%%/lib/zi/Pacific/Guam
 %%T%%/lib/zi/Pacific/Honolulu
-%%T%%/lib/zi/Pacific/Johnston
 %%T%%/lib/zi/Pacific/Kiritimati
 %%T%%/lib/zi/Pacific/Kosrae
 %%T%%/lib/zi/Pacific/Kwajalein

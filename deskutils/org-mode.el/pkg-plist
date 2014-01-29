@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%EMACS_LIBDIR%%/etc/org-mode/styles/OrgOdtContentTemplate.xml
 %%EMACS_LIBDIR%%/etc/org-mode/styles/OrgOdtStyles.xml
 %%EMACS_LIBDIR%%/etc/org-mode/styles/README

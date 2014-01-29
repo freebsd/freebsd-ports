@@ -3,5 +3,5 @@
  */
 #ifndef GEN_VERSION_SUFFIX_H
 #define GEN_VERSION_SUFFIX_H
-#define VERSION_SUFFIX "_git_master_94a0a21_20120325164212+0200"
+#define VERSION_SUFFIX "_git_release/0.3.x+0200"
 #endif

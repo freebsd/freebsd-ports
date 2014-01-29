@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyproj/__init__.py:${PORTSDIR}/graphics/py-pyp
 		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
 USE_BZIP2=	yes
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 NO_BUILD=	yes
 
 TWMS_USER?=	twms

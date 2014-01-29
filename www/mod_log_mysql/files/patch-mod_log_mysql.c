@@ -1,11 +1,11 @@
---- mod_log_mysql.c	2003-11-01 12:21:28.000000000 +0200
-+++ mod_log_mysql.c.new	2010-11-28 17:01:06.000000000 +0200
-@@ -172,11 +172,13 @@
+--- mod_log_mysql.c	2014-01-10 13:56:23.777364558 -0800
++++ mod_log_mysql.c.new	2014-01-10 13:58:54.058985546 -0800
+@@ -142,11 +142,13 @@
  {
    mysql_log *l = param;
    MYSQL *db;
 +  my_bool do_reconnect = 1;
-     
+ 
    db = apr_palloc(p, sizeof(MYSQL));
  
    mysql_init(db);

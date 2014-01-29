@@ -17,9 +17,4 @@ PERL5=		yes
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		perlinfo.1
-MAN3=		HTML::Perlinfo.3 HTML::Perlinfo::HTML.3 \
-		HTML::Perlinfo::Loaded.3 HTML::Perlinfo::Modules.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

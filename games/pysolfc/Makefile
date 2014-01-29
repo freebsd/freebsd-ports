@@ -1,4 +1,3 @@
-# Created by: Marcus von Appen
 # $FreeBSD$
 
 PORTNAME=	pysolfc
@@ -21,8 +20,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinte
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=	PySolFC
+PYDISTUTILS_AUTOPLIST=	yes
 
+PLIST_FILES=	share/pixmaps/pysolfc.png
 DATADIR=	${PREFIX}/share/PySolFC
 WRKSRC=		${WRKDIR}/PySolFC-${PORTVERSION}
 PORTDOCS=	README
@@ -34,23 +34,12 @@ CARDSET_DUPS=	2000 crystal-mahjongg dashavatara-ganjifa dondorf \
 OPTIONS_DEFINE=	CARDSETS DOCS NLS
 CARDSETS_DESC=	Install additional cardsets
 
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
+CARDSETS_DISTFILES=	PySolFC-Cardsets-${DISTVERSION}${EXTRACT_SUFX}:cardsets
+NLS_USES=		gettext
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCARDSETS}
-DISTFILES+=	PySolFC-Cardsets-${DISTVERSION}${EXTRACT_SUFX}:cardsets
-PLIST_SUB+=	CARDSETS=""
-.else
-PLIST_SUB+=	CARDSETS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
 
 post-patch:
 	@${MV} ${WRKSRC}/pysol.py ${WRKSRC}/pysolfc
@@ -66,26 +55,22 @@ post-patch:
 		${XARGS} ${RM} -rf
 	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
-
 post-install:
-	${LN} -sf ${PREFIX}/share/icons/pysol01.png \
-		${PREFIX}/share/pixmaps/${PORTNAME}.png
+	${LN} -s ${PREFIX}/share/icons/pysol01.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 .if ${PORT_OPTIONS:MCARDSETS}
 .for cdir in ${CARDSET_DUPS}
 	@${RM} -rf ${WRKDIR}/PySolFC-Cardsets-${PORTVERSION}/cardset-${cdir}
 .endfor
 	@cd ${WRKDIR}/PySolFC-Cardsets-${PORTVERSION} && \
-		${COPYTREE_SHARE} \* ${DATADIR}
+		${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}
 	@cd ${WRKDIR}/PySolFC-Cardsets-${PORTVERSION} && \
 		${FIND} . -type f | ${SED} -e 's|^./|${DATADIR_REL}/|' >> ${TMPPLIST}
 	@cd ${WRKDIR}/PySolFC-Cardsets-${PORTVERSION} && \
 		${FIND} . -type d -mindepth 1 | ${SORT} -r | \
 		${SED} -e 's|^./|@dirrm ${DATADIR_REL}/|' >> ${TMPPLIST}
 .endif
-	@${ECHO} '@dirrm ${DATADIR_REL}' >> ${TMPPLIST}
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-.endif
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

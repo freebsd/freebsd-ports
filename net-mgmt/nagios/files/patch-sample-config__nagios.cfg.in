@@ -1,0 +1,11 @@
+--- ./sample-config/nagios.cfg.in.orig	2013-08-30 19:46:14.000000000 +0200
++++ ./sample-config/nagios.cfg.in	2014-01-14 13:57:06.000000000 +0100
+@@ -32,7 +32,7 @@
+ cfg_file=@sysconfdir@/objects/timeperiods.cfg
+ cfg_file=@sysconfdir@/objects/templates.cfg
+ 
+-# Definitions for monitoring the local (Linux) host
++# Definitions for monitoring the local (FreeBSD) host
+ cfg_file=@sysconfdir@/objects/localhost.cfg
+ 
+ # Definitions for monitoring a Windows machine

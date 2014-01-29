@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/svmotion
 bin/vmware-cmd
 bin/vmkfstools

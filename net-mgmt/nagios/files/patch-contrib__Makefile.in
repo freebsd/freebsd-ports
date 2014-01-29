@@ -1,0 +1,25 @@
+--- ./contrib/Makefile.in.orig	2013-08-30 19:46:14.000000000 +0200
++++ ./contrib/Makefile.in	2014-01-14 13:57:06.000000000 +0100
+@@ -16,7 +16,6 @@
+ # Generated automatically from configure script
+ SNPRINTF_O=@SNPRINTF_O@
+ INSTALL=@INSTALL@
+-INSTALL_OPTS=@INSTALL_OPTS@
+ 
+ 
+ prefix=@prefix@
+@@ -51,10 +50,10 @@
+ devclean: distclean
+ 
+ install:
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(CGIDIR)
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
+-	for f in $(CGIS); do $(INSTALL) -m 775 $(INSTALL_OPTS) $$f $(DESTDIR)$(CGIDIR); done
+-	for f in $(UTILS); do $(INSTALL) -m 775 $(INSTALL_OPTS) $$f $(DESTDIR)$(BINDIR); done
++	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(CGIDIR)
++	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
++	for f in $(CGIS); do $(INSTALL) -m 755 $(INSTALL_OPTS) $$f $(DESTDIR)$(CGIDIR); done
++	for f in $(UTILS); do $(INSTALL) -m 755 $(INSTALL_OPTS) $$f $(DESTDIR)$(BINDIR); done
+ 
+ ##############################################################################
+ # rules and dependencies for actual target programs

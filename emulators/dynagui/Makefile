@@ -13,7 +13,7 @@ COMMENT=	GUI frontend to the dynamips router simulator
 
 BUILD_DEPENDS=	dynagen:${PORTSDIR}/emulators/dynagen
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 IMGDIR=		${PREFIX}/share/${PORTNAME}/img
 

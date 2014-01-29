@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/digestp
 bin/filep
 bin/filofaxp

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/dvipdfmx
 bin/ebb-dvipdfmx
 bin/extractbb

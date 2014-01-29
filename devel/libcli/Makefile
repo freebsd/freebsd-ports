@@ -11,7 +11,7 @@ COMMENT=	Emulates a Cisco style command-line interface
 
 LICENSE=	LGPL21
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/libcli.so \
@@ -20,5 +20,4 @@ PLIST_FILES=	lib/libcli.so \
 		lib/libcli.so.19 \
 		include/libcli.h
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

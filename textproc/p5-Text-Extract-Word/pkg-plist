@@ -1,3 +1,4 @@
+%%PERL5_MAN3%%/Text::Extract::Word.3.gz
 %%SITE_PERL%%/Text/Extract/Word.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Extract/Word/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Extract/Word

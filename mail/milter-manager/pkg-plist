@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/milter-manager-log-analyzer
 bin/milter-performance-check
 bin/milter-report-statistics

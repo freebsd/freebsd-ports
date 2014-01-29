@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/alarm-clock
 %%DATADIR%%/alarm-clock.ui
 %%DATADIR%%/ring.wav

@@ -10,12 +10,11 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find duplicated code blocks in large C/C++/Java/C#/VB.Net systems
 
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/duplo %%DATADIR%%/duplo.xsl
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,^CC,#CC," \
 		-e "s,^CXXFLAGS,#CXXFLAGS," \
@@ -23,8 +22,8 @@ post-patch:
 		${WRKSRC}/${MAKEFILE}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/duplo ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/duplo.xsl ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/duplo ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/duplo.xsl ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

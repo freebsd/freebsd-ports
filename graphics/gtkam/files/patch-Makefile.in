@@ -1,7 +1,7 @@
 --- Makefile.in.orig	2008-04-23 22:55:02.000000000 +0200
 +++ Makefile.in	2008-04-23 22:56:37.000000000 +0200
-@@ -253,7 +253,7 @@
- target_alias = @target_alias@
+@@ -333,7 +333,7 @@
+ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -SUBDIRS = m4m art doc help omf-install packaging pixmaps po src test
@@ -9,13 +9,12 @@
  ACLOCAL_AMFLAGS = -I m4m
  
  # disable scrollkeeper for distcheck
-@@ -714,8 +714,7 @@
- 
- info-am:
- 
--install-data-am: install-ApplicationsDATA install-gtkamdocDATA \
--	install-iconDATA
-+install-data-am:
- 
- install-dvi: install-dvi-recursive
- 
+@@ -342,7 +342,7 @@
+ ########################################################################
+ # Install a few support and doc files
+ gtkamdocdir = $(datadir)/doc/gtkam
+-gtkamdoc_DATA = AUTHORS COPYING NEWS README TODO CHANGES
++gtkamdoc_DATA = AUTHORS NEWS README TODO CHANGES
+ icondir = $(datadir)/pixmaps
+ icon_DATA = gtkam.png
+ DESKTOP_IN_FILES = gtkam.desktop.in

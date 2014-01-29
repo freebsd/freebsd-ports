@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 lib/mono/gac/notify-sharp/0.4.0.0__2df29c54e245917a/notify-sharp.dll
 lib/mono/gac/notify-sharp/0.4.0.0__2df29c54e245917a/notify-sharp.dll.config
 lib/mono/notify-sharp/notify-sharp.dll

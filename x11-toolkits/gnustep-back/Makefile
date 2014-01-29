@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	gnustep-back
-PORTVERSION=	0.23.0
+PORTVERSION=	0.24.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
 MASTER_SITE_SUBDIR=	core
@@ -10,23 +11,27 @@ PKGNAMESUFFIX?=	${BACK_SUFFIX}${PKGNAMESUFFIX2}
 MAINTAINER=	theraven@FreeBSD.org
 COMMENT=	GNUstep GUI backend
 
-LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
-LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
-
 LICENSE_COMB=	multi
 LICENSE=	GPLv3 LGPL3
 
+LIB_DEPENDS+=	libgif.so:${PORTSDIR}/graphics/giflib \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libXft.so:${PORTSDIR}/x11-fonts/libXft \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libcairo.so:${PORTSDIR}/graphics/cairo
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-tiff-library=${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-tiff-include=${LOCALBASE}/include
-CONFIGURE_ARGS+=	--with-jpeg-library=${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-jpeg-include=${LOCALBASE}/include
-CONFIGURE_ARGS+=	--with-gif-library=${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--with-gif-include=${LOCALBASE}/include
+CONFIGURE_ARGS=	--with-tiff-library=${LOCALBASE}/lib \
+		--with-tiff-include=${LOCALBASE}/include \
+		--with-jpeg-library=${LOCALBASE}/lib \
+		--with-jpeg-include=${LOCALBASE}/include \
+		--with-gif-library=${LOCALBASE}/lib \
+		--with-gif-include=${LOCALBASE}/include \
+		--enable-graphics=cairo \
+		--disable-glitz
+
 USES=			pkgconfig
 USE_GNUSTEP=		yes
 USE_GNUSTEP_GUI=	yes
@@ -42,17 +47,8 @@ BACKVERSION=		${PORTVERSION:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 BREAKS_IF_PEDANTIC=	yes
 
 CFLAGS+=		-I${LOCALBASE}/include/freetype2
-LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
-LIB_DEPENDS+=		cairo.2:${PORTSDIR}/graphics/cairo
-CONFIGURE_ARGS+=	--enable-graphics=cairo --with-name=cairo
-CONFIGURE_ARGS+=	--disable-glitz
-PLIST_SUB+=		BACK=cairo-${BACKVERSION}
-BACK_SUFFIX?=		-cairo
+PLIST_SUB+=		BACK=back-${BACKVERSION}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-MAKE_FLAGS+=		messages=yes
 PLIST_SUB+=		BACKVERSION=${PORTVERSION:C/([0-9])*[.]([0-9]*).*/\1\2/1}
 
 pre-configure:
@@ -60,4 +56,4 @@ pre-configure:
 	@${CP} ${GNUSTEP_PREFIX}/System/Library/Makefiles/${file} ${WRKSRC}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

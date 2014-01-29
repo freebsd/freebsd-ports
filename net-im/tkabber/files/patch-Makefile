@@ -5,7 +5,7 @@
  	cp -r *.tcl $(SUBDIRS) $(DESTDIR)/$(TKABBERDIR)
  	mkdir -p $(DESTDIR)/$(BINDIR)
 -	echo -e "#!/bin/sh\nexec wish $(TKABBERDIR)/tkabber.tcl -name tkabber \"\$$@\"\n" \
-+	echo -e "#!/bin/sh\nexec wish8.5 $(PREFIX)/share/tkabber/tkabber.tcl -name tkabber \"\$$@\"\n" > $(DESTDIR)/$(PREFIX)/bin/tkabber
++	echo -e "#!/bin/sh\nexec %%WISH%% $(PREFIX)/share/tkabber/tkabber.tcl -name tkabber \"\$$@\"\n" > $(DESTDIR)/$(PREFIX)/bin/tkabber
  		>$(DESTDIR)/$(BINDIR)/tkabber
  	chmod 755 $(DESTDIR)/$(BINDIR)/tkabber
  

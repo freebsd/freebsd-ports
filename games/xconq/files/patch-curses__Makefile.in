@@ -1,0 +1,17 @@
+--- ./curses/Makefile.in.orig	2004-11-21 02:59:19.000000000 +0000
++++ ./curses/Makefile.in	2014-01-15 20:22:15.000000000 +0000
+@@ -132,11 +132,9 @@
+ 	else \
+ 		progname="$(CCONQ_EXEC_NAME)" ; \
+ 	fi; \
+-	$(INSTALL_PROGRAM) $${progname} $(bindir); \
+-	chown $(GAMEUID) $(bindir)/$${progname}; \
+-	chgrp $(GAMEGRP) $(bindir)/$${progname}; \
+-	chmod $(GAMEPERM) $(bindir)/$${progname}; \
+-	$(INSTALL_DATA) cconq.6 $(man6dir)
++	$(INSTALL_PROGRAM) $${progname} $(DESTDIR)$(bindir); \
++	chmod $(GAMEPERM) $(DESTDIR)$(bindir)/$${progname}; \
++	$(INSTALL_DATA) cconq.6 $(DESTDIR)$(man6dir)
+ 
+ # Cleanliness support.
+ 

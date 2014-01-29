@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/Mechanize/SpamCop/.packlist
 %%SITE_PERL%%/WWW/Mechanize/SpamCop.pm
 %%PERL5_MAN3%%/WWW::Mechanize::SpamCop.3.gz

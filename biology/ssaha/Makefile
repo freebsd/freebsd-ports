@@ -3,29 +3,39 @@
 
 PORTNAME=	ssaha
 PORTVERSION=	3.1c
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
-MASTER_SITES=	http://www.sanger.ac.uk/Software/analysis/${PORTNAME:U}/
+MASTER_SITES=	ftp://ftp.sanger.ac.uk/pub4/resources/software/ssaha/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very fast matching and alignment of DNA sequences
 
 NO_WRKSUBDIR=	yes
+BUILD_WRKSRC=		${WRKSRC}/Binary
 
-USE_GMAKE=	yes
+USES=		gmake
+USE_GCC=	any
+MAKE_ENV=	CCC="${CXX}" OPTIM="${CXXFLAGS}" THREAD_LIB="-pthread"
 MAKEFILE=	makefile
-BUILD_WRKSRC=	${WRKDIR}/Binary
 ALL_TARGET=	ssaha
+
+PLIST_FILES=	bin/ssaha %%DATADIR%%/testSSAHA.csh \
+		${DATA_FILES:S,^,%%DATADIR%%/,}
+PLIST_DIRS=	%%DATADIR%%
 
 DATA_FILES=	test.fasta test_extract.fasta test_filter.fail \
 		test_filter.fastq test_protein.fasta README
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/ssaha ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${BUILD_WRKSRC}/testSSAHA.csh ${DATADIR}/
-	${INSTALL_DATA} ${DATA_FILES:S,^,${BUILD_WRKSRC}/,} ${DATADIR}/
+	(cd ${BUILD_WRKSRC} && ${INSTALL_PROGRAM} ssaha \
+		${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${BUILD_WRKSRC} && ${INSTALL_SCRIPT} testSSAHA.csh \
+		${STAGEDIR}${DATADIR})
+.for i in ${DATA_FILES}
+	(cd ${BUILD_WRKSRC} && ${INSTALL_DATA} ${i} \
+		${STAGEDIR}${DATADIR})
+.endfor
 
 .include <bsd.port.mk>

@@ -8,3 +8,4 @@ lib/libcmph.la
 lib/libcmph.so
 lib/libcmph.so.0
 libdata/pkgconfig/cmph.pc
+man/man1/cmph.1.gz

@@ -14,12 +14,12 @@ COMMENT=	Miscellaneous GNU functions
 
 WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}/libiberty
 
+USES=		gmake
+
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-install-libiberty
 GNU_CONFIGURE=	yes
 
 CONFLICTS=	freelibiberty-[0-9]*
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

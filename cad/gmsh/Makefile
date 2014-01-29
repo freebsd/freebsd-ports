@@ -35,8 +35,6 @@ ALL_TARGET=	all
 
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=		gmsh.1
-
 CMAKE_ARGS+=	-DCMAKE_SKIP_RPATH:BOOL=YES
 
 .if !defined(WITHOUT_STATIC_LIB)
@@ -125,7 +123,6 @@ CONFLICTS=	gmsh-occ-2.*
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-everything::
@@ -202,12 +199,8 @@ post-patch:
 
 post-install:
 .if !defined(WITHOUT_METIS)
-	${MKDIR} ${DOCSDIR}/metis
-	${INSTALL_DATA} ${WRKDIR}/manual.pdf ${DOCSDIR}/metis
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/metis
+	${INSTALL_DATA} ${WRKDIR}/manual.pdf ${STAGEDIR}${DOCSDIR}/metis
 .endif
-
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>

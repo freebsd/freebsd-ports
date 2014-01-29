@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/vinum
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/security
 @dirrm %%DOCSDIR%%/%%DOCLANG%%/books/handbook/mail

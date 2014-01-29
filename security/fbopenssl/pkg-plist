@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/fbopenssl/asn1help.h
 include/fbopenssl/filehelp.h
 include/fbopenssl/gssapi.h

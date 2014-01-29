@@ -10,10 +10,10 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		fullermd@over-yonder.net
 COMMENT=	Implementation of the Wiki Creole markup language
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=			Text::WikiCreole.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

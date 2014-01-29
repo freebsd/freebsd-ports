@@ -2,9 +2,11 @@
 
 PORTNAME=	Products.CMFEditions
 PORTVERSION=	2.2.8
+PORTREVISION=	1
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Versioning for Plone
@@ -25,12 +27,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.copy>0:${PORTSDIR}/devel/py-zope.copy \
 		${PYTHON_PKGNAMEPREFIX}transaction>=0:${PORTSDIR}/devel/py-transaction \
 		zodb${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/databases/zodb3
 
-DIST_SUBDIR=	zope
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-USE_ZIP=	yes
-USES=		zope
-
-NO_STAGE=	yes
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+USE_ZIP=		yes
+USES=			zope
 
 .include <bsd.port.mk>

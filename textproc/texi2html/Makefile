@@ -14,10 +14,14 @@ COMMENT=	Texinfo to HTML converter
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PERL=${PERL}
 CONFIGURE_ARGS=	--disable-multiplatform
-USES=		gmake perl5
+USES=		gmake perl5 shebangfix
 USE_BZIP2=	yes
+SHEBANG_FILES=	*.pl
 
 OPTIONS_DEFINE=	NLS DOCS
+OPTIONS_SUB=	yes
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=nls translations
 
 PROGRAM_PREFIX?=
 PLIST_SUB=	PROGRAM_PREFIX=${PROGRAM_PREFIX} \
@@ -27,20 +31,7 @@ PLIST_SUB=	PROGRAM_PREFIX=${PROGRAM_PREFIX} \
 CONFIGURE_ARGS=	--program-prefix="${PROGRAM_PREFIX}"
 .endif
 
-MAN1=		${PROGRAM_PREFIX}texi2html.1
 INFO=		texi2html
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CONFIGURE_ARGS+=--enable-nls --enable-translations
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls --disable-translations
-PLIST_SUB+=	NLS="@comment "
-.endif
 
 pre-everything::
 	@${ECHO} ""
@@ -49,12 +40,8 @@ pre-everything::
 	@${ECHO} ""
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/^translations.pl/_&/' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e '/^install-data/s|i18n|&/en.thl|' ${WRKSRC}/Makefile.in
-.if empty(PORT_OPTIONS:MDOCS)
-	@${REINPLACE_CMD} -e 's| install-texinfohtmlDATA||g' ${WRKSRC}/doc/Makefile.in
-.endif
-	@${REINPLACE_CMD} -e '1s|/usr/bin/perl|${PERL}|' ${WRKSRC}/*.pl
+	@${REINPLACE_CMD} -e 's/^translations.pl/_&/' \
+		-e '/^install-data/s|i18n|&/en.thl|' ${WRKSRC}/Makefile.in
 	@${CHMOD} +x ${WRKSRC}/install-sh
 
 .include <bsd.port.mk>

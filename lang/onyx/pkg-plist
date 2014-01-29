@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/onyx
 bin/onyx-%%ONYX_VERSION%%
 bin/onyx_config

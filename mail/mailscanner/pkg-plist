@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%ETCDIR%%/archives.filename.rules.conf.sample
 %%ETCDIR%%/archives.filetype.rules.conf.sample
 %%ETCDIR%%/country.domains.conf.sample

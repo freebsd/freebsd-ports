@@ -135,7 +135,6 @@
     SUBDIR += quasi88
     SUBDIR += raine
     SUBDIR += rtc
-    SUBDIR += seabios-devel
     SUBDIR += sim6811
     SUBDIR += simh
     SUBDIR += ski
@@ -181,6 +180,7 @@
     SUBDIR += wine-mono-devel
     SUBDIR += wxmupen64plus
     SUBDIR += x48
+    SUBDIR += x49gp
     SUBDIR += xbraitenberg
     SUBDIR += xcpc
     SUBDIR += xhomer

@@ -12,8 +12,6 @@ COMMENT=	Create a full-screen image to adjust your monitor
 
 USES=		imake
 USE_XORG=	x11 xext
-MAN1=		xtestpicture.1
-PLIST_FILES=	bin/xtestpicture
+PLIST_FILES=	bin/xtestpicture man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,6 +1,8 @@
 bin/gnuplot
 bin/lasergnu
 %%X11%%libexec/gnuplot/4.6/gnuplot_x11
+man/man1/gnuplot.1.gz
+man/man1/lasergnu.1.gz
 %%DATADIR%%/4.6/PostScript/8859-1.ps
 %%DATADIR%%/4.6/PostScript/8859-15.ps
 %%DATADIR%%/4.6/PostScript/8859-2.ps

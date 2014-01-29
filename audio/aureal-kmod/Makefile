@@ -13,15 +13,12 @@ DISTNAME=	au88x0-${PORTVERSION}_4
 MAINTAINER=	c.kworr@gmail.com
 COMMENT=	Driver for Aureal Vortex based soundcards
 
-NO_PACKAGE=	should be in sync with the kernel to work correctly
-
 ONLY_FOR_ARCHS=	i386
 STRAYFILES=	au88x0.h au88x0.c asp10.o asp20.o asp30.o
 
 KMODDIR=	${PREFIX}/modules/au88x0
 KMODDIR_REL=	${KMODDIR:S%${PREFIX}/%%}
 
-NO_STAGE=	yes
 USE_RC_SUBR=	${PORTNAME}
 SUB_FILES=	pkg-message
 SUB_LIST=	KMODDIR=${KMODDIR}
@@ -35,8 +32,10 @@ USES=		kmod
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800000
 EXTRA_PATCHES+=	${PATCHDIR}/extra_800000_patch-au88x0.c
+
+.if ${OSVERSION} >= 1000000
+BROKEN=	does not build
 .endif
 
 pre-everything::
@@ -55,8 +54,5 @@ pre-everything::
 	@${FALSE}
 .endif
 .endfor
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

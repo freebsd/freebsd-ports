@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ecasound
-PORTVERSION=	2.9.0
-PORTREVISION=	1
+PORTVERSION=	2.9.1
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/ \
 		http://nosignal.fi/download/ \
@@ -12,14 +11,14 @@ MASTER_SITES=	http://ecasound.seul.org/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multitrack audio processing software
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
 OPTIONS_DEFINE=	ALSA AUDIOFILE JACK LIBLO LIBOIL PYTHON SAMPLERATE SNDFILE
 OPTIONS_DEFAULT=PYTHON
-OPTIONS_SUB=	PYTHON
+OPTIONS_SUB=	yes
 
 USES=		gmake readline
 USE_AUTOTOOLS=	libtool
@@ -43,26 +42,18 @@ LIBLO_LIB_DEPENDS=	liblo.so:${PORTSDIR}/audio/liblo
 LIBOIL_CONFIGURE_ENABLE=liboil
 LIBOIL_LIB_DEPENDS=	liboil-0.3.so:${PORTSDIR}/devel/liboil
 PYTHON_CONFIGURE_ENABLE=pyecasound
+PYTHON_CONFIGURE_ENV=	PYTHONPATH="${PYTHON_CMD}"
+PYTHON_USE=		PYTHON=yes
 SAMPLERATE_CONFIGURE_ENABLE=	libsamplerate
 SAMPLERATE_LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 SNDFILE_CONFIGURE_ENABLE=	sndfile
 SNDFILE_LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPYTHON}
-CONFIGURE_ENV+=	PYTHONPATH="${PYTHON_CMD}"
-USE_PYTHON=	yes
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/test/ s|==|=|g ; \
 		 s| $$EXTRAGCCFLAGS||g ; \
 		 s| $$EXTRACPPFLAGS||g ; \
-		 s| -D_P1003_1B_VISIBLE||' ${WRKSRC}/configure
-.if ${PORT_OPTIONS:MPYTHON}
-	@${REINPLACE_CMD} -e 's|python -c|${PYTHON_CMD} -c|' \
-		${WRKSRC}/configure
-.endif
+		 s| -D_P1003_1B_VISIBLE|| ; \
+		 s|python -c|$$PYTHONPATH -c|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -4,4 +4,4 @@
 #
 
 cd "%%DATADIR%%"
-exec /usr/bin/env python ./duckmaze.py
+exec %%PYTHON_CMD%% ./duckmaze.py "${@}"

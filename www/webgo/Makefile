@@ -3,6 +3,7 @@
 
 PORTNAME=	webgo
 PORTVERSION=	0.1.0.${SVNVERSION}
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/jlaffaye
 DISTNAME=	${PORTNAME}-${SVNVERSION}
@@ -12,16 +13,7 @@ COMMENT=	Simplest way to write web applications in the Go programming language
 
 SVNVERSION=	20120419
 
-GO_PKGNAME=	${SUBLIBDIR}/web
-
-SUBLIBDIR=	github.com/hoisie
-
-NO_STAGE=	yes
-do-install:
-	${MKDIR} ${GO_LOCAL_LIBDIR}/${SUBLIBDIR}
-	${INSTALL_DATA} ${GO_WRKDIR_PKG}/${SUBLIBDIR}/web.a ${GO_LOCAL_LIBDIR}/${SUBLIBDIR}
-	${MKDIR} ${GO_LOCAL_SRCDIR}/${GO_PKGNAME}
-	(cd ${GO_WRKSRC}/ && ${COPYTREE_SHARE} \* ${GO_LOCAL_SRCDIR}/${GO_PKGNAME})
+GO_PKGNAME=	github.com/hoisie/web
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/lang/go/files/bsd.go.mk"

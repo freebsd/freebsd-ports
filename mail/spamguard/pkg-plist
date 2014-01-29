@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/spamguard
 etc/spamguard/spam-ignore.txt
 etc/spamguard/spam-high.txt

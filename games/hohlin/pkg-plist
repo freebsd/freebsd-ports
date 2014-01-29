@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/HoH
 %%DATADIR%%/HoH
 %%DATADIR%%/HoHOriginal.dat

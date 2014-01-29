@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%TOOLS%%bin/fsfs-access-map
 %%TOOLS%%bin/fsfs-reorg
 %%TOOLS%%bin/fsfs-stats

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/dico
 %%DATADIR%%/a.dic
 %%DATADIR%%/b.dic

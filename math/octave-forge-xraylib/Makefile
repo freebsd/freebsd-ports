@@ -9,11 +9,12 @@ CATEGORIES=	math
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} s+/bin/bash+${LOCALBASE}/bin/bash+g ${WRKSRC}/src/xraylib/src/*.sh
 	@${REINPLACE_CMD} s+/bin/bash+${LOCALBASE}/bin/bash+g ${WRKSRC}/src/xraylib/src/Makefile

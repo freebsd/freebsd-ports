@@ -1,6 +1,6 @@
 sbin/apinger
 etc/apinger.conf.sample
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DOCSDIR%%/README
+%%DOCSDIR%%/NEWS
+%%DOCSDIR%%/AUTHORS
+@dirrm %%DOCSDIR%%

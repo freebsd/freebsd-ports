@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/bitmap/mplus_f10b-euro.pcf.gz
 %%DATADIR%%/bitmap/mplus_f10b.pcf.gz
 %%DATADIR%%/bitmap/mplus_f10r-euro.pcf.gz

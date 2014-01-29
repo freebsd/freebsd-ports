@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/qmail-qfilter
 %%EXAMPLESDIR%%/README
 %%EXAMPLESDIR%%/block-long-dates

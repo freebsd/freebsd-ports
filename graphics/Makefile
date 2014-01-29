@@ -115,6 +115,7 @@
     SUBDIR += dc20ctrl
     SUBDIR += dc20pack
     SUBDIR += dcraw
+    SUBDIR += dcraw-m
     SUBDIR += deegree-csw
     SUBDIR += deegree-igeoportal
     SUBDIR += deegree-wcs
@@ -282,7 +283,7 @@
     SUBDIR += glew
     SUBDIR += glexcess
     SUBDIR += glfw
-    SUBDIR += glfw-devel
+    SUBDIR += glfw2
     SUBDIR += glide3
     SUBDIR += glitz
     SUBDIR += gliv
@@ -443,6 +444,7 @@
     SUBDIR += kipi-plugin-imageviewer
     SUBDIR += kipi-plugin-imgurexport
     SUBDIR += kipi-plugin-ipodexport
+    SUBDIR += kipi-plugin-jalbumexport
     SUBDIR += kipi-plugin-jpeglossless
     SUBDIR += kipi-plugin-kioexport
     SUBDIR += kipi-plugin-kmlexport
@@ -594,6 +596,7 @@
     SUBDIR += mscgen
     SUBDIR += mtpaint
     SUBDIR += multican
+    SUBDIR += multiraw
     SUBDIR += mupdf
     SUBDIR += mxp
     SUBDIR += mypaint
@@ -635,6 +638,7 @@
     SUBDIR += orca
     SUBDIR += osg
     SUBDIR += osg-devel
+    SUBDIR += osgearth
     SUBDIR += oyranos
     SUBDIR += p5-Acme-Steganography-Image-Png
     SUBDIR += p5-CAD-Drawing
@@ -993,6 +997,7 @@
     SUBDIR += swfdec
     SUBDIR += swfmill
     SUBDIR += swftools
+    SUBDIR += sxiv
     SUBDIR += synaesthesia
     SUBDIR += synfigstudio
     SUBDIR += telak

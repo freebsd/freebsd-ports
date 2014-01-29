@@ -22,70 +22,37 @@ CONFIGURE_ARGS=	--disable-uspell \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
+INSTALL_TARGET=	install-strip
+
 OPTIONS_MULTI=	SPELL
 OPTIONS_MULTI_SPELL=ASPELL HSPELL HUNSPELL ISPELL ZEMBEREK
 OPTIONS_DEFAULT=HUNSPELL
+OPTIONS_SUB=	yes
 HSPELL_DESC=	Spell checking via Hspell
 HUNSPELL_DESC=	Spell checking via Hunspell
 ZEMBEREK_DESC=	Spell checking via Zemberek
 
-.include <bsd.port.options.mk>
+ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+ASPELL_CONFIGURE_ENABLE=	aspell
+ASPELL_CONFIGURE_ON=	--with-aspell-prefix=${LOCALBASE}
 
-.if ${PORT_OPTIONS:MASPELL}
-LIB_DEPENDS+=	libaspell.so:${PORTSDIR}/textproc/aspell
-CONFIGURE_ARGS+=--enable-aspell \
-		--with-aspell-prefix=${LOCALBASE}
-PLIST_SUB+=	ASPELL=""
-.else
-CONFIGURE_ARGS+=--disable-aspell
-PLIST_SUB+=	ASPELL="@comment "
-.endif
+HSPELL_BUILD_DEPENDS=	${LOCALBASE}/lib/libhspell.a:${PORTSDIR}/hebrew/hspell
+HSPELL_CONFIGURE_ENABLE=	hspell
+HSPELL_CONFIGURE_ON=	--with-hspell-prefix=${LOCALBASE}
 
-.if ${PORT_OPTIONS:MHSPELL}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libhspell.a:${PORTSDIR}/hebrew/hspell
-CONFIGURE_ARGS+=--enable-hspell \
-		--with-hspell-prefix=${LOCALBASE}
-PLIST_SUB+=	HSPELL=""
-.else
-CONFIGURE_ARGS+=--disable-hspell
-PLIST_SUB+=	HSPELL="@comment "
-.endif
+HUNSPELL_LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
+HUNSPELL_CONFIGURE_ENABLE=	myspell
+HUNSPELL_CONFIGURE_ON=	--with-system-myspell=yes \
+			--with-myspell-dir=${LOCALBASE}/share/hunspell
 
-.if ${PORT_OPTIONS:MHUNSPELL}
-LIB_DEPENDS+=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell
-CONFIGURE_ARGS+=--enable-myspell --with-system-myspell=yes \
-		--with-myspell-dir=${LOCALBASE}/share/hunspell
-PLIST_SUB+=	HUNSPELL=""
-.else
-CONFIGURE_ARGS+=--disable-myspell
-PLIST_SUB+=	HUNSPELL="@comment "
-.endif
+ISPELL_RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/aspell-ispell
+ISPELL_CONFIGURE_ENABLE=	ispell
 
-.if ${PORT_OPTIONS:MISPELL}
-RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
-CONFIGURE_ARGS+=--enable-ispell \
-		--with-ispell-dir=${LOCALBASE}/share/ispell
-PLIST_SUB+=	ISPELL=""
-.else
-CONFIGURE_ARGS+=--disable-ispell
-PLIST_SUB+=	ISPELL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MZEMBEREK}
-LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
-CONFIGURE_ARGS+=--enable-zemberek
-PLIST_SUB+=	ZEMBEREK=""
-.else
-PLIST_SUB+=	ZEMBEREK="@comment "
-CONFIGURE_ARGS+=--disable-zemberek
-.endif
+ZEMBEREK_LIb_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
+ZEMBEREK_CONFIGURE_ENABLE=	zemberek
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|MKDIRPROG-mkdir|MKDIRPROG-mkdir -p|g' \
 		${WRKSRC}/install-sh
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libenchant.so.1 \
-		      ${STAGEDIR}${PREFIX}/lib/enchant/libenchant_*.so
 
 .include <bsd.port.mk>

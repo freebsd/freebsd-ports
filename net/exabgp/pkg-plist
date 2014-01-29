@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 etc/exabgp/exabgp.env
 sbin/exabgp
 %%PYTHON_SITELIBDIR%%/exabgp/__init__.py

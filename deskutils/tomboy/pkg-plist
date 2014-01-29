@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/tomboy
 %%APPLET%%bin/tomboy-panel
 lib/tomboy/Tomboy.exe

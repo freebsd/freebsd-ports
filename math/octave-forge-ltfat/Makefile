@@ -9,6 +9,8 @@ CATEGORIES=	math
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		portaudio:${PORTSDIR}/audio/portaudio2 \
 		cblas:${PORTSDIR}/math/cblas
@@ -19,7 +21,6 @@ OCTSRC=		${OCTAVE_PKGNAME}
 
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
 post-build:

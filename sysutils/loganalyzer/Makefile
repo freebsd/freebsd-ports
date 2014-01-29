@@ -27,56 +27,25 @@ USE_PHP=	session pdo gd xml zlib
 WANT_PHP_WEB=	YES
 DEFAULT_PHP_VER=5
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPHP_MYSQL}
-USE_PHP+=	mysql
-.endif
-
-.if ${PORT_OPTIONS:MPDO_DBLIB}
-RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_dblib.so:${PORTSDIR}/databases/php5-pdo_dblib
-.endif
-
-.if ${PORT_OPTIONS:MPDO_FIREBIRD}
-RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_firebird.so:${PORTSDIR}/databases/php5-pdo_firebird
-.endif
-
-.if ${PORT_OPTIONS:MPDO_MYSQL}
-USE_PHP+=	pdo_mysql
-.endif
-
-.if ${PORT_OPTIONS:MPDO_ODBC}
-RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_odbc.so:${PORTSDIR}/databases/php5-pdo_odbc
-.endif
-
-.if ${PORT_OPTIONS:MPDO_PGSQL}
-RUN_DEPENDS+=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
-.endif
-
-.if ${PORT_OPTIONS:MPDO_SQLITE}
-USE_PHP+=	pdo_sqlite
-.endif
-
-.include <bsd.port.pre.mk>
+PHP_MYSQL_USE=	php=mysql
+PDO_DBLIB_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_dblib.so:${PORTSDIR}/databases/php5-pdo_dblib
+PDO_FIREBIRD_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_firebird.so:${PORTSDIR}/databases/php5-pdo_firebird
+PDO_MYSQL_USE=	php=pgo_mysql
+PDO_ODBC_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_odbc.so:${PORTSDIR}/databases/php5-pdo_odbc
+PDO_PGSQL_RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/pdo_pgsql.so:${PORTSDIR}/databases/php5-pdo_pgsql
+PDO_SQLITE_USE=	php=pdo_sqlite
 
 pre-everything::
 	@${ECHO_CMD} "# you can customize the installation directory"
 	@${ECHO_CMD} "# by setting ANALYZERDIR in /etc/make.conf"
 
 do-install:
-	${MKDIR} ${PREFIX}/${ANALYZERDIR}
-	cd ${WRKSRC}/src/ && ${COPYTREE_SHARE} \* ${PREFIX}/${ANALYZERDIR}/
-	${INSTALL_DATA} ${WRKSRC}/src/.htaccess ${PREFIX}/${ANALYZERDIR}/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${ANALYZERDIR}
+	cd ${WRKSRC}/src/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/${ANALYZERDIR}/
+	${INSTALL_DATA} ${WRKSRC}/src/.htaccess ${STAGEDIR}${PREFIX}/${ANALYZERDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/* ${STAGEDIR}${DATADIR}
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/doc/* ${DOCSDIR}
-.endif
-.if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/* ${DATADIR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

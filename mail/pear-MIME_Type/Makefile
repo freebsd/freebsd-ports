@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MIME_Type
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.3
 CATEGORIES=	mail www pear
 
 MAINTAINER=	miwi@FreeBSD.org

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ori
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	sysutils net
 MASTER_SITES=	http://cdn.bitbucket.org/orifs/ori/downloads/
 
@@ -15,8 +15,7 @@ LIB_DEPENDS=	libevent-2.0.so:${PORTSDIR}/devel/libevent2 \
 
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=	pkgconfig fuse
-USE_SCONS=	yes
+USES=	pkgconfig fuse scons
 USE_OPENSSL=	yes
 USE_XZ=	yes
 WITH_OPENSSL_PORT=	yes

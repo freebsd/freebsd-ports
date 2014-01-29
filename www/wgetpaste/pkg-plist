@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/wgetpaste
 etc/wgetpaste.conf.sample
 etc/wgetpaste.d/zlin.conf

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/cdxview
 bin/ilibr
 bin/kmakef

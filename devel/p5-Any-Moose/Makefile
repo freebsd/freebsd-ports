@@ -15,14 +15,11 @@ COMMENT=	Perl extension for/to use Moose or Mouse modules
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Any::Moose.3
-
 OPTIONS_DEFINE=	MOOSE MOUSE
 OPTIONS_DEFAULT=	MOUSE
 MOOSE_DESC=	Use Moose
 MOUSE_DESC=	Use Mouse
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMOOSE}

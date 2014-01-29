@@ -12,7 +12,7 @@ COMMENT=	Useful middlewares and filters for wsgi as well as scgi servers
 
 LICENSE=	GPLv2                    # or higher
 
-USE_PYTHON=	2.5-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 
 NO_STAGE=	yes

@@ -11,7 +11,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME wget front-end
 
-LIB_DEPENDS=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
 OPTIONS_DEFINE=	NOTIFY EPIPHANY
@@ -19,41 +19,28 @@ OPTIONS_DEFAULT=	NOTIFY EPIPHANY
 EPIPHANY_DESC=	Epiphany extension
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		pathfix gettext
-USE_GNOME=	desktopfileutils gnomeprefix gtk20 gconf2 libgnomeui
+USES=		pathfix gettext gmake desktop-file-utils
+USE_GNOME=	gnomeprefix gtk20 gconf2 libgnomeui
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+PLIST_SUB+=	EPHY_VERSION="2.30"
 
 GCONF_SCHEMAS=	${PORTNAME}.schemas
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
-RUN_DEPENDS+=	${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
-.else
-CONFIGURE_ARGS+=	--disable-libnotify
-.endif
+NOTIFY_CONFIGURE_ENABLE=	libnotify
+NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
+NOTIFY_RUN_DEPENDS=	${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
 
-.if ${PORT_OPTIONS:MEPIPHANY}
-BUILD_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
-RUN_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
-CONFIGURE_ARGS+=	--enable-epiphany-extension
-PLIST_SUB+=	EPIPHANY="" EPHY_VERSION="2.30"
-.else
-CONFIGURE_ARGS+=	--disable-epiphany-extension
-PLIST_SUB+=	EPIPHANY="@comment "
-.endif
+EPIPHANY_BUILD_DEPENDS+=	epiphany:${PORTSDIR}/www/epiphany
+EPIPHANY_RUN_DEPENDS=	epiphany:${PORTSDIR}/www/epiphany
+EPIPHANY_CONFIGURE_ENABLE=	epiphany-extension
 
 post-patch:
 	@${REINPLACE_CMD} 's|glib/gerror|glib|' \
 		${WRKSRC}/src/gwget-application.h
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>

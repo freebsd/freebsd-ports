@@ -181,8 +181,8 @@ BUILD_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 RUN_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=--with-ispell=${LOCALBASE}/bin/aspell
 .elif ${PORT_OPTIONS:MISPELL}
-BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
-RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
+BUILD_DEPENDS+=	ispell:${PORTSDIR}/textproc/aspell-ispell
+RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/aspell-ispell
 CONFIGURE_ARGS+=--with-ispell=${LOCALBASE}/bin/ispell
 .else
 CONFIGURE_ARGS+=--without-ispell

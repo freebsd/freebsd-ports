@@ -8,17 +8,16 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://apollo.backplane.com/FreeBSDPorts/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A utility to process Canon camera RAW (.crw) files
+COMMENT=	Utility to process Canon camera RAW (.crw) files
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png
 
-MAN1=		crw.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/crw
+USES=		uidfix
+
+PLIST_FILES=	bin/crw man/man1/crw.1.gz
 
 #CFLAGS+=	-I${LOCALBASE}/include/libpng15
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local/lib,${LOCALBASE}/lib,' \
 		-e 's,CFLAGS=,CFLAGS+=,' \

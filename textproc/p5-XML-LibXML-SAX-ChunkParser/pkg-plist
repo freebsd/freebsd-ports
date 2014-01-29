@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/XML/LibXML/SAX/ChunkParser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/SAX/ChunkParser/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/LibXML/SAX/ChunkParser

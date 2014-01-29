@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl implementation of http://sass-lang.com/
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	\
 	p5-Readonly>=1.03:${PORTSDIR}/devel/p5-Readonly \
 	p5-Convert-Color>0:${PORTSDIR}/graphics/p5-Convert-Color
@@ -19,9 +22,4 @@ TEST_DEPENDS=	p5-Try-Tiny>0:${PORTSDIR}/lang/p5-Try-Tiny
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	Text::Sass.3 \
-	Text::Sass::Expr.3 \
-	Text::Sass::Functions.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

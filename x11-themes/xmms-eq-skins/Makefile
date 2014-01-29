@@ -20,9 +20,8 @@ NO_BUILD=	yes
 SKINSDIR=	${PREFIX}/lib/xmms/EQskins
 PLIST_SUB=	SKINSDIR="${SKINSDIR:S,^${PREFIX}/,,}"
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${SKINSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.tgz ${SKINSDIR}
+	${MKDIR} ${STAGEDIR}${SKINSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.tgz ${STAGEDIR}${SKINSDIR}
 
 .include <bsd.port.mk>

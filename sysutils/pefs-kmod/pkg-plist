@@ -1,5 +1,7 @@
 sbin/pefs
 lib/pam_pefs.so
 lib/pam_pefs.so.5
+man/man8/pam_pefs.8.gz
+man/man8/pefs.8.gz
 @cwd /%%KMODDIR%%
 pefs.ko

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/pythk/__init__.py
 %%PYTHON_SITELIBDIR%%/pythk/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pythk/__init__.pyo

@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}${PORTVERSION}
 DISTFILES=	${PORTNAME}${PORTVERSION}-snapshot.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	The most popular open source Internet Relay Chat bot
 
 LICENSE=	GPLv2

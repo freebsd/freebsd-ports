@@ -10,9 +10,8 @@ MAINTAINER=	jharris@widomaker.com
 COMMENT=	Differential GPS over IP communication device
 
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
 
-MAN1=	dgpsip.1
-PLIST_FILES=	bin/dgpsip
+PLIST_FILES=	bin/dgpsip \
+		man/man1/dgpsip.1.gz
 
 .include <bsd.port.mk>

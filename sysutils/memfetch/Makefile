@@ -9,24 +9,20 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	onatan@gmail.com
-COMMENT=	Utility to dump process memory
+COMMENT=	Utility to dump memory of a running process
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+LICENSE=	GPLv2
+
 USES=		perl5
 USE_PERL5=	run
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
-CFLAGS+=	${CPPFLAGS}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/mffind.pl ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/mffind.pl ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

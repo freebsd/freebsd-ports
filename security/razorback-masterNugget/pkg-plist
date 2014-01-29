@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/masterNugget
 bin/masterNugget_safed
 @unexec if cmp -s %D/etc/razorback/master_nugget.conf %D/etc/razorback/master_nugget.conf.sample; then rm -f %D/etc/razorback/master_nugget.conf; fi

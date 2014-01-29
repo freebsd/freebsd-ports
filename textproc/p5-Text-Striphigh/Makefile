@@ -14,7 +14,4 @@ USES=		perl5
 USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/Striphigh-${PORTVERSION}
 
-MAN3=		Text::Striphigh.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

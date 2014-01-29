@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:${PORTSDIR}/devel/py-lxml \
 		unzip:${PORTSDIR}/archivers/unzip \
 		wine:${PORTSDIR}/emulators/wine
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 
 NO_BUILD=	yes
 

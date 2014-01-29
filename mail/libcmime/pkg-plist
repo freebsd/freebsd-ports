@@ -11,6 +11,6 @@ include/cmime/cmime_string.h
 include/cmime/cmime_util.h
 lib/libcmime.so
 lib/libcmime.so.0.1
-lib/libcmime.so.0.1.8
+lib/libcmime.so.0.1.11
 libdata/pkgconfig/libcmime.pc
 @dirrm include/cmime

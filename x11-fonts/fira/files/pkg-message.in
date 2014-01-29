@@ -1,0 +1,18 @@
+===============================================================================
+
+Fira has been installed.
+
+Make sure that the freetype module is loaded.  If it is not, add the following
+line to the "Modules" section of your X Windows configuration file:
+
+    Load "freetype"
+
+Add the following line to the "Files" section of X Windows configuration file:
+
+    FontPath "%%FONTDIR%%/"
+
+Note: your X Windows configuration file is typically /etc/X11/xorg.conf
+
+For Web Font please use www/fira-webfont port.
+
+===============================================================================

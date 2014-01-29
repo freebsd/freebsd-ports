@@ -4,6 +4,13 @@ lib/tdom%%PORTVERSION%%/libtdomstub%%PORTVERSION%%.a
 lib/tdom%%PORTVERSION%%/pkgIndex.tcl
 lib/tdom%%PORTVERSION%%/tdom.tcl
 lib/tdomConfig.sh
+man/mann/dom.n.gz
+man/mann/domDoc.n.gz
+man/mann/domNode.n.gz
+man/mann/expat.n.gz
+man/mann/expatapi.n.gz
+man/mann/tdomcmd.n.gz
+man/mann/tnc.n.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/category-index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dom.html
 %%PORTDOCS%%%%DOCSDIR%%/html/domDoc.html

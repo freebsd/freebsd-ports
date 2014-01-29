@@ -3,6 +3,7 @@
 
 PORTNAME=	beets
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	CHEESESHOP
 
@@ -16,11 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>=1.21:${PORTSDIR}/audio/py-mutagen \
 		${PYTHON_PKGNAMEPREFIX}yaml>=0:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3
 
-MAN1=	beet.1
-MAN5=	beetsconfig.5
-
-NO_STAGE=	yes
-USE_PYTHON=	2.7+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
 OPTIONS_DEFINE=	BEATPORT CHROMA DISCOGS LASTFM FFMPEG REPLAYGAIN WEB
@@ -34,7 +31,7 @@ REPLAYGAIN_DESC=	Normalize Audio Loudness
 WEB_DESC=	Webserver Music Player Plugin
 
 CHROMA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyacoustid>=0:${PORTSDIR}/audio/py-pyacoustid
-BEATPORT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:${PORTSDIR}/www/py-requests
+BEATPORT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests1>=0:${PORTSDIR}/www/py-requests1
 DISCOGS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}discogs-client>=0:${PORTSDIR}/audio/py-discogs-client
 FFMPEG_RUN_DEPENDS=	ffmpeg>=2:${PORTSDIR}/multimedia/ffmpeg
 LASTFM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pylast>=0:${PORTSDIR}/audio/py-pylast
@@ -45,7 +42,7 @@ WEB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0:${PORTSDIR}/www/py-flask
 .include <bsd.port.pre.mk>
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/man/beet.1 ${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/man/beetsconfig.5 ${PREFIX}/man/man5/
+	${INSTALL} ${WRKSRC}/man/beet.1 ${STAGEDIR}${PREFIX}/man/man1/
+	${INSTALL} ${WRKSRC}/man/beetsconfig.5 ${STAGEDIR}${PREFIX}/man/man5/
 
 .include <bsd.port.post.mk>

@@ -1,6 +1,7 @@
 bin/l2tpd
-etc/l2tp/l2tp-secrets.sample
-etc/l2tp/l2tpd.conf.sample
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm etc/l2tp
+%%ETCDIR%%/l2tp-secrets.sample
+%%ETCDIR%%/l2tpd.conf.sample
+man/man5/l2tp-secrets.5.gz
+man/man5/l2tpd.conf.5.gz
+man/man8/l2tpd.8.gz
+@dirrm %%ETCDIR%%

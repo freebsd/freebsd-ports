@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/ldapbrowser
 lib/ldapbrowser/CHANGES.TXT
 lib/ldapbrowser/LICENSE.ICONS

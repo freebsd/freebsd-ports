@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/jed
 bin/rgrep
 %%X11%%

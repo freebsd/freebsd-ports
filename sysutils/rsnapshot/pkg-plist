@@ -1,4 +1,5 @@
-@comment $FreeBSD$
 bin/rsnapshot
 bin/rsnapshot-diff
 etc/rsnapshot.conf.default
+man/man1/rsnapshot.1.gz
+man/man1/rsnapshot-diff.1.gz

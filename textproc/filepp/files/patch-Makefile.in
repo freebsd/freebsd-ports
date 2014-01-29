@@ -1,0 +1,19 @@
+--- ./Makefile.in.orig	2014-01-26 20:31:47.000000000 +0000
++++ ./Makefile.in	2014-01-26 20:32:23.000000000 +0000
+@@ -130,11 +130,11 @@
+ 
+ # installation
+ install: $(FILEPP) $(FILEPPMAN)
+-	@$(MKDIR) $(bindir)
+-	$(INSTALL) $(FILEPP) $(bindir)
+-	@$(MKDIR) $(mandir)/man1
+-	$(INSTALL) -m 644 $(FILEPPMAN) $(mandir)/man1
+-	$(MKDIR) $(moduledir)
++	@$(MKDIR) $(DESTDIR)$(bindir)
++	$(INSTALL) $(FILEPP) $(DESTDIR)$(bindir)
++	@$(MKDIR) $(DESTDIR)$(mandir)/man1
++	$(INSTALL) -m 644 $(FILEPPMAN) $(DESTDIR)$(mandir)/man1
++	$(MKDIR) $(DESTDIR)$(moduledir)
+ 	$(MAKE) dirmake DIRECTORIES="$(module_subdirs)" TARGET=install
+ 
+ # distribution

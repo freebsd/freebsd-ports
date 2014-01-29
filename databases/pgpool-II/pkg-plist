@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/pcp_attach_node
 bin/pcp_detach_node
 bin/pcp_node_count

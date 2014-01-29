@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/rsync
 man/man1/rsync.1.gz
 man/man5/rsyncd.conf.5.gz

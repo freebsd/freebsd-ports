@@ -13,6 +13,5 @@ lib/avahi/service-types.db
 man/man1/avahi-bookmarks.1.gz
 man/man1/avahi-discover.1.gz
 share/applications/avahi-discover.desktop
-%%DATADIR%%/service-types
 @dirrm %%PYTHON_SITELIBDIR%%/avahi_discover
 @dirrm %%PYTHON_SITELIBDIR%%/avahi

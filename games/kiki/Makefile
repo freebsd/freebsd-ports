@@ -13,7 +13,7 @@ COMMENT=	Kiki the nanobot is a 3-D puzzle game
 
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USES=		gmake dos2unix compiler
 USE_GL=		gl glu glut
 USE_SDL=	sdl mixer image

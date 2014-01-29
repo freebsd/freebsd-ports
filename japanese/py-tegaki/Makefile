@@ -1,10 +1,5 @@
+# Created by: Timothy Beyer <beyert@cs.ucr.edu>
 # $FreeBSD$
-
-# Date created:				15 Aug 2010
-# Whom:					Timothy Beyer <beyert@cs.ucr.edu>
-#
-# $FreeBSD$
-#
 
 PORTNAME=	tegaki
 PORTVERSION=	0.3.1
@@ -14,17 +9,15 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-python-${PORTVERSION}
 
 MAINTAINER=	beyert@cs.ucr.edu
-COMMENT=	Open-Source Chinese and Japanese Handwriting Recognition
-
-LIB_DEPENDS=	zinnia.0:${PORTSDIR}/japanese/zinnia
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/zinnia.py:${PORTSDIR}/japanese/py-zinnia
+COMMENT=	Open-source Chinese and Japanese handwriting recognition
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libzinnia.so:${PORTSDIR}/japanese/zinnia
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/zinnia.py:${PORTSDIR}/japanese/py-zinnia
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	${PORTNAME}_python
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

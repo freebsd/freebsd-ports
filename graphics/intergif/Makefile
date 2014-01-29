@@ -18,7 +18,6 @@ ALL_TARGET=	intergif
 
 PLIST_FILES=	bin/intergif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|=.*cc|= $$(CC)| ; \
@@ -27,6 +26,6 @@ post-patch:
 		 s|@$$(cc)|$$(cc)|' ${WRKSRC}/src/makefile.ix
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} intergif ${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${WRKSRC}/intergif ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

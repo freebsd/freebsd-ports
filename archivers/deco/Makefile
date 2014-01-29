@@ -48,10 +48,4 @@ do-install:
 .endfor
 	@cd ${WRKDIR}/${PORTNAME}-archive-1.6/x/ && ${CP} -PR * ${DATADIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-RUN_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

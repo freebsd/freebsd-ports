@@ -12,8 +12,8 @@ COMMENT=	COARDS compliant time parser
 
 LICENSE=	MIT
 
-USE_PYTHON=		2.7
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	xterm
-PORTVERSION=	300
+PORTVERSION=	301
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/:src1 \
 		CRITICAL:src1 CRITICAL:src2
@@ -16,7 +17,6 @@ COMMENT=	Terminal emulator for the X Window System
 CONFLICTS=	x11iraf-[0-9]*
 
 USE_XORG=	xaw xft
-WANT_GNOME=	desktopfileutils
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
@@ -26,7 +26,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 ICONVERSION=	1
 
-OPTIONS_DEFINE=	WCHAR LUIT DECTERM PCRE GNOME DABBREV 256COLOR SIXEL
+OPTIONS_DEFINE=	WCHAR LUIT DECTERM PCRE DABBREV 256COLOR SIXEL GNOME
 
 DABBREV_DESC=	Enable support for dabbrev-expand
 DECTERM_DESC=	Enable DECterm Locator support
@@ -37,66 +37,37 @@ WCHAR_DESC=	Enable wide-character support
 
 OPTIONS_DEFAULT=WCHAR LUIT 256COLOR
 
+256COLOR_CONFIGURE_ENABLE=	256-color
+LUIT_BUILD_DEPENDS=		luit:${PORTSDIR}/x11/luit
+LUIT_CONFIGURE_ENABLE=		luit
+WCHAR_CONFIGURE_ENABLE=		wide-chars
+DECTERM_CONFIGURE_ENABLE=	dec-locator
+PCRE_CONFIGURE_WITH=		pcre
+PCRE_LIB_DEPENDS=		libpcre.so:${PORTSDIR}/devel/pcre
+DABBREV_CONFIGURE_ENABLE=	dabbrev
+SIXEL_CONFIGURE_ENABLE=		sixel-graphics
+GNOME_USES=			desktop-file-utils
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:M256COLOR}
-CONFIGURE_ARGS+=	--enable-256-color
-.endif
-
-.if ${PORT_OPTIONS:MLUIT}
-CONFIGURE_ARGS+=	--enable-luit
-BUILD_DEPENDS=	luit:${PORTSDIR}/x11/luit
-.endif
-
-.if ${PORT_OPTIONS:MWCHAR}
-CONFIGURE_ARGS+=	--enable-wide-chars
-.endif
-
-.if ${PORT_OPTIONS:MDECTERM}
-CONFIGURE_ARGS+=	--enable-dec-locator
-.endif
-
-.if ${PORT_OPTIONS:MPCRE}
-CONFIGURE_ARGS+=	--with-pcre
-LIB_DEPENDS=		pcre:${PORTSDIR}/devel/pcre
-.endif
-
-.if ${PORT_OPTIONS:MDABBREV}
-CONFIGURE_ARGS+=	--enable-dabbrev
-.endif
-
-.if ${PORT_OPTIONS:MSIXEL}
-CONFIGURE_ARGS+=	--enable-sixel-graphics
-.endif
-
-.if ${PORT_OPTIONS:MGNOME}
-USE_GNOME=	desktopfileutils
-PLIST_SUB+=	GNOME=""
-.else
-PLIST_SUB+=	GNOME="@comment "
-.endif
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900004
 LIB_DEPENDS+=	utempter:${PORTSDIR}/sysutils/libutempter
 .endif
 
 post-extract:
-	@${CP} ${WRKDIR}/bsd-xterm-icons-1/*.png ${WRKDIR}/bsd-xterm-icons-1/*.xpm \
-		${WRKSRC}/icons/
+	@${CP} ${WRKDIR}/bsd-xterm-icons-1/*.png \
+		${WRKDIR}/bsd-xterm-icons-1/*.xpm \
+			${WRKSRC}/icons/
 
 post-install:
 .for f in koi8rxterm resize uxterm xterm
 	@${CHMOD} ${BINMODE} ${STAGEDIR}${PREFIX}/bin/${f}
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/xterm.desktop ${STAGEDIR}${PREFIX}/share/applications/
-.if ${PORT_OPTIONS:MGNOME}
-	@-update-desktop-database
-.endif
+	@${INSTALL_DATA} ${WRKSRC}/xterm.desktop \
+		${STAGEDIR}${PREFIX}/share/applications/
 
 .if ${PORT_OPTIONS:MWCHAR}
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

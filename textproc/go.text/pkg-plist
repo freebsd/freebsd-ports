@@ -1,0 +1,175 @@
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/cldr.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/collate.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/collate/build.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/collate/colltab.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/encoding.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/encoding/charmap.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/encoding/japanese.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/encoding/korean.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/encoding/simplifiedchinese.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/encoding/traditionalchinese.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/encoding/unicode.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/language.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/transform.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/unicode/norm.a
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/cldr/base.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/cldr/cldr.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/cldr/collate.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/cldr/data_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/cldr/decode.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/cldr/examples_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/cldr/makexml.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/cldr/resolve.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/cldr/resolve_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/cldr/slice.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/cldr/slice_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/cldr/xml.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/Makefile
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/build/builder.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/build/builder_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/build/colelem.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/build/colelem_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/build/contract.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/build/contract_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/build/order.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/build/order_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/build/table.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/build/trie.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/build/trie_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/collate.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/collate_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/colltab/colelem.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/colltab/colelem_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/colltab/colltab.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/colltab/contract.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/colltab/contract_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/colltab/export.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/colltab/table.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/colltab/trie.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/colltab/trie_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/export_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/index.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/maketables.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/regtest.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/sort.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/sort_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/table_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/tables.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/tools/colcmp/Makefile
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/tools/colcmp/chars.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/tools/colcmp/col.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/tools/colcmp/colcmp.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/tools/colcmp/darwin.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/tools/colcmp/gen.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/tools/colcmp/icu.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/charmap/charmap.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/charmap/maketables.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/charmap/tables.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/encoding.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/encoding_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/example_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/japanese/eucjp.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/japanese/iso2022jp.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/japanese/maketables.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/japanese/shiftjis.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/japanese/tables.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/korean/euckr.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/korean/maketables.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/korean/tables.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/simplifiedchinese/gbk.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/simplifiedchinese/hzgb2312.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/simplifiedchinese/maketables.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/simplifiedchinese/tables.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/testdata/candide-gb18030.txt
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/testdata/candide-utf-16le.txt
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/testdata/candide-utf-8.txt
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/testdata/candide-windows-1252.txt
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/testdata/rashomon-euc-jp.txt
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/testdata/rashomon-iso-2022-jp.txt
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/testdata/rashomon-shift-jis.txt
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/testdata/rashomon-utf-8.txt
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/testdata/sunzi-bingfa-gb-levels-1-and-2-hz-gb2312.txt
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/testdata/sunzi-bingfa-gb-levels-1-and-2-utf-8.txt
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/testdata/sunzi-bingfa-simplified-gbk.txt
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/testdata/sunzi-bingfa-simplified-utf-8.txt
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/testdata/sunzi-bingfa-traditional-big5.txt
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/testdata/sunzi-bingfa-traditional-utf-8.txt
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/testdata/unsu-joh-eun-nal-euc-kr.txt
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/testdata/unsu-joh-eun-nal-utf-8.txt
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/traditionalchinese/big5.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/traditionalchinese/maketables.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/traditionalchinese/tables.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/unicode/unicode.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/language/Makefile
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/language/data_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/language/examples_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/language/go1_1.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/language/go1_2.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/language/language.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/language/language_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/language/lookup.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/language/lookup_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/language/maketables.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/language/match.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/language/match_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/language/parse.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/language/parse_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/language/tables.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/transform/examples_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/transform/transform.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/transform/transform_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/Makefile
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/composition.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/composition_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/example_iter_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/forminfo.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/forminfo_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/input.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/iter.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/iter_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/maketables.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/maketesttables.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/norm_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/normalize.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/normalize_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/normregtest.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/readwriter.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/readwriter_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/tables.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/transform.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/transform_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/trie.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/trie_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/triedata_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm/triegen.go
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode/norm
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/unicode
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/transform
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/language
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/unicode
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/traditionalchinese
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/testdata
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/simplifiedchinese
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/korean
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/japanese
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding/charmap
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/encoding
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/tools/colcmp
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/tools
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/colltab
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/collate/build
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/collate
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/cldr
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
+@dirrmtry %%GO_SRCDIR%%/code.google.com/p
+@dirrmtry %%GO_SRCDIR%%/code.google.com
+@dirrmtry %%GO_SRCDIR%%
+@dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%/unicode
+@dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%/encoding
+@dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%/collate
+@dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%
+@dirrmtry %%GO_LIBDIR%%/code.google.com/p
+@dirrmtry %%GO_LIBDIR%%/code.google.com
+@dirrmtry %%GO_LIBDIR%%
+@dirrmtry share/go/pkg
+@dirrmtry share/go

@@ -24,14 +24,13 @@ NO_WRKSUBDIR=	yes
 SKINSDIR=	${PREFIX}/share/xmms/VU_Meter_skins
 PLIST_SUB=	SKINSDIR="${SKINSDIR:S,^${PREFIX}/,,}"
 
-NO_STAGE=	yes
 post-extract:
 	@${RM} -f ${WRKSRC}/X-skin/*.psd
 
 do-install:
 .for s in X-skin by classic vuskin
-	${MKDIR} ${SKINSDIR}/${s}
-	${INSTALL_DATA} ${WRKSRC}/${s}/* ${SKINSDIR}/${s}
+	${MKDIR} ${STAGEDIR}${SKINSDIR}/${s}
+	${INSTALL_DATA} ${WRKSRC}/${s}/* ${STAGEDIR}${SKINSDIR}/${s}
 .endfor
 
 .include <bsd.port.mk>

@@ -1,4 +1,8 @@
 sbin/logrotate
+@unexec if cmp -s %D/etc/logrotate.conf.sample %D/etc/logrotate.conf; then rm -f %D/etc/logrotate.conf; fi
 etc/logrotate.conf.sample
+@exec if [ ! -f %D/etc/logrotate.conf ]; then cp -p %D/%F %B/logrotate.conf; fi
 %%EXAMPLESDIR%%/syslog.sample
+man/man5/logrotate.conf.5.gz
+man/man8/logrotate.8.gz
 @dirrm %%EXAMPLESDIR%%

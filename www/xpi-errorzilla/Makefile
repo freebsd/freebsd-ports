@@ -41,6 +41,5 @@ XPI_DIRS=	chrome/content/images \
 		defaults/preferences \
 		defaults
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

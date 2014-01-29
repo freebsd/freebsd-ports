@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/pdfmap
 %%PYTHON_SITELIBDIR%%/pdfmap/__init__.py
 %%PYTHON_SITELIBDIR%%/pdfmap/__init__.pyc

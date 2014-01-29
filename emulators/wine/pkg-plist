@@ -1961,6 +1961,12 @@ lib/wine/xmllite.dll.so
 lib/wine/xolehlp.dll.so
 lib/wine/xpsprint.dll.so
 lib/wine/xpssvcs.dll.so
+man/de.UTF-8/man1/wine.1.gz
+man/de.UTF-8/man1/winemaker.1.gz
+man/de.UTF-8/man1/wineserver.1.gz
+man/fr.UTF-8/man1/wine.1.gz
+man/fr.UTF-8/man1/winemaker.1.gz
+man/fr.UTF-8/man1/wineserver.1.gz
 man/man1/msiexec.1.gz
 man/man1/notepad.1.gz
 man/man1/regedit.1.gz
@@ -1983,12 +1989,21 @@ man/man1/winepath.1.gz
 man/man1/wineserver.1.gz
 man/man1/wmc.1.gz
 man/man1/wrc.1.gz
+man/pl.UTF-8/man1/wine.1.gz
+share/applications/wine.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.winedbg
 %%PORTDOCS%%%%DOCSDIR%%/README.winedump
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/fonts
+@dirrmtry man/pl.UTF-8/man1
+@dirrmtry man/pl.UTF-8
+@dirrmtry man/fr.UTF-8/man1
+@dirrmtry man/fr.UTF-8
+@dirrmtry man/de.UTF-8/man1
+@dirrmtry man/de.UTF-8
 @dirrm lib/wine/fakedlls
 @dirrm lib/wine
 @dirrm include/wine/windows/ddk

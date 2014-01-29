@@ -9,16 +9,14 @@ MASTER_SITES=	GENTOO/distfiles
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Library for registering keyboard shortcuts
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 introspection
 USE_XORG=	x11 xext xrender
-USES=		pkgconfig pathfix
+USES=		gmake pkgconfig pathfix
 USE_LDCONFIG=	yes
+MAKE_ENV=	GI_SCANNER_DISABLE_CACHE=yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES PYTHON LUA
 OPTIONS_DEFAULT=	PYTHON
@@ -26,11 +24,10 @@ OPTIONS_DEFAULT=	PYTHON
 # Override LUA description
 LUA_DESC=	Lua bindings
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	yes
+USE_PYTHON=	2
 USE_GNOME+=	pygtk2
 PLIST_SUB+=	PYTHON=""
 .else
@@ -39,7 +36,7 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MLUA}
-USE_LUA=	5.1+
+USE_LUA=	5.1
 CONFIGURE_ARGS+=	--with-lua-includes=${LUA_INCDIR}
 PLIST_SUB+=	LUA=""
 .else
@@ -60,9 +57,9 @@ PLIST_SUB+=	DOCS="@comment "
 
 post-install:
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${REINPLACE_CMD} -i '' -e 's|lua5.1|lua-5.1|g' ${WRKSRC}/examples/Makefile
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	@${REINPLACE_CMD} -i '' -e 's|lua5.1|lua-${LUA_VER}|g' ${WRKSRC}/examples/Makefile
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>

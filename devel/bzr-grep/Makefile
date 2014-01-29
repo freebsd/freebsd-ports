@@ -12,6 +12,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bazaar plugin to grep files
 
 BROKEN=		conflicts with dependency bzr
+DEPRECATED=	Broken for more than 4 months
+EXPIRATION_DATE=2014-02-20
 
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
 RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bzr
@@ -20,7 +22,7 @@ LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_PYTHON=		2.5+
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	bzr_grep
 PYDISTUTILS_PKGVERSION=	${PORTVERSION}.final.0

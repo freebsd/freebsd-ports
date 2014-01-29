@@ -23,7 +23,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Python3 ready
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}

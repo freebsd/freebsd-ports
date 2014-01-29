@@ -13,9 +13,6 @@ COMMENT=	Templating system perl library
 USES=		perl5
 USE_PERL5=	configure patch
 
-MAN3=		template_syntax.3 Text::Tmpl.3 template_extend.3
-
-NO_STAGE=	yes
 pre-patch:
 	@${PERL} -pi -e '/OPTIMIZE|libtmpl.pod/ and $$_=""' \
 		${WRKSRC}/Makefile.PL

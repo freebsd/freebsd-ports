@@ -1,0 +1,27 @@
+include/sidplayfp/SidConfig.h
+include/sidplayfp/SidDatabase.h
+include/sidplayfp/SidInfo.h
+include/sidplayfp/SidTune.h
+include/sidplayfp/SidTuneInfo.h
+include/sidplayfp/builders/resid.h
+include/sidplayfp/builders/residfp.h
+include/sidplayfp/event.h
+include/sidplayfp/sidbuilder.h
+include/sidplayfp/siddefs.h
+include/sidplayfp/sidplayfp.h
+include/sidplayfp/sidversion.h
+include/stilview/stil.h
+include/stilview/stildefs.h
+lib/libsidplayfp.a
+lib/libsidplayfp.la
+lib/libsidplayfp.so
+lib/libsidplayfp.so.3
+lib/libstilview.a
+lib/libstilview.la
+lib/libstilview.so
+lib/libstilview.so.0
+libdata/pkgconfig/libsidplayfp.pc
+libdata/pkgconfig/libstilview.pc
+@dirrmtry include/sidplayfp/builders
+@dirrmtry include/sidplayfp
+@dirrmtry include/stilview

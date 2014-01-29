@@ -27,7 +27,7 @@ USES=		ncurses
 USE_AUTOTOOLS=	autoconf aclocal automake libtool
 ACLOCAL_ARGS=	-I ${ACLOCAL_DIR}
 
-USE_PYTHON_BUILD=	-2.7
+USE_PYTHON_BUILD=	2
 
 MAN1=	htop.1
 

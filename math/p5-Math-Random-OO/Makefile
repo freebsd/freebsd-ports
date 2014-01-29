@@ -7,7 +7,7 @@ CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tjs@cdpa.nsysu.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Consistent object-oriented interface for generating random numbers
 
 BUILD_DEPENDS=	p5-Test-MockRandom>=0.95:${PORTSDIR}/devel/p5-Test-MockRandom \

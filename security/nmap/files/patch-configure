@@ -1,6 +1,6 @@
 --- ./configure.orig	2010-09-29 18:09:26.000000000 +0200
 +++ ./configure	2011-01-07 19:27:04.000000000 +0100
-@@ -3265,7 +3265,7 @@
+@@ -3367,7 +3367,7 @@
  ac_compiler_gnu=$ac_cv_c_compiler_gnu
  if test -n "$ac_tool_prefix"; then
    # Extract the first word of "${ac_tool_prefix}gcc", so it can be a program name with args.
@@ -8,15 +8,4 @@
 +set dummy ${ac_tool_prefix}$CXX; ac_word=$2
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
  $as_echo_n "checking for $ac_word... " >&6; }
- if test "${ac_cv_prog_CC+set}" = set; then :
-@@ -6452,8 +6452,8 @@
-     no_lua="yes"
-   ;;
-   *)
--    CPPFLAGS="-I$with_liblua/include $CPPFLAGS"
--    LDFLAGS="-L$with_liblua/lib $LDFLAGS"
-+    CPPFLAGS="-I${LUA_INCDIR} $CPPFLAGS"
-+    LDFLAGS="-L${LUA_LIBDIR} $LDFLAGS"
-   ;;
-   esac
- 
+ if ${ac_cv_prog_CC+:} false; then :

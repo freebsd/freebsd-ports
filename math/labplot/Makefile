@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	labplot
-DISTVERSION=	2.0.0.beta1
+DISTVERSION=	2.0.0.beta2
 CATEGORIES=	math kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
@@ -18,33 +18,25 @@ CDF_DESC=	CDF data support
 HDF5_DESC=	HDF5 data support
 NETCDF_DESC=	NetCDF data support
 
+WRKSRC=		${WRKDIR}/beta2
+
 USE_BZIP2=	yes
 USES=		cmake
 USE_XORG=	xft xpm
 USE_GCC=	yes
-USE_KDE4=	automoc4 kdelibs kdeprefix
+USE_KDE4=	automoc4 kdelibs kdeprefix sharedmime
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 CMAKE_ARGS=	-DOPJ_LIBRARY:STRING=""
+INSTALLS_ICONS=	yes
 
-.include <bsd.port.options.mk>
+CDF_LIB_DEPENDS=	libcdf.so:${PORTSDIR}/science/cdf
+CDF_CMAKE_OFF=		-DCDF_LIBRARY:STRING=""
 
-.if ${PORT_OPTIONS:MCDF}
-LIB_DEPENDS+=	libcdf.so:${PORTSDIR}/science/cdf
-.else
-CMAKE_ARGS+=	-DCDF_LIBRARY:STRING=""
-.endif
+HDF5_LIB_DEPENDS=	libhdf5.so:${PORTSDIR}/science/hdf5	
+HDF5_CMAKE_OFF=		-DHDF5_LIBRARY:STRING=""
 
-.if ${PORT_OPTIONS:MHDF5}
-LIB_DEPENDS+=	libhdf5.so:${PORTSDIR}/science/hdf5
-.else
-CMAKE_ARGS+=	-DHDF5_LIBRARY:STRING=""
-.endif
-
-.if ${PORT_OPTIONS:MNETCDF}
-LIB_DEPENDS+=	libnetcdf.so:${PORTSDIR}/science/netcdf
-.else
-CMAKE_ARGS+=	-DNETCDF_LIBRARY:STRING=""
-.endif
+NETCDF_LIB_DEPENDS=	libnetcdf.so:${PORTSDIR}/science/netcdf
+NETCDF_CMAKE_OFF=	-DNETCDF_LIBRARY:STRING=""
 
 post-patch:
 	@${REINPLACE_CMD} -e \

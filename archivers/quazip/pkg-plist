@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/quazip/JlCompress.h
 include/quazip/crypt.h
 include/quazip/ioapi.h

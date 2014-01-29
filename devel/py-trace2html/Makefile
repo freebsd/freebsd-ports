@@ -12,7 +12,7 @@ COMMENT=	HTML coverage report generator for trace.py
 
 LICENSE=	GPLv2
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 
 PLIST_FILES=	bin/trace2html.py \

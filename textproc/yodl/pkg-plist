@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/yodl
 bin/yodl2html
 bin/yodl2latex

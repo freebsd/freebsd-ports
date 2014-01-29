@@ -3,7 +3,7 @@
 
 PORTNAME=	awesome
 PORTVERSION=	3.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://awesome.naquadah.org/download/
@@ -19,9 +19,9 @@ BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto \
 		xcb-util>=0.3.8:${PORTSDIR}/x11/xcb-util \
 		xproto>=7.0.11:${PORTSDIR}/x11/xproto \
-		${LUA_MODLIBDIR}/lgi/corelgilua51.so:${PORTSDIR}/devel/lua-lgi \
+		${LUA_MODLIBDIR}/lgi/corelgilua${LUA_VER_STR}.so:${PORTSDIR}/devel/lua-lgi \
 		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml-450
-RUN_DEPENDS=	${LUA_MODLIBDIR}/lgi/corelgilua51.so:${PORTSDIR}/devel/lua-lgi
+RUN_DEPENDS=	${LUA_MODLIBDIR}/lgi/corelgilua${LUA_VER_STR}.so:${PORTSDIR}/devel/lua-lgi
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libev.so:${PORTSDIR}/devel/libev \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
@@ -34,11 +34,10 @@ LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 USE_XZ=		yes
-USES=		cmake iconv pkgconfig
+USES=		cmake iconv pkgconfig lua
 CMAKE_ARGS+=	-DSYSCONFDIR=${PREFIX}/etc
 USE_EFL=	imlib2
 USE_GNOME=	glib20 pango gdkpixbuf2
-USE_LUA=	5.1+
 USE_XORG=	pixman x11 xau xcb xdmcp xext xft xinerama xrandr xrender \
 		xproto
 LDFLAGS+=	${ICONV_LIB}
@@ -60,7 +59,10 @@ IGNORE=	cannot find dependency: The cairo exists but not with XCB support. Pleas
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "/LUA_EXECUTABLE lua/ s,lua,lua-${LUA_VER}," \
+	@${REINPLACE_CMD} -e "/LUA_EXECUTABLE lua/ s,lua,lua${LUA_VER_STR}," \
+		-e '/Lua51/d' \
+		-e 's/glib-2.0/lua-${LUA_VER} glib-2.0/g' \
+		-e '/LUA51_FOUND/,+2d' \
 		${WRKSRC}/awesomeConfig.cmake
 	@${REINPLACE_CMD} -e "s,^lua ,${LUA_CMD} ," \
 		${WRKSRC}/build-utils/lgi-check.sh

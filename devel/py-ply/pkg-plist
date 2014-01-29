@@ -1,18 +1,3 @@
-%%PYTHON_SITELIBDIR%%/ply/__init__.py
-%%PYTHON_SITELIBDIR%%/ply/__init__.pyc
-%%PYTHON_SITELIBDIR%%/ply/__init__.pyo
-%%PYTHON_SITELIBDIR%%/ply/cpp.py
-%%PYTHON_SITELIBDIR%%/ply/cpp.pyc
-%%PYTHON_SITELIBDIR%%/ply/cpp.pyo
-%%PYTHON_SITELIBDIR%%/ply/ctokens.py
-%%PYTHON_SITELIBDIR%%/ply/ctokens.pyc
-%%PYTHON_SITELIBDIR%%/ply/ctokens.pyo
-%%PYTHON_SITELIBDIR%%/ply/lex.py
-%%PYTHON_SITELIBDIR%%/ply/lex.pyc
-%%PYTHON_SITELIBDIR%%/ply/lex.pyo
-%%PYTHON_SITELIBDIR%%/ply/yacc.py
-%%PYTHON_SITELIBDIR%%/ply/yacc.pyc
-%%PYTHON_SITELIBDIR%%/ply/yacc.pyo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ansic/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ansic/clex.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ansic/cparse.py
@@ -65,4 +50,3 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calc
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ansic
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/ply

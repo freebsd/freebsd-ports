@@ -15,7 +15,6 @@
 %%CONTRIB%%%%EMACS_VERSION_SITE_LISPDIR%%/emacs-wiki/contrib/cgi.el
 %%CONTRIB%%%%EMACS_VERSION_SITE_LISPDIR%%/emacs-wiki/contrib/htmlize.el
 %%CONTRIB%%%%EMACS_VERSION_SITE_LISPDIR%%/emacs-wiki/contrib/httpd.el
-%%CONTRIB%%%%EMACS_VERSION_SITE_LISPDIR%%/emacs-wiki/contrib/pcomplete.el
 %%CONTRIB%%%%EMACS_VERSION_SITE_LISPDIR%%/emacs-wiki/contrib/table.el
 %%CONTRIB%%%%EMACS_VERSION_SITE_LISPDIR%%/emacs-wiki/contrib/update-remote.el
 %%CONTRIB%%@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/emacs-wiki/contrib

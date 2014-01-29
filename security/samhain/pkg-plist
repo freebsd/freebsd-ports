@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%YULE%%etc/yulerc.sample
 %%YULE%%sbin/yule_setpwd
 %%YULE%%sbin/yule

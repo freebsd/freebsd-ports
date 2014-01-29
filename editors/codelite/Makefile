@@ -2,37 +2,39 @@
 # $FreeBSD$
 
 PORTNAME=	codelite
-DISTVERSION=	5.2
+DISTVERSION=	5.4
 CATEGORIES=	editors devel
-MASTER_SITES=	SF/${PORTNAME}/Releases/${PORTNAME}-${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-gtk.src
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	An Open Source IDE for C/C++
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	xterm:${PORTSDIR}/x11/xterm
 
-OPTIONS_DEFINE=	CSCOPE CLANG
-
+OPTIONS_DEFINE=	CSCOPE CLANG NLS
 CSCOPE_DESC=	CScope integration
 CLANG_DESC=	Clang code-completion
+OPTIONS_SUB=	yes
 
-USE_WX=		2.9
+USE_GITHUB=	yes
+GH_ACCOUNT=	eranif
+GH_PROJECT=	${PORTNAME}
+GH_COMMIT=	41e98e5
+GH_TAGNAME=	5.4
+
+USE_WX=		3.0
 WX_UNICODE=	yes
-USE_DOS2UNIX=	*.cpp
-USES=		gettext cmake:outsource
-USE_LDCONFIG=	lib/codelite
+USES=		gettext cmake:outsource dos2unix shebangfix
+DOS2UNIX_GLOB=	*.cpp *.txt
+USE_LDCONFIG=	${PREFIX}/lib/codelite
+SHEBANG_FILES=	Runtime/clg++ Runtime/clgcc
+
+CXXFLAGS+=	-I${LOCALBASE}/include
 CMAKE_ARGS+=	-DIS_FREEBSD=1 \
 		-DPREFIX=${PREFIX}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-SVN_REVISION=	6213
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCSCOPE}
@@ -40,12 +42,10 @@ RUN_DEPENDS+=	cscope:${PORTSDIR}/devel/cscope
 .endif
 
 .if ${PORT_OPTIONS:MCLANG}
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libclang.so:${PORTSDIR}/lang/clang-devel
-RUN_DEPENDS+=	${LOCALBASE}/lib/libclang.so:${PORTSDIR}/lang/clang-devel
-PLIST_SUB+=	CLANG=""
+BUILD_DEPENDS+=	${LOCALBASE}/llvm-devel/lib/libclang.so:${PORTSDIR}/lang/clang-devel
+RUN_DEPENDS+=	${LOCALBASE}/llvm-devel/lib/libclang.so:${PORTSDIR}/lang/clang-devel
 CMAKE_ARGS+=	-DENABLE_CLANG=1
 .else
-PLIST_SUB+=	CLANG="@comment "
 CMAKE_ARGS+=	-DENABLE_CLANG=0
 .endif
 
@@ -54,9 +54,8 @@ post-patch:
 	${REINPLACE_CMD} -e \
 	    's|wx-config|${WX_CONFIG}|; \
 	     s|%%LOCALBASE%%|${LOCALBASE}|g; \
+	     s|%%PREFIX%%|${PREFIX}|g; \
 	     /IS_FREEBSD/s|0|1|' \
 	    ${WRKSRC}/CMakeLists.txt
-	${REINPLACE_CMD} -e 's|$${cur_rev}|${SVN_REVISION}|' \
-	    ${WRKSRC}/le_makerevision.sh
 
 .include <bsd.port.mk>

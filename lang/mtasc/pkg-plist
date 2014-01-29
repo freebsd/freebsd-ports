@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/mtasc
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
 %%PORTDOCS%%%%DOCSDIR%%/Future.txt

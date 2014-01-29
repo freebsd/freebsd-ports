@@ -15,21 +15,18 @@ LICENSE_FILE=	${WRKSRC}/../COPYING
 
 USE_XORG=	xpm
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
-PLIST_FILES=	bin/wmCalClock
+PLIST_FILES=	bin/wmCalClock man/man1/${PORTNAME}.1.gz
 PORTDOCS=	BUGS CHANGES HINTS INSTALL README TODO
-
-MAN1=		wmCalClock.1
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKDIR}/${DISTNAME} && \
-		${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+		${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

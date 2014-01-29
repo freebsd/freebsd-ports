@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/libspectrum.h
 lib/libspectrum.a
 lib/libspectrum.la

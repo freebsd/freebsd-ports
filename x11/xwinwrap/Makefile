@@ -18,7 +18,6 @@ USE_XORG=	x11 xproto xrender xext
 PLIST_FILES=	bin/${PORTNAME}
 MAKE_ARGS+=	PREFIX=${PREFIX}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

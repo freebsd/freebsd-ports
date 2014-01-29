@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/compiz/compiz-elements.h
 lib/compiz/libatlantis.so
 lib/compiz/libatlantis.la

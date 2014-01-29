@@ -13,10 +13,9 @@ COMMENT=	Wallpaper manipulation utility for X11
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_EFL=	imlib2
 
 PLIST_FILES=	bin/hsetroot
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

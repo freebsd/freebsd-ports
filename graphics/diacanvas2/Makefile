@@ -13,7 +13,7 @@ COMMENT=	General drawing canvas from dia dialog editor
 
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	pygnome2
-USE_PYTHON=	2.2+
+USE_PYTHON=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -26,7 +26,6 @@ OPTIONS_DEFINE=	PRINT
 OPTIONS_DEFAULT=PRINT
 PRINT_DESC=	GNOME print support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPRINT}

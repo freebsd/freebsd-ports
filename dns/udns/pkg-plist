@@ -1,6 +1,9 @@
+bin/dnsget
+bin/rblcheck
 include/udns.h
 lib/libudns.a
 lib/libudns.so
 lib/libudns.so.0
-bin/dnsget
-bin/rblcheck
+man/man1/dnsget.1.gz
+man/man1/rblcheck.1.gz
+man/man3/udns.3.gz

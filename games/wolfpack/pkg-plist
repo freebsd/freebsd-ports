@@ -7,6 +7,13 @@ lib/wolfpack/empsched
 lib/wolfpack/pconfig
 lib/wolfpack/files
 lib/wolfpack/fairland
+man/man6/empire.6.gz
+man/man6/emp_server.6.gz
+man/man6/empdump.6.gz
+man/man6/empsched.6.gz
+man/man6/fairland.6.gz
+man/man6/files.6.gz
+man/man6/pconfig.6.gz
 %%DATADIR%%/README
 %%DATADIR%%/builtin/infra.config
 %%DATADIR%%/builtin/item.config
@@ -304,3 +311,4 @@ etc/wolfpack/econfig.orig
 @dirrm lib/wolfpack
 @dirrmtry etc/wolfpack
 @dirrmtry var/wolfpack
+@dirrmtry var

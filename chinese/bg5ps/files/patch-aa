@@ -1,11 +1,14 @@
 
 $FreeBSD$
 
---- Makefile.orig	Mon Feb 14 22:41:27 2000
-+++ Makefile	Thu Mar 14 09:33:24 2002
-@@ -19,21 +19,22 @@
+--- Makefile.orig	2000-02-14 21:41:27.000000000 +0100
++++ Makefile	2014-01-25 19:07:23.000000000 +0100
+@@ -17,23 +17,24 @@
  
- CC = gcc
+ OBJS = ttf2psm.o b5tou8.o b5_in.o gb_in.o gbtou8.o
+ 
+-CC = gcc
++CC ?= gcc
  INSTALL = install
 -CFLAGS =
 +CFLAGS += -I${LOCALBASE}/include/freetype1 -I${LOCALBASE}/include

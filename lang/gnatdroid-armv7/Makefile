@@ -3,15 +3,12 @@
 
 PORTNAME=	armv7
 PORTVERSION=	${SNAPSHOT}
-PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/gcc-${GCC_VERSION}
 PKGNAMEPREFIX=	gnatdroid-
 DISTNAME=	arm-gnat-${PORTVERSION}
-DISTFILES=	gcc-core-${GCC_VERSION}.tar.bz2 \
-		gcc-ada-${GCC_VERSION}.tar.bz2 \
-		gcc-testsuite-${GCC_VERSION}.tar.bz2
+DISTFILES=	gcc-${GCC_VERSION}.tar.bz2
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	C/Ada cross-compiler, target: Android ARMv7
@@ -19,18 +16,22 @@ COMMENT=	C/Ada cross-compiler, target: Android ARMv7
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	gnatdroid-sysroot>=9:${PORTSDIR}/lang/gnatdroid-sysroot \
-		gnatdroid-binutils>=2.21:${PORTSDIR}/lang/gnatdroid-binutils \
-		gnat-aux>=20110325:${PORTSDIR}/lang/gnat-aux
-RUN_DEPENDS:=	gnatdroid-sysroot>=9:${PORTSDIR}/lang/gnatdroid-sysroot \
 		gnatdroid-binutils>=2.21:${PORTSDIR}/lang/gnatdroid-binutils
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 NO_LICENSES_INSTALL= yes
 
-.include "${.CURDIR}/../gnat-aux/Makefile.common"
+.include "${.CURDIR}/../gcc-aux/Makefile.common"
 
+# DELETE NEXT LINE AFTER NEXT UPDATE TO GCC-AUX 4.7 TO AVOID PORTEPOCH
+# Without it, this port version regresses by a day
+SNAPSHOT:=	20130413 	# last portversion + 1
+
+USES+=		ada gmake
 LANGS=		c ada
 APPLY_DIFFS=	core ada ada-testsuite gcc-testsuite
 NO_MTREE=	YES
+DISTINFO_FILE=	${.CURDIR}/../gcc-aux/distinfo
 
 # Disable C++ until arm.cc/no-rtti issue resolved for libsupc++
 
@@ -47,12 +48,11 @@ ARMVERSION=		ARMv7
 FPU=			neon
 WRKSRC=			${WRKDIR}/gcc-${GCC_VERSION}
 BUILD_WRKSRC=		${WRKDIR}/build
-PATCHDIR=		${.CURDIR}/../gnat-aux/files
+PATCHDIR=		${.CURDIR}/../gcc-aux/files
 CFG_SCRIPT=		${WRKSRC}/configure
 REVFILE=		${WRKSRC}/gcc/REVISION
 SRPREFIX=		${LOCALBASE}/android9
 PREFIX=			${SRPREFIX}/${ARMVERSION}
-FULL_GNATGCC=		${LOCALBASE}/bin/gnatgcc
 INSTALLDIRS=		lib libexec share
 INSTALLDIRS+=		${DROID_TARGET}/lib
 PLIST_SUB+=		TARGET="${DROID_TARGET}"
@@ -60,7 +60,6 @@ PLIST_SUB+=		GCCVERS="${GCC_VERSION}"
 SUB_FILES=		pkg-message
 SUB_LIST=		TARGET="${DROID_TARGET}"
 
-ADA_CONFIGURE_ENV=	CC=${FULL_GNATGCC}
 ALL_TARGET=		all
 
 .include <bsd.port.pre.mk>
@@ -78,7 +77,6 @@ OS_LABEL4VERS=	"[${OPSYS}32 x Android ${ARMVERSION}]"
 .if ${PORT_OPTIONS:MCXX}
 LANGS+=		c++
 APPLY_DIFFS+=	cxx cxx-testsuite
-DISTFILES+=	gcc-g++-${GCC_VERSION}.tar.bz2
 INSTALLDIRS+=	include/c++/${GCC_VERSION}
 .endif
 
@@ -89,7 +87,6 @@ INSTALLDIRS+=	include/c++/${GCC_VERSION}
 .if ${PORT_OPTIONS:MFORT}
 LANGS+=		fortran
 APPLY_DIFFS+=	fortran
-DISTFILES+=	gcc-fortran-${GCC_VERSION}.tar.bz2
 .endif
 
 ###################
@@ -98,7 +95,6 @@ DISTFILES+=	gcc-fortran-${GCC_VERSION}.tar.bz2
 
 .if ${PORT_OPTIONS:MOBJC}
 LANGS+=		objc
-DISTFILES+=	gcc-objc-${GCC_VERSION}.tar.bz2
 .endif
 
 CONFIGURE_ARGS=		--enable-languages=${LANGS:Q}
@@ -144,7 +140,7 @@ post-extract:
 
 do-configure:
 	${MKDIR} ${BUILD_WRKSRC}
-	cd ${BUILD_WRKSRC} && ${SETENV} ${ADA_CONFIGURE_ENV} \
+	cd ${BUILD_WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
 	${CFG_SCRIPT} ${CONFIGURE_ARGS}
 
 pre-install:

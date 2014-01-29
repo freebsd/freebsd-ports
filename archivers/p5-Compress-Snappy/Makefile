@@ -3,6 +3,7 @@
 
 PORTNAME=	Compress-Snappy
 PORTVERSION=	0.22
+PORTREVISION=	1
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,8 +13,6 @@ COMMENT=	Perl interface to Google Snappy (de)compressor
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-
-LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
 
 USE_PERL5=	configure
 USES=		perl5

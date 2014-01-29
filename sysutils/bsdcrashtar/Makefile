@@ -13,6 +13,7 @@ COMMENT=	Archive FreeBSD kernel crash files
 PLIST_FILES=	sbin/bsdcrashtar \
 		man/man8/bsdcrashtar.8.gz
 
+USES=		uidfix
 MAKE_ENV+=	NO_OBJ=yes
 
 .include <bsd.port.mk>

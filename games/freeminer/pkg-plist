@@ -5,3 +5,9 @@ etc/freeminer.conf.example
 @exec if [ ! -f %B/freeminer.conf ]; then cp -p %D/%F %B/freeminer.conf; fi
 man/man6/freeminer.6.gz
 man/man6/freeminerserver.6.gz
+share/applications/freeminer.desktop
+share/icons/hicolor/scalable/apps/freeminer.svg
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons

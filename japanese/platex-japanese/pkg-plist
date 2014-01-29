@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PORTDOCS%%share/texmf/doc/generic/babel/japanese/README
 %%PORTDOCS%%share/texmf/doc/generic/babel/japanese/sample.pdf
 %%PORTDOCS%%share/texmf/doc/generic/babel/japanese/sample.tex

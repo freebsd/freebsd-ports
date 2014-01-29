@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/lcfg
 include/lcfg/lcfg.h
 include/lcfgx/lcfgx_tree.h

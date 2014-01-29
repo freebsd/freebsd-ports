@@ -1202,7 +1202,6 @@
 %%T%%/jre/lib/zi/Africa/Gaborone
 %%T%%/jre/lib/zi/Africa/Harare
 %%T%%/jre/lib/zi/Africa/Johannesburg
-%%T%%/jre/lib/zi/Africa/Juba
 %%T%%/jre/lib/zi/Africa/Kampala
 %%T%%/jre/lib/zi/Africa/Khartoum
 %%T%%/jre/lib/zi/Africa/Kigali
@@ -1231,7 +1230,6 @@
 %%T%%/jre/lib/zi/Africa/Windhoek
 %%T%%/jre/lib/zi/America/Adak
 %%T%%/jre/lib/zi/America/Anchorage
-%%T%%/jre/lib/zi/America/Anguilla
 %%T%%/jre/lib/zi/America/Antigua
 %%T%%/jre/lib/zi/America/Araguaina
 %%T%%/jre/lib/zi/America/Argentina/Buenos_Aires
@@ -1246,7 +1244,6 @@
 %%T%%/jre/lib/zi/America/Argentina/San_Luis
 %%T%%/jre/lib/zi/America/Argentina/Tucuman
 %%T%%/jre/lib/zi/America/Argentina/Ushuaia
-%%T%%/jre/lib/zi/America/Aruba
 %%T%%/jre/lib/zi/America/Asuncion
 %%T%%/jre/lib/zi/America/Atikokan
 %%T%%/jre/lib/zi/America/Bahia
@@ -1275,7 +1272,6 @@
 %%T%%/jre/lib/zi/America/Dawson_Creek
 %%T%%/jre/lib/zi/America/Denver
 %%T%%/jre/lib/zi/America/Detroit
-%%T%%/jre/lib/zi/America/Dominica
 %%T%%/jre/lib/zi/America/Edmonton
 %%T%%/jre/lib/zi/America/Eirunepe
 %%T%%/jre/lib/zi/America/El_Salvador
@@ -1284,8 +1280,6 @@
 %%T%%/jre/lib/zi/America/Godthab
 %%T%%/jre/lib/zi/America/Goose_Bay
 %%T%%/jre/lib/zi/America/Grand_Turk
-%%T%%/jre/lib/zi/America/Grenada
-%%T%%/jre/lib/zi/America/Guadeloupe
 %%T%%/jre/lib/zi/America/Guatemala
 %%T%%/jre/lib/zi/America/Guayaquil
 %%T%%/jre/lib/zi/America/Guyana
@@ -1324,7 +1318,6 @@
 %%T%%/jre/lib/zi/America/Monterrey
 %%T%%/jre/lib/zi/America/Montevideo
 %%T%%/jre/lib/zi/America/Montreal
-%%T%%/jre/lib/zi/America/Montserrat
 %%T%%/jre/lib/zi/America/Nassau
 %%T%%/jre/lib/zi/America/New_York
 %%T%%/jre/lib/zi/America/Nipigon
@@ -1356,17 +1349,12 @@
 %%T%%/jre/lib/zi/America/Scoresbysund
 %%T%%/jre/lib/zi/America/Sitka
 %%T%%/jre/lib/zi/America/St_Johns
-%%T%%/jre/lib/zi/America/St_Kitts
-%%T%%/jre/lib/zi/America/St_Lucia
-%%T%%/jre/lib/zi/America/St_Thomas
-%%T%%/jre/lib/zi/America/St_Vincent
 %%T%%/jre/lib/zi/America/Swift_Current
 %%T%%/jre/lib/zi/America/Tegucigalpa
 %%T%%/jre/lib/zi/America/Thule
 %%T%%/jre/lib/zi/America/Thunder_Bay
 %%T%%/jre/lib/zi/America/Tijuana
 %%T%%/jre/lib/zi/America/Toronto
-%%T%%/jre/lib/zi/America/Tortola
 %%T%%/jre/lib/zi/America/Vancouver
 %%T%%/jre/lib/zi/America/Whitehorse
 %%T%%/jre/lib/zi/America/Winnipeg
@@ -1377,7 +1365,6 @@
 %%T%%/jre/lib/zi/Antarctica/DumontDUrville
 %%T%%/jre/lib/zi/Antarctica/Macquarie
 %%T%%/jre/lib/zi/Antarctica/Mawson
-%%T%%/jre/lib/zi/Antarctica/McMurdo
 %%T%%/jre/lib/zi/Antarctica/Palmer
 %%T%%/jre/lib/zi/Antarctica/Rothera
 %%T%%/jre/lib/zi/Antarctica/Syowa
@@ -1556,7 +1543,6 @@
 %%T%%/jre/lib/zi/Europe/Tallinn
 %%T%%/jre/lib/zi/Europe/Tirane
 %%T%%/jre/lib/zi/Europe/Uzhgorod
-%%T%%/jre/lib/zi/Europe/Vaduz
 %%T%%/jre/lib/zi/Europe/Vienna
 %%T%%/jre/lib/zi/Europe/Vilnius
 %%T%%/jre/lib/zi/Europe/Volgograd
@@ -1595,7 +1581,6 @@
 %%T%%/jre/lib/zi/Pacific/Guadalcanal
 %%T%%/jre/lib/zi/Pacific/Guam
 %%T%%/jre/lib/zi/Pacific/Honolulu
-%%T%%/jre/lib/zi/Pacific/Johnston
 %%T%%/jre/lib/zi/Pacific/Kiritimati
 %%T%%/jre/lib/zi/Pacific/Kosrae
 %%T%%/jre/lib/zi/Pacific/Kwajalein
@@ -2496,6 +2481,7 @@
 %%T%%/man/ja_JP.UTF-8/man1/jhat.1
 %%T%%/man/ja_JP.UTF-8/man1/jinfo.1
 %%T%%/man/ja_JP.UTF-8/man1/jmap.1
+%%T%%/man/ja_JP.UTF-8/man1/jmc.1
 %%T%%/man/ja_JP.UTF-8/man1/jps.1
 %%T%%/man/ja_JP.UTF-8/man1/jrunscript.1
 %%T%%/man/ja_JP.UTF-8/man1/jsadebugd.1
@@ -2538,6 +2524,7 @@
 %%T%%/man/man1/jhat.1
 %%T%%/man/man1/jinfo.1
 %%T%%/man/man1/jmap.1
+%%T%%/man/man1/jmc.1
 %%T%%/man/man1/jps.1
 %%T%%/man/man1/jrunscript.1
 %%T%%/man/man1/jsadebugd.1

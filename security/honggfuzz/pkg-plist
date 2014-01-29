@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/honggfuzz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/externalfuzzers/lowBytesIncrease.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/externalfuzzers/o20.sh

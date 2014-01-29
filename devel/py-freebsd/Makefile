@@ -14,16 +14,10 @@ DISTNAME=	py-freebsd-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Python interface to FreeBSD-specific system libraries
 
-USE_PYTHON=	2.5-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	py-freebsd
+PYDISTUTILS_AUTOPLIST=	yes
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/freebsd.so \
-		%%PYTHON_SITELIBDIR%%/freebsd_compat02.py \
-		%%PYTHON_SITELIBDIR%%/freebsd_compat02.pyc \
-		%%PYTHON_SITELIBDIR%%/freebsd_compat02.pyo
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Multi-IPv4/v6/no-IP jails.

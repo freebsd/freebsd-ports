@@ -3,6 +3,7 @@
 
 PORTNAME=	edje
 PORTVERSION=	1.7.9
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
@@ -11,21 +12,21 @@ MASTER_SITES=	http://download.enlightenment.org/releases/ \
 MAINTAINER=	gblach@FreeBSD.org
 COMMENT=	Edje is a complex graphical design and layout engine
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		pathfix pkgconfig shared-mime-info
+USES=		pathfix pkgconfig shared-mime-info lua
 USE_EFL=	eina eet evas ecore eio embryo libtool_hack librt_hack
 USE_EFL_EVAS_LOADERS=	eet jpeg png
 USE_EFL_ECORE=	evas file imf imf_evas
-USE_LUA=	5.1+
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=	--without-vim
 
 post-patch:
+	@${REINPLACE_CMD} -e "s/lua >=/lua-${LUA_VER} >=/g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -E -e "/^SUBDIRS[[:space:]]+=/s/utils//" \
 	    ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|= \$$(datadir)/\$$(PACKAGE)/examples|= $$(datadir)/examples/$$(PACKAGE)|' \

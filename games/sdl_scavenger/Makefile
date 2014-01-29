@@ -1,49 +1,44 @@
+# Created by: Rusmir Dusko <nemysis@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	sdl_scavenger
-PORTVERSION=	145.1.2010.11.5
-PORTREVISION=	2
+PORTVERSION=	145.2014.01.01
+PORTEPOCH=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/sdlscavenger/
-DISTNAME=	sdlscav-145.1_2010_11_5
+DISTNAME=	sdlscav-145_2014_01_01
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Lode Runner like game
 
-LICENSE=	GPLv2
+LICENSE=	GPLv1
 
 WRKSRC=		${WRKDIR}/sdlscav-145
 
-USE_ZIP=	yes
+USES=		gmake
 USE_SDL=	sdl image mixer
-USE_GMAKE=	yes
+USE_GCC=	yes
 ALL_TARGET=
 
-PLIST_FILES=	bin/sdlscavenger \
-		share/pixmaps/sdlscavenger.png
-
-PORTDATA=	*
 PORTDOCS=	CREDITS DOC NEW_FEATURES README STRATEGY
 
-DESKTOP_ENTRIES="SDL Scavenger" "${COMMENT}" "sdlscavenger" \
-		"sdlscavenger" "Game;ArcadeGame;" ${FALSE}
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+DESKTOP_ENTRIES="SDL Scavenger" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;LogicGame;" ""
 
 post-patch:
-		@${REINPLACE_CMD} -e 's|data:/usr/local/games/scavenger|data:${DATADIR}/data|' \
-			${WRKSRC}/names.h
+	@${REINPLACE_CMD} -e 's|/usr/local/games/scavenger|${DATADIR}/data|' \
+		${WRKSRC}/names.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sdlscav ${PREFIX}/bin/sdlscavenger
-	${MKDIR} ${DATADIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${DATADIR})
-	${INSTALL_DATA} ${WRKSRC}/data/scav.png ${PREFIX}/share/pixmaps/sdlscavenger.png
+	${INSTALL_PROGRAM} ${WRKSRC}/sdlscav ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR})
+	${LN} -sf ${DATADIR}/data/scav.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

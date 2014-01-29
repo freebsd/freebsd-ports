@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	wine
-DISTVERSION=	1.6.1
-PORTREVISION=	1
+DISTVERSION=	1.6.2
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libfreetype.so:${PORTSDIR}/print/freetype2 \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
-		liblcms.so:${PORTSDIR}/graphics/lcms \
+		liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libpng15.so:${PORTSDIR}/graphics/png \
 		libxml2.so:${PORTSDIR}/textproc/libxml2
 

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/vbnc
 bin/vbnc2
 lib/mono/2.0/Microsoft.VisualBasic.dll

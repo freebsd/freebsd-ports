@@ -209,6 +209,7 @@ bin/opensonic
 %%DATADIR%%/themes/template.brk
 %%DATADIR%%/themes/template.grp
 %%DATADIR%%/themes/tutorial.bg
+share/pixmaps/opensonic.png
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/sprites
 @dirrm %%DATADIR%%/screenshots

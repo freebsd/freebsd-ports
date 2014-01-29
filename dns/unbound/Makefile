@@ -118,7 +118,6 @@ post-patch:
 	@${RM} ${WRKSRC}/util/configlexer.c
 
 post-install:
-	@${CHOWN} ${USERS} ${ETCDIR}
 .if ${PORT_OPTIONS:MMUNIN}
 	@${MKDIR} ${PREFIX}/share/munin/plugins
 	@${MKDIR} ${PREFIX}/etc/munin/plugins

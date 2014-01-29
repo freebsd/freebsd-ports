@@ -5,10 +5,10 @@ PKGNAMESUFFIX=	-rdp
 
 COMMENT=	Remmina plugin for RDP protocol
 
-BUILD_DEPENDS=	freerdp>=1.0.0:${PORTSDIR}/net/freerdp
-RUN_DEPENDS=	${BUILD_DEPENDS}
+LIB_DEPENDS=	libfreerdp-core.so:${PORTSDIR}/net/freerdp
 
 MASTERDIR=	${.CURDIR}/../remmina-plugins
 
-NO_STAGE=	yes
+PLIST_SUB+=	ICONS="" SSH=""
+
 .include "${MASTERDIR}/Makefile"

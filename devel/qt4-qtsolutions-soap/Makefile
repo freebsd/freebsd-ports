@@ -3,10 +3,9 @@
 
 MASTERDIR=	${.CURDIR}/../qt4-qtsolutions-singleapplication
 
-USE_QT4=	qmake_build moc_build rcc_build uic_build network xml gui
-
-NO_STAGE=	yes
 .include	"${MASTERDIR}/Makefile"
+
+USE_QT4=	qmake_build moc_build rcc_build uic_build network xml gui
 
 PORTNAME=	qt4-qtsolutions-soap
 

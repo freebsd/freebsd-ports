@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/nwcc
 bin/nwcc1
 lib/libnwcc.o

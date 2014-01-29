@@ -9,37 +9,44 @@ MASTER_SITES=	http://files.jabber.ru/tkabber/
 MAINTAINER=	c.kworr@gmail.com
 COMMENT=	Tcl/Tk based jabber client
 
-RUN_DEPENDS=	wish8.5:${PORTSDIR}/x11-toolkits/tk85 \
-		dtplite:${PORTSDIR}/devel/tcllib \
+RUN_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib \
 		${LOCALBASE}/lib/tls/pkgIndex.tcl:${PORTSDIR}/devel/tcltls \
 		${LOCALBASE}/lib/bwidget/pkgIndex.tcl:${PORTSDIR}/x11-toolkits/bwidget
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 CONFLICTS=	tkabber-devel-*
 
+USES=		tk:85
 WRKSRC=		${WRKDIR}/${DISTNAME}
 NO_BUILD=	yes
 
 SUBDIRS=	contrib doc emoticons examples ifacetk jabberlib mclistbox \
 		msgs pixmaps plugins sounds tclxml trans
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%WISH%%|${WISH}|g' \
+	    ${WRKSRC}/Makefile ${WRKSRC}/tkabber.tcl
+
 do-install:
-	${ECHO} -e "#!/bin/sh\nexec wish8.5 ${DATADIR}/tkabber.tcl \
-		-name tkabber \"\$$@\"\n" > ${PREFIX}/bin/tkabber
-	${CHMOD} +x ${PREFIX}/bin/tkabber
-	${MKDIR} ${DATADIR}
-	${CP} ${WRKSRC}/*.tcl ${DATADIR}
+	${ECHO} -e "#!/bin/sh\nexec ${WISH} ${DATADIR}/tkabber.tcl \
+		-name tkabber \"\$$@\"\n" > ${STAGEDIR}${PREFIX}/bin/tkabber
+	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/tkabber
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} ${WRKSRC}/*.tcl ${STAGEDIR}${DATADIR}
 .for i in ${SUBDIRS}
-	${CP} -R ${WRKSRC}/${i} ${DATADIR}
+	${CP} -R ${WRKSRC}/${i} ${STAGEDIR}${DATADIR}
 .endfor
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${CP} -R ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in tkabber.html tkabber.xml
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

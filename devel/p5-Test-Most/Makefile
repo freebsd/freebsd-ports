@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Test-Most
-PORTVERSION=	0.31
+PORTVERSION=	0.33
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,8 +20,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Test::Most.3 \
-	Test::Most::Exception.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

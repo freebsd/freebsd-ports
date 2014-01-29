@@ -48,4 +48,4 @@ bin/tkxmlive
 @dirrm %%DATADIR%%/library
 @dirrm %%DATADIR%%/sample/article
 @dirrm %%DATADIR%%/sample
-@dirrm %%DATADIR%%/
+@dirrm %%DATADIR%%

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/sieve-test
 bin/sievec
 bin/sieved

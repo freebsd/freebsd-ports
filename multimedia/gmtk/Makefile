@@ -13,19 +13,17 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_XORG=	x11
-USES=		pathfix pkgconfig perl5
+USES=		pathfix pkgconfig perl5 gmake
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README
 
 OPTIONS_DEFINE=	ALSA DOCS GCONF GIO GTK3 NLS PULSEAUDIO
 GIO_DESC=	Use GIO for file I/O
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MALSA}

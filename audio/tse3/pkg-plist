@@ -1,4 +1,3 @@
-@comment $FreeBSD: /tmp/pcvs/ports/audio/tse3/pkg-plist,v 1.6 2006-02-23 10:34:43 ade Exp $
 bin/tse3play
 include/tse3/DisplayParams.h
 include/tse3/Error.h
@@ -109,6 +108,8 @@ lib/libtse3.a
 lib/libtse3.la
 lib/libtse3.so
 lib/libtse3.so.0
+man/man1/tse3play.1.gz
+man/man3/tse3.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/About.html
 %%PORTDOCS%%%%DOCSDIR%%/Article.html
 %%PORTDOCS%%%%DOCSDIR%%/Bugs.html

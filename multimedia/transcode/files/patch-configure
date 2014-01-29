@@ -1,5 +1,14 @@
---- configure.orig	2011-11-19 11:50:37.000000000 -0500
-+++ configure	2011-12-11 13:11:48.000000000 -0500
+--- configure.orig	2011-11-19 17:50:37.000000000 +0100
++++ configure	2014-01-17 22:18:16.637476520 +0100
+@@ -5073,7 +5073,7 @@
+   ;;
+ esac
+ fi
+-PATH_TO_AWK=$ac_cv_path_PATH_TO_AWK
++PATH_TO_AWK=$ac_cv_prog_AWK
+ if test -n "$PATH_TO_AWK"; then
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: $PATH_TO_AWK" >&5
+ $as_echo "$PATH_TO_AWK" >&6; }
 @@ -26196,7 +26196,7 @@
    for l in $a52_ll ; do
      case $l in

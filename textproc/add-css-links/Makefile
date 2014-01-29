@@ -11,11 +11,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add one or more CSS <link> elements to an XHTML document
 
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/xhtml
 
-NO_STAGE=	yes
+PLIST_FILES=	share/xsl/xhtml/add-css-links.xsl
+PLIST_DIRSTRY=	share/xsl/xhtml share/xsl
+
 do-install:
-	@${ECHO} "Installing in ${PREFIX}/share/xsl/xhtml/"
-	@${MKDIR} ${PREFIX}/share/xsl/xhtml
-	@${CP} ${WRKDIR}/xhtml/*.xsl ${PREFIX}/share/xsl/xhtml/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/xsl/xhtml
+	${CP} ${WRKSRC}/*.xsl ${STAGEDIR}${PREFIX}/share/xsl/xhtml/
 
 .include <bsd.port.mk>

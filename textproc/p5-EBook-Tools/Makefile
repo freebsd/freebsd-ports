@@ -3,13 +3,15 @@
 
 PORTNAME=	EBook-Tools
 PORTVERSION=	0.4.9
+DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	simond@irrelevant.org
 COMMENT=	Object class for manipulating and generating E-books
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-Archive-Zip>=0:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-Data-UUID>=0:${PORTSDIR}/devel/p5-Data-UUID \
@@ -33,15 +35,4 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/tidy4:${PORTSDIR}/www/tidy
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN1=	ebook.1
-MAN3=		EBook::Tools.3 \
-		EBook::Tools::EReader.3 \
-		EBook::Tools::IMP.3 \
-		EBook::Tools::LZSS.3 \
-		EBook::Tools::MSReader.3 \
-		EBook::Tools::Mobipocket.3 \
-		EBook::Tools::PalmDoc.3 \
-		EBook::Tools::Unpack.3 \
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

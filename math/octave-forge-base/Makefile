@@ -12,6 +12,8 @@ EXTRACT_ONLY=	#none
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge baseport for all packages
 
+LICENSE=	BSD2CLAUSE
+
 RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave \
 		gmake:${PORTSDIR}/devel/gmake \
 		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
@@ -22,13 +24,12 @@ USES=		perl5
 SUB_FILES=	load-octave-pkg
 SUB_LIST+=	PERL=${PERL}
 
-NO_STAGE=	yes
 do-build:
 	@${DO_NADA}
 
 do-install:
-	${MKDIR} ${PREFIX}/share/octave/tarballs
-	${INSTALL_SCRIPT} ${WRKDIR}/load-octave-pkg ${PREFIX}/libexec/octave
-	${PREFIX}/libexec/octave/load-octave-pkg
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/octave/tarballs
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/octave
+	${INSTALL_SCRIPT} ${WRKDIR}/load-octave-pkg ${STAGEDIR}${PREFIX}/libexec/octave/.
 
 .include <bsd.port.mk>

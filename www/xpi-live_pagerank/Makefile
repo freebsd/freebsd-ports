@@ -15,6 +15,5 @@ XPI_FILES=	chrome.manifest chrome/livepr.jar \
 		install.rdf
 XPI_DIRS=	chrome
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

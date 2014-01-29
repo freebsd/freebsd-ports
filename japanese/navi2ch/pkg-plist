@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons/plugged.xpm
 %%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons/unplugged.xpm
 @dirrm %%EMACS_LIBDIR_WITH_VER%%/etc/navi2ch/icons

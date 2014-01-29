@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/lastfm/AbstractType.h
 include/lastfm/Album.h
 include/lastfm/Artist.h

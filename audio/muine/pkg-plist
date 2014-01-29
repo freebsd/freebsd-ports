@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/muine
 share/doc/muine/muine-docs.zip
 share/doc/muine/muine-docs.tree

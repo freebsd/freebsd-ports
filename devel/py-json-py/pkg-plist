@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/json.py
 %%PYTHON_SITELIBDIR%%/json.pyc
 %%PYTHON_SITELIBDIR%%/jsontest.py

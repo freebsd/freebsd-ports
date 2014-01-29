@@ -1,3 +1,6 @@
+%%PERL5_MAN3%%/Solr.3.gz
+%%PERL5_MAN3%%/Solr::HTTPUpdateHandler.3.gz
+%%PERL5_MAN3%%/Solr::Schema.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Solr/.packlist
 %%SITE_PERL%%/Solr.pm
 %%SITE_PERL%%/Solr/HTTPUpdateHandler.pm

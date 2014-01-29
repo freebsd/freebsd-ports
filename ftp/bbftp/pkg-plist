@@ -1,2 +1,4 @@
 bin/bbftp
 bin/bbftpd
+man/man1/bbftp.1.gz
+man/man1/bbftpd.1.gz

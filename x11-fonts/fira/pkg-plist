@@ -1,0 +1,29 @@
+%%FONTDIR%%/FiraMono-Bold.ttf
+%%FONTDIR%%/FiraMono-Regular.ttf
+%%FONTDIR%%/FiraMonoOT-Bold.otf
+%%FONTDIR%%/FiraMonoOT-Regular.otf
+%%FONTDIR%%/FiraSans-Bold.ttf
+%%FONTDIR%%/FiraSans-BoldItalic.ttf
+%%FONTDIR%%/FiraSans-Light.ttf
+%%FONTDIR%%/FiraSans-LightItalic.ttf
+%%FONTDIR%%/FiraSans-Medium.ttf
+%%FONTDIR%%/FiraSans-MediumItalic.ttf
+%%FONTDIR%%/FiraSans-Regular.ttf
+%%FONTDIR%%/FiraSans-RegularItalic.ttf
+%%FONTDIR%%/FiraSansOT-Bold.otf
+%%FONTDIR%%/FiraSansOT-BoldItalic.otf
+%%FONTDIR%%/FiraSansOT-Light.otf
+%%FONTDIR%%/FiraSansOT-LightItalic.otf
+%%FONTDIR%%/FiraSansOT-Medium.otf
+%%FONTDIR%%/FiraSansOT-MediumItalic.otf
+%%FONTDIR%%/FiraSansOT-Regular.otf
+%%FONTDIR%%/FiraSansOT-RegularItalic.otf
+@exec fc-cache -s -v %D/%%FONTDIR%% 2>/dev/null || true
+@exec mkfontscale %D/%%FONTDIR%% 2>/dev/null || true
+@unexec mkfontscale %D/%%FONTDIR%% 2>/dev/null || true
+@unexec if [ -e %D/%%FONTDIR%%/fonts.scale -a "`stat -f '%%z' %D/%%FONTDIR%%/fonts.scale 2>/dev/null`" = '2' ]; then rm %D/%%FONTDIR%%/fonts.scale; fi
+@exec mkfontdir %D/%%FONTDIR%% 2>/dev/null || true
+@unexec mkfontdir %D/%%FONTDIR%% 2>/dev/null || true
+@unexec if [ -e %D/%%FONTDIR%%/fonts.dir -a "`stat -f '%%z' %D/%%FONTDIR%%/fonts.dir 2>/dev/null`" = '2' ]; then rm %D/%%FONTDIR%%/fonts.dir; fi
+@dirrm %%FONTDIR%%
+@unexec fc-cache -s -v %D/%%FONTDIR%% 2>/dev/null || true

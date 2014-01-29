@@ -3,6 +3,7 @@
 
 PORTNAME=	slumber
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,7 +12,7 @@ COMMENT=	Python library that makes consuming a RESTful API easier
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests1>0:${PORTSDIR}/www/py-requests1
 
 OPTIONS_DEFINE=		YAML
 YAML_DESC=		Enable YAML serializer support

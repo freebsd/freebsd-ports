@@ -69,7 +69,6 @@ bin/tide_float.pl
 %%PERL5_MAN3%%/Algorithm::Evolutionary::Op::Storing.3.gz
 %%PERL5_MAN3%%/Algorithm::Evolutionary::Op::StringRand.3.gz
 %%PERL5_MAN3%%/Algorithm::Evolutionary::Op::String_Mutation.3.gz
-%%PERL5_MAN3%%/Algorithm::Evolutionary::Op::TournamentSelect.3.gz
 %%PERL5_MAN3%%/Algorithm::Evolutionary::Op::Tournament_Selection.3.gz
 %%PERL5_MAN3%%/Algorithm::Evolutionary::Op::TreeMutation.3.gz
 %%PERL5_MAN3%%/Algorithm::Evolutionary::Op::Uniform_Crossover.3.gz
@@ -146,7 +145,6 @@ bin/tide_float.pl
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/Storing.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/StringRand.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/String_Mutation.pm
-%%SITE_PERL%%/Algorithm/Evolutionary/Op/TournamentSelect.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/Tournament_Selection.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/TreeMutation.pm
 %%SITE_PERL%%/Algorithm/Evolutionary/Op/Uniform_Crossover.pm

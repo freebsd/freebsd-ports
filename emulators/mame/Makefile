@@ -2,15 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	mame
-PORTVERSION=	0.150${PATCHSUFFIX}
-PORTREVISION=	1
+PORTVERSION=	0.152${PATCHSUFFIX}
 CATEGORIES=	emulators
-MASTER_SITES=	SF/${PORTNAME}.mirror/${PORTNAME:U}%20${PORTVERSION} \
-		http://mame.mirrors.zippykid.com/releases/ \
+MASTER_SITES=	http://mame.mirrors.zippykid.com/releases/ \
 		http://emumovies.com/aarongiles/releases/ \
 		http://mamedev.org/updates/:patchsets
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//:C/p[0-9]*$//}s
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+DISTFILES=	${PORTNAME}${PORTVERSION:S/.//:C/p[0-9]*$//}s.zip \
 		${UPDATE_PATCHES:C/$/.zip:patchsets/}
 DIST_SUBDIR=	${PORTNAME}
 
@@ -23,26 +20,24 @@ LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	liberation-fonts-ttf>=0:${PORTSDIR}/x11-fonts/liberation-fonts-ttf
 
-OPTIONS_DEFINE=	SDL2 DEBUG DOCS EXAMPLES
-OPTIONS_RADIO=	BUILTIN_DEBUGGER
-OPTIONS_RADIO_BUILTIN_DEBUGGER=	GTK2 QT4
-SDL2_DESC=	SDL2 libraries support
+OPTIONS_DEFINE=	BUILTIN_DEBUGGER DEBUG DOCS EXAMPLES SDL2
 BUILTIN_DEBUGGER_DESC=	Builtin debugger support
+SDL2_DESC=	SDL2 libraries support
 
 NO_WRKSUBDIR=	yes
 
-USE_ZIP=	yes
-USES=		gmake pkgconfig shebangfix dos2unix
+USES=		dos2unix gmake pkgconfig shebangfix
+DOS2UNIX_FILES=	src/emu/netlist/nl_base.h \
+		src/emu/netlist/pstate.h
 SHEBANG_FILES=	src/emu/cpu/m6502/m6502make.py \
 		src/emu/cpu/m6809/m6809make.py \
 		src/emu/cpu/mcs96/mcs96make.py \
 		src/emu/cpu/tms57002/tmsmake.py
-DOS2UNIX_FILES=	src/osd/sdl/input.c \
-		src/osd/sdl/testkeys.c
 USE_XORG=	xext xi xinerama xrender
 USE_GL=		gl
-USE_PYTHON_BUILD=-2.7
+USE_PYTHON_BUILD=2
 MAKE_ENV=	NOWERROR=1 USE_NETWORK=1 \
+		LD="${CXX}" PYTHON="${PYTHON_CMD}" \
 		OPT_FLAGS="${CXXFLAGS}" GCC_LDFLAGS="${LDFLAGS}" \
 		TARGET="${PORTNAME}" FULLNAME="${PORTNAME}"
 MAKEFILE=	makefile
@@ -60,6 +55,12 @@ UPDATE_PATCHES!=	/usr/bin/jot -s " " \
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MBUILTIN_DEBUGGER}
+USE_QT4=	gui moc_build qmake_build
+.else
+MAKE_ENV+=	NO_DEBUGGER=1 NO_USE_QTDEBUG=1
+.endif
+
 .if ${PORT_OPTIONS:MSDL2}
 USE_SDL=	sdl2 ttf2
 MAKE_ENV+=	SDL_LIBVER="sdl2"
@@ -71,43 +72,15 @@ USE_SDL=	sdl ttf
 MAKE_ENV+=	DEBUG=1
 .endif
 
-.if ${PORT_OPTIONS:MGTK2}
-USE_GNOME=	gtk20 gconf2
-MAKE_ENV+=	GTK_INCPATH="$$(pkg-config --cflags-only-I gtk+-2.0 gconf-2.0)" \
-		GTK_CCOMFLAGS="$$(pkg-config --cflags-only-other gtk+-2.0 gconf-2.0)" \
-		GTK_LIBS="$$(pkg-config --libs gtk+-2.0 gconf-2.0)"
-.else
-MAKE_ENV+=	GTK_INCPATH="" \
-		GTK_CCOMFLAGS="" \
-		GTK_LIBS=""
-.endif
-
-.if ${PORT_OPTIONS:MQT4}
-USE_QT4=	gui moc_build qmake_build
-.else
-MAKE_ENV+=	NO_USE_QTDEBUG=1
-.endif
-
-.if empty(PORT_OPTIONS:MGTK2) && empty(PORT_OPTIONS:MQT4)
-MAKE_ENV+=	NO_DEBUGGER=1
-.endif
-
 .include <bsd.port.pre.mk>
-
-.if exists(/usr/bin/clang) && ${OSVERSION} >= 900014
-CC=		/usr/bin/clang
-CPP=		/usr/bin/clang-cpp
-CXX=		/usr/bin/clang++
-.else
-USE_GCC=	yes
-.endif
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not install on ia64, powerpc, or sparc64
 .endif
 
 post-extract:
-	@${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${WRKDIR}/mame.zip ${EXTRACT_AFTER_ARGS}
+	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} mame.zip \
+		${EXTRACT_AFTER_ARGS})
 	@${RM} -f ${WRKDIR}/mame.zip
 # Use post-extract target to get in before dos2unix-isation
 .if defined(UPDATE_PATCHES)
@@ -120,14 +93,14 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|^BUILD_EXPAT|# BUILD_EXPAT| ; \
-		 s|^BUILD_ZLIB|# BUILD_ZLIB| ; \
-		 s|^BUILD_FLAC|# BUILD_FLAC| ; \
-		 s|^BUILD_JPEGLIB|# BUILD_JPEGLIB| ; \
-		 s| = @gcc| := $$(CC)| ; \
-		 s| = @g++| := $$(CXX)| ; \
+		'/^BUILD_EXPAT /s|^|#| ; \
+		 /^BUILD_ZLIB /s|^|#| ; \
+		 /^BUILD_FLAC /s|^|#| ; \
+		 /^BUILD_JPEGLIB /s|^|#| ; \
+		 /^CC /s|^|#| ; \
+		 /^LD /s|^|#| ; \
+		 /^PYTHON /s|^|#| ; \
 		 s|-O$$(OPTIMIZE)|| ; \
-		 s| = @python| = ${PYTHON_CMD}| ; \
 		 /--warn-common/s|= -Wl,|= $$(GCC_LDFLAGS) -Wl,| ; \
 		 /LDFLAGS/s|-s|| ; \
 		 /LIBS/s|-lstdc++|| ; \
@@ -136,10 +109,7 @@ post-patch:
 		'/realloc/s|^|// |' ${WRKSRC}/src/emu/emualloc.h
 	@${REINPLACE_CMD} -e \
 		'/LIBS/s|-lpthread|-pthread| ; \
-		 /-system/s|/usr/local/|${LOCALBASE}/| ; \
-		 /--cflags-only-I gtk+-2.0/s|=.*|= $$(GTK_INCPATH)| ; \
-		 /--cflags-only-other gtk+-2.0/s|=.*|= $$(GTK_CCOMFLAGS)| ; \
-		 /--libs gtk+-2.0/s|=.*|= $$(GTK_LIBS)| ; \
+		 /-isystem/s|^|#| ; \
 		 /X11R6/s|^|#|' ${WRKSRC}/src/osd/sdl/sdl.mak
 
 do-install:
@@ -151,13 +121,13 @@ do-install:
 		${STAGEDIR}${PREFIX}/libexec/${PORTNAME})
 .endfor
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} artwork ${STAGEDIR}${DATADIR})
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} hash ${STAGEDIR}${DATADIR})
-	@(cd ${WRKSRC}/src/osd/sdl && ${COPYTREE_SHARE} keymaps \
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} artwork ${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} hash ${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC}/src/osd/sdl && ${COPYTREE_SHARE} keymaps \
 		${STAGEDIR}${DATADIR})
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR})
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR})
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${FILESDIR} && ${INSTALL_DATA} mame.ini ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.post.mk>

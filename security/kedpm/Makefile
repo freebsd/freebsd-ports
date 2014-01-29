@@ -13,7 +13,7 @@ COMMENT=	Simple application for managing personal data
 RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto
 
 USE_GNOME=	pygtk2
-USE_PYTHON=	2.1+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	YES
 
 DESKTOP_ENTRIES="Ked Password Manager" \

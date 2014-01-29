@@ -31,8 +31,6 @@ NO_STAGE=	yes
 DEFAULTPORT?=	782
 DEFAULTHOST?=	localhost
 
-.include <bsd.port.pre.mk>
-
 .if ${PORT_OPTIONS:MUDS}
 CONFIGURE_ARGS+=	--with-uds
 .endif
@@ -47,4 +45,4 @@ EXTRA_PATCHES=		${FILESDIR}/extra-patch-conserver__master.c
 .endif
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -29,12 +29,6 @@ PLIST_FILES=	bin/tardy man/man1/tardy.1.gz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-BUILD_DEPENDS+=	lzma:${PORTSDIR}/archivers/xz
-.endif
-
 post-patch:
 .for var in CFLAGS LDFLAGS
 	@${REINPLACE_CMD} -e 's|^\(${var}\)\ =\ \(.*\)|\1 ?= \2|' \
@@ -47,4 +41,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/man1/${PORTNAME}.1 \
 		${STAGEDIR}${MANPREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

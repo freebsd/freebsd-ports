@@ -10,10 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl implementation of the RC6 encryption algorithm
 
-USES=		perl5
+USES=		perl5 dos2unix
 USE_PERL5=	configure
-
-do-patch:
-	${REINPLACE_CMD} -e 's///' ${WRKSRC}/RC6.pm
 
 .include <bsd.port.mk>

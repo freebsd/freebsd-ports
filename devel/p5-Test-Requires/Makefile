@@ -12,7 +12,4 @@ COMMENT=	Perl extension for checking to see if the module can be loaded
 USES=	perl5
 USE_PERL5=	modbuild
 
-MAN3=	Test::Requires.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

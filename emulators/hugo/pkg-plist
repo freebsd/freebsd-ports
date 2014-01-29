@@ -1,5 +1,5 @@
 bin/hugo
-bin/hugod
+%%NETPLAY%%bin/hugod
 %%PORTDOCS%%%%DOCSDIR%%/README.old.txt
 %%PORTDOCS%%%%DOCSDIR%%/cdrom.html
 %%PORTDOCS%%%%DOCSDIR%%/cdrom.txt

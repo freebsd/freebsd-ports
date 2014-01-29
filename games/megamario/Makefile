@@ -16,11 +16,12 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_ZIP=	yes
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
-USES=		gmake
+USES=		dos2unix gmake
+DOS2UNIX_FILES=	src/*.cpp src/*.h *.ini Makefile* *.txt *.desktop
 USE_SDL=	sdl image mixer ttf
 USE_GL=		glu
-USE_DOS2UNIX=	*.cpp *.h *.ini Makefile* *.txt *.desktop
 ALL_TARGET=	${PORTNAME}
+MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 
 pre-extract:
 		${MKDIR} ${WRKDIR}/${DISTNAME}
@@ -28,9 +29,6 @@ pre-extract:
 PORTDOCS=	CONTROLS.txt linux.txt readme.txt
 
 OPTIONS_DEFINE=	DOCS
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/pixmaps/megamario.png|${PORTNAME}|' \
@@ -43,13 +41,14 @@ post-patch:
 		${MV} $$i `echo $$i | ${SED} -e 's/PNG/png/;s/JPG/jpg/'`; done
 
 post-install:
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "help mp3music screens" ${DATADIR})
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png ${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${PREFIX}/share/applications/
+.for d in help mp3music screens
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

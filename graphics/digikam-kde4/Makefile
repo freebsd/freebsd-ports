@@ -3,14 +3,12 @@
 
 PORTNAME=	digikam
 PORTVERSION=	${DIGIKAM_VER}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE4 digital photo management application
 
-NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.common"
 
 BUILD_DEPENDS=	${LOCALBASE}/include/eigen3/Eigen/Eigen:${PORTSDIR}/math/eigen3
@@ -25,57 +23,36 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libkgeomap.so:${PORTSDIR}/astro/libkgeomap \
 		libboost_graph.so:${PORTSDIR}/devel/boost-libs
 
-LATEST_LINK=	${PORTNAME}-kde4
-
-OPTIONS_DEFINE=		DOCS NLS GPHOTO2 PIMLIBS MYSQL
-OPTIONS_DEFAULT=	GPHOTO2 PIMLIBS
-NO_OPTIONS_SORT=	yes
-
-GPHOTO2_DESC=		Enable gphoto2 camera support
-PIMLIBS_DESC=		Enable address book support
-
-USES+=		pkgconfig
+USES+=		pkgconfig shebangfix
 USE_KDE4+=	libkdcraw libkexiv2 libkipi
 USE_QT4+=	sql-sqlite3_run
 USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DWITH_Sqlite2=off
 
-MAN1=		digitaglinktree.1 \
-		cleanup_digikamdb.1
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/core
+SHEBANG_FILES=	utilities/scripts/digitaglinktree/digitaglinktree
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=		DOCS NLS GPHOTO2 PIMLIBS MYSQL
+OPTIONS_DEFAULT=	GPHOTO2 PIMLIBS
+NO_OPTIONS_SORT=	yes
+OPTIONS_SUB=		yes # MYSQL
 
-.if ${PORT_OPTIONS:MNLS}
-RUN_DEPENDS+=	digikam-l10n>=${DIGIKAM_VER}:${PORTSDIR}/graphics/digikam-kde4-l10n
-.endif
+DOCS_RUN_DEPENDS=	digikam-doc>=${DIGIKAM_VER}:${PORTSDIR}/graphics/digikam-kde4-doc
 
-.if ${PORT_OPTIONS:MDOCS}
-RUN_DEPENDS+=	digikam-doc>=${DIGIKAM_VER}:${PORTSDIR}/graphics/digikam-kde4-doc
-.endif
+NLS_RUN_DEPENDS=	digikam-l10n>=${DIGIKAM_VER}:${PORTSDIR}/graphics/digikam-kde4-l10n
 
-.if ${PORT_OPTIONS:MGPHOTO2}
-LIB_DEPENDS+=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
-.else
-CMAKE_ARGS+=	-DWITH_Gphoto2:BOOL=OFF
-.endif
+GPHOTO2_DESC=		Enable gphoto2 camera support
+GPHOTO2_LIB_DEPENDS=	libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
+GPHOTO2_CMAKE_OFF=	-DWITH_Gphoto2:BOOL=OFF
 
-.if ${PORT_OPTIONS:MPIMLIBS}
-USE_KDE4+=	pimlibs
-.else
-CMAKE_ARGS+=	-DWITH_KdepimLibs:BOOL=OFF
-.endif
+PIMLIBS_DESC=		Enable address book support
+PIMLIBS_USE=		KDE4=pimlibs
+PIMLIBS_CMAKE_OFF=	-DWITH_KdepimLibs:BOOL=OFF
 
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	server
-USE_QT4+=	sql-mysql_run
-CMAKE_ARGS+=	-DMYSQLD_PATH:PATH=${LOCALBASE}/libexec \
-		-DMYSQL_TOOLS_PATH:PATH=${LOCALBASE}/bin
-PLIST_SUB+=	MYSQL=""
-.else
-CMAKE_ARGS+=	-DENABLE_INTERNALMYSQL:BOOL=OFF
-PLIST_SUB+=	MYSQL="@comment "
-.endif
+MYSQL_USE=		MYSQL=server
+MYSQL_USE=		QT4=sql-mysql_run
+MYSQL_CMAKE_ON= 	-DMYSQLD_PATH:PATH=${LOCALBASE}/libexec \
+			-DMYSQL_TOOLS_PATH:PATH=${LOCALBASE}/bin
+MYSQL_CMAKE_OFF=	-DENABLE_INTERNALMYSQL:BOOL=OFF
 
 .include <bsd.port.mk>

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ACPI-debug.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/GEOM-intro.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/GEOM-mirror.html

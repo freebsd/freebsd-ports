@@ -21,7 +21,7 @@ USE_GMAKE=		yes
 USES=			pathfix perl5
 USE_PERL5=		build
 USE_LDCONFIG=		yes
-USE_PYTHON_BUILD=	2.5-2.7
+USE_PYTHON_BUILD=	2
 
 WRKSRC=			${WRKDIR}/mozjs${PORTVERSION}/js/src
 

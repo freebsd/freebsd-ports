@@ -246,7 +246,7 @@ do-package: ${TMPPLIST}
 	@for cat in ${CATEGORIES}; do \
 		${RM} -f ${PACKAGES}/$$cat/${PKGNAMEPREFIX}${PORTNAME}*${PKG_SUFX} ; \
 	done
-	@if ${PKG_CREATE} ${PKG_CREATE_ARGS} -o ${PKGREPOSITORY} ${PKGNAME}; then \
+	@if ${SETENV} FORCE_POST="${_FORCE_POST_PATTERNS}" ${PKG_CREATE} ${PKG_CREATE_ARGS} -o ${PKGREPOSITORY} ${PKGNAME}; then \
 		if [ -n "${WITH_PKGNG}" ]; then \
 			if [ "${PKGORIGIN}" = "ports-mgmt/pkg" -o "${PKGORIGIN}" = "ports-mgmt/pkg-devel" ]; then \
 				if [ ! -d ${PKGLATESTREPOSITORY} ]; then \

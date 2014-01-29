@@ -21,5 +21,4 @@ USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/termtter bin/termtter_frame
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

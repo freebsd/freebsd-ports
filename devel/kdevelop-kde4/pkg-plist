@@ -3,6 +3,7 @@ bin/kdevelop!
 include/kdevelop/make/imakebuilder.h
 lib/kde4/kcm_kdev_cmakebuilder.so
 lib/kde4/kcm_kdev_makebuilder.so
+lib/kde4/kcm_kdev_ninjabuilder.so
 lib/kde4/kcm_kdevcmake_settings.so
 lib/kde4/kcm_kdevcustombuildsystem.so
 lib/kde4/kdevastyle.so
@@ -15,9 +16,11 @@ lib/kde4/kdevcustommakemanager.so
 lib/kde4/kdevcustomscript.so
 lib/kde4/kdevexecuteplasmoid.so
 lib/kde4/kdevgdb.so
+lib/kde4/kdevghprovider.so
 lib/kde4/kdevkdeprovider.so
 lib/kde4/kdevmakebuilder.so
 lib/kde4/kdevmanpage.so
+lib/kde4/kdevninja.so
 %%OKTETA%%lib/kde4/kdevokteta.so
 lib/kde4/kdevqthelp.so
 lib/kde4/kdevqthelp_config.so
@@ -34,12 +37,11 @@ share/apps/kdevappwizard/templates/cmake_plaincpp.tar.bz2
 share/apps/kdevappwizard/templates/cmake_qt4core.tar.bz2
 share/apps/kdevappwizard/templates/cmake_qt4core_qtest.tar.bz2
 share/apps/kdevappwizard/templates/cmake_qt4gui.tar.bz2
-share/apps/kdevcmakebuilder/data.kdev4
-share/apps/kdevcmakemanager/data.kdev4
 share/apps/kdevcodegen/templates/class_declaration_cpp.txt
 share/apps/kdevcodegen/templates/cpp_header.h
 share/apps/kdevcodegen/templates/cpp_header_onlyfunctions.h
 share/apps/kdevcodegen/templates/cpp_implementation.cpp
+share/apps/kdevcodegen/templates/license_header_cpp.txt
 share/apps/kdevcodegen/templates/method_declaration_cpp.txt
 share/apps/kdevcodegen/templates/method_definition_cpp.txt
 share/apps/kdevcppsupport/kdevcppsupport.rc
@@ -148,6 +150,7 @@ share/apps/kdevelop/pics/slot.png
 share/apps/kdevelop/pics/struct.png
 share/apps/kdevelop/pics/typedef.png
 share/apps/kdevelop/pics/union.png
+share/apps/kdevelop/splash.qml
 share/apps/kdevfiletemplates/templates/c_gobject.tar.bz2
 share/apps/kdevfiletemplates/templates/c_gobject_private.tar.bz2
 share/apps/kdevfiletemplates/templates/c_gobject_properties.tar.bz2
@@ -165,8 +168,8 @@ share/apps/kdevfiletemplates/templates/qt_shared.tar.bz2
 share/apps/kdevfiletemplates/templates/qt_widget.tar.bz2
 share/apps/kdevgdb/kdevgdbui.rc
 share/apps/kdevgdb/printers/gdbinit
+share/apps/kdevgdb/printers/helper.py
 share/apps/kdevgdb/printers/kde4.py
-share/apps/kdevgdb/printers/libstdcxx.py
 share/apps/kdevgdb/printers/qt4.py
 %%OKTETA%%share/apps/kdevokteta/kdevokteta.rc
 share/apps/plasma/plasmoids/kdevelopsessions/contents/ui/kdevelopsessions.qml
@@ -228,13 +231,19 @@ share/doc/HTML/en/kdevelop/kdevelop4_noworkingset.png
 share/doc/HTML/en/kdevelop/kdevelop4_sessionsprojectsworkingsets.png
 share/icons/hicolor/128x128/apps/cmake.png
 share/icons/hicolor/16x16/apps/cmake.png
+share/icons/hicolor/16x16/apps/github-forked.png
+share/icons/hicolor/16x16/apps/github-private.png
+share/icons/hicolor/16x16/apps/github-repo.png
 share/icons/hicolor/16x16/apps/kdevelop.png
+share/icons/hicolor/16x16/apps/kdevgh.png
 share/icons/hicolor/32x32/apps/cmake.png
 share/icons/hicolor/32x32/apps/kdevelop.png
+share/icons/hicolor/32x32/apps/kdevgh.png
 share/icons/hicolor/48x48/apps/kdevelop.png
 share/icons/hicolor/64x64/apps/cmake.png
 share/kde4/services/kcm_kdev_cmakebuilder.desktop
 share/kde4/services/kcm_kdev_makebuilder.desktop
+share/kde4/services/kcm_kdev_ninjabuilder.desktop
 share/kde4/services/kcm_kdevcmake_settings.desktop
 share/kde4/services/kcm_kdevcustombuildsystem.desktop
 share/kde4/services/kdevastyle.desktop
@@ -248,9 +257,11 @@ share/kde4/services/kdevcustomscript.desktop
 share/kde4/services/kdevelopsessions.desktop
 share/kde4/services/kdevexecuteplasmoid.desktop
 share/kde4/services/kdevgdb.desktop
+share/kde4/services/kdevghprovider.desktop
 share/kde4/services/kdevkdeprovider.desktop
 share/kde4/services/kdevmakebuilder.desktop
 share/kde4/services/kdevmanpage.desktop
+share/kde4/services/kdevninja.desktop
 %%OKTETA%%share/kde4/services/kdevokteta.desktop
 share/kde4/services/kdevqthelp.desktop
 share/kde4/services/kdevqthelp_config.desktop
@@ -265,9 +276,11 @@ share/kde4/services/plasma-dataengine-kdevelopsessions.desktop
 %%NLS%%share/locale/bs/LC_MESSAGES/kdevexecuteplasmoid.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/kdevformatters.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/kdevgdb.mo
+%%NLS%%share/locale/bs/LC_MESSAGES/kdevghprovider.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/kdevkdeprovider.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/kdevmakebuilder.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/kdevmanpage.mo
+%%NLS%%share/locale/bs/LC_MESSAGES/kdevninja.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/kdevokteta.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/kdevqthelp.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
@@ -281,9 +294,11 @@ share/kde4/services/plasma-dataengine-kdevelopsessions.desktop
 %%NLS%%share/locale/ca/LC_MESSAGES/kdevexecuteplasmoid.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/kdevformatters.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/kdevgdb.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/kdevghprovider.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/kdevkdeprovider.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/kdevmakebuilder.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/kdevmanpage.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/kdevninja.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/kdevokteta.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/kdevqthelp.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
@@ -291,13 +306,21 @@ share/kde4/services/plasma-dataengine-kdevelopsessions.desktop
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevcmake.mo
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevcmakebuilder.mo
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevcpp.mo
+%%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevcustombuildsystem.mo
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevcustommake.mo
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevelop.mo
+%%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevexecuteplasmoid.mo
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevformatters.mo
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevgdb.mo
+%%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevghprovider.mo
+%%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevkdeprovider.mo
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevmakebuilder.mo
+%%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevmanpage.mo
+%%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevninja.mo
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevokteta.mo
 %%NLS%%share/locale/ca@valencia/LC_MESSAGES/kdevqthelp.mo
+%%NLS%%share/locale/ca@valencia/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
+%%NLS%%share/locale/ca@valencia/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
 %%NLS%%share/locale/da/LC_MESSAGES/kdevcmake.mo
 %%NLS%%share/locale/da/LC_MESSAGES/kdevcmakebuilder.mo
 %%NLS%%share/locale/da/LC_MESSAGES/kdevcpp.mo
@@ -307,9 +330,11 @@ share/kde4/services/plasma-dataengine-kdevelopsessions.desktop
 %%NLS%%share/locale/da/LC_MESSAGES/kdevexecuteplasmoid.mo
 %%NLS%%share/locale/da/LC_MESSAGES/kdevformatters.mo
 %%NLS%%share/locale/da/LC_MESSAGES/kdevgdb.mo
+%%NLS%%share/locale/da/LC_MESSAGES/kdevghprovider.mo
 %%NLS%%share/locale/da/LC_MESSAGES/kdevkdeprovider.mo
 %%NLS%%share/locale/da/LC_MESSAGES/kdevmakebuilder.mo
 %%NLS%%share/locale/da/LC_MESSAGES/kdevmanpage.mo
+%%NLS%%share/locale/da/LC_MESSAGES/kdevninja.mo
 %%NLS%%share/locale/da/LC_MESSAGES/kdevokteta.mo
 %%NLS%%share/locale/da/LC_MESSAGES/kdevqthelp.mo
 %%NLS%%share/locale/da/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
@@ -323,9 +348,11 @@ share/kde4/services/plasma-dataengine-kdevelopsessions.desktop
 %%NLS%%share/locale/de/LC_MESSAGES/kdevexecuteplasmoid.mo
 %%NLS%%share/locale/de/LC_MESSAGES/kdevformatters.mo
 %%NLS%%share/locale/de/LC_MESSAGES/kdevgdb.mo
+%%NLS%%share/locale/de/LC_MESSAGES/kdevghprovider.mo
 %%NLS%%share/locale/de/LC_MESSAGES/kdevkdeprovider.mo
 %%NLS%%share/locale/de/LC_MESSAGES/kdevmakebuilder.mo
 %%NLS%%share/locale/de/LC_MESSAGES/kdevmanpage.mo
+%%NLS%%share/locale/de/LC_MESSAGES/kdevninja.mo
 %%NLS%%share/locale/de/LC_MESSAGES/kdevokteta.mo
 %%NLS%%share/locale/de/LC_MESSAGES/kdevqthelp.mo
 %%NLS%%share/locale/de/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
@@ -365,9 +392,11 @@ share/kde4/services/plasma-dataengine-kdevelopsessions.desktop
 %%NLS%%share/locale/es/LC_MESSAGES/kdevexecuteplasmoid.mo
 %%NLS%%share/locale/es/LC_MESSAGES/kdevformatters.mo
 %%NLS%%share/locale/es/LC_MESSAGES/kdevgdb.mo
+%%NLS%%share/locale/es/LC_MESSAGES/kdevghprovider.mo
 %%NLS%%share/locale/es/LC_MESSAGES/kdevkdeprovider.mo
 %%NLS%%share/locale/es/LC_MESSAGES/kdevmakebuilder.mo
 %%NLS%%share/locale/es/LC_MESSAGES/kdevmanpage.mo
+%%NLS%%share/locale/es/LC_MESSAGES/kdevninja.mo
 %%NLS%%share/locale/es/LC_MESSAGES/kdevokteta.mo
 %%NLS%%share/locale/es/LC_MESSAGES/kdevqthelp.mo
 %%NLS%%share/locale/es/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
@@ -398,6 +427,7 @@ share/kde4/services/plasma-dataengine-kdevelopsessions.desktop
 %%NLS%%share/locale/fi/LC_MESSAGES/kdevkdeprovider.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/kdevmakebuilder.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/kdevmanpage.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/kdevninja.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/kdevokteta.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/kdevqthelp.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
@@ -411,9 +441,11 @@ share/kde4/services/plasma-dataengine-kdevelopsessions.desktop
 %%NLS%%share/locale/fr/LC_MESSAGES/kdevexecuteplasmoid.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/kdevformatters.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/kdevgdb.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/kdevghprovider.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/kdevkdeprovider.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/kdevmakebuilder.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/kdevmanpage.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/kdevninja.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/kdevokteta.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/kdevqthelp.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
@@ -427,9 +459,11 @@ share/kde4/services/plasma-dataengine-kdevelopsessions.desktop
 %%NLS%%share/locale/gl/LC_MESSAGES/kdevelop.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/kdevformatters.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/kdevgdb.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/kdevghprovider.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/kdevkdeprovider.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/kdevmakebuilder.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/kdevmanpage.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/kdevninja.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/kdevokteta.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/kdevqthelp.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
@@ -459,9 +493,11 @@ share/kde4/services/plasma-dataengine-kdevelopsessions.desktop
 %%NLS%%share/locale/it/LC_MESSAGES/kdevexecuteplasmoid.mo
 %%NLS%%share/locale/it/LC_MESSAGES/kdevformatters.mo
 %%NLS%%share/locale/it/LC_MESSAGES/kdevgdb.mo
+%%NLS%%share/locale/it/LC_MESSAGES/kdevghprovider.mo
 %%NLS%%share/locale/it/LC_MESSAGES/kdevkdeprovider.mo
 %%NLS%%share/locale/it/LC_MESSAGES/kdevmakebuilder.mo
 %%NLS%%share/locale/it/LC_MESSAGES/kdevmanpage.mo
+%%NLS%%share/locale/it/LC_MESSAGES/kdevninja.mo
 %%NLS%%share/locale/it/LC_MESSAGES/kdevokteta.mo
 %%NLS%%share/locale/it/LC_MESSAGES/kdevqthelp.mo
 %%NLS%%share/locale/it/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
@@ -475,9 +511,11 @@ share/kde4/services/plasma-dataengine-kdevelopsessions.desktop
 %%NLS%%share/locale/kk/LC_MESSAGES/kdevexecuteplasmoid.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/kdevformatters.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/kdevgdb.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/kdevghprovider.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/kdevkdeprovider.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/kdevmakebuilder.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/kdevmanpage.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/kdevninja.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/kdevokteta.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/kdevqthelp.mo
 %%NLS%%share/locale/kk/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
@@ -520,9 +558,11 @@ share/kde4/services/plasma-dataengine-kdevelopsessions.desktop
 %%NLS%%share/locale/nl/LC_MESSAGES/kdevexecuteplasmoid.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/kdevformatters.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/kdevgdb.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/kdevghprovider.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/kdevkdeprovider.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/kdevmakebuilder.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/kdevmanpage.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/kdevninja.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/kdevokteta.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/kdevqthelp.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
@@ -552,9 +592,11 @@ share/kde4/services/plasma-dataengine-kdevelopsessions.desktop
 %%NLS%%share/locale/pt/LC_MESSAGES/kdevexecuteplasmoid.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/kdevformatters.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/kdevgdb.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/kdevghprovider.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/kdevkdeprovider.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/kdevmakebuilder.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/kdevmanpage.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/kdevninja.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/kdevokteta.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/kdevqthelp.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
@@ -568,9 +610,11 @@ share/kde4/services/plasma-dataengine-kdevelopsessions.desktop
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/kdevexecuteplasmoid.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/kdevformatters.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/kdevgdb.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/kdevghprovider.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/kdevkdeprovider.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/kdevmakebuilder.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/kdevmanpage.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/kdevninja.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/kdevokteta.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/kdevqthelp.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
@@ -600,9 +644,11 @@ share/kde4/services/plasma-dataengine-kdevelopsessions.desktop
 %%NLS%%share/locale/sk/LC_MESSAGES/kdevexecuteplasmoid.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/kdevformatters.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/kdevgdb.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/kdevghprovider.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/kdevkdeprovider.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/kdevmakebuilder.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/kdevmanpage.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/kdevninja.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/kdevokteta.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/kdevqthelp.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
@@ -616,9 +662,11 @@ share/kde4/services/plasma-dataengine-kdevelopsessions.desktop
 %%NLS%%share/locale/sl/LC_MESSAGES/kdevexecuteplasmoid.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/kdevformatters.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/kdevgdb.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/kdevghprovider.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/kdevkdeprovider.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/kdevmakebuilder.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/kdevmanpage.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/kdevninja.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/kdevokteta.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/kdevqthelp.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
@@ -632,27 +680,16 @@ share/kde4/services/plasma-dataengine-kdevelopsessions.desktop
 %%NLS%%share/locale/sv/LC_MESSAGES/kdevexecuteplasmoid.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/kdevformatters.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/kdevgdb.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/kdevghprovider.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/kdevkdeprovider.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/kdevmakebuilder.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/kdevmanpage.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/kdevninja.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/kdevokteta.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/kdevqthelp.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
 %%NLS%%share/locale/th/LC_MESSAGES/kdevcustommake.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/kdevcmake.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/kdevcmakebuilder.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/kdevcpp.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/kdevcustombuildsystem.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/kdevcustommake.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/kdevelop.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/kdevformatters.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/kdevgdb.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/kdevmakebuilder.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/kdevmanpage.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/kdevokteta.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/kdevqthelp.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/plasma_runner_kdevelopsessions.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/kdevcmake.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/kdevcmakebuilder.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/kdevcpp.mo
@@ -662,9 +699,11 @@ share/kde4/services/plasma-dataengine-kdevelopsessions.desktop
 %%NLS%%share/locale/uk/LC_MESSAGES/kdevexecuteplasmoid.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/kdevformatters.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/kdevgdb.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/kdevghprovider.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/kdevkdeprovider.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/kdevmakebuilder.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/kdevmanpage.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/kdevninja.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/kdevokteta.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/kdevqthelp.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
@@ -692,9 +731,11 @@ share/kde4/services/plasma-dataengine-kdevelopsessions.desktop
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/kdevexecuteplasmoid.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/kdevformatters.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/kdevgdb.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/kdevghprovider.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/kdevkdeprovider.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/kdevmakebuilder.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/kdevmanpage.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/kdevninja.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/kdevokteta.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/kdevqthelp.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/plasma_applet_kdevelopsessions.mo
@@ -708,6 +749,7 @@ share/mime/packages/kdevelop.xml
 @dirrm share/apps/kdevgdb/printers
 @dirrm share/apps/kdevgdb
 @dirrm share/apps/kdevfiletemplates/templates
+@dirrm share/apps/kdevfiletemplates
 @dirrm share/apps/kdevelop/pics
 @dirrm share/apps/kdevelop/icons/hicolor/32x32/mimetypes
 @dirrm share/apps/kdevelop/icons/hicolor/32x32/actions
@@ -721,8 +763,8 @@ share/mime/packages/kdevelop.xml
 @dirrm share/apps/kdevelop
 @dirrm share/apps/kdevcustommakemanager
 @dirrm share/apps/kdevcppsupport
-@dirrm share/apps/kdevcmakemanager
-@dirrm share/apps/kdevcmakebuilder
+@dirrm share/apps/kdevcodegen/templates
+@dirrm share/apps/kdevcodegen
 @dirrm share/apps/kdevappwizard/templates
 @dirrmtry share/apps/kdevappwizard
 @dirrm include/kdevelop/make

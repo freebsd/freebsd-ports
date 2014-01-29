@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dvdstyler
-PORTVERSION=	2.4.3
-PORTREVISION=	3
+PORTVERSION=	2.6.1
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
@@ -15,7 +14,7 @@ COMMENT=	WxWidgets frontend to dvd recoding and authoring programs
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		wxsvg>=1.1.14:${PORTSDIR}/graphics/wxsvg \
+		wxsvg>=1.2:${PORTSDIR}/graphics/wxsvg \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		mplex:${PORTSDIR}/multimedia/mjpegtools \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
@@ -24,32 +23,31 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		wxsvg>=1.1.14:${PORTSDIR}/graphics/wxsvg \
+		wxsvg>=1.2:${PORTSDIR}/graphics/wxsvg \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		mplex:${PORTSDIR}/multimedia/mjpegtools \
 		mkisofs:${PORTSDIR}/sysutils/cdrtools \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools
 
-OPTIONS_DEFINE=	GNOME DOCS
-
 USE_BZIP2=	yes
-USES=		desktop-file-utils gettext gmake pkgconfig
+USES=		gettext gmake pkgconfig
 USE_WX=		2.8
 WX_COMPS=	wx svg
 WX_CONF_ARGS=	absolute
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	aclocal automake autoconf
+ACLOCAL_ARGS=	-I ${WRKSRC}
+AUTOMAKE_ARGS=	--add-missing --copy --force-missing --foreign
+CONFIGURE_ENV=	ac_cv_path_AVCONV_PATH=no
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS GNOME
 
-.if ${PORT_OPTIONS:MGNOME}
-USE_GNOME+=	libgnomeui
-GNOMEUI_PC=	libgnomeui-2.0
-.else
-GNOMEUI_PC=	_libgnomeui-2.0_
-.endif
+GNOME_USE=		GNOME=libgnomeui
+GNOME_CONFIGURE_WITH=	gnome
+
+.include <bsd.port.options.mk>
 
 .if defined(WITH_DVD_DEVICE)
 DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
@@ -66,28 +64,16 @@ pre-everything::
 .endif
 
 post-extract:
-.for i in configure install-sh
-	@${CHMOD} ${BINMODE} ${WRKSRC}/${i}
-.endfor
+	@${ECHO_CMD} -n > ${WRKSRC}/NEWS
 
 post-patch:
-	@${REINPLACE_CMD} -e '/GNOMEUI2/s|"libgnomeui-2.0"|"${GNOMEUI_PC}"|g' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/^install-data-am:/s|install-docDATA||g' \
-		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/doc_DATA/s|COPYING||' \
+		${WRKSRC}/Makefile.am
+	@${REINPLACE_CMD} -e 's|=\(dvdstyler.png\)|=${PREFIX}/share/pixmaps/\1|' \
+		${WRKSRC}/data/dvdstyler.desktop
 	@${REINPLACE_CMD} -e 's|"sg\*"|"cd*"|g' \
 		${WRKSRC}/src/BurnDlg.cpp
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|g' \
 		${WRKSRC}/src/Config.h
-	@${REINPLACE_CMD} -e 's|CodecID|AVCodecID|g' \
-		${WRKSRC}/src/mediaenc_ffmpeg.cpp
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for i in AUTHORS ChangeLog INSTALL README
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
-.endfor
-.endif
 
 .include <bsd.port.mk>

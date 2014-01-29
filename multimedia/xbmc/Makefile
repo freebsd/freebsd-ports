@@ -1,15 +1,18 @@
 # $FreeBSD$
 
 PORTNAME=	xbmc
-DISTVERSION=	12.2
-PORTREVISION=	5
+DISTVERSION=	13.0.alpha11
 CATEGORIES=	multimedia
-MASTER_SITES=	http://mirrors.xbmc.org/releases/source/
 
 MAINTAINER=	mickael.maillot@gmail.com
 COMMENT=	Award winning media center application
 
 LICENSE=	GPLv2
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	xbmc
+GH_COMMIT=	8eb49b3
+GH_TAGNAME=	Gotham_alpha11
 
 BUILD_DEPENDS=	enca:${PORTSDIR}/converters/enca \
 		gawk:${PORTSDIR}/lang/gawk \
@@ -45,6 +48,7 @@ LIB_DEPENDS=	libass.so:${PORTSDIR}/multimedia/libass \
 		libtag.so:${PORTSDIR}/audio/taglib \
 		libtinyxml.so:${PORTSDIR}/textproc/tinyxml \
 		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libxslt.so:${PORTSDIR}/textproc/libxslt	\
 		libyajl.so:${PORTSDIR}/devel/yajl
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		glxinfo:${PORTSDIR}/graphics/mesa-demos \
@@ -55,16 +59,15 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 USES=		gmake iconv pkgconfig
 USE_AUTOTOOLS=	autoconf libtool automake libltdl
 GNU_CONFIGURE=	yes
-USE_XORG=	xt xmu xrandr xtst
+USE_XORG=	xt xmu xtst
 USE_GL=		glu
 USE_SDL=	image sdl
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_JAVA=	yes
 JAVA_BUILD=	jre
 NOPRECIOUSMAKEVARS=	yes
 INSTALLS_ICONS=	yes
 ONLY_FOR_ARCHS=	i386 amd64
-CONFLICTS_INSTALL=	xbmc-pva-ppa-odk-[0-9]*
 
 DESKTOP_ENTRIES="XBMC" \
 		"${COMMENT}" \
@@ -73,27 +76,69 @@ DESKTOP_ENTRIES="XBMC" \
 		"AudioVideo;Video;" \
 		true
 
-OPTIONS_DEFINE=	AIRPLAY AIRTUNES AVAHI CEC EXTERNAL_FFMPEG LAME \
+OPTIONS_DEFINE=	AIRPLAY AIRTUNES AVAHI CEC LAME \
 		LIBBLURAY HAL LIRC MYSQL NONFREE PULSEAUDIO RTMP SFTP \
-		SMB VAAPI VDPAU VORBIS WEBSERVER
+		SMB VAAPI VDPAU VORBIS WEBSERVER XRANDR
 AIRPLAY_DESC=	AirPlay support via libplist
 AIRTUNES_DESC=	AirTunes support via libshairport
 CEC_DESC=	CEC adapter support
-EXTERNAL_FFMPEG_DESC=	Use external ffmpeg
 NONFREE_DESC=	Enable non-free components (rar, ccx, ffmpeg)
 SFTP_DESC=	SSH SFTP support via libssh
 VORBIS_DESC=	Ogg Vorbis audio encoder
 
-OPTIONS_DEFAULT=	AIRPLAY AVAHI CEC LIBBLURAY HAL MYSQL \
-			RTMP SFTP SMB VORBIS WEBSERVER
+OPTIONS_DEFAULT=	AIRPLAY AVAHI CEC LIBBLURAY HAL LIRC MYSQL \
+			RTMP SFTP SMB VAAPI VDPAU VORBIS WEBSERVER XRANDR
 
-.include <bsd.port.pre.mk>
+AIRPLAY_LIB_DEPENDS=	libplist.so:${PORTSDIR}/devel/libplist
+AIRPLAY_CONFIGURE_ENABLE=	airplay
 
-.if ${OSVERSION} < 900000
-OPTIONS_DEFAULT+=	EXTERNAL_FFMPEG
-.endif
+AIRTUNES_LIB_DEPENDS=	libshairport.so:${PORTSDIR}/audio/libshairport
+AIRTUNES_CONFIGURE_ENABLE=	airtunes
 
-CONFIGURE_ARGS+=	--disable-nfs
+AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+AVAHI_CONFIGURE_ENABLE=	avahi
+
+CEC_LIB_DEPENDS=	libcec.so:${PORTSDIR}/multimedia/libcec
+CEC_CONFIGURE_ENABLE=	libcec
+
+LIBBLURAY_LIB_DEPENDS=	libbluray.so:${PORTSDIR}/multimedia/libbluray
+LIBBLURAY_CONFIGURE_ENABLE=	libbluray
+
+HAL_LIB_DEPENDS=	libhal.so:${PORTSDIR}/sysutils/hal
+HAL_CONFIGURE_ENABLE=	hal
+
+LAME_LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame
+LAME_CONFIGURE_ENABLE=	libmp3lame
+
+MYSQL_USE=	MYSQL=yes
+MYSQL_CONFIGURE_ENABLE=	mysql
+
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
+PULSEAUDIO_CONFIGURE_ENABLE=	pulse
+
+RTMP_LIB_DEPENDS=	librtmp.so:${PORTSDIR}/multimedia/librtmp
+RTMP_CONFIGURE_ENABLE=	rtmp
+
+SMB_LIB_DEPENDS=	libsmbclient.so:${PORTSDIR}/net/samba-libsmbclient
+SMB_CONFIGURE_ENABLE=	samba
+
+VAAPI_LIB_DEPENDS=	libva.so:${PORTSDIR}/multimedia/libva
+VAAPI_CONFIGURE_ENABLE=	vaapi
+
+VDPAU_BUILD_DEPENDS=	${LOCALBASE}/include/vdpau/vdpau.h:${PORTSDIR}/multimedia/libvdpau
+VDPAU_CONFIGURE_ENABLE=	vdpau
+
+VORBIS_LIB_DEPENDS=	libvorbisenc.so:${PORTSDIR}/audio/libvorbis
+VORBIS_CONFIGURE_ENABLE=	libvorbisenc
+
+WEBSERVER_LIB_DEPENDS=	libmicrohttpd.so:${PORTSDIR}/www/libmicrohttpd
+WEBSERVER_CONFIGURE_ENABLE=	webserver
+
+SFTP_BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
+SFTP_RUN_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
+SFTP_CONFIGURE_ENABLE=	ssh
+
+CONFIGURE_ARGS+=	--disable-debug --disable-nfs --disable-alsa
 
 .include <bsd.port.options.mk>
 
@@ -103,91 +148,14 @@ PLIST_SUB+=	ARCH="x86"
 PLIST_SUB+=	ARCH="x86_64"
 .endif
 
-.if ${OSVERSION} <= 800096
-LIB_DEPENDS+=	asound:${PORTSDIR}/audio/alsa-lib
-RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
-USE_SDL+=	mixer
-CONFIGURE_ARGS+=	--disable-oss
-.else
-CONFIGURE_ARGS+=	--disable-alsa
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug
-.else
-CONFIGURE_ARGS+=	--disable-debug
-.endif
-
-.if ${PORT_OPTIONS:MAIRPLAY}
-CONFIGURE_ARGS+=	--enable-airplay
-LIB_DEPENDS+=	plist:${PORTSDIR}/devel/libplist
-.else
-CONFIGURE_ARGS+=	--disable-airplay
-.endif
-
-.if ${PORT_OPTIONS:MAIRTUNES}
-CONFIGURE_ARGS+=	--enable-airtunes
-LIB_DEPENDS+=	shairport:${PORTSDIR}/audio/libshairport
-.else
-CONFIGURE_ARGS+=	--disable-airtunes
-.endif
-
-.if ${PORT_OPTIONS:MAVAHI}
-CONFIGURE_ARGS+=	--enable-avahi
-LIB_DEPENDS+=	avahi-common:${PORTSDIR}/net/avahi-app
-.else
-CONFIGURE_ARGS+=	--disable-avahi
-.endif
-
-.if ${PORT_OPTIONS:MCEC}
-CONFIGURE_ARGS+=	--enable-libcec
-LIB_DEPENDS+=	cec:${PORTSDIR}/multimedia/libcec
-.else
-CONFIGURE_ARGS+=	--disable-libcec
-.endif
-
-.if ${PORT_OPTIONS:MEXTERNAL_FFMPEG}
-CONFIGURE_ARGS+=	--enable-external-ffmpeg
-FFMPEG_SUFFIX=	0
-CONFIGURE_ENV+=	FFMPEG_SUFFIX="${FFMPEG_SUFFIX}"
-PLIST_SUB+=	EXTERNAL_FFMPEG="@comment "
-BUILD_DEPENDS+=	ffmpeg${FFMPEG_SUFFIX}>0.11:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX}
-RUN_DEPENDS+=	ffmpeg${FFMPEG_SUFFIX}>0.11:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFFIX}
-.else
-CONFIGURE_ARGS+=	--disable-external-ffmpeg
-PLIST_SUB+=	EXTERNAL_FFMPEG=""
-.endif
-
-.if ${PORT_OPTIONS:MLIBBLURAY}
-CONFIGURE_ARGS+=	--enable-libbluray
-LIB_DEPENDS+=	bluray:${PORTSDIR}/multimedia/libbluray
-.else
-CONFIGURE_ARGS+=	--disable-libbluray
-.endif
-
-.if ${PORT_OPTIONS:MHAL}
-CONFIGURE_ARGS+=	--enable-hal
-LIB_DEPENDS+=	hal:${PORTSDIR}/sysutils/hal
-.else
-CONFIGURE_ARGS+=	--disable-hal
-.endif
-
-.if ${PORT_OPTIONS:MLAME}
-CONFIGURE_ARGS+=	--enable-libmp3lame
-LIB_DEPENDS+=	mp3lame:${PORTSDIR}/audio/lame
-.else
-CONFIGURE_ARGS+=	--disable-libmp3lame
+.if ${OSVERSION} < 900033
+BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
 .if ${PORT_OPTIONS:MLIRC}
 RUN_DEPENDS+=	lircd:${PORTSDIR}/comms/lirc
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-CONFIGURE_ARGS+=	--enable-mysql
-USE_MYSQL=	yes
-.else
-CONFIGURE_ARGS+=	--disable-mysql
 .endif
 
 .if ${PORT_OPTIONS:MNONFREE}
@@ -198,61 +166,13 @@ NO_PACKAGE=	${NO_CDROM}
 CONFIGURE_ARGS+=	--disable-non-free
 .endif
 
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-CONFIGURE_ARGS+=	--enable-pulse
-LIB_DEPENDS+=	pulse:${PORTSDIR}/audio/pulseaudio
+.if ${PORT_OPTIONS:MXRANDR}
+CONFIGURE_ARGS+=	--enable-xrandr
+USE_XORG+=	xrandr
+PLIST_SUB+=	XRANDR=""
 .else
-CONFIGURE_ARGS+=	--disable-pulse
-.endif
-
-.if ${PORT_OPTIONS:MRTMP}
-CONFIGURE_ARGS+=	--enable-rtmp
-LIB_DEPENDS+=	rtmp:${PORTSDIR}/multimedia/rtmpdump
-.else
-CONFIGURE_ARGS+=	--disable-rtmp
-.endif
-
-.if ${PORT_OPTIONS:MSFTP}
-CONFIGURE_ARGS+=	--enable-ssh
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
-RUN_DEPENDS+=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
-.else
-CONFIGURE_ARGS+=	--disable-ssh
-.endif
-
-.if ${PORT_OPTIONS:MSMB}
-CONFIGURE_ARGS+=	--enable-samba
-LIB_DEPENDS+=	smbclient:${PORTSDIR}/net/samba-libsmbclient
-.else
-CONFIGURE_ARGS+=	--disable-samba
-.endif
-
-.if ${PORT_OPTIONS:MVAAPI}
-LIB_DEPENDS+=	va:${PORTSDIR}/multimedia/libva
-CONFIGURE_ARGS+=	--enable-vaapi
-.else
-CONFIGURE_ARGS+=	--disable-vaapi
-.endif
-
-.if ${PORT_OPTIONS:MVDPAU}
-LIB_DEPENDS+=	vdpau:${PORTSDIR}/multimedia/libvdpau
-CONFIGURE_ARGS+=	--enable-vdpau
-.else
-CONFIGURE_ARGS+=	--disable-vdpau
-.endif
-
-.if ${PORT_OPTIONS:MVORBIS}
-CONFIGURE_ARGS+=	--enable-libvorbisenc
-LIB_DEPENDS+=	ogg:${PORTSDIR}/audio/libogg
-.else
-CONFIGURE_ARGS+=	--disable-libvorbisenc
-.endif
-
-.if ${PORT_OPTIONS:MWEBSERVER}
-CONFIGURE_ARGS+=	--enable-webserver
-LIB_DEPENDS+=	microhttpd:${PORTSDIR}/www/libmicrohttpd
-.else
-CONFIGURE_ARGS+=	--disable-webserver
+CONFIGURE_ARGS+=	--disable-xrandr
+PLIST_SUB+=	XRANDR="@comment "
 .endif
 
 post-patch:
@@ -261,18 +181,27 @@ post-patch:
 		${WRKSRC}/lib/libsidplay2/libsidplay/src/mos6510/mos6510.h \
 		${WRKSRC}/lib/libsidplay2/libsidplay/src/mos6526/mos6526.h \
 		${WRKSRC}/lib/libsidplay2/libsidplay/src/mos656x/mos656x.h
-	${REINPLACE_CMD} 's;make;gmake;' ${WRKSRC}/bootstrap
+	${REINPLACE_CMD} 's;make;gmake;' \
+		${WRKSRC}/bootstrap \
+		${WRKSRC}/tools/TexturePacker/Makefile.in
 	${REINPLACE_CMD} 's;which swig;&2.0;' ${WRKSRC}/codegenerator.mk
-.if empty(ICONV_LIB)
-	${REINPLACE_CMD}  -e 's;^checking for main in -liconv\.\.\.;checking for iconv...;' \
-			-e 's;-liconv;${ICONV_LIB};' ${WRKSRC}/configure
-.endif
+	${REINPLACE_CMD} '/^autopoint/d' ${WRKSRC}/lib/cpluff/autogen.sh
+	${REINPLACE_CMD} 's;static weak_ptr;static boost::weak_ptr;' \
+		${WRKSRC}/xbmc/cores/dvdplayer/DVDCodecs/Video/VAAPI.cpp
 
 run-autotools:
-	@cd ${WRKSRC} && ${SH} ./bootstrap
+	cd ${WRKSRC}/lib/cpluff && ${SH} ./autogen.sh
+	${REINPLACE_CMD} '/lib\/cpluff/d' ${WRKSRC}/bootstrap.mk
+	cd ${WRKSRC} && ${SH} ./bootstrap
 
 post-install:
-	@${INSTALL_MAN} ${WRKSRC}/docs/manpages/xbmc.bin.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-	@(cd ${STAGEDIR}${MAN1PREFIX}/man/man1 && ${LN} -sf xbmc.bin.1.gz xbmc.1.gz)
+	${INSTALL_MAN} ${WRKSRC}/docs/manpages/xbmc.bin.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	(cd ${STAGEDIR}${MAN1PREFIX}/man/man1 && ${LN} -sf xbmc.bin.1.gz xbmc.1.gz)
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/xbmc/xbmc.bin
+	${FIND} ${STAGEDIR}${PREFIX}/lib/xbmc -name '*.so' -or -name '*.xbs' -or -name '*.vis' \
+		| ${XARGS} ${STRIP_CMD}
+.if ${PORT_OPTIONS:MXRANDR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/xbmc/xbmc-xrandr
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

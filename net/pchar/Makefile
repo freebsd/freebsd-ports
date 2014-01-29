@@ -11,6 +11,9 @@ MASTER_SITE_SUBDIR=	bmah
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sandia Internet path characterization tool
 
+DEPRECATED=	Obsolete, abandoned
+EXPIRATION_DATE=2014-05-01
+
 GNU_CONFIGURE=	yes
 MAN8=		pchar.8
 

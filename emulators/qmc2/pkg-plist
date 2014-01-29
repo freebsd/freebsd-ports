@@ -26,7 +26,7 @@ bin/qmc2-sdlmess
 %%PORTDOCS%%%%DOCSDIR%%/html/fr/readme.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fr/todo.html
 %%PORTDOCS%%%%DOCSDIR%%/html/images/ballou.png
-%%PORTDOCS%%%%DOCSDIR%%/html/images/doc-bg.jpg
+%%PORTDOCS%%%%DOCSDIR%%/html/images/doc-bg.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/gradient1.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/gradient2.png
 %%PORTDOCS%%%%DOCSDIR%%/html/images/qmc2_logo.png
@@ -229,6 +229,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/next-sail.png
 %%DATADIR%%/img/circles/next.png
 %%DATADIR%%/img/circles/no.png
+%%DATADIR%%/img/circles/no_sound.png
 %%DATADIR%%/img/circles/north.png
 %%DATADIR%%/img/circles/notes.png
 %%DATADIR%%/img/circles/ok.png
@@ -311,6 +312,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/circles/thumbnail.png
 %%DATADIR%%/img/circles/time.png
 %%DATADIR%%/img/circles/toggle_fullscreen.png
+%%DATADIR%%/img/circles/toolbox.png
 %%DATADIR%%/img/circles/trafficlight_green.png
 %%DATADIR%%/img/circles/trafficlight_off.png
 %%DATADIR%%/img/circles/trafficlight_red.png
@@ -483,6 +485,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/next-sail.png
 %%DATADIR%%/img/classic/next.png
 %%DATADIR%%/img/classic/no.png
+%%DATADIR%%/img/classic/no_sound.png
 %%DATADIR%%/img/classic/north.png
 %%DATADIR%%/img/classic/notes.png
 %%DATADIR%%/img/classic/ok.png
@@ -565,6 +568,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/classic/thumbnail.png
 %%DATADIR%%/img/classic/time.png
 %%DATADIR%%/img/classic/toggle_fullscreen.png
+%%DATADIR%%/img/classic/toolbox.png
 %%DATADIR%%/img/classic/trafficlight_green.png
 %%DATADIR%%/img/classic/trafficlight_off.png
 %%DATADIR%%/img/classic/trafficlight_red.png
@@ -606,259 +610,6 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/compressed.png
 %%DATADIR%%/img/configure.png
 %%DATADIR%%/img/controller.png
-%%DATADIR%%/img/crazy/activity_green.png
-%%DATADIR%%/img/crazy/activity_red.png
-%%DATADIR%%/img/crazy/add_to_favorites.png
-%%DATADIR%%/img/crazy/arcadecabinet.png
-%%DATADIR%%/img/crazy/arcademode.png
-%%DATADIR%%/img/crazy/back.png
-%%DATADIR%%/img/crazy/broom.png
-%%DATADIR%%/img/crazy/browser.png
-%%DATADIR%%/img/crazy/brush.png
-%%DATADIR%%/img/crazy/calculator.png
-%%DATADIR%%/img/crazy/camera.png
-%%DATADIR%%/img/crazy/category.png
-%%DATADIR%%/img/crazy/cd.png
-%%DATADIR%%/img/crazy/characters.png
-%%DATADIR%%/img/crazy/circuit.png
-%%DATADIR%%/img/crazy/clock.png
-%%DATADIR%%/img/crazy/clone.png
-%%DATADIR%%/img/crazy/colors.png
-%%DATADIR%%/img/crazy/compressed.png
-%%DATADIR%%/img/crazy/configure.png
-%%DATADIR%%/img/crazy/controller.png
-%%DATADIR%%/img/crazy/detail.png
-%%DATADIR%%/img/crazy/dev_cartridge.png
-%%DATADIR%%/img/crazy/dev_cassette.png
-%%DATADIR%%/img/crazy/dev_cdrom.png
-%%DATADIR%%/img/crazy/dev_cylinder.png
-%%DATADIR%%/img/crazy/dev_floppydisk.png
-%%DATADIR%%/img/crazy/dev_harddisk.png
-%%DATADIR%%/img/crazy/dev_magtape.png
-%%DATADIR%%/img/crazy/dev_memcard.png
-%%DATADIR%%/img/crazy/dev_parallel.png
-%%DATADIR%%/img/crazy/dev_printer.png
-%%DATADIR%%/img/crazy/dev_punchtape.png
-%%DATADIR%%/img/crazy/dev_quickload.png
-%%DATADIR%%/img/crazy/dev_serial.png
-%%DATADIR%%/img/crazy/dev_snapshot.png
-%%DATADIR%%/img/crazy/dice.png
-%%DATADIR%%/img/crazy/disk.png
-%%DATADIR%%/img/crazy/disk2.png
-%%DATADIR%%/img/crazy/dock.png
-%%DATADIR%%/img/crazy/down.png
-%%DATADIR%%/img/crazy/down_action.png
-%%DATADIR%%/img/crazy/download.png
-%%DATADIR%%/img/crazy/east.png
-%%DATADIR%%/img/crazy/edit.png
-%%DATADIR%%/img/crazy/editcopy.png
-%%DATADIR%%/img/crazy/editcut.png
-%%DATADIR%%/img/crazy/editdelete.png
-%%DATADIR%%/img/crazy/editpaste.png
-%%DATADIR%%/img/crazy/edittrash.png
-%%DATADIR%%/img/crazy/effect.png
-%%DATADIR%%/img/crazy/embed.png
-%%DATADIR%%/img/crazy/embed_multiple.png
-%%DATADIR%%/img/crazy/exit.png
-%%DATADIR%%/img/crazy/exit_small.png
-%%DATADIR%%/img/crazy/export_rom_status.png
-%%DATADIR%%/img/crazy/favorites.png
-%%DATADIR%%/img/crazy/favorites_multiple.png
-%%DATADIR%%/img/crazy/fileclose.png
-%%DATADIR%%/img/crazy/filefind.png
-%%DATADIR%%/img/crazy/filenew.png
-%%DATADIR%%/img/crazy/fileopen.png
-%%DATADIR%%/img/crazy/fileprint.png
-%%DATADIR%%/img/crazy/filesave.png
-%%DATADIR%%/img/crazy/filesaveas.png
-%%DATADIR%%/img/crazy/filesaveas_and_apply.png
-%%DATADIR%%/img/crazy/filter.png
-%%DATADIR%%/img/crazy/find.png
-%%DATADIR%%/img/crazy/find_negate.png
-%%DATADIR%%/img/crazy/flat.png
-%%DATADIR%%/img/crazy/flip.png
-%%DATADIR%%/img/crazy/folders-first.png
-%%DATADIR%%/img/crazy/folders-off.png
-%%DATADIR%%/img/crazy/folders-on.png
-%%DATADIR%%/img/crazy/fonts.png
-%%DATADIR%%/img/crazy/forward.png
-%%DATADIR%%/img/crazy/ghost.png
-%%DATADIR%%/img/crazy/ghost_video.png
-%%DATADIR%%/img/crazy/gradient1.png
-%%DATADIR%%/img/crazy/gradient2.png
-%%DATADIR%%/img/crazy/halt.png
-%%DATADIR%%/img/crazy/help.png
-%%DATADIR%%/img/crazy/highlight.png
-%%DATADIR%%/img/crazy/hint.png
-%%DATADIR%%/img/crazy/hint_small.png
-%%DATADIR%%/img/crazy/home.png
-%%DATADIR%%/img/crazy/icon.png
-%%DATADIR%%/img/crazy/info.png
-%%DATADIR%%/img/crazy/inspect.png
-%%DATADIR%%/img/crazy/internet.png
-%%DATADIR%%/img/crazy/invert_tag.png
-%%DATADIR%%/img/crazy/invert_tag_all.png
-%%DATADIR%%/img/crazy/invert_tag_down.png
-%%DATADIR%%/img/crazy/invert_tag_up.png
-%%DATADIR%%/img/crazy/invert_tag_visible.png
-%%DATADIR%%/img/crazy/joystick.png
-%%DATADIR%%/img/crazy/keyboard.png
-%%DATADIR%%/img/crazy/kill.png
-%%DATADIR%%/img/crazy/launch.png
-%%DATADIR%%/img/crazy/launch_multiple.png
-%%DATADIR%%/img/crazy/led_off.png
-%%DATADIR%%/img/crazy/led_on.png
-%%DATADIR%%/img/crazy/left_action.png
-%%DATADIR%%/img/crazy/lifebelt.png
-%%DATADIR%%/img/crazy/locale.png
-%%DATADIR%%/img/crazy/lock.png
-%%DATADIR%%/img/crazy/mame.icns
-%%DATADIR%%/img/crazy/mame.ico
-%%DATADIR%%/img/crazy/mame.png
-%%DATADIR%%/img/crazy/marquee.png
-%%DATADIR%%/img/crazy/maws.png
-%%DATADIR%%/img/crazy/maximize.png
-%%DATADIR%%/img/crazy/media_back.png
-%%DATADIR%%/img/crazy/media_fastbackward.png
-%%DATADIR%%/img/crazy/media_fastforward.png
-%%DATADIR%%/img/crazy/media_lower_volume.png
-%%DATADIR%%/img/crazy/media_next.png
-%%DATADIR%%/img/crazy/media_pause.png
-%%DATADIR%%/img/crazy/media_play.png
-%%DATADIR%%/img/crazy/media_raise_volume.png
-%%DATADIR%%/img/crazy/media_stop.png
-%%DATADIR%%/img/crazy/merge.png
-%%DATADIR%%/img/crazy/merge_nok.png
-%%DATADIR%%/img/crazy/merge_ok.png
-%%DATADIR%%/img/crazy/merge_unknown.png
-%%DATADIR%%/img/crazy/mess.icns
-%%DATADIR%%/img/crazy/mess.ico
-%%DATADIR%%/img/crazy/mess.png
-%%DATADIR%%/img/crazy/minimize.png
-%%DATADIR%%/img/crazy/minus.png
-%%DATADIR%%/img/crazy/minus_all.png
-%%DATADIR%%/img/crazy/movie.png
-%%DATADIR%%/img/crazy/music.png
-%%DATADIR%%/img/crazy/next-sail.png
-%%DATADIR%%/img/crazy/next.png
-%%DATADIR%%/img/crazy/no.png
-%%DATADIR%%/img/crazy/north.png
-%%DATADIR%%/img/crazy/notes.png
-%%DATADIR%%/img/crazy/ok.png
-%%DATADIR%%/img/crazy/opengl.png
-%%DATADIR%%/img/crazy/pacman.png
-%%DATADIR%%/img/crazy/pencils.png
-%%DATADIR%%/img/crazy/plus.png
-%%DATADIR%%/img/crazy/plus_all.png
-%%DATADIR%%/img/crazy/preview.png
-%%DATADIR%%/img/crazy/previous-sail.png
-%%DATADIR%%/img/crazy/previous.png
-%%DATADIR%%/img/crazy/process.png
-%%DATADIR%%/img/crazy/process_multiple.png
-%%DATADIR%%/img/crazy/project_mess.png
-%%DATADIR%%/img/crazy/qchdman.ico
-%%DATADIR%%/img/crazy/qchdman.png
-%%DATADIR%%/img/crazy/qmc2-arcade-setup.png
-%%DATADIR%%/img/crazy/qmc2-arcade.ico
-%%DATADIR%%/img/crazy/qmc2-arcade.png
-%%DATADIR%%/img/crazy/qmc2_logo_big.png
-%%DATADIR%%/img/crazy/qmc2_logo_small.png
-%%DATADIR%%/img/crazy/qmc2_mame_splash.png
-%%DATADIR%%/img/crazy/qmc2_mess_logo_big.png
-%%DATADIR%%/img/crazy/qmc2_mess_logo_small.png
-%%DATADIR%%/img/crazy/qmc2_mess_splash.png
-%%DATADIR%%/img/crazy/qmc2_ume_logo_big.png
-%%DATADIR%%/img/crazy/qmc2_ume_logo_small.png
-%%DATADIR%%/img/crazy/qmc2_ume_splash.png
-%%DATADIR%%/img/crazy/qt-logo.png
-%%DATADIR%%/img/crazy/redo.png
-%%DATADIR%%/img/crazy/refresh.png
-%%DATADIR%%/img/crazy/release.png
-%%DATADIR%%/img/crazy/release_alternate.png
-%%DATADIR%%/img/crazy/reload.png
-%%DATADIR%%/img/crazy/reload_small.png
-%%DATADIR%%/img/crazy/remove.png
-%%DATADIR%%/img/crazy/remove_from_favorites.png
-%%DATADIR%%/img/crazy/rename.png
-%%DATADIR%%/img/crazy/reset.png
-%%DATADIR%%/img/crazy/right_action.png
-%%DATADIR%%/img/crazy/rom.png
-%%DATADIR%%/img/crazy/rom_multiple.png
-%%DATADIR%%/img/crazy/search.png
-%%DATADIR%%/img/crazy/search_multiple.png
-%%DATADIR%%/img/crazy/sleep.png
-%%DATADIR%%/img/crazy/slot.png
-%%DATADIR%%/img/crazy/software_correct.png
-%%DATADIR%%/img/crazy/software_incorrect.png
-%%DATADIR%%/img/crazy/software_mostlycorrect.png
-%%DATADIR%%/img/crazy/software_notfound.png
-%%DATADIR%%/img/crazy/software_unknown.png
-%%DATADIR%%/img/crazy/sort.png
-%%DATADIR%%/img/crazy/sound.png
-%%DATADIR%%/img/crazy/south.png
-%%DATADIR%%/img/crazy/speaker.png
-%%DATADIR%%/img/crazy/sphere_blue.png
-%%DATADIR%%/img/crazy/sphere_blue_bios.png
-%%DATADIR%%/img/crazy/sphere_blue_device.png
-%%DATADIR%%/img/crazy/sphere_green.png
-%%DATADIR%%/img/crazy/sphere_green_bios.png
-%%DATADIR%%/img/crazy/sphere_green_device.png
-%%DATADIR%%/img/crazy/sphere_grey.png
-%%DATADIR%%/img/crazy/sphere_grey_bios.png
-%%DATADIR%%/img/crazy/sphere_grey_device.png
-%%DATADIR%%/img/crazy/sphere_red.png
-%%DATADIR%%/img/crazy/sphere_red_bios.png
-%%DATADIR%%/img/crazy/sphere_red_device.png
-%%DATADIR%%/img/crazy/sphere_yellowgreen.png
-%%DATADIR%%/img/crazy/sphere_yellowgreen_bios.png
-%%DATADIR%%/img/crazy/sphere_yellowgreen_device.png
-%%DATADIR%%/img/crazy/stop.png
-%%DATADIR%%/img/crazy/stop_browser.png
-%%DATADIR%%/img/crazy/swap.png
-%%DATADIR%%/img/crazy/tag.png
-%%DATADIR%%/img/crazy/tagged.png
-%%DATADIR%%/img/crazy/tagged_all.png
-%%DATADIR%%/img/crazy/tagged_visible.png
-%%DATADIR%%/img/crazy/tape.png
-%%DATADIR%%/img/crazy/terminate.png
-%%DATADIR%%/img/crazy/thumbnail.png
-%%DATADIR%%/img/crazy/time.png
-%%DATADIR%%/img/crazy/toggle_fullscreen.png
-%%DATADIR%%/img/crazy/trafficlight_green.png
-%%DATADIR%%/img/crazy/trafficlight_off.png
-%%DATADIR%%/img/crazy/trafficlight_red.png
-%%DATADIR%%/img/crazy/trafficlight_yellow.png
-%%DATADIR%%/img/crazy/ume.icns
-%%DATADIR%%/img/crazy/ume.ico
-%%DATADIR%%/img/crazy/ume.png
-%%DATADIR%%/img/crazy/undo.png
-%%DATADIR%%/img/crazy/unknown.png
-%%DATADIR%%/img/crazy/unlock.png
-%%DATADIR%%/img/crazy/untagged.png
-%%DATADIR%%/img/crazy/untagged_all.png
-%%DATADIR%%/img/crazy/untagged_visible.png
-%%DATADIR%%/img/crazy/up.png
-%%DATADIR%%/img/crazy/up_action.png
-%%DATADIR%%/img/crazy/update.png
-%%DATADIR%%/img/crazy/url.png
-%%DATADIR%%/img/crazy/version.png
-%%DATADIR%%/img/crazy/view_detail.png
-%%DATADIR%%/img/crazy/view_tree.png
-%%DATADIR%%/img/crazy/viewmag+.png
-%%DATADIR%%/img/crazy/viewmag-.png
-%%DATADIR%%/img/crazy/viewmagfit.png
-%%DATADIR%%/img/crazy/warning.png
-%%DATADIR%%/img/crazy/west.png
-%%DATADIR%%/img/crazy/wip.png
-%%DATADIR%%/img/crazy/wizard.png
-%%DATADIR%%/img/crazy/work.png
-%%DATADIR%%/img/crazy/world.png
-%%DATADIR%%/img/crazy/yes.png
-%%DATADIR%%/img/crazy/youtube.png
-%%DATADIR%%/img/crazy/zip.png
-%%DATADIR%%/img/crazy/zoom-in.png
-%%DATADIR%%/img/crazy/zoom-none.png
-%%DATADIR%%/img/crazy/zoom-out.png
 %%DATADIR%%/img/crazy-black/activity_green.png
 %%DATADIR%%/img/crazy-black/activity_red.png
 %%DATADIR%%/img/crazy-black/add_to_favorites.png
@@ -995,6 +746,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/next-sail.png
 %%DATADIR%%/img/crazy-black/next.png
 %%DATADIR%%/img/crazy-black/no.png
+%%DATADIR%%/img/crazy-black/no_sound.png
 %%DATADIR%%/img/crazy-black/north.png
 %%DATADIR%%/img/crazy-black/notes.png
 %%DATADIR%%/img/crazy-black/ok.png
@@ -1077,6 +829,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/thumbnail.png
 %%DATADIR%%/img/crazy-black/time.png
 %%DATADIR%%/img/crazy-black/toggle_fullscreen.png
+%%DATADIR%%/img/crazy-black/toolbox.png
 %%DATADIR%%/img/crazy-black/trafficlight_green.png
 %%DATADIR%%/img/crazy-black/trafficlight_off.png
 %%DATADIR%%/img/crazy-black/trafficlight_red.png
@@ -1112,6 +865,261 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/crazy-black/zoom-in.png
 %%DATADIR%%/img/crazy-black/zoom-none.png
 %%DATADIR%%/img/crazy-black/zoom-out.png
+%%DATADIR%%/img/crazy/activity_green.png
+%%DATADIR%%/img/crazy/activity_red.png
+%%DATADIR%%/img/crazy/add_to_favorites.png
+%%DATADIR%%/img/crazy/arcadecabinet.png
+%%DATADIR%%/img/crazy/arcademode.png
+%%DATADIR%%/img/crazy/back.png
+%%DATADIR%%/img/crazy/broom.png
+%%DATADIR%%/img/crazy/browser.png
+%%DATADIR%%/img/crazy/brush.png
+%%DATADIR%%/img/crazy/calculator.png
+%%DATADIR%%/img/crazy/camera.png
+%%DATADIR%%/img/crazy/category.png
+%%DATADIR%%/img/crazy/cd.png
+%%DATADIR%%/img/crazy/characters.png
+%%DATADIR%%/img/crazy/circuit.png
+%%DATADIR%%/img/crazy/clock.png
+%%DATADIR%%/img/crazy/clone.png
+%%DATADIR%%/img/crazy/colors.png
+%%DATADIR%%/img/crazy/compressed.png
+%%DATADIR%%/img/crazy/configure.png
+%%DATADIR%%/img/crazy/controller.png
+%%DATADIR%%/img/crazy/detail.png
+%%DATADIR%%/img/crazy/dev_cartridge.png
+%%DATADIR%%/img/crazy/dev_cassette.png
+%%DATADIR%%/img/crazy/dev_cdrom.png
+%%DATADIR%%/img/crazy/dev_cylinder.png
+%%DATADIR%%/img/crazy/dev_floppydisk.png
+%%DATADIR%%/img/crazy/dev_harddisk.png
+%%DATADIR%%/img/crazy/dev_magtape.png
+%%DATADIR%%/img/crazy/dev_memcard.png
+%%DATADIR%%/img/crazy/dev_parallel.png
+%%DATADIR%%/img/crazy/dev_printer.png
+%%DATADIR%%/img/crazy/dev_punchtape.png
+%%DATADIR%%/img/crazy/dev_quickload.png
+%%DATADIR%%/img/crazy/dev_serial.png
+%%DATADIR%%/img/crazy/dev_snapshot.png
+%%DATADIR%%/img/crazy/dice.png
+%%DATADIR%%/img/crazy/disk.png
+%%DATADIR%%/img/crazy/disk2.png
+%%DATADIR%%/img/crazy/dock.png
+%%DATADIR%%/img/crazy/down.png
+%%DATADIR%%/img/crazy/down_action.png
+%%DATADIR%%/img/crazy/download.png
+%%DATADIR%%/img/crazy/east.png
+%%DATADIR%%/img/crazy/edit.png
+%%DATADIR%%/img/crazy/editcopy.png
+%%DATADIR%%/img/crazy/editcut.png
+%%DATADIR%%/img/crazy/editdelete.png
+%%DATADIR%%/img/crazy/editpaste.png
+%%DATADIR%%/img/crazy/edittrash.png
+%%DATADIR%%/img/crazy/effect.png
+%%DATADIR%%/img/crazy/embed.png
+%%DATADIR%%/img/crazy/embed_multiple.png
+%%DATADIR%%/img/crazy/exit.png
+%%DATADIR%%/img/crazy/exit_small.png
+%%DATADIR%%/img/crazy/export_rom_status.png
+%%DATADIR%%/img/crazy/favorites.png
+%%DATADIR%%/img/crazy/favorites_multiple.png
+%%DATADIR%%/img/crazy/fileclose.png
+%%DATADIR%%/img/crazy/filefind.png
+%%DATADIR%%/img/crazy/filenew.png
+%%DATADIR%%/img/crazy/fileopen.png
+%%DATADIR%%/img/crazy/fileprint.png
+%%DATADIR%%/img/crazy/filesave.png
+%%DATADIR%%/img/crazy/filesaveas.png
+%%DATADIR%%/img/crazy/filesaveas_and_apply.png
+%%DATADIR%%/img/crazy/filter.png
+%%DATADIR%%/img/crazy/find.png
+%%DATADIR%%/img/crazy/find_negate.png
+%%DATADIR%%/img/crazy/flat.png
+%%DATADIR%%/img/crazy/flip.png
+%%DATADIR%%/img/crazy/folders-first.png
+%%DATADIR%%/img/crazy/folders-off.png
+%%DATADIR%%/img/crazy/folders-on.png
+%%DATADIR%%/img/crazy/fonts.png
+%%DATADIR%%/img/crazy/forward.png
+%%DATADIR%%/img/crazy/ghost.png
+%%DATADIR%%/img/crazy/ghost_video.png
+%%DATADIR%%/img/crazy/gradient1.png
+%%DATADIR%%/img/crazy/gradient2.png
+%%DATADIR%%/img/crazy/halt.png
+%%DATADIR%%/img/crazy/help.png
+%%DATADIR%%/img/crazy/highlight.png
+%%DATADIR%%/img/crazy/hint.png
+%%DATADIR%%/img/crazy/hint_small.png
+%%DATADIR%%/img/crazy/home.png
+%%DATADIR%%/img/crazy/icon.png
+%%DATADIR%%/img/crazy/info.png
+%%DATADIR%%/img/crazy/inspect.png
+%%DATADIR%%/img/crazy/internet.png
+%%DATADIR%%/img/crazy/invert_tag.png
+%%DATADIR%%/img/crazy/invert_tag_all.png
+%%DATADIR%%/img/crazy/invert_tag_down.png
+%%DATADIR%%/img/crazy/invert_tag_up.png
+%%DATADIR%%/img/crazy/invert_tag_visible.png
+%%DATADIR%%/img/crazy/joystick.png
+%%DATADIR%%/img/crazy/keyboard.png
+%%DATADIR%%/img/crazy/kill.png
+%%DATADIR%%/img/crazy/launch.png
+%%DATADIR%%/img/crazy/launch_multiple.png
+%%DATADIR%%/img/crazy/led_off.png
+%%DATADIR%%/img/crazy/led_on.png
+%%DATADIR%%/img/crazy/left_action.png
+%%DATADIR%%/img/crazy/lifebelt.png
+%%DATADIR%%/img/crazy/locale.png
+%%DATADIR%%/img/crazy/lock.png
+%%DATADIR%%/img/crazy/mame.icns
+%%DATADIR%%/img/crazy/mame.ico
+%%DATADIR%%/img/crazy/mame.png
+%%DATADIR%%/img/crazy/marquee.png
+%%DATADIR%%/img/crazy/maws.png
+%%DATADIR%%/img/crazy/maximize.png
+%%DATADIR%%/img/crazy/media_back.png
+%%DATADIR%%/img/crazy/media_fastbackward.png
+%%DATADIR%%/img/crazy/media_fastforward.png
+%%DATADIR%%/img/crazy/media_lower_volume.png
+%%DATADIR%%/img/crazy/media_next.png
+%%DATADIR%%/img/crazy/media_pause.png
+%%DATADIR%%/img/crazy/media_play.png
+%%DATADIR%%/img/crazy/media_raise_volume.png
+%%DATADIR%%/img/crazy/media_stop.png
+%%DATADIR%%/img/crazy/merge.png
+%%DATADIR%%/img/crazy/merge_nok.png
+%%DATADIR%%/img/crazy/merge_ok.png
+%%DATADIR%%/img/crazy/merge_unknown.png
+%%DATADIR%%/img/crazy/mess.icns
+%%DATADIR%%/img/crazy/mess.ico
+%%DATADIR%%/img/crazy/mess.png
+%%DATADIR%%/img/crazy/minimize.png
+%%DATADIR%%/img/crazy/minus.png
+%%DATADIR%%/img/crazy/minus_all.png
+%%DATADIR%%/img/crazy/movie.png
+%%DATADIR%%/img/crazy/music.png
+%%DATADIR%%/img/crazy/next-sail.png
+%%DATADIR%%/img/crazy/next.png
+%%DATADIR%%/img/crazy/no.png
+%%DATADIR%%/img/crazy/no_sound.png
+%%DATADIR%%/img/crazy/north.png
+%%DATADIR%%/img/crazy/notes.png
+%%DATADIR%%/img/crazy/ok.png
+%%DATADIR%%/img/crazy/opengl.png
+%%DATADIR%%/img/crazy/pacman.png
+%%DATADIR%%/img/crazy/pencils.png
+%%DATADIR%%/img/crazy/plus.png
+%%DATADIR%%/img/crazy/plus_all.png
+%%DATADIR%%/img/crazy/preview.png
+%%DATADIR%%/img/crazy/previous-sail.png
+%%DATADIR%%/img/crazy/previous.png
+%%DATADIR%%/img/crazy/process.png
+%%DATADIR%%/img/crazy/process_multiple.png
+%%DATADIR%%/img/crazy/project_mess.png
+%%DATADIR%%/img/crazy/qchdman.ico
+%%DATADIR%%/img/crazy/qchdman.png
+%%DATADIR%%/img/crazy/qmc2-arcade-setup.png
+%%DATADIR%%/img/crazy/qmc2-arcade.ico
+%%DATADIR%%/img/crazy/qmc2-arcade.png
+%%DATADIR%%/img/crazy/qmc2_logo_big.png
+%%DATADIR%%/img/crazy/qmc2_logo_small.png
+%%DATADIR%%/img/crazy/qmc2_mame_splash.png
+%%DATADIR%%/img/crazy/qmc2_mess_logo_big.png
+%%DATADIR%%/img/crazy/qmc2_mess_logo_small.png
+%%DATADIR%%/img/crazy/qmc2_mess_splash.png
+%%DATADIR%%/img/crazy/qmc2_ume_logo_big.png
+%%DATADIR%%/img/crazy/qmc2_ume_logo_small.png
+%%DATADIR%%/img/crazy/qmc2_ume_splash.png
+%%DATADIR%%/img/crazy/qt-logo.png
+%%DATADIR%%/img/crazy/redo.png
+%%DATADIR%%/img/crazy/refresh.png
+%%DATADIR%%/img/crazy/release.png
+%%DATADIR%%/img/crazy/release_alternate.png
+%%DATADIR%%/img/crazy/reload.png
+%%DATADIR%%/img/crazy/reload_small.png
+%%DATADIR%%/img/crazy/remove.png
+%%DATADIR%%/img/crazy/remove_from_favorites.png
+%%DATADIR%%/img/crazy/rename.png
+%%DATADIR%%/img/crazy/reset.png
+%%DATADIR%%/img/crazy/right_action.png
+%%DATADIR%%/img/crazy/rom.png
+%%DATADIR%%/img/crazy/rom_multiple.png
+%%DATADIR%%/img/crazy/search.png
+%%DATADIR%%/img/crazy/search_multiple.png
+%%DATADIR%%/img/crazy/sleep.png
+%%DATADIR%%/img/crazy/slot.png
+%%DATADIR%%/img/crazy/software_correct.png
+%%DATADIR%%/img/crazy/software_incorrect.png
+%%DATADIR%%/img/crazy/software_mostlycorrect.png
+%%DATADIR%%/img/crazy/software_notfound.png
+%%DATADIR%%/img/crazy/software_unknown.png
+%%DATADIR%%/img/crazy/sort.png
+%%DATADIR%%/img/crazy/sound.png
+%%DATADIR%%/img/crazy/south.png
+%%DATADIR%%/img/crazy/speaker.png
+%%DATADIR%%/img/crazy/sphere_blue.png
+%%DATADIR%%/img/crazy/sphere_blue_bios.png
+%%DATADIR%%/img/crazy/sphere_blue_device.png
+%%DATADIR%%/img/crazy/sphere_green.png
+%%DATADIR%%/img/crazy/sphere_green_bios.png
+%%DATADIR%%/img/crazy/sphere_green_device.png
+%%DATADIR%%/img/crazy/sphere_grey.png
+%%DATADIR%%/img/crazy/sphere_grey_bios.png
+%%DATADIR%%/img/crazy/sphere_grey_device.png
+%%DATADIR%%/img/crazy/sphere_red.png
+%%DATADIR%%/img/crazy/sphere_red_bios.png
+%%DATADIR%%/img/crazy/sphere_red_device.png
+%%DATADIR%%/img/crazy/sphere_yellowgreen.png
+%%DATADIR%%/img/crazy/sphere_yellowgreen_bios.png
+%%DATADIR%%/img/crazy/sphere_yellowgreen_device.png
+%%DATADIR%%/img/crazy/stop.png
+%%DATADIR%%/img/crazy/stop_browser.png
+%%DATADIR%%/img/crazy/swap.png
+%%DATADIR%%/img/crazy/tag.png
+%%DATADIR%%/img/crazy/tagged.png
+%%DATADIR%%/img/crazy/tagged_all.png
+%%DATADIR%%/img/crazy/tagged_visible.png
+%%DATADIR%%/img/crazy/tape.png
+%%DATADIR%%/img/crazy/terminate.png
+%%DATADIR%%/img/crazy/thumbnail.png
+%%DATADIR%%/img/crazy/time.png
+%%DATADIR%%/img/crazy/toggle_fullscreen.png
+%%DATADIR%%/img/crazy/toolbox.png
+%%DATADIR%%/img/crazy/trafficlight_green.png
+%%DATADIR%%/img/crazy/trafficlight_off.png
+%%DATADIR%%/img/crazy/trafficlight_red.png
+%%DATADIR%%/img/crazy/trafficlight_yellow.png
+%%DATADIR%%/img/crazy/ume.icns
+%%DATADIR%%/img/crazy/ume.ico
+%%DATADIR%%/img/crazy/ume.png
+%%DATADIR%%/img/crazy/undo.png
+%%DATADIR%%/img/crazy/unknown.png
+%%DATADIR%%/img/crazy/unlock.png
+%%DATADIR%%/img/crazy/untagged.png
+%%DATADIR%%/img/crazy/untagged_all.png
+%%DATADIR%%/img/crazy/untagged_visible.png
+%%DATADIR%%/img/crazy/up.png
+%%DATADIR%%/img/crazy/up_action.png
+%%DATADIR%%/img/crazy/update.png
+%%DATADIR%%/img/crazy/url.png
+%%DATADIR%%/img/crazy/version.png
+%%DATADIR%%/img/crazy/view_detail.png
+%%DATADIR%%/img/crazy/view_tree.png
+%%DATADIR%%/img/crazy/viewmag+.png
+%%DATADIR%%/img/crazy/viewmag-.png
+%%DATADIR%%/img/crazy/viewmagfit.png
+%%DATADIR%%/img/crazy/warning.png
+%%DATADIR%%/img/crazy/west.png
+%%DATADIR%%/img/crazy/wip.png
+%%DATADIR%%/img/crazy/wizard.png
+%%DATADIR%%/img/crazy/work.png
+%%DATADIR%%/img/crazy/world.png
+%%DATADIR%%/img/crazy/yes.png
+%%DATADIR%%/img/crazy/youtube.png
+%%DATADIR%%/img/crazy/zip.png
+%%DATADIR%%/img/crazy/zoom-in.png
+%%DATADIR%%/img/crazy/zoom-none.png
+%%DATADIR%%/img/crazy/zoom-out.png
 %%DATADIR%%/img/cubes/activity_green.png
 %%DATADIR%%/img/cubes/activity_red.png
 %%DATADIR%%/img/cubes/add_to_favorites.png
@@ -1248,6 +1256,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/next-sail.png
 %%DATADIR%%/img/cubes/next.png
 %%DATADIR%%/img/cubes/no.png
+%%DATADIR%%/img/cubes/no_sound.png
 %%DATADIR%%/img/cubes/north.png
 %%DATADIR%%/img/cubes/notes.png
 %%DATADIR%%/img/cubes/ok.png
@@ -1330,6 +1339,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/cubes/thumbnail.png
 %%DATADIR%%/img/cubes/time.png
 %%DATADIR%%/img/cubes/toggle_fullscreen.png
+%%DATADIR%%/img/cubes/toolbox.png
 %%DATADIR%%/img/cubes/trafficlight_green.png
 %%DATADIR%%/img/cubes/trafficlight_off.png
 %%DATADIR%%/img/cubes/trafficlight_red.png
@@ -1480,6 +1490,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/next-sail.png
 %%DATADIR%%/img/next.png
 %%DATADIR%%/img/no.png
+%%DATADIR%%/img/no_sound.png
 %%DATADIR%%/img/north.png
 %%DATADIR%%/img/notes.png
 %%DATADIR%%/img/ok.png
@@ -1562,6 +1573,7 @@ bin/qmc2-sdlmess
 %%DATADIR%%/img/thumbnail.png
 %%DATADIR%%/img/time.png
 %%DATADIR%%/img/toggle_fullscreen.png
+%%DATADIR%%/img/toolbox.png
 %%DATADIR%%/img/trafficlight_green.png
 %%DATADIR%%/img/trafficlight_off.png
 %%DATADIR%%/img/trafficlight_red.png
@@ -1614,32 +1626,32 @@ bin/qmc2-sdlmess
 %%DATADIR%%/opt/SDLUME/template.xml
 %%DATADIR%%/opt/UME/template.xml
 %%DATADIR%%/opt/template.xml
-@dirrm %%DATADIR%%/opt/UME
-@dirrm %%DATADIR%%/opt/SDLUME
-@dirrm %%DATADIR%%/opt/SDLMESS
-@dirrm %%DATADIR%%/opt/SDLMAME
-@dirrm %%DATADIR%%/opt/MESS
-@dirrm %%DATADIR%%/opt/MAME
-@dirrm %%DATADIR%%/opt
-@dirrm %%DATADIR%%/lng
-@dirrm %%DATADIR%%/img/cubes
-@dirrm %%DATADIR%%/img/crazy-black
-@dirrm %%DATADIR%%/img/crazy
-@dirrm %%DATADIR%%/img/classic
-@dirrm %%DATADIR%%/img/circles
-@dirrm %%DATADIR%%/img
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/us
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/sv
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/ro
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/pt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/pl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/it
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/fr
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/es
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/el
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html/de
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/opt/UME
+@dirrmtry %%DATADIR%%/opt/SDLUME
+@dirrmtry %%DATADIR%%/opt/SDLMESS
+@dirrmtry %%DATADIR%%/opt/SDLMAME
+@dirrmtry %%DATADIR%%/opt/MESS
+@dirrmtry %%DATADIR%%/opt/MAME
+@dirrmtry %%DATADIR%%/opt
+@dirrmtry %%DATADIR%%/lng
+@dirrmtry %%DATADIR%%/img/cubes
+@dirrmtry %%DATADIR%%/img/crazy-black
+@dirrmtry %%DATADIR%%/img/crazy
+@dirrmtry %%DATADIR%%/img/classic
+@dirrmtry %%DATADIR%%/img/circles
+@dirrmtry %%DATADIR%%/img
+@dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/us
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/sv
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/ro
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/pt
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/pl
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/it
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/images
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/fr
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/es
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/el
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html/de
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry %%ETCDIR%%

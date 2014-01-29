@@ -15,7 +15,6 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-attrib.c \
 MASTERDIR=	${.CURDIR}/../../news/tin
 
 post-patch: post-patch-zh
-NO_STAGE=	yes
 post-patch-zh:
 	${REINPLACE_CMD} -e 's,iso-8859-1,Big5,g' ${WRKSRC}/doc/tin.defaults
 

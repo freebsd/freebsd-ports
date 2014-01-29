@@ -21,5 +21,4 @@ CONFIGURE_ARGS+=	--with-http-curl-requests \
 			--with-http-zlib-compression \
 			--with-http-magic-mime
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,8 +1,0 @@
-%%PYTHON_SITELIBDIR%%/certifi/__init__.py
-%%PYTHON_SITELIBDIR%%/certifi/__init__.pyc
-%%PYTHON_SITELIBDIR%%/certifi/__init__.pyo
-%%PYTHON_SITELIBDIR%%/certifi/cacert.pem
-%%PYTHON_SITELIBDIR%%/certifi/core.py
-%%PYTHON_SITELIBDIR%%/certifi/core.pyc
-%%PYTHON_SITELIBDIR%%/certifi/core.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/certifi

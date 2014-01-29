@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/relay-ctrl-age
 bin/relay-ctrl-allow
 bin/relay-ctrl-chdir

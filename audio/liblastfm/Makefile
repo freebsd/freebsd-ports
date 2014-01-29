@@ -6,7 +6,7 @@ PORTVERSION=	1.0.6
 #PORTREVISION=	0
 CATEGORIES=	audio
 
-MAINTAINER=	datahead4@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt C++ library for the Last.fm webservices
 
 LICENSE=	GPLv3
@@ -28,7 +28,6 @@ TESTS_DESC=		Build liblastfm tests
 OPTIONS_DEFAULT=	FINGERPRINT
 
 USES=		cmake pkgconfig
-NO_STAGE=	yes
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 USE_QT4=	dbus moc_build rcc_build network qmake_build qtestlib sql xml

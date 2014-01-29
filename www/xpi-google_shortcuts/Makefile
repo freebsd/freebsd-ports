@@ -15,6 +15,5 @@ XPI_FILES=	chrome/googleshortcuts.jar chrome.manifest \
 		defaults/preferences/install.js install.rdf
 XPI_DIRS=	chrome defaults/preferences defaults
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

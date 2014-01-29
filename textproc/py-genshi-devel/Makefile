@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Python toolkit for stream-based generation of output for the web
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
 WRKSRC=		${WRKDIR}/genshi

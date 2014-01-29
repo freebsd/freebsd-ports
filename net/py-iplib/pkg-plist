@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/iplib.py
 %%PYTHON_SITELIBDIR%%/iplib.pyc
 %%PYTHON_SITELIBDIR%%/iplib.pyo

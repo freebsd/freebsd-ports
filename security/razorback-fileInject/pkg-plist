@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/fileInject
 @unexec if cmp -s %D/etc/razorback/fileInject.conf %D/etc/razorback/fileInject.conf.sample; then rm -f %D/etc/razorback/fileInject.conf; fi
 etc/razorback/fileInject.conf.sample

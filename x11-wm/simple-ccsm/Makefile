@@ -15,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compizconfig-python.pc:${PORTSDIR}/x
 USE_BZIP2=	yes
 USES=		gettext gmake pkgconfig
 USE_GNOME=	pygtk2
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 
 INSTALLS_EGGINFO=	yes
 

@@ -11,7 +11,6 @@ COMMENT=	DXF to FIG converter
 
 PLIST_FILES=	bin/dxf2fig
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|CFLAGS+=|g ; \
 		 s|-O -s||g ; \
@@ -19,6 +18,6 @@ post-patch:
 		 s|-L|#-L|' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

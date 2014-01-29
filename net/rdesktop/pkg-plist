@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/rdesktop
 man/man1/rdesktop.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS

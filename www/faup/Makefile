@@ -25,6 +25,8 @@ OPTIONS_DEFINE=	DOCS
 post-patch:
 	@${REINPLACE_CMD} -e "s/5.1/${LUA_VER}/g" -e \
 		"s/51/${LUA_VER_STR}/g" ${WRKSRC}/cmake/FindLua51.cmake
+	@${REINPLACE_CMD} -e "s/LUA51_FOUND/LUA${LUA_VER_STR}_FOUND/g" \
+		${WRKSRC}/CMakeLists.txt ${WRKSRC}/src/lib/CMakeLists.txt
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

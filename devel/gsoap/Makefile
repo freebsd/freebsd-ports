@@ -2,58 +2,51 @@
 # $FreeBSD$
 
 PORTNAME=	gsoap
-PORTVERSION=	2.8.10
-PORTREVISION=	2
+PORTVERSION=	2.8.17
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}2/gSOAP
 DISTNAME=	${PORTNAME}_${PORTVERSION}
+EXTRACT_SUFX=	.zip
 
-MAINTAINER=	sem@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generator Tools for Coding SOAP/XML Web Services in C and C++
 
-OPTIONS_DEFINE=	OPENSSL GNUTLS
-OPTIONS_DEFAULT=	OPENSSL
+LICENSE=	GPLv2
 
-USE_ZIP=	yes
+CONFIGURE_ENV=	LEX=flex YACC=yacc
 GNU_CONFIGURE=	yes
-USES=	pathfix
 MAKE_JOBS_UNSAFE=	yes
-CFLAGS+=	-DWSDL_TYPEMAP_FILE=\\\"${DATADIR}/WS/typemap.dat\\\" \
-		-DSOAPCPP2_IMPORT_PATH=\\\"${DATADIR}/import\\\"
-
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
-
+USES=		pathfix
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
-ONLY_FOR_ARCHS=	i386 amd64
+OPTIONS_RADIO=	SSL
+OPTIONS_RADIO_SSL=	GNUTLS OPENSSL
+OPTIONS_DEFAULT=	OPENSSL
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-CFLAGS+=	-fPIC
-.endif
-
-.if ! ${PORT_OPTIONS:MOPENSSL} && ! ${PORT_OPTIONS:MGNUTLS}
-CONFIGURE_ARGS+=--disable-ssl
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls \
-   		gcrypt:${PORTSDIR}/security/libgcrypt \
-		gpg-error.0:${PORTSDIR}/security/libgpg-error
-CONFIGURE_ARGS+=--enable-gnutls
+LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls \
+   		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+		libgpg-error.so:${PORTSDIR}/security/libgpg-error
+CONFIGURE_ARGS=	--enable-gnutls
 LDFLAGS+=	-L${LOCALBASE}/lib
+.elif ${PORT_OPTIONS:MOPENSSL}
+CONFIGURE_ARGS=	--enable-ssl
+.else
+CONFIGURE_ARGS=	--disable-ssl
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|sys/timeb.h||' ${WRKSRC}/${CONFIGURE_SCRIPT}
+	${REINPLACE_CMD} -e 's| sys/timeb.h | |' \
+	    -e 's|-DSOAPCPP_IMPORT_PATH=|-DSOAPCPP2_IMPORT_PATH=|' \
+	    -e 's|-DWSDL_IMPORT_PATH=|-DWSDL2H_IMPORT_PATH=|' \
+	    ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
-	@${MKDIR} ${PREFIX}/lib/gsoap
-	@${CP} ${WRKSRC}/gsoap/stdsoap2.c ${PREFIX}/lib/gsoap
-	@${LN} -f ${PREFIX}/lib/gsoap/stdsoap2.c ${PREFIX}/lib/gsoap/stdsoap2.cpp
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gsoap
+	@${INSTALL_DATA} ${WRKSRC}/gsoap/stdsoap2.c \
+	    ${STAGEDIR}${PREFIX}/lib/gsoap
+	@${LN} -fs stdsoap2.c ${STAGEDIR}${PREFIX}/lib/gsoap/stdsoap2.cpp
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

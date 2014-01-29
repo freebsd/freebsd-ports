@@ -29,10 +29,10 @@
  kde4_add_executable(k9xineplayer ${k9xineplayer_SRCS})
  
 -target_link_libraries(k9copy k9copylib ${KDE4_KDEUI_LIBS} ${KDE4_KDE3SUPPORT_LIBS}  -lphonon )
-+target_link_libraries(k9copy k9copylib ${KDE4_KDEUI_LIBS} ${KDE4_KDE3SUPPORT_LIBS}  ${PHONON_LIBRARY} )
++target_link_libraries(k9copy k9copylib ${KDE4_KDEUI_LIBS} ${KDE4_KDE3SUPPORT_LIBS} ${KDE4_SOLID_LIBS} ${PHONON_LIBRARY} )
  target_link_libraries(k9play k9copylib ${KDE4_KDEUI_LIBS} ${KDE4_KDE3SUPPORT_LIBS}  )
 -target_link_libraries(k9xineplayer ${KDE4_KDEUI_LIBS} ${KDE4_KDE3SUPPORT_LIBS} -lxine )
-+target_link_libraries(k9xineplayer ${KDE4_KDEUI_LIBS} ${KDE4_KDE3SUPPORT_LIBS} ${XINE_LIBRARY} )
++target_link_libraries(k9xineplayer ${KDE4_KDEUI_LIBS} ${KDE4_KDE3SUPPORT_LIBS} ${XINE_LIBRARY} ${X11_LIBRARIES} )
  
  
  install(TARGETS k9copy DESTINATION ${BIN_INSTALL_DIR} )

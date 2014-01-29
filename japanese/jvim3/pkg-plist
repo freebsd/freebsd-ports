@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/jvim
 bin/jvim3
 bin/jgrep

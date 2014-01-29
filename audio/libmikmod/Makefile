@@ -3,6 +3,7 @@
 
 PORTNAME=	libmikmod
 PORTVERSION=	3.1.12
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/mikmod/libmikmod%20%28source%29/${PORTVERSION}/
 

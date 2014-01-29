@@ -14,8 +14,7 @@ COMMENT=	GUI to dvd+rw-tools and cdrecord
 RUN_DEPENDS=	growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
 		cdrecord:${PORTSDIR}/sysutils/cdrtools
 
-USE_TCL=	84+
-USE_TK=		84+
+USES=		tk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

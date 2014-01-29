@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 libexec/scam-back
 etc/mail/scam-back.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL

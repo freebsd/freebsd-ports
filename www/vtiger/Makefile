@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}crm/${PORTNAME}%20CRM%20${PORTVERSION}/Core%20%20Pro
 DISTFILES=	${PORTNAME}crm-${DISTVERSION}.tar.gz \
 		${PORTNAME}CRM-${DISTVERSION}-PHP5.2-Patch1.tar.gz
 
-MAINTAINER=	as@bsdgroup.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vtiger CRM is open source Customer Relationship Management software
 
 NO_BUILD=	yes

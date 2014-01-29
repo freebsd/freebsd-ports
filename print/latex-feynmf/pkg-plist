@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/feynmf.pl
 %%CLASSDIR%%/feynmf.dtx
 %%CLASSDIR%%/feynmf.ins

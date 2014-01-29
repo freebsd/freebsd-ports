@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/icmake
 bin/icmbuild
 bin/icmstart

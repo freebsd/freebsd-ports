@@ -15,25 +15,28 @@ LICENSE=	GPLv3
 OPTIONS_DEFINE=	SSL
 OPTIONS_DEFAULT=	SSL
 
-USE_OPENSSL=	yes
-GNU_CONFIGURE=	yes
 USES=		gmake
-
-PLIST_FILES=	sbin/bhm sbin/postal bin/postal-list sbin/rabid
-
-MAN1=	postal-list.1
-MAN8=	bhm.8 postal.8 rabid.8
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
+USE_GCC=	any
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gnutls
 
-.if empty(PORT_OPTIONS:MSSL)
+PLIST_FILES=	sbin/bhm sbin/postal bin/postal-list sbin/rabid \
+		man/man1/postal-list.1.gz man/man8/bhm.8.gz \
+		man/man8/postal.8.gz man/man8/rabid.8.gz
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSSL}
+USE_OPENSSL=	yes
+.else
 CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
-CFLAGS+=	${PTHREAD_CFLAGS} -Wno-long-long
-LDFLAGS+=	${PTHREAD_LIBS}
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|-lpthread|-pthread|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|-O2 -g|| ; \
+		 s|-lstdc|$${LDFLAGS}|' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

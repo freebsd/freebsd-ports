@@ -6,6 +6,7 @@ PORTVERSION=	3.4.0.20130726.3
 PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freebsd.org/~decke/distfiles/
+DISTNAME=	decke-${PORTNAME}-8a8c1a8
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} dvb-scan-tables-20130714.tar.gz
 
 MAINTAINER=	decke@FreeBSD.org

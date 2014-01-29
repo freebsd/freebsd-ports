@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/gozer
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog

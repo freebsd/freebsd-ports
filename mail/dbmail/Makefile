@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	dbmail
-PORTVERSION=	3.1.9
+PORTVERSION=	3.1.10
 CATEGORIES=	mail
 MASTER_SITES=	http://www.dbmail.org/download/3.1/ \
 		http://git.dbmail.eu/paul/dbmail/snapshot/
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgmime-2.6.so:${PORTSDIR}/mail/gmime26 \
 		libmhash.so:${PORTSDIR}/security/mhash \
 		libevent-2.0.so:${PORTSDIR}/devel/libevent2
 
-BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
+BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto \
 		${LOCALBASE}/share/sgml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-450
 
@@ -26,6 +26,8 @@ CONFLICTS=	dbmail-2.* dbmail22-[0-9]*
 OPTIONS_DEFINE=	DOCS LDAP SIEVE THREADS
 OPTIONS_DEFAULT=	THREADS
 SIEVE_DESC=	Build with support for Sieve mail sorting language
+
+OPTIONS_SUB=	yes
 
 USE_AUTOTOOLS=	libtool autoheader autoconf
 USE_LDCONFIG=	${PREFIX}/lib/dbmail
@@ -43,7 +45,13 @@ MAKE_ARGS+=	mandir=${MANPREFIX}/man
 
 DOCS=		AUTHORS BUGS INSTALL THANKS UPGRADING
 
-.include <bsd.port.options.mk>
+SIEVE_CONFIGURE_WITH=	sieve
+SIEVE_LIB_DEPENDS=	libsieve.so:${PORTSDIR}/mail/libsieve
+
+LDAP_CONFIGURE_WITH=	ldap
+LDAP_USE=		OPENLDAP=yes
+
+THREADS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-acinclude.m4
 
 DBMAIL_USER?=	mailnull
 DBMAIL_GROUP?=	mail
@@ -52,28 +60,6 @@ PIDDIR?=	/var/run/dbmail
 PLIST_SUB+=	DBMAIL_USER="${DBMAIL_USER}" \
 		DBMAIL_GROUP="${DBMAIL_GROUP}" \
 		PIDDIR="${PIDDIR}"
-
-.if ${PORT_OPTIONS:MSIEVE}
-CONFIGURE_ARGS+=--with-sieve=${LOCALBASE}
-LIB_DEPENDS+=	libsieve.so:${PORTSDIR}/mail/libsieve
-PLIST_SUB+=	SIEVE=""
-.else
-CONFIGURE_ARGS+=--without-sieve
-PLIST_SUB+=	SIEVE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
-USE_OPENLDAP=	yes
-PLIST_SUB+=	LDAP=""
-.else
-CONFIGURE_ARGS+=--without-ldap
-PLIST_SUB+=	LDAP="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MTHREADS}
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-acinclude.m4
-.endif
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/dbmail.conf ${STAGEDIR}${PREFIX}/etc/dbmail.conf-dist
@@ -86,6 +72,6 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PIDDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

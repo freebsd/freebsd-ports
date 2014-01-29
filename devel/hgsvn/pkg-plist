@@ -1,4 +1,0 @@
-bin/hgimportsvn
-bin/hgpullsvn
-bin/hgpushsvn
-%%PYTHON_SITELIBDIR%%/hgsvn-%%VERSION%%-py%%PYVER%%.egg

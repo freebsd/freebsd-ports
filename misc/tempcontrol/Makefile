@@ -9,35 +9,32 @@ MASTER_SITES=	http://www.lemis.com/grog/brewing/src/brewing/tempcontrol/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Temperature control for fermenting beer and other applications
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 MAKE_ARGS=	CFLAGS="${CFLAGS} -Wall -Wno-parentheses"
 NO_WRKSUBDIR=	yes
 
-PORTDOCS=	README
 PLIST_FILES=	bin/tempcontrol share/tempcontrol/temperaturecontrolrc.sample \
 		etc/rc.d/temperaturecontrol.sh.sample
 PLIST_DIRS=	share/tempcontrol
 
-OPTIONS_DEFINE=	DOCS
+PORTDOCS=	README
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 # Must (re)generate depedencies, otherwise parallel builds would not work
 pre-build:
 	${MAKE_CMD} -C ${WRKSRC} depend
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tempcontrol ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/tempcontrol
+	${INSTALL_PROGRAM} ${WRKSRC}/tempcontrol ${STAGEDIR}${PREFIX}/bin/
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/temperaturecontrolrc.sample \
-		${PREFIX}/share/tempcontrol
+		${STAGEDIR}${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/temperaturecontrol.sh.sample \
-		${PREFIX}/etc/rc.d
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+		${STAGEDIR}${PREFIX}/etc/rc.d
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%CLASSDIR%%/context/third/pgf/basiclayer/t-pgf.tex
 %%CLASSDIR%%/context/third/pgf/basiclayer/t-pgfbim.tex
 %%CLASSDIR%%/context/third/pgf/basiclayer/t-pgfbla.tex

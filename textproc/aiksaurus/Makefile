@@ -10,6 +10,8 @@ MASTER_SITES=	SF
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT?=	A set of libraries and applications which provide a thesaurus
 
+LICENSE=	GPLv2
+
 USE_AUTOTOOLS=	libtool
 USE_CSTD=	gnu89
 USES=		pathfix gmake pkgconfig
@@ -17,7 +19,6 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--without-gtk
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 	    	${WRKSRC}/configure

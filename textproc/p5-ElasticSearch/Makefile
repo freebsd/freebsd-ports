@@ -11,6 +11,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	ElasticSearch API
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS:=	p5-File-Temp>=0:${PORTSDIR}/devel/p5-File-Temp
 RUN_DEPENDS:=	p5-ElasticSearch-SearchBuilder>=0:${PORTSDIR}/textproc/p5-ElasticSearch-SearchBuilder \
 		p5-Carp>=0:${PORTSDIR}/devel/p5-Carp \
@@ -38,16 +41,4 @@ TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		ElasticSearch.3 \
-		ElasticSearch::Error.3 \
-		ElasticSearch::QueryParser.3 \
-		ElasticSearch::ScrolledSearch.3 \
-		ElasticSearch::TestServer.3 \
-		ElasticSearch::Transport.3 \
-		ElasticSearch::Transport::HTTP.3 \
-		ElasticSearch::Transport::HTTPLite.3 \
-		ElasticSearch::Transport::HTTPTiny.3 \
-		ElasticSearch::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -86,7 +86,7 @@ USE_PGSQL=		true
 
 .if ${PORT_OPTIONS:MPYTHON}
 CONFIGURE_ARGS+=	--with-python=${PREFIX}
-USE_PYTHON=		-2.7
+USE_PYTHON=		2
 USE_GNOME=		pygtk2
 PYCOMPILE=		${PREFIX}/lib/${PYTHON_VERSION}/compileall.py
 .else

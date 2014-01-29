@@ -1,0 +1,7 @@
+========================================================================
+
+If you use an Intel graphics adapter and experience missing or
+corrupted textures during gameplay, try launching doomsday with the
+"-notexcomp" option.
+
+========================================================================

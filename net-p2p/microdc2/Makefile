@@ -14,6 +14,8 @@ COMMENT=	Command-line based Direct Connect client
 CONFLICTS=	tthsum-[0-9]*
 
 BROKEN=		Does not link
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2014-02-27
 
 GNU_CONFIGURE=	yes
 USES=		iconv

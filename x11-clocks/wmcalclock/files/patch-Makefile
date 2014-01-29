@@ -1,6 +1,6 @@
---- Makefile.orig	Sat Mar 27 15:46:38 1999
-+++ Makefile	Sat Aug 12 01:01:35 2000
-@@ -1,8 +1,8 @@
+--- Makefile.orig	1999-03-27 14:46:38.000000000 +0800
++++ Makefile	2014-01-11 20:07:37.000000000 +0800
+@@ -1,8 +1,7 @@
 -CC     = gcc
 -CFLAGS = -O2 -Wall
 -INCDIR = -I/usr/X11R6/include/X11 -I/usr/X11R6/include
@@ -9,12 +9,11 @@
 +CC     ?= gcc
 +CFLAGS ?= -O2
 +INCDIR = -I${LOCALBASE}/include
-+DESTDIR= ${PREFIX}
 +LIBDIR = -L${LOCALBASE}/lib
  
  # for Linux
  LIBS   = -lXpm -lX11 -lXext
-@@ -15,14 +15,14 @@
+@@ -15,14 +14,14 @@ OBJS   = wmCalClock.o \
  
  
  .c.o:
@@ -31,12 +30,12 @@
  
  clean:
  	for i in $(OBJS) ; do \
-@@ -31,6 +31,6 @@
+@@ -31,6 +30,6 @@ clean:
  	rm -f wmCalClock
  
  install:: wmCalClock
 -	install -c -s -m 0755 wmCalClock $(DESTDIR)/bin
 -	install -c -m 0644 wmCalClock.1 $(DESTDIR)/man/man1 
-+	${BSD_INSTALL_PROGRAM} wmCalClock $(DESTDIR)/bin
-+	${BSD_INSTALL_MAN} wmCalClock.1 $(DESTDIR)/man/man1 
++	${BSD_INSTALL_PROGRAM} wmCalClock $(DESTDIR)$(PREFIX)/bin
++	${BSD_INSTALL_MAN} wmCalClock.1 $(DESTDIR)$(PREFIX)/man/man1 
  

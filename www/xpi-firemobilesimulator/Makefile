@@ -21,6 +21,5 @@ XPI_FILES=	chrome.manifest chrome/msim.jar \
 XPI_DIRS=	chrome components \
 		defaults/preferences defaults
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

@@ -27,19 +27,15 @@ DISABLE_SIZE=	yes
 OPTIONS_DEFINE=	AUTOSETUP DOCS
 AUTOSETUP_DESC=	Automatic global config file setup
 
-NO_STAGE=	yes
-
 USES=		kmod
-.include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	deplate:${PORTSDIR}/textproc/ruby-deplate
-.endif
+DOCS_BUILD_DEPENDS=	deplate:${PORTSDIR}/textproc/ruby-deplate
+
+.include <bsd.port.pre.mk>
 
 SETUP=		setup.sh
 HG_SHORTREV=	498acaef33b0
 
-MAN8=		mount_fusefs.8
 TXT_DOCS=	doc.text
 HTML_DOCS=	Faq.html \
 		Implementation.html \
@@ -66,7 +62,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extrapatch-fuse_module__fuse_vnops.c
 .endif
 
 .if exists(${SRC_BASE}/sys/fs/fuse)
-IGNORE=		Integrated into base
+IGNORE=		integrated into base
 .endif
 .if !exists(${SRC_BASE}/sbin/mount)
 IGNORE=		requires the userland sources to be installed. Set SRC_BASE if it is not in /usr/src
@@ -81,7 +77,6 @@ SUB_FILES+=	${SETUP}
 .else
 SUB_FILES+=	pkg-message
 .endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's/deplate.rb/deplate/g' \
 		${WRKSRC}/doc/Makefile
@@ -97,21 +92,21 @@ post-build:
 .endif
 
 post-install:
-	@${LN} -fs ${PREFIX}/sbin/mount_fusefs /usr/sbin
+	${MKDIR} ${STAGEDIR}/usr/sbin
+	(cd ${STAGEDIR} && ${LN} -fs ${PREFIX}/sbin/mount_fusefs \
+		usr/sbin/mount_fusefs)
 .if ${PORT_OPTIONS:MAUTOSETUP} && !defined(PACKAGE_BUILDING)
 	@${ECHO} "Modifying global startup config files and loading module..."
 	@${SH} ${WRKDIR}/${SETUP}
-.else
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/kmod/html
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/kmod/html
 .for i in ${TXT_DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/plaintext_out/$i ${DOCSDIR}/kmod
+	${INSTALL_DATA} ${WRKSRC}/doc/plaintext_out/$i ${STAGEDIR}${DOCSDIR}/kmod
 .endfor
 .for i in ${HTML_DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/html_chunked_out/$i ${DOCSDIR}/kmod/html
+	${INSTALL_DATA} ${WRKSRC}/doc/html_chunked_out/$i ${STAGEDIR}${DOCSDIR}/kmod/html
 .endfor
 .endif
 

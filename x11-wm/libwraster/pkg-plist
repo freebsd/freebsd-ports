@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/get-wraster-flags
 include/wraster.h
 lib/libwraster.a

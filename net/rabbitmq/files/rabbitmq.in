@@ -35,7 +35,7 @@ extra_commands="rotate_logs status"
 
 rabbitmq_start()
 {
-	HOME=/var/db/rabbitmq
+	export HOME=/var/db/rabbitmq
 	unset ERL_LIBS
 	su -m ${rabbitmq_user} \
 		-c "sh -c \"${rabbitmq_server} -detached\""
@@ -44,6 +44,8 @@ rabbitmq_start()
 	su -m ${rabbitmq_user} \
 		-c "sh -c \"${rabbitmq_ctl} status\"" \
 		| sed -n 's/[^p]*pid,\([0-9]*\)[^0-9]*/\1/p' > ${pidfile}
+# Wait until rabbitmq is up and fully functional
+	$rabbitmq_ctl wait ${pidfile}
 }
 
 run_rc_command "$1"

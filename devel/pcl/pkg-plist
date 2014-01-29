@@ -3,3 +3,4 @@ lib/libpcl.a
 lib/libpcl.la
 lib/libpcl.so
 lib/libpcl.so.1
+man/man3/pcl.3.gz

@@ -2,28 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	go.net
-PORTVERSION=	20120502
+PORTVERSION=	20131227
 CATEGORIES=	net devel
 MASTER_SITES=	http://jlaffaye.net/ LOCAL/jlaffaye
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Additional Net packages for Go
 
-GO_PKGNAME=	code.google.com/p/go.net
-GO_TARGET=	${GO_PKGNAME}/dict	\
-		${GO_PKGNAME}/spdy	\
-		${GO_PKGNAME}/websocket
+LICENSE=	BSD3CLAUSE
 
-NO_STAGE=	yes
-do-install:
-	${MKDIR} ${GO_LOCAL_LIBDIR}/${GO_PKGNAME}
-.for t in ${GO_TARGET}
-	${INSTALL_DATA} ${GO_WRKDIR_PKG}/${t}.a \
-		${GO_LOCAL_LIBDIR}/${GO_PKGNAME}
-	${MKDIR} ${GO_LOCAL_SRCDIR}/${t}
-	(cd ${GO_WRKDIR_SRC}/${t}/ && ${COPYTREE_SHARE} \* \
-		${GO_LOCAL_SRCDIR}/${t})
-.endfor
+BUILD_DEPENDS=	${LOCALBASE}/${GO_LIBDIR}/code.google.com/p/go.text:${PORTSDIR}/textproc/go.text
+
+GO_PKGNAME=	code.google.com/p/go.net
+GO_TARGET=	${GO_PKGNAME}/dict		\
+		${GO_PKGNAME}/html		\
+		${GO_PKGNAME}/html/atom 	\
+		${GO_PKGNAME}/html/charset	\
+		${GO_PKGNAME}/idna		\
+		${GO_PKGNAME}/ipv4		\
+		${GO_PKGNAME}/ipv6		\
+		${GO_PKGNAME}/netutil		\
+		${GO_PKGNAME}/proxy		\
+		${GO_PKGNAME}/publicsuffix	\
+		${GO_PKGNAME}/spdy		\
+		${GO_PKGNAME}/websocket
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/lang/go/files/bsd.go.mk"

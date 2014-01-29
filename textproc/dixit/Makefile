@@ -22,9 +22,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.${QT_VER}
 
 USES=		qmake
 USE_QT4=	corelib gui network moc_build rcc_build
-LDFLAGS=	-lz
+LDFLAGS+=	-lz
 
-PLIST_SUB=	_DB=${_DB} DB_DIR=${DB_DIR} _DB_F=${_DB_F}
+PLIST_SUB=	_DB=${_DB} DB_DIR=${DB_DIR} _DB_F=${_DB_F} \
+		DB_OWNER=${DB_OWNER} DB_GROUP=${DB_GROUP} DB_MODE=${DB_MODE}
 
 QT_VER=		4
 
@@ -40,7 +41,6 @@ _DB_D=	${PORTNAME}.qdb.tar.bz2
 _DB_F=	${PORTNAME}.qdb
 _DB=	${DB_DIR}/${_DB_F}
 
-NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Your dictionary database directory is:"
@@ -61,15 +61,14 @@ post-patch:
 		's|dixit.qdb|${_DB}|' ${WRKSRC}/src/dixit.h
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${DB_DIR}
 	@${TOUCH} -t ${DB_DATE} ${WRKSRC}/${_DB_F}
 	@${ECHO_MSG} "	===> Installing database ... .. ."
 	@if [ ! -e "${_DB}" -o "${_DB}" -ot "${WRKSRC}/${_DB_F}" ]; \
-		then	${TAR} -C ${DB_DIR:S/${PORTNAME}//} -xf ${DISTDIR}/${_DB_D} && \
+		then	${TAR} -C ${STAGEDIR}${DB_DIR:S/${PORTNAME}//} -xf ${DISTDIR}/${_DB_D} && \
 			${ECHO_MSG} "	===> ... Done."; \
 		else	${ECHO_MSG} "	===> Exisitng database is newer, skiping";\
 	fi
-	@${CHOWN} ${DB_OWNER}:${DB_GROUP} ${_DB}
-	@${CHMOD} ${DB_MODE} ${_DB}
 
 .include <bsd.port.mk>

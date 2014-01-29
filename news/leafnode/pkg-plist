@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/leafnode-version
 bin/newsq
 %%ETCDIR%%/config.example

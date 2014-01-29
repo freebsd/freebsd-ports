@@ -15,6 +15,5 @@ XPI_FILES=	chrome/mldonkey.jar components/ed2kprotocol.js defaults/preferences/d
 		install.rdf chrome.manifest
 XPI_DIRS=	chrome components defaults/preferences defaults
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

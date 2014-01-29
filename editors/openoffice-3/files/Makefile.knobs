@@ -1,7 +1,7 @@
-# Makefile for knobs
-# Whom:         Maho Nakata <maho@FreeBSD.org>
+# Created by: Maho Nakata <maho@FreeBSD.org>
 # $FreeBSD$
-# Makefile for knobs
+#
+# Makefile for knobs (?)
 
 CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}" --with-ant-home="${LOCALBASE}/share/java/apache-ant"
 CONFIGURE_ARGS+=	--with-lang=${LOCALIZED_LANG}
@@ -10,7 +10,7 @@ pre-fetch:
 	@${ECHO} "OPTIONS:"
 	@${ECHO}
 	@${ECHO} "You can select the language for OOo by making it with:"
-	@${ECHO} "make LOCALIZED_LANG=xx" 
+	@${ECHO} "make LOCALIZED_LANG=xx"
 	@${ECHO} "while xx can be one of the following"
 	@${ECHO} "af ar as-IN be-BY bg br bn bn-BD bn-IN bs ca cs cy da"
 	@${ECHO} "de dz el en-GB en-US en-ZA eo es et eu fa fi fr ga gl"
@@ -23,6 +23,8 @@ pre-fetch:
 	@${ECHO}
 	@${ECHO} "NOTICE:"
 	@${ECHO}
-	@${ECHO} "To build OOo, you should have a lot"
-	@${ECHO} "of free diskspace (~ 11GB) and memory (~ 2GB)."
-	@${ECHO} "If you want SDK and/or solver, please type make sdk and/or make solver"
+	@${ECHO} "To build OOo, you should have a lot of free diskspace"
+	@${ECHO} "(~ 11GB) and memory (~ 2GB)."
+	@${ECHO} 'If you want SDK and/or solver, please type "make sdk"
+	@${ECHO} 'and/or "make solver", respectively.'
+	@${ECHO}

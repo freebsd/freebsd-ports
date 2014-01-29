@@ -17,29 +17,30 @@ RUN_DEPENDS=	p5-Term-ReadKey>=0:${PORTSDIR}/devel/p5-Term-ReadKey
 USES=		perl5
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		%%DATADIR%%/help.txt \
+		%%DATADIR%%/logo.txt
+PLIST_DIRS=	%%DATADIR%%
 
-PORTDATA=	*
 PORTDOCS=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-configure:
-	@${REINPLACE_CMD} -i '' -e 's|Bin/help|Bin/../share/cadubi/help|' \
+	@${REINPLACE_CMD} -e \
+		's|/usr/local/stow/perl-5.8.x/bin/perl|${PERL}|; \
+		s|$$Bin/help|${DATADIR}/help|' \
 		${WRKSRC}/cadubi
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for d in help.txt logo.txt
-	@(cd ${WRKSRC} && ${INSTALL_DATA} ${d} ${DATADIR})
+	@(cd ${WRKSRC} && ${INSTALL_DATA} ${d} ${STAGEDIR}${DATADIR})
 .endfor
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/extras/ansi_term_codes.txt ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/extras/ansi_term_codes.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

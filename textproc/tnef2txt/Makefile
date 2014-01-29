@@ -15,16 +15,11 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 PLIST_FILES=	bin/tnef2txt
 PORTDOCS=	README
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/tnef2txt ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tnef2txt ${STAGEDIR}${PREFIX}/bin
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${ECHO} "===>   Installing README in ${PREFIX}/share/doc/tnef2txt"
-	@${MKDIR} ${PREFIX}/share/doc/tnef2txt && \
-		${CHMOD} a+rx ${PREFIX}/share/doc/tnef2txt
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/tnef2txt
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

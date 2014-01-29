@@ -18,7 +18,7 @@ SFTP_DESC=	Paramiko for SFTP support
 CA_BUNDLE_DESC=	Include CA bundle for SSL cert validation
 OPTIONS_DEFAULT=	SFTP CA_BUNDLE
 
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	bzr
 USES=		gettext

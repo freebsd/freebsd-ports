@@ -14,6 +14,5 @@ XPI_DISTNAME=	gmail_manager
 XPI_NUM=	1320
 XPI_ID=		{582195F5-92E7-40a0-A127-DB71295901D7}
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

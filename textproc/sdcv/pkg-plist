@@ -1,6 +1,7 @@
 bin/sdcv
-%%NLS%%share/locale/ru/LC_MESSAGES/sdcv.mo
-%%NLS%%share/locale/sk/LC_MESSAGES/sdcv.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/sdcv.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/sdcv.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/sdcv.mo
+man/man1/sdcv.1.gz
+share/locale/ru/LC_MESSAGES/sdcv.mo
+share/locale/sk/LC_MESSAGES/sdcv.mo
+share/locale/uk/LC_MESSAGES/sdcv.mo
+share/locale/zh_CN/LC_MESSAGES/sdcv.mo
+share/locale/zh_TW/LC_MESSAGES/sdcv.mo

@@ -14,7 +14,7 @@ COMMENT=	Plugin for using pre-configured keywords
 
 RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_ZIP=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracKeywordsPlugin
@@ -22,7 +22,6 @@ WRKSRC=			${WRKDIR}/trackeywordsplugin/0.11
 REL=			7273
 PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
-NO_STAGE=	yes
 post-extract:
 # Fix misplaced Genshi template: https://trac-hacks.org/ticket/6104
 	@${MV} ${WRKDIR}/trackeywordsplugin/0.10/trackeywords/templates/keywords.html ${WRKSRC}/trackeywords/templates/

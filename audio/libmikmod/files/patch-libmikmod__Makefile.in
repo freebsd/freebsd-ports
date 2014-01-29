@@ -1,0 +1,11 @@
+--- ./libmikmod/Makefile.in.orig	2014-01-19 10:54:34.000000000 -0200
++++ ./libmikmod/Makefile.in	2014-01-19 10:54:45.000000000 -0200
+@@ -72,7 +72,7 @@
+ 	rm -f Makefile
+ 
+ $(LIB): $(OBJ)
+-	$(LIBTOOL) --mode=link $(CC) -version-info 2:4:0 -o $@ $(OBJ) $(LIBRARY_LIB) -rpath $(DESTDIR)$(libdir)
++	$(LIBTOOL) --mode=link $(CC) -version-info 2:4:0 -o $@ $(OBJ) $(LIBRARY_LIB) -rpath $(libdir)
+ 
+ dl_hpux.lo:	$(top_srcdir)/dlapi/dl_hpux.c \
+ 			$(top_srcdir)/dlapi/dlfcn.h

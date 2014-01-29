@@ -3,12 +3,10 @@
 
 PKGNAMESUFFIX=	-gnome
 
-MAINTAINER=	meta+ports@vmeta.jp
 COMMENT=	Remmina plugin for GNOME Keyring
 
-LIB_DEPENDS=	gnome-keyring:${PORTSDIR}/security/libgnome-keyring
+LIB_DEPENDS=	libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 
 MASTERDIR=	${.CURDIR}/../remmina-plugins
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

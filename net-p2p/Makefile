@@ -21,6 +21,7 @@
     SUBDIR += ctorrent
     SUBDIR += dclib
     SUBDIR += deluge
+    SUBDIR += digitalcoin
     SUBDIR += dogecoin
     SUBDIR += ed2k
     SUBDIR += edonkey-tool-hash
@@ -113,5 +114,6 @@
     SUBDIR += vhcp
     SUBDIR += vuze
     SUBDIR += xnap
+    SUBDIR += zetacoin
 
 .include <bsd.port.subdir.mk>

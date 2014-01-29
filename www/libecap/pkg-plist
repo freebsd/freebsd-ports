@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/libecap/adapter/service.h
 include/libecap/adapter/xaction.h
 include/libecap/common/area.h

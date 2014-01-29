@@ -55,7 +55,7 @@ PLIST_SUB+=	V4L="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	2.5-2.7
+USE_PYTHON=	2
 USE_GNOME+=	pygtk2
 CONFIGURE_ARGS+=	--with-python=yes
 PLIST_SUB+=	PYTHON=""

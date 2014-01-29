@@ -1,7 +1,24 @@
-%%GO_LIBDIR%%/github.com/kr/text.a
-%%GO_SRCDIR%%/github.com/kr/text/indent.go
-@dirrmtry %%GO_LIBDIR%%/github.com/kr
-@dirrmtry %%GO_LIBDIR%%/github.com
-@dirrm %%GO_SRCDIR%%/github.com/kr/text
+%%GO_LIBDIR%%/%%GO_PKGNAME%%.a
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/Readme
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/colwriter/LICENSE
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/colwriter/Readme
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/colwriter/column.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/colwriter/column_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/doc.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/indent.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/indent_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/mc/Readme
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/mc/mc.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/wrap.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/wrap_test.go
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/mc
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/colwriter
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
 @dirrmtry %%GO_SRCDIR%%/github.com/kr
 @dirrmtry %%GO_SRCDIR%%/github.com
+@dirrmtry %%GO_SRCDIR%%
+@dirrmtry %%GO_LIBDIR%%/github.com/kr
+@dirrmtry %%GO_LIBDIR%%/github.com
+@dirrmtry %%GO_LIBDIR%%
+@dirrmtry share/go/pkg
+@dirrmtry share/go

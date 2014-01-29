@@ -11,10 +11,7 @@ COMMENT=	Perl extension to store multiple values per key
 
 TEST_DEPENDS=	p5-UNIVERSAL-ref>0:${PORTSDIR}/devel/p5-UNIVERSAL-ref
 
-NO_STAGE=	yes
 USES=	perl5
 USE_PERL5=	configure
-
-MAN3=	Hash::MultiValue.3
 
 .include <bsd.port.mk>

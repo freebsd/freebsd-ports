@@ -20,7 +20,7 @@ err() {
 
 shebang() {
 	rc=0
-	IFS="$LF" ; for f in `find ${STAGEDIR} -type f`; do
+	IFS="$LF" ; for f in `find ${STAGEDIR} -type f -perm +111`; do
 		interp=$(sed -n -e '1s/^#![[:space:]]*\([^[:space:]]*\).*/\1/p;2q' $f)
 		case "$interp" in
 		"") ;;
@@ -55,12 +55,10 @@ symlinks() {
 paths() {
 	rc=0
 	IFS="$LF" ; for f in `find ${STAGEDIR} -type f`;do
-		for d in ${STAGEDIR} ${WRKDIR}; do
-			if grep -q ${d} ${f} ; then
-				err "${f} is referring to ${d}"
-				rc=1
-			fi
-		done
+		if grep -q ${STAGEDIR} ${f} ; then
+			err "${f} is referring to ${STAGEDIR}"
+			rc=1
+		fi
 	done
 }
 

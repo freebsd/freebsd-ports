@@ -1,0 +1,11 @@
+bin/LLnextgen
+man/man1/LLnextgen.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/LLnextgen.pdf
+%%PORTDOCS%%%%DOCSDIR%%/LLnextgen.ps.gz
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/calculator.g
+%%PORTDOCS%%%%DOCSDIR%%/threadsafe.g
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

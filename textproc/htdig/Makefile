@@ -23,46 +23,28 @@ CONFIGURE_ARGS=	--with-config-dir=${PREFIX}/etc/htdig \
 		--with-image-dir=${PREFIX}/www/icons/htdig \
 		--with-image-url-prefix=/icons/htdig \
 		--with-ssl
-
-MAN1=		htdig.1 htdig-pdfparser.1 htdump.1 htfuzzy.1 htload.1 \
-		htmerge.1 htnotify.1 htpurge.1 htsearch.1 htstat.1 rundig.1
-
-MAN8=		htdigconfig.8
+USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	APACHE DOCS
 OPTIONS_DEFAULT=	APACHE
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+APACHE_USE=	APACHE=22+
+APACHE_CONFIGURE_ON=	--with-apache=${LOCALBASE}/sbin
+APACHE_PLIST_DIRSTRY=	www/cgi-bin www/data www/icons
 
-.if ${PORT_OPTIONS:MAPACHE}
-USE_APACHE=	22+
-CONFIGURE_ARGS+=	--with-apache=${LOCALBASE}/sbin
-.include "${PORTSDIR}/Mk/bsd.apache.mk"
-PLIST_DIRSTRY+=	www/cgi-bin www/data www/icons
-.endif
+PORTDOCS=	*
 
 post-patch:
 	@${FIND} ${WRKSRC} -name configure | ${XARGS} ${REINPLACE_CMD} -e 's|echo aout|echo elf|'
 
-pre-install:
-.if exists(${PREFIX}/etc/htdig/htdig.conf)
-	${MV} ${PREFIX}/etc/htdig/htdig.conf ${PREFIX}/etc/htdig/htdig.conf.old
-.endif
-
 post-install:
-	@${MV} ${PREFIX}/etc/htdig/htdig.conf ${PREFIX}/etc/htdig/htdig.conf.sample
-.if exists(${PREFIX}/etc/htdig/htdig.conf.old)
-	${MV} ${PREFIX}/etc/htdig/htdig.conf.old ${PREFIX}/etc/htdig/htdig.conf
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/html
+	@${MV} ${STAGEDIR}${PREFIX}/etc/htdig/htdig.conf ${STAGEDIR}${PREFIX}/etc/htdig/htdig.conf.sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 .for f in ChangeLog ChangeLog.0 README STATUS
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for f in *.html *.gif
-	@${INSTALL_DATA} ${WRKSRC}/htdoc/${f} ${DOCSDIR}/html
+	@${INSTALL_DATA} ${WRKSRC}/htdoc/${f} ${STAGEDIR}${DOCSDIR}/html
 .endfor
-.endif
 
 .include <bsd.port.mk>

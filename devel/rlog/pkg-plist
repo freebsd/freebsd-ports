@@ -87,6 +87,7 @@ libdata/pkgconfig/librlog.pc
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_l.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/tab_r.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/tabs.css
+%%PORTDOCS%%%%DOCSDIR%%/refman.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/rlog

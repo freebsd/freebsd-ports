@@ -23,5 +23,4 @@ IGNORE_WITH_PHP=5
 
 CONFIGURE_ARGS=	--enable-html_parse
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	freebsd-doc
-PORTVERSION=	43251
+PORTVERSION=	43641
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 MASTER_SITES=	LOCAL/blackend
@@ -11,14 +11,7 @@ PKGNAMEPREFIX?=	en-
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT?=	Documentation from the FreeBSD Documentation Project
 
-BUILD_DEPENDS=	docproj>=2.0_1:${PORTSDIR}/textproc/docproj \
-		fop:${PORTSDIR}/textproc/fop \
-		${LOCALBASE}/lib/X11/fonts/GentiumPlus/GentiumPlus-R.ttf:${PORTSDIR}/x11-fonts/gentium-plus \
-		${LOCALBASE}/lib/X11/fonts/Droid/DroidSans.ttf:${PORTSDIR}/x11-fonts/droid-fonts-ttf \
-		${LOCALBASE}/lib/X11/fonts/Lohit/Lohit-Bengali.ttf:${PORTSDIR}/x11-fonts/lohit \
-		${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSansMono.ttf:${PORTSDIR}/x11-fonts/dejavu \
-		${LOCALBASE}/share/fonts/TrueType/gkai00mp.ttf:${PORTSDIR}/chinese/arphicttf \
-		${LOCALBASE}/share/fonts/OTF/ipam.otf:${PORTSDIR}/japanese/font-ipa
+BUILD_DEPENDS=	docproj>=2.0_1:${PORTSDIR}/textproc/docproj
 
 WRKSRC=		${WRKDIR}/doc
 PLIST_SUB=	DOCSDIR=${DOCBASE} \
@@ -61,6 +54,16 @@ DOCFORMAT+=	${O:L:S,_,-,}
 PLIST_FORMATS+=	${O:L:S,_,-,}
 .endif
 .endfor
+
+.if ${PORT_OPTIONS:MPDF} || ${PORT_OPTIONS:MPS}
+BUILD_DEPENDS+=	fop:${PORTSDIR}/textproc/fop \
+		${LOCALBASE}/lib/X11/fonts/GentiumPlus/GentiumPlus-R.ttf:${PORTSDIR}/x11-fonts/gentium-plus \
+		${LOCALBASE}/lib/X11/fonts/Droid/DroidSans.ttf:${PORTSDIR}/x11-fonts/droid-fonts-ttf \
+		${LOCALBASE}/lib/X11/fonts/Lohit/Lohit-Bengali.ttf:${PORTSDIR}/x11-fonts/lohit \
+		${LOCALBASE}/lib/X11/fonts/dejavu/DejaVuSansMono.ttf:${PORTSDIR}/x11-fonts/dejavu \
+		${LOCALBASE}/share/fonts/TrueType/gkai00mp.ttf:${PORTSDIR}/chinese/arphicttf \
+		${LOCALBASE}/share/fonts/OTF/ipam.otf:${PORTSDIR}/japanese/font-ipa
+.endif
 
 # when html or html-split is defined as the format, add HTML_COMMON.
 .if ${PORT_OPTIONS:MHTML} || ${PORT_OPTIONS:MHTML_SPLIT}

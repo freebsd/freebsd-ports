@@ -1,16 +1,50 @@
---- install.sh.orig	Sun Mar 20 06:29:18 2005
-+++ install.sh	Mon May 30 20:58:56 2005
-@@ -1,5 +1,5 @@
+--- install.sh.orig	2005-03-20 14:29:18.000000000 +0000
++++ install.sh
+@@ -1,8 +1,7 @@
 -#!/bin/bash 
 +#!/bin/sh 
  # install plugin in the standard childsplay path  
  
- PREFIX=/usr/local
- DESTDIR=$PREFIX/share/childsplay
-@@ -34,24 +34,8 @@
-     echo "exit"
-     exit 1
- fi
+-PREFIX=/usr/local
+-DESTDIR=$PREFIX/share/childsplay
++INSTDIR=${DESTDIR}${PREFIX}/share/childsplay
+ 
+ ###########################################################
+ #    DO NOT EDIT BEHIND THIS POINT
+@@ -13,47 +12,21 @@ DESTDIR=$PREFIX/share/childsplay
+ DEPEN=0.71
+  
+ set -e
+-CWD=`pwd`
+ 
+-USERID=`id | sed -e 's/).*//; s/^.*(//;'`
+-if [ "$USERID" != "root" ]; then
+-    echo " You must be root to install the plugins"
+-    echo " exit"
+-    exit 1
+-fi
+-
+-echo -e "\n>>>>>>>>>>> Install childsplay plugins >>>>>>>>>>>>>>>>>>>>"
+-echo -e "\n This release depends on childsplay version $DEPEN"
+-echo -n " Cheking version = "
+-VERSION=$(childsplay --version)
+-echo $VERSION
+-
+-if [ `expr $VERSION \< $DEPEN` -eq 1 ];then
+-    echo " Childsplay version incorrect, please upgrade to at least"
+-    echo " version $DEPEN"
+-    echo "exit"
+-    exit 1
+-fi
++# We can't run childsplay because it tries to write to $HOME/.schoolsplay.rc
++# Which is not permitted in strict build environements.  It is not necessary
++# anyway beecause the version is much higher than 0.71 already!
++
++#echo -e "\n>>>>>>>>>>> Install childsplay plugins >>>>>>>>>>>>>>>>>>>>"
++#echo -e "\n This release depends on childsplay version $DEPEN"
++#echo -n " Cheking version = "
++#VERSION=$(childsplay --version)
++#echo $VERSION
     
 -echo -e "\n The path to install the soundfiles in is "
 -echo " $DESTDIR."
@@ -31,4 +65,8 @@
  echo " Installing in $DESTDIR/Data/AlphabetSounds"
  
  echo " Copy sound files"
- cp -rf $CWD/AlphabetSounds $DESTDIR/Data/
+-cp -rf $CWD/AlphabetSounds $DESTDIR/Data/
++mkdir -p ${INSTDIR}/Data
++cp -rf AlphabetSounds ${INSTDIR}/Data/
+ 
+ echo -e "\n Everything installed, enjoy\n"

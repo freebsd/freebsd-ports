@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	newsbeuter
-PORTVERSION=	2.7
-PORTREVISION=	1
+PORTVERSION=	2.8
 CATEGORIES=	www
 MASTER_SITES=	http://newsbeuter.org/downloads/
 
@@ -43,7 +42,7 @@ post-patch:
 				${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's,<ncursesw/ncurses.h>,<ncurses.h>,' \
 		${WRKSRC}/src/controller.cpp ${WRKSRC}/src/view.cpp
-	${REINPLACE_CMD} -e 's,fail "ncursesw5",true,; s,fail "libcrypto",true,' \
+	${REINPLACE_CMD} -e 's,fail "ncursesw",true,; s,fail "libcrypto",true,' \
 		${WRKSRC}/config.sh
 	${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB} -lcrypto -lncursesw|' \
 		${WRKSRC}/Makefile

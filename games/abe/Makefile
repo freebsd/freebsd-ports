@@ -26,8 +26,8 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 
 PORTDOCS=	AUTHORS ChangeLog README
 
-DESKTOP_ENTRIES="Abe's Amazing Avanture" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
+DESKTOP_ENTRIES="Abe's Amazing Avanture" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 OPTIONS_DEFINE=	DOCS GOD_MODE OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	GOD_MODE OPTIMIZED_CFLAGS
@@ -37,21 +37,25 @@ GOD_MODE_DESC=	Enable God Mode (toggle with 'g')
 
 post-patch:
 .if ${PORT_OPTIONS:MGOD_MODE} || ! ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-.   if ${PORT_OPTIONS:MGOD_MODE}
+. if ${PORT_OPTIONS:MGOD_MODE}
 	@${REINPLACE_CMD} -e 's|#define GOD_MODE 0|#define GOD_MODE 1|' \
 		${WRKSRC}/src/Game.h
-.   endif
-.   if ! ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
+. endif
+. if ! ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 	@${REINPLACE_CMD} -e 's|-O2||g ; \
 		s|-fomit-frame-pointer||g ; \
 		s|-ffast-math||g ; \
 		s|-fexpensive-optimizations||g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.   endif
+. endif
 .endif
 
+	@${REINPLACE_CMD} -e 's|%u|%zu|' \
+	${WRKSRC}/src/MapIO.c
+
 post-install:
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 .for d in images maps sounds
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})

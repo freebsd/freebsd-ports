@@ -23,10 +23,7 @@ USE_BZIP2=	yes
 USE_GL=		gl glu
 USE_XORG=	ice inputproto sm x11 xau xcb xdamage xdmcp xext xfixes xft xi \
 		xproto xrender xscrnsaver xt xxf86vm
-USE_GMAKE=	yes
-USES=		bison pathfix cmake pkgconfig
-USE_TCL=	85
-USE_TK=		85
+USES=		bison pathfix cmake:outsource pkgconfig tk:85
 USE_LDCONFIG=	yes
 
 PREFIX?=	${LOCALBASE}/${PORTNAME}
@@ -42,7 +39,7 @@ MANPREFIX=	${PREFIX}/share
 BROKEN_sparc64=	does not compile: invokes i386 assembler
 
 post-patch:
-	@${REINPLACE_CMD} "s+-exact Tcl 8\.5\.1+Tcl 8.5+" ${WRKSRC}/src/other/tcl/library/init.tcl
+	@${REINPLACE_CMD} "s+-exact Tcl 8\.5\.9+Tcl 8.5+" ${WRKSRC}/src/other/tcl/library/init.tcl
 	@${REINPLACE_CMD} -e 's|{LIB_DIR}|{prefix}/libdata|' \
 			${WRKSRC}/misc/pkgconfig/CMakeLists.txt
 

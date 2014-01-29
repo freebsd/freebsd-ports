@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/luatex
 bin/texlua
 bin/texluac

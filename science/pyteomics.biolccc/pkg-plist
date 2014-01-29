@@ -1,8 +1,0 @@
-%%PYTHON_SITELIBDIR%%/pyteomics/__init__.py
-%%PYTHON_SITELIBDIR%%/pyteomics/__init__.pyc
-%%PYTHON_SITELIBDIR%%/pyteomics/__init__.pyo
-%%PYTHON_SITELIBDIR%%/pyteomics/_biolccc.so
-%%PYTHON_SITELIBDIR%%/pyteomics/biolccc.py
-%%PYTHON_SITELIBDIR%%/pyteomics/biolccc.pyc
-%%PYTHON_SITELIBDIR%%/pyteomics/biolccc.pyo
-@dirrmtry %%PYTHON_SITELIBDIR%%/pyteomics

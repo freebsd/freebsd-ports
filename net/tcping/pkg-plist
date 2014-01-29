@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/tcping
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -54,7 +54,7 @@ PERL_VERSION=	5.14.4
 .elif ${PERL5_DEFAULT} == 5.16
 PERL_VERSION=	5.16.3
 .elif ${PERL5_DEFAULT} == 5.18
-PERL_VERSION=	5.18.1
+PERL_VERSION=	5.18.2
 .else
 IGNORE=	Invalid perl5 version ${PERL5_DEFAULT}
 .endif
@@ -258,9 +258,9 @@ do-install:
 .endif # ! USES=gmake
 .endif # modbuild
 
-post-stage::
 # TODO: change to ${_USE_PERL5:Mconfigure} when M::B creates .packlist
 .if ${USE_PERL5:Mconfigure} || ${USE_PERL5:Mmodbuildtiny}
+post-stage::
 	-@[ -d ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto ] && ${FIND} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
 .endif
 .endif # defined(_POSTMKINCLUDED)

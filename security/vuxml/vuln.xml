@@ -51,6 +51,475 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="c7b5d72b-886a-11e3-9533-60a44c524f57">
+    <topic>otrs -- SQL injection issue</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><lt>3.2.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OTRS Project reports:</p>
+	<blockquote cite="https://www.otrs.com/security-advisory-2014-02-sql-injection-issue/">
+	  <p>SQL injection issue</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1471</cvename>
+      <url>https://www.otrs.com/security-advisory-2014-02-sql-injection-issue/</url>
+    </references>
+    <dates>
+      <discovery>2014-01-28</discovery>
+      <entry>2014-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="080c5370-886a-11e3-9533-60a44c524f57">
+    <topic>otrs -- CSRF issue in customer web interface</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><lt>3.2.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OTRS Project reports:</p>
+	<blockquote cite="https://www.otrs.com/security-advisory-2014-01-csrf-issue-customer-web-interface/">
+	  <p>An attacker that managed to take over the session of a logged in customer could create tickets and/or send follow-ups to existing tickets due to missing challenge token checks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.otrs.com/security-advisory-2014-01-csrf-issue-customer-web-interface/</url>
+    </references>
+    <dates>
+      <discovery>2014-01-28</discovery>
+      <entry>2014-01-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f9810c43-87a5-11e3-9214-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>32.0.1700.102</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>14 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[330420] High CVE-2013-6649: Use-after-free in SVG images.
+	      Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[331444] High CVE-2013-6650: Memory corruption in V8. This
+	      issue was fixed in v8 version 3.22.24.16. Credit to Christian
+	      Holler.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6649</cvename>
+      <cvename>CVE-2013-6650</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-01-27</discovery>
+      <entry>2014-01-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d1dfc4c7-8791-11e3-a371-6805ca0b3d42">
+    <topic>rt42 -- denial-of-service attack via the email gateway</topic>
+    <affects>
+      <package>
+	<name>rt42</name>
+	<range><ge>4.2</ge><lt>4.2.1_3</lt></range>
+	<range><ge>4.2.2</ge><lt>4.2.2_2</lt></range>
+      </package>
+      <package>
+	<name>p5-Email-Address-List</name>
+	<range><lt>0.02</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The RT development team reports:</p>
+	<blockquote cite="http://blog.bestpractical.com/2014/01/security-vulnerability-in-rt-42.html">
+	  <p>Versions of RT between 4.2.0 and 4.2.2 (inclusive) are
+	    vulnerable to a denial-of-service attack via the email
+	    gateway; any installation which accepts mail from untrusted
+	    sources is vulnerable, regardless of the permissions
+	    configuration inside RT. This vulnerability is assigned
+	    CVE-2014-1474.</p>
+	  <p>This vulnerability is caused by poor parsing performance
+	    in the Email::Address::List module, which RT depends on. We
+	    recommend that affected users upgrade their version of
+	    Email::Address::List to v0.02 or above, which resolves the
+	    issue. Due to a communications mishap, the release on CPAN
+	    will temporarily appear as "unauthorized," and the
+	    command-line cpan client will hence not install it. We
+	    expect this to be resolved shortly; in the meantime, the
+	    release is also available from our server.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-1474</cvename>
+      <url>http://blog.bestpractical.com/2014/01/security-vulnerability-in-rt-42.html</url>
+    </references>
+    <dates>
+      <discovery>2014-01-27</discovery>
+      <entry>2014-01-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="efa663eb-8754-11e3-9a47-00163e1ed244">
+    <topic>strongswan -- multiple DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>strongswan</name>
+	<range><lt>5.1.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>strongSwan Project reports:</p>
+	<blockquote cite="http://www.strongswan.org/blog/2013/11/01/strongswan-denial-of-service-vulnerability-%28cve-2013-6076%29.html">
+	  <p>A DoS vulnerability triggered by crafted IKEv1 fragmentation
+	    payloads was discovered in strongSwan's IKE daemon charon. All
+	    versions since 5.0.2 are affected.</p>
+	</blockquote>
+	<blockquote cite="http://www.strongswan.org/blog/2013/11/01/strongswan-denial-of-service-vulnerability-%28cve-2013-6075%29.html">
+	  <p>A DoS vulnerability and potential authorization bypass triggered
+	    by a crafted ID_DER_ASN1_DN ID payload was discovered in strongSwan.
+	    All versions since 4.3.3 are affected.</p>
+	</blockquote>
+	<blockquote cite="http://www.strongswan.org/blog/2013/08/01/strongswan-denial-of-service-vulnerability-%28cve-2013-5018%29.html">
+	  <p>A DoS vulnerability in strongSwan was discovered, which is
+	    triggered by XAuth usernames and EAP identities in versions
+	    5.0.3 and 5.0.4.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-5018</cvename>
+      <cvename>CVE-2013-6075</cvename>
+      <cvename>CVE-2013-6076</cvename>
+      <url>http://www.strongswan.org/blog/2013/08/01/strongswan-denial-of-service-vulnerability-%28cve-2013-5018%29.html</url>
+      <url>http://www.strongswan.org/blog/2013/11/01/strongswan-denial-of-service-vulnerability-%28cve-2013-6075%29.html</url>
+      <url>http://www.strongswan.org/blog/2013/11/01/strongswan-denial-of-service-vulnerability-%28cve-2013-6076%29.html</url>
+    </references>
+    <dates>
+      <discovery>2013-11-01</discovery>
+      <entry>2014-01-27</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d9dbe6e8-84da-11e3-98bd-080027f2d077">
+    <topic>varnish -- DoS vulnerability in Varnish HTTP cache</topic>
+    <affects>
+      <package>
+	<name>varnish</name>
+	<range><lt>3.0.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Varnish Cache Project reports:</p>
+	<blockquote cite="https://www.varnish-cache.org/lists/pipermail/varnish-announce/2013-October/000686.html">
+	  <p>If Varnish receives a certain illegal request, and the subroutine
+	    'vcl_error{}' restarts the request, the varnishd worker process
+	    will crash with an assert.
+	  </p>
+	  <p>The varnishd management process will restart the worker process, but
+	    there will be a brief interruption of service and the cache will be
+	    emptied, causing more traffic to go to the backend.
+	  </p>
+	  <p>We are releasing this advisory because restarting from vcl_error{} is both fairly common and documented.</p>
+	  <p>This is purely a denial of service vulnerability, there is no risk of privilege escalation.</p>
+	  <p>Workaround</p>
+	  <p>Insert this at the top of your VCL file:</p>
+	  <pre>
+		sub vcl_error {
+			if (obj.status == 400 || obj.status == 413) {
+				return(deliver);
+			}
+		}
+
+		Or add this test at the top of your existing vcl_error{}.
+	  </pre>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-4484</cvename>
+      <mlist>https://www.varnish-cache.org/lists/pipermail/varnish-announce/2013-October/000686.html</mlist>
+    </references>
+    <dates>
+      <discovery>2013-10-30</discovery>
+      <entry>2014-01-25</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c0ef849e-84ac-11e3-bec4-9c4e36909cc0">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>11.2r202.335</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="http://helpx.adobe.com/security/products/flash-player/apsb14-02.html">
+	  <p>These updates address vulnerabilities that could cause a crash
+	    and potentially allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0491</cvename>
+      <cvename>CVE-2014-0492</cvename>
+      <url>http://helpx.adobe.com/security/products/flash-player/apsb14-02.html</url>
+    </references>
+    <dates>
+      <discovery>2014-01-14</discovery>
+      <entry>2014-01-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="6d08fa63-83bf-11e3-bdba-080027ef73ec">
+    <topic>HTMLDOC -- buffer overflow issues when reading AFM files and parsing page sizes</topic>
+    <affects>
+      <package>
+	<name>htmldoc</name>
+	<range><lt>1.8.28</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Michael Sweet reports:</p>
+	<blockquote cite="http://www.msweet.org/projects.php?Z1">
+	  <p>HTMLDOC 1.8.28 fixes some known security issues and
+	    formatting bugs. Changes include:</p>
+	  <ul>
+	    <li>SECURITY: Fixed three buffer overflow issues when
+	      reading AFM files and parsing page sizes.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.msweet.org/projects.php?Z1</url>
+    </references>
+    <dates>
+      <discovery>2014-01-06</discovery>
+      <entry>2014-01-22</entry>
+      <modified>2014-01-23</modified>
+    </dates>
+  </vuln>
+
+  <vuln vid="81f1fdc2-7ec7-11e3-a6c6-00163e1ed244">
+    <topic>virtualbox-ose -- local vulnerability</topic>
+    <affects>
+      <package>
+	<name>virtualbox-ose</name>
+	<range><lt>4.2.22</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="http://www.oracle.com/technetwork/topics/security/cpujan2014-1972949.html">
+	  <p>Unspecified vulnerability in the Oracle VM VirtualBox
+	    component in Oracle Virtualization VirtualBox prior to
+	    3.2.20, 4.0.22, 4.1.30, 4.2.22, and 4.3.6 allows local
+	    users to affect confidentiality, integrity, and availability
+	    via unknown vectors related to Core.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-5892</cvename>
+      <url>http://www.oracle.com/technetwork/topics/security/cpujan2014-1972949.html</url>
+    </references>
+    <dates>
+      <discovery>2014-01-15</discovery>
+      <entry>2014-01-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5acf4638-7e2c-11e3-9fba-00262d5ed8ee">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>32.0.1700.77</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Google Chrome Releases reports:</p>
+	<blockquote cite="http://googlechromereleases.blogspot.nl/">
+	  <p>11 security fixes in this release, including:</p>
+	  <ul>
+	    <li>[249502] High CVE-2013-6646: Use-after-free in web workers.
+	      Credit to Collin Payne.</li>
+	    <li>[326854] High CVE-2013-6641: Use-after-free related to forms.
+	      Credit to Atte Kettunen of OUSPG.</li>
+	    <li>[324969] High CVE-2013-6642: Address bar spoofing in Chrome for
+	      Android. Credit to lpilorz.</li>
+	    <li>[321940] High CVE-2013-6643: Unprompted sync with an attacker’s
+	      Google account. Credit to Joao Lucas Melo Brasio.</li>
+	    <li>[318791] Medium CVE-2013-6645 Use-after-free related to speech
+	      input elements. Credit to Khalil Zhani.</li>
+	    <li>[333036] CVE-2013-6644: Various fixes from internal audits,
+	      fuzzing and other initiatives.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6641</cvename>
+      <cvename>CVE-2013-6642</cvename>
+      <cvename>CVE-2013-6643</cvename>
+      <cvename>CVE-2013-6644</cvename>
+      <cvename>CVE-2013-6645</cvename>
+      <cvename>CVE-2013-6646</cvename>
+      <url>http://googlechromereleases.blogspot.nl/</url>
+    </references>
+    <dates>
+      <discovery>2014-01-14</discovery>
+      <entry>2014-01-15</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3d95c9a7-7d5c-11e3-a8c1-206a8a720317">
+    <topic>ntpd DRDoS / Amplification Attack using ntpdc monlist command</topic>
+    <affects>
+      <package>
+	<name>ntp</name>
+	<range><lt>4.2.7p26</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ntp.org reports:</p>
+	<blockquote cite="http://support.ntp.org/bin/view/Main/SecurityNotice#DRDoS_Amplification_Attack_using">
+	  <p>Unrestricted access to the monlist feature in
+	    ntp_request.c in ntpd in NTP before 4.2.7p26 allows remote
+	    attackers to cause a denial of service (traffic
+	    amplification) via forged (1) REQ_MON_GETLIST or (2)
+	    REQ_MON_GETLIST_1 requests, as exploited in the wild in
+	    December 2013</p>
+	  <p>Use noquery to your default restrictions to block all
+	    status queries.</p>
+	  <p>Use disable monitor to disable the ``ntpdc -c monlist''
+	    command while still allowing other status queries.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-5211</cvename>
+      <freebsdsa>SA-14:02.ntpd</freebsdsa>
+      <url>http://support.ntp.org/bin/view/Main/SecurityNotice#DRDoS_Amplification_Attack_using</url>
+    </references>
+    <dates>
+      <discovery>2014-01-01</discovery>
+      <entry>2014-01-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ba04a373-7d20-11e3-8992-00132034b086">
+    <topic>nagios -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>nagios</name>
+	<range><lt>3.5.1_3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Eric Stanley reports:</p>
+	<blockquote cite="http://sourceforge.net/p/nagios/nagioscore/ci/d97e03f32741a7d851826b03ed73ff4c9612a866/">
+	  <p>Most CGIs previously incremented the input variable counter twice
+	    when it encountered a long key value. This could cause the CGI to
+	    read past the end of the list of CGI variables.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-7108</cvename>
+      <cvename>CVE-2013-7205</cvename>
+      <url>http://sourceforge.net/p/nagios/nagioscore/ci/d97e03f32741a7d851826b03ed73ff4c9612a866/</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1046113</url>
+    </references>
+    <dates>
+      <discovery>2013-12-20</discovery>
+      <entry>2014-01-14</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="cb252f01-7c43-11e3-b0a6-005056a37f68">
+    <topic>bind -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>bind99</name>
+	<name>bind99-base</name>
+	<range><lt>9.9.4.2</lt></range>
+      </package>
+      <package>
+	<name>bind98</name>
+	<name>bind98-base</name>
+	<range><lt>9.8.6.2</lt></range>
+      </package>
+      <package>
+	<name>bind96</name>
+	<name>bind96-base</name>
+	<range><lt>9.6.3.2.ESV.R10.2</lt></range>
+      </package>
+      <package>
+	<name>FreeBSD</name>
+	<range><gt>9.2</gt><lt>9.2_3</lt></range>
+	<range><gt>9.1</gt><lt>9.1_10</lt></range>
+	<range><gt>8.4</gt><lt>8.4_7</lt></range>
+	<range><gt>8.3</gt><lt>8.3_14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="https://kb.isc.org/article/AA-01078/74/">
+	  <p>Because of a defect in handling queries for NSEC3-signed zones,
+	    BIND can crash with an "INSIST" failure in name.c when processing
+	    queries possessing certain properties. By exploiting this defect
+	    an attacker deliberately constructing a query with the right
+	    properties could achieve denial of service against an authoritative
+	    nameserver serving NSEC3-signed zones.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0591</cvename>
+      <freebsdsa>SA-13:07.bind</freebsdsa>
+      <url>https://kb.isc.org/article/AA-01078/74/</url>
+    </references>
+    <dates>
+      <discovery>2014-01-08</discovery>
+      <entry>2014-01-13</entry>
+      <modified>2014-01-15</modified>
+    </dates>
+  </vuln>
+
   <vuln vid="28c575fa-784e-11e3-8249-001cc0380077">
     <topic>libXfont -- Stack buffer overflow in parsing of BDF font files in libXfont</topic>
     <affects>

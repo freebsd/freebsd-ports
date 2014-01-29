@@ -11,11 +11,9 @@ COMMENT=	Bluetooth traffic dumper, similar to tcpdump
 
 LICENSE=	GPLv2
 
+USES=		uidfix
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAN1=		hcidump.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/hcidump
+PLIST_FILES=	bin/hcidump man/man1/hcidump.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

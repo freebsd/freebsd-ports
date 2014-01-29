@@ -16,7 +16,7 @@ LICENSE=	BSD
 PYDISTUTILS_AUTOPLIST=	yes
 
 USE_PYDISTUTILS=	easy_install
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_ZIP=	yes
 
 .include <bsd.port.mk>

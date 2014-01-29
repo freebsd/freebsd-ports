@@ -3,7 +3,7 @@
 
 PORTNAME=	jewel
 PORTVERSION=	0.12.41
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://mjr.towers.org.uk/comp/
 
@@ -15,7 +15,6 @@ OPTIONS_DEFINE=	DOCS
 ALL_TARGET=	all
 DOCS=		Changelog Changelog.DLR Changelog.jewel INSTALL LICENSE README
 PORTDOCS=	*
-MAN1=		jewel.1x
 USES+=		gmake
 USE_XORG=	x11 xext xpm
 
@@ -31,7 +30,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/goodies/fspanel/fspanel ${STAGEDIR}${PREFIX}/bin/jewel-fspanel
 	${INSTALL_PROGRAM} ${WRKSRC}/goodies/setrootimage/setrootimage ${STAGEDIR}${PREFIX}/bin/jewel-setrootimage
 	${INSTALL_PROGRAM} ${WRKSRC}/goodies/xsession/xsession ${STAGEDIR}${PREFIX}/bin/jewel-xsession
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/jewel.1x ${STAGEDIR}${PREFIX}/man/man1
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for ii in ${DOCS}

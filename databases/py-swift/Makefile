@@ -25,7 +25,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}PasteDeploy>0:${PORTSDIR}/www/py-pastedeplo
 		${PYTHON_PKGNAMEPREFIX}xattr>=0:${PORTSDIR}/devel/py-xattr \
 		rsync>=3.0:${PORTSDIR}/net/rsync
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_AUTOPLIST=	yes
 USE_RC_SUBR=	swift

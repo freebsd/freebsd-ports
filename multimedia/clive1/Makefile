@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 
 USE_BZIP2=	yes
 # not compatible with 3.0
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 
 .if !defined(NO_INSTALL_MANPAGES)
 MAN1=	${PORTNAME}.1 ${PORTNAME}-passwd.1

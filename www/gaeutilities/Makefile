@@ -13,7 +13,7 @@ COMMENT=	Utility classes to make working with Google App Engine easier
 
 RUN_DEPENDS=	google-appengine>=1.2.4_1:${PORTSDIR}/www/google-appengine
 
-USE_PYTHON=	2.7 # same as www/google-appengine
+USE_PYTHON=	2 # same as www/google-appengine
 
 WRKSRC=	${WRKDIR}/joerussbowman-gaeutilities-ea3f7e1
 

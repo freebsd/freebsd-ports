@@ -5,3 +5,5 @@ lib/librouteros.so.2
 lib/librouteros.so
 lib/librouteros.la
 lib/librouteros.a
+man/man1/ros.1.gz
+man/man3/librouteros.3.gz

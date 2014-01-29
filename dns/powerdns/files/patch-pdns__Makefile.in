@@ -1,0 +1,49 @@
+--- ./pdns/Makefile.in.orig	2013-12-17 14:47:45.000000000 +0100
++++ ./pdns/Makefile.in	2014-01-16 13:37:09.328942976 +0100
+@@ -66,7 +66,7 @@
+ 	nproxy$(EXEEXT) notify$(EXEEXT) pdnssec$(EXEEXT) \
+ 	dnsbulktest$(EXEEXT) nsec3dig$(EXEEXT)
+ @BOTAN110_TRUE@am__append_4 = botan110signers.cc botansigners.cc
+-@BOTAN110_TRUE@am__append_5 = $(BOTAN110_LIBS) -lgmp -lrt
++@BOTAN110_TRUE@am__append_5 = $(BOTAN110_LIBS)
+ @BOTAN18_TRUE@am__append_6 = botan18signers.cc botansigners.cc
+ @BOTAN18_TRUE@am__append_7 = $(BOTAN18_LIBS) -lgmp
+ @CRYPTOPP_TRUE@am__append_8 = cryptoppsigners.cc
+@@ -74,7 +74,7 @@
+ @SQLITE3_TRUE@am__append_10 = ssqlite3.cc ssqlite3.hh
+ @ORACLE_TRUE@am__append_11 = $(ORACLE_LIBS)
+ @BOTAN110_TRUE@am__append_12 = botan110signers.cc botansigners.cc
+-@BOTAN110_TRUE@am__append_13 = $(BOTAN110_LIBS) -lgmp -lrt
++@BOTAN110_TRUE@am__append_13 = $(BOTAN110_LIBS)
+ @BOTAN18_TRUE@am__append_14 = botan18signers.cc botansigners.cc
+ @BOTAN18_TRUE@am__append_15 = $(BOTAN18_LIBS) -lgmp
+ @CRYPTOPP_TRUE@am__append_16 = cryptoppsigners.cc
+@@ -750,8 +750,8 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AM_CXXFLAGS = -DSYSCONFDIR=\"@sysconfdir@\" -DLIBDIR=\"@libdir@\" -DLOCALSTATEDIR=\"@socketdir@\" -Ibackends/bind @THREADFLAGS@ $(LUA_CFLAGS) $(SQLITE3_CFLAGS) $(POLARSSL_CFLAGS) -Iext/rapidjson/include
+-AM_CPPFLAGS = -Ibackends/bind $(BOOST_CPPFLAGS) @THREADFLAGS@ \
+-	$(LIBCURL_CFLAGS) $(am__append_1) $(am__append_2)
++AM_CPPFLAGS = -Ibackends/bind @THREADFLAGS@ \
++	$(am__append_1) $(am__append_2) $(BOOST_CPPFLAGS)
+ EXTRA_DIST = dnslabeltext.rl dnslabeltext.cc mtasker.cc inflighter.cc docs/pdns_control.8  \
+ 	docs/pdns_server.8 docs/zone2sql.8 docs/zone2ldap.8 docs/pdnssec.8 \
+ 	docs/dnsreplay.8 docs/dnsscope.8 docs/dnswasher.8 docs/pdnssec.8 docs/zone2ldap.8 \
+@@ -797,7 +797,7 @@
+ #
+ pdns_server_LDFLAGS = @moduleobjects@ @modulelibs@ @DYNLINKFLAGS@ @LIBDL@ @THREADFLAGS@  $(BOOST_SERIALIZATION_LDFLAGS) -rdynamic
+ pdns_server_LDADD = $(POLARSSL_LIBS) $(BOOST_SERIALIZATION_LIBS) \
+-	$(LUA_LIBS) $(SQLITE3_LIBS) $(LIBCURL_LIBS) $(am__append_5) \
++	$(LUA_LIBS) $(SQLITE3_LIBS) $(am__append_5) \
+ 	$(am__append_7) $(am__append_9) $(am__append_11)
+ pdnssec_SOURCES = pdnssec.cc dbdnsseckeeper.cc sstuff.hh dnsparser.cc \
+ 	dnsparser.hh dnsrecords.cc dnswriter.cc dnswriter.hh misc.cc \
+@@ -819,7 +819,7 @@
+ 	$(am__append_18)
+ pdnssec_LDFLAGS = @moduleobjects@ @modulelibs@ @DYNLINKFLAGS@ @LIBDL@ @THREADFLAGS@ $(BOOST_PROGRAM_OPTIONS_LDFLAGS) $(BOOST_SERIALIZATION_LDFLAGS) 
+ pdnssec_LDADD = $(POLARSSL_LIBS) $(BOOST_PROGRAM_OPTIONS_LIBS) \
+-	$(BOOST_SERIALIZATION_LIBS) $(SQLITE3_LIBS) $(LIBCURL_LIBS) \
++	$(BOOST_SERIALIZATION_LIBS) $(SQLITE3_LIBS) \
+ 	$(am__append_13) $(am__append_15) $(am__append_17) \
+ 	$(am__append_19)
+ sdig_SOURCES = sdig.cc sstuff.hh dnsparser.cc dnsparser.hh dnsrecords.cc dnswriter.cc dnslabeltext.cc dnswriter.hh \

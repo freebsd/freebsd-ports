@@ -36,7 +36,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/freebsd
 EXTRA_PATCHES=	${WRKDIR}/zaphfc-${ZAPHFC_VERSION}
 PATCH_STRIP=	-p1
 MAKEFILE=	BSDmakefile
-NO_PACKAGE=	Should be in sync with the kernel to work correctly
 USE_RC_SUBR=	dahdi
 MAKE_ARGS=	ADDITIONAL_DRIVERS="wcb1xxp" NO_FETCH=yes
 GROUPS=		dahdi
@@ -44,17 +43,11 @@ GROUPS=		dahdi
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
 CONFLICTS=	zaptel-[0-9]* dahdi-kmod26-*
 
-NO_STAGE=	yes
-
 USES=		kmod
 
-KMODDDIR=	${PREFIX}/lib/dahdi
+KMODDIR=	${PREFIX}/lib/dahdi
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 703000 || (${OSVERSION} >= 800000 && ${OSVERSION} < 800108)
-IGNORE=		requires firmware(9) support for kernel modules with hyphens
-.endif
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 PLIST_SUB+=	X86=""

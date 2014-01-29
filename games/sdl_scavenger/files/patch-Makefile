@@ -1,4 +1,5 @@
-Index: Makefile
+--- ./Makefile.orig	2010-11-04 08:53:00.000000000 +0100
++++ ./Makefile	2013-12-25 10:25:00.000000000 +0100
 @@ -1,12 +1,9 @@
 -CC	= gcc
  ###CFLAGS	= -Wall -O2 -I/usr/local/include/SDL -I/usr/include/SDL -D_REENTRANT

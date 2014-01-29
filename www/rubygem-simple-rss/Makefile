@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	simple-rss
-PORTVERSION=	1.2.3
+PORTVERSION=	1.3.1
 CATEGORIES=	www textproc rubygems
 MASTER_SITES=	RG
 
@@ -13,5 +13,4 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

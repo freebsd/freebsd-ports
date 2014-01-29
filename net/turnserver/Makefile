@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	turnserver
-PORTVERSION=	1.8.6.3
+PORTVERSION=	3.2.1.4
 CATEGORIES=	net
 MASTER_SITES=	http://rfc5766-turn-server.googlecode.com/files/
 PKGNAMEPREFIX=
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} turn.extra.docs-1.8.4.2.tar.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} turn.extra.docs-2.0.0.1.tar.gz
 
 MAINTAINER=	mom040267@gmail.com
 COMMENT=	STUN/TURN Server; IPv6, DTLS support; RFCs 5389, 5766, 6062, 6156
@@ -14,9 +14,11 @@ LICENSE=	BSD
 
 LIB_DEPENDS=	event-2:${PORTSDIR}/devel/libevent2
 
+CONFLICTS=	libevent-1.*
+
 SUB_FILES=	pkg-message
 
-MAN1=	turnserver.1 turnadmin.1 turnutils.1 turnutils_peer.1 turnutils_rfc5769check.1 turnutils_stunclient.1 turnutils_uclient.1
+MAN1=	turnserver.1 turnadmin.1 turnutils.1 turnutils_peer.1 turnutils_stunclient.1 turnutils_uclient.1 rfc5766-turn-server.1
 MANCOMPRESSED=	no
 
 USE_OPENSSL=	YES
@@ -39,28 +41,36 @@ NO_STAGE=	yes
 PORTDOCS=	html TURNServerRESTAPI.pdf TurnNetworks.pdf
 PORTREADMEDOCS=	README.turnserver README.turnadmin README.turnutils INSTALL
 
-_BIN_UTILS=	peer stunclient rfc5769check uclient
+_BIN_UTILS=	peer stunclient uclient
 
 _ETC_EXAMPLES=	turnserver.conf turnuserdb.conf turn_client_cert.pem \
 		turn_client_pkey.pem turn_server_cert.pem turn_server_pkey.pem
-_SCRIPT_EXAMPLES=	peer.sh	rfc5769.sh \
-basic/relay.sh basic/tcp_client_c2c_tcp_relay.sh basic/udp_c2c_client.sh \
+_SCRIPT_EXAMPLES=	peer.sh	\
+basic/relay.sh basic/dos_attack.sh \
+basic/tcp_client_c2c_tcp_relay.sh basic/udp_c2c_client.sh \
 basic/udp_client.sh basic/tcp_client.sh \
 loadbalance/master_relay.sh loadbalance/slave_relay_1.sh loadbalance/slave_relay_2.sh \
 loadbalance/udp_c2c.sh loadbalance/tcp_c2c_tcp_relay.sh \
 longtermsecure/secure_dtls_client.sh longtermsecure/secure_relay.sh \
+longtermsecure/secure_dtls_client_cert.sh longtermsecure/secure_relay_cert.sh \
 longtermsecure/secure_tcp_client_c2c_tcp_relay.sh longtermsecure/secure_tcp_client.sh \
 longtermsecure/secure_tls_client_c2c_tcp_relay.sh longtermsecure/secure_tls_client.sh \
 longtermsecure/secure_udp_c2c.sh longtermsecure/secure_udp_client.sh \
+longtermsecure/secure_dos_attack.sh longtermsecure/secure_udp_client.sh \
 longtermsecuredb/secure_relay_with_db_psql.sh longtermsecuredb/secure_relay_with_db_mysql.sh \
 longtermsecuredb/secure_relay_with_db_redis.sh \
 restapi/secure_relay_secret.sh restapi/secure_relay_secret_with_db_mysql.sh \
 restapi/secure_relay_secret.sh restapi/secure_relay_secret_with_db_redis.sh \
 restapi/secure_udp_client_with_secret.sh \
+restapi/secure_relay_secret_with_db_psql.sh \
 restapi/shared_secret_maintainer.pl \
-shorttermsecure/secure_tcp_client_c2c_tcp_relay_short_term.sh shorttermsecure/secure_udp_client_short_term.sh shorttermsecure/secure_relay_short_term_mech.sh
+shorttermsecure/secure_tcp_client_c2c_tcp_relay_short_term.sh \
+shorttermsecure/secure_udp_client_short_term.sh \
+shorttermsecure/secure_relay_short_term_mech.sh \
+selfloadbalance/secure_dos_attack.sh \
+selfloadbalance/secure_relay.sh
 
-CONFIGURE_ENV+=	PTHREAD_LIBS=-pthread
+CONFIGURE_ENV+=	PTHREAD_LIBS=-pthread TURN_DISABLE_RPATH=1
 
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
@@ -95,6 +105,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/turndb/schema.sql ${DATADIR}/schema.sql
 	${INSTALL_DATA} ${WRKSRC}/turndb/schema.userdb.redis ${DATADIR}/schema.userdb.redis
 	${INSTALL_DATA} ${WRKSRC}/turndb/schema.stats.redis ${DATADIR}/schema.stats.redis
+	${INSTALL_SCRIPT} ${WRKSRC}/turndb/testredisdbsetup.sh ${DATADIR}/testredisdbsetup.sh
 	${INSTALL_DATA} ${WRKSRC}/lib/libturnclient.a ${PREFIX}/lib/libturnclient.a
 	${INSTALL_DATA} ${WRKSRC}/examples/etc/turnserver.conf ${PREFIX}/etc/turnserver.conf.default
 	${INSTALL_DATA} ${WRKSRC}/examples/etc/turnuserdb.conf ${PREFIX}/etc/turnuserdb.conf.default
@@ -109,6 +120,7 @@ do-install:
 	${MKDIR} ${EXAMPLESDIR}/scripts/longtermsecuredb
 	${MKDIR} ${EXAMPLESDIR}/scripts/restapi
 	${MKDIR} ${EXAMPLESDIR}/scripts/shorttermsecure
+	${MKDIR} ${EXAMPLESDIR}/scripts/selfloadbalance
 	${MKDIR} ${EXAMPLESDIR}/etc
 	${INSTALL_MAN} ${WRKSRC}/examples/scripts/readme.txt ${EXAMPLESDIR}/scripts
 .for f in ${_ETC_EXAMPLES}
@@ -135,5 +147,8 @@ PORTDOCS+=	postinstall.txt ${PORTREADMEDOCS} schema.sql schema.userdb.redis sche
 
 post-install:
 	${CAT} ${PKGMESSAGE}
+
+regression-test: build
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} test)
 
 .include <bsd.port.mk>

@@ -604,6 +604,8 @@ share/themes/Raleigh/gtk-2.0/gtkrc
 @dirrm include/gail-1.0/gail
 @dirrm include/gail-1.0
 @dirrm etc/gtk-2.0
+@unexec /bin/rm -f %D/lib/gtk-2.0/%%GTK2_VERSION%%/immodules.cache
+@exec %D/bin/gtk-query-immodules-2.0 --update-cache > /dev/null 2>&1 || /usr/bin/true
 @exec /bin/mkdir -p %D/lib/gtk-2.0/modules
 @exec /bin/mkdir -p %D/lib/gtk-2.0/%%GTK2_VERSION%%/engines
 @exec /bin/mkdir -p %D/lib/gtk-2.0/%%GTK2_VERSION%%/loaders
@@ -616,8 +618,6 @@ share/themes/Raleigh/gtk-2.0/gtkrc
 @dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/engines
 @dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%
 @dirrmtry lib/gtk-2.0
-@unexec /bin/rm -f %D/lib/gtk-2.0/%%GTK2_VERSION%%/immodules.cache
-@exec %D/bin/gtk-query-immodules-2.0 --update-cache > /dev/null 2>&1 || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/yi/LC_MESSAGES

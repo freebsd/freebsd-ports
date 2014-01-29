@@ -16,7 +16,8 @@ LICENSE=	GPLv2
 USE_BZIP2=	yes
 USE_SDL=	sdl
 USE_GL=		glut
-USE_DOS2UNIX=	src/vanctf/g_local.h
+USES=		dos2unix
+DOS2UNIX_FILES=	src/vanctf/g_local.h
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPENGL_CFLAGS="-I${LOCALBASE}/include" \
@@ -38,7 +39,6 @@ VANCTF_DESC=	Build Vanilla CTF mod
 QMASS_DESC=	Build QMass deathmatch mod
 MYSQL_DESC=	Enable frag logging with MySQL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGAME}
@@ -91,31 +91,33 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e 's,-ldl,,' ${WRKSRC}/src/Makefile.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/quetoo ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/quetoo ${STAGEDIR}${PREFIX}/bin
 .for g in ${Q2GAMES}
-	@${MKDIR} ${LIBDIR}/${g}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${g}/.libs/game.so ${LIBDIR}/${g}
+	@${MKDIR} ${STAGEDIR}${LIBDIR}/${g}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${g}/.libs/game.so \
+		${STAGEDIR}${LIBDIR}/${g}
 .endfor
 .if ${PORT_OPTIONS:MQMASS}
-	@${MKDIR} ${DATADIR}/qmass/sound
-	${INSTALL_DATA} ${WRKSRC}/data/qmass/sound/*.wav ${DATADIR}/qmass/sound
+	@${MKDIR} ${STAGEDIR}${DATADIR}/qmass/sound
+	${INSTALL_DATA} ${WRKSRC}/data/qmass/sound/*.wav \
+		${STAGEDIR}${DATADIR}/qmass/sound
+.endif
 .if ${PORT_OPTIONS:MVANCTF}
-	@${MKDIR} ${DATADIR}/vanctf/maps
-	${INSTALL_DATA} ${WRKSRC}/data/vanctf/maps/*.ent ${DATADIR}/vanctf/maps
-	${INSTALL_DATA} ${WRKSRC}/data/vanctf/maps.lst ${DATADIR}/vanctf
+	@${MKDIR} ${STAGEDIR}${DATADIR}/vanctf/maps
+	${INSTALL_DATA} ${WRKSRC}/data/vanctf/maps/*.ent \
+		${STAGEDIR}${DATADIR}/vanctf/maps
+	${INSTALL_DATA} ${WRKSRC}/data/vanctf/maps.lst \
+		${STAGEDIR}${DATADIR}/vanctf
 .endif
+.if ${PORT_OPTIONS:MQMASS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/qmass
+	${INSTALL_DATA} ${WRKSRC}/src/qmass/README ${STAGEDIR}${DOCSDIR}/qmass
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-.  if ${PORT_OPTIONS:MQMASS}
-	@${MKDIR} ${DOCSDIR}/qmass
-	${INSTALL_DATA} ${WRKSRC}/src/qmass/README ${DOCSDIR}/qmass
-.  endif
-.  if ${PORT_OPTIONS:MVANCTF}
-	@${MKDIR} ${DOCSDIR}/vanctf
-	${INSTALL_DATA} ${WRKSRC}/src/vanctf/*E* ${DOCSDIR}/vanctf
-.  endif
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.if ${PORT_OPTIONS:MVANCTF}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/vanctf
+	${INSTALL_DATA} ${WRKSRC}/src/vanctf/*E* ${STAGEDIR}${DOCSDIR}/vanctf
 .endif
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include "${.CURDIR}/../quake2-data/Makefile.include"
 .include <bsd.port.mk>

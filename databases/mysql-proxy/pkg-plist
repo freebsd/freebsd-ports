@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/mysql-binlog-dump
 bin/mysql-myisam-dump
 bin/mysql-proxy

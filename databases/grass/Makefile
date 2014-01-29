@@ -22,6 +22,8 @@ COMMENT=	Open source Geographical Information System (GIS)
 LICENSE=	GPLv2
 
 BROKEN=		Does not build
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2014-02-27
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal \

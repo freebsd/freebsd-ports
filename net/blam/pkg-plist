@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/blam
 lib/blam/AtomFeed.dll
 lib/blam/RSSFeed.dll

@@ -13,7 +13,7 @@ DISTNAME=	gozerbot-${PORTVERSION}
 MAINTAINER=	sten@blinkenlights.nl
 COMMENT=	Gozerbot - A modular Python IRC and Jabber bot
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 SUB_FILES=		pkg-message
 

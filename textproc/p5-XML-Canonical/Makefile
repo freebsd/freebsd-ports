@@ -19,7 +19,4 @@ LIB_DEPENDS=	gdome:${PORTSDIR}/textproc/gdome2
 USES=		perl5 pkgconfig
 USE_PERL5=	configure
 
-MAN3=		XML::Canonical.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

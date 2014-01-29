@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/guake
 bin/guake-prefs
 %%MANPAGES%%man/man1/guake.1.gz

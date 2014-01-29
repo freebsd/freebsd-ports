@@ -10,11 +10,12 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Small, efficient C++ GUI library designed for games
 
+LICENSE=	BSD3CLAUSE
+
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=	pathfix
+USES=		gmake pathfix
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -23,7 +24,6 @@ OPTIONS_DEFINE=		SDL ALLEGRO OPENGL
 OPTIONS_DEFAULT=	SDL OPENGL
 ALLEGRO_DESC=	Allegro support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSDL}
@@ -36,7 +36,7 @@ PLIST_SUB+=	SDL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MALLEGRO}
-LIB_DEPENDS+=	alleg.42:${PORTSDIR}/devel/allegro
+LIB_DEPENDS+=	liballeg.so:${PORTSDIR}/devel/allegro
 CONFIGURE_ARGS+=--enable-allegro
 PLIST_SUB+=	ALLEGRO=""
 .else

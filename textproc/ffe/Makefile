@@ -9,20 +9,18 @@ MASTER_SITES=	SF/ff-extractor/ff-extractor/${PORTVERSION}
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Flat file extractor
 
+OPTIONS_DEFINE=	DOCS
+
 GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/${PORTNAME}
-MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 PORTDOCS=	${PORTNAME}.html
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/^install-data-am: install-htmlDATA install-info-am install-man/install-data-am: install-man/' ${WRKSRC}/doc/Makefile.in
 	@${REINPLACE_CMD} -e 's|setmode|setmode123|g' ${WRKSRC}/configure
 
 post-install:
-.ifndef NOPORTDOCS
-	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC}/doc/&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-.endif
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

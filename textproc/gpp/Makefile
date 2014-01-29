@@ -12,7 +12,6 @@ COMMENT=	The Generic Preprocessor
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=		gpp.1
+PLIST_FILES=	bin/gpp man/man1/gpp.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

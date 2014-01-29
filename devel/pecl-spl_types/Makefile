@@ -26,5 +26,4 @@ IGNORE_WITH_PHP=5
 CONFIGURE_ARGS=	--enable-spl-types
 CFLAGS+=	-I${LOCALBASE}/include
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

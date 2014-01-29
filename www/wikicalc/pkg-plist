@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/1x1.gif
 %%DATADIR%%/WKC.pm
 %%DATADIR%%/WKCBackupCommands.pm

@@ -12,7 +12,6 @@ COMMENT=	Alternative C/C++ preprocessor
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-mcpplib
-MAN1=		mcpp.1
 
 PLIST_FILES=	bin/mcpp    \
 		lib/libmcpp.so	\
@@ -21,6 +20,7 @@ PLIST_FILES=	bin/mcpp    \
 		lib/libmcpp.la	\
 		include/mcpp_lib.h \
 		include/mcpp_out.h \
+		man/man1/mcpp.1.gz \
 		share/doc/mcpp/LICENSE  \
 		share/doc/mcpp/NEWS     \
 		share/doc/mcpp/README   \
@@ -28,5 +28,4 @@ PLIST_FILES=	bin/mcpp    \
 		share/doc/mcpp/mcpp-manual-jp.html
 PLIST_DIRS=	share/doc/mcpp
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

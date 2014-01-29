@@ -1,9 +1,3 @@
-info/zpuc/cpp.info
-info/zpuc/cppinternals.info
-info/zpuc/dir
-info/zpuc/gcc.info
-info/zpuc/gccinstall.info
-info/zpuc/gccint.info
 zpu/bin/zpu-elf-cpp
 zpu/bin/zpu-elf-gcc
 zpu/bin/zpu-elf-gcc-3.4.2
@@ -192,4 +186,3 @@ zpu/zpu-elf/lib/libm.a
 @dirrm zpu/lib/gcc/zpu-elf/3.4.2
 @dirrm zpu/lib/gcc/zpu-elf
 @dirrm zpu/lib/gcc
-@dirrm info/zpuc

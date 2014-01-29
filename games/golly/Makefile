@@ -11,7 +11,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Conway's Game of Life and other cellular automata
 
 USES=		cmake:outsource perl5
-USE_PYTHON=	2.7+
+USE_PYTHON=	yes
 USE_WX=		2.8+
 
 DESKTOP_ENTRIES=	"Golly" "${COMMENT}" "${PREFIX}/share/pixmaps/golly.xpm" \

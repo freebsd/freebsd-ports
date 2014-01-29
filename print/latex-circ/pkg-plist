@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PORTDOCS%%share/texmf-local/doc/circ/circ.dvi
 %%PORTDOCS%%share/texmf-local/doc/circ/circ.pdf
 share/texmf-local/fonts/pk/circ/cibimos.600pk

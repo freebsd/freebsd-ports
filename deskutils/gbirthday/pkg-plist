@@ -30,8 +30,6 @@ share/applications/gbirthday.desktop
 %%NLS%%share/locale/pt/LC_MESSAGES/gbirthday.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gbirthday.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/gbirthday.mo
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 share/pixmaps/gbirthday.png
 @dirrm %%PYTHON_SITELIBDIR%%/gbirthday/pics
 @dirrm %%PYTHON_SITELIBDIR%%/gbirthday/databases

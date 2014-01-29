@@ -19,6 +19,5 @@ XPI_FILES=	chrome/sessionmanager.jar \
 		chrome.manifest install.rdf license.txt
 XPI_DIRS=	chrome components defaults/preferences defaults
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

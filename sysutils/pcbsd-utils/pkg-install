@@ -32,6 +32,8 @@ if [ -e "${PREFIX}/share/pbi-manager/.pbime" ] ; then
    install -o root -g wheel -m 4751 ${PREFIX}/share/pbi-manager/.pbime /usr/pbi/.pbime
    install -o root -g wheel -m 755 ${PREFIX}/share/pbi-manager/.pbimount /usr/pbi/.pbimount
    install -o root -g wheel -m 755 ${PREFIX}/share/pbi-manager/.ldconfig /usr/pbi/.ldconfig
+   install -o root -g wheel -m 755 ${PREFIX}/share/pbi-manager/.pbisyscmd /usr/pbi/.pbisyscmd
+   install -o root -g wheel -m 755 ${PREFIX}/share/pbi-manager/.pbisyslisten /usr/pbi/.pbisyslisten
    install -o root -g wheel -m 755 ${PREFIX}/share/pbi-manager/.mount_nullfs /usr/pbi/.mount_nullfs
 fi
 

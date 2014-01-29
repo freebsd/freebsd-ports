@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	clang
-DISTVERSION=	3.4rc3
+DISTVERSION=	3.4
+PORTREVISION=	1
 CATEGORIES=	lang devel
-MASTER_SITES=	http://llvm.org/pre-releases/3.4/rc3/
-#MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
+MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 DISTNAME=	${CLANG_NAME}
 DISTFILES=	${CLANG_SOURCE} \
@@ -13,12 +13,12 @@ DISTFILES=	${CLANG_SOURCE} \
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	C, Objective-C, and C++ compiler
 
-CLANG_NAME=	cfe-${DISTVERSION}.source
+CLANG_NAME=	clang-${DISTVERSION}.src
 CLANG_SOURCE=	${CLANG_NAME}${EXTRACT_SUFX}
-CLANG_EXTRACT=	cfe.src
-LLVM_NAME=	llvm-${DISTVERSION}.source
+CLANG_EXTRACT=	clang-${DISTVERSION}
+LLVM_NAME=	llvm-${DISTVERSION}.src
 LLVM_SOURCE=	${LLVM_NAME}${EXTRACT_SUFX}
-LLVM_EXTRACT=	llvm.src
+LLVM_EXTRACT=	llvm-${DISTVERSION}
 LIBNAME=	libLLVM-${DISTVERSION:C/rc[0-9]//}.so
 
 WRKSRC=		${WRKDIR}/${LLVM_EXTRACT}
@@ -57,15 +57,21 @@ CONFIGURE_ARGS+=	--disable-docs
 
 PLIST_SUB+=		LLVM_SUFFIX=${LLVM_SUFFIX} \
 			PORTVERSION=${PORTVERSION}
-
-COMMANDS=	c-index-test \
+COMMANDS=	c++-analyzer \
+		c-index-test \
+		ccc-analyzer \
 		clang \
 		clang++ \
 		clang-check \
 		clang-cpp \
 		clang-format \
-		clang-tblgen
+		clang-tblgen \
+		scan-build \
+		scan-view
 FIRST_COMMAND=	${COMMANDS:C/^/XXXX/1:MXXXX*:C/^XXXX//}
+
+PORTDATA=	scanview.css \
+		sorttable.js
 
 .include <bsd.port.options.mk>
 
@@ -129,6 +135,15 @@ post-install:
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/clang-cpp
 	${INSTALL_SCRIPT} ${WRKDIR}/llvm-wrapper.sh \
 	    ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX}
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/clang/tools/scan-build/ccc-analyzer \
+	    ${WRKSRC}/tools/clang/tools/scan-build/c++-analyzer \
+	    ${WRKSRC}/tools/clang/tools/scan-build/scan-build \
+	    ${WRKSRC}/tools/clang/tools/scan-view/scan-view \
+	    ${STAGEDIR}${LLVM_PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/tools/clang/tools/scan-build/scanview.css \
+	    ${WRKSRC}/tools/clang/tools/scan-build/sorttable.js \
+	    ${STAGEDIR}${DATADIR}
 .for command in ${COMMANDS:C/^/XXXX/1:NXXXX*}
 	test -e ${STAGEDIR}${LLVM_PREFIX}/bin/${command}
 	${LN} -f ${STAGEDIR}${PREFIX}/bin/${FIRST_COMMAND}${LLVM_SUFFIX} \
@@ -140,6 +155,8 @@ post-install:
 .endif
 	${INSTALL_MAN} ${WRKSRC}/tools/clang/docs/tools/clang.1 \
 	    ${STAGEDIR}${MANPREFIX}/man/man1/clang${LLVM_SUFFIX}.1
+	${INSTALL_MAN} ${WRKSRC}/tools/clang/tools/scan-build/scan-build.1 \
+	    ${STAGEDIR}${MANPREFIX}/man/man1/scan-build${LLVM_SUFFIX}.1
 
 PLIST_FILE_LIST=	${COMMANDS:S|^|bin/|} \
 			lib/libclang*
@@ -157,6 +174,7 @@ build-plist:
 	    | ${SED} -e 's|${STAGEDIR}${PREFIX}/||' \
 	    -e 's|${LLVM_SUFFIX}|%%LLVM_SUFFIX%%|' | ${SORT} >> ${PLIST}
 	echo man/man1/clang%%LLVM_SUFFIX%%.1.gz >> ${PLIST}
+	echo man/man1/scan-build%%LLVM_SUFFIX%%.1.gz >> ${PLIST}
 	${FIND} ${STAGEDIR}${DOCSDIR} -type f | \
 	    ${SED} -e 's|${STAGEDIR}${DOCSDIR}|%%PORTDOCS%%%%DOCSDIR%%|' | \
 	    ${SORT} >> ${PLIST}

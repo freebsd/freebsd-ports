@@ -408,7 +408,9 @@ share/pcbsd/xorg-gui/settings/drivers.txt
 share/pcbsd/xorg-gui/cardDetect/x_config.sh
 share/pcbsd/xorg-gui/cardDetect/XF86Config.compat
 share/pcbsd/xorg-gui/cardDetect/XF86Config.default
+share/pcbsd/xorg-gui/cardDetect/XF86Config.intel
 share/pcbsd/xorg-gui/cardDetect/XF86Config.vmware
+share/pcbsd/xorg-gui/cardDetect/xorg.conf.virtualbox
 share/pcbsd/xorg-gui/conf/xorg.conf.basic
 share/pcbsd/xorg-gui/conf/.fluxbox/init
 share/pcbsd/xorg-gui/conf/.fluxbox/keys
@@ -2498,7 +2500,6 @@ share/EasyPBI/i18n/EasyPBI_af.qm
 share/pcbsd/scripts/fastest_cvsup
 share/pcbsd/scripts/find-install-media.sh
 share/pcbsd/scripts/GenDiagSheet.sh
-share/pcbsd/scripts/portsnap.sh
 share/pcbsd/splash-screens/loading-screen-de.pcx
 share/pcbsd/splash-screens/loading-screen-ja.pcx
 share/pcbsd/splash-screens/loading-screen-ru.pcx

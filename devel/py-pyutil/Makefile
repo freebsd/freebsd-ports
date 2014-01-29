@@ -13,7 +13,7 @@ COMMENT=	Collection of mature utilities for Python programmers
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.1.1:${PORTSDIR}/devel/py-simplejson \
 		${PYTHON_PKGNAMEPREFIX}zbase32>=1.1.0:${PORTSDIR}/converters/zbase32
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=easy_install
 
 NO_STAGE=	yes

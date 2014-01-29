@@ -15,8 +15,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--cc=${CC} --prefix=${PREFIX} --mandir=${MANPREFIX}/man
 USE_XORG=	x11 xext xinerama xft
 
-PLIST_FILES=	bin/matwm2
-MAN1=		matwm2.1
+PLIST_FILES=	bin/matwm2 man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

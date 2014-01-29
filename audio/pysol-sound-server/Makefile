@@ -15,9 +15,12 @@ LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
+DEPRECATED=	Broken, abondonware, use pysolfc
+EXPIRATION_DATE=	2014-03-27
+
 USE_SDL=	mixer sdl
 USE_BZIP2=	yes
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 HAS_CONFIGURE=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes

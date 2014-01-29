@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/mzmail.sh
 bin/mzmail.py
 bin/mznews.sh

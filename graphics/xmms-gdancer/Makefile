@@ -11,20 +11,25 @@ DISTNAME=	gdancer-$(PORTVERSION)
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS Visualization plugin, displays dancing figures
 
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
+LICENSE=	GPLv2 # (or later)
 
+LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
+
+USES=		gmake
 USE_GNOME=	gtk12
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_CSTD=	gnu89
+USE_AUTOTOOLS=	libtool
 
 PLIST_FILES=	lib/xmms/Visualization/gdancer.so
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|-O2|@CFLAGS@| ; \
+		 s|@GDK_PIXBUF_LIBS@||' ${WRKSRC}/src/Makefile.in
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/src/.libs/gdancer.so ${PREFIX}/lib/xmms/Visualization
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Visualization
+	(cd ${WRKSRC}/src/.libs && ${INSTALL_LIB} gdancer.so \
+		${STAGEDIR}${PREFIX}/lib/xmms/Visualization)
 
 .include <bsd.port.mk>

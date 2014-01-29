@@ -22,7 +22,7 @@ USES=		pkgconfig
 USE_QT4=	moc_build qmake_build
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
-USE_PYTHON=	2.4+
+USE_PYTHON=	yes
 
 LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg
 LIB_DEPENDS+=	libpng15.so:${PORTSDIR}/graphics/png

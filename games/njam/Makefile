@@ -11,14 +11,22 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fast paced multiplayer pac-man clone
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USES=		gmake
 CPPFLAGS+=	-I${LOCALBASE}/include -D__linux__
 USE_SDL=	mixer image net sdl
-PORTDOCS=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+PORTDOCS=	*
+PORTDATA=	*
+
+DESKTOP_ENTRIES="njam" \
+		"${COMMENT}" \
+		"${DATADIR}/njamicon.ico" \
+		"${PORTNAME}" \
+		"Game;ArcadeGame;" \
+		""
+
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${RM} -f ${WRKSRC}/src/*.o
@@ -28,12 +36,7 @@ post-patch:
 		${WRKSRC}/src/njam.cpp
 
 post-install:
-	${CHOWN} :games ${PREFIX}/bin/njam
-	${CHMOD} g+s ${PREFIX}/bin/njam
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/html/* ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/html/* ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

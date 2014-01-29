@@ -1,0 +1,15 @@
+--- configure.orig	2014-01-15 15:12:44.000000000 +0000
++++ configure
+@@ -1805,10 +1805,8 @@ if test "$vi_cv_canna" = "yes"; then
+ 		case "$host_os" in
+ 		bsdi2.1)
+ 			vi_cannapath="/usr/contrib/canna";;
+-		freebsd2.2*|freebsd3*)
+-			vi_cannapath="/usr/local";;
+-		freebsd2*)
+-			vi_cannapath="/usr/local/canna";;
++		freebsd*|dragonfly*)
++			vi_cannapath="${prefix}";;
+ 		*)
+ 			vi_cannapath="/usr/local/canna";;
+ 		esac

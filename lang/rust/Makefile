@@ -23,7 +23,7 @@ HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		gmake perl5
 USE_PERL5=	build
-USE_PYTHON_BUILD=	2.6-2.7
+USE_PYTHON_BUILD=	2
 
 MAN1=	rust.1 \
 	rustc.1 \

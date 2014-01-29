@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/adventure
 bin/arithmetic
 bin/atc

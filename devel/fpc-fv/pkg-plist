@@ -68,13 +68,13 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/libpviews.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/libpsysmsg.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/libpasciitab.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv/libptimeddlg.a
-%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/fv/testapp.lpi
-%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/fv/testapp.pas
-%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/fv/Makefile.fpc
-%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/fv/Makefile
+%%PORTEXAMPLES%%share/examples/fpc-%%PORTVERSION%%/fv/testapp.lpi
+%%PORTEXAMPLES%%share/examples/fpc-%%PORTVERSION%%/fv/testapp.pas
+%%PORTEXAMPLES%%share/examples/fpc-%%PORTVERSION%%/fv/Makefile.fpc
+%%PORTEXAMPLES%%share/examples/fpc-%%PORTVERSION%%/fv/Makefile
 @dirrm lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fv
 @dirrmtry lib/fpc/%%PORTVERSION%%/units
 @dirrmtry lib/fpc/%%PORTVERSION%%
 @dirrmtry lib/fpc
-%%PORTDOCS%%@dirrm share/examples/fpc-%%PORTVERSION%%/fv
-%%PORTDOCS%%@dirrmtry share/examples/fpc-%%PORTVERSION%%
+%%PORTEXAMPLES%%@dirrm share/examples/fpc-%%PORTVERSION%%/fv
+%%PORTEXAMPLES%%@dirrmtry share/examples/fpc-%%PORTVERSION%%

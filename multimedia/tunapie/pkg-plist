@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/tunapie
 @unexec if cmp -s %D/etc/tunapie.config %D/etc/tunapie.config.default; then rm -f %D/etc/tunapie.config; fi
 etc/tunapie.config.default

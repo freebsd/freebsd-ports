@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/bisonc++
 man/man1/bisonc++.1.gz
 share/bisonc++-%%PORTVERSION%%/bisonc++.cc

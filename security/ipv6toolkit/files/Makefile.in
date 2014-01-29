@@ -2,13 +2,12 @@
 
 PREFIX?=	/usr/local
 LOCALBASE?=	/usr/local
-DESTDIR=	${PREFIX}
 .if ${.CURDIR:T} == addr6
-BINDIR?=	/bin
+BINDIR?=	${PREFIX}/bin
 .else
-BINDIR?=	/sbin
+BINDIR?=	${PREFIX}/sbin
 .endif
-MANDIR?=	/man/man
+MANDIR?=	${PREFIX}/man/man
 NO_MANCOMPRESS=
 
 .PATH: ${.CURDIR}/../tools ${.CURDIR}/../manuals

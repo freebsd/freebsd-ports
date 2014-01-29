@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%REPUTE%%%%JANSSON%%bin/autobuild
 %%LUA%%bin/miltertest
 %%REPRRD%%bin/opendkim-reprrdimport

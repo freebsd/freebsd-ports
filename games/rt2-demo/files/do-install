@@ -1,17 +1,18 @@
 #!/bin/sh
 
 PATH=/bin:/usr/bin
-PREFIX=$1
-DISTDIR=$2
-BINDIR=${PREFIX}/bin
-LIBDIR=${PREFIX}/lib/rt2_demo
+DESTDIR=$1
+PREFIX=$2
+DISTDIR=$3
+BINDIR=bin
+LIBDIR=lib/rt2_demo
 
 set -e
 
-mkdir -p ${LIBDIR}/
+mkdir -p ${DESTDIR}${PREFIX}/${LIBDIR}/
 SKIP=`strings ${DISTDIR}/rt2-demo.run | head -10 | grep ^skip= | cut -d= -f2`
 tail +$SKIP ${DISTDIR}/rt2-demo.run | \
-	tar -C ${LIBDIR}/ -xz -f - --exclude rt2_demo --exclude rt2_demo.ppc
+	tar -C ${DESTDIR}${PREFIX}/${LIBDIR}/ -xz -f - --exclude rt2_demo --exclude rt2_demo.ppc
 
-brandelf -t Linux ${LIBDIR}/rt2_demo.x86
-ln -sf ${LIBDIR}/rt2_demo.x86 ${BINDIR}/rt2_demo
+brandelf -t Linux ${DESTDIR}${PREFIX}/${LIBDIR}/rt2_demo.x86
+ln -sf ${PREFIX}/${LIBDIR}/rt2_demo.x86 ${DESTDIR}${PREFIX}/${BINDIR}/rt2_demo

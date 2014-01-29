@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/handlersocket/allocator.hpp
 include/handlersocket/config.hpp
 include/handlersocket/mutex.hpp

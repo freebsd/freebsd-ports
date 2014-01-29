@@ -11,40 +11,30 @@ MASTER_SITES=	http://samm.kiev.ua/bruteblock/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Software for blocking bruteforce attacks with ipfw
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
 USE_RC_SUBR=	bruteblockd
-MAN8=		bruteblock.8
 
 CONFDIR=	${PREFIX}/etc/${PORTNAME}
 
 PORTDOCS=	FAQ README CHANGES
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bruteblock ${PREFIX}/sbin/
-	${INSTALL_PROGRAM} ${WRKSRC}/bruteblockd ${PREFIX}/sbin/
-	${MKDIR} ${PREFIX}/etc/bruteblock
+	${INSTALL_PROGRAM} ${WRKSRC}/bruteblock ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${WRKSRC}/bruteblockd ${STAGEDIR}${PREFIX}/sbin/
+	${MKDIR} ${STAGEDIR}${CONFDIR}
 .for file in ssh proftpd
-	${INSTALL_DATA} ${WRKSRC}/etc/${file}.conf ${CONFDIR}/${file}.conf.dist
-	if [ ! -f ${CONFDIR}/${file}.conf ]; then \
-		${INSTALL_DATA} ${CONFDIR}/${file}.conf.dist ${CONFDIR}/${file}.conf; \
-	fi
+	${INSTALL_DATA} ${WRKSRC}/etc/${file}.conf ${STAGEDIR}${CONFDIR}/${file}.conf.dist
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/doc/bruteblock.8 ${PREFIX}/man/man8/
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/FAQ ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/README ${DOCSDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/doc/CHANGES ${DOCSDIR}/
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_MAN} ${WRKSRC}/doc/bruteblock.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${DOCSDIR}/
+.endfor
 
 .include <bsd.port.mk>

@@ -70,8 +70,6 @@ SMOKE_TESTS+=	smokeSsl
 SCONS_TARGET=	core tools
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if ${OSVERSION} >= 1000024
 EXTRA_PATCHES=	${PATCHDIR}/clang-patch-src_mongo_db_fts_stemmer.cpp \
 		${PATCHDIR}/clang-patch-src_mongo_platform_unordered_map.h \
@@ -89,4 +87,4 @@ test: build-depends build
 		${SCONS_BIN} ${SCONS_ENV} ${SCONS_ARGS} ${SMOKE_TESTS}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

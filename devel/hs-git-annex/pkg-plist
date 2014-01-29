@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 etc/xdg/autostart/git-annex.desktop
 share/applications/git-annex.desktop
 @dirrmtry etc/xdg/autostart

@@ -129,7 +129,6 @@
     SUBDIR += nagios-check_puppet
     SUBDIR += nagios-check_smartmon
     SUBDIR += nagios-check_tftp
-    SUBDIR += nagios-devel
     SUBDIR += nagios-geom
     SUBDIR += nagios-openldap-plugins
     SUBDIR += nagios-pf-plugin
@@ -139,6 +138,7 @@
     SUBDIR += nagios-snmp-plugins
     SUBDIR += nagios-snmp-plugins-extras
     SUBDIR += nagios-spamd-plugin
+    SUBDIR += nagios4
     SUBDIR += nagiosagent
     SUBDIR += nagiosgraph
     SUBDIR += nagiosql
@@ -193,7 +193,6 @@
     SUBDIR += openlldp
     SUBDIR += openvmps
     SUBDIR += ourmon
-    SUBDIR += percona-monitoring-plugins
     SUBDIR += p0f
     SUBDIR += p0f2
     SUBDIR += p5-AnyEvent-SNMP
@@ -253,6 +252,7 @@
     SUBDIR += pandorafms_agent
     SUBDIR += pandorafms_console
     SUBDIR += pandorafms_server
+    SUBDIR += percona-monitoring-plugins
     SUBDIR += pftabled
     SUBDIR += php5-snmp
     SUBDIR += php52-snmp

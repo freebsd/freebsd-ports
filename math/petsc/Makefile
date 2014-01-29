@@ -25,7 +25,8 @@ CONFIGURE_ENV=		PETSC_ARCH=${TARGET}	\
 CONFIGURE_ARGS=		--prefix=${PREFIX}/${PFX} --COPTFLAGS="${CFLAGS}"	\
 			--CXXOPTFLAGS="${CXXFLAGS}" --FOPTFLAGS="${FFLAGS}"	\
 			--with-shared=1 --with-cc=${CC} --with-fc=${FC}		\
-			--CPPFLAGS="-I${LOCALBASE}/include" --LDFLAGS=${PTHREAD_LIBS}
+			--CPPFLAGS="-I${LOCALBASE}/include"	\
+			--LDFLAGS="${PTHREAD_LIBS} ${LDFLAGS}"
 ALL_TARGET=		all
 MAKEFILE=		makefile
 MAKE_ENV=		PETSC_DIR=${WRKSRC}

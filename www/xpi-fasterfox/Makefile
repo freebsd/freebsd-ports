@@ -15,6 +15,5 @@ XPI_FILES=	chrome/fasterfox.jar chrome.manifest defaults/preferences/fasterfox.j
 		install.rdf readme.txt 
 XPI_DIRS=	chrome defaults/preferences defaults 
 
-NO_STAGE=	yes
 .include "../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

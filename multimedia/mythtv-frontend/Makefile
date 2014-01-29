@@ -2,8 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	mythtv-frontend
-PORTVERSION=	0.27
+PORTVERSION=	0.27.0.20140121
 CATEGORIES=	multimedia
+MASTER_SITES=	http://people.freebsd.org/~decke/distfiles/
 DISTNAME=	mythtv-${PORTVERSION}
 
 MAINTAINER=	decke@FreeBSD.org
@@ -21,11 +22,11 @@ CONFLICTS=	mythtv-[0-9]*
 USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
 GH_PROJECT=	mythtv
-GH_TAGNAME=	v${PORTVERSION}
+GH_TAGNAME=	${GH_COMMIT}
+GH_COMMIT=	5a5e1cd
 
-WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-e9545c0/${GH_PROJECT}
+WRKSRC=		${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}/${GH_PROJECT}
 
-USE_GCC=	any
 ONLY_FOR_ARCHS=	i386 amd64
 USES=		gmake pkgconfig
 USE_QT4=	gui sql network script linguist_build l10n sql-mysql_run \

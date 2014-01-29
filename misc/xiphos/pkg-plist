@@ -1,15 +1,15 @@
 bin/xiphos
 bin/xiphos-nav
 share/applications/xiphos.desktop
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/ChangeLog
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/RELEASE-NOTES
-%%DOCSDIR%%/TODO
-%%DOCSDIR%%/Xiphos.ogg
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE-NOTES
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/Xiphos.ogg
 share/gnome/help/xiphos/C/figures/first_start.png
 share/gnome/help/xiphos/C/figures/gtkhtml3-vs-mozembed.png
 share/gnome/help/xiphos/C/figures/interface.png
@@ -121,6 +121,7 @@ share/gnome/help/xiphos/fr/figures/sword_install.png
 share/gnome/help/xiphos/fr/figures/sword_remove.png
 share/gnome/help/xiphos/fr/figures/sword_sources.png
 share/gnome/help/xiphos/fr/xiphos.xml
+share/icons/hicolor/icon-theme.cache
 share/icons/hicolor/scalable/apps/xiphos.svg
 share/locale/ar/LC_MESSAGES/xiphos.mo
 share/locale/cs/LC_MESSAGES/xiphos.mo
@@ -184,6 +185,8 @@ share/omf/xiphos/xiphos-fr.omf
 %%DATADIR%%/gs2-48x48.ico
 %%DATADIR%%/gs2-48x48.png
 %%DATADIR%%/gs2.xpm
+%%DATADIR%%/gtk2_webedit.ui
+%%DATADIR%%/gtk_webedit.ui
 %%DATADIR%%/indexed-16.png
 %%DATADIR%%/indexed.png
 %%DATADIR%%/init-settings.png
@@ -219,14 +222,13 @@ share/omf/xiphos/xiphos-fr.omf
 %%DATADIR%%/xiphos-button-125.png
 %%DATADIR%%/xiphos-x-16.png
 %%DATADIR%%/xiphos.xpm
-@dirrm %%DATADIR%%
-@dirrm share/pixmaps/xiphos
-@dirrm share/omf/xiphos
-@dirrm share/gnome/help/xiphos/fr/figures
-@dirrm share/gnome/help/xiphos/fr
-@dirrm share/gnome/help/xiphos/fa/figures
-@dirrm share/gnome/help/xiphos/fa
-@dirrm share/gnome/help/xiphos/C/figures
-@dirrm share/gnome/help/xiphos/C
-@dirrm share/gnome/help/xiphos
-@dirrm %%DOCSDIR%%
+@dirrmtry %%DATADIR%%
+@dirrmtry share/omf/xiphos
+@dirrmtry share/gnome/help/xiphos/fr/figures
+@dirrmtry share/gnome/help/xiphos/fr
+@dirrmtry share/gnome/help/xiphos/fa/figures
+@dirrmtry share/gnome/help/xiphos/fa
+@dirrmtry share/gnome/help/xiphos/C/figures
+@dirrmtry share/gnome/help/xiphos/C
+@dirrmtry share/gnome/help/xiphos
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

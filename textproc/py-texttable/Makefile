@@ -17,5 +17,4 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/texttable.py \
 		%%PYTHON_SITELIBDIR%%/texttable.pyc \
 		%%PYTHON_SITELIBDIR%%/texttable.pyo
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/flowgrind
 bin/flowgrind-stop
 sbin/flowgrindd

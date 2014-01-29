@@ -1,13 +1,14 @@
-# Makefile for other stuffs
-# Whom:         Maho Nakata <maho@FreeBSD.org>
+# Created by: Maho Nakata <maho@FreeBSD.org>
 # $FreeBSD$
+#
+# Makefile for other stuff
 
-#other stuffs which are not directly related to making ports
-#package-rename: rename package for uploading
-#package-canonical: making official packages (WIP)
-#ure:  URE (Uno Runtime Environment) packages (WIP)
-#solver: solver
-#languagepack: language pack
+# Other stuff which is not directly related to making ports
+# package-rename: rename package for uploading
+# package-canonical: making official packages (WIP)
+# ure: URE (Uno Runtime Environment) packages (WIP)
+# solver: solver
+# languagepack: language pack
 
 package-rename:
 	@${ECHO_MSG} "===>   Rename package for Apache OpenOffice mirror upload";
@@ -58,9 +59,10 @@ languagepack:
 	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice_languagepack/archive/install/${LOCALIZED_LANG} ; ls Apache_OpenOffice*tar.* > ${WRKDIR}/${LOCALIZED_LANG}_LANGPACK
 	@cd ${WRKDIR}/langpack_tmp ; \
 	for i in `${CAT} ${WRKDIR}/${LOCALIZED_LANG}_LANGPACK`; do \
-                ${ECHO_CMD} "extracting $$i" ; \
-                cd ${WRKDIR}/langpack_tmp ; ${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice_languagepack/archive/install/${LOCALIZED_LANG}/$$i ; \
-        done
+		${ECHO_CMD} "extracting $$i" ; \
+		cd ${WRKDIR}/langpack_tmp ; \
+		${TAR} xfz ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice_languagepack/archive/install/${LOCALIZED_LANG}/$$i ; \
+	done
 	@cd ${WRKDIR}/langpack_tmp/Apache_OpenOffice*/ ; \
 		${MKDIR} ../${INSTALLATION_BASEDIR} ; \
 		${MV} * ../${INSTALLATION_BASEDIR} ; cd .. ; \

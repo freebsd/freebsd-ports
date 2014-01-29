@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaml
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	textproc pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -18,5 +18,4 @@ USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_PHPEXT=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

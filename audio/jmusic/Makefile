@@ -18,25 +18,20 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Composition in Java
 
 USE_JAVA=	yes
-NO_STAGE=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 PORTDOCS=	*
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${MKDIR} ${JAVAJARDIR}/${PORTNAME}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/jMusic${PORTVERSION}.jar \
-		${JAVAJARDIR}/${PORTNAME}/${PORTNAME}.jar
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} inst ${JAVAJARDIR}/${PORTNAME})
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} doc ${DOCSDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/jMusic${PORTVERSION}.jar \
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}/${PORTNAME}.jar
+	cd ${WRKSRC} && ${COPYTREE_SHARE} inst ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} doc ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

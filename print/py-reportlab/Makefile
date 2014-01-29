@@ -18,7 +18,7 @@ COMMENT=	Library to create PDF documents using the Python language
 
 PORTSCOUT=	ignore:1	# Last version of 1.X branch
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Reportlab
 

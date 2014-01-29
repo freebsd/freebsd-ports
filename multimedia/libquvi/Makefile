@@ -3,7 +3,7 @@
 
 PORTNAME=	libquvi
 PORTVERSION=	0.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia devel
 MASTER_SITES=	SF/quvi/${PORTVERSION:R}/${PORTNAME}/ \
 		GOOGLE_CODE
@@ -25,11 +25,13 @@ PORTSCOUT=	limit:0.4.[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_LUA=	yes
 USE_XZ=		yes
-USES=		iconv pathfix pkgconfig
+USES=		iconv lua pathfix pkgconfig
 
 PROJECTHOST=	quvi
+
+post-patch:
+	@${REINPLACE_CMD} 's/lua-5.1/lua-${LUA_VER}/g' ${WRKSRC}/configure
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/

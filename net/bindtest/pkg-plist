@@ -1,3 +1,2 @@
-@comment $FreeBSD$
 bin/bindtest
 bin/bindtest.sh

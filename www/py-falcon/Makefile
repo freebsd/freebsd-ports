@@ -16,7 +16,7 @@ BUILD_DEPENDS=	cython>=0.11.2:${PORTSDIR}/lang/cython
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}testtools>=0:${PORTSDIR}/devel/py-testtools \
 		${PYTHON_PKGNAMEPREFIX}six>=1.1.0:${PORTSDIR}/devel/py-six
 
-USE_PYTHON=	2.7+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 

@@ -14,22 +14,21 @@ USE_TEX=	latex:build dvipsk:build
 USES=		shebangfix perl5
 SHEBANG_FILES=	naturalmath
 
-NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC}; ./naturalmath tutor.nat; \
 		${LOCALBASE}/bin/latex tutor; ${LOCALBASE}/bin/latex tutor; \
 		${LOCALBASE}/bin/dvips tutor -o tutor.ps)
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/naturalmath ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/naturalmath ${STAGEDIR}${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/install.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/tutor.nat ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/tutor.tex ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/tutor.dvi ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/tutor.ps ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/naturalmath.cgi ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/install.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/tutor.nat ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/tutor.tex ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/tutor.dvi ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/tutor.ps ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/naturalmath.cgi ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

@@ -8,6 +8,6 @@ include/spdylay/spdylayver.h
 lib/libspdylay.a
 lib/libspdylay.la
 lib/libspdylay.so
-lib/libspdylay.so.6
+lib/libspdylay.so.7
 libdata/pkgconfig/libspdylay.pc
 @dirrm include/spdylay

@@ -265,8 +265,8 @@
     SUBDIR += vdkbuilder
     SUBDIR += viewklass
     SUBDIR += vte
-    SUBDIR += vte3
     SUBDIR += vte-reference
+    SUBDIR += vte3
     SUBDIR += vtkfox
     SUBDIR += wmapp
     SUBDIR += wxgtk26
@@ -283,6 +283,7 @@
     SUBDIR += wxgtk28-unicode
     SUBDIR += wxgtk28-unicode-contrib
     SUBDIR += wxgtk29
+    SUBDIR += wxgtk30
     SUBDIR += xbae
     SUBDIR += xforms
     SUBDIR += xmhtml

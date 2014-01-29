@@ -13,7 +13,7 @@ COMMENT=	Configuration GUI for wbar
 RUN_DEPENDS=	wbar:${PORTSDIR}/x11/wbar
 
 USE_GNOME=	pygobject pygtk2 gtk20
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USES=		gettext
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

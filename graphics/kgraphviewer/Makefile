@@ -25,6 +25,8 @@ NO_STAGE=	yes
 #   problems above, but it still relies on the deprecated libgraph library that
 #   graphics/graphviz in ports does not install anymore.
 BROKEN=		does not build
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2014-02-27
 
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4

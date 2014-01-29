@@ -43,12 +43,9 @@ TESSERACT_LANGS_30${n}+= ${LANGS_30${n}:M${l}}
 .endfor
 .endfor
 
-.ifndef NOPORTDATA
 DATADIR=	${PREFIX}/share/tessdata
 PORTDATA=	${TESSERACT_LANGS:O:u:S|$|.traineddata|}
-.endif
 
-NO_STAGE=	yes
 pre-fetch:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "The choice of language data to be installed may"
@@ -56,19 +53,16 @@ pre-fetch:
 	@${ECHO_MSG} ""
 
 do-install:
-.ifndef NOPORTDATA
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for l in ${TESSERACT_LANGS_300:O:u:S|$|.traineddata|}
-	@${GUNZIP_CMD} -c ${_DISTDIR}/${l}.gz > ${DATADIR}/${l}
+	@${GUNZIP_CMD} -c ${_DISTDIR}/${l}.gz > ${STAGEDIR}${DATADIR}/${l}
 .endfor
 .for n in 1 2
 .for l in ${TESSERACT_LANGS_30${n}:O:u}
-	@${TAR} --strip-components 2 -C ${DATADIR} \
+	@${TAR} --strip-components 2 -C ${STAGEDIR}${DATADIR} \
 	-xf ${_DISTDIR}/tesseract-ocr-3.0${n}.${l}.tar.gz *.traineddata
 .endfor
 .endfor
-	@cd ${DATADIR} ; ${CHOWN} ${SHAREOWN}:${SHAREGRP} ${PORTDATA} ; \
-	${CHMOD} ${BINMODE} ${PORTDATA}
-.endif
+	@cd ${STAGEDIR}${DATADIR} ; ${CHMOD} ${BINMODE} ${PORTDATA}
 
 .include <bsd.port.mk>

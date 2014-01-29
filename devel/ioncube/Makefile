@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ioncube
-DISTVERSION=	4.5.0
+DISTVERSION=	4.5.1
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads3.ioncube.com/loader_downloads/ \
 		http://dl.ispsystem.info/ioncube/${DISTVERSION}/ \
@@ -10,7 +10,7 @@ MASTER_SITES=	http://downloads3.ioncube.com/loader_downloads/ \
 DISTNAME=	${PORTNAME}_loaders_fre_${VER}_${ARCH:S,i386,x86,:S,amd64,x86-64,}
 
 MAINTAINER=	svyatoslav.lempert@gmail.com
-COMMENT=	ionCube loader for PHP code
+COMMENT=	Loader for ionCube-encoded PHP files
 
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
@@ -21,10 +21,9 @@ SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}
 DIST_SUBDIR=	${PORTNAME}/${DISTVERSION}
 
-NO_STAGE=	yes
-
 .include <bsd.port.pre.mk>
 
+.if ${OPSYS} == FreeBSD
 # FreeBSD 10 is unsupported
 .if ${OSVERSION} >= 1000000
 IGNORE=	is unsupported on FreeBSD 10
@@ -35,21 +34,17 @@ VER=	8
 .if ${OSVERSION} >= 900000
 VER=	9
 .endif
-
-.if empty(PHP_VERSION)
-PHP_VERSION!=	${MAKE} -C ${PORTSDIR}/${PHP_PORT} -V PORTVERSION
+.else
+IGNORE= is unsupported on ${OPSYS}
 .endif
 
 PHP_INSTVER=	${PHP_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}/ioncube/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/ioncube/
 	${INSTALL_DATA} ${WRKSRC}/ioncube_loader_fre_${PHP_INSTVER}.so \
-		${PREFIX}/lib/php/${PHP_EXT_DIR}/ioncube/ioncube_loader.so
+		${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/ioncube/ioncube_loader.so
 	${INSTALL_DATA} ${WRKSRC}/ioncube_loader_fre_${PHP_INSTVER}_ts.so \
-		${PREFIX}/lib/php/${PHP_EXT_DIR}/ioncube/ioncube_loader_ts.so
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+		${STAGEDIR}${PREFIX}/lib/php/${PHP_EXT_DIR}/ioncube/ioncube_loader_ts.so
 
 .include <bsd.port.post.mk>

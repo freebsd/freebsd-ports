@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.onicos.com/staff/iz/timidity/dist/:timidity	\
 DISTFILES=	${TIINS}:tiins ${DISTNAME}.tar.gz:timidity
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
-MAINTAINER=	kevinz5000@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI to PCM software synthesizer
 
 CONFLICTS=	timidity++-2.13.*

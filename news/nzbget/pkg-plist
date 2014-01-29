@@ -5,6 +5,7 @@ sbin/nzbgetd
 %%DATADIR%%/webui/downloads.js
 %%DATADIR%%/webui/edit.js
 %%DATADIR%%/webui/fasttable.js
+%%DATADIR%%/webui/feed.js
 %%DATADIR%%/webui/history.js
 %%DATADIR%%/webui/img/download-anim-green-2x.png
 %%DATADIR%%/webui/img/download-anim-orange-2x.png

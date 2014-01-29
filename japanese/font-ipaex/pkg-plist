@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/ipaexg.otf
 %%DATADIR%%/ipaexm.otf
 @dirrm %%DATADIR%%

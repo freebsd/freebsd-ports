@@ -24,6 +24,7 @@ USE_BZIP2=	yes
 USES=		iconv pkgconfig gmake perl5
 USE_PERL5=	build
 USE_LUA=	5.1+
+MAKE_JOBS_SAFE=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
@@ -50,13 +51,12 @@ PLIST_FILES=	bin/mtn bin/mtn-cleanup bin/mtnopt \
 		"@dirrm share/monotone"
 .if !defined(NO_INSTALL_MANPAGES)
 INFO=		monotone
-MAN1=		mtn.1 \
-		mtn-cleanup.1 \
-		mtnopt.1
+PLIST_FILES+=	man/man1/mtn.1.gz \
+		man/man1/mtn-cleanup.1.gz \
+		man/man1/mtnopt.1.gz
 .endif
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -82,19 +82,20 @@ post-patch:
 	${REINPLACE_CMD} -Ee '/^install-info: /s/ install-info-am$$//' \
 	-e '/^install-data-am:/s/ install-info-am$$//' ${WRKSRC}/doc/Makefile.in
 .endif
-	${REINPLACE_CMD} -e "s/\"lua/\"lua-${LUA_VER}/g" \
-		-e "s/\"idn/\"libidn/g" \
-		-e "s/\"pcre/\"libpcre/g" \
-		-e "s/\"botan/\"botan-1.10/g" \
+	${REINPLACE_CMD} \
 		-e "s/REBUILD_NLS=true/REBUILD_NLS=false/g" \
+		-e "s/std::tr1::/std::/g" \
 		${WRKSRC}/configure
+	${REINPLACE_CMD} \
+		-e "s/std::tr1::/std::/g" \
+		${WRKSRC}/src/hash_map.hh
 
 post-install:
-	${MKDIR} ${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKSRC}/contrib/monotone.zsh_completion ${PREFIX}/share/zsh/site-functions/_mtn
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKSRC}/contrib/monotone.zsh_completion ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_mtn
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} NEWS UPGRADE ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} NEWS UPGRADE ${STAGEDIR}${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 

@@ -14,7 +14,7 @@ COMMENT=	Python interface to RRDTool, the graphing and logging utility
 
 LIB_DEPENDS=	librrd.so:${PORTSDIR}/databases/rrdtool
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGNAME=	py-rrdtool

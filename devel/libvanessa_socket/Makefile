@@ -10,10 +10,8 @@ DISTNAME=	vanessa_socket-${PORTVERSION}
 MAINTAINER=	thomas@bsdunix.ch
 COMMENT=	Library that provides a simple layer for TCP/IP socket operations
 
-LIB_DEPENDS=	vanessa_logger:${PORTSDIR}/devel/libvanessa_logger \
-		popt:${PORTSDIR}/devel/popt
-
-MAN1=		vanessa_socket_pipe.1
+LIB_DEPENDS=	libvanessa_logger.so:${PORTSDIR}/devel/libvanessa_logger \
+		libpopt.so:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
@@ -24,7 +22,6 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '/^SUBDIRS/s|debian||' ${WRKSRC}/Makefile.in
 

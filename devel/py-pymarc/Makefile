@@ -14,7 +14,7 @@ COMMENT=	Read Write And Modify MARC Bibliographic Data
 LICENSE=	BSD
 
 PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-USE_PYTHON=		-2.7
+USE_PYTHON=		2
 USE_PYDISTUTILS=	easy_install
 
 regression-test: build

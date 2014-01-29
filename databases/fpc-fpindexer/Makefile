@@ -12,7 +12,6 @@ USE_FPC=	chm fcl-base fcl-db
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR+=	${WRKUNITDIR}
+EXTRACTUNITDIR=	${WRKUNITDIR}
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

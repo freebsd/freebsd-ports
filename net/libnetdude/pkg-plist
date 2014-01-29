@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/lndtool
 include/libnetdude/%%PORTVERSION%%/libnd.h
 include/libnetdude/%%PORTVERSION%%/libnd_types.h

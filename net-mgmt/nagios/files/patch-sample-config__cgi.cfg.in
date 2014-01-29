@@ -1,0 +1,11 @@
+--- ./sample-config/cgi.cfg.in.orig	2013-08-30 19:46:14.000000000 +0200
++++ ./sample-config/cgi.cfg.in	2014-01-14 13:57:06.000000000 +0100
+@@ -264,7 +264,7 @@
+ # OS and distribution, so you may have to tweak this to
+ # work on your system.
+ 
+-ping_syntax=/bin/ping -n -U -c 5 $HOSTADDRESS$
++ping_syntax=/sbin/ping -n -c 5 $HOSTADDRESS$
+ 
+ 
+ 

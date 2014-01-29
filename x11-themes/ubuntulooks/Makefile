@@ -15,10 +15,8 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-t
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtk-engines-2.pc:${PORTSDIR}/x11-themes/gtk-engines2
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		pkgconfig gmake
 USE_GNOME=	gtk20
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -8,16 +8,18 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://dicom.offis.de/pub/dicom/offis/software/${PORTNAME}/${PORTNAME}${PORTVERSION:S/.//g}/
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A toolkit to work with DICOM files
+COMMENT=	Toolkit to work with DICOM objects
 
-LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
-    		png15:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
+    		libpng15.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
+USE_OPENSSL=	yes
 USES=		cmake:outsource
-CMAKE_ARGS+=	-DDCMTK_WITH_DOXYGEN:BOOL=OFF
+CMAKE_ARGS+=	-DDCMTK_WITH_DOXYGEN:BOOL=OFF \
+    		-DDCMTK_WITH_OPENSSL:BOOL=ON
 
 SHLIBS=		dcmdata dcmdsig dcmimage dcmimgle dcmjpeg dcmnet \
 		dcmpstat dcmqrdb dcmsr dcmtls dcmwlm ijg8 ijg12 \
@@ -28,7 +30,6 @@ PLIST_SUB=	SHLIBVER=${SHLIBVER}
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"
@@ -43,10 +44,10 @@ post-patch:
 .endif
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/doxygen/manpages/man1/*.1 ${STAGEDIR}${PREFIX}/man/man1/
 .for shlib in ${SHLIBS}
-	@${MV} ${PREFIX}/lib/lib${shlib}.so ${PREFIX}/lib/lib${shlib}.so.${SHLIBVER}
-	@${LN} -sf ${PREFIX}/lib/lib${shlib}.so.${SHLIBVER} ${PREFIX}/lib/lib${shlib}.so
+	@${MV} ${STAGEDIR}${PREFIX}/lib/lib${shlib}.so ${STAGEDIR}${PREFIX}/lib/lib${shlib}.so.${SHLIBVER}
+	@${LN} -sf ${PREFIX}/lib/lib${shlib}.so.${SHLIBVER} ${STAGEDIR}${PREFIX}/lib/lib${shlib}.so
 .endfor
 
-#.include "Makefile.man"
 .include <bsd.port.post.mk>

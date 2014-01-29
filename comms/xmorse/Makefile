@@ -3,7 +3,7 @@
 
 PORTNAME=	xmorse
 PORTVERSION=	20041125
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://c2.com/morse/files/SourceCode/ \
 		http://www.525183.com/freebsd/xmorse/ \
@@ -21,6 +21,9 @@ USE_SDL=	sdl
 
 PLIST_FILES=	bin/xmorse
 NO_WRKSUBDIR=	yes
+MAKE_ARGS=	PREFIX="${STAGEDIR}${PREFIX}" INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
-NO_STAGE=	yes
+post-patch:
+	${CP} ${FILESDIR}/Makefile ${WRKSRC}
+
 .include <bsd.port.mk>

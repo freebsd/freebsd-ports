@@ -366,10 +366,8 @@ post-patch:
 		-e 's,libavformat ,libavformat0 ,g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.pre.mk>
-
 .if ${ARCH} == "powerpc" && ${OSVERSION} > 900000
 BROKEN=		Does not build on powerpc-9: fails to compile
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

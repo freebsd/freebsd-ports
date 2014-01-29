@@ -13,25 +13,10 @@ OPTIONS_DEFINE=	DOCS
 
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=	pathfix
+USES=		pathfix gmake
 USE_LDCONFIG=	yes
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-post-patch:
-.if empty(PORT_OPTIONS:MDOCS)
-	@${REINPLACE_CMD} -e '/^SUBDIRS = / s|doc||' ${WRKSRC}/Makefile.in
-.endif
 
 regression-test test: build
 	cd ${WRKSR}/ && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
-.include <bsd.port.pre.mk>
-
-.if (${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || ${OSVERSION} < 800505
-LIB_DEPENDS+=		lzma:${PORTSDIR}/archivers/xz
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

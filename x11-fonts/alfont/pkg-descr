@@ -1,0 +1,6 @@
+AllegroFont is an Allegro wrapper for the wonderful FreeType2 library
+that makes Allegro (amongst other things) able to load and render TTF
+and many other famous font formats. Other feature is that it is able
+to render the fonts antialiased.
+
+WWW: http://opensnc.sourceforge.net/alfont/

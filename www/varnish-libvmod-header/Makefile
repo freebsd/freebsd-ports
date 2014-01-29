@@ -29,7 +29,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/varnish
 MAN3=		vmod_header.3
 WRKSRC=		${WRKDIR}/${PORTNAME}-master
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

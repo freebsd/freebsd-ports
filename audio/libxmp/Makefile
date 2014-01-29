@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libxmp
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.3
 CATEGORIES=	audio
 MASTER_SITES=	SF/xmp/${PORTNAME}/${PORTVERSION}
 
@@ -15,5 +15,8 @@ USE_LDCONFIG=	yes
 
 PLIST_FILES=	include/xmp.h lib/libxmp.so lib/libxmp.so.4 \
 		lib/libxmp.so.${PORTVERSION} libdata/pkgconfig/libxmp.pc
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libxmp.so.${PORTVERSION}
 
 .include <bsd.port.mk>

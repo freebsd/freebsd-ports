@@ -10,17 +10,13 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	kozlov.sergey.404@gmail.com
 COMMENT=	Table/data-grid framework for Django
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django \
 		${PYTHON_PKGNAMEPREFIX}six>=0:${PORTSDIR}/devel/py-six
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-PYDISTUTILS_AUTOPLIST=yes
-
-post-patch:
-	@${REINPLACE_CMD} 's|classifiers=\[|zip_safe=False, classifiers=\[|' \
-		${WRKSRC}/setup.py
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

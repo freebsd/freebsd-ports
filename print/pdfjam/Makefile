@@ -17,25 +17,24 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 PROGS=		pdf90 pdf180 pdf270 pdfbook pdfflip pdfjam \
 		pdfjam-pocketmod pdfjam-slides3up pdfjam-slides6up \
 		pdfjoin pdfnup pdfpun
-MAN1=		${PROGS:S/$/.1/}
-PLIST_FILES=	${PROGS:S/^/bin\//} etc/pdfjam.conf.dist
+PLIST_FILES=	${PROGS:S/^/bin\//} etc/pdfjam.conf.dist \
+		${PROGS:S|^|man/man1/|:S/$/.1.gz/}
 PORTDOCS=	PDFjam-README.html pdfdroplets.png
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 do-install:
 .for FILE in ${PROGS}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${FILE} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${FILE} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man1/${FILE}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 .endfor
-.for FILE in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/man1/${FILE} ${MAN1PREFIX}/man/man1
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/pdfjam.conf ${PREFIX}/etc/pdfjam.conf.dist
+	${INSTALL_DATA} ${WRKSRC}/pdfjam.conf ${STAGEDIR}${PREFIX}/etc/pdfjam.conf.dist
 .ifndef NOPORTDOCS
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 

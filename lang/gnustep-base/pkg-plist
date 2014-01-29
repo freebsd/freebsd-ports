@@ -125,6 +125,7 @@ GNUstep/System/Library/Headers/Foundation/NSURLResponse.h
 GNUstep/System/Library/Headers/Foundation/NSUndoManager.h
 GNUstep/System/Library/Headers/Foundation/NSUserDefaults.h
 GNUstep/System/Library/Headers/Foundation/NSUtilities.h
+GNUstep/System/Library/Headers/Foundation/NSUUID.h
 GNUstep/System/Library/Headers/Foundation/NSValue.h
 GNUstep/System/Library/Headers/Foundation/NSValueTransformer.h
 GNUstep/System/Library/Headers/Foundation/NSXMLDTD.h

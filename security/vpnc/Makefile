@@ -24,7 +24,7 @@ ALL_TARGET=	all
 SHEBANG_FILES=	makeman.pl
 
 PORTDOCS=	README TODO
-MAN8=		vpnc.8
+MANPAGE8=	vpnc.8
 
 MAKE_ENV+=	BINS="${EXTRABUILDS}"
 
@@ -38,7 +38,7 @@ OPTIONS_DEFAULT=DECRYPT
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDECRYPT}
-MAN1=		cisco-decrypt.1
+MANPAGE1=	cisco-decrypt.1
 EXTRABUILDS+=	cisco-decrypt
 PLIST_SUB+=	DECRYPT=""
 .else
@@ -58,13 +58,13 @@ CFLAGS+=	-DCISCO_PATCH_VERSION
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/config.c
 	@${REINPLACE_CMD} -e 's|\(/etc/vpnc\)|${PREFIX}\1|' \
-		${WRKSRC}/${MAN8}.template
+		${WRKSRC}/${MANPAGE8}.template
 
 do-install:
 	${INSTALL_PROGRAM} -m 751 ${WRKSRC}/vpnc ${STAGEDIR}${PREFIX}/sbin/vpnc
 .if ${PORT_OPTIONS:MDECRYPT}
 	${INSTALL_PROGRAM} ${WRKSRC}/cisco-decrypt ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${MANPAGE1} ${STAGEDIR}${MANPREFIX}/man/man1
 .endif
 	${INSTALL_SCRIPT} -m 751 ${WRKSRC}/vpnc-disconnect \
 		${STAGEDIR}${PREFIX}/sbin/vpnc-disconnect
@@ -73,7 +73,7 @@ do-install:
 .if !exists(${STAGEDIR}${PREFIX}/etc/vpnc.conf)
 	${INSTALL_DATA} -m 600 ${WRKSRC}/vpnc.conf ${STAGEDIR}${PREFIX}/etc
 .endif
-	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${STAGEDIR}${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/${MANPAGE8} ${STAGEDIR}${MANPREFIX}/man/man8
 
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

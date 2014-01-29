@@ -11,51 +11,31 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DocBook SGML DTD into nroff/troff -man macros converter
 
-# Global variables
-#
-.if defined(WITH_OPENJADE)
-RUN_DEPENDS=	onsgmls:${PORTSDIR}/textproc/openjade
-.else
-RUN_DEPENDS=	nsgmls:${PORTSDIR}/textproc/jade
-.endif
-RUN_DEPENDS+=	${LOCALBASE}/share/sgml/docbook:${PORTSDIR}/textproc/docbook
+RUN_DEPENDS=	${LOCALBASE}/share/sgml/docbook:${PORTSDIR}/textproc/docbook
 
 USES=		imake
 XFREE86_HTML_MAN=	no
 
-.include <bsd.port.pre.mk>
-
-# Local variables
-#
-
 # There are two ports that satisfy the nsgmls requirement.
-# Jade is preferred.
+# Jade is preferred, but OpenJade can be selected if needed.
+OPTIONS_DEFINE=	OPENJADE
+OPENJADE_DESC=	Use OpenJade SGML/XML/DSSSL toolkit instead of Jade
 
-.if ${ARCH} == "alpha"
-WITH_OPENJADE=	yes
-.endif
+.include <bsd.port.options.mk>
 
-.if defined(WITH_OPENJADE)
+.if ${PORT_OPTIONS:MOPENJADE}
+RUN_DEPENDS+=	onsgmls:${PORTSDIR}/textproc/openjade
 NSGMLS=		onsgmls
 .else
+RUN_DEPENDS+=	nsgmls:${PORTSDIR}/textproc/jade
 NSGMLS=		nsgmls
 .endif
 
-# Post extract
-#
-
-post-extract: move-instant.1
-
-move-instant.1:
+post-extract:
 	@${MV} ${WRKSRC}/Doc/instant.1 ${WRKSRC}/Instant/oinstant.man
 
-# Post patch
-#
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}| ; \
+		s|%%NSGMLS%%|${NSGMLS}|' ${WRKSRC}/cmd/docbook-to-man.sh
 
-post-patch: patch-docbook-to-man
-
-patch-docbook-to-man:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|;s|%%NSGMLS%%|${NSGMLS}|' \
-		${WRKSRC}/cmd/docbook-to-man.sh
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

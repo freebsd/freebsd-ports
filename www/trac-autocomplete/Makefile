@@ -14,7 +14,7 @@ COMMENT=	Plugin for autocompletion of user names in ticket fields
 
 RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_ZIP=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	AutocompleteUsers
@@ -23,7 +23,6 @@ WRKSRC=		${WRKDIR}/autocompleteusersplugin/0.11
 REL=		8451
 
 # Target to generate packaging list
-NO_STAGE=	yes
 plist:
 	@${FIND} ${PYTHON_SITELIBDIR}/${PYDISTUTILS_PKGNAME}-${PORTVERSION}-py${PYTHON_VER}.egg -type f | ${SED} -e's|^${PYTHON_SITELIBDIR}/|%%PYTHON_SITELIBDIR%%/|;s|/${PYDISTUTILS_PKGNAME}-${PORTVERSION}-py[[:digit:]\.]*.egg/|/${PYDISTUTILS_PKGNAME}-${PORTVERSION}-py%%PYTHON_VER%%.egg/|'
 	@${FIND} ${PYTHON_SITELIBDIR}/${PYDISTUTILS_PKGNAME}-${PORTVERSION}-py${PYTHON_VER}.egg -type d -mindepth 1 | ${SORT} -r | ${SED} -e's|^${PYTHON_SITELIBDIR}/|@dirrm %%PYTHON_SITELIBDIR%%/|;s|/${PYDISTUTILS_PKGNAME}-${PORTVERSION}-py[[:digit:]\.]*.egg/|/${PYDISTUTILS_PKGNAME}-${PORTVERSION}-py%%PYTHON_VER%%.egg/|'

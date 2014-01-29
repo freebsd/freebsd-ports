@@ -5,6 +5,64 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140114:
+  AFFECTS: users of www/mod_authnz_external
+  AUTHOR: ohauer@FreeBSD.org
+
+  www/mod_authnz_external was moved to www/mod_authnz_external22
+  Please do the following according to package manager used.
+
+  # portmaster -o www/mod_authnz_external22 www/mod_authnz_external
+    or
+  # portupgrade -fo www/mod_authnz_external22 www/mod_authnz_external
+    or
+  # pkg set -o www/mod_authnz_external:www/mod_authnz_external22
+
+20140113:
+  AFFECTS: users of net/samba41
+  AUTHOR: timur@FreeBSD.org
+
+  With the introduction of Samba 4.1 corresponding port lost SWAT support
+  and made WINBIND support mandatory. As samba4 introduced additional 'samba'
+  daemon to the tripplet of nmbd/smbd/winbindd to avoid confusion startup
+  script for samba41 was renamed to 'samba_server'. To start the whole band
+  up it's enough to add to the rc.conf:
+
+  samba_server_enable="YES"
+
+  Startup script tries it's best to guess which out of samba/nmbd/smbd/winbindd
+  daemons have to be started, but you can fine tune this by specifying them in
+  rc.conf, just make sure that samba_server_enable is enabled(see entry for 20121022).
+
+20140112:
+  AFFECTS: users of devel/libical
+  AUTHOR: kwm@FreeBSD.org
+
+  The libical port was updated to 1.0.0. Due to the shared library bump
+  and the removal of the .la file, all ports that use libical need to be
+  rebuilt.
+
+  # portmaster -r libical
+   or
+  # portupgrade -fr libical
+   or
+  # pkg install -fR libical
+
+20140111:
+  AFFECTS: users of lang/go
+  AUTHOR: jlaffaye@FreeBSD.org
+
+  Third party Go packages installed via the ports tree are no longer installed
+  in GOROOT (PREFIX/go) but in a specific path: PREFIX/share/go
+
+  Affected ports had their PORTREVISION bumped.
+  To reinstall these packages via the ports tree, it is needed to deinstall
+  them first (the build will fail if the `go` command detects that they
+  already exists in GOROOT).
+
+  If you are using these third party Go packages for local Go development,
+  you have to add this new path to your GOPATH environment variable.
+
 20140107:
   AFFECTS: users of Qt 4 ports
   AUTHOR: makc@FreeBSD.org
@@ -94,7 +152,7 @@ you update your ports collection, before attempting any port upgrades.
   The default xorg version has been switched on FreeBSD CURRENT.
 
   To upgrade graphics/libGL, graphics/dri and related MESA ports, it is
-  neccessary to first remove the old versions of those ports.
+  necessary to first remove the old versions of those ports.
   No special upgrade procedure is needed for xorg port but it is
   necessary to recompile all xorg drivers (xf86-*) and other ports that
   depend on the xserver version, including
@@ -177,10 +235,10 @@ you update your ports collection, before attempting any port upgrades.
 
   # pkg_delete -f vte\*
    or
-  # pkg delete -fg vte\* 
+  # pkg delete -fg vte\*
    followed by
-  # portmaster x11-toolkits/vte 
-   or 
+  # portmaster x11-toolkits/vte
+   or
   # portupgrade x11-toolkits/vte
 
 20131207:
@@ -205,7 +263,7 @@ you update your ports collection, before attempting any port upgrades.
   # portmaster -a
     or
   # portupgrade -a
-  
+
 20131127:
   AFFECTS: users of devel/py-distribute (i.e you)
   AUTHOR: wg@FreeBSD.org
@@ -273,9 +331,9 @@ you update your ports collection, before attempting any port upgrades.
 
   dns/nsd was updated to the new 4.0.0 major release.
 
-  This version replaces the nsdc control program with nsd-control. 
+  This version replaces the nsdc control program with nsd-control.
   This requires some manual setup with nsd-control-setup and editing
-  of the config files. nsd-control is incompatible with nsdc so when 
+  of the config files. nsd-control is incompatible with nsdc so when
   that is used in scripts, these should be adapted.  More information:
   http://www.nlnetlabs.nl/svn/nsd/tags/NSD_4_0_0_REL/doc/NSD-4-features
 

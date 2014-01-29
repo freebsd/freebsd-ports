@@ -10,7 +10,7 @@ MASTER_SITES=	http://fallabs.com/estraier/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-text search system for personal use
 
-LIB_DEPENDS=	qdbm.14:${PORTSDIR}/databases/qdbm
+LIB_DEPENDS=	libqdbm.so:${PORTSDIR}/databases/qdbm
 
 OPTIONS_DEFINE=	CHASEN MECAB KAKASI
 OPTIONS_DEFAULT=	KAKASI
@@ -26,22 +26,17 @@ CONFIGURE_ARGS=	--with-sysqdbm \
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/include ${PTHREAD_LIBS}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+CHASEN_LIB_DEPENDS=	libchasen.so:${PORTSDIR}/japanese/chasen-base
+CHASEN_CONFIGURE_ENABLE=	chasen
 
-.if ${PORT_OPTIONS:MCHASEN}
-LIB_DEPENDS+=	chasen.2:${PORTSDIR}/japanese/chasen-base
-CONFIGURE_ARGS+=	--enable-chasen
-.endif
+KAKASI_LIB_DEPENDS=	libkakasi.so:${PORTSDIR}/japanese/kakasi
+KAKASI_CONFIGURE_ENABLE=	kakasi
+
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMECAB} && ${ARCH} == "i386"
-LIB_DEPENDS+=	mecab.1:${PORTSDIR}/japanese/mecab
+LIB_DEPENDS+=	libmecab.so:${PORTSDIR}/japanese/mecab
 CONFIGURE_ARGS+=	--enable-mecab
-.endif
-
-.if ${PORT_OPTIONS:MKAKASI}
-LIB_DEPENDS+=	kakasi.3:${PORTSDIR}/japanese/kakasi
-CONFIGURE_ARGS+=	--enable-kakasi
 .endif
 
 post-patch:
@@ -56,7 +51,7 @@ post-patch:
 
 post-install:
 .for file in estindex estmbtomh estserver estsiutil estxview
-	@${STRIP_CMD} ${PREFIX}/bin/${file}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${file}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

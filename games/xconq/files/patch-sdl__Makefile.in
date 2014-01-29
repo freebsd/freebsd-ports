@@ -1,0 +1,15 @@
+--- ./sdl/Makefile.in.orig	2005-05-01 01:47:14.000000000 +0000
++++ ./sdl/Makefile.in	2014-01-15 20:23:15.000000000 +0000
+@@ -244,10 +244,8 @@
+ 	else \
+ 		progname="$(SDLCONQ_EXEC_NAME)" ; \
+ 	fi; \
+-	$(INSTALL_PROGRAM) $${progname} $(bindir); \
+-	chown $(GAMEUID) $(bindir)/$${progname}; \
+-	chgrp $(GAMEGRP) $(bindir)/$${progname}; \
+-	chmod $(GAMEPERM) $(bindir)/$${progname};
++	$(INSTALL_PROGRAM) $${progname} $(DESTDIR)$(bindir); \
++	chmod $(GAMEPERM) $(DESTDIR)$(bindir)/$${progname};
+ 
+ install-manpages-only:
+ 	(cd $(x11srcdir) && $(MAKE) $(FLAGS_TO_PASS) install-manpages-only)

@@ -7,27 +7,24 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.cs.kuleuven.ac.be/pub/Ada-Belgium/cdrom/ase02_02/tools/cbind/ \
 			   ftp://ftp.cnam.fr/pub2/Ada/PAL/swtools/cbind/
 DISTNAME=	${PORTNAME}${PORTVERSION}
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	david@realityrift.com
 COMMENT=	Translator for "thin" Ada bindings to C
 
-USE_ZIP=	yes
-MAKE_JOBS_UNSAFE=	yes
+OPTIONS_DEFINE=	DOCS
 
-MAN1=		cbind.1
+MAKE_JOBS_UNSAFE=	yes
 
 ${WRKSRC}=	${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/cbind ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/cbfe ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/cbpp ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/cbind.1 ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/DOCS ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/cbind ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/cbfe ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/cbpp ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/cbind.1 ${STAGEDIR}${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/DOCS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

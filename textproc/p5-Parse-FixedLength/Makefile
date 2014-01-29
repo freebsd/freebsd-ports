@@ -13,7 +13,4 @@ COMMENT=	Parse a string containing fixed length fields into component parts
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Parse::FixedLength.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

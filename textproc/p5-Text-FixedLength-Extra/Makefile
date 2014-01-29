@@ -14,15 +14,6 @@ BUILD_DEPENDS=	p5-Text-FixedLength>=0:${PORTSDIR}/textproc/p5-Text-FixedLength
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
-USE_PERL5=	configure patch
-
-MAN3=		Text::FixedLength::Extra.3
-
-NO_STAGE=	yes
-post-patch:
-	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' \
-		-e '$$_="" if /require 5/;' \
-		-e '$$_="" if /use warnings/;' \
-		${WRKSRC}/Extra.pm
+USE_PERL5=	configure
 
 .include <bsd.port.mk>

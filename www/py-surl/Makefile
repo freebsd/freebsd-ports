@@ -14,7 +14,7 @@ COMMENT=	URL shortening command line application
 LICENSE=	GPLv3
 
 USE_BZIP2=	yes
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 
 post-patch:

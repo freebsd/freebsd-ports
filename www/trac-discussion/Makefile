@@ -14,9 +14,8 @@ COMMENT=	Discussion forum plugin for Trac
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 		trac-TracSpamFilter>=0.2.1:${PORTSDIR}/www/trac-spam-filter
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
-NO_STAGE=	yes
 PYDISTUTILS_PKGNAME=	TracDiscussion
 PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 

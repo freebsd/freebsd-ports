@@ -11,9 +11,8 @@ COMMENT=	GNU autoconf, automake, and libtool - The Book
 
 NO_BUILD=	yes	# it's only text!
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/share/doc/autobook
-	${CP} ${WRKSRC}/* ${PREFIX}/share/doc/autobook
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/autobook
+	${CP} ${WRKSRC}/* ${STAGEDIR}${PREFIX}/share/doc/autobook
 
 .include <bsd.port.mk>

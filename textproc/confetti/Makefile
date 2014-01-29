@@ -12,33 +12,23 @@ COMMENT=	Configuration file parser generator
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		bison perl5
+USES=		bison perl5 gmake
 DATE=		20120801
 MAKE_ARGS+=	FLEX=${LOCALBASE}/bin/flex
 MAKE_JOBS_UNSAFE=yes
 
 OPTIONS_DEFINE=	EXAMPLES
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MEXAMPLES}
-PLIST_SUB+=	EXAMPLES=""
-.else
-PLIST_SUB+=	EXAMPLES="@comment "
-.endif
+PLIST_FILES=	bin/confetti
+PORTEXAMPLES=	*
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|CC=|CC?=|' -e 's|CFLAGS=|CFLAGS?=|' \
 		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} example ${EXAMPLESDIR}
-.endif
+	${INSTALL} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/example && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

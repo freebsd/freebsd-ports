@@ -3,6 +3,7 @@
 
 PORTNAME=	inspircd
 PORTVERSION=	2.0.14
+PORTREVISION=	1
 CATEGORIES=	irc
 
 MAINTAINER=	feld@FreeBSD.org
@@ -93,6 +94,7 @@ PLIST_SUB+=	PGSQL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
+USES+=	pkgconfig
 USE_SQLITE=	3
 EXTRAS:=${EXTRAS},m_sqlite3.cpp
 PLIST_SUB+=	SQLITE=""
@@ -101,8 +103,9 @@ PLIST_SUB+=	SQLITE="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls \
-		gcrypt:${PORTSDIR}/security/libgcrypt
+USES+=	pkgconfig
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=	--enable-gnutls
 EXTRAS:=${EXTRAS},m_ssl_gnutls.cpp
 PLIST_SUB+=	GNUTLS=""
@@ -120,7 +123,7 @@ PLIST_SUB+=	OPENSSL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPCRE}
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 EXTRAS:=${EXTRAS},m_regex_pcre.cpp
 PLIST_SUB+=	PCRE=""
 .else

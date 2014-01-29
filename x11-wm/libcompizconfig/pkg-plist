@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/compizconfig/ccs.h
 include/compizconfig/ccs-backend.h
 lib/libcompizconfig.so.0

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp -s %D/etc/razorback/yara.conf %D/etc/razorback/yara.conf.sample; then rm -f %D/etc/razorback/yara.conf; fi
 etc/razorback/yara.conf.sample
 @exec if [ ! -f %D/etc/razorback/yara.conf ]; then cp -p %D/%F %B/yara.conf; fi

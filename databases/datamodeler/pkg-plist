@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/datamodeler
 %%DATADIR%%/datamodeler/bin/datamodeler
 %%DATADIR%%/datamodeler/bin/datamodeler-Darwin.conf

@@ -13,7 +13,4 @@ GNU_CONFIGURE=	yes
 USES=	pathfix
 USE_LDCONFIG=	yes
 
-MAN1=		cmph.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

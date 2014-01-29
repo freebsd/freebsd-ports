@@ -102,6 +102,7 @@
 %%WWWDIR%%/core/DataTable/Row.php
 %%WWWDIR%%/core/DataTable/Row/DataTableSummaryRow.php
 %%WWWDIR%%/core/DataTable/Simple.php
+%%WWWDIR%%/core/DataTable/TableNotFoundException.php
 %%WWWDIR%%/core/Date.php
 %%WWWDIR%%/core/Db.php
 %%WWWDIR%%/core/Db/Adapter.php
@@ -164,6 +165,7 @@
 %%WWWDIR%%/core/ReportRenderer/Html.php
 %%WWWDIR%%/core/ReportRenderer/Pdf.php
 %%WWWDIR%%/core/ScheduledTask.php
+%%WWWDIR%%/core/ScheduledTaskTimetable.php
 %%WWWDIR%%/core/ScheduledTime.php
 %%WWWDIR%%/core/ScheduledTime/Daily.php
 %%WWWDIR%%/core/ScheduledTime/Hourly.php
@@ -297,6 +299,7 @@
 %%WWWDIR%%/core/Updates/2.0-b3.php
 %%WWWDIR%%/core/Updates/2.0-b9.php
 %%WWWDIR%%/core/Updates/2.0-rc1.php
+%%WWWDIR%%/core/Updates/2.0.3-b7.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/UrlHelper.php
 %%WWWDIR%%/core/Version.php
@@ -811,7 +814,6 @@
 %%WWWDIR%%/misc/others/widget_example_lastvisits.html
 %%WWWDIR%%/misc/proxy-hide-piwik-url/README.md
 %%WWWDIR%%/misc/proxy-hide-piwik-url/piwik.php
-%%WWWDIR%%/misc/translationTool.sh
 %%WWWDIR%%/misc/user/.gitkeep
 %%WWWDIR%%/misc/user/.htaccess
 %%WWWDIR%%/piwik.js
@@ -841,10 +843,10 @@
 %%WWWDIR%%/plugins/Annotations/templates/getAnnotationManager.twig
 %%WWWDIR%%/plugins/Annotations/templates/getEvolutionIcons.twig
 %%WWWDIR%%/plugins/Annotations/templates/saveAnnotation.twig
-%%WWWDIR%%/plugins/AnonymizeIP/AnonymizeIP.php
 %%WWWDIR%%/plugins/CoreAdminHome/API.php
 %%WWWDIR%%/plugins/CoreAdminHome/Controller.php
 %%WWWDIR%%/plugins/CoreAdminHome/CoreAdminHome.php
+%%WWWDIR%%/plugins/CoreAdminHome/CustomLogo.php
 %%WWWDIR%%/plugins/CoreAdminHome/javascripts/generalSettings.js
 %%WWWDIR%%/plugins/CoreAdminHome/javascripts/jsTrackingGenerator.js
 %%WWWDIR%%/plugins/CoreAdminHome/javascripts/pluginSettings.js
@@ -958,6 +960,7 @@
 %%WWWDIR%%/plugins/CorePluginsAdmin/Marketplace.php
 %%WWWDIR%%/plugins/CorePluginsAdmin/MarketplaceApiClient.php
 %%WWWDIR%%/plugins/CorePluginsAdmin/MarketplaceApiException.php
+%%WWWDIR%%/plugins/CorePluginsAdmin/PluginDependency.php
 %%WWWDIR%%/plugins/CorePluginsAdmin/PluginInstaller.php
 %%WWWDIR%%/plugins/CorePluginsAdmin/PluginInstallerException.php
 %%WWWDIR%%/plugins/CorePluginsAdmin/images/plugins.png
@@ -1036,6 +1039,8 @@
 %%WWWDIR%%/plugins/DBStats/lang/ar.json
 %%WWWDIR%%/plugins/DBStats/lang/be.json
 %%WWWDIR%%/plugins/DBStats/lang/bg.json
+%%WWWDIR%%/plugins/DBStats/lang/bn.json
+%%WWWDIR%%/plugins/DBStats/lang/bs.json
 %%WWWDIR%%/plugins/DBStats/lang/ca.json
 %%WWWDIR%%/plugins/DBStats/lang/cs.json
 %%WWWDIR%%/plugins/DBStats/lang/da.json
@@ -1072,6 +1077,7 @@
 %%WWWDIR%%/plugins/DBStats/lang/sq.json
 %%WWWDIR%%/plugins/DBStats/lang/sr.json
 %%WWWDIR%%/plugins/DBStats/lang/sv.json
+%%WWWDIR%%/plugins/DBStats/lang/ta.json
 %%WWWDIR%%/plugins/DBStats/lang/te.json
 %%WWWDIR%%/plugins/DBStats/lang/th.json
 %%WWWDIR%%/plugins/DBStats/lang/tr.json
@@ -1127,6 +1133,7 @@
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/Haier.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/Huawei.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/INQ.ico
+%%WWWDIR%%/plugins/DevicesDetection/images/brand/Jolla.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/KDDI.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/Karbonn.ico
 %%WWWDIR%%/plugins/DevicesDetection/images/brand/Kindle.ico
@@ -1182,9 +1189,15 @@
 %%WWWDIR%%/plugins/DevicesDetection/images/screens/tv.png
 %%WWWDIR%%/plugins/DevicesDetection/images/screens/unknown.gif
 %%WWWDIR%%/plugins/DevicesDetection/images/screens/wide.gif
+%%WWWDIR%%/plugins/DevicesDetection/lang/bg.json
+%%WWWDIR%%/plugins/DevicesDetection/lang/cs.json
+%%WWWDIR%%/plugins/DevicesDetection/lang/de.json
+%%WWWDIR%%/plugins/DevicesDetection/lang/el.json
 %%WWWDIR%%/plugins/DevicesDetection/lang/en.json
+%%WWWDIR%%/plugins/DevicesDetection/lang/et.json
+%%WWWDIR%%/plugins/DevicesDetection/lang/it.json
+%%WWWDIR%%/plugins/DevicesDetection/lang/ru.json
 %%WWWDIR%%/plugins/DevicesDetection/templates/index.twig
-%%WWWDIR%%/plugins/DoNotTrack/DoNotTrack.php
 %%WWWDIR%%/plugins/Events/Archiver.php
 %%WWWDIR%%/plugins/Events/Events.php
 %%WWWDIR%%/plugins/Events/plugin.json
@@ -1262,12 +1275,12 @@
 %%WWWDIR%%/plugins/ImageGraph/Controller.php
 %%WWWDIR%%/plugins/ImageGraph/ImageGraph.php
 %%WWWDIR%%/plugins/ImageGraph/StaticGraph.php
-%%WWWDIR%%/plugins/ImageGraph/StaticGraph/3DPie.php
 %%WWWDIR%%/plugins/ImageGraph/StaticGraph/Evolution.php
 %%WWWDIR%%/plugins/ImageGraph/StaticGraph/Exception.php
 %%WWWDIR%%/plugins/ImageGraph/StaticGraph/GridGraph.php
 %%WWWDIR%%/plugins/ImageGraph/StaticGraph/HorizontalBar.php
 %%WWWDIR%%/plugins/ImageGraph/StaticGraph/Pie.php
+%%WWWDIR%%/plugins/ImageGraph/StaticGraph/Pie3D.php
 %%WWWDIR%%/plugins/ImageGraph/StaticGraph/PieGraph.php
 %%WWWDIR%%/plugins/ImageGraph/StaticGraph/VerticalBar.php
 %%WWWDIR%%/plugins/ImageGraph/fonts/tahoma.ttf
@@ -1485,6 +1498,8 @@
 %%WWWDIR%%/plugins/Overlay/templates/renderSidebar.twig
 %%WWWDIR%%/plugins/Overlay/templates/showErrorWrongDomain.twig
 %%WWWDIR%%/plugins/PrivacyManager/Controller.php
+%%WWWDIR%%/plugins/PrivacyManager/DoNotTrackHeaderChecker.php
+%%WWWDIR%%/plugins/PrivacyManager/IPAnonymizer.php
 %%WWWDIR%%/plugins/PrivacyManager/LogDataPurger.php
 %%WWWDIR%%/plugins/PrivacyManager/PrivacyManager.php
 %%WWWDIR%%/plugins/PrivacyManager/ReportsPurger.php
@@ -1831,7 +1846,6 @@
 %%WWWDIR%%/plugins/SitesManager/javascripts/SitesManager.js
 %%WWWDIR%%/plugins/SitesManager/stylesheets/SitesManager.less
 %%WWWDIR%%/plugins/SitesManager/templates/_displayJavascriptCode.twig
-%%WWWDIR%%/plugins/SitesManager/templates/displayAlternativeTagsHelp.twig
 %%WWWDIR%%/plugins/SitesManager/templates/displayJavascriptCode.twig
 %%WWWDIR%%/plugins/SitesManager/templates/index.twig
 %%WWWDIR%%/plugins/Transitions/API.php
@@ -2132,6 +2146,7 @@
 %%WWWDIR%%/plugins/UserCountry/javascripts/userCountry.js
 %%WWWDIR%%/plugins/UserCountry/stylesheets/userCountry.less
 %%WWWDIR%%/plugins/UserCountry/templates/_updaterManage.twig
+%%WWWDIR%%/plugins/UserCountry/templates/_updaterNextRunTime.twig
 %%WWWDIR%%/plugins/UserCountry/templates/adminIndex.twig
 %%WWWDIR%%/plugins/UserCountry/templates/getGeoIpUpdaterManageScreen.twig
 %%WWWDIR%%/plugins/UserCountry/templates/index.twig
@@ -2386,6 +2401,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/browsers/OW.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/PX.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/RK.gif
+%%WWWDIR%%/plugins/UserSettings/images/browsers/SA.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/SF.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/SM.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/TB.gif
@@ -2424,6 +2440,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/os/PSP.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/PSV.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/QNX.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/SAF.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/SBA.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/SOS.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/SYL.gif
@@ -2543,7 +2560,6 @@
 %%WWWDIR%%/plugins/Zeitgeist/images/goal.png
 %%WWWDIR%%/plugins/Zeitgeist/images/grey_marker.png
 %%WWWDIR%%/plugins/Zeitgeist/images/help.png
-%%WWWDIR%%/plugins/Zeitgeist/images/help_grey.png
 %%WWWDIR%%/plugins/Zeitgeist/images/html_icon.png
 %%WWWDIR%%/plugins/Zeitgeist/images/ico_alert.png
 %%WWWDIR%%/plugins/Zeitgeist/images/ico_delete.png
@@ -2635,6 +2651,7 @@
 %%WWWDIR%%/vendor/composer/ClassLoader.php
 %%WWWDIR%%/vendor/composer/autoload_classmap.php
 %%WWWDIR%%/vendor/composer/autoload_namespaces.php
+%%WWWDIR%%/vendor/composer/autoload_psr4.php
 %%WWWDIR%%/vendor/composer/autoload_real.php
 %%WWWDIR%%/vendor/composer/installed.json
 %%WWWDIR%%/vendor/leafo/lessphp/.gitignore
@@ -3089,7 +3106,6 @@
 @dirrm %%WWWDIR%%/plugins/ExampleCommand
 @dirrm %%WWWDIR%%/plugins/ExampleAPI
 @dirrm %%WWWDIR%%/plugins/Events
-@dirrm %%WWWDIR%%/plugins/DoNotTrack
 @dirrm %%WWWDIR%%/plugins/DevicesDetection/templates
 @dirrm %%WWWDIR%%/plugins/DevicesDetection/lang
 @dirrm %%WWWDIR%%/plugins/DevicesDetection/images/screens
@@ -3143,7 +3159,6 @@
 @dirrm %%WWWDIR%%/plugins/CoreAdminHome/stylesheets
 @dirrm %%WWWDIR%%/plugins/CoreAdminHome/javascripts
 @dirrm %%WWWDIR%%/plugins/CoreAdminHome
-@dirrm %%WWWDIR%%/plugins/AnonymizeIP
 @dirrm %%WWWDIR%%/plugins/Annotations/templates
 @dirrm %%WWWDIR%%/plugins/Annotations/stylesheets
 @dirrm %%WWWDIR%%/plugins/Annotations/javascripts

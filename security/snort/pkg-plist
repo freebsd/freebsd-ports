@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/snort
 bin/u2boat
 bin/u2spewfoo

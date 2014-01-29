@@ -54,8 +54,6 @@ BINS=		cvpcb eeschema gerbview kicad pcbnew
 EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
 
-.include <bsd.port.pre.mk>
-
 .if exists(${LOCALBASE}/bin/konqueror)
 RUN_DEPENDS+=	konqueror:${PORTSDIR}/x11/kdebase3
 .else
@@ -89,4 +87,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

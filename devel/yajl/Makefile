@@ -12,7 +12,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	lloyd
 GH_COMMIT=	fee1ebe
 
-LICENSE=	BSD
+LICENSE=	ISCL
 
 USE_LDCONFIG=	yes
 USES=		cmake

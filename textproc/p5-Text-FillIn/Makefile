@@ -13,7 +13,4 @@ COMMENT=	A class implementing a fill-in template
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::FillIn.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

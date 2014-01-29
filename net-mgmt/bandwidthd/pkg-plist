@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bandwidthd/etc/bandwidthd.conf-dist
 bandwidthd/bandwidthd
 bandwidthd/htdocs/legend.gif

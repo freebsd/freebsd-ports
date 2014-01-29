@@ -9,7 +9,7 @@ MASTER_SITES=	http://forge.vtiger.com/frs/download.php/322/ \
 		http://people.bsdgroup.de/~as/freebsd/distfiles/vtiger/
 DISTNAME=	de_de.lang
 
-MAINTAINER=	as@bsdgroup.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	German messages for vtiger
 
 WRKSRC=		${WRKDIR}/German_de_de

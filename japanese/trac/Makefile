@@ -27,18 +27,20 @@ SVN_DESC=	Support for subversion RCS
 OPTIONS_DEFAULT=	SILVERCITY DOCUTILS PYGMENTS TZ SVN
 
 BROKEN=		fails to build
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2014-02-27
 
 CONFLICTS=	trac-0.*
 
 USE_ZIP=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Trac
 PYDISTUTILS_NOEGGINFO=	yes
 PYDISTUTILS_PKGVERSION=	${PORTVERSION}.ja2
 
 # This target is only meant to be used by the port maintainer.
-NO_STAGE=	yes
+
 x-generate-plist:
 	(${PORTSDIR}/Tools/scripts/plist -d -m ${MTREE_FILE} ${PREFIX} \
 	| ${SED} -E \
@@ -55,18 +57,15 @@ pre-install:
 	    ${WRKSRC}/cgi-bin/trac.cgi
 
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 . for d in rpm workflow
-	@${MKDIR} ${EXAMPLESDIR}/${d}
-	@${INSTALL_DATA} ${WRKSRC}/contrib/${d}/* ${EXAMPLESDIR}/${d}/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${d}
+	@${INSTALL_DATA} ${WRKSRC}/contrib/${d}/* ${STAGEDIR}${EXAMPLESDIR}/${d}/
 	@${RM} -rf ${WRKSRC}/contrib/${d}
 . endfor
-	@${INSTALL_DATA} ${WRKSRC}/contrib/* ${EXAMPLESDIR}
-	@${MKDIR} ${DATADIR}/cgi-bin
-	@${INSTALL_SCRIPT} ${WRKSRC}/cgi-bin/* ${DATADIR}/cgi-bin
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	@${INSTALL_DATA} ${WRKSRC}/contrib/* ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/cgi-bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/cgi-bin/* ${STAGEDIR}${DATADIR}/cgi-bin
 
 .include <bsd.port.options.mk>
 

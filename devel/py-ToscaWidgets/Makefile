@@ -13,7 +13,7 @@ COMMENT=	A python framework for building reusable web components
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webob>=0:${PORTSDIR}/www/py-webob
 
-USE_PYTHON=		2.5+
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 
 NO_STAGE=	yes

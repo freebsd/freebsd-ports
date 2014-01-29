@@ -14,15 +14,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform game SDK
 
 LICENSE=	ZLIB
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		mikmod:${PORTSDIR}/audio/libmikmod \
-		vorbis:${PORTSDIR}/audio/libvorbis \
-		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
-		pcre:${PORTSDIR}/devel/pcre \
-		execinfo:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libmikmod.so:${PORTSDIR}/audio/libmikmod \
+		libvorbis.so:${PORTSDIR}/audio/libvorbis \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 USE_GCC=	yes
 USE_XORG=	x11
@@ -53,7 +52,6 @@ CONFIGURE_ARGS=	--disable-docs \
 PLIST_SUB+=	VER=${PORTVERSION:R} \
 		SHORT_VER=${PORTVERSION:R:R}${PORTVERSION:R:E}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|LIBS="-lsqlite3 -ldl"|LIBS="-lsqlite3"|g' \
 		${WRKSRC}/configure
@@ -63,4 +61,5 @@ post-patch:
 		${WRKSRC}/Sources/Core/System/system.cpp
 	@${REINPLACE_CMD} -e '47 s|#ifndef __FreeBSD__|#if !defined(__FreeBSD__)|g' \
 		${WRKSRC}/Sources/Core/System/system.cpp
+
 .include <bsd.port.mk>

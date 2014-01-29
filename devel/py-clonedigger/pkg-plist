@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/clonedigger
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/clonedigger/java_antlr.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/clonedigger/lua_antlr.py

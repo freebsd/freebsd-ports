@@ -12,7 +12,7 @@ COMMENT=	Fixed-size database, similar in design to RRD
 
 FETCH_ARGS=	-o ${DISTNAME}${EXTRACT_SUFX}
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 NO_STAGE=	yes

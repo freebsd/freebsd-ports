@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/pyjsbuild
 bin/pyjscompile
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO

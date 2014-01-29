@@ -15,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_wsgi.so:${PORTSDIR}/www/mod_wsgi2 
 		wget:${PORTSDIR}/ftp/wget
 
 USE_APACHE_RUN=	22+
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 NO_BUILD=	yes
 PORTDATA=	*
 PORTDOCS=	*

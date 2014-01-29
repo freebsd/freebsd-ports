@@ -23,6 +23,11 @@ lib/libxmi.a
 lib/libxmi.la
 lib/libxmi.so
 lib/libxmi.so.1
+man/man1/ode.1.gz
+man/man1/plot.1.gz
+man/man1/plotfont.1.gz
+man/man1/spline.1.gz
+man/man1/tek2plot.1.gz
 share/libplot/README
 share/libplot/colors.txt
 share/libplot/h-fonts.txt

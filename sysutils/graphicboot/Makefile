@@ -11,6 +11,8 @@ MAINTAINER=	sixxgate@hotmail.com
 COMMENT=	Provides graphical X Window startup to FreeBSD during 'rc'
 
 BROKEN=		fails checksum
+DEPRECATED=	Broken for more then 6 month
+EXPIRATION_DATE=	2014-02-27
 
 BUILD_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 		xrdb:${PORTSDIR}/x11/xrdb \

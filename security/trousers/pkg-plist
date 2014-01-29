@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/trousers/trousers.h
 include/trousers/tss.h
 include/tss/compat11b.h

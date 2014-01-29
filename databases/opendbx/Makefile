@@ -2,15 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	opendbx
-PORTVERSION=	1.4.5
-PORTREVISION=	2
+PORTVERSION=	1.4.6
 CATEGORIES=	databases
 MASTER_SITES=	http://www.linuxnetworks.de/opendbx/download/
 
 MAINTAINER=	tremere@cainites.net
-COMMENT=	A C library for accessing databases with a single API
+COMMENT=	C library for accessing databases with a single API
 
-USE_GMAKE=	YES
+LICENSE=	LGPL21
+
+USES=		gmake
 USE_AUTOTOOLS=	libtool
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
@@ -21,71 +22,54 @@ USE_LDCONFIG=	${PREFIX}/lib/opendbx
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_MULTI=	DRIVER
-OPTIONS_MULTI_DRIVER=	MYSQL PGSQL SQLITE2 MSSQL SYBASE
+OPTIONS_MULTI_DRIVER=	MYSQL PGSQL SQLITE SQLITE3 MSSQL SYBASE
 OPTIONS_DEFAULT=	MYSQL
-SQLITE2_DESC=	SQLite 2 database
-SYBASE_DESC=	Sybase database
+SQLITE_DESC=	SQLite 2 database support
+SYBASE_DESC=	Sybase database support
 DRIVER_DESC=	Database drivers
 
-NO_STAGE=	yes
+OPTIONS_SUB=	YES
+MYSQL_USE=	MYSQL=YES
+MYSQL_CPPFLAGS=	-I${LOCALBASE}/include/mysql
+MYSQL_LDFLAGS=	-L${LOCALBASE}/lib/mysql
+
+PGSQL_USE=	PGSQL=YES
+
+SQLITE_LIB_DEPENDS=	libsqlite.so:${PORTSDIR}/databases/sqlite2
+
+SQLITE3_USE=	SQLITE=3
+
+MSSQL_LIB_DEPENDS=	sybdb:${PORTSDIR}/databases/freetds
+
+SYBASE_LIB_DEPENDS=	ct:${PORTSDIR}/databases/freetds
+
+NLS_USES=		gettext
+NLS_CONFIGURE_DISABLE=	nls
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL?=		YES
-CONFIGURE_MODULES+=	"mysql"
-CPPFLAGS+=		-I${LOCALBASE}/include/mysql
-LDFLAGS+=		-L${LOCALBASE}/lib/mysql
-PLIST_SUB+=		WITHMYSQL=""
-.else
-PLIST_SUB+=		WITHMYSQL="@comment "
+CONFIGURE_MODULES+=	mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL?=		YES
-CONFIGURE_MODULES+=	"pgsql"
-PLIST_SUB+=		WITHPGSQL=""
-.else
-PLIST_SUB+=		WITHPGSQL="@comment "
+CONFIGURE_MODULES+=	pgsql
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
-LIB_DEPENDS+=		libsqlite.so:${PORTSDIR}/databases/sqlite2
-CONFIGURE_MODULES+=	"sqlite"
-PLIST_SUB+=		WITHSQLITE=""
-.else
-PLIST_SUB+=		WITHSQLITE="@comment "
+CONFIGURE_MODULES+=	sqlite
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE3}
-LIB_DEPENDS+=		libsqlite3.so:${PORTSDIR}/databases/sqlite3
-CONFIGURE_MODULES+=	"sqlite3"
-PLIST_SUB+=		WITHSQLITE3=""
-.else
-PLIST_SUB+=		WITHSQLITE3="@comment "
+CONFIGURE_MODULES+=	sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MMSSQL}
-LIB_DEPENDS+=		libsybdb.so:${PORTSDIR}/databases/freetds
-CONFIGURE_MODULES+=	"mssql"
-PLIST_SUB+=		WITHMSSQL=""
-.else
-PLIST_SUB+=		WITHMSSQL="@comment "
+CONFIGURE_MODULES+=	mssql
 .endif
 
 .if ${PORT_OPTIONS:MSYBASE}
-LIB_DEPENDS+=		libct.so:${PORTSDIR}/databases/freetds
-CONFIGURE_MODULES+=	"sybase"
-PLIST_SUB+=		WITHSYBASE=""
-.else
-PLIST_SUB+=		WITHSYBASE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
+CONFIGURE_MODULES+=	sybase
 .endif
 
 .include <bsd.port.mk>

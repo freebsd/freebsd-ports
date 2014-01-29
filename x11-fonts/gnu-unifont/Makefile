@@ -2,29 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	gnu-unifont
-PORTVERSION=	20080820
+PORTVERSION=	20131020
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://unifoundry.com/ \
-		http://chirashi-no-ura.net/files/
-DISTNAME=	unifont-5.1.${PORTVERSION}.bdf
+MASTER_SITES=	http://unifoundry.com/pub/unifont-6.3.${PORTVERSION}/font-builds/
+DISTNAME=	unifont-6.3.${PORTVERSION}.pcf
 EXTRACT_SUFX=	.gz
+EXTRACT_ONLY=
 
 MAINTAINER=	bsdports@gmail.com
 COMMENT=	Unicode Font
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
+BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
 NO_BUILD=	yes
-PLIST_FILES=	lib/X11/fonts/local/unifont.pcf.gz
-
-NO_STAGE=	yes
-do-extract:
-	${MKDIR} ${WRKDIR}
-	${CP} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ${WRKDIR}
-	${GUNZIP_CMD} ${WRKDIR}/${DISTNAME}${EXTRACT_SUFX}
+PLIST_FILES=	"@unexec mkfontdir %D/lib/X11/fonts/local 2>/dev/null || true" \
+		lib/X11/fonts/local/unifont.pcf.gz	\
+		"@exec mkfontdir %D/lib/X11/fonts/local 2>/dev/null || true"
 
 do-install:
-	${LOCALBASE}/bin/bdftopcf  ${WRKDIR}/${DISTNAME} | ${GZIP_CMD} > ${WRKDIR}/unifont.pcf.gz
-	${CP} ${WRKDIR}/unifont.pcf.gz ${LOCALBASE}/lib/X11/fonts/local/unifont.pcf.gz
+	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
+		${STAGEDIR}${PREFIX}/lib/X11/fonts/local/unifont.pcf.gz
 
 .include <bsd.port.mk>

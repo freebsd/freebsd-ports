@@ -21,10 +21,6 @@ MAKE_ENV+=	${CONFIGURE_ENV}
 
 SUB_FILES+=	pkg-message
 
-MANCOMPRESSED=	yes
-MAN1=	wmdrawer.1x
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR},g" ${WRKSRC}/wmdrawerrc.example
 	@${REINPLACE_CMD} -e "s,CFLAGS = -O3,CFLAGS +=,g; \
@@ -34,8 +30,7 @@ post-patch:
 		s,/usr/X11R6,${LOCALBASE},g" ${WRKSRC}/Makefile
 
 post-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${DISTDIR}/logo-beastie.png ${DATADIR}/beastie.png
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${DISTDIR}/logo-beastie.png ${STAGEDIR}${DATADIR}/beastie.png
 
 .include <bsd.port.mk>

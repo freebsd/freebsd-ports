@@ -31,4 +31,10 @@ USE_PERL5+=	run
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-ccs_Makefile
 .endif
 
+.if defined(NO_PROFILE)
+PLIST_SUB+=	PROFILE="@comment "
+.else
+PLIST_SUB+=	PROFILE=""
+.endif
+
 .include <bsd.port.mk>

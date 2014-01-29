@@ -1,4 +1,5 @@
 bin/gtkpod
+man/man1/gtkpod.1.gz
 %%DATADIR%%/data/default-cover.png
 %%DATADIR%%/data/gtkpod-add-dirs.png
 %%DATADIR%%/data/gtkpod-add-files.png

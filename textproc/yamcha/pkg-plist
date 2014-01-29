@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/yamcha
 bin/yamcha-config
 bin/yamcha-mkmodel

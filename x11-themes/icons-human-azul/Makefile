@@ -14,9 +14,8 @@ COMMENT=	A set of icons from the Ubuntu human look
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/HumanAzul
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/share/icons/HumanAzul
-	@${CP} -rip ${WRKSRC} ${PREFIX}/share/icons/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/HumanAzul
+	@${CP} -rip ${WRKSRC} ${STAGEDIR}${PREFIX}/share/icons/
 
 .include <bsd.port.mk>

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/example.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

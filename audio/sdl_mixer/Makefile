@@ -3,7 +3,7 @@
 
 PORTNAME=	sdl_mixer
 PORTVERSION=	1.2.12
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_mixer/release/
 DISTNAME=	SDL_mixer-${PORTVERSION}
@@ -14,7 +14,6 @@ COMMENT=	A sample multi-channel audio mixer library
 LICENSE=	ZLIB
 
 USE_AUTOTOOLS=	libtool
-NO_STAGE=	yes
 USE_SDL=	sdl
 USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
@@ -23,7 +22,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		SMPEG FLAC VORBIS TIMIDITYPLUS
-OPTIONS_DEFAULT=	SMPEG FLAC VORBIS
+OPTIONS_DEFAULT=	SMPEG FLAC VORBIS MIKMOD
 OPTIONS_RADIO=		MOD
 OPTIONS_RADIO_MOD=	MIKMOD MODPLUG
 
@@ -60,6 +59,8 @@ CONFIG_FILE=	${LOCALBASE}/lib/timidity/timidity.cfg
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|\($$(prefix)/libdata/pkgconfig\)|$$(DESTDIR)\1|' \
+		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%CONFIG_FILE%%|${CONFIG_FILE}|g' \
 		${WRKSRC}/timidity/config.h
 

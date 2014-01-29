@@ -13,23 +13,20 @@ COMMENT=	Utility to record and playback raw audio data
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USES=		gmake
-NO_STAGE=	yes
 MAKE_ARGS=	CC="${CC}" \
 		CFLAGS="${CPPFLAGS} ${CFLAGS} ${PTHREAD_CFLAGS}" \
 		LDFLAGS="${LDFLAGS} -lm ${PTHREAD_LIBS}"
 
-MAN1=		rawrec.1
-MLINKS=		rawrec.1 rawplay.1
-
-PLIST_FILES=	bin/rawplay bin/rawrec
+PLIST_FILES=	bin/rawplay bin/rawrec man/man1/rawplay.1.gz man/man1/rawrec.1.gz
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.[ch]' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<linux/soundcard.h>|<sys/soundcard.h>|g'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rawrec ${PREFIX}/bin
-	${LN} -sf rawrec ${PREFIX}/bin/rawplay
-	${INSTALL_MAN} ${WRKSRC}/../docs/user/rawrec.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/rawrec ${STAGEDIR}${PREFIX}/bin
+	${LN} -sf rawrec ${STAGEDIR}${PREFIX}/bin/rawplay
+	${INSTALL_MAN} ${WRKSRC}/../docs/user/rawrec.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${LN} -sf rawrec.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/rawplay.1
 
 .include <bsd.port.mk>

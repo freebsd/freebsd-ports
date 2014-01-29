@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 etc/pim6sd.conf.sample
 etc/pim6dd.conf.sample
 etc/mfc.conf.sample

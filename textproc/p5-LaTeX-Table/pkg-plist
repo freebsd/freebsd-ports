@@ -1,5 +1,16 @@
 bin/csv2pdf
 bin/ltpretty
+%%PERL5_MAN3%%/LaTeX::Table::Types::Ctable.3.gz
+%%PERL5_MAN3%%/LaTeX::Table::Types::TypeI.3.gz
+%%PERL5_MAN3%%/LaTeX::Table::Themes::Booktabs.3.gz
+%%PERL5_MAN3%%/LaTeX::Table::Themes::Classic.3.gz
+%%PERL5_MAN3%%/LaTeX::Table::Themes::Beamer.3.gz
+%%PERL5_MAN3%%/LaTeX::Table::Themes::ThemeI.3.gz
+%%PERL5_MAN3%%/LaTeX::Table::Themes::Modern.3.gz
+%%PERL5_MAN3%%/LaTeX::Table.3.gz
+%%PERL5_MAN3%%/LaTeX::Table::Types::Longtable.3.gz
+%%PERL5_MAN3%%/LaTeX::Table::Types::Xtab.3.gz
+%%PERL5_MAN3%%/LaTeX::Table::Types::Std.3.gz
 %%SITE_PERL%%/LaTeX/Table.pm
 %%SITE_PERL%%/LaTeX/Table/Themes/Booktabs.pm
 %%SITE_PERL%%/LaTeX/Table/Themes/ThemeI.pm
@@ -11,6 +22,8 @@ bin/ltpretty
 %%SITE_PERL%%/LaTeX/Table/Types/Longtable.pm
 %%SITE_PERL%%/LaTeX/Table/Types/Xtab.pm
 %%SITE_PERL%%/LaTeX/Table/Types/TypeI.pm
+man/man1/csv2pdf.1.gz
+man/man1/ltpretty.1.gz
 @dirrm %%SITE_PERL%%/LaTeX/Table/Types
 @dirrm %%SITE_PERL%%/LaTeX/Table/Themes
 @dirrm %%SITE_PERL%%/LaTeX/Table

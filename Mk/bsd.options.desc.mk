@@ -457,6 +457,7 @@ WAVPACK_DESC?=		WavPack lossless audio format support
 WEBKIT_DESC?=		WebKit support
 WEBP_DESC?=		WebP image format support
 WEBSERVER_DESC?=	Build and/or install internal web server
+WEBUI_DESC?=		Build and/or install web user interface
 WMA_DESC?=		Windows Media Audio support
 WMF_DESC?=		Windows Metafile support
 WXGTK_DESC?=		wxGTK GUI toolkit support

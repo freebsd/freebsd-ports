@@ -10,8 +10,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S,0.0.,,}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Portable and enhanced troff, nroff, and related utilities
 
+USES=	gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 ALL_TARGET=	#empty
 MAKE_ENV+=	INSTALL=${INSTALL} \
 		BINDIR=${BINDIR} \
@@ -23,9 +23,10 @@ MAKE_ENV+=	INSTALL=${INSTALL} \
 		PSTDIR=${PSTDIR} \
 		TABDIR=${TABDIR} \
 		HYPDIR=${HYPDIR} \
-		REFDIR=${REFDIR}
+		REFDIR=${REFDIR} \
+		ROOT=${STAGEDIR}
 MAKEFILE=	makefile
-PLIST_SUB=	PORTNAME=${PORTNAME}
+PLIST_SUB=	LIBEXECDIR=libexec/${PORTNAME}
 
 MACDIR?=	${DATADIR}/tmac
 FNTDIR?=	${DATADIR}/font
@@ -38,23 +39,11 @@ LIBDIR?=	${PREFIX}/libexec/${PORTNAME}
 PSTDIR?=	${DATADIR}/font/devpost/postscript
 MANDIR?=	${PREFIX}/man
 
-MAN1+=	addbib.1 checknr.1 dpost.1 eqn.1 grap.1 lookbib.1 nroff.1	\
-	otfdump.1 pic.1 picpack.1 ptx.1 refer.1 roffbib.1 soelim.1	\
-	sortbib.1 tbl.1 troff.1 vgrind.1
-MAN7+= 	eqnchar.7 mcolor.7 mpictures.7
-MLINKS+=	lookbib.1 indxbib.1 \
-		eqn.1 checkeq.1 \
-		eqn.1 neqn.1
-
-PORTDOCS=	CHANGES README LICENSE
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+PORTDOCS=	 *
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${CP} -R ${PORTDOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} CHANGES README ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} LICENSE ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

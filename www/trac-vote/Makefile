@@ -13,9 +13,8 @@ COMMENT=	Plugin for voting on Trac resources
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
-NO_STAGE=	yes
 PYDISTUTILS_PKGNAME=	TracVote
 PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 

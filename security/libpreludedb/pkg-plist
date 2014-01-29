@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/preludedb-admin
 bin/libpreludedb-config
 include/libpreludedb/preludedb-path-selection.h

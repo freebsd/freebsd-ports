@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.interface>=3.3.0_1:${PORTSDIR}/devel/py
 
 WRKSRC=		${WRKDIR}/kojoney
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_OPENSSL=	yes
 USES=		perl5 twisted:conch
 USE_PERL5=	run

@@ -14,28 +14,17 @@ LICENSE=	APACHE20
 USES=		cmake
 USE_LDCONFIG=	yes
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	NLS
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-CMAKE_ARGS+=	-DENABLE_GETTEXT=On
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=	gettext
+NLS_CMAKE_ON=	-DENABLE_GETTEXT=On
 
-.if defined(NOPORTDATA)
-IGNORE=		thesaurus are required, undefine NOPORTDATA
-.endif
+OPTIONS_SUB=	yes
+
+BROKEN_powerpc=	Does not install on powerpc: signal 11
 
 post-patch:
 	@${REINPLACE_CMD} -e 's@/usr/local@${LOCALBASE}@g' \
 		${WRKSRC}/CMakeLists.txt
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not install on powerpc: signal 11
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

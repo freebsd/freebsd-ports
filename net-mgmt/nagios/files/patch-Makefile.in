@@ -1,6 +1,15 @@
---- Makefile.in.orig	Sun Aug  5 08:43:17 2007
-+++ Makefile.in	Thu Aug 30 18:12:04 2007
-@@ -185,12 +185,12 @@
+--- ./Makefile.in.orig	2013-08-30 19:46:14.000000000 +0200
++++ ./Makefile.in	2014-01-14 13:57:06.000000000 +0100
+@@ -30,8 +30,6 @@
+ LIBEXECDIR=@libexecdir@
+ HTMLDIR=@datadir@
+ INSTALL=@INSTALL@
+-INSTALL_OPTS=@INSTALL_OPTS@
+-COMMAND_OPTS=@COMMAND_OPTS@
+ HTTPD_CONF=@HTTPD_CONF@
+ INIT_DIR=@init_dir@
+ INIT_OPTS=-o root -g root
+@@ -234,12 +232,12 @@
  	$(MAKE) install-basic
  
  install-basic:
@@ -15,7 +24,7 @@
  	fi;
  
  	@echo ""
-@@ -212,19 +212,18 @@
+@@ -261,19 +259,18 @@
  
  
  install-config:
@@ -46,8 +55,8 @@
 +	$(INSTALL) -m 644 $(INSTALL_OPTS) sample-config/template-object/switch.cfg $(DESTDIR)$(CFGDIR)/objects/switch.cfg-sample
  
  	@echo ""
- 	@echo "*** Sample config files installed ***"
-@@ -254,7 +253,6 @@
+ 	@echo "*** Config files installed ***"
+@@ -321,7 +318,6 @@
  
  install-commandmode:
  	$(INSTALL) -m 775 $(COMMAND_OPTS) -d $(DESTDIR)$(LOGDIR)/rw

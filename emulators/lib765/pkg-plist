@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/765.h
 lib/lib765.a
 lib/lib765.la

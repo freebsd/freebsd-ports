@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/vn7to8
 bin/vn8to7
 bin/vn80to81

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/adesklets
 bin/adesklets_checkin
 bin/adesklets_installer

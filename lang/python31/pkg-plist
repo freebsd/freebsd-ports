@@ -9,6 +9,7 @@ lib/lib%%PYTHON_VERSION%%.a
 lib/lib%%PYTHON_VERSION%%.so
 lib/lib%%PYTHON_VERSION%%.so.1
 libdata/pkgconfig/python-3.1.pc
+man/man1/python3.1.1.gz
 %%PYTHON_INCLUDEDIR%%/Python-ast.h
 %%PYTHON_INCLUDEDIR%%/Python.h
 %%PYTHON_INCLUDEDIR%%/abstract.h

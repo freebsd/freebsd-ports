@@ -7,7 +7,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:APOCAL
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	milki@rescomp.berkeley.edu
+MAINTAINER=	milki@FreeBSD.org
 COMMENT=	A PoCo-IRC plugin that keeps track of karma
 
 LICENSE=	ART10 GPLv1

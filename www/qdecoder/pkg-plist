@@ -1,0 +1,14 @@
+include/qdecoder.h
+lib/libqdecoder.a
+lib/libqdecoder.so
+lib/libqdecoder.so.12
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cookie.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/download.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/multivalue.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/query.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/session.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/upload.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/uploadfile.c
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%

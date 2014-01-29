@@ -12,7 +12,9 @@ USE_FPC=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR+=	${WRKUNITDIR}
+EXTRACTUNITDIR=	${WRKUNITDIR}
 
-NO_STAGE=	yes
+# added to main port to make it compile on 10 with iconv in libc
+#USES=	iconv
+
 .include "${MASTERDIR}/Makefile"

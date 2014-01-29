@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	weechat
-PORTVERSION=	20131015
+PORTVERSION=	20140110
 CATEGORIES=	irc
 MASTER_SITES=	http://perturb.me.uk/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -26,7 +26,7 @@ CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-GITDESC=	v0.4.2-16-g88058bb
+GITDESC=	v0.4.2-211-g3bba891
 GITREV!=	echo "${GITDESC}" | sed -E 's/^.*-g(.{7})$$/\1/'
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GITREV}
 
@@ -75,7 +75,7 @@ PLIST_SUB+=	ASPELL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	2.6-
+USE_PYTHON=	2
 CMAKE_ARGS+=	-DBSD_PYTHON_CMD=${PYTHON_CMD} \
 		-DBSD_PYTHON_VER=${PYTHON_VERSION}
 PLIST_SUB+=	PYTHON=""
@@ -184,6 +184,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$${LIBDIR}/../pkgconfig|$${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|' ${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|INSTALL|#INSTALL|' ${WRKSRC}/doc/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|GIT_VERSION=""|GIT_VERSION="${GITDESC}"|' ${WRKSRC}/git-version.sh
+	@${REINPLACE_CMD} -e 's|<sys/termios.h>|<termios.h>|' ${WRKSRC}/src/gui/curses/gui-curses-window.c
 .for f in src/CMakeLists.txt src/core/CMakeLists.txt cmake/*.cmake
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/${f}
 .endfor

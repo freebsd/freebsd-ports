@@ -3,7 +3,7 @@
 
 PORTNAME=	rpm2cpio
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -18,8 +18,6 @@ NO_BUILD=	yes
 REINPLACE_ARGS=
 
 PLIST_FILES=	bin/rpm2cpio.pl
-
-RUN_DEPENDS+=	xz:${PORTSDIR}/archivers/xz
 
 do-extract:
 	@${MKDIR} ${WRKSRC}

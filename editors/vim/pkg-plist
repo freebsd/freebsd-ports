@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/vim
 bin/vimtutor
 bin/xxd

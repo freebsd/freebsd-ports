@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/salias
 bin/salias-wrapper
 %%PORTDOCS%%%%DOCSDIR%%/NEWS

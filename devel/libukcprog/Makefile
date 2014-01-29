@@ -18,12 +18,10 @@ COMMENT=	Generally useful low level routines
 NO_CDROM=	License (see source) does not permit selling for profit
 
 USE_AUTOTOOLS=	libtool
-MAN3=		ukcprog.3
 DIST_SUBDIR=	i-scream
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		pathfix pkgconfig
 USE_GNOME=	lthack
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

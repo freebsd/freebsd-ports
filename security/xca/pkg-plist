@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/xca
 %%DATADIR%%/CA.xca
 %%DATADIR%%/HTTPS_client.xca

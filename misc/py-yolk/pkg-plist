@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/yolk
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/plugins/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/plugins/yolk_pkg_manager/README

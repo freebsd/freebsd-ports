@@ -22,14 +22,14 @@
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/api-utils.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/cortex.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/errors.js
-%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/events.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/events/assembler.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/events.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/light-traits.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/list.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/memory.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/observer-service.js
-%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/traits.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/traits/core.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/traits.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/window-utils.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/dom/events.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/event/core.js
@@ -50,25 +50,24 @@
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/loader/sandbox.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/net/url.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/net/xhr.js
-%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/page-mod.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/page-mod/match-pattern.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/page-mod.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/platform/xpcom.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/preferences/service.js
-%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/private-browsing.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/private-browsing/utils.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/private-browsing/window/utils.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/private-browsing.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/querystring.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/request.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/self.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/simple-storage.js
-%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/system.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/system/environment.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/system/events.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/system/globals.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/system/runtime.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/system/unload.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/system/xul-app.js
-%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/system.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs/common.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs/events.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs/helpers.js
@@ -81,6 +80,7 @@
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs/tabs.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs/utils.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs/worker.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/timers.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/url.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/util/array.js
@@ -92,7 +92,6 @@
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/window/browser.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/window/namespace.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/window/utils.js
-%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/windows.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/windows/dom.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/windows/fennec.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/windows/firefox.js
@@ -100,13 +99,11 @@
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/windows/observer.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/windows/tabs-fennec.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/windows/tabs-firefox.js
+%%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/windows.js
 %%XPI_XPIDIR%%/resources/addon-sdk/lib/toolkit/loader.js
 %%XPI_XPIDIR%%/resources/ghostery/data/README.md
 %%XPI_XPIDIR%%/resources/ghostery/data/block_log.html
 %%XPI_XPIDIR%%/resources/ghostery/data/blocked_redirect.html
-%%XPI_XPIDIR%%/resources/ghostery/data/bugs.json
-%%XPI_XPIDIR%%/resources/ghostery/data/click2play.json
-%%XPI_XPIDIR%%/resources/ghostery/data/compatibility.json
 %%XPI_XPIDIR%%/resources/ghostery/data/css/block_log.css
 %%XPI_XPIDIR%%/resources/ghostery/data/css/browser.css
 %%XPI_XPIDIR%%/resources/ghostery/data/css/button.css
@@ -116,6 +113,12 @@
 %%XPI_XPIDIR%%/resources/ghostery/data/css/panel.css
 %%XPI_XPIDIR%%/resources/ghostery/data/css/panel_mobile.css
 %%XPI_XPIDIR%%/resources/ghostery/data/css/walkthrough.css
+%%XPI_XPIDIR%%/resources/ghostery/data/databases/bugs.json
+%%XPI_XPIDIR%%/resources/ghostery/data/databases/click2play.json
+%%XPI_XPIDIR%%/resources/ghostery/data/databases/compatibility.json
+%%XPI_XPIDIR%%/resources/ghostery/data/databases/lsos.json
+%%XPI_XPIDIR%%/resources/ghostery/data/databases/surrogates2.json
+%%XPI_XPIDIR%%/resources/ghostery/data/databases/tags.json
 %%XPI_XPIDIR%%/resources/ghostery/data/ghostery_eula.txt
 %%XPI_XPIDIR%%/resources/ghostery/data/images/Icon-128.png
 %%XPI_XPIDIR%%/resources/ghostery/data/images/Icon-16-off.png
@@ -281,11 +284,9 @@
 %%XPI_XPIDIR%%/resources/ghostery/data/locales/zh_CN/messages.yml
 %%XPI_XPIDIR%%/resources/ghostery/data/locales/zh_TW/messages.json
 %%XPI_XPIDIR%%/resources/ghostery/data/locales/zh_TW/messages.yml
-%%XPI_XPIDIR%%/resources/ghostery/data/lsos.json
 %%XPI_XPIDIR%%/resources/ghostery/data/options.html
 %%XPI_XPIDIR%%/resources/ghostery/data/panel.html
 %%XPI_XPIDIR%%/resources/ghostery/data/panel_mobile.html
-%%XPI_XPIDIR%%/resources/ghostery/data/surrogates.json
 %%XPI_XPIDIR%%/resources/ghostery/data/templates/_app.html
 %%XPI_XPIDIR%%/resources/ghostery/data/templates/_app_browser.html
 %%XPI_XPIDIR%%/resources/ghostery/data/templates/_app_info.html
@@ -322,9 +323,11 @@
 %%XPI_XPIDIR%%/resources/ghostery/lib/click2play.js
 %%XPI_XPIDIR%%/resources/ghostery/lib/compatibility.js
 %%XPI_XPIDIR%%/resources/ghostery/lib/conf.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/dispatcher.js
 %%XPI_XPIDIR%%/resources/ghostery/lib/foundbugs.js
 %%XPI_XPIDIR%%/resources/ghostery/lib/ghostrank.js
 %%XPI_XPIDIR%%/resources/ghostery/lib/i18n.js
+%%XPI_XPIDIR%%/resources/ghostery/lib/l10n.js
 %%XPI_XPIDIR%%/resources/ghostery/lib/lsodb.js
 %%XPI_XPIDIR%%/resources/ghostery/lib/matcher.js
 %%XPI_XPIDIR%%/resources/ghostery/lib/surrogatedb.js
@@ -340,81 +343,82 @@
 %%XPI_XPIDIR%%/resources/toolbarbutton/lib/toolbarbutton.js
 %%XPI_XPIDIR%%/resources/vold-utils/lib/listen.js
 %%XPI_XPIDIR%%/resources/vold-utils/lib/unload+.js
-@dirrm %%XPI_XPIDIR%%/resources/vold-utils/lib
-@dirrm %%XPI_XPIDIR%%/resources/vold-utils
-@dirrm %%XPI_XPIDIR%%/resources/toolbarbutton/lib
-@dirrm %%XPI_XPIDIR%%/resources/toolbarbutton
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/lib/vendor
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/lib/ui
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/lib
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/templates/precompiled
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/templates
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/zh_TW
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/zh_CN
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/ru
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/pl
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/nl
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/ko
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/ja
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/it
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/fr
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/es
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/en_GB
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/en
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/de
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/tipTip
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/moment/lang
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/moment
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/bootstrap
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/apprise
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/js
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/includes
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/panel/settings
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/panel/header
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/panel/footer
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/panel
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/numbers
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/menu
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/help
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/click2play
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/css
-@dirrm %%XPI_XPIDIR%%/resources/ghostery/data
-@dirrm %%XPI_XPIDIR%%/resources/ghostery
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/toolkit
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/windows
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/window
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/util
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/system
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/private-browsing/window
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/private-browsing
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/preferences
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/platform
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/page-mod
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/net
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/loader
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/lang
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/l10n
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/io
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/frame
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/event
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/dom
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/traits
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/events
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/core
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/content
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/console
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/addon
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib
-@dirrm %%XPI_XPIDIR%%/resources/addon-sdk
-@dirrm %%XPI_XPIDIR%%/resources
 @dirrm %%XPI_XPIDIR%%/defaults/preferences
 @dirrm %%XPI_XPIDIR%%/defaults
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/addon
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/console
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/content
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/core
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/events
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated/traits
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/deprecated
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/dom
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/event
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/frame
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/io
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/l10n
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/lang
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/loader
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/net
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/page-mod
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/platform
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/preferences
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/private-browsing/window
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/private-browsing
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/system
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/tabs
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/util
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/window
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk/windows
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/sdk
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib/toolkit
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk/lib
+@dirrm %%XPI_XPIDIR%%/resources/addon-sdk
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/css
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/databases
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/click2play
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/help
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/menu
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/numbers
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/panel/footer
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/panel/header
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/panel/settings
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tracker
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/panel/tutorial
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images/panel
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/images
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/includes
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/js
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/apprise
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/bootstrap
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/moment/lang
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/moment
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor/tipTip
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib/vendor
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/lib
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/de
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/en
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/en_GB
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/es
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/fr
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/it
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/ja
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/ko
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/nl
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/pl
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/ru
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/zh_CN
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales/zh_TW
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/locales
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/templates/precompiled
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data/templates
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/data
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/lib/ui
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/lib/vendor
+@dirrm %%XPI_XPIDIR%%/resources/ghostery/lib
+@dirrm %%XPI_XPIDIR%%/resources/ghostery
+@dirrm %%XPI_XPIDIR%%/resources/toolbarbutton/lib
+@dirrm %%XPI_XPIDIR%%/resources/toolbarbutton
+@dirrm %%XPI_XPIDIR%%/resources/vold-utils/lib
+@dirrm %%XPI_XPIDIR%%/resources/vold-utils
+@dirrm %%XPI_XPIDIR%%/resources

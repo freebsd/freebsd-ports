@@ -1,6 +1,16 @@
 --- ./Global/GlobalDefinitions.h.orig	2004-03-01 13:51:28.000000000 -0300
 +++ ./Global/GlobalDefinitions.h	2008-06-12 15:39:31.000000000 -0300
-@@ -726,8 +726,6 @@
+@@ -79,7 +79,8 @@
+ #include <map>
+ #include <utility>
+ #include <sys/types.h>
+-#include <stdio.h>
++#include <cstdio>
++#include <cstring>
+ #include <sys/file.h>
+ #include <sys/mman.h>
+ #include <sys/stat.h>
+@@ -726,8 +727,6 @@
  template <typename T> class Allocator
  {
  public:
@@ -9,7 +19,7 @@
    Allocator( T** ptr, const string& name, ostream& monStream=cerr ) : 
      ptr_(ptr), name_(name), size_(0), isAllocated_(false), 
      monStream_( monStream )
-@@ -788,32 +786,34 @@
+@@ -788,32 +787,34 @@
   
    virtual void allocate( unsigned long size )
    {
@@ -53,7 +63,7 @@
    }
  protected:
  };
-@@ -892,7 +892,7 @@
+@@ -892,7 +893,7 @@
      if (isAllocated_) return;
      mode_ = MemoryMapper::createMap;
      size_ = size;
@@ -62,7 +72,7 @@
      isAllocated_ = true;
    }
  
-@@ -908,7 +908,7 @@
+@@ -908,7 +909,7 @@
      if (isAllocated_) return;
      mode_ = MemoryMapper::readMap;
      size_ = size;
@@ -71,7 +81,7 @@
      isAllocated_ = true;
    }
  
-@@ -921,7 +921,7 @@
+@@ -921,7 +922,7 @@
    virtual void deallocate()
    {
      if (!isAllocated_) return;

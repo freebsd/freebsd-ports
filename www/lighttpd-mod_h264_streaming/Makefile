@@ -35,21 +35,22 @@ ALL_TARGET=	${PORTNAME}.la
 
 _BUILDING_LIGHTTPD_MODULE=	yes
 
-NO_STAGE=	yes
 do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/lighttpd
 	@${INSTALL_KLD} ${WRKSRC}/src/.libs/${PORTNAME}.so \
-		${LOCALBASE}/lib/lighttpd
+		${STAGEDIR}${PREFIX}/lib/lighttpd
 	@${INSTALL_KLD} ${WRKSRC}/src/.libs/${PORTNAME}.la \
-		${LOCALBASE}/lib/lighttpd
+		${STAGEDIR}${PREFIX}/lib/lighttpd
 	@${INSTALL_DATA} ${WRKSRC}/src/.libs/${PORTNAME}.a \
-		${LOCALBASE}/lib/lighttpd
+		${STAGEDIR}${PREFIX}/lib/lighttpd
 
 post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d
 	@${INSTALL_DATA} ${FILESDIR}/h264_streaming.conf \
-		${PREFIX}/etc/lighttpd/conf.d/h264_streaming.conf.sample
-.if !exists(${PREFIX}/etc/lighttpd/conf.d/h264_streaming.conf)
+		${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d/h264_streaming.conf.sample
+.if !exists(${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d/h264_streaming.conf)
 	@${INSTALL_DATA} ${FILESDIR}/h264_streaming.conf \
-		${PREFIX}/etc/lighttpd/conf.d/h264_streaming.conf
+		${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d/h264_streaming.conf
 .endif
 
 .include "${MASTERDIR}/Makefile"

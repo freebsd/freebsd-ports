@@ -1,0 +1,21 @@
+--- help/Makefile.in.orig
++++ help/Makefile.in
+@@ -49,15 +49,15 @@
+ 	dir="$(dir)"; \
+ 	for lang in $$dir; do \
+ 		if test -r $(MKINSTALLDIRS); then \
+-			$(MKINSTALLDIRS) $(packagedatadir)/help/$$lang; \
++			$(MKINSTALLDIRS) $(DESTDIR)$(packagedatadir)/help/$$lang; \
+ 		else \
+-			$(top_srcdir)/mkinstalldirs $(packagedatadir)/help/$$lang; \
++			$(top_srcdir)/mkinstalldirs $(DESTDIR)$(packagedatadir)/help/$$lang; \
+ 		fi; \
+ 	done; \
+ 	data="$(data)"; \
+ 	for lang in $$dir; do \
+ 		for file in $$data; do \
+-			$(INSTALL_DATA) $(srcdir)/$$lang/$$file $(packagedatadir)/help/$$lang/$$file; \
++			$(INSTALL_DATA) $(srcdir)/$$lang/$$file $(DESTDIR)$(packagedatadir)/help/$$lang/$$file; \
+ 		done; \
+ 	done; \
+ 

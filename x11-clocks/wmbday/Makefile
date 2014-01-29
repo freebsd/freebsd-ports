@@ -18,8 +18,4 @@ HAS_CONFIGURE=	yes
 MAKEFILE=	BSDmakefile
 MAKE_ENV+=	${CONFIGURE_ENV} X11BASE=${LOCALBASE}
 
-MAN1=		wmbday.1
-MANCOMPRESSED=	yes
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

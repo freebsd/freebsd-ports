@@ -15,6 +15,5 @@ XPI_FILES=	chrome/icon.gif chrome/referrer.js chrome/referrer.xul \
 		chrome.manifest install.rdf
 XPI_DIRS=	chrome
 
-NO_STAGE=	yes
 .include "../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

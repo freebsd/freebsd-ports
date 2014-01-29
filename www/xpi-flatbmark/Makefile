@@ -15,6 +15,5 @@ XPI_ID=		{5362CD9D-AC69-43e5-8E7D-92EDE5CEF304}
 XPI_FILES=	chrome/flatbmark.jar install.rdf chrome.manifest
 XPI_DIRS=	chrome
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: libvirtd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf[.local] to enable libvirtd.
+#
+# libvirtd_enable (bool):       Set to 'YES' to enable
+#                               Default: NO
+#
+
+. /etc/rc.subr
+
+name=libvirtd
+rcvar=libvirtd_enable
+
+load_rc_config $name
+
+command=%%PREFIX%%/sbin/libvirtd
+pidfile=%%LOCALBASE%%/var/run/${name}.pid
+
+command_args="--daemon --pid-file=${pidfile}"
+
+: ${libvirtd_enable:="NO"}
+
+PATH="${PATH}:/usr/local/sbin:/usr/local/bin"
+
+run_rc_command "$1"

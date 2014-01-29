@@ -3,6 +3,7 @@
 
 PORTNAME=	diction
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -10,13 +11,13 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	GNU diction and style
 
+LICENSE=	GPLv3
+
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/diction bin/style share/diction/C share/diction/de \
-		share/diction/en share/diction/en_GB share/diction/nl
-PLIST_DIRS=	share/diction
+PLIST_FILES=	bin/diction bin/style ${DATADIR}/C ${DATADIR}/de \
+		${DATADIR}/en ${DATADIR}/en_GB ${DATADIR}/nl \
+		man/man1/diction.1.gz man/man1/style.1.gz
+PLIST_DIRS=	${DATADIR}
 
-MAN1=		diction.1 style.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

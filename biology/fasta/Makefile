@@ -33,6 +33,8 @@ do-extract:
 	  cd ${WRKSRC} && (${GZCAT} ${DISTDIR}/$${f} | ${SH} >/dev/null); \
 	done
 
+BROKEN_powerpc=	Does not build: runs out of space on powerpc
+
 .include <bsd.port.options.mk>
 
 post-install:
@@ -46,10 +48,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-IGNORE=		does not build: runs out of space on powerpc
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

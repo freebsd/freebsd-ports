@@ -1,0 +1,10 @@
+--- src/VBox/Additions/common/VBoxGuest/freebsd/files_vboxguest.orig	2014-01-04 05:34:34.000000000 +0000
++++ src/VBox/Additions/common/VBoxGuest/freebsd/files_vboxguest	2014-01-04 05:34:41.000000000 +0000
+@@ -185,6 +185,7 @@
+     ${PATH_ROOT}/src/VBox/Runtime/r0drv/freebsd/sleepqueue-r0drv-freebsd.h=>r0drv/freebsd/sleepqueue-r0drv-freebsd.h \
+     ${PATH_ROOT}/src/VBox/Runtime/r0drv/generic/semspinmutex-r0drv-generic.c=>r0drv/generic/semspinmutex-r0drv-generic.c \
+     ${PATH_ROOT}/src/VBox/Runtime/r0drv/generic/mpnotification-r0drv-generic.cpp=>r0drv/generic/mpnotification-r0drv-generic.c \
++    ${PATH_ROOT}/src/VBox/Runtime/r0drv/generic/threadctxhooks-r0drv-generic.cpp=>r0drv/generic/threadctxhooks-r0drv-generic.c \
+     ${PATH_ROOT}/src/VBox/Runtime/r0drv/generic/RTMpIsCpuWorkPending-r0drv-generic.cpp=>r0drv/generic/RTMpIsCpuWorkPending-r0drv-generic.c \
+     ${PATH_ROOT}/src/VBox/Runtime/r0drv/memobj-r0drv.cpp=>r0drv/memobj-r0drv.c \
+     ${PATH_ROOT}/src/VBox/Runtime/VBox/log-vbox.cpp=>VBox/log-vbox.c \

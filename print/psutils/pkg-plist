@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/psbook
 bin/psselect
 bin/pstops

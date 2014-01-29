@@ -1,5 +1,7 @@
 bin/bomstrip
 bin/bomstrip-files
+man/man1/bomstrip.1.gz
+man/man1/bomstrip-files.1.gz
 %%DATADIR%%/source/bomstrip.awk
 %%DATADIR%%/source/bomstrip.b
 %%DATADIR%%/source/bomstrip.bf

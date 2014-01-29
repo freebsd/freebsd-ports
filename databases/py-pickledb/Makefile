@@ -12,7 +12,7 @@ COMMENT=	A lightweight, fast, and simple key-value store
 
 LICENSE=	BSD
 
-USE_PYTHON=	2.6+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pickledb.py \

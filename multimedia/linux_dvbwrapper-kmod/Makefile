@@ -12,9 +12,8 @@ COMMENT=	Linux compatibility layer - DVB ioctl handler
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-NO_STAGE=	yes
-
 USES=		kmod
+
 .include <bsd.port.pre.mk>
 
 PLIST_FILES+=	"@cwd /"

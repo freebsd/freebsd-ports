@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.4.6
+PORTVERSION=	3.4.7
 CATEGORIES=	sysutils
 DISTVERSION=	$(PORTVERSION:S/a/alpha/:S/b/beta/:S/r/rc/)
 DISTFILES=	syslog-ng_${DISTVERSION}.tar.gz

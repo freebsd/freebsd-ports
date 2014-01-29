@@ -12,22 +12,21 @@ COMMENT=	Open-source program to read and manipulate RAW photo images
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		lcms.1:${PORTSDIR}/graphics/lcms \
-		exiv2.12:${PORTSDIR}/graphics/exiv2 \
-		dbus-1.3:${PORTSDIR}/devel/dbus \
-		fftw3f:${PORTSDIR}/math/fftw3-float \
-		lensfun.2:${PORTSDIR}/graphics/lensfun \
-		flickcurl.0:${PORTSDIR}/www/flickcurl \
-		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		liblcms.so:${PORTSDIR}/graphics/lcms \
+		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
+		libdbus-1.so:${PORTSDIR}/devel/dbus \
+		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
+		liblensfun.so:${PORTSDIR}/graphics/lensfun \
+		libflickcurl.so:${PORTSDIR}/www/flickcurl \
+		libgphoto2.so:${PORTSDIR}/graphics/libgphoto2
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USE_GMAKE=	yes
-USES=		gettext pkgconfig
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20 libxml2 gconf2 desktopfileutils gnomehack
 USE_SQLITE=	3
 USE_LDCONFIG=	yes

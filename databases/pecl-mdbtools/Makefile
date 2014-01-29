@@ -26,8 +26,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libmdb.a:${PORTSDIR}/databases/mdbtools
 
 CONFIGURE_ARGS=	--with-mdbtools=${LOCALBASE}
 
-NO_STAGE=	yes
-
 post-extract:
 	@${REINPLACE_CMD} -e 's|MDB_SDATETIME|MDB_DATETIME|g' \
 		${WRKSRC}/mdbtools.c

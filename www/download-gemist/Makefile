@@ -19,10 +19,9 @@ PLIST_FILES=	bin/download-gemist \
 		bin/download-gemist-guide \
 		%%DOCSDIR%%/README.md
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/download-gemist* ${PREFIX}/bin/
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${DOCSDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/download-gemist* ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

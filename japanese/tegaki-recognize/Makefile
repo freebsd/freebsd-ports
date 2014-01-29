@@ -16,7 +16,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libzinnia.so:${PORTSDIR}/japanese/zinnia
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/tegakigtk/recognizer.py:${PORTSDIR}/japanese/py-tegaki-gtk
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	${PORTNAME}_recognize
 

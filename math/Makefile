@@ -60,6 +60,7 @@
     SUBDIR += arpack++
     SUBDIR += arpack-ng
     SUBDIR += asir2000
+    SUBDIR += aspcud
     SUBDIR += asymptote
     SUBDIR += atlas
     SUBDIR += atlas-devel
@@ -159,6 +160,7 @@
     SUBDIR += graphthing
     SUBDIR += gretl
     SUBDIR += gri
+    SUBDIR += gringo
     SUBDIR += grpn
     SUBDIR += gsl
     SUBDIR += hs-Agda

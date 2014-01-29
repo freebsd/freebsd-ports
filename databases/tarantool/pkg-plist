@@ -50,6 +50,8 @@ lib/libtarantool.so
 lib/libtarantoolrpl.a
 %%MYSQL%%lib/tarantool/plugins/libmysql.so
 %%PGSQL%%lib/tarantool/plugins/libpg.so
+%%CLIENT%%man/man1/tarantool.1.gz
+man/man1/tarantool_box.1.gz
 %%DOCSDIR%%/README.md
 %%DOCSDIR%%/box-protocol.txt
 %%DOCSDIR%%/LICENSE

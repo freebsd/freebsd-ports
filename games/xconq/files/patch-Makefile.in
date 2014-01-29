@@ -1,0 +1,46 @@
+--- Makefile.in.orig
++++ Makefile.in
+@@ -274,20 +274,19 @@
+ 	fi
+ 
+ MAKEDIRS= \
+-	$(prefix) \
+-	$(exec_prefix) \
+-	$(bindir) \
+-	$(datadir) \
+-	$(gamelibdir) \
+-	$(imagesdir) \
+-	$(scoresdir) \
+-	$(mandir) \
+-	$(man6dir) \
+-	$(infodir) \
+-	$(tcltkdir) \
+-	$(BWidgetdir) \
+-	$(BWidgetimagesdir) \
+-	$(BWidgetlangdir)
++	$(DESTDIR)$(prefix) \
++	$(DESTDIR)$(exec_prefix) \
++	$(DESTDIR)$(bindir) \
++	$(DESTDIR)$(datadir) \
++	$(DESTDIR)$(gamelibdir) \
++	$(DESTDIR)$(imagesdir) \
++	$(DESTDIR)$(mandir) \
++	$(DESTDIR)$(man6dir) \
++	$(DESTDIR)$(infodir) \
++	$(DESTDIR)$(tcltkdir) \
++	$(DESTDIR)$(BWidgetdir) \
++	$(DESTDIR)$(BWidgetimagesdir) \
++	$(DESTDIR)$(BWidgetlangdir)
+ 
+ .PHONY: install-dirs
+ install-dirs:
+@@ -305,9 +304,6 @@
+ 			true ; \
+ 		fi ; \
+ 	done
+-	chown $(GAMEUID) $(scoresdir)
+-	chgrp $(GAMEGRP) $(scoresdir)
+-	chmod $(DIRPERM) $(scoresdir)
+ 
+ # Build a source distribution.
+ DIST_VERSION=@XCONQ_VERSION_FULL@

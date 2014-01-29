@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	checkbashisms
-PORTVERSION=	2.12.6
+PORTVERSION=	2.14.0
 CATEGORIES=	devel perl5
 MASTER_SITES=	DEBIAN/pool/main/d/devscripts/
 DISTNAME=	devscripts_${PORTVERSION}
@@ -12,6 +12,7 @@ COMMENT=	Debian script that checks for bash-isms
 LICENSE=	GPLv2
 
 USES=		perl5 shebangfix
+USE_XZ=		yes
 USE_PERL5=	run
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/devscripts-${PORTVERSION}
@@ -27,6 +28,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/checkbashisms.pl \
 	    ${STAGEDIR}${PREFIX}/bin/checkbashisms
 	${INSTALL_MAN} ${WRKSRC}/scripts/checkbashisms.1 \
-	    ${STAGEDIR}${MANPREFIX}/man/man1/
+	    ${STAGEDIR}${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.mk>

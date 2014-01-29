@@ -11,18 +11,17 @@ DIST_SUBDIR=	ccdoc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracting comments from C++ source and generating HTML
 
+OPTIONS_DEFINE=	DOCS
+
 USES=		perl5
 
 WRKSRC=		${WRKDIR}/${PORTNAME}v${PORTVERSION:S/.//g}/src
 MAKEFILE=	mkopt_gcc.mk
 ALL_TARGET=	bld
-MAN1=		ccdoc.1
-PLIST_FILES=	bin/ccdoc
-.if !defined(NOPORTDOCS)
+PLIST_FILES=	bin/ccdoc \
+		man/man1/ccdoc.1.gz
 PORTDOCS=	*
-.endif
 
-NO_STAGE=	yes
 do-configure:
 	${REINPLACE_CMD} -e "s:%%PERL%%:${PERL}:" \
 		-e "s:%%CXX%%:${CXX}:" \
@@ -32,16 +31,14 @@ do-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/../bin_opt_gcc_/ccdoc.exe \
-		${PREFIX}/bin/ccdoc
-	${INSTALL_MAN} ${WRKSRC}/../doc/htdocs/ccdoc.man ${MAN1PREFIX}/man/man1/${MAN1}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+		${STAGEDIR}${PREFIX}/bin/ccdoc
+	${INSTALL_MAN} ${WRKSRC}/../doc/htdocs/ccdoc.man ${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}.1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${FIND} ${WRKSRC}/../doc \( -name '*.html' -o \
 		-name '*.htm' -o \
 		-name '*.gif' -o \
 		-name '*.txt' -o \
 		-name '*.jpg' \) -print | \
-		${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-.endif
+		${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

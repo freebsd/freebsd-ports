@@ -182,6 +182,7 @@
     SUBDIR += c-unit
     SUBDIR += c4
     SUBDIR += calibrator
+    SUBDIR += capstone
     SUBDIR += cbind
     SUBDIR += cbrowser
     SUBDIR += cc65
@@ -204,6 +205,7 @@
     SUBDIR += charva
     SUBDIR += checkbashisms
     SUBDIR += checkheaders
+    SUBDIR += cherivis-devel
     SUBDIR += chrpath
     SUBDIR += chruby
     SUBDIR += cil
@@ -254,7 +256,6 @@
     SUBDIR += codeworker
     SUBDIR += colorgcc
     SUBDIR += colormake
-    SUBDIR += combat
     SUBDIR += commit-patch
     SUBDIR += common_lib
     SUBDIR += commoncpp
@@ -554,6 +555,7 @@
     SUBDIR += git-review
     SUBDIR += git-subversion
     SUBDIR += gitg
+    SUBDIR += gitg0
     SUBDIR += gitolite
     SUBDIR += gitolite2
     SUBDIR += gitphp
@@ -886,6 +888,7 @@
     SUBDIR += jsmin
     SUBDIR += json-c
     SUBDIR += json-glib
+    SUBDIR += jsoncpp
     SUBDIR += jtag
     SUBDIR += judy
     SUBDIR += jwasm
@@ -903,6 +906,7 @@
     SUBDIR += kdevelop-php
     SUBDIR += kdevelop-php-docs
     SUBDIR += kdevplatform
+    SUBDIR += kickassembler
     SUBDIR += kimwitu
     SUBDIR += kyra
     SUBDIR += kyua
@@ -1144,6 +1148,7 @@
     SUBDIR += linux-kmod-compat
     SUBDIR += linux_kdump
     SUBDIR += lion
+    SUBDIR += llnextgen
     SUBDIR += llvm-devel
     SUBDIR += llvm31
     SUBDIR += llvm32
@@ -1170,7 +1175,6 @@
     SUBDIR += lua-alien
     SUBDIR += lua-bitlib
     SUBDIR += lua-cjson
-    SUBDIR += lua-filename
     SUBDIR += lua-gettext
     SUBDIR += lua-lgi
     SUBDIR += lua-lunit
@@ -1209,7 +1213,6 @@
     SUBDIR += mercurial
     SUBDIR += mercurialeclipse
     SUBDIR += meta-cvs
-    SUBDIR += mico
     SUBDIR += mime
     SUBDIR += mimir
     SUBDIR += mingw32-bin-msvcrt
@@ -2843,6 +2846,7 @@
     SUBDIR += p5-Test-Moose-More
     SUBDIR += p5-Test-More-UTF8
     SUBDIR += p5-Test-Most
+    SUBDIR += p5-Test-Name-FromLine
     SUBDIR += p5-Test-Net-RabbitMQ
     SUBDIR += p5-Test-NoTabs
     SUBDIR += p5-Test-NoWarnings
@@ -2881,11 +2885,13 @@
     SUBDIR += p5-Test-Taint
     SUBDIR += p5-Test-TempDir
     SUBDIR += p5-Test-Tester
+    SUBDIR += p5-Test-Time
     SUBDIR += p5-Test-Timer
     SUBDIR += p5-Test-TinyMocker
     SUBDIR += p5-Test-Trap
     SUBDIR += p5-Test-Unit
     SUBDIR += p5-Test-UseAllModules
+    SUBDIR += p5-Test-Version
     SUBDIR += p5-Test-WWW-Declare
     SUBDIR += p5-Test-WWW-Mechanize
     SUBDIR += p5-Test-WWW-Mechanize-CGI
@@ -2946,6 +2952,7 @@
     SUBDIR += p5-Tie-Util
     SUBDIR += p5-Tie-iCal
     SUBDIR += p5-Time-Clock
+    SUBDIR += p5-Time-Crontab
     SUBDIR += p5-Time-Duration
     SUBDIR += p5-Time-Duration-Parse
     SUBDIR += p5-Time-Format
@@ -3249,6 +3256,7 @@
     SUBDIR += pear-channel-doctrine
     SUBDIR += pear-channel-ezc
     SUBDIR += pear-channel-horde
+    SUBDIR += pear-channel-htmlpurifier
     SUBDIR += pear-channel-openpear
     SUBDIR += pear-channel-pdepend
     SUBDIR += pear-channel-phing
@@ -3259,9 +3267,11 @@
     SUBDIR += pear-channel-symfony
     SUBDIR += pear-channel-symfony2
     SUBDIR += pear-channel-theseer
+    SUBDIR += pear-channel-twig
     SUBDIR += pear-codegen
     SUBDIR += pear-ezc_Base
     SUBDIR += pear-ezc_ConsoleTools
+    SUBDIR += pear-htmlpurifier
     SUBDIR += pear-pdepend-staticReflection
     SUBDIR += pear-phing
     SUBDIR += pecl-APCu
@@ -3510,10 +3520,12 @@
     SUBDIR += py-bison
     SUBDIR += py-bitarray
     SUBDIR += py-bitstring
+    SUBDIR += py-blessings
     SUBDIR += py-blinker
     SUBDIR += py-bluelet
     SUBDIR += py-boto
     SUBDIR += py-botocore
+    SUBDIR += py-capstone
     SUBDIR += py-cclib
     SUBDIR += py-celery
     SUBDIR += py-cffi
@@ -3531,6 +3543,7 @@
     SUBDIR += py-collective.monkeypatcher
     SUBDIR += py-collective.z3cform.datetimewidget
     SUBDIR += py-colorama
+    SUBDIR += py-conditional
     SUBDIR += py-configobj
     SUBDIR += py-construct
     SUBDIR += py-country
@@ -3756,6 +3769,7 @@
     SUBDIR += py-resourcepackage
     SUBDIR += py-rlcompleter2
     SUBDIR += py-robotframework
+    SUBDIR += py-robotframework-pabot
     SUBDIR += py-robotframework-ride
     SUBDIR += py-robotframework-selenium2library
     SUBDIR += py-rope
@@ -3817,6 +3831,7 @@
     SUBDIR += py-twistedCore
     SUBDIR += py-twistedFlow
     SUBDIR += py-twistedRunner
+    SUBDIR += py-ua_parser
     SUBDIR += py-ujson
     SUBDIR += py-uncompyle2
     SUBDIR += py-unittest2
@@ -3824,6 +3839,7 @@
     SUBDIR += py-urlimport
     SUBDIR += py-urwid
     SUBDIR += py-usb
+    SUBDIR += py-user_agents
     SUBDIR += py-utils
     SUBDIR += py-venusian
     SUBDIR += py-versiontools

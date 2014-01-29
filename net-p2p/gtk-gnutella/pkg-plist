@@ -1,4 +1,5 @@
 bin/gtk-gnutella
+man/man1/gtk-gnutella.1.gz
 share/applications/gtk-gnutella.desktop
 %%DATADIR%%/%%ARCH%%-freebsd/gtk-gnutella.nm
 %%DATADIR%%/bogons.txt
@@ -30,7 +31,7 @@ share/applications/gtk-gnutella.desktop
 %%DATADIR%%/pixmaps/firewall_udp_punchable.xpm
 %%DATADIR%%/pixmaps/freeze.xpm
 %%DATADIR%%/pixmaps/icon.16x16.xpm
-%%DATADIR%%/pixmaps/icon.32x32.xpm
+%%DATADIR%%/pixmaps/icon.48x48.xpm
 %%DATADIR%%/pixmaps/icon.xpm
 %%DATADIR%%/pixmaps/leaf.xpm
 %%DATADIR%%/pixmaps/legacy.xpm
@@ -63,6 +64,12 @@ share/applications/gtk-gnutella.desktop
 %%DATADIR%%/spam.txt
 %%DATADIR%%/spam_sha1.txt
 %%DATADIR%%/tr/FAQ
+%%GUI%%share/icons/hicolor/128x128/apps/gtk-gnutella.png
+%%GUI%%share/icons/hicolor/16x16/apps/gtk-gnutella.png
+%%GUI%%share/icons/hicolor/256x256/apps/gtk-gnutella.png
+%%GUI%%share/icons/hicolor/32x32/apps/gtk-gnutella.png
+%%GUI%%share/icons/hicolor/512x512/apps/gtk-gnutella.png
+%%GUI%%share/icons/hicolor/scalable/apps/gtk-gnutella.svg
 %%NLS%%share/locale/de/LC_MESSAGES/gtk-gnutella.mo
 %%NLS%%share/locale/el/LC_MESSAGES/gtk-gnutella.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gtk-gnutella.mo
@@ -77,6 +84,8 @@ share/applications/gtk-gnutella.desktop
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gtk-gnutella.mo
 share/pixmaps/gtk-gnutella.png
 share/pixmaps/gtk-gnutella.svg
+%%GUI%%@dirrmtry share/icons/hicolor/512x512/apps
+%%GUI%%@dirrmtry share/icons/hicolor/512x512
 @dirrm %%DATADIR%%/tr
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/ja

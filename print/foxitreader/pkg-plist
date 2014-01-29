@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/FoxitReader
 %%PORTDOCS%%%%DOCSDIR%%/FoxitReader1.1ForLinux_Manual.pdf
 %%DATADIR%%/FoxitReader

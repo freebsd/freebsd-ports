@@ -16,5 +16,6 @@ you in Battle Tanks.  Some of the game highlights:
     destroyed, weather effects are simulated
   * Lots of war objects: troops, vehicles, helicopters, etc.
   * Keyboard and gamepad are supported
+  * Dedicated server mode (headless)
 
 WWW: http://btanks.sourceforge.net/

@@ -11,7 +11,7 @@ COMMENT=	Networking shapes for blockdiag designed by Cisco
 
 RUN_DEPENDS=	${PKGNAMEPREFIX}blockdiag>=0.8.0:${PORTSDIR}/graphics/py-blockdiag
 
-USE_PYTHON=	2.4-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 
 NO_STAGE=	yes

@@ -1,6 +1,6 @@
---- Makefile.orig	2013-04-03 16:16:24.000000000 -0300
-+++ Makefile	2013-06-12 22:39:11.000000000 -0300
-@@ -300,7 +300,6 @@
+--- Makefile.orig	2013-11-09 18:33:15.000000000 +0100
++++ Makefile	2013-11-09 18:46:05.000000000 +0100
+@@ -315,7 +315,6 @@
  	gstreamer-base-1.0 \
  	gstreamer-pbutils-1.0 \
  	gtk+-3.0 \
@@ -8,25 +8,25 @@
  	libexif \
  	libgphoto2 \
  	json-glib-1.0 \
-@@ -332,7 +331,6 @@
+@@ -347,7 +346,6 @@
  	gstreamer-plugins-base-1.0 >= 1.0.0 \
  	gstreamer-pbutils-1.0 >= 1.0.0 \
- 	gtk+-3.0 >= 3.0.11 \
+ 	gtk+-3.0 >= 3.6.0 \
 -	gudev-1.0 >= 145 \
  	libexif >= 0.6.16 \
  	libgphoto2 >= 2.4.2 \
  	libraw >= 0.13.2 \
-@@ -453,6 +451,9 @@
+@@ -461,6 +459,9 @@
  # Required for gudev-1.0
  CFLAGS += -DG_UDEV_API_IS_SUBJECT_TO_CHANGE
  
 +# do not forget about libintl
 +LDFLAGS += -lintl
 +
- define check_valadate_version
- 	@ pkg-config $(VALADATE_PKG_NAME) --atleast-version=$(MIN_VALADATE_VERSION) || ( echo 'Shotwell testing requires Valadate $(MIN_VALADATE_VERSION) or greater.  You are running' `pkg-config --modversion $(VALADATE_PKG_NAME)` '\b.'; exit 1 )
- endef
-@@ -570,8 +571,8 @@
+ all: pkgcheck valacheck desktop
+ 
+ ifdef ENABLE_BUILD_FOR_GLADE
+@@ -591,8 +592,8 @@
  	glib-compile-schemas $(DESTDIR)$(PREFIX)/share/glib-2.0/schemas
  endif
  ifndef DISABLE_GSETTINGS_CONVERT_INSTALL

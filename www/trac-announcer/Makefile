@@ -15,7 +15,9 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Babel>=0.9:${PORTSDIR}/devel/py-babel
 RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
 
 BROKEN=		Try to access network during install phase
-USE_PYTHON=	2.5+
+DEPRECATED=	Broken for more than 6 month
+EXPIRATION_DATE=	2014-02-27
+USE_PYTHON=	yes
 USE_ZIP=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	AnnouncerPlugin
@@ -32,7 +34,6 @@ PLIST_FILES+=	%%PYTHON_SITELIBDIR%%/AnnouncerPlugin-${EGG_VER}-py%%PYTHONVERSION
 # We must fix file permissions -- ZIP file have 0000 for every file.
 # Directory permissions are fine (they aren't stored inside ZIP
 # file), but we set them too -- just in case.
-NO_STAGE=	yes
 post-extract:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${CHMOD} 644
 	@${FIND} ${WRKSRC} -type d | ${XARGS} ${CHMOD} 755

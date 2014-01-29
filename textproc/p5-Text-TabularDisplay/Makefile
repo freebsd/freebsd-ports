@@ -9,10 +9,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Display text in formatted table output
 
+LICENSE=	GPLv2
+
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::TabularDisplay.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

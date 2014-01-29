@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/vagalume
 %%DBUS%%bin/vagalumectl
 man/man1/vagalume.1.gz

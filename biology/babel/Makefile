@@ -22,27 +22,18 @@ PORTDOCS=	README.1ST
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
+BROKEN_powerpc=	Does not compile on powerpc
+
 post-build:
 	${SED} -e 's%@PREFIX@%${PREFIX}%g' \
 		${FILESDIR}/babel.sh >${WRKSRC}/babel.sh
 
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/babel ${PREFIX}/libexec
-	${INSTALL_SCRIPT} ${WRKSRC}/babel.sh ${PREFIX}/bin/babel
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.lis ${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.1ST ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/babel ${STAGEDIR}${PREFIX}/libexec
+	${INSTALL_SCRIPT} ${WRKSRC}/babel.sh ${STAGEDIR}${PREFIX}/bin/babel
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.lis ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.1ST ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

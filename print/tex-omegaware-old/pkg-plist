@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/ovf2ovp-old
 bin/ovp2ovf-old
 bin/ofm2opl-old

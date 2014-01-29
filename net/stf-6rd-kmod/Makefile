@@ -16,8 +16,6 @@ ONLY_FOR_ARCHS=	amd64 i386
 WRKSRC=		${WRKDIR}
 SVN_REV=	239080	# 8.1=r209773, 8.2=r216741, 8.3=r232314
 
-NO_STAGE=	yes
-
 USES=		kmod
 .include <bsd.port.pre.mk>
 
@@ -40,12 +38,9 @@ do-build:
 
 do-install:
 .for f in if_stf
-	${INSTALL_KLD} ${WRKSRC}/sys/modules/if_stf/${f}.ko ${KMODDIR}
-	${INSTALL_KLD} ${WRKSRC}/sys/modules/if_stf/${f}.ko.symbols ${KMODDIR}
+	${INSTALL_KLD} ${WRKSRC}/sys/modules/if_stf/${f}.ko ${STAGEDIR}${KMODDIR}
+	${INSTALL_KLD} ${WRKSRC}/sys/modules/if_stf/${f}.ko.symbols ${STAGEDIR}${KMODDIR}
 .endfor
-
-post-install:
-	${CAT} ${PKGMESSAGE}
 
 # For maintainer only.
 SVN_MIRROR?=	http://svn.freebsd.org/base

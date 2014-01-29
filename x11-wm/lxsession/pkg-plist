@@ -1,6 +1,8 @@
 bin/lxlock
 bin/lxsession
 bin/lxsession-logout
+man/man1/lxsession-logout.1.gz
+man/man1/lxsession.1.gz
 %%NLS%%share/locale/af/LC_MESSAGES/lxsession.mo
 %%NLS%%share/locale/am/LC_MESSAGES/lxsession.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/lxsession.mo

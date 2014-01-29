@@ -3,7 +3,7 @@
 
 PORTNAME=	signing-party
 PORTVERSION=	1.1.4
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/johans/signing-party/ \
 		${MASTER_SITE_DEBIAN}
@@ -26,26 +26,22 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/:S/.orig//}
 
 CONFLICTS_INSTALL=sig2dot-[0-9]* springgraph-[0-9]*
 
-REINPLACE_ARGS=	-i ''
-USE_GMAKE=	yes
-USES=		perl5
+USES=		perl5 gmake shebangfix
+SHEBANG_FILES=	${SCRIPTS}
 
+BINS=		keyanalyze/keyanalyze keyanalyze/process_keys \
+		keyanalyze/pgpring/pgppubring
 SCRIPTS=	caff/caff caff/pgp-clean caff/pgp-fixkey gpglist/gpglist \
 		gpgsigs/gpgsigs gpg-key2ps/gpg-key2ps \
 		gpg-mailkeys/gpg-mailkeys keylookup/keylookup \
 		sig2dot/sig2dot springgraph/springgraph \
-		gpgparticipants/gpgparticipants \
-		keyanalyze/keyanalyze keyanalyze/process_keys \
-		keyanalyze/pgpring/pgppubring
-MANUALS1=	${SCRIPTS:S/$/.1/}
+		gpgparticipants/gpgparticipants
+MANUALS1=	${SCRIPTS:S/$/.1/} ${BINS:S/$/.1/}
 EXAMPLES=	caff/caffrc.sample gpg-mailkeys/example.gpg-mailkeysrc
+PORTEXAMPLES=	${EXAMPLES:T}
 
-PLIST_FILES=	${SCRIPTS:T:S|^|bin/|} ${EXAMPLES:T:S|^|%%EXAMPLESDIR%%/|}
-PLIST_DIRS=	%%EXAMPLESDIR%%
 PORTDOCS=	*
-MAN1=		${MANUALS1:T}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/doc/signing-party/caff/caffrc\.sample|${EXAMPLESDIR}/caffrc.sample|' \
 		${WRKSRC}/caff/caff
@@ -55,19 +51,20 @@ post-patch:
 			-e 's|make pgpring|make|' \
 		${WRKSRC}/gpgwrap/Makefile \
 		${WRKSRC}/keyanalyze/Makefile
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|' ${WRKSRC}/gpgwrap/src/Makefile
 	# Rename pgpring to pgppubring to avoid conflict with mail/mutt
 	@${REINPLACE_CMD} -e 's|pgpring|pgppubring|g' \
 		${WRKSRC}/keyanalyze/pgpring/Makefile.in
 	@cd ${WRKSRC}/keyanalyze/pgpring && ${MV} pgpring.1 pgppubring.1
 
 do-install:
-	${INSTALL_SCRIPT} ${SCRIPTS:S|^|${WRKSRC}/|} ${PREFIX}/bin
-	${INSTALL_MAN} ${MANUALS1:S|^|${WRKSRC}/|} ${MAN1PREFIX}/man/man1
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/caff
-	${INSTALL_DATA} ${WRKSRC}/caff/README* ${DOCSDIR}/caff
-.endif
+	@${INSTALL_PROGRAM} ${BINS:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${SCRIPTS:S|^|${WRKSRC}/|} ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_MAN} ${MANUALS1:S|^|${WRKSRC}/|} \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/caff
+	@${INSTALL_DATA} ${WRKSRC}/caff/README* ${STAGEDIR}${DOCSDIR}/caff
 
 .include <bsd.port.mk>

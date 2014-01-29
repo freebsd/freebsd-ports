@@ -83,10 +83,10 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCLTK}
-USE_TK=			yes
-CFLAGS+=		-I${LOCALBASE}/include/tk${TK_VER} -I${LOCALBASE}/include/tcl${TCL_VER}
-CONFIGURE_ARGS+=	--with-tclconfig=${LOCALBASE}/lib/tcl${TCL_VER} \
-			--with-tkconfig=${LOCALBASE}/lib/tk${TK_VER}
+USES+=			tk
+CFLAGS+=		-I${TK_INCLUDEDIR} -I${TCL_INCLUDEDIR}
+CONFIGURE_ARGS+=	--with-tclconfig=${TCL_LIBDIR} \
+			--with-tkconfig=${TK_LIBDIR}
 PLIST_SUB+=		TCL:=""
 .else
 CONFIGURE_ARGS+=	--disable-tcl
@@ -314,8 +314,8 @@ post-patch:
 		-e 's|-lpanel |-lpanel -lncurses|g' \
 		-e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g' \
 		-e 's|-lsilc -lsilcclient ${PTHREAD_LIBS} $$LIBDL|-lsilc -lsilcclient ${PTHREAD_LIBS} ${ICONV_LIB}|' \
-		-e 's|TCL_VERSION found but 8.3 required|TCL_VERSION found but ${TCLTK_VER} required|g' \
-		-e 's|TCL_MINOR_VERSION" -ne 3|TCL_MINOR_VERSION" -ne ${TCLTK_VER:E}|' \
+		-e 's|TCL_VERSION found but 8.3 required|TCL_VERSION found but ${TCL_VER} required|g' \
+		-e 's|TCL_MINOR_VERSION" -ne 3|TCL_MINOR_VERSION" -ne ${TCL_VER:E}|' \
 			${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|' \
 			${WRKSRC}/libpurple/purple-send \

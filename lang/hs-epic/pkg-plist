@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 lib/evm/closure.h
 lib/evm/libevm.a
 lib/evm/mainprog.c

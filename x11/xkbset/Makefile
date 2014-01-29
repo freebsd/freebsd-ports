@@ -10,7 +10,6 @@ MASTER_SITES=	http://www.math.missouri.edu/~stephen/software/xkbset/
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Manage various XKB features of X Window
 
-MAN1=		xkbset.1
 USE_XORG=	x11
 USE_PERL5=	build
 USES=		perl5
@@ -22,7 +21,6 @@ MAKE_ARGS=	X11BASE="${LOCALBASE}" X11PREFIX="${PREFIX}" \
 OPTIONS_DEFINE=	GUI
 GUI_DESC=	Install Tk GUI
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUI}

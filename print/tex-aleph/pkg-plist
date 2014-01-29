@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/aleph
 bin/odvicopy
 bin/odvitype

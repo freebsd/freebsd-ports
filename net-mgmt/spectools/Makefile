@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	spectools
-PORTVERSION=	201004.r1
+PORTVERSION=	201108.r1
 PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.kismetwireless.net/code/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brix
-DISTNAME=	spectools-2010-04-R1
+DISTNAME=	spectools-2011-08-R1
 
 MAINTAINER=	brix@FreeBSD.org
 COMMENT=	Tools for the Wi-Spy spectrum analyzers from MetaGeek LLC
@@ -27,7 +27,6 @@ OPTIONS_DEFAULT=	GTK2 NCURSES
 
 ALL_TARGET=	spectool_net spectool_raw
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
@@ -52,19 +51,19 @@ BROKEN=		Does not build: duplicate definition of malloc
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/spectool_net ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/spectool_raw ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/spectool_net ${STAGEDIR}/${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/spectool_raw ${STAGEDIR}/${PREFIX}/bin
 .if ${PORT_OPTIONS:MGTK2}
-	${INSTALL_PROGRAM} ${WRKSRC}/spectool_gtk ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/spectool_gtk ${STAGEDIR}/${PREFIX}/bin
 .endif
 .if ${PORT_OPTIONS:MNCURSES}
-	${INSTALL_PROGRAM} ${WRKSRC}/spectool_curses ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/spectool_curses ${STAGEDIR}/${PREFIX}/bin
 .endif
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${STAGEDIR}/${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 

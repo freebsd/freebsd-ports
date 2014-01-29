@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	i3
-DISTVERSION=	4.7
+DISTVERSION=	4.7.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://i3wm.org/downloads/
 

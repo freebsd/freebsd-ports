@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/dt
 bin/dt-createdb
 %%PYTHON_SITELIBDIR%%/DITrack/Backend/__init__.py

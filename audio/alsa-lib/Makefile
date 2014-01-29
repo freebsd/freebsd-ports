@@ -22,7 +22,7 @@ OPTIONS_SUB=	${OPTIONS_DEFINE}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 .else
 CONFIGURE_ARGS+=--disable-python
 .endif

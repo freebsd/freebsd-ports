@@ -58,7 +58,6 @@ RnD_jue_DESC=	Levels default for R'n'D jue
 
 PREFIX=		/usr/local
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRnD}
@@ -101,16 +100,12 @@ post-extract-script:
 	@(cd ${WRKDIR}/${PORTNAME} && ${RM} -f Readme.txt levelinfo.conf)
 
 do-install:
-	@(cd ${WRKDIR}/${PORTNAME} && ${COPYTREE_SHARE} . ${DATADIR}/levels)
+	@(cd ${WRKDIR}/${PORTNAME} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/levels)
 
-# Dynamically generate the PLIST, because the Levels are large
-.for l in ${LEVELS_ARTSOFT} ${LEVELS_BD_FANS} Alans_Random_Levels Gavin_Davidson_2006 Puzzles Veysi_Orak_2006
-	@${FIND} ${DATADIR}/levels/${l}/ ! -type d | ${SED} 's|^${PREFIX}/||' >> ${TMPPLIST}
-	@${FIND} -ds ${DATADIR}/levels/${l} -type d | \
-		${SED} -E -e 's,(.*),@unexec ${RMDIR} "\1" 2>/dev/null || true,' >> ${TMPPLIST}
-.endfor
-	@${FIND} -ds ${DATADIR} -type d -depth 0 | \
-		${SED} -E -e 's,(.*),@unexec ${RMDIR} "\1" 2>/dev/null || true,' >> ${TMPPLIST}
+	@cd ${STAGEDIR}${PREFIX} && ${FIND} ${DATADIR_REL}/levels \
+		-type f >> ${TMPPLIST} && \
+		${FIND} ${DATADIR_REL}/levels -type d -o -type l | ${SORT} -r | \
+		${SED} 's|^|@dirrm |' >> ${TMPPLIST}
 
 # Symlink Levels which can use Rocks'n'Diamonds and R'n'D jue
 .if exists(${PREFIX}/share/rocksndiamonds) && ${PORT_OPTIONS:MRnD_jue}
@@ -126,9 +121,5 @@ do-install:
 			${DATADIR1}/levels/
 .endfor
 .endif
-
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.mk>

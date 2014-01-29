@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/c3270
 bin/x3270if
 etc/x3270/ibm_hosts

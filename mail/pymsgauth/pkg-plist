@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/pymsgauth-clean
 bin/pymsgauth-confirm
 bin/pymsgauth-mail

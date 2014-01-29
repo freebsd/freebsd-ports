@@ -4,6 +4,7 @@
     COMMENT = X11 fonts and font utilities
 
     SUBDIR += alegreya-sans
+    SUBDIR += alfont
     SUBDIR += andika
     SUBDIR += anonymous-pro
     SUBDIR += artwiz-aleczapka
@@ -35,6 +36,7 @@
     SUBDIR += ecofont
     SUBDIR += encodings
     SUBDIR += farsifonts
+    SUBDIR += fira
     SUBDIR += fntsample
     SUBDIR += font-adobe-100dpi
     SUBDIR += font-adobe-75dpi

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	ipv6toolkit
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.2
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://www.si6networks.com/tools/ipv6toolkit/
 DISTNAME=	ipv6toolkit-v${PORTVERSION}
@@ -15,16 +15,13 @@ MAKE_ENV=	DATADIR=${DATADIR} WRKSRC=${WRKSRC}
 SUB_FILES=	BSDMakefile Makefile Makefile.lib
 MAKEFILE=	BSDMakefile
 PORTDOCS=	README.TXT CHANGES.TXT CONTRIB.TXT
-MAN1=		addr6.1 flow6.1 frag6.1 icmp6.1 jumbo6.1 na6.1 ni6.1 \
-		ns6.1 ra6.1 rd6.1 rs6.1 scan6.1 tcp6.1
-MAN5=		ipv6toolkit.conf.5
 
-PROGDIRS=	${MAN1:S/.1//}
+PROGDIRS=	addr6 flow6 frag6 icmp6 jumbo6 na6 ni6 ns6 ra6 rd6 rs6 \
+		scan6 tcp6
 LIBDIRS=	libipv6
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:
@@ -41,8 +38,8 @@ post-patch: apply-slist
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

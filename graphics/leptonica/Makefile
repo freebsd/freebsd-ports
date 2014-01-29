@@ -10,11 +10,11 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	C library for efficient image processing and image analysis operations
 
-LIB_DEPENDS=	gif:${PORTSDIR}/graphics/giflib \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff \
-		webp:${PORTSDIR}/graphics/webp
+LIB_DEPENDS=	libgif.so:${PORTSDIR}/graphics/giflib \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libwebp.so:${PORTSDIR}/graphics/webp
 
 CONFLICTS=	leptonlib-[0-9]*
 
@@ -22,9 +22,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 TESTS?=	generate compare
 .if defined(MAINTAINER_MODE) || defined(PACKAGE_BUILDING)
@@ -43,7 +40,4 @@ check regression-test test: build
 	${WRKSRC}/prog/alltests_reg ${c}
 .endfor
 
-post-install:
-	${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

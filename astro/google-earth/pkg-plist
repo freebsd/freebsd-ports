@@ -561,10 +561,6 @@ bin/googleearth
 %%DATADIR%%/shaders/watersurface.ps_2_0
 %%DATADIR%%/shaders/watersurface.vs_2_0
 share/applications/googleearth.desktop
-share/mime/application/earthviewer.xml
-share/mime/application/keyhole.xml
-share/mime/application/vnd.google-earth.kml+xml.xml
-share/mime/application/vnd.google-earth.kmz.xml
 share/mime/packages/googleearth-mimetypes.xml
 @dirrm %%DATADIR%%/bin
 @dirrm %%DATADIR%%/desktop_icons/consumer

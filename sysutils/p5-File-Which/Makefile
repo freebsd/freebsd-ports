@@ -15,8 +15,4 @@ TEST_DEPENDS=	p5-Test-Script>=1.05:${PORTSDIR}/devel/p5-Test-Script
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		pwhich.1
-MAN3=		File::Which.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

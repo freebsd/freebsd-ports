@@ -16,7 +16,6 @@ LIB_DEPENDS=	libxmmsclient.so:${PORTSDIR}/audio/xmms2 \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
 USES=		gmake pkgconfig
-NO_STAGE=	yes
 LDFLAGS+=	${PTHREAD_LIBS}
 
 PLIST_FILES=	bin/xmms2-scrobbler
@@ -24,15 +23,10 @@ PORTDOCS=	README
 
 SUB_FILES=	pkg-message
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-install:
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}; \
-	cd ${WRKSRC} && ${INSTALL_MAN} ${PORTDOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/librtmp/amf.h
 include/librtmp/http.h
 include/librtmp/log.h

@@ -29,31 +29,13 @@ ONLY_FOR_ARCHS_REASON=	has not been ported to this architecture
 
 OPTIONS_DEFINE=	DOCS CAIRO
 
-NO_STAGE=	yes
-.include "${.CURDIR}/Makefile.man"
-.include <bsd.port.options.mk>
-
-.if empty(PORT_OPTIONS:MCAIRO)
-CONFIGURE_ARGS+=	--disable-cairo \
-			--without-x
-.else
-CONFIGURE_ARGS+=	--enable-cairo \
-			--with-x
-LIB_DEPENDS+=		cairo:${PORTSDIR}/graphics/cairo
-USE_XORG=		x11
-.endif
-
-post-patch:
-.if empty(PORT_OPTIONS:MDOCS)
-	@${REINPLACE_CMD} -e \
-	's|^\(install-data-am:\) install-dist_pdfDATA \(install-man\)|\1 \2|g' \
-	${WRKSRC}/doc/Makefile.in
-.endif
+CAIRO_CONFIGURE_OFF=	--disable-cairo --without-x
+CAIRO_CONFIGURE_ON=	--enable-cairo --with-x
+CAIRO_LIB_DEPENDS=		libcairo.so:${PORTSDIR}/graphics/cairo
+CAIRO_USE=	XORG=x11
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}/html
-	${INSTALL_DATA} ${WRKSRC}/doc/doxygen-doc/html/* ${DOCSDIR}/html/.
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
+	${INSTALL_DATA} ${WRKSRC}/doc/doxygen-doc/html/* ${STAGEDIR}${DOCSDIR}/html/.
 
 .include <bsd.port.mk>

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/QTweetLib/oauth.h
 include/QTweetLib/oauthtwitter.h
 include/QTweetLib/qtweetaccountratelimitstatus.h

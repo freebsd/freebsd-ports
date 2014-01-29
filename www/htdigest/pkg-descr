@@ -1,0 +1,8 @@
+The htdigest utility from Apache is useful for other web servers too--
+lighttpd for example can make use of the digests thus created.
+
+This package contains just htdigest, renamed as apache-htdigest to avoid
+conflicts.  It means that the htdigest utility is available without installing
+the entire Apache distribution.
+
+WWW: http://httpd.apache.org/

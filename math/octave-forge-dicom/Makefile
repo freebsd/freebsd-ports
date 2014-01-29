@@ -9,6 +9,8 @@ CATEGORIES=	math
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS+=	gdcmCommon:${PORTSDIR}/devel/gdcm
 
 # OCTSRC is the name of the directory of the package.
@@ -18,7 +20,6 @@ OCTSRC=		${OCTAVE_PKGNAME}
 WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 GDCM_MAJ=	2.4
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} s/gdcm-2.0/gdcm-${GDCM_MAJ}/ \
 		${WRKSRC}/dicominfo.cpp ${WRKSRC}/dicomdict.cpp \

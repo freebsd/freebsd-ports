@@ -625,7 +625,6 @@ share/locale/zh_TW/LC_MESSAGES/gtk30-properties.mo
 share/locale/zh_TW/LC_MESSAGES/gtk30.mo
 share/themes/Default/gtk-3.0/gtk-keys.css
 share/themes/Emacs/gtk-3.0/gtk-keys.css
-@dirrm share/gtk-3.0
 @exec /usr/bin/find %%LOCALBASE%%/share/icons -type d -depth 1 -exec %D/bin/gtk-update-icon-cache -q -f {} \; 2>/dev/null || /usr/bin/true
 @unexec /usr/bin/find %%LOCALBASE%%/share/icons -type f -depth 2 -name icon-theme.cache -delete 2>/dev/null || /usr/bin/true
 @dirrm share/themes/Emacs/gtk-3.0
@@ -715,6 +714,9 @@ share/themes/Emacs/gtk-3.0/gtk-keys.css
 @dirrmtry share/locale/ang
 @dirrmtry share/locale/an/LC_MESSAGES
 @dirrmtry share/locale/an
+@dirrm share/gtk-3.0
+@exec %D/bin/gtk-query-immodules-3.0 --update-cache > /dev/null 2>&1 || /usr/bin/true
+@unexec /bin/rm -f %D/lib/gtk-3.0/%%GTK3_VERSION%%/immodules.cache
 @exec /bin/mkdir -p %D/lib/gtk-3.0/modules
 @exec /bin/mkdir -p %D/lib/gtk-3.0/%%GTK3_VERSION%%/engines
 @exec /bin/mkdir -p %D/lib/gtk-3.0/%%GTK3_VERSION%%/loaders
@@ -725,8 +727,6 @@ share/themes/Emacs/gtk-3.0/gtk-keys.css
 @dirrm lib/gtk-3.0/%%GTK3_VERSION%%/engines
 @dirrm lib/gtk-3.0/%%GTK3_VERSION%%
 @dirrm lib/gtk-3.0
-@exec %D/bin/gtk-query-immodules-3.0 --update-cache > /dev/null 2>&1 || /usr/bin/true
-@unexec /bin/rm -f %D/lib/gtk-3.0/%%GTK3_VERSION%%/immodules.cache
 @dirrm include/gtk-3.0/unix-print/gtk
 @dirrm include/gtk-3.0/unix-print
 @dirrm include/gtk-3.0/gtk/deprecated

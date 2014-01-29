@@ -9,8 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	chuck@pkix.net
 COMMENT=	Accrete is a physical simulation of solar system planet formation
 
-NO_STAGE=	yes
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX=${PREFIX} \
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX=${STAGEDIR}${PREFIX} \
 		CDEBUG="" COPT=""
 PLIST_FILES=	bin/accrete
 

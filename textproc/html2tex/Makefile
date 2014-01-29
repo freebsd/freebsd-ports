@@ -15,7 +15,6 @@ COMMENT=	HTML to LaTeX converter, last modified 2010
 PLIST_FILES=	bin/html2tex
 NO_WRKSUBDIR=	yes
 
-NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}/html2tex.c
@@ -24,6 +23,6 @@ do-build:
 	cd ${WRKSRC} &&	${CC} -o html2tex html2tex.c
 
 do-install:
-	cd ${WRKSRC} && ${CP} html2tex ${PREFIX}/bin
+	cd ${WRKSRC} && ${INSTALL_PROGRAM} html2tex ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

@@ -1,4 +1,5 @@
 bin/dfm
+man/man1/dfm.1x.gz
 share/dfm/backgrounds/background2.xpm
 share/dfm/backgrounds/blues.xpm
 share/dfm/backgrounds/flock.xpm

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%EXAMPLESDIR%%/data/books.dtd
 %%EXAMPLESDIR%%/data/books.xml
 %%EXAMPLESDIR%%/data/othello.xml

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%LISPDIR%%/auctex.el
 %%LISPDIR%%/preview-latex.el
 %%LISPDIR%%/tex-site.el

@@ -8,14 +8,13 @@ CATEGORIES=	net-im
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A console Yahoo! messenger client
+COMMENT=	Console Yahoo! messenger client
 
+USES=		gmake
 PLIST_FILES=	bin/ari-yahoo
-USE_GMAKE=	yes
 USE_GCC=	any
 USE_AUTOTOOLS=	autoconf
 
-NO_STAGE=	yes
 pre-configure:
 	@${TOUCH} ${WRKSRC}/aclocal.m4 ${WRKSRC}/Makefile.in
 	@(cd ${WRKSRC}/libyahoo && ${SETENV} ${AUTOCONF_ENV} ${AUTOCONF} \
@@ -23,6 +22,6 @@ pre-configure:
 
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ari-yahoo ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ari-yahoo ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

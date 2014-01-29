@@ -14,7 +14,7 @@ COMMENT=	Plugin for creating date fields
 
 RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_ZIP=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracDateField
@@ -22,5 +22,4 @@ WRKSRC=		${WRKDIR}/datefieldplugin/0.11
 REL=		7267
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

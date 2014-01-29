@@ -30,6 +30,7 @@
     SUBDIR += iozone
     SUBDIR += iozone21
     SUBDIR += iperf
+    SUBDIR += iperf3
     SUBDIR += libmicro
     SUBDIR += lmbench
     SUBDIR += mdtest

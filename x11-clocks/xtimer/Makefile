@@ -13,8 +13,6 @@ COMMENT=	Simple digital timer for X11
 
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
-MAN1=		xtimer.1
-PLIST_FILES=	bin/xtimer
+PLIST_FILES=	bin/xtimer man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

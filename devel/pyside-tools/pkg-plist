@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/pyside-lupdate
 bin/pyside-rcc
 bin/pyside-uic

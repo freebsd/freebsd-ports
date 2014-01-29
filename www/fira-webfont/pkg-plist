@@ -1,0 +1,53 @@
+%%WWWDIR_REL%%/eot/FiraMono-Bold.eot
+%%WWWDIR_REL%%/eot/FiraMono-Regular.eot
+%%WWWDIR_REL%%/eot/FiraSans-Bold.eot
+%%WWWDIR_REL%%/eot/FiraSans-BoldItalic.eot
+%%WWWDIR_REL%%/eot/FiraSans-Light.eot
+%%WWWDIR_REL%%/eot/FiraSans-LightItalic.eot
+%%WWWDIR_REL%%/eot/FiraSans-Medium.eot
+%%WWWDIR_REL%%/eot/FiraSans-MediumItalic.eot
+%%WWWDIR_REL%%/eot/FiraSans-Regular.eot
+%%WWWDIR_REL%%/eot/FiraSans-RegularItalic.eot
+%%WWWDIR_REL%%/eot/FiraSansSC-Bold.eot
+%%WWWDIR_REL%%/eot/FiraSansSC-BoldItalic.eot
+%%WWWDIR_REL%%/eot/FiraSansSC-Light.eot
+%%WWWDIR_REL%%/eot/FiraSansSC-LightItalic.eot
+%%WWWDIR_REL%%/eot/FiraSansSC-Medium.eot
+%%WWWDIR_REL%%/eot/FiraSansSC-MediumItalic.eot
+%%WWWDIR_REL%%/eot/FiraSansSC-Regular.eot
+%%WWWDIR_REL%%/eot/FiraSansSC-RegularItalic.eot
+%%WWWDIR_REL%%/fira.css
+%%WWWDIR_REL%%/index.html
+%%WWWDIR_REL%%/ttf/FiraMono-Bold.ttf
+%%WWWDIR_REL%%/ttf/FiraMono-Regular.ttf
+%%WWWDIR_REL%%/ttf/FiraSans-Bold.ttf
+%%WWWDIR_REL%%/ttf/FiraSans-BoldItalic.ttf
+%%WWWDIR_REL%%/ttf/FiraSans-Light.ttf
+%%WWWDIR_REL%%/ttf/FiraSans-LightItalic.ttf
+%%WWWDIR_REL%%/ttf/FiraSans-Medium.ttf
+%%WWWDIR_REL%%/ttf/FiraSans-MediumItalic.ttf
+%%WWWDIR_REL%%/ttf/FiraSans-Regular.ttf
+%%WWWDIR_REL%%/ttf/FiraSans-RegularItalic.ttf
+%%WWWDIR_REL%%/woff/FiraMono-Bold.woff
+%%WWWDIR_REL%%/woff/FiraMono-Regular.woff
+%%WWWDIR_REL%%/woff/FiraSans-Bold.woff
+%%WWWDIR_REL%%/woff/FiraSans-BoldItalic.woff
+%%WWWDIR_REL%%/woff/FiraSans-Light.woff
+%%WWWDIR_REL%%/woff/FiraSans-LightItalic.woff
+%%WWWDIR_REL%%/woff/FiraSans-Medium.woff
+%%WWWDIR_REL%%/woff/FiraSans-MediumItalic.woff
+%%WWWDIR_REL%%/woff/FiraSans-Regular.woff
+%%WWWDIR_REL%%/woff/FiraSans-RegularItalic.woff
+%%WWWDIR_REL%%/woff/FiraSansOT-Light.woff
+%%WWWDIR_REL%%/woff/FiraSansSC-Bold.woff
+%%WWWDIR_REL%%/woff/FiraSansSC-BoldItalic.woff
+%%WWWDIR_REL%%/woff/FiraSansSC-Light.woff
+%%WWWDIR_REL%%/woff/FiraSansSC-LightItalic.woff
+%%WWWDIR_REL%%/woff/FiraSansSC-Medium.woff
+%%WWWDIR_REL%%/woff/FiraSansSC-MediumItalic.woff
+%%WWWDIR_REL%%/woff/FiraSansSC-Regular.woff
+%%WWWDIR_REL%%/woff/FiraSansSC-RegularItalic.woff
+@dirrm %%WWWDIR_REL%%/woff
+@dirrm %%WWWDIR_REL%%/ttf
+@dirrm %%WWWDIR_REL%%/eot
+@dirrm %%WWWDIR_REL%%

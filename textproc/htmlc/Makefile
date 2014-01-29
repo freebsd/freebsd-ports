@@ -13,7 +13,7 @@ COMMENT=	A text file generator
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
-#MAN1=		htmlc.1
+USES=	gmake
 
 PLIST_FILES=	bin/htmlc bin/htmlc.byt share/htmlc/env
 PLIST_DIRS=	share/htmlc
@@ -22,9 +22,7 @@ PORTDOCS=	LICENSE INSTALL README JoeCaml.gif rocq.gif copyright-eng.htm \
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${LOCALBASE}
-USE_GMAKE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -33,23 +31,20 @@ post-patch:
 	${ECHO} "all:" > ${WRKSRC}/doc/Makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/compiler/htmlc ${PREFIX}/bin
-	@${INSTALL_PROGRAM} ${WRKSRC}/compiler/htmlc.byt ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/config/env ${DATADIR}
-
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/LICENSE ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/INSTALL ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/README ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/JoeCaml.gif ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/rocq.gif ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/copyright-eng.htm ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/copyright-fra.htm ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/eng.htm ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/fra.htm ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/index.htm ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/compiler/htmlc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/compiler/htmlc.byt ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/config/env ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/LICENSE ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/INSTALL ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/JoeCaml.gif ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/rocq.gif ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/copyright-eng.htm ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/copyright-fra.htm ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/eng.htm ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/fra.htm ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/index.htm ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

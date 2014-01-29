@@ -17,29 +17,22 @@ USES=		perl5
 USE_PERL5=	run
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${SED} -e \
-		's:= "$$0";:= "${PREFIX}/${SITE_PERL_REL}/Bib2HTML";:g' \
+		's:= "$$0";:= "${SITE_PERL}/Bib2HTML";:g' \
 		< ${WRKSRC}/bib2html.pl > ${WRKSRC}/bib2html
 	@${SED} -e \
-		's:= "$$0";:= "${PREFIX}/${SITE_PERL_REL}/Bib2HTML";:g' \
+		's:= "$$0";:= "${SITE_PERL}/Bib2HTML";:g' \
 		< ${WRKSRC}/bib2xml.pl > ${WRKSRC}/bib2xml
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bib2html ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bib2xml ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/${SITE_PERL_REL}/Bib2HTML
-	@cd ${WRKSRC}/Bib2HTML && ${FIND} . | \
-		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} \
-		${PREFIX}/${SITE_PERL_REL}/Bib2HTML
-	${FIND} ${PREFIX}/${SITE_PERL_REL}/Bib2HTML -type f | \
-		${XARGS} ${CHMOD} ${LIBMODE}
-	${FIND} ${PREFIX}/${SITE_PERL_REL}/Bib2HTML -type d | \
-		${XARGS} ${CHMOD} a+rx
-	@${FIND} ${PREFIX}/${SITE_PERL_REL}/Bib2HTML -type f | \
-		${SED} "s,^${PREFIX}/,," >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${SITE_PERL_REL}/Bib2HTML -type d | ${SORT} -r | \
-		${SED} "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST}
+	${INSTALL_SCRIPT} ${WRKSRC}/bib2html ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bib2xml ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${SITE_PERL}/Bib2HTML
+	cd ${WRKSRC}/Bib2HTML && ${COPYTREE_SHARE} . ${STAGEDIR}${SITE_PERL}/Bib2HTML
+	${FIND} ${STAGEDIR}${SITE_PERL}/Bib2HTML -type f | \
+		${SED} "s,^${STAGEDIR}${PREFIX}/,," >> ${TMPPLIST}
+	${FIND} ${STAGEDIR}${SITE_PERL}/Bib2HTML -type d | ${SORT} -r | \
+		${SED} "s,^${STAGEDIR}${PREFIX}/,@dirrm ," >> ${TMPPLIST}
 
 .include <bsd.port.mk>

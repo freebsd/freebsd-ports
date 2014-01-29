@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	dogecoin
-PORTVERSION=	1.3
+PORTVERSION=	1.4
+PORTREVISION=	2
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~swills/ \
@@ -25,7 +26,7 @@ QRCODES_DESC=	Build with QR code display
 USE_GITHUB=	yes
 GH_ACCOUNT=	dogecoin
 GH_PROJECT=	dogecoin
-GH_COMMIT=	2ee5cb3
+GH_COMMIT=	d484474
 GH_TAGNAME=	${GH_COMMIT}
 
 USES=		gmake compiler:c++11-lib
@@ -37,7 +38,6 @@ CXXFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}
 CXXFLAGS+=	-L${LOCALBASE}/lib -L${BDB_LIB_DIR}
 CXXFLAGS+=	-Wno-invalid-offsetof
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGUI} && !defined(WITHOUT_X11)
@@ -65,7 +65,13 @@ QMAKE_USE_UPNP=	1
 QMAKE_USE_UPNP=	-
 .endif
 
+SUB_FILES+=	dogecoin-qt.desktop
+
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MGUI} && !defined(WITHOUT_X11)
+PLIST_FILES+=	share/applications/dogecoin-qt.desktop share/pixmaps/dogecoin64.png
+.endif
 
 post-patch:
 .if !${PORT_OPTIONS:MGUI} || defined(WITHOUT_X11)
@@ -79,7 +85,7 @@ post-patch:
 
 do-configure:
 .if ${PORT_OPTIONS:MGUI} && !defined(WITHOUT_X11)
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+	cd ${WRKSRC} && ${SETENV} ${QMAKE_ENV} \
 		${QMAKE} ${QMAKE_ARGS} USE_UPNP=${QMAKE_USE_UPNP} USE_QRCODE=${QMAKE_USE_QRCODE} \
 		QMAKE_LRELEASE=${LRELEASE} INCLUDEPATH=${BDB_INCLUDE_DIR} \
 		QMAKE_LIBDIR+=${BDB_LIB_DIR} dogecoin-qt.pro
@@ -88,9 +94,11 @@ do-configure:
 do-install:
 	@${MKDIR} ${PREFIX}/bin
 .if ${PORT_OPTIONS:MGUI} && !defined(WITHOUT_X11)
-	${INSTALL_PROGRAM} ${WRKSRC}/${BINARY} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${BINARY} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL} ${WRKDIR}/dogecoin-qt.desktop ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL} ${WRKSRC}/src/qt/res/icons/bitcoin.png ${STAGEDIR}${PREFIX}/share/pixmaps/dogecoin64.png
 .else
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${BINARY} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${BINARY} ${STAGEDIR}${PREFIX}/bin/
 .endif
 
 .include <bsd.port.post.mk>

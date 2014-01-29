@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool for GIF89a transparent option and interlace mode
+COMMENT=	Tool for GIF89a transparent option and interlace mode
 
 NO_CDROM=	Shareware
 
@@ -25,24 +25,12 @@ MALLOCSIZE_DESC=	Improve malloc size
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	COPYRIGHT README
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MRETVALUE}
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aa
-.endif
-.if ${PORT_OPTIONS:MMALLOCSIZE}
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ab
-.endif
+RETVALUE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aa
+MALLOCSIZE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ab
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/giftool ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/giftool ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

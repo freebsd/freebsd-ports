@@ -15,6 +15,5 @@ LICENSE_FILE=${WRKSRC}/License.txt
 XPI_ID=		vimperator@mozdev.org
 XPI_NUM=	4891
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

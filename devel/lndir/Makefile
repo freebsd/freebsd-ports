@@ -11,9 +11,7 @@ COMMENT=	Create a shadow directory of symbolic links to another directory tree
 XORG_CAT=	util
 USE_XORG=	xproto
 
-PLIST_FILES=	bin/lndir
+PLIST_FILES=	bin/lndir \
+		man/man1/lndir.1.gz
 
-MAN1=		lndir.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

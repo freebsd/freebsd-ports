@@ -45,8 +45,6 @@ MYODBC=		iodbc
 MYODBC=		unixodbc
 .endif
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e '/my $$myodbc/ s|q{}|"${MYODBC}"|' ${WRKSRC}/Makefile.PL
 
@@ -64,4 +62,4 @@ post-install:
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

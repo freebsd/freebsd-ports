@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 
 USES=		gmake pathfix pkgconfig
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_BZIP2=	yes
 USE_GNOME=	pygobject
 USE_GSTREAMER=	yes

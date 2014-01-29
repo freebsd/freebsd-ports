@@ -1,0 +1,58 @@
+#!/bin/sh
+
+calc=`basename $0`
+
+if [ "${calc}" != "hp50g" -a "${calc}" != "hp49g+" ]; then
+	echo "Invalid calculator name"
+	exit 1
+fi
+
+if [ "$1" ]; then
+	cname="$1"
+else
+	cname="${calc}"
+fi
+
+bdir="${HOME}/.x49gp"
+sdir="${bdir}/${cname}"
+
+datadir="%%DATADIR%%"
+
+# Copy datafiles if we don't have any
+
+if [ ! -d "${bdir}" ]; then
+	mkdir "${bdir}" || exit 1
+fi
+
+if [ ! -d "${sdir}" ]; then
+	echo "Creating new calculator..."
+
+	mkdir "${sdir}" || exit 1
+
+	cp "${datadir}/config-${calc}" "${sdir}/config"
+
+	if [ "${calc}" = "hp50g" ]; then
+		cp "${datadir}/flash-50g" "${sdir}/"
+
+		if [ "`uname  -p`" = "amd64" ]; then
+			cp "${datadir}/hp50g-hack.png" "${sdir}/hp50g.png"
+		else
+			cp "${datadir}/hp50g.png" "${sdir}/"
+		fi
+	else
+		cp "${datadir}/flash-49g+" "${sdir}/"
+		cp "${datadir}/hp49g+.png" "${sdir}/"
+	fi
+
+	cp "${datadir}/sram"           "${sdir}/"
+	cp "${datadir}/s3c2410-sram"   "${sdir}/"
+
+	if [ -f "${datadir}/sdcard64.tar.gz" -a ! -f "${bdir}/sdcard" ]; then
+		tar -C "${bdir}" -xzf "${datadir}/sdcard64.tar.gz"
+	fi
+
+	chmod -R u+rw "${sdir}"
+fi
+
+cd "${sdir}" \
+	&& x49gp-bin config

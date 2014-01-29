@@ -1310,6 +1310,7 @@ WITH_DEBUG=	yes
 # Reset value from bsd.own.mk.
 .if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
 STRIP=	#none
+MAKE_ENV+=	DONTSTRIP=yes
 .endif
 
 .include "${PORTSDIR}/Mk/bsd.options.mk"
@@ -1701,9 +1702,6 @@ EXTRACT_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
 .if defined(USE_ZIP)
 EXTRACT_DEPENDS+=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 .endif
-.if defined(USE_XZ) && ( (${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || ${OSVERSION} < 800505 )
-EXTRACT_DEPENDS+=	${LOCALBASE}/bin/xz:${PORTSDIR}/archivers/xz
-.endif
 .if defined(USE_MAKESELF)
 EXTRACT_DEPENDS+=	unmakeself:${PORTSDIR}/archivers/unmakeself
 .endif
@@ -1824,6 +1822,13 @@ RUN_DEPENDS+=	${_GL_${_component}_RUN_DEPENDS}
 
 .if !defined(NO_STAGE)
 .include "${PORTSDIR}/Mk/bsd.stage.mk"
+.else
+# Ignore STAGEDIR if set from make.conf
+.undef STAGEDIR
+# From command line it is impossible to undefined so we must raise an error
+.if defined(STAGEDIR)
+IGNORE=	Do not define STAGEDIR in command line
+.endif
 .endif
 
 .if defined(WITH_PKGNG)
@@ -2776,6 +2781,7 @@ CONFIGURE_FAIL_MESSAGE?=	"Please report the problem to ${MAINTAINER} [maintainer
 CONFIGURE_MAX_CMD_LEN!=	${SYSCTL} -n kern.argmax
 .endif
 GNU_CONFIGURE_PREFIX?=	${PREFIX}
+GNU_CONFIGURE_MANPREFIX?=	${MANPREFIX}
 CONFIG_SITE?=		${PORTSDIR}/Templates/config.site
 CONFIGURE_ARGS+=	--prefix=${GNU_CONFIGURE_PREFIX} $${_LATE_CONFIGURE_ARGS}
 CONFIGURE_ENV+=		CONFIG_SITE=${CONFIG_SITE} lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
@@ -2784,10 +2790,10 @@ HAS_CONFIGURE=		yes
 SET_LATE_CONFIGURE_ARGS= \
      _LATE_CONFIGURE_ARGS="" ; \
 	if [ ! -z "`./${CONFIGURE_SCRIPT} --help 2>&1 | ${GREP} -- '--mandir'`" ]; then \
-	    _LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --mandir=${MANPREFIX}/man" ; \
+	    _LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --mandir=${GNU_CONFIGURE_MANPREFIX}/man" ; \
 	fi ; \
 	if [ ! -z "`./${CONFIGURE_SCRIPT} --help 2>&1 | ${GREP} -- '--infodir'`" ]; then \
-	    _LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --infodir=${PREFIX}/${INFO_PATH}/${INFO_SUBDIR}" ; \
+	    _LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --infodir=${GNU_CONFIGURE_PREFIX}/${INFO_PATH}/${INFO_SUBDIR}" ; \
 	fi ; \
 	if [ -z "`./${CONFIGURE_SCRIPT} --version 2>&1 | ${EGREP} -i '(autoconf.*2\.13|Unrecognized option)'`" ]; then \
 		_LATE_CONFIGURE_ARGS="$${_LATE_CONFIGURE_ARGS} --build=${CONFIGURE_TARGET}" ; \
@@ -3619,10 +3625,10 @@ do-configure:
 .endif
 
 # Build
-
+# XXX: ${MAKE_ARGS:N${DESTDIRNAME}=*} would be easier but it is not valid with the old fmake
 .if !target(do-build)
 do-build:
-	@(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}; then \
+	@(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS:C,^${DESTDIRNAME}=.*,,g} ${ALL_TARGET}; then \
 		if [ -n "${BUILD_FAIL_MESSAGE}" ] ; then \
 			${ECHO_MSG} "===> Compilation failed unexpectedly."; \
 			(${ECHO_CMD} "${BUILD_FAIL_MESSAGE}") | ${FMT} 75 79 ; \
@@ -4786,11 +4792,14 @@ pre-repackage:
 
 .if !target(package-noinstall)
 package-noinstall:
+.if defined(NO_STAGE)
 	@${MKDIR} ${WRKDIR}
-	@cd ${.CURDIR} && ${MAKE} pre-package \
-		pre-package-script do-package post-package-script
+	@cd ${.CURDIR} && ${MAKE} ${_PACKAGE_REAL_SEQ}
 	@${RM} -f ${TMPPLIST}
 	-@${RMDIR} ${WRKDIR}
+.else
+	@cd ${.CURDIR} && ${MAKE} package
+.endif
 .endif
 
 ################################################################
@@ -5351,7 +5360,7 @@ actual-package-depends:
 
 package-recursive: package
 	@for dir in $$(${ALL-DEPENDS-LIST}); do \
-		(cd $$dir; ${MAKE} package clean); \
+		(cd $$dir; ${MAKE} package-noinstall); \
 	done
 
 # Show missing dependencies
@@ -6438,7 +6447,8 @@ _PATCH_SEQ=		ask-license patch-message patch-depends pathfix-pre-patch dos2unix 
 _CONFIGURE_DEP=	patch
 _CONFIGURE_SEQ=	build-depends lib-depends configure-message run-autotools-fixup \
 				configure-autotools pre-configure pre-configure-script \
-				run-autotools do-configure post-configure post-configure-script
+				run-autotools patch-libtool do-configure post-configure \
+				post-configure-script
 _BUILD_DEP=		configure
 _BUILD_SEQ=		build-message pre-build pre-build-script do-build \
 				post-build post-build-script
@@ -6450,19 +6460,20 @@ _STAGE_SEQ=		stage-message stage-dir run-depends lib-depends apply-slist pre-ins
 .if defined(NEED_ROOT)
 _STAGE_SUSEQ=	create-users-groups do-install desktop-file-post-install kmod-post-install \
 				shared-mime-post-install webplugin-post-install \
-				post-install post-install-script post-stage compress-man \
+				post-install post-install-script move-uniquefiles post-stage compress-man \
 				install-rc-script install-ldconfig-file install-license \
 				install-desktop-entries add-plist-info add-plist-docs add-plist-examples \
-				add-plist-data add-plist-post fix-plist-sequence
+				add-plist-data add-plist-post move-uniquefiles-plist fix-plist-sequence
 .if defined(DEVELOPER)
 _STAGE_SUSEQ+=	stage-qa
 .endif
 .else
 _STAGE_SEQ+=	create-users-groups do-install desktop-file-post-install kmod-post-install \
 				shared-mime-post-install webplugin-post-install post-install post-install-script \
-				post-stage compress-man install-rc-script install-ldconfig-file install-license \
-				install-desktop-entries add-plist-info add-plist-docs add-plist-examples \
-				add-plist-data add-plist-post fix-plist-sequence
+				move-uniquefiles post-stage compress-man install-rc-script install-ldconfig-file \
+				install-license install-desktop-entries add-plist-info add-plist-docs \
+				add-plist-examples add-plist-data add-plist-post move-uniquefiles-plist \
+				fix-plist-sequence
 .if defined(DEVELOPER)
 _STAGE_SEQ+=	stage-qa
 .endif

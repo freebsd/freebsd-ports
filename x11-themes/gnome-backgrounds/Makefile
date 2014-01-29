@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/x11-themes/gnome-backgrounds/Makefile 18610 2013-06-30 16:33:05Z marcus $
+#   $MCom: ports/trunk/x11-themes/gnome-backgrounds/Makefile 18972 2014-01-16 21:18:10Z kwm $
 
 PORTNAME=	gnome-backgrounds
 PORTVERSION=	3.6.1
@@ -11,7 +11,6 @@ DIST_SUBDIR=	gnome3
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Collection of backgrounds for GNOME
 
-NO_STAGE=	yes
 USE_XZ=		yes
 USES=		gettext gmake pathfix
 GNU_CONFIGURE=	yes

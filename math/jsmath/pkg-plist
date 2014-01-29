@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%WWWDIR%%/blank.gif
 %%WWWDIR%%/easy/load.js
 %%WWWDIR%%/extensions/AMSmath.js

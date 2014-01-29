@@ -7,6 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://download:download@download.hugelaser.com/aeons.poweredbylasers.com/${PORTNAME}/ \
 		http://freebsd.nsu.ru/distfiles/ LOCAL/danfe
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Advanced HTML statistics generator for various games
@@ -14,8 +15,6 @@ COMMENT=	Advanced HTML statistics generator for various games
 NO_CDROM=	Commercial use is prohibited
 
 ONLY_FOR_ARCHS=	i386
-
-USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Linux-o
 LINUXBINDIR=	${WRKSRC}/../Linux-Bin
@@ -30,8 +29,7 @@ post-extract: .SILENT
 
 # This port is special.  Author does not distribute source code, but gives
 # us Linux .o files instead.  With some hacking, we can build native FreeBSD
-# executables from those .o files.  Pretty neat, huh?  :-)
-#
+# executables from those .o files.
 pre-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} -c fbsd_stub.c
 	${OBJCOPY} --redefine-sym stdout=__stdoutp ${WRKSRC}/aespages.o

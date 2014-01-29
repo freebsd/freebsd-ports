@@ -1,17 +1,16 @@
 # $FreeBSD$
 
 PORTNAME=	ldap-account-manager
-PORTVERSION=	4.3
+PORTVERSION=	4.4
 PORTREVISION=	1
 CATEGORIES=	sysutils www
 MASTER_SITES=	SF/${SHORTNAME}/LAM/${PORTVERSION}
-
-USE_BZIP2=	yes
 
 MAINTAINER=	basil@vpm.net.ua
 COMMENT=	Webfrontend for managing accounts stored in an OpenLDAP server
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	p5-Quota>=0:${PORTSDIR}/sysutils/p5-Quota \
 		p5-perl-ldap>=0:${PORTSDIR}/net/p5-perl-ldap
@@ -19,41 +18,47 @@ RUN_DEPENDS=	p5-Quota>=0:${PORTSDIR}/sysutils/p5-Quota \
 NO_BUILD=	yes
 USES=		gettext perl5
 USE_PHP=	gettext hash iconv ldap mcrypt pcre session simplexml spl xml json zip openssl
+USE_BZIP2=	yes
 WANT_PHP_WEB=	yes
-DEFAULT_PHP_VER=	5
 
 SHORTNAME=	lam
 PORTDOCS=	docs HISTORY README copyright
-LAMDATA=	config graphics help lib locale sess style templates tmp VERSION index.html
-WWWDIR?=	${PREFIX}/www/${SHORTNAME}
-PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
+LAMDATA=	config graphics help lib locale sess style templates tmp VERSION index.html .htaccess
+WWWDIR=		${PREFIX}/www/${SHORTNAME}
 SUB_FILES=	pkg-message
+CONFIGS=	config.cfg lam.conf
+WRITEABLES=	config sess tmp
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
-	-@${MKDIR} ${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${LAMDATA}" ${WWWDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	-@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${DOCSDIR}
+	@${ECHO_CMD} '@unexec if [ -f %D/${WWWDIR_REL}/config/shells ]; then ${RM} -f %D/${WWWDIR_REL}/config/shells; fi' >> ${TMPPLIST}
+.for CONFIG in ${CONFIGS}
+	@${ECHO_CMD} '@unexec if cmp -s %D/${WWWDIR_REL}/config/${CONFIG}_sample %D/${WWWDIR_REL}/config/${CONFIG}; then ${RM} -f %D/${WWWDIR_REL}/config/${CONFIG}; fi' >> ${TMPPLIST}
+.endfor
+.for I in ${LAMDATA}
+	@${FIND} -s ${WRKSRC}/${I} -type f -not -name '${CONFIGS}'| ${SED} -e 's,^${WRKSRC},${WWWDIR_REL},' >> ${TMPPLIST}
+	@${FIND} -ds ${WRKSRC}/${I} -type d | ${SED} -e 's,^${WRKSRC},@dirrm ${WWWDIR_REL},' >> ${TMPPLIST}
+.endfor
+	@${ECHO_CMD} '@dirrm ${WWWDIR_REL}' >> ${TMPPLIST}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${LAMDATA}" ${STAGEDIR}${WWWDIR}
+.for CONFIG in ${CONFIGS}
+	@${ECHO_CMD} '@exec if [ ! -f %D/${WWWDIR_REL}/config/${CONFIG} ]; then ${CP} %D/${WWWDIR_REL}/config/${CONFIG}_sample %D/${WWWDIR_REL}/config/${CONFIG}; ${CHOWN} ${WWWOWN} %D/${WWWDIR_REL}/config/${CONFIG}; fi' >> ${TMPPLIST}
+.if !exists(${STAGEDIR}${WWWDIR}/config/${CONFIG})
+	@${CP} ${STAGEDIR}${WWWDIR}/config/${CONFIG}_sample ${STAGEDIR}${WWWDIR}/config/${CONFIG}
 .endif
-
-post-install:
-	@${MKDIR} ${WWWDIR}/config/pdf
-	@${MKDIR} ${WWWDIR}/config/profiles
-	@if [ ! -f ${WWWDIR}/config/config.cfg ]; then \
-	    ${CP} -p ${WWWDIR}/config/config.cfg_sample ${WWWDIR}/config/config.cfg ; \
-	fi
-	@if [ ! -f ${WWWDIR}/config/lam.conf ]; then \
-	    ${CP} -p ${WWWDIR}/config/lam.conf_sample ${WWWDIR}/config/lam.conf ; \
-	fi
-	@${FIND} ${WWWDIR} -type f -exec ${CHMOD} 644 {} \;
-	@${FIND} ${WWWDIR} -type d -exec ${CHMOD} 755 {} \;
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/config ${WWWDIR}/sess ${WWWDIR}/tmp
-	@${CHMOD} 755 ${WWWDIR}/lib/lamdaemon.pl
-	@${LN} -sf /etc/shells ${WWWDIR}/config/shells
-	@${CAT} ${PKGMESSAGE}
+.endfor
+.for DIR in ${WRITEABLES}
+	@${CHOWN} -R ${WWWOWN} ${STAGEDIR}${WWWDIR}/${DIR}
+	@${CHMOD} -R u+w ${STAGEDIR}${WWWDIR}/${DIR}
+	@${CHMOD} u+x ${STAGEDIR}${WWWDIR}/lib/lamdaemon.pl
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN} %D/${WWWDIR_REL}/${DIR}' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec ${CHMOD} -R u+w %D/${WWWDIR_REL}/${DIR}' >> ${TMPPLIST}
+	@${ECHO_CMD} '@exec ${CHMOD} u+x %D/${WWWDIR_REL}/lib/lamdaemon.pl' >> ${TMPPLIST}
+.endfor
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

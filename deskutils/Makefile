@@ -238,6 +238,7 @@
     SUBDIR += systempreferences
     SUBDIR += tagutils
     SUBDIR += taskcoach
+    SUBDIR += taskd
     SUBDIR += taskwarrior
     SUBDIR += teapot
     SUBDIR += tel

@@ -12,7 +12,7 @@ COMMENT=	Generic test automation framework
 
 LICENSE=	APACHE20
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes
 

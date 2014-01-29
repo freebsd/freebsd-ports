@@ -10,7 +10,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Graphical tool for solving differential equations, etc
 
-MAN1=		xppaut.1
 USE_XORG=	xbitmaps x11 xproto
 CFLAGS+=	-w -Wno-return-type
 WRKSRC=		${WRKDIR}
@@ -23,5 +22,4 @@ MAKE_ENV+=	NOPORTDOCS=yes
 MAKE_ENV+=	NOPORTEXAMPLES=yes
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

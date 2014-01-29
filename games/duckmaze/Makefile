@@ -28,8 +28,8 @@ PORTDOCS=	TODO.txt index.html style.css
 
 SUB_FILES=	${PORTNAME}.sh
 
-DESKTOP_ENTRIES="duckmaze" "${COMMENT}" "${PORTNAME}" \
-		"${PORTNAME}" "Game;ArcadeGame;" false
+DESKTOP_ENTRIES="duckmaze" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 post-extract:
 	${MV} ${WRKSRC}/doc/*.png ${WRKSRC}/images/
@@ -39,15 +39,21 @@ do-build:
 	@${PYTHON_CMD} -O -m compileall ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "images levels mopelib music sounds" ${STAGEDIR}${DATADIR})
+	@${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|' \
+		${WRKDIR}/${PORTNAME}.sh
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+.for d in images levels mopelib music sounds
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${STAGEDIR}${DATADIR})
+.endfor
 .for d in *.py *.pyc *.pyo
 	${INSTALL_SCRIPT} ${WRKSRC}/${d} ${STAGEDIR}${DATADIR}
 .endfor
 .for d in duckmazerc.txt version
 	${INSTALL_DATA} ${WRKSRC}/${d} ${STAGEDIR}${DATADIR}
 .endfor
-	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}

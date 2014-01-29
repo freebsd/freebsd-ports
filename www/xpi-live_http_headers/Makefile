@@ -34,7 +34,6 @@ XPI_DIRS=	chrome/icons/default \
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(js|rdf|txt)
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -exec ${RM} \{} \;
 

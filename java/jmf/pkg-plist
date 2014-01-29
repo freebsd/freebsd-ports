@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/jmfcustomizer
 bin/jmfinit
 bin/jmfregistry

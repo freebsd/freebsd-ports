@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DATADIR%%/bin/ApacheJMeter.jar
 %%DATADIR%%/bin/BeanShellAssertion.bshrc
 %%DATADIR%%/bin/BeanShellFunction.bshrc

@@ -14,7 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-schemas \
-		git>=1.7.0.2:${PORTSDIR}/devel/git
+		git:${PORTSDIR}/devel/git
+
+CONFLICTS=	gitg0-[0-9]*
 
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
@@ -27,7 +29,7 @@ USES=		gettext gmake pkgconfig pathfix
 INSTALLS_ICONS=	yes
 GLIB_SCHEMAS=	org.gnome.gitg.gschema.xml
 
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

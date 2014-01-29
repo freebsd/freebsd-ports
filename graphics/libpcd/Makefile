@@ -8,13 +8,12 @@ MASTER_SITES=	http://www.kraxel.org/releases/libpcd/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A library for reading PhotoCD images
+COMMENT=	Library for reading PhotoCD images
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
-USE_GMAKE=	yes
-MAKEFILE=	${WRKSRC}/GNUmakefile
+USES=		gmake
+MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/bg5pdf
 bin/gbpdf
 %%PYTHON_SITELIBDIR%%/bg5pdflib.so

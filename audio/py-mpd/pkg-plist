@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/mpd.py
 %%PYTHON_SITELIBDIR%%/mpd.pyc
 %%PYTHON_SITELIBDIR%%/mpd.pyo

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/google/protobuf/descriptor.h:${PORTSDIR}/dev
  		${NONEXISTENT}:${PORTSDIR}/${_MYSQL_SERVER}:configure \
 		bison:${PORTSDIR}/devel/bison \
 		cmake:${PORTSDIR}/devel/cmake
-LIB_DEPENDS=	protobuf:${PORTSDIR}/devel/protobuf
+LIB_DEPENDS=	libprotobuf.so:${PORTSDIR}/devel/protobuf
 
 GITVERSION=	3a0cb51
 
@@ -28,7 +28,7 @@ IGNORE_WITH_MYSQL=	50
 
 MYSQL_WRKSRC=	$$(cd ${PORTSDIR}/${_MYSQL_SERVER} && ${MAKE} -V WRKSRC)
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 USE_LDCONFIG=	${PREFIX}/lib/mysql/plugin
@@ -43,20 +43,12 @@ CONFIGURE_ARGS+=	\
 CFLAGS+=	-I${LOCALBASE}/include/mysql
 
 SUB_FILES=	pkg-message
-.if !defined(NOPORTDOCS)
 PORTDOCS=	NEWS TODO README
-.endif
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDATA)
-	@${MKDIR} ${DATADIR}
-	@${INSTALL} ${WRKSRC}/default_tables.sql ${DATADIR}
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${DOCSDIR}
-.endif
-	@${CAT} ${WRKDIR}/pkg-message
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${INSTALL} ${WRKSRC}/default_tables.sql ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

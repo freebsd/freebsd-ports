@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/kpseaccess
 bin/kpsereadlink
 bin/kpsestat

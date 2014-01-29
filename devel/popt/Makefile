@@ -9,6 +9,8 @@ MASTER_SITES=	http://rpm5.org/files/popt/
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	A getopt(3) like library with a number of enhancements, from Redhat
 
+OPTIONS_DEFINE=	NLS
+
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
 		--program-prefix=""
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -18,18 +20,8 @@ USE_AUTOTOOLS=	libtool
 USES=		pathfix iconv
 USE_LDCONFIG=	yes
 
-MAN3=		popt.3
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-CONFIGURE_ARGS+=--enable-nls
-PLIST_SUB+=	NLS=""
-USES+=		gettext
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext
+OPTIONS_SUB=	yes
 
 .include <bsd.port.mk>

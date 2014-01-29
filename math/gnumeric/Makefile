@@ -23,7 +23,7 @@ USE_XZ=		yes
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
 		shared-mime-info shebangfix
 USE_GNOME=	gnomehier gnomeprefix intlhack libgsf pygobject3
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes

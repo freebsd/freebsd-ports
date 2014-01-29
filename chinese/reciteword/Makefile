@@ -14,6 +14,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2:src \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Education software to help people to study English
 
+LIB_DEPENDS=	libespeak.so:${PORTSDIR}/audio/espeak
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 USE_BZIP2=	yes
@@ -23,24 +25,13 @@ CPPFLAGS+=	"-I${LOCALBASE}/include"
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README TODO readme.txt
 
-XTRACT_AFTER_ARGS+=	--exclude CVS
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-LIB_DEPENDS+=	libespeak.so:${PORTSDIR}/audio/espeak
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|' ${WRKSRC}/src/readword.cpp
 
 post-install:
-	@${MKDIR} ${DATADIR}
-	(cd ${WRKDIR}/ && ${COPYTREE_SHARE} "books dicts" ${DATADIR})
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKDIR} && ${COPYTREE_SHARE} "books dicts" ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -16,7 +16,7 @@ LIB_DEPENDS=	libexiv2.so:${PORTSDIR}/graphics/exiv2\
 		libboost_python.so:${PORTSDIR}/devel/boost-python-libs
 
 USES=		gmake
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_BZIP2=	yes
 USE_SCONS=	yes
 USE_LDCONFIG=	yes

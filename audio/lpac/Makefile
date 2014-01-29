@@ -14,11 +14,10 @@ ONLY_FOR_ARCHS=	amd64 i386
 NO_CDROM=	No commercial use
 NO_BUILD=	yes
 USE_LINUX=	yes
-NO_STAGE=	yes
 PLIST_FILES=	bin/lpac
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKDIR}/lpac ${PREFIX}/bin/
-	@${BRANDELF} -t Linux ${PREFIX}/bin/lpac
+	${BRANDELF} -t Linux ${WRKDIR}/lpac
+	${INSTALL_PROGRAM} ${WRKDIR}/lpac ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

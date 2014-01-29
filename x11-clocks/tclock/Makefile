@@ -15,11 +15,9 @@ COMMENT=	Transparent analog clock for x11
 NO_WRKSUBDIR=	yes
 USES=		imake
 USE_XORG=	x11 xext
-MAN1=		tclock.1
-PLIST_FILES=	bin/tclock
+PLIST_FILES=	bin/tclock man/man1/${PORTNAME}.1.gz
 
 LICENSE=	GPLv1
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

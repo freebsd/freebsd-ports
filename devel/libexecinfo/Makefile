@@ -9,8 +9,11 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	itetcu
 
 MAINTAINER=	itetcu@FreeBSD.org
-COMMENT=	A library for inspecting program's backtrace
+COMMENT=	Library for inspecting program's backtrace
 
+OPTIONS_DEFINE=	DOCS
+
+USES=		uidfix
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 MAKE_FLAGS=	LIBDIR=${PREFIX}/lib \
@@ -18,17 +21,10 @@ MAKE_FLAGS=	LIBDIR=${PREFIX}/lib \
 
 PORTDOCS=	README
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-CFLAGS+=	-fno-omit-frame-pointer
-.endif
+CFLAGS_amd64=	-fno-omit-frame-pointer
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- configure.in.orig	2010-03-09 19:39:59.000000000 +0100
-+++ configure.in	2010-04-07 20:18:58.585012048 +0200
+--- ./configure.in.orig	2013-08-30 19:46:14.000000000 +0200
++++ ./configure.in	2014-01-14 13:57:06.000000000 +0100
 @@ -6,7 +6,6 @@
  
  AC_INIT(base/nagios.c)
@@ -7,7 +7,7 @@
 -AC_PREFIX_DEFAULT(/usr/local/nagios)
  
  PKG_NAME=nagios
- PKG_VERSION="3.2.1"
+ PKG_VERSION="3.5.1"
 @@ -125,7 +124,15 @@
  dnl Test for pthreads support - taken from ICU FreeBSD Port configure script
  THREADLIBS=""

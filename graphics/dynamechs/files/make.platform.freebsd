@@ -2,7 +2,7 @@ CXXFLAGS += -D_BOOL -c -fPIC -I/$(OPENGLINCDIR)
 # -pthreads
 DEPENDFLAGS := $(CXXFLAGS)
 
-LDFLAGS += -fPIC -L/$(OPENGLLIBDIR) -L${LOCALBASE}/lib -lX11 -lm -l$(MESA)GLU -l$(MESA)GL
+LDFLAGS += -pthread -fPIC -L/$(OPENGLLIBDIR) -L${LOCALBASE}/lib -lX11 -lm -l$(MESA)GLU -l$(MESA)GL
 LDGLUT := -lglut
 
 # CXX := c++

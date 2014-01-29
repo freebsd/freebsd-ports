@@ -497,7 +497,6 @@
     SUBDIR += pine-pgp-filters
     SUBDIR += pm-lib
     SUBDIR += policyd2
-    SUBDIR += pop-before-smtp
     SUBDIR += pop3gwd
     SUBDIR += pop3lite
     SUBDIR += pop3proxy
@@ -522,6 +521,7 @@
     SUBDIR += postfix-policyd-spf-python
     SUBDIR += postfix-policyd-weight
     SUBDIR += postfix-postfwd
+    SUBDIR += postfix210
     SUBDIR += postfix27
     SUBDIR += postfix28
     SUBDIR += postfix29

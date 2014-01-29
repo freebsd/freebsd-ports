@@ -31,6 +31,7 @@ share/locale/zh_CN/LC_MESSAGES/manaplus.mo
 %%DATADIR%%/data/fonts/liberationsansmono.ttf
 %%DATADIR%%/data/fonts/mplus-1p-bold.ttf
 %%DATADIR%%/data/fonts/mplus-1p-regular.ttf
+%%DATADIR%%/data/fonts/wqy-microhei.ttf
 %%DATADIR%%/data/graphics/flags/cn.png
 %%DATADIR%%/data/graphics/flags/cz.png
 %%DATADIR%%/data/graphics/flags/de.png

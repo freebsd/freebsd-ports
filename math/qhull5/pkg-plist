@@ -18,6 +18,8 @@ lib/libqhull.a
 lib/libqhull.la
 lib/libqhull.so
 lib/libqhull.so.5
+%%PORTDOCS%%man/man1/qhull.1.gz
+%%PORTDOCS%%man/man1/rbox.1.gz
 @comment These doc files must be ditributed even with NOPORTDOCS
 %%DOCSDIR%%/Announce.txt
 %%DOCSDIR%%/COPYING.txt

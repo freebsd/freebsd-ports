@@ -1,51 +1,54 @@
 # Created by: Harald Wille <harald.wille@students.jku.at>
 # $FreeBSD$
 
-PORTNAME=		wmweather+
-PORTVERSION=		2.13
-PORTREVISION=	1
-CATEGORIES=		misc windowmaker geography
-MASTER_SITES=		SF/wmweatherplus/wmweather%2B/
-DISTNAME=		wmweather%2B-${PORTVERSION}
+PORTNAME=	wmweather+
+PORTVERSION=	2.15
+CATEGORIES=	misc windowmaker geography
+MASTER_SITES=	SF/wmweatherplus/wmweather%2B/ \
+		SF/nemysisfreebsdp/misc/:icons
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}.png:icons
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Displays current conditions and forecasts with icons and text
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		pcre:${PORTSDIR}/devel/pcre \
-		tiff:${PORTSDIR}/graphics/tiff \
-		Hermes:${PORTSDIR}/graphics/Hermes \
-		png15:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		gif:${PORTSDIR}/graphics/giflib
+LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libHermes.so:${PORTSDIR}/graphics/Hermes \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libgif.so:${PORTSDIR}/graphics/giflib
 
 WRKSRC=		${WRKDIR}/wmweather+-${PORTVERSION}
 
-GNU_CONFIGURE=	yes
 USES=		iconv
 USE_XORG=	xpm
-
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libwraster=${LOCALBASE} \
 			--with-libpcre=${LOCALBASE} \
 			--with-libcurl=${LOCALBASE} \
 			--with-xpm-includes=${LOCALBASE} \
 			--with-xpm-libraries=${LOCALBASE}
 
-PORTEXAMPLES=	HINTS example.conf
-PORTDOCS=	ChangeLog README
-
 SUB_FILES=	pkg-message
+
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz \
+		share/pixmaps/${PORTNAME}.png
+
+PORTDOCS=	ChangeLog README
+PORTEXAMPLES=	HINTS example.conf
 
 OPTIONS_DEFINE=	DOCS EXAMPLES WM
 WM_DESC=	Depend on Window Maker port (otherwise only libwraster)
 
-MAN1=		wmweather+.1
+DESKTOP_ENTRIES="${PORTNAME}" "" "${PORTNAME}" \
+		"${PORTNAME}" "System;Monitor;" ""
 
-PLIST_FILES=	bin/wmweather+
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MWM}
@@ -55,27 +58,24 @@ LIB_DEPENDS+=	wraster:${PORTSDIR}/x11-wm/libwraster
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|void usage(int i) __THROW __attribute__ ((__noreturn__));|void usage(int i);|' \
-		${WRKSRC}/wmweather+.c
+	@${REINPLACE_CMD} -e 's| __THROW __attribute__ ((__noreturn__))|| ; \
+		s|http://www.nws.noaa.gov/tg/siteloc.shtml|http://www.nws.noaa.gov/tg/siteloc.php|' \
+		${WRKSRC}/${PORTNAME}.c
+	@${REINPLACE_CMD} -e \
+		's|http://www.nws.noaa.gov/tg/siteloc.shtml|http://www.nws.noaa.gov/tg/siteloc.php|' \
+		${WRKSRC}/${PORTNAME}.1.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/HINTS ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/example.conf ${EXAMPLESDIR}
-.endif
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

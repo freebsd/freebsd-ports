@@ -12,10 +12,8 @@ COMMENT=	Afterstep clock with some timezone extensions
 
 USES=		imake
 USE_XORG=	xpm
-MAN1=		astzclock.1
-PLIST_FILES=	bin/astzclock
+PLIST_FILES=	bin/astzclock man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 pre-configure:
 	(cd ${WRKSRC}; \
 	${ECHO_CMD} ${ASCLOCK_LANG} | ${WRKSRC}/configure > /dev/null)

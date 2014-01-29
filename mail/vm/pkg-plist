@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/base64-decode
 bin/base64-encode
 bin/qp-decode

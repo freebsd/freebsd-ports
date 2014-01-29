@@ -14,12 +14,11 @@ COMMENT=	Plugin to creates Gantt charts for trac
 
 RUN_DEPENDS+=	trac>=0.11:${PORTSDIR}/www/trac
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracGantt
 PLIST_FILES=		%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -28,8 +27,8 @@ PORTDOCS=	PKG-INFO README
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${DOCSDIR}
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" ${STAGEDIR}${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 

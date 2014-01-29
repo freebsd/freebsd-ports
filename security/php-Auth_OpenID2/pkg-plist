@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/consumer/common.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/consumer/finish_auth.php

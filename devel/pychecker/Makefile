@@ -9,16 +9,16 @@ MASTER_SITES=	SF
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Python source code checking tool to help hunting common bugs
 
-USE_PYTHON=		-2.7
+LICENSE=	BSD3CLAUSE
+
+USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
-NO_STAGE=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 DOCS=		ChangeLog COPYRIGHT KNOWN_BUGS MAINTAINERS README TODO VERSION
 
-.if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

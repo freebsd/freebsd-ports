@@ -1,18 +1,11 @@
---- v8/src/platform-posix.h.orig	2013-09-28 19:29:53.000000000 +0200
-+++ v8/src/platform-posix.h	2013-10-11 17:28:41.000000000 +0200
-@@ -40,12 +41,12 @@
- 
- // Used by platform implementation files during OS::DumpBacktrace()
- // and OS::StackWalk().
--template<int (*backtrace)(void**, int),
--         char** (*backtrace_symbols)(void* const*, int)>
-+template<size_t (*backtrace)(void**, size_t),
-+         char** (*backtrace_symbols)(void* const*, size_t)>
- struct POSIXBacktraceHelper {
-   static void DumpBacktrace() {
-     void* trace[100];
--    int size = backtrace(trace, ARRAY_SIZE(trace));
-+    size_t size = backtrace(trace, ARRAY_SIZE((size_t**)trace));
-     char** symbols = backtrace_symbols(trace, size);
-     fprintf(stderr, "\n==== C stack trace ===============================\n\n");
-     if (size == 0) {
+--- v8/src/checks.cc.orig	2014-01-07 21:03:55.000000000 +0100
++++ v8/src/checks.cc	2014-01-08 01:14:20.000000000 +0100
+@@ -41,7 +41,7 @@
+ static V8_INLINE void DumpBacktrace() {
+ #if V8_LIBC_GLIBC || V8_OS_BSD
+   void* trace[100];
+-  int size = backtrace(trace, ARRAY_SIZE(trace));
++  size_t size = backtrace(trace, ARRAY_SIZE((size_t**)trace));
+   char** symbols = backtrace_symbols(trace, size);
+   i::OS::PrintError("\n==== C stack trace ===============================\n\n");
+   if (size == 0) {

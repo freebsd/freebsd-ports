@@ -1,0 +1,11 @@
+--- ./include/locations.h.in.orig	2013-11-25 14:16:25.000000000 +0000
++++ ./include/locations.h.in	2014-01-24 22:40:43.000000000 +0000
+@@ -19,7 +19,7 @@
+ 
+ #define DEFAULT_TEMP_FILE			"@localstatedir@/tempfile"
+ #define DEFAULT_TEMP_PATH                       "/tmp"
+-#define DEFAULT_CHECK_RESULT_PATH		"@localstatedir@/spool/checkresults"
++#define DEFAULT_CHECK_RESULT_PATH		"@localstatedir@/checkresults"
+ #define DEFAULT_STATUS_FILE			"@localstatedir@/status.dat"
+ #define DEFAULT_LOG_FILE			"@localstatedir@/nagios.log"
+ #define DEFAULT_LOG_ARCHIVE_PATH		"@localstatedir@/archives/"

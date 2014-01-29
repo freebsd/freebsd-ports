@@ -1,26 +1,250 @@
-@comment $FreeBSD$
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/dict.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/html.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/html/atom.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/html/charset.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/idna.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/ipv4.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/ipv6.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/netutil.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/proxy.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%/publicsuffix.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/spdy.a
 %%GO_LIBDIR%%/%%GO_PKGNAME%%/websocket.a
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/dict/dict.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/atom/atom.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/atom/atom_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/atom/gen.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/atom/table.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/atom/table_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/charset/charset.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/charset/charset_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/charset/gen.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/charset/table.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/charset/testdata/HTTP-charset.html
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/charset/testdata/HTTP-vs-UTF-8-BOM.html
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/charset/testdata/HTTP-vs-meta-charset.html
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/charset/testdata/HTTP-vs-meta-content.html
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/charset/testdata/No-encoding-declaration.html
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/charset/testdata/README
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/charset/testdata/UTF-16BE-BOM.html
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/charset/testdata/UTF-16LE-BOM.html
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/charset/testdata/UTF-8-BOM-vs-meta-charset.html
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/charset/testdata/UTF-8-BOM-vs-meta-content.html
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/charset/testdata/meta-charset-attribute.html
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/charset/testdata/meta-content-attribute.html
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/const.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/doc.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/doctype.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/entity.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/entity_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/escape.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/escape_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/example_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/foreign.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/node.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/node_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/parse.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/parse_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/render.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/render_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/go1.html
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/README
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/adoption01.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/adoption02.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/comments01.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/doctype01.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/entities01.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/entities02.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/html5test-com.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/inbody01.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/isindex.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/pending-spec-changes-plain-text-unsafe.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/pending-spec-changes.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/plain-text-unsafe.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/scriptdata01.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/scripted/adoption01.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/scripted/webkit01.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tables01.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests1.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests10.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests11.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests12.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests14.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests15.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests16.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests17.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests18.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests19.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests2.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests20.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests21.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests22.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests23.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests24.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests25.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests26.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests3.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests4.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests5.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests6.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests7.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests8.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests9.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tests_innerHTML_1.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/tricky01.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/webkit01.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/webkit02.dat
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/token.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/html/token_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/idna/idna.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/idna/idna_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/idna/punycode.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/idna/punycode_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/control.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/control_bsd.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/control_linux.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/control_plan9.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/control_windows.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/dgramopt_plan9.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/dgramopt_posix.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/doc.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/endpoint.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/example_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/gen.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/genericopt_plan9.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/genericopt_posix.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/gentest.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/header.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/header_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/helper.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/helper_plan9.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/helper_posix.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/helper_unix.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/helper_windows.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/iana.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/iana_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/icmp.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/mockicmp_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/mocktransponder_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/multicast_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/multicastlistener_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/multicastsockopt_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/packet.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/payload.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/sockopt_bsd.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/sockopt_freebsd.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/sockopt_linux.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/sockopt_plan9.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/sockopt_unix.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/sockopt_windows.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/unicast_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4/unicastsockopt_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/control.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/control_rfc2292_unix.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/control_rfc3542_plan9.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/control_rfc3542_unix.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/control_rfc3542_windows.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/control_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/dgramopt_plan9.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/dgramopt_posix.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/doc.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/endpoint.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/gen.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/genericopt_plan9.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/genericopt_posix.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/gentest.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/helper.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/helper_plan9.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/helper_unix.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/helper_windows.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/iana.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/iana_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/icmp.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/icmp_bsd.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/icmp_linux.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/icmp_plan9.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/icmp_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/icmp_windows.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/mockicmp_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/mocktransponder_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/multicast_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/multicastlistener_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/multicastsockopt_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/payload.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/payload_cmsg.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/payload_noncmsg.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/sockopt_rfc2292_unix.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/sockopt_rfc3493_bsd.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/sockopt_rfc3493_linux.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/sockopt_rfc3493_unix.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/sockopt_rfc3493_windows.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/sockopt_rfc3542_plan9.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/sockopt_rfc3542_unix.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/sockopt_rfc3542_windows.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/sockopt_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/sys.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/sys_bsd.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/sys_darwin.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/sys_linux.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/sys_unix.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/sys_windows.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/syscall_linux_386.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/syscall_linux_386.s
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/syscall_nosplit4_linux_386.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/syscall_nosplit7_linux_386.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/syscall_unix.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/unicast_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6/unicastsockopt_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/netutil/listen.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/netutil/listen_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proxy/direct.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proxy/per_host.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proxy/per_host_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proxy/proxy.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proxy/proxy_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/proxy/socks5.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/publicsuffix/gen.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/publicsuffix/list.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/publicsuffix/list_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/publicsuffix/table.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/publicsuffix/table_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/spdy/dictionary.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/spdy/read.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/spdy/spdy_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/spdy/types.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/spdy/write.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/client.go
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/hixie.go
-%%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/hixie_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/exampledial_test.go
+%%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/examplehandler_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/hybi.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/hybi_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/server.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/websocket.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket/websocket_test.go
-@dirrm %%GO_LIBDIR%%/%%GO_PKGNAME%%
-@dirrmtry %%GO_LIBDIR%%/code.google.com/p
-@dirrmtry %%GO_LIBDIR%%/code.google.com
-@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/dict
-@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/spdy
-@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket
-@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%/
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/websocket
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/spdy
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/publicsuffix
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/proxy
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/netutil
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv6
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/ipv4
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/idna
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit/scripted
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata/webkit
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/html/testdata
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/html/charset/testdata
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/html/charset
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/html/atom
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/html
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%/dict
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
 @dirrmtry %%GO_SRCDIR%%/code.google.com/p
 @dirrmtry %%GO_SRCDIR%%/code.google.com
+@dirrmtry %%GO_SRCDIR%%
+@dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%/html
+@dirrmtry %%GO_LIBDIR%%/%%GO_PKGNAME%%
+@dirrmtry %%GO_LIBDIR%%/code.google.com/p
+@dirrmtry %%GO_LIBDIR%%/code.google.com
+@dirrmtry %%GO_LIBDIR%%
+@dirrmtry share/go/pkg
+@dirrmtry share/go

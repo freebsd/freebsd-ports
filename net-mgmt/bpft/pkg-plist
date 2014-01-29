@@ -6,10 +6,14 @@ bin/trafstat
 bin/trafstop
 etc/rc.d/trafd.sh
 etc/traflog.format
+man/man1/traflog.1.gz
+man/man1/trafstat.1.gz
+man/man8/trafd.8.gz
+man/man8/trafstatd.8.gz
 sbin/trafd
 sbin/trafstatd
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/WhatsNew
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry var/bpft
 @dirrmtry var
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

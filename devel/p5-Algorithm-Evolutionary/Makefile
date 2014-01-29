@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Algorithm-Evolutionary
-PORTVERSION=	0.78
+PORTVERSION=	0.79
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,7 @@ BUILD_DEPENDS=	p5-Algorithm-Permute>=0.01:${PORTSDIR}/devel/p5-Algorithm-Permute
 		p5-GD>=2.17:${PORTSDIR}/graphics/p5-GD \
 		p5-Math-Random>=0.63:${PORTSDIR}/math/p5-Math-Random \
 		p5-Object-Array>=0:${PORTSDIR}/devel/p5-Object-Array \
+		p5-Sort-Key>=0:${PORTSDIR}/devel/p5-Sort-Key \
 		p5-Statistics-Basic>=1.6:${PORTSDIR}/math/p5-Statistics-Basic \
 		p5-String-Random>=0:${PORTSDIR}/devel/p5-String-Random \
 		p5-Tree-DAG_Node>=1.04:${PORTSDIR}/devel/p5-Tree-DAG_Node \

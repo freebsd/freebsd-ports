@@ -1,7 +1,7 @@
 bin/cfsndserv
 bin/crossfire-client-gtk2
+man/man6/crossfire-client-gtk2.6.gz
 share/applications/crossfire-client.desktop
-share/pixmaps/crossfire-client.png
 %%DATADIR%%/glade-gtk2/caelestis.glade
 %%DATADIR%%/glade-gtk2/chthonic.glade
 %%DATADIR%%/glade-gtk2/dialogs.glade
@@ -16,6 +16,7 @@ share/pixmaps/crossfire-client.png
 %%DATADIR%%/glade-gtk2/v1-redux.glade
 %%DATADIR%%/themes/Black
 %%DATADIR%%/themes/Standard
-@dirrm %%DATADIR%%/glade-gtk2
-@dirrm %%DATADIR%%/themes
-@dirrm %%DATADIR%%
+share/pixmaps/crossfire-client.png
+@dirrmtry %%DATADIR%%/themes
+@dirrmtry %%DATADIR%%/glade-gtk2
+@dirrmtry %%DATADIR%%

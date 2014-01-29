@@ -12,6 +12,8 @@ EXTRACT_SUFX=	# none
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Emacs/XEmacs major mode for editing C\# source code
 
+LICENSE=	GPLv2
+
 PROJECTHOST=	csharpmode
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
@@ -23,12 +25,12 @@ USE_EMACS=	yes
 
 PLIST_FILES=	${EMACS_SITE_LISPDIR}/csharp-mode.el
 
-NO_STAGE=	yes
 post-patch:
 	@${MV} ${WRKSRC}/csharp-mode-${PORTVERSION}.el ${WRKSRC}/csharp-mode.el
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/csharp-mode.* ${PREFIX}/${EMACS_SITE_LISPDIR}
+	${INSTALL_DATA} ${WRKSRC}/csharp-mode.* \
+		${STAGEDIR}${PREFIX}/${EMACS_SITE_LISPDIR}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

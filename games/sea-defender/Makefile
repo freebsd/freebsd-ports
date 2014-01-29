@@ -3,6 +3,7 @@
 
 PORTNAME=	sea-defender
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/:DEFAULT,icon \
 		SF/nemysisfreebsdp/:icon
@@ -15,7 +16,7 @@ COMMENT=	Simple missile command clone
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libglfw.a:${PORTSDIR}/graphics/glfw
+BUILD_DEPENDS=	${LOCALBASE}/lib/libglfw.a:${PORTSDIR}/graphics/glfw2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	snoutmate

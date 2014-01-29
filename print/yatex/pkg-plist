@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%EMACS_SITE_LISPDIR%%/yatex/comment.el
 %%EMACS_SITE_LISPDIR%%/yatex/yahtml.el
 %%EMACS_SITE_LISPDIR%%/yatex/yatex.el

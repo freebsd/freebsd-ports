@@ -20,22 +20,20 @@ CONFIGURE_ARGS=	--with-perl5="${PERL}" \
 		${ICONV_CONFIGURE_ARG}
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include "${.CURDIR}/Makefile.common"
 
-MAN1=		namazu.1 mknmz.1
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||g' ${WRKSRC}/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.css ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/en
-	${INSTALL_DATA} ${WRKSRC}/doc/en/*.html ${DOCSDIR}/en
-	@${MKDIR} ${DOCSDIR}/ja
-	${INSTALL_DATA} ${WRKSRC}/doc/ja/*.html ${DOCSDIR}/ja
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.css ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/en
+	${INSTALL_DATA} ${WRKSRC}/doc/en/*.html ${STAGEDIR}${DOCSDIR}/en
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/ja
+	${INSTALL_DATA} ${WRKSRC}/doc/ja/*.html ${STAGEDIR}${DOCSDIR}/ja
 .endif
 
 .include <bsd.port.mk>

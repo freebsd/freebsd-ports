@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	manaplus
-PORTVERSION=	1.4.1.4
+PORTVERSION=	1.4.1.18
 CATEGORIES=	games
 MASTER_SITES=	http://download.evolonline.org/manaplus/download/${PORTVERSION}/
 
 MAINTAINER=	mva@FreeBSD.org
-COMMENT=	Free open source 2D MMORPG in development
+COMMENT=	Free open source 2D MMORPG client for athena and evol servers
 
 LICENSE=	GPLv2
 

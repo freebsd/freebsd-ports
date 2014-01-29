@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=		krb5-maint
-PORTVERSION=		1.11.3
-PORTREVISION=		2
+PORTVERSION=		1.11.5
 CATEGORIES=		security
-MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
+MASTER_SITES=		http://web.mit.edu/kerberos/dist/krb5/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 DISTNAME=		krb5-${PORTVERSION}-signed
 EXTRACT_SUFX=		.tar
 
@@ -79,20 +78,20 @@ MAN8=			krb5kdc.8 kadmin.local.8 kdb5_ldap_util.8 kdb5_util.8 \
 CONFIGURE_ARGS+=	--program-transform-name="${PROGRAM_TRANSFORM_NAME}"
 .endif
 
-WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+WRKSRC=			${WRKDIR}/krb5-${PORTVERSION}/src
 
-HTML_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/html
-PDF_DOC_DIR=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc/pdf
+HTML_DOC_DIR=		${WRKDIR}/krb5-${PORTVERSION}/doc/html
+PDF_DOC_DIR=		${WRKDIR}/krb5-${PORTVERSION}/doc/pdf
 
 CONFIGURE_ARGS+=	CPPFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB} -L${LOCALBASE}/include"
 
 post-extract:
-	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz
-	@${RM} ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz ${WRKDIR}/${PORTNAME}-${PORTVERSION}.tar.gz.asc
+	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/krb5-${PORTVERSION}.tar.gz
+	@${RM} ${WRKDIR}/krb5-${PORTVERSION}.tar.gz ${WRKDIR}/krb5-${PORTVERSION}.tar.gz.asc
 .if !defined(EXTRACT_PRESERVE_OWNERSHIP)
 	@if [ `id -u` = 0 ]; then \
-		${CHMOD} -R ug-s,go-w ${WRKDIR}/${PORTNAME}-${PORTVERSION}; \
-		${CHOWN} -R 0:0 ${WRKDIR}/${PORTNAME}-${PORTVERSION}; \
+		${CHMOD} -R ug-s,go-w ${WRKDIR}/krb5-${PORTVERSION}; \
+		${CHOWN} -R 0:0 ${WRKDIR}/krb5-${PORTVERSION}; \
 	fi
 .endif
 

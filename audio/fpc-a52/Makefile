@@ -9,14 +9,15 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Free Pascal interface to a52 library
 
 USE_FPC=	yes
-NO_STAGE=	yes
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR+=	${WRKUNITDIR}
+EXTRACTUNITDIR=	${WRKUNITDIR}
 
 OPTIONS_DEFINE=	LIBA52
-LIBA52_DESC= Install a52 library
+LIBA52_DESC=	Install a52 library
 OPTIONS_DEFAULT=	LIBA52
+
+LIBA52_LIB_DEPENDS=	liba52.so:${PORTSDIR}/audio/liba52
 
 .include "${MASTERDIR}/Makefile"

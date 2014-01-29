@@ -1,27 +1,60 @@
 bin/labplot2
-share/apps/LabPlot/LabPlotui.rc
-share/apps/LabPlot/labplot.png
-share/apps/LabPlot/pics/auto-scale-all.png
-share/apps/LabPlot/pics/auto-scale-x.png
-share/apps/LabPlot/pics/auto-scale-y.png
-share/apps/LabPlot/pics/axis-horizontal.png
-share/apps/LabPlot/pics/axis-vertical.png
-share/apps/LabPlot/pics/editbreaklayout.png
-share/apps/LabPlot/pics/editgrid.png
-share/apps/LabPlot/pics/edithlayout.png
-share/apps/LabPlot/pics/editvlayout.png
-share/apps/LabPlot/pics/shift-down-y.png
-share/apps/LabPlot/pics/shift-left-x.png
-share/apps/LabPlot/pics/shift-right-x.png
-share/apps/LabPlot/pics/shift-up-y.png
-share/apps/LabPlot/pics/x-zoom-in.png
-share/apps/LabPlot/pics/x-zoom-out.png
-share/apps/LabPlot/pics/xy-curve.png
-share/apps/LabPlot/pics/y-zoom-in.png
-share/apps/LabPlot/pics/y-zoom-out.png
-share/apps/LabPlot/pics/zoom-in-x.png
-share/apps/LabPlot/pics/zoom-in-y.png
-share/apps/LabPlot/pics/zoom-out-x.png
-share/apps/LabPlot/pics/zoom-out-y.png
-@dirrm share/apps/LabPlot/pics
-@dirrm share/apps/LabPlot
+share/applications/kde4/LabPlot2.desktop
+share/apps/LabPlot2/LabPlot2ui.rc
+share/apps/LabPlot2/pics/TeX_logo.png
+share/apps/LabPlot2/pics/auto-scale-all.png
+share/apps/LabPlot2/pics/auto-scale-x.png
+share/apps/LabPlot2/pics/auto-scale-y.png
+share/apps/LabPlot2/pics/axis-horizontal.png
+share/apps/LabPlot2/pics/axis-vertical.png
+share/apps/LabPlot2/pics/editbreaklayout.png
+share/apps/LabPlot2/pics/editgrid.png
+share/apps/LabPlot2/pics/edithlayout.png
+share/apps/LabPlot2/pics/editvlayout.png
+share/apps/LabPlot2/pics/shift-down-y.png
+share/apps/LabPlot2/pics/shift-left-x.png
+share/apps/LabPlot2/pics/shift-right-x.png
+share/apps/LabPlot2/pics/shift-up-y.png
+share/apps/LabPlot2/pics/x-zoom-in.png
+share/apps/LabPlot2/pics/x-zoom-out.png
+share/apps/LabPlot2/pics/xy-curve.png
+share/apps/LabPlot2/pics/y-zoom-in.png
+share/apps/LabPlot2/pics/y-zoom-out.png
+share/apps/LabPlot2/pics/zoom-in-x.png
+share/apps/LabPlot2/pics/zoom-in-y.png
+share/apps/LabPlot2/pics/zoom-out-x.png
+share/apps/LabPlot2/pics/zoom-out-y.png
+share/apps/LabPlot2/splash.png
+share/icons/hicolor/128x128/apps/LabPlot2.png
+share/icons/hicolor/22x22/apps/LabPlot2.png
+share/icons/hicolor/256x256/apps/LabPlot2.png
+share/icons/hicolor/32x32/apps/LabPlot2.png
+share/icons/hicolor/48x48/apps/LabPlot2.png
+share/icons/hicolor/512x512/apps/LabPlot2.png
+share/icons/hicolor/64x64/apps/LabPlot2.png
+share/mime/packages/lml.desktop
+@dirrmtry share/mime/packages
+@dirrmtry share/mime
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/512x512/apps
+@dirrmtry share/icons/hicolor/512x512
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/apps/LabPlot2/pics
+@dirrmtry share/apps/LabPlot2
+@dirrmtry share/apps
+@dirrmtry share/applications/kde4
+@dirrmtry share/applications
+@dirrmtry share
+@dirrmtry bin

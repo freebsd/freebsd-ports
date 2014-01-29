@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mod_authnz_crowd
-PORTVERSION=	2.0.2
+PORTVERSION=	2.2.2
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.atlassian.com/software/crowd/downloads/cwdapache/
 DIST_SUBDIR=	apache2

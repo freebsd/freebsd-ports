@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/mapyrus
 %%PORTDOCS%%%%DOCSDIR%%/mapyrus.pdf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/aust_cities.dat

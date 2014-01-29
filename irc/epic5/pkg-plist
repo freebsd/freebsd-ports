@@ -42,12 +42,13 @@ libexec/epic5-wserv4
 %%DATADIR%%/script/history
 %%DATADIR%%/script/history.rb
 %%DATADIR%%/script/hold_mode
+%%DATADIR%%/script/idlealert
 %%DATADIR%%/script/ison
 %%DATADIR%%/script/less
 %%DATADIR%%/script/less-pipe
 %%DATADIR%%/script/loadformats
-%%DATADIR%%/script/locale
 %%DATADIR%%/script/local.examp
+%%DATADIR%%/script/locale
 %%DATADIR%%/script/logman
 %%DATADIR%%/script/mail
 %%DATADIR%%/script/man
@@ -67,12 +68,13 @@ libexec/epic5-wserv4
 %%DATADIR%%/script/rejoin
 %%DATADIR%%/script/renumber
 %%DATADIR%%/script/revdcc
+%%DATADIR%%/script/sasl_auth
 %%DATADIR%%/script/save
 %%DATADIR%%/script/scan
 %%DATADIR%%/script/screen
 %%DATADIR%%/script/screen.e
-%%DATADIR%%/script/setmail
 %%DATADIR%%/script/set_color
+%%DATADIR%%/script/setmail
 %%DATADIR%%/script/slowcat
 %%DATADIR%%/script/snip
 %%DATADIR%%/script/speak.irc
@@ -85,6 +87,7 @@ libexec/epic5-wserv4
 %%DATADIR%%/script/topicbar.bj
 %%DATADIR%%/script/url.irc
 %%DATADIR%%/script/utime
+%%DATADIR%%/script/xmsglog
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec mkdir -p %D/%%DATADIR%%/help
 @dirrmtry %%DATADIR%%/help

@@ -1,0 +1,5 @@
+bin/aspcud
+bin/cudf2lp
+%%DATADIR%%/misc2012.lp
+%%DATADIR%%/specification.lp
+@dirrmtry %%DATADIR%%

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/galculator
 man/man1/galculator.1.gz
 share/applications/galculator.desktop

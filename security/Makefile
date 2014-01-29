@@ -730,6 +730,7 @@
     SUBDIR += please
     SUBDIR += polarssl
     SUBDIR += poly1305aes
+    SUBDIR += pond
     SUBDIR += portsentry
     SUBDIR += ppars
     SUBDIR += prelude-lml

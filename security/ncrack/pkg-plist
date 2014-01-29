@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/ncrack
 share/ncrack/ncrack-services
 share/ncrack/common.usr

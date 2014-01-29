@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 lib/slang/v2/modules/grace-module.so.%%VERSION%%
 lib/slang/v2/modules/grace-module.so
 share/slsh/local-packages/help/grace.hlp

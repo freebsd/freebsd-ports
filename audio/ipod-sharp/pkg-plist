@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 lib/ipod-sharp/ipod-sharp-firmware.dll
 lib/ipod-sharp/ipod-sharp-firmware.dll.mdb
 lib/ipod-sharp/ipod-sharp-ui.dll

@@ -1,4 +1,5 @@
 bin/bison
+man/man1/bison.1.gz
 share/aclocal/bison-i18n.m4
 %%DATADIR%%/README
 %%DATADIR%%/bison.m4

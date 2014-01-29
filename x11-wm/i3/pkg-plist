@@ -9,6 +9,7 @@ bin/i3-nagbar
 bin/i3-sensible-editor
 bin/i3-sensible-pager
 bin/i3-sensible-terminal
+bin/i3-with-shmlog
 bin/i3bar
 %%ETCDIR%%/config
 %%ETCDIR%%/config.keycodes
@@ -27,6 +28,7 @@ man/man1/i3.1.gz
 man/man1/i3bar.1.gz
 share/applications/i3.desktop
 share/xsessions/i3.desktop
+share/xsessions/i3-with-shmlog.desktop
 @dirrmtry share/xsessions
 @dirrm include/i3
 @dirrm %%ETCDIR%%

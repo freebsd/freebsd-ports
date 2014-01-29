@@ -1,4 +1,4 @@
-# Created by: Martin Blapp
+# Created by: Martin Blapp <mb@imp.ch>
 # $FreeBSD$
 
 PORTNAME=	apache-openoffice
@@ -10,8 +10,8 @@ MASTER_SITES=	ftp://ftp.riken.jp/net/apache/incubator/ooo/3.4.1/source/ \
 DISTFILES+=	${OOOSRC} unowinreg.dll ${EXTSRC}:extsrc
 EXTRACT_ONLY=	${OOOSRC} ${EXTSRC}
 
-#de facto maintainer is maho@FreeBSD.org
-#Frequent Patch submitters should optionally sign Apache iCLA
+# De facto maintainer is maho@FreeBSD.org
+# Frequent patch submitters should optionally sign Apache iCLA
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser
 
@@ -19,6 +19,8 @@ LICENSE=	APACHE20
 
 PKGNAMESUFFIX=	3
 
+USES=		bison perl5 pkgconfig gmake
+USE_AUTOTOOLS=	autoconf
 USE_GNOME=	desktopfileutils gtk20 libxslt libidl glib20
 USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
@@ -28,7 +30,7 @@ USE_GSTREAMER=	yes
 USE_PYTHON=	yes
 USE_PERL5=	build
 USE_BZIP2=	yes
-USES+=		bison perl5 pkgconfig gmake
+GNU_CONFIGURE=	yes
 WITHOUT_CPU_CFLAGS=	true
 
 OPTIONS_DEFINE=	GCONF GNOMEVFS
@@ -104,22 +106,24 @@ OOOCXX=		${CCACHE_PREFIX} ${CXX}
 OOOCC=		${CC}
 OOOCXX=		${CXX}
 .endif
-CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}"		\
-		PATH=${WRKSRC}/solenv/bin:$$PATH	\
-		CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
-		expat.6:${PORTSDIR}/textproc/expat2 \
-		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		curl:${PORTSDIR}/ftp/curl \
-		hunspell-1.3.0:${PORTSDIR}/textproc/hunspell \
+CONFIGURE_ENV+=	CC="${OOOCC}" CXX="${OOOCXX}" \
+		PATH=${WRKSRC}/solenv/bin:$$PATH \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libcurl.so:${PORTSDIR}/ftp/curl \
+		libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
 		libpoppler-glib.so:${PORTSDIR}/graphics/poppler-glib \
-		rdf.0:${PORTSDIR}/textproc/redland \
-		textcat.0:${PORTSDIR}/textproc/libtextcat \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		apr-1.4:${PORTSDIR}/devel/apr1 \
-		CoinMP.8:${PORTSDIR}/math/coinmp \
-		serf-1.0:${PORTSDIR}/www/serf
+		librdf.so:${PORTSDIR}/textproc/redland \
+		libtextcat.so:${PORTSDIR}/textproc/libtextcat \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libapr-1.so:${PORTSDIR}/devel/apr1 \
+		libCoinMP.so:${PORTSDIR}/math/coinmp \
+		libserf-1.so:${PORTSDIR}/www/serf
 
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip \
@@ -140,8 +144,6 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		dmake:${PORTSDIR}/devel/dmake \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-USE_AUTOTOOLS=	autoconf
-GNU_CONFIGURE=	yes
 WRKSRC?=	${WRKDIR}/aoo-${PORTVERSION}/main
 BASH?=		${PREFIX}/bin/bash
 SUB_FILES=	pkg-message
@@ -151,54 +153,54 @@ SUB_LIST=	EXECBASE=${EXECBASE} OOOTAG=${OOOTAG} OOODIR=${OOODIR}
 MAKE_JOBS_NUMBER=	4
 .endif
 
-CONFIGURE_ARGS+=	--enable-verbose \
-			--enable-symbols=small \
-			--enable-crashdump \
-			--with-vendor="FreeBSD ports system"	\
-			--with-epm=${LOCALBASE}/bin/epm \
-			--with-gnu-patch=${LOCALBASE}/bin/gpatch	\
-			--with-gperf=${LOCALBASE}/bin/gperf	\
-			--x-includes=${LOCALBASE}/include	\
-			--x-libraries=${LOCALBASE}lib	\
-			--with-system-libxml 		\
-			--with-system-libxslt 		\
-			--with-system-cairo --enable-cairo \
-			--with-system-boost 		\
-			--with-system-zlib		\
-			--with-system-python		\
-			--with-system-expat		\
-			--with-system-openssl		\
-			--with-system-curl		\
-			--with-system-poppler \
-			--with-system-redland \
-			--with-system-libtextcat \
-			--with-system-libtextcat-data=${LOCALBASE}/share/libtextcat \
-			--with-system-vigra \
-			--with-system-stdlibs \
-			--with-system-apr \
-			--with-system-apr-util \
-			--with-system-coinmp \
-			--with-commons-codec-jar=${JAVALIBDIR}/commons-codec.jar \
-			--with-commons-lang-jar=${JAVALIBDIR}/commons-lang.jar	\
-			--with-commons-httpclient-jar=${JAVALIBDIR}/commons-httpclient.jar \
-			--with-commons-logging-jar=${JAVALIBDIR}/commons-logging.jar	\
-			--with-junit=${LOCALBASE}/share/java/classes/junit.jar \
-			--with-package-format="archive" \
-			--enable-gstreamer \
-			--enable-minimizer \
-			--enable-presenter-console \
-			--enable-wiki-publisher \
-			--enable-dbus \
-			--enable-opengl \
-			--enable-category-b \
-			--with-system-hunspell \
-			--with-system-saxon     \
-			--with-saxon-jar=${JAVALIBDIR}/saxon9.jar  \
-			--with-system-beanshell	\
-			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar \
-			--without-fonts
-#			--with-system-jpeg
-#			--with-system-serf \
+CONFIGURE_ARGS+=--enable-verbose \
+		--enable-symbols=small \
+		--enable-crashdump \
+		--with-vendor="FreeBSD ports system" \
+		--with-epm=${LOCALBASE}/bin/epm \
+		--with-gnu-patch=${LOCALBASE}/bin/gpatch \
+		--with-gperf=${LOCALBASE}/bin/gperf \
+		--x-includes=${LOCALBASE}/include \
+		--x-libraries=${LOCALBASE}lib \
+		--with-system-libxml \
+		--with-system-libxslt \
+		--with-system-cairo --enable-cairo \
+		--with-system-boost \
+		--with-system-zlib \
+		--with-system-python \
+		--with-system-expat \
+		--with-system-openssl \
+		--with-system-curl \
+		--with-system-poppler \
+		--with-system-redland \
+		--with-system-libtextcat \
+		--with-system-libtextcat-data=${LOCALBASE}/share/libtextcat \
+		--with-system-vigra \
+		--with-system-stdlibs \
+		--with-system-apr \
+		--with-system-apr-util \
+		--with-system-coinmp \
+		--with-commons-codec-jar=${JAVALIBDIR}/commons-codec.jar \
+		--with-commons-lang-jar=${JAVALIBDIR}/commons-lang.jar \
+		--with-commons-httpclient-jar=${JAVALIBDIR}/commons-httpclient.jar \
+		--with-commons-logging-jar=${JAVALIBDIR}/commons-logging.jar \
+		--with-junit=${LOCALBASE}/share/java/classes/junit.jar \
+		--with-package-format="archive" \
+		--enable-gstreamer \
+		--enable-minimizer \
+		--enable-presenter-console \
+		--enable-wiki-publisher \
+		--enable-dbus \
+		--enable-opengl \
+		--enable-category-b \
+		--with-system-hunspell \
+		--with-system-saxon \
+		--with-saxon-jar=${JAVALIBDIR}/saxon9.jar \
+		--with-system-beanshell \
+		--with-beanshell-jar=${JAVALIBDIR}/bsh.jar \
+		--without-fonts
+#		--with-system-jpeg
+#		--with-system-serf \
 
 OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
@@ -228,7 +230,8 @@ pre-everything::
 .endif
 
 post-extract:
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll ${WRKSRC}/external/unowinreg/
+	@${CP} -p ${DISTDIR}/${DIST_SUBDIR}/unowinreg.dll \
+		${WRKSRC}/external/unowinreg/
 	@${MKDIR} ${WRKSRC}/../ext_sources
 	@${RM} -rf ${WRKSRC}/l10n
 
@@ -249,7 +252,7 @@ do-build:
 	@cd ${WRKDIR}/aoo-${PORTVERSION} ; ${PRINTF} "main=active\n" >> source_config
 	@cd ${WRKDIR}/aoo-${PORTVERSION} ; ${PRINTF} "extras=active\n" >> source_config
 	@cd ${WRKSRC} ; ./bootstrap
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native/util  ; build.pl --all -P${MAKE_JOBS_NUMBER} -- -P${MAKE_JOBS_NUMBER}"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native/util ; build.pl --all -P${MAKE_JOBS_NUMBER} -- -P${MAKE_JOBS_NUMBER}"
 
 do-install:
 	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/archive/install/${LOCALIZED_LANG}/ ; ${LS} *.tar.?z > ${WRKDIR}/INSTALLFILES

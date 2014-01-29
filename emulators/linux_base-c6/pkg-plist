@@ -137,7 +137,7 @@ lib/libe2p.so.2
 lib/libe2p.so.2.3
 lib/libext2fs.so.2
 lib/libext2fs.so.2.4
-lib/libgcc_s-4.4.6-20110824.so.1
+lib/libgcc_s-4.4.7-20120601.so.1
 lib/libgcc_s.so.1
 lib/libgio-2.0.so.0
 lib/libgio-2.0.so.0.2200.5
@@ -622,7 +622,6 @@ usr/lib/gconv/libJISX0213.so
 usr/lib/gconv/libKSC.so
 usr/lib/gio/modules/libgiofam.so
 usr/lib/krb5/plugins/kdb/db2.so
-usr/lib/krb5/plugins/preauth/encrypted_challenge.so
 usr/lib/libdb-4.7.so
 usr/lib/libform.so.5
 usr/lib/libform.so.5.7
@@ -638,8 +637,8 @@ usr/lib/libkadm5clnt_mit.so.8
 usr/lib/libkadm5clnt_mit.so.8.0
 usr/lib/libkadm5srv_mit.so.8
 usr/lib/libkadm5srv_mit.so.8.0
-usr/lib/libkdb5.so.5
-usr/lib/libkdb5.so.5.0
+usr/lib/libkdb5.so.6
+usr/lib/libkdb5.so.6.0
 usr/lib/libmenu.so.5
 usr/lib/libmenu.so.5.7
 usr/lib/libmenuw.so.5
@@ -760,12 +759,12 @@ usr/share/doc/grep-2.6.3/TODO
 usr/share/doc/info-4.13a/COPYING
 usr/share/doc/keyutils-1.4/LICENCE.GPL
 usr/share/doc/keyutils-1.4/README
-usr/share/doc/krb5-libs-1.9/LICENSE
-usr/share/doc/krb5-libs-1.9/NOTICE
-usr/share/doc/krb5-libs-1.9/README
+usr/share/doc/krb5-libs-1.10.3/LICENSE
+usr/share/doc/krb5-libs-1.10.3/NOTICE
+usr/share/doc/krb5-libs-1.10.3/README
 usr/share/doc/libcap-2.16/License
 usr/share/doc/libcap-2.16/capability.notes
-usr/share/doc/libgcc-4.4.6/COPYING.LIB
+usr/share/doc/libgcc-4.4.7/COPYING.LIB
 usr/share/doc/libidn-1.18/AUTHORS
 usr/share/doc/libidn-1.18/COPYING
 usr/share/doc/libidn-1.18/COPYING.LIB
@@ -3146,9 +3145,9 @@ var/mail
 @dirrm usr/share/doc/pcre-7.8
 @dirrm usr/share/doc/ncurses-5.7
 @dirrm usr/share/doc/libidn-1.18
-@dirrm usr/share/doc/libgcc-4.4.6
+@dirrm usr/share/doc/libgcc-4.4.7
 @dirrm usr/share/doc/libcap-2.16
-@dirrm usr/share/doc/krb5-libs-1.9
+@dirrm usr/share/doc/krb5-libs-1.10.3
 @dirrm usr/share/doc/keyutils-1.4
 @dirrm usr/share/doc/info-4.13a
 @dirrm usr/share/doc/grep-2.6.3

@@ -24,16 +24,4 @@ TEST_DEPENDS=	p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	PPIx::EditorTools.3 \
-	PPIx::EditorTools::FindUnmatchedBrace.3 \
-	PPIx::EditorTools::FindVariableDeclaration.3 \
-	PPIx::EditorTools::IntroduceTemporaryVariable.3 \
-	PPIx::EditorTools::Lexer.3 \
-	PPIx::EditorTools::Outline.3 \
-	PPIx::EditorTools::RenamePackage.3 \
-	PPIx::EditorTools::RenamePackageFromPath.3 \
-	PPIx::EditorTools::RenameVariable.3 \
-	PPIx::EditorTools::ReturnObject.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

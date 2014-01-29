@@ -2,10 +2,8 @@ bin/alurecdplay
 bin/alureplay
 bin/alurestream
 include/AL/alure.h
-%%STATIC%%lib/libalure-static.a
 lib/libalure.so
 lib/libalure.so.1
 lib/libalure.so.1.2.0
-%%STATIC%%libdata/pkgconfig/alure-static.pc
 libdata/pkgconfig/alure.pc
 @dirrmtry include/AL

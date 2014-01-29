@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/jalview
 %%DATADIR%%/activation.jar
 %%DATADIR%%/xercesImpl.jar

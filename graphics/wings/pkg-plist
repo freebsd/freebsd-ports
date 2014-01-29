@@ -1,6 +1,5 @@
-@unexec rm -f %D/lib/erlang/lib/wings
 bin/wings
-@exec ln -sf wings-%%VERSION%% %D/lib/erlang/lib/wings
+lib/erlang/lib/wings
 lib/erlang/lib/wings-%%VERSION%%/ebin/array.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/e3d__bmp.beam
 lib/erlang/lib/wings-%%VERSION%%/ebin/e3d__meshclean.beam

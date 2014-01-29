@@ -1,37 +1,22 @@
 --- a/etc/Makefile.am
 +++ b/etc/Makefile.am
-@@ -1,31 +1,36 @@
- nobase_dist_noinst_DATA = \
-     tntnet/tntnet.conf.in \
--    init.d/tntnet.in
-+    init.d/tntnet.in \
-+    tntnet/mime.conf
+@@ -3,19 +3,20 @@ nobase_dist_noinst_DATA = \
+     init.d/tntnet.in
  
  nobase_sysconf_DATA = \
--    tntnet/tntnet.conf \
+-    tntnet/tntnet.xml \
 -    init.d/tntnet
-+    tntnet/tntnet.conf.sample \
++    tntnet/tntnet.xml.sample \
 +    tntnet/tntnet
  
- nobase_dist_sysconf_DATA = \
--    tntnet/mime.conf
-+    tntnet/mime.conf.sample
- 
- nobase_nodist_sysconf_DATA = \
--    tntnet/tntnet.properties
-+    tntnet/tntnet.properties.sample
-+
-+tntnet/mime.conf.sample: tntnet/mime.conf
-+	cp tntnet/mime.conf $@
- 
--tntnet/tntnet.conf: tntnet/tntnet.conf.in
-+tntnet/tntnet.conf.sample: tntnet/tntnet.conf.in
+-tntnet/tntnet.xml: tntnet/tntnet.xml.in
++tntnet/tntnet.xml.sample: tntnet/tntnet.xml.in
  	sed -e 's,@libdir\@,@libdir@,g;' \
  	    -e 's,@pkglibdir\@,@pkglibdir@,g;' \
  	    -e 's,@sysconfdir\@,@sysconfdir@,g;' \
  	    -e 's,@localstatedir\@,@localstatedir@,g;' \
--		-e 's,@datadir\@,@datadir@,g;' <tntnet/tntnet.conf.in >tntnet/tntnet.conf
-+		-e 's,@datadir\@,@datadir@,g;' <tntnet/tntnet.conf.in >tntnet/tntnet.conf.sample
+-		-e 's,@datadir\@,@datadir@,g;' <tntnet/tntnet.xml.in >tntnet/tntnet.xml
++		-e 's,@datadir\@,@datadir@,g;' <tntnet/tntnet.xml.in >tntnet/tntnet.xml.sample
  
 -init.d/tntnet: init.d/tntnet.in
 +tntnet/tntnet: init.d/tntnet.in
@@ -42,52 +27,31 @@
 -		-e 's,@datadir\@,@datadir@,g;' <init.d/tntnet.in >init.d/tntnet
 +	    -e 's/^function //;' \
 +		-e 's,@datadir\@,@datadir@,g;' <init.d/tntnet.in >tntnet/tntnet
- 
--tntnet/tntnet.properties:
-+tntnet/tntnet.properties.sample:
- 	../tntnet-config --properties tntnet | \
- 		sed -e 's,^#file=tntnet.log,file=@localstatedir@/log/tntnet/tntnet.log,' >$@
 --- a/etc/Makefile.in
 +++ b/etc/Makefile.in
-@@ -206,17 +206,18 @@ top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
- nobase_dist_noinst_DATA = \
-     tntnet/tntnet.conf.in \
--    init.d/tntnet.in
-+    init.d/tntnet.in \
-+    tntnet/mime.conf
+@@ -246,8 +246,8 @@ nobase_dist_noinst_DATA = \
+     init.d/tntnet.in
  
  nobase_sysconf_DATA = \
--    tntnet/tntnet.conf \
+-    tntnet/tntnet.xml \
 -    init.d/tntnet
-+    tntnet/tntnet.conf.sample \
++    tntnet/tntnet.xml.sample \
 +    tntnet/tntnet
- 
- nobase_dist_sysconf_DATA = \
--    tntnet/mime.conf
-+    tntnet/mime.conf.sample
- 
- nobase_nodist_sysconf_DATA = \
--    tntnet/tntnet.properties
-+    tntnet/tntnet.properties.sample
  
  all: all-am
  
-@@ -483,21 +484,25 @@ uninstall-am: uninstall-nobase_dist_sysc
+@@ -470,19 +470,20 @@ uninstall-am: uninstall-nobase_sysconfDA
  	uninstall-nobase_sysconfDATA
  
  
--tntnet/tntnet.conf: tntnet/tntnet.conf.in
-+tntnet/mime.conf.sample: tntnet/mime.conf
-+	cp tntnet/mime.conf $@
-+
-+tntnet/tntnet.conf.sample: tntnet/tntnet.conf.in
+-tntnet/tntnet.xml: tntnet/tntnet.xml.in
++tntnet/tntnet.xml.sample: tntnet/tntnet.xml.in
  	sed -e 's,@libdir\@,@libdir@,g;' \
  	    -e 's,@pkglibdir\@,@pkglibdir@,g;' \
  	    -e 's,@sysconfdir\@,@sysconfdir@,g;' \
  	    -e 's,@localstatedir\@,@localstatedir@,g;' \
--		-e 's,@datadir\@,@datadir@,g;' <tntnet/tntnet.conf.in >tntnet/tntnet.conf
-+		-e 's,@datadir\@,@datadir@,g;' <tntnet/tntnet.conf.in >tntnet/tntnet.conf.sample
+-		-e 's,@datadir\@,@datadir@,g;' <tntnet/tntnet.xml.in >tntnet/tntnet.xml
++		-e 's,@datadir\@,@datadir@,g;' <tntnet/tntnet.xml.in >tntnet/tntnet.xml.sample
  
 -init.d/tntnet: init.d/tntnet.in
 +tntnet/tntnet: init.d/tntnet.in
@@ -99,29 +63,25 @@
 +	    -e 's/^function //;' \
 +		-e 's,@datadir\@,@datadir@,g;' <init.d/tntnet.in >tntnet/tntnet
  
--tntnet/tntnet.properties:
-+tntnet/tntnet.properties.sample:
- 	../tntnet-config --properties tntnet | \
- 		sed -e 's,^#file=tntnet.log,file=@localstatedir@/log/tntnet/tntnet.log,' >$@
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+--- a/etc/tntnet/tntnet.xml.in
++++ b/etc/tntnet/tntnet.xml.in
+@@ -47,14 +47,14 @@
  
---- a/etc/tntnet/tntnet.conf.in
-+++ b/etc/tntnet/tntnet.conf.in
-@@ -2,12 +2,15 @@
- #
+   <listeners>
+     <listener>
+-      <ip></ip>
++      <ip>127.0.0.1</ip>
+       <port>80</port>
+     </listener>
+   </listeners>
  
- PropertyFile	@sysconfdir@/tntnet/tntnet.properties
--Listen	    0.0.0.0 80
-+#Listen	    0.0.0.0 80
-+Listen	    127.1 80
- #SslListen  0.0.0.0 443 @sysconfdir@/tntnet/tntnet.pem
- 
- Daemon	    1
--User	    www-data
--Group	    www-data
-+#User	    www-data
-+#Group	    www-data
-+User	    www
-+Group	    www
- CompPath    @libdir@/tntnet
- 
- # set some limit to prevent DoS-attacks
+   <daemon>1</daemon>
+-  <user>www-data</user>
+-  <group>www-data</group>
++  <user>www</user>
++  <group>www</group>
+   <pidFile>@localstatedir@/run/tntnet.pid</pidFile>
+   <documentRoot>/var/www</documentRoot>
+   <compPath>

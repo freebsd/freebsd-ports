@@ -26,7 +26,7 @@ DESTDIRNAME=	INSTALL_ROOT
 
 DISTINFO_FILE=	${PYQT4_DISTINFO_FILE}
 HAS_CONFIGURE=	yes
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_QT4=	gui xml designer moc_build qmake_build
 
 PATCHDIR=	${.CURDIR}/../py-qt4-core/files

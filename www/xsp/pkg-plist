@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/asp-state
 bin/asp-state2
 bin/asp-state4

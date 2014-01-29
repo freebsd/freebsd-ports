@@ -15,7 +15,4 @@ RUN_DEPENDS=	p5-Text-Aspell>=0:${PORTSDIR}/textproc/p5-Text-Aspell
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::SpellChecker.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

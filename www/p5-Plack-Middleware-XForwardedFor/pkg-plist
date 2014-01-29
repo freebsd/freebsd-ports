@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/XForwardedFor/.packlist
 %%SITE_PERL%%/Plack/Middleware/XForwardedFor.pm
 %%PERL5_MAN3%%/Plack::Middleware::XForwardedFor.3.gz

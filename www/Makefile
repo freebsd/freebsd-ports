@@ -179,6 +179,7 @@
     SUBDIR += dwoo
     SUBDIR += e107
     SUBDIR += eaccelerator
+    SUBDIR += edbrowse
     SUBDIR += efront
     SUBDIR += egueb
     SUBDIR += eldav.el
@@ -209,6 +210,7 @@
     SUBDIR += feedonfeeds
     SUBDIR += ffproxy
     SUBDIR += fhttpd
+    SUBDIR += fira-webfont
     SUBDIR += firefox
     SUBDIR += firefox-esr
     SUBDIR += firefox-esr-i18n
@@ -336,6 +338,7 @@
     SUBDIR += hs-yesod-routes
     SUBDIR += hs-yesod-static
     SUBDIR += hs-yesod-test
+    SUBDIR += htdigest
     SUBDIR += htdump
     SUBDIR += html2hdml
     SUBDIR += html2wml
@@ -467,7 +470,8 @@
     SUBDIR += mod_authn_otp
     SUBDIR += mod_authn_sasl
     SUBDIR += mod_authnz_crowd
-    SUBDIR += mod_authnz_external
+    SUBDIR += mod_authnz_external22
+    SUBDIR += mod_authnz_external24
     SUBDIR += mod_authz_unixgroup
     SUBDIR += mod_backtrace
     SUBDIR += mod_bw
@@ -634,6 +638,7 @@
     SUBDIR += p5-Ark
     SUBDIR += p5-Bigtop
     SUBDIR += p5-Blog-Spam
+    SUBDIR += p5-Browser-Open
     SUBDIR += p5-Business-PayPal
     SUBDIR += p5-CGI-Ajax
     SUBDIR += p5-CGI-Application
@@ -694,8 +699,8 @@
     SUBDIR += p5-CGI-Session
     SUBDIR += p5-CGI-Session-ExpireSessions
     SUBDIR += p5-CGI-Simple
-    SUBDIR += p5-CGI-Struct
     SUBDIR += p5-CGI-SpeedyCGI
+    SUBDIR += p5-CGI-Struct
     SUBDIR += p5-CGI-Thin
     SUBDIR += p5-CGI-Untaint
     SUBDIR += p5-CGI-Untaint-date
@@ -1024,6 +1029,7 @@
     SUBDIR += p5-HTTP-Session
     SUBDIR += p5-HTTP-Session-State-MobileAgentID
     SUBDIR += p5-HTTP-Session-Store-DBI
+    SUBDIR += p5-HTTP-Session2
     SUBDIR += p5-HTTP-SimpleLinkChecker
     SUBDIR += p5-HTTP-Size
     SUBDIR += p5-HTTP-Tiny
@@ -1161,6 +1167,7 @@
     SUBDIR += p5-Reaction
     SUBDIR += p5-Reddit
     SUBDIR += p5-Rose-HTML-Objects
+    SUBDIR += p5-Router-Boom
     SUBDIR += p5-Router-Simple
     SUBDIR += p5-Router-Simple-Sinatraish
     SUBDIR += p5-SCGI
@@ -1396,6 +1403,7 @@
     SUBDIR += pear-Text_Wiki
     SUBDIR += pear-UDDI
     SUBDIR += pear-XML_GRDDL
+    SUBDIR += pear-twig
     SUBDIR += pebble
     SUBDIR += pecl-APC
     SUBDIR += pecl-amfext
@@ -1403,6 +1411,7 @@
     SUBDIR += pecl-solr
     SUBDIR += pecl-sphinx
     SUBDIR += pecl-swish
+    SUBDIR += pecl-twig
     SUBDIR += pecl-yaf
     SUBDIR += pecl-yar
     SUBDIR += pecl-zendopcache
@@ -1489,6 +1498,7 @@
     SUBDIR += py-django-app-plugins
     SUBDIR += py-django-appconf
     SUBDIR += py-django-appmedia
+    SUBDIR += py-django-auth-ldap
     SUBDIR += py-django-caching-app-plugins
     SUBDIR += py-django-classy-tags
     SUBDIR += py-django-cms
@@ -1507,6 +1517,7 @@
     SUBDIR += py-django-mptt
     SUBDIR += py-django-openid-auth
     SUBDIR += py-django-photologue
+    SUBDIR += py-django-picklefield
     SUBDIR += py-django-pipeline
     SUBDIR += py-django-piston
     SUBDIR += py-django-profiles
@@ -1658,6 +1669,7 @@
     SUBDIR += py-requests
     SUBDIR += py-requests-oauth-hook
     SUBDIR += py-requests-oauthlib
+    SUBDIR += py-requests1
     SUBDIR += py-restclient
     SUBDIR += py-rhodecode
     SUBDIR += py-routes
@@ -1778,8 +1790,10 @@
     SUBDIR += rubygem-gon
     SUBDIR += rubygem-haml
     SUBDIR += rubygem-haml-coderay
+    SUBDIR += rubygem-haml-contrib
     SUBDIR += rubygem-haml-rails
     SUBDIR += rubygem-hpricot
+    SUBDIR += rubygem-html2haml
     SUBDIR += rubygem-http-cookie
     SUBDIR += rubygem-httparty
     SUBDIR += rubygem-httpclient
@@ -1813,7 +1827,6 @@
     SUBDIR += rubygem-passenger
     SUBDIR += rubygem-rabbirack
     SUBDIR += rubygem-rack
-    SUBDIR += rubygem-rack15
     SUBDIR += rubygem-rack-accept
     SUBDIR += rubygem-rack-attack
     SUBDIR += rubygem-rack-cache
@@ -1823,6 +1836,7 @@
     SUBDIR += rubygem-rack-protection
     SUBDIR += rubygem-rack-ssl
     SUBDIR += rubygem-rack-test
+    SUBDIR += rubygem-rack15
     SUBDIR += rubygem-rails
     SUBDIR += rubygem-railties
     SUBDIR += rubygem-raindrops
@@ -1910,7 +1924,6 @@
     SUBDIR += squirm
     SUBDIR += srg
     SUBDIR += subsonic
-    SUBDIR += suphp
     SUBDIR += surf
     SUBDIR += surfraw
     SUBDIR += sventon

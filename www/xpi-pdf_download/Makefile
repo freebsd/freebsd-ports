@@ -15,6 +15,5 @@ XPI_FILES=	chrome/pdfdownload.jar chrome.manifest install.rdf \
 		defaults/preferences/prefs.js
 XPI_DIRS=	chrome defaults/preferences defaults
 
-NO_STAGE=	yes
 .include "../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

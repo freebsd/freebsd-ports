@@ -31,6 +31,7 @@
     SUBDIR += asciidoc
     SUBDIR += asm-xml
     SUBDIR += aspell
+    SUBDIR += aspell-ispell
     SUBDIR += ast-aspell
     SUBDIR += atom
     SUBDIR += ats-contrib-parcomb
@@ -212,6 +213,7 @@
     SUBDIR += gnome-translate
     SUBDIR += gnugrep
     SUBDIR += go-text
+    SUBDIR += go.text
     SUBDIR += goldendict
     SUBDIR += google-ctemplate
     SUBDIR += gpp
@@ -506,9 +508,9 @@
     SUBDIR += p5-Dev-Bollocks
     SUBDIR += p5-Devel-TraceSAX
     SUBDIR += p5-DocSet
+    SUBDIR += p5-EBook-Tools
     SUBDIR += p5-ElasticSearch
     SUBDIR += p5-ElasticSearch-SearchBuilder
-    SUBDIR += p5-EBook-Tools
     SUBDIR += p5-Excel-Template
     SUBDIR += p5-Excel-Writer-XLSX
     SUBDIR += p5-File-Inplace
@@ -1242,7 +1244,6 @@
     SUBDIR += redet
     SUBDIR += redland
     SUBDIR += redland-bindings
-    SUBDIR += redland-bindings-python
     SUBDIR += refdb
     SUBDIR += reflex
     SUBDIR += replaceit

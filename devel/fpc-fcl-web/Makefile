@@ -14,7 +14,8 @@ USE_FPC=	fastcgi fcl-async fcl-base fcl-db fcl-json fcl-net fcl-process \
 
 MASTERDIR=	${.CURDIR}/../../lang/fpc
 WRKUNITDIR=	${FPCSRCDIR}/packages/${PKGNAMESUFFIX:S/-//}
-EXTRACTUNITDIR+=	${WRKUNITDIR}
+EXTRACTUNITDIR=	${WRKUNITDIR}
+OPT=		-Fuunits/${BUILDNAME} -Fu../units/${BUILDNAME} -Fu../* \
+		-Fu../../units/${BUILDNAME} -Fu../../../units/${BUILDNAME}
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

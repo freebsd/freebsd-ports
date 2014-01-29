@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp -s %D/etc/razorback/officecat.conf %D/etc/razorback/officecat.conf.sample; then rm -f %D/etc/razorback/officecat.conf; fi
 etc/razorback/officecat.conf.sample
 @exec if [ ! -f %D/etc/razorback/officecat.conf ]; then cp %D/%F %B/officecat.conf; fi

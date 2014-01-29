@@ -11,7 +11,7 @@ NO_STAGE=	yes
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	Managing the whole filesystem and storing metadata
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 
 USE_RC_SUBR=	mfsmaster mfsmetalogger mfscgiserv
 MFS_CGIDIR=	${PREFIX}/share/mfscgi

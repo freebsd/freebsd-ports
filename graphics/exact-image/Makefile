@@ -12,7 +12,7 @@ COMMENT=	Fast image processing library
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	swig>=1.3.32:${PORTSDIR}/devel/swig13
+BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	libagg.so:${PORTSDIR}/graphics/agg \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libtiff.so:${PORTSDIR}/graphics/tiff \
@@ -31,7 +31,7 @@ NO_STAGE=	yes
 CPPFLAGS+=	-fpermissive -I${LOCALBASE}/include/libpng15
 USE_BZIP2=	yes
 USES=		gmake perl5 pkgconfig
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_XORG=	x11
 USE_EFL=	evas
 USE_EFL_EVAS_ENGINES=	x11 opengl

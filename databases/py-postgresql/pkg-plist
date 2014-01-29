@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/postgresql/alock.py
 %%PYTHON_SITELIBDIR%%/postgresql/alock.pyc
 %%PYTHON_SITELIBDIR%%/postgresql/alock.pyo

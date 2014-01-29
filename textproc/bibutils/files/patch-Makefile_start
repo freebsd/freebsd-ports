@@ -1,0 +1,11 @@
+--- ./Makefile_start.orig	2014-01-25 23:16:40.000000000 +0000
++++ ./Makefile_start	2014-01-25 23:19:20.000000000 +0000
+@@ -75,7 +75,7 @@
+ 	$(MAKE) -C bin \
+                 EXEEXT=$(EXEEXT) \
+                 PROGSIN="$(PROGRAMS)" \
+-                INSTALLDIR=$(INSTALLDIR) \
++                INSTALLDIR=$(DESTDIR)$(INSTALLDIR) \
+                 install
+ 	sed 's/VERSION/${VERSION}/g' packageconfig_start > lib/bibutils.pc
+ 

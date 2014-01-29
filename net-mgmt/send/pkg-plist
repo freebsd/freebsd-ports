@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 sbin/cgatool
 sbin/ipexttool
 sbin/sendd

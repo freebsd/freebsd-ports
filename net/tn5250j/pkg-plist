@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/tn5250j
 %%JAVAJARDIR%%/tn5250j.jar
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt

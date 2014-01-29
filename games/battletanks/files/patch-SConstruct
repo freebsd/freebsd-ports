@@ -1,6 +1,31 @@
 --- SConstruct.orig	2009-12-10 15:58:55.000000000 +0100
 +++ SConstruct	2010-01-16 17:07:22.000000000 +0100
-@@ -57,6 +57,8 @@
+@@ -16,7 +16,7 @@ picLibBuilder = Builder(
+ env['BUILDERS']['StaticLibrary'] = picLibBuilder
+ env['BUILDERS']['Library'] = picLibBuilder
+ 
+-opts = Options(['options.cache'])
++opts = Variables(['options.cache'])
+ #opts.Add('CC', 'C compiler')
+ #opts.Add('CXX', 'C++ compiler')
+ opts.Add('CCFLAGS', 'General options that are passed to the C compiler')
+@@ -30,12 +30,13 @@ opts.Add('CPPPATH', 'extra cpp path')
+ 
+ if sys.platform != "win32":
+ 	opts.Add('prefix', 'prefix for **nix packaging', '')
++	opts.Add('DESTDIR', 'staging dir (also for packaging)', '')
+ 	opts.Add('lib_dir', 'resources directory (default: prefix/lib)', '')
+ 	opts.Add('plugins_dir', 'plugins directory (default: prefix/lib/btanks)', '')
+ 	opts.Add('resources_dir', 'resources directory (default: prefix/share/btanks)', '')
+-	opts.Add(BoolOption('gcc_visibility', 'gcc visibility', 'true'))
++	opts.Add(BoolVariable('gcc_visibility', 'gcc visibility', 'true'))
+ 
+-opts.Add(EnumOption('mode', 'build mode', 'release', allowed_values=('debug','release')))
++opts.Add(EnumVariable('mode', 'build mode', 'release', allowed_values=('debug','release')))
+ 
+ opts.Update(env)
+ opts.Save('options.cache', env.Clone())
+@@ -57,6 +58,8 @@ if os.environ.has_key('CXXFLAGS'):
  	env['CXXFLAGS'] += SCons.Util.CLVar(os.environ['CXXFLAGS'])
  if os.environ.has_key('LDFLAGS'):
  	env['LINKFLAGS'] += SCons.Util.CLVar(os.environ['LDFLAGS'])
@@ -9,7 +34,7 @@
  
  if (sys.platform != "win32" and env['gcc_visibility']): 
  	env.Append(CCFLAGS=['-fvisibility=hidden', '-DGCC_HASCLASSVISIBILITY'])
-@@ -98,9 +100,6 @@
+@@ -98,9 +101,6 @@ else:
  	if debug:
  		env.Append(CCFLAGS=['-ggdb', '-D_FORTIFY_SOURCE=2'])
  		env.Append(CPPFLAGS=['-ggdb', '-D_FORTIFY_SOURCE=2'])
@@ -19,3 +44,37 @@
  		
  	env.Append(CPPFLAGS=['-Wall', '-Wno-deprecated', '-pedantic', '-Wno-long-long', '-pipe', '-pthread'])
  	env.Append(CCFLAGS=['-Wall', '-Wno-deprecated', '-pedantic', '-Wno-long-long', '-pipe', '-pthread'])
+@@ -253,24 +253,28 @@ env.Append(CPPPATH=['#'])
+ 
+ if (os.path.exists('private')):
+ 	dir = 'private'
+-	BuildDir('#/build/' + buildmode + '/' + dir, dir, 0)
++	VariantDir('#/build/' + buildmode + '/' + dir, dir, 0)
+ 	SConscript('#/build/' + buildmode + '/' + dir + '/SConscript')	
+ 
+ for dir in bt_sublibs:
+-	BuildDir('#/build/' + buildmode + '/' + dir, dir, 0)
++	VariantDir('#/build/' + buildmode + '/' + dir, dir, 0)
+ 	SConscript('#/build/' + buildmode + '/' + dir + '/SConscript')
+ 
+ for dir in bt_sublibs:
+ 	env.Append(LIBPATH=['#/build/' + buildmode + '/' + dir])
+ 
+-env.BuildDir('#/build/' + buildmode + '/editor', 'editor', 0)
++env.VariantDir('#/build/' + buildmode + '/editor', 'editor', 0)
+ SConscript('#/build/' + buildmode + '/editor/SConscript')
+ 
+ env.Append(LIBPATH=['#/build/' + buildmode + '/engine'])
+ 
+-env.BuildDir('#/build/' + buildmode + '/engine', 'engine', 0)
++env.VariantDir('#/build/' + buildmode + '/engine', 'engine', 0)
+ SConscript('#/build/' + buildmode + '/engine/' + 'SConscript')
+ 
+ if len(install_targets) > 0:
+-	install_targets.append(env.Command(resources_dir + '/resources.dat', '#/data', 'zip -q -0 -r  $TARGET * -x \*.svn\* -x \*.wav', chdir='data'))
++	install_targets.append(
++	    env.Command(env['DESTDIR'] + resources_dir + '/resources.dat',
++		'#/data',
++		'zip -q -0 -r $TARGET * -x \*.svn\* -x \*.wav',
++		chdir='data'))
+ 	env.Alias('install', install_targets)

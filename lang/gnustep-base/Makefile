@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gnustep-base
-PORTVERSION=	1.24.5
+PORTVERSION=	1.24.6
 PORTREVISION=	1
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
@@ -14,14 +14,23 @@ COMMENT=	GNUstep Foundation library
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
-LIB_DEPENDS+=	ffi:${PORTSDIR}/devel/libffi
-LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
-LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
-LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
-LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
-LIB_DEPENDS+=	gnutls-openssl.27:${PORTSDIR}/security/gnutls
-LIB_DEPENDS+=	icuuc:${PORTSDIR}/devel/icu
-LIB_DEPENDS+=	objc.4:${PORTSDIR}/lang/libobjc2
+OPTIONS_RADIO=		ZEROCONF
+OPTIONS_RADIO_ZEROCONF=	AVAHI MDNS
+OPTIONS_DEFAULT=	AVAHI
+
+NOZEROCONF_DESC=	Disable Zeroconf (Bonjour) support
+AVAHI_DESC?=		Zeroconf via Avahi (preferred)
+MDNS_DESC?=		Zeroconf via Apple's mDNSResponder
+
+.include <bsd.port.options.mk>
+
+LIB_DEPENDS+=	libffi.so:${PORTSDIR}/devel/libffi
+LIB_DEPENDS+=	libxml2.so:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS+=	libxslt.so:${PORTSDIR}/textproc/libxslt
+LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=	libgnutls-openssl.so:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libicuuc.so:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	libobjc.so.4.6:${PORTSDIR}/lang/libobjc2
 LIB_DEPENDS+=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 USE_AUTOTOOLS=	autoconf
@@ -47,8 +56,15 @@ ETCDIR=		${LOCALBASE}/etc
 
 PLIST_SUB+=	BASEVERSION=${PORTVERSION:C/[.][0-9]*$//1}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.if ${PORT_OPTIONS:MAVAHI}
+CONFIGURE_ARGS+=	--with-zeroconf-api=avahi
+LIB_DEPENDS+=		libavahi-client.so:${PORTSDIR}/net/avahi-app
+.elif ${PORT_OPTIONS:MMDNS}
+CONFIGURE_ARGS+=	--with-zeroconf-api=mdns
+LIB_DEPENDS+=		libdns_sd.so:${PORTSDIR}/net/mDNSResponder
+.else
+CONFIGURE_ARGS+=	--disable-zeroconf
+.endif
 
 PATH:=	${PREFIX}/System/Tools:${PATH}
 
@@ -57,6 +73,6 @@ post-extract:
 		${WRKSRC}/configure
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/gdomap_if ${ETCDIR}
+	${INSTALL_DATA} ${FILESDIR}/gdomap_if ${STAGEDIR}${ETCDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

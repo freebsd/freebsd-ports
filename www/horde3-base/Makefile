@@ -12,8 +12,8 @@ DISTNAME=	horde-${PORTVERSION}
 MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Common code-base used by Horde applications
 
-#----------------------------------------------------------------------------
 NO_STAGE=	yes
+#----------------------------------------------------------------------------
 # You may define these options:
 #
 # - WITHOUT_SUPPORTED_DB: if you run a database not in the ports tree.
@@ -62,8 +62,6 @@ NO_STAGE=	yes
 #
 # - WITH_DEB:		handle Debian packages.
 #
-# - WITH_SUPHP:		Install appropriately for use with the www/suphp port.
-#
 #----------------------------------------------------------------------------
 
 RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
@@ -79,14 +77,7 @@ RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
 USES=		gettext
 USE_PHP=	ctype gettext session
 
-.if defined(WITH_SUPHP) && !defined(WITHOUT_SUPHP)
-RUN_DEPENDS+=	${LOCALBASE}/sbin/suphp:${PORTSDIR}/www/suphp
-WANT_PHP_CGI=	yes
-HORDEADMUSR?=	horde
-SUB_LIST=	WITH_SUPHP=yes
-.else
 WANT_PHP_WEB=	yes
-.endif
 
 .if !defined(WITHOUT_FILEINFO)
 USE_PHP+=	fileinfo
@@ -253,9 +244,6 @@ pre-install:
 	  fi ; \
 	 fi ; \
 	fi
-.endif
-.if defined(WITH_SUPHP)
-	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
 
 .include "${.CURDIR}/../../www/horde3-base/bsd.horde.mk"

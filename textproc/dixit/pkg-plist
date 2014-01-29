@@ -4,3 +4,5 @@ bin/dixit
 LICENSE.GPL3
 @cwd /
 @dirrm %%DB_DIR%%
+@exec chown %%DB_OWNER%%:%%DB_GROUP%% %%DB_DIR/%%_DB_F%%
+@exec chmod %%DB_MODE%% %%DB_DIR/%%_DB_F%%

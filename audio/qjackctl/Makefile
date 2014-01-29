@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	qjackctl
-DISTVERSION=	0.3.10
+DISTVERSION=	0.3.11
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt Interface for the JACK Audio Connection Kit
@@ -14,10 +14,10 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib \
 		libjack.so:${PORTSDIR}/audio/jack
 
+USES=		gmake
 USE_QT4=	corelib dbus gui xml \
 		linguist_build moc_build qmake_build rcc_build uic_build
 QT_NONSTANDARD=	yes
-USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_ac_moc=${MOC} \
 		ac_cv_path_ac_uic=${UIC} \

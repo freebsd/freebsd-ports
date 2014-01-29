@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-000.el
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-000.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/riece/riece-200.el

@@ -27,7 +27,7 @@ NO_STAGE=	yes
 BUILD_DEPENDS:=	${TEST_DEPENDS}
 .endif
 
-USE_PYTHON=		-2.7
+USE_PYTHON=		2
 USE_PYDISTUTILS=	easy_install
 
 regression-test: build

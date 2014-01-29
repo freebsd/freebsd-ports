@@ -18,12 +18,11 @@ USE_XORG=	xpm
 PORTDOCS=	README
 PLIST_FILES=	bin/wmfuzzy
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/wmfuzzy ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/wmfuzzy ${STAGEDIR}${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

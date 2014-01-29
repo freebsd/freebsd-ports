@@ -3,6 +3,7 @@
 
 PORTNAME=	singledispatch
 PORTVERSION=	3.4.0.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ COMMENT=	provides single-dispatch generic functions
 LICENSE=	MIT
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

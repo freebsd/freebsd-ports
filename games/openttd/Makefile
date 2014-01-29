@@ -88,13 +88,9 @@ post-patch:
 	@${REINPLACE_CMD} -e '/-O2 -fomit-frame-pointer/d ; \
 		s,/usr/local,${LOCALBASE},' ${WRKSRC}/config.lib
 # Use custom liblzma.pc for when we use liblzma from base
-.if ${OSVERSION} >= 900012 || (${OSVERSION} >= 800505 && ${OSVERSION} < 900000)
 	@${REINPLACE_CMD} -e \
 		's,pkg-config liblzma,pkg-config ${FILESDIR}/liblzma.pc,' \
 			${WRKSRC}/config.lib
-.else
-LIB_DEPENDS+=	liblzma.so:${PORTSDIR}/archivers/xz
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin

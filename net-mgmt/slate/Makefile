@@ -11,8 +11,7 @@ COMMENT=	Simple traffic analysis and data reporting collection server for LFAP
 
 PLIST_FILES=	bin/sfas
 
+USES=		gmake
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

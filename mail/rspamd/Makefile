@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	0.6.6
+PORTVERSION=	0.6.7
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
 
@@ -34,11 +34,10 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 				-DLIBDIR=${PREFIX}/lib \
 				-DNO_SHARED=ON
 
-USES=		cmake gettext iconv pkgconfig
+USES=		cmake gettext iconv pkgconfig lua:51+
 USE_LDCONFIG=	yes
 
 USE_GNOME=	glib20
-USE_LUA=	5.1-
 USE_OPENSSL=	yes
 
 .include <bsd.port.options.mk>
@@ -53,7 +52,7 @@ USE_OPENSSL=	yes
 .endif
 
 .if ${PORT_OPTIONS:MREDIRECTOR}
- USE_PERL5=	yes
+ USES+=		perl5
  CMAKE_ARGS+=	-DENABLE_REDIRECTOR=ON
  PLIST_SUB+=	REDIRECTOR=""
  USE_RC_SUBR+=	rspamd_redirector

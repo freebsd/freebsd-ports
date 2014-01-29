@@ -1,6 +1,0 @@
-lib/xmms/Visualization/libdancingparticles2.so
-%%DATADIR%%/dance.epic
-%%DATADIR%%/dancingparticles.conf
-%%DATADIR%%/font.pfb
-%%DATADIR%%/xmms.epic
-@dirrm %%DATADIR%%

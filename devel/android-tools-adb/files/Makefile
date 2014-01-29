@@ -51,7 +51,7 @@ adb: $(OBJS)
 	$(CC) -o $@ $(LDFLAGS) $(OBJS) $(LIBS)
 
 install: adb
-	${BSD_INSTALL_PROGRAM} adb ${PREFIX}/bin/
+	${BSD_INSTALL_PROGRAM} adb ${DESTDIR}${PREFIX}/bin/
 
 clean:
 	rm -rf $(OBJS) adb

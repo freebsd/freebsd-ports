@@ -17,5 +17,4 @@ USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--enable-htscanner
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

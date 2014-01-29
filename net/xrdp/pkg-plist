@@ -33,10 +33,6 @@ lib/xrdp/libxup.a
 lib/xrdp/libxup.la
 lib/xrdp/libxup.so
 lib/xrdp/libxup.so.0
-lib/xrdp/libxrdpfreerdp1.la
-lib/xrdp/libxrdpfreerdp1.a
-lib/xrdp/libxrdpfreerdp1.so
-lib/xrdp/libxrdpfreerdp1.so.0
 man/man5/sesman.ini.5.gz
 man/man5/xrdp.ini.5.gz
 man/man8/xrdp-sesman.8.gz

@@ -1056,6 +1056,7 @@ lib/perl5/%%PERL_VER%%/pod/perl5162delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl5163delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl5180delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl5181delta.pod
+lib/perl5/%%PERL_VER%%/pod/perl5182delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl561delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl56delta.pod
 lib/perl5/%%PERL_VER%%/pod/perl581delta.pod
@@ -1172,6 +1173,7 @@ lib/perl5/%%PERL_VER%%/pod/perlrecharclass.pod
 lib/perl5/%%PERL_VER%%/pod/perlref.pod
 lib/perl5/%%PERL_VER%%/pod/perlreftut.pod
 lib/perl5/%%PERL_VER%%/pod/perlreguts.pod
+lib/perl5/%%PERL_VER%%/pod/perlrepository.pod
 lib/perl5/%%PERL_VER%%/pod/perlrequick.pod
 lib/perl5/%%PERL_VER%%/pod/perlreref.pod
 lib/perl5/%%PERL_VER%%/pod/perlretut.pod
@@ -2145,6 +2147,7 @@ man/man1/perl5162delta.1.gz
 man/man1/perl5163delta.1.gz
 man/man1/perl5180delta.1.gz
 man/man1/perl5181delta.1.gz
+man/man1/perl5182delta.1.gz
 man/man1/perl561delta.1.gz
 man/man1/perl56delta.1.gz
 man/man1/perl581delta.1.gz
@@ -2263,6 +2266,7 @@ man/man1/perlrecharclass.1.gz
 man/man1/perlref.1.gz
 man/man1/perlreftut.1.gz
 man/man1/perlreguts.1.gz
+man/man1/perlrepository.1.gz
 man/man1/perlrequick.1.gz
 man/man1/perlreref.1.gz
 man/man1/perlretut.1.gz

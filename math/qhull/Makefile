@@ -15,11 +15,8 @@ USES=		cmake
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN1=	qhull.1 rbox.1
-
 CONFLICTS=	qhull-1.0* afni-[0-9]* qhull5-*
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's#share/man/man#man/man#g' \
 		${WRKSRC}/CMakeLists.txt

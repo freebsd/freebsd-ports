@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/afrodite-0.12/afrodite.h
 lib/libafrodite-0.12.la
 lib/libafrodite-0.12.so

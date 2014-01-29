@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/gorilla
 lib/gorilla/gorilla.tcl
 lib/gorilla/isaac.tcl

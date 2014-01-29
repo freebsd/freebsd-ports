@@ -1,3 +1,2 @@
-@comment $FreeBSD$
 bin/ratfor
 bin/ratfor77

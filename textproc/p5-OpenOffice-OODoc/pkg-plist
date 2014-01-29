@@ -28,6 +28,16 @@
 %%SITE_PERL%%/OpenOffice/OODoc/templates/template.sxd
 %%SITE_PERL%%/OpenOffice/OODoc/templates/template.odg
 %%SITE_PERL%%/OpenOffice/OODoc/data/image.png
+%%PERL5_MAN3%%/OpenOffice::OODoc.3.gz
+%%PERL5_MAN3%%/OpenOffice::OODoc::Document.3.gz
+%%PERL5_MAN3%%/OpenOffice::OODoc::File.3.gz
+%%PERL5_MAN3%%/OpenOffice::OODoc::Image.3.gz
+%%PERL5_MAN3%%/OpenOffice::OODoc::Intro.3.gz
+%%PERL5_MAN3%%/OpenOffice::OODoc::Manifest.3.gz
+%%PERL5_MAN3%%/OpenOffice::OODoc::Meta.3.gz
+%%PERL5_MAN3%%/OpenOffice::OODoc::Styles.3.gz
+%%PERL5_MAN3%%/OpenOffice::OODoc::Text.3.gz
+%%PERL5_MAN3%%/OpenOffice::OODoc::XPath.3.gz
 bin/oodoc_test
 bin/odfhighlight
 bin/odf_set_title
@@ -42,6 +52,19 @@ bin/odffilesearch
 bin/text2odf
 bin/odffindbasic
 bin/odfextract
+man/man1/odf2pod.1.gz
+man/man1/odf_set_fields.1.gz
+man/man1/odf_set_title.1.gz
+man/man1/odfbuild.1.gz
+man/man1/odfextract.1.gz
+man/man1/odffilesearch.1.gz
+man/man1/odffindbasic.1.gz
+man/man1/odfhighlight.1.gz
+man/man1/odfmetadoc.1.gz
+man/man1/odfsearch.1.gz
+man/man1/oodoc_test.1.gz
+man/man1/text2odf.1.gz
+man/man1/text2table.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenOffice/OODoc
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenOffice
 @dirrm %%SITE_PERL%%/OpenOffice/OODoc/data

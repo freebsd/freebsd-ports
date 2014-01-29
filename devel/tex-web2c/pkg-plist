@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/tangle
 bin/ctangle
 bin/bibtex

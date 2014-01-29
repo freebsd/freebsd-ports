@@ -26,6 +26,9 @@ USE_PERL5=	run
 NO_BUILD=	yes
 PLIST_FILES=	bin/youtube-viewer
 
+DEPRECATED=	Development ceased for 2.5 branch, conflict with gtk-youtube-viewer
+EXPIRATION_DATE=2014-02-23
+
 NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|#!/usr/bin/perl|#!${PERL}|g" ${WRKDIR}/youtube-viewer

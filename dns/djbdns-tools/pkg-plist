@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/dnsfilter
 bin/dnsip
 bin/dnsipq

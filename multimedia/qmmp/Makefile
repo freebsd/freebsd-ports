@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qmmp
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://qmmp.ylsoftware.com/files/ \
 		${MASTER_SITE_GOOGLE_CODE}
@@ -259,7 +259,7 @@ QMMP_DIALOG_DESC=	An original dialog
 QMMP_DIALOG_CMAKE_ON=	-DUSE_QMMP_DIALOG:BOOL=TRUE
 QMMP_DIALOG_CMAKE_OFF=	-DUSE_QMMP_DIALOG:BOOL=FALSE
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 PLIST_SUB+=	SHLIB_VER=${PORTVERSION:C/-.*//}
 
@@ -308,4 +308,4 @@ post-install:
 	cd ${WRKDIR} ; ${SED} -i -e '/PLIST.doc/ r PLIST.doc' ${TMPPLIST}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

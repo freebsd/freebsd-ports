@@ -2,25 +2,24 @@
 # $FreeBSD$
 
 PORTNAME=	armagetron
-PORTVERSION=	0.2.8.2.1
-PORTREVISION=	7
+PORTVERSION=	0.2.8.3.2
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}ad/${PORTNAME}ad-src/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}ad/stable/${PORTVERSION}/
 DISTNAME=	armagetronad-${PORTVERSION}
-EXTRACT_SUFX=	.src.tar.gz
+EXTRACT_SUFX=	.src.tar.bz2
 
 MAINTAINER=	ianthetechie@gmail.com
 COMMENT=	A multiplayer networked Tron clone in 3D
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-etc --disable-initscripts
 CXXFLAGS+=	${CFLAGS} -I${LOCALBASE}/include
 
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+LIB_DEPENDS+=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng.so:${PORTSDIR}/graphics/png \
+		libxml2.so:${PORTSDIR}/textproc/libxml2
 
 OPTIONS_DEFINE=	MUSIC ARMA_SERVER_ONLY
 MUSIC_DESC=	Compile in support for background music
@@ -28,14 +27,12 @@ ARMA_SERVER_ONLY_DESC=	Build dedicated server only
 
 OPTIONS_DEFAULT=	MUSIC
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MARMA_SERVER_ONLY}
 CONFIGURE_ARGS+=	--disable-glout
 PLIST_SUB+=	CLIENT="@comment " SERVER="" SUFFIX="-dedicated"
 PKGNAMESUFFX=	-dedicated
-USE_RC_SUBR=	armagetronad_dedicated
 .else
 USE_GL=		gl
 USE_SDL=	sdl image

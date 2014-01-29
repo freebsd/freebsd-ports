@@ -1,6 +1,5 @@
 %%SITE_PERL%%/Email/Reply.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Reply/.packlist
+%%PERL5_MAN3%%/Email::Reply.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Email/Reply
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Reply
-@dirrmtry %%SITE_PERL%%/Email/Reply
 @dirrmtry %%SITE_PERL%%/Email

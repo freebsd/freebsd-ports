@@ -3,10 +3,6 @@ text input.
 
 A client that wants kana-kanji conversion service for Japanese text
 sends a request to skkinput.  Skkinput receives the request, does
-kana-kanji conversion, and sends the converted text back to the
-client.
-
-The port was done by Murata Shuuichirou <mrt@mickey.ai.kyutech.ac.jp>.
-It requires skk server.
+kana-kanji conversion, and sends converted text back to the client.
 
 WWW: http://skkinput2.sourceforge.jp/

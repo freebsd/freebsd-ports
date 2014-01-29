@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/crf_learn
 bin/crf_test
 include/crfpp.h

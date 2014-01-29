@@ -2,20 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	racket
-PORTVERSION=	5.3.6
+PORTVERSION=	5.92
 CATEGORIES=	lang scheme
-MASTER_SITES=	http://download.racket-lang.org/installers/${PORTVERSION}/${PORTNAME}/ \
-		http://www.eecs.northwestern.edu/racket/${PORTVERSION}/${PORTNAME}/ \
-		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/${PORTNAME}/ \
-		http://mirror.informatik.uni-tuebingen.de/mirror/racket/${PORTVERSION}/${PORTNAME}/ \
-		ftp://infogroep.be/pub/racket/installers/${PORTVERSION}/${PORTNAME}/ \
-		http://russell.cs.bilgi.edu.tr/racket-installers/${PORTVERSION}/${PORTNAME}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src-unix
+MASTER_SITES=	http://download.racket-lang.org/installers/${PORTVERSION}/ \
+		http://www.eecs.northwestern.edu/racket/${PORTVERSION}/ \
+		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
+		http://mirror.informatik.uni-tuebingen.de/mirror/racket/${PORTVERSION}/ \
+		ftp://infogroep.be/pub/racket/installers/${PORTVERSION}/ \
+		http://russell.cs.bilgi.edu.tr/racket-installers/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
-COMMENT=	An interactive, integrated, graphical Scheme programming environment
+COMMENT=	Interactive, integrated, graphical Scheme programming environment
 
 MAKE_JOBS_UNSAFE=yes
 
@@ -23,12 +23,11 @@ OPTIONS_DEFINE=		RACKET_PLACES
 RACKET_PLACES_DESC=	Enable Places
 OPTIONS_DEFAULT=	RACKET_PLACES
 
-CONFLICTS=	racket-textual-[0-9]*
+CONFLICTS=	racket-minimal-[0-9]*
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-pthread \
 		--enable-lt=${LIBTOOL}
-CONFIGURE_SCRIPT=../configure
 
 .include <bsd.port.options.mk>
 
@@ -55,11 +54,11 @@ CONFIGURE_ARGS+=	--disable-places
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/build
+WRKSRC=		${WRKDIR}/racket/src
 USES+=		iconv
 USE_AUTOTOOLS=	libtool:env
-USE_GNOME=	pango
 USE_LDCONFIG=	yes
+USE_GNOME=	pango
 USE_SQLITE=	3
 
 ONLY_FOR_ARCHS=	i386 amd64
@@ -71,11 +70,5 @@ RACKET_PLIST=	${WRKDIR}/pkg-plist
 .if ${ARCH} == "amd64"
 CPPFLAGS+=	-DLONG64
 .endif
-
-pre-patch:
-	@${MKDIR} ${WRKSRC}
-
-post-patch:
-	@${FIND} ${WRKSRC} -name *.orig -delete
 
 .include <bsd.port.post.mk>

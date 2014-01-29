@@ -5,52 +5,58 @@ PORTNAME=	hugo
 PORTVERSION=	2.12
 PORTREVISION=	12
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.zeograd.com/download/
+MASTER_SITES=	http://www.zeograd.com/download/ \
+		http://www.sourcefiles.org/Emulators/Videogames/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A PC Engine (TurboGrafx 16) emulator
+COMMENT=	PC Engine (TurboGrafx 16) emulator
 
-BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
+LICENSE=	BSD GPLv2
+LICENSE_COMB=	multi
 
-GNU_CONFIGURE=	yes
+LIB_DEPENDS=	libargp.so:${PORTSDIR}/devel/argp-standalone
+
+OPTIONS_DEFINE=	GTK2 DOCS NETPLAY SDL_MIXER
+OPTIONS_DEFAULT=GTK2
+OPTIONS_SUB=	yes
+NETPLAY_DESC=	Netplay support
+SDL_MIXER_DESC=	SDL_mixer support
+
 USES=		gmake pkgconfig
 USE_SDL=	sdl
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	SDL_CONFIG="${SDL_CONFIG}"
+USE_CSTD=	gnu89
+GNU_CONFIGURE=	yes
 
-.if !defined(WITHOUT_NETPLAY)
+CFLAGS+=	-Wno-return-type
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+.include <bsd.port.options.mk>
+
+.if empty(PORT_OPTIONS:MGTK2) && ${PORT_OPTIONS:MNETPLAY}
+IGNORE=	NETPLAY support requires GTK2 support
+.endif
+
+.if ${PORT_OPTIONS:MGTK2}
+USE_GNOME=	gtk20
+.else
+CONFIGURE_ARGS+=	--disable-gui --disable-gtktest
+.endif
+
+.if ${PORT_OPTIONS:MNETPLAY}
 USE_SDL+=	net
 .else
-CONFIGURE_ARGS+=	--enable-netplay=no
+CONFIGURE_ENV+=	ac_cv_lib_SDL_net_main=no
 .endif
 
-.if defined(WITHOUT_GUI)
-CONFIGURE_ARGS+=	--enable-gui=no --disable-gtktest
-.else
-USE_GNOME=	gtk20
-.endif
-
-.if defined(WITH_OGG_SUPPORT)
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
-WITH_SDL_MIXER=	yes
-CONFIGURE_ARGS+=	--with-ogg-support
-.endif
-
-.if defined(WITH_SDL_MIXER)
+.if ${PORT_OPTIONS:MSDL_MIXER}
+LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 USE_SDL+=	mixer
-CONFIGURE_ARGS+=	--with-sdl-mixer
-.endif
-
-MAKE_ENV+=	DOCSDIR="${DOCSDIR}"
-
-.if defined(NOPORTDOCS)
-MAKE_ENV+=	PORTDOCS=false
+CFLAGS+=	-DOGG_SUPPORT
 .else
-MAKE_ENV+=	PORTDOCS=true
+CONFIGURE_ENV+=	ac_cv_lib_SDL_mixer_main=no \
+		ac_cv_lib_vorbis_main=no \
+		ac_cv_lib_vorbisfile_main=no
 .endif
-
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

@@ -11,7 +11,7 @@ COMMENT=	Fast, lightweight source control management system
 
 LICENSE=	GPLv2
 
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 USES=		shebangfix
 

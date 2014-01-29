@@ -11,14 +11,13 @@ COMMENT=	Set of routines that implement the FTP protocol
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	bin/ftpdir bin/ftpget bin/ftplist bin/ftprm bin/ftpsend \
 		bin/qftp include/ftplib.h \
 		lib/libftp.a lib/libftp.so lib/libftp.so.4
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^SOVERSION/s|=.*|= $$(SONAME)| ; \
@@ -29,12 +28,12 @@ post-patch:
 		 /libftp.so/s|ln -sf|${TRUE}|' ${WRKSRC}/Makefile
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} qftp ${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${WRKSRC}/qftp ${STAGEDIR}${PREFIX}/bin
 .for i in ftpdir ftpget ftplist ftprm ftpsend
-	(cd ${PREFIX}/bin && ${LN} -sf qftp ${i})
+	${LN} -sf qftp ${STAGEDIR}${PREFIX}/bin/${i}
 .endfor
-	(cd ${WRKSRC} && ${INSTALL_DATA} ftplib.h ${PREFIX}/include)
-	(cd ${WRKSRC} && ${INSTALL_DATA} libftp.a libftp.so.4 ${PREFIX}/lib)
-	(cd ${PREFIX}/lib && ${LN} -sf libftp.so.4 libftp.so)
+	${INSTALL_DATA} ${WRKSRC}/ftplib.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_LIB} ${WRKSRC}/libftp.a ${WRKSRC}/libftp.so.4 ${STAGEDIR}${PREFIX}/lib
+	${LN} -sf libftp.so.4 ${STAGEDIR}${PREFIX}/lib/libftp.so
 
 .include <bsd.port.mk>

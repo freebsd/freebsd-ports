@@ -399,7 +399,7 @@ WITH_CDROM_DEVICE?=/dev/acd0
 WITH_DVD_DEVICE?=/dev/acd0
 .endif
 
-# If you change this value, the dependancy will not be recorded
+# If you change this value, the dependency will not be recorded
 .if !defined(WITH_VLC_DEFAULT_FONT)
 WITH_VLC_DEFAULT_FONT=		${LOCALBASE}/lib/X11/fonts/bitstream-vera/Vera.ttf
 WITH_VLC_DEFAULT_MONO_FONT=	${LOCALBASE}/lib/X11/fonts/bitstream-vera/VeraMono.ttf

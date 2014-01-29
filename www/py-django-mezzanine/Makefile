@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.4:${PORTSDIR}/www/py-django \
 		${PYTHON_PKGNAMEPREFIX}django-mezzanine-grappelli>=0.2.21:${PORTSDIR}/www/py-django-mezzanine-grappelli
 
 USES=			gettext
-USE_PYTHON=		-2.7
+USE_PYTHON=		2
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Mezzanine
 

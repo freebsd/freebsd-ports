@@ -16,7 +16,7 @@ LICENSE=		LGPL3
 CONFLICTS=		samba33-3.*
 
 USES=			pkgconfig
-USE_PYTHON_BUILD=	-2.7
+USE_PYTHON_BUILD=	2
 USE_LDCONFIG=		yes
 HAS_CONFIGURE=		yes
 WAF_TOOL=		buildtools/bin/waf

@@ -13,6 +13,8 @@ bin/nmzgrep
 bin/nmzmerge
 bin/rfnmz
 bin/vfnmz
+man/man1/mknmz.1.gz
+man/man1/namazu.1.gz
 etc/namazu/mknmzrc-sample
 etc/namazu/mknmzrc-sample.win32
 etc/namazu/namazurc-sample

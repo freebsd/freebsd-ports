@@ -3,6 +3,7 @@
 
 PORTNAME=	requests-oauthlib
 PORTVERSION=	0.3.2
+PORTREVISION=	1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -12,7 +13,7 @@ COMMENT=	OAuthlib authentication support for Requests
 LICENSE=	ISCL
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oauthlib>=0.4.2:${PORTSDIR}/security/py-oauthlib \
-		${PYTHON_PKGNAMEPREFIX}requests>0:${PORTSDIR}/www/py-requests
+		${PYTHON_PKGNAMEPREFIX}requests1>0:${PORTSDIR}/www/py-requests1
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:${PORTSDIR}/devel/py-mock
 
 USE_GITHUB=	yes

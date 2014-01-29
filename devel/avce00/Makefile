@@ -9,7 +9,9 @@ MASTER_SITES=	http://avce00.maptools.org/dl/
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	OpenSource C library convert Arc/Info Vector Coverages to E00
 
-USE_GMAKE=	yes
+OPTIONS_DEFINE=	DOCS
+
+USES=		gmake
 ALL_TARGET=	default
 BIN_FILES=	avcimport avcexport avcdelete avctest ex_avcwrite
 
@@ -21,7 +23,6 @@ PLIST_FILES=	bin/avcimport bin/avcexport bin/avcdelete \
 
 PORTDOCS=	avce00.html
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-extract:
@@ -33,15 +34,11 @@ post-extract:
 
 do-install:
 .for i in ${BIN_FILES}
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/avc.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/avc.h ${PREFIX}/include
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/avce00.html ${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/avc.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/avc.h ${STAGEDIR}${PREFIX}/include
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/avce00.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

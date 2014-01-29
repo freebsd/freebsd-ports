@@ -26,7 +26,6 @@ SOX_DESC=	sox (.au) support
 MPG123_DESC=	mpg123 support
 
 USE_BZIP2=	yes
-NO_STAGE=	yes
 USE_XORG=	x11 xext xi xxf86dga ice sm
 USES=		gmake pathfix pkgconfig
 USE_GNOME=	gnomehier gtk20 libxml2
@@ -37,49 +36,22 @@ CONFIGURE_ARGS=	--disable-alsamidi \
 		--disable-scheduler
 INSTALLS_OMF=	yes
 
-MAN1=		terminatorX.1
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MALSA}
-CONFIGURE_ARGS+=	--disable-alsa
-.else
-LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
-.endif
-
-.if ${PORT_OPTIONS:MJACK}
-LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
-.else
-CONFIGURE_ARGS+=	--disable-jack
-.endif
-
-.if ${PORT_OPTIONS:MMPG123}
-BUILD_DEPENDS+=	mpg123:${PORTSDIR}/audio/mpg123
-.else
-CONFIGURE_ARGS+=	--disable-mpg123
-.endif
-
-.if ${PORT_OPTIONS:MSOX}
-BUILD_DEPENDS+=	sox:${PORTSDIR}/audio/sox
-.else
-CONFIGURE_ARGS+=	--disable-sox
-.endif
-
-.if ${PORT_OPTIONS:MVORBIS}
-BUILD_DEPENDS+=	oggenc:${PORTSDIR}/audio/vorbis-tools
-LIB_DEPENDS+=	libvorbis.so:${PORTSDIR}/audio/libvorbis
-.else
-CONFIGURE_ARGS+=	--disable-vorbis
-.endif
-
-.if ${PORT_OPTIONS:MMAD}
-LIB_DEPENDS+=	libmad.so:${PORTSDIR}/audio/mad
-.else
-CONFIGURE_ARGS+=	--disable-mad
-.endif
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_CONFIGURE_OFF=	--disable-alsa
+JACK_LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
+JACK_CONFIGURE_OFF=	--disable-jack
+MPG123_BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
+MPG123_CONFIGURE_OFF=	--disable-mpg123
+SOX_BUILD_DEPENDS=	sox:${PORTSDIR}/audio/sox
+SOX_CONFIGURE_OFF=	--disable-sox
+VORBIS_BUILD_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
+VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
+VORBIS_CONFIGURE_OFF=	--disable-vorbis
+MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/mad
+MAD_CONFIGURE_OFF=	--disable-mad
 
 post-patch:
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
@@ -88,27 +60,26 @@ post-patch:
 		's|%%LOCALBASE%%|${LOCALBASE}|g'
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/terminatorX ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/terminatorX.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/terminatorX ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/terminatorX.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .for file in terminatorX-app.png terminatorX-mime.png
 	${INSTALL_DATA} ${WRKSRC}/gnome-support/${file} \
-		${PREFIX}/share/pixmaps
+		${STAGEDIR}${PREFIX}/share/pixmaps
 .endfor
 .for f in terminatorX.mime terminatorX.keys
 	${INSTALL_DATA} ${WRKSRC}/gnome-support/${f} \
-		${PREFIX}/share/mime-info
+		${STAGEDIR}${PREFIX}/share/mime-info
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/gnome-support/terminatorX.desktop \
-		${PREFIX}/share/applications
-	@${MKDIR} ${PREFIX}/share/gnome/help/terminatorX/C
+		${STAGEDIR}${PREFIX}/share/applications
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/gnome/help/terminatorX/C
 	${INSTALL_DATA} ${WRKSRC}/doc/terminatorX-manual/C/terminatorX-manual.xml \
-		${PREFIX}/share/gnome/help/terminatorX/C/terminatorX.xml
-	@${MKDIR} ${PREFIX}/share/gnome/help/terminatorX/C/figures
+		${STAGEDIR}${PREFIX}/share/gnome/help/terminatorX/C/terminatorX.xml
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/gnome/help/terminatorX/C/figures
 	${INSTALL_DATA} ${WRKSRC}/doc/terminatorX-manual/C/figures/signalflow.png \
-		${PREFIX}/share/gnome/help/terminatorX/C/figures
-	@${MKDIR} ${PREFIX}/share/omf/terminatorX
+		${STAGEDIR}${PREFIX}/share/gnome/help/terminatorX/C/figures
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/omf/terminatorX
 	${INSTALL_DATA} ${WRKSRC}/doc/terminatorX-manual/C/terminatorX-manual-C.omf \
-		${PREFIX}/share/omf/terminatorX/terminatorX-C.omf
-	@scrollkeeper-install -q ${PREFIX}/share/omf/terminatorX/terminatorX-C.omf 2>/dev/null || ${TRUE}
+		${STAGEDIR}${PREFIX}/share/omf/terminatorX/terminatorX-C.omf
 
 .include <bsd.port.mk>

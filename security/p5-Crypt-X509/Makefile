@@ -11,11 +11,9 @@ MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Perl extension to parse X.509 certificates
 
 BUILD_DEPENDS=	p5-Convert-ASN1>=0:${PORTSDIR}/converters/p5-Convert-ASN1
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Crypt::X509.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

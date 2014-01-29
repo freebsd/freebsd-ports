@@ -59,6 +59,8 @@ lib/libqhull_p.so.6
 lib/libqhullcpp.a
 lib/libqhullstatic.a
 lib/libqhullstatic_p.a
+man/man1/qhull.1.gz
+man/man1/rbox.1.gz
 @dirrm include/libqhull
 @dirrm include/libqhullcpp
 %%PORTDOCS%%%%DOCSDIR%%/Announce.txt

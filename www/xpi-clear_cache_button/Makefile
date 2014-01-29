@@ -34,7 +34,6 @@ XPI_DIRS=	chrome/skin/classic chrome/skin \
 		chrome/content \
 		chrome
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 
 post-patch:

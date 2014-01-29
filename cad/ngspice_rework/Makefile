@@ -10,14 +10,12 @@ DISTNAME=	ngspice-${PORTVERSION}
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	Mixed-signal circuit simulator derived from Spice and Cider
 
-OPTIONS_DEFINE=	DEBUG
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USES=		gmake
 
-DEBUG_CONFIGURE_ENABLE=	debig
-
-CONFIGURE_ARGS+=--enable-xspice \
-		--with-readline=yes
+DEBUG_CONFIGURE_ENABLE=	debug
+CONFIGURE_ARGS+=	--enable-xspice --with-readline=yes
 
 .include <bsd.port.mk>

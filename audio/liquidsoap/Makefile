@@ -91,6 +91,7 @@ PLIST_SUB=	RELVER=${PORTVERSION} \
 	LIQUIDSOAP_USER=${LIQUIDSOAP_USER} LIQUIDSOAP_GROUP=${LIQUIDSOAP_GROUP} \
 	LOGDIR=${LOGDIR} PIDDIR=${PIDDIR}
 
+BROKEN_powerpc=	Does not install on powerpc: dumps core
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -187,10 +188,4 @@ post-patch:
 pre-configure:
 	(cd ${WRKSRC} && ${GMAKE} bootstrap && ${SED} -i '' -e 's/^RUNNING_USER="$$USER"/RUNNING_USER=liquidsoap/' */configure)
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not install on powerpc: dumps core
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

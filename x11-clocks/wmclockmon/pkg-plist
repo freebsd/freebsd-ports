@@ -1,6 +1,9 @@
 bin/wmclockmon
 bin/wmclockmon-cal
 bin/wmclockmon-config
+man/man1/wmclockmon-cal.1.gz
+man/man1/wmclockmon-config.1.gz
+man/man1/wmclockmon.1.gz
 %%EXAMPLESDIR%%/sample1.wmclockmonrc
 %%EXAMPLESDIR%%/sample2.wmclockmonrc
 %%DATADIR%%/backlight0_off.xpm

@@ -17,7 +17,7 @@
 -CLIENT_INCLUDES= $(INCLUDES) -I/usr/X11R6/include `sdl-config --cflags`
 -CLIENT_LIBS= -Lenet/.libs -lenet -L/usr/X11R6/lib -lX11 `sdl-config --libs` -lSDL_image -lSDL_mixer -lz -lGL
 +CLIENT_INCLUDES= $(INCLUDES) `${SDL_CONFIG} --cflags` -I${LOCALBASE}/include
-+CLIENT_LIBS= -Lenet/.libs -lenet `${SDL_CONFIG} --libs` -L${LOCALBASE}/lib -lSDL_image -lSDL_mixer -lz -lGL
++CLIENT_LIBS= -Lenet/.libs -lenet `${SDL_CONFIG} --libs` -L${LOCALBASE}/lib -lX11 -lSDL_image -lSDL_mixer -lz -lGL
  endif
  ifeq ($(PLATFORM),Linux)
  CLIENT_LIBS+= -lrt

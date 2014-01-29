@@ -10,6 +10,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Lightweight file manager featuring a Norton Commander style interface
 
+LICENSE=	GPLv3
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
@@ -22,17 +24,12 @@ PORTDOCS=	readme.txt
 
 WRKSRC=		${WRKDIR}/muCommander-${PORTVERSION:S/./_/g}
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/mucommander.jar ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/license.txt ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKDIR}/mucommander ${PREFIX}/bin
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/mucommander.jar ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/license.txt ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/mucommander ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

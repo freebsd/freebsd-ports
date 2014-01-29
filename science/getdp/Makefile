@@ -23,20 +23,18 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gsl-prefix=${LOCALBASE}	\
 		--with-blas-lapack-prefix=${LOCALBASE} \
 		--enable-sparskit
+MAKE_ARGS=	bindir=${STAGEDIR}${PREFIX}/bin mandir=${STAGEDIR}${PREFIX}/man
 WANT_PERL=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN1=		getdp.1
-
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/doc && ${FIND} -s ${WRKSRC}/doc/* | ${SED} -e 's#${WRKSRC}/doc/##' | ${CPIO} -pmud -R ${BINOWN}:${BINGRP} ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${FIND} -s ${WRKSRC}/doc/* | ${SED} -e 's#${WRKSRC}/doc/##' | ${CPIO} -pmud -R ${BINOWN}:${BINGRP} ${STAGEDIR}${DOCSDIR}
 .endif
 .if !defined(NOPORTEXAMPLES)
-	cd ${WRKSRC}/demos && ${FIND} -s ${WRKSRC}/demos/* | ${SED} -e 's#${WRKSRC}/demos/##' | ${CPIO} -pmud -R ${BINOWN}:${BINGRP} ${EXAMPLESDIR}
+	cd ${WRKSRC}/demos && ${FIND} -s ${WRKSRC}/demos/* | ${SED} -e 's#${WRKSRC}/demos/##' | ${CPIO} -pmud -R ${BINOWN}:${BINGRP} ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.pre.mk>

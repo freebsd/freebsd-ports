@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rt
-DISTVERSION=	4.2.1
+DISTVERSION=	4.2.2
 PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/
@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	42
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
-CONFLICTS=	rt-3.8* rt40-4.0* brlcad-[0-9]*
+CONFLICTS_INSTALL=	rt-3.8* rt40-4.0* brlcad-[0-9]*
 
 NO_ARCH=	yes
 
@@ -32,7 +32,7 @@ NO_ARCH=	yes
 # mentioned in the docs is currently unsupported in the ports, but see
 # http://www.infracaninophile.co.uk/articles/sphinxse.html
 
-OPTIONS_DEFINE=		DEV GD GPG GRAPHVIZ SMIME
+OPTIONS_DEFINE=		DEVELOPER GD GPG GRAPHVIZ SMIME
 OPTIONS_SINGLE=		DB
 OPTIONS_SINGLE_DB=	MYSQL ORACLE PGSQL SQLITE
 OPTIONS_RADIO=		WEB
@@ -40,63 +40,76 @@ OPTIONS_RADIO_WEB=	AP_MODFASTCGI AP_MODPERL LIGHTTPD SPAWN_FCGI
 
 OPTIONS_DEFAULT=	AP_MODPERL GD GPG MYSQL
 
-AP_MODFASTCGI_DESC=	Deploy with apache and mod_fastcgi
-AP_MODPERL_DESC=	Deploy with apache and mod_perl
-DEV_DESC=		Configure for Developers
-GD_DESC=		Enable GD Graphs and Charts
-GPG_DESC=		Enable GnuPG support
-SMIME_DESC=		Enable Secure MIME support
-LIGHTTPD_DESC=		Deploy with lighttpd and mod_fastcgi
-SPAWN_FCGI_DESC=	Deploy with spawn_fcgi
-
 USERS?=		www
 GROUPS?=	rt www
 
-BUILD_DEPENDS+=	${LOCALBASE}/bin/jsmin:${PORTSDIR}/devel/jsmin
+RUN_DEPENDS+=	${LOCALBASE}/bin/jsmin:${PORTSDIR}/devel/jsmin
 
 .include "${.CURDIR}/Makefile.cpan"
 
-BUILD_DEPENDS+=	${CLI_DEPS}        \
+RUN_DEPENDS+=	${CLI_DEPS}        \
 		${CORE_DEPS}       \
 		${DASHBOARDS_DEPS} \
 		${ICAL_DEPS}       \
 		${MAILGATE_DEPS}   \
-		${USERLOGO_DEPS}
-
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+		${USERLOGO_DEPS}   \
+		${HTML_DOC_DEPS}
 
 USES+=		perl5
 USE_AUTOTOOLS=	autoconf
 
-DATADIR=	${LOCALBASE}/share/${PORTNAME}${PKGNAMESUFFIX}
+RT_ETC_PATH?=	${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX}
+RT_LAYOUT=	FreeBSD
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
+
+AP_MODPERL_DESC=		Deploy with apache and mod_perl
+AP_MODPERL_RUN_DEPENDS=		${MODPERL2_DEPS}
+
+AP_MODFASTCGI_DESC=		Deploy with apache and mod_fastcgi
+AP_MODFASTCGI_USE=		APACHE_RUN=22+
+AP_MODFASTCGI_RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi \
+				${FASTCGI_DEPS}
+
+LIGHTTPD_DESC=			Deploy with lighttpd and mod_fastcgi
+LIGHTTPD_RUN_DEPENDS=		${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
+
+SPAWN_FCGI_DESC=		Deploy with spawn_fcgi
+SPAWN_FCGI_RUN_DEPENDS=		${LOCALBASE}/bin/spawn-fcgi:${PORTSDIR}/www/spawn-fcgi
+
+MYSQL_USE=			MYSQL=yes
+MYSQL_RUN_DEPENDS=		${MYSQL_DEPS}
+
+PGSQL_USE=			PGSQL=yes
+PGSQL_RUN_DEPENDS=		${PGSQL_DEPS}
+
+ORACLE_RUN_DEPENDS=		${ORACLE_DEPS}
+
+SQLITE_USE=			SQLITE=yes
+SQLITE_RUN_DEPENDS=		${SQLITE_DEPS}
+
+DEVELOPER_DESC=			Configure for Developers
+DEVELOPER_RUN_DEPENDS=		${DEVELOPER_DEPS}
+DEVELOPER_CONFIGURE_ENABLE=		developer
+
+SMIME_DESC=			Enable Secure MIME support
+SMIME_RUN_DEPENDS=		${SMIME_DEPS}
+SMIME_CONFIGURE_ENABLE=		smime
+
+GRAPHVIZ_RUN_DEPENDS=		${GRAPHVIZ_DEPS}
+GRAPHVIZ_CONFIGURE_ENABLE=	graphviz
+
+GPG_DESC=			Enable GnuPG support
+GPG_RUN_DEPENDS=		${GPG_DEPS}
+GPG_CONFIGURE_ENABLE=		gpg
+
+GD_DESC=			Enable GD Graphs and Charts
+GD_RUN_DEPENDS=			${GD_DEPS}
+GD_CONFIGURE_ENABLE=		gd
+
+BUILD_DEPENDS+=	${RUN_DEPENDS}
 
 .include <bsd.port.options.mk>
-
-.if !${PORT_OPTIONS:MDOCS}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-noportdocs-Makefile.in
-.endif
-
-.if ${PORT_OPTIONS:MAP_MODPERL}
-BUILD_DEPENDS+=	${MODPERL2_DEPS}
-RUN_DEPENDS+=	${MODPERL2_DEPS}
-.endif
-
-.if ${PORT_OPTIONS:MAP_MODFASTCGI}
-USE_APACHE_RUN=	22+
-BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
-RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi \
-		${FASTCGI_DEPS}
-.endif
-
-.if ${PORT_OPTIONS:MLIGHTTPD}
-BUILD_DEPENDS+=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
-RUN_DEPENDS+=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
-.endif
-
-.if ${PORT_OPTIONS:MSPAWN_FCGI}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/spawn-fcgi:${PORTSDIR}/www/spawn-fcgi
-RUN_DEPENDS+=	${LOCALBASE}/bin/spawn-fcgi:${PORTSDIR}/www/spawn-fcgi
-.endif
 
 .if !${PORT_OPTIONS:MMYSQL} && !${PORT_OPTIONS:MPGSQL} && \
 	! ${PORT_OPTIONS:MORACLE} && !${PORT_OPTIONS:MSQLITE}
@@ -105,74 +118,19 @@ IGNORE=	please select one of MYSQL, PGSQL, ORACLE or SQLITE
 
 .if ${PORT_OPTIONS:MMYSQL}
 DB_TYPE=	mysql
-USE_MYSQL=	yes
-BUILD_DEPENDS+=	${MYSQL_DEPS}
-RUN_DEPENDS+=	${MYSQL_DEPS}
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 DB_TYPE=	Pg
-USE_PGSQL=	yes
-BUILD_DEPENDS+=	${PGSQL_DEPS}
-RUN_DEPENDS+=	${PGSQL_DEPS}
 .endif
 
 .if ${PORT_OPTIONS:MORACLE}
 DB_TYPE=	Oracle
-BUILD_DEPENDS+=	${ORACLE_DEPS}
-RUN_DEPENDS+=	${ORACLE_DEPS}
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE}
 DB_TYPE=	SQLite
-USE_SQLITE=	yes
-BUILD_DEPENDS+=	${SQLITE_DEPS}
-RUN_DEPENDS+=	${SQLITE_DEPS}
 .endif
-
-.if ${PORT_OPTIONS:MDEV}
-BUILD_DEPENDS+=	${DEVELOPER_DEPS}
-RUN_DEPENDS+=	${DEVELOPER_DEPS}
-CONFIGURE_ARGS+=	--enable-developer
-.else
-CONFIGURE_ARGS+=	--disable-developer
-.endif
-
-.if ${PORT_OPTIONS:MSMIME}
-BUILD_DEPENDS+=	${SMIME_DEPS}
-RUN_DEPENDS+=	${SMIME_DEPS}
-CONFIGURE_ARGS+=	--enable-smime
-.else
-CONFIGURE_ARGS+=	--disable-smime
-.endif
-
-.if ${PORT_OPTIONS:MGRAPHVIZ}
-BUILD_DEPENDS+=	${GRAPHVIZ_DEPS}
-RUN_DEPENDS+=	${GRAPHVIZ_DEPS}
-CONFIGURE_ARGS+=	--enable-graphviz
-.else
-CONFIGURE_ARGS+=	--disable-graphviz
-.endif
-
-.if ${PORT_OPTIONS:MGPG}
-BUILD_DEPENDS+=	${GPG_DEPS}
-RUN_DEPENDS+=	${GPG_DEPS}
-CONFIGURE_ARGS+=	--enable-gpg
-.else
-CONFIGURE_ARGS+=	--disable-gpg
-.endif
-
-.if ${PORT_OPTIONS:MGD}
-BUILD_DEPENDS+=	${GD_DEPS}
-RUN_DEPENDS+=	${GD_DEPS}
-CONFIGURE_ARGS+=	--enable-gd
-.else
-CONFIGURE_ARGS+=	--disable-gd
-.endif
-
-RT_ETC_PATH?=	${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX}
-RT_LAYOUT=	FreeBSD
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 .if ${PORT_OPTIONS:MPGSQL}
 DB_DBA_USER?=	pgsql
@@ -240,10 +198,8 @@ pre-install:
 	@${RM} -f ${WRKSRC}/lib/RT.pm.in
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/upgrade
 	(cd ${WRKSRC}/etc && \
 	    ${COPYTREE_SHARE} upgrade ${STAGEDIR}${DOCSDIR} "! -name *\.in")
-.endif
 
 .include <bsd.port.mk>

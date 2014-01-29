@@ -13,5 +13,4 @@ COMMENT=	JIS X 0212 (aka JIS 2000) Encodings
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

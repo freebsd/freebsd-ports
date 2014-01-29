@@ -3,9 +3,10 @@
 
 PORTNAME=	vamos
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ \
-		SF/nemysisfreebsdp/:icons
+		SF/nemysisfreebsdp/${CATEGORIES}/:icons
 DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}_icons${EXTRACT_SUFX}:icons
 
@@ -26,7 +27,7 @@ CONFIGURE_ARGS=	ac_cv_lib_freeglut_glutGetModifiers=no \
 		--disable-unit-tests
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -w
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 INFO=		vamos
@@ -40,13 +41,13 @@ DOCSRCDIR2=	${WRKSRC}/doc
 DOCSDIR2=	${DOCSDIR}/doc
 DOC_FILES2=	matrixfaq.htm
 
-INSTALLS_ICONS=	yes
-ICON_SIZES=	32x32 48x48 64x64 72x72 96x96
-
-DESKTOP_ENTRIES="Vamos" "${COMMENT}" ${PORTNAME} \
-		"${PORTNAME}" "Game;ArcadeGame;" false
-
 OPTIONS_DEFINE=	DOCS
+
+INSTALLS_ICONS=	yes
+ICON_SIZES=	32x32 48x48 64x64 72x72 96x96 128x128
+
+DESKTOP_ENTRIES="Vamos" "" ${PORTNAME} \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
 
 post-extract:
 	@${CHMOD} ${BINMODE} ${WRKSRC}/config/install-sh
@@ -60,6 +61,10 @@ post-patch:
 		 /^AM_CXXFLAGS/s| -L/usr/lib/boost||'
 
 post-install:
+.for l in geometry media body track world
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libvamos-${l}.so.0
+.endfor
+
 .for s in ${ICON_SIZES}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}/apps
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}_${s}.png \

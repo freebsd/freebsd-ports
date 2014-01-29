@@ -1,0 +1,51 @@
+--- ./x11/Makefile.in.orig	2004-11-21 03:02:57.000000000 +0000
++++ ./x11/Makefile.in	2014-01-15 20:23:38.000000000 +0000
+@@ -213,35 +213,29 @@
+ 
+ install-xtconq: install-ximfconvs-only 
+ 	srcroot=`cd $(srcroot); pwd`; export srcroot; \
+-	$(INSTALL_PROGRAM) $(XTCONQ_EXEC_NAME) $(bindir); \
+-	chown $(GAMEUID) $(bindir)/xtconq; \
+-	chgrp $(GAMEGRP) $(bindir)/xtconq; \
+-	chmod $(GAMEPERM) $(bindir)/xtconq; \
+-	$(INSTALL_DATA) Xtconq $(appdefaultsdir); \
+-	$(INSTALL_DATA) Xtconq-color $(appdefaultsdir); \
+-	$(INSTALL_PROGRAM) xshowimf $(bindir); \
+-	chown $(GAMEUID) $(bindir)/xshowimf ; \
+-	chgrp $(GAMEGRP) $(bindir)/xshowimf ; \
+-	chmod $(IAPPPERM) $(bindir)/xshowimf ; \
+-	$(INSTALL_DATA) XShowimf $(appdefaultsdir); \
+-	$(INSTALL_DATA) XShowimf-color $(appdefaultsdir); \
+-	$(INSTALL_DATA) xtconq.6 $(man6dir)
++	$(INSTALL_PROGRAM) $(XTCONQ_EXEC_NAME) $(DESTDIR)$(bindir); \
++	chmod $(GAMEPERM) $(DESTDIR)$(bindir)/xtconq; \
++	$(INSTALL_DATA) Xtconq $(DESTDIR)$(appdefaultsdir); \
++	$(INSTALL_DATA) Xtconq-color $(DESTDIR)$(appdefaultsdir); \
++	$(INSTALL_PROGRAM) xshowimf $(DESTDIR)$(bindir); \
++	chmod $(IAPPPERM) $(DESTDIR)$(bindir)/xshowimf ; \
++	$(INSTALL_DATA) XShowimf $(DESTDIR)$(appdefaultsdir); \
++	$(INSTALL_DATA) XShowimf-color $(DESTDIR)$(appdefaultsdir); \
++	$(INSTALL_DATA) xtconq.6 $(DESTDIR)$(man6dir)
+ 
+ # Installation of converter programs.
+ 
+ install-ximfconvs-only: x2imf imf2x
+ 	srcroot=`cd $(srcroot); pwd`; export srcroot; \
+-	$(INSTALL_PROGRAM) imf2x $(bindir); \
+-	$(INSTALL_PROGRAM) x2imf $(bindir); \
+-	chown $(GAMEUID) $(bindir)/imf2x $(bindir)/x2imf ; \
+-	chgrp $(GAMEGRP) $(bindir)/imf2x $(bindir)/x2imf ; \
+-	chmod $(IAPPPERM) $(bindir)/imf2x $(bindir)/x2imf
++	$(INSTALL_PROGRAM) imf2x $(DESTDIR)$(bindir); \
++	$(INSTALL_PROGRAM) x2imf $(DESTDIR)$(bindir); \
++	chmod $(IAPPPERM) $(DESTDIR)$(bindir)/imf2x $(DESTDIR)$(bindir)/x2imf
+ 
+ # Installation of manpages.
+ 
+ install-manpages-only: xconq.6
+ 	srcroot=`cd $(srcroot); pwd`; export srcroot; \
+-	$(INSTALL_DATA) xconq.6 $(man6dir)
++	$(INSTALL_DATA) xconq.6 $(DESTDIR)$(man6dir)
+ 
+ # Cleanliness support.
+ 

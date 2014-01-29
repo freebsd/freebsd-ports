@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/roundup-admin
 bin/roundup-demo
 bin/roundup-gettext

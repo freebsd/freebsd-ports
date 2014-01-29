@@ -1,0 +1,6 @@
+The task server provides a multi-user, multi-client repository for Taskwarrior
+2.3.0 (and later) and any other clients. It runs continuously as a daemon
+process, and provides several services, primarily the synchronization of tasks
+between the clients.
+
+WWW: http://taskwarrior.org

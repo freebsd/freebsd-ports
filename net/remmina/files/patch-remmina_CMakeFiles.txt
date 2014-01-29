@@ -1,9 +1,0 @@
---- remmina/CMakeLists.txt.orig	2013-05-21 03:32:51.737574552 +0000
-+++ remmina/CMakeLists.txt	2013-05-21 03:33:13.052583969 +0000
-@@ -139,5 +139,5 @@
- install(TARGETS remmina DESTINATION ${CMAKE_INSTALL_BINDIR})
- 
- configure_file(${CMAKE_CURRENT_SOURCE_DIR}/remmina.pc.in ${CMAKE_CURRENT_BINARY_DIR}/remmina.pc @ONLY)
--install(FILES ${CMAKE_CURRENT_BINARY_DIR}/remmina.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)
-+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/remmina.pc DESTINATION libdata/pkgconfig)
- 

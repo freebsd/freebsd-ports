@@ -5,6 +5,13 @@ bin/mstar
 bin/umined
 bin/uterm
 bin/xmined
+man/man1/mined.1.gz
+man/man1/minmacs.1.gz
+man/man1/mpico.1.gz
+man/man1/mstar.1.gz
+man/man1/umined.1.gz
+man/man1/uterm.1.gz
+man/man1/xmined.1.gz
 share/applications/mined.desktop
 %%DATADIR%%/bin/mterm
 %%DATADIR%%/bin/umined

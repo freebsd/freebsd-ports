@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/buildtool
 libexec/buildtool/bt_config
 libexec/buildtool/bt_dist
@@ -10,6 +9,7 @@ libexec/buildtool/bt_sh
 libexec/buildtool/bt_swcgen
 libexec/buildtool/bt_wizard
 libexec/buildtool/depconv
+man/man1/buildtool.1.gz
 share/buildtool/bt_config/base.subr
 share/buildtool/bt_config/pkgconfig.subr
 share/buildtool/bt_config/pthread.subr

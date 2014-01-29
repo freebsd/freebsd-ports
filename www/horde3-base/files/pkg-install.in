@@ -3,11 +3,8 @@
 # $FreeBSD$
 #
 # Copied from databases/phpmyadmin.
-# Used if WITH_SUPHP has been defined.
 
 PATH=/usr/sbin:/usr/bin:/bin ; export PATH
-
-WITH_SUPHP=%%WITH_SUPHP%%
 
 hordedir=%%HORDIR%%
 hordeusr=%%HORDEADMUSR%%
@@ -74,33 +71,7 @@ create_user() {
 
 
 case $2 in
-    PRE-INSTALL)
-
-        if [ $WITH_SUPHP != "yes" ]; then
-            exit 0
-        fi
-
-        # Create the horde user and group if they do not already exist
-
-        if pw user show -n $hordeusr >/dev/null 2>&1 ; then
-	    echo "===> Using pre-existing user $hordeusr"
-	else
-	    if ! pw group show -n $hordegrp >/dev/null 2>&1 ; then
-		create_group $hordeusr $hordegrp "$hordegcos" $hordehome \
-		    $hordeshell
-	    fi
-	    create_user $hordeusr $hordegrp "$hordegcos" $hordehome $hordeshell
-	fi
-	;;
     POST-INSTALL)
-
-        if [ $WITH_SUPHP = "yes" ]; then
-    	    # Change ownership of the Horde directory
-
-            echo "===> Adjusting file ownership in $hordedir"
-            chown -R $hordeusr:$hordegrp $hordedir || exit 1
-        fi
-
         if [ -z "${PACKAGE_BUILDING}" ]; then
             # Copy over sample config files unless they already exist
 

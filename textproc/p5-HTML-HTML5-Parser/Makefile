@@ -24,11 +24,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HTML::HTML5::Parser.3 \
-		HTML::HTML5::Parser::Error.3 \
-		HTML::HTML5::Parser::UA.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

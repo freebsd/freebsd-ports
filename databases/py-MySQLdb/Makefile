@@ -12,7 +12,7 @@ DISTNAME=	MySQL-python-${DISTVERSION}
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	Access a MySQL database through Python
 
-USE_PYTHON=		-2.7
+USE_PYTHON=		2
 USE_PYDISTUTILS=	easy_install
 USE_MYSQL=		yes
 PYDISTUTILS_INSTALLARGS=	-O 1 -N -Z -S ${PYTHON_SITELIBDIR} -d ${PYEASYINSTALL_SITELIBDIR} ${WRKSRC}/dist/${PYEASYINSTALL_EGG}
@@ -32,8 +32,6 @@ MYSQLCLIENT_R_DESC=	Use libmysqlclient_r (thread safe)
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.include <bsd.port.pre.mk>
-
 .if ${PORT_OPTIONS:MMYSQLCLIENT_R}
 pre-configure:
 	@${REINPLACE_CMD} -E -e "s|(threadsafe.*)True|\1 False|" \
@@ -47,4 +45,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

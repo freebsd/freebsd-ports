@@ -16,7 +16,7 @@ RUN_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools \
 		${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml
 
 NO_STAGE=	yes
-USE_PYTHON=		-2.7
+USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 WRKSRC=		${WRKDIR}/sonice

@@ -17,7 +17,7 @@ USE_GMAKE=	yes
 USES=        pathfix gettext
 USE_GNOME=	gnomeprefix intlhack pygnome2 pygtk2 pygnomeextras
 GNU_CONFIGURE=	yes
-USE_PYTHON=	2.2+
+USE_PYTHON=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

@@ -313,6 +313,7 @@
     SUBDIR += libgnetwork
     SUBDIR += libgweather
     SUBDIR += libilbc
+    SUBDIR += libkfbapi
     SUBDIR += libkvkontakte
     SUBDIR += libmateweather
     SUBDIR += libmediawiki
@@ -1014,6 +1015,7 @@
     SUBDIR += rsmb
     SUBDIR += rsplib
     SUBDIR += rsync
+    SUBDIR += rsync-bpc
     SUBDIR += rtg
     SUBDIR += rtpbreak
     SUBDIR += rtpproxy
@@ -1084,6 +1086,7 @@
     SUBDIR += samba-smbclient
     SUBDIR += samba36
     SUBDIR += samba4
+    SUBDIR += samba41
     SUBDIR += samba4wins
     SUBDIR += samplicator
     SUBDIR += sbd

@@ -15,6 +15,5 @@ XPI_NUM=	2914
 XPI_FILES=	chrome/closealltabs.jar chrome.manifest install.rdf
 XPI_DIRS=	chrome
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

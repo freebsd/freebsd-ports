@@ -23,7 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-
 
 USE_GNOME=	pygtk2 gnomedocutils libxslt glib20
 USES=		gettext
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 

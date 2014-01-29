@@ -12,19 +12,15 @@ COMMENT=	Hyper-animated face analog clock for X11
 
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
-MAN1=		emiclock.1
 
 LANGRES=	resources/R6/EUC/EmiClock.ad
 LANGDIR=	${LOCALBASE}/lib/X11/ja_JP.eucJP/app-defaults
 LANGDIR2=	${LOCALBASE}/lib/X11/ja_JP.EUC/app-defaults
 EMICLOCKDIR=	${LOCALBASE}/lib/X11/EmiClock
 
-.ifndef NOPORTDOCS
 PORTDOCS=	COPYRIGHT COPYRIGHT.en
-.endif
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} != "i386"
 PLIST_SUB=	SOUND="@comment "
@@ -33,15 +29,12 @@ PLIST_SUB=	SOUND=""
 .endif
 
 post-install:
-	@${MKDIR} ${EMICLOCKDIR}
-	@${MKDIR} ${LANGDIR}
-	@${MKDIR} ${LANGDIR2}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${LANGRES} ${LANGDIR}/EmiClock
-	cd ${WRKSRC} && ${INSTALL_DATA} ${LANGRES} ${LANGDIR2}/EmiClock
-.ifndef NOPORTDOCS
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
-#	cd ${WRKSRC}; make install.man
+	@${MKDIR} ${STAGEDIR}${EMICLOCKDIR}
+	@${MKDIR} ${STAGEDIR}${LANGDIR}
+	@${MKDIR} ${STAGEDIR}${LANGDIR2}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${LANGRES} ${STAGEDIR}${LANGDIR}/EmiClock
+	cd ${WRKSRC} && ${INSTALL_DATA} ${LANGRES} ${STAGEDIR}${LANGDIR2}/EmiClock
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

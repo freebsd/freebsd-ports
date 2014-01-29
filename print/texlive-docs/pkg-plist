@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%TEXMFDISTDIR%%/doc/support/ctanupload/ctanupload.pdf
 %%TEXMFDISTDIR%%/doc/support/ctanupload/README
 %%TEXMFDISTDIR%%/doc/support/ctanupload/Makefile.example

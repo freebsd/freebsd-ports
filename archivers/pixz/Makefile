@@ -16,16 +16,8 @@ SUB_FILES=	Makefile
 PLIST_FILES=	bin/${PORTNAME} man/man1/pixz.1.gz
 MAKE_ENV+=	PTHREAD_LIBS=${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800505 || (${OSVERSION} >= 900000 && ${OSVERSION} < 900012)
-LIB_DEPENDS+=	liblzma.so:${PORTSDIR}/archivers/xz
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-.endif
-
 post-extract: apply-slist
 	${INSTALL_DATA} ${WRKDIR}/Makefile ${WRKSRC}
 	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.1 ${WRKSRC}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

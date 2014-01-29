@@ -23,5 +23,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/ohai
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

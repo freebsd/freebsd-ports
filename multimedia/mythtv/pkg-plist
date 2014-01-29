@@ -525,16 +525,6 @@ include/mythtv/zeromq/zmq_utils.h
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/static.pyc
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/system.py
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/system.pyc
-%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb/XSLT/tmdbQuery.xsl
-%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb/XSLT/tmdbVideo.xsl
-%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb/__init__.py
-%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb/__init__.pyc
-%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb/tmdb_api.py
-%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb/tmdb_api.pyc
-%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb/tmdb_exceptions.py
-%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb/tmdb_exceptions.pyc
-%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb/tmdb_ui.py
-%%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb/tmdb_ui.pyc
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb3/__init__.py
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb3/__init__.pyc
 %%BINDINGS%%%%PYTHON_SITELIBDIR%%/MythTV/tmdb3/cache.py
@@ -1112,7 +1102,6 @@ lib/pkgconfig/libmythzmq.pc
 %%DATADIR%%/locales/ru_ru.xml
 %%DATADIR%%/locales/zh_hk.xml
 %%DATADIR%%/locales/zh_tw.xml
-%%DATADIR%%/metadata/Movie/tmdb.py
 %%DATADIR%%/metadata/Movie/tmdb3.py
 %%DATADIR%%/metadata/Television/ttvdb.py
 %%DATADIR%%/mythconverg_backup.pl
@@ -2334,8 +2323,6 @@ lib/pkgconfig/libmythzmq.pc
 %%BINDINGS%%@dirrm %%PYTHON_SITELIBDIR%%/MythTV/ttvdb/XSLT
 %%BINDINGS%%@dirrm %%PYTHON_SITELIBDIR%%/MythTV/ttvdb
 %%BINDINGS%%@dirrm %%PYTHON_SITELIBDIR%%/MythTV/tmdb3
-%%BINDINGS%%@dirrm %%PYTHON_SITELIBDIR%%/MythTV/tmdb/XSLT
-%%BINDINGS%%@dirrm %%PYTHON_SITELIBDIR%%/MythTV/tmdb
 %%BINDINGS%%@dirrm %%PYTHON_SITELIBDIR%%/MythTV
 %%BINDINGS%%@dirrmtry %%SITE_PERL%%/IO/Socket/INET
 %%BINDINGS%%@dirrmtry %%SITE_PERL%%/IO/Socket

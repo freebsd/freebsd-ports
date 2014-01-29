@@ -3,6 +3,7 @@
 
 PORTNAME=	mbuffer
 PORTVERSION=	2013.02.20
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.maier-komor.de/software/mbuffer/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
@@ -18,16 +19,13 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	SHELL=${SH}
 
-PLIST_FILES=	bin/mbuffer
-
-MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/mbuffer man/man1/mbuffer.1.gz
 
 OPTIONS_DEFINE=	MHASH
 MHASH_DESC=	Use mhash for hash generation
 
 OPTIONS_DEFAULT=	MHASH
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMHASH}

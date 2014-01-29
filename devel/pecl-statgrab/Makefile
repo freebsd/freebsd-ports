@@ -25,5 +25,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib -ldevstat ${EXTRA_LIBS}
 
 CONFIGURE_ARGS=	--with-statgrab=${LOCALBASE}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

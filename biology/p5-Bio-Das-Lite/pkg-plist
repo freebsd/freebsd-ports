@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Bio/Das/Lite.pm
+%%PERL5_MAN3%%/Bio::Das::Lite.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Das/Lite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio/Das
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bio

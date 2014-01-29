@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 lib/purple-2/libskype.so
 %%NLS%%share/locale/cs/LC_MESSAGES/skype4pidgin.mo
 %%NLS%%share/locale/de/LC_MESSAGES/skype4pidgin.mo

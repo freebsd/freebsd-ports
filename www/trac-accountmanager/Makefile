@@ -18,7 +18,7 @@ RUN_DEPENDS=	tracd:${PORTSDIR}/www/trac
 FETCH_BEFORE_ARGS=	-o ${DISTFILES}
 REV=			12583
 USE_ZIP=		yes
-USE_PYTHON=		-2.7
+USE_PYTHON=		2
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	TracAccountManager
 PYDISTUTILS_PKGVERSION=	0.5dev
@@ -36,5 +36,4 @@ WRKSRC=			${WRKDIR}/accountmanagerplugin/trunk
 # --- httpd.conf
 # SetEnv PYTHON_EGG_CACHE "/tmp/cache"
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

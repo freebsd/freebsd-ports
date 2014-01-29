@@ -11,12 +11,16 @@ DISTNAME=	zpu-toolchain-${PORTVERSION}
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	ZPU gcc compiler
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	${LOCALBASE}/zpu/bin/zpu-elf-as:${PORTSDIR}/devel/zpu-binutils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/toolchain
 USES=		gettext gmake
 MANDIRS=	${PREFIX}/zpu/man
+INFO=		zpuc/cpp zpuc/cppinternals zpuc/dir zpuc/gcc zpuc/gccinstal \
+		    zpuc/gccint
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/%%CC%%/${CC}/' ${WRKSRC}/build.sh
@@ -24,7 +28,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/%%GMAKE%%/${GMAKE}/' ${WRKSRC}/build.sh \
 		${WRKSRC}/install.sh
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/build.sh
-	@${REINPLACE_CMD} -e 's|%%DESTDIR%%|${STAGEDIR}|g' ${WRKSRC}/gcc/Makefile.in 
+	@${REINPLACE_CMD} -e 's|%%DESTDIR%%|${STAGEDIR}|g' ${WRKSRC}/gcc/Makefile.in
 
 do-install:
 	cd ${WRKSRC} && ${SH} install.sh

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/inlineegg/WindowsSyscall.py
 %%PYTHON_SITELIBDIR%%/inlineegg/WindowsSyscall.pyc
 %%PYTHON_SITELIBDIR%%/inlineegg/WindowsSyscall.pyo

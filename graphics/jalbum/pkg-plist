@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/jalbum
 %%DATADIR%%/JAlbum.jar
 %%DATADIR%%/StartJAlbum.cmd

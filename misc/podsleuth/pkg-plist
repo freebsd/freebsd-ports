@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/podsleuth
 etc/dbus-1/system.d/podsleuth.conf
 lib/podsleuth/PodSleuth.dll

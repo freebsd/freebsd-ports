@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/explaining-bsd/docbook.css
 %%DOCSDIR%%/%%DOCLANG%%/articles/filtering-bridges/docbook.css

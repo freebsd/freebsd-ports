@@ -13,8 +13,4 @@ COMMENT=	Perl5 module to determine the size of images in several common formats
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		imgsize.1
-MAN3=		Image::Size.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

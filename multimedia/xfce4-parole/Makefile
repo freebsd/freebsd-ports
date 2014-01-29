@@ -16,6 +16,8 @@ LIB_DEPENDS=	libtag.so:${PORTSDIR}/audio/taglib \
 		libnotify.so:${PORTSDIR}/devel/libnotify \
 		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
+PORTSCOUT=	limit:^0\.6\.
+
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 lib/libgnomepanelsharpglue-2.a
 lib/libgnomepanelsharpglue-2.la
 lib/libgnomepanelsharpglue-2.so

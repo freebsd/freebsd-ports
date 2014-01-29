@@ -13,9 +13,4 @@ COMMENT=		A simple date object
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=			Date::Simple.3 Date::Simple::NoXS.3 \
-			Date::Simple::D8.3 Date::Simple::Fmt.3 \
-			Date::Simple::ISO.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -17,7 +17,7 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 USES=		gmake
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_PYTHON=	2.7
+USE_PYTHON=	2
 
 CONFLICTS=	node-0.[0-9]*
 

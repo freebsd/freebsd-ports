@@ -1,5 +1,5 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
-# $FreeBSD: jkim/emulators/virtualbox-ose/Makefile 20804 2013-12-20 00:47:55Z jkim $
+# $FreeBSD$
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	4.3.6
@@ -31,9 +31,11 @@ RUN_DEPENDS=	${KMODDIR}/vboxdrv.ko:${PORTSDIR}/emulators/virtualbox-ose-kmod \
 
 WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64
-USES=		compiler iconv pkgconfig
+USES=		iconv pkgconfig
+USE_GCC=	any
 USE_GNOME=	libidl
 USE_BZIP2=	yes
+USE_PYTHON_BUILD=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --passive-mesa
@@ -52,7 +54,7 @@ VBOX_GUEST_VER=	${PORTVERSION}
 
 OPTIONS_DEFINE=	QT4 DEBUG GUESTADDITIONS DBUS PULSEAUDIO UDPTUNNEL VDE VNC WEBSERVICE NLS X11 VPX PYTHON
 OPTIONS_DEFAULT=	QT4 DBUS X11 UDPTUNNEL VNC WEBSERVICE PYTHON
-OPTIONS_SUB=	X11 QT4 GUESTADDITIONS VNC NLS WEBSERVICE
+OPTIONS_SUB=	X11 QT4 GUESTADDITIONS VNC NLS WEBSERVICE PYTHON
 DEBUG_DESC=	Debug symbols, additional logs and assertions
 QT4_DESC=	Build with QT4 Frontend
 GUESTADDITIONS_DESC=	Build with Guest Additions
@@ -120,7 +122,7 @@ CONFIGURE_ARGS+=--build-headless
 
 .if ${PORT_OPTIONS:MQT4}
 QT_NONSTANDARD=	yes
-USE_QT4=	gui network moc_build uic_build rcc_build linguist
+USE_QT4=	gui network moc_build opengl uic_build rcc_build linguist
 INSTALLS_ICONS=	yes
 VBOX_FRONTENDS+=VirtualBox VBoxTestOGL
 .else
@@ -128,15 +130,13 @@ CONFIGURE_ARGS+=--disable-qt4
 .endif
 
 .if ${PORT_OPTIONS:MPYTHON}
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	vboxapi
 PYDISTUTILS_PKGVERSION=	1.0
 PYDISTUTILS_NOEGGINFO=	yes
-PLIST_SUB+=	PYTHON=""
 .else
 CONFIGURE_ARGS+=--disable-python
-PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGUESTADDITIONS}
@@ -174,13 +174,6 @@ EXTRA_PATCHES+=	${FILESDIR}/extrapatch-src-VBox-Main-src-server-generic-NetIf-ge
 		${FILESDIR}/extrapatch-src-VBox-Devices-PC-vbox.dsl
 .endif
 
-.if ${COMPILER_TYPE} == clang
-PATCH_DEPENDS+=	${LOCALBASE}/share/kBuild/tools/GXX3.kmk:${PORTSDIR}/devel/kBuild
-EXTRA_PATCHES+=	${FILESDIR}/extrapatch-Config.kmk \
-		${FILESDIR}/extrapatch-src-VBox-Devices-PC-ipxe-Makefile.kmk \
-		${FILESDIR}/extrapatch-src-recompiler-Makefile.kmk
-.endif
-
 pre-everything::
 .if ${ARCH} == "amd64"
 .if !exists(/usr/lib32/libc.so)
@@ -193,7 +186,7 @@ pre-everything::
 post-patch:
 	@${ECHO} 'VBOX_PATH_APP_PRIVATE_ARCH = ${PREFIX}/lib/virtualbox' > ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_PATH_SHARED_LIBS = ${PREFIX}/lib/virtualbox' >> ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'VBOX_WITH_RUNPATH = ${PREFIX}/lib/virtualbox' >> ${WRKSRC}/LocalConfig.kmk
+	@var=${_GCC_RUNTIME}; ${ECHO} "VBOX_WITH_RUNPATH = $${var:+$${var}:}${PREFIX}/lib/virtualbox" >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_PATH_APP_PRIVATE = ${DATADIR}' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_PATH_APP_DOCS = ${DOCSDIR}' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_WITH_INSTALLER = 1' >> ${WRKSRC}/LocalConfig.kmk
@@ -219,12 +212,6 @@ post-patch:
 	@${ECHO} 'VBOX_PATH_GSOAP_BIN = ${PREFIX}/bin' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_PATH_GSOAP_IMPORT = ${PREFIX}/share/gsoap/import' >> ${WRKSRC}/LocalConfig.kmk
 	@${ECHO} 'VBOX_GCC_PEDANTIC_CXX = -Wshadow $(VBOX_GCC_WARN) -Wno-long-long' >> ${WRKSRC}/LocalConfig.kmk
-.endif
-.if ${COMPILER_TYPE} == clang
-	@${REINPLACE_CMD} -e 's| -fpermissive||' ${WRKSRC}/Config.kmk ${WRKSRC}/src/VBox/Main/webservice/Makefile.kmk
-	@${ECHO} 'VBOX_GCC_Wno-unused-parameter = -Wno-unused-parameter' >> ${WRKSRC}/LocalConfig.kmk
-	@${ECHO} 'TOOL_VBoxGccFreeBSD_LD = ${CXX}' >> ${WRKSRC}/LocalConfig.kmk
-	@${SED} -e 's|GXX3|VBoxGccFreeBSD|g' ${LOCALBASE}/share/kBuild/tools/GXX3.kmk > ${WRKSRC}/tools/kBuildTools/VBoxGccFreeBSD.kmk
 .endif
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${WRKSRC}/Config.kmk ${WRKSRC}/configure \

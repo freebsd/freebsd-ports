@@ -13,7 +13,7 @@ COMMENT=	A unified API for parsing NZB files
 
 LICENSE=	BSD
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_NOEGGINFO=	yes
 

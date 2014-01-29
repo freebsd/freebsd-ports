@@ -15,19 +15,21 @@ COMMENT=	Java wrapper for GNOME 2
 BUILD_DEPENDS=	${JAVALIBDIR}/gtk${GTK_API_VERSION}.jar:${PORTSDIR}/x11-toolkits/libgtk-java
 RUN_DEPENDS=	${JAVALIBDIR}/gtk${GTK_API_VERSION}.jar:${PORTSDIR}/x11-toolkits/libgtk-java
 
-USES=		gmake pkgconfig
+USES=		dos2unix gmake pathfix pkgconfig shebangfix
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
-USE_GNOME=	gnomehack libgnomeui
+USE_GNOME=	libgnomeui
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}
 CONFIGURE_ENV=	ac_cv_path_DB1="nocommand" \
 		ac_cv_path_DB2="nocommand"
 CPPFLAGS+=	-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd
 MAKE_JOBS_UNSAFE=	yes
+DOS2UNIX_FILES=	gnome2-java.pc.in
+SHEBANG_FILES=	doc/examples/runExample.sh.in
 
 # jikes related
 CONFIGURE_ENV+=	BOOTCLASSPATH=${JAVA_CLASSES}
@@ -39,45 +41,41 @@ PLIST_SUB=		GNOME_API_VERSION=${GNOME_API_VERSION} PORTNAME=${PORTNAME}
 
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
-NO_STAGE=	yes
 post-extract:
-	@${REINPLACE_CMD} -e 's|||g' \
-		${WRKSRC}/gnome2-java.pc.in
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|g' \
 	    	${WRKSRC}/configure
 
 do-install:
-	${MKDIR} ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/.libs/libgnomejni-${GNOME_API_VERSION}.so \
-		${PREFIX}/lib/libgnomejni-${GNOME_API_VERSION}.so.1
-	${LN} -sf ${PREFIX}/lib/libgnomejni-${GNOME_API_VERSION}.so.1 \
-		${PREFIX}/lib/libgnomejni-${GNOME_API_VERSION}.so
-	${MKDIR} ${PREFIX}/libdata/pkgconfig
-	${INSTALL_DATA} ${WRKSRC}/gnome2-java.pc	${PREFIX}/libdata/pkgconfig
-	${MKDIR} ${JAVAJARDIR}
-	${INSTALL_DATA} ${WRKSRC}/gnome${GNOME_API_VERSION}.jar ${JAVAJARDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/.libs/libgnomejni-${GNOME_API_VERSION}.so \
+		${STAGEDIR}${PREFIX}/lib/libgnomejni-${GNOME_API_VERSION}.so.1
+	${LN} -sf libgnomejni-${GNOME_API_VERSION}.so.1 \
+		${STAGEDIR}${PREFIX}/lib/libgnomejni-${GNOME_API_VERSION}.so
+	${MKDIR} ${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${INSTALL_DATA} ${WRKSRC}/gnome2-java.pc \
+		${STAGEDIR}${PREFIX}/libdata/pkgconfig
+	${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/gnome${GNOME_API_VERSION}.jar ${STAGEDIR}${JAVAJARDIR}
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}
-	${MKDIR} ${PREFIX}/share/${PORTNAME}/tutorial
-	${INSTALL_DATA} ${WRKSRC}/doc/tutorial/* ${PREFIX}/share/${PORTNAME}/tutorial
-	${MKDIR} ${DOCSDIR}/api
-	cd ${WRKSRC}/doc/api && ${FIND} . | ${CPIO} -pdmu ${DOCSDIR}/api
-	${TOUCH} ${DOCSDIR}/api/packages.html
-	${MKDIR} ${DOCSDIR}/examples
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/AUTHORS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYING ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/NEWS ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/TODO ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}/tutorial
+	${INSTALL_DATA} ${WRKSRC}/doc/tutorial/* \
+		${STAGEDIR}${PREFIX}/share/${PORTNAME}/tutorial
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/api
+	cd ${WRKSRC}/doc/api && ${FIND} . | ${CPIO} -pdmu ${STAGEDIR}${DOCSDIR}/api
+	${TOUCH} ${STAGEDIR}${DOCSDIR}/api/packages.html
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/examples
 	cd ${WRKSRC}/doc/examples && ${FIND} . \
-		| ${CPIO} -pdmu ${DOCSDIR}/examples
-.endif
+		| ${CPIO} -pdmu ${STAGEDIR}${DOCSDIR}/examples
 	@${SED} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|g ; \
 		s|%%PREFIX%%|${PREFIX}|g ; \
 		s|%%GNOME_API_VERSION%%|${GNOME_API_VERSION}|g' \
 		 < ${PKGDIR}/pkg-message > ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

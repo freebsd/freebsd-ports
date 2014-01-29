@@ -27,21 +27,22 @@ ALL_TARGET=	${PORTNAME}.la
 
 _BUILDING_LIGHTTPD_MODULE=	yes
 
-NO_STAGE=	yes
 do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/lighttpd
 	@${INSTALL_KLD} ${WRKSRC}/src/.libs/${PORTNAME}.so \
-		${LOCALBASE}/lib/lighttpd
+		${STAGEDIR}${PREFIX}/lib/lighttpd
 	@${INSTALL_KLD} ${WRKSRC}/src/.libs/${PORTNAME}.la \
-		${LOCALBASE}/lib/lighttpd
+		${STAGEDIR}${PREFIX}/lib/lighttpd
 	@${INSTALL_DATA} ${WRKSRC}/src/.libs/${PORTNAME}.a \
-		${LOCALBASE}/lib/lighttpd
+		${STAGEDIR}${PREFIX}/lib/lighttpd
 
 post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d
 	@${INSTALL_DATA} ${WRKSRC}/doc/config/conf.d/geoip.conf \
-		${PREFIX}/etc/lighttpd/conf.d/geoip.conf.sample
-.if !exists(${PREFIX}/etc/lighttpd/conf.d/geoip.conf)
+		${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d/geoip.conf.sample
+.if !exists(${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d/geoip.conf)
 	@${INSTALL_DATA} ${WRKSRC}/doc/config/conf.d/geoip.conf \
-		${PREFIX}/etc/lighttpd/conf.d/geoip.conf.sample
+		${STAGEDIR}${PREFIX}/etc/lighttpd/conf.d/geoip.conf.sample
 .endif
 
 .include "${MASTERDIR}/Makefile"

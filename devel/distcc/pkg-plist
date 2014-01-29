@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/distcc
 bin/distccmon-text
 bin/lsdistcc

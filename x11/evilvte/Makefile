@@ -11,16 +11,12 @@ MASTER_SITES=	http://www.calno.com/${PORTNAME}/ \
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	A VTE based, super lightweight terminal emulator
 
-USES=		pkgconfig
+USES=		pkgconfig gmake
 USE_XZ=		yes
-USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 ALL_TARGET=	evilvte
 USE_GNOME=	vte
 
-MAN1=		evilvte.1 showvte.1
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000
@@ -47,7 +43,7 @@ post-patch:
 .endif
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/misc/evilvte.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/misc/showvte.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/misc/evilvte.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/misc/showvte.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.post.mk>

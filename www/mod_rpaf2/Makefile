@@ -11,7 +11,6 @@ DISTNAME=	mod_rpaf-${PORTVERSION}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Make proxied requests appear with client IP
 
-
 USE_APACHE=	22+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
@@ -19,5 +18,4 @@ SHORTMODNAME=	rpaf
 
 SRC_FILE=	mod_rpaf-2.0.c
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

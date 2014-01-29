@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 bin/MergePCBPS
 bin/Merge_dimPCBPS
 bin/pcb

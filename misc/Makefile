@@ -421,7 +421,6 @@
     SUBDIR += susv2
     SUBDIR += susv3
     SUBDIR += sword
-    SUBDIR += sword17
     SUBDIR += table.el
     SUBDIR += talkfilters
     SUBDIR += tcb

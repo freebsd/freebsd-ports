@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @exec mkdir -p /var/spool/prelude-manager/failover
 @exec mkdir -p /var/spool/prelude-manager/scheduler
 @exec chmod 700 /var/spool/prelude-manager /var/spool/prelude-manager/failover /var/spool/prelude-manager/scheduler

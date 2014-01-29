@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @comment common files list
 bin/ipmi_ui
 bin/ipmicmd

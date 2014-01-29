@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/PySide/QtCore/pyside_qtcore_python.h
 include/PySide/QtDeclarative/pyside_qtdeclarative_python.h
 include/PySide/QtGui/pyside_qtgui_python.h

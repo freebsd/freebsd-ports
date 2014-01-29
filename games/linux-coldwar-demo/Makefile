@@ -24,7 +24,6 @@ PORTDOCS=	README README.licenses EULA
 OPTIONS_DEFINE=	NVIDIA DOCS
 NVIDIA_DESC=	Enable nvidia graphics driver support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNVIDIA}
@@ -50,17 +49,16 @@ do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/bin/Linux/x86/meng
 
 do-install:
-	@${MKDIR} ${DATADIR}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}/bin
 	@cd ${WRKSRC}/bin/Linux/x86 && \
-		${INSTALL_PROGRAM} bin/meng ${DATADIR}/bin
+		${INSTALL_PROGRAM} bin/meng ${STAGEDIR}${DATADIR}/bin
 	@cd ${WRKSRC}/data/bin && \
-		${INSTALL_PROGRAM} launcher ${DATADIR}/bin
-	@${CP} -R ${WRKSRC}/data/config ${DATADIR}/
-	@${CP} -R ${WRKSRC}/data/data ${DATADIR}/
-	@${INSTALL_PROGRAM} ${WRKDIR}/coldwar ${PREFIX}/bin/${PKGNAMEPREFIX}coldwar
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+		${INSTALL_PROGRAM} launcher ${STAGEDIR}${DATADIR}/bin
+	@${CP} -R ${WRKSRC}/data/config ${STAGEDIR}${DATADIR}/
+	@${CP} -R ${WRKSRC}/data/data ${STAGEDIR}${DATADIR}/
+	@${INSTALL_PROGRAM} ${WRKDIR}/coldwar \
+		${STAGEDIR}${PREFIX}/bin/${PKGNAMEPREFIX}coldwar
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -1,6 +1,3 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Growl/GNTP/.packlist
-%%SITE_PERL%%/Growl/GNTP.pm
 %%PERL5_MAN3%%/Growl::GNTP.3.gz
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Growl/GNTP
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Growl
+%%SITE_PERL%%/Growl/GNTP.pm
 @dirrmtry %%SITE_PERL%%/Growl

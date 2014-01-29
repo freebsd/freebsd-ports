@@ -14,7 +14,7 @@ COMMENT=	Python template plugin that supports Kid templates
 
 RUN_DEPENDS=	kid:${PORTSDIR}/devel/py-kid
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
 NO_STAGE=	yes

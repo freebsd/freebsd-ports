@@ -7,14 +7,13 @@ CATEGORIES=	devel
 MASTER_SITES=	http://distfiles.atheme.org/
 
 MAINTAINER=	oliver@FreeBSD.org
-COMMENT=	A development framework for C
+COMMENT=	Development framework for C
 
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
 USE_BZIP2=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|$${libdir}/pkgconfig|$${prefix}/libdata/pkgconfig|g' \
 		${WRKSRC}/Makefile

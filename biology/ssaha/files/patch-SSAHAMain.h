@@ -1,6 +1,14 @@
 --- ./Global/SSAHAMain.h.orig	2004-03-01 13:51:28.000000000 -0300
 +++ ./Global/SSAHAMain.h	2008-06-12 15:39:31.000000000 -0300
-@@ -131,7 +131,7 @@
+@@ -41,6 +41,7 @@
+ #include <string>
+ #include <iostream>
+ #include <memory>
++#include <cstdlib>
+ class SequenceReaderMulti;
+ class SequenceReader;
+ class HashTable;
+@@ -131,7 +132,7 @@
    -1,        // int    queryEnd; 
    -1,        // int    wordLength;
    -1,        // int    stepLength;
@@ -9,7 +17,7 @@
    1,         // int    minToPrint;
    -1,        // int    maxGap;
    0,         // int    maxInsert;
-@@ -174,6 +174,7 @@
+@@ -174,6 +175,7 @@
  
    CommandLineArg( const string& nameLong, const string& nameShort ) :
      nameLong_( nameLong ), nameShort_( nameShort ) {}

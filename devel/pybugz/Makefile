@@ -13,7 +13,7 @@ COMMENT=	Command line tools for interacting with Bugzilla
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=yes
 
 PLIST_FILES=	bin/bugz

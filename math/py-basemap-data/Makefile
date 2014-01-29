@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	Map data for py-basemap
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 DATADIR=	${PREFIX}/share/py-${PORTNAME}

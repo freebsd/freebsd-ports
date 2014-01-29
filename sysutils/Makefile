@@ -446,7 +446,6 @@
     SUBDIR += krename-kde4
     SUBDIR += kshutdown-kde4
     SUBDIR += ksysguardd
-    SUBDIR += lavaps
     SUBDIR += lbl-cf
     SUBDIR += lbl-hf
     SUBDIR += lcdproc
@@ -778,6 +777,7 @@
     SUBDIR += rdiff-backup-devel
     SUBDIR += rdup
     SUBDIR += readlink
+    SUBDIR += realsync
     SUBDIR += recoverdm
     SUBDIR += reed
     SUBDIR += rej

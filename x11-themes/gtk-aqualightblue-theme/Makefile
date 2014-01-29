@@ -17,10 +17,9 @@ WRKSRC=		${WRKDIR}/AquaLightBlue
 NO_BUILD=	yes
 USE_GNOME=	gtk20
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/share/themes/AquaLightBlue/gtk-2.0
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/themes/AquaLightBlue/gtk-2.0
 	${FIND} ${WRKSRC}/gtk -type f | ${XARGS} -J % ${INSTALL_DATA} \
-		% ${PREFIX}/share/themes/AquaLightBlue/gtk-2.0
+		% ${STAGEDIR}${PREFIX}/share/themes/AquaLightBlue/gtk-2.0
 
 .include <bsd.port.mk>

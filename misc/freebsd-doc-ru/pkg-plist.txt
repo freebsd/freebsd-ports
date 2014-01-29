@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%DOCSDIR%%/%%DOCLANG%%/articles/committers-guide/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/console-server/article.txt
 %%DOCSDIR%%/%%DOCLANG%%/articles/contributing/article.txt

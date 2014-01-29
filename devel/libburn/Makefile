@@ -15,7 +15,4 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN1=		cdrskin.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

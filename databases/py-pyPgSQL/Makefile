@@ -29,7 +29,6 @@ BYTEA_CONN_DESC=	Apply Bytea connection patch
 # bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBYTEA_CONN}
@@ -41,17 +40,13 @@ DOCSDIR=	${PREFIX}/share/doc/py-pyPgSQL
 EXAMPLESDIR=	${PREFIX}/share/examples/py-pyPgSQL
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${EXAMPLES}
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

@@ -12,7 +12,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Musical MIDI Accompaniment generator
 
 USES=		shebangfix
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 NO_STAGE=	yes
 
 python_CMD=	${PYTHON_CMD}

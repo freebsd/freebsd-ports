@@ -3,6 +3,7 @@
 
 PORTNAME=	litecoin
 PORTVERSION=	0.8.6.1
+PORTREVISION=	1
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	LOCAL/swills \
 		GH
@@ -34,7 +35,6 @@ DBUS_DESC=	Build with DBUS support
 CXXFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}
 CXXFLAGS+=	-L${LOCALBASE}/lib -L${BDB_LIB_DIR}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MUPNP}
@@ -72,6 +72,10 @@ QMAKE_USE_DBUS=	0
 
 .include <bsd.port.pre.mk>
 
+.if ${PORT_OPTIONS:MGUI} && !defined(WITHOUT_X11)
+PLIST_FILES+=	share/applications/litecoin-qt.desktop share/pixmaps/litecoin64.png
+.endif
+
 .if ${OSVERSION} >= 1000000
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-endian
 .endif
@@ -89,15 +93,20 @@ do-configure:
 .endif
 
 do-install:
-	@${MKDIR} ${PREFIX}/bin
 .if ${PORT_OPTIONS:MGUI} && !defined(WITHOUT_X11)
-	${INSTALL_PROGRAM} ${WRKSRC}/${BINARY} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${BINARY} ${STAGEDIR}${PREFIX}/bin/
+	${REINPLACE_CMD} -e 's,=/usr,=${PREFIX},' \
+		-e 's,bitcoin,litecoin,g' \
+		-e 's,Bitcoin,Litecoin,g' \
+		-e 's,128,64,g' ${WRKSRC}/contrib/debian/bitcoin-qt.desktop
+	${INSTALL} ${WRKSRC}/contrib/debian/bitcoin-qt.desktop ${STAGEDIR}${PREFIX}/share/applications/litecoin-qt.desktop
+	${INSTALL} ${WRKSRC}/share/pixmaps/bitcoin64.png ${STAGEDIR}${PREFIX}/share/pixmaps/litecoin64.png
 .else
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${BINARY} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${BINARY} ${STAGEDIR}${PREFIX}/bin/
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/src/makefile.unix
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/src/makefile.unix
 
 regression-test:
 .if !${PORT_OPTIONS:MGUI} || defined(WITHOUT_X11)

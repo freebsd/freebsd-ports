@@ -1,4 +1,4 @@
-%%GO_LIBDIR%%/github.com/kuroneko/gosqlite3.a
+%%GO_LIBDIR%%/%%GO_PKGNAME%%.a
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/README
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/backup.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/database.go
@@ -15,8 +15,12 @@
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/sqlite3_test.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/statement.go
 %%GO_SRCDIR%%/%%GO_PKGNAME%%/table.go
-@dirrmtry %%GO_LIBDIR%%/github.com/kuroneko
-@dirrmtry %%GO_LIBDIR%%/github.com
-@dirrm %%GO_SRCDIR%%/%%GO_PKGNAME%%
+@dirrmtry %%GO_SRCDIR%%/%%GO_PKGNAME%%
 @dirrmtry %%GO_SRCDIR%%/github.com/kuroneko
 @dirrmtry %%GO_SRCDIR%%/github.com
+@dirrmtry %%GO_SRCDIR%%
+@dirrmtry %%GO_LIBDIR%%/github.com/kuroneko
+@dirrmtry %%GO_LIBDIR%%/github.com
+@dirrmtry %%GO_LIBDIR%%
+@dirrmtry share/go/pkg
+@dirrmtry share/go

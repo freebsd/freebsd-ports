@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 @unexec if cmp -s %D/%%CONFDIR%%/drraw.conf-dist %D/%%CONFDIR%%/drraw.conf; then rm -f %D/%%CONFDIR%%/drraw.conf; fi
 %%CONFDIR%%/drraw.conf-dist
 @exec if [ ! -f %D/%%CONFDIR%%/drraw.conf ]; then cp -p %D/%F %B/drraw.conf; fi

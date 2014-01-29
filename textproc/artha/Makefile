@@ -11,10 +11,8 @@ COMMENT=	A free cross-platform English thesaurus
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	dbus-glib:${PORTSDIR}/devel/dbus-glib \
-		WN:${PORTSDIR}/textproc/wordnet
-
-MAN1=		artha.1
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
+		libWN.so:${PORTSDIR}/textproc/wordnet
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
@@ -29,11 +27,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/WordNet
 OPTIONS_DEFINE=	NOTIFY
 NOTIFY_DESC=	Popup word definition as notification
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNOTIFY}
-LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
-.endif
+NOTIFY_LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify
 
 .include <bsd.port.mk>

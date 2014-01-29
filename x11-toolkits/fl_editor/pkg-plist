@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%INCSDIR%%/Fl_Editor.H
 @exec ln -fs %f %B/Fl_Editor.h
 @unexec rm -f %B/Fl_Editor.h

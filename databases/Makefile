@@ -74,9 +74,9 @@
     SUBDIR += flare
     SUBDIR += fortytwo-bdb
     SUBDIR += fpc-dblib
+    SUBDIR += fpc-fpindexer
     SUBDIR += fpc-gdbm
     SUBDIR += fpc-ibase
-    SUBDIR += fpc-fpindexer
     SUBDIR += fpc-mysql
     SUBDIR += fpc-odbc
     SUBDIR += fpc-oracle
@@ -119,10 +119,10 @@
     SUBDIR += jasperserver
     SUBDIR += java-mybatis
     SUBDIR += jdb
-    SUBDIR += jdbc-oracle8i
-    SUBDIR += jdbc-oracle9i
     SUBDIR += jdbc-oracle10g
     SUBDIR += jdbc-oracle11g
+    SUBDIR += jdbc-oracle8i
+    SUBDIR += jdbc-oracle9i
     SUBDIR += jdbm2
     SUBDIR += jrobin
     SUBDIR += jrrd
@@ -434,9 +434,9 @@
     SUBDIR += p5-Iterator-DBI
     SUBDIR += p5-Jifty-DBI
     SUBDIR += p5-KyotoCabinet
-    SUBDIR += p5-MR-Tarantool
     SUBDIR += p5-MLDBM
     SUBDIR += p5-MLDBM-Sync
+    SUBDIR += p5-MR-Tarantool
     SUBDIR += p5-Memcached-libmemcached
     SUBDIR += p5-Metadata
     SUBDIR += p5-MongoDB
@@ -572,6 +572,7 @@
     SUBDIR += pgpool-II-23
     SUBDIR += pgpool-II-30
     SUBDIR += pgpoolAdmin
+    SUBDIR += pgrouting
     SUBDIR += pgsphere
     SUBDIR += pgtcl
     SUBDIR += pgtop
@@ -656,10 +657,9 @@
     SUBDIR += phpminiadmin
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
-    SUBDIR += postgis
+    SUBDIR += postgis-jdbc
     SUBDIR += postgis20
     SUBDIR += postgis21
-    SUBDIR += postgis-jdbc
     SUBDIR += postgresql-jdbc
     SUBDIR += postgresql-libpgeasy
     SUBDIR += postgresql-libpqxx

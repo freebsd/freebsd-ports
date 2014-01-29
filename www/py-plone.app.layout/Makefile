@@ -33,7 +33,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.app.viewletmanager>=1.2:${PORTSDIR}/ww
 		${PYTHON_PKGNAMEPREFIX}Products.CMFEditions>=1.2.2:${PORTSDIR}/devel/py-Products.CMFEditions
 
 DIST_SUBDIR=	zope
-USE_PYTHON=	-2.7
+USE_PYTHON=	2
 USE_PYDISTUTILS=easy_install
 USE_ZIP=	yes
 USES=		zope

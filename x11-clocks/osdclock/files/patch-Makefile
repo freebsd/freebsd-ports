@@ -1,0 +1,14 @@
+--- Makefile.orig	2014-01-11 19:21:51.000000000 +0800
++++ Makefile	2014-01-11 19:22:23.000000000 +0800
+@@ -37,9 +37,8 @@ osd_clock: osd_clock.o
+ tar: xosd-$(VERSION).tar.gz
+ 
+ install: all
+-	$(INSTALL) osd_clock $(BINDIR)
+-	mkdir -p $(MANDIR)/man1 $(MANDIR)/man3
+-	$(INSTALL_DATA) osd_clock.1 $(MANDIR)/man1/
++	$(INSTALL) osd_clock $(DESTDIR)$(BINDIR)
++	$(INSTALL_DATA) osd_clock.1 $(DESTDIR)$(MANDIR)/man1/
+ 
+ clean:
+ 	rm -f *~ *.o *.o.pic osd_clock

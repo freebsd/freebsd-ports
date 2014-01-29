@@ -9,22 +9,34 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.50rc1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Preprocessor to use doxygen with Pascal sources
 
+LICENSE=	GPLv2
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GMAKE=	yes
+USES=		gmake
 ALL_TARGET=	${PORTNAME}
 
-PLIST_FILES=	bin/pas2dox
+PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 1000033
+BUILD_DEPENDS=	flex>0:${PORTSDIR}/textproc/flex
+MAKE_ENV=	LEX="${LOCALBASE}/bin/flex"
+.endif
+
 post-patch:
-	${REINPLACE_CMD} 's,^CC=.*$$,CC=$${CXX} $${CPPFLAGS} $${CXXFLAGS},' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		's|^LEX=|LEX?=| ; \
+		 s|$${CC} $$<|$${CXX} $${CXXFLAGS} $$<|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e \
+		's|yy_flex_realloc|yyrealloc|' ${WRKSRC}/${PORTNAME}.l
 
 pre-build:
-	${MAKE} -C ${WRKSRC} clean
+	@${RM} -f ${WRKSRC}/${PORTNAME}.cpp
 
 do-install:
-	${MKDIR} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/pas2dox ${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin)
 
 .include <bsd.port.mk>

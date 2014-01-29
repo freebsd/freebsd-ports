@@ -12,7 +12,4 @@ COMMENT=	Perl extension for the Brew edit distance
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Text::Brew.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -2,13 +2,7 @@ lib/libcidr.so
 lib/libcidr.so.0
 bin/cidrcalc
 include/libcidr.h
-%%PORTDOCS%%%%DOCSDIR%%/libcidr-big.html
-%%PORTDOCS%%%%DOCSDIR%%/libcidr.dvi
-%%PORTDOCS%%%%DOCSDIR%%/libcidr.pdf
-%%PORTDOCS%%%%DOCSDIR%%/libcidr.ps
-%%PORTDOCS%%%%DOCSDIR%%/libcidr.rtf
-%%PORTDOCS%%%%DOCSDIR%%/libcidr.txt
-%%PORTDOCS%%%%DOCSDIR%%/codelibrary-html.css
+man/man3/libcidr.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.inc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cidrcalc/cidrcalc.c

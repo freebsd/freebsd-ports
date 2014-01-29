@@ -10,12 +10,10 @@ MASTER_SITES=	http://perticone.homelinux.net/sergio/c++/gx/src/ CENKES
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight image viewer
 
-LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
-		gnomevfsmm-2.6.1:${PORTSDIR}/devel/gnome-vfsmm \
-		gconfmm-2.6.1:${PORTSDIR}/devel/gconfmm26
+LIB_DEPENDS=	libgnomevfsmm-2.6.so:${PORTSDIR}/devel/gnome-vfsmm
 
 USES=		gettext pkgconfig
+USE_GNOME=	gconfmm26 gtkmm24
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

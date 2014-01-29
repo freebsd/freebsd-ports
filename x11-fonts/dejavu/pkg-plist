@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%FCDIR_REL%%/20-unhint-small-dejavu-sans-mono.conf
 %%FCDIR_REL%%/20-unhint-small-dejavu-sans.conf
 %%FCDIR_REL%%/20-unhint-small-dejavu-serif.conf

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 include/credis.h
 lib/libcredis.a
 lib/libcredis.so

@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 lib/gtk-sharp-beans/gtk-sharp-beans.dll.config
 lib/gtk-sharp-beans/gtk-sharp-beans.dll
 lib/gtk-sharp-beans/gtk-sharp-beans.dll.mdb

@@ -1,4 +1,3 @@
-# Created by: Jung-uk Kim <jkim@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	asusoled
@@ -33,12 +32,10 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/asusoled ${STAGEDIR}${PREFIX}/sbin
-.if !defined(NOPORTDATA)
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for i in ${PORTDATA}
 	@${INSTALL_DATA} ${WRKSRC}/data/${i} ${STAGEDIR}${DATADIR}
 .endfor
-.endif
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${PKGMESSAGE} ${STAGEDIR}${DOCSDIR}/README.FreeBSD

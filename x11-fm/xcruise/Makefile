@@ -3,7 +3,7 @@
 
 PORTNAME=	xcruiser
 PORTVERSION=	0.30
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -12,11 +12,9 @@ COMMENT=	Navigate through a three-dimensional view of a file system
 
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
-MAN1=		xcruiser.1
 
-NO_STAGE=	yes
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/xcruise
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xcruise
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/xcruise
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${PREFIX}/share/doc/xcruise
 
 .include <bsd.port.mk>

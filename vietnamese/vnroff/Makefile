@@ -6,16 +6,14 @@ PORTVERSION=	2.1
 CATEGORIES=	vietnamese print
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	obrien
-DISTFILES=	vnroff.c.Z vnroff.1.Z
 DISTNAME=	${PORTNAME}-2.0
+DISTFILES=	vnroff.c.Z vnroff.1.Z
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Converts Vietnamese VIQR text into troff format
 
 NO_WRKSUBDIR=	yes
-MAN1=		vnroff.1
 
-NO_STAGE=	yes
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
@@ -31,7 +29,7 @@ do-build:
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o vnroff vnroff.c)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/vnroff ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/vnroff.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/vnroff ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/vnroff.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>

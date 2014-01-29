@@ -11,24 +11,21 @@ MASTER_SITES=	http://dspam.nuclearelephant.com/sources/extras/ \
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	GPL implementation of the Bayesian Noise Reduction algorithm
 
+OPTIONS_DEFINE=	DOCS DEBUG
+
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/${PORTNAME}
 
-.ifdef(WITH_DEBUG)
-CFLAGS+=	-g -DDEBUG
-.endif
+DEBUG_CFLAGS=	-g -DDEBUG
 
 PORTDOCS=	README
 
-NO_STAGE=	yes
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/example.c ${EXAMPLESDIR}
-.ifndef(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/example.c ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

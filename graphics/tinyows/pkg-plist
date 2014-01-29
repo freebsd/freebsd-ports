@@ -51,6 +51,7 @@
 %%DATADIR%%/schema/ows/1.0.0/owsOperationsMetadata.xsd
 %%DATADIR%%/schema/ows/1.0.0/owsServiceIdentification.xsd
 %%DATADIR%%/schema/ows/1.0.0/owsServiceProvider.xsd
+%%DATADIR%%/schema/tows/config.xsd
 %%DATADIR%%/schema/wfs/1.0.0/WFS-basic.xsd
 %%DATADIR%%/schema/wfs/1.0.0/WFS-capabilities.xsd
 %%DATADIR%%/schema/wfs/1.0.0/WFS-transaction.xsd
@@ -64,6 +65,7 @@
 @dirrm %%DATADIR%%/schema/wfs/1.1.0
 @dirrm %%DATADIR%%/schema/wfs/1.0.0
 @dirrm %%DATADIR%%/schema/wfs
+@dirrm %%DATADIR%%/schema/tows
 @dirrm %%DATADIR%%/schema/ows/1.0.0
 @dirrm %%DATADIR%%/schema/ows
 @dirrm %%DATADIR%%/schema/gml/3.1.1/xlink

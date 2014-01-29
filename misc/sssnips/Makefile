@@ -2,24 +2,30 @@
 # $FreeBSD$
 
 PORTNAME=	sssnips
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	misc
-MASTER_SITES=	http://devel.ringlet.net/misc/sssnips/
+MASTER_SITES=	http://devel.ringlet.net/files/misc/sssnips/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shell script snippets written by Peter Pentchev
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
-PROGRAMS=	bigfile declean getkey hostsearch mkv noagent qidiff qpr \
-		signfiles stun switch-link syspower vcr vcrtty ws
-PLIST_FILES=	${PROGRAMS:S@^@bin/@}
-MAN1=		${PROGRAMS:S/$/.1/}
-MANCOMPRESSED=	yes
+USE_XZ=		yes
+USES=		gmake
+MAKE_ENV=	BINGRP=wheel MANDIR=${MANPREFIX}/man/man
 
-USE_GMAKE=	1
+PLIST_FILES=	${PROGRAMS:S@^@bin/@} \
+		${PROGRAMS:S@^@man/man1/@:S@$@.1.gz@}
 
-MAKE_ENV+=	BINGRP=wheel MANDIR=${PREFIX}/man/man
+PROGRAMS=	bigfile csort declean getkey git-ss git-ssnoq git-ssq \
+		hostsearch mkv noagent qidiff qpr resock signfiles stun \
+		switch-link syspower vcr vcrtty ws
 
-NO_STAGE=	yes
+post-patch:
+.for i in vcr.1 vcr.sh
+	@${REINPLACE_CMD} -e \
+		's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/${i}
+.endfor
+
 .include <bsd.port.mk>

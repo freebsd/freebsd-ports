@@ -5,9 +5,9 @@ GNUstep/System/Applications/GSSpeechServer.app/stamp.make
 GNUstep/System/Library/Bundles/AudioOutput.nssound/AudioOutput
 GNUstep/System/Library/Bundles/AudioOutput.nssound/Resources/Info-gnustep.plist
 GNUstep/System/Library/Bundles/AudioOutput.nssound/stamp.make
-%%WITH_CUPS%%GNUstep/System/Library/Bundles/GSPrinting/GSCUPS.bundle/GSCUPS
-%%WITH_CUPS%%GNUstep/System/Library/Bundles/GSPrinting/GSCUPS.bundle/Resources/Info-gnustep.plist
-%%WITH_CUPS%%GNUstep/System/Library/Bundles/GSPrinting/GSCUPS.bundle/stamp.make
+%%CUPS%%GNUstep/System/Library/Bundles/GSPrinting/GSCUPS.bundle/GSCUPS
+%%CUPS%%GNUstep/System/Library/Bundles/GSPrinting/GSCUPS.bundle/Resources/Info-gnustep.plist
+%%CUPS%%GNUstep/System/Library/Bundles/GSPrinting/GSCUPS.bundle/stamp.make
 GNUstep/System/Library/Bundles/GSPrinting/GSLPR.bundle/GSLPR
 GNUstep/System/Library/Bundles/GSPrinting/GSLPR.bundle/Resources/Info-gnustep.plist
 GNUstep/System/Library/Bundles/GSPrinting/GSLPR.bundle/stamp.make
@@ -69,6 +69,7 @@ GNUstep/System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/General/General.igsdoc
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/General/OpenStepCompliance.html
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/General/dependencies
+%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit.pdf
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit.html
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_1.html
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_10.html
@@ -706,7 +707,6 @@ GNUstep/System/Library/Images/common_TabDownUnSelectedToSelectedJunction.tiff
 GNUstep/System/Library/Images/common_TabSelectedLeft.tiff
 GNUstep/System/Library/Images/common_TabSelectedRight.tiff
 GNUstep/System/Library/Images/common_TabSelectedToUnSelectedJunction.tiff
-GNUstep/System/Library/Images/common_TabUnSelectToSelectedJunction.tiff
 GNUstep/System/Library/Images/common_TabUnSelectedJunction.tiff
 GNUstep/System/Library/Images/common_TabUnSelectedLeft.tiff
 GNUstep/System/Library/Images/common_TabUnSelectedRight.tiff
@@ -807,7 +807,6 @@ GNUstep/System/Library/Headers/AppKit/NSTreeController.h
 GNUstep/System/Library/Images/NSAddTemplate.tiff
 GNUstep/System/Library/Images/common_Info.tiff
 @exec mkdir -p %D/GNUstep/System/Library/Themes
-@dirrm GNUstep/System/Library/Headers/AppKit
 @dirrm GNUstep/System/Library/Themes
 @dirrm GNUstep/System/Library/Services/GSspell.service/Resources
 @dirrm GNUstep/System/Library/Services/GSspell.service
@@ -868,10 +867,24 @@ GNUstep/System/Library/Images/common_Info.tiff
 @dirrm GNUstep/System/Library/Bundles/Sndfile.nssound
 @dirrm GNUstep/System/Library/Bundles/GSPrinting/GSLPR.bundle/Resources
 @dirrm GNUstep/System/Library/Bundles/GSPrinting/GSLPR.bundle
-%%WITH_CUPS%%@dirrm GNUstep/System/Library/Bundles/GSPrinting/GSCUPS.bundle/Resources
-%%WITH_CUPS%%@dirrm GNUstep/System/Library/Bundles/GSPrinting/GSCUPS.bundle
+%%CUPS%%@dirrm GNUstep/System/Library/Bundles/GSPrinting/GSCUPS.bundle/Resources
+%%CUPS%%@dirrm GNUstep/System/Library/Bundles/GSPrinting/GSCUPS.bundle
 @dirrm GNUstep/System/Library/Bundles/GSPrinting
 @dirrm GNUstep/System/Library/Bundles/AudioOutput.nssound/Resources
 @dirrm GNUstep/System/Library/Bundles/AudioOutput.nssound
 @dirrm GNUstep/System/Applications/GSSpeechServer.app/Resources
 @dirrm GNUstep/System/Applications/GSSpeechServer.app
+GNUstep/System/Library/Headers/AppKit/NSCollectionView.h
+GNUstep/System/Library/Headers/AppKit/NSCollectionViewItem.h
+GNUstep/System/Library/Headers/AppKit/NSPopover.h
+GNUstep/System/Library/Headers/AppKit/NSStatusBar.h
+GNUstep/System/Library/Headers/AppKit/NSStatusItem.h
+GNUstep/System/Library/Headers/AppKit/NSTrackingArea.h
+GNUstep/System/Library/Headers/AppKit/NSTreeNode.h
+GNUstep/System/Library/Images/common_StepperDown.tiff
+GNUstep/System/Library/Images/common_StepperDownHighlighted.tiff
+GNUstep/System/Library/Images/common_StepperUp.tiff
+GNUstep/System/Library/Images/common_StepperUpHighlighted.tiff
+GNUstep/System/Library/Images/common_TabUnSelectedToSelectedJunction.tiff
+@dirrm GNUstep/System/Library/Headers/AppKit
+

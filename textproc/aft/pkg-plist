@@ -13,25 +13,4 @@ bin/aft
 %%DATADIR%%/compile.pl
 %%DATADIR%%/launch_ie.pl
 %%DATADIR%%/postrtf.pl
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.aft
-%%PORTDOCS%%%%DOCSDIR%%/aft-refman.html
-%%PORTDOCS%%%%DOCSDIR%%/aft.eps
-%%PORTDOCS%%%%DOCSDIR%%/aft.gif
-%%PORTDOCS%%%%DOCSDIR%%/aft.jpg
-%%PORTDOCS%%%%DOCSDIR%%/aft2rtf-doc.rtf
-%%PORTDOCS%%%%DOCSDIR%%/backends/aft-bn-html.dat
-%%PORTDOCS%%%%DOCSDIR%%/backends/aft-dbarticle.dat
-%%PORTDOCS%%%%DOCSDIR%%/backends/aft-html.dat
-%%PORTDOCS%%%%DOCSDIR%%/backends/aft-lout.dat
-%%PORTDOCS%%%%DOCSDIR%%/backends/aft-loutbook.dat
-%%PORTDOCS%%%%DOCSDIR%%/backends/aft-loutreport.dat
-%%PORTDOCS%%%%DOCSDIR%%/backends/aft-rtf.dat
-%%PORTDOCS%%%%DOCSDIR%%/backends/aft-tex.dat
-%%PORTDOCS%%%%DOCSDIR%%/backends/aft-xhtml.dat
-%%PORTDOCS%%%%DOCSDIR%%/examples/aft-refman.aft
-%%PORTDOCS%%%%DOCSDIR%%/examples/aft.aft
-%%PORTDOCS%%%%DOCSDIR%%/examples/aft2rtf-doc.aft
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/backends
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%

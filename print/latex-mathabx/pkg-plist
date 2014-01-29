@@ -1,4 +1,3 @@
-@comment $FreeBSD$
 %%CLASSDIR%%/mathabx.dcl
 %%CLASSDIR%%/mathabx.sty
 %%CLASSDIR%%/mathabx.tex

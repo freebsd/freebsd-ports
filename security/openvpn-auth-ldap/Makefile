@@ -28,10 +28,6 @@ PLIST_FILES=	lib/openvpn-auth-ldap.so
 OPTIONS_DEFINE=	DOCS EXAMPLES
 .include <bsd.port.options.mk>
 
-.if (${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || ${OSVERSION} < 800505
-BUILD_DEPENDS+=	${LOCALBASE}/bin/xz:${PORTSDIR}/archivers/xz
-.endif
-
 .if ${OSVERSION} >= 900000
 # Use gcc from ports because Objective C support no longer included in base
 # and the GNU Objective-C runtime is required, lang/libobjc2 + clang

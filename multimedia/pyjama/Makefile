@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 
 NO_BUILD=	yes
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	yes
 USE_GSTREAMER=	core good bad gnomevfs
 USE_GNOME=	pygtk2
 USES=		gettext

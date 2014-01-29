@@ -1,5 +1,5 @@
 
-$FreeBSD: head/editors/nano/files/patch-doc_man_Makefile.in 300896 2012-07-14 13:54:48Z beat $
+$FreeBSD$
 
 --- doc/man/Makefile.in.orig
 +++ doc/man/Makefile.in
