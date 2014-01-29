@@ -20,7 +20,4 @@ RUN_DEPENDS=	p5-CGI-Application>4.01:${PORTSDIR}/www/p5-CGI-Application \
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	CGI::Application::Plugin::JSON.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

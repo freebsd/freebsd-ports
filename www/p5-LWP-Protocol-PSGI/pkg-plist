@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Protocol/PSGI/.packlist
 %%SITE_PERL%%/LWP/Protocol/PSGI.pm
+%%PERL5_MAN3%%/LWP::Protocol::PSGI.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Protocol/PSGI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Protocol
