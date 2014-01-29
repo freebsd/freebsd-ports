@@ -10,24 +10,19 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Program to estimate population sizes and migration rates
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_prog_GMAKE="${MAKE}"
-MAKE_ARGS=	PRETTYCFLAGS="${CFLAGS} -DNOJPEG -DNOZLIB -DNOPNG -Iharu -DPRETTY -lstdc++"
+MAKE_ARGS=	PRETTYCFLAGS="${CFLAGS} -DNOJPEG -DNOZLIB -DNOPNG -Iharu \
+		-DPRETTY -lstdc++"
 
-MAN1=		${PORTNAME}.1
-MLINKS=		${PORTNAME}.1 ${PORTNAME}-n.1
-PORTDOCS=	*
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+
+PLIST_FILES=	bin/${PORTNAME} bin/${PORTNAME}-n \
+		man/man1/${PORTNAME}.1.gz man/man1/${PORTNAME}-n.1.gz
+PORTDOCS=	HISTORY README README_PARALLEL_GENERAL ${PORTNAME}.html
 PORTEXAMPLES=	*
-PLIST_FILES=	bin/${PORTNAME} bin/${PORTNAME}-n
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-NOT_FOR_ARCHS=	alpha
-ONLY_FOR_ARCHS_REASON=	Does not compile
-
+# XXX should be converted to OptionsNG
 .if defined(WITH_THREAD_PRETTY)
 ALL_TARGET=	thread-pretty
 .elif defined(WITH_PRETTY)
@@ -45,20 +40,18 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-O3||g' ${WRKSRC}/haru/makefile.gcc
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-n ${PREFIX}/bin
-	${LN} -sf ${PORTNAME}-n ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MAN1PREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for i in HISTORY README README_PARALLEL_GENERAL ${PORTNAME}.html
-	${INSTALL_DATA} ${WRKSRC}/../${i} ${DOCSDIR}
-.endfor
-	@${MKDIR} ${DOCSDIR}/graphics
-	${INSTALL_DATA} ${WRKSRC}/../graphics/* ${DOCSDIR}/graphics
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/../example/[A-Za-z]* ${EXAMPLESDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-n ${STAGEDIR}${PREFIX}/bin
+	${LN} -sf ${PORTNAME}-n ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
+	${LN} -sf ${PORTNAME}.1 \
+		${STAGEDIR}${MAN1PREFIX}/man/man1/${PORTNAME}-n.1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/../,} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/graphics
+	${INSTALL_DATA} ${WRKSRC}/../graphics/* ${STAGEDIR}${DOCSDIR}/graphics
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/../example/[A-Za-z]* \
+		${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
