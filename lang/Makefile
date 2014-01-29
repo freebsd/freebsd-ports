@@ -134,6 +134,7 @@
     SUBDIR += ironpython
     SUBDIR += itcl
     SUBDIR += jakarta-commons-jelly
+    SUBDIR += jimtcl
     SUBDIR += jruby
     SUBDIR += jython
     SUBDIR += kawa

@@ -1,0 +1,11 @@
+bin/build-jim-ext
+bin/jimsh
+include/jim-config.h
+include/jim-eventloop.h
+include/jim-signal.h
+include/jim-subcmd.h
+include/jim-win32compat.h
+include/jim.h
+lib/jim/README.extensions
+lib/libjim.so.0.74
+@dirrmtry lib/jim
