@@ -78,7 +78,7 @@ PLIST_SUB+=	DE=""
 CONFIGURE_ARGS+=--enable-draw			\
 		--with-tcl=${TCL_LIBDIR}	\
 		--with-tk=${TK_LIBDIR}
-USE_TK=		84+
+USES+=		tk
 LIB_DEPENDS+=	libitcl.so.${ITCL_VER}:${PORTSDIR}/lang/itcl		\
 		libTix${TIX_VER}.so:${PORTSDIR}/x11-toolkits/tix
 ITCL_VER=	3
