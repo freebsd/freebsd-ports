@@ -6,7 +6,7 @@ PORTVERSION=	${SVN_REV}
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/kwm
 
-MAINTAINER=	kwm@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Llvm's C++ standard library with c++11 support
 
 BUILD_DEPENDS=	clang33:${PORTSDIR}/lang/clang33
