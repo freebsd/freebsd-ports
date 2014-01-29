@@ -1,4 +1,4 @@
-# Created by: Rodrigo OSORIO <rodrigo@bebik.net>
+# Created by: Rodrigo OSORIO <rodrigo@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libsoldout
@@ -9,7 +9,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ROS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Convert Markdown text in (X)HTML
 
 LICENSE=	ART10 GPLv1

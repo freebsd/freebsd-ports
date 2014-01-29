@@ -6,7 +6,7 @@ PORTVERSION=	4.1.20060122
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/philip
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Abstract user interface protocol library
 
 LICENSE=	BSD

@@ -1,4 +1,4 @@
-# Created by: Rodrigo Osorio <rodrigo@bebik.net>
+# Created by: Rodrigo Osorio <rodrigo@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	libmrss
@@ -8,7 +8,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.autistici.org/bakunin/libmrss/
 PKGNAMESUFFIX=	-php
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	PHP library for parsing, writing, and creating RSS
 
 LIB_DEPENDS=	mrss:${PORTSDIR}/textproc/libmrss

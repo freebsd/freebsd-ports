@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}-src
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Small, portable, and easy to use command line library
 
 LICENSE=	BSD

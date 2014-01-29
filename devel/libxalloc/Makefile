@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 DISTNAME=	xalloc-${PORTVERSION}
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Memory allocation library with error checking
 
 OPTIONS_DEFINE=	DOCS

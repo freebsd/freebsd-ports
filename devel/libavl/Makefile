@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	avl
 DISTNAME=	avl-${PORTVERSION}
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	A library for balanced binary trees
 
 GNU_CONFIGURE=	yes

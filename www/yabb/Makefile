@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/YaBB%202/${PORTVERSION}
 DISTNAME=	YaBB_${PORTVERSION}
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	The original free open-source forum written in Perl
 
 LICENSE=	YABB_PUBLIC_LICENCE
