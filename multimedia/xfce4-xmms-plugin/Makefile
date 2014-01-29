@@ -14,7 +14,7 @@ COMMENT=	Xfce4 XMMS control plugin for xfce4-panel
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USES=		gettext pathfix gmake pkgconfig
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20 intltool intlhack pango
 USE_XFCE=	configenv libgui libutil panel
 
@@ -24,8 +24,7 @@ XMMS_DESC=	xmms support
 BEEP_DESC=	beep-media-player support
 AUDACIOUS_DESC=	audacious support
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBEEP}
 RUN_DEPENDS+=	beep-media-player:${PORTSDIR}/multimedia/beep-media-player
@@ -42,4 +41,4 @@ RUN_DEPENDS+=	audacious2:${PORTSDIR}/multimedia/audacious
 post-patch:
 	@${REINPLACE_CMD} -e 's|== x|= x|g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
