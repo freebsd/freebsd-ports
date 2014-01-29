@@ -13,7 +13,4 @@ COMMENT=	Time::Piece - Object Oriented time objects
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Time::Piece.3 Time::Seconds.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

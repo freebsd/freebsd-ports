@@ -4,6 +4,11 @@
 %%SITE_PERL%%/IO/Capture/Stdout.pm
 %%SITE_PERL%%/IO/Capture/Tie_STDx.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Capture/.packlist
+%%PERL5_MAN3%%/IO::Capture.3.gz
+%%PERL5_MAN3%%/IO::Capture::Overview.3.gz
+%%PERL5_MAN3%%/IO::Capture::Stderr.3.gz
+%%PERL5_MAN3%%/IO::Capture::Stdout.3.gz
+%%PERL5_MAN3%%/IO::Capture::Tie_STDx.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Capture
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
 @dirrmtry %%SITE_PERL%%/IO/Capture

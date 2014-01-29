@@ -25,13 +25,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Test::Mini.3 \
-	Test::Mini::Assertions.3 \
-	Test::Mini::Logger.3 \
-	Test::Mini::Logger::TAP.3 \
-	Test::Mini::Runner.3 \
-	Test::Mini::TestCase.3 \
-	Test::README.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

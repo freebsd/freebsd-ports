@@ -3,6 +3,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/i386/Ptrace/Ptrace.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/i386/Ptrace/Ptrace.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/i386/Ptrace/.packlist
+%%PERL5_MAN3%%/FreeBSD::i386::Ptrace.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/i386/Ptrace
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD/i386
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/FreeBSD
