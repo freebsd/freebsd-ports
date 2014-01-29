@@ -3,4 +3,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/TokyoTyrant/.packlist
 %%SITE_PERL%%/tcrtest.pl
 %%SITE_PERL%%/ttutest.pl
+%%PERL5_MAN3%%/TokyoTyrant.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/TokyoTyrant

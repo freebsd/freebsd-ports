@@ -10,6 +10,12 @@
 %%SITE_PERL%%/WWW/2ch/Setting.pm
 %%SITE_PERL%%/WWW/2ch/Subject.pm
 %%SITE_PERL%%/WWW/2ch/UserAgent.pm
+%%PERL5_MAN3%%/WWW::2ch.3.gz
+%%PERL5_MAN3%%/WWW::2ch::Plugin::Base.3.gz
+%%PERL5_MAN3%%/WWW::2ch::Res.3.gz
+%%PERL5_MAN3%%/WWW::2ch::Subject.3.gz
+%%PERL5_MAN3%%/WWW::2ch::Dat.3.gz
+%%PERL5_MAN3%%/WWW::2ch::Plugin::Jbbs.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/2ch/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%

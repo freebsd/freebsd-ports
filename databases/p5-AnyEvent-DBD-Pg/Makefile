@@ -22,7 +22,4 @@ TEST_DEPENDS=	p5-lib-abs>=0.90:${PORTSDIR}/devel/p5-lib-abs
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	AnyEvent::DBD::Pg.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

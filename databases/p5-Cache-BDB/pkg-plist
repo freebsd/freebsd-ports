@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/BDB/.packlist
 %%SITE_PERL%%/Cache/BDB.pm
 %%SITE_PERL%%/Cache/BDB.pod
+%%PERL5_MAN3%%/Cache::BDB.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/BDB
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache
 @dirrmtry %%SITE_PERL%%/Cache

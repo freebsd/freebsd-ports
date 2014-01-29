@@ -31,6 +31,15 @@
 %%SITE_PERL%%/WWWdb/DbSession/ODBC.pm
 %%SITE_PERL%%/WWWdb/DbSession/InterBase.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWWdb/.packlist
+%%PERL5_MAN3%%/WWWdb::Base.3.gz
+%%PERL5_MAN3%%/WWWdb::DbSession.3.gz
+%%PERL5_MAN3%%/WWWdb::List.3.gz
+%%PERL5_MAN3%%/WWWdb::Session.3.gz
+%%PERL5_MAN3%%/WWWdb::Plugin.3.gz
+%%PERL5_MAN3%%/WWWdb::Hash.3.gz
+%%PERL5_MAN3%%/WWWdb::HTML.3.gz
+%%PERL5_MAN3%%/WWWdb::ConfigFile.3.gz
+%%PERL5_MAN3%%/WWWdb::ConfigPool.3.gz
 @dirrm %%SITE_PERL%%/Apache/
 @dirrm %%SITE_PERL%%/WWWdb/DbSession
 @dirrm %%SITE_PERL%%/WWWdb

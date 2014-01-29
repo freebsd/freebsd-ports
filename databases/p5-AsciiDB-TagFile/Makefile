@@ -13,7 +13,4 @@ COMMENT=	Perl tie class for a simple ASCII database
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		AsciiDB::TagFile.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

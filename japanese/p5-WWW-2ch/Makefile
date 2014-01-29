@@ -18,12 +18,4 @@ TEST_DEPENDS=	p5-UNIVERSAL-require>=0:${PORTSDIR}/devel/p5-UNIVERSAL-require
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		WWW::2ch.3	\
-	WWW::2ch::Plugin::Base.3	\
-	WWW::2ch::Res.3		\
-	WWW::2ch::Subject.3	\
-	WWW::2ch::Dat.3		\
-	WWW::2ch::Plugin::Jbbs.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

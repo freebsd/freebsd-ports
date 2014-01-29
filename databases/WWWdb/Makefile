@@ -12,9 +12,4 @@ COMMENT=	A Perl based generic WWW DB interface / frontend
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		WWWdb::Base.3 WWWdb::DbSession.3 WWWdb::List.3 \
-		WWWdb::Session.3 WWWdb::Plugin.3 WWWdb::Hash.3 \
-		WWWdb::HTML.3 WWWdb::ConfigFile.3 WWWdb::ConfigPool.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
