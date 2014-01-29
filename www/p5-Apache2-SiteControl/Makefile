@@ -28,16 +28,6 @@ OPTIONS_DEFAULT=	RADIUS
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Apache2::SiteControl.3 \
-		Apache2::SiteControl::GrantAllRule.3 \
-		Apache2::SiteControl::ManagerFactory.3 \
-		Apache2::SiteControl::PermissionManager.3 \
-		Apache2::SiteControl::Radius.3 \
-		Apache2::SiteControl::Rule.3 \
-		Apache2::SiteControl::User.3 \
-		Apache2::SiteControl::UserFactory.3
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MRADIUS}
