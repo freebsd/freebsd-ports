@@ -14,7 +14,7 @@
 _INCLUDE_USES_DESTHACK_MK=	yes
 
 .if defined(_desthack_ARGS)
-IGNORE=	USES=desthack valid args are none or 'la'
+IGNORE=	USES=desthack does not require args
 .endif
 
 GNU_CONFIGURE_PREFIX=	\$${${DESTDIRNAME}}${PREFIX}
