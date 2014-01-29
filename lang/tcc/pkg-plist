@@ -9,6 +9,7 @@ lib/tcc/include/stddef.h
 lib/tcc/include/tcclib.h
 lib/tcc/include/varargs.h
 lib/tcc/libtcc1.a
+man/man1/tcc.1.gz
 @dirrm lib/tcc/include
 @dirrm lib/tcc
 %%PORTDOCS%%%%DOCSDIR%%/tcc-doc.html

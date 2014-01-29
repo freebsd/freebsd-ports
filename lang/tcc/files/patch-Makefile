@@ -1,6 +1,6 @@
 --- Makefile.orig	2009-05-18 16:27:06.000000000 +0200
 +++ Makefile	2009-07-03 07:40:15.000000000 +0200
-@@ -28,6 +28,9 @@
+@@ -28,6 +28,9 @@ endif
  ifeq ($(ARCH),x86-64)
  CFLAGS+=-Wno-pointer-sign
  endif
@@ -10,7 +10,7 @@
  
  ifndef CONFIG_WIN32
  LIBS=-lm
-@@ -53,6 +56,11 @@
+@@ -53,6 +56,11 @@ else
  ifeq ($(ARCH),x86-64)
  NATIVE_TARGET=-DTCC_TARGET_X86_64
  LIBTCC1=libtcc1.a
@@ -22,7 +22,7 @@
  endif
  endif
  endif
-@@ -99,6 +107,10 @@
+@@ -99,6 +107,10 @@ ifeq ($(ARCH),x86-64)
  NATIVE_FILES=$(X86_64_FILES)
  PROGS_CROSS=$(I386_CROSS) $(WIN32_CROSS) $(ARM_CROSS) $(C67_CROSS)
  else
@@ -33,7 +33,7 @@
  ifeq ($(ARCH),arm)
  NATIVE_FILES=$(ARM_FILES)
  PROGS_CROSS=$(I386_CROSS) $(X64_CROSS) $(WIN32_CROSS) $(C67_CROSS)
-@@ -106,6 +118,7 @@
+@@ -106,6 +118,7 @@ endif
  endif
  endif
  endif
@@ -41,7 +41,7 @@
  
  ifdef CONFIG_CROSS
  PROGS+=$(PROGS_CROSS)
-@@ -180,7 +193,7 @@
+@@ -180,7 +193,7 @@ LIBTCC1_OBJS+=alloca86.o alloca86-bt.o
  endif
  
  %.o: %.c
@@ -50,7 +50,7 @@
  
  %.o: %.S
  	$(LIBTCC1_CC) -o $@ -c $<
-@@ -189,7 +202,7 @@
+@@ -189,7 +202,7 @@ libtcc1.a: $(LIBTCC1_OBJS)
  	$(AR) rcs $@ $^
  
  bcheck.o: bcheck.c
@@ -59,14 +59,46 @@
  
  # install
  TCC_INCLUDES = stdarg.h stddef.h stdbool.h float.h varargs.h tcclib.h
-@@ -210,8 +223,10 @@
- 	$(INSTALL) -m644 $(BCHECK_O) "$(tccdir)"
+@@ -197,25 +210,27 @@ INSTALL=install
+ 
+ ifndef CONFIG_WIN32
+ install: $(PROGS) $(LIBTCC1) $(BCHECK_O) libtcc.a tcc.1 tcc-doc.html
+-	mkdir -p "$(bindir)"
+-	$(INSTALL) -s -m755 $(PROGS) "$(bindir)"
+-	mkdir -p "$(mandir)/man1"
+-	$(INSTALL) tcc.1 "$(mandir)/man1"
+-	mkdir -p "$(tccdir)"
+-	mkdir -p "$(tccdir)/include"
++	mkdir -p "$(DESTDIR)$(bindir)"
++	$(INSTALL) -s -m755 $(PROGS) "$(DESTDIR)$(bindir)"
++	mkdir -p "$(DESTDIR)$(mandir)/man1"
++	$(INSTALL) tcc.1 "$(DESTDIR)$(mandir)/man1"
++	mkdir -p "$(DESTDIR)$(tccdir)"
++	mkdir -p "$(DESTDIR)$(tccdir)/include"
+ ifneq ($(LIBTCC1),)
+-	$(INSTALL) -m644 $(LIBTCC1) "$(tccdir)"
++	$(INSTALL) -m644 $(LIBTCC1) "$(DESTDIR)$(tccdir)"
  endif
- 	$(INSTALL) -m644 $(addprefix include/,$(TCC_INCLUDES)) "$(tccdir)/include"
+ ifneq ($(BCHECK_O),)
+-	$(INSTALL) -m644 $(BCHECK_O) "$(tccdir)"
++	$(INSTALL) -m644 $(BCHECK_O) "$(DESTDIR)$(tccdir)"
+ endif
+-	$(INSTALL) -m644 $(addprefix include/,$(TCC_INCLUDES)) "$(tccdir)/include"
+-	mkdir -p "$(docdir)"
+-	$(INSTALL) -m644 tcc-doc.html "$(docdir)"
+-	mkdir -p "$(libdir)"
+-	$(INSTALL) -m644 libtcc.a "$(libdir)"
+-	mkdir -p "$(includedir)"
+-	$(INSTALL) -m644 libtcc.h "$(includedir)"
++	$(INSTALL) -m644 $(addprefix include/,$(TCC_INCLUDES)) "$(DESTDIR)$(tccdir)/include"
 +ifndef NOPORTDOCS
- 	mkdir -p "$(docdir)"
- 	$(INSTALL) -m644 tcc-doc.html "$(docdir)"
++	mkdir -p "$(DESTDIR)$(docdir)"
++	$(INSTALL) -m644 tcc-doc.html "$(DESTDIR)$(docdir)"
 +endif
- 	mkdir -p "$(libdir)"
- 	$(INSTALL) -m644 libtcc.a "$(libdir)"
- 	mkdir -p "$(includedir)"
++	mkdir -p "$(DESTDIR)$(libdir)"
++	$(INSTALL) -m644 libtcc.a "$(DESTDIR)$(libdir)"
++	mkdir -p "$(DESTDIR)$(includedir)"
++	$(INSTALL) -m644 libtcc.h "$(DESTDIR)$(includedir)"
+ 
+ uninstall:
+ 	rm -fv $(foreach P,$(PROGS),"$(bindir)/$P")
