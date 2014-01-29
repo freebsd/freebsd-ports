@@ -7,14 +7,14 @@
 #
 # Feature:	desthack
 # Usage:	USES=desthack
-# Valide ARGS:	none
+# Valid ARGS:	none
 #
 
 .if !defined(_INCLUDE_USES_DESTHACK_MK)
 _INCLUDE_USES_DESTHACK_MK=	yes
 
 .if defined(_desthack_ARGS)
-IGNORE=	USES=desthack valide args are none or 'la'
+IGNORE=	USES=desthack valid args are none or 'la'
 .endif
 
 GNU_CONFIGURE_PREFIX=	\$${${DESTDIRNAME}}${PREFIX}
