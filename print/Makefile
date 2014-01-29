@@ -33,6 +33,7 @@
     SUBDIR += cups-base
     SUBDIR += cups-bjnp
     SUBDIR += cups-client
+    SUBDIR += cups-cloud-print
     SUBDIR += cups-image
     SUBDIR += cups-pdf
     SUBDIR += cups-pk-helper
