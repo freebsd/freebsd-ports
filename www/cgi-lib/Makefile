@@ -15,13 +15,12 @@ MAKEFILE=	makefile
 
 NO_WRKSUBDIR=	yes
 
-NO_STAGE=	yes
 do-install:
-	@ ${INSTALL_DATA} ${WRKSRC}/cgi-lib.a ${PREFIX}/lib/libcgi.a
+	@ ${INSTALL_DATA} ${WRKSRC}/cgi-lib.a ${STAGEDIR}${PREFIX}/lib/libcgi.a
 .for file in cgi-lib.h html-lib.h list-lib.h
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include
+	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/include
 .endfor
-	@ ${MKDIR} ${PREFIX}/share/doc/cgi-lib
-	@ ${INSTALL_DATA} ${WRKSRC}/cgi-lib.html ${PREFIX}/share/doc/cgi-lib
+	@ ${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/cgi-lib
+	@ ${INSTALL_DATA} ${WRKSRC}/cgi-lib.html ${STAGEDIR}${PREFIX}/share/doc/cgi-lib
 
 .include <bsd.port.mk>
