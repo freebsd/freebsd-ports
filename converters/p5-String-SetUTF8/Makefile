@@ -13,7 +13,4 @@ COMMENT=	Perl module to manipulate internal UTF-8 flag on strings
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		String::SetUTF8.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

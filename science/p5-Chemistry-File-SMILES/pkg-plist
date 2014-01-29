@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File/SMILES/.packlist
 %%SITE_PERL%%/Chemistry/File/SMILES.pm
 %%SITE_PERL%%/Chemistry/File/write.pl
+%%PERL5_MAN3%%/Chemistry::File::SMILES.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File/SMILES
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry

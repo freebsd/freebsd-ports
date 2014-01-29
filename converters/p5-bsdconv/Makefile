@@ -19,11 +19,8 @@ GH_ACCOUNT=	buganini
 GH_COMMIT=	75fa7e2
 GH_PROJECT=	perl-${PORTNAME}
 
-NO_STAGE=	yes
 USES=		perl5
 USE_PERL5=	configure
-
-MAN3=		bsdconv.3
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/Makefile.PL

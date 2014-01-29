@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File/MDLMol/.packlist
 %%SITE_PERL%%/Chemistry/File/MDLMol.pm
 %%SITE_PERL%%/Chemistry/File/SDF.pm
+%%PERL5_MAN3%%/Chemistry::File::MDLMol.3.gz
+%%PERL5_MAN3%%/Chemistry::File::SDF.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File/MDLMol
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry

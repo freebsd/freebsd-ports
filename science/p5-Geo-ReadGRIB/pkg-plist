@@ -5,6 +5,9 @@
 %%SITE_PERL%%/Geo/Sample-GRIB/2009100900_P000.grib
 %%SITE_PERL%%/Geo/ReadGRIB/PlaceIterator.pm
 %%SITE_PERL%%/Geo/ReadGRIB/Place.pm
+%%PERL5_MAN3%%/Geo::ReadGRIB.3.gz
+%%PERL5_MAN3%%/Geo::ReadGRIB::Place.3.gz
+%%PERL5_MAN3%%/Geo::ReadGRIB::PlaceIterator.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/ReadGRIB
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo
 @dirrm %%SITE_PERL%%/Geo/Sample-GRIB

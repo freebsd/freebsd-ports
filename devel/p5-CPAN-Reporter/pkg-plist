@@ -5,6 +5,12 @@
 %%SITE_PERL%%/CPAN/Reporter/API.pm
 %%SITE_PERL%%/CPAN/Reporter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Reporter/.packlist
+%%PERL5_MAN3%%/CPAN::Reporter::API.3.gz
+%%PERL5_MAN3%%/CPAN::Reporter::Config.3.gz
+%%PERL5_MAN3%%/CPAN::Reporter::History.3.gz
+%%PERL5_MAN3%%/CPAN::Reporter::PrereqCheck.3.gz
+%%PERL5_MAN3%%/CPAN::Reporter.3.gz
+%%PERL5_MAN3%%/CPAN::Reporter::FAQ.3.gz
 @dirrmtry %%SITE_PERL%%/CPAN/Reporter
 @dirrmtry %%SITE_PERL%%/CPAN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Reporter

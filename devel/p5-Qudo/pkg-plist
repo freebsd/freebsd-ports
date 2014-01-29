@@ -19,6 +19,12 @@ bin/qudo
 %%SITE_PERL%%/Qudo/Plugin.pm
 %%SITE_PERL%%/Qudo/Test.pm
 %%SITE_PERL%%/Qudo/Worker.pm
+%%PERL5_MAN3%%/Qudo.3.gz
+%%PERL5_MAN3%%/Qudo::Manager.3.gz
+%%PERL5_MAN3%%/Qudo::Manual::JA::Functions.3.gz
+%%PERL5_MAN3%%/Qudo::Manual::JA::Intro.3.gz
+%%PERL5_MAN3%%/Qudo::Manual::JA::Tutorial.3.gz
+%%PERL5_MAN3%%/Qudo::Worker.3.gz
 @dirrm %%SITE_PERL%%/Qudo/Manual/JA
 @dirrm %%SITE_PERL%%/Qudo/Manual
 @dirrm %%SITE_PERL%%/Qudo/Hook/Serialize

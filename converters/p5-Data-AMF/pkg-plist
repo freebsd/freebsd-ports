@@ -14,6 +14,21 @@
 %%SITE_PERL%%/Data/AMF/Type/Boolean.pm
 %%SITE_PERL%%/Data/AMF/Type/ByteArray.pm
 %%SITE_PERL%%/Data/AMF/Type/Null.pm
+%%PERL5_MAN3%%/Data::AMF.3.gz
+%%PERL5_MAN3%%/Data::AMF::Formatter.3.gz
+%%PERL5_MAN3%%/Data::AMF::Formatter::AMF0.3.gz
+%%PERL5_MAN3%%/Data::AMF::Formatter::AMF3.3.gz
+%%PERL5_MAN3%%/Data::AMF::Header.3.gz
+%%PERL5_MAN3%%/Data::AMF::IO.3.gz
+%%PERL5_MAN3%%/Data::AMF::Message.3.gz
+%%PERL5_MAN3%%/Data::AMF::Packet.3.gz
+%%PERL5_MAN3%%/Data::AMF::Parser.3.gz
+%%PERL5_MAN3%%/Data::AMF::Parser::AMF0.3.gz
+%%PERL5_MAN3%%/Data::AMF::Parser::AMF3.3.gz
+%%PERL5_MAN3%%/Data::AMF::Remoting.3.gz
+%%PERL5_MAN3%%/Data::AMF::Type::Boolean.3.gz
+%%PERL5_MAN3%%/Data::AMF::Type::ByteArray.3.gz
+%%PERL5_MAN3%%/Data::AMF::Type::Null.3.gz
 @dirrm %%SITE_PERL%%/Data/AMF/Type
 @dirrm %%SITE_PERL%%/Data/AMF/Parser
 @dirrm %%SITE_PERL%%/Data/AMF/Formatter
