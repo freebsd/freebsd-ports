@@ -1,3 +1,4 @@
 #!/bin/sh
+[ $# -lt 1 ] && echo 'usage:	ssgless -x3 ssg-device_cfg.txt' && echo '	("less --help" for help)' && exit 1
 export LESSOPEN="|%%PREFIX%%/bin/lesspipe-ssg.awk %s"
 exec %%LESS%% "$@"
