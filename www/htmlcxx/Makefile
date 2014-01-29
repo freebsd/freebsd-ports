@@ -23,5 +23,4 @@ MAKE_JOBS_UNSAFE=yes
 
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -35,5 +35,4 @@ USES=		perl5
 
 do-install:	# Empty
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
