@@ -5,6 +5,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/YAML/Syck.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/YAML/Loader/Syck.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/YAML/Dumper/Syck.pm
+%%PERL5_MAN3%%/JSON::Syck.3.gz
+%%PERL5_MAN3%%/YAML::Syck.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAML/Syck
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/YAML/Loader

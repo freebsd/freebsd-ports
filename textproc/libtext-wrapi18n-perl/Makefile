@@ -18,9 +18,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::WrapI18N.3
-
-NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKSRC}.orig ${WRKSRC}
 

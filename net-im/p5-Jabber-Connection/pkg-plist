@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Jabber/NS.pm
 %%SITE_PERL%%/Jabber/NodeFactory.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jabber/Connection/.packlist
+%%PERL5_MAN3%%/Jabber::Connection.3.gz
+%%PERL5_MAN3%%/Jabber::NS.3.gz
+%%PERL5_MAN3%%/Jabber::NodeFactory.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jabber/Connection
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jabber
 @dirrm %%SITE_PERL%%/Jabber

@@ -7,6 +7,7 @@
 %%SITE_PERL%%/XML/RSS/Private/Output/Roles/ImageDims.pm
 %%SITE_PERL%%/XML/RSS/Private/Output/Roles/ModulesElems.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/.packlist
+%%PERL5_MAN3%%/XML::RSS.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/RSS/Private/Output/Roles

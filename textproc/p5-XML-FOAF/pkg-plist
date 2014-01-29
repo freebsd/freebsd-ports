@@ -2,6 +2,8 @@
 %%SITE_PERL%%/XML/FOAF.pm
 %%SITE_PERL%%/XML/FOAF/ErrorHandler.pm
 %%SITE_PERL%%/XML/FOAF/Person.pm
+%%PERL5_MAN3%%/XML::FOAF.3.gz
+%%PERL5_MAN3%%/XML::FOAF::Person.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/FOAF
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/FOAF

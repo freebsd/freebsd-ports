@@ -21,7 +21,4 @@ BUILD_DEPENDS+=	p5-Test-Manifest>=0.9:${PORTSDIR}/devel/p5-Test-Manifest
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		XML::RSS.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
