@@ -94,5 +94,7 @@ PLIST_SUB+=	HAL="@comment "
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.0
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gio/modules/lib*.so
+	@${MKDIR} ${STAGEDIR}${DATADIR}/remote-volume-monitors
+	${TOUCH} ${STAGEDIR}${DATADIR}/remote-volume-monitors/.keep
 
 .include <bsd.port.mk>
