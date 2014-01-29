@@ -12,11 +12,10 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A message queue that works as a pluggable storage engine of MySQL
 
 FETCH_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/${_MYSQL_SERVER}:build
-RUN_DEPENDS=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/${_MYSQL_SERVER}
 
 USES=		gmake perl5
 USE_AUTOTOOLS=	libtool
-USE_MYSQL=	yes
+USE_MYSQL=	server
 USE_GCC=	4.2+
 
 GNU_CONFIGURE=	yes
