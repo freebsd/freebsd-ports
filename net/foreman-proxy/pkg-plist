@@ -1,0 +1,90 @@
+sbin/smart-proxy
+@unexec if cmp -s %D/etc/foreman-proxy/settings.yml %D/etc/foreman-proxy/settings.yml.sample; then rm -f %D/etc/foreman-proxy/settings.yml; fi
+etc/foreman-proxy/settings.yml.sample
+@exec [ -f %B/settings.yml ] || cp %B/%f %B/settings.yml
+%%DATADIR%%/Rakefile
+%%DATADIR%%/config.ru
+%%DATADIR%%/config
+%%DATADIR%%/lib/bmc_api.rb
+%%DATADIR%%/lib/checks.rb
+%%DATADIR%%/lib/chefproxy_api.rb
+%%DATADIR%%/lib/daemon.rb
+%%DATADIR%%/lib/dhcp_api.rb
+%%DATADIR%%/lib/dns_api.rb
+%%DATADIR%%/lib/facts_api.rb
+%%DATADIR%%/lib/features_api.rb
+%%DATADIR%%/lib/helpers.rb
+%%DATADIR%%/lib/proxy.rb
+%%DATADIR%%/lib/proxy/authentication.rb
+%%DATADIR%%/lib/proxy/bmc.rb
+%%DATADIR%%/lib/proxy/bmc/base.rb
+%%DATADIR%%/lib/proxy/bmc/ipmi.rb
+%%DATADIR%%/lib/proxy/bmc/shell.rb
+%%DATADIR%%/lib/proxy/chefproxy.rb
+%%DATADIR%%/lib/proxy/dhcp.rb
+%%DATADIR%%/lib/proxy/dhcp/monkey_patch_subnet.rb
+%%DATADIR%%/lib/proxy/dhcp/monkey_patches.rb
+%%DATADIR%%/lib/proxy/dhcp/record.rb
+%%DATADIR%%/lib/proxy/dhcp/record/lease.rb
+%%DATADIR%%/lib/proxy/dhcp/record/reservation.rb
+%%DATADIR%%/lib/proxy/dhcp/server.rb
+%%DATADIR%%/lib/proxy/dhcp/server/isc.rb
+%%DATADIR%%/lib/proxy/dhcp/server/ms.rb
+%%DATADIR%%/lib/proxy/dhcp/server/native_ms.rb
+%%DATADIR%%/lib/proxy/dhcp/server/virsh.rb
+%%DATADIR%%/lib/proxy/dhcp/subnet.rb
+%%DATADIR%%/lib/proxy/dns.rb
+%%DATADIR%%/lib/proxy/dns/default_dns_settings.rb
+%%DATADIR%%/lib/proxy/dns/dnscmd.rb
+%%DATADIR%%/lib/proxy/dns/nsupdate.rb
+%%DATADIR%%/lib/proxy/dns/nsupdate_gss.rb
+%%DATADIR%%/lib/proxy/dns/virsh.rb
+%%DATADIR%%/lib/proxy/error.rb
+%%DATADIR%%/lib/proxy/log.rb
+%%DATADIR%%/lib/proxy/puppet.rb
+%%DATADIR%%/lib/proxy/puppet/class_scanner.rb
+%%DATADIR%%/lib/proxy/puppet/class_scanner_eparser.rb
+%%DATADIR%%/lib/proxy/puppet/customrun.rb
+%%DATADIR%%/lib/proxy/puppet/default_puppet_settings.rb
+%%DATADIR%%/lib/proxy/puppet/environment.rb
+%%DATADIR%%/lib/proxy/puppet/initializer.rb
+%%DATADIR%%/lib/proxy/puppet/mcollective.rb
+%%DATADIR%%/lib/proxy/puppet/puppet_class.rb
+%%DATADIR%%/lib/proxy/puppet/puppet_ssh.rb
+%%DATADIR%%/lib/proxy/puppet/puppetrun.rb
+%%DATADIR%%/lib/proxy/puppet/salt.rb
+%%DATADIR%%/lib/proxy/puppetca.rb
+%%DATADIR%%/lib/proxy/settings.rb
+%%DATADIR%%/lib/proxy/tftp.rb
+%%DATADIR%%/lib/proxy/util.rb
+%%DATADIR%%/lib/proxy/validations.rb
+%%DATADIR%%/lib/proxy/virsh.rb
+%%DATADIR%%/lib/puppet_api.rb
+%%DATADIR%%/lib/puppetca_api.rb
+%%DATADIR%%/lib/sinatra-patch.rb
+%%DATADIR%%/lib/smart_proxy.rb
+%%DATADIR%%/lib/tftp_api.rb
+%%DATADIR%%/public/css/styles.css
+%%DATADIR%%/views/dhcp/index.erb
+%%DATADIR%%/views/dhcp/show.erb
+%%DATADIR%%/views/features/index.erb
+%%DATADIR%%/views/layout.erb
+@dirrm %%DATADIR%%/views/features
+@dirrm %%DATADIR%%/views/dhcp
+@dirrm %%DATADIR%%/views
+@dirrm %%DATADIR%%/public/css
+@dirrm %%DATADIR%%/public
+@dirrm %%DATADIR%%/lib/proxy/bmc
+@dirrm %%DATADIR%%/lib/proxy/dhcp/record
+@dirrm %%DATADIR%%/lib/proxy/dhcp/server
+@dirrm %%DATADIR%%/lib/proxy/dhcp
+@dirrm %%DATADIR%%/lib/proxy/dns
+@dirrm %%DATADIR%%/lib/proxy/puppet
+@dirrm %%DATADIR%%/lib/proxy
+@dirrm %%DATADIR%%/lib
+@dirrmtry %%DATADIR%%
+@dirrmtry etc/foreman-proxy
+@cwd /
+@exec %%MKDIR%% -m 0700 %%FOREMAN_PROXY_LOGDIR%% %%FOREMAN_PROXY_RUNDIR%%
+@unexec rmdir %%FOREMAN_PROXY_LOGDIR%% >/dev/null 2>&1 || :
+@unexec rmdir %%FOREMAN_PROXY_RUNDIR%% >/dev/null 2>&1 || :

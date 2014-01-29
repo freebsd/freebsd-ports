@@ -1,0 +1,17 @@
+The Foreman Smart Proxy is a project which provides a restful API to various
+sub-systems.
+
+Its goal is to provide API for a higher level orchestration tools (such as
+Foreman). The Smart proxy provides an easy way to add or extended existing
+subsystems and API's.
+
+Currently supported are:
+DHCP - ISC DHCP and MS DHCP Servers
+DNS - Bind and MS DNS Servers
+TFTP - any UNIX based tftp server
+Puppet - Any Puppet server from 0.24.x
+Puppet CA - Manage certificate signing, cleaning and autosign on a Puppet CA
+            server
+BMC - BMC management etc
+
+WWW: http://theforeman.org
