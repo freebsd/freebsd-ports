@@ -21,7 +21,6 @@
     SUBDIR += homard
     SUBDIR += hunspell
     SUBDIR += hyphen
-    SUBDIR += ispell
     SUBDIR += jdictionary-fre-hun
     SUBDIR += kde4-l10n
     SUBDIR += libreoffice
