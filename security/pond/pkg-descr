@@ -6,6 +6,4 @@ traffic information against everyone except a global passive attacker.
 Pond is experimental software! DO NOT USE IT FOR ANYTHING REAL!!!
 Use security/gnupg instead.
 
-!!! THIS INSTALLS THE POND SERVER ONLY, NOT THE CLIENT !!!
-
 WWW: https://github.com/agl/pond/
