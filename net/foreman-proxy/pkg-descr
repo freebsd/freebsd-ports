@@ -1,5 +1,5 @@
-The Foreman Smart Proxy is a project which provides a restful API to various
-sub-systems.
+The Foreman Smart Proxy is a daemon written in Ruby which provides a restful
+API to various sub-systems.
 
 Its goal is to provide API for a higher level orchestration tools (such as
 Foreman). The Smart proxy provides an easy way to add or extended existing
