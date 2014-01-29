@@ -1,3 +1,11 @@
+%%PERL5_MAN3%%/Apache2::SiteControl.3.gz
+%%PERL5_MAN3%%/Apache2::SiteControl::GrantAllRule.3.gz
+%%PERL5_MAN3%%/Apache2::SiteControl::ManagerFactory.3.gz
+%%PERL5_MAN3%%/Apache2::SiteControl::PermissionManager.3.gz
+%%PERL5_MAN3%%/Apache2::SiteControl::Radius.3.gz
+%%PERL5_MAN3%%/Apache2::SiteControl::Rule.3.gz
+%%PERL5_MAN3%%/Apache2::SiteControl::User.3.gz
+%%PERL5_MAN3%%/Apache2::SiteControl::UserFactory.3.gz
 %%SITE_PERL%%/Apache2/SiteControl.pm
 %%SITE_PERL%%/Apache2/SiteControl/GrantAllRule.pm
 %%SITE_PERL%%/Apache2/SiteControl/ManagerFactory.pm
