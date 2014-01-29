@@ -17,7 +17,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		CGI::Application::Plugin::ConfigAuto.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

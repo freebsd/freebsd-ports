@@ -29,6 +29,34 @@ bin/webdao.psgi
 %%SITE_PERL%%/WebDAO/Test.pm
 %%SITE_PERL%%/WebDAO/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebDAO/.packlist
+%%PERL5_MAN3%%/WebDAO.3.gz
+%%PERL5_MAN3%%/WebDAO::Base.3.gz
+%%PERL5_MAN3%%/WebDAO::CV.3.gz
+%%PERL5_MAN3%%/WebDAO::CVfcgi.3.gz
+%%PERL5_MAN3%%/WebDAO::Component.3.gz
+%%PERL5_MAN3%%/WebDAO::Config.3.gz
+%%PERL5_MAN3%%/WebDAO::Container.3.gz
+%%PERL5_MAN3%%/WebDAO::Element.3.gz
+%%PERL5_MAN3%%/WebDAO::Engine.3.gz
+%%PERL5_MAN3%%/WebDAO::FCGI::ProcManager.3.gz
+%%PERL5_MAN3%%/WebDAO::Lex.3.gz
+%%PERL5_MAN3%%/WebDAO::Lexer::base.3.gz
+%%PERL5_MAN3%%/WebDAO::Lexer::method.3.gz
+%%PERL5_MAN3%%/WebDAO::Lexer::object.3.gz
+%%PERL5_MAN3%%/WebDAO::Lexer::regclass.3.gz
+%%PERL5_MAN3%%/WebDAO::Lexer::text.3.gz
+%%PERL5_MAN3%%/WebDAO::Lib::MethodByPath.3.gz
+%%PERL5_MAN3%%/WebDAO::Lib::RawHTML.3.gz
+%%PERL5_MAN3%%/WebDAO::Response.3.gz
+%%PERL5_MAN3%%/WebDAO::Session.3.gz
+%%PERL5_MAN3%%/WebDAO::SessionSH.3.gz
+%%PERL5_MAN3%%/WebDAO::Sessionco.3.gz
+%%PERL5_MAN3%%/WebDAO::Store::Abstract.3.gz
+%%PERL5_MAN3%%/WebDAO::Store::Storable.3.gz
+%%PERL5_MAN3%%/WebDAO::Test.3.gz
+%%PERL5_MAN3%%/WebDAO::Util.3.gz
+man/man1/wd_fcgi.fpl.1.gz
+man/man1/wd_shell.pl.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebDAO
 @dirrmtry %%SITE_PERL%%/WebDAO/Store
 @dirrmtry %%SITE_PERL%%/WebDAO/Lib

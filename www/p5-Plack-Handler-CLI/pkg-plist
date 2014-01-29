@@ -1,1 +1,2 @@
 %%SITE_PERL%%/Plack/Handler/CLI.pm
+%%PERL5_MAN3%%/Plack::Handler::CLI.3.gz

@@ -1,4 +1,5 @@
 %%SITE_PERL%%/CGI/Application/Plugin/ConfigAuto.pm
+%%PERL5_MAN3%%/CGI::Application::Plugin::ConfigAuto.3.gz
 @dirrmtry %%SITE_PERL%%/CGI/Application/Plugin
 @dirrmtry %%SITE_PERL%%/CGI/Application
 @dirrmtry %%SITE_PERL%%/CGI
