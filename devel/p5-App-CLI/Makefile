@@ -13,7 +13,4 @@ COMMENT=	App::CLI - Dispatcher module for command line interface programs
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		App::CLI.3 App::CLI::Command.3 App::CLI::Command::Help.3 App::CLI::Helper.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -19,7 +19,4 @@ BUILD_DEPENDS=	p5-SVN-Notify>=2.72:${PORTSDIR}/devel/p5-SVN-Notify \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		SVN::Notify::Filter::AuthZMail.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

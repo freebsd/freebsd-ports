@@ -18,12 +18,4 @@ RUN_DEPENDS=	p5-Class-Method-Modifiers>=0:${PORTSDIR}/devel/p5-Class-Method-Modi
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Dancer::Debug.3 \
-		Plack::Middleware::Debug::Dancer::Logger.3 \
-		Plack::Middleware::Debug::Dancer::Routes.3 \
-		Plack::Middleware::Debug::Dancer::Session.3 \
-		Plack::Middleware::Debug::Dancer::Settings.3 \
-		Plack::Middleware::Debug::Dancer::Version.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

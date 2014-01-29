@@ -16,17 +16,7 @@ LICENSE_COMB=	dual
 
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-MAN3=		Tree::Binary.3 Tree::Binary::Search.3 \
-		Tree::Binary::Search::Node.3 \
-		Tree::Binary::Visitor::Base.3 \
-		Tree::Binary::Visitor::BreadthFirstTraversal.3 \
-		Tree::Binary::Visitor::InOrderTraversal.3 \
-		Tree::Binary::Visitor::PostOrderTraversal.3 \
-		Tree::Binary::Visitor::PreOrderTraversal.3 \
-		Tree::Binary::VisitorFactory.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

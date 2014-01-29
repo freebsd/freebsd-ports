@@ -13,7 +13,4 @@ COMMENT=	Run programs and inherit environment changes
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Shell::Source.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
