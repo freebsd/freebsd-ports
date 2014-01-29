@@ -3,6 +3,7 @@
 
 PORTNAME=	easy-thumbnails
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}django-
@@ -16,9 +17,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=0:${PORTSDIR}/www/py-django
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
