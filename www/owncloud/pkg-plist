@@ -3494,6 +3494,7 @@
 %%WWWDIR%%/apps/documents/README.md
 %%WWWDIR%%/apps/documents/ajax/controller.php
 %%WWWDIR%%/apps/documents/ajax/documentController.php
+%%WWWDIR%%/apps/documents/ajax/download.php
 %%WWWDIR%%/apps/documents/ajax/otpoll.php
 %%WWWDIR%%/apps/documents/ajax/personal.php
 %%WWWDIR%%/apps/documents/ajax/sessionController.php
@@ -4290,6 +4291,7 @@
 %%WWWDIR%%/apps/documents/lib/download/range.php
 %%WWWDIR%%/apps/documents/lib/download/simple.php
 %%WWWDIR%%/apps/documents/lib/file.php
+%%WWWDIR%%/apps/documents/lib/filter.php
 %%WWWDIR%%/apps/documents/lib/genesis.php
 %%WWWDIR%%/apps/documents/lib/helper.php
 %%WWWDIR%%/apps/documents/lib/invite.php
@@ -4499,7 +4501,6 @@
 %%WWWDIR%%/apps/files/l10n/pt_PT.php
 %%WWWDIR%%/apps/files/l10n/ro.php
 %%WWWDIR%%/apps/files/l10n/ru.php
-%%WWWDIR%%/apps/files/l10n/ru_RU.php
 %%WWWDIR%%/apps/files/l10n/si_LK.php
 %%WWWDIR%%/apps/files/l10n/sk.php
 %%WWWDIR%%/apps/files/l10n/sk_SK.php
@@ -5620,7 +5621,6 @@
 %%WWWDIR%%/apps/files_external/l10n/pt_PT.php
 %%WWWDIR%%/apps/files_external/l10n/ro.php
 %%WWWDIR%%/apps/files_external/l10n/ru.php
-%%WWWDIR%%/apps/files_external/l10n/ru_RU.php
 %%WWWDIR%%/apps/files_external/l10n/si_LK.php
 %%WWWDIR%%/apps/files_external/l10n/sk_SK.php
 %%WWWDIR%%/apps/files_external/l10n/sl.php
@@ -5800,7 +5800,6 @@
 %%WWWDIR%%/apps/files_sharing/l10n/pt_PT.php
 %%WWWDIR%%/apps/files_sharing/l10n/ro.php
 %%WWWDIR%%/apps/files_sharing/l10n/ru.php
-%%WWWDIR%%/apps/files_sharing/l10n/ru_RU.php
 %%WWWDIR%%/apps/files_sharing/l10n/si_LK.php
 %%WWWDIR%%/apps/files_sharing/l10n/sk_SK.php
 %%WWWDIR%%/apps/files_sharing/l10n/sl.php
@@ -6182,7 +6181,6 @@
 %%WWWDIR%%/apps/files_trashbin/appinfo/update.php
 %%WWWDIR%%/apps/files_trashbin/appinfo/version
 %%WWWDIR%%/apps/files_trashbin/css/trash.css
-%%WWWDIR%%/apps/files_trashbin/download.php
 %%WWWDIR%%/apps/files_trashbin/index.php
 %%WWWDIR%%/apps/files_trashbin/js/disableDefaultActions.js
 %%WWWDIR%%/apps/files_trashbin/js/filelist.js
@@ -6251,7 +6249,6 @@
 %%WWWDIR%%/apps/files_trashbin/l10n/pt_PT.php
 %%WWWDIR%%/apps/files_trashbin/l10n/ro.php
 %%WWWDIR%%/apps/files_trashbin/l10n/ru.php
-%%WWWDIR%%/apps/files_trashbin/l10n/ru_RU.php
 %%WWWDIR%%/apps/files_trashbin/l10n/si_LK.php
 %%WWWDIR%%/apps/files_trashbin/l10n/sk.php
 %%WWWDIR%%/apps/files_trashbin/l10n/sk_SK.php
@@ -7128,7 +7125,6 @@
 %%WWWDIR%%/apps/user_ldap/l10n/pt_PT.php
 %%WWWDIR%%/apps/user_ldap/l10n/ro.php
 %%WWWDIR%%/apps/user_ldap/l10n/ru.php
-%%WWWDIR%%/apps/user_ldap/l10n/ru_RU.php
 %%WWWDIR%%/apps/user_ldap/l10n/si_LK.php
 %%WWWDIR%%/apps/user_ldap/l10n/sk.php
 %%WWWDIR%%/apps/user_ldap/l10n/sk_SK.php
@@ -7250,6 +7246,7 @@
 %%WWWDIR%%/core/command/maintenance/singleuser.php
 %%WWWDIR%%/core/command/status.php
 %%WWWDIR%%/core/command/upgrade.php
+%%WWWDIR%%/core/command/user/report.php
 %%WWWDIR%%/core/css/apps.css
 %%WWWDIR%%/core/css/auth.css
 %%WWWDIR%%/core/css/fixes.css
@@ -7288,6 +7285,8 @@
 %%WWWDIR%%/core/doc/admin/_images/ldap-wizard-2-user.png
 %%WWWDIR%%/core/doc/admin/_images/ldap-wizard-3-login.png
 %%WWWDIR%%/core/doc/admin/_images/ldap-wizard-4-group.png
+%%WWWDIR%%/core/doc/admin/_images/oc_admin_app_page.png
+%%WWWDIR%%/core/doc/admin/_images/oc_admin_user_manage.png
 %%WWWDIR%%/core/doc/admin/_images/ucs-app-center-install.png
 %%WWWDIR%%/core/doc/admin/_images/ucs-app-center-module.png
 %%WWWDIR%%/core/doc/admin/_images/ucsint.png
@@ -7310,6 +7309,7 @@
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_maintenance.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_preview.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_reverseproxy.txt
+%%WWWDIR%%/core/doc/admin/_sources/configuration/configuration_users.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/configuring_big_file_upload.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/custom_mount_config.txt
 %%WWWDIR%%/core/doc/admin/_sources/configuration/custom_mount_config_gui.txt
@@ -7376,6 +7376,7 @@
 %%WWWDIR%%/core/doc/admin/configuration/configuration_maintenance.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_preview.html
 %%WWWDIR%%/core/doc/admin/configuration/configuration_reverseproxy.html
+%%WWWDIR%%/core/doc/admin/configuration/configuration_users.html
 %%WWWDIR%%/core/doc/admin/configuration/configuring_big_file_upload.html
 %%WWWDIR%%/core/doc/admin/configuration/custom_mount_config.html
 %%WWWDIR%%/core/doc/admin/configuration/custom_mount_config_gui.html
@@ -7402,23 +7403,23 @@
 %%WWWDIR%%/core/doc/admin/objects.inv
 %%WWWDIR%%/core/doc/admin/search.html
 %%WWWDIR%%/core/doc/admin/searchindex.js
-%%WWWDIR%%/core/doc/user/_images/bookmark_addurl.jpg
-%%WWWDIR%%/core/doc/user/_images/bookmark_setting.jpg
+%%WWWDIR%%/core/doc/user/_images/bookmark_addurl.png
+%%WWWDIR%%/core/doc/user/_images/bookmark_setting.png
 %%WWWDIR%%/core/doc/user/_images/calendar_createevent.png
 %%WWWDIR%%/core/doc/user/_images/calendar_export.png
 %%WWWDIR%%/core/doc/user/_images/calendar_import.png
 %%WWWDIR%%/core/doc/user/_images/calendar_manage-calendars.png
 %%WWWDIR%%/core/doc/user/_images/calendar_newtimezone1.png
-%%WWWDIR%%/core/doc/user/_images/contact_bottombar.jpg
+%%WWWDIR%%/core/doc/user/_images/contact_bottombar.png
 %%WWWDIR%%/core/doc/user/_images/contact_crop.jpg
-%%WWWDIR%%/core/doc/user/_images/contact_del_ab.jpg
-%%WWWDIR%%/core/doc/user/_images/contact_emptycontact.jpg
-%%WWWDIR%%/core/doc/user/_images/contact_import.jpg
+%%WWWDIR%%/core/doc/user/_images/contact_del_ab.png
+%%WWWDIR%%/core/doc/user/_images/contact_emptycontact.png
 %%WWWDIR%%/core/doc/user/_images/contact_picture.jpg
 %%WWWDIR%%/core/doc/user/_images/contact_syncopt.jpg
 %%WWWDIR%%/core/doc/user/_images/contact_thunderbird-Symbol_Gear.jpg
 %%WWWDIR%%/core/doc/user/_images/contact_thunderbird-Symbol_Impeller.jpg
 %%WWWDIR%%/core/doc/user/_images/contact_thunderbird-URL_config.jpg
+%%WWWDIR%%/core/doc/user/_images/contact_uploadbutton.png
 %%WWWDIR%%/core/doc/user/_images/contact_vcfpick.jpg
 %%WWWDIR%%/core/doc/user/_images/dolphin_webdav.png
 %%WWWDIR%%/core/doc/user/_images/explorer_webdav.png
@@ -7428,6 +7429,7 @@
 %%WWWDIR%%/core/doc/user/_images/external_google_drive_4_enable_api.png
 %%WWWDIR%%/core/doc/user/_images/external_google_drive_5_setup_ownCloud.png
 %%WWWDIR%%/core/doc/user/_images/external_google_drive_6_accept.png
+%%WWWDIR%%/core/doc/user/_images/files_versioning.png
 %%WWWDIR%%/core/doc/user/_images/gnome3_nautilus_webdav.png
 %%WWWDIR%%/core/doc/user/_images/kdes.png
 %%WWWDIR%%/core/doc/user/_images/kdes1.png
@@ -7439,16 +7441,27 @@
 %%WWWDIR%%/core/doc/user/_images/kdes7.png
 %%WWWDIR%%/core/doc/user/_images/kdes9.png
 %%WWWDIR%%/core/doc/user/_images/oc_connect.png
+%%WWWDIR%%/core/doc/user/_images/oc_documents.png
+%%WWWDIR%%/core/doc/user/_images/oc_documents_col_edit.png
+%%WWWDIR%%/core/doc/user/_images/oc_documents_edit.png
+%%WWWDIR%%/core/doc/user/_images/oc_documents_share.png
+%%WWWDIR%%/core/doc/user/_images/oc_files_share.png
+%%WWWDIR%%/core/doc/user/_images/oc_filesweb.png
+%%WWWDIR%%/core/doc/user/_images/oc_filesweb_navigate.png
+%%WWWDIR%%/core/doc/user/_images/oc_filesweb_new.png
 %%WWWDIR%%/core/doc/user/_images/oc_ui.png
+%%WWWDIR%%/core/doc/user/_images/oc_user_preferences.png
 %%WWWDIR%%/core/doc/user/_images/osx_webdav1.png
 %%WWWDIR%%/core/doc/user/_images/osx_webdav2.png
 %%WWWDIR%%/core/doc/user/_sources/bookmarks.txt
 %%WWWDIR%%/core/doc/user/_sources/contents.txt
+%%WWWDIR%%/core/doc/user/_sources/documents.txt
 %%WWWDIR%%/core/doc/user/_sources/external_storage/google_drive.txt
 %%WWWDIR%%/core/doc/user/_sources/files/configuring_big_file_upload.txt
 %%WWWDIR%%/core/doc/user/_sources/files/deletedfiles.txt
 %%WWWDIR%%/core/doc/user/_sources/files/encryption.txt
 %%WWWDIR%%/core/doc/user/_sources/files/files.txt
+%%WWWDIR%%/core/doc/user/_sources/files/filesweb.txt
 %%WWWDIR%%/core/doc/user/_sources/files/index.txt
 %%WWWDIR%%/core/doc/user/_sources/files/quota.txt
 %%WWWDIR%%/core/doc/user/_sources/files/sync.txt
@@ -7463,6 +7476,7 @@
 %%WWWDIR%%/core/doc/user/_sources/pim/sync_osx.txt
 %%WWWDIR%%/core/doc/user/_sources/pim/sync_thunderbird.txt
 %%WWWDIR%%/core/doc/user/_sources/pim/troubleshooting.txt
+%%WWWDIR%%/core/doc/user/_sources/userpreferences.txt
 %%WWWDIR%%/core/doc/user/_sources/webinterface.txt
 %%WWWDIR%%/core/doc/user/_static/ajax-loader.gif
 %%WWWDIR%%/core/doc/user/_static/basic.css
@@ -7495,11 +7509,13 @@
 %%WWWDIR%%/core/doc/user/_static/websupport.js
 %%WWWDIR%%/core/doc/user/bookmarks.html
 %%WWWDIR%%/core/doc/user/contents.html
+%%WWWDIR%%/core/doc/user/documents.html
 %%WWWDIR%%/core/doc/user/external_storage/google_drive.html
 %%WWWDIR%%/core/doc/user/files/configuring_big_file_upload.html
 %%WWWDIR%%/core/doc/user/files/deletedfiles.html
 %%WWWDIR%%/core/doc/user/files/encryption.html
 %%WWWDIR%%/core/doc/user/files/files.html
+%%WWWDIR%%/core/doc/user/files/filesweb.html
 %%WWWDIR%%/core/doc/user/files/index.html
 %%WWWDIR%%/core/doc/user/files/quota.html
 %%WWWDIR%%/core/doc/user/files/sync.html
@@ -7518,6 +7534,7 @@
 %%WWWDIR%%/core/doc/user/pim/troubleshooting.html
 %%WWWDIR%%/core/doc/user/search.html
 %%WWWDIR%%/core/doc/user/searchindex.js
+%%WWWDIR%%/core/doc/user/userpreferences.html
 %%WWWDIR%%/core/doc/user/webinterface.html
 %%WWWDIR%%/core/img/actions/add.png
 %%WWWDIR%%/core/img/actions/add.svg
@@ -7828,7 +7845,6 @@
 %%WWWDIR%%/core/l10n/pt_PT.php
 %%WWWDIR%%/core/l10n/ro.php
 %%WWWDIR%%/core/l10n/ru.php
-%%WWWDIR%%/core/l10n/ru_RU.php
 %%WWWDIR%%/core/l10n/si_LK.php
 %%WWWDIR%%/core/l10n/sk.php
 %%WWWDIR%%/core/l10n/sk_SK.php
@@ -8691,17 +8707,6 @@
 %%WWWDIR%%/l10n/ru/settings.po
 %%WWWDIR%%/l10n/ru/user_ldap.po
 %%WWWDIR%%/l10n/ru/user_webdavauth.po
-%%WWWDIR%%/l10n/ru_RU/core.po
-%%WWWDIR%%/l10n/ru_RU/files.po
-%%WWWDIR%%/l10n/ru_RU/files_encryption.po
-%%WWWDIR%%/l10n/ru_RU/files_external.po
-%%WWWDIR%%/l10n/ru_RU/files_sharing.po
-%%WWWDIR%%/l10n/ru_RU/files_trashbin.po
-%%WWWDIR%%/l10n/ru_RU/files_versions.po
-%%WWWDIR%%/l10n/ru_RU/lib.po
-%%WWWDIR%%/l10n/ru_RU/settings.po
-%%WWWDIR%%/l10n/ru_RU/user_ldap.po
-%%WWWDIR%%/l10n/ru_RU/user_webdavauth.po
 %%WWWDIR%%/l10n/si_LK/core.po
 %%WWWDIR%%/l10n/si_LK/files.po
 %%WWWDIR%%/l10n/si_LK/files_encryption.po
@@ -9046,7 +9051,6 @@
 %%WWWDIR%%/lib/l10n/pt_PT.php
 %%WWWDIR%%/lib/l10n/ro.php
 %%WWWDIR%%/lib/l10n/ru.php
-%%WWWDIR%%/lib/l10n/ru_RU.php
 %%WWWDIR%%/lib/l10n/si_LK.php
 %%WWWDIR%%/lib/l10n/sk.php
 %%WWWDIR%%/lib/l10n/sk_SK.php
@@ -9482,7 +9486,6 @@
 %%WWWDIR%%/settings/l10n/pt_PT.php
 %%WWWDIR%%/settings/l10n/ro.php
 %%WWWDIR%%/settings/l10n/ru.php
-%%WWWDIR%%/settings/l10n/ru_RU.php
 %%WWWDIR%%/settings/l10n/si_LK.php
 %%WWWDIR%%/settings/l10n/sk_SK.php
 %%WWWDIR%%/settings/l10n/sl.php
@@ -9611,7 +9614,6 @@
 @dirrmtry %%WWWDIR%%/l10n/sk_SK
 @dirrmtry %%WWWDIR%%/l10n/sk
 @dirrmtry %%WWWDIR%%/l10n/si_LK
-@dirrmtry %%WWWDIR%%/l10n/ru_RU
 @dirrmtry %%WWWDIR%%/l10n/ru
 @dirrmtry %%WWWDIR%%/l10n/ro
 @dirrmtry %%WWWDIR%%/l10n/pt_PT
@@ -9730,6 +9732,7 @@
 @dirrmtry %%WWWDIR%%/core/doc
 @dirrmtry %%WWWDIR%%/core/css/images
 @dirrmtry %%WWWDIR%%/core/css
+@dirrmtry %%WWWDIR%%/core/command/user
 @dirrmtry %%WWWDIR%%/core/command/maintenance
 @dirrmtry %%WWWDIR%%/core/command/db
 @dirrmtry %%WWWDIR%%/core/command/app
