@@ -12,9 +12,11 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Generic Monitor Xfce4 panel plugin
 
+LICENSE=	LGPL21
+
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USES=		pathfix gettext pkgconfig gmake
+USES=		gettext pkgconfig gmake
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu panel
 
