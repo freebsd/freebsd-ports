@@ -1,5 +1,5 @@
 --- /dev/null	2012-04-08 01:30:00.000000000 +0000
-+++ pycrypto-2.1.0/patches_src.libtom.tomcrypt_pk.h	2012-04-08 01:30:26.000000000 +0000
++++ build/pkgs/pycrypto/fbsd-patch-src.libtom.tomcrypt_pk.h	2012-04-08 01:30:26.000000000 +0000
 @@ -0,0 +1,11 @@
 +--- src/src/libtom/tomcrypt_pk.h-orig	2012-01-21 19:43:56.000000000 +0000
 ++++ src/src/libtom/tomcrypt_pk.h	2012-01-21 19:45:01.000000000 +0000

@@ -1,0 +1,1187 @@
+--- build/pkgs/mpir/patches/configure.patch-orig	2014-01-29 21:20:07.000000000 +0000
++++ build/pkgs/mpir/patches/configure.patch	2014-01-29 21:21:10.000000000 +0000
+@@ -1,6 +1,6 @@
+-diff -dru src/acinclude.m4 b/acinclude.m4
+---- src/acinclude.m4	2011-07-27 00:59:54.000000000 -0700
+-+++ b/acinclude.m4	2012-06-19 12:53:56.000000000 -0700
++diff -ur src/acinclude.m4 b/acinclude.m4
++--- src/acinclude.m4	2014-01-29 21:06:09.000000000 +0000
+++++ b/acinclude.m4	2014-01-29 21:06:23.000000000 +0000
+ @@ -519,31 +519,45 @@
+  int cmov () { return (n >= 0 ? n : 0); }
+  ])
+@@ -57,52 +57,49 @@
+  ])
+  
+  # __builtin_alloca is not available everywhere, check it exists before
+-diff -dru src/configure.in b/configure.in
+---- src/configure.in	2012-03-08 23:21:29.000000000 -0800
+-+++ b/configure.in	2012-06-19 12:53:56.000000000 -0700
+-@@ -1918,16 +1918,6 @@
++Only in b: acinclude.m4.orig
++diff -ur src/aclocal.m4 b/aclocal.m4
++--- src/aclocal.m4	2014-01-29 21:06:09.000000000 +0000
+++++ b/aclocal.m4	2012-10-03 20:07:32.000000000 +0000
++@@ -2421,7 +2421,7 @@
++   shlibpath_var=LD_LIBRARY_PATH
++   ;;
++ 
++-freebsd1.*)
+++freebsd1*)
++   dynamic_linker=no
++   ;;
++ 
++@@ -2432,7 +2432,7 @@
++     objformat=`/usr/bin/objformat`
++   else
++     case $host_os in
++-    freebsd[[123]].*) objformat=aout ;;
+++    freebsd[[123]]*) objformat=aout ;;
++     *) objformat=elf ;;
++     esac
+    fi
+- fi
+- 
+--# The dead hand of AC_REQUIRE makes AC_PROG_LIBTOOL expand and execute
+--# AC_PROG_F77, even when F77 is not in the selected with_tags.  This is
+--# probably harmless, but it's unsightly and bloats our configure, so pretend
+--# AC_PROG_F77 has been expanded already.
+--#
+--# FIXME: Rumour has it libtool will one day provide a way for a configure.in
+--# to say what it wants from among supported languages etc.
+--#
+--AC_PROVIDE([AC_PROG_F77])
+--
+- AC_PROG_LIBTOOL
+- 
+- # Generate an error here if attempting to build both shared and static when
+-diff -dru src/yasm/Makefile.in b/yasm/Makefile.in
+---- src/yasm/Makefile.in	2012-03-10 23:16:35.000000000 -0800
+-+++ b/yasm/Makefile.in	2012-06-19 12:53:56.000000000 -0700
+-@@ -3747,7 +3747,8 @@
+- check-am: all-am
+- 	$(MAKE) $(AM_MAKEFLAGS) $(check_PROGRAMS)
+- 	$(MAKE) $(AM_MAKEFLAGS) check-TESTS
+--check:
+-+check: $(BUILT_SOURCES)
+-+	$(MAKE) $(AM_MAKEFLAGS) check-recursive
+- all-am: Makefile $(LIBRARIES) $(PROGRAMS) $(MANS) $(HEADERS) config.h \
+- 		all-local
+- installdirs: installdirs-recursive
+-@@ -3755,7 +3756,8 @@
+- 	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man7dir)" "$(DESTDIR)$(includedir)" "$(DESTDIR)$(modincludedir)" "$(DESTDIR)$(includedir)"; do \
+- 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
+- 	done
+--install:
+-+install: $(BUILT_SOURCES)
+-+	$(MAKE) $(AM_MAKEFLAGS) install-recursive
+- install-exec: install-exec-recursive
+- install-data: install-data-recursive
+- uninstall: uninstall-recursive
+-diff -dru src/configure b/configure
+---- src/configure	2012-06-19 12:53:56.000000000 -0700
+-+++ b/configure	2012-03-10 01:07:26.000000000 -0800
++@@ -5129,7 +5129,7 @@
++       _LT_TAGVAR(hardcode_shlibpath_var, $1)=no
++       ;;
++ 
++-    freebsd1.*)
+++    freebsd1*)
++       _LT_TAGVAR(ld_shlibs, $1)=no
++       ;;
++ 
++@@ -6152,7 +6152,7 @@
++         esac
++         ;;
++ 
++-      freebsd[[12]].*)
+++      freebsd[[12]]*)
++         # C++ shared libraries reported to be fairly broken before
++ 	# switch to ELF
++         _LT_TAGVAR(ld_shlibs, $1)=no
++diff -ur src/configure b/configure
++--- src/configure	2014-01-29 21:06:09.000000000 +0000
+++++ b/configure	2014-01-29 21:06:23.000000000 +0000
+ @@ -2069,52 +2069,6 @@
+  
+  } # ac_fn_cxx_try_link
+@@ -156,7 +153,7 @@
+  # ac_fn_c_check_decl LINENO SYMBOL VAR INCLUDES
+  # ---------------------------------------------
+  # Tests whether SYMBOL is declared in INCLUDES, setting cache variable VAR
+-@@ -5311,11 +5265,13 @@
++@@ -5313,11 +5267,13 @@
+     on AIX 4.3 under "-maix64 -mpowerpc64 -mcpu=630".  The -mcpu=630
+     option causes gcc to incorrectly select the 32-bit libgcc.a, not
+     the 64-bit one, and consequently it misses out on the __fixunsdfdi
+@@ -174,7 +171,7 @@
+  EOF
+    echo "Test compile: double -> ulong conversion" >&5
+    gmp_compile="$cc $cflags $cppflags conftest.c >&5"
+-@@ -5359,7 +5315,6 @@
++@@ -5361,7 +5317,6 @@
+  
+  
+  
+@@ -182,7 +179,7 @@
+  if test "$gmp_prog_cc_works" = yes; then
+    # remove anything that might look like compiler output to our "||" expression
+    rm -f conftest* a.out b.out a.exe a_out.exe
+-@@ -5367,10 +5322,10 @@
++@@ -5369,10 +5324,10 @@
+  /* The following provokes an error from hppa gcc 2.95 under -mpa-risc-2-0 if
+     the assembler doesn't know hppa 2.0 instructions.  fneg is a 2.0
+     instruction, and a negation like this comes out using it.  */
+@@ -196,7 +193,7 @@
+  EOF
+    echo "Test compile: double negation" >&5
+    gmp_compile="$cc $cflags $cppflags conftest.c >&5"
+-@@ -5414,7 +5369,6 @@
++@@ -5416,7 +5371,6 @@
+  
+  
+  
+@@ -204,7 +201,7 @@
+  if test "$gmp_prog_cc_works" = yes; then
+    # remove anything that might look like compiler output to our "||" expression
+    rm -f conftest* a.out b.out a.exe a_out.exe
+-@@ -5423,10 +5377,10 @@
++@@ -5425,10 +5379,10 @@
+     (cvtsd2ss) which will provoke an error if the assembler doesn't recognise
+     those instructions.  Not sure how much of the gmp code will come out
+     wanting sse2, but it's easiest to reject an option we know is bad.  */
+@@ -218,7 +215,7 @@
+  EOF
+    echo "Test compile: double -> float conversion" >&5
+    gmp_compile="$cc $cflags $cppflags conftest.c >&5"
+-@@ -5470,6 +5424,59 @@
++@@ -5472,6 +5426,59 @@
+  
+  
+  
+@@ -278,7 +275,7 @@
+  
+  # __builtin_alloca is not available everywhere, check it exists before
+  # seeing that it works
+-@@ -6572,11 +6579,13 @@
++@@ -6574,11 +6581,13 @@
+     on AIX 4.3 under "-maix64 -mpowerpc64 -mcpu=630".  The -mcpu=630
+     option causes gcc to incorrectly select the 32-bit libgcc.a, not
+     the 64-bit one, and consequently it misses out on the __fixunsdfdi
+@@ -296,7 +293,7 @@
+  EOF
+    echo "Test compile: double -> ulong conversion" >&5
+    gmp_compile="$cc $cflags $cppflags $flag conftest.c >&5"
+-@@ -6620,7 +6629,6 @@
++@@ -6622,7 +6631,6 @@
+  
+  
+  
+@@ -304,7 +301,7 @@
+  if test "$gmp_prog_cc_works" = yes; then
+    # remove anything that might look like compiler output to our "||" expression
+    rm -f conftest* a.out b.out a.exe a_out.exe
+-@@ -6628,10 +6636,10 @@
++@@ -6630,10 +6638,10 @@
+  /* The following provokes an error from hppa gcc 2.95 under -mpa-risc-2-0 if
+     the assembler doesn't know hppa 2.0 instructions.  fneg is a 2.0
+     instruction, and a negation like this comes out using it.  */
+@@ -318,7 +315,7 @@
+  EOF
+    echo "Test compile: double negation" >&5
+    gmp_compile="$cc $cflags $cppflags $flag conftest.c >&5"
+-@@ -6675,7 +6683,6 @@
++@@ -6677,7 +6685,6 @@
+  
+  
+  
+@@ -326,7 +323,7 @@
+  if test "$gmp_prog_cc_works" = yes; then
+    # remove anything that might look like compiler output to our "||" expression
+    rm -f conftest* a.out b.out a.exe a_out.exe
+-@@ -6684,10 +6691,10 @@
++@@ -6686,10 +6693,10 @@
+     (cvtsd2ss) which will provoke an error if the assembler doesn't recognise
+     those instructions.  Not sure how much of the gmp code will come out
+     wanting sse2, but it's easiest to reject an option we know is bad.  */
+@@ -340,7 +337,7 @@
+  EOF
+    echo "Test compile: double -> float conversion" >&5
+    gmp_compile="$cc $cflags $cppflags $flag conftest.c >&5"
+-@@ -6731,6 +6738,59 @@
++@@ -6733,6 +6740,59 @@
+  
+  
+  
+@@ -400,7 +397,7 @@
+  
+  # __builtin_alloca is not available everywhere, check it exists before
+  # seeing that it works
+-@@ -11689,16 +11749,6 @@
++@@ -11691,16 +11751,6 @@
+    fi
+  fi
+  
+@@ -417,7 +414,7 @@
+  case `pwd` in
+    *\ * | *\	*)
+      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Libtool does not cope well with whitespace in \`pwd\`" >&5
+-@@ -14582,7 +14632,6 @@
++@@ -14584,7 +14634,6 @@
+  
+  
+  
+@@ -425,7 +422,61 @@
+  # Set options
+  
+  
+-@@ -21736,2721 +21785,6 @@
++@@ -16358,7 +16407,7 @@
++       hardcode_shlibpath_var=no
++       ;;
++ 
++-    freebsd1.*)
+++    freebsd1*)
++       ld_shlibs=no
++       ;;
++ 
++@@ -17352,7 +17401,7 @@
++   shlibpath_var=LD_LIBRARY_PATH
++   ;;
++ 
++-freebsd1.*)
+++freebsd1*)
++   dynamic_linker=no
++   ;;
++ 
++@@ -17363,7 +17412,7 @@
++     objformat=`/usr/bin/objformat`
++   else
++     case $host_os in
++-    freebsd[123].*) objformat=aout ;;
+++    freebsd[123]*) objformat=aout ;;
++     *) objformat=elf ;;
++     esac
++   fi
++@@ -19325,7 +19374,7 @@
++         esac
++         ;;
++ 
++-      freebsd[12].*)
+++      freebsd[12]*)
++         # C++ shared libraries reported to be fairly broken before
++ 	# switch to ELF
++         ld_shlibs_CXX=no
++@@ -21189,7 +21238,7 @@
++   shlibpath_var=LD_LIBRARY_PATH
++   ;;
++ 
++-freebsd1.*)
+++freebsd1*)
++   dynamic_linker=no
++   ;;
++ 
++@@ -21200,7 +21249,7 @@
++     objformat=`/usr/bin/objformat`
++   else
++     case $host_os in
++-    freebsd[123].*) objformat=aout ;;
+++    freebsd[123]*) objformat=aout ;;
++     *) objformat=elf ;;
++     esac
++   fi
++@@ -21738,2919 +21787,204 @@
+  
+  
+  
+@@ -463,11 +514,11 @@
+ -
+ -# Source file extension for f77 test sources.
+ -ac_ext=f
+--
++ 
+ -# Object file extension for compiled f77 test sources.
+ -objext=o
+ -objext_F77=$objext
+--
++ 
+ -# No sense in running all these tests if we already determined that
+ -# the F77 compiler isn't working.  Some variables (like enable_shared)
+ -# are currently assumed to apply to all compilers on this platform,
+@@ -479,44 +530,46 @@
+ -      return
+ -      end
+ -"
+--
++ 
+ -  # Code to be used in simple link tests
+ -  lt_simple_link_test_code="\
+ -      program t
+ -      end
+ -"
+--
++ 
+ -  # ltmain only uses $CC for tagged configurations so make sure $CC is set.
+--
+--
+--
+--
+--
+--
++ 
++ 
++ 
++ 
++ 
++ 
+ -# If no C compiler was specified, use CC.
+ -LTCC=${LTCC-"$CC"}
+--
+++        ac_config_commands="$ac_config_commands libtool"
++ 
+ -# If no C compiler flags were specified, use CFLAGS.
+ -LTCFLAGS=${LTCFLAGS-"$CFLAGS"}
+--
++ 
+ -# Allow CC to be a program name with arguments.
+ -compiler=$CC
+--
+--
++ 
++ 
+ -  # save warnings/boilerplate of simple test code
+ -  ac_outfile=conftest.$ac_objext
+ -echo "$lt_simple_compile_test_code" >conftest.$ac_ext
+ -eval "$ac_compile" 2>&1 >/dev/null | $SED '/^$/d; /^ *+/d' >conftest.err
+ -_lt_compiler_boilerplate=`cat conftest.err`
+ -$RM conftest*
+--
+++# Only expand once:
++ 
+ -  ac_outfile=conftest.$ac_objext
+ -echo "$lt_simple_link_test_code" >conftest.$ac_ext
+ -eval "$ac_link" 2>&1 >/dev/null | $SED '/^$/d; /^ *+/d' >conftest.err
+ -_lt_linker_boilerplate=`cat conftest.err`
+ -$RM -r conftest*
+--
+--
++ 
++ 
+ -  # Allow CC to be a program name with arguments.
+ -  lt_save_CC="$CC"
+ -  lt_save_GCC=$GCC
+@@ -531,7 +584,16 @@
+ -    distcc | *[\\/]distcc | purify | *[\\/]purify ) ;;
+ -    \-*) ;;
+ -    *) break;;
+--  esac
+++# Generate an error here if attempting to build both shared and static when
+++# $libname.a is in $library_names_spec (as mentioned above), rather than
+++# wait for ar or ld to fail.
+++#
+++if test "$enable_shared" = yes && test "$enable_static" = yes; then
+++  case $library_names_spec in
+++    *libname.a*)
+++      as_fn_error $? "cannot create both shared and static libraries on this system, --disable one of the two" "$LINENO" 5
+++      ;;
++   esac
+ -done
+ -cc_basename=`$ECHO "$cc_temp" | $SED "s%.*/%%; s%^$host_alias-%%"`
+ -
+@@ -582,12 +644,27 @@
+ -    lt_prog_compiler_wl_F77=
+ -lt_prog_compiler_pic_F77=
+ -lt_prog_compiler_static_F77=
+--
+--
+++fi
++ 
+++ if test "$enable_static" = yes; then
+++  ENABLE_STATIC_TRUE=
+++  ENABLE_STATIC_FALSE='#'
+++else
+++  ENABLE_STATIC_TRUE='#'
+++  ENABLE_STATIC_FALSE=
+++fi
++ 
+ -  if test "$GCC" = yes; then
+ -    lt_prog_compiler_wl_F77='-Wl,'
+ -    lt_prog_compiler_static_F77='-static'
+--
+++ if test "$enable_shared" = yes; then
+++  ENABLE_SHARED_TRUE=
+++  ENABLE_SHARED_FALSE='#'
+++else
+++  ENABLE_SHARED_TRUE='#'
+++  ENABLE_SHARED_FALSE=
+++fi
++ 
+ -    case $host_os in
+ -      aix*)
+ -      # All AIX code is PIC.
+@@ -596,7 +673,7 @@
+ -	lt_prog_compiler_static_F77='-Bstatic'
+ -      fi
+ -      ;;
+--
++ 
+ -    amigaos*)
+ -      case $host_cpu in
+ -      powerpc)
+@@ -611,11 +688,13 @@
+ -        ;;
+ -      esac
+ -      ;;
+--
++ 
+ -    beos* | irix5* | irix6* | nonstopux* | osf3* | osf4* | osf5*)
+ -      # PIC is the default for these OSes.
+ -      ;;
+--
+++# Many of these library and header checks are for the benefit of
+++# supplementary programs.  libmpir doesn't use anything too weird.
++ 
+ -    mingw* | cygwin* | pw32* | os2* | cegcc*)
+ -      # This hack is so that the source file can tell whether it is being
+ -      # built for inclusion in a dll (and should export symbols for example).
+@@ -623,19 +702,43 @@
+ -      # (--disable-auto-import) libraries
+ -      lt_prog_compiler_pic_F77='-DDLL_EXPORT'
+ -      ;;
+--
+++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ANSI C header files" >&5
+++$as_echo_n "checking for ANSI C header files... " >&6; }
+++if ${ac_cv_header_stdc+:} false; then :
+++  $as_echo_n "(cached) " >&6
+++else
+++  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+++/* end confdefs.h.  */
+++#include <stdlib.h>
+++#include <stdarg.h>
+++#include <string.h>
+++#include <float.h>
++ 
+ -    darwin* | rhapsody*)
+ -      # PIC is the default on this platform
+ -      # Common symbols not allowed in MH_DYLIB files
+ -      lt_prog_compiler_pic_F77='-fno-common'
+ -      ;;
+--
+++int
+++main ()
+++{
++ 
+ -    haiku*)
+ -      # PIC is the default for Haiku.
+ -      # The "-static" flag exists, but is broken.
+ -      lt_prog_compiler_static_F77=
+ -      ;;
+--
+++  ;
+++  return 0;
+++}
+++_ACEOF
+++if ac_fn_c_try_compile "$LINENO"; then :
+++  ac_cv_header_stdc=yes
+++else
+++  ac_cv_header_stdc=no
+++fi
+++rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
++ 
+ -    hpux*)
+ -      # PIC is the default for 64-bit PA HP-UX, but not for 32-bit
+ -      # PA HP-UX.  On IA64 HP-UX, PIC is the default but the pic flag
+@@ -649,36 +752,57 @@
+ -	;;
+ -      esac
+ -      ;;
+--
+++if test $ac_cv_header_stdc = yes; then
+++  # SunOS 4.x string.h does not declare mem*, contrary to ANSI.
+++  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+++/* end confdefs.h.  */
+++#include <string.h>
++ 
+ -    interix[3-9]*)
+ -      # Interix 3.x gcc -fpic/-fPIC options generate broken code.
+ -      # Instead, we relocate shared libraries at runtime.
+ -      ;;
+--
+++_ACEOF
+++if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+++  $EGREP "memchr" >/dev/null 2>&1; then :
++ 
+ -    msdosdjgpp*)
+ -      # Just because we use GCC doesn't mean we suddenly get shared libraries
+ -      # on systems that don't support them.
+ -      lt_prog_compiler_can_build_shared_F77=no
+ -      enable_shared=no
+ -      ;;
+--
+++else
+++  ac_cv_header_stdc=no
+++fi
+++rm -f conftest*
++ 
+ -    *nto* | *qnx*)
+ -      # QNX uses GNU C++, but need to define -shared option too, otherwise
+ -      # it will coredump.
+ -      lt_prog_compiler_pic_F77='-fPIC -shared'
+ -      ;;
+--
+++fi
++ 
+ -    sysv4*MP*)
+ -      if test -d /usr/nec; then
+ -	lt_prog_compiler_pic_F77=-Kconform_pic
+ -      fi
+ -      ;;
+--
+++if test $ac_cv_header_stdc = yes; then
+++  # ISC 2.0.2 stdlib.h does not declare free, contrary to ANSI.
+++  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+++/* end confdefs.h.  */
+++#include <stdlib.h>
++ 
+ -    *)
+ -      lt_prog_compiler_pic_F77='-fPIC'
+ -      ;;
+ -    esac
+--
+++_ACEOF
+++if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+++  $EGREP "free" >/dev/null 2>&1; then :
++ 
+ -    case $cc_basename in
+ -    nvcc*) # Cuda Compiler Driver 2.2
+ -      lt_prog_compiler_wl_F77='-Xlinker '
+@@ -697,13 +821,18 @@
+ -	lt_prog_compiler_static_F77='-bnso -bI:/lib/syscalls.exp'
+ -      fi
+ -      ;;
+--
+++else
+++  ac_cv_header_stdc=no
+++fi
+++rm -f conftest*
++ 
+ -    mingw* | cygwin* | pw32* | os2* | cegcc*)
+ -      # This hack is so that the source file can tell whether it is being
+ -      # built for inclusion in a dll (and should export symbols for example).
+ -      lt_prog_compiler_pic_F77='-DDLL_EXPORT'
+ -      ;;
+--
+++fi
++ 
+ -    hpux9* | hpux10* | hpux11*)
+ -      lt_prog_compiler_wl_F77='-Wl,'
+ -      # PIC is the default for IA64 HP-UX and 64-bit HP-UX, but
+@@ -719,13 +848,45 @@
+ -      # Is there a better lt_prog_compiler_static that works with the bundled CC?
+ -      lt_prog_compiler_static_F77='${wl}-a ${wl}archive'
+ -      ;;
+--
+++if test $ac_cv_header_stdc = yes; then
+++  # /bin/cc in Irix-4.0.5 gets non-ANSI ctype macros unless using -ansi.
+++  if test "$cross_compiling" = yes; then :
+++  :
+++else
+++  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+++/* end confdefs.h.  */
+++#include <ctype.h>
+++#include <stdlib.h>
+++#if ((' ' & 0x0FF) == 0x020)
+++# define ISLOWER(c) ('a' <= (c) && (c) <= 'z')
+++# define TOUPPER(c) (ISLOWER(c) ? 'A' + ((c) - 'a') : (c))
+++#else
+++# define ISLOWER(c) \
+++		   (('a' <= (c) && (c) <= 'i') \
+++		     || ('j' <= (c) && (c) <= 'r') \
+++		     || ('s' <= (c) && (c) <= 'z'))
+++# define TOUPPER(c) (ISLOWER(c) ? ((c) | 0x40) : (c))
+++#endif
++ 
+ -    irix5* | irix6* | nonstopux*)
+ -      lt_prog_compiler_wl_F77='-Wl,'
+ -      # PIC (with -KPIC) is the default.
+ -      lt_prog_compiler_static_F77='-non_shared'
+ -      ;;
+--
+++#define XOR(e, f) (((e) && !(f)) || (!(e) && (f)))
+++int
+++main ()
+++{
+++  int i;
+++  for (i = 0; i < 256; i++)
+++    if (XOR (islower (i), ISLOWER (i))
+++	|| toupper (i) != TOUPPER (i))
+++      return 2;
+++  return 0;
+++}
+++_ACEOF
+++if ac_fn_c_try_run "$LINENO"; then :
++ 
+ -    linux* | k*bsd*-gnu | kopensolaris*-gnu)
+ -      case $cc_basename in
+ -      # old Intel for x86_64 which still supported -KPIC.
+@@ -789,28 +950,51 @@
+ -	;;
+ -      esac
+ -      ;;
+--
+++else
+++  ac_cv_header_stdc=no
+++fi
+++rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+++  conftest.$ac_objext conftest.beam conftest.$ac_ext
+++fi
++ 
+ -    newsos6)
+ -      lt_prog_compiler_pic_F77='-KPIC'
+ -      lt_prog_compiler_static_F77='-Bstatic'
+ -      ;;
+--
+++fi
+++fi
+++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_header_stdc" >&5
+++$as_echo "$ac_cv_header_stdc" >&6; }
+++if test $ac_cv_header_stdc = yes; then
++ 
+ -    *nto* | *qnx*)
+ -      # QNX uses GNU C++, but need to define -shared option too, otherwise
+ -      # it will coredump.
+ -      lt_prog_compiler_pic_F77='-fPIC -shared'
+ -      ;;
+--
+++$as_echo "#define STDC_HEADERS 1" >>confdefs.h
++ 
+ -    osf3* | osf4* | osf5*)
+ -      lt_prog_compiler_wl_F77='-Wl,'
+ -      # All OSF/1 code is PIC.
+ -      lt_prog_compiler_static_F77='-non_shared'
+ -      ;;
+--
+++fi
++ 
+ -    rdos*)
+ -      lt_prog_compiler_static_F77='-non_shared'
+ -      ;;
+--
+++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether time.h and sys/time.h may both be included" >&5
+++$as_echo_n "checking whether time.h and sys/time.h may both be included... " >&6; }
+++if ${ac_cv_header_time+:} false; then :
+++  $as_echo_n "(cached) " >&6
+++else
+++  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+++/* end confdefs.h.  */
+++#include <sys/types.h>
+++#include <sys/time.h>
+++#include <time.h>
++ 
+ -    solaris*)
+ -      lt_prog_compiler_pic_F77='-KPIC'
+ -      lt_prog_compiler_static_F77='-Bstatic'
+@@ -821,13 +1005,33 @@
+ -	lt_prog_compiler_wl_F77='-Wl,';;
+ -      esac
+ -      ;;
+--
+++int
+++main ()
+++{
+++if ((struct tm *) 0)
+++return 0;
+++  ;
+++  return 0;
+++}
+++_ACEOF
+++if ac_fn_c_try_compile "$LINENO"; then :
+++  ac_cv_header_time=yes
+++else
+++  ac_cv_header_time=no
+++fi
+++rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
+++fi
+++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_header_time" >&5
+++$as_echo "$ac_cv_header_time" >&6; }
+++if test $ac_cv_header_time = yes; then
++ 
+ -    sunos4*)
+ -      lt_prog_compiler_wl_F77='-Qoption ld '
+ -      lt_prog_compiler_pic_F77='-PIC'
+ -      lt_prog_compiler_static_F77='-Bstatic'
+ -      ;;
+--
+++$as_echo "#define TIME_WITH_SYS_TIME 1" >>confdefs.h
++ 
+ -    sysv4 | sysv4.2uw2* | sysv4.3*)
+ -      lt_prog_compiler_wl_F77='-Wl,'
+ -      lt_prog_compiler_pic_F77='-KPIC'
+@@ -1822,7 +2026,7 @@
+ -      hardcode_shlibpath_var_F77=no
+ -      ;;
+ -
+--    freebsd1*)
++-    freebsd1.*)
+ -      ld_shlibs_F77=no
+ -      ;;
+ -
+@@ -2610,7 +2814,7 @@
+ -  shlibpath_var=LD_LIBRARY_PATH
+ -  ;;
+ -
+--freebsd1*)
++-freebsd1.*)
+ -  dynamic_linker=no
+ -  ;;
+ -
+@@ -2621,7 +2825,7 @@
+ -    objformat=`/usr/bin/objformat`
+ -  else
+ -    case $host_os in
+--    freebsd[123]*) objformat=aout ;;
++-    freebsd[123].*) objformat=aout ;;
+ -    *) objformat=elf ;;
+ -    esac
+ -  fi
+@@ -3144,10 +3348,209 @@
+ -ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ -ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ -
++-
++-
++-
++-
++-
++-
++-
++-
++-
++-
++-        ac_config_commands="$ac_config_commands libtool"
++-
++-
++-
++-
++-# Only expand once:
++-
++-
++-
++-# Generate an error here if attempting to build both shared and static when
++-# $libname.a is in $library_names_spec (as mentioned above), rather than
++-# wait for ar or ld to fail.
++-#
++-if test "$enable_shared" = yes && test "$enable_static" = yes; then
++-  case $library_names_spec in
++-    *libname.a*)
++-      as_fn_error $? "cannot create both shared and static libraries on this system, --disable one of the two" "$LINENO" 5
++-      ;;
++-  esac
++-fi
++-
++- if test "$enable_static" = yes; then
++-  ENABLE_STATIC_TRUE=
++-  ENABLE_STATIC_FALSE='#'
++-else
++-  ENABLE_STATIC_TRUE='#'
++-  ENABLE_STATIC_FALSE=
++-fi
++-
++- if test "$enable_shared" = yes; then
++-  ENABLE_SHARED_TRUE=
++-  ENABLE_SHARED_FALSE='#'
++-else
++-  ENABLE_SHARED_TRUE='#'
++-  ENABLE_SHARED_FALSE=
++-fi
++-
++-
++-
++-# Many of these library and header checks are for the benefit of
++-# supplementary programs.  libmpir doesn't use anything too weird.
++-
++-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for ANSI C header files" >&5
++-$as_echo_n "checking for ANSI C header files... " >&6; }
++-if ${ac_cv_header_stdc+:} false; then :
++-  $as_echo_n "(cached) " >&6
++-else
++-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++-/* end confdefs.h.  */
++-#include <stdlib.h>
++-#include <stdarg.h>
++-#include <string.h>
++-#include <float.h>
++-
++-int
++-main ()
++-{
++-
++-  ;
++-  return 0;
++-}
++-_ACEOF
++-if ac_fn_c_try_compile "$LINENO"; then :
++-  ac_cv_header_stdc=yes
++-else
++-  ac_cv_header_stdc=no
++-fi
++-rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
++-
++-if test $ac_cv_header_stdc = yes; then
++-  # SunOS 4.x string.h does not declare mem*, contrary to ANSI.
++-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++-/* end confdefs.h.  */
++-#include <string.h>
++-
++-_ACEOF
++-if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
++-  $EGREP "memchr" >/dev/null 2>&1; then :
++-
++-else
++-  ac_cv_header_stdc=no
++-fi
++-rm -f conftest*
++-
++-fi
++-
++-if test $ac_cv_header_stdc = yes; then
++-  # ISC 2.0.2 stdlib.h does not declare free, contrary to ANSI.
++-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++-/* end confdefs.h.  */
++-#include <stdlib.h>
++-
++-_ACEOF
++-if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
++-  $EGREP "free" >/dev/null 2>&1; then :
++-
++-else
++-  ac_cv_header_stdc=no
++-fi
++-rm -f conftest*
++-
++-fi
++-
++-if test $ac_cv_header_stdc = yes; then
++-  # /bin/cc in Irix-4.0.5 gets non-ANSI ctype macros unless using -ansi.
++-  if test "$cross_compiling" = yes; then :
++-  :
++-else
++-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++-/* end confdefs.h.  */
++-#include <ctype.h>
++-#include <stdlib.h>
++-#if ((' ' & 0x0FF) == 0x020)
++-# define ISLOWER(c) ('a' <= (c) && (c) <= 'z')
++-# define TOUPPER(c) (ISLOWER(c) ? 'A' + ((c) - 'a') : (c))
++-#else
++-# define ISLOWER(c) \
++-		   (('a' <= (c) && (c) <= 'i') \
++-		     || ('j' <= (c) && (c) <= 'r') \
++-		     || ('s' <= (c) && (c) <= 'z'))
++-# define TOUPPER(c) (ISLOWER(c) ? ((c) | 0x40) : (c))
++-#endif
++-
++-#define XOR(e, f) (((e) && !(f)) || (!(e) && (f)))
++-int
++-main ()
++-{
++-  int i;
++-  for (i = 0; i < 256; i++)
++-    if (XOR (islower (i), ISLOWER (i))
++-	|| toupper (i) != TOUPPER (i))
++-      return 2;
++-  return 0;
++-}
++-_ACEOF
++-if ac_fn_c_try_run "$LINENO"; then :
++-
++-else
++-  ac_cv_header_stdc=no
++-fi
++-rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
++-  conftest.$ac_objext conftest.beam conftest.$ac_ext
++-fi
++-
++-fi
++-fi
++-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_header_stdc" >&5
++-$as_echo "$ac_cv_header_stdc" >&6; }
++-if test $ac_cv_header_stdc = yes; then
++-
++-$as_echo "#define STDC_HEADERS 1" >>confdefs.h
++-
++-fi
++-
++-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether time.h and sys/time.h may both be included" >&5
++-$as_echo_n "checking whether time.h and sys/time.h may both be included... " >&6; }
++-if ${ac_cv_header_time+:} false; then :
++-  $as_echo_n "(cached) " >&6
++-else
++-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
++-/* end confdefs.h.  */
++-#include <sys/types.h>
++-#include <sys/time.h>
++-#include <time.h>
++-
++-int
++-main ()
++-{
++-if ((struct tm *) 0)
++-return 0;
++-  ;
++-  return 0;
++-}
++-_ACEOF
++-if ac_fn_c_try_compile "$LINENO"; then :
++-  ac_cv_header_time=yes
++-else
++-  ac_cv_header_time=no
++-fi
++-rm -f core conftest.err conftest.$ac_objext conftest.$ac_ext
++-fi
++-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_header_time" >&5
++-$as_echo "$ac_cv_header_time" >&6; }
++-if test $ac_cv_header_time = yes; then
++-
++-$as_echo "#define TIME_WITH_SYS_TIME 1" >>confdefs.h
++-
++-fi
+++fi
+  
+  
+- 
+-@@ -29343,103 +26677,54 @@
++ # Reasons for testing:
++@@ -29345,103 +26679,54 @@
+  postdeps='`$ECHO "$postdeps" | $SED "$delay_single_quote_subst"`'
+  compiler_lib_search_path='`$ECHO "$compiler_lib_search_path" | $SED "$delay_single_quote_subst"`'
+  LD_CXX='`$ECHO "$LD_CXX" | $SED "$delay_single_quote_subst"`'
+@@ -3251,7 +3654,7 @@
+  
+  LTCC='$LTCC'
+  LTCFLAGS='$LTCFLAGS'
+-@@ -29527,57 +26812,31 @@
++@@ -29529,57 +26814,31 @@
+  postdeps \
+  compiler_lib_search_path \
+  LD_CXX \
+@@ -3310,7 +3713,7 @@
+      case \`eval \\\\\$ECHO \\\\""\\\\\$\$var"\\\\"\` in
+      *[\\\\\\\`\\"\\\$]*)
+        eval "lt_\$var=\\\\\\"\\\`\\\$ECHO \\"\\\$\$var\\" | \\\$SED \\"\\\$sed_quote_subst\\"\\\`\\\\\\""
+-@@ -29609,27 +26868,16 @@
++@@ -29611,27 +26870,16 @@
+  sys_lib_search_path_spec \
+  sys_lib_dlsearch_path_spec \
+  reload_cmds_CXX \
+@@ -3339,7 +3742,7 @@
+      case \`eval \\\\\$ECHO \\\\""\\\\\$\$var"\\\\"\` in
+      *[\\\\\\\`\\"\\\$]*)
+        eval "lt_\$var=\\\\\\"\\\`\\\$ECHO \\"\\\$\$var\\" | \\\$SED -e \\"\\\$double_quote_subst\\" -e \\"\\\$sed_quote_subst\\" -e \\"\\\$delay_variable_subst\\"\\\`\\\\\\""
+-@@ -29662,8 +26910,6 @@
++@@ -29664,8 +26912,6 @@
+  
+  
+  
+@@ -3348,7 +3751,7 @@
+  _ACEOF
+  
+  cat >>$CONFIG_STATUS <<\_ACEOF || ac_write_fail=1
+-@@ -30377,7 +27623,7 @@
++@@ -30379,7 +27625,7 @@
+  
+  
+  # The names of the tagged configurations supported by this script.
+@@ -3357,7 +3760,7 @@
+  
+  # ### BEGIN LIBTOOL CONFIG
+  
+-@@ -31131,163 +28377,6 @@
++@@ -31133,163 +28379,6 @@
+  # ### END LIBTOOL TAG CONFIG: CXX
+  _LT_EOF
+  
+@@ -3521,7 +3924,7 @@
+   ;;
+  
+    esac
+-@@ -32366,103 +29455,54 @@
++@@ -32368,103 +29457,54 @@
+  postdeps='`$ECHO "$postdeps" | $SED "$delay_single_quote_subst"`'
+  compiler_lib_search_path='`$ECHO "$compiler_lib_search_path" | $SED "$delay_single_quote_subst"`'
+  LD_CXX='`$ECHO "$LD_CXX" | $SED "$delay_single_quote_subst"`'
+@@ -3625,7 +4028,7 @@
+  
+  LTCC='$LTCC'
+  LTCFLAGS='$LTCFLAGS'
+-@@ -32550,57 +29590,31 @@
++@@ -32552,57 +29592,31 @@
+  postdeps \
+  compiler_lib_search_path \
+  LD_CXX \
+@@ -3684,7 +4087,7 @@
+      case \`eval \\\\\$ECHO \\\\""\\\\\$\$var"\\\\"\` in
+      *[\\\\\\\`\\"\\\$]*)
+        eval "lt_\$var=\\\\\\"\\\`\\\$ECHO \\"\\\$\$var\\" | \\\$SED \\"\\\$sed_quote_subst\\"\\\`\\\\\\""
+-@@ -32632,27 +29646,16 @@
++@@ -32634,27 +29648,16 @@
+  sys_lib_search_path_spec \
+  sys_lib_dlsearch_path_spec \
+  reload_cmds_CXX \
+@@ -3713,7 +4116,7 @@
+      case \`eval \\\\\$ECHO \\\\""\\\\\$\$var"\\\\"\` in
+      *[\\\\\\\`\\"\\\$]*)
+        eval "lt_\$var=\\\\\\"\\\`\\\$ECHO \\"\\\$\$var\\" | \\\$SED -e \\"\\\$double_quote_subst\\" -e \\"\\\$sed_quote_subst\\" -e \\"\\\$delay_variable_subst\\"\\\`\\\\\\""
+-@@ -32682,8 +29685,6 @@
++@@ -32684,8 +29687,6 @@
+  
+  
+  
+@@ -3722,7 +4125,7 @@
+  ac_aux_dir='$ac_aux_dir'
+  
+  
+-@@ -33402,7 +30403,7 @@
++@@ -33404,7 +30405,7 @@
+  
+  
+  # The names of the tagged configurations supported by this script.
+@@ -3731,7 +4134,7 @@
+  
+  # ### BEGIN LIBTOOL CONFIG
+  
+-@@ -34156,163 +31157,6 @@
++@@ -34158,163 +31159,6 @@
+  # ### END LIBTOOL TAG CONFIG: CXX
+  _LT_EOF
+  
+@@ -3895,7 +4298,7 @@
+   ;;
+  
+    esac
+-@@ -35395,103 +32239,54 @@
++@@ -35397,103 +32241,54 @@
+  postdeps='`$ECHO "$postdeps" | $SED "$delay_single_quote_subst"`'
+  compiler_lib_search_path='`$ECHO "$compiler_lib_search_path" | $SED "$delay_single_quote_subst"`'
+  LD_CXX='`$ECHO "$LD_CXX" | $SED "$delay_single_quote_subst"`'
+@@ -3999,7 +4402,7 @@
+  
+  LTCC='$LTCC'
+  LTCFLAGS='$LTCFLAGS'
+-@@ -35579,57 +32374,31 @@
++@@ -35581,57 +32376,31 @@
+  postdeps \
+  compiler_lib_search_path \
+  LD_CXX \
+@@ -4058,7 +4461,7 @@
+      case \`eval \\\\\$ECHO \\\\""\\\\\$\$var"\\\\"\` in
+      *[\\\\\\\`\\"\\\$]*)
+        eval "lt_\$var=\\\\\\"\\\`\\\$ECHO \\"\\\$\$var\\" | \\\$SED \\"\\\$sed_quote_subst\\"\\\`\\\\\\""
+-@@ -35661,27 +32430,16 @@
++@@ -35663,27 +32432,16 @@
+  sys_lib_search_path_spec \
+  sys_lib_dlsearch_path_spec \
+  reload_cmds_CXX \
+@@ -4087,7 +4490,7 @@
+      case \`eval \\\\\$ECHO \\\\""\\\\\$\$var"\\\\"\` in
+      *[\\\\\\\`\\"\\\$]*)
+        eval "lt_\$var=\\\\\\"\\\`\\\$ECHO \\"\\\$\$var\\" | \\\$SED -e \\"\\\$double_quote_subst\\" -e \\"\\\$sed_quote_subst\\" -e \\"\\\$delay_variable_subst\\"\\\`\\\\\\""
+-@@ -35711,8 +32469,6 @@
++@@ -35713,8 +32471,6 @@
+  
+  
+  
+@@ -4096,7 +4499,7 @@
+  ac_aux_dir='$ac_aux_dir'
+  ac_aux_dir='$ac_aux_dir'
+  
+-@@ -36433,7 +33189,7 @@
++@@ -36435,7 +33191,7 @@
+  
+  
+  # The names of the tagged configurations supported by this script.
+@@ -4105,7 +4508,7 @@
+  
+  # ### BEGIN LIBTOOL CONFIG
+  
+-@@ -37187,163 +33943,6 @@
++@@ -37189,163 +33945,6 @@
+  # ### END LIBTOOL TAG CONFIG: CXX
+  _LT_EOF
+  
+@@ -4269,3 +4672,75 @@
+   ;;
+  
+    esac
++diff -ur src/configure.in b/configure.in
++--- src/configure.in	2012-11-08 22:10:45.000000000 +0000
+++++ b/configure.in	2014-01-29 21:06:23.000000000 +0000
++@@ -1920,16 +1920,6 @@
++   fi
++ fi
++ 
++-# The dead hand of AC_REQUIRE makes AC_PROG_LIBTOOL expand and execute
++-# AC_PROG_F77, even when F77 is not in the selected with_tags.  This is
++-# probably harmless, but it's unsightly and bloats our configure, so pretend
++-# AC_PROG_F77 has been expanded already.
++-#
++-# FIXME: Rumour has it libtool will one day provide a way for a configure.in
++-# to say what it wants from among supported languages etc.
++-#
++-AC_PROVIDE([AC_PROG_F77])
++-
++ AC_PROG_LIBTOOL
++ 
++ # Generate an error here if attempting to build both shared and static when
++Only in b: configure.in.orig
++Only in b: configure.orig
++diff -ur src/yasm/Makefile.in b/yasm/Makefile.in
++--- src/yasm/Makefile.in	2012-11-08 22:21:05.000000000 +0000
+++++ b/yasm/Makefile.in	2014-01-29 21:06:23.000000000 +0000
++@@ -3747,7 +3747,8 @@
++ check-am: all-am
++ 	$(MAKE) $(AM_MAKEFLAGS) $(check_PROGRAMS)
++ 	$(MAKE) $(AM_MAKEFLAGS) check-TESTS
++-check:
+++check: $(BUILT_SOURCES)
+++	$(MAKE) $(AM_MAKEFLAGS) check-recursive
++ all-am: Makefile $(LIBRARIES) $(PROGRAMS) $(MANS) $(HEADERS) config.h \
++ 		all-local
++ installdirs: installdirs-recursive
++@@ -3755,7 +3756,8 @@
++ 	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(man7dir)" "$(DESTDIR)$(includedir)" "$(DESTDIR)$(modincludedir)" "$(DESTDIR)$(includedir)"; do \
++ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
++ 	done
++-install:
+++install: $(BUILT_SOURCES)
+++	$(MAKE) $(AM_MAKEFLAGS) install-recursive
++ install-exec: install-exec-recursive
++ install-data: install-data-recursive
++ uninstall: uninstall-recursive
++Only in b/yasm: Makefile.in.orig
++diff -ur src/yasm/config/config.rpath b/yasm/config/config.rpath
++--- src/yasm/config/config.rpath	2014-01-29 21:06:09.000000000 +0000
+++++ b/yasm/config/config.rpath	2012-10-03 20:07:29.000000000 +0000
++@@ -351,7 +351,7 @@
++     dgux*)
++       hardcode_libdir_flag_spec='-L$libdir'
++       ;;
++-    freebsd1.*)
+++    freebsd1*)
++       ld_shlibs=no
++       ;;
++     freebsd2.2*)
++@@ -528,11 +528,11 @@
++   dgux*)
++     library_names_spec='$libname$shrext'
++     ;;
++-  freebsd1.*)
+++  freebsd1*)
++     ;;
++   freebsd* | dragonfly*)
++     case "$host_os" in
++-      freebsd[123].*)
+++      freebsd[123]*)
++         library_names_spec='$libname$shrext$versuffix' ;;
++       *)
++         library_names_spec='$libname$shrext' ;;
