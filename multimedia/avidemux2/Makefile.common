@@ -46,10 +46,10 @@ OPTIONS_DEFAULT+=	LAME FAAC AMR
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
 PLIST_SUB+=	NLS=""
-. 	if !defined(WITH_QT4)
-PLIST_SUB+=	QT_NLS="@comment "
-.	else
+. 	if ${PORT_OPTIONS:MQT4}
 PLIST_SUB+=	QT_NLS=""
+.	else
+PLIST_SUB+=	QT_NLS="@comment "
 .	endif
 .else
 CMAKE_ARGS+=	-DNO_NLS:BOOL=ON
