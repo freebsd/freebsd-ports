@@ -3,6 +3,7 @@
 
 PORTNAME=	stfl
 PORTVERSION=	0.22
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.clifford.at/stfl/
 
@@ -11,37 +12,30 @@ COMMENT=	Structured Terminal Forms Language/Library
 
 LICENSE=	GPLv3
 
+USES=		gmake iconv:wchar_t ncurses
 USE_LDCONFIG=	yes
-USES=		gmake iconv ncurses
-ALL_TARGET=	libstfl.so
-PLIST_FILES=	lib/libstfl.so.1 lib/libstfl.so include/stfl.h \
-		libdata/pkgconfig/stfl.pc
+
+PLIST_FILES=	include/stfl.h lib/libstfl.a lib/libstfl.so lib/libstfl.so.0 \
+		lib/libstfl.so.0.22 libdata/pkgconfig/stfl.pc
 CFLAGS+=	-I${LOCALBASE}/include
-LDLIBS+=	-L${LOCALBASE}/lib
-MAKE_ENV=	LDLIBS="${LDLIBS}"
+LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+MAKE_ENV=	LDLIBS="${LDFLAGS}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\.a|.so|g;/ranlib/d;\
-	s|ar qc|$${CC} $${CFLAGS} $${LDLIBS} -pthread -shared -fPIC -o|;\
-	s|sed -r|sed -E|;s|-Os||;/gcc/d;/-MM/s|-I.|$${CFLAGS}|'\
+	@${REINPLACE_CMD} -e 's|-Os||;/gcc/d;/pkgconfig/s|$$(libdir)|libdata|' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|alloca.h|stdlib.h|' ${WRKSRC}/widgets/*.c
+	@${REINPLACE_CMD} -e '/Libs.private/s|$$| ${ICONV_LIB}|' \
+		${WRKSRC}/stfl.pc.in
 	@${REINPLACE_CMD} -e 's|ncursesw/|${NCURSESINC}/|'\
 		${WRKSRC}/stfl_internals.h
 	@${ECHO_CMD} 'prefix = ${PREFIX}' > ${WRKSRC}/Makefile.cfg
+	@${ECHO_CMD} 'libdir = lib' >> ${WRKSRC}/Makefile.cfg
 
 pre-build:
 	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV}\
-		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} Makefile.deps
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} Makefile.deps
 
-post-build:
-	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV}\
-		${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} stfl.pc
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/libstfl.so ${STAGEDIR}${PREFIX}/lib/libstfl.so.1
-	${LN} -sf ${PREFIX}/lib/libstfl.so.1 ${STAGEDIR}${PREFIX}/lib/libstfl.so
-	${INSTALL_DATA} ${WRKSRC}/stfl.h ${STAGEDIR}${PREFIX}/include/
-	${INSTALL_DATA} ${WRKSRC}/stfl.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
+post-install:
+	${LN} -s libstfl.so.0.22 ${STAGEDIR}${PREFIX}/lib/libstfl.so.0
 
 .include <bsd.port.mk>
