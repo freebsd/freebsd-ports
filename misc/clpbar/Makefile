@@ -14,8 +14,7 @@ WRKSRC=		${WRKDIR}/bar-${PORTVERSION}
 GNU_CONFIGURE=	yes
 MAKE_ARGS+=	CFLAGS+="${CFLAGS}"
 
-MAN1=		bar.1
-PLIST_FILES=	bin/bar
+PLIST_FILES=	bin/bar \
+		man/man1/bar.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
