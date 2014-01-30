@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Crypt/GOST_PP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/GOST_PP/.packlist
+%%PERL5_MAN3%%/Crypt::GOST_PP.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/GOST_PP/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/Crypt

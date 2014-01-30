@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Digest/Crc32.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Crc32/.packlist
+%%PERL5_MAN3%%/Digest::Crc32.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/Crc32/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/
 @dirrmtry %%SITE_PERL%%/Digest/

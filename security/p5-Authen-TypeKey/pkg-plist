@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Authen/TypeKey.pm
+%%PERL5_MAN3%%/Authen::TypeKey.3.gz
 @dirrmtry %%SITE_PERL%%/Authen
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/TypeKey/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/TypeKey

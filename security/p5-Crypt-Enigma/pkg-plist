@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Crypt/Enigma.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Enigma/.packlist
+%%PERL5_MAN3%%/Crypt::Enigma.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Enigma/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/Crypt

@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Authen/Htpasswd/User.pm
 %%SITE_PERL%%/Authen/Htpasswd/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Htpasswd/.packlist
+%%PERL5_MAN3%%/Authen::Htpasswd.3.gz
+%%PERL5_MAN3%%/Authen::Htpasswd::User.3.gz
+%%PERL5_MAN3%%/Authen::Htpasswd::Util.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/Htpasswd
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
 @dirrmtry %%SITE_PERL%%/Authen/Htpasswd

@@ -13,9 +13,6 @@ COMMENT=	Perl extension for calculating 32-bit CRC checksums
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Digest::Crc32.3
-
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.//}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

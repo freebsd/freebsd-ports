@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Crypt/Chimera/User.pm
 %%SITE_PERL%%/Crypt/Chimera/World.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Chimera/.packlist
+%%PERL5_MAN3%%/Crypt::Chimera.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Chimera/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrm %%SITE_PERL%%/Crypt/Chimera/

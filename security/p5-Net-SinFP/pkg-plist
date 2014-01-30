@@ -19,6 +19,26 @@
 %%SITE_PERL%%/Net/SinFP/SinFP4.pm
 %%SITE_PERL%%/Net/SinFP/SinFP6.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SinFP/.packlist
+%%PERL5_MAN3%%/Net::SinFP.3.gz
+%%PERL5_MAN3%%/Net::SinFP::Consts.3.gz
+%%PERL5_MAN3%%/Net::SinFP::DB.3.gz
+%%PERL5_MAN3%%/Net::SinFP::DB::IpVersion.3.gz
+%%PERL5_MAN3%%/Net::SinFP::DB::Os.3.gz
+%%PERL5_MAN3%%/Net::SinFP::DB::OsVersion.3.gz
+%%PERL5_MAN3%%/Net::SinFP::DB::OsVersionChildren.3.gz
+%%PERL5_MAN3%%/Net::SinFP::DB::OsVersionFamily.3.gz
+%%PERL5_MAN3%%/Net::SinFP::DB::PatternBinary.3.gz
+%%PERL5_MAN3%%/Net::SinFP::DB::PatternTcpFlags.3.gz
+%%PERL5_MAN3%%/Net::SinFP::DB::PatternTcpMss.3.gz
+%%PERL5_MAN3%%/Net::SinFP::DB::PatternTcpOptions.3.gz
+%%PERL5_MAN3%%/Net::SinFP::DB::PatternTcpWindow.3.gz
+%%PERL5_MAN3%%/Net::SinFP::DB::Signature.3.gz
+%%PERL5_MAN3%%/Net::SinFP::DB::SystemClass.3.gz
+%%PERL5_MAN3%%/Net::SinFP::DB::Vendor.3.gz
+%%PERL5_MAN3%%/Net::SinFP::Result.3.gz
+%%PERL5_MAN3%%/Net::SinFP::Search.3.gz
+%%PERL5_MAN3%%/Net::SinFP::SinFP4.3.gz
+%%PERL5_MAN3%%/Net::SinFP::SinFP6.3.gz
 @dirrmtry %%SITE_PERL%%/Net
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/SinFP/DB

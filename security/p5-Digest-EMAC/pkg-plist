@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Digest/EMAC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/EMAC/.packlist
+%%PERL5_MAN3%%/Digest::EMAC.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/EMAC/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/
 @dirrmtry %%SITE_PERL%%/Digest/

@@ -1,5 +1,6 @@
 %%SITE_PERL%%/File/KeePass.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/KeePass/.packlist
+%%PERL5_MAN3%%/File::KeePass.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/KeePass
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
 @dirrmtry %%SITE_PERL%%/File
