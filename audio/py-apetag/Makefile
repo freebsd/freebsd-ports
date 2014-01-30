@@ -3,6 +3,7 @@
 
 PORTNAME=	apetag
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	SF/pylibape/py-ApeTag/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +13,8 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Library for APE Tag written in Python
 
 USE_PYTHON=	yes
-NO_STAGE=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	py-ApeTag
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
