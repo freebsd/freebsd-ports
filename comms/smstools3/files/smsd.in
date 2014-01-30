@@ -10,6 +10,12 @@
 #
 # smsd_enable="YES"
 #
+# NOTE: to make smsd log to syslog specify:
+#
+# smsd_logfile="syslog"
+#
+# in rc.conf
+#
 . /etc/rc.subr
 
 name=smsd
