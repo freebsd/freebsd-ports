@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	sage
-PORTVERSION=	5.13
+PORTVERSION=	6.0
 CATEGORIES=	math
 MASTER_SITES=	http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/ \
 		http://mirrors.xmission.com/sage/src/ \
 		http://www-ftp.lip6.fr/pub/math/sagemath/src/ \
 		http://www.sagemath.org/src-old/
-PKGNAMESUFFIX=	-math
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Open source Mathematics software
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		convert:${PORTSDIR}/graphics/ImageMagick \
+		ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas \
 		lapack:${PORTSDIR}/math/lapack \
 		jpeg:${PORTSDIR}/graphics/jpeg
@@ -26,7 +27,9 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 OPTIONS_DEFINE_amd64=	387
 387_DESC=		Use 387 instead of SSE FPU
 
+# Keep NO_SAGE set, since otherwise the resulting package is huge.
 NO_STAGE=	yes
+
 .include <bsd.port.options.mk>
 
 PLIST_FILES=	bin/sage
@@ -36,6 +39,7 @@ USE_TK=		yes
 USE_GMAKE=	yes
 USE_TEX=	latex:build
 USES=		iconv
+MAKE_JOBS_SAFE=	yes
 LDFLAGS:=	-Wl,-rpath=${WRKSRC}/local/lib ${LDFLAGS}
 FFLAGS+=	-Wl,-rpath=${WRKSRC}/local/lib ${FPM_FLAG}
 CFLAGS+=	-Wl,-rpath=${WRKSRC}/local/lib ${FPM_FLAG}
@@ -66,6 +70,8 @@ LATEST_LINK=	sage-math	# Conflicts with graphics/sage.
 MAKE_ARGS+=	ARCH="${AR}"
 
 post-patch:
+	${REINPLACE_CMD} 's/$$MAKE $$gettext/$$MAKE PTHREAD_LIBS=${PTHREAD_LIBS} $$gettext/' ${WRKSRC}/build/pkgs/git/spkg-install
+
 # Create the wrappers for the compiler invocations.
 	@${MKDIR} ${WRKSRC}/local/bin
 	@${LN} -s -f ${LOCALBASE}/bin/gmake ${WRKSRC}/local/bin/make
@@ -84,44 +90,6 @@ post-patch:
 		${FILESDIR}/gcc.in > ${WRKSRC}/local/bin/gfortran
 	@${CHMOD} +x ${WRKSRC}/local/bin/gfortran
 
-# Apply the patches to the appropriate xz'ed tarballs contained in
-# ${WRKSRC}/spkg/standard.  The names of the patches are
-# spkg-${GENERIC_NAME_OF_TARBALL}_-_${NAME_OF_PATCH}.
-# The actual name of the tarball will be deduced from the second line of the
-# patch.
-
-	@${MKDIR} ${WRKSRC}/tmp
-	@${RM} -rf ${WRKSRC}/tmp/*
-	@for p in ${FILESDIR}/spkg-patch-*; do \
-		q=$${p#*/spkg-patch-}; \
-		original_name=$${q%_-_*}; \
-		actual_name=`cat $$p | ${HEAD} -2 | ${TAIL} -1 | ${SED} -e 's/+++ //' -e 's|/.*||'`; \
-       		if ! [ -e ${WRKSRC}/spkg/standard/$$actual_name.spkg ]; then \
-			${ECHO_MSG} "$$actual_name not found."; \
-			exit 1; \
-		fi; \
-		tarballs="$$tarballs $$original_name|$$actual_name"; \
-	done ;\
-	tarballs=`${PRINTF} "%s\n" $$tarballs | ${SORT} -u`; \
-	\
-	cd ${WRKSRC}/tmp || exit 1; \
-	for t in $$tarballs; do \
-		original_name=$${t%|*}; actual_name=$${t#*|}; \
-		f=${WRKSRC}/spkg/standard/$$actual_name.spkg; \
-		if [ -e $$f-orig ]; then \
-			${MV} $$f-orig $$f; \
-		fi; \
-		${TAR} -xf $$f; \
-		${ECHO_MSG} "Patching $$actual_name:"; \
-		for p in ${FILESDIR}/spkg-patch-$${original_name}_-_*; do \
-			${ECHO_MSG} "	applying $${p#*_-_}" ; \
-			${PATCH} < $$p 2>/dev/null || exit 1; \
-		done; \
-		${MV} $$f $$f-orig; \
-		${TAR} -cyf $$f $$actual_name; \
-		${RM} -rf $$actual_name; \
-	done
-
 post-build:
 	${RM} -rf ${WRKSRC}/tmp/.sage
 	${CHMOD} -R a+rX ${WRKSRC}
@@ -130,18 +98,31 @@ check regression-test test: build
 	@${ECHO_MSG} This test can also be performed after installation by typing \"sage -testall\".
 	@${ECHO_MSG}
 	cd ${WRKSRC} && ${SETENV} DOT_SAGE=${WRKSRC}/tmp/.sage ./sage -testall
-	${RM} -f ${WRKSRC}/python.core
+	${RM} -f ${WRKSRC}/python*.core
 
 INSTALL_SAGE_DIR=	${PREFIX}/${PORTNAME}-${PORTVERSION}
+pre-install:
+	@${ECHO_MSG}
+	@${ECHO_MSG} \# Instead of doing \"make install\", you can simply perform the commands:
+	@${ECHO_MSG}
+	@${ECHO_MSG} ${MV} ${WRKSRC} ${PREFIX}/.
+	@${ECHO_MSG}
+	@${ECHO_MSG} \# The next four lines are only needed if you want sage in ${PREFIX}/bin.
+	@${ECHO_MSG}
+	@${ECHO_MSG} "${SED} -e \"s+#SAGE_ROOT.*+SAGE_ROOT=${INSTALL_SAGE_DIR}+\" \\"
+	@${ECHO_MSG} "        ${INSTALL_SAGE_DIR}/sage > ${PREFIX}/bin/sage"
+	@${ECHO_MSG} ${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/bin/sage
+	@${ECHO_MSG} ${CHMOD} ${BINMODE} ${PREFIX}/bin/sage
+	@${ECHO_MSG}
+	@${ECHO_MSG} \# The next line will provide write protection for sage.
+	@${ECHO_MSG} ${CHOWN} -hR ${BINOWN}:${BINGRP} ${INSTALL_SAGE_DIR}
+	@${ECHO_MSG}
+	@sleep 60
+
 do-install:
 	cd ${WRKDIR} && ${FIND} -s ${WRKSRC} | \
-		${GREP} -v '^${WRKSRC}/spkg/standard/' | \
-		${GREP} -v '^${WRKSRC}/spkg/optional/' | \
-		${GREP} -v '^${WRKSRC}/spkg/logs/' | \
-		${GREP} -v '^${WRKSRC}/spkg/build/' | \
+		${GREP} -v '^${WRKSRC}/upstream/' | \
 		${GREP} -v '^${WRKSRC}/tmp' | \
-		${GREP} -v -E '^${WRKSRC}/[^\/]+\.log$$' | \
-		${GREP} -v '^${WRKSRC}/Makefile' | \
 		${SED} -e 's#${WRKDIR}/##' | \
 		${CPIO} -pmud -R ${BINOWN}:${BINGRP} ${PREFIX}
 	${ECHO_CMD} | ${SETENV} DOT_SAGE=${INSTALL_SAGE_DIR}/tmp/.sage ${INSTALL_SAGE_DIR}/sage
