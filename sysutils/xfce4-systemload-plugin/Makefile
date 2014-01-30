@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	System Load plugin for XFce4
+COMMENT=	System Load plugin for Xfce4 panel
 
 LICENSE=	BSD
 
