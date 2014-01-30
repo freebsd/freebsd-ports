@@ -12,17 +12,17 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Network Load plugin for Xfce4
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	intltool intlhack
 USE_XFCE=	configenv libmenu panel
-USES=		pkgconfig pathfix
+USES=		pkgconfig gmake
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
