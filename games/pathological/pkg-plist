@@ -1,4 +1,5 @@
 bin/pathological
+man/man6/pathological.6.gz
 %%DATADIR%%/circuits/all-boards
 %%DATADIR%%/graphics/backdrop.jpg
 %%DATADIR%%/graphics/blank-bg-tile.png
