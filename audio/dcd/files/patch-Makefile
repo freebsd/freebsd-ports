@@ -1,5 +1,5 @@
---- ./Makefile.orig	2003-08-27 21:44:07.000000000 -0400
-+++ ./Makefile	2012-07-31 18:29:42.000000000 -0400
+--- Makefile.orig	2003-08-28 03:44:07.000000000 +0200
++++ Makefile	2014-01-30 09:36:44.000000000 +0100
 @@ -1,11 +1,11 @@
  ## This is the makefile for dcd, dave's cd player.
  
@@ -32,7 +32,7 @@
  
  ## Here be dragons... (Non-configurable parts past here.)
  
-@@ -94,10 +94,10 @@
+@@ -94,20 +94,19 @@
  all: ${PROGS}
  
  .c.o: ${SRCS}
@@ -45,3 +45,17 @@
  
  clean:;
  	-${RM} *.o ${PROGS}
+ 
+ install: dcd
+-	install -m 755 -d ${PREFIX}/bin
+-	install -m 755 -s dcd ${PREFIX}/bin
+-	install -m 755 -d ${PREFIX}/man/man1
+-	install -m 644 dcd.1 ${PREFIX}/man/man1
+-	install -m 755 -d ${HOME}/${CDI}
++	install -m 755 -d ${STAGEDIR}${PREFIX}/bin
++	install -m 755 -s dcd ${STAGEDIR}${PREFIX}/bin
++	install -m 755 -d ${STAGEDIR}${PREFIX}/man/man1
++	install -m 644 dcd.1 ${STAGEDIR}${PREFIX}/man/man1
+ 
+ depend:
+ 	makedepend -- ${CFLAGS} ${EXTRA_CFLAGS} -- ${SRCS}
