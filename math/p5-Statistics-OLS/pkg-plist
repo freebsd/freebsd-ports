@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/OLS/.packlist
 %%SITE_PERL%%/Statistics/OLS.pm
+%%PERL5_MAN3%%/Statistics::OLS.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/OLS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics
 @dirrmtry %%SITE_PERL%%/Statistics

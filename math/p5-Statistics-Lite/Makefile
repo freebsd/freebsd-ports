@@ -14,7 +14,4 @@ USES=		perl5
 USE_PERL5=	configure
 USE_DOS2UNIX=	yes
 
-MAN3=		Statistics::Lite.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -22,12 +22,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Cisco::UCS.3 Cisco::UCS::Blade.3 Cisco::UCS::Chassis.3 \
-		Cisco::UCS::Common::EthernetPort.3 Cisco::UCS::Common::Fan.3 \
-		Cisco::UCS::Common::FanModule.3 Cisco::UCS::Common::PSU.3 \
-		Cisco::UCS::Common::SwitchCard.3 Cisco::UCS::FEX.3 \
-		Cisco::UCS::Fault.3 Cisco::UCS::Interconnect.3 \
-		Cisco::UCS::MgmtEntity.3 Cisco::UCS::ServiceProfile.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

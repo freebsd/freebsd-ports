@@ -19,7 +19,4 @@ RUN_DEPENDS=	p5-Memoize>=0:${PORTSDIR}/devel/p5-Memoize
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Math::BaseCnv.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

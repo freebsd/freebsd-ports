@@ -1,6 +1,7 @@
 bin/zcweather
 %%SITE_PERL%%/ZConf/Weather.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Weather/.packlist
+%%PERL5_MAN3%%/ZConf::Weather.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Weather
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%

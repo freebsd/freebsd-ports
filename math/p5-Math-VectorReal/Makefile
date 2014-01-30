@@ -13,7 +13,4 @@ COMMENT=	Perl Module to handle 3D Vector Mathematics
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Math::VectorReal.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

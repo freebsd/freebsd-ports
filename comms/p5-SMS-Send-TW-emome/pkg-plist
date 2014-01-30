@@ -1,5 +1,6 @@
 %%SITE_PERL%%/SMS/Send/TW/emome.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/TW/emome/.packlist
+%%PERL5_MAN3%%/SMS::Send::TW::emome.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/TW/emome
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/TW
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send

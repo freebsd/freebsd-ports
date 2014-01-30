@@ -12,6 +12,19 @@
 %%SITE_PERL%%/Cisco/UCS/MgmtEntity.pm
 %%SITE_PERL%%/Cisco/UCS/ServiceProfile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco/UCS/.packlist
+%%PERL5_MAN3%%/Cisco::UCS.3.gz
+%%PERL5_MAN3%%/Cisco::UCS::Blade.3.gz
+%%PERL5_MAN3%%/Cisco::UCS::Chassis.3.gz
+%%PERL5_MAN3%%/Cisco::UCS::Common::EthernetPort.3.gz
+%%PERL5_MAN3%%/Cisco::UCS::Common::Fan.3.gz
+%%PERL5_MAN3%%/Cisco::UCS::Common::FanModule.3.gz
+%%PERL5_MAN3%%/Cisco::UCS::Common::PSU.3.gz
+%%PERL5_MAN3%%/Cisco::UCS::Common::SwitchCard.3.gz
+%%PERL5_MAN3%%/Cisco::UCS::FEX.3.gz
+%%PERL5_MAN3%%/Cisco::UCS::Fault.3.gz
+%%PERL5_MAN3%%/Cisco::UCS::Interconnect.3.gz
+%%PERL5_MAN3%%/Cisco::UCS::MgmtEntity.3.gz
+%%PERL5_MAN3%%/Cisco::UCS::ServiceProfile.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco/UCS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cisco
 @dirrmtry %%SITE_PERL%%/Cisco/UCS/Common

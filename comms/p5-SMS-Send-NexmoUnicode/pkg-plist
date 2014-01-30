@@ -1,5 +1,6 @@
 %%SITE_PERL%%/SMS/Send/NexmoUnicode.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/NexmoUnicode/.packlist
+%%PERL5_MAN3%%/SMS::Send::NexmoUnicode.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/NexmoUnicode
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS
