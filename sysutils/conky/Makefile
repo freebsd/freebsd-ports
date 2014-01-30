@@ -8,7 +8,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
 MAINTAINER=	ntarmos@ceid.upatras.gr
-COMMENT=	Advanced, highly configurable system monitor for X11
+COMMENT?=	Advanced, highly configurable system monitor for X11
 
 CONFLICTS?=	conky-awesome-[0-9]*
 SLAVEDIRS=	sysutils/conky-awesome
