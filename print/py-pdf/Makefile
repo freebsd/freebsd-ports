@@ -3,6 +3,7 @@
 
 PORTNAME=	pdf
 PORTVERSION=	1.13
+PORTREVISION=	1
 CATEGORIES=	print python
 MASTER_SITES=	http://pybrary.net/pyPdf/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +15,6 @@ COMMENT=	Pure-Python PDF toolkit
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pyPdf
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
