@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mpd2
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.5.3
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
@@ -11,12 +10,16 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Fork of the Python MPD client library
 
+LICENSE=	LGPL3
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	Mic92
 GH_PROJECT=	python-${PORTNAME}
 GH_TAGNAME=	v${PORTVERSION}
-GH_COMMIT=	df508d4
+GH_COMMIT=	cfeb3b5
 
+USES=		shebangfix
+SHEBANG_FILES=	examples/helloworld.py
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
@@ -27,12 +30,12 @@ OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-PORTDOCS_1=	index.rst changes.rst
+PORTDOCS_1=	generate_command_reference.py index.rst changes.rst
 PORTDOCS_2=	topics/advanced.rst topics/commands.rst \
 		topics/getting-started.rst topics/logging.rst
 PORTDOCS=	${PORTDOCS_1} ${PORTDOCS_2}
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
-PORTEXAMPLES=	locking.py logger.py
+PORTEXAMPLES=	helloworld.py locking.py logger.py
 PLIST_DIRSTRY=	${DOCSDIR}/topics
 
 post-install:
