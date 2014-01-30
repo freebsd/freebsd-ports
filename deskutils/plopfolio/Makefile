@@ -19,7 +19,6 @@ USE_GNUSTEP_INSTALL=	yes
 
 FIXME=	Channel.m PlopFolio.m PreferencesPanelController.m
 
-NO_STAGE=	yes
 post-patch:
 .for i in ${FIXME}
 	${REINPLACE_CMD} -e 's|Foundation/GSXML.h|GNUstepBase/GSXML.h|' \
