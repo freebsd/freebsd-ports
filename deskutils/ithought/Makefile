@@ -8,11 +8,10 @@ CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-alpha
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An extensible text management system
+COMMENT=	Extensible text management system
 
 USE_GNOME=	gtk12 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/libexec
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
