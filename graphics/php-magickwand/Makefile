@@ -19,5 +19,4 @@ USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--with-magickwand=${LOCALBASE}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
