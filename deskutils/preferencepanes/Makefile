@@ -23,5 +23,4 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/PreferencePanes
 
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
