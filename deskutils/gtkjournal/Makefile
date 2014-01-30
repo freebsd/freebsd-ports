@@ -16,7 +16,8 @@ LIB_DEPENDS=	libgtkmm-2.0.so:${PORTSDIR}/x11-toolkits/gtkmm20 \
 		libsqlite.so:${PORTSDIR}/databases/sqlite2 \
 		libgtkspell.so:${PORTSDIR}/textproc/gtkspell
 
-PLIST_FILES=	bin/gtkjournal lib/libsqlitemm.a lib/libsqlitemm.la \
+PLIST_FILES=	bin/gtkjournal man/man1/gtkjournal.1.gz \
+		lib/libsqlitemm.a lib/libsqlitemm.la \
 		lib/libsqlitemm.so lib/libsqlitemm.so.0
 
 USE_AUTOTOOLS=	libtool
@@ -27,7 +28,4 @@ USE_GNOME=	lthack
 CONFIGURE_ARGS=	--enable-gtkspell
 USE_LDCONFIG=	yes
 
-MAN1=		${PORTNAME}.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
