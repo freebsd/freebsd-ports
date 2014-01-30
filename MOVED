@@ -5417,3 +5417,4 @@ textproc/it-ispell|textproc/it-aspell|2014-01-29|Removed, consider using aspell 
 textproc/nl-ispell|textproc/nl-ispell|2014-01-29|Removed, consider using aspell instead
 textproc/sk-ispell|textproc/sk-ispell|2014-01-29|Removed, consider using aspell instead
 ukrainian/ispell|ukrainian/aspell|2014-01-29|Removed, consider using aspell instead
+audio/gsi||2014-01-30|Removed, abandonware
