@@ -27,8 +27,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|CCLD = $$(CC)|CCLD = $$(CXX)|; \
-		s|-lpthread|${PTHREAD_LIBS}|' \
+	@${REINPLACE_CMD} -e 's|CCLD = $$(CC)|CCLD = $$(CXX)|' \
 		${WRKSRC}/roboradio/mp3/Makefile.in
 	@${REINPLACE_CMD} -e 's|static char|static const char|' \
 		${WRKSRC}/gnomoradio/*.xpm
