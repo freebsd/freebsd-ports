@@ -29,30 +29,6 @@ TEST_DEPENDS=	p5-LWP-Online>=1.07:${PORTSDIR}/www/p5-LWP-Online \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		www-mobilecarrierjp-dump_all.pl.1
-MAN3=		WWW::MobileCarrierJP::EZWeb::PictogramInfo.3 \
-		WWW::MobileCarrierJP::EZWeb::DeviceID.3 \
-		WWW::MobileCarrierJP::DoCoMo::Display.3 \
-		WWW::MobileCarrierJP::AirHPhone::CIDR.3 \
-		WWW::MobileCarrierJP::EZWeb::CIDR.3 \
-		WWW::MobileCarrierJP::DoCoMo::Flash.3 \
-		WWW::MobileCarrierJP::DoCoMo::PictogramInfo.3 \
-		WWW::MobileCarrierJP::DoCoMo::UserAgent.3 \
-		WWW::MobileCarrierJP::EZWeb::Model.3 \
-		WWW::MobileCarrierJP::DoCoMo::CIDR.3 \
-		WWW::MobileCarrierJP::DoCoMo::HTMLVersion.3 \
-		WWW::MobileCarrierJP::DoCoMo::Java.3 \
-		WWW::MobileCarrierJP::Softbank::Java.3 \
-		WWW::MobileCarrierJP::Softbank::Flash.3 \
-		WWW::MobileCarrierJP::Softbank::Service.3 \
-		WWW::MobileCarrierJP::Softbank::CIDR.3 \
-		WWW::MobileCarrierJP::Softbank::HTTPHeader.3 \
-		WWW::MobileCarrierJP::Softbank::Display.3 \
-		WWW::MobileCarrierJP::Softbank::PictogramInfo.3 \
-		WWW::MobileCarrierJP::ThirdForce::UserAgent.3 \
-		WWW::MobileCarrierJP.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-

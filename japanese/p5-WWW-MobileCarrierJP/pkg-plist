@@ -29,6 +29,28 @@ bin/www-mobilecarrierjp-dump_all.pl
 %%SITE_PERL%%/WWW/MobileCarrierJP/ThirdForce/Java.pm
 %%SITE_PERL%%/WWW/MobileCarrierJP/Declare.pm
 %%SITE_PERL%%/WWW/MobileCarrierJP.pm
+%%PERL5_MAN3%%/WWW::MobileCarrierJP.3.gz
+%%PERL5_MAN3%%/WWW::MobileCarrierJP::AirHPhone::CIDR.3.gz
+%%PERL5_MAN3%%/WWW::MobileCarrierJP::DoCoMo::CIDR.3.gz
+%%PERL5_MAN3%%/WWW::MobileCarrierJP::DoCoMo::Display.3.gz
+%%PERL5_MAN3%%/WWW::MobileCarrierJP::DoCoMo::Flash.3.gz
+%%PERL5_MAN3%%/WWW::MobileCarrierJP::DoCoMo::HTMLVersion.3.gz
+%%PERL5_MAN3%%/WWW::MobileCarrierJP::DoCoMo::Java.3.gz
+%%PERL5_MAN3%%/WWW::MobileCarrierJP::DoCoMo::PictogramInfo.3.gz
+%%PERL5_MAN3%%/WWW::MobileCarrierJP::DoCoMo::UserAgent.3.gz
+%%PERL5_MAN3%%/WWW::MobileCarrierJP::EZWeb::CIDR.3.gz
+%%PERL5_MAN3%%/WWW::MobileCarrierJP::EZWeb::DeviceID.3.gz
+%%PERL5_MAN3%%/WWW::MobileCarrierJP::EZWeb::Model.3.gz
+%%PERL5_MAN3%%/WWW::MobileCarrierJP::EZWeb::PictogramInfo.3.gz
+%%PERL5_MAN3%%/WWW::MobileCarrierJP::Softbank::CIDR.3.gz
+%%PERL5_MAN3%%/WWW::MobileCarrierJP::Softbank::Display.3.gz
+%%PERL5_MAN3%%/WWW::MobileCarrierJP::Softbank::Flash.3.gz
+%%PERL5_MAN3%%/WWW::MobileCarrierJP::Softbank::HTTPHeader.3.gz
+%%PERL5_MAN3%%/WWW::MobileCarrierJP::Softbank::Java.3.gz
+%%PERL5_MAN3%%/WWW::MobileCarrierJP::Softbank::PictogramInfo.3.gz
+%%PERL5_MAN3%%/WWW::MobileCarrierJP::Softbank::Service.3.gz
+%%PERL5_MAN3%%/WWW::MobileCarrierJP::ThirdForce::UserAgent.3.gz
+man/man1/www-mobilecarrierjp-dump_all.pl.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW/MobileCarrierJP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
 @dirrmtry %%SITE_PERL%%/WWW/MobileCarrierJP/AirHPhone
