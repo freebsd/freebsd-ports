@@ -12,6 +12,7 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/upload
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PERL5_MAN3%%/CGI::Lite.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/Lite
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 @dirrmtry %%SITE_PERL%%/CGI
