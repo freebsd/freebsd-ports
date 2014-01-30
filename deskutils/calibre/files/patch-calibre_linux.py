@@ -1,9 +1,9 @@
---- src/calibre/linux.py.orig	2013-11-22 04:20:51.000000000 +0100
-+++ src/calibre/linux.py	2013-11-30 11:05:18.115881824 +0100
-@@ -700,9 +700,12 @@
+--- src/calibre/linux.py.orig	2014-01-24 05:56:21.000000000 +0100
++++ src/calibre/linux.py	2014-01-29 00:30:43.102775394 +0100
+@@ -712,9 +712,12 @@
                  f.close()
                  des = ('calibre-gui.desktop', 'calibre-lrfviewer.desktop',
-                         'calibre-ebook-viewer.desktop')
+                         'calibre-ebook-viewer.desktop', 'calibre-ebook-edit.desktop')
 +                dtpdirs = ('gnome/apps', 'applications')
                  for x in des:
 -                    cmd = ['xdg-desktop-menu', 'install', '--noupdate', './'+x]
