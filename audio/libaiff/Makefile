@@ -12,7 +12,6 @@ COMMENT=	Read and write AIFF files
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-NO_STAGE=	yes
 
 PLIST_FILES=	lib/${PORTNAME}.a include/${PORTNAME}/config.h include/${PORTNAME}/endian.h \
 		include/${PORTNAME}/${PORTNAME}.h include/${PORTNAME}/config.vc.h
