@@ -17,11 +17,6 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		CGI.3 CGI::Apache.3 CGI::Carp.3 CGI::Cookie.3 \
-		CGI::Fast.3 CGI::Pretty.3 CGI::Push.3 CGI::Switch.3 \
-		CGI::Util.3
-
-.if !defined(NOPORTEXAMPLES)
 EXAMPLES=	examples/caution.xbm examples/clickable_image.cgi \
 		examples/cookie.cgi examples/crash.cgi examples/customize.cgi \
 		examples/diff_upload.cgi examples/dna.small.gif \
@@ -33,15 +28,12 @@ EXAMPLES=	examples/caution.xbm examples/clickable_image.cgi \
 		examples/popup.cgi examples/save_state.cgi \
 		examples/tryit.cgi examples/wilogo.gif
 
-NO_STAGE=	yes
-post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/|} ${EXAMPLESDIR}
-	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e '/require 5\.6/d; /INSTALLDIRS/d' ${WRKSRC}/Makefile.PL
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${EXAMPLES:S|^|${WRKSRC}/|} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.pre.mk>
 
