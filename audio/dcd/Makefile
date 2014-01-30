@@ -8,17 +8,18 @@ CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}player/${PORTNAME}player/${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A simple, programmable, intelligent CD player
+COMMENT=	Simple, programmable, intelligent CD player
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libcdaudio.so:${PORTSDIR}/audio/libcdaudio
 
 USES=		gmake
-NO_STAGE=	yes
 
-MAN1=	dcd.1
-PLIST_FILES=	bin/dcd
+MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 
-LATEST_LINK=	audio_dcd
+PLIST_FILES=	bin/dcd \
+		man/man1/dcd.1.gz
 
 post-patch:
 	# Handle namespace collision with libcdaudio
