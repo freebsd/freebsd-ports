@@ -1,5 +1,7 @@
 %%SITE_PERL%%/Catalyst/Helper/View/HTML/Template.pm
 %%SITE_PERL%%/Catalyst/View/HTML/Template.pm
+%%PERL5_MAN3%%/Catalyst::Helper::View::HTML::Template.3.gz
+%%PERL5_MAN3%%/Catalyst::View::HTML::Template.3.gz
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper/View/HTML
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper/View
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper

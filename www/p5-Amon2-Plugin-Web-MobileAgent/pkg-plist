@@ -1,3 +1,6 @@
+%%PERL5_MAN3%%/Amon2::Plugin::Web::MobileAgent.3.gz
+%%PERL5_MAN3%%/Amon2::Plugin::Web::MobileCharset.3.gz
+%%PERL5_MAN3%%/Amon2::Setup::Flavor::MobileJP.3.gz
 %%SITE_PERL%%/Amon2/Plugin/Web/MobileAgent.pm
 %%SITE_PERL%%/Amon2/Plugin/Web/MobileCharset.pm
 %%SITE_PERL%%/Amon2/Setup/Flavor/MobileJP.pm
