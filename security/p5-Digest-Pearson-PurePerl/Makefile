@@ -13,7 +13,4 @@ COMMENT=	Perl extension for Peter K. Pearson's hash algorithm in pure Perl
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Digest::Pearson::PurePerl.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

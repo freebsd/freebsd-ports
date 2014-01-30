@@ -13,7 +13,4 @@ COMMENT=	Perl extension for decrypting rot-N strings
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Crypt::Caesar.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -13,7 +13,4 @@ COMMENT=	Perl 5 modules for reading and writing PalmDoc files
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Palm::PalmDoc.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -2,5 +2,6 @@ bin/csp
 %%SITE_PERL%%/CSP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSP/.packlist
 %%SITE_PERL%%/auto/CSP/autosplit.ix
+%%PERL5_MAN3%%/CSP.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CSP
 @dirrm %%SITE_PERL%%/auto/CSP

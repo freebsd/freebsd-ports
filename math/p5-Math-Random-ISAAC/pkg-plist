@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Math/Random/ISAAC/PP.pm
 %%SITE_PERL%%/Math/Random/ISAAC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random/ISAAC/.packlist
+%%PERL5_MAN3%%/Math::Random::ISAAC::PP.3.gz
+%%PERL5_MAN3%%/Math::Random::ISAAC.3.gz
 @dirrmtry %%SITE_PERL%%/Math/Random/ISAAC
 @dirrmtry %%SITE_PERL%%/Math/Random
 @dirrmtry %%SITE_PERL%%/Math

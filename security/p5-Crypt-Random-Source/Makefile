@@ -22,21 +22,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-use-ok>0:${PORTSDIR}/devel/p5-Test-use-ok
 
-MAN3=		Crypt::Random::Source.3 \
-		Crypt::Random::Source::Base.3 \
-		Crypt::Random::Source::Base::File.3 \
-		Crypt::Random::Source::Base::Handle.3 \
-		Crypt::Random::Source::Base::Proc.3 \
-		Crypt::Random::Source::Base::RandomDevice.3 \
-		Crypt::Random::Source::Factory.3 \
-		Crypt::Random::Source::Strong.3 \
-		Crypt::Random::Source::Strong::devrandom.3 \
-		Crypt::Random::Source::Weak.3 \
-		Crypt::Random::Source::Weak::devurandom.3 \
-		Crypt::Random::Source::Weak::rand.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

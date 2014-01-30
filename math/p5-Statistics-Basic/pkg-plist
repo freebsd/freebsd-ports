@@ -25,6 +25,19 @@
 %%SITE_PERL%%/Statistics/Basic/_TwoVectorBase.pm
 %%SITE_PERL%%/Statistics/Basic/_TwoVectorBase.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Basic/.packlist
+%%PERL5_MAN3%%/Statistics::Basic.3.gz
+%%PERL5_MAN3%%/Statistics::Basic::ComputedVector.3.gz
+%%PERL5_MAN3%%/Statistics::Basic::Correlation.3.gz
+%%PERL5_MAN3%%/Statistics::Basic::Covariance.3.gz
+%%PERL5_MAN3%%/Statistics::Basic::LeastSquareFit.3.gz
+%%PERL5_MAN3%%/Statistics::Basic::Mean.3.gz
+%%PERL5_MAN3%%/Statistics::Basic::Median.3.gz
+%%PERL5_MAN3%%/Statistics::Basic::Mode.3.gz
+%%PERL5_MAN3%%/Statistics::Basic::StdDev.3.gz
+%%PERL5_MAN3%%/Statistics::Basic::Variance.3.gz
+%%PERL5_MAN3%%/Statistics::Basic::Vector.3.gz
+%%PERL5_MAN3%%/Statistics::Basic::_OneVectorBase.3.gz
+%%PERL5_MAN3%%/Statistics::Basic::_TwoVectorBase.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Basic
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics
 @dirrmtry %%SITE_PERL%%/Statistics/Basic

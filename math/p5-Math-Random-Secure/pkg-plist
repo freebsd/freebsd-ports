@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Math/Random/Secure.pm
 %%SITE_PERL%%/Math/Random/Secure/RNG.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random/Secure/.packlist
+%%PERL5_MAN3%%/Math::Random::Secure.3.gz
+%%PERL5_MAN3%%/Math::Random::Secure::RNG.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random/Secure
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math

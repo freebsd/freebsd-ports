@@ -2,6 +2,7 @@
 %%SITE_PERL%%/Statistics/LTU.pod
 %%SITE_PERL%%/Statistics/weather.pl
 %%SITE_PERL%%/Statistics/LTU.pm
+%%PERL5_MAN3%%/Statistics::LTU.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/LTU
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics
 @dirrmtry %%SITE_PERL%%/Statistics
