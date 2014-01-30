@@ -1,16 +1,16 @@
---- build/pkgs/mpir/patches/configure.patch-orig	2014-01-29 21:20:07.000000000 +0000
-+++ build/pkgs/mpir/patches/configure.patch	2014-01-29 21:21:10.000000000 +0000
+--- build/pkgs/mpir/patches/configure.patch-orig	2014-01-30 19:36:33.000000000 +0000
++++ build/pkgs/mpir/patches/configure.patch	2014-01-30 19:41:28.000000000 +0000
 @@ -1,6 +1,6 @@
 -diff -dru src/acinclude.m4 b/acinclude.m4
 ---- src/acinclude.m4	2011-07-27 00:59:54.000000000 -0700
 -+++ b/acinclude.m4	2012-06-19 12:53:56.000000000 -0700
 +diff -ur src/acinclude.m4 b/acinclude.m4
-+--- src/acinclude.m4	2014-01-29 21:06:09.000000000 +0000
-++++ b/acinclude.m4	2014-01-29 21:06:23.000000000 +0000
++--- src/acinclude.m4	2014-01-30 19:39:53.000000000 +0000
+++++ b/acinclude.m4	2014-01-30 19:39:56.000000000 +0000
  @@ -519,31 +519,45 @@
   int cmov () { return (n >= 0 ? n : 0); }
   ])
-@@ -57,52 +57,49 @@
+@@ -57,52 +57,9 @@
   ])
   
   # __builtin_alloca is not available everywhere, check it exists before
@@ -18,28 +18,7 @@
 ---- src/configure.in	2012-03-08 23:21:29.000000000 -0800
 -+++ b/configure.in	2012-06-19 12:53:56.000000000 -0700
 -@@ -1918,16 +1918,6 @@
-+Only in b: acinclude.m4.orig
-+diff -ur src/aclocal.m4 b/aclocal.m4
-+--- src/aclocal.m4	2014-01-29 21:06:09.000000000 +0000
-++++ b/aclocal.m4	2012-10-03 20:07:32.000000000 +0000
-+@@ -2421,7 +2421,7 @@
-+   shlibpath_var=LD_LIBRARY_PATH
-+   ;;
-+ 
-+-freebsd1.*)
-++freebsd1*)
-+   dynamic_linker=no
-+   ;;
-+ 
-+@@ -2432,7 +2432,7 @@
-+     objformat=`/usr/bin/objformat`
-+   else
-+     case $host_os in
-+-    freebsd[[123]].*) objformat=aout ;;
-++    freebsd[[123]]*) objformat=aout ;;
-+     *) objformat=elf ;;
-+     esac
-    fi
+-   fi
 - fi
 - 
 --# The dead hand of AC_REQUIRE makes AC_PROG_LIBTOOL expand and execute
@@ -81,31 +60,13 @@
 -diff -dru src/configure b/configure
 ---- src/configure	2012-06-19 12:53:56.000000000 -0700
 -+++ b/configure	2012-03-10 01:07:26.000000000 -0800
-+@@ -5129,7 +5129,7 @@
-+       _LT_TAGVAR(hardcode_shlibpath_var, $1)=no
-+       ;;
-+ 
-+-    freebsd1.*)
-++    freebsd1*)
-+       _LT_TAGVAR(ld_shlibs, $1)=no
-+       ;;
-+ 
-+@@ -6152,7 +6152,7 @@
-+         esac
-+         ;;
-+ 
-+-      freebsd[[12]].*)
-++      freebsd[[12]]*)
-+         # C++ shared libraries reported to be fairly broken before
-+ 	# switch to ELF
-+         _LT_TAGVAR(ld_shlibs, $1)=no
 +diff -ur src/configure b/configure
-+--- src/configure	2014-01-29 21:06:09.000000000 +0000
-++++ b/configure	2014-01-29 21:06:23.000000000 +0000
++--- src/configure	2014-01-30 19:39:53.000000000 +0000
+++++ b/configure	2014-01-30 19:39:56.000000000 +0000
  @@ -2069,52 +2069,6 @@
   
   } # ac_fn_cxx_try_link
-@@ -156,7 +153,7 @@
+@@ -156,7 +113,7 @@
   # ac_fn_c_check_decl LINENO SYMBOL VAR INCLUDES
   # ---------------------------------------------
   # Tests whether SYMBOL is declared in INCLUDES, setting cache variable VAR
@@ -114,7 +75,7 @@
      on AIX 4.3 under "-maix64 -mpowerpc64 -mcpu=630".  The -mcpu=630
      option causes gcc to incorrectly select the 32-bit libgcc.a, not
      the 64-bit one, and consequently it misses out on the __fixunsdfdi
-@@ -174,7 +171,7 @@
+@@ -174,7 +131,7 @@
   EOF
     echo "Test compile: double -> ulong conversion" >&5
     gmp_compile="$cc $cflags $cppflags conftest.c >&5"
@@ -123,7 +84,7 @@
   
   
   
-@@ -182,7 +179,7 @@
+@@ -182,7 +139,7 @@
   if test "$gmp_prog_cc_works" = yes; then
     # remove anything that might look like compiler output to our "||" expression
     rm -f conftest* a.out b.out a.exe a_out.exe
@@ -132,7 +93,7 @@
   /* The following provokes an error from hppa gcc 2.95 under -mpa-risc-2-0 if
      the assembler doesn't know hppa 2.0 instructions.  fneg is a 2.0
      instruction, and a negation like this comes out using it.  */
-@@ -196,7 +193,7 @@
+@@ -196,7 +153,7 @@
   EOF
     echo "Test compile: double negation" >&5
     gmp_compile="$cc $cflags $cppflags conftest.c >&5"
@@ -141,7 +102,7 @@
   
   
   
-@@ -204,7 +201,7 @@
+@@ -204,7 +161,7 @@
   if test "$gmp_prog_cc_works" = yes; then
     # remove anything that might look like compiler output to our "||" expression
     rm -f conftest* a.out b.out a.exe a_out.exe
@@ -150,7 +111,7 @@
      (cvtsd2ss) which will provoke an error if the assembler doesn't recognise
      those instructions.  Not sure how much of the gmp code will come out
      wanting sse2, but it's easiest to reject an option we know is bad.  */
-@@ -218,7 +215,7 @@
+@@ -218,7 +175,7 @@
   EOF
     echo "Test compile: double -> float conversion" >&5
     gmp_compile="$cc $cflags $cppflags conftest.c >&5"
@@ -159,7 +120,7 @@
   
   
   
-@@ -278,7 +275,7 @@
+@@ -278,7 +235,7 @@
   
   # __builtin_alloca is not available everywhere, check it exists before
   # seeing that it works
@@ -168,7 +129,7 @@
      on AIX 4.3 under "-maix64 -mpowerpc64 -mcpu=630".  The -mcpu=630
      option causes gcc to incorrectly select the 32-bit libgcc.a, not
      the 64-bit one, and consequently it misses out on the __fixunsdfdi
-@@ -296,7 +293,7 @@
+@@ -296,7 +253,7 @@
   EOF
     echo "Test compile: double -> ulong conversion" >&5
     gmp_compile="$cc $cflags $cppflags $flag conftest.c >&5"
@@ -177,7 +138,7 @@
   
   
   
-@@ -304,7 +301,7 @@
+@@ -304,7 +261,7 @@
   if test "$gmp_prog_cc_works" = yes; then
     # remove anything that might look like compiler output to our "||" expression
     rm -f conftest* a.out b.out a.exe a_out.exe
@@ -186,7 +147,7 @@
   /* The following provokes an error from hppa gcc 2.95 under -mpa-risc-2-0 if
      the assembler doesn't know hppa 2.0 instructions.  fneg is a 2.0
      instruction, and a negation like this comes out using it.  */
-@@ -318,7 +315,7 @@
+@@ -318,7 +275,7 @@
   EOF
     echo "Test compile: double negation" >&5
     gmp_compile="$cc $cflags $cppflags $flag conftest.c >&5"
@@ -195,7 +156,7 @@
   
   
   
-@@ -326,7 +323,7 @@
+@@ -326,7 +283,7 @@
   if test "$gmp_prog_cc_works" = yes; then
     # remove anything that might look like compiler output to our "||" expression
     rm -f conftest* a.out b.out a.exe a_out.exe
@@ -204,7 +165,7 @@
      (cvtsd2ss) which will provoke an error if the assembler doesn't recognise
      those instructions.  Not sure how much of the gmp code will come out
      wanting sse2, but it's easiest to reject an option we know is bad.  */
-@@ -340,7 +337,7 @@
+@@ -340,7 +297,7 @@
   EOF
     echo "Test compile: double -> float conversion" >&5
     gmp_compile="$cc $cflags $cppflags $flag conftest.c >&5"
@@ -213,7 +174,7 @@
   
   
   
-@@ -400,7 +397,7 @@
+@@ -400,7 +357,7 @@
   
   # __builtin_alloca is not available everywhere, check it exists before
   # seeing that it works
@@ -222,7 +183,7 @@
     fi
   fi
   
-@@ -417,7 +414,7 @@
+@@ -417,7 +374,7 @@
   case `pwd` in
     *\ * | *\	*)
       { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Libtool does not cope well with whitespace in \`pwd\`" >&5
@@ -231,70 +192,16 @@
   
   
   
-@@ -425,7 +422,61 @@
+@@ -425,7 +382,7 @@
   # Set options
   
   
 -@@ -21736,2721 +21785,6 @@
-+@@ -16358,7 +16407,7 @@
-+       hardcode_shlibpath_var=no
-+       ;;
-+ 
-+-    freebsd1.*)
-++    freebsd1*)
-+       ld_shlibs=no
-+       ;;
-+ 
-+@@ -17352,7 +17401,7 @@
-+   shlibpath_var=LD_LIBRARY_PATH
-+   ;;
-+ 
-+-freebsd1.*)
-++freebsd1*)
-+   dynamic_linker=no
-+   ;;
-+ 
-+@@ -17363,7 +17412,7 @@
-+     objformat=`/usr/bin/objformat`
-+   else
-+     case $host_os in
-+-    freebsd[123].*) objformat=aout ;;
-++    freebsd[123]*) objformat=aout ;;
-+     *) objformat=elf ;;
-+     esac
-+   fi
-+@@ -19325,7 +19374,7 @@
-+         esac
-+         ;;
-+ 
-+-      freebsd[12].*)
-++      freebsd[12]*)
-+         # C++ shared libraries reported to be fairly broken before
-+ 	# switch to ELF
-+         ld_shlibs_CXX=no
-+@@ -21189,7 +21238,7 @@
-+   shlibpath_var=LD_LIBRARY_PATH
-+   ;;
-+ 
-+-freebsd1.*)
-++freebsd1*)
-+   dynamic_linker=no
-+   ;;
-+ 
-+@@ -21200,7 +21249,7 @@
-+     objformat=`/usr/bin/objformat`
-+   else
-+     case $host_os in
-+-    freebsd[123].*) objformat=aout ;;
-++    freebsd[123]*) objformat=aout ;;
-+     *) objformat=elf ;;
-+     esac
-+   fi
 +@@ -21738,2919 +21787,204 @@
   
   
   
-@@ -463,11 +514,11 @@
+@@ -463,11 +420,11 @@
  -
  -# Source file extension for f77 test sources.
  -ac_ext=f
@@ -308,7 +215,7 @@
  -# No sense in running all these tests if we already determined that
  -# the F77 compiler isn't working.  Some variables (like enable_shared)
  -# are currently assumed to apply to all compilers on this platform,
-@@ -479,44 +530,46 @@
+@@ -479,44 +436,46 @@
  -      return
  -      end
  -"
@@ -370,7 +277,7 @@
  -  # Allow CC to be a program name with arguments.
  -  lt_save_CC="$CC"
  -  lt_save_GCC=$GCC
-@@ -531,7 +584,16 @@
+@@ -531,7 +490,16 @@
  -    distcc | *[\\/]distcc | purify | *[\\/]purify ) ;;
  -    \-*) ;;
  -    *) break;;
@@ -388,7 +295,7 @@
  -done
  -cc_basename=`$ECHO "$cc_temp" | $SED "s%.*/%%; s%^$host_alias-%%"`
  -
-@@ -582,12 +644,27 @@
+@@ -582,12 +550,27 @@
  -    lt_prog_compiler_wl_F77=
  -lt_prog_compiler_pic_F77=
  -lt_prog_compiler_static_F77=
@@ -419,7 +326,7 @@
  -    case $host_os in
  -      aix*)
  -      # All AIX code is PIC.
-@@ -596,7 +673,7 @@
+@@ -596,7 +579,7 @@
  -	lt_prog_compiler_static_F77='-Bstatic'
  -      fi
  -      ;;
@@ -428,7 +335,7 @@
  -    amigaos*)
  -      case $host_cpu in
  -      powerpc)
-@@ -611,11 +688,13 @@
+@@ -611,11 +594,13 @@
  -        ;;
  -      esac
  -      ;;
@@ -444,7 +351,7 @@
  -    mingw* | cygwin* | pw32* | os2* | cegcc*)
  -      # This hack is so that the source file can tell whether it is being
  -      # built for inclusion in a dll (and should export symbols for example).
-@@ -623,19 +702,43 @@
+@@ -623,19 +608,43 @@
  -      # (--disable-auto-import) libraries
  -      lt_prog_compiler_pic_F77='-DDLL_EXPORT'
  -      ;;
@@ -491,7 +398,7 @@
  -    hpux*)
  -      # PIC is the default for 64-bit PA HP-UX, but not for 32-bit
  -      # PA HP-UX.  On IA64 HP-UX, PIC is the default but the pic flag
-@@ -649,36 +752,57 @@
+@@ -649,36 +658,57 @@
  -	;;
  -      esac
  -      ;;
@@ -555,7 +462,7 @@
  -    case $cc_basename in
  -    nvcc*) # Cuda Compiler Driver 2.2
  -      lt_prog_compiler_wl_F77='-Xlinker '
-@@ -697,13 +821,18 @@
+@@ -697,13 +727,18 @@
  -	lt_prog_compiler_static_F77='-bnso -bI:/lib/syscalls.exp'
  -      fi
  -      ;;
@@ -576,7 +483,7 @@
  -    hpux9* | hpux10* | hpux11*)
  -      lt_prog_compiler_wl_F77='-Wl,'
  -      # PIC is the default for IA64 HP-UX and 64-bit HP-UX, but
-@@ -719,13 +848,45 @@
+@@ -719,13 +754,45 @@
  -      # Is there a better lt_prog_compiler_static that works with the bundled CC?
  -      lt_prog_compiler_static_F77='${wl}-a ${wl}archive'
  -      ;;
@@ -624,7 +531,7 @@
  -    linux* | k*bsd*-gnu | kopensolaris*-gnu)
  -      case $cc_basename in
  -      # old Intel for x86_64 which still supported -KPIC.
-@@ -789,28 +950,51 @@
+@@ -789,28 +856,51 @@
  -	;;
  -      esac
  -      ;;
@@ -681,7 +588,7 @@
  -    solaris*)
  -      lt_prog_compiler_pic_F77='-KPIC'
  -      lt_prog_compiler_static_F77='-Bstatic'
-@@ -821,13 +1005,33 @@
+@@ -821,13 +911,33 @@
  -	lt_prog_compiler_wl_F77='-Wl,';;
  -      esac
  -      ;;
@@ -717,7 +624,7 @@
  -    sysv4 | sysv4.2uw2* | sysv4.3*)
  -      lt_prog_compiler_wl_F77='-Wl,'
  -      lt_prog_compiler_pic_F77='-KPIC'
-@@ -1822,7 +2026,7 @@
+@@ -1822,7 +1932,7 @@
  -      hardcode_shlibpath_var_F77=no
  -      ;;
  -
@@ -726,7 +633,7 @@
  -      ld_shlibs_F77=no
  -      ;;
  -
-@@ -2610,7 +2814,7 @@
+@@ -2610,7 +2720,7 @@
  -  shlibpath_var=LD_LIBRARY_PATH
  -  ;;
  -
@@ -735,7 +642,7 @@
  -  dynamic_linker=no
  -  ;;
  -
-@@ -2621,7 +2825,7 @@
+@@ -2621,7 +2731,7 @@
  -    objformat=`/usr/bin/objformat`
  -  else
  -    case $host_os in
@@ -744,7 +651,7 @@
  -    *) objformat=elf ;;
  -    esac
  -  fi
-@@ -3144,10 +3348,209 @@
+@@ -3144,10 +3254,209 @@
  -ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
  -ac_compiler_gnu=$ac_cv_c_compiler_gnu
  -
@@ -956,7 +863,7 @@
   postdeps='`$ECHO "$postdeps" | $SED "$delay_single_quote_subst"`'
   compiler_lib_search_path='`$ECHO "$compiler_lib_search_path" | $SED "$delay_single_quote_subst"`'
   LD_CXX='`$ECHO "$LD_CXX" | $SED "$delay_single_quote_subst"`'
-@@ -3251,7 +3654,7 @@
+@@ -3251,7 +3560,7 @@
   
   LTCC='$LTCC'
   LTCFLAGS='$LTCFLAGS'
@@ -965,7 +872,7 @@
   postdeps \
   compiler_lib_search_path \
   LD_CXX \
-@@ -3310,7 +3713,7 @@
+@@ -3310,7 +3619,7 @@
       case \`eval \\\\\$ECHO \\\\""\\\\\$\$var"\\\\"\` in
       *[\\\\\\\`\\"\\\$]*)
         eval "lt_\$var=\\\\\\"\\\`\\\$ECHO \\"\\\$\$var\\" | \\\$SED \\"\\\$sed_quote_subst\\"\\\`\\\\\\""
@@ -974,7 +881,7 @@
   sys_lib_search_path_spec \
   sys_lib_dlsearch_path_spec \
   reload_cmds_CXX \
-@@ -3339,7 +3742,7 @@
+@@ -3339,7 +3648,7 @@
       case \`eval \\\\\$ECHO \\\\""\\\\\$\$var"\\\\"\` in
       *[\\\\\\\`\\"\\\$]*)
         eval "lt_\$var=\\\\\\"\\\`\\\$ECHO \\"\\\$\$var\\" | \\\$SED -e \\"\\\$double_quote_subst\\" -e \\"\\\$sed_quote_subst\\" -e \\"\\\$delay_variable_subst\\"\\\`\\\\\\""
@@ -983,7 +890,7 @@
   
   
   
-@@ -3348,7 +3751,7 @@
+@@ -3348,7 +3657,7 @@
   _ACEOF
   
   cat >>$CONFIG_STATUS <<\_ACEOF || ac_write_fail=1
@@ -992,7 +899,7 @@
   
   
   # The names of the tagged configurations supported by this script.
-@@ -3357,7 +3760,7 @@
+@@ -3357,7 +3666,7 @@
   
   # ### BEGIN LIBTOOL CONFIG
   
@@ -1001,7 +908,7 @@
   # ### END LIBTOOL TAG CONFIG: CXX
   _LT_EOF
   
-@@ -3521,7 +3924,7 @@
+@@ -3521,7 +3830,7 @@
    ;;
   
     esac
@@ -1010,7 +917,7 @@
   postdeps='`$ECHO "$postdeps" | $SED "$delay_single_quote_subst"`'
   compiler_lib_search_path='`$ECHO "$compiler_lib_search_path" | $SED "$delay_single_quote_subst"`'
   LD_CXX='`$ECHO "$LD_CXX" | $SED "$delay_single_quote_subst"`'
-@@ -3625,7 +4028,7 @@
+@@ -3625,7 +3934,7 @@
   
   LTCC='$LTCC'
   LTCFLAGS='$LTCFLAGS'
@@ -1019,7 +926,7 @@
   postdeps \
   compiler_lib_search_path \
   LD_CXX \
-@@ -3684,7 +4087,7 @@
+@@ -3684,7 +3993,7 @@
       case \`eval \\\\\$ECHO \\\\""\\\\\$\$var"\\\\"\` in
       *[\\\\\\\`\\"\\\$]*)
         eval "lt_\$var=\\\\\\"\\\`\\\$ECHO \\"\\\$\$var\\" | \\\$SED \\"\\\$sed_quote_subst\\"\\\`\\\\\\""
@@ -1028,7 +935,7 @@
   sys_lib_search_path_spec \
   sys_lib_dlsearch_path_spec \
   reload_cmds_CXX \
-@@ -3713,7 +4116,7 @@
+@@ -3713,7 +4022,7 @@
       case \`eval \\\\\$ECHO \\\\""\\\\\$\$var"\\\\"\` in
       *[\\\\\\\`\\"\\\$]*)
         eval "lt_\$var=\\\\\\"\\\`\\\$ECHO \\"\\\$\$var\\" | \\\$SED -e \\"\\\$double_quote_subst\\" -e \\"\\\$sed_quote_subst\\" -e \\"\\\$delay_variable_subst\\"\\\`\\\\\\""
@@ -1037,7 +944,7 @@
   
   
   
-@@ -3722,7 +4125,7 @@
+@@ -3722,7 +4031,7 @@
   ac_aux_dir='$ac_aux_dir'
   
   
@@ -1046,7 +953,7 @@
   
   
   # The names of the tagged configurations supported by this script.
-@@ -3731,7 +4134,7 @@
+@@ -3731,7 +4040,7 @@
   
   # ### BEGIN LIBTOOL CONFIG
   
@@ -1055,7 +962,7 @@
   # ### END LIBTOOL TAG CONFIG: CXX
   _LT_EOF
   
-@@ -3895,7 +4298,7 @@
+@@ -3895,7 +4204,7 @@
    ;;
   
     esac
@@ -1064,7 +971,7 @@
   postdeps='`$ECHO "$postdeps" | $SED "$delay_single_quote_subst"`'
   compiler_lib_search_path='`$ECHO "$compiler_lib_search_path" | $SED "$delay_single_quote_subst"`'
   LD_CXX='`$ECHO "$LD_CXX" | $SED "$delay_single_quote_subst"`'
-@@ -3999,7 +4402,7 @@
+@@ -3999,7 +4308,7 @@
   
   LTCC='$LTCC'
   LTCFLAGS='$LTCFLAGS'
@@ -1073,7 +980,7 @@
   postdeps \
   compiler_lib_search_path \
   LD_CXX \
-@@ -4058,7 +4461,7 @@
+@@ -4058,7 +4367,7 @@
       case \`eval \\\\\$ECHO \\\\""\\\\\$\$var"\\\\"\` in
       *[\\\\\\\`\\"\\\$]*)
         eval "lt_\$var=\\\\\\"\\\`\\\$ECHO \\"\\\$\$var\\" | \\\$SED \\"\\\$sed_quote_subst\\"\\\`\\\\\\""
@@ -1082,7 +989,7 @@
   sys_lib_search_path_spec \
   sys_lib_dlsearch_path_spec \
   reload_cmds_CXX \
-@@ -4087,7 +4490,7 @@
+@@ -4087,7 +4396,7 @@
       case \`eval \\\\\$ECHO \\\\""\\\\\$\$var"\\\\"\` in
       *[\\\\\\\`\\"\\\$]*)
         eval "lt_\$var=\\\\\\"\\\`\\\$ECHO \\"\\\$\$var\\" | \\\$SED -e \\"\\\$double_quote_subst\\" -e \\"\\\$sed_quote_subst\\" -e \\"\\\$delay_variable_subst\\"\\\`\\\\\\""
@@ -1091,7 +998,7 @@
   
   
   
-@@ -4096,7 +4499,7 @@
+@@ -4096,7 +4405,7 @@
   ac_aux_dir='$ac_aux_dir'
   ac_aux_dir='$ac_aux_dir'
   
@@ -1100,7 +1007,7 @@
   
   
   # The names of the tagged configurations supported by this script.
-@@ -4105,7 +4508,7 @@
+@@ -4105,7 +4414,7 @@
   
   # ### BEGIN LIBTOOL CONFIG
   
@@ -1109,13 +1016,13 @@
   # ### END LIBTOOL TAG CONFIG: CXX
   _LT_EOF
   
-@@ -4269,3 +4672,75 @@
+@@ -4269,3 +4578,46 @@
    ;;
   
     esac
 +diff -ur src/configure.in b/configure.in
 +--- src/configure.in	2012-11-08 22:10:45.000000000 +0000
-++++ b/configure.in	2014-01-29 21:06:23.000000000 +0000
+++++ b/configure.in	2014-01-30 19:39:37.000000000 +0000
 +@@ -1920,16 +1920,6 @@
 +   fi
 + fi
@@ -1133,11 +1040,9 @@
 + AC_PROG_LIBTOOL
 + 
 + # Generate an error here if attempting to build both shared and static when
-+Only in b: configure.in.orig
-+Only in b: configure.orig
 +diff -ur src/yasm/Makefile.in b/yasm/Makefile.in
 +--- src/yasm/Makefile.in	2012-11-08 22:21:05.000000000 +0000
-++++ b/yasm/Makefile.in	2014-01-29 21:06:23.000000000 +0000
+++++ b/yasm/Makefile.in	2014-01-30 19:39:37.000000000 +0000
 +@@ -3747,7 +3747,8 @@
 + check-am: all-am
 + 	$(MAKE) $(AM_MAKEFLAGS) $(check_PROGRAMS)
@@ -1158,30 +1063,3 @@
 + install-exec: install-exec-recursive
 + install-data: install-data-recursive
 + uninstall: uninstall-recursive
-+Only in b/yasm: Makefile.in.orig
-+diff -ur src/yasm/config/config.rpath b/yasm/config/config.rpath
-+--- src/yasm/config/config.rpath	2014-01-29 21:06:09.000000000 +0000
-++++ b/yasm/config/config.rpath	2012-10-03 20:07:29.000000000 +0000
-+@@ -351,7 +351,7 @@
-+     dgux*)
-+       hardcode_libdir_flag_spec='-L$libdir'
-+       ;;
-+-    freebsd1.*)
-++    freebsd1*)
-+       ld_shlibs=no
-+       ;;
-+     freebsd2.2*)
-+@@ -528,11 +528,11 @@
-+   dgux*)
-+     library_names_spec='$libname$shrext'
-+     ;;
-+-  freebsd1.*)
-++  freebsd1*)
-+     ;;
-+   freebsd* | dragonfly*)
-+     case "$host_os" in
-+-      freebsd[123].*)
-++      freebsd[123]*)
-+         library_names_spec='$libname$shrext$versuffix' ;;
-+       *)
-+         library_names_spec='$libname$shrext' ;;
