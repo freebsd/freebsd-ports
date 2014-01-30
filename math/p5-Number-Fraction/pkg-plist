@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Number/Fraction.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Fraction/.packlist
+%%PERL5_MAN3%%/Number::Fraction.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number/Fraction
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Number
 @dirrmtry %%SITE_PERL%%/Number

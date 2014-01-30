@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GIS/Distance/Lite/.packlist
 %%SITE_PERL%%/GIS/Distance/Lite.pm
+%%PERL5_MAN3%%/GIS::Distance::Lite.3.gz
 @dirrmtry %%SITE_PERL%%/GIS/Distance
 @dirrmtry %%SITE_PERL%%/GIS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/GIS/Distance/Lite

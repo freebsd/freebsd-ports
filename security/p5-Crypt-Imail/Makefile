@@ -13,9 +13,6 @@ COMMENT=	Perl extension to encrypt and decrypt Imail passwords
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Crypt::Imail.3
-
 WRKSRC=		${WRKDIR}/Imail
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

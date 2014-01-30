@@ -19,7 +19,4 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS=	${OPENSSLBASE}
 USE_DOS2UNIX=	yes
 
-MAN3=	Business::PayPal::EWP.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

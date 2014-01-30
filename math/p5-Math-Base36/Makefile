@@ -16,7 +16,4 @@ BUILD_DEPENDS=	p5-ExtUtils-MakeMaker>=6.59:${PORTSDIR}/devel/p5-ExtUtils-MakeMak
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Math::Base36.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

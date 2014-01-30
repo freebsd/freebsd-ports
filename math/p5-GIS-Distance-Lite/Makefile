@@ -17,7 +17,4 @@ RUN_DEPENDS=	p5-Math-Complex>1.0.3:${PORTSDIR}/math/p5-Math-Complex
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		GIS::Distance::Lite.3 \
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

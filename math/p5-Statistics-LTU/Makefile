@@ -13,7 +13,4 @@ COMMENT=	Perl implementation of Linear Threshold Units
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Statistics::LTU.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

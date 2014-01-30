@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Statistics/Distributions.pm
 %%SITE_PERL%%/auto/Statistics/Distributions/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Distributions/.packlist
+%%PERL5_MAN3%%/Statistics::Distributions.3.gz
 @dirrm %%SITE_PERL%%/auto/Statistics/Distributions
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Distributions
 @dirrmtry %%SITE_PERL%%/auto/Statistics
