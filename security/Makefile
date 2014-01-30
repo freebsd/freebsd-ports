@@ -756,6 +756,7 @@
     SUBDIR += py-clamav
     SUBDIR += py-cracklib
     SUBDIR += py-cryptkit
+    SUBDIR += py-cybox
     SUBDIR += py-ecdsa
     SUBDIR += py-ed25519ll
     SUBDIR += py-fail2ban
