@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Value=1.0
+Type=Application
+Name=Remotebox
+GenericName=Remotebox
+Comment=Open Source VirtualBox Client with Remote Management
+Icon=remotebox.png
+Exec=remotebox
+Categories=System

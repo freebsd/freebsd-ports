@@ -996,6 +996,7 @@
     SUBDIR += remmina-plugin-vnc
     SUBDIR += remmina-plugin-xdmcp
     SUBDIR += remmina-plugins
+    SUBDIR += remotebox
     SUBDIR += remotedesk
     SUBDIR += repeater
     SUBDIR += reposado
