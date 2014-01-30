@@ -1,4 +1,5 @@
 bin/osmo
+man/man1/osmo.1.gz
 share/applications/osmo.desktop
 share/icons/hicolor/16x16/apps/osmo.png
 share/icons/hicolor/22x22/apps/osmo.png
