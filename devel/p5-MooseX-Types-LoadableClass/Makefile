@@ -1,10 +1,10 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Types-LoadableClass
-PORTVERSION=	0.008
+PORTVERSION=	0.012
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:BOBTFISH
+MASTER_SITE_SUBDIR=	CPAN:ETHER
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	az@FreeBSD.org
@@ -14,6 +14,7 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Class-Load>=0.06:${PORTSDIR}/devel/p5-Class-Load \
+		p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Types>=0.22:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-namespace-clean>=0:${PORTSDIR}/devel/p5-namespace-clean
