@@ -17,6 +17,8 @@ COMMENT=	Z80 assembly code assembler and disassembler
 
 OPTIONS_DEFINE=	DOCS
 
+PORTDOCS=	CHANGELOG README TODO z80-asm.html z80-mon.html
+
 USES=		gmake
 
 post-extract:
