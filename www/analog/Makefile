@@ -27,41 +27,34 @@ ALL_TARGET=	${PORTNAME}
 
 SUB_FILES=	pkg-message
 
-MAN1=		analog.1
-
 LIMGDIR?=	www/data/images
 IMGDIR=		${PREFIX}/${LIMGDIR}
 PLIST_SUB=	IMGDIR="${LIMGDIR}"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/analog ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/analog.man ${MANPREFIX}/man/man1/analog.1
-	${INSTALL_DATA} ${WRKSRC}/analog.cfg ${PREFIX}/etc/analog.cfg-dist
-	@${MKDIR} ${DATADIR}/lang
-	${INSTALL_DATA} ${WRKSRC}/lang/* ${DATADIR}/lang
-	@${MKDIR} ${IMGDIR}
-	${INSTALL_DATA} ${WRKSRC}/images/* ${IMGDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/analog ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/analog.man ${STAGEDIR}${MANPREFIX}/man/man1/analog.1
+	${INSTALL_DATA} ${WRKSRC}/analog.cfg ${STAGEDIR}${PREFIX}/etc/analog.cfg-dist
+	${MKDIR} ${STAGEDIR}${DATADIR}/lang
+	${INSTALL_DATA} ${WRKSRC}/lang/* ${STAGEDIR}${DATADIR}/lang
+	${MKDIR} ${STAGEDIR}${IMGDIR}
+	${INSTALL_DATA} ${WRKSRC}/images/* ${STAGEDIR}${IMGDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*.cfg ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/anlgform.html ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/anlgform.pl ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/css
+	${INSTALL_DATA} ${WRKSRC}/examples/css/Readme.txt ${STAGEDIR}${EXAMPLESDIR}/css
+	${INSTALL_DATA} ${WRKSRC}/examples/css/default.css ${STAGEDIR}${EXAMPLESDIR}/css
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/css/jreeves
+	${INSTALL_DATA} ${WRKSRC}/examples/css/jreeves/* ${STAGEDIR}${EXAMPLESDIR}/css/jreeves
+
+.if !exists(${STAGEDIR}${PREFIX}/etc/analog.cfg)
+	@cd ${STAGEDIR}${PREFIX}/etc && ${CP} -f analog.cfg-dist analog.cfg
 .endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.cfg ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/anlgform.html ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/anlgform.pl ${EXAMPLESDIR}
-	@${MKDIR} ${EXAMPLESDIR}/css
-	${INSTALL_DATA} ${WRKSRC}/examples/css/Readme.txt ${EXAMPLESDIR}/css
-	${INSTALL_DATA} ${WRKSRC}/examples/css/default.css ${EXAMPLESDIR}/css
-	@${MKDIR} ${EXAMPLESDIR}/css/jreeves
-	${INSTALL_DATA} ${WRKSRC}/examples/css/jreeves/* ${EXAMPLESDIR}/css/jreeves
-.endif
-.if !exists(${PREFIX}/etc/analog.cfg)
-	@cd ${PREFIX}/etc && ${CP} -f analog.cfg-dist analog.cfg
-.endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
