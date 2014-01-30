@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libsndfile.so:${PORTSDIR}/audio/libsndfile
 
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
 USES=		gmake pkgconfig
 USE_LDCONFIG=	yes
 
