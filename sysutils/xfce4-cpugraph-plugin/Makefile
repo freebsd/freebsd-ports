@@ -12,18 +12,18 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Graphical representation of the CPU load
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu panel
 INSTALLS_ICONS=	yes
-USES=	pathfix pkgconfig
+USES=	pkgconfig gmake
 
 OPTIONS_DEFINE= NLS
 OPTIONS_DEFAULT=        NLS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
