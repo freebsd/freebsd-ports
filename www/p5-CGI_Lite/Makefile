@@ -13,20 +13,13 @@ COMMENT=	Process and decode WWW forms and cookies
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		CGI::Lite.3
-
 DOCS=		CHANGES README TODO
 EXAMPLES=	cookies get_post print upload file post reference
 
-NO_STAGE=	yes
 post-install:
-.ifndef(NOPORTDOCS)
-	@${ECHO_MSG} "===>   Installing docs for ${PKGNAME}"
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${INSTALL_SCRIPT} ${EXAMPLES} ${EXAMPLESDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${INSTALL_SCRIPT} ${EXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

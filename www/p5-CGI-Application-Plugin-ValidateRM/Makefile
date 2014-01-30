@@ -20,7 +20,4 @@ USE_PERL5=	modbuild
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN3=		CGI::Application::Plugin::ValidateRM.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
