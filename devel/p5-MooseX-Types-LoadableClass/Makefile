@@ -26,4 +26,7 @@ TEST_DEPENDS=	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
 USES=		perl5
 USE_PERL5=	configure
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|warn <<|1 or warn <<|' ${WRKSRC}/Makefile.PL
+
 .include <bsd.port.mk>
