@@ -7,7 +7,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	SF/catkin/${PORTNAME}-1.3 \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blog management application based on Qt 4
 
 LICENSE=	GPLv2
