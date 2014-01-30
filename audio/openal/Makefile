@@ -5,16 +5,17 @@ PORTNAME=	openal
 PORTVERSION=	20060211
 PORTREVISION=	12
 CATEGORIES=	audio
-MASTER_SITES=	http://openal.org/openal_webstf/downloads/
+MASTER_SITES=	GENTOO/distfiles
 DISTVERSION=	0.0.8
 
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	A 3D positional spatialized sound library
 
+LICENSE=	GPLv2
+
 CONFLICTS=	openal-soft-[0-9]*
 
 USE_AUTOTOOLS=	libtool
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-Wno-return-type
@@ -22,56 +23,29 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-capture \
 		--disable-arts
 USES=		pathfix pkgconfig gmake
-WANT_SDL=	yes
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	ESOUND SDL VORBIS SMPEG
+OPTIONS_DEFINE=	ESOUND SDL VORBIS SMPEG ALSA
 OPTIONS_DEFINE_i386=	ASM
 OPTIONS_DEFAULT_i386=	ASM
 SMPEG_DESC=	smpeg support
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MSMPEG}
-WITH_SDL=	yes	# smpeg requires SDL
-.endif
-
-.if ${PORT_OPTIONS:MESD}
-USE_GNOME+=	esound
-CONFIGURE_ARGS+=--enable-esd
-.else
-CONFIGURE_ARGS+=--disable-esd
-.endif
-
-.if ${PORT_OPTIONS:MSDL}
-USE_SDL+=	sdl
-CONFIGURE_ENV+=	HAVESDL="${SDL_CONFIG}"
-CONFIGURE_ARGS+=--enable-sdl
-.else
-CONFIGURE_ARGS+=--disable-sdl
-.endif
-
-.if ${PORT_OPTIONS:MVORBIS}
-LIB_DEPENDS+=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
-CONFIGURE_ARGS+=--enable-vorbis
-.else
-CONFIGURE_ARGS+=--disable-vorbis
-.endif
-
-.if ${PORT_OPTIONS:MSMPEG}
-LIB_DEPENDS+=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
-CONFIGURE_ARGS+=--enable-smpeg
-.else
-CONFIGURE_ARGS+=--disable-smpeg
-.endif
-
-.if ${PORT_OPTIONS:MASM}
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
-.endif
-
+ESOUND_USE=		GNOME=esound
+ESOUND_CONFIGURE_ENABLE=esd
+SDL_USE=		SDL=sdl
+SDL_CONFIGURE_ENABLE=	sdl
+VORBIS_LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
+VORBIS_CONFIGURE_ENABLE=vorbis
+SMPEG_LIB_DEPENDS=	libsmpeg.so:${PORTSDIR}/multimedia/smpeg
+SMPEG_CONFIGURE_ENABLE=	mp3
+ALSA_LIB_DEPENDS=	libasound.so:${PORTSDIR}/audio/alsa-lib
+ALSA_CONFIGURE_ENABLE=	alsa
+ASM_BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 NOT_FOR_ARCHS=	ia64
 NOT_FOR_ARCHS_REASON_ia64=	does not compile
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-pthread/${PTHREAD_LIBS}/; \
@@ -88,8 +62,5 @@ post-patch:
 .if ! ${PORT_OPTIONS:MASM}
 	@${REINPLACE_CMD} -e '/^NASM=/ s|=.*|=no|' ${WRKSRC}/configure
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
