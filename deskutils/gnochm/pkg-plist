@@ -28,12 +28,9 @@ share/locale/tr/LC_MESSAGES/gnochm.mo
 share/locale/vi/LC_MESSAGES/gnochm.mo
 share/locale/zh_CN/LC_MESSAGES/gnochm.mo
 share/locale/zh_TW/LC_MESSAGES/gnochm.mo
-share/mime/application/x-chm.xml
 share/mime/packages/gnochm.xml
 @dirrm share/omf/gnochm
 @dirrm share/gnome/help/gnochm/C
 @dirrm share/gnome/help/gnochm
 @dirrm share/gnochm/glade
 @dirrm share/gnochm
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
