@@ -1,4 +1,5 @@
 bin/teapot
+man/man1/teapot.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/html/node1.html
