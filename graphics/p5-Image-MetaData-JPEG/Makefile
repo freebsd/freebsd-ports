@@ -13,10 +13,4 @@ COMMENT=	Perl extension for showing/modifying JPEG (meta)data]
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Image::MetaData::JPEG.3 \
-		Image::MetaData::JPEG::MakerNotes.3 \
-		Image::MetaData::JPEG::Structures.3 \
-		Image::MetaData::JPEG::TagLists.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

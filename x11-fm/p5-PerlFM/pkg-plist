@@ -1,4 +1,5 @@
 bin/pfm
 %%SITE_PERL%%/PerlFM.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlFM/.packlist
+%%PERL5_MAN3%%/PerlFM.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlFM

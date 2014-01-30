@@ -3,6 +3,9 @@ bin/zcrunner
 %%SITE_PERL%%/ZConf/Runner/GUI.pm
 %%SITE_PERL%%/ZConf/Runner/GUI/Curses.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/ZConf/Runner/.packlist
+%%PERL5_MAN3%%/ZConf::Runner.3.gz
+%%PERL5_MAN3%%/ZConf::Runner::GUI.3.gz
+%%PERL5_MAN3%%/ZConf::Runner::GUI::Curses.3.gz
 @dirrm %%SITE_PERL%%/ZConf/Runner/GUI
 @dirrm %%SITE_PERL%%/ZConf/Runner
 @dirrmtry %%SITE_PERL%%/ZConf

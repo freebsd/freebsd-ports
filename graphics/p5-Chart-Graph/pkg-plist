@@ -17,6 +17,11 @@
 %%SITE_PERL%%/Chart/Graph/Xrt2d.pm
 %%SITE_PERL%%/Chart/Graph/Xrt3d.pm
 %%SITE_PERL%%/Chart/Graph/XrtUtils.pm
+%%PERL5_MAN3%%/Chart::Graph.3.gz
+%%PERL5_MAN3%%/Chart::Graph::Gnuplot.3.gz
+%%PERL5_MAN3%%/Chart::Graph::Xmgrace.3.gz
+%%PERL5_MAN3%%/Chart::Graph::Xrt2d.3.gz
+%%PERL5_MAN3%%/Chart::Graph::Xrt3d.3.gz
 @dirrm %%SITE_PERL%%/Chart/Graph/Xmgrace
 @dirrm %%SITE_PERL%%/Chart/Graph
 @dirrmtry %%SITE_PERL%%/Chart

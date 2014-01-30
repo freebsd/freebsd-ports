@@ -28,6 +28,10 @@
 %%SITE_PERL%%/Image/MetaData/JPEG/parsers/app3.pl
 %%SITE_PERL%%/Image/MetaData/JPEG/parsers/image.pl
 %%SITE_PERL%%/Image/MetaData/JPEG/parsers/parsers.pl
+%%PERL5_MAN3%%/Image::MetaData::JPEG.3.gz
+%%PERL5_MAN3%%/Image::MetaData::JPEG::MakerNotes.3.gz
+%%PERL5_MAN3%%/Image::MetaData::JPEG::Structures.3.gz
+%%PERL5_MAN3%%/Image::MetaData::JPEG::TagLists.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/MetaData/JPEG
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/MetaData
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image

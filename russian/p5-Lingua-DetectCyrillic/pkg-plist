@@ -4,6 +4,7 @@
 %%SITE_PERL%%/Lingua/DetectCyrillic/WordHash2Rus.pm
 %%SITE_PERL%%/Lingua/DetectCyrillic/WordHash2Ukr.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/DetectCyrillic/.packlist
+%%PERL5_MAN3%%/Lingua::DetectCyrillic.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/DetectCyrillic
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
 @dirrm %%SITE_PERL%%/Lingua/DetectCyrillic

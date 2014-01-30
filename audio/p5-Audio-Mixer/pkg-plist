@@ -4,6 +4,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Mixer/Mixer.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Mixer/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Mixer/.packlist
+%%PERL5_MAN3%%/Audio::Mixer.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Mixer
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Audio

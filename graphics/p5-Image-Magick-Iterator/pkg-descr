@@ -9,4 +9,4 @@ parallel by any Image::Magick calls. Calls to Write() either output an
 animated series of image (a la animated GIFs), or the first image in
 the series.
 
-WWW:	http://search.cpan.org/dist/Image-Magick-Iterator/
+WWW: http://search.cpan.org/dist/Image-Magick-Iterator/
