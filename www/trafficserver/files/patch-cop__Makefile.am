@@ -1,0 +1,11 @@
+--- ./cop/Makefile.am.orig	2013-12-05 22:07:48.000000000 +0000
++++ ./cop/Makefile.am	2014-01-27 08:45:49.000000000 +0000
+@@ -17,6 +17,8 @@
+ #  See the License for the specific language governing permissions and
+ #  limitations under the License.
+ 
++AUTOMAKE_OPTIONS=	subdir-objects
++
+ AM_CPPFLAGS = $(iocore_include_dirs) \
+   -I$(top_srcdir)/lib \
+   -I$(top_srcdir)/lib/records \
