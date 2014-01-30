@@ -17,6 +17,9 @@ LIB_DEPENDS=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 CONFLICTS_INSTALL=	kdepim-runtime-4.*
 
+DEPRECATED=	Not supported upstream, conflicts with upcoming kdepimlibs-4.12
+EXPIRATION_DATE=	2014-02-28
+
 USE_KDE4=	pimlibs kdeprefix kdehier sharedmime automoc4
 USES=		cmake:outsource
 USE_BZIP2=	yes

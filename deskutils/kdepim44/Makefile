@@ -21,6 +21,9 @@ RUN_DEPENDS=	${KDE4_PREFIX}/bin/akonadi_mbox_resource:${PORTSDIR}/deskutils/kdep
 
 CONFLICTS_INSTALL=	kdepim-4.*
 
+DEPRECATED=	Not supported upstream, conflicts with upcoming kdepimlibs-4.12
+EXPIRATION_DATE=	2014-02-28
+
 USE_KDE4=	kdelibs pimlibs \
 		akonadi kdeprefix kdehier automoc4 oxygen
 USES=		cmake:outsource
