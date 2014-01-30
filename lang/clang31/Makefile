@@ -14,6 +14,9 @@ EXTRACT_ONLY=	${LLVM_SOURCE}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	C, Objective-C, and (alpha-quality) C++ compiler
 
+DEPRECATED=	No remaining dependencies
+EXPIRATION_DATE=	2013-03-01
+
 CONFLICTS=	clang-[23]* clang-devel-[23]*
 
 CLANG_NAME=	clang-${PORTVERSION}.src
