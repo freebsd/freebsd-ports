@@ -12,19 +12,19 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	System Load plugin for XFce4
 
-LIB_DEPENDS=	upower-glib.1:${PORTSDIR}/sysutils/upower
+LICENSE=	BSD
+
+LIB_DEPENDS=	libupower-glib.so:${PORTSDIR}/sysutils/upower
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel
-USES=	pathfix pkgconfig
+USES=	pkgconfig gmake
 
 OPTIONS_DEFINE= NLS
 OPTIONS_DEFAULT=        NLS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

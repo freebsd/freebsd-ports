@@ -12,20 +12,20 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Battery monitor panel plugin for Xfce4
 
+LICENSE=	GPLv2
+
 ONLY_FOR_ARCHS=	i386 amd64
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk20 glib20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel
 INSTALLS_ICONS=	yes
-USES=	pathfix pkgconfig
+USES=	pkgconfig gmake
 
 OPTIONS_DEFINE= NLS
 OPTIONS_DEFAULT=        NLS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

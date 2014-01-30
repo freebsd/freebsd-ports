@@ -1,10 +1,6 @@
-Written by Andre Lerche, this plugin checks the 
-chosen mountpoint for free disk space.  
-It displays 4 different icons (red, yellow, green, unknown) 
-and a message box, depending on the free space. 
-The amount of free disk space is visible in a tooltip. 
-If you left-click on its icon, it opens the 
-mountpoint directory in the file manager.
+The FSGuard panel plugin checks free space on a chosen mount point and displays
+a message when a limit is reached. There are two limits:
+- a warning limit where only the icon changes
+- an urgent limit that advise the user with a message
 
-Author:	Andre Lerche <a.lerche@gmx.net>
 WWW: http://goodies.xfce.org/projects/panel-plugins/xfce4-fsguard-plugin

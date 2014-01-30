@@ -12,14 +12,14 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	xfce@FreeBSD.org
 COMMENT=	Mount and umount utility for the Xfce4 panel
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_GNOME=	intltool intlhack
-USES=		gettext pathfix pkgconfig
+USES=		gettext pkgconfig gmake
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_XFCE=	configenv libmenu panel
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
