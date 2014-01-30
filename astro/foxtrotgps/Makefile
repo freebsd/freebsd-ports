@@ -12,11 +12,11 @@ COMMENT=	Lightweight opensource gps moving map application
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libexif.so:${PORTSDIR}/graphics/libexif \
-		libsoup-2.so:${PORTSDIR}/devel/libsoup \
+		libsoup-2.4.so:${PORTSDIR}/devel/libsoup \
 		libgps.so:${PORTSDIR}/astro/gpsd
 
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
+CONFIGURE_ARGS=	--disable-schemas-install
 USES=		gettext gmake pkgconfig shebangfix
 SHEBANG_FILES=	contrib/convert2gpx \
 		contrib/convert2osm \
@@ -27,7 +27,5 @@ USE_SQLITE=	3
 INSTALLS_ICONS=	yes
 
 GCONF_SCHEMAS=	apps_foxtrotgps.schemas
-
-MAN1=	foxtrotgps.1 convert2gpx.1 convert2osm.1
 
 .include <bsd.port.mk>
