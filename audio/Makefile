@@ -235,7 +235,6 @@
     SUBDIR += gqradio
     SUBDIR += gramofile
     SUBDIR += grip
-    SUBDIR += gsi
     SUBDIR += gsm
     SUBDIR += gspeakers
     SUBDIR += gstreamer-plugins-a52dec
