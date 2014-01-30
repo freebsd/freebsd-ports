@@ -8,15 +8,14 @@ CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
 MAINTAINER=	ntarmos@ceid.upatras.gr
-COMMENT=	An advanced, highly configurable system monitor for X
+COMMENT=	Advanced, highly configurable system monitor for X11
 
 CONFLICTS?=	conky-awesome-[0-9]*
 SLAVEDIRS=	sysutils/conky-awesome
 
-USES=		pkgconfig iconv
+USES=		gmake iconv pkgconfig
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--disable-portmon \
 			--disable-hddtemp \
 			--disable-alsa \
@@ -25,8 +24,7 @@ CONFIGURE_ARGS+=	--disable-portmon \
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		conky.1
-PLIST_FILES=	bin/conky
+PLIST_FILES=	bin/conky man/man1/conky.1.gz
 PORTEXAMPLES=	conkyrc.sample
 PORTDOCS=	README AUTHORS ChangeLog TODO NEWS \
 		docs.html variables.html config_settings.html
@@ -38,22 +36,61 @@ OPTIONS_GROUP?=	X11
 OPTIONS_GROUP_X11=	ARGB DOUBLE_BUFFER IMLIB2 XFT LUA_CAIRO LUA_IMLIB2
 OPTIONS_DEFAULT?=	X11 ARGB DOUBLE_BUFFER
 
-ARGB_DESC=		Use an ARGB visual to draw on X11
 APCUPSD_DESC=		Monitor APCUPSD
-AUDACIOUS_DESC=		Control Audacious sound player
-DOUBLE_BUFFER_DESC=	Enable X11 double buffering
-INOTIFY_DESC=		Monitor file changes via Inotify
-LUA_CAIRO_DESC=		Lua-Cairo binding
-LUA_IMLIB2_DESC=	Lua-Imlib2 binding
-METAR_DESC=		Display METAR weather reports
-MOC_DESC=		Control MOC (Music On Console)
-MPD_DESC=		Control MPD (Music Player Daemon)
-NCURSES_DESC=		Use ncurses to draw on terminals
-RSS_DESC=		Display RSS feeds
-XMMS2_DESC=		Control XMMS2 media player
-XOAP_DESC=		Display XOAP weather reports
+APCUPSD_CONFIGURE_ENABLE=apcupsd
 
-NO_STAGE=	yes
+ARGB_DESC=		Use an ARGB visual to draw on X11
+ARGB_CONFIGURE_ENABLE=	argb
+
+AUDACIOUS_DESC=		Control Audacious sound player
+AUDACIOUS_CONFIGURE_ENABLE=audacious
+AUDACIOUS_LIB_DEPENDS=	libaudclient.so:${PORTSDIR}/multimedia/audacious
+
+DOUBLE_BUFFER_DESC=	Enable X11 double buffering
+DOUBLE_BUFFER_CONFIGURE_ENABLE=double-buffer
+
+INOTIFY_DESC=		Monitor file changes via Inotify
+INOTIFY_CONFIGURE_ENABLE=inotify
+INOTIFY_LIB_DEPENDS=	libinotify.so:${PORTSDIR}/devel/libinotify
+
+LUA_CAIRO_DESC=		Lua-Cairo binding
+LUA_CAIRO_CONFIGURE_ENABLE=lua-cairo
+LUA_CAIRO_LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo
+
+LUA_IMLIB2_DESC=	Lua-Imlib2 binding
+LUA_IMLIB2_CONFIGURE_ENABLE=lua-imlib2
+
+METAR_DESC=		Display METAR weather reports
+METAR_CONFIGURE_ENABLE=	weather-metar
+METAR_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+
+MOC_DESC=		Control MOC (Music On Console)
+MOC_CONFIGURE_ENABLE=	moc
+
+MPD_DESC=		Control MPD (Music Player Daemon)
+MPD_CONFIGURE_ENABLE=	mpd
+
+NCURSES_DESC=		Use ncurses to draw on terminals
+NCURSES_CONFIGURE_ENABLE=ncurses
+
+RSS_DESC=		Display RSS feeds
+RSS_CONFIGURE_ENABLE=	rss
+RSS_USE=		GNOME=glib20
+RSS_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+			libxml2.so:${PORTSDIR}/textproc/libxml2
+
+XFT_CONFIGURE_ENABLE=	xft
+XFT_LIB_DEPENDS=	libXft.so:${PORTSDIR}/x11-fonts/libXft
+
+XMMS2_DESC=		Control XMMS2 media player
+XMMS2_CONFIGURE_ENABLE=	xmms2
+XMMS2_LIB_DEPENDS=	libxmmsclient.so:${PORTSDIR}/audio/xmms2
+
+XOAP_DESC=		Display XOAP weather reports
+XOAP_CONFIGURE_ENABLE=	weather-xoap
+XOAP_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
+			libxml2.so:${PORTSDIR}/textproc/libxml2
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MARGB} || ${PORT_OPTIONS:MDOUBLE_BUFFER} || ${PORT_OPTIONS:MIMLIB2} || ${PORT_OPTIONS:MLUA_CAIRO} || ${PORT_OPTIONS:MLUA_IMLIB2} || ${PORT_OPTIONS:MXFT} || ${PORT_OPTIONS:MX11}
@@ -65,60 +102,11 @@ CONFIGURE_ARGS+=	--disable-x11 --disable-own-window
 EXAMPLE_CONF_FILE=	${WRKSRC}/data/conky_no_x11.conf
 .endif
 
-.if ${PORT_OPTIONS:MAPCUPSD}
-CONFIGURE_ARGS+=	--enable-apcupsd
-.else
-CONFIGURE_ARGS+=	--disable-apcupsd
-.endif
-
-.if ${PORT_OPTIONS:MARGB}
-CONFIGURE_ARGS+=	--enable-argb
-.else
-CONFIGURE_ARGS+=	--disable-argb
-.endif
-
-.if ${PORT_OPTIONS:MAUDACIOUS}
-LIB_DEPENDS+=		audclient:${PORTSDIR}/multimedia/audacious
-CONFIGURE_ARGS+=	--enable-audacious
-.else
-CONFIGURE_ARGS+=	--disable-audacious
-.endif
-
-.if ${PORT_OPTIONS:MDOUBLE_BUFFER}
-CONFIGURE_ARGS+=	--enable-double-buffer
-.else
-CONFIGURE_ARGS+=	--disable-double-buffer
-.endif
-
 .if ${PORT_OPTIONS:MIMLIB2} || ${PORT_OPTIONS:MLUA_IMLIB2}
-LIB_DEPENDS+=		Imlib2:${PORTSDIR}/graphics/imlib2
+LIB_DEPENDS+=		libImlib2.so:${PORTSDIR}/graphics/imlib2
 CONFIGURE_ARGS+=	--enable-imlib2
 .else
 CONFIGURE_ARGS+=	--disable-imlib2
-.endif
-
-.if ${PORT_OPTIONS:MINOTIFY}
-LIB_DEPENDS+=		inotify:${PORTSDIR}/devel/libinotify
-CONFIGURE_ARGS+=	--enable-inotify
-.else
-CONFIGURE_ARGS+=	--disable-inotify
-.endif
-
-.if ${PORT_OPTIONS:MLUA_CAIRO}
-LIB_DEPENDS+=		cairo:${PORTSDIR}/graphics/cairo
-BUILD_DEPENDS+=		tolua++-5.1:${PORTSDIR}/lang/tolua++
-RUN_DEPENDS+=		tolua++-5.1:${PORTSDIR}/lang/tolua++
-CONFIGURE_ARGS+=	--enable-lua-cairo
-.else
-CONFIGURE_ARGS+=	--disable-lua-cairo
-.endif
-
-.if ${PORT_OPTIONS:MLUA_IMLIB2}
-BUILD_DEPENDS+=		tolua++-5.1:${PORTSDIR}/lang/tolua++
-RUN_DEPENDS+=		tolua++-5.1:${PORTSDIR}/lang/tolua++
-CONFIGURE_ARGS+=	--enable-lua-imlib2
-.else
-CONFIGURE_ARGS+=	--disable-lua-imlib2
 .endif
 
 .if ${PORT_OPTIONS:MLUA} || ${PORT_OPTIONS:MLUA_CAIRO} || ${PORT_OPTIONS:MLUA_IMLIB2}
@@ -128,60 +116,8 @@ CONFIGURE_ARGS+=	--enable-lua
 CONFIGURE_ARGS+=	--disable-lua
 .endif
 
-.if ${PORT_OPTIONS:MMETAR}
-LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=	--enable-weather-metar
-.else
-CONFIGURE_ARGS+=	--disable-weather-metar
-.endif
-
-.if ${PORT_OPTIONS:MMOC}
-CONFIGURE_ARGS+=	--enable-moc
-.else
-CONFIGURE_ARGS+=	--disable-moc
-.endif
-
-.if ${PORT_OPTIONS:MMPD}
-CONFIGURE_ARGS+=	--enable-mpd
-.else
-CONFIGURE_ARGS+=	--disable-mpd
-.endif
-
-.if ${PORT_OPTIONS:MNCURSES}
-CONFIGURE_ARGS+=	--enable-ncurses
-.else
-CONFIGURE_ARGS+=	--disable-ncurses
-.endif
-
-.if ${PORT_OPTIONS:MRSS}
-LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl \
-			xml2:${PORTSDIR}/textproc/libxml2
-CONFIGURE_ARGS+=	--enable-rss
-USE_GNOME+=		glib20
-.else
-CONFIGURE_ARGS+=	--disable-rss
-.endif
-
-.if ${PORT_OPTIONS:MXFT}
-LIB_DEPENDS+=		Xft:${PORTSDIR}/x11-fonts/libXft
-CONFIGURE_ARGS+=	--enable-xft
-.else
-CONFIGURE_ARGS+=	--disable-xft
-.endif
-
-.if ${PORT_OPTIONS:MXMMS2}
-LIB_DEPENDS+=		xmmsclient:${PORTSDIR}/audio/xmms2
-CONFIGURE_ARGS+=	--enable-xmms2
-.else
-CONFIGURE_ARGS+=	--disable-xmms2
-.endif
-
-.if ${PORT_OPTIONS:MXOAP}
-LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl \
-			xml2:${PORTSDIR}/textproc/libxml2
-CONFIGURE_ARGS+=	--enable-weather-xoap
-.else
-CONFIGURE_ARGS+=	--disable-weather-xoap
+.if ${PORT_OPTIONS:MLUA_CAIRO} || ${PORT_OPTIONS:MLUA_IMLIB2}
+LUA_COMPS=		toluaxx
 .endif
 
 post-patch:
@@ -191,23 +127,18 @@ post-patch:
 		${WRKSRC}/src/imlib2.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/conky ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/conky.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/conky ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/conky.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${EXAMPLE_CONF_FILE} ${EXAMPLESDIR}/conkyrc.sample
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${EXAMPLE_CONF_FILE} ${STAGEDIR}${EXAMPLESDIR}/conkyrc.sample
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README AUTHORS ChangeLog TODO NEWS
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for i in docs.html variables.html config_settings.html
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
