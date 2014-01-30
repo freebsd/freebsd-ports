@@ -30,23 +30,6 @@ RUN_DEPENDS= \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Crypt::OpenPGP::ErrorHandler.3 Crypt::OpenPGP::Key.3 \
-		Crypt::OpenPGP::CFB.3 Crypt::OpenPGP::SKSessionKey.3 \
-		Crypt::OpenPGP::UserID.3 Crypt::OpenPGP::SessionKey.3 \
-		Crypt::OpenPGP::Words.3 Crypt::OpenPGP::PacketFactory.3 \
-		Crypt::OpenPGP::S2k.3 Crypt::OpenPGP.3 \
-		Crypt::OpenPGP::Signature.3 \
-		Crypt::OpenPGP::KeyBlock.3 Crypt::OpenPGP::MDC.3 \
-		Crypt::OpenPGP::Compressed.3 Crypt::OpenPGP::Armour.3 \
-		Crypt::OpenPGP::KeyRing.3 Crypt::OpenPGP::Plaintext.3 \
-		Crypt::OpenPGP::Buffer.3 Crypt::OpenPGP::Cipher.3 \
-		Crypt::OpenPGP::OnePassSig.3 Crypt::OpenPGP::Constants.3 \
-		Crypt::OpenPGP::Util.3 Crypt::OpenPGP::Digest.3 \
-		Crypt::OpenPGP::Ciphertext.3 Crypt::OpenPGP::Marker.3 \
-		Crypt::OpenPGP::Trust.3 Crypt::OpenPGP::Certificate.3 \
-		Crypt::OpenPGP::Message.3 Crypt::OpenPGP::KeyServer.3
-
-NO_STAGE=	yes
 post-patch:
 	@${RM} -f ${WRKSRC}/lib/Crypt/OpenPGP/Ciphertext.pm.orig
 

@@ -13,6 +13,13 @@
 %%SITE_PERL%%/auto/share/dist/Jifty-Plugin-OpenID/web/static/oidimg/FriendConnect.gif
 %%SITE_PERL%%/auto/share/dist/Jifty-Plugin-OpenID/web/static/oidimg/openid-icon-small.gif
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Jifty/Plugin/OpenID/.packlist
+%%PERL5_MAN3%%/Jifty::Plugin::OpenID::View.3.gz
+%%PERL5_MAN3%%/Jifty::Plugin::OpenID.3.gz
+%%PERL5_MAN3%%/Jifty::Plugin::OpenID::Action::VerifyOpenID.3.gz
+%%PERL5_MAN3%%/Jifty::Plugin::OpenID::Action::AuthenticateOpenID.3.gz
+%%PERL5_MAN3%%/Jifty::Plugin::OpenID::Mixin::Model::User.3.gz
+%%PERL5_MAN3%%/Jifty::Plugin::OpenID::Action::CreateOpenIDUser.3.gz
+%%PERL5_MAN3%%/Jifty::Plugin::OpenID::Dispatcher.3.gz
 @dirrm %%SITE_PERL%%/auto/share/dist/Jifty-Plugin-OpenID/po
 @dirrm %%SITE_PERL%%/auto/share/dist/Jifty-Plugin-OpenID/web/static/css
 @dirrm %%SITE_PERL%%/auto/share/dist/Jifty-Plugin-OpenID/web/static/oidimg

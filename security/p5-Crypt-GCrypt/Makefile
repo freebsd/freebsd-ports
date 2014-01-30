@@ -21,7 +21,4 @@ USE_PERL5=	configure
 CONFIGURE_ARGS+=	GCRYPTLIBPATH=${LOCALBASE}/lib \
 		GCRYPTINCPATH=${LOCALBASE}/include
 
-MAN3=		Crypt::GCrypt.3 Crypt::GCrypt::MPI.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Crypt/License/Notice.pm
 %%SITE_PERL%%/Crypt/License/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/License/.packlist
+%%PERL5_MAN3%%/Crypt::License.3.gz
+%%PERL5_MAN3%%/Crypt::License::Util.3.gz
+%%PERL5_MAN3%%/Crypt::License::Notice.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/License/
 @dirrm %%SITE_PERL%%/Crypt/License/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt

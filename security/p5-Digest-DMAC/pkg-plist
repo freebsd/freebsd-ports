@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Digest/DMAC.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/DMAC/.packlist
+%%PERL5_MAN3%%/Digest::DMAC.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/DMAC/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/
 @dirrmtry %%SITE_PERL%%/Digest/

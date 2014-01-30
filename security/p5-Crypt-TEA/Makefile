@@ -13,7 +13,4 @@ COMMENT=	Perl extension to Tiny Encryption Algorithm
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Crypt::TEA.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

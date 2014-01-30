@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Crypt/NULL.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/NULL/.packlist
+%%PERL5_MAN3%%/Crypt::NULL.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/NULL
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/Crypt

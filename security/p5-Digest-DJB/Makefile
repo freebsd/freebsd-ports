@@ -13,7 +13,4 @@ COMMENT=	Perl extension for D.J Bernstein's hash algorithm
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Digest::DJB.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

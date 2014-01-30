@@ -16,11 +16,8 @@ BUILD_DEPENDS=	\
 	p5-openxpki>=0:${PORTSDIR}/security/p5-openxpki
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	OpenXPKI::Client.3 \
-	OpenXPKI::Client::API.3
 USE_GMAKE=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

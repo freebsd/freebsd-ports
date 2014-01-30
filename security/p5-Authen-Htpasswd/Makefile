@@ -21,9 +21,4 @@ RUN_DEPENDS=	${COMMON_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Authen::Htpasswd.3 \
-	Authen::Htpasswd::User.3 \
-	Authen::Htpasswd::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -18,10 +18,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Crypt::Twofish_PP.3 \
-	Crypt::Twofish_PP::Key16.3 \
-	Crypt::Twofish_PP::Key24.3 \
-	Crypt::Twofish_PP::Key32.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

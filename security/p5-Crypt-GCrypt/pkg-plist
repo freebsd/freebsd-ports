@@ -3,6 +3,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/GCrypt/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/GCrypt/GCrypt.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/GCrypt/GCrypt.so
+%%PERL5_MAN3%%/Crypt::GCrypt.3.gz
+%%PERL5_MAN3%%/Crypt::GCrypt::MPI.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Crypt/GCrypt
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Crypt
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/GCrypt

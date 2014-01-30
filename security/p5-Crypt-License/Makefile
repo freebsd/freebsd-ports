@@ -13,7 +13,4 @@ COMMENT=	Perl extension to examine a license
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Crypt::License.3 Crypt::License::Util.3 Crypt::License::Notice.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

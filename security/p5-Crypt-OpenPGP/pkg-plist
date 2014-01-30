@@ -38,6 +38,35 @@
 %%SITE_PERL%%/Crypt/OpenPGP/Plaintext.pm
 %%SITE_PERL%%/Crypt/OpenPGP/Ciphertext.pm
 %%SITE_PERL%%/Crypt/OpenPGP/Signature/SubPacket.pm
+%%PERL5_MAN3%%/Crypt::OpenPGP::ErrorHandler.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::Key.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::CFB.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::SKSessionKey.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::UserID.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::SessionKey.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::Words.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::PacketFactory.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::S2k.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::Signature.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::KeyBlock.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::MDC.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::Compressed.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::Armour.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::KeyRing.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::Plaintext.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::Buffer.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::Cipher.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::OnePassSig.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::Constants.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::Util.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::Digest.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::Ciphertext.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::Marker.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::Trust.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::Certificate.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::Message.3.gz
+%%PERL5_MAN3%%/Crypt::OpenPGP::KeyServer.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenPGP
 @dirrm %%SITE_PERL%%/Crypt/OpenPGP/Key/Secret
 @dirrm %%SITE_PERL%%/Crypt/OpenPGP/Key/Public
