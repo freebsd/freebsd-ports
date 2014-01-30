@@ -3,38 +3,41 @@
 
 PORTNAME=	pathological
 PORTVERSION=	1.1.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Enriched clone of the game "Logical"
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pygame/__init__.py:${PORTSDIR}/devel/py-game
+LICENSE=	GPLv2
+
+RUN_DEPENDS=	${PYGAME}
+
+OPTIONS_DEFINE=	DOCS
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
-MAN6=		pathological.6
-MANCOMPRESSED=	yes
 
 DOC_FILES=	favicon.ico index.html
 
-NO_STAGE=	yes
+DESKTOP_ENTRIES="Pathological" \
+		"Logic game" \
+		"${DATADIR}/pathological.ico" \
+		"pathological" \
+		"Game;LogicGame;" \
+		false
+
 do-install:
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}; tar -cf - circuits graphics music sounds pathological.ico pathological.py pathological.xpm) | \
-		(cd ${DATADIR}; tar --unlink -xf -)
-	@printf "#!/bin/sh\ncd ${DATADIR} && \
+		(cd ${STAGEDIR}${DATADIR}; tar --unlink -xf -)
+	@${PRINTF} "#!/bin/sh\ncd ${DATADIR} && \
 		exec ${PYTHON_CMD} ${DATADIR}/pathological.py\n" > ${WRKDIR}/pathological.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/pathological.sh ${PREFIX}/bin/pathological
-.ifndef(NO_INSTALL_MANPAGES)
-	${INSTALL_MAN} ${WRKSRC}/${MAN6}.gz ${MAN6PREFIX}/man/man6/
-.endif
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/html/${file} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_SCRIPT} ${WRKDIR}/pathological.sh \
+		${STAGEDIR}${PREFIX}/bin/pathological
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6.gz ${STAGEDIR}${MANPREFIX}/man/man6
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES:S|^|${WRKSRC}/html/|g} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
