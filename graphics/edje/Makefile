@@ -3,7 +3,7 @@
 
 PORTNAME=	edje
 PORTVERSION=	1.7.9
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
@@ -26,7 +26,8 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=	--without-vim
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/lua >=/lua-${LUA_VER} >=/g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s/lua >=/lua-${LUA_VER} >=/g" \
+		-e 's/requirement_lua="lua"/requirement_lua="lua-${LUA_VER}"/g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -E -e "/^SUBDIRS[[:space:]]+=/s/utils//" \
 	    ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|= \$$(datadir)/\$$(PACKAGE)/examples|= $$(datadir)/examples/$$(PACKAGE)|' \
