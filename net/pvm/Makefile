@@ -3,7 +3,7 @@
 
 PORTNAME=	pvm
 PORTVERSION=	3.4.6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net parallel
 MASTER_SITES=	NL ftp://ftp.chg.ru/pub/prog/parallel/pvm3/
 MASTER_SITE_SUBDIR=	pvm3
@@ -22,7 +22,8 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/pvm3
 MAKE_ENV+=	PVM_ROOT=${WRKSRC} SHAREDLDFLAGS="-shared"
-PVM_ROOT=	${PREFIX}/lib/pvm
+PVM_ROOT_REL=	lib/pvm
+PVM_ROOT=	${PREFIX}/${PVM_ROOT_REL}
 REINPLACE_ARGS=	-i ""
 SUB_FILES=	pkg-message
 NOT_FOR_ARCHS=	powerpc
@@ -60,9 +61,9 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/lib/pvmd ${STAGEDIR}${PVM_ROOT}/lib
 	${INSTALL_SCRIPT} ${WRKSRC}/lib/pvmgetarch ${STAGEDIR}${PVM_ROOT}/lib
 	${INSTALL_SCRIPT} ${WRKSRC}/lib/aimk ${STAGEDIR}${PVM_ROOT}/lib
-	${LN} -sf ../lib/pvm ${STAGEDIR}${PREFIX}/bin/pvm
-	${LN} -sf ../lib/pvmd ${STAGEDIR}${PREFIX}/bin/pvmd
-	${LN} -sf ../lib/aimk ${STAGEDIR}${PREFIX}/bin/aimk
+	${LN} -sf ../${PVM_ROOT_REL}/lib/pvm ${STAGEDIR}${PREFIX}/bin
+	${LN} -sf ../${PVM_ROOT_REL}/lib/pvmd ${STAGEDIR}${PREFIX}/bin
+	${LN} -sf ../${PVM_ROOT_REL}/lib/aimk ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/lib/FREEBSD/libpvm3.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/FREEBSD/libfpvm3.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/lib/FREEBSD/libgpvm3.a ${STAGEDIR}${PREFIX}/lib
