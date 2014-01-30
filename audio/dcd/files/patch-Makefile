@@ -52,10 +52,10 @@
 -	install -m 755 -d ${PREFIX}/man/man1
 -	install -m 644 dcd.1 ${PREFIX}/man/man1
 -	install -m 755 -d ${HOME}/${CDI}
-+	install -m 755 -d ${STAGEDIR}${PREFIX}/bin
-+	install -m 755 -s dcd ${STAGEDIR}${PREFIX}/bin
-+	install -m 755 -d ${STAGEDIR}${PREFIX}/man/man1
-+	install -m 644 dcd.1 ${STAGEDIR}${PREFIX}/man/man1
++	install -m 755 -d ${DESTDIR}${PREFIX}/bin
++	install -m 755 -s dcd ${DESTDIR}${PREFIX}/bin
++	install -m 755 -d ${DESTDIR}${PREFIX}/man/man1
++	install -m 644 dcd.1 ${DESTDIR}${PREFIX}/man/man1
  
  depend:
  	makedepend -- ${CFLAGS} ${EXTRA_CFLAGS} -- ${SRCS}
