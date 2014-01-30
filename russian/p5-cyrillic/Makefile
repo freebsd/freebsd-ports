@@ -13,7 +13,4 @@ COMMENT=	Library for fast and easy Cyrillic text manipulation
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	cyrillic.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

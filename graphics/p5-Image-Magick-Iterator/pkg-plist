@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Iterator/.packlist
 %%SITE_PERL%%/Image/Magick/Iterator.pm
 %%SITE_PERL%%/Image/Magick/Iterator/PPM.pm
+%%PERL5_MAN3%%/Image::Magick::Iterator.3.gz
+%%PERL5_MAN3%%/Image::Magick::Iterator::PPM.3.gz
 @dirrmtry %%SITE_PERL%%/Image/Magick/Iterator
 @dirrmtry %%SITE_PERL%%/Image/Magick
 @dirrmtry %%SITE_PERL%%/Image

@@ -32,6 +32,8 @@ bin/tkscope
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Play/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Play/freebsd/freebsd.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Play/freebsd/freebsd.so
+%%PERL5_MAN3%%/Audio::Play.3.gz
+%%PERL5_MAN3%%/Audio::Data.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Play/freebsd
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Play
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Audio/Data

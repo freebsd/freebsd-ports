@@ -13,7 +13,4 @@ COMMENT=	Perl extension for GQview image metadata
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Image::MetaData::GQview.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

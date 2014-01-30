@@ -13,7 +13,4 @@ COMMENT=	Simple rgb.txt parsing class
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Color::Rgb.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

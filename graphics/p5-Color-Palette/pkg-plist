@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Color/Palette/Schema.pm
 %%SITE_PERL%%/Color/Palette/Types.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Color/Palette/.packlist
+%%PERL5_MAN3%%/Color::Palette.3.gz
+%%PERL5_MAN3%%/Color::Palette::Schema.3.gz
+%%PERL5_MAN3%%/Color::Palette::Types.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Color/Palette
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Color
 @dirrmtry %%SITE_PERL%%/Color/Palette

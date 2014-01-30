@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Data/Validate/Domain.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate/Domain/.packlist
+%%PERL5_MAN3%%/Data::Validate::Domain.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate/Domain
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data

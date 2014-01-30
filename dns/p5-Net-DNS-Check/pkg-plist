@@ -25,6 +25,32 @@
 %%SITE_PERL%%/Net/DNS/Check/Test.pm
 %%SITE_PERL%%/Net/DNS/Check.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/Check/.packlist
+%%PERL5_MAN3%%/Net::DNS::Check::Test::ns_count.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Test::soa_expire_compare.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::NSQuery.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Test::soa_master_compare.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Test::mx_present.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Test::mx_compare.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Test::soa_retry_compare.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Test::unknown.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Test::host_ip_vs_ip_orig.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Test::ns_vs_delegated.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Test::soa_serial_compare.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Test::soa_retry_range.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::HostsList.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Test::host_ip_private.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Test::soa_expire_range.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Config.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Test::soa_master_in_ns.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Test::host_syntax.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Test::soa_refresh_range.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Test::host_not_cname.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Test::ns_compare.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Host.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Test.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Test::soa_refresh_compare.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check::Test::soa_serial_syntax.3.gz
+%%PERL5_MAN3%%/Net::DNS::Check.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/Check
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net

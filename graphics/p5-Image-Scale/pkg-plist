@@ -2,6 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Scale/Scale.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Scale/Scale.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Scale/.packlist
+%%PERL5_MAN3%%/Image::Scale.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Scale
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Image

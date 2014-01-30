@@ -12,11 +12,9 @@ COMMENT=	Perl cartographic projections wrapper for Proj library
 
 LIB_DEPENDS=	proj:${PORTSDIR}/graphics/proj
 
-MAN3=		Geo::Proj4.3
 CONFIGURE_ENV=	GEOPROJ_FWTOOLS_DIR=${LOCALBASE}
 MAKE_ENV=	INC=-I${LOCALBASE}/include
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

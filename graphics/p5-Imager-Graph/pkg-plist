@@ -9,6 +9,16 @@
 %%SITE_PERL%%/Imager/Graph/Util.pm
 %%SITE_PERL%%/Imager/Graph/Vertical.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Graph/.packlist
+%%PERL5_MAN3%%/Imager::Graph.3.gz
+%%PERL5_MAN3%%/Imager::Graph::Area.3.gz
+%%PERL5_MAN3%%/Imager::Graph::Bar.3.gz
+%%PERL5_MAN3%%/Imager::Graph::Column.3.gz
+%%PERL5_MAN3%%/Imager::Graph::Horizontal.3.gz
+%%PERL5_MAN3%%/Imager::Graph::Line.3.gz
+%%PERL5_MAN3%%/Imager::Graph::Pie.3.gz
+%%PERL5_MAN3%%/Imager::Graph::StackedColumn.3.gz
+%%PERL5_MAN3%%/Imager::Graph::Util.3.gz
+%%PERL5_MAN3%%/Imager::Graph::Vertical.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager/Graph
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Imager
 @dirrm %%SITE_PERL%%/Imager/Graph

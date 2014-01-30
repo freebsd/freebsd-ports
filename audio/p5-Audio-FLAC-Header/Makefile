@@ -14,10 +14,7 @@ COMMENT=	Interface to FLAC header metadata
 LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac
 
 USES=		perl5
-NO_STAGE=	yes
 USE_PERL5=	configure
 CFLAGS+=	-I${LOCALBASE}/include
-
-MAN3=		Audio::FLAC::Header.3
 
 .include <bsd.port.mk>
