@@ -12,7 +12,7 @@ MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Low Level Virtual Machine
 
 DEPRECATED=	No remaining dependencies (except clang31)
-EXPIRATION_DATE=	2013-03-01
+EXPIRATION_DATE=	2014-03-01
 
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 .if defined(PACKAGE_BUILDING) || defined(MAINTAINER_MODE)
