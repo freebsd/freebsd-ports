@@ -16,8 +16,6 @@ LIB_DEPENDS=	libcdaudio.so:${PORTSDIR}/audio/libcdaudio
 
 USES=		gmake
 
-MAKE_ENV+=	STAGEDIR=${STAGEDIR}
-
 PLIST_FILES=	bin/dcd \
 		man/man1/dcd.1.gz
 
