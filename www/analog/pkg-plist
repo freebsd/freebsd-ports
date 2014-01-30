@@ -387,6 +387,7 @@ etc/analog.cfg-dist
 %%IMGDIR%%/sq8.png
 %%IMGDIR%%/sq9.png
 %%IMGDIR%%/sqg.png
+man/man1/analog.1.gz
 @dirrmtry %%IMGDIR%%
 @dirrmtry www/data
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/css/jreeves
