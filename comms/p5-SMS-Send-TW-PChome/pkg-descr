@@ -1,5 +1,4 @@
 SMS::Send::TW::PChome is a SMS::Send driver 
 which allows you to send messages through http://sms.pchome.com.tw/
 
-Author: Tsung-Han Yeh <snowfly@yuntech.edu.tw>
-WWW:	http://search.cpan.org/dist/SMS-Send-TW-PChome/
+WWW: http://search.cpan.org/dist/SMS-Send-TW-PChome/

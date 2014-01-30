@@ -15,7 +15,4 @@ RUN_DEPENDS=	p5-Math-Matrix>=0:${PORTSDIR}/math/p5-Math-Matrix
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Math::Geometry.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
