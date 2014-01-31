@@ -11,6 +11,8 @@ DISTNAME=	gltext-${PORTVERSION}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Portable font rendering library for C++
 
+BROKEN=		Fails to install
+
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_AUTOTOOLS=	libtool
