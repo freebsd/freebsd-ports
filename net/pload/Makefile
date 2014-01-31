@@ -3,7 +3,7 @@
 
 PORTNAME=	pload
 PORTVERSION=	0.9.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://opal.com/jr/freebsd/ports/net/pload/
@@ -15,10 +15,8 @@ COMMENT=	X11 program to display network traffic graphs
 USES=		imake:env
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 HAS_CONFIGURE=	yes
+LATE_INSTALL_ARGS=	install.man
 
-MAN1=		pload.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/pload
+PLIST_FILES=	bin/pload man/man1/pload.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
