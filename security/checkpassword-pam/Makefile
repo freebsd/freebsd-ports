@@ -11,8 +11,7 @@ COMMENT=	Implementation of checkpassword authentication program
 
 GNU_CONFIGURE=	yes
 
-MAN8=		checkpassword-pam.8
-PLIST_FILES=	bin/checkpassword-pam
+PLIST_FILES=	bin/checkpassword-pam \
+		man/man8/checkpassword-pam.8.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
