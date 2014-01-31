@@ -73,7 +73,7 @@ DRI_DRIVERS=	MACH64 RADEON SWRAST
 .endif # defined(WITH_NEW_XORG)
 
 # empty for unsupported arches
-DIR_DRIVERS+=
+DRI_DRIVERS+=
 
 .for _d in ${ALL_DRI_DRIVERS}
 .if ${DRI_DRIVERS:M${_d}}
