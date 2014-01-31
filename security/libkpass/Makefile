@@ -14,8 +14,7 @@ LICENSE=	GPLv3
 LIB_DEPENDS=	nettle:${PORTSDIR}/security/nettle
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		gettext
+USES=		gettext gmake
 USE_LDCONFIG=	yes
 CFLAGS+=	-Dbswap_32=bswap32 -Dbswap_16=bswap16 \
 		-I${LOCALBASE}/include
@@ -27,5 +26,4 @@ PLIST_FILES=	include/kpass.h \
 		lib/libkpass.la \
 		lib/libkpass.a
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
