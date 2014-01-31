@@ -46,6 +46,7 @@ libdata/pkgconfig/howl.pc
 %%DATADIR%%/help/txt_rec_iter.html
 %%DATADIR%%/help/txt_rec_str_iter-summary.html
 %%DATADIR%%/help/txt_rec_str_iter.html
+man/man8/mDNSResponder.8.gz
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
 @dirrm include/howl/salt
