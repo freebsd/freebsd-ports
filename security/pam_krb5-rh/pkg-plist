@@ -37,6 +37,9 @@ lib/pam_krb5.la
 %%NLS%%share/locale/uk/LC_MESSAGES/pam_krb5.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/pam_krb5.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pam_krb5.mo
+man/man5/pam_krb5.5.gz
+man/man8/pam_krb5.8.gz
+man/man8/pam_krb5_cchelper.8.gz
 %%NLS%%@dirrmtry share/locale/as/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES

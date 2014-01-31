@@ -12,9 +12,6 @@ MAINTAINER=	lx@FreeBSD.org
 COMMENT=	High-speed network authentication cracking tool
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=	gmake
 
-MAN1=	ncrack.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

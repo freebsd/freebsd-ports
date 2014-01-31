@@ -9,13 +9,11 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command line pam authentication tester
 
-MAN1=		pamtester.1
-
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	${CFLAGS}
-USE_GMAKE=	yes
+USES=	gmake
 
-PLIST_FILES=	bin/pamtester
+PLIST_FILES=	bin/pamtester \
+		man/man1/pamtester.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
