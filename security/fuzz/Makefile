@@ -12,11 +12,7 @@ COMMENT=	Tool for testing software by bombarding the program with random data
 
 GNU_CONFIGURE=	yes
 
-MAN1=		fuzz.1
-PLIST_FILES=	bin/fuzz
-
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
+PLIST_FILES=	bin/fuzz \
+		man/man1/fuzz.1.gz
 
 .include <bsd.port.mk>
