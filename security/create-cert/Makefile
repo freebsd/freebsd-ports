@@ -13,14 +13,12 @@ COMMENT=	Create openssl client key and certificates
 
 LICENSE=	BSD
 
-PLIST_FILES=	sbin/create-cert
-
-MAN8=		create-cert.8
+PLIST_FILES=	sbin/create-cert \
+		man/man8/create-cert.8.gz
 
 GNU_CONFIGURE=	yes
 
 verify: checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
