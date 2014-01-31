@@ -1,2 +1,3 @@
 %%SITE_PERL%%/Digest/SV1.pm
+%%PERL5_MAN3%%/Digest::SV1.3.gz
 @dirrmtry %%SITE_PERL%%/Digest/
