@@ -12,10 +12,9 @@ COMMENT=	A C library that handles the new Yahoo! Messenger protocol
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USES=        pathfix
-USE_GNOME=	glib20 gnomehack
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wall -ansi -pedantic||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-g -Wall||g ; \
