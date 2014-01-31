@@ -17,6 +17,10 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/X509_CRL/X509_CRL.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/X509_NAME/X509_NAME.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/X509_NAME/X509_NAME.so
+%%PERL5_MAN3%%/Crypt::OpenSSL::CA.3.gz
+%%PERL5_MAN3%%/Crypt::OpenSSL::CA::AlphabetSoup.3.gz
+%%PERL5_MAN3%%/Crypt::OpenSSL::CA::Inline::C.3.gz
+%%PERL5_MAN3%%/Crypt::OpenSSL::CA::Resources.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/X509_NAME
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/X509_CRL
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/OpenSSL/CA/X509V3_EXT
