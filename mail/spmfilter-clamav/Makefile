@@ -2,35 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	spmfilter-clamav
-PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTVERSION=	0.2.3
 CATEGORIES=	mail
-MASTER_SITES=	http://www.spmfilter.org/attachments/download/59/
+MASTER_SITES=	http://www.spmfilter.org/files/
 
 MAINTAINER=	ast@treibsand.com
 COMMENT=	ClamAV plugin for spmfilter
 
-BUILD_DEPENDS=	spmfilter>=0.4:${PORTSDIR}/mail/spmfilter
-
-RUN_DEPENDS=	spmfilter>=0.4:${PORTSDIR}/mail/spmfilter
+BUILD_DEPENDS=	spmfilter>=0.6:${PORTSDIR}/mail/spmfilter
+RUN_DEPENDS=	spmfilter>=0.6:${PORTSDIR}/mail/spmfilter
 
 USES=		cmake pkgconfig
-CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
+CMAKE_ARGS+=	--no-warn-unused-cli \
+		-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
 		-DCMAKE_LIBRARY_PATH="${LOCALBASE}/lib"
 
 USE_LDCONFIG=	${PREFIX}/lib/spmfilter
 
 OPTIONS_DEFINE=	DEBUG
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDEBUG}
-CMAKE_ARGS+=    -DENABLE_DEBUG=TRUE
-.endif
-
-MAN1=           ${PORTNAME}.1
-MANCOMPRESSED=  yes
+DEBUG_CMAKE_ON=	-DENABLE_DEBUG=TRUE
 
 PORTDOCS=	*
 
@@ -39,9 +30,8 @@ post-patch:
 		${WRKSRC}/cmake/Modules/SMFMacros.cmake
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m 555 -d ${DOCSDIR}/contrib
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/contrib/virus-notify.txt ${DOCSDIR}/contrib
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/contrib
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/contrib/virus-notify.txt ${STAGEDIR}${DOCSDIR}/contrib
+
 .include <bsd.port.mk>

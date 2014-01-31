@@ -1,3 +1,6 @@
 lib/spmfilter/libclamav.so
-lib/spmfilter/libclamav.so.0.1.1
+lib/spmfilter/libclamav.so.0.2
+lib/spmfilter/libclamav.so.0.2.3
+man/man1/spmfilter-clamav.1.gz
 @dirrmtry lib/spmfilter
+
