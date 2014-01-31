@@ -11,29 +11,22 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to wake up Wake-On-LAN compliant computers
 
 USES=		perl5
-GNU_CONFIGURE=		yes
+GNU_CONFIGURE=	yes
 USE_PERL5=	build
-CPPFLAGS+=		-I${LOCALBASE}/include
-LDFLAGS+=		-L${LOCALBASE}/lib
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		wol.1
 INFO=		wol
 DOCS=		AUTHORS NEWS README TODO
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext iconv
-PLIST_SUB=	NLS=""
-.else
-CONFIGURE_ARGS=	--disable-nls
-PLIST_SUB=	NLS="@comment "
-.endif
+OPTIONS_DEFINE=	DOCS NLS
 
-.if ${PORT_OPTIONS:MDOCS}
+OPTIONS_SUB=	yes
+NLS_USES=	gettext iconv
+NLS_CONFIGURE_OFF=	--disable-nls
+
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
