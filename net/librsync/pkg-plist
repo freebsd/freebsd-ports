@@ -5,3 +5,5 @@ lib/librsync.a
 lib/librsync.la
 lib/librsync.so
 lib/librsync.so.1
+man/man1/rdiff.1.gz
+man/man3/librsync.3.gz
