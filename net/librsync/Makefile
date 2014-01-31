@@ -13,7 +13,7 @@ COMMENT=	Library for delta compression of streams
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
+USES=		gmake
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -21,8 +21,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-shared --disable-trace
 USE_LDCONFIG=	yes
 
-MAN1=	rdiff.1
-MAN3=	librsync.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
