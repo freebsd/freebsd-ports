@@ -12,12 +12,11 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	TCP Traffic Analyzer
 
 GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/yconalyzer
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-NO_STAGE=	yes
+USES=		gmake
 
-MAN8=		yconalyzer.8
+PLIST_FILES=	bin/yconalyzer \
+		man/man8/yconalyzer.8.gz
 
 pre-install:
 	${CHMOD} a+x ${WRKSRC}/install-sh
