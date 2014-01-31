@@ -11,6 +11,8 @@ DISTFILES=	# none
 MAINTAINER=	tj@FreeBSD.org
 COMMENT=	A Python script to managing merges in a Subversion repository
 
+BROKEN=		Tries to fetch during extract phase
+
 RUN_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion16
 
 USE_BZIP2=	yes
