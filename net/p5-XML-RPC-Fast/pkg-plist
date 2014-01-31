@@ -17,10 +17,6 @@
 %%PERL5_MAN3%%/XML::RPC::UA::AnyEventSync.3.gz
 %%PERL5_MAN3%%/XML::RPC::UA::Curl.3.gz
 %%PERL5_MAN3%%/XML::RPC::UA::LWP.3.gz
-@dirrmtry blib/script
-@dirrmtry %%SITE_PERL%%/auto/XML/RPC/Fast
-@dirrmtry %%SITE_PERL%%/auto/XML/RPC
-@dirrmtry %%SITE_PERL%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/RPC/UA
 @dirrmtry %%SITE_PERL%%/XML/RPC/Enc
 @dirrmtry %%SITE_PERL%%/XML/RPC
