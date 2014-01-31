@@ -12,6 +12,8 @@ DISTNAME=	openchange-${PORTVERSION}-${CODENAME}
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Open Source implementation of Microsoft Exchange protocols
 
+BROKEN=		Does not compile
+
 BUILD_DEPENDS=	${HOSTCONFIG}:${PORTSDIR}/net/samba4 \
 		pidl:${PORTSDIR}/devel/p5-Parse-Pidl
 LIB_DEPENDS=	libical.so:${PORTSDIR}/devel/libical \
