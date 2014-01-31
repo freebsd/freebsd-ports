@@ -1,2 +1,3 @@
 %%SITE_PERL%%/Class/Mix.pm
+%%PERL5_MAN3%%/Class::Mix.3.gz
 @dirrmtry %%SITE_PERL%%/Class
