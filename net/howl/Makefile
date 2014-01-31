@@ -24,9 +24,6 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
-MAN8=		mDNSResponder.8
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-pthread||g' ${WRKSRC}/configure
 
