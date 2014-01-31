@@ -12,6 +12,12 @@ bin/getnameinfo
 %%OLD_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket
 %%OLD_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Socket/GetAddrInfo
 %%OLD_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Socket
+%%PERL5_MAN3%%/Socket::GetAddrInfo.3.gz
+%%PERL5_MAN3%%/Socket::GetAddrInfo::Emul.3.gz
+%%PERL5_MAN3%%/Socket::GetAddrInfo::Socket6api.3.gz
+%%PERL5_MAN3%%/Socket::GetAddrInfo::Strict.3.gz
+man/man1/getaddrinfo.1.gz
+man/man1/getnameinfo.1.gz
 %%NEW_PERL%%%%SITE_PERL%%/Socket/GetAddrInfo.pm
 %%NEW_PERL%%%%SITE_PERL%%/Socket/GetAddrInfo/Core.pm
 %%NEW_PERL%%%%SITE_PERL%%/Socket/GetAddrInfo/Emul.pm

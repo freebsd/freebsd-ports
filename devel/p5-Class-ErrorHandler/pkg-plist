@@ -1,2 +1,3 @@
 %%SITE_PERL%%/Class/ErrorHandler.pm
+%%PERL5_MAN3%%/Class::ErrorHandler.3.gz
 @dirrmtry %%SITE_PERL%%/Class

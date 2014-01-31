@@ -21,10 +21,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Net::Google::Calendar.3 Net::Google::Calendar::Base.3 \
-		Net::Google::Calendar::Calendar.3 Net::Google::Calendar::Comments.3 \
-		Net::Google::Calendar::Entry.3 Net::Google::Calendar::FeedLink.3 \
-		Net::Google::Calendar::Person.3 Net::Google::Calendar::WebContent.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
