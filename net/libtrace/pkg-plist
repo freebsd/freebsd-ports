@@ -188,4 +188,20 @@ lib/libwandio.a
 lib/libwandio.la
 lib/libwandio.so
 lib/libwandio.so.1
+man/man1/traceanon.1.gz
+man/man1/traceconvert.1.gz
+man/man1/tracediff.1.gz
+man/man1/traceends.1.gz
+man/man1/tracefilter.1.gz
+man/man1/tracemerge.1.gz
+man/man1/tracepktdump.1.gz
+man/man1/tracereplay.1.gz
+man/man1/tracereport.1.gz
+man/man1/tracertstats.1.gz
+man/man1/tracesplit.1.gz
+man/man1/tracesplit_dir.1.gz
+man/man1/tracestats.1.gz
+man/man1/tracesummary.1.gz
+man/man1/tracetop.1.gz
+man/man1/tracetopends.1.gz
 @dirrm lib/libpacketdump
