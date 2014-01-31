@@ -58,7 +58,6 @@
     SUBDIR += linux-eagle5
     SUBDIR += logisim
     SUBDIR += magic
-    SUBDIR += mars
     SUBDIR += meshdev
     SUBDIR += meshlab
     SUBDIR += netgen

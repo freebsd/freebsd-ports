@@ -5424,3 +5424,4 @@ multimedia/vdr-plugin-softdevice||2014-01-31|Has expired: Broken after ffmpeg up
 sysutils/mbmon|sysutils/xmbmon|2014-01-31|Has expired: Use sysutils/xmbmon instead. This port will be removed soon
 dns/bind96||2014-01-31|Has expired: EOL in January 2014, consider moving to Bind 9.8 or 9.9
 x11-drivers/xf86-video-nouveau||2014-01-31|Has expired: Not supported, missing kernel support. use the nvidia driver.
+cad/mars||2014-01-31|Removed, abandonware, no releases in the past 20 years
