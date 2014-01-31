@@ -16,10 +16,6 @@ COMMENT=	Yet another Ming module for Ruby built with Japanese support
 
 LIB_DEPENDS=	ming:${PORTSDIR}/japanese/ming
 
-BROKEN=		fails to build
-DEPRECATED=	Broken for more than 6 month
-EXPIRATION_DATE=	2014-02-27
-
 RUBY_MING_VERSION=	0.1.6
 
 USE_RUBY=	yes
