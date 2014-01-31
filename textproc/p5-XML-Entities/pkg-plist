@@ -3,6 +3,10 @@ bin/download-entities.pl
 %%SITE_PERL%%/XML/Entities.pm
 %%SITE_PERL%%/XML/Entities/Data.pm
 %%SITE_PERL%%/XML/Entities/Data.pod
+%%PERL5_MAN3%%/XML::Entities.3pm.gz
+%%PERL5_MAN3%%/XML::Entities::Data.3pm.gz
+%%PERL5_MAN3%%/download-entities.pl.3pm.gz
+man/man1/download-entities.pl.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Entities
 @dirrm %%SITE_PERL%%/XML/Entities
 @dirrmtry %%SITE_PERL%%/XML
