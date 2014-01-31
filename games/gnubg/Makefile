@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.c-s.li/ports/ \
 		http://files.gnubg.org/media/sources/
 DISTFILES=	gnubg-release-${PORTVERSION}-sources.tar.gz
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	GNU Backgammon
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
