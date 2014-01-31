@@ -38,9 +38,12 @@ PORTDOCS=	AUTHORS ChangeLog README
 
 OPTIONS_DEFINE=	DOCS
 
+# Wrong versioning upstream
+PORTSCOUT=	ignore:1
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
-		${STAGEDIR}${PREFIX}/share/applications/
+		${STAGEDIR}${DESKTOPDIR}
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
