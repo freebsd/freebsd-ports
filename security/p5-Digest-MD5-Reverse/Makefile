@@ -13,7 +13,4 @@ COMMENT=	Perl extension that looks for MD5 hashes in several databases
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	Digest::MD5::Reverse.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
