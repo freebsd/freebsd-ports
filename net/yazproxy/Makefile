@@ -15,7 +15,4 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-shared --with-yazpp=${LOCALBASE}/bin
 USE_LDCONFIG=	yes
 
-MAN8=		yazproxy.8
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

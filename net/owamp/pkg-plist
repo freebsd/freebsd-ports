@@ -28,4 +28,15 @@ include/I2util/table.h
 include/I2util/util.h
 lib/libI2util.a
 lib/libowamp.a
+man/man1/aespasswd.1.gz
+man/man1/owfetch.1.gz
+man/man1/owping.1.gz
+man/man1/owstats.1.gz
+man/man1/owup.1.gz
+man/man1/pfstore.1.gz
+man/man1/powstream.1.gz
+man/man5/owampd.conf.5.gz
+man/man5/owampd.limits.5.gz
+man/man5/owampd.pfs.5.gz
+man/man8/owampd.8.gz
 @dirrm include/I2util

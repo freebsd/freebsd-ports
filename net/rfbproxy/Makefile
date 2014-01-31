@@ -13,8 +13,8 @@ GNU_CONFIGURE=	yes
 
 USE_BZIP2=	yes
 
-MAN1=		rfbproxy.1
-PLIST_FILES=	bin/rfbproxy
+PLIST_FILES=	bin/rfbproxy \
+		man/man1/rfbproxy.1.gz
 
-NO_STAGE=	yes
+
 .include <bsd.port.mk>

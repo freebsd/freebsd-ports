@@ -129,6 +129,12 @@ lib/libsofia-sip-ua.so
 lib/libsofia-sip-ua.so.6
 libdata/pkgconfig/sofia-sip-ua-glib.pc
 libdata/pkgconfig/sofia-sip-ua.pc
+man/man1/addrinfo.1.gz
+man/man1/localinfo.1.gz
+man/man1/sip-date.1.gz
+man/man1/sip-dig.1.gz
+man/man1/sip-options.1.gz
+man/man1/stunc.1.gz
 @dirrm include/sofia-sip-1.12/sofia-resolv
 @dirrm include/sofia-sip-1.12/sofia-sip
 @dirrm include/sofia-sip-1.12

@@ -15,14 +15,11 @@ CONFLICTS=	rexx-imc-* oorexx-[0-9]*
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 USE_RC_SUBR=	rxstack
 
-MAN1=	regina.1 regina-config.1 rxqueue.1 rxstack.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|-pthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
 
