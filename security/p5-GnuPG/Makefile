@@ -15,10 +15,4 @@ LICENSE=	GPLv2
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	GnuPG.3 \
-	GnuPG::Tie.3
-
-MAN1=	gpgmailtunl.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
