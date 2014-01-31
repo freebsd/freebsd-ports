@@ -3,6 +3,7 @@
 
 PORTNAME=	sqlite3
 PORTVERSION=	3.8.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/2013/ http://www2.sqlite.org/2013/ http://www3.sqlite.org/2013/
 DISTNAME=	sqlite-autoconf-3080200
@@ -65,7 +66,9 @@ RTREEG_DESC=		Index type for range queries
 RTREE_DESC=		Enable R*Tree module
 RTREE_INT_DESC=		Store 32-bit sig int (no float) coordinates
 
-OPTIONS_DEFAULT=	FTS4 URI METADATA SECURE_DELETE UNLOCK_NOTIFY THREADS EXTENSION TS1
+OPTIONS_DEFAULT=	FTS4 URI METADATA SECURE_DELETE UNLOCK_NOTIFY THREADS EXTENSION TS1 RTREE
+# SECURE_DELETE, UNLOCK_NOTIFY used by www/firefox, www/libxul
+# RTREE used by graphics/mapnik, databases/spatialite
 
 PLIST_FILES=	bin/sqlite3 include/sqlite3.h include/sqlite3ext.h \
 		lib/libsqlite3.a lib/libsqlite3.la lib/libsqlite3.so \
