@@ -20,5 +20,4 @@ USES=		gmake
 USE_CSTD=	gnu89
 CFLAGS+=	-fPIC
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
