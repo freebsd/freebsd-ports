@@ -11,14 +11,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dirkx@webweaving.org
 COMMENT=	RFC1413 auth/identd daemon with fixed fake reply
 
-MAN8=		widentd.8
-MANCOMPRESSED=	yes
-PLIST_FILES=	sbin/widentd
+PLIST_FILES=	sbin/widentd \
+		man/man8/widentd.8.gz
 USE_RC_SUBR=	widentd
 
 MAKE_ENV+=	BINDIR="${PREFIX}/sbin" MANDIR="${PREFIX}/man/man"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"
