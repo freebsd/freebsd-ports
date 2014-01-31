@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/doc/license.txt
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 ARCH_SUFX=	${ARCH:S/i386//:S/amd/_/}
-USES=		kmod
+USES=		kmod uidfix
 USE_XORG=	xorg-server
 USE_GL=		gl
 USE_LDCONFIG=	yes
@@ -52,6 +52,20 @@ ONLY_FOR_ARCHS=	i386
 
 .if ${NVVERSION} <= 1904200
 EXTRA_PATCHES=	${FILESDIR}/legacy-patch-nvidia.lib.mk
+.else
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-mk__nvidia.lib.mk
+.endif
+
+.if ${NVVERSION} >= 3312000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-x11__driver__Makefile
+.else
+EXTRA_PATCHES+=	${FILESDIR}/legacy-patch-x11__driver__Makefile
+.endif
+
+.if ${OSVERSION} >= 1000000
+.if ${NVVERSION} == 1731435 || ${NVVERSION} == 718615
+BROKEN=	does not compile
+.endif
 .endif
 
 # Fix recent arbitrary memory access vulnerability in legacy drivers
@@ -78,7 +92,6 @@ OPTIONS_DEFINE+=	WBINVD
 WBINVD_DESC=		Flush CPU caches directly with WBINVD
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PLIST_SUB+=	LINUXBASE=${LINUXBASE} SHLIB_VERSION=${PORTVERSION} \
@@ -92,10 +105,6 @@ PLIST_SUB+=	LINUX=""
 PLIST_SUB+=	LINUX="@comment "
 # Propagate WITHOUT_LINUX variable down to inner Makefiles
 MAKE_ENV+=	WITHOUT_LINUX=yes
-.endif
-
-.if ${OSVERSION} < 702106 && ${NVVERSION} >= 1952200
-IGNORE=		requires fairly recent FreeBSD-STABLE, or FreeBSD-CURRENT
 .endif
 
 .if ${NVVERSION} < 1952200
@@ -217,10 +226,11 @@ pre-su-install:
 # While this port silently assumes PREFIX == LOCALBASE, at least try to
 # pretend we support different paths thereof and make sure these directories
 # exist
-	@cd ${PREFIX}/${MODULESDIR} && ${MKDIR} drivers extensions
+	@cd ${STAGEDIR}${PREFIX} && ${MKDIR} ${MODULESDIR}
+	@cd ${STAGEDIR}${PREFIX}/${MODULESDIR} && ${MKDIR} drivers extensions
 
 post-install: .SILENT
-	${INSTALL_SCRIPT} ${WRKSRC}/obj/nvidia-bug-report.sh ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/obj/nvidia-bug-report.sh ${STAGEDIR}${PREFIX}/bin
 # pkg-plist is already overbloated, so use these hacks instead of PLIST_SUB's
 .if ${NVVERSION} < 817400
 	${REINPLACE_CMD} -e '/libnvidia-cfg/d' ${TMPPLIST}
@@ -241,18 +251,14 @@ post-install: .SILENT
 .if ${NVVERSION} >= 3101900
 	${REINPLACE_CMD} -e '/libXvMCNVIDIA/d' ${TMPPLIST}
 .else	# some applications need this symlink (see PR ports/72877)
-	${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
+	${LN} -sf libXvMCNVIDIA.so.1 ${STAGEDIR}${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
 .endif
-.if ${NVVERSION} < 3311300
+.if ${NVVERSION} < 3311300 || ${ARCH} == amd64
 	${REINPLACE_CMD} -E '/lib(nvidia-)?(EGL|eglcore|GLESv|glsi)/d' \
 		${TMPPLIST}
 .endif
 .if ${NVVERSION} >= 1952200
 	${REINPLACE_CMD} -e '/does not support PAE/,+1d' ${PKGMESSAGE}
 .endif
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	${ECHO_MSG}
-	${CAT} ${PKGMESSAGE}
-	${ECHO_MSG}
 
 .include <bsd.port.post.mk>
