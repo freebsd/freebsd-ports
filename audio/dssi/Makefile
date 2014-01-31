@@ -10,8 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	API for audio processing plugins
 
-LICENSE=	BSD LGPL21
-LICENSE_COMB=	multi
+LICENSE=	LGPL21
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 LIB_DEPENDS=	libdssialsacompat.so:${PORTSDIR}/audio/libdssialsacompat \
@@ -52,9 +51,9 @@ QT_NONSTANDARD=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/^lts_uidir/s|^|@HAVE_QT_TRUE@| ; \
-		 /^trivial_sampler_uidir/s|^|@HAVE_QT_TRUE@| ; \
-		 s|-ldl$$||' ${WRKSRC}/examples/Makefile.in
+		'/^lts_uidir/s|^|@HAVE_QT_TRUE@|; \
+		/^trivial_sampler_uidir/s|^|@HAVE_QT_TRUE@|; \
+		s|-ldl$$||' ${WRKSRC}/examples/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|-ldl$$||' ${WRKSRC}/jack-dssi-host/Makefile.in
 	@${REINPLACE_CMD} -e \
@@ -66,14 +65,20 @@ post-patch:
 .endif
 
 post-install:
+.for l in trivial_synth less_trivial_synth trivial_sampler karplong
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/dssi/${l}.so
+.endfor
+
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_PROGRAM} ${EXAMPLES_FILES1:S|^|${EXAMPLESSRCDIR}/|} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${EXAMPLES_FILES1:S|^|${EXAMPLESSRCDIR}/|} \
+		${STAGEDIR}${EXAMPLESDIR}
 
 .if ${PORT_OPTIONS:MQT4}
-	${INSTALL_PROGRAM} ${EXAMPLES_FILES2:S|^|${EXAMPLESSRCDIR}/|} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${EXAMPLES_FILES2:S|^|${EXAMPLESSRCDIR}/|} \
+		${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
