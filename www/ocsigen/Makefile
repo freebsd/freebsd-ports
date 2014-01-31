@@ -10,6 +10,8 @@ MASTER_SITES=	http://www.ocsigen.org/download/
 MAINTAINER=	jaapb@kerguelen.org
 COMMENT=	Web programming framework for OCaml
 
+BROKEN=		Does not build
+
 BUILD_DEPENDS=	ocaml-net>=2:${PORTSDIR}/www/ocaml-net \
 		${SA_DIR}/ssl/ssl.a:${PORTSDIR}/security/ocaml-ssl \
 		${SA_DIR}/lwt/lwt.a:${PORTSDIR}/devel/ocaml-lwt \
