@@ -163,6 +163,7 @@
     SUBDIR += gringo
     SUBDIR += grpn
     SUBDIR += gsl
+    SUBDIR += hexcalc
     SUBDIR += hs-Agda
     SUBDIR += hs-NumInstances
     SUBDIR += hs-categories
