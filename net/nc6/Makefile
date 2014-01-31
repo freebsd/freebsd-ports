@@ -11,21 +11,14 @@ MASTER_SITES=	ftp://ftp.deepspace6.net/pub/ds6/sources/nc6/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netcat clone with IPv6 support
 
-MAN1=	nc6.1
-USES=	iconv
+USES=		iconv
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	NLS
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=	gettext
+NLS_CONFIGURE_OFF=	--disable-nls
 
 .include <bsd.port.mk>
