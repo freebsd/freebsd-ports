@@ -15,9 +15,4 @@ LICENSE=	ART20
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		NetPacket.3 NetPacket::ARP.3 NetPacket::Ethernet.3 \
-		NetPacket::ICMP.3 NetPacket::IGMP.3 NetPacket::UDP.3\
-		NetPacket::IP.3 NetPacket::TCP.3 NetPacket::USBMon.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
