@@ -4,7 +4,7 @@
 
 PORTNAME=	avahi
 PORTVERSION=	0.6.31
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	net dns
 MASTER_SITES=	http://www.avahi.org/download/
 PKGNAMESUFFIX?=	-app
@@ -88,6 +88,7 @@ CONFIGURE_ARGS+=--enable-mono
 .else
 CONFIGURE_ARGS+=--disable-mono
 .endif
+CONFIGURE_ARGS+=--disable-stack-protector
 
 post-patch: avahi-post-patch
 
