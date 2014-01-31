@@ -1,7 +1,0 @@
-http://www.linuxtv.org/vdrwiki/index.php/Softdevice-plugin
-
-This VDR plugin is a MPEG2 decoder.
-It can be used as an output device for the vdr. Possible output devices are
-Xv, DirectFB, Vidix or a framebuffer.
-
-WWW: http://softdevice.berlios.de/
