@@ -1,3 +1,4 @@
+bin/bind9-config
 bin/dig
 bin/host
 bin/isc-config.sh
@@ -14,6 +15,7 @@ include/dns/byaddr.h
 include/dns/cache.h
 include/dns/callbacks.h
 include/dns/cert.h
+include/dns/client.h
 include/dns/compress.h
 include/dns/db.h
 include/dns/dbiterator.h
@@ -53,13 +55,13 @@ include/dns/rdatasetiter.h
 include/dns/rdataslab.h
 include/dns/rdatastruct.h
 include/dns/rdatatype.h
-include/dns/rpz.h
-include/dns/sdlz.h
 include/dns/request.h
 include/dns/resolver.h
 include/dns/result.h
 include/dns/rootns.h
+include/dns/rpz.h
 include/dns/sdb.h
+include/dns/sdlz.h
 include/dns/secalg.h
 include/dns/secproto.h
 include/dns/soa.h
@@ -67,6 +69,7 @@ include/dns/ssu.h
 include/dns/tcpmsg.h
 include/dns/time.h
 include/dns/tkey.h
+include/dns/tsec.h
 include/dns/tsig.h
 include/dns/ttl.h
 include/dns/types.h
