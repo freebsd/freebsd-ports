@@ -19,10 +19,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=	yara.1
-
-NO_STAGE=	yes
-
 pre-configure:
 	@cd ${WRKSRC} && ${SH} ./bootstrap.sh
 

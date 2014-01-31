@@ -5,3 +5,4 @@ lib/libyara.a
 lib/libyara.la
 lib/libyara.so
 lib/libyara.so.0
+man/man1/yara.1.gz
