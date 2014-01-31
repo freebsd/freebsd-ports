@@ -116,6 +116,10 @@ CONFIGURE_ARGS+=	--enable-threads
 CONFIGURE_ARGS+=	--disable-threads
 .endif
 
+.if ${PORT_OPTIONS:MRPZRRL_PATCH}
+BROKEN=	waiting on an updated patch
+.endif
+
 .if ${PORT_OPTIONS:MGSSAPI}
 .if defined(HEIMDAL_HOME)
 LDFLAGS+=		-L${LIBDIR} -lgssapi -lkrb5
