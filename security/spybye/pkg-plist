@@ -2,4 +2,5 @@ bin/spybye
 bin/spybye2html
 share/spybye/bad_patterns
 share/spybye/good_patterns
+man/man1/spybye.1.gz
 @dirrm share/spybye
