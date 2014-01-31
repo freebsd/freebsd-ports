@@ -12,14 +12,13 @@ COMMENT=	SMFv2/ARMS client library for C
 
 LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-NO_STAGE=	yes
 post-configure:
 	@${REINPLACE_CMD} 's|$${datarootdir}/doc/$${PACKAGE_TARNAME}|${DOCSDIR}|' \
 		${WRKSRC}/Makefile
