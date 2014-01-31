@@ -5,7 +5,9 @@ bin/gtkatlantic
 %%DATADIR%%/default.conf
 %%DATADIR%%/help.index
 %%DATADIR%%/houses.png
+%%DATADIR%%/icon16x16.ico
 %%DATADIR%%/icon16x16.xpm
+%%DATADIR%%/icon32x32.ico
 %%DATADIR%%/icon32x32.xpm
 %%DATADIR%%/interface.xml
 %%DATADIR%%/logo.png
@@ -21,6 +23,13 @@ bin/gtkatlantic
 %%DATADIR%%/themes/generic_gradient/theme.conf
 %%DATADIR%%/themes/generic_gradient/tokens.png
 %%DATADIR%%/tokens.png
+share/icons/hicolor/128x128/apps/gtkatlantic.png
+share/icons/hicolor/32x32/apps/gtkatlantic.png
+share/icons/hicolor/48x48/apps/gtkatlantic.png
+share/icons/hicolor/64x64/apps/gtkatlantic.png
+share/icons/hicolor/72x72/apps/gtkatlantic.png
+share/icons/hicolor/96x96/apps/gtkatlantic.png
+share/pixmaps/gtkatlantic.png
 @dirrm %%DATADIR%%/themes/generic_gradient
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
