@@ -3,6 +3,7 @@
 
 PORTNAME=	application
 PORTVERSION=	1.2.9
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ COMMENT=	Basic building blocks for python applications
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_PKGNAME=python_${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
