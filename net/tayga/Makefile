@@ -11,11 +11,7 @@ COMMENT=	Userland stateless NAT64 daemon
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
-MAN5=		tayga.conf.5
-MAN8=		tayga.8
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
