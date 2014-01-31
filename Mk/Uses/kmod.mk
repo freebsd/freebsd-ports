@@ -30,10 +30,7 @@ KMODDIR?=	/boot/modules
 KMODDIR=	/boot/modules
 .endif
 PLIST_SUB+=	KMODDIR="${KMODDIR:C,^/,,}"
-MAKE_ENV+=	KMODDIR="${KMODDIR}" SYSDIR="${SRC_BASE}/sys"
-.if !defined(NO_STAGE)
-MAKE_ENV+=	NO_XREF=yes
-.endif
+MAKE_ENV+=	KMODDIR="${KMODDIR}" SYSDIR="${SRC_BASE}/sys" NO_XREF=yes
 
 .endif
 
@@ -47,9 +44,6 @@ ${STAGEDIR}${KMODDIR}:
 kmod-post-install:
 	@${ECHO_CMD} "@exec /usr/sbin/kldxref ${KMODDIR}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec /usr/sbin/kldxref ${KMODDIR}" >> ${TMPPLIST}
-.if defined(NO_STAGE)
-	/usr/sbin/kldxref ${KMODDIR}
-.endif
 .if ${KMODDIR} != /boot/modules
 	@${ECHO_CMD} "@unexec rmdir -p ${KMODDIR} 2>/dev/null || true" \
 		>> ${TMPPLIST}
