@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/GNOME%20Sensors%20Applet%20Version%20${
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME applet displaying hardware sensor values
 
-RUN_DEPENDS=	mbmon:${PORTSDIR}/sysutils/mbmon \
+RUN_DEPENDS=	mbmon:${PORTSDIR}/sysutils/xmbmon \
 		smartctl:${PORTSDIR}/sysutils/smartmontools
 
 USES=		pathfix pkgconfig
