@@ -19,13 +19,9 @@ USE_LDCONFIG=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=	zephyr.1 zaway.1 zctl.1 zleave.1 zlocate.1 znol.1 zwrite.1 zwgc.1
-MAN8=	zhm.8 zephyrd.8 zstat.8 zshutdown_notify.8
-
 OPTIONS_DEFINE=		HEIMDAL
 HEIMDAL_DESC=		Link against libss.so from security/heimdal
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MHEIMDAL}

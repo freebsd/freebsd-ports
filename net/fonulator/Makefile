@@ -19,10 +19,9 @@ BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet\
 		${LOCALBASE}/lib/libfb.a:${PORTSDIR}/net/libfb
 LIBNET_CONFIG=	${LOCALBASE}/bin/libnet11-config
 
-PLIST_FILES=	bin/fonulator
-MAN1=		fonulator.1
+PLIST_FILES=	bin/fonulator \
+		man/man1/fonulator.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD}\
 	    -e 's,/usr/lib/libargtable2.a,${LOCALBASE}/lib/libargtable2.a,'\

@@ -19,6 +19,18 @@ sbin/zephyrd
 sbin/zhm
 %%DATADIR%%/zwgc.desc
 %%DATADIR%%/zwgc_resources
+man/man1/zaway.1.gz
+man/man1/zctl.1.gz
+man/man1/zephyr.1.gz
+man/man1/zleave.1.gz
+man/man1/zlocate.1.gz
+man/man1/znol.1.gz
+man/man1/zwgc.1.gz
+man/man1/zwrite.1.gz
+man/man8/zephyrd.8.gz
+man/man8/zhm.8.gz
+man/man8/zshutdown_notify.8.gz
+man/man8/zstat.8.gz
 @exec mkdir -p %D/etc/zephyr/acl
 @dirrm etc/zephyr/acl
 @dirrm etc/zephyr
