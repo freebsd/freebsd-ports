@@ -20,10 +20,4 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	Net::SSH::Mechanize.3 \
-	Net::SSH::Mechanize::ConnectParams.3 \
-	Net::SSH::Mechanize::Multi.3 \
-	Net::SSH::Mechanize::Session.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

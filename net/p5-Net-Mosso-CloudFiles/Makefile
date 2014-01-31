@@ -27,12 +27,4 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::Mosso::CloudFiles.3 \
-		Net::Mosso::CloudFiles::Container.3 \
-		Net::Mosso::CloudFiles::Object.3
-
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.mk>

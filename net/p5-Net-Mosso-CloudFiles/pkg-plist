@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Net/Mosso/CloudFiles.pm
 %%SITE_PERL%%/Net/Mosso/CloudFiles/Container.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Mosso/CloudFiles/.packlist
+%%PERL5_MAN3%%/Net::Mosso::CloudFiles.3.gz
+%%PERL5_MAN3%%/Net::Mosso::CloudFiles::Container.3.gz
+%%PERL5_MAN3%%/Net::Mosso::CloudFiles::Object.3.gz
 @dirrm %%SITE_PERL%%/Net/Mosso/CloudFiles
 @dirrm %%SITE_PERL%%/Net/Mosso
 @dirrmtry %%SITE_PERL%%/Net
