@@ -10,10 +10,9 @@ MAINTAINER=	allan@saddi.com
 COMMENT=	Simple file hash program utilizing SHA-1, SHA-256, SHA-384, SHA-512
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=	gmake
 
-MAN1=		sha.1
-PLIST_FILES=	bin/sha
+PLIST_FILES=	bin/sha \
+		man/man1/sha.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
