@@ -1,4 +1,5 @@
 %%SITE_PERL%%/WebService/Dropbox.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService-Dropbox/.packlist
+%%PERL5_MAN3%%/WebService::Dropbox.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService-Dropbox
 @dirrmtry %%SITE_PERL%%/WebService
