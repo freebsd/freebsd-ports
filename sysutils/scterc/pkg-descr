@@ -1,0 +1,10 @@
+Modern hard drives allow to set the amount of time a hard disk is
+allowed to spend recovering from a read or write error. This feature
+is called ERC (error recovery control, usually in Seagate), TLER
+(time-limited error recovery, usually on Western Digital) or CCLT
+(command completion time limit, usually on Samsung or Hitachi).
+
+This rc.d script allows to set these valus on system startup to
+tune disks for RAID usage.
+
+WWW: https://github.com/AMDmi3/scterc-rc.d
