@@ -10,6 +10,8 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/mail/zmailer/src/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Fully functional fast robust SMTP server and transport agent
 
+BROKEN=		Fails to install
+
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.* sendmail-8.* sendmail-*-8.* smail-3.*
 
 OPTIONS_DEFINE=	SSL
