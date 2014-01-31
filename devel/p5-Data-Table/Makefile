@@ -13,7 +13,4 @@ COMMENT=	Data type related to database tables, HTML table displays, etc
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Data::Table.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

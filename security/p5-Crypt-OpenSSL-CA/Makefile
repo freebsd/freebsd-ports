@@ -26,10 +26,4 @@ TEST_DEPENDS=	p5-Test-Group>=0:${PORTSDIR}/devel/p5-Test-Group
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Crypt::OpenSSL::CA.3 \
-		Crypt::OpenSSL::CA::AlphabetSoup.3 \
-		Crypt::OpenSSL::CA::Inline::C.3 \
-		Crypt::OpenSSL::CA::Resources.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
