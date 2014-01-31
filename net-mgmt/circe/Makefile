@@ -10,6 +10,8 @@ MASTER_SITES=	http://bws.berkeley.edu/ports/
 MAINTAINER=	circe-port-maintainers@bws.net.berkeley.edu
 COMMENT=	A captive portal-based network access control solution in perl
 
+BROKEN=		Does not build
+
 LICENSE=	BSD
 
 RUN_DEPENDS=	p5-Net-IP-Match-XS>=0:${PORTSDIR}/net-mgmt/p5-Net-IP-Match-XS \
