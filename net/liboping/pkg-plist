@@ -4,3 +4,13 @@ lib/liboping.la
 lib/liboping.a
 lib/liboping.so
 lib/liboping.so.0
+man/man3/liboping.3.gz
+man/man3/ping_construct.3.gz
+man/man3/ping_get_error.3.gz
+man/man3/ping_host_add.3.gz
+man/man3/ping_iterator_get.3.gz
+man/man3/ping_iterator_get_context.3.gz
+man/man3/ping_iterator_get_info.3.gz
+man/man3/ping_send.3.gz
+man/man3/ping_setopt.3.gz
+man/man8/oping.8.gz
