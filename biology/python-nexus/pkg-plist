@@ -1,9 +1,0 @@
-bin/nexus_randomise.py
-bin/nexus_combine_nexus.py
-bin/nexus_deinterleave.py
-bin/nexus_nexusmanip.py
-bin/nexus_treemanip.py
-bin/nexus_describecharacter.py
-bin/nexus_describetaxa.py
-bin/nexus_tally.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
