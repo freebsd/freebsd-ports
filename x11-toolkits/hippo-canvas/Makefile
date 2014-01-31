@@ -27,7 +27,6 @@ CONFIGURE_ARGS=	--enable-python
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=	--disable-gtk-doc
-NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's/^SUBDIRS =.*$$/SUBDIRS = ./g' ${WRKSRC}/Makefile.in
 
