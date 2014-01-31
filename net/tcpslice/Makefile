@@ -9,10 +9,9 @@ MASTER_SITES=	http://www.tcpdump.org/weekly/
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	A tool for extracting portions of pcap files
 
-MAN1=		tcpslice.1
-PLIST_FILES=	sbin/tcpslice
+PLIST_FILES=	sbin/tcpslice \
+		man/man1/tcpslice.1.gz
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
