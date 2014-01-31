@@ -1,0 +1,109 @@
+http://www.berklix.com/~jhs/src/bsd/fixes/FreeBSD/ports/gen/math/hexcalc/files/patch-a
+
+30 Jan 2014 by "Julian H. Stacey" <jhs@berklix.com> 
+to convert FreeBSD 8.2-RELEASE/ports/math/hexcalc/
+to run on 9.1-RELEASE, 9.2-RELEASE, & 10.0-RELEASE.
+
+I found I had an original local off line hexcalc..tar.Z,
+linked it to new shorter name hexcalc.tar.Z, & published here:
+  http://www.berklix.com/~jhs/ftp/FreeBSD/ports/distfiles/hexcalc.tar.Z
+which solved:
+  grep hexcalc /usr/ports/MOVED
+    math/hexcalc||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
+
+I suggest a copy of distfile be made to
+  ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/hexcalc.tar.Z
+
+*** Makefile.orig	Thu Jan 30 03:29:09 2014
+--- Makefile	Thu Jan 30 03:31:57 2014
+***************
+*** 53,59 ****
+           COMPRESS = compress
+                CPP = /usr/lpp/X11/Xamples/util/cpp/cpp $(STD_CPP_DEFINES)
+      PREPROCESSCMD = cc -E $(STD_CPP_DEFINES)
+!           INSTALL = /usr/ucb/install
+                 LD = ld
+               LINT = lint
+        LINTLIBFLAG = -o
+--- 53,59 ----
+           COMPRESS = compress
+                CPP = /usr/lpp/X11/Xamples/util/cpp/cpp $(STD_CPP_DEFINES)
+      PREPROCESSCMD = cc -E $(STD_CPP_DEFINES)
+!           INSTALL = install
+                 LD = ld
+               LINT = lint
+        LINTLIBFLAG = -o
+***************
+*** 71,77 ****
+       STD_INCLUDES =
+    STD_CPP_DEFINES = -DAIXV3 -D_NO_PROTO
+        STD_DEFINES = -DAIXV3 -D_NO_PROTO
+!  EXTRA_LOAD_FLAGS = -bnodelcsect
+  
+     EXTRA_INCLUDES =
+  
+--- 71,77 ----
+       STD_INCLUDES =
+    STD_CPP_DEFINES = -DAIXV3 -D_NO_PROTO
+        STD_DEFINES = -DAIXV3 -D_NO_PROTO
+!  EXTRA_LOAD_FLAGS =
+  
+     EXTRA_INCLUDES =
+  
+***************
+*** 94,100 ****
+       INSTDATFLAGS = -m 0444
+      INSTKMEMFLAGS = -m 4755
+  
+!       PROJECTROOT = /usr/local/X11R5
+  
+       TOP_INCLUDES = -I$(INCROOT)
+  
+--- 94,100 ----
+       INSTDATFLAGS = -m 0444
+      INSTKMEMFLAGS = -m 4755
+  
+!       PROJECTROOT = /usr/local
+  
+       TOP_INCLUDES = -I$(INCROOT)
+  
+***************
+*** 133,142 ****
+  # X Window System make variables; this need to be coordinated with rules
+  
+            PATHSEP = /
+!         USRLIBDIR = /usr/local/X11R5/lib
+  
+             BINDIR = /usr/local/bin
+!           INCROOT = /usr/local/X11R5/include
+       BUILDINCROOT = $(TOP)
+        BUILDINCDIR = $(BUILDINCROOT)/X11
+        BUILDINCTOP = ..
+--- 133,142 ----
+  # X Window System make variables; this need to be coordinated with rules
+  
+            PATHSEP = /
+!         USRLIBDIR = /usr/local/lib
+  
+             BINDIR = /usr/local/bin
+!           INCROOT = /usr/local/include
+       BUILDINCROOT = $(TOP)
+        BUILDINCDIR = $(BUILDINCROOT)/X11
+        BUILDINCTOP = ..
+***************
+*** 153,159 ****
+  
+            MANPATH = /usr/local/man
+      MANSOURCEPATH = $(MANPATH)/man
+!         MANSUFFIX = n
+       LIBMANSUFFIX = 3
+             MANDIR = $(MANSOURCEPATH)$(MANSUFFIX)
+          LIBMANDIR = $(MANSOURCEPATH)$(LIBMANSUFFIX)
+--- 153,159 ----
+  
+            MANPATH = /usr/local/man
+      MANSOURCEPATH = $(MANPATH)/man
+!         MANSUFFIX = 1
+       LIBMANSUFFIX = 3
+             MANDIR = $(MANSOURCEPATH)$(MANSUFFIX)
+          LIBMANDIR = $(MANSOURCEPATH)$(LIBMANSUFFIX)
