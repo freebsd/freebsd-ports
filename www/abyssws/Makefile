@@ -12,6 +12,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	voisined@wit.edu
 COMMENT=	Abyss Web Server is a compact and easy to use web server
 
+BROKEN=		Fails to install
+
 WRKSRC=		${WRKDIR}/abyssws
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
