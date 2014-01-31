@@ -10,19 +10,20 @@ DISTNAME=	PingTunnel-${PORTVERSION}
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	Tunneling TCP connections over ICMP echo request and reply
 
+LICENSE=	BSD3CLAUSE
+
 WRKSRC=		${WRKDIR}/PingTunnel
 USE_GMAKE=	yes
 
-PLIST_FILES=	bin/ptunnel
-MAN8=		ptunnel.8
+PLIST_FILES=	bin/ptunnel man/man8/ptunnel.8.gz
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e '/^CC/d;s/-lpthread/${PTHREAD_LIBS}/' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e '/^CC/d;s/-lpthread/${PTHREAD_LIBS}/' \
+		-e "/^CFLAGS/d" ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e 's/stdint.h/inttypes.h/' ${WRKSRC}/ptunnel.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ptunnel ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ptunnel.8 ${MAN8PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/ptunnel ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/ptunnel.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 
 .include <bsd.port.mk>
