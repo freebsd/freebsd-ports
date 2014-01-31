@@ -16,11 +16,9 @@ RUN_DEPENDS+=	p5-Net-XMPP>0.0:${PORTSDIR}/net-im/p5-Net-XMPP \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	sendxmpp.1
-
 PLIST_FILES=	bin/sendxmpp \
-		%%SITE_PERL%%/mach/auto/sendxmpp/.packlist
+		%%SITE_PERL%%/mach/auto/sendxmpp/.packlist \
+		man/man1/sendxmpp.1.gz
 PLIST_DIRS=	%%SITE_PERL%%/mach/auto/sendxmpp
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

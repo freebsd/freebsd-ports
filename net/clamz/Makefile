@@ -20,12 +20,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
 
-MAN1=		${PORTNAME}.1
-
-NO_STAGE=	yes
-post-install:
-	@${ECHO}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO}
-
 .include <bsd.port.mk>
