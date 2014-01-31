@@ -58,6 +58,7 @@
     SUBDIR += postmark
     SUBDIR += pybench
     SUBDIR += raidtest
+    SUBDIR += ramspeed
     SUBDIR += randomio
     SUBDIR += rubygem-railsbench
     SUBDIR += scimark2
