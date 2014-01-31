@@ -1,6 +1,7 @@
 bin/oscdump
 bin/oscsend
 include/lo/lo.h
+include/lo/lo_cpp.h
 include/lo/lo_endian.h
 include/lo/lo_errors.h
 include/lo/lo_lowlevel.h
@@ -11,7 +12,7 @@ include/lo/lo_throw.h
 include/lo/lo_types.h
 lib/liblo.la
 lib/liblo.so
-lib/liblo.so.8
+lib/liblo.so.%%SHLIB_VER%%
 libdata/pkgconfig/liblo.pc
 man/man3/liblo.3.gz
 man/man3/liblolowlevel.3.gz
@@ -19,6 +20,7 @@ man/man3/lo.h.3.gz
 man/man3/lo_arg.3.gz
 man/man3/lo_lowlevel.h.3.gz
 man/man3/lo_osc_types.h.3.gz
+man/man3/lo_serverthread.h.3.gz
 man/man3/lo_timetag.3.gz
 man/man3/lo_types.h.3.gz
 man/man3/pp.3.gz
