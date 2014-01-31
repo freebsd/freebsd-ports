@@ -1,4 +1,5 @@
 bin/motion
+man/man1/motion.1.gz
 @unexec if cmp -s %D/etc/motion.conf %D/etc/motion.conf.sample; then rm -f %D/etc/motion.conf; fi
 etc/motion.conf.sample
 @exec [ -f %B/motion.conf ] || cp %B/%f %B/motion.conf
