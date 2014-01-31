@@ -3,6 +3,7 @@
 
 PORTNAME=	amqplib
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		CHEESESHOP
@@ -15,7 +16,7 @@ COMMENT=	AMQP Client Library
 PROJECTHOST=	py-amqplib
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
