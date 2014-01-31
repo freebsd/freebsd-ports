@@ -17,7 +17,4 @@ LIB_DEPENDS=	libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	TokyoCabinet.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

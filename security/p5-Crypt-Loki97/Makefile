@@ -13,7 +13,4 @@ COMMENT=	Perl extension for Loki97 block cipher
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Crypt::Loki97.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

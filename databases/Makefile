@@ -328,8 +328,8 @@
     SUBDIR += p5-DBD-cego
     SUBDIR += p5-DBD-mysql
     SUBDIR += p5-DBD-mysql51
-    SUBDIR += p5-DBD-mysql52
     SUBDIR += p5-DBD-mysql55
+    SUBDIR += p5-DBD-mysql56
     SUBDIR += p5-DBI
     SUBDIR += p5-DBI-Shell
     SUBDIR += p5-DBICx-Deploy

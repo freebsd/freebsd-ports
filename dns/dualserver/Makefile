@@ -8,7 +8,7 @@ MASTER_SITES=	SF/dhcp-dns-server/Dual%20DHCP%20DNS%20Server/ \
 		http://rodrigo.osorio.free.fr/freebsd/distfiles/
 DISTNAME=	${PORTNAME}V${PORTVERSION}
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Combined DHCP/DNS server for small LANs
 
 USE_DOS2UNIX=	yes

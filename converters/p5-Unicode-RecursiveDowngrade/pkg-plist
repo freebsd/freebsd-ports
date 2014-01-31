@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Unicode/RecursiveDowngrade.pm
+%%PERL5_MAN3%%/Unicode::RecursiveDowngrade.3.gz
 @dirrmtry %%SITE_PERL%%/Unicode
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/RecursiveDowngrade/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Unicode/RecursiveDowngrade

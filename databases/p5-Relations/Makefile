@@ -13,7 +13,4 @@ COMMENT=	Functions to Use with Databases and Queries
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Relations.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

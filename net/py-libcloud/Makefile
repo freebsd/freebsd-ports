@@ -3,6 +3,7 @@
 
 PORTNAME=	libcloud
 PORTVERSION=	0.13.3
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,10 +19,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-PYDISTUTILS_EGGINFO=	apache_${PORTNAME}-${PORTVERSION}-py${PYTHON_VER}.egg-info
-
-NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKSRC}/libcloud/test ${WRKSRC}/test # no need to install tests
 	@${FIND} ${WRKSRC} -name "*.rej" -delete

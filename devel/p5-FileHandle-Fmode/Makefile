@@ -10,10 +10,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Module to determine if a filehandle is opened for reading, writing
 
-MAN3=		FileHandle::Fmode.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

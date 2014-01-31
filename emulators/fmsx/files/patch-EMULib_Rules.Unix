@@ -1,9 +1,12 @@
---- EMULib/Rules.Unix.orig	2008-05-30 01:51:56.000000000 +0000
-+++ EMULib/Rules.Unix	2008-05-30 01:52:07.000000000 +0000
-@@ -1,5 +1,5 @@
+--- EMULib/Rules.Unix.orig	2014-01-30 23:32:06.000000000 +0700
++++ EMULib/Rules.Unix	2014-01-30 23:30:52.000000000 +0700
+@@ -6,7 +6,7 @@
+ 
  include ../../EMULib/Rules.gcc
  
--CFLAGS += -I/usr/X11R6/include
-+CFLAGS += -I%%LOCALBASE%%/include
- DEFINES+= -DUNIX -DMITSHM
- LIBS   += -lX11 -lXext
+-CFLAGS += -I$(EMULIB)/Unix -I/usr/X11R6/include
++CFLAGS += -I$(EMULIB)/Unix -I%%LOCALBASE%%/include $(DEBUG_FLAGS)
+ DEFINES+= -DUNIX -DMITSHM -DBPS16
+-LIBS   += -lX11 -lXext
++LIBS   += -L%%LOCALBASE%%/lib -lX11 -lXext
+ OBJECTS+= $(EMUUNIX)

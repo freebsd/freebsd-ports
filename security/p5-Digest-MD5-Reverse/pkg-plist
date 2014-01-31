@@ -1,3 +1,4 @@
 %%SITE_PERL%%/Digest/MD5/Reverse.pm
+%%PERL5_MAN3%%/Digest::MD5::Reverse.3.gz
 @dirrmtry %%SITE_PERL%%/Digest/MD5
 @dirrmtry %%SITE_PERL%%/Digest/

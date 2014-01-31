@@ -92,8 +92,8 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/gccint \
 		gcc${SUFFIX}/gfortran \
 		gcc${SUFFIX}/libgomp
-.if ${ARCH} == "i386" || ${ARCH} == "amd64" || ${ARCH} == "alpha"
-INFO+=		gcc${SUFFIX}/libquadmath	\
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+INFO+=		gcc${SUFFIX}/libquadmath \
 		gcc${SUFFIX}/libitm
 .endif
 

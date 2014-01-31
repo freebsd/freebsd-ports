@@ -18,7 +18,4 @@ TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Class::DBI::Untaint.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

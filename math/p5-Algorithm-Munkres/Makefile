@@ -14,7 +14,4 @@ COMMENT=	Perl Extension for Munkres' Solution to Classical Assignment Problem
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Algorithm::Munkres.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

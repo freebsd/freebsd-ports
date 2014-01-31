@@ -1,5 +1,6 @@
 %%SITE_PERL%%/DBIx/Class/DynamicSubclass.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/DynamicSubclass/.packlist
+%%PERL5_MAN3%%/DBIx::Class::DynamicSubclass.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/DynamicSubclass
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx

@@ -21,18 +21,4 @@ TEST_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	MouseX::AttributeHelpers.3 \
-	MouseX::AttributeHelpers::Base.3 \
-	MouseX::AttributeHelpers::Bool.3 \
-	MouseX::AttributeHelpers::Collection::Array.3 \
-	MouseX::AttributeHelpers::Collection::Bag.3 \
-	MouseX::AttributeHelpers::Collection::Hash.3 \
-	MouseX::AttributeHelpers::Collection::ImmutableHash.3 \
-	MouseX::AttributeHelpers::Collection::List.3 \
-	MouseX::AttributeHelpers::Counter.3 \
-	MouseX::AttributeHelpers::Number.3 \
-	MouseX::AttributeHelpers::String.3 \
-	MouseX::README.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

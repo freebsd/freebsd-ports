@@ -24,31 +24,4 @@ TEST_DEPENDS=	\
 USES=	perl5
 USE_PERL5=	modbuild
 
-MAN1=	amon2-setup.pl.1
-MAN3=	Amon2.3 \
-	Amon2::Config::Simple.3 \
-	Amon2::Declare.3 \
-	Amon2::Plugin::Web::CSRFDefender.3 \
-	Amon2::Plugin::Web::FillInFormLite.3 \
-	Amon2::Plugin::Web::HTTPSession.3 \
-	Amon2::Plugin::Web::JSON.3 \
-	Amon2::Plugin::Web::NoCache.3 \
-	Amon2::Plugin::Web::PlackSession.3 \
-	Amon2::Plugin::Web::Streaming.3 \
-	Amon2::Plugin::Web::WebSocket.3 \
-	Amon2::Setup::Flavor.3 \
-	Amon2::Setup::Flavor::Basic.3 \
-	Amon2::Setup::Flavor::Large.3 \
-	Amon2::Setup::Flavor::Minimum.3 \
-	Amon2::Trigger.3 \
-	Amon2::Util.3 \
-	Amon2::Web.3 \
-	Amon2::Web::Dispatcher::Lite.3 \
-	Amon2::Web::Dispatcher::RouterSimple.3 \
-	Amon2::Web::Request.3 \
-	Amon2::Web::Response.3 \
-	Amon2::Web::Response::Callback.3 \
-	Amon2::Web::WebSocket.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

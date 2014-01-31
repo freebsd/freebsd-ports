@@ -16,6 +16,11 @@ bin/pushmi
 %%SITE_PERL%%/Pushmi/Command/Unlock.pm
 %%SITE_PERL%%/Pushmi/Command/Verify.pm
 %%SITE_PERL%%/Pushmi/Editor/Locker.pm
+%%PERL5_MAN3%%/Pushmi.3.gz
+%%PERL5_MAN3%%/Pushmi::Command::Mirror.3.gz
+%%PERL5_MAN3%%/Pushmi::Command::Runhook.3.gz
+%%PERL5_MAN3%%/Pushmi::Command::Sync.3.gz
+%%PERL5_MAN3%%/Pushmi::Command::Verify.3.gz
 @dirrm %%SITE_PERL%%/Pushmi/Editor
 @dirrm %%SITE_PERL%%/Pushmi/Command
 @dirrm %%SITE_PERL%%/Pushmi/Apache

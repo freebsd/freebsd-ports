@@ -1,2 +1,4 @@
 bin/mergelog
 bin/zmergelog
+man/man1/mergelog.1.gz
+man/man1/zmergelog.1.gz

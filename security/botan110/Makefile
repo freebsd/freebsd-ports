@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	botan
-PORTVERSION=	1.10.5
+PORTVERSION=	1.10.7
 CATEGORIES=	security
 MASTER_SITES=	http://files.randombit.net/botan/v1.10/
 PKGNAMESUFFIX=	110
@@ -21,22 +21,20 @@ OPTIONS_DEFINE=		SSL GMP ECC
 OPTIONS_DEFAULT=	SSL GMP ECC
 ECC_DESC=	ECC support
 
+USES=		compiler gmake
 USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.py
-CONFIGURE_ARGS=	--prefix=${PREFIX} --with-tr1-implementation=boost \
-		--with-bzip2 --with-zlib
-USE_GMAKE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --with-bzip2 --with-zlib
 MAKE_ARGS=	CXX="${CXX}" LIB_OPT="${CXXFLAGS}"
 USE_LDCONFIG=	yes
 PLIST_FILES=	bin/botan-config-1.10 lib/libbotan-1.10.a lib/libbotan-1.10.so lib/libbotan-1.10.so.0 \
-		lib/libbotan-1.10.so.0.5 libdata/pkgconfig/botan-1.10.pc
+		lib/libbotan-1.10.so.0.7 libdata/pkgconfig/botan-1.10.pc
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
@@ -58,6 +56,10 @@ CXXFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--with-tr1-implementation=none
 .endif
 
+.include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS+=--cc ${COMPILER_TYPE}
+
 post-patch:
 	${REINPLACE_CMD} -e "s|#!/usr/bin/env python|#!${PYTHON_CMD}|" \
 			${WRKSRC}/configure.py
@@ -67,8 +69,8 @@ post-patch:
 .endif
 
 post-install:
-	@(cd ${PREFIX}; ${FIND} -s include/botan-1.10 -not -type d) >> ${TMPPLIST}
+	@(cd "${STAGEDIR}${PREFIX}"; ${FIND} -s include/botan-1.10 -not -type d) >> ${TMPPLIST}
 	@${ECHO_CMD} @dirrm include/botan-1.10/botan >> ${TMPPLIST}
 	@${ECHO_CMD} @dirrm include/botan-1.10 >> ${TMPPLIST}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

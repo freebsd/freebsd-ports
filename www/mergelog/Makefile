@@ -10,10 +10,7 @@ MASTER_SITES=	SF
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	A tool to merge and sort by date http log files
 
-USE_GMAKE=	yes
+USES=	gmake
 GNU_CONFIGURE=	yes
 
-MAN1=	mergelog.1 zmergelog.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

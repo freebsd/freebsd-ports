@@ -16,7 +16,4 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 CONFLICTS=	links-2*
 
-MAN1=		links.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

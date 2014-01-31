@@ -9,9 +9,7 @@ MASTER_SITES=	SF
 MAINTAINER=	marck@FreeBSD.org
 COMMENT=	ARP Digger utility
 
-PLIST_FILES=	bin/arpdig
-MAN1=		arpdig.1
-MANCOMPRESSED=	yes
+PLIST_FILES=	bin/arpdig \
+		man/man1/arpdig.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -10,10 +10,8 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Treecc is designed to assist in the development of compilers
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-MAN1=		treecc.1
-INFO=		treecc
-PLIST_FILES=	bin/treecc lib/libtreecc.a
+USES=		gmake
+PLIST_FILES=	bin/treecc lib/libtreecc.a \
+		info/treecc.info man/man1/treecc.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -11,6 +11,16 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DR/Tarantool/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DR/Tarantool/Tarantool.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DR/Tarantool/Tarantool.so
+%%PERL5_MAN3%%/DR::README.3.gz
+%%PERL5_MAN3%%/DR::Tarantool.3.gz
+%%PERL5_MAN3%%/DR::Tarantool::AsyncClient.3.gz
+%%PERL5_MAN3%%/DR::Tarantool::CoroClient.3.gz
+%%PERL5_MAN3%%/DR::Tarantool::Iterator.3.gz
+%%PERL5_MAN3%%/DR::Tarantool::LLClient.3.gz
+%%PERL5_MAN3%%/DR::Tarantool::Spaces.3.gz
+%%PERL5_MAN3%%/DR::Tarantool::StartTest.3.gz
+%%PERL5_MAN3%%/DR::Tarantool::SyncClient.3.gz
+%%PERL5_MAN3%%/DR::Tarantool::Tuple.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DR/Tarantool
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DR
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/DR/Tarantool

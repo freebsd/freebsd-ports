@@ -5,6 +5,12 @@
 %%SITE_PERL%%/Data/Remember/POE.pm
 %%SITE_PERL%%/Data/Remember/YAML.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Remember/.packlist
+%%PERL5_MAN3%%/Data::Remember.3.gz
+%%PERL5_MAN3%%/Data::Remember::DBM.3.gz
+%%PERL5_MAN3%%/Data::Remember::Hybrid.3.gz
+%%PERL5_MAN3%%/Data::Remember::Memory.3.gz
+%%PERL5_MAN3%%/Data::Remember::POE.3.gz
+%%PERL5_MAN3%%/Data::Remember::YAML.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Remember
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
 @dirrmtry %%SITE_PERL%%/Data/Remember

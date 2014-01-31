@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Chemistry/Reaction.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Reaction/.packlist
+%%PERL5_MAN3%%/Chemistry::Reaction.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Reaction
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry

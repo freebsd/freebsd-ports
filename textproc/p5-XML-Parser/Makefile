@@ -16,12 +16,6 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ARGS=	EXPATLIBPATH=${LOCALBASE}/lib EXPATINCPATH=${LOCALBASE}/include
 
-MAN3=		XML::Parser.3 XML::Parser::Expat.3 \
-		XML::Parser::Style::Debug.3 \
-		XML::Parser::Style::Objects.3 \
-		XML::Parser::Style::Stream.3 \
-		XML::Parser::Style::Subs.3 \
-		XML::Parser::Style::Tree.3
 PLIST_SUB=	EUCJP=${EUCJP} SJIS=${SJIS}
 
 # XMLPARSER_EUCJP=	x-euc-jp-(jisx0221|unicode)
@@ -34,7 +28,6 @@ EUCJP=		"@comment "
 SJIS=		"@comment "
 .endif
 
-NO_STAGE=	yes
 post-patch:
 .if defined(XMLPARSER_EUCJP)
 	@cd ${WRKSRC}/Parser/Encodings; \

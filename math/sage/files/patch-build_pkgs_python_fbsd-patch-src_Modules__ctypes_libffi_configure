@@ -1,0 +1,24 @@
+--- /dev/null	2014-01-29 03:00:00.000000000 +0000
++++ build/pkgs/python/fbsd-patch-src_Modules__ctypes_libffi_configure	2014-01-29 03:01:19.000000000 +0000
+@@ -0,0 +1,21 @@
++--- src/src/Modules/_ctypes/libffi/configure.orig	2011-06-11 15:46:26.000000000 +0000
+++++ src/Modules/_ctypes/libffi/configure	2012-04-22 00:23:14.000000000 +0000
++@@ -6289,7 +6289,7 @@
++   rm -rf conftest*
++   ;;
++ 
++-x86_64-*kfreebsd*-gnu|x86_64-*linux*|ppc*-*linux*|powerpc*-*linux*| \
+++amd64-*-freebsd*|x86_64-*kfreebsd*-gnu|x86_64-*linux*|ppc*-*linux*|powerpc*-*linux*| \
++ s390*-*linux*|s390*-*tpf*|sparc*-*linux*)
++   # Find out which ABI we are using.
++   echo 'int i;' > conftest.$ac_ext
++@@ -11275,6 +11275,9 @@
++   powerpc-*-freebsd*)
++ 	TARGET=POWERPC_FREEBSD; TARGETDIR=powerpc
++ 	;;
+++  powerpc64-*-freebsd*)
+++	TARGET=POWERPC; TARGETDIR=powerpc
+++	;;
++   powerpc*-*-rtems*)
++ 	TARGET=POWERPC; TARGETDIR=powerpc
++ 	;;

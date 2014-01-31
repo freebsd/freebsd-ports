@@ -1,6 +1,8 @@
 %%SITE_PERL%%/OpenXPKI/Client.pm
 %%SITE_PERL%%/OpenXPKI/Client/API.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client/.packlist
+%%PERL5_MAN3%%/OpenXPKI::Client.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::API.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI/Client
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OpenXPKI
 @dirrmtry %%SITE_PERL%%/OpenXPKI/Client

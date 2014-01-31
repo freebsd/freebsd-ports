@@ -18,10 +18,7 @@ BUILD_DEPENDS=	\
 	p5-NetAddr-IP>=0:${PORTSDIR}/net-mgmt/p5-NetAddr-IP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAN3=	OpenXPKI::Client::SCEP.3
-USE_GMAKE=	yes
-USES=		perl5
+USES=		perl5 gmake
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -8,7 +8,7 @@ MASTER_SITE_SUBDIR=	CPAN:APOCAL
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	milki@FreeBSD.org
-COMMENT=	A PoCo-IRC plugin that keeps track of karma
+COMMENT=	PoCo-IRC plugin that keeps track of karma
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
@@ -23,7 +23,4 @@ TEST_DEPENDS=	p5-Test-MockObject>=0:${PORTSDIR}/devel/p5-Test-MockObject
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		POE::Component::IRC::Plugin::Karma.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

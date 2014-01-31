@@ -27,19 +27,8 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 
 USES=		pkgconfig perl5
 MAKE_JOBS_UNSAFE=	yes
-
 USE_PERL5=	configure
 
-MAN3=	\
-	ZeroMQ::Raw.3 \
-	ZeroMQ::Socket.3 \
-	ZeroMQ::Context.3 \
-	ZeroMQ.3 \
-	ZeroMQ::Constants.3 \
-	ZeroMQ::Poller.3 \
-	ZeroMQ::Message.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

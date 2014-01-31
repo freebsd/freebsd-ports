@@ -21,7 +21,4 @@ USES=		perl5
 USE_PERL5=	configure
 CONFIGURE_ENV=	${ECHO_CMD} "N" |
 
-MAN3=		Image::Grab.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

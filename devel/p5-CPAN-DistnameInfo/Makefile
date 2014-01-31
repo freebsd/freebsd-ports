@@ -13,7 +13,4 @@ COMMENT=	Extract distribution name and version from a CPAN filename
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		CPAN::DistnameInfo.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

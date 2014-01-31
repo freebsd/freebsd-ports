@@ -17,17 +17,14 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_LIBS="-pthread"
 
 USE_RC_SUBR=	${PORTNAME}
-MAN1=		ocat.1
-PLIST_FILES=	bin/ocat
+PLIST_FILES=	bin/ocat man/man1/ocat.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/CFLAGS=/s|-O2|$$CFLAGS|' ${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/ocat ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/ocat.1 ${MANPREFIX}/man/man1
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/ocat ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/ocat.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

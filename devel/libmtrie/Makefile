@@ -7,7 +7,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/ \
 		http://people.freebsd.org/~alfred/sources/${PORTNAME}/
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library to build an IP-netmask based mtrie
 
 LICENSE=	BSD

@@ -4,6 +4,11 @@
 %%SITE_PERL%%/Math/Random/OO/Uniform.pm
 %%SITE_PERL%%/Math/Random/OO/UniformInt.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random/OO/.packlist
+%%PERL5_MAN3%%/Math::Random::OO.3.gz
+%%PERL5_MAN3%%/Math::Random::OO::Bootstrap.3.gz
+%%PERL5_MAN3%%/Math::Random::OO::Normal.3.gz
+%%PERL5_MAN3%%/Math::Random::OO::Uniform.3.gz
+%%PERL5_MAN3%%/Math::Random::OO::UniformInt.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random/OO
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Random
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math

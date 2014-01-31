@@ -2,6 +2,8 @@
 %%SITE_PERL%%/XML/Parser/Style/ETree.pm
 %%SITE_PERL%%/XML/Parser/Style/EasyTree.pm
 %%SITE_PERL%%/XML/Parser/Style/cpants.pl
+%%PERL5_MAN3%%/XML::Parser::Style::EasyTree.3.gz
+%%PERL5_MAN3%%/XML::Parser::Style::ETree.3.gz
 @dirrmtry %%SITE_PERL%%/XML/Parser/Style
 @dirrmtry %%SITE_PERL%%/XML/Parser
 @dirrmtry %%SITE_PERL%%/XML

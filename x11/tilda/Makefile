@@ -6,7 +6,7 @@ PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Drop down x11 terminal with transparency support
 
 LICENSE=	GPLv2

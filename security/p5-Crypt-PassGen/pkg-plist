@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/PassGen/.packlist
 %%SITE_PERL%%/Crypt/PassGenWordFreq.dat
 %%SITE_PERL%%/Crypt/PassGen.pm
+%%PERL5_MAN3%%/Crypt::PassGen.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/PassGen
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/Crypt

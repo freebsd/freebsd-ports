@@ -17,9 +17,6 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		File::Pid.3
-
-NO_STAGE=	yes
 post-patch:
 	${RM} ${WRKSRC}/lib/File/Pid.pm.orig
 

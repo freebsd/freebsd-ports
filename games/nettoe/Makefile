@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	nettoe
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5
 CATEGORIES=	games
-MASTER_SITES=	SF \
-		http://www.c-s.li/ports/
+MASTER_SITES=	http://www.c-s.li/ports/ \
+		SF
 
 MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Tic tac toe game playable over the network

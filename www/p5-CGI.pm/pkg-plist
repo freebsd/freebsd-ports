@@ -30,5 +30,14 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tryit.cgi
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/wilogo.gif
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PERL5_MAN3%%/CGI.3.gz
+%%PERL5_MAN3%%/CGI::Apache.3.gz
+%%PERL5_MAN3%%/CGI::Carp.3.gz
+%%PERL5_MAN3%%/CGI::Cookie.3.gz
+%%PERL5_MAN3%%/CGI::Fast.3.gz
+%%PERL5_MAN3%%/CGI::Pretty.3.gz
+%%PERL5_MAN3%%/CGI::Push.3.gz
+%%PERL5_MAN3%%/CGI::Switch.3.gz
+%%PERL5_MAN3%%/CGI::Util.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 @dirrmtry %%SITE_PERL%%/CGI

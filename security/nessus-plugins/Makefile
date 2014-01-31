@@ -25,10 +25,6 @@ WRKSRC=		${WRKDIR}/nessus-plugins
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-fetchcmd=wget
 
-MAN1=		nessus-build.1
-MAN8=		nessus-update-plugins.8
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-install:

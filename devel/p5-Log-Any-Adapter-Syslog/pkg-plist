@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Log/Any/Adapter/Syslog.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Any/Adapter/Syslog/.packlist
+%%PERL5_MAN3%%/Log::Any::Adapter::Syslog.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Any/Adapter/Syslog
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Any/Adapter
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Any

@@ -15,7 +15,7 @@ LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \
 		libical.so:${PORTSDIR}/devel/libical \
 		libtar.so:${PORTSDIR}/devel/libtar \
 		libgringotts.so:${PORTSDIR}/security/libgringotts \
-		libgtkhtml.so:${PORTSDIR}/www/libgtkhtml
+		libgtkhtml-2.so:${PORTSDIR}/www/libgtkhtml
 
 USE_GNOME=	gtk20
 USES=		gettext gmake pkgconfig
@@ -25,14 +25,11 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib -lintl
 CFLAGS+=	-I${LOCALBASE}/include/libical
 
-MAN1=		osmo.1
-
 POFILES=	bg ca cs da de el en_GB es fi fr hu it ja lt nl pl pt \
 		ru sv tr uk zh_CN
 
 MSGFMT=		${LOCALBASE}/bin/msgfmt
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/src/Makefile.in

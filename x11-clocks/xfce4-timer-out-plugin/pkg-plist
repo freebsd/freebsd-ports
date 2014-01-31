@@ -51,3 +51,4 @@ share/xfce4/panel/plugins/xfce4-time-out-plugin.desktop
 @dirrmtry share/locale/kk
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
+@dirrmtry lib/xfce4/panel/plugins

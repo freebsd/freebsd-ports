@@ -13,7 +13,4 @@ COMMENT=	Perl implementation of the NULL encryption algorithm
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Crypt::NULL.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

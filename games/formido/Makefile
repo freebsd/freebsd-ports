@@ -11,18 +11,15 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D kill-em all with 3D rendered graphics
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/GPL_license.txt
 
 USE_SDL=	sdl mixer image
-USE_GMAKE=	yes
+USES=		gmake
 MAKE_ARGS=	CC="${CXX}" DATDIR="${DATADIR}" DEFCONFIGDIR="${DATADIR}"
 
 PLIST_FILES=	bin/${PORTNAME}
 
 PORTDATA=	*
 PORTDOCS=	*
-
-.include <bsd.port.options.mk>
 
 pre-build:
 	@${MKDIR} ${WRKSRC}/obj

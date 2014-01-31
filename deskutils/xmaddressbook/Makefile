@@ -15,7 +15,5 @@ COMMENT=	X11/Motif-based addressbook program
 USES=		imake motif
 USE_XORG=	ice sm x11 xext xi xp xt oldx
 WRKSRC=		${WRKDIR}/xmaddressbook
-MAN1=		xmaddressbook.1
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

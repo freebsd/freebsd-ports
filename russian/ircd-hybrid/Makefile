@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}-hybrid-ru/${PORTNAME}-hybrid-ru/${PORTNAME}-hybrid-
 PKGNAMESUFFIX=	-hybrid
 DISTNAME=	ircd-hybrid-ru-${PORTVERSION}
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Russian version of well known hybrid IRC server
 
 LICENSE=	GPLv2

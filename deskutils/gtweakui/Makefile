@@ -10,19 +10,18 @@ MASTER_SITES=	SF
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A collection of simple dialogs as a front end to GConf
+COMMENT=	Collection of simple dialogs as a front end to GConf
 
 USE_BZIP2=	yes
-USES=        pathfix gmake pkgconfig
+USES=		gmake pathfix pkgconfig
 USE_GNOME=	gnomeprefix libgnomeui gconf2 libglade2 intlhack
 GNU_CONFIGURE=	yes
 
 DESKTOP_FILES=	gtweakui-galeon.desktop.in \
-				gtweakui-menus.desktop.in \
-				gtweakui-nautilus.desktop.in \
-				gtweakui-session.desktop.in
+		gtweakui-menus.desktop.in \
+		gtweakui-nautilus.desktop.in \
+		gtweakui-session.desktop.in
 
-NO_STAGE=	yes
 post-patch:
 .for FILE in ${DESKTOP_FILES}
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \

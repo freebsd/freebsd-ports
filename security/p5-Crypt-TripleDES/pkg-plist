@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Crypt/PPDES.pm
 %%SITE_PERL%%/Crypt/TripleDES.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/TripleDES/.packlist
+%%PERL5_MAN3%%/Crypt::TripleDES.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/TripleDES
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt
 @dirrmtry %%SITE_PERL%%/Crypt

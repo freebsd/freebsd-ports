@@ -2,6 +2,7 @@
 %%SITE_PERL%%/Authen/NTLM/DES.pm
 %%SITE_PERL%%/Authen/NTLM/MD4.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/NTLM/.packlist
+%%PERL5_MAN3%%/Authen::NTLM.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen/NTLM
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Authen
 @dirrm %%SITE_PERL%%/Authen/NTLM

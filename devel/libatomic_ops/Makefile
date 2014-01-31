@@ -6,7 +6,7 @@ DISTVERSION=	7.3alpha2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Atomic operations access library
 
 LICENSE=	BSD GPLv2

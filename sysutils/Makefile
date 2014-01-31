@@ -507,7 +507,6 @@
     SUBDIR += mate-settings-daemon
     SUBDIR += mate-system-monitor
     SUBDIR += mbgtools
-    SUBDIR += mbmon
     SUBDIR += mcelog
     SUBDIR += mcollective
     SUBDIR += mcron
@@ -855,6 +854,7 @@
     SUBDIR += screen
     SUBDIR += screenfetch
     SUBDIR += screenie
+    SUBDIR += scterc
     SUBDIR += sdd
     SUBDIR += sdparm
     SUBDIR += searchmonkey

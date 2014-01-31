@@ -11,5 +11,6 @@ etc/ppp/peers/xisp_dialer
 etc/ppp/peers/xisp_umodem
 libexec/xispdial
 libexec/xispterm
+man/man1/xisp.1.gz
 @dirrm etc/ppp/peers
 @dirrmtry etc/ppp

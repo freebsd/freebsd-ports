@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Math/Base85.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Base85/.packlist
+%%PERL5_MAN3%%/Math::Base85.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/Base85
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
 @dirrm %%SITE_PERL%%/Math

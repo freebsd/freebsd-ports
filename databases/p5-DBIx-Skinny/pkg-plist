@@ -21,6 +21,20 @@
 %%SITE_PERL%%/DBIx/Skinny/SQL/Oracle.pm
 %%SITE_PERL%%/DBIx/Skinny/Schema.pm
 %%SITE_PERL%%/DBIx/Skinny/Util.pm
+%%PERL5_MAN3%%/DBIx::Skinny.3.gz
+%%PERL5_MAN3%%/DBIx::Skinny::Iterator.3.gz
+%%PERL5_MAN3%%/DBIx::Skinny::Manual.3.gz
+%%PERL5_MAN3%%/DBIx::Skinny::Manual::EN.3.gz
+%%PERL5_MAN3%%/DBIx::Skinny::Manual::EN::Intro.3.gz
+%%PERL5_MAN3%%/DBIx::Skinny::Manual::JA.3.gz
+%%PERL5_MAN3%%/DBIx::Skinny::Manual::JA::Intro.3.gz
+%%PERL5_MAN3%%/DBIx::Skinny::Manual::JA::Resultset.3.gz
+%%PERL5_MAN3%%/DBIx::Skinny::Mixin.3.gz
+%%PERL5_MAN3%%/DBIx::Skinny::Profiler.3.gz
+%%PERL5_MAN3%%/DBIx::Skinny::Profiler::Trace.3.gz
+%%PERL5_MAN3%%/DBIx::Skinny::Row.3.gz
+%%PERL5_MAN3%%/DBIx::Skinny::SQL.3.gz
+%%PERL5_MAN3%%/DBIx::Skinny::Schema.3.gz
 @dirrm %%SITE_PERL%%/DBIx/Skinny/SQL
 @dirrm %%SITE_PERL%%/DBIx/Skinny/Profiler
 @dirrm %%SITE_PERL%%/DBIx/Skinny/Manual/JA

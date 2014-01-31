@@ -5,4 +5,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/KyotoCabinet/KyotoCabinet.so
 %%SITE_PERL%%/%%PERL_ARCH%%/kctest.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/makedoc.pl
+%%PERL5_MAN3%%/KyotoCabinet.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/KyotoCabinet

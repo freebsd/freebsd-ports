@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Math/ConvexHull.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/ConvexHull/.packlist
+%%PERL5_MAN3%%/Math::ConvexHull.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math/ConvexHull
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Math
 @dirrmtry %%SITE_PERL%%/Math

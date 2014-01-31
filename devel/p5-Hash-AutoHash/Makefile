@@ -22,7 +22,4 @@ TEST_DEPENDS=	p5-Test-Deep>=0.11:${PORTSDIR}/devel/p5-Test-Deep \
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Hash::AutoHash.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

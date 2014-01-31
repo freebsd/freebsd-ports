@@ -4,6 +4,11 @@
 %%SITE_PERL%%/XML/RSS/Parser/Feed.pm
 %%SITE_PERL%%/XML/RSS/Parser/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/Parser/.packlist
+%%PERL5_MAN3%%/XML::RSS::Parser.3.gz
+%%PERL5_MAN3%%/XML::RSS::Parser::Characters.3.gz
+%%PERL5_MAN3%%/XML::RSS::Parser::Element.3.gz
+%%PERL5_MAN3%%/XML::RSS::Parser::Feed.3.gz
+%%PERL5_MAN3%%/XML::RSS::Parser::Util.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/Parser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML

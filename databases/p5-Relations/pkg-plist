@@ -1,3 +1,4 @@
 %%SITE_PERL%%/Relations.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Relations/.packlist
+%%PERL5_MAN3%%/Relations.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Relations

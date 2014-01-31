@@ -4,6 +4,7 @@
 %%SITE_PERL%%/Class/DBI/Plugin/Pager/LimitYX.pm
 %%SITE_PERL%%/Class/DBI/Plugin/Pager/RowsTo.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin/Pager/.packlist
+%%PERL5_MAN3%%/Class::DBI::Plugin::Pager.3.gz
 @dirrm %%SITE_PERL%%/Class/DBI/Plugin/Pager
 @dirrmtry %%SITE_PERL%%/Class/DBI/Plugin
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin/Pager

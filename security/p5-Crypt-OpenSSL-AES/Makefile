@@ -9,12 +9,9 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jdferrell3@yahoo.com
-COMMENT=	A Perl wrapper around OpenSSL's AES library
+COMMENT=	Perl wrapper around OpenSSL's AES library
 
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Crypt::OpenSSL::AES.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

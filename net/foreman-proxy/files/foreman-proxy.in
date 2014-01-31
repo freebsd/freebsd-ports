@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: foreman-proxy
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable foreman-proxy:
+# foreman_proxy_enable (bool):    Set to "NO" by default
+#                                 Set it to "YES" to enable nsca.
+. /etc/rc.subr
+
+name="foreman_proxy"
+rcvar="foreman_proxy_enable"
+
+command="%%PREFIX%%/sbin/smart-proxy"
+command_interpreter="%%RUBY%%"
+pidfile="%%FOREMAN_PROXY_RUNDIR%%/foreman-proxy.pid"
+
+foreman_proxy_enable=${foreman_proxy_enable:-"NO"}
+foreman_proxy_user=${foreman_proxy_user-"%%FOREMAN_PROXY_USER%%"}
+
+load_rc_config "${name}"
+
+required_files="%%PREFIX%%/etc/foreman-proxy/settings.yml"
+
+run_rc_command "$1"

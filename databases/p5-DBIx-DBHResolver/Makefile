@@ -27,13 +27,4 @@ TEST_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	DBIx::DBHResolver.3 \
-	DBIx::DBHResolver::Strategy.3 \
-	DBIx::DBHResolver::Strategy::Key.3 \
-	DBIx::DBHResolver::Strategy::List.3 \
-	DBIx::DBHResolver::Strategy::Range.3 \
-	DBIx::DBHResolver::Strategy::Remainder.3 \
-	DBIx::DBHResolver::Strategy::RoundRobin.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

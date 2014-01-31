@@ -12,13 +12,10 @@ COMMENT=	PAM module to search arbitrary file for user
 
 USE_XZ=		yes
 
-MANCOMPRESSED=	yes
-MAN8=		pam_search_list.8
-
 PLIST_FILES=	lib/libpam_search_list.a \
 		lib/libpam_search_list_p.a \
 		lib/pam_search_list.so \
-		lib/pam_search_list.so.0
+		lib/pam_search_list.so.0 \
+		man/man8/pam_search_list.8.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

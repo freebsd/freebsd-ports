@@ -1,2 +1,3 @@
 %%SITE_PERL%%/Web/Query.pm
+%%PERL5_MAN3%%/Web::Query.3.gz
 @dirrmtry %%SITE_PERL%%/Web

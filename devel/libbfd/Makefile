@@ -17,8 +17,8 @@ CONFLICTS=	mingw-binutils-[0-9]* binutils-[0-9]*
 
 WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}/bfd
 
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-install-libbfd \
 		--enable-commonbfdlib \
@@ -28,7 +28,6 @@ CONFIGURE_ARGS=	--enable-install-libbfd \
 		--disable-werror
 INFO=		bfd
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64"

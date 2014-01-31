@@ -13,7 +13,4 @@ COMMENT=	Encodes integers into a short locator string
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Number::RecordLocator.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

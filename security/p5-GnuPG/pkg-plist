@@ -6,6 +6,9 @@ bin/gpgmailtunl
 %%SITE_PERL%%/GnuPG/Tie/Encrypt.pm
 %%SITE_PERL%%/GnuPG/Tie/Sign.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/GnuPG/.packlist
+%%PERL5_MAN3%%/GnuPG.3.gz
+%%PERL5_MAN3%%/GnuPG::Tie.3.gz
+man/man1/gpgmailtunl.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/GnuPG
 @dirrm %%SITE_PERL%%/GnuPG/Tie
 @dirrm %%SITE_PERL%%/GnuPG

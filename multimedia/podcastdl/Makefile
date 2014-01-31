@@ -1,4 +1,4 @@
-# Created by: Rodrigo OSORIO <rodrigo@bebik.net>
+# Created by: Rodrigo OSORIO <rodrigo@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	podcastdl
@@ -7,7 +7,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/ \
 		http://files.bebik.net/podcastdl/
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Simple command line podcast client written in plain C
 
 LICENSE=	BSD

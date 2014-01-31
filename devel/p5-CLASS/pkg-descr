@@ -1,4 +1,4 @@
-CLASS and $CLASS are both synonyms for __PACKAGE__. Easier to type.
+[BCLASS and $CLASS are both synonyms for __PACKAGE__. Easier to type.
 
 $CLASS has the additional benefit of working in strings.
 
@@ -6,4 +6,4 @@ CLASS is a constant, not a subroutine call. $CLASS is a plain
 variable, it is not tied. There is no performance loss for using CLASS
 over __PACKAGE__ except the loading of the module.
 
-WWW:	http://search.cpan.org/dist/CLASS/
+WWW: http://search.cpan.org/dist/CLASS/

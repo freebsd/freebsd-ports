@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	owncloud
-PORTVERSION=	6.0.0a
+PORTVERSION=	6.0.1
 CATEGORIES=	www
 MASTER_SITES=	http://download.owncloud.org/community/
 
@@ -14,8 +14,8 @@ BUILD_DEPENDS=	mp3info:${PORTSDIR}/audio/mp3info
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
-USE_PHP=	ctype curl dom fileinfo filter gd hash iconv json ldap \
-		mbstring openssl pdo session simplexml xml xmlreader \
+USE_PHP=	bz2 ctype curl dom exif fileinfo filter gd hash iconv json \
+		ldap mbstring openssl pdo session simplexml xml xmlreader \
 		xsl wddx zip zlib
 WANT_PHP_WEB=	yes
 

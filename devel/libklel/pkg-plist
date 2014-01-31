@@ -5,3 +5,8 @@ lib/libklel.a
 lib/libklel.la
 lib/libklel.so
 lib/libklel.so.2
+man/man1/klel-expr.1.gz
+man/man3/klelapi.3.gz
+man/man3/klellang.3.gz
+man/man3/klelstdlib.3.gz
+man/man3/kleltut.3.gz

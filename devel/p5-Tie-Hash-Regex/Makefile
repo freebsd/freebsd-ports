@@ -13,10 +13,7 @@ COMMENT=	Match hash keys using Regular Expressions
 BUILD_DEPENDS=	p5-Attribute-Handlers>=0.76:${PORTSDIR}/devel/p5-Attribute-Handlers
 RUN_DEPENDS=	p5-Attribute-Handlers>=0.76:${PORTSDIR}/devel/p5-Attribute-Handlers
 
-MAN3=	Tie::Hash::Regex.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

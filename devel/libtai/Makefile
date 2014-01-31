@@ -9,7 +9,7 @@ MASTER_SITES=	http://cr.yp.to/libtai/ \
 		ftp://ftp.sunsite.auc.dk/disk1/qmail/ \
 		ftp://ftp.task.gda.pl/mirror/mirror.qmail.org/koobera/pub/software/
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	A library for storing and manipulating dates and times in second/attosecond
 
 ALL_TARGET=	it

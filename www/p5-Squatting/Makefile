@@ -27,23 +27,4 @@ RUN_DEPENDS=	${COMMON_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	squatting.1
-MAN3=	\
-	Squatting.3 \
-	Squatting::Controller.3 \
-	Squatting::H.3 \
-	Squatting::Mapper.3 \
-	Squatting::On::CGI.3 \
-	Squatting::On::Catalyst.3 \
-	Squatting::On::Continuity.3 \
-	Squatting::On::MP13.3 \
-	Squatting::On::MP20.3 \
-	Squatting::View.3 \
-	Squatting::With::AccessTrace.3 \
-	Squatting::With::Coro::Debug.3 \
-	Squatting::With::Log.3 \
-	Squatting::With::MockRequest.3 \
-	Squatting::With::Mount.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

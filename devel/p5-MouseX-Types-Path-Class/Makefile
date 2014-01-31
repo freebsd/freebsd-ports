@@ -25,7 +25,4 @@ TEST_DEPENDS=	p5-Test-UseAllModules>0:${PORTSDIR}/devel/p5-Test-UseAllModules
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		MouseX::Types::Path::Class.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

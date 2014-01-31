@@ -15,6 +15,22 @@
 %%SITE_PERL%%/DBIx/SearchBuilder/Union.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Unique.pm
 %%SITE_PERL%%/DBIx/SearchBuilder/Util.pm
+%%PERL5_MAN3%%/DBIx::SearchBuilder.3.gz
+%%PERL5_MAN3%%/DBIx::SearchBuilder::Handle.3.gz
+%%PERL5_MAN3%%/DBIx::SearchBuilder::Handle::Informix.3.gz
+%%PERL5_MAN3%%/DBIx::SearchBuilder::Handle::ODBC.3.gz
+%%PERL5_MAN3%%/DBIx::SearchBuilder::Handle::Oracle.3.gz
+%%PERL5_MAN3%%/DBIx::SearchBuilder::Handle::Pg.3.gz
+%%PERL5_MAN3%%/DBIx::SearchBuilder::Handle::SQLite.3.gz
+%%PERL5_MAN3%%/DBIx::SearchBuilder::Handle::Sybase.3.gz
+%%PERL5_MAN3%%/DBIx::SearchBuilder::Handle::mysql.3.gz
+%%PERL5_MAN3%%/DBIx::SearchBuilder::Handle::mysqlPP.3.gz
+%%PERL5_MAN3%%/DBIx::SearchBuilder::Record.3.gz
+%%PERL5_MAN3%%/DBIx::SearchBuilder::Record::Cachable.3.gz
+%%PERL5_MAN3%%/DBIx::SearchBuilder::SchemaGenerator.3.gz
+%%PERL5_MAN3%%/DBIx::SearchBuilder::Union.3.gz
+%%PERL5_MAN3%%/DBIx::SearchBuilder::Unique.3.gz
+%%PERL5_MAN3%%/DBIx::SearchBuilder::Util.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/SearchBuilder
 @dirrm %%SITE_PERL%%/DBIx/SearchBuilder/Record
 @dirrm %%SITE_PERL%%/DBIx/SearchBuilder/Handle

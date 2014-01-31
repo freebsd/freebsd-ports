@@ -12,11 +12,10 @@ COMMENT=	Library for registering keyboard shortcuts
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 introspection
+USE_GNOME=	gtk20 introspection:build
 USE_XORG=	x11 xext xrender
 USES=		gmake pkgconfig pathfix
 USE_LDCONFIG=	yes
-MAKE_ENV=	GI_SCANNER_DISABLE_CACHE=yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES PYTHON LUA
 OPTIONS_DEFAULT=	PYTHON

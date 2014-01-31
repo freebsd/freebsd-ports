@@ -1,4 +1,4 @@
-# Created by: ijliao
+# Created by: Ying-Chieh Liao <ijliao@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	adgali
@@ -8,39 +8,33 @@ CATEGORIES=	games devel
 MASTER_SITES=	http://adgali.apiou.org/download/
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	An open source game library useful for 2D game development
+COMMENT=	Open source game library useful for 2D game development
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libfreetype.so:${PORTSDIR}/print/freetype2
+.if !exists(/usr/include/execinfo.h)
+LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
+.endif
 
+USES=		gmake
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
+USE_LDCONFIG=	yes
 USE_SDL=	sdl
 USE_XORG=	xpm
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-compile-optim=no
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo
-CONFIGURE_ARGS=	--enable-compile-optim=no
-USE_LDCONFIG=	yes
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha"
-BROKEN=		Configure fails
-.endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc/html && ${FIND} . | \
-		${CPIO} -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc/html && ${FIND} . | ${CPIO} -pdm -L -R \
+		${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

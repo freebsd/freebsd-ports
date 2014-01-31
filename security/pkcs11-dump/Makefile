@@ -18,11 +18,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
 
-PLIST_FILES=	bin/pkcs11-dump
+PLIST_FILES=	bin/pkcs11-dump \
+		man/man1/pkcs11-dump.1.gz
 
-MAN1=		pkcs11-dump.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} 's|install-data-am: install-dist_docDATA|install-data-am:|' \
 		${WRKSRC}/Makefile.in

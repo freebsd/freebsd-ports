@@ -1,3 +1,4 @@
+bin/bind9-config
 bin/dig
 bin/host
 bin/isc-config.sh
@@ -12,6 +13,7 @@ include/dns/byaddr.h
 include/dns/cache.h
 include/dns/callbacks.h
 include/dns/cert.h
+include/dns/client.h
 include/dns/clientinfo.h
 include/dns/compress.h
 include/dns/db.h
@@ -52,13 +54,13 @@ include/dns/rdatasetiter.h
 include/dns/rdataslab.h
 include/dns/rdatastruct.h
 include/dns/rdatatype.h
-include/dns/rpz.h
-include/dns/sdlz.h
 include/dns/request.h
 include/dns/resolver.h
 include/dns/result.h
 include/dns/rootns.h
+include/dns/rpz.h
 include/dns/sdb.h
+include/dns/sdlz.h
 include/dns/secalg.h
 include/dns/secproto.h
 include/dns/soa.h
@@ -66,6 +68,7 @@ include/dns/ssu.h
 include/dns/tcpmsg.h
 include/dns/time.h
 include/dns/tkey.h
+include/dns/tsec.h
 include/dns/tsig.h
 include/dns/ttl.h
 include/dns/types.h
@@ -161,6 +164,7 @@ include/isc/taskpool.h
 include/isc/thread.h
 include/isc/time.h
 include/isc/timer.h
+include/isc/tm.h
 include/isc/types.h
 include/isc/util.h
 include/isc/version.h
@@ -204,6 +208,7 @@ lib/libisccc.a
 lib/libisccfg.a
 lib/liblwres.a
 %%SHARE_MAN%%man/man1/arpaname.1.gz
+%%SHARE_MAN%%man/man1/bind9-config.1.gz
 %%SHARE_MAN%%man/man1/dig.1.gz
 %%SHARE_MAN%%man/man1/host.1.gz
 %%SHARE_MAN%%man/man1/isc-config.sh.1.gz
@@ -318,6 +323,7 @@ lib/liblwres.a
 sbin/arpaname
 sbin/ddns-confgen
 sbin/dnssec-dsfromkey
+sbin/dnssec-importkey
 sbin/dnssec-keyfromlabel
 sbin/dnssec-keygen
 sbin/dnssec-revoke

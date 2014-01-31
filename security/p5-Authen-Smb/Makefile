@@ -13,9 +13,6 @@ COMMENT=	Perl extension to authenticate against an SMB server
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Authen::Smb.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,' \
 		${WRKSRC}/smbval/rfcnb-util.c \

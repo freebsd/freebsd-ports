@@ -2354,7 +2354,6 @@ korean/nh2ps||2011-08-01|Has expired: Looks like abandonware, no more public dis
 korean/pinetreefonts||2011-08-01|Has expired: No more public distfile
 mail/bincimap||2011-08-01|Has expired: No more public distfile
 mail/cmail||2011-08-01|Has expired: No more public distfile
-math/hexcalc||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 math/qgfe||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 misc/ewipe||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
 misc/gkrellmfmonitor2||2011-08-01|Has expired: Looks like abandonware, no more public distfiles
@@ -5588,3 +5587,27 @@ x11/yelp3|x11/yelp|%DATE%|moved
 x11-fm/nautilus3|x11-fm/nautilus|%DATE%|moved
 x11-toolkits/gdl3|x11-toolkits/gdl|%DATE%|moved
 x11-wm/metacity3|x11-wm/metacity|%DATE%|moved
+french/ispell|french/aspell|2014-01-29|Removed, consider using aspell instead
+german/ispell|german/aspell|2014-01-29|Removed, consider using aspell instead
+german/ispell-alt|german/aspell|2014-01-29|Removed, consider using aspell instead
+german/ispell-neu|german/aspell|2014-01-29|Removed, consider using aspell instead
+hungarian/ispell|hungarian/aspell|2014-01-29|Removed, consider using aspell instead
+polish/ispell|polish/aspell|2014-01-28|Removed, consider using aspell instead
+portuguese/ispell-pt_BR|portuguese/aspell-pt_BR|2014-01-28|Removed, consider using aspell instead
+russian/rus-ispell|russian/aspell|2014-01-29|Removed, consider using aspell instead
+textproc/british-ispell|textroc/en-aspell|2014-01-29|Removed, consider using aspell instead
+textproc/es-ispell|textproc/es-aspell|2014-01-29|Removed, consider using aspell instead
+textproc/ispell|textproc/aspell-ispell|2014-01-29|Removed, consider using aspell instead
+textproc/it-ispell|textproc/it-aspell|2014-01-29|Removed, consider using aspell instead
+textproc/nl-ispell|textproc/nl-ispell|2014-01-29|Removed, consider using aspell instead
+textproc/sk-ispell|textproc/sk-ispell|2014-01-29|Removed, consider using aspell instead
+ukrainian/ispell|ukrainian/aspell|2014-01-29|Removed, consider using aspell instead
+audio/gsi||2014-01-30|Removed, abandonware
+multimedia/kino||2014-01-31|Has expired: Not developed since 2009, declared dead 05.08.2013 on there website.
+x11-drivers/xf86-video-imstt||2014-01-31|Has expired: Broken, unsupported and unmaintained upstream.
+x11-drivers/xf86-video-via||2014-01-31|Has expired: Broken, not supported upstream.
+multimedia/vdr-plugin-softdevice||2014-01-31|Has expired: Broken after ffmpeg update (not sure it ever worked)
+sysutils/mbmon|sysutils/xmbmon|2014-01-31|Has expired: Use sysutils/xmbmon instead. This port will be removed soon
+dns/bind96||2014-01-31|Has expired: EOL in January 2014, consider moving to Bind 9.8 or 9.9
+x11-drivers/xf86-video-nouveau||2014-01-31|Has expired: Not supported, missing kernel support. use the nvidia driver.
+cad/mars||2014-01-31|Removed, abandonware, no releases in the past 20 years

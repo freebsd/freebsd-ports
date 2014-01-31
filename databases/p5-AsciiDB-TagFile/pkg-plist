@@ -1,6 +1,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/AsciiDB/TagFile/.packlist
 %%SITE_PERL%%/AsciiDB/TagFile.pm
 %%SITE_PERL%%/AsciiDB/TagRecord.pm
+%%PERL5_MAN3%%/AsciiDB::TagFile.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AsciiDB/TagFile
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AsciiDB
 @dirrmtry %%SITE_PERL%%/AsciiDB

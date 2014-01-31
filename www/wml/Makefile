@@ -9,7 +9,7 @@ CATEGORIES=	www lang
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=thewml
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Website META Language, webdesign toolkit for HTML generation
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png

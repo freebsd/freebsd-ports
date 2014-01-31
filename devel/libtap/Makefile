@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	LOCAL/nik
 DISTNAME=	tap-${PORTVERSION}
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Library implementing the Test Anything Protocol
 
 LICENSE=	BSD

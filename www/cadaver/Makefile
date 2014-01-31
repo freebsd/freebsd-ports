@@ -17,13 +17,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-netrc
 ALL_TARGET=	cadaver
 
-MAN1=		cadaver.1
-PLIST_FILES=	bin/cadaver
+PLIST_FILES=	bin/cadaver \
+		man/man1/cadaver.1.gz
 
 # Neither expat nor libneon are needed at all, but the configure
 # script breaks if it can not find the Makefile* in them. Exclude
 # them to be sure, a stray .h is not included instead of what's
-NO_STAGE=	yes
 # found under PREFIX (installed by the neon port):
 EXTRACT_AFTER_ARGS=	\
 		--exclude '${PORTNAME}-${PORTVERSION}/lib/expat/*.[ch]' \

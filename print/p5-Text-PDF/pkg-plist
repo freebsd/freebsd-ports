@@ -33,6 +33,23 @@ bin/pdfstamp
 %%SITE_PERL%%/Text/PDF/examples/squ.pdf
 %%SITE_PERL%%/Text/PDF/examples/squares.pdf
 %%SITE_PERL%%/Text/PDF/examples/test.pdf
+%%PERL5_MAN3%%/Text::PDF.3.gz
+%%PERL5_MAN3%%/Text::PDF::Array.3.gz
+%%PERL5_MAN3%%/Text::PDF::Bool.3.gz
+%%PERL5_MAN3%%/Text::PDF::Dict.3.gz
+%%PERL5_MAN3%%/Text::PDF::File.3.gz
+%%PERL5_MAN3%%/Text::PDF::Filter.3.gz
+%%PERL5_MAN3%%/Text::PDF::Name.3.gz
+%%PERL5_MAN3%%/Text::PDF::Null.3.gz
+%%PERL5_MAN3%%/Text::PDF::Number.3.gz
+%%PERL5_MAN3%%/Text::PDF::Objind.3.gz
+%%PERL5_MAN3%%/Text::PDF::Page.3.gz
+%%PERL5_MAN3%%/Text::PDF::Pages.3.gz
+%%PERL5_MAN3%%/Text::PDF::SFont.3.gz
+%%PERL5_MAN3%%/Text::PDF::String.3.gz
+%%PERL5_MAN3%%/Text::PDF::TTFont.3.gz
+%%PERL5_MAN3%%/Text::PDF::TTFont0.3.gz
+%%PERL5_MAN3%%/Text::PDF::Utils.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/PDF
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 @dirrm %%SITE_PERL%%/Text/PDF/examples

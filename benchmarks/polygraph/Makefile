@@ -30,7 +30,6 @@ ZLIB_DESC=	Enable HTTP compression support
 
 OPTIONS_DEFAULT=	OPENSSL ZLIB
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUPLOT}
@@ -54,17 +53,5 @@ CONFIGURE_ARGS+=	--with-zlib=/usr
 .else
 CONFIGURE_ARGS+=	--without-zlib
 .endif
-
-MAN1=	polygraph-aka.1 polygraph-beepmon.1 polygraph-cdb.1 \
-	polygraph-client.1 polygraph-cmp-lx.1 polygraph-distr-test.1 \
-	polygraph-dns-cfg.1 polygraph-lr.1 polygraph-ltrace.1 \
-	polygraph-lx.1 polygraph-pgl-test.1 polygraph-pgl2acl.1 \
-	polygraph-pgl2eng.1 polygraph-pgl2ips.1 polygraph-pgl2ldif.1 \
-	polygraph-pmix2-ips.1 polygraph-pmix3-ips.1 polygraph-polymon.1 \
-	polygraph-polyprobe.1 polygraph-polyrrd.1 polygraph-pop-test.1 \
-	polygraph-reporter.1 polygraph-rng-test.1 polygraph-server.1 \
-	polygraph-udp2tcpd.1 polygraph-webaxe4-ips.1
-
-MAN7=	polygraph.7
 
 .include <bsd.port.mk>

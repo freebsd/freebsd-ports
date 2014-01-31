@@ -10,6 +10,7 @@ MAINTAINER=	miles@aronnax.net
 COMMENT=	Race for the Galaxy AI, a computer version of the Rio Grande card game
 
 RESTRICTED=	Contains licensed graphics that must be fetched manually
+LEGAL=		Redistribution not authorized
 
 GNU_CONFIGURE=	yes
 USE_GNOME=      gtk20

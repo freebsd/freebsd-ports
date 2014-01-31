@@ -17,6 +17,24 @@
 %%SITE_PERL%%/Pipeline/Store/ISA.pm
 %%SITE_PERL%%/Pipeline/Store/Simple.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pipeline/.packlist
+%%PERL5_MAN3%%/Pipeline::Segment.3.gz
+%%PERL5_MAN3%%/Pipeline::Store::ISA.3.gz
+%%PERL5_MAN3%%/Pipeline.3.gz
+%%PERL5_MAN3%%/Pipeline::Segment::Async::Handler.3.gz
+%%PERL5_MAN3%%/Pipeline::Analyser.3.gz
+%%PERL5_MAN3%%/Pipeline::Production.3.gz
+%%PERL5_MAN3%%/Pipeline::Store::Simple.3.gz
+%%PERL5_MAN3%%/Pipeline::Segment::Async.3.gz
+%%PERL5_MAN3%%/Pipeline::Store.3.gz
+%%PERL5_MAN3%%/Pipeline::Error::Construction.3.gz
+%%PERL5_MAN3%%/Pipeline::Dispatch.3.gz
+%%PERL5_MAN3%%/Pipeline::Base.3.gz
+%%PERL5_MAN3%%/Pipeline::Segment::Async::Fork.3.gz
+%%PERL5_MAN3%%/Pipeline::Error::Abstract.3.gz
+%%PERL5_MAN3%%/Pipeline::Dumper.3.gz
+%%PERL5_MAN3%%/Pipeline::Error::AsyncResults.3.gz
+%%PERL5_MAN3%%/Pipeline::Segment::Tester.3.gz
+%%PERL5_MAN3%%/Pipeline::Segment::Async::IThreads.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Pipeline
 @dirrm %%SITE_PERL%%/Pipeline/Store
 @dirrm %%SITE_PERL%%/Pipeline/Segment/Async

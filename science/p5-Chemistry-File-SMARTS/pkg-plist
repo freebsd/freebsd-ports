@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File/SMARTS/.packlist
 %%SITE_PERL%%/Chemistry/File/SMARTS.pm
+%%PERL5_MAN3%%/Chemistry::File::SMARTS.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File/SMARTS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/File

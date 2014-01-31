@@ -13,10 +13,4 @@ COMMENT=	Perl module that supplies statistical methods for perl5
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Statistics::Descriptive.3 \
-	Statistics::Descriptive::Smoother.3 \
-	Statistics::Descriptive::Smoother::Exponential.3 \
-	Statistics::Descriptive::Smoother::Weightedexponential.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

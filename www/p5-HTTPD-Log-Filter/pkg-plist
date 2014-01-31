@@ -1,4 +1,6 @@
 bin/exclude_robots
+%%PERL5_MAN3%%/HTTPD::Log::Filter.3.gz
+man/man1/exclude_robots.1.gz
 %%SITE_PERL%%/HTTPD/Log/Filter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTPD/Log/Filter/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTPD/Log/Filter

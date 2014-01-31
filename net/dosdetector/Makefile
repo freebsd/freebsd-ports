@@ -16,8 +16,7 @@ COMMENT=	Detect suspicious network traffic
 HAS_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoheader
 
-PLIST_FILES=	bin/dosdetector
-MAN1=		dosdetector.1
+PLIST_FILES=	bin/dosdetector \
+		man/man1/dosdetector.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	sec
-PORTVERSION=	2.7.4
+PORTVERSION=	2.7.5
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/simple-evcorr/${PORTNAME}/${PORTVERSION}
 
@@ -26,17 +26,16 @@ PLIST_DIRS+=	%%DATADIR%%
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/sec.man ${MANPREFIX}/man/man8/sec.8
-	@${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/contrib && ${INSTALL_DATA} ${PORTCONTRIB} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/sec.man ${STAGEDIR}${MANPREFIX}/man/man8/sec.8
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC}/contrib && ${INSTALL_DATA} ${PORTCONTRIB} ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

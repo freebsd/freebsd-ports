@@ -14,8 +14,4 @@ COMMENT=	Provides a unified approach to tracing
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Log::Trace.3 \
-	Log::Trace::Manual.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

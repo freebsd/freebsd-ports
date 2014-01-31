@@ -14,10 +14,9 @@ COMMENT=	SCGI server interface
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	SCGI.3 SCGI::Request.3
-
-PLIST_FILES=	${SITE_PERL_REL}/SCGI.pm ${SITE_PERL_REL}/SCGI/Request.pm
+PLIST_FILES=	${SITE_PERL_REL}/SCGI.pm ${SITE_PERL_REL}/SCGI/Request.pm \
+		%%PERL5_MAN3%%/SCGI.3.gz \
+		%%PERL5_MAN3%%/SCGI::Request.3.gz
 PLIST_DIRS=	${SITE_PERL_REL}/SCGI
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

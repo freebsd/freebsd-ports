@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Class/DBI/Plugin.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin/.packlist
+%%PERL5_MAN3%%/Class::DBI::Plugin.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class

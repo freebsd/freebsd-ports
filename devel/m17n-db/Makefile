@@ -15,20 +15,15 @@ EXTRACT_ONLY=	${M17N_DISTFILE}
 MAINTAINER=	nikola.lecic@anthesphoria.net
 COMMENT=	Data files for the m17n library
 
-USES=		gmake pkgconfig
+OPTIONS_DEFINE=	NLS
+
+USES=		gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-charmaps=${CHARMAPSDIR}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+OPTIONS_SUB=	yes
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
 M17N_DISTFILE=	${DISTNAME}${EXTRACT_SUFX}
 GLIBC_VERSION=	2.3.6

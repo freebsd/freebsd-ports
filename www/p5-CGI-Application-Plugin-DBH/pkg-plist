@@ -1,2 +1,3 @@
 %%SITE_PERL%%/CGI/Application/Plugin/DBH.pm
+%%PERL5_MAN3%%/CGI::Application::Plugin::DBH.3.gz
 @dirrmtry %%SITE_PERL%%/CGI/Application/Plugin

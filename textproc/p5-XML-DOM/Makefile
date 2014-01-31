@@ -18,18 +18,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		XML::DOM.3 XML::DOM::AttDef.3 XML::DOM::AttlistDecl.3 \
-		XML::DOM::Attr.3 XML::DOM::CDATASection.3 \
-		XML::DOM::CharacterData.3 XML::DOM::Comment.3 \
-		XML::DOM::DOMImplementation.3 XML::DOM::Document.3 \
-		XML::DOM::DocumentFragment.3 XML::DOM::DocumentType.3 \
-		XML::DOM::Element.3 XML::DOM::ElementDecl.3 \
-		XML::DOM::Entity.3 XML::DOM::EntityReference.3 \
-		XML::DOM::NamedNodeMap.3 XML::DOM::Node.3 \
-		XML::DOM::NodeList.3 XML::DOM::Notation.3 \
-		XML::DOM::Parser.3 XML::DOM::PerlSAX.3 \
-		XML::DOM::ProcessingInstruction.3 XML::DOM::Text.3 \
-		XML::DOM::XMLDecl.3 XML::Handler::BuildDOM.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

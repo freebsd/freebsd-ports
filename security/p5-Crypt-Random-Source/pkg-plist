@@ -11,6 +11,18 @@
 %%SITE_PERL%%/Crypt/Random/Source/Weak/devurandom.pm
 %%SITE_PERL%%/Crypt/Random/Source/Weak/rand.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Random/Source/.packlist
+%%PERL5_MAN3%%/Crypt::Random::Source.3.gz
+%%PERL5_MAN3%%/Crypt::Random::Source::Base.3.gz
+%%PERL5_MAN3%%/Crypt::Random::Source::Base::File.3.gz
+%%PERL5_MAN3%%/Crypt::Random::Source::Base::Handle.3.gz
+%%PERL5_MAN3%%/Crypt::Random::Source::Base::Proc.3.gz
+%%PERL5_MAN3%%/Crypt::Random::Source::Base::RandomDevice.3.gz
+%%PERL5_MAN3%%/Crypt::Random::Source::Factory.3.gz
+%%PERL5_MAN3%%/Crypt::Random::Source::Strong.3.gz
+%%PERL5_MAN3%%/Crypt::Random::Source::Strong::devrandom.3.gz
+%%PERL5_MAN3%%/Crypt::Random::Source::Weak.3.gz
+%%PERL5_MAN3%%/Crypt::Random::Source::Weak::devurandom.3.gz
+%%PERL5_MAN3%%/Crypt::Random::Source::Weak::rand.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Random/Source
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/Random
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt

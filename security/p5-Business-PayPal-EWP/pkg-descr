@@ -1,6 +1,4 @@
 Business::PayPal::EWP - Perl extension for PayPal's Encrypted Website Payments
-
-WWW:	http://search.cpan.org/dist/Business-PayPal-EWP/
 with Encrypted Web Payments. It contains a single function, SignAndEncrypt
 which takes the plaintext form code, private key file, public key file, and
 PayPal's public certificate, and will return the signed and encrypted code

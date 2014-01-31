@@ -7,7 +7,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/
 DISTNAME=	9e
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Explode Plan9 archives
 
 LICENSE=	LPL

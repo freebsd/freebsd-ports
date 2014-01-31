@@ -1,4 +1,4 @@
-# Created by: Seiichirou Hiraoka
+# Created by: Seiichirou Hiraoka <flathill@flathill.gr.jp>
 # $FreeBSD$
 
 PORTNAME=	fkiss
@@ -13,34 +13,34 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Freely enjoy childlike KISS, French-KISS!
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
-NOT_FOR_ARCHS=	alpha
+EXTRA_PATCHES=	${WRKDIR}/${PORTNAME}-${PORTVERSION}.diff
 
+USES=		gmake
 USE_XORG=	x11 xproto
 WANT_GNOME=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 		AUTOMAKE="${TRUE}"
 
-MAN1=		fkiss.1
+PLIST_FILES=	bin/fkiss man/man1/fkiss.1.gz
 PORTDOCS=	*
 PORTEXAMPLES=	*
-PLIST_FILES=	bin/fkiss
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mesound}!=""
+# XXX should be converted to OptionsNG
+.if ${HAVE_GNOME:Mesound}
+USES+=		pkgconfig
 USE_GNOME+=	esound
 CPPFLAGS+=	`pkg-config --cflags-only-I esound`
 LDFLAGS+=	`pkg-config --libs-only-L esound `
 .endif
-
-pre-patch:
-	@cd ${WRKSRC} && ${CAT} ../${PORTNAME}-${PORTVERSION}.diff \
-		| ${PATCH} ${PATCH_ARGS}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|= @X_LIBS@|= @LDFLAGS@ @X_LIBS@|g' \
@@ -49,16 +49,15 @@ post-patch:
 		${WRKSRC}/sound.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fkiss ${PREFIX}/bin/fkiss
-	${INSTALL_MAN} ${WRKSRC}/fkiss.man ${MANPREFIX}/man/man1/fkiss.1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
-	${INSTALL_DATA} ${WRKSRC}/README.euc ${DOCSDIR}/README.ja_JP.eucJP
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/frkismi4.lzh ${EXAMPLESDIR}/frkismi4.lzh
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/fkiss ${STAGEDIR}${PREFIX}/bin/fkiss
+	${INSTALL_MAN} ${WRKSRC}/fkiss.man \
+		${STAGEDIR}${MANPREFIX}/man/man1/fkiss.1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.euc \
+		${STAGEDIR}${DOCSDIR}/README.ja_JP.eucJP
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/frkismi4.lzh \
+		${STAGEDIR}${EXAMPLESDIR}/frkismi4.lzh
 
 .include <bsd.port.post.mk>

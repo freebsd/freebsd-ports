@@ -75,6 +75,7 @@ share/gvfs/mounts/afp.mount
 %%SMB%%%%DATADIR%%/mounts/smb-browse.mount
 %%SMB%%%%DATADIR%%/mounts/smb.mount
 %%DATADIR%%/mounts/trash.mount
+%%DATADIR%%/remote-volume-monitors/.keep
 %%GPHOTO2%%%%DATADIR%%/remote-volume-monitors/gphoto2.monitor
 %%HAL%%%%DATADIR%%/remote-volume-monitors/hal.monitor
 share/locale/af/LC_MESSAGES/gvfs.mo

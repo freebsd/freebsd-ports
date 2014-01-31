@@ -3,6 +3,7 @@
 %%SITE_PERL%%/Math/vector_test.pl
 %%SITE_PERL%%/Math/matrix_test.pl
 %%SITE_PERL%%//%%PERL_ARCH%%/auto/Math/VectorReal/.packlist
+%%PERL5_MAN3%%/Math::VectorReal.3.gz
 @dirrmtry %%SITE_PERL%%/Math
 @dirrm %%SITE_PERL%%//%%PERL_ARCH%%/auto/Math/VectorReal
 @dirrmtry %%SITE_PERL%%//%%PERL_ARCH%%/auto/Math

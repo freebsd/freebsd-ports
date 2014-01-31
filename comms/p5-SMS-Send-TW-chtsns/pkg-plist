@@ -1,5 +1,6 @@
 %%SITE_PERL%%/SMS/Send/TW/chtsns.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/TW/chtsns/.packlist
+%%PERL5_MAN3%%/SMS::Send::TW::chtsns.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/TW/chtsns
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/TW
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send

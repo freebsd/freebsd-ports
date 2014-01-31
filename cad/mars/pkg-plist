@@ -1,8 +1,0 @@
-bin/mars
-%%PORTDOCS%%%%DOCSDIR%%/proman/prog.ps
-%%PORTDOCS%%%%DOCSDIR%%/usrman/user.ps
-%%PORTDOCS%%%%DOCSDIR%%/motifman/Xmotif.ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/proman
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/usrman
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/motifman
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

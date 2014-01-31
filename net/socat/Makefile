@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	socat
-PORTVERSION=	1.7.2.2
-PORTREVISION=	2
+PORTVERSION=	1.7.2.3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/ \
 		CRITICAL

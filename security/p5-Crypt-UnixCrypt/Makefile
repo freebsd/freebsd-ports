@@ -13,7 +13,4 @@ COMMENT=	Perl module implementing crypt(3) function
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Crypt::UnixCrypt.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

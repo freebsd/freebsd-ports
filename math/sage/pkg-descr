@@ -7,4 +7,7 @@ Mathematica and Matlab.
 
 For instructions on adding optional packages, see files/optional-packages.txt.
 
+You may want to avoid the command "make install" and instead simply use the
+bin/mv command to move the ${WRKSRC} directory to where-ever you want it.
+
 WWW: http://www.sagemath.org/

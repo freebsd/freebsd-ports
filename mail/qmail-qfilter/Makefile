@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uffe@uffe.org
 COMMENT=	Front-end for qmail-queue to run messages through filters
 
 LIB_DEPENDS=	bg-sysdeps.2:${PORTSDIR}/devel/bglibs

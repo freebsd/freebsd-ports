@@ -17,9 +17,6 @@ TEST_DEPENDS=	p5-Data-HexDump>0:${PORTSDIR}/devel/p5-Data-HexDump \
 		p5-Test-Differences>0:${PORTSDIR}/devel/p5-Test-Differences
 
 USES=		perl5
-NO_STAGE=	yes
 USE_PERL5=	configure
-
-MAN3=		Net::DAAP::DMAP.3
 
 .include <bsd.port.mk>

@@ -1,6 +1,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/TransactionManager/.packlist
 %%SITE_PERL%%/DBIx/TransactionManager.pm
 %%SITE_PERL%%/DBIx/TransactionManager/Developers.pod
+%%PERL5_MAN3%%/DBIx::TransactionManager.3.gz
+%%PERL5_MAN3%%/DBIx::TransactionManager::Developers.3.gz
 @dirrm %%SITE_PERL%%/DBIx/TransactionManager
 @dirrmtry %%SITE_PERL%%/DBIx
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/TransactionManager

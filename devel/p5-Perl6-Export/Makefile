@@ -14,7 +14,4 @@ COMMENT=	Implements the Perl 6 'is export(...)' trait
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Perl6::Export.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -17,7 +17,4 @@ BUILD_DEPENDS=	p5-AnyEvent>=3.4:${PORTSDIR}/devel/p5-AnyEvent \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	AnyEvent::AIO.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

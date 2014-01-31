@@ -59,6 +59,22 @@
 %%SITE_PERL%%/CGI/FormBuilder/Test.pm
 %%SITE_PERL%%/CGI/FormBuilder/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/FormBuilder/.packlist
+%%PERL5_MAN3%%/CGI::FormBuilder.3.gz
+%%PERL5_MAN3%%/CGI::FormBuilder::Field.3.gz
+%%PERL5_MAN3%%/CGI::FormBuilder::Messages.3.gz
+%%PERL5_MAN3%%/CGI::FormBuilder::Multi.3.gz
+%%PERL5_MAN3%%/CGI::FormBuilder::Source.3.gz
+%%PERL5_MAN3%%/CGI::FormBuilder::Source::File.3.gz
+%%PERL5_MAN3%%/CGI::FormBuilder::Template.3.gz
+%%PERL5_MAN3%%/CGI::FormBuilder::Template::Builtin.3.gz
+%%PERL5_MAN3%%/CGI::FormBuilder::Template::CGI_SSI.3.gz
+%%PERL5_MAN3%%/CGI::FormBuilder::Template::Div.3.gz
+%%PERL5_MAN3%%/CGI::FormBuilder::Template::Fast.3.gz
+%%PERL5_MAN3%%/CGI::FormBuilder::Template::HTML.3.gz
+%%PERL5_MAN3%%/CGI::FormBuilder::Template::TT2.3.gz
+%%PERL5_MAN3%%/CGI::FormBuilder::Template::Text.3.gz
+%%PERL5_MAN3%%/CGI::FormBuilder::Test.3.gz
+%%PERL5_MAN3%%/CGI::FormBuilder::Util.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI/FormBuilder
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CGI
 @dirrm %%SITE_PERL%%/CGI/FormBuilder/Field

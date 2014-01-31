@@ -8,7 +8,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GENTOO/distfiles \
 		http://download.ofb.net/liboop/
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Low-level event loop management library for POSIX-based OS
 
 LICENSE=	GPLv2

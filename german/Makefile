@@ -23,9 +23,6 @@
     SUBDIR += gimp-help
     SUBDIR += hunspell
     SUBDIR += hyphen
-    SUBDIR += ispell
-    SUBDIR += ispell-alt
-    SUBDIR += ispell-neu
     SUBDIR += jdictionary-eng-ger
     SUBDIR += jdictionary-ger-hun
     SUBDIR += kde4-l10n

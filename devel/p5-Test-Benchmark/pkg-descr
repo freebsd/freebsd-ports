@@ -8,5 +8,4 @@ lots of timings to compare and you don't want to keep running the same
 benchmarks all the time, you can pass in a result object from
 Benchmark::timethis() instead of sub routine reference.
 
-Author:	Fergal Daly <fergal@esatclear.ie>
-WWW:	http://search.cpan.org/dist/Test-Benchmark/
+WWW: http://search.cpan.org/dist/Test-Benchmark/

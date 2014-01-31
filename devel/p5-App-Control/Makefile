@@ -13,7 +13,4 @@ COMMENT=	An apachectl style control of another script or executable
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		App::Control.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,3 +1,4 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Switch/.packlist
 %%SITE_PERL%%/Switch.pm
+%%PERL5_MAN3%%/Switch.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Switch

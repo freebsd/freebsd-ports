@@ -10,20 +10,18 @@ MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
-COMMENT=	Xfce4 panel plugin to check a mountpoint for free disk space
+COMMENT=	Panel plugin which displays free space of mountpoint
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 INSTALLS_ICONS=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk20 intltool intlhack
 USE_XFCE=	configenv libmenu libutil panel
 USE_XORG=	x11
-USES=		pkgconfig pathfix
+USES=		pkgconfig gmake
 
 OPTIONS_DEFINE= NLS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

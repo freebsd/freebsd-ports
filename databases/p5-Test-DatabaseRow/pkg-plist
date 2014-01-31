@@ -2,6 +2,9 @@
 %%SITE_PERL%%/Test/DatabaseRow/Result.pm
 %%SITE_PERL%%/Test/DatabaseRow/Object.pm
 %%SITE_PERL%%/Test/DatabaseRow.pm
+%%PERL5_MAN3%%/Test::DatabaseRow.3.gz
+%%PERL5_MAN3%%/Test::DatabaseRow::Result.3.gz
+%%PERL5_MAN3%%/Test::DatabaseRow::Object.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/DatabaseRow
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
 @dirrmtry %%SITE_PERL%%/Test/DatabaseRow

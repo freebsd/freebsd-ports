@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Crypt/HCE_MD5.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/HCE_MD5/.packlist
 %%SITE_PERL%%/auto/Crypt/HCE_MD5/autosplit.ix
+%%PERL5_MAN3%%/Crypt::HCE_MD5.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt/HCE_MD5/
 @dirrm %%SITE_PERL%%/auto/Crypt/HCE_MD5/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt

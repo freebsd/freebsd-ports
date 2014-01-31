@@ -1,4 +1,5 @@
 bin/nopaste
+%%PERL5_MAN3%%/WebService::NoPaste.3.gz
 %%SITE_PERL%%/WebService/NoPaste.pm
 @dirrmtry %%SITE_PERL%%/WebService
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/NoPaste/.packlist

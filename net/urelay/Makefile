@@ -9,9 +9,7 @@ MASTER_SITES=	http://devel.ringlet.net/net/urelay/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An UCSPI-based TCP forwarder
 
-MAN1=		urelay.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/urelay
+PLIST_FILES=	bin/urelay \
+		man/man1/urelay.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

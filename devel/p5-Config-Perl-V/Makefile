@@ -1,5 +1,6 @@
 # Created by: Steve Wills <swills@FreeBSD.org>
 # $FreeBSD$
+
 PORTNAME=	Config-Perl-V
 PORTVERSION=	0.15
 CATEGORIES=	devel perl5
@@ -17,7 +18,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Config::Perl::V.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

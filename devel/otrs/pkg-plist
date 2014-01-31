@@ -82,6 +82,7 @@ otrs/Kernel/Language/vi_VN.pm
 otrs/Kernel/Language/xx_Custom.pm
 otrs/Kernel/Language/zh_CN.pm
 otrs/Kernel/Language/zh_TW.pm
+otrs/Kernel/Modules/AdminACL.pm
 otrs/Kernel/Modules/Admin.pm
 otrs/Kernel/Modules/AdminAttachment.pm
 otrs/Kernel/Modules/AdminAutoResponse.pm
@@ -89,6 +90,7 @@ otrs/Kernel/Modules/AdminCustomerCompany.pm
 otrs/Kernel/Modules/AdminCustomerUser.pm
 otrs/Kernel/Modules/AdminCustomerUserGroup.pm
 otrs/Kernel/Modules/AdminCustomerUserService.pm
+otrs/Kernel/Modules/AgentDashboardCommon.pm
 otrs/Kernel/Modules/AdminDynamicField.pm
 otrs/Kernel/Modules/AdminDynamicFieldCheckbox.pm
 otrs/Kernel/Modules/AdminDynamicFieldDateTime.pm
@@ -123,9 +125,7 @@ otrs/Kernel/Modules/AdminProcessManagementTransition.pm
 otrs/Kernel/Modules/AdminProcessManagementTransitionAction.pm
 otrs/Kernel/Modules/AdminQueue.pm
 otrs/Kernel/Modules/AdminQueueAutoResponse.pm
-otrs/Kernel/Modules/AdminQueueResponses.pm
-otrs/Kernel/Modules/AdminResponse.pm
-otrs/Kernel/Modules/AdminResponseAttachment.pm
+otrs/Kernel/Modules/AdminRegistration.pm
 otrs/Kernel/Modules/AdminRole.pm
 otrs/Kernel/Modules/AdminRoleGroup.pm
 otrs/Kernel/Modules/AdminRoleUser.pm
@@ -140,7 +140,10 @@ otrs/Kernel/Modules/AdminSignature.pm
 otrs/Kernel/Modules/AdminState.pm
 otrs/Kernel/Modules/AdminSysConfig.pm
 otrs/Kernel/Modules/AdminSystemAddress.pm
+otrs/Kernel/Modules/AdminTemplate.pm
+otrs/Kernel/Modules/AdminTemplateAttachment.pm
 otrs/Kernel/Modules/AdminType.pm
+otrs/Kernel/Modules/AdminQueueTemplates.pm
 otrs/Kernel/Modules/AdminUser.pm
 otrs/Kernel/Modules/AdminUserGroup.pm
 otrs/Kernel/Modules/AgentBook.pm
@@ -189,6 +192,7 @@ otrs/Kernel/Modules/AgentTicketSearch.pm
 otrs/Kernel/Modules/AgentTicketStatusView.pm
 otrs/Kernel/Modules/AgentTicketWatchView.pm
 otrs/Kernel/Modules/AgentTicketWatcher.pm
+otrs/Kernel/Modules/AgentUserSearch.pm
 otrs/Kernel/Modules/AgentTicketZoom.pm
 otrs/Kernel/Modules/AgentZoom.pm
 otrs/Kernel/Modules/CustomerAccept.pm
@@ -220,12 +224,15 @@ otrs/Kernel/Output/HTML/DashboardCalendar.pm
 otrs/Kernel/Output/HTML/DashboardCustomerCompanyInformation.pm
 otrs/Kernel/Output/HTML/DashboardCustomerIDStatus.pm
 otrs/Kernel/Output/HTML/DashboardCustomerUserList.pm
+otrs/Kernel/Output/HTML/DashboardEventsTicketCalendar.pm
 otrs/Kernel/Output/HTML/DashboardIFrame.pm
 otrs/Kernel/Output/HTML/DashboardImage.pm
 otrs/Kernel/Output/HTML/DashboardMOTD.pm
 otrs/Kernel/Output/HTML/DashboardProductNotify.pm
 otrs/Kernel/Output/HTML/DashboardRSS.pm
+otrs/Kernel/Output/HTML/DashboardStats.pm
 otrs/Kernel/Output/HTML/DashboardTicketGeneric.pm
+otrs/Kernel/Output/HTML/DashboardTicketQueueOverview.pm
 otrs/Kernel/Output/HTML/DashboardTicketStatsGeneric.pm
 otrs/Kernel/Output/HTML/DashboardUserOnline.pm
 otrs/Kernel/Output/HTML/DashboardUserOutOfOffice.pm
@@ -242,6 +249,7 @@ otrs/Kernel/Output/HTML/LinkObjectTicket.pm
 otrs/Kernel/Output/HTML/NavBarCustomerCompany.pm
 otrs/Kernel/Output/HTML/NavBarModuleAdmin.pm
 otrs/Kernel/Output/HTML/NavBarOutputModuleAgentTicketProcess.pm
+otrs/Kernel/Output/HTML/NavBarOutputModuleCustomerTicketProcess.pm
 otrs/Kernel/Output/HTML/NotificationAgentOnline.pm
 otrs/Kernel/Output/HTML/NotificationAgentTicketEscalation.pm
 otrs/Kernel/Output/HTML/NotificationCustomerOnline.pm
@@ -251,6 +259,7 @@ otrs/Kernel/Output/HTML/NotificationSchedulerCheck.pm
 otrs/Kernel/Output/HTML/NotificationUIDCheck.pm
 otrs/Kernel/Output/HTML/OutputFilterTextAutoLink.pm
 otrs/Kernel/Output/HTML/OutputFilterTextURL.pm
+otrs/Kernel/Output/HTML/PreferencesColumnFilters.pm
 otrs/Kernel/Output/HTML/PreferencesCustomQueue.pm
 otrs/Kernel/Output/HTML/PreferencesGeneric.pm
 otrs/Kernel/Output/HTML/PreferencesLanguage.pm
@@ -273,6 +282,9 @@ otrs/Kernel/Output/HTML/Standard/AAAPreferences.dtl
 otrs/Kernel/Output/HTML/Standard/AAAStats.dtl
 otrs/Kernel/Output/HTML/Standard/AAATicket.dtl
 otrs/Kernel/Output/HTML/Standard/AAAWeekDay.dtl
+otrs/Kernel/Output/HTML/Standard/AdminACL.dtl
+otrs/Kernel/Output/HTML/Standard/AdminACLEdit.dtl
+otrs/Kernel/Output/HTML/Standard/AdminACLNew.dtl
 otrs/Kernel/Output/HTML/Standard/AdminAttachment.dtl
 otrs/Kernel/Output/HTML/Standard/AdminAutoResponse.dtl
 otrs/Kernel/Output/HTML/Standard/AdminCustomerCompany.dtl
@@ -318,9 +330,8 @@ otrs/Kernel/Output/HTML/Standard/AdminProcessManagementTransition.dtl
 otrs/Kernel/Output/HTML/Standard/AdminProcessManagementTransitionAction.dtl
 otrs/Kernel/Output/HTML/Standard/AdminQueue.dtl
 otrs/Kernel/Output/HTML/Standard/AdminQueueAutoResponse.dtl
-otrs/Kernel/Output/HTML/Standard/AdminQueueResponses.dtl
-otrs/Kernel/Output/HTML/Standard/AdminResponse.dtl
-otrs/Kernel/Output/HTML/Standard/AdminResponseAttachment.dtl
+otrs/Kernel/Output/HTML/Standard/AdminQueueTemplates.dtl
+otrs/Kernel/Output/HTML/Standard/AdminRegistration.dtl
 otrs/Kernel/Output/HTML/Standard/AdminRole.dtl
 otrs/Kernel/Output/HTML/Standard/AdminRoleGroup.dtl
 otrs/Kernel/Output/HTML/Standard/AdminRoleUser.dtl
@@ -338,6 +349,8 @@ otrs/Kernel/Output/HTML/Standard/AdminState.dtl
 otrs/Kernel/Output/HTML/Standard/AdminSysConfig.dtl
 otrs/Kernel/Output/HTML/Standard/AdminSysConfigEdit.dtl
 otrs/Kernel/Output/HTML/Standard/AdminSystemAddress.dtl
+otrs/Kernel/Output/HTML/Standard/AdminTemplate.dtl
+otrs/Kernel/Output/HTML/Standard/AdminTemplateAttachment.dtl
 otrs/Kernel/Output/HTML/Standard/AdminType.dtl
 otrs/Kernel/Output/HTML/Standard/AdminUser.dtl
 otrs/Kernel/Output/HTML/Standard/AdminUserGroup.dtl
@@ -349,6 +362,7 @@ otrs/Kernel/Output/HTML/Standard/AgentCustomerSearch.dtl
 otrs/Kernel/Output/HTML/Standard/AgentCustomerTableView.dtl
 otrs/Kernel/Output/HTML/Standard/AgentDashboard.dtl
 otrs/Kernel/Output/HTML/Standard/AgentDashboardCalendarOverview.dtl
+otrs/Kernel/Output/HTML/Standard/AgentDashboardCommon.dtl
 otrs/Kernel/Output/HTML/Standard/AgentDashboardCustomerCompanyInformation.dtl
 otrs/Kernel/Output/HTML/Standard/AgentDashboardCustomerIDStatus.dtl
 otrs/Kernel/Output/HTML/Standard/AgentDashboardCustomerUserList.dtl
@@ -356,7 +370,9 @@ otrs/Kernel/Output/HTML/Standard/AgentDashboardIFrame.dtl
 otrs/Kernel/Output/HTML/Standard/AgentDashboardImage.dtl
 otrs/Kernel/Output/HTML/Standard/AgentDashboardProductNotify.dtl
 otrs/Kernel/Output/HTML/Standard/AgentDashboardRSSOverview.dtl
+otrs/Kernel/Output/HTML/Standard/AgentDashboardStats.dtl
 otrs/Kernel/Output/HTML/Standard/AgentDashboardTicketGeneric.dtl
+otrs/Kernel/Output/HTML/Standard/AgentDashboardTicketQueueOverview.dtl
 otrs/Kernel/Output/HTML/Standard/AgentDashboardTicketStats.dtl
 otrs/Kernel/Output/HTML/Standard/AgentDashboardUserOnline.dtl
 otrs/Kernel/Output/HTML/Standard/AgentDashboardUserOutOfOffice.dtl
@@ -377,6 +393,7 @@ otrs/Kernel/Output/HTML/Standard/AgentStatsImport.dtl
 otrs/Kernel/Output/HTML/Standard/AgentStatsOverview.dtl
 otrs/Kernel/Output/HTML/Standard/AgentStatsPrint.dtl
 otrs/Kernel/Output/HTML/Standard/AgentStatsView.dtl
+otrs/Kernel/Output/HTML/Standard/AgentStatsViewSettings.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketActionCommon.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketActionPopupClose.dtl
 otrs/Kernel/Output/HTML/Standard/AgentTicketBounce.dtl
@@ -427,12 +444,15 @@ otrs/Kernel/Output/HTML/Standard/CustomerRichTextEditor.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerTicketMessage.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerTicketOverview.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerTicketPrint.dtl
+otrs/Kernel/Output/HTML/Standard/CustomerTicketProcess.dtl
+otrs/Kernel/Output/HTML/Standard/CustomerTicketProcessNavigationBar.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerTicketSearch.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerTicketSearchOpenSearchDescription.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerTicketSearchResultPrint.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerTicketSearchResultShort.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerTicketZoom.dtl
 otrs/Kernel/Output/HTML/Standard/CustomerWarning.dtl
+otrs/Kernel/Output/HTML/Standard/DashboardEventsTicketCalendar.dtl
 otrs/Kernel/Output/HTML/Standard/Datepicker.dtl
 otrs/Kernel/Output/HTML/Standard/Error.dtl
 otrs/Kernel/Output/HTML/Standard/Footer.dtl
@@ -446,10 +466,13 @@ otrs/Kernel/Output/HTML/Standard/Installer.dtl
 otrs/Kernel/Output/HTML/Standard/InstallerConfigureMail.dtl
 otrs/Kernel/Output/HTML/Standard/InstallerDBResult.dtl
 otrs/Kernel/Output/HTML/Standard/InstallerDBStart.dtl
+otrs/Kernel/Output/HTML/Standard/InstallerDBmssql.dtl
+otrs/Kernel/Output/HTML/Standard/InstallerDBmysql.dtl
+otrs/Kernel/Output/HTML/Standard/InstallerDBoracle.dtl
+otrs/Kernel/Output/HTML/Standard/InstallerDBpostgresql.dtl
 otrs/Kernel/Output/HTML/Standard/InstallerFinish.dtl
 otrs/Kernel/Output/HTML/Standard/InstallerLicense.dtl
 otrs/Kernel/Output/HTML/Standard/InstallerLicenseText.dtl
-otrs/Kernel/Output/HTML/Standard/InstallerRegistration.dtl
 otrs/Kernel/Output/HTML/Standard/InstallerSystem.dtl
 otrs/Kernel/Output/HTML/Standard/LinkObject.dtl
 otrs/Kernel/Output/HTML/Standard/Login.dtl
@@ -490,6 +513,7 @@ otrs/Kernel/Output/HTML/TicketMenuMove.pm
 otrs/Kernel/Output/HTML/TicketMenuResponsible.pm
 otrs/Kernel/Output/HTML/TicketMenuTicketWatcher.pm
 otrs/Kernel/Output/HTML/TicketOverviewMedium.pm
+otrs/Kernel/Output/HTML/TicketOverviewMenuSort.pm
 otrs/Kernel/Output/HTML/TicketOverviewPreview.pm
 otrs/Kernel/Output/HTML/TicketOverviewSmall.pm
 otrs/Kernel/Output/HTML/ToolBarGeneric.pm
@@ -503,6 +527,8 @@ otrs/Kernel/Scheduler.pm
 otrs/Kernel/Scheduler/TaskHandler.pm
 otrs/Kernel/Scheduler/TaskHandler/GenericInterface.pm
 otrs/Kernel/Scheduler/TaskHandler/Test.pm
+otrs/Kernel/Scheduler/TaskHandler/RegistrationUpdate.pm
+otrs/Kernel/System/ACL/DB/ACL.pm
 otrs/Kernel/System/Auth.pm
 otrs/Kernel/System/Auth/DB.pm
 otrs/Kernel/System/Auth/HTTPBasicAuth.pm
@@ -527,14 +553,17 @@ otrs/Kernel/System/CustomerAuth/HTTPBasicAuth.pm
 otrs/Kernel/System/CustomerAuth/LDAP.pm
 otrs/Kernel/System/CustomerAuth/Radius.pm
 otrs/Kernel/System/CustomerCompany.pm
+otrs/Kernel/System/CustomerCompany/DB.pm
+otrs/Kernel/System/CustomerCompany/Event/CustomerUserUpdate.pm
+otrs/Kernel/System/CustomerCompany/Event/TicketUpdate.pm
 otrs/Kernel/System/CustomerGroup.pm
 otrs/Kernel/System/CustomerUser.pm
 otrs/Kernel/System/CustomerUser/DB.pm
+otrs/Kernel/System/CustomerUser/Event/ServiceMemberUpdate.pm
+otrs/Kernel/System/CustomerUser/Event/TicketUpdate.pm
 otrs/Kernel/System/CustomerUser/LDAP.pm
 otrs/Kernel/System/CustomerUser/Preferences/DB.pm
 otrs/Kernel/System/DB.pm
-otrs/Kernel/System/DB/db2.pm
-otrs/Kernel/System/DB/ingres.pm
 otrs/Kernel/System/DB/mssql.pm
 otrs/Kernel/System/DB/mysql.pm
 otrs/Kernel/System/DB/oracle.pm
@@ -542,14 +571,17 @@ otrs/Kernel/System/DB/postgresql.pm
 otrs/Kernel/System/DB/postgresql_before_8_2.pm
 otrs/Kernel/System/DynamicField.pm
 otrs/Kernel/System/DynamicField/Backend.pm
-otrs/Kernel/System/DynamicField/Backend/BackendCommon.pm
-otrs/Kernel/System/DynamicField/Backend/Checkbox.pm
-otrs/Kernel/System/DynamicField/Backend/Date.pm
-otrs/Kernel/System/DynamicField/Backend/DateTime.pm
-otrs/Kernel/System/DynamicField/Backend/Dropdown.pm
-otrs/Kernel/System/DynamicField/Backend/Multiselect.pm
-otrs/Kernel/System/DynamicField/Backend/Text.pm
-otrs/Kernel/System/DynamicField/Backend/TextArea.pm
+otrs/Kernel/System/DynamicField/Driver/Base.pm
+otrs/Kernel/System/DynamicField/Driver/BaseDateTime.pm
+otrs/Kernel/System/DynamicField/Driver/BaseSelect.pm
+otrs/Kernel/System/DynamicField/Driver/BaseText.pm
+otrs/Kernel/System/DynamicField/Driver/Checkbox.pm
+otrs/Kernel/System/DynamicField/Driver/Date.pm
+otrs/Kernel/System/DynamicField/Driver/DateTime.pm
+otrs/Kernel/System/DynamicField/Driver/Dropdown.pm
+otrs/Kernel/System/DynamicField/Driver/Multiselect.pm
+otrs/Kernel/System/DynamicField/Driver/Text.pm
+otrs/Kernel/System/DynamicField/Driver/TextArea.pm
 otrs/Kernel/System/DynamicField/ObjectType/Article.pm
 otrs/Kernel/System/DynamicField/ObjectType/Ticket.pm
 otrs/Kernel/System/DynamicFieldValue.pm
@@ -561,6 +593,8 @@ otrs/Kernel/System/Email/SMTPTLS.pm
 otrs/Kernel/System/Email/Sendmail.pm
 otrs/Kernel/System/EmailParser.pm
 otrs/Kernel/System/Encode.pm
+otrs/Kernel/System/Environment.pm
+otrs/Kernel/System/Event.pm
 otrs/Kernel/System/EventHandler.pm
 otrs/Kernel/System/FileTemp.pm
 otrs/Kernel/System/GenericAgent.pm
@@ -588,6 +622,7 @@ otrs/Kernel/System/MailAccount/IMAPS.pm
 otrs/Kernel/System/MailAccount/IMAPTLS.pm
 otrs/Kernel/System/MailAccount/POP3.pm
 otrs/Kernel/System/MailAccount/POP3S.pm
+otrs/Kernel/System/MailAccount/POP3TLS.pm
 otrs/Kernel/System/Main.pm
 otrs/Kernel/System/Notification.pm
 otrs/Kernel/System/NotificationEvent.pm
@@ -598,6 +633,7 @@ otrs/Kernel/System/PostMaster.pm
 otrs/Kernel/System/PostMaster/DestQueue.pm
 otrs/Kernel/System/PostMaster/Filter.pm
 otrs/Kernel/System/PostMaster/Filter/CMD.pm
+otrs/Kernel/System/PostMaster/Filter/ExternalTicketNumberRecognition.pm
 otrs/Kernel/System/PostMaster/Filter/FollowUpArticleTypeCheck.pm
 otrs/Kernel/System/PostMaster/Filter/Match.pm
 otrs/Kernel/System/PostMaster/Filter/MatchDBSource.pm
@@ -637,6 +673,7 @@ otrs/Kernel/System/ProcessManagement/TransitionValidation/ValidateDemo.pm
 otrs/Kernel/System/Queue.pm
 otrs/Kernel/System/Queue/PreferencesDB.pm
 otrs/Kernel/System/ReferenceData.pm
+otrs/Kernel/System/Registration.pm
 otrs/Kernel/System/SLA.pm
 otrs/Kernel/System/SLA/PreferencesDB.pm
 otrs/Kernel/System/Salutation.pm
@@ -647,6 +684,7 @@ otrs/Kernel/System/Service/PreferencesDB.pm
 otrs/Kernel/System/Signature.pm
 otrs/Kernel/System/Spelling.pm
 otrs/Kernel/System/StandardResponse.pm
+otrs/Kernel/System/StandardTemplate.pm
 otrs/Kernel/System/State.pm
 otrs/Kernel/System/Stats.pm
 otrs/Kernel/System/Stats/Dynamic/Ticket.pm
@@ -660,6 +698,7 @@ otrs/Kernel/System/SysConfig/PriorityValidate.pm
 otrs/Kernel/System/SysConfig/QueueValidate.pm
 otrs/Kernel/System/SysConfig/StateValidate.pm
 otrs/Kernel/System/SystemAddress.pm
+otrs/Kernel/System/SystemData.pm
 otrs/Kernel/System/TemplateGenerator.pm
 otrs/Kernel/System/Ticket.pm
 otrs/Kernel/System/Ticket/Acl/CloseParentAfterClosedChilds.pm
@@ -668,15 +707,18 @@ otrs/Kernel/System/Ticket/ArticleSearchIndex/RuntimeDB.pm
 otrs/Kernel/System/Ticket/ArticleSearchIndex/StaticDB.pm
 otrs/Kernel/System/Ticket/ArticleStorageDB.pm
 otrs/Kernel/System/Ticket/ArticleStorageFS.pm
+otrs/Kernel/System/Ticket/ColumnFilter.pm
 otrs/Kernel/System/Ticket/Custom.pm.example
 otrs/Kernel/System/Ticket/CustomerPermission/CustomerIDCheck.pm
 otrs/Kernel/System/Ticket/CustomerPermission/CustomerUserIDCheck.pm
 otrs/Kernel/System/Ticket/CustomerPermission/GroupCheck.pm
 otrs/Kernel/System/Ticket/Event/ArchiveRestore.pm
 otrs/Kernel/System/Ticket/Event/ArticleSearchIndex.pm
+otrs/Kernel/System/Ticket/Event/DynamicFieldFromCustomerUser.pm
 otrs/Kernel/System/Ticket/Event/ForceOwnerReset.pm
 otrs/Kernel/System/Ticket/Event/ForceState.pm
 otrs/Kernel/System/Ticket/Event/ForceUnlock.pm
+otrs/Kernel/System/Ticket/Event/GenericAgent.pm
 otrs/Kernel/System/Ticket/Event/NotificationEvent.pm
 otrs/Kernel/System/Ticket/Event/ResponsibleAutoSet.pm
 otrs/Kernel/System/Ticket/Event/Test.pm
@@ -723,6 +765,7 @@ otrs/Kernel/System/XML.pm
 otrs/Kernel/System/YAML.pm
 otrs/RELEASE
 otrs/bin/Cron.sh
+otrs/bin/cgi-bin/app.psgi
 otrs/bin/cgi-bin/customer.pl
 otrs/bin/cgi-bin/index.pl
 otrs/bin/cgi-bin/installer.pl
@@ -734,10 +777,11 @@ otrs/bin/fcgi-bin/index.pl
 otrs/bin/fcgi-bin/installer.pl
 otrs/bin/fcgi-bin/nph-genericinterface.pl
 otrs/bin/fcgi-bin/public.pl
+otrs/bin/otrs.AddCustomer2Group.pl
+otrs/bin/otrs.AddQueue2StdTemplate.pl
 otrs/bin/otrs.AddCustomerUser.pl
 otrs/bin/otrs.AddGroup.pl
 otrs/bin/otrs.AddQueue.pl
-otrs/bin/otrs.AddQueue2StdResponse.pl
 otrs/bin/otrs.AddRole.pl
 otrs/bin/otrs.AddRole2Group.pl
 otrs/bin/otrs.AddService.pl
@@ -755,6 +799,7 @@ otrs/bin/otrs.CleanTicketIndex.pl
 otrs/bin/otrs.CleanUp.pl
 otrs/bin/otrs.CleanupTicketMetadata.pl
 otrs/bin/otrs.CreateApacheStartupFile.pl
+otrs/bin/otrs.CreateAUTHORS.pl
 otrs/bin/otrs.CreateTranslationFile.pl
 otrs/bin/otrs.Cron4Win32.pl
 otrs/bin/otrs.CryptPassword.pl
@@ -763,8 +808,10 @@ otrs/bin/otrs.DeleteSessionIDs.pl
 otrs/bin/otrs.ExecuteDatabaseXML.pl
 otrs/bin/otrs.ExportStatsToOPM.pl
 otrs/bin/otrs.FillDB.pl
+otrs/bin/otrs.ImportACLsFromConfig.pl
 otrs/bin/otrs.GenerateStats.pl
 otrs/bin/otrs.GenericAgent.pl
+otrs/bin/otrs.GenerateDashboardStats.pl
 otrs/bin/otrs.GenericInterfaceDebugRead.pl
 otrs/bin/otrs.GetConfig.pl
 otrs/bin/otrs.GetTicketThread.pl
@@ -782,6 +829,7 @@ otrs/bin/otrs.RebuildEscalationIndex.pl
 otrs/bin/otrs.RebuildFulltextIndex.pl
 otrs/bin/otrs.RebuildTicketIndex.pl
 otrs/bin/otrs.RefreshSMIMEKeys.pl
+otrs/bin/otrs.ReprocessMails.pl
 otrs/bin/otrs.Scheduler.pl
 otrs/bin/otrs.Scheduler4win.pl
 otrs/bin/otrs.Scheduler4winInstaller.pl
@@ -791,52 +839,38 @@ otrs/bin/otrs.TicketDelete.pl
 otrs/bin/otrs.UnitTest.pl
 otrs/bin/otrs.UnlockTickets.pl
 otrs/bin/otrs.WebserviceConfig.pl
-otrs/bin/otrs.cleanup
+otrs/bin/otrs.WebServer4win.pl
+otrs/bin/otrs.WebServerInstaller.pl
 otrs/bin/otrs.xml2sql.pl
-otrs/scripts/DBUpdate-3.2.beta.db2.sql
-otrs/scripts/DBUpdate-3.2.beta.ingres.sql
-otrs/scripts/DBUpdate-3.2.beta.mssql.sql
-otrs/scripts/DBUpdate-3.2.beta.mysql.sql
-otrs/scripts/DBUpdate-3.2.beta.oracle.sql
-otrs/scripts/DBUpdate-3.2.beta.postgresql.sql
-otrs/scripts/DBUpdate-3.2.beta.postgresql_before_8_2.sql
-otrs/scripts/DBUpdate-to-3.2.db2.sql
-otrs/scripts/DBUpdate-to-3.2.ingres.sql
-otrs/scripts/DBUpdate-to-3.2.mssql.sql
-otrs/scripts/DBUpdate-to-3.2.mysql.sql
-otrs/scripts/DBUpdate-to-3.2.oracle.sql
-otrs/scripts/DBUpdate-to-3.2.pl
-otrs/scripts/DBUpdate-to-3.2.postgresql.sql
-otrs/scripts/DBUpdate-to-3.2.postgresql_before_8_2.sql
+otrs/scripts/DBUpdate-to-3.3.mssql.sql
+otrs/scripts/DBUpdate-to-3.3.mysql.sql
+otrs/scripts/DBUpdate-to-3.3.oracle.sql
+otrs/scripts/DBUpdate-to-3.3.pl
+otrs/scripts/DBUpdate-to-3.3.postgresql.sql
+otrs/scripts/DBUpdate-to-3.3.postgresql_before_8_2.sql
 otrs/scripts/apache2-httpd.include.conf
 otrs/scripts/apache2-perl-startup.pl
+otrs/scripts/apache2-httpd-plack-proxy.conf
 otrs/scripts/auto_build.sh
 otrs/scripts/backup.pl
-otrs/scripts/database/otrs-initial_insert.db2.sql
-otrs/scripts/database/otrs-initial_insert.ingres.sql
 otrs/scripts/database/otrs-initial_insert.mssql.sql
 otrs/scripts/database/otrs-initial_insert.mysql.sql
 otrs/scripts/database/otrs-initial_insert.oracle.sql
 otrs/scripts/database/otrs-initial_insert.postgresql.sql
 otrs/scripts/database/otrs-initial_insert.postgresql_before_8_2.sql
 otrs/scripts/database/otrs-initial_insert.xml
-otrs/scripts/database/otrs-schema-post.db2.sql
-otrs/scripts/database/otrs-schema-post.ingres.sql
 otrs/scripts/database/otrs-schema-post.mssql.sql
 otrs/scripts/database/otrs-schema-post.mysql.sql
 otrs/scripts/database/otrs-schema-post.oracle.sql
 otrs/scripts/database/otrs-schema-post.postgresql.sql
 otrs/scripts/database/otrs-schema-post.postgresql_before_8_2.sql
-otrs/scripts/database/otrs-schema.db2.sql
-otrs/scripts/database/otrs-schema.ingres.sql
 otrs/scripts/database/otrs-schema.mssql.sql
 otrs/scripts/database/otrs-schema.mysql.sql
 otrs/scripts/database/otrs-schema.oracle.sql
 otrs/scripts/database/otrs-schema.postgresql.sql
 otrs/scripts/database/otrs-schema.postgresql_before_8_2.sql
 otrs/scripts/database/otrs-schema.xml
-otrs/scripts/database/update/otrs-upgrade-3.2.beta.xml
-otrs/scripts/database/update/otrs-upgrade-to-3.2.xml
+otrs/scripts/database/update/otrs-upgrade-to-3.3.xml
 otrs/scripts/restore.pl
 otrs/scripts/rpc-example.pl
 otrs/scripts/syncuser_csv2otrs.pl
@@ -860,6 +894,8 @@ otrs/scripts/test/DynamicFieldValue.t
 otrs/scripts/test/Email.t
 otrs/scripts/test/EmailParser.t
 otrs/scripts/test/Encode.t
+otrs/scripts/test/Environment.t
+otrs/scripts/test/Event.t
 otrs/scripts/test/FileTemp.t
 otrs/scripts/test/GenericAgent.t
 otrs/scripts/test/Group.t
@@ -888,12 +924,14 @@ otrs/scripts/test/SearchProfile.t
 otrs/scripts/test/Service.t
 otrs/scripts/test/Signature.t
 otrs/scripts/test/Spelling.t
+otrs/scripts/test/StandardTemplate.t
 otrs/scripts/test/StandardResponse.t
 otrs/scripts/test/State.t
 otrs/scripts/test/Stats.t
 otrs/scripts/test/StdAttachment.t
 otrs/scripts/test/SysConfig.t
 otrs/scripts/test/SystemAddress.t
+otrs/scripts/test/SystemData.t
 otrs/scripts/test/Ticket.t
 otrs/scripts/test/Time.t
 otrs/scripts/test/Type.t
@@ -908,12 +946,14 @@ otrs/scripts/test/XML.t
 otrs/scripts/tools/base64.pl
 otrs/scripts/tools/charset-convert.pl
 otrs/scripts/tools/compress-mail.pl
+otrs/scripts/tools/md5sum.pl
 otrs/scripts/tools/sync-ldap2db.pl
 otrs/scripts/tools/xml2html.pl
 otrs/scripts/webform.pl
 otrs/var/cron/aaa_base.dist
 otrs/var/cron/cache.dist
 otrs/var/cron/fetchmail.dist
+otrs/var/cron/generate_dashboard_stats.dist
 otrs/var/cron/generic_agent-database.dist
 otrs/var/cron/generic_agent.dist
 otrs/var/cron/pending_jobs.dist
@@ -932,10 +972,12 @@ otrs/var/fonts/DejaVuSansMono-Oblique.ttf
 otrs/var/fonts/DejaVuSansMono.ttf
 otrs/var/httpd/htdocs/index.html
 otrs/var/httpd/htdocs/js/Core.AJAX.js
+otrs/var/httpd/htdocs/js/Core.Agent.Admin.ACL.js
 otrs/var/httpd/htdocs/js/Core.Agent.Admin.DynamicField.js
 otrs/var/httpd/htdocs/js/Core.Agent.Admin.DynamicFieldDateTime.js
 otrs/var/httpd/htdocs/js/Core.Agent.Admin.DynamicFieldDropdown.js
 otrs/var/httpd/htdocs/js/Core.Agent.Admin.DynamicFieldMultiselect.js
+otrs/var/httpd/htdocs/js/Core.Agent.Admin.GenericAgent.js
 otrs/var/httpd/htdocs/js/Core.Agent.Admin.GenericInterfaceDebugger.js
 otrs/var/httpd/htdocs/js/Core.Agent.Admin.GenericInterfaceInvoker.js
 otrs/var/httpd/htdocs/js/Core.Agent.Admin.GenericInterfaceMappingSimple.js
@@ -952,6 +994,7 @@ otrs/var/httpd/htdocs/js/Core.Agent.Dashboard.js
 otrs/var/httpd/htdocs/js/Core.Agent.Login.js
 otrs/var/httpd/htdocs/js/Core.Agent.Search.js
 otrs/var/httpd/htdocs/js/Core.Agent.Stats.js
+otrs/var/httpd/htdocs/js/Core.Agent.TableFilters.js
 otrs/var/httpd/htdocs/js/Core.Agent.TicketAction.js
 otrs/var/httpd/htdocs/js/Core.Agent.TicketZoom.js
 otrs/var/httpd/htdocs/js/Core.Agent.js
@@ -973,16 +1016,17 @@ otrs/var/httpd/htdocs/js/Core.UI.Accessibility.js
 otrs/var/httpd/htdocs/js/Core.UI.Accordion.js
 otrs/var/httpd/htdocs/js/Core.UI.ActionRow.js
 otrs/var/httpd/htdocs/js/Core.UI.AllocationList.js
+otrs/var/httpd/htdocs/js/Core.UI.Autocomplete.js
 otrs/var/httpd/htdocs/js/Core.UI.Chart.js
 otrs/var/httpd/htdocs/js/Core.UI.Datepicker.js
 otrs/var/httpd/htdocs/js/Core.UI.Dialog.js
 otrs/var/httpd/htdocs/js/Core.UI.DnD.js
-otrs/var/httpd/htdocs/js/Core.UI.IE7Fixes.js
 otrs/var/httpd/htdocs/js/Core.UI.Popup.js
 otrs/var/httpd/htdocs/js/Core.UI.Resizable.js
 otrs/var/httpd/htdocs/js/Core.UI.RichTextEditor.js
 otrs/var/httpd/htdocs/js/Core.UI.Table.Sort.js
 otrs/var/httpd/htdocs/js/Core.UI.Table.js
+otrs/var/httpd/htdocs/js/Core.UI.TreeSelection.js
 otrs/var/httpd/htdocs/js/Core.UI.js
 otrs/var/httpd/htdocs/js/test/Core.AJAX.UnitTest.js
 otrs/var/httpd/htdocs/js/test/Core.App.UnitTest.js
@@ -1001,6 +1045,7 @@ otrs/var/httpd/htdocs/js/test/sample/Core.AJAX.EmptyResponse.html
 otrs/var/httpd/htdocs/js/test/sample/Core.AJAX.FunctionCall1.html
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/CHANGES.md
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/LICENSE.md
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/adapters/jquery.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/ckeditor.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/config.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/contents.css
@@ -1035,6 +1080,7 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/he.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/hi.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/hr.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/hu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/id.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/is.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/it.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/ja.js
@@ -1055,8 +1101,10 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/pt-br.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/pt.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/ro.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/ru.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/si.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/sk.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/sl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/sq.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/sr-latn.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/sr.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang/sv.js
@@ -1079,16 +1127,23 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/d
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/el.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/en.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/eo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/es.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/et.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/fa.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/fi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/fr-ca.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/fr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/gl.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/gu.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/he.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/hi.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/hr.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/hu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/id.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/it.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/ja.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/km.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/ko.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/ku.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/lt.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/lv.js
@@ -1102,14 +1157,21 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/d
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/pt.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/ro.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/ru.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/si.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/sk.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/sl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/sq.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/sr-latn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/sr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/sv.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/th.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/tr.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/ug.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/uk.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/vi.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang/zh-cn.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/about/dialogs/about.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/about/dialogs/hidpi/logo_ckeditor.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/about/dialogs/logo_ckeditor.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/adobeair/plugin.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/ajax/plugin.js
@@ -1190,7 +1252,9 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/bbcode/plu
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/clipboard/dialogs/paste.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/colordialog/dialogs/colordialog.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/_translationstatus.txt
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/ar.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/bg.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/ca.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/cs.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/cy.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/da.js
@@ -1198,18 +1262,38 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/l
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/el.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/en.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/eo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/es.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/et.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/eu.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/fa.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/fi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/fr-ca.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/fr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/gl.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/gu.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/he.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/hr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/hu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/id.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/it.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/ja.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/km.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/ko.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/ku.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/lt.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/lv.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/nb.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/nl.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/no.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/pl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/pt-br.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/pt.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/ru.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/si.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/sk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/sl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/sq.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/sv.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/tr.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/ug.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/uk.js
@@ -1217,12 +1301,13 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/l
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang/zh-cn.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/plugin.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/dialog/dialogDefinition.js
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/dialogadvtab/plugin.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/div/dialogs/div.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/divarea/plugin.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/dialogs/docprops.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/icons/docprops-rtl.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/icons/docprops.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/icons/hidpi/docprops-rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/icons/hidpi/docprops.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang/af.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang/ar.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang/bg.js
@@ -1253,6 +1338,7 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/l
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang/hi.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang/hr.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang/hu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang/id.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang/is.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang/it.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang/ja.js
@@ -1273,8 +1359,10 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/l
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang/pt.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang/ro.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang/ru.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang/si.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang/sk.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang/sl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang/sq.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang/sr-latn.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang/sr.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang/sv.js
@@ -1300,16 +1388,102 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/forms/dial
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/forms/dialogs/textfield.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/forms/images/hiddenfield.gif
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/icons.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/icons_hidpi.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/iframe/dialogs/iframe.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/iframe/images/placeholder.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/iframedialog/plugin.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image/dialogs/image.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image/images/noimage.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/dialogs/image2.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/icons/hidpi/image2.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/icons/image2.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/af.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/ar.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/bg.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/bn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/bs.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/ca.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/cs.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/cy.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/da.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/de.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/el.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/en-au.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/en-ca.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/en-gb.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/en.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/eo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/es.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/et.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/eu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/fa.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/fi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/fo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/fr-ca.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/fr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/gl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/gu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/he.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/hi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/hr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/hu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/id.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/is.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/it.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/ja.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/ka.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/km.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/ko.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/ku.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/lt.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/lv.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/mk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/mn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/ms.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/nb.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/nl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/no.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/pl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/pt-br.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/pt.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/ro.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/ru.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/si.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/sk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/sl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/sq.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/sr-latn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/sr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/sv.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/th.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/tr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/ug.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/uk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/vi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/zh-cn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang/zh.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/language/icons/hidpi/language.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/language/icons/language.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/language/lang/en.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/language/lang/ja.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/language/lang/uk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/language/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/lineutils/plugin.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/link/dialogs/anchor.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/link/dialogs/link.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/link/images/anchor.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/link/images/hidpi/anchor.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/liststyle/dialogs/liststyle.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/magicline/images/hidpi/icon.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/magicline/images/icon.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/mathjax/dialogs/mathjax.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/mathjax/icons/hidpi/mathjax.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/mathjax/icons/mathjax.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/mathjax/images/loader.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/mathjax/lang/en.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/mathjax/lang/ja.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/mathjax/plugin.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/menubutton/plugin.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/onchange/docs/install.html
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/onchange/docs/styles.css
@@ -1317,9 +1491,11 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/onchange/p
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/pagebreak/images/pagebreak.gif
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/pastefromword/filter/default.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/dialogs/placeholder.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/icons/hidpi/placeholder.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/icons/placeholder.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/_translationstatus.txt
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/ar.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/bg.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/ca.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/cs.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/cy.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/da.js
@@ -1327,17 +1503,37 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholde
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/el.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/en.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/eo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/es.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/et.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/eu.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/fa.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/fi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/fr-ca.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/fr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/gl.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/he.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/hr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/hu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/id.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/it.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/ja.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/km.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/ko.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/ku.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/lv.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/nb.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/nl.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/no.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/pl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/pt-br.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/pt.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/ru.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/si.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/sk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/sl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/sq.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/sv.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/th.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/tr.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/ug.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/uk.js
@@ -1345,6 +1541,7 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholde
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang/zh-cn.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/plugin.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/preview/preview.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sharedspace/plugin.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/showblocks/images/block_address.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/showblocks/images/block_blockquote.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/showblocks/images/block_div.png
@@ -1358,29 +1555,122 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/showblocks
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/showblocks/images/block_pre.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/dialogs/smiley.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/angel_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/angel_smile.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/angry_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/angry_smile.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/broken_heart.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/broken_heart.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/confused_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/confused_smile.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/cry_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/cry_smile.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/devil_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/devil_smile.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/embaressed_smile.gif
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/embarrassed_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/embarrassed_smile.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/envelope.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/envelope.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/heart.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/heart.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/kiss.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/kiss.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/lightbulb.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/lightbulb.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/omg_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/omg_smile.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/regular_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/regular_smile.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/sad_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/sad_smile.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/shades_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/shades_smile.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/teeth_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/teeth_smile.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/thumbs_down.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/thumbs_down.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/thumbs_up.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/thumbs_up.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/tongue_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/tongue_smile.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/tounge_smile.gif
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/whatchutalkingabout_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/whatchutalkingabout_smile.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/wink_smile.gif
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images/wink_smile.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/dialogs/sourcedialog.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/icons/hidpi/sourcedialog-rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/icons/hidpi/sourcedialog.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/icons/sourcedialog-rtl.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/icons/sourcedialog.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/af.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/ar.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/bg.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/bn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/bs.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/ca.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/cs.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/cy.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/da.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/de.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/el.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/en-au.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/en-ca.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/en-gb.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/en.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/eo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/es.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/et.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/eu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/fa.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/fi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/fo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/fr-ca.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/fr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/gl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/gu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/he.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/hi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/hr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/hu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/id.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/is.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/it.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/ja.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/ka.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/km.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/ko.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/ku.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/lt.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/lv.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/mn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/ms.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/nb.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/nl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/no.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/pl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/pt-br.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/pt.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/ro.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/ru.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/si.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/sk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/sl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/sq.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/sr-latn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/sr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/sv.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/th.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/tr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/ug.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/uk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/vi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/zh-cn.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang/zh.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/plugin.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/_translationstatus.txt
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/ar.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/bg.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/ca.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/cs.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/cy.js
@@ -1388,22 +1678,39 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialcha
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/el.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/en.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/eo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/es.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/et.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/fa.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/fi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/fr-ca.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/fr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/gl.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/he.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/hr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/hu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/id.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/it.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/ja.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/km.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/ku.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/lv.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/nb.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/nl.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/no.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/pl.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/pt-br.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/pt.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/ru.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/si.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/sk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/sl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/sq.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/sv.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/th.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/tr.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/ug.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/uk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/vi.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang/zh-cn.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/specialchar.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/stylesheetparser/plugin.js
@@ -1417,9 +1724,12 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/templates/
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/templates/templates/images/template2.gif
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/templates/templates/images/template3.gif
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/dialogs/uicolor.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/icons/hidpi/uicolor.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/icons/uicolor.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/_translationstatus.txt
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/ar.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/bg.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/ca.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/cs.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/cy.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/da.js
@@ -1427,18 +1737,37 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/la
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/el.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/en.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/eo.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/es.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/et.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/eu.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/fa.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/fi.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/fr-ca.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/fr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/gl.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/he.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/hr.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/hu.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/id.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/it.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/ja.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/km.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/ko.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/ku.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/lv.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/mk.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/nb.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/nl.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/no.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/pl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/pt-br.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/pt.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/ru.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/si.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/sk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/sl.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/sq.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/sv.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/tr.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/ug.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang/uk.js
@@ -1451,7 +1780,66 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/yu
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/yui/assets/picker_thumb.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/yui/assets/yui.css
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/yui/yui.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/widget/images/handle.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/widget/lang/en.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/widget/lang/ja.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/widget/lang/uk.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/widget/plugin.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/xml/plugin.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/ajax.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/api.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/appendto.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/assets/inlineall/logo.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/assets/outputxhtml/outputxhtml.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/assets/posteddata.php
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/assets/sample.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/assets/sample.jpg
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/assets/uilanguages/languages.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/datafiltering.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/divreplace.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/index.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/inlineall.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/inlinebycode.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/inlinetextarea.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/jquery.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/autogrow/autogrow.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/bbcode/bbcode.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/devtools/devtools.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/dialog/assets/my_dialog.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/dialog/dialog.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/divarea/divarea.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/docprops/docprops.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/enterkey/enterkey.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/htmlwriter/assets/outputforflash/outputforflash.fla
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/htmlwriter/assets/outputforflash/outputforflash.swf
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/htmlwriter/assets/outputforflash/swfobject.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/htmlwriter/outputforflash.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/htmlwriter/outputhtml.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/image2/assets/image1.jpg
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/image2/assets/image2.jpg
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/image2/contents.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/image2/image2.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/magicline/magicline.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/mathjax/mathjax.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/placeholder/placeholder.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/sharedspace/sharedspace.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/sourcedialog/sourcedialog.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/stylesheetparser/assets/sample.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/stylesheetparser/stylesheetparser.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/tableresize/tableresize.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/toolbar/toolbar.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/uicolor/uicolor.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/wysiwygarea/fullpage.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/readonly.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/replacebyclass.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/replacebycode.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/sample.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/sample.js
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/sample_posteddata.php
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/tabindex.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/uicolor.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/uilanguages.html
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/xhtmlstyle.html
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/dialog.css
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/dialog_ie.css
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/dialog_ie7.css
@@ -1464,6 +1852,7 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/editor_
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/editor_ie8.css
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/editor_iequirks.css
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/icons.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/icons_hidpi.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/images/dialog_sides.gif
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/images/dialog_sides.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/images/dialog_sides_rtl.png
@@ -1477,37 +1866,93 @@ otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/dialog
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/dialog_ie.css
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/dialog_ie7.css
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/dialog_ie8.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/dialog_iequirks.css
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/dialog_opera.css
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/editor.css
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/editor_gecko.css
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/editor_ie.css
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/editor_ie7.css
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/editor_ie8.css
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/editor_iequirks.css
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/icons.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/icons_hidpi.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/images/arrow.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/images/close.png
-otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/images/mini.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/images/hidpi/close.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/images/hidpi/lock-open.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/images/hidpi/lock.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/images/hidpi/refresh.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/images/lock-open.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/images/lock.png
+otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/images/refresh.png
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/readme.md
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/styles.js
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-patches/2010-10-28-dialogui.patch
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-patches/2010-10-28-image-dialog.patch
 otrs/var/httpd/htdocs/js/thirdparty/ckeditor-patches/OTRS-PATCHES.txt
-otrs/var/httpd/htdocs/js/thirdparty/flot-0.7/excanvas.js
-otrs/var/httpd/htdocs/js/thirdparty/flot-0.7/jquery.flot.js
-otrs/var/httpd/htdocs/js/thirdparty/jquery-1.6.4/jquery.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/d3.v3.min.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/axis.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/boilerplate.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/bullet.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/bulletChart.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/cumulativeLineChart.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/discreteBar.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/discreteBarChart.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/distribution.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/historicalBar.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/historicalBarChart.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/indentedTree.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/legend.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/line.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/lineChart.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/linePlusBarChart.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/linePlusBarWithFocusChart.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/lineWithFisheye.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/lineWithFisheyeChart.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/lineWithFocusChart.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/multiBar.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/multiBarChart.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/multiBarHorizontal.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/multiBarHorizontalChart.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/multiBarTimeSeries.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/multiBarTimeSeriesChart.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/multiChart.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/ohlcBar.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/parallelCoordinates.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/pie.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/pieChart.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/scatter.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/scatterChart.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/scatterPlusLineChart.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/sparkline.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/sparklinePlus.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/stackedArea.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/stackedAreaChart.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/nv.d3.min.js
+otrs/var/httpd/htdocs/js/thirdparty/flot-0.8.1/excanvas.js
+otrs/var/httpd/htdocs/js/thirdparty/flot-0.8.1/jquery.flot.js
+otrs/var/httpd/htdocs/js/thirdparty/fullcalendar-1.6.1/fullcalendar.min.js
+otrs/var/httpd/htdocs/js/thirdparty/jquery-1.10.0/jquery.js
+otrs/var/httpd/htdocs/js/thirdparty/jquery-1.10.0/jquery-1.10.0.min.map
+otrs/var/httpd/htdocs/js/thirdparty/jquery-browser-detection/jquery-browser-detection.js
+otrs/var/httpd/htdocs/js/thirdparty/jquery-jstree-v.pre1.0/_lib/jquery.hotkeys.js
+otrs/var/httpd/htdocs/js/thirdparty/jquery-jstree-v.pre1.0/jquery.jstree.js
+otrs/var/httpd/htdocs/js/thirdparty/jquery-migrate-1.2.1/jquery-migrate.js
 otrs/var/httpd/htdocs/js/thirdparty/jquery-pubsub/pubsub.js
 otrs/var/httpd/htdocs/js/thirdparty/jquery-tablesorter-2.0.5/jquery.tablesorter.js
-otrs/var/httpd/htdocs/js/thirdparty/jquery-ui-1.8.21/jquery-ui.js
-otrs/var/httpd/htdocs/js/thirdparty/jquery-validate-1.10/jquery.validate.js
+otrs/var/httpd/htdocs/js/thirdparty/jquery-ui-1.10.3/jquery-ui.js
+otrs/var/httpd/htdocs/js/thirdparty/jquery-validate-1.11.1/jquery.validate.js
 otrs/var/httpd/htdocs/js/thirdparty/json/json2.js
-otrs/var/httpd/htdocs/js/thirdparty/jsplumb-1.4.2/jsplumb.js
+otrs/var/httpd/htdocs/js/thirdparty/jsplumb-1.5.4/jsplumb.js
 otrs/var/httpd/htdocs/js/thirdparty/qunit-1.11.0/qunit-1.11.0.css
 otrs/var/httpd/htdocs/js/thirdparty/qunit-1.11.0/qunit-1.11.0.js
 otrs/var/httpd/htdocs/js/thirdparty/stacktrace-0.4/stacktrace.js
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Admin.ACL.css
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Admin.DynamicField.css
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Admin.GenericInterface.css
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Admin.PerformanceLog.css
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Admin.ProcessManagement.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Admin.Registration.css
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Admin.SysConfig.css
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Admin.css
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.CustomerUser.Google.css
@@ -1515,6 +1960,7 @@ otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.CustomerUser.GoogleMaps
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.CustomerUser.LinkedIn.css
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.CustomerUser.OpenTicket.css
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.CustomerUser.Xing.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Dashboard.css
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.HTMLReference.css
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.TicketProcess.css
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Agent.Toolbar.CICSearch.css
@@ -1541,6 +1987,17 @@ otrs/var/httpd/htdocs/skins/Agent/default/css/Core.TicketDetail.css
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Tooltip.css
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.Widget.css
 otrs/var/httpd/htdocs/skins/Agent/default/css/Core.WidgetMenu.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/d3js/nv.d3.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/fontawesome/font-awesome.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/fontawesome/fontawesome-webfont.eot
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/fontawesome/fontawesome-webfont.svg
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/fontawesome/fontawesome-webfont.ttf
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/fontawesome/fontawesome-webfont.woff
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/fullcalendar-1.6.1/fullcalendar.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/jstree-theme/default/d.gif
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/jstree-theme/default/d.png
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/jstree-theme/default/style.css
+otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/jstree-theme/default/throbber.gif
 otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png
 otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png
 otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness/images/ui-bg_flat_10_000000_40x100.png
@@ -1582,44 +2039,19 @@ otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-icon
 otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-icons_f39c19_256x240.png
 otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images/ui-icons_ffffff_256x240.png
 otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/jquery-ui.css
-otrs/var/httpd/htdocs/skins/Agent/default/img/GradientSmall.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/GradientSmallBlack.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/ProgressBarArrow.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/ProgressBarArrowActive.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/ProgressBarIsolator.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/SmallDarkGradient.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/action_hover.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/actionrow_wrapper.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/actions_line.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/arrow_left.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/arrow_outlined_left.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/arrow_outlined_right.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/arrow_right.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/arrow_top.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/arrows.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/articlefilter.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/articleview.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/attachment_dummy1.jpg
-otrs/var/httpd/htdocs/skins/Agent/default/img/attachment_dummy2.jpg
-otrs/var/httpd/htdocs/skins/Agent/default/img/attachment_dummy3.jpg
-otrs/var/httpd/htdocs/skins/Agent/default/img/attachment_header.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/attachment_sprite.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/blank.gif
 otrs/var/httpd/htdocs/skins/Agent/default/img/bubble_tongueleft.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/bubble_tongueright.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/button_bg.gif
 otrs/var/httpd/htdocs/skins/Agent/default/img/contexthelp.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/controlrow.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/controlrow_isolator.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/controlrow_sprite.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/database_export.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/datepicker_vacation_days.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/dialog_alert.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/dialog_close.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/dialog_content.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/dialog_footer.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/dialog_footer_em.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/dialog_header.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/direction_header.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/direction_incoming.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/direction_internal.png
@@ -1633,10 +2065,7 @@ otrs/var/httpd/htdocs/skins/Agent/default/img/filter_add_hover.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/filter_remove.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/filter_remove_hover.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/flag_shadow.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/gradient_light.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/gradient_lightdark.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/handle.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/header_bg.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icon_resize_horizontal.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icon_resize_vertical.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/book-brown.png
@@ -1664,80 +2093,47 @@ otrs/var/httpd/htdocs/skins/Agent/default/img/icons/reload.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/reports.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/tick.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/trash-can.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/tree.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/undo.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/xing.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/loader.gif
 otrs/var/httpd/htdocs/skins/Agent/default/img/loginlogo_default.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/logo_bg.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/logout_sprite.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/navigation_hover.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/navigation_isolator.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/navigation_shadow.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/navigation_shadow_bottom.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/navigation_shadow_top.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/navigation_sprite.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/navigation_underline_bg.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/otrs-verify.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/otrs-verify-small.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/otrs-verify.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/overviewcontrol_checkbox.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/overviewcontrol_line.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/search_bg.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/small_border.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/stars.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/tab_isolator.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/tab_isolator_light.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/table_large_hover.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/table_medium_hover.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/table_medium_hover_bottom.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/table_small_hover_bg.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/tabs_active_bg.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/tabs_active_door.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/tabs_door_bg.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/thead_isolator.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/thead_sortdown_bg.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/thead_sortdown_bg_rtl.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/thead_sortup_bg.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/thead_sortup_bg_rtl.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/toggle_arrow.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/toolbar_sprite.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/triangle_bg.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/widget_bg_100.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/widget_close.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/widget_settings.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/zoom_active1.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/zoom_active2.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/zoom_sprite.png
-otrs/var/httpd/htdocs/skins/Agent/ivory/css/Core.Dialog.css
-otrs/var/httpd/htdocs/skins/Agent/ivory/img/action_hover.png
-otrs/var/httpd/htdocs/skins/Agent/ivory/img/attachment_sprite.png
-otrs/var/httpd/htdocs/skins/Agent/ivory/img/controlrow_sprite.png
+otrs/var/httpd/htdocs/skins/Agent/ivory-slim/css/Core.Default.css
+otrs/var/httpd/htdocs/skins/Agent/ivory-slim/img/dialog_alert.png
+otrs/var/httpd/htdocs/skins/Agent/ivory/css/Core.Default.css
 otrs/var/httpd/htdocs/skins/Agent/ivory/img/dialog_alert.png
-otrs/var/httpd/htdocs/skins/Agent/ivory/img/dialog_close.png
-otrs/var/httpd/htdocs/skins/Agent/ivory/img/logout_sprite.png
-otrs/var/httpd/htdocs/skins/Agent/ivory/img/navigation_hover.png
-otrs/var/httpd/htdocs/skins/Agent/ivory/img/navigation_sprite.png
-otrs/var/httpd/htdocs/skins/Agent/ivory/img/table_large_hover.png
-otrs/var/httpd/htdocs/skins/Agent/ivory/img/table_medium_hover.png
-otrs/var/httpd/htdocs/skins/Agent/ivory/img/table_medium_hover_bottom.png
-otrs/var/httpd/htdocs/skins/Agent/ivory/img/table_small_hover_bg.png
-otrs/var/httpd/htdocs/skins/Agent/ivory/img/toolbar_sprite.png
 otrs/var/httpd/htdocs/skins/Agent/slim/css/Core.Header.css
 otrs/var/httpd/htdocs/skins/Agent/slim/css/Core.Table.css
-otrs/var/httpd/htdocs/skins/Agent/slim/img/toolbar_sprite.png
 otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Control.css
 otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Customer.TicketProcess.css
 otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Default.css
-otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Dialog.IE7.css
 otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Dialog.css
 otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Form.css
-otrs/var/httpd/htdocs/skins/Customer/default/css/Core.IE7.css
 otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Login.css
 otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Print.css
 otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Reset.css
 otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Table.css
 otrs/var/httpd/htdocs/skins/Customer/default/css/Core.TicketZoom.css
-otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Tooltip.IE7.css
 otrs/var/httpd/htdocs/skins/Customer/default/css/Core.Tooltip.css
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/fontawesome/font-awesome.css
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/fontawesome/fontawesome-webfont.eot
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/fontawesome/fontawesome-webfont.svg
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/fontawesome/fontawesome-webfont.ttf
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/fontawesome/fontawesome-webfont.woff
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/jstree-theme/default/d.gif
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/jstree-theme/default/d.png
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/jstree-theme/default/style.css
+otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/jstree-theme/default/throbber.gif
 otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png
 otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png
 otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness/images/ui-bg_flat_10_000000_40x100.png
@@ -1779,43 +2175,29 @@ otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-i
 otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-icons_f39c19_256x240.png
 otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images/ui-icons_ffffff_256x240.png
 otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/jquery-ui.css
-otrs/var/httpd/htdocs/skins/Customer/default/img/GradientSmall.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/accept.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/actionrow_divider.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/arrow_answer.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/arrow_down.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/arrow_up.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/arrows.png
-otrs/var/httpd/htdocs/skins/Customer/default/img/body_bg.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/bubble_tongueleft.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/bubble_tongueright.png
-otrs/var/httpd/htdocs/skins/Customer/default/img/button.png
-otrs/var/httpd/htdocs/skins/Customer/default/img/button_bg.png
-otrs/var/httpd/htdocs/skins/Customer/default/img/controlrow.png
-otrs/var/httpd/htdocs/skins/Customer/default/img/controlrow_bg.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/controlrow_isolator.png
-otrs/var/httpd/htdocs/skins/Customer/default/img/datepicker_vacation_days.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/decline.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/dialog_alert.png
-otrs/var/httpd/htdocs/skins/Customer/default/img/dialog_close.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/icons/calendar.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/icons/tree.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/loader.gif
 otrs/var/httpd/htdocs/skins/Customer/default/img/logo.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/paper-clip.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/printer.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/reply.png
-otrs/var/httpd/htdocs/skins/Customer/default/img/sortable_bg.png
-otrs/var/httpd/htdocs/skins/Customer/default/img/tab_isolator.png
-otrs/var/httpd/htdocs/skins/Customer/default/img/tabs_active_bg.png
-otrs/var/httpd/htdocs/skins/Customer/default/img/tabs_active_door.png
-otrs/var/httpd/htdocs/skins/Customer/default/img/tabs_isolator.png
-otrs/var/httpd/htdocs/skins/Customer/default/img/tr_bg.png
-otrs/var/httpd/htdocs/skins/Customer/default/img/tr_hover.png
-otrs/var/httpd/htdocs/skins/Customer/default/img/tr_hover_next_bg.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/zoomexpandall.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/zoomexpandone.png
-otrs/var/httpd/htdocs/skins/Customer/ivory/css/Core.Default.css
 @unexec [ -s %D/otrs/var/log/TicketCounter.log ] || rm -f %D/otrs/var/log/TicketCounter.log
 otrs/var/logo-otrs.png
-otrs/var/packages/Support-1.4.5.opm
+otrs/var/packages/Support-1.5.4.opm
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilEscalationDeadlineExpires.de.xml
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilEscalationDeadlineExpires.en.xml
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilResponseDeadlineExpires.de.xml
@@ -1845,10 +2227,11 @@ otrs/var/stats/Stats.TicketOverview.en.xml
 @dirrmtry otrs/var/sessions
 @dirrm otrs/var/packages
 @dirrmtry otrs/var/log
-@dirrm otrs/var/httpd/htdocs/skins/Customer/ivory/css
-@dirrm otrs/var/httpd/htdocs/skins/Customer/ivory
 @dirrm otrs/var/httpd/htdocs/skins/Customer/default/img/icons
 @dirrm otrs/var/httpd/htdocs/skins/Customer/default/img
+@dirrm otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/fontawesome
+@dirrm otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/jstree-theme/default
+@dirrm otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/jstree-theme
 @dirrm otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme/images
 @dirrm otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-theme
 @dirrm otrs/var/httpd/htdocs/skins/Customer/default/css/thirdparty/ui-lightness/images
@@ -1857,18 +2240,25 @@ otrs/var/stats/Stats.TicketOverview.en.xml
 @dirrm otrs/var/httpd/htdocs/skins/Customer/default/css
 @dirrm otrs/var/httpd/htdocs/skins/Customer/default
 @dirrm otrs/var/httpd/htdocs/skins/Customer
-@dirrm otrs/var/httpd/htdocs/skins/Agent/slim/img
 @dirrm otrs/var/httpd/htdocs/skins/Agent/slim/css
 @dirrm otrs/var/httpd/htdocs/skins/Agent/slim
 @dirrm otrs/var/httpd/htdocs/skins/Agent/ivory/img
 @dirrm otrs/var/httpd/htdocs/skins/Agent/ivory/css
 @dirrm otrs/var/httpd/htdocs/skins/Agent/ivory
+@dirrm otrs/var/httpd/htdocs/skins/Agent/ivory-slim/img
+@dirrm otrs/var/httpd/htdocs/skins/Agent/ivory-slim/css
+@dirrm otrs/var/httpd/htdocs/skins/Agent/ivory-slim
 @dirrm otrs/var/httpd/htdocs/skins/Agent/default/img/icons
 @dirrm otrs/var/httpd/htdocs/skins/Agent/default/img
 @dirrm otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme/images
 @dirrm otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-theme
 @dirrm otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness/images
 @dirrm otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/ui-lightness
+@dirrm otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/fullcalendar-1.6.1
+@dirrm otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/fontawesome
+@dirrm otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/jstree-theme/default
+@dirrm otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/jstree-theme
+@dirrm otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty/d3js
 @dirrm otrs/var/httpd/htdocs/skins/Agent/default/css/thirdparty
 @dirrm otrs/var/httpd/htdocs/skins/Agent/default/css
 @dirrm otrs/var/httpd/htdocs/skins/Agent/default
@@ -1877,24 +2267,66 @@ otrs/var/stats/Stats.TicketOverview.en.xml
 @dirrmtry otrs/var/httpd/htdocs/js/js-cache
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/stacktrace-0.4
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/qunit-1.11.0
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/jsplumb-1.4.2
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/jsplumb-1.5.4
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/json
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-validate-1.10
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-ui-1.8.21
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-validate-1.11.1
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-ui-1.10.3
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-tablesorter-2.0.5
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-pubsub
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-1.6.4
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/flot-0.7
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-migrate-1.2.1
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-jstree-v.pre1.0/_lib
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-jstree-v.pre1.0
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-browser-detection
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-1.10.0
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/fullcalendar-1.6.1
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/flot-0.8.1
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/d3js/models
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/d3js
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-patches
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/images/hidpi
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono/images
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/moono
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama/images
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins/kama
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/skins
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/wysiwygarea
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/uicolor
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/toolbar
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/tableresize
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/stylesheetparser/assets
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/stylesheetparser
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/sourcedialog
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/sharedspace
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/placeholder
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/mathjax
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/magicline
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/image2/assets
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/image2
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/htmlwriter/assets/outputforflash
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/htmlwriter/assets
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/htmlwriter
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/enterkey
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/docprops
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/divarea
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/dialog/assets
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/dialog
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/devtools
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/bbcode
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins/autogrow
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/plugins
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/assets/uilanguages
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/assets/outputxhtml
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/assets/inlineall
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples/assets
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/samples
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/xml
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/widget/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/widget/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/widget
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/yui/assets
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/yui
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/icons/hidpi
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/icons
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor/dialogs
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/uicolor
@@ -1911,13 +2343,20 @@ otrs/var/stats/Stats.TicketOverview.en.xml
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs/lang
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar/dialogs
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/specialchar
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/icons/hidpi
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/icons
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sourcedialog
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/images
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley/dialogs
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/smiley
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/showblocks/images
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/showblocks
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/sharedspace
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/preview
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/icons/hidpi
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/icons
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder/dialogs
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/placeholder
@@ -1928,13 +2367,31 @@ otrs/var/stats/Stats.TicketOverview.en.xml
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/onchange/docs
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/onchange
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/menubutton
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/mathjax/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/mathjax/images
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/mathjax/icons/hidpi
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/mathjax/icons
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/mathjax/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/mathjax
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/magicline/images/hidpi
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/magicline/images
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/magicline
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/liststyle/dialogs
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/liststyle
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/link/images/hidpi
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/link/images
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/link/dialogs
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/link
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/lineutils
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/language/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/language/icons/hidpi
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/language/icons
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/language
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/icons/hidpi
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/icons
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2/dialogs
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image2
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image/images
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image/dialogs
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/image
@@ -1953,13 +2410,13 @@ otrs/var/stats/Stats.TicketOverview.en.xml
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/fakeobjects/images
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/fakeobjects
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/icons/hidpi
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/icons
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops/dialogs
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/docprops
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/divarea
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/div/dialogs
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/div
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/dialogadvtab
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/dialog
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools/lang
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/devtools
@@ -1976,6 +2433,7 @@ otrs/var/stats/Stats.TicketOverview.en.xml
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/aspell
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/ajax
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/adobeair
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/about/dialogs/hidpi
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/about/dialogs
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/about
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp/dialogs/lang
@@ -1983,6 +2441,7 @@ otrs/var/stats/Stats.TicketOverview.en.xml
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins/a11yhelp
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/plugins
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/lang
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%/adapters
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/ckeditor-%%VER_CKEDITOR%%
 @dirrm otrs/var/httpd/htdocs/js/thirdparty
 @dirrm otrs/var/httpd/htdocs/js/test/sample
@@ -2039,17 +2498,22 @@ otrs/var/stats/Stats.TicketOverview.en.xml
 @dirrm otrs/Kernel/System/GenericAgent
 @dirrm otrs/Kernel/System/Email
 @dirrm otrs/Kernel/System/DynamicField/ObjectType
-@dirrm otrs/Kernel/System/DynamicField/Backend
+@dirrm otrs/Kernel/System/DynamicField/Driver
 @dirrm otrs/Kernel/System/DynamicField
 @dirrm otrs/Kernel/System/DB
 @dirrm otrs/Kernel/System/CustomerUser/Preferences
+@dirrm otrs/Kernel/System/CustomerUser/Event
 @dirrm otrs/Kernel/System/CustomerUser
+@dirrm otrs/Kernel/System/CustomerCompany/Event
+@dirrm otrs/Kernel/System/CustomerCompany
 @dirrm otrs/Kernel/System/CustomerAuth
 @dirrm otrs/Kernel/System/Crypt
 @dirrm otrs/Kernel/System/Cache
 @dirrm otrs/Kernel/System/AuthSession
 @dirrm otrs/Kernel/System/Auth/Sync
 @dirrm otrs/Kernel/System/Auth
+@dirrm otrs/Kernel/System/ACL/DB
+@dirrm otrs/Kernel/System/ACL
 @dirrm otrs/Kernel/System
 @dirrm otrs/Kernel/Scheduler/TaskHandler
 @dirrm otrs/Kernel/Scheduler
@@ -2085,7 +2549,6 @@ otrs/var/stats/Stats.TicketOverview.en.xml
 %%PORTDOCS%%%%DOCSDIR%%/README.webserver.md
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADING.md
-%%PORTDOCS%%%%DOCSDIR%%/X-OTRS-Headers.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

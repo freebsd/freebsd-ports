@@ -5,4 +5,4 @@ The CTPP2 template language dialect contains 10 operators: <TMPL_var>,
 <TMPL_if>, <TMPL_elsif>, <TMPL_else>, <TMPL_unless>, <TMPL_loop>,
 <TMPL_foreach>, <TMPL_udf>, <TMPL_include> and <TMPL_comment>.
 
-WWW:    http://ctpp.havoc.ru/en/
+WWW: http://ctpp.havoc.ru/en/

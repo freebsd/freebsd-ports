@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Miscellany/.packlist
 %%SITE_PERL%%/Data/Miscellany.pm
+%%PERL5_MAN3%%/Data::Miscellany.3.gz
 @dirrmtry %%SITE_PERL%%/Data
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Miscellany
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data

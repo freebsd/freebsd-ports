@@ -20,9 +20,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	File::Attributes.3 \
-	File::Attributes::Base.3 \
-	File::Attributes::Simple.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

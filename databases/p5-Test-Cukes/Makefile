@@ -8,7 +8,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
-COMMENT=	A BBD test tool inspired by Cucumber
+COMMENT=	BBD test tool inspired by Cucumber
 
 BUILD_DEPENDS=	p5-Any-Moose>=0.10:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Carp-Assert>=0.20:${PORTSDIR}/devel/p5-Carp-Assert \
@@ -19,7 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Test::Cukes.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

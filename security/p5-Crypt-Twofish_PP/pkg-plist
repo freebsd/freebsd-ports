@@ -4,6 +4,10 @@
 %%SITE_PERL%%/Crypt/Twofish_PP/Key24.pm
 %%SITE_PERL%%/Crypt/Twofish_PP/Key32.pm
 %%SITE_PERL%%/LocaleData/de/LC_MESSAGES/Crypt-Twofish_PP.mo
+%%PERL5_MAN3%%/Crypt::Twofish_PP.3.gz
+%%PERL5_MAN3%%/Crypt::Twofish_PP::Key16.3.gz
+%%PERL5_MAN3%%/Crypt::Twofish_PP::Key24.3.gz
+%%PERL5_MAN3%%/Crypt::Twofish_PP::Key32.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Crypt-Twofish_PP
 @dirrmtry %%SITE_PERL%%/Crypt/Twofish_PP
 @dirrmtry %%SITE_PERL%%/Crypt

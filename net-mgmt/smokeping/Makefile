@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://oss.oetiker.ch/smokeping/pub/ \
 		http://smokeping.cs.pu.edu.tw/pub/
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Latency logging and graphing system
 
 LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool

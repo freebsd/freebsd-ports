@@ -1,3 +1,5 @@
+%%PERL5_MAN3%%/CGI::Compress::Gzip.3.gz
+%%PERL5_MAN3%%/CGI::Compress::Gzip::FileHandle.3.gz
 %%SITE_PERL%%/CGI/Compress/Gzip.pm
 %%SITE_PERL%%/CGI/Compress/Gzip/FileHandle.pm
 @dirrmtry %%SITE_PERL%%/CGI/Compress/Gzip

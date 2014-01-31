@@ -15,9 +15,6 @@ COMMENT=	Track sessions and, optionally, users
 USES=		perl5
 USE_PERL5=	configure patch
 
-MAN3=		Maypole::Authentication::UserSessionCookie.3
-
-NO_STAGE=	yes
 post-patch:
 	@${PERL} -pi -e 's/^our (\S+)/use vars qw($$1); $$1/' ${WRKSRC}/UserSessionCookie.pm
 

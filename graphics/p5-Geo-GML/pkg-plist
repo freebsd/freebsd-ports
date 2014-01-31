@@ -283,6 +283,9 @@
 %%SITE_PERL%%/Geo/GML/xsd/gml3.2.1/valueObjects.xsd
 %%SITE_PERL%%/Geo/GML/xsd/xlink1.0.0/ReadMe.txt
 %%SITE_PERL%%/Geo/GML/xsd/xlink1.0.0/xlinks.xsd
+%%PERL5_MAN3%%/Geo::GML.3.gz
+%%PERL5_MAN3%%/Geo::GML::Util.3.gz
+%%PERL5_MAN3%%/Geo::GML::GeoPoint.3.gz
 @dirrmtry %%SITE_PERL%%/Geo/GML/xsd/gml1.0.0
 @dirrmtry %%SITE_PERL%%/Geo/GML/xsd/gml2.0.0
 @dirrmtry %%SITE_PERL%%/Geo/GML/xsd/gml2.1.1

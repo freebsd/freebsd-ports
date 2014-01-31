@@ -7,7 +7,7 @@ PORTEPOCH=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	All-in-one sequencer, drum machine, sampler, and more
 
 LICENSE=	GPLv2

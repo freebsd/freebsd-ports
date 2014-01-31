@@ -7,7 +7,7 @@ CATEGORIES=	irc www perl5
 MASTER_SITES=	http://cgiirc.org/releases/ \
 		SF/${PORTNAME}/cgi-irc/${PORTVERSION}
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	IRC web gateway written in Perl
 
 LICENSE=	GPLv2

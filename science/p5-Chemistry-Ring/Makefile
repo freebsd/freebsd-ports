@@ -16,10 +16,7 @@ BUILD_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
 RUN_DEPENDS=	p5-Chemistry-Mol>=0:${PORTSDIR}/science/p5-Chemistry-Mol \
 		p5-Statistics-Regression>=0:${PORTSDIR}/math/p5-Statistics-Regression
 
-MAN3=	Chemistry::Ring.3 Chemistry::Ring::Find.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -8,6 +8,7 @@
 %%SITE_PERL%%/DBD/Mock/Pool.pm
 %%SITE_PERL%%/DBD/Mock.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Mock/.packlist
+%%PERL5_MAN3%%/DBD::Mock.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Mock
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD
 @dirrmtry %%SITE_PERL%%/DBD/Mock/StatementTrack

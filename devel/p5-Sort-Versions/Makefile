@@ -13,7 +13,4 @@ COMMENT=	A perl 5 module for sorting of revision-like numbers
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Sort::Versions.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

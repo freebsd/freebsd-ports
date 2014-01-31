@@ -16,7 +16,6 @@ USE_PYTHON_RUN=	yes
 
 PORTDOCS=	ChangeLog README COPYING AUTHORS
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' ${WRKSRC}/${PORTNAME}
 .if defined(NOPORTDOCS)

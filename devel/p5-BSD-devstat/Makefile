@@ -13,9 +13,6 @@ COMMENT=	Perl extension of devstat(3) API
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	BSD::devstat.3
-
-NO_STAGE=	yes
 regression-test:
 	cd ${WRKSRC} && make test
 

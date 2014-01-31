@@ -3,6 +3,7 @@
 
 PORTNAME=	newsbeuter
 PORTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://newsbeuter.org/downloads/
 
@@ -17,23 +18,15 @@ LIB_DEPENDS=	stfl:${PORTSDIR}/devel/stfl \
 		libjson.so:${PORTSDIR}/devel/json-c
 
 OPTIONS_DEFINE= PODCAST
+OPTIONS_DEFAULT=PODCAST
+OPTIONS_SUB=	yes
 PODCAST_DESC=	Podcast client (podbeuter)
 
-OPTIONS_DEFAULT= PODCAST
-
-USES=		gettext iconv ncurses gmake pkgconfig perl5
+USES=		gettext gmake iconv:translit ncurses perl5 pkgconfig
 USE_PERL5=	build
 USE_SQLITE=	yes
 USE_GNOME=	libxml2
 USE_GCC=	any
-
-.include  <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPODCAST}
-PLIST_SUB+=	PODCAST=""
-.else
-PLIST_SUB+=	PODCAST="@comment "
-.endif
 
 post-patch:
 	${REINPLACE_CMD} -e "s,share/man,man,; \

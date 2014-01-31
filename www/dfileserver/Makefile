@@ -7,7 +7,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/ \
 		http://harpy.soarwitheagles.net/~dashy/
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Compact webserver designed to make sharing files easy
 
 LICENSE=	BSD

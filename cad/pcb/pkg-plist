@@ -3,6 +3,7 @@ bin/Merge_dimPCBPS
 bin/pcb
 include/gts.h
 lib/libgts.a
+%%PORTDOCS%%man/man1/pcb.1.gz
 share/applications/pcb.desktop
 share/icons/hicolor/16x16/mimetypes/application-x-excellon-16.png
 share/icons/hicolor/16x16/mimetypes/application-x-gerber-16.png
@@ -1186,7 +1187,6 @@ share/gEDA/scheme/gnet-pcbfwd.scm
 @dirrm %%DATADIR%%/pcblib-newlib/amp
 @dirrm %%DATADIR%%/pcblib-newlib
 @dirrm %%DATADIR%%/newlib/tests
-@exec /bin/mkdir %D/%%DATADIR%%/newlib/sockets
 @dirrm %%DATADIR%%/newlib/sockets
 @dirrm %%DATADIR%%/newlib/not_vetted_ingo
 @dirrm %%DATADIR%%/newlib/msp430

@@ -14,7 +14,4 @@ USES=		perl5
 USE_PERL5=	configure
 ONLY_FOR_ARCHS=	i386
 
-MAN3=		FreeBSD::i386::Ptrace.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -9,10 +9,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ap@page2rss.com
 COMMENT=	Template system for C
 
-USE_GMAKE=	yes
+USES=	gmake
 GNU_CONFIGURE=	yes
 
 PLIST_FILES+=	bin/h2ap
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

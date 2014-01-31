@@ -11,9 +11,7 @@ COMMENT=	Radius Packet Analyzer
 
 GNU_CONFIGURE=	yes
 
-MAN1=		raddump.1
+PLIST_FILES=	bin/raddump \
+		man/man1/raddump.1.gz
 
-PLIST_FILES=	bin/raddump
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

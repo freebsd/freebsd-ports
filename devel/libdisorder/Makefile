@@ -13,7 +13,6 @@ LICENSE=	GPLv2
 
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900027
@@ -27,13 +26,11 @@ do-build:
 	cd ${WRKSRC}/src && ${SETENV} ${MAKE_ENV} ${MAKE}
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/include/disorder.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/lib/libdisorder.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/src/libdisorder.so \
-		${PREFIX}/lib/libdisorder.so.1
-	${INSTALL_PROGRAM} ${WRKSRC}/tool/ropy ${PREFIX}/bin
-
-post-install:
-	${LN} -sf ${PREFIX}/lib/libdisorder.so.1 ${PREFIX}/lib/libdisorder.so
+	${INSTALL_DATA} ${WRKSRC}/include/disorder.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/lib/libdisorder.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/src/libdisorder.so \
+		${STAGEDIR}${PREFIX}/lib/libdisorder.so.1
+	${INSTALL_PROGRAM} ${WRKSRC}/tool/ropy ${STAGEDIR}${PREFIX}/bin
+	${LN} -sf ${PREFIX}/lib/libdisorder.so.1 ${STAGEDIR}${PREFIX}/lib/libdisorder.so
 
 .include <bsd.port.post.mk>

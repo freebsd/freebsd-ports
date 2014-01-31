@@ -95,7 +95,7 @@ share/locale/vi/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-clipman-plugin.mo
 share/xfce4/panel/plugins/xfce4-clipman-plugin.desktop
-@dirrmtry share/xfce4/panel-plugins
+@dirrmtry share/xfce4/panel/plugins
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
 @dirrmtry share/locale/ur_PK
 @dirrmtry share/locale/ur/LC_MESSAGES
@@ -125,6 +125,6 @@ share/xfce4/panel/plugins/xfce4-clipman-plugin.desktop
 @dirrm %%DOCSDIR%%/html/C
 @dirrm %%DOCSDIR%%/html
 @dirrm %%DOCSDIR%%
-@dirrmtry lib/xfce4/panel
+@dirrmtry lib/xfce4/panel/plugins
 @dirrmtry etc/xdg/xfce4/panel
 @dirrmtry etc/xdg/xfce4

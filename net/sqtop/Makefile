@@ -13,16 +13,14 @@ LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 
-PLIST_FILES=	bin/sqtop
-
-MAN1=		sqtop.1
+PLIST_FILES=	bin/sqtop \
+		man/man1/sqtop.1.gz
 
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=		NCURSES
 OPTIONS_DEFAULT=	NCURSES
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MNCURSES}

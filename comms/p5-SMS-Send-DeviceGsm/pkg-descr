@@ -5,5 +5,4 @@ You provide the hardware port and the baudrate to use.
 Consult Device::Gsm for further information on what devices 
 and baudrates are supported.
 
-Author: Chris Williams <chris@bingosnet.co.uk>
-WWW:    http://search.cpan.org/dist/SMS-Send-DeviceGsm/
+WWW: http://search.cpan.org/dist/SMS-Send-DeviceGsm/

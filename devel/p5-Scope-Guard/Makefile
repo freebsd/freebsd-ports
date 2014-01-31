@@ -14,7 +14,4 @@ COMMENT=	Lexically scoped resource management
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Scope::Guard.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

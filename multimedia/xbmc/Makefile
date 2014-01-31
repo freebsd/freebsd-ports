@@ -2,6 +2,7 @@
 
 PORTNAME=	xbmc
 DISTVERSION=	13.0.alpha11
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	mickael.maillot@gmail.com
@@ -56,7 +57,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
-USES=		gmake iconv pkgconfig
+USES=		gmake iconv:wchar_t pkgconfig
 USE_AUTOTOOLS=	autoconf libtool automake libltdl
 GNU_CONFIGURE=	yes
 USE_XORG=	xt xmu xtst
@@ -125,7 +126,7 @@ SMB_CONFIGURE_ENABLE=	samba
 VAAPI_LIB_DEPENDS=	libva.so:${PORTSDIR}/multimedia/libva
 VAAPI_CONFIGURE_ENABLE=	vaapi
 
-VDPAU_BUILD_DEPENDS=	${LOCALBASE}/include/vdpau/vdpau.h:${PORTSDIR}/multimedia/libvdpau
+VDPAU_LIB_DEPENDS=	libvdpau.so:${PORTSDIR}/multimedia/libvdpau
 VDPAU_CONFIGURE_ENABLE=	vdpau
 
 VORBIS_LIB_DEPENDS=	libvorbisenc.so:${PORTSDIR}/audio/libvorbis
@@ -193,6 +194,7 @@ run-autotools:
 	cd ${WRKSRC}/lib/cpluff && ${SH} ./autogen.sh
 	${REINPLACE_CMD} '/lib\/cpluff/d' ${WRKSRC}/bootstrap.mk
 	cd ${WRKSRC} && ${SH} ./bootstrap
+	${REINPLACE_CMD} "s;'' iconv;iconv;" ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/manpages/xbmc.bin.1 ${STAGEDIR}${MAN1PREFIX}/man/man1

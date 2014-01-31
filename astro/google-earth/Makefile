@@ -2,6 +2,7 @@
 
 PORTNAME=	google-earth
 PORTVERSION=	6.0.3.2197
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	astro deskutils geography
 MASTER_SITES=	http://dl.google.com/earth/client/advanced/previous/:previous \
@@ -20,7 +21,7 @@ RESTRICTED=	Not really sure about the redistribution terms
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\..*//g}/
 
 USE_LINUX=	yes
-USE_LINUX_APPS=	xorglibs
+USE_LINUX_APPS=	xorglibs curl
 USES=		perl5 shared-mime-info desktop-file-utils
 USE_PERL5=	patch build
 
@@ -53,6 +54,7 @@ post-patch:
 	@${REINPLACE_CMD} -i "" -e 's/^TMPPATH.*/exit 0/' ${WRKSRC}/postinstall.sh
 	@${REINPLACE_CMD} -i "" -e 's|\"\$$SETUP_INSTALLPATH/|\"${WRKSRC}/|' ${WRKSRC}/postinstall.sh
 	@${REINPLACE_CMD} -i "" -e 's|\$$SETUP_INSTALLPATH/googleearth |${PREFIX}/bin/googleearth |' ${WRKSRC}/postinstall.sh
+	${RM} ${WRKSRC}/libcurl.so.4
 	${PERL} -i -pe 's|/lib/ld-lsb.so.3\0\0\0|/lib/ld-linux.so.2\0|' ${WRKSRC}/googleearth-bin
 
 do-build:

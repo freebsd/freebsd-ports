@@ -22,60 +22,29 @@
 .\" OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
 .\" SUCH DAMAGE.
 .\"
-.\" $FreeBSD: head/gnu/usr.bin/groff/tmac/mdoc.local 213835 2010-10-14 14:48:11Z jh $
+.\" $FreeBSD: head/gnu/usr.bin/groff/tmac/mdoc.local 261319 2014-01-31 12:26:30Z uqs $
 .\"
-.\"     %beginstrip%
-.
 .eo
-.
-.
 .ds volume-operating-system FreeBSD
-.
-.\" FreeBSD .Lb values
 .ds str-Lb-libarchive  Streaming Archive Library (libarchive, \-larchive)
 .ds str-Lb-libbluetooth Bluetooth User Library (libbluetooth, \-lbluetooth)
-.ds str-Lb-libbsm      Basic Security Module User Library (libbsm, \-lbsm)
-.ds str-Lb-libc_r      Reentrant C\~Library (libc_r, \-lc_r)
-.ds str-Lb-libcalendar Calendar Arithmetic Library (libcalendar, \-lcalendar)
-.ds str-Lb-libcam      Common Access Method User Library (libcam, \-lcam)
-.ds str-Lb-libcipher   FreeSec Crypt Library (libcipher, \-lcipher)
-.ds str-Lb-libdevinfo  Device and Resource Information Utility Library (libdevinfo, \-ldevinfo)
-.ds str-Lb-libdevstat  Device Statistics Library (libdevstat, \-ldevstat)
-.ds str-Lb-libdisk     Interface to Slice and Partition Labels Library (libdisk, \-ldisk)
 .ds str-Lb-libedit     Line Editor and History Library (libedit, \-ledit)
+.ds str-Lb-libefi      EFI Runtime Services Library (libefi, \-lefi)
 .ds str-Lb-libelf      ELF Parsing Library (libelf, \-lelf)
+.ds str-Lb-libexecinfo Backtrace Access Library (libexecinfo, \-lexecinfo)
 .ds str-Lb-libfetch    File Transfer Library (libfetch, \-lfetch)
-.ds str-Lb-libgeom     Userland API Library for kernel GEOM subsystem (libgeom, \-lgeom)
-.ds str-Lb-libgpib     General-Purpose Instrument Bus (GPIB) library (libgpib, \-lgpib)
-.ds str-Lb-libipx      IPX Address Conversion Support Library (libipx, \-lipx)
-.ds str-Lb-libjail     Jail Library (libjail, \-ljail)
-.ds str-Lb-libkiconv   Kernel side iconv library (libkiconv, \-lkiconv)
-.ds str-Lb-libkse      N:M Threading Library (libkse, \-lkse)
-.ds str-Lb-libmd       Message Digest (MD4, MD5, etc.) Support Library (libmd, \-lmd)
-.ds str-Lb-libmemstat  Kernel Memory Allocator Statistics Library (libmemstat, \-lmemstat)
-.ds str-Lb-libnetgraph Netgraph User Library (libnetgraph, \-lnetgraph)
 .ds str-Lb-libpmc      Performance Monitoring Counters Interface Library (libpmc, \-lpmc)
-.ds str-Lb-librpcsec_gss RPC GSS-API Authentication Library (librpcsec_gss, \-lrpcsec_gss)
-.ds str-Lb-librpcsvc   RPC Service Library (librpcsvc, \-lrpcsvc)
-.ds str-Lb-libsdp      Bluetooth Service Discovery Protocol User Library (libsdp, \-lsdp)
-.ds str-Lb-libthr      1:1 Threading Library (libthr, \-lthr)
-.ds str-Lb-libufs      UFS File System Access Library (libufs, \-lufs)
-.ds str-Lb-libugidfw   File System Firewall Interface Library (libugidfw, \-lugidfw)
-.ds str-Lb-libvgl      Video Graphics Library (libvgl, \-lvgl)
-.
-.\" FreeBSD architectures not found in doc-common
-.ds volume-as-arm      arm
-.
-.\" Default .Os value
+.ds str-Lb-libproc     Processor Monitoring and Analysis Library (libproc, \-lproc)
+.ds str-Lb-libprocstat Process and Files Information Retrieval (libprocstat, \-lprocstat)
+.ds str-Lb-librtld_db  Run-time Linker Debugging Library (librtld_db, \-lrtld_db)
+.ds str-Lb-libsbuf     Safe String Composition Library (libsbuf, \-lsbuf)
+.ds str-Lb-libstdthreads C11 Threads Library (libstdthreads, \-lstdthreads)
 .ds default-operating-system FreeBSD\~ports
-.
-.\" FreeBSD releases not found in doc-common
-.ds operating-system-FreeBSD-7.2    7.2
-.ds operating-system-FreeBSD-7.3    7.3
 .ds operating-system-FreeBSD-7.4    7.4
-.ds operating-system-FreeBSD-8.0    8.0
-.ds operating-system-FreeBSD-8.1    8.1
-.ds operating-system-FreeBSD-8.2    8.2
-.ds operating-system-FreeBSD-9.0    9.0
-.
+.ds operating-system-FreeBSD-8.3    8.3
+.ds operating-system-FreeBSD-8.4    8.4
+.ds operating-system-FreeBSD-9.1    9.1
+.ds operating-system-FreeBSD-9.2    9.2
+.ds operating-system-FreeBSD-10.0   10.0
+.ds operating-system-FreeBSD-11.0   11.0
 .ec

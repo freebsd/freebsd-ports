@@ -21,9 +21,6 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure extract
 
-MAN3=	Catalyst::Plugin::Session::State::Cookie.3
-
-NO_STAGE=	yes
 post-extract:
 	@${PERL} -i.bak -ne 'print unless m,Test::,' ${WRKSRC}/Makefile.PL
 

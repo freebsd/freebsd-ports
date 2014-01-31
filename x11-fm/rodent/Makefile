@@ -6,7 +6,7 @@ PORTVERSION=	4.8.0
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/xffm/${PORTVERSION}/
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Fast, small and powerful file manager
 
 LICENSE=	GPLv3

@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel net
 MASTER_SITES=	SF/kageki/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	rodrigo@bebik.net
+MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	A socket abstraction library for C programmers
 
 LIB_DEPENDS=	event:${PORTSDIR}/devel/libevent

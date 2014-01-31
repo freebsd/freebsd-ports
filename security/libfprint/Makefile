@@ -23,7 +23,6 @@ USE_GNOME=	glib20
 CFLAGS+=	-DHAVE_MEMMEM
 MAKE_JOBS_UNSAFE=yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800069

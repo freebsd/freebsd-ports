@@ -26,4 +26,24 @@
 @dirrm %%SITE_PERL%%/Data/Serializer/Convert
 @dirrm %%SITE_PERL%%/Data/Serializer/Config
 @dirrm %%SITE_PERL%%/Data/Serializer
+%%PERL5_MAN3%%/Data::Serializer.3.gz
+%%PERL5_MAN3%%/Data::Serializer::Bencode.3.gz
+%%PERL5_MAN3%%/Data::Serializer::Config::General.3.gz
+%%PERL5_MAN3%%/Data::Serializer::Convert::Bencode.3.gz
+%%PERL5_MAN3%%/Data::Serializer::Convert::Bencode_XS.3.gz
+%%PERL5_MAN3%%/Data::Serializer::Cookbook.3.gz
+%%PERL5_MAN3%%/Data::Serializer::Data::Denter.3.gz
+%%PERL5_MAN3%%/Data::Serializer::Data::Dumper.3.gz
+%%PERL5_MAN3%%/Data::Serializer::Data::Taxi.3.gz
+%%PERL5_MAN3%%/Data::Serializer::FreezeThaw.3.gz
+%%PERL5_MAN3%%/Data::Serializer::JSON.3.gz
+%%PERL5_MAN3%%/Data::Serializer::JSON::Syck.3.gz
+%%PERL5_MAN3%%/Data::Serializer::PHP::Serialization.3.gz
+%%PERL5_MAN3%%/Data::Serializer::Persistent.3.gz
+%%PERL5_MAN3%%/Data::Serializer::Raw.3.gz
+%%PERL5_MAN3%%/Data::Serializer::Storable.3.gz
+%%PERL5_MAN3%%/Data::Serializer::XML::Dumper.3.gz
+%%PERL5_MAN3%%/Data::Serializer::XML::Simple.3.gz
+%%PERL5_MAN3%%/Data::Serializer::YAML.3.gz
+%%PERL5_MAN3%%/Data::Serializer::YAML::Syck.3.gz
 @dirrmtry %%SITE_PERL%%/Data

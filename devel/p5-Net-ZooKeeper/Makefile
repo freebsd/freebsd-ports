@@ -19,7 +19,4 @@ CONFIGURE_ARGS+=	--zookeeper-include ${PREFIX}/include/c-client-src \
 			--zookeeper-include ${PREFIX}/include/zookeeper \
 			--zookeeper-lib ${PREFIX}/libs
 
-MAN3=	Net::ZooKeeper.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

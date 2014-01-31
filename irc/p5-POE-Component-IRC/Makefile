@@ -30,50 +30,8 @@ USE_PERL5=	configure
 
 PORTEXAMPLES=	*
 
-MAN3=		POE::Component::IRC.3 \
-		POE::Component::IRC::Common.3 \
-		POE::Component::IRC::Constants.3 \
-		POE::Component::IRC::Plugin.3 \
-		POE::Component::IRC::Plugin::AutoJoin.3 \
-		POE::Component::IRC::Plugin::BotAddressed.3 \
-		POE::Component::IRC::Plugin::BotTraffic.3 \
-		POE::Component::IRC::Plugin::DCC.3 \
-		POE::Component::IRC::Plugin::CTCP.3 \
-		POE::Component::IRC::Plugin::Connector.3 \
-		POE::Component::IRC::Plugin::Console.3 \
-		POE::Component::IRC::Plugin::CycleEmpty.3 \
-		POE::Component::IRC::Plugin::FollowTail.3 \
-		POE::Component::IRC::Plugin::ISupport.3 \
-		POE::Component::IRC::Plugin::Logger.3 \
-		POE::Component::IRC::Plugin::NickReclaim.3 \
-		POE::Component::IRC::Plugin::NickServID.3 \
-		POE::Component::IRC::Plugin::PlugMan.3 \
-		POE::Component::IRC::Plugin::Proxy.3 \
-		POE::Component::IRC::Plugin::Whois.3 \
-		POE::Component::IRC::Projects.3 \
-		POE::Component::IRC::Qnet.3 \
-		POE::Component::IRC::Qnet::State.3 \
-		POE::Component::IRC::State.3 \
-		POE::Component::IRC::Cookbook::Reload.3 \
-		POE::Component::IRC::Cookbook::Seen.3 \
-		POE::Component::IRC::Cookbook::Translator.3 \
-		POE::Component::IRC::Cookbook::Disconnecting.3 \
-		POE::Component::IRC::Cookbook::BasicBot.3 \
-		POE::Component::IRC::Cookbook::Gtk2.3 \
-		POE::Component::IRC::Cookbook.3 \
-		POE::Component::IRC::Cookbook::Resolver.3 \
-		POE::Component::IRC::Cookbook::Hailo.3 \
-		POE::Component::IRC::Plugin::BotCommand.3 \
-		POE::Filter::IRC.3 \
-		POE::Filter::IRC::Compat.3
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 %%SITE_PERL%%/Class/DBI/Plugin/DeepAbstractSearch.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin/DeepAbstractSearch/.packlist
+%%PERL5_MAN3%%/Class::DBI::Plugin::DeepAbstractSearch.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin/DeepAbstractSearch
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Class/DBI

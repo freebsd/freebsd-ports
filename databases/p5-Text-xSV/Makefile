@@ -13,7 +13,4 @@ COMMENT=	Read character separated files
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Text::xSV.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

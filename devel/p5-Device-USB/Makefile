@@ -18,14 +18,4 @@ MAKE_JOBS_UNSAFE=yes
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Device::USB.3 \
-		Device::USB::Bus.3 \
-		Device::USB::DevConfig.3 \
-		Device::USB::DevEndpoint.3 \
-		Device::USB::DevInterface.3 \
-		Device::USB::Device.3 \
-		Device::USB::FAQ.3 \
-		Device::dump_usb.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

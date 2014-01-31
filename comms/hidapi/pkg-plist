@@ -3,5 +3,6 @@ lib/libhidapi.a
 lib/libhidapi.la
 lib/libhidapi.so
 lib/libhidapi.so.0
+lib/libhidapi.so.0.0.0
 libdata/pkgconfig/hidapi.pc
 @dirrm include/hidapi

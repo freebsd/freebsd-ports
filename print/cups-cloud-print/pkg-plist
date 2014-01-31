@@ -1,0 +1,43 @@
+libexec/cups/backend/cloudprint
+libexec/cups/driver/cupscloudprint
+share/cloudprint-cups/COPYING
+share/cloudprint-cups/README.md
+share/cloudprint-cups/auth.py
+share/cloudprint-cups/backend.py
+share/cloudprint-cups/cloudprintrequestor.py
+share/cloudprint-cups/deleteaccount.py
+share/cloudprint-cups/dynamicppd.py
+share/cloudprint-cups/full-test.sh
+share/cloudprint-cups/listcloudprinters.py
+share/cloudprint-cups/listdrivefiles.py
+share/cloudprint-cups/oauth2client/__init__.py
+share/cloudprint-cups/oauth2client/anyjson.py
+share/cloudprint-cups/oauth2client/client.py
+share/cloudprint-cups/oauth2client/clientsecrets.py
+share/cloudprint-cups/oauth2client/crypt.py
+share/cloudprint-cups/oauth2client/locked_file.py
+share/cloudprint-cups/oauth2client/multistore_file.py
+share/cloudprint-cups/printer.py
+share/cloudprint-cups/reportissues.py
+share/cloudprint-cups/setup.py
+share/cloudprint-cups/setupcloudprint.py
+share/cloudprint-cups/submitjob.py
+share/cloudprint-cups/test_auth.py
+share/cloudprint-cups/test_backend.py
+share/cloudprint-cups/test_cloudprintrequestor.py
+share/cloudprint-cups/test_mockrequestor.py
+share/cloudprint-cups/test_printer.py
+share/cloudprint-cups/testfiles/NotPdf.txt
+share/cloudprint-cups/testfiles/Test Page.pdf
+share/cloudprint-cups/testfiles/Test Page.png
+share/cloudprint-cups/testfiles/capabilitylist
+share/cloudprint-cups/testfiles/testppd.ppd
+share/cloudprint-cups/upgrade.py
+@dirrmtry share/cups/model
+@dirrmtry share/cups
+@dirrmtry share/cloudprint-cups/testfiles
+@dirrmtry share/cloudprint-cups/oauth2client
+@dirrmtry share/cloudprint-cups
+@dirrmtry libexec/cups/driver
+@dirrmtry libexec/cups/backend
+@dirrmtry libexec/cups

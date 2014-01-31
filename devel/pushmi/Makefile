@@ -29,11 +29,4 @@ USES=		perl5
 USE_PERL5=	configure
 USE_APACHE=	22+
 
-MAN3=		Pushmi.3 \
-		Pushmi::Command::Mirror.3 \
-		Pushmi::Command::Runhook.3 \
-		Pushmi::Command::Sync.3 \
-		Pushmi::Command::Verify.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

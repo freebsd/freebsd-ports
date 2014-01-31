@@ -24,9 +24,6 @@ TEST_DEPENDS=	p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	DBIx::Class::TimeStamp.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -i '' '/auto_install/d' ${WRKSRC}/Makefile.PL
 

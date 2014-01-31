@@ -20,9 +20,4 @@ TEST_DEPENDS=	p5-Test-TCP>0:${PORTSDIR}/devel/p5-Test-TCP
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	corona.1
-MAN3=	Corona.3 \
-	Plack::Handler::Corona.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

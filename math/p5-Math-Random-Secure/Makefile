@@ -10,6 +10,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	dereckson@gmail.com
 COMMENT=	Cryptographically-secure rand function
 
+LICENSE=	ART20
+
 TEST_DEPENDS=	p5-Test-Warn>0:${PORTSDIR}/devel/p5-Test-Warn
 BUILD_DEPENDS=	p5-List-MoreUtils>0:${PORTSDIR}/lang/p5-List-MoreUtils
 RUN_DEPENDS=	p5-Any-Moose>0:${PORTSDIR}/devel/p5-Any-Moose \
@@ -19,9 +21,4 @@ RUN_DEPENDS=	p5-Any-Moose>0:${PORTSDIR}/devel/p5-Any-Moose \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Math::Random::Secure.3 Math::Random::Secure::RNG.3
-
-LICENSE=	ART20
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

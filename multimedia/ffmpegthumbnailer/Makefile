@@ -10,6 +10,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	clutton@zoho.com
 COMMENT=	Lightweight video thumbnailer that can be used by file managers
 
+LICENSE=	GPLv2 # (or later)
+
 LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libswscale.so:${PORTSDIR}/multimedia/ffmpeg \
 		libjpeg.so:${PORTSDIR}/graphics/jpeg
@@ -23,7 +25,10 @@ USES=		pathfix pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	GNOME
+OPTIONS_DEFINE=	GNOME MATE
+OPTIONS_SUB=	yes
+
+MATE_CONFIGURE_ENABLE=	thumbnailer
 
 .include <bsd.port.options.mk>
 

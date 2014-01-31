@@ -7,6 +7,14 @@
 %%SITE_PERL%%/Amazon/SimpleDB/ListDomainsResponse.pm
 %%SITE_PERL%%/Amazon/SimpleDB/QueryResponse.pm
 %%SITE_PERL%%/Amazon/SimpleDB/Response.pm
+%%PERL5_MAN3%%/Amazon::SimpleDB.3.gz
+%%PERL5_MAN3%%/Amazon::SimpleDB::Domain.3.gz
+%%PERL5_MAN3%%/Amazon::SimpleDB::ErrorResponse.3.gz
+%%PERL5_MAN3%%/Amazon::SimpleDB::GetAttributesResponse.3.gz
+%%PERL5_MAN3%%/Amazon::SimpleDB::Item.3.gz
+%%PERL5_MAN3%%/Amazon::SimpleDB::ListDomainsResponse.3.gz
+%%PERL5_MAN3%%/Amazon::SimpleDB::QueryResponse.3.gz
+%%PERL5_MAN3%%/Amazon::SimpleDB::Response.3.gz
 @dirrmtry %%SITE_PERL%%/Amazon/SimpleDB
 @dirrmtry %%SITE_PERL%%/Amazon
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Amazon/SimpleDB

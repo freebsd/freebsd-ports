@@ -134,6 +134,7 @@
     SUBDIR += findmtu
     SUBDIR += flowgrep
     SUBDIR += fonulator
+    SUBDIR += foreman-proxy
     SUBDIR += forg
     SUBDIR += fpc-ldap
     SUBDIR += fpc-pcap
@@ -1000,6 +1001,7 @@
     SUBDIR += remmina-plugin-vnc
     SUBDIR += remmina-plugin-xdmcp
     SUBDIR += remmina-plugins
+    SUBDIR += remotebox
     SUBDIR += remotedesk
     SUBDIR += repeater
     SUBDIR += reposado

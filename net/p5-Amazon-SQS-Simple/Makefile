@@ -20,16 +20,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Amazon::SQS::Simple::Message.3 \
-		Amazon::SQS::Simple::Queue.3 \
-		Amazon::SQS::Simple::Base.3 \
-		Amazon::SQS::Simple::SendResponse.3 \
-		Amazon::SQS::Simple.3
-
 SUB_FILES=	pkg-message
-
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

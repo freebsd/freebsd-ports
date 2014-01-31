@@ -3,6 +3,11 @@
 %%SITE_PERL%%/STF/Dispatcher/PSGI.pm
 %%SITE_PERL%%/STF/Dispatcher/PSGI/HTTPException.pm
 %%SITE_PERL%%/STF/Dispatcher/Test.pm
+%%PERL5_MAN3%%/STF::Dispatcher::Impl::File.3.gz
+%%PERL5_MAN3%%/STF::Dispatcher::Impl::Hash.3.gz
+%%PERL5_MAN3%%/STF::Dispatcher::PSGI.3.gz
+%%PERL5_MAN3%%/STF::Dispatcher::PSGI::HTTPException.3.gz
+%%PERL5_MAN3%%/STF::Dispatcher::Test.3.gz
 @dirrm %%SITE_PERL%%/STF/Dispatcher/PSGI
 @dirrm %%SITE_PERL%%/STF/Dispatcher/Impl
 @dirrm %%SITE_PERL%%/STF/Dispatcher

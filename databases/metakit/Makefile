@@ -8,20 +8,19 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.equi4.com/pub/mk/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	C++ embedded database engine, supports Python and Tcl
+COMMENT=	C++ embedded database engine with Python and Tcl support
 
 LICENSE=	MIT
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/builds
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../unix/configure
 USE_LDCONFIG=	yes
-ONLY_FOR_ARCHS=	i386 alpha amd64
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/builds
 
 OPTIONS_DEFINE=	PYTHON TCL DOCS
 OPTIONS_DEFAULT=	PYTHON
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPYTHON}
@@ -35,13 +34,10 @@ PLIST_SUB+=	WITH_PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
+USES+=		tcl:84
 CATEGORIES+=	tcl
-USE_TCL=	84+
-.endif
-
-.if defined(USE_TCL)
-CONFIGURE_ARGS+=	--with-tcl=${TCL_INCLUDEDIR}
-CONFIGURE_ENV+=		TCL_LIBDIR=${TCL_LIBDIR}
+CONFIGURE_ARGS+=--with-tcl=${TCL_INCLUDEDIR}
+CONFIGURE_ENV+=	TCL_LIBDIR=${TCL_LIBDIR}
 PLIST_SUB+=	TCL_V="${TCL_VER}"
 PLIST_SUB+=	WITH_TCL=""
 .else
@@ -50,14 +46,10 @@ PLIST_SUB+=	WITH_TCL="@comment "
 
 pre-patch:
 	${REINPLACE_CMD} -e "s=doc/==" ${WRKSRC}/../Metakit.html
-.if defined(USE_TCL)
-	${REINPLACE_CMD} -e "s/= tclsh/=tclsh${TCL_VER}/" \
+	${REINPLACE_CMD} -e "s|= tclsh|=${TCLSH}|" \
 		${WRKSRC}/../unix/Makefile.in
-.endif
-.if ${PORT_OPTIONS:MPYTHON}
 	${REINPLACE_CMD} -e "s=python2.[0-9]=${PYTHON_VERSION}=" \
 		${WRKSRC}/../unix/Makefile.in ${WRKSRC}/../unix/configure
-.endif
 
 post-build:
 .if ${PORT_OPTIONS:MPYTHON}
@@ -67,24 +59,25 @@ post-build:
 		${WRKSRC}/../python
 .endif
 
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+
 post-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/libmk4.so \
-		${PREFIX}/lib/libmk4.so.0
-	@${LN} -sf libmk4.so.0 ${PREFIX}/lib/libmk4.so
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/libmk4.so \
+		${STAGEDIR}${PREFIX}/lib/libmk4.so.0
+	${LN} -sf libmk4.so.0 ${STAGEDIR}${PREFIX}/lib/libmk4.so
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${TAR} -C ${WRKSRC}/../doc --exclude "*CVS" -cf - . | \
-		${TAR} -C ${DOCSDIR} --unlink -xf -
+		${TAR} -C ${STAGEDIR}${DOCSDIR} --unlink -xf -
 	${INSTALL_DATA} ${WRKSRC}/../Metakit.html ${WRKSRC}/../CHANGES \
-		${WRKSRC}/../README ${DOCSDIR}/
-.endif
+		${WRKSRC}/../README ${STAGEDIR}${DOCSDIR}
 
 test:
-	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
-.if defined(USE_TCL)
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test-tcl)
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test)
+.if ${PORT_OPTIONS:MTCL}
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test-tcl)
 .endif
 
 .include <bsd.port.mk>

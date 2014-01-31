@@ -18,14 +18,12 @@ OPTIONS_DEFINE=	OPENSSL
 OPTIONS_DEFAULT=OPENSSL
 
 USE_BZIP2=	yes
-USES=		pathfix pkgconfig
+USES=		pathfix pkgconfig gmake
 USE_GNOME=	glib20
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-silent-rules
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}

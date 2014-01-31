@@ -16,5 +16,4 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_MYSQL=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

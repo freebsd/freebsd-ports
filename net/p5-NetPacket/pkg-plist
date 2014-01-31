@@ -7,4 +7,13 @@
 %%SITE_PERL%%/NetPacket/TCP.pm
 %%SITE_PERL%%/NetPacket/UDP.pm
 %%SITE_PERL%%/NetPacket/USBMon.pm
+%%PERL5_MAN3%%/NetPacket.3.gz
+%%PERL5_MAN3%%/NetPacket::ARP.3.gz
+%%PERL5_MAN3%%/NetPacket::Ethernet.3.gz
+%%PERL5_MAN3%%/NetPacket::ICMP.3.gz
+%%PERL5_MAN3%%/NetPacket::IGMP.3.gz
+%%PERL5_MAN3%%/NetPacket::IP.3.gz
+%%PERL5_MAN3%%/NetPacket::TCP.3.gz
+%%PERL5_MAN3%%/NetPacket::UDP.3.gz
+%%PERL5_MAN3%%/NetPacket::USBMon.3.gz
 @dirrm %%SITE_PERL%%/NetPacket

@@ -21,7 +21,4 @@ BUILD_DEPENDS=	p5-DBD-SQLite>=1.12:${PORTSDIR}/databases/p5-DBD-SQLite \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		twitmail.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

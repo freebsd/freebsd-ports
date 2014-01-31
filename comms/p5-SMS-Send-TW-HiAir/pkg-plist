@@ -1,5 +1,6 @@
 %%SITE_PERL%%/SMS/Send/TW/HiAir.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/TW/HiAir/.packlist
+%%PERL5_MAN3%%/SMS::Send::TW::HiAir.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/TW/HiAir
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/TW
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send

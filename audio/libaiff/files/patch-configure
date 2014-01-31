@@ -1,0 +1,10 @@
+--- configure.orig	2014-01-30 12:04:02.000000000 +0100
++++ configure	2014-01-30 12:04:11.000000000 +0100
+@@ -645,6 +645,7 @@
+ localedir
+ mandir
+ DEFS
++DESTDIR
+ ECHO_C
+ ECHO_N
+ ECHO_T

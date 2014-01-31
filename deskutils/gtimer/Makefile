@@ -19,12 +19,9 @@ USE_GNOME=	gtk20
 USES=		gettext perl5 gmake pkgconfig
 GNU_CONFIGURE=	yes
 
-MAN1=		${PORTNAME}.1
-
 CPPFLAGS+=	-I${LOCALBASE}/include -Wno-return-type
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|1.1.7|${PORTVERSION}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|"sensible-browser"|"xdg-open"|g' ${WRKSRC}/config.h
@@ -41,12 +38,12 @@ post-build:
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .for lang in cs cz es fr sv
-	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
-		${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
+		${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
 .endfor
 
 .include <bsd.port.mk>

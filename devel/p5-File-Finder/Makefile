@@ -15,11 +15,7 @@ COMMENT=	Nice wrapper for File::Find ala find(1)
 RUN_DEPENDS=	p5-Text-Glob>0:${PORTSDIR}/textproc/p5-Text-Glob
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-MAN3=		File::Finder.3 \
-		File::Finder::Steps.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

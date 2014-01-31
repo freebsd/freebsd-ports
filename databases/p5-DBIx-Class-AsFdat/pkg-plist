@@ -1,4 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/AsFdat/.packlist
 %%SITE_PERL%%/DBIx/Class/AsFdat.pm
+%%PERL5_MAN3%%/DBIx::Class::AsFdat.3.gz
 @dirrmtry %%SITE_PERL%%/DBIx/Class
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/AsFdat

@@ -19,12 +19,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	jemplate.1
-MAN3=	Jemplate.3 \
-	Jemplate::Directive.3 \
-	Jemplate::Parser.3 \
-	Jemplate::Runtime.3 \
-	Jemplate::Runtime::Compact.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

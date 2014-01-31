@@ -16,9 +16,6 @@ OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-O2 -pipe|| ; \
@@ -26,11 +23,9 @@ post-patch:
 	@${LN} -sf queso.conf ${WRKSRC}/queso.conf.sample
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} queso ${PREFIX}/sbin)
-	(cd ${WRKSRC} && ${INSTALL_DATA} queso.conf.sample ${PREFIX}/etc)
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} Documentation.txt ${DOCSDIR})
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/queso ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/queso.conf.sample ${STAGEDIR}${PREFIX}/etc
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Documentation.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

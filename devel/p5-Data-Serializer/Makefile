@@ -20,20 +20,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Data::Serializer.3 Data::Serializer::Bencode.3 \
-		Data::Serializer::Config::General.3 \
-		Data::Serializer::Convert::Bencode.3 \
-		Data::Serializer::Convert::Bencode_XS.3 \
-		Data::Serializer::Cookbook.3 Data::Serializer::Data::Denter.3 \
-		Data::Serializer::Data::Dumper.3 Data::Serializer::Data::Taxi.3 \
-		Data::Serializer::FreezeThaw.3 Data::Serializer::JSON.3 \
-		Data::Serializer::JSON::Syck.3 \
-		Data::Serializer::Persistent.3 \
-		Data::Serializer::PHP::Serialization.3 \
-		Data::Serializer::Raw.3 \
-		Data::Serializer::Storable.3 Data::Serializer::XML::Dumper.3 \
-		Data::Serializer::XML::Simple.3 Data::Serializer::YAML.3 \
-		Data::Serializer::YAML::Syck.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

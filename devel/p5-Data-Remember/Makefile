@@ -20,12 +20,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Data::Remember.3 \
-	Data::Remember::DBM.3 \
-	Data::Remember::Hybrid.3 \
-	Data::Remember::Memory.3 \
-	Data::Remember::POE.3 \
-	Data::Remember::YAML.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

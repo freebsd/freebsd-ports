@@ -17,9 +17,13 @@ GNU_CONFIGURE=	yes
 MAKE_ARGS+=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
 USE_LDCONFIG=	yes
 
-GNUTLS_LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGNUTLS}
+LIB_DEPENDS+=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 			libgnutls.so:${PORTSDIR}/security/gnutls
-GNUTLS_CONFIGURE_ARGS=	--with-gnutls=${LOCALBASE} --enable-https
+CONFIGURE_ARGS+=	--with-libgcrypt-prefix=${LOCALBASE} --with-gnutls=${LOCALBASE} --enable-https=yes
+.endif
 
 INFO=		libmicrohttpd libmicrohttpd-tutorial
 

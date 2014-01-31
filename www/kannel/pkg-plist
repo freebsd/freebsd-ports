@@ -139,6 +139,12 @@ include/kannel/wap/wtp_tid.h
 lib/kannel/libgw.a
 lib/kannel/libgwlib.a
 lib/kannel/libwap.a
+man/man1/mtbatch.1.gz
+man/man1/seewbmp.1.gz
+man/man1/wmlsc.1.gz
+man/man1/wmlsdasm.1.gz
+man/man8/kannel.8.gz
+man/man8/run_kannel_box.8.gz
 sbin/bearerbox
 sbin/run_kannel_box
 sbin/smsbox

@@ -1,20 +1,11 @@
 bin/cnee
 %%GNEE%%bin/gnee
-info/xnee.info
-%%PNEE%%libdata/bonobo/servers/pnee.server
-%%PNEE%%libexec/pnee
 man/man1/cnee.1.gz
 %%GNEE%%man/man1/gnee.1.gz
-%%PNEE%%man/man1/pnee.1.gz
 man/man1/xnee.1.gz
 share/pixmaps/xnee.png
 share/pixmaps/xnee.xpm
 %%DATADIR%%/example1.xns
 %%DATADIR%%/simple_bash.sh
 %%DATADIR%%/xnee.sh
-%%PNEE%%%%DATADIR%%/pixmaps/pnee-record.png
-%%PNEE%%%%DATADIR%%/pixmaps/pnee-replay.png
-%%PNEE%%%%DATADIR%%/pixmaps/pnee-stop-mini.png
-%%PNEE%%%%DATADIR%%/pixmaps/pnee-stop.png
-%%PNEE%%@dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%

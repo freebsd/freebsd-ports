@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Catalyst/Plugin/Session/Store/Memcached/Fast.pm
+%%PERL5_MAN3%%/Catalyst::Plugin::Session::Store::Memcached::Fast.3.gz
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session/Store/Memcached
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session/Store
 @dirrmtry %%SITE_PERL%%/Catalyst/Plugin/Session

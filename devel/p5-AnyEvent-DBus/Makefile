@@ -17,10 +17,7 @@ RUN_DEPENDS=	p5-AnyEvent>=5:${PORTSDIR}/devel/p5-AnyEvent \
 		p5-Net-DBus>=0.33:${PORTSDIR}/devel/p5-Net-DBus \
 		p5-common-sense>=3.2:${PORTSDIR}/devel/p5-common-sense
 
-MAN3=		AnyEvent::DBus.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

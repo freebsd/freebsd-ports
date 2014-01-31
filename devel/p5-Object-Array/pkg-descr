@@ -6,4 +6,4 @@ so, but only in list context. In scalar context, these methods will
 return an Object::Array object constructed from a copy of the list
 that would have been returned.
 
-WWW:	http://search.cpan.org/dist/Object-Array/
+WWW: http://search.cpan.org/dist/Object-Array/

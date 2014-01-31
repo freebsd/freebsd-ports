@@ -12,6 +12,8 @@ COMMENT=	GNU Triangulated Surface Library
 
 LICENSE=	LGPL20
 
+CONFLICTS=	pcb-[0-9]*
+
 USES=		pkgconfig
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes

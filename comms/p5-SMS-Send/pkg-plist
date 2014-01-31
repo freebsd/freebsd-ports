@@ -3,6 +3,10 @@
 %%SITE_PERL%%/SMS/Send/Driver.pm
 %%SITE_PERL%%/SMS/Send/Test.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send/.packlist
+%%PERL5_MAN3%%/SMS::Send.3.gz
+%%PERL5_MAN3%%/SMS::Send::AU::Test.3.gz
+%%PERL5_MAN3%%/SMS::Send::Driver.3.gz
+%%PERL5_MAN3%%/SMS::Send::Test.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/Send
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS
 @dirrmtry %%SITE_PERL%%/SMS/Send/AU

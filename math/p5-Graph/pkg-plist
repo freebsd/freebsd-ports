@@ -23,6 +23,22 @@
 %%SITE_PERL%%/Heap071/Fibonacci.pm
 %%SITE_PERL%%/auto/Heap071/Elem/autosplit.ix
 %%SITE_PERL%%/auto/Heap071/Fibonacci/autosplit.ix
+%%PERL5_MAN3%%/Graph.3.gz
+%%PERL5_MAN3%%/Graph::AdjacencyMap.3.gz
+%%PERL5_MAN3%%/Graph::AdjacencyMap::Vertex.3.gz
+%%PERL5_MAN3%%/Graph::AdjacencyMatrix.3.gz
+%%PERL5_MAN3%%/Graph::BitMatrix.3.gz
+%%PERL5_MAN3%%/Graph::Directed.3.gz
+%%PERL5_MAN3%%/Graph::Matrix.3.gz
+%%PERL5_MAN3%%/Graph::TransitiveClosure.3.gz
+%%PERL5_MAN3%%/Graph::TransitiveClosure::Matrix.3.gz
+%%PERL5_MAN3%%/Graph::Traversal.3.gz
+%%PERL5_MAN3%%/Graph::Traversal::BFS.3.gz
+%%PERL5_MAN3%%/Graph::Traversal::DFS.3.gz
+%%PERL5_MAN3%%/Graph::Undirected.3.gz
+%%PERL5_MAN3%%/Graph::UnionFind.3.gz
+%%PERL5_MAN3%%/Heap071::Elem.3.gz
+%%PERL5_MAN3%%/Heap071::Fibonacci.3.gz
 @dirrmtry %%SITE_PERL%%/auto/Heap071/Fibonacci
 @dirrmtry %%SITE_PERL%%/auto/Heap071/Elem
 @dirrmtry %%SITE_PERL%%/auto/Heap071

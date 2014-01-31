@@ -2,5 +2,8 @@ bin/podtohtml
 %%SITE_PERL%%/Pod/HTML_Elements.pm
 %%SITE_PERL%%/Pod/Links.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/PodToHTML/.packlist
+%%PERL5_MAN3%%/Pod::HTML_Elements.3.gz
+%%PERL5_MAN3%%/Pod::Links.3.gz
+man/man1/podtohtml.1.gz
 @dirrmtry %%SITE_PERL%%/Pod
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PodToHTML

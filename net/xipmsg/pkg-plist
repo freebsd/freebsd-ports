@@ -16,4 +16,5 @@ lib/X11/xipmsg/xbro12.xbm
 lib/X11/xipmsg/xbro13.xbm
 lib/X11/xipmsg/xbro14.xbm
 lib/X11/xipmsg/xbro15.xbm
+man/man1/xipmsg.1.gz
 @dirrm lib/X11/xipmsg
