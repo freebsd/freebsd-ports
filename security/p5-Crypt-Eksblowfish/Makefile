@@ -18,12 +18,4 @@ LICENSE=	ART10 GPLv1
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	Crypt::Eksblowfish.3 \
-	Crypt::Eksblowfish::Bcrypt.3 \
-	Crypt::Eksblowfish::Blowfish.3 \
-	Crypt::Eksblowfish::Family.3 \
-	Crypt::Eksblowfish::Subkeyed.3 \
-	Crypt::Eksblowfish::Uklblowfish.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

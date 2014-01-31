@@ -13,7 +13,4 @@ USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--enable-static
 USE_LDCONFIG=	yes
 
-MAN3=		mcrypt.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
