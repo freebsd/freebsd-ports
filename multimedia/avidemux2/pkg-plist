@@ -68,6 +68,7 @@ share/ADM_scripts/auto/Apple iPod.js
 %%QT_NLS%%share/avidemux/i18n/avidemux_sr@latin.qm
 %%QT_NLS%%share/avidemux/i18n/avidemux_tr.qm
 %%QT_NLS%%share/avidemux/i18n/avidemux_zh_TW.qm
+%%QT_NLS%%share/avidemux/i18n/qt_ca.qm
 %%QT_NLS%%share/avidemux/i18n/qt_cs.qm
 %%QT_NLS%%share/avidemux/i18n/qt_de.qm
 %%QT_NLS%%share/avidemux/i18n/qt_fr.qm
