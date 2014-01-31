@@ -19,6 +19,8 @@ EXTRACT_ONLY=	config.tar.Z
 MAINTAINER=	joemann@beefree.free.de
 COMMENT=	A popular functional language from Bell Labs
 
+BROKEN=		Fails to build
+
 # Other mirror sites that generally carry only released versions of SML
 # 	ftp://ftp.cl.cam.ac.uk/MIRRORED/smlnj/release/
 
