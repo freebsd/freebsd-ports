@@ -12,7 +12,4 @@ COMMENT=	Perl extension to provide getpeername(2)
 USES=	perl5
 USE_PERL5=	modbuild
 
-MAN3=	POSIX::getpeername.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

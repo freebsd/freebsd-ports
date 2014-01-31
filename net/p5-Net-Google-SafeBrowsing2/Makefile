@@ -34,15 +34,6 @@ OPTIONS_DEFAULT=SQLite
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Net::Google::SafeBrowsing2::Storage.3 \
-	Net::Google::SafeBrowsing2::Lookup.3 \
-	Net::Google::SafeBrowsing2::Postgres.3 \
-	Net::Google::SafeBrowsing2.3 \
-	Net::Google::SafeBrowsing2::DBI.3 \
-	Net::Google::SafeBrowsing2::MySQL.3 \
-	Net::Google::SafeBrowsing2::Sqlite.3
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLite}

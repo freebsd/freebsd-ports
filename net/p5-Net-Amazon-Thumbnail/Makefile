@@ -22,10 +22,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Net::Amazon::Thumbnail.3
-
-NO_STAGE=	yes
-post-install:
-		@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.mk>
