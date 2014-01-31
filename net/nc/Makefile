@@ -13,8 +13,8 @@ MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	Network aware cat
 
 GNU_CONFIGURE=	yes
-MAN1=		ncat.1
-PLIST_FILES=	bin/ncat
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/ncat \
+		man/man1/ncat.1.gz
+
 .include <bsd.port.mk>
