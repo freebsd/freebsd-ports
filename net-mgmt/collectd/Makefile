@@ -262,7 +262,7 @@ PLIST_SUB+=	INTERFACE="@comment "
 
 .if ${PORT_OPTIONS:MMBMON}
 CONFIGURE_ARGS+=--enable-mbmon
-RUN_DEPENDS+=	${LOCALBASE}/bin/mbmon:${PORTSDIR}/sysutils/mbmon
+RUN_DEPENDS+=	${LOCALBASE}/bin/mbmon:${PORTSDIR}/sysutils/xmbmon
 PLIST_SUB+=	MBMON=""
 .else
 CONFIGURE_ARGS+=--disable-mbmon
