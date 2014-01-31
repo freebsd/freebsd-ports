@@ -11,16 +11,15 @@ DISTNAME=	RemoteDesk-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical interface to rdesktop
 
-RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop
-
 LICENSE=	GPLv2
+
+RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
 USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|^GNUSTEP_INSTALLATION_DIR|#GNUSTEP_INSTALLATION_DIR|' \
 		${WRKSRC}/GNUmakefile
