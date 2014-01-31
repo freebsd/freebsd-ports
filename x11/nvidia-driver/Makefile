@@ -42,6 +42,8 @@ NVVERSION=	${DISTVERSION:S/.//g}
 NVVERSION=	${DISTVERSION:S/.//g}00
 .endif
 
+.include <bsd.port.options.mk>
+
 .if ${NVVERSION} >= 1952200
 MASTER_SITE_SUBDIR=	XFree86/FreeBSD-x86${ARCH_SUFX}/${DISTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64
