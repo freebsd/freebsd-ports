@@ -12,6 +12,8 @@ DISTNAME=	poco-${PORTVERSION}p1-all
 MAINTAINER=	wes@FreeBSD.org
 COMMENT=	C++ Portable Components library with NetSSL and Database libraries
 
+BROKEN=		Fails to build
+
 CONFLICTS=	poco-[0-9]*
 
 OPTIONS_DEFINE=	TEST SAMPLES MYSQL SQLITE
