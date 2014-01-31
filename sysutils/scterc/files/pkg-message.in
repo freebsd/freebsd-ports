@@ -1,0 +1,15 @@
+To enable setting hard disk SCT ERC on system boot time, add the
+following to your /etc/rc.conf:
+
+  scterc_enable="YES"
+
+  # specify hard disks to configure
+  scterc_disks="ada0 ada1"
+
+  # specify read and write timeouts in tenths of second
+  # here each is set to 7.0 seconds, which is also the default
+  # for which you may omit these lines
+  scterc_read_timeout="70"
+  scterc_write_timeout="70"
+
+See %%DOCSDIR%%/README.md for more info.
