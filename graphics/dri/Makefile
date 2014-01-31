@@ -58,14 +58,14 @@ PLIST_SUB+=	GALLIUM=""
 CONFIGURE_ARGS+=--enable-gallium-llvm=no --without-gallium-drivers
 PLIST_SUB+=	GALLIUM="@comment "
 . endif
-. if ${ARCH} == powerpc
+. if ${ARCH} == powerpc || ${ARCH} == powerpc64
 DRI_DRIVERS=	RADEON SWRAST
 . endif
 . if ${ARCH} == sparc64
 DRI_DRIVERS=	SWRAST
 . endif
 .else # !defined(WITH_NEW_XORG)
-. if ${ARCH} == powerpc
+. if ${ARCH} == powerpc || ${ARCH} == powerpc64
 DRI_DRIVERS=	MACH64 RADEON SWRAST TDFX
 . elif ${ARCH} == sparc64
 DRI_DRIVERS=	MACH64 RADEON SWRAST
