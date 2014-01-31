@@ -12,7 +12,6 @@ COMMENT=	Security tool for testing binaries for overflows
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/bfbtester
-USE_GMAKE=	yes
+USES=		gmake
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
