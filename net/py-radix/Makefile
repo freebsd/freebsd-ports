@@ -3,6 +3,7 @@
 
 PORTNAME=	radix
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	http://www2.mindrot.org/files/py-radix/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,6 @@ COMMENT=	A Python radix-tree implementation
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/radix.so
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
