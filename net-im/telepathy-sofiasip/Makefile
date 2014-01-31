@@ -14,10 +14,8 @@ LIB_DEPENDS=	sofia-sip-ua:${PORTSDIR}/net/sofia-sip \
 		dbus-glib-1:${PORTSDIR}/devel/dbus-glib
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_OPENSSL=	yes
-USES=		pkgconfig
+USES=		pkgconfig gmake
 USE_GNOME=	glib20
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
