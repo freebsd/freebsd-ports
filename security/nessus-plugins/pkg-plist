@@ -1125,4 +1125,6 @@ lib/nessus/plugins_factory/Makefile
 lib/nessus/plugins_factory/libtool
 lib/nessus/plugins_factory/nessus.tmpl
 sbin/nessus-update-plugins
+man/man1/nessus-build.1.gz
+man/man8/nessus-update-plugins.8.gz
 @dirrm lib/nessus/plugins_factory
