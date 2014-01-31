@@ -15,10 +15,9 @@ LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 
-MAN1=		wmlj.1
-PLIST_FILES=	bin/wmlj
+PLIST_FILES=	bin/wmlj \
+		man/man1/wmlj.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/<curl\/types.h>/d' ${WRKSRC}/src/network.c
 
