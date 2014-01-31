@@ -15,7 +15,6 @@ COMMENT=	Automated tool for detecting steganographic content in JPEGs
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=	X11
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
@@ -29,9 +28,8 @@ PLIST_SUB+=	X11="@comment "
 
 # Note: stegdetect includes a modified version of jpeg-6b linked statically
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 CONFIGURE_ARGS+=--program-prefix=''
-MAN1=		stegdetect.1 stegbreak.1
 
 post-patch:
 	@${REINPLACE_CMD} 's;/usr/include/event;${LOCALBASE}/include;g' \
