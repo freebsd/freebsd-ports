@@ -1,6 +1,7 @@
 bin/clamz
 share/applications/clamz.desktop
 share/mime/packages/clamz.xml
+man/man1/clamz.1.gz
 @dirrmtry share/mime/packages
 @dirrmtry share/mime
 @dirrmtry share
