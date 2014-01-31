@@ -5,3 +5,4 @@ lib/libsa.la
 lib/libsa.so
 lib/libsa.so.12
 libdata/pkgconfig/sa.pc
+man/man3/sa.3.gz
