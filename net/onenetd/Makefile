@@ -12,8 +12,7 @@ MAINTAINER=	tdb@FreeBSD.org
 COMMENT=	A single-server inetd
 
 GNU_CONFIGURE=	yes
-MAN1=		onenetd.1
-PLIST_FILES=	bin/onenetd
+PLIST_FILES=	bin/onenetd \
+		man/man1/onenetd.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
