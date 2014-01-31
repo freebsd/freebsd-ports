@@ -1,4 +1,5 @@
 %%SITE_PERL%%/DateTime/Format/DateParse.pm
 %%SITE_PERL%%/DateTime/Format/DateParse.pod
+%%PERL5_MAN3%%/DateTime::Format::DateParse.3.gz
 @dirrmtry %%SITE_PERL%%/DateTime/Format
 @dirrmtry %%SITE_PERL%%/DateTime
