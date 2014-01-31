@@ -1,3 +1,4 @@
 bin/mime-construct
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/mime-construct/.packlist
+man/man1/mime-construct.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/mime-construct
