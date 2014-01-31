@@ -13,8 +13,7 @@ COMMENT=	Small command line tool for SIP testing
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 
-MAN1=		sipsak.1
-PLIST_FILES=	bin/sipsak
+PLIST_FILES=	bin/sipsak \
+		man/man1/sipsak.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
