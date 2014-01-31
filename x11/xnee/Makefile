@@ -2,12 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	xnee
-PORTVERSION=	3.16
+PORTVERSION=	3.17
 CATEGORIES=	x11
 MASTER_SITES=	GNU
 
 MAINTAINER=	pawel@FreeBSD.org
-COMMENT=	X events recorder and player
+COMMENT=	X11 events recorder and player
 
 LICENSE=	GPLv3
 
@@ -17,28 +17,21 @@ USES=		gmake pathfix
 
 CONFIGURE_ARGS=	--enable-cli --disable-doc --disable-xinput2
 
-OPTIONS_DEFINE=	GNEE PNEE
-OPTIONS_SUB=	yes
-GNEE_DESC=	GUI frontend
-PNEE_DESC=	GNOME panel frontend
+INFO=		${PORTNAME}
 
+OPTIONS_DEFINE=	GNEE
+OPTIONS_SUB=	yes
+
+GNEE_DESC=	GUI frontend
 GNEE_CONFIGURE_ENABLE=	gui
-PNEE_CONFIGURE_ENABLE=	gnome-applet
+GNEE_USES=	pkgconfig
+GNEE_USE=	GNOME=gtk20
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNEE}
-USE_GNOME+=	gtk20
-DESKTOP_ENTRIES=	"Gnee" "${COMMENT}" "${PORTNAME}.png" \
+DESKTOP_ENTRIES=	"Gnee" "" "${PORTNAME}.png" \
 			"gnee" "Development;" true
-.endif
-
-.if ${PORT_OPTIONS:MPNEE}
-BROKEN=		Does not build, needs newer gnomepanel
-USE_GNOME+=	gnomepanel
-.else
-CONFIGURE_ENV+=	libgnomeui_CFLAGS="${TRUE}" \
-		libgnomeui_LIBS="${TRUE}"
 .endif
 
 post-patch:
@@ -58,10 +51,6 @@ post-patch:
 		 s|$$(libgnomeui_LIBS)||g' ${WRKSRC}/gnee/src/Makefile.in
 	@${REINPLACE_CMD} -e \
 		's|src test|src|g' ${WRKSRC}/libxnee/Makefile.in
-	@${REINPLACE_CMD} -e \
-		's|cp pnee|$$(INSTALL_DATA) pnee|g' ${WRKSRC}/pnee/Makefile.in
-	@${REINPLACE_CMD} -e \
-		's|cp $$(PNEE)|$$(INSTALL_PROGRAM) $$(PNEE)|g' ${WRKSRC}/pnee/src/Makefile.in
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/xnee.info ${STAGEDIR}${PREFIX}/${INFO_PATH}
