@@ -12,10 +12,9 @@ MAINTAINER=	dikshie@sfc.wide.ad.jp
 COMMENT=	Paris traceroute is network diagnosis and measurement tools
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 WRKSRC=		${WRKDIR}/${PORTNAME}-current
 
 PLIST_FILES=	bin/paris-traceroute
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

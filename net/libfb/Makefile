@@ -27,5 +27,4 @@ LIBNET_CPPFLAGS=	-I${LOCALBASE}/include/libnet11
 LIBNET_LIBS=		-L${LOCALBASE}/lib/libnet11
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
