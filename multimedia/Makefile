@@ -153,7 +153,6 @@
     SUBDIR += kdemultimedia4-ffmpegthumbs
     SUBDIR += kdemultimedia4-mplayerthumbs
     SUBDIR += kdenlive
-    SUBDIR += kino
     SUBDIR += kissdx
     SUBDIR += kmplayer-kde4
     SUBDIR += kplayer-kde4
@@ -369,7 +368,6 @@
     SUBDIR += vdr-plugin-remote
     SUBDIR += vdr-plugin-skinenigmang
     SUBDIR += vdr-plugin-sleeptimer
-    SUBDIR += vdr-plugin-softdevice
     SUBDIR += vdr-plugin-softhddevice
     SUBDIR += vdr-plugin-streamdev
     SUBDIR += vdr-plugin-ttxtsubs
