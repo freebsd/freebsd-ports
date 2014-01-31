@@ -1,6 +1,9 @@
 bin/wavbreaker
 bin/wavinfo
 bin/wavmerge
+man/man1/wavbreaker.1.gz
+man/man1/wavinfo.1.gz
+man/man1/wavmerge.1.gz
 share/applications/wavbreaker.desktop
 share/icons/hicolor/16x16/apps/wavbreaker.png
 share/icons/hicolor/22x22/apps/wavbreaker.png
@@ -12,3 +15,15 @@ share/icons/hicolor/scalable/apps/wavbreaker.svg
 %%NLS%%share/locale/fr/LC_MESSAGES/wavbreaker.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/wavbreaker.mo
 share/pixmaps/wavbreaker.png
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
