@@ -16,12 +16,4 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_GNOME=	glib20
 
-MAN1=		sip-date.1 \
-		sip-options.1 \
-		localinfo.1 \
-		addrinfo.1 \
-		stunc.1 \
-		sip-dig.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

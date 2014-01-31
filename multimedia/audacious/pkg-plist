@@ -121,6 +121,8 @@ share/icons/hicolor/scalable/apps/audacious.svg
 %%NLS%%@dirrmtry share/locale/ast
 %%NLS%%@dirrmtry share/locale/ml_IN/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ml_IN
+man/man1/audacious.1.gz
+man/man1/audtool.1.gz
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
 @dirrm include/libaudgui
