@@ -1,11 +1,19 @@
---- EMULib/Rules.gcc.orig	2013-12-20 20:52:16.000000000 +0100
-+++ EMULib/Rules.gcc	2013-12-20 20:52:22.000000000 +0100
-@@ -6,7 +6,7 @@
+--- EMULib/Rules.gcc.orig	2014-01-31 00:39:34.000000000 +0700
++++ EMULib/Rules.gcc	2014-01-31 00:40:38.000000000 +0700
+@@ -6,12 +6,12 @@
  LIBGBZ	= $(BASEDIR)/GBZ80
  PRIVATE	= $(BASEDIR)/Private
  
+-CXX	= g++
 -CC	= gcc
+-CPP	= cpp
++CXX	?= g++
 +CC	?= gcc
- CPP	= cpp
- CFLAGS	= -O3 -pthread -I.. -I$(EMULIB)
++CPP	?= cpp
+ MOC	= moc
+ SDT2GAS	= perl $(EMULIB)/Tools/sdt2gas.pl
+-CFLAGS	= -O2 -pthread -I. -I.. -I$(EMULIB)
++CFLAGS	+= -O2 -pthread -I. -I.. -I$(EMULIB)
  DEFINES = -DZLIB
+ LIBS    = -lz -lpthread
+ 

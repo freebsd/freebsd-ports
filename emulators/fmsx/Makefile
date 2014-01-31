@@ -2,18 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	fmsx
-PORTVERSION=	3.5.1
-PORTREVISION=	2
+PORTVERSION=	3.7
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.mavetju.org/download/adopted/:code \
-		http://fms.komkon.org/fMSX/:code \
+MASTER_SITES=	http://fms.komkon.org/fMSX/:code \
 		http://fms.komkon.org/fMSX/src/:rom
-DISTFILES=	fMSX351.zip:code \
+DISTFILES=	fMSX37.zip:code \
 		MSX.ROM:rom MSX2.ROM:rom MSX2EXT.ROM:rom MSX2P.ROM:rom \
 		MSX2PEXT.ROM:rom FMPAC.ROM:rom DISK.ROM:rom MSXDOS2.ROM:rom \
 		PAINTER.ROM:rom KANJI.ROM:rom
-DIST_SUBDIR=	fmsx351
-EXTRACT_ONLY=	fMSX351.zip
+DIST_SUBDIR=	fmsx37
+EXTRACT_ONLY=	fMSX37.zip
 
 MAINTAINER=	dk@farm.org
 COMMENT=	Portable MSX/MSX2/MSX2+ Emulator
@@ -21,12 +19,10 @@ COMMENT=	Portable MSX/MSX2/MSX2+ Emulator
 USE_XORG=	xi x11
 USE_ZIP=	yes
 USES=		gmake dos2unix
-DOS2UNIX_FILES= EMULib/LibUnix.c EMULib/NetUnix.c EMULib/Rules.gcc \
+DOS2UNIX_FILES=	EMULib/Unix/LibUnix.c EMULib/Unix/NetUnix.c EMULib/Rules.gcc \
 		EMULib/Rules.Unix
 RESTRICTED=	Legal status of distributed ROM images unclear
 WRKSRC=		${WRKDIR}
-
-BROKEN=		does not build
 
 OPTIONS_DEFINE=	BPP8 BPP16 BPP24 BPP32 DOCS
 OPTIONS_DEFAULT=	BPP32
@@ -35,7 +31,6 @@ BPP16_DESC=	With BPP16
 BPP24_DESC=	With BPP24
 BPP32_DESC=	With BPP32 (see pkg-message)
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -56,18 +51,18 @@ post-patch:
 .endif
 
 do-build:
-	cd ${WRKSRC}/fMSX/Unix && ${GMAKE}
+	cd ${WRKSRC}/fMSX/Unix && ${GMAKE} DEBUG_FLAGS=${DEBUG_FLAGS}
 
 do-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/fmsx ${PREFIX}/bin
-	${REINPLACE_CMD} -i "" -e "s,PREFIX,${PREFIX},g" ${PREFIX}/bin/fmsx
-	${INSTALL_PROGRAM} ${WRKSRC}/fMSX/Unix/fmsx ${PREFIX}/bin/fmsx.bin
-	${MKDIR} ${PREFIX}/share/fmsx
-	${INSTALL_DATA} ${WRKSRC}/fMSX/ROMs/*.FNT ${DATADIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/*.ROM ${DATADIR}
+	${INSTALL_SCRIPT} ${FILESDIR}/fmsx ${STAGEDIR}${PREFIX}/bin
+	${REINPLACE_CMD} -i "" -e "s,PREFIX,${PREFIX},g" ${STAGEDIR}${PREFIX}/bin/fmsx
+	${INSTALL_PROGRAM} ${WRKSRC}/fMSX/Unix/fmsx ${STAGEDIR}${PREFIX}/bin/fmsx.bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/fmsx
+	${INSTALL_DATA} ${WRKSRC}/fMSX/ROMs/*.FNT ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/*.ROM ${STAGEDIR}${DATADIR}
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/fMSX/*.html ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/fMSX/*.html ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
