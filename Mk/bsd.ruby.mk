@@ -186,8 +186,6 @@ RUBY_DISTVERSION?=	${RUBY_RELVERSION}-p${RUBY_PATCHLEVEL}
 
 RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_DISTVERSION}
 
-GEM_ENV?=		LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_CTYPE=UTF-8
-
 RUBY_CONFIGURE_ARGS+=	--with-rubyhdrdir="${PREFIX}/include/ruby-1.9/" \
 			--with-rubylibprefix="${PREFIX}/lib/ruby" \
 			--docdir="${RUBY_DOCDIR}" \
@@ -212,8 +210,6 @@ RUBY_VERSION?=		${RUBY_RELVERSION}.${RUBY_PATCHLEVEL}
 RUBY_DISTVERSION?=	${RUBY_RELVERSION}-p${RUBY_PATCHLEVEL}
 
 RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_DISTVERSION}
-
-GEM_ENV?=		LC_CTYPE=UTF-8
 
 RUBY_CONFIGURE_ARGS+=	--with-rubyhdrdir="${PREFIX}/include/ruby-2.0/" \
 			--with-rubylibprefix="${PREFIX}/lib/ruby" \
@@ -245,6 +241,24 @@ _RUBY_SITEDIR?=		${_RUBY_SYSLIBDIR}/ruby/site_ruby
 _RUBY_VENDORDIR?=	${_RUBY_SYSLIBDIR}/ruby/vendor_ruby
 .endif
 #      defined(RUBY)
+
+.if defined(LANG) && !empty(LANG)
+GEM_ENV+=		LANG=${LANG}
+.else
+GEM_ENV+=		LANG=en_US.UTF-8
+.endif
+
+.if defined(LC_ALL) && !empty(LC_ALL)
+GEM_ENV+=		LC_ALL=${LC_ALL}
+.else
+GEM_ENV+=		LC_ALL=en_US.UTF-8
+.endif
+
+.if defined(LC_CTYPE) && !empty(LC_CTYPE)
+GEM_ENV+=		LC_CTYPE=${LC_CTYPE}
+.else
+GEM_ENV+=		LC_CTYPE=UTF-8
+.endif
 
 RUBY_DEFAULT_SUFFIX?=	${RUBY_DEFAULT_VER:S/.//}
 
