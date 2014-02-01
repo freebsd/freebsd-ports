@@ -1,4 +1,5 @@
 bin/kover
+man/man1/kover.1.gz
 share/applications/kde4/kover.desktop
 share/apps/kover/koverui.rc
 share/icons/hicolor/16x16/apps/audio_mode.png
