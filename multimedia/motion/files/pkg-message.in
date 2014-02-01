@@ -1,0 +1,15 @@
+****************************************************************
+To use the motion service properly, you should edit
+
+	%%PREFIX%%/etc/motion.conf
+
+according to your needs.
+To automatically start the service at boot time,
+add the following line to /etc/rc.conf:
+
+	motion_enable="YES"
+
+Then, to start the service right now without reboot, execute
+
+	service motion start
+****************************************************************
