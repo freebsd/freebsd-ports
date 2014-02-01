@@ -16,14 +16,13 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libjpeg=${LOCALBASE}
 
-MAN1=		jpgtn.1
-PLIST_FILES=	bin/jpgtn
+PLIST_FILES=	bin/jpgtn \
+		man/man1/jpgtn.1.gz
 
 WITH_MAXSIZE?=	2048
 WITH_MINSIZE?=	1
 WITH_DEFSIZE?=	128
 
-NO_STAGE=	yes
 pre-everything::
 	@${ECHO_MSG} "===>"
 	@${ECHO_MSG} "===> You can control program functionality by defining the following variables:"
