@@ -4,5 +4,7 @@ include/jbig.h
 lib/libjbig.a
 lib/libjbig.so
 lib/libjbig.so.1
+man/man1/jbgtopbm.1.gz
+man/man1/pbmtojbg.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/jbig.doc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
