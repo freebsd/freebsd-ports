@@ -24,8 +24,8 @@ BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 USE_XZ=		yes
 USE_KDE4=	kdelibs akonadi kdeprefix kdehier \
-		automoc4 nepomuk-core ontologies sharedmime soprano
-USES=		cmake:outsource
+		automoc4 nepomuk-core ontologies soprano
+USES=		cmake:outsource shared-mime-info
 USE_OPENLDAP=	yes
 USE_QT4=	corelib dbus declarative designer_build gui network sql xml \
 		qmake_build moc_build rcc_build uic_build

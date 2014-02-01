@@ -39,12 +39,13 @@ CONFLICTS_BUILD=qt-3.*
 USE_GL=		glew
 USE_GNOME=	glib20 libxml2 libxslt
 USE_KDE4=	kactivities kdehier kdelibs kdeprefix libkdcraw nepomuk-core \
-		okular pimlibs attica automoc4 sharedmime soprano
+		okular pimlibs attica automoc4 soprano
 USE_QT4=	corelib dbus designer_build gui opengl phonon porting_build \
 		qt3support qtestlib_build script sql svg webkit xml xmlpatterns \
 		moc_build qmake_build rcc_build uic_build uic3_build
 USE_SQLITE=	3
-USES=		cmake:outsource compiler:c++11-lang iconv perl5 pkgconfig
+USES=		cmake:outsource compiler:c++11-lang iconv perl5 pkgconfig \
+		shared-mime-info
 USE_XZ=		yes
 CMAKE_ARGS=	-DCMAKE_INCLUDE_PATH:STRING="${QT_INCDIR} ${LOCALBASE}/include" \
 		-DPRODUCTSET:STRING="DESKTOP"

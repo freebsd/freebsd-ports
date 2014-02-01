@@ -21,10 +21,10 @@ NETCDF_DESC=	NetCDF data support
 WRKSRC=		${WRKDIR}/beta2
 
 USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake shared-mime-info
 USE_XORG=	xft xpm
 USE_GCC=	yes
-USE_KDE4=	automoc4 kdelibs kdeprefix sharedmime
+USE_KDE4=	automoc4 kdelibs kdeprefix
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 CMAKE_ARGS=	-DOPJ_LIBRARY:STRING=""
 INSTALLS_ICONS=	yes

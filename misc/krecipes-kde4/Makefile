@@ -11,9 +11,9 @@ COMMENT=	KDE4 recipe database
 
 LICENSE=	GPLv2
 
-USES=		cmake gettext
+USES=		cmake gettext shared-mime-info
 USE_QT4=	moc_build qmake_build rcc_build uic_build
-USE_KDE4=	automoc4 kdeprefix kdelibs qimageblitz sharedmime
+USE_KDE4=	automoc4 kdeprefix kdelibs qimageblitz
 
 NO_STAGE=	yes
 
