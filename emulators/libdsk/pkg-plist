@@ -11,3 +11,12 @@ lib/libdsk.a
 lib/libdsk.la
 lib/libdsk.so
 lib/libdsk.so.5
+man/man1/apriboot.1.gz
+man/man1/dskdump.1.gz
+man/man1/dskform.1.gz
+man/man1/dskid.1.gz
+man/man1/dskscan.1.gz
+man/man1/dsktrans.1.gz
+man/man1/dskutil.1.gz
+man/man1/md3serial.1.gz
+man/man5/libdskrc.5.gz
