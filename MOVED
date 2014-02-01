@@ -5425,3 +5425,4 @@ sysutils/mbmon|sysutils/xmbmon|2014-01-31|Has expired: Use sysutils/xmbmon inste
 dns/bind96||2014-01-31|Has expired: EOL in January 2014, consider moving to Bind 9.8 or 9.9
 x11-drivers/xf86-video-nouveau||2014-01-31|Has expired: Not supported, missing kernel support. use the nvidia driver.
 cad/mars||2014-01-31|Removed, abandonware, no releases in the past 20 years
+polish/gimp-help||2014-02-01|Removed, excluded from gimp-help-2.8.1 release
