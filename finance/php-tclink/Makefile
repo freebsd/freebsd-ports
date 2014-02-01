@@ -16,5 +16,4 @@ USE_PHPEXT=	yes
 USE_OPENSSL=	yes
 DEFAULT_PHP_VER=53
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
