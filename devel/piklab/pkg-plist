@@ -2,6 +2,9 @@
 bin/piklab-coff
 bin/piklab-hex
 bin/piklab-prog
+%%KDE4%%man/man1/piklab.1x.gz
+man/man1/piklab-hex.1.gz
+man/man1/piklab-prog.1.gz
 %%KDE4%%share/applications/kde4/piklab.desktop
 %%KDE4%%share/apps/katepart/syntax/asm-pic.xml
 %%KDE4%%share/apps/katepart/syntax/coff-c-pic.xml
