@@ -1,7 +1,5 @@
 bin/gtkballs
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.russian
-%%PORTDOCS%%%%DOCSDIR%%/TODO
+man/man6/gtkballs.6x.gz
 %%DATADIR%%/COPYING
 %%DATADIR%%/gtkballs-logo.png
 %%DATADIR%%/gtkballs-scores
@@ -526,14 +524,14 @@ bin/gtkballs
 %%DATADIR%%/themes/mascots/walk7.xpm
 %%DATADIR%%/themes/mascots/walk8.xpm
 %%DATADIR%%/themes/mascots/walk_small.xpm
-share/locale/de/LC_MESSAGES/gtkballs.mo
-share/locale/fr/LC_MESSAGES/gtkballs.mo
-share/locale/pl/LC_MESSAGES/gtkballs.mo
-share/locale/ru/LC_MESSAGES/gtkballs.mo
+%%NLS%%share/locale/de/LC_MESSAGES/gtkballs.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/gtkballs.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/gtkballs.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/gtkballs.mo
+share/pixmaps/gtkballs.png
 @dirrm %%DATADIR%%/themes/mascots
 @dirrm %%DATADIR%%/themes/klines
 @dirrm %%DATADIR%%/themes/Default
 @dirrm %%DATADIR%%/themes/5balls-Big
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

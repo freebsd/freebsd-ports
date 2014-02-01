@@ -1,5 +1,5 @@
---- src/game.c.orig	Wed Oct  6 20:06:46 2004
-+++ src/game.c	Wed Oct 27 02:10:30 2004
+--- ./src/game.c.orig	2004-10-06 13:06:46.000000000 +0200
++++ ./src/game.c	2014-02-01 20:44:28.000000000 +0100
 @@ -495,8 +495,8 @@
                          lock_actions(1);
                          draw_board();
