@@ -23,3 +23,4 @@ bin/gmake
 %%NLS%%share/locale/uk/LC_MESSAGES/make.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/make.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/make.mo
+man/man1/gmake.1.gz
