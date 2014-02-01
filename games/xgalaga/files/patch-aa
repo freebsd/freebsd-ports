@@ -1,5 +1,5 @@
 --- Makefile.in.orig	2008-03-06 06:58:16.000000000 +0900
-+++ Makefile.in	2012-04-23 23:27:39.000000000 +0900
++++ Makefile.in	2014-02-01 11:53:20.000000000 +0900
 @@ -15,9 +15,9 @@
  bindir = $(exec_prefix)
  libdir = $(prefix)/lib
@@ -13,6 +13,17 @@
  distversion = 2.1.1.0
  
  @SET_MAKE@
+@@ -65,8 +65,8 @@
+ 	for i in levels/*.xgl; do $(INSTALL) $$i $(DESTDIR)$(prefix)/$$i ; done
+ 	for i in sounds/*.raw; do $(INSTALL) $$i $(DESTDIR)$(prefix)/$$i ; done
+ 	$(INSTALL) CREDITS $(DESTDIR)$(creditsfile)
+-	$(INSTALL) xgalaga.6x.gz $(mandir)/man6/xgalaga.6x.gz
+-	chmod 644 $(mandir)/man6/xgalaga.6x.gz
++	$(INSTALL) xgalaga.6x.gz $(DESTDIR)$(mandir)/man6/xgalaga.6x.gz
++#	chmod 644 $(mandir)/man6/xgalaga.6x.gz
+ #	touch $(prefix)/scores
+ #	chmod 666 $(prefix)/scores
+ #       chown ${GAMEOWN}:${GAMEGRP} $(prefix)/scores
 @@ -74,14 +74,14 @@
  #       chmod ${GAMEMODE} $(bindir)/$(TARGET)
  #       chmod ${GAMEDATAMODE} $(prefix)/scores

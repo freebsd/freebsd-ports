@@ -20,17 +20,13 @@ CONFIGURE_ARGS=	--prefix=${LOCALBASE}/lib/X11/xgalaga \
 		--mandir=${LOCALBASE}/man \
 		--exec_prefix=${LOCALBASE}/bin
 
-MAN6=		xgalaga.6x
-MANCOMPRESSED=	yes
-
 OPTIONS_DEFINE=	SOUND
 OPTIONS_DEFAULT=	SOUND
 OPTIONS_SUB=	yes
 
 SOUND_CONFIGURE_OFF=	--without-sound
 
-NO_STAGE=	yes
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/xgalaga
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/xgalaga
 
 .include <bsd.port.mk>
