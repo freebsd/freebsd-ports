@@ -30,14 +30,8 @@ GCONF_SCHEMAS=	drivel.schemas
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGTKSPELL}
-LIB_DEPENDS+=		gtkspell.0:${PORTSDIR}/textproc/gtkspell
-.else
-CONFIGURE_ARGS+=	--without-gtkspell
-.endif
+GTKSPELL_LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
+GTKSPELL_CONFIGURE_OFF=	--without-gtkspell
 
 post-patch:
 	@${REINPLACE_CMD} -e '/-g2/s|^|#|g' ${WRKSRC}/configure
