@@ -27,3 +27,27 @@ share/idnkit/map/tr.map
 @dirrm share/idnkit/map
 @dirrm share/idnkit
 @dirrm include/idn
+man/man1/idncheck.1.gz
+man/man1/idncmp.1.gz
+man/man1/idnconv2.1.gz
+man/man3/idn_checkname.3.gz
+man/man3/idn_comparenames.3.gz
+man/man3/idn_comparenames2.3.gz
+man/man3/idn_decodename.3.gz
+man/man3/idn_decodename2.3.gz
+man/man3/idn_encodename.3.gz
+man/man3/idn_nameinit.3.gz
+man/man3/idn_result_tostring.3.gz
+man/man3/idn_setlanguage.3.gz
+man/man3/idn_setlocalcheckfile.3.gz
+man/man3/idn_setlocalencoding.3.gz
+man/man3/idn_version_getstring.3.gz
+man/man3/idn_version_idnatable.3.gz
+man/man3/idn_version_libidn.3.gz
+man/man3/idn_version_unicode.3.gz
+man/man3/libidnkit.3.gz
+man/man3/libidnkitlite.3.gz
+man/man5/idn2.conf.5.gz
+man/man5/idn2rc.5.gz
+man/man5/idnalias.conf.5.gz
+man/man5/idnlang.conf.5.gz
