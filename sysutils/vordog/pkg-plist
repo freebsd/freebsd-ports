@@ -1,2 +1,2 @@
 @cwd /
-boot/modules/vordog.ko
+%%KMODDIR%%/vordog.ko
