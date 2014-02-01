@@ -26,14 +26,14 @@ RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${POR
 LATEST_LINK=	${PORTNAME}-kde4
 
 USE_KDE4=	kdehier kdelibs kdeprefix libkcddb libkcompactdisc \
-		nepomuk-core runtime automoc4 sharedmime strigi
+		nepomuk-core runtime automoc4 strigi
 USE_MYSQL=	embedded
 USE_QT4=	corelib dbus designer gui network opengl \
 		phonon script sql svg webkit xml \
 		qmake_build moc_build rcc_build uic_build
 USE_XORG=	x11
 USE_BZIP2=	yes
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig shared-mime-info
 USE_LDCONFIG=	yes
 
 BROKEN_sparc64=	does not build (GCC-related error)

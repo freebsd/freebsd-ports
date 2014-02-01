@@ -15,10 +15,10 @@ LIB_DEPENDS=	libboost_graph.so:${PORTSDIR}/devel/boost-libs \
 		libalkimia.so:${PORTSDIR}/finance/libalkimia
 
 USE_XZ=		yes
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig shared-mime-info
 USE_QT4=	gui dbus network phonon sql svg xml \
 		qmake_build moc_build rcc_build uic_build
-USE_KDE4=	kdehier kdeprefix automoc4 kdelibs pimlibs sharedmime
+USE_KDE4=	kdehier kdeprefix automoc4 kdelibs pimlibs
 USE_LDCONFIG=	yes
 
 NO_STAGE=	yes
