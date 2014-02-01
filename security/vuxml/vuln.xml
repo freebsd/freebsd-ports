@@ -51,6 +51,45 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="111f1f84-1d14-4ff2-a9ea-cf07119c0d3b">
+    <topic>pkg -- libyaml heap overflow resulting in possible code execution</topic>
+    <affects>
+      <package>
+	<name>pkg</name>
+	<range><lt>1.2.6</lt></range>
+      </package>
+      <package>
+	<name>pkg-devel</name>
+	<range><lt>1.2.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>libyaml was prone to a heap overflow that could result in
+	  arbitrary code execution. Pkg uses libyaml to parse
+	  the package manifests in some cases. Pkg also used libyaml
+	  to parse the remote repository until 1.2.</p>
+	<p>RedHat Product Security Team reports on libyaml:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=1033990">
+	  <p>A heap-based buffer overflow flaw was found in the way libyaml
+	    parsed YAML tags. A remote attacker could provide a
+	    specially-crafted YAML document that, when parsed by an application
+	    using libyaml, would cause the application to crash or, potentially,
+	    execute arbitrary code with the privileges of the user running the
+	    application.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-6393</cvename>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=1033990</url>
+    </references>
+    <dates>
+      <discovery>2013-11-24</discovery>
+      <entry>2014-02-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a4c9e12d-88b7-11e3-8ada-10bf48e1088e">
     <topic>socat -- buffer overflow with data from command line</topic>
     <affects>
