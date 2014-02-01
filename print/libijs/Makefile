@@ -11,14 +11,10 @@ DIST_SUBDIR=	ghostscript
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library that supports plugin printer driver for Ghostscript
 
-USES=		pkgconfig
+USES=		pkgconfig gmake
 USE_BZIP2=	yes
 USE_GNOME=	lthack
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-MAN1=		ijs-config.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
