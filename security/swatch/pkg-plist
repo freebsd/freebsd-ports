@@ -4,6 +4,10 @@ bin/swatch
 %%SITE_PERL%%/Swatch/Throttle.pm
 %%SITE_PERL%%/auto/Swatch/Actions/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/swatch/.packlist
+%%PERL5_MAN3%%/Swatch::Actions.3.gz
+%%PERL5_MAN3%%/Swatch::Threshold.3.gz
+%%PERL5_MAN3%%/Swatch::Throttle.3.gz
+man/man1/swatch.1.gz
 @dirrm %%SITE_PERL%%/Swatch
 @dirrm %%SITE_PERL%%/auto/Swatch/Actions
 @dirrm %%SITE_PERL%%/auto/Swatch

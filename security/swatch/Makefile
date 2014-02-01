@@ -22,10 +22,6 @@ USE_PERL5=	configure
 CONFIGURE_ARGS=	INSTALLMAN1DIR=${PREFIX}/man/man1
 USE_RC_SUBR=	${PORTNAME}
 
-MAN1=	swatch.1
-MAN3=	Swatch::Actions.3 Swatch::Throttle.3 Swatch::Threshold.3
-
-NO_STAGE=	yes
 post-patch:
 	${FIND} ${WRKSRC} -name "*.orig" -delete
 
