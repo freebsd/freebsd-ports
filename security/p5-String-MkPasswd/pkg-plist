@@ -1,6 +1,8 @@
 bin/mkpasswd.pl
 %%SITE_PERL%%/String/MkPasswd.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/MkPasswd/.packlist
+%%PERL5_MAN3%%/String::MkPasswd.3.gz
+man/man1/mkpasswd.pl.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/String/MkPasswd
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/String
 @dirrmtry %%SITE_PERL%%/String
