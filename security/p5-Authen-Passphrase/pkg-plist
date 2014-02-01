@@ -17,5 +17,24 @@
 %%SITE_PERL%%/Authen/Passphrase/RejectAll.pm
 %%SITE_PERL%%/Authen/Passphrase/SaltedDigest.pm
 %%SITE_PERL%%/Authen/Passphrase/VMSPurdy.pm
+%%PERL5_MAN3%%/Authen::Passphrase.3.gz
+%%PERL5_MAN3%%/Authen::Passphrase::AcceptAll.3.gz
+%%PERL5_MAN3%%/Authen::Passphrase::BigCrypt.3.gz
+%%PERL5_MAN3%%/Authen::Passphrase::BlowfishCrypt.3.gz
+%%PERL5_MAN3%%/Authen::Passphrase::Clear.3.gz
+%%PERL5_MAN3%%/Authen::Passphrase::Crypt16.3.gz
+%%PERL5_MAN3%%/Authen::Passphrase::DESCrypt.3.gz
+%%PERL5_MAN3%%/Authen::Passphrase::EggdropBlowfish.3.gz
+%%PERL5_MAN3%%/Authen::Passphrase::LANManager.3.gz
+%%PERL5_MAN3%%/Authen::Passphrase::LANManagerHalf.3.gz
+%%PERL5_MAN3%%/Authen::Passphrase::MD5Crypt.3.gz
+%%PERL5_MAN3%%/Authen::Passphrase::MySQL323.3.gz
+%%PERL5_MAN3%%/Authen::Passphrase::MySQL41.3.gz
+%%PERL5_MAN3%%/Authen::Passphrase::NTHash.3.gz
+%%PERL5_MAN3%%/Authen::Passphrase::NetscapeMail.3.gz
+%%PERL5_MAN3%%/Authen::Passphrase::PHPass.3.gz
+%%PERL5_MAN3%%/Authen::Passphrase::RejectAll.3.gz
+%%PERL5_MAN3%%/Authen::Passphrase::SaltedDigest.3.gz
+%%PERL5_MAN3%%/Authen::Passphrase::VMSPurdy.3.gz
 @dirrm %%SITE_PERL%%/Authen/Passphrase
 @dirrmtry %%SITE_PERL%%/Authen
