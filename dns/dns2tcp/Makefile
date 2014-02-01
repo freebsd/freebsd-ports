@@ -11,8 +11,8 @@ COMMENT=	Dns2tcp is a tool for relaying TCP connections over DNS
 
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/dns2tcpc bin/dns2tcpd
-MAN1=		dns2tcpc.1 dns2tcpd.1
+PLIST_FILES=	bin/dns2tcpc bin/dns2tcpd \
+		man/man1/dns2tcpc.1.gz \
+		man/man1/dns2tcpd.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
