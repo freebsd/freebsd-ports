@@ -20,17 +20,16 @@ BUILD_DEPENDS+=	p5-libwww>0.0:${PORTSDIR}/www/p5-libwww
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Business::MaxMind::CreditCardFraudDetection.3 \
-	Business::MaxMind::HTTPBase.3 \
-	Business::MaxMind::TelephoneVerification.3 \
-
 PLIST_FILES=	\
 	%%SITE_PERL%%/Business/MaxMind/CreditCardFraudDetection.pm \
 	%%SITE_PERL%%/Business/MaxMind/HTTPBase.pm \
 	%%SITE_PERL%%/Business/MaxMind/TelephoneVerification.pm \
 	%%SITE_PERL%%/Business/example.pl \
 	%%SITE_PERL%%/Business/example_telv.pl \
-	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/MaxMind/.packlist
+	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/MaxMind/.packlist \
+	%%PERL5_MAN3%%/Business::MaxMind::CreditCardFraudDetection.3.gz \
+	%%PERL5_MAN3%%/Business::MaxMind::HTTPBase.3.gz \
+	%%PERL5_MAN3%%/Business::MaxMind::TelephoneVerification.3.gz
 
 PLIST_DIRS=	\
 	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/MaxMind \
@@ -38,5 +37,4 @@ PLIST_DIRS=	\
 	%%SITE_PERL%%/Business/MaxMind \
 	%%SITE_PERL%%/Business
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
