@@ -33,11 +33,12 @@ LIBESMTP_LIB_DEPENDS=	libesmtp.so:${PORTSDIR}/mail/libesmtp
 LIBCURL_CONFIGURE_WITH=	libcurl
 LIBCURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 LIBLUA_CONFIGURE_WITH=	lua
-LIBLUA_USE=	lua=yes
+LIBLUA_USE=	LUA=yes
 LIBLUA_CFLAGS=	-I${LUA_INCDIR}
 LIBLUA_LDFLAGS=	-L${LUA_LIBDIR}
-MYSQL_CONFIGURE_WITH=	mysql=${LOCALBASE}/bin/mysql_config
-MYSQL_USE=	mysql=yes
+MYSQL_CONFIGURE_ON=	--with-mysql=${LOCALBASE}/bin/mysql_config
+MYSQL_CONFIGURE_OFF=	--without-mysql
+MYSQL_USE=	MYSQL=yes
 
 PORTDOCS=	*
 
