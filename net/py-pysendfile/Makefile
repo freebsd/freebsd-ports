@@ -3,18 +3,20 @@
 
 PORTNAME=	pysendfile
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	net python devel
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	A Python interface to sendfile(2)
+COMMENT=	Python interface to sendfile(2)
+
+LICENSE=	MIT
 
 CONFLICTS_INSTALL=	py*-sendfile-[0-9]*
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
-PYEASYINSTALL_ARCHDEP=	yes
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
