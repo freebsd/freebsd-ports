@@ -23,6 +23,8 @@ RUN_DEPENDS=	p5-DateTime-TimeZone>=0:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 		exif:${PORTSDIR}/graphics/exif
 
 CONFLICTS=	ja-ls-[0-9]* icat-[0-9]*
+# Version 4.1.3 breaks python bindings
+PORTSCOUT=	skipv:4.1.3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_PERL="${PERL}"
@@ -40,12 +42,8 @@ LIBEWF_LIB_DEPENDS=	libewf.so:${PORTSDIR}/devel/libewf
 LIBEWF_CONFIGURE_ON=	--with-libewf=${LOCALBASE}
 LIBEWF_CONFIGURE_OFF=	--without-libewf
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
