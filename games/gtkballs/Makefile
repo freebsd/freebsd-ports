@@ -7,29 +7,38 @@ PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	http://gtkballs.antex.ru/dist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Lines-like simple logic game for X Window System
 
-USES=		gettext gmake pkgconfig
+LICENSE=	GPLv2
+
+USES=		gmake pkgconfig
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--localstatedir=${DATADIR}
 
-MAN6=		gtkballs.6x
+CPPFLAGS+=	-I${LOCALBASE}/include -w
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+PORTDOCS=	AUTHORS ChangeLog NEWS README README.russian TODO
+
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
+
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext
+
+DESKTOP_ENTRIES="GtkBalls" "" ${PORTNAME} \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
+
 post-install:
-	${CHMOD} 2755 ${PREFIX}/bin/gtkballs
-	${CHOWN} root:games ${PREFIX}/bin/gtkballs
-	${CHMOD} 0664 ${DATADIR}/gtkballs-scores
-	${CHOWN} root:games ${DATADIR}/gtkballs-scores
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in README README.russian TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_DATA} ${WRKSRC}/gnome-gtkballs.png  \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+
+	${CHMOD} 664 ${STAGEDIR}${DATADIR}/gtkballs-scores
+	${CHOWN} root:games ${STAGEDIR}${DATADIR}/gtkballs-scores
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
