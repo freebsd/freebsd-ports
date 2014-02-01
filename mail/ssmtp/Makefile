@@ -3,6 +3,7 @@
 
 PORTNAME=	ssmtp
 PORTVERSION=	2.64
+PORTREVISION=   1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTFILES=	${PORTNAME}_${PORTVERSION}.orig${EXTRACT_SUFX}
@@ -13,43 +14,32 @@ COMMENT=	Extremely simple MTA to get mail off the system to a mail hub
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 GROUPS=		ssmtp
-SHAREGRP=	ssmtp
 BINMODE=	2555
 SHAREMODE=	640
-BINGRP=		ssmtp
 
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
-CONFIGURE_ARGS=	--enable-ssl --enable-md5auth
 MAKE_ENV+=	TARGET_ARCH=
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 MAILERCONF=	/etc/mail/mailer.conf
 
-MAN8=		ssmtp.8
-MAN5=		ssmtp.conf.5
+OPTIONS_DEFINE=  LOGFILE IPV6 USERPREFS XORIGIP CRAMMD5 OPENSSL
+OPTIONS_DEFAULT= XORIGIP CRAMMD5 OPENSSL
+LOGFILE_DESC=    Log file
+USERPREFS_DESC=  User-defined revaliases
+XORIGIP_DESC=    X-Originating-IP header for REMOTE_ADDR envvar
+CRAMMD5_DESC=    CRAM-MD5 authentication support
 
-OPTIONS_DEFINE=	LOGFILE IPV6 USERPREFS XORIGIP
-LOGFILE_DESC=	log file
-USERPREFS_DESC=	user defined revaliases
-XORIGIP_DESC=	Add X-Originating-IP header
+LOGFILE_CONFIGURE_ON=	--enable-logfile
+XORIGIP_EXTRA_PATCHES=	${FILESDIR}/remote-addr.patch
+IPV6_CONFIGURE_ON=	--enable-inet6
+CRAMMD5_CONFIGURE_ON=	--enable-md5auth
+OPENSSL_CONFIGURE_ON=	--enable-ssl
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLOGFILE}
-CONFIGURE_ARGS+=	--enable-logfile
-.endif
-
-.if ${PORT_OPTIONS:MXORIGIP}
-EXTRA_PATCHES=	${FILESDIR}/remote-addr.patch
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-inet6
-.endif
 
 .if ${PORT_OPTIONS:MUSERPREFS}
 CFLAGS+=	-DUSERPREFS
@@ -73,14 +63,15 @@ replace:
 	@${ECHO_CMD} "purgestat	/usr/bin/true" >> ${MAILERCONF}
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/ssmtp ${PREFIX}/sbin/ssmtp
-	@${MKDIR} ${PREFIX}/etc/ssmtp
-	@${CHMOD} 750 ${PREFIX}/etc/ssmtp
-	@${CHGRP} ${SHAREGRP} ${PREFIX}/etc/ssmtp
-	@${INSTALL_DATA} ${WRKSRC}/revaliases ${PREFIX}/etc/ssmtp/revaliases.sample
-	@${INSTALL_DATA} ${WRKSRC}/ssmtp.conf ${PREFIX}/etc/ssmtp/ssmtp.conf.sample
-	@${INSTALL_MAN} ${WRKSRC}/ssmtp.8 ${MANPREFIX}/man/man8/ssmtp.8
-	@${INSTALL_MAN} ${WRKSRC}/ssmtp.conf.5 ${MANPREFIX}/man/man5/ssmtp.conf.5
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/ssmtp ${STAGEDIR}${PREFIX}/sbin/ssmtp
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/ssmtp
+	@${CHMOD} 750 ${STAGEDIR}${PREFIX}/etc/ssmtp
+	${INSTALL_DATA} ${WRKSRC}/revaliases \
+		${STAGEDIR}${PREFIX}/etc/ssmtp/revaliases.sample
+	${INSTALL_DATA} ${WRKSRC}/ssmtp.conf \
+		${STAGEDIR}${PREFIX}/etc/ssmtp/ssmtp.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/ssmtp.8 ${STAGEDIR}${MANPREFIX}/man/man8/ssmtp.8
+	${INSTALL_MAN} ${WRKSRC}/ssmtp.conf.5 \
+		${STAGEDIR}${MANPREFIX}/man/man5/ssmtp.conf.5
 
 .include <bsd.port.mk>
