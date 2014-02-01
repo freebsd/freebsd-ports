@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: motion
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line in /etc/rc.conf to enable motion at startup
+#
+# motion_enable="YES"
+
+. /etc/rc.subr
+
+name=motion
+rcvar=motion_enable
+
+load_rc_config $name
+
+: ${motion_enable:=NO}
+
+command=%%PREFIX%%/bin/${name}
+pidfile="/var/run/${name}.pid"
+required_files=%%PREFIX%%/etc/${name}.conf
+
+run_rc_command "$1"
