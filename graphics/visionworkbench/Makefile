@@ -11,6 +11,8 @@ DISTNAME=	VisionWorkbench-${PORTVERSION}
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	A general purpose image processing and computer vision library
 
+BROKEN=		Fails to configure
+
 LICENSE=	NOSA
 LICENSE_GROUPS=	OSI
 LICENSE_NAME=	NASA Open Source Agreement version 1.3
