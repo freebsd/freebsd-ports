@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httpcore
-DISTVERSION=	4.3
+DISTVERSION=	4.3.1
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	httpcomponents/${PORTNAME}/binary
@@ -12,44 +12,43 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Java components implementing the base HTTP protocol
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
-#WRKSRC=		${WRKDIR}/httpcomponents-core-${DISTVERSION}
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/httpcomponents-core-${DISTVERSION}
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar %%JAVAJARDIR%%/${PORTNAME}-nio.jar
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}-${DISTVERSION}.jar \
-		${JAVAJARDIR}/${PORTNAME}.jar
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [DONE]"
 	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}-nio.jar..."
 	@${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}-nio-${DISTVERSION}.jar \
-		${JAVAJARDIR}/${PORTNAME}-nio.jar
+		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}-nio.jar
 	@${ECHO_MSG} " [DONE]"
 .if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation..."
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${FIND} javadoc tutorial \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
-	@${INSTALL_DATA} ${WRKSRC}/RELEASE_NOTES.txt ${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC} && ${FIND} tutorial \
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR} > /dev/null 2>&1
+	@${INSTALL_DATA} ${WRKSRC}/RELEASE_NOTES.txt ${STAGEDIR}${DOCSDIR}/
 	@${ECHO_MSG} " [DONE]"
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${ECHO_MSG} -n ">> Installing examples..."
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples && ${FIND} . \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR} > /dev/null 2>&1
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${EXAMPLESDIR} > /dev/null 2>&1
 	@${ECHO_MSG} " [DONE]"
 .endif
 
