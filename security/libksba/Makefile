@@ -27,5 +27,4 @@ INFO=		ksba
 verify: checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.sig
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
