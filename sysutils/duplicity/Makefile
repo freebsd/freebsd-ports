@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	duplicity
-PORTVERSION=	0.6.22
-PORTREVISION=	1
+PORTVERSION=	0.6.23
 CATEGORIES=	sysutils
 MASTER_SITES=	http://launchpad.net/duplicity/0.6-series/${PORTVERSION}/+download/
 
@@ -17,6 +16,7 @@ CONFLICTS=	duplicity-0.5.* duplicity-devel-[0-9]*
 
 USE_PYTHON=	2
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	NLS DOCS SSH FTP FTPS S3 GDOCS CLOUDFILES GIO U1
@@ -29,6 +29,9 @@ GIO_DESC=	Install GIO backend
 S3_DESC=	Install Amazon S3 backend
 SSH_DESC=	Install SSH/SCP/SFTP backend
 U1_DESC=	Install Ubuntu One backend
+
+PORTDOCS=	COPYING README README-REPO README-LOG tarfile-LICENSE \
+		tarfile-CHANGES CHANGELOG
 
 .include <bsd.port.options.mk>
 
@@ -112,13 +115,21 @@ post-patch:
 	@${RM} -f ${WRKSRC}/${PORTNAME}/backends/ftpsbackend.py
 .endif
 .if empty(PORT_OPTIONS:MS3)
-	@${FIND} ${WRKSRC}/${PORTNAME}/backends -type f -depth 1 -name '*boto*' -delete
+.for f in botobackend _boto_multi _boto_single
+	@${RM} -f ${WRKSRC}/${PORTNAME}/backends/${f}.py
+.endfor
 .endif
 .if empty(PORT_OPTIONS:MGDOCS)
 	@${RM} -f ${WRKSRC}/${PORTNAME}/backends/gdocsbackend.py
 .endif
 .if empty(PORT_OPTIONS:MCLOUDFILES)
-	@${RM} -f ${WRKSRC}/${PORTNAME}/backends/cloudfilesbackend.py
+.for f in cfbackend _cf_cloudfiles _cf_pyrax
+	@${RM} -f ${WRKSRC}/${PORTNAME}/backends/${f}.py
+.endfor
+.else
+# Make pycloudfiles the default backend for cloudfiles, as pyrax isn't in the Ports Collection yet
+# Use --cf-backend=pyrax arg when running duplicity to manually select pyrax as the backend
+	@${REINPLACE_CMD} 's|"pyrax"|"cloudfiles"|' ${WRKSRC}/${PORTNAME}/globals.py
 .endif
 .if empty(PORT_OPTIONS:MGIO)
 	@${RM} -f ${WRKSRC}/${PORTNAME}/backends/giobackend.py
@@ -127,21 +138,13 @@ post-patch:
 	@${RM} -f ${WRKSRC}/${PORTNAME}/backends/u1backend.py
 .endif
 
-MAN1=		duplicity.1 rdiffdir.1
-
-DOCFILES=	COPYING \
-		README \
-		README-REPO \
-		README-LOG \
-		tarfile-LICENSE \
-		tarfile-CHANGES \
-		CHANGELOG
+MAN1=	duplicity.1 rdiffdir.1
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in ${DOCFILES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
