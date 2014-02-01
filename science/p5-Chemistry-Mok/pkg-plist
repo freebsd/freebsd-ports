@@ -1,4 +1,6 @@
 bin/mok
 %%SITE_PERL%%/Chemistry/Mok.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Mok/.packlist
+%%PERL5_MAN3%%/Chemistry::Mok.3.gz
+man/man1/mok.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Chemistry/Mok
