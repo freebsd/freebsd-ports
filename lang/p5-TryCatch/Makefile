@@ -33,9 +33,6 @@ AUTHOR_DESC=	Include dependencies for AUTHORING
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		TryCatch.3
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAUTHOR}

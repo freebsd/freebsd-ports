@@ -8,6 +8,14 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SRS/.packlist
 bin/srs
 bin/srsd
+%%PERL5_MAN3%%/Mail::SRS.3.gz
+%%PERL5_MAN3%%/Mail::SRS::DB.3.gz
+%%PERL5_MAN3%%/Mail::SRS::Daemon.3.gz
+%%PERL5_MAN3%%/Mail::SRS::Guarded.3.gz
+%%PERL5_MAN3%%/Mail::SRS::Reversible.3.gz
+%%PERL5_MAN3%%/Mail::SRS::Shortcut.3.gz
+man/man1/srs.1.gz
+man/man1/srsd.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SRS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
 @dirrm %%SITE_PERL%%/Mail/SRS
