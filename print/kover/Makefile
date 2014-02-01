@@ -11,19 +11,16 @@ COMMENT=	WYSIWYG CD cover printer
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	cddb:${PORTSDIR}/audio/libcddb \
-		cdio:${PORTSDIR}/sysutils/libcdio
+LIB_DEPENDS=	libcddb.so:${PORTSDIR}/audio/libcddb \
+		libcdio.so:${PORTSDIR}/sysutils/libcdio
 
 USE_BZIP2=	yes
-USE_KDE4=	automoc4 kdehier kdeprefix kdelibs sharedmime
+USE_KDE4=	automoc4 kdehier kdeprefix kdelibs
 USE_QT4=	corelib dbus gui network svg xml \
 		qmake_build uic_build rcc_build
 USE_PERL5=	build
-USES=		cmake gettext perl5 pkgconfig
+USES=		cmake gettext perl5 pkgconfig shared-mime-info
 
-MAN1=		kover.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/libcdio/s|>=.*)|)|' ${WRKSRC}/src/CMakeLists.txt
