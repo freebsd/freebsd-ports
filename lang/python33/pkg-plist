@@ -477,7 +477,6 @@ man/man1/python3.3.1.gz
 %%PYTHON_LIBDIR%%/concurrent/futures/_base.py
 %%PYTHON_LIBDIR%%/concurrent/futures/process.py
 %%PYTHON_LIBDIR%%/concurrent/futures/thread.py
-%%PYTHON_LIBDIR%%/config
 %%PYTHON_LIBDIR%%/config-%%PYVER%%%%PYABIVER%%/Makefile
 %%PYTHON_LIBDIR%%/config-%%PYVER%%%%PYABIVER%%/Setup
 %%PYTHON_LIBDIR%%/config-%%PYVER%%%%PYABIVER%%/Setup.config
@@ -486,6 +485,7 @@ man/man1/python3.3.1.gz
 %%PYTHON_LIBDIR%%/config-%%PYVER%%%%PYABIVER%%/config.c.in
 %%PYTHON_LIBDIR%%/config-%%PYVER%%%%PYABIVER%%/install-sh
 %%PYTHON_LIBDIR%%/config-%%PYVER%%%%PYABIVER%%/lib%%PYTHON_VERSION%%%%PYABIVER%%.a
+%%PYTHON_LIBDIR%%/config-%%PYVER%%%%PYABIVER%%/lib%%PYTHON_VERSION%%%%PYABIVER%%.so
 %%PYTHON_LIBDIR%%/config-%%PYVER%%%%PYABIVER%%/makesetup
 %%PYTHON_LIBDIR%%/config-%%PYVER%%%%PYABIVER%%/python.o
 %%PYTHON_LIBDIR%%/configparser.py

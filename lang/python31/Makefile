@@ -2,7 +2,7 @@
 
 PORTNAME=		python31
 PORTVERSION=		3.1.5
-PORTREVISION=		8
+PORTREVISION=		9
 CATEGORIES=		lang python ipv6
 MASTER_SITES=		PYTHON
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -207,7 +207,8 @@ post-install:
 		${STAGEDIR}${PREFIX}/lib
 	(cd ${STAGEDIR}${PREFIX}/lib; ${LN} -sf lib${PYTHON_VERSION}.so.1 \
 		lib${PYTHON_VERSION}.so)
-	${LN} -sf lib${PYTHON_VERSION}.so ${STAGEDIR}${PYTHONPREFIX_LIBDIR}/config
+	(cd ${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION}/config; \
+		${LN} -sf ../../lib${PYTHON_VERSION}.so)
 	${INSTALL_PROGRAM} \
 		${SHARED_WRKSRC}/${PYTHON_VERSION:S/thon/thon-shared/} \
 		${STAGEDIR}${PREFIX}/bin
