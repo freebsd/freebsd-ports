@@ -48,4 +48,5 @@ lib/libcal3d.a
 lib/libcal3d.la
 lib/libcal3d.so
 libdata/pkgconfig/cal3d.pc
+man/man1/cal3d_converter.1.gz
 @dirrm include/cal3d
