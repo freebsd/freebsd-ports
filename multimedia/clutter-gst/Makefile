@@ -11,6 +11,8 @@ MASTER_SITES=	http://source.clutter-project.org/sources/${PORTNAME}/${PORTVERSIO
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Clutter GStreamer integration
 
+BROKEN=		Fails to compile
+
 LIB_DEPENDS=	clutter-glx-1.0:${PORTSDIR}/graphics/clutter
 
 USE_BZIP2=	yes
