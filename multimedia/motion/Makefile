@@ -3,7 +3,7 @@
 
 PORTNAME=	motion
 PORTVERSION=	3.2.12
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20-%20${PORTVERSION:R}/${PORTVERSION}
 
@@ -24,6 +24,9 @@ PWCBSD_DESC=	PWCBSD based Webcams
 
 USES=		gmake
 USE_AUTOTOOLS=	autoconf
+
+USE_RC_SUBR=	${PORTNAME}
+SUB_FILES=	pkg-message
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -89,12 +92,13 @@ post-patch:
 # Resolve name collision with jpeg-8
 	@${REINPLACE_CMD} -e \
 		's|jpeg_mem_dest|local_jpeg_mem_dest|' ${WRKSRC}/picture.c
+# Fix pidfile path
+	@${REINPLACE_CMD} -e \
+		's|/run/motion|/run|' ${WRKSRC}/motion-dist.conf.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/motion ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/motion.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_SCRIPT} ${WRKSRC}/motion.init-FreeBSD.sh \
-		${STAGEDIR}${PREFIX}/etc/rc.d/motion
 	${INSTALL_DATA} ${WRKSRC}/motion-dist.conf \
 		${STAGEDIR}${PREFIX}/etc/motion.conf.sample
 .if !exists(${STAGEDIR}${PREFIX}/etc/motion.conf)
