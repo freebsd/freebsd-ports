@@ -11,6 +11,8 @@ DISTNAME=	azureus_${PORTVERSION}_source
 MAINTAINER=	rnoland@2hip.net
 COMMENT=	A BitTorrent client written in Java
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
 		${JAVALIBDIR}/commons-cli.jar:${PORTSDIR}/java/jakarta-commons-cli \
 		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
