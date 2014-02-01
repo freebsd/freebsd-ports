@@ -19,12 +19,4 @@ USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/Xev111
 ALL_TARGET=	xbat
 
-NO_STAGE=	yes
-post-install:
-	${CHOWN} root:games ${PREFIX}/bin/xbat
-	${CHMOD} 2755 ${PREFIX}/bin/xbat
-	${CHOWN} -R root:games ${PREFIX}/lib/X11/Xbat/Score/
-	${CHMOD} 664 ${PREFIX}/lib/X11/Xbat/Score/*
-	${CHMOD} 755 ${PREFIX}/lib/X11/Xbat/Score/
-
 .include <bsd.port.mk>
