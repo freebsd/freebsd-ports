@@ -1,5 +1,8 @@
 bin/scanpbnj
 bin/outputpbnj
 bin/genlist
+man/man1/genlist.1p.gz
+man/man1/outputpbnj.1p.gz
+man/man1/scanpbnj.1p.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/pbnj/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/pbnj
