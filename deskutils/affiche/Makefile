@@ -19,5 +19,4 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/Affiche
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
