@@ -26,12 +26,12 @@ LIB_DEPENDS=	libvlc.so:${PORTSDIR}/multimedia/vlc \
 		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig
 
 USES=		gmake iconv pathfix pkgconfig
-USE_GNOME=	glib20 gtk20 cairo
+USE_GNOME=	gtk20 cairo
 USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext xfixes \
 		xi xinerama xrandr xrender
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-gtk=2.0
-CFLAGS=		-Wno-return-type
+CFLAGS+=	-Wno-return-type -w
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README
@@ -42,12 +42,19 @@ OPTIONS_SUB=	yes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 
+SUB_FILES=	pkg-message
+
+# Wrong versioning upstream, Upstream use GTK3 in newer Versions
+PORTSCOUT=	ignore:1
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${pkgdatadir}/doc|$${PREFIX}/share/doc/${PORTNAME}|' \
 		-e 's|install-data-am: install-freetuxtvdocDATA|install-data-am: |' \
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's/libvlc_media_new_path/libvlc_media_new_location/' \
 		${WRKSRC}/lib/libvlc-gtk/gtk-libvlc-media-player.c
+	@${REINPLACE_CMD} -e 's|g_strcasecmp|g_ascii_strcasecmp|' \
+		${WRKSRC}/src/main.c
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
