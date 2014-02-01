@@ -15,12 +15,10 @@ USES=		perl5
 USE_PERL5=	configure
 
 PLIST_FILES=	%%SITE_PERL%%/Snort/Rule.pm \
-		%%SITE_PERL%%/mach/auto/Snort/Rule/.packlist
+		%%SITE_PERL%%/mach/auto/Snort/Rule/.packlist \
+		%%PERL5_MAN3%%/Snort::Rule.3.gz
 PLIST_DIRS=	%%SITE_PERL%%/mach/auto/Snort/Rule \
 		%%SITE_PERL%%/mach/auto/Snort \
 		%%SITE_PERL%%/Snort
 
-MAN3=		Snort::Rule.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
