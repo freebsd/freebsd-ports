@@ -1,10 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	pkg
-DISTVERSION=	1.2.5
+DISTVERSION=	1.2.6
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://files.etoilebsd.net/pkg/ \
+MASTER_SITES=	\
 		http://mirror.shatow.net/freebsd/${PORTNAME}/ \
+		http://miwibox.org/distfiles/${PORTNAME}/ \
+		http://files.etoilebsd.net/pkg/ \
 		LOCAL/portmgr
 PKGNAMESUFFIX=	-devel
 
