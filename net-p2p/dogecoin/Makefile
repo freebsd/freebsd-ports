@@ -2,12 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	dogecoin
-PORTVERSION=	1.4
-PORTREVISION=	2
+PORTVERSION=	1.5.0
 CATEGORIES=	net-p2p finance
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://people.freebsd.org/~swills/ \
-		GH
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Virtual Peer-to-Peer Currency Client
@@ -24,10 +20,9 @@ UPNP_DESC=	Build with UPNP support
 QRCODES_DESC=	Build with QR code display
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	dogecoin
-GH_PROJECT=	dogecoin
-GH_COMMIT=	d484474
-GH_TAGNAME=	${GH_COMMIT}
+GH_ACCOUNT=	${PORTNAME}
+GH_COMMIT=	be94b62
+GH_TAGNAME=	v${PORTVERSION}
 
 USES=		gmake compiler:c++11-lib
 USE_OPENSSL=	yes
@@ -39,6 +34,12 @@ CXXFLAGS+=	-L${LOCALBASE}/lib -L${BDB_LIB_DIR}
 CXXFLAGS+=	-Wno-invalid-offsetof
 
 .include <bsd.port.options.mk>
+
+.if ${OSVERSION} >= 1000000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-endian
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src__leveldb__Makefile
+.endif
 
 .if ${PORT_OPTIONS:MGUI} && !defined(WITHOUT_X11)
 USE_QT4=	corelib gui qmake_build linguist uic moc rcc
