@@ -19,3 +19,4 @@ lib/libdcg2.a
 lib/libdcg2.la
 lib/libdcg2.so
 lib/libdcg2.so.2
+man/man1/dcg.1.gz
