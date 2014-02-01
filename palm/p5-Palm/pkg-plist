@@ -8,5 +8,14 @@ bin/pdbdump
 %%SITE_PERL%%/Palm/Raw.pm
 %%SITE_PERL%%/Palm/StdAppInfo.pm
 %%SITE_PERL%%/Palm/ToDo.pm
+%%PERL5_MAN3%%/Palm::Address.3.gz
+%%PERL5_MAN3%%/Palm::Datebook.3.gz
+%%PERL5_MAN3%%/Palm::Mail.3.gz
+%%PERL5_MAN3%%/Palm::Memo.3.gz
+%%PERL5_MAN3%%/Palm::PDB.3.gz
+%%PERL5_MAN3%%/Palm::Raw.3.gz
+%%PERL5_MAN3%%/Palm::StdAppInfo.3.gz
+%%PERL5_MAN3%%/Palm::ToDo.3.gz
+man/man1/pdbdump.1.gz
 @dirrm %%SITE_PERL%%/Palm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Palm
