@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xautomation
-PORTVERSION=	1.08
+PORTVERSION=	1.09
 CATEGORIES=	x11
 MASTER_SITES=	http://hoopajoo.net/static/projects/
 
