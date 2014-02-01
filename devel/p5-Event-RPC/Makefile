@@ -16,18 +16,6 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Event::RPC.3 \
-	Event::RPC::Client.3 \
-	Event::RPC::Connection.3 \
-	Event::RPC::LogConnection.3 \
-	Event::RPC::Logger.3 \
-	Event::RPC::Loop.3 \
-	Event::RPC::Loop::AnyEvent.3 \
-	Event::RPC::Loop::Event.3 \
-	Event::RPC::Loop::Glib.3 \
-	Event::RPC::Message.3 \
-	Event::RPC::Server.3
-
 OPTIONS_DEFINE=	GLIB EVENT ANYEVENT SSL
 GLIB_DESC=	Dependency to Glib event handler
 EVENT_DESC=	Dependency to Event.pm event handler
@@ -36,7 +24,6 @@ SSL_DESC=	Dependency to SSL lib
 
 OPTIONS_DEFAULT=	EVENT ANYEVENT SSL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
