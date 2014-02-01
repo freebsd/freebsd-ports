@@ -191,6 +191,11 @@ share/locale/sr@latin/LC_MESSAGES/virtinst.mo
 share/locale/uk/LC_MESSAGES/virtinst.mo
 share/locale/zh_CN/LC_MESSAGES/virtinst.mo
 share/locale/zh_TW/LC_MESSAGES/virtinst.mo
+man/man1/virt-clone.1.gz
+man/man1/virt-convert.1.gz
+man/man1/virt-image.1.gz
+man/man1/virt-install.1.gz
+man/man5/virt-image.5.gz
 @dirrm %%PYTHON_SITELIBDIR%%/virtinst
 @dirrm %%PYTHON_SITELIBDIR%%/virtconv/parsers
 @dirrm %%PYTHON_SITELIBDIR%%/virtconv

@@ -19,11 +19,6 @@ USE_PYTHON_RUN=	yes
 USE_PYTHON_BUILD=	yes
 USE_PYDISTUTILS=	yes
 
-MAN1=		virt-clone.1 virt-convert.1 virt-image.1 virt-install.1
-MAN5=		virt-image.5
-MANCOMPRESSED=	no
-
-NO_STAGE=	yes
 post-patch-script:
 	${REINPLACE_CMD} 's|share/man|man|g' \
 		${WRKSRC}/setup.py
