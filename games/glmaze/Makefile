@@ -3,22 +3,43 @@
 
 PORTNAME=	glmaze
 PORTVERSION=	1.1a
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
+		SF/nemysisfreebsdp/${CATEGORIES}/:icons
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}.png:icons
+EXTRACT_ONLY=   ${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Multiplayer OpenGL Maze Game
+
+LICENSE=	GPLv2
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GL=		gl
 USE_SDL=	mixer sdl
-WRKSRC=		${WRKDIR}/${PORTNAME}
+CFLAGS+=	-w
 
-PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/glmaze.1.gz
-PORTDATA=	*
+PORTDOCS=	readme.txt
+
+OPTIONS_DEFINE=	DOCS
+
+DESKTOP_ENTRIES="glMaze" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;ArcadeGame;" ""
+
+post-extract:
+	@(cd ${WRKSRC} && ${MV} ${PORTNAME}.1 ${PORTNAME}.6)
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/shot.c
+
+post-install:
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -1,4 +1,9 @@
-glMaze is a multiplayer OpenGL maze game.  Up to six players hunt
-each other online in a real 3-D maze.
+glMaze is a multiplayer maze game based on the opengl 3d graphics engine.
+If a command line argument is present, glmaze tries to interpret this as
+the server name to connect to. If no argument was given, glmaze becomes
+the master client and starts a local server. Up to six players can join
+a session. Only the master client can start the session. Other players
+can join a running game. The game stops when the first player reaches
+ten kills. The player with the top score at this moment is the winner.
 
-WWW: http://glmaze.sourceforge.net
+WWW: http://glmaze.sourceforge.net/
