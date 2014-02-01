@@ -3,30 +3,24 @@
 
 PORTNAME=	beanstalkc
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	koobs@FreeBSD.org
-COMMENT=	A simple beanstalkd client library for Python
+COMMENT=	Simple beanstalkd client library for Python
 
 LICENSE=	APACHE20
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-OPTIONS_DEFINE=	YAML
+OPTIONS_DEFINE=		YAML
 OPTIONS_DEFAULT=	YAML
-YAML_DESC=	Support parsing YAML responses
+YAML_DESC=		Support parsing YAML responses
 
-# bypass infrastructure bug
-OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MYAML}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml
-.endif
+YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml
 
 .include <bsd.port.mk>
