@@ -18,14 +18,11 @@ RUN_DEPENDS=	p5-XML-LibXML>=1.70:${PORTSDIR}/textproc/p5-XML-LibXML
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Test::XPath.3
-
 OPTIONS_DEFINE=	CSS PODT
 
 CSS_DESC=	Include CSS selectors
 PODT_DESC=	Include Pod package test dependencies
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCSS}
