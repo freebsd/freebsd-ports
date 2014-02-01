@@ -12,9 +12,6 @@ COMMENT=	Clone - recursively copy Perl datatypes
 USES=		perl5
 USE_PERL5=	patch configure
 
-MAN3=		Clone.3
-
-NO_STAGE=	yes
 post-patch:
 	${PERL} -pi -e 'm.OPTIMIZE.&&s,.,,sg' ${WRKSRC}/Makefile.PL
 
