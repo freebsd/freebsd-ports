@@ -13,12 +13,8 @@ COMMENT=	Library and tools for reading FileVault (FVDE) encrypted volumes
 LICENSE=	LGPL3
 
 USES=		pkgconfig
-GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2 gnomehack
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 
-MAN1=	fvdeinfo.1 fvdemount.1
-MAN3=	libfvde.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
