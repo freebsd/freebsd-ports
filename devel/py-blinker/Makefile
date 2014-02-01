@@ -16,9 +16,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:${PORTSDIR}/devel/py-nose
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 regression-test: build
 	@cd ${WRKSRC} && nosetests
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
