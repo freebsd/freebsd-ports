@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	recoll
-PORTVERSION=	1.19.9
+PORTVERSION=	1.19.10
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.lesbonscomptes.com/${PORTNAME}/
 
@@ -20,7 +20,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		unrtf:${PORTSDIR}/textproc/unrtf \
 		unrar:${PORTSDIR}/archivers/unrar
 
-USES=		gmake iconv
+USES=		gmake iconv shebangfix
+SHEBANG_FILES=	filters/rclimg desktop/hotrecoll.py
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-pic
 
@@ -65,7 +66,8 @@ X11MON_CONFIGURE_ENABLE=	x11mon
 
 .include <bsd.port.options.mk>
 
-PLIST_SUB+=	VERSION=${PORTVERSION}
+VERSION=	${PORTVERSION}
+PLIST_SUB+=	VERSION=${VERSION}
 
 .if ${PORT_OPTIONS:MPYTHON}
 USE_PYTHON=	yes
@@ -102,5 +104,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|python setup.py|${PYTHON_CMD} setup.py|' \
 		${WRKSRC}/python/recoll/Makefile \
 		${WRKSRC}/recollinstall.in
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/recoll/librecoll.so.${VERSION}
+.for l in recoll rclextract
+	${STRIP_CMD} ${STAGEDIR}${PYTHON}${PYTHON_SITELIBDIR}/recoll/${l}.so
+.endfor
 
 .include <bsd.port.mk>
