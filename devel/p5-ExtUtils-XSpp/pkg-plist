@@ -36,6 +36,29 @@ bin/xspp
 %%SITE_PERL%%/ExtUtils/XSpp/Typemap/parsed.pm
 %%SITE_PERL%%/ExtUtils/XSpp/Typemap/reference.pm
 %%SITE_PERL%%/ExtUtils/XSpp/Typemap/simple.pm
+%%PERL5_MAN3%%/ExtUtils::XSpp.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Cmd.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Exception.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Node.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Node::Access.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Node::Argument.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Node::Class.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Node::Comment.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Node::Constructor.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Node::Destructor.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Node::Enum.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Node::EnumValue.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Node::File.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Node::Function.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Node::Method.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Node::Module.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Node::Package.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Node::PercAny.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Node::Raw.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Parser.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Plugin.3.gz
+%%PERL5_MAN3%%/ExtUtils::XSpp::Typemap.3.gz
+man/man1/xspp.1.gz
 @dirrmtry %%SITE_PERL%%/ExtUtils/XSpp/Exception
 @dirrmtry %%SITE_PERL%%/ExtUtils/XSpp/Node
 @dirrmtry %%SITE_PERL%%/ExtUtils/XSpp/Typemap
