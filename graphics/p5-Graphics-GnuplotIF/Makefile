@@ -13,7 +13,4 @@ COMMENT=	A dynamic Perl interface to gnuplot
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Graphics::GnuplotIF.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
