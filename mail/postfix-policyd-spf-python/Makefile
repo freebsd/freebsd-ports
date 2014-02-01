@@ -21,10 +21,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	pypolicyd-spf
 
-MAN1=		policyd-spf.1
-MAN5=		policyd-spf.conf.5 \
-		policyd-spf.peruser.5
-
 PORTDOCS=	CHANGES \
 		COPYING \
 		README \
@@ -39,11 +35,10 @@ SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 OPTIONS_DEFINE=	DOCS
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e '\/etc/s|/etc|etc|' ${WRKSRC}/setup.py
+	@${MV} ${WRKSRC}/policyd-spf.conf ${WRKSRC}/policyd-spf.conf.sample
 	@${REINPLACE_CMD} -e "s|/etc/python-policyd-spf/|${PREFIX}/etc/postfix-policyd-spf-python/|" \
 		${WRKSRC}/policyd-spf
 	@${REINPLACE_CMD} -e "s|/etc/policyd-spf/|${PREFIX}/etc/postfix-policyd-spf-python/|" \
@@ -55,25 +50,8 @@ post-patch:
 		-e "s|/etc/pypolicyd-spf/|${PREFIX}/etc/postfix-policyd-spf-python/|" \
 		${WRKSRC}/policyd-spf.peruser.5
 
-do-install:
-	@# Install data to an unused directory to ensure it doesn't pollute the system
-	@(cd ${INSTALL_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} \
-		${PYDISTUTILS_INSTALL_TARGET} ${PYDISTUTILS_INSTALLARGS} \
-		--install-data ${WRKDIR}/tmp-datadump-dir)
-	${INSTALL_MAN} ${WRKSRC}/policyd-spf.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/policyd-spf.conf.5 ${MANPREFIX}/man/man5
-	${INSTALL_MAN} ${WRKSRC}/policyd-spf.peruser.5 ${MANPREFIX}/man/man5
-	@${INSTALL} -d ${ETCDIR}/
-	${INSTALL_DATA} ${WRKSRC}/policyd-spf.conf ${ETCDIR}/policyd-spf.conf.sample
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}/
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-.endif
-
 post-install:
-.if !exists(${ETCDIR}/policyd-spf.conf)
-	${CP} -p ${ETCDIR}/policyd-spf.conf.sample ${ETCDIR}/policyd-spf.conf
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL} -d ${STAGEDIR}/${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
