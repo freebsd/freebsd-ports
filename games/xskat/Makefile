@@ -6,33 +6,30 @@ PORTVERSION=	4.0
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://www.xskat.de/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Play the card game Skat
 
-.if defined(WITH_ALTENBURGER_CARDS)
-DISTFILES+=	xskat-cards.tar.gz
-RESTRICTED=	The altenburger card file is NOT freely redistributable!
-.endif
+LICENSE=	unknown
+LICENSE_NAME=	xskat license clause
+LICENSE_FILE=	${WRKSRC}/README
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		imake
 USE_XORG=	x11
-MAN1=		xskat.1 xskat-de.1
-PLIST_FILES=	bin/xskat
+PLIST_FILES=	bin/xskat \
+		man/man1/xskat.1.gz \
+		man/man1/xskat-de.1.gz
 
-NO_STAGE=	yes
-pre-fetch:
-.if !defined(WITH_ALTENBURGER_CARDS)
-	@${ECHO}
-	@${ECHO} "You can compile xskat with the beautiful original"
-	@${ECHO} "Altenburger card set by setting WITH_ALTENBURGER_CARDS"
-	@${ECHO}
-.endif
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lX11
 
 post-patch:
-.if defined(WITH_ALTENBURGER_CARDS)
-	cd ${WRKSRC}; ${CP} ../xskat-cards.c cards.c
-.endif
+	${MV} ${WRKSRC}/xskat.man ${WRKSRC}/xskat.1
+	${MV} ${WRKSRC}/xskat-de.man ${WRKSRC}/xskat-de.1
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/xskat ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xskat.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/xskat-de.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
