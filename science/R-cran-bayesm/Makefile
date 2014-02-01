@@ -4,7 +4,7 @@
 PORTNAME=	bayesm
 PORTVERSION=	2.2.5
 CATEGORIES=	science
-DISTNAME=	${PORTNAME}_${PORTVERSION:C/\./-/g:C/-/\./1}
+DISTNAME=	${PORTNAME}_${PORTVERSION:C/\./-/g:C/-/./1}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Bayesian Inference for Marketing/Micro-econometrics
