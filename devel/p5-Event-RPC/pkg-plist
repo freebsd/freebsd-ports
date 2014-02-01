@@ -11,6 +11,17 @@
 %%SITE_PERL%%/Event/RPC/Message.pm
 %%SITE_PERL%%/Event/RPC/Server.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/RPC/.packlist
+%%PERL5_MAN3%%/Event::RPC.3.gz
+%%PERL5_MAN3%%/Event::RPC::Client.3.gz
+%%PERL5_MAN3%%/Event::RPC::Connection.3.gz
+%%PERL5_MAN3%%/Event::RPC::LogConnection.3.gz
+%%PERL5_MAN3%%/Event::RPC::Logger.3.gz
+%%PERL5_MAN3%%/Event::RPC::Loop.3.gz
+%%PERL5_MAN3%%/Event::RPC::Loop::AnyEvent.3.gz
+%%PERL5_MAN3%%/Event::RPC::Loop::Event.3.gz
+%%PERL5_MAN3%%/Event::RPC::Loop::Glib.3.gz
+%%PERL5_MAN3%%/Event::RPC::Message.3.gz
+%%PERL5_MAN3%%/Event::RPC::Server.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Event/RPC
 @dirrm %%SITE_PERL%%/Event/RPC/Loop
 @dirrm %%SITE_PERL%%/Event/RPC
