@@ -2,6 +2,9 @@
 %%ETCDIR%%/policyd-spf.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/policyd-spf.conf ] ; then cp -p %D/%F %B/policyd-spf.conf; fi
 bin/policyd-spf
+man/man1/policyd-spf.1.gz
+man/man5/policyd-spf.conf.5.gz
+man/man5/policyd-spf.peruser.5.gz
 %%PYTHON_SITELIBDIR%%/policydspfsupp.py
 %%PYTHON_SITELIBDIR%%/policydspfsupp.pyo
 %%PYTHON_SITELIBDIR%%/policydspfsupp.pyc
