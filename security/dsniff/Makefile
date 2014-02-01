@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.monkey.org/~dugsong/${PORTNAME}/ \
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Various sniffing utilities for penetration testing
 
+BROKEN=		Fails to build
+
 LICENSE=	BSD
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet10/libnet.a:${PORTSDIR}/net/libnet10 \
