@@ -12,6 +12,8 @@ DISTNAME=	xev111
 MAINTAINER=	turutani@scphys.kyoto-u.ac.jp
 COMMENT=	XEVIOUS like shooting game
 
+LICENSE=	GPLv2
+
 NO_CDROM=	Possible copyright infringement
 
 USES=		imake
