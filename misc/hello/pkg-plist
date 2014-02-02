@@ -41,3 +41,4 @@ bin/hello
 %%NLS%%share/locale/vi/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/hello.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/hello.mo
+man/man1/hello.1.gz
