@@ -16,5 +16,4 @@ WRKSRC=		${WRKDIR}/multisync-${PORTVERSION}/plugins/backup_plugin
 
 MASTERDIR=	${.CURDIR}/../multisync
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
