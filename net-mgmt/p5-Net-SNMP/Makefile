@@ -21,8 +21,4 @@ USES=		perl5
 USE_PERL5=	configure
 CONFLICTS=	p5-Net-SNMP3-[0-9]*
 
-MAN1=		snmpkey.1
-MAN3=		Net::SNMP.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -15,6 +15,8 @@ bin/snmpkey
 %%SITE_PERL%%/Net/SNMP/Transport/IPv6/TCP.pm
 %%SITE_PERL%%/Net/SNMP/Transport/IPv6/UDP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SNMP/.packlist
+%%PERL5_MAN3%%/Net::SNMP.3.gz
+man/man1/snmpkey.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SNMP
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/SNMP/Transport/IPv6
