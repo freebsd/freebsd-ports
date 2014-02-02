@@ -435,6 +435,9 @@ bin/hg
 %%PYTHON_SITELIBDIR%%/mercurial/patch.py
 %%PYTHON_SITELIBDIR%%/mercurial/patch.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/patch.pyo
+%%PYTHON_SITELIBDIR%%/mercurial/pathutil.py
+%%PYTHON_SITELIBDIR%%/mercurial/pathutil.pyc
+%%PYTHON_SITELIBDIR%%/mercurial/pathutil.pyo
 %%PYTHON_SITELIBDIR%%/mercurial/peer.py
 %%PYTHON_SITELIBDIR%%/mercurial/peer.pyc
 %%PYTHON_SITELIBDIR%%/mercurial/peer.pyo
