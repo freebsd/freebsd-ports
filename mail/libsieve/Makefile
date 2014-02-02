@@ -13,9 +13,7 @@ LICENSE=LGPL21
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX}
-USE_GMAKE=	yes
-USES=		bison
+USES=		bison gmake
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

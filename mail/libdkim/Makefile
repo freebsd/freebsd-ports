@@ -20,19 +20,9 @@ USE_OPENSSL=	YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-#Check for OPENSSL 0.9.8 in BASE:  If not present require PORT
-.if ${OSVERSION} < 700019
-WITH_OPENSSL_PORT=	yes
-.endif
-
-.include <bsd.port.pre.mk>
-
 post-patch:
 	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.prev
 	@${SED} -e "s=%%SHLIB_MAJOR%%=${SHLIB_MAJOR}=g" \
 		${FILESDIR}/Makefile > ${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
