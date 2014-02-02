@@ -125,7 +125,6 @@ OPENLDAP_PKGFILESUFX=
 
 CONFIGURE_SED=		-e 's,-kthread,${PTHREAD_LIBS},g' -e 's,uuid/uuid.h,xxuuid/uuid.h,g'
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(CLIENT_ONLY)
@@ -489,12 +488,10 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV+=		LIBS="${LIBS}"
 
 .if defined(CLIENT_ONLY)
-.include "${FILESDIR}/manpages.client"
 .else
 SUB_LIST+=		RC_DIR=${PREFIX} \
 			LDAP_RUN_DIR=${LDAP_RUN_DIR} \
 			DATABASEDIR=${DATABASEDIR}
-.include "${FILESDIR}/manpages.server"
 .endif
 
 PLIST_SUB+=		${SUB_LIST}
@@ -540,21 +537,20 @@ pre-su-install:
 		${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL; \
 	fi
 .if ${PORT_OPTIONS:MMODULES} || ${PORT_OPTIONS:MDYNAMIC_BACKENDS} || ${PORT_OPTIONS:MSLAPI}
-	@${MKDIR} ${PREFIX}/libexec/openldap
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/openldap
 .endif
 
 post-install:
 .if defined(CLIENT_ONLY)
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${STAGEDIR}${DOCSDIR}
 	@for dir in drafts rfc; do \
-		${MKDIR} ${DOCSDIR}/$${dir}; \
-		${INSTALL_DATA} ${WRKSRC}/doc/$${dir}/* ${DOCSDIR}/$${dir}; \
+		${MKDIR} ${STAGEDIR}${DOCSDIR}/$${dir}; \
+		${INSTALL_DATA} ${WRKSRC}/doc/$${dir}/* ${STAGEDIR}${DOCSDIR}/$${dir}; \
 	done
-.endif
+
 .else
-	@${MKDIR} ${LDAP_RUN_DIR}
+	@${MKDIR} ${STAGEDIR}${LDAP_RUN_DIR}
 	@for schema in ${SCHEMATA}; do \
 		${ECHO_CMD} "@unexec if cmp -s %D/etc/openldap/schema/$${schema}.schema" \
 			"%D/etc/openldap/schema/$${schema}.schema.default; then" \
@@ -566,19 +562,18 @@ post-install:
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/etc/openldap 2>/dev/null || true" >>${TMPPLIST}
 .if ${PORT_OPTIONS:MSMBPWD}
 	@${INSTALL_DATA} ${WRKSRC}/contrib/slapd-modules/smbk5pwd/smbk5pwd.la \
-		${PREFIX}/libexec/openldap/
+		${STAGEDIR}${PREFIX}/libexec/openldap/
 	@${INSTALL_PROGRAM} ${WRKSRC}/contrib/slapd-modules/smbk5pwd/.libs/smbk5pwd.so.0 \
-		${PREFIX}/libexec/openldap/
-	@${LN} -s smbk5pwd.so.0 ${PREFIX}/libexec/openldap/smbk5pwd.so
+		${STAGEDIR}${PREFIX}/libexec/openldap/
+	@${LN} -s smbk5pwd.so.0 ${STAGEDIR}${PREFIX}/libexec/openldap/smbk5pwd.so
 .endif
 .if ${PORT_OPTIONS:MSHA2}
 	@${INSTALL_DATA} ${WRKSRC}/contrib/slapd-modules/passwd/sha2/pw-sha2.la \
-		${PREFIX}/libexec/openldap/
+		${STAGEDIR}${PREFIX}/libexec/openldap/
 	@${INSTALL_PROGRAM} ${WRKSRC}/contrib/slapd-modules/passwd/sha2/.libs/pw-sha2.so.0 \
-		${PREFIX}/libexec/openldap/
+		${STAGEDIR}${PREFIX}/libexec/openldap/
 	@${LN} -s pw-sha2.so.0 ${PREFIX}/libexec/openldap/pw-sha2.so
 .endif
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
