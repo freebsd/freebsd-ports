@@ -1,5 +1,5 @@
 --- font/Makefile.FreeBSD.orig	1997-01-25 19:08:44.000000000 +0900
-+++ font/Makefile.FreeBSD	2012-05-10 00:14:28.693551770 +0900
++++ font/Makefile.FreeBSD	2014-01-31 11:01:37.000000000 +0900
 @@ -11,6 +11,7 @@
  .endif
  
@@ -8,3 +8,11 @@
  
  .if exists(${.OBJDIR}/../lib)
  LIBOBJ=	-L${.OBJDIR}/../lib
+@@ -20,4 +21,7 @@
+ 
+ LDADD=	${LIBOBJ} -lgon
+ 
++install: ${PROG}
++	/usr/bin/install -s ${PROG} ${BINDIR}
++
+ .include <bsd.prog.mk>

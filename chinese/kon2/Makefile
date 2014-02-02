@@ -19,7 +19,7 @@ PLIST_FILES=	share/fonts/bdf/kc15f.bdf.gz \
 		share/fonts/bdf/8x16.bdf.gz
 
 post-patch: post-patch-zhkon2
-NO_STAGE=	yes
+
 post-patch-zhkon2:
 	@${REINPLACE_CMD} -e 's,/dev/vga,/dev/ttyv0,g' ${WRKSRC}/src/term.c \
 		${WRKSRC}/src/display/vga.c
@@ -32,9 +32,12 @@ post-build-zhkon2:
 
 post-install: post-install-zhkon2
 post-install-zhkon2:
-	@${MKDIR} ${PREFIX}/share/fonts/bdf
-	cd ${KCFONTS_WRKSRC} && ./kc15f | ${GZIP_CMD} - > ${PREFIX}/share/fonts/bdf/kc15f.bdf.gz
-	cd ${CCE_WRKSRC} && ${CAT} fonts/gb16fs.bdf | ${GZIP_CMD} - > ${PREFIX}/share/fonts/bdf/gb16fs.bdf.gz
-	cd ${CCE_WRKSRC} && ${CAT} fonts/8x16.bdf | ${GZIP_CMD} - > ${PREFIX}/share/fonts/bdf/8x16.bdf.gz
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fonts/bdf
+	cd ${KCFONTS_WRKSRC} && ./kc15f | ${GZIP_CMD} - > \
+		${STAGEDIR}${PREFIX}/share/fonts/bdf/kc15f.bdf.gz
+	cd ${CCE_WRKSRC} && ${CAT} fonts/gb16fs.bdf | ${GZIP_CMD} - > \
+		${STAGEDIR}${PREFIX}/share/fonts/bdf/gb16fs.bdf.gz
+	cd ${CCE_WRKSRC} && ${CAT} fonts/8x16.bdf | ${GZIP_CMD} - > \
+		${STAGEDIR}${PREFIX}/share/fonts/bdf/8x16.bdf.gz
 
 .include "${MASTERDIR}/Makefile"

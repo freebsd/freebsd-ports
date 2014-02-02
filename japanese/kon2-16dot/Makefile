@@ -14,19 +14,14 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 # '+=' is for slave ports
-MAINTAINER?=	turutani@scphys.kyoto-u.ac.jp
+MAINTAINER=	turutani@scphys.kyoto-u.ac.jp
 COMMENT=	Kanji On Console -- Display kanji characters on your own console
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-MAN1=		kon.1
-MANLANG=	ja
-
 PORTDOCS=	README README.FreeBSD
 SUB_LIST=	KON16FONT=${KON16FONT} \
 		KON14FONT=${KON14FONT}
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if !defined(KONFONT)
@@ -48,6 +43,7 @@ post-patch:
 ${WRKSRC}/.config::
 	(${ECHO_CMD} "DISTDIR = ${DISTDIR}"; \
 	 ${ECHO_CMD} "TOPDIR = ${PREFIX}"; \
+	 ${ECHO_CMD} "S_TOPDIR = ${STAGEDIR}${PREFIX}"; \
 	 ${CAT} ${FILESDIR}/dotconfig; \
 	) > ${WRKSRC}/.config
 
@@ -64,10 +60,8 @@ post-configure:
 		done
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/src/kon.1 ${MANPREFIX}/man/ja/man1
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	${INSTALL_MAN} ${WRKSRC}/src/kon.1 ${STAGEDIR}${MANPREFIX}/man/ja/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
