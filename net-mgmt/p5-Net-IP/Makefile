@@ -7,7 +7,7 @@ CATEGORIES=	net-mgmt perl5 ipv6
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	eadler@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for manipulating IPv4/IPv6 addresses
 
 USES=		perl5
