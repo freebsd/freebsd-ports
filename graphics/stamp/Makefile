@@ -19,7 +19,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 USE_GNOME=	gtk12
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's#/usr/local/share/stamp#${DATADIR}#' \
 		${WRKSRC}/configure
