@@ -1501,6 +1501,7 @@
     SUBDIR += py-django-classy-tags
     SUBDIR += py-django-cms
     SUBDIR += py-django-crispy-forms
+    SUBDIR += py-django-debug-toolbar
     SUBDIR += py-django-devel
     SUBDIR += py-django-dpaste
     SUBDIR += py-django-evolution
