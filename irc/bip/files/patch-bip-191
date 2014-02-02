@@ -1,0 +1,66 @@
+From 284c7a8020b664ecc6cb1f326af55325a46f7d3a Mon Sep 17 00:00:00 2001
+From: Nathan Phillip Brink <binki@gentoo.org>
+Date: Mon, 12 Sep 2011 23:25:09 +0000
+Subject: [PATCH] Throttle almost everything (except PING, PONG, and certain QUIT messages) sent to the IRCd.
+
+Fixes being killed for Excess Flooding on freenode by using the existing
+fakelag mechanism. The existing fakelag works great but was just not hooked
+into earlier.
+---
+ src/connection.c |   14 +++++++++++---
+ 1 files changed, 11 insertions(+), 3 deletions(-)
+
+diff --git a/src/connection.c b/src/connection.c
+index c793e18..e226f92 100644
+--- a/src/connection.c
++++ b/src/connection.c
+@@ -23,6 +23,7 @@ static SSL_CTX *sslctx = NULL;
+ static int ssl_cx_idx;
+ static BIO *errbio = NULL;
+ extern char *conf_ssl_certfile;
++static int cn_want_write(connection_t *cn);
+ static int SSLize(connection_t *cn, int *nc);
+ static SSL_CTX *SSL_init_context(void);
+ /* SSH like trust management */
+@@ -326,6 +327,11 @@ static int real_write_all(connection_t *cn)
+ 	return 0;
+ }
+ 
++/*
++ * May only be used when writing to the client or when sending
++ * timing-sensitive data to the server (PONG, PING for lagtest, QUIT)
++ * because fakelag is not enforced.
++ */
+ void write_line_fast(connection_t *cn, char *line)
+ {
+ 	int r;
+@@ -353,13 +359,15 @@ void write_line_fast(connection_t *cn, char *line)
+ void write_lines(connection_t *cn, list_t *lines)
+ {
+ 	list_append(cn->outgoing, lines);
+-	real_write_all(cn);
++	if (cn_want_write(cn))
++		real_write_all(cn);
+ }
+ 
+ void write_line(connection_t *cn, char *line)
+ {
+ 	list_add_last(cn->outgoing, bip_strdup(line));
+-	real_write_all(cn);
++	if (cn_want_write(cn))
++		real_write_all(cn);
+ }
+ 
+ list_t *read_lines(connection_t *cn, int *error)
+@@ -718,7 +726,7 @@ static int check_event_write(fd_set *fds, connection_t *cn, int *nc)
+ /* token generation interval: 1200ms */
+ #define TOKEN_INTERVAL 1200
+ 
+-int cn_want_write(connection_t *cn)
++static int cn_want_write(connection_t *cn)
+ {
+ 	if (cn->anti_flood) {
+ 		struct timeval tv;
+-- 
+1.7.3.4
+
