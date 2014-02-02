@@ -1,4 +1,8 @@
+@group games
+@mode 2555
 bin/xshisen
+@group
+@mode
 lib/X11/app-defaults/XShisen
 lib/X11/ja_JP.eucJP/app-defaults/XShisen
 %%DATADIR%%/s1/chun.xpm
@@ -73,7 +77,13 @@ lib/X11/ja_JP.eucJP/app-defaults/XShisen
 %%DATADIR%%/s2/s9.xpm
 %%DATADIR%%/s2/sha.xpm
 %%DATADIR%%/s2/ton.xpm
+@group games
+@mode 0660
 %%DATADIR%%/xshisen.scores
+@group
+@mode
+man/man6/xshisen.6.gz
+man/ja/man6/xshisen.6.gz
 @dirrm %%DATADIR%%/s2
 @dirrm %%DATADIR%%/s1
 @dirrm %%DATADIR%%
