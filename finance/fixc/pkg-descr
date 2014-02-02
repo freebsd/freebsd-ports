@@ -1,0 +1,5 @@
+fixc is a simple Financial Information eXchange (FIX) protocol console client.
+fixc connects to remote host and sends out FIX messages it reads from local
+scenario file.
+
+WWW: https://github.com/blttll/fixc
