@@ -13,7 +13,4 @@ COMMENT=	Use the freedesktop basedir spec
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		File::BaseDir.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
