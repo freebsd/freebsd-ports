@@ -7,7 +7,7 @@ PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://www.libsdl.org/projects/pipenightdreams/packages/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Puzzle game similar to PipeMania
 
 LICENSE=	GPLv2
