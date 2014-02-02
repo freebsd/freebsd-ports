@@ -18,7 +18,6 @@ CONFIGURE_ARGS+=--disable-python --disable-python-bindings
 CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "ia64"
@@ -32,7 +31,5 @@ CONFIGURE_ARGS+=--disable-nls --without-libiconv-prefix --without-libintl-prefix
 .endif
 
 INSTALL_TARGET=	install install-man
-MAN1=		yasm.1
-MAN7=		yasm_arch.7 yasm_dbgfmts.7 yasm_objfmts.7 yasm_parsers.7
 
 .include <bsd.port.mk>
