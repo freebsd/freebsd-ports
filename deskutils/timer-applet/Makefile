@@ -17,17 +17,15 @@ RUN_DEPENDS=	gnome-audio>0:${PORTSDIR}/audio/gnome-audio \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=        pathfix gettext
+USES=		gettext gmake pathfix
 USE_GNOME=	gnomeprefix intlhack pygnomedesktop
 USE_PYTHON=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec
+CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec --disable-schemas-install
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	timer-applet.schemas
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
