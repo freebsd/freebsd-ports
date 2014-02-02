@@ -3,7 +3,7 @@
 
 PORTNAME=	motogt
 PORTVERSION=	20110505
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF/motogt/
 DISTNAME=	MotoGT-${PORTVERSION}
@@ -11,12 +11,11 @@ DISTNAME=	MotoGT-${PORTVERSION}
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D top-viewed motorcycle racing game
 
-LIB_DEPENDS=	sfml-system:${PORTSDIR}/devel/sfml \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libsfml-system.so:${PORTSDIR}/devel/sfml \
+		libpng.so:${PORTSDIR}/graphics/png
 
 LICENSE=	GPLv2 CCbySA
 LICENSE_COMB=	multi
-LICENSE_FILE_GPLv2=	${WRKSRC}/doc/gpl.txt
 LICENSE_NAME_CCbySA=	Creative Commons Attribution-ShareAlike
 LICENSE_PERMS_CCbySA=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_FILE_CCbySA=	${WRKSRC}/doc/cc-by-sa.txt
@@ -28,19 +27,17 @@ MAKE_JOBS_UNSAFE=	yes
 CFLAGS+=	-I${LOCALBASE}/include/libpng15
 MAKE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 SUB_FILES=	motogt
+CXXFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 PLIST_FILES=	bin/${PORTNAME} libexec/MotoGT.bin
 PORTDATA=	*
 
 WRKSRC=		${WRKDIR}/MotoGT
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/MotoGT.bin ${PREFIX}/libexec/
-	${INSTALL_SCRIPT} ${WRKDIR}/motogt ${PREFIX}/bin/
-.if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} data ${DATADIR}/
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/MotoGT.bin ${STAGEDIR}${PREFIX}/libexec/
+	${INSTALL_SCRIPT} ${WRKDIR}/motogt ${STAGEDIR}${PREFIX}/bin/
+	cd ${WRKSRC} && ${COPYTREE_SHARE} data ${STAGEDIR}${DATADIR}/
 
 .include <bsd.port.mk>
