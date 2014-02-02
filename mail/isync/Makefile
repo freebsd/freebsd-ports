@@ -24,6 +24,9 @@ LDFLAGS+=	-L${BDB_LIB_DIR} -L${OPENSSLLIB} -lssl -lcrypto
 
 OPTIONS_DEFINE=	DOCS
 
+# does not compile
+PORTSCOUT=	skipv:1.1.0
+
 .include <bsd.port.options.mk>
 
 post-patch:
