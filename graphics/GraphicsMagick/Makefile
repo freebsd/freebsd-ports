@@ -15,13 +15,15 @@ COMMENT=	Fast image processing tools based on ImageMagick
 
 CONFLICTS=	GraphicsMagick-1.[23].* GraphicsMagick1[23]-*
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2	\
-		fpx.[2-9]:${PORTSDIR}/graphics/libfpx	\
-		jbig:${PORTSDIR}/graphics/jbigkit	\
-		png15:${PORTSDIR}/graphics/png		\
-		xml2:${PORTSDIR}/textproc/libxml2
-OTHERGRAPHICS=	jasper jpeg lcms tiff
-LIB_DEPENDS+=	${OTHERGRAPHICS:C|(.+)|\1:${PORTSDIR}/graphics/\1|}
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libfpx.so:${PORTSDIR}/graphics/libfpx \
+		libjbig.so:${PORTSDIR}/graphics/jbigkit \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libxml2.so:${PORTSDIR}/textproc/libxml2 \
+		libjasper.so:${PORTSDIR}/graphics/jasper \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		liblcms.so:${PORTSDIR}/graphics/lcms \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
 OPTIONS_DEFINE=	Q8BIT TESTS X11 DOCS
 
@@ -35,13 +37,6 @@ USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
-
-MAN1=	GraphicsMagick++-config.1 \
-	GraphicsMagick-config.1 \
-	GraphicsMagickWand-config.1 \
-	gm.1
-MAN4=	miff.4
-MAN5=	quantize.5
 
 .ifndef WINDOWS_FONT_DIR
 # Use fonts installed by x11-fonts/webfonts by default
@@ -59,7 +54,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 test check:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
@@ -77,9 +71,9 @@ CONFIGURE_ARGS+=	--with-windows-font-dir="${WINDOWS_FONT_DIR}"
 
 .if ${PORT_OPTIONS:MX11} == ""
 CONFIGURE_ARGS+=--without-x
-LIB_DEPENDS+=	wmflite:${PORTSDIR}/graphics/libwmf-nox11
+LIB_DEPENDS+=	libwmflite.so:${PORTSDIR}/graphics/libwmf-nox11
 .else
-LIB_DEPENDS+=	wmflite:${PORTSDIR}/graphics/libwmf
+LIB_DEPENDS+=	libwmflite.so:${PORTSDIR}/graphics/libwmf
 .endif
 
 .if ${PORT_OPTIONS:MQ8BIT}
