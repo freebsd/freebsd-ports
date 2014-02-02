@@ -1178,6 +1178,7 @@
     SUBDIR += py-pyctpp2
     SUBDIR += py-pyelasticsearch
     SUBDIR += py-pygments
+    SUBDIR += py-pyscss
     SUBDIR += py-pysrt
     SUBDIR += py-pystache
     SUBDIR += py-pyx12
