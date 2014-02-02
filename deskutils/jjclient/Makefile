@@ -16,5 +16,4 @@ LIB_DEPENDS+=	libxmlrpc.so:${PORTSDIR}/net/xmlrpc-c
 
 PLIST_FILES=	bin/jjclient
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

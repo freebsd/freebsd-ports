@@ -20,7 +20,6 @@ INSTALL_EGGINFO=yes
 
 WRKSRC=		${WRKDIR}/src
 
-NO_STAGE=	yes
 post-patch:
 	cd ${WRKSRC} && ${REINPLACE_CMD} -e 's,/usr/share/${PORTNAME},${DATADIR},g' \
 		conkyEmail  conkyEmail.py setup.py example/conkyrc
