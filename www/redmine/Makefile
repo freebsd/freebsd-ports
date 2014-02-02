@@ -3,7 +3,7 @@
 
 PORTNAME=	redmine
 PORTVERSION=	2.3.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ RUN_DEPENDS=	rubygem-rubytree>=0:${PORTSDIR}/devel/rubygem-rubytree \
 		rubygem-i18n>=0.4.2:${PORTSDIR}/devel/rubygem-i18n \
 		rubygem-rake>=0:${PORTSDIR}/devel/rubygem-rake \
 		rubygem-bundler>=0:${PORTSDIR}/sysutils/rubygem-bundler \
-		rubygem-rails>=3.2.13:${PORTSDIR}/www/rubygem-rails \
+		rubygem-rails>=3.2.16:${PORTSDIR}/www/rubygem-rails \
 		rubygem-rack-openid>=0:${PORTSDIR}/www/rubygem-rack-openid \
 		rubygem-coderay>=1.0.9:${PORTSDIR}/textproc/rubygem-coderay \
 		rubygem-fastercsv>=1.5.0:${PORTSDIR}/devel/rubygem-fastercsv \
