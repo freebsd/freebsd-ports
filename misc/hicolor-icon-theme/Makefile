@@ -28,7 +28,6 @@ STOCK_SUBS=	chart code data form image io media navigation net object table text
 SUB_LIST=	ICON_SIZES="${ICON_SIZES}" ICON_CONTEXTS="${ICON_CONTEXTS}" \
 		STOCK_SUBS="${STOCK_SUBS}"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 pre-install:
@@ -66,10 +65,10 @@ post-install:
 . for ctxt in ${ICON_CONTEXTS}
 	if [ "${ctxt}" = "stock" ] ; then \
 	 for sub in ${STOCK_SUBS} ; do \
-		${TOUCH} ${PREFIX}/${ICON_DIR}/${dir}/${ctxt}/$${sub}/.keep_me ; \
+		${TOUCH} ${STAGEDIR}${PREFIX}/${ICON_DIR}/${dir}/${ctxt}/$${sub}/.keep_me ; \
 	 done ; \
 	fi
-	${TOUCH} ${PREFIX}/${ICON_DIR}/${dir}/${ctxt}/.keep_me
+	${TOUCH} ${STAGEDIR}${PREFIX}/${ICON_DIR}/${dir}/${ctxt}/.keep_me
 . endfor
 .endfor
 
