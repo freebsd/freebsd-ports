@@ -20,9 +20,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
-MAN1=		wcalc.1
+PLIST_FILES=	bin/wcalc \
+		man/man1/wcalc.1.gz
 
-PLIST_FILES=	bin/wcalc
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
