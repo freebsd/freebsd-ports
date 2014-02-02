@@ -230,4 +230,8 @@ lib/libgslcblas.so
 lib/libgslcblas.so.0
 libdata/pkgconfig/gsl.pc
 share/aclocal/gsl.m4
+man/man1/gsl-config.1.gz
+man/man1/gsl-histogram.1.gz
+man/man1/gsl-randist.1.gz
+man/man3/gsl.3.gz
 @dirrm include/gsl
