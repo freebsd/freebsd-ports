@@ -3,6 +3,7 @@
 
 PORTNAME=	activerecord
 PORTVERSION=	3.2.16
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +14,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-activemodel>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-activemodel \
 		rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport \
-		rubygem-arel>=3.0.2:${PORTSDIR}/databases/rubygem-arel \
+		rubygem-arel>=3.0.3:${PORTSDIR}/databases/rubygem-arel3 \
 		rubygem-tzinfo>=0.3.29:${PORTSDIR}/devel/rubygem-tzinfo
 
 USE_RUBY=	yes
