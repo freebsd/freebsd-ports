@@ -89,6 +89,12 @@ lib/libGraphicsMagickWand.so.1
 libdata/pkgconfig/GraphicsMagick++.pc
 libdata/pkgconfig/GraphicsMagick.pc
 libdata/pkgconfig/GraphicsMagickWand.pc
+man/man1/GraphicsMagick++-config.1.gz
+man/man1/GraphicsMagick-config.1.gz
+man/man1/GraphicsMagickWand-config.1.gz
+man/man1/gm.1.gz
+man/man4/miff.4.gz
+man/man5/quantize.5.gz
 %%DATADIR%%/config/colors.mgk
 %%DATADIR%%/config/log.mgk
 %%DATADIR%%/config/magic.mgk

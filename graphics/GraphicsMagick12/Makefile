@@ -15,12 +15,14 @@ COMMENT=	Fast image processing tools based on ImageMagick
 
 CONFLICTS=	GraphicsMagick-1.[13].* GraphicsMagick13-*
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2	\
-		png15:${PORTSDIR}/graphics/png		\
-		jbig:${PORTSDIR}/graphics/jbigkit	\
-		xml2:${PORTSDIR}/textproc/libxml2
-OTHERGRAPHICS=	jasper jpeg lcms tiff
-LIB_DEPENDS+=	${OTHERGRAPHICS:C|(.+)|\1:${PORTSDIR}/graphics/\1|}
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libjbig.so:${PORTSDIR}/graphics/jbigkit \
+		libxml2.so:${PORTSDIR}/textproc/libxml2 \
+		libjasper.so:${PORTSDIR}/graphics/jasper \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		liblcms.so:${PORTSDIR}/graphics/lcms \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
 OPTIONS_DEFINE=	Q8BIT FPX OPENMP SSE TESTS X11 DOCS
 
@@ -39,13 +41,6 @@ USE_BZIP2=	yes
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
 
-MAN1=	GraphicsMagick++-config.1 \
-	GraphicsMagick-config.1 \
-	GraphicsMagickWand-config.1 \
-	gm.1
-MAN4=	miff.4
-MAN5=	quantize.5
-
 CONFIGURE_ARGS=	--without-perl --enable-shared --enable-static \
 		--with-ltdl-include=${LOCALBASE}/include \
 		--with-ltdl-lib=${LOCALBASE}/lib
@@ -57,7 +52,6 @@ CFLAGS+=	-DPNG_DEPSTRUCT=
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng15
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 test check:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
@@ -82,14 +76,14 @@ CFLAGS+=	-msse3
 .endif
 
 .if ${PORT_OPTIONS:MFPX}
-LIB_DEPENDS+=		fpx.[2-9]:${PORTSDIR}/graphics/libfpx
+LIB_DEPENDS+=		libfpx.so:${PORTSDIR}/graphics/libfpx
 CONFIGURE_ARGS+=	--with-fpx
 .else
 CONFIGURE_ARGS+=	--without-fpx
 .endif
 
 .if ${PORT_OPTIONS:MDPS}
-LIB_DEPENDS+=		dps:${PORTSDIR}/x11/dgs
+LIB_DEPENDS+=		libdps.so:${PORTSDIR}/x11/dgs
 CONFIGURE_ARGS+=	--with-dps
 .else
 CONFIGURE_ARGS+=	--without-dps
@@ -117,9 +111,9 @@ CONFIGURE_ARGS+=	--with-windows-font-dir="${WINDOWS_FONT_DIR}"
 
 .if ${PORT_OPTIONS:MX11} == ""
 CONFIGURE_ARGS+=--without-x
-LIB_DEPENDS+=	wmflite:${PORTSDIR}/graphics/libwmf-nox11
+LIB_DEPENDS+=	libwmflite.so:${PORTSDIR}/graphics/libwmf-nox11
 .else
-LIB_DEPENDS+=	wmflite:${PORTSDIR}/graphics/libwmf
+LIB_DEPENDS+=	libwmflite.so:${PORTSDIR}/graphics/libwmf
 .endif
 
 .if ${PORT_OPTIONS:MQ8BIT}
