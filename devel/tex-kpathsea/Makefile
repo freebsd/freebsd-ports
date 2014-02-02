@@ -13,7 +13,7 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Path searching library for TeX
 
 USE_XZ=		yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 USE_TEX=	texlive
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES}
@@ -23,8 +23,5 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/texk/kpathsea
 GNU_CONFIGURE=	yes
 
 INFO=	kpathsea
-MAN1=	kpseaccess.1 kpsereadlink.1 kpsestat.1 kpsewhich.1 mktexlsr.1 \
-	mktexmf.1 mktexpk.1 mktextfm.1 texhash.1
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
