@@ -8,4 +8,5 @@ include/mutils/mutils.h
 lib/libmhash.a
 lib/libmhash.so
 lib/libmhash.so.2
+man/man3/mhash.3.gz
 @dirrm include/mutils
