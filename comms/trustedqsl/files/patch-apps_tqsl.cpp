@@ -1,5 +1,5 @@
---- apps/tqsl.cpp.orig	2013-12-12 15:52:46.737002435 -0500
-+++ apps/tqsl.cpp	2013-12-12 15:52:12.740004212 -0500
+--- apps/tqsl.cpp.orig	2013-10-20 20:33:20.000000000 -0400
++++ apps/tqsl.cpp	2014-01-26 10:20:28.036914222 -0500
 @@ -71,7 +71,7 @@
  #endif
  #include <zlib.h>
@@ -9,6 +9,15 @@
  #include "tqslwiz.h"
  #include "qsodatadialog.h"
  #include "tqslerrno.h"
+@@ -1862,7 +1862,7 @@
+ 				return TQSL_EXIT_LIB_ERROR;
+ 			}
+ 		} else {
+-			out<<output;
++			out<<output.mb_str();
+ 			if (out.fail()) {
+ 				tqsl_converterRollBack(conv);
+ 				tqsl_endConverter(&conv);
 @@ -2016,7 +2016,7 @@
  	} else {
  		//compress the upload
