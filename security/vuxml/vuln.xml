@@ -52,8 +52,12 @@ Note:  Please add new entries to the beginning of this file.
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
   <vuln vid="111f1f84-1d14-4ff2-a9ea-cf07119c0d3b">
-    <topic>pkg -- libyaml heap overflow resulting in possible code execution</topic>
+    <topic>libyaml heap overflow resulting in possible code execution</topic>
     <affects>
+      <package>
+	<name>libyaml</name>
+	<range><lt>0.1.4_3</lt></range>
+      </package>
       <package>
 	<name>pkg</name>
 	<range><lt>1.2.6</lt></range>
