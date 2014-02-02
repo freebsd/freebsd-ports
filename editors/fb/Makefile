@@ -13,11 +13,9 @@ COMMENT=	Binary file viewer, editor, and manipulator (and a lot more)
 
 NO_WRKSUBDIR=	Yes
 
-MAN1=		fb.1
-MANCOMPRESSED=	maybe
-PLIST_FILES=	bin/fb
+PLIST_FILES=	bin/fb \
+		man/man1/fb.1.gz
 MAKEFILE=	${FILESDIR}/Makefile.in
 MAKE_ARGS+=	PREFIX="${PREFIX}"
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
