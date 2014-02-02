@@ -10,7 +10,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	blttll@gmail.com
 COMMENT=	Simple Financial Information eXchange (FIX) protocol console client
 
-BUILD_DEPENDS=	go:${PORTSDIR}/lang/go/
+BUILD_DEPENDS=	${LOCALBASE}/bin/go:${PORTSDIR}/lang/go
 
 PLIST_FILES=	bin/fixc
 
