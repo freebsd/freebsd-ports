@@ -15,22 +15,15 @@ RUN_DEPENDS=	xneur:${PORTSDIR}/deskutils/xneur
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USES=		desktop-file-utils pkgconfig
+USES=		pkgconfig
 USE_GNOME=	gconf2 gtk20 libglade2
 INSTALLS_ICONS=	yes
 
-MAN1=		${PORTNAME}.1
+OPTIONS_DEFINE=	NLS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+OPTIONS_SUB=	yes
+NLS_USES=	gettext
+NLS_CONFIGURE_OFF=	--without-nls
 
 post-patch:
 	@${REINPLACE_CMD} -e '/all_modifiers/d' ${WRKSRC}/src/misc.c
