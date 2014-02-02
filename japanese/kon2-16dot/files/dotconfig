@@ -1,10 +1,10 @@
 # $FreeBSD$
-BINDIR	= $(TOPDIR)/bin
-LIBDIR	= $(TOPDIR)/etc
-MANDIR	= $(TOPDIR)/man/ja/man
-FONTDIR	= $(TOPDIR)/share/fonts/bdf
+BINDIR	= $(S_TOPDIR)/bin
+LIBDIR	= $(S_TOPDIR)/etc
+MANDIR	= $(S_TOPDIR)/man/ja/man
+FONTDIR	= $(S_TOPDIR)/share/fonts/bdf
 CONFIG_NAME = kon.cfg
-CFLAGS  += -DCONFIG_NAME=\"$(LIBDIR)/$(CONFIG_NAME)\"
+CFLAGS  += -DCONFIG_NAME=\"$(TOPDIR)/etc/$(CONFIG_NAME)\"
 
 HAS_VGA = HAS_VGA
 FLD_MINIX = FLD_MINIX
