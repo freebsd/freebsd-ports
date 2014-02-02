@@ -23,6 +23,18 @@ include/bind/res_update.h
 include/bind/resolv.h
 include/bind/sys/bitypes.h
 lib/libbind.a
+man/man3/getaddrinfo.3.gz
+man/man3/gethostbyname.3.gz
+man/man3/getipnodebyname.3.gz
+man/man3/getnameinfo.3.gz
+man/man3/getnetent.3.gz
+man/man3/hesiod.3.gz
+man/man3/inet_cidr.3.gz
+man/man3/resolver.3.gz
+man/man3/tsig.3.gz
+man/man5/irs.conf.5.gz
+man/man5/resolver.5.gz
+man/man7/hostname.7.gz
 @dirrm include/bind/arpa
 @dirrm include/bind/isc
 @dirrm include/bind/sys
