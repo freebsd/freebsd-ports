@@ -199,7 +199,6 @@
     SUBDIR += memcached
     SUBDIR += memcachedb
     SUBDIR += memcacheq
-    SUBDIR += memkeys
     SUBDIR += mergeant
     SUBDIR += metakit
     SUBDIR += mongodb
