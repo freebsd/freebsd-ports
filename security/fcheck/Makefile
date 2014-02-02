@@ -3,6 +3,7 @@
 
 PORTNAME=	fcheck
 PORTVERSION=	2.07.59
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.sourcefiles.org/Networking/Security/Intrusion_Detection/ \
 		http://bsd-geek.de/FreeBSD/distfiles/
@@ -11,34 +12,32 @@ DISTNAME=	FCheck_${PORTVERSION}
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Intrusion detection and Policy enforcement / auditing software
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
-PORTDOCS=	*
-PLIST_FILES=	sbin/${PORTNAME} etc/${PORTNAME}.cfg.sample
 NO_BUILD=	YES
-USES=		perl5
+USES=		perl5 shebangfix dos2unix
 
-NO_STAGE=	yes
+SHEBANG_FILES=	${WRKSRC}/${PORTNAME}
+DOS2UNIX_FILES=	${WRKSRC}/${PORTNAME}.cfg
+
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PREFIX}/bin/perl|' \
-		-e 's|/usr/local/admtools/conf/|${PREFIX}/etc/|' ${WRKSRC}/${PORTNAME}
+	@${REINPLACE_CMD} -e 's|/usr/local/admtools/conf/|${PREFIX}/etc/|' \
+		${WRKSRC}/${PORTNAME}
 	@${REINPLACE_CMD} -e 's|/usr/local/admtools/|/var/${PORTNAME}/|' \
-		-e 's|/bin/file|/usr/bin/file|' -e 's|/bin/cksum|/sbin/md5|' \
+		-e 's|/bin/file|/usr/bin/file|' -e 's|/bin/cksum|/sbin/sha512|' \
 		${WRKSRC}/${PORTNAME}.cfg
 
 do-install:
-	${MKDIR} /var/${PORTNAME}
-	${MKDIR} /var/${PORTNAME}/logs
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.cfg ${PREFIX}/etc/${PORTNAME}.cfg.sample
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/install ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}/var/${PORTNAME}/logs
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.cfg ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.cfg.sample
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/install ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
