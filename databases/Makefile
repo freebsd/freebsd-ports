@@ -199,6 +199,7 @@
     SUBDIR += memcached
     SUBDIR += memcachedb
     SUBDIR += memcacheq
+    SUBDIR += memkeys
     SUBDIR += mergeant
     SUBDIR += metakit
     SUBDIR += mongodb
@@ -839,6 +840,7 @@
     SUBDIR += rubygem-activerecord-mysql-adapter
     SUBDIR += rubygem-amalgalite
     SUBDIR += rubygem-arel
+    SUBDIR += rubygem-arel3
     SUBDIR += rubygem-bdb1
     SUBDIR += rubygem-bigrecord
     SUBDIR += rubygem-couchrest
