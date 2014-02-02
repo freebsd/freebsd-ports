@@ -16,11 +16,10 @@ USE_GNOME=	gnomeprefix intltool pygnomedesktop pygnomeextras
 USE_PYTHON=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec
+CONFIGURE_ARGS=	--libdir=${PREFIX}/libexec --disable-schemas-install
 
 GCONF_SCHEMAS=	glipper.schemas
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/gtypes.h|glib.h|g' \
 		${WRKSRC}/glipper/keybinder/tomboykeybinder.h
