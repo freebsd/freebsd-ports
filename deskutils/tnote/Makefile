@@ -7,27 +7,19 @@ CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A small note taking program for the terminal
+COMMENT=	Small note taking program for the terminal
 
 LICENSE=	GPLv3
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
-MAN1=		tnote.1
-MANCOMPRESSED=	yes
-
-PLIST_FILES=	bin/tnote
-
+PLIST_FILES=	bin/tnote man/man1/tnote.1.gz
 PORTDOCS=	*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${REINPLACE_CMD} -e 's|share/man|man|' ${WRKSRC}/setup.py
-
-.if defined(NOPORTDOCS)
-post-patch:
-	@${REINPLACE_CMD} -e 's|(.share/doc[^)]*),||' ${WRKSRC}/setup.py
-.endif
 
 .include <bsd.port.mk>
