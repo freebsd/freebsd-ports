@@ -25,7 +25,7 @@ SDL_DESC=	Use SDL for audio
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
 USE_SDL=	sdl
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=s/${PORTNAME}/${PORTNAME}${PKGNAMESUFFIX}/
 CONFIGURE_ARGS+=--with-gtk
@@ -38,7 +38,6 @@ PLIST_FILES=	bin/${PORTNAME}${PKGNAMESUFFIX}-gtk
 
 LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MOPTIMIZED_CFLAGS)
@@ -59,10 +58,5 @@ CONFIGURE_ARGS+=--with-sdl-audio
 post-patch:
 	@${REINPLACE_CMD} -e '/%define %1 @UNDERSCORE@%1 /d' \
 		${WRKSRC}/raze/raze.asm.in
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.mk>
