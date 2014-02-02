@@ -3,7 +3,7 @@
 
 PORTNAME=	giacxcas
 PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/giac/freebsd/ \
 		http://www.math.jussieu.fr/~han/xcas/sources/
@@ -18,6 +18,8 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/lib/libntl.a:${PORTSDIR}/math/ntl
 LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp \
+		libpng.so:${PORTSDIR}/graphics/png \
+                libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libpari.so:${PORTSDIR}/math/pari \
 		libmpfr.so:${PORTSDIR}/math/mpfr \
 		libgsl.so:${PORTSDIR}/math/gsl \
@@ -30,12 +32,13 @@ USE_GL=		gl
 USE_XORG=	xcursor xft xi
 USE_TEX=	latex:build dvipsk:build
 USE_LDCONFIG=	yes
-USES=		gettext gmake
-
+USES=		gettext gmake shebangfix desktop-file-utils
+USE_GCC=	yes
 DOCSDIR=	${PREFIX}/share/doc/giac
 PORTDOCS=	*
 DATADIR=	${PREFIX}/share/giac
 PORTDATA=	*
+SHEBANG_FILES=	src/pgiac
 
 CPPFLAGS+=	-I${FLTKDEV-GIAC} -I${COCOALIB-GIAC}/include -I${LOCALBASE}/include
 LDFLAGS+=	-L${FLTKDEV-GIAC}/lib -L${COCOALIB-GIAC}/lib -L${LOCALBASE}/lib
@@ -47,19 +50,27 @@ COCOALIB-GIAC=	${WRKDIR}/CoCoALib-0.9950
 
 INFO=		giac_es giac_us
 
-NO_STAGE=	yes
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} >= 1000000
+CONFIGURE_ARGS+=	--disable-ntl
+.endif
+
 post-patch:
 	@${GREP} -Rl --null /bin/bash ${COCOALIB-GIAC} | ${XARGS} -0 \
 		${REINPLACE_CMD} -e 's|/bin/bash|/usr/bin/env bash|'
 	@${REINPLACE_CMD} -e 's|/usr/bin|${LOCALBASE}/bin|' \
 		${WRKSRC}/xcas.applications ${WRKSRC}/xcas.desktop
+.if ${OSVERSION} >= 1000000
+	@${REINPLACE_CMD} -e 's|friend class Fl_Group;|friend class Fl_Group;friend class Fl_X;|' \
+		${FLTKDEV-GIAC}/FL/Fl_Widget.H
+.endif
 
 pre-configure:
 	cd ${COCOALIB-GIAC} && \
-	./configure --with-libgmp=${LOCALBASE}/lib/libgmp.a && \
+	./configure --with-libgmp=${LOCALBASE}/lib/libgmp.a --with-cxx=${CXX}&& \
 	${GMAKE} library && \
 	cd ${FLTKDEV-GIAC} && \
 	./configure --prefix=${FLTKDEV-GIAC} \
 	&& ${MAKE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
