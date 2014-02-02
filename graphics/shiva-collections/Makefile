@@ -12,5 +12,4 @@ USE_BZIP2=	yes
 USES=		cmake
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
