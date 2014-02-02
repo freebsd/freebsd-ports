@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.gdesklets.info/archive/
 PKGNAMEPREFIX=	gdesklets-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A toolbar for the most recently used items from ~/.recently-used
+COMMENT=	Toolbar for the most recently used items from ~/.recently-used
 
 RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
@@ -22,14 +22,12 @@ SUB_FILES=	pkg-message
 DATADIR=	${PREFIX}/share/gdesklets
 NAME=		RecentlyUsed
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${DATADIR}/Displays/${NAME}
-	${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/Displays/${NAME}
-	@${MKDIR} ${DATADIR}/Sensors/${NAME}
-	${INSTALL_DATA} ${WRKSRC}/Sensors/${NAME}/*.py ${DATADIR}/Sensors/${NAME}
-	${INSTALL_DATA} ${WRKSRC}/Sensors/${NAME}/AUTHORS ${DATADIR}/Sensors/${NAME}
-	@${CP} ${WRKSRC}/Sensors/${NAME}/.recently-used ${DATADIR}/Sensors/${NAME}
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Displays/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/*.display ${STAGEDIR}${DATADIR}/Displays/${NAME}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/Sensors/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/Sensors/${NAME}/*.py ${STAGEDIR}${DATADIR}/Sensors/${NAME}
+	${INSTALL_DATA} ${WRKSRC}/Sensors/${NAME}/AUTHORS ${STAGEDIR}${DATADIR}/Sensors/${NAME}
+	@${CP} ${WRKSRC}/Sensors/${NAME}/.recently-used ${STAGEDIR}${DATADIR}/Sensors/${NAME}
 
 .include <bsd.port.mk>
