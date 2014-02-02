@@ -7,7 +7,7 @@ CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An Gtk2 Todo list manager
+COMMENT=	Gtk2 Todo list manager
 
 USES=		pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix gnomevfs2
@@ -17,5 +17,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 GCONF_SCHEMAS=	gtodo.schemas
 
-NO_STAGE=	yes
+post-patch:
+	${REINPLACE_CMD} '/GCONF_CONFIG_SOURCE=/d' ${WRKSRC}/Makefile.in
+
 .include <bsd.port.mk>
