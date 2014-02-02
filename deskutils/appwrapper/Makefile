@@ -19,9 +19,10 @@ USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/AppWrapper
 
-NO_STAGE=	yes
 post-patch:
 	${RMDIR} ${WRKSRC}/AppWrapper.app/ix86/linux-gnu
 	${RMDIR} ${WRKSRC}/AppWrapper.app/ix86
+	${REINPLACE_CMD} 's|^GNUSTEP_INSTALLATION_DIR|#GNUSTEP_INSTALLATION_DIR|' \
+		${WRKSRC}/GNUmakefile
 
 .include <bsd.port.mk>
