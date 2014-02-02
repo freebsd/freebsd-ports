@@ -13,7 +13,7 @@ COMMENT=	Handwritten Japanese TrueType fonts by Mika-chan
 
 EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
-NO_CDROM=	Don't sell distfile
+NO_CDROM=	Do not sell distfile
 EXTRACT_CMD=	lha
 EXTRACT_BEFORE_ARGS=	pq
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/mika.ttf
@@ -25,12 +25,11 @@ PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
 FONTSDIR=	lib/X11/fonts/TrueType
 
-NO_STAGE=	yes
 do-install:
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	${SETENV} PKG_PREFIX=${STAGEDIR}${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	${INSTALL_DATA} \
 		${WRKDIR}/mika.ttf ${FILESDIR}/fonts.dir.mika \
-		${PREFIX}/${FONTSDIR}
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+		${STAGEDIR}${PREFIX}/${FONTSDIR}
+	${SETENV} PKG_PREFIX=${STAGEDIR}${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
