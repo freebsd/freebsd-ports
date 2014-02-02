@@ -13,5 +13,4 @@ USES=	gmake
 USE_LDCONFIG=	yes
 MAKE_ENV=	prefix=${PREFIX}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
