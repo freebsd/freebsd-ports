@@ -25,7 +25,6 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=	IMAGEMAGICK
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMAGEMAGICK}
