@@ -27,9 +27,6 @@ CONFIGURE_ENV=	X_CFLAGS="-I${LOCALBASE}/include" \
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 INFO=		gdk gtk
-MAN1=		gtk-config.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -44,11 +41,11 @@ pre-build:
 	${RM} -rf ${WRKSRC}/docs/gtk.info*
 
 post-install:
-	@${MKDIR} ${PREFIX}/lib/gtk/themes/engines
-	@${LN} -sf ${PREFIX}/bin/gtk-config ${PREFIX}/bin/gtk12-config
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk/themes/engines
+	@${LN} -sf ${PREFIX}/bin/gtk-config ${STAGEDIR}${PREFIX}/bin/gtk12-config
 .for lib in gdk gtk
-	@${RM} ${PREFIX}/lib/lib${lib}.la ${PREFIX}/lib/lib${lib}.so
-	@${MV} ${PREFIX}/lib/lib${lib}.a ${PREFIX}/lib/lib${lib}-12.a
+	@${RM} ${STAGEDIR}${PREFIX}/lib/lib${lib}.la ${STAGEDIR}${PREFIX}/lib/lib${lib}.so
+	@${MV} ${STAGEDIR}${PREFIX}/lib/lib${lib}.a ${STAGEDIR}${PREFIX}/lib/lib${lib}-12.a
 .endfor
 
 .include <bsd.port.mk>
