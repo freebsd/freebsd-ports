@@ -22,7 +22,6 @@ MASTERDIR?=	${.CURDIR}
 
 SLAVE_PORT=	no
 
-NO_STAGE=	yes
 .include <${MASTERDIR}/Makefile.db>
 .include <bsd.port.pre.mk>
 
