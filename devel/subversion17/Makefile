@@ -199,7 +199,7 @@ post-install:	${MKREPOS_TARGET}
 	@${MAKE} -C ${WRKSRC} install-tools ${MAKE_ARGS}
 .endif
 	@${MKDIR} ${STAGEDIR}${DATADIR}
-	@(cd ${WRKSRC}/tools.examples && ${TAR} --exclude '*.in' -cf - * | ${TAR} -C ${STAGEDIR}${DATADIR} -xof - )
+	@(cd ${WRKSRC}/tools.examples && ${TAR} --exclude '*.in' --exclude '*.bak' -cf - * | ${TAR} -C ${STAGEDIR}${DATADIR} -xof - )
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
