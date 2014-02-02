@@ -117,6 +117,8 @@ lib/libcinepaint_fl_i18n.la
 lib/libcinepaint_fl_i18n.so
 lib/libcinepaint_fl_i18n.so.1
 libdata/pkgconfig/cinepaint-gtk.pc
+man/man1/cinepaint.1.gz
+man/man1/cinepainttool.1.gz
 share/aclocal/cinepaint.m4
 share/applications/cinepaint.desktop
 %%DATADIR%%/%%VER%%/brushes/10x10squareBlurf16.gbr
