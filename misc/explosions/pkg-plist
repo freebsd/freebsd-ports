@@ -1,7 +1,4 @@
 bin/explosions
-%%PORTDOCS%%%%DOCSDIR%%/BUGS.txt
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%DATADIR%%/spark1.png
 %%DATADIR%%/spark2.png
 %%DATADIR%%/spark3.png
@@ -9,5 +6,5 @@ bin/explosions
 %%DATADIR%%/spark5.png
 %%DATADIR%%/spark6.png
 %%DATADIR%%/spark7.png
+share/pixmaps/explosions.png
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
