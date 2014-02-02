@@ -23,9 +23,8 @@ TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		grake.1
 PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/auto/grake
-PLIST_FILES=	bin/grake ${SITE_PERL_REL}/${PERL_ARCH}/auto/grake/.packlist
+PLIST_FILES=	bin/grake ${SITE_PERL_REL}/${PERL_ARCH}/auto/grake/.packlist \
+		man/man1/grake.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
