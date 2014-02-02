@@ -1,0 +1,843 @@
+glassfish-%%GLASSFISHVERSION%%/bin/asadmin
+glassfish-%%GLASSFISHVERSION%%/bin/pkg
+glassfish-%%GLASSFISHVERSION%%/bin/updatetool
+glassfish-%%GLASSFISHVERSION%%/glassfish/bin/appclient
+glassfish-%%GLASSFISHVERSION%%/glassfish/bin/appclient.js
+glassfish-%%GLASSFISHVERSION%%/glassfish/bin/asadmin
+glassfish-%%GLASSFISHVERSION%%/glassfish/bin/asupgrade
+glassfish-%%GLASSFISHVERSION%%/glassfish/bin/capture-schema
+glassfish-%%GLASSFISHVERSION%%/glassfish/bin/jspc
+glassfish-%%GLASSFISHVERSION%%/glassfish/bin/package-appclient
+glassfish-%%GLASSFISHVERSION%%/glassfish/bin/schemagen
+glassfish-%%GLASSFISHVERSION%%/glassfish/bin/startserv
+glassfish-%%GLASSFISHVERSION%%/glassfish/bin/stopserv
+glassfish-%%GLASSFISHVERSION%%/glassfish/bin/wscompile
+glassfish-%%GLASSFISHVERSION%%/glassfish/bin/wsdeploy
+glassfish-%%GLASSFISHVERSION%%/glassfish/bin/wsgen
+glassfish-%%GLASSFISHVERSION%%/glassfish/bin/wsimport
+glassfish-%%GLASSFISHVERSION%%/glassfish/bin/xjc
+glassfish-%%GLASSFISHVERSION%%/glassfish/config/asenv.conf
+glassfish-%%GLASSFISHVERSION%%/glassfish/config/client-jnlp-config.properties
+glassfish-%%GLASSFISHVERSION%%/glassfish/config/glassfish.container
+glassfish-%%GLASSFISHVERSION%%/glassfish/config/osgi.properties
+glassfish-%%GLASSFISHVERSION%%/glassfish/docs/about.html
+glassfish-%%GLASSFISHVERSION%%/glassfish/docs/copyright.html
+glassfish-%%GLASSFISHVERSION%%/glassfish/docs/css/default.css
+glassfish-%%GLASSFISHVERSION%%/glassfish/docs/features.html
+glassfish-%%GLASSFISHVERSION%%/glassfish/docs/graphics/logo_sun.gif
+glassfish-%%GLASSFISHVERSION%%/glassfish/docs/quickstart.html
+glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/config/admin-keyfile
+glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/config/cacerts.jks
+glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/config/default-web.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/config/domain-passwords
+glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/config/domain.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/config/keyfile
+glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/config/keystore.jks
+glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/config/logging.properties
+glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/config/login.conf
+glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/config/server.policy
+glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/config/sun-acc.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/config/wss-server-config-1.0.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/config/wss-server-config-2.0.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/docroot/index.html
+glassfish-%%GLASSFISHVERSION%%/glassfish/legal/3RD-PARTY-LICENSE.txt
+glassfish-%%GLASSFISHVERSION%%/glassfish/legal/LICENSE.txt
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/appclient/appclientlogin.conf
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/appclient/client.policy
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/appclient/wss-client-config-1.0.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/appclient/wss-client-config-2.0.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/appserv-rt.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/deployment/sun-as-jsr88-dm.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/application-client_1_2.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/application-client_1_3.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/application_1_2.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/application_1_3.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/connector_1_0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/ejb-jar_1_1.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/ejb-jar_2_0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/glassfish-application-client_6_0-1.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/glassfish-application_6_0-1.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/glassfish-ejb-jar_3_1-1.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/glassfish-resources_1_5.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/glassfish-web-app_3_0-1.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-application-client-container_1_0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-application-client-container_1_1.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-application-client-container_1_2.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-application-client_1_3-0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-application-client_1_4-0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-application-client_1_4-1.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-application-client_5_0-0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-application-client_6_0-0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-application_1_3-0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-application_1_4-0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-application_5_0-0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-application_6_0-0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-cmp-mapping_1_0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-cmp-mapping_1_1.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-cmp-mapping_1_2.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-connector_1_0-0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-connector_1_5-0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-domain_1_0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-domain_1_1.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-domain_1_2.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-domain_1_3.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-ejb-jar_2_0-0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-ejb-jar_2_0-1.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-ejb-jar_2_1-0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-ejb-jar_2_1-1.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-ejb-jar_3_0-0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-ejb-jar_3_1-0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-loadbalancer_1_0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-loadbalancer_1_1.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-resources_1_0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-resources_1_1.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-resources_1_2.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-resources_1_3.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-resources_1_4.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-server_1_0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-web-app_2_3-0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-web-app_2_3-1.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-web-app_2_4-0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-web-app_2_4-1.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-web-app_2_5-0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/sun-web-app_3_0-0.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/web-app_2_2.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/web-app_2_3.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/web-jsptaglibrary_1_1.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds/web-jsptaglibrary_1_2.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/embedded/glassfish-embedded-shell.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/embedded/glassfish-embedded-static-shell.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/gf-client.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/3rd-party-license
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/META-INF/MANIFEST.MF
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/META-INF/context.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/META-INF/maven/org.glassfish.main.admingui/war/pom.properties
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/META-INF/maven/org.glassfish.main.admingui/war/pom.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/commons-fileupload-1.1.1.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/commons-io-1.3.1.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/dojo-ajax-nodemo-0.4.1.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/json-1.0.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/prototype-1.5.0.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/webui-jsf-4.0.2.9.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra/webui-jsf-suntheme-4.0.2.9.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/WEB-INF/faces-config.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/WEB-INF/lib/console-core-3.1.2.1-SNAPSHOT.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/WEB-INF/sun-web.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/WEB-INF/web.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/index.jsf
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/j_security_check
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/resources/yui/assets/layout-core.css
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/resources/yui/assets/resize-core.css
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/resources/yui/assets/skins/sam/layout-skin.css
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/resources/yui/assets/skins/sam/layout.css
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/resources/yui/assets/skins/sam/layout_sprite.png
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/resources/yui/assets/skins/sam/resize-skin.css
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/resources/yui/assets/skins/sam/resize.css
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/resources/yui/assets/skins/sam/sprite.png
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/resources/yui/connection-min.js
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/resources/yui/dragdrop-min.js
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/resources/yui/element-min.js
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/resources/yui/layout-min.js
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/resources/yui/reset-fonts-grids.css
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/resources/yui/resize-min.js
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/resources/yui/yahoo-dom-event.js
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__cp_jdbc_ra/META-INF/MANIFEST.MF
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__cp_jdbc_ra/__cp_jdbc_ra.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__dm_jdbc_ra/META-INF/MANIFEST.MF
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__dm_jdbc_ra/__dm_jdbc_ra.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__ds_jdbc_ra/META-INF/MANIFEST.MF
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__ds_jdbc_ra/__ds_jdbc_ra.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__xa_jdbc_ra/META-INF/MANIFEST.MF
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__xa_jdbc_ra/__xa_jdbc_ra.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/ejb-timer-service-app.war
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/jaxr-ra/META-INF/MANIFEST.MF
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/jaxr-ra/META-INF/ra.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/jaxr-ra/jaxr-ra.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/jmsra/META-INF/MANIFEST.MF
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/jmsra/META-INF/ra.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/jmsra/fscontext.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/jmsra/imqbroker.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/jmsra/imqjmsbridge.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/jmsra/imqjmsra.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/jmsra/imqjmx.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/jmsra/imqstomp.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/mejb.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/metro/wstx-services.war
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/dbvendormapping/cpds.properties
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/dbvendormapping/dbvendor.properties
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/dbvendormapping/driver.properties
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/dbvendormapping/ds.properties
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/dbvendormapping/validationclassnames.properties
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/dbvendormapping/xads.properties
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/ejbtimer_db2.sql
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/ejbtimer_derby.sql
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/ejbtimer_mssqlserver.sql
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/ejbtimer_mysql.sql
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/ejbtimer_oracle.sql
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/ejbtimer_pointbase.sql
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/ejbtimer_sybase.sql
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/ejbtimer_symfoware.sql
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/upgrade/ejbtimer_upgrade_db2.sql
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/upgrade/ejbtimer_upgrade_derby.sql
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/upgrade/ejbtimer_upgrade_mssqlserver.sql
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/upgrade/ejbtimer_upgrade_mysql.sql
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/upgrade/ejbtimer_upgrade_oracle.sql
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/upgrade/ejbtimer_upgrade_pointbase.sql
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/upgrade/ejbtimer_upgrade_sybase.sql
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/upgrade/ejbtimer_upgrade_symfoware.sql
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/Domain-service-smf.xml.template
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/Domain-service-winsw.xml.template
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/linux-service.template
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/custom/README
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/custom/javabean_custom_resource.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/custom/primitives_string_custom_resource.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/custom/properties_custom_resource.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/custom/url_custom-resource.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/jdbc/README
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/jdbc/db2_dd_datasource.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/jdbc/db2_jcc_datasource.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/jdbc/javadb_type4_datasource.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/jdbc/microsoft_dd_datasource.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/jdbc/microsoft_inet_datasource.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/jdbc/microsoft_jtds_datasource.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/jdbc/microsoft_sqlserver2000_datasource.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/jdbc/microsoft_sqlserver2005_datasource.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/jdbc/mysql_type4_datasource.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/jdbc/oracle_dd_datasource.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/jdbc/oracle_inet_datasource.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/jdbc/oracle_type4_datasource.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/jdbc/postgresql_type4_datasource.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/jdbc/sybase_dd_datasource.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/jdbc/sybase_inet_datasource.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/jdbc/sybase_jconn_datasource.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/javaee.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/javahelp.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/jndi-properties.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/monitor/flashlight-agent.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/package-appclient.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/registration/servicetag-registry.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/XMLSchema.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/application-client_1_4.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/application-client_5.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/application-client_6.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/application_1_4.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/application_5.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/application_6.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/beans_1_0.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/connector_1_5.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/connector_1_6.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/datatypes.dtd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/ejb-jar_2_1.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/ejb-jar_3_0.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/ejb-jar_3_1.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/j2ee_1_4.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/j2ee_jaxrpc_mapping_1_1.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/j2ee_web_services_1_1.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/j2ee_web_services_client_1_1.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/javaee_5.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/javaee_6.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/javaee_web_services_1_2.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/javaee_web_services_1_3.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/javaee_web_services_client_1_2.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/javaee_web_services_client_1_3.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/jax-rpc-ri-config.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/jdbc-data-source.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/jsp_2_0.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/jsp_2_1.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/jsp_2_2.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/orm_1_0.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/orm_2_0.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/persistence_1_0.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/persistence_2_0.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/web-app_2_4.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/web-app_2_5.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/web-app_3_0.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/web-common_3_0.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/web-facelettaglibrary_2_0.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/web-facesconfig_1_2.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/web-facesconfig_2_0.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/web-fragment_3_0.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/web-jsptaglibrary_2_0.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/web-jsptaglibrary_2_1.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/weblogic-application-client.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/weblogic-application.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/weblogic-connector.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/weblogic-ejb-jar.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/weblogic-javaee.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/weblogic-jms.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/weblogic-web-app.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/weblogic-webservices.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas/xml.xsd
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/templates/cacerts.jks
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/templates/default-web.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/templates/docroot/index.html
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/templates/domain-aix.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/templates/domain.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/templates/domain.xml.aix.xsl
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/templates/domain.xml.xsl
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/templates/keyfile
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/templates/keystore.jks
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/templates/logging.properties
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/templates/login.conf
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/templates/profile.properties
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/templates/server.policy
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/templates/sun-acc.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/templates/web-domain.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/templates/wss-server-config-1.0.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/templates/wss-server-config-2.0.xml
+glassfish-%%GLASSFISHVERSION%%/glassfish/lib/upgrade-tool.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/acc-config.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/admin-cli.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/admin-core.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/admin-util.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/amx-all.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/annotation-framework.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/ant.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/antlr-repackaged.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/api-exporter.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/appclient-connector.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/appclient-server-core.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/appclient.security.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/asm-all-repackaged.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/auto-depends.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/autostart/org.apache.felix.eventadmin.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/autostart/org.apache.felix.fileinstall-autodeploy-bundles.cfg
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/autostart/org.apache.felix.scr.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/autostart/osgi-cdi.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/autostart/osgi-ee-resources.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/autostart/osgi-ejb-container.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/autostart/osgi-http.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/autostart/osgi-javaee-base.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/autostart/osgi-jdbc.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/autostart/osgi-jpa.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/autostart/osgi-jta.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/autostart/osgi-web-container.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/backup.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/bean-validator.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/branding.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/cli-optional.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/cluster-admin.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/cluster-cli.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/cluster-common.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/cluster-ssh.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/cmp-ejb-mapping.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/cmp-enhancer.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/cmp-generator-database.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/cmp-internal-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/cmp-model.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/cmp-support-ejb.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/cmp-support-sqlstore.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/cmp-utility.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/common-util.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/config-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/config-types.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/config.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/connectors-admin.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/connectors-inbound-runtime.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/connectors-internal-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/connectors-runtime.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-cluster-plugin-help.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-cluster-plugin.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-common-full-plugin-help.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-common-full-plugin.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-common-help.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-common.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-community-branding-plugin.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-corba-plugin-help.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-corba-plugin.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-ejb-lite-plugin-help.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-ejb-lite-plugin.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-ejb-plugin-help.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-ejb-plugin.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-jca-plugin-help.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-jca-plugin.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-jdbc-plugin-help.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-jdbc-plugin.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-jms-plugin-help.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-jms-plugin.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-jts-plugin-help.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-jts-plugin.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-plugin-service.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-updatecenter-plugin.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-web-plugin-help.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/console-web-plugin.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/container-common.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/dataprovider.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/dbschema-repackaged.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/deployment-admin.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/deployment-autodeploy.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/deployment-client.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/deployment-common.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/deployment-javaee-core.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/deployment-javaee-full.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/dol.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/ejb-container.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/ejb-internal-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/ejb.security.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/endorsed/javax.annotation.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/endorsed/jaxb-api-osgi.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/endorsed/webservices-api-osgi.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/flashlight-extra-jdk-packages.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/flashlight-framework.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/gf-client-module.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/gf-connectors-connector.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/gf-ejb-connector.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/gf-web-connector.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/glassfish-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/glassfish-corba-asm.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/glassfish-corba-codegen.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/glassfish-corba-csiv2-idl.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/glassfish-corba-internal-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/glassfish-corba-newtimer.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/glassfish-corba-omgapi.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/glassfish-corba-orb.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/glassfish-corba-orbgeneric.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/glassfish-ee-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/glassfish-extra-jre-packages.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/glassfish-mbeanserver.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/glassfish-naming.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/glassfish-oracle-jdbc-driver-packages.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/glassfish-registration.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/glassfish.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/gmbal.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/gms-adapter.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/gms-bootstrap.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/grizzly-comet.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/grizzly-config.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/grizzly-container.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/grizzly-framework.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/grizzly-http-ajp.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/grizzly-http-servlet.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/grizzly-http.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/grizzly-lzma.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/grizzly-portunif.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/grizzly-rcm.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/grizzly-utils.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/grizzly-websockets.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/ha-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/ha-file-store.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/ha-shoal-cache-bootstrap.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/ha-shoal-cache-store.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/hk2-core.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/hk2.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/inmemory.jacc.provider.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/internal-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/j-interop-repackaged.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jackson-core-asl.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jackson-jaxrs.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jackson-mapper-asl.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jackson-xc.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jaspic.provider.framework.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/javaee-kernel.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/javax.ejb.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/javax.el-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/javax.el.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/javax.enterprise.deploy.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/javax.faces.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/javax.jms.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/javax.mail.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/javax.management.j2ee.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/javax.persistence.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/javax.resource.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/javax.security.auth.message.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/javax.security.jacc.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/javax.servlet-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/javax.servlet.jsp-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/javax.servlet.jsp.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/javax.servlet.jsp.jstl-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/javax.servlet.jsp.jstl.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/javax.transaction.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jaxb-osgi.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jaxr-api-osgi.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jaxrpc-api-osgi.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jboss-logging.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jdbc-admin.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jersey-client.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jersey-core.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jersey-gf-server.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jersey-gf-servlet.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jersey-gf-statsproviders.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jersey-grizzly.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jersey-json.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jersey-moxy.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jersey-multipart.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jettison.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jms-admin.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jms-core.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jmxremote_optional-repackaged.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jpa-connector.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jsf-connector.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jsftemplating.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jspcaching-connector.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jsr109-impl.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jstl-connector.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jta.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/jts.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/kernel.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/launcher.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/ldapbp-repackaged.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/libpam4j-repackaged.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/load-balancer-admin.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/logging.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/management-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/metro-glue.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/mimepull.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/monitoring-core.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/orb-connector.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/orb-enabler.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/orb-iiop.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/org.apache.felix.configadmin.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/org.apache.felix.fileinstall.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/org.apache.felix.gogo.command.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/org.apache.felix.gogo.runtime.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/org.apache.felix.gogo.shell.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/org.apache.felix.shell.remote.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/org.eclipse.persistence.antlr.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/org.eclipse.persistence.asm.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/org.eclipse.persistence.core.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/org.eclipse.persistence.jpa.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/org.eclipse.persistence.jpa.modelgen.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/org.eclipse.persistence.moxy.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/org.eclipse.persistence.oracle.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/osgi-adapter.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/osgi-container.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/osgi-jpa-extension.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/osgi-resource-locator.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/persistence-common.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/pkg-client.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/registration-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/registration-impl.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/rest-service.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/scattered-archive-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/schema2beans-repackaged.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/security.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/server-mgmt.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/shoal-cache.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/shoal-gms-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/shoal-gms-impl.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/simple-glassfish-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/soap-tcp.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/ssl-impl.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/stats77.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/stax2-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/transaction-internal-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/trilead-ssh2-repackaged.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/war-util.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/web-cli.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/web-core.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/web-embed-api.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/web-embed-impl.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/web-glue.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/web-gui-plugin-common.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/web-ha.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/web-naming.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/websecurity.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/webservices-connector.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/webservices-extra-jdk-packages.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/webservices-osgi.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/webservices.security.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/weld-integration-fragment.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/weld-integration.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/weld-osgi-bundle.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/woodstox-core-asl.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/modules/work-management.jar
+glassfish-%%GLASSFISHVERSION%%/glassfish/osgi/felix/bin/felix.jar
+glassfish-%%GLASSFISHVERSION%%/javadb/3RDPARTY
+glassfish-%%GLASSFISHVERSION%%/javadb/LICENSE
+glassfish-%%GLASSFISHVERSION%%/javadb/NOTICE
+glassfish-%%GLASSFISHVERSION%%/javadb/RELEASE-NOTES.html
+glassfish-%%GLASSFISHVERSION%%/javadb/bin/NetworkServerControl
+glassfish-%%GLASSFISHVERSION%%/javadb/bin/dblook
+glassfish-%%GLASSFISHVERSION%%/javadb/bin/ij
+glassfish-%%GLASSFISHVERSION%%/javadb/bin/setEmbeddedCP
+glassfish-%%GLASSFISHVERSION%%/javadb/bin/setNetworkClientCP
+glassfish-%%GLASSFISHVERSION%%/javadb/bin/setNetworkServerCP
+glassfish-%%GLASSFISHVERSION%%/javadb/bin/startNetworkServer
+glassfish-%%GLASSFISHVERSION%%/javadb/bin/stopNetworkServer
+glassfish-%%GLASSFISHVERSION%%/javadb/bin/sysinfo
+glassfish-%%GLASSFISHVERSION%%/javadb/index.html
+glassfish-%%GLASSFISHVERSION%%/javadb/lib/derby.jar
+glassfish-%%GLASSFISHVERSION%%/javadb/lib/derby.war
+glassfish-%%GLASSFISHVERSION%%/javadb/lib/derbyLocale_cs.jar
+glassfish-%%GLASSFISHVERSION%%/javadb/lib/derbyLocale_de_DE.jar
+glassfish-%%GLASSFISHVERSION%%/javadb/lib/derbyLocale_es.jar
+glassfish-%%GLASSFISHVERSION%%/javadb/lib/derbyLocale_fr.jar
+glassfish-%%GLASSFISHVERSION%%/javadb/lib/derbyLocale_hu.jar
+glassfish-%%GLASSFISHVERSION%%/javadb/lib/derbyLocale_it.jar
+glassfish-%%GLASSFISHVERSION%%/javadb/lib/derbyLocale_ja_JP.jar
+glassfish-%%GLASSFISHVERSION%%/javadb/lib/derbyLocale_ko_KR.jar
+glassfish-%%GLASSFISHVERSION%%/javadb/lib/derbyLocale_pl.jar
+glassfish-%%GLASSFISHVERSION%%/javadb/lib/derbyLocale_pt_BR.jar
+glassfish-%%GLASSFISHVERSION%%/javadb/lib/derbyLocale_ru.jar
+glassfish-%%GLASSFISHVERSION%%/javadb/lib/derbyLocale_zh_CN.jar
+glassfish-%%GLASSFISHVERSION%%/javadb/lib/derbyLocale_zh_TW.jar
+glassfish-%%GLASSFISHVERSION%%/javadb/lib/derbyclient.jar
+glassfish-%%GLASSFISHVERSION%%/javadb/lib/derbynet.jar
+glassfish-%%GLASSFISHVERSION%%/javadb/lib/derbyrun.jar
+glassfish-%%GLASSFISHVERSION%%/javadb/lib/derbytools.jar
+glassfish-%%GLASSFISHVERSION%%/mq/bin/imqadmin
+glassfish-%%GLASSFISHVERSION%%/mq/bin/imqbridgemgr
+glassfish-%%GLASSFISHVERSION%%/mq/bin/imqbrokerd
+glassfish-%%GLASSFISHVERSION%%/mq/bin/imqcmd
+glassfish-%%GLASSFISHVERSION%%/mq/bin/imqdbmgr
+glassfish-%%GLASSFISHVERSION%%/mq/bin/imqkeytool
+glassfish-%%GLASSFISHVERSION%%/mq/bin/imqobjmgr
+glassfish-%%GLASSFISHVERSION%%/mq/bin/imqusermgr
+glassfish-%%GLASSFISHVERSION%%/mq/etc/imqenv.conf
+glassfish-%%GLASSFISHVERSION%%/mq/etc/passfile.sample
+glassfish-%%GLASSFISHVERSION%%/mq/etc/registry/servicetag.xml
+glassfish-%%GLASSFISHVERSION%%/mq/etc/xml/com.sun.cmm.mq.xml
+glassfish-%%GLASSFISHVERSION%%/mq/etc/xml/template/com.sun.cmm.mq.xml
+glassfish-%%GLASSFISHVERSION%%/mq/lib/dtd/sun_jmsbridge_1_0.dtd
+glassfish-%%GLASSFISHVERSION%%/mq/lib/ext/README
+glassfish-%%GLASSFISHVERSION%%/mq/lib/fscontext.jar
+glassfish-%%GLASSFISHVERSION%%/mq/lib/grizzly.jar
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/Master.hs
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/Master.jhm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/MasterTOC.xml
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/add_broker.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/add_broker_destination.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/add_connection_fact.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/add_connfact_clientid.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/add_connfact_handling.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/add_connfact_handling_old.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/add_connfact_jmsx.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/add_connfact_message_header_overrides.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/add_connfact_queue.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/add_connfact_rel.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/add_destination_obj.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/add_object_store.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/broker_config_basic.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/broker_config_logging.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/broker_config_messaging.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/broker_configuration.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/broker_dest_basic.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/broker_dest_durable.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/broker_destination_properties.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/broker_index.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/broker_information.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/conndis_broker.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/conndis_object_store.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/connection_factory_prop.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/connfact_clientid.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/connfact_handling.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/connfact_handling_old.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/connfact_jmsx.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/connfact_message_header_overrides.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/connfact_queue.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/connfact_rel.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/destination_obj_properties.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/ide.css
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/imq_index.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/message_server_syntax.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/object_store_properties.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/os_index.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/overview.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en/service_properties.htm
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/images/AppIcon16xCDE.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/images/Broker16X.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/images/BrokerX16X.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/images/ObjectStore16x.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/images/ObjectStoreX16X.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/help/images/console.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/AboutBox48x.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/Add24.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/AdminConnectBroker24x.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/AdminConnectToObjectStore24x.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/AdminDisConnectBroker24x.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/AdminDisConnectToObjectStore24x.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/AppIcon48x.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/Broker16X.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/BrokerDestinationList16x.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/BrokerQuery24X.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/BrokerX16X.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/CollapseAll24x.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/CollectionOfBrokers16x.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/CollectionOfObjectStores16x.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/Delete24.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/ExpandAll24x.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/ObjectStore16x.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/ObjectStoreCFDestination16xList.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/ObjectStoreX16X.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/Pause24.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/Play24.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/Preferences24.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/Properties24.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/Purge24x.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/Refresh24.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/Restart24x.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/ServiceList16x.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/Shutdown24x.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/dot.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/folder.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/splash_block.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/splash_comm.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin/splash_openmq.gif
+glassfish-%%GLASSFISHVERSION%%/mq/lib/imq.jar
+glassfish-%%GLASSFISHVERSION%%/mq/lib/imqadmin.jar
+glassfish-%%GLASSFISHVERSION%%/mq/lib/imqbridgemgr.jar
+glassfish-%%GLASSFISHVERSION%%/mq/lib/imqbroker.jar
+glassfish-%%GLASSFISHVERSION%%/mq/lib/imqhttp.war
+glassfish-%%GLASSFISHVERSION%%/mq/lib/imqhttps.war
+glassfish-%%GLASSFISHVERSION%%/mq/lib/imqinit
+glassfish-%%GLASSFISHVERSION%%/mq/lib/imqjmsbridge.jar
+glassfish-%%GLASSFISHVERSION%%/mq/lib/imqjmsra.rar
+glassfish-%%GLASSFISHVERSION%%/mq/lib/imqjmx.jar
+glassfish-%%GLASSFISHVERSION%%/mq/lib/imqservlet.jar
+glassfish-%%GLASSFISHVERSION%%/mq/lib/imqstomp.jar
+glassfish-%%GLASSFISHVERSION%%/mq/lib/imqums.war
+glassfish-%%GLASSFISHVERSION%%/mq/lib/imqutil.jar
+glassfish-%%GLASSFISHVERSION%%/mq/lib/imqxm.jar
+glassfish-%%GLASSFISHVERSION%%/mq/lib/install/GenerateXMLFile.class
+glassfish-%%GLASSFISHVERSION%%/mq/lib/install/SetupJDKHome.class
+glassfish-%%GLASSFISHVERSION%%/mq/lib/install/init-config
+glassfish-%%GLASSFISHVERSION%%/mq/lib/install/mqconfigmf
+glassfish-%%GLASSFISHVERSION%%/mq/lib/jaxm-api.jar
+glassfish-%%GLASSFISHVERSION%%/mq/lib/jhall.jar
+glassfish-%%GLASSFISHVERSION%%/mq/lib/jms.jar
+glassfish-%%GLASSFISHVERSION%%/mq/lib/jta.jar
+glassfish-%%GLASSFISHVERSION%%/mq/lib/props/broker/default.properties
+glassfish-%%GLASSFISHVERSION%%/mq/lib/props/broker/install.properties
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/allclasses-frame.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/allclasses-noframe.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/AbstractFileAction.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/Action.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/DependAction.Type.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/DependAction.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/DirAction.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/FileAction.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/Fmri.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/Image.FmriState.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/Image.ImagePlan.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/Image.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/ImagePlanProgressTracker.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/LicenseAction.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/LinkAction.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/Manifest.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/SetAction.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/SystemInfo.UpdateCheckFrequency.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/SystemInfo.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/Variant.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/Version.DotSequence.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/Version.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/package-frame.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/package-summary.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client/package-tree.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/constant-values.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/deprecated-list.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/help-doc.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/index-all.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/index.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/overview-tree.html
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/package-list
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/resources/inherit.gif
+glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/stylesheet.css
+glassfish-%%GLASSFISHVERSION%%/pkg/lib/pkg-bootstrap.jar
+glassfish-%%GLASSFISHVERSION%%/pkg/lib/pkg-bootstub.sh
+glassfish-%%GLASSFISHVERSION%%/pkg/lib/pkg-client.jar
+@dirrm glassfish-%%GLASSFISHVERSION%%/pkg/lib
+@dirrm glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/resources
+@dirrm glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg/client
+@dirrm glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun/pkg
+@dirrm glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com/sun
+@dirrm glassfish-%%GLASSFISHVERSION%%/pkg/javadocs/com
+@dirrm glassfish-%%GLASSFISHVERSION%%/pkg/javadocs
+@dirrm glassfish-%%GLASSFISHVERSION%%/pkg
+@dirrm glassfish-%%GLASSFISHVERSION%%/mq/lib/props/broker
+@dirrm glassfish-%%GLASSFISHVERSION%%/mq/lib/props
+@dirrm glassfish-%%GLASSFISHVERSION%%/mq/lib/install
+@dirrm glassfish-%%GLASSFISHVERSION%%/mq/lib/images/admin
+@dirrm glassfish-%%GLASSFISHVERSION%%/mq/lib/images
+@dirrm glassfish-%%GLASSFISHVERSION%%/mq/lib/help/images
+@dirrm glassfish-%%GLASSFISHVERSION%%/mq/lib/help/en
+@dirrm glassfish-%%GLASSFISHVERSION%%/mq/lib/help
+@dirrm glassfish-%%GLASSFISHVERSION%%/mq/lib/ext
+@dirrm glassfish-%%GLASSFISHVERSION%%/mq/lib/dtd
+@dirrm glassfish-%%GLASSFISHVERSION%%/mq/lib
+@dirrm glassfish-%%GLASSFISHVERSION%%/mq/etc/xml/template
+@dirrm glassfish-%%GLASSFISHVERSION%%/mq/etc/xml
+@dirrm glassfish-%%GLASSFISHVERSION%%/mq/etc/registry
+@dirrm glassfish-%%GLASSFISHVERSION%%/mq/etc
+@dirrm glassfish-%%GLASSFISHVERSION%%/mq/bin
+@dirrm glassfish-%%GLASSFISHVERSION%%/mq
+@dirrm glassfish-%%GLASSFISHVERSION%%/javadb/lib
+@dirrm glassfish-%%GLASSFISHVERSION%%/javadb/bin
+@dirrm glassfish-%%GLASSFISHVERSION%%/javadb
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/osgi/felix/conf
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/osgi/felix/bin
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/osgi/felix
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/osgi
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/modules/endorsed
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/modules/autostart
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/modules
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/templates/docroot
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/templates
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/schemas
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/registration
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/monitor
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/jdbc
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources/custom
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates/resources
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/templates
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/upgrade
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases/dbvendormapping
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/databases
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/metro
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/jmsra/META-INF
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/jmsra
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/jaxr-ra/META-INF
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/jaxr-ra
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__xa_jdbc_ra/META-INF
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__xa_jdbc_ra
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__ds_jdbc_ra/META-INF
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__ds_jdbc_ra
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__dm_jdbc_ra/META-INF
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__dm_jdbc_ra
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__cp_jdbc_ra/META-INF
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__cp_jdbc_ra
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/resources/yui/assets/skins/sam
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/resources/yui/assets/skins
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/resources/yui/assets
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/resources/yui
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/resources
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/WEB-INF/lib
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/WEB-INF/extra
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/WEB-INF
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/META-INF/maven/org.glassfish.main.admingui/war
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/META-INF/maven/org.glassfish.main.admingui
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/META-INF/maven
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui/META-INF
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications/__admingui
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install/applications
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/install
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/endorsed
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/embedded
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/dtds
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/deployment
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/asadmin
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib/appclient
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/lib
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/legal
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/logs
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/lib/ext
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/lib/databases
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/lib/classes
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/lib/applibs
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/lib
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/docroot
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/config
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/bin
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/autodeploy/bundles
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/autodeploy/.autodeploystatus
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/autodeploy
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1/applications
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/domains/domain1
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/domains
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/docs/graphics
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/docs/css
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/docs
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/config
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish/bin
+@dirrm glassfish-%%GLASSFISHVERSION%%/glassfish
+@dirrm glassfish-%%GLASSFISHVERSION%%/bin
+@dirrm glassfish-%%GLASSFISHVERSION%%
