@@ -3,7 +3,7 @@
 
 PORTNAME=	sass-rails
 PORTVERSION=	3.2.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -19,5 +19,8 @@ RUN_DEPENDS=	rubygem-railties>=3.2.0:${PORTSDIR}/www/rubygem-railties \
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
+ 
+post-patch:
+	@${REINPLACE_CMD} -e '46 s|~>|>=|' ${WRKSRC}/${GEM_NAME}.gemspec
 
 .include <bsd.port.mk>
