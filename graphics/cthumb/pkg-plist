@@ -1,4 +1,5 @@
 bin/cthumb
+man/man1/cthumb.1.gz
 %%DATADIR%%/blue-steel.theme/1.gif
 %%DATADIR%%/blue-steel.theme/back.png
 %%DATADIR%%/blue-steel.theme/bot.png
