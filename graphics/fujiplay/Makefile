@@ -17,17 +17,16 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/fujiplay bin/yycc2ppm
 PORTDOCS=	README fujiplay.lsm mx700-commands.html
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/^\(CC[^g]*\)gcc$$/\1${CC}/' ${WRKSRC}/Makefile
 
 do-install:
-	(cd ${WRKDIR}; ${INSTALL_PROGRAM} fujiplay yycc2ppm ${PREFIX}/bin)
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/fujiplay
+	(cd ${WRKDIR}; ${INSTALL_PROGRAM} fujiplay yycc2ppm ${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/fujiplay
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKDIR}/${f} ${PREFIX}/share/doc/fujiplay
+	${INSTALL_DATA} ${WRKDIR}/${f} ${STAGEDIR}${PREFIX}/share/doc/fujiplay
 .endfor
-.endif
 
 .include <bsd.port.mk>
