@@ -20,15 +20,13 @@ PORTEXAMPLES=	example1.png example1.tex example2.png example2.tex \
 		example3.png example3.tex example4.png example4.tex \
 		fig_1.eps
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,^#!/bin/bash,#!${LOCALBASE}/bin/bash,g" ${WRKSRC}/tex2im
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/tex2im ${PREFIX}/bin
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/tex2im ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${INSTALL_DATA} ${PORTEXAMPLES} \
+		${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
