@@ -251,6 +251,7 @@
     SUBDIR += get_flash_videos
     SUBDIR += getleft
     SUBDIR += gist
+    SUBDIR += glassfish
     SUBDIR += glpi
     SUBDIR += gnome-user-share
     SUBDIR += gnome-web-photo

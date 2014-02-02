@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: glassfish
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# glassfish_enable (bool):	    Set to NO by default.
+# 		  		    Set it to YES to enable doormand.
+
+. /etc/rc.subr
+
+name=glassfish
+rcvar=glassfish_enable
+
+load_rc_config $name
+
+: ${glassfish_enable:=NO}
+
+export PATH=${PATH}:%%LOCALBASE%%/bin
+
+start_cmd="%%PREFIX%%/glassfish-%%GLASSFISHVERSION%%/bin/asadmin start-domain"
+stop_cmd="%%PREFIX%%/glassfish-%%GLASSFISHVERSION%%/bin/asadmin stop-domain"
+
+run_rc_command "$1"
