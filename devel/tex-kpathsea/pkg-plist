@@ -52,6 +52,15 @@ include/kpathsea/types.h
 include/kpathsea/variable.h
 include/kpathsea/version.h
 include/kpathsea/win32lib.h
+man/man1/kpseaccess.1.gz
+man/man1/kpsereadlink.1.gz
+man/man1/kpsestat.1.gz
+man/man1/kpsewhich.1.gz
+man/man1/mktexlsr.1.gz
+man/man1/mktexmf.1.gz
+man/man1/mktexpk.1.gz
+man/man1/mktextfm.1.gz
+man/man1/texhash.1.gz
 @dirrm include/kpathsea
 lib/libkpathsea.a
 lib/libkpathsea.la
