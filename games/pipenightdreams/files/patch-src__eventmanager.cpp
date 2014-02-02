@@ -1,5 +1,5 @@
---- src/eventmanager.cpp.orig	Sat Jan  1 14:52:51 2005
-+++ src/eventmanager.cpp	Sat Jan  1 14:52:55 2005
+--- ./src/eventmanager.cpp.orig	2002-01-17 20:56:26.000000000 +0100
++++ ./src/eventmanager.cpp	2014-02-01 23:41:06.000000000 +0100
 @@ -40,7 +40,7 @@
    lista_streams->remove(lista_streams->indexOf(s));
  }

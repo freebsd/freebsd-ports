@@ -1,5 +1,5 @@
---- src/score.cpp.orig	Sat Jan  1 14:44:00 2005
-+++ src/score.cpp	Sat Jan  1 14:44:07 2005
+--- ./src/score.cpp.orig	2002-01-17 20:56:42.000000000 +0100
++++ ./src/score.cpp	2014-02-01 23:41:06.000000000 +0100
 @@ -18,7 +18,7 @@
  #include "score.h"
  #include <math.h>

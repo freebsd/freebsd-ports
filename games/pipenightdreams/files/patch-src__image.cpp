@@ -1,5 +1,5 @@
---- src/image.cpp.orig	Sat Jan  1 14:47:18 2005
-+++ src/image.cpp	Sat Jan  1 14:47:24 2005
+--- ./src/image.cpp.orig	2002-01-17 20:56:32.000000000 +0100
++++ ./src/image.cpp	2014-02-01 23:41:06.000000000 +0100
 @@ -19,7 +19,7 @@
  #include "SDL_image.h"
  #include <stdio.h>

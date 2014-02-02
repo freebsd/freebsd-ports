@@ -1,5 +1,5 @@
---- src/pipe.cpp.orig	Sat Jan  1 14:45:09 2005
-+++ src/pipe.cpp	Sat Jan  1 14:45:19 2005
+--- ./src/pipe.cpp.orig	2002-01-21 05:08:13.000000000 +0100
++++ ./src/pipe.cpp	2014-02-01 23:41:06.000000000 +0100
 @@ -43,11 +43,11 @@
    return !(full_level>0) && !fixed;
  }
