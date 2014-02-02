@@ -45,18 +45,15 @@ LIBTOOLFILES=	${CONFIGURE_SCRIPT}
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 USE_LDCONFIG=	yes
 
-.if !defined(NOPORTDOCS)
 INSTALL_TARGET+=	install_docs docdir=${DOCSDIR}
 PORTDOCS=	*
-.endif
 
-NO_STAGE=	yes
 post-install:
 .for i in libdb libdb_cxx
-	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${PREFIX}/lib
-	${LN} -s -f ${i}-${BDBVER}.so.0 ${PREFIX}/lib/${i}-${BDBVER}.so
+	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${STAGEDIR}${PREFIX}/lib
+	${LN} -s -f ${i}-${BDBVER}.so.0  ${STAGEDIR}${PREFIX}/lib/${i}-${BDBVER}.so
 .endfor
-	cd ${PREFIX}/bin/${PORTNAME} ; \
+	cd  ${STAGEDIR}${PREFIX}/bin/${PORTNAME} ; \
 	for i in * ; do ${LN} -s -f ${PORTNAME}/$$i ../$$i-${BDBVER} ; done
 
 .include <bsd.port.mk>
