@@ -1,5 +1,5 @@
---- src/player.h.orig	Sat Apr 23 14:01:47 2005
-+++ src/player.h	Sat Apr 23 14:01:49 2005
+--- ./src/player.h.orig	2002-01-17 20:56:40.000000000 +0100
++++ ./src/player.h	2014-02-01 23:41:06.000000000 +0100
 @@ -47,8 +47,8 @@
      void setStartRowColumn(int row, int column);
      void setBoard(Board * bd);

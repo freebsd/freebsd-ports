@@ -1,5 +1,5 @@
---- src/graphic.cpp.orig	Sat Jan  1 14:51:18 2005
-+++ src/graphic.cpp	Sat Jan  1 14:52:31 2005
+--- ./src/graphic.cpp.orig	2002-01-17 20:56:29.000000000 +0100
++++ ./src/graphic.cpp	2014-02-01 23:41:06.000000000 +0100
 @@ -44,11 +44,11 @@
    if (pixels) free(pixels);
  }

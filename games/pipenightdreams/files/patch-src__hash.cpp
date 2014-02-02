@@ -1,5 +1,5 @@
---- src/hash.cpp.orig	Sat Jan  1 14:48:35 2005
-+++ src/hash.cpp	Sat Jan  1 14:50:49 2005
+--- ./src/hash.cpp.orig	2002-01-17 20:56:30.000000000 +0100
++++ ./src/hash.cpp	2014-02-01 23:41:06.000000000 +0100
 @@ -55,10 +55,12 @@
    return(sum % nbuckets);
  }

@@ -3,22 +3,29 @@
 
 PORTNAME=	pipenightdreams
 PORTVERSION=	0.10.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	games
 MASTER_SITES=	http://www.libsdl.org/projects/pipenightdreams/packages/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A puzzle game similar to PipeMania
+COMMENT=	Puzzle game similar to PipeMania
 
+LICENSE=	GPLv2
+
+USE_BZIP2=	yes
+USES=		gmake
 USE_SDL=	image sdl
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
 
-MAN6=		pipenightdreams.6
+CPPFLAGS+=	-I${LOCALBASE}/include -w
 
-NO_STAGE=	yes
+PORTDOCS=	AUTHORS ChangeLog NEWS README
+
+OPTIONS_DEFINE=	DOCS
+
+DESKTOP_ENTRIES="PipeNightDreams" "" ${PORTNAME} \
+		"${PORTNAME}" "Game;LogicGame;" ""
+
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -30,5 +37,12 @@ post-patch:
 			s/^pipenightdreams_LDADD.+//g;'
 	${REINPLACE_CMD} "s|/usr/share/games|${LOCALBASE}/share|g" \
 		${WRKSRC}/src/main.cpp
+
+post-install:
+	${LN} -sf ${DATADIR}/images/default/splash.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>

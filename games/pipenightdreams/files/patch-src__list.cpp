@@ -1,5 +1,5 @@
---- src/list.cpp.orig	Sat Jan  1 14:45:36 2005
-+++ src/list.cpp	Sat Jan  1 14:47:10 2005
+--- ./src/list.cpp.orig	2002-01-17 20:56:35.000000000 +0100
++++ ./src/list.cpp	2014-02-01 23:41:06.000000000 +0100
 @@ -125,7 +125,7 @@
    return (insert(indexOf(i), obj));
  }
