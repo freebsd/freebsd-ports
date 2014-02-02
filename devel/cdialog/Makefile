@@ -33,7 +33,7 @@ INSTALL_TARGET=	install-strip install-man install-lib
 .include <bsd.port.pre.mk>
 
 .if ${NCURSESBASE} != /usr
-CONFIGURE_ARGS=	--with-curses-dir=${NCURSESBASE}
+CONFIGURE_ARGS+=	--with-curses-dir=${NCURSESBASE}
 .endif
 
 post-patch:
