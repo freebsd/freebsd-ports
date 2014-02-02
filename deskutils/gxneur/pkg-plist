@@ -1,4 +1,5 @@
 bin/gxneur
+man/man1/gxneur.1.gz
 share/applications/gxneur.desktop
 %%DATADIR%%/pixmaps/am.png
 %%DATADIR%%/pixmaps/bg.png
