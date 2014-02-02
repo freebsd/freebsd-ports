@@ -26,8 +26,6 @@ CONFIGURE_ARGS+=	--disable-statgrab
 PLIST_SUB+=		STATGRAB="@comment "
 .else
 PLIST_SUB+=		STATGRAB=""
-MAN1+=			statgrab.1 statgrab-make-mrtg-config.1 \
-			statgrab-make-mrtg-index.1
 .endif
 
 .ifdef(WITHOUT_SAIDAR)
@@ -35,8 +33,6 @@ CONFIGURE_ARGS+=	--disable-saidar
 PLIST_SUB+=		SAIDAR="@comment "
 .else
 PLIST_SUB+=		SAIDAR=""
-MAN1+=			saidar.1
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
