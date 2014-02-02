@@ -11,10 +11,9 @@ COMMENT=	Character Animation Viewer for Everyone
 
 GNU_CONFIGURE=	yes
 
-MAN1=		${PORTNAME}.1
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/cave.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${LN} -sf ${PORTNAME}.man ${WRKSRC}/doc/${PORTNAME}.1
 
