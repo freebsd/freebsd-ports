@@ -14,19 +14,14 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/xpcom/vboxxpcom.py:${PORTSDIR}/emulators/virtu
 USE_PYTHON=	yes
 USE_GNOME=	gtk30 pygtk2
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 INSTALLS_ICONS=	yes
 
 OPTIONS_DEFINE=	NLS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+NLS_USES=	gettext
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-PLIST_SUB+=	NLS="@comment "
-.endif
+.include <bsd.port.options.mk>
 
 post-patch:
 .if ! ${PORT_OPTIONS:MNLS}
