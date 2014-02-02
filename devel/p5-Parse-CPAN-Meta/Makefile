@@ -18,9 +18,6 @@ RUN_DEPENDS=	p5-CPAN-Meta-YAML>=0.008:${PORTSDIR}/devel/p5-CPAN-Meta-YAML
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Parse::CPAN::Meta.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501600
