@@ -2,16 +2,18 @@
 # $FreeBSD$
 
 PORTNAME=	pkg_rmleaves
-PORTVERSION=	20050922
+PORTVERSION=	20140110
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://utenti.gufi.org/~drizzt/codes/ports/${PORTNAME}/
+MASTER_SITES=	http://alex.wittig.name/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Interactive script for deinstalling 'leaf' packages
+MAINTAINER=	alexander@wittig.name
+COMMENT=	Interactive script for deinstalling leaf packages
+
+LICENSE=	BSD2CLAUSE
 
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}
 
 PLIST_FILES=	sbin/pkg_rmleaves man/man1/pkg_rmleaves.1.gz
 
