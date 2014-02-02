@@ -1,11 +1,4 @@
 bin/gnurobots
-%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/Robots-HOWTO
-%%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%%%DOCSDIR%%/contrib
 %%DATADIR%%/maps/maze.map
 %%DATADIR%%/maps/pattern.map
 %%DATADIR%%/maps/small.map
@@ -15,7 +8,7 @@ bin/gnurobots
 %%DATADIR%%/scheme/simple.scm
 %%DATADIR%%/scheme/stop.scm
 %%DATADIR%%/scheme/zap.scm
+share/pixmaps/gnurobots.png
 @dirrm %%DATADIR%%/scheme
 @dirrm %%DATADIR%%/maps
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

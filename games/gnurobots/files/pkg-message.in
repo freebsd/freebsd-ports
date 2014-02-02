@@ -1,0 +1,12 @@
+===============================================================================
+
+GNU Robots has been installed.
+
+Where to find things
+
+  - A place to start: %%DOCSDIR%%/doc/Robots-HOWTO
+  - Example maps:     %%DATADIR%%/maps/
+  - Example robots:   %%DATADIR%%/scheme/
+  - Binaries:         gnurobots
+
+===============================================================================
