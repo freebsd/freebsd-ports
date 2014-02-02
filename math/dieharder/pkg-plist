@@ -50,4 +50,6 @@ lib/libdieharder.a
 lib/libdieharder.la
 lib/libdieharder.so
 lib/libdieharder.so.3
+man/man1/dieharder.1.gz
+man/man3/libdieharder.3.gz
 @dirrm include/dieharder

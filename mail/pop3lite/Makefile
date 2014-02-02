@@ -12,17 +12,14 @@ COMMENT=	A flexible, modular RFC-compliant POP3 daemon
 
 USE_AUTOTOOLS=	libtool libltdl
 USE_GNOME=	glib12
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN5=		pop3lite.conf.5
-MAN8=		pop3lite.8
 INFO=		pop3lite-admin
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/configure
