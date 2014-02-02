@@ -12,8 +12,7 @@ COMMENT=	Common startup and shutdown subroutines used by GNOME scripts
 NO_BUILD=	yes
 PLIST_FILES=	etc/gnome.subr
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${FILESDIR}/gnome.subr ${PREFIX}/etc
+	${INSTALL_DATA} ${FILESDIR}/gnome.subr ${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>
