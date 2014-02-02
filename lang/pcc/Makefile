@@ -18,11 +18,12 @@ USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	YACC=${YACC}
 
-MAN1=		ccom.1 cpp.1 pcc.1
-PLIST_FILES=	bin/pcc libexec/ccom libexec/cpp
+PLIST_FILES=	bin/pcc libexec/ccom libexec/cpp \
+		man/man1/ccom.1.gz man/man1/cpp.1.gz \
+		man/man1/pcc.1.gz
 
 # Fix -jX builds: use -C switch instead of cd'ing and add missing dependency
-NO_STAGE=	yes
+
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -E \
 	's/cd (.+)(;| &&) (\$$[{(]MAKE[})][^$$]*)( \$$\(MFLAGS\))?/\3 -C \1/'

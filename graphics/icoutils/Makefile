@@ -25,11 +25,11 @@ CONFIGURE_ARGS=	--disable-nls
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		icotool.1 wrestool.1
 PLIST_FILES=	bin/icotool \
-		bin/wrestool
+		bin/wrestool \
+		man/man1/icotool.1.gz \
+		man/man1/wrestool.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRESSCRIPTS}
