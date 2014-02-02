@@ -3,6 +3,7 @@
 
 PORTNAME=		c6
 PORTVERSION=		6.4
+PORTREVISION=		1
 CATEGORIES=		emulators linux
 MASTER_SITES=		http://vault.centos.org/${PORTVERSION}/os/i386/Packages/
 PKGNAMEPREFIX=		linux_base-
@@ -11,7 +12,7 @@ DIST_SUBDIR=		rpm/${LINUX_RPM_ARCH}/centos/${PORTVERSION}
 EXTRACT_ONLY=		${BIN_DISTFILES}
 
 MAINTAINER=	emulation@FreeBSD.org
-COMMENT=	Base set of packages needed in Linux mode for i386/amd64 (Linux CentOS 6.2)
+COMMENT=	Base set of packages needed in Linux mode for i386/amd64 (Linux CentOS 6)
 
 BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		bash-4.1.2-14.el6.${LINUX_RPM_ARCH}.rpm \
@@ -44,6 +45,7 @@ BIN_DISTFILES=	basesystem-10.0-4.el6.noarch.rpm \
 		libselinux-2.0.94-5.3.el6.${LINUX_RPM_ARCH}.rpm \
 		libsepol-2.0.41-4.el6.${LINUX_RPM_ARCH}.rpm \
 		libstdc++-4.4.7-3.el6.${LINUX_RPM_ARCH}.rpm \
+		libuuid-2.17.2-12.9.el6.${LINUX_RPM_ARCH}.rpm \
 		ncurses-5.7-3.20090208.el6.${LINUX_RPM_ARCH}.rpm \
 		ncurses-libs-5.7-3.20090208.el6.${LINUX_RPM_ARCH}.rpm \
 		pcre-7.8-6.el6.${LINUX_RPM_ARCH}.rpm \
@@ -92,6 +94,7 @@ SRC_DISTFILES=	basesystem-10.0-4.el6.src.rpm \
 		setserial-2.17-25.el6.src.rpm \
 		setup-2.8.14-20.el6.src.rpm \
 		slang-2.2.1-1.el6.src.rpm \
+		util-linux-ng-2.17.2-12.9.el6.src.rpm \
 		zlib-1.2.3-29.el6.src.rpm
 
 ALWAYS_KEEP_DISTFILES=	yes
