@@ -30,12 +30,10 @@ CONFIGURE_ARGS=		--enable-compat185 --enable-dump185 \
 			--libdir=${PREFIX}/lib/${PORTNAME} \
 			--bindir=${PREFIX}/bin/${PORTNAME}
 INSTALL_TARGET=		install_include install_lib install_utilities
-.if !defined(NOPORTDOCS)
+
 INSTALL_TARGET+=	install_docs docdir=${DOCSDIR}
 PORTDOCS=		*
-.endif
 
-NO_STAGE=	yes
 pre-patch:
 	${REINPLACE_CMD} -Ee 's|-l?pthread|${PTHREAD_LIBS}|g; s,/usr/bin/objformat \|\| echo aout,/usr/bin/objformat || echo elf,' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
@@ -47,13 +45,13 @@ post-configure:
 
 post-install:
 .for i in libdb libdb_cxx
-	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${PREFIX}/lib
-	${LN} -s -f ${i}-${BDBVER}.so.0 ${PREFIX}/lib/${i}-${BDBVER}.so
+	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${STAGEDIR}${PREFIX}/lib
+	${LN} -s -f ${i}-${BDBVER}.so.0 ${STAGEDIR}${PREFIX}/lib/${i}-${BDBVER}.so
 .endfor
 .if !defined(NOPORTDOCS)
 	@${RMDIR} ${DOCSDIR}/ref/splash 2>/dev/null || :
 .endif
-	cd ${PREFIX}/bin/${PORTNAME} ; \
+	cd ${STAGEDIR}${PREFIX}/bin/${PORTNAME} ; \
 	for i in * ; do ${LN} -s -f ${PORTNAME}/$$i ../$$i-${BDBVER} ; done
 .include <bsd.port.pre.mk>
 
