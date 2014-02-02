@@ -16,21 +16,17 @@ USE_BZIP2=	yes
 USE_QT4=	corelib dbus gui network xml \
 		moc_build qmake_build rcc_build uic_build
 USE_OPENSSL=	yes
-USES=		cmake
+USES=		cmake desktop-file-utils
 CMAKE_ARGS=	-DCMAKE_CXX_FLAGS_RELEASE:STRING="-DNDEBUG" \
 		-DMANPAGE_DIRECTORY:STRING="${MANPREFIX}/man/man1" \
 		-DMARKDOWN_LOCATION:STRING="${LOCALBASE}/bin/markdown"
 
-MANCOMPRESSED=	yes
-MAN1=		qtm.1
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in Changelog INSTALL README
-	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
