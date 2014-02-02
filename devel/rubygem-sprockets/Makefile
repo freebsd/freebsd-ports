@@ -3,6 +3,7 @@
 
 PORTNAME=	sprockets
 PORTVERSION=	2.10.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -21,5 +22,8 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/sprockets
+
+post-patch:
+	@${REINPLACE_CMD} -e '73 s|~>|">="|; 80,87 d' ${WRKSRC}/${GEM_NAME}.gemspec
 
 .include <bsd.port.mk>
