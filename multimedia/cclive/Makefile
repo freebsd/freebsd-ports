@@ -23,9 +23,8 @@ CONFIGURE_ARGS+=--with-boost=${LOCALBASE}
 USES=		pkgconfig
 USE_XZ=		yes
 
-MAN1=		cclive.1
 PLIST_FILES=	bin/ccl \
-		bin/cclive
+		bin/cclive \
+		man/man1/cclive.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
