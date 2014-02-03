@@ -297,4 +297,6 @@ include/ecl/unify.h
 %%THREADS%%@dirrm include/ecl/atomic_ops/sysdeps/armcc
 %%THREADS%%@dirrm include/ecl/atomic_ops/sysdeps
 %%THREADS%%@dirrm include/ecl/atomic_ops
+man/man1/ecl-config.1.gz
+man/man1/ecl.1.gz
 @dirrm include/ecl

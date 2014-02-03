@@ -11,16 +11,16 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GameBoy(tm) emulator
 
 USE_SDL=	sdl
-USE_GMAKE=	yes
+USES=	gmake
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 
-PLIST_FILES=	bin/gngb
+PLIST_FILES=	bin/gngb \
+		man/man1/gngb.1.gz
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		gngb.1
 
 .if defined(WITH_GL)
 USE_GL=		gl
@@ -28,7 +28,6 @@ USE_GL=		gl
 CONFIGURE_ARGS+=	--disable-gl
 .endif
 
-NO_STAGE=	yes
 pre-everything::
 .if !defined(WITH_GL)
 	@${ECHO_MSG}

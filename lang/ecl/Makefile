@@ -29,11 +29,8 @@ CLX_DESC=	Enable X11 interface
 SOCKETS_DESC=	Enable socket interface
 DFFI_DESC=	Dynamic foreign-function support
 
-MAN1=		ecl.1 ecl-config.1
-
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
