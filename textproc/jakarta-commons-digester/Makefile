@@ -20,6 +20,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 
 USE_ANT=	yes
+MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES
 MAKE_ARGS=	-Dcommons-beanutils.api=${COMMONS_BEANUTILS_API} \
 		-Dcommons-collections.api=${COMMONS_COLLECTIONS_API} \
 		-Dcommons-logging.api=${COMMONS_LOGGING_API} \
