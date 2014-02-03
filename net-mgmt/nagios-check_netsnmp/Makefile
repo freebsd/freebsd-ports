@@ -20,10 +20,10 @@ NO_BUILD=	yes
 PLIST_FILES=	libexec/nagios/check_netsnmp %%DOCSDIR%%/check_netsnmp.html
 PLIST_DIRS=	%%DOCSDIR%%
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/check_netsnmp ${PREFIX}/libexec/nagios
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${FILESDIR}/check_netsnmp.html ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
+	${INSTALL_SCRIPT} ${FILESDIR}/check_netsnmp ${STAGEDIR}${PREFIX}/libexec/nagios
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/check_netsnmp.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
