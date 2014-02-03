@@ -7,5 +7,13 @@ lib/libppd.la
 lib/libppd.so
 lib/libppd.so.1
 share/postscript/ppd/generic-printer.ppd
+man/man1/ppdfilt.1.gz
+man/man3/ppd_check_option_is_marked.3.gz
+man/man3/ppd_emit_to_file.3.gz
+man/man3/ppd_file_free.3.gz
+man/man3/ppd_file_new.3.gz
+man/man3/ppd_find_choice.3.gz
+man/man3/ppd_get_num_conflicts.3.gz
+man/man3/ppd_get_page_length.3.gz
 @dirrm share/postscript/ppd
 @dirrm share/postscript
