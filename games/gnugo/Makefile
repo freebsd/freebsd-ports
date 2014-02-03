@@ -11,13 +11,12 @@ MAINTAINER=	spcoltri@omcl.org
 COMMENT=	The game of Go
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 INFO=		gnugo
-MAN6=		gnugo.6
-PLIST_FILES=	bin/gnugo
+PLIST_FILES=	bin/gnugo \
+		man/man6/gnugo.6.gz
 
-NO_STAGE=	yes
 post-extract:
 	${RM} -f ${WRKSRC}/doc/gnugo.info*
 

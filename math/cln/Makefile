@@ -21,7 +21,6 @@ CONFIGURE_ARGS=	--with-gmp
 USE_LDCONFIG=	yes
 
 INFO=		cln
-MAN1=		pi.1
 
 STRIP=		# none
 
@@ -29,7 +28,6 @@ CFLAGS+=	-fPIC
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
