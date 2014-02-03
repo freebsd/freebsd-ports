@@ -1,5 +1,6 @@
-Xfce 4 clipboard module for xfce4-panel.  This plugin is a clipboard history
-for the panel. It now includes a "Clear clipboard" option, and a drag-and-drop
-paste feature contributed by Andre Lerche.
+Clipboard Manager for the Xfce Panel and as a standalone application. It keep
+the clipboard contents around (even after an application quits), it is able
+to handle text and images, and has a feature to execute actions on specific
+text selection by matching them against regexes.
 
 WWW: http://goodies.xfce.org/projects/panel-plugins/xfce4-clipman-plugin
