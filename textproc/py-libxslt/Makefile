@@ -13,7 +13,8 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-USE_GNOME=	gnomehack lthack libxslt
+USES=		pathfix
+USE_GNOME=	lthack libxslt
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
@@ -22,9 +23,8 @@ CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 DOCSDIR=	${PREFIX}/share/doc/py-libxslt
 EXAMPLESDIR=	${PREFIX}/share/examples/py-libxslt
 
-NO_STAGE=	yes
 post-install:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -l ${PYTHON_SITELIBDIR}
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${STAGEDIR}${PYTHON_SITELIBDIR}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -l ${STAGEDIR}${PYTHON_SITELIBDIR}
 
 .include "${MASTERDIR}/Makefile"
