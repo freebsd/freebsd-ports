@@ -2,7 +2,7 @@
 
 PORTNAME=	xbmc
 DISTVERSION=	13.0.alpha11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 
 MAINTAINER=	mickael.maillot@gmail.com

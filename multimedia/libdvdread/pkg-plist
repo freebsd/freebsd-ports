@@ -11,6 +11,6 @@ include/dvdread/nav_types.h
 lib/libdvdread.a
 lib/libdvdread.so
 lib/libdvdread.so.4
-lib/libdvdread.so.4.2.0
+lib/libdvdread.so.4.2.1
 libdata/pkgconfig/dvdread.pc
 @dirrm include/dvdread

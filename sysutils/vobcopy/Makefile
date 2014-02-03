@@ -3,7 +3,7 @@
 
 PORTNAME=	vobcopy
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://vobcopy.org/download/ \
 		CRITICAL
