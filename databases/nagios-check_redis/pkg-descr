@@ -1,0 +1,4 @@
+This plugin checks a redis server, expecting that a slave server is in sync
+with master, and the replication delay is not too high.
+
+WWW: http://exchange.nagios.org/directory/Plugins/Others/check_redis/details
