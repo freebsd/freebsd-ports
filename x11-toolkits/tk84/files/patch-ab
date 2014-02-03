@@ -1,5 +1,5 @@
 --- Makefile.in.orig	2013-06-03 19:29:08.000000000 +0200
-+++ Makefile.in	2013-06-04 11:31:11.000000000 +0200
++++ Makefile.in	2014-02-03 11:21:51.000000000 +0100
 @@ -63,6 +63,8 @@
  
  # Directory in which to install the include file tk.h:
@@ -23,7 +23,7 @@
  
  # Flag, 1: we're building a shared lib, 0 we're not
 -TK_SHARED_BUILD		= @TK_SHARED_BUILD@
-+TK_SHARED_BUILD		= ##@TK_SHARED_BUILD@
++TK_SHARED_BUILD		= ####@TK_SHARED_BUILD@
  
  # Subdirectory of $(libdir) containing the pkgIndex.tcl file for loadable Tk
  TK_PKG_DIR		= @TK_PKG_DIR@
@@ -49,7 +49,7 @@
  ${LIB_FILE}: ${OBJS} ${STUB_LIB_FILE} @LIB_RSRC_FILE@
  	rm -f $@
  	@MAKE_LIB@
-+	ln -sf @TK_LIB_FILE@ libtk${SHORT_TK_VER}.so
++	ln -sf libtk${SHORT_TK_VER}.so.1 libtk${SHORT_TK_VER}.so
 +
 +libtk${SHORT_TK_VER}.a: ${OBJS}
 +	rm -f libtk${SHORT_TK_VER}.a
@@ -80,7 +80,7 @@
  	    $(INSTALL_DATA) $(TK_BUILD_EXP_FILE) \
  			$(LIB_INSTALL_DIR)/$(TK_EXP_FILE); \
  	    fi
-+	@ln -sf $(LIB_INSTALL_DIR)/$(TK_LIB_FILE) $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.so
++	@ln -sf $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.so
 +	@echo "Installing libtk${SHORT_TK_VER}.a"
 +	@$(INSTALL_DATA) libtk${SHORT_TK_VER}.a $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
 +	@chmod 555 $(LIB_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
@@ -122,7 +122,7 @@
 -	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)/X11"; \
 -	    done;
 +	    j=`basename $$i` ; \
-+	    ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/$$j $(INCLUDE_INSTALL_DIR)/$$j ; \
++	    ln -sf generic/$$j $(INCLUDE_INSTALL_DIR)/$$j ; \
 +	done
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
  	@for i in $(TOP_DIR)/library/*.tcl $(GENERIC_DIR)/prolog.ps \
