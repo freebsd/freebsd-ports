@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yacas
-PORTVERSION=	1.3.3
+PORTVERSION=	1.3.4
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-source/${PORTVERSION:R}/
 
@@ -12,11 +12,9 @@ COMMENT=	Yet Another Computer Algebra System
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	TESTS DOCS
-OPTIONS_DEFAULT=TESTS
-TESTS_DESC=	Run bundled self-tests after build
+OPTIONS_DEFINE=	DOCS
 
-USES=		gmake
+#USES=		gmake
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.options.mk>
@@ -28,24 +26,22 @@ BROKEN=		Does not compile with GCC 4.2
 .if ${PORT_OPTIONS:MDOCS}
 CONFIGURE_ARGS+=--enable-html-doc --with-html-dir=${DOCSDIR}
 PORTDOCS=	*
-USES+=		perl5                                                                                                                                                                   
-USE_PERL5=	build 
+USES+=		perl5
+USE_PERL5=	build
 .else
 CONFIGURE_ARGS+=--disable-html-doc
 .endif
 
-.if ${PORT_OPTIONS:MTESTS}
-BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e \
-		's| /bin/bash| ${LOCALBASE}/bin/bash|' ${WRKSRC}/tests/test-yacas
+#	Can't use USES=shebangfix here, cause the path appears several
+#	times in the file.
+	@${REINPLACE_CMD} -e 's| /bin/bash| ${LOCALBASE}/bin/bash|g' \
+	    ${WRKSRC}/tests/test-yacas
 
-post-build:
-.if ${PORT_OPTIONS:MTESTS}
+regression-test: build
+#	This requires bash. I don't add it as a dependency to the port, as it's
+#	not needed for the general use.
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
-		${MAKEFILE} check ${MAKE_ARGS})
-.endif
+	    ${MAKEFILE} check ${MAKE_ARGS})
 
 .include <bsd.port.mk>

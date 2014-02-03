@@ -26,7 +26,7 @@ bin/ytxt2tex
 %%DATADIR%%/deriv.rep/code.ys
 %%DATADIR%%/deriv.rep/code.ys.def
 %%DATADIR%%/documentation/hints
-%%DATADIR%%/documentation/yacaslogo.gif
+%%DATADIR%%/documentation/yacaslogo.png
 %%DATADIR%%/example.rep/code.ys
 %%DATADIR%%/example.rep/code.ys.def
 %%DATADIR%%/examples/ABIN.ys
@@ -47,18 +47,18 @@ bin/ytxt2tex
 %%DATADIR%%/functional.rep/code.ys
 %%DATADIR%%/functional.rep/code.ys.def
 %%DATADIR%%/functional.rep/om.ys
+%%DATADIR%%/graph.rep/code.ys
+%%DATADIR%%/graph.rep/code.ys.def
 %%DATADIR%%/html.rep/code.ys
 %%DATADIR%%/html.rep/code.ys.def
 %%DATADIR%%/include/GPL_stuff.h
 %%DATADIR%%/include/anumber.h
 %%DATADIR%%/include/anumber.inl
-%%DATADIR%%/include/archiver.h
 %%DATADIR%%/include/arggetter.h
 %%DATADIR%%/include/arrayclass.h
 %%DATADIR%%/include/arrayclass.inl
 %%DATADIR%%/include/choices.h
 %%DATADIR%%/include/commandline.h
-%%DATADIR%%/include/compressedfiles.h
 %%DATADIR%%/include/core_yacasmain.h
 %%DATADIR%%/include/corefunctions.h
 %%DATADIR%%/include/debugmem.h
@@ -66,7 +66,6 @@ bin/ytxt2tex
 %%DATADIR%%/include/deffile.inl
 %%DATADIR%%/include/errors.h
 %%DATADIR%%/include/evalfunc.h
-%%DATADIR%%/include/filescanner.h
 %%DATADIR%%/include/genericobject.h
 %%DATADIR%%/include/genericstructs.h
 %%DATADIR%%/include/grower.h
@@ -88,22 +87,17 @@ bin/ytxt2tex
 %%DATADIR%%/include/lispparser.h
 %%DATADIR%%/include/lispstring.h
 %%DATADIR%%/include/lispstring.inl
+%%DATADIR%%/include/lisptype.h
 %%DATADIR%%/include/lispuserfunc.h
-%%DATADIR%%/include/log.h
-%%DATADIR%%/include/lzoconf.h
-%%DATADIR%%/include/lzodefs.h
 %%DATADIR%%/include/mathcommands.h
 %%DATADIR%%/include/mathenvironment.h
 %%DATADIR%%/include/mathuserfunc.h
 %%DATADIR%%/include/mathutil.h
-%%DATADIR%%/include/minilzo.h
 %%DATADIR%%/include/numbers.h
 %%DATADIR%%/include/patcher.h
 %%DATADIR%%/include/patternclass.h
 %%DATADIR%%/include/patterns.h
-%%DATADIR%%/include/plat/linux32/lisptype.h
-%%DATADIR%%/include/plat/linux32/platfileio.h
-%%DATADIR%%/include/plat/linux32/stubs.inl
+%%DATADIR%%/include/platfileio.h
 %%DATADIR%%/include/platmath.h
 %%DATADIR%%/include/refcount.h
 %%DATADIR%%/include/standard.h
@@ -310,10 +304,9 @@ bin/ytxt2tex
 @dirrm %%DATADIR%%/limit.rep
 @dirrm %%DATADIR%%/io.rep
 @dirrm %%DATADIR%%/integrate.rep
-@dirrm %%DATADIR%%/include/plat/linux32
-@dirrm %%DATADIR%%/include/plat
 @dirrm %%DATADIR%%/include
 @dirrm %%DATADIR%%/html.rep
+@dirrm %%DATADIR%%/graph.rep
 @dirrm %%DATADIR%%/functional.rep
 @dirrm %%DATADIR%%/factors.rep
 @dirrm %%DATADIR%%/examples
