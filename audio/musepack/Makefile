@@ -12,7 +12,6 @@ MAINTAINER=	shoesoft@gmx.net
 COMMENT=	Decoder, encoder, and replaygain for musepack (mpc)
 
 USE_LDCONFIG=	yes
-NO_STAGE=	yes
 USE_AUTOTOOLS=	aclocal autoheader libtoolize automake autoconf libtool
 ACLOCAL_ARGS=	-I. -I ${LOCALBASE}/share/aclocal
 AUTOMAKE_ARGS=	--add-missing

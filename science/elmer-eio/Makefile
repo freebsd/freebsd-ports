@@ -18,7 +18,6 @@ ALL_TARGET=
 
 PLIST_FILES=	include/eio_api.h lib/libeioc.a lib/libeiof.a
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
