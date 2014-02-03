@@ -168,7 +168,6 @@
     SUBDIR += ddrescue
     SUBDIR += debhelper
     SUBDIR += debootstrap
-    SUBDIR += decomment
     SUBDIR += deltup
     SUBDIR += desktop-installer
     SUBDIR += detach
@@ -778,7 +777,6 @@
     SUBDIR += reed
     SUBDIR += rej
     SUBDIR += relaxconf
-    SUBDIR += relpath
     SUBDIR += rename
     SUBDIR += reoback
     SUBDIR += replicant
