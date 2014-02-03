@@ -12,16 +12,13 @@ COMMENT=	Libjit implements Just-In-Time compilation functionality
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual
 
-USES=	pathfix
-USE_GMAKE=	yes
+USES=	pathfix gmake
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CFLAGS+=	-O0
 
 INFO=		libjit
-MAN3=		libjit.3
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"

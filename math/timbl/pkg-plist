@@ -1,4 +1,5 @@
 bin/timbl
+man/man1/timbl.1.gz
 include/timbl/BestArray.h
 include/timbl/Choppers.h
 include/timbl/CommandLine.h
