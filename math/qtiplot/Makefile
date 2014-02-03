@@ -3,7 +3,7 @@
 
 PORTNAME=	qtiplot
 DISTVERSION=	0.9.8.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math science
 MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 
@@ -101,7 +101,7 @@ pre-configure:
 
 post-install:
 	${STRIP_CMD} ${STRIP_FILES:S,^,${STAGEDIR}${PREFIX}/,}
-	${INSTALL_DATA} ${WRKSRC}/qtiplot_logo.png ${STAGEDIR}${PREFIX}share/pixmaps/qtiplot.png
+	${INSTALL_DATA} ${WRKSRC}/qtiplot_logo.png ${STAGEDIR}${PREFIX}/share/pixmaps/qtiplot.png
 .if ${PORT_OPTIONS:MPYTHON}
 .for s in qtiplotrc.py qtiUtil.py
 	cd ${WRKSRC}/qtiplot && ${PYTHON_CMD} -c "import py_compile; py_compile.compile('${s}')"
