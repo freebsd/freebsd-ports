@@ -14,3 +14,16 @@ sbin/tcpnice
 sbin/urlsnarf
 sbin/webmitm
 %%X11%%sbin/webspy
+man/man8/arpspoof.8.gz
+man/man8/dsniff.8.gz
+man/man8/macof.8.gz
+man/man8/mailsnarf.8.gz
+man/man8/tcpkill.8.gz
+man/man8/tcpnice.8.gz
+man/man8/urlsnarf.8.gz
+man/man8/filesnarf.8.gz
+man/man8/dnsspoof.8.gz
+man/man8/msgsnarf.8.gz
+man/man8/sshmitm.8.gz
+man/man8/webmitm.8.gz
+%%X11%%man/man8/webspy.8.gz
