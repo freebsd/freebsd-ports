@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httping
-PORTVERSION=	2.3.3
+PORTVERSION=	2.3.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.vanheusden.com/httping/ \
 		CRITICAL
@@ -10,6 +10,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Ping-like tool for HTTP requests
+
+LICENSE=	GPLv2
 
 USES=		gmake gettext
 
