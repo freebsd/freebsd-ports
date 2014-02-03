@@ -12,7 +12,7 @@ COMMENT=	Supports reading/writing of MJPEG video in YUV 4:2:2 JPEG
 
 USE_SDL=	sdl
 USE_GNOME=	glib12
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-m4data-prefix=${PREFIX}/share
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
@@ -21,7 +21,6 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 
 LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

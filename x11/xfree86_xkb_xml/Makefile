@@ -18,5 +18,4 @@ CONFIGURE_ARGS=	--with-xkb-base=${LOCALBASE}/lib/X11/xkb
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
