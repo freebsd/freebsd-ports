@@ -11,8 +11,7 @@ COMMENT=	Check if a hostname is blacklisted
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/${PORTNAME}
-MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/surblhost.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

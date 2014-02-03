@@ -13,7 +13,4 @@ COMMENT=	A random .signature generator
 
 GNU_CONFIGURE=	yes
 
-MAN1=		gensig.1 cattag.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
