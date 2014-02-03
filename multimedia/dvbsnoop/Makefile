@@ -15,10 +15,9 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-I${WRKSRC}
 USE_GMAKE=	yes
 
-PLIST_FILES=	bin/${PORTNAME}
-MAN1=		${PORTNAME}.1
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/dvbsnoop.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:

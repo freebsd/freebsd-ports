@@ -19,15 +19,14 @@ CONFIGURE_ARGS=	--without-gtk
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 		AUTOMAKE="${TRUE}"
 
-MAN1=		vifm.1 \
-		vifm-pause.1 \
-		vifmrc-converter.1
 PLIST_FILES=	bin/vifm \
 		bin/vifmrc-converter \
 		bin/vifm-pause \
 		%%DATADIR%%/vifm-help.txt \
-		%%DATADIR%%/vifmrc
+		%%DATADIR%%/vifmrc \
+		man/man1/vifm-pause.1.gz \
+		man/man1/vifm.1.gz \
+		man/man1/vifmrc-converter.1.gz
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
