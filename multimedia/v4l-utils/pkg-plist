@@ -114,4 +114,5 @@ etc/rc_keymaps/winfast
 etc/rc_keymaps/winfast_usbii_deluxe
 etc/rc_maps.cfg
 sbin/v4l2-dbg
+man/man1/ir-keytable.1.gz
 @dirrmtry etc/rc_keymaps
