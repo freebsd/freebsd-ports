@@ -16,13 +16,12 @@ SQLITE2_DESC=	SQLite2 support
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=		qsf.1
-PLIST_FILES=	bin/qsf
+PLIST_FILES=	bin/qsf \
+		man/man1/qsf.1.gz
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGDBM}
