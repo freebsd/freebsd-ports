@@ -11,9 +11,8 @@ MASTER_SITES=	http://www.monkey.org/~dugsong/${PORTNAME}/ \
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Various sniffing utilities for penetration testing
 
-BROKEN=		Fails to build
-
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet10/libnet.a:${PORTSDIR}/net/libnet10 \
 		${LOCALBASE}/lib/libnids.a:${PORTSDIR}/net/libnids
@@ -24,10 +23,10 @@ WANT_GNOME=	yes
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=	X11
+OPTIONS_SUB=	yes
 
-MAN8=		arpspoof.8 ${PORTNAME}.8 macof.8 mailsnarf.8 tcpkill.8 \
-		tcpnice.8 urlsnarf.8 filesnarf.8 dnsspoof.8 msgsnarf.8 \
-		sshmitm.8 webmitm.8
+X11_USE=	xorg=x11,xmu
+X11_CONFIGURE_WITH=x
 
 LIBNET_VERSION=	10
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet${LIBNET_VERSION}-config
@@ -36,9 +35,6 @@ LIBNET_INC=	"`${LIBNET_CONFIG} --defines` `${LIBNET_CONFIG} --cflags`"
 # so we can't use libnet-config10 --libs to retrieve linker flags
 LIBNET_LIB=	"-L${LOCALBASE}/include/libnet${LIBNET_VERSION} \
 		${LOCALBASE}/lib/libnet${LIBNET_VERSION}/libnet.a"
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 # If net/libnids has been compiled with the GLIB2 option then this port needs
 # the corresponding library and additional linker flags.
@@ -49,15 +45,6 @@ LIBNIDS_GLIB2!=	nm -u ${LOCALBASE}/lib/libnids.a | ${GREP} g_thread_init || ${EC
 
 .if !empty(LIBNIDS_GLIB2)
 USE_GNOME+=	glib20
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-USE_XORG=	x11 xmu
-PLIST_SUB+=	X11=''
-MAN8+=		webspy.8
-.else
-CONFIGURE_ARGS+=--without-x
-PLIST_SUB+=	X11='@comment '
 .endif
 
 post-patch:
