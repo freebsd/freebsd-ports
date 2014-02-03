@@ -1,2 +1,3 @@
 bin/xlbiff
 lib/X11/app-defaults/XLbiff
+man/man1/xlbiff.1.gz
