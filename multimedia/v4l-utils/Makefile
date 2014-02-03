@@ -17,13 +17,11 @@ LIB_DEPENDS=	v4l2.0:${PORTSDIR}/multimedia/libv4l \
 MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -DPREFIX=\\\"${PREFIX}\\\"" \
 		LIBDIR="${PREFIX}/lib" LDFLAGS="-L${LOCALBASE}/lib -largp"
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=	gmake
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/utils
-MAN1=		ir-keytable.1
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800000
