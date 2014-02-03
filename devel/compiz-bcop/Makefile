@@ -18,7 +18,6 @@ GNU_CONFIGURE=	yes
 USES=		pkgconfig
 USE_GNOME=	libxslt
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|/bin/bash|${LOCALBASE}/bin/bash|' \
