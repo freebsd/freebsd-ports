@@ -18,10 +18,9 @@ AUTOMAKE_ARGS=	-a -i
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		geg.1
-PLIST_FILES=	bin/geg
+PLIST_FILES=	bin/geg \
+		man/man1/geg.1.gz
 
-NO_STAGE=	yes
 pre-configure:
 	@cd ${WRKSRC}; ${ACLOCAL} -I ${LOCALBASE}/share/aclocal
 

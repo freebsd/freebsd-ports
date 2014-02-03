@@ -382,6 +382,15 @@ bin/mlmmj-unsub
 %%PERLWEB%%@dirrm www/mlmmj/perl-admin/conf
 %%PERLWEB%%@dirrm www/mlmmj/perl-admin
 %%WEB%%@dirrm www/mlmmj
+man/man1/mlmmj-bounce.1.gz
+man/man1/mlmmj-list.1.gz
+man/man1/mlmmj-maintd.1.gz
+man/man1/mlmmj-make-ml.sh.1.gz
+man/man1/mlmmj-process.1.gz
+man/man1/mlmmj-recieve.1.gz
+man/man1/mlmmj-send.1.gz
+man/man1/mlmmj-sub.1.gz
+man/man1/mlmmj-unsub.1.gz
 @dirrm %%DATADIR%%/text.skel/cz
 @dirrm %%DATADIR%%/text.skel/da
 @dirrm %%DATADIR%%/text.skel/de

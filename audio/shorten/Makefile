@@ -12,9 +12,8 @@ COMMENT=	Fast and optionally lossless compression for waveform files
 RESTRICTED=	May not be sold, may not be used commercially.
 
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
 
-MAN1=		shorten.1
-PLIST_FILES=	bin/shorten
+PLIST_FILES=	bin/shorten \
+		man/man1/shorten.1.gz
 
 .include <bsd.port.mk>

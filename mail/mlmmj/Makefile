@@ -13,9 +13,7 @@ COMMENT=	Mailing list managing made joyful
 
 LICENSE=	MIT
 
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
+USES=	gmake
 
 .if defined(WITH_PHP_WEBINTERFACE)
 USE_PHP=	yes
@@ -47,13 +45,10 @@ PLIST_SUB+=	WEB=""
 .endif
 
 USE_BZIP2=	yes
-
 HAS_CONFIGURE=	yes
+
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
 
-MAN1=		mlmmj-bounce.1 mlmmj-list.1 mlmmj-maintd.1 mlmmj-make-ml.sh.1 mlmmj-process.1 mlmmj-recieve.1 mlmmj-send.1 mlmmj-sub.1 mlmmj-unsub.1
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -61,30 +56,30 @@ post-patch:
 
 post-install:
 .if defined(WITH_PERL_WEBINTERFACE)
-	@${MKDIR} ${PREFIX}/www/mlmmj/perl-admin
-	@${INSTALL_DATA} ${WRKSRC}/contrib/web/perl-admin/README ${PREFIX}/www/mlmmj/perl-admin
-	@${MKDIR} ${PREFIX}/www/mlmmj/perl-admin/htdocs
-	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/web/perl-admin/htdocs/* ${PREFIX}/www/mlmmj/perl-admin/htdocs
-	@${MKDIR} ${PREFIX}/www/mlmmj/perl-admin/templates
-	@${INSTALL_DATA} ${WRKSRC}/contrib/web/perl-admin/templates/* ${PREFIX}/www/mlmmj/perl-admin/templates
-	@${MKDIR} ${PREFIX}/www/mlmmj/perl-admin/conf
-	@${INSTALL_DATA} ${WRKSRC}/contrib/web/perl-admin/conf/* ${PREFIX}/www/mlmmj/perl-admin/conf
-	@${MKDIR} ${PREFIX}/www/mlmmj/perl-user
-	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/web/perl-user/mlmmj.cgi ${PREFIX}/www/mlmmj/perl-user
-	@${INSTALL_DATA} ${WRKSRC}/contrib/web/perl-user/config.pl ${PREFIX}/www/mlmmj/perl-user
-	@${INSTALL_DATA} ${WRKSRC}/contrib/web/perl-user/example.html ${PREFIX}/www/mlmmj/perl-user
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/mlmmj/perl-admin
+	@${INSTALL_DATA} ${WRKSRC}/contrib/web/perl-admin/README ${STAGEDIR}${PREFIX}/www/mlmmj/perl-admin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/mlmmj/perl-admin/htdocs
+	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/web/perl-admin/htdocs/* ${STAGEDIR}${PREFIX}/www/mlmmj/perl-admin/htdocs
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/mlmmj/perl-admin/templates
+	@${INSTALL_DATA} ${WRKSRC}/contrib/web/perl-admin/templates/* ${STAGEDIR}${PREFIX}/www/mlmmj/perl-admin/templates
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/mlmmj/perl-admin/conf
+	@${INSTALL_DATA} ${WRKSRC}/contrib/web/perl-admin/conf/* ${STAGEDIR}${PREFIX}/www/mlmmj/perl-admin/conf
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/mlmmj/perl-user
+	@${INSTALL_SCRIPT} ${WRKSRC}/contrib/web/perl-user/mlmmj.cgi ${STAGEDIR}${PREFIX}/www/mlmmj/perl-user
+	@${INSTALL_DATA} ${WRKSRC}/contrib/web/perl-user/config.pl ${STAGEDIR}${PREFIX}/www/mlmmj/perl-user
+	@${INSTALL_DATA} ${WRKSRC}/contrib/web/perl-user/example.html ${STAGEDIR}${PREFIX}/www/mlmmj/perl-user
 .endif
 .if defined(WITH_PHP_WEBINTERFACE)
-	@${MKDIR} ${PREFIX}/www/mlmmj/php-user
-	@${INSTALL_DATA} ${WRKSRC}/contrib/web/php-user/* ${PREFIX}/www/mlmmj/php-user
-	@${MKDIR} ${PREFIX}/www/mlmmj/php-admin
-	@${INSTALL_DATA} ${WRKSRC}/contrib/web/php-admin/README ${PREFIX}/www/mlmmj/php-admin
-	@${MKDIR} ${PREFIX}/www/mlmmj/php-admin/htdocs
-	@${INSTALL_DATA} ${WRKSRC}/contrib/web/php-admin/htdocs/* ${PREFIX}/www/mlmmj/php-admin/htdocs
-	@${MKDIR} ${PREFIX}/www/mlmmj/php-admin/templates
-	@${INSTALL_DATA} ${WRKSRC}/contrib/web/php-admin/templates/* ${PREFIX}/www/mlmmj/php-admin/templates
-	@${MKDIR} ${PREFIX}/www/mlmmj/php-admin/conf
-	@${INSTALL_DATA} ${WRKSRC}/contrib/web/php-admin/conf/* ${PREFIX}/www/mlmmj/php-admin/conf
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/mlmmj/php-user
+	@${INSTALL_DATA} ${WRKSRC}/contrib/web/php-user/* ${STAGEDIR}${PREFIX}/www/mlmmj/php-user
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/mlmmj/php-admin
+	@${INSTALL_DATA} ${WRKSRC}/contrib/web/php-admin/README ${STAGEDIR}${PREFIX}/www/mlmmj/php-admin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/mlmmj/php-admin/htdocs
+	@${INSTALL_DATA} ${WRKSRC}/contrib/web/php-admin/htdocs/* ${STAGEDIR}${PREFIX}/www/mlmmj/php-admin/htdocs
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/mlmmj/php-admin/templates
+	@${INSTALL_DATA} ${WRKSRC}/contrib/web/php-admin/templates/* ${STAGEDIR}${PREFIX}/www/mlmmj/php-admin/templates
+	@${MKDIR} ${STAGEDIR}${PREFIX}/www/mlmmj/php-admin/conf
+	@${INSTALL_DATA} ${WRKSRC}/contrib/web/php-admin/conf/* ${STAGEDIR}${PREFIX}/www/mlmmj/php-admin/conf
 .endif
 
 .include <bsd.port.post.mk>

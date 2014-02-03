@@ -5,3 +5,5 @@ bin/normalize-ogg
 %%NLS%%share/locale/fr/LC_MESSAGES/normalize.mo
 %%XMMS%%lib/xmms/Effect/librva.la
 %%XMMS%%lib/xmms/Effect/librva.so
+man/man1/normalize-mp3.1.gz
+man/man1/normalize.1.gz
