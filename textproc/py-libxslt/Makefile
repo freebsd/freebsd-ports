@@ -24,7 +24,9 @@ DOCSDIR=	${PREFIX}/share/doc/py-libxslt
 EXAMPLESDIR=	${PREFIX}/share/examples/py-libxslt
 
 post-install:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${STAGEDIR}${PYTHON_SITELIBDIR}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -l ${STAGEDIR}${PYTHON_SITELIBDIR}
+	@cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
+	@cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
+		-d ${PYTHONPREFIX_SITELIBDIR} -f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
 
 .include "${MASTERDIR}/Makefile"
