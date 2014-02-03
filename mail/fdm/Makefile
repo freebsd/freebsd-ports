@@ -2,42 +2,36 @@
 # $FreeBSD$
 
 PORTNAME=	fdm
-PORTVERSION=	1.6
-PORTREVISION=	2
+PORTVERSION=	1.7
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	Fetches and delivers mail
 
-LIB_DEPENDS=	pcre.3:${PORTSDIR}/devel/pcre \
-		tdb.1:${PORTSDIR}/databases/tdb
+LICENSE=	ISCL
 
-PLIST_FILES=	bin/fdm
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libtdb.so:${PORTSDIR}/databases/tdb
+
+PLIST_FILES=	bin/fdm man/man1/fdm.1.gz man/man5/fdm.conf.5.gz
 PORTDOCS=	CHANGES README MANUAL
 PORTEXAMPLES=	n-marriott.conf f-terbeck.conf t-ulmer.conf w-maier.conf g-lando.conf
 MAKE_ARGS=	-DPCRE -DDB
-
-MAN1=	fdm.1
-MAN5=	fdm.conf.5
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+HAS_CONFIGURE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/*.[ch15]
 	@${REINPLACE_CMD} -e 's|/usr/local/include/openssl|/usr/include/openssl|;\
-		s|-I-||g;\
+		s|-I-||g; s|-g bin -o root||g; s|^FDEBUG|#&|;\
 		s|/usr/local|${LOCALBASE}|g' ${WRKSRC}/${MAKEFILE}
+	cd ${WRKSRC} && ${AWK} -f tools/makemanual.awk MANUAL.in > MANUAL
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${INSTALL} -d ${EXAMPLESDIR}/
-	@${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} ${EXAMPLESDIR}/
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${INSTALL} -d ${DOCSDIR}/
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S|^|${WRKSRC}/examples/|} \
+		${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
