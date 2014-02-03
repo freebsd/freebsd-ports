@@ -41,6 +41,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/http-docs.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/http-parsing.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/naming.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/polling-states.fig
 %%PORTDOCS%%%%DOCSDIR%%/internals/repartition-be-fe-fi.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/stats-v2.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/stream-sock-states.fig
