@@ -84,8 +84,8 @@
 -	@$(INSTALL_DATA_DIR) $(LIB_INSTALL_DIR)/pkgconfig
 -	@$(INSTALL_DATA) tcl.pc $(LIB_INSTALL_DIR)/pkgconfig/tcl.pc
 +	@echo "Installing pkg-config file to $(prefix)/libdata/pkgconfig/"
-+	@$(INSTALL_DATA_DIR) $(prefix)/libdata/pkgconfig
-+	@$(INSTALL_DATA) tcl.pc $(prefix)/libdata/pkgconfig/tcl.pc
++	@$(INSTALL_DATA_DIR) $(INSTALL_ROOT)$(prefix)/libdata/pkgconfig
++	@$(INSTALL_DATA) tcl.pc $(INSTALL_ROOT)$(prefix)/libdata/pkgconfig/tcl.pc
  
  install-libraries: libraries
 -	@for i in "$(SCRIPT_INSTALL_DIR)"; \
@@ -143,7 +143,7 @@
 -	        "$(SCRIPT_INSTALL_DIR)"/tm.tcl; \
 -	fi
 +	@echo "Customizing tcl module path"; \
-+	    echo "::tcl::tm::path add {$(SCRIPT_INSTALL_DIR)}" >> \
++	    echo "::tcl::tm::path add {$(TCL_LIBRARY)}" >> \
 +	    "$(SCRIPT_INSTALL_DIR)"/tm.tcl; \
  
  install-tzdata:
@@ -175,13 +175,13 @@
 -	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"; \
 +	    $(INSTALL_DATA) $$i "$(UNIX_INCLUDE_INSTALL_DIR)/"; \
  	    done;
-+	@ln -sf "$(GENERIC_INCLUDE_INSTALL_DIR)"/tcl.h "$(INCLUDE_INSTALL_DIR)"/tcl.h
-+	@ln -sf "$(GENERIC_INCLUDE_INSTALL_DIR)"/tclDecls.h "$(INCLUDE_INSTALL_DIR)"/tclDecls.h
-+	@ln -sf "$(GENERIC_INCLUDE_INSTALL_DIR)"/tclPlatDecls.h "$(INCLUDE_INSTALL_DIR)"/tclPlatDecls.h
-+	@ln -sf "$(GENERIC_INCLUDE_INSTALL_DIR)"/tclOO.h "$(INCLUDE_INSTALL_DIR)"/tclOO.h
-+	@ln -sf "$(GENERIC_INCLUDE_INSTALL_DIR)"/tclOODecls.h "$(INCLUDE_INSTALL_DIR)"/tclOODecls.h
-+	@ln -sf "$(GENERIC_INCLUDE_INSTALL_DIR)"/tclTomMath.h "$(INCLUDE_INSTALL_DIR)"/tclTomMath.h
-+	@ln -sf "$(GENERIC_INCLUDE_INSTALL_DIR)"/tclTomMathDecls.h "$(INCLUDE_INSTALL_DIR)"/tclTomMathDecls.h
++	@ln -sf generic/tcl.h "$(INCLUDE_INSTALL_DIR)"/tcl.h
++	@ln -sf generic/tclDecls.h "$(INCLUDE_INSTALL_DIR)"/tclDecls.h
++	@ln -sf generic/tclPlatDecls.h "$(INCLUDE_INSTALL_DIR)"/tclPlatDecls.h
++	@ln -sf generic/tclOO.h "$(INCLUDE_INSTALL_DIR)"/tclOO.h
++	@ln -sf generic/tclOODecls.h "$(INCLUDE_INSTALL_DIR)"/tclOODecls.h
++	@ln -sf generic/tclTomMath.h "$(INCLUDE_INSTALL_DIR)"/tclTomMath.h
++	@ln -sf generic/tclTomMathDecls.h "$(INCLUDE_INSTALL_DIR)"/tclTomMathDecls.h
  
  # Optional target to install private headers
  install-private-headers:
