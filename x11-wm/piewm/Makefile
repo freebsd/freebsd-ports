@@ -13,9 +13,7 @@ COMMENT=	tvtwm with pie (circular) menus
 USES=		imake
 DISABLE_SIZE=	yes
 USE_XORG=	xbitmaps xpm xmu
-MAN1=		piewm.1
 
 CFLAGS+=	-Wno-return-type
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

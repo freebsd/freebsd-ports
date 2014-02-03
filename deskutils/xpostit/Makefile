@@ -15,7 +15,5 @@ COMMENT=	PostIt (R) messages onto your X11 screen
 USES=		imake
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 WRKSRC=		${WRKDIR}/xpostit
-MAN1=		xpostit.1
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
