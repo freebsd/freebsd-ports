@@ -6,6 +6,11 @@ bin/intltoolize
 share/aclocal/intltool.m4
 %%DATADIR%%/Makefile.in.in
 %%DATADIR%%/XML/Parser/Style/OrigTree.pm
+man/man8/intltool-extract.8.gz
+man/man8/intltool-merge.8.gz
+man/man8/intltool-prepare.8.gz
+man/man8/intltool-update.8.gz
+man/man8/intltoolize.8.gz
 @dirrm %%DATADIR%%/XML/Parser/Style
 @dirrm %%DATADIR%%/XML/Parser
 @dirrm %%DATADIR%%/XML
