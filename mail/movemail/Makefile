@@ -10,9 +10,7 @@ MASTER_SITES=	http://wolfram.schneider.org/src/
 MAINTAINER=	wosch@FreeBSD.org
 COMMENT=	Move your mail box to another location
 
-MAN1=		movemail.1
-MANCOMPRESSED=	maybe
-PLIST_FILES=	bin/movemail
+PLIST_FILES=	bin/movemail \
+		man/man1/movemail.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

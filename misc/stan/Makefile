@@ -11,10 +11,9 @@ COMMENT=	Generate several statistical informations of a stream
 
 GNU_CONFIGURE=	yes
 
-MAN1=		stan.1
-PLIST_FILES=	bin/stan
+PLIST_FILES=	bin/stan \
+		man/man1/stan.1.gz
 
-NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e "s|^CFLAGS =|CFLAGS ?=|g" \
 	${WRKSRC}/src/Makefile.in
