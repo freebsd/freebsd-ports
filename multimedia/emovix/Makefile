@@ -10,8 +10,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mini Linux distro to create bootable video CDs
 
 GNU_CONFIGURE=	yes
-USES=		perl5
-USE_GMAKE=	yes
+USES=		perl5 gmake
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
