@@ -44,7 +44,7 @@ pre-configure:
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/lib/libcdf.so ${STAGEDIR}${PREFIX}/lib/libcdf.so.0
-	${LN} -sf ${STAGEDIR}${PREFIX}/lib/libcdf.so.0 ${STAGEDIR}${PREFIX}/lib/libcdf.so
+	${LN} -sf libcdf.so.0 ${STAGEDIR}${PREFIX}/lib/libcdf.so
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
