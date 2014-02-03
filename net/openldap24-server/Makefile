@@ -572,7 +572,7 @@ post-install:
 		${STAGEDIR}${PREFIX}/libexec/openldap/
 	@${INSTALL_PROGRAM} ${WRKSRC}/contrib/slapd-modules/passwd/sha2/.libs/pw-sha2.so.0 \
 		${STAGEDIR}${PREFIX}/libexec/openldap/
-	@${LN} -s pw-sha2.so.0 ${PREFIX}/libexec/openldap/pw-sha2.so
+	@${LN} -s pw-sha2.so.0 ${STAGEDIR}${PREFIX}/libexec/openldap/pw-sha2.so
 .endif
 .endif
 
