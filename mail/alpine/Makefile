@@ -37,6 +37,7 @@ CONFIGURE_ARGS+=--with-system-pinerc=${PREFIX}/etc/alpine.conf \
 		--with-password-prog=/usr/bin/passwd \
 		--with-system-mail-directory=/var/mail \
 		--enable-background-post --without-krb5 --without-tcl
+NO_STAGE=	yes
 .endif
 CONFIGURE_ARGS+=--with-debug-level=2
 
@@ -44,7 +45,6 @@ MAKE_ARGS+=	CC="${CC}" CXX="${CXX}" GCCCFLAGS="${CFLAGS}"
 
 USE_OPENSSL=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MTHREADS}
