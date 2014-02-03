@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	octave-forge-parallel
-PORTVERSION=	2.1.1
+PORTVERSION=	2.2.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
