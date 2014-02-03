@@ -10,7 +10,6 @@ PLIST_FILES=	bin/bjam
 
 EXTRACT_AFTER_ARGS=	${DISTNAME}/tools/build/v2/engine
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../boost-all/common.mk"
 
 do-build:
@@ -18,8 +17,8 @@ do-build:
 		${MAKE_ENV} ./build.sh ${CC}
 
 do-install:
-	${MKDIR} ${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/build/v2/engine/bin.*/bjam \
-		${PREFIX}/bin/
+		${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
