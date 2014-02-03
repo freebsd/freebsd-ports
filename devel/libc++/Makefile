@@ -25,8 +25,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if exists(/usr/lib/libcxxrt.so)
 CXXRT_INCS=	/usr/include/c++/v1/
+CXXRT_LIB=	/usr/lib/libcxxrt.so
 .else
-CXXRT_INCS=	/usr/local/include/cxxrt/
+CXXRT_INCS=	${LOCALBASE}/include/cxxrt/
+CXXRT_LIB=	${LOCALBASE}/lib/libcxxrt.so
 .endif
 
 CMAKE_ARGS=	-DLIBCXX_CXX_ABI=libcxxrt -DLIBCXX_LIBCXXRT_INCLUDE_PATHS=${CXXRT_INCS}
@@ -55,8 +57,8 @@ post-install:
 	${LN} -sf c++/v1 ${STAGEDIR}${PREFIX}/include/c++/v1/tr1
 	${RM} ${STAGEDIR}${PREFIX}/lib/libc++.so
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/c++/
-	${ECHO} 'GROUP ( ${PREFIX}/lib/libc++.so.1 ${LOCALBASE}/lib/libcxxrt.so)' > ${STAGEDIR}${PREFIX}/lib/libc++.so
-	${ECHO} 'GROUP ( ${PREFIX}/lib/libc++.so.1 ${LOCALBASE}/lib/libcxxrt.so)' > ${STAGEDIR}${PREFIX}/lib/c++/libstdc++.so
+	${ECHO} 'GROUP ( ${PREFIX}/lib/libc++.so.1 ${CXXRT_LIB})' > ${STAGEDIR}${PREFIX}/lib/libc++.so
+	${ECHO} 'GROUP ( ${PREFIX}/lib/libc++.so.1 ${CXXRT_LIB})' > ${STAGEDIR}${PREFIX}/lib/c++/libstdc++.so
 
 regression-test: build
 	cd ${WRKSRC}/test && ${SH} ./testit
