@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libdvdread
-PORTVERSION=	4.2.0
-PORTREVISION=	2
+PORTVERSION=	4.2.1
 CATEGORIES=	multimedia
 # Svn repository URL : svn://svn.mplayerhq.hu/dvdnav/trunk/libdvdread
 MASTER_SITES=	http://dvdnav.mplayerhq.hu/releases/ \
@@ -15,7 +14,7 @@ COMMENT=	MPlayer version of the libdvdread project
 
 LICENSE=	GPLv2
 
-USE_BZIP2=	yes
+USE_XZ=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure2
 CONFIGURE_ARGS=	--prefix="${PREFIX}" \

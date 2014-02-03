@@ -3,7 +3,7 @@
 
 PORTNAME=	ogmtools
 PORTVERSION=	1.5
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/ogmtools/
 
