@@ -15,10 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 GNU_CONFIGURE=	yes
 
-MAN1=		cstream.1
-PLIST_FILES=	bin/cstream
+PLIST_FILES=	bin/cstream \
+		man/man1/cstream.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^if \[/s| $$CFLAGS | "$$CFLAGS" |' ${WRKSRC}/configure
