@@ -6,51 +6,49 @@ PORTVERSION=	2.00
 PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.math.utah.edu/pub/misc/
-PKGNAMEPREFIX=
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Compare putatively similar files, ignoring small numeric differences
+MAINTAINER=	luca.pizzammiglio@gmail.com
+COMMENT=	Compare files, ignoring numeric differences
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+LICENSE=	GPLv2
 
-.if !defined(WITHOUT_GMP)
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS=	--with-gmp
-.else
-.if ${ARCH} == sparc64
-CONFIGURE_ARGS= --with-long-double
-.else
-CONFIGURE_ARGS= --with-double
-.endif
-.endif
-
+USES=		desthack
 GNU_CONFIGURE=	yes
-ALL_TARGET=	all check-runs
 
-MAN1=		ndiff.1
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man1/${PORTNAME}.1.gz \
+		%%DATADIR%%/${PORTNAME}.awk
+PLIST_DIRS=	%%DATADIR%%
+
+PORTDOCS=	*.html *.pdf *.ps *.txt
+
+OPTIONS_DEFINE=	DOCS GMP
+
+GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
+GMP_CFLAGS=	-I${LOCALBASE}/include
+GMP_LDFLAGS=	-L${LOCALBASE}/lib
+GMP_CONFIGURE_ON=	--with-gmp
+
+.include <bsd.port.options.mk>
+
+.if ! ${PORT_OPTIONS:MGMP}
+.if ${ARCH} == sparc64
+CONFIGURE_ARGS+=	--with-long-double
+.else
+CONFIGURE_ARGS+=	--with-double
+.endif
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s:%%DATADIR%%:${DATADIR}:g" ${WRKSRC}/Makefile.in
-
-post-build:
-	@${ECHO_MSG} "If there were no errors in the above checks then type"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "	${MAKE} install"
-	@${ECHO_MSG}
-	@${ECHO_MSG} "to install ${PORTNAME}-${PORTVERSION}"
+	${REINPLACE_CMD} -e \
+	's|$$(shrlibtop)/$$(PROGNAME)-$$(VERSION)|$${DESTDIR}${DATADIR}|; \
+	s|.*shrlibtop.*||; \
+	s|664|644|' ${WRKSRC}/Makefile.in
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.pdf  ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.ps   ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.html ${DOCSDIR}
-.endif
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.post.mk>
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>
