@@ -2,6 +2,8 @@ bin/bot-training
 %%SITE_PERL%%/Bot/Training.pm
 %%SITE_PERL%%/Bot/Training/Plugin.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bot/Training/.packlist
+%%PERL5_MAN3%%/Bot::Training.3.gz
+man/man1/bot-training.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bot/Training
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bot
 @dirrmtry %%SITE_PERL%%/Bot/Training
