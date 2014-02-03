@@ -14,17 +14,11 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 USES=		perl5
 USE_PERL5=	configure
-NO_STAGE=	yes
 
-MAN3=		ExtUtils::CChecker.3
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
 
 post-install:
-	@${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m 555 -d ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
+	@${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m 555 -d ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
