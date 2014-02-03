@@ -15,9 +15,7 @@ NO_WRKSUBDIR=	yes
 MAKEFILE=	${PKGDIR}/src/Makefile
 MAKE_ENV=	PKGDIR="${PKGDIR}"
 
-MAN1=		koi2koi.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/koi2koi
+PLIST_FILES=	bin/koi2koi \
+		man/man1/koi2koi.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
