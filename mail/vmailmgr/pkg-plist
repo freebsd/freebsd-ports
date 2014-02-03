@@ -46,5 +46,21 @@ sbin/vmailmgrd
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/types.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vmailmgr/types.pyo
 %%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/vmailmgr
+man/man1/checkvpw.1.gz
+man/man1/dumpvuser.1.gz
+man/man1/listvdomain.1.gz
+man/man1/vadduser.1.gz
+man/man1/vauthenticate.1.gz
+man/man1/vchattr.1.gz
+man/man1/vchforwards.1.gz
+man/man1/vdeliver.1.gz
+man/man1/vdeluser.1.gz
+man/man1/vpasswd.1.gz
+man/man1/vpasswds.1.gz
+man/man1/vrehash.1.gz
+man/man1/vsetup.1.gz
+man/man1/vupgrade.1.gz
+man/man7/vmailmgr.7.gz
+man/man8/vmailmgrd.8.gz
 @dirrmtry libexec/vmailmgr/cgi-bin
 @dirrmtry libexec/vmailmgr
