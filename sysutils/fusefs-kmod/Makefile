@@ -27,7 +27,7 @@ DISABLE_SIZE=	yes
 OPTIONS_DEFINE=	AUTOSETUP DOCS
 AUTOSETUP_DESC=	Automatic global config file setup
 
-USES=		kmod
+USES=		kmod uidfix
 
 DOCS_BUILD_DEPENDS=	deplate:${PORTSDIR}/textproc/ruby-deplate
 
