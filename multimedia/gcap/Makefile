@@ -25,9 +25,8 @@ TEST_DEPENDS=	p5-Test-Pod>=1:${PORTSDIR}/devel/p5-Test-Pod
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		gcap.1
 PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/auto/gcap
-PLIST_FILES=	bin/gcap ${SITE_PERL_REL}/${PERL_ARCH}/auto/gcap/.packlist
+PLIST_FILES=	bin/gcap ${SITE_PERL_REL}/${PERL_ARCH}/auto/gcap/.packlist \
+		man/man1/gcap.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

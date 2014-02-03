@@ -15,7 +15,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	mbx2mbox.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

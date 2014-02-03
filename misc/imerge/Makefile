@@ -16,9 +16,7 @@ USE_BZIP2=	yes
 MAKE_ARGS=	PREFIX="${PREFIX}" MANPREFIX="${MANPREFIX}"
 MAKEFILE=	BSDmakefile
 
-MAN1=		imerge.1
-MANCOMPRESSED=	maybe
-PLIST_FILES=	bin/imerge
+PLIST_FILES=	bin/imerge \
+		man/man1/imerge.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
