@@ -13,8 +13,10 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Graphical toolkit for Tcl
 
-LICENSE=	BSD
+LICENSE=	TclTk
+LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/../license.terms
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 OPTIONS_DEFINE=	TKMAN DEMOS THREADS
 OPTIONS_DEFAULT=THREADS
@@ -52,7 +54,6 @@ MAKE_ENV=	SHORT_TK_VER=${SHORT_TK_VER}
 PLIST_SUB=	TK_VER=${TK_VER} \
 		SHORT_TK_VER=${SHORT_TK_VER}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEMOS}
@@ -62,9 +63,11 @@ PLIST_SUB+=	DEMOS=""
 PLIST_SUB+=	DEMOS="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MTKMAN} && !defined(NO_INSTALL_MANPAGES)
+.if ${PORT_OPTIONS:MTKMAN}
 INSTALL_TARGET+=install-doc
-.include "${.CURDIR}/Makefile.man"
+PLIST_SUB+=	MAN=""
+.else
+PLIST_SUB+=	MAN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS}
@@ -80,6 +83,10 @@ post-patch:
 	     s|@TK_BUILD_STUB_LIB_PATH@|@TK_STUB_LIB_PATH@|; \
 	     s|@TK_SRC_DIR@|${PREFIX}/include/tk${TK_VER}|' \
 	     ${WRKSRC}/tkConfig.sh.in
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/wish${TK_VER}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtk${SHORT_TK_VER}.so.1
 
 regression-test:	build
 	cd ${WRKSRC}; ${MAKE} test
