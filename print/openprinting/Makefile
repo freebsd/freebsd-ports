@@ -17,8 +17,7 @@ COMMENT=	Sun's implementation of the OpenPrinting API (PAPI)
 WRKSRC=		${WRKDIR}/papi-${PORTVERSION}_beta
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		gettext iconv
+USES=		gettext iconv gmake
 
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/libexec
 
@@ -44,7 +43,6 @@ MAKE_ARGS=	LIBTOOL="${LIBTOOL} --tag=disable-static"
 #	MOD_IPP		"Build example mod_ipp.so for Apache" Off
 #	PSM_CUPS	"Build psm_cups.so for printing to CUPS" Off
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # NOTE: hard dependency on gettext() in distfiles.
@@ -69,8 +67,6 @@ CONFIGURE_ARGS+=--with-cups=${LOCALBASE}
 CONFIGURE_ARGS+=--without-cups
 .endif
 
-MANCOMPRESSED=	no
-MAN5=		psm-ipp.5
 
 PLIST_DIRS+=	man/mani
 
@@ -97,7 +93,8 @@ PLIST_FILES+=\
 	libexec/psm-lpd.la \
 	libexec/psm-ipp.so \
 	libexec/psm-ipp.la \
-	libexec/lpd-port
+	libexec/lpd-port \
+	man/man5/psm-ipp.5.gz
 
 .if defined(WITH_PSM_CUPS)
 PLIST_FILES+=\
