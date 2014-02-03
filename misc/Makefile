@@ -252,7 +252,6 @@
     SUBDIR += libeatmydata
     SUBDIR += libhome
     SUBDIR += libkdeedu
-    SUBDIR += libmcal
     SUBDIR += libmetalink
     SUBDIR += libpri
     SUBDIR += libsupertone

@@ -246,7 +246,6 @@
     SUBDIR += ogmrip
     SUBDIR += ogmtools
     SUBDIR += opencinematools
-    SUBDIR += openmovieeditor
     SUBDIR += openquicktime
     SUBDIR += openshot
     SUBDIR += oqtencoder
@@ -391,8 +390,6 @@
     SUBDIR += xawtv
     SUBDIR += xbmc
     SUBDIR += xbmc-addon-pvr
-    SUBDIR += xbmc-addon-xvdr
-    SUBDIR += xbmc-pvr
     SUBDIR += xfce4-parole
     SUBDIR += xfce4-xmms-plugin
     SUBDIR += xine

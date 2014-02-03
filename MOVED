@@ -5426,3 +5426,12 @@ dns/bind96||2014-01-31|Has expired: EOL in January 2014, consider moving to Bind
 x11-drivers/xf86-video-nouveau||2014-01-31|Has expired: Not supported, missing kernel support. use the nvidia driver.
 cad/mars||2014-01-31|Removed, abandonware, no releases in the past 20 years
 polish/gimp-help||2014-02-01|Removed, excluded from gimp-help-2.8.1 release
+multimedia/xbmc-pvr||2014-02-03|Has expired: multimedia/xbmc and multimedia/xbmc-addon-pvr are newer
+misc/libmcal||2014-02-03|Has expired: No more used and development discontinued
+textproc/py-4suite||2014-02-03|Has expired: only builds with Python up to version 2.4
+multimedia/xbmc-addon-xvdr||2014-02-03|Has expired: Depends on expired multimedia/xbmc-pvr
+deskutils/gmcal||2014-02-03|Has expired: Depends on expired misc/libmcal
+deskutils/mcal||2014-02-03|Has expired: Depends on expired misc/libmcal
+sysutils/relpath||2014-02-03|Has expired: unfetchable distfiles
+sysutils/decomment||2014-02-03|Has expired: unfetchable distfiles
+multimedia/openmovieeditor||2014-02-03|Has expired: segfaults, upstread development ceased
