@@ -2,20 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	ip4r
-PORTVERSION=	1.05
+PORTVERSION=	2.0
 CATEGORIES=	databases net
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/2607/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/3380/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	IPv4 and IPv4 range index type for PostgreSQL
+MAINTAINER=	tobez@FreeBSD.org
+COMMENT=	IP address and IP range index types for PostgreSQL
 
 USE_PGSQL=	YES
 USE_GMAKE=	YES
-
-# 74 is not strictly true, but requires extracting the appropriate
-# postgresql-contrib tarball, and associated heavy lifting.
-# In order to keep this port simple, we assume >= 8.0
-IGNORE_WITH_PGSQL=	73 74
 
 MAKE_ARGS=	USE_PGXS=1
 
