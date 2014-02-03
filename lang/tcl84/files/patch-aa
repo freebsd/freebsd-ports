@@ -1,5 +1,5 @@
---- Makefile.in.orig	2013-05-28 17:05:26.000000000 +0200
-+++ Makefile.in	2013-06-03 14:45:07.000000000 +0200
+--- Makefile.in.orig	2013-06-03 19:29:06.000000000 +0200
++++ Makefile.in	2014-02-03 09:56:38.000000000 +0100
 @@ -56,6 +56,8 @@
  
  # Directory in which to install the include file tcl.h:
@@ -107,9 +107,9 @@
 -	    $(INSTALL_DATA) $$i $(INCLUDE_INSTALL_DIR); \
 +	    $(INSTALL_DATA) $$i $(UNIX_INCLUDE_INSTALL_DIR); \
  	    done;
-+	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tcl.h $(INCLUDE_INSTALL_DIR)/tcl.h
-+	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tclDecls.h $(INCLUDE_INSTALL_DIR)/tclDecls.h
-+	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tclPlatDecls.h $(INCLUDE_INSTALL_DIR)/tclPlatDecls.h
++	@ln -sf generic/tcl.h $(INCLUDE_INSTALL_DIR)/tcl.h
++	@ln -sf generic/tclDecls.h $(INCLUDE_INSTALL_DIR)/tclDecls.h
++	@ln -sf generic/tclPlatDecls.h $(INCLUDE_INSTALL_DIR)/tclPlatDecls.h
  	@echo "Installing library files to $(SCRIPT_INSTALL_DIR)";
  	@for i in $(TOP_DIR)/library/*.tcl $(TOP_DIR)/library/tclIndex \
  		$(UNIX_DIR)/tclAppInit.c $(UNIX_DIR)/ldAix @DTRACE_SRC@; \

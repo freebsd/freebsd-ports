@@ -15,7 +15,10 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Tool Command Language
 
-LICENSE=	BSD
+LICENSE=	TclTk
+LICENSE_NAME=	Tcl/Tk License
+LICENSE_FILE=	${WRKSRC}/../license.terms
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 OPTIONS_DEFINE=	TCLMAN THREADS
 OPTIONS_DEFAULT=THREADS
@@ -23,7 +26,6 @@ TCLMAN_DESC=	Install Tcl function manpages
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 
-NO_STAGE=	yes
 ALL_TARGET=	all
 INSTALL_TARGET=	install install-libraries
 
@@ -49,7 +51,9 @@ PLIST_SUB=	TCL_VER=${TCL_VER} \
 
 .if ${PORT_OPTIONS:MTCLMAN}
 INSTALL_TARGET+=install-doc
-.include "${.CURDIR}/Makefile.man"
+PLIST_SUB+=	MAN=""
+.else
+PLIST_SUB+=	MAN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS}
@@ -70,6 +74,10 @@ post-configure:
 	${REINPLACE_CMD} \
 		-e 's,-DNO_MEMMOVE=1,,' -e 's,-DNO_STRING_H=1,,' \
 		-e 's,^COMPAT_OBJS.*,,' ${WRKSRC}/Makefile
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/tclsh${TCL_VER}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtcl${SHORT_TCL_VER}.so.1
 
 regression-test:	build
 	cd ${WRKSRC} && LC_ALL=C ${MAKE} test
