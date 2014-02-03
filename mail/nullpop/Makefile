@@ -14,8 +14,7 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--libexecdir="${PREFIX}/bin"
 
-PLIST_FILES=	bin/nullpop
-MAN8=		nullpop.8
+PLIST_FILES=	bin/nullpop \
+		man/man8/nullpop.8.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
