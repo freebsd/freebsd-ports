@@ -14,8 +14,7 @@ LICENSE=	GPLv2 # (or later)
 
 GNU_CONFIGURE=	yes
 
-MAN1=		mmsrip.1
-PLIST_FILES=	bin/mmsrip
+PLIST_FILES=	bin/mmsrip \
+		man/man1/mmsrip.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

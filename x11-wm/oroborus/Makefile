@@ -15,11 +15,7 @@ COMMENT=	A small and simple GNOME-compatible window manager
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_XORG=	xpm
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
-MAN1=		oroborus.1
-MAN5=		oroborusrc.5
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
