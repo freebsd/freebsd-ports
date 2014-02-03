@@ -3,6 +3,7 @@
 
 PORTNAME=	flashrom
 PORTVERSION=	0.9.7
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.flashrom.org/releases/
 
@@ -11,59 +12,52 @@ COMMENT=	Utility for reading, writing, verifying, and erasing flash ROM chips
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pci:${PORTSDIR}/devel/libpci
+LIB_DEPENDS=	libpci.so:${PORTSDIR}/devel/libpci
 
-OPTIONS_DEFINE=	DMIDECODE DOCS FTDI
-OPTIONS_DEFAULT=	DMIDECODE DOCS
+OPTIONS_DEFINE=		BUSPIRATE DMIDECODE DOCS FTDI
+OPTIONS_DEFAULT=	DMIDECODE FTDI
 
-DMIDECODE_DESC=	Use dmidecode to gather DMI information
-FTDI_DESC=	Enable external FT2232SPI flasher support
+BUSPIRATE_DESC=		Enable buspirate support (broken)
+DMIDECODE_DESC=		Use dmidecode to gather DMI information
+FTDI_DESC=		Enable external FT2232SPI flasher support
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-MAKE_JOBS_UNSAFE=	yes
+USES=		gmake
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lc
+MAKE_ENV=	CONFIG_BUSPIRATE_SPI=no
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-PORTDOCS=	ChangeLog COPYING README
-PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	*
 
-.if !defined(NO_INSTALL_MANPAGES)
-MAN8=		${PORTNAME}.8
-.endif
+DOCSRCDIR1=	${WRKSRC}
+DOC_FILES1=	ChangeLog README
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+DOCSRCDIR2=	${WRKSRC}/Documentation
+DOCSDIR2=	${DOCSDIR}/Documentation
+DOC_FILES2=	*.txt
 
-.if ${PORT_OPTIONS:MDMIDECODE}
-RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode
-.endif
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man8/${PORTNAME}.8.gz
 
-.if ${PORT_OPTIONS:MFTDI}
-USES+=		pkgconfig
-LIB_DEPENDS+=	ftdi:${PORTSDIR}/devel/libftdi
-.endif
+BUSPIRATE_MAKE_ENV=	CONFIG_BUSPIRATE_SPI=yes
 
-post-patch:
-.if ${PORT_OPTIONS:MFTDI}
-	@${REINPLACE_CMD} -e 's|-lusb")|-lusb") -lz|' ${WRKSRC}/Makefile
-.else
-	@${REINPLACE_CMD} -e 's|2_SPI ?= yes|2_SPI ?= no|' ${WRKSRC}/Makefile
-.endif
+DMIDECODE_RUN_DEPENDS+=	dmidecode:${PORTSDIR}/sysutils/dmidecode
+
+FTDI_LIB_DEPENDS=	libftdi.so:${PORTSDIR}/devel/libftdi
+FTDI_USES=		pkgconfig
+FTDI_LDFLAGS=		-lz
+FTDI_MAKE_ENV_OFF=	2_SPI=no
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if !defined(NO_INSTALL_MANPAGES)
-	${MKDIR} ${MANPREFIX}/man/man8
-	${INSTALL_MAN} ${WRKSRC}/${MAN8} ${MANPREFIX}/man/man8
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 
 .include <bsd.port.mk>
