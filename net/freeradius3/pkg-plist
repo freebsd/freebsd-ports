@@ -50,6 +50,9 @@ bin/smbencrypt
 %%LIBDIR%%/rlm_cram.a
 %%LIBDIR%%/rlm_cram.la
 %%LIBDIR%%/rlm_cram.so
+%%LIBDIR%%/rlm_date.a
+%%LIBDIR%%/rlm_date.la
+%%LIBDIR%%/rlm_date.so
 %%LIBDIR%%/rlm_detail.a
 %%LIBDIR%%/rlm_detail.la
 %%LIBDIR%%/rlm_detail.so
@@ -369,6 +372,7 @@ include/freeradius/udpfromto.h
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc6930.txt
 %%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/iplanet.ldif
 %%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/iplanet.schema
+%%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/openldap.ldif
 %%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/openldap.schema
 %%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/radiusclients-edirectory.ldif
 %%PORTDOCS%%%%DOCSDIR%%/schemas/ldap/radiusclients-openldap.ldif
@@ -399,6 +403,7 @@ include/freeradius/udpfromto.h
 %%DATADIR%%/dictionary.alcatel
 %%DATADIR%%/dictionary.alcatel.esam
 %%DATADIR%%/dictionary.alcatel.sr
+%%DATADIR%%/dictionary.alcatel-lucent.aaa
 %%DATADIR%%/dictionary.alteon
 %%DATADIR%%/dictionary.altiga
 %%DATADIR%%/dictionary.alvarion
@@ -435,6 +440,7 @@ include/freeradius/udpfromto.h
 %%DATADIR%%/dictionary.dhcp
 %%DATADIR%%/dictionary.digium
 %%DATADIR%%/dictionary.dlink
+%%DATADIR%%/dictionary.efficientip
 %%DATADIR%%/dictionary.epygi
 %%DATADIR%%/dictionary.eltex
 %%DATADIR%%/dictionary.ericsson
@@ -524,6 +530,7 @@ include/freeradius/udpfromto.h
 %%DATADIR%%/dictionary.rfc6911
 %%DATADIR%%/dictionary.rfc6929
 %%DATADIR%%/dictionary.rfc6930
+%%DATADIR%%/dictionary.rfc7055
 %%DATADIR%%/dictionary.riverstone
 %%DATADIR%%/dictionary.roaringpenguin
 %%DATADIR%%/dictionary.sg
@@ -565,7 +572,6 @@ include/freeradius/udpfromto.h
 %%DATADIR%%/dictionary.zyxel
 @dirrm %%DATADIR%%
 %%EXAMPLESDIR%%/raddb/mods-config/perl/example.pl
-%%EXAMPLESDIR%%/raddb/mods-config/python/example.py
 %%EXAMPLESDIR%%/raddb/mods-config/attr_filter/access_challenge
 %%EXAMPLESDIR%%/raddb/mods-config/attr_filter/access_reject
 %%EXAMPLESDIR%%/raddb/mods-config/attr_filter/accounting_response
@@ -576,8 +582,18 @@ include/freeradius/udpfromto.h
 %%EXAMPLESDIR%%/raddb/mods-config/files/pre-proxy
 %%EXAMPLESDIR%%/raddb/mods-config/preprocess/hints
 %%EXAMPLESDIR%%/raddb/mods-config/preprocess/huntgroups
-%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/queries.conf
-%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/postgresql/queries.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/dailycounter.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/expire_on_login.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/monthlycounter.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql/noresetcounter.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/postgresql/dailycounter.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/postgresql/expire_on_login.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/postgresql/monthlycounter.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/postgresql/noresetcounter.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/sqlite/dailycounter.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/sqlite/expire_on_login.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/sqlite/monthlycounter.conf
+%%EXAMPLESDIR%%/raddb/mods-config/sql/counter/sqlite/noresetcounter.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/cui/mysql/queries.conf
 %%EXAMPLESDIR%%/raddb/mods-config/sql/cui/mysql/schema.sql
 %%EXAMPLESDIR%%/raddb/mods-config/sql/cui/postgresql/queries.conf
@@ -647,6 +663,8 @@ include/freeradius/udpfromto.h
 %%EXAMPLESDIR%%/raddb/certs/bootstrap
 %%EXAMPLESDIR%%/raddb/certs/user@example.com.pem
 %%EXAMPLESDIR%%/raddb/certs/xpextensions
+%%EXAMPLESDIR%%/raddb/mods-available/date
+%%EXAMPLESDIR%%/raddb/mods-available/sqlcounter
 %%EXAMPLESDIR%%/raddb/mods-available/perl
 %%EXAMPLESDIR%%/raddb/mods-available/utf8
 %%EXAMPLESDIR%%/raddb/mods-available/exec
@@ -807,6 +825,7 @@ include/freeradius/udpfromto.h
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/cui
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/postgresql
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/mysql
+@dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter/sqlite
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql/counter
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/sql
 @dirrm %%EXAMPLESDIR%%/raddb/mods-config/python
