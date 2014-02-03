@@ -17,11 +17,8 @@ USES=	pathfix
 USE_LDCONFIG=	yes
 USE_SDL=	sdl
 
-MAN3=		sage.3 sage_init.3
-
 CFLAGS+=	-I${LOCALBASE}/include
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|g' ${WRKSRC}/configure
 

@@ -16,8 +16,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_XORG=	x11 xext xrandr xxf86dga ice xinerama xrandr xrender xscrnsaver sm
-MAN1=		x2vnc.1
-PLIST_FILES=	bin/x2vnc
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/x2vnc \
+		man/man1/x2vnc.1.gz
+
 .include <bsd.port.mk>

@@ -8,5 +8,7 @@ include/sage/sage_fptr.h
 include/sage/GL.h
 include/sage/GLU.h
 include/sage/header.h
+man/man3/sage.3.gz
+man/man3/sage_init.3.gz
 @dirrm include/sage
 libdata/pkgconfig/sage.pc
