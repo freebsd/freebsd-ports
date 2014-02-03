@@ -21,7 +21,6 @@ USES=		iconv pathfix perl5 pkgconfig
 
 INFO=		libidn
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -46,12 +45,9 @@ post-patch:
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in FAQ NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
-.include "Makefile.man"
 .include <bsd.port.mk>
