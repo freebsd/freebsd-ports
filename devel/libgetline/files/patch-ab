@@ -11,7 +11,7 @@
 +SHLIB_CFLAGS	= -fpic -DPIC
 +SHLIB_LDFLAGS	= -shared
 +SHLIB_TGT		= $(INST_LIBDIR)/libgetline.so.$(SHLIB_VERSION)
-+SHLIB_TGT_SPEC	= -Wl,-h$(SHLIB_TGT)
++SHLIB_TGT_SPEC	= -Wl,-hlibgetline.so.$(SHLIB_VERSION)
 +
 +all: libgetline.a libgetline.so.$(SHLIB_VERSION)
 +
