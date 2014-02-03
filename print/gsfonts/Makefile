@@ -16,10 +16,10 @@ COMMENT=	Standard Fonts for Ghostscript
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
+PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${STAGEDIR}${PREFIX}/||}"
 OPTIONS_DEFINE=	DOCS
 
-FONTSDIR=	${PREFIX}/share/ghostscript/fonts
+FONTSDIR=	${STAGEDIR}${PREFIX}/share/ghostscript/fonts
 CJKFONTS?=	std.ja_JP/Ryumin-Light \
 		std.ja_JP/GothicBBB-Medium \
 		std.ja_JP/Ryumin-Light.gs7 \
@@ -28,7 +28,6 @@ CJKFONTS?=	std.ja_JP/Ryumin-Light \
 		std.zh_CN/STSong-Light \
 		std.zh_CN/MSung-Light
 
-NO_STAGE=	yes
 do-install:
 	${MKDIR} ${FONTSDIR}
 	cd ${WRKSRC}/fonts && \
@@ -43,12 +42,10 @@ do-install:
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	ChangeLog README README.tweaks TODO
 
 post-install:
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/fonts && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/fonts && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
