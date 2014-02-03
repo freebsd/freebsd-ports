@@ -86,7 +86,7 @@
  	@echo "Installing $(LIB_FILE) to $(DLL_INSTALL_DIR)/"
  	@@INSTALL_LIB@
  	@chmod 555 "$(DLL_INSTALL_DIR)/$(LIB_FILE)"
-+	@ln -sf $(DLL_INSTALL_DIR)/$(TK_LIB_FILE) $(DLL_INSTALL_DIR)/libtk${SHORT_TK_VER}.so
++	@ln -sf $(TK_LIB_FILE) $(DLL_INSTALL_DIR)/libtk${SHORT_TK_VER}.so
 +	@echo "Installing libtk${SHORT_TK_VER}.a"
 +	@$(INSTALL_DATA) libtk${SHORT_TK_VER}.a $(DLL_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
 +	@chmod 555 $(DLL_INSTALL_DIR)/libtk${SHORT_TK_VER}.a
@@ -125,7 +125,7 @@
  	    do \
 -	    $(INSTALL_DATA) $$i "$(INCLUDE_INSTALL_DIR)"; \
 +	    j=`basename $$i`; \
-+	    ln -sf "$(GENERIC_INCLUDE_INSTALL_DIR)"/$$j "$(INCLUDE_INSTALL_DIR)"/$$j ; \
++	    ln -sf generic/$$j "$(INCLUDE_INSTALL_DIR)"/$$j ; \
  	    done;
  	@list='$(@TK_WINDOWINGSYSTEM@_XLIB_HDRS)'; for i in $$list ; \
  	    do \

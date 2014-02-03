@@ -13,9 +13,10 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Graphical toolkit for Tcl
 
-LICENSE=	BSD
-
-LICENSE_TERMS=	${WRKSRC}/../license.terms
+LICENSE=	TclTk
+LICENSE_NAME=	Tcl/Tk License
+LICENSE_FILE=	${WRKSRC}/../license.terms
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 USES+=		tcl:${SHORT_TK_VER}
 USE_XORG=	x11 xft xscrnsaver
@@ -51,7 +52,6 @@ DEMOS_DESC=	Install demos
 
 SUB_LIST+=	TCLPATCHLEVEL="${PORTVERSION}"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${TCL_VER}
@@ -71,7 +71,9 @@ PLIST_SUB+=	DEMOS="@comment "
 
 .if ${PORT_OPTIONS:MTK85_MAN}
 INSTALL_TARGET+=install-doc
-.include "${.CURDIR}/Makefile.man"
+PLIST_SUB+=	MAN=""
+.else
+PLIST_SUB+=	MAN="@comment "
 .endif
 
 TKBASE?=	${PORTSDIR}/${PKGCATEGORY}/${LATEST_LINK}
@@ -93,7 +95,9 @@ post-configure:
 	${REINPLACE_CMD} -e 's|-Wl,--rpath -Wl,/usr/local/lib||g' ${WRKSRC}/Makefile
 
 post-install:
-	${INSTALL_DATA} ${WRKDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}/
+	${INSTALL_DATA} ${WRKDIR}/pkgIndex.tcl ${STAGEDIR}${PREFIX}/lib/tk${TK_VER}/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/wish${TK_VER}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtk${SHORT_TK_VER}.so.1
 
 regression-test:	build
 	cd ${WRKSRC}; ${MAKE} test
