@@ -4,8 +4,8 @@
 PORTNAME=	midori
 PORTVERSION=	0.5.6
 CATEGORIES=	www xfce
-MASTER_SITES=	http://www.midori-browser.org/downloads/
-DISTNAME=	${PORTNAME}_${PORTVERSION}_all_
+MASTER_SITES=	https://launchpadlibrarian.net/156972992/ \
+	https://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	xfce@FreeBSD.org
