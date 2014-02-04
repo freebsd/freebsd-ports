@@ -12,22 +12,22 @@ COMMENT=	Google\'s open source JavaScript engine
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
 
-CONFLICTS=      v8-devel-*
+CONFLICTS=	v8-3.24.*
 
-USES=		gmake
+USES=		gmake compiler
 USE_XZ=		yes
 USE_PYTHON=	2
 USE_LDCONFIG=	yes
 ALL_TARGET=	native
 MAKE_ARGS=	library=shared
+MAKE_ENV+=	CC.host=${CC} CXX.host=${CXX} LINK.host=${CXX} LINK.target=${CXX}
 
 .include <bsd.port.pre.mk>
 
-.if ${CC:T:Mclang} == "clang" || ${CXX:T:Mclang++} == "clang++" || ${OSVERSION} >= 1000024
-_CLANG!=	clang --version | ${HEAD} -1 | ${SED} -e 's/.*clang version \([0-9]\)\.\([0-9]\).*/\1\2/'
+.if ${COMPILER_TYPE} == clang
 MAKE_ENV+=	LINK=clang++
 CFLAGS+=	-Wno-unused-private-field
-.if ${_CLANG} >= 33
+.if ${COMPILER_VERSION} >= 33
 CFLAGS+=	-Wno-nested-anon-types -Wno-unused-function
 .endif
 .else

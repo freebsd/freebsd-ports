@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	v8
-PORTVERSION=	3.24.7
+PORTVERSION=	3.24.30
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/vanilla
 PKGNAMESUFFIX=	-devel
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 
 CONFLICTS=	v8-3.19.*
 
-USES=		gmake shebangfix
+USES=		gmake shebangfix compiler
 SHEBANG_LANG=	sh
 SHEBANG_FILES=	${WRKSRC}/build/gyp/gyp
 USE_XZ=		yes
@@ -30,12 +30,11 @@ sh_CMD=		${SH}
 
 .include <bsd.port.pre.mk>
 
-.if ${CC:T:Mclang} == "clang" || ${CXX:T:Mclang++} == "clang++" || ${OSVERSION} >= 1000024
-_CLANG!=	${CC} --version | ${HEAD} -1 | ${SED} -e 's/.*clang version \([0-9]\)\.\([0-9]\).*/\1\2/'
+.if ${COMPILER_TYPE} == clang
 MAKE_ENV+=	LINK=clang++ AR=/usr/bin/ar
 MAKE_ARGS+=	clang=on
 CFLAGS+=	-Wno-unused-private-field -Wno-unused-variable
-.if ${_CLANG} >= 33
+.if ${COMPILER_VERSION} >= 33
 CFLAGS+=	-Wno-nested-anon-types -Wno-unused-function
 .endif
 .else
