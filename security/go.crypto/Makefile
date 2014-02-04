@@ -1,10 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	go.crypto
-PORTVERSION=	20130706
-PORTREVISION=	1
+PORTVERSION=	20140113
 CATEGORIES=	security devel
-MASTER_SITES=	http://jlaffaye.net/ LOCAL/jlaffaye
+MASTER_SITES=	http://www.c-s.li/ports/
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Additional cryptography packages for Go
