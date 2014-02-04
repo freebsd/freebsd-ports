@@ -13,14 +13,10 @@ COMMENT=	Quick Kanji Code Converter (C version)
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 ALL_TARGET=
-PLIST_FILES=	bin/qkc
+PLIST_FILES=	bin/qkc man/ja/man1/qkc.1.gz
 
-MAN1=		qkc.1
-MANLANG=	ja
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/qkc ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/qkc.1 ${PREFIX}/man/ja/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/qkc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/qkc.1 ${STAGEDIR}${MAN1PREFIX}/man/ja/man1
 
 .include <bsd.port.mk>
