@@ -1030,6 +1030,10 @@ include/ruby-2.0/ruby.h
 %%RUBY_LIBDIR%%/yaml/dbm.rb
 %%RUBY_LIBDIR%%/yaml/store.rb
 %%RUBY_LIBDIR%%/yaml.rb
+man/man1/erb%%RUBY_SHLIBVER%%.1.gz
+man/man1/irb%%RUBY_SHLIBVER%%.1.gz
+man/man1/ri%%RUBY_SHLIBVER%%.1.gz
+man/man1/ruby%%RUBY_SHLIBVER%%.1.gz
 @dirrm %%RUBY_LIBDIR%%/yaml
 @dirrm %%RUBY_LIBDIR%%/xmlrpc
 @dirrm %%RUBY_LIBDIR%%/webrick/httpservlet

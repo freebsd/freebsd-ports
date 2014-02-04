@@ -14,6 +14,10 @@ lib/lib%%RUBY_NAME%%-static.a
 lib/lib%%RUBY_NAME%%.so
 lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 libdata/pkgconfig/ruby-1.9.pc
+man/man1/erb%%RUBY_SHLIBVER%%.1.gz
+man/man1/irb%%RUBY_SHLIBVER%%.1.gz
+man/man1/ri%%RUBY_SHLIBVER%%.1.gz
+man/man1/ruby%%RUBY_SHLIBVER%%.1.gz
 include/ruby-1.9/%%RUBY_ARCH%%/ruby/config.h
 include/ruby-1.9/ruby/backward/classext.h
 include/ruby-1.9/ruby/backward/rubyio.h
