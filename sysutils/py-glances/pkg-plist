@@ -46,6 +46,7 @@ etc/glances/glances.conf.sample
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/doc/glances/images/screenshot-wide.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/doc/glances/images/screenshot.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/doc/glances/images/sensors.png
+%%MANPAGES%%man/man1/glances.1.gz
 %%NLS%%share/locale/es/LC_MESSAGES/glances.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/glances.mo
 %%NLS%%share/locale/it/LC_MESSAGES/glances.mo
