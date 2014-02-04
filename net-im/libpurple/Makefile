@@ -3,8 +3,8 @@
 #   $MCom: ports/net-im/libpurple/Makefile,v 1.32 2010/05/10 04:21:19 marcus Exp $
 
 PORTNAME?=	libpurple
-PORTVERSION=	2.10.7
-PORTREVISION?=	2
+PORTVERSION=	2.10.8
+PORTREVISION?=	0
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -73,13 +73,21 @@ OPTIONS_DEFINE+=	GTKSPELL CAP
 OPTIONS_DEFAULT+=	GTKSPELL CAP
 GTKSPELL_DESC=	Spell checking support
 CAP_DESC=	Contact Availability Prediction plugin
+PLIST_SUB+=	GTKUI=""
+.else
+PLIST_SUB+=	GTKUI="@comment not installed: "
+.endif
+
+.if defined(WITH_CONSOLEUI)
+PLIST_SUB+=	CONSOLEUI=""
+.else
+PLIST_SUB+=	CONSOLEUI="@comment not installed: "
 .endif
 
 OPTIONSFILE=	${PORT_DBDIR}/${UNIQUENAME}/options
 
 CONFIGURE_ARGS+=--disable-doxygen
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCLTK}
@@ -118,7 +126,7 @@ CONFIGURE_ARGS+=--disable-gstreamer
 .endif
 
 .if ${PORT_OPTIONS:MVV} && ${PORT_OPTIONS:MGSTREAMER}
-LIB_DEPENDS+=	gstfarsight-0.10.0:${PORTSDIR}/net-im/farsight2
+LIB_DEPENDS+=	libgstfarsight-0.10.so:${PORTSDIR}/net-im/farsight2
 USE_GSTREAMER+=	v4l2
 PLIST_SUB+=	VV=""
 .else
@@ -127,13 +135,13 @@ PLIST_SUB+=	VV="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MIDN}
-LIB_DEPENDS+=	idn.17:${PORTSDIR}/dns/libidn
+LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
 .else
 CONFIGURE_ARGS+=--disable-idn
 .endif
 
 .if ${PORT_OPTIONS:MCAP}
-LIB_DEPENDS+=	sqlite3.8:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 CONFIGURE_ARGS+=--enable-cap
 PLIST_SUB+=	CAP=""
 .else
@@ -142,7 +150,7 @@ PLIST_SUB+=	CAP="@comment not installed: "
 .endif
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		libgnutls.so:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--enable-gnutls=yes
 PLIST_SUB+=		GNUTLS=""
 .else
@@ -151,7 +159,7 @@ PLIST_SUB+=		GNUTLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MNSS}
-LIB_DEPENDS+=		nss3:${PORTSDIR}/security/nss
+LIB_DEPENDS+=		libnss3.so:${PORTSDIR}/security/nss
 CONFIGURE_ARGS+=	--enable-nss=yes \
 			--with-nspr-includes=${LOCALBASE}/include/nspr \
 			--with-nspr-libs=${LOCALBASE}/lib \
@@ -164,12 +172,12 @@ PLIST_SUB+=		NSS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSASL}
-LIB_DEPENDS+=		sasl2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS+=		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--enable-cyrus-sasl
 .endif
 
 .if ${PORT_OPTIONS:MBONJOUR}
-LIB_DEPENDS+=	avahi-client.3:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS+=	libavahi-client.so:${PORTSDIR}/net/avahi-app
 PLIST_SUB+=	BONJOUR=""
 PRPL_MODULES:=	bonjour,${PRPL_MODULES}
 .else
@@ -178,13 +186,13 @@ PLIST_SUB+=	BONJOUR="@comment not installed: "
 .endif
 
 .if ${PORT_OPTIONS:MGTKSPELL}
-LIB_DEPENDS+=		gtkspell.0:${PORTSDIR}/textproc/gtkspell
+LIB_DEPENDS+=		libgtkspell.so:${PORTSDIR}/textproc/gtkspell
 .else
 CONFIGURE_ARGS+=	--disable-gtkspell
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=		libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 .if !defined(PIDGIN_SLAVE)
 RUN_DEPENDS+=		${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 .endif
@@ -200,15 +208,18 @@ USES+=			perl5
 CONFIGURE_ARGS+=	--with-perl-lib=site
 PLIST_SUB+=		PERL:=""
 .if !defined(PIDGIN_SLAVE)
-MAN3+=			Purple.3
+PLIST_SUB+=		PERLMAN:=""
+.else
+PLIST_SUB+=		PERLMAN:="@comment not installed: "
 .endif
 .else
 CONFIGURE_ARGS+=	--disable-perl
-PLIST_SUB+=		PERL:="@comment not installed: "
+PLIST_SUB+=		PERL:="@comment not installed: " \
+			PERLMAN:="@comment not installed: "
 .endif
 
 .if ${PORT_OPTIONS:MSAMETIME}
-LIB_DEPENDS+=	meanwhile.1:${PORTSDIR}/net-im/meanwhile
+LIB_DEPENDS+=	libmeanwhile.so:${PORTSDIR}/net-im/meanwhile
 PLIST_SUB+=	SAMETIME=""
 PRPL_MODULES:=	sametime,${PRPL_MODULES}
 .else
@@ -217,7 +228,7 @@ CONFIGURE_ARGS+=--disable-meanwhile
 .endif
 
 .if ${PORT_OPTIONS:MSILC}
-LIB_DEPENDS+=		silcclient-1.1:${PORTSDIR}/devel/silc-toolkit
+LIB_DEPENDS+=		libsilcclient-1.so:${PORTSDIR}/devel/silc-toolkit
 CONFIGURE_ARGS+=	--with-silc-includes=${LOCALBASE}/include/silc \
 			--with-silc-libs=${LOCALBASE}/lib
 PLIST_SUB+=		SILC=""
