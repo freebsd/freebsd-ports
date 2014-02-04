@@ -319,7 +319,7 @@ include/QxtZeroconf/qxtmdns_avahi.h
 include/QxtZeroconf/qxtmdns_avahi_p.h
 include/QxtZeroconf/qxtservicebrowser.h
 include/QxtZeroconf/qxtservicebrowser_p.h
-lib/qt4/plugins/designer/libQxtDesignerPlugins.so
+%%QT_PLUGINDIR%%/designer/libQxtDesignerPlugins.so
 lib/qxt/libQxtBerkeley.so
 lib/qxt/libQxtBerkeley.so.%%SHVER_1%%
 lib/qxt/libQxtBerkeley.so.%%SHVER_2%%
@@ -358,7 +358,9 @@ share/qt4/mkspecs/features/qxtvars.prf
 @dirrm include/QxtZeroconf
 @dirrm include/QxtWeb
 @dirrm lib/qxt
-@dirrmtry lib/qt4/plugins/designer
+@dirrmtry %%QT_PLUGINDIR%%/designer
 @dirrmtry share/qt4/mkspecs/features
 @dirrmtry share/qt4/mkspecs
 @dirrmtry share/qt4
+@dirrmtry %%QT_PLUGINDIR%%
+@dirrmtry %%QT_LIBDIR%%

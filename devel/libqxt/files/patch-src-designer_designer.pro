@@ -5,5 +5,5 @@
  
  CONFIG          += designer plugin
 -target.path      = $$[QT_INSTALL_PLUGINS]/designer
-+target.path      = %%PREFIX%%/lib/qt4/plugins/designer
++target.path      = %%STAGEDIR%%%%PREFIX%%/lib/qt4/plugins/designer
  INSTALLS         = target
