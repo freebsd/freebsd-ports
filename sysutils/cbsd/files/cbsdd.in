@@ -1,0 +1,60 @@
+#!/bin/sh
+#
+# PROVIDE: cbsdd
+# REQUIRE: LOGIN FILESYSTEMS sshd
+# KEYWORD: shutdown
+#
+# cbsdd_enable="YES"
+#
+
+. /etc/rc.subr
+
+name=cbsdd
+rcvar=cbsdd_enable
+load_rc_config $name
+
+: ${cbsdd_enable="NO"}
+
+export workdir="${cbsd_workdir}"
+globalconf=${cbsd_globalconf:-"${workdir}/cbsd.conf"}
+
+if [ ! -f ${globalconf} ]; then
+    echo "cbsd: no such ${globalconf}";
+    exit 1
+fi
+
+. ${globalconf}
+. ${inventory}
+. ${mdtools}
+. ${subr}
+
+if [ ! -f ${localcbsdconf} ]; then
+    echo "cbsd: no such ${localcbsdconf}";
+    exit 1
+fi
+
+. ${localcbsdconf}
+
+start_precmd=${name}_prestart
+stop_precmd=${name}_prestop
+
+command="${sbindir}/cbsdd"
+pidfile="/var/run/$name.pid"
+
+cbsdd_prestart() {
+    find ${ftmpdir} -depth 1 -maxdepth 1 -type f -exec rm -f {} \;
+    %%PREFIX%%/bin/cbsd sysinv mode=update
+
+    . ${inventory}
+
+    [ -n "$nat_enable" ] && %%PREFIX%%/bin/cbsd naton
+    /usr/sbin/daemon ${rcddir}/jails-astart start
+}
+
+cbsdd_prestop()
+{
+    ${rcddir}/jails-astart stop
+    [ -n "${nat_enable}" ] && %%PREFIX%%/bin/cbsd natoff
+}
+
+run_rc_command "$1"
