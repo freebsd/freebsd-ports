@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glances
-PORTVERSION=	1.7.3
+PORTVERSION=	1.7.4
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://github.com/nicolargo/glances/archive/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,7 +24,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=easy_install
 PYDISTUTILS_PKGNAME=	Glances
 
-MANPAGES_MAN1=		glances.1
 NLS_TRANSLATIONS=	es fr it pt_BR zh_CN
 NLS_USES=		gettext
 
