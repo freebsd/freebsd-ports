@@ -1,0 +1,18 @@
+bin/jail.create.jailcell
+bin/jail.delete.jailcell
+bin/jail.install.system
+bin/jail.jailconf.def.create
+bin/jail.jailconf.def.delete
+bin/jail.jailconf.start
+bin/jail.jailconf.stop
+bin/jail.pristine.fetch
+bin/jail.rcconf.def.create
+bin/jail.rcconf.def.delete
+bin/jail.rcconf.start
+bin/jail.rcconf.stop
+bin/jail.ssh.jailcell
+etc/rc.d/jail.jailconf.bootime
+etc/rc.d/jail.rcconf.bootime
+man/man8/jail-primer.8.gz
+%%PORTDOCS%%%%DOCSDIR%%/jail-primer.html
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
