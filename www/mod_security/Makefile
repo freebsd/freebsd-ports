@@ -9,12 +9,12 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME:S/_//:S/2//}-apache_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An intrusion detection and prevention engine
+COMMENT=	Intrusion detection and prevention engine
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre \
-		apr-1:${PORTSDIR}/devel/apr1
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libapr-1.so:${PORTSDIR}/devel/apr1
 
 USE_APACHE=	22+
 GNU_CONFIGURE=	yes
@@ -35,26 +35,18 @@ PLIST_FILES=	etc/modsecurity.conf-example \
 		lib/mod_security2.so
 
 OPTIONS_DEFINE=	LUA MLOGC
-MLOGC_DESC=	Build ModSecurity Log Collector
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+LUA_CONFIGURE_ON=	--with-lua=${LOCALBASE}
+LUA_CONFIGURE_OFF+=	--without-lua
+LUA_USE=		LUA=5.1+
 
-.if ${PORT_OPTIONS:MMLOGC}
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-CONFIGURE_ARGS+=	--with-curl=${LOCALBASE} --disable-errors
-PLIST_FILES+=	bin/mlogc bin/mlogc-batch-load.pl
-.else
-CONFIGURE_ARGS+=	--disable-mlogc
-.endif
+MLOGC_DESC=		Build ModSecurity Log Collector
+MLOGC_CONFIGURE_ON=	--with-curl=${LOCALBASE} --disable-errors
+MLOGC_CONFIGURE_OFF=	--disable-mlogc
+MLOGC_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
+MLOGC_PLIST_FILES=	bin/mlogc bin/mlogc-batch-load.pl
 
-.if ${PORT_OPTIONS:MLUA}
-USE_LUA=	5.1+
-CONFIGURE_ARGS+=	--with-lua=${LOCALBASE}
-LIB_DEPENDS+=	lua-5.1.5:${PORTSDIR}/lang/lua
-.else
-CONFIGURE_ARGS+=	--without-lua
-.endif
+.include <bsd.port.options.mk>
 
 REINPLACE_ARGS=	-i ""
 AP_EXTRAS+=	-DWITH_LIBXML2
@@ -66,14 +58,16 @@ post-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} mlogc
 .endif
 
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
+
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/modsecurity.conf-recommended ${PREFIX}/etc/modsecurity.conf-example
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "doc" ${DOCSDIR}/)
-.endif
+	${INSTALL_DATA} ${WRKSRC}/modsecurity.conf-recommended \
+		${STAGEDIR}${PREFIX}/etc/modsecurity.conf-example
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "doc" ${STAGEDIR}${DOCSDIR})
 .if ${PORT_OPTIONS:MMLOGC}
-	${INSTALL_PROGRAM} ${WRKSRC}/mlogc/mlogc ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/mlogc/mlogc ${STAGEDIR}${PREFIX}/bin
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
