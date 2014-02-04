@@ -25,7 +25,7 @@ LZMA_DEPEND?=	sys
 LIB_DEPENDS+=	liblzma.so.1:${PORTSDIR}/archivers/lzmalib
 .endif
 
-pre-build:
+post-configure:
 .if ${LZMA_DEPEND} == "sys"
 	@${REINPLACE_CMD} -e "/^LDDLFLAGS/ s|${LOCALBASE}/lib|${LIBDIR}|" ${WRKSRC}/Makefile
 .endif
