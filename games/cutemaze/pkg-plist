@@ -1,4 +1,4 @@
-%%QT_BINDIR%%/cutemaze
+bin/cutemaze
 share/applications/cutemaze.desktop
 %%NLS%%%%DATADIR%%/translations/cutemaze_de.qm
 %%NLS%%%%DATADIR%%/translations/cutemaze_en.qm
