@@ -1,26 +1,21 @@
+@owner www
+@group www
 %%WWWDIR%%/blank.gif
-%%WWWDIR%%/fancy_close.png
-%%WWWDIR%%/fancy_loading.png
-%%WWWDIR%%/fancy_nav_left.png
-%%WWWDIR%%/fancy_nav_right.png
-%%WWWDIR%%/fancy_shadow_e.png
-%%WWWDIR%%/fancy_shadow_n.png
-%%WWWDIR%%/fancy_shadow_ne.png
-%%WWWDIR%%/fancy_shadow_nw.png
-%%WWWDIR%%/fancy_shadow_s.png
-%%WWWDIR%%/fancy_shadow_se.png
-%%WWWDIR%%/fancy_shadow_sw.png
-%%WWWDIR%%/fancy_shadow_w.png
-%%WWWDIR%%/fancy_title_left.png
-%%WWWDIR%%/fancy_title_main.png
-%%WWWDIR%%/fancy_title_over.png
-%%WWWDIR%%/fancy_title_right.png
-%%WWWDIR%%/fancybox-x.png
-%%WWWDIR%%/fancybox-y.png
-%%WWWDIR%%/fancybox.png
-%%WWWDIR%%/jquery.easing-1.3.pack.js
-%%WWWDIR%%/jquery.fancybox-1.3.4.css
-%%WWWDIR%%/jquery.fancybox-1.3.4.js
-%%WWWDIR%%/jquery.fancybox-1.3.4.pack.js
-%%WWWDIR%%/jquery.mousewheel-3.0.4.pack.js
+%%WWWDIR%%/fancybox_loading.gif
+%%WWWDIR%%/fancybox_loading@2x.gif
+%%WWWDIR%%/fancybox_overlay.png
+%%WWWDIR%%/fancybox_sprite.png
+%%WWWDIR%%/fancybox_sprite@2x.png
+%%WWWDIR%%/helpers/fancybox_buttons.png
+%%WWWDIR%%/helpers/jquery.fancybox-buttons.css
+%%WWWDIR%%/helpers/jquery.fancybox-buttons.js
+%%WWWDIR%%/helpers/jquery.fancybox-media.js
+%%WWWDIR%%/helpers/jquery.fancybox-thumbs.css
+%%WWWDIR%%/helpers/jquery.fancybox-thumbs.js
+%%WWWDIR%%/jquery.fancybox.css
+%%WWWDIR%%/jquery.fancybox.js
+%%WWWDIR%%/jquery.fancybox.pack.js
+@dirrm %%WWWDIR%%/helpers
 @dirrm %%WWWDIR%%
+@owner
+@group

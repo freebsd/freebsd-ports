@@ -1,6 +1,7 @@
-FancyBox is a tool for displaying images, html content and multi-media in a
-Mac-style "lightbox" that floats overtop of web page. It was built using the
-jQuery library. Licensed under both MIT and GPL licenses.
+fancyBox is a tool that offers a nice and elegant way to add zooming
+functionality for images, html content and multi-media on your webpages. It is
+built on the top of the popular JavaScript framework jQuery and is both easy to
+implement and a snap to customize.
 
 Features:
 - Can display images, HTML elements, SWF movies, iframes and also Ajax
@@ -12,4 +13,4 @@ Features:
 - Support fancy transitions by using easing plugin.
 - Adds a nice drop shadow under the zoomed item.
 
-WWW: http://fancybox.net/
+WWW: http://fancyapps.com/fancybox/
