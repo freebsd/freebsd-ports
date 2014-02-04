@@ -24,7 +24,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if defined(MACHONE_CPU) && ${MACHINE_CPU:Msse}!=""
+.if defined(MACHINE_CPU) && ${MACHINE_CPU:Msse}!=""
 CONFIGURE_ARGS+=	--enable-sse
 .endif
 
