@@ -10,6 +10,8 @@ DISTNAME=	d-${PORTVERSION}-src
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Simple but powerful tool for parsing
 
+LICENSE=	BSD3CLAUSE
+
 OPTIONS_DEFINE=	BOEHM DOCS
 BOEHM_DESC=	Boehm garbage collector support
 
@@ -19,16 +21,15 @@ EXTRACT_AFTER_ARGS=	--exclude "*my*"
 USES=		gmake
 MAKE_ARGS=	CC="${CC}" D_OPTIMIZE= PREFIX=${PREFIX}
 
-MAN1=		make_dparser.1
 PORTDOCS=	*
 PLIST_FILES=	bin/make_dparser include/dparse.h include/dparse_tables.h \
-		include/dparse_tree.h include/dsymtab.h lib/${LIBDPARSE}
+		include/dparse_tree.h include/dsymtab.h lib/${LIBDPARSE} \
+		man/man1/make_dparser.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBOEHM}
-LIB_DEPENDS+=	gc:${PORTSDIR}/devel/boehm-gc
+LIB_DEPENDS+=	libgc.so:${PORTSDIR}/devel/boehm-gc
 MAKE_ARGS+=	D_USE_GC=1 \
 		GC_CFLAGS="-I${LOCALBASE}/include -L${LOCALBASE}/lib"
 LIBDPARSE=	libdparse_gc.a
@@ -41,16 +42,14 @@ BROKEN=		Does not build on ia64
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/make_dparser ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/make_dparser.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/dparse.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/dparse_tables.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/dparse_tree.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/dsymtab.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/${LIBDPARSE} ${PREFIX}/lib
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/make_dparser ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/make_dparser.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/dparse.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/dparse_tables.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/dparse_tree.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/dsymtab.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/${LIBDPARSE} ${STAGEDIR}${PREFIX}/lib
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
