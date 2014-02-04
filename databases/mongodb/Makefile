@@ -39,6 +39,8 @@ GROUPS=	mongodb
 
 USE_RC_SUBR=	mongod
 
+PORTSCOUT=	limitw:1,even
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSM}
