@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 DISTNAME=	astropulse-svn-1702 # modified archive, see leftout in top directory
 MASTER_SITE_SUBDIR=rene
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Astropulse for BOINC
 
 LICENSE=	GPLv2

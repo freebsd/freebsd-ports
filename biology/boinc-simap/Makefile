@@ -9,7 +9,7 @@ MASTER_SITES=	http://boincsimap.org/boincsimap/download/
 DISTNAME=	${SIMAP_BINARY} ${HMMER_BINARY}
 EXTRACT_ONLY=	${HMMER_BINARY}
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Similarity Matrix of Proteins project for BOINC
 
 LIB_DEPENDS=	libc.so.6:${PORTSDIR}/misc/compat6x

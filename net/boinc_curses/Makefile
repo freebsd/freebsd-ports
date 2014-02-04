@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.oook.cz/bsd/boinc_curses/
 MASTER_SITE_SUBDIR=rene
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console, ncurses based monitor and manager for BOINC
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libboinc.a:${PORTSDIR}/net/boinc-client
