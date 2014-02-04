@@ -10,7 +10,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 DISTNAME=	setiathome-svn-1924 # modified archive, see leftout in top directory
 MASTER_SITE_SUBDIR=rene
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Setiathome Enhanced for BOINC
 
 LICENSE=	GPLv2

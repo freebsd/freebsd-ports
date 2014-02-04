@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://rene-ladan.nl/pub/distfiles/
 MASTER_SITE_SUBDIR=rene
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Berkeley Open Infrastructure for Network Computing client
 
 USES=		dos2unix gmake pkgconfig
