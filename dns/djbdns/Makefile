@@ -31,6 +31,7 @@ SRV_DESC=	SRV record patch by Michael Handler
 DNSCURVE_DESC=	DNSCurve support by Matthew Dempsky
 ADD_USERS_DESC=	Add dnscache, tinydns and dnslog users/groups
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MADD_USERS}
@@ -129,12 +130,12 @@ PLIST_SUB+=	WITH_IP6="@comment "
 post-patch:
 	@echo "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@echo "${CC} ${STRIP} ${LDFLAGS}" > ${WRKSRC}/conf-ld
-	@echo "${STAGEDIR}${PREFIX}" > ${WRKSRC}/conf-home
+	@echo "${PREFIX}" > ${WRKSRC}/conf-home
 
 .if ${PORT_OPTIONS:MMAN}
 post-install:
-	@${INSTALL_MAN} ${WRKDIR}/djbdns-man/*.1 ${STAGEDIR}${PREFIX}/man/man1/
-	@${INSTALL_MAN} ${WRKDIR}/djbdns-man/*.8 ${STAGEDIR}${PREFIX}/man/man8/
+	@${INSTALL_MAN} ${WRKDIR}/djbdns-man/*.1 ${PREFIX}/man/man1/
+	@${INSTALL_MAN} ${WRKDIR}/djbdns-man/*.8 ${PREFIX}/man/man8/
 .endif
 
 .include <bsd.port.mk>
