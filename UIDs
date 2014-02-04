@@ -91,6 +91,7 @@ ventrilo:*:146:146::0:0:& server:/usr/local/ventrilo-server:/usr/sbin/nologin
 kdm:*:147:147::0:0:KDE Display Manager:/nonexistent:/usr/sbin/nologin
 ipv6mon:*:148:148::0:0:IPv6 Address Monitoring Daemon:/nonexistent:/usr/sbin/nologin
 avenger:*:149:149::0:0:Mail Avenger:/var/spool/avenger:/usr/sbin/nologin
+cbsd:*:150:150::0:0:Cbsd user:/nonexistent:/bin/sh
 rbldns:*:153:153::0:0:rbldnsd pseudo-user:/nonexistent:/usr/sbin/nologin
 trircd:*:154:154::0:0:& user:/usr/local/etc/tr-ircd:/usr/sbin/nologin
 sfs:*:171:171::0:0:Self-Certifying File System:/nonexistent:/usr/sbin/nologin

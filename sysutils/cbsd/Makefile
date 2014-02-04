@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cbsd
-PORTVERSION=	10.0.1
+PORTVERSION=	10.0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.bsdstore.ru/downloads/ \
 		GH
@@ -16,12 +16,12 @@ RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
 		sqlite3:${PORTSDIR}/databases/sqlite3
 LIB_DEPENDS=	libssh2.so:${PORTSDIR}/security/libssh2
 
-IGNORE=		Fails to work properly
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	olevole
 GH_PROJECT=	cbsd
-GH_COMMIT=	ff6e7ea
+GH_COMMIT=	6e05bd1
+
+USE_RC_SUBR=	cbsdd cbsdrsyncd
 
 SUB_FILES=	pkg-message
 PLIST_FILES+=	man/man8/cbsd.8.gz
@@ -29,6 +29,9 @@ PLIST_FILES+=	man/man8/cbsd.8.gz
 CBSD_HOME?=	${PREFIX}/cbsd
 
 .include <bsd.port.pre.mk>
+
+USERS=	${PORTNAME}
+GROUPS=	${PORTNAME}
 
 .if ${OSVERSION} < 901000
 IGNORE=	does not work on FreeBSD < 9.1
