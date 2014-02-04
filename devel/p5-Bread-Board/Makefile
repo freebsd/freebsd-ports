@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Bread-Board
-PORTVERSION=	0.29
+PORTVERSION=	0.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DOY
@@ -14,7 +14,8 @@ COMMENT=	Solderless way to wire up your application components
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
+BUILD_DEPENDS=	p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
+		p5-Moose>=2.1200:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Clone>=0.05:${PORTSDIR}/devel/p5-MooseX-Clone \
 		p5-MooseX-Params-Validate>=0.14:${PORTSDIR}/devel/p5-MooseX-Params-Validate \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
