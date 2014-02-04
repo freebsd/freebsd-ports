@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	nkf
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 PORTEPOCH=	1
 CATEGORIES?=	japanese
-MASTER_SITES=	SFJP/${PORTNAME}/53171
+MASTER_SITES=	SFJP/${PORTNAME}/59912
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Network Kanji code conversion Filter
@@ -13,11 +13,7 @@ COMMENT=	Network Kanji code conversion Filter
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/nkf.c
 
-ALL_TARGET=	nkf
-PLIST_FILES=	bin/nkf
+MAKE_ENV=	MKDIR="${MKDIR}"
+PLIST_FILES=	bin/nkf man/man1/nkf.1.gz man/ja/man1/nkf.1.gz
 
-MAN1=		nkf.1
-MANLANG=	"" ja
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
