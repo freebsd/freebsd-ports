@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	agedu
-PORTVERSION=	9723
+PORTVERSION=	10126
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/sunpoet \
 		http://www.chiark.greenend.org.uk/~sgtatham/${PORTNAME}/
