@@ -3,7 +3,7 @@
 
 PORTNAME=	sonata
 PORTVERSION=	1.6.2.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio python
 MASTER_SITES=	http://codingteam.net/project/sonata/upload/releases/
 
@@ -15,12 +15,10 @@ LICENSE=	GPLv3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mpd>=0.2.0:${PORTSDIR}/audio/py-mpd
 
 USES=		gettext pkgconfig
-NO_STAGE=	yes
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-
-PYDISTUTILS_PKGNAME=	Sonata
+PYDISTUTILS_AUTOPLIST=	yes
 
 OPTIONS_DEFINE=	DOCS MANPAGES MMKEYS MPD PYGNOMEEXTRAS TAGLIB ZSI
 OPTIONS_DEFAULT=	MPD
@@ -29,43 +27,19 @@ MPD_DESC=	Install Music Player Daemon
 PYGNOMEEXTRAS_DESC=	Use py-gnome-extras for enhanced system tray
 TAGLIB_DESC=	Install support for editing metadata
 ZSI_DESC=	Install support for automatic lyrics fetching
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
-
-REINPLACE_ARGS=	-i.bak -e 's,%%DOCSDIR%%,${DOCSDIR},' \
-		-e 's,%%PREFIX%%,${PREFIX},'
+MANPAGES_MAKE_ENV_OFF=	NO_INSTALL_MANPAGES=${NO_INSTALL_MANPAGES}
+DOCS_MAKE_ENV=	NOPORTDOCS=${NOPORTDOCS}
+MPD_RUN_DEPENDS+=	musicpd:${PORTSDIR}/audio/musicpd
+MMKEYS_RUN_DEPENDS=${PYTHON_PKGNAMEPREFIX}dbus>=0.82.4:${PORTSDIR}/devel/py-dbus
+PYGNOMEEXTRAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gnome-extras>=2.25.3_4:${PORTSDIR}/x11-toolkits/py-gnome-extras
+TAGLIB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tagpy>=0.94.5:${PORTSDIR}/audio/py-tagpy
+ZSI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zsi>=2.0,1:${PORTSDIR}/net/py-zsi
 
 post-patch:
-	@${REINPLACE_CMD} ${WRKSRC}/${PYSETUP} ${WRKSRC}/sonata.py
-
-.if ${PORT_OPTIONS:MMANPAGES}
-MAN1=	${PORTNAME}.1
-.else
-MAKE_ENV=	NO_INSTALL_MANPAGES=${NO_INSTALL_MANPAGES}
-.endif
-
-.if !${PORT_OPTIONS:MDOCS}
-MAKE_ENV+=	NOPORTDOCS=${NOPORTDOCS}
-.endif
-
-.if ${PORT_OPTIONS:MMPD}
-RUN_DEPENDS+=	musicpd:${PORTSDIR}/audio/musicpd
-.endif
-
-.if ${PORT_OPTIONS:MMMKEYS}
-RUN_DEPENDS+=${PYTHON_PKGNAMEPREFIX}dbus>=0.82.4:${PORTSDIR}/devel/py-dbus
-.endif
-
-.if ${PORT_OPTIONS:MPYGNOMEEXTRAS}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gnome-extras>=2.25.3_4:${PORTSDIR}/x11-toolkits/py-gnome-extras
-.endif
-
-.if ${PORT_OPTIONS:MTAGLIB}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tagpy>=0.94.5:${PORTSDIR}/audio/py-tagpy
-.endif
-
-.if ${PORT_OPTIONS:MZSI}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}zsi>=2.0,1:${PORTSDIR}/net/py-zsi
-.endif
+	@${REINPLACE_CMD} -e 's,%%DOCSDIR%%,${DOCSDIR},' \
+		-e 's,%%PREFIX%%,${PREFIX},' \
+		${WRKSRC}/${PYSETUP} ${WRKSRC}/sonata.py
 
 .include <bsd.port.mk>
