@@ -2,35 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	ganttproject
-DISTVERSION=	2.1-m3
+PORTVERSION=	2.6.2
 CATEGORIES=	deskutils java
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-development/Loire%20M3
-EXTRACT_SUFX=	-src.zip
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-r1544
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	Plan projects using a Gantt chart
+COMMENT=	Gantt chart based project scheduling and management tool
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-src/${PORTNAME}-builder
+LICENSE=	GPLv3
 
+USES=		shebangfix
+SHEBANG_FILES=	ganttproject
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-USE_ANT=	yes
-
-DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-CPIOARGS=	--quiet -pdum -R
-
-SUB_FILES=	${PORTNAME}.sh
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+NO_BUILD=	yes
 
 do-install:
-	@${MKDIR} -m 0755 -p ${DATADIR}
-	(cd ${WRKSRC}/dist-bin && \
-	    ${CP} ${WRKSRC}/ganttproject-eclipsito-config.xml ${WRKSRC}/dist-bin && \
-	    ${FIND} . | ${GREP} -v './.*\.\(sh\|bat\|command\)' | \
-	    ${CPIO} ${CPIOARGS} ${LIBOWN}:${LIBGRP} ${DATADIR})
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}
+	${CHMOD} 0755 ${STAGEDIR}${DATADIR}/ganttproject
+	${LN} -sf ${DATADIR}/ganttproject ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
