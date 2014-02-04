@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libosmesa
-PORTVERSION=	10.0.2
+PORTVERSION=	10.0.3
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.freedesktop.org/pub/mesa/${PORTVERSION}/
 DISTNAME=	MesaLib-${PORTVERSION}
@@ -52,7 +52,8 @@ do-install:
 .for inc in ${INCLUDES}
 	${INSTALL_DATA} ${WRKSRC}/include/GL/${inc} ${STAGEDIR}${PREFIX}/include/Mesa/GL/
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/src/mesa/drivers/osmesa/.libs/libOSMesa.so.9 ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/src/mesa/drivers/osmesa/.libs/libOSMesa.so.9 ${STAGEDIR}${PREFIX}/lib
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libOSMesa.so.9
 	${LN} -s libOSMesa.so.9 ${STAGEDIR}${PREFIX}/lib/libOSMesa.so
 	${INSTALL_DATA} ${WRKSRC}/src/mesa/drivers/osmesa/osmesa.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/osmesa.pc
 
