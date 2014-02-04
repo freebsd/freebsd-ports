@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Module-Install-XSUtil
-PORTVERSION=	0.44
+PORTVERSION=	0.45
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GFUJI
@@ -21,4 +21,11 @@ TEST_DEPENDS=	p5-B-Hooks-OP-Annotation>=0.43:${PORTSDIR}/devel/p5-B-Hooks-OP-Ann
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501800
+BUILD_DEPENDS+=	p5-ExtUtils-ParseXS>=3.18:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
+RUN_DEPENDS+=	p5-ExtUtils-ParseXS>=3.18:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
+.endif
+
+.include <bsd.port.post.mk>
