@@ -69,7 +69,6 @@ GNUstep/System/Library/ColorPickers/WheelPicker.bundle/stamp.make
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/General/General.igsdoc
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/General/OpenStepCompliance.html
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/General/dependencies
-%%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit.pdf
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit.html
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_1.html
 %%PORTDOCS%%GNUstep/System/Library/Documentation/Developer/Gui/ProgrammingManual/AppKit_10.html
