@@ -15,6 +15,9 @@ COMMENT=	A multithreaded web server with embedded TCL interpreter
 LICENSE=	MPL
 LICENSE_FILE=	${WRKSRC}/license.terms
 
+DEPRECATED=	abandonware, messing up on clusters
+EXPIRATION_DATE=	2014-04-03
+
 MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}

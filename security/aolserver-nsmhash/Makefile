@@ -20,6 +20,9 @@ WRKSRC=		${WRKDIR}
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	abandonware, messing up on clusters
+EXPIRATION_DATE=	2014-04-03
+
 AOLSERVERBASE?=	aolserver
 LIB_DEPENDS+=	mhash.2:${PORTSDIR}/security/mhash
 BUILD_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
