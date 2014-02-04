@@ -3,13 +3,13 @@
 #   $MCom: ports/net-im/pidgin/Makefile,v 1.17 2007/09/17 19:53:06 marcus Exp $
 
 PORTNAME=	pidgin
-PORTREVISION=	1
+PORTREVISION=	0
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	Pidgin multi-protocol messaging client (GTK+ UI)
 
-LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-		purple.10:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS=	libstartup-notification-1.so:${PORTSDIR}/x11/startup-notification \
+		libpurple.so:${PORTSDIR}/net-im/libpurple
 
 MASTERDIR=	${.CURDIR}/../libpurple
 BUILD_WRKSRC=	${WRKSRC}/pidgin
@@ -30,16 +30,13 @@ CONFIGURE_ARGS=	--disable-consoleui \
 		--enable-screensaver \
 		--with-dynamic_prpls=${PRPL_MODULES:S/,$//}
 
-MAN1=		pidgin.1
-
-NO_STAGE=	yes
 post-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
 	    	Makefile ${MAKE_ARGS} pidgin.desktop
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pidgin.desktop \
-	    	${PREFIX}/share/applications/pidgin.desktop
-	${INSTALL_MAN} ${WRKSRC}/doc/pidgin.1 ${MAN1PREFIX}/man/man1
+	    	${STAGEDIR}${PREFIX}/share/applications/pidgin.desktop
+	${INSTALL_MAN} ${WRKSRC}/doc/pidgin.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include "${MASTERDIR}/Makefile"
