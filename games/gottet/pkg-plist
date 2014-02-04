@@ -1,9 +1,9 @@
 bin/gottet
 share/applications/gottet.desktop
-%%DATADIR%%/translations/gottet_en.qm
-%%DATADIR%%/translations/gottet_fr.qm
-%%DATADIR%%/translations/gottet_he.qm
-%%DATADIR%%/translations/gottet_ro.qm
+%%NLS%%%%DATADIR%%/translations/gottet_en.qm
+%%NLS%%%%DATADIR%%/translations/gottet_fr.qm
+%%NLS%%%%DATADIR%%/translations/gottet_he.qm
+%%NLS%%%%DATADIR%%/translations/gottet_ro.qm
 share/icons/hicolor/128x128/apps/gottet.png
 share/icons/hicolor/16x16/apps/gottet.png
 share/icons/hicolor/22x22/apps/gottet.png
@@ -15,5 +15,5 @@ share/icons/hicolor/64x64/apps/gottet.png
 share/icons/hicolor/scalable/apps/gottet.svg
 share/pixmaps/gottet.png
 share/pixmaps/gottet.xpm
-@dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%
+%%NLS%%@dirrmtry %%DATADIR%%/translations
+%%NLS%%@dirrmtry %%DATADIR%%
