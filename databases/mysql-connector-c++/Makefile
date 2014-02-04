@@ -15,8 +15,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
 
 USE_MYSQL=	51+
-USE_LDCONFIG=	yes
 USES=		cmake:outsource
+USE_LDCONFIG=	yes
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
@@ -52,5 +52,4 @@ regression-test: build
 	test/unit/classes/statement )
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
