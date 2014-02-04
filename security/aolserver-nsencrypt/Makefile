@@ -15,6 +15,9 @@ COMMENT=	OpenSSL data encryption module for AOLserver
 LICENSE=	GPLv1 MPL
 LICENSE_COMB=	dual
 
+DEPRECATED=	abandonware, messing up on clusters
+EXPIRATION_DATE=	2014-04-03
+
 WRKSRC=		${WRKDIR}/nsencrypt-${PORTVERSION}
 
 AOLSERVERBASE?=	aolserver

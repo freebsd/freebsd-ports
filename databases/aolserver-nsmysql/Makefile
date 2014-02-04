@@ -13,6 +13,9 @@ DIST_SUBDIR=	aolserver
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internal MySQL database driver for AOLserver
 
+DEPRECATED=	abandonware, messing up on clusters
+EXPIRATION_DATE=	2014-04-03
+
 AOLSERVERBASE?=	aolserver
 BUILD_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
 RUN_DEPENDS+=	${LOCALBASE}/${AOLSERVERBASE}/bin/nsd:${PORTSDIR}/www/aolserver
