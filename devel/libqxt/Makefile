@@ -10,7 +10,7 @@ DISTNAME=	v${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Extension library for Qt
 
-LIB_DEPENDS=	dns_sd:${PORTSDIR}/net/avahi-libdns
+LIB_DEPENDS=	libdns_sd.so:${PORTSDIR}/net/avahi-libdns
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_BDB=	44+
@@ -21,10 +21,10 @@ USE_LDCONFIG=	${PREFIX}/lib/qxt
 
 QT_NONSTANDARD=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	-prefix ${PREFIX} \
-		-libdir ${PREFIX}/lib/qxt \
+CONFIGURE_ARGS=	-prefix ${STAGEDIR}${PREFIX} \
+		-libdir ${STAGEDIR}${PREFIX}/lib/qxt \
 		-qmake-bin ${QMAKE} \
-		-featuredir ${PREFIX}/share/qt4/mkspecs/features \
+		-featuredir ${STAGEDIR}${PREFIX}/share/qt4/mkspecs/features \
 		-I ${BDB_INCLUDE_DIR} \
 		-I ${LOCALBASE}/include/avahi-compat-libdns_sd \
 		-L ${BDB_LIB_DIR} \
@@ -37,10 +37,10 @@ PLIST_SUB+=	SHVER_1=${PORTVERSION} \
     		SHVER_2=${PORTVERSION:R} \
 		SHVER_3=${PORTVERSION:R:R}
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e '\
 	    s|%%PREFIX%%|${PREFIX}|g; \
+	    s|%%STAGEDIR%%|${STAGEDIR}|g; \
 	    s|/bin/bash|${LOCALBASE}/bin/bash|g; \
 	    /^QXT_MODULES/s|docs||g' \
 	    ${WRKSRC}/configure \
@@ -49,6 +49,10 @@ post-patch:
 	    s|ldb|l${BDB_LIB_NAME} -L${BDB_LIB_DIR}|g; \
 	    /INCLUDEPATH/s|\.|${BDB_INCLUDE_DIR}|g' \
 	    ${WRKSRC}/config.tests/db/db.pro
+
+post-configure:
+	${REINPLACE_CMD} -e 's|${STAGEDIR}||g' \
+	    ${WRKSRC}/features/qxtvars.prf
 
 regression-test:
 	cd ${WRKSRC}/tests && \
