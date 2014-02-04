@@ -1,6 +1,6 @@
---- Makefile.orig	2012-04-24 22:45:06.000000000 +0200
-+++ Makefile	2012-04-25 10:17:55.692859510 +0200
-@@ -84,13 +84,13 @@
+--- Makefile.orig	2013-08-27 22:45:07.000000000 +0200
++++ Makefile	2014-02-04 20:59:54.000000000 +0100
+@@ -86,13 +86,13 @@
  endif
  X86SRC = $(X86SRC0:%=common/x86/%)
  
@@ -16,12 +16,19 @@
  ARCH_X86 = yes
  ASMSRC   = $(X86SRC:-32.asm=-64.asm) common/x86/trellis-64.asm
  ASFLAGS += -DARCH_X86_64=1
-@@ -106,7 +106,7 @@
+@@ -108,7 +108,14 @@
  endif
  
  # AltiVec optims
 -ifeq ($(ARCH),PPC)
 +ifeq ($(ARCH),powerpc)
++ARCH_PPC = yes
++endif
++ifeq ($(ARCH),powerpc64)
++ARCH_PPC = yes
++endif
++
++ifdef ARCH_PPC
  ifneq ($(AS),)
  SRCS += common/ppc/mc.c common/ppc/pixel.c common/ppc/dct.c \
          common/ppc/quant.c common/ppc/deblock.c \
