@@ -44,20 +44,20 @@ share/pixmaps/tanglet.xpm
 %%DATADIR%%/data/nl/dictionary
 %%DATADIR%%/data/nl/name
 %%DATADIR%%/data/nl/words
-%%DATADIR%%/translations/tanglet_cs.qm
-%%DATADIR%%/translations/tanglet_de.qm
-%%DATADIR%%/translations/tanglet_en.qm
-%%DATADIR%%/translations/tanglet_es.qm
-%%DATADIR%%/translations/tanglet_es_CL.qm
-%%DATADIR%%/translations/tanglet_fr.qm
-%%DATADIR%%/translations/tanglet_he.qm
-%%DATADIR%%/translations/tanglet_hu.qm
-%%DATADIR%%/translations/tanglet_it.qm
-%%DATADIR%%/translations/tanglet_nl.qm
-%%DATADIR%%/translations/tanglet_ro.qm
-%%DATADIR%%/translations/tanglet_tr.qm
-%%DATADIR%%/translations/tanglet_uk.qm
-@dirrm %%DATADIR%%/translations
+%%NLS%%%%DATADIR%%/translations/tanglet_cs.qm
+%%NLS%%%%DATADIR%%/translations/tanglet_de.qm
+%%NLS%%%%DATADIR%%/translations/tanglet_en.qm
+%%NLS%%%%DATADIR%%/translations/tanglet_es.qm
+%%NLS%%%%DATADIR%%/translations/tanglet_es_CL.qm
+%%NLS%%%%DATADIR%%/translations/tanglet_fr.qm
+%%NLS%%%%DATADIR%%/translations/tanglet_he.qm
+%%NLS%%%%DATADIR%%/translations/tanglet_hu.qm
+%%NLS%%%%DATADIR%%/translations/tanglet_it.qm
+%%NLS%%%%DATADIR%%/translations/tanglet_nl.qm
+%%NLS%%%%DATADIR%%/translations/tanglet_ro.qm
+%%NLS%%%%DATADIR%%/translations/tanglet_tr.qm
+%%NLS%%%%DATADIR%%/translations/tanglet_uk.qm
+%%NLS%%@dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/data/nl
 @dirrm %%DATADIR%%/data/hu
 @dirrm %%DATADIR%%/data/he

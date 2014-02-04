@@ -14,24 +14,32 @@ COMMENT=	Single player word finding game based on Boggle
 LICENSE=	GPLv3
 
 USE_BZIP2=	yes
-USES=		desktop-file-utils qmake
+USES=		qmake
 USE_QT4=	moc_build rcc_build gui iconengines_run imageformats_run
 LDFLAGS+=	-lz
 INSTALLS_ICONS=	yes
 
 PORTDOCS=	CREDITS ChangeLog NEWS
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
 
 .include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e '/PKGCONFIG += zlib/d' \
-		${WRKSRC}/tanglet.pro
+		${WRKSRC}/${PORTNAME}.pro
+
+.if ! ${PORT_OPTIONS:MNLS}
+	@${REINPLACE_CMD} -i '' '/qm.files/,/qm.path/s/^/#/' \
+		${WRKSRC}/${PORTNAME}.pro
+.endif
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
 	${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/apps/${PORTNAME}.png \
-		    ${STAGEDIR}${PREFIX}/share/pixmaps/
+		${STAGEDIR}${PREFIX}/share/pixmaps/
 
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
