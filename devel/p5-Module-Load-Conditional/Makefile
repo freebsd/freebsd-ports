@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Module-Load-Conditional
-PORTVERSION=	0.58
+PORTVERSION=	0.62
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,7 @@ COMMENT=	Looking up Perl modules information/loading at runtime
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	p5-Module-CoreList>=2.22:${PORTSDIR}/devel/p5-Module-CoreList
+BUILD_DEPENDS=	p5-Module-Load>=0.28:${PORTSDIR}/devel/p5-Module-Load
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
