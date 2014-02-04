@@ -50,7 +50,7 @@ SOX_CONFIGURE_OFF=	--disable-sox
 VORBIS_BUILD_DEPENDS=	oggenc:${PORTSDIR}/audio/vorbis-tools
 VORBIS_LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 VORBIS_CONFIGURE_OFF=	--disable-vorbis
-MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/mad
+MAD_LIB_DEPENDS=	libmad.so:${PORTSDIR}/audio/libmad
 MAD_CONFIGURE_OFF=	--disable-mad
 
 post-patch:
