@@ -63,7 +63,4 @@ post-patch:
 		${WRKSRC}/Makefile.in ${WRKSRC}/doc/Makefile.in
 .endif
 
-post-install:
-	${MKDIR} -m 0700 ${CACHE_DIR}/ipmimonitoringsdrcache ${LOG_DIR}/ ${RUN_DIR}/
-
 .include <bsd.port.mk>
