@@ -11,17 +11,17 @@ share/icons/hicolor/64x64/apps/simsu.png
 share/icons/hicolor/scalable/apps/simsu.svg
 share/pixmaps/simsu.png
 share/pixmaps/simsu.xpm
-%%DATADIR%%/translations/simsu_ca.qm
-%%DATADIR%%/translations/simsu_cs.qm
-%%DATADIR%%/translations/simsu_el.qm
-%%DATADIR%%/translations/simsu_en.qm
-%%DATADIR%%/translations/simsu_es.qm
-%%DATADIR%%/translations/simsu_es_CL.qm
-%%DATADIR%%/translations/simsu_fr.qm
-%%DATADIR%%/translations/simsu_he.qm
-%%DATADIR%%/translations/simsu_hu.qm
-%%DATADIR%%/translations/simsu_ro.qm
-%%DATADIR%%/translations/simsu_ru.qm
-%%DATADIR%%/translations/simsu_uk.qm
-@dirrm %%DATADIR%%/translations
-@dirrm %%DATADIR%%
+%%NLS%%%%DATADIR%%/translations/simsu_ca.qm
+%%NLS%%%%DATADIR%%/translations/simsu_cs.qm
+%%NLS%%%%DATADIR%%/translations/simsu_el.qm
+%%NLS%%%%DATADIR%%/translations/simsu_en.qm
+%%NLS%%%%DATADIR%%/translations/simsu_es.qm
+%%NLS%%%%DATADIR%%/translations/simsu_es_CL.qm
+%%NLS%%%%DATADIR%%/translations/simsu_fr.qm
+%%NLS%%%%DATADIR%%/translations/simsu_he.qm
+%%NLS%%%%DATADIR%%/translations/simsu_hu.qm
+%%NLS%%%%DATADIR%%/translations/simsu_ro.qm
+%%NLS%%%%DATADIR%%/translations/simsu_ru.qm
+%%NLS%%%%DATADIR%%/translations/simsu_uk.qm
+%%NLS%%@dirrm %%DATADIR%%/translations
+%%NLS%%@dirrm %%DATADIR%%
