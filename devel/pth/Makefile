@@ -34,8 +34,6 @@ PLIST_SUB=	PTHREAD="@comment "
 .else
 CONFIGURE_ARGS+=	--enable-syscall-soft --enable-pthread
 PLIST_SUB=	PTHREAD=""
-MAN1+=		pthread-config.1
-MAN3+=		pthread.3
 .endif
 
 post-patch:

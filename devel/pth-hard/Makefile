@@ -7,5 +7,4 @@ CONFLICTS=	pth-2.*
 
 MASTERDIR=	${.CURDIR}/../pth
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
