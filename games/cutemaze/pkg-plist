@@ -1,5 +1,15 @@
-bin/cutemaze
+%%QT_BINDIR%%/cutemaze
 share/applications/cutemaze.desktop
+%%NLS%%%%DATADIR%%/translations/cutemaze_de.qm
+%%NLS%%%%DATADIR%%/translations/cutemaze_en.qm
+%%NLS%%%%DATADIR%%/translations/cutemaze_es.qm
+%%NLS%%%%DATADIR%%/translations/cutemaze_fr.qm
+%%NLS%%%%DATADIR%%/translations/cutemaze_he.qm
+%%NLS%%%%DATADIR%%/translations/cutemaze_pl.qm
+%%NLS%%%%DATADIR%%/translations/cutemaze_pt_BR.qm
+%%NLS%%%%DATADIR%%/translations/cutemaze_ro.qm
+%%NLS%%%%DATADIR%%/translations/cutemaze_ru.qm
+%%NLS%%%%DATADIR%%/translations/cutemaze_tr.qm
 share/icons/hicolor/48x48/apps/cutemaze.png
 share/icons/oxygen/16x16/application-exit.png
 share/icons/oxygen/16x16/document-new.png
@@ -8,6 +18,7 @@ share/icons/oxygen/16x16/games-highscores.png
 share/icons/oxygen/16x16/games-hint.png
 share/icons/oxygen/16x16/help-about.png
 share/icons/oxygen/16x16/media-playback-pause.png
+share/icons/oxygen/16x16/preferences-desktop-locale.png
 share/icons/oxygen/16x16/zoom-in.png
 share/icons/oxygen/16x16/zoom-out.png
 share/icons/oxygen/22x22/application-exit.png
@@ -17,6 +28,7 @@ share/icons/oxygen/22x22/games-highscores.png
 share/icons/oxygen/22x22/games-hint.png
 share/icons/oxygen/22x22/help-about.png
 share/icons/oxygen/22x22/media-playback-pause.png
+share/icons/oxygen/22x22/preferences-desktop-locale.png
 share/icons/oxygen/22x22/zoom-in.png
 share/icons/oxygen/22x22/zoom-out.png
 share/icons/oxygen/scalable/application-exit.svgz
@@ -26,6 +38,9 @@ share/icons/oxygen/scalable/games-highscores.svgz
 share/icons/oxygen/scalable/games-hint.svgz
 share/icons/oxygen/scalable/help-about.svgz
 share/icons/oxygen/scalable/media-playback-pause.svgz
+share/icons/oxygen/scalable/preferences-desktop-locale.svgz
 share/icons/oxygen/scalable/zoom-in.svgz
 share/icons/oxygen/scalable/zoom-out.svgz
 share/pixmaps/cutemaze.png
+%%NLS%%@dirrm %%DATADIR%%/translations
+%%NLS%%@dirrm %%DATADIR%%
