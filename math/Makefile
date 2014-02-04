@@ -244,7 +244,7 @@
     SUBDIR += mate-calc
     SUBDIR += mathomatic
     SUBDIR += matio
-    SUBDIR += matlab-R2012a-installer
+    SUBDIR += matlab-installer
     SUBDIR += matrix
     SUBDIR += maxima
     SUBDIR += mbasecalc
