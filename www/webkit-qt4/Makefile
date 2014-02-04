@@ -52,6 +52,10 @@ GSTREAMER_USE=	GSTREAMER=yes
 BUILD_DEPENDS+= ${LOCALBASE}/bin/ld:${PORTSDIR}/devel/binutils
 .endif
 
+.if ${ARCH} == powerpc64
+CFLAGS+=	-mminimal-toc
+.endif
+
 # Quick hack to avoid messing up qt_webkit_version.pri installation
 # directory. bsd.port.pre.mk is required to add the setting at the end.
 CONFIGURE_ENV+=	QMAKEPATH=""
