@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pauls@utdallas.edu
 COMMENT=	Parses range definitions and returns an array
 
-LICENSE=	ART10 BSD
+LICENSE=	ART10 BSD3CLAUSE
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-List-MoreUtils>=0.22:${PORTSDIR}/lang/p5-List-MoreUtils
@@ -20,7 +20,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Parse::Range.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
