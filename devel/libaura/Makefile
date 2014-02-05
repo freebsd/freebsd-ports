@@ -28,19 +28,16 @@ PORTDOCS=	README
 
 MAKE_ENV=	SONAME=${SONAME} SOLINK=${SOLINK}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${SONAME} ${PREFIX}/lib/${SONAME}
-	${LN} -s ${PREFIX}/lib/${SONAME} ${PREFIX}/lib/${SOLINK}
-	${MKDIR} ${PREFIX}/include/aura3/
-	${INSTALL_DATA} ${WRKSRC}/buffer.h ${PREFIX}/include/aura3/
-	${INSTALL_DATA} ${WRKSRC}/dict.h ${PREFIX}/include/aura3/
-	${INSTALL_DATA} ${WRKSRC}/popen.h ${PREFIX}/include/aura3/
-	${INSTALL_DATA} ${WRKSRC}/fspred.h ${PREFIX}/include/aura3/
-	${INSTALL_DATA} ${WRKSRC}/mem.h ${PREFIX}/include/aura3/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/${SONAME} ${STAGEDIR}${PREFIX}/lib/${SONAME}
+	${LN} -s ${PREFIX}/lib/${SONAME} ${STAGEDIR}${PREFIX}/lib/${SOLINK}
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/aura3/
+	${INSTALL_DATA} ${WRKSRC}/buffer.h ${STAGEDIR}${PREFIX}/include/aura3/
+	${INSTALL_DATA} ${WRKSRC}/dict.h ${STAGEDIR}${PREFIX}/include/aura3/
+	${INSTALL_DATA} ${WRKSRC}/popen.h ${STAGEDIR}${PREFIX}/include/aura3/
+	${INSTALL_DATA} ${WRKSRC}/fspred.h ${STAGEDIR}${PREFIX}/include/aura3/
+	${INSTALL_DATA} ${WRKSRC}/mem.h ${STAGEDIR}${PREFIX}/include/aura3/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
