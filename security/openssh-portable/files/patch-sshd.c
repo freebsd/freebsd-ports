@@ -42,7 +42,7 @@ connections, do not protect connection handlers spawned from inetd.
  #include <sys/socket.h>
  #ifdef HAVE_SYS_STAT_H
  # include <sys/stat.h>
-@@ -83,6 +83,13 @@
+@@ -83,6 +84,13 @@
  #include <prot.h>
  #endif
  
@@ -56,18 +56,18 @@ connections, do not protect connection handlers spawned from inetd.
  #include "xmalloc.h"
  #include "ssh.h"
  #include "ssh1.h"
-@@ -1823,6 +1824,10 @@
+@@ -1877,6 +1885,10 @@
  	/* Reinitialize the log (because of the fork above). */
  	log_init(__progname, options.log_level, options.log_facility, log_stderr);
  
-+	/* Avoid killing the process in high-pressure swapping environments. */
-+	if (!inetd_flag && madvise(NULL, 0, MADV_PROTECT) != 0)
-+		debug("madvise(): %.200s", strerror(errno));
++ 	/* Avoid killing the process in high-pressure swapping environments. */
++ 	if (!inetd_flag && madvise(NULL, 0, MADV_PROTECT) != 0)
++ 		debug("madvise(): %.200s", strerror(errno));
 +
- 	/* Initialize the random number generator. */
- 	arc4random_stir();
-
-@@ -1864,6 +1871,29 @@
+ 	/* Chdir to the root directory so that the current disk can be
+ 	   unmounted if desired. */
+ 	if (chdir("/") == -1)
+@@ -1995,6 +2007,29 @@
  	signal(SIGCHLD, SIG_DFL);
  	signal(SIGINT, SIG_DFL);
  
