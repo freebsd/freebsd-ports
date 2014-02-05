@@ -12,21 +12,18 @@ COMMENT=	Read and manipulate raw images from various digital cameras
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		tiff:${PORTSDIR}/graphics/tiff \
-		png15:${PORTSDIR}/graphics/png \
-		lcms:${PORTSDIR}/graphics/lcms
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		liblcms.so:${PORTSDIR}/graphics/lcms
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules --enable-extras
-USES=		gettext pkgconfig
-USE_GMAKE=	yes
+USES=		gettext pkgconfig gmake
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 PC_FALSE=	cinepaint
-
-MAN1=		ufraw.1
 
 OPTIONS_DEFINE=	CONTRAST DST EXIV2 LENSFUN FITS GIMP GTK2 GNOME
 OPTIONS_DEFAULT=CONTRAST EXIV2 LENSFUN GTK2
@@ -36,7 +33,6 @@ DST_DESC=	Use local time for timestamps
 FITS_DESC=	FITS output support
 GIMP_DESC=	Install GIMP plugin
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCONTRAST}
@@ -84,7 +80,8 @@ CONFIGURE_ARGS+=--without-gtk
 
 .if ${PORT_OPTIONS:MGNOME}
 CATEGORIES+=	gnome
-USE_GNOME=	desktopfileutils gconf2
+USE_GNOME=	gconf2
+USES+=		desktop-file-utils
 CONFIGURE_ARGS+=	--enable-mime
 GCONF_SCHEMAS=	${PORTNAME}.schemas
 PLIST_SUB+=	GNOME=""
@@ -108,13 +105,5 @@ post-patch:
 pre-build:
 	@${INSTALL_SCRIPT} ${LOCALBASE}/share/icu/50.1.2/mkinstalldirs \
 		${WRKSRC}
-
-post-install:
-.if ${PORT_OPTIONS:MGNOME}
-	@${SETENV} GCONF_CONFIG_SOURCE=${GCONF_CONFIG_SOURCE} \
-		gconftool-2 --makefile-install-rule \
-		${PREFIX}/etc/gconf/schemas/${PORTNAME}.schemas
-	@-update-desktop-database
-.endif
 
 .include <bsd.port.mk>
