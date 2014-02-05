@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	thunderbird
-DISTVERSION=	24.2.0
+DISTVERSION=	24.3.0
 CATEGORIES=	mail news net-im ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}/source
 DISTFILES=	${PORTNAME}-${DISTVERSION}.source${EXTRACT_SUFX}
@@ -36,7 +36,8 @@ QT_NONSTANDARD=	yes
 ALL_TARGET=	default
 USE_BZIP2=	yes
 USE_GL=		gl
-USE_DOS2UNIX=	mozilla/media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
+USES=		dos2unix
+DOS2UNIX_FILES=	mozilla/media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
 
 MOZ_PROTOCOLS=	http,ftp,file,viewsource,res,data,wyciwyg,websocket
 MOZ_OPTIONS=	--program-transform-name='s/thunderbird/${MOZILLA}/' \
@@ -71,6 +72,10 @@ WRKSRC=		${WRKDIR}/comm-esr24
 MOZSRC:=	${WRKSRC}/mozilla
 
 XPI_LIBDIR=	${PREFIX}/lib/xpi
+
+.if ${PORT_OPTIONS:MALSA}
+BUILD_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib
+.endif
 
 .if ${PORT_OPTIONS:MENIGMAIL}
 MASTER_SITES+=	https://www.enigmail.net/download/source/:enigmail

@@ -33,7 +33,8 @@ ALL_TARGET=	default
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GL=		gl
-USE_DOS2UNIX=	media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
+USES=		dos2unix
+DOS2UNIX_FILES=	media/webrtc/trunk/webrtc/system_wrappers/source/spreadsortlib/spreadsort.hpp
 MAKE_ENV=	SKIP_GRE_REGISTRATION=1 mozappdir=${PREFIX}/lib/${MOZILLA}
 LDFLAGS+=	-Wl,-rpath,${PREFIX}/lib/${MOZ_RPATH}
 USE_LDCONFIG=	${PREFIX}/lib/${MOZILLA}
@@ -54,6 +55,10 @@ MOZ_PKGCONFIG_FILES=	libxul-embedding libxul mozilla-js \
 
 .if ${USE_MOZILLA:M-nss}
 MOZ_PKGCONFIG_FILES+=	mozilla-nss
+.endif
+
+.if ${PORT_OPTIONS:MALSA}
+BUILD_DEPENDS+=	alsa-lib>=1.0.27.2_1:${PORTSDIR}/audio/alsa-lib
 .endif
 
 post-patch:
