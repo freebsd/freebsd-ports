@@ -16,26 +16,23 @@ NO_BUILD=	yes
 PORTDOCS=	ChangeLog README userguide.pdf
 SAMPLE_DIRS=	css img module
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/env python|/env python2|' \
 		${WRKSRC}/txt2tags
 	@${MV} ${WRKSRC}/doc/userguide.pdf ${WRKSRC}/
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/txt2tags ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/txt2tags ${STAGEDIR}${PREFIX}/bin
 .for dir in ${SAMPLE_DIRS}
-	@${MKDIR} ${EXAMPLESDIR}/${dir}
-	${INSTALL_DATA} ${WRKSRC}/samples/${dir}/* ${EXAMPLESDIR}/${dir}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${dir}
+	${INSTALL_DATA} ${WRKSRC}/samples/${dir}/* ${STAGEDIR}${EXAMPLESDIR}/${dir}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/samples/sample* ${EXAMPLESDIR}/
-	@${MKDIR} ${EXAMPLESDIR}/extras
-	${CP} -a ${WRKSRC}/extras/* ${EXAMPLESDIR}/extras
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/sample* ${STAGEDIR}${EXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/extras
+	${CP} -a ${WRKSRC}/extras/* ${STAGEDIR}${EXAMPLESDIR}/extras
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for docs in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
