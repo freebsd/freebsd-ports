@@ -25,6 +25,8 @@ PORTDOCS=	NEWS PROTOCOL README TODO
 
 OPTIONS_DEFINE=	DOCS
 
+MAKE_JOBS_UNSAFE=yes
+
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
