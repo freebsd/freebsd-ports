@@ -1,0 +1,11 @@
+--- ltconfig.orig	2001-02-09 05:14:09.000000000 +0000
++++ ltconfig
+@@ -1874,7 +1874,7 @@ freebsd1*)
+   dynamic_linker=no
+   ;;
+   
+-freebsd*)
++dragonfly*|freebsd*)
+   objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
+   version_type=freebsd-$objformat
+   case "$version_type" in
