@@ -38,7 +38,7 @@ openssh_keygen()
 	if [ -f %%ETCSSH%%/ssh_host_key -a \
 	    -f %%ETCSSH%%/ssh_host_dsa_key -a \
 	    -f %%ETCSSH%%/ssh_host_rsa_key -a \
-	    -f %%ETCSSH%%/ssh_host_ecdsa_key -a
+	    -f %%ETCSSH%%/ssh_host_ecdsa_key -a \
 	    -f %%ETCSSH%%/ssh_host_ed25519_key ]; then
 		return 0
 	fi
