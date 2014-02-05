@@ -56,7 +56,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>linux-f10-flashplugin</name>
-	<range><lt>11.2r202.335</lt></range>
+	<range><lt>11.2r202.336</lt></range>
       </package>
     </affects>
     <description>
@@ -75,6 +75,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2014-02-04</discovery>
       <entry>2014-02-04</entry>
+      <modified>2014-02-05</modified>
     </dates>
   </vuln>
 
