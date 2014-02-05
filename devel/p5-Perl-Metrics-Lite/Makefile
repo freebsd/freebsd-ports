@@ -19,12 +19,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	measureperl-checkstyle.1 \
-	measureperl.1
-MAN3=	Perl::Metrics::Lite.3 \
-	Perl::Metrics::Lite::Analysis.3 \
-	Perl::Metrics::Lite::Analysis::Util.3 \
-	Perl::Metrics::Lite::FileFinder.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
