@@ -1,0 +1,34 @@
+--- ucb/source/ucp/webdav/SerfUri.hxx_	2014-02-04 14:39:02.000000000 +0900
++++ ucb/source/ucp/webdav/SerfUri.hxx	2014-02-04 14:39:18.000000000 +0900
+@@ -23,7 +23,7 @@
+ #ifndef INCLUDED_SERFURI_HXX
+ #define INCLUDED_SERFURI_HXX
+ 
+-#include <apr-util/apr_uri.h>
++#include <apr-1/apr_uri.h>
+ #include <rtl/ustring.hxx>
+ #include "DAVException.hxx"
+ 
+--- ucb/source/ucp/webdav/SerfSession.cxx_	2014-02-04 14:40:19.000000000 +0900
++++ ucb/source/ucp/webdav/SerfSession.cxx	2014-02-04 14:40:26.000000000 +0900
+@@ -30,7 +30,7 @@
+ #include "ucbhelper/simplecertificatevalidationrequest.hxx"
+ 
+ #include "AprEnv.hxx"
+-#include <apr/apr_strings.h>
++#include <apr-1/apr_strings.h>
+ 
+ #include "DAVAuthListener.hxx"
+ #include "SerfTypes.hxx"
+
+--- ucb/source/ucp/webdav/SerfTypes.hxx	2014-01-24 03:33:21.000000000 +0900
++++ ucb/source/ucp/webdav/SerfTypes.hxx	2014-02-04 14:38:44.000000000 +0900
+@@ -24,7 +24,7 @@
+ #ifndef INCLUDED_SERFTYPES_HXX
+ #define INCLUDED_SERFTYPES_HXX
+ 
+-#include <serf/serf.h>
++#include <serf-1/serf.h>
+ 
+ typedef serf_connection_t SerfConnection;
+ 

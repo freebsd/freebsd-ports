@@ -2,9 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	apache-openoffice
-PORTVERSION=	4.0.${SVNREVISION}
+PORTVERSION=	4.1.${SVNREVISION}
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	editors java
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	maho/openoffice
@@ -25,7 +24,7 @@ USE_XORG=	x11 ice xaw xau xext xrender xrandr \
 		xi xt xcursor xdamage xcomposite xfixes
 USE_GL=		gl glu
 USE_GSTREAMER=	yes
-USE_GCC=	4.6+
+USE_GCC=	yes
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 USES+=		bison perl5 gmake pkgconfig
@@ -72,7 +71,7 @@ FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 OOOSRC=			ApacheOpenOffice.r${SVNREVISION}${EXTRACT_SUFX}
 EXTSRC=			ApacheOpenOffice.ext_sources.r${SVNREVISION}_2${EXTRACT_SUFX}
 OOODIR=			openoffice4
-SVNREVISION=		1543006
+SVNREVISION=		1560773
 INSTALLATION_BASEDIR?=	openoffice-r${SVNREVISION}
 EXECBASE?=		openoffice-r${SVNREVISION}
 DIST_SUBDIR=		openoffice
@@ -171,7 +170,6 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-system-libxml 		\
 			--with-system-libxslt 		\
 			--with-system-cairo --enable-cairo \
-			--with-system-boost 		\
 			--with-system-zlib		\
 			--with-system-python		\
 			--with-system-expat		\
@@ -208,7 +206,9 @@ CONFIGURE_ARGS+=	--enable-verbose \
 			--with-beanshell-jar=${JAVALIBDIR}/bsh.jar \
 			--without-fonts \
 			--with-system-serf \
-			--with-system-nss
+			--with-system-nss \
+			--without-stlport
+
 #			--with-system-jpeg
 #			--enable-pdfimport
 #			--without-stlport --disable-mozilla \
