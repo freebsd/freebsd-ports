@@ -428,6 +428,7 @@ include/freeradius/udpfromto.h
 %%DATADIR%%/dictionary.camiant
 %%DATADIR%%/dictionary.chillispot
 %%DATADIR%%/dictionary.cisco
+%%DATADIR%%/dictionary.cisco.asa
 %%DATADIR%%/dictionary.cisco.bbsm
 %%DATADIR%%/dictionary.cisco.vpn3000
 %%DATADIR%%/dictionary.cisco.vpn5000
