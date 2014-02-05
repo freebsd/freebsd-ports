@@ -10,7 +10,7 @@ DISTFILES=	optar.tgz \
 		font.h
 EXTRACT_ONLY=	optar.tgz
 
-MAINTAINER=	antonakis@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for encoding data on paper
 
 BUILD_DEPENDS=	${LOCALBASE}/include/libpng15/png.h:${PORTSDIR}/graphics/png

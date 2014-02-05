@@ -7,7 +7,7 @@ PORTREVISION=	6
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/willem/
 
-MAINTAINER=	argail@visit.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A XMMS input plugin for read AudioCD via IDE bus
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms

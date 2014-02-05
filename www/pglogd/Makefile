@@ -7,7 +7,7 @@ PORTREVISION=	2
 CATEGORIES=	www databases
 MASTER_SITES=	http://digitalstratum.com/download/
 
-MAINTAINER=	allie@pajunas.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sends web server log entries to a PostgreSQL database
 
 USE_PGSQL=	yes

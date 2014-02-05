@@ -7,7 +7,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.e271.net/~marina/ \
 		http://www.surferz.net/~marina/
 
-MAINTAINER=	marina@surferz.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rogue like adventure game
 
 MAN6=		wanderer.6

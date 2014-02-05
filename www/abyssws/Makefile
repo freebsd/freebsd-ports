@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.aprelium.com/data/
 DISTNAME=	abwsx1-freebsd
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	voisined@wit.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Abyss Web Server is a compact and easy to use web server
 
 WRKSRC=		${WRKDIR}/abyssws

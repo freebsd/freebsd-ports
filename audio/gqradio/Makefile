@@ -7,7 +7,7 @@ PORTREVISION=	10
 CATEGORIES=	audio
 MASTER_SITES=	SF/gqmpeg/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	stefan.jahn@nemesis-sektor.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 based FM tuner
 
 GNU_CONFIGURE=	yes
