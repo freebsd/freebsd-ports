@@ -1,0 +1,13 @@
+
+======================================================================
+DISK SPACE WARNING:
+
+Note that RawTherapee uses version-dependent cache and configuration
+directories.  Please be advised that cache directories can grow large,
+so be sure to check all users' $HOME/.cache/RawTherapee* and have them
+remove older cache directories.
+
+Also, after configurations have been moved to the new version's
+directory, older $HOME/.config/RawTherapee* directories may be removed.
+======================================================================
+

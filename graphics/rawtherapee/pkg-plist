@@ -11,6 +11,7 @@ share/icons/hicolor/24x24/apps/rawtherapee.png
 share/icons/hicolor/256x256/apps/rawtherapee.png
 share/icons/hicolor/32x32/apps/rawtherapee.png
 share/icons/hicolor/48x48/apps/rawtherapee.png
+%%DATADIR%%/camconst.json
 %%DATADIR%%/dcpprofiles/Canon EOS 20D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 400D.dcp
 %%DATADIR%%/dcpprofiles/Canon EOS 40D.dcp
@@ -26,6 +27,8 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/dcpprofiles/Canon EOS-1D Mark III.dcp
 %%DATADIR%%/dcpprofiles/Canon PowerShot G10.dcp
 %%DATADIR%%/dcpprofiles/Canon PowerShot G12.dcp
+%%DATADIR%%/dcpprofiles/Canon PowerShot S110.dcp
+%%DATADIR%%/dcpprofiles/Fujifilm FinePix S9500.dcp
 %%DATADIR%%/dcpprofiles/Leaf Aptus 75.dcp
 %%DATADIR%%/dcpprofiles/Nikon D200.dcp
 %%DATADIR%%/dcpprofiles/Nikon D300.dcp
@@ -51,6 +54,9 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/dcpprofiles/Panasonic DMC-G5.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-GH1.dcp
 %%DATADIR%%/dcpprofiles/Panasonic DMC-GH2.dcp
+%%DATADIR%%/dcpprofiles/Pentax K-5 II.dcp
+%%DATADIR%%/dcpprofiles/Pentax K-5.dcp
+%%DATADIR%%/dcpprofiles/Pentax K-r.dcp
 %%DATADIR%%/dcpprofiles/Pentax K10D.dcp
 %%DATADIR%%/dcpprofiles/Pentax K200D.dcp
 %%DATADIR%%/dcpprofiles/Sony DSLR-A700.dcp
@@ -92,16 +98,49 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/iccprofiles/output/RT_sRGB.icm
 %%DATADIR%%/iccprofiles/output/RT_sRGB_g10.icm
 %%DATADIR%%/iccprofiles/output/RT_sRGB_gBT709.icm
+%%DATADIR%%/images/beforeafter.png
+%%DATADIR%%/images/cglabel0.png
+%%DATADIR%%/images/cglabel1.png
+%%DATADIR%%/images/cglabel2.png
+%%DATADIR%%/images/cglabel3.png
+%%DATADIR%%/images/cglabel4.png
+%%DATADIR%%/images/cglabel5.png
+%%DATADIR%%/images/Chanmixer-B.png
 %%DATADIR%%/images/Chanmixer-BB.png
 %%DATADIR%%/images/Chanmixer-BG.png
 %%DATADIR%%/images/Chanmixer-BR.png
+%%DATADIR%%/images/Chanmixer-C.png
+%%DATADIR%%/images/Chanmixer-G.png
 %%DATADIR%%/images/Chanmixer-GB.png
 %%DATADIR%%/images/Chanmixer-GG.png
 %%DATADIR%%/images/Chanmixer-GR.png
+%%DATADIR%%/images/Chanmixer-M.png
+%%DATADIR%%/images/Chanmixer-O.png
+%%DATADIR%%/images/Chanmixer-P.png
+%%DATADIR%%/images/Chanmixer-R.png
 %%DATADIR%%/images/Chanmixer-RB.png
 %%DATADIR%%/images/Chanmixer-RG.png
 %%DATADIR%%/images/Chanmixer-RR.png
-%%DATADIR%%/images/Dark/actions/PanelEnding.png
+%%DATADIR%%/images/Chanmixer-Y.png
+%%DATADIR%%/images/clabel0.png
+%%DATADIR%%/images/clabel1.png
+%%DATADIR%%/images/clabel2.png
+%%DATADIR%%/images/clabel3.png
+%%DATADIR%%/images/clabel4.png
+%%DATADIR%%/images/clabel5.png
+%%DATADIR%%/images/closedhand.png
+%%DATADIR%%/images/colour.png
+%%DATADIR%%/images/crop-auto.png
+%%DATADIR%%/images/crop.png
+%%DATADIR%%/images/cross.png
+%%DATADIR%%/images/crossed-arrows-out.png
+%%DATADIR%%/images/curveType-controlPoints.png
+%%DATADIR%%/images/curveType-flatLinear.png
+%%DATADIR%%/images/curveType-linear.png
+%%DATADIR%%/images/curveType-NURBS.png
+%%DATADIR%%/images/curveType-parametric.png
+%%DATADIR%%/images/curveType-spline.png
+%%DATADIR%%/images/curveType-unchanged.png
 %%DATADIR%%/images/Dark/actions/beforeafter.png
 %%DATADIR%%/images/Dark/actions/cglabel0.png
 %%DATADIR%%/images/Dark/actions/cglabel1.png
@@ -109,6 +148,9 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/images/Dark/actions/cglabel3.png
 %%DATADIR%%/images/Dark/actions/cglabel4.png
 %%DATADIR%%/images/Dark/actions/cglabel5.png
+%%DATADIR%%/images/Dark/actions/Chanmixer-Bgamma.png
+%%DATADIR%%/images/Dark/actions/Chanmixer-Ggamma.png
+%%DATADIR%%/images/Dark/actions/Chanmixer-Rgamma.png
 %%DATADIR%%/images/Dark/actions/clabel0.png
 %%DATADIR%%/images/Dark/actions/clabel1.png
 %%DATADIR%%/images/Dark/actions/clabel2.png
@@ -121,10 +163,10 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/images/Dark/actions/crop.png
 %%DATADIR%%/images/Dark/actions/crossed-arrows-in.png
 %%DATADIR%%/images/Dark/actions/crossed-arrows-out.png
-%%DATADIR%%/images/Dark/actions/curveType-NURBS.png
 %%DATADIR%%/images/Dark/actions/curveType-controlPoints.png
 %%DATADIR%%/images/Dark/actions/curveType-flatLinear.png
 %%DATADIR%%/images/Dark/actions/curveType-linear.png
+%%DATADIR%%/images/Dark/actions/curveType-NURBS.png
 %%DATADIR%%/images/Dark/actions/curveType-parametric.png
 %%DATADIR%%/images/Dark/actions/curveType-spline.png
 %%DATADIR%%/images/Dark/actions/detail.png
@@ -210,6 +252,7 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/images/Dark/actions/panel-to-left.png
 %%DATADIR%%/images/Dark/actions/panel-to-right.png
 %%DATADIR%%/images/Dark/actions/panel-to-top.png
+%%DATADIR%%/images/Dark/actions/PanelEnding.png
 %%DATADIR%%/images/Dark/actions/popuparrow.png
 %%DATADIR%%/images/Dark/actions/previewmodeB-off.png
 %%DATADIR%%/images/Dark/actions/previewmodeB-on.png
@@ -270,6 +313,8 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/images/Dark/actions/wb-shade.png
 %%DATADIR%%/images/Dark/actions/wb-sun.png
 %%DATADIR%%/images/Dark/actions/wb-tungsten.png
+%%DATADIR%%/images/Dark/actions/wb-water.png
+%%DATADIR%%/images/Dark/actions/zoom-100-identifier.png
 %%DATADIR%%/images/Dark/devices/computer.png
 %%DATADIR%%/images/Dark/devices/drive-harddisk.png
 %%DATADIR%%/images/Dark/devices/drive-optical.png
@@ -286,7 +331,48 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/images/Dark/places/gtk-directory.png
 %%DATADIR%%/images/Dark/places/user-desktop.png
 %%DATADIR%%/images/Dark/places/user-home.png
-%%DATADIR%%/images/Light/actions/PanelEnding.png
+%%DATADIR%%/images/default-settings-ltr.png
+%%DATADIR%%/images/default-settings-rtl.png
+%%DATADIR%%/images/detail.png
+%%DATADIR%%/images/distortion-auto.png
+%%DATADIR%%/images/distortion.png
+%%DATADIR%%/images/edited-small.png
+%%DATADIR%%/images/edited.png
+%%DATADIR%%/images/editedg-small.png
+%%DATADIR%%/images/editednot-small.png
+%%DATADIR%%/images/editednotg-small.png
+%%DATADIR%%/images/empty.png
+%%DATADIR%%/images/exposure.png
+%%DATADIR%%/images/filter.png
+%%DATADIR%%/images/filterclear.png
+%%DATADIR%%/images/folder.png
+%%DATADIR%%/images/fullscreen-exit.png
+%%DATADIR%%/images/fullscreen.png
+%%DATADIR%%/images/grayrated.png
+%%DATADIR%%/images/gtk-add.png
+%%DATADIR%%/images/gtk-apply.png
+%%DATADIR%%/images/gtk-close-small.png
+%%DATADIR%%/images/gtk-close.png
+%%DATADIR%%/images/gtk-color-picker-small.png
+%%DATADIR%%/images/gtk-color-picker.png
+%%DATADIR%%/images/gtk-open.png
+%%DATADIR%%/images/gtk-save-large.png
+%%DATADIR%%/images/gtk-undo-ltr.png
+%%DATADIR%%/images/gtk-undo-rtl.png
+%%DATADIR%%/images/gtk-undoall-ltr.png
+%%DATADIR%%/images/gtk-undoall-rtl.png
+%%DATADIR%%/images/gtk-zoom-100.png
+%%DATADIR%%/images/gtk-zoom-fit.png
+%%DATADIR%%/images/gtk-zoom-in.png
+%%DATADIR%%/images/gtk-zoom-out.png
+%%DATADIR%%/images/histBar.png
+%%DATADIR%%/images/histBlue.png
+%%DATADIR%%/images/histGreen.png
+%%DATADIR%%/images/histRaw.png
+%%DATADIR%%/images/histRed.png
+%%DATADIR%%/images/histValue.png
+%%DATADIR%%/images/image-editor.png
+%%DATADIR%%/images/info.png
 %%DATADIR%%/images/Light/actions/beforeafter.png
 %%DATADIR%%/images/Light/actions/cglabel0.png
 %%DATADIR%%/images/Light/actions/cglabel1.png
@@ -294,6 +380,9 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/images/Light/actions/cglabel3.png
 %%DATADIR%%/images/Light/actions/cglabel4.png
 %%DATADIR%%/images/Light/actions/cglabel5.png
+%%DATADIR%%/images/Light/actions/Chanmixer-Bgamma.png
+%%DATADIR%%/images/Light/actions/Chanmixer-Ggamma.png
+%%DATADIR%%/images/Light/actions/Chanmixer-Rgamma.png
 %%DATADIR%%/images/Light/actions/clabel0.png
 %%DATADIR%%/images/Light/actions/clabel1.png
 %%DATADIR%%/images/Light/actions/clabel2.png
@@ -306,10 +395,10 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/images/Light/actions/crop.png
 %%DATADIR%%/images/Light/actions/crossed-arrows-in.png
 %%DATADIR%%/images/Light/actions/crossed-arrows-out.png
-%%DATADIR%%/images/Light/actions/curveType-NURBS.png
 %%DATADIR%%/images/Light/actions/curveType-controlPoints.png
 %%DATADIR%%/images/Light/actions/curveType-flatLinear.png
 %%DATADIR%%/images/Light/actions/curveType-linear.png
+%%DATADIR%%/images/Light/actions/curveType-NURBS.png
 %%DATADIR%%/images/Light/actions/curveType-parametric.png
 %%DATADIR%%/images/Light/actions/curveType-spline.png
 %%DATADIR%%/images/Light/actions/detail.png
@@ -395,6 +484,7 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/images/Light/actions/panel-to-left.png
 %%DATADIR%%/images/Light/actions/panel-to-right.png
 %%DATADIR%%/images/Light/actions/panel-to-top.png
+%%DATADIR%%/images/Light/actions/PanelEnding.png
 %%DATADIR%%/images/Light/actions/popuparrow.png
 %%DATADIR%%/images/Light/actions/previewmodeB-off.png
 %%DATADIR%%/images/Light/actions/previewmodeB-on.png
@@ -455,6 +545,8 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/images/Light/actions/wb-shade.png
 %%DATADIR%%/images/Light/actions/wb-sun.png
 %%DATADIR%%/images/Light/actions/wb-tungsten.png
+%%DATADIR%%/images/Light/actions/wb-water.png
+%%DATADIR%%/images/Light/actions/zoom-100-identifier.png
 %%DATADIR%%/images/Light/devices/computer.png
 %%DATADIR%%/images/Light/devices/drive-harddisk.png
 %%DATADIR%%/images/Light/devices/drive-optical.png
@@ -471,75 +563,6 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/images/Light/places/gtk-directory.png
 %%DATADIR%%/images/Light/places/user-desktop.png
 %%DATADIR%%/images/Light/places/user-home.png
-%%DATADIR%%/images/PanelEnding.png
-%%DATADIR%%/images/beforeafter.png
-%%DATADIR%%/images/cglabel0.png
-%%DATADIR%%/images/cglabel1.png
-%%DATADIR%%/images/cglabel2.png
-%%DATADIR%%/images/cglabel3.png
-%%DATADIR%%/images/cglabel4.png
-%%DATADIR%%/images/cglabel5.png
-%%DATADIR%%/images/clabel0.png
-%%DATADIR%%/images/clabel1.png
-%%DATADIR%%/images/clabel2.png
-%%DATADIR%%/images/clabel3.png
-%%DATADIR%%/images/clabel4.png
-%%DATADIR%%/images/clabel5.png
-%%DATADIR%%/images/closedhand.png
-%%DATADIR%%/images/colour.png
-%%DATADIR%%/images/crop-auto.png
-%%DATADIR%%/images/crop.png
-%%DATADIR%%/images/cross.png
-%%DATADIR%%/images/crossed-arrows-out.png
-%%DATADIR%%/images/curveType-NURBS.png
-%%DATADIR%%/images/curveType-controlPoints.png
-%%DATADIR%%/images/curveType-flatLinear.png
-%%DATADIR%%/images/curveType-linear.png
-%%DATADIR%%/images/curveType-parametric.png
-%%DATADIR%%/images/curveType-spline.png
-%%DATADIR%%/images/curveType-unchanged.png
-%%DATADIR%%/images/default-settings-ltr.png
-%%DATADIR%%/images/default-settings-rtl.png
-%%DATADIR%%/images/detail.png
-%%DATADIR%%/images/distortion-auto.png
-%%DATADIR%%/images/distortion.png
-%%DATADIR%%/images/edited-small.png
-%%DATADIR%%/images/edited.png
-%%DATADIR%%/images/editedg-small.png
-%%DATADIR%%/images/editednot-small.png
-%%DATADIR%%/images/editednotg-small.png
-%%DATADIR%%/images/empty.png
-%%DATADIR%%/images/exposure.png
-%%DATADIR%%/images/filter.png
-%%DATADIR%%/images/filterclear.png
-%%DATADIR%%/images/folder.png
-%%DATADIR%%/images/fullscreen-exit.png
-%%DATADIR%%/images/fullscreen.png
-%%DATADIR%%/images/grayrated.png
-%%DATADIR%%/images/gtk-add.png
-%%DATADIR%%/images/gtk-apply.png
-%%DATADIR%%/images/gtk-close-small.png
-%%DATADIR%%/images/gtk-close.png
-%%DATADIR%%/images/gtk-color-picker-small.png
-%%DATADIR%%/images/gtk-color-picker.png
-%%DATADIR%%/images/gtk-open.png
-%%DATADIR%%/images/gtk-save-large.png
-%%DATADIR%%/images/gtk-undo-ltr.png
-%%DATADIR%%/images/gtk-undo-rtl.png
-%%DATADIR%%/images/gtk-undoall-ltr.png
-%%DATADIR%%/images/gtk-undoall-rtl.png
-%%DATADIR%%/images/gtk-zoom-100.png
-%%DATADIR%%/images/gtk-zoom-fit.png
-%%DATADIR%%/images/gtk-zoom-in.png
-%%DATADIR%%/images/gtk-zoom-out.png
-%%DATADIR%%/images/histBar.png
-%%DATADIR%%/images/histBlue.png
-%%DATADIR%%/images/histGreen.png
-%%DATADIR%%/images/histRaw.png
-%%DATADIR%%/images/histRed.png
-%%DATADIR%%/images/histValue.png
-%%DATADIR%%/images/image-editor.png
-%%DATADIR%%/images/info.png
 %%DATADIR%%/images/list-add-small.png
 %%DATADIR%%/images/list-remove-red-small.png
 %%DATADIR%%/images/list-remove.png
@@ -556,6 +579,7 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/images/panel-to-left.png
 %%DATADIR%%/images/panel-to-right.png
 %%DATADIR%%/images/panel-to-top.png
+%%DATADIR%%/images/PanelEnding.png
 %%DATADIR%%/images/popuparrow.png
 %%DATADIR%%/images/processing-pause.png
 %%DATADIR%%/images/processing-play.png
@@ -597,6 +621,7 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/languages/Chinese (Traditional)
 %%DATADIR%%/languages/Czech
 %%DATADIR%%/languages/Dansk
+%%DATADIR%%/languages/default
 %%DATADIR%%/languages/Deutsch
 %%DATADIR%%/languages/English (UK)
 %%DATADIR%%/languages/English (US)
@@ -607,8 +632,8 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/languages/Hebrew
 %%DATADIR%%/languages/Italiano
 %%DATADIR%%/languages/Japanese
-%%DATADIR%%/languages/LICENSE
 %%DATADIR%%/languages/Latvian
+%%DATADIR%%/languages/LICENSE
 %%DATADIR%%/languages/Magyar
 %%DATADIR%%/languages/Nederlands
 %%DATADIR%%/languages/Norsk BM
@@ -623,72 +648,70 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 %%DATADIR%%/languages/Suomi
 %%DATADIR%%/languages/Swedish
 %%DATADIR%%/languages/Turkish
-%%DATADIR%%/languages/default
 %%DATADIR%%/options
-%%DATADIR%%/profiles/BW 1.pp3
-%%DATADIR%%/profiles/BW 2.pp3
-%%DATADIR%%/profiles/BW 3.pp3
-%%DATADIR%%/profiles/BW 4.pp3
-%%DATADIR%%/profiles/Deep Shadows.pp3
+%%DATADIR%%/profiles/BW/BW 1.pp3
+%%DATADIR%%/profiles/BW/BW 2.pp3
+%%DATADIR%%/profiles/BW/BW 3.pp3
+%%DATADIR%%/profiles/BW/BW 4.pp3
 %%DATADIR%%/profiles/Default ISO High.pp3
 %%DATADIR%%/profiles/Default ISO Medium.pp3
 %%DATADIR%%/profiles/Default.pp3
-%%DATADIR%%/profiles/Equilibrated.pp3
-%%DATADIR%%/profiles/Faded Amber 1 TM Bright.pp3
-%%DATADIR%%/profiles/Faded Amber 1 TM.pp3
-%%DATADIR%%/profiles/Faded Amber 1.pp3
-%%DATADIR%%/profiles/Faded Blue 1 TM Bright.pp3
-%%DATADIR%%/profiles/Faded Blue 1 TM.pp3
-%%DATADIR%%/profiles/Faded Blue 1.pp3
-%%DATADIR%%/profiles/Faded Blue Pink TM.pp3
-%%DATADIR%%/profiles/Faded Blue Pink.pp3
-%%DATADIR%%/profiles/Faded Chocolate 1 TM Bright.pp3
-%%DATADIR%%/profiles/Faded Chocolate 2 TM Bright.pp3
-%%DATADIR%%/profiles/Faded Golden 1.pp3
-%%DATADIR%%/profiles/Faded Golden 2.pp3
-%%DATADIR%%/profiles/Faded Green 1 TM Bright.pp3
-%%DATADIR%%/profiles/Faded Green 1 TM.pp3
-%%DATADIR%%/profiles/Faded Green 1.pp3
-%%DATADIR%%/profiles/Faded Green 2.pp3
-%%DATADIR%%/profiles/Faded Green 3.pp3
-%%DATADIR%%/profiles/Faded Neutral TM.pp3
-%%DATADIR%%/profiles/Faded Neutral.pp3
-%%DATADIR%%/profiles/Faded Purple 1 TM Bright.pp3
-%%DATADIR%%/profiles/Faded Purple 1 TM.pp3
-%%DATADIR%%/profiles/Faded Purple 1.pp3
-%%DATADIR%%/profiles/Faded Purple 2 TM.pp3
-%%DATADIR%%/profiles/Faded Purple 2.pp3
-%%DATADIR%%/profiles/Faded Teal Orange TM Bright.pp3
-%%DATADIR%%/profiles/Faded Teal Orange TM.pp3
-%%DATADIR%%/profiles/Faded Teal Orange.pp3
-%%DATADIR%%/profiles/Faded Warm 1 TM Bright.pp3
-%%DATADIR%%/profiles/Faded Warm 1 TM.pp3
-%%DATADIR%%/profiles/Faded Warm 1.pp3
-%%DATADIR%%/profiles/Faded Warm 2.pp3
-%%DATADIR%%/profiles/Faded Warm 3.pp3
-%%DATADIR%%/profiles/High-Key.pp3
-%%DATADIR%%/profiles/Natural 1.pp3
-%%DATADIR%%/profiles/Natural 2.pp3
-%%DATADIR%%/profiles/Neutral.pp3
-%%DATADIR%%/profiles/Pop 1.pp3
-%%DATADIR%%/profiles/Pop 2 L.pp3
-%%DATADIR%%/profiles/Pop 3 Skin.pp3
-%%DATADIR%%/profiles/Pop 4 BW.pp3
-%%DATADIR%%/profiles/Portrait Lejto.pp3
-%%DATADIR%%/profiles/Portrait Smooth.pp3
-%%DATADIR%%/profiles/Punchy 1.pp3
-%%DATADIR%%/profiles/Punchy 2.pp3
-%%DATADIR%%/profiles/Skintones - Natural TM.pp3
-%%DATADIR%%/profiles/Skintones - Natural.pp3
-%%DATADIR%%/profiles/Skintones - Pale TM Bright.pp3
-%%DATADIR%%/profiles/Skintones - Pale TM.pp3
-%%DATADIR%%/profiles/Skintones - Pale.pp3
-%%DATADIR%%/profiles/Skintones - Soft Texture.pp3
-%%DATADIR%%/profiles/Skintones - Strong Texture.pp3
-%%DATADIR%%/profiles/Skintones - Studio TM.pp3
-%%DATADIR%%/profiles/Skintones - Studio.pp3
-%%DATADIR%%/profiles/Skintones - StudioBase 1 TM.pp3
-%%DATADIR%%/profiles/Skintones - StudioBase 1.pp3
+%%DATADIR%%/profiles/Faded/Faded Amber 1 TM Bright.pp3
+%%DATADIR%%/profiles/Faded/Faded Amber 1 TM.pp3
+%%DATADIR%%/profiles/Faded/Faded Amber 1.pp3
+%%DATADIR%%/profiles/Faded/Faded Blue 1 TM Bright.pp3
+%%DATADIR%%/profiles/Faded/Faded Blue 1 TM.pp3
+%%DATADIR%%/profiles/Faded/Faded Blue 1.pp3
+%%DATADIR%%/profiles/Faded/Faded Blue Pink TM.pp3
+%%DATADIR%%/profiles/Faded/Faded Blue Pink.pp3
+%%DATADIR%%/profiles/Faded/Faded Chocolate 1 TM Bright.pp3
+%%DATADIR%%/profiles/Faded/Faded Chocolate 2 TM Bright.pp3
+%%DATADIR%%/profiles/Faded/Faded Golden 1.pp3
+%%DATADIR%%/profiles/Faded/Faded Golden 2.pp3
+%%DATADIR%%/profiles/Faded/Faded Green 1 TM Bright.pp3
+%%DATADIR%%/profiles/Faded/Faded Green 1 TM.pp3
+%%DATADIR%%/profiles/Faded/Faded Green 1.pp3
+%%DATADIR%%/profiles/Faded/Faded Green 2.pp3
+%%DATADIR%%/profiles/Faded/Faded Green 3.pp3
+%%DATADIR%%/profiles/Faded/Faded Neutral TM.pp3
+%%DATADIR%%/profiles/Faded/Faded Neutral.pp3
+%%DATADIR%%/profiles/Faded/Faded Purple 1 TM Bright.pp3
+%%DATADIR%%/profiles/Faded/Faded Purple 1 TM.pp3
+%%DATADIR%%/profiles/Faded/Faded Purple 1.pp3
+%%DATADIR%%/profiles/Faded/Faded Purple 2 TM.pp3
+%%DATADIR%%/profiles/Faded/Faded Purple 2.pp3
+%%DATADIR%%/profiles/Faded/Faded Teal Orange TM Bright.pp3
+%%DATADIR%%/profiles/Faded/Faded Teal Orange TM.pp3
+%%DATADIR%%/profiles/Faded/Faded Teal Orange.pp3
+%%DATADIR%%/profiles/Faded/Faded Warm 1 TM Bright.pp3
+%%DATADIR%%/profiles/Faded/Faded Warm 1 TM.pp3
+%%DATADIR%%/profiles/Faded/Faded Warm 1.pp3
+%%DATADIR%%/profiles/Faded/Faded Warm 2.pp3
+%%DATADIR%%/profiles/Faded/Faded Warm 3.pp3
+%%DATADIR%%/profiles/Generic/Deep Shadows.pp3
+%%DATADIR%%/profiles/Generic/Equilibrated.pp3
+%%DATADIR%%/profiles/Generic/High-Key.pp3
+%%DATADIR%%/profiles/Generic/Natural 1.pp3
+%%DATADIR%%/profiles/Generic/Natural 2.pp3
+%%DATADIR%%/profiles/Generic/Punchy 1.pp3
+%%DATADIR%%/profiles/Generic/Punchy 2.pp3
+%%DATADIR%%/profiles/Pop/Pop 1.pp3
+%%DATADIR%%/profiles/Pop/Pop 2 L.pp3
+%%DATADIR%%/profiles/Pop/Pop 3 Skin.pp3
+%%DATADIR%%/profiles/Pop/Pop 4 BW.pp3
+%%DATADIR%%/profiles/Portrait/Portrait Lejto.pp3
+%%DATADIR%%/profiles/Portrait/Portrait Smooth.pp3
+%%DATADIR%%/profiles/Skintones/Skintones - Natural TM.pp3
+%%DATADIR%%/profiles/Skintones/Skintones - Natural.pp3
+%%DATADIR%%/profiles/Skintones/Skintones - Pale TM Bright.pp3
+%%DATADIR%%/profiles/Skintones/Skintones - Pale TM.pp3
+%%DATADIR%%/profiles/Skintones/Skintones - Pale.pp3
+%%DATADIR%%/profiles/Skintones/Skintones - Soft Texture.pp3
+%%DATADIR%%/profiles/Skintones/Skintones - Strong Texture.pp3
+%%DATADIR%%/profiles/Skintones/Skintones - Studio TM.pp3
+%%DATADIR%%/profiles/Skintones/Skintones - Studio.pp3
+%%DATADIR%%/profiles/Skintones/Skintones - StudioBase 1 TM.pp3
+%%DATADIR%%/profiles/Skintones/Skintones - StudioBase 1.pp3
 %%DATADIR%%/sounds/BatchComplete.wav
 %%DATADIR%%/sounds/Empty.wav
 %%DATADIR%%/sounds/ProcessComplete.wav
@@ -749,6 +772,12 @@ share/icons/hicolor/48x48/apps/rawtherapee.png
 @dirrm %%DATADIR%%/themes/gray_textured
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/profiles/BW
+@dirrm %%DATADIR%%/profiles/Faded
+@dirrm %%DATADIR%%/profiles/Generic
+@dirrm %%DATADIR%%/profiles/Pop
+@dirrm %%DATADIR%%/profiles/Portrait
+@dirrm %%DATADIR%%/profiles/Skintones
 @dirrm %%DATADIR%%/profiles
 @dirrm %%DATADIR%%/languages
 @dirrm %%DATADIR%%/images/Light/places
