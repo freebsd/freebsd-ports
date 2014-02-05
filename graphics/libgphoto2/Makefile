@@ -48,9 +48,8 @@ XML_LDFLAGS=		$$(pkg-config --libs-only-L libxml-2.0)
 XML_CONFIGURE_WITH=	libxml2
 
 .include <bsd.port.options.mk>
-.include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 1000040
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000040
 CONFIGURE_ENV+=	LIBUSB1_CFLAGS=" " LIBUSB1_LIBS="-lusb"
 .endif
 
@@ -72,4 +71,4 @@ post-patch:
 		'/^SUBDIRS/s|linux-hotplug||' \
 		${WRKSRC}/packaging/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
