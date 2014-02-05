@@ -15,8 +15,8 @@ COMMENT=	Make perl scripts persistent in memory
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	pperl.1
-MAN3=	PPerl.3
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/PPerl/PPerl.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pperl
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
