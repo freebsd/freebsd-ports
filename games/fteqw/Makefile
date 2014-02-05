@@ -14,6 +14,7 @@ COMMENT=	QuakeWorld client with cool features, but still compatible
 USES=		gmake dos2unix
 USE_CSTD=	gnu89
 NO_WRKSUBDIR=	yes
+MAKE_ARGS+=	FTE_TARGET=bsd
 
 SUB_FILES=	pkg-message
 
