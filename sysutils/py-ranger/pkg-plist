@@ -24,6 +24,8 @@ doc/ranger/examples/rifle_sxiv.sh
 doc/ranger/examples/vim_file_chooser.vim
 doc/ranger/tools/print_colors.py
 doc/ranger/tools/print_keys.py
+man/man1/ranger.1.gz
+man/man1/rifle.1.gz
 %%PYTHON_SITELIBDIR%%/ranger/__init__.py
 %%PYTHON_SITELIBDIR%%/ranger/__init__.pyc
 %%PYTHON_SITELIBDIR%%/ranger/__init__.pyo
@@ -263,3 +265,4 @@ doc/ranger/tools/print_keys.py
 @dirrm doc/ranger/config/colorschemes
 @dirrm doc/ranger/config
 @dirrm doc/ranger
+@dirrmtry doc

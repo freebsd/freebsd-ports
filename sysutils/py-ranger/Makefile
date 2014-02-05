@@ -3,6 +3,7 @@
 
 PORTNAME=	ranger
 PORTVERSION=	1.6.1
+PORTREVISION=	2
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://ranger.nongnu.org/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +14,8 @@ COMMENT=	Ranger is a file manager with VI key bindings
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-MAN1=		ranger.1 rifle.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|setuptools|distutils.core|; s|share/man/man|man/man|;s|share/doc|doc|' ${WRKSRC}/${PYSETUP}
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/ranger/ext/img_display.py
 
 .include <bsd.port.mk>
