@@ -21,12 +21,6 @@ TEST_DEPENDS=	\
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	countperl.1
-MAN3=	Perl::Metrics::Simple.3 \
-	Perl::Metrics::Simple::Analysis.3 \
-	Perl::Metrics::Simple::Analysis::File.3
-
-NO_STAGE=	yes
 post-patch:
 	${FIND} ${WRKSRC} -name '*.orig' -delete
 
