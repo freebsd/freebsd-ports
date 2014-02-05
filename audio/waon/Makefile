@@ -16,18 +16,16 @@ LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3 \
 		libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 
 USES=		pkgconfig
-NO_STAGE=	yes
 USE_GNOME=	gtk20
 
-MAN1=		waon.1 pv.1 gwaon.1
-PLIST_FILES=	bin/waon bin/pv bin/gwaon
+PLIST_FILES=	bin/waon bin/pv bin/gwaon \
+		man/man1/gwaon.1.gz man/man1/pv.1.gz man/man1/waon.1.gz
+
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/waon  ${PREFIX}/bin/waon
-	${INSTALL_PROGRAM} ${WRKSRC}/pv    ${PREFIX}/bin/pv
-	${INSTALL_PROGRAM} ${WRKSRC}/gwaon ${PREFIX}/bin/gwaon
-	${INSTALL_MAN} ${WRKSRC}/waon.1  ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/pv.1    ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/gwaon.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/waon \
+		${WRKSRC}/pv \
+		${WRKSRC}/gwaon ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/*.1  ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
