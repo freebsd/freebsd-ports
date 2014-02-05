@@ -3741,6 +3741,7 @@
     SUBDIR += py-pyutil
     SUBDIR += py-pyxml2obj
     SUBDIR += py-pyzmq
+    SUBDIR += py-qpid
     SUBDIR += py-qserve
     SUBDIR += py-qt4
     SUBDIR += py-qt4-assistant
