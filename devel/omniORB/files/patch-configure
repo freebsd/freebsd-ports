@@ -1,6 +1,6 @@
---- configure.orig	2009-07-16 15:11:17.000000000 +0200
-+++ configure	2011-10-29 11:13:25.000000000 +0200
-@@ -13072,11 +13072,14 @@
+--- configure.orig	2011-06-24 16:37:28.000000000 -0500
++++ configure
+@@ -13239,11 +13239,15 @@ case "$host" in
    *-*-irix*)     plat_name="IRIX";     plat_def="__irix__";     os_v="6";;
    *-*-aix*)      plat_name="AIX";      plat_def="__aix__";      os_v="4";;
    *-*-darwin*)   plat_name="Darwin";   plat_def="__darwin__";   os_v="1";;
@@ -9,6 +9,7 @@
 -  *-*-freebsd5*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="5";;
 -  *-*-freebsd6*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="6";;
 -  *-*-freebsd7*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="7";;
++  *-*-dragonfly*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="9";;
 +  *-*-freebsd3.*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="3";;
 +  *-*-freebsd4.*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="4";;
 +  *-*-freebsd5.*) plat_name="FreeBSD";  plat_def="__freebsd__";  os_v="5";;
