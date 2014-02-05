@@ -3,7 +3,7 @@
 
 PORTNAME=	unshield
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	SF/synce/Unshield/${PORTVERSION}
 
@@ -13,8 +13,7 @@ COMMENT=	Extract data from InstallShield CAB files
 LICENSE=	MIT
 
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USES=		pathfix
+USES=		libtool pathfix
 
 .include <bsd.port.mk>
