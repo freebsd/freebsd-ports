@@ -3,7 +3,7 @@
 
 PORTNAME=	SquareMap
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +13,10 @@ COMMENT=	Hierarchic visualization control for wxPython
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wxPython>0:${PORTSDIR}/x11-toolkits/py-wxPython28
-
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+USE_WX=		2.8
+WX_COMPS=	python
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
