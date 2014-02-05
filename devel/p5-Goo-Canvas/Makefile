@@ -29,35 +29,4 @@ USES=		perl5
 
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=		perltetris.pl.1 perlmine.pl.1
-MAN3=		Goo::Canvas::Item.3 \
-		Goo::Canvas.3 \
-		Goo::Canvas::TextModel.3 \
-		Goo::Canvas::Bounds.3 \
-		Goo::Canvas::EllipseModel.3 \
-		Goo::Canvas::Style.3 \
-		Goo::Canvas::Ellipse.3 \
-		Goo::Canvas::RectModel.3 \
-		Goo::Canvas::index.3 \
-		Goo::Canvas::PolylineModel.3 \
-		Goo::Canvas::TableModel.3 \
-		Goo::Canvas::ItemModel.3 \
-		Goo::Canvas::Text.3 \
-		Goo::Canvas::Polyline.3 \
-		Goo::Canvas::Table.3 \
-		Goo::Canvas::Image.3 \
-		Goo::Canvas::ImageModel.3 \
-		Goo::Canvas::PathModel.3 \
-		Goo::Canvas::Group.3 \
-		Goo::Canvas::GroupModel.3 \
-		Goo::Canvas::Widget.3 \
-		Goo::Cairo::Matrix.3 \
-		Goo::Cairo::Pattern.3 \
-		Goo::Canvas::Rect.3 \
-		Goo::Canvas::LineDash.3 \
-		Goo::Canvas::Path.3 \
-		Goo::Canvas::Points.3 \
-		Goo::Canvas::ItemSimple.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
