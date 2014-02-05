@@ -437,13 +437,7 @@ BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
 .endif
 
 .if ${PORT_OPTIONS:MSLANG}
-PKGMESSAGE=	${WRKDIR}/pkg-message
-	@${ECHO} "=====================================================" > ${PKGMESSAGE}
-	@${ECHO} "You have installed ${PORTNAME} with SLANG support." >> ${PKGMESSAGE}
-	@${ECHO} "This may work for a color terminal only when defining" >> ${PKGMESSAGE}
-	@${ECHO} "COLORTERM=yes and COLORFGBG=\"color1;color2\" in your" >> ${PKGMESSAGE}
-	@${ECHO} "environment." >> ${PKGMESSAGE}
-	@${ECHO} "=====================================================" >> ${PKGMESSAGE}
+PKGMESSAGE=	${FILESDIR}/pkg-message.slang
 .endif
 
 .include <bsd.port.mk>
