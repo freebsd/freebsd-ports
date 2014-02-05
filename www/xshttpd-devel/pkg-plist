@@ -72,16 +72,31 @@ libexec/xshttpd/mod_gzip.so
 libexec/xshttpd/mod_htcpcp.so
 libexec/xshttpd/mod_magic.so
 libexec/xshttpd/mod_rpaf.so
-@exec mkdir -p %%WWWDIR%%/htdocs
-@exec mkdir -p /var/log/xshttpd
+man/man1/clearxs.1.gz
+man/man1/gfxcount.1.gz
+man/man1/httpd.1.gz
+man/man1/httpdc.1.gz
+man/man1/imagemap.1.gz
+man/man1/readxs.1.gz
+man/man1/xschpass.1.gz
+man/man1/xsindex.1.gz
+man/man1/xspasswd.1.gz
+man/man5/httpd.conf.5.gz
+man/man5/xsauth.5.gz
+man/man5/xsconf.5.gz
+man/man5/xsredir.5.gz
+man/man5/xsscripts.5.gz
+man/man7/httpd_cgi.7.gz
+man/man7/httpd_ssi.7.gz
 @dirrm %%DATADIR%%/contrib
 @dirrm %%DATADIR%%/gfxcount
 @dirrmtry %%DATADIR%%/icons
-@dirrmtry %%DATADIR%%/logs
 @dirrmtry %%DATADIR%%
 @dirrmtry %%WWWDIR%%/cgi-bin
 @dirrmtry %%WWWDIR%%/htdocs
 @dirrmtry %%WWWDIR%%
 @dirrmtry %%ETCDIR%%
 @dirrmtry libexec/xshttpd
-@unexec rmdir /var/log/xshttpd 2>/dev/null || true
+@cwd /
+@unexec rmdir var/log/xshttpd 2>/dev/null || true
+@exec mkdir -p var/log/xshttpd

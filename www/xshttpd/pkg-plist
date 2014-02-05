@@ -65,6 +65,22 @@ bin/xspasswd
 %%WWWDIR%%/icons/xs-video.gif
 %%WWWDIR%%/icons/xs-zip.gif
 @exec mkdir -p %%WWWDIR%%/htdocs
+man/man1/clearxs.1.gz
+man/man1/gfxcount.1.gz
+man/man1/httpd.1.gz
+man/man1/httpdc.1.gz
+man/man1/imagemap.1.gz
+man/man1/readxs.1.gz
+man/man1/xschpass.1.gz
+man/man1/xsindex.1.gz
+man/man1/xspasswd.1.gz
+man/man5/httpd.conf.5.gz
+man/man5/xsauth.5.gz
+man/man5/xsconf.5.gz
+man/man5/xsredir.5.gz
+man/man5/xsscripts.5.gz
+man/man7/httpd_cgi.7.gz
+man/man7/httpd_ssi.7.gz
 @dirrm %%WWWDIR%%/contrib
 @dirrm %%WWWDIR%%/gfxcount
 @dirrmtry %%WWWDIR%%/cgi-bin
