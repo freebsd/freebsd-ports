@@ -19,24 +19,11 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	configure
-NO_STAGE=	yes
 
-MAN3=		Nagios::Plugin.3 \
-		Nagios::Plugin::Config.3 \
-		Nagios::Plugin::ExitResult.3 \
-		Nagios::Plugin::Functions.3 \
-		Nagios::Plugin::Getopt.3 \
-		Nagios::Plugin::Performance.3 \
-		Nagios::Plugin::Range.3 \
-		Nagios::Plugin::Threshold.3 \
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
