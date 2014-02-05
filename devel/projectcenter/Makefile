@@ -9,7 +9,7 @@ MASTER_SITE_SUBDIR=	dev-apps
 DISTNAME=	ProjectCenter-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A development environment for GNUstep
+COMMENT=	Development environment for GNUstep
 
 LICENSE=	GPLv2
 
