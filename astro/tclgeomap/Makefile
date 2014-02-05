@@ -17,7 +17,6 @@ CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 		--with-tclinclude=${TCL_INCLUDEDIR}
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 USE_LDCONFIG=	yes
-STRIP_FILES=	lib/libtclgeomap.so
 
 post-patch:
 	@${REINPLACE_CMD} -e '/=.*PACKAGE_VERSION/s|$${PACKAGE_VERSION}||g' ${WRKSRC}/configure
@@ -35,5 +34,6 @@ do-install:
 	${LN} -sf libtclgeomap.so.0 ${STAGEDIR}${PREFIX}/lib/libtclgeomap.so
 	${FIND} ${WRKSRC}/../doc -name "*.3" -exec ${INSTALL_DATA} {} ${STAGEDIR}${PREFIX}/man/man3 \;
 	${FIND} ${WRKSRC}/../doc -name "*.n" -exec ${INSTALL_DATA} {} ${STAGEDIR}${PREFIX}/man/mann \;
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtclgeomap.so.0
 
 .include <bsd.port.mk>
