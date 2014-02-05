@@ -1,6 +1,6 @@
---- build/os-type.orig	Tue Nov 10 11:37:27 1998
-+++ build/os-type	Mon Mar 22 10:10:54 1999
-@@ -83,7 +83,7 @@
+--- build/os-type.orig	1998-11-09 22:37:27.000000000 -0500
++++ build/os-type
+@@ -83,7 +83,7 @@ fi
  if [ -z "${OS}" -a ! -z "${uname}" ]; then
  	case "`$uname -a | tr '[A-Z]' '[a-z]'`" in
  		    osf1*)	OS=break;;
@@ -9,11 +9,12 @@
  		*" dcosx "*)	OS=dcosx;;
  		*"cx/ux"*)	OS=cxux;;
  		*"hp-ux"*)	# HP-UX 9.x
-@@ -111,7 +111,7 @@
+@@ -111,7 +111,8 @@ if [ -z "${OS}" -a ! -z "${uname}" ]; th
  				OS="${osname}${osmajver}"
  				;;
  		"linux"*)	OS=linux;;
 -		"freebsd"*)	OS="${osname}${osmajver}";;
++		dragonfly*)	OS=freebsd2 ;;
 +		"freebsd"*)	OS="freebsd2";;
  	  	# OpenBSD looks like freebsd2 right now
  		"openbsd"*)	OS="freebsd2";;
