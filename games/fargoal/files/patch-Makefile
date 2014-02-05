@@ -1,15 +1,17 @@
---- Makefile.orig	Tue Jun 29 16:45:02 2004
-+++ Makefile	Thu Aug 11 15:12:26 2005
+--- Makefile.orig	2004-06-29 14:45:02.000000000 -0500
++++ Makefile
 @@ -1,4 +1,4 @@
 -CC=gcc
 +all: ../sword
  ../sword: char.o config.o credits.o game.o gfx.o main.o map.o menu.o message.o monster.o player.o save.o scroller.o spell.o 
  	$(CC) -o $@ $(LDFLAGS) $^ $(LDLIBS)
  include makefile.dep
-@@ -10,5 +10,5 @@
+@@ -9,6 +9,6 @@ ifdef MINGDIR
+ LDLIBS :=  -lalleg 
  CFLAGS += -DMINGW 
  else
- LDLIBS :=  `allegro-config --libs`
+-LDLIBS :=  `allegro-config --libs`
 -CFLAGS += `allegro-config --cflags` -DLINUX 
++LDLIBS :=  `allegro-config --libs` -lm
 +CFLAGS += `allegro-config --cflags` -DLINUX -DALLEGRO_LINUX
  endif
