@@ -1,4 +1,6 @@
 bin/svm
+man/man1/svm.1.gz
+%%PERL5_MAN3%%/SVN::Mirror.3.gz
 %%SITE_PERL%%/SVN/Mirror.pm
 %%SITE_PERL%%/SVN/Mirror/Ra.pm
 %%SITE_PERL%%/SVN/Mirror/Git.pm
