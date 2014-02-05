@@ -3,6 +3,7 @@
 
 PORTNAME=		cryptopp
 PORTVERSION=		5.6.2
+PORTREVISION=		1
 CATEGORIES=		security
 MASTER_SITES=		SF \
 			http://www.cryptopp.com/
@@ -16,13 +17,12 @@ OPTIONS_DEFAULT=	STATIC THREADS
 STATIC_DESC=		Build static version only (no shared libs)
 GCC_DESC=		Build with current GCC
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 NO_WRKSUBDIR=		yes
 USE_ZIP=		yes
 EXTRACT_BEFORE_ARGS=	-aq
-USE_GMAKE=		yes
+USES=			gmake
 MAKEFILE=		GNUmakefile
 
 LIBVERSION=		0
@@ -52,29 +52,25 @@ LDFLAGS+=		${PTHREAD_LIBS}
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cryptest.exe ${PREFIX}/bin/cryptest
-	${INSTALL_DATA} ${WRKSRC}/libcryptopp.a ${PREFIX}/lib
-	${MKDIR} ${PREFIX}/include/cryptopp
+	${INSTALL_PROGRAM} ${WRKSRC}/cryptest.exe ${STAGEDIR}${PREFIX}/bin/cryptest
+	${INSTALL_DATA} ${WRKSRC}/libcryptopp.a ${STAGEDIR}${PREFIX}/lib
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/cryptopp
 	(for i in `${FIND} ${WRKSRC}/ -name '*.h' \
 			-and -not -name 'dll.h' \
 			-and -not -name 'resource.h'`; do \
-		${INSTALL_DATA} $$i ${PREFIX}/include/cryptopp; \
+		${INSTALL_DATA} $$i ${STAGEDIR}${PREFIX}/include/cryptopp; \
 	done)
 .if !${PORT_OPTIONS:MSTATIC}
-	${INSTALL_LIB} ${WRKSRC}/libcryptopp.so ${PREFIX}/lib/libcryptopp.so.${PORTVERSION}
-	${LN} -fs libcryptopp.so.${PORTVERSION} ${PREFIX}/lib/libcryptopp.so.${LIBVERSION}
-	${LN} -fs libcryptopp.so.${LIBVERSION} ${PREFIX}/lib/libcryptopp.so
+	${INSTALL_LIB} ${WRKSRC}/libcryptopp.so ${STAGEDIR}${PREFIX}/lib/libcryptopp.so.${PORTVERSION}
+	${LN} -fs libcryptopp.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libcryptopp.so.${LIBVERSION}
+	${LN} -fs libcryptopp.so.${LIBVERSION} ${STAGEDIR}${PREFIX}/lib/libcryptopp.so
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${PREFIX}/share/doc/cryptopp
-	${CP} ${WRKSRC}/Readme.txt ${PREFIX}/share/doc/cryptopp/README
-	${CP} ${WRKSRC}/License.txt ${PREFIX}/share/doc/cryptopp/License
-.endif
-
-.include <bsd.port.pre.mk>
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/cryptopp
+	${CP} ${WRKSRC}/Readme.txt ${STAGEDIR}${PREFIX}/share/doc/cryptopp/README
+	${CP} ${WRKSRC}/License.txt ${STAGEDIR}${PREFIX}/share/doc/cryptopp/License
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64: unrecognized C++ options
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
