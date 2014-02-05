@@ -58,9 +58,15 @@ CFLAGS+=	-DDUMPCACHE
 MANDATE=	-20031023
 MASTER_SITES+=	http://smarden.org/pape/djb/manpages/:manpages
 DISTFILES+=	${DISTNAME}-man${MANDATE}.tar.gz:manpages
-PLIST_SUB+=	WITH_MAN=""
-.else
-PLIST_SUB+=	WITH_MAN="@comment "
+
+MAN1=		dnsfilter.1 dnsip.1 dnsipq.1 dnsmx.1 dnsname.1 \
+		dnsq.1 dnsqr.1 dnstrace.1 dnstracesort.1 dnstxt.1 \
+		tinydns-get.1
+MAN8=		axfr-get.8 axfrdns.8 axfrdns-conf.8 dnscache-conf.8 \
+		dnscache.8 rbldns-conf.8 \
+		rbldns-data.8 rbldns.8 tinydns-conf.8 tinydns-data.8 \
+		tinydns-edit.8 tinydns.8 walldns-conf.8 walldns.8
+MANCOMPRESSED=	no
 .endif
 
 .if ${PORT_OPTIONS:MIP6}
