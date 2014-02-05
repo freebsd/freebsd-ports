@@ -9,6 +9,13 @@ bin/datum_strip
 %%SITE_PERL%%/Carp/Datum/Parser.y
 %%SITE_PERL%%/Carp/Datum/Strip.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Datum/.packlist
+%%PERL5_MAN3%%/Carp::Datum.3.gz
+%%PERL5_MAN3%%/Carp::Datum::Assert.3.gz
+%%PERL5_MAN3%%/Carp::Datum::Cfg.3.gz
+%%PERL5_MAN3%%/Carp::Datum::Flags.3.gz
+%%PERL5_MAN3%%/Carp::Datum::MakeMaker.3.gz
+%%PERL5_MAN3%%/Carp::Datum::Strip.3.gz
+man/man1/datum_strip.1.gz
 @dirrm %%SITE_PERL%%/Carp/Datum
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Carp/Datum
 @dirrmtry %%SITE_PERL%%/Carp

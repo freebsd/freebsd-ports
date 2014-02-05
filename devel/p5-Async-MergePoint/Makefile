@@ -16,14 +16,12 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Async::MergePoint.3
-
 PLIST_FILES=	%%SITE_PERL%%/Async/MergePoint.pm \
-		%%SITE_PERL%%/mach/auto/Async/MergePoint/.packlist
+		%%SITE_PERL%%/mach/auto/Async/MergePoint/.packlist \
+		%%PERL5_MAN3%%/Async::MergePoint.3.gz
 
 PLIST_DIRS=	%%SITE_PERL%%/mach/auto/Async/MergePoint \
 		%%SITE_PERL%%/mach/auto/Async \
 		%%SITE_PERL%%/Async
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

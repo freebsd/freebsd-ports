@@ -24,12 +24,4 @@ TEST_DEPENDS=	p5-Test-Identity>0:${PORTSDIR}/devel/p5-Test-Identity \
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		CPS.3 \
-		CPS::Functional.3 \
-		CPS::Future.3 \
-		CPS::Governor.3 \
-		CPS::Governor::Deferred.3 \
-		CPS::Governor::Simple.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
