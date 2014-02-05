@@ -2,6 +2,8 @@ bin/connectagram
 share/applications/connectagram.desktop
 %%DATADIR%%/data/en/words
 %%DATADIR%%/data/fr/words
+%%DATADIR%%/data/hu/words
+%%DATADIR%%/data/ru/words
 %%DATADIR%%/patterns/0.png
 %%DATADIR%%/patterns/1.png
 %%DATADIR%%/patterns/2.png
@@ -13,6 +15,10 @@ share/applications/connectagram.desktop
 %%NLS%%%%DATADIR%%/translations/connectagram_el.qm
 %%NLS%%%%DATADIR%%/translations/connectagram_en.qm
 %%NLS%%%%DATADIR%%/translations/connectagram_fr.qm
+%%NLS%%%%DATADIR%%/translations/connectagram_he.qm
+%%NLS%%%%DATADIR%%/translations/connectagram_hr.qm
+%%NLS%%%%DATADIR%%/translations/connectagram_hu.qm
+%%NLS%%%%DATADIR%%/translations/connectagram_pl.qm
 %%NLS%%%%DATADIR%%/translations/connectagram_ro.qm
 %%NLS%%%%DATADIR%%/translations/connectagram_ru.qm
 %%NLS%%%%DATADIR%%/translations/connectagram_tr.qm
@@ -29,6 +35,8 @@ share/pixmaps/connectagram.png
 share/pixmaps/connectagram.xpm
 %%NLS%%@dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/patterns
+@dirrm %%DATADIR%%/data/ru
+@dirrm %%DATADIR%%/data/hu
 @dirrm %%DATADIR%%/data/fr
 @dirrm %%DATADIR%%/data/en
 @dirrm %%DATADIR%%/data

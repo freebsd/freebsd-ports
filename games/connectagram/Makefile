@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	connectagram
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 EXTRACT_SUFX=	-src.tar.bz2
