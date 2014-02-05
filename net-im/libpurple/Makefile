@@ -13,8 +13,8 @@ MAINTAINER?=	marcus@FreeBSD.org
 COMMENT?=	Backend library for the Pidgin multi-protocol messaging client
 
 USE_BZIP2=	yes
-USES=		gmake pkgconfig
-USE_GNOME?=	gnomeprefix gnomehack intlhack glib20 libxml2
+USES=		gmake pkgconfig pathfix
+USE_GNOME?=	gnomeprefix intlhack glib20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--disable-gtkui \
 		--disable-consoleui \
