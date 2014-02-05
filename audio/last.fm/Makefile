@@ -4,7 +4,7 @@
 PORTNAME=	last.fm
 PORTVERSION=	1.5.4.26862
 DISTVERSIONSUFFIX=	.src
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio net
 MASTER_SITES=	http://cdn.last.fm/client/src/
 
