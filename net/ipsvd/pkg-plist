@@ -1,6 +1,13 @@
 sbin/ipsvd-cdb
 sbin/tcpsvd
 sbin/udpsvd
+man/man5/ipsvd-instruct.5.gz
+man/man7/ipsvd.7.gz
+man/man8/ipsvd-cdb.8.gz
+man/man8/sslio.8.gz
+man/man8/sslsvd.8.gz
+man/man8/tcpsvd.8.gz
+man/man8/udpsvd.8.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
