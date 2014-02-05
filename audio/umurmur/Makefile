@@ -12,7 +12,6 @@ COMMENT=	Minimalistic Murmur (Mumble server)
 LIB_DEPENDS=	libconfig.so:${PORTSDIR}/devel/libconfig \
 		libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
 
-NO_STAGE=	yes
 USES=		gmake
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
@@ -23,11 +22,6 @@ USE_RC_SUBR=	umurmur
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-pre-su-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/conf.h
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/conf.c
@@ -35,10 +29,7 @@ post-patch:
 		-e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/umurmur.conf.example
 
 post-install:
-	@${MKDIR} ${PREFIX}/etc/umurmur
-	@${INSTALL_DATA} ${WRKSRC}/umurmur.conf.example ${PREFIX}/etc/umurmur/umurmur.conf.sample
-	@if [ ! -f ${PREFIX}/etc/umurmur/umurmur.conf ]; then \
-		${CP} -p ${PREFIX}/etc/umurmur/umurmur.conf.sample ${PREFIX}/etc/umurmur/umurmur.conf; \
-	fi
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/umurmur
+	${INSTALL_DATA} ${WRKSRC}/umurmur.conf.example ${STAGEDIR}${PREFIX}/etc/umurmur/umurmur.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
