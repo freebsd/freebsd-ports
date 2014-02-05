@@ -21,21 +21,18 @@ INSTALL+=	-b
 PKGDEINSTALL=	${PKGINSTALL}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "/debug_batch_directory/s:'.*':'/var/log/cleanfeed':" ${WRKSRC}/etc/cleanfeed.local
 
 do-install:
-	@${INSTALL} ${_SHROWNGRP} -d ${PREFIX}/news/cleanfeed/etc
+	@${INSTALL} ${_SHROWNGRP} -d ${STAGEDIR}${PREFIX}/news/cleanfeed/etc
 .for f in bad_adult_paths bad_body bad_cancel_paths bad_from bad_groups \
 		bad_hosts bad_paths bad_subject bad_url
-	@${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/news/cleanfeed/etc
+	@${INSTALL_DATA} ${WRKSRC}/etc/${f} ${STAGEDIR}${PREFIX}/news/cleanfeed/etc
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/etc/cleanfeed.local \
-		${PREFIX}/news/cleanfeed/etc/cleanfeed.local.sample
-	@${INSTALL_DATA} ${WRKSRC}/cleanfeed ${PREFIX}/news/bin/filter
-
-post-install:
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+		${STAGEDIR}${PREFIX}/news/cleanfeed/etc/cleanfeed.local.sample
+	@${MKDIR} ${STAGEDIR}${PREFIX}/news/bin/filter
+	@${INSTALL_DATA} ${WRKSRC}/cleanfeed ${STAGEDIR}${PREFIX}/news/bin/filter
 
 .include <bsd.port.mk>
