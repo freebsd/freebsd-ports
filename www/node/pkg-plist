@@ -30,6 +30,7 @@ include/node/zconf.h
 include/node/zlib.h
 lib/dtrace/node.d
 lib/node_modules/.keepme
+man/man1/node.1.gz
 @dirrmtry lib/node_modules
 @dirrmtry lib/dtrace
 @dirrmtry include/node/uv-private
