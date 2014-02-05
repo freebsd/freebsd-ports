@@ -1,5 +1,8 @@
 bin/puudecode
 bin/puuencode
+man/man1/puudecode.1.gz
+man/man1/puuencode.1.gz
+%%PERL5_MAN3%%/Convert::UU.3.gz
 %%SITE_PERL%%/Convert/UU.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Convert/UU/.packlist
 @dirrm %%SITE_PERL%%/Convert

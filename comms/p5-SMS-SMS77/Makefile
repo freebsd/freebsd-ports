@@ -12,12 +12,7 @@ COMMENT=	Perl interface and script to send SMS via SMS77.de
 
 BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-MAN1=		sms77send.1
-MAN3=		SMS::SMS77::Message.3 \
-		SMS::SMS77.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
