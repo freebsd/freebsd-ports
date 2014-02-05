@@ -51,6 +51,33 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b7a7576d-8e0a-11e3-9976-9c4e36909cc0">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>11.2r202.335</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb14-04.html">
+	  <p>These updates address vulnerabilities that could cause a crash
+	    and potentially allow an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0497</cvename>
+      <url>http://www.adobe.com/support/security/bulletins/apsb14-04.html</url>
+    </references>
+    <dates>
+      <discovery>2014-02-04</discovery>
+      <entry>2014-02-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1753f0ff-8dd5-11e3-9b45-b4b52fce4ce8">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
