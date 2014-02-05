@@ -1,5 +1,10 @@
 bin/mymeta-cpanfile
 bin/cpanfile-dump
+man/man1/cpanfile-dump.1.gz
+man/man1/mymeta-cpanfile.1.gz
+%%PERL5_MAN3%%/Module::CPANfile.3.gz
+%%PERL5_MAN3%%/cpanfile-faq.3.gz
+%%PERL5_MAN3%%/cpanfile.3.gz
 %%SITE_PERL%%/Module/CPANfile.pm
 %%SITE_PERL%%/Module/CPANfile/Result.pm
 %%SITE_PERL%%/Module/CPANfile/Environment.pm
