@@ -3,7 +3,7 @@
 
 PORTNAME=	pidentd
 PORTVERSION=	3.0.19
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/unix/ident/servers/ \
 		ftp://ftp.stack.nl/pub/users/johans/pidentd/
@@ -14,31 +14,34 @@ PATCHFILES=	pidentd-${PORTVERSION}-ipv6-20080101.diff.gz
 PATCH_DIST_STRIP=	-p0
 
 MAINTAINER=	johans@FreeBSD.org
-COMMENT=	An RFC1413 identification server
+COMMENT=	RFC1413 identification server
 
 CONFLICTS_INSTALL=	fakeident-[0-9]*
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 
-MAN8=		identd.8 idecrypt.8
-PLIST_FILES=	sbin/ibench sbin/identd sbin/idecrypt sbin/ikeygen
+PLIST_FILES=	sbin/ibench sbin/identd sbin/idecrypt sbin/ikeygen \
+		man/man8/identd.8.gz man/man8/idecrypt.8.gz
 
 CFLAGS+=	-DINCLUDE_CRYPT -DOPENSSL_DES_LIBDES_COMPATIBILITY
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto
 
-NO_STAGE=	yes
 post-extract:
 	${CP} ${FILESDIR}/idecrypt.8 ${WRKSRC}/doc/idecrypt.8
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e "s| /etc/identd.conf| ${PREFIX}/etc/identd.conf|" \
-		-e "s| /etc/identd.key| ${PREFIX}/etc/identd.key|" \
+		-e 's| /etc/identd.conf| ${PREFIX}/etc/identd.conf|' \
+		-e 's| /etc/identd.key| ${PREFIX}/etc/identd.key|' \
 		${WRKSRC}/doc/identd.8 ${WRKSRC}/doc/idecrypt.8
-	@${REINPLACE_CMD} -e "s|freebsd.4.7.|freebsd|" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|freebsd.4.7.|freebsd|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|$$(sbindir)|$${DESTDIR}&|' \
+		-e 's|-m 755|-s &|' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|$$(mandir)|$${DESTDIR}&|' ${WRKSRC}/Makefile.in
 
 post-install:
-	${INSTALL_MAN} -m 644 ${WRKSRC}/doc/idecrypt.8 ${MANPREFIX}/man/man8
+	${INSTALL_MAN} -m 644 ${WRKSRC}/doc/idecrypt.8 \
+		${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>
