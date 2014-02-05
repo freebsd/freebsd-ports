@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	file
-PORTVERSION=	5.15
+PORTVERSION=	5.16
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.fu-berlin.de/unix/tools/file/
@@ -10,12 +10,13 @@ MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Utility to determine file type
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=	--enable-fsect-man5
+MAKE_ENV+=	INSTALL_STRIP_FLAG="${STRIP}"
 
 CONFLICTS=	tct-[0-9]*
 
