@@ -7,6 +7,7 @@ lib/libprotobuf-c.a
 lib/libprotobuf-c.la
 lib/libprotobuf-c.so
 lib/libprotobuf-c.so.0
+lib/libprotobuf-c.so.0.0.0
 libdata/pkgconfig/libprotobuf-c.pc
 @dirrm include/google/protobuf-c
 @dirrmtry include/google
