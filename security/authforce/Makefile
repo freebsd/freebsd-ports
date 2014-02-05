@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	CURL NLS
 
-USES=		ncurses
+USES=		ncurses readline
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 NO_CCACHE=	yes
