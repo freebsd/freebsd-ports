@@ -5,7 +5,7 @@
  #define INCLUDED_SERFURI_HXX
  
 -#include <apr-util/apr_uri.h>
-+#include <apr-1/apr_uri.h>
++#include <apr_uri.h>
  #include <rtl/ustring.hxx>
  #include "DAVException.hxx"
  
@@ -16,7 +16,7 @@
  
  #include "AprEnv.hxx"
 -#include <apr/apr_strings.h>
-+#include <apr-1/apr_strings.h>
++#include <apr_strings.h>
  
  #include "DAVAuthListener.hxx"
  #include "SerfTypes.hxx"
@@ -28,7 +28,7 @@
  #define INCLUDED_SERFTYPES_HXX
  
 -#include <serf/serf.h>
-+#include <serf-1/serf.h>
++#include <serf.h>
  
  typedef serf_connection_t SerfConnection;
  
