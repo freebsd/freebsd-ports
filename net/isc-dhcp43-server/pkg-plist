@@ -1,0 +1,29 @@
+@unexec if cmp -s %D/etc/dhcpd.conf.example %D/etc/dhcpd.conf; then rm -f %D/etc/dhcpd.conf; fi
+@unexec echo "You should stop the dhcpd and dhcpd6 daemons if you are permanently removing this port."
+etc/dhcpd.conf.example
+@exec if [ ! -f %D/etc/dhcpd.conf ] ; then cp -p %D/%F %B/dhcpd.conf; fi
+%%IPV6%%@unexec if cmp -s %D/etc/dhcpd6.conf.example %D/etc/dhcpd6.conf; then rm -f %D/etc/dhcpd6.conf; fi
+%%IPV6%%etc/dhcpd6.conf.example
+%%IPV6%%@exec if [ ! -f %D/etc/dhcpd6.conf ] ; then cp -p %D/%F %B/dhcpd6.conf; fi
+%%IPV6%%etc/rc.d/isc-dhcpd6
+sbin/dhcpd
+bin/omshell
+%%LDAP%%bin/dhcpd-conf-to-ldap
+include/dhcpctl.h
+include/isc-dhcp/dst.h
+include/omapip/alloc.h
+include/omapip/buffer.h
+include/omapip/omapip.h
+include/omapip/omapip_p.h
+include/omapip/hash.h
+include/omapip/trace.h
+include/omapip/convert.h
+include/omapip/isclib.h
+include/omapip/result.h
+lib/libdhcpctl.a
+lib/libomapi.a
+lib/libdst.a
+%%LDAP%%%%SCHEMA_DIR%%/dhcp.schema
+%%LDAP%%@dirrm %%SCHEMA_DIR%%
+@dirrm include/omapip
+@dirrm include/isc-dhcp
