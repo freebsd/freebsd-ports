@@ -15,18 +15,16 @@ USE_PHP=	xsl session xmlwriter xmlreader
 SUB_FILES=	pkg-message
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
 	${FIND} ${WRKSRC} -name .svn -type d | ${XARGS} ${RM} -rf
 
 do-install:
-	@${MKDIR} ${WWWDIR}
-	${CP} -R ${WRKSRC}/ ${WWWDIR}
-	@${TOUCH} ${WWWDIR}/config.php
-	@${CHOWN} ${WWWOWN} ${WWWDIR}/config.php
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}
+	@${TOUCH} ${STAGEDIR}${WWWDIR}/config.php
+	@${CHOWN} ${WWWOWN} ${STAGEDIR}${WWWDIR}/config.php
 
 create-plist:
 	@${FIND} -s ${WRKSRC}/${file} -not -type d \
