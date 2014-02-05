@@ -20,22 +20,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	metabase-profile.1
-MAN3=	Metabase::Fact.3 Metabase::Resource::metabase.3 \
-	Metabase::Resource::perl::commit.3 \
-	Metabase::Resource::perl.3 \
-	Metabase::Resource::metabase::fact.3 \
-	Metabase::Resource::cpan.3 \
-	Metabase::Resource::cpan::distfile.3 \
-	Metabase::Resource::metabase::user.3 \
-	Metabase::User::Secret.3 \
-	Metabase::Fact::String.3 \
-	Metabase::Fact::Hash.3 \
-	Metabase::Resource.3 \
-	Metabase::User::EmailAddress.3 \
-	Metabase::User::FullName.3 \
-	Metabase::User::Profile.3 \
-	Metabase::Report.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

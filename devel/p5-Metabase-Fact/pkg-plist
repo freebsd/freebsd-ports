@@ -1,4 +1,5 @@
 bin/metabase-profile
+man/man1/metabase-profile.1.gz
 %%SITE_PERL%%/Metabase/Report.pm
 %%SITE_PERL%%/Metabase/Fact.pm
 %%SITE_PERL%%/Metabase/User/Secret.pm
@@ -16,6 +17,22 @@ bin/metabase-profile
 %%SITE_PERL%%/Metabase/Resource/perl/commit.pm
 %%SITE_PERL%%/Metabase/Resource/cpan/distfile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Metabase/Fact/.packlist
+%%PERL5_MAN3%%/Metabase::Fact.3.gz
+%%PERL5_MAN3%%/Metabase::Fact::Hash.3.gz
+%%PERL5_MAN3%%/Metabase::Fact::String.3.gz
+%%PERL5_MAN3%%/Metabase::Report.3.gz
+%%PERL5_MAN3%%/Metabase::Resource.3.gz
+%%PERL5_MAN3%%/Metabase::Resource::cpan.3.gz
+%%PERL5_MAN3%%/Metabase::Resource::cpan::distfile.3.gz
+%%PERL5_MAN3%%/Metabase::Resource::metabase.3.gz
+%%PERL5_MAN3%%/Metabase::Resource::metabase::fact.3.gz
+%%PERL5_MAN3%%/Metabase::Resource::metabase::user.3.gz
+%%PERL5_MAN3%%/Metabase::Resource::perl.3.gz
+%%PERL5_MAN3%%/Metabase::Resource::perl::commit.3.gz
+%%PERL5_MAN3%%/Metabase::User::EmailAddress.3.gz
+%%PERL5_MAN3%%/Metabase::User::FullName.3.gz
+%%PERL5_MAN3%%/Metabase::User::Profile.3.gz
+%%PERL5_MAN3%%/Metabase::User::Secret.3.gz
 @dirrmtry %%SITE_PERL%%/Metabase/Fact
 @dirrmtry %%SITE_PERL%%/Metabase/Resource/cpan
 @dirrmtry %%SITE_PERL%%/Metabase/Resource/metabase
