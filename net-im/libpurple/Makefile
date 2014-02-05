@@ -3,7 +3,7 @@
 #   $MCom: ports/net-im/libpurple/Makefile,v 1.32 2010/05/10 04:21:19 marcus Exp $
 
 PORTNAME?=	libpurple
-PORTVERSION=	2.10.8
+PORTVERSION=	2.10.9
 PORTREVISION?=	0
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
