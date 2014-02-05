@@ -8,11 +8,13 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.bms-austria.com/%7Epipelka/${PORTNAME}/
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A medical image viewer
+COMMENT=	Medical image viewer
 
-LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
-    		glademm-2.4:${PORTSDIR}/devel/libglademm24 \
-		gconfmm-2.6:${PORTSDIR}/devel/gconfmm26
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
+    		libglademm-2.4.so:${PORTSDIR}/devel/libglademm24 \
+		libgconfmm-2.6.so:${PORTSDIR}/devel/gconfmm26
 
 USES=		gettext pkgconfig
 USE_GNOME=	gconf2
@@ -23,18 +25,8 @@ CXXFLAGS+=	-fPIC \
 		-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 701000
-PLIST_SUB=	SHVER=""
 post-install:
-	${LN} -s libimagepool.so.0.0 ${PREFIX}/lib/aeskulap/libimagepool.so
-	${LN} -s libconfiguration.so.0.0 ${PREFIX}/lib/aeskulap/libconfiguration.so
-.else
-PLIST_SUB=	SHVER="@comment "
-post-patch:
-	${REINPLACE_CMD} -e 's|-lrt||g' ${WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
+	${LN} -s libimagepool.so.0.0 ${STAGEDIR}${PREFIX}/lib/aeskulap/libimagepool.so
+	${LN} -s libconfiguration.so.0.0 ${STAGEDIR}${PREFIX}/lib/aeskulap/libconfiguration.so
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
