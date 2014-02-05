@@ -6,6 +6,12 @@ bin/mp3find
 %%SITE_PERL%%/MP3/Find/Filesystem.pm
 %%SITE_PERL%%/MP3/Find/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Find/.packlist
+%%PERL5_MAN3%%/MP3::Find.3.gz
+%%PERL5_MAN3%%/MP3::Find::Base.3.gz
+%%PERL5_MAN3%%/MP3::Find::DB.3.gz
+%%PERL5_MAN3%%/MP3::Find::Filesystem.3.gz
+man/man1/mp3db.1.gz
+man/man1/mp3find.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Find
 @dirrm %%SITE_PERL%%/MP3/Find
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3

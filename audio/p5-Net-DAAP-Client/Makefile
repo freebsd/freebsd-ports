@@ -17,9 +17,6 @@ RUN_DEPENDS=	p5-Digest-MD5-M4p>=0:${PORTSDIR}/security/p5-Digest-MD5-M4p \
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 USES=		perl5
-NO_STAGE=	yes
 USE_PERL5=	modbuild
-
-MAN3=		Net::DAAP::Client.3
 
 .include <bsd.port.mk>

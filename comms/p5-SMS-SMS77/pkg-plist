@@ -1,8 +1,11 @@
+bin/sms77send
+man/man1/sms77send.1.gz
 %%SITE_PERL%%/SMS/SMS77.pm
 %%SITE_PERL%%/SMS/SMS77/Message.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/SMS77/.packlist
+%%PERL5_MAN3%%/SMS::SMS77.3.gz
+%%PERL5_MAN3%%/SMS::SMS77::Message.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS/SMS77
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/SMS
 @dirrmtry %%SITE_PERL%%/SMS/SMS77
 @dirrmtry %%SITE_PERL%%/SMS
-bin/sms77send
