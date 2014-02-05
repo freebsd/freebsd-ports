@@ -38,6 +38,11 @@ lib/libtdssrv.a
 lib/libtdssrv.la
 lib/libtdssrv.so
 lib/libtdssrv.so.2
+man/man1/bsqldb.1.gz
+man/man1/datacopy.1.gz
+man/man1/defncopy.1.gz
+man/man1/freebcp.1.gz
+man/man1/tsql.1.gz
 %%ODBC%%lib/libtdsodbc.so
 %%ODBC%%lib/libtdsodbc.so.0
 %%ODBC%%lib/libtdsodbc.la
