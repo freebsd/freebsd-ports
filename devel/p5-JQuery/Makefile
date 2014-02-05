@@ -19,21 +19,9 @@ RUN_DEPENDS=	p5-CGI-Application>=0:${PORTSDIR}/www/p5-CGI-Application \
 		p5-XML-Writer>=0:${PORTSDIR}/textproc/p5-XML-Writer
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	modbuild
 
-MAN3=		JQuery.3 \
-		JQuery::Accordion.3 \
-		JQuery::CSS.3 \
-		JQuery::ClickMenu.3 \
-		JQuery::Demo.3 \
-		JQuery::Form.3 \
-		JQuery::Heartbeat.3 \
-		JQuery::Splitter.3 \
-		JQuery::TableSorter.3 \
-		JQuery::Tabs.3 \
-		JQuery::Taconite.3 \
-		JQuery::Treeview.3
+SHEBANG_FILES=	lib/JQuery/cgi-bin/*.pl
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
