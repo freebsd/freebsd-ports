@@ -20,7 +20,7 @@ index 07b01de..11706af 100644
          'osx_corewlan.mm',
      ]
 +elif CONFIG['OS_ARCH'] == 'FreeBSD':
-+    CPP_SOURCES += [
++    SOURCES += [
 +        'nsWifiScannerFreeBSD.cpp',
 +    ]
  elif CONFIG['OS_ARCH'] == 'WINNT':

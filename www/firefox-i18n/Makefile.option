@@ -3,7 +3,6 @@
 
 OPTIONS_DEFINE=	LANG_ACH \
 		LANG_AF \
-		LANG_AK \
 		LANG_SQ \
 		LANG_AR \
 		LANG_AS \
@@ -11,7 +10,6 @@ OPTIONS_DEFINE=	LANG_ACH \
 		LANG_AST \
 		LANG_EU \
 		LANG_BN \
-		LANG_BD \
 		LANG_BB \
 		LANG_BS \
 		LANG_BR \
@@ -52,14 +50,12 @@ OPTIONS_DEFINE=	LANG_ACH \
 		LANG_KU \
 		LANG_LV \
 		LANG_LT \
-		LANG_LG \
 		LANG_LIJ \
 		LANG_MK \
 		LANG_MAI \
 		LANG_ML \
 		LANG_MR \
 		LANG_MN \
-		LANG_NSO \
 		LANG_NB \
 		LANG_NN \
 		LANG_OR \
@@ -83,7 +79,6 @@ OPTIONS_DEFINE=	LANG_ACH \
 		LANG_SV \
 		LANG_TW \
 		LANG_TA \
-		LANG_LK \
 		LANG_TE \
 		LANG_TH \
 		LANG_TR \
@@ -99,7 +94,6 @@ OPTIONS_DEFAULT=LANG_AR LANG_BN LANG_BR LANG_CN LANG_ET LANG_DE LANG_FR \
 
 LANG_ACH_DESC?=	Acholi language support
 LANG_AS_DESC?=	Assamese language support
-LANG_BD_DESC?=	Bengali (Bangladesh) language support
 LANG_CSB_DESC?=	Kashubian language support
 LANG_FF_DESC?=	Pulaar Fulfulde language support
 LANG_KM_DESC?=	Khmer language support
