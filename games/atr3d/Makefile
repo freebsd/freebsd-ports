@@ -27,10 +27,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 USE_AUTOTOOLS=	automake autoconf
 
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENAL}
@@ -52,10 +51,5 @@ post-patch:
 
 pre-configure:
 	cd ${WRKSRC}; ${SH} autogen.sh
-
-post-configure:
-	@${REINPLACE_CMD} -e \
-		's|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
