@@ -15,8 +15,8 @@ SPEED_DESC=	Optimize for speed over accuracy
 
 CONFIGURE_ARGS=	--disable-debugging --enable-sso
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
+USES=		libtool
 
 SUB_LIST=	VERSION=${PORTVERSION}
 SUB_FILES=	mad.pc
