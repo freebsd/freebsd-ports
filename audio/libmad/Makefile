@@ -3,7 +3,7 @@
 
 PORTNAME=	libmad
 PORTVERSION=	0.15.1b
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	SF/mad/${PORTNAME}/${PORTVERSION}
 
@@ -16,7 +16,7 @@ SPEED_DESC=	Optimize for speed over accuracy
 CONFIGURE_ARGS=	--disable-debugging --enable-sso
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		libtool
+USES=		libtool:oldver
 
 SUB_LIST=	VERSION=${PORTVERSION}
 SUB_FILES=	mad.pc
@@ -28,7 +28,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's| -fforce-mem||' ${WRKSRC}/configure
 
 post-build:
-	@${STRIP_CMD} ${WRKSRC}/.libs/libmad.so.0.2.1
+	@${STRIP_CMD} ${WRKSRC}/.libs/libmad.so.2
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/mad.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
