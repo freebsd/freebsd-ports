@@ -15,4 +15,5 @@ include/cups/versioning.h
 lib/libcups.a
 lib/libcups.so
 lib/libcups.so.2
+man/man1/cups-config.1.gz
 @dirrm include/cups
