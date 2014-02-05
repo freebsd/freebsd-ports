@@ -1,15 +1,18 @@
+
+$FreeBSD$
+
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -89,7 +89,7 @@
+@@ -95,7 +95,7 @@
  SBINDIR = $(DESTDIR)@sbindir@
  
  # /lib/ejabberd/
 -EJABBERDDIR = $(DESTDIR)@libdir@/ejabberd
-+EJABBERDDIR = @libdir@/erlang/lib/ejabberd-$(PORTVERSION)
++EJABBERDDIR = $(DESTDIR)@libdir@/erlang/lib/ejabberd-$(PORTVERSION)
  
  # /share/doc/ejabberd
  PACKAGE_TARNAME = @PACKAGE_TARNAME@
-@@ -115,7 +115,7 @@
+@@ -121,7 +121,7 @@
  MSGSDIR = $(PRIVDIR)/msgs
  
  # /var/lib/ejabberd/
@@ -18,7 +21,7 @@
  
  # /var/lock/ejabberdctl
  CTLLOCKDIR = $(DESTDIR)@localstatedir@/lock/ejabberdctl
-@@ -178,25 +178,22 @@
+@@ -184,25 +184,22 @@
  	#
  	# Configuration files
  	install -d -m 750 $(G_USER) $(ETCDIR)
@@ -51,7 +54,7 @@
  	#
  	# Init script
  	sed -e "s*@ctlscriptpath@*$(SBINDIR)*" \
-@@ -253,6 +250,7 @@
+@@ -260,6 +257,7 @@
  	chmod -R 750 $(LOGDIR)
  	#
  	# Documentation
@@ -59,7 +62,7 @@
  	install -d $(DOCDIR)
  	install -m 644 ../doc/dev.html $(DOCDIR)
  	install -m 644 ../doc/guide.html $(DOCDIR)
-@@ -262,6 +260,7 @@
+@@ -269,6 +267,7 @@
  		&& install -m 644 ../doc/guide.pdf $(DOCDIR) \
  		|| echo "No ../doc/guide.pdf was built"
  	install -m 644 ../COPYING $(DOCDIR)

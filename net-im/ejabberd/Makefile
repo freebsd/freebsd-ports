@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKDIR}/${PORTNAME}-${PORTVERSION}/COPYING
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erl:${PORTSDIR}/lang/erlang
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2
 
 USERS=		ejabberd
 GROUPS=		${USERS}
@@ -25,57 +25,41 @@ USES=		iconv gmake pkgconfig
 USE_RC_SUBR=	${PORTNAME}
 NOPRECIOUSMAKEVARS=	yes
 
-OPTIONS_DEFINE=	ODBC PAM
+OPTIONS_DEFINE=	ODBC PAM DOCS
 
 MAKE_ENV=	PORTVERSION=${PORTVERSION}
-CONFIGURE_ARGS+=--localstatedir=/var --with-openssl=${OPENSSLBASE}
+CONFIGURE_ARGS+=--localstatedir=/var --with-openssl=${OPENSSLBASE} --with-expat=${LOCALBASE}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PKGINSTALL=	${WRKDIR}/pkg-install
 PLIST_SUB=	PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION}
 SUB_FILES=	pkg-message pkg-install
 SUB_LIST=	PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION} \
-		USERS=${USERS} GROUPS=${GROUPS}
+		USERS=${USERS} GROUPS=${GROUPS} SHAREMODE=${SHAREMODE} \
+		SHAREOWN=${SHAREOWN} SHAREGRP=${SHAREGRP}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_SUB=		PAM ODBC
+PAM_CONFIGURE_ENABLE=	pam
+ODBC_CONFIGURE_ENABLE=	odbc
+DOCS_MAKE_ARGS_OFF=	NOPORTDOCS=yes
 
 USE_OPENSSL=	yes
 
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
-
-.if ${PORT_OPTIONS:MODBC}
-CONFIGURE_ARGS+=--enable-odbc
-PLIST_SUB+=	ODBC=""
-.else
-PLIST_SUB+=	ODBC="@comment "
-.endif
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MPAM}
-CONFIGURE_ARGS+=--enable-pam
-PLIST_SUB+=	PAM=""
+SUB_LIST+=		PAM="1"
 .else
-PLIST_SUB+=	PAM="@comment "
-.endif
-
-.if ! ${PORT_OPTIONS:MDOCS}
-MAKE_ARGS+=	NOPORTDOCS=${NOPORTDOCS}
+SUB_LIST+=		PAM="0"
 .endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' ${WRKSRC}/configure
 
 post-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${FIND} ${PREFIX}/lib/erlang/lib/${DISTNAME} -type f -print0 | ${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	@${FIND} ${PREFIX}/lib/erlang/lib/${DISTNAME} -type f -print0 | ${XARGS} -0 ${CHOWN} ${SHAREOWN}:${SHAREGRP}
-
 .if ${PORT_OPTIONS:MPAM}
-	${CHMOD} 4750 ${PREFIX}/lib/erlang/lib/${DISTNAME}/priv/bin/epam
-	${CHOWN} root:ejabberd ${PREFIX}/lib/erlang/lib/${DISTNAME}/priv/bin/epam
-	${INSTALL} -m 444 ${FILESDIR}/pam_ejabberd ${PREFIX}/etc/pam.d/ejabberd
+	${INSTALL} -m 444 ${FILESDIR}/pam_ejabberd ${STAGEDIR}${PREFIX}/etc/pam.d/ejabberd
 .endif
-
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
