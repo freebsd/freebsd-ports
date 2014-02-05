@@ -2,6 +2,9 @@
 %%SITE_PERL%%/IO/TieCombine/Handle.pm
 %%SITE_PERL%%/IO/TieCombine/Scalar.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/TieCombine/.packlist
+%%PERL5_MAN3%%/IO::TieCombine.3.gz
+%%PERL5_MAN3%%/IO::TieCombine::Handle.3.gz
+%%PERL5_MAN3%%/IO::TieCombine::Scalar.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/TieCombine
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO
 @dirrmtry %%SITE_PERL%%/IO/TieCombine
