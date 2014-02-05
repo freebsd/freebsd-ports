@@ -3319,6 +3319,7 @@
     SUBDIR += pep8
     SUBDIR += performance
     SUBDIR += perlconsole
+    SUBDIR += php-Psr_Log
     SUBDIR += php-java-bridge
     SUBDIR += php-libawl
     SUBDIR += php-memoize
