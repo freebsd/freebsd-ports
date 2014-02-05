@@ -20,11 +20,7 @@ CONFLICTS=	gearmand-0.* gearmand-1.0.* gearmand-1.1.*
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	gearmand.1
-MAN3=	Gearman::Server.3 Gearman::Server::Client.3
-
 USE_RC_SUBR=	gearmand-perl
 SUB_LIST+=	NAME=gearmand
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
