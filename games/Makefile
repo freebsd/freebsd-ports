@@ -185,7 +185,6 @@
     SUBDIR += dangerdeep-data
     SUBDIR += darkplaces
     SUBDIR += dcross
-    SUBDIR += deal
     SUBDIR += defendguin
     SUBDIR += diameter
     SUBDIR += digger-vgl
