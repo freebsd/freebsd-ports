@@ -20,7 +20,4 @@ BUILD_DEPENDS=	p5-SVN-Notify>=2.70:${PORTSDIR}/devel/p5-SVN-Notify \
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		SVN::Notify::Filter::Markdown.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
