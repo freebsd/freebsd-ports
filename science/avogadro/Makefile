@@ -20,7 +20,7 @@ OPTIONS_SUB=	yes
 
 USE_BZIP2=	yes
 USES=		cmake desktop-file-utils pkgconfig
-USE_GL=		glu
+USE_GL=		glu gl
 USE_QT4=	gui network opengl \
 		linguist_build moc_build qmake_build rcc_build uic_build
 CMAKE_ARGS=	-DENABLE_GLSL=OFF \
@@ -28,7 +28,8 @@ CMAKE_ARGS=	-DENABLE_GLSL=OFF \
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-idirafter ${LOCALBASE}/include/eigen2 \
-		-idirafter ${LOCALBASE}/include
+		-idirafter ${LOCALBASE}/include \
+		-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.options.mk>
