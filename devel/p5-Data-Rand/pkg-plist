@@ -1,2 +1,3 @@
 %%SITE_PERL%%/Data/Rand.pm
+%%PERL5_MAN3%%/Data::Rand.3.gz
 @dirrmtry %%SITE_PERL%%/Data

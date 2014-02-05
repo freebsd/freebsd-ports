@@ -37,6 +37,19 @@ bin/nytprofmerge
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/NYTProf/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/NYTProf/NYTProf.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/NYTProf/NYTProf.so
+%%PERL5_MAN3%%/Devel::MemoryProfiling.3.gz
+%%PERL5_MAN3%%/Devel::NYTProf.3.gz
+%%PERL5_MAN3%%/Devel::NYTProf::Apache.3.gz
+%%PERL5_MAN3%%/Devel::NYTProf::Core.3.gz
+%%PERL5_MAN3%%/Devel::NYTProf::Data.3.gz
+%%PERL5_MAN3%%/Devel::NYTProf::FileInfo.3.gz
+%%PERL5_MAN3%%/Devel::NYTProf::ReadStream.3.gz
+%%PERL5_MAN3%%/Devel::NYTProf::Run.3.gz
+%%PERL5_MAN3%%/Devel::NYTProf::Util.3.gz
+man/man1/nytprofcg.1.gz
+man/man1/nytprofcsv.1.gz
+man/man1/nytprofhtml.1.gz
+man/man1/nytprofmerge.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/NYTProf
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/auto/Devel/NYTProf
