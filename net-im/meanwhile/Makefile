@@ -3,7 +3,7 @@
 
 PORTNAME=	meanwhile
 PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
@@ -15,6 +15,7 @@ USES=		pkgconfig gmake pathfix
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+USE_GCC=	any
 CONFIGURE_ARGS=	--enable-doxygen=no \
 		--with-gmp-prefix=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include -DGLIB_COMPILATION
