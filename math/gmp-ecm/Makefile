@@ -22,10 +22,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_prog_XSLTPROC=no \
 		--with-gmp=${LOCALBASE}
 
-MAN1=		ecm.1
-PLIST_FILES=	bin/ecm include/ecm.h lib/libecm.a lib/libecm.la
+PLIST_FILES=	bin/ecm include/ecm.h lib/libecm.a lib/libecm.la \
+		man/man1/ecm.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} s/__GMP_BITS_PER_MP_LIMB/GMP_NUMB_BITS/g \
 		${WRKSRC}/*.c ${WRKSRC}/*.h
