@@ -25,6 +25,8 @@ MAKE_ARGS=	PREFIX="${PREFIX}" \
 MANCOMPRESSED=	yes
 MAN1=		tuxpaint-config.1
 
+MAKE_JOBS_UNSAFE=yes
+
 .if defined(NOPORTDOCS)
 INSTALL_TARGET=	install-bin install-data install-man install-gettext
 .else
