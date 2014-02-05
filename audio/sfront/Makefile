@@ -9,7 +9,7 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Translator that converts MP4-SA files into efficient C programs
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USES=		bison
 
