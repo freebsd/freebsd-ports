@@ -1,5 +1,5 @@
---- sys/unix/Makefile.src.orig	Sun Jun 24 18:57:24 2001
-+++ sys/unix/Makefile.src	Thu Nov 30 18:50:42 2006
+--- sys/unix/Makefile.src.orig	2001-06-24 11:57:24.000000000 -0500
++++ sys/unix/Makefile.src
 @@ -1,6 +1,7 @@
  #	NetHack Makefile.
  #	SCCS Id: @(#)Makefile.src	3.3	97/04/17
@@ -8,7 +8,7 @@
  # newer makes predefine $(MAKE) to 'make' and do smarter processing of
  # recursive make calls if $(MAKE) is used
  # these makes allow $(MAKE) to be overridden by the environment if someone
-@@ -117,8 +118,8 @@
+@@ -117,8 +118,8 @@ SYSOBJ = ioctl.o unixmain.o unixtty.o un
  
  # flags for Linux
  #   compile normally
@@ -19,7 +19,7 @@
  #   OR compile backwards compatible a.out format
  # CFLAGS = -O2 -b i486-linuxaout -fomit-frame-pointer -I../include -I/usr/X11/include
  # LFLAGS = -b i486-linuxaout -L/usr/X11/lib
-@@ -146,7 +147,7 @@
+@@ -146,7 +147,7 @@ GNOMEINC=-I/usr/lib/glib/include -I/usr/
  # directories. You should have sdl-config in your path; it gives the 
  # necessary compile and link flags. 
  #
@@ -28,7 +28,7 @@
  
  # flags for debugging:
  # CFLAGS = -g -I../include
-@@ -218,8 +219,8 @@
+@@ -218,8 +219,8 @@ WINBEOBJ =
  
  #
  #
@@ -39,7 +39,7 @@
  
  # on some systems the termcap library is in -ltermcap or -lcurses
  # on 386 Xenix, the -ltermlib tputs() seems not to work; use -lcurses instead
-@@ -232,19 +233,19 @@
+@@ -232,19 +233,19 @@ WINOBJ = $(WINTTYOBJ) $(WINJTPOBJ)
  #
  # libraries for tty ports
  # WINTTYLIB = -ltermcap
@@ -63,16 +63,16 @@
  # WINX11LIB = -lXaw -lXmu -lXt -lX11
  # WINX11LIB = -lXaw -lXmu -lXext -lXt -lXpm -lX11 -lm
  # WINX11LIB = -lXaw -lXmu -lXpm -lXext -lXt -lX11 -lSM -lICE -lm # BSD/OS 2.0
-@@ -264,7 +265,7 @@
+@@ -264,7 +265,7 @@ WINGEMLIB = -le_gem -lgem
  # libraries for BeOS 
  WINBELIB = -lbe
  
 -WINLIB = $(WINTTYLIB) $(WINJTPLIB)
-+WINLIB = $(WINTTYLIB) $(WINJTPLIB) $(WINX11LIB)
++WINLIB = $(WINTTYLIB) $(WINJTPLIB) $(WINX11LIB) -lm
  
  # any other strange libraries your system needs (for Sysunix only -- the more
  # specialized targets should already be right)
-@@ -294,7 +295,7 @@
+@@ -294,7 +295,7 @@ WINLIB = $(WINTTYLIB) $(WINJTPLIB)
  LIBS =
  
  # make NetHack
@@ -81,7 +81,7 @@
  # GAME     = nethack.prg
  
  # if you defined RANDOM in unixconf.h/tosconf.h since your system did not come
-@@ -467,10 +468,10 @@
+@@ -467,10 +468,10 @@ objects.o:
  
  # Qt windowport meta-object-compiler output
  qt_kde0.moc: ../include/qt_kde0.h
