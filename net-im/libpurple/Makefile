@@ -228,7 +228,7 @@ CONFIGURE_ARGS+=--disable-meanwhile
 .endif
 
 .if ${PORT_OPTIONS:MSILC}
-LIB_DEPENDS+=		libsilcclient-1.so:${PORTSDIR}/devel/silc-toolkit
+LIB_DEPENDS+=		libsilcclient.so:${PORTSDIR}/devel/silc-toolkit
 CONFIGURE_ARGS+=	--with-silc-includes=${LOCALBASE}/include/silc \
 			--with-silc-libs=${LOCALBASE}/lib
 PLIST_SUB+=		SILC=""
