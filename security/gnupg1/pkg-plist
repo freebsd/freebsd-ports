@@ -7,6 +7,11 @@ libexec/gnupg/gpgkeys_curl
 libexec/gnupg/gpgkeys_finger
 libexec/gnupg/gpgkeys_hkp
 @dirrm libexec/gnupg
+man/man1/gpg-zip.1.gz
+man/man1/gpg.1.gz
+man/man1/gpg.ru.1.gz
+man/man1/gpgv.1.gz
+man/man7/gnupg.7.gz
 %%NLS%%share/locale/be/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/gnupg.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gnupg.mo

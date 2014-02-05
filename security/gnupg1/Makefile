@@ -21,11 +21,8 @@ GNU_CONFIGURE=	YES
 MACHINE_ARCH=	i586
 .endif
 CFLAGS:=	${CFLAGS:S/-pipe//g}
-MAN1=		gpg.1 gpgv.1 gpg.ru.1 gpg-zip.1
-MAN7=		gnupg.7
 INFO=		gnupg1
 DOCSDIR=	${PREFIX}/share/doc/gnupg1
-
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	LDAP LIBICONV LIBUSB SUID_GPG NLS CURL DOCS
@@ -36,7 +33,6 @@ LIBUSB_DESC=	use libusb
 SUID_GPG_DESC=	install GPG with suid
 CURL_DESC=	use libcurl for the keyserver interface
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${CC} == "clang" || ${OSVERSION} >= 1000024
@@ -86,18 +82,17 @@ CONFIGURE_ARGS+=--without-libcurl
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in DETAILS FAQ HACKING OpenPGP
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for i in ABOUT-NLS AUTHORS BUGS COPYING INSTALL NEWS PROJECTS \
 	README THANKS TODO VERSION
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 .if ${PORT_OPTIONS:MSUID_GPG}
-	${CHMOD} u+s ${PREFIX}/bin/gpg
+	${CHMOD} u+s ${STAGEDIR}${PREFIX}/bin/gpg
 .endif
 
 check:
