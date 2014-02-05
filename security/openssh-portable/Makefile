@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	openssh
-DISTVERSION=	6.4p1
+DISTVERSION=	6.5p1
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
@@ -12,8 +12,8 @@ PKGNAMESUFFIX?=	-portable
 MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	The portable version of OpenBSD's OpenSSH
 
-#LICENSE=	BSD2,BSD3,MIT,public domain,BSD-Style,BEER-WARE,"any purpose with notice intact",ISC-Style
-#LICENSE_FILE=	${WRKSRC}/LICENCE
+#LICENSE=      BSD2,BSD3,MIT,public domain,BSD-Style,BEER-WARE,"any purpose with notice intact",ISC-Style
+#LICENSE_FILE= ${WRKSRC}/LICENCE
 
 CONFLICTS?=		openssh-3.* ssh-1.* ssh2-3.*
 
@@ -79,21 +79,20 @@ LPK_CONFIGURE_ON=	--with-ldap=yes \
 LPK_USE=		OPENLDAP=yes
 
 # See http://www.roumenpetrov.info/openssh/
-X509_VERSION=		7.6
+X509_VERSION=		7.8
 X509_PATCH_SITES=	http://www.roumenpetrov.info/openssh/x509-${X509_VERSION}/:x509
-X509_PATCHFILES=	openssh-6.4-x509-glue.patch \
-			${PORTNAME}-6.3p1+x509-${X509_VERSION}.diff.gz:-p1:x509
+X509_PATCHFILES=	${PORTNAME}-6.5p1+x509-${X509_VERSION}.diff.gz:-p1:x509
 
 # See https://bugzilla.mindrot.org/show_bug.cgi?id=2016
-SCTP_PATCHFILES=	${PORTNAME}-sctp-2329.patch.gz
+SCTP_PATCHFILES=	${PORTNAME}-6.5p1-sctp-2329.patch.gz
 SCTP_CONFIGURE_WITH=	sctp
 
 # Adapated from 5.7 patch at http://www.sxw.org.uk/computing/patches/
-KERB_GSSAPI_PATCHFILES=	openssh-6.3p1-gsskex-all-20110125.patch.gz
+KERB_GSSAPI_PATCHFILES=	openssh-6.5p1-gsskex-all-20110125.patch.gz
 
 
-MIT_LIB_DEPENDS=		krb5.3:${PORTSDIR}/security/krb5
-HEIMDAL_LIB_DEPENDS=		krb5.26:${PORTSDIR}/security/heimdal
+MIT_LIB_DEPENDS=		libkrb5.so.3:${PORTSDIR}/security/krb5
+HEIMDAL_LIB_DEPENDS=		libkrb5.so.26:${PORTSDIR}/security/heimdal
 
 PAM_CONFIGURE_WITH=	pam
 TCP_WRAPPERS_CONFIGURE_WITH=	tcp-wrappers
@@ -104,11 +103,15 @@ BSM_CONFIGURE_ON=	--with-audit=bsm
 
 .include <bsd.port.pre.mk>
 
+.if ${PORT_OPTIONS:MKERB_GSSAPI}
+BROKEN=		KERB_GSSAPI Patch is not updated for 6.5 and upstream has not been active since 2001.
+.endif
+
 # http://www.psc.edu/index.php/hpn-ssh
 .if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MAES_THREADED} || ${PORT_OPTIONS:MNONECIPHER}
 PORTDOCS+=		HPN-README
 HPN_VERSION=		14v2
-HPN_DISTVERSION=	6.3p1
+HPN_DISTVERSION=	6.5p1
 PATCH_SITES+=		${MASTER_SITE_SOURCEFORGE:S/$/:hpn/}
 PATCH_SITE_SUBDIR+=	hpnssh/HPN-SSH%20${HPN_VERSION}%20${HPN_DISTVERSION}/:hpn
 PATCHFILES+=		${PORTNAME}-${HPN_DISTVERSION}-hpnssh${HPN_VERSION}.diff.gz:-p1:hpn

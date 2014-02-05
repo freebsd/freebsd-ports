@@ -26,10 +26,10 @@ Submitted by:   delphij@
  #include <sys/stat.h>
  #include <sys/socket.h>
 +#include <sys/sysctl.h>
+ #include <sys/wait.h>
  
  #include <netinet/in.h>
- #include <netinet/in_systm.h>
-@@ -265,7 +266,19 @@ add_local_forward(Options *options, cons
+@@ -282,7 +283,19 @@
  	Forward *fwd;
  #ifndef NO_IPPORT_RESERVED_CONCEPT
  	extern uid_t original_real_uid;
@@ -50,7 +50,7 @@ Submitted by:   delphij@
  		fatal("Privileged ports can only be forwarded by root.");
  #endif
  	options->local_forwards = xrealloc(options->local_forwards,
-@@ -1281,7 +1294,7 @@ fill_default_options(Options * options)
+@@ -1607,7 +1620,7 @@
  	if (options->batch_mode == -1)
  		options->batch_mode = 0;
  	if (options->check_host_ip == -1)

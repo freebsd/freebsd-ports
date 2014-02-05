@@ -10,7 +10,7 @@
  #Port 22
  #AddressFamily any
  #ListenAddress 0.0.0.0
-@@ -37,7 +40,7 @@
+@@ -41,7 +44,7 @@
  # Authentication:
  
  #LoginGraceTime 2m
@@ -19,7 +19,7 @@
  #StrictModes yes
  #MaxAuthTries 6
  #MaxSessions 10
-@@ -46,8 +49,7 @@
+@@ -50,8 +53,7 @@
  #PubkeyAuthentication yes
  
  # The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
@@ -29,7 +29,7 @@
  
  #AuthorizedPrincipalsFile none
  
-@@ -64,11 +66,11 @@
+@@ -68,11 +70,11 @@
  # Don't read the user's ~/.rhosts and ~/.shosts files
  #IgnoreRhosts yes
  
@@ -44,16 +44,16 @@
  #ChallengeResponseAuthentication yes
  
  # Kerberos options
-@@ -81,7 +83,7 @@
+@@ -85,7 +87,7 @@
  #GSSAPIAuthentication no
  #GSSAPICleanupCredentials yes
  
--# Set this to 'yes' to enable PAM authentication, account processing, 
+-# Set this to 'yes' to enable PAM authentication, account processing,
 +# Set this to 'no' to disable PAM authentication, account processing,
- # and session processing. If this is enabled, PAM authentication will 
+ # and session processing. If this is enabled, PAM authentication will
  # be allowed through the ChallengeResponseAuthentication and
  # PasswordAuthentication.  Depending on your PAM configuration,
-@@ -90,19 +92,19 @@
+@@ -94,12 +96,12 @@
  # If you just want the PAM account and session checks to run without
  # PAM authentication, then enable this but set PasswordAuthentication
  # and ChallengeResponseAuthentication to 'no'.
@@ -67,12 +67,13 @@
 +#X11Forwarding yes
  #X11DisplayOffset 10
  #X11UseLocalhost yes
- #PrintMotd yes
+ #PermitTTY yes
+@@ -107,7 +109,7 @@
  #PrintLastLog yes
  #TCPKeepAlive yes
  #UseLogin no
 -UsePrivilegeSeparation sandbox		# Default for new installations.
-+#UsePrivilegeSeparation yes
++#UsePrivilegeSeparation sandbox
  #PermitUserEnvironment no
  #Compression delayed
  #ClientAliveInterval 0
