@@ -17,26 +17,22 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 MAKE_ENV=	datadir=${DATADIR} prefix=${PREFIX}
 MAKE_ARGS=	LD=${CC}
 
-MAN6=		chkfont.6 figlet.6 figlist.6 showfigfonts.6
-
-NO_STAGE=	yes
 regression-test:
 	@ cd ${WRKSRC} && ${MAKE} check
 
 post-build tests test: regression-test
 
 do-install:
-	@ ${MKDIR} ${DATADIR}
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/figlet ${PREFIX}/bin
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/chkfont ${PREFIX}/bin
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/figlist ${PREFIX}/bin
-	@ ${INSTALL_SCRIPT} ${WRKSRC}/showfigfonts ${PREFIX}/bin
-	@ ${INSTALL_DATA} ${WRKSRC}/fonts/*.flf ${DATADIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/fonts/*.flc ${DATADIR}
-	@ cd ${WRKSRC} && ${INSTALL_MAN} *.6 ${PREFIX}/man/man6
-.if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/figfont.txt ${DOCSDIR}
-.endif
+	@ ${MKDIR} ${STAGEDIR}${DATADIR}
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/figlet ${STAGEDIR}${PREFIX}/bin
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/chkfont ${STAGEDIR}${PREFIX}/bin
+	@ ${INSTALL_SCRIPT} ${WRKSRC}/figlist ${STAGEDIR}${PREFIX}/bin
+	@ ${INSTALL_SCRIPT} ${WRKSRC}/showfigfonts ${STAGEDIR}${PREFIX}/bin
+	@ ${INSTALL_DATA} ${WRKSRC}/fonts/*.flf ${STAGEDIR}${DATADIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/fonts/*.flc ${STAGEDIR}${DATADIR}
+	@ cd ${WRKSRC} && ${INSTALL_MAN} *.6 ${STAGEDIR}${PREFIX}/man/man6
+
+	@ ${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@ ${INSTALL_DATA} ${WRKSRC}/figfont.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
