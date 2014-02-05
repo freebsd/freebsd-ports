@@ -22,11 +22,4 @@ TEST_DEPENDS=	\
 USES=	perl5
 USE_PERL5=	modbuild
 
-MAN3=	DBIx::Inspector.3 \
-	DBIx::Inspector::Column.3 \
-	DBIx::Inspector::ForeignKey.3 \
-	DBIx::Inspector::Iterator.3 \
-	DBIx::Inspector::Table.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -20,13 +20,10 @@ EXAMPLESDIR?=	${PREFIX}/share/examples/${PORTNAME}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		DBD::Excel.3
-
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/sample/* ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/sample/* ${STAGEDIR}${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
