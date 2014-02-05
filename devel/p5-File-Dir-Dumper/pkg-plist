@@ -1,10 +1,17 @@
 bin/dir-dump
+man/man1/dir-dump.1.gz
 %%SITE_PERL%%/File/Dir/Dumper.pm
 %%SITE_PERL%%/File/Dir/Dumper/App.pm
 %%SITE_PERL%%/File/Dir/Dumper/Base.pm
 %%SITE_PERL%%/File/Dir/Dumper/Scanner.pm
 %%SITE_PERL%%/File/Dir/Dumper/Stream/JSON/Reader.pm
 %%SITE_PERL%%/File/Dir/Dumper/Stream/JSON/Writer.pm
+%%PERL5_MAN3%%/File::Dir::Dumper.3.gz
+%%PERL5_MAN3%%/File::Dir::Dumper::App.3.gz
+%%PERL5_MAN3%%/File::Dir::Dumper::Base.3.gz
+%%PERL5_MAN3%%/File::Dir::Dumper::Scanner.3.gz
+%%PERL5_MAN3%%/File::Dir::Dumper::Stream::JSON::Reader.3.gz
+%%PERL5_MAN3%%/File::Dir::Dumper::Stream::JSON::Writer.3.gz
 @dirrm %%SITE_PERL%%/File/Dir/Dumper/Stream/JSON
 @dirrm %%SITE_PERL%%/File/Dir/Dumper/Stream
 @dirrm %%SITE_PERL%%/File/Dir/Dumper
