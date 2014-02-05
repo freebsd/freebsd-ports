@@ -21,7 +21,4 @@ BUILD_DEPENDS=	p5-Test-Deep>=0.1:${PORTSDIR}/devel/p5-Test-Deep \
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		SVN::Notify::Config.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
