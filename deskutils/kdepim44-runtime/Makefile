@@ -20,8 +20,8 @@ CONFLICTS_INSTALL=	kdepim-runtime-4.*
 DEPRECATED=	Not supported upstream, conflicts with upcoming kdepimlibs-4.12
 EXPIRATION_DATE=	2014-02-28
 
-USE_KDE4=	pimlibs kdeprefix kdehier sharedmime automoc4
-USES=		cmake:outsource
+USE_KDE4=	pimlibs kdeprefix kdehier automoc4
+USES=		cmake:outsource shared-mime-info
 USE_BZIP2=	yes
 USE_QT4=	qmake_build moc_build rcc_build uic_build \
 		corelib dbus gui network qtestlib xml

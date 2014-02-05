@@ -1,6 +1,8 @@
 %%SITE_PERL%%/Mail/CheckUser.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/CheckUser/.packlist
 bin/cufilter
+%%PERL5_MAN3%%/Mail::CheckUser.3.gz
+man/man1/cufilter.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/CheckUser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
 @dirrmtry %%SITE_PERL%%/Mail

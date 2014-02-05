@@ -22,11 +22,11 @@ _CLANG!=	if [ -f /usr/bin/clang ] ; then  /usr/bin/clang --version | head -1 | \
 
 .if ${_CLANG} < 33
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang33:${PORTSDIR}/lang/clang33
-CLANG=		${LOCALBASE}/bin/clang33
-CLANGXX=	${LOCALBASE}/bin/clang++33
+CC=		${LOCALBASE}/bin/clang33
+CXX=	${LOCALBASE}/bin/clang++33
 .else
-CLANG=		/usr/bin/clang
-CLANGXX=	/usr/bin/clang++
+CC=		/usr/bin/clang
+CXX=	/usr/bin/clang++
 .endif
 
 SHLIB_MAJOR=	4
@@ -42,8 +42,7 @@ PLIST_SUB+=	WITH_SEPARATECXX=""
 PLIST_SUB+=	WITH_SEPARATECXX="@comment "
 .endif
 
-CMAKE_ARGS+=	-DLIB_INSTALL_PATH=lib -DCMAKE_ASM_COMPILER=${CLANG}
-CMAKE_ARGS+=	-DCMAKE_C_COMPILER=${CLANG} -DCMAKE_CXX_COMPILER=${CLANGXX}
+CMAKE_ARGS+=	-DLIB_INSTALL_PATH=lib
 CMAKE_ARGS+=	-DTESTS=OFF
 # This shouldn't be needed, but our llvm port installs llvm-config with a silly
 # name...

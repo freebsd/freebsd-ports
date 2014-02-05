@@ -2,18 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	Math-Random-OO
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	5u623l20@gmail.com
 COMMENT=	Consistent object-oriented interface for generating random numbers
 
-BUILD_DEPENDS=	p5-Test-MockRandom>=0.95:${PORTSDIR}/devel/p5-Test-MockRandom \
-		p5-Test-Number-Delta>=0.14:${PORTSDIR}/devel/p5-Test-Number-Delta
-RUN_DEPENDS=	p5-Class-Accessor>=0.18:${PORTSDIR}/devel/p5-Class-Accessor \
+LICENSE=	APACHE20
+
+BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Params-Validate>=0.76:${PORTSDIR}/devel/p5-Params-Validate
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-Test-MockRandom>=0.95:${PORTSDIR}/devel/p5-Test-MockRandom \
+		p5-Test-Number-Delta>=0.14:${PORTSDIR}/devel/p5-Test-Number-Delta
 
 USES=		perl5
 USE_PERL5=	configure

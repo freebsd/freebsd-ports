@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.69.0test3
-DISTVERSION=	2.69test3
+PORTVERSION=	2.69.0test6
+DISTVERSION=	2.69test6
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/test-releases/
 PKGNAMESUFFIX=	-devel
@@ -24,12 +24,13 @@ USE_XZ=		yes
 CFLAGS+=	-Wall -Wno-unused-value
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}" COPTS="${CFLAGS}" LIBS="${LDFLAGS}" RPM_OPT_FLAGS="${CPPFLAGS}"
 
-OPTIONS_DEFINE=		IPV6 DBUS NLS IDN LUA
-OPTIONS_DEFAULT=	IPV6 NLS
+OPTIONS_DEFINE=		IPV6 DBUS NLS IDN LUA DNSSEC
+OPTIONS_DEFAULT=	IPV6 NLS DNSSEC
 OPTIONS_EXCLUDE+=	EXAMPLES
 NLS_DESC=	National Language Support (NLS, enables IDN)
 IDN_DESC=	International Domain Names (IDN) WITHOUT NLS
 LUA_DESC=	Support lease-change scripts in LUA
+DNSSEC_DESC=	Enable DNSSEC caching and validation
 USES=		shebangfix
 SHEBANG_FILES=	contrib/dynamic-dnsmasq/dynamic-dnsmasq.pl \
 		contrib/dnslist/dnslist.pl
@@ -65,6 +66,12 @@ CFLAGS+=	-DHAVE_LUASCRIPT
 USE_LUA=	5.1
 .endif
 
+.if ${PORT_OPTIONS:MDNSSEC}
+CFLAGS+=	-DHAVE_DNSSEC
+LIB_DEPENDS+=	libnettle.so:${PORTSDIR}/security/nettle
+LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
+.endif
+
 USE_RC_SUBR=	dnsmasq
 
 .include <bsd.port.pre.mk>
@@ -89,7 +96,10 @@ pre-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/dnsmasq ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/dnsmasq.conf.example ${STAGEDIR}${PREFIX}/etc
+	${REINPLACE_CMD} -i '' 's}%%PREFIX%%}${PREFIX}}' ${STAGEDIR}${PREFIX}/etc/dnsmasq.conf.example
 	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.8 ${STAGEDIR}${PREFIX}/man/man8
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/trust-anchors.conf ${STAGEDIR}${DATADIR}/
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}

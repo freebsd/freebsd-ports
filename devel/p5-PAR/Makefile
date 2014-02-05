@@ -19,17 +19,8 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		PAR.3 \
-		PAR::Environment.3 \
-		PAR::FAQ.3 \
-		PAR::Heavy.3 PAR::Tutorial.3 \
-		PAR::SetupProgname.3 \
-		PAR::SetupTemp.3
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 regression-test:
 	cd ${WRKSRC} && ${MAKE} test
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

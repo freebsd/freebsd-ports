@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	httpclient
-DISTVERSION=	4.3
+DISTVERSION=	4.3.2
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	httpcomponents/${PORTNAME}/binary
@@ -18,10 +18,11 @@ RUN_DEPENDS=	${JAVAJARDIR}/httpcore.jar:${PORTSDIR}/www/httpcore \
 		${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging \
 		${JAVAJARDIR}/commons-codec.jar:${PORTSDIR}/java/jakarta-commons-codec
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/httpcomponents-client-${DISTVERSION}
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 		%%JAVAJARDIR%%/${PORTNAME}-cache.jar \
@@ -31,39 +32,38 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}.jar \
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}-${DISTVERSION}.jar \
-		${JAVAJARDIR}/${PORTNAME}.jar
+		${STAGEDIR}/${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [DONE]"
 	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}-cache.jar..."
 	@${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}-cache-${DISTVERSION}.jar \
-		${JAVAJARDIR}/${PORTNAME}-cache.jar
+		${STAGEDIR}/${JAVAJARDIR}/${PORTNAME}-cache.jar
 	@${ECHO_MSG} " [DONE]"
 	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME:S/client/mime/}.jar..."
 	@${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME:S/client/mime/}-${DISTVERSION}.jar \
-		${JAVAJARDIR}/${PORTNAME:S/client/mime/}.jar
+		${STAGEDIR}/${JAVAJARDIR}/${PORTNAME:S/client/mime/}.jar
 	@${ECHO_MSG} " [DONE]"
 	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/fluent-hc.jar..."
 	@${INSTALL_DATA} ${WRKSRC}/lib/fluent-hc-${DISTVERSION}.jar \
-		${JAVAJARDIR}/fluent-hc.jar
+		${STAGEDIR}/${JAVAJARDIR}/fluent-hc.jar
 	@${ECHO_MSG} " [DONE]"
 .if ${PORT_OPTIONS:MDOCS}
 	@${ECHO_MSG} -n ">> Installing documentation..."
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${FIND} javadoc tutorial \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
-	@${INSTALL_DATA} ${WRKSRC}/RELEASE_NOTES.txt ${DOCSDIR}/
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	@cd ${WRKSRC} && ${FIND} tutorial \
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}/${DOCSDIR} > /dev/null 2>&1
+	@${INSTALL_DATA} ${WRKSRC}/RELEASE_NOTES.txt ${STAGEDIR}/${DOCSDIR}/
 	@${ECHO_MSG} " [DONE]"
 .endif
 .if ${PORT_OPTIONS:MEXAMPLES}
 	@${ECHO_MSG} -n ">> Installing examples..."
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}/${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples && ${FIND} . \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR} > /dev/null 2>&1
+	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}/${EXAMPLESDIR} > /dev/null 2>&1
 	@${ECHO_MSG} " [DONE]"
 .endif
 

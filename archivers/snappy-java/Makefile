@@ -7,6 +7,7 @@
 
 PORTNAME=	snappy
 PORTVERSION=	1.0.4.1
+PORTREVISION=	1
 CATEGORIES=	archivers java
 MASTER_SITES=	GITHUB:source1 \
 		http://snappy.googlecode.com/files/:source2 \
@@ -31,13 +32,13 @@ GH_TAGNAME=	snappy-java-${PORTVERSION}
 GH_COMMIT=	487f82d
 USE_GITHUB=	yes
 
-NO_STAGE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.7
 USES=		gmake
+USE_LDCONFIG=	yes
 MAKE_ARGS+=	Default_CXX=${CXX}
 
-PLIST_FILES=	%%JAVAJARDIR%%/snappy-java.jar
+PLIST_FILES=	%%JAVAJARDIR%%/snappy-java.jar lib/libsnappyjava.so
 
 post-patch-script:
 	@${REINPLACE_CMD} -e 's|curl.*||g' \
@@ -54,6 +55,9 @@ do-build: pre-build
 	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} && ${LOCALBASE}/share/java/maven3/bin/mvn -Dmaven.repo.local=${WRKDIR}/repository --offline test
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/target/snappy-java-${PORTVERSION}.jar ${JAVAJARDIR}/snappy-java.jar
+	${INSTALL_DATA} ${WRKSRC}/target/snappy-java-${PORTVERSION}.jar \
+		${STAGEDIR}${JAVAJARDIR}/snappy-java.jar
+	${INSTALL_LIB} ${WRKSRC}/target/snappy-${PORTVERSION:R}-Default/libsnappyjava.so \
+		${STAGEDIR}${LOCALBASE}/lib
 
 .include <bsd.port.mk>

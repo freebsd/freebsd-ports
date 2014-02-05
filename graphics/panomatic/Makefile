@@ -16,12 +16,11 @@ BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_DOS2UNIX=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST_FILES=	bin/panomatic
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

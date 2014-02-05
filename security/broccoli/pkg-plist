@@ -8,7 +8,12 @@ lib/libbroccoli.so
 lib/libbroccoli.so.5
 lib/libbroccoli.so.5.1.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_broccoli_intern.so
+%%PYTHON%%@exec ln -f %%PREFIX%%/%%PYTHON_SITELIBDIR%%/_broccoli_intern.so %%LOCALBASE%%/%%PYTHON_SITELIBDIR%%/_broccoli_intern.so
+%%PYTHON%%@unexec rm -f %%LOCALBASE%%/%%PYTHON_SITELIBDIR%%/_broccoli_intern.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/broccoli.py
+%%PYTHON%%@exec ln -f %%PREFIX%%/%%PYTHON_SITELIBDIR%%/broccoli.py %%LOCALBASE%%/%%PYTHON_SITELIBDIR%%/broccoli.py
+%%PYTHON%%@unexec rm -f %%LOCALBASE%%/%%PYTHON_SITELIBDIR%%/broccoli.py
+%%PYTHON%%@unexec rm -f %%LOCALBASE%%/%%PYTHON_SITELIBDIR%%/broccoli.pyc
 %%RUBY%%%%RUBY_SITELIBDIR%%/Broccoli/connection.rb
 %%RUBY%%%%RUBY_SITELIBDIR%%/Broccoli/event.rb
 %%RUBY%%%%RUBY_SITELIBDIR%%/Broccoli/record.rb

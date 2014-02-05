@@ -19,8 +19,4 @@ WRKSRC=		${WRKDIR}/RBLCLient-${PORTVERSION}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		spamalyze.1
-MAN3=		Net::RBLClient.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

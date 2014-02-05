@@ -21,9 +21,8 @@ INNO_DESC=		Build with expermential Inno Setup support
 VISE_DESC=		Build with expermential VISE support
 MSI_DESC=		Build with expermential MSI support
 
-USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USES=	iconv pathfix pkgconfig
+USES=	iconv libtool pathfix pkgconfig
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes

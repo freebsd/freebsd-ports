@@ -15,33 +15,30 @@ COMMENT=	X/Motif schedule planner with calendar
 USES=		motif
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 ALL_TARGET=	freebsd
-MAN1=		netplan.1 plan.1
-MAN4=		plan.4
 
 MAKE_ENV+=	DATADIR=${DATADIR} EXAMPLESDIR=${EXAMPLESDIR}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} > 900006
 EXTRA_PATCHES=	${PATCHDIR}/utmpx-src-daemon.c
 .endif
 
 do-install:
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 
 	cd ${WRKSRC} \
-	   && ${INSTALL_PROGRAM} plan pland netplan notifier ${PREFIX}/bin		\
-	   && ${INSTALL_SCRIPT}  ../misc/Killpland ${PREFIX}/bin			\
-	   && ${INSTALL_MAN} ../misc/netplan.1 ../misc/plan.1 ${MAN1PREFIX}/man/man1	\
-	   && ${INSTALL_MAN} ../misc/plan.4 ${MAN4PREFIX}/man/man4
+	   && ${INSTALL_PROGRAM} plan pland netplan notifier ${STAGEDIR}${PREFIX}/bin		\
+	   && ${INSTALL_SCRIPT}  ../misc/Killpland ${STAGEDIR}${PREFIX}/bin			\
+	   && ${INSTALL_MAN} ../misc/netplan.1 ../misc/plan.1 ${STAGEDIR}${MAN1PREFIX}/man/man1	\
+	   && ${INSTALL_MAN} ../misc/plan.4 ${STAGEDIR}${MAN4PREFIX}/man/man4
 
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/.. \
 	   && ${INSTALL_DATA} misc/plan_cal.ps language/* misc/Mkdoc misc/Mkdoc.nawk	\
 	                      misc/BlackWhite misc/Monochrome README			\
-	                      ${DOCSDIR}
-.endif
+	                      ${STAGEDIR}${DOCSDIR}
 
 	cd ${WRKSRC}/../holiday \
 	   && ${INSTALL_DATA}   \
@@ -50,11 +47,11 @@ do-install:
 	      holiday_finnish holiday_french holiday_frswiss holiday_german holiday_greek	\
 	      holiday_hungary holiday_italy holiday_japan holiday_norway holiday_portugal	\
 	      holiday_quebec holiday_slovak holiday_spain holiday_swedish holiday_uk		\
-	      holiday_us ${EXAMPLESDIR}
+	      holiday_us ${STAGEDIR}${EXAMPLESDIR}
 
 .if !target(post-install)
 post-install:
-	@${MKDIR} ${DATADIR}/netplan.dir
+	@${MKDIR} ${STAGEDIR}${DATADIR}/netplan.dir
 .endif
 
 .include <bsd.port.post.mk>

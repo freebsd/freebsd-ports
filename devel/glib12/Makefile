@@ -17,15 +17,13 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/glib12
 
-MAN1=		glib-config.1
 INFO=		glib
 
-NO_STAGE=	yes
 post-install:
-	${LN} -sf ${PREFIX}/bin/glib-config ${PREFIX}/bin/glib12-config
+	${LN} -sf ${PREFIX}/bin/glib-config ${STAGEDIR}${PREFIX}/bin/glib12-config
 .for lib in glib gmodule gthread
-	@${RM} ${PREFIX}/lib/lib${lib}.la ${PREFIX}/lib/lib${lib}.so
-	@${MV} ${PREFIX}/lib/lib${lib}.a ${PREFIX}/lib/lib${lib}-12.a
+	@${RM} ${STAGEDIR}${PREFIX}/lib/lib${lib}.la ${STAGEDIR}${PREFIX}/lib/lib${lib}.so
+	@${MV} ${STAGEDIR}${PREFIX}/lib/lib${lib}.a ${STAGEDIR}${PREFIX}/lib/lib${lib}-12.a
 .endfor
 
 .include <bsd.port.mk>

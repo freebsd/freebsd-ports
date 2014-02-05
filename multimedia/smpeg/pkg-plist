@@ -16,4 +16,6 @@ lib/libsmpeg.la
 lib/libsmpeg.so
 lib/libsmpeg.so.1
 share/aclocal/smpeg.m4
+man/man1/gtv.1.gz
+man/man1/plaympeg.1.gz
 @dirrm include/smpeg

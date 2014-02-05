@@ -21,7 +21,7 @@ BGI_DESC=	Enable BGI support
 BMP_DESC=	Enable BMP support
 
 USE_XORG=	x11 xau xcb xdmcp
-USE_GMAKE=	yes
+USES=		gmake
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --with-fontpath=${DATADIR}/fonts \
 		--with-x11-base=${LOCALBASE}
@@ -36,7 +36,6 @@ PLIST_SUB=	VERSION="${PORTVERSION}"
 
 INFO=		grx
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MBGI}

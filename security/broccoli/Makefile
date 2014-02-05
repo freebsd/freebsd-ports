@@ -3,7 +3,7 @@
 
 PORTNAME=	broccoli
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.bro.org/downloads/release/
 DISTNAME=	bro-${PORTVERSION}
@@ -11,10 +11,10 @@ DISTNAME=	bro-${PORTVERSION}
 MAINTAINER=	leres@ee.lbl.gov
 COMMENT=	The Bro Client Communications Library
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison \
-		swig:${PORTSDIR}/devel/swig13
+BUILD_DEPENDS=	${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison \
+		${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	libGeoIP.so:${PORTSDIR}/net/GeoIP
 
 EXTRACT_AFTER_ARGS=	${DISTNAME}/aux/broccoli
@@ -56,6 +56,10 @@ post-install::
 .if defined(BRO_PREFIX) && ! defined(WITH_PKGNG) && ! exists(${BRO_PREFIX})
 	# pkg_install needs PREFIX in order to make a package from STAGEDIR/PREFIX.
 	@${MKDIR} ${PREFIX}
+.endif
+.if defined(BRO_PREFIX) && empty(${PORT_OPTIONS:MPYTHON})
+	# Move lib/pythonX.X tree into BRO_PREFIX
+	${MV} ${STAGEDIR}${PYTHON_LIBDIR} ${STAGEDIR}${PREFIX}/lib
 .endif
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc
 	@${MV} ${STAGEDIR}${PREFIX}/etc/broccoli.conf ${STAGEDIR}${PREFIX}/etc/broccoli.conf.example

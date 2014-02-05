@@ -24,5 +24,4 @@ DESCR=		${.CURDIR}/pkg-descr
 
 MASTERDIR=	${.CURDIR}/../libevent
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

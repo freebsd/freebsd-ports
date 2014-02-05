@@ -3,7 +3,7 @@
 
 PORTNAME=	bip
 PORTVERSION=	0.8.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	https://projects.duckcorp.org/attachments/download/39/
 

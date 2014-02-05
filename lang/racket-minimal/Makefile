@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	racket-minimal
-PORTVERSION=	5.92
+PORTVERSION=	5.93
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.eecs.northwestern.edu/racket/${PORTVERSION}/ \
@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=	--disable-places
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-WRKSRC=		${WRKDIR}/racket/src
+WRKSRC=		${WRKDIR}/racket-${PORTVERSION}/src
 USES+=		iconv
 USE_AUTOTOOLS=	libtool:env
 USE_LDCONFIG=	yes

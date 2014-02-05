@@ -14,7 +14,6 @@ PLIST_FILES=		bin/${PORTNAME}
 
 CXXFLAGS+=		-Wno-deprecated
 
-NO_STAGE=	yes
 post-extract:
 	@${RM} ${WRKSRC}/Makefile
 
@@ -22,6 +21,6 @@ do-build:
 	cd ${WRKSRC} && ${CXX} ${CXXFLAGS} -o ${PORTNAME} ansiprint.cc
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

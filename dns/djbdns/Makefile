@@ -31,6 +31,7 @@ SRV_DESC=	SRV record patch by Michael Handler
 DNSCURVE_DESC=	DNSCurve support by Matthew Dempsky
 ADD_USERS_DESC=	Add dnscache, tinydns and dnslog users/groups
 
+NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MADD_USERS}
@@ -57,9 +58,15 @@ CFLAGS+=	-DDUMPCACHE
 MANDATE=	-20031023
 MASTER_SITES+=	http://smarden.org/pape/djb/manpages/:manpages
 DISTFILES+=	${DISTNAME}-man${MANDATE}.tar.gz:manpages
-PLIST_SUB+=	WITH_MAN=""
-.else
-PLIST_SUB+=	WITH_MAN="@comment "
+
+MAN1=		dnsfilter.1 dnsip.1 dnsipq.1 dnsmx.1 dnsname.1 \
+		dnsq.1 dnsqr.1 dnstrace.1 dnstracesort.1 dnstxt.1 \
+		tinydns-get.1
+MAN8=		axfr-get.8 axfrdns.8 axfrdns-conf.8 dnscache-conf.8 \
+		dnscache.8 rbldns-conf.8 \
+		rbldns-data.8 rbldns.8 tinydns-conf.8 tinydns-data.8 \
+		tinydns-edit.8 tinydns.8 walldns-conf.8 walldns.8
+MANCOMPRESSED=	no
 .endif
 
 .if ${PORT_OPTIONS:MIP6}
@@ -129,12 +136,12 @@ PLIST_SUB+=	WITH_IP6="@comment "
 post-patch:
 	@echo "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@echo "${CC} ${STRIP} ${LDFLAGS}" > ${WRKSRC}/conf-ld
-	@echo "${STAGEDIR}${PREFIX}" > ${WRKSRC}/conf-home
+	@echo "${PREFIX}" > ${WRKSRC}/conf-home
 
 .if ${PORT_OPTIONS:MMAN}
 post-install:
-	@${INSTALL_MAN} ${WRKDIR}/djbdns-man/*.1 ${STAGEDIR}${PREFIX}/man/man1/
-	@${INSTALL_MAN} ${WRKDIR}/djbdns-man/*.8 ${STAGEDIR}${PREFIX}/man/man8/
+	@${INSTALL_MAN} ${WRKDIR}/djbdns-man/*.1 ${PREFIX}/man/man1/
+	@${INSTALL_MAN} ${WRKDIR}/djbdns-man/*.8 ${PREFIX}/man/man8/
 .endif
 
 .include <bsd.port.mk>

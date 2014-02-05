@@ -2,7 +2,7 @@
 
 PORTNAME=	trustedqsl
 PORTVERSION=	2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/${PORTNAME}/TrustedQSL/v${PORTVERSION}/
 DISTNAME=	tqsl-${PORTVERSION}
@@ -16,11 +16,10 @@ LICENSE=	BSD
 LIB_DEPENDS=	libdb-5.so:${PORTSDIR}/databases/db5 \
 		libcurl.so:${PORTSDIR}/ftp/curl
 
-CXXFLAGS	+=-std=gnu++0x
-
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-USES=		compiler:c++11-lib cmake pkgconfig
+USES=		cmake pkgconfig
+USES=		compiler:features cmake pkgconfig
 USE_WX=		2.8+
 WX_UNICODE=	yes
 USE_LDCONFIG=	yes

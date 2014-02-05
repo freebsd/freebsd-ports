@@ -3,39 +3,49 @@
 
 PORTNAME=	explosions
 PORTVERSION=	0.2005.07.31
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/explosions/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0.//}
+MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/${PORTNAME}/ \
+		ftp://ftp.billsgames.com/unix/x/${PORTNAME}/ \
+		SF/nemysisfreebsdp/${CATEGORIES}/:icons
+DISTFILES=	${PORTNAME}-${PORTVERSION:S/^0.//}${EXTRACT_SUFX} \
+		${PORTNAME}.png:icons
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION:S/^0.//}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	3D objects flying around resembling explosions with various effects
 
-USE_SDL=	sdl image
-USE_GMAKE=	yes
-USES=		perl5
-USE_PERL5=	build
+LICENSE=	GPLv2
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/^0.//}
+
+USES=		gmake perl5
+USE_PERL5=	build
+USE_SDL=	sdl image
+
+PORTDOCS=	BUGS.txt CHANGES.txt README.txt
+
+OPTIONS_DEFINE=	DOCS
+
+DESKTOP_ENTRIES="Explosions" "" "${PORTNAME}" \
+		"${PORTNAME}" "Game;Graphics;" ""
 
 post-patch:
-	@${REINPLACE_CMD} -i '' -e 's!CFLAGS=-Wall -O2!CFLAGS+=-Wall!; \
-			s!sdl-config!${SDL_CONFIG}!' \
+	@${REINPLACE_CMD} -e 's|CFLAGS=-Wall -O2|CFLAGS+=-Wall|; \
+		s|sdl-config|${SDL_CONFIG}|' \
 		${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -i '' -e 's!spark%d.png!${DATADIR}/spark%d.png!' \
+	@${REINPLACE_CMD}  -e 's|spark%d.png|${DATADIR}/spark%d.png|' \
 		${WRKSRC}/explosions.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/explosions ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/spark?.png ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/spark?.png ${STAGEDIR}${DATADIR}
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for file in BUGS.txt CHANGES.txt README.txt
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -14,31 +14,32 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_GNOME=	pygnome2 gnomeprefix
 
-NO_STAGE=	yes
 do-build:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
 		${WRKSRC}/*.py
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
-	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
-	${MKDIR} ${PREFIX}/share/pixmaps/${PORTNAME}/splash
-	${MKDIR} ${PREFIX}/libexec/${PORTNAME}
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} \
-		${PREFIX}/libexec/${PORTNAME}/
-	@${INSTALL_DATA} ${WRKSRC}/*.py* \
-		${PREFIX}/libexec/${PORTNAME}/
-	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
-		${PREFIX}/share/applications/
-	@${INSTALL_DATA} ${WRKSRC}/*.svg \
-		${PREFIX}/share/pixmaps/${PORTNAME}/
-	@${INSTALL_DATA} ${WRKSRC}/splashsetter_icon.svg \
-		${PREFIX}/share/pixmaps/${PORTNAME}.svg
-	@${INSTALL_DATA} ${WRKSRC}/*.png \
-		${PREFIX}/share/pixmaps/${PORTNAME}/splash/
-	@${LN} -sf ${PREFIX}/libexec/${PORTNAME}/${PORTNAME} \
-		${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}/splash
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/*.py \
+		${STAGEDIR}${PREFIX}/libexec/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.desktop \
+		${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/*.svg \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/splashsetter_icon.svg \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.svg
+	${INSTALL_DATA} ${WRKSRC}/*.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}/splash
+	${LN} -sf ${PREFIX}/libexec/${PORTNAME}/${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -m compileall \
+		-d ${PREFIX}/libexec/${PORTNAME} -f libexec/${PORTNAME}
+	cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O -m compileall \
+		-d ${PREFIX}/libexec/${PORTNAME} -f libexec/${PORTNAME}
 
 .include <bsd.port.mk>

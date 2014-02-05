@@ -2,5 +2,7 @@ bin/bmore
 bin/bvedit
 bin/bvi
 bin/bview
+man/man1/bmore.1.gz
+man/man1/bvi.1.gz
 %%DATADIR%%/bmore.help
 @dirrm %%DATADIR%%

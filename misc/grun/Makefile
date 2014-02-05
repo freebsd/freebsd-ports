@@ -14,10 +14,8 @@ USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-testfile
 
-MAN1=		grun.1x
-
-PLIST_FILES=	bin/grun %%DATADIR%%/consfile %%DATADIR%%/gassoc
+PLIST_FILES=	bin/grun %%DATADIR%%/consfile %%DATADIR%%/gassoc \
+		man/man1/grun.1x.gz
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

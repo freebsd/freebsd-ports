@@ -3,7 +3,7 @@
 
 PORTNAME=	newsbeuter
 PORTVERSION=	2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://newsbeuter.org/downloads/
 
@@ -22,11 +22,11 @@ OPTIONS_DEFAULT=PODCAST
 OPTIONS_SUB=	yes
 PODCAST_DESC=	Podcast client (podbeuter)
 
-USES=		gettext gmake iconv:translit ncurses perl5 pkgconfig
+USES=		compiler:c++11-lang gettext gmake iconv:translit ncurses perl5 pkgconfig
+USE_CXXSTD=	gnu++11
 USE_PERL5=	build
 USE_SQLITE=	yes
 USE_GNOME=	libxml2
-USE_GCC=	any
 
 post-patch:
 	${REINPLACE_CMD} -e "s,share/man,man,; \

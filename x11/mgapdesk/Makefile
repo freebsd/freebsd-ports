@@ -12,6 +12,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Matrox Powerdesk for *nix
 
+DEPRECATED=	Needs an old (pre 7.2) XFree86/X.org header file to build
+EXPIRATION_DATE=	2014-03-03
+
 IGNORE=		needs an old XFree86/X.org header file to build
 
 USE_GNOME=	gtk12

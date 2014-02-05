@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBIx-Custom
-PORTVERSION=	0.2800
+PORTVERSION=	0.2900
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-DBD-SQLite>=1.25:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-DBI>=1.60.5:${PORTSDIR}/databases/p5-DBI \
-		p5-Object-Simple>=3.0621:${PORTSDIR}/devel/p5-Object-Simple
+		p5-Object-Simple>=3.1000:${PORTSDIR}/devel/p5-Object-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5

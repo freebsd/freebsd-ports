@@ -15,6 +15,7 @@
 %%SITE_PERL%%/PPIx/Regexp/Structure/Modifier.pm
 %%SITE_PERL%%/PPIx/Regexp/Structure/NamedCapture.pm
 %%SITE_PERL%%/PPIx/Regexp/Structure/Quantifier.pm
+%%SITE_PERL%%/PPIx/Regexp/Structure/RegexSet.pm
 %%SITE_PERL%%/PPIx/Regexp/Structure/Regexp.pm
 %%SITE_PERL%%/PPIx/Regexp/Structure/Replacement.pm
 %%SITE_PERL%%/PPIx/Regexp/Structure/Subexpression.pm
@@ -73,6 +74,7 @@
 %%PERL5_MAN3%%/PPIx::Regexp::Token::Control.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Token::GroupType::Assertion.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Token::Backtrack.3.gz
+%%PERL5_MAN3%%/PPIx::Regexp::Structure::RegexSet.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Structure::Regexp.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Token::Greediness.3.gz
 %%PERL5_MAN3%%/PPIx::Regexp::Token.3.gz

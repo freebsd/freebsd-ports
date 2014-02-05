@@ -14,7 +14,4 @@ COMMENT=	Enable all of the features of Modern Perl with one command
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Modern::Perl.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

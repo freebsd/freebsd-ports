@@ -11,9 +11,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	A hex editor that doesn't load the whole file at once
 
-MAN1=		bpatch.1
 NO_WRKSUBDIR=   yes
-PLIST_FILES=	bin/bpatch
+PLIST_FILES=	bin/bpatch \
+		man/man1/bpatch.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

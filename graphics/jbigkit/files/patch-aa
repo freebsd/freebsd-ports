@@ -42,20 +42,20 @@
  	cp CHANGES $(HOME)/public_html/jbigkit/
 +
 +install:
-+	mkdir -p ${PREFIX}/bin
++	mkdir -p $(DESTDIR)${PREFIX}/bin
 +	${BSD_INSTALL_PROGRAM} pbmtools/jbgtopbm pbmtools/pbmtojbg \
-+		${PREFIX}/bin
-+	mkdir -p ${PREFIX}/man/man1
++		$(DESTDIR)${PREFIX}/bin
++	mkdir -p $(DESTDIR)${PREFIX}/man/man1
 +	${BSD_INSTALL_MAN} pbmtools/pbmtojbg.1 pbmtools/jbgtopbm.1 \
-+		${PREFIX}/man/man1
-+	# mkdir -p ${PREFIX}/man/man5
++		$(DESTDIR)${PREFIX}/man/man1
++	# mkdir -p $(DESTDIR)${PREFIX}/man/man5
 +	# Not installing the pbm(5) man page, because BSD has its own
 +	# install -c -m 644 -o bin -g bin pbmtools/pbm.5 ${PREFIX}/man/man5
 +	# Not installing the pgm(5) man page for it comes with netpbm port
 +	# install -c -m 644 -o bin -g bin pbmtools/pgm.5 ${PREFIX}/man/man5
-+	mkdir -p ${PREFIX}/include
-+	${BSD_INSTALL_DATA} libjbig/jbig.h ${PREFIX}/include
-+	mkdir -p ${PREFIX}/lib
-+	${BSD_INSTALL_DATA} libjbig/libjbig.a ${PREFIX}/lib
-+	${BSD_INSTALL_DATA} libjbig/libjbig.so.1 ${PREFIX}/lib
-+	ln -sf libjbig.so.1 ${PREFIX}/lib/libjbig.so
++	mkdir -p $(DESTDIR)${PREFIX}/include
++	${BSD_INSTALL_DATA} libjbig/jbig.h $(DESTDIR)${PREFIX}/include
++	mkdir -p $(DESTDIR)${PREFIX}/lib
++	${BSD_INSTALL_DATA} libjbig/libjbig.a $(DESTDIR)${PREFIX}/lib
++	${BSD_INSTALL_DATA} libjbig/libjbig.so.1 $(DESTDIR)${PREFIX}/lib
++	ln -sf libjbig.so.1 $(DESTDIR)${PREFIX}/lib/libjbig.so

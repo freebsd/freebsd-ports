@@ -26,6 +26,7 @@ WRKSRC=		${RUBY_WRKSRC}
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--enable-shared \
 		--enable-pthread \
+		--disable-rpath \
 		--with-ruby-version=minor \
 		--with-sitedir="${PREFIX}/lib/ruby/site_ruby" \
 		--with-vendordir="${PREFIX}/lib/ruby/vendor_ruby"
@@ -47,7 +48,6 @@ OPTIONS_DEFINE=	RDOC DEBUG
 RDOC_DESC=	Build and install Rdoc indexes
 DEBUG_DESC=	Compile-in debug info
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # PORTEPOCH/PORTREVISION hack
@@ -101,9 +101,6 @@ EXTDOCS=	readline/README*		\
 		stringio/README			\
 		syslog/syslog.txt
 
-MAN1=		${RUBY_NAME}.1 erb${RUBY_SUFFIX}.1  irb${RUBY_SUFFIX}.1 \
-		ri${RUBY_SUFFIX}.1
-
 # Macros to change variables in rbconfig.rb
 RB_SET_CONF_VAR=${SH} -c '${REINPLACE_CMD} -E -e "s,(CONFIG\[\"$$0\"\][[:space:]]*=[[:space:]]*)(\(?)(.*)(\)?),\1\2$$1\4," ${WRKSRC}/rbconfig.rb' --
 
@@ -152,19 +149,19 @@ post-build:
 	@${RB_SET_CONF_VAR} "INSTALL_DATA" "ENV['RB_USER_INSTALL'] ? '${INSTALL} ${COPY} -m ${SHAREMODE}' : '${INSTALL_DATA}'"
 
 pre-su-install:
-	${MKDIR}	${RUBY_DOCDIR}		\
-			${RUBY_EXAMPLESDIR}	\
-			${RUBY_RIDIR}		\
-			${RUBY_SITERIDIR}	\
-			${RUBY_SITEARCHLIBDIR}	\
-			${RUBY_VENDORARCHLIBDIR}
+	${MKDIR}	${STAGEDIR}${RUBY_DOCDIR}		\
+			${STAGEDIR}${RUBY_EXAMPLESDIR}	\
+			${STAGEDIR}${RUBY_RIDIR}		\
+			${STAGEDIR}${RUBY_SITERIDIR}	\
+			${STAGEDIR}${RUBY_SITEARCHLIBDIR}	\
+			${STAGEDIR}${RUBY_VENDORARCHLIBDIR}
 
-	${SETENV} LC_TIME=C /bin/date > ${RUBY_RIDIR}/created.rid
-	${SETENV} LC_TIME=C /bin/date > ${RUBY_SITERIDIR}/created.rid
-	${TOUCH} ${RUBY_EXAMPLESDIR}/.keep_me
-	${TOUCH} ${RUBY_DOCDIR}/.keep_me
-	${TOUCH} ${RUBY_SITEARCHLIBDIR}/.keep_me
-	${TOUCH} ${RUBY_VENDORARCHLIBDIR}/.keep_me
+	${SETENV} LC_TIME=C /bin/date > ${STAGEDIR}${RUBY_RIDIR}/created.rid
+	${SETENV} LC_TIME=C /bin/date > ${STAGEDIR}${RUBY_SITERIDIR}/created.rid
+	${TOUCH} ${STAGEDIR}${RUBY_EXAMPLESDIR}/.keep_me
+	${TOUCH} ${STAGEDIR}${RUBY_DOCDIR}/.keep_me
+	${TOUCH} ${STAGEDIR}${RUBY_SITEARCHLIBDIR}/.keep_me
+	${TOUCH} ${STAGEDIR}${RUBY_VENDORARCHLIBDIR}/.keep_me
 
 post-install:
 #
@@ -172,7 +169,7 @@ post-install:
 # bogus to hack.
 #
 .if defined(STRIP) && ${STRIP} == -s
-	${STRIP_CMD} ${PREFIX}/bin/${RUBY_NAME}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${RUBY_NAME}
 .endif
 
 #
@@ -180,38 +177,38 @@ post-install:
 #
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 . for FILE in ${INSTALLED_SCRIPTS}
-	${LN} -f ${PREFIX}/bin/${FILE}${RUBY_SUFFIX} ${PREFIX}/bin/${FILE}
+	${LN} -f ${STAGEDIR}${PREFIX}/bin/${FILE}${RUBY_SUFFIX} ${STAGEDIR}${PREFIX}/bin/${FILE}
 . endfor
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
 	# Create all dirs required (":u" isn't avaiable in STABLE yet :-()
-	${MKDIR} ${EXTSAMPLES:C,^([^/]+)/.*,\1,:S,^,${RUBY_EXAMPLESDIR}/,}
-	${MKDIR} ${EXTDOCS:C,^([^/]+)/.*,\1,:S,^,${RUBY_DOCDIR}/,}
+	${MKDIR} ${EXTSAMPLES:C,^([^/]+)/.*,\1,:S,^,${STAGEDIR}${RUBY_EXAMPLESDIR}/,}
+	${MKDIR} ${EXTDOCS:C,^([^/]+)/.*,\1,:S,^,${STAGEDIR}${RUBY_DOCDIR}/,}
 .for FILE in ${EXTSAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/ext/${FILE} \
-		${RUBY_EXAMPLESDIR}/${FILE:C,^([^/]+)/.*,\1,}/
+		${STAGEDIR}${RUBY_EXAMPLESDIR}/${FILE:C,^([^/]+)/.*,\1,}/
 .endfor
 .for FILE in ${EXTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/ext/${FILE} \
-		${RUBY_DOCDIR}/${FILE:C,^([^/]+)/.*,\1,}/
+		${STAGEDIR}${RUBY_DOCDIR}/${FILE:C,^([^/]+)/.*,\1,}/
 .endfor
-	@(cd ${WRKSRC}/sample/ && ${COPYTREE_SHARE} \* ${RUBY_EXAMPLESDIR}/)
-	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${RUBY_DOCDIR}/)
+	@(cd ${WRKSRC}/sample/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${RUBY_EXAMPLESDIR}/)
+	@(cd ${WRKSRC}/doc/ && ${COPYTREE_SHARE} \* ${STAGEDIR}${RUBY_DOCDIR}/)
 	${INSTALL_DATA} ${WRKSRC}/COPYING*	\
 			${WRKSRC}/ChangeLog	\
 			${WRKSRC}/LEGAL		\
 			${WRKSRC}/README*	\
-			${RUBY_DOCDIR}/
+			${STAGEDIR}${RUBY_DOCDIR}/
 .endif
 
 #
 # Add generated RI files to pkg-plist
 #
 	@${FIND} -ds ${RUBY_RIDIR}/ ! -type d ! -name created.rid | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+		${SED} 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} -ds ${RUBY_RIDIR}/ -type d -mindepth 1 | \
-		${SED} -E -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+		${SED} -E -e 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 
 #
@@ -309,6 +306,6 @@ validate:
 	rm -rf ${WRKSRC}/rubyspec/*
 	(cd ${WRKSRC}/rubyspec && git clone git://github.com/rubyspec/rubyspec.git)
 	(cd ${WRKSRC}/rubyspec && git clone git://github.com/rubyspec/mspec.git)
-	(cd ${WRKSRC}/rubyspec/rubyspec && env PATH=${WRKSRC}/rubyspec/mspec/bin:${PATH} mspec -t ${PREFIX}/bin/ruby${RUBY_SUFFIX})
+	(cd ${WRKSRC}/rubyspec/rubyspec && env PATH=${WRKSRC}/rubyspec/mspec/bin:${PATH} mspec -t ${STAGEDIR}${PREFIX}/bin/ruby${RUBY_SUFFIX})
 
 .include <bsd.port.post.mk>

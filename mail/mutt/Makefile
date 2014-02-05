@@ -3,7 +3,6 @@
 
 PORTNAME=	mutt
 PORTVERSION=	1.5.22
-PORTREVISION=	0
 CATEGORIES+=	mail ipv6
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/devel/ \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/devel/ \
@@ -15,7 +14,6 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/devel/ \
 		ftp://ftp3.mutt.org.ua/pub/mutt/mutt-${VVV_PATCH_VERSION}/:vvv \
 		http://www.spinnaker.de/mutt/compressed/:rr \
 		http://lunar-linux.org/~tchan/mutt/:tchan
-DISTNAME=	mutt-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -42,6 +40,10 @@ CONFIGURE_ARGS=	--disable-fcntl --with-ssl=${OPENSSLBASE} \
 		--with-docdir=${DOCSDIR} --sysconfdir=${PREFIX}/etc \
 		--enable-external-dotlock --enable-pop --enable-imap \
 		--disable-warnings
+
+USES+=		shebangfix
+SHEBANG_FILES=	doc/gen-map-doc smime_keys.pl contrib/smime_keys_test.pl
+
 .if defined(MUTT_CONFIGURE_ARGS)
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
@@ -103,11 +105,6 @@ OPTIONS_DEFAULT=	COMPRESSED_FOLDERS HTML ICONV MAILBOX_MANPAGES \
 		NLS XML SMTP
 .endif
 
-PLIST=		${WRKDIR}/PLIST
-PKGMESSAGE=	${WRKDIR}/pkg-message
-SCRIPTS_ENV=	WRKDIR="${WRKDIR}"
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 DW_PATCH_VERSION=	1.5.6
@@ -131,6 +128,7 @@ AC_PATCH_VERSION=	${PORTVERSION}
 
 .if defined (LITE)
 PKGNAMESUFFIX=	-lite
+PLIST_SUB+=	MBOXMAN=""
 .endif
 
 # XXX
@@ -165,7 +163,7 @@ LIB_DEPENDS+=	libslang.so:${PORTSDIR}/devel/libslang2
 .endif
 
 .if ${PORT_OPTIONS:MNCURSES}
-USES=		ncurses
+USES+=		ncurses
 .endif
 
 .if ! ${PORT_OPTIONS:MSGMLFORMAT} || ! ${PORT_OPTIONS:MXML} || !defined(XML_USED) \
@@ -175,9 +173,10 @@ XML_USED=	no
 
 .if ${PORT_OPTIONS:MNLS}
 USES+=		gettext
-SCRIPTS_ENV+=	NLS="yes"
+PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSASL}
@@ -198,7 +197,6 @@ post-patch::
 .if ${PORT_OPTIONS:MSIGNATURE_MENU}
 IGNORE=	the WITH_SIGNATURE_MENU does not work at the moment
 XML_NEEDED=	yes
-SCRIPTS_ENV+=	SIGNATURE_MENU="yes"
 post-patch::
 	@${PATCH} ${PATCH_ARGS} -p1 < ${PATCHDIR}/extra-patch-signature-menu
 .endif
@@ -310,12 +308,16 @@ DISTFILES+=	patch-${VVV_PATCH_VERSION}.vvv.nntp_ru.gz:vvv
 CONFIGURE_ARGS+=	--enable-nntp
 XML_NEEDED=	yes
 CATEGORIES+=	news
-SCRIPTS_ENV+=	NNTP="yes"
+PLIST_SUB+=	NNTP=""
 pre-patch::
 	@${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/patch-${VVV_PATCH_VERSION}.vvv.nntp.gz > ${WRKDIR}/patch-nntp
 	@${REINPLACE_CMD} -E '/^diff.*\/doc\/manual.txt$$/,/^diff/d' \
 		${WRKDIR}/patch-nntp
 	@${PATCH} ${PATCH_ARGS} -p1 < ${WRKDIR}/patch-nntp
+post-install:
+	${INSTALL_MAN} ${WRKSRC}/ChangeLog.nntp ${STAGEDIR}${DOCSDIR}
+.else
+PLIST_SUB+=	NNTP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MQUOTE_PATCH}
@@ -355,11 +357,6 @@ post-patch::
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
-MAN1=		mutt.1 mutt_dotlock.1 flea.1 muttbug.1 pgpewrap.1 pgpring.1 smime_keys.1
-MAN5=		muttrc.5
-.if ${PORT_OPTIONS:MMAILBOX_MANPAGES}
-MAN5+=		mbox.5 mmdf.5
-.endif
 
 post-patch::
 	@${REINPLACE_CMD} -e 's,/usr/bin/gpg,${LOCALBASE}/bin/gpg,g' \
@@ -368,9 +365,6 @@ post-patch::
 		${WRKSRC}/contrib/pgp6.rc
 	@${REINPLACE_CMD} -E -e 's|@samplesdir@|${EXAMPLESDIR}|g' \
 		${WRKSRC}/contrib/Makefile.am
-.if ! ${PORT_OPTIONS:MMAILBOX_MANPAGES}
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-no-mbox-manpage
-.endif
 
 pre-configure::
 	@(cd ${WRKSRC}; ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} -I m4)
@@ -380,16 +374,10 @@ pre-configure::
 		${WRKSRC}/imap/auth_gss.c
 .endif
 
-.if ${PORT_OPTIONS:MSLAVE_HTML_PAGES}
-SCRIPTS_ENV+=	SLAVE_HTML_PAGES="${SLAVE_HTML_PAGES}"
-.endif
-
 .if ${PORT_OPTIONS:MCOMPRESSED_FOLDERS}
-SCRIPTS_ENV+=	COMPRESSED_FOLDERS="yes"
-.endif
-
-.if ${PORT_OPTIONS:MQUOTE_PATCH}
-SCRIPTS_ENV+=	QUOTE_PATCH="yes"
+PLIST_SUB+=	COMPRESS=""
+.else
+PLIST_SUB+=	COMPRESS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MIMAP_HEADER_CACHE} || ${PORT_OPTIONS:MMAILDIR_HEADER_CACHE}
@@ -399,6 +387,9 @@ LIB_DEPENDS+=		libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
 .else
 USE_BDB=		42+
 CONFIGURE_ARGS+=	--enable-hcache --without-gdbm --with-bdb
+CONFIGURE_SED=	-e 's/BDB_VERSIONS="/&${BDB_LIB_NAME} db${BDB_VER} /'
+pre-configure::
+	@${REINPLACE_CMD} -E ${CONFIGURE_SED} ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}.ac
 .endif
 .else
 CONFIGURE_ARGS+=	--disable-hcache
@@ -408,18 +399,6 @@ CONFIGURE_ARGS+=	--disable-hcache
 CONFIGURE_ARGS+=	--without-qdbm
 .endif
 
-.if ${PORT_OPTIONS:MSIDEBAR_PATCH}
-SCRIPTS_ENV+=	SIDEBAR_PATCH="yes"
-.endif
-
-.if ${PORT_OPTIONS:MIFDEF_PATCH}
-SCRIPTS_ENV+=	IFDEF_PATCH="yes"
-.endif
-
-.if ${PORT_OPTIONS:MREVERSE_REPLY_PATCH}
-SCRIPTS_ENV+=	REVERSE_REPLY_PATCH="yes"
-.endif
-
 .if defined (XML_NEEDED) && ${PORT_OPTIONS:MXML}
 XML_USED=	yes
 .endif
@@ -427,17 +406,18 @@ XML_USED=	yes
 XML_USED=	yes
 .endif
 
-.if ${PORT_OPTIONS:MDOCS} || ${XML_USED} == yes
-INSTALL_DOCS=	yes
+.if ${PORT_OPTIONS:MMAILBOX_MANPAGES}
+PLIST_SUB+=	MBOXMAN=""
 .else
-INSTALL_DOCS=	no
+PLIST_SUB+=	MBOXMAN="@comment "
 .endif
 
-.if ${INSTALL_DOCS} == yes
-SCRIPTS_ENV+=	PORTDOCS="yes"
 .if ${PORT_OPTIONS:MHTML}
-SCRIPTS_ENV+=	HTML="yes"
+PLIST_SUB+=	HTML=""
+.else
+PLIST_SUB+=	HTML="@comment "
 .endif
+.if ${PORT_OPTIONS:MDOCS} || ${XML_USED} == yes
 post-build:
 	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-ref
 	@${REINPLACE_CMD} -E -e 's|\$$\{PREFIX\}|${PREFIX}|g' \
@@ -448,52 +428,16 @@ post-build:
 		-e 's|\$$\{DOCSDIR\}|${DOCSDIR}|g' \
 		-e 's|\$$\{EXAMPLESDIR\}|${EXAMPLESDIR}|g' \
 		${WRKSRC}/doc/muttrc.man
-.else 	# ! INSTALL_DOCS
-post-patch::
-.if ${PORT_OPTIONS:MMAILBOX_MANPAGES}
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc-mailbox-contrib
-.else
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc-contrib
 .endif
-.endif # ! INSTALL_DOCS
 
 .if ${XML_USED} == yes
 BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
 		lynx:${PORTSDIR}/www/lynx
-post-patch::
-	@${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-xml
 .endif
 
-pre-install:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/generate-plist > ${PLIST}
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/doc/Muttrc ${PREFIX}/etc/Muttrc.dist
-.if ${INSTALL_DOCS} == yes
-	@${ECHO} "===>   Installing Mutt documentation"
-	@${MKDIR} ${DOCSDIR} && ${CHMOD} a+rx ${DOCSDIR}
-	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt PGP-Notes.txt \
-		../ABOUT-NLS ../contrib/language*  ${DOCSDIR}
-.if ${PORT_OPTIONS:MNNTP}
-	@cd ${WRKSRC} ; ${INSTALL_MAN} ChangeLog.nntp ${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MHTML}
-	@${MKDIR} ${DOCSDIR}/html && ${CHMOD} a+rx ${DOCSDIR}/html
-	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${DOCSDIR}/html
-.endif
-.endif
 .if ${PORT_OPTIONS:MSLANG}
-	@${ECHO} "=====================================================" > ${PKGMESSAGE}
-	@${ECHO} "You have installed ${PORTNAME} with SLANG support." >> ${PKGMESSAGE}
-	@${ECHO} "This may work for a color terminal only when defining" >> ${PKGMESSAGE}
-	@${ECHO} "COLORTERM=yes and COLORFGBG=\"color1;color2\" in your" >> ${PKGMESSAGE}
-	@${ECHO} "environment." >> ${PKGMESSAGE}
-	@${ECHO} "=====================================================" >> ${PKGMESSAGE}
+PKGMESSAGE=	${FILESDIR}/pkg-message.slang
 .endif
 
-.if !defined(BATCH) && ${PORT_OPTIONS:MSLANG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO}
-.endif
 .include <bsd.port.mk>

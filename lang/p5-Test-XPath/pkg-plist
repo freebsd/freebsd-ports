@@ -1,2 +1,3 @@
 %%SITE_PERL%%/Test/XPath.pm
+%%PERL5_MAN3%%/Test::XPath.3.gz
 @dirrmtry %%SITE_PERL%%/Test

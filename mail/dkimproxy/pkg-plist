@@ -8,5 +8,7 @@ lib/MSDW/SMTP/Client.pm
 lib/MSDW/SMTP/Server.pm
 lib/MySmtpProxyServer.pm
 lib/MySmtpServer.pm
+man/man8/dkimproxy_in.8.gz
+man/man8/dkimproxy_out.8.gz
 @dirrm lib/MSDW/SMTP
 @dirrm lib/MSDW

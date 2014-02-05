@@ -67,6 +67,8 @@ share/doc/pop3lite/modules/PAM
 share/doc/pop3lite/modules/SABOTAGE
 share/doc/pop3lite/modules/USERCONF
 share/doc/pop3lite/modules/VHOST
+man/man5/pop3lite.conf.5.gz
+man/man8/pop3lite.8.gz
 @dirrm include/pop3lite
 @dirrm lib/pop3lite
 @dirrm share/doc/pop3lite/modules

@@ -25,13 +25,14 @@ ADDITIONAL_LIB_DIRS+=	-L${WRKSRC}/libGSWrapper/obj
 MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 MAKE_FLAGS+=	debug=no
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|cp -u|#cp -p|' \
 		${WRKSRC}/WrapperFactory/GNUmakefile.postamble
+	${REINPLACE_CMD} -e 's|^GNUSTEP_INSTALLATION_DIR|#GNUSTEP_INSTALLATION_DIR|' \
+		${WRKSRC}/GNUmakefile
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Launcher/obj/GSWrapper_Launcher \
-		${GNUSTEP_SYSTEM_ROOT}/Applications/WrapperFactory.app/Resources/
+		${STAGEDIR}${GNUSTEP_SYSTEM_ROOT}/Applications/WrapperFactory.app/Resources/
 
 .include <bsd.port.mk>

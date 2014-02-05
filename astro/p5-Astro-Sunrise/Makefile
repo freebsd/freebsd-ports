@@ -14,9 +14,6 @@ BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime
 
 USES=		perl5
 USE_PERL5=	configure patch
-NO_STAGE=	yes
-
-MAN3=		Astro::Sunrise.3
 
 post-patch:
 	${PERL} -pi -e 's/(qw\(.*)\[1\];/($$1)[1];/; s/\r\n/\n/;' \

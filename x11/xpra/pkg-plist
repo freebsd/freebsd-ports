@@ -49,10 +49,10 @@
 @exec if [ ! -f %D/etc/xpra/xpra.conf ]; then cp -p %D/%F %B/xpra.conf; fi
 %%ETCDIR%%/xorg.conf.sample
 @exec if [ ! -f %D/etc/xpra/xorg.conf ]; then cp -p %D/%F %B/xorg.conf; fi
-%%PYTHON_LIBDIR%%/site-packages/xpra-0.11.1-py2.7.egg-info/PKG-INFO
-%%PYTHON_LIBDIR%%/site-packages/xpra-0.11.1-py2.7.egg-info/SOURCES.txt
-%%PYTHON_LIBDIR%%/site-packages/xpra-0.11.1-py2.7.egg-info/dependency_links.txt
-%%PYTHON_LIBDIR%%/site-packages/xpra-0.11.1-py2.7.egg-info/top_level.txt
+%%PYTHON_LIBDIR%%/site-packages/xpra-0.11.2-py2.7.egg-info/PKG-INFO
+%%PYTHON_LIBDIR%%/site-packages/xpra-0.11.2-py2.7.egg-info/SOURCES.txt
+%%PYTHON_LIBDIR%%/site-packages/xpra-0.11.2-py2.7.egg-info/dependency_links.txt
+%%PYTHON_LIBDIR%%/site-packages/xpra-0.11.2-py2.7.egg-info/top_level.txt
 %%PYTHON_LIBDIR%%/site-packages/xpra/__init__.py
 %%PYTHON_LIBDIR%%/site-packages/xpra/__init__.pyc
 %%PYTHON_LIBDIR%%/site-packages/xpra/__init__.pyo
@@ -716,7 +716,7 @@ man/man1/xpra_launcher.1.gz
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/client/gtk2
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/client/gl
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra/client
-@dirrm %%PYTHON_LIBDIR%%/site-packages/xpra-0.11.1-py2.7.egg-info
+@dirrm %%PYTHON_LIBDIR%%/site-packages/xpra-0.11.2-py2.7.egg-info
 @dirrm %%PYTHON_LIBDIR%%/site-packages/xpra
 @dirrm %%PYTHON_LIBDIR%%/site-packages
 @dirrm %%PYTHON_LIBDIR%%

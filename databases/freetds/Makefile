@@ -25,14 +25,11 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 
-MAN1=		datacopy.1 freebcp.1 tsql.1 bsqldb.1 defncopy.1
-
 OPTIONS_DEFINE=	OPENSSL GNUTLS MSDBLIB DOCS
 OPTIONS_RADIO=	ODBC
 OPTIONS_RADIO_ODBC=	IODBC UNIXODBC
 MSDBLIB_DESC=	MS SQL Server support (breaks databases/sybtcl)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}
@@ -81,12 +78,10 @@ post-patch:
 		 s| common.h||g'
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} images ${DOCSDIR}
-	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} doc ${DOCSDIR}
-.endif
-	@${MKDIR} ${PREFIX}/etc/freetds
-	@${INSTALL_DATA} ${WRKSRC}/interfaces ${PREFIX}/etc/freetds/interfaces.dist
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} images ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} doc ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/freetds
+	@${INSTALL_DATA} ${WRKSRC}/interfaces ${STAGEDIR}${PREFIX}/etc/freetds/interfaces.dist
 	@${ECHO_CMD} "Sample configuration files have been installed in ${PREFIX}/etc"
 	@${ECHO_CMD} "You should edit them and remove the .dist-suffix from their names"
 

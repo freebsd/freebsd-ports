@@ -90,6 +90,7 @@ PERL_PORT?=	perl5.16
 PERL_PORT?=	perl5.14
 .else  # ${PERL_LEVEL} < 501400
 PERL_PORT?=	perl5.12
+WARNING+=	"perl 5.12 is deprecated and will be removed on 2014-02-14. Please upgrade to lang/perl5.16"
 .endif
 
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VER}

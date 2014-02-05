@@ -28,6 +28,35 @@ bin/graph-easy
 %%SITE_PERL%%/Graph/Easy/Parser/Graphviz.pm
 %%SITE_PERL%%/Graph/Easy/Parser/VCG.pm
 %%SITE_PERL%%/Graph/Easy/Util.pm
+%%PERL5_MAN3%%/Graph::Easy.3.gz
+%%PERL5_MAN3%%/Graph::Easy::As_ascii.3.gz
+%%PERL5_MAN3%%/Graph::Easy::As_graphml.3.gz
+%%PERL5_MAN3%%/Graph::Easy::As_graphviz.3.gz
+%%PERL5_MAN3%%/Graph::Easy::As_txt.3.gz
+%%PERL5_MAN3%%/Graph::Easy::As_vcg.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Attributes.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Base.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Edge.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Edge::Cell.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Group.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Group::Anon.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Group::Cell.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Layout.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Layout::Chain.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Layout::Force.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Layout::Grid.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Layout::Path.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Layout::Repair.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Layout::Scout.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Node.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Node::Anon.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Node::Cell.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Node::Empty.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Parser.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Parser::Graphviz.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Parser::VCG.3.gz
+%%PERL5_MAN3%%/Graph::Easy::Util.3.gz
+man/man1/graph-easy.1.gz
 @dirrmtry %%SITE_PERL%%/Graph/Easy/Parser
 @dirrmtry %%SITE_PERL%%/Graph/Easy/Node
 @dirrmtry %%SITE_PERL%%/Graph/Easy/Layout

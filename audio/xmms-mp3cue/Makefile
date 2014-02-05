@@ -8,7 +8,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://brianvictor.tripod.com/
 DISTNAME=	XMMS-mp3cue-${PORTVERSION}
 
-MAINTAINER=	r2@music.lt
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS mp3cue adds cue file support to XMMS
 
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms

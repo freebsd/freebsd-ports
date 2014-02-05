@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.phpcompiler.org/src/archive/
 MAINTAINER=	eg@fbsd.lt
 COMMENT=	A compiler for the PHP language
 
-USE_GMAKE=	yes
+USES=	gmake
 GNU_CONFIGURE=	yes
 CFLAGS+=	-fgnu89-inline
 
@@ -19,5 +19,4 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} 's/insert/this->&/' \
 		${WRKSRC}/include/phc/lib/List.h
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

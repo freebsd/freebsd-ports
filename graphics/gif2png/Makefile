@@ -15,11 +15,11 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 USE_PYTHON_RUN=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=		${PORTNAME}.1 web2png.1
-PLIST_FILES=	bin/${PORTNAME} bin/web2png
+PLIST_FILES=	bin/${PORTNAME} bin/web2png \
+		man/man1/gif2png.1.gz \
+		man/man1/web2png.1.gz
 
 CPPFLAGS+=	`libpng-config --I_opts`
 LDFLAGS+=	`libpng-config --L_opts`
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

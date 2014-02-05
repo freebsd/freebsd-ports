@@ -1,2 +1,3 @@
 %%SITE_PERL%%/Graphics/GnuplotIF.pm
+%%PERL5_MAN3%%/Graphics::GnuplotIF.3.gz
 @dirrmtry %%SITE_PERL%%/Graphics

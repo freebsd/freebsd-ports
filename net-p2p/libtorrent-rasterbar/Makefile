@@ -5,13 +5,12 @@ PORTNAME=	libtorrent-rasterbar
 PORTVERSION=	0.16.13
 PORTREVISION=	2
 CATEGORIES?=	net-p2p ipv6
-MASTER_SITES=	GOOGLE_CODE
-PROJECTHOST=	libtorrent
+MASTER_SITES=	SF/${PORTNAME:S/-rasterbar//}/${PORTNAME:S/-rasterbar//}/
 
 MAINTAINER=	nemysis@FreeBSD.org
 COMMENT?=	C++ library implementing a BitTorrent client
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS?=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
 		libGeoIP.so:${PORTSDIR}/net/GeoIP
@@ -19,7 +18,11 @@ LIB_DEPENDS?=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
 USES=		compiler:c++11-lang pathfix pkgconfig iconv
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
+CFLAGS+=	-w
 USE_LDCONFIG=	yes
+
+# Wrong versioning upstream
+PORTSCOUT=	skipv:0.16.14
 
 CONFIGURE_ARGS=	--disable-debug \
 		--disable-static \
@@ -34,6 +37,9 @@ CONFIGURE_ARGS=	--disable-debug \
 		--with-libiconv \
 		--with-openssl=${OPENSSLBASE}
 
+SHLIB_VER=	7
+PLIST_SUB+=	SHLIB_VER="${SHLIB_VER}"
+
 SUB_FILES=	pkg-message
 
 PORTDOCS=	*
@@ -47,7 +53,8 @@ DOC_FILES2=	*.png *.jpg *.gif *.html *.rst *.css
 
 PORTEXAMPLES=	*.cpp
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES STRIP
+OPTIONS_DEFAULT=	STRIP
 
 .include <bsd.port.options.mk>
 
@@ -63,6 +70,14 @@ post-patch:
 		${WRKSRC}/Jamfile
 
 post-install:
+.if ${PORT_OPTIONS:MSTRIP}
+	${STRIP_CMD} \
+	${STAGEDIR}${PREFIX}/lib/libtorrent-rasterbar.so.${SHLIB_VER}
+.else
+	${STRIP_CMD} \
+	${STAGEDIR}${PREFIX}/lib/${PYTHON_VERSION}/site-packages/libtorrent.so
+.endif
+
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR2}

@@ -23,6 +23,22 @@ bin/mp3info2
 %%SITE_PERL%%/Normalize/Text/Music_Fields.pm
 %%SITE_PERL%%/Encode/transliterate_win1251.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MP3/Tag/.packlist
+%%PERL5_MAN3%%/MP3::Tag.3.gz
+%%PERL5_MAN3%%/MP3::Tag::CDDB_File.3.gz
+%%PERL5_MAN3%%/MP3::Tag::Cue.3.gz
+%%PERL5_MAN3%%/MP3::Tag::File.3.gz
+%%PERL5_MAN3%%/MP3::Tag::ID3v1.3.gz
+%%PERL5_MAN3%%/MP3::Tag::ID3v2.3.gz
+%%PERL5_MAN3%%/MP3::Tag::ID3v2_Data.3.gz
+%%PERL5_MAN3%%/MP3::Tag::ImageExifTool.3.gz
+%%PERL5_MAN3%%/MP3::Tag::ImageSize.3.gz
+%%PERL5_MAN3%%/MP3::Tag::Inf.3.gz
+%%PERL5_MAN3%%/MP3::Tag::LastResort.3.gz
+%%PERL5_MAN3%%/MP3::Tag::ParseData.3.gz
+%%PERL5_MAN3%%/Normalize::Text::Music_Fields.3.gz
+man/man1/audio_rename.1.gz
+man/man1/mp3info2.1.gz
+man/man1/typeset_audio_dir.1.gz
 @dirrm %%SITE_PERL%%/Normalize/Text/Music_Fields
 @dirrm %%SITE_PERL%%/Normalize/Text
 @dirrm %%SITE_PERL%%/Normalize

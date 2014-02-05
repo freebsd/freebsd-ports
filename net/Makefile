@@ -265,6 +265,9 @@
     SUBDIR += isc-dhcp42-client
     SUBDIR += isc-dhcp42-relay
     SUBDIR += isc-dhcp42-server
+    SUBDIR += isc-dhcp43-client
+    SUBDIR += isc-dhcp43-relay
+    SUBDIR += isc-dhcp43-server
     SUBDIR += iscsi-target
     SUBDIR += istgt
     SUBDIR += jags

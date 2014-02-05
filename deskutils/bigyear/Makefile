@@ -9,22 +9,17 @@ MASTER_SITES=	http://mahon.cwx.net/sources/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A program to print a large (one month per page) calendar
+COMMENT=	Program to print a large (one month per page) calendar
 
-MAN1=		bigyear.1
-PLIST_FILES=	bin/bigyear
+MAKE_ARGS=	CFLAGS="${CFLAGS}"
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/bigyear man/man1/bigyear.1.gz
+
 post-extract:
 	${RM} ${WRKSRC}/bigyear
 
-do-patch:
-# No point wasting inodes with patches
-	@(${SED} -e 's,^CFLAGS,#CFLAGS,g' ${WRKSRC}/Makefile > ${WRKSRC}/foo && \
-		${MV} ${WRKSRC}/foo ${WRKSRC}/Makefile)
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bigyear ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/bigyear.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/bigyear ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/bigyear.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>

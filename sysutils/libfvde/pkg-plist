@@ -7,9 +7,12 @@ include/libfvde/error.h
 include/libfvde/extern.h
 include/libfvde/features.h
 include/libfvde/types.h
-lib/libfvde.so.1
-lib/libfvde.so
-lib/libfvde.la
 lib/libfvde.a
+lib/libfvde.la
+lib/libfvde.so
+lib/libfvde.so.1
 libdata/pkgconfig/libfvde.pc
+man/man1/fvdeinfo.1.gz
+man/man1/fvdemount.1.gz
+man/man3/libfvde.3.gz
 @dirrm include/libfvde

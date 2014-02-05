@@ -1,4 +1,5 @@
 bin/qtm
+man/man1/qtm.1.gz
 share/applications/qtm.desktop
 %%PORTDOCS%%%%DOCSDIR%%/Changelog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL

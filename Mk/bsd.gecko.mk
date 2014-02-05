@@ -176,7 +176,7 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         is given by the maintainer via the port or by the
 #                         user via defined variable try to find the highest
 #                         stable installed version.
-#                         Available values: yes 24+ 26+ 24 26
+#                         Available values: yes 24+ 27+ 24 27
 #                         NOTE:
 #                         default value 24 is used in case of USE_FIREFOX=yes
 #
@@ -218,11 +218,11 @@ _FIREFOX_BUILD_DEPENDS=		yes
 .endif
 
 _FIREFOX_DEFAULT_VERSION=	24
-_FIREFOX_VERSIONS=			24 26
-_FIREFOX_RANGE_VERSIONS=	24+ 26+
+_FIREFOX_VERSIONS=			24 27
+_FIREFOX_RANGE_VERSIONS=	24+ 27+
 
 # For specifying [24, ..]+
-_FIREFOX_26P=	26 ${_FIREFOX_24P}
+_FIREFOX_27P=	27 ${_FIREFOX_24P}
 _FIREFOX_24P=	24
 
 # Set the default Firefox version and check if USE_FIREFOX=yes was given
@@ -269,7 +269,7 @@ IGNORE=			cannot install: unknown Firefox version: firefox-${USE_FIREFOX:C/([0-9
 
 # Dependence lines for different Firefox versions
 24_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox-esr
-26_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
+27_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
 
 # Add dependencies
 .if defined(USE_FIREFOX)
@@ -560,12 +560,10 @@ CPP=			${CC} -E
 USE_GCC?=		yes
 .endif
 
-.if ${OSVERSION} > 1000011
-# use jemalloc 3.0.0 API in libc
-MOZ_EXPORT+=	MOZ_JEMALLOC=1 MOZ_JEMALLOC3=1
-.else
+# use jemalloc 3.0.0 API for stats/tuning
+MOZ_EXPORT+=	MOZ_JEMALLOC3=1
+.if ${OSVERSION} < 1000012
 MOZ_OPTIONS+=	--enable-jemalloc
-MOZ_EXPORT+=	MOZ_JEMALLOC=1 MOZ_JEMALLOC3=1
 .endif
 
 # Standard depends
@@ -589,6 +587,7 @@ hunspell_MOZ_OPTIONS=	--enable-system-hunspell
 icu_LIB_DEPENDS=		icui18n:${PORTSDIR}/devel/icu
 icu_MOZ_OPTIONS=		--with-system-icu --with-intl-api --enable-intl-api
 
+-jpeg_BUILD_DEPENDS=yasm:${PORTSDIR}/devel/yasm
 # XXX: depends on pkgng package flavor support
 #jpeg_LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/libjpeg-turbo
 jpeg_LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
@@ -612,6 +611,7 @@ sqlite_LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
 sqlite_MOZ_OPTIONS=	--enable-system-sqlite
 sqlite_EXTRACT_AFTER_ARGS=	--exclude mozilla*/db/sqlite3
 
+-vpx_BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
 vpx_LIB_DEPENDS=	vpx:${PORTSDIR}/multimedia/libvpx
 vpx_MOZ_OPTIONS=	--with-system-libvpx
 vpx_EXTRACT_AFTER_ARGS=	--exclude mozilla*/media/libvpx
@@ -630,6 +630,8 @@ LIB_DEPENDS+=	${${dep}_LIB_DEPENDS}
 RUN_DEPENDS+=	${${dep}_RUN_DEPENDS}
 MOZ_OPTIONS+=	${${dep}_MOZ_OPTIONS}
 EXTRACT_AFTER_ARGS+=	${${dep}_EXTRACT_AFTER_ARGS}
+.else
+BUILD_DEPENDS+=	${-${dep}_BUILD_DEPENDS}
 .endif
 .endfor
 
@@ -700,8 +702,13 @@ MOZ_OPTIONS+=	--disable-dbus --disable-libnotify
 .endif
 
 .if ${PORT_OPTIONS:MGSTREAMER}
+. if ${MOZILLA_VER:R:R} >= 30 || exists(${FILESDIR}/patch-bug806917)
+USE_GSTREAMER1?=good libav
+MOZ_OPTIONS+=	--enable-gstreamer=1.0
+. else
 USE_GSTREAMER?=	good ffmpeg
 MOZ_OPTIONS+=	--enable-gstreamer
+. endif
 .else
 MOZ_OPTIONS+=	--disable-gstreamer
 .endif
@@ -759,6 +766,8 @@ MOZ_OPTIONS+=	--enable-alsa
 .if ${PORT_OPTIONS:MPULSEAUDIO}
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 MOZ_OPTIONS+=	--enable-pulseaudio
+.else
+MOZ_OPTIONS+=	--disable-pulseaudio
 .endif
 
 .if ${PORT_OPTIONS:MDEBUG}

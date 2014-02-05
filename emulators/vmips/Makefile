@@ -10,11 +10,9 @@ MASTER_SITES=	SF \
 MAINTAINER=	brg@dgate.org
 COMMENT=	MIPS R3000 simulator
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
-MAN1=		vmips.1 vmipstool.1
 INFO=		vmips
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

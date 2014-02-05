@@ -3,4 +3,4 @@ from one file descriptor to another (a socket). The phrase "zero-copy" refers
 to the fact that all of the copying of data between the two descriptors is
 done entirely by the kernel, with no copying of data into userspace buffers.
 
-WWW:	http://code.google.com/p/pysendfile
+WWW: http://code.google.com/p/pysendfile

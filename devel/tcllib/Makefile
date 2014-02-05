@@ -10,6 +10,11 @@ MASTER_SITES=	SF
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Collection of utility modules for Tcl
 
+LICENSE=	TclTk
+LICENSE_NAME=	Tcl/Tk License
+LICENSE_FILE=	${WRKSRC}/license.terms
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
+
 OPTIONS_DEFINE=	DOCS MANPAGES
 
 USES+=		tcl
@@ -31,9 +36,10 @@ INSTALL_ARGS=	-pkgs -pkg-path ${STAGEDIR}${PREFIX}/lib/tcllib \
 .if ${PORT_OPTIONS:MMANPAGES}
 ALL_TARGET+=	nroff-doc
 INSTALL_ARGS+=	-nroff-path ${STAGEDIR}${PREFIX}/man/mann
-.include "Makefile.man"
+PLIST_SUB+=	MAN=""
 .else
 INSTALL_ARGS+=	-no-nroff
+PLIST_SUB+=	MAN="@comment "
 .endif
 
 #

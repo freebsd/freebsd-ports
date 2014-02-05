@@ -16,10 +16,4 @@ USE_LDCONFIG=	Yes
 USE_GNOME=	glib12
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=		ppdfilt.1
-MAN3=           ppd_check_option_is_marked.3 ppd_emit_to_file.3 \
-		ppd_file_free.3 ppd_file_new.3 ppd_find_choice.3 \
-		ppd_get_num_conflicts.3 ppd_get_page_length.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tcpreplay
-PORTVERSION=	4.0.2
+PORTVERSION=	4.0.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -20,5 +20,8 @@ CONFIGURE_ARGS=	--program-transform-name='s|.*\(tcp.*\)|\1|' \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-Wall -O3||' ${WRKSRC}/${CONFIGURE_SCRIPT}
+
+regression-test: build
+	@cd ${WRKSRC} && ${MAKE} -s test
 
 .include <bsd.port.mk>

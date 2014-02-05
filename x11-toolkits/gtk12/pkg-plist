@@ -219,6 +219,7 @@ share/themes/Default/gtk/gtkrc.vi_VN.viscii111
 share/themes/Default/gtk/gtkrc.yi
 share/themes/Default/gtk/gtkrc.zh_CN
 share/themes/Default/gtk/gtkrc.zh_TW.Big5
+man/man1/gtk-config.1.gz
 @exec mkdir -p %D/lib/gtk/themes/engines
 %%NLS%%@dirrmtry share/locale/sp/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sp

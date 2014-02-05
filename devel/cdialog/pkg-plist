@@ -8,6 +8,8 @@ lib/libcdialog.a
 lib/libcdialog.la
 lib/libcdialog.so
 lib/libcdialog.so.10
+man/man1/cdialog.1.gz
+man/man3/cdialog.3.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/calendar-stdout

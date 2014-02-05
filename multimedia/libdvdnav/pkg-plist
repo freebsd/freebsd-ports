@@ -5,10 +5,10 @@ include/dvdnav/dvdnav_events.h
 lib/libdvdnav.a
 lib/libdvdnav.so
 lib/libdvdnav.so.4
-lib/libdvdnav.so.4.2.0
+lib/libdvdnav.so.4.2.1
 lib/libdvdnavmini.so
 lib/libdvdnavmini.so.4
-lib/libdvdnavmini.so.4.2.0
+lib/libdvdnavmini.so.4.2.1
 libdata/pkgconfig/dvdnav.pc
 libdata/pkgconfig/dvdnavmini.pc
 @dirrm include/dvdnav

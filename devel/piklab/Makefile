@@ -3,16 +3,13 @@
 
 PORTNAME=	piklab
 PORTVERSION=	0.16.2
-CATEGORIES=	devel
+CATEGORIES=	devel kde
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	KDE IDE for microcontroller development
+COMMENT=	KDE/Qt IDE for microcontroller development
 
 LICENSE=	GPLv2 # (or later)
-
-OPTIONS_DEFINE=	KDE4
-OPTIONS_DEFAULT=KDE4
 
 USE_BZIP2=	yes
 DOS2UNIX_FILES=	cmake/Piklab.cmake
@@ -20,37 +17,21 @@ USE_QT4=	corelib gui qt3support qtestlib xml \
 		moc_build qmake_build rcc_build uic_build
 USES=		cmake gettext readline dos2unix
 
-MAN1=		piklab-hex.1 piklab-prog.1
+OPTIONS_DEFINE=	KDE4
+OPTIONS_DEFAULT=	KDE4
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MKDE4}
-USE_KDE4=	automoc4 kdehier kdelibs kdeprefix sharedmime
-INSTALLS_ICONS=	yes
-MAN1+=		piklab.1x
-PLIST_SUB+=	KDE4=""
-.else
-CMAKE_ARGS+=	-DQT_ONLY:BOOL=ON \
+KDE4_USES=	shared-mime-info
+KDE4_USE=	KDE4=automoc4,kdehier,kdelibs,kdeprefix
+KDE4_CMAKE_OFF=	-DQT_ONLY:BOOL=ON \
 		-DLOCALE_INSTALL_DIR:STRING="${PREFIX}/share/locale"
-PLIST_SUB+=	KDE4="@comment "
-.endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64
-.endif
+BROKEN_sparc64=		does not compile on sparc64
 
 post-patch:
 	@${REINPLACE_CMD} -e \
-		'/man/s|^|#| ; \
-		 /install/s|^|#|' ${WRKSRC}/CMakeLists.txt
+		'/install/s|^|#|' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e \
+		's,share/man,man,' ${WRKSRC}/man/CMakeLists.txt
 
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/man/piklab-*.1 ${MANPREFIX}/man/man1
-.if ${PORT_OPTIONS:MKDE4}
-	${INSTALL_MAN} ${WRKSRC}/man/piklab.1x ${MANPREFIX}/man/man1
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

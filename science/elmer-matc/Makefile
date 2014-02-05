@@ -18,7 +18,6 @@ USES=		fortran
 
 PLIST_SUB=	ARCH=${MACHINE_ARCH}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"

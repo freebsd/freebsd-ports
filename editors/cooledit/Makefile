@@ -13,13 +13,10 @@ COMMENT=	Suite of utilities, including a GUI editor
 
 USE_AUTOTOOLS=	libtool
 USE_PYTHON=	yes
-USES=		gettext
-USE_GMAKE=	yes
+USES=		gettext gmake
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xt
 USE_LDCONFIG=	yes
-
-MAN1=		cooledit.1 coolman.1 smalledit.1
 
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -29,7 +26,6 @@ CFLAGS+=	-DHAVE_MBRTOWC
 CONFIGURE_ARGS+=	--enable-NeXT-look
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|po pixmap man|po man|g' ${WRKSRC}/Makefile.in
 

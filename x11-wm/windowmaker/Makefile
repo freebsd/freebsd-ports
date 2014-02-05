@@ -3,6 +3,7 @@
 
 PORTNAME=	windowmaker
 PORTVERSION=	0.95.5
+PORTREVISION=	1
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://windowmaker.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source/release
@@ -62,9 +63,7 @@ post-install:
 	@${MKDIR} \
 	    ${STAGEDIR}${PREFIX}/GNUstep/Applications/WPrefs.app/xpm \
 	    ${STAGEDIR}${PREFIX}/share/WindowMaker/Sounds
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.post.mk>

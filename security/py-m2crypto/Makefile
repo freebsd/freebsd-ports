@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	m2crypto
-PORTVERSION=	0.21.1
-PORTREVISION=	1
+PORTVERSION=	0.22.3
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,15 +13,10 @@ COMMENT=	Crypto and SSL toolkit for Python
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
 
+PYDISTUTILS_AUTOPLIST=	yes
 PYDISTUTILS_BUILDARGS=	build_ext --openssl="${OPENSSLBASE}"
-PYDISTUTILS_PKGNAME=	M2Crypto
 USE_OPENSSL=	yes
 USE_PYDISTUTILS=yes
 USE_PYTHON=	2
-MAKE_ARGS=	PYTHON_VERSION=${PYTHON_VER}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|setuptools|do_not_use_&|; /test_suite/d' ${WRKSRC}/${PYSETUP}
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/SWIG/Makefile
 
 .include <bsd.port.mk>

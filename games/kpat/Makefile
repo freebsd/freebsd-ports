@@ -12,8 +12,8 @@ COMMENT=	${${PORTNAME}_DESC}
 
 CONFLICTS_INSTALL=	kdegames-4.[0-9].*
 
-USE_KDE4=	kdehier kdelibs kdeprefix libkdegames automoc4 sharedmime
-USES=		cmake:outsource
+USE_KDE4=	kdehier kdelibs kdeprefix libkdegames automoc4
+USES=		cmake:outsource shared-mime-info
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
 

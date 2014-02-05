@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xfsprogs
-PORTVERSION=	2.9.4
-PORTREVISION=	3
+PORTVERSION=	2.9.8
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://oss.sgi.com/projects/xfs/cmd_tars/ \
 		ftp://oss.sgi.com/projects/xfs/previous/cmd_tars/
@@ -11,44 +10,41 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	-1.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A set of utilities and library to manipulate an xfs filesystem
+COMMENT=	Set of utilities and library to manipulate an XFS filesystem
 
-USE_GMAKE=	yes
-USES=		gettext
+LICENSE=	GPLv2
+
+USES=		gettext gmake
 USE_AUTOTOOLS=	autoconf libtool:env
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=		INSTALL="${INSTALL} ${_BINOWNGRP}" \
-			LIBTOOL=${LIBTOOL}
+			LIBTOOL=${LIBTOOL} OPTIMIZER=" "
 MAKE_ENV+=		INSTALL="${INSTALL} ${_BINOWNGRP}"
 CONFIGURE_ARGS+=	--disable-shared --enable-readline
 ALL_TARGET=
 
-MAN5=	xfs.5
-MAN8=	fsck.xfs.8 mkfs.xfs.8 xfs_admin.8 xfs_bmap.8 xfs_check.8 \
-	xfs_copy.8 xfs_db.8 xfs_freeze.8 xfs_growfs.8 xfs_info.8 \
-	xfs_io.8 xfs_logprint.8 xfs_mdrestore.8 xfs_metadump.8 xfs_mkfile.8 xfs_ncheck.8 \
-	xfs_quota.8 xfs_repair.8 xfs_rtcp.8
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-post-extract:
-	${LN} -sf ${WRKDIR}/${PORTNAME}-${PORTVERSION} ${WRKSRC}
-	${REINPLACE_CMD} -e '/utmp/d' \
-		${WRKSRC}/quota/report.c ${WRKSRC}/quota/util.c
-
-pre-configure:
-	${RM} -f ${WRKSRC}/configure
-
-post-configure:
-	${FIND} ${WRKSRC}/include -name "builddefs" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|LIBRT =|LIBRT = -lrt|g'
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 post-patch:
-	${FIND} ${WRKDIR} -name "*.m4" | ${XARGS} ${REINPLACE_CMD} -e \
+	@${REINPLACE_CMD} -e '/utmp/d' \
+		${WRKSRC}/quota/report.c ${WRKSRC}/quota/util.c
+	@${FIND} ${WRKDIR} -name "*.m4" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|/usr/local|'${LOCALBASE}'|g'
-.ifdef NOPORTDOCS
-	@${REINPLACE_CMD} -e 's/doc//' -e '/PKG_DOC_DIR/d' ${WRKSRC}/Makefile
-.endif
+	@${RM} -f ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+post-configure:
+	@${FIND} ${WRKSRC}/include -name "builddefs" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|LIBRT =|LIBRT = -lrt|g'
+	@${REINPLACE_CMD} 's|$$(PKG_DOC_DIR)|$$(DESTDIR)&|g' ${WRKSRC}/Makefile
+.for dir in db doc fsck growfs io logprint mdrestore mkfs quota repair rtcp
+	@${REINPLACE_CMD} -E 's,PKG_(BIN|DOC|INC|SBIN)_DIR,DESTDIR)$$(&,g' \
+		${WRKSRC}/${dir}/Makefile
+.endfor
+.for i in 3 5 8
+	@${REINPLACE_CMD} 's|$$(PKG_MAN_DIR)|$$(DESTDIR)&|g' \
+		${WRKSRC}/man/man${i}/Makefile
+.endfor
+	@${REINPLACE_CMD} 's|$$(PKG_LOCALE_DIR)|$$(DESTDIR)&|' \
+		${WRKSRC}/include/buildmacros
+
+.include <bsd.port.mk>

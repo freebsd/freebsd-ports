@@ -1,0 +1,10 @@
+@unexec if cmp -s %D/etc/fcheck.cfg %D/etc/fcheck.cfg.sample; then rm -f %D/etc/fcheck.cfg ; fi
+etc/fcheck.cfg.sample
+@exec if [ ! -f %D/etc/fcheck.cfg ]; then cp -p %D/%F %B/fcheck.cfg; fi
+@exec mkdir -p /var/fcheck/logs
+sbin/fcheck
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/install
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
+@unexec rmdir /var/fcheck/logs
+@unexec rmdir /var/fcheck

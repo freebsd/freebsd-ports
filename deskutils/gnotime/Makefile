@@ -32,7 +32,6 @@ INSTALLS_OMF=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		gnotime.1 gnotime-remote.1
 GCONF_SCHEMAS=	gnotime.schemas
 
 QOF_VERSION=	0.7.5
@@ -41,7 +40,6 @@ QOF_WRKSRC=	${WRKDIR}/${QOF_DISTNAME}
 LIBQOF_CFLAGS=	-I${QOF_WRKSRC}/qof
 LIBQOF_LIBS=	-L${QOF_WRKSRC}/qof/.libs -lqof
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/^AM_CFLAGS =/s|-g||' ${WRKSRC}/src/Makefile.in

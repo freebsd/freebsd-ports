@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	botan
-PORTVERSION=	1.8.13
+PORTVERSION=	1.8.14
 CATEGORIES=	security
 MASTER_SITES=	http://files.randombit.net/botan/v1.8/
 DISTNAME=	Botan-${PORTVERSION}
@@ -11,8 +11,11 @@ EXTRACT_SUFX=	.tbz
 MAINTAINER=	lapo@lapo.it
 COMMENT=	Portable, easy to use, and efficient C++ crypto library
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/license.txt
+
+DEPRECATED=	Botan 1.8 have known bugs and is no longer supported upstream, migrate to security/botan110
+EXPIRATION_DATE=	2014-06-30
 
 OPTIONS_DEFINE=		SSL GMP ECC
 OPTIONS_DEFAULT=	SSL GMP ECC
@@ -22,16 +25,14 @@ USE_BZIP2=	yes
 USE_PYTHON_BUILD=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	configure.py
-CONFIGURE_ARGS=	--prefix=${PREFIX} --with-tr1-implementation=boost \
-		--with-bzip2 --with-zlib
-USE_GMAKE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --with-bzip2 --with-zlib
+USES=		gmake
 MAKE_ARGS=	CXX="${CXX}" LIB_OPT="${CXXFLAGS}"
 USE_LDCONFIG=	yes
 PLIST_FILES=	bin/botan-config lib/libbotan.a lib/libbotan.so lib/libbotan.so.0 libdata/pkgconfig/botan-1.8.pc
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
@@ -40,7 +41,7 @@ CONFIGURE_ARGS+=--with-openssl
 .endif
 
 .if ${PORT_OPTIONS:MGMP}
-LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
+LIB_DEPENDS+=	libgmp.so:${PORTSDIR}/math/gmp
 CONFIGURE_ARGS+=--with-gnump
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib"
 .endif
@@ -63,7 +64,7 @@ post-patch:
 .endif
 
 post-install:
-	@(cd ${PREFIX}; ${FIND} -s include/botan -not -type d) >> ${TMPPLIST}
+	@(cd ${STAGEDIR}${PREFIX}; ${FIND} -s include/botan -not -type d) >> ${TMPPLIST}
 	@${ECHO_CMD} @dirrm include/botan >> ${TMPPLIST}
 
 .include <bsd.port.mk>

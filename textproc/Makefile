@@ -1140,7 +1140,6 @@
     SUBDIR += publican
     SUBDIR += pure-csv
     SUBDIR += pure-xml
-    SUBDIR += py-4suite
     SUBDIR += py-4suite-xml
     SUBDIR += py-Chameleon
     SUBDIR += py-MarkupSafe
@@ -1178,6 +1177,7 @@
     SUBDIR += py-pyctpp2
     SUBDIR += py-pyelasticsearch
     SUBDIR += py-pygments
+    SUBDIR += py-pyscss
     SUBDIR += py-pysrt
     SUBDIR += py-pystache
     SUBDIR += py-pyx12

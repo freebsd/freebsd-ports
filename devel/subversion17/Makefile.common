@@ -3,7 +3,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.7.14
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 DIST_SUBDIR=	subversion17
@@ -47,7 +47,7 @@ GNOME_KEYRING_LIB_DEPENDS=	libgcr.so:${PORTSDIR}/security/gnome-keyring
 
 KDE_KWALLET_CONFIGURE_OFF=	--without-kwallet
 KDE_KWALLET_CONFIGURE_ON=	--with-kwallet=${KDE4_PREFIX}
-KDE_KWALLET_USE=		KDE4=kdelibs runtime
+KDE_KWALLET_USE=		KDE4=kdelibs,runtime
 
 MAINTAINER_DEBUG_CFLAGS=	-g
 MAINTAINER_DEBUG_CONFIGURE_ON=	--enable-maintainer-mode --enable-debug
@@ -123,3 +123,9 @@ post-patch:
 .if ${PORT_OPTIONS:MFREEBSD_TEMPLATE} && defined(ORGANIZATION)
 	@${ECHO_CMD} "#define ORGANIZATION_NAME \"${ORGANIZATION}\"" > ${WRKSRC}/subversion/freebsd-organization.h
 .endif
+# shebangfix
+	${GREP} -Rl -e '#!/bin/b' -e '#!/bin/env' -e '#!/usr/bin/p' ${WRKSRC}/tools/ \
+		| ${XARGS} ${REINPLACE_CMD} -e '1s|#\!/bin/b|#\!/usr/local/bin/b|' \
+		-e '1s|#\!/bin/env|#\!/usr/bin/env|' \
+		-e '1s|#\!/usr/bin/p|#\!/usr/local/bin/p|'
+

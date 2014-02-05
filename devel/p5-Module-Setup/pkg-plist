@@ -35,6 +35,24 @@ bin/module-setup
 %%SITE_PERL%%/Module/Setup/Plugin/VC/SVN.pm
 %%SITE_PERL%%/Module/Setup/Test/Flavor.pm
 %%SITE_PERL%%/Module/Setup/Test/Utils.pm
+%%PERL5_MAN3%%/Module::MEMOja.3.gz
+%%PERL5_MAN3%%/Module::Setup.3.gz
+%%PERL5_MAN3%%/Module::Setup::Devel.3.gz
+%%PERL5_MAN3%%/Module::Setup::Flavor.3.gz
+%%PERL5_MAN3%%/Module::Setup::Flavor::CatalystStarter.3.gz
+%%PERL5_MAN3%%/Module::Setup::Flavor::CodeRepos.3.gz
+%%PERL5_MAN3%%/Module::Setup::Flavor::Default.3.gz
+%%PERL5_MAN3%%/Module::Setup::Flavor::GitHub.3.gz
+%%PERL5_MAN3%%/Module::Setup::Flavor::PBP.3.gz
+%%PERL5_MAN3%%/Module::Setup::Flavor::SelectVC.3.gz
+%%PERL5_MAN3%%/Module::Setup::Flavor::XS.3.gz
+%%PERL5_MAN3%%/Module::Setup::Helper.3.gz
+%%PERL5_MAN3%%/Module::Setup::Plugin.3.gz
+%%PERL5_MAN3%%/Module::Setup::Plugin::Helper.3.gz
+%%PERL5_MAN3%%/Module::Setup::Plugin::VC::Git.3.gz
+%%PERL5_MAN3%%/Module::Setup::Test::Flavor.3.gz
+%%PERL5_MAN3%%/Module::Setup::Test::Utils.3.gz
+man/man1/module-setup.1.gz
 @dirrm %%SITE_PERL%%/Module/Setup/Test
 @dirrm %%SITE_PERL%%/Module/Setup/Plugin/VC
 @dirrm %%SITE_PERL%%/Module/Setup/Plugin/Test

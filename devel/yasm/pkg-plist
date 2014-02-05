@@ -31,4 +31,9 @@ include/libyasm/symrec.h
 include/libyasm/valparam.h
 include/libyasm/value.h
 lib/libyasm.a
+man/man1/yasm.1.gz
+man/man7/yasm_arch.7.gz
+man/man7/yasm_dbgfmts.7.gz
+man/man7/yasm_objfmts.7.gz
+man/man7/yasm_parsers.7.gz
 @dirrm include/libyasm

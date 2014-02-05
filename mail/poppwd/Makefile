@@ -12,9 +12,7 @@ COMMENT=	Implementation of the Eudora password changing protocol
 
 WRKSRC=		${WRKDIR}/poppwd
 
-MAN8=		poppwd.8
-MANCOMPRESSED=	maybe
-PLIST_FILES=	libexec/poppwd
+PLIST_FILES=	libexec/poppwd \
+		man/man8/poppwd.8.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

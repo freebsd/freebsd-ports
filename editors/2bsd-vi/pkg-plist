@@ -5,5 +5,10 @@ bin/vi
 bin/view
 libexec/exrecover
 libexec/expreserve
+man/man1/edit.1.gz
+man/man1/ex.1.gz
+man/man1/vedit.1.gz
+man/man1/vi.1.gz
+man/man1/view.1.gz
 @exec install -d -m 1777 %%PRESERVEDIR%%
 @unexec rmdir %%PRESERVEDIR%% 2> /dev/null || true

@@ -28,9 +28,9 @@ DEBUGINFO_DESC=	Add debug information (increased verbosity)
 
 .include <bsd.port.options.mk>
 
-HAS_HWMPC!=	${SYSCTL} kern.hwpmc >/dev/null 2>&1 && echo yes || true
+HAS_HWPMC!=	${SYSCTL} kern.hwpmc.nsamples >/dev/null 2>&1 && echo yes || ${ECHO_CMD}
 
-.if ${HAS_HWMPC} != "yes"
+.if ${HAS_HWPMC} != yes
 IGNORE=		needs hwmpc module loaded or compiled into the kernel. \
 		Please consult hwpmc(4) on how to do it (or cat pkg-message)
 .endif

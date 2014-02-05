@@ -20,7 +20,6 @@ CONFIGURE_ARGS=	--localstatedir=/var --with-randomdev=/dev/random
 OPTIONS_DEFINE=	IPV6 THREADS
 OPTIONS_DEFAULT=	IPV6 THREADS
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MIPV6}
@@ -34,11 +33,6 @@ CONFIGURE_ARGS+=	--enable-threads
 .else
 CONFIGURE_ARGS+=	--disable-threads
 .endif
-
-MAN3=	getaddrinfo.3 gethostbyname.3 getipnodebyname.3 getnameinfo.3 \
-	getnetent.3 hesiod.3 inet_cidr.3 resolver.3 tsig.3
-MAN5=	resolver.5 irs.conf.5
-MAN7=	hostname.7
 
 verify:	checksum
 	gpg --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.asc

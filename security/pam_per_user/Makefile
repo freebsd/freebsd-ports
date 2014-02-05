@@ -12,7 +12,4 @@ COMMENT=	PAM module for per-user authentication
 
 USE_AUTOTOOLS=	libtool
 
-MAN5=		pam_per_user.5
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

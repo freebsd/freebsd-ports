@@ -14,10 +14,6 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 
-MAN1=		pfqueue.1
-MAN5=		pfqueue.conf.5
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|-lc_r|${PTHREAD_LIBS}|g" \
 		-e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure

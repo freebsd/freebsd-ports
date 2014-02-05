@@ -3,6 +3,7 @@
 
 PORTNAME=	stdlib
 PORTVERSION=	1.9.3
+PORTREVISION=	1
 
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}doc-
 CATEGORIES=	lang ruby docs
@@ -19,6 +20,9 @@ USE_RUBY=	yes
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_rdocs//}
+
+post-patch:
+	@${FIND} ${WRKSRC} -type f -name '*.orig' -delete
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${RUBY_DOCDIR}

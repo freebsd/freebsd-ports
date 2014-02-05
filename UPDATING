@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140201:
+  AFFECTS: users of net-mgmt/zabbix*
+  AUTHOR: koobs@FreeBSD.org
+
+  The login shell for the zabbix user in UIDs was changed from
+  /usr/sbin/nologin to /bin/sh to fix the zabbix-agent UserParameter
+  feature.
+
+  To update the existing user on your system, run:
+
+  # pw usermod zabbix -s /bin/sh  
+ 
 20140114:
   AFFECTS: users of www/mod_authnz_external
   AUTHOR: ohauer@FreeBSD.org

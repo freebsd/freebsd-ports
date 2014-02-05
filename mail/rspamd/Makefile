@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rspamd
-PORTVERSION=	0.6.7
+PORTVERSION=	0.6.8
 CATEGORIES=	mail
 MASTER_SITES=	http://rspamd.com/downloads/
 
@@ -34,7 +34,7 @@ CMAKE_ARGS+=	-DCONFDIR=${PREFIX}/etc/rspamd \
 				-DLIBDIR=${PREFIX}/lib \
 				-DNO_SHARED=ON
 
-USES=		cmake gettext iconv pkgconfig lua:51+
+USES=		cmake:outsource gettext iconv pkgconfig lua:51+
 USE_LDCONFIG=	yes
 
 USE_GNOME=	glib20

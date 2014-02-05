@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	upx
-PORTVERSION=	3.09
+PORTVERSION=	3.91
 CATEGORIES=	archivers
 MASTER_SITES=	http://upx.sourceforge.net/download/\
 		SF/sevenzip/7-Zip/${LZMA_VER}:lzma

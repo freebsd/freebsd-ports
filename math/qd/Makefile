@@ -11,11 +11,7 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Double-Double and Quad-Double Arithmetic
 
 GNU_CONFIGURE=	yes
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 USE_FORTRAN=	yes
 CONFIGURE_ARGS+=	--enable-shared=yes
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

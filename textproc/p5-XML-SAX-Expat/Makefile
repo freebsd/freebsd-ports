@@ -15,10 +15,8 @@ RUN_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-XML-NamespaceSupport>=0:${PORTSDIR}/textproc/p5-XML-NamespaceSupport
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USES=		perl5
+USES=		perl5 dos2unix
 USE_PERL5=	configure
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-I\\$$(INSTALLSITELIB)|-I\\$$(DESTDIR)\\$$(INSTALLSITELIB)|' ${WRKSRC}/Makefile.PL
+CONFIGURE_ENV=	SKIP_SAX_INSTALL=yes
 
 .include <bsd.port.mk>

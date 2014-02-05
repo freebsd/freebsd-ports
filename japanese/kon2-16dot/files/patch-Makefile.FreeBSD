@@ -13,10 +13,10 @@
  	(cd ${.CURDIR}/src ; make install)
  	(cd ${.CURDIR}/font ; make install)
 -	install -g wheel -o root -m 0644  -c kon.cfg.FreeBSD /usr/local/etc/kon.cfg
-+	install -g wheel -o root -m 0644  -c kon.cfg.FreeBSD ${LIBDIR}/kon.cfg
++	install -m 0644  -c kon.cfg.FreeBSD ${LIBDIR}/kon.cfg
 +	@sh tools/makedir ${FONTDIR}
 +	@for i in k14.bdf 7x14rk.bdf jiskan16.bdf 8x16rk.bdf; do\
-+	install -c -m 644 -o bin -g bin $(DISTDIR)/$$i ${FONTDIR};\
++	install -c -m 644 $(DISTDIR)/$$i ${FONTDIR};\
 +	gzip -f -9 ${FONTDIR}/$$i;\
 +	done
  

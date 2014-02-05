@@ -2,20 +2,26 @@ bin/connectagram
 share/applications/connectagram.desktop
 %%DATADIR%%/data/en/words
 %%DATADIR%%/data/fr/words
+%%DATADIR%%/data/hu/words
+%%DATADIR%%/data/ru/words
 %%DATADIR%%/patterns/0.png
 %%DATADIR%%/patterns/1.png
 %%DATADIR%%/patterns/2.png
 %%DATADIR%%/patterns/3.png
 %%DATADIR%%/patterns/4.png
 %%DATADIR%%/patterns/5.png
-%%DATADIR%%/translations/connectagram_cs.qm
-%%DATADIR%%/translations/connectagram_de.qm
-%%DATADIR%%/translations/connectagram_el.qm
-%%DATADIR%%/translations/connectagram_en.qm
-%%DATADIR%%/translations/connectagram_fr.qm
-%%DATADIR%%/translations/connectagram_ro.qm
-%%DATADIR%%/translations/connectagram_ru.qm
-%%DATADIR%%/translations/connectagram_tr.qm
+%%NLS%%%%DATADIR%%/translations/connectagram_cs.qm
+%%NLS%%%%DATADIR%%/translations/connectagram_de.qm
+%%NLS%%%%DATADIR%%/translations/connectagram_el.qm
+%%NLS%%%%DATADIR%%/translations/connectagram_en.qm
+%%NLS%%%%DATADIR%%/translations/connectagram_fr.qm
+%%NLS%%%%DATADIR%%/translations/connectagram_he.qm
+%%NLS%%%%DATADIR%%/translations/connectagram_hr.qm
+%%NLS%%%%DATADIR%%/translations/connectagram_hu.qm
+%%NLS%%%%DATADIR%%/translations/connectagram_pl.qm
+%%NLS%%%%DATADIR%%/translations/connectagram_ro.qm
+%%NLS%%%%DATADIR%%/translations/connectagram_ru.qm
+%%NLS%%%%DATADIR%%/translations/connectagram_tr.qm
 share/icons/hicolor/128x128/apps/connectagram.png
 share/icons/hicolor/16x16/apps/connectagram.png
 share/icons/hicolor/22x22/apps/connectagram.png
@@ -27,8 +33,10 @@ share/icons/hicolor/64x64/apps/connectagram.png
 share/icons/hicolor/scalable/apps/connectagram.svg
 share/pixmaps/connectagram.png
 share/pixmaps/connectagram.xpm
-@dirrm %%DATADIR%%/translations
+%%NLS%%@dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/patterns
+@dirrm %%DATADIR%%/data/ru
+@dirrm %%DATADIR%%/data/hu
 @dirrm %%DATADIR%%/data/fr
 @dirrm %%DATADIR%%/data/en
 @dirrm %%DATADIR%%/data

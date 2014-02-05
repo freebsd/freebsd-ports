@@ -11,8 +11,7 @@ MAINTAINER=	sarumaru@jp.FreeBSD.org
 COMMENT=	A tool for resizing BDF format font
 
 GNU_CONFIGURE=	yes
-MAN1=		bdfresize.1
-PLIST_FILES=	bin/bdfresize
+PLIST_FILES=	bin/bdfresize \
+		man/man1/bdfresize.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

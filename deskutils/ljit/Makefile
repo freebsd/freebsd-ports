@@ -25,18 +25,17 @@ USE_GNOME=	gtk20
 PLIST_FILES=	bin/ljit share/locale/ru/LC_MESSAGES/ljit.mo
 PORTDOCS=	BUGS NEWS README THANKS TODO
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${REINPLACE_CMD} -e 's, -DMTRACE$$,, ; \
 		s,prefix)/$$(DATADIRNAME,datadir,' ${WRKSRC}/src/Makefile.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/po/ru_RU.mo \
-		${PREFIX}/share/locale/ru/LC_MESSAGES/${PORTNAME}.mo
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+		${STAGEDIR}${PREFIX}/share/locale/ru/LC_MESSAGES/${PORTNAME}.mo
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

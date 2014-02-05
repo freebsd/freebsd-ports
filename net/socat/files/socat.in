@@ -24,9 +24,9 @@ load_rc_config $name
 
 start_precmd="socat_prestart"
 pidfile=/var/run/socat.pid
+procname="%%PREFIX%%/bin/socat"
 command=/usr/sbin/daemon
-command_args=" -f -p ${pidfile} /usr/local/bin/socat ${socat_flags}"
-procname=/usr/local/bin/socat
+command_args=" -f -p ${pidfile} ${procname} ${socat_flags}"
 
 socat_prestart()
 {

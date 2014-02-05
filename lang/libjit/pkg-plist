@@ -36,4 +36,5 @@ lib/libjitplus.a
 lib/libjitplus.la
 lib/libjitplus.so
 lib/libjitplus.so.0
+man/man3/libjit.3.gz
 @dirrm include/jit

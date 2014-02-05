@@ -12,10 +12,6 @@ COMMENT=	A Perl5 module to handle Japanese character encodings
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		ujconv.1 ujguess.1
-MAN3=		Unicode::Japanese.3 Unicode::Japanese::JA.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-

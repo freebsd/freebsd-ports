@@ -24,5 +24,4 @@ PLIST_FILES=	bin/spamcup.pl ${SITE_PERL_REL}/spamcup.pl \
 
 PLIST_DIRS=	${SITE_PERL_REL}/${PERL_ARCH}/auto/Spamcup
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

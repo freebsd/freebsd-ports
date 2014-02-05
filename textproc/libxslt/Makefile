@@ -15,7 +15,7 @@ COMMENT?=	The XSLT C library for GNOME
 
 .if !defined(REFERENCE_PORT)
 
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME?=	gnomehack libxml2
@@ -29,8 +29,6 @@ LICENSE=	MIT
 .if defined(MASTERDIR)
 _SLAVE_PORT=	yes
 .else
-MAN3=		libexslt.3 libxslt.3
-MAN1=		xsltproc.1
 
 OPTIONS_DEFINE=	MEM_DEBUG CRYPTO
 OPTIONS_DEFAULT=CRYPTO
@@ -38,7 +36,6 @@ MEM_DEBUG_DESC=	Enable memory debugging
 CRYPTO_DESC=	Enable crypto support for exslt
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMEM_DEBUG}

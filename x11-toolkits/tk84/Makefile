@@ -13,8 +13,10 @@ DISTNAME=	${PORTNAME}${PORTVERSION}-src
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Graphical toolkit for Tcl
 
-LICENSE=	BSD
+LICENSE=	TclTk
+LICENSE_NAME=	Tcl/Tk License
 LICENSE_FILE=	${WRKSRC}/../license.terms
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 OPTIONS_DEFINE=	TKMAN THREADS
 OPTIONS_DEFAULT=THREADS
@@ -50,12 +52,13 @@ PLIST_SUB=	TK_VER=${TK_VER} \
 
 SUB_FILES=	pkgIndex.tcl
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MTKMAN} && !defined(NO_INSTALL_MANPAGES)
+.if ${PORT_OPTIONS:MTKMAN}
 INSTALL_TARGET+=install-doc
-.include "${.CURDIR}/Makefile.man"
+PLIST_SUB+=	MAN=""
+.else
+PLIST_SUB+=	MAN="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTHREADS}
@@ -79,7 +82,9 @@ post-configure:
 		${WRKSRC}/tkConfig.sh
 
 post-install:
-	${INSTALL_DATA} ${WRKDIR}/pkgIndex.tcl ${PREFIX}/lib/tk${TK_VER}/
+	${INSTALL_DATA} ${WRKDIR}/pkgIndex.tcl ${STAGEDIR}${PREFIX}/lib/tk${TK_VER}/
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/wish${TK_VER}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtk${SHORT_TK_VER}.so.1
 
 regression-test:	build
 	cd ${WRKSRC}; ${MAKE} test

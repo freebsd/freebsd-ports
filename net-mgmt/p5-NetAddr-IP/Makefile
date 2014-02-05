@@ -14,13 +14,6 @@ COMMENT=	Perl module for working with IP addresses and blocks thereof
 USES=		perl5
 USE_PERL5=	patch configure
 
-MAN3=		NetAddr::IP.3 \
-	NetAddr::IP::InetBase.3 \
-	NetAddr::IP::Lite.3 \
-	NetAddr::IP::Util.3 \
-	NetAddr::IP::UtilPP.3
-
-NO_STAGE=	yes
 post-patch:
 	${PERL} -ni -e 'print unless /^=head1/../^=cut/' ${WRKSRC}/Lite/Util/Makefile.PL
 

@@ -18,14 +18,12 @@ OPTIONS_DEFAULT=	EXTENDED SANITY
 EXTENDED_DESC=	ELF format extensions
 SANITY_DESC=	Avoid loading invalid ELF files
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-shared --disable-compat
 USE_LDCONFIG=	yes
-
-NOMAN=		defined
+USES=		desthack
 
 .if ${PORT_OPTIONS:MNLS}
 CPPFLAGS+=	-I${LOCALBASE}/include

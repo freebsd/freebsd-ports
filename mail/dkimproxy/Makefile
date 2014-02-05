@@ -25,12 +25,9 @@ DKIMPROXYUSER=	dkimproxy
 USERS=		${DKIMPROXYUSER}
 GROUPS=		${DKIMPROXYUSER}
 
-MAN8=		dkimproxy_in.8 dkimproxy_out.8
-
 SUB_LIST+=	PERL=${PERL} \
 		DKIMPROXYUSER=${DKIMPROXYUSER}
 
-NO_STAGE=	yes
 post-patch:
 	@${GREP} -Ril 'perl' ${WRKDIR} | ${XARGS} ${REINPLACE_CMD} -i '' \
 		-e 's|/usr/bin/perl|${PERL}|' -e 's|@PERL@|${PERL}|'

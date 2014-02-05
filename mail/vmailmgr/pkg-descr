@@ -14,7 +14,7 @@ co-operates with qmail for mail delivery and program control. It features:
     * Tools to setup a virtual domain, add and delete individual virtual users
       and aliases, and to change passwords.  CGI programs to accomplish the
     * above tasks from a set of web pages.
-    * A native PHP library to compliment or replace the CGIs.
+    * A native PHP library to complement or replace the CGIs.
     * A daemon process that securely directs the operation of the CGIs and PHP
       code.
     * A separate delivery agent that automatically deals with any address

@@ -27,5 +27,6 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/ltconfig
+	@${REINPLACE_CMD} 's|-o root -g wheel||' ${WRKSRC}/libx11amp/Makefile.in
 
 .include <bsd.port.mk>

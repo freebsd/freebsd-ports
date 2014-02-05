@@ -1,0 +1,4 @@
+To run the glassfish java application server from startup,
+add glassfish_enable="YES" in your /etc/rc.conf.
+
+Extra options can be found in startup script.

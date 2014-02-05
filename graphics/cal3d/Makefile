@@ -21,9 +21,6 @@ USE_LDCONFIG=	yes
 AUTOTOOLSFILES=	aclocal.m4
 # AUTOMAKE_ARGS=	--add-missing
 
-MAN1=	cal3d_converter.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|^\(pkgconfigdir\ =\).*|\1 $$(prefix)/libdata/pkgconfig|' \

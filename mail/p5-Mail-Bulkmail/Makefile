@@ -13,11 +13,6 @@ COMMENT=	Perl module for mailing lists
 USES=		perl5
 USE_PERL5=	configure patch
 
-MAN3=		Mail::Bulkmail.3 Mail::Bulkmail::Dynamic.3 \
-		Mail::Bulkmail::Server.3 Mail::Bulkmail::Object.3 \
-		Mail::Bulkmail::DummyServer.3
-
-NO_STAGE=	yes
 post-patch:
 	${PERL} -pi -e '$$_="" if /^use 5/;' \
 		-e '$$_="" if /(use|no) warnings/;' \

@@ -1,5 +1,5 @@
---- Makefile.orig	2013-10-24 23:26:16.000000000 +0800
-+++ Makefile	2013-10-25 10:19:26.000000000 +0800
+--- Makefile.orig	2014-02-04 10:07:31.000000000 +0800
++++ Makefile	2014-02-04 17:01:29.349287737 +0800
 @@ -52,6 +52,14 @@ endif
  ifdef console
    GYPFLAGS += -Dconsole=$(console)
@@ -15,7 +15,7 @@
  # disassembler=on
  ifeq ($(disassembler), on)
    GYPFLAGS += -Dv8_enable_disassembler=1
-@@ -223,7 +231,7 @@ NACL_ARCHES = nacl_ia32 nacl_x64
+@@ -233,7 +241,7 @@ NACL_ARCHES = nacl_ia32 nacl_x64
  # List of files that trigger Makefile regeneration:
  GYPFILES = build/all.gyp build/features.gypi build/standalone.gypi \
             build/toolchain.gypi samples/samples.gyp src/d8.gyp \
@@ -24,3 +24,23 @@
  
  # If vtunejit=on, the v8vtune.gyp will be appended.
  ifeq ($(vtunejit), on)
+@@ -386,8 +394,7 @@ clean: $(addsuffix .clean, $(ARCHES) $(A
+ # GYP file generation targets.
+ OUT_MAKEFILES = $(addprefix $(OUTDIR)/Makefile.,$(BUILDS))
+ $(OUT_MAKEFILES): $(GYPFILES) $(ENVFILE)
+-	PYTHONPATH="$(shell pwd)/tools/generate_shim_headers:$(PYTHONPATH)" \
+-	PYTHONPATH="$(shell pwd)/build/gyp/pylib:$(PYTHONPATH)" \
++	PYTHONPATH="$(shell pwd)/build/gyp/pylib:$(shell pwd)/tools/generate_shim_headers:$(PYTHONPATH)" \
+ 	GYP_GENERATORS=make \
+ 	build/gyp/gyp --generator-output="$(OUTDIR)" build/all.gyp \
+ 	              -Ibuild/standalone.gypi --depth=. \
+@@ -396,8 +403,7 @@ $(OUT_MAKEFILES): $(GYPFILES) $(ENVFILE)
+ 	              -S$(suffix $(basename $@))$(suffix $@) $(GYPFLAGS)
+ 
+ $(OUTDIR)/Makefile.native: $(GYPFILES) $(ENVFILE)
+-	PYTHONPATH="$(shell pwd)/tools/generate_shim_headers:$(PYTHONPATH)" \
+-	PYTHONPATH="$(shell pwd)/build/gyp/pylib:$(PYTHONPATH)" \
++	PYTHONPATH="$(shell pwd)/build/gyp/pylib:$(shell pwd)/tools/generate_shim_headers:$(PYTHONPATH)" \
+ 	GYP_GENERATORS=make \
+ 	build/gyp/gyp --generator-output="$(OUTDIR)" build/all.gyp \
+ 	              -Ibuild/standalone.gypi --depth=. -S.native $(GYPFLAGS)

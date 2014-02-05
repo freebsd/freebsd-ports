@@ -1,7 +1,29 @@
---- CMakeLists.txt.orig	2012-08-09 10:44:22.000000000 +0200
-+++ CMakeLists.txt	2012-08-09 10:46:37.000000000 +0200
-@@ -252,14 +252,6 @@
- SET( LICENSE_FILENAME "${CPACK_RESOURCE_FILE_LICENSE}")")
+--- CMakeLists.txt.orig	2013-03-25 10:45:20.000000000 +0100
++++ CMakeLists.txt	2014-01-31 14:35:27.000000000 +0100
+@@ -38,7 +38,7 @@
+ 
+ if(COMMAND cmake_policy AND POLICY CMP0015)
+ 	cmake_policy(SET CMP0015 NEW)
+-endif(COMMAND cmake_policy)
++endif(COMMAND cmake_policy AND POLICY CMP0015)
+ 
+ #-----------------
+ # CPPFLAGS, CXXFLAGS and LDFLAGS from the environment
+@@ -221,7 +221,7 @@
+ software free of charge under the GNU General Public License
+ (http://www.gnu.org/licenses/). You can also purchase commercial MySQL
+ licenses from ${CPACK_PACKAGE_VENDOR} if you do not wish to be
+-bound by the terms of the GPL. See the chapter "Licensing and Support"
++bound by the terms of the GPL. See the chapter \"Licensing and Support\"
+ in the manual for further info.")
+ 
+ IF(EXISTS "${CMAKE_SOURCE_DIR}/COPYING")
+@@ -249,17 +249,9 @@
+ 
+ IF(WIN32)
+   FILE(WRITE "${CMAKE_SOURCE_DIR}/win/config.cmake" "SET(CONNECTOR_PRODUCT_VERSION ${MYSQLCPPCONN_VERSION})
+-SET( LICENSE_FILENAME "${CPACK_RESOURCE_FILE_LICENSE}")")
++SET( LICENSE_FILENAME ${CPACK_RESOURCE_FILE_LICENSE})")
  ENDIF(WIN32)
  
 -INSTALL(FILES

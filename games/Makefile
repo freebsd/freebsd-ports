@@ -185,7 +185,6 @@
     SUBDIR += dangerdeep-data
     SUBDIR += darkplaces
     SUBDIR += dcross
-    SUBDIR += deal
     SUBDIR += defendguin
     SUBDIR += diameter
     SUBDIR += digger-vgl
@@ -681,6 +680,7 @@
     SUBDIR += openarena-oax
     SUBDIR += openarena-server
     SUBDIR += openastromenace
+    SUBDIR += openbubbles
     SUBDIR += opencity
     SUBDIR += opengfx
     SUBDIR += openglad

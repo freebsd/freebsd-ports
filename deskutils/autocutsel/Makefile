@@ -13,10 +13,9 @@ COMMENT=	Synchronizes the two copy/paste buffers used by X applications
 
 USE_XORG=	x11 xaw xext
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 PLIST_FILES=	bin/autocutsel \
 		bin/cutsel
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

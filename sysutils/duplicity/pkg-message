@@ -5,6 +5,7 @@
 *                                                                       *
 *   - The Dropbox backend                                               *
 *   - The HSI backend                                                   *
+*   - The mega backend for mega.co.nz                                   *
 *   - The swift backend for OpenStack Object Storage                    *
 *   - The tahoe backend for Tahoe-LAFS                                  *
 *                                                                       *

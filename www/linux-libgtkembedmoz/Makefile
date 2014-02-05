@@ -21,12 +21,11 @@ PLIST_SUB=	MOZLIBDIR=${MOZLIBDIR}
 
 MOZLIBDIR=	lib/${PKGNAMEPREFIX}${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${WRKSRC}
-	${MKDIR} ${PREFIX}/${MOZLIBDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${MOZLIBDIR}
 	(cd ${WRKSRC} && ${TAR} -cpf - --exclude "res/samples/" \
 		--exclude "res/sample*" lib* res components) | \
-		( cd ${PREFIX}/${MOZLIBDIR} && ${TAR} xpf - )
+		( cd ${STAGEDIR}${PREFIX}/${MOZLIBDIR} && ${TAR} xpf - )
 
 .include <bsd.port.mk>

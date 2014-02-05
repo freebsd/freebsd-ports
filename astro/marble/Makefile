@@ -13,8 +13,8 @@ COMMENT=	Virtual globe and world atlas for KDE
 CONFLICTS=	kdeedu-4.4.[0-4]
 
 NO_STAGE=	yes
-USE_KDE4=	kdehier kdelibs kdeprefix automoc4 sharedmime
-USES=		cmake:outsource gmake
+USE_KDE4=	kdehier kdelibs kdeprefix automoc4
+USES=		cmake:outsource gmake shared-mime-info
 USE_QT4=	corelib dbus declarative designer_build gui network phonon \
 		qtestlib script sql svg webkit xml \
 		qmake_build moc_build rcc_build uic_build

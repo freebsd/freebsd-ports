@@ -13,5 +13,4 @@ COMMENT=	An introduction to Emacs Lisp programming
 USE_AUTOTOOLS=	autoconf213
 INFO=		emacs-lisp-intro
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

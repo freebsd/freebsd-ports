@@ -14,7 +14,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_GNOME=	gtk12
 USE_SDL=	sdl
-USE_GMAKE=	yes
+USES=		gmake
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -31,7 +31,6 @@ SDL_DESC=	Use SDL for audio
 
 PLIST_FILES=	bin/${PORTNAME}-gtk
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
@@ -64,10 +63,5 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e '/%define %1 @UNDERSCORE@%1 /d' \
 		${WRKSRC}/raze/raze.asm.in
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.post.mk>

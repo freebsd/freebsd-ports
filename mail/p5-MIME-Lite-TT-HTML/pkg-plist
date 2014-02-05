@@ -1,4 +1,5 @@
 %%SITE_PERL%%/MIME/Lite/TT/HTML.pm
+%%PERL5_MAN3%%/MIME::Lite::TT::HTML.3.gz
 @dirrmtry %%SITE_PERL%%/MIME/Lite/TT
 @dirrmtry %%SITE_PERL%%/MIME/Lite
 @dirrmtry %%SITE_PERL%%/MIME

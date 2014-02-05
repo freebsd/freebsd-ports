@@ -11,8 +11,7 @@ COMMENT=	Semi-automatic newsgroup binary downloader
 
 GNU_CONFIGURE=	yes
 
-MAN1=		cg.1
-PLIST_FILES=	bin/cg
+PLIST_FILES=	bin/cg \
+		man/man1/cg.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

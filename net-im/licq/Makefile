@@ -14,7 +14,6 @@ LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
 
 LICENSE=	GPLv2
 
-USE_GCC=	yes
 USES=		cmake iconv
 WRKSRC=		${WRKDIR}/${DISTNAME}
 LICQ_PORT?=	net-im/licq
@@ -23,7 +22,7 @@ LICQ_PORT?=	net-im/licq
 LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib ${ICONV_LIB} -Wl,--export-dynamic
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
-CXXFLAGS+=	-Wl,--export-dynamic
+CXXFLAGS+=	-Wl,--export-dynamic -DGTEST_USE_OWN_TR1_TUPLE
 
 OPTIONS_DEFINE=	OPENSSL
 OPTIONS_DEFAULT=OPENSSL

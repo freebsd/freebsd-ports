@@ -18,10 +18,6 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 GNOME_MTREE=	BSD.gnome.dist
 GNOME_MTREE_ARGS=${MTREE_ARGS:S|${MTREE_FILE}|${PREFIX}/etc/mtree/${GNOME_MTREE}|}
 
-NO_STAGE=	yes
-do-fetch:
-	@${DO_NADA}
-
 pre-install:
 	@${CP} -f ${FILESDIR}/dirlist ${WRKDIR}
 	@${RM} -f ${PLIST} ${WRKDIR}/${GNOME_MTREE}
@@ -46,10 +42,8 @@ pre-su-install:
 			> ${WRKDIR}/${GNOME_MTREE}
 
 do-install:
-	${MKDIR} ${PREFIX}/etc/mtree
-	${INSTALL_DATA} ${WRKDIR}/${GNOME_MTREE} ${PREFIX}/etc/mtree
-
-post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/mtree
+	${INSTALL_DATA} ${WRKDIR}/${GNOME_MTREE} ${STAGEDIR}${PREFIX}/etc/mtree
 
 .include <bsd.port.mk>

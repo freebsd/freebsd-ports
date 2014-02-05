@@ -23,9 +23,6 @@ TEST_DEPENDS=	p5-File-HomeDir>=1.00:${PORTSDIR}/devel/p5-File-HomeDir \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Debug::Client.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

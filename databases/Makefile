@@ -246,6 +246,7 @@
     SUBDIR += mytop
     SUBDIR += mywwwatcher
     SUBDIR += nagios-check_postgres_replication
+    SUBDIR += nagios-check_redis
     SUBDIR += namazu2
     SUBDIR += ocaml-mysql
     SUBDIR += ocaml-pgocaml
@@ -839,6 +840,7 @@
     SUBDIR += rubygem-activerecord-mysql-adapter
     SUBDIR += rubygem-amalgalite
     SUBDIR += rubygem-arel
+    SUBDIR += rubygem-arel3
     SUBDIR += rubygem-bdb1
     SUBDIR += rubygem-bigrecord
     SUBDIR += rubygem-couchrest

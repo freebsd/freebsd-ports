@@ -81,7 +81,12 @@ GHOSTSCRIPT_DESC=	Build pdftops with GHOSTSCRIPT
 XPDF_DESC=		Build pdftops with XPDF
 XDG_OPEN_DESC=		Build with XDG_OPEN as browser
 
+.if defined(CUPS_CLIENT) || defined(CUPS_IMAGE)
+USES+=		desthack
+.else
 NO_STAGE=	yes
+.endif
+
 .include <bsd.port.options.mk>
 
 .if defined(CUPS_CLIENT)
@@ -231,10 +236,7 @@ CONFIGURE_ARGS+=	--disable-libusb
 .endif
 CONFIGURE_ARGS+=	LIBS="-lssp_nonshared"
 
-.if defined(CUPS_CLIENT)
-MAN1=	cups-config.1
-.elif defined(CUPS_IMAGE)
-.else
+.if ! defined(CUPS_CLIENT) && ! defined(CUPS_IMAGE)
 MAN1+=	cancel.1 \
 	cupstestdsc.1 \
 	cupstestppd.1 \
@@ -382,11 +384,11 @@ pre-su-install:
 
 post-install:
 .if defined(CUPS_CLIENT)
-	${INSTALL_SCRIPT} ${WRKSRC}/cups-config ${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/cups/libcups.a ${PREFIX}/lib/
-	${INSTALL_MAN} ${WRKSRC}/man/cups-config.man ${PREFIX}/man/man1/cups-config.1
+	${INSTALL_SCRIPT} ${WRKSRC}/cups-config ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/cups/libcups.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_MAN} ${WRKSRC}/man/cups-config.man ${STAGEDIR}${PREFIX}/man/man1/cups-config.1
 .elif defined(CUPS_IMAGE)
-	${INSTALL_DATA} ${WRKSRC}/cups/raster.h ${PREFIX}/include/cups/
+	${INSTALL_DATA} ${WRKSRC}/cups/raster.h ${STAGEDIR}${PREFIX}/include/cups
 .else
 .if  ${PORT_OPTIONS:MGHOSTSCRIPT} || ${PORT_OPTIONS:MXPDF}
 	${INSTALL_PROGRAM} ${WRKSRC}/filter/pdftops ${PREFIX}/libexec/cups/filter/

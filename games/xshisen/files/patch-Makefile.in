@@ -1,0 +1,41 @@
+--- Makefile.in.orig	2002-07-10 05:16:48.000000000 +0200
++++ Makefile.in	2014-02-02 12:37:24.889535933 +0100
+@@ -53,24 +53,25 @@
+ 
+ install-prog: $(PROGS)
+ 	@echo "XShisen executable directory is " $(bindir)
+-	@$(MKDIR) $(bindir)
+-	@chmod 755 $(bindir)
+-	$(INSTALLP) $(PROGS) $(bindir)/$(PROGS)
++#	@$(MKDIR) $(bindir)
++#	@chmod 755 $(bindir)
++	$(INSTALLP) $(PROGS) $(DESTDIR)$(bindir)/$(PROGS)
+ 	@echo "XShisen data directory is " $(XSHISENLIB)
+-	@$(MKDIR) $(XSHISENDAT)
+-	@chmod 755 $(XSHISENDAT)
+-	@if [ -f $(XSHISENDAT)/$(SCF) ]; then \
+-	echo "Old high-score file exists."; \
+-	else\
+-	$(INSTALL) -m 0666 $(SCF) $(XSHISENDAT)/$(SCF); \
+-	fi
+-	@$(MKDIR) $(XSHISENLIB)
++	@$(MKDIR) $(DESTDIR)$(XSHISENDAT)
++	@chmod 755 $(DESTDIR)$(XSHISENDAT)
++	$(INSTALL) -m 0666 $(SCF) $(DESTDIR)$(XSHISENDAT)/$(SCF)
++#	@if [ -f $(XSHISENDAT)/$(SCF) ]; then \
++#	echo "Old high-score file exists."; \
++#	else\
++#	$(INSTALL) -m 0666 $(SCF) $(DESTDIR)$(XSHISENDAT)/$(SCF); \
++#	fi
++	@$(MKDIR) $(DESTDIR)$(XSHISENLIB)
+ 	@set -x; \
+ 	for dir in pixmaps/s?; do \
+ 		dn=`basename $$dir`; \
+-		$(MKDIR) $(XSHISENLIB)/$$dn; \
++		$(MKDIR) $(DESTDIR)$(XSHISENLIB)/$$dn; \
+ 		for file in $$dir/*.xpm; do \
+-			fn=$(XSHISENLIB)/$$dn/`basename $$file`; \
++			fn=$(DESTDIR)$(XSHISENLIB)/$$dn/`basename $$file`; \
+ 			$(INSTALLD) $$file $$fn; \
+ 		done; \
+ 	done

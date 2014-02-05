@@ -23,9 +23,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFLICTS_INSTALL=	mosh-1.[0-9].*
 
 PROJECTHOST=	mosh-scheme
-MAN1=	mosh.1 mosh_config.1
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

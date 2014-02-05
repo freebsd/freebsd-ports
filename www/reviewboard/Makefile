@@ -10,6 +10,8 @@ DISTNAME=	ReviewBoard-${PORTVERSION}
 MAINTAINER=	pclin@FreeBSD.org
 COMMENT=	Web-based code review tool
 
+BROKEN=		Does not build
+
 LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.4.3<1.5:${PORTSDIR}/www/py-django14 \

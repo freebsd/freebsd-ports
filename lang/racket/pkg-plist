@@ -38,9 +38,10 @@ include/racket/schvers.h
 include/racket/sconfig.h
 include/racket/stypes.h
 include/racket/uconfig.h
-lib/libracket3m-5.92.so
+lib/libracket3m-5.93.so
 lib/libracket3m.a
 lib/libracket3m.la
+lib/libracket3m.so
 lib/racket/buildinfo
 lib/racket/gracket
 lib/racket/launchers.rktd

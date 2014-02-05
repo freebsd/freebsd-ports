@@ -17,5 +17,4 @@ ALL_TARGET=	xtypo
 
 WRKSRC=		${WRKDIR}/xtypo
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

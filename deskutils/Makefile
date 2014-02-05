@@ -66,7 +66,6 @@
     SUBDIR += glabels
     SUBDIR += glipper
     SUBDIR += global-menu
-    SUBDIR += gmcal
     SUBDIR += gnochm
     SUBDIR += gnome-blog
     SUBDIR += gnome-contacts
@@ -149,7 +148,6 @@
     SUBDIR += mate-menu-editor
     SUBDIR += mate-notification-daemon
     SUBDIR += mate-utils
-    SUBDIR += mcal
     SUBDIR += mdh
     SUBDIR += mencal
     SUBDIR += menumaker

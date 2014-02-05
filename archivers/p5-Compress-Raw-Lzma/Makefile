@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Compress-Raw-Lzma
-PORTVERSION=	2.063
+PORTVERSION=	2.064
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PMQS
@@ -25,7 +25,7 @@ LZMA_DEPEND?=	sys
 LIB_DEPENDS+=	liblzma.so.1:${PORTSDIR}/archivers/lzmalib
 .endif
 
-pre-build:
+post-configure:
 .if ${LZMA_DEPEND} == "sys"
 	@${REINPLACE_CMD} -e "/^LDDLFLAGS/ s|${LOCALBASE}/lib|${LIBDIR}|" ${WRKSRC}/Makefile
 .endif

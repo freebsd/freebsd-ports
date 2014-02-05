@@ -24,5 +24,4 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gpg-path=${PREFIX}/bin/gpg
 PLIST_FILES=	bin/pgpgpg
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

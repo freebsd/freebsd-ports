@@ -1,0 +1,27 @@
+#!/bin/sh
+# PROVIDE: cbsdrsyncd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# cbsdrsyncd_enable="YES"
+# cbsdrsyncd_flags="<set as needed>"
+#
+# See rsync(1) for cbsdrsyncd_flags
+#
+
+. /etc/rc.subr
+. /etc/rc.conf
+
+name="cbsdrsyncd"
+rcvar=cbsdrsyncd_enable
+
+command="%%PREFIX%%/bin/rsync"
+command_args="--daemon"
+pidfile="/var/run/$name.pid"
+required_files="${cbsd_workdir}/etc/$name.conf"
+
+# read configuration and set defaults
+load_rc_config "$name"
+: ${cbsdrsyncd_enable="NO"}
+
+run_rc_command "$1"

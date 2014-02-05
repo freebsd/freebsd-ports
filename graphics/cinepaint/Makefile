@@ -13,24 +13,23 @@ COMMENT=	Editing tool used for painting and retouching of movies
 LICENSE=	GPLv2 LGPL21 MIT
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
-		ftgl:${PORTSDIR}/graphics/ftgl \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		lcms:${PORTSDIR}/graphics/lcms \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff \
-    		fltk:${PORTSDIR}/x11-toolkits/fltk
+LIB_DEPENDS=	libIlmImf.so:${PORTSDIR}/graphics/OpenEXR \
+		libftgl.so:${PORTSDIR}/graphics/ftgl \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		liblcms.so:${PORTSDIR}/graphics/lcms \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+    		libfltk.so:${PORTSDIR}/x11-toolkits/fltk
 
 OPTIONS_DEFINE=	OYRANOS PRINT
 OYRANOS_DESC=	ICC profile support via Oyranos
 PRINT_DESC=	Gutenprint (gimp-print) plugin
 
-USES=		gettext pkgconfig
+USES=		desktop-file-utils gettext gmake pkgconfig
 USE_XORG=	xmu
 USE_GNOME=	gtk20
 USE_GHOSTSCRIPT_RUN=yes
 USE_PYTHON=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtoolize aclocal automake autoconf
 LIBTOOLIZE_ARGS=--force
 ACLOCAL_ARGS=	-I aclocal
@@ -42,19 +41,16 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_SUB=	VER="${DISTVERSION}"
 
-MAN1=		cinepaint.1 cinepainttool.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOYRANOS}
-LIB_DEPENDS+=	oyranos:${PORTSDIR}/graphics/oyranos
+LIB_DEPENDS+=	liboyranos.so:${PORTSDIR}/graphics/oyranos
 .else
 CONFIGURE_ENV+=	ac_cv_path_OY_CONFIG=no
 .endif
 
 .if ${PORT_OPTIONS:MPRINT}
-LIB_DEPENDS+=	gutenprint:${PORTSDIR}/print/gutenprint-base
+LIB_DEPENDS+=	libgutenprint.so:${PORTSDIR}/print/gutenprint-base
 PLIST_SUB+=	PRINT=""
 .else
 CONFIGURE_ARGS+=	--disable-print

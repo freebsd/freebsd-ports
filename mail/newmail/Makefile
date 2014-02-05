@@ -11,9 +11,7 @@ COMMENT=	Tool for checking for new mail in multiple mail boxes
 
 WRKSRC=		${WRKDIR}/newmail
 
-MAN1=		newmail.1
-MANCOMPRESSED=	maybe
-PLIST_FILES=	bin/newmail
+PLIST_FILES=	bin/newmail \
+		man/man1/newmail.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

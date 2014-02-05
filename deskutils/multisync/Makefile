@@ -14,14 +14,13 @@ COMMENT?=	Synchronize calendars, addressbooks, and other PIM data
 WRKSRC?=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRCMASTER=	${WRKDIR}/multisync-${PORTVERSION}
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix libgnomeui
-USES=		gmake pkgconfig
+USE_GNOME=	gnomeprefix libgnomeui
+USES=		gmake pathfix pkgconfig
 USE_AUTOTOOLS=	automake:env libtool
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 pre-configure:
 	@${FIND} ${WRKDIR} -type l -delete
 .for FILE in missing install-sh mkinstalldirs config.guess config.sub depcomp

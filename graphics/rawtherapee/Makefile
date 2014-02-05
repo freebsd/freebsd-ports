@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rawtherapee
-PORTVERSION=	4.0.11
-PORTREVISION=	2
+PORTVERSION=	4.0.12
 CATEGORIES=	graphics
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://rawtherapee.com/shared/source/
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	A powerful RAW image processing application
@@ -23,7 +22,8 @@ LIB_DEPENDS=	libgtkmm-2.4.so:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		libfftw3f.so:${PORTSDIR}/math/fftw3-float \
 		libcanberra-gtk3.so:${PORTSDIR}/audio/libcanberra-gtk3
 
-USES=		cmake:outsource pkgconfig compiler:features desktop-file-utils
+USES=		cmake:outsource pkgconfig compiler:features desktop-file-utils dos2unix
+DOS2UNIX_REGEX=	.*\.(cc|h)
 USE_XZ=		yes
 USE_GNOME=	gtk20 glib20
 USE_LDCONFIG=	yes
@@ -31,14 +31,14 @@ CFLAGS+=	-I${LOCALBASE}/include -fPIC ${PTHREAD_CFLAGS}
 CXXFLAGS+=	-I${LOCALBASE}/include -fPIC ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CMAKE_ENV=	CFLAGS="${CFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+		LDFLAGS="${LDFLAGS:C|-Wl,-rpath=${_GCC_RUNTIME}||:C|-L${_GCC_RUNTIME}||}"
 CMAKE_ARGS+=	-DDOCDIR="${DOCSDIR}" \
 		-DCREDITSDIR="${DOCSDIR}" \
 		-DLICENCEDIR="${DOCSDIR}" \
 		-DDESKTOPDIR="${DESKTOPDIR}" \
 		-DDATADIR="${DATADIR}" \
-		-DCMAKE_C_FLAGS="${CFLAGS}" \
-		-DCMAKE_CXX_FLAGS="${CXXFLAGS}"
+		-DCMAKE_C_FLAGS="${CFLAGS:C|-Wl,-rpath=${_GCC_RUNTIME}||:C|-L${_GCC_RUNTIME}||}" \
+		-DCMAKE_CXX_FLAGS="${CXXFLAGS:C|-Wl,-rpath=${_GCC_RUNTIME}||:C|-L${_GCC_RUNTIME}||}"
 SUB_FILES=	rawtherapee
 SUB_LIST=	RTDIR="${RTDIR}"
 INSTALLS_ICONS=	yes
@@ -48,50 +48,31 @@ RTDIR=		${PREFIX}/libdata/${PORTNAME}
 OPTIONS_DEFINE=		OPTIMIZED_CFLAGS OPENMP
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS OPENMP
 OPENMP_DESC=		Enable multicore processing using OpenMP
+OPTIMIZED_CFLAGS_DESC=	Use extra compiler optimizations (requires SSE support)
 
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1000024
-USE_GCC=	yes
-.endif
+#.include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e 's#<auto_ptr.h>#<memory>#g' \
-		${WRKSRC}/rtgui/darkframe.h ${WRKSRC}/rtgui/flatfield.h \
-		${WRKSRC}/rtgui/icmpanel.h
-	@${REINPLACE_CMD} -e 's#DESTINATION "$${CMAKE_INSTALL_PREFIX}/share/man/man1"#DESTINATION "${MANPREFIX}/man/man1/"#' \
-		${WRKSRC}/CMakeLists.txt
+# -------------------------------------------------------------------
+# USE_GCC must be late so the compiler feature checks work to detect
+# that the base C++ standard library switched to libc++:
+# We also must pin 4.8+ because 4.6 and 4.7 segfault on 10.0-RELEASE amd64
+# wwhen compiling improcfun.cc:
+USE_GCC=	4.8+
 
-.if ${COMPILER_TYPE} != gcc
-pre-build:
-	# must compile ipsharpen.cc with lower optimization else the compilation time is excessive
-	# this is clang-specific and does not affect GCC.
-	${REINPLACE_CMD} -e 's,-o CMakeFiles/rtengine.dir/ipsharpen.cc.o,-O1 &,' \
-		${CONFIGURE_WRKSRC}/rtengine/CMakeFiles/rtengine.dir/build.make
-.if ${PORT_OPTIONS:MOPENMP}
-	@${ECHO_CMD} "WARNING: ignoring OpenMP option, not supported on clang." ; sleep 5
+.if ${COMPILER_FEATURES:Mlibc++}
+LDFLAGS+=	-L/usr/local/lib/c++
+CXXFLAGS+=	-nostdinc++ -isystem /usr/local/include/c++/v1
+CFLAGS+=	-isystem /usr/local/include/c++/v1
+BUILD_DEPENDS+=	${LOCALBASE}/lib/c++/libstdc++.so:${PORTSDIR}/devel/libc++
 .endif
-.endif
-
-.if ${COMPILER_TYPE} == clang
-CFLAGS+=	-Qunused-arguments
-CXXFLAGS+=	-Qunused-arguments
-.endif
-
-# paranoia: run rawtherapee --help to be sure it finds all its
-# shared libraries (this hinges on proper RPATH setting and propagation)
-post-install:
-	${SETENV} HOME=/dev/null ${STAGEDIR}${PREFIX}/bin/rawtherapee --help 2>&1 \
-	| ${EGREP} -q "RawTherapee, version ${PKGVERSION:C/_.*//:C/,.*//}"
-
 
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
 CFLAGS+=	-O3 -ffast-math -fexpensive-optimizations \
 		-funroll-loops -msse
-CXXFLAGS+=	-O3 -ffast-math -fexpensive-optimizations \
+CXXFLAGS+=	-O3 -ffast-math \
 		-funroll-loops -msse
 .endif
 .endif
@@ -102,5 +83,21 @@ _OpenMP_args=	-DOPTION_OMP:BOOL=ON
 .endif
 
 CMAKE_ARGS+=	${_OpenMP_args}
+
+# -------------------------------------------------------------------
+
+post-patch:
+	@${REINPLACE_CMD} -e 's#<auto_ptr.h>#<memory>#g' \
+		${WRKSRC}/rtgui/darkframe.h \
+		${WRKSRC}/rtgui/flatfield.h \
+		${WRKSRC}/rtgui/icmpanel.h
+	@${REINPLACE_CMD} -e 's#DESTINATION "$${CMAKE_INSTALL_PREFIX}/share/man/man1"#DESTINATION "${MANPREFIX}/man/man1/"#' \
+		${WRKSRC}/CMakeLists.txt
+
+# paranoia: run rawtherapee --help to be sure it finds all its
+# shared libraries (this hinges on proper RPATH setting and propagation)
+post-install:
+	${SETENV} HOME=/dev/null ${STAGEDIR}${PREFIX}/bin/rawtherapee --help 2>&1 \
+	| ${EGREP} -q "RawTherapee, version ${PKGVERSION:C/_.*//:C/,.*//}"
 
 .include <bsd.port.post.mk>

@@ -27,6 +27,8 @@ OPTIONS_DEFAULT=	X11
 X11_USE=	XORG=x11
 
 post-patch:
+	@${REINPLACE_CMD} 's|$$(LN_S) $$(DESTDIR)$$(libdir)/cscc/lib/$$(FRAMEWORK_VERSION)/pinvoke.map|$$(LN_S) $$(FRAMEWORK_VERSION)/pinvoke.map|' \
+		${WRKSRC}/tools/Makefile.in
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} \
 		$$ac_aux_dir|$$ac_aux_dir|' ${WRKSRC}/configure
 

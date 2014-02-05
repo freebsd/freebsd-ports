@@ -14,20 +14,12 @@ LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 
-MAKE_JOBS_UNSAFE=	yes
-
-MAN1=		usb_modeswitch.1
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-BROKEN=		does not compile on FreeBSD 7.X
-.endif
+pre-patch:
+		${REINPLACE_CMD} 's/gcc/${CC}/' ${WRKSRC}/Makefile
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/usb_modeswitch ${PREFIX}/sbin
-		${INSTALL_DATA} ${WRKSRC}/usb_modeswitch.conf ${PREFIX}/etc/usb_modeswitch.conf.sample
-		${INSTALL_MAN} ${WRKSRC}/usb_modeswitch.1 ${PREFIX}/man/man1
+		${INSTALL_PROGRAM} ${WRKSRC}/usb_modeswitch ${STAGEDIR}${PREFIX}/sbin
+		${INSTALL_DATA} ${WRKSRC}/usb_modeswitch.conf ${STAGEDIR}${PREFIX}/etc/usb_modeswitch.conf.sample
+		${INSTALL_MAN} ${WRKSRC}/usb_modeswitch.1 ${STAGEDIR}${PREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

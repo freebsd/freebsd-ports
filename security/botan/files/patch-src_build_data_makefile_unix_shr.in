@@ -1,13 +1,22 @@
---- src/build-data/makefile/unix_shr.in.orig	2009-09-10 02:29:34.000000000 +0200
-+++ src/build-data/makefile/unix_shr.in	2009-10-27 14:30:46.000000000 +0100
-@@ -25,8 +25,8 @@
- BINDIR        = $(DESTDIR)/bin
- LIBDIR        = $(DESTDIR)/%{libdir}
- HEADERDIR     = $(DESTDIR)/%{includedir}/botan
+--- src/build-data/makefile/unix_shr.in.orig	2012-07-18 21:59:04.000000000 +0200
++++ src/build-data/makefile/unix_shr.in	2014-01-30 21:16:16.957275654 +0100
+@@ -20,13 +20,13 @@
+ ##################################################
+ # Installation Settings                          #
+ ##################################################
+-DESTDIR       = %{prefix}
++PREFIX       = %{prefix}
+ 
+-BINDIR        = $(DESTDIR)/bin
+-LIBDIR        = $(DESTDIR)/%{libdir}
+-HEADERDIR     = $(DESTDIR)/%{includedir}/botan
 -DOCDIR        = $(DESTDIR)/%{docdir}/Botan-$(VERSION)
 -PKGCONF_DIR   = $(LIBDIR)/pkgconfig
-+DOCDIR        = $(DESTDIR)/%{docdir}/botan
-+PKGCONF_DIR   = $(DESTDIR)/libdata/pkgconfig
++BINDIR        = $(DESTDIR)$(PREFIX)/bin
++LIBDIR        = $(DESTDIR)$(PREFIX)/%{libdir}
++HEADERDIR     = $(DESTDIR)$(PREFIX)/%{includedir}/botan
++DOCDIR        = $(DESTDIR)$(PREFIX)/%{docdir}/botan
++PKGCONF_DIR   = $(DESTDIR)$(PREFIX)/libdata/pkgconfig
  
  CONFIG_SCRIPT = %{botan_config}
  PKGCONFIG     = %{botan_pkgconfig}

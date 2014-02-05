@@ -1,27 +1,21 @@
-# Created by: shane@freebsdhackers.net
+# Created by: shane@freebsdhackers.net aka modsix@gmail.com
 # $FreeBSD$
 
 PORTNAME=	destroy
-PORTVERSION=	20050329
+PORTVERSION=	20130926
 CATEGORIES=	security
-MASTER_SITES=	http://www.freebsdhackers.net/destroy/ \
-		http://destroy.rider.us/ \
-		http://www.impurity.org/mirrors/destroy/
+MASTER_SITES=	http://www.mod6.net/destroy/ \
+		http://www.kinneysoft.com/destroy/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Program to securely destroy files on the hard disk
+MAINTAINER=	modsix@gmail.com
+COMMENT=	Securely destroy files on the hard disk
 
-DEPRECATED=	No longer under active development
-EXPIRATION_DATE=	20140201
+LICENSE=	BSD4CLAUSE
 
-USE_GMAKE=	yes
+PLIST_FILES=	bin/destroy man/man1/destroy.1.gz
 
-MAN1=		destroy.1
-PLIST_FILES=	bin/destroy
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/destroy ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/destroy.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/destroy ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/destroy.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>

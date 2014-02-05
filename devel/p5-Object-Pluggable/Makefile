@@ -20,18 +20,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Object::Pluggable.3 \
-		Object::Pluggable::Constants.3 \
-		Object::Pluggable::Pipeline.3
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 post-install:
-.ifndef(NOPORTEXAMPLES)
-	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	@${MKDIR} ${EXAMPLESDIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}/
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -26,5 +26,4 @@ post-patch:	.SILENT
 		${WRKSRC}/rexxwrap.cmd
 	@${REINPLACE_CMD} 's/-compiler=$$(CC/&:T/' ${WRKSRC}/Makefile.in
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

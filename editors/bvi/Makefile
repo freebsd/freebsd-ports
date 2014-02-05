@@ -13,9 +13,4 @@ COMMENT=	A vi-like binary file (hex)editor
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR}
 
-MAN1=		bvi.1 bmore.1
-MLINKS=		bvi.1 bview.1 \
-		bvi.1 bvedit.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

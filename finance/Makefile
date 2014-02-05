@@ -25,6 +25,7 @@
     SUBDIR += cbb
     SUBDIR += electrum
     SUBDIR += expense
+    SUBDIR += fixc
     SUBDIR += frontaccounting
     SUBDIR += gnucash
     SUBDIR += gnucash-docs

@@ -13,9 +13,9 @@ COMMENT=	LaTeX source editor for KDE
 RUN_DEPENDS=	identify:${PORTSDIR}/graphics/ImageMagick
 
 USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake shared-mime-info
 USE_QT4=	qmake_build moc_build rcc_build uic_build
-USE_KDE4=	kdeprefix kdelibs automoc4 sharedmime kate_run
+USE_KDE4=	kdeprefix kdelibs automoc4 kate_run
 USE_TEX=	latex
 
 OPTIONS_DEFINE=	OKULAR

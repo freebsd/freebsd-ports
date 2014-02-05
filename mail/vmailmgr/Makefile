@@ -11,13 +11,6 @@ MASTER_SITES=	http://www.vmailmgr.org/current/	\
 MAINTAINER=	mij@bitchx.it
 COMMENT=	Virtual domain manager for qmail
 
-MAN1=	checkvpw.1 vauthenticate.1 dumpvuser.1 \
-	listvdomain.1 vadduser.1 vchattr.1 vchforwards.1 \
-	vdeliver.1 vdeluser.1 vpasswd.1 vpasswds.1 vrehash.1 \
-	vsetup.1 vupgrade.1
-
-MAN7=	vmailmgr.7
-MAN8=	vmailmgrd.8
 
 # get python paths (PYTHON_SITELIBDIR) in case we install the python API
 USES=			gmake perl5
@@ -29,7 +22,6 @@ AUTOMAKE_ARGS+=		--add-missing -Wno-portability
 OPTIONS_DEFINE=		PYTHONLIBS
 PYTHONLIBS_DESC=	Install the Python API
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if defined(PREFIX)

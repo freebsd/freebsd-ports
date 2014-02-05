@@ -13,6 +13,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A squid redirector used for blocking unwanted content
 
+BROKEN=		Fails to checksum
+
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	squid:${PORTSDIR}/www/squid
 

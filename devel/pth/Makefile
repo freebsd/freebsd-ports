@@ -20,15 +20,12 @@ CONFIGURE_ARGS=	--enable-optimize \
 		--includedir="${PREFIX}/include/pth" \
 		--libdir="${PREFIX}/lib/pth"
 
-MAN1=		pth-config.1
-MAN3=		pth.3
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
 
 CONFLICTS?=	pth-hard-2.*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PKGNAMESUFFIX} == "-hard"
@@ -37,8 +34,6 @@ PLIST_SUB=	PTHREAD="@comment "
 .else
 CONFIGURE_ARGS+=	--enable-syscall-soft --enable-pthread
 PLIST_SUB=	PTHREAD=""
-MAN1+=		pthread-config.1
-MAN3+=		pthread.3
 .endif
 
 post-patch:

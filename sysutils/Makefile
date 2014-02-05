@@ -171,7 +171,6 @@
     SUBDIR += ddrescue
     SUBDIR += debhelper
     SUBDIR += debootstrap
-    SUBDIR += decomment
     SUBDIR += deltup
     SUBDIR += desktop-installer
     SUBDIR += detach
@@ -414,6 +413,7 @@
     SUBDIR += isomd5sum
     SUBDIR += ispman
     SUBDIR += istatd
+    SUBDIR += jail-primer
     SUBDIR += jail2
     SUBDIR += jailadmin
     SUBDIR += jailctl
@@ -782,7 +782,6 @@
     SUBDIR += reed
     SUBDIR += rej
     SUBDIR += relaxconf
-    SUBDIR += relpath
     SUBDIR += rename
     SUBDIR += reoback
     SUBDIR += replicant

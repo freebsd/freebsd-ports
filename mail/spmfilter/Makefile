@@ -90,9 +90,6 @@ post-patch:
 		-e 's|(COMMON_LIBS )db|\1${BDB_LIB_NAME}|' \
 		${WRKSRC}/src/CMakeLists.txt
 
-pre-install:
-	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
-
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf.sample ${STAGEDIR}${PREFIX}/etc/
 

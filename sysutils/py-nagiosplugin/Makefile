@@ -2,6 +2,7 @@
 
 PORTNAME=	nagiosplugin
 PORTVERSION=	0.4.5
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +12,8 @@ COMMENT=	Class library for writing Nagios (Icinga) plugins
 
 LICENSE=	ZPL21
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

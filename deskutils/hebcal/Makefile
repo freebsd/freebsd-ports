@@ -11,9 +11,9 @@ COMMENT=	Hebrew Calendar calculator
 
 HAS_CONFIGURE=	yes
 
-PLIST_FILES=	bin/hebcal
-MAN1=		hebcal.1
+PLIST_FILES=	bin/hebcal \
+		man/man1/hebcal.1.gz
+
 INFO=		hebcal
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

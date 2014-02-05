@@ -50,6 +50,8 @@ lib/libqofsql.so
 lib/libqofsql.so.1
 libdata/pkgconfig/qof-1.pc
 libdata/pkgconfig/qof.pc
+man/man1/gnotime-remote.1.gz
+man/man1/gnotime.1.gz
 share/applications/gnotime.desktop
 share/gnome/help/gnotime/C/figures/gtt_edit_reports_dialog.png
 share/gnome/help/gnotime/C/figures/gtt_mainwin.png

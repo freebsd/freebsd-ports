@@ -16,11 +16,11 @@ LIB_DEPENDS=	mlt:${PORTSDIR}/multimedia/mlt \
 		qjson:${PORTSDIR}/devel/qjson
 RUN_DEPENDS=	ffmpeg${FFMPEG_SUFX}:${PORTSDIR}/multimedia/ffmpeg${FFMPEG_SUFX}
 
-USE_KDE4=	kdehier kdelibs kdeprefix automoc4 sharedmime
+USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USE_QT4=	dbus gui opengl script svg xml \
 		moc_build qmake_build rcc_build uic_build
 USE_XORG=	x11
-USES=		cmake pkgconfig
+USES=		cmake pkgconfig shared-mime-info
 USE_BZIP2=	yes
 CMAKE_ARGS=	-DFFMPEG_SUFFIX:STRING="${FFMPEG_SUFX}"
 

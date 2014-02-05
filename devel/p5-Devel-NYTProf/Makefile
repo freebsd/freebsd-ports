@@ -19,20 +19,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	nytprofhtml.1 \
-	nytprofcsv.1 \
-	nytprofcg.1 \
-	nytprofmerge.1
-
-MAN3=	Devel::MemoryProfiling.3 \
-	Devel::NYTProf.3 \
-	Devel::NYTProf::Apache.3 \
-	Devel::NYTProf::Core.3 \
-	Devel::NYTProf::Data.3 \
-	Devel::NYTProf::FileInfo.3 \
-	Devel::NYTProf::ReadStream.3 \
-	Devel::NYTProf::Run.3 \
-	Devel::NYTProf::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

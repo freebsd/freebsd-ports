@@ -22,8 +22,8 @@ LATEST_LINK=	${PORTNAME}-kde4
 
 USE_BZIP2=	yes
 USE_KDE4=	kdehier kdelibs kdeprefix libksane pimlibs \
-		automoc4 qimageblitz libkcddb sharedmime
+		automoc4 qimageblitz libkcddb
 USE_QT4=	qmake_build moc_build uic_build rcc_build
-USES=		cmake gettext
+USES=		cmake gettext shared-mime-info
 
 .include <bsd.port.mk>
