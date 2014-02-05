@@ -1,2 +1,3 @@
 %%SITE_PERL%%/Parallel/Iterator.pm
+%%PERL5_MAN3%%/Parallel::Iterator.3.gz
 @dirrmtry %%SITE_PERL%%/Parallel

@@ -13,7 +13,4 @@ COMMENT=	Simple parallel execution
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Parallel::Iterator.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
