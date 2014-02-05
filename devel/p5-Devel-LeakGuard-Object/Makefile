@@ -18,8 +18,4 @@ TEST_DEPENDS=	p5-latest>0:${PORTSDIR}/devel/p5-latest
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Devel::LeakGuard::Object.3 \
-		Devel::LeakGuard::Object::State.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

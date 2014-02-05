@@ -20,8 +20,4 @@ TEST_DEPENDS=	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	minicpan.1
-MAN3=	CPAN::Mini.3 CPAN::Mini::App.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

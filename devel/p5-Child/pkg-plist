@@ -8,6 +8,16 @@
 %%SITE_PERL%%/Child/Link/Parent.pm
 %%SITE_PERL%%/Child/Link/Proc.pm
 %%SITE_PERL%%/Child/Util.pm
+%%PERL5_MAN3%%/Child.3.gz
+%%PERL5_MAN3%%/Child::IPC::Pipe.3.gz
+%%PERL5_MAN3%%/Child::Link.3.gz
+%%PERL5_MAN3%%/Child::Link::IPC.3.gz
+%%PERL5_MAN3%%/Child::Link::IPC::Pipe.3.gz
+%%PERL5_MAN3%%/Child::Link::IPC::Pipe::Parent.3.gz
+%%PERL5_MAN3%%/Child::Link::IPC::Pipe::Proc.3.gz
+%%PERL5_MAN3%%/Child::Link::Parent.3.gz
+%%PERL5_MAN3%%/Child::Link::Proc.3.gz
+%%PERL5_MAN3%%/Child::Util.3.gz
 @dirrm %%SITE_PERL%%/Child/Link/IPC/Pipe
 @dirrm %%SITE_PERL%%/Child/Link/IPC
 @dirrm %%SITE_PERL%%/Child/Link

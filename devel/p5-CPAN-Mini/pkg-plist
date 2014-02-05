@@ -2,6 +2,9 @@ bin/minicpan
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Mini/.packlist
 %%SITE_PERL%%/CPAN/Mini.pm
 %%SITE_PERL%%/CPAN/Mini/App.pm
+%%PERL5_MAN3%%/CPAN::Mini.3.gz
+%%PERL5_MAN3%%/CPAN::Mini::App.3.gz
+man/man1/minicpan.1.gz
 @dirrmtry %%SITE_PERL%%/CPAN/Mini
 @dirrmtry %%SITE_PERL%%/CPAN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Mini

@@ -15,7 +15,4 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Devel::Refcount.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

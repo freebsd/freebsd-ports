@@ -22,38 +22,7 @@ TEST_DEPENDS=	p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
 		p5-Test-Class>=0:${PORTSDIR}/devel/p5-Test-Class \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
-NO_STAGE=	yes
 USES=	perl5
 USE_PERL5=	modbuildtiny
-
-MAN3=	Data::Model.3 \
-	Data::Model::Accessor.3 \
-	Data::Model::Driver.3 \
-	Data::Model::Driver::Cache.3 \
-	Data::Model::Driver::Cache::HASH.3 \
-	Data::Model::Driver::Cache::Memcached.3 \
-	Data::Model::Driver::DBI.3 \
-	Data::Model::Driver::DBI::DBD.3 \
-	Data::Model::Driver::DBI::DBD::SQLite.3 \
-	Data::Model::Driver::DBI::DBD::mysql.3 \
-	Data::Model::Driver::DBI::MasterSlave.3 \
-	Data::Model::Driver::Hash.3 \
-	Data::Model::Driver::Logic.3 \
-	Data::Model::Driver::Memcached.3 \
-	Data::Model::Driver::Memory.3 \
-	Data::Model::Driver::Queue::Q4M.3 \
-	Data::Model::Iterator.3 \
-	Data::Model::Mixin.3 \
-	Data::Model::Mixin::FindOrCreate.3 \
-	Data::Model::Mixin::Queue::Q4M.3 \
-	Data::Model::Row.3 \
-	Data::Model::SQL.3 \
-	Data::Model::Schema.3 \
-	Data::Model::Schema::Inflate.3 \
-	Data::Model::Schema::Inflate::UUID.3 \
-	Data::Model::Schema::Properties.3 \
-	Data::Model::Schema::SQL.3 \
-	Data::Model::Transaction.3 \
-	Data::Model::Tutorial::JA.3
 
 .include <bsd.port.mk>
