@@ -7,6 +7,14 @@
 %%SITE_PERL%%/Nagios/Plugin/Range.pm
 %%SITE_PERL%%/Nagios/Plugin/Threshold.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nagios/Plugin/.packlist
+%%PERL5_MAN3%%/Nagios::Plugin.3.gz
+%%PERL5_MAN3%%/Nagios::Plugin::Config.3.gz
+%%PERL5_MAN3%%/Nagios::Plugin::ExitResult.3.gz
+%%PERL5_MAN3%%/Nagios::Plugin::Functions.3.gz
+%%PERL5_MAN3%%/Nagios::Plugin::Getopt.3.gz
+%%PERL5_MAN3%%/Nagios::Plugin::Performance.3.gz
+%%PERL5_MAN3%%/Nagios::Plugin::Range.3.gz
+%%PERL5_MAN3%%/Nagios::Plugin::Threshold.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nagios/Plugin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nagios
 @dirrm %%SITE_PERL%%/Nagios/Plugin
