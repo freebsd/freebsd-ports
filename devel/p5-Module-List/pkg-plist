@@ -1,2 +1,3 @@
 %%SITE_PERL%%/Module/List.pm
+%%PERL5_MAN3%%/Module::List.3.gz
 @dirrmtry %%SITE_PERL%%/Module
