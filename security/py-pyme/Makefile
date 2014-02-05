@@ -21,7 +21,6 @@ PYDISTUTILS_PKGNAME=pygpgme
 
 MAKE_ARGS=	PYTHON=${PYTHON_CMD}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-patch:
@@ -30,6 +29,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,include/,&gpgme/,' ${WRKSRC}/Makefile
 
 pre-build:
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} build)
+	cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} build
 
 .include <bsd.port.post.mk>
