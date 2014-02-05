@@ -22,7 +22,6 @@ TARGET_DIR=	${PREFIX}/lib/compat
 TARGET32_DIR=	${PREFIX}/lib32/compat
 USE_LDCONFIG=	${TARGET_DIR}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
@@ -35,18 +34,15 @@ USE_LDCONFIG32=	${TARGET32_DIR}
 .endif
 
 do-install:
-	@${MKDIR} -m 755 ${TARGET_DIR}
+	@${MKDIR} -m 755 ${STAGEDIR}${TARGET_DIR}
 	${RM} -f ${WRKSRC}/lib/libpthread.so.2
-	(cd ${TARGET_DIR} && ${LN} -sf libthr.so.2 libpthread.so.2)
-	(cd ${WRKSRC}/lib && ${INSTALL_DATA} *.so.* ${TARGET_DIR})
+	(cd ${STAGEDIR}${TARGET_DIR} && ${LN} -sf libthr.so.2 libpthread.so.2)
+	(cd ${WRKSRC}/lib && ${INSTALL_DATA} *.so.* ${STAGEDIR}${TARGET_DIR})
 .if ${ARCH} == amd64
-	@${MKDIR} ${TARGET32_DIR}
+	@${MKDIR} ${STAGEDIR}${TARGET32_DIR}
 	${RM} -f ${WRKSRC}/lib32/libpthread.so.2
-	(cd ${TARGET32_DIR} && ${LN} -sf libthr.so.2 libpthread.so.2)
-	(cd ${WRKSRC}/lib32 && ${INSTALL_DATA} *.so.* ${TARGET32_DIR})
+	(cd ${STAGEDIR}${TARGET32_DIR} && ${LN} -sf libthr.so.2 libpthread.so.2)
+	(cd ${WRKSRC}/lib32 && ${INSTALL_DATA} *.so.* ${STAGEDIR}${TARGET32_DIR})
 .endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
