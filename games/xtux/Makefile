@@ -21,6 +21,8 @@ CFLAGS+=	-DDATADIR=\\\"${DATADIR}\\\"
 
 OPTIONS_DEFINE=	DOCS
 
+MAKE_JOBS_UNSAFE=yes
+
 post-patch:
 	@${FIND} ${WRKSRC}/src -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|^CC|#CC|g ; \
