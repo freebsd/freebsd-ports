@@ -18,7 +18,6 @@ USE_LDCONFIG=	yes
 BUILDENV=	${SETENV} TMPDIR="${TMPDIR}"
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386" || ${ARCH} == "powerpc"
@@ -40,14 +39,14 @@ do-build:
 	cd ${WRKSRC}/lpsolve55 ; ${BUILDENV} ${SH} -x ccc
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lp_solve/bin/${LPSOLVE_ARCH}/lp_solve ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/include/lpsolve
+	${INSTALL_PROGRAM} ${WRKSRC}/lp_solve/bin/${LPSOLVE_ARCH}/lp_solve ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/lpsolve
 .for i in declare.h fortify.h ini.h lp_*.h lpkit.h lpsolve.h ufortify.h yacc_read.h
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/include/lpsolve
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${PREFIX}/include/lpsolve
 .endfor
 .for i in liblpsolve55.a liblpsolve55.so
-	${INSTALL_DATA} ${WRKSRC}/lpsolve55/bin/${LPSOLVE_ARCH}/${i} ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/lpsolve55/bin/${LPSOLVE_ARCH}/${i} ${STAGEDIR}${PREFIX}/lib
 .endfor
-	${LN} -sf liblpsolve55.so ${PREFIX}/lib/liblpsolve55.so.1
+	${LN} -sf liblpsolve55.so ${STAGEDIR}${PREFIX}/lib/liblpsolve55.so.1
 
 .include <bsd.port.post.mk>
