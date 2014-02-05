@@ -3,7 +3,7 @@
 
 PORTNAME=	libmad
 PORTVERSION=	0.15.1b
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	SF/mad/${PORTNAME}/${PORTVERSION}
 
@@ -28,7 +28,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's| -fforce-mem||' ${WRKSRC}/configure
 
 post-build:
-	@${STRIP_CMD} ${WRKSRC}/.libs/libmad.so.2
+	@${STRIP_CMD} ${WRKSRC}/.libs/libmad.so.0.2.1
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/mad.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
