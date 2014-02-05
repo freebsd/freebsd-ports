@@ -3,7 +3,7 @@
 
 PORTNAME=	ocp
 PORTVERSION=	0.1.20
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://stian.cubic.org/ocp/ \
@@ -22,12 +22,12 @@ LIB_DEPENDS=	libid3tag.so:${PORTSDIR}/audio/libid3tag \
 ONLY_FOR_ARCHS=	i386 amd64
 
 GNU_CONFIGURE=	yes
-USES=		ncurses gmake pkgconfig
+USES=		ncurses gmake pkgconfig desktop-file-utils
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
-MAKE_JOBS_UNSAFE=	yes
-WANT_GNOME=	desktopfileutils
 USE_GCC=	any
+
+MAKE_JOBS_UNSAFE=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -67,7 +67,6 @@ RUN_DEPENDS+=	${TIMIDITY_CFG}:${PORTSDIR}/audio/eawpats
 
 .if ${PORT_OPTIONS:MX11}
 USE_XORG=		xxf86dga xxf86vm xpm
-USE_GNOME=		desktopfileutils
 CONFIGURE_ARGS+=	--with-x11=yes
 PLIST_SUB+=		XORG=""
 .else
@@ -86,7 +85,6 @@ CONFIGURE_ARGS+=	--without-adplug
 
 .if ${PORT_OPTIONS:MSDL}
 USE_SDL=		sound
-USE_GNOME+=		desktopfileutils
 CONFIGURE_ARGS+=	--with-sdl=yes
 PLIST_SUB+=		SDL=""
 .else
@@ -120,5 +118,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|<\(fnmatch.h\)>|"/usr/include/\1"|' \
 		${WRKSRC}/filesel/adb.c \
 		${WRKSRC}/filesel/pfilesel.c
+	@${REINPLACE_CMD} -e '1s|bash|sh|' ${WRKSRC}/ultrafix.sh
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ocp
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocp/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocp/autoload/*.so
 
 .include <bsd.port.mk>
