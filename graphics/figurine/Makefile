@@ -8,17 +8,23 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A drawing program for X11
+COMMENT=	Drawing program for X11
+
+LICENSE=	GPLv2
+
+OPTIONS_DEFINE=	DOCS
 
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
 GNU_CONFIGURE=	yes
 USE_XORG=	xpm
 
-MAN1=		figurine.1
+PLIST_FILES=	bin/figurine \
+		man/man1/figurine.1.gz
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+PORTDOCS=	*
+
+.include <bsd.port.options.mk>
 
 # Optimizations produce bad assembly code on sparc64
 .if ${ARCH} == "sparc64"
@@ -26,7 +32,7 @@ CFLAGS+=	-O0
 .endif
 
 post-patch:
-.if defined(NOPORTDOCS)
+.if !${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e "s|Doc examples src|src|" \
 		${WRKSRC}/Makefile.in
 .endif
@@ -36,4 +42,4 @@ post-patch:
 		${WRKSRC}/Doc/Makefile.in \
 		${WRKSRC}/examples/Makefile.in
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
