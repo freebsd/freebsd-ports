@@ -16,4 +16,7 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		libtool pathfix
 
+post-build:
+	@${STRIP_CMD} ${WRKSRC}/lib/.libs/libunshield.so.0.0.0
+
 .include <bsd.port.mk>
