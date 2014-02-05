@@ -10,6 +10,9 @@ MASTER_SITES=	http://gert.sos.be/downloads/mysqlar/
 MAINTAINER=	gregoryba@gmail.com
 COMMENT=	A tool to collect and graph database statistics from MySQL
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=2014-03-05
+
 BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
