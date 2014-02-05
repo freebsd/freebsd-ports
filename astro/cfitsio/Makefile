@@ -3,6 +3,7 @@
 
 PORTNAME=	cfitsio
 PORTVERSION=	3.350
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/ \
 		http://heasarc.gsfc.nasa.gov/FTP/software/fitsio/c/oldvers/ \
@@ -27,18 +28,21 @@ USE_LDCONFIG=	yes
 USES=		pkgconfig
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+PLIST_SUB=	SHLIB_VER=${SHLIB_VER}
 PORTDOCS=	*
 
+SHLIB_VER=	1.${PORTVERSION:S/0$//}
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|="\.so"|=".so.0"|g' ${WRKSRC}/configure
 	@${MV} ${WRKSRC}/zlib.h ${WRKSRC}/zlib.h.dist
 	@${GREP} -lR "<malloc.\h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g'
 
 do-install:
 	cd ${WRKSRC}/ && ${INSTALL_DATA} drvrsmem.h fitsio.h fitsio2.h longnam.h ${STAGEDIR}${PREFIX}/include/
-	cd ${WRKSRC}/ && ${INSTALL_LIB} libcfitsio.so.0 ${STAGEDIR}${PREFIX}/lib/
+	cd ${WRKSRC}/ && ${INSTALL_LIB} libcfitsio.so.${SHLIB_VER} ${STAGEDIR}${PREFIX}/lib/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} cfitsio.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig/
-	${LN} -fs libcfitsio.so.0 ${STAGEDIR}${PREFIX}/lib/libcfitsio.so
+	${LN} -fs libcfitsio.so.${SHLIB_VER} ${STAGEDIR}${PREFIX}/lib/libcfitsio.so.1
+	${LN} -fs libcfitsio.so.1 ${STAGEDIR}${PREFIX}/lib/libcfitsio.so
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/*.doc ${STAGEDIR}${DOCSDIR}/
 
