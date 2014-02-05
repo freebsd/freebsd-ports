@@ -39,6 +39,7 @@ lib/libcomprex.a
 lib/libcomprex.la
 lib/libcomprex.so
 lib/libcomprex.so.3
+lib/libcomprex.so.3.0.0
 libdata/pkgconfig/libcomprex.pc
 man/man1/comprex-config.1.gz
 man/man3/cxApplyFsNodeInfo.3.gz
