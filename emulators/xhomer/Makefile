@@ -12,7 +12,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emulator for the DEC Pro 350 computer
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_XORG=	xt sm ice xext x11
 ALL_TARGET=	clean xhomer
 INSTALL_TARGET=
@@ -24,15 +24,11 @@ PLIST_FILES=	bin/xhomer %%EXAMPLESDIR%%/xhomer.cfg
 PLIST_DIRS=	%%EXAMPLESDIR%%
 PORTDOCS=	README LICENSE SIMH
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-	${INSTALL_PROGRAM} ${WRKSRC}/xhomer ${PREFIX}/bin
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/xhomer.cfg ${EXAMPLESDIR}
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/xhomer ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/xhomer.cfg ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
