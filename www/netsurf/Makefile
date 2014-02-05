@@ -41,6 +41,11 @@ WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
 USE_GSTREAMER=	yes
 .endif
 
+.if ${OPSYS} == DragonFly
+LIB_DEPENDS+=	libssl.so:${PORTSDIR}/security/openssl
+BUILD_DEPENDS+=	gperf:${PORTSDIR}/devel/gperf
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} '/^NSFB_LINUX_AVAILABLE/ s|yes|no| ; s| -g||' \
 		${WRKSRC}/src/libnsfb-${NSFB_VERSION}/Makefile
