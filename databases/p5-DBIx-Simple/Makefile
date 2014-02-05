@@ -21,12 +21,6 @@ TEXT_TABLE_DESC=	Create plain text table from data
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	DBIx::Simple.3 \
-	DBIx::Simple::Examples.3 \
-	DBIx::Simple::Comparison.3 \
-	DBIx::Simple::Result::RowObject.3
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQL_INTERP}

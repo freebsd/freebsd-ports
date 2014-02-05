@@ -6,6 +6,13 @@
 %%SITE_PERL%%/Text/Query/BuildSQLPg.pm
 %%SITE_PERL%%/Text/Query/SolveSQL.pm
 %%SITE_PERL%%/Bundle/Text/Query/BuildSQL.pm
+%%PERL5_MAN3%%/Bundle::Text::Query::BuildSQL.3.gz
+%%PERL5_MAN3%%/Text::Query::BuildSQL.3.gz
+%%PERL5_MAN3%%/Text::Query::BuildSQLFulcrum.3.gz
+%%PERL5_MAN3%%/Text::Query::BuildSQLMifluz.3.gz
+%%PERL5_MAN3%%/Text::Query::BuildSQLMySQL.3.gz
+%%PERL5_MAN3%%/Text::Query::BuildSQLPg.3.gz
+%%PERL5_MAN3%%/Text::Query::SolveSQL.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/Query/SQL
 @dirrmtry %%SITE_PERL%%/Bundle/Text/Query
 @dirrmtry %%SITE_PERL%%/Bundle/Text
