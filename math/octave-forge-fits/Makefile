@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-fits
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -17,7 +17,7 @@ OCTSRC=		${OCTAVE_PKGNAME}
 
 WRKSRC=	${WRKDIR}/${OCTSRC}/src
 
-LIB_DEPENDS+=	cfitsio:${PORTSDIR}/astro/cfitsio
+LIB_DEPENDS+=	libcfitsio.so:${PORTSDIR}/astro/cfitsio
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 
