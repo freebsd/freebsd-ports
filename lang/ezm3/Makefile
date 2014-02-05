@@ -16,10 +16,14 @@ COMMENT=	Easier, more portable Modula-3 distribution for building CVSup
 
 NO_STAGE=	yes
 
+USES=		gmake
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${OPSYS} == DragonFly
+IGNORE=		no bootstrap exists; use lang/modula-3 instead
+.endif
 
 .if ${ARCH} == "amd64"
 DISTFILES+=	ezm3-${PORTVERSION}-${TARGET}-boot.tar.bz2:amdb \
