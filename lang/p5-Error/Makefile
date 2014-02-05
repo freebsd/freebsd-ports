@@ -2,13 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	Error
-PORTVERSION=	0.17021
+PORTVERSION=	0.17022
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Perl module to provide Error/exception support for perl: Error
+COMMENT=	Error/exception handling in object-oriented programming style
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
