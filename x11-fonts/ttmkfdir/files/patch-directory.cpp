@@ -1,16 +1,17 @@
---- directory.cpp.orig	Mon Dec  9 11:29:11 2002
-+++ directory.cpp	Wed Jul 19 11:41:32 2006
-@@ -1,7 +1,9 @@
+--- directory.cpp.orig	2002-12-09 03:29:11.000000000 -0500
++++ directory.cpp
+@@ -1,7 +1,10 @@
  #include <cctype>
  #include <dirent.h>
 +#include <sys/types.h>
  #include <sys/stat.h>
  #include <unistd.h>
 +#include <fcntl.h>
++#include <string.h>
  
  #include "directory.h"
  
-@@ -37,19 +39,24 @@
+@@ -37,19 +40,24 @@ directory::select (const char *name) con
  bool
  ttfdirectory::select (const char *name) const
  {
