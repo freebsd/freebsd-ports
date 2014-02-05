@@ -17,21 +17,21 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_PYTHON=	yes
 USE_PYTHON_PREFIX=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	pyOpenSSL
+PYDISTUTILS_AUTOPLIST=	yes
 USE_OPENSSL=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+PORTEXAMPLES=	*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	EXAMPLES
+
 pre-configure:
 	@${ECHO_CMD} "[build_ext]" >> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "include-dirs = ${OPENSSLINC}" >> ${WRKSRC}/setup.cfg
 	@${ECHO_CMD} "library-dirs = ${OPENSSLLIB}" >> ${WRKSRC}/setup.cfg
 
-.if !defined(NOPORTEXAMPLES)
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
