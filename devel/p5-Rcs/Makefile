@@ -13,8 +13,6 @@ COMMENT=	Perl Object Class for Revision Control System (RCS)
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Rcs.3
-
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLES=	access.pl ci.pl co-tree.pl co.pl comments.pl \
 		comments2.pl daterev.pl dates.pl parse.pl \
@@ -23,14 +21,11 @@ EXAMPLES=	access.pl ci.pl co-tree.pl co.pl comments.pl \
 		rcsdiff.pl revdate.pl rlog.pl symbols.pl symrev.pl \
 		test1.pl test2.pl test3.pl unlock.pl
 
-NO_STAGE=	yes
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
-	${MKDIR} ${EXAMPLESDIR}/project
-	${MKDIR} ${EXAMPLESDIR}/project/RCS
-	${MKDIR} ${EXAMPLESDIR}/project/src
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR} ${STAGEDIR}${EXAMPLESDIR}/project/RCS \
+		${STAGEDIR}${EXAMPLESDIR}/project/src
 .for _EXAMPLE in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/examples/${_EXAMPLE} ${EXAMPLESDIR}/${_EXAMPLE}
+	${INSTALL_DATA} ${WRKSRC}/examples/${_EXAMPLE} ${STAGEDIR}${EXAMPLESDIR}/${_EXAMPLE}
 .endfor
 
 .include <bsd.port.mk>
