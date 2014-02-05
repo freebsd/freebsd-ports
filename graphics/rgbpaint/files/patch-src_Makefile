@@ -1,0 +1,11 @@
+--- src/Makefile.orig	2007-01-12 14:22:19.000000000 +0000
++++ src/Makefile
+@@ -1,7 +1,7 @@
+ include ../_conf.txt
+ 
+ CFLAGS = $(CFLAG)
+-LDFLAGS = $(LDFLAG) $(GLIB_LIB)
++LDFLAGS = $(LDFLAG) $(GLIB_LIB) -lm -lintl
+ 
+ BIN = rgbpaint
+ 
