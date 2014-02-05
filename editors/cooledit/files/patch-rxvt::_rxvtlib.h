@@ -5,7 +5,7 @@
  # include <grp.h>
  #endif
 -#ifdef PTYS_ARE_PTMX
-+#if defined(PTYS_ARE_PTMX) && !defined(__FreeBSD__)
++#if defined(PTYS_ARE_PTMX) && !defined(__FreeBSD__) && !defined(__DragonFly__)
  # include <sys/resource.h>	/* for struct rlimit */
  # include <sys/stropts.h>	/* for I_PUSH */
  #endif
