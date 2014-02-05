@@ -15,7 +15,4 @@ BUILD_DEPENDS=	p5-ExtUtils-CBuilder>=0.27:${PORTSDIR}/devel/p5-ExtUtils-CBuilder
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		ExtUtils::LibBuilder.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
