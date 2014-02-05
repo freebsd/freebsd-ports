@@ -3,6 +3,7 @@
 
 PORTNAME=	ufraw
 PORTVERSION=	0.19.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -47,25 +48,25 @@ CONFIGURE_ARGS+=	--enable-dst-correction
 .endif
 
 .if ${PORT_OPTIONS:MEXIV2}
-LIB_DEPENDS+=	exiv2:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS+=	libexiv2.so:${PORTSDIR}/graphics/exiv2
 .else
 PC_FALSE+=	exiv2
 .endif
 
 .if ${PORT_OPTIONS:MLENSFUN}
-LIB_DEPENDS+=	lensfun:${PORTSDIR}/graphics/lensfun
+LIB_DEPENDS+=	liblensfun.so:${PORTSDIR}/graphics/lensfun
 .else
 PC_FALSE+=	lensfun
 .endif
 
 .if ${PORT_OPTIONS:MFITS}
-LIB_DEPENDS+=	cfitsio:${PORTSDIR}/astro/cfitsio
+LIB_DEPENDS+=	libcfitsio.so:${PORTSDIR}/astro/cfitsio
 .else
 PC_FALSE+=	cfitsio
 .endif
 
 .if ${PORT_OPTIONS:MGIMP}
-LIB_DEPENDS+=	gimp-2.0:${PORTSDIR}/graphics/gimp-app
+LIB_DEPENDS+=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
 PLIST_SUB+=	GIMP=""
 .else
 CONFIGURE_ARGS+=--without-gimp
@@ -74,7 +75,7 @@ PLIST_SUB+=	GIMP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}
-LIB_DEPENDS+=	gtkimageview:${PORTSDIR}/x11-toolkits/gtkimageview
+LIB_DEPENDS+=	libgtkimageview.so:${PORTSDIR}/x11-toolkits/gtkimageview
 PLIST_SUB+=	MGTK2=""
 .else
 PLIST_SUB+=	MGTK2="@comment "
