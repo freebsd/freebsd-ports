@@ -2,8 +2,8 @@
 %%ETCDIR%%/%%PORTNAME%%ctl.cfg.example
 %%ETCDIR%%/inetrc.example
 @unexec if cmp -s %D/%%ETCDIR%%/%%PORTNAME%%.defaults.example %D/%%ETCDIR%%/%%PORTNAME%%.defaults; then rm -f %D/%%ETCDIR%%/%%PORTNAME%%.defaults; fi
-@unexec if cmp -s %D/%%ETCDIR%%/%%PORTNAME%%.inetrc.example %D/%%ETCDIR%%/%%PORTNAME%%.inetrc; then rm -f %D/%%ETCDIR%%/%%PORTNAME%%.inetrc; fi
-@exec [ ! -f %D/%%ETCDIR%%/%%PORTNAME%%.inetrc ] && cp %D/%%ETCDIR%%/%%PORTNAME%%.inetrc.example %D/%%ETCDIR%%/%%PORTNAME%%.inetrc
+@unexec if cmp -s %D/%%ETCDIR%%/inetrc.example %D/%%ETCDIR%%/inetrc; then rm -f %D/%%ETCDIR%%/inetrc; fi
+@exec [ ! -f %D/%%ETCDIR%%/inetrc ] && cp %D/%%ETCDIR%%/inetrc.example %D/%%ETCDIR%%/inetrc
 %%PAM%%etc/pam.d/%%PORTNAME%%
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ELDAPv3.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/XmppAddr.beam
