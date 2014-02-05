@@ -22,7 +22,7 @@ MAKE_ENV=	DEBUG_CFLAGS="-I${OPENSSLINC}" \
 
 CFLAGS+=	-D_GNU_SOURCE
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -lcrypto
 
 PLIST_FILES=	bin/wmmaiload bin/wmmaiload-config \
 		man/man1/wmmaiload.1.gz man/man1/wmmaiload-config.1.gz
