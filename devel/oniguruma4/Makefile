@@ -19,7 +19,6 @@ DOCS=		HISTORY README doc/*
 
 PKGNAMESUFFIX=	4
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
 		-e 's|freebsd1|freebsd1.|' \
@@ -30,17 +29,13 @@ post-configure:
 		${FILESDIR}/onig-config > ${WRKSRC}/onig-config
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/onig-config ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/onig-config ${STAGEDIR}${PREFIX}/bin/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample/*.c ${WRKSRC}/sample/Makefile* \
-		${EXAMPLESDIR}/
-.endif
+		${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
