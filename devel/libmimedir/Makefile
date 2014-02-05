@@ -13,6 +13,8 @@ USES=		bison desthack libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+MAKE_JOBS_UNSAFE=yes
+
 post-patch:
 	${REINPLACE_CMD} -e 's/444/644/g' ${WRKSRC}/Makefile.in
 
