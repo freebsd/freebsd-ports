@@ -11,14 +11,10 @@ DISTNAME=	${PORTNAME:C/a/A/}-${PORTVERSION}_beta_4
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Python library including an aspect-oriented programming (AOP) engine
 
+LICENSE=	LGPL3
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_EGGINFO=	${DISTNAME}-py${PYTHON_VER}.egg-info
-
-NO_STAGE=	yes
-post-install:
-.if !defined(BATCH)
-	@${CAT} ${PKGMESSAGE}
-.endif
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
