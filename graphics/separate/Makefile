@@ -11,7 +11,11 @@ MASTER_SITE_SUBDIR=	separate-plus/47873
 DISTNAME=	${PORTNAME}+-${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A CMYK plugin for The GIMP
+COMMENT=	CMYK plugin for The GIMP
+
+LICENSE=	GPLv2
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 BUILD_DEPENDS=	gccmakedep:${PORTSDIR}/devel/gccmakedep
 LIB_DEPENDS=	liblcms.so.1:${PORTSDIR}/graphics/lcms \
@@ -23,8 +27,8 @@ USES=		gmake pkgconfig
 BIN_TARGETS=	separate separate_import icc_colorspace
 L10N_TARGETS=	cs es fr ja ko pl ru
 
-.for PLUGIN in ${BIN_TARGETS}
-PLIST_FILES+=	libexec/gimp/2.2/plug-ins/${PLUGIN}
+.for plugin in ${BIN_TARGETS}
+PLIST_FILES+=	libexec/gimp/2.2/plug-ins/${plugin}
 .endfor
 .for lang in ${L10N_TARGETS}
 PLIST_FILES+=	share/locale/${lang}/LC_MESSAGES/gimp20-separate.mo
@@ -33,24 +37,31 @@ PLIST_FILES+=	share/locale/${lang}/LC_MESSAGES/gimp20-separate.mo
 PORTDOCS=	README*
 PORTEXAMPLES=	qproof.scm qexport.scm
 
-MAKE_ENV+=	TARGETS="${BIN_TARGETS}"
+MAKE_ENV+=	TARGETS="${BIN_TARGETS}" \
+		PREFIX=${STAGEDIR}${PREFIX}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CC/s|=|?=|; /^PREFIX/s|=|?=|; s| make| ${GMAKE}|; \
-	    s|lib/gimp/2.0|libexec/gimp/2.2|' ${WRKSRC}/Makefile ${WRKSRC}/po/Makefile
+	@${REINPLACE_CMD} -e '/^CC/s|=|?=|; s| make| ${MAKE_CMD}|;' \
+	    ${WRKSRC}/Makefile ${WRKSRC}/po/Makefile
 
-post-install:
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gimp/2.2/plug-ins
+.for plugin in ${BIN_TARGETS}
+	${INSTALL_PROGRAM} ${WRKSRC}/${plugin} ${STAGEDIR}${PREFIX}/libexec/gimp/2.2/plug-ins/
+.endfor
+.for lang in ${L10N_TARGETS}
+	${INSTALL_DATA} ${WRKSRC}/po/${lang}.gmo ${STAGEDIR}${PREFIX}/share/locale/${lang}/LC_MESSAGES/gimp20-separate.mo
+.endfor
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/sample-scripts && \
-	${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
+	    ${INSTALL_DATA} ${PORTEXAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 .endif
 	@${CAT} pkg-message
 
