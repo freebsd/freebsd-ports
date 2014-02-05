@@ -1,9 +1,13 @@
 lib/libtkgeomap.so
 lib/libtkgeomap.so.0
-%%INC%%/tkgeomap.h
-%%INC%%/tkgeomapInt.h
-%%LIB%%/pkgIndex.tcl
-%%LIB%%/tkgeomap_procs.tcl
-%%LIB%%/wdgeomap.tcl
-@dirrm %%INC%%
-@dirrm %%LIB%%
+include/tkgeomap/tkgeomap.h
+include/tkgeomap/tkgeomapInt.h
+lib/tkgeomap/pkgIndex.tcl
+lib/tkgeomap/tkgeomap_procs.tcl
+lib/tkgeomap/wdgeomap.tcl
+man/mann/igeomap.n.gz
+man/mann/tkgeomap.n.gz
+man/mann/tkgeomap_procs.n.gz
+man/mann/wdgeomap.n.gz
+@dirrm include/tkgeomap
+@dirrm lib/tkgeomap
