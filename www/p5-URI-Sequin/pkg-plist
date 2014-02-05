@@ -5,6 +5,7 @@
 %%PORTDOCS%%%%SITE_PERL%%/URI/Sequin/examples/ref2.log
 %%PORTDOCS%%@dirrm %%SITE_PERL%%/URI/Sequin/examples
 %%PORTDOCS%%@dirrm %%SITE_PERL%%/URI/Sequin
+%%PERL5_MAN3%%/URI::Sequin.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/Sequin
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI
 @dirrmtry %%SITE_PERL%%/URI

@@ -13,15 +13,10 @@ COMMENT=	Extract information from the URLs of Search-Engines
 
 USES=		perl5
 USE_PERL5=	configure
-NO_STAGE=	yes
 
-MAN3=		URI::Sequin.3
-
-.ifndef (NOPORTDOCS)
 post-install:
-	@${MKDIR} ${PREFIX}/${SITE_PERL_REL}/URI/Sequin/examples
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/URI/Sequin/examples
 	@${INSTALL_DATA} ${WRKSRC}/example.pl ${WRKSRC}/ref?.log \
-		${PREFIX}/${SITE_PERL_REL}/URI/Sequin/examples
-.endif
+		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/URI/Sequin/examples
 
 .include <bsd.port.mk>
