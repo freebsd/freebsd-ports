@@ -17,13 +17,9 @@ CONFLICTS=	jive* chef* filters-*
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-INFO=	talkfilters
+SUB_FILES=	pkg-message
 
-pre-everything::
-	@${ECHO_MSG} "Please note that some of the filters contain language that may"
-	@${ECHO_MSG} "be objectionable to some. They are provided uncensored, in their"
-	@${ECHO_MSG} "original form. Please don't use the filters to do anything that"
-	@${ECHO_MSG} "you shouldn't."
+INFO=	talkfilters
 
 post-extract:
 	@${ECHO} ${DO_NADA} > ${WRKSRC}/install-sh
@@ -35,5 +31,8 @@ post-patch:
 		's|^\(pkgconfigdir\ =\ \).*|\1$$(prefix)/libdata/pkgconfig|' \
 			${WRKSRC}/Makefile.am \
 			${WRKSRC}/Makefile.in
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtalkfilters.so*
 
 .include <bsd.port.mk>
