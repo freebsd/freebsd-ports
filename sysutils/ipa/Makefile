@@ -25,7 +25,6 @@ SUBLIMITS_DESC=		Enable sublimits support
 THRESHOLDS_DESC=	Enable thresholds support
 CTL_CREDS_DESC=		Enable ipactl's messages credentials
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MAUTORULES)
@@ -52,13 +51,15 @@ CONFIGURE_ARGS+=	--disable-thresholds
 CONFIGURE_ARGS+=	--enable-ctl-creds
 .endif
 
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/ipa bin/ipactl bin/ipastat include/ipa_mod.h \
+		man/man3/ipa_mod.3.gz man/man5/ipa.conf.5.gz \
+		man/man5/ipastat.conf.5.gz man/man8/ipa.8.gz \
+		man/man8/ipactl.8.gz man/man8/ipastat.8.gz \
+		man/ru.KOI8-R/man3/ipa_mod.3.gz \
+		man/ru.KOI8-R/man5/ipa.conf.5.gz \
+		man/ru.KOI8-R/man5/ipastat.conf.5.gz \
+		man/ru.KOI8-R/man8/ipa.8.gz \
+		man/ru.KOI8-R/man8/ipactl.8.gz \
+		man/ru.KOI8-R/man8/ipastat.8.gz
 
-PLIST_FILES=	bin/ipa bin/ipactl bin/ipastat include/ipa_mod.h
-
-MAN3=		ipa_mod.3
-MAN5=		ipa.conf.5 ipastat.conf.5
-MAN8=		ipa.8 ipactl.8 ipastat.8
-MANLANG=	"" ru.KOI8-R
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
