@@ -1,6 +1,6 @@
---- configure.orig	2010-11-30 23:51:02.000000000 +0100
-+++ configure	2013-11-18 16:59:27.000000000 +0100
-@@ -975,7 +975,7 @@
+--- configure.orig	2010-11-30 17:51:02.000000000 -0500
++++ configure
+@@ -975,7 +975,7 @@ cat > conftest.$ac_ext << EOF
  #line 976 "configure"
  #include "confdefs.h"
  
@@ -9,7 +9,7 @@
  EOF
  if { (eval echo configure:981: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
    ac_cv_prog_cc_works=yes
-@@ -1461,7 +1461,7 @@
+@@ -1461,7 +1461,7 @@ cat > conftest.$ac_ext <<EOF
  #include "confdefs.h"
  
  int main() {
@@ -18,7 +18,7 @@
  ; return 0; }
  EOF
  if { (eval echo configure:1468: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -1504,7 +1504,7 @@
+@@ -1504,7 +1504,7 @@ cat > conftest.$ac_ext <<EOF
  #include "confdefs.h"
  
  int main() {
@@ -27,7 +27,7 @@
  ; return 0; }
  EOF
  if { (eval echo configure:1511: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -1547,7 +1547,7 @@
+@@ -1547,7 +1547,7 @@ cat > conftest.$ac_ext <<EOF
  #include "confdefs.h"
  
  int main() {
@@ -36,7 +36,7 @@
  ; return 0; }
  EOF
  if { (eval echo configure:1554: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
-@@ -2325,7 +2325,7 @@
+@@ -2325,7 +2325,7 @@ else
    cat > conftest.$ac_ext <<EOF
  #line 2327 "configure"
  #include "confdefs.h"
@@ -45,7 +45,7 @@
    /* Are we little or big endian?  From Harbison&Steele.  */
    union
    {
-@@ -2371,11 +2371,12 @@
+@@ -2371,11 +2371,12 @@ else
  #line 2372 "configure"
  #include "confdefs.h"
  #include <stdio.h>
@@ -60,7 +60,7 @@
    exit(0);
  }
  EOF
-@@ -2410,11 +2411,12 @@
+@@ -2410,11 +2411,12 @@ else
  #line 2411 "configure"
  #include "confdefs.h"
  #include <stdio.h>
@@ -75,7 +75,7 @@
    exit(0);
  }
  EOF
-@@ -2449,11 +2451,12 @@
+@@ -2449,11 +2451,12 @@ else
  #line 2450 "configure"
  #include "confdefs.h"
  #include <stdio.h>
@@ -90,7 +90,7 @@
    exit(0);
  }
  EOF
-@@ -2488,11 +2491,12 @@
+@@ -2488,11 +2491,12 @@ else
  #line 2489 "configure"
  #include "confdefs.h"
  #include <stdio.h>
@@ -105,7 +105,7 @@
    exit(0);
  }
  EOF
-@@ -2681,7 +2685,7 @@
+@@ -2681,7 +2685,7 @@ cat > conftest.$ac_ext <<EOF
  #line 2682 "configure"
  #include "confdefs.h"
  
@@ -114,16 +114,16 @@
      double e, u;
      /* 
       *	Check the smallest value such that 1.0 + x != 1.0.
-@@ -3379,7 +3383,7 @@
+@@ -3379,7 +3383,7 @@ else
  fi
  
  case $target in
 -  *-sunos4*|*-*-netbsd|NetBSD-*|FreeBSD-*|OpenBSD-*|*-*-cygwin*|*-*-mingw*)
-+  *-sunos4*|*-*-netbsd|NetBSD-*|*-freebsd*|OpenBSD-*|*-*-cygwin*|*-*-mingw*)
++  *-sunos4*|*-*-netbsd|NetBSD-*|*-dragonfly*|*-freebsd*|OpenBSD-*|*-*-cygwin*|*-*-mingw*)
      TCL_LIB_NAME="tcl${TCL_MAJOR_VERSION}${TCL_MINOR_VERSION}"
      TK_LIB_NAME="tk${TK_MAJOR_VERSION}${TK_MINOR_VERSION}"
      ;;
-@@ -3854,7 +3858,7 @@
+@@ -3854,7 +3858,7 @@ SHLIB_RUNPATH="$TCL_LD_SEARCH_FLAGS"
  SHLIB_SUFFIX=".so"
  SHLIB_TARGET=""
  SHLIB_CFLAGS=""
@@ -132,3 +132,12 @@
  SHLIB_TCL_ONLY_LIB_SPECS="${TCL_ONLY_LIB_SPECS}"
  SHLIB_TCL_ONLY_LIB_SPECS=""
  LDFLAGS=""
+@@ -4072,7 +4076,7 @@ fi
+     EXTRA_LIB_SPECS="-ldl"
+     ;;
+ 
+-  *-netbsd*|*-freebsd*|*-openbsd*)
++  *-netbsd*|*-dragonfly*|*-freebsd*|*-openbsd*)
+     # Not available on all versions:  check for include file.
+     ac_safe=`echo "dlfcn.h" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for dlfcn.h""... $ac_c" 1>&6
