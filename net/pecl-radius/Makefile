@@ -14,14 +14,11 @@ COMMENT=	Radius client library for PHP
 
 USE_PHP=	yes
 USE_PHPEXT=	yes
-NO_STAGE=	yes
 
 CONFIGURE_ARGS=	--enable-radius
 
-.if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

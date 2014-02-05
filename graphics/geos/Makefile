@@ -21,7 +21,6 @@ OPTIONS_DEFINE=	PHP PYTHON RUBY
 
 OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPHP} || ${PORT_OPTIONS:MPYTHON} || ${PORT_OPTIONS:MRUBY}
@@ -45,6 +44,6 @@ CONFIGURE_ENV+=		RUBY="${RUBY}"
 .endif
 
 post-install:
-	@${LN} -s ${PREFIX}/lib/libgeos-${PORTVERSION}.so ${PREFIX}/lib/libgeos.so.0
+	@${LN} -s ${PREFIX}/lib/libgeos-${PORTVERSION}.so ${STAGEDIR}${PREFIX}/lib/libgeos.so.0
 
 .include <bsd.port.mk>
