@@ -1,11 +1,11 @@
 bin/aeskulap
 lib/aeskulap/libconfiguration.a
 lib/aeskulap/libconfiguration.la
-%%SHVER%%lib/aeskulap/libconfiguration.so.0.0
+lib/aeskulap/libconfiguration.so.0.0
 lib/aeskulap/libconfiguration.so
 lib/aeskulap/libimagepool.a
 lib/aeskulap/libimagepool.la
-%%SHVER%%lib/aeskulap/libimagepool.so.0.0
+lib/aeskulap/libimagepool.so.0.0
 lib/aeskulap/libimagepool.so
 lib/aeskulap/libofstd.so
 lib/aeskulap/libdcmdata.so
