@@ -16,7 +16,6 @@ RUN_DEPENDS+=	p5-String-CRC32>=0.0:${PORTSDIR}/devel/p5-String-CRC32
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Gearman::Client.3 Gearman::Task.3 Gearman::Worker.3
 PLIST_FILES=	%%SITE_PERL%%/Gearman/Client.pm \
 		%%SITE_PERL%%/Gearman/JobStatus.pm \
 		%%SITE_PERL%%/Gearman/Objects.pm \
@@ -26,10 +25,12 @@ PLIST_FILES=	%%SITE_PERL%%/Gearman/Client.pm \
 		%%SITE_PERL%%/Gearman/Taskset.pm \
 		%%SITE_PERL%%/Gearman/Util.pm \
 		%%SITE_PERL%%/Gearman/Worker.pm \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman/.packlist
+		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman/.packlist \
+		%%PERL5_MAN3%%/Gearman::Client.3.gz \
+		%%PERL5_MAN3%%/Gearman::Task.3.gz \
+		%%PERL5_MAN3%%/Gearman::Worker.3.gz
 PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Gearman \
 		%%SITE_PERL%%/Gearman/ResponseParser \
 		%%SITE_PERL%%/Gearman
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
