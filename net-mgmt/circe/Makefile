@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://bws.berkeley.edu/ports/
 
-MAINTAINER=	circe-port-maintainers@bws.net.berkeley.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A captive portal-based network access control solution in perl
 
 BROKEN=		Does not build

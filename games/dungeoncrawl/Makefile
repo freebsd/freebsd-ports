@@ -8,7 +8,7 @@ MASTER_SITES=	ftp://ftp.dungeoncrawl.org/dev/4.0.x/src/
 DISTNAME=	dc${PORTVERSION:S/.//g}-src
 EXTRACT_SUFX=	.tbz2
 
-MAINTAINER=	refugee@vt.edu
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An old school roguelike game
 
 USE_BZIP2=	yes

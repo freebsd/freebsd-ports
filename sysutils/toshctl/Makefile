@@ -7,7 +7,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://freebie.miraclenet.co.th/notebook/toshctl/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	carl@servicefactory.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command-line tool to access parts of the Toshiba hardware interface
 
 ONLY_FOR_ARCHS=	i386

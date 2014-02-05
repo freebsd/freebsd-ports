@@ -8,7 +8,7 @@ CATEGORIES=		net-mgmt
 MASTER_SITES=		ftp://ftp.berlios.de/pub/macroscope/ \
 			http://white-raven.pisem.net/
 
-MAINTAINER=		white_raven@users.berlios.de
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		User and IP traffic management with Web interface
 
 LIB_DEPENDS=		lzo2:${PORTSDIR}/archivers/lzo2 \
