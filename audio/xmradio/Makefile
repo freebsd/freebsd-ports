@@ -10,14 +10,9 @@ MASTER_SITES=	http://core.de/~coto/radio/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Motif based FM tuner (for use with bt848 driver)
 
-# This program does not actually depend on the below, but they are pretty
-# useful if you are into digital audio recording and playback.
-#RUN_DEPENDS=   sox:${PORTSDIR}/audio/sox
-
 USES=		imake motif
-NO_STAGE=	yes
 USE_XORG=	xpm
-ONLY_FOR_ARCHS=	i386 ia64
+ONLY_FOR_ARCHS=	i386 amd64
 
 PLIST_FILES=	bin/xmradio lib/X11/app-defaults/XMradio
 
