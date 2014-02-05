@@ -1,2 +1,3 @@
 %%SITE_PERL%%/HOP/Stream.pm
+%%PERL5_MAN3%%/HOP::Stream.3.gz
 @dirrmtry %%SITE_PERL%%/HOP

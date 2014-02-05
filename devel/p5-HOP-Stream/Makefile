@@ -14,7 +14,4 @@ COMMENT=	Higher Order Perl Streams
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	HOP::Stream.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
