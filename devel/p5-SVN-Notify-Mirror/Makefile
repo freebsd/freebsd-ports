@@ -18,16 +18,12 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		SVN::Notify::Mirror.3 SVN::Notify::Mirror::ConfigData.3 \
-		SVN::Notify::Mirror::Rsync.3 SVN::Notify::Mirror::SSH.3
-
 OPTIONS_DEFINE=	CONFIG SSH RSYNC
 
 CONFIG_DESC=	Enable YAML syntax for post-commit hook
 SSH_DESC=	Enable SSH for remote working copy update
 RSYNC_DESC=	Enable rsync for remote working copy update
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCONFIG}
