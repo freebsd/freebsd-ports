@@ -14,33 +14,24 @@ COMMENT=	Lightweight aspect oriented programming library for Python
 
 LICENSE=	LGPL21
 
-USES=	gmake
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	python-${PORTNAME}
+PYDISTUTILS_AUTOPLIST=	yes
 
-PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
-EXAMPLESFILES=	httpget_example.py timeout_advice.py timeout_example.py \
+PORTEXAMPLES=	httpget_example.py timeout_advice.py timeout_example.py \
 		tracer_advice.py tracer_example.py typecheck_advice.py \
 		typecheck_example.py
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-NO_STAGE=	yes
-do-build:
-	@PYTHON="${PYTHON_CMD}" ${GMAKE} -C ${WRKSRC} check
+OPTIONS_DEFINE=	EXAMPLES
 
-.if !defined(NOPORTEXAMPLES)
+#regression-test: extract
+#	@PYTHON="${PYTHON_CMD}" ${GMAKE} -C ${WRKSRC} check
+
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-.for f in ${EXAMPLESFILES}
-	@${INSTALL_DATA} ${WRKSRC}/examples/${f} ${EXAMPLESDIR}
-.endfor
-.endif
-
-.if !defined(BATCH)
-	@${CAT} ${PKGMESSAGE}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/examples/,} ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
