@@ -17,8 +17,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN1=		version.pl.1
-MAN3=		Module::Info::File.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
