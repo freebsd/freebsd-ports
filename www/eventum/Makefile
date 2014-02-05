@@ -14,7 +14,6 @@ NO_BUILD=	YES
 USE_PHP=	pcre session mysql gd gettext
 WANT_PHP_WEB=	YES
 
-NO_STAGE=	yes
 pre-install:
 	@${MV} ${WRKSRC}/setup/config.php ${WRKSRC}/setup/config.php-dist
 
@@ -24,13 +23,13 @@ post-patch:
 	@${RM} ${WRKSRC}/misc/monitor.php.*
 
 do-install:
-	-${MKDIR} ${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	-${MKDIR} ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 	@${FIND} ${WWWDIR} -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 	@${FIND} ${WWWDIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@if [ ! -f ${WWWDIR}/setup/config.php ]; then \
-	    ${CP} -p ${WWWDIR}/setup/config.php-dist ${WWWDIR}/setup/config.php ; \
+	@if [ ! -f ${STAGEDIR}${WWWDIR}/setup/config.php ]; then \
+	    ${CP} -p ${STAGEDIR}${WWWDIR}/setup/config.php-dist ${STAGEDIR}${WWWDIR}/setup/config.php ; \
 	fi
 
 .include <bsd.port.mk>
