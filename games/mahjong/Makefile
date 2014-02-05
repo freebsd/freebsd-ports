@@ -16,6 +16,7 @@ LICENSE=	GPLv2 # (or later)
 USES=		gmake perl5 pkgconfig
 USE_GNOME=	gtk20
 USE_PERL5=	build
+MAKE_ARGS+=	LDLIBS="-lm"
 MAKE_ENV=	CCLINK="${CC}" CDEBUGFLAGS="${CFLAGS}" PERL="${PERL}" \
 		INCLUDES="-I."
 
