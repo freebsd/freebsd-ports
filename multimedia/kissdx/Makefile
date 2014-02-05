@@ -7,7 +7,7 @@ PORTREVISION=	9
 CATEGORIES=	multimedia net
 MASTER_SITES=	http://paragi.dk/kiss/
 
-MAINTAINER=	freebsd@paragi.dk
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia streaming server for KiSS/Linksys player
 
 LICENSE=	GPLv2

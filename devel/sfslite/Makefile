@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://dist.okws.org/dist/
 
-MAINTAINER=	ports@okws.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standard version of the sfslite library
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
