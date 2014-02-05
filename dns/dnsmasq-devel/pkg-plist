@@ -3,10 +3,12 @@ sbin/dnsmasq
 etc/dnsmasq.conf.example
 @exec if [ ! -f %D/etc/dnsmasq.conf ]; then cp -p %D/%F %B/dnsmasq.conf; fi
 man/man8/dnsmasq.8.gz
+share/dnsmasq/trust-anchors.conf
 %%EXAMPLESDIR%%/dnslist/dhcp.css
 %%EXAMPLESDIR%%/dnslist/dnslist.pl
 %%EXAMPLESDIR%%/dnslist/dnslist.tt2
 %%EXAMPLESDIR%%/dynamic-dnsmasq/dynamic-dnsmasq.pl
+@dirrm share/dnsmasq
 @dirrm %%EXAMPLESDIR%%/dnslist
 @dirrm %%EXAMPLESDIR%%/dynamic-dnsmasq
 @dirrm %%EXAMPLESDIR%%
