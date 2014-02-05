@@ -19,17 +19,6 @@ CONFIGURE_ARGS+=	--enable-fsect-man5
 
 CONFLICTS=	tct-[0-9]*
 
-MAN1=		file.1
-MAN3=		libmagic.3
-MAN5=		magic.5
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 800000
-CONFIGURE_ENV+=	gl_cv_cc_visibility=no
-.endif
-
 check regression-test test: build
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} check
 
@@ -37,4 +26,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$(datadir)/misc|$(datadir)/${PORTNAME}|g' \
 		${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
