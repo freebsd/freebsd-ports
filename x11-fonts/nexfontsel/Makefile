@@ -23,7 +23,7 @@ MAN1=		nexfontsel.1
 NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CDEBUG|XCOMM CDEBUG|g ; \
-		s|= XawClientLibs|= -lneXtaw|g' ${WRKSRC}/Imakefile
+		s|= XawClientLibs|= -lneXtaw -lXmu -lXt -lX11|g' ${WRKSRC}/Imakefile
 
 post-install:
 	@${MKDIR} ${PREFIX}/lib/X11/ja_JP.eucJP/app-defaults
