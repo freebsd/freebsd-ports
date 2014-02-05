@@ -1,6 +1,9 @@
 %%SITE_PERL%%/MooseX/Has/Sugar.pm
 %%SITE_PERL%%/MooseX/Has/Sugar/Saccharin.pm
 %%SITE_PERL%%/MooseX/Has/Sugar/Minimal.pm
+%%PERL5_MAN3%%/MooseX::Has::Sugar.3.gz
+%%PERL5_MAN3%%/MooseX::Has::Sugar::Minimal.3.gz
+%%PERL5_MAN3%%/MooseX::Has::Sugar::Saccharin.3.gz
 @dirrmtry %%SITE_PERL%%/MooseX/Has/Sugar
 @dirrmtry %%SITE_PERL%%/MooseX/Has
 @dirrmtry %%SITE_PERL%%/MooseX
