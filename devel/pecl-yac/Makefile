@@ -2,7 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	yac
-PORTVERSION=	0.2.0.r20130811
+PORTVERSION=	0.1.1.r20140114
+PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	oliver
@@ -18,5 +19,13 @@ USE_PHP=	yes
 USE_PHP_BUILD=	yes
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
+USE_PHP_BUILD=	yes
+
+CONFIGURE_ARGS=	--with-php-config=${PREFIX}/bin/php-config
+
+OPTIONS_DEFINE=	MSGPACK
+MSGPACK_DESC=	Enable MSGPACK module
+MSGPACK_BUILD_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/msgpack.so:${PORTSDIR}/devel/pecl-msgpack
+MSGPACK_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/msgpack.so:${PORTSDIR}/devel/pecl-msgpack
 
 .include <bsd.port.mk>
