@@ -16,17 +16,17 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Games::Bingo::Bot.3
+PORTEXAMPLES=	bingobot.pl
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	EXAMPLES
+
+.include <bsd.port.options.mk>
+
 post-install:
-.ifndef(NOPORTDOCS)
-	@${ECHO_MSG} "===>   Installing example for ${PKGNAME}"
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/bingobot.pl ${EXAMPLESDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/bingobot.pl ${STAGEDIR}${EXAMPLESDIR}
 
-test:
-	@cd ${WRKSRC}; make test
+regression-test: build
+	@cd ${WRKSRC} && ${MAKE} -s test
 
 .include <bsd.port.mk>
