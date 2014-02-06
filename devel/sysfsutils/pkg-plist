@@ -9,4 +9,6 @@ lib/libsysfs.a
 lib/libsysfs.la
 lib/libsysfs.so
 lib/libsysfs.so.2
+lib/libsysfs.so.2.0.1
+man/man1/systool.1.gz
 @dirrmtry include/sysfs
