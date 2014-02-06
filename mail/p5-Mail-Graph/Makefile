@@ -17,22 +17,22 @@ RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 		p5-Date-Calc>=0:${PORTSDIR}/devel/p5-Date-Calc
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
 EXAMPLESCRIPT=	samples/*pl
 EXAMPLEDUMMY=	samples/index/dummy.txt
 EXAMPLEOUTPUT=	samples/output/w3c.png samples/output/spam.css
 EXAMPLEARCHIVE=	samples/archive/*.gz
 
-MAN3=	Mail::Graph.3
+SHEBANG_FILES=	samples/*.pl
 
-NO_STAGE=	yes
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}/archive ${EXAMPLESDIR}/index ${EXAMPLESDIR}/output
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/archive \
+		${STAGEDIR}${EXAMPLESDIR}/index ${STAGEDIR}${EXAMPLESDIR}/output
 	(cd ${WRKSRC} && \
-	${INSTALL_SCRIPT} ${EXAMPLESCRIPT} ${EXAMPLESDIR}  && \
-	${INSTALL_SCRIPT} ${EXAMPLEDUMMY} ${EXAMPLESDIR}/index && \
-	${INSTALL_SCRIPT} ${EXAMPLEOUTPUT} ${EXAMPLESDIR}/output && \
-	${INSTALL_SCRIPT} ${EXAMPLEARCHIVE} ${EXAMPLESDIR}/archive)
+	${INSTALL_SCRIPT} ${EXAMPLESCRIPT} ${STAGEDIR}${EXAMPLESDIR}  && \
+	${INSTALL_SCRIPT} ${EXAMPLEDUMMY} ${STAGEDIR}${EXAMPLESDIR}/index && \
+	${INSTALL_SCRIPT} ${EXAMPLEOUTPUT} ${STAGEDIR}${EXAMPLESDIR}/output && \
+	${INSTALL_SCRIPT} ${EXAMPLEARCHIVE} ${STAGEDIR}${EXAMPLESDIR}/archive)
 
 .include <bsd.port.mk>
