@@ -15,14 +15,13 @@ PLIST_FILES=	bin/icmpquery
 NO_WRKSUBDIR=	YES
 ALL_TARGET=	icmpquery
 
-NO_STAGE=	yes
 do-extract:
-		@${MKDIR} ${WRKDIR}
+		@${MKDIR} ${STAGEDIR}${WRKDIR}
 		@${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}
 		@${CP} ${FILESDIR}/Makefile ${WRKDIR}
 
 do-install:
-		@${INSTALL_PROGRAM} ${WRKDIR}/icmpquery ${PREFIX}/bin
-		@${CHMOD} u+s ${PREFIX}/bin/icmpquery
+		@${INSTALL_PROGRAM} ${WRKDIR}/icmpquery ${STAGEDIR}${PREFIX}/bin
+		@${CHMOD} u+s ${STAGEDIR}${PREFIX}/bin/icmpquery
 
 .include <bsd.port.mk>
