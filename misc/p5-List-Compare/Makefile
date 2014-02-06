@@ -1,44 +1,26 @@
 # Created by: Dmitry Morozovsky <marck@FreeBSD.org>
 # $FreeBSD$
 
-PORTNAME=		List-Compare
+PORTNAME=	List-Compare
 PORTVERSION=	0.37
-CATEGORIES=		misc perl5
-MASTER_SITES=		CPAN
-PKGNAMEPREFIX=		p5-
+CATEGORIES=	misc perl5
+MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
 
-MAINTAINER=		marck@FreeBSD.org
-COMMENT=		Perl extension for comparing lists
+MAINTAINER=	marck@FreeBSD.org
+COMMENT=	Perl extension for comparing lists
 
 USES=		perl5
 USE_PERL5=	configure
-NO_STAGE=	yes
 
-PLIST_FILES=	\
-	${SITE_PERL_REL}/List/Compare.pm \
-	${SITE_PERL_REL}/List/Compare/Base/_Auxiliary.pm \
-	${SITE_PERL_REL}/List/Compare/Base/_Engine.pm \
-	${SITE_PERL_REL}/List/Compare/Functional.pm \
-	${SITE_PERL_REL}/${PERL_ARCH}/auto/List/Compare/.packlist
-PLIST_DIRS+=	\
-	${SITE_PERL_REL}/List/Compare/Base \
-	${SITE_PERL_REL}/List/Compare \
-	${SITE_PERL_REL}/List \
-	${SITE_PERL_REL}/${PERL_ARCH}/auto/List/Compare \
-	${SITE_PERL_REL}/${PERL_ARCH}/auto/List
+OPTIONS_DEFINE=	DOCS
 
-MAN3=			List::Compare.3 \
-			List::Compare::Base::_Auxiliary.3 \
-			List::Compare::Base::_Engine.3 \
-			List::Compare::Functional.3
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README
 
+.include <bsd.port.options.mk>
+
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
