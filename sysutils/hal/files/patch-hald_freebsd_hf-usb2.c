@@ -1,5 +1,5 @@
---- ./hald/freebsd/hf-usb2.c.orig	2009-08-24 14:42:29.000000000 +0200
-+++ ./hald/freebsd/hf-usb2.c	2013-10-23 13:10:36.639758556 +0200
+--- hald/freebsd/hf-usb2.c.orig	2009-08-24 14:42:29.000000000 +0200
++++ hald/freebsd/hf-usb2.c	2014-02-06 08:22:11.000000000 +0100
 @@ -22,7 +22,7 @@
   **************************************************************************/
  
@@ -61,7 +61,7 @@
 +			if (driver) {
 +				if (!strcmp(driver, "ukbd"))
 +					hf_device_set_input(device, "keyboard", "keys", NULL);
-+				else if (!strcmp(driver, "ums") || !strcmp(driver, "atp")) {
++				else if (!strcmp(driver, "ums") || !strcmp(driver, "atp") || !strcmp(driver, "wsp")) {
 +					hf_device_set_input(device, "mouse", NULL, devname);
 +					hf_runner_run_sync(device, 0, "hald-probe-mouse", NULL);
 +				} else if (!strcmp(driver, "uhid")) {
