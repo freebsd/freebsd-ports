@@ -8,7 +8,7 @@ CATEGORIES=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTVERSION} \
 		http://www.garret.ru/
 
-MAINTAINER=	miwi@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object-Relational Database Management System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
