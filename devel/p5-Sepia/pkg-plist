@@ -1,4 +1,7 @@
 bin/sepl
+man/man1/sepl.1.gz
+%%PERL5_MAN3%%/Sepia.3.gz
+%%PERL5_MAN3%%/Sepia::Xref.3.gz
 %%SITE_PERL%%/Sepia/Debug.pm
 %%SITE_PERL%%/Sepia/CPAN.pm
 %%SITE_PERL%%/Sepia/Xref.pm
