@@ -2,6 +2,9 @@
 %%SITE_PERL%%/DateTime/Format/Japanese.pm
 %%SITE_PERL%%/DateTime/Format/Japanese/Common.pm
 %%SITE_PERL%%/DateTime/Format/Japanese/Traditional.pm
+%%PERL5_MAN3%%/DateTime::Format::Japanese.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Japanese::Common.3.gz
+%%PERL5_MAN3%%/DateTime::Format::Japanese::Traditional.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format/Japanese
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime/Format
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DateTime
