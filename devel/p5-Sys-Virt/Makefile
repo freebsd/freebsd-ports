@@ -25,34 +25,18 @@ USES=		perl5 pkgconfig
 USE_PERL5=	configure
 MAKE_JOBS_UNSAFE=	yes
 
-MAN3=		Sys::Virt.3 \
-		Sys::Virt::Domain.3 \
-		Sys::Virt::DomainSnapshot.3 \
-		Sys::Virt::Error.3 \
-		Sys::Virt::Event.3 \
-		Sys::Virt::Interface.3 \
-		Sys::Virt::NWFilter.3 \
-		Sys::Virt::Network.3 \
-		Sys::Virt::NodeDevice.3 \
-		Sys::Virt::Secret.3 \
-		Sys::Virt::StoragePool.3 \
-		Sys::Virt::StorageVol.3 \
-		Sys::Virt::Stream.3
+OPTIONS_DEFINE=	EXAMPLES
 
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
-.if ${PORT_OPTIONS:MEXAMPLES}
 	@${REINPLACE_CMD} -e '1 s|/usr/bin/perl|${PERL}|' ${WRKSRC}/examples/*.pl
-.endif
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${EXAMPLESDIR}
-.endif
+	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Sys/Virt/Virt.so
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.pl ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
