@@ -13,5 +13,4 @@ COMMENT=	Bruteforce password MD5 hashes
 ALL_TARGET=	little
 PLIST_FILES=	bin/mdcrack
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
