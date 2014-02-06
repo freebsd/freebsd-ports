@@ -10,5 +10,17 @@
 %%SITE_PERL%%/Sys/Filesystem/Netbsd.pm
 %%SITE_PERL%%/Sys/Filesystem/Solaris.pm
 %%SITE_PERL%%/Sys/Filesystem/Unix.pm
+%%PERL5_MAN3%%/Sys::Filesystem.3.gz
+%%PERL5_MAN3%%/Sys::Filesystem::Aix.3.gz
+%%PERL5_MAN3%%/Sys::Filesystem::Cygwin.3.gz
+%%PERL5_MAN3%%/Sys::Filesystem::Darwin.3.gz
+%%PERL5_MAN3%%/Sys::Filesystem::Dummy.3.gz
+%%PERL5_MAN3%%/Sys::Filesystem::Freebsd.3.gz
+%%PERL5_MAN3%%/Sys::Filesystem::Hpux.3.gz
+%%PERL5_MAN3%%/Sys::Filesystem::Linux.3.gz
+%%PERL5_MAN3%%/Sys::Filesystem::Mswin32.3.gz
+%%PERL5_MAN3%%/Sys::Filesystem::Netbsd.3.gz
+%%PERL5_MAN3%%/Sys::Filesystem::Solaris.3.gz
+%%PERL5_MAN3%%/Sys::Filesystem::Unix.3.gz
 @dirrm %%SITE_PERL%%/Sys/Filesystem
 @dirrmtry %%SITE_PERL%%/Sys
