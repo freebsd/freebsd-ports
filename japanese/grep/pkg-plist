@@ -1,6 +1,0 @@
-bin/jgrep
-bin/jegrep
-bin/jfgrep
-%%PORTDOCS%%share/doc/ja-grep/README.MB
-%%PORTDOCS%%share/doc/ja-grep/README.mlb
-%%PORTDOCS%%@dirrm share/doc/ja-grep
