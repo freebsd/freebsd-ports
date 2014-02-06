@@ -22,12 +22,4 @@ RUN_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		route53.1
-MAN3=		Net::Amazon::Route53.3 \
-		Net::Amazon::Route53::HostedZone.3 \
-		Net::Amazon::Route53::ResourceRecordSet.3 \
-		Net::Amazon::Route53::ResourceRecordSet::Change.3 \
-		Net::Amazon::Route53::Change.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

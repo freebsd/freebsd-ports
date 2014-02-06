@@ -1,4 +1,10 @@
 bin/route53
+man/man1/route53.1.gz
+%%PERL5_MAN3%%/Net::Amazon::Route53.3.gz
+%%PERL5_MAN3%%/Net::Amazon::Route53::Change.3.gz
+%%PERL5_MAN3%%/Net::Amazon::Route53::HostedZone.3.gz
+%%PERL5_MAN3%%/Net::Amazon::Route53::ResourceRecordSet.3.gz
+%%PERL5_MAN3%%/Net::Amazon::Route53::ResourceRecordSet::Change.3.gz
 %%SITE_PERL%%/Net/Amazon/Route53.pm
 %%SITE_PERL%%/Net/Amazon/Route53/Change.pm
 %%SITE_PERL%%/Net/Amazon/Route53/HostedZone.pm
