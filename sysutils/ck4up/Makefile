@@ -15,21 +15,17 @@ NO_BUILD=	yes
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
 
-MAN1=		ck4up.1
-
 PORTEXAMPLES=	ck4up.conf
 
-PLIST_FILES=	bin/ck4up
+PLIST_FILES=	bin/ck4up \
+		man/man1/ck4up.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \
 	    ${WRKSRC}/Makefile
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/ck4up.conf ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/ck4up.conf ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
