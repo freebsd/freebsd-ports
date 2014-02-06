@@ -39,38 +39,18 @@
 %%SITE_PERL%%/Net/Amazon/MechanicalTurk/Transport/RESTTransport.pm
 %%SITE_PERL%%/Net/Amazon/MechanicalTurk/XMLParser.pm
 %%SITE_PERL%%/Net/Amazon/mturk_install.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/accountBalance/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/accountBalance/accountbalance.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/best_image/BestImage.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/best_image/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/best_image/best_image.properties
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/best_image/best_image.question
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/helloworld/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/helloworld/helloworld-answer.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/helloworld/helloworld-create.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/listHITs/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/listHITs/listHITs.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITs/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITs/approveRemaining.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITs/getresults.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITs/loadhits-input.csv
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITs/loadhits.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITs/reject.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITs/removehits.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITsFromCustomCode/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITsFromCustomCode/cities.xml
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITsFromCustomCode/loadhits.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITsFromCustomCode/loadhits2.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITsFromDB/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITsFromDB/createdb.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITsFromDB/dumptables.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/loadHITsFromDB/loadhits.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/removeAllHITs/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/removeAllHITs/removeAllHITs.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple_survey/README.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple_survey/SimpleSurvey.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/simple_survey/simple_survey.question
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/MechanicalTurk/.packlist
+%%PERL5_MAN3%%/Net::Amazon::MechanicalTurk.3.gz
+%%PERL5_MAN3%%/Net::Amazon::MechanicalTurk::BulkSupport.3.gz
+%%PERL5_MAN3%%/Net::Amazon::MechanicalTurk::Command::AddRetry.3.gz
+%%PERL5_MAN3%%/Net::Amazon::MechanicalTurk::Command::DeleteHIT.3.gz
+%%PERL5_MAN3%%/Net::Amazon::MechanicalTurk::Command::GetAvailableBalance.3.gz
+%%PERL5_MAN3%%/Net::Amazon::MechanicalTurk::Command::GetHITTypeURL.3.gz
+%%PERL5_MAN3%%/Net::Amazon::MechanicalTurk::Command::ListOperations.3.gz
+%%PERL5_MAN3%%/Net::Amazon::MechanicalTurk::Command::LoadHITs.3.gz
+%%PERL5_MAN3%%/Net::Amazon::MechanicalTurk::Command::ParseAssignmentAnswer.3.gz
+%%PERL5_MAN3%%/Net::Amazon::MechanicalTurk::Command::RetrieveResults.3.gz
+%%PERL5_MAN3%%/Net::Amazon::MechanicalTurk::Command::UpdateHITs.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon/MechanicalTurk
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/Amazon
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
@@ -82,13 +62,3 @@
 @dirrm %%SITE_PERL%%/Net/Amazon/MechanicalTurk
 @dirrmtry %%SITE_PERL%%/Net/Amazon
 @dirrmtry %%SITE_PERL%%/Net
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/simple_survey
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/removeAllHITs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/loadHITsFromDB
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/loadHITsFromCustomCode
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/loadHITs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/listHITs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/helloworld
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/best_image
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/accountBalance
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
