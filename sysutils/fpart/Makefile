@@ -10,7 +10,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Sort and pack files into partitions
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-embfts
