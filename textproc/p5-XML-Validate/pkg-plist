@@ -1,10 +1,16 @@
 bin/validxml.pl
+man/man1/validxml.pl.1.gz
 %%SITE_PERL%%/XML/Validate.pm
 %%SITE_PERL%%/XML/Validate/Base.pm
 %%SITE_PERL%%/XML/Validate/LibXML.pm
 %%SITE_PERL%%/XML/Validate/MSXML.pm
 %%SITE_PERL%%/XML/Validate/Xerces.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Validate/.packlist
+%%PERL5_MAN3%%/XML::Validate.3.gz
+%%PERL5_MAN3%%/XML::Validate::Base.3.gz
+%%PERL5_MAN3%%/XML::Validate::LibXML.3.gz
+%%PERL5_MAN3%%/XML::Validate::MSXML.3.gz
+%%PERL5_MAN3%%/XML::Validate::Xerces.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Validate
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
 @dirrmtry %%SITE_PERL%%/XML/Validate
