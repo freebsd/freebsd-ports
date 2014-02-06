@@ -5,6 +5,7 @@ PORTNAME=	HTML-MobileJp
 PORTVERSION=	0.08
 CATEGORIES=	japanese www perl5
 MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	Generate mobile-jp html tags
@@ -22,13 +23,4 @@ TEST_DEPENDS=	p5-Test-Base>0:${PORTSDIR}/devel/p5-Test-Base \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		HTML::MobileJp.3 \
-		HTML::MobileJp::Plugin::GPS.3 \
-		HTML::MobileJp::Plugin::EZweb::Object.3
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
