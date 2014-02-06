@@ -16,19 +16,14 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN1=		physics-unit.1
-MAN3=		Physics::Unit.3 \
-		Physics::Unit::Implementation.3 \
-		Physics::Unit::Scalar.3 \
-		Physics::Unit::Scalar::Implementation.3 \
-		Physics::Unit::UnitsByName.3 \
-		Physics::Unit::UnitsByType.3
+OPTIONS_DEFINE=	EXAMPLES
 
-NO_STAGE=	yes
+PORTEXAMPLES=	*
+
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/eg/ && ${COPYTREE_SHARE} '*.pl' ${EXAMPLESDIR})
-.endif
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/eg/ && ${COPYTREE_SHARE} '*.pl' ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
