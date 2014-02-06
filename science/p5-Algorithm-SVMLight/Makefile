@@ -16,9 +16,6 @@ LIB_DEPENDS=	svmlight:${PORTSDIR}/science/svmlight
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Algorithm::SVMLight.3
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" \
 		${WRKSRC}/Build.PL
