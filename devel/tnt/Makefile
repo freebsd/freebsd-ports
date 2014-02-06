@@ -20,18 +20,13 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-.ifndef NOPORTDOCS
 PORTDOCS=	*
-.endif
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/include/tnt
-	${INSTALL_DATA} ${WRKDIR}/*.h ${PREFIX}/include/tnt
-.ifndef NOPORTDOCS
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/tnt
+	${INSTALL_DATA} ${WRKDIR}/*.h ${STAGEDIR}${PREFIX}/include/tnt
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${EXTRACT_CMD} ${DISTDIR}/${DIST_SUBDIR}/tnt120doc \
-		-d ${DOCSDIR}
-.endif
+		-d ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
