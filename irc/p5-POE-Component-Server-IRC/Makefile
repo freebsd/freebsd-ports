@@ -30,13 +30,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		pmkpasswd.1
-MAN3=		POE::Component::Server::IRC.3 \
-		POE::Component::Server::IRC::Common.3 \
-		POE::Component::Server::IRC::Plugin.3 \
-		POE::Component::Server::IRC::Plugin::Auth.3 \
-		POE::Component::Server::IRC::Plugin::OperServ.3 \
-		POE::Component::Server::IRC::Backend.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
