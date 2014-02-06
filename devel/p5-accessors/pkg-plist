@@ -3,4 +3,9 @@
 %%SITE_PERL%%/accessors/classic.pm
 %%SITE_PERL%%/accessors/ro.pm
 %%SITE_PERL%%/accessors/rw.pm
+%%PERL5_MAN3%%/accessors.3.gz
+%%PERL5_MAN3%%/accessors::chained.3.gz
+%%PERL5_MAN3%%/accessors::classic.3.gz
+%%PERL5_MAN3%%/accessors::ro.3.gz
+%%PERL5_MAN3%%/accessors::rw.3.gz
 @dirrmtry %%SITE_PERL%%/accessors
