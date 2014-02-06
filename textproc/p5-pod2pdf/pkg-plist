@@ -1,4 +1,5 @@
 bin/pod2pdf
+man/man1/pod2pdf.1.gz
 %%SITE_PERL%%/App/pod2pdf.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/pod2pdf/.packlist
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/pod2pdf
