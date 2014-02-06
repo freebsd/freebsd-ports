@@ -32,8 +32,8 @@ CONFIGURE_ENV=	LIBNET_CONFIG="${LIBNET_CONFIG}"
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 #NOT_FOR_ARCHS=	ia64 sparc64
-MAN8=		yersinia.8
-PLIST_FILES=	sbin/yersinia
+PLIST_FILES=	sbin/yersinia \
+		man/man8/yersinia.8.gz
 
 NO_STAGE=	yes
 post-patch:
@@ -41,7 +41,7 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/yersinia ${PREFIX}/sbin/
-	${INSTALL_MAN} ${WRKSRC}/yersinia.8 ${MAN8PREFIX}/man/man8/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/yersinia ${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_MAN} ${WRKSRC}/yersinia.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
 
 .include <bsd.port.mk>
