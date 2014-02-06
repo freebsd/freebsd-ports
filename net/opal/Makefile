@@ -58,7 +58,6 @@ LID_DESC=	Light-Weight Identity (incl. xJack cards  and voicetronix vpb) support
 UVIDEO_DESC=	RFC4175 uncompressed video RTP payload
 AEC_DESC=	Accoustic echo cancellation
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .ifdef OPALDIR
@@ -293,11 +292,15 @@ CONFIGURE_ARGS+=	--disable-gsmamr \
 			--disable-ruby
 
 post-install:
-	${LN} -sf libopal.so.${PORTVERSION} ${PREFIX}/lib/libopal.so.${PVERSION_MAJOR}
-	${LN} -sf libopal.so.${PORTVERSION} ${PREFIX}/lib/libopal.so.${PVERSION_MINOR}
+	${LN} -sf libopal.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libopal.so.${PVERSION_MAJOR}
+	${LN} -sf libopal.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libopal.so.${PVERSION_MINOR}
 .if ${PORT_OPTIONS:MDEBUG}
-	${LN} -sf libopal_d.so.${PORTVERSION} ${PREFIX}/lib/libopal_d.so.${PVERSION_MAJOR}
-	${LN} -sf libopal_d.so.${PORTVERSION} ${PREFIX}/lib/libopal_d.so.${PVERSION_MINOR}
+	${LN} -sf libopal_d.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libopal_d.so.${PVERSION_MAJOR}
+	${LN} -sf libopal_d.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libopal_d.so.${PVERSION_MINOR}
 .endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopal.so.${PORTVERSION}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/opal-${PORTVERSION}/codecs/video/h264_video_pwplugin_helper
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/opal-${PORTVERSION}/*/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/opal-${PORTVERSION}/*/*/*.so
 
 .include <bsd.port.mk>
