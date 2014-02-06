@@ -15,11 +15,10 @@ USE_BZIP2=	yes
 
 PLIST_FILES=	bin/mbox2mdir
 
-NO_STAGE=	yes
 do-build:
 	${CXX} ${CXXFLAGS} ${WRKSRC}/mbox2mdir.cpp -o ${WRKSRC}/mbox2mdir
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mbox2mdir ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/mbox2mdir ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
