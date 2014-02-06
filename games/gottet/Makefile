@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gottet
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 EXTRACT_SUFX=	-src.tar.bz2
@@ -18,7 +18,7 @@ USE_QT4=	moc_build rcc_build iconengines_run imageformats_run \
 		gui
 INSTALLS_ICONS=	yes
 
-PORTDOCS=	CREDITS ChangeLog
+PORTDOCS=	CREDITS ChangeLog NEWS README
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
