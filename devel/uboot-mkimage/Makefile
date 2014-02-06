@@ -18,11 +18,10 @@ MAKEFILE=	BSDmakefile
 
 PLIST_FILES=	bin/mkimage
 
-NO_STAGE=	yes
 post-extract:
 	${CP} ${PATCHDIR}/BSDmakefile ${WRKSRC}/tools
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tools/mkimage ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/mkimage ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
