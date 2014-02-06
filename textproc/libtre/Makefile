@@ -26,9 +26,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	NLS OPTIMIZED_CFLAGS PGO DOCS
 
-MAN1=	tre_agrep.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -66,12 +63,10 @@ pre-build: pgo
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in tre-api.html tre-syntax.html
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 regression-test: build
 	@(cd ${BUILD_WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE} check )
