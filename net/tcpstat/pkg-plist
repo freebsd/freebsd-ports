@@ -1,5 +1,7 @@
-bin/tcpstat
 bin/tcpprof
+bin/tcpstat
+man/man1/tcpprof.1.gz
+man/man1/tcpstat.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
