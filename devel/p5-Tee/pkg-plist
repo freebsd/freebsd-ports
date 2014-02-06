@@ -1,4 +1,7 @@
 bin/ptee
+man/man1/ptee.1.gz
+%%PERL5_MAN3%%/Tee.3.gz
+%%PERL5_MAN3%%/Tee::App.3.gz
 %%SITE_PERL%%/Tee.pm
 %%SITE_PERL%%/Tee/App.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tee/.packlist

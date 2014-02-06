@@ -19,8 +19,4 @@ RUN_DEPENDS=	p5-IO-CaptureOutput>0:${PORTSDIR}/devel/p5-IO-CaptureOutput
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	ptee.1
-MAN3=	Tee::App.3 Tee.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
