@@ -22,7 +22,6 @@ PLIST_SUB+=	PMWIKIDIR=${PMWIKIDIR}
 SUB_LIST+=	PMWIKIDIR=${PMWIKIDIR}
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 pre-fetch:
 .if !defined(PMWIKIDIR)
 	@${ECHO_MSG} ""
@@ -40,18 +39,15 @@ post-extract:
 	@${MV} ${WRKSRC}/docs/sample-config.php ${WRKSRC}
 
 do-install:
-	@${MKDIR} -m 755 ${PREFIX}/${PMWIKIDIR}
+	@${MKDIR} -m 755 ${STAGEDIR}${PREFIX}/${PMWIKIDIR}
 	@cd ${WRKSRC} && ${FIND} . ! \( -name docs -prune \) | \
-		${CPIO} ${CPIOFLAGS} ${PREFIX}/${PMWIKIDIR}
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${PMWIKIDIR}
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m 555 -d ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/docs/* ${DOCSDIR}
-.endif
+		${CPIO} ${CPIOFLAGS} ${STAGEDIR}${PREFIX}/${PMWIKIDIR}
+	@${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${PMWIKIDIR}
+	@${INSTALL} -o ${DOCOWN} -g ${DOCGRP} -m 555 -d ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_MAN} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 
 post-install:
-	@${MKDIR} -m 775 ${PREFIX}/${PMWIKIDIR}/wiki.d
-	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${PMWIKIDIR}/wiki.d
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} -m 775 ${STAGEDIR}${PREFIX}/${PMWIKIDIR}/wiki.d
+	@${CHOWN} ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${PMWIKIDIR}/wiki.d
 
 .include <bsd.port.mk>
