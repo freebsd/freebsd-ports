@@ -11,3 +11,4 @@ lib/libmodpbase64.a
 lib/libmodpbase64.la
 lib/libmodpbase64.so
 lib/libmodpbase64.so.0
+lib/libmodpbase64.so.0.0.0
