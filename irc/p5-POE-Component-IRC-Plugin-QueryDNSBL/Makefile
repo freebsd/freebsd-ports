@@ -20,16 +20,18 @@ RUN_DEPENDS:=	p5-POE>=0:${PORTSDIR}/devel/p5-POE \
 		p5-Net-IP>=1.25:${PORTSDIR}/net-mgmt/p5-Net-IP
 
 PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
 
-MAN3=		POE::Component::IRC::Plugin::QueryDNSBL.3
+SHEBANG_FILES=	examples/*.pl
+PORTEXAMPLES=	*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	EXAMPLES
+
+.include <bsd.port.options.mk>
+
 post-install:
-.ifndef(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
