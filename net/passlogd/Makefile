@@ -11,11 +11,10 @@ COMMENT=	Intercept and dump syslog remote log packets
 
 PLIST_FILES=	sbin/passlogd
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s|.(CXX)|${CC} ${CFLAGS}|g" ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/passlogd ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/passlogd ${STAGEDIR}${PREFIX}/sbin
 
 .include <bsd.port.mk>
