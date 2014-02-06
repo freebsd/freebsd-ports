@@ -16,10 +16,9 @@ NO_BUILD=	yes
 USES=		shebangfix perl5
 SHEBANG_FILES=	torrentsniff
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/torrentsniff ${LOCALBASE}/bin
-	${MKDIR} ${SITE_PERL}/BitTorrent
-	${INSTALL_DATA} ${WRKSRC}/BitTorrent/BDecode.pm ${SITE_PERL}/BitTorrent
+	${INSTALL_SCRIPT} ${WRKSRC}/torrentsniff ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${SITE_PERL}/BitTorrent
+	${INSTALL_DATA} ${WRKSRC}/BitTorrent/BDecode.pm ${STAGEDIR}${SITE_PERL}/BitTorrent
 
 .include <bsd.port.mk>
