@@ -51,6 +51,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4dd575b8-8f82-11e3-bb11-0025905a4771">
+    <topic>phpmyfaq -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq</name>
+	<range><lt>2.8.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyFAQ team reports:</p>
+	<blockquote cite="http://www.phpmyfaq.de/advisory_2014-02-04.php">
+	  <p> An arbitrary script may be executed on the user's Internet
+	    Explorer when using an older version of the browser. If a user views
+	    a malicious page while logged in, settings may be changed
+	    unintentionally.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0813</cvename>
+      <cvename>CVE-2014-0814</cvename>
+      <url>http://www.phpmyfaq.de/advisory_2014-02-04.php</url>
+    </references>
+    <dates>
+      <discovery>2014-02-04</discovery>
+      <entry>2014-02-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b7a7576d-8e0a-11e3-9976-9c4e36909cc0">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
