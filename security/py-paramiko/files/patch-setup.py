@@ -1,13 +1,15 @@
---- ./setup.py.orig	2012-10-03 11:45:35.000000000 +0200
-+++ ./setup.py	2012-10-03 11:46:32.000000000 +0200
-@@ -37,14 +37,8 @@
+--- ./setup.py.orig	2014-02-06 14:49:52.000000000 +0100
++++ ./setup.py	2014-02-06 14:51:23.000000000 +0100
+@@ -37,16 +37,8 @@
  #ez_setup.use_setuptools()
  
  import sys
 -try:
 -    from setuptools import setup
 -    kw = {
--        'install_requires': 'pycrypto >= 2.1, != 2.4',
+-        'install_requires': ['pycrypto >= 2.1, != 2.4',
+-                             'ecdsa',
+-                             ],
 -    }
 -except ImportError:
 -    from distutils.core import setup
