@@ -20,31 +20,22 @@ RUN_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		p5-Mozilla-CA>=0:${PORTSDIR}/www/p5-Mozilla-CA
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
-
-MAN3=		Net::Amazon::MechanicalTurk.3 \
-		Net::Amazon::MechanicalTurk::BulkSupport.3 \
-		Net::Amazon::MechanicalTurk::Command::AddRetry.3 \
-		Net::Amazon::MechanicalTurk::Command::DeleteHIT.3 \
-		Net::Amazon::MechanicalTurk::Command::GetAvailableBalance.3 \
-		Net::Amazon::MechanicalTurk::Command::GetHITTypeURL.3 \
-		Net::Amazon::MechanicalTurk::Command::ListOperations.3 \
-		Net::Amazon::MechanicalTurk::Command::LoadHITs.3 \
-		Net::Amazon::MechanicalTurk::Command::ParseAssignmentAnswer.3 \
-		Net::Amazon::MechanicalTurk::Command::RetrieveResults.3 \
-		Net::Amazon::MechanicalTurk::Command::UpdateHITs.3
 
 SUB_LIST+=	HOME=${HOME} EXAMPLESDIR=${EXAMPLESDIR}
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	EXAMPLES
+
+PORTEXAMPLES=	*
+SHEBANG_FILES=	mturk_install.pl
+
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${INSTALL} -d ${EXAMPLESDIR}
-	@cd ${WRKSRC}/samples && ${FIND} . -type d -exec ${INSTALL} -d ${EXAMPLESDIR}/{} \;
-	@cd ${WRKSRC}/samples && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
-.endif
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC}/samples && ${FIND} . -type d -exec ${INSTALL} -d ${STAGEDIR}${EXAMPLESDIR}/{} \;
+	@cd ${WRKSRC}/samples && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${EXAMPLESDIR}/{} \;
 
 .include <bsd.port.mk>
