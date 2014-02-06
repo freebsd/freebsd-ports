@@ -11,20 +11,16 @@ COMMENT=	Mping network statistics collector
 
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	sbin/mping
+PLIST_FILES=	sbin/mping \
+		man/man8/mping.8.gz
 PORTDOCS=	ChangeLog README TODO
 
-MAN8=		mping.8
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/mping ${PREFIX}/sbin/mping
-	${INSTALL_MAN} ${WRKSRC}/man/mping.8 ${PREFIX}/man/man8/mping.8
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/mping ${STAGEDIR}${PREFIX}/sbin/mping
+	${INSTALL_MAN} ${WRKSRC}/man/mping.8 ${STAGEDIR}${PREFIX}/man/man8/mping.8
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
