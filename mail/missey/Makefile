@@ -23,7 +23,6 @@ PLIST_DIRS=	etc/mps
 
 USE_RC_SUBR=	mps
 
-NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKDIR}/mps/src ${WRKSRC}
 	@${RM} -r ${WRKDIR}/mps
