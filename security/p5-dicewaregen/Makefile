@@ -21,8 +21,8 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/dicewaregen-${REV}
 REV=		20c777eac1db
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/dicewaregen.pl ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/dicewaregen.pl \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
