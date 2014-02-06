@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tinyxml2
-PORTVERSION=	20131105
+PORTVERSION=	20140124
 CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/bf GH
 
@@ -11,23 +11,21 @@ COMMENT=	Small C++ XML Parser
 
 LICENSE=	ZLIB
 
-USE_DOS2UNIX=	yes
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-USES=		cmake
+USES=		cmake dos2unix
 
 GH_ACCOUNT=	leethomason
-GH_COMMIT=	370761b
+GH_COMMIT=	5bb2d80
 GH_TAGNAME=	${GH_COMMIT}
 
 PLIST_FILES=	include/tinyxml2.h \
 		lib/libtinyxml2.a \
 		lib/libtinyxml2.so \
 		lib/libtinyxml2.so.1 \
-		lib/libtinyxml2.so.1.0.12 \
+		lib/libtinyxml2.so.1.0.14 \
 		libdata/pkgconfig/tinyxml2.pc
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -43,8 +41,8 @@ check regression-test test: build
 PORTEXAMPLES=	xmltest.cpp resources
 
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC} ; ${COPYTREE_SHARE} "${PORTEXAMPLES}" ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC}; ${COPYTREE_SHARE} "${PORTEXAMPLES}" ${STAGEDIR}${EXAMPLESDIR}
 
 .endif
 
