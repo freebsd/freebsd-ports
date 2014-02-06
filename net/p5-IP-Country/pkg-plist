@@ -1,4 +1,11 @@
 bin/ip2cc
+man/man1/ip2cc.1.gz
+%%PERL5_MAN3%%/IP::Authority.3.gz
+%%PERL5_MAN3%%/IP::Country.3.gz
+%%PERL5_MAN3%%/IP::Country::Fast.3.gz
+%%PERL5_MAN3%%/IP::Country::MaxMind.3.gz
+%%PERL5_MAN3%%/IP::Country::Medium.3.gz
+%%PERL5_MAN3%%/IP::Country::Slow.3.gz
 %%SITE_PERL%%/IP/Authority.pm
 %%SITE_PERL%%/IP/Authority/auth.gif
 %%SITE_PERL%%/IP/Authority/ipauth.gif
