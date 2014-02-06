@@ -20,32 +20,22 @@ USE_PHP=	yes
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for f in class.phpmailer.php class.pop3.php class.smtp.php composer.json
-	@${INSTALL_DATA} ${WRKSRC}/$f ${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DATADIR}
 .endfor
 .for d in extras language test
-	@${MKDIR} ${DATADIR}/$d
-	@${INSTALL_DATA} ${WRKSRC}/$d/* ${DATADIR}/$d
+	@${MKDIR} ${STAGEDIR}${DATADIR}/$d
+	@${INSTALL_DATA} ${WRKSRC}/$d/* ${STAGEDIR}${DATADIR}/$d
 .endfor
-	@${CP} -R ${WRKSRC}/test_script ${DATADIR}
-
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${CP} -R ${WRKSRC}/test_script ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in changelog.md README.md LICENSE
-	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/$f ${STAGEDIR}${DOCSDIR}
+	@${CP} -R ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
-.endif
-
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${CP} -R ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
