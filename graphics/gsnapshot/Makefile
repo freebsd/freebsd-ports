@@ -19,6 +19,7 @@ USE_GNOME=	gtk20 libwnck libxml2
 USE_XORG=	x11 xmu
 
 CFLAGS+=	-fPIC -I${LOCALBASE}/include/libxml2
+LDFLAGS+=	-lm -L${LOCALBASE}/lib -lgmodule-2.0
 
 PORTDOCS=	AUTHORS COPYING INSTALL README TODO
 
