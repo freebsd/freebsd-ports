@@ -14,6 +14,19 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Virt/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Virt/Virt.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Virt/Virt.so
+%%PERL5_MAN3%%/Sys::Virt.3.gz
+%%PERL5_MAN3%%/Sys::Virt::Domain.3.gz
+%%PERL5_MAN3%%/Sys::Virt::DomainSnapshot.3.gz
+%%PERL5_MAN3%%/Sys::Virt::Error.3.gz
+%%PERL5_MAN3%%/Sys::Virt::Event.3.gz
+%%PERL5_MAN3%%/Sys::Virt::Interface.3.gz
+%%PERL5_MAN3%%/Sys::Virt::NWFilter.3.gz
+%%PERL5_MAN3%%/Sys::Virt::Network.3.gz
+%%PERL5_MAN3%%/Sys::Virt::NodeDevice.3.gz
+%%PERL5_MAN3%%/Sys::Virt::Secret.3.gz
+%%PERL5_MAN3%%/Sys::Virt::StoragePool.3.gz
+%%PERL5_MAN3%%/Sys::Virt::StorageVol.3.gz
+%%PERL5_MAN3%%/Sys::Virt::Stream.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Virt
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Sys/Virt
