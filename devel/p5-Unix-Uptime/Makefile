@@ -14,9 +14,4 @@ COMMENT=	Determine the current uptime in seconds
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Unix::Uptime.3 \
-		Unix::Uptime::BSD.3 \
-		Unix::Uptime::Linux.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
