@@ -16,9 +16,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		perl5
 USE_PERL5=	modbuild
-PLIST_FILES=	bin/subatom
+PLIST_FILES=	bin/subatom man/man1/subatom.1.gz
 
-MAN1=		subatom.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
