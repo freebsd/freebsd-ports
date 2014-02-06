@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.yersinia.net/download/
 MAINTAINER=	ayu@commun.jp
 COMMENT=	Layer 2 vulnerability scanner (switches, spanning tree, 802.1q ...)
 
-LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
+LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
 .if !defined(WITHOUT_GTK)
 .if exists(${LOCALBASE}/include/gtk-2.0/gtk/gtk.h)
@@ -35,7 +35,6 @@ LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 PLIST_FILES=	sbin/yersinia \
 		man/man8/yersinia.8.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lnet|`${LIBNET_CONFIG} --libs`|' \
 		${WRKSRC}/src/Makefile.in
