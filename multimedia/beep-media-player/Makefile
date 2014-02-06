@@ -12,6 +12,9 @@ DISTNAME=	bmp-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 multimedia player
 
+DEPRECATED=	Abandonware, please consider using multimedia/audacious instead
+EXPIRATION_DATE=	2014-03-06
+
 LIB_DEPENDS=	id3-3.8:${PORTSDIR}/audio/id3lib
 
 USES=		pkgconfig
