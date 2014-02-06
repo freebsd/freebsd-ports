@@ -15,14 +15,13 @@ RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
 
-MAN3=		Yahoo::BBAuth.3
+SHEBANG_FILES=	eg/*.cgi
 
-NO_STAGE=	yes
 post-install:
-	${MKDIR} ${WWWDIR}/cgi-bin
-	${INSTALL_SCRIPT} ${WRKSRC}/eg/* ${WWWDIR}/cgi-bin
+	${MKDIR} ${STAGEDIR}${WWWDIR}/cgi-bin
+	${INSTALL_SCRIPT} ${WRKSRC}/eg/* ${STAGEDIR}${WWWDIR}/cgi-bin
 
 .include <bsd.port.mk>
