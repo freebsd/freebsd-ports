@@ -27,7 +27,6 @@ ADODB_SUBDIRS=	contrib datadict drivers lang pear perf session xsl
 OPTIONS_DEFINE=	TESTS
 TESTS_DESC=	Install tests
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 SUB_FILES+=	pkg-message
@@ -39,13 +38,13 @@ PLIST_SUB+=	TESTS="@comment "
 .endif
 
 do-install:
-	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 	@cd ${WRKSRC}; ${FIND} ${ADODB_SUBDIRS} -type d \
-		-exec ${MKDIR} ${DATADIR}/{} \;
+		-exec ${MKDIR} ${STAGEDIR}${DATADIR}/{} \;
 	@cd ${WRKSRC}; ${FIND} . ! -path './*/*' -type f \( -name '*.php' -or -name '*.dtd' -or -name '*.zip' \) \
-		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${DATADIR}/{} \;
+		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${STAGEDIR}${DATADIR}/{} \;
 	@cd ${WRKSRC}; ${FIND} ${ADODB_SUBDIRS} -type f \
-		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${DATADIR}/{} \;
+		-exec ${INSTALL_DATA} ${WRKSRC}/{} ${STAGEDIR}${DATADIR}/{} \;
 
 .if ${PORT_OPTIONS:MTESTS}
 	@${MKDIR} ${DATADIR}/tests
@@ -54,15 +53,12 @@ do-install:
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/cute_icons_for_site
+	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR}/cute_icons_for_site
 	@cd ${WRKSRC}; ${FIND} . ! -path './*/*' -type f -name '*.txt' \
-		-exec ${INSTALL_MAN} ${WRKSRC}/{} ${DOCSDIR}/{} \;
+		-exec ${INSTALL_MAN} ${WRKSRC}/{} ${STAGEDIR}${DOCSDIR}/{} \;
 	@cd ${WRKSRC}/docs; ${FIND} . -type f \
-		-exec ${INSTALL_MAN} ${WRKSRC}/docs/{} ${DOCSDIR}/{} \;
+		-exec ${INSTALL_MAN} ${WRKSRC}/docs/{} ${STAGEDIR}${DOCSDIR}/{} \;
 	@cd ${WRKSRC}; ${FIND} cute_icons_for_site -type f \
-		-exec ${INSTALL_MAN} ${WRKSRC}/{} ${DOCSDIR}/{} \;
-.endif
-	@${CAT} ${PKGMESSAGE}
+		-exec ${INSTALL_MAN} ${WRKSRC}/{} ${STAGEDIR}${DOCSDIR}/{} \;
 
 .include <bsd.port.mk>
