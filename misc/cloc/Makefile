@@ -20,8 +20,7 @@ EXTRACT_AFTER_ARGS=	./${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME}
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/
+	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
 
 .include <bsd.port.mk>
