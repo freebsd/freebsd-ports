@@ -1,0 +1,109 @@
+bin/cataclysm
+libexec/cataclysm
+%%DATADIR%%/data/FONTDATA
+%%DATADIR%%/data/cataicon.ico
+%%DATADIR%%/data/changelog.txt
+%%DATADIR%%/data/credits
+%%DATADIR%%/data/font/fixedsys.ttf
+%%DATADIR%%/data/font/terminus.fon
+%%DATADIR%%/data/json/bionics.json
+%%DATADIR%%/data/json/colors.json
+%%DATADIR%%/data/json/dreams.json
+%%DATADIR%%/data/json/furniture.json
+%%DATADIR%%/data/json/halloween_special.json
+%%DATADIR%%/data/json/hints.json
+%%DATADIR%%/data/json/item_groups.json
+%%DATADIR%%/data/json/items/ammo.json
+%%DATADIR%%/data/json/items/archery.json
+%%DATADIR%%/data/json/items/armor.json
+%%DATADIR%%/data/json/items/books.json
+%%DATADIR%%/data/json/items/comestibles.json
+%%DATADIR%%/data/json/items/containers.json
+%%DATADIR%%/data/json/items/instruments.json
+%%DATADIR%%/data/json/items/melee.json
+%%DATADIR%%/data/json/items/mods.json
+%%DATADIR%%/data/json/items/ranged.json
+%%DATADIR%%/data/json/items/tools.json
+%%DATADIR%%/data/json/items/vehicle_parts.json
+%%DATADIR%%/data/json/lab_notes.json
+%%DATADIR%%/data/json/martialarts.json
+%%DATADIR%%/data/json/materials.json
+%%DATADIR%%/data/json/migo_speech.json
+%%DATADIR%%/data/json/monstergroups.json
+%%DATADIR%%/data/json/monsters.json
+%%DATADIR%%/data/json/mutations.json
+%%DATADIR%%/data/json/names.json
+%%DATADIR%%/data/json/professions.json
+%%DATADIR%%/data/json/recipes.json
+%%DATADIR%%/data/json/skills.json
+%%DATADIR%%/data/json/snippets.json
+%%DATADIR%%/data/json/species.json
+%%DATADIR%%/data/json/techniques.json
+%%DATADIR%%/data/json/terrain.json
+%%DATADIR%%/data/json/tool_qualities.json
+%%DATADIR%%/data/json/tutorial.json
+%%DATADIR%%/data/json/vehicle_parts.json
+%%DATADIR%%/data/json/vehicles.json
+%%DATADIR%%/data/motd
+%%DATADIR%%/data/raw/keybindings.json
+%%DATADIR%%/data/raw/sokoban.txt
+%%DATADIR%%/gfx/DeonTileset/deontiles.png
+%%DATADIR%%/gfx/DeonTileset/tile_config.json
+%%DATADIR%%/gfx/DeonTileset/tileset.txt
+%%DATADIR%%/gfx/HoderTileset/hodertiles.png
+%%DATADIR%%/gfx/HoderTileset/tile_config.json
+%%DATADIR%%/gfx/HoderTileset/tileset.txt
+%%DATADIR%%/gfx/TsuTileset/tile_config.json
+%%DATADIR%%/gfx/TsuTileset/tileset.txt
+%%DATADIR%%/gfx/TsuTileset/tsutiles.png
+%%DATADIR%%/gfx/tile.png
+%%DATADIR%%/gfx/tile_config.json
+%%DATADIR%%/gfx/tile_config_template.json
+%%DATADIR%%/gfx/tinytile.png
+%%PORTDOCS%%%%DOCSDIR%%/CMakeLists.txt
+%%PORTDOCS%%%%DOCSDIR%%/CODE_STYLE.txt
+%%PORTDOCS%%%%DOCSDIR%%/COMPILING.md
+%%PORTDOCS%%%%DOCSDIR%%/COMPILING_osx.md
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING.md
+%%PORTDOCS%%%%DOCSDIR%%/DEVELOPER_FAQ.md
+%%PORTDOCS%%%%DOCSDIR%%/ENUMS.md
+%%PORTDOCS%%%%DOCSDIR%%/GAMEMODES.md
+%%PORTDOCS%%%%DOCSDIR%%/GAME_BALANCE.txt
+%%PORTDOCS%%%%DOCSDIR%%/JSON_INFO.md
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/MODDING.txt
+%%PORTDOCS%%%%DOCSDIR%%/OLD_TODO.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/README_all_translators.txt
+%%PORTDOCS%%%%DOCSDIR%%/TESTING.txt
+%%PORTDOCS%%%%DOCSDIR%%/TRANSLATING.md
+%%PORTDOCS%%%%DOCSDIR%%/changelog.txt
+%%PORTDOCS%%%%DOCSDIR%%/de.txt
+%%PORTDOCS%%%%DOCSDIR%%/doxygen_conf.txt
+%%PORTDOCS%%%%DOCSDIR%%/sokoban.txt
+%%PORTDOCS%%%%DOCSDIR%%/tileset.txt
+%%NLS%%share/locale/cs/LC_MESSAGES/cataclysm-dda.mo
+%%NLS%%share/locale/de/LC_MESSAGES/cataclysm-dda.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/cataclysm-dda.mo
+%%NLS%%share/locale/it/LC_MESSAGES/cataclysm-dda.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/cataclysm-dda.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/cataclysm-dda.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/cataclysm-dda.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/cataclysm-dda.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/cataclysm-dda.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/cataclysm-dda.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/cataclysm-dda.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/cataclysm-dda.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/cataclysm-dda.mo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/gfx/TsuTileset
+@dirrm %%DATADIR%%/gfx/HoderTileset
+@dirrm %%DATADIR%%/gfx/DeonTileset
+@dirrm %%DATADIR%%/gfx
+@dirrm %%DATADIR%%/data/raw
+@dirrm %%DATADIR%%/data/json/items
+@dirrm %%DATADIR%%/data/json
+@dirrm %%DATADIR%%/data/font
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
