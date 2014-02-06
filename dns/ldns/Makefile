@@ -45,7 +45,7 @@ ALL_TARGET=	pyldns
 INSTALL_TARGET=	install-pyldns
 
 CONFIGURE_ARGS+=--with-pyldns
-LIB_DEPENDS+=	ldns:${PORTSDIR}/dns/ldns
+LIB_DEPENDS+=	libldns.so:${PORTSDIR}/dns/ldns
 BUILD_DEPENDS+=	${LOCALBASE}/bin/swig:${PORTSDIR}/devel/swig13
 
 post-patch:
@@ -58,7 +58,7 @@ ALL_TARGET=	p5-dns-ldns
 INSTALL_TARGET=	install-p5-dns-ldns
 
 CONFIGURE_ARGS+=--with-p5-dns-ldns
-LIB_DEPENDS+=	ldns:${PORTSDIR}/dns/ldns
+LIB_DEPENDS+=	libldns.so:${PORTSDIR}/dns/ldns
 
 post-patch:
 	@${SED} -i '' -e 's=-I./include/ldns=-I${LOCALBASE}/include/ldns=' ${WRKSRC}/Makefile.in
