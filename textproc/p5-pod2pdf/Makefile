@@ -19,7 +19,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		pod2pdf.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
