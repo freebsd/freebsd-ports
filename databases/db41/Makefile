@@ -23,11 +23,12 @@ DEPRECATED=	Please use databases/db5 or db6 for new installs.
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
+USES=		desthack
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../dist/configure
 CONFIGURE_ARGS=	--enable-compat185 --enable-dump185 \
 		--enable-cxx --enable-dynamic \
-		--includedir=${PREFIX}/include/db41
+		--includedir=${STAGEDIR}${PREFIX}/include/db41
 USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>
@@ -36,8 +37,6 @@ USE_LDCONFIG=	yes
 INSTALL_TARGET=	install install_docs
 PORTDOCS=	*
 .endif
-
-NO_STAGE=	yes
 
 .if ${ARCH} == amd64
 CONFIGURE_ARGS+=	--with-mutex=x86/gcc-assembly
