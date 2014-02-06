@@ -4,7 +4,6 @@
 PORTNAME=	XML-Parser-encodings
 PORTVERSION=	1.03
 CATEGORIES=	russian textproc perl5
-PKGNAMEPREFIX=	p5-
 DISTFILES=
 
 MAINTAINER=	perl@FreeBSD.org
@@ -20,7 +19,10 @@ USES=		perl5
 NO_WRKSUBDIR=	YES
 RUSSIANENC=	cp1251 cp866 mac-cyrillic
 
-NO_STAGE=	yes
+.include <bsd.port.pre.mk>
+
+PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
+
 post-extract:
 .for ICONVPORT in iconv iconv-extra
 	@${LN} -sfh \
@@ -44,7 +46,8 @@ do-build:
 .endfor
 
 do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/XML/Parser/Encodings
 	${INSTALL_DATA} ${WRKSRC}/*.enc \
-		${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/XML/Parser/Encodings/
+		${STAGEDIR}${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}/XML/Parser/Encodings
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
