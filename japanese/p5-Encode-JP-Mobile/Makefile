@@ -4,6 +4,7 @@ PORTNAME=	Encode-JP-Mobile
 PORTVERSION=	0.30
 CATEGORIES=	japanese perl5
 MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for encoding for mobile phones in Japan
@@ -18,9 +19,7 @@ TEST_DEPENDS=	\
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Encode/JP/Mobile/Mobile.so
 
-PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
