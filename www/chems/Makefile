@@ -15,15 +15,11 @@ USE_PHP=	xml iconv gd
 SUB_FILES=	pkg-message
 WWWDIR?=	${PREFIX}/www/${PORTNAME}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 do-install:
-	@${MKDIR} ${WWWDIR}
-	${CP} -R ${WRKSRC}/ ${WWWDIR}
-	${TOUCH} ${WWWDIR}/usr/config.php
-	@${CHOWN} ${WWWOWN} ${WWWDIR}/usr/config.php
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}
+	${TOUCH} ${STAGEDIR}${WWWDIR}/usr/config.php
+	@${CHOWN} ${WWWOWN} ${STAGEDIR}${WWWDIR}/usr/config.php
 
 create-plist:
 	@${FIND} -s ${WRKSRC}/${file} -not -type d \
@@ -33,4 +29,4 @@ create-plist:
 	@${FIND} -ds ${WRKSRC}/${file} -type d \
 	| ${SED} -e 's,^${WRKSRC},@dirrm %%WWWDIR%%,' >> ${PLIST}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
