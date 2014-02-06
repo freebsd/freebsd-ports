@@ -21,8 +21,8 @@ USE_PERL5=	run
 
 PLIST_FILES+=	bin/texcount
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/texcount.pl ${PREFIX}/bin/texcount
+	@${INSTALL_SCRIPT} ${WRKSRC}/texcount.pl \
+		${STAGEDIR}${PREFIX}/bin/texcount
 
 .include <bsd.port.mk>
