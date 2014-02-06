@@ -108,7 +108,6 @@
     SUBDIR += cntlm
     SUBDIR += cocoon
     SUBDIR += codeigniter
-    SUBDIR += comclear
     SUBDIR += coppermine
     SUBDIR += cowboy
     SUBDIR += cplanet
