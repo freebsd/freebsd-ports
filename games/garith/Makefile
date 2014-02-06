@@ -18,7 +18,6 @@ LDFLAGS+=	`${GTK_CONFIG} --libs`
 PORTDOCS=	BUGS HISTORY README TODO
 PLIST_FILES=	bin/garith
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|gldouble|double|;/gnome/d;/all.*apps/d'\
 		${WRKSRC}/garith.c
@@ -27,10 +26,8 @@ do-build:
 	cd ${WRKSRC}&&${CC} ${CFLAGS} -o garith garith.c ${LDFLAGS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/garith ${PREFIX}/bin/
-.ifndef NOPORTDOCS
-	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC}&&${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/garith ${STAGEDIR}${PREFIX}/bin/
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/
+	@cd ${WRKSRC}&&${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
