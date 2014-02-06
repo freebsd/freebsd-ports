@@ -17,14 +17,13 @@ BUILD_DEPENDS+=	p5-libwww>0.0:${PORTSDIR}/www/p5-libwww
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/ca-bundle.crt ${LOCALBASE}/etc
+	${INSTALL_DATA} ${WRKSRC}/ca-bundle.crt ${STAGEDIR}${PREFIX}/etc
 
-MAN3=		PayflowPro.3
 PLIST_FILES=	etc/ca-bundle.crt \
 		%%SITE_PERL%%/PayflowPro.pm \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/PayflowPro/.packlist
+		%%SITE_PERL%%/%%PERL_ARCH%%/auto/PayflowPro/.packlist \
+		%%PERL5_MAN3%%/PayflowPro.3.gz
 PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/PayflowPro
 
 .include <bsd.port.mk>
