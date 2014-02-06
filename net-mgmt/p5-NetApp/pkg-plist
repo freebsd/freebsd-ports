@@ -31,6 +31,20 @@
 %%SITE_PERL%%/NetApp/Volume.pm
 %%SITE_PERL%%/NetApp/Volume.pod
 %%SITE_PERL%%/NetApp/Volume/Source.pm
+%%PERL5_MAN3%%/NetApp::Aggregate.3.gz
+%%PERL5_MAN3%%/NetApp::Aggregate::Plex.3.gz
+%%PERL5_MAN3%%/NetApp::Aggregate::RAIDGroup.3.gz
+%%PERL5_MAN3%%/NetApp::Filer.3.gz
+%%PERL5_MAN3%%/NetApp::Filer::Export.3.gz
+%%PERL5_MAN3%%/NetApp::Filer::License.3.gz
+%%PERL5_MAN3%%/NetApp::Filer::Option.3.gz
+%%PERL5_MAN3%%/NetApp::Filer::Version.3.gz
+%%PERL5_MAN3%%/NetApp::Qtree.3.gz
+%%PERL5_MAN3%%/NetApp::Snapmirror.3.gz
+%%PERL5_MAN3%%/NetApp::Snapshot.3.gz
+%%PERL5_MAN3%%/NetApp::Snapshot::Delta.3.gz
+%%PERL5_MAN3%%/NetApp::Snapshot::Schedule.3.gz
+%%PERL5_MAN3%%/NetApp::Volume.3.gz
 @dirrmtry %%SITE_PERL%%/NetApp/Volume
 @dirrmtry %%SITE_PERL%%/NetApp/Snapshot
 @dirrmtry %%SITE_PERL%%/NetApp/Snapmirror
