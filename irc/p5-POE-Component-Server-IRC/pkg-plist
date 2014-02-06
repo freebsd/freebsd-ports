@@ -1,4 +1,5 @@
 bin/pmkpasswd
+man/man1/pmkpasswd.1.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/IRC/.packlist
 %%SITE_PERL%%/POE/Component/Server/IRC.pm
 %%SITE_PERL%%/POE/Component/Server/IRC/Common.pm
@@ -6,6 +7,12 @@ bin/pmkpasswd
 %%SITE_PERL%%/POE/Component/Server/IRC/Plugin/Auth.pm
 %%SITE_PERL%%/POE/Component/Server/IRC/Plugin/OperServ.pm
 %%SITE_PERL%%/POE/Component/Server/IRC/Backend.pm
+%%PERL5_MAN3%%/POE::Component::Server::IRC.3.gz
+%%PERL5_MAN3%%/POE::Component::Server::IRC::Backend.3.gz
+%%PERL5_MAN3%%/POE::Component::Server::IRC::Common.3.gz
+%%PERL5_MAN3%%/POE::Component::Server::IRC::Plugin.3.gz
+%%PERL5_MAN3%%/POE::Component::Server::IRC::Plugin::Auth.3.gz
+%%PERL5_MAN3%%/POE::Component::Server::IRC::Plugin::OperServ.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server/IRC
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Server
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
