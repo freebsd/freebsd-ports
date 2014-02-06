@@ -11,11 +11,6 @@ bin/mkc_install
 bin/mkc_test_helper
 bin/mkc_which
 bin/mkcmake
-%%DATADIR%%/custom/endianess
-%%DATADIR%%/custom/prog_bison
-%%DATADIR%%/custom/prog_flex
-%%DATADIR%%/custom/prog_gawk
-%%DATADIR%%/custom/prog_gm4
 man/man1/mkc_check_custom.1.gz
 man/man1/mkc_check_decl.1.gz
 man/man1/mkc_check_funclib.1.gz
@@ -24,44 +19,91 @@ man/man1/mkc_check_prog.1.gz
 man/man1/mkc_check_sizeof.1.gz
 man/man1/mkcmake.1.gz
 man/man7/mk-configure.7.gz
-@dirrm %%DATADIR%%/custom
-@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%DATADIR%%/custom/endianness
+%%DATADIR%%/custom/prog_bison
+%%DATADIR%%/custom/prog_flex
+%%DATADIR%%/custom/prog_gawk
+%%DATADIR%%/custom/prog_gm4
+%%DATADIR%%/features/getline/getline.c
+%%DATADIR%%/features/mkc_CIRCLEQ.h
+%%DATADIR%%/features/mkc_LIST.h
+%%DATADIR%%/features/mkc_RB.h
+%%DATADIR%%/features/mkc_SIMPLEQ.h
+%%DATADIR%%/features/mkc_SLIST.h
+%%DATADIR%%/features/mkc_SPLAY.h
+%%DATADIR%%/features/mkc_STAILQ.h
+%%DATADIR%%/features/mkc_TAILQ.h
+%%DATADIR%%/features/mkc_getline.h
+%%DATADIR%%/features/mkc_libdl.h
+%%DATADIR%%/features/mkc_libm.h
+%%DATADIR%%/features/mkc_strlcat.h
+%%DATADIR%%/features/mkc_strlcpy.h
+%%DATADIR%%/features/netbsd_sys_queue.h
+%%DATADIR%%/features/netbsd_sys_tree.h
+%%DATADIR%%/features/strlcat/strlcat.c
+%%DATADIR%%/features/strlcpy/strlcpy.c
 share/mkc-mk/configure.mk
 share/mkc-mk/mkc.configure.mk
 share/mkc-mk/mkc.files.mk
+share/mkc-mk/mkc.init.mk
 share/mkc-mk/mkc.intexts.mk
 share/mkc-mk/mkc.lib.mk
 share/mkc-mk/mkc.minitest.mk
 share/mkc-mk/mkc.mk
-share/mkc-mk/mkc.own.mk
 share/mkc-mk/mkc.pkg-config.mk
 share/mkc-mk/mkc.prog.mk
 share/mkc-mk/mkc.subdir.mk
 share/mkc-mk/mkc.subprj.mk
 share/mkc-mk/mkc.subprjs.mk
 share/mkc-mk/mkc_imp.arch.mk
+share/mkc-mk/mkc_imp.checkprogs.mk
+share/mkc-mk/mkc_imp.conf-final.mk
 share/mkc-mk/mkc_imp.dep.mk
+share/mkc-mk/mkc_imp.f_CIRCLEQ.mk
+share/mkc-mk/mkc_imp.f_LIST.mk
+share/mkc-mk/mkc_imp.f_RB.mk
+share/mkc-mk/mkc_imp.f_SIMPLEQ.mk
+share/mkc-mk/mkc_imp.f_SLIST.mk
+share/mkc-mk/mkc_imp.f_SPLAY.mk
+share/mkc-mk/mkc_imp.f_STAILQ.mk
+share/mkc-mk/mkc_imp.f_TAILQ.mk
+share/mkc-mk/mkc_imp.f_getline.mk
+share/mkc-mk/mkc_imp.f_libdl.mk
+share/mkc-mk/mkc_imp.f_libm.mk
+share/mkc-mk/mkc_imp.f_strlcat.mk
+share/mkc-mk/mkc_imp.f_strlcpy.mk
 share/mkc-mk/mkc_imp.files.mk
 share/mkc-mk/mkc_imp.final.mk
 share/mkc-mk/mkc_imp.inc.mk
 share/mkc-mk/mkc_imp.info.mk
-share/mkc-mk/mkc_imp.init.mk
 share/mkc-mk/mkc_imp.intexts.mk
 share/mkc-mk/mkc_imp.lib.mk
 share/mkc-mk/mkc_imp.links.mk
 share/mkc-mk/mkc_imp.lua.mk
 share/mkc-mk/mkc_imp.man.mk
+share/mkc-mk/mkc_imp.mk
+share/mkc-mk/mkc_imp.obj.mk
 share/mkc-mk/mkc_imp.objdir.mk
-share/mkc-mk/mkc_imp.own.mk
 share/mkc-mk/mkc_imp.pkg-config.mk
 share/mkc-mk/mkc_imp.platform.sys.mk
 share/mkc-mk/mkc_imp.pod.mk
 share/mkc-mk/mkc_imp.preinit.mk
 share/mkc-mk/mkc_imp.prog.mk
+share/mkc-mk/mkc_imp.rules.mk
 share/mkc-mk/mkc_imp.scripts.mk
-share/mkc-mk/mkc_imp.subdir.mk
 share/mkc-mk/mkc_imp.subprj.mk
-share/mkc-mk/mkc_imp.sys.mk
 share/mkc-mk/mkc_imp.vars.mk
 share/mkc-mk/sys.mk
-@dirrm share/mkc-mk
+@dirrmtry share/mkc-mk
+@dirrmtry %%DATADIR%%/features/strlcpy
+@dirrmtry %%DATADIR%%/features/strlcat
+@dirrmtry %%DATADIR%%/features/getline
+@dirrmtry %%DATADIR%%/features
+@dirrmtry %%DATADIR%%/custom
+@dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
