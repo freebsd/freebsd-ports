@@ -27,7 +27,6 @@ AP_GENPLIST=	yes
 #   http://lists.freebsd.org/pipermail/freebsd-ports/2012-June/075466.html
 UNIQUENAME=	ap22-${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MYOSHFUJI}
@@ -37,12 +36,9 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-mod_extract_forwarded.c
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
-	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
