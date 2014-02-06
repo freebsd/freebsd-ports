@@ -3,11 +3,21 @@ bin/decode_flags.pl
 bin/parse.pl
 bin/statusdat_demo.pl
 bin/test_configuration.pl
+man/man1/config_status_demo.pl.1.gz
+man/man1/decode_flags.pl.1.gz
+man/man1/parse.pl.1.gz
+man/man1/statusdat_demo.pl.1.gz
+man/man1/test_configuration.pl.1.gz
 %%SITE_PERL%%/Nagios/Config.pm
 %%SITE_PERL%%/Nagios/Object.pm
 %%SITE_PERL%%/Nagios/StatusLog.pm
 %%SITE_PERL%%/Nagios/Config/File.pm
 %%SITE_PERL%%/Nagios/Object/Config.pm
+%%PERL5_MAN3%%/Nagios::Config.3.gz
+%%PERL5_MAN3%%/Nagios::Config::File.3.gz
+%%PERL5_MAN3%%/Nagios::Object.3.gz
+%%PERL5_MAN3%%/Nagios::Object::Config.3.gz
+%%PERL5_MAN3%%/Nagios::StatusLog.3.gz
 @dirrm %%SITE_PERL%%/Nagios/Config
 @dirrm %%SITE_PERL%%/Nagios/Object
 @dirrmtry %%SITE_PERL%%/Nagios
