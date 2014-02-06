@@ -13,20 +13,17 @@ COMMENT=	Perl module for basic IMAP server administration
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		IMAP::Admin.3
 EXAMPLESDIR=	${PREFIX}/share/examples/${UNIQUENAME}
 
-.if !defined(NOPORTEXAMPLES)
+OPTIONS_DEFINE=	EXAMPLES
+
+.include <bsd.port.options.mk>
+
 PORTEXAMPLES=	create.pl delete.pl
-NO_STAGE=	yes
+
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "*******************************************************************************"
-	@${ECHO_MSG} "See ${EXAMPLESDIR} for some examples..."
-	@${ECHO_MSG} "*******************************************************************************"
-	@${ECHO_MSG} ""
-.endif
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@cd ${WRKSRC}/examples && ${INSTALL_DATA} ${PORTEXAMPLES} \
+		${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
