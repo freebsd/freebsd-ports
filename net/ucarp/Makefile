@@ -32,8 +32,8 @@ PLIST_FILES=	sbin/ucarp
 PLIST_FILES+=	sbin/ucarp-up \
 		sbin/ucarp-down
 post-install:
-		${INSTALL_SCRIPT} ${WRKSRC}/examples/bsd/vip-up.sh ${PREFIX}/sbin/ucarp-up
-		${INSTALL_SCRIPT} ${WRKSRC}/examples/bsd/vip-down.sh ${PREFIX}/sbin/ucarp-down
+		${INSTALL_SCRIPT} ${WRKSRC}/examples/bsd/vip-up.sh ${STAGEDIR}${PREFIX}/sbin/ucarp-up
+		${INSTALL_SCRIPT} ${WRKSRC}/examples/bsd/vip-down.sh ${STAGEDIR}${PREFIX}/sbin/ucarp-down
 .endif
 
 .include <bsd.port.mk>
