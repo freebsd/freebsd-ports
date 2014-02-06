@@ -14,14 +14,14 @@ CONFLICTS=	ja-dvi2tty-[0-9]*
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LDFLAGS="${STRIP}"
 
-MAN1=		disdvi.1 dvi2tty.1
-PLIST_FILES=	bin/disdvi bin/dvi2tty
+PLIST_FILES=	bin/disdvi bin/dvi2tty \
+		man/man1/disdvi.1.gz \
+		man/man1/dvi2tty.1.gz
 
-NO_STAGE=	yes
 do-install:
 .for name in disdvi dvi2tty
-	${INSTALL_PROGRAM} ${WRKSRC}/${name} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${name}.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${name} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${name}.1 ${STAGEDIR}${MANPREFIX}/man/man1
 .endfor
 
 .include <bsd.port.mk>
