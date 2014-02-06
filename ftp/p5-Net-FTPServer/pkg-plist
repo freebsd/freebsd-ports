@@ -24,6 +24,26 @@ bin/ro-ftpd.pl
 %%SITE_PERL%%/Net/FTPServer/RO/FileHandle.pm
 %%SITE_PERL%%/Net/FTPServer/RO/Server.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTPServer/.packlist
+%%PERL5_MAN3%%/Net::FTPServer.3.gz
+%%PERL5_MAN3%%/Net::FTPServer::DBeg1::DirHandle.3.gz
+%%PERL5_MAN3%%/Net::FTPServer::DBeg1::FileHandle.3.gz
+%%PERL5_MAN3%%/Net::FTPServer::DBeg1::IOBlob.3.gz
+%%PERL5_MAN3%%/Net::FTPServer::DBeg1::Server.3.gz
+%%PERL5_MAN3%%/Net::FTPServer::DirHandle.3.gz
+%%PERL5_MAN3%%/Net::FTPServer::FileHandle.3.gz
+%%PERL5_MAN3%%/Net::FTPServer::Full::DirHandle.3.gz
+%%PERL5_MAN3%%/Net::FTPServer::Full::FileHandle.3.gz
+%%PERL5_MAN3%%/Net::FTPServer::Full::Server.3.gz
+%%PERL5_MAN3%%/Net::FTPServer::Handle.3.gz
+%%PERL5_MAN3%%/Net::FTPServer::InMem::DirHandle.3.gz
+%%PERL5_MAN3%%/Net::FTPServer::InMem::FileHandle.3.gz
+%%PERL5_MAN3%%/Net::FTPServer::InMem::Server.3.gz
+%%PERL5_MAN3%%/Net::FTPServer::Proxy::DirHandle.3.gz
+%%PERL5_MAN3%%/Net::FTPServer::Proxy::FileHandle.3.gz
+%%PERL5_MAN3%%/Net::FTPServer::Proxy::Server.3.gz
+%%PERL5_MAN3%%/Net::FTPServer::RO::DirHandle.3.gz
+%%PERL5_MAN3%%/Net::FTPServer::RO::FileHandle.3.gz
+%%PERL5_MAN3%%/Net::FTPServer::RO::Server.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/FTPServer
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrm %%SITE_PERL%%/Net/FTPServer/RO
