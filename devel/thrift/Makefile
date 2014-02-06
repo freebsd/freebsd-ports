@@ -48,7 +48,6 @@ CONFIGURE_ARGS+=	\
 		--without-python \
 		--without-ruby
 
-NO_STAGE=	yes
 PLIST_FILES=	bin/thrift
 
 .include <bsd.port.pre.mk>
