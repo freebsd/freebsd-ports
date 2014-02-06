@@ -8,6 +8,7 @@
 %%EXAMPLESDIR%%/output/spam.css
 %%EXAMPLESDIR%%/archive/sample.txt.gz
 %%EXAMPLESDIR%%/archive/sample2.txt.gz
+%%PERL5_MAN3%%/Mail::Graph.3.gz
 @dirrm %%EXAMPLESDIR%%/archive
 @dirrm %%EXAMPLESDIR%%/index
 @dirrm %%EXAMPLESDIR%%/output
