@@ -25,11 +25,8 @@ USE_PERL5=	configure
 USE_EMACS=	yes
 USE_GMAKE=	yes
 
-MAN3=	Sepia.3 Sepia::Xref.3
-MAN1=	sepl.1
 INFO=	sepia
 
 CONFIGURE_ARGS+=	--emacs ${EMACS_CMD} --lisp ${PREFIX}/${EMACS_SITE_LISPDIR}/sepia --info ${PREFIX}/${INFO_PATH}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
