@@ -19,11 +19,7 @@ TEST_DEPENDS=	p5-Test-Fatal>0:${PORTSDIR}/devel/p5-Test-Fatal
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	Test::File::ShareDir.3 \
-	Test::File::ShareDir::TempDirObject.3
-
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PERL5} ${PL_BUILD} test
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
