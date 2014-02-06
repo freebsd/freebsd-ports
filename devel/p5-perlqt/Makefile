@@ -30,10 +30,8 @@ SUB_FILES=	perl-kdebindings-env.sh pkg-message
 SUB_LIST+=	PERL5LIBDIR="${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}:\
 				${PREFIX}/${SITE_PERL_REL}"
 
-NO_STAGE=	yes
 post-install:
-	${MKDIR} ${PREFIX}/env
-	${INSTALL_SCRIPT} ${WRKDIR}/perl-kdebindings-env.sh ${PREFIX}/env
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/env
+	${INSTALL_SCRIPT} ${WRKDIR}/perl-kdebindings-env.sh ${STAGEDIR}${PREFIX}/env
 
 .include <bsd.port.mk>
