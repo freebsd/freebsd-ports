@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lmdbg
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -33,5 +33,8 @@ do-build:
 do-install:
 	${SETENV} ${MKCMAKE_ENV} DESTDIR=${STAGEDIR} \
 		${MKCMAKE} -C ${WRKSRC} ${INSTALL_TARGET}
+
+regression-test: build
+	${SETENV} ${MKCMAKE_ENV} ${MKCMAKE} -C ${WRKSRC} test
 
 .include <bsd.port.mk>
