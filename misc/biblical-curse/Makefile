@@ -17,10 +17,6 @@ WRKSRC=		${WRKDIR}/src
 
 SRC=		${.CURDIR}/src
 
-NO_STAGE=	yes
-do-fetch:
-	@${DO_NADA}
-
 pre-patch:
 	@${CP} -R ${SRC} ${WRKDIR}
 
@@ -28,6 +24,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/biblical-curse
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/biblical-curse ${PREFIX}/bin/biblical-curse
+	${INSTALL_SCRIPT} ${WRKSRC}/biblical-curse ${STAGEDIR}${PREFIX}/bin/biblical-curse
 
 .include <bsd.port.mk>
