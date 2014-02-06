@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	curl
-PORTVERSION=	7.33.0
-PORTREVISION=	2
+PORTVERSION=	7.34.0
 CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		LOCAL/sunpoet
@@ -159,7 +158,7 @@ post-install:
 
 # Setting LC_ALL=C is a kludge; maybe curl/libcurl shouldn't actually use
 # the user's locale when dates are sent to the server.
-regression-test test: build
+x-regression-test test: build
 .if !${PORT_OPTIONS:MPROXY}
 	@${ECHO_MSG} "******************************************"
 	@${ECHO_MSG} "* You have disabled curl proxy support.  *"
