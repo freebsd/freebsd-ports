@@ -25,20 +25,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		NetApp::Aggregate.3 \
-		NetApp::Aggregate::Plex.3 \
-		NetApp::Aggregate::RAIDGroup.3 \
-		NetApp::Filer.3 \
-		NetApp::Filer::Export.3 \
-		NetApp::Filer::License.3 \
-		NetApp::Filer::Option.3 \
-		NetApp::Filer::Version.3 \
-		NetApp::Qtree.3 \
-		NetApp::Snapmirror.3 \
-		NetApp::Snapshot.3 \
-		NetApp::Snapshot::Delta.3 \
-		NetApp::Snapshot::Schedule.3 \
-		NetApp::Volume.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
