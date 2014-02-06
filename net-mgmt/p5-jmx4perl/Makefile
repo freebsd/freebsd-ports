@@ -41,61 +41,6 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN1 =	cacti_jmx4perl.1 \
-	check_jmx4perl.1 \
-	j4psh.1 \
-	jmx4perl.1 \
-	jolokia.1
-
-MAN3=	JMX::Jmx4Perl.3 \
-	JMX::Jmx4Perl::Agent.3 \
-	JMX::Jmx4Perl::Agent::Jolokia::ArtifactHandler.3 \
-	JMX::Jmx4Perl::Agent::Jolokia::DownloadAgent.3 \
-	JMX::Jmx4Perl::Agent::Jolokia::Logger.3 \
-	JMX::Jmx4Perl::Agent::Jolokia::Meta.3 \
-	JMX::Jmx4Perl::Agent::Jolokia::Verifier.3 \
-	JMX::Jmx4Perl::Agent::Jolokia::Verifier::ChecksumVerifier.3 \
-	JMX::Jmx4Perl::Agent::Jolokia::Verifier::GnuPGVerifier.3 \
-	JMX::Jmx4Perl::Agent::Jolokia::Verifier::MD5Verifier.3 \
-	JMX::Jmx4Perl::Agent::Jolokia::Verifier::OpenPGPVerifier.3 \
-	JMX::Jmx4Perl::Agent::Jolokia::Verifier::SHA1Verifier.3 \
-	JMX::Jmx4Perl::Agent::Jolokia::WebXmlHandler.3 \
-	JMX::Jmx4Perl::Agent::UserAgent.3 \
-	JMX::Jmx4Perl::Alias.3 \
-	JMX::Jmx4Perl::Alias::Object.3 \
-	JMX::Jmx4Perl::Config.3 \
-	JMX::Jmx4Perl::J4psh.3 \
-	JMX::Jmx4Perl::J4psh::Command.3 \
-	JMX::Jmx4Perl::J4psh::Command::Global.3 \
-	JMX::Jmx4Perl::J4psh::Command::MBean.3 \
-	JMX::Jmx4Perl::J4psh::Command::Server.3 \
-	JMX::Jmx4Perl::J4psh::CommandHandler.3 \
-	JMX::Jmx4Perl::J4psh::CompletionHandler.3 \
-	JMX::Jmx4Perl::J4psh::ServerHandler.3 \
-	JMX::Jmx4Perl::J4psh::Shell.3 \
-	JMX::Jmx4Perl::Manual.3 \
-	JMX::Jmx4Perl::Nagios::CactiJmx4Perl.3 \
-	JMX::Jmx4Perl::Nagios::CheckJmx4Perl.3 \
-	JMX::Jmx4Perl::Nagios::SingleCheck.3 \
-	JMX::Jmx4Perl::Product::ActiveMQ.3 \
-	JMX::Jmx4Perl::Product::BaseHandler.3 \
-	JMX::Jmx4Perl::Product::Geronimo.3 \
-	JMX::Jmx4Perl::Product::Glassfish.3 \
-	JMX::Jmx4Perl::Product::Hadoop.3 \
-	JMX::Jmx4Perl::Product::JBoss.3 \
-	JMX::Jmx4Perl::Product::Jetty.3 \
-	JMX::Jmx4Perl::Product::Jonas.3 \
-	JMX::Jmx4Perl::Product::Resin.3 \
-	JMX::Jmx4Perl::Product::SpringDM.3 \
-	JMX::Jmx4Perl::Product::Terracotta.3 \
-	JMX::Jmx4Perl::Product::Tomcat.3 \
-	JMX::Jmx4Perl::Product::Unknown.3 \
-	JMX::Jmx4Perl::Product::Weblogic.3 \
-	JMX::Jmx4Perl::Product::Websphere.3 \
-	JMX::Jmx4Perl::Request.3 \
-	JMX::Jmx4Perl::Response.3 \
-	JMX::Jmx4Perl::Util.3
-
 ETC_FILES=	common.cfg \
 		glassfish.cfg \
 		jboss.cfg \
@@ -109,11 +54,10 @@ ETC_FILES=	common.cfg \
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	ETC_FILES="${ETC_FILES}"
 
-NO_STAGE=	yes
 post-install:
-	@${MKDIR} ${ETCDIR}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 .for f in ${ETC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/config/${f} ${ETCDIR}/${f}.sample
+	${INSTALL_DATA} ${WRKSRC}/config/${f} ${STAGEDIR}${ETCDIR}/${f}.sample
 .endfor
 
 .include <bsd.port.mk>
