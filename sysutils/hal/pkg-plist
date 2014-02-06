@@ -18,10 +18,12 @@ lib/libhal-storage.a
 lib/libhal-storage.la
 lib/libhal-storage.so
 lib/libhal-storage.so.1
+lib/libhal-storage.so.1.0.0
 lib/libhal.a
 lib/libhal.la
 lib/libhal.so
 lib/libhal.so.1
+lib/libhal.so.1.0.0
 libdata/pkgconfig/hal-storage.pc
 libdata/pkgconfig/hal.pc
 libexec/hal-storage-cleanup-all-mountpoints
@@ -69,6 +71,16 @@ libexec/hald-probe-storage
 %%USB2%%libexec/hald-probe-video4linux
 libexec/hald-probe-volume
 libexec/hald-runner
+man/man1/hal-disable-polling.1.gz
+man/man1/hal-find-by-capability.1.gz
+man/man1/hal-find-by-property.1.gz
+man/man1/hal-get-property.1.gz
+man/man1/hal-is-caller-locked-out.1.gz
+man/man1/hal-is-caller-privileged.1.gz
+man/man1/hal-lock.1.gz
+man/man1/hal-set-property.1.gz
+man/man1/lshal.1.gz
+man/man8/hald.8.gz
 sbin/hald
 share/PolicyKit/policy/org.freedesktop.hal.dockstation.policy
 share/PolicyKit/policy/org.freedesktop.hal.killswitch.policy
@@ -111,7 +123,7 @@ share/PolicyKit/policy/org.freedesktop.hal.wol.policy
 @dirrm %%DATADIR%%/fdi
 @dirrm %%DATADIR%%/dist
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/PolicyKit/policy
 @dirrmtry share/PolicyKit
 @dirrm libexec/hal/scripts/freebsd
