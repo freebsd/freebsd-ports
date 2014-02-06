@@ -10,16 +10,17 @@ DISTNAME=	common-${PORTVERSION}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Common subroutines for UCL mbone applications
 
+OPTIONS_DEFINE=	IPV6
+
 WRKSRC=		${WRKDIR}/common
+USES=		uidfix
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
-.ifndef (NO_INET6)
-CONFIGURE_ARGS=	--enable-ipv6
-.endif
+IPV6_CONFIGURE_ENABLE=	ipv6
 USE_XZ=		yes
 MAKE_ENV=	WITHOUT_PROFILE=yes __MAKE_CONF=/dev/null SRCCONF=/dev/null
+INSTALL_WRKSRC=	${WRKSRC}/src
 
-NO_STAGE=	yes
 post-configure:
 	@for f in ${FILESDIR}/*.bsd ; do \
 		${LN} -sf $$f ${WRKSRC}/src/`${BASENAME} $$f .bsd` ; \
@@ -32,8 +33,5 @@ post-build test:
 	cd ${WRKSRC} && tests/test-libcommon 2>&1 | ${AWK} '	\
 		/fail$$/ && $$2 != "networking" { code=1 }	\
 		{ print } END { exit code }'
-
-do-install:
-	cd ${WRKSRC}/src && ${MAKE_ENV} ${MAKE} install
 
 .include <bsd.port.mk>
