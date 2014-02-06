@@ -12,11 +12,8 @@ COMMENT=	Sends magic packets to WOL enabled NIC to switch on the called PC
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		wakeonlan.1
-
-NO_STAGE=	yes
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/examples/lab001.wol ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/lab001.wol ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
