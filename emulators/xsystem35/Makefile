@@ -73,20 +73,15 @@ pre-configure:
 	(cd ${WRKSRC}/libltdl; ${AUTOCONF})
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/instgame ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/instgame ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc;\
-		${INSTALL_DATA} * ${DOCSDIR})
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/xsys35rc.sample ${EXAMPLESDIR}
+		${INSTALL_DATA} * ${STAGEDIR}${DOCSDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/xsys35rc.sample ${STAGEDIR}${EXAMPLESDIR}
 	@(cd ${WRKSRC}/contrib; \
-		${INSTALL_DATA} *.* ${EXAMPLESDIR})
+		${INSTALL_DATA} *.* ${STAGEDIR}${EXAMPLESDIR})
 	@(cd ${WRKSRC}/patch; \
-		${INSTALL_DATA} pastel.diff ${EXAMPLESDIR})
-.endif
-	@${CAT} ${PKGMESSAGE}
+		${INSTALL_DATA} pastel.diff ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
