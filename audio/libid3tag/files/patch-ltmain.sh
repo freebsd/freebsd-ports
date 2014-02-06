@@ -1,6 +1,24 @@
---- ltmain.sh.orig	Tue Feb 17 02:52:36 2004
-+++ ltmain.sh	Fri Oct 28 09:34:46 2005
-@@ -2980,8 +2980,8 @@
+--- ltmain.sh.orig	2004-02-16 20:52:36.000000000 -0500
++++ ltmain.sh
+@@ -1335,7 +1335,7 @@ EOF
+ 	    # These systems don't actually have a C library (as such)
+ 	    test "X$arg" = "X-lc" && continue
+ 	    ;;
+-	  *-*-openbsd* | *-*-freebsd*)
++	  *-*-openbsd* | *-*-freebsd* | *-*-dragonfly* )
+ 	    # Do not include libc due to us having libc/libc_r.
+ 	    test "X$arg" = "X-lc" && continue
+ 	    ;;
+@@ -1346,7 +1346,7 @@ EOF
+ 	  esac
+ 	elif test "X$arg" = "X-lc_r"; then
+ 	 case $host in
+-	 *-*-openbsd* | *-*-freebsd*)
++	 *-*-openbsd* | *-*-freebsd* | *-*-dragonfly* )
+ 	   # Do not include libc_r directly, use -pthread flag.
+ 	   continue
+ 	   ;;
+@@ -2980,8 +2980,8 @@ EOF
  	  ;;
  
  	freebsd-elf)
@@ -11,7 +29,7 @@
  	  ;;
  
  	irix | nonstopux)
-@@ -5527,11 +5527,6 @@
+@@ -5527,11 +5527,6 @@ relink_command=\"$relink_command\""
  	  IFS="$save_ifs"
  	fi
  
