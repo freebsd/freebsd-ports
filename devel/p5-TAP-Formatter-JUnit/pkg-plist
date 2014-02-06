@@ -1,7 +1,11 @@
 bin/tap2junit
+man/man1/tap2junit.1.gz
 %%SITE_PERL%%/TAP/Formatter/JUnit.pm
 %%SITE_PERL%%/TAP/Formatter/JUnit/Result.pm
 %%SITE_PERL%%/TAP/Formatter/JUnit/Session.pm
+%%PERL5_MAN3%%/TAP::Formatter::JUnit.3.gz
+%%PERL5_MAN3%%/TAP::Formatter::JUnit::Result.3.gz
+%%PERL5_MAN3%%/TAP::Formatter::JUnit::Session.3.gz
 @dirrm %%SITE_PERL%%/TAP/Formatter/JUnit
 @dirrmtry %%SITE_PERL%%/TAP/Formatter
 @dirrmtry %%SITE_PERL%%/TAP
