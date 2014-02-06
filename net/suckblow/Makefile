@@ -11,9 +11,5 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Two companion utilities for transferring data over a TCP socket
 
 CONFLICTS=	suck-4.* suck-cnews-4.*
-MAN1=		suck.1
-MLINKS=		suck.1 blow.1
-MANCOMPRESSED=	maybe
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
