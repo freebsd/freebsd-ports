@@ -2,6 +2,17 @@ bin/qpsmtpd
 bin/qpsmtpd-async
 bin/qpsmtpd-forkserver
 bin/qpsmtpd-prefork
+man/man1/%%AP_NAME%%-async.1.gz
+%%PERL5_MAN3%%/Apache::Qpsmtpd.3.gz
+%%PERL5_MAN3%%/Qpsmtpd.3.gz
+%%PERL5_MAN3%%/Qpsmtpd::Address.3.gz
+%%PERL5_MAN3%%/Qpsmtpd::Command.3.gz
+%%PERL5_MAN3%%/Qpsmtpd::ConfigServer.3.gz
+%%PERL5_MAN3%%/Qpsmtpd::Connection.3.gz
+%%PERL5_MAN3%%/Qpsmtpd::Constants.3.gz
+%%PERL5_MAN3%%/Qpsmtpd::DSN.3.gz
+%%PERL5_MAN3%%/Qpsmtpd::Postfix.3.gz
+%%PERL5_MAN3%%/Qpsmtpd::Transaction.3.gz
 %%DATADIR%%/plugins/async/check_earlytalker
 %%DATADIR%%/plugins/async/dns_whitelist_soft
 %%DATADIR%%/plugins/async/dnsbl
