@@ -25,9 +25,4 @@ TEST_DEPENDS=	p5-Test-Script>=1.07:${PORTSDIR}/devel/p5-Test-Script
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	irchailo-seed.1
-
-MAN3=	POE::Component::IRC::Plugin::Hailo.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
