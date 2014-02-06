@@ -1,5 +1,5 @@
 bin/urlencode
 bin/urldecode
-share/doc/urlendec/index.html
-share/doc/urlendec/rfc1738.txt
-@dirrm share/doc/urlendec
+%%PORTDOCS%%share/doc/urlendec/index.html
+%%PORTDOCS%%share/doc/urlendec/rfc1738.txt
+%%PORTDOCS%%@dirrm share/doc/urlendec

@@ -16,24 +16,11 @@ ONLY_FOR_ARCHS=	i386
 BINARIES=	urlencode urldecode
 DOCFILES=	index.html rfc1738.txt
 
-NO_STAGE=	yes
-do-install:
-.for f in ${BINARIES}
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
-.endfor
+OPTIONS_DEFINE=	DOCS
 
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/urlendec
-.for f in ${DOCFILES}
-	${INSTALL_MAN} ${WRKSRC}/${f} ${PREFIX}/share/doc/urlendec
-.endfor
-	@echo ""
-	@echo "	----------------------------------------------------"
-	@echo "	Please read ${PREFIX}/share/doc/urlendec/index.html"
-	@echo "	for detailed instructions how to use this port."
-	@echo "	----------------------------------------------------"
-	@echo ""
-.endif
+do-install:
+	${INSTALL_PROGRAM} ${BINARIES:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/urlendec
+	${INSTALL_DATA} ${DOCFILES:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/share/doc/urlendec
 
 .include <bsd.port.mk>
