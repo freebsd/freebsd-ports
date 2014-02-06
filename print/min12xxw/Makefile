@@ -11,13 +11,12 @@ COMMENT=	Print driver for the Minolta PagePro 1(2/3/4)xxW printers
 
 HAS_CONFIGURE=	yes
 
-MAN1=		min12xxw.1
-PLIST_FILES=	bin/min12xxw bin/esc-m
+PLIST_FILES=	bin/min12xxw bin/esc-m \
+		man/man1/min12xxw.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/min12xxw ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/esc-m ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/min12xxw.1 ${PREFIX}/man/man1
+	${INSTALL_SCRIPT} ${WRKSRC}/min12xxw ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/esc-m ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/min12xxw.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
