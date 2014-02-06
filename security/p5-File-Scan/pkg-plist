@@ -1,19 +1,6 @@
 %%SITE_PERL%%/File/Scan.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Scan/.packlist
-%%PORTDOCS%%%%DOCSDIR%%/Changes
-%%PORTDOCS%%%%DOCSDIR%%/FAQ
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/docs/write_sign_bin.txt
-%%EXAMPLESDIR%%/latest.pl
-%%EXAMPLESDIR%%/scan.pl
-%%EXAMPLESDIR%%/procmail/.procmailrc
-%%EXAMPLESDIR%%/procmail/README
-%%EXAMPLESDIR%%/procmail/scanvirus.pl
-@dirrm %%EXAMPLESDIR%%/procmail
-@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PERL5_MAN3%%/File::Scan.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Scan
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
 @dirrmtry %%SITE_PERL%%/File
