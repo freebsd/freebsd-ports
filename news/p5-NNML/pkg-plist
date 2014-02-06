@@ -1,6 +1,10 @@
 bin/nnmirror
 bin/nnsync
 bin/overview
+man/man1/nnmirror.1.gz
+man/man1/nnsync.1.gz
+man/man1/overview.1.gz
+%%PERL5_MAN3%%/NNML::Server.3.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/NNML/.packlist
 %%SITE_PERL%%/NNML/Active.pm
 %%SITE_PERL%%/NNML/Auth.pm
