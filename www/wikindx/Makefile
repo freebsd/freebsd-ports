@@ -21,22 +21,19 @@ ROOTDIRS=	attachments core docs files languages modules \
 DOCFILES=	CHANGELOG CUSTOMIZATION DISCLAIMER INSTALL \
 		LICENSE README README_CMS README_RSS UPGRADE
 
-NO_STAGE=	yes
 pre-install:
 	@${ECHO} ${WWWDIR}
 
 do-install:
-	-${MKDIR} ${PREFIX}/${WWWDIR}
-	(cd ${WRKSRC} && ${CP} ${ROOTFILES} ${PREFIX}/${WWWDIR}/ )
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${WWWDIR}
+	-${MKDIR} ${STAGEDIR}${PREFIX}/${WWWDIR}
+	(cd ${WRKSRC} && ${CP} ${ROOTFILES} ${STAGEDIR}${PREFIX}/${WWWDIR}/ )
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${WWWDIR}
 .for i in ${ROOTDIRS}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${PREFIX}/${WWWDIR}/ )
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${PREFIX}/${WWWDIR}/ )
 .endfor
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${DOCFILES}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
-.endif
 
 .include <bsd.port.mk>
