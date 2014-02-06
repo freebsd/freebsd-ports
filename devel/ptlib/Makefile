@@ -43,7 +43,6 @@ OPTIONS_DEFAULT=BSDVIDEO SDL V4L JABBER
 BSDVIDEO_DESC=	BSD video support
 DEBUG_DESC=	Install debug library
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
@@ -166,11 +165,15 @@ pre-configure:
 	cd ${WRKSRC}/plugins/ && autoreconf -fi
 
 post-install:
-	${LN} -sf libpt.so.${PORTVERSION} ${PREFIX}/lib/libpt.so.${PVERSION_MAJOR}
-	${LN} -sf libpt.so.${PORTVERSION} ${PREFIX}/lib/libpt.so.${PVERSION_MINOR}
+	${LN} -sf libpt.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libpt.so.${PVERSION_MAJOR}
+	${LN} -sf libpt.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libpt.so.${PVERSION_MINOR}
 .if ${PORT_OPTIONS:MDEBUG}
-	${LN} -sf libpt_d.so.${PORTVERSION} ${PREFIX}/lib/libpt_d.so.${PVERSION_MAJOR}
-	${LN} -sf libpt_d.so.${PORTVERSION} ${PREFIX}/lib/libpt_d.so.${PVERSION_MINOR}
+	${LN} -sf libpt_d.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libpt_d.so.${PVERSION_MAJOR}
+	${LN} -sf libpt_d.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libpt_d.so.${PVERSION_MINOR}
 .endif
+	@${CHMOD} 0755 ${STAGEDIR}${PREFIX}/lib/libpt.so.${PORTVERSION} \
+		${STAGEDIR}${PREFIX}/lib/ptlib-${PORTVERSION}/devices/*/*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpt.so.${PORTVERSION}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ptlib-${PORTVERSION}/devices/*/*.so
 
 .include <bsd.port.mk>

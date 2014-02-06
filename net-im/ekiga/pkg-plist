@@ -12,6 +12,7 @@ lib/ekiga/%%VERSION%%/libekiga.la
 %%LDAP%%lib/ekiga/4.0.1/plugins/libgmldap.so
 %%NOTIFY%%lib/ekiga/%%VERSION%%/plugins/libgmlibnotify.so
 %%NOTIFY%%lib/ekiga/%%VERSION%%/plugins/libgmlibnotify.la
+man/man1/ekiga.1.gz
 share/applications/ekiga.desktop
 %%DBUS%%share/dbus-1/services/org.ekiga.Ekiga.service
 %%DBUS%%share/dbus-1/services/org.ekiga.Helper.service

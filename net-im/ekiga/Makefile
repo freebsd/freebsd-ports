@@ -30,8 +30,6 @@ INSTALLS_ICONS=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-I${LOCALBASE}/lib
 
-MAN1=		ekiga.1
-
 OPTIONS_DEFINE=	LDAP NOTIFY EVOLUTION GCONF DBUS AVAHI GNOMEHELP
 OPTIONS_DEFAULT=NOTIFY DBUS GCONF AVAHI
 
@@ -49,7 +47,6 @@ LOUDMOUTH_DESC=	XMPP (jabber) support
 
 # Note that h.323 support is enabled when opal is build with it.
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
@@ -167,5 +164,9 @@ USE_GNOME+=	gnomedocutils
 CONFIGURE_ARGS+=--disable-gdu
 PLIST_SUB+=	GNOMEHELP="@comment "
 .endif
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ekiga/${PORTVERSION}/libekiga.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ekiga/${PORTVERSION}/plugins/*.so
 
 .include <bsd.port.mk>
