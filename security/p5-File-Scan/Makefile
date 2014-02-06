@@ -10,28 +10,34 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	jims@bluenotch.com
 COMMENT=	Perl5 anti-virus file scanning package
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
 
-MAN3=		File::Scan.3
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_STAGE=	yes
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+SHEBANG_FILES=	examples/*.pl examples/procmail/scanvirus.pl
+
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/docs
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/docs
 .for file in Changes FAQ README TODO
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for f in docs/write_sign_bin.txt
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/docs
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/docs
 .endfor
-.endif
-	@${MKDIR} ${EXAMPLESDIR} ${EXAMPLESDIR}/procmail
+
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/procmail
 .for f in latest.pl scan.pl
-	@${INSTALL_SCRIPT} ${WRKSRC}/examples/${f} ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .for f in procmail/.procmailrc procmail/README procmail/scanvirus.pl
-	@${INSTALL_SCRIPT} ${WRKSRC}/examples/${f} ${EXAMPLESDIR}/procmail
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/${f} \
+		${STAGEDIR}${EXAMPLESDIR}/procmail
 .endfor
 
 .include <bsd.port.mk>
