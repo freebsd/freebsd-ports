@@ -1,5 +1,5 @@
---- Makefile.orig	Sun May 26 13:26:46 1996
-+++ Makefile	Mon Jan  4 04:08:35 1999
+--- ./Makefile.orig	1996-05-26 09:26:46.000000000 +0000
++++ ./Makefile	2014-02-06 21:14:36.000000000 +0000
 @@ -24,22 +24,22 @@
  # But where to change without revealing my secret identity?
  
@@ -66,9 +66,28 @@
  
  ########### Installation targets
  
-@@ -262,9 +262,9 @@
- 	mkdir -p $(TIMID_DIR)
- 	$(INSTALL) -m 644 $(CONFIGF) $(TIMID_DIR)
+@@ -249,22 +249,22 @@
+ 
+ # install.bin: $(PROJ) Dumb make thinks it has to have $(COBJS) to install...
+ install.bin:
+-	mkdir -p $(BIN_DIR)
+-	$(INSTALL) -s -m 755 $(PROJ) $(TOOLS) $(BIN_DIR)
++	mkdir -p $(DESTDIR)$(BIN_DIR)
++	$(INSTALL) -s -m 755 $(PROJ) $(TOOLS) $(DESTDIR)$(BIN_DIR)
+ 
+ install.man:
+-	mkdir -p $(MAN_DIR)
+-	$(INSTALL) -m 644 $(MANPAGES) $(MAN_DIR)
++	mkdir -p $(DESTDIR)$(MAN_DIR)
++	$(INSTALL) -m 644 $(MANPAGES) $(DESTDIR)$(MAN_DIR)
+ 
+ install.lib: install.config install.patch $(INST_TK)
+ 
+ install.config: $(CONFIGF)
+-	mkdir -p $(TIMID_DIR)
+-	$(INSTALL) -m 644 $(CONFIGF) $(TIMID_DIR)
++	mkdir -p $(DESTDIR)$(TIMID_DIR)
++	$(INSTALL) -m 644 $(CONFIGF) $(DESTDIR)$(TIMID_DIR)
  
 -install.patch: $(PATCHF)
 -	mkdir -p $(TIMID_DIR)/patch

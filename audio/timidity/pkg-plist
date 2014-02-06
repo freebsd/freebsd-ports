@@ -258,6 +258,7 @@ lib/timidity/midia.cfg
 lib/timidity/mt32.cfg
 lib/timidity/timidity.cfg
 lib/timidity/wowpats.cfg
+man/man1/timidity.1.gz
 @dirrm lib/timidity/goemon/gsdrum40
 @dirrm lib/timidity/goemon/gsdrum08
 @dirrm lib/timidity/goemon/gsdrum00
