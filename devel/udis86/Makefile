@@ -3,6 +3,7 @@
 
 PORTNAME=	udis86
 PORTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME:L}/${PORTNAME:L}/${PORTVERSION:R}
@@ -10,10 +11,11 @@ MASTER_SITE_SUBDIR=	${PORTNAME:L}/${PORTNAME:L}/${PORTVERSION:R}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Minimalistic x86 and x86-64 disassembler library
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
-USES=		gmake
+USES=		libtool gmake
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-sphinx-build  --enable-shared
@@ -21,7 +23,6 @@ CONFIGURE_ARGS=	--without-sphinx-build  --enable-shared
 INFO=		udis86
 PORTDOCS=	x86
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -49,6 +50,6 @@ CONFIGURE_ENV+=		PYTHON="${FALSE}"
 .endif
 
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/docs/manual/udis86.info ${PREFIX}/${INFO_PATH}/
+	@${INSTALL_DATA} ${WRKSRC}/docs/manual/udis86.info ${STAGEDIR}${PREFIX}/${INFO_PATH}/
 
 .include <bsd.port.mk>
