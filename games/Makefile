@@ -949,6 +949,7 @@
     SUBDIR += tkmoo
     SUBDIR += tksol
     SUBDIR += tomatoes
+    SUBDIR += tome4
     SUBDIR += tomenet
     SUBDIR += tong
     SUBDIR += toppler
