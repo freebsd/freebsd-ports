@@ -18,8 +18,7 @@ NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
 PLIST_FILES=	bin/fpkg
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_SCRIPT} ${DISTDIR}/${DISTNAME} ${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_SCRIPT} ${DISTDIR}/${DISTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
