@@ -13,8 +13,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=		bin/syslogger
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/syslogger ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/syslogger ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
