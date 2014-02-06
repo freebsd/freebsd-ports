@@ -19,29 +19,26 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PORTDOCS=	protocol-ext.txt protocol.txt
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|depend||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|\(CFLAGS:=\)|\1\@CFLAGS\@ \@CPPFLAGS\@ |' ${WRKSRC}/src/Makefile.in
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/src/libbt.a ${PREFIX}/lib
-	${MKDIR} ${PREFIX}/include/libbt
+	${INSTALL_DATA} ${WRKSRC}/src/libbt.a ${STAGEDIR}${PREFIX}/lib
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/libbt
 .for i in btcheck btget btlist
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${i} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${i} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for i in benc.h bitset.h bterror.h btmessage.h bts.h context.h peer.h random.h segmenter.h strbuf.h stream.h types.h util.h
-	${INSTALL_DATA} ${WRKSRC}/include/${i} ${PREFIX}/include/libbt
+	${INSTALL_DATA} ${WRKSRC}/include/${i} ${STAGEDIR}${PREFIX}/include/libbt
 .endfor
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_MAN} ${WRKSRC}/docs/${i} ${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/docs/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
