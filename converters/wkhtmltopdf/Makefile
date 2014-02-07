@@ -2,37 +2,41 @@
 # $FreeBSD$
 
 PORTNAME=	wkhtmltopdf
-DISTVERSION=	0.11.0_rc1
-PORTREVISION=	3
+DISTVERSION=	0.12.0
 CATEGORIES=	converters
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}:wkhtmltopdf \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mm/wkhtmltopdf
-DISTFILES=	${DISTNAME}.tar.bz2:wkhtmltopdf \
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		wkhtmltopdf-qt-${WKQTVERSION}.tar.xz
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Convert HTML (or live webpages) to PDF or image files
+
+LICENSE=	LGPL3
+LICENSE_FILE_LGPL3=	${INSTALL_WRKSRC}/COPYING
+
 LIB_DEPENDS+=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-qt
-INSTALL_WRKSRC=	${WRKDIR}/${PORTNAME}-${DISTVERSION}
-
-WKQTVERSION=		6053b687
+#USE_GITHUB=		yes
+GH_ACCOUNT=		wkhtmltopdf
+GH_PROJECT=		wkhtmltopdf
+GH_TAGNAME=		0.12.0
+GH_COMMIT=		03c001d
+WKQTVERSION=		0ec3313
 USES=			pkgconfig gmake perl5
 USE_XORG=		x11 xext xrender
 USE_PERL5=		build
 USE_LDCONFIG=		yes
 HAS_CONFIGURE=		yes
 
+WRKSRC=		${WRKDIR}/qt-wk_4.8.5
+INSTALL_WRKSRC=	${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
+
 OPTIONS_DEFINE=	BUNDLED_LIBS
 BUNDLED_LIBS_DESC=	Use Qt-bundled jpeg, mng, png and tiff
 
-LICENSE=	LGPL3
-LICENSE_FILE_LGPL3=	${INSTALL_WRKSRC}/COPYING
-
-CONFIGURE_ARGS=	-prefix ${WRKDIR}/wkqt \
+CONFIGURE_ARGS=	-prefix ${WRKDIR}/qt-wk \
 	-release -static -fast -exceptions -no-accessibility -no-stl \
 	-no-sql-ibase -no-sql-mysql -no-sql-odbc -no-sql-psql -no-sql-sqlite \
 	-no-sql-sqlite2 -no-qt3support -xmlpatterns -no-phonon \
@@ -47,14 +51,9 @@ CONFIGURE_ARGS=	-prefix ${WRKDIR}/wkqt \
 	-no-opengl -no-xsync -no-audio-backend -no-sse3 -no-ssse3 -no-sse4.1 \
 	-no-sse4.2
 
-MAKE_ARGS+=	INSTALL_ROOT="${PREFIX}"
+MAKE_ARGS+=	INSTALL_ROOT="${STAGEDIR}${PREFIX}"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 1000000
-USE_GCC=	yes
-.endif
 
 .if ${OSVERSION} < 800000
 BROKEN=		fails to extract on FreeBSD 7.X
@@ -85,13 +84,16 @@ post-patch:
 
 post-build:
 	@cd ${WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET} \
-		INSTALL_ROOT=
-	@cd ${WRKDIR}/${PORTNAME}-${DISTVERSION} && ${WRKDIR}/wkqt/bin/qmake && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} \
+		${MAKE_ARGS} ${INSTALL_TARGET} INSTALL_ROOT=
+	@cd ${INSTALL_WRKSRC} && ${WRKDIR}/qt-wk/bin/qmake && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
+		${_MAKE_JOBS} ${MAKE_ARGS:C,^${DESTDIRNAME}=.*,,g} \
+		${ALL_TARGET}
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/wkhtmltopdf ${PREFIX}/bin/wkhtmltoimage
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/wkhtmltopdf \
+		${STAGEDIR}${PREFIX}/bin/wkhtmltoimage
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
