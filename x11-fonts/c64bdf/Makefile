@@ -3,7 +3,7 @@
 
 PORTNAME=	c64bdf
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://beej.us/c64bdf/
 DISTNAME=	${PORTNAME}
@@ -20,11 +20,8 @@ FILES=	${FONTS:S,$,.bdf,} fonts.dir
 PLIST_FILES=	${FILES:S,^,${FONTDIR}/,}
 PLIST_DIRS=	${FONTDIR}
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 do-install:
-	@${MKDIR} ${LOCALBASE}/${FONTDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${FILES} ${LOCALBASE}/${FONTDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${FILES} ${STAGEDIR}${PREFIX}/${FONTDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
