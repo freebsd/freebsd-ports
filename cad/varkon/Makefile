@@ -11,6 +11,9 @@ DIST_SUBDIR=	varkon
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free CAD system and applications development tool
 
+LICENSE=	GPLv2 LGPL20
+LICENSE_COMB=	dual
+
 LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
@@ -26,9 +29,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 VARKON_PREFIX=	${PREFIX}/lib/${PORTNAME}
 
-NO_STAGE=	yes
-
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${FIND} ${WRKSRC} -name "*.o" -delete
@@ -47,23 +48,21 @@ do-configure:
 		 s|cc $$(LIBS)|$$(CC) $$(LIBS)|'
 
 do-install:
-	(cd ${WRKSRC}/com/english && ${INSTALL_SCRIPT} varkon ${PREFIX}/bin)
-	@${MKDIR} ${VARKON_PREFIX}
+	${INSTALL_SCRIPT} ${WRKSRC}/com/english/varkon ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${VARKON_PREFIX}
 .for i in erm lib mdf
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${VARKON_PREFIX})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${VARKON_PREFIX})
 .endfor
-	@${MKDIR} ${VARKON_PREFIX}/bin
-	(cd ${WRKSRC}/bin && ${INSTALL_PROGRAM} * ${VARKON_PREFIX}/bin)
-	@${MKDIR} ${VARKON_PREFIX}/cnf
+	@${MKDIR} ${STAGEDIR}${VARKON_PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${STAGEDIR}${VARKON_PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${VARKON_PREFIX}/cnf
 .for i in fnt icons plt tol
-	@(cd ${WRKSRC}/cnf && ${COPYTREE_SHARE} ${i} ${VARKON_PREFIX}/cnf)
+	@(cd ${WRKSRC}/cnf && ${COPYTREE_SHARE} ${i} ${STAGEDIR}${VARKON_PREFIX}/cnf)
 .endfor
-	@${MKDIR} ${VARKON_PREFIX}/cnf/ini
-	(cd ${WRKSRC}/cnf/ini/english && ${INSTALL_DATA} linux \
-		${VARKON_PREFIX}/cnf/ini/freebsd)
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}	#Varkon Manual
-	@(cd ${WRKSRC}/man && ${COPYTREE_SHARE} . ${DOCSDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${VARKON_PREFIX}/cnf/ini
+	${INSTALL_DATA} ${WRKSRC}/cnf/ini/english/linux \
+		${STAGEDIR}${VARKON_PREFIX}/cnf/ini/freebsd
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}	#Varkon Manual
+	@(cd ${WRKSRC}/man && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
