@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	icu
-PORTVERSION=	50.1.2
+PORTVERSION=	52.1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.icu-project.org/files/icu4c/${PORTVERSION}/ \
 		SF/${PORTNAME}/ICU4C/${PORTVERSION}/
@@ -40,18 +40,11 @@ INSTALL_TARGET=		install install-manx
 ICUMAJOR=	${PORTVERSION:C/\..*//}
 PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUVER=${PORTVERSION}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "arm"
-BROKEN=		Does not compile on arm
-.endif
-
-.if ${PORT_OPTIONS:MTHREADS}
 # This builds thread-safe, but not the thread-using version:
-CONFIGURE_ARGS+=	--enable-weak-threads
-.else
-CONFIGURE_ARGS+=	--enable-threads=no
-.endif
+THREADS_CONFIGURE_ON=	--enable-weak-threads
+THREADS_CONFIGURE_OFF=	--enable-threads=no
+
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e '/CXXFLAGS=/s/-ansi//' \
@@ -69,4 +62,4 @@ iotest cintltst intltest:
 
 test regression-test: iotest cintltst intltest
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
