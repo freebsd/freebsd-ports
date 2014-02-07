@@ -7,11 +7,19 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://www.vcdgear.com/files/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool to convert VCDs from cue/bin format to mpeg
+COMMENT=	Tool to convert VCDs from cue/bin format to mpeg 
+
+WRKSRC=		${WRKDIR}/vcdgear16
+NO_BUILD=	true
+
+PLIST_FILES=	bin/${PORTNAME}
+
+PORTDOCS=	faq.txt manual.txt whatsnew.txt
+
+OPTIONS_DEFINE=	DOCS
 
 ONLY_FOR_ARCHS=	alpha i386 amd64
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386 || ${ARCH} == amd64
@@ -20,16 +28,11 @@ DISTNAME=	${PORTNAME}16d_i386_freebsd42
 DISTNAME=	${PORTNAME}16d_alpha_freebsd41
 .endif
 
-NO_BUILD=	true
-WRKSRC=		${WRKDIR}/vcdgear16
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/vcdgear16_static ${PREFIX}/bin/vcdgear
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for file in faq.txt manual.txt whatsnew.txt
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/vcdgear16_static \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
