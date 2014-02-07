@@ -7,3 +7,5 @@ implements the RTF standard better than any previous release.
     It's also philosophically  a better  module,  and conforms more
 strictly to Object Orientated  guidelines  - it can  be sub-classed
 and the interface is cleaner.                                      
+
+WWW: http://search.cpan.org/dist/RTF-Tokenizer/
