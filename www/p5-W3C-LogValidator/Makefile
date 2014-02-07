@@ -23,23 +23,17 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	W3C::LogValidator.3 \
-	W3C::LogValidator::Basic.3 \
-	W3C::LogValidator::CSSValidator.3 \
-	W3C::LogValidator::Config.3 \
-	W3C::LogValidator::HTMLValidator.3 \
-	W3C::LogValidator::Output::HTML.3 \
-	W3C::LogValidator::Output::Mail.3 \
-	W3C::LogValidator::Output::Raw.3 \
-	W3C::LogValidator::SurveyEngine.3
+OPTIONS_DEFINE=	EXAMPLES
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 post-install:
-.ifndef (NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/samples/NewModule.pm ${EXAMPLESDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/samples/NewOutputModule.pm ${EXAMPLESDIR}/
-	@${INSTALL_DATA} ${WRKSRC}/samples/logprocess.conf ${EXAMPLESDIR}/
-.endif
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/samples/NewModule.pm \
+		${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/samples/NewOutputModule.pm \
+		${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/samples/logprocess.conf \
+		${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
