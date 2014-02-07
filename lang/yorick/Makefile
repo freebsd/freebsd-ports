@@ -2,19 +2,21 @@
 # $FreeBSD$
 
 PORTNAME=	yorick
-PORTVERSION=	2.1.06
+PORTVERSION=	2.2.02
 CATEGORIES=	lang math
-MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Interpreted language for scientific simulations
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	dhmunro
+GH_TAGNAME=	y_${PORTVERSION:S/./_/g}
+GH_COMMIT=	82e60dc
+
 USE_XORG=	x11
 MAKE_ARGS=	Y_HOME=relocatable Y_DOCDIR=/dev/null
 INFO=		yorick
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 PORTDOCS=	FILE_FORMATS README drat.doc graph.doc hex.doc \
 		library.doc math.doc refs.pdf refs.tex std.doc \

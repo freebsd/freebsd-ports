@@ -1,12 +1,13 @@
 bin/yorick
 bin/gist
-lib/yorick/LICENSE
+lib/yorick/LICENSE.md
 lib/yorick/Make.cfg
 lib/yorick/Makedll
 lib/yorick/Makeexe
 lib/yorick/Makepkg
 lib/yorick/bin/gist
 lib/yorick/bin/yorick
+lib/yorick/doc
 lib/yorick/g/README
 lib/yorick/g/axes.gs
 lib/yorick/g/boxed.gs
@@ -84,6 +85,7 @@ lib/yorick/i/pnm.i
 lib/yorick/i/prefix.i
 lib/yorick/i/random.i
 lib/yorick/i/rays.i
+lib/yorick/i/rcheby.i
 lib/yorick/i/readn.i
 lib/yorick/i/regress.i
 lib/yorick/i/rezone.i
@@ -107,6 +109,7 @@ lib/yorick/i/testfull.i
 lib/yorick/i/testg.i
 lib/yorick/i/testlp.i
 lib/yorick/i/testm.i
+lib/yorick/i/testoxy.i
 lib/yorick/i/testp.i
 lib/yorick/i/teststr.i
 lib/yorick/i/textload.i
@@ -137,6 +140,7 @@ lib/yorick/include/gist.h
 lib/yorick/include/gtext.h
 lib/yorick/include/hash.h
 lib/yorick/include/hlevel.h
+lib/yorick/include/mdigest.h
 lib/yorick/include/parse.h
 lib/yorick/include/phash.h
 lib/yorick/include/play.h
