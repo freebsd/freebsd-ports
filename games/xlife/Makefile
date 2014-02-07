@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xlife
-PORTVERSION=	6.7.5
+PORTVERSION=	6.7.6
 CATEGORIES=	games
 MASTER_SITES=	http://litwr2.atspace.eu/xlife/
 
@@ -35,8 +35,9 @@ post-extract:
 	@${LN} -sf xlife.man ${WRKSRC}/xlife.6
 
 pre-patch:
-.for i in xlife6.7to6.7.1.patch xlife6.7.1to6.7.2.patch xlife6.7.2to6.7.3.patch
-	@(${CAT} ${WRKDIR}/${i} | ${PATCH} -d ${WRKSRC} -p1 -s)
+.for i in 6.7to6.7.1 6.7.1to6.7.2 6.7.2to6.7.3 6.7.3to6.7.4 6.7.4to6.7.5 \
+	6.7.5to6.7.6
+	@(${CAT} ${WRKDIR}/${PORTNAME}${i}.patch | ${PATCH} -d ${WRKSRC} -p1 -s)
 .endfor
 
 post-patch:
@@ -56,13 +57,13 @@ do-install:
 		${STAGEDIR}${MAN6PREFIX}/man/man6)
 	@${LN} -sf xlife.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/lifeconv.6
 	@${MKDIR} ${STAGEDIR}${DATADIR}/patterns
-	(cd ${WRKSRC}/patterns && ${COPYTREE_SHARE} . \
+	@(cd ${WRKSRC}/patterns && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${DATADIR}/patterns)
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOC_FILES} \
 		${STAGEDIR}${DOCSDIR})
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/doc
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . \
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . \
 		${STAGEDIR}${DOCSDIR}/doc)
 
 .include <bsd.port.mk>
