@@ -10,9 +10,6 @@ MASTER_SITES=	http://projects.netlab.jp/rast/archives/ \
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Full-text search system using N-gram
 
-DEPRECATED=	Broken for more than 6 month
-EXPIRATION_DATE=	2013-11-18
-
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1
 
