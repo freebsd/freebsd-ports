@@ -1,6 +1,6 @@
 --- configure.orig	2013-03-10 00:21:59.000000000 +0100
 +++ configure	2013-12-27 11:48:19.000000000 +0100
-@@ -24580,15 +24580,16 @@
+@@ -24637,15 +24637,16 @@
      # Cygwin doesn't deliver -lXt as a DLL, which prevents a DLL build.
      # Adobe DPS (as delivered on Solaris) doesn't require -lXt.
      # GraphicsMagick itself doesn't use -lXt.
@@ -19,16 +19,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -26059,7 +26060,7 @@
- fi
- 
- 
--    ac_fn_c_check_header_compile "$LINENO" "freetype/freetype.h" "ac_cv_header_freetype_freetype_h" "$FT2BUILD_H
-+    ac_fn_c_check_header_compile "$LINENO" "freetype.h" "ac_cv_header_freetype_freetype_h" "$FT2BUILD_H
- "
- if test "x$ac_cv_header_freetype_freetype_h" = xyes; then :
-   have_freetype_h='yes'
-@@ -26935,7 +26936,7 @@
+@@ -27095,7 +27096,7 @@
  #
  
  # Subdirectory under lib to place GraphicsMagick lib files
@@ -37,7 +28,7 @@
  
  cat >>confdefs.h <<_ACEOF
  #define MagickLibSubdir "$MagickLibSubdir"
-@@ -27039,7 +27040,7 @@
+@@ -27199,7 +27200,7 @@
  
  #
  # Path to GraphicsMagick share files

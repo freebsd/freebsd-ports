@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	GraphicsMagick
-PORTVERSION=	1.3.18
-PORTREVISION=	1
+PORTVERSION=	1.3.19
 CATEGORIES=	graphics
 MASTER_SITES=	SF \
 		ftp://ftp.graphicsmagick.org/pub/GraphicsMagick/1.3/
@@ -13,55 +12,64 @@ PKGNAMESUFFIX=	13
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast image processing tools based on ImageMagick
 
-LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2	\
-		libpng15.so:${PORTSDIR}/graphics/png		\
-		libjbig.so:${PORTSDIR}/graphics/jbigkit		\
+LIB_DEPENDS=	libjbig.so:${PORTSDIR}/graphics/jbigkit		\
 		libjasper.so:${PORTSDIR}/graphics/jasper	\
 		libjpeg.so:${PORTSDIR}/graphics/jpeg		\
-		liblcms.so:${PORTSDIR}/graphics/lcms		\
+		liblcms2.so:${PORTSDIR}/graphics/lcms2		\
+		libpng15.so:${PORTSDIR}/graphics/png		\
 		libtiff.so:${PORTSDIR}/graphics/tiff		\
-		libxml2.so:${PORTSDIR}/textproc/libxml2
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 CONFLICTS=	GraphicsMagick-1.[12].* GraphicsMagick12-*
 
-OPTIONS_DEFINE=	Q8BIT FPX OPENMP SSE TESTS X11 DOCS
-
-Q8BIT_DESC=	Use 8-bit pixels (speed) instead of 16 (quality)
-DPS_DESC=	Enable Display Ghostscript support
-TESTS_DESC=	Run bundled self-tests after build
-
-OPTIONS_DEFAULT=FPX DPS OPENMP X11 TESTS DOCS
-OPTIONS_SINGLE=	X11
-OPTIONS_SINGLE_X11=	DPS
-
 PORTSCOUT=	limit:^1\.3\.
 
-USES=		iconv
-USE_AUTOTOOLS=	libtool libltdl
 USE_BZIP2=	yes
+USES=		iconv
+USE_GNOME=	libxml2
 USE_GHOSTSCRIPT=yes
 GNU_CONFIGURE=	yes
-
+CONFIGURE_ENV=	PTHREAD_CFLAGS=" " PTHREAD_LIBS="-pthread"
 CONFIGURE_ARGS=	--without-perl --enable-shared --enable-static \
-		--with-ltdl-include=${LOCALBASE}/include \
-		--with-ltdl-lib=${LOCALBASE}/lib
-CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"
+		--with-quantum-depth="${QD}" \
+		--with-windows-font-dir="${WINDOWS_FONT_DIR}"
 USE_LDCONFIG=	yes
 
-ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
+PLIST_SUB=	Q="${QD}"
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-test check:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
+OPTIONS_DEFINE=		DOCS FPX OPENMP Q8BIT SSE TESTS WEBP X11
+OPTIONS_SINGLE=		X11
+OPTIONS_SINGLE_X11=	DPS
+OPTIONS_DEFAULT=	DPS OPENMP TESTS WEBP X11
+
+DPS_DESC=		Enable Display Ghostscript support
+DPS_LIB_DEPENDS=	libdps.so:${PORTSDIR}/x11/dgs
+DPS_USE=		XORG=xt
+DPS_CONFIGURE_WITH=	dps
+FPX_LIB_DEPENDS+=	libfpx.so.[2-9]:${PORTSDIR}/graphics/libfpx
+FPX_CONFIGURE_WITH=	fpx
+OPENMP_USES=		compiler:openmp
+OPENMP_CONFIGURE_ON=	--with-threads --enable-openmp --disable-openmp-slow
+OPENMP_CONFIGURE_OFF=	--without-threads --disable-openmp
+Q8BIT_DESC=		Use 8-bit pixels (speed) instead of 16 (quality)
+TESTS_DESC=		Run bundled self-tests after build
+TESTS_BUILD_DEPENDS=	webfonts>0:${PORTSDIR}/x11-fonts/webfonts
+TESTS_RUN_DEPENDS=	webfonts>0:${PORTSDIR}/x11-fonts/webfonts
+WEBP_LIB_DEPENDS=	libwebp.so:${PORTSDIR}/graphics/webp
+WEBP_CONFIGURE_WITH=	webp
+X11_LIB_DEPENDS=	libwmflite.so:${PORTSDIR}/graphics/${LIBWMF_PORT}
+X11_USE=		XORG=xext
+X11_CONFIGURE_WITH=	x
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS} == ""
-# Get rid of the Makefile targets that install the documentation
-# and HTML files into DOCSDIR
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-Makefile.in
+.if ${PORT_OPTIONS:MQ8BIT}
+QD=		8
+.else
+QD=		16
 .endif
 
 .if ${PORT_OPTIONS:MSSE}
@@ -76,60 +84,27 @@ CFLAGS+=	-msse3
 .endif
 .endif
 
-.if ${PORT_OPTIONS:MFPX}
-LIB_DEPENDS+=		libfpx.so.[2-9]:${PORTSDIR}/graphics/libfpx
-CONFIGURE_ARGS+=	--with-fpx
+.if ${PORT_OPTIONS:MX11}
+LIBWMF_PORT=	libwmf
 .else
-CONFIGURE_ARGS+=	--without-fpx
+LIBWMF_PORT=	libwmf-nox11
 .endif
 
-.if ${PORT_OPTIONS:MDPS}
-USE_XORG+=		xt
-LIB_DEPENDS+=		libdps.so:${PORTSDIR}/x11/dgs
-CONFIGURE_ARGS+=	--with-dps
-.else
-CONFIGURE_ARGS+=	--without-dps
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 1000024
+.if ${PORT_OPTIONS:MFPX} && ${PORT_OPTIONS:MOPENMP}
+IGNORE=		Cause C++ ABI conflict between clang/libc++ and gcc/libstdc++
+.endif
 .endif
 
-.if ${PORT_OPTIONS:MOPENMP}
-.if ${OSVERSION} < 700042
-IGNORE=		does not support OpenMP on FreeBSD version ${OSVERSION}
-.endif
-
-LDFLAGS+=		${PTHREAD_LIBS}
-CONFIGURE_ARGS+=	--with-threads --enable-openmp --disable-openmp-slow
-.else
-CONFIGURE_ARGS+=	--without-threads --disable-openmp
-.endif
-
-.ifndef WINDOWS_FONT_DIR
+.if !defined(WINDOWS_FONT_DIR)
 # Use fonts installed by x11-fonts/webfonts by default
 WINDOWS_FONT_DIR=${LOCALBASE}/lib/X11/fonts/webfonts
 .endif
 
-.if defined(WITH_WINDOWS_FONT_DIR)
-CONFIGURE_ARGS+=	--with-windows-font-dir="${WINDOWS_FONT_DIR}"
-.endif
-
-.if ${PORT_OPTIONS:MX11} == ""
-CONFIGURE_ARGS+=--without-x
-LIB_DEPENDS+=	libwmflite.so:${PORTSDIR}/graphics/libwmf-nox11
-.else
-USE_XORG+=		xext
-LIB_DEPENDS+=	libwmflite.so:${PORTSDIR}/graphics/libwmf
-.endif
-
-.if ${PORT_OPTIONS:MQ8BIT}
-CONFIGURE_ARGS+=	--with-quantum-depth=8
-QD=			8
-.else
-CONFIGURE_ARGS+=	--with-quantum-depth=16
-QD=			16
-.endif
-PLIST_SUB+=		Q=${QD}
-
 .if ${PORT_OPTIONS:MTESTS}
-post-build::	test
+post-build:: regression-test
 .else
 post-build::
 	#
@@ -139,7 +114,12 @@ post-build::
 .endif
 
 post-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/GraphicsMagick/modules-Q${QD}/coders	\
-		${STAGEDIR}${PREFIX}/lib/GraphicsMagick/modules-Q${QD}/filters
+.for i in coders filters
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/GraphicsMagick/modules-Q${QD}/${i}
+.endfor
 
-.include <bsd.port.mk>
+regression-test: do-build
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} \
+		${MAKEFILE} ${MAKE_ARGS} check)
+
+.include <bsd.port.post.mk>
