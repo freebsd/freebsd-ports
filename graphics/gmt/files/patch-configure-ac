@@ -1,16 +1,31 @@
 $FreeBSD$
 
-On GNU systems gcc is used as ld, which accepts the -Wl option to pass options
-to ld.  On FreeBSD, ld is used, and gets upset with -Wl.
-
 --- configure.ac.orig	2012-04-09 09:40:43.118542080 +0100
 +++ configure.ac	2012-04-09 09:45:57.340543460 +0100
-@@ -759,7 +759,7 @@
- 		LD_OPT='-shared -Wl,-soname=$*.'$SL_VERSION
- 	elif test "$os" = "FreeBSD" || test "$os" = "NetBSD" ; then
+@@ -663,10 +663,10 @@
+ 	if test "$os" = "Darwin" ; then
+ 		LDFLAGS="$LDFLAGS -Wl,-x"
+ 	else
+-		LDFLAGS="$LDFLAGS -s"
++		LDFLAGS="$LDFLAGS"
+ 	fi
+ 	if test "$GCC" = "yes" || test "$os" = "Linux" || test "$os" = "AIX"; then
+-		CFLAGS="$CFLAGS -O2"
++		CFLAGS="$CFLAGS"
+ 	elif test "$chip" = "alpha" || test "$os" = "AUX" || test "$os" = "HP-UX"; then
+ 		CFLAGS="$CFLAGS"
+ 	else
+@@ -779,11 +779,11 @@
+ 		else				# Solaris
+ 			LD_OPT="-G"
+ 		fi
+-	elif test "$os" = "Linux" || test "$os" = "GNU/kFreeBSD" ; then	# Need optimization when doing shared
++	elif test "$os" = "Linux" || test "$os" = "FreeBSD" || test "$os" = "GNU/kFreeBSD" ; then	# Need optimization when doing shared
+ 		LD='$(CC)'
  		SL_VERSION=$SL.$LIB_MAJOR_VERSION
--		LD_OPT='-shared -Wl,-soname=$*.'$SL_VERSION
-+		LD_OPT='-shared -soname=$*.'$SL_VERSION
+ 		LD_OPT='-shared -Wl,-soname=$*.'$SL_VERSION
+-	elif test "$os" = "FreeBSD" || test "$os" = "NetBSD" ; then
++	elif test "$os" = "NetBSD" ; then
+ 		SL_VERSION=$SL.$LIB_MAJOR_VERSION
+ 		LD_OPT='-shared -Wl,-soname=$*.'$SL_VERSION
  	elif test "$os" = "OSF1" ; then
- 		LD_OPT='-shared -expect_unresolved "*"'
- 	elif test "$os" = "IRIX64" ; then
