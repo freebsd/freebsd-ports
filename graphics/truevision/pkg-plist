@@ -1,5 +1,6 @@
 bin/truevision
 lib/libftgltv.a
+man/man1/truevision.1.gz
 share/applications/truevision.desktop
 share/application-registry/truevision.applications
 share/gnome/help/truevision/C/athmospherics.xml
@@ -51,6 +52,10 @@ share/gnome/help/truevision/C/interface_toolbar.xml
 share/gnome/help/truevision/C/legal.xml
 share/gnome/help/truevision/C/truevision.xml
 share/gnome/help/truevision/C/welcome.xml
+share/locale/de/LC_MESSAGES/truevision.mo
+share/locale/fr/LC_MESSAGES/truevision.mo
+share/locale/ru/LC_MESSAGES/truevision.mo
+share/mime/packages/truevision.xml
 share/mime-info/truevision.keys
 share/mime-info/truevision.mime
 share/pixmaps/truevision/create_icon.png
@@ -102,6 +107,7 @@ share/pixmaps/truevision/view_rollup.png
 share/pixmaps/truevision/warning.xpm
 share/truevision/materials/Effects/Fire1.tvm
 share/truevision/materials/Effects/water.tvm
+@exec mkdir -p %D/%%DATADIR%%/materials/Glass
 share/truevision/materials/Metals/Brass/Brass1A.tvm
 share/truevision/materials/Metals/Brass/Brass1B.tvm
 share/truevision/materials/Metals/Brass/Brass1C.tvm
@@ -120,10 +126,6 @@ share/truevision/materials/Woods/Soft_Pine.tvm
 share/truevision/python/plug-ins/about_python.py
 share/truevision/python/plug-ins/starfield.py
 share/truevision/python/tv_classes.py
-share/locale/de/LC_MESSAGES/truevision.mo
-share/locale/fr/LC_MESSAGES/truevision.mo
-share/locale/ru/LC_MESSAGES/truevision.mo
-share/mime/packages/truevision.xml
 @dirrm share/truevision/python/plug-ins
 @dirrm share/truevision/python
 @dirrm share/truevision/materials/Woods
@@ -141,5 +143,3 @@ share/mime/packages/truevision.xml
 @dirrm share/gnome/help/truevision/C/figures
 @dirrm share/gnome/help/truevision/C
 @dirrm share/gnome/help/truevision
-@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
-@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
