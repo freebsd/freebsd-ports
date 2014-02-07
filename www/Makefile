@@ -2110,6 +2110,7 @@
     SUBDIR += webcrawl
     SUBDIR += webfs
     SUBDIR += webgo
+    SUBDIR += webgrind
     SUBDIR += webinject
     SUBDIR += webkit-gtk2
     SUBDIR += webkit-gtk3
