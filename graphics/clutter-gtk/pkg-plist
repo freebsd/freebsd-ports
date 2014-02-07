@@ -5,10 +5,10 @@ include/clutter-1.0/clutter-gtk/gtk-clutter-util.h
 include/clutter-1.0/clutter-gtk/gtk-clutter-viewport.h
 include/clutter-1.0/clutter-gtk/gtk-clutter-zoomable.h
 lib/girepository-1.0/GtkClutter-0.10.typelib
-lib/libclutter-gtk-0.10.a
 lib/libclutter-gtk-0.10.la
 lib/libclutter-gtk-0.10.so
 lib/libclutter-gtk-0.10.so.0
+lib/libclutter-gtk-0.10.so.0.0.0
 libdata/pkgconfig/clutter-gtk-0.10.pc
 %%DOCSDIR%%/GtkClutterEmbed.html
 %%DOCSDIR%%/GtkClutterScrollable.html
