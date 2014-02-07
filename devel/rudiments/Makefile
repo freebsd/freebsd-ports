@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rudiments
-PORTVERSION=	0.44.1
+PORTVERSION=	0.45
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -11,23 +11,22 @@ COMMENT=	C++ class library for daemons, clients, servers, and more
 
 LICENSE=	LGPL20
 
-OPTIONS_DEFINE=	DOCS PCRE SSL
-OPTIONS_DEFAULT=SSL
-
-PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
-PCRE_CONFIGURE_ENABLE=	pcre
-
-SSL_USE=	OPENSSL=yes
-SSL_CONFIGURE_ENABLE=	ssl
-SSL_CONFIGURE_ON=	--with-ssl-includes=-I${OPENSSLINC} \
-			--with-ssl-libs=-L${OPENSSLLIB}
-
 USES=		pkgconfig shebangfix
 SHEBANG_FILES=	doc/programming/insert.pl
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
+
+OPTIONS_DEFINE=		DOCS PCRE SSL
+OPTIONS_DEFAULT=	SSL
+
+PCRE_LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+PCRE_CONFIGURE_ENABLE=	pcre
+SSL_USE=		OPENSSL=yes
+SSL_CONFIGURE_ENABLE=	ssl
+SSL_CONFIGURE_ON=	--with-ssl-includes=-I${OPENSSLINC} \
+			--with-ssl-libs=-L${OPENSSLLIB}
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile*" | ${XARGS} ${REINPLACE_CMD} -e \
