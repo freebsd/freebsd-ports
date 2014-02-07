@@ -4,7 +4,6 @@
 
 SCOREDIR="%%SCOREDIR%%"
 SCOREFILE="%%SCOREFILE%%"
-WRKSRC="%%WRKSRC%%"
 
 [ "$2" != "POST-INSTALL" ] && exit 0
 
@@ -13,7 +12,7 @@ if [ ! -d "${SCOREDIR}" ]; then
 	chown root:games ${SCOREDIR}
 fi
 
-install -o root -g games -m 0464 ${WRKSRC}/src/${SCOREFILE} ${SCOREDIR}/${SCOREFILE}.default
+install -o root -g games -m 0464 ${PKG_PREFIX}/share/typespeed/${SCOREFILE}.default ${SCOREDIR}/${SCOREFILE}.default
 
 file="${SCOREDIR}/${SCOREFILE}"
 if [ -f "$file" ]; then
