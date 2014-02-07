@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	imlib2_loaders
-PORTVERSION=	1.4.5
-PORTREVISION=	1
+PORTVERSION=	1.4.6
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -12,27 +11,25 @@ MASTER_SITE_SUBDIR=	enlightenment/imlib2-src/${PORTVERSION}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Extra image loader plugins for Imlib 2
 
+LICENSE=		imlib2 GPLv2
+LICENSE_COMB=		multi
+LICENSE_NAME_imlib2=	imlib2 license
+LICENSE_FILE_imlib2=	${WRKSRC}/COPYING
+LICENSE_PERMS_imlib2=	auto-accept
+
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USES=	pathfix
+USES=		pathfix pkgconfig
 USE_EFL=	imlib2 libtool_hack
 
-OPTIONS_DEFINE=	EDB EET XCF
-OPTIONS_DEFAULT=	EDB EET XCF
-EDB_DESC=	Enable edb loader
+OPTIONS_DEFINE=	EET XCF
+OPTIONS_DEFAULT=	EET XCF
 EET_DESC=	Enable eet loader
 XCF_DESC=	Enable XCF loader
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+MAKE_ENV+=	INSTALL_STRIP_FLAG="${STRIP}"
 
-.if ${PORT_OPTIONS:MEDB}
-USE_EFL+=	edb
-PLIST_SUB+=	EDB=""
-.else
-CONFIGURE_ARGS+=	--disable-edb
-PLIST_SUB+=	EDB="@comment "
-.endif
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEET}
 USE_EFL+=	eet
