@@ -1,0 +1,77 @@
+From e243c072b591cdeff8ac00483f5a9e426729534b Mon Sep 17 00:00:00 2001
+From: Simon Kelley <simon@thekelleys.org.uk>
+Date: Thu, 6 Feb 2014 18:14:09 +0000
+Subject: [PATCH] AD bit in queries handled as RFC6840 p5.7
+
+---
+ src/forward.c |    6 ------
+ src/rfc1035.c |   17 ++++++++++-------
+ 2 files changed, 10 insertions(+), 13 deletions(-)
+
+diff --git a/src/forward.c b/src/forward.c
+index 073b2c9..2088f98 100644
+--- ./src/forward.c
++++ ./src/forward.c
+@@ -249,9 +249,6 @@ static int forward_query(int udpfd, union mysockaddr *udpaddr,
+ #endif
+  unsigned int gotname = extract_request(header, plen, daemon->namebuff, NULL);
+ 
+-  /* RFC 4035: sect 4.6 para 2 */
+-  header->hb4 &= ~HB4_AD;
+-  
+   /* may be no servers available. */
+   if (!daemon->servers)
+     forward = NULL;
+@@ -1283,9 +1280,6 @@ unsigned char *tcp_request(int confd, time_t now,
+       if ((checking_disabled = header->hb4 & HB4_CD))
+ 	no_cache_dnssec = 1;
+        
+-      /* RFC 4035: sect 4.6 para 2 */
+-      header->hb4 &= ~HB4_AD;
+-      
+       if ((gotname = extract_request(header, (unsigned int)size, daemon->namebuff, &qtype)))
+ 	{
+ #ifdef HAVE_AUTH
+diff --git a/src/rfc1035.c b/src/rfc1035.c
+index ac8c4ae..5515ea5 100644
+--- ./src/rfc1035.c
++++ ./src/rfc1035.c
+@@ -1468,7 +1468,7 @@ size_t answer_request(struct dns_header *header, char *limit, size_t qlen,
+   struct mx_srv_record *rec;
+   size_t len;
+  
+-  /* Don't return AD set even for local data if checking disabled. */
++  /* Don't return AD set if checking disabled. */
+   if (header->hb4 & HB4_CD)
+     sec_data = 0;
+ 
+@@ -2260,17 +2260,20 @@ size_t answer_request(struct dns_header *header, char *limit, size_t qlen,
+   header->ancount = htons(anscount);
+   header->nscount = htons(0);
+   header->arcount = htons(addncount);
++
++  /* RFC 6840 5.7 */
++  if (header->hb4 & HB4_AD)
++    sec_reqd = 1;
+   
+   header->hb4 &= ~HB4_AD;
++  
+   len = ansp - (unsigned char *)header;
+   
+   if (have_pseudoheader)
+-    {
+-      len = add_pseudoheader(header, len, (unsigned char *)limit, 0, NULL, 0, sec_reqd);
+-      if (sec_reqd && sec_data)
+-	header->hb4 |= HB4_AD;
+-
+-    }
++    len = add_pseudoheader(header, len, (unsigned char *)limit, 0, NULL, 0, sec_reqd);
++  
++  if (sec_reqd && sec_data)
++    header->hb4 |= HB4_AD;
+   
+   return len;
+ }
+-- 
+1.7.2.5
+
