@@ -1,4 +1,3 @@
 %%SITE_PERL%%/WWW/Instapaper/Client.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WWW
-@dirrmtry %%SITE_PERL%%/WWW/Instapaper
-@dirrmtry %%SITE_PERL%%/WWW
+%%PERL5_MAN3%%/WWW::Instapaper::Client.3.gz
+@dirrm %%SITE_PERL%%/WWW/Instapaper
