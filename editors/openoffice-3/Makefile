@@ -3,7 +3,7 @@
 
 PORTNAME=	apache-openoffice
 PORTVERSION=	3.4.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	editors java
 MASTER_SITES=	ftp://ftp.riken.jp/net/apache/incubator/ooo/3.4.1/source/ \
 		${MASTER_SITE_LOCAL:S@%SUBDIR%@maho/openoffice@}:extsrc

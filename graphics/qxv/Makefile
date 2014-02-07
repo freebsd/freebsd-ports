@@ -13,16 +13,16 @@ COMMENT=	Qt 4 program that displays images of various formats
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		glib-2.0.0:${PORTSDIR}/devel/glib20 \
-		freetype.9:${PORTSDIR}/print/freetype2 \
-		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
-		icui18n:${PORTSDIR}/devel/icu \
-		intl.9:${PORTSDIR}/devel/gettext \
-		pcre.3:${PORTSDIR}/devel/pcre \
-		pthread-stubs.0:${PORTSDIR}/devel/libpthread-stubs \
-		expat.6:${PORTSDIR}/textproc/expat2 \
-		xcb.2:${PORTSDIR}/x11/xcb
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libglib-2.0.so:${PORTSDIR}/devel/glib20 \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
+		libicui18n.so:${PORTSDIR}/devel/icu \
+		libintl.so:${PORTSDIR}/devel/gettext \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libpthread-stubs.so:${PORTSDIR}/devel/libpthread-stubs \
+		libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libxcb.so:${PORTSDIR}/x11/xcb
 
 USES=		iconv qmake
 USE_BZIP2=	yes

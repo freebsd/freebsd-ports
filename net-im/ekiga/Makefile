@@ -3,6 +3,7 @@
 
 PORTNAME=	ekiga
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 #MASTER_SITES=	http://www.ekiga.org/admin/downloads/latest/sources/ekiga_${PORTVERSION}/

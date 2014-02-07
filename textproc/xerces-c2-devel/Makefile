@@ -3,6 +3,7 @@
 
 PORTNAME=	xerces-c2-devel
 PORTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	xerces/c/sources
@@ -48,7 +49,7 @@ PLIST_SUB+=		TRANSICU="@comment "
 .else
 .if (${TRANSCODER} == "icu")
 PKGNAMESUFFIX+=		-icu
-LIB_DEPENDS+=		icuuc:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=		libicuuc.so:${PORTSDIR}/devel/icu
 ICUROOT?=		${LOCALBASE}
 CONFIGURE_ENV+=		ICUROOT=${ICUROOT}
 MAKE_ENV+=		ICUROOT=${ICUROOT}

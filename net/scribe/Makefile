@@ -3,7 +3,7 @@
 
 PORTNAME=	scribe
 DISTVERSION=	2.2.2012.01.07
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/facebook/scribe/tarball/${GITVERSION}/
 DISTNAME=	facebook-scribe-${GITVERSION}

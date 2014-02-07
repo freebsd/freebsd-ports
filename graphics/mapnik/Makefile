@@ -4,7 +4,7 @@
 PORTNAME=	mapnik
 PORTVERSION=	2.2.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://mapnik.s3.amazonaws.com/dist/v${PORTVERSION}/
 
@@ -56,7 +56,7 @@ DOC_FILES2=	*
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCAIRO}
-LIB_DEPENDS+=	cairo:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS+=	libcairo.so:${PORTSDIR}/graphics/cairo
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.2:${PORTSDIR}/graphics/py-cairo
 .else
 MAKE_ARGS+=	CAIRO=False
@@ -68,17 +68,17 @@ INPUT_PLUGINS+=	csv
 
 .if ${PORT_OPTIONS:MGDAL}
 INPUT_PLUGINS+=	gdal
-LIB_DEPENDS+=	gdal:${PORTSDIR}/graphics/gdal
+LIB_DEPENDS+=	libgdal.so:${PORTSDIR}/graphics/gdal
 .endif
 
 .if ${PORT_OPTIONS:MOGR}
 INPUT_PLUGINS+=	ogr
-LIB_DEPENDS+=	gdal:${PORTSDIR}/graphics/gdal
+LIB_DEPENDS+=	libgdal.so:${PORTSDIR}/graphics/gdal
 .endif
 
 .if ${PORT_OPTIONS:MOSM}
 INPUT_PLUGINS+=	osm
-LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl
 .endif
 
 .if ${PORT_OPTIONS:MPOSTGIS}
@@ -88,24 +88,24 @@ USE_PGSQL=	yes
 
 .if ${PORT_OPTIONS:MSQLITE3}
 INPUT_PLUGINS+=	sqlite
-LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
+LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 BUILD_DEPENDS+=	sqlite3>=3.7.12:${PORTSDIR}/databases/sqlite3
 .endif
 
 .if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=   jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=   libjpeg.so:${PORTSDIR}/graphics/jpeg
 .else
 MAKE_ARGS+=	JPEG=False
 .endif
 
 .if ${PORT_OPTIONS:MPNG}
-LIB_DEPENDS+=   png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS+=   libpng15.so:${PORTSDIR}/graphics/png
 .else
 MAKE_ARGS+=	PNG=False
 .endif
 
 .if ${PORT_OPTIONS:MTIFF}
-LIB_DEPENDS+=   tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS+=   libtiff.so:${PORTSDIR}/graphics/tiff
 .else
 MAKE_ARGS+=	TIFF=False
 .endif

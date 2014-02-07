@@ -3,22 +3,22 @@
 
 PORTNAME=	prelude-lml
 PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	https://www.prelude-ids.org/attachments/download/242/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prelude Network Intrusion Detection System Log Monitoring Lackey
 
-LIB_DEPENDS=	icuuc:${PORTSDIR}/devel/icu \
-		pcre:${PORTSDIR}/devel/pcre \
-		gmp:${PORTSDIR}/math/gmp \
-		gnutls:${PORTSDIR}/security/gnutls \
-		gcrypt:${PORTSDIR}/security/libgcrypt \
-		gpg-error:${PORTSDIR}/security/libgpg-error \
-		prelude:${PORTSDIR}/security/libprelude \
-		nettle:${PORTSDIR}/security/nettle \
-		p11-kit:${PORTSDIR}/security/p11-kit
+LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu \
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libgmp.so:${PORTSDIR}/math/gmp \
+		libgnutls.so:${PORTSDIR}/security/gnutls \
+		libgcrypt.so:${PORTSDIR}/security/libgcrypt \
+		libgpg-error.so:${PORTSDIR}/security/libgpg-error \
+		libprelude.so:${PORTSDIR}/security/libprelude \
+		libnettle.so:${PORTSDIR}/security/nettle \
+		libp11-kit.so:${PORTSDIR}/security/p11-kit
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libltdl

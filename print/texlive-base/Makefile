@@ -2,7 +2,7 @@
 
 PORTNAME=	texlive
 PORTVERSION=	20120701
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMESUFFIX=	-base
@@ -13,15 +13,15 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	TeX Live Typesetting System, base binaries
 
 RUN_DEPENDS=	psbook:${PORTSDIR}/print/psutils
-LIB_DEPENDS=	icuio:${PORTSDIR}/devel/icu \
-		t1:${PORTSDIR}/devel/t1lib \
-		TECkit:${PORTSDIR}/textproc/teckit \
-		graphite:${PORTSDIR}/graphics/silgraphite \
-		gd:${PORTSDIR}/graphics/gd \
-		freetype:${PORTSDIR}/print/freetype2 \
-		ttf:${PORTSDIR}/print/freetype \
-		png15:${PORTSDIR}/graphics/png \
-		zzip:${PORTSDIR}/devel/zziplib
+LIB_DEPENDS=	libicuio.so:${PORTSDIR}/devel/icu \
+		libt1.so:${PORTSDIR}/devel/t1lib \
+		libTECkit.so:${PORTSDIR}/textproc/teckit \
+		libgraphite.so:${PORTSDIR}/graphics/silgraphite \
+		libgd.so:${PORTSDIR}/graphics/gd \
+		libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libttf.so:${PORTSDIR}/print/freetype \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libzzip.so:${PORTSDIR}/devel/zziplib
 
 USE_TEX=	texlive web2c kpathsea ptexenc texhash-bootstrap
 USE_XZ=		yes

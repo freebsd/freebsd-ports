@@ -3,6 +3,7 @@
 
 PORTNAME=	bitcoin
 PORTVERSION=	0.8.6
+PORTREVISION=	1
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~swills/ \

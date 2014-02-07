@@ -2,7 +2,7 @@
 
 PORTNAME=	luatex
 PORTVERSION=	0.70.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2012/
 PKGNAMEPREFIX=	tex-
@@ -15,13 +15,13 @@ EXTRACT_ONLY=	texlive-${DISTVERSION_TEXMF}-source${EXTRACT_SUFX}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Extended version of pdfTeX using Lua
 
-LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2 \
-		graphite:${PORTSDIR}/graphics/silgraphite \
-		icuio:${PORTSDIR}/devel/icu \
-		png15:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2 \
+		libgraphite.so:${PORTSDIR}/graphics/silgraphite \
+		libicuio.so:${PORTSDIR}/devel/icu \
+		libpng15.so:${PORTSDIR}/graphics/png \
 		libpoppler.so:${PORTSDIR}/graphics/poppler \
-		TECkit:${PORTSDIR}/textproc/teckit \
-		zzip:${PORTSDIR}/devel/zziplib
+		libTECkit.so:${PORTSDIR}/textproc/teckit \
+		libzzip.so:${PORTSDIR}/devel/zziplib
 
 USE_XZ=		yes
 USE_GMAKE=	yes

@@ -2,6 +2,7 @@
 
 PORTNAME=	jabber
 PORTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	dinoex@FreeBSD.org

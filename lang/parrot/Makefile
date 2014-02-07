@@ -3,6 +3,7 @@
 
 PORTNAME=	parrot
 PORTVERSION=	${PARROT_VERSION}
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/stable/${PORTVERSION}/
 
