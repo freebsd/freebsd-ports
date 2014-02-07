@@ -3,73 +3,80 @@
 
 PORTNAME=	gtksql
 PORTVERSION=	0.4.5
+PORTREVISION=	1
 CATEGORIES=	databases
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-testing/${PORTNAME}-${PORTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-testing/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical query tool for PostgreSQL/MySQL/SQLite
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2 # (or later)
 
-LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+LIB_DEPENDS=	libscintilla.so:${PORTSDIR}/x11-toolkits/scintilla
+RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
-GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libtool
-USES=		pkgconfig gmake
+OPTIONS_DEFINE=	AVAHI
+OPTIONS_MULTI=	DB
+OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
+OPTIONS_DEFAULT=	SQLITE
+
+USES=		gettext gmake pkgconfig
 USE_GNOME=	gtk20
-LDFLAGS+=	-L${LOCALBASE}/lib -lgmodule-2.0
+GNU_CONFIGURE=	yes
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
-MAN1=		${PORTNAME}.1
-PORTDOCS=	AUTHORS ChangeLog NEWS README TODO
+CPPFLAGS+=	-I${LOCALBASE}/include/scintilla -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lscintilla -lscintilla_lexers
 
-OPTIONS_MULTI=		DB
-OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE3
-OPTIONS_DEFAULT=	MYSQL PGSQL SQLITE3
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MAVAHI}
+LIB_DEPENDS+=	libavahi-common.so:${PORTSDIR}/net/avahi-app
+.else
+CONFIGURE_ARGS+=	--without-avahi
+.endif
 
 .if ${PORT_OPTIONS:MMYSQL}
 USE_MYSQL=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include/mysql
+LDFLAGS+=	-L${LOCALBASE}/lib/mysql
 .else
-CONFIGURE_ARGS+=--without-mysql
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
+CONFIGURE_ARGS+=	--without-mysql
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
 USE_PGSQL=	yes
 .else
-CONFIGURE_ARGS+=--without-postgresql
+CONFIGURE_ARGS+=	--without-postgresql
 .endif
 
-.if ${PORT_OPTIONS:MSQLITE3}
-LIB_DEPENDS+=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
+.if ${PORT_OPTIONS:MSQLITE}
+USE_SQLITE=	yes
 .else
-CONFIGURE_ARGS+=--without-sqlite
+CONFIGURE_ARGS+=	--without-sqlite
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/include/mysql|${LOCALBASE}/include/mysql|g' \
-	-e 's|/usr/include/postgresql|${LOCALBASE}/include/postgresql/server|g' \
+	@${REINPLACE_CMD} -e \
+		'/-lstdc++/s|^|#| ; \
+		 /scintilla.a/s|^|#| ; \
+		 /\/scintilla\/include/s|^|#| ; \
+		 /ac_header/s|postgres.h|libpq-fe.h| ; \
+		 /^packagedatadir/s|=.*|=share/gtksql|' \
 		${WRKSRC}/configure
-	@${REINPLACE_CMD} 's|make|$$(MAKE)|' \
-		${WRKSRC}/scintilla/Makefile.in
-	@${REINPLACE_CMD} 's|-Os|${CFLAGS}|g' \
-		${WRKSRC}/scintilla/gtk/makefile
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
+	@${REINPLACE_CMD} -e \
+		's|-O1|| ; \
+		 s|-g$$|-DGTK|' \
+		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|<postgres\.h>|<postgresql/internal/c.h>|' \
+		${WRKSRC}/src/d_postgres_f.c
+	@${REINPLACE_CMD} -e \
+		's|mozilla|xdg-open|' \
+		${WRKSRC}/src/gtkui-object.c
+	@${REINPLACE_CMD} -e \
+		's|/usr/local/gtksql|${PREFIX}/lib/gtksql|' \
+		${WRKSRC}/src/plugins.c
 
 .include <bsd.port.mk>
