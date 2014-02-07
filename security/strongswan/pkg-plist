@@ -151,6 +151,13 @@ sbin/ipsec
 sbin/charon-cmd
 share/examples/strongswan/ipsec.conf
 share/examples/strongswan/strongswan.conf
+man/man5/strongswan.conf.5.gz
+man/man5/ipsec.conf.5.gz
+man/man5/ipsec.secrets.5.gz
+man/man8/ipsec.8.gz
+man/man8/charon-cmd.8.gz
+man/man8/_updown.8.gz
+man/man8/_updown_espmark.8.gz
 %%EAPRADIUS%%lib/ipsec/libradius.a
 %%EAPRADIUS%%lib/ipsec/libradius.la
 %%EAPRADIUS%%lib/ipsec/libradius.so
