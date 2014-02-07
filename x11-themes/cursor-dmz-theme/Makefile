@@ -15,10 +15,9 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/lib/X11/icons/Vanilla-DMZ/cursors
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/icons/Vanilla-DMZ/cursors
 	cd ${WRKSRC}/Vanilla-DMZ/cursors \
-		&& ${FIND} * | ${CPIO} -pdmu ${PREFIX}/lib/X11/icons/Vanilla-DMZ/cursors
+		&& ${FIND} * | ${CPIO} -pdmu ${STAGEDIR}${PREFIX}/lib/X11/icons/Vanilla-DMZ/cursors
 
 .include <bsd.port.mk>
