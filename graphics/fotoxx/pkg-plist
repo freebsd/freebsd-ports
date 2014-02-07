@@ -1,97 +1,209 @@
 bin/fotoxx
-%%DATADIR%%/icons/arrow.png
-%%DATADIR%%/icons/busy.png
-%%DATADIR%%/icons/drag.png
-%%DATADIR%%/icons/draw.png
-%%DATADIR%%/icons/first-page.png
+share/applications/fotoxx.desktop
+%%PORTDOCS%%%%DOCSDIR%%/README-ca
+%%PORTDOCS%%%%DOCSDIR%%/README-en
+%%PORTDOCS%%%%DOCSDIR%%/README-es
+%%PORTDOCS%%%%DOCSDIR%%/changelog.gz
+%%PORTDOCS%%%%DOCSDIR%%/copyright
+%%PORTDOCS%%%%DOCSDIR%%/fotoxx-release
+%%PORTDOCS%%%%DOCSDIR%%/fotoxx.man
+%%PORTDOCS%%%%DOCSDIR%%/freecode
+%%PORTDOCS%%%%DOCSDIR%%/translations-ca
+%%PORTDOCS%%%%DOCSDIR%%/translations-en
+%%PORTDOCS%%%%DOCSDIR%%/translations-es
+%%DATADIR%%/data/KB-shortcuts-ca
+%%DATADIR%%/data/KB-shortcuts-en
+%%DATADIR%%/data/KB-shortcuts-es
+%%DATADIR%%/data/edit-menus-ca
+%%DATADIR%%/data/edit-menus-en
+%%DATADIR%%/data/edit-menus-es
+%%DATADIR%%/data/favorites/menu-config
+%%DATADIR%%/data/favorites/menu-config-pixbuf-009.png
+%%DATADIR%%/data/images/F-toolbar.jpg
+%%DATADIR%%/data/images/G-toolbar.jpg
+%%DATADIR%%/data/images/HDF-paint.jpg
+%%DATADIR%%/data/images/HDR-adjust.jpg
+%%DATADIR%%/data/images/KB-shortcuts.jpg
+%%DATADIR%%/data/images/add-geotags.jpg
+%%DATADIR%%/data/images/add-text.jpg
+%%DATADIR%%/data/images/add-text2.jpg
+%%DATADIR%%/data/images/anti-alias.jpg
+%%DATADIR%%/data/images/auto-trim.jpg
+%%DATADIR%%/data/images/batch-add-geotags.jpg
+%%DATADIR%%/data/images/batch-convert.jpg
+%%DATADIR%%/data/images/batch-raw-conv.jpg
+%%DATADIR%%/data/images/brightness-distribution.jpg
+%%DATADIR%%/data/images/brightness-ramp.jpg
+%%DATADIR%%/data/images/brightness steps.jpg
+%%DATADIR%%/data/images/chromatic.jpg
+%%DATADIR%%/data/images/cmyk.jpg
+%%DATADIR%%/data/images/collections.jpg
+%%DATADIR%%/data/images/colorchart.png
+%%DATADIR%%/data/images/denoise.jpg
+%%DATADIR%%/data/images/dots.jpg
+%%DATADIR%%/data/images/drawing.jpg
+%%DATADIR%%/data/images/edit-metadata.jpg
+%%DATADIR%%/data/images/edit-translation.jpg
+%%DATADIR%%/data/images/favorites.jpg
+%%DATADIR%%/data/images/file-save.jpg
+%%DATADIR%%/data/images/flatbook.jpg
+%%DATADIR%%/data/images/fotoxx.jpg
+%%DATADIR%%/data/images/gallery-select.jpg
+%%DATADIR%%/data/images/gammachart.png
+%%DATADIR%%/data/images/geotag-groups.jpg
+%%DATADIR%%/data/images/grad_blur.jpg
+%%DATADIR%%/data/images/grid-lines.jpg
+%%DATADIR%%/data/images/index.jpg
+%%DATADIR%%/data/images/jpeg quality.jpg
+%%DATADIR%%/data/images/keystone.jpg
+%%DATADIR%%/data/images/leverage-edits.jpg
+%%DATADIR%%/data/images/mashup.jpg
+%%DATADIR%%/data/images/mashup2.jpg
+%%DATADIR%%/data/images/match-colors.jpg
+%%DATADIR%%/data/images/move-collections.jpg
+%%DATADIR%%/data/images/paint-clone.jpg
+%%DATADIR%%/data/images/paint-edits.jpg
+%%DATADIR%%/data/images/pano-color.jpg
+%%DATADIR%%/data/images/pano-pre-align.jpg
+%%DATADIR%%/data/images/plugins.jpg
+%%DATADIR%%/data/images/print.jpg
+%%DATADIR%%/data/images/remove-dust.jpg
+%%DATADIR%%/data/images/rename.jpg
+%%DATADIR%%/data/images/resize.jpg
+%%DATADIR%%/data/images/retouch-combo.jpg
+%%DATADIR%%/data/images/retouch-combo2.jpg
+%%DATADIR%%/data/images/revise-RGB.jpg
+%%DATADIR%%/data/images/search-images-metadata.jpg
+%%DATADIR%%/data/images/search-images.jpg
+%%DATADIR%%/data/images/select-area.jpg
+%%DATADIR%%/data/images/sharpen.jpg
+%%DATADIR%%/data/images/sharpen4.jpg
+%%DATADIR%%/data/images/shift-colors.jpg
+%%DATADIR%%/data/images/show-RGB.jpg
+%%DATADIR%%/data/images/sketch.jpg
+%%DATADIR%%/data/images/slide-show.jpg
+%%DATADIR%%/data/images/smart-erase.jpg
+%%DATADIR%%/data/images/stack-noise.jpg
+%%DATADIR%%/data/images/stack-paint.jpg
+%%DATADIR%%/data/images/stuck-pixels.jpg
+@comment %%DATADIR%%/data/images/synchronize.jpg
+%%DATADIR%%/data/images/tabsF&G.png
+%%DATADIR%%/data/images/texture.jpg
+%%DATADIR%%/data/images/tone-mapping.jpg
+%%DATADIR%%/data/images/trim-rotate.jpg
+%%DATADIR%%/data/images/unbend.jpg
+%%DATADIR%%/data/images/user-settings.jpg
+%%DATADIR%%/data/images/vignette.jpg
+%%DATADIR%%/data/images/warps.jpg
+%%DATADIR%%/data/quickstart-ca.html
+%%DATADIR%%/data/quickstart-de.html
+%%DATADIR%%/data/quickstart-en.html
+%%DATADIR%%/data/quickstart-es.html
+%%DATADIR%%/data/quickstart-fr.html
+%%DATADIR%%/data/quickstart-it.html
+%%DATADIR%%/data/quickstart-pt.html
+%%DATADIR%%/data/slideshow-tone.oga
+%%DATADIR%%/data/tags_defined
+%%DATADIR%%/data/userguide-en.html
+%%DATADIR%%/data/userguide-es.html
+%%DATADIR%%/data/userguide-it.html
+%%DATADIR%%/icons/F-tab.png
+%%DATADIR%%/icons/G-tab.png
+%%DATADIR%%/icons/W-tab.png
+%%DATADIR%%/icons/bottom.png
+%%DATADIR%%/icons/broken.png
+%%DATADIR%%/icons/cancel.png
+%%DATADIR%%/icons/down+.png
+%%DATADIR%%/icons/down.png
+%%DATADIR%%/icons/edit-funcs/CMYK.png
+%%DATADIR%%/icons/edit-funcs/HDF.png
+%%DATADIR%%/icons/edit-funcs/HDR.png
+%%DATADIR%%/icons/edit-funcs/RGB.png
+%%DATADIR%%/icons/edit-funcs/blur.png
+%%DATADIR%%/icons/edit-funcs/bright distrib.png
+%%DATADIR%%/icons/edit-funcs/brigth color sat.png
+%%DATADIR%%/icons/edit-funcs/brigth ramp.png
+%%DATADIR%%/icons/edit-funcs/color depth.png
+%%DATADIR%%/icons/edit-funcs/crop rotate.png
+%%DATADIR%%/icons/edit-funcs/dots.png
+%%DATADIR%%/icons/edit-funcs/drawing01.png
+%%DATADIR%%/icons/edit-funcs/embossing.png
+%%DATADIR%%/icons/edit-funcs/expand bright.png
+%%DATADIR%%/icons/edit-funcs/fix fringes.png
+%%DATADIR%%/icons/edit-funcs/fix stuck pixels.png
+%%DATADIR%%/icons/edit-funcs/flatten bright.png
+%%DATADIR%%/icons/edit-funcs/flip.png
+%%DATADIR%%/icons/edit-funcs/gamma.png
+%%DATADIR%%/icons/edit-funcs/invert.png
+%%DATADIR%%/icons/edit-funcs/keystone.png
+%%DATADIR%%/icons/edit-funcs/landscape.png
+%%DATADIR%%/icons/edit-funcs/leverage edit.png
+%%DATADIR%%/icons/edit-funcs/outlines.png
+%%DATADIR%%/icons/edit-funcs/paint edits.png
+%%DATADIR%%/icons/edit-funcs/paint pixels.png
+%%DATADIR%%/icons/edit-funcs/painting.png
+%%DATADIR%%/icons/edit-funcs/panorama.png
+%%DATADIR%%/icons/edit-funcs/pencil.png
+%%DATADIR%%/icons/edit-funcs/red eyes.png
+%%DATADIR%%/icons/edit-funcs/reduce noise.png
+%%DATADIR%%/icons/edit-funcs/remove dust.png
+%%DATADIR%%/icons/edit-funcs/resize.png
+%%DATADIR%%/icons/edit-funcs/sharpen.png
+%%DATADIR%%/icons/edit-funcs/shiftcolors.png
+%%DATADIR%%/icons/edit-funcs/smarterase.png
+%%DATADIR%%/icons/edit-funcs/stacknoise.png
+%%DATADIR%%/icons/edit-funcs/stackpaint.png
+%%DATADIR%%/icons/edit-funcs/text.png
+%%DATADIR%%/icons/edit-funcs/tiles.png
+%%DATADIR%%/icons/edit-funcs/tonemapping.png
+%%DATADIR%%/icons/edit-funcs/unbend.png
+%%DATADIR%%/icons/edit-funcs/vert panorama.png
+%%DATADIR%%/icons/edit-funcs/voodoo.png
+%%DATADIR%%/icons/edit-funcs/warp affine.png
+%%DATADIR%%/icons/edit-funcs/warp area.png
+%%DATADIR%%/icons/edit-funcs/warp curved.png
+%%DATADIR%%/icons/edit-funcs/warp linear.png
+%%DATADIR%%/icons/edit-funcs/whitebalance.png
+%%DATADIR%%/icons/favorites.png
+%%DATADIR%%/icons/fg-color.png
 %%DATADIR%%/icons/folder.png
-%%DATADIR%%/icons/folder256.png
 %%DATADIR%%/icons/fotoxx.png
-%%DATADIR%%/icons/gallery.png
+%%DATADIR%%/icons/goto.png
 %%DATADIR%%/icons/help.png
-%%DATADIR%%/icons/last-page.png
-%%DATADIR%%/icons/next-page.png
-%%DATADIR%%/icons/next-row.png
 %%DATADIR%%/icons/next.png
 %%DATADIR%%/icons/open.png
-%%DATADIR%%/icons/prev-page.png
-%%DATADIR%%/icons/prev-row.png
 %%DATADIR%%/icons/prev.png
-%%DATADIR%%/icons/print.png
 %%DATADIR%%/icons/quit.png
 %%DATADIR%%/icons/redo.png
+%%DATADIR%%/icons/rotate-left.png
+%%DATADIR%%/icons/rotate-right.png
 %%DATADIR%%/icons/save.png
-%%DATADIR%%/icons/saveas.png
+%%DATADIR%%/icons/sort.png
+%%DATADIR%%/icons/sync.G.png
+%%DATADIR%%/icons/top.png
 %%DATADIR%%/icons/trash.png
 %%DATADIR%%/icons/undo.png
+%%DATADIR%%/icons/up+.png
+%%DATADIR%%/icons/up.png
+%%DATADIR%%/icons/warning.png
 %%DATADIR%%/icons/zoom+.png
 %%DATADIR%%/icons/zoom-.png
-%%DOCSDIR%%/userguide-en.html
-%%DOCSDIR%%/freshmeat
-%%DOCSDIR%%/fotoxx.man
-%%DOCSDIR%%/TRANSLATIONS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/COPYING
-%%DOCSDIR%%/CHANGES
-%%DOCSDIR%%/images/HDF-paint.jpg
-%%DOCSDIR%%/images/HDR-adjust.jpg
-%%DOCSDIR%%/images/annotate.jpg
-%%DOCSDIR%%/images/brightness-color.jpg
-%%DOCSDIR%%/images/brightness-ramp.png
-%%DOCSDIR%%/images/edit-tags.jpg
-%%DOCSDIR%%/images/expand-brightness.png
-%%DOCSDIR%%/images/gallery image selection.jpg
-%%DOCSDIR%%/images/manage-tags.jpg
-%%DOCSDIR%%/images/navigation.jpeg
-%%DOCSDIR%%/images/pano-dialog.jpeg
-%%DOCSDIR%%/images/rename.jpeg
-%%DOCSDIR%%/images/save-as.jpeg
-%%DOCSDIR%%/images/search-images.jpg
-%%DOCSDIR%%/images/select-area.png
-%%DOCSDIR%%/images/select-whole-image.jpg
-%%DOCSDIR%%/images/select_edit.jpg
-%%DOCSDIR%%/images/sharpen.jpeg
-%%DOCSDIR%%/images/smart-erase.png
-%%DOCSDIR%%/images/stack.png
-%%DOCSDIR%%/images/tone-mapping.png
-%%DOCSDIR%%/images/trim.jpg
-%%DOCSDIR%%/images/watermark.jpg
-%%DATADIR%%/locales/de/fotoxx.po
-%%DATADIR%%/locales/de/zfuncs.po
-%%DATADIR%%/locales/en/fotoxx.po
-%%DATADIR%%/locales/en/zfuncs.po
-%%DATADIR%%/locales/es/fotoxx.po
-%%DATADIR%%/locales/es/zfuncs.po
-%%DATADIR%%/locales/fr/fotoxx.po
-%%DATADIR%%/locales/fr/fotoxx.po.old
-%%DATADIR%%/locales/fr/zfuncs.po
-%%DATADIR%%/locales/gl/fotoxx.po
-%%DATADIR%%/locales/gl/zfuncs.po
-%%DATADIR%%/locales/it/fotoxx.po
-%%DATADIR%%/locales/it/zfuncs.po
-%%DATADIR%%/locales/nl/fotoxx.po
-%%DATADIR%%/locales/nl/zfuncs.po
-%%DATADIR%%/locales/pt/fotoxx.po
-%%DATADIR%%/locales/pt/zfuncs.po
-%%DATADIR%%/locales/ru/fotoxx.po
-%%DATADIR%%/locales/ru/zfuncs.po
-%%DATADIR%%/locales/sv/fotoxx.po
-%%DATADIR%%/locales/sv/zfuncs.po
-%%DATADIR%%/locales/zh_CN/fotoxx.po
-%%DATADIR%%/locales/zh_CN/zfuncs.po
-@dirrm %%DOCSDIR%%/images
-@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/locales/de
-@dirrm %%DATADIR%%/locales/en
-@dirrm %%DATADIR%%/locales/es
-@dirrm %%DATADIR%%/locales/fr
-@dirrm %%DATADIR%%/locales/gl
-@dirrm %%DATADIR%%/locales/it
-@dirrm %%DATADIR%%/locales/nl
-@dirrm %%DATADIR%%/locales/pt
-@dirrm %%DATADIR%%/locales/ru
-@dirrm %%DATADIR%%/locales/sv
-@dirrm %%DATADIR%%/locales/zh_CN
-@dirrm %%DATADIR%%/locales
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
+%%DATADIR%%/locales/translate-ca.po
+%%DATADIR%%/locales/translate-de.po
+%%DATADIR%%/locales/translate-en.po
+%%DATADIR%%/locales/translate-es.po
+%%DATADIR%%/locales/translate-fr.po
+%%DATADIR%%/locales/translate-it.po
+%%DATADIR%%/locales/translate-nl.po
+%%DATADIR%%/locales/translate-pt.po
+%%DATADIR%%/locales/translate-ru.po
+%%DATADIR%%/locales/translate-sv.po
+man/man1/fotoxx.1.gz
+@dirrmtry %%DATADIR%%/locales
+@dirrmtry %%DATADIR%%/icons/edit-funcs
+@dirrmtry %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%/data/images
+@dirrmtry %%DATADIR%%/data/favorites
+@dirrmtry %%DATADIR%%/data
+@dirrmtry %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
