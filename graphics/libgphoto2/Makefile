@@ -46,7 +46,7 @@ XML_CONFIGURE_WITH=	libxml2
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == "FreeBSD" && ${OSVERSION} < 1000040
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1000040
 CONFIGURE_ENV+=	LIBUSB1_CFLAGS=" " LIBUSB1_LIBS="-lusb"
 .endif
 
