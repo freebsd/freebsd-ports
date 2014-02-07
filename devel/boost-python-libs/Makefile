@@ -11,7 +11,7 @@ VERBOSE_BUILD_DESC=	Show compiler messages
 
 .include "${.CURDIR}/../boost-all/common.mk"
 
-.include "${PORTSDIR}/devel/boost-all/compiled.mk"
+.include "${.CURDIR}/../boost-all/compiled.mk"
 
 .if ${ARCH} == "sparc64"
 CXXFLAGS=	-O0
