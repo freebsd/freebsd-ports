@@ -79,7 +79,7 @@ RPZ_NSIP_CONFIGURE_ENABLE=	rpz-nsip
 
 RPZ_NSDNAME_CONFIGURE_ENABLE=	rpz-nsdname
 
-RPZRRL_PATCH_PATCHFILES=	rpz2+rl-9.8.7.patch:vix
+RPZRRL_PATCH_PATCHFILES=	9.8.7-rpz2+rl.14038.05.patch:vix
 RPZRRL_PATCH_PATCH_SITES=	http://ss.vix.su/~vjs/:vix
 
 DLZ_POSTGRESQL_CONFIGURE_ON=	--with-dlz-postgres=yes
