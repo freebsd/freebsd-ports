@@ -10,9 +10,9 @@ PORTNAME=	vim
 #		! Doing so is dis-genuine.  It implies we're at a level we are
 #		! not.  The "PATCHLEVEL" patch needs to apply before bumping
 #		! PATCHLEVEL to that level.
-PATCHLEVEL=	110
+PATCHLEVEL=	169
 PORTVERSION=	7.4.${PATCHLEVEL}
-PORTREVISION?=	3
+PORTREVISION?=	0
 CATEGORIES?=	editors
 MASTER_SITES=	VIM
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
@@ -62,7 +62,7 @@ ALL_TARGET=	#
 _DATADIR=	${PORTNAME}${PORTVERSION:R:S/.//g}
 DATADIR=	${PREFIX}/share/vim/${_DATADIR}
 PLIST_SUB=	VIM_VER=${_DATADIR}
-MANLANG=	""
+MANLANG=	"" fr pl
 MAN1=		evim.1 vim.1 vimdiff.1 vimtutor.1 xxd.1
 MLINKS=		vim.1 rvim.1	vim.1 rview.1
 .if !defined(LITE)
