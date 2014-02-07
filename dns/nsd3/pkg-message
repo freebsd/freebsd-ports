@@ -1,4 +1,7 @@
 **************************************************************************
+*
+*   Do consider to use nsd-4.0.1. Support for the nsd-3 branch
+*   will stop in future
 *                                                                        *
 *   To run nsd from startup, add nsd_enable="YES" to your /etc/rc.conf   *
 *                                                                        *
