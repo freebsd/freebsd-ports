@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	nsd
-PORTVERSION=	3.2.16
+PORTVERSION=	3.2.17
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
-PKGNAMESUFFIX=	3
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Authoritative only non-recursive name server
