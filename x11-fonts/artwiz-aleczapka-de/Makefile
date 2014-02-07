@@ -1,11 +1,11 @@
 # Created by: Herbert J. Skuhra <herbert.skuhra@gmx.at>
 # $FreeBSD$
 
-PORTNAME=		artwiz-aleczapka-de
-PORTVERSION=		1.3
+PORTNAME=	artwiz-aleczapka-de
+PORTVERSION=	1.3
 PORTREVISION=	2
-CATEGORIES=		x11-fonts
-MASTER_SITES=		SF/artwizaleczapka/iso-8859-1/${PORTVERSION}
+CATEGORIES=	x11-fonts
+MASTER_SITES=	SF/artwizaleczapka/iso-8859-1/${PORTVERSION}
 
 MAINTAINER=	herbert.skuhra@gmx.at
 COMMENT=	A set of (improved) artwiz fonts
@@ -21,16 +21,12 @@ FONTDIR=	${LOCALBASE}/lib/X11/fonts/${PORTNAME}/
 FILES=	${FONTS:S,$,.pcf,} ${WRKSRC}/fonts.alias \
 	${WRKSRC}/fonts.dir
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 do-install:
-	@${MKDIR} ${FONTDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${FILES} ${FONTDIR}
+	${MKDIR} ${STAGEDIR}${FONTDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${FILES} ${STAGEDIR}${FONTDIR}
 
 post-install:
 	@${SED} 's|$${LOCALBASE}|${LOCALBASE}|g' \
 		${PKGDIR}/pkg-message >${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
