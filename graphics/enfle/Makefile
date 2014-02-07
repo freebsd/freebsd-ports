@@ -10,6 +10,9 @@ MASTER_SITES=	http://enfle.fennel.org/files/stable/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple plugin-based graphics viewer
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/X11/rgb.txt:${PORTSDIR}/x11/rgb
 LIB_DEPENDS=	arc.1:${PORTSDIR}/archivers/libarc \
 		jasper.4:${PORTSDIR}/graphics/jasper \

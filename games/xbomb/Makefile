@@ -10,6 +10,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minesweeper with a couple of grid types
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 USES=		pkgconfig
 USE_XORG=	xaw7
 

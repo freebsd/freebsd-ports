@@ -12,6 +12,9 @@ DISTNAME=	pyxmms-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS Remote Control Library for Python
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 BUILD_DEPENDS=	${XMMS_CONFIG}:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 

@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.tigr.net/afterstep/download/asmix/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Volume control dock-app for the AfterStep Window Manager
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 USE_XORG=	xpm x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xpm \

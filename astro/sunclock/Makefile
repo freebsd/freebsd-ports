@@ -9,6 +9,9 @@ MASTER_SITES=	http://www.arvernes.com/files/jpd/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows which portion of the Earth's surface is illuminated by the Sun
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \

@@ -11,6 +11,9 @@ DISTNAME=	asfsm-1.0pre15
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File-system monitor for the AfterStep window manager
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 USE_XORG=	xpm x11 sm ice xext xaw xt
 GNU_CONFIGURE=	yes
 

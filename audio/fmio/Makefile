@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.aliasnet.ru/~pva/src/fmio/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FM radio card manipulation utility
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 MAN1=		fmio.1
 MANCOMPRESSED=	no
 ONLY_FOR_ARCHS=	i386

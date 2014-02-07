@@ -10,6 +10,9 @@ MASTER_SITES=	http://users.v-lo.krakow.pl/~michal/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Memory Array Redcode Simulator
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile

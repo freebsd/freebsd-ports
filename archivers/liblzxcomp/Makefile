@@ -10,6 +10,9 @@ DISTNAME=	lzx_compress
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LZX compression library
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 USE_LDCONFIG=	YES
 SHLIB_MAJOR=	1
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"

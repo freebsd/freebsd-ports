@@ -12,6 +12,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	54321 is five games in four-, three-, or two-dimensions for one player
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 USE_SDL=	image sdl

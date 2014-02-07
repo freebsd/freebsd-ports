@@ -10,10 +10,13 @@ MASTER_SITES=	http://www.tigr.net/afterstep/download/asmixer/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mixer control for AfterStep window manager
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 MAN1=		${PORTNAME}.1x
+NO_STAGE=	yes
 PLIST_FILES=	bin/asmixer
 
-NO_STAGE=	yes
 USE_XORG=	xpm x11
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xpm \

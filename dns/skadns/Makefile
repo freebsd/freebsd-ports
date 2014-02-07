@@ -9,6 +9,9 @@ MASTER_SITES=	http://www.skarnet.org/software/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Asynchronous DNS client software and library
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/skalibs/libstddjb.a:${PORTSDIR}/devel/skalibs
 
 LDFLAGS?=	-s
