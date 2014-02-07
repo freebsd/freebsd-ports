@@ -5393,8 +5393,6 @@ graphics/evince3|graphics/evince|%DATE%|moved
 mail/evolution-exchange3|mail/evolution-exchange|%DATE%|moved
 mail/evolution-mapi3|mail/evolution-mapi|%DATE%|moved
 math/gcacltool3|math/gcalctool|%DATE%|moved
-misc/gnome-devel-docs3|misc/gnome-devel-docs|%DATE%|moved
-misc/gnome-user/docs3|misc/gnome-user-docs|%DATE%|moved
 multimedia/cheese3|multimedia/cheese|%DATE%|moved
 multimedia/totem3|multimedia/totem|%DATE%|moved
 net/gnome-nettool3|net/gnome-nettool%DATE%|moved
@@ -5555,8 +5553,6 @@ graphics/evince3|graphics/evince|%DATE%|moved
 mail/evolution-exchange3|mail/evolution-exchange|%DATE%|moved
 mail/evolution-mapi3|mail/evolution-mapi|%DATE%|moved
 math/gcacltool3|math/gcalctool|%DATE%|moved
-misc/gnome-devel-docs3|misc/gnome-devel-docs|%DATE%|moved
-misc/gnome-user-docs3|misc/gnome-user-docs|%DATE%|moved
 multimedia/cheese3|multimedia/cheese|%DATE%|moved
 multimedia/totem3|multimedia/totem|%DATE%|moved
 net/gnome-nettool3|net/gnome-nettool%DATE%|moved
