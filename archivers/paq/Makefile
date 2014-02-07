@@ -2,10 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	paq
-PORTVERSION=	20130926
+PORTVERSION=	20140131
 CATEGORIES=	archivers
 MASTER_SITES=	http://mattmahoney.net/dc/ LOCAL/bf/paq/
-DISTFILES=	wbpe110.zip zpaqd633.zip zpaq642.zip zpipe.201.zip
+DISTFILES=	wbpe110.zip zpaqd633.zip zpaq649.zip zpipe.201.zip
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:M*.zip}
 
@@ -15,9 +15,8 @@ COMMENT=	Family of archivers with extremely high compression ratios
 LICENSE=	GPLv3 MIT
 LICENSE_COMB=	multi
 
-NO_STAGE=	yes
-USE_DOS2UNIX=	yes
 USE_ZIP=	yes
+USES=		dos2unix
 
 EXTRACT_AFTER_ARGS=	-x *.bat *.exe readme.txt -d ${WRKDIR}
 NO_WRKSUBDIR=	yes
@@ -46,11 +45,11 @@ DISTFILES+=	bmp_j4c.zip bwt.1.zip bwt_j3.zip bwt_slowmode1.zip \
 .endif
 
 .if ${PORT_OPTIONS:MDOCS} || make(makesum)
-DISTFILES+=	zpaq1.pdf zpaq202.pdf
+DISTFILES+=	zpaq1.pdf zpaq202.pdf zpaq203.pdf
 .endif
 
 .if ${PORT_OPTIONS:MDOCS}
-PORTDOCS=	libzpaq.cpp wbpe.cpp zpaq.cpp zpaq1.pdf zpaq202.pdf zpipe.cpp
+PORTDOCS=	libzpaq.cpp wbpe.cpp zpaq.cpp zpaq1.pdf zpaq202.pdf zpaq203.pdf zpipe.cpp
 .endif
 
 .if !defined(NOPORTDATA)
@@ -75,10 +74,10 @@ USE_GCC=		any
 .endif
 
 post-extract:
-	@${CP} ${_DISTDIR}/zpsfx101.cpp ${WRKSRC}/zpsfx.cpp
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/zpsfx101.cpp ${WRKSRC}/zpsfx.cpp
 .if ${PORT_OPTIONS:MDOCS}
 .for r in ${READMES}
-	@${UNZIP_CMD} -pq  ${_DISTDIR}/${r}.zip readme.txt > ${WRKSRC}/readme_${r:R}.txt
+	@${UNZIP_CMD} -pq  ${DISTDIR}/${DIST_SUBDIR}/${r}.zip readme.txt > ${WRKSRC}/readme_${r:R}.txt
 .endfor
 
 .endif
@@ -107,30 +106,31 @@ do-build:
 
 do-install:
 .for prog in wbpe zpaq zpaqd zpipe
-	@${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/libzpaq.h ${PREFIX}/include
+	@${INSTALL_DATA} ${WRKSRC}/libzpaq.h ${STAGEDIR}${PREFIX}/include
 .if !defined(NOPORTDATA)
 .for prog in bwt_ bwtpre bwtrle exe_jo jpeg_jo lazy2 lzpre lzppre
-	@${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	@${MKDIR} ${DATADIR}
-	@cd ${WRKSRC}; ${INSTALL_DATA} ${WDATA} ${DATADIR}; \
-	${INSTALL_LIB} zpsfx ${DATADIR}
-	@cd ${_DISTDIR}; ${INSTALL_DATA} ${DDATA} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@cd ${WRKSRC}; ${INSTALL_DATA} ${WDATA} ${STAGEDIR}${DATADIR}; \
+	${INSTALL_LIB} zpsfx ${STAGEDIR}${DATADIR}
+	@cd ${_DISTDIR}; ${INSTALL_DATA} ${DDATA} ${STAGEDIR}${DATADIR}
 .endif
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS:N*.pdf} ${DOCSDIR}
-	@cd ${_DISTDIR}; ${INSTALL_DATA} ${PORTDOCS:M*.pdf} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS:N*.pdf} ${STAGEDIR}${DOCSDIR}
+	@cd ${DISTDIR}/${DIST_SUBDIR}; ${INSTALL_DATA} ${PORTDOCS:M*.pdf} ${STAGEDIR}${DOCSDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 check regression-test test: build
 .for _f in calgarytest.zpaq calgarytest2.zpaq
 .for _c in -list -test
-	${WRKSRC}/zpaq ${_c} ${_DISTDIR}/${_f}
+	${WRKSRC}/zpaq ${_c} ${DISTDIR}/${DIST_SUBDIR}/${_f}
 .endfor
+	${WRKSRC}/zpaq -encrypt ${DISTDIR}/${DIST_SUBDIR}/${_f} -to ${WRKSRC}/encrypted_${_f} password
+	${WRKSRC}/zpaq -test ${WRKSRC}/encrypted_${_f} -key password
 .endfor
 
 .include <bsd.port.mk>
