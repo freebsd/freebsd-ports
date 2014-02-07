@@ -117,6 +117,7 @@ share/ngspice/include/ngspice/pzdefs.h
 share/ngspice/include/ngspice/sen2defs.h
 share/ngspice/include/ngspice/sensdefs.h
 share/ngspice/include/ngspice/sensgen.h
+share/ngspice/include/ngspice/sharedspice.h
 share/ngspice/include/ngspice/sim.h
 share/ngspice/include/ngspice/smpdefs.h
 share/ngspice/include/ngspice/sperror.h
