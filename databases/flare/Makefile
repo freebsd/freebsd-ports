@@ -3,7 +3,7 @@
 
 PORTNAME=	flare
 PORTVERSION=	1.0.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 MASTER_SITES=	http://labs.gree.jp/data/source/
 PKGNAMESUFFIX=	-db

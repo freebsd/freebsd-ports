@@ -4,7 +4,7 @@
 
 PORTNAME=	webkit
 PORTVERSION=	1.8.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/releases/
 PKGNAMESUFFIX=	-gtk2

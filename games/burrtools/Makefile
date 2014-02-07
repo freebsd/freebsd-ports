@@ -3,7 +3,7 @@
 
 PORTNAME=	burrtools
 PORTVERSION=	0.6.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF \
 		http://www.c-s.li/ports/

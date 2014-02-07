@@ -3,7 +3,7 @@
 
 PORTNAME=	zorba
 PORTVERSION=	2.7.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	https://launchpadlibrarian.net/119058962/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -13,12 +13,12 @@ COMMENT=	A general purpose C++ XQuery processor
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo \
-   		xerces-c.3:${PORTSDIR}/textproc/xerces-c3 \
-		icudata:${PORTSDIR}/devel/icu \
-		curl:${PORTSDIR}/ftp/curl \
-		tidy:${PORTSDIR}/www/tidy-lib \
-		uuid:${PORTSDIR}/misc/e2fsprogs-libuuid
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
+   		libxerces-c.so.3:${PORTSDIR}/textproc/xerces-c3 \
+		libicudata.so:${PORTSDIR}/devel/icu \
+		libcurl.so:${PORTSDIR}/ftp/curl \
+		libtidy.so:${PORTSDIR}/www/tidy-lib \
+		libuuid.so:${PORTSDIR}/misc/e2fsprogs-libuuid
 RUN_DEPENDS=	fop:${PORTSDIR}/textproc/fop
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

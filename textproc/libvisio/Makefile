@@ -2,6 +2,7 @@
 
 PORTNAME=	libvisio
 PORTVERSION=	0.0.31
+PORTREVISION=	1
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://dev-www.libreoffice.org/src/
 

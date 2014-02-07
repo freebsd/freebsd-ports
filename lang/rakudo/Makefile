@@ -3,6 +3,7 @@
 
 PORTNAME=	rakudo
 PORTVERSION=	2013.10
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	lang
 MASTER_SITES=	http://rakudo.org/downloads/star/

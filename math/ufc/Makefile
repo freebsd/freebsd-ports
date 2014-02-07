@@ -3,6 +3,7 @@
 
 PORTNAME=	ufc
 PORTVERSION=	${MMVERSION}.0
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/${MMVERSION}.x/${PORTVERSION}/+download/
 
