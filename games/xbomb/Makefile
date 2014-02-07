@@ -4,14 +4,11 @@
 PORTNAME=	xbomb
 PORTVERSION=	2.2a
 CATEGORIES=	games
-MASTER_SITES=	http://www.gedanken.demon.co.uk/download-xbomb/
+MASTER_SITES=	http://www.gedanken.org.uk/software/xbomb/download/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minesweeper with a couple of grid types
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-07
 
 USES=		pkgconfig
 USE_XORG=	xaw7
