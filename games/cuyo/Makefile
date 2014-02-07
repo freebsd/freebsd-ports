@@ -2,29 +2,49 @@
 # $FreeBSD$
 
 PORTNAME=	cuyo
-PORTVERSION=	2.1.1
-PORTREVISION=	6
+PORTVERSION=	2.0.0
+PORTEPOCH=	1
 CATEGORIES=	games
-MASTER_SITES=	http://mirror.publicns.net/pub/nongnu/cuyo/
-DISTNAME=	${PORTNAME}-2.~-1.1
+MASTER_SITES=	SAVANNAH
 
-MAINTAINER=	mdg583@gmail.com
+MAINTAINER=	nemysis@FreeBSD.org
 COMMENT=	Nice, innovative, challenging Tetris-like game
 
-LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib mikmod.2:${PORTSDIR}/audio/libmikmod
+LICENSE=	GPLv2
 
+LIB_DEPENDS=	libaa.so:${PORTSDIR}/graphics/aalib \
+		libmikmod.so:${PORTSDIR}/audio/libmikmod
+
+USES=		iconv
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_SDL=	mixer image
 USE_XORG=	xdmcp xau x11
-USES=		iconv
+CFLAGS+=	-w
 INSTALLS_ICONS=	yes
 
-MAN6=		cuyo.6 cual.6
+PORTDOCS=	NEWS TODO
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_SUB=	yes
+
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext:run
+
+.include <bsd.port.options.mk>
+
 post-install:
-	@${ECHO} Installing ${PREFIX}/share/pixmaps/cuyo.png
-	@${INSTALL_DATA} ${WRKSRC}/icons/cuyo-32x32.png ${PREFIX}/share/pixmaps/cuyo.png
+.if ${PORT_OPTIONS:MNLS}
+. for f in de
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${f}/LC_MESSAGES ; \
+		${INSTALL_DATA} ${WRKSRC}/po/${f}.gmo \
+		${STAGEDIR}${PREFIX}/share/locale/${f}/LC_MESSAGES/${PORTNAME}.mo
+. endfor
+.endif
+
+	${LN} -sf ${PREFIX}/share/icons/hicolor/64x64/apps/${PORTNAME}.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
