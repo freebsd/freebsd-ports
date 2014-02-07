@@ -16,6 +16,9 @@ EXTRACT_ONLY=	${MAINFILE}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unreal Tournament Dedicated Server for Linux
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 OPTIONS_DEFINE=	BONUSPACKS
 OPTIONS_DEFAULT=	BONUSPACKS
 BONUSPACKS_DESC=	install the official bonus packs collection

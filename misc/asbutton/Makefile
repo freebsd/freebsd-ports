@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.tigr.net/afterstep/download/asbutton/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dockapp that displays 4 or 9 buttons to run apps of your choice
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 USE_XORG=	x11 xpm
 ALL_TARGET=	asbutton
 MAKE_ARGS=	INCLUDES="-I${LOCALBASE}/include/X11 -I${LOCALBASE}/include" \

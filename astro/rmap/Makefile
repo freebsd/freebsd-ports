@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.reza.net/rmap/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates images of the Earth centered at a particular location
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 LIB_DEPENDS=	libgd.so:${PORTSDIR}/graphics/gd
 
 GNU_CONFIGURE=	yes

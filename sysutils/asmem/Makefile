@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.tigr.net/afterstep/download/asmem/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An AfterStep look-n-feel memory utilization monitor
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xpm \

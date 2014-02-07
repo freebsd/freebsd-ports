@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netware server emulator for Un*x systems
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 WRKSRC=		${WRKDIR}/mars_nwe
 
 PLIST=	${WRKDIR}/PLIST.DYN

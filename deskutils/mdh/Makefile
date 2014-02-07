@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.gozer.org/programs/gtk/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2-based toolbar, like a smaller GNOME panel
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USES=		gmake pkgconfig

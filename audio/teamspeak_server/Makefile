@@ -13,6 +13,9 @@ EXTRACT_ONLY=	ts2_server_rc2_202319.tar.bz2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server side of the TeamSpeak group voice chat system
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 WRKSRC=		${WRKDIR}/tss2_rc2
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
