@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	zathura
-PORTVERSION=	0.2.5
+PORTVERSION=	0.2.6
 CATEGORIES=	graphics print
 MASTER_SITES=	http://pwmt.org/projects/zathura/download/
 
-MAINTAINER=	acieroid@awesom.eu
+MAINTAINER=	quentin.stievenart@gmail.com
 COMMENT=	Customizable lightweight pdf viewer
 
 LIB_DEPENDS=	libcairo.so:${PORTSDIR}/graphics/cairo \
