@@ -16,7 +16,7 @@ OPTIONS_DEFINE=	DOCS
 PORTDOCS=	README COPYRIGHT
 
 USES=	desthack
-NO_CDROM=	Restrictive copyright (don not sell for profit)
+NO_CDROM=	Restrictive copyright (do not sell for profit)
 GNU_CONFIGURE=	yes
 CFLAGS+=	-DISO_CHAR_SET=1 -D__STRICT_ANSI__
 
