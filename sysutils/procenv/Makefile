@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	procenv
-PORTVERSION=	0.26
+PORTVERSION=	0.32
 CATEGORIES=	sysutils
 MASTER_SITES=	https://launchpad.net/procenv/trunk/${PORTVERSION}/+download/ \
 		DEBIAN \
@@ -13,14 +13,16 @@ COMMENT=	Utility to show process environment
 
 LICENSE=	GPLv3
 
+BUILD_DEPENDS=	xmlwf:${PORTSDIR}/textproc/expat2
+
 GNU_CONFIGURE=	yes
 USES=		gmake
 USE_AUTOTOOLS=	aclocal automake
+USE_PERL5_BUILD=yes
 
-MAN1=		procenv.1
-PLIST_FILES=	bin/procenv
+PLIST_FILES=	bin/procenv \
+		man/man1/procenv.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800505
@@ -33,8 +35,11 @@ BROKEN=		does not build on old ${OPSYS} versions
 # of the build system which may be of interest to those fixing FTBFS
 # packages that build correctly locally.
 regression-test: build
-	cd ${WRKSRC} && ${MAKE} check
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} check
 
 test: regression-test
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/procenv
 
 .include <bsd.port.post.mk>
