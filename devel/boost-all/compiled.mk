@@ -46,6 +46,4 @@ BJAM_ARGS+=	inlining=full
 .endif
 
 post-patch:
-.if ${BOOST_TOOLSET} == gcc
-	@${ECHO} "using gcc : : ${CXX} ;" >> ${WRKSRC}/tools/build/v2/user-config.jam
-.endif
+	@${ECHO} "using ${BOOST_TOOLSET} : : ${CXX} ;" >> ${WRKSRC}/tools/build/v2/user-config.jam
