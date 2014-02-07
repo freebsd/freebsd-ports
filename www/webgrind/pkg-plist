@@ -1,0 +1,46 @@
+%%WWWDIR%%/README.md
+%%WWWDIR%%/config.php
+%%WWWDIR%%/img/asc.gif
+%%WWWDIR%%/img/bg.gif
+%%WWWDIR%%/img/blank.gif
+%%WWWDIR%%/img/call_class.png
+%%WWWDIR%%/img/call_include.png
+%%WWWDIR%%/img/call_internal.png
+%%WWWDIR%%/img/call_procedural.png
+%%WWWDIR%%/img/desc.gif
+%%WWWDIR%%/img/down.gif
+%%WWWDIR%%/img/file.png
+%%WWWDIR%%/img/file_line.png
+%%WWWDIR%%/img/gradient_class.png
+%%WWWDIR%%/img/gradient_include.png
+%%WWWDIR%%/img/gradient_internal.png
+%%WWWDIR%%/img/gradient_left.png
+%%WWWDIR%%/img/gradient_markers.png
+%%WWWDIR%%/img/gradient_procedural.png
+%%WWWDIR%%/img/gradient_right.png
+%%WWWDIR%%/img/head.png
+%%WWWDIR%%/img/marker.png
+%%WWWDIR%%/img/reload.png
+%%WWWDIR%%/img/right.gif
+%%WWWDIR%%/index.php
+%%WWWDIR%%/js/jquery.blockUI.js
+%%WWWDIR%%/js/jquery.js
+%%WWWDIR%%/js/jquery.scrollTo.js
+%%WWWDIR%%/js/jquery.selectboxes.js
+%%WWWDIR%%/js/jquery.tablesorter.js
+%%WWWDIR%%/js/sprintf.js
+%%WWWDIR%%/library/FileHandler.php
+%%WWWDIR%%/library/Preprocessor.php
+%%WWWDIR%%/library/Reader.php
+%%WWWDIR%%/library/gprof2dot.py
+%%WWWDIR%%/license.txt
+%%WWWDIR%%/package.sh
+%%WWWDIR%%/styles/style.css
+%%WWWDIR%%/templates/fileviewer.phtml
+%%WWWDIR%%/templates/index.phtml
+@dirrm %%WWWDIR%%/templates
+@dirrm %%WWWDIR%%/styles
+@dirrm %%WWWDIR%%/library
+@dirrm %%WWWDIR%%/js
+@dirrm %%WWWDIR%%/img
+@dirrm %%WWWDIR%%
