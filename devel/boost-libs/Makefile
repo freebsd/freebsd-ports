@@ -4,8 +4,6 @@
 PORTNAME=	boost-libs
 COMMENT=	Free portable C++ libraries (without Boost.Python)
 
-PORTREVISION=	2
-
 BUILD_DEPENDS+=	bjam:${PORTSDIR}/devel/boost-jam
 
 OPTIONS_DEFINE=	VERBOSE_BUILD DEBUG ICU OPTIMIZED_CFLAGS
@@ -13,16 +11,14 @@ OPTIONS_DEFAULT=	ICU
 VERBOSE_BUILD_DESC=	Show compiler messages
 ICU_DESC=		Boost.Regex with ICU unicode support
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../boost-all/common.mk"
 
-.include <bsd.port.pre.mk>
 .include "${.CURDIR}/../boost-all/compiled.mk"
 
 BJAM_ARGS+=	--without-python
 
 .if ${PORT_OPTIONS:MICU}
-LIB_DEPENDS+=	icuuc:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	libicuuc.so:${PORTSDIR}/devel/icu
 BJAM_ARGS+=	-sICU_PATH=${LOCALBASE}
 .else
 USES+=		iconv
@@ -36,14 +32,15 @@ BROKEN=		Does not compile on sparc64: invokes i386 assembler
 do-build:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_ARGS} stage
+	#Compatibility layer to avoid rebuilding everything this time
 	@cd ${WRKSRC}/stage/lib && \
-		( for l in lib*.so.*; do ${LN} -sf $${l} $${l%.*}; done )
+		( for l in lib*.so.*; do ${LN} -sf $${l} $${l%.${PORTVERSION}}.5; done )
 
 do-install:
 	@cd ${WRKSRC} && \
-		${SETENT} ${MAKE_ENV} ${BJAM} ${BJAM_ARGS} install
+		${SETENT} ${MAKE_ENV} ${BJAM} --prefix=${STAGEDIR}${PREFIX} ${BJAM_ARGS} install
 # For some reasons BJAM forget about the links
-	@cd ${WRKSRC}/stage/ && ${FIND} lib -type l | ${PAX} -rw -p p ${PREFIX}
+	@cd ${WRKSRC}/stage/ && ${FIND} lib -type l | ${PAX} -rw -p p ${STAGEDIR}${PREFIX}
 
 # display pkg-message
 post-install:
@@ -57,9 +54,5 @@ post-install:
 		-e "s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|g" \
 		-e "s|%%PYTHON_LIBDIR%%|${PYTHON_LIBDIR}|g" \
 		-e "s|%%PYTHON_VERSION%%|${PYTHON_VERSION}|g" ${PKGMESSAGE}
-
-	@if [ -s ${PKGMESSAGE} ]; then \
-	${CAT} ${PKGMESSAGE}; \
-	fi
 
 .include <bsd.port.post.mk>
