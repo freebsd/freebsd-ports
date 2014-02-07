@@ -15,10 +15,9 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/Jimmac
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/lib/X11/icons/Jimmac/cursors
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/icons/Jimmac/cursors
 	cd ${WRKSRC}/jimmac/cursors \
-		&& ${INSTALL_DATA} * ${PREFIX}/lib/X11/icons/Jimmac/cursors
+		&& ${INSTALL_DATA} * ${STAGEDIR}${PREFIX}/lib/X11/icons/Jimmac/cursors
 
 .include <bsd.port.mk>
