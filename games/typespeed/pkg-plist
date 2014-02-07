@@ -1,11 +1,17 @@
+@group games
+@mode 2555
 bin/typespeed
+@mode
+@group
 bin/typespeed-hs-conv
 @unexec if cmp -s %D/etc/typespeedrc %D/etc/typespeedrc.dist; then rm -f %D/etc/typespeedrc; fi
 etc/typespeedrc.dist
 @exec [ -f %B/typespeedrc ] || cp %B/%f %B/typespeedrc
+man/man6/typespeed.6.gz
 %%NLS%%share/locale/de_DE/LC_MESSAGES/typespeed.mo
 %%NLS%%share/locale/fr_FR/LC_MESSAGES/typespeed.mo
 %%NLS%%share/locale/it/LC_MESSAGES/typespeed.mo
+%%DATADIR%%/typespeed.score.default
 %%DATADIR%%/words/words.csharp
 %%DATADIR%%/words/words.csharp_with_operators
 %%DATADIR%%/words/words.dos

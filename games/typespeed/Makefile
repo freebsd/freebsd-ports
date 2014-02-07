@@ -3,63 +3,62 @@
 
 PORTNAME=	typespeed
 PORTVERSION=	0.6.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Test your typing speed and get your fingers\' CPS
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-highscoredir="/var/games/typespeed"
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-SCOREPREFIX?=	/var/games
-SCOREDIR=	${SCOREPREFIX}/typespeed
-SCOREFILE=	typespeed.score
+USES=		ncurses
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-highscoredir="${SCOREDIR}"
 
 CFLAGS+=	-I${LOCALBASE}/include -DWITH_HIGHSCOREDIR=\"${SCOREDIR}\"  \
 		-DHIGHDIR=\"${SCOREDIR}\" -DHIGHSCOREDIR=\"${SCOREDIR}\"
 
 SUB_FILES=	pkg-install pkg-deinstall
-SUB_LIST=	SCOREDIR="${SCOREDIR}" SCOREFILE="${SCOREFILE}" WRKSRC="${WRKSRC}"
-MAN1=		typespeed.1
+SUB_LIST=	SCOREDIR="${SCOREDIR}" SCOREFILE="${SCOREFILE}"
 
-NO_STAGE=	yes
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+
+SCOREPREFIX?=	/var/games
+SCOREDIR=	${SCOREPREFIX}/typespeed
+SCOREFILE=	typespeed.score
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|\(/etc\)|${PREFIX}\1|' \
-		${WRKSRC}/src/pathnames.h
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|^\(CC =\).*|\1 @CC@|'
+	@${REINPLACE_CMD} -e \
+		's|\(/etc\)|${PREFIX}\1|' ${WRKSRC}/src/pathnames.h
 
 do-install:
-	${INSTALL_PROGRAM} -g games -m 2555 ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/convert ${PREFIX}/bin/${PORTNAME}-hs-conv
-	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.6 ${MANPREFIX}/man/man1/${MAN1}
-	${INSTALL_DATA} ${WRKSRC}/etc/typespeedrc ${PREFIX}/etc/typespeedrc.dist
-.if !exists(${PREFIX}/etc/typespeedrc)
-	${INSTALL_DATA} ${WRKSRC}/etc/typespeedrc ${PREFIX}/etc
-.endif
-	${MKDIR} ${DATADIR}
-	${MKDIR} ${DATADIR}/words
-	${FIND} ${WRKSRC}/words/ -name "words.*" -type f \
-		-exec ${INSTALL_DATA} {} ${DATADIR}/words \;
+	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} ${PORTNAME} \
+		${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} convert \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-hs-conv)
+	(cd ${WRKSRC}/man && ${INSTALL_MAN} ${PORTNAME}.6 \
+		${STAGEDIR}${MAN6PREFIX}/man/man6)
+	(cd ${WRKSRC}/etc && ${INSTALL_DATA} typespeedrc \
+		${STAGEDIR}${PREFIX}/etc/typespeedrc.dist)
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC}/src && ${INSTALL_DATA} ${SCOREFILE} \
+		${STAGEDIR}${DATADIR}/${SCOREFILE}.default)
+	@${MKDIR} ${STAGEDIR}${DATADIR}/words
+	(cd ${WRKSRC}/words && ${INSTALL_DATA} words.* \
+		${STAGEDIR}${DATADIR}/words)
 .if ${PORT_OPTIONS:MNLS}
 .for i in de_DE fr_FR it
-	${MKDIR} ${PREFIX}/share/locale/${i}/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/po/${i}.gmo \
-		${PREFIX}/share/locale/${i}/LC_MESSAGES/typespeed.mo
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/locale/${i}/LC_MESSAGES
+	(cd ${WRKSRC}/po && ${INSTALL_DATA} ${i}.gmo \
+		${STAGEDIR}${PREFIX}/share/locale/${i}/LC_MESSAGES/typespeed.mo)
 .endfor
 .endif
-
-post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
