@@ -11,7 +11,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-xdoc${EXTRACT_SUFX}
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	General-purpose multi-platform x86 and amd64 assembler
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USE_XZ=	yes
 GNU_CONFIGURE=	yes
