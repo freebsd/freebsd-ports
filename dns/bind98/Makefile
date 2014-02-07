@@ -79,7 +79,7 @@ RPZ_NSIP_CONFIGURE_ENABLE=	rpz-nsip
 
 RPZ_NSDNAME_CONFIGURE_ENABLE=	rpz-nsdname
 
-RPZRRL_PATCH_PATCHFILES=	rpz2+rl-9.8.6.patch:vix
+RPZRRL_PATCH_PATCHFILES=	rpz2+rl-9.8.7.patch:vix
 RPZRRL_PATCH_PATCH_SITES=	http://ss.vix.su/~vjs/:vix
 
 DLZ_POSTGRESQL_CONFIGURE_ON=	--with-dlz-postgres=yes
@@ -114,10 +114,6 @@ PKGINSTALL=${NONEXISTENT}
 CONFIGURE_ARGS+=	--enable-threads
 .else
 CONFIGURE_ARGS+=	--disable-threads
-.endif
-
-.if ${PORT_OPTIONS:MRPZRRL_PATCH}
-BROKEN=	waiting on an updated patch
 .endif
 
 .if ${PORT_OPTIONS:MGSSAPI}
