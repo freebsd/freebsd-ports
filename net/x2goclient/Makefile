@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	x2goclient
-PORTVERSION=	4.0.1.2
+PORTVERSION=	4.0.1.3
 CATEGORIES=	net
 MASTER_SITES=	http://code.x2go.org/releases/source/x2goclient/
 
@@ -18,9 +18,6 @@ LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client \
 RUN_DEPENDS=	nxproxy:${PORTSDIR}/net/nxproxy \
 		x2goclient-cli:${PORTSDIR}/net/x2goclient-cli
 
-OPTIONS_DEFINE=	LDAP DOCS
-OPTIONS_DEFAULT=LDAP
-
 USES=		qmake
 USE_XORG=	xpm
 USE_QT4=	gui network svg \
@@ -28,15 +25,13 @@ USE_QT4=	gui network svg \
 QMAKE_ARGS=	QMAKE_LRELEASE="${LRELEASE}"
 INSTALLS_ICONS=	yes
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=		DOCS LDAP
+OPTIONS_DEFAULT=	LDAP
 
-.if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	yes
-CFLAGS+=	-DUSELDAP
-QMAKE_ARGS+=	LIBS+="-lX11 -lXpm -lcups -lldap"
-.else
-QMAKE_ARGS+=	LIBS+="-lX11 -lXpm -lcups"
-.endif
+LDAP_USE=		OPENLDAP=yes
+LDAP_CFLAGS=		-DUSELDAP
+LDAP_QMAKE_ON=		LIBS+="-lX11 -lXpm -lcups -lldap"
+LDAP_QMAKE_OFF=		LIBS+="-lX11 -lXpm -lcups"
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.cpp" -or -name "*.h" | ${XARGS} \
