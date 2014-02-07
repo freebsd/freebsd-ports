@@ -89,6 +89,9 @@ lib/GraphicsMagick/config/type-ghostscript.mgk
 lib/GraphicsMagick/config/type-solaris.mgk
 lib/GraphicsMagick/config/type-windows.mgk
 lib/GraphicsMagick/config/type.mgk
+@exec mkdir -p %D/lib/GraphicsMagick/modules-Q%%Q%%
+@exec mkdir -p %D/lib/GraphicsMagick/modules-Q%%Q%%/coders
+@exec mkdir -p %D/lib/GraphicsMagick/modules-Q%%Q%%/filters
 lib/libGraphicsMagick++.a
 lib/libGraphicsMagick++.la
 lib/libGraphicsMagick++.so
@@ -289,7 +292,6 @@ man/man5/quantize.5.gz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%
-@dirrmtry libdata/pkgconfig
 @dirrm lib/GraphicsMagick/modules-Q%%Q%%/filters
 @dirrm lib/GraphicsMagick/modules-Q%%Q%%/coders
 @dirrm lib/GraphicsMagick/modules-Q%%Q%%
