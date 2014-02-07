@@ -9,10 +9,8 @@ USE_PYTHON=	yes
 OPTIONS_DEFINE=	VERBOSE_BUILD DEBUG OPTIMIZED_CFLAGS
 VERBOSE_BUILD_DESC=	Show compiler messages
 
-NO_STAGE=	yes
 .include "${.CURDIR}/../boost-all/common.mk"
 
-.include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/boost-all/compiled.mk"
 
 .if ${ARCH} == "sparc64"
@@ -24,7 +22,7 @@ MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
 		PYTHON_INCLUDES="${PYTHON_INCLUDEDIR}"\
 		PYTHON_LIB_PATH="${PYTHON_LIBDIR}"
 
-RUN_DEPENDS+=	${LOCALBASE}/lib/libboost_thread.so.${BOOST_SHARED_LIB_VER}:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS+=	libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
 BUILD_DEPENDS+=	${BJAM}:${PORTSDIR}/devel/boost-jam
 
@@ -33,13 +31,14 @@ do-build:
 # build the library
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${BJAM} ${BJAM_ARGS} --with-python stage
+# do not break compat yet
 	@cd ${WRKSRC}/stage/lib && \
-		( for l in lib*.so.*; do ${LN} -sf $${l} $${l%.*}; done )
+		( for l in lib*.so.*; do ${LN} -sf $${l} $${l%.${PORTVERSION}}.5; done )
 
 do-install:
-	@cd ${WRKSRC}/stage/lib && ${PAX} -rw -p p libboost* ${PREFIX}/lib
+	@cd ${WRKSRC}/stage/lib && ${PAX} -rw -p p libboost* ${STAGEDIR}${PREFIX}/lib
 # For some reasons BJAM forget about the links
-	@cd ${WRKSRC}/stage/ && ${FIND} lib -type l | ${PAX} -rw -p p ${PREFIX}
+	@cd ${WRKSRC}/stage/ && ${FIND} lib -type l | ${PAX} -rw -p p ${STAGEDIR}${PREFIX}
 
 post-install:
 # display pkg-message
@@ -53,8 +52,5 @@ post-install:
 		-e "s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|g" \
 		-e "s|%%PYTHON_LIBDIR%%|${PYTHON_LIBDIR}|g" \
 		-e "s|%%PYTHON_VERSION%%|${PYTHON_VERSION}|g" ${PKGMESSAGE}
-	@if [ -s ${PKGMESSAGE} ]; then \
-		${CAT} ${PKGMESSAGE}; \
-	fi
 
 .include <bsd.port.post.mk>
