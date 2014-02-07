@@ -2,25 +2,25 @@
 # $FreeBSD$
 
 PORTNAME=	luasec
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	security
-MASTER_SITES=	http://www.inf.puc-rio.br/~brunoos/luasec/download/
+MASTER_SITES=	https://github.com/brunoos/${PORTNAME}/archive/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Lua binding for the OpenSSL library to provide TLS/SSL communication
 
-RUN_DEPENDS+=	${LUA_MODLIBDIR}/socket/core.so:${PORTSDIR}/net/luasocket
+FETCH_ARGS=	-Fpr
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}
 
 ALL_TARGET=	bsd
-LIBDIR=		-L${LUA_LIBDIR}
-MAKE_ENV+=	INCDIR=-I${LUA_INCDIR} LUAPATH=${LUA_MODSHAREDIR} \
+LIBDIR=		-L${LUA_LIBDIR} -L${WRKSRC}/src/luasocket
+MAKE_ENV+=	INCDIR="-I${LUA_INCDIR} -I${WRKSRC}/src" LUAPATH=${LUA_MODSHAREDIR} \
 		CPATH=${LUA_MODLIBDIR}
 USE_LUA=	5.1
 WANT_LUA_VER=	5.1
 USE_OPENSSL=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # NOTE: OSVERSION is already defined here, and USE_OPENSSL_PORT
@@ -31,10 +31,12 @@ USE_OPENSSL_PORT=yes
 .endif
 
 post-patch:	.SILENT
-	${REINPLACE_CMD} -Ee '/^CC/s/=/?=/' \
-		-e '/^LD/s/gcc/$$(CC)/' \
-		-e '/^(C|LD)FLAGS/s/=/+=/' \
-		-e '/^BSD/{s/-O[0-3]?//;}' \
+	${REINPLACE_CMD} -Ee '/\(INSTALL\)/s/-D //' \
+		-e '/^LDFLAGS/s/\+=/=/' \
+		-e 's/LUAPATH/LUA_MODSHAREDIR/' \
+		-e 's/LUACPATH/LUA_MODLIBDIR/' \
 		${WRKSRC}/src/Makefile
+	${REINPLACE_CMD} -Ee '/^(INC|LIB)DIR/s/[^?]=/?=/' \
+		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
