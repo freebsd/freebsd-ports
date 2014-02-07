@@ -22,14 +22,10 @@ USE_PERL5=	configure
 
 USE_RC_SUBR+=	fcgi_spawn
 
-MAN3=		FCGI::Spawn.3 FCGI::Spawn::BinUtils.3
-MAN1=		fcgi_spawn.1
-
 OPTIONS_DEFINE=	MYSQL PGSQL
 MYSQL_DESC=	MySQL dependency to run on RC start
 PGSQL_DESC=	PgSQL dependency to run on RC start
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -48,10 +44,11 @@ SUB_LIST+=	PGSQL=
 
 post-install:
 	${ECHO} ${WITH_MYSQL} ${SUB_LIST}
-	@${MKDIR} ${PREFIX}/etc/fcgi_spawn
-	@${INSTALL_DATA} ${WRKSRC}/fcgi_spawn.conf.sample ${PREFIX}/etc/fcgi_spawn
-	@${MKDIR} ${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/fcgi_spawn
+	${INSTALL_DATA} ${WRKSRC}/fcgi_spawn.conf.sample \
+		${STAGEDIR}${PREFIX}/etc/fcgi_spawn
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/README \
+		${STAGEDIR}${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 .include <bsd.port.mk>
