@@ -1,5 +1,5 @@
---- doc/Makefile.sub.bak	Fri Jul 26 22:48:54 2002
-+++ doc/Makefile.sub	Thu Mar  6 12:49:07 2003
+--- doc/Makefile.sub.orig	2002-07-26 22:48:54.000000000 +0900
++++ doc/Makefile.sub	2014-02-07 13:42:25.000000000 +0900
 @@ -110,7 +110,7 @@
  	$(GROFF) -Tps -ms -mwww >$@
  
@@ -9,7 +9,7 @@
       $(PROCESSEDEXAMPLEFILES) $(make_html)
  
  html: $(HTMLDOCFILES) $(HTMLEXAMPLEFILES)
-@@ -133,18 +133,8 @@
+@@ -133,35 +133,25 @@
  
  distfiles: groff gnu.eps gnu.png
  
@@ -26,6 +26,33 @@
 -	    $(INSTALL_DATA) $$f $(infodir)/`basename $$f`; \
 -	  done
 -	$(INSTALL_INFO) --info-dir=$(infodir) $(infodir)/groff
- 	-test -d $(docdir) || $(mkinstalldirs) $(docdir)
+-	-test -d $(docdir) || $(mkinstalldirs) $(docdir)
++	-test -d $(DESTDIR)$(docdir) || $(mkinstalldirs) $(DESTDIR)$(docdir)
  	for f in $(DOCFILES); do \
- 	  rm -f $(docdir)/$$f; \
+-	  rm -f $(docdir)/$$f; \
+-	  $(INSTALL_DATA) $(srcdir)/$$f $(docdir)/$$f; \
++	  rm -f $(DESTDIR)$(docdir)/$$f; \
++	  $(INSTALL_DATA) $(srcdir)/$$f $(DESTDIR)$(docdir)/$$f; \
+ 	done
+ 	for f in $(PROCESSEDDOCFILES); do \
+-	  rm -f $(docdir)/$$f; \
+-	  $(INSTALL_DATA) $$f $(docdir)/$$f; \
++	  rm -f $(DESTDIR)$(docdir)/$$f; \
++	  $(INSTALL_DATA) $$f $(DESTDIR)$(docdir)/$$f; \
+ 	done
+-	-test -d $(exampledir) || $(mkinstalldirs) $(exampledir)
++	-test -d $(DESTDIR)$(exampledir) || $(mkinstalldirs) $(DESTDIR)$(exampledir)
+ 	for f in $(EXAMPLEFILES); do \
+-	  rm -f $(exampledir)/$$f; \
+-	  $(INSTALL_DATA) $(srcdir)/$$f $(exampledir)/$$f; \
++	  rm -f $(DESTDIR)$(exampledir)/$$f; \
++	  $(INSTALL_DATA) $(srcdir)/$$f $(DESTDIR)$(exampledir)/$$f; \
+ 	done
+ 	for f in $(PROCESSEDEXAMPLEFILES); do \
+-	  rm -f $(exampledir)/$$f; \
+-	  $(INSTALL_DATA) $$f $(exampledir)/$$f; \
++	  rm -f $(DESTDIR)$(exampledir)/$$f; \
++	  $(INSTALL_DATA) $$f $(DESTDIR)$(exampledir)/$$f; \
+ 	done
+ 
+ install_html: $(HTMLDOCFILES) $(HTMLEXAMPLEFILES)

@@ -1,0 +1,15 @@
+--- src/utils/afmtodit/Makefile.sub.orig	2014-02-07 14:04:11.000000000 +0900
++++ src/utils/afmtodit/Makefile.sub	2014-02-07 14:04:35.000000000 +0900
+@@ -15,9 +15,9 @@
+ 	chmod +x afmtodit
+ 
+ install_data: afmtodit
+-	-test -d $(bindir) || $(mkinstalldirs) $(bindir)
+-	-rm -f $(bindir)/afmtodit
+-	$(INSTALL_SCRIPT) afmtodit $(bindir)/afmtodit
++	-test -d $(DESTDIR)$(bindir) || $(mkinstalldirs) $(DESTDIR)$(bindir)
++	-rm -f $(DESTDIR)$(bindir)/afmtodit
++	$(INSTALL_SCRIPT) afmtodit $(DESTDIR)$(bindir)/afmtodit
+ 
+ uninstall_sub:
+ 	-rm -f $(bindir)/afmtodit

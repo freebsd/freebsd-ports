@@ -1,0 +1,15 @@
+--- src/roff/nroff/Makefile.sub.orig	2014-02-07 14:07:36.000000000 +0900
++++ src/roff//nroff/Makefile.sub	2014-02-07 14:07:55.000000000 +0900
+@@ -12,9 +12,9 @@
+ 	chmod +x $@
+ 
+ install_data: nroff
+-	-test -d $(bindir) || $(mkinstalldirs) $(bindir)
+-	-rm -f $(bindir)/$(NAMEPREFIX)nroff
+-	$(INSTALL_SCRIPT) nroff $(bindir)/$(NAMEPREFIX)nroff
++	-test -d $(DESTDIR)$(bindir) || $(mkinstalldirs) $(DESTDIR)$(bindir)
++	-rm -f $(DESTDIR)$(bindir)/$(NAMEPREFIX)nroff
++	$(INSTALL_SCRIPT) nroff $(DESTDIR)$(bindir)/$(NAMEPREFIX)nroff
+ 
+ uninstall_sub:
+ 	-rm -f $(bindir)/$(NAMEPREFIX)nroff
