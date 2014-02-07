@@ -4,7 +4,7 @@
 PORTNAME=	dnsmasq
 PORTVERSION=	2.69.0test6
 DISTVERSION=	2.69test6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/test-releases/
 PKGNAMESUFFIX=	-devel
