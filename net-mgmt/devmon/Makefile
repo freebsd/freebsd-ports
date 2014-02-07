@@ -14,7 +14,8 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	p5-SNMP_Session>0:${PORTSDIR}/net-mgmt/p5-SNMP_Session
 
-USES=		perl5
+USES=	perl5 shebangfix
+SHEBANG_FILES=	devmon
 NO_BUILD=	yes
 USE_RC_SUBR=	devmon
 
