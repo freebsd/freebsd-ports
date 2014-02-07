@@ -1,9 +1,0 @@
-bin/qtm
-man/man1/qtm.1.gz
-share/applications/qtm.desktop
-%%PORTDOCS%%%%DOCSDIR%%/Changelog
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README
-share/icons/qtm-logo1.png
-@dirrmtry share/icons
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
