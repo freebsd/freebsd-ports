@@ -1,0 +1,15 @@
+--- src/roff/grog/Makefile.sub.orig	2014-02-07 14:05:54.000000000 +0900
++++ src/roff/grog/Makefile.sub	2014-02-07 14:06:19.000000000 +0900
+@@ -24,9 +24,9 @@
+ 	chmod +x $@
+ 
+ install_data: grog
+-	-test -d $(bindir) || $(mkinstalldirs) $(bindir)
+-	-rm -f $(bindir)/grog
+-	$(INSTALL_SCRIPT) grog $(bindir)/grog
++	-test -d $(DESTDIR)$(bindir) || $(mkinstalldirs) $(DESTDIR)$(bindir)
++	-rm -f $(DESTDIR)$(bindir)/grog
++	$(INSTALL_SCRIPT) grog $(DESTDIR)$(bindir)/grog
+ 
+ uninstall_sub:
+ 	-rm -f $(bindir)/grog

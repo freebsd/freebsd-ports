@@ -1,0 +1,48 @@
+--- contrib/mm/Makefile.sub.orig	2002-05-22 15:26:12.000000000 +0900
++++ contrib/mm/Makefile.sub	2014-02-07 14:34:13.000000000 +0900
+@@ -17,31 +17,31 @@
+ install: install_mm
+ 
+ install_mm: install_mmroff install_m
+-	-test -d $(tmacdir)/mm || $(mkinstalldirs) $(tmacdir)/mm
++	-test -d $(DESTDIR)$(tmacdir)/mm || $(mkinstalldirs) $(DESTDIR)$(tmacdir)/mm
+ 	-for f in $(FILES); do \
+-		rm -f $(tmacdir)/mm/$$f; \
+-		$(INSTALL_DATA) $(srcdir)/mm/$$f $(tmacdir)/mm/$$f; \
++		rm -f $(DESTDIR)$(tmacdir)/mm/$$f; \
++		$(INSTALL_DATA) $(srcdir)/mm/$$f $(DESTDIR)$(tmacdir)/mm/$$f; \
+ 	done
+ 	-for f in $(LOCALE); do \
+-		test -f $(tmacdir)/mm/$$f || touch $(tmacdir)/mm/$$f; \
++		test -f $(DESTDIR)$(tmacdir)/mm/$$f || touch $(DESTDIR)$(tmacdir)/mm/$$f; \
+ 	done
+ 
+ install_m:
+-	-test -d $(tmacdir) || $(mkinstalldirs) $(tmacdir)
+-	-rm -f $(tmacdir)/tmac.$(tmac_m_prefix)m
+-	-rm -f $(tmacdir)/$(tmac_m_prefix)m.tmac
+-	$(INSTALL_DATA) $(srcdir)/m.tmac $(tmacdir)/$(tmac_m_prefix)m.tmac
++	-test -d $(DESTDIR)$(tmacdir) || $(mkinstalldirs) $(DESTDIR)$(tmacdir)
++	-rm -f $(DESTDIR)$(tmacdir)/tmac.$(tmac_m_prefix)m
++	-rm -f $(DESTDIR)$(tmacdir)/$(tmac_m_prefix)m.tmac
++	$(INSTALL_DATA) $(srcdir)/m.tmac $(DESTDIR)$(tmacdir)/$(tmac_m_prefix)m.tmac
+ 	@sed -e "s;^.mso m.tmac;.mso $(tmac_m_prefix)m.tmac;g" \
+-		$(srcdir)/mse.tmac > $(tmacdir)/$(tmac_m_prefix)mse.tmac
++		$(srcdir)/mse.tmac > $(DESTDIR)$(tmacdir)/$(tmac_m_prefix)mse.tmac
+ 	@sed -e "s;^.mso mse.tmac;.mso $(tmac_m_prefix)mse.tmac;g" \
+-		$(srcdir)/mmse.tmac > $(tmacdir)/$(tmac_m_prefix)mmse.tmac
++		$(srcdir)/mmse.tmac > $(DESTDIR)$(tmacdir)/$(tmac_m_prefix)mmse.tmac
+ 	@sed -e "s;^.mso m.tmac;.mso $(tmac_m_prefix)m.tmac;g" \
+-		$(srcdir)/mm.tmac > $(tmacdir)/$(tmac_m_prefix)mm.tmac
++		$(srcdir)/mm.tmac > $(DESTDIR)$(tmacdir)/$(tmac_m_prefix)mm.tmac
+ 
+ install_mmroff: mmroff
+-	-test -d $(bindir) || $(mkinstalldirs) $(bindir)
+-	-rm -f $(bindir)/mmroff
+-	$(INSTALL_SCRIPT) mmroff $(bindir)/mmroff
++	-test -d $(DESTDIR)$(bindir) || $(mkinstalldirs) $(DESTDIR)$(bindir)
++	-rm -f $(DESTDIR)$(bindir)/mmroff
++	$(INSTALL_SCRIPT) mmroff $(DESTDIR)$(bindir)/mmroff
+ 
+ mmroff: mmroff.pl
+ 	-rm -f $@
