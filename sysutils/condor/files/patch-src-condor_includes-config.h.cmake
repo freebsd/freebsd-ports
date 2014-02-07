@@ -1,5 +1,5 @@
---- src/condor_includes/config.h.cmake.orig	2012-01-17 10:53:14.000000000 -0600
-+++ src/condor_includes/config.h.cmake	2012-04-07 14:37:17.000000000 -0500
+--- src/condor_includes/config.h.cmake.orig	2013-09-19 15:12:10.000000000 -0500
++++ src/condor_includes/config.h.cmake	2013-10-20 12:04:52.000000000 -0500
 @@ -47,6 +47,8 @@
  #cmakedefine CONDOR_FREEBSD7
  ///* Define if on FreeBSD 8 */

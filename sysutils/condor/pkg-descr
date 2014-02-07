@@ -1,6 +1,6 @@
 Condor is a open-source, specialized workload management system for
 compute-intensive jobs. Like other full-featured batch systems, Condor
-provides a job queueing mechanism, scheduling policy, priority scheme,
+provides a job queuing mechanism, scheduling policy, priority scheme,
 resource monitoring, and resource management. Users submit their serial
 or parallel jobs to Condor, Condor places them into a queue, chooses
 when and where to run the jobs based upon a policy, carefully monitors
