@@ -7,44 +7,41 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	http://www.alhem.net/project/minder/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A small network application for automatic maintenance of peer lists
+COMMENT=	Small network application for automatic maintenance of peer lists
 
-BROKEN=		Fails to link
+LICENSE=	GPLv2 # (or later)
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libSockets.a:${PORTSDIR}/net/Sockets
+LIB_DEPENDS=	libSockets.so:${PORTSDIR}/net/Sockets
 
-USE_GMAKE=	yes
+USES=		gmake pkgconfig
+USE_GNOME=	libxml2
 USE_OPENSSL=	yes
-WITH_OPENSSL_BASE=	yes
 
-# ssl support
-CFLAGS+=	${PTHREAD_CFLAGS} -DHAVE_OPENSSL
+CFLAGS+=	-DHAVE_OPENSSL
+CPPFLAGS+=	$$(pkg-config --cflags libxml-2.0) \
+		-I${LOCALBASE}/include/Sockets -I${LOCALBASE}/include
+LDFLAGS+=	$$(pkg-config --libs libxml-2.0) \
+		-L${LOCALBASE}/lib
 
-PLIST_DIRS=	\
-		%%EXAMPLESDIR%%
-PLIST_FILES=	\
-		%%EXAMPLESDIR%%/minder.cfg \
-		bin/${PORTNAME}
+PORTEXAMPLES=	minder.cfg
+PLIST_FILES=	bin/minder
 
-NO_STAGE=	yes
 post-patch:
-# CXX safeness
-# CXXFLAGS safeness
-# SSL include safeness
-	@${REINPLACE_CMD} -E \
-		-e 's|-O2||' \
-		-e 's|g\+\+|${CXX}|' \
-		-e 's|^INCLUDE.+$$|INCLUDE=-I${OPENSSLINC} -I${LOCALBASE}/include/Sockets|' \
-		-e 's|^LIBS.+$$|LIBS=-L${OPENSSLLIB} ${PTHREAD_LIBS} -L${LOCALBASE}/lib \\|' \
-		${BUILD_WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} -E \
-		-e 's|\(__sighandler_t\)||' \
-		${WRKSRC}/minder.cpp
+	@${REINPLACE_CMD} -e \
+		's|^CFLAGS|#CFLAGS| ; \
+		 s|^CPPFLAGS =|CPPFLAGS +=| ; \
+		 s|-L/usr/local/lib|$$(LDFLAGS)| ; \
+		 s|-luuid|| ; \
+		 s|-lpthread|-pthread| ; \
+		 s|g++|$$(CXX)|' ${BUILD_WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e \
+		's|(__sighandler_t)||' ${WRKSRC}/minder.cpp
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${FILESDIR}/minder.cfg.sample \
-		${EXAMPLESDIR}/minder.cfg
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} minder \
+		${STAGEDIR}${PREFIX}/bin)
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${FILESDIR} && ${INSTALL_DATA} minder.cfg.sample \
+		${STAGEDIR}${EXAMPLESDIR}/minder.cfg)
 
 .include <bsd.port.mk>
