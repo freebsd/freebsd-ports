@@ -1,6 +1,6 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/libpeas/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/trunk/devel/libpeas/Makefile 19001 2014-02-07 11:57:24Z kwm $
 
 PORTNAME=	libpeas
 PORTVERSION=	1.6.1
@@ -16,12 +16,13 @@ BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 USE_XZ=		yes
 USE_PYTHON=	2.5+
 USE_LDCONFIG=	yes
-USES=		gettext gmake pathfix pkgconfig
-USE_GNOME=	gtk30 ltverhack introspection:build
+USES=		gettext gmake libtool pathfix pkgconfig
+USE_GNOME=	gtk30 introspection:build
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS+=--disable-glade-catalog
 
 OPTIONS_DEFINE=	PYTHON JS
@@ -63,10 +64,5 @@ PLIST_SUB+=	GJS="@comment "
 .endif
 
 PLIST_SUB+=	VALA="@comment "
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so*
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpeas-1.0/loaders/lib*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/peas-demo/plugins/*/*.so
 
 .include <bsd.port.mk>

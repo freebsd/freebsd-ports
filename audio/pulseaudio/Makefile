@@ -26,12 +26,12 @@ LIB_DEPENDS=	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 		libck-connector.so:${PORTSDIR}/sysutils/consolekit
 
 USE_XZ=		yes
-USE_GNOME=	glib20 intltool ltverhack gnomehier
+USE_GNOME=	glib20 intltool gnomehier
 USE_XORG=	x11 sm xtst ice
 USE_LDCONFIG=	yes
-USES=		gettext gmake pathfix pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	libltdl libtool
+USE_AUTOTOOLS=	libltdl
 MAKE_JOBS_UNSAFE=yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}" \
@@ -41,6 +41,7 @@ CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		ac_cv_header_linux_input_h=""
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-database=simple \
@@ -122,8 +123,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/${ii} \
 		${STAGEDIR}${PREFIX}/etc/pulse/${ii}-dist
 .endfor
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pulseaudio/libpulse*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpulse*.so*
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/pulse-${PORTVERSION}/modules/*.so
 
 .include <bsd.port.post.mk>

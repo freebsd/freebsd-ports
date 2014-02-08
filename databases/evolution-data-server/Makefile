@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/databases/evolution-data-server/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/trunk/databases/evolution-data-server/Makefile 19001 2014-02-07 11:57:24Z kwm $
 
 PORTNAME=	evolution-data-server
 PORTVERSION=	3.6.4
@@ -26,12 +26,12 @@ LIB_DEPENDS=	libsoup-gnome-2.4.so:${PORTSDIR}/devel/libsoup-gnome \
 		libgnome-keyring.so:${PORTSDIR}/security/libgnome-keyring
 
 USE_XZ=		yes
-USES=		bison gettext gmake pathfix pkgconfig
-USE_GNOME=	gnomeprefix intlhack ltverhack ltasneededhack gconf2 \
+USES=		bison gettext gmake libtool pathfix pkgconfig
+USE_GNOME=	gnomeprefix intlhack gconf2 \
 		libxml2 gtk30 introspection:build
 USE_OPENLDAP=	yes
 USE_SQLITE=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USE_BDB=	5
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-static \
@@ -39,6 +39,7 @@ CONFIGURE_ARGS=	--enable-static \
 		--with-libdb=${LOCALBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.Evolution.DefaultSources.gschema.xml \
 		org.gnome.evolution.eds-shell.gschema.xml \
@@ -81,10 +82,5 @@ post-patch:
 		s|-Wl,--no-undefined||g ; \
 		s|-Wmissing-include-dirs||g' \
 			${WRKSRC}/configure
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/evolution-data-server/*/*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libe*.so.*
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcamel-1.2.so.40
 
 .include <bsd.port.mk>

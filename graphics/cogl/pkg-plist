@@ -69,14 +69,14 @@ include/cogl/cogl/gl-prototypes/cogl-in-gles-core-functions.h
 include/cogl/cogl/gl-prototypes/cogl-in-gles2-core-functions.h
 lib/girepository-1.0/Cogl-1.0.typelib
 lib/girepository-1.0/CoglPango-1.0.typelib
-lib/libcogl-pango.a
 lib/libcogl-pango.la
 lib/libcogl-pango.so
 lib/libcogl-pango.so.0
-lib/libcogl.a
+lib/libcogl-pango.so.0.0.0
 lib/libcogl.la
 lib/libcogl.so
-lib/libcogl.so.0
+lib/libcogl.so.11
+lib/libcogl.so.11.0.3
 libdata/pkgconfig/cogl-1.0.pc
 libdata/pkgconfig/cogl-2.0-experimental.pc
 libdata/pkgconfig/cogl-gl-1.0.pc

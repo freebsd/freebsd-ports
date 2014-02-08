@@ -1,6 +1,6 @@
 # Created by: Vanilla I. Shu <vanilla@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/glib20/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/trunk/devel/glib20/Makefile 18994 2014-02-03 21:20:14Z kwm $
 
 PORTNAME=	glib
 PORTVERSION=	2.38.2
@@ -22,13 +22,11 @@ PORTSCOUT=	limitw:1,even
 LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
 		libffi.so:${PORTSDIR}/devel/libffi
 
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USES=		gettext gmake iconv pathfix perl5 pkgconfig shebangfix
-USE_GNOME=	ltverhack
+USES=		gettext gmake iconv libtool pathfix perl5 pkgconfig shebangfix
 USE_PYTHON=	yes
-CONFIGURE_ARGS=	--enable-static \
-		--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
+CONFIGURE_ARGS=	--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc \
 		--disable-man --without-xml-catalog \
 		--with-pcre=system \
 		--disable-fam
@@ -37,6 +35,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 SHEBANG_FILES=	*/*.pl glib/gen-iswide-table.py
+
+LIBVERSION=	0.3800.2
+PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 OPTIONS_DEFINE=	COLLATION_FIX DEBUG GDB
 COLLATION_FIX_DESC=	fix string collation
@@ -111,6 +112,7 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/GConf/gsettings
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib*.so.${LIBVERSION}
 
 .include <bsd.port.post.mk>
 

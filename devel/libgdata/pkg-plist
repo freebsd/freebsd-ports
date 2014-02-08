@@ -92,6 +92,7 @@ lib/libgdata.a
 lib/libgdata.la
 lib/libgdata.so
 lib/libgdata.so.13
+lib/libgdata.so.13.5.2
 libdata/pkgconfig/libgdata.pc
 share/doc/gdata/GDataAPPCategories.html
 share/doc/gdata/GDataAccessHandler.html
@@ -291,6 +292,8 @@ share/locale/vi/LC_MESSAGES/gdata.mo
 share/locale/zh_CN/LC_MESSAGES/gdata.mo
 share/locale/zh_HK/LC_MESSAGES/gdata.mo
 share/locale/zh_TW/LC_MESSAGES/gdata.mo
+share/vala/vapi/libgdata.deps
+share/vala/vapi/libgdata.vapi
 @dirrmtry share/locale/zh_TW/LC_MESSAGES
 @dirrmtry share/locale/zh_TW
 @dirrmtry share/locale/zh_HK/LC_MESSAGES

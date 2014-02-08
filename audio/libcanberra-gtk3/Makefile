@@ -25,7 +25,7 @@ do-build:
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libcanberra-gtk3.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/
-.for i in .a .so .so.0
+.for i in .so .so.0 .so.0.1.8
 	${INSTALL_LIB} ${WRKSRC}/src/.libs/libcanberra-gtk3${i} \
 		${STAGEDIR}${PREFIX}/lib/
 .endfor

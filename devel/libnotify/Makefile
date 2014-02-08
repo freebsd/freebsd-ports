@@ -1,6 +1,6 @@
 # Created by: Andreas Kohn <andreas@syndrom23.de>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/libnotify/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/trunk/devel/libnotify/Makefile 19001 2014-02-07 11:57:24Z kwm $
 
 PORTNAME=	libnotify
 PORTVERSION=	0.7.5
@@ -14,14 +14,12 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_XZ=		yes
-USE_GNOME=	intlhack glib20 gdkpixbuf2 ltverhack introspection
-USES=		gettext gmake pathfix pkgconfig
+USE_GNOME=	intlhack glib20 gdkpixbuf2 introspection
+USES=		gettext gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libnotify.so.4
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>

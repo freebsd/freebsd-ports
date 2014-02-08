@@ -1,10 +1,10 @@
 include/libsoup-gnome-%%VERSION%%/libsoup/soup-cookie-jar-sqlite.h
 include/libsoup-gnome-%%VERSION%%/libsoup/soup-gnome-features.h
 include/libsoup-gnome-%%VERSION%%/libsoup/soup-gnome.h
-lib/libsoup-gnome-%%VERSION%%.a
 lib/libsoup-gnome-%%VERSION%%.la
 lib/libsoup-gnome-%%VERSION%%.so
 lib/libsoup-gnome-%%VERSION%%.so.1
+lib/libsoup-gnome-%%VERSION%%.so.%%LIBVERSION%%
 libdata/pkgconfig/libsoup-gnome-%%VERSION%%.pc
 @dirrm include/libsoup-gnome-%%VERSION%%/libsoup
 @dirrm include/libsoup-gnome-%%VERSION%%

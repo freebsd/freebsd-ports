@@ -4,7 +4,7 @@
 # Please keep gtk30 and x11-themes/gnome-themes-standard minor version in sync
 
 PORTNAME=	gtk
-PORTVERSION=	3.10.6
+PORTVERSION=	3.10.7
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
@@ -32,16 +32,17 @@ RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hico
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	atk pango gdkpixbuf2 ltverhack gtk-update-icon-cache \
+USE_GNOME=	atk pango gdkpixbuf2 gtk-update-icon-cache \
 		introspection:build
-USES=		gettext gmake pathfix perl5 pkgconfig
+USES=		gettext gmake libtool pathfix perl5 pkgconfig
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite
 CONFIGURE_ARGS=	--enable-gtk2-dependency --disable-packagekit
 CPPFLAGS+=	-I${LOCALBASE}/include -fno-omit-frame-pointer
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	INTROSPECTION_GIRDIR=`pkg-config --variable=girdir gobject-introspection-1.0`
-ltverhack_PATCH_FILES=build-aux/ltmain.sh
+
+LIBVERSION=	0.1000.7
+PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 GLIB_SCHEMAS=	org.gtk.Demo.gschema.xml \
 		org.gtk.Settings.ColorChooser.gschema.xml \
@@ -50,29 +51,16 @@ GLIB_SCHEMAS=	org.gtk.Demo.gschema.xml \
 
 OPTIONS_DEFINE=	CUPS COLORD DEBUG
 OPTIONS_DEFAULT=CUPS COLORD
+OPTIONS_SUB=	yes
 COLORD_DESC=	Color profile support
+COLORD_LIB_DEPENDS=	libcolord.so:${PORTSDIR}/graphics/colord
+COLORD_CONFIGURE_ENABLE=colord
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_CONFIGURE_ENABLE=	cups
+DEBUG_CONFIGURE_ENABLE=debug
 
+# needed for the exists() check, booo
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
-CONFIGURE_ARGS+=--enable-cups=auto
-PLIST_SUB+=	CUPS=""
-.else
-CONFIGURE_ARGS+=--disable-cups
-PLIST_SUB+=	CUPS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=	--enable-debug=yes
-.endif
-
-.if ${PORT_OPTIONS:MCOLORD}
-LIB_DEPENDS+=	libcolord.so:${PORTSDIR}/graphics/colord
-CONFIGURE_ARGS+=--enable-colord
-.else
-CONFIGURE_ARGS+=--disable-colord
-.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${GREP} -l lgmodule | \

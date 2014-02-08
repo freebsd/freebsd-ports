@@ -1,6 +1,6 @@
 # Created by: Alexander Logvinov <avl@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/gobject-introspection/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/trunk/devel/gobject-introspection/Makefile 19001 2014-02-07 11:57:24Z kwm $
 
 PORTNAME=	gobject-introspection
 PORTVERSION=	1.36.0
@@ -16,15 +16,16 @@ COMMENT=	Generate interface introspection data for GObject libraries
 BUILD_DEPENDS=	cairo-trace:${PORTSDIR}/graphics/cairo
 LIB_DEPENDS=	libffi.so:${PORTSDIR}/devel/libffi
 
-USES=		bison gettext gmake pathfix pkgconfig
+USES=		bison gettext gmake libtool pathfix pkgconfig
 USE_XZ=		yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehier glib20 ltverhack
+USE_GNOME=	gnomehier glib20
 USE_PYTHON=	-2.7
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 # Force it to put the .cache in ${WRKSRC} instead of ~/.cache. ports/143260
 MAKE_ENV=	HOME=${WRKDIR}
@@ -32,9 +33,5 @@ MAKE_ENV=	HOME=${WRKDIR}
 post-patch:
 	@${REINPLACE_CMD} -e 's|'gcc'|'cc'|g' \
 		${WRKSRC}/giscanner/dumper.py
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgirepository-1.0.so.1
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gobject-introspection/giscanner/_giscanner.so
 
 .include <bsd.port.mk>

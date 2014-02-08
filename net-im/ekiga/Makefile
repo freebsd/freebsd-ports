@@ -4,7 +4,6 @@
 
 PORTNAME=	ekiga
 PORTVERSION=	4.0.1
-PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -165,9 +164,5 @@ USE_GNOME+=	gnomedocutils
 CONFIGURE_ARGS+=--disable-gdu
 PLIST_SUB+=	GNOMEHELP="@comment "
 .endif
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ekiga/${PORTVERSION}/libekiga.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ekiga/${PORTVERSION}/plugins/*.so
 
 .include <bsd.port.mk>

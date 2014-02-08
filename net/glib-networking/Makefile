@@ -1,9 +1,9 @@
 # Created by: Koop Mast <kwm@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/net/glib-networking/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/trunk/net/glib-networking/Makefile 18995 2014-02-03 21:25:32Z kwm $
 
 PORTNAME=	glib-networking
-PORTVERSION=	2.36.2
+PORTVERSION=	2.38.2
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2

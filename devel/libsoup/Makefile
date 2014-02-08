@@ -1,9 +1,9 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/devel/libsoup/Makefile 18964 2013-12-19 13:32:54Z kwm $
+#   $MCom: ports/trunk/devel/libsoup/Makefile 18998 2014-02-03 22:31:21Z kwm $
 
 PORTNAME=	libsoup
-PORTVERSION=	2.42.2
+PORTVERSION=	2.42.3.1
 PORTREVISION?=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
@@ -20,8 +20,8 @@ USE_XZ=		yes
 
 .if !defined(REFERENCE_PORT)
 
-USES=		gettext gmake pathfix pkgconfig
-USE_GNOME=	gnomehier glib20 libxml2 ltverhack referencehack intltool
+USES=		gettext gmake libtool pathfix pkgconfig
+USE_GNOME=	gnomehier glib20 libxml2 referencehack intltool
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -30,7 +30,8 @@ CONFIGURE_ARGS=	--disable-more-warnings
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_SUB=	VERSION="2.4"
+LIBVERSION=	1.6.0
+PLIST_SUB=	VERSION="2.4" LIBVERSION=${LIBVERSION}
 
 .if defined(SOUP_SLAVE)
 USE_SQLITE=	yes
@@ -53,10 +54,10 @@ do-build:
 	cd ${WRKSRC}/libsoup && ${GMAKE} libsoup-gnome-2.4.la
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.a ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_DATA} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.la ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_PROGRAM} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.so ${STAGEDIR}${PREFIX}/lib/
 	${INSTALL_PROGRAM} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.so.1 ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_PROGRAM} ${WRKSRC}/libsoup/.libs/libsoup-gnome-2.4.so.${LIBVERSION} ${STAGEDIR}${PREFIX}/lib/
 	cd ${WRKSRC}/libsoup && DESTDIR=${STAGEDIR} ${GMAKE} install-libsoupgnomeincludeHEADERS
 .endif
 

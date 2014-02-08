@@ -24,16 +24,17 @@ USE_XZ=		yes
 LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib \
 		libpolkit-gobject-1.so:${PORTSDIR}/sysutils/polkit
 
-USES=		gettext gmake pathfix pkgconfig
-USE_GNOME=	gnomehier orbit2 gtk20 libxml2 ltverhack \
+USES=		gettext gmake libtool pathfix pkgconfig
+USE_GNOME=	gnomehier orbit2 gtk20 libxml2 \
 		referencehack intlhack dconf introspection:build
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--with-gtk=2.0 \
 		--disable-gtk-doc
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	LDAP
 
@@ -47,11 +48,6 @@ PLIST_SUB+=	LDAP=""
 CONFIGURE_ARGS+=--without-openldap
 PLIST_SUB+=	LDAP="@comment "
 .endif
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/GConf/2/libgconfbackend-*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgconf-2.so.4
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gio/modules/libgsettingsgconfbackend.so
 
 .include <bsd.port.mk>
 

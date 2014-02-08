@@ -1,6 +1,6 @@
 # Created by: Joe Marcus Clarke <marcus@FreeBSD.org>
 # $FreeBSD$
-#   $MCom: ports/trunk/audio/libcanberra/Makefile 18965 2013-12-20 11:02:42Z kwm $
+#   $MCom: ports/trunk/audio/libcanberra/Makefile 19002 2014-02-07 17:13:44Z kwm $
 
 PORTNAME=	libcanberra
 PORTVERSION=	0.28
@@ -16,13 +16,15 @@ LICENSE_FILE=	${WRKSRC}/LGPL
 
 LIB_DEPENDS=	libvorbisfile.so:${PORTSDIR}/audio/libvorbis
 
-USES=		gmake pathfix pkgconfig
-USE_GNOME=	gnomeprefix gnomehier gtk20 ltverhack gconf2
+USES=		gmake libtool pathfix pkgconfig
+USE_GNOME=	gnomeprefix gnomehier gtk20 gconf2
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool libltdl
+GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libltdl
 CONFIGURE_ARGS=	--disable-lynx --disable-tdb --disable-alsa
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 .if !defined(SLAVEPORT)
 GCONF_SCHEMAS=	libcanberra.schemas
@@ -63,10 +65,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
 	    	${WRKSRC}/configure
 
-.if !defined(SLAVEPORT)
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcanberra*.so.0
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcanberra-0.28/libcanberra-*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gtk-2.0/modules/libcanberra-gtk-module.so
-.endif
 .include <bsd.port.mk>

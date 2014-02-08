@@ -377,12 +377,15 @@ lib/gtk-3.0/%%GTK3_VERSION%%/printbackends/libprintbackend-lpr.so
 lib/libgailutil-3.la
 lib/libgailutil-3.so
 lib/libgailutil-3.so.0
+lib/libgailutil-3.so.0.0.0
 lib/libgdk-3.la
 lib/libgdk-3.so
 lib/libgdk-3.so.0
+lib/libgdk-3.so.%%LIBVERSION%%
 lib/libgtk-3.la
 lib/libgtk-3.so
 lib/libgtk-3.so.0
+lib/libgtk-3.so.%%LIBVERSION%%
 libdata/pkgconfig/gail-3.0.pc
 libdata/pkgconfig/gdk-3.0.pc
 libdata/pkgconfig/gdk-x11-3.0.pc

@@ -1,6 +1,6 @@
 # Created by: Yukihiro Nakai <Nakai@technologist.com>
 # $FreeBSD$
-#    $MCom: ports/trunk/textproc/libxml2/Makefile 18920 2013-11-24 09:21:11Z kwm $
+#    $MCom: ports/trunk/textproc/libxml2/Makefile 18999 2014-02-04 18:55:27Z kwm $
 
 PORTNAME=	libxml2
 PORTVERSION=	2.9.1
@@ -17,8 +17,7 @@ COMMENT?=	XML parser library for GNOME
 .if !defined(REFERENCE_PORT)
 
 GNU_CONFIGURE=	yes
-USES=		gmake iconv pathfix pkgconfig shebangfix
-USE_GNOME+=	ltverhack
+USES=		gmake iconv libtool pathfix pkgconfig shebangfix
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS?=--with-iconv=${ICONVBASE} \
 		--with-html-dir=${PREFIX}/share/doc \
@@ -27,37 +26,23 @@ CONFIGURE_ARGS?=--with-iconv=${ICONVBASE} \
 		--without-python
 SHEBANG_FILES=	*.py */*.py */*/*.py
 
+PLIST_SUB+=	LIBVERSION=${PORTVERSION}
+
 .if !defined(MASTERDIR)
 
 OPTIONS_DEFINE= SCHEMA THREADS MEM_DEBUG XMLLINT_HIST THREAD_ALLOC
 OPTIONS_DEFAULT=SCHEMA THREADS
 SCHEMA_DESC=	XML schema support
+SCHEMA_CONFIGURE_WITH=schemas
 THREADS_DESC=	Threads support
+THREADS_CONFIGURE_WITH=threads
 MEM_DEBUG_DESC= Memory debugging (DEVELOPERS ONLY!)
+MEM_DEBUG_CONFIGURE_WITH=mem-debug
 XMLLINT_HIST_DESC= History for xmllint
+XMLLINT_HIST_CONFIGURE_WITH=history
 THREAD_ALLOC_DESC= Per-thread memory (DEVELOPERS ONLY!)
+THREAD_ALLOC_CONFIGURE_WITH=thread-alloc
 
-.include <bsd.port.options.mk>
-
-.if ! ${PORT_OPTIONS:MSCHEMA}
-CONFIGURE_ARGS+=	--without-schemas
-.endif
-
-.if ! ${PORT_OPTIONS:MTHREADS}
-CONFIGURE_ARGS+=	--without-threads
-.endif
-
-.if ${PORT_OPTIONS:MMEM_DEBUG}
-CONFIGURE_ARGS+=	--with-mem-debug
-.endif
-
-.if ${PORT_OPTIONS:MXMLLINT_HIST}
-CONFIGURE_ARGS+=	--with-history
-.endif
-
-.if ${PORT_OPTIONS:MTHREAD_ALLOC}
-CONFIGURE_ARGS+=	--with-thread-alloc
-.endif
 .endif # !defined(MASTERDIR)
 
 post-patch:

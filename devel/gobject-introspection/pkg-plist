@@ -156,6 +156,7 @@ lib/libgirepository-1.0.a
 lib/libgirepository-1.0.la
 lib/libgirepository-1.0.so
 lib/libgirepository-1.0.so.1
+lib/libgirepository-1.0.so.1.0.0
 libdata/pkgconfig/gobject-introspection-1.0.pc
 libdata/pkgconfig/gobject-introspection-no-export-1.0.pc
 man/man1/g-ir-compiler.1.gz

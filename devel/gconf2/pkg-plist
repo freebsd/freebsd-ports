@@ -32,6 +32,7 @@ lib/libgconf-2.a
 lib/libgconf-2.la
 lib/libgconf-2.so
 lib/libgconf-2.so.4
+lib/libgconf-2.so.4.1.5
 libdata/pkgconfig/gconf-2.0.pc
 libexec/gconf-defaults-mechanism
 libexec/gconfd-2

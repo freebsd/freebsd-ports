@@ -52,6 +52,7 @@ lib/libxml2.a
 lib/libxml2.la
 lib/libxml2.so
 lib/libxml2.so.2
+lib/libxml2.so.%%LIBVERSION%%
 lib/xml2Conf.sh
 libdata/pkgconfig/libxml-2.0.pc
 share/aclocal/libxml.m4

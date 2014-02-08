@@ -16,6 +16,7 @@ lib/girepository-1.0/PeasGtk-1.0.typelib
 lib/libpeas-1.0.la
 lib/libpeas-1.0.so
 lib/libpeas-1.0.so.0
+lib/libpeas-1.0.so.0.600.1
 %%GJS%%lib/libpeas-1.0/loaders/libgjsloader.la
 %%GJS%%lib/libpeas-1.0/loaders/libgjsloader.so
 %%PYTHONS%%lib/libpeas-1.0/loaders/libpythonloader.la
@@ -25,6 +26,7 @@ lib/libpeas-1.0.so.0
 lib/libpeas-gtk-1.0.la
 lib/libpeas-gtk-1.0.so
 lib/libpeas-gtk-1.0.so.0
+lib/libpeas-gtk-1.0.so.0.600.1
 %%GJS%%lib/peas-demo/plugins/gjshello/gjshello.js
 %%GJS%%lib/peas-demo/plugins/gjshello/gjshello.plugin
 lib/peas-demo/plugins/helloworld/helloworld.plugin

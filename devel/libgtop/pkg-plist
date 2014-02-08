@@ -51,6 +51,7 @@ lib/libgtop-2.0.a
 lib/libgtop-2.0.la
 lib/libgtop-2.0.so
 lib/libgtop-2.0.so.7
+lib/libgtop-2.0.so.7.2.0
 libdata/pkgconfig/libgtop-2.0.pc
 %%DOCSDIR%%/home.png
 %%DOCSDIR%%/index.html
@@ -126,6 +127,7 @@ share/locale/eu/LC_MESSAGES/libgtop-2.0.mo
 share/locale/fa/LC_MESSAGES/libgtop-2.0.mo
 share/locale/fi/LC_MESSAGES/libgtop-2.0.mo
 share/locale/fr/LC_MESSAGES/libgtop-2.0.mo
+share/locale/fur/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ga/LC_MESSAGES/libgtop-2.0.mo
 share/locale/gl/LC_MESSAGES/libgtop-2.0.mo
 share/locale/gu/LC_MESSAGES/libgtop-2.0.mo
@@ -173,6 +175,7 @@ share/locale/sr@latin/LC_MESSAGES/libgtop-2.0.mo
 share/locale/sv/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ta/LC_MESSAGES/libgtop-2.0.mo
 share/locale/te/LC_MESSAGES/libgtop-2.0.mo
+share/locale/tg/LC_MESSAGES/libgtop-2.0.mo
 share/locale/th/LC_MESSAGES/libgtop-2.0.mo
 share/locale/tr/LC_MESSAGES/libgtop-2.0.mo
 share/locale/ug/LC_MESSAGES/libgtop-2.0.mo
@@ -213,6 +216,8 @@ share/locale/zh_TW/LC_MESSAGES/libgtop-2.0.mo
 @dirrmtry share/locale/ky
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
+@dirrmtry share/locale/fur/LC_MESSAGES
+@dirrmtry share/locale/fur
 @dirrmtry share/locale/en@shaw/LC_MESSAGES
 @dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
