@@ -8,7 +8,6 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION} \
 		http://www.libmng.com/download/
 
-
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multiple-image Network Graphics (MNG) reference library
 
@@ -23,10 +22,6 @@ MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 USE_LDCONFIG=	yes
 
-MAN3=		libmng.3
-MAN5=		mng.5 jng.5
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MMNG_OPTIMIZE}
 MAKE_ARGS+=	WITH_MNG_OPTIMIZE=true
@@ -35,7 +30,7 @@ MAKE_ARGS+=	WITH_MNG_OPTIMIZE=off
 .endif
 
 post-install:
-	cd ${WRKSRC}/doc/man && ${INSTALL_MAN} ${MAN3} ${PREFIX}/man/man3 \
-		&& ${INSTALL_MAN} ${MAN5} ${PREFIX}/man/man5
+	cd ${WRKSRC}/doc/man && ${INSTALL_MAN} libmng.3 ${STAGEDIR}${PREFIX}/man/man3 \
+		&& ${INSTALL_MAN} mng.5 jng.5 ${STAGEDIR}${PREFIX}/man/man5
 
 .include <bsd.port.mk>
