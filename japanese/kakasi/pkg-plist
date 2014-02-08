@@ -9,15 +9,17 @@ lib/libkakasi.a
 lib/libkakasi.la
 lib/libkakasi.so
 lib/libkakasi.so.3
-%%PORTDOCS%%share/doc/kakasi/ChangeLog.lib
-%%PORTDOCS%%share/doc/kakasi/JISYO
-%%PORTDOCS%%share/doc/kakasi/NEWS
-%%PORTDOCS%%share/doc/kakasi/README
-%%PORTDOCS%%share/doc/kakasi/README-ja
-%%PORTDOCS%%share/doc/kakasi/README.lib
-%%PORTDOCS%%share/doc/kakasi/README.wakati
-%%PORTDOCS%%share/doc/kakasi/TODO
-%%PORTDOCS%%@dirrm share/doc/kakasi
-share/kakasi/itaijidict
-share/kakasi/kanwadict
-@dirrm share/kakasi
+man/ja/man1/kakasi.1.gz
+man/man1/kakasi.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog.lib
+%%PORTDOCS%%%%DOCSDIR%%/JISYO
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README-ja
+%%PORTDOCS%%%%DOCSDIR%%/README.lib
+%%PORTDOCS%%%%DOCSDIR%%/README.wakati
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DATADIR%%/itaijidict
+%%DATADIR%%/kanwadict
+@dirrm %%DATADIR%%
