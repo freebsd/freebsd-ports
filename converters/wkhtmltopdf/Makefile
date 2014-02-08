@@ -2,12 +2,13 @@
 # $FreeBSD$
 
 PORTNAME=	wkhtmltopdf
-DISTVERSION=	0.12.0
+PORTVERSION=	0.12.0
+PORTREVISION=	1
 CATEGORIES=	converters
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	mm/wkhtmltopdf
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		wkhtmltopdf-qt-${WKQTVERSION}.tar.xz
+MASTER_SITES=	GH:wk \
+		http://github.com/${GH_ACCOUNT}/qt/archive/${WKQT_TAGNAME}.tar.gz?dummy=/:wkqt
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:wk \
+		wkhtmltopdf-qt-${PORTVERSION}.tar.gz:wkqt
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Convert HTML (or live webpages) to PDF or image files
@@ -18,19 +19,20 @@ LICENSE_FILE_LGPL3=	${INSTALL_WRKSRC}/COPYING
 LIB_DEPENDS+=	libfontconfig.so:${PORTSDIR}/x11-fonts/fontconfig \
 		libfreetype.so:${PORTSDIR}/print/freetype2
 
-#USE_GITHUB=		yes
+USE_GITHUB=		yes
 GH_ACCOUNT=		wkhtmltopdf
 GH_PROJECT=		wkhtmltopdf
-GH_TAGNAME=		0.12.0
 GH_COMMIT=		03c001d
-WKQTVERSION=		0ec3313
+GH_TAGNAME=		0.12.0
+WKQT_TAGNAME=		wkhtmltopdf_0.12.0
+
 USES=			pkgconfig gmake perl5
 USE_XORG=		x11 xext xrender
 USE_PERL5=		build
 USE_LDCONFIG=		yes
 HAS_CONFIGURE=		yes
 
-WRKSRC=		${WRKDIR}/qt-wk_4.8.5
+WRKSRC=		${WRKDIR}/qt-${WKQT_TAGNAME}
 INSTALL_WRKSRC=	${WRKDIR}/${GH_ACCOUNT}-${GH_PROJECT}-${GH_COMMIT}
 
 OPTIONS_DEFINE=	BUNDLED_LIBS
