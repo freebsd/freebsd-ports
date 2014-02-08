@@ -13,15 +13,15 @@ COMMENT=	Perl5 modules for Ngram Statistics Package
 USES=		perl5
 USE_PERL5=	configure
 
-PORTDOCS=	CHANGES README doc/FAQ.pod doc/NSP-Class-diagram.pdf \
+DOCS=	CHANGES README doc/FAQ.pod doc/NSP-Class-diagram.pdf \
 	doc/NSP-Class-diagram.png doc/README.pod doc/TODO.pod \
-	doc/USAGE.pod doc/cicling2003.pdf doc/cicling2003.ps \
+	doc/USAGE.pod doc/cicling2003.pdf doc/cicling2003.ps
+PORTDOCS=	*
 
-.ifndef (NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
-	@${ECHO_MSG} "===>   Installing documentation in ${DOCSDIR}"
-.endif
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
