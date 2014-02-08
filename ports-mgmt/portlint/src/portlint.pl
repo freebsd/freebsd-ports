@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.305 2014/01/05 05:50:13 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.310 2014/02/08 19:57:20 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 14;
-my $micro = 9;
+my $micro = 10;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -1237,6 +1237,12 @@ sub check_depends_syntax {
 					"really necessary.");
 			}
 
+			# Check for old-style LIB_DEPENDS
+			if ($j eq 'LIB_DEPENDS' && $m{'dep'} !~ m/^lib.*\.so$/) {
+				&perror("WARN", $file, -1, "$j the new format is ".
+						"libFOO.so (e.g., lib$m{'dep'}.so).");
+			}
+
 			# check port dir existence
 			$k = $m{'dir'};
 			$k =~ s/\${PORTSDIR}/$ENV{'PORTSDIR'}/;
@@ -1634,6 +1640,25 @@ sub checkmakefile {
 	if ($desktop_entries =~ /\${TRUE}/ or $desktop_entries =~ /\${FALSE}/ or
 	    $desktop_entries =~ /\"true\"/ or $desktop_entries =~ /\"false\"/) {
 		&perror("FATAL", $file, -1, "Use true/false (without quotes) instead of \${TRUE}/\${FALSE} in DESKTOP_ENTRIES.");
+	}
+
+	my @dte_parts = split(/\s+/, $desktop_entries);
+	my $dtc = 0;
+	my $dte_quote = 0;
+	foreach my $dte_part (@dte_parts) {
+		if ($dtc % 5 == 0 && $dte_part eq '""') {
+			&perror("FATAL", $file, -1, "Use true/false (without quotes) instead of \${TRUE}/\${FALSE} in DESKTOP_ENTRIES.");
+		}
+		if ($dte_quote == 1 && $dte_part =~ /"$/) {
+			$dte_quote = 0;
+		}
+		if ($dte_part =~ /^"[^"]+$/) {
+			$dte_quote = 1;
+			next;
+		}
+		if (!$dte_quote) {
+			$dtc++;
+		}
 	}
 
 	#
@@ -2536,7 +2561,7 @@ DIST_SUBDIR EXTRACT_ONLY
 	if ($makevar{MASTER_SITES} ne '' &&
 		! grep {$makevar{MASTER_SITES} =~ m|$_|} @MASTERSITES_WHITELIST) {
 		my @sites = split(/\s+/, $makevar{MASTER_SITES});
-		if (scalar(@sites) == 1) {
+		if (scalar(@sites) == 1 && !&is_predefined($sites[0], undef)) {
 			&perror("WARN", $file, -1, "only one MASTER_SITE configured.  ".
 				"Consider adding additional mirrors.");
 		}
@@ -3485,13 +3510,15 @@ sub is_predefined {
 		$site_re = quotemeta $site;
 		$site_re =~ s,$subdir_re,/(.*)/,;
 
-		if ($url =~ /$site_re/) {
+		if ($url =~ /$site_re/ && $file) {
 			my $pe = "how about using \"\${MASTER_SITE_$predefined{$site}}\" ";
 			if ($1) {
 				$pe .= "with \"MASTER_SITE_SUBDIR=$1\", ";
 			}
 			$pe .= "instead of \"$url\"?";
 			&perror("WARN", $file, -1, $pe);
+			return &TRUE;
+		} elsif ($url =~ /$site_re/ && !$file) {
 			return &TRUE;
 		}
 	}
