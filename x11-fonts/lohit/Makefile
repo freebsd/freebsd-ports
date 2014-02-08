@@ -37,17 +37,11 @@ PLIST_FILES=	${FONTLIBPATH}/${FONTDIR}/Lohit-Assamese.ttf \
 SUB_LIST=	"FONTPATH=${FONTROOTDIR}/${FONTDIR}"
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 do-configure:
 	${DO_NADA}
 
 do-install:
-	${ECHO_MSG}
-	${CAT} ${PKGMESSAGE}
-	${ECHO_MSG}
-	${MKDIR} ${FONTROOTDIR}/${FONTDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTROOTDIR}/${FONTDIR}
+	${MKDIR} ${STAGEDIR}${FONTROOTDIR}/${FONTDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTROOTDIR}/${FONTDIR}
 
 .include <bsd.port.mk>
