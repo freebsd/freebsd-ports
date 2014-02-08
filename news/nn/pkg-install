@@ -5,6 +5,7 @@ if [ "x$2" != "xPOST-INSTALL" ]; then
 fi
 
 cat << xxENDxx
+
 *******************************************************************
 You have just installed the $1 package
 
