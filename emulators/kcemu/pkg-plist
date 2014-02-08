@@ -5,6 +5,14 @@ bin/kc2wav
 bin/kcemu
 bin/kctape
 bin/tdtodump
+man/man1/kc2img.1.gz
+man/man1/kc2raw.1.gz
+man/man1/kc2tap.1.gz
+man/man1/kc2wav.1.gz
+man/man1/kcemu-remote.1.gz
+man/man1/kcemu.1x.gz
+man/man1/kctape.1.gz
+man/man1/tdtodump.1.gz
 share/KCemu/kcemurc
 share/KCemu/asm/autostart/kc853.asm
 share/KCemu/config/a5105.conf
