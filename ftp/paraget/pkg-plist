@@ -1,5 +1,6 @@
 bin/paraget
 bin/paraget-child
+man/man1/paraget.1.gz
 %%SITE_PERL%%/Net/Paraget/Assignment.pm
 %%SITE_PERL%%/Net/Paraget/AssignmentManager.pm
 %%SITE_PERL%%/Net/Paraget/Client.pm
