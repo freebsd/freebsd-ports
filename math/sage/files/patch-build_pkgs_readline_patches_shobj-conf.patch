@@ -1,0 +1,11 @@
+--- build/pkgs/readline/patches/shobj-conf.patch-orig	2014-02-04 21:08:30.000000000 -0600
++++ build/pkgs/readline/patches/shobj-conf.patch	2014-02-04 21:09:48.000000000 -0600
+@@ -43,7 +43,7 @@
+ -	SHLIB_XLDFLAGS='-Wl,-rpath,$(libdir)'
+ -
+ -	SHLIB_LIBVERSION='$(SHLIB_LIBSUFF).$(SHLIB_MAJOR)'
+-+freebsdelf*|dragonfly*)
+++freebsd[4-9].*|freebsd1[0-9].*|freebsdelf*|dragonfly*)
+ +       SHOBJ_CFLAGS=-fPIC 
+ +       SHOBJ_LD='${CC}' 
+ +       SHOBJ_LDFLAGS='-shared -Wl,-soname,$@' 

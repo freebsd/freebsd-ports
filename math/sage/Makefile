@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	sage
-PORTVERSION=	6.1
+PORTVERSION=	6.1.1
 CATEGORIES=	math
 MASTER_SITES=	http://boxen.math.washington.edu/home/sagemath/sage-mirror/src/ \
 		http://mirrors.xmission.com/sage/src/ \
 		http://www-ftp.lip6.fr/pub/math/sagemath/src/ \
 		http://www.sagemath.org/src-old/
-EXTRACT_SUFX=	.tar
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Open source Mathematics software
@@ -152,5 +151,30 @@ FPM_FLAG=
 .endif
 
 MAKE_ENV+=	MAKE="${MAKE} -j${MAKE_JOBS_NUMBER}"
+
+.ifdef MAINTAINER_MODE
+test-fbsd-patches:	patch
+	rm -rf ${WRKSRC}/build/pkgs/*/src; \
+	for d in ${WRKSRC}/build/pkgs/*; do \
+		if ls $$d/fbsd-patch-* > /dev/null 2>&1; then \
+			echo Testing patches in $${d##*/}; \
+			b=$${d##*/}-`cat $$d/package-version.txt | sed 's/\.p.*//'`; \
+			c=${WRKSRC}/upstream/$$b.tar.bz2 ; \
+			if [ ! -e $$c ]; then \
+				echo Couldn\'t find $$c; \
+				exit 1; \
+			fi; \
+			if ! (cd $$d && tar xf $$c && mv $$b src); then \
+				echo Unable to unarchive $$c; \
+				exit 1; \
+			fi; \
+			if ! (cd $$d && cat fbsd-patch-* | patch); then \
+				echo Patches in $${d##*/} failed; \
+				exit 1; \
+			fi; \
+		fi; \
+	done; \
+	rm -rf ${WRKSRC}/build/pkgs/*/src
+.endif
 
 .include <bsd.port.post.mk>
