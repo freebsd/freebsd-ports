@@ -1,5 +1,5 @@
 --- ./Makefile.in.orig	2000-12-15 20:03:26.000000000 +0000
-+++ ./Makefile.in	2014-02-03 13:13:21.000000000 +0000
++++ ./Makefile.in	2014-02-08 06:51:17.000000000 +0000
 @@ -8,7 +8,6 @@
  srcdir          = @srcdir@
  VPATH           = @srcdir@
@@ -40,26 +40,27 @@
 -	rpcgen -h mount.x -o mount.h
 -	rpcgen -c mount.x -o mount.c
 +	rpcgen -c mount.x -o $@
-+
-+mount.h: mount.x
-+	rpcgen -h mount.x -o $@
-+
-+decode_mountd.c: mount.h
  
- nfs_prot.c: nfs_prot.x
+-nfs_prot.c: nfs_prot.x
 -	rpcgen -h nfs_prot.x -o nfs_prot.h
 -	rpcgen -c nfs_prot.x -o nfs_prot.c
-+	rpcgen -c nfs_prot.x -o $@
++mount.h: mount.x
++	rpcgen -h mount.x -o $@
  
 -$(LIBOBJS):
 -	$(CC) $(CFLAGS) $(INCS) -c $(srcdir)/missing/$*.c
-+nfs_prot.h: nfs_prot.x
-+	rpcgen -h nfs_prot.x -o $@
++decode_mountd.c: mount.h
  
 -libmissing.a: $(LIBOBJS)
 -	ar -cr $@ $(LIBOBJS)
 -	$(RANLIB) $@
-+filesnarf.c: nfs_prot.h nfs_prot.c
++nfs_prot.c: nfs_prot.x nfs_prot.h
++	rpcgen -c nfs_prot.x -o $@
++
++nfs_prot.h: nfs_prot.x
++	rpcgen -h nfs_prot.x -o $@
++
++filesnarf.c: nfs_prot.h
  
  dsniff: $(HDRS) $(SRCS) $(OBJS)
  	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $(NIDSLIB) $(PCAPLIB) $(LNETLIB) $(DBLIB) $(SSLLIB)
