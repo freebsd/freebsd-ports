@@ -13,4 +13,3 @@ man/man3/libcidr.3.gz
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cidrcalc
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/acl
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

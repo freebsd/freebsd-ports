@@ -11,7 +11,7 @@ MASTER_SITES=	http://www.over-yonder.net/~fullermd/projects/${PORTNAME}/ \
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	A library to handle manipulating CIDR netblocks
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_XZ=		yes
