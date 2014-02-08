@@ -3,7 +3,7 @@
 
 PORTNAME=	bsmtrace
 PORTVERSION=	1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	csjp
@@ -12,30 +12,30 @@ MAINTAINER=	alm@FreeBSD.org
 COMMENT=	BSM based intrusion detection system
 
 SUB_FILES=	pkg-message
-MAN1=		bsmtrace.1
-MAN5=		bsmtrace.conf.5
 
 MAKE_JOBS_UNSAFE=	yes
 
-.if defined(WITH_PCRE)
-LIB_DEPENDS+=	pcre.3:${PORTSDIR}/devel/pcre
-MAKE_ENV+=	PCRE=1
+OPTIONS_DEFINE=	PCRE EXAMPLES
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPCRE}
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
+MAKE_ENV+=	PCRE=1 LIBS="-lpcre -L${LOCALBASE}/lib"
+CFLAGS+=	-I${LOCALBASE}/include
 .endif
 
-NO_STAGE=	yes
 pre-build:
 	${REINPLACE_CMD} -e \
 		's,/etc/bsmtrace.conf,${PREFIX}/etc/bsmtrace.conf,' \
 		${WRKSRC}/config.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bsmtrace ${PREFIX}/sbin
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/bsmtrace.conf ${EXAMPLESDIR}
-	${INSTALL_MAN} ${WRKSRC}/bsmtrace.1 ${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/bsmtrace.conf.5 ${MAN5PREFIX}/man/man5
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.conf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.conf.5 \
+		${STAGEDIR}${MAN5PREFIX}/man/man5
 
 .include <bsd.port.mk>
