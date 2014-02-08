@@ -41,7 +41,6 @@ LATEST_LINK=	${LUA_SUBDIR}
 
 LUA_BIN=	lua luac
 LUA_INC=	lua.h luaconf.h lualib.h lauxlib.h ../etc/lua.hpp
-LUA_MAN=	${LUA_BIN:S/$/.1/}
 LUA_ETC=	Makefile README all.c lua.ico luavs.bat min.c \
 		noparser.c strict.lua
 LUA_TEST=	README bisect.lua cf.lua echo.lua env.lua factorial.lua \
@@ -49,7 +48,6 @@ LUA_TEST=	README bisect.lua cf.lua echo.lua env.lua factorial.lua \
 		printf.lua readonly.lua sieve.lua sort.lua table.lua \
 		trace-calls.lua trace-globals.lua xd.lua
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "powerpc"
@@ -83,49 +81,47 @@ post-build:
 
 do-install:
 # Programs.
-	${MKDIR} ${LUA_BINDIR}
+	${MKDIR} ${STAGEDIR}${LUA_BINDIR}
 .for f in ${LUA_BIN}
-	${INSTALL_PROGRAM} ${WRKSRC}/src/${f} ${LUA_BINDIR}
-	${LN} -sf ${LUA_SUBDIR}/${f} ${PREFIX}/bin/${f}-${LUA_VER}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${f}  ${STAGEDIR}${LUA_BINDIR}
+	${LN} -sf ${LUA_SUBDIR}/${f}  ${STAGEDIR}${PREFIX}/bin/${f}-${LUA_VER}
 .endfor
 # Include files.
-	${MKDIR} ${LUA_INCDIR}
+	${MKDIR}  ${STAGEDIR}${LUA_INCDIR}
 .for f in ${LUA_INC}
-	${INSTALL_DATA} ${WRKSRC}/src/${f} ${LUA_INCDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/${f}  ${STAGEDIR}${LUA_INCDIR}
 .endfor
 # Libraries.
-	${MKDIR} ${LUA_LIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/liblua.a ${LUA_LIBDIR}
+	${MKDIR}  ${STAGEDIR}${LUA_LIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/liblua.a  ${STAGEDIR}${LUA_LIBDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/src/liblua.so \
-		${LUA_LIBDIR}/liblua-${LUA_VER}.so.${LUA_VER_SH}
-	@${LN} -sf liblua-${LUA_VER}.so.${LUA_VER_SH} ${LUA_LIBDIR}/liblua.so
+		 ${STAGEDIR}${LUA_LIBDIR}/liblua-${LUA_VER}.so.${LUA_VER_SH}
+	@${LN} -sf liblua-${LUA_VER}.so.${LUA_VER_SH}  ${STAGEDIR}${LUA_LIBDIR}/liblua.so
 	@${LN} -sf ${LUA_SUBDIR}/liblua-${LUA_VER}.so.${LUA_VER_SH} \
-		${PREFIX}/lib
+		 ${STAGEDIR}${PREFIX}/lib
 	@${LN} -sf liblua-${LUA_VER}.so.${LUA_VER_SH} \
-		${PREFIX}/lib/liblua-${LUA_VER}.so
+		 ${STAGEDIR}${PREFIX}/lib/liblua-${LUA_VER}.so
 # Manual pages.
 .for f in ${LUA_MAN}
 	${INSTALL_MAN} ${WRKSRC}/doc/${f} \
-		${PREFIX}/man/man1/${f:C/.1$//}-${LUA_VER}.1
+		 ${STAGEDIR}${PREFIX}/man/man1/${f:C/.1$//}-${LUA_VER}.1
 .endfor
 # Documentation.
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}/etc
-	${MKDIR} ${DOCSDIR}/test
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html *.gif ${DOCSDIR}
+	${MKDIR}  ${STAGEDIR}${DOCSDIR}
+	${MKDIR}  ${STAGEDIR}${DOCSDIR}/etc
+	${MKDIR}  ${STAGEDIR}${DOCSDIR}/test
+	${INSTALL_DATA} ${WRKSRC}/README  ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${INSTALL_DATA} *.html *.gif  ${STAGEDIR}${DOCSDIR}
 .for f in ${LUA_ETC}
-	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${DOCSDIR}/etc
+	${INSTALL_DATA} ${WRKSRC}/etc/${f}  ${STAGEDIR}${DOCSDIR}/etc
 .endfor
 .for f in ${LUA_TEST}
-	${INSTALL_DATA} ${WRKSRC}/test/${f} ${DOCSDIR}/test
+	${INSTALL_DATA} ${WRKSRC}/test/${f}  ${STAGEDIR}${DOCSDIR}/test
 .endfor
-.endif
 # lua.pc
-	${INSTALL_DATA} ${WRKSRC}/etc/lua.pc ${PREFIX}/libdata/pkgconfig/lua-${LUA_VER}.pc
+	${INSTALL_DATA} ${WRKSRC}/etc/lua.pc  ${STAGEDIR}${PREFIX}/libdata/pkgconfig/lua-${LUA_VER}.pc
 # Module directories.
-	${MKDIR} ${LUA_MODLIBDIR}
-	${MKDIR} ${LUA_MODSHAREDIR}
+	${MKDIR}  ${STAGEDIR}${LUA_MODLIBDIR}
+	${MKDIR}  ${STAGEDIR}${LUA_MODSHAREDIR}
 
 .include <bsd.port.post.mk>
