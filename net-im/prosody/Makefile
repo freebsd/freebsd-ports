@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	prosody
-PORTVERSION=	0.8.2
+PORTVERSION=	0.9.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://prosody.im/downloads/source/ \
 				http://redundancy.redundancy.org/mirror/
 
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A simple extensible XMPP server written in Lua
+
+LICENSE=	MIT
 
 RUN_DEPENDS=	${LUA_MODLIBDIR}/socket/core.so:${PORTSDIR}/net/luasocket \
 		${LUA_MODLIBDIR}/ssl.so:${PORTSDIR}/security/luasec \
@@ -34,11 +36,10 @@ SUB_FILES=	pkg-install pkg-deinstall
 NO_STAGE=	yes
 pre-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-	${REINPLACE_CMD} -e 's|/usr/bin/env lua|${LUA_CMD}|' ${WRKSRC}/prosody ${WRKSRC}/prosodyctl
-	${RM} ${WRKSRC}/certs/localhost.*
-	cd ${WRKSRC}/certs && ${GMAKE} localhost.cert
+	${REINPLACE_CMD} -e 's|/usr/bin/env lua|${LUA_CMD}|' ${WRKSRC}/prosody.install ${WRKSRC}/prosodyctl.install
 
 post-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

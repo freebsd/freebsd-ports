@@ -1,0 +1,18 @@
+
+---
+
+NOTE:
+
+    If you're running Prosody in a jail and experience problems, please add the
+    following to the global section of your prosody.cfg.lua:
+
+    interfaces = { 'x.x.x.x' }
+
+    where 'x.x.x.x' is the public IP you wish Prosody to bind to. 
+
+ALSO NOTE:
+
+    IPv6 support is not yet functional in this port.
+
+---
+
