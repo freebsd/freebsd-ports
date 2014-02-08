@@ -12,29 +12,20 @@ COMMENT=	A low level console graphics library
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-
 USE_DOS2UNIX=	utils/gtf/gtf.h utils/gtf/scitech.h
-USE_GMAKE=	yes
+USES=	gmake
 USE_LDCONFIG=	yes
-MANCOMPRESSED=	yes
 
 ALL_TARGET=	shared static
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
 MAKE_ENV=	NO_ASM=y
 .endif
 
-.for i in 1 2 3 4 5 6 7 8 9
-.if exists(${FILESDIR}/man${i})
-MAN${i}!=	${CAT} ${FILESDIR}/man${i}
-.endif
-.endfor
-
 post-patch: .SILENT
-	${MKDIR} ${WRKSRC}/include/linux
+	${MKDIR} ${STAGEDIR}${WRKSRC}/include/linux
 # Fix for GCC 4.1
 	${REINPLACE_CMD} -e '30d' ${WRKSRC}/src/vgabg.h
 	${REINPLACE_CMD} -e 's,^   (unsigned [[:alpha:]]*),,' \
@@ -45,8 +36,8 @@ post-patch: .SILENT
 	${FIND} ${WRKSRC}/doc -type f -name '*.[57].orig' -delete
 
 post-install:
-	@${MKDIR} ${PREFIX}/include/linux
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/linux
 	cd ${WRKSRC}/include/linux && \
-		${INSTALL_DATA} keyboard.h kd.h ${PREFIX}/include/linux
+		${INSTALL_DATA} keyboard.h kd.h ${STAGEDIR}${PREFIX}/include/linux
 
 .include <bsd.port.post.mk>
