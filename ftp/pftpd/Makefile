@@ -12,17 +12,17 @@ COMMENT=	Multithreaded anonymous FTP daemon
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=		pftpd.1 rpad.1
-PLIST_FILES=	sbin/pftpd
+PLIST_FILES=	sbin/pftpd \
+		man/man1/pftpd.1.gz \
+		man/man1/rpad.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-lpthread|${PTHREAD_LIBS}|g'
 
 do-install:
-	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} pftpd ${PREFIX}/sbin)
-	(cd ${WRKSRC}/doc && ${INSTALL_MAN} *.1 ${MANPREFIX}/man/man1)
+	(cd ${WRKSRC}/src && ${INSTALL_PROGRAM} pftpd ${STAGEDIR}${PREFIX}/sbin)
+	(cd ${WRKSRC}/doc && ${INSTALL_MAN} *.1 ${STAGEDIR}${MANPREFIX}/man/man1)
 	@${CAT} ${WRKSRC}/ISSUES
 
 .include <bsd.port.mk>
