@@ -25,7 +25,10 @@ sbin/crtmpserver
 @dirrmtry lib/crtmpserver/applications/stresstest
 @dirrmtry lib/crtmpserver/applications
 @dirrmtry lib/crtmpserver
-@exec /bin/mkdir -p var/log/crtmpserver
+@exec /bin/mkdir -p %D/var/log/crtmpserver
+@exec /bin/mkdir -p %D/var/crtmpserver/media
 @dirrmtry var/log/crtmpserver
+@dirrmtry var/log
 @dirrmtry var/crtmpserver/media
 @dirrmtry var/crtmpserver
+@dirrmtry var
