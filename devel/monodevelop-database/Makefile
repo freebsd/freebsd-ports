@@ -10,6 +10,8 @@ MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	MonoDevelop database support
 
+BROKEN=		Fails to build
+
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/monodevelop.pc:${PORTSDIR}/devel/monodevelop
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/monodevelop.pc:${PORTSDIR}/devel/monodevelop
 
