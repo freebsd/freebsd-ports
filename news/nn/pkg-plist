@@ -11,11 +11,8 @@ bin/nnpost
 bin/nnbatch
 bin/nnview
 @unexec if cmp -s %D/etc/nntp_domain %D/etc/nntp_domain.dist; then rm -f %D/etc/nntp_domain; fi
-etc/nntp_domain.dist
-@exec [ -f %B/nntp_domain ] || cp %B/%f %B/nntp_domain
 @unexec if cmp -s %D/etc/nntp_server %D/etc/nntp_server.dist; then rm -f %D/etc/nntp_server; fi
-etc/nntp_server.dist
-@exec [ -f %B/nntp_server ] || cp %B/%f %B/nntp_server
+@unexec rm -f %D/etc/nntp_domain.dist %D/etc/nntp_server.dist
 lib/nn/aux
 lib/nn/upgrade_rc
 lib/nn/conf
@@ -37,5 +34,19 @@ lib/nn/help/help.show
 lib/nn/help/help.sort
 lib/nn/help/help.variables
 lib/nn/help/Manual
+man/man1/nn.1.gz
+man/man1/nnacct.1m.gz
+man/man1/nnadmin.1m.gz
+man/man1/nncheck.1.gz
+man/man1/nngoback.1.gz
+man/man1/nngrab.1.gz
+man/man1/nngrep.1.gz
+man/man1/nnpost.1.gz
+man/man1/nnstats.1m.gz
+man/man1/nntidy.1.gz
+man/man1/nnusage.1m.gz
+man/man1/nnview.1.gz
+man/man8/nnmaster.8.gz
+man/man8/nnspew.8.gz
 @dirrm lib/nn/help
 @dirrm lib/nn
