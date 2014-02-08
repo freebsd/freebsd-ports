@@ -1,5 +1,4 @@
 bin/znotes
-share/applications/znotes.desktop
 share/pixmaps/znotes.png
 %%NLS%%%%DATADIR%%/translations/znotes_cs.qm
 %%NLS%%%%DATADIR%%/translations/znotes_en.qm
