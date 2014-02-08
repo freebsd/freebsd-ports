@@ -31,7 +31,7 @@ DISTFILES=	HandBrake-${PORTVERSION}.tar.bz2 \
 		x264-r2146-bcd41db.tar.gz:contrib
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	dmarion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Versatile DVD ripper and video transcoder
 
 LICENSE=	GPLv2
