@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 modules for Ngram Statistics Package
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
 USES=		perl5
 USE_PERL5=	configure
 
