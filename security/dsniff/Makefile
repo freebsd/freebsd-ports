@@ -36,6 +36,7 @@ LIBNET_INC=	"`${LIBNET_CONFIG} --defines` `${LIBNET_CONFIG} --cflags`"
 LIBNET_LIB=	"-L${LOCALBASE}/include/libnet${LIBNET_VERSION} \
 		${LOCALBASE}/lib/libnet${LIBNET_VERSION}/libnet.a"
 
+.include <bsd.port.pre.mk>
 # If net/libnids has been compiled with the GLIB2 option then this port needs
 # the corresponding library and additional linker flags.
 LIBNIDS_GLIB2?=
@@ -61,4 +62,4 @@ pre-configure:
 		${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
