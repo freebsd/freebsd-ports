@@ -1,4 +1,5 @@
 bin/wxdfast
+man/man1/wxdfast.1.gz
 share/applications/wxdfast.desktop
 share/locale/cs/LC_MESSAGES/wxDFast.mo
 share/locale/de/LC_MESSAGES/wxDFast.mo
