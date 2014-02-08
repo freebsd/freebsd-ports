@@ -3,8 +3,9 @@ bin/prosodyctl
 @unexec if cmp -s %D/etc/prosody/prosody.cfg.lua.sample %D/etc/prosody/prosody.cfg.lua; then rm -f %D/etc/prosody/prosody.cfg.lua; fi
 etc/prosody/prosody.cfg.lua.sample
 @exec if [ ! -f %D/etc/prosody/prosody.cfg.lua ]; then cp -p %D/etc/prosody/prosody.cfg.lua.sample %D/etc/prosody/prosody.cfg.lua; fi
-@dirrmtry etc/prosody/certs
-@dirrmtry etc/prosody
+etc/prosody/certs/Makefile
+etc/prosody/certs/localhost.cnf
+etc/prosody/certs/openssl.cnf
 lib/prosody/core/certmanager.lua
 lib/prosody/core/configmanager.lua
 lib/prosody/core/hostmanager.lua
@@ -135,6 +136,8 @@ lib/prosody/util/sasl/digest-md5.lua
 lib/prosody/util/sasl/plain.lua
 lib/prosody/util/sasl/scram.lua
 lib/prosody/util/sasl_cyrus.lua
+@dirrmtry etc/prosody/certs
+@dirrmtry etc/prosody
 @dirrm lib/prosody/util/sasl
 @dirrm lib/prosody/util
 @dirrm lib/prosody/net/http
