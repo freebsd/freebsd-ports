@@ -11,5 +11,10 @@ COMMENT=	Find directory&file on a ftp server
 
 PLIST_FILES=	bin/ftpfind
 
-NO_STAGE=	yes
+USES=		shebangfix
+SHEBANG_FILES=	ftpfind
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/ftpfind ${STAGEDIR}${PREFIX}/bin/
+
 .include <bsd.port.mk>
