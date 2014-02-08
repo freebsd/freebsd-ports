@@ -31,7 +31,7 @@ PORTDOCS=	README
 
 SHAPE_CONFIGURE_ENABLE=	shape
 SN_LIB_DEPENDS=	libstartup-notification.so:${PORTSDIR}/x11/startup-notification
-SN_CONFIGURE_ENABLE=	libsn
+SN_CONFIGURE_ON=	--enable-libsn
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/src/idesk ${STAGEDIR}${PREFIX}/bin
