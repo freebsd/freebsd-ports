@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mutagen
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	audio python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,14 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_PYTHON=	yes
-NO_STAGE=	yes
 USE_PYDISTUTILS=	yes
-
-MAN1=		mid3iconv.1 \
-		mid3v2.1 \
-		moggsplit.1 \
-		mutagen-inspect.1 \
-		mutagen-pony.1
 
 .include <bsd.port.pre.mk>
 
