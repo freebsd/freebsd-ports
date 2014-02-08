@@ -12,6 +12,8 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}-20121203
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java API To Access Microsoft Format Files
 
+BROKEN=		Tries to fetch files during build stage
+
 LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j
