@@ -10,24 +10,23 @@ MASTER_SITES=	http://www.mcknight.de/jftpgw/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Highly configurable FTP proxy
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-logpath=/var/log \
 		--enable-crypt \
 		--enable-sftp
 
-MAN1=		jftpgw.1
+OPTIONS_DEFINE=	DOCS
 
 USE_RC_SUBR=	${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/jftpgw ${PREFIX}/sbin/
-		${INSTALL_DATA} ${WRKSRC}/jftpgw.conf.sample ${PREFIX}/etc/
-		${INSTALL_MAN} ${WRKSRC}/jftpgw.1 ${PREFIX}/man/man1/
-.if !defined(NOPORTDOCS)
-		${MKDIR} ${PREFIX}/share/doc/jftpgw
-		${INSTALL_DATA} ${WRKSRC}/doc/config.html ${PREFIX}/share/doc/jftpgw
-.endif
+		${INSTALL_PROGRAM} ${WRKSRC}/jftpgw ${STAGEDIR}${PREFIX}/sbin/
+		${INSTALL_DATA} ${WRKSRC}/jftpgw.conf.sample ${STAGEDIR}${PREFIX}/etc/
+		${INSTALL_MAN} ${WRKSRC}/jftpgw.1 ${STAGEDIR}${PREFIX}/man/man1/
+		@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/jftpgw
+		${INSTALL_DATA} ${WRKSRC}/doc/config.html ${STAGEDIR}${PREFIX}/share/doc/jftpgw
 
 .include <bsd.port.mk>
