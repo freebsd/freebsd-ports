@@ -21,12 +21,12 @@ USES=		shebangfix perl5
 SHEBANG_FILES=	profxpv3.pl
 perl_OLD_CMD=	/home/tom/ActivePerl-5.6/bin/perl
 
-NO_STAGE=	yes
 post-patch1:
 	@${REINPLACE_CMD} -i '' '1s|^\#.*|#!${PERL}|' ${WRKSRC}/profxpv3.pl
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/profxpv3.pl ${PREFIX}/bin/profxp
-	${CP} -R ${WRKSRC}/profxp ${SITE_PERL}
+	@${MKDIR} ${STAGEDIR}${SITE_PERL}
+	${INSTALL_SCRIPT} ${WRKSRC}/profxpv3.pl ${STAGEDIR}${PREFIX}/bin/profxp
+	${CP} -R ${WRKSRC}/profxp ${STAGEDIR}${SITE_PERL}
 
 .include <bsd.port.mk>
