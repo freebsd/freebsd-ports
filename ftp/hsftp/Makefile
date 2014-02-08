@@ -21,27 +21,19 @@ READLINE_DESC=	Enable readline support
 GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 
-MAN1=		hsftp.1
-PLIST_FILES=	bin/hsftp
+PLIST_FILES=	bin/hsftp man/man1/hsftp.1.gz
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPENSSH_RUN_DEPENDS=		ssh:${PORTSDIR}/security/openssh-portable
+OPENSSH_CONFIGURE_WITH=		openssh
 
-.if ${PORT_OPTIONS:MOPENSSH}
-RUN_DEPENDS+=	ssh:${PORTSDIR}/security/openssh-portable
-CONFIGURE_ARGS+=	--with-openssh
-.endif
-
-.if ${PORT_OPTIONS:MREADLINE}
-USES+=			readline
-CONFIGURE_ARGS+=	--with-readline
-.endif
+READLINE_USES=			readline
+READLINE_CONFIGURE_WITH=	readline
 
 pre-patch:
 	${REINPLACE_CMD} -e '2343d' ${WRKSRC}/configure
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/hsftp ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/hsftp.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/hsftp ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/hsftp.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
