@@ -3,7 +3,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.48.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME:L}/${PORTNAME:L}/${PORTVERSION}
@@ -65,7 +65,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|libpng >= 1.2|libpng15 >= 1.2|g' \
 		-e 's|-ldl||g' \
 	    	${WRKSRC}/configure
-.if !defined(WITH_POPPLER)
+.if ! ${PORT_OPTIONS:MPOPPLER}
 	@${REINPLACE_CMD} -e 's|poppler|pdisable|g' \
 		${WRKSRC}/configure
 .endif
