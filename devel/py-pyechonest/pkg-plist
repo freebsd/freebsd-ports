@@ -1,4 +1,3 @@
-%%PYTHON_SITELIBDIR%%/pyechonest
 %%PYTHON_SITELIBDIR%%/pyechonest/__init__.py
 %%PYTHON_SITELIBDIR%%/pyechonest/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pyechonest/__init__.pyo
@@ -32,4 +31,4 @@
 %%PYTHON_SITELIBDIR%%/pyechonest/util.py
 %%PYTHON_SITELIBDIR%%/pyechonest/util.pyc
 %%PYTHON_SITELIBDIR%%/pyechonest/util.pyo
-@dirrmtry %%PYTHON_LIBDIR%%/site-packages/pyechonest
+@dirrmtry %%PYTHON_SITELIBDIR%%/pyechonest
