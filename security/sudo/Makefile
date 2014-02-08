@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sudo
-DISTVERSION=	1.8.8
+DISTVERSION=	1.8.9p5
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SUDO}
 
@@ -73,7 +73,6 @@ CONFIGURE_ARGS+=	--with-ldap=${PREFIX}
 SUDO_LDAP_CONF?=	ldap.conf
 CONFIGURE_ARGS+=	--with-ldap-conf-file=${PREFIX}/etc/${SUDO_LDAP_CONF}
 PLIST_SUB+=	LDAP=""
-MAN5+=	sudoers.ldap.5
 .else
 PLIST_SUB+=	LDAP="@comment "
 .endif
