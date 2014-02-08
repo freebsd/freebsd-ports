@@ -14,23 +14,22 @@ LICENSE=	GPLv2
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/wipe
-
-MAN1=		wipe.1
+PLIST_FILES=	bin/wipe man/man1/wipe.1.gz
 PORTDOCS=	CHANGES INSTALL LICENSE README TESTING TODO copyright
 
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e 's|@CFLAGS@|${CFLAGS}|' ${WRKSRC}/Makefile.in
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	for i in ${PORTDOCS}; do \
-		${INSTALL_DATA} ${WRKSRC}/$$i ${DOCSDIR}; \
-	done
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's|@CFLAGS@|${CFLAGS}|' ${WRKSRC}/Makefile.in
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
