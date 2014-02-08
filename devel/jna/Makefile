@@ -9,6 +9,8 @@ MASTER_SITES=	GH
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Java access to native shared libraries
 
+BROKEN=		Build fails due to test failures
+
 USES=		gmake
 USE_GCC=	any
 USE_ANT=	yes
