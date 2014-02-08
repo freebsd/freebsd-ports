@@ -33,7 +33,6 @@ MAKE_ENV+=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 
 CXXFLAGS+=	-I${LOCALBASE}/include
 USES=		gmake
-NO_STAGE=	yes
 USE_LDCONFIG=	yes
 USE_ZIP=	yes
 
@@ -66,5 +65,7 @@ post-patch:
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libespeak.so*
 
 .include <bsd.port.mk>
