@@ -9,13 +9,12 @@ MASTER_SITES=	http://www.sourcehosting.net/freebsd/distfiles/ \
 		LOCAL/glarkin
 PKGNAMEPREFIX=	trac-
 DISTNAME=	${PORTNAME}plugin-${PORTVERSION}
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visually edit the Trac ticket CC field
 
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
-
-USE_ZIP=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}plugin/0.11
 USE_PYTHON=	2
