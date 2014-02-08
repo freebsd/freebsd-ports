@@ -9,4 +9,4 @@ parsing of the MPEG audio stream, the second tier implements the
 content analysis on the extracted field, and the third tier includes
 any applications that are based on the extracted content. 
 
-WWW: http://www.cmis.csiro.au/maaate/
+WWW: http://maaate.sourceforge.net/
