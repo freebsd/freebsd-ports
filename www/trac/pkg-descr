@@ -5,7 +5,7 @@ development process and policies.
 
 All aspects of Trac have been designed with one single goal, to simplify
 tracking and communication of software issues, enhancements and monitoring
-overall progress. 
+overall progress.
 
 What is Trac?
 
@@ -14,8 +14,8 @@ What is Trac?
     * A flexible web-based issue tracker
     * An interface to the Subversion revision control system
 
-At the core of Trac lies an integrated wiki and issue/bug database.  Using
+At the core of Trac lies an integrated wiki and issue/bug database. Using
 wiki markup, all objects managed by Trac can directly link to other
-issues/bug reports, code changesets, documentation and files. 
+issues/bug reports, code changesets, documentation and files.
 
 WWW: http://trac.edgewall.org/
