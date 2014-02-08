@@ -1,6 +1,9 @@
 bin/liquidwar
 bin/liquidwar-server
 bin/liquidwar-mapgen
+man/man6/liquidwar-mapgen.6.gz
+man/man6/liquidwar-server.6.gz
+man/man6/liquidwar.6.gz
 %%DOCSDIR%%/txt/algorithm.txt
 %%DOCSDIR%%/txt/authors.txt
 %%DOCSDIR%%/txt/bugs.txt
