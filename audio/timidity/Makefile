@@ -16,15 +16,13 @@ CONFLICTS=	timidity++-2.13.*
 
 TIINS=		goemon.tgz
 INSTALL_TARGET=	install.all
-MAN1=		timidity.1
-NO_STAGE=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's,machine/soundcard.h,sys/soundcard.h,' \
 		${WRKSRC}/linux_a.c
 
 post-install:
-	cd ${PREFIX}/lib/timidity && \
+	cd ${STAGEDIR}${PREFIX}/lib/timidity && \
 	${TAR} --no-same-owner --no-same-permissions -zxf ${DISTDIR}/${TIINS} && \
 	${REINPLACE_CMD} -i "" -e 's,dir goemon,dir ${PREFIX}/lib/timidity/goemon,' \
 		goemon.cfg

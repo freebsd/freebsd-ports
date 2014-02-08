@@ -3,7 +3,7 @@
 
 PORTNAME=	freeradius
 DISTVERSION=	3.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -86,7 +86,7 @@ ${UNIQUENAME}_SET+=	KERBEROS
 .if ${PORT_OPTIONS:MHEIMDAL_PORT}
 LIB_DEPENDS+=	krb5:${PORTSDIR}/security/heimdal
 .endif
-CONFIGURE_ARGS+=--enable-heimdal-krb5
+CONFIGURE_ARGS+=--enable-heimdal-krb5 --enable-pthread-support
 .else
 LIB_DEPENDS+=	krb5:${PORTSDIR}/security/krb5
 .endif
@@ -198,23 +198,6 @@ PLIST_SUB+=	RLMRUBY="@comment "
 
 # rlm_ruby module is still experimental
 .if ${PORT_OPTIONS:MRUBY} && empty(PORT_OPTIONS:MEXPERIMENTAL)
-EXPM=		yes
-.endif
-
-# No SMB option yet; rlm_smb is still unbuildable
-.if ${PORT_OPTIONS:MSMB}
-LIB_DEPENDS=	smbclient:${PORTSDIR}/net/samba-libsmbclient
-CONFIGURE_ARGS+=--with-rlm_smb
-CONFIGURE_ARGS+=--with-rlm-smb-lib-dir=${LOCALBASE}/lib
-CONFIGURE_ARGS+=--with-rlm-smb-include-dir=${LOCALBASE}/include
-PLIST_SUB+=	SMB=""
-.else
-CONFIGURE_ARGS+=--without-rlm_smb
-PLIST_SUB+=	SMB="@comment "
-.endif
-
-# SMB module is still experimental
-.if ${PORT_OPTIONS:MSMB} && empty(PORT_OPTIONS:MEXPERIMENTAL)
 EXPM=		yes
 .endif
 
@@ -412,6 +395,7 @@ pre-install:
 		PRE-INSTALL
 
 post-install:
+	@${INSTALL_DATA} ${FILESDIR}/dictionary.cisco.asa ${DATADIR}
 # If ${PREFIX}/etc/raddb isn't a directory (or a symlink), make a copy
 # of ${EXAMPLESDIR}/raddb as ${PREFIX}/etc/raddb, then bootstrap the
 # certificates

@@ -1,0 +1,10 @@
+--- configure.orig	2013-04-13 13:27:09.889002000 +0000
++++ configure
+@@ -9622,6 +9622,7 @@ freebsd* | dragonfly*)
+   else
+     case $host_os in
+     freebsd[123]*) objformat=elf
++      ;;
+     *) objformat=elf
+     esac
+   fi

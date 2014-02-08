@@ -13,28 +13,22 @@ DISTNAME=	tomcat-connectors-${PORTVERSION}-src
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	Apache JK module for connecting to Tomcat using AJP1X
 
-
+USES=	gmake
 USE_APACHE?=	22+
 APACHE_VER=	2.0
+GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
+CONFIGURE_ARGS+=	--with-apxs=${APXS}
 WRKSRC=		${WRKDIR}/tomcat-connectors-${PORTVERSION}-src/native
 
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-apxs=${APXS}
-
-SUB_FILES+=	mod_jk.conf.sample pkg-message
+SUB_FILES=	mod_jk.conf.sample pkg-message
 
 do-install:
-	${APXS} -i -n jk ${WRKSRC}/apache-${APACHE_VER}/mod_jk.so
-	- ${APXS} -e -A -n jk ${WRKSRC}/apache-${APACHE_VER}/mod_jk.so
-	${INSTALL_DATA} ${WRKDIR}/mod_jk.conf.sample ${LOCALBASE}/${APACHEETCDIR}
-	${INSTALL_DATA} ${FILESDIR}/workers.properties.sample ${LOCALBASE}/${APACHEETCDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}
+	${APXS} -i -n jk -S LIBEXECDIR=${STAGEDIR}${PREFIX}/${APACHEMODDIR} ${WRKSRC}/apache-${APACHE_VER}/mod_jk.so
+	${MKDIR} ${STAGEDIR}${LOCALBASE}/${APACHEETCDIR}
+	${INSTALL_DATA} ${WRKDIR}/mod_jk.conf.sample ${STAGEDIR}${LOCALBASE}/${APACHEETCDIR}
+	${INSTALL_DATA} ${FILESDIR}/workers.properties.sample ${STAGEDIR}${LOCALBASE}/${APACHEETCDIR}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_jk.so
 
-post-install:
-	${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

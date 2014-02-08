@@ -1,12 +1,21 @@
---- GNUmakefile.orig	2013-02-20 15:30:52.000000000 -0800
-+++ GNUmakefile	2013-05-22 15:43:40.000000000 -0700
+--- ./GNUmakefile.orig	2013-02-20 15:30:52.000000000 -0500
++++ ./GNUmakefile	2014-02-05 14:26:22.994957010 -0500
 @@ -1,4 +1,4 @@
 -CXXFLAGS = -DNDEBUG -g -O2
 +#CXXFLAGS = -DNDEBUG -g -O2
  # -O3 fails to link on Cygwin GCC version 4.5.3
  # -fPIC is supported. Please report any breakage of -fPIC as a bug.
  # CXXFLAGS += -fPIC
-@@ -165,7 +165,7 @@
+@@ -38,8 +38,6 @@
+ ifneq ($(GCC42_OR_LATER),0)
+ ifeq ($(UNAME),Darwin)
+ CXXFLAGS += -arch x86_64 -arch i386
+-else
+-CXXFLAGS += -march=native
+ endif
+ endif
+ 
+@@ -165,7 +163,7 @@
  	$(RANLIB) $@
  
  libcryptopp.so: $(LIBOBJS)

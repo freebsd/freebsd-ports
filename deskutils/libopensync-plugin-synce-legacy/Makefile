@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-rra-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SynCE legacy plugin for the OpenSync framework
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 LIB_DEPENDS=	libopensync.so:${PORTSDIR}/devel/libopensync022 \
 		librra.so:${PORTSDIR}/palm/synce-librra
 

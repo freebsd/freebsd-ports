@@ -2,6 +2,9 @@ bin/migrate_schema
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/VersionedDDL/.packlist
 %%SITE_PERL%%/DBIx/VersionedDDL.pm
 %%SITE_PERL%%/DBIx/VersionedDDL/Plugin/DefaultScriptProcessor.pm
+%%PERL5_MAN3%%/DBIx::VersionedDDL.3.gz
+%%PERL5_MAN3%%/DBIx::VersionedDDL::Plugin::DefaultScriptProcessor.3.gz
+man/man1/migrate_schema.1.gz
 @dirrm %%SITE_PERL%%/DBIx/VersionedDDL/Plugin
 @dirrm %%SITE_PERL%%/DBIx/VersionedDDL
 @dirrmtry %%SITE_PERL%%/DBIx

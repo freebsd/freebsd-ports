@@ -18,7 +18,8 @@ CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 MAKE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 USES=		gettext
 
-LDFLAGS+=	-L${LOCALBASE}/lib -lpcre -lggz -lgnutls -lintl ${PTHREAD_LIBS}
+LDFLAGS+=	-lz ${PTHREAD_LIBS}
+LDFLAGS+=	-L${LOCALBASE}/lib -lpcre -lggz -lgnutls -lintl
 
 MAN1=		morebalance.1
 MAN5=		morebalance.conf.5

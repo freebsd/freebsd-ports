@@ -1,6 +1,19 @@
---- configure.ac.orig	2007-10-19 02:22:39.000000000 -0400
-+++ configure.ac	2007-12-30 16:24:01.000000000 -0500
-@@ -145,7 +145,7 @@
+--- configure.ac.orig	2007-10-19 01:22:39.000000000 -0500
++++ configure.ac
+@@ -74,6 +74,12 @@ case "$target_os" in
+                    need_pragma=yes ;
+                    ;;
+ 
++  dragonfly* )     OSTYPE=FreeBSD ;
++		   OS_TAG="P_FREEBSD" ;
++		   OSRELEASE=900100
++                   need_pragma=yes ;
++		   ;;
++
+   freebsd* )       OSTYPE=FreeBSD ;
+ 		   OS_TAG="P_FREEBSD" ;
+                    if test "x$OSRELEASE" = "x"; then
+@@ -145,7 +151,7 @@ case "$target_cpu" in
     x86 | i686 | i586 | i486 | i386 ) MACHTYPE=x86
                     ;;
  
@@ -9,7 +22,7 @@
  		   P_64BIT=1 ;
                     LIB64=1 ;
  		   ;;
-@@ -162,7 +162,9 @@
+@@ -162,7 +168,9 @@ case "$target_cpu" in
                     LIB64=1 ;
  		   ;;
  
@@ -20,7 +33,7 @@
  		   ;;
  
     powerpc )       MACHTYPE=ppc ;
-@@ -348,7 +350,7 @@
+@@ -348,7 +356,7 @@ fi
  # $CXX $CFLAGS -Woverloaded-virtual conftest.cc > /dev/null 2>&1
  # if test $? = 0 ; then
  #   AC_MSG_RESULT(yes)
@@ -29,7 +42,7 @@
  # else
  #   AC_MSG_RESULT(no)
  # fi
-@@ -377,7 +379,7 @@
+@@ -377,7 +385,7 @@ if test "$DEFAULT_RTTI" = "1" ; then
    AC_MSG_RESULT(yes)
  else
    AC_MSG_RESULT(no)
@@ -38,7 +51,7 @@
  fi
  
  GCSECTIONS=0
-@@ -398,7 +400,7 @@
+@@ -398,7 +406,7 @@ if test 0 = 1 ;  then
    $CXX $CFLAGS -ffunction-sections -c conftest.cc > /dev/null 2>&1
    if test $? = 0 ; then
      AC_MSG_RESULT(yes)
@@ -47,7 +60,7 @@
      GCSECTIONS=1
    else
      AC_MSG_RESULT(no)
-@@ -414,7 +416,7 @@
+@@ -414,7 +422,7 @@ if test 0 = 1 ;  then
    dnl $CXX $CFLAGS -fdata-sections -c conftest.cc > /dev/null 2>&1
    dnl if test $? = 0 ; then
    dnl   AC_MSG_RESULT(yes)
@@ -56,7 +69,7 @@
    dnl   GCSECTIONS=1
    dnl else
    dnl   AC_MSG_RESULT(no)
-@@ -427,7 +429,7 @@
+@@ -427,7 +435,7 @@ if test 0 = 1 ;  then
    dnl $CXX $CFLAGS -fvtable-gc -c conftest.cc > /dev/null 2>&1
    dnl if test $? = 0 ; then
    dnl   AC_MSG_RESULT(yes)
@@ -65,7 +78,7 @@
    dnl   GCSECTIONS=1
    dnl else
    dnl   AC_MSG_RESULT(no)
-@@ -662,7 +664,7 @@
+@@ -662,7 +670,7 @@ dnl see if using GNU glibc++, because th
  P_HAS_ATOMIC_INT=0
  P_NEEDS_GNU_CXX_NAMESPACE=0
  AC_MSG_CHECKING(if atomic integer available)
@@ -74,7 +87,7 @@
                 [_Atomic_word val;], P_HAS_ATOMIC_INT=1,
      AC_TRY_COMPILE([#include <ext/atomicity.h>],
  		[_Atomic_word val;], P_HAS_ATOMIC_INT=2)
-@@ -671,7 +673,7 @@
+@@ -671,7 +679,7 @@ if test ${P_HAS_ATOMIC_INT} != 0 ; then
    AC_MSG_RESULT(yes)
    AC_MSG_CHECKING(if __exchange_and_add is in __gnu_cxx namespace)
    if test ${P_HAS_ATOMIC_INT} = 1 ; then
@@ -83,7 +96,7 @@
          [_Atomic_word val; __gnu_cxx::__exchange_and_add(&val, 1)],
          P_NEEDS_GNU_CXX_NAMESPACE=1)
    else
-@@ -721,7 +723,7 @@
+@@ -721,7 +729,7 @@ if test "${OSTYPE:-unknown}" = "solaris"
    AC_MSG_CHECKING(for upad128_t)
    AC_TRY_COMPILE([#include <sys/types.h>],
                   [upad128_t upad; upad._q = 0.0;], has_upad128_t=y)
@@ -92,7 +105,7 @@
      AC_MSG_RESULT(yes)
      AC_DEFINE(P_HAS_UPAD128_T)
    else
-@@ -746,7 +748,7 @@
+@@ -746,7 +754,7 @@ if test ${OSTYPE} != Darwin ; then
    fi
  fi
  
@@ -101,7 +114,7 @@
    
    AC_TRY_COMPILE([#include <semaphore.h>],
                   [sem_t *s = sem_open("test", O_CREAT)],
-@@ -928,7 +930,7 @@
+@@ -928,7 +936,7 @@ fi
  AC_SUBST(HAS_PLUGINS)
  
  if test "x$LIB64" != "x" ; then
@@ -110,7 +123,7 @@
  else
    AC_DEFINE_UNQUOTED([P_DEFAULT_PLUGIN_DIR], ["${INSTALLPREFIX}/lib/pwlib"], [Default plugin directory])
  fi
-@@ -1660,7 +1662,7 @@
+@@ -1660,7 +1668,7 @@ else
    dnl Linux check
    AC_CHECK_HEADERS(SDL/SDL.h, HAS_SDL=1)
    if test "${HAS_SDL:-unset}" != "unset" ; then
@@ -119,7 +132,7 @@
  	X11LIBDIR=/usr/X11R6/lib
      fi
      AC_CHECK_LIB(SDL, SDL_CreateYUVOverlay, HAS_SDL=1, HAS_SDL=, -L${X11LIBDIR} -lpthread -lX11 -lXext)
-@@ -1718,9 +1720,10 @@
+@@ -1718,9 +1726,10 @@ else
      HAS_VIDEO_CAPTURE=1
    else
      AC_CHECK_HEADER(linux/videodev.h, HAS_VIDEO_CAPTURE=1)
@@ -133,7 +146,7 @@
      if test "${HAS_VIDEO_CAPTURE}z" = "z" ; then
        AC_MSG_NOTICE(No Video Capture support)
        AC_DEFINE([NO_VIDEO_CAPTURE], [], [No video capture])
-@@ -2335,6 +2338,9 @@
+@@ -2335,6 +2344,9 @@ else
    STDCCFLAGS="$STDCCFLAGS -fexceptions"
  fi
  

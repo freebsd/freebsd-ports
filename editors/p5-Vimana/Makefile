@@ -33,23 +33,4 @@ RUN_DEPENDS=	vim>=0:${PORTSDIR}/editors/vim \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		vimana.1 vim_record.1
-MAN3=		Vimana.3 \
-		Vimana::Command::Download.3 \
-		Vimana::Command::Install.3  \
-		Vimana::Command::Installed.3 \
-		Vimana::Command::Remove.3 \
-		Vimana::Command::Search.3 \
-		Vimana::Index.3 \
-		Vimana::Installer.3 \
-		Vimana::Installer::Makefile.3 \
-		Vimana::Installer::Auto.3 \
-		Vimana::Installer::Text.3 \
-		Vimana::Logger.3 \
-		Vimana::Manual.3 \
-		Vimana::Record.3 \
-		Vimana::Recursive.3 \
-		Vimana::Util.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

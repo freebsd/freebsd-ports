@@ -15,10 +15,11 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/Ecliz
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/lib/X11/icons/${PORTNAME}
-	cd ${WRKSRC} && ${COPYTREE_SHARE} cursors ${PREFIX}/lib/X11/icons/${PORTNAME}
-	${CP} ${WRKSRC}/index.theme ${PREFIX}/lib/X11/icons/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/X11/icons/${PORTNAME}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} cursors \
+		${STAGEDIR}${PREFIX}/lib/X11/icons/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/index.theme \
+		${STAGEDIR}${PREFIX}/lib/X11/icons/${PORTNAME}
 
 .include <bsd.port.mk>

@@ -11,24 +11,17 @@ COMMENT=	Fast Genetic Algorithm library
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GMAKE=	yes
+USES=		gmake
 
 EXAMPLES=	graph_gen maxbit tsp tsp_bf
-
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA}	${WRKSRC}/include/fga.hpp ${PREFIX}/include
-	${INSTALL_PROGRAM} ${EXAMPLES:S,^,${WRKSRC}/,} ${PREFIX}/bin
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}/
-	${MKDIR} ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/,:S,$,.cpp,} ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}/
-.endif
+	${INSTALL_DATA}	${WRKSRC}/include/fga.hpp ${STAGEDIR}${PREFIX}/include
+	${INSTALL_PROGRAM} ${EXAMPLES:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_DATA} ${EXAMPLES:S,^,${WRKSRC}/,:S,$,.cpp,} ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>

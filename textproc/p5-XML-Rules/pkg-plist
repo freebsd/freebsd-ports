@@ -1,4 +1,5 @@
 bin/dtd2XMLRules.pl
 bin/xml2XMLRules.pl
 %%SITE_PERL%%/XML/Rules.pm
+%%PERL5_MAN3%%/XML::Rules.3.gz
 @dirrmtry %%SITE_PERL%%/XML

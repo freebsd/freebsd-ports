@@ -107,6 +107,7 @@ include/rudiments/private/parameterstring.h
 include/rudiments/private/parameterstringincludes.h
 include/rudiments/private/passwdentry.h
 include/rudiments/private/passwdentryincludes.h
+include/rudiments/private/permissions.h
 include/rudiments/private/permissionsincludes.h
 include/rudiments/private/process.h
 include/rudiments/private/processincludes.h
@@ -150,6 +151,8 @@ include/rudiments/private/stringbufferincludes.h
 include/rudiments/private/sys.h
 include/rudiments/private/sysincludes.h
 include/rudiments/private/syslogdestination.h
+include/rudiments/private/thread.h
+include/rudiments/private/threadincludes.h
 include/rudiments/private/threadmutex.h
 include/rudiments/private/threadmutexincludes.h
 include/rudiments/private/unixsocketclient.h
@@ -189,6 +192,7 @@ include/rudiments/socketserver.h
 include/rudiments/stdio.h
 include/rudiments/stringbuffer.h
 include/rudiments/sys.h
+include/rudiments/thread.h
 include/rudiments/threadmutex.h
 include/rudiments/unixsocketclient.h
 include/rudiments/unixsocketserver.h
@@ -345,6 +349,8 @@ man/man1/rudiments-config.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/classsys.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/classsyslogdestination-members.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/classsyslogdestination.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/html/classthread-members.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/html/classthread.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/classthreadmutex-members.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/classthreadmutex.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/classunixsocketclient-members.html
@@ -433,6 +439,7 @@ man/man1/rudiments-config.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/functions_0x67.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/functions_0x68.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/functions_0x69.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/html/functions_0x6a.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/functions_0x6b.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/functions_0x6c.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/functions_0x6d.html
@@ -458,6 +465,7 @@ man/man1/rudiments-config.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/functions_func_0x67.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/functions_func_0x68.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/functions_func_0x69.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/html/functions_func_0x6a.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/functions_func_0x6b.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/functions_func_0x6c.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/functions_func_0x6d.html
@@ -564,6 +572,7 @@ man/man1/rudiments-config.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2modemserver_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2parameterstring_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2passwdentry_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2permissions_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2pipe_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2process_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/private_2protocolentry_8h_source.html
@@ -660,6 +669,7 @@ man/man1/rudiments-config.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/tab_s.png
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/tabs.css
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/thread_8h_source.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/html/threadincludes_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/threadmutex_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/threadmutexincludes_8h_source.html
 %%PORTDOCS%%%%DOCSDIR%%/classes/html/tty_8h_source.html

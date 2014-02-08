@@ -3,6 +3,7 @@
 
 PORTNAME=	sysfsutils
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/linux-diag/${PORTNAME}/${PORTVERSION}
 
@@ -10,9 +11,7 @@ MAINTAINER=	gslin@gslin.org
 COMMENT=	System Utilities Based on Sysfs
 
 GNU_CONFIGURE=	yes
+USES=		libtool
 USE_LDCONFIG=	yes
 
-MAN1=		systool.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

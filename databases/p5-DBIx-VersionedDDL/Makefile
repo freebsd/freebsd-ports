@@ -27,9 +27,4 @@ RUN_DEPENDS=	p5-DBD-SQLite>=1.31:${PORTSDIR}/databases/p5-DBD-SQLite \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	migrate_schema.1
-MAN3=	DBIx::VersionedDDL.3 \
-	DBIx::VersionedDDL::Plugin::DefaultScriptProcessor.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

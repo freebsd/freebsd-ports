@@ -20,9 +20,6 @@ DEFAULT_PHP_VER=53
 
 WRKSRC=	${WRKDIR}/php
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 post-extract:
 	@${UNZIP_CMD} -q -d ${WRKDIR} ${WRKDIR}/php.zip
 
@@ -30,13 +27,10 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|\"/etc|\"${ETCDIR}|g;" ${WRKSRC}/konto_check.c ${WRKSRC}/konto_check.lxx
 
 post-install:
-	@${MKDIR} ${ETCDIR}
-	@${INSTALL_DATA} ${WRKDIR}/blz.lut ${ETCDIR}
-	@${INSTALL_DATA} ${WRKDIR}/blz.lut2 ${ETCDIR}
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	@${INSTALL_DATA} ${WRKDIR}/blz.lut ${STAGEDIR}${ETCDIR}
+	@${INSTALL_DATA} ${WRKDIR}/blz.lut2 ${STAGEDIR}${ETCDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKDIR}/00liesmich.pdf ${STAGEDIR}${DOCSDIR}
 
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKDIR}/00liesmich.pdf ${DOCSDIR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -99,7 +99,6 @@
     SUBDIR += gimp-help
     SUBDIR += gjiten
     SUBDIR += gqmpeg
-    SUBDIR += grep
     SUBDIR += groff
     SUBDIR += gskk
     SUBDIR += gsuica

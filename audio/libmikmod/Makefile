@@ -3,17 +3,15 @@
 
 PORTNAME=	libmikmod
 PORTVERSION=	3.1.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF/mikmod/libmikmod%20%28source%29/${PORTVERSION}/
 
 MAINTAINER=	neuroworker@gmail.com
 COMMENT=	MikMod Sound Library
 
-USE_AUTOTOOLS=	libtool
 WANT_GNOME=	yes
-USE_GNOME=	lthack
-USES=		gmake
+USES=		gmake libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--disable-esd

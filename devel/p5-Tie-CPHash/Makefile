@@ -13,7 +13,4 @@ COMMENT=	Perl module implementing a case preserving hash table
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Tie::CPHash.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

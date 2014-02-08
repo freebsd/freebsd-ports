@@ -9,18 +9,34 @@ MASTER_SITES=	http://sdlemu.ngemu.com/OpenProjects/
 DISTNAME=	Cygne-SDL-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	The SDL port of Cygne, a free Bandai Wonderswan emulator
+COMMENT=	SDL port of Cygne, a free Bandai Wonderswan emulator
+
+LICENSE=	GPLv2
+
+WRKSRC=		${WRKDIR}/Cygne-SDL-${PORTVERSION}/src
 
 USE_SDL=	sdl
-USE_GMAKE=	yes
-ONLY_FOR_ARCHS=	i386
-WRKSRC=	${WRKDIR}/Cygne-SDL-${PORTVERSION}/src
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/cygne
+
+OPTIONS_DEFINE_i386=	OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT_i386=	OPTIMIZED_CFLAGS
+OPTIMIZED_CFLAGS_CFLAGS=\
+		-fomit-frame-pointer -fexpensive-optimizations \
+		-funroll-loops -funroll-all-loops -fschedule-insns2 \
+		-fstrength-reduce -malign-double -mfancy-math-387 \
+		-ffast-math -fforce-addr
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+USE_GCC=	any
+.endif
+
 post-patch:
 	${CP} ${FILESDIR}/Makefile.bsd ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cygne ${PREFIX}/bin
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} cygne ${STAGEDIR}${PREFIX}/bin)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -18,6 +18,7 @@ include/znc/SHA256.h
 include/znc/Server.h
 include/znc/Socket.h
 include/znc/Template.h
+include/znc/Threads.h
 include/znc/User.h
 include/znc/Utils.h
 include/znc/WebModules.h
@@ -57,6 +58,7 @@ lib/znc/lastseen.so
 lib/znc/listsockets.so
 lib/znc/log.so
 lib/znc/missingmotd.so
+lib/znc/modules_online.so
 lib/znc/nickserv.so
 lib/znc/notes.so
 lib/znc/notify_connect.so
@@ -74,6 +76,8 @@ lib/znc/stickychan.so
 lib/znc/watch.so
 lib/znc/webadmin.so
 libdata/pkgconfig/znc.pc
+man/man1/znc-buildmod.1.gz
+man/man1/znc.1.gz
 %%CYRUS%%lib/znc/cyrusauth.so
 %%OPENSSL%%lib/znc/awaystore.so
 %%OPENSSL%%lib/znc/cert.so

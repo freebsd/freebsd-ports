@@ -5621,3 +5621,9 @@ french/gfaim||2014-02-04|Abandonware
 math/matlab-R2012a-installer|matlab-installer|2014-02-04|Now it can handle any Matlab version
 games/deal||2014-02-05|Abandonware
 graphics/nurbs++||2014-02-05|Broken on all supported versions
+japanese/grep|textproc/gnugrep|2014-02-06|Official version properly support multi-byte, consider using textproc/gnugrep
+www/comclear||2014-02-06|Netscape doesn't exists anymore
+editors/openoffice-3|editors/openoffice-4|2014-02-07|OpenOffice 3 is not supported anymore
+mail/muttzilla||2014-02-07|Netscape doesn't exists anymore
+www/nscache||2014-02-07|Netscape doesn't exists anymore
+audio/bebocd||2014-02-08|Has expired: abandoned by mainstream

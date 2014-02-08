@@ -8,6 +8,15 @@
 %%SITE_PERL%%/Net/HL7/Messages/ACK.pm
 %%SITE_PERL%%/Net/HL7/Segments/MSH.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net-HL7/.packlist
+%%PERL5_MAN3%%/Net::HL7.3.gz
+%%PERL5_MAN3%%/Net::HL7::Connection.3.gz
+%%PERL5_MAN3%%/Net::HL7::Daemon.3.gz
+%%PERL5_MAN3%%/Net::HL7::Message.3.gz
+%%PERL5_MAN3%%/Net::HL7::Messages::ACK.3.gz
+%%PERL5_MAN3%%/Net::HL7::Request.3.gz
+%%PERL5_MAN3%%/Net::HL7::Response.3.gz
+%%PERL5_MAN3%%/Net::HL7::Segment.3.gz
+%%PERL5_MAN3%%/Net::HL7::Segments::MSH.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net-HL7/
 @dirrm %%SITE_PERL%%/Net/HL7/Segments
 @dirrm %%SITE_PERL%%/Net/HL7/Messages

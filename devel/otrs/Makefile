@@ -3,6 +3,7 @@
 
 PORTNAME=	otrs
 PORTVERSION=	3.3.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -37,7 +38,7 @@ BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-YAML-LibYAML>=0:${PORTSDIR}/textproc/p5-YAML-LibYAML
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		shebangfix
+USES=		shebangfix perl5
 SHEBANG_FILES=	bin/cgi-bin/*.pl bin/fcgi-bin/*.pl bin/*.pl \
 		scripts/auto_build/*.pl scripts/tools/*.pl scripts/*.pl
 
@@ -76,7 +77,6 @@ CLEAN_FILES=	scripts/suse* scripts/redhat* \
 		var/httpd/htdocs/js/thirdparty/ckeditor-4.0/_source \
 		var/httpd/htdocs/skins/Agent/*/img/source
 
-USES=		perl5
 USE_APACHE_RUN=	22+
 
 PLIST_SUB+=	VER_CKEDITOR="4.3"

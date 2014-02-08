@@ -13,10 +13,10 @@ RUN_DEPENDS=		snack>=2.2.10_4:${PORTSDIR}/audio/snack
 
 USES=			tcl
 USE_LDCONFIG=		yes
-NO_STAGE=	yes
 MAKE_ENV=		NO_PROFILE=yes
 
-MAN1=			ufmcontrol.1
-MANLANG=		"" it.ISO8859-1
+pre-install:
+	@${MKDIR} ${STAGEDIR}${MAN1PREFIX}/man/it.ISO8859-1/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

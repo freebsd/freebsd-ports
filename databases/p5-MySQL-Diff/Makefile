@@ -15,20 +15,12 @@ BUILD_DEPENDS=	p5-Class-MakeMethods>=0:${PORTSDIR}/devel/p5-Class-MakeMethods \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
 
-MAN1=		mysqldiff.1
-MAN3=		MySQL::Diff.3 \
-		MySQL::Diff::Database.3 \
-		MySQL::Diff::Table.3 \
-		MySQL::Diff::Utils.3
-
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e '1 s|/usr/bin/perl|${PERL}|' ${WRKSRC}/bin/mysqldiff
+SHEBANG_FILES=	bin/mysqldiff
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/mysqldiff ${PREFIX}/bin/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/mysqldiff ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

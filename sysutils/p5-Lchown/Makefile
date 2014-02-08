@@ -15,7 +15,7 @@ COMMENT=	A perl5 module providing access to lchown(2)
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Lchown.3
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Lchown/Lchown.so
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

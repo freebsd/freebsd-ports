@@ -15,21 +15,14 @@ PORTDOCS=	README
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Net::HL7.3 \
-		Net::HL7::Request.3 \
-		Net::HL7::Connection.3 \
-		Net::HL7::Response.3 \
-		Net::HL7::Daemon.3 \
-		Net::HL7::Segment.3 \
-		Net::HL7::Message.3 \
-		Net::HL7::Segments::MSH.3 \
-		Net::HL7::Messages::ACK.3
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
+PORTDOCS=	README
+
+.include <bsd.port.options.mk>
+
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

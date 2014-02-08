@@ -18,15 +18,6 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN1=	paperconf.1
-MAN3=	defaultpapername.3 defaultpapersizefile.3 paperdone.3 paperfirst.3 \
-	paperinfo.3 paperinit.3 paperlast.3 papernext.3 paperprev.3 \
-	paperpsheight.3 paperpsname.3 paperpswidth.3 paperwithsize.3 \
-	systempapername.3 systempapersizefile.3
-MAN5=	papersize.5
-MAN8=	paperconfig.8
-
-NO_STAGE=	yes
 pre-configure:
 	@${TOUCH} ${WRKSRC}/config.sub
 	@${REINPLACE_CMD} -E -e 's|(#!).*/bin/bash|\1/bin/sh|g' \
@@ -43,6 +34,6 @@ pre-build:
 
 post-install:
 	cd ${WRKDIR} && \
-		${INSTALL_DATA} papersize.a4 papersize.letter ${PREFIX}/etc
+		${INSTALL_DATA} papersize.a4 papersize.letter ${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>

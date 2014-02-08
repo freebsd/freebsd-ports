@@ -3,6 +3,7 @@
 
 PORTNAME=	firefox
 DISTVERSION=	24.3.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	MOZILLA/${PORTNAME}/releases/${DISTVERSION}esr/source
@@ -13,7 +14,7 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.10.2:${PORTSDIR}/devel/nspr \
-		nss>=3.15:${PORTSDIR}/security/nss \
+		nss>=3.15.4:${PORTSDIR}/security/nss \
 		sqlite3>=3.7.17:${PORTSDIR}/databases/sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo \

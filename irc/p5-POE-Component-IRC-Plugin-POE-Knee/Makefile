@@ -17,16 +17,18 @@ BUILD_DEPENDS=	p5-Math-Random>=0.69:${PORTSDIR}/math/p5-Math-Random \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
 
-MAN3=		POE::Component::IRC::Plugin::POE::Knee.3
+OPTIONS_DEFINE=	EXAMPLES
 
-NO_STAGE=	yes
+PORTEXAMPLES=	*
+SHEBANG_FILES=	examples/*.pl
+
+.include <bsd.port.options.mk>
+
 post-install:
-.ifndef(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

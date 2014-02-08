@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/p4api-2008.1.158777
 PLATFORM=	freebsd60
 VERSION=	08.1
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386
@@ -36,26 +35,22 @@ TAR_FILES=	p4api.tgz
 DOCVER=		${VERSION:S/.//}
 
 do-install:
-	${MKDIR} ${PREFIX}/include/perforce
-	${MKDIR} ${PREFIX}/lib/perforce
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/perforce
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/perforce
 	cd ${WRKSRC}/include/p4; \
 	 for i in *.h; \
-	 do ${INSTALL_DATA} $${i} ${PREFIX}/include/perforce; \
+	 do ${INSTALL_DATA} $${i} ${STAGEDIR}${PREFIX}/include/perforce; \
 	 done
 	cd ${WRKSRC}/lib; \
 	 for i in lib*.a; \
-	 do ${INSTALL_DATA} $${i} ${PREFIX}/lib/perforce; \
+	 do ${INSTALL_DATA} $${i} ${STAGEDIR}${PREFIX}/lib/perforce; \
 	 done
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/p4api.pdf ${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/p4api.pdf ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/sample; \
 	 for i in *; \
-	 do ${INSTALL_DATA} $${i} ${EXAMPLESDIR}; \
+	 do ${INSTALL_DATA} $${i} ${STAGEDIR}${EXAMPLESDIR}; \
 	 done
-.endif
 
 .include <bsd.port.post.mk>

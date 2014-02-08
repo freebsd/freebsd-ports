@@ -3319,9 +3319,11 @@
     SUBDIR += pep8
     SUBDIR += performance
     SUBDIR += perlconsole
+    SUBDIR += php-Psr_Log
     SUBDIR += php-java-bridge
     SUBDIR += php-libawl
     SUBDIR += php-memoize
+    SUBDIR += php-scalar_objects
     SUBDIR += php-xdebug
     SUBDIR += php5-blitz
     SUBDIR += php5-blitz-devel
@@ -3742,6 +3744,7 @@
     SUBDIR += py-pyutil
     SUBDIR += py-pyxml2obj
     SUBDIR += py-pyzmq
+    SUBDIR += py-qpid
     SUBDIR += py-qserve
     SUBDIR += py-qt4
     SUBDIR += py-qt4-assistant

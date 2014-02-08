@@ -13,15 +13,12 @@ COMMENT=	Perl extension for simple genrating of unique id's
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=		Data::Uniqid.3
-
 PORTDOCS=	Changes README
 
-NO_STAGE=	yes
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 

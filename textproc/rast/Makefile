@@ -2,7 +2,7 @@
 
 PORTNAME=	rast
 PORTVERSION=	0.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	textproc
 MASTER_SITES=	http://projects.netlab.jp/rast/archives/ \
 		http://dist.bsdlab.org/
@@ -11,7 +11,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Full-text search system using N-gram
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
-LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1
+LIB_DEPENDS=	libapr-1.so:${PORTSDIR}/devel/apr1
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	YES

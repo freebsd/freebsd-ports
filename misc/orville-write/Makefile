@@ -17,6 +17,8 @@ PLIST_FILES=	bin/amin bin/helpers bin/huh bin/jot bin/mesg bin/tel \
 		man/man1/amin.1.gz man/man1/helpers.1.gz man/man1/huh.1.gz \
 		man/man1/mesg.1.gz man/man1/write.1.gz
 
+MAKE_JOBS_UNSAFE=yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 900006

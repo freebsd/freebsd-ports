@@ -2,6 +2,9 @@
 %%SITE_PERL%%/HTML/MobileJp/Plugin/EZweb/Object.pm
 %%SITE_PERL%%/HTML/MobileJp/Plugin/GPS.pm
 %%SITE_PERL%%/HTML/MobileJp.pm
+%%PERL5_MAN3%%/HTML::MobileJp.3.gz
+%%PERL5_MAN3%%/HTML::MobileJp::Plugin::EZweb::Object.3.gz
+%%PERL5_MAN3%%/HTML::MobileJp::Plugin::GPS.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/MobileJp
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
 @dirrmtry %%SITE_PERL%%/HTML/MobileJp/Plugin/EZweb

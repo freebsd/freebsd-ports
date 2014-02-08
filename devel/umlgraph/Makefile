@@ -9,9 +9,9 @@ DISTNAME=	UMLGraph-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	kevlo@FreeBSD.org
-COMMENT=	An automated drawing of UML diagrams
+COMMENT=	Automated drawing of UML diagrams
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_ANT=	yes
@@ -24,15 +24,14 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PLIST_FILES=	bin/umlgraph %%JAVAJARDIR%%/UmlGraph.jar
 
-NO_STAGE=	yes
 post-configure:
 	${REINPLACE_CMD} -e 's|%%JAVA_HOME%%|${JAVA_HOME}|; \
 		s|%%JAVAJARDIR%%|${JAVAJARDIR}|' \
 		${WRKSRC}/bin/umlgraph
 
 do-install:
-	@${MKDIR} ${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/lib/UmlGraph.jar ${JAVAJARDIR}/
-	@${INSTALL_SCRIPT} ${WRKSRC}/bin/umlgraph ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/UmlGraph.jar ${STAGEDIR}${JAVAJARDIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/umlgraph ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

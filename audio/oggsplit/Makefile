@@ -10,6 +10,9 @@ MASTER_SITES=	http://homepage.ntlworld.com/jfe1205/OggVorbis/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Split multiplexed (grouped or chained) Ogg files into separate streams
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg
 
 USES=		gmake

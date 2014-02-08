@@ -16,6 +16,22 @@
 %%SITE_PERL%%/Data/Localize/Trait/WithStorage.pm
 %%SITE_PERL%%/Data/Localize/Namespace.pm
 %%SITE_PERL%%/Data/Localize/Util.pm
+%%PERL5_MAN3%%/Data::Localize.3.gz
+%%PERL5_MAN3%%/Data::Localize::Auto.3.gz
+%%PERL5_MAN3%%/Data::Localize::Format.3.gz
+%%PERL5_MAN3%%/Data::Localize::Format::Gettext.3.gz
+%%PERL5_MAN3%%/Data::Localize::Format::Maketext.3.gz
+%%PERL5_MAN3%%/Data::Localize::Format::NamedArgs.3.gz
+%%PERL5_MAN3%%/Data::Localize::Gettext.3.gz
+%%PERL5_MAN3%%/Data::Localize::Gettext::Parser.3.gz
+%%PERL5_MAN3%%/Data::Localize::Localizer.3.gz
+%%PERL5_MAN3%%/Data::Localize::MultiLevel.3.gz
+%%PERL5_MAN3%%/Data::Localize::Namespace.3.gz
+%%PERL5_MAN3%%/Data::Localize::Storage.3.gz
+%%PERL5_MAN3%%/Data::Localize::Storage::BerkeleyDB.3.gz
+%%PERL5_MAN3%%/Data::Localize::Storage::Hash.3.gz
+%%PERL5_MAN3%%/Data::Localize::Trait::WithStorage.3.gz
+%%PERL5_MAN3%%/Data::Localize::Util.3.gz
 @dirrm %%SITE_PERL%%/Data/Localize/Trait
 @dirrm %%SITE_PERL%%/Data/Localize/Storage
 @dirrm %%SITE_PERL%%/Data/Localize/Gettext

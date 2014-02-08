@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	cxref
-PORTVERSION=	1.6d
+PORTVERSION=	1.6e
 CATEGORIES=	devel
-MASTER_SITES=	http://www.gedanken.demon.co.uk/download-cxref/ \
+MASTER_SITES=	http://www.gedanken.org.uk/software/cxref/download/ \
 		http://fossies.org/linux/misc/
 EXTRACT_SUFX=	.tgz
 
@@ -20,9 +20,8 @@ CONFIGURE_ARGS=	--without-cxref-cpp
 ALL_TARGET=	programs
 
 post-install:
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/contrib/*.pl ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/contrib/*.el ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/contrib/README* ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@(cd ${WRKSRC}/contrib && ${INSTALL_DATA} *.el *.pl *.py README* \
+		${STAGEDIR}${DATADIR})
 
 .include <bsd.port.mk>

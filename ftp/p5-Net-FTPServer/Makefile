@@ -24,33 +24,15 @@ USE_PERL5=	configure
 
 SUB_FILES=	pkg-message
 
-MAN3=	Net::FTPServer.3 \
-	Net::FTPServer::DBeg1::DirHandle.3 \
-	Net::FTPServer::DBeg1::FileHandle.3 \
-	Net::FTPServer::DBeg1::IOBlob.3 \
-	Net::FTPServer::DBeg1::Server.3 \
-	Net::FTPServer::DirHandle.3 \
-	Net::FTPServer::FileHandle.3 \
-	Net::FTPServer::Full::DirHandle.3 \
-	Net::FTPServer::Full::FileHandle.3 \
-	Net::FTPServer::Full::Server.3 \
-	Net::FTPServer::Handle.3 \
-	Net::FTPServer::InMem::DirHandle.3 \
-	Net::FTPServer::InMem::FileHandle.3 \
-	Net::FTPServer::InMem::Server.3 \
-	Net::FTPServer::Proxy::DirHandle.3 \
-	Net::FTPServer::Proxy::FileHandle.3 \
-	Net::FTPServer::Proxy::Server.3 \
-	Net::FTPServer::RO::DirHandle.3 \
-	Net::FTPServer::RO::FileHandle.3 \
-	Net::FTPServer::RO::Server.3
-
 DOCS=	README TODO doc/*
 
 PORTDOCS=	*
 PORTEXAMPLES=	ftpd.conf
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e "s/root,root/root,wheel/" \
 		-e "s,/usr/sbin,${PREFIX}/sbin," \
@@ -61,14 +43,10 @@ post-patch:
 		${WRKSRC}/Makefile.PL
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/etc/ftpd.conf ${EXAMPLESDIR}
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR})
-.endif
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/etc/ftpd.conf ${STAGEDIR}${EXAMPLESDIR}
+
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

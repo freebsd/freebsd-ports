@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.magnicomp.com/download/rdist/ \
 		ftp://ftp.sunet.se/pub/unix/admin/mirror-magnicomp/download/rdist/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A network file distribution/synchronisation utility
+COMMENT=	Network file distribution/synchronisation utility
 
 # To avoid confusion with /usr/bin/rdist, you may prefer otherwise.
 RDIST_NAME?=	rdist6

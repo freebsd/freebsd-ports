@@ -51,12 +51,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4dd575b8-8f82-11e3-bb11-0025905a4771">
+    <topic>phpmyfaq -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq</name>
+	<range><lt>2.8.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyFAQ team reports:</p>
+	<blockquote cite="http://www.phpmyfaq.de/advisory_2014-02-04.php">
+	  <p> An arbitrary script may be executed on the user's Internet
+	    Explorer when using an older version of the browser. If a user views
+	    a malicious page while logged in, settings may be changed
+	    unintentionally.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-0813</cvename>
+      <cvename>CVE-2014-0814</cvename>
+      <url>http://www.phpmyfaq.de/advisory_2014-02-04.php</url>
+    </references>
+    <dates>
+      <discovery>2014-02-04</discovery>
+      <entry>2014-02-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b7a7576d-8e0a-11e3-9976-9c4e36909cc0">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>linux-f10-flashplugin</name>
-	<range><lt>11.2r202.335</lt></range>
+	<range><lt>11.2r202.336</lt></range>
       </package>
     </affects>
     <description>
@@ -75,6 +105,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2014-02-04</discovery>
       <entry>2014-02-04</entry>
+      <modified>2014-02-05</modified>
     </dates>
   </vuln>
 
@@ -248,11 +279,13 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="c7b5d72b-886a-11e3-9533-60a44c524f57">
-    <topic>otrs -- SQL injection issue</topic>
+    <topic>otrs -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>otrs</name>
-	<range><lt>3.2.14</lt></range>
+	<range><lt>3.1.19</lt></range>
+	<range><gt>3.2.*</gt><lt>3.2.14</lt></range>
+	<range><gt>3.3.*</gt><lt>3.3.4</lt></range>
       </package>
     </affects>
     <description>
@@ -261,29 +294,6 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="https://www.otrs.com/security-advisory-2014-02-sql-injection-issue/">
 	  <p>SQL injection issue</p>
 	</blockquote>
-      </body>
-    </description>
-    <references>
-      <cvename>CVE-2014-1471</cvename>
-      <url>https://www.otrs.com/security-advisory-2014-02-sql-injection-issue/</url>
-    </references>
-    <dates>
-      <discovery>2014-01-28</discovery>
-      <entry>2014-01-28</entry>
-    </dates>
-  </vuln>
-
-  <vuln vid="080c5370-886a-11e3-9533-60a44c524f57">
-    <topic>otrs -- CSRF issue in customer web interface</topic>
-    <affects>
-      <package>
-	<name>otrs</name>
-	<range><lt>3.2.14</lt></range>
-      </package>
-    </affects>
-    <description>
-      <body xmlns="http://www.w3.org/1999/xhtml">
-	<p>The OTRS Project reports:</p>
 	<blockquote cite="https://www.otrs.com/security-advisory-2014-01-csrf-issue-customer-web-interface/">
 	  <p>An attacker that managed to take over the session of a logged in customer
 	    could create tickets and/or send follow-ups to existing tickets due to
@@ -292,12 +302,19 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2014-1471</cvename>
+      <url>https://www.otrs.com/security-advisory-2014-02-sql-injection-issue/</url>
       <url>https://www.otrs.com/security-advisory-2014-01-csrf-issue-customer-web-interface/</url>
     </references>
     <dates>
       <discovery>2014-01-28</discovery>
       <entry>2014-01-28</entry>
+      <modified>2014-02-06</modified>
     </dates>
+  </vuln>
+
+  <vuln vid="080c5370-886a-11e3-9533-60a44c524f57">
+    <cancelled superseded="c7b5d72b-886a-11e3-9533-60a44c524f57"/>
   </vuln>
 
   <vuln vid="f9810c43-87a5-11e3-9214-00262d5ed8ee">

@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable assembler for 16C84 series PICs
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 USE_BZIP2=	yes

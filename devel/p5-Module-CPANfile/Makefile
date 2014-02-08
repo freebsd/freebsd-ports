@@ -13,11 +13,4 @@ COMMENT=	Parse cpanfile
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	cpanfile-dump.1 \
-	mymeta-cpanfile.1
-MAN3=	Module::CPANfile.3 \
-	cpanfile-faq.3 \
-	cpanfile.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

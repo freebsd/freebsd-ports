@@ -1,35 +1,44 @@
 bin/gtksql
+man/man1/gtksql.1.gz
 share/applications/gtksql.desktop
-%%NLS%%share/locale/de_DE/LC_MESSAGES/gtksql.mo
-share/pixmaps/connect-grey.xpm
-share/pixmaps/connect.png
-share/pixmaps/connect.xpm
-share/pixmaps/delete-grey.xpm
-share/pixmaps/delete.xpm
-share/pixmaps/disconnect-grey.xpm
-share/pixmaps/disconnect.png
-share/pixmaps/disconnect.xpm
-share/pixmaps/export-grey.xpm
-share/pixmaps/export.xpm
-share/pixmaps/gtksql.png
-share/pixmaps/gtksql.xpm
-share/pixmaps/gtksql_db.png
-share/pixmaps/gtksql_field.png
-share/pixmaps/gtksql_gnome_icon.png
-share/pixmaps/gtksql_table.png
-share/pixmaps/new-grey.xpm
-share/pixmaps/new.xpm
-share/pixmaps/open-grey.xpm
-share/pixmaps/open.xpm
-share/pixmaps/question.xpm
-share/pixmaps/refresh-grey.xpm
-share/pixmaps/refresh.xpm
-share/pixmaps/rename-grey.xpm
-share/pixmaps/rename.xpm
-share/pixmaps/save-grey.xpm
-share/pixmaps/save.xpm
-share/pixmaps/send-grey.xpm
-share/pixmaps/send.xpm
-share/pixmaps/warning.xpm
-%%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/de_DE
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%DATADIR%%/pixmaps/connect-grey.xpm
+%%DATADIR%%/pixmaps/connect.png
+%%DATADIR%%/pixmaps/connect.xpm
+%%DATADIR%%/pixmaps/delete-grey.xpm
+%%DATADIR%%/pixmaps/delete.xpm
+%%DATADIR%%/pixmaps/disconnect-grey.xpm
+%%DATADIR%%/pixmaps/disconnect.png
+%%DATADIR%%/pixmaps/disconnect.xpm
+%%DATADIR%%/pixmaps/export-grey.xpm
+%%DATADIR%%/pixmaps/export.xpm
+%%DATADIR%%/pixmaps/gtksql.png
+%%DATADIR%%/pixmaps/gtksql.xpm
+%%DATADIR%%/pixmaps/gtksql_db.png
+%%DATADIR%%/pixmaps/gtksql_field.png
+%%DATADIR%%/pixmaps/gtksql_gnome_icon.png
+%%DATADIR%%/pixmaps/gtksql_table.png
+%%DATADIR%%/pixmaps/new-grey.xpm
+%%DATADIR%%/pixmaps/new.xpm
+%%DATADIR%%/pixmaps/open-grey.xpm
+%%DATADIR%%/pixmaps/open.xpm
+%%DATADIR%%/pixmaps/question.xpm
+%%DATADIR%%/pixmaps/refresh-grey.xpm
+%%DATADIR%%/pixmaps/refresh.xpm
+%%DATADIR%%/pixmaps/rename-grey.xpm
+%%DATADIR%%/pixmaps/rename.xpm
+%%DATADIR%%/pixmaps/save-grey.xpm
+%%DATADIR%%/pixmaps/save.xpm
+%%DATADIR%%/pixmaps/send-grey.xpm
+%%DATADIR%%/pixmaps/send.xpm
+%%DATADIR%%/pixmaps/warning.xpm
+share/locale/de_DE/LC_MESSAGES/gtksql.mo
+@dirrmtry share/locale/de_DE/LC_MESSAGES
+@dirrmtry share/locale/de_DE
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

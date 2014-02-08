@@ -29,6 +29,24 @@
 %%SITE_PERL%%/Vimana/VimOnline/ScriptPage.pm
 %%SITE_PERL%%/Vimana/VimOnline/Search.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Vimana/.packlist
+%%PERL5_MAN3%%/Vimana.3.gz
+%%PERL5_MAN3%%/Vimana::Command::Download.3.gz
+%%PERL5_MAN3%%/Vimana::Command::Install.3.gz
+%%PERL5_MAN3%%/Vimana::Command::Installed.3.gz
+%%PERL5_MAN3%%/Vimana::Command::Remove.3.gz
+%%PERL5_MAN3%%/Vimana::Command::Search.3.gz
+%%PERL5_MAN3%%/Vimana::Index.3.gz
+%%PERL5_MAN3%%/Vimana::Installer.3.gz
+%%PERL5_MAN3%%/Vimana::Installer::Auto.3.gz
+%%PERL5_MAN3%%/Vimana::Installer::Makefile.3.gz
+%%PERL5_MAN3%%/Vimana::Installer::Text.3.gz
+%%PERL5_MAN3%%/Vimana::Logger.3.gz
+%%PERL5_MAN3%%/Vimana::Manual.3.gz
+%%PERL5_MAN3%%/Vimana::Record.3.gz
+%%PERL5_MAN3%%/Vimana::Recursive.3.gz
+%%PERL5_MAN3%%/Vimana::Util.3.gz
+man/man1/vim_record.1.gz
+man/man1/vimana.1.gz
 bin/vimana
 bin/vim_record
 @dirrmtry %%SITE_PERL%%/Vimana/VimOnline

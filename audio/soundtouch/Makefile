@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	soundtouch
-PORTVERSION=	1.7.1
+PORTVERSION=	1.8.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.surina.net/soundtouch/
 
@@ -11,37 +11,37 @@ COMMENT=	Open-source audio processing library
 
 LICENSE=	LGPL21
 
-OPTIONS_DEFINE=	INTEGER_SAMPLES DOCS
-INTEGER_SAMPLES_DESC=	Use integer sample format
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
-NO_STAGE=	yes
 ACLOCAL_ARGS=	-I config/m4
 AUTOMAKE_ARGS=	--add-missing --copy --foreign
+CONFIGURE_ARGS=	--disable-silent-rules
 USE_LDCONFIG=	yes
+
+OPTIONS_DEFINE=	INTEGER_SAMPLES DOCS
+OPTIONS_DEFINE_amd64=	SSE
+OPTIONS_DEFINE_i386=	SSE
+
+INTEGER_SAMPLES_DESC=	Use integer sample format
+INTEGER_SAMPLES_CONFIGURE_ENABLE=	integer-samples
+SSE_CONFIGURE_ENABLE=	x86-optimizations
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MINTEGER_SAMPLES}
-CONFIGURE_ARGS+=	--enable-integer-samples
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e \
-		's|^pkgdoc_DATA|#pkgdoc_DATA| ; \
+		'/^pkgdoc_DATA/s|COPYING.TXT|| ; \
 		 s|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.am
-	@${FIND} ${WRKSRC}/source -name "Makefile.am" | ${XARGS} \
-		${REINPLACE_CMD} -e \
-		's|-O[0-9]|| ; \
-		 s|-msse||'
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}
-.endif
+	@${REINPLACE_CMD} -e \
+		's|^INCLUDES|AM_CPPFLAGS| ; \
+		 s|$$(prefix)/doc|$$(datadir)/doc|' \
+		${WRKSRC}/config/am_include.mk
+.for i in SoundStretch SoundTouch
+	@${REINPLACE_CMD} -e \
+		's|-O[0-9]||' \
+		${WRKSRC}/source/${i}/Makefile.am
+.endfor
 
 .include <bsd.port.mk>

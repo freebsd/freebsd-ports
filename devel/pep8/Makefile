@@ -3,6 +3,7 @@
 
 PORTNAME=	pep8
 PORTVERSION=	1.4.6
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,14 +14,11 @@ COMMENT=	Python style guide checker
 LICENSE=	MIT
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	${PORTNAME}
-PYDISTUTILS_PKGVERSION=	${PORTVERSION}
-PYDISTUTILS_NOEGGINFO=	yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 regression-test: extract
 	@(cd ${WRKSRC}; ${PYTHON_CMD} ${PORTNAME}.py \
 		--doctest --testsuite=testsuite)
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

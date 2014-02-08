@@ -2,38 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	pdfbox
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.4
 CATEGORIES=	print textproc java
 MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%,pdfbox/${PORTVERSION},}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${PORTNAME}-app-${PORTVERSION}.jar	\
-		fontbox-${PORTVERSION}.jar jempbox-${PORTVERSION}.jar
+DISTFILES=	${JAR_NAMES:S/$/-${PORTVERSION}.jar/}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Java PDF Library
+MAINTAINER=	ale@FreeBSD.org
+COMMENT=	Java tool for working with PDF documents
 
 LICENSE=	APACHE20
 
 RUN_DEPENDS=	${JAVAJARDIR}/bcmail.jar:${PORTSDIR}/java/bouncycastle	\
 		${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging
 
-USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAR_NAMES=	pdfbox fontbox jempbox preflight xmpbox
 
-DIST_SUBDIR=	${PORTNAME}
+USE_JAVA=	yes
 NO_EXTRACT=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	%%JAVAJARDIR%%/fontbox-${PORTVERSION}.jar	\
-		%%JAVAJARDIR%%/jempbox-${PORTVERSION}.jar	\
-		%%JAVAJARDIR%%/${PORTNAME}-app-${PORTVERSION}.jar
+PLIST_FILES=	${JAR_NAMES:S/^/%%JAVAJARDIR%%\//:S/$/.jar/}
 
-NO_STAGE=	yes
 do-install:
 	@${ECHO_MSG} -n ">> Installing JAR files in ${JAVAJARDIR}..."
-	@${MKDIR} ${JAVAJARDIR}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/*-${PORTVERSION}.jar \
-	 ${JAVAJARDIR}
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
+.for f in ${JAR_NAMES}
+	${INSTALL_DATA} ${DISTDIR}/${f}-${PORTVERSION}.jar \
+		${STAGEDIR}${JAVAJARDIR}/${f}.jar
+.endfor
 	@${ECHO_MSG} " [ DONE ]"
 
 .include <bsd.port.mk>

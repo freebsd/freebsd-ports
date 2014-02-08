@@ -3,7 +3,7 @@
 
 PORTNAME=	secretmaryochronicles
 PORTVERSION=	1.10.git20120512
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 #		SF/smclone/Secret%20Maryo%20Chronicles/${PORTVERSION}

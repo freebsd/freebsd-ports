@@ -50,7 +50,6 @@
     SUBDIR += baresip
     SUBDIR += baudline
     SUBDIR += beast
-    SUBDIR += bebocd
     SUBDIR += beep
     SUBDIR += beets
     SUBDIR += blop

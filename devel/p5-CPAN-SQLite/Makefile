@@ -23,18 +23,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	cpandb.1
-MAN3=	CPAN::SQLite::Index.3 \
-	CPAN::SQLite::META.3 \
-	CPAN::SQLite.3 \
-	CPAN::SQLite::State.3 \
-	CPAN::SQLite::DBI::Search.3 \
-	CPAN::SQLite::DBI::Index.3 \
-	CPAN::SQLite::DBI.3 \
-	CPAN::SQLite::Util.3 \
-	CPAN::SQLite::Populate.3 \
-	CPAN::SQLite::Info.3 \
-	CPAN::SQLite::Search.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

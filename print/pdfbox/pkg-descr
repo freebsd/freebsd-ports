@@ -1,19 +1,16 @@
-Apache PDFBox - Java PDF Library
-
-Apache PDFBox is an open source Java PDF library for working with PDF
+The Apache PDFBox library is an open source Java tool for working with PDF
 documents. This project allows creation of new PDF documents, manipulation of
 existing documents and the ability to extract content from documents. Apache
-PDFBox also includes a  command line utility.
+PDFBox also includes several command line utilities.
 
-Features
-
-    * PDF to text extraction
-    * Merge PDF Documents
-    * PDF Document Encryption/Decryption
-    * Lucene Search Engine Integration
-    * Fill in form data FDF and XFDF
-    * Create a PDF from a text file
-    * Create images from PDF pages
-    * Print a PDF
+Features:
+ - Text extraction
+ - Merging & Splitting
+ - Forms Filling
+ - PDF/A Validation
+ - PDF Printing
+ - PDF to Image Conversion
+ - PDF Creation
+ - PDF Signing
 
 WWW: http://pdfbox.apache.org/

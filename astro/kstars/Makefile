@@ -2,6 +2,7 @@
 
 PORTNAME=	kstars
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	astro kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -10,8 +11,8 @@ DIST_SUBDIR=	KDE/${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE 4 desktop planetarium
 
-LIB_DEPENDS=	cfitsio.0:${PORTSDIR}/astro/cfitsio \
-		wcs:${PORTSDIR}/astro/wcslib
+LIB_DEPENDS=	libcfitsio.so:${PORTSDIR}/astro/cfitsio \
+		libwcs.so:${PORTSDIR}/astro/wcslib
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2 \
 		xplanet:${PORTSDIR}/astro/xplanet

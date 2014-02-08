@@ -43,17 +43,6 @@ TEST_DEPENDS=	p5-Test-Class>=0.37:${PORTSDIR}/devel/p5-Test-Class \
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Net::NSCA::Client.3 \
-		Net::NSCA::Client::DataPacket.3 \
-		Net::NSCA::Client::Connection.3 \
-		Net::NSCA::Client::Connection::TLS.3 \
-		Net::NSCA::Client::InitialPacket.3 \
-		Net::NSCA::Client::Library.3 \
-		Net::NSCA::Client::ServerConfig.3 \
-		Net::NSCA::Client::Troubleshooting.3 \
-		Net::NSCA::Client::Utils.3
-
-NO_STAGE=	yes
 post-patch:
 	@cd ${WRKSRC} && ${RM} -f bin/send_nsca
 	@cd ${WRKSRC} && ${RM} -f t/send_nsca.t

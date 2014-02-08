@@ -1077,7 +1077,6 @@
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/ClassCollectionLoaderTest.php
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/ClassLoaderTest.php
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/ClassMapGeneratorTest.php
-%%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/DebugClassLoaderTest.php
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/Namespaced/Bar.php
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/Namespaced/Baz.php
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/Apc/Namespaced/Foo.php
@@ -1150,6 +1149,7 @@
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/Fixtures/php5.4/traits.php
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/Tests/UniversalClassLoaderTest.php
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/UniversalClassLoader.php
+%%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/WinCacheClassLoader.php
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/XcacheClassLoader.php
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/composer.json
 %%WWWDIR%%/inc/libs/Symfony/Component/ClassLoader/phpunit.xml.dist

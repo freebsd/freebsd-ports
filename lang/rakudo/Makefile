@@ -3,12 +3,13 @@
 
 PORTNAME=	rakudo
 PORTVERSION=	2013.10
+PORTREVISION=	1
 PORTEPOCH=	4
 CATEGORIES=	lang
 MASTER_SITES=	http://rakudo.org/downloads/star/
 DISTNAME=	${PORTNAME}-star-${PORTVERSION}
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Rakudo Perl 6 Compiler targets the Parrot Virtual Machine
 
 LICENSE=	ART20

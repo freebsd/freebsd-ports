@@ -10,6 +10,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open source groupware suite
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 USE_PHP=	session imap mysql
 WANT_PHP_WEB=	yes
 

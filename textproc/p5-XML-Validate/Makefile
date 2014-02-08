@@ -19,10 +19,4 @@ TEST_DEPENDS=	p5-Test-Assertions>0:${PORTSDIR}/devel/p5-Test-Assertions
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		validxml.pl.1
-MAN3=		XML::Validate.3 XML::Validate::Base.3 \
-		XML::Validate::LibXML.3 XML::Validate::MSXML.3 \
-		XML::Validate::Xerces.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -17,12 +17,11 @@ NO_BUILD=	yes
 USES=		shebangfix perl5
 SHEBANG_FILES=	ip6_int
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/ip6_int ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/ip6_int ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

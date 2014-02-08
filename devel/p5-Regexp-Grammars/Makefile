@@ -13,7 +13,4 @@ COMMENT=	Add grammatical parsing features to Perl 5.10 regexes
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	Regexp::Grammars.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

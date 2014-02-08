@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	File-Find-Object
-PORTVERSION=	0.2.8
+PORTVERSION=	0.2.9
 DISTVERSIONPREFIX=v
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Object oriented File::Find replacement
 
-LICENSE=	ART10 GPLv1
+LICENSE=	ART20 GPLv2
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-XSAccessor>=0:${PORTSDIR}/devel/p5-Class-XSAccessor

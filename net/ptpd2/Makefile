@@ -2,35 +2,43 @@
 # $FreeBSD$
 
 PORTNAME=	ptpd
-DISTVERSION=	2.2.2
-PORTREVISION=	2
+DISTVERSION=	2.3.0
 CATEGORIES=	net
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 PKGNAMESUFFIX=	2
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Implementation of the precision time protocol IEEE 1588-2008
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 CONFLICTS=	ptpd2-devel.*
 
-WRKSRC=		${WRKDIR}/ptpd-${DISTVERSION}/src
+LIB_DEPENDS+=	libnetsnmp.so:${PORTSDIR}/net-mgmt/net-snmp
 
-PLIST_FILES=	sbin/ptpd2
+ETCDIR=	${PREFIX}/etc/${PORTNAME}${PKGNAMESUFFIX}
+
+USES=	gmake
+GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env libtool
+
 PORTDOCS=	*
 
 USE_RC_SUBR=	ptpd2
 
-MAN8=		ptpd2.8
+.include <bsd.port.options.mk>
 
-NO_STAGE=	yes
-do-install::
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}2 ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}2.8 ${MANPREFIX}/man/man8
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKDIR}/ptpd-${DISTVERSION}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
+run-autotools:	run-autotools-autoreconf
+
+run-autotools-autoreconf:
+	@cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOTOOLS_ENV} ${AUTORECONF} -i
+
+post-install:
+.if ${PORT_OPTIONS:MDOCS}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKDIR}/ptpd-${DISTVERSION}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 .endif
+	${MKDIR} ${STAGEDIR}${ETCDIR}
+	${CP} ${FILESDIR}/*.sample ${STAGEDIR}${ETCDIR}
 
 .include <bsd.port.mk>

@@ -3,6 +3,7 @@
 
 PORTNAME=	fplib
 PORTVERSION=	20121001
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -19,7 +20,6 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libtag.so:${PORTSDIR}/audio/taglib
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-#REINPLACE_ARGS=	-i ''
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 USE_XZ=		yes

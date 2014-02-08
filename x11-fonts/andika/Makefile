@@ -28,21 +28,17 @@ SUB_FILES=	pkg-message
 DOCSLIST=	FONTLOG.txt OFL-FAQ.txt README.txt
 PORTDOCS=	${DOCSLIST:C,^.*/,,}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 do-configure:
 	${DO_NADA}
 
 do-install:
-	${ECHO_MSG}
-	${CAT} ${PKGMESSAGE}
-	${ECHO_MSG}
-	${MKDIR} ${FONTROOTDIR}/${FONTDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTROOTDIR}/${FONTDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCSLIST:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${FONTROOTDIR}/${FONTDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.ttf ${STAGEDIR}${FONTROOTDIR}/${FONTDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCSLIST:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

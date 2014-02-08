@@ -14,9 +14,8 @@ RUN_DEPENDS=	smartmontools>=0:${PORTSDIR}/sysutils/smartmontools
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/libexec/nagios
-	@${INSTALL_SCRIPT} ${.CURDIR}/src/check_hdd_health ${PREFIX}/libexec/nagios
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nagios
+	@${INSTALL_SCRIPT} ${.CURDIR}/src/check_hdd_health ${STAGEDIR}${PREFIX}/libexec/nagios
 
 .include <bsd.port.mk>

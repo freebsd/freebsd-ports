@@ -18,7 +18,9 @@ TEST_DEPENDS=	\
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Encode/JP/Mobile/Mobile.so
+
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-

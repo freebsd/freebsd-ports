@@ -13,6 +13,9 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Transforms the output of 'cvs status' to a sorted ASCII table
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 USES=		perl5
 NO_BUILD=	yes
 PLIST_FILES=	bin/cvsstat

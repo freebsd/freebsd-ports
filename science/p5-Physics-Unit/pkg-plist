@@ -1,4 +1,5 @@
 bin/physics-unit
+man/man1/physics-unit.1.gz
 %%SITE_PERL%%/Physics/Unit.pm
 %%SITE_PERL%%/Physics/Unit/Implementation.pod
 %%SITE_PERL%%/Physics/Unit/UnitsByName.pod
@@ -7,12 +8,12 @@ bin/physics-unit
 %%SITE_PERL%%/Physics/Unit/Scalar.pm
 %%SITE_PERL%%/Physics/Unit/Script/GenPages.pm
 %%SITE_PERL%%/Physics/Unit/Script.pm
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ScalarDocExamples.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ScalarMethods.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ScalarSimple.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/UnitDocExamples.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/UnitLists.pl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PERL5_MAN3%%/Physics::Unit.3.gz
+%%PERL5_MAN3%%/Physics::Unit::Implementation.3.gz
+%%PERL5_MAN3%%/Physics::Unit::Scalar.3.gz
+%%PERL5_MAN3%%/Physics::Unit::Scalar::Implementation.3.gz
+%%PERL5_MAN3%%/Physics::Unit::UnitsByName.3.gz
+%%PERL5_MAN3%%/Physics::Unit::UnitsByType.3.gz
 @dirrm %%SITE_PERL%%/Physics/Unit/Scalar
 @dirrm %%SITE_PERL%%/Physics/Unit/Script
 @dirrm %%SITE_PERL%%/Physics/Unit

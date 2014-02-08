@@ -20,14 +20,4 @@ TEST_DEPENDS=	p5-Fennec-Lite>=0:${PORTSDIR}/devel/p5-Fennec-Lite \
 USES=	perl5
 USE_PERL5=	modbuild
 
-MAN3=	Exporter::Declare.3 \
-	Exporter::Declare::Export.3 \
-	Exporter::Declare::Export::Alias.3 \
-	Exporter::Declare::Export::Generator.3 \
-	Exporter::Declare::Export::Sub.3 \
-	Exporter::Declare::Export::Variable.3 \
-	Exporter::Declare::Meta.3 \
-	Exporter::Declare::Specs.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

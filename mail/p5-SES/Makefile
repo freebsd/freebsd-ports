@@ -20,25 +20,24 @@ RUN_DEPENDS=	p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
 		p5-XML-LibXML>=0:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-libwww>=6:${PORTSDIR}/www/p5-libwww
 
+USES=		perl5 shebangfix
 NO_BUILD=	yes
-USES=		perl5
 USE_PERL5=	run
 USE_ZIP=	yes
+
 WRKSRC=		${WRKDIR}/bin
 
 PLIST_FILES=	bin/ses-get-stats.pl \
 		bin/ses-send-email.pl \
 		bin/ses-verify-email-address.pl \
 		%%SITE_PERL%%/SES.pm
+SHEBANG_FILES=	*.pl
 
 SCRIPTS=	ses-get-stats.pl ses-send-email.pl ses-verify-email-address.pl
 
-NO_STAGE=	yes
-post-extract:
-	@cd ${WRKSRC} && ${REINPLACE_CMD} -e '1 s|/usr/bin/perl|${PERL}|' ${SCRIPTS}
-
 do-install:
-	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/SES.pm ${PREFIX}/${SITE_PERL_REL}/
+	cd ${WRKSRC} && ${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
+	${INSTALL_DATA} ${WRKSRC}/SES.pm ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
 
 .include <bsd.port.mk>

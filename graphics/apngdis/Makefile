@@ -18,6 +18,7 @@ NO_WRKSUBDIR=	yes
 
 USE_ZIP=	yes
 USES=		dos2unix gmake
+LDFLAGS+=	-lz
 
 PORTDOCS=	readme.txt
 PLIST_FILES=	bin/${PORTNAME}

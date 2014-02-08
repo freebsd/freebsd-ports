@@ -6,7 +6,7 @@ PORTVERSION=	4.1.6
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A robust high performance CORBA ORB for C++ and Python
+COMMENT=	Robust high performance CORBA ORB for C++ and Python
 
 PLIST_SUB+=	SONUM=${PORTVERSION:C/.*\.//}
 GNU_CONFIGURE=	yes

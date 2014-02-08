@@ -18,12 +18,9 @@ USES=		perl5 shebangfix
 USE_PERL5=	configure
 SHEBANG_FILES=	eg/*
 
-MAN3=	BSD::Process.3
-
-NO_STAGE=	yes
 post-install:
 .for script in procinfo showprocattr topten
-	@${INSTALL_SCRIPT} ${WRKSRC}/eg/${script} ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/eg/${script} ${STAGEDIR}${PREFIX}/bin
 .endfor
 
 .include <bsd.port.mk>

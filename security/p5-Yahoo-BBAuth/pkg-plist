@@ -2,6 +2,7 @@
 %%SITE_PERL%%/Yahoo/BBAuth.pm
 %%WWWDIR%%/cgi-bin/testMAIL.cgi
 %%WWWDIR%%/cgi-bin/testPHOTOS.cgi
+%%PERL5_MAN3%%/Yahoo::BBAuth.3.gz
 @dirrmtry %%WWWDIR%%/cgi-bin
 @dirrmtry %%WWWDIR%%
 @dirrmtry %%SITE_PERL%%/Yahoo

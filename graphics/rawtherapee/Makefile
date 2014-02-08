@@ -3,6 +3,7 @@
 
 PORTNAME=	rawtherapee
 PORTVERSION=	4.0.12
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://rawtherapee.com/shared/source/
 
@@ -77,12 +78,15 @@ CXXFLAGS+=	-O3 -ffast-math \
 .endif
 .endif
 
-_OpenMP_args=	-DOPTION_OMP:BOOL=OFF
-.if ${PORT_OPTIONS:MOPENMP} && ${COMPILER_TYPE} == gcc
-_OpenMP_args=	-DOPTION_OMP:BOOL=ON
+.if ${PORT_OPTIONS:MOPENMP}
+CMAKE_ARGS+=	-DOPTION_OMP:BOOL=ON
+.else
+CMAKE_ARGS+=	-DOPTION_OMP:BOOL=OFF
 .endif
 
-CMAKE_ARGS+=	${_OpenMP_args}
+.if ${OSVERSION} >= 1100000
+BROKEN=		rawtherapee is known to crash on -HEAD and requires debugging that the maintainer cannot provide.
+.endif
 
 # -------------------------------------------------------------------
 

@@ -10,17 +10,15 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A preprocessor for making GObjects with inline C
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
-USES=		pkgconfig
+USES=		pkgconfig gmake
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-PLIST_FILES=	bin/gob2 share/aclocal/gob2.m4 ${EXAMPLES:S/^/%%EXAMPLESDIR%%\//}
+PLIST_FILES=	bin/gob2 share/aclocal/gob2.m4 ${EXAMPLES:S/^/%%EXAMPLESDIR%%\//} \
+		man/man1/gob2.1.gz
 PLIST_DIRS=	%%EXAMPLESDIR%%
-
-MAN1=		gob2.1
 
 EXAMPLES=	GNOME_Foo_SomeInterface.idl \
 		README \
@@ -31,11 +29,10 @@ EXAMPLES=	GNOME_Foo_SomeInterface.idl \
 		my-glade.gob \
 		my-person.gob
 
-NO_STAGE=	yes
 post-install:
-	${MKDIR} ${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 
 .include <bsd.port.mk>

@@ -11,10 +11,9 @@ MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The Butterfly Effect
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
-USES=		qmake
-USE_GMAKE=	yes
+USES=		qmake gmake
 USE_QT4=	corelib gui moc_build rcc_build svg uic_build xml
 WRKSRC=		${WRKDIR}/TheButterflyEffect-M${PORTVERSION}rc3
 
@@ -25,7 +24,6 @@ DESKTOP_ENTRIES="The Butterfly Effect" "Inspired by The Incredible Machine" \
 		"${DATADIR}/images/tbe-icon.png" \
 		"${PREFIX}/bin/tbe" "LogicGame;Game;" false
 
-NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} 's/ make/ ${GMAKE}/' \
 			${WRKSRC}/3rdParty/Makefile
@@ -40,12 +38,8 @@ pre-configure:
 		@cd ${WRKSRC}/3rdParty && ${GMAKE}
 
 do-install:
-		@${MKDIR} ${PREFIX}/bin
-		@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-		@${MKDIR} ${DATADIR}
-		@cd ${WRKSRC} && ${PAX} -rw images levels ${DATADIR}
-
-post-install:
-		@${CAT} ${PKGMESSAGE}
+		@${MKDIR} ${STAGEDIR}${PREFIX}/bin ${STAGEDIR}${DATADIR}
+		${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+		cd ${WRKSRC} && ${PAX} -rw images levels ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

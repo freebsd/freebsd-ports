@@ -23,7 +23,4 @@ RUN_DEPENDS=	p5-Module-CPANTS-Analyse>=0:${PORTSDIR}/devel/p5-Module-CPANTS-Anal
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=		Test::Kwalitee.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

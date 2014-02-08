@@ -21,45 +21,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAN1=	pastorize.1
-
-MAN3=	XML::Pastor.3 \
-	XML::Pastor::Builtin.3 \
-	XML::Pastor::Builtin::List.3 \
-	XML::Pastor::Builtin::Numeric.3 \
-	XML::Pastor::Builtin::Scalar.3 \
-	XML::Pastor::Builtin::SimpleType.3 \
-	XML::Pastor::Builtin::Union.3 \
-	XML::Pastor::Builtin::base64Binary.3 \
-	XML::Pastor::Builtin::boolean.3 \
-	XML::Pastor::Builtin::date.3 \
-	XML::Pastor::Builtin::dateTime.3 \
-	XML::Pastor::Builtin::hexBinary.3 \
-	XML::Pastor::ComplexType.3 \
-	XML::Pastor::Generator.3 \
-	XML::Pastor::Meta.3 \
-	XML::Pastor::NodeArray.3 \
-	XML::Pastor::Pastorize.3 \
-	XML::Pastor::Schema::Attribute.3 \
-	XML::Pastor::Schema::AttributeGroup.3 \
-	XML::Pastor::Schema::ComplexType.3 \
-	XML::Pastor::Schema::Documentation.3 \
-	XML::Pastor::Schema::Element.3 \
-	XML::Pastor::Schema::Group.3 \
-	XML::Pastor::Schema::List.3 \
-	XML::Pastor::Schema::Model.3 \
-	XML::Pastor::Schema::NamespaceInfo.3 \
-	XML::Pastor::Schema::Object.3 \
-	XML::Pastor::Schema::Parser.3 \
-	XML::Pastor::Schema::SimpleType.3 \
-	XML::Pastor::Schema::Type.3 \
-	XML::Pastor::Schema::Union.3 \
-	XML::Pastor::SimpleType.3 \
-	XML::Pastor::Stack.3 \
-	XML::Pastor::Type.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

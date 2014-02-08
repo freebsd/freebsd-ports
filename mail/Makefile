@@ -302,7 +302,6 @@
     SUBDIR += mutt14-lite
     SUBDIR += mutt_vc_query
     SUBDIR += muttils
-    SUBDIR += muttzilla
     SUBDIR += nbsmtp
     SUBDIR += newmail
     SUBDIR += nmh

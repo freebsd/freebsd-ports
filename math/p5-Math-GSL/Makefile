@@ -8,7 +8,7 @@ CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl interface to GNU Scientific Library
 
 LICENSE=	ART10 GPLv1

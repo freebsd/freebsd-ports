@@ -3,6 +3,7 @@
 
 PORTNAME=	ufraw
 PORTVERSION=	0.19.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -11,21 +12,18 @@ COMMENT=	Read and manipulate raw images from various digital cameras
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		tiff:${PORTSDIR}/graphics/tiff \
-		png15:${PORTSDIR}/graphics/png \
-		lcms:${PORTSDIR}/graphics/lcms
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		liblcms.so:${PORTSDIR}/graphics/lcms
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules --enable-extras
-USES=		gettext pkgconfig
-USE_GMAKE=	yes
+USES=		gettext pkgconfig gmake
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 PC_FALSE=	cinepaint
-
-MAN1=		ufraw.1
 
 OPTIONS_DEFINE=	CONTRAST DST EXIV2 LENSFUN FITS GIMP GTK2 GNOME
 OPTIONS_DEFAULT=CONTRAST EXIV2 LENSFUN GTK2
@@ -35,7 +33,6 @@ DST_DESC=	Use local time for timestamps
 FITS_DESC=	FITS output support
 GIMP_DESC=	Install GIMP plugin
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MCONTRAST}
@@ -47,25 +44,25 @@ CONFIGURE_ARGS+=	--enable-dst-correction
 .endif
 
 .if ${PORT_OPTIONS:MEXIV2}
-LIB_DEPENDS+=	exiv2:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS+=	libexiv2.so:${PORTSDIR}/graphics/exiv2
 .else
 PC_FALSE+=	exiv2
 .endif
 
 .if ${PORT_OPTIONS:MLENSFUN}
-LIB_DEPENDS+=	lensfun:${PORTSDIR}/graphics/lensfun
+LIB_DEPENDS+=	liblensfun.so:${PORTSDIR}/graphics/lensfun
 .else
 PC_FALSE+=	lensfun
 .endif
 
 .if ${PORT_OPTIONS:MFITS}
-LIB_DEPENDS+=	cfitsio:${PORTSDIR}/astro/cfitsio
+LIB_DEPENDS+=	libcfitsio.so:${PORTSDIR}/astro/cfitsio
 .else
 PC_FALSE+=	cfitsio
 .endif
 
 .if ${PORT_OPTIONS:MGIMP}
-LIB_DEPENDS+=	gimp-2.0:${PORTSDIR}/graphics/gimp-app
+LIB_DEPENDS+=	libgimp-2.0.so:${PORTSDIR}/graphics/gimp-app
 PLIST_SUB+=	GIMP=""
 .else
 CONFIGURE_ARGS+=--without-gimp
@@ -74,7 +71,7 @@ PLIST_SUB+=	GIMP="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGTK2}
-LIB_DEPENDS+=	gtkimageview:${PORTSDIR}/x11-toolkits/gtkimageview
+LIB_DEPENDS+=	libgtkimageview.so:${PORTSDIR}/x11-toolkits/gtkimageview
 PLIST_SUB+=	MGTK2=""
 .else
 PLIST_SUB+=	MGTK2="@comment "
@@ -83,7 +80,8 @@ CONFIGURE_ARGS+=--without-gtk
 
 .if ${PORT_OPTIONS:MGNOME}
 CATEGORIES+=	gnome
-USE_GNOME=	desktopfileutils gconf2
+USE_GNOME=	gconf2
+USES+=		desktop-file-utils
 CONFIGURE_ARGS+=	--enable-mime
 GCONF_SCHEMAS=	${PORTNAME}.schemas
 PLIST_SUB+=	GNOME=""
@@ -107,13 +105,5 @@ post-patch:
 pre-build:
 	@${INSTALL_SCRIPT} ${LOCALBASE}/share/icu/50.1.2/mkinstalldirs \
 		${WRKSRC}
-
-post-install:
-.if ${PORT_OPTIONS:MGNOME}
-	@${SETENV} GCONF_CONFIG_SOURCE=${GCONF_CONFIG_SOURCE} \
-		gconftool-2 --makefile-install-rule \
-		${PREFIX}/etc/gconf/schemas/${PORTNAME}.schemas
-	@-update-desktop-database
-.endif
 
 .include <bsd.port.mk>

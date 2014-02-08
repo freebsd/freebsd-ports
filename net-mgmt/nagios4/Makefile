@@ -37,7 +37,8 @@ CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--localstatedir=${NAGIOSDIR} \
 		--with-httpd-conf=${PREFIX}/etc \
 		--with-checkresult-dir=${NAGIOSDIR}/checkresults \
-		--disable-statuswrl
+		--disable-statuswrl \
+		--enable-event-broker
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" \
 		PERL=${PERL}
 
@@ -70,23 +71,17 @@ NAGIOSCGIURL?=	${NAGIOSHTMURL}/cgi-bin
 USERS=		${NAGIOSUSER}
 GROUPS=		${NAGIOSGROUP}
 
-OPTIONS_DEFINE=	NANOSLEEP EVENT_BROKER UNHANDLED_HACK
+OPTIONS_DEFINE=	NANOSLEEP UNHANDLED_HACK
 NANOSLEEP_DESC=		Use nanosleep in event timing
-EVENT_BROKER_DESC=	Enable event broker functionality
 UNHANDLED_HACK_DESC=	Display passive checks in unhandled queries
 
 OPTIONS_SUB=
 
 NANOSLEEP_CONFIGURE_ENABLE=	nanosleep
-EVENT_BROKER_CONFIGURE_ENABLE=	event-broker
 
-.include <bsd.port.options.mk>
-
-post-patch:
-.if ${PORT_OPTIONS:MUNHANDLED_HACK}
-	@${REINPLACE_CMD} -e 's#;serviceprops=42\&#;serviceprops=10\&#g' \
-		-e 's#;hostprops=42\"#;hostprops=10\"#g' ${WRKSRC}/html/side.php
-.endif
+# sed -e 's#;serviceprops=42\&#;serviceprops=10\&#g' -e \
+#	 's#;hostprops=42\"#;hostprops=10\"#g' ${WRKSRC}/html/side.php
+UNHANDLED_HACK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-html__side.php
 
 post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/${NAGIOSWWWDIR}/config.inc.php ${STAGEDIR}${PREFIX}/${NAGIOSWWWDIR}/config.inc.php.sample

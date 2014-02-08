@@ -1,3 +1,4 @@
 %%SITE_PERL%%/Term/Title.pm
 %%SITE_PERL%%/Term/Title.pod
+%%PERL5_MAN3%%/Term::Title.3.gz
 @dirrmtry %%SITE_PERL%%/Term

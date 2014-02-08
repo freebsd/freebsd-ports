@@ -1,9 +1,14 @@
 bin/mysqldiff
+man/man1/mysqldiff.1.gz
 %%SITE_PERL%%/MySQL/Diff.pm
 %%SITE_PERL%%/MySQL/Diff/Database.pm
 %%SITE_PERL%%/MySQL/Diff/Table.pm
 %%SITE_PERL%%/MySQL/Diff/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MySQL/Diff/.packlist
+%%PERL5_MAN3%%/MySQL::Diff.3.gz
+%%PERL5_MAN3%%/MySQL::Diff::Database.3.gz
+%%PERL5_MAN3%%/MySQL::Diff::Table.3.gz
+%%PERL5_MAN3%%/MySQL::Diff::Utils.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MySQL/Diff
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MySQL
 @dirrm %%SITE_PERL%%/MySQL/Diff

@@ -2,6 +2,7 @@
 
 PORTNAME=	subtitlecomposer
 PORTVERSION=	0.5.6
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	GITHUB
 

@@ -1,8 +1,10 @@
 %%SITE_PERL%%/SNMP/Info.pm
+%%SITE_PERL%%/SNMP/Info/Aggregate.pm
 %%SITE_PERL%%/SNMP/Info/Airespace.pm
 %%SITE_PERL%%/SNMP/Info/AdslLine.pm
 %%SITE_PERL%%/SNMP/Info/Bridge.pm
 %%SITE_PERL%%/SNMP/Info/CDP.pm
+%%SITE_PERL%%/SNMP/Info/CiscoAgg.pm
 %%SITE_PERL%%/SNMP/Info/CiscoConfig.pm
 %%SITE_PERL%%/SNMP/Info/CiscoImage.pm
 %%SITE_PERL%%/SNMP/Info/CiscoPortSecurity.pm
@@ -17,6 +19,7 @@
 %%SITE_PERL%%/SNMP/Info/Entity.pm
 %%SITE_PERL%%/SNMP/Info/EtherLike.pm
 %%SITE_PERL%%/SNMP/Info/FDP.pm
+%%SITE_PERL%%/SNMP/Info/IEEE802dot3ad.pm
 %%SITE_PERL%%/SNMP/Info/IEEE802dot11.pm
 %%SITE_PERL%%/SNMP/Info/IPv6.pm
 %%SITE_PERL%%/SNMP/Info/LLDP.pm
@@ -198,6 +201,9 @@
 %%PERL5_MAN3%%/SNMP::Info::Layer7::APC.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer7::Neoteris.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer7::Netscaler.3.gz
+%%PERL5_MAN3%%/SNMP::Info::Aggregate.3.gz
+%%PERL5_MAN3%%/SNMP::Info::CiscoAgg.3.gz
+%%PERL5_MAN3%%/SNMP::Info::IEEE802dot3ad.3.gz
 %%PERL5_MAN3%%/SNMP::Info::MAU.3.gz
 %%PERL5_MAN3%%/SNMP::Info::NortelStack.3.gz
 %%PERL5_MAN3%%/SNMP::Info::PowerEthernet.3.gz

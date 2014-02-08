@@ -1,12 +1,13 @@
---- configure.orig	2003-10-12 20:51:19.000000000 +0200
-+++ configure	2011-11-05 19:19:22.000000000 +0100
-@@ -2952,9 +2952,14 @@
+--- configure.orig	2003-10-12 13:51:19.000000000 -0500
++++ configure
+@@ -2952,9 +2952,15 @@ case "$host" in
    *-*-irix*)     platform_name="IRIX";     os_version="6";;
    *-*-aix*)      platform_name="AIX";      os_version="4";;
    *-*-darwin*)   platform_name="Darwin";   os_version="1";;
 -  *-*-freebsd3*) platform_name="FreeBSD";  os_version="3";;
 -  *-*-freebsd4*) platform_name="FreeBSD";  os_version="4";;
 -  *-*-freebsd5*) platform_name="FreeBSD";  os_version="5";;
++  *-*-dragonfly*) platform_name="FreeBSD";  ov_version="5";;
 +  *-*-freebsd3.*) platform_name="FreeBSD";  os_version="3";;
 +  *-*-freebsd4.*) platform_name="FreeBSD";  os_version="4";;
 +  *-*-freebsd5.*) platform_name="FreeBSD";  os_version="5";;

@@ -13,12 +13,11 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 
-MAN1=		ifile.1
-PLIST_FILES=	bin/ifile
+PLIST_FILES=	bin/ifile \
+		man/man1/ifile.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ifile ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ifile.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/ifile ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/ifile.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

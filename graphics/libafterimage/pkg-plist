@@ -1,7 +1,7 @@
 bin/afterimage-config
 bin/afterimage-libs
-bin/ascompose
 bin/ascheckttf
+bin/ascompose
 bin/asflip
 bin/asgrad
 bin/asi18n
@@ -37,4 +37,5 @@ include/libAfterImage/xpm.h
 include/libAfterImage/xwrap.h
 lib/libAfterImage.so
 lib/libAfterImage.so.0
+man/man1/ascompose.1x.gz
 @dirrm include/libAfterImage

@@ -10,6 +10,9 @@ DISTNAME=	lib_mysqludf_preg-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library of MySQL UDFs providing access to PCRE
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
 GNU_CONFIGURE=	yes

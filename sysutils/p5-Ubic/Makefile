@@ -29,69 +29,8 @@ USES=		perl5
 USE_PERL5=	configure
 REINPLACE_ARGS=	-i ''
 
-MAN1=		ubic.1 \
-		ubic-admin.1 \
-		ubic-daemon.1 \
-		ubic-periodic.1 \
-		ubic-update.1 \
-		ubic-watchdog.1
-MAN3=		Ubic.3 \
-		Ubic::AccessGuard.3 \
-		Ubic::Admin::Setup.3 \
-		Ubic::AtomicFile.3 \
-		Ubic::Cmd.3 \
-		Ubic::Cmd::Results.3 \
-		Ubic::Credentials.3 \
-		Ubic::Credentials::OS::MacOSX.3 \
-		Ubic::Credentials::OS::POSIX.3 \
-		Ubic::Credentials::OS::Windows.3 \
-		Ubic::Daemon.3 \
-		Ubic::Daemon::OS.3 \
-		Ubic::Daemon::OS::Linux.3 \
-		Ubic::Daemon::OS::POSIX.3 \
-		Ubic::Daemon::PidState.3 \
-		Ubic::Daemon::Status.3 \
-		Ubic::Lockf.3 \
-		Ubic::Lockf::Alarm.3 \
-		Ubic::Logger.3 \
-		Ubic::Manual::FAQ.3 \
-		Ubic::Manual::Intro.3 \
-		Ubic::Manual::Multiservices.3 \
-		Ubic::Manual::Overview.3 \
-		Ubic::Multiservice.3 \
-		Ubic::Multiservice::Dir.3 \
-		Ubic::Multiservice::Simple.3 \
-		Ubic::Persistent.3 \
-		Ubic::Ping.3 \
-		Ubic::Ping::Service.3 \
-		Ubic::PortMap.3 \
-		Ubic::Result.3 \
-		Ubic::Result::Class.3 \
-		Ubic::Run.3 \
-		Ubic::Service.3 \
-		Ubic::Service::Common.3 \
-		Ubic::Service::SimpleDaemon.3 \
-		Ubic::Service::Skeleton.3 \
-		Ubic::Service::Utils.3 \
-		Ubic::ServiceLoader.3 \
-		Ubic::ServiceLoader::Base.3 \
-		Ubic::ServiceLoader::Default.3 \
-		Ubic::ServiceLoader::Ext::ini.3 \
-		Ubic::ServiceLoader::Ext::json.3 \
-		Ubic::Settings.3 \
-		Ubic::Settings::ConfigFile.3 \
-		Ubic::SingletonLock.3 \
-		Ubic::UA.3 \
-		Ubic::Watchdog.3
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
 		${WRKSRC}/lib/Ubic/Admin/Setup.pm ${WRKSRC}/lib/Ubic/Settings.pm
 
-post-install:
-	${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -12,6 +12,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for measuring and characterizing disk subsystem I/O
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 PLIST_FILES=	bin/xdd bin/timeserver bin/gettime
 USES=		dos2unix

@@ -9,9 +9,9 @@
 + 	$(CC) $(CFLAGS) -Dbsd4_3 -DOS_TYPE="\"FreeBSD 2.x\"" -o iozone iozone.c
 + 
 + install:
-+ 	-@mkdir -p ${PREFIX}/bin
-+ 	-@mkdir -p ${PREFIX}/man/man1
-+ 	${BSD_INSTALL_PROGRAM} iozone ${PREFIX}/bin
++ 	-@mkdir -p $(DESTDIR)${PREFIX}/bin
++ 	-@mkdir -p $(DESTDIR)${PREFIX}/man/man1
++ 	${BSD_INSTALL_PROGRAM} iozone $(DESTDIR)${PREFIX}/bin
 + 	@echo .Dd `/bin/date` > iozone.1
 + 	@echo .Dt IOZONE 1 >> iozone.1
 + 	@echo .Sh NAME >> iozone.1
@@ -35,4 +35,4 @@
 + 		 {if (x) print $0}' >>iozone.1
 + 	@echo .Sh AUTHOR >> iozone.1
 + 	@echo Bill Norcott >> iozone.1
-+ 	${BSD_INSTALL_MAN} iozone.1 ${PREFIX}/man/man1
++ 	${BSD_INSTALL_MAN} iozone.1 $(DESTDIR)${PREFIX}/man/man1

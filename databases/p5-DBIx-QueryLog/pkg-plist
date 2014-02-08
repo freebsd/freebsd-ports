@@ -1,2 +1,3 @@
 %%SITE_PERL%%/DBIx/QueryLog.pm
+%%PERL5_MAN3%%/DBIx::QueryLog.3.gz
 @dirrmtry %%SITE_PERL%%/DBIx

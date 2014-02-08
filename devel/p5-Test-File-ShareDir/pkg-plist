@@ -1,5 +1,7 @@
 %%SITE_PERL%%/Test/File/ShareDir/TempDirObject.pm
 %%SITE_PERL%%/Test/File/ShareDir.pm
+%%PERL5_MAN3%%/Test::File::ShareDir.3.gz
+%%PERL5_MAN3%%/Test::File::ShareDir::TempDirObject.3.gz
 @dirrmtry %%SITE_PERL%%/Test/File/ShareDir
 @dirrmtry %%SITE_PERL%%/Test/File
 @dirrmtry %%SITE_PERL%%/Test

@@ -19,7 +19,7 @@ LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
 
 USE_XZ=		yes
 USE_XORG=	x11 xext xinerama xscrnsaver xt xtst xv xxf86vm
-USES=		desktop-file-utils gmake pkgconfig shared-mime-info
+USES=		desktop-file-utils gmake pkgconfig shared-mime-info readline
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-vdr-keys \
 		--disable-nvtvsimple

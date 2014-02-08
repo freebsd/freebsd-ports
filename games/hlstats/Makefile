@@ -10,6 +10,9 @@ DISTNAME=	HLStats-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A real-time statistics generator for Half-Life and its mods
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 LICENSE=	CDDL
 
 RUN_DEPENDS=	p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql

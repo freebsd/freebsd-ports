@@ -11,6 +11,11 @@
 %%SITE_PERL%%/DBIx/Inspector/Iterator/Null.pm
 %%SITE_PERL%%/DBIx/Inspector/Table.pm
 %%SITE_PERL%%/DBIx/Inspector/Table/Pg.pm
+%%PERL5_MAN3%%/DBIx::Inspector.3.gz
+%%PERL5_MAN3%%/DBIx::Inspector::Column.3.gz
+%%PERL5_MAN3%%/DBIx::Inspector::ForeignKey.3.gz
+%%PERL5_MAN3%%/DBIx::Inspector::Iterator.3.gz
+%%PERL5_MAN3%%/DBIx::Inspector::Table.3.gz
 @dirrm %%SITE_PERL%%/DBIx/Inspector/Table
 @dirrm %%SITE_PERL%%/DBIx/Inspector/Iterator
 @dirrm %%SITE_PERL%%/DBIx/Inspector/ForeignKey

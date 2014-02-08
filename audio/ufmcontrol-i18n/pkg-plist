@@ -5,6 +5,8 @@ include/nls.h
 lib/libufm.a
 lib/libufm.so
 lib/libufm.so.1
+man/it.ISO8859-1/man1/ufmcontrol.1.gz
+man/man1/ufmcontrol.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/LEGENDA
 %%PORTDOCS%%%%DOCSDIR%%/TRANSLATORS
 share/nls/af_ZA.ISO8859-1/ufmcontrol.cat

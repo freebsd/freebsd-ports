@@ -17,21 +17,14 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	Test::YAML::Valid.3
-
 OPTIONS_DEFINE=	YAMLSYCK
 YAMLSYCK_DESC=	Use YAML::Syck for testing
 
-NO_STAGE=	yes
+YAMLSYCK_RUN_DEPENDS=	p5-YAML-Syck>0:${PORTSDIR}/textproc/p5-YAML-Syck
+YAMLSYCK_BUILD_DEPENDS=	p5-YAML-Syck>0:${PORTSDIR}/textproc/p5-YAML-Syck
+
 post-patch:
 	@${REINPLACE_CMD} -i '' -e '/auto_install.*/d' \
 		${WRKSRC}/Makefile.PL
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MYAMLSYCK}
-RUN_DEPENDS+=	p5-YAML-Syck>0:${PORTSDIR}/textproc/p5-YAML-Syck
-BUILD_DEPENDS+=	p5-YAML-Syck>0:${PORTSDIR}/textproc/p5-YAML-Syck
-.endif
 
 .include <bsd.port.mk>

@@ -25,10 +25,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		svm.1
-MAN3=		SVN::Mirror.3
-
-NO_STAGE=	yes
 regression-test:
 	cd ${WRKSRC} && ${MAKE} test
 

@@ -27,7 +27,6 @@ PORTDOCS=	license.txt readme.html
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 pre-everything::
 	@${ECHO_CMD} "If you want to upgrade, you must read upgrade document."
 	@${ECHO_CMD} ""
@@ -43,15 +42,12 @@ pre-install:
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL} -d -g ${WWWGRP} -m 755 -o ${WWWOWN} ${WWWDIR}/
-	${CP} -R ${WRKSRC}/ ${WWWDIR}/
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
-.endif
+	${INSTALL} -d -g ${WWWGRP} -m 755 -o ${WWWOWN} ${STAGEDIR}${WWWDIR}/
+	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

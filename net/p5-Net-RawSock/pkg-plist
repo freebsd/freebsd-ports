@@ -2,9 +2,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RawSock/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RawSock/RawSock.so
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RawSock/RawSock.bs
+%%PERL5_MAN3%%/Net::RawSock.3.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/RawSock/
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Net
-%%PORTDOCS%%share/doc/p5-Net-RawSock/README
-%%PORTDOCS%%share/doc/p5-Net-RawSock/demo.pl
-%%PORTDOCS%%@dirrm share/doc/p5-Net-RawSock

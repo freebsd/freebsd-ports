@@ -1,5 +1,5 @@
---- Makefile.orig	2008-02-15 17:58:56.000000000 -0300
-+++ Makefile	2008-02-15 18:00:12.000000000 -0300
+--- Makefile.orig	2014-02-05 16:57:36.000000000 -0500
++++ Makefile
 @@ -1,6 +1,6 @@
 -CC=gcc
 +CC?=gcc
@@ -9,7 +9,7 @@
  
  STRIPFLAGS=--strip-unneeded --remove-section=.comment
  
-@@ -179,9 +179,9 @@
+@@ -179,9 +179,9 @@ else
  endif
  
  #BASELDFLAGS=-lm  -lz
@@ -22,7 +22,7 @@
  SLDFLAGS=-lvga
  
  ifeq ($(USEASM),true)
-@@ -212,18 +212,20 @@
+@@ -212,18 +212,20 @@ else
  	BASE_ASM_CFLAGS = -DNOASM
  endif
  
@@ -44,7 +44,16 @@
  
  GLCFLAGS=-DGLQUAKE
  SWCFLAGS=-DSWQUAKE
-@@ -550,7 +552,7 @@
+@@ -469,7 +471,7 @@ ifdef windir
+ SW_LDFLAGS=$(SWLDFLAGS) -lmingw32 -lwsock32 -lSDLmain -lSDL
+ else
+ #pthread is needed because of SDL.
+-SW_LDFLAGS=$(SWLDFLAGS) `sdl-config --libs` $(IMAGELDFLAGS)
++SW_LDFLAGS=$(SWLDFLAGS) `sdl-config --libs` $(IMAGELDFLAGS) -lz
+ endif
+ SW_CFLAGS=$(SWCFLAGS) `sdl-config --cflags`
+ SWB_DIR=sw_sdl$(BITS)
+@@ -550,7 +552,7 @@ ifeq ($(FTE_TARGET),bsd)
  	#oss, X, etc.
  
  	SV_DIR=sv_linux
@@ -53,11 +62,13 @@
  
  ifeq ($(USEASM),true)
  	GLCL_OBJS=$(GL_OBJS) $(GLQUAKE_OBJS) gl_vidlinuxglx.o snd_linux.o cd_null.o sys_linux.o sys_dosa.o
-@@ -560,19 +562,12 @@
+@@ -559,20 +561,13 @@ else
+ endif
  	GL_EXE_NAME=../fteqw.gl
  	GLCL_EXE_NAME=../fteqwcl.gl
- 	GL_LDFLAGS= -L/usr/local/lib $(GLLDFLAGS) $(GLXLDFLAGS) -lXxf86vm -lpthread
+-	GL_LDFLAGS= -L/usr/local/lib $(GLLDFLAGS) $(GLXLDFLAGS) -lXxf86vm -lpthread
 -	GL_CFLAGS=$(GLCFLAGS) -I/usr/local/include -I/usr/X11R6/include
++	GL_LDFLAGS= -L/usr/local/lib $(GLLDFLAGS) $(GLXLDFLAGS) -lXxf86vm -lpthread -lz
 +	GL_CFLAGS=$(GLCFLAGS) -I$(LOCALBASE)/include
  	GLB_DIR=gl_bsd
  	GLCL_DIR=glcl_bsd
@@ -76,7 +87,7 @@
  	SWB_DIR=sw_bsd
  	SWCL_DIR=swcl_bsd
  
-@@ -584,7 +579,7 @@
+@@ -584,7 +579,7 @@ endif
  	M_EXE_NAME=../fteqw
  	MCL_EXE_NAME=../fteqwcl
  	M_LDFLAGS=$(GLLDFLAGS) $(GLXLDFLAGS) -lXxf86vm -lpthread

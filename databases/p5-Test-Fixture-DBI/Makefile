@@ -22,12 +22,4 @@ TEST_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	make_database_yaml.pl.1 \
-	make_fixture_yaml.pl.1
-MAN3=	Test::Fixture::DBI.3 \
-	Test::Fixture::DBI::Util.3 \
-	Test::Fixture::DBI::Util::SQLite.3 \
-	Test::Fixture::DBI::Util::mysql.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

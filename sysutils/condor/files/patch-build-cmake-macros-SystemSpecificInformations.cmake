@@ -1,6 +1,6 @@
---- build/cmake/macros/SystemSpecificInformations.cmake.orig	2012-01-17 16:53:14.000000000 +0000
-+++ build/cmake/macros/SystemSpecificInformations.cmake	2012-05-06 17:29:25.053492551 +0100
-@@ -230,7 +230,8 @@
+--- build/cmake/macros/SystemSpecificInformations.cmake.orig	2013-09-19 15:12:10.000000000 -0500
++++ build/cmake/macros/SystemSpecificInformations.cmake	2013-10-20 12:04:52.000000000 -0500
+@@ -241,7 +241,8 @@
      endif(EXISTS "/etc/issue")
  
    elseif(CMAKE_SYSTEM_NAME MATCHES "FreeBSD")
@@ -10,7 +10,7 @@
      set( FREEBSD_RELEASE "${CMAKE_MATCH_1}" )
      set( FREEBSD_MAJOR "${CMAKE_MATCH_2}" )
      set( FREEBSD_MINOR "${CMAKE_MATCH_3}" )
-@@ -248,6 +249,11 @@
+@@ -259,6 +260,11 @@
        set( CONDOR_FREEBSD7 ON )
      elseif(FREEBSD_MAJOR MATCHES "8" )
        set( CONDOR_FREEBSD8 ON )

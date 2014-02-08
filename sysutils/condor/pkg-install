@@ -25,6 +25,8 @@ g=condor
 homedir=/home/condor
 
 case $2 in
+PRE-INSTALL)
+    ;;
 POST-INSTALL)
     for dir in log spool config execute; do
 	mkdir -p $homedir/$dir

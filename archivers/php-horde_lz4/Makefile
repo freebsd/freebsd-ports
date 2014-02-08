@@ -12,10 +12,12 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Horde LZ4 Compression Extension for php
 
-NO_STAGE=	yes
 USE_PHP=	yes
 USE_PHPEXT=	yes
 
 CONFIGURE_ARGS=	--enable-horde_lz4
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/php/20100525/horde_lz4.so
 
 .include <bsd.port.mk>

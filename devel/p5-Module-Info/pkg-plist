@@ -1,5 +1,10 @@
 bin/module_info
 bin/pfunc
+man/man1/module_info.1.gz
+man/man1/pfunc.1.gz
+%%PERL5_MAN3%%/B::BUtils.3.gz
+%%PERL5_MAN3%%/B::Module::Info.3.gz
+%%PERL5_MAN3%%/Module::Info.3.gz
 %%SITE_PERL%%/B/Module/Info.pm
 %%SITE_PERL%%/B/BUtils.pm
 %%SITE_PERL%%/Module/Info.pm

@@ -20,7 +20,4 @@ RUN_DEPENDS=	p5-File-Find-Rule>=0:${PORTSDIR}/devel/p5-File-Find-Rule
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	Module::Build::Kwalitee.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

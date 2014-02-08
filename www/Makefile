@@ -108,7 +108,6 @@
     SUBDIR += cntlm
     SUBDIR += cocoon
     SUBDIR += codeigniter
-    SUBDIR += comclear
     SUBDIR += coppermine
     SUBDIR += cowboy
     SUBDIR += cplanet
@@ -577,7 +576,6 @@
     SUBDIR += npapi-xine
     SUBDIR += npc
     SUBDIR += npm
-    SUBDIR += nscache
     SUBDIR += nspluginwrapper
     SUBDIR += ocaml-net
     SUBDIR += ocsigen
@@ -2113,6 +2111,7 @@
     SUBDIR += webcrawl
     SUBDIR += webfs
     SUBDIR += webgo
+    SUBDIR += webgrind
     SUBDIR += webinject
     SUBDIR += webkit-gtk2
     SUBDIR += webkit-gtk3

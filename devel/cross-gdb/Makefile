@@ -14,6 +14,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU gdb port for cross-target development
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 #
 # Temporary hack to dial with dependencies during package builds for
 # slave ports.

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Getopt-Compact-WithCmd
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,7 @@ TEST_DEPENDS=	p5-Test-Output>=0:${PORTSDIR}/devel/p5-Test-Output \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 .include <bsd.port.pre.mk>
 

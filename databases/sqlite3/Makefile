@@ -116,7 +116,7 @@ THREADS_CONFIGURE_ENABLE=	threadsafe
 THREADS_LDFLAGS=	${PTHREAD_LIBS}
 
 ICU_BUILD_DEPENDS=	${LOCALBASE}/bin/icu-config:${PORTSDIR}/devel/icu
-ICU_LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu
+ICU_LIB_DEPENDS=	libicudata.so:${PORTSDIR}/devel/icu
 ICU_CPPFLAGS=	`${LOCALBASE}/bin/icu-config --cppflags` -DSQLITE_ENABLE_ICU=1
 ICU_LDFLAGS=	`${LOCALBASE}/bin/icu-config --ldflags`
 

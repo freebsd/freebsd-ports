@@ -21,11 +21,10 @@ BUILD_DEPENDS=	spamd:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
 		p5-Time-HiRes>0:${PORTSDIR}/devel/p5-Time-HiRes
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-OPTIONS_DEFINE=	MODPERL
+OPTIONS_DEFINE=	MODPERL DOCS EXAMPLES
 OPTIONS_DEFAULT=MODPERL
 MOD_PERL_DESC=	"Apache Support via mod_perl"
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMODPERL}
@@ -37,18 +36,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	qpsmtpd-async.1
-MAN3=		Qpsmtpd::Command.3 \
-		Qpsmtpd::Constants.3 \
-		Qpsmtpd::DSN.3 \
-		Qpsmtpd::ConfigServer.3 \
-		Qpsmtpd::Transaction.3 \
-		Qpsmtpd::Address.3 \
-		Qpsmtpd.3 \
-		Qpsmtpd::Connection.3 \
-		Qpsmtpd::Postfix.3 \
-		Apache::Qpsmtpd.3
-
 USE_RC_SUBR=	qpsmtpd
 
 SUB_LIST+=	PERL=${PERL}
@@ -58,16 +45,12 @@ pre-configure:
 	@${RM} ${WRKSRC}/plugins/milter
 
 post-install:
-	@${MKDIR} ${DATADIR}
-	@${MKDIR} ${DATADIR}/plugins
-	(cd ${WRKSRC}/plugins && ${COPYTREE_SHARE} . ${DATADIR}/plugins)
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README* ${DOCSDIR}
-.endif
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/config.sample/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/plugins
+	(cd ${WRKSRC}/plugins && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/plugins)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README* ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/config.sample/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>

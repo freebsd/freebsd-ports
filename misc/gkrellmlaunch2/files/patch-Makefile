@@ -1,0 +1,11 @@
+--- Makefile.orig	2002-09-26 13:56:06.000000000 +0000
++++ Makefile
+@@ -8,7 +8,7 @@ FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE) -
+ #LIBS = $(GTK_LIB) $(IMLIB_LIB) -lefence
+ LIBS = $(GTK_LIB) $(IMLIB_LIB)
+ 
+-LFLAGS = -shared -W1 
++LFLAGS = -shared
+ 
+ CC = gcc $(CFLAGS) $(FLAGS)
+ 

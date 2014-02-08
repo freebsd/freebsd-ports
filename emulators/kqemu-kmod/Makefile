@@ -21,14 +21,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	i386 amd64
 HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_GCC=	any
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC}
 CONFLICTS=	kqemu-kmod-devel-[0-9]*
 
 USE_RC_SUBR=	kqemu
 
-USES=		kmod
+USES=		kmod gmake uidfix
 
 .include <bsd.port.pre.mk>
 

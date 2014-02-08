@@ -15,24 +15,12 @@ RUN_DEPENDS=	${LOCALBASE}/bin/svn:${PORTSDIR}/devel/subversion
 USE_RUBY=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin/
-	${MKDIR} ${DATADIR}
-	${MKDIR} ${DATADIR}/diff
-	${MKDIR} ${DATADIR}/diff/lcs
-	${INSTALL_DATA} ${WRKSRC}/share/svndelta/svndelta.rb ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/share/svndelta/diff/lcs.rb ${DATADIR}/diff/
-	${INSTALL_DATA} ${WRKSRC}/share/svndelta/diff/lcs/array.rb ${DATADIR}/diff/lcs/
-	${INSTALL_DATA} ${WRKSRC}/share/svndelta/diff/lcs/block.rb ${DATADIR}/diff/lcs/
-	${INSTALL_DATA} ${WRKSRC}/share/svndelta/diff/lcs/callbacks.rb ${DATADIR}/diff/lcs/
-	${INSTALL_DATA} ${WRKSRC}/share/svndelta/diff/lcs/change.rb ${DATADIR}/diff/lcs/
-	${INSTALL_DATA} ${WRKSRC}/share/svndelta/diff/lcs/hunk.rb ${DATADIR}/diff/lcs/
-	${INSTALL_DATA} ${WRKSRC}/share/svndelta/diff/lcs/ldiff.rb ${DATADIR}/diff/lcs/
-	${INSTALL_DATA} ${WRKSRC}/share/svndelta/diff/lcs/string.rb ${DATADIR}/diff/lcs/
-
-	${INSTALL_MAN} ${WRKSRC}/svndelta.1 ${PREFIX}/man/man1/
-
-MAN1=		svndelta.1
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/
+	@${MKDIR} ${STAGEDIR}${DATADIR}/diff/lcs
+	${INSTALL_DATA} ${WRKSRC}/share/svndelta/svndelta.rb ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/share/svndelta/diff/lcs.rb ${STAGEDIR}${DATADIR}/diff/
+	${INSTALL_DATA} ${WRKSRC}/share/svndelta/diff/lcs/*.rb ${STAGEDIR}${DATADIR}/diff/lcs/
+	${INSTALL_MAN} ${WRKSRC}/svndelta.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 .include <bsd.port.mk>

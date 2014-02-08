@@ -26,12 +26,11 @@ USE_TGZ=	yes	#prevent bsd.xorg.mk from setting USE_BZIP
 PLIST_FILES+=	${FONTROOTDIR:S/${PREFIX}\///}/${FONTDIR}/${PORTNAME}-${type}.ttf
 .endfor
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	FONTLOG.txt OFL-FAQ.txt OFL.txt README.txt
-.endif
 
 SUB_LIST=	DIR="${FONTROOTDIR}/${FONTDIR}"
 SUB_FILES=	pkg-message
@@ -40,14 +39,9 @@ do-configure:
 	@${DO_NADA}
 
 do-install:
-	@${MKDIR} ${FONTROOTDIR}/${FONTDIR}
-	@(cd ${WRKSRC} ; ${INSTALL_DATA} *.ttf ${FONTROOTDIR}/${FONTDIR})
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC} ; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
-.endif
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+	${MKDIR} ${STAGEDIR}${FONTROOTDIR}/${FONTDIR}
+	(cd ${WRKSRC} ; ${INSTALL_DATA} *.ttf ${STAGEDIR}${FONTROOTDIR}/${FONTDIR})
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} ; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

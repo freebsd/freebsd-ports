@@ -15,13 +15,13 @@ MASTER_SITES=	SF \
 MAINTAINER=	doceng@FreeBSD.org
 COMMENT=	A free and portable TrueType font rendering engine
 
+USES=		desthack
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared
 
 PORTSCOUT=	limit:^1\.
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|$${CONFIG_SHELL-/bin/sh} $$ac_aux_dir|$$ac_aux_dir|' \
 		${WRKSRC}/configure

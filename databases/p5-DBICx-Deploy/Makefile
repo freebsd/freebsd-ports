@@ -21,8 +21,4 @@ RUN_DEPENDS=	p5-DBIx-Class>=0.07003:${PORTSDIR}/databases/p5-DBIx-Class \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	dbicdeploy.1
-MAN3=	DBICx::Deploy.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

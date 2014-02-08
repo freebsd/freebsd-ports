@@ -3,7 +3,7 @@
 
 PORTNAME=	libtorrent-rasterbar
 PORTVERSION=	0.16.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME:S/-rasterbar//}/${PORTNAME:S/-rasterbar//}/
 

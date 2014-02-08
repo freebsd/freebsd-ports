@@ -21,13 +21,4 @@ TEST_DEPENDS=	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple \
 USES=	perl5
 USE_PERL5=	modbuild
 
-MAN3=	SQL::Maker.3 \
-	SQL::Maker::Condition.3 \
-	SQL::Maker::Plugin::InsertMulti.3 \
-	SQL::Maker::Plugin::InsertOnDuplicate.3 \
-	SQL::Maker::SQLType.3 \
-	SQL::Maker::Select.3 \
-	SQL::Maker::SelectSet.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

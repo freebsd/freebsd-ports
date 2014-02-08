@@ -4,8 +4,6 @@
 PORTNAME=	boost-jam
 COMMENT=	Build tool from the boost.org
 
-PORTREVISION=	1
-
 PLIST_FILES=	bin/bjam
 
 EXTRACT_AFTER_ARGS=	${DISTNAME}/tools/build/v2/engine

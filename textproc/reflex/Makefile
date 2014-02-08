@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	reflex
-PORTVERSION=	20100906
+PORTVERSION=	20131209
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://invisible-island.net/reflex/ LOCAL/bf
 EXTRACT_SUFX=	.tgz
@@ -10,23 +10,22 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Relocalizable fast lexical scanner
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	YACC="${YACC}"
-MAN1=	reflex.1
-PLIST_FILES=	bin/reflex bin/reflex++ include/reFlexLexer.h lib/librefl.a
+PLIST_FILES=	bin/reflex bin/reflex++ include/reFlexLexer.h \
+		lib/librefl.a man/man1/reflex.1.gz
 WRKSRC =	${WRKDIR}/reflex-${PORTVERSION}
 
 regression-test test: check
 
 .for t in check bigcheck
 ${t}: build
-	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
 	${MAKE_ARGS} ${t};
 
 .endfor
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

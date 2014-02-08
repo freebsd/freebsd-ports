@@ -2,6 +2,7 @@
 
 PORTNAME=	simgear
 PORTVERSION=	2.12.1
+PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	http://mirrors.ibiblio.org/simgear/ftp/Source/ \
 		ftp://ftp.de.flightgear.org/pub/simgear/Source/ \

@@ -6,4 +6,5 @@ lib/libucl.a
 lib/libucl.la
 lib/libucl.so
 lib/libucl.so.1
+lib/libucl.so.1.0.0
 @dirrm include/ucl

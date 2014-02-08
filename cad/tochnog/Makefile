@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}_feb11_2001
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free explicit/implicit Finite Element Program
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libf2c.a:${PORTSDIR}/lang/f2c
 
 OPTIONS_DEFINE=	ATLAS EXAMPLES THREADS

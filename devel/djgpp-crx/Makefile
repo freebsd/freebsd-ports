@@ -18,7 +18,6 @@ USE_ZIP=	yes
 NO_MTREE=	yes
 NO_WRKSUBDIR=	yes
 
-NO_STAGE=	yes
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
 

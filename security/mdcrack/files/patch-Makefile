@@ -28,8 +28,8 @@
 -	@echo
 -	@echo -n "Installing mdcrack-version in /usr/sbin/mdcrack-version ..... "
 -	@echo $(CFLAGS) $(NCURSES) $(CPU) $(MDCRACK_OPTS) $(MDARCH) $(BLOCK) > /usr/sbin/mdcrack-version
-+	@echo -n "Installing mdcrack in ${PREFIX}/bin/mdcrack ..... "
-+	@cp bin/mdcrack ${PREFIX}/bin/mdcrack
++	@echo -n "Installing mdcrack in $(DESTDIR)${PREFIX}/bin/mdcrack ..... "
++	@cp bin/mdcrack $(DESTDIR)${PREFIX}/bin/mdcrack
  	@echo "ok."
  	@echo
  	@echo "-*-*-*-*-*-*-*-*-*-*-*-*-*-*-"

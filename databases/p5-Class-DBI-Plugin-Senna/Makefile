@@ -14,9 +14,7 @@ BUILD_DEPENDS=	p5-Class-DBI>=0:${PORTSDIR}/databases/p5-Class-DBI \
 
 USES=		perl5
 USE_PERL5=	configure
-MAN3=		Class::DBI::Plugin::Senna.3
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == ia64

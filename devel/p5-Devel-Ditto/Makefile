@@ -16,7 +16,4 @@ BUILD_DEPENDS:=	${RUN_DEPENDS}
 USES=		perl5
 USE_PERL5=	modbuild
 
-MAN3=	Devel::Ditto.3 Devel::Ditto::Color.3 Devel::Ditto::Colour.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

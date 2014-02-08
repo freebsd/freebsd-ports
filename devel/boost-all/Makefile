@@ -16,8 +16,8 @@ LIBRARIES_DESC=	Free portable C++ libraries
 PYTHON_DESC=	Boost.Python - interfacing Python and C++
 
 NO_BUILD=	yes
+NO_MTREE=	yes
 
-NO_STAGE=	yes
 .include "common.mk"
 
 LIBRARIES_RUN_DEPENDS=	${LOCALBASE}/lib/libboost_thread.so:${PORTSDIR}/devel/boost-libs

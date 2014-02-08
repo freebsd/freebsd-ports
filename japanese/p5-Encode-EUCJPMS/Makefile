@@ -13,10 +13,6 @@ COMMENT=	A Perl5 module defining Microsoft compatible encodings for Japanese
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-

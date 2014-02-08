@@ -11,11 +11,10 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Secret Rabbit Code: a Sample Rate Converter for audio
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=	pathfix pkgconfig
-USE_AUTOTOOLS=	libtool
+USES=	pathfix pkgconfig libtool:oldver
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	CPU_CLIP DOCS EXAMPLES
 CPU_CLIP_DESC=	Allow machine-dependent clipping

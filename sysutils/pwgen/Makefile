@@ -14,8 +14,7 @@ GNU_CONFIGURE=	yes
 USES=		perl5
 USE_PERL5=	build
 
-MAN1=		pwgen.1
-PLIST_FILES=	bin/pwgen
+PLIST_FILES=	bin/pwgen \
+		man/man1/pwgen.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

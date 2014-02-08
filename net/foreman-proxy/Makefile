@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	foreman-proxy
-DISTVERSION=	1.4.0-RC2
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	net
 MASTER_SITES=	GH
 
@@ -22,7 +21,7 @@ PUPPET_DESC=	Depend on Puppet
 USE_GITHUB=	yes
 GH_ACCOUNT=	theforeman
 GH_PROJECT=	smart-proxy
-GH_COMMIT= 	255c9bf
+GH_COMMIT= 	ae165b9
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RC_SUBR=	foreman-proxy

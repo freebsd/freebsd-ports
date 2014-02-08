@@ -10,7 +10,6 @@ DISTNAME=	v${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Extension library for Qt
 
-LIB_DEPENDS=	libdns_sd.so:${PORTSDIR}/net/avahi-libdns
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_BDB=	44+
@@ -21,14 +20,15 @@ USE_LDCONFIG=	${PREFIX}/lib/qxt
 
 QT_NONSTANDARD=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	-prefix ${STAGEDIR}${PREFIX} \
-		-libdir ${STAGEDIR}${PREFIX}/lib/qxt \
+CONFIGURE_ARGS=	-prefix ${PREFIX} \
+		-libdir ${PREFIX}/lib/qxt \
 		-qmake-bin ${QMAKE} \
-		-featuredir ${STAGEDIR}${PREFIX}/share/qt4/mkspecs/features \
+		-featuredir ${PREFIX}/${QT_MKSPECDIR_REL}/features \
 		-I ${BDB_INCLUDE_DIR} \
 		-I ${LOCALBASE}/include/avahi-compat-libdns_sd \
 		-L ${BDB_LIB_DIR} \
 		-verbose
+DESTDIRNAME=	INSTALL_ROOT
 
 COMMIT=		dadc327c2a6a
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${COMMIT}
@@ -37,26 +37,34 @@ PLIST_SUB+=	SHVER_1=${PORTVERSION} \
     		SHVER_2=${PORTVERSION:R} \
 		SHVER_3=${PORTVERSION:R:R}
 
+OPTIONS_DEFAULT=	AVAHI
+OPTIONS_SINGLE=		ZEROCONF
+OPTIONS_SINGLE_ZEROCONF=	AVAHI MDNSRESPONDER
+AVAHI_LIB_DEPENDS=	libdns_sd.so:${PORTSDIR}/net/avahi-libdns
+MDNSRESPONDER_LIB_DEPENDS=	libdns_sd.so:${PORTSDIR}/net/mDNSResponder
+
+STRIP_FILES=	lib/qxt/lib*.so.${PORTVERSION} \
+		${QT_PLUGINDIR_REL}/designer/libQxtDesignerPlugins.so
+
 post-patch:
 	${REINPLACE_CMD} -e '\
-	    s|%%PREFIX%%|${PREFIX}|g; \
-	    s|%%STAGEDIR%%|${STAGEDIR}|g; \
 	    s|/bin/bash|${LOCALBASE}/bin/bash|g; \
 	    /^QXT_MODULES/s|docs||g' \
-	    ${WRKSRC}/configure \
+	    ${WRKSRC}/configure
+	${REINPLACE_CMD} -e \
+	    's,$$$$\[QT_INSTALL_PLUGINS\],${PREFIX}/${QT_PLUGINDIR_REL},' \
 	    ${WRKSRC}/src/designer/designer.pro
 	${REINPLACE_CMD} -e '\
 	    s|ldb|l${BDB_LIB_NAME} -L${BDB_LIB_DIR}|g; \
 	    /INCLUDEPATH/s|\.|${BDB_INCLUDE_DIR}|g' \
 	    ${WRKSRC}/config.tests/db/db.pro
 
-post-configure:
-	${REINPLACE_CMD} -e 's|${STAGEDIR}||g' \
-	    ${WRKSRC}/features/qxtvars.prf
-
 regression-test:
 	cd ${WRKSRC}/tests && \
 	    ${QMAKE} tests.pro && ${MAKE} && \
 	    ${FIND} unit -type f -perm -0755 -exec {} \;
+
+post-install:
+	${STRIP_CMD} ${STRIP_FILES:S,^,${STAGEDIR}${PREFIX}/,}
 
 .include <bsd.port.mk>

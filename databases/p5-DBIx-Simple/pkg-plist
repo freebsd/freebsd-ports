@@ -3,6 +3,10 @@
 %%SITE_PERL%%/DBIx/Simple/Examples.pod
 %%SITE_PERL%%/DBIx/Simple/Result/RowObject.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Simple/.packlist
+%%PERL5_MAN3%%/DBIx::Simple.3.gz
+%%PERL5_MAN3%%/DBIx::Simple::Comparison.3.gz
+%%PERL5_MAN3%%/DBIx::Simple::Examples.3.gz
+%%PERL5_MAN3%%/DBIx::Simple::Result::RowObject.3.gz
 @dirrm %%SITE_PERL%%/DBIx/Simple/Result
 @dirrm %%SITE_PERL%%/DBIx/Simple
 @dirrmtry %%SITE_PERL%%/DBIx

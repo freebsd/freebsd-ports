@@ -13,8 +13,4 @@ COMMENT=	Perl5 module for synchronizing two directories rapidly
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		dirsync.1
-MAN3=		File::DirSync.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

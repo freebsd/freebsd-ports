@@ -1,2 +1,3 @@
 %%SITE_PERL%%/TAP/Harness/JUnit.pm
+%%PERL5_MAN3%%/TAP::Harness::JUnit.3.gz
 @dirrmtry %%SITE_PERL%%/TAP/Harness

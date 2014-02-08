@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	novel
 DISTNAME=	${PORTNAME}2_0.2-1
 
 MAINTAINER=	novel@FreeBSD.org
-COMMENT=	An analog clock plugin for gkrellm2
+COMMENT=	Analog clock plugin for gkrellm2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
@@ -25,6 +25,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|;s|-O2||;s|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile
 
 do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins/
 	${INSTALL_PROGRAM} ${WRKSRC}/alltraxclock.so ${STAGEDIR}${PREFIX}/libexec/gkrellm2/plugins/
 
 .include <bsd.port.mk>

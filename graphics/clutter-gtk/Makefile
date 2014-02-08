@@ -3,26 +3,24 @@
 
 PORTNAME=	clutter-gtk
 PORTVERSION=	0.10.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
-MASTER_SITES=	GNOME \
-		http://source.clutter-project.org/sources/${PORTNAME}/${PORTVERSION:R}/
+MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GTK+ Integration library for Clutter
 
-LIB_DEPENDS=	clutter-glx-1.0:${PORTSDIR}/graphics/clutter
+LIB_DEPENDS=	libclutter-glx-1.0.so:${PORTSDIR}/graphics/clutter
 
 USE_BZIP2=	yes
 USE_GL=		gl
-USES=		gettext pathfix gmake pkgconfig
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	gtk20 ltverhack gnomeprefix
+USES=		gettext libtool pathfix gmake pkgconfig
+GNU_CONFIGURE=	yes
+USE_GNOME=	gtk20 gnomeprefix
 USE_XORG=	xp x11
 USE_LDCONFIG=	yes
-
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

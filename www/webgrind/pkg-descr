@@ -1,0 +1,6 @@
+Webgrind is a Xdebug profiling web frontend in PHP5. It implements
+a subset of the features of kcachegrind and installs in seconds
+and works on all platforms. For quick'n'dirty optimizations it
+does the job.
+
+WWW: https://github.com/jokkedk/webgrind

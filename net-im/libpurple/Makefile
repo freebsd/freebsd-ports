@@ -3,7 +3,7 @@
 #   $MCom: ports/net-im/libpurple/Makefile,v 1.32 2010/05/10 04:21:19 marcus Exp $
 
 PORTNAME?=	libpurple
-PORTVERSION=	2.10.8
+PORTVERSION=	2.10.9
 PORTREVISION?=	0
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
@@ -13,8 +13,8 @@ MAINTAINER?=	marcus@FreeBSD.org
 COMMENT?=	Backend library for the Pidgin multi-protocol messaging client
 
 USE_BZIP2=	yes
-USES=		gmake pkgconfig
-USE_GNOME?=	gnomeprefix gnomehack intlhack glib20 libxml2
+USES=		gmake pkgconfig pathfix
+USE_GNOME?=	gnomeprefix intlhack glib20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--disable-gtkui \
 		--disable-consoleui \
@@ -228,7 +228,7 @@ CONFIGURE_ARGS+=--disable-meanwhile
 .endif
 
 .if ${PORT_OPTIONS:MSILC}
-LIB_DEPENDS+=		libsilcclient-1.so:${PORTSDIR}/devel/silc-toolkit
+LIB_DEPENDS+=		libsilcclient.so:${PORTSDIR}/devel/silc-toolkit
 CONFIGURE_ARGS+=	--with-silc-includes=${LOCALBASE}/include/silc \
 			--with-silc-libs=${LOCALBASE}/lib
 PLIST_SUB+=		SILC=""

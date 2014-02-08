@@ -5,6 +5,12 @@
 %%SITE_PERL%%/Encode/JP/Emoji/Mapping.pm
 %%SITE_PERL%%/Encode/JP/Emoji/PP.pm
 %%SITE_PERL%%/Encode/JP/Emoji/Property.pm
+%%PERL5_MAN3%%/Encode::JP::Emoji.3.gz
+%%PERL5_MAN3%%/Encode::JP::Emoji::Encoding.3.gz
+%%PERL5_MAN3%%/Encode::JP::Emoji::FB_EMOJI_TEXT.3.gz
+%%PERL5_MAN3%%/Encode::JP::Emoji::Mapping.3.gz
+%%PERL5_MAN3%%/Encode::JP::Emoji::PP.3.gz
+%%PERL5_MAN3%%/Encode::JP::Emoji::Property.3.gz
 @dirrm %%SITE_PERL%%/Encode/JP/Emoji
 @dirrmtry %%SITE_PERL%%/Encode/JP
 @dirrmtry %%SITE_PERL%%/Encode

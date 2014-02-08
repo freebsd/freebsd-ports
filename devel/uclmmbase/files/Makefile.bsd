@@ -2,7 +2,7 @@ CFLAGS+= -I${OPENSSLINC} -DBSD
 LDADD  = -L${OPENSSLLIB} -lssl -lcrypto
 VERSION!=cat ${.CURDIR:H}/VERSION
 LIB    = uclmmbase
-NOPROFILE=	yes
+NO_PROFILE=	yes
 SHLIB_MAJOR=	${VERSION:R:S/.//g}
 SHLIB_MINOR=	${VERSION:E}
 LIBDIR=	${PREFIX}/lib
@@ -23,7 +23,7 @@ version.h: ${.CURDIR:H}/VERSION
 	echo '#define CCL_VERSION "v${VERSION}"' > $@
 
 ${INCLUDEDIR} ${LIBDIR}:
-	mkdir -p $@
+	mkdir -p ${DESTDIR}$@
 
 beforeinstall: ${INCLUDEDIR} ${LIBDIR}
 

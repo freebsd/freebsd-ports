@@ -4,7 +4,7 @@
 
 PORTNAME=	hal
 DISTVERSION=	0.5.14
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 
@@ -16,11 +16,12 @@ BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l
 LIB_DEPENDS=	libpolkit.so.2:${PORTSDIR}/sysutils/policykit \
 		libvolume_id.so:${PORTSDIR}/devel/libvolume_id \
 		libck-connector.so:${PORTSDIR}/sysutils/consolekit
-RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids
+RUN_DEPENDS=	${LOCALBASE}/share/pciids/pci.ids:${PORTSDIR}/misc/pciids \
+		bash:${PORTSDIR}/shells/bash
 
-USES=		pathfix gettext gmake pkgconfig
-USE_GNOME=	intlhack ltverhack
-USE_AUTOTOOLS=	libtool
+USES=		pathfix gettext gmake libtool pkgconfig shebangfix
+USE_GNOME=	intlhack
+GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc \
@@ -43,6 +44,7 @@ CONFIGURE_ARGS=	--disable-gtk-doc \
 CONFIGURE_ENV=	GTKDOC="false"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+SHEBANG_FILES=	tools/hal-*
 
 #HALVERSION=	0.5.10
 #SNAPVERSION=	20080218
@@ -61,21 +63,11 @@ PLIST_FILES=	${PRIV_FILES:S|^|%%DATADIR%%/dist/|}
 SUB_FILES=	pkg-install pkg-deinstall
 SUB_LIST=	RC_FILES="${RC_FILES}"
 
-MAN1=		hal-disable-polling.1 hal-find-by-capability.1 \
-		hal-find-by-property.1 hal-get-property.1 \
-		hal-is-caller-locked-out.1 hal-is-caller-privileged.1 \
-		hal-lock.1 hal-set-property.1 lshal.1
-MAN8=		hald.8
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	FIXED_MOUNTPOINTS
 FIXED_MOUNTPOINTS_DESC=	use fixed mountpoints
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MFIXED_MOUNTPOINTS}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-tools_hal-storage-mount.c
-.endif
+FIXED_MOUNTPOINTS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-tools_hal-storage-mount.c
 
 .include <bsd.port.pre.mk>
 
@@ -102,23 +94,20 @@ post-patch:
 	    	< ${FILESDIR}/README.fuse > ${WRKDIR}/README.fuse
 
 post-install:
-	${MKDIR} ${DATADIR}/dist
-	${INSTALL_DATA} ${WRKSRC}/hal.conf ${DATADIR}/dist
-	${MKDIR} ${PREFIX}/share/hal/fdi/policy/10osvendor
+	@${MKDIR} ${STAGEDIR}${DATADIR}/dist
+	${INSTALL_DATA} ${WRKSRC}/hal.conf ${STAGEDIR}${DATADIR}/dist
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/hal/fdi/policy/10osvendor
 	${INSTALL_DATA} ${FILESDIR}/10-mouse-sysmouse.fdi \
-	    	${PREFIX}/share/hal/fdi/policy/10osvendor
+	    	${STAGEDIR}${PREFIX}/share/hal/fdi/policy/10osvendor
 	${INSTALL_SCRIPT} ${FILESDIR}/mount-fuse \
-	    	${PREFIX}/share/hal/mount-fuse
-.if !defined(PACKAGE_BUILDING)
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
+	    	${STAGEDIR}${PREFIX}/share/hal/mount-fuse
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/hald/freebsd/README \
-		${DOCSDIR}/README.freebsd
+		${STAGEDIR}${DOCSDIR}/README.freebsd
 	${INSTALL_DATA} ${WRKDIR}/README.fuse \
-	    	${DOCSDIR}/README.fuse
+	    	${STAGEDIR}${DOCSDIR}/README.fuse
 .endif
+	@${MKDIR} ${STAGEDIR}/var/lib/hal
 
 .include <bsd.port.post.mk>

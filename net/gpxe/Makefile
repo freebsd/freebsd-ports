@@ -11,6 +11,8 @@ MASTER_SITES=	http://etherboot.org/rel/gpxe/ \
 MAINTAINER=	gk.freebsd@googlemail.com
 COMMENT=	Create an open-source PXE implementation and bootloader
 
+BROKEN=		Fails to build
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	syslinux:${PORTSDIR}/sysutils/syslinux

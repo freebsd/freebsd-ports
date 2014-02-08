@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcre
-PORTVERSION=	8.33
+PORTVERSION=	8.34
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 		ftp://ftp.csx.cam.ac.uk/pub/software/programming/%SUBDIR%/ \
@@ -71,6 +71,12 @@ CONFIGURE_ARGS+=	--with-match-limit=${WITH_MATCH_LIMIT}
 # can call match() recursively during a single operation (default: 10 million):
 .if defined(WITH_MATCH_LIMIT_RECURSION)
 CONFIGURE_ARGS+=	--with-match-limit-recursion=${WITH_MATCH_LIMIT_RECURSION}
+.endif
+
+# Control PCRE resource use by limiting the nesting depth of parentheses in
+# patterns compiled with pcre_compile() (default: 250):
+.if defined(WITH_PARENS_NEST_LIMIT)
+CONFIGURE_ARGS+=	--with-parens-nest-limit=${WITH_PARENS_NEST_LIMIT}
 .endif
 
 # Adjust the default maximum number of substrings that will be stored on the stack

@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very fast matching and alignment of DNA sequences
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-07
+
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=		${WRKSRC}/Binary
 

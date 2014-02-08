@@ -16,17 +16,12 @@ USE_PHP=	hash pcre session
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 do-install:
-	@${ECHO} "Installing in WWWDIR: ${WWWDIR}"
-	${MKDIR} ${WWWDIR}/
-	${CP} -R ${WRKSRC}/* ${WWWDIR}/
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/
-	${MKDIR} ${WWWDIR}/docbook/developers/en/build
-	${MKDIR} ${WWWDIR}/docbook/administration_guide/en/build
-	${MKDIR} ${WWWDIR}/docbook/adminguide/en/build
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${WWWDIR}/
+	${CP} -R ${WRKSRC}/* ${STAGEDIR}${WWWDIR}/
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}/
+	${MKDIR} ${STAGEDIR}${WWWDIR}/docbook/developers/en/build
+	${MKDIR} ${STAGEDIR}${WWWDIR}/docbook/administration_guide/en/build
+	${MKDIR} ${STAGEDIR}${WWWDIR}/docbook/adminguide/en/build
 
 .include <bsd.port.mk>

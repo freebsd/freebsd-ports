@@ -2,6 +2,9 @@ bin/tsocks
 etc/tsocks.conf.sample
 lib/libtsocks.so.1
 lib/libtsocks.so
+man/man1/tsocks.1.gz
+man/man5/tsocks.conf.5.gz
+man/man8/tsocks.8.gz
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tsocks.conf.complex.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tsocks.conf.simple.example
 %%PORTDOCS%%%%DOCSDIR%%/README

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	paramiko
-PORTVERSION=	1.11.0
+PORTVERSION=	1.12.1
 CATEGORIES=	security python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,8 @@ COMMENT=	Python SSH2 protocol library
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto \
+		${PYTHON_PKGNAMEPREFIX}ecdsa>0:${PORTSDIR}/security/py-ecdsa
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -20,11 +21,11 @@ PYDISTUTILS_AUTOPLIST=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	@(cd ${WRKSRC}/demos && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
+	(cd ${WRKSRC}/demos && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 regression-test: extract
 	@(cd ${WRKSRC} && ${PYTHON_CMD} test.py)
