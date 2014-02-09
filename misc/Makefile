@@ -406,6 +406,7 @@
     SUBDIR += rubygem-mime-types
     SUBDIR += rubygem-rabbit
     SUBDIR += rubygem-vpim
+    SUBDIR += rump
     SUBDIR += saaghar
     SUBDIR += salias
     SUBDIR += seq2
