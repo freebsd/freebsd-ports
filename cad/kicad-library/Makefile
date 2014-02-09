@@ -21,11 +21,10 @@ NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${DATADIR})
-	${FIND} ${DATADIR} -name CMakeLists.txt -delete	\
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR})
+	${FIND} ${STAGEDIR}${DATADIR} -name CMakeLists.txt -delete	\
 		-o -name makefile -delete
 
 .include <bsd.port.mk>
