@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	php5
-PORTVERSION=	5.4.24
+PORTVERSION=	5.4.25
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
@@ -23,8 +23,7 @@ USE_AUTOTOOLS=	autoconf
 
 LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre
 
-CONFIGURE_ARGS=	\
-		--with-layout=GNU \
+CONFIGURE_ARGS+=--with-layout=GNU \
 		--localstatedir=/var \
 		--with-config-file-scan-dir=${PREFIX}/etc/php \
 		--disable-all \
@@ -38,7 +37,7 @@ CONFIGURE_ARGS=	\
 USE_GNOME=	libxml2
 
 OPTIONS_DEFINE=	CLI CGI FPM APACHE AP2FILTER EMBED DEBUG DTRACE IPV6 MAILHEAD LINKTHR ZTS
-OPTIONS_DEFAULT=CLI CGI IPV6 LINKTHR
+OPTIONS_DEFAULT=CLI CGI FPM IPV6 LINKTHR
 OPTIONS_SUB=	yes
 
 CLI_DESC=	Build CLI version
