@@ -1,5 +1,8 @@
 bin/wmanager-loop
 bin/wmanagerrc-update
+man/man1/wmanager-loop.1.gz
+man/man1/wmanager.1.gz
+man/man1/wmanagerrc-update.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/Changes
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
