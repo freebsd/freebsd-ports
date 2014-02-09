@@ -3,6 +3,7 @@
 
 PORTNAME=	dvi2tty
 PORTVERSION=	5.0
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	LOCAL
 MASTER_SITE_SUBDIR=	hrs
@@ -31,7 +32,6 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_PROGRAM} jdvi2tty disdvi ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/dvi2tty.1 ${STAGEDIR}${PREFIX}/man/man1
 	${LN} -sf ${PREFIX}/bin/jdvi2tty ${STAGEDIR}${PREFIX}/bin/dvi2tty
-	${LN} -sf ${PREFIX}/man/man1/dvi2tty.1.gz \
-		${STAGEDIR}${PREFIX}/man/man1/jdvi2tty.1.gz
+	${LN} -sf dvi2tty.1.gz ${STAGEDIR}${PREFIX}/man/man1/jdvi2tty.1.gz
 
 .include <bsd.port.mk>
