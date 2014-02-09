@@ -12,13 +12,13 @@ COMMENT=	Perl glue for libshout MP3 streaming source library
 
 LIB_DEPENDS=	libshout.so:${PORTSDIR}/audio/libshout2
 
-USES=		perl5 pkgconfig
-NO_STAGE=	yes
+USES=		perl5 pkgconfig shebangfix
 USE_PERL5=	configure
 
-MAN3=		Shout.3
-
 DOCSDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
+SHEBANG_FILES=	*.pl
+
+MAKE_ENV+=	DESTDIR="${STAGEDIR}"
 
 post-patch:
 	${REINPLACE_CMD} -i '' -e 's/CCFLAGS/INC/' ${WRKSRC}/Makefile.PL
@@ -26,10 +26,13 @@ post-patch:
 post-configure:
 	@${PERL} -i -pe '$$_ .= " ${PTHREAD_LIBS}" if /^LDDLFLAGS/;' ${WRKSRC}/Makefile
 
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
 post-install:
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/example*.pl ${DOCSDIR}
-.endif
+	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Shout/Shout.so
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/example*.pl ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
