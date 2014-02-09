@@ -2,6 +2,7 @@
 
 PORTNAME=	sec
 PORTVERSION=	2.7.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/simple-evcorr/${PORTNAME}/${PORTVERSION}
 
@@ -12,30 +13,26 @@ LICENSE=	GPLv2
 
 USE_RC_SUBR=	sec
 
-USES=		perl5
+USES=		perl5 shebangfix
+SHEBANG_FILES=	sec
 USE_PERL5=	run
 NO_BUILD=	yes
 
-MAN8=		sec.8
 PORTDOCS=	ChangeLog README
 
-PLIST_FILES=	bin/sec
+PLIST_FILES=	bin/sec man/man8/sec.8.gz
 PORTCONTRIB=	convert.pl itostream.c swatch2sec.pl
 PLIST_FILES+=	${PORTCONTRIB:S|^|%%DATADIR%%/|}
 PLIST_DIRS+=	%%DATADIR%%
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/sec.man ${STAGEDIR}${MANPREFIX}/man/man8/sec.8
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	cd ${WRKSRC}/contrib && ${INSTALL_DATA} ${PORTCONTRIB} ${STAGEDIR}${DATADIR}
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
