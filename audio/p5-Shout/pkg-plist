@@ -5,6 +5,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Shout/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/example.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/example2.pl
+%%PERL5_MAN3%%/Shout.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/example.pl
 %%PORTDOCS%%%%DOCSDIR%%/example2.pl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
