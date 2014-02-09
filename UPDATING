@@ -18,7 +18,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of icu
   AUTHOR: bapt@FreeBSD.org
 
-  icu has been updated to 50.1. Please rebuild all ports that depend on it
+  icu has been updated to 52.1. Please rebuild all ports that depend on it
   if you have the glib20 port built with COLLATION_FIX option activated
 
   If you use portmaster:
