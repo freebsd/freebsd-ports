@@ -62,7 +62,7 @@ ALL_TARGET=	#
 _DATADIR=	${PORTNAME}${PORTVERSION:R:S/.//g}
 DATADIR=	${PREFIX}/share/vim/${_DATADIR}
 PLIST_SUB=	VIM_VER=${_DATADIR}
-MANLANG=	"" fr pl
+MANLANG=	""
 MAN1=		evim.1 vim.1 vimdiff.1 vimtutor.1 xxd.1
 MLINKS=		vim.1 rvim.1	vim.1 rview.1
 .if !defined(LITE)
@@ -71,8 +71,8 @@ MLINKS+=	vim.1 gvim.1	vim.1 gview.1	vimdiff.1 gvimdiff.1 \
 .endif
 
 .if ${PORT_OPTIONS:MNLS}
-MANLANG+=	fr.ISO8859-1 fr.UTF-8 it it.ISO8859-1 it.UTF-8 ja pl.ISO8859-2 \
-		pl.UTF-8 ru.KOI8-R ru.UTF-8
+MANLANG+=	fr fr.ISO8859-1 fr.UTF-8 it it.ISO8859-1 it.UTF-8 ja pl \
+		pl.ISO8859-2 pl.UTF-8 ru.KOI8-R ru.UTF-8
 USES+=		gettext
 PLIST_SUB+=	NLS=""
 .else
