@@ -12,7 +12,6 @@ MAINTAINER=	bdrewery@FreeBSD.org
 COMMENT=	Repairs or generates a qmail queue structure
 
 USES=		qmail:run
-NO_STAGE=	yes
 
 PREFIX?=	${QMAIL_PREFIX}
 
@@ -46,11 +45,11 @@ post-patch:
 	${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}" > ${WRKSRC}/conf-ld
 
 do-install:
-	@${MKDIR} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/queue-fix ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/queue-fix ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
