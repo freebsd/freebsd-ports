@@ -1991,6 +1991,7 @@
     SUBDIR += trac-hierwiki
     SUBDIR += trac-iniadmin
     SUBDIR += trac-keywords
+    SUBDIR += trac-keywordsecretticket
     SUBDIR += trac-ldap
     SUBDIR += trac-macropost
     SUBDIR += trac-mastertickets
