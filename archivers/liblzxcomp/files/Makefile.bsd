@@ -4,10 +4,10 @@ LIB = 	lzxcomp
 SRCS=	lz_nonslide.c lzx_layer.c
 INCS=	lzx_compress.h lzx_constants.h
 
-COPTS= -DLZ_ONEBUFFER -DLAZY -DNONSLIDE
+CFLAGS+= -DLZ_ONEBUFFER -DLAZY -DNONSLIDE
 LDADD= -lm
 
-SHLIB_MAJOR=	%%SHLIB_MAJOR%%
+SHLIB_MAJOR=	1
 
 LIBDIR=		${PREFIX}/lib
 INCLUDEDIR=	${PREFIX}/include
