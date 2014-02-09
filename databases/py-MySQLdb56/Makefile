@@ -1,11 +1,10 @@
-# Created by: Tom Judge <tom@tomjudge.com>
 # $FreeBSD$
 
-PKGNAMESUFFIX=	55
+PKGNAMESUFFIX=	56
 
 COMMENT=	Access a MySQL database through Python (Using MySQL 5.5 Client)
 
-WANT_MYSQL_VER=	55
+WANT_MYSQL_VER=	56
 MASTERDIR=	${.CURDIR}/../py-MySQLdb
 
 .include "${MASTERDIR}/Makefile"
