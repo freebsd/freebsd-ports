@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed Mar 28 07:46:58 2001
-+++ Makefile.in	Mon Jul  7 06:24:17 2003
+--- Makefile.in.orig	2001-03-28 00:46:58.000000000 +0200
++++ Makefile.in	2014-02-09 13:21:39.449603274 +0100
 @@ -8,7 +8,7 @@
  srcdir=@srcdir@
  
@@ -18,11 +18,49 @@
  	LIBDEP = interface/libcdda_interface.a paranoia/libcdda_paranoia.a
  else
  	LIBS = -lcdda_interface -lcdda_paranoia -lm
-@@ -77,7 +77,6 @@
- 	$(INSTALL) -m 0644 $(srcdir)/interface/cdda_interface.h $(INCLUDEDIR)
- 	$(INSTALL) -m 0644 $(srcdir)/interface/libcdda_interface.so.0.$(VERSION) $(LIBDIR)
- 	$(INSTALL) -m 0644 $(srcdir)/interface/libcdda_interface.a $(LIBDIR)
+@@ -64,28 +64,27 @@
+ 	cd paranoia && $(MAKE) slib
+ 
+ install:
+-	$(INSTALL) -d -m 0755 $(BINDIR)
+-	$(INSTALL) -m 0755 $(srcdir)/cdparanoia $(BINDIR)
+-	$(INSTALL) -d -m 0755 $(MANDIR)
+-	$(INSTALL) -d -m 0755 $(MANDIR)/man1
+-	$(INSTALL) -m 0644 $(srcdir)/cdparanoia.1 $(MANDIR)/man1
+-	$(INSTALL) -d -m 0755 $(INCLUDEDIR)
+-	$(INSTALL) -m 0644 $(srcdir)/paranoia/cdda_paranoia.h $(INCLUDEDIR)
+-	$(INSTALL) -d -m 0755 $(LIBDIR)
+-	$(INSTALL) -m 0644 $(srcdir)/paranoia/libcdda_paranoia.so.0.$(VERSION) $(LIBDIR)
+-	$(INSTALL) -m 0644 $(srcdir)/paranoia/libcdda_paranoia.a $(LIBDIR)
+-	$(INSTALL) -m 0644 $(srcdir)/interface/cdda_interface.h $(INCLUDEDIR)
+-	$(INSTALL) -m 0644 $(srcdir)/interface/libcdda_interface.so.0.$(VERSION) $(LIBDIR)
+-	$(INSTALL) -m 0644 $(srcdir)/interface/libcdda_interface.a $(LIBDIR)
 -	$(INSTALL) -m 0644 $(srcdir)/utils.h $(INCLUDEDIR)
++	$(INSTALL) -d -m 0755 $(DESTDIR)$(BINDIR)
++	$(INSTALL) -m 0755 $(srcdir)/cdparanoia $(DESTDIR)$(BINDIR)
++	$(INSTALL) -d -m 0755 $(DESTDIR)$(MANDIR)
++	$(INSTALL) -d -m 0755 $(DESTDIR)$(MANDIR)/man1
++	$(INSTALL) -m 0644 $(srcdir)/cdparanoia.1 $(DESTDIR)$(MANDIR)/man1
++	$(INSTALL) -d -m 0755 $(DESTDIR)$(INCLUDEDIR)
++	$(INSTALL) -m 0644 $(srcdir)/paranoia/cdda_paranoia.h $(DESTDIR)$(INCLUDEDIR)
++	$(INSTALL) -d -m 0755 $(DESTDIR)$(LIBDIR)
++	$(INSTALL) -m 0644 $(srcdir)/paranoia/libcdda_paranoia.so.0.$(VERSION) $(DESTDIR)$(LIBDIR)
++	$(INSTALL) -m 0644 $(srcdir)/paranoia/libcdda_paranoia.a $(DESTDIR)$(LIBDIR)
++	$(INSTALL) -m 0644 $(srcdir)/interface/cdda_interface.h $(DESTDIR)$(INCLUDEDIR)
++	$(INSTALL) -m 0644 $(srcdir)/interface/libcdda_interface.so.0.$(VERSION) $(DESTDIR)$(LIBDIR)
++	$(INSTALL) -m 0644 $(srcdir)/interface/libcdda_interface.a $(DESTDIR)$(LIBDIR)
  	ln -fs libcdda_interface.so.0.$(VERSION) \
- 		$(LIBDIR)/libcdda_interface.so.0
+-		$(LIBDIR)/libcdda_interface.so.0
++		$(DESTDIR)$(LIBDIR)/libcdda_interface.so.0
  	ln -fs libcdda_interface.so.0.$(VERSION) \
+-		$(LIBDIR)/libcdda_interface.so
++		$(DESTDIR)$(LIBDIR)/libcdda_interface.so
+ 	ln -fs libcdda_paranoia.so.0.$(VERSION) \
+-		$(LIBDIR)/libcdda_paranoia.so.0
++		$(DESTDIR)$(LIBDIR)/libcdda_paranoia.so.0
+ 	ln -fs libcdda_paranoia.so.0.$(VERSION) \
+-		$(LIBDIR)/libcdda_paranoia.so
++		$(DESTDIR)$(LIBDIR)/libcdda_paranoia.so
+ 
+ cdparanoia:	$(OFILES) $(LIBDEP)
+ 		$(LD) $(CFLAGS) $(LDFLAGS) $(OFILES) \
