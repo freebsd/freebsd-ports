@@ -36,7 +36,7 @@ CXXFLAGS+=	-Wno-invalid-offsetof
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} >= 1000000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-endian
 .else
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src__leveldb__Makefile
