@@ -75,7 +75,7 @@ QMAKE_USE_DBUS=	0
 PLIST_FILES+=	share/applications/litecoin-qt.desktop share/pixmaps/litecoin64.png
 .endif
 
-.if ${OSVERSION} >= 1000054
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000054
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-endian
 .endif
 
