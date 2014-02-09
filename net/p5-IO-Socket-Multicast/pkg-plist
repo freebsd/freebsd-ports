@@ -4,6 +4,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Socket/Multicast/Multicast.so
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/client.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/server.pl
+%%PERL5_MAN3%%/IO::Socket::Multicast.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/IO/Socket/Multicast
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IO/Socket
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/IO
