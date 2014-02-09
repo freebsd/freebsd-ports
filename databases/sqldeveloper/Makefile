@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sqldeveloper
-PORTVERSION=	3.2.20.09.87
+PORTVERSION=	4.0.0.13.80
 DISTVERSIONSUFFIX=-no-jre
 CATEGORIES=	databases java
 MASTER_SITES=	#http://www.oracle.com/technology/software/products/sql/index.html
@@ -16,24 +16,18 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 USE_ZIP=	yes
 USE_JAVA=	yes
 
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.7+
 
 NO_BUILD=	yes
 
 RESTRICTED=	Packaging prohibited by Oracle license
-NO_CDROM=	Packaging prohibited by Oracle license
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	${PORTNAME}.sh
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} PORTNAME=${PORTNAME}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=	readme.html
-.endif
 
 .if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=	Due to Oracle license restrictions, you must fetch the source \
@@ -48,40 +42,31 @@ restart this installation
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing scripts..."
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}/${PREFIX}/bin/${PORTNAME}
 	@${ECHO_MSG} " [ DONE ]"
 
-.for d in dataminer jdbc jviews sleepycat timingframework \
-    ide jdev modules sqldeveloper javavm jlib rdbms sqlj
+.for d in configuration dataminer dropins dvt equinox \
+    external ide javavm jdbc jdev jlib jviews modules \
+    netbeans rdbms sleepycat sqldeveloper sqlj svnkit
 	@${ECHO_MSG} -n ">> Installing data directory '${d}'..."
 	@cd ${WRKSRC} && ${FIND} ${d} -type d \
-		-not -path "jdev/extensions/oracle.jdeveloper.subversion/licenses" \
-		-exec ${MKDIR} ${DATADIR}/\{} \;
-	@cd ${WRKSRC} && ${FIND} ${d} -type f \
+		-exec ${MKDIR} ${STAGEDIR}/${DATADIR}/\{} \;
+	cd ${WRKSRC} && ${FIND} ${d} -type f \
 		-not -name "*.orig" \
 		-not -name "*.exe" \
 		-not -name "*.bat" \
 		-not -name "*.bak" \
 		-not -name "*.dll" \
-		-not -path "jdev/extensions/oracle.jdeveloper.subversion/licenses/*" \
-		-exec ${INSTALL_DATA} \{} ${DATADIR}/\{} \;
+		-exec ${INSTALL_DATA} \{} ${STAGEDIR}/${DATADIR}/\{} \;
 	@${ECHO_MSG} " [ DONE ]"
 .endfor
 
-.for f in jdev.label view-source-paths.lis
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}/${f}
-.endfor
-
+	${INSTALL_DATA} ${WRKSRC}/view-source-paths.lis ${STAGEDIR}/${DATADIR}/view-source-paths.lis
 	@${ECHO_MSG} -n ">> Installing icon ..."
-	@${INSTALL_DATA} ${WRKSRC}/icon.png ${DATADIR}/icon.png
+	${INSTALL_DATA} ${WRKSRC}/icon.png ${STAGEDIR}/${DATADIR}/icon.png
 	@${ECHO_MSG} " [ DONE ]"
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC} && ${INSTALL_DATA} readme.html ${DOCSDIR}
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} readme.html ${STAGEDIR}/${DOCSDIR})
 
 .include <bsd.port.mk>
