@@ -555,7 +555,11 @@ do-install:	ruby-setup-install
 ruby-setup-install:
 	@${ECHO_MSG} "===>  Running ${RUBY_SETUP} to install"
 	@cd ${INSTALL_WRKSRC}; \
+.  if defined(NO_STAGE)
 	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} install
+.  else
+	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} install --prefix=${STAGEDIR}
+.  endif
 .endif
 
 .if defined(USE_LIBRUBY)
