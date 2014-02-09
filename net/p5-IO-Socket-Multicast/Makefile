@@ -13,17 +13,15 @@ COMMENT=	Perl module to send and receive multicast messages
 RUN_DEPENDS=	p5-IO-Interface>=0:${PORTSDIR}/net/p5-IO-Interface
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-MAN3=		IO::Socket::Multicast.3
-
 USES=		perl5
 USE_PERL5=	configure
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	EXAMPLES
+
+.include <bsd.port.options.mk>
+
 post-install:
-.ifndef(NOPORTEXAMPLES)
-	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	@${MKDIR} ${EXAMPLESDIR}
-		${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
