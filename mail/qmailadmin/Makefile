@@ -22,7 +22,6 @@ RUN_DEPENDS=	\
 	autorespond:${PORTSDIR}/mail/autorespond \
 	${VPOPMAIL_DIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 
-NO_STAGE=	yes
 USES=		qmail:vars gmake
 
 PATCH_SITES+=	http://qmail.jms1.net/vpopmail/:onchange \
