@@ -2,24 +2,22 @@
 # $FreeBSD$
 
 PORTNAME=	sakura
-PORTVERSION=	2.4.2
-PORTREVISION=	1
+PORTVERSION=	3.1.3
 CATEGORIES=	x11-toolkits gnome
-MASTER_SITES=	http://www.pleyades.net/david/projects/sakura/
+MASTER_SITES=	http://launchpadlibrarian.net/159682501/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	Terminal emulator based on GTK and VTE
+
+LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	DOCS
 
-USE_GNOME=	vte
+USE_GNOME=	vte3
 USES=		cmake pkgconfig gettext
 USE_BZIP2=	yes
 LDFLAGS+=	-lintl
 
-MAN1=		sakura.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 post-patch:
 	@${REINPLACE_CMD} -e '/NOT MATCHES "Debug"/d ; \
@@ -28,9 +26,7 @@ post-patch:
 		 /FILES INSTALL/d' ${WRKSRC}/CMakeLists.txt
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/INSTALL ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/INSTALL ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

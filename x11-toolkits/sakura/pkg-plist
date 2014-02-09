@@ -1,19 +1,24 @@
 bin/sakura
+man/man1/sakura.1.gz
 share/applications/sakura.desktop
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 share/locale/ca/LC_MESSAGES/sakura.mo
 share/locale/cs/LC_MESSAGES/sakura.mo
 share/locale/de/LC_MESSAGES/sakura.mo
+share/locale/en_GB/LC_MESSAGES/sakura.mo
 share/locale/es/LC_MESSAGES/sakura.mo
 share/locale/fr/LC_MESSAGES/sakura.mo
+share/locale/he/LC_MESSAGES/sakura.mo
 share/locale/hr/LC_MESSAGES/sakura.mo
 share/locale/hu/LC_MESSAGES/sakura.mo
 share/locale/it/LC_MESSAGES/sakura.mo
 share/locale/ja/LC_MESSAGES/sakura.mo
 share/locale/ko/LC_MESSAGES/sakura.mo
 share/locale/pl/LC_MESSAGES/sakura.mo
+share/locale/pt/LC_MESSAGES/sakura.mo
 share/locale/pt_BR/LC_MESSAGES/sakura.mo
 share/locale/ru/LC_MESSAGES/sakura.mo
+share/locale/uk/LC_MESSAGES/sakura.mo
 share/locale/zh_CN/LC_MESSAGES/sakura.mo
 share/pixmaps/terminal-tango.svg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
