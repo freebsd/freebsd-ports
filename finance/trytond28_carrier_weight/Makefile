@@ -3,6 +3,7 @@
 
 PORTNAME=	trytond28_carrier_weight
 PORTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	finance python
 MASTER_SITES=	https://pypi.python.org/packages/source/t/trytond_carrier_weight/ \
 		http://downloads.tryton.org/${PORTVERSION:R}/
@@ -19,7 +20,8 @@ RUN_DEPENDS=	trytond28_product_measurements>=2.8.0:${PORTSDIR}/finance/trytond28
 CONFLICTS=	trytond_carrier_weight-2.[46].*
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 PYEASYINSTALL_EGG=${DISTNAME}-py${PYTHON_VER}${PYEASYINSTALL_OSARCH}.egg
 
 .include <bsd.port.mk>

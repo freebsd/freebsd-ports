@@ -3,6 +3,7 @@
 
 PORTNAME=	trytond
 PORTVERSION=	2.4.8
+PORTREVISION=	1
 CATEGORIES=	finance python
 MASTER_SITES=	http://downloads.tryton.org/${PORTVERSION:R}/
 
@@ -42,7 +43,8 @@ PIDDIR?=	/var/run
 LOGDIR?=	/var/log
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PIDDIR%%|${PIDDIR}|g' -e 's|%%LOGDIR%%|${LOGDIR}|g' \

@@ -3,6 +3,7 @@
 
 PORTNAME=	trytond_analytic_sale
 PORTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	finance python
 MASTER_SITES=	http://downloads.tryton.org/${PORTVERSION:R}/
 
@@ -19,6 +20,7 @@ RUN_DEPENDS=	trytond>=2.4.0:${PORTSDIR}/finance/trytond \
 CONFLICTS=	trytond28_analytic_sale-2.8.*
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
