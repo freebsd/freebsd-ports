@@ -17,7 +17,6 @@ RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 UCSPI_SSL_RUN_DEPENDS=	sslclient:${PORTSDIR}/sysutils/ucspi-ssl
 
 USES=		qmail:run
-NO_STAGE=	yes
 OPTIONS_SUB=	yes
 
 LEGAL_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
@@ -30,7 +29,7 @@ UCSPI_SSL_DESC=	ucspi-ssl SMTP SSL transport layer support
 
 PROGRAMS=	serialqmtp serialsmtp maildirserial setlock
 SCRIPTS=	maildirqmtp maildirsmtp
-MAN1=		maildirqmtp.1 maildirserial.1 maildirsmtp.1 serialqmtp.1 \
+MAN=		maildirqmtp.1 maildirserial.1 maildirsmtp.1 serialqmtp.1 \
 		serialsmtp.1 setlock.1
 PORTDOCS=	AUTOTURN BLURB CHANGES FROMISP README TODO TOISP THANKS
 
@@ -40,10 +39,6 @@ PORTDOCS=	AUTOTURN BLURB CHANGES FROMISP README TODO TOISP THANKS
 PATCH_SITES=	http://www.ingorohloff.de/soft/
 PATCHFILES=	serialmail-auth.patch
 PATCH_DIST_STRIP=	-p1
-.endif
-
-.if ${PORT_OPTIONS:MUCSPI_SSL}
-MLINKS+=	maildirsmtp.1 maildirsmtps.1
 .endif
 
 post-patch:
@@ -64,15 +59,15 @@ post-configure:
 
 do-install:
 	cd ${WRKSRC} && \
-		${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/bin && \
-		${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin && \
-		${INSTALL_MAN} ${MAN1} ${MANPREFIX}/man/man1
+		${INSTALL_PROGRAM} ${PROGRAMS} ${STAGEDIR}${PREFIX}/bin && \
+		${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${PREFIX}/bin && \
+		${INSTALL_MAN} ${MAN} ${STAGEDIR}${MANPREFIX}/man/man1
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
 .if ${PORT_OPTIONS:MUCSPI_SSL}
-	@${INSTALL_SCRIPT} ${WRKDIR}/maildirsmtps ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKDIR}/maildirsmtps ${STAGEDIR}${PREFIX}/bin
 .endif
 
 .include <bsd.port.mk>
