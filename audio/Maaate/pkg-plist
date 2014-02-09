@@ -40,10 +40,5 @@ lib/libMaaateP.a
 lib/libMaaateP.la
 lib/libMaaateP.so
 lib/libMaaateP.so.1
-%%PORTDOCS%%%%DOCSDIR%%/API.html
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%%%DOCSDIR%%/applications.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/Maaate
 @dirrm include/Maaate
