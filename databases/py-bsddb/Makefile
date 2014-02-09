@@ -28,7 +28,6 @@ PYDISTUTILS_INSTALLARGS+=	--install-lib ${PYTHON_LIBDIR}/lib-dynload
 PYDISTUTILS_AUTOPLIST=	yes
 
 MAKE_ENV=	BSDDB_VERSION=${BDB_LIB_NAME}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-py${PYTHON_SUFFIX}-_bsddb.c
 
 .include <bsd.port.pre.mk>
 
