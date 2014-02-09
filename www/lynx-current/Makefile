@@ -2,21 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	lynx
-PORTVERSION=	2.8.8d16
+PORTVERSION=	2.8.8p4
 PKGNAMESUFFIX=	-current
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
-DISTNAME=	${PORTNAME}${PORTVERSION:C/d.*//}dev.${PORTVERSION:C/.*d//}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/p/pre./}
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Non-graphical, text-based World-Wide Web client
 
-LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 CONFLICTS_INSTALL=	lynx-2.8.[0-7].* ja-lynx-[0-9]*
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/./-/g:C/d.*//}
+WRKSRC=		${WRKDIR}/${DISTNAME:S/./-/g:C/p.*//}
 USE_BZIP2=	yes
 USES=		iconv shebangfix
 USE_OPENSSL=	yes
@@ -45,21 +44,14 @@ L_DOC=		${PREFIX}/share/doc/lynx
 L_HELP=		${PREFIX}/share/lynx_help
 DOCSDIR=	${L_DOC}
 
-post-install:
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}/${L_DOC}
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}/${L_HELP}
-	${CHOWN} ${SHAREOWN}:${SHAREGRP} \
-		${STAGEDIR}/${L_LIB}/lynx.cfg* ${STAGEDIR}/${L_LIB}/lynx.lss*
+OPTIONS_DEFINE=	IDN NLS
+OPTIONS_DEFAULT=IDN NLS
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
+NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-CONFIGURE_ARGS+=	--enable-nls
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+IDN_LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn
+IDN_CONFIGURE_ENABLE=	idna
 
 .include <bsd.port.mk>

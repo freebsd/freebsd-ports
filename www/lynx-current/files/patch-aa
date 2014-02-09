@@ -1,6 +1,6 @@
 --- makefile.in.orig	2009-11-25 13:56:48.000000000 +0300
 +++ makefile.in	2010-03-26 11:13:46.000000000 +0300
-@@ -384,14 +384,9 @@
+@@ -384,14 +384,10 @@
  		if test "$(COMPRESS_PROG)" != "" ; then \
  			(cd $(HELPDIR) && $(COMPRESS_PROG) $$files ) \
  		fi'
@@ -14,6 +14,7 @@
 -	@echo Updating $(sysconfdir)/lynx.cfg to point to installed help-files
 +	@echo Updating $(sysconfdir)/lynx.cfg.default
 +	cp $(srcdir)/lynx.cfg $(SYSCONFDIR)/lynx.tmp
++	rm -f $(SYSCONFDIR)/lynx.cfg.default
 +	@echo Updating $(sysconfdir)/lynx.cfg.default to point to installed help-files
  	@ECHO_CC@sed	-e '/^HELPFILE:http/s!^!#!' \
  		-e '/^#HELPFILE:file/s!#!!' \
