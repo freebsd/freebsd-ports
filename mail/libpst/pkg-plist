@@ -14,5 +14,10 @@ lib/libpst.la
 lib/libpst.so
 lib/libpst.so.5
 libdata/pkgconfig/libpst.pc
+man/man1/lspst.1.gz
+man/man1/pst2dii.1.gz
+man/man1/pst2ldif.1.gz
+man/man1/readpst.1.gz
+man/man5/outlook.pst.5.gz
 @dirrm include/libpst-4/libpst
 @dirrm include/libpst-4
