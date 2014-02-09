@@ -1,12 +1,11 @@
---- cl.hpp.orig	2013-09-01 13:35:56.642641000 +0000
-+++ cl.hpp
-@@ -210,11 +210,10 @@
+--- cl.hpp.orig	2013-08-20 13:33:04.000000000 +0200
++++ cl.hpp	2013-08-20 13:35:49.000000000 +0200
+@@ -210,11 +210,9 @@
  #include <string>
  #endif 
  
 -#if defined(linux) || defined(__APPLE__) || defined(__MACOSX)
-+#if defined(linux) || defined(__APPLE__) || defined(__MACOSX) \
-+ || defined(__FreeBSD__) || defined(__DragonFly__)
++#if defined(__FreeBSD__) || defined(linux) || defined(__APPLE__) || defined(__MACOSX)
  #include <alloca.h>
  
 -#include <emmintrin.h>
@@ -14,7 +13,7 @@
  #endif // linux
  
  #include <cstring>
-@@ -1037,7 +1036,7 @@ namespace detail {
+@@ -1037,7 +1035,7 @@
  #endif // !_WIN32
      }
  
@@ -23,7 +22,7 @@
  }; // namespace detail
  
      
-@@ -2037,6 +2036,26 @@ public:
+@@ -2037,6 +2035,26 @@
  #endif // #if defined(CL_VERSION_1_1)
  };
  
