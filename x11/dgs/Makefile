@@ -40,7 +40,6 @@ post-patch:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dgs-config ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_SCRIPT} ${WRKSRC}/dpsnx.agent ${STAGEDIR}${PREFIX}/bin/
-#	${INSTALL_DATA} ${WRKSRC}/path_dps.m4 ${PREFIX}/share/aclocal/
 	${INSTALL_MAN} ${WRKSRC}/dpsnx.agent.1 ${STAGEDIR}${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
