@@ -14,7 +14,6 @@ COMMENT=	Ruby IRC bot similar to infobot
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb \
 		rubygem-gettext>=1.93.0:${PORTSDIR}/devel/rubygem-gettext
 
-NO_STAGE=	yes
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
@@ -31,9 +30,8 @@ pre-install:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${INSTALL} -d ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+	${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 .endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
