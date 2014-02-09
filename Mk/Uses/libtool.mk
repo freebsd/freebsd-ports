@@ -17,18 +17,24 @@ libtool_ARGS?=
 _INCLUDE_USES_LIBTOOL_POST_MK=	yes
 
 patch-libtool:
-	@${FIND} ${WRKDIR} -type f -name configure |			\
-		${XARGS} ${REINPLACE_CMD}				\
+	@${FIND} ${WRKDIR} \( -name configure -or -name ltconfig \)	\
+		-type f | ${XARGS} ${REINPLACE_CMD}			\
 		-e '/link_all_deplibs=/s/=unknown/=no/'			\
 		-e '/objformat=/s/echo aout/echo elf/'
 
 .if ! ${libtool_ARGS:Moldver}
-	@${FIND} ${WRKDIR} -type f -name configure |			\
-		${XARGS} ${REINPLACE_CMD}				\
-		-e "/freebsd-elf\*)/,+1 s/library_names_spec=.*/	\
-		    library_names_spec='\$$libname\$$release.so\$$versuffix \
-			\$$libname\$$release.so\$$major	\$$libname.so'	\
-		    soname_spec='\$$libname\$$release.so\$$major'/"
+	@${FIND} ${WRKDIR} \( -name configure -or -name ltconfig \)	\
+		-type f | ${XARGS} ${REINPLACE_CMD}			\
+		-e "/freebsd-elf\\*)/,/;;/ {				\
+		    /library_names_spec=.*\\.so/			\
+		    s/=.*/='\$$libname\$$release.so\$$versuffix		\
+			\$$libname\$$release.so\$$major \$$libname.so'	\
+		    soname_spec='\$$libname\$$release.so\$$major'/;	\
+		    /library_names_spec=.*shared_ext/			\
+		    s/=.*/='\$$libname\$$release\$$shared_ext\$$versuffix \
+			\$$libname\$$release\$$shared_ext\$$major	\
+			\$$libname\$$shared_ext'			\
+		    soname_spec='\$$libname\$$release\$$shared_ext\$$major'/; }"
 
 	@${FIND} ${WRKDIR} -type f -name ltmain.sh |			\
 		${XARGS} ${REINPLACE_CMD}				\
