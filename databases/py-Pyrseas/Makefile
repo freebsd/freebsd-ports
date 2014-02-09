@@ -1,26 +1,27 @@
 # $FreeBSD$
 
 PORTNAME=	Pyrseas
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.1
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	c.kworr@gmail.com
+MAINTAINER=	arcade@b1t.name
 COMMENT=	Framework and utilities to upgrade and maintain a relational database
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>0:${PORTSDIR}/databases/py-psycopg2 \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:${PORTSDIR}/devel/py-yaml
 
-USE_GITHUB=	yes
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-NO_STAGE=	yes
 
+USE_GITHUB=	eys
 GH_ACCOUNT=	jmafc
-GH_COMMIT=	9d64338
+GH_COMMIT=	9b0e3d2
 GH_TAGNAME=	v${PORTVERSION}
+
+WRKSRC=		${WRKDIR}/${PORTNAME:tl}-${PORTNAME}-${GH_COMMIT}
 
 .include <bsd.port.mk>
