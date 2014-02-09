@@ -4,7 +4,6 @@
 
    # searchpath for libraries
    -Fl/usr/local/lib
-   -Fl/usr/X11R6/lib
 
    This is necessary for correct linking of libraries.
 
