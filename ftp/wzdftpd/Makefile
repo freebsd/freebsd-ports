@@ -18,6 +18,8 @@ OPTIONS_RADIO_ZEROCONF=	AVAHI HOWL
 OPTIONS_DEFAULT=	AVAHI GNUTLS
 HOWL_DESC=	Zeroconf support via Howl
 
+OPTIONS_SUB=	yes
+
 USES=		pkgconfig
 USE_AUTOTOOLS=	libtoolize aclocal autoheader automake autoconf
 LIBTOOLIZE_ARGS=--copy --force
@@ -31,94 +33,49 @@ USE_RC_SUBR=	wzdftpd
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		siteconfig.1 siteuptime.1 sitewho.1 wzd-config.1
-MAN8=		wzdftpd.8
+ICONV_CONFIGURE_ON=	${ICONV_CONFIGURE_ARG}
+ICONV_CONFIGURE_OFF=	--disable-utf8
+ICONV_USES=		iconv
 
-NO_STAGE=	yes
+TCL_CONFIGURE_ON=	--with-tcl=${TCL_LIBDIR}
+TCL_CONFIGURE_OFF=	--without-tcl
+TCL_USES=		tcl
+
+OPENSSL_CONFIGURE_ENABLE=	openssl
+OPENSSL_USE=		OPENSSL=yes
+
+GNUTLS_CONFIGURE_ENABLE=	gnutls
+GNUTLS_LIB_DEPENDS=		libgnutls.so:${PORTSDIR}/security/gnutls
+
+IPV6_CONFIGURE_ENABLE=	ipv6
+
+PERL_CONFIGURE_ENABLE=	perl
+PERL_USES=		perl5
+
+MYSQL_CONFIGURE_ENABLE=	mysql
+MYSQL_USE=		MYSQL=yes
+
+PGSQL_CONFIGURE_ON=	--with-pgsql=${LOCALBASE}
+PGSQL_CONFIGURE_OFF=	--disable-pgsql
+PGSQL_USE=		PGSQL=yes
+
+SQLITE_CONFIGURE_ENABLE=	sqlite3
+SQLITE_USE=			SQLITE=3
+
+AVAHI_CONFIGURE_ON=	--with-zeroconf --enable-avahi
+AVAHI_LIB_DEPENDS=	libdbus-1.so:${PORTSDIR}/devel/dbus \
+			libavahi-core.so:${PORTSDIR}/net/avahi-app
+
+HOWL_CONFIGURE_ON=	--with-zeroconf --enable-howl
+HOWL_CPPFLAGS=		-I${LOCALBASE}/include/howl
+HOWL_LIB_DEPENDS=	libhowl.so:${PORTSDIR}/net/howl
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MICONV}
-USES+=		iconv
-CONFIGURE_ARGS+=	${ICONV_CONFIGURE_ARG}
-.else
-CONFIGURE_ARGS+=	--disable-utf8
-.endif
-
-.if ${PORT_OPTIONS:MTCL}
-USES+=		tcl
-CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR}
-PLIST_SUB+=	TCL=""
-.else
-PLIST_SUB+=	TCL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MOPENSSL}
-USE_OPENSSL=	yes
-.else
-CONFIGURE_ARGS+=	--disable-openssl
-.endif
-
-.if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
-.else
-CONFIGURE_ARGS+=	--disable-gnutls
-.endif
-
-.if empty(PORT_OPTIONS:MIPV6)
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
-.if ${PORT_OPTIONS:MPERL}
-USES+=		perl5
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
-MAN3+=		wzdftpd.3
-PLIST_SUB+=	PERL=""
-.else
-CONFIGURE_ARGS+=	--disable-perl
-PLIST_SUB+=	PERL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
-PLIST_SUB+=	MYSQL=""
-.else
-CONFIGURE_ARGS+=	--disable-mysql
-PLIST_SUB+=	MYSQL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-CONFIGURE_ARGS+=	--with-pgsql=${LOCALBASE}
-PLIST_SUB+=	PGSQL=""
-.else
-CONFIGURE_ARGS+=	--disable-pgsql
-PLIST_SUB+=	PGSQL="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=	3
-PLIST_SUB+=	SQLITE=""
-.else
-CONFIGURE_ARGS+=	--disable-sqlite3
-PLIST_SUB+=	SQLITE="@comment "
-.endif
 
 .if ${PORT_OPTIONS:MAVAHI} || ${PORT_OPTIONS:MHOWL}
 PLIST_SUB+=	ZEROCONF=""
 .else
 PLIST_SUB+=	ZEROCONF="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MAVAHI}
-LIB_DEPENDS+=	libdbus-1.so:${PORTSDIR}/devel/dbus \
-		libavahi-core.so:${PORTSDIR}/net/avahi-app
-CONFIGURE_ARGS+=	--with-zeroconf --enable-avahi
-.endif
-
-.if ${PORT_OPTIONS:MHOWL}
-LIB_DEPENDS+=	libhowl.so:${PORTSDIR}/net/howl
-CPPFLAGS+=	-I${LOCALBASE}/include/howl
-CONFIGURE_ARGS+=	--with-zeroconf --enable-howl
 .endif
 
 post-extract:
@@ -147,13 +104,15 @@ post-patch:
 		 /gcry_control/d' \
 
 post-install:
-	(cd ${WRKSRC} && ${INSTALL_DATA} *.pc ${PREFIX}/libdata/pkgconfig )
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+.if ${PORT_OPTIONS:MPERL}
+	@${REINPLACE_CMD} -i '' -e 's|${STAGEDIR}||' \
+		${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/wzdftpd/.packlist
+.endif
+	(cd ${WRKSRC} && ${INSTALL_DATA} *.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig )
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in AUTHORS ChangeLog NEWS Permissions.ReadMeFirst README \
 	TLS.ReadMeFirst UPGRADING wzd_tls.cnf
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
-.endif
 
 .include <bsd.port.mk>
