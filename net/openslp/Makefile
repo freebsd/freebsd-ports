@@ -41,13 +41,12 @@ post-extract:
 
 post-install:
 .for FILE in slp.conf slp.reg slp.spi
-	${INSTALL_DATA} ${WRKSRC}/etc/${FILE} ${PREFIX}/etc/openslp/${FILE}.default
+	${INSTALL_DATA} ${WRKSRC}/etc/${FILE} ${STAGEDIR}${PREFIX}/etc/openslp/${FILE}.default
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${INSTALL_WRKSRC}/doc; \
-		${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/\{} \; ;\
-		${FIND} . -type f -exec ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;)
-.endif
+		${FIND} . -type d -exec ${MKDIR} ${STAGEDIR}${DOCSDIR}/\{} \; ;\
+		${FIND} . -type f -exec ${INSTALL_DATA} \{} ${STAGEDIR}${DOCSDIR}/\{} \;)
 
 .include <bsd.port.mk>
