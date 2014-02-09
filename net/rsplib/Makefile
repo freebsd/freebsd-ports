@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	rsplib
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	net
-MASTER_SITES=	http://www.tdr.wiwi.uni-due.de/fileadmin/fileupload/I-TDR/ReliableServer/Downloads/ \
-		http://www.exp-math.uni-essen.de/~dreibh/rserpool/
+MASTER_SITES=	http://www.exp-math.uni-essen.de/~dreibh/rserpool/download/
 
 MAINTAINER=	dreibh@iem.uni-due.de
 COMMENT=	RSerPool Framework and Example Applications
@@ -13,28 +12,11 @@ COMMENT=	RSerPool Framework and Example Applications
 LICENSE=	GPLv3
 
 USE_QT4=	gui xml moc_build
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-maintainer-mode \
 		--enable-qt --with-qt-lib=${QT_LIBDIR} \
 		--with-qt-include=${QT_INCDIR}
 USE_LDCONFIG=	yes
 
-MAN1=		calcappclient.1 \
-		cspmonitor.1 \
-		fractalpooluser.1 \
-		hsdump.1 \
-		pingpongclient.1 \
-		registrar.1 \
-		rspregistrar.1 \
-		rspserver.1 \
-		rspterminal.1 \
-		scriptingclient.1 \
-		scriptingcontrol.1 \
-		scriptingserviceexample.1 \
-		server.1 \
-		terminal.1
-
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
