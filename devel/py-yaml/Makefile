@@ -23,14 +23,12 @@ PYDISTUTILS_AUTOPLIST=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}
 post-install:
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/)
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MLIBYAML}
 PYDISTUTILS_SETUP+=		--with-libyaml
