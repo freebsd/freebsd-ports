@@ -2,6 +2,11 @@ bin/siteconfig
 bin/siteuptime
 bin/sitewho
 bin/wzd-config
+man/man1/siteconfig.1.gz
+man/man1/siteuptime.1.gz
+man/man1/sitewho.1.gz
+man/man1/wzd-config.1.gz
+man/man8/wzdftpd.8.gz
 %%ETCDIR%%/file_ginfo.txt
 %%ETCDIR%%/file_group.txt
 %%ETCDIR%%/file_groups.txt
@@ -114,6 +119,7 @@ lib/wzdftpd/modules/libwzd_debug.so
 %%PERL%%lib/wzdftpd/modules/libwzd_perl.a
 %%PERL%%lib/wzdftpd/modules/libwzd_perl.la
 %%PERL%%lib/wzdftpd/modules/libwzd_perl.so
+%%PERL%%lib/perl5/%%PERL_VER%%/man/man3/wzdftpd.3.gz
 lib/wzdftpd/modules/libwzd_sfv.a
 lib/wzdftpd/modules/libwzd_sfv.la
 lib/wzdftpd/modules/libwzd_sfv.so
