@@ -1,5 +1,0 @@
-%%PYTHON_SITELIBDIR%%/mpd.py
-%%PYTHON_SITELIBDIR%%/mpd.pyc
-%%PYTHON_SITELIBDIR%%/mpd.pyo
-%%PORTDOCS%%%%DOCSDIR%%/commands.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
