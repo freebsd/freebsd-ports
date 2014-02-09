@@ -3,7 +3,7 @@
 
 PORTNAME=	cpuminer
 PORTVERSION=	2.3.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-p2p math
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	cpuminer
@@ -24,11 +24,12 @@ AUTOMAKE_ARGS=	--gnu --add-missing --copy
 USE_GCC?=	yes
 
 PLIST_FILES=	bin/minerd
+PORTDOCS=	NEWS README
+
+OPTIONS_DEFINE=	DOCS
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
-.for FILE in NEWS README
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}/
-.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
