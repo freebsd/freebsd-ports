@@ -15,7 +15,6 @@ COMMENT=	Eric A. Welsh's collection of Gravis Ultrasound MIDI patches
 RESTRICTED=	Some of the patches are marked no-commercial-use
 
 NO_BUILD=	yes
-NO_STAGE=	yes
 
 PATCH_SUBDIRS=	ethnic mazpat/fx gsdrum08 gsdrum25 gsdrum40 gus power sfx wime
 DOC_SUBDIRS=	ethnic gsdrum08 gsdrum25 gsdrum40 power wime
@@ -29,23 +28,21 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/home/user/eawpats|${DATADIR}|' ${WRKSRC}/linuxconfig/timidity.cfg
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.cfg ${WRKSRC}/*.pat ${WRKSRC}/*.ini ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.cfg ${WRKSRC}/*.pat ${WRKSRC}/*.ini ${STAGEDIR}${DATADIR}
 .for subdir in ${PATCH_SUBDIRS}
-	${MKDIR} ${DATADIR}/${subdir}
-	${INSTALL_DATA} ${WRKSRC}/${subdir}/*.pat ${DATADIR}/${subdir}
+	${MKDIR} ${STAGEDIR}${DATADIR}/${subdir}
+	${INSTALL_DATA} ${WRKSRC}/${subdir}/*.pat ${STAGEDIR}${DATADIR}/${subdir}
 .endfor
-	${MKDIR} ${TIMIDITY_DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/linuxconfig/timidity.cfg ${TIMIDITY_DATADIR}/timidity.cfg-eawpats
-	[ -f ${TIMIDITY_DATADIR}/timidity.cfg ] || \
-		${INSTALL_DATA} ${WRKSRC}/linuxconfig/timidity.cfg ${TIMIDITY_DATADIR}/timidity.cfg
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/*.txt ${WRKSRC}/*.hlp ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${TIMIDITY_DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/linuxconfig/timidity.cfg ${STAGEDIR}${TIMIDITY_DATADIR}/timidity.cfg-eawpats
+	[ -f ${STAGEDIR}${TIMIDITY_DATADIR}/timidity.cfg ] || \
+		${INSTALL_DATA} ${WRKSRC}/linuxconfig/timidity.cfg ${STAGEDIR}${TIMIDITY_DATADIR}/timidity.cfg
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/*.txt ${WRKSRC}/*.hlp ${STAGEDIR}${DOCSDIR}
 .for subdir in ${DOC_SUBDIRS}
-	${MKDIR} ${DOCSDIR}/${subdir}
-	${INSTALL_MAN} ${WRKSRC}/${subdir}/*.txt ${DOCSDIR}/${subdir}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/${subdir}
+	${INSTALL_MAN} ${WRKSRC}/${subdir}/*.txt ${STAGEDIR}${DOCSDIR}/${subdir}
 .endfor
-.endif
 
 .include <bsd.port.mk>
