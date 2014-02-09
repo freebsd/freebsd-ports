@@ -13,6 +13,7 @@ bin/got-complete
 %%SITE_PERL%%/App/GitGot/Command/push.pm
 %%SITE_PERL%%/App/GitGot/Command/remove.pm
 %%SITE_PERL%%/App/GitGot/Command/status.pm
+%%SITE_PERL%%/App/GitGot/Command/that.pm
 %%SITE_PERL%%/App/GitGot/Command/this.pm
 %%SITE_PERL%%/App/GitGot/Command/update.pm
 %%SITE_PERL%%/App/GitGot/Command/update_status.pm
@@ -36,6 +37,7 @@ bin/got-complete
 %%PERL5_MAN3%%/App::GitGot::Command::push.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::remove.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::status.3.gz
+%%PERL5_MAN3%%/App::GitGot::Command::that.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::this.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::update.3.gz
 %%PERL5_MAN3%%/App::GitGot::Command::update_status.3.gz
