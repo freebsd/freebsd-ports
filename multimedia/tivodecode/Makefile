@@ -9,15 +9,17 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.2pre4
 MAINTAINER=	mhsin@mhsin.org
 COMMENT=	Converts .TiVo files to normal MPEG files
 
-USE_GMAKE=	yes
+OPTIONS_DEFINE=	DOCS
+
+USES=		gmake
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
+post-patch:
+	@${REINPLACE_CMD} -e '/echo.*RANLIB/,+1d' ${WRKSRC}/Makefile.in
+
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYING \
+		${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
