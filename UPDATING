@@ -6,6 +6,15 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20140208:
+  AFFECTS: users of spamdyke
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Spamdyke has been updated to 5.0.0. The behavior has changed from
+  4.x. Please see the upgrading notes at:
+
+  http://www.spamdyke.org/documentation/UPGRADING_version_4_to_version_5.txt
+
+20140208:
   AFFECTS: users of icu
   AUTHOR: bapt@FreeBSD.org
 
