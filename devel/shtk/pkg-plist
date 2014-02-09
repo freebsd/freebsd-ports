@@ -15,5 +15,16 @@ share/shtk/config.subr
 share/shtk/cvs.subr
 share/shtk/list.subr
 share/shtk/process.subr
+%%TEST%%tests/shtk/Kyuafile
+%%TEST%%tests/shtk/base_test
+%%TEST%%tests/shtk/bool_test
+%%TEST%%tests/shtk/cleanup_test
+%%TEST%%tests/shtk/cli_test
+%%TEST%%tests/shtk/config_test
+%%TEST%%tests/shtk/cvs_test
+%%TEST%%tests/shtk/list_test
+%%TEST%%tests/shtk/process_test
+%%TEST%%tests/shtk/shtk_test
+%%TEST%%@dirrm tests/shtk
 @dirrm share/shtk
 @dirrm share/doc/shtk
