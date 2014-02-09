@@ -28,8 +28,6 @@ post-configure:
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Shout/Shout.so
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
