@@ -12,7 +12,6 @@ COMMENT=	Qmail queue diagnostic and repair tool
 
 LICENSE=	GPLv2
 
-NO_STAGE=	yes
 USE_PYTHON=	yes
 
 OPTIONS_DEFINE=		DOCS QMAIL_PORT
@@ -34,11 +33,11 @@ do-build:
 .endif
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/queue_repair.py ${PREFIX}/bin/queue-repair
+	${INSTALL_SCRIPT} ${WRKSRC}/queue_repair.py ${STAGEDIR}${PREFIX}/bin/queue-repair
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 . endfor
 .endif
 
