@@ -5,6 +5,9 @@ etc/xdg/herbstluftwm/panel.sh
 etc/xdg/herbstluftwm/restartpanels.sh
 %%BASH%%etc/bash_completion.d/herbstclient-completion
 %%BASH%%@dirrmtry etc/bash_completion.d
+man/man1/herbstclient.1.gz
+man/man1/herbstluftwm.1.gz
+man/man7/herbstluftwm-tutorial.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
