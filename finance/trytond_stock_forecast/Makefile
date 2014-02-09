@@ -3,6 +3,7 @@
 
 PORTNAME=	trytond_stock_forecast
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	finance python
 MASTER_SITES=	http://downloads.tryton.org/${PORTVERSION:R}/
 
@@ -20,6 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=1.5:${PORTSDIR}/devel/py-dateutil 
 CONFLICTS=	trytond28_stock_forecast-2.8.*
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
