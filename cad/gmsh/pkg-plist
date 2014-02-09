@@ -3,7 +3,7 @@ bin/onelab.py
 %%STATIC_LIB%%lib/libGmsh.a
 %%SHARED_LIB%%lib/libGmsh.so
 %%SHARED_LIB%%lib/libGmsh.so.2.8
-%%SHARED_LIB%%lib/libGmsh.so.2.8.3
+%%SHARED_LIB%%lib/libGmsh.so.2.8.4
 include/gmsh/CGNSOptions.h
 include/gmsh/Cell.h
 include/gmsh/CellComplex.h
