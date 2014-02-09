@@ -10,28 +10,25 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	bar@FreeBSD.org
 COMMENT=	Codec for karaoke and text encapsulation for Ogg
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
-LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \
-		png15:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	libogg.so:${PORTSDIR}/audio/libogg \
+		libpng.so:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
-USE_GMAKE=	yes
+USES=		pkgconfig gmake
 USE_LDCONFIG=	yes
 
 CFLAGS+=	"-I${LOCALBASE}/include"
 
-MAN1=		katalyzer.1 kateenc.1 katedec.1
-
-OPTIONS_DEFINE=		DOXYGEN HTMLDOCS KATEDJ
+MANPAGE=	katalyzer.1 kateenc.1 katedec.1
+OPTIONS_DEFINE=	DOXYGEN HTMLDOCS KATEDJ DOCS
 
 HTMLDOCS_DESC=	Install bundled html documentation
 KATEDJ_DESC=	Install KateDJ (Huge dependencies list)
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOXYGEN} && ${PORT_OPTIONS:MDOCS}
@@ -46,7 +43,7 @@ USE_PYTHON=	yes
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 USE_WX=		2.8
 WX_COMPS=	wx contrib python:lib
-MAN1+=		KateDJ.1
+MANPAGE+=	KateDJ.1
 PLIST_SUB+=	KATEDJ=""
 .else
 PLIST_SUB+=	KATEDJ="@comment "
@@ -73,17 +70,16 @@ post-patch:
 .endif
 
 post-install:
-.for f in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/doc/man/${f} ${PREFIX}/man/man1
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
+.for f in ${MANPAGE}
+	${INSTALL_MAN} ${WRKSRC}/doc/man/${f} ${STAGEDIR}${PREFIX}/man/man1
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-. for FILE in README AUTHORS COPYING THANKS ChangeLog
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-. endfor
-. if ${PORT_OPTIONS:MHTMLDOCS} || ${PORT_OPTIONS:MDOXYGEN}
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${DOCSDIR})
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for FILE in README AUTHORS COPYING THANKS ChangeLog
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
+.endfor
+.if ${PORT_OPTIONS:MHTMLDOCS} || ${PORT_OPTIONS:MDOXYGEN}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
 . endif
-.endif
 
 .include <bsd.port.mk>
