@@ -1184,6 +1184,7 @@
     SUBDIR += py-qt4-xml
     SUBDIR += py-qt4-xmlpatterns
     SUBDIR += py-rdflib
+    SUBDIR += py-regex
     SUBDIR += py-reverend
     SUBDIR += py-rss2gen
     SUBDIR += py-rst2html5
