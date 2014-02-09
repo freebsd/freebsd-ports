@@ -1875,7 +1875,6 @@
     SUBDIR += rubygem-webrobots
     SUBDIR += rubygem-websocket
     SUBDIR += rubygem-yapra
-    SUBDIR += runsomebrowser
     SUBDIR += sahi
     SUBDIR += sakai
     SUBDIR += samidare
@@ -2103,6 +2102,7 @@
     SUBDIR += wadcomblog
     SUBDIR += web2ldap
     SUBDIR += webalizer
+    SUBDIR += webbrowser
     SUBDIR += webcalendar
     SUBDIR += webcalendar-devel
     SUBDIR += webcheck
