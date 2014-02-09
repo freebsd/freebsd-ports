@@ -15,6 +15,10 @@ lib/liboggkate.so
 lib/liboggkate.so.3
 libdata/pkgconfig/kate.pc
 libdata/pkgconfig/oggkate.pc
+man/man1/katalyzer.1.gz
+man/man1/katedec.1.gz
+man/man1/kateenc.1.gz
+%%KATEDJ%%man/man1/KateDJ.1.gz
 %%KATEDJ%%%%PYTHON_SITELIBDIR%%/kdj/__init__.py
 %%KATEDJ%%%%PYTHON_SITELIBDIR%%/kdj/__init__.pyc
 %%KATEDJ%%%%PYTHON_SITELIBDIR%%/kdj/__init__.pyo
