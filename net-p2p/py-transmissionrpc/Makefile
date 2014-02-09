@@ -3,6 +3,7 @@
 
 PORTNAME=	transmissionrpc
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,27 +16,14 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:${PORTSDIR}/devel/py-six
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-PYTHON_PY3K_PLIST_HACK=	yes
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-PLIST_DIRS=	%%DOCSDIR%%
-PLIST_FILES+=	%%DOCSDIR%%/README
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,zip_safe=True,zip_safe=False,g' \
-		${WRKSRC}/setup.py
+PORTDOCS=	*
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
