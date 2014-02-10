@@ -3,6 +3,7 @@
 
 PORTNAME=	libsocket++
 PORTVERSION=	1.12.13
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://src.linuxhacker.at/socket++/
 DISTNAME=	socket++-${PORTVERSION}
@@ -12,21 +13,20 @@ COMMENT=	A C++ wrapper library to the sockets
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+OPTIONS_DEFINE=	DOCS
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	automake autoconf libtool
-SCRIPTS_ENV+=	ACLOCAL_FLAGS="-I ${LOCALBASE}/share/aclocal/"
+USES=		libtool
+USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
+AUTOMAKE_ARGS=	-a -c
+LIBTOOLIZE_ARGS=-i -c
 
 INFO=	socket++
 
-NO_STAGE=	yes
-pre-configure:
-	@(cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ${SH} ./autogen)
-
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/libsocket++
-	${INSTALL_MAN} ${WRKSRC}/README ${PREFIX}/share/doc/libsocket++
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
