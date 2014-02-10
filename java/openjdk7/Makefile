@@ -107,10 +107,6 @@ NO_STAGE=	yes
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 902506 || (${OSVERSION} > 1000000 && ${OSVERSION} < 1000702)
-FORBIDDEN=	causes kernel panics
-.endif
-
 .if empty(PORT_OPTIONS:MDEBUG)
 MAKE_ENV+=	ALT_OBJCOPY="/nonexistent"
 .endif
