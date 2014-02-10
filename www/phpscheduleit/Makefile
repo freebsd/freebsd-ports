@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web-based resource scheduling and management system
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-02-10
+EXPIRATION_DATE=	2014-03-10
 
 RUN_DEPENDS+=	php:${PORTSDIR}/lang/php5 \
 		${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB

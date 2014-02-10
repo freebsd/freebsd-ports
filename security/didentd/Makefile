@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular RFC1423 (identd) server sending encrypted audit tokens
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-02-10
+EXPIRATION_DATE=	2014-03-10
 
 RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 

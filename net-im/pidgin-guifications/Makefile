@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-02-10
+EXPIRATION_DATE=	2014-03-10
 
 USE_BZIP2=	yes
 USES=        pathfix gettext gmake pkgconfig

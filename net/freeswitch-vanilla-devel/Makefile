@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeSwitch configuration files; ${FREESWITCH_CONF_DIST} variant
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-02-10
+EXPIRATION_DATE=	2014-03-10
 
 RUN_DEPENDS=    freeswitch:${PORTSDIR}/net/freeswitch-core-devel
 

@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Both classes and styles for both LaTex and bibtex for ABNT rules
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-02-10
+EXPIRATION_DATE=	2014-03-10
 
 USE_TEX=	latex
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}

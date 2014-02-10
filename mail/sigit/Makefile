@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to create random signatures
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-02-10
+EXPIRATION_DATE=	2014-03-10
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/boxes:${PORTSDIR}/misc/boxes
 

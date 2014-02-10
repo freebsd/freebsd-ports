@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apple Airport / Lucent RG-1000 configuration program
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-02-10
+EXPIRATION_DATE=	2014-03-10
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 

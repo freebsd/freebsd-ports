@@ -22,7 +22,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Low-bandwidth X network server
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-02-10
+EXPIRATION_DATE=	2014-03-10
 
 LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \

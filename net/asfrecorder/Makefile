@@ -11,7 +11,7 @@ MAINTAINER= 	ports@FreeBSD.org
 COMMENT=	Tool for downloading streaming media from the Internet
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-02-10
+EXPIRATION_DATE=	2014-03-10
 
 USE_ZIP=	yes
 

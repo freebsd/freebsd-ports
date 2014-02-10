@@ -10,7 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple command line interface for WebDAV (RFC2518) server
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-02-10
+EXPIRATION_DATE=	2014-03-10
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 

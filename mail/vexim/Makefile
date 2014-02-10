@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web interface for managing virtual domains for exim
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-02-10
+EXPIRATION_DATE=	2014-03-10
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE

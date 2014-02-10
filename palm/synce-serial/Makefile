@@ -10,7 +10,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wrapper for pppd to initiate communications with Windows Mobile devices
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-02-10
+EXPIRATION_DATE=	2014-03-10
 
 RUN_DEPENDS=	vdccm:${PORTSDIR}/palm/synce-vdccm
 
