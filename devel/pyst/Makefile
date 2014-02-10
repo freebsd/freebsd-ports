@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pyst
-PORTVERSION=	0.4.38
+PORTVERSION=	0.6.50
 CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/pyst/${PORTVERSION}
 
@@ -17,14 +17,13 @@ USE_PYDISTUTILS=	yes
 
 PORTDOCS=	README README.html ChangeLog
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
