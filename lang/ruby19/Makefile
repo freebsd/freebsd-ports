@@ -18,8 +18,11 @@ LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo \
-		libffi.so:${PORTSDIR}/devel/libffi \
 		libyaml.so:${PORTSDIR}/textproc/libyaml
+
+# Using LIB_DEPENDS finds the libffi from gcc which causes problems
+BUILD_DEPENDS=	libffi>=0:${PORTSDIR}/devel/libffi
+RUN_DEPENDS=	libffi>=0:${PORTSDIR}/devel/libffi
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${RUBY_WRKSRC}
