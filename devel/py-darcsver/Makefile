@@ -3,7 +3,7 @@
 
 PORTNAME=	darcsver
 PORTVERSION=	1.7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,16 +12,11 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Generate a version number from darcs history
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's#(doc_loc, data_fnames)##g' ${WRKSRC}/setup.py
 
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${CP} README.rst ${DOCSDIR}/
-.endif
 
 .include <bsd.port.mk>
