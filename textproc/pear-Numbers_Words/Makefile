@@ -1,8 +1,8 @@
-# Created by: Piotr Rybicki (<meritus@innervision.pl>)
+# Created by: Piotr Rybicki <meritus@innervision.pl>
 # $FreeBSD$
 
 PORTNAME=	Numbers_Words
-PORTVERSION=	0.16.2
+PORTVERSION=	0.16.4
 CATEGORIES=	textproc pear
 
 MAINTAINER=	meritus@innervision.pl
