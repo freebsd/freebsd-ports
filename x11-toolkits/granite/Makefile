@@ -7,8 +7,7 @@ PORTVERSION=	0.2.3
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://launchpadlibrarian.net/159802745/ \
 	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz
-
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	olivierd@FreeBSD.org
 COMMENT=	Extensions of Gtk+ toolkit
@@ -25,6 +24,6 @@ INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|gee-1.0|gee-0.8|' ${WRKSRC}/lib/granite.deps 
+	@${REINPLACE_CMD} -e 's|gee-1.0|gee-0.8|' ${WRKSRC}/lib/granite.deps
 
 .include <bsd.port.mk>
