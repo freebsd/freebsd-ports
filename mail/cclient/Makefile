@@ -25,7 +25,6 @@ MBX_DEFAULT_DESC=	Use MBX as default mailbox format
 
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
@@ -56,11 +55,11 @@ PLIST_SUB=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 
 post-patch:
 .for file in Makefile src/osdep/unix/Makefile src/osdep/unix/Makefile.gss
-	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s|/usr/local|${STAGEDIR}${PREFIX}|g" ${WRKSRC}/${file}
 .endfor
-	@${REINPLACE_CMD} -e "s:/etc/ssl/certs:${PREFIX}/certs:g; \
-		s:/etc/ssl/private:${PREFIX}/certs:g" ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e "s:/etc/c-client.cf:${PREFIX}/etc/c-client.cf:" \
+	@${REINPLACE_CMD} -e "s:/etc/ssl/certs:${STAGEDIR}${PREFIX}/certs:g; \
+		s:/etc/ssl/private:${STAGEDIR}${PREFIX}/certs:g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s:/etc/c-client.cf:${STAGEDIR}${PREFIX}/etc/c-client.cf:" \
 		${WRKSRC}/src/osdep/unix/env_unix.h
 .if ${PORT_OPTIONS:MSSL}
 	@${REINPLACE_CMD} -e " \
@@ -95,21 +94,21 @@ post-build:
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/include/c-client
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/c-client
 .for f in ${HEADERS}
-	${INSTALL_DATA} ${WRKSRC}/c-client/${f} ${PREFIX}/include/c-client
+	${INSTALL_DATA} ${WRKSRC}/c-client/${f} ${STAGEDIR}${PREFIX}/include/c-client
 .endfor
 	${INSTALL} ${COPY} -o ${LIBOWN} -g ${LIBGRP} -m ${LIBMODE} \
-		${WRKSRC}/c-client/${SHLIBNAME} ${PREFIX}/lib
-	${LN} -sf ${SHLIBNAME} ${PREFIX}/lib/lib${SHLIBBASE}.so
+		${WRKSRC}/c-client/${SHLIBNAME} ${STAGEDIR}${PREFIX}/lib
+	${LN} -sf ${SHLIBNAME} ${STAGEDIR}${PREFIX}/lib/lib${SHLIBBASE}.so
 	${INSTALL_DATA} ${WRKSRC}/c-client/c-client.a \
-		${PREFIX}/lib/lib${SHLIBBASE}.a
-	${INSTALL_DATA} ${WRKSRC}/c-client/CFLAGS ${PREFIX}/include/c-client
-	${INSTALL_DATA} ${WRKSRC}/c-client/LDFLAGS ${PREFIX}/include/c-client
-	${INSTALL_DATA} ${WRKSRC}/c-client/OSCFLAGS ${PREFIX}/include/c-client
+		${STAGEDIR}${PREFIX}/lib/lib${SHLIBBASE}.a
+	${INSTALL_DATA} ${WRKSRC}/c-client/CFLAGS ${STAGEDIR}${PREFIX}/include/c-client
+	${INSTALL_DATA} ${WRKSRC}/c-client/LDFLAGS ${STAGEDIR}${PREFIX}/include/c-client
+	${INSTALL_DATA} ${WRKSRC}/c-client/OSCFLAGS ${STAGEDIR}${PREFIX}/include/c-client
 
 post-install:
-	${INSTALL_DATA} ${PORTREV_H} ${PREFIX}/include/c-client
+	${INSTALL_DATA} ${PORTREV_H} ${STAGEDIR}${PREFIX}/include/c-client
 .if ${PORT_OPTIONS:MSSL}
 	@${ECHO} "================================================================================"
 	@${ECHO} "Warning: You have chosen to include SSL support. Applications/ports that use"
