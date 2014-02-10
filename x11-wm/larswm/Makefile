@@ -13,20 +13,16 @@ COMMENT=	Tiling Window Manager for X
 USES=		imake
 USE_XORG=	ice sm x11 xext xmu xt
 
-MAN1=		larsclock.1 larsmenu.1 larsremote.1 larswm.1
 PORTDOCS=	ChangeLog README README.9menu README.9wm \
 		sample.larswmrc sample.xsession
-PLIST_FILES=	bin/larsclock bin/larsmenu bin/larsremote bin/larswm
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+PLIST_FILES=	bin/larsclock bin/larsmenu bin/larsremote bin/larswm \
+		man/man1/larsclock.1.gz man/man1/larsmenu.1.gz \
+		man/man1/larsremote.1.gz man/man1/larswm.1.gz
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} $(WRKSRC)/${file} ${DOCSDIR}
+	${INSTALL_DATA} $(WRKSRC)/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
