@@ -33,6 +33,8 @@ CONFIGURE_ARGS=	--with-flac=${LOCALBASE}/lib/libFLAC.so \
 	--enable-glibc
 USE_CSTD=	gnu89
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDOCS}

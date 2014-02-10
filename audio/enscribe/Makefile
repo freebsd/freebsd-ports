@@ -25,6 +25,8 @@ LICENSE=	GPLv2
 PORTDOCS=	README
 PLIST_FILES=	bin/enscribe
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-build:

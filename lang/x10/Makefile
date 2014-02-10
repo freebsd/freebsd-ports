@@ -38,6 +38,8 @@ BUILD_DEPENDS+=	gmake:${PORTSDIR}/devel/gmake \
 
 WRKSRC=		${WRKDIR}/x10.dist
 
+OPTIONS_DEFINE=	EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 post-patch:

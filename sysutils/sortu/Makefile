@@ -19,6 +19,9 @@ PLIST_FILES=	bin/sortu
 ALL_TARGET=	sortu
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-install:

@@ -31,6 +31,9 @@ MAN1=		${PORTNAME}.1
 PORTDOCS=	${PORTNAME}.html demo.pdf
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-install:

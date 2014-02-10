@@ -46,6 +46,8 @@ NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e "s,/usr/local,${LOCALBASE}," ${WRKSRC}/Makefile ${WRKSRC}/scripts/init.sl
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

@@ -32,6 +32,9 @@ PLIST_FILES=	bin/gri bin/gri_merge bin/gri_unpage \
 PLIST_DIRS=	%%DATADIR%%
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS} || ${PORT_OPTIONS:MEXAMPLES}

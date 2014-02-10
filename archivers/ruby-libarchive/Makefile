@@ -21,6 +21,8 @@ WRKSRC=		${WRKDIR}/ext
 
 DOCS=		README.txt doc
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-install:

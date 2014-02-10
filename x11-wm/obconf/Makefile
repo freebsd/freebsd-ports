@@ -26,6 +26,9 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PORTDOCS=	ABOUT-NLS AUTHORS README TODO
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

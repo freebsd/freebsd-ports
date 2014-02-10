@@ -16,6 +16,8 @@ PLIST_FILES=	bin/pkg_jail bin/pkg_update \
 PORTDOCS=	README
 MAN1=		pkg_jail.1 pkg_update.1
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-install:

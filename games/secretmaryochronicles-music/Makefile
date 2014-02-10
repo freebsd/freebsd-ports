@@ -21,6 +21,9 @@ NO_BUILD=	yes
 PORTDOCS=	Addon_-_Music_Readme.txt
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

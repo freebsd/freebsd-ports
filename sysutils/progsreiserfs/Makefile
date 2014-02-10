@@ -18,6 +18,8 @@ CFLAGS+=	-Dgetopt_long_only=getopt_long
 
 EXTRA_PATCHES=	${FILESDIR}/extrapatch-progsreiserfs::libmisc::Makefile.in
 
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

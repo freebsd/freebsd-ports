@@ -14,6 +14,9 @@ RESTRICTED=	no-commercial-use
 MAKE_ARGS=	CC="${CC}" FLAGS="${CFLAGS}"
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

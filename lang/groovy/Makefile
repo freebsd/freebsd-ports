@@ -22,6 +22,8 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 DATAFILES=	ANTLR-LICENSE.txt ASM-LICENSE.txt CLI-LICENSE.txt JSR223-LICENSE.txt LICENSE.txt conf lib
 SCRIPTFILES=	groovy groovyConsole groovyc groovysh java2groovy startGroovy
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

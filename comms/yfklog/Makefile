@@ -27,6 +27,8 @@ MAN1=		yfklog.1
 
 NO_STAGE=	yes
 
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 post-patch:

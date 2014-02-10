@@ -23,6 +23,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/gtk-doc/html/goocanvas2
 
+OPTIONS_DEFINE=	DOCS NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -19,6 +19,9 @@ USE_XORG=	xpm x11
 GNU_CONFIGURE=	yes
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-install:

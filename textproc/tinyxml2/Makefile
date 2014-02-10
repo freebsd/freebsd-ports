@@ -26,6 +26,8 @@ PLIST_FILES=	include/tinyxml2.h \
 		lib/libtinyxml2.so.1.0.14 \
 		libdata/pkgconfig/tinyxml2.pc
 
+OPTIONS_DEFINE=	EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 post-patch:

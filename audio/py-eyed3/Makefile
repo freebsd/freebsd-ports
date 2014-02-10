@@ -32,6 +32,8 @@ MANCOMPRESSED=	yes
 INSTALLS_EGGINFO=	yes
 PYDISTUTILS_PKGNAME=	eyeD3
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -19,6 +19,9 @@ MANLANG=	"" ru.KOI8-R
 MANCOMPRESSED=	yes
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-extract:

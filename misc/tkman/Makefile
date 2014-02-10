@@ -22,6 +22,8 @@ MAKE_ARGS=	WISH="${WISH}" \
 		manformat="{groff -Tlatin1 -te -mandoc}" \
 		manprint="{groff -mandoc -Tps -te -l}"
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

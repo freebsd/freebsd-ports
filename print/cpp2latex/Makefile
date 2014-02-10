@@ -19,6 +19,9 @@ PORTDOCS=	AUTHORS ChangeLog README TODO
 PLIST_FILES=	bin/cpp2latex
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

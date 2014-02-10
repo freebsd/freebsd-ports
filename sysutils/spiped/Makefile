@@ -29,6 +29,9 @@ PLIST_FILES=	bin/spiped bin/spipe
 USE_RC_SUBR=	spiped
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-install:

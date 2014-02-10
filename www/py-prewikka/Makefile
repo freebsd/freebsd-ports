@@ -17,6 +17,8 @@ LIB_DEPENDS=	libprelude.so:${PORTSDIR}/security/libprelude \
 USE_PYTHON=		2
 USE_PYDISTUTILS=	yes
 
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

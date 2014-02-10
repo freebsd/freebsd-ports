@@ -38,6 +38,8 @@ CONFIGURE_ARGS+=	\
 
 NO_STAGE=		yes
 
+OPTIONS_DEFINE=	IPV6 
+
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>

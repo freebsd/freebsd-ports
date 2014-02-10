@@ -19,6 +19,8 @@ GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
 USE_EFL=	edje libtool_hack modarch_hack
 
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

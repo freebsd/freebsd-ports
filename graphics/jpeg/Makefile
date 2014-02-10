@@ -31,6 +31,8 @@ ADDITIONAL_HEADER=	jinclude.h jpegint.h
 CONFIGURE_ARGS+=	--enable-maxmem=${J_MAXMEM}
 .endif
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-extract:

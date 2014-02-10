@@ -30,6 +30,9 @@ USE_LINUX_APPS=	cups-libs gtk2
 WRKSRC=	${WRKDIR}/${PORTVERSION:R}-release
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

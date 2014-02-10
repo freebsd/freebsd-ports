@@ -12,6 +12,8 @@ COMMENT=	Console tetrinet client
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DHAVE_IPV6 -fno-builtin-log"
 PLIST_FILES=	bin/tetrinet bin/tetrinet-server
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

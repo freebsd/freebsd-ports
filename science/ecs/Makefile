@@ -41,6 +41,9 @@ CONFIGURE_ARGS+=--without-adf --without-ccm
 .endif
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

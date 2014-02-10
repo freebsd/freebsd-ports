@@ -21,6 +21,8 @@ USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 PORTDOCS=	CHANGES.html TODO.html
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 # We have to link against the same Tcl/Tk version as OTcl does

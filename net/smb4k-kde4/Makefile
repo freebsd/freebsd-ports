@@ -27,6 +27,9 @@ DOCSDIR=	${PREFIX}/share/doc/HTML/en/smb4k
 SUB_FILES=	pkg-message
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

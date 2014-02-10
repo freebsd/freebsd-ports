@@ -26,6 +26,9 @@ INSTALL_TARGET=	install BINDIR=${PREFIX}/bin \
 		PERL5DIR=${SITE_PERL} SPECDIR=${EXAMPLESDIR}
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

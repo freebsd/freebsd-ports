@@ -29,6 +29,9 @@ PLIST_DIRS=	${LIBDIR:S|^${PREFIX}/||}
 PORTDOCS=	LICENSE.txt ReadMe.html SVGHelp.html
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-install:

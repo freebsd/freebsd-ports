@@ -21,6 +21,9 @@ USE_GNOME=	gtk20
 WRKSRC=		${WRKDIR}/gkx86info${PORTVERSION}
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-build:

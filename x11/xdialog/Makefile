@@ -22,6 +22,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		gmake
 .endif
 
+OPTIONS_DEFINE=	DOCS NLS 
+
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MNLS)

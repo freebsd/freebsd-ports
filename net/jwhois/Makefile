@@ -20,6 +20,9 @@ LDFLAGS+=	-L${PREFIX}/lib
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/var/jwhois
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -19,6 +19,8 @@ USES=		cmake:outsource
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4 workspace libkdegames
 USE_QT4=	qmake_build moc_build rcc_build uic_build
 
+OPTIONS_DEFINE=	DOCS NLS 
+
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDOCS}

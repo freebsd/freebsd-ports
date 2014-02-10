@@ -21,6 +21,8 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-install:

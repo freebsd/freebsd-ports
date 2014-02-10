@@ -20,6 +20,8 @@ PLIST_FILES=	bin/${PORTNAME} man/man8/${PORTNAME}.8.gz
 PORTDOCS=	Changelog README
 USE_RC_SUBR=	${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-install:

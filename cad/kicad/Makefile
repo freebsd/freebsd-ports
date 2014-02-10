@@ -39,6 +39,9 @@ WRKSRC=		${WRKDIR}/${SFNAME}
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

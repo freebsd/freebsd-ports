@@ -28,6 +28,8 @@ PLIST_FILES=	bin/cmp3 bin/rnmp3
 RUN_DEPENDS+=	ogg123:${PORTSDIR}/audio/vorbis-tools
 .endif
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-install:

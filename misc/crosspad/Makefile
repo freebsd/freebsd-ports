@@ -18,6 +18,9 @@ MAN1=	crosspad2ps.1 crosspad2eps.1 crosspad2tgif.1 crosspad2idraw.1 \
 DOCS=	PROTOCOL README.english README.japanese
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-install:

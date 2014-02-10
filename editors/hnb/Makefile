@@ -19,6 +19,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 PLIST_FILES=	bin/${PORTNAME} man/man1/${PORTNAME}.1.gz
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH} != "i386"

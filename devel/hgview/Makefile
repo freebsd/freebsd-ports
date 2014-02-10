@@ -28,6 +28,9 @@ PORTDOCS=	*
 MAN1=		hgview.1
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

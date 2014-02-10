@@ -26,6 +26,9 @@ DESKTOP_ENTRIES=	"Gmencoder" "Gnome2 front-end to mplayer/mencoder" \
 		"" "gmencoder" "GNOME;AudioVideo;" false
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

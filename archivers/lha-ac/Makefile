@@ -21,6 +21,8 @@ MANLANG=	ja
 MAN1_JA=	lha-ac.1
 PLIST_FILES+=	${__MANPAGES}
 
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

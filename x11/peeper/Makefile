@@ -16,6 +16,8 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} `${IMLIB_CONFIG} --cflags-gdk`" \
 		LIBS="`${IMLIB_CONFIG} --libs-gdk`"
 ALL_TARGET=	peeper
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-install:

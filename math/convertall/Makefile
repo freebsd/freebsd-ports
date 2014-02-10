@@ -24,6 +24,9 @@ DESKTOP_ENTRIES="ConvertAll" "Unit converter" "${DATADIR}/icons/${PORTNAME}.svg"
 		"${PORTNAME}" "Utility;Calculator;" true
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

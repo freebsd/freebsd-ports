@@ -13,6 +13,8 @@ COMMENT=	X11 pixel color grabber
 USES=		imake
 USE_XORG=	x11
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

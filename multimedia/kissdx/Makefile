@@ -30,6 +30,9 @@ PLIST_FILES=	etc/kissdx.conf sbin/kissdx sbin/kissd-pretrigger \
 PORTDOCS=	README
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -21,6 +21,9 @@ PLIST_FILES=	bin/pstotext
 PORTDOCS=	copyright
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

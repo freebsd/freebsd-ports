@@ -27,6 +27,8 @@ DESKTOP_ENTRIES=	"${PORTNAME}" \
 			"Graphics;Qt;" \
 			"true"
 
+OPTIONS_DEFINE=	DOCS NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

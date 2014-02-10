@@ -42,6 +42,9 @@ DOC_FILES3=	*.html *.ico
 PLIST_FILES=	bin/${PORTNAME}
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -23,6 +23,8 @@ MAKE_ENV+=	SRCCONF=${SRCCONF}
 
 NEED_ROOT=	yes
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-extract:

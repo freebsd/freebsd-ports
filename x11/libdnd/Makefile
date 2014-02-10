@@ -20,6 +20,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include/
 LDFLAGS+=	-L${LOCALBASE}/lib/
 MAKE_JOBS_UNSAFE=	yes
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-install:

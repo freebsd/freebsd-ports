@@ -18,6 +18,8 @@ RUN_DEPENDS=	p5-subversion>=0:${PORTSDIR}/devel/p5-subversion \
 USES=		perl5
 USE_PERL5=	configure
 
+OPTIONS_DEFINE=	EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}

@@ -25,6 +25,8 @@ USE_PERL5=	configure
 post-patch:
 	${REINPLACE_CMD} -e 's|Term-ProgressBar|Term/ProgressBar|' ${WRKSRC}/Makefile.PL
 
+OPTIONS_DEFINE=	EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 post-install:

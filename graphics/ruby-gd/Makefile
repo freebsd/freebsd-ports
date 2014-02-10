@@ -33,6 +33,8 @@ CONFIGURE_ARGS=	--with-gd-lib="${LOCALBASE}/lib" \
 
 INSTALL_TARGET=	site-install
 
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 # Hmm, GREP and TRUE seem to be defined in the bsd.port.post.mk stage.

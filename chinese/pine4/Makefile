@@ -29,6 +29,8 @@ MAN1=		pine.1 pico.1 pilot.1
 
 NO_STAGE=	yes
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 pre-fetch:

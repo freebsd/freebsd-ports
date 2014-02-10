@@ -23,6 +23,8 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-1.97.1
 
 PORTDOCS=	readme.html
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

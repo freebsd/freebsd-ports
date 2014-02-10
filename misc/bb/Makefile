@@ -22,6 +22,9 @@ PLIST_FILES=	bin/bb share/bb/bb.s3m share/bb/bb2.s3m share/bb/bb3.s3m
 PLIST_DIRS=	share/bb
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 pre-patch:

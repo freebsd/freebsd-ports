@@ -20,6 +20,9 @@ SUB_FILES=	pmfrc.default
 CFLAGS+=	-Wno-return-type
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 do-install:

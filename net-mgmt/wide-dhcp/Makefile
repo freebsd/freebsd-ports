@@ -22,6 +22,9 @@ DOCS=		README README.jis db_sample/intro.dhcp db_sample/intro.dhcp.jis
 EXAMPLES=	dhcpdb.pool dhcpdb.relay dhcpdb.server
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 post-patch:

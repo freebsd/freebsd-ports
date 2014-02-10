@@ -19,6 +19,9 @@ MAN1=		salias.1
 DOCS=		NEWS README
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

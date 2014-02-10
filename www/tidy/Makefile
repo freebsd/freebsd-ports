@@ -18,6 +18,8 @@ LICENSE_FILE=	${FILESDIR}/COPYRIGHT
 ALL_TARGET=	tidy
 DOCFILES=	Overview.html tidy.gif release-notes.html grid.gif
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-configure:

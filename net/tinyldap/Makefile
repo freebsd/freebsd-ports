@@ -29,6 +29,8 @@ DOCFILES=	ACL FORMAT GETTING.STARTED README README.security RFCs \
 LIBOWFAT_PORT?=	devel/libowfat
 TINYLDAP_DATA?=	${PREFIX}/tinyldap/data
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -27,6 +27,9 @@ STRIP=		# none
 INFO=		libfc
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 # should be same as binutils

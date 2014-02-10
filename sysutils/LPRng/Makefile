@@ -62,6 +62,9 @@ MAN5=	printcap.5 lpd.conf.5 lpd.perms.5
 MAN8=	lpc.8 checkpc.8 lpd.8
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

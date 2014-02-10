@@ -29,6 +29,8 @@ PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 PORTDOCS=	readme.txt
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 post-install:
