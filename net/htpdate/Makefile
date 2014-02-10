@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	htpdate
-PORTVERSION=	1.0.7
+PORTVERSION=	1.1.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.vervest.org/htp/archive/c/ \
 		http://twekkel.home.xs4all.nl/htp/
@@ -22,16 +22,12 @@ USE_RC_SUBR=	${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS 
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8.gz ${STAGEDIR}${MAN8PREFIX}/man/man8
-.if ${PORT_OPTIONS:MDOCS}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
