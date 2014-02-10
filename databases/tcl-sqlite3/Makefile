@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.8.2
+PORTVERSION=	3.8.3
 CATEGORIES=	databases tcl
-MASTER_SITES=	http://www.sqlite.org/2013/ http://www2.sqlite.org/2013/ http://www3.sqlite.org/2013/
+MASTER_SITES=	http://www.sqlite.org/2014/ http://www2.sqlite.org/2014/ http://www3.sqlite.org/2014/
 PKGNAMEPREFIX=	tcl-
-DISTNAME=	sqlite-autoconf-3080200
+DISTNAME=	sqlite-autoconf-3080300
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	SQLite extension for Tcl using the Tcl Extension Architecture (TEA)
@@ -37,11 +37,15 @@ SUB_LIST=	"TCLSH=${TCLSH}"
 
 PLIST_FILES+=	man/mann/sqlite3.n.gz
 
+.include <bsd.port.options.mk>
+
 post-patch:
-	@${REINPLACE_CMD} 's,\(^PKG_DIR.*\)$$(PACKAGE_VERSION),\13,g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -E 's/^(.*\$$\(PACKAGE_NAME\))\$$\(PACKAGE_VERSION\).*$$/\1${PORTVERSION:C/.*([0-9]+).*/\1/}/' ${WRKSRC}/Makefile.in
 
 post-install:
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${SUB_FILES} ${STAGEDIR}${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
