@@ -2,9 +2,11 @@
 
 PORTNAME=	zope.app.security
 PORTVERSION=	3.7.5
+PORTREVISION=	1
 CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	ZMI Views For Zope3 Security Components
@@ -24,10 +26,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.app.localpermission>=0:${PORTSDIR}/secu
 		${PYTHON_PKGNAMEPREFIX}zope.securitypolicy>=0:${PORTSDIR}/security/py-zope.securitypolicy \
 		${PYTHON_PKGNAMEPREFIX}zope.login>=0:${PORTSDIR}/security/py-zope.login
 
-DIST_SUBDIR=	zope
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-
-NO_STAGE=	yes
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
