@@ -5395,7 +5395,7 @@ cad/salome-sierpinsky||2014-01-24|Has expired: depends on expired cad/salome-ker
 cad/salome-geom||2014-01-24|Has expired: depends on expired cad/salome-kernel
 devel/combat||2014-01-24|Has expired: depends on expired devel/mico
 net-mgmt/nagios-devel|net-mgmt/nagios|2014-01-25|Master site gone, outdated
-math/math/octave-forge-image-acquisition||2014-01-27|Depends on multimedia/libv4l which no longer has necessary headers
+math/octave-forge-image-acquisition||2014-01-27|Depends on multimedia/libv4l which no longer has necessary headers
 lang/racket-textual|lang/racket-minimal|2014-01-27|Renamed upstream
 mail/pop-before-smtp||2014-01-27|Removed
 graphics/glfw-devel||2014-01-28|Removed
@@ -5404,24 +5404,24 @@ german/ispell|german/aspell|2014-01-29|Removed, consider using aspell instead
 german/ispell-alt|german/aspell|2014-01-29|Removed, consider using aspell instead
 german/ispell-neu|german/aspell|2014-01-29|Removed, consider using aspell instead
 hungarian/ispell|hungarian/aspell|2014-01-29|Removed, consider using aspell instead
-polish/ispell|polish/aspell|2014-01-28|Removed, consider using aspell instead
-portuguese/ispell-pt_BR|portuguese/aspell-pt_BR|2014-01-28|Removed, consider using aspell instead
+polish/ispell|polish/aspell|2014-01-29|Removed, consider using aspell instead
+portuguese/ispell-pt_BR|portuguese/aspell-pt_BR|2014-01-29|Removed, consider using aspell instead
 russian/rus-ispell|russian/aspell|2014-01-29|Removed, consider using aspell instead
-textproc/british-ispell|textroc/en-aspell|2014-01-29|Removed, consider using aspell instead
+textproc/british-ispell|textproc/en-aspell|2014-01-29|Removed, consider using aspell instead
 textproc/es-ispell|textproc/es-aspell|2014-01-29|Removed, consider using aspell instead
 textproc/ispell|textproc/aspell-ispell|2014-01-29|Removed, consider using aspell instead
 textproc/it-ispell|textproc/it-aspell|2014-01-29|Removed, consider using aspell instead
-textproc/nl-ispell|textproc/nl-ispell|2014-01-29|Removed, consider using aspell instead
-textproc/sk-ispell|textproc/sk-ispell|2014-01-29|Removed, consider using aspell instead
+textproc/nl-ispell|textproc/nl-aspell|2014-01-29|Removed, consider using aspell instead
+textproc/sk-ispell|textproc/sk-aspell|2014-01-29|Removed, consider using aspell instead
 ukrainian/ispell|ukrainian/aspell|2014-01-29|Removed, consider using aspell instead
 audio/gsi||2014-01-30|Removed, abandonware
-multimedia/kino||2014-01-31|Has expired: Not developed since 2009, declared dead 05.08.2013 on there website.
-x11-drivers/xf86-video-imstt||2014-01-31|Has expired: Broken, unsupported and unmaintained upstream.
-x11-drivers/xf86-video-via||2014-01-31|Has expired: Broken, not supported upstream.
+multimedia/kino||2014-01-31|Has expired: Not developed since 2009, declared dead 05.08.2013 on there website
+x11-drivers/xf86-video-imstt||2014-01-31|Has expired: Broken, unsupported and unmaintained upstream
+x11-drivers/xf86-video-via||2014-01-31|Has expired: Broken, not supported upstream
 multimedia/vdr-plugin-softdevice||2014-01-31|Has expired: Broken after ffmpeg update (not sure it ever worked)
 sysutils/mbmon|sysutils/xmbmon|2014-01-31|Has expired: Use sysutils/xmbmon instead. This port will be removed soon
 dns/bind96||2014-01-31|Has expired: EOL in January 2014, consider moving to Bind 9.8 or 9.9
-x11-drivers/xf86-video-nouveau||2014-01-31|Has expired: Not supported, missing kernel support. use the nvidia driver.
+x11-drivers/xf86-video-nouveau||2014-01-31|Has expired: Not supported, missing kernel support. use the nvidia driver
 cad/mars||2014-01-31|Removed, abandonware, no releases in the past 20 years
 polish/gimp-help||2014-02-01|Removed, excluded from gimp-help-2.8.1 release
 multimedia/xbmc-pvr||2014-02-03|Has expired: multimedia/xbmc and multimedia/xbmc-addon-pvr are newer
@@ -5434,7 +5434,7 @@ sysutils/relpath||2014-02-03|Has expired: unfetchable distfiles
 sysutils/decomment||2014-02-03|Has expired: unfetchable distfiles
 multimedia/openmovieeditor||2014-02-03|Has expired: segfaults, upstread development ceased
 french/gfaim||2014-02-04|Abandonware
-math/matlab-R2012a-installer|matlab-installer|2014-02-04|Now it can handle any Matlab version
+math/matlab-R2012a-installer|math/matlab-installer|2014-02-04|Now it can handle any Matlab version
 games/deal||2014-02-05|Abandonware
 graphics/nurbs++||2014-02-05|Broken on all supported versions
 japanese/grep|textproc/gnugrep|2014-02-06|Official version properly support multi-byte, consider using textproc/gnugrep
