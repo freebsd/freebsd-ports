@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	litecoin
-PORTVERSION=	0.8.6.1
-PORTREVISION=	2
+PORTVERSION=	0.8.6.2
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	LOCAL/swills \
 		GH
@@ -15,7 +14,7 @@ LIB_DEPENDS=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	litecoin-project
-GH_COMMIT=	dab8fe6
+GH_COMMIT=	fa2cfea
 GH_TAGNAME=	v${PORTVERSION}
 
 USE_OPENSSL=	yes
@@ -44,7 +43,8 @@ QMAKE_USE_UPNP=	-
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-USE_QT4=	qmake_build linguist uic moc rcc
+USE_QT4=	network gui qmake_build linguist_build uic_build moc_build rcc_build
+
 BINARY=		litecoin-qt
 .else
 BINARY=		litecoind
@@ -73,10 +73,6 @@ QMAKE_USE_DBUS=	0
 
 .if ${PORT_OPTIONS:MX11}
 PLIST_FILES+=	share/applications/litecoin-qt.desktop share/pixmaps/litecoin64.png
-.endif
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000054
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-endian
 .endif
 
 do-configure:
