@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.ibch.ru/forsite/ports/ \
 		http://forsite.ibch.ru/ports/
 DISTNAME=	ftr${PORTVERSION:S/.//g}sr
 
-MAINTAINER=	forsite@spamtest.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FTN Messages tracker
 
 LIB_DEPENDS=	smapi.2:${PORTSDIR}/news/husky-smapi
