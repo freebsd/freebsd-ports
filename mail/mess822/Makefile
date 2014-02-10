@@ -13,9 +13,7 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 MAINTAINER=	drs@rucus.ru.ac.za
 COMMENT=	RFC 822 mail message parsing library and rewriting utilities
 
-USES=		qmail:run
-
-RESTRICTED=	Violates djb\'s license
+USES=		qmail
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
