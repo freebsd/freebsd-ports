@@ -20,8 +20,6 @@ CONFIGURE_ARGS=	--bindir="${PREFIX}/sbin"
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	IPV6 
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV4}
