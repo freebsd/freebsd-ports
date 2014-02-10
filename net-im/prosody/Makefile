@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	prosody
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	net-im
 MASTER_SITES=	http://prosody.im/downloads/source/ \
 				http://redundancy.redundancy.org/mirror/
