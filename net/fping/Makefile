@@ -14,38 +14,13 @@ LICENSE=	GFDL
 OPTIONS_MULTI=		NET
 OPTIONS_MULTI_NET=	IPV4 IPV6
 OPTIONS_DEFAULT=	IPV4
+OPTIONS_SUB=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--bindir="${PREFIX}/sbin"
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MIPV4}
-CONFIGURE_ARGS+=--enable-ipv4
-PLIST_FILES+=sbin/fping
-MAN8+=	fping.8
-.else
-CONFIGURE_ARGS+=--disable-ipv4
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=--enable-ipv6
-PLIST_FILES+=sbin/fping6
-MAN8+=	fping6.8
-.else
-CONFIGURE_ARGS+=--disable-ipv6
-.endif
-
-post-install:
-.if ${PORT_OPTIONS:MIPV4}
-	@${STRIP_CMD} ${PREFIX}/sbin/fping
-	@${CHMOD} 4555 ${PREFIX}/sbin/fping
-.endif
-.if ${PORT_OPTIONS:MIPV6}
-	@${STRIP_CMD} ${PREFIX}/sbin/fping6
-	@${CHMOD} 4555 ${PREFIX}/sbin/fping6
-.endif
+IPV4_CONFIGURE_ENABLE=	ipv4
+IPV6_CONFIGURE_ENABLE=	ipv6
 
 .include <bsd.port.mk>
