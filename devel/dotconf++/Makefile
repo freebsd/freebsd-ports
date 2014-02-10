@@ -8,7 +8,7 @@ MASTER_SITES=	SF \
 		http://voodoo.com.ua/dotconfpp/
 
 
-MAINTAINER=	mark_sf@kikg.ifmo.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Configuration file parser written in C++
 
 USE_AUTOTOOLS=	libtool
