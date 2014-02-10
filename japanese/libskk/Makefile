@@ -11,8 +11,7 @@ COMMENT=	Library to deal with Japanese Kana-to-Kanji conversion method
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
-		valac:${PORTSDIR}/lang/vala \
+BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala \
 		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
 LIB_DEPENDS=	libgee.so:${PORTSDIR}/devel/libgee06 \
 		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
@@ -22,11 +21,11 @@ USE_GNOME=	intltool introspection:build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include -w
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 PORTDOCS=	ChangeLog NEWS README
 
-OPTIONS_DEFINE=	 DOCS NLS
+OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
