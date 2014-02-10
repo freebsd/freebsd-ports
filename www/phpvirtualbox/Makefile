@@ -3,6 +3,7 @@
 
 PORTNAME=	phpvirtualbox
 DISTVERSION=	4.3-1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME} \
 		LOCAL/decke
@@ -13,7 +14,7 @@ COMMENT=	AJAX Web Interface for VirtualBox
 LICENSE=	GPLv3
 
 USE_ZIP=	yes
-USE_PHP=	json session soap simplexml
+USE_PHP=	json session soap simplexml xml
 NO_BUILD=	yes
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(php|txt|js|css|html)
