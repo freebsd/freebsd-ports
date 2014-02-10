@@ -38,21 +38,23 @@ load_rc_config ${name}
 : ${inspircd_logfile="%%INSPIRCD_LOG%%"}
 : ${inspircd_flags="${inspircd_flags} --logfile ${inspircd_logfile} --config ${inspircd_config}"}
 
-command=%%PREFIX%%/bin/inspircd
+command=/usr/sbin/daemon
+command_args=" -f %%PREFIX%%/bin/inspircd --nofork ${inspircd_flags}"
+procname=%%PREFIX%%/bin/inspircd
 pidfile=${inspircd_pidfile}
 required_files=${inspircd_config}
 start_precmd=inspircd_prestart
 
 inspircd_prestart()
 {
-	piddir=$(dirname ${inspircd_pidfile})
-	if [ ! -d ${piddir} ]; then
-		install -d -m 755 -o ${inspircd_user} -g ${inspircd_group} ${piddir}
-	fi
-	logdir=$(dirname ${inspircd_logfile})
-	if [ ! -d ${logdir} ]; then
-		install -d -m 755 -o ${inspircd_user} -g ${inspircd_group} ${logdir}
-	fi
+	# inspircd_flags gets applied too early if we don't do this.
+	# I didn't want to force people to update their rc.conf files
+	# and change the inspircd_flags to something else.
+        rc_flags=""
+
+	for i in ${inspircd_pidfile} ${inspircd_logfile}; do
+		install -d -m 755 -o ${inspircd_user} -g ${inspircd_group} ${i%/*}
+	done
 }
 
 run_rc_command "$1"
