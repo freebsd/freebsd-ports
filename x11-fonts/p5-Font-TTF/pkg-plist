@@ -150,6 +150,7 @@
 %%SITE_PERL%%/Font/TTF/Woff/MetaData.pm
 %%SITE_PERL%%/Font/TTF/Woff/PrivateData.pm
 %%SITE_PERL%%/Font/TTF/XMLparse.pm
+%%SITE_PERL%%/Font/TTF/.Silf.pm.swo
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/TTF/.packlist
 %%SITE_PERL%%/ttfmod.pl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/TTF
