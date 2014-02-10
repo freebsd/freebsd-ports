@@ -1,0 +1,4 @@
+Ruby/SDL is a Ruby extension library to use SDL library.
+Currently 3D features are unsupported.
+
+WWW: http://www.kmc.gr.jp/~ohai/rubysdl.en.html
