@@ -13,6 +13,7 @@ COMMENT=	HTML rendering library
 
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	amd64 i386
+USES=		uidfix
 USE_LINUX=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
