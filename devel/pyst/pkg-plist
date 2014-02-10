@@ -10,6 +10,12 @@
 %%PYTHON_SITELIBDIR%%/asterisk/agitb.py
 %%PYTHON_SITELIBDIR%%/asterisk/agitb.pyc
 %%PYTHON_SITELIBDIR%%/asterisk/agitb.pyo
+%%PYTHON_SITELIBDIR%%/asterisk/astemu.py
+%%PYTHON_SITELIBDIR%%/asterisk/astemu.pyc
+%%PYTHON_SITELIBDIR%%/asterisk/astemu.pyo
+%%PYTHON_SITELIBDIR%%/asterisk/compat.py
+%%PYTHON_SITELIBDIR%%/asterisk/compat.pyc
+%%PYTHON_SITELIBDIR%%/asterisk/compat.pyo
 %%PYTHON_SITELIBDIR%%/asterisk/config.py
 %%PYTHON_SITELIBDIR%%/asterisk/config.pyc
 %%PYTHON_SITELIBDIR%%/asterisk/config.pyo
