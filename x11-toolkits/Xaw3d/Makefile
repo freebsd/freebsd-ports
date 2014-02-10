@@ -23,7 +23,6 @@ SUB_FILES=	pkg-message
 XAWVER=		8
 SUB_LIST=	XAWVER="${XAWVER}"
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -43,10 +42,7 @@ post-extract:
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.XAW3D ${DOCSDIR}/
-.endif
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.XAW3D ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
