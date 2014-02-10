@@ -2,11 +2,10 @@
 # $FreeBSD$
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.8.2
-PORTREVISION=	1
+PORTVERSION=	3.8.3
 CATEGORIES=	databases
-MASTER_SITES=	http://www.sqlite.org/2013/ http://www2.sqlite.org/2013/ http://www3.sqlite.org/2013/
-DISTNAME=	sqlite-autoconf-3080200
+MASTER_SITES=	http://www.sqlite.org/2014/ http://www2.sqlite.org/2014/ http://www3.sqlite.org/2014/
+DISTNAME=	sqlite-autoconf-3080300
 
 MAINTAINER=	pavelivolkov@gmail.com
 COMMENT=	SQL database engine in a C library
@@ -133,5 +132,8 @@ post-build:
 .if ${ARCH}=="i386"
 	@${ECHO_MSG} "===> WARNING: on ${ARCH} don't pass atof1-* tests"
 .endif
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsqlite3.so.8
 
 .include <bsd.port.mk>
