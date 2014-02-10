@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Data-Dump-Streamer
-PORTVERSION=	2.36
+PORTVERSION=	2.37
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,5 +19,8 @@ TEST_DEPENDS=	p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS
 CONFIGURE_ARGS=	DDS
 USES=		perl5
 USE_PERL5=	modbuild
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/Data/Dump/Streamer/Streamer.so
 
 .include <bsd.port.mk>
