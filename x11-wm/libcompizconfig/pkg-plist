@@ -1,5 +1,6 @@
 include/compizconfig/ccs.h
 include/compizconfig/ccs-backend.h
+lib/libcompizconfig.so.0.0.0
 lib/libcompizconfig.so.0
 lib/libcompizconfig.so
 lib/libcompizconfig.la
