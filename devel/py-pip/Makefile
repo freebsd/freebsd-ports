@@ -2,47 +2,34 @@
 # $FreeBSD$
 
 PORTNAME=	pip
-PORTVERSION=	1.4.1
-PORTREVISION=	0
+PORTVERSION=	1.5.2
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP \
-		LOCAL/nivit/${PORTNAME}/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
-COMMENT=	Pip installs (Python) packages. An easy_install replacement
+COMMENT=	Tool for installing and managing Python packages
 
 LICENSE=	MIT
 
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
-
-OPTIONSFILE?=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	DOCS
 
-PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
+USES=			shebangfix
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 SHEBANG_FILES=	pip/__init__.py
 python_OLD_CMD=	/usr/bin/env python
 python_CMD=	${PYTHON_CMD}
 
-# Python3 ready
-USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
-USES=		shebangfix
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} >= 320
-.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
