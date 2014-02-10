@@ -8,7 +8,7 @@
 
 PORTNAME=	ipsec-tools
 PORTVERSION=	0.8.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -20,9 +20,13 @@ CONFLICTS=	racoon-[0-9]*
 USE_RC_SUBR=	racoon
 USE_OPENSSL=	yes
 USE_BZIP2=	yes
-USE_GCC=	any
 
-USE_AUTOTOOLS=	libtool
+INSTALL_TARGET=	install-strip
+
+CFLAGS+=	-Wno-knr-promoted-parameter \
+		-Wno-sizeof-pointer-memaccess \
+		-Wno-incompatible-pointer-types
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-shared --sysconfdir=${PREFIX}/etc/racoon \
