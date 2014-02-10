@@ -11,7 +11,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CGI wrapper for Web site hosting services to safely grant CGI
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-02-10
+EXPIRATION_DATE=	2014-03-10
 
 SBOX_UIDMIN?=	1000
 SBOX_GIDMIN?=	1000

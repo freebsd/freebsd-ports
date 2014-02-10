@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Various add-ons for games of Quake/QuakeWorld and alike
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-02-10
+EXPIRATION_DATE=	2014-03-10
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

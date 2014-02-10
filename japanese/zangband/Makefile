@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zangband (Zelazny Angband) with Japanese, color, X11 support
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-02-10
+EXPIRATION_DATE=	2014-03-10
 
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-qa

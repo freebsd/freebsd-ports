@@ -14,7 +14,7 @@ COMMENT=	The little, spiffy, backup tool
 #WRKSRC=		${WRKDIR}/hdup2
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-02-10
+EXPIRATION_DATE=	2014-03-10
 
 OPTIONS_DEFINE=	GNUTAR_PORT DOCS
 GNUTAR_PORT_DESC=	GNU tar from ports

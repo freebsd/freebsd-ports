@@ -12,7 +12,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An object-oriented, extended version of the Scheme dialect of Lisp
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-02-10
+EXPIRATION_DATE=	2014-03-10
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 

@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Mapping Tools - data processing and display software package
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-02-10
+EXPIRATION_DATE=	2014-03-10
 
 LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	multi

@@ -6,7 +6,7 @@ DESCR=			${.CURDIR}/pkg-descr
 MASTERDIR=		${.CURDIR}/../freeswitch-vanilla-devel
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-02-10
+EXPIRATION_DATE=	2014-03-10
 
 NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"

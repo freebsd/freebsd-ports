@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight SSL and TLS toolkit for C developers
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-02-10
+EXPIRATION_DATE=	2014-03-10
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/BSD.txt
