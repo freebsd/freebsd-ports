@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	olefileio_pl
-PORTVERSION=	0.26
+PORTVERSION=	0.30
 CATEGORIES=	devel python
 MASTER_SITES=	http://cdn.bitbucket.org/decalage/olefileio_pl/downloads/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,21 +15,11 @@ COMMENT=	Python module to read MS OLE2 files
 LICENSE=	MIT
 
 USES=		dos2unix
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=OleFileIO_PL
+USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-OPTIONS_DEFINE=	DOCS
-
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-PORTDOCS=	README.txt
-
-.include <bsd.port.options.mk>
-
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
+post-patch:
+	@${REINPLACE_CMD} "s|, 'OleFileIO_PL2'||" ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
