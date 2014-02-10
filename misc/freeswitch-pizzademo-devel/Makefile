@@ -14,6 +14,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeSwitch pizza demo
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 RUN_DEPENDS=	freeswitch:${PORTSDIR}/net/freeswitch-core-devel
 
 CONFLICTS=	freeswitch-pizzademo-[0-9]*

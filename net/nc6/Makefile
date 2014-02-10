@@ -11,6 +11,9 @@ MASTER_SITES=	ftp://ftp.deepspace6.net/pub/ds6/sources/nc6/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netcat clone with IPv6 support
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 USES=		iconv
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

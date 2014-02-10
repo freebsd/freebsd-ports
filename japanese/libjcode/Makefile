@@ -10,6 +10,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese charset conversion library
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 MAKE_ARGS=	CC=${CC}
 WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION}
 

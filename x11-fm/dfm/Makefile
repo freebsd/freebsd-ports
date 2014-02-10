@@ -10,6 +10,9 @@ MASTER_SITES=	http://www.kaisersite.de/dfm/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OS/2 - like Desktop-File-Manager for X Window System
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XORG=	xpm

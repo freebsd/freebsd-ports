@@ -9,6 +9,9 @@ MASTER_SITES=	http://memberwebs.com/stef/freebsd/jails/jailer/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manage FreeBSD jail startup, shutdown and console
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 GNU_CONFIGURE=	YES
 
 PLIST_FILES=	bin/injail \

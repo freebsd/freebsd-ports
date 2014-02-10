@@ -13,6 +13,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LLVM based ruby language implementation
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 HAS_CONFIGURE=	yes
 #execinfo is broken for unknow reason
 CONFIGURE_ARGS=	--without-execinfo \

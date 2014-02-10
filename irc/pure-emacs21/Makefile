@@ -17,6 +17,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Primitive Universal Relay-chat Environment
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 LICENSE=	GPLv2 # (or later)
 
 USE_BZIP2=	yes

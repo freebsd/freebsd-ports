@@ -11,6 +11,9 @@ DISTNAME=	xsm-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extensible Site Manager (XSM)
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 RUN_DEPENDS=	mvn:${PORTSDIR}/devel/maven2
 
 USE_JAVA=	yes

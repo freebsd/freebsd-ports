@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DNS Cache Poisoner/Overwriter
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 NO_WRKSUBDIR=	Yes
 
 PLIST_FILES=	bin/dns_mre

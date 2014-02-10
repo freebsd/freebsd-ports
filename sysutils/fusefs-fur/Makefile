@@ -11,6 +11,9 @@ DISTNAME=	FUR-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FUSE-based filesystem for Windows CE based devices
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 LIB_DEPENDS=	librapi.so:${PORTSDIR}/palm/synce-librapi2
 
 OPTIONS_DEFINE=	VCHMOD

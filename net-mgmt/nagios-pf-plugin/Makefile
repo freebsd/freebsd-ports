@@ -12,6 +12,9 @@ DISTNAME=	check_pf-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nagios plugin for checking PF
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 NAGIOS_PLUGIN_DIR?=	libexec/nagios/
 
 PLIST_FILES=	${NAGIOS_PLUGIN_DIR}/check_pf

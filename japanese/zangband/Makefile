@@ -15,6 +15,9 @@ EXTRACT_ONLY=	${PORTNAME}-${E_VERSION:S/.//g}-src.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zangband (Zelazny Angband) with Japanese, color, X11 support
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-qa
 USE_XORG=	x11

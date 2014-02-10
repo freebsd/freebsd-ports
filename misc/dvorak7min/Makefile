@@ -9,6 +9,9 @@ MASTER_SITES=	http://www.linalco.com/ragnar/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ncurses-based Dvorak typing tutor
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 

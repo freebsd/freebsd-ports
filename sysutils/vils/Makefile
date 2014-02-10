@@ -10,6 +10,9 @@ DISTFILES=	vils
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Use your favorite editor to rename files
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 BUILD_DEPENDS=	zsh:${PORTSDIR}/shells/zsh
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 

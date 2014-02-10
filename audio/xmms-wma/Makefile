@@ -10,6 +10,9 @@ MASTER_SITES=	http://mcmcc.bat.ru/xmms-wma/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WMA plugin for xmms
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms
 
 OPTIONS_DEFINE=	ICONV

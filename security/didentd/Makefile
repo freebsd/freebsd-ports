@@ -10,6 +10,9 @@ MASTER_SITES=	http://c0re.23.nu/c0de/didentd/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular RFC1423 (identd) server sending encrypted audit tokens
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 
 ALL_TARGET=	all

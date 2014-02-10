@@ -11,6 +11,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for extracting and creating optimised Xbox ISO images
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 WRKSRC=		${WRKDIR}/extract-xiso
 
 PLIST_FILES=	bin/extract-xiso

@@ -9,6 +9,9 @@ MASTER_SITES=	http://sarg.sourceforge.net/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Handle your Squid or Web users and passwords using your browser
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 HAS_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX}/etc/admuser \

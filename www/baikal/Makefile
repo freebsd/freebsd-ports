@@ -12,6 +12,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Lightweight CalDAV/CardDAV server
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 LICENSE=		GPLv3
 
 USE_PHP=		ctype filter xml pdo_sqlite session mbstring dom

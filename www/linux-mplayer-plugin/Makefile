@@ -13,6 +13,9 @@ PKGNAMEPREFIX=	linux-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Embed MPlayer into browser
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
 USES=		webplugin:linux

@@ -12,6 +12,9 @@ DISTNAME=	trac${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trac tickets reminder script
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac
 
 NO_BUILD=	yes

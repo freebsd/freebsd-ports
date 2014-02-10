@@ -13,6 +13,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program for downloading videos from metacafe.com
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
