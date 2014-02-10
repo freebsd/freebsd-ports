@@ -10,6 +10,9 @@ MASTER_SITES=	ftp://ftp.toontown.org/pub/teapop/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another RFC1939 compliant POP3 server
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-flock
 

@@ -9,6 +9,9 @@ MASTER_SITES=	http://memberwebs.com/stef/freebsd/jails/jailutils/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Several utilities for managing jails
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 GNU_CONFIGURE=	YES
 
 .include <bsd.port.mk>

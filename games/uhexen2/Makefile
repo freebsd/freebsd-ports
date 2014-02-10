@@ -14,6 +14,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hexen II source port supporting Linux/FreeBSD/Unix/Windows
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad
 
 LICENSE_=	GPLv2 GPLv3

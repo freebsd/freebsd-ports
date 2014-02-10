@@ -14,6 +14,9 @@ EXTRACT_ONLY=	jump-${PORTVERSION}.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GUI based application for viewing and processing spatial data
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 WRKSRC=		${WRKDIR}/jump
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 TARGET_DIR=	${PREFIX}/${PORTNAME}

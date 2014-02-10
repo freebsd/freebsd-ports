@@ -11,6 +11,9 @@ COMMENT=	SGML/XML application programming tool
 
 OPTIONS_DEFINE=	DOCS
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 USES+=		tk
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=-prefix=${PREFIX} \

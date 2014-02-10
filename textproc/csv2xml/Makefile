@@ -9,6 +9,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple but effective csv to xml converter
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 USE_BZIP2=	yes
 
 PLIST_FILES=	bin/csv2xml man/man1/csv2xml.1.gz

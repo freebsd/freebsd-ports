@@ -10,6 +10,9 @@ MASTER_SITES=	http://netresearch.ics.uci.edu/kfujii/Jpcap/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JNI wrapper around libpcap
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 LIB_DEPENDS=	pcap.1:${PORTSDIR}/net/libpcap
 
 USE_GMAKE=	yes

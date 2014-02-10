@@ -11,6 +11,9 @@ DISTNAME=	eldav-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interface to WebDAV servers for Emacs
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 RUN_DEPENDS=	nd:${PORTSDIR}/www/nd
 
 NO_BUILD=	yes

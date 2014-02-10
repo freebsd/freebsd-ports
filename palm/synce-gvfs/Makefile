@@ -10,6 +10,9 @@ MASTER_SITES=	SF/synce/SynCE-GNOME/0.14
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GVFS module for access Windows Mobile devices
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 EXTRACT_DEPENDS=${NONEXISTENT}:${GVFS_PORTDIR}:patch
 LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2
 

@@ -10,6 +10,9 @@ DISTNAME=	Sigit-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to create random signatures
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/boxes:${PORTSDIR}/misc/boxes
 
 LICENSE=	GPLv2

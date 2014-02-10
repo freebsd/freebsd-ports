@@ -9,6 +9,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MTA log analyzer
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 

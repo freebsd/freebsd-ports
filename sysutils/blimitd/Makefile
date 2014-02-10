@@ -10,6 +10,9 @@ MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/blimitd/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon to enforce login.conf limits
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 WRKSRC=		${WRKDIR}/blimitd
 
 MAN8=		blimitd.8

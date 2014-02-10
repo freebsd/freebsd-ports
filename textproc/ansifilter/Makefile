@@ -11,6 +11,9 @@ COMMENT=	Customizable ANSI Code Converter
 
 LICENSE=	GPLv3
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 USE_BZIP2=	yes
 MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CXX}" \

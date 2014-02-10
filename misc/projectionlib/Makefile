@@ -10,6 +10,9 @@ DISTNAME=	dlgv32v37src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ wrapper for the USGS GCTP projection library
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 LIB_DEPENDS=	gctpc.1:${PORTSDIR}/misc/gctpc
 
 WRKSRC=		${WRKDIR}/dlgv32/ProjectionLib

@@ -10,6 +10,9 @@ DISTNAME=	synce-sync-engine-${PORTVERSION}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Synchronization Engine for Windows Mobile devices
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/libxslt.py:${PORTSDIR}/textproc/py-libxslt \
 		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \

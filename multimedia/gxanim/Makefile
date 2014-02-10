@@ -11,6 +11,9 @@ DISTNAME=	GXAnim-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical front end to Xanim
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 LICENSE=	GPLv2
 
 RUN_DEPENDS=	xanim:${PORTSDIR}/multimedia/xanim

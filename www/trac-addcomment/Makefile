@@ -12,6 +12,9 @@ DISTNAME=	${PORTNAME}macro-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Add formatted comments to wiki pages
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 RUN_DEPENDS+=	tracd:${PORTSDIR}/www/trac \
 		trac-macropost>0:${PORTSDIR}/www/trac-macropost
 

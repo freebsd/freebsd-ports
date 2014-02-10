@@ -12,6 +12,9 @@ COMMENT=	GTK+ based screen capture
 
 OPTIONS_DEFINE=	DOCS
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 USES=		pkgconfig gmake
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
 AUTOMAKE_ARGS=	--add-missing

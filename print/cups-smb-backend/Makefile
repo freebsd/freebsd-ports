@@ -11,6 +11,9 @@ DISTFILES=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CUPS backend for printing to Windows servers
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 RUN_DEPENDS=	smbspool:${PORTSDIR}/net/${SAMBA_PORT} \
 		${LOCALBASE}/sbin/cupsd:${PORTSDIR}/print/cups-base
 

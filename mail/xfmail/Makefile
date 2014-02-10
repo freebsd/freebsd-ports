@@ -13,6 +13,9 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}/source/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X Window System application for receiving electronic mail
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 LIB_DEPENDS=	libforms.so:${PORTSDIR}/x11-toolkits/xforms \
 		libgdbm.so:${PORTSDIR}/databases/gdbm
 

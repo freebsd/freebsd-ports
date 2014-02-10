@@ -12,6 +12,9 @@ MASTER_SITES?=	LOCAL/beech \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wiki module for Horde
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 USE_HORDE=	base pkg-message
 USES=		gettext
 PORTDOCS=	README CHANGES CREDITS INSTALL TODO

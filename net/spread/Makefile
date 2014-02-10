@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Spread Group Communication System, a network toolkit
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 MAKE_JOBS_UNSAFE=	yes
 
 PORTSCOUT=	limit:^3

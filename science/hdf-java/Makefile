@@ -11,6 +11,9 @@ EXTRACT_SUFX=	-src.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java interface to HDF5
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 LIB_DEPENDS=	hdf5:${PORTSDIR}/science/hdf5-18 \
 		jpeg:${PORTSDIR}/graphics/jpeg
 

@@ -10,6 +10,9 @@ DISTNAME=	LogMon-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses-based split window log monitoring program
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 LICENSE=	ART10
 
 USES=		ncurses

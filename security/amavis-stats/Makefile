@@ -10,6 +10,9 @@ MASTER_SITES=	http://downloads.topicdesk.com/amavis_stats/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple AMaViS statistics generator based on rrdtool
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 RUN_DEPENDS=	rrdtool>=0:${PORTSDIR}/databases/rrdtool
 
 USES=		perl5

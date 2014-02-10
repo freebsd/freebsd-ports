@@ -12,6 +12,9 @@ EXTRACT_SUFX=	.ttf
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Old German blackletter handwriting (Suetterlin)
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-02-10
+
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
