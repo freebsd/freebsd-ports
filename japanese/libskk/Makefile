@@ -2,47 +2,40 @@
 # $FreeBSD$
 
 PORTNAME=	libskk
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	japanese
-MASTER_SITES=	http://cloud.github.com/downloads/ueno/libskk/
+MASTER_SITES=	https://bitbucket.org/libskk/libskk/downloads/
 
 MAINTAINER=	hiroto.kagotani@gmail.com
 COMMENT=	Library to deal with Japanese Kana-to-Kanji conversion method
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	gee:${PORTSDIR}/devel/libgee06 \
-		json-glib-1.0:${PORTSDIR}/devel/json-glib
+LICENSE=	GPLv3
 
-USE_LDCONFIG=	yes
-USE_GMAKE=	yes
-USE_GCC=	any
-USE_GNOME=	intltool gnomehack
-USES=		pkgconfig
+BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection \
+		valac:${PORTSDIR}/lang/vala \
+		p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
+LIB_DEPENDS=	libgee.so:${PORTSDIR}/devel/libgee06 \
+		libjson-glib-1.0.so:${PORTSDIR}/devel/json-glib
+
+USES=		gmake pathfix pkgconfig
+USE_GNOME=	intltool introspection:build
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	DATADIRNAME=share
-MAN1=		skk.1
+USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include -w
 
-OPTIONS_DEFINE=	NLS
+PORTDOCS=	ChangeLog NEWS README
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	 DOCS NLS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-post-patch:
-	# Disabling Vala version check
-	${REINPLACE_CMD} -e 's/as_fn_error.*Vala.*not found.*;;/;;/' ${WRKSRC}/configure
+NLS_CONFIGURE_ENABLE=	nls
+NLS_USES=	gettext
 
 post-install:
-	cd ${WRKSRC}/docs && ${GMAKE} install-man
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libskk.so.0
+
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
