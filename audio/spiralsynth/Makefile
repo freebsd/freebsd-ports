@@ -23,6 +23,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 DOC_FILES=	CHANGES COPYING README
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -130,6 +130,8 @@ MAN3=	Bio::Tools::Run::Phylo::Phylip::DrawGram.3 \
 # now install all extra stuff (docs, examples, scripts)
 NO_STAGE=	yes
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-install:

@@ -29,6 +29,9 @@ PLUGINSDIR=	${PREFIX}/lib/linux-mozilla/plugins
 RABINDIR=	${PREFIX}/bin
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -53,6 +53,9 @@ PACKAGE_ROOT_DESC=	Use PACKAGEROOT insted of PACKAGESITE
 PATCHES_DESC=		Optional exclusive patches
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPACKAGE_ORIGIN}

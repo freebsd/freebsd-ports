@@ -26,6 +26,9 @@ BUILD_WRKSRC=	${WRKSRC}/src/swig/python
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 post-patch:

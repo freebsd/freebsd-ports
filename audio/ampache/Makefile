@@ -26,6 +26,8 @@ SUB_LIST=	PORTNAME=${PORTNAME} \
 
 PORTDOCS=	CHANGELOG README MIGRATION INSTALL
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-install:

@@ -28,6 +28,9 @@ CONFIGURE_ARGS=	--with-nspr-includes=${LOCALBASE}/include/nspr	\
 		--with-nss-libs=${LOCALBASE}/lib/nss
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

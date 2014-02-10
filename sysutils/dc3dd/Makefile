@@ -22,6 +22,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 MAN1=		dc3dd.1
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

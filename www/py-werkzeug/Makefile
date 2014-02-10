@@ -22,6 +22,9 @@ PYDISTUTILS_NOEGGINFO=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>

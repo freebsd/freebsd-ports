@@ -24,6 +24,9 @@ USE_LDCONFIG=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/ecore
 
 .include "Makefile.inc"
+
+OPTIONS_DEFINE=	NLS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

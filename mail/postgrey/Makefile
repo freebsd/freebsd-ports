@@ -40,6 +40,9 @@ USES=		shebangfix perl5
 SHEBANG_FILES=	${WRKSRC}/postgrey
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

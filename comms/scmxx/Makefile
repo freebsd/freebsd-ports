@@ -25,6 +25,8 @@ EXAMPLES=	sms.txt vCalendar.vcs vCard.vcf
 
 NO_STAGE=	yes
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

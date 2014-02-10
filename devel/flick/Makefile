@@ -22,6 +22,9 @@ GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

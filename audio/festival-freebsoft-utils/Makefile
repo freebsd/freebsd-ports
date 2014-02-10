@@ -20,6 +20,8 @@ PORTDOCS=	ANNOUNCE NEWS README
 
 INFO=		${PORTNAME}
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-install:

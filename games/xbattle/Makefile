@@ -18,6 +18,9 @@ MAN1=		xbattle.1
 CFLAGS+=	-Wno-return-type
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-install:

@@ -19,6 +19,8 @@ PLIST_FILES=	bin/cutmp3
 
 PORTDOCS=	README README.timetable USAGE
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

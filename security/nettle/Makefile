@@ -38,6 +38,8 @@ INFO=		nettle
 CONFIGURE_ENV+=	CCPIC=-fPIC
 .endif
 
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 post-install:

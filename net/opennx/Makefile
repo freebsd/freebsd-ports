@@ -37,6 +37,9 @@ NO_PACKAGE=	must generate a fresh private key at install time
 SSH_KEYGEN?=	ssh-keygen
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if !${PORT_OPTIONS:MNLS}

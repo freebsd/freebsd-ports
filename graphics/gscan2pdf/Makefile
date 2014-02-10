@@ -69,6 +69,9 @@ MAN1=		${PORTNAME}.1 scanadf-perl.1 scanimage-perl.1
 PORT_VERBS=	${PORTNAME} Gscan2pdf
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

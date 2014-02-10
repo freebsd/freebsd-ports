@@ -21,6 +21,9 @@ MAKE_ARGS=	-E CC
 .endif
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 do-install:

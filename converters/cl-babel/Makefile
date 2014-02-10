@@ -24,6 +24,8 @@ USE_ASDF=	yes
 
 NO_STAGE=	yes
 
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 do-install:
 	@${MKDIR} ${ASDF_PATHNAME}

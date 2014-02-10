@@ -23,6 +23,9 @@ USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

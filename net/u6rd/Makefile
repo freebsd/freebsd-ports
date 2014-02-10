@@ -16,6 +16,8 @@ USE_RC_SUBR=	u6rd
 
 PLIST_FILES=	sbin/u6rd man/man8/u6rd.8.gz
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

@@ -21,6 +21,8 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 USE_LDCONFIG=	yes
 USES=		pkgconfig
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

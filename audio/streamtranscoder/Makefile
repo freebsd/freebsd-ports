@@ -24,6 +24,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/streamTranscoder
 PORTDOCS=	AUTHORS README
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

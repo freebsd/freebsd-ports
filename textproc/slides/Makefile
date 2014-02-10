@@ -38,6 +38,9 @@ REPLACE_EXPR=	-e 's,@INSTDIR@,${INSTDIR},g ; \
 	    s,@PORTNAME@,slides,g'
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

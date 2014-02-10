@@ -34,6 +34,8 @@ DOCSLIST=	FONTLOG.txt GENTIUM-FAQ.txt OFL-FAQ.txt OFL.txt README.txt \
 		documentation/GentiumPlus-features.pdf
 PORTDOCS=	${DOCSLIST:C,^.*/,,}
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .SILENT:

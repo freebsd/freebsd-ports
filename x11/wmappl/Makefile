@@ -23,6 +23,8 @@ MAKE_ENV=	DATADIR="${DATADIR}"
 USES+=		gmake
 .endif
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-extract:

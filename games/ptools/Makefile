@@ -25,6 +25,8 @@ NO_WRKSUBDIR=	yes
 
 MAN6=		ptools-mopt.6 ptools-mts.6
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 post-build:
 	(${ECHO_CMD} "#!${PERL}"; ${CAT} ${DISTDIR}/p3-2.pl) \

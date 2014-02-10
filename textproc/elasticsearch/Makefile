@@ -19,6 +19,9 @@ ONLY_FOR_ARCHS=	i386 amd64
 USE_RC_SUBR=	${PORTNAME}
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 LUCENEVER=	4.2.1

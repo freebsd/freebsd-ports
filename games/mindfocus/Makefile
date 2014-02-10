@@ -18,6 +18,9 @@ RESTRICTED=	'contains commercial character data'
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-install:

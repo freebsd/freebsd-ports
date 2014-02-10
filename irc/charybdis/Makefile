@@ -37,6 +37,8 @@ CONFIGURE_ARGS=	--with-confdir=${ETCDIR} \
 		--with-moduledir=${DATADIR}/modules \
 		--enable-kqueue
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

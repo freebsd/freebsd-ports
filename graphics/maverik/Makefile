@@ -26,6 +26,9 @@ MAKE_JOBS_UNSAFE=	yes
 PORTDOCS=	*
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPNG}

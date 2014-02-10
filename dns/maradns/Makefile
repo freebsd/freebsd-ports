@@ -23,6 +23,8 @@ USE_RC_SUBR=	${PORTNAME} zoneserver
 USERS=		bind
 GROUPS=		bind
 
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 post-patch:

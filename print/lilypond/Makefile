@@ -65,6 +65,8 @@ NO_CCACHE=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

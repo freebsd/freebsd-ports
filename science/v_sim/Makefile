@@ -30,6 +30,9 @@ USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS NLS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

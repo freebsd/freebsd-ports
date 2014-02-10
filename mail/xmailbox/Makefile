@@ -16,6 +16,9 @@ USE_XORG=	xaw
 MAN1=		xmailbox.1
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

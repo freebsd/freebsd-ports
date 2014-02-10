@@ -13,6 +13,8 @@ COMMENT=	Creates celestial charts
 USE_BZIP2=	yes
 USE_TEX=	latex
 
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 do-build:

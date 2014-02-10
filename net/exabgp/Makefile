@@ -29,6 +29,9 @@ GROUPS=		_bgpd
 MAN1=		${PORTNAME}.1
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 post-extract:

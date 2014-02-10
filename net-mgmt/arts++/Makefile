@@ -21,6 +21,9 @@ MANL=		artsportagg.l artsports.l artsprotos.l artsnets.l artsdump.l \
 		artsintfmagg.l artsnexthops.l artsnexthopagg.l artstos.l
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

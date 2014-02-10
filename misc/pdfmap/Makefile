@@ -21,6 +21,9 @@ USE_PYDISTUTILS=	yes
 DOCS=		CREDITS NEWS README TODO doc/*.html
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

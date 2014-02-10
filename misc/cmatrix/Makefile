@@ -18,6 +18,9 @@ PORTDOCS=	ChangeLog README TODO
 PLIST_FILES=	bin/cmatrix
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-install:

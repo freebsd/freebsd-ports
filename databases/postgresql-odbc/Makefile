@@ -37,6 +37,9 @@ PKGNAMESUFFIX=	-iodbc
 .endif
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 DATADIR_1=	${DATADIR}/odbc

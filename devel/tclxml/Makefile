@@ -26,6 +26,9 @@ CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 PLIST_SUB=	VER=${PORTVERSION}
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

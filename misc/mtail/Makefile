@@ -17,6 +17,9 @@ PORTDOCS=	CHANGES LICENSE README
 PORTEXAMPLES=	mtailrc
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 post-patch:

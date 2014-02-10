@@ -17,6 +17,8 @@ COMMENT=	Converts Chinese GB (simple) encoded text to PostScript
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 WRKSRC=		${WRKDIR}/GB2PS
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-install:

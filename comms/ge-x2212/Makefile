@@ -19,6 +19,9 @@ PLIST_FILES=	bin/ge-x2212-2
 PORTDOCS=	schematic.txt
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-install:

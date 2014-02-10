@@ -24,6 +24,9 @@ USE_LDCONFIG=	yes
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

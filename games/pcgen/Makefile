@@ -23,6 +23,8 @@ DATAFILES=	batch-convert.jar characters data filepaths.ini lib \
 
 SUB_FILES=	pcgen.sh
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 PORTDOCS=	*

@@ -25,6 +25,8 @@ MAKE_ARGS=	EXTRA_CFLAGS="${PTHREAD_CFLAGS}" \
 PORTDOCS=	INSTALL
 PLIST_FILES=	bin/funkgold
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-install:

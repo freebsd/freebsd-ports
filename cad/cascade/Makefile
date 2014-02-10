@@ -19,6 +19,8 @@ MAN1=		cascade.1
 
 NO_STAGE=	yes
 
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 do-install:

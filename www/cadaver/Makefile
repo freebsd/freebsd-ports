@@ -45,6 +45,8 @@ post-install:
 	#
 .endif
 
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

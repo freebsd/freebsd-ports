@@ -20,6 +20,9 @@ USE_GSTREAMER=	yes
 USE_GNOME=	gtk20
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

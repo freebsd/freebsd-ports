@@ -21,6 +21,8 @@ USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 post-install:
 .if ${PORT_OPTIONS:MDOCS}

@@ -17,6 +17,9 @@ USE_LDCONFIG=	yes
 MAN1=		cairo-clock.1
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

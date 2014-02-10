@@ -57,6 +57,8 @@ PLIST_FILES+=	man/man1/mtn.1.gz \
 .endif
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

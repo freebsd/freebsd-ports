@@ -28,6 +28,8 @@ INFO=		${PORTNAME} info-stnd info
 TEXMF=		share/texmf
 PLIST_SUB=	TEXMF=${TEXMF}
 
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

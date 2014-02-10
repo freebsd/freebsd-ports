@@ -15,6 +15,8 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all # vcheck
 
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -19,6 +19,8 @@ NO_STAGE=	yes
 PLIST_FILES=	bin/maplay
 PORTDOCS=	README
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

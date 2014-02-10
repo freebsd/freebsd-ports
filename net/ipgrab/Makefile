@@ -24,6 +24,9 @@ PORTDOCS=	README AUTHORS COPYING ChangeLog DEVELOPER-HOWTO \
 		INSTALL NEWS TODO
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-install:
