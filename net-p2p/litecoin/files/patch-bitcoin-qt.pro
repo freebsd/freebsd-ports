@@ -1,6 +1,6 @@
---- bitcoin-qt.pro.orig	2013-07-21 17:42:52.047209171 +0000
-+++ bitcoin-qt.pro	2013-07-21 17:43:11.879205795 +0000
-@@ -414,7 +414,7 @@
+--- ./bitcoin-qt.pro.orig	2014-01-10 01:38:53.000000000 +0000
++++ ./bitcoin-qt.pro	2014-02-09 05:45:03.127008564 +0000
+@@ -431,7 +431,7 @@
  LIBS += -lssl -lcrypto -ldb_cxx$$BDB_LIB_SUFFIX
  # -lgdi32 has to happen after -lcrypto (see  #681)
  win32:LIBS += -lws2_32 -lshlwapi -lmswsock -lole32 -loleaut32 -luuid -lgdi32
