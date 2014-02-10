@@ -88,6 +88,13 @@ CONFIGURE_ARGS+=	\
 	-Dvendorman1dir=${PERL_VENDOR_PREFIX}/man/man1
 .endif
 
+# http://perl5.git.perl.org/perl.git/commit/b83080de5c4254
+# PERLIOBUF_DEFAULT_BUFSIZ size in bytes (default: 8192 bytes)
+.if defined(PERLIOBUF_DEFAULT_BUFSIZ)
+CONFIGURE_ARGS+=	\
+    -Accflags=-DPERLIOBUF_DEFAULT_BUFSIZ=${PERLIOBUF_DEFAULT_BUFSIZ}
+.endif
+
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}/perl
 MANDIRS+=	${MAN3PREFIX}
 
