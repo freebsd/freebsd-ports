@@ -46,8 +46,6 @@ APU_CONF_ARGS=	--with-apr=${APR_WRKDIR} \
 		--with-expat=${LOCALBASE} \
 		--with-iconv=${ICONV_PREFIX}
 
-OPTIONS_DEFINE=	IPV6 
-
 .include <bsd.port.options.mk>
 
 ########## APR Options
