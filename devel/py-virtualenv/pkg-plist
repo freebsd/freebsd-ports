@@ -1,37 +1,23 @@
-bin/virtualenv
-bin/virtualenv-%%PYVER%%
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support/pip-%%PIPVER%%.tar.gz
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support/setuptools-%%SETUPTOOLSVER%%.tar.gz
 %%PORTDOCS%%%%DOCSDIR%%/.buildinfo
 %%PORTDOCS%%%%DOCSDIR%%/_sources/index.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/news.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/virtualenv.txt
 %%PORTDOCS%%%%DOCSDIR%%/_static/ajax-loader.gif
 %%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/comment-bright.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/comment-close.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/comment.png
+%%PORTDOCS%%%%DOCSDIR%%/_static/default.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/doctools.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/down-pressed.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/down.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/file.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/minus.png
-%%PORTDOCS%%%%DOCSDIR%%/_static/nature.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/plus.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/pygments.css
 %%PORTDOCS%%%%DOCSDIR%%/_static/searchtools.js
+%%PORTDOCS%%%%DOCSDIR%%/_static/sidebar.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/underscore.js
 %%PORTDOCS%%%%DOCSDIR%%/_static/up-pressed.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/up.png
@@ -42,9 +28,7 @@ bin/virtualenv-%%PYVER%%
 %%PORTDOCS%%%%DOCSDIR%%/objects.inv
 %%PORTDOCS%%%%DOCSDIR%%/search.html
 %%PORTDOCS%%%%DOCSDIR%%/searchindex.js
+%%PORTDOCS%%%%DOCSDIR%%/virtualenv.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenv_support
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
