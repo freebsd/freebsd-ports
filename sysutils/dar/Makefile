@@ -18,6 +18,8 @@ CONFIGURE_ARGS=	--disable-build-html --datadir=${DATADIR} --disable-upx
 
 CPPFLAGS+=	-DHAVE_DECL_GETOPT=0
 
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
