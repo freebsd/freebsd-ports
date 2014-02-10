@@ -1,0 +1,62 @@
+--- ./CMakeLists.txt.orig	2013-12-15 12:43:00.000000000 +0000
++++ ./CMakeLists.txt	2013-12-26 19:54:31.000000000 +0000
+@@ -24,12 +24,28 @@
+ include (CPack)
+ add_custom_target (dist COMMAND ${CMAKE_MAKE_PROGRAM} package_source)
+ 
++find_package (PkgConfig)
+ find_package (Vala REQUIRED)
+ include (ValaVersion)
+ include (ValaPrecompile)
+ 
+ ensure_vala_version ("0.20.1" MINIMUM)
+ 
++message ("-- Checking for libgee...")
++# libgee <= 0.6
++pkg_check_modules (GEE_10 gee-1.0)
++if (GEE_10_FOUND)
++    set (GEE_PACKAGE gee-1.0)
++    set (GEE_GIR Gee-1.0)
++else ()
++    # libgee >= 0.8
++    pkg_check_modules (GEE_08 gee-0.8)
++    if (GEE_08_FOUND)
++        set (GEE_PACKAGE gee-0.8)
++        set (GEE_GIR Gee-0.8)
++    endif ()
++endif ()
++
+ #
+ # Packages in PKG_DEPS are used with the vala compiler and other related tools (not versioned.)
+ # Packages in PKG_DEPS_CHECK are used with PKG-Config and for linking, etc. They can contain versions.
+@@ -42,19 +58,18 @@
+     gtk+-3.0
+     gio-unix-2.0
+     posix
+-    gee-1.0)
++    ${GEE_PACKAGE})
+ 
+ set (PKG_DEPS_CHECK
+     gtk+-3.0>=3.3.14
+     gio-unix-2.0
+     gthread-2.0
+-    gee-1.0)
++    ${GEE_PACKAGE})
+ 
+ # GI dependencies
+-set (GI_PKG_DEPS Gtk-3.0 Gee-1.0)
++set (GI_PKG_DEPS Gtk-3.0 ${GEE_GIR})
+ 
+ # Check for the deps
+-find_package (PkgConfig)
+ pkg_check_modules (DEPS REQUIRED ${PKG_DEPS_CHECK})
+ 
+ set (VALAC_OPTIONS
+@@ -66,7 +81,6 @@
+ endif ()
+ 
+ add_subdirectory (lib)
+-add_subdirectory (demo)
+ add_subdirectory (doc)
+ add_subdirectory (po)
+ add_subdirectory (icons)

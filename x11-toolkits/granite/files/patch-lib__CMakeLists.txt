@@ -1,0 +1,16 @@
+--- ./lib/CMakeLists.txt.orig	2013-08-10 02:01:58.000000000 +0000
++++ ./lib/CMakeLists.txt	2013-09-28 15:05:02.000000000 +0000
+@@ -63,7 +63,12 @@
+ if(NOT DEFINED LIB_INSTALL_DIR)
+     set(LIB_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/lib")
+ endif()
+-install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${PKG_NAME}.pc DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
++
++if (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++    install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${PKG_NAME}.pc DESTINATION ${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig)
++else ()
++    install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${PKG_NAME}.pc DESTINATION ${LIB_INSTALL_DIR}/pkgconfig)
++endif ()
+ 
+ # Link all
+ set (CFLAGS ${DEPS_CFLAGS} ${DEPS_CFLAGS_OTHER})
