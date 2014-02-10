@@ -127,7 +127,6 @@
     SUBDIR += thales
     SUBDIR += tircd
     SUBDIR += tircproxy
-    SUBDIR += trickyirc
     SUBDIR += undernet-ircu
     SUBDIR += unreal
     SUBDIR += weechat
