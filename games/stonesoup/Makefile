@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.13.0
+PORTVERSION=	0.13.1
 CATEGORIES=	games
 MASTER_SITES=	SF/crawl-ref/Stone%20Soup/${PORTVERSION}
 DISTNAME=	stone_soup-${PORTVERSION}-nodeps
