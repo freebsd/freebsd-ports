@@ -27,7 +27,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MANUAL_PACKAGE_BUILD=	requires non-default configuration of dependency
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 DOS2UNIX_REGEX=	.+\.(conf|jsp|properties|xml)$
 
 USE_JAVA=	yes
@@ -36,7 +36,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 DIST_SUBDIR=	${PORTNAME}
 USE_RC_SUBR=   	openoffice
-SOFFICEBIN?=	${PREFIX}/openoffice.org-3.2.1/openoffice.org3/program/soffice.bin
+SOFFICEBIN?=	${PREFIX}/bin/openoffice-4.0.1
 RED5_HOME?=	${PREFIX}/red5
 RED5_LOGS?=	${RED5_HOME}/log
 RED5_USER?=	www
@@ -49,11 +49,10 @@ FS_USER?=	freeswitch
 FS_GROUP?=	${FS_USER}
 WWWROOT?=	${WWWDIR:S|/${PORTNAME}$||}
 
-OPTIONS_DEFINE=	MEETME KONFERENCE FREESWITCH OPENOFFICE
+OPTIONS_DEFINE=	MEETME KONFERENCE OPENOFFICE
 OPTIONS_DEFAULT=	KONFERENCE
 MEETME_DESC=	meetme Asterisk module
 KONFERENCE_DESC=	konference Asterisk module
-FREESWITCH_DESC=	mod_conference FreeSWITCH module
 OPENOFFICE_DESC=	Include OpenOffice support
 
 PLIST_SUB+=	RED5_HOME=${RED5_HOME:S,^${PREFIX}/,,} \
@@ -77,14 +76,13 @@ SUB_LIST+=	PORTNAME=${PORTNAME} \
 
 SUB_FILES=	pkg-message openoffice nginx.conf-dist bbb-conf
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMEETME} || ${PORT_OPTIONS:MKONFERENCE}
 BUILD_DEPENDS+=${LOCALBASE}/sbin/asterisk:${PORTSDIR}/net/asterisk
 .if  ${PORT_OPTIONS:MMEETME}
 .if !exists(${LOCALBASE}/lib/asterisk/modules/app_meetme.so)
-IGNORE=Option meetme requires app_meetme.so from asterisk port. Rebuild net/asterisk with WITH_DAHDI=yes
+IGNORE=Option meetme requires app_meetme.so from asterisk port. Rebuild net/asterisk with DAHDI option selected
 .endif
 .endif
 .if  ${PORT_OPTIONS:MKONFERENCE}
@@ -92,13 +90,8 @@ BUILD_DEPENDS+=${LOCALBASE}/lib/asterisk/modules/app_konference.so:${PORTSDIR}/n
 .endif
 .endif
 
-.if ${PORT_OPTIONS:MFREESWITCH}
-BROKEN=freeswitch 1.0.6 does not work with BigBlueButton
-BUILD_DEPENDS+=${LOCALBASE}/bin/freeswitch:${PORTSDIR}/net/freeswitch
-.endif
-
 .if ${PORT_OPTIONS:MOPENOFFICE}
-BUILD_DEPENDS+=	${LOCALBASE}/bin/openoffice.org-3.2.1:${PORTSDIR}/editors/openoffice.org-3
+BUILD_DEPENDS+=	${LOCALBASE}/bin/openoffice-4.0.1:${PORTSDIR}/editors/openoffice-4
 .endif
 
 post-extract:
@@ -138,38 +131,35 @@ pre-install:
 	fi
 
 do-install:
-	@${MKDIR} ${DATADIR} ${WWWDIR}
-	@${INSTALL_SCRIPT} ${WRKDIR}/bbb-conf ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}${WWWDIR}
+	@${INSTALL_SCRIPT} ${WRKDIR}/bbb-conf ${STAGEDIR}${PREFIX}/bin
 .for d in asterisk blank freeswitch nginx
-	@${MKDIR} ${DATADIR}/${d}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/${d}
 .endfor
-	@${INSTALL_DATA} ${FILESDIR}/nopdfmark.ps ${DATADIR}/blank
+	@${INSTALL_DATA} ${FILESDIR}/nopdfmark.ps ${STAGEDIR}${DATADIR}/blank
 .for f in blank-slide.swf blank-thumb.png
-	@${INSTALL_DATA} ${_DISTDIR}/${f} ${DATADIR}/blank
+	@${INSTALL_DATA} ${_DISTDIR}/${f} ${STAGEDIR}${DATADIR}/blank
 .endfor
 .for f in bbb_extensions.conf bbb_sip.conf
-	@${INSTALL_DATA} ${WRKDIR}/${f}-dist ${DATADIR}/asterisk
+	@${INSTALL_DATA} ${WRKDIR}/${f}-dist ${STAGEDIR}${DATADIR}/asterisk
 .endfor
 .for f in nginx.conf nginx-bigbluebutton.conf
-	@${INSTALL_DATA} ${WRKDIR}/${f}-dist ${DATADIR}/nginx
+	@${INSTALL_DATA} ${WRKDIR}/${f}-dist ${STAGEDIR}${DATADIR}/nginx
 .endfor
-	@cd ${WRKDIR} && ${COPYTREE_SHARE} conf ${DATADIR}/freeswitch
-	@${MKDIR} ${TOMCAT_HOME}/webapps/bigbluebutton
+	@cd ${WRKDIR} && ${COPYTREE_SHARE} conf ${STAGEDIR}${DATADIR}/freeswitch
+	@${MKDIR} ${STAGEDIR}${TOMCAT_HOME}/webapps/bigbluebutton
 	@cd ${WRKDIR}/bigbluebutton-tomcat && \
-		${COPYTREE_SHARE} . ${TOMCAT_HOME}/webapps/bigbluebutton
+		${COPYTREE_SHARE} . ${STAGEDIR}${TOMCAT_HOME}/webapps/bigbluebutton
 	@${CHOWN} ${TOMCAT_USER}:${TOMCAT_GROUP} \
-		${TOMCAT_HOME}/webapps/bigbluebutton
-	@cd ${WRKDIR} && ${COPYTREE_SHARE} bigbluebutton-default ${WWWROOT}
-	@cd ${WRKDIR} && ${COPYTREE_SHARE} client ${WWWDIR}
+		${STAGEDIR}${TOMCAT_HOME}/webapps/bigbluebutton
+	@cd ${WRKDIR} && ${COPYTREE_SHARE} bigbluebutton-default ${STAGEDIR}${WWWROOT}
+	@cd ${WRKDIR} && ${COPYTREE_SHARE} client ${STAGEDIR}${WWWDIR}
 	@cd ${WRKDIR} && ${COPYTREE_SHARE} 'bigbluebutton deskshare sip video' \
-		${RED5_HOME}/webapps
+		${STAGEDIR}${RED5_HOME}/webapps
 	@cd ${RED5_HOME} && ${CHOWN} -R ${RED5_USER}:${RED5_GROUP} \
 		webapps
 .for f in aopalliance-1.0.jar spring-aop-3.0.0.jar
-	@${INSTALL_DATA} ${WRKDIR}/red5-0.9.1/lib/${f} ${RED5_HOME}/lib
+	@${INSTALL_DATA} ${WRKDIR}/red5-0.9.1/lib/${f} ${STAGEDIR}${RED5_HOME}/lib
 .endfor
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
