@@ -8,7 +8,7 @@ CATEGORIES=	security devel
 MASTER_SITES=	http://www.linuxnet.com/drivers/readers/files/
 DISTNAME=	${PORTNAME:S/^ifd-//}-drv-${PORTVERSION}
 
-MAINTAINER=	toni@soth.at
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PC/SC Lite driver for the Reflex 62 serial smart card reader
 
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
