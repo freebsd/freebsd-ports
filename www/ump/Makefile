@@ -24,8 +24,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/timidity/timidity.cfg:${PORTSDIR}/audio/eawpats
 LATEST_LINK=	UNIXMidiPlugin
 CONFLICTS=	ump-0.8.[0-9]*
 
-BROKEN=		Does not build
-
 BZ2DIST=	TiMidity++-${TIMIDITY_VERSION}.tar.bz2:timidity
 ZDIST=		unix-sdk-3.0b5.tar.Z:plugin ump_with_volume.tar.Z:ump timdiffs.tar.Z:ump
 
@@ -80,6 +78,6 @@ post-configure:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WEBPLUGIN_DIR}
-	${INSTALL_DATA} ${WRKSRC}/ump/ump.so ${STAGEDIR}${WEBPLUGINS_DIR}
+	${INSTALL_DATA} ${WRKSRC}/ump/ump.so ${STAGEDIR}${WEBPLUGIN_DIR}
 
 .include <bsd.port.post.mk>

@@ -1,2 +1,2 @@
-%%WEBPLUGINS_DIR%%/ump.so
-@dirrmtry %%WEBPLUGINS_DIR%%
+%%WEBPLUGIN_DIR%%/ump.so
+@dirrmtry %%WEBPLUGIN_DIR%%
