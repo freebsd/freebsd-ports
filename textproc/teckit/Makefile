@@ -20,14 +20,11 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 DOCS=		AUTHORS README NEWS docs/*.pdf license/LICENSING.txt
 
-NO_STAGE=	yes
 post-patch:
 	${CHMOD} ${BINMODE} ${WRKSRC}/configure ${WRKSRC}/install-sh
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
