@@ -1,0 +1,6 @@
+
+Please edit lines 48 through 69 in %%PREFIX%/bin/Pnews
+to customize news posting for your site.
+Edit %%PREFIX%%/bin/newsetup to set the Distribution codes.
+Remember to set the NNTPSERVER environment variable to your news server.
+
