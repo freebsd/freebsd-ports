@@ -24,12 +24,10 @@ USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 WRKSRC=		${WRKDIR}/Encore
 DOCSDIR=	${GNUSTEP_PREFIX}/Local/Library/Documentation/Encore
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	@${TAR} -C ${WRKDIR}/Encore-${PORTVERSION}-api-ref -cf - . | \
-		${TAR} -C ${DOCSDIR} -xf -
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKDIR}/Encore-${PORTVERSION}-api-ref && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
