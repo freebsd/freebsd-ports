@@ -102,8 +102,18 @@ Database_Include_MAINTAINER=	ports@FreeBSD.org
 # FIREBIRD_VER
 #				- Detected Firebird version.
 
+.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
+
+.if defined(DEFAULT_MYSQL_VER)
+WARNING+=	"DEFAULT_MYSQL_VER is defined, consider using DEFAULT_VERSIONS=mysql=${DEFAULT_MYSQL_VER} instead"
+.endif
+
+.if defined(DEFAULT_PGSQL_VER)
+WARNING+=	"DEFAULT_PGSQL_VER is defined, consider using DEFAULT_VERSIONS=pgsql=${DEFAULT_PGSQL_VER} instead"
+.endif
+
 .if defined(USE_MYSQL)
-DEFAULT_MYSQL_VER?=	55
+DEFAULT_MYSQL_VER?=	${MYSQL_DEFAULT:S/.//}
 # MySQL client version currently supported.
 MYSQL51_LIBVER=		16
 MYSQL53m_LIBVER=	16
@@ -190,7 +200,7 @@ IGNORE=		cannot install: unknown MySQL version: ${MYSQL_VER}
 
 .if defined(USE_PGSQL)
 VALID_PGSQL_VER=	84 90 91 92 93
-DEFAULT_PGSQL_VER?=	90
+DEFAULT_PGSQL_VER?=	${PGSQL_DEFAULT:S/.//}
 PGSQL83_LIBVER=		5
 PGSQL84_LIBVER=		5
 PGSQL90_LIBVER=		5

@@ -39,13 +39,19 @@ PHP_Include_MAINTAINER=	ale@FreeBSD.org
 
 _PHPMKINCLUDED=	yes
 
+.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
+
+.if defined(DEFAULT_PHP_VER)
+WARNING+=	"DEFAULT_PHP_VER is defined, consider using DEFAULT_VERSIONS=php=${DEFAULT_PHP_VER} instead"
+.endif
+
 PHPBASE?=	${LOCALBASE}
 .if exists(${PHPBASE}/etc/php.conf)
 .include "${PHPBASE}/etc/php.conf"
 PHP_EXT_DIR!=	${PHPBASE}/bin/php-config --extension-dir | ${SED} -ne 's,^${PHPBASE}/lib/php/\(.*\),\1,p'
 
 .else
-DEFAULT_PHP_VER?=	5
+DEFAULT_PHP_VER?=	${PHP_DEFAULT:S/.//}
 
 PHP_VER?=	${DEFAULT_PHP_VER}
 .if ${PHP_VER}  == 52
@@ -55,6 +61,10 @@ PHP_EXT_DIR=	20090626
 PHP_EXT_INC=	pcre spl
 .elif ${PHP_VER}  == 55
 PHP_EXT_DIR=	20121212
+PHP_EXT_INC=	pcre spl
+.elif ${PHP_VER}  == 54
+PHP_VER=	5
+PHP_EXT_DIR=	20100525
 PHP_EXT_INC=	pcre spl
 .else
 PHP_EXT_DIR=	20100525

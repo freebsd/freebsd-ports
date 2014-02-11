@@ -80,7 +80,13 @@
 
 Apache_Pre_Include=		bsd.apache.mk
 
-DEFAULT_APACHE_VERSION=		22
+.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
+
+.if defined(DEFAULT_APACHE_VER)
+WARNING+=	"DEFAULT_APACHE_VER is defined, consider using DEFAULT_VERSIONS=apache=${DEFAULT_APACHE_VER} instead"
+.endif
+
+DEFAULT_APACHE_VERSION?=		${APACHE_DEFAULT:S/.//}
 APACHE_SUPPORTED_VERSION=	22 24 # preferred version first
 
 # Print warnings
@@ -285,6 +291,8 @@ APACHE_MPM!=		${APXS} -q MPM_NAME
 .	endif
 .elif defined(APACHE_PORT)
 _APACHE_VERSION!=	${ECHO_CMD} ${APACHE_PORT} | ${SED} -ne 's,.*/apache\([0-9]*\).*,\1,p'
+.else
+_APACHE_VERSION:=	${DEFAULT_APACHE_VERSION}
 .endif
 
 .if defined(USE_APACHE)
@@ -335,13 +343,11 @@ IGNORE?=	PREFIX must be equal to APXS_PREFIX.
 .	endif
 .endif
 
-.if ${APACHE_VERSION} >= 22
 AP_BUILDEXT=	la
 APACHEMODDIR=	libexec/apache${APACHE_VERSION}
 APACHEINCLUDEDIR=include/apache${APACHE_VERSION}
 APACHEETCDIR=	etc/apache${APACHE_VERSION}
 APACHE_PORT?=	www/apache${APACHE_VERSION}
-.endif
 
 PLIST_SUB+=	APACHEMODDIR="${APACHEMODDIR}" \
 		APACHEINCLUDEDIR="${APACHEINCLUDEDIR}" \
