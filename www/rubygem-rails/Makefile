@@ -27,7 +27,7 @@ RUN_DEPENDS=	rubygem-actionmailer>=${PORTVERSION}:${PORTSDIR}/mail/rubygem-actio
 		rubygem-rack>=1.4.4:${PORTSDIR}/www/rubygem-rack \
 		rubygem-rack-test>=0.6.1:${PORTSDIR}/www/rubygem-rack-test \
 		rubygem-rake>=10.1.1:${PORTSDIR}/devel/rubygem-rake \
-		rubygem-sass-rails>=3.2.14:${PORTSDIR}/textproc/rubygem-sass-rails \
+		rubygem-sass-rails>=3.2.6:${PORTSDIR}/textproc/rubygem-sass-rails \
 		rubygem-sqlite3>=1.3.7:${PORTSDIR}/databases/rubygem-sqlite3 \
 		rubygem-treetop>=1.4.15:${PORTSDIR}/devel/rubygem-treetop \
 		rubygem-turn>=0.8.3:${PORTSDIR}/devel/rubygem-turn \
