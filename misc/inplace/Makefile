@@ -19,12 +19,10 @@ MAKEFILE=	BSDmakefile
 
 RUBY_SHEBANG_FILES=	lib/inplace.rb
 
-MAN1=		inplace.1
-MANCOMPRESSED=	maybe
-PLIST_FILES=	bin/inplace
+PLIST_FILES=	bin/inplace \
+		man/man1/inplace.1.gz
 
 test: build
 	cd ${WRKSRC}; ${MAKE} test
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
