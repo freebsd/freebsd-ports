@@ -21,6 +21,7 @@ do_remove_links()
 	bins=`/bin/ls /usr/bin/*perl*5.* ${PKG_PREFIX}/bin/*perl*5.* 2>/dev/null`
 	for binary in ${bins} ; do
 		if [ -L "${binary}" ] ; then
+			echo "use.perl: Removing ${binary} installed by an older perl port"
 			/bin/rm -f "${binary}"
 		fi
 	done
@@ -30,11 +31,15 @@ do_create_links()
 {
 	for binary in ${special_link_list} ; do
 		if [ -f "/usr/bin/${binary}" ] ; then
+			echo "use.perl: Backing up /usr/bin/${binary} as /usr/bin/${binary}.freebsd"
 			/bin/mv -f "/usr/bin/${binary}" "/usr/bin/${binary}.freebsd"
 		fi
 		if [ -e "/usr/bin/${binary}" ] ; then
+			echo "use.perl: /usr/bin/${binary} is still there, which should not happen"
 		elif [ -e "${PKG_PREFIX}/bin/perl${PERL_VERSION}" ] ; then
 			/bin/ln -sf "${PKG_PREFIX}/bin/perl${PERL_VERSION}" "/usr/bin/${binary}"
+		else
+			echo "use.perl: ${PKG_PREFIX}/bin/perl${PERL_VERSION} is not there, a symlink won't do any good"
 		fi
 	done
 }
