@@ -28,17 +28,12 @@ XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 CATALOG_PORTS_XML=	${PREFIX}/share/xml/catalog.ports
 
-NO_STAGE=	yes
 pre-su-install:
-	@[ -d ${DOCBOOKDIR}/ent ] || ${MKDIR} ${DOCBOOKDIR}/ent
+	@[ -d ${STAGEDIR}${DOCBOOKDIR}/ent ] || ${MKDIR} ${STAGEDIR}${DOCBOOKDIR}/ent
 
 do-install:
 	for file in `unzip -l ${DISTDIR}/${DISTFILES}|${AWK} '/:[0-9].*[^\/]$$/{print $$4}'`; do \
-		${INSTALL_DATA} ${WRKSRC}/$$file ${DOCBOOKDIR}/$$file; \
+		${INSTALL_DATA} ${WRKSRC}/$$file ${STAGEDIR}${DOCBOOKDIR}/$$file; \
 	done
-
-post-install:
-	@-${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${DOCBOOKDIR}/docbook.cat
-	@-${XMLCATMGR} -c ${CATALOG_PORTS_XML} add nextCatalog ${DOCBOOKDIR}/catalog.xml
 
 .include <bsd.port.mk>
