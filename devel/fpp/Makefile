@@ -14,23 +14,19 @@ MAINTAINER=	mexas@bris.ac.uk
 COMMENT=	Fortran preprocessor for FORTRAN 77 and Fortran 90 programs
 
 ALL_TARGET=	bsd44
-MAN1=		fpp.1
 
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	README fpp_spec fpp_license.ps
 
-PLIST_FILES=	bin/fpp
+PLIST_FILES=	bin/fpp \
+		man/man1/fpp.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bsd44/fpp ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/man1/fpp.1 ${MANPREFIX}/man/man1
-
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/bsd44/fpp ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/man1/fpp.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
