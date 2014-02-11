@@ -11,15 +11,11 @@ MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Simple tool that dumps System V shared memory segments
 
 USE_BZIP2=	yes
-USEs=		iconv
+USES=		iconv
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	NLS
 
-MAN1=		shmcat.1 \
-		ftok.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
