@@ -12,9 +12,9 @@ SRCS=	common.cpp window.cpp list.cpp buffer.cpp packet.cpp channel.cpp \
 	queue.cpp ccc.cpp cache.cpp core.cpp epoll.cpp api.cpp
 
 CXXFLAGS+=	-D${MACHINE_ARCH:U:S/I386/IA32/:S/SPARC64/SPARC/} -DBSD
-CXXFLAGS+=	-Wsystem-headers -Werror -Wall -W	\
+CXXFLAGS+=	-Wno-system-headers -Wall -W	\
 	-Wpointer-arith -Wreturn-type	\
-	-Wwrite-strings -Wswitch -Wcast-align	\
-	-Wunused-parameter
+	-Wwrite-strings -Wswitch -Wno-cast-align	\
+	-Wunused-parameter -Werror
 
 .include <bsd.lib.mk>
