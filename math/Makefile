@@ -520,6 +520,7 @@
     SUBDIR += pecl-big_int
     SUBDIR += pecl-bitset
     SUBDIR += pecl-stats
+    SUBDIR += pecl-trader
     SUBDIR += petsc
     SUBDIR += php5-bcmath
     SUBDIR += php5-gmp
