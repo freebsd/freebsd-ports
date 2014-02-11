@@ -1,25 +1,26 @@
-@unexec if cmp -s %D/%%ETCDIR%%/openfire.xml %D/%%EXAMPLESDIR%%/openfire.xml; then rm -f %D/%%ETCDIR%%/openfire.xml; else echo If permanently deleting this package, %D/%%ETCDIR%%/openfire.xml must be removed manually; fi
-@unexec if cmp -s %D/%%ETCDIR%%/keystore %D/%%EXAMPLESDIR%%/keystore; then rm -f %D/%%ETCDIR%%/keystore; else echo If permanently deleting this package, %D/%%ETCDIR%%/keystore must be removed manually; fi
-@unexec if cmp -s %D/%%ETCDIR%%/truststore %D/%%EXAMPLESDIR%%/truststore; then rm -f %D/%%ETCDIR%%/truststore; else echo If permanently deleting this package, %D/%%ETCDIR%%/truststore must be removed manually; fi
-%%EXAMPLESDIR%%/openfire.xml
-%%EXAMPLESDIR%%/keystore
-%%EXAMPLESDIR%%/truststore
+@owner openfire
+@group openfire
+%%ETCDIR%%/openfire.xml.sample
+%%ETCDIR%%/keystore.sample
+%%ETCDIR%%/truststore.sample
 %%DATADIR%%/lib/activation.jar
-%%DATADIR%%/lib/bouncycastle.jar
+%%DATADIR%%/lib/bcpg-jdk15on.jar
+%%DATADIR%%/lib/bcpkix-jdk15on.jar
+%%DATADIR%%/lib/bcprov-jdk15on.jar
 %%DATADIR%%/lib/commons-el.jar
 %%DATADIR%%/lib/hsqldb.jar
 %%DATADIR%%/lib/jasper-compiler.jar
 %%DATADIR%%/lib/jasper-runtime.jar
 %%DATADIR%%/lib/jdic.jar
 %%DATADIR%%/lib/jtds.jar
+%%DATADIR%%/lib/log4j.xml
 %%DATADIR%%/lib/mail.jar
 %%DATADIR%%/lib/mysql.jar
 %%DATADIR%%/lib/openfire.jar
 %%DATADIR%%/lib/postgres.jar
 %%DATADIR%%/lib/servlet.jar
-%%DATADIR%%/lib/startup.jar
 %%DATADIR%%/lib/slf4j-log4j12.jar
-%%DATADIR%%/lib/log4j.xml
+%%DATADIR%%/lib/startup.jar
 %%DATADIR%%/conf
 %%DATADIR%%/embedded-db
 %%DATADIR%%/logs
@@ -400,10 +401,9 @@
 @dirrm %%DATADIR%%/plugins/admin/webapp/WEB-INF
 @dirrm %%DATADIR%%/plugins/admin/webapp
 @dirrm %%DATADIR%%/plugins/admin
-%%PLUGINS%%@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/lib
-@dirrm %%EXAMPLESDIR%%
-@unexec rmdir %D/%%DATADIR%% 2> /dev/null
-@unexec rmdir %D/%%ETCDIR%% 2> /dev/null || echo "If permanently deleting this package, %D/%%ETCDIR%% must be removed manually"
-@unexec rmdir /var/db/openfire 2> /dev/null || echo "If permanently deleting this package, /var/db/openfire must be removed manually"
-@unexec rmdir /var/log/openfire 2> /dev/null || echo "If permanently deleting this package, /var/log/openfire must be removed manually"
+@dirrmtry %%DATADIR%%
+@dirrmtry %%ETCDIR%%
+@dirrmtry %%VARLOG%%
+@dirrmtry %%VARDB%%
