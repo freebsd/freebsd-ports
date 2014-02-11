@@ -11,8 +11,7 @@ COMMENT=	A parallel HTTP downloader similar to wget
 
 GNU_CONFIGURE=	yes
 
-MAN1=		puf.1
-PLIST_FILES=	bin/puf
+PLIST_FILES=	bin/puf \
+		man/man1/puf.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
