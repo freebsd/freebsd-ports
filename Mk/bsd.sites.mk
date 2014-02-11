@@ -1100,6 +1100,7 @@ MASTER_SITE_RINGSERVER+= \
 
 .if !defined(IGNORE_MASTER_SITE_RUBY)
 MASTER_SITE_RUBY+= \
+	http://cache.ruby-lang.org/pub/ruby/%SUBDIR%/ \
 	ftp://ftp.ruby-lang.org/pub/ruby/%SUBDIR%/ \
 	ftp://ftp.SpringDaemons.com/pub/ruby/ruby/%SUBDIR%/ \
 	http://www.ibiblio.org/pub/languages/ruby/%SUBDIR%/ \
