@@ -10,7 +10,7 @@ MASTER_SITE_SUBDIR=	gap
 DISTNAME=	Addresses-${PORTVERSION}
 
 MAINTAINER=	theraven@FreeBSD.org
-COMMENT=	A versatile addressbook for GNUstep
+COMMENT=	Versatile addressbook for GNUstep
 
 LICENSE=	LGPL21
 
@@ -20,5 +20,4 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_LOCAL_LIBRARIES}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
