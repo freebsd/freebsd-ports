@@ -9,4 +9,7 @@ etc/detoxrc.sample
 @unexec if cmp -s %D/%%DATADIR%%/unicode.tbl %D/%%DATADIR%%/unicode.tbl.sample; then rm -f %D/%%DATADIR%%/unicode.tbl; fi
 %%DATADIR%%/unicode.tbl.sample
 @exec [ -f %D/%%DATADIR%%/unicode.tbl ] || cp %B/%f %D/%%DATADIR%%/unicode.tbl
+man/man1/detox.1.gz
+man/man5/detox.tbl.5.gz
+man/man5/detoxrc.5.gz
 @dirrm share/detox
