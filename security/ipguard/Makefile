@@ -10,18 +10,17 @@ MASTER_SITES=	http://ipguard.deep.perm.ru/files/ http://deep.perm.ru/files/ipgua
 MAINTAINER=	sead@deep.perm.ru
 COMMENT=	Tool designed to protect LAN IP address space by ARP spoofing
 
-LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
+LICENSE=	BSD2CLAUSE
+
+LIB_DEPENDS=	libnet.so:${PORTSDIR}/net/libnet
 
 USE_RC_SUBR=	${PORTNAME}
-MAN8=		${PORTNAME}.8
 PORTDOCS=	COPYRIGHT NEWS README README.tcpdump README.log ethers.sample rfc826.txt
-PLIST_FILES=	sbin/ipguard
+PLIST_FILES=	sbin/ipguard \
+		man/man8/${PORTNAME}.8.gz
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/doc/|} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
