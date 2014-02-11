@@ -1,8 +1,8 @@
---- src/vte.c.orig	2010-11-13 06:18:41.000000000 -0600
-+++ src/vte.c	2013-03-14 15:59:37.761401135 -0500
-@@ -4914,16 +4914,23 @@
+--- src/vte.c.orig	2011-08-28 23:31:45.000000000 +0200
++++ src/vte.c	2014-02-11 21:57:19.000000000 +0100
+@@ -5164,19 +5164,23 @@
  vte_terminal_read_modifiers (VteTerminal *terminal,
- 			     GdkEvent    *event)
+ 			     GdkEvent *event)
  {
 +	GdkKeymap *keymap;
  	GdkModifierType modifiers;
@@ -10,16 +10,19 @@
  	/* Read the modifiers. */
 -	if (gdk_event_get_state((GdkEvent*)event, &modifiers)) {
 -		GdkKeymap *keymap;
--		keymap = gdk_keymap_get_for_display (
--				gdk_drawable_get_display (((GdkEventAny *)event)->window));
--		gdk_keymap_add_virtual_modifiers (keymap, &modifiers);
+-#if GTK_CHECK_VERSION (2, 90, 8)
+-                keymap = gdk_keymap_get_for_display(gdk_window_get_display(((GdkEventAny*)event)->window));
+-#else
+-                keymap = gdk_keymap_get_for_display(gdk_drawable_get_display(((GdkEventAny*)event)->window));
+-#endif
+-                gdk_keymap_add_virtual_modifiers (keymap, &modifiers);
 -		terminal->pvt->modifiers = modifiers;
 -	}
 +	if (!gdk_event_get_state((GdkEvent*)event, &modifiers))
 +		return;
 +
 +	keymap = gdk_keymap_get_for_display (
-+			gdk_window_get_display (((GdkEventAny*)event)->window));
++		gdk_window_get_display (((GdkEventAny*)event)->window));
 +
 +	gdk_keymap_add_virtual_modifiers (keymap, &modifiers);
 +

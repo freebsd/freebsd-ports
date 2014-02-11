@@ -11,11 +11,7 @@ lib/girepository-1.0/Vte-0.0.typelib
 lib/libvte.la
 lib/libvte.so
 lib/libvte.so.9
-lib/vte-0.0/decset
-lib/vte-0.0/interpret
-lib/vte-0.0/osc
-lib/vte-0.0/slowcat
-lib/vte-0.0/window
+lib/libvte.so.9.2800.2
 libdata/pkgconfig/vte.pc
 share/gir-1.0/Vte-0.0.gir
 share/locale/am/LC_MESSAGES/vte-0.0.mo
@@ -107,10 +103,9 @@ share/locale/xh/LC_MESSAGES/vte-0.0.mo
 share/locale/zh_CN/LC_MESSAGES/vte-0.0.mo
 share/locale/zh_HK/LC_MESSAGES/vte-0.0.mo
 share/locale/zh_TW/LC_MESSAGES/vte-0.0.mo
-%%DATADIR%%/termcap/xterm
-@dirrm %%DATADIR%%/termcap
+%%DATADIR%%/termcap-0.0/xterm
+@dirrm %%DATADIR%%/termcap-0.0
 @dirrm %%DATADIR%%
-@dirrm lib/vte-0.0
 @dirrm include/vte-0.0/vte
 @dirrm include/vte-0.0
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
