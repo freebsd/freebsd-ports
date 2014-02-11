@@ -5,6 +5,7 @@
 
     SUBDIR += Xfstt
     SUBDIR += mga_hal
+    SUBDIR += x11rdp
     SUBDIR += x2vnc
     SUBDIR += x2x
     SUBDIR += xephyr
