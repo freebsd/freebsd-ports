@@ -20,8 +20,7 @@ FETCH_CMD=	fetch -Fpr
 CFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 USES=		fuse pkgconfig
-MAN1=		mp3fs.1
-PLIST_FILES=	bin/mp3fs
+PLIST_FILES=	bin/mp3fs \
+		man/man1/mp3fs.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
