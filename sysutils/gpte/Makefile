@@ -9,13 +9,10 @@ MASTER_SITES=	ftp://segfault.kiev.ua/pub/
 MAINTAINER=	netch@segfault.kiev.ua
 COMMENT=	A simple command-line GPT partition editor
 
-MAN8=		gpte.8
-MANCOMPRESSED=	yes
+PLIST_FILES=	bin/gpte \
+		man/man8/gpte.8.gz
 
-PLIST_FILES=	bin/gpte
-
-NO_STAGE=	yes
 post-extract:
-	cd $(WRKSRC) && ${CP} Makefile.bsd Makefile
+	cd ${WRKSRC} && ${CP} Makefile.bsd Makefile
 
 .include <bsd.port.mk>
