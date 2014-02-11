@@ -34,49 +34,15 @@
 %%WWWDIR_REL%%/wwwroot/inc/triggers.php
 %%WWWDIR_REL%%/wwwroot/inc/upgrade.php
 %%WWWDIR_REL%%/wwwroot/index.php
-%%WWWDIR_REL%%/wwwroot/js/codepress/codepress.css
-%%WWWDIR_REL%%/wwwroot/js/codepress/codepress.html
-%%WWWDIR_REL%%/wwwroot/js/codepress/codepress.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/engines/gecko.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/engines/khtml.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/engines/msie.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/engines/older.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/engines/opera.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/images/line-numbers.png
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/asp.css
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/asp.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/autoit.css
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/autoit.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/csharp.css
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/csharp.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/css.css
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/css.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/generic.css
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/generic.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/html.css
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/html.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/ipfw.css
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/ipfw.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/java.css
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/java.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/javascript.css
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/javascript.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/perl.css
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/perl.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/php.css
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/php.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/rackcode.css
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/rackcode.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/ruby.css
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/ruby.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/sql.css
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/sql.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/text.css
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/text.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/vbscript.css
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/vbscript.js
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/xsl.css
-%%WWWDIR_REL%%/wwwroot/js/codepress/languages/xsl.js
+%%WWWDIR_REL%%/wwwroot/js/codemirror/codemirror.css
+%%WWWDIR_REL%%/wwwroot/js/codemirror/codemirror.js
+%%WWWDIR_REL%%/wwwroot/js/codemirror/css.js
+%%WWWDIR_REL%%/wwwroot/js/codemirror/htmlmixed.js
+%%WWWDIR_REL%%/wwwroot/js/codemirror/javascript.js
+%%WWWDIR_REL%%/wwwroot/js/codemirror/php.js
+%%WWWDIR_REL%%/wwwroot/js/codemirror/rackcode.js
+%%WWWDIR_REL%%/wwwroot/js/codemirror/sql.js
+%%WWWDIR_REL%%/wwwroot/js/bulkselector.js
 %%WWWDIR_REL%%/wwwroot/js/inplace-edit.js
 %%WWWDIR_REL%%/wwwroot/js/jquery-1.4.4.min.js
 %%WWWDIR_REL%%/wwwroot/js/jquery-ui-1.8.21.min.js
@@ -203,10 +169,7 @@
 %%WWWDIR_REL%%/wwwroot/pix/virtualresources.png
 @dirrm %%WWWDIR_REL%%/wwwroot/css
 @dirrm %%WWWDIR_REL%%/wwwroot/inc
-@dirrm %%WWWDIR_REL%%/wwwroot/js/codepress/engines
-@dirrm %%WWWDIR_REL%%/wwwroot/js/codepress/images
-@dirrm %%WWWDIR_REL%%/wwwroot/js/codepress/languages
-@dirrm %%WWWDIR_REL%%/wwwroot/js/codepress
+@dirrm %%WWWDIR_REL%%/wwwroot/js/codemirror
 @dirrm %%WWWDIR_REL%%/wwwroot/js
 @dirrm %%WWWDIR_REL%%/wwwroot/pix/jquery-ui-1.8.22.redmond
 @dirrm %%WWWDIR_REL%%/wwwroot/pix
