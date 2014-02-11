@@ -10,8 +10,7 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	A dd program useful for computer forensics
 
 USE_BZIP2=	yes
-USES=		gettext iconv
-USE_GMAKE=	yes
+USES=		gettext iconv gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="${LIBS} -L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -19,11 +18,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-MAN1=		dc3dd.1
-
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	NLS 
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
