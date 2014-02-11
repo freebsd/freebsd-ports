@@ -23,9 +23,6 @@ USE_BZIP2=	yes
 
 INSTALL_TARGET=	install-strip
 
-CFLAGS+=	-Wno-knr-promoted-parameter \
-		-Wno-sizeof-pointer-memaccess \
-		-Wno-incompatible-pointer-types
 USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -160,6 +157,9 @@ CONFIGURE_ARGS+=	--enable-idea
 .else
 CONFIGURE_ARGS+=	--disable-idea
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e "s/-Werror//g" ${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/${PREFIX}/etc/racoon
