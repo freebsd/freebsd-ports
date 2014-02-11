@@ -78,10 +78,12 @@ lib/cflowd/libCfd.a
 lib/cflowd/libCfd.la
 lib/cflowd/libCfd.so
 lib/cflowd/libCfd.so.0
+lib/cflowd/libCfd.so.0.0.0
 lib/cflowd/libsnmp++.a
 lib/cflowd/libsnmp++.la
 lib/cflowd/libsnmp++.so
 lib/cflowd/libsnmp++.so.0
+lib/cflowd/libsnmp++.so.0.0.0
 sbin/cfdcollect
 sbin/cflowd
 sbin/cflowdmux
