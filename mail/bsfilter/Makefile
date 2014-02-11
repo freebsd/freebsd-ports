@@ -30,18 +30,13 @@ RUN_DEPENDS+=	ja-${RUBY_PKGNAMEPREFIX}mecab>=0:${PORTSDIR}/japanese/ruby-mecab
 .endif
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/bsfilter/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/bsfilter/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for FILE in bsfilter.conf.sample dot-qmail.sample
-	@${INSTALL_DATA} ${FILESDIR}/${FILE} ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${FILESDIR}/${FILE} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .for DIR in mda mua
-	@${CP} -r ${WRKSRC}/${DIR} ${EXAMPLESDIR}/${DIR}
+	@${CP} -r ${WRKSRC}/${DIR} ${STAGEDIR}${EXAMPLESDIR}/${DIR}
 .endfor
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
