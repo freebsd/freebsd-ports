@@ -1373,6 +1373,7 @@ MASTER_SITE_VIM+= \
 	http://ftp.vim.org/pub/vim/unix/ \
 	http://artfiles.org/vim.org/unix/ \
 	http://ftp.gr.vim.org/pub/vim/unix/ \
+	http://ftp.stu.edu.tw/vim/unix/ \
 	http://ftp.tw.vim.org/pub/vim/unix/ \
 	http://ftp.vim.ossmirror.de/pub/vim/unix/ \
 	http://ftp2.jp.vim.org/pub/vim/unix/ \
@@ -1393,6 +1394,7 @@ MASTER_SITE_VIM+= \
 	ftp://ftp.jp.vim.org/pub/vim/unix/ \
 	ftp://ftp.pl.vim.org/pub/vim/unix/ \
 	ftp://ftp.uk.vim.org/pub/vim/unix/ \
+	ftp://ftp.stu.edu.tw/pub/vim/unix/ \
 	ftp://ftp.za.vim.org/mirrors/ftp.vim.org/unix/ \
 	ftp://ftp2.kr.vim.org/pub/vim/unix/ \
 	ftp://ftp2.tw.vim.org/pub/vim/unix/ \
