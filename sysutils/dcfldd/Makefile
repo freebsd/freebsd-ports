@@ -10,9 +10,8 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	An enhanced dd tool with MD5 hashing capability
 
 GNU_CONFIGURE=	yes
-MAN1=		dcfldd.1
 
-PLIST_FILES=	bin/dcfldd
+PLIST_FILES=	bin/dcfldd \
+		man/man1/dcfldd.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
