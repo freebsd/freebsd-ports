@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140211:
+  AFFECTS: users of lang/php* database/postgresql* database/mysql* www/apache*
+  AUTHOR: mat@FreeBSD.org
+
+  The default versions of lang/php*, databases/postgresql*,
+  databases/mysql* and www/apache* have been changed to support the
+  new DEFAULT_VERSIONS variable.
+
+  DEFAULT_APACHE_VER, DEFAULT_MYSQL_VER, DEFAULT_PGSQL_VER,
+  DEFAULT_FPC_VER and DEFAULT_PHP_VER are now deprecated.  You can use
+  the new DEFAULT_VERSIONS variable like this:
+
+  DEFAULT_VERSIONS=php=5.5 mysql=5.6 apache=2.4
+
 20140208:
   AFFECTS: users of spamdyke
   AUTHOR: bdrewery@FreeBSD.org
