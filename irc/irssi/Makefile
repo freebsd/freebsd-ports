@@ -82,7 +82,9 @@ post-configure:
 	@${MV} ${WRKSRC}/irssi.conf ${WRKSRC}/irssi.conf.sample
 
 post-install:
-	@${ECHO_MSG} "You may install x11-themes/irssi-themes for"
-	@${ECHO_MSG} " additional themes."
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/irssi/modules
+.if ${PORT_OPTIONS:MPERL}
+	@${FIND} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto -name .packlist -exec ${SED} -i '' 's|^${STAGEDIR}||' '{}' \;
+.endif
 
 .include <bsd.port.mk>
