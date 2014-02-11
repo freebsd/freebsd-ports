@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	cyassl
-PORTVERSION=	2.8.0
+PORTVERSION=	2.9.0
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.yassl.com/
 
@@ -28,5 +28,8 @@ post-configure:
 	# i386 assembly is broken: do not use
 	@${REINPLACE_CMD} -e 's/(TFM_X86)/(TFM_X86_BROKEN)/' \
 		${WRKSRC}/ctaocrypt/src/asm.c
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libcyassl.so
 
 .include <bsd.port.mk>

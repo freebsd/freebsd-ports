@@ -62,6 +62,8 @@ include/cyassl/ctaocrypt/memory.h
 include/cyassl/ctaocrypt/misc.h
 include/cyassl/ctaocrypt/mpi_class.h
 include/cyassl/ctaocrypt/mpi_superclass.h
+include/cyassl/ctaocrypt/pkcs7.h
+include/cyassl/ctaocrypt/port.h
 include/cyassl/ctaocrypt/pwdbased.h
 include/cyassl/ctaocrypt/rabbit.h
 include/cyassl/ctaocrypt/random.h
@@ -78,7 +80,6 @@ include/cyassl/callbacks.h
 include/cyassl/certs_test.h
 include/cyassl/crl.h
 include/cyassl/error.h
-include/cyassl/internal.h
 include/cyassl/ocsp.h
 include/cyassl/options.h
 include/cyassl/sniffer.h
