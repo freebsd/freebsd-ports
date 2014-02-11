@@ -17,13 +17,13 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Print text directly to X11 root window
 
-MAN1=		root-tail.1
-PLIST_FILES=	bin/root-tail
 USES=		imake
 USE_XORG=	x11 xext
 MAKE_ARGS=	CC="${CC}"
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/root-tail \
+		man/man1/root-tail.1.gz
+
 pre-everything::
 .if defined(WITH_EXTRA_PATCH)
 	@${ECHO_MSG}
