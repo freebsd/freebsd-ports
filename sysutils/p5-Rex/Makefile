@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	Rex
-PORTVERSION=	0.43.7
+PORTVERSION=	0.44.1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JFRIED
@@ -22,11 +22,14 @@ BUILD_DEPENDS=	\
 	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 	p5-String-Escape>=0:${PORTSDIR}/textproc/p5-String-Escape \
 	p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
-	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
+	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML \
+	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
+
+SHEBANG_FILES=	lib/Rex/Commands/templates/append_if_no_such_line.tpl.pl
 
 .include <bsd.port.mk>
