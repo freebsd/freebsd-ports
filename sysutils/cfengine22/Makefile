@@ -27,16 +27,9 @@ CONFIGURE_ARGS=	--with-docs \
 CONFIGURE_ENV+=	BERKELEY_DB_CFLAGS=-I${BDB_INCLUDE_DIR} \
 		BERKELEY_DB_LDFLAGS=-L${BDB_LIB_DIR} \
 		BERKELEY_DB_LIB=-l${BDB_LIB_NAME}
-.if !defined(NOPORTDOCS)
+
 INFO=		cfengine-Tutorial cfengine-Reference
-.endif
 
-MAN8=		cfagent.8 cfengine.8 cfenvd.8 cfenvgraph.8 cfetoolcheck.8 \
-		cfetoolcreate.8 cfetooldump.8 cfetoolgraph.8 cfetoolimport.8 \
-		cfetoolinfo.8 cfetoolupdate.8 cfexecd.8 cfkey.8 \
-		cfrun.8 cfservd.8 cfshow.8
-
-NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} -e '/^docdir/s!=.*!= @docdir@!'\
 				  ${WRKSRC}/doc/Makefile.in \
