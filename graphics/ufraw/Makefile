@@ -103,7 +103,7 @@ post-patch:
 .endfor
 
 pre-build:
-	@${INSTALL_SCRIPT} ${LOCALBASE}/share/icu/50.1.2/mkinstalldirs \
+	@${INSTALL_SCRIPT} ${LOCALBASE}/share/icu/52.1/mkinstalldirs \
 		${WRKSRC}
 
 .include <bsd.port.mk>
