@@ -1,4 +1,5 @@
 bin/dc3dd
+man/man1/dc3dd.1.gz
 %%NLS%%share/locale/af/LC_MESSAGES/dc3dd.mo
 %%NLS%%share/locale/af/LC_TIME/dc3dd.mo
 %%NLS%%share/locale/be/LC_MESSAGES/dc3dd.mo
