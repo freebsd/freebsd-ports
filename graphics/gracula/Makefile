@@ -13,15 +13,11 @@ COMMENT=	A Graphic Counter Language compiler/interpreter
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gracula ${PREFIX}/bin
-	$(INSTALL_PROGRAM) ${WRKSRC}/sec2000 ${PREFIX}/bin
-.if !defined (NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/NNL  ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/README  ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/gracula ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/sec2000 ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/NNL  ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README  ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
