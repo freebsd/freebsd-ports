@@ -37,6 +37,7 @@ bin/rexify
 %%PERL5_MAN3%%/Rex::Commands::Virtualization.3.gz
 %%PERL5_MAN3%%/Rex::Config.3.gz
 %%PERL5_MAN3%%/Rex::FS::File.3.gz
+%%PERL5_MAN3%%/Rex::Group::Lookup::Command.3.gz
 %%PERL5_MAN3%%/Rex::Group::Lookup::File.3.gz
 %%PERL5_MAN3%%/Rex::Group::Lookup::INI.3.gz
 %%PERL5_MAN3%%/Rex::Hardware.3.gz
@@ -45,6 +46,7 @@ bin/rexify
 %%PERL5_MAN3%%/Rex::Task.3.gz
 %%PERL5_MAN3%%/Rex::Template.3.gz
 %%PERL5_MAN3%%/Rex::Transaction.3.gz
+%%PERL5_MAN3%%/Rex::Virtualization::Docker.3.gz
 %%PERL5_MAN3%%/Rex::Virtualization::LibVirt.3.gz
 %%PERL5_MAN3%%/Rex::Virtualization::VBox.3.gz
 %%SITE_PERL%%/Rex.pm
@@ -108,6 +110,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Fork/Task.pm
 %%SITE_PERL%%/Rex/Group.pm
 %%SITE_PERL%%/Rex/Group/Entry/Server.pm
+%%SITE_PERL%%/Rex/Group/Lookup/Command.pm
 %%SITE_PERL%%/Rex/Group/Lookup/File.pm
 %%SITE_PERL%%/Rex/Group/Lookup/INI.pm
 %%SITE_PERL%%/Rex/Hardware.pm
@@ -131,6 +134,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Helper/SSH2.pm
 %%SITE_PERL%%/Rex/Helper/SSH2/Expect.pm
 %%SITE_PERL%%/Rex/Helper/System.pm
+%%SITE_PERL%%/Rex/Hook.pm
 %%SITE_PERL%%/Rex/Interface/Cache.pm
 %%SITE_PERL%%/Rex/Interface/Cache/Base.pm
 %%SITE_PERL%%/Rex/Interface/Cache/YAML.pm
@@ -172,6 +176,7 @@ bin/rexify
 %%SITE_PERL%%/Rex/Interface/Shell/Csh.pm
 %%SITE_PERL%%/Rex/Interface/Shell/Default.pm
 %%SITE_PERL%%/Rex/Interface/Shell/Sh.pm
+%%SITE_PERL%%/Rex/Interface/Shell/Tcsh.pm
 %%SITE_PERL%%/Rex/Interface/Shell/Zsh.pm
 %%SITE_PERL%%/Rex/Inventory.pm
 %%SITE_PERL%%/Rex/Inventory/Bios.pm
@@ -228,7 +233,9 @@ bin/rexify
 %%SITE_PERL%%/Rex/Service/Debian.pm
 %%SITE_PERL%%/Rex/Service/FreeBSD.pm
 %%SITE_PERL%%/Rex/Service/Gentoo.pm
+%%SITE_PERL%%/Rex/Service/Gentoo/systemd.pm
 %%SITE_PERL%%/Rex/Service/Mageia.pm
+%%SITE_PERL%%/Rex/Service/Mageia/systemd.pm
 %%SITE_PERL%%/Rex/Service/NetBSD.pm
 %%SITE_PERL%%/Rex/Service/OpenBSD.pm
 %%SITE_PERL%%/Rex/Service/OpenWrt.pm
@@ -259,6 +266,16 @@ bin/rexify
 %%SITE_PERL%%/Rex/Value.pm
 %%SITE_PERL%%/Rex/Virtualization.pm
 %%SITE_PERL%%/Rex/Virtualization/Base.pm
+%%SITE_PERL%%/Rex/Virtualization/Docker.pm
+%%SITE_PERL%%/Rex/Virtualization/Docker/create.pm
+%%SITE_PERL%%/Rex/Virtualization/Docker/daemon.pm
+%%SITE_PERL%%/Rex/Virtualization/Docker/delete.pm
+%%SITE_PERL%%/Rex/Virtualization/Docker/destroy.pm
+%%SITE_PERL%%/Rex/Virtualization/Docker/info.pm
+%%SITE_PERL%%/Rex/Virtualization/Docker/list.pm
+%%SITE_PERL%%/Rex/Virtualization/Docker/reboot.pm
+%%SITE_PERL%%/Rex/Virtualization/Docker/shutdown.pm
+%%SITE_PERL%%/Rex/Virtualization/Docker/start.pm
 %%SITE_PERL%%/Rex/Virtualization/LibVirt.pm
 %%SITE_PERL%%/Rex/Virtualization/LibVirt/blklist.pm
 %%SITE_PERL%%/Rex/Virtualization/LibVirt/clone.pm
@@ -298,6 +315,7 @@ man/man1/rexify.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Rex
 @dirrmtry %%SITE_PERL%%/Rex/Virtualization/VBox
 @dirrmtry %%SITE_PERL%%/Rex/Virtualization/LibVirt
+@dirrmtry %%SITE_PERL%%/Rex/Virtualization/Docker
 @dirrmtry %%SITE_PERL%%/Rex/Virtualization
 @dirrmtry %%SITE_PERL%%/Rex/User
 @dirrmtry %%SITE_PERL%%/Rex/TaskList
@@ -307,6 +325,8 @@ man/man1/rexify.1.gz
 @dirrmtry %%SITE_PERL%%/Rex/Service/SunOS
 @dirrmtry %%SITE_PERL%%/Rex/Service/SuSE
 @dirrmtry %%SITE_PERL%%/Rex/Service/Redhat
+@dirrmtry %%SITE_PERL%%/Rex/Service/Mageia
+@dirrmtry %%SITE_PERL%%/Rex/Service/Gentoo
 @dirrmtry %%SITE_PERL%%/Rex/Service/ALT
 @dirrmtry %%SITE_PERL%%/Rex/Service
 @dirrmtry %%SITE_PERL%%/Rex/SCM
