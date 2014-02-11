@@ -1,10 +1,16 @@
---- src/calibre/linux.py.orig	2014-01-24 05:56:21.000000000 +0100
-+++ src/calibre/linux.py	2014-01-29 00:30:43.102775394 +0100
-@@ -712,9 +712,12 @@
+--- src/calibre/linux.py.orig	2014-02-09 13:42:40.000000000 -0600
++++ src/calibre/linux.py	2014-02-09 13:43:59.000000000 -0600
+@@ -712,6 +712,7 @@
                  f.close()
                  des = ('calibre-gui.desktop', 'calibre-lrfviewer.desktop',
                          'calibre-ebook-viewer.desktop', 'calibre-ebook-edit.desktop')
-+                dtpdirs = ('gnome/apps', 'applications')
++		dtpdirs = ('gnome/apps', 'applications')
+                 appdata = os.path.join(os.path.dirname(self.opts.staging_sharedir), 'appdata')
+                 if not os.path.exists(appdata):
+                     try:
+@@ -726,8 +727,10 @@
+ 
+                 APPDATA = get_appdata()
                  for x in des:
 -                    cmd = ['xdg-desktop-menu', 'install', '--noupdate', './'+x]
 -                    cc(' '.join(cmd), shell=True)
@@ -13,5 +19,5 @@
 +                        cmd = ['cp', './'+x, dest]
 +                        cc(' '.join(cmd), shell=True)
                      self.menu_resources.append(x)
-                 cc(['xdg-desktop-menu', 'forceupdate'])
-                 f = open('calibre-mimetypes.xml', 'wb')
+                     ak = x.partition('.')[0]
+                     if ak in APPDATA and os.access(appdata, os.W_OK):

@@ -998,11 +998,16 @@ lib/calibre/calibre/gui2/tweak_book/__init__.py
 lib/calibre/calibre/gui2/tweak_book/boss.py
 lib/calibre/calibre/gui2/tweak_book/char_select.py
 lib/calibre/calibre/gui2/tweak_book/check.py
-lib/calibre/calibre/gui2/tweak_book/diff.py
+lib/calibre/calibre/gui2/tweak_book/diff/__init__.py
+lib/calibre/calibre/gui2/tweak_book/diff/highlight.py
+lib/calibre/calibre/gui2/tweak_book/diff/main.py
+lib/calibre/calibre/gui2/tweak_book/diff/view.py
 lib/calibre/calibre/gui2/tweak_book/editor/__init__.py
 lib/calibre/calibre/gui2/tweak_book/editor/canvas.py
 lib/calibre/calibre/gui2/tweak_book/editor/image.py
 lib/calibre/calibre/gui2/tweak_book/editor/insert_resource.py
+lib/calibre/calibre/gui2/tweak_book/editor/smart/__init__.py
+lib/calibre/calibre/gui2/tweak_book/editor/smart/html.py
 lib/calibre/calibre/gui2/tweak_book/editor/syntax/__init__.py
 lib/calibre/calibre/gui2/tweak_book/editor/syntax/base.py
 lib/calibre/calibre/gui2/tweak_book/editor/syntax/css.py
@@ -1129,7 +1134,6 @@ lib/calibre/calibre/utils/config.py
 lib/calibre/calibre/utils/config_base.py
 lib/calibre/calibre/utils/date.py
 lib/calibre/calibre/utils/dictclient.py
-lib/calibre/calibre/utils/diff/__init__.py
 lib/calibre/calibre/utils/file_associations.py
 lib/calibre/calibre/utils/filenames.py
 lib/calibre/calibre/utils/fonts/__init__.py
@@ -1404,6 +1408,9 @@ lib/calibre/routes/route.py
 lib/calibre/routes/util.py
 lib/calibre/templite/__init__.py
 %%PYTHON_SITELIBDIR%%/init_calibre.py
+share/appdata/calibre-ebook-edit.appdata.xml
+share/appdata/calibre-ebook-viewer.appdata.xml
+share/appdata/calibre-gui.appdata.xml
 share/applications/calibre-ebook-edit.desktop
 share/applications/calibre-ebook-viewer.desktop
 share/applications/calibre-gui.desktop
@@ -1520,6 +1527,7 @@ share/applications/calibre-lrfviewer.desktop
 %%DATADIR%%/images/dialog_question.png
 %%DATADIR%%/images/dialog_warning.png
 %%DATADIR%%/images/dictionary.png
+%%DATADIR%%/images/diff.png
 %%DATADIR%%/images/document-encrypt.png
 %%DATADIR%%/images/document-new.png
 %%DATADIR%%/images/document_open.png
@@ -1955,6 +1963,7 @@ share/zsh/site-functions/_calibre
 @dirrmtry share/gnome
 @dirrmtry share/desktop-directories
 @dirrmtry share/bash-completion
+@dirrmtry share/appdata
 @dirrmtry share/zsh/site-functions
 @dirrmtry share/zsh
 @dirrm %%DATADIR%%/viewer/mathjax/jax/output/SVG/fonts/TeX/Typewriter/Regular
@@ -2063,7 +2072,6 @@ share/zsh/site-functions/_calibre
 @dirrm lib/calibre/calibre/utils/fonts/sfnt/cff
 @dirrm lib/calibre/calibre/utils/fonts/sfnt
 @dirrm lib/calibre/calibre/utils/fonts
-@dirrm lib/calibre/calibre/utils/diff
 @dirrm lib/calibre/calibre/utils/chm
 @dirrm lib/calibre/calibre/utils
 @dirrm lib/calibre/calibre/translations
@@ -2074,7 +2082,9 @@ share/zsh/site-functions/_calibre
 @dirrm lib/calibre/calibre/gui2/wizard
 @dirrm lib/calibre/calibre/gui2/viewer
 @dirrm lib/calibre/calibre/gui2/tweak_book/editor/syntax
+@dirrm lib/calibre/calibre/gui2/tweak_book/editor/smart
 @dirrm lib/calibre/calibre/gui2/tweak_book/editor
+@dirrm lib/calibre/calibre/gui2/tweak_book/diff
 @dirrm lib/calibre/calibre/gui2/tweak_book
 @dirrm lib/calibre/calibre/gui2/toc
 @dirrm lib/calibre/calibre/gui2/tag_browser
