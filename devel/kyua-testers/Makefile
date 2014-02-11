@@ -3,6 +3,7 @@
 
 PORTNAME=	kyua-testers
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	kyua
@@ -14,13 +15,14 @@ LICENSE=	BSD
 
 GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS TEST
+
+OPTIONS_SUB=		yes
+TEST_CONFIGURE_WITH=	atf
 
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
-# TODO: install the tests, once FreeBSD has a system for ports to install tests
-CONFIGURE_ARGS+=	--without-atf
 
 MAKE_FLAGS+=	pkgconfigdir=${PREFIX}/libdata/pkgconfig
 

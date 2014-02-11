@@ -3,7 +3,7 @@
 
 PORTNAME=	kyua
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	kyua
@@ -27,13 +27,15 @@ USERS=		${TESTS_USER}
 SUB_FILES=	kyua.conf
 SUB_LIST=	TESTS_USER=${TESTS_USER}
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES TEST
+
+OPTIONS_SUB=		yes
+TEST_CONFIGURE_WITH=	atf
+
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS+=	--without-doxygen
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
-# TODO: install the tests, once FreeBSD has a system for ports to install tests
-CONFIGURE_ARGS+=	--without-atf
 MAKE_FLAGS+=	examplesdir=${EXAMPLESDIR}
 MAKE_FLAGS+=	pkgdatadir=${DATADIR}
 
@@ -47,5 +49,7 @@ MAKE_FLAGS+=	dist_examples_DATA=
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/kyua/
 	${INSTALL_DATA} ${WRKDIR}/kyua.conf ${STAGEDIR}${PREFIX}/etc/kyua/
+	${INSTALL_DATA} ${WRKSRC}/examples/Kyuafile.top \
+		${STAGEDIR}${PREFIX}/tests/Kyuafile
 
 .include <bsd.port.mk>
