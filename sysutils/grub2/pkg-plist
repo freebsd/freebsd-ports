@@ -1,4 +1,5 @@
 %%FUSE%%bin/grub-mount
+%%FUSE%%man/man1/grub-mount.1
 %%MKFONT%%bin/grub-mkfont
 %%MKFONT%%share/grub/themes/starfield/dejavu_10.pf2
 %%MKFONT%%share/grub/themes/starfield/dejavu_12.pf2
@@ -537,6 +538,26 @@ share/locale/uk/LC_MESSAGES/grub.mo
 share/locale/vi/LC_MESSAGES/grub.mo
 share/locale/zh_CN/LC_MESSAGES/grub.mo
 share/locale/zh_TW/LC_MESSAGES/grub.mo
+man/man1/grub-editenv.1.gz
+man/man1/grub-fstest.1.gz
+man/man1/grub-kbdcomp.1.gz
+man/man1/grub-menulst2cfg.1.gz
+man/man1/grub-mkimage.1.gz
+man/man1/grub-mklayout.1.gz
+man/man1/grub-mkpasswd-pbkdf2.1.gz
+man/man1/grub-mkrelpath.1.gz
+man/man1/grub-mkrescue.1.gz
+man/man1/grub-mkstandalone.1.gz
+man/man1/grub-script-check.1.gz
+man/man8/grub-bios-setup.8.gz
+man/man8/grub-install.8.gz
+man/man8/grub-mkconfig.8.gz
+man/man8/grub-mknetdir.8.gz
+man/man8/grub-ofpathname.8.gz
+man/man8/grub-probe.8.gz
+man/man8/grub-reboot.8.gz
+man/man8/grub-set-default.8.gz
+man/man8/grub-sparc64-setup.8.gz
 @dirrmtry share/locale/ast/LC_MESSAGES
 @dirrmtry share/locale/ast
 @dirrmtry share/locale/de@hebrew/LC_MESSAGES
