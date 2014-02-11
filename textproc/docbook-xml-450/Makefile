@@ -40,7 +40,6 @@ ENT_FILES=	isoamsa.ent isoamsb.ent isoamsc.ent isoamsn.ent \
 		isogrk3.ent isogrk4.ent isolat1.ent isolat2.ent \
 		isonum.ent isopub.ent isotech.ent
 
-NO_STAGE=	yes
 pre-install:
 	@${RM} -f ${PLIST}
 .for F in ${ENT_FILES}
@@ -52,28 +51,21 @@ pre-install:
 .endfor
 	@${ECHO_CMD} "@dirrm ${DTDDIR}" >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry ${XMLCATBASE}/${DTD_NAME}" >> ${PLIST}
-.ifndef NOPORTDOCS
 .for F in ${DOC_FILES}
 	@${ECHO_CMD} "${DOCSDIR:S!^${PREFIX}/!!}/${F}.${PORTVERSION}" >> ${PLIST}
 .endfor
 	@${ECHO_CMD} "@dirrmtry ${DOCSDIR:S!^${PREFIX}/!!}" >> ${PLIST}
-.endif
 	@${ECHO_CMD} "@exec ${XMLCATMGR} ${REGIST_CAT_FLAGS_XML}" >> ${PLIST}
 	@${ECHO_CMD} "@unexec ${XMLCATMGR} ${UNREGIST_CAT_FLAGS_XML}" >> ${PLIST}
 
 do-install:
-	${MKDIR} ${PREFIX}/${DTDDIR}
-	${INSTALL_DATA} ${DTD_FILES:S!^!${WRKSRC}/!} ${PREFIX}/${DTDDIR}
-	${MKDIR} ${PREFIX}/${ENTDIR}
-	${INSTALL_DATA} ${ENT_FILES:S!^!${WRKSRC}/ent/!} ${PREFIX}/${ENTDIR}
-.ifndef NOPORTDOCS
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${DTDDIR}
+	${INSTALL_DATA} ${DTD_FILES:S!^!${WRKSRC}/!} ${STAGEDIR}${PREFIX}/${DTDDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${ENTDIR}
+	${INSTALL_DATA} ${ENT_FILES:S!^!${WRKSRC}/ent/!} ${STAGEDIR}${PREFIX}/${ENTDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for F in ${DOC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/${F} ${DOCSDIR}/${F}.${PORTVERSION}
+	${INSTALL_DATA} ${WRKSRC}/${F} ${STAGEDIR}${DOCSDIR}/${F}.${PORTVERSION}
 .endfor
-.endif
-
-post-install:
-	-${XMLCATMGR} ${REGIST_CAT_FLAGS_XML}
 
 .include <bsd.port.mk>
