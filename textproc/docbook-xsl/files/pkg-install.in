@@ -11,12 +11,16 @@
 # -- Rui Lopes <rui@ruilopes.com>
 
 XSL_DIR=${PKG_PREFIX}/%%INSTDIR%%
-CATALOG_XSL=${XSL_DIR}/catalog
+CATALOG_XSL=${XSL_DIR}/catalog.xml
 
 if [ "$2" != "POST-INSTALL" ]; then
 	exit 0
 fi
 
+test -r "${CATALOG_XSL}" || {
+    echo >&2 "Cannot register non-existent catalog ${CATALOG_XSL}"
+    exit 1
+}
 %%XMLCATMGR%% -c %%CATALOG_PORTS%% add delegateSystem \
 	http://docbook.sourceforge.net/release/xsl/ \
 	"file://${CATALOG_XSL}"
