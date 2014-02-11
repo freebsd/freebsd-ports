@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	duo
-PORTVERSION=	1.9.6
+PORTVERSION=	1.9.7
 CATEGORIES=	security
 MASTER_SITES=	https://dl.duosecurity.com/ \
 		http://mirrors.rit.edu/zi/
@@ -26,7 +26,7 @@ MAN8=		login_duo.8 pam_duo.8
 OPTIONS=	DOCS
 
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
