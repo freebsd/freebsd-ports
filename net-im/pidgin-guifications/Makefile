@@ -5,26 +5,22 @@ PORTNAME=	pidgin-guifications
 PORTVERSION=	2.16
 PORTREVISION=	5
 CATEGORIES=	net-im
-MASTER_SITES=	http://downloads.guifications.org/plugins/Guifications2/
+MASTER_SITES=	https://www.mimar.rs/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marko.cupac@mimar.rs
 COMMENT=	Plugin to add msn style "toaster" popups to Pidgin
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-10
-
 USE_BZIP2=	yes
-USES=        pathfix gettext gmake pkgconfig
+USES=		pathfix gettext gmake pkgconfig
 USE_GNOME=	gnomeprefix gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 post-extract:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} \
@@ -32,4 +28,4 @@ post-extract:
 		-e 's#\([@(]\)PIDGIN_DATADIR\([@)]\)#\1datadir\2#'
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
