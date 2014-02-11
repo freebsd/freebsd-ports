@@ -1,7 +1,6 @@
-diff -ru src/buffer.c src/buffer.c
---- src/buffer.c	2008-08-20 06:16:42 +0000
-+++ src/buffer.c	2008-08-20 06:30:15 +0000
-@@ -33,7 +33,7 @@
+--- src/buffer.c.orig	2014-02-11 11:38:27.000000000 -0800
++++ src/buffer.c	2014-02-11 11:42:32.000000000 -0800
+@@ -31,7 +31,7 @@
  /*-------------------------------------------------------------------------*\
  * Initializes module
  \*-------------------------------------------------------------------------*/
@@ -10,34 +9,34 @@ diff -ru src/buffer.c src/buffer.c
      (void) L;
      return 0;
  }
-@@ -41,7 +41,7 @@
+@@ -39,7 +39,7 @@
  /*-------------------------------------------------------------------------*\
  * Initializes C structure 
  \*-------------------------------------------------------------------------*/
 -void buffer_init(p_buffer buf, p_io io, p_timeout tm) {
 +void ls_buffer_init(p_buffer buf, p_io io, p_timeout tm) {
- 	buf->first = buf->last = 0;
+     buf->first = buf->last = 0;
      buf->io = io;
      buf->tm = tm;
-@@ -52,7 +52,7 @@
+@@ -50,7 +50,7 @@
  /*-------------------------------------------------------------------------*\
  * object:getstats() interface
  \*-------------------------------------------------------------------------*/
 -int buffer_meth_getstats(lua_State *L, p_buffer buf) {
 +int ls_buffer_meth_getstats(lua_State *L, p_buffer buf) {
-     lua_pushnumber(L, buf->received);
-     lua_pushnumber(L, buf->sent);
+     lua_pushnumber(L, (lua_Number) buf->received);
+     lua_pushnumber(L, (lua_Number) buf->sent);
      lua_pushnumber(L, timeout_gettime() - buf->birthday);
-@@ -62,7 +62,7 @@
+@@ -60,7 +60,7 @@
  /*-------------------------------------------------------------------------*\
  * object:setstats() interface
  \*-------------------------------------------------------------------------*/
 -int buffer_meth_setstats(lua_State *L, p_buffer buf) {
 +int ls_buffer_meth_setstats(lua_State *L, p_buffer buf) {
-     buf->received = (long) luaL_optnumber(L, 2, buf->received); 
-     buf->sent = (long) luaL_optnumber(L, 3, buf->sent); 
+     buf->received = (long) luaL_optnumber(L, 2, (lua_Number) buf->received); 
+     buf->sent = (long) luaL_optnumber(L, 3, (lua_Number) buf->sent); 
      if (lua_isnumber(L, 4)) buf->birthday = timeout_gettime() - lua_tonumber(L, 4);
-@@ -73,7 +73,7 @@
+@@ -71,7 +71,7 @@
  /*-------------------------------------------------------------------------*\
  * object:send() interface
  \*-------------------------------------------------------------------------*/
@@ -55,7 +54,7 @@ diff -ru src/buffer.c src/buffer.c
      int err = IO_DONE, top = lua_gettop(L);
      luaL_Buffer b;
      size_t size;
-@@ -149,7 +149,7 @@
+@@ -157,7 +157,7 @@
  /*-------------------------------------------------------------------------*\
  * Determines if there is any data in the read buffer
  \*-------------------------------------------------------------------------*/
@@ -64,7 +63,7 @@ diff -ru src/buffer.c src/buffer.c
      return buf->first >= buf->last;
  }
  
-@@ -244,7 +244,7 @@
+@@ -252,7 +252,7 @@
  static void buffer_skip(p_buffer buf, size_t count) {
      buf->received += count;
      buf->first += count;
@@ -73,7 +72,7 @@ diff -ru src/buffer.c src/buffer.c
          buf->first = buf->last = 0;
  }
  
-@@ -256,7 +256,7 @@
+@@ -264,7 +264,7 @@
      int err = IO_DONE;
      p_io io = buf->io;
      p_timeout tm = buf->tm;
@@ -82,10 +81,9 @@ diff -ru src/buffer.c src/buffer.c
          size_t got;
          err = io->recv(io->ctx, buf->data, BUF_SIZE, &got, tm);
          buf->first = 0;
-diff -ru src/buffer.h src/buffer.h
---- src/buffer.h	2008-08-20 06:16:42 +0000
-+++ src/buffer.h	2008-08-20 06:30:15 +0000
-@@ -36,12 +36,12 @@
+--- src/buffer.h.orig	2014-02-11 11:43:12.000000000 -0800
++++ src/buffer.h	2014-02-11 11:43:46.000000000 -0800
+@@ -34,12 +34,12 @@
  } t_buffer;
  typedef t_buffer *p_buffer;
  
@@ -105,10 +103,9 @@ diff -ru src/buffer.h src/buffer.h
 +int ls_buffer_isempty(p_buffer buf);
  
  #endif /* BUF_H */
-diff -ru src/luasocket.c src/luasocket.c
---- src/luasocket.c	2008-08-20 06:16:42 +0000
-+++ src/luasocket.c	2008-08-20 06:30:15 +0000
-@@ -51,7 +51,7 @@
+--- src/luasocket.c.orig	2014-02-11 11:44:11.000000000 -0800
++++ src/luasocket.c	2014-02-11 11:44:37.000000000 -0800
+@@ -46,7 +46,7 @@
      {"auxiliar", auxiliar_open},
      {"except", except_open},
      {"timeout", timeout_open},
@@ -117,10 +114,9 @@ diff -ru src/luasocket.c src/luasocket.c
      {"inet", inet_open},
      {"tcp", tcp_open},
      {"udp", udp_open},
-diff -ru src/tcp.c src/tcp.c
---- src/tcp.c	2008-08-20 06:16:42 +0000
-+++ src/tcp.c	2008-08-20 06:30:15 +0000
-@@ -104,22 +104,22 @@
+--- src/tcp.c.orig	2014-02-11 11:45:12.000000000 -0800
++++ src/tcp.c	2014-02-11 11:46:27.000000000 -0800
+@@ -124,22 +124,22 @@
  \*-------------------------------------------------------------------------*/
  static int meth_send(lua_State *L) {
      p_tcp tcp = (p_tcp) auxiliar_checkclass(L, "tcp{client}", 1);
@@ -147,7 +143,7 @@ diff -ru src/tcp.c src/tcp.c
  }
  
  /*-------------------------------------------------------------------------*\
-@@ -152,7 +152,7 @@
+@@ -178,7 +178,7 @@
  static int meth_dirty(lua_State *L)
  {
      p_tcp tcp = (p_tcp) auxiliar_checkgroup(L, "tcp{any}", 1);
@@ -156,28 +152,36 @@ diff -ru src/tcp.c src/tcp.c
      return 1;
  }
  
-@@ -176,7 +176,7 @@
-         io_init(&clnt->io, (p_send) socket_send, (p_recv) socket_recv, 
+@@ -203,7 +203,7 @@
+         io_init(&clnt->io, (p_send) socket_send, (p_recv) socket_recv,
                  (p_error) socket_ioerror, &clnt->sock);
          timeout_init(&clnt->tm, -1, -1);
 -        buffer_init(&clnt->buf, &clnt->io, &clnt->tm);
 +        ls_buffer_init(&clnt->buf, &clnt->io, &clnt->tm);
+         clnt->family = server->family;
          return 1;
      } else {
-         lua_pushnil(L); 
-@@ -329,7 +329,7 @@
-         io_init(&tcp->io, (p_send) socket_send, (p_recv) socket_recv, 
+@@ -375,7 +375,7 @@
+         io_init(&tcp->io, (p_send) socket_send, (p_recv) socket_recv,
                  (p_error) socket_ioerror, &tcp->sock);
          timeout_init(&tcp->tm, -1, -1);
 -        buffer_init(&tcp->buf, &tcp->io, &tcp->tm);
 +        ls_buffer_init(&tcp->buf, &tcp->io, &tcp->tm);
+         tcp->family = family;
          return 1;
      } else {
-         lua_pushnil(L);
-diff -ru src/unix.c src/unix.c
---- src/unix.c	2008-08-20 06:16:42 +0000
-+++ src/unix.c	2008-08-20 06:30:15 +0000
-@@ -105,22 +105,22 @@
+@@ -454,7 +454,7 @@
+     io_init(&tcp->io, (p_send) socket_send, (p_recv) socket_recv,
+             (p_error) socket_ioerror, &tcp->sock);
+     timeout_init(&tcp->tm, -1, -1);
+-    buffer_init(&tcp->buf, &tcp->io, &tcp->tm);
++    ls_buffer_init(&tcp->buf, &tcp->io, &tcp->tm);
+     tcp->sock = SOCKET_INVALID;
+     tcp->family = PF_UNSPEC;
+     /* allow user to pick local address and port */
+--- src/unix.c.orig	2014-02-11 11:46:51.000000000 -0800
++++ src/unix.c	2014-02-11 11:47:38.000000000 -0800
+@@ -109,22 +109,22 @@
  \*-------------------------------------------------------------------------*/
  static int meth_send(lua_State *L) {
      p_unix un = (p_unix) auxiliar_checkclass(L, "unix{client}", 1);
@@ -204,7 +208,7 @@ diff -ru src/unix.c src/unix.c
  }
  
  /*-------------------------------------------------------------------------*\
-@@ -149,7 +149,7 @@
+@@ -153,7 +153,7 @@
  
  static int meth_dirty(lua_State *L) {
      p_unix un = (p_unix) auxiliar_checkgroup(L, "unix{any}", 1);
@@ -213,7 +217,7 @@ diff -ru src/unix.c src/unix.c
      return 1;
  }
  
-@@ -172,7 +172,7 @@
+@@ -176,7 +176,7 @@
          io_init(&clnt->io, (p_send)socket_send, (p_recv)socket_recv, 
                  (p_error) socket_ioerror, &clnt->sock);
          timeout_init(&clnt->tm, -1, -1);
@@ -222,7 +226,7 @@ diff -ru src/unix.c src/unix.c
          return 1;
      } else {
          lua_pushnil(L); 
-@@ -346,7 +346,7 @@
+@@ -336,7 +336,7 @@
          io_init(&un->io, (p_send) socket_send, (p_recv) socket_recv, 
                  (p_error) socket_ioerror, &un->sock);
          timeout_init(&un->tm, -1, -1);
@@ -231,3 +235,49 @@ diff -ru src/unix.c src/unix.c
          return 1;
      } else {
          lua_pushnil(L);
+--- src/serial.c.orig	2014-02-11 11:53:16.000000000 -0800
++++ src/serial.c	2014-02-11 11:54:45.000000000 -0800
+@@ -90,22 +90,22 @@
+ \*-------------------------------------------------------------------------*/
+ static int meth_send(lua_State *L) {
+     p_unix un = (p_unix) auxiliar_checkclass(L, "serial{client}", 1);
+-    return buffer_meth_send(L, &un->buf);
++    return ls_buffer_meth_send(L, &un->buf);
+ }
+ 
+ static int meth_receive(lua_State *L) {
+     p_unix un = (p_unix) auxiliar_checkclass(L, "serial{client}", 1);
+-    return buffer_meth_receive(L, &un->buf);
++    return ls_buffer_meth_receive(L, &un->buf);
+ }
+ 
+ static int meth_getstats(lua_State *L) {
+     p_unix un = (p_unix) auxiliar_checkclass(L, "serial{client}", 1);
+-    return buffer_meth_getstats(L, &un->buf);
++    return ls_buffer_meth_getstats(L, &un->buf);
+ }
+ 
+ static int meth_setstats(lua_State *L) {
+     p_unix un = (p_unix) auxiliar_checkclass(L, "serial{client}", 1);
+-    return buffer_meth_setstats(L, &un->buf);
++    return ls_buffer_meth_setstats(L, &un->buf);
+ }
+ 
+ /*-------------------------------------------------------------------------*\
+@@ -126,7 +126,7 @@
+ 
+ static int meth_dirty(lua_State *L) {
+     p_unix un = (p_unix) auxiliar_checkgroup(L, "serial{any}", 1);
+-    lua_pushboolean(L, !buffer_isempty(&un->buf));
++    lua_pushboolean(L, !ls_buffer_isempty(&un->buf));
+     return 1;
+ }
+ 
+@@ -183,6 +183,6 @@
+     io_init(&un->io, (p_send) socket_write, (p_recv) socket_read, 
+             (p_error) socket_ioerror, &un->sock);
+     timeout_init(&un->tm, -1, -1);
+-    buffer_init(&un->buf, &un->io, &un->tm);
++    ls_buffer_init(&un->buf, &un->io, &un->tm);
+     return 1;
+ }

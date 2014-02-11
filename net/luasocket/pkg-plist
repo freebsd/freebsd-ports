@@ -1,13 +1,14 @@
+%%LUA_MODLIBDIR%%/mime/core.so
+%%LUA_MODLIBDIR%%/socket/core.so
+%%LUA_MODSHAREDIR%%/ltn12.lua
 %%LUA_MODSHAREDIR%%/mime.lua
 %%LUA_MODSHAREDIR%%/socket.lua
-%%LUA_MODSHAREDIR%%/ltn12.lua
-%%LUA_MODSHAREDIR%%/socket/smtp.lua
 %%LUA_MODSHAREDIR%%/socket/ftp.lua
+%%LUA_MODSHAREDIR%%/socket/headers.lua
+%%LUA_MODSHAREDIR%%/socket/http.lua
+%%LUA_MODSHAREDIR%%/socket/smtp.lua
 %%LUA_MODSHAREDIR%%/socket/tp.lua
 %%LUA_MODSHAREDIR%%/socket/url.lua
-%%LUA_MODSHAREDIR%%/socket/http.lua
-%%LUA_MODLIBDIR%%/socket/core.so
-%%LUA_MODLIBDIR%%/mime/core.so
 %%PORTDOCS%%%%DOCSDIR%%/dns.html
 %%PORTDOCS%%%%DOCSDIR%%/ftp.html
 %%PORTDOCS%%%%DOCSDIR%%/http.html
@@ -15,6 +16,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/installation.html
 %%PORTDOCS%%%%DOCSDIR%%/introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/ltn12.html
+%%PORTDOCS%%%%DOCSDIR%%/lua05.ppt
 %%PORTDOCS%%%%DOCSDIR%%/luasocket.png
 %%PORTDOCS%%%%DOCSDIR%%/mime.html
 %%PORTDOCS%%%%DOCSDIR%%/reference.css
@@ -25,6 +27,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/udp.html
 %%PORTDOCS%%%%DOCSDIR%%/url.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%LUA_MODSHAREDIR%%/socket
-@dirrm %%LUA_MODLIBDIR%%/socket
 @dirrm %%LUA_MODLIBDIR%%/mime
+@dirrm %%LUA_MODLIBDIR%%/socket
+@dirrm %%LUA_MODSHAREDIR%%/socket
