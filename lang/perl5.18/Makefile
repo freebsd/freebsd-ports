@@ -143,8 +143,6 @@ LINK_USRBIN=	yes
 LINK_USRBIN=	no
 .endif
 
-NO_LATEST_LINK=	yes
-
 BSDPAN_DEST=	${PREFIX}/lib/perl5/${PERL_VER}/BSDPAN
 BSDPAN_FILES=	BSDPAN.pm BSDPAN/Override.pm Config.pm \
 		ExtUtils/MM_Unix.pm \
