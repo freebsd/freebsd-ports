@@ -3,7 +3,7 @@
 
 PORTNAME=	coreutils
 PORTVERSION=	8.22
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils textproc
 MASTER_SITES=	GNU
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,7 +26,7 @@ CONFIGURE_ARGS=	--program-prefix=g	\
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib" FORCE_UNSAFE_CONFIGURE=1
 CPPFLAGS+=	"-I${LOCALBASE}/include"
 
-USES=		gmake perl5 charsetfix
+USES=		gmake iconv perl5 charsetfix
 USE_PERL5=	build	# build - required for tests and man page generation
 USE_XZ=		yes
 USE_LDCONFIG=	yes
@@ -39,7 +39,7 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=   nls
 GMP_LIB_DEPENDS=	libgmp.so:${PORTSDIR}/math/gmp
-GMP_CONFIGURE_ENABLE=	gmp
+GMP_CONFIGURE_WITH=	gmp
 
 .include <bsd.port.options.mk>
 
