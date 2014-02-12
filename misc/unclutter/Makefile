@@ -15,8 +15,8 @@ COMMENT=	Remove idle cursor image from screen
 WRKSRC=		${WRKDIR}/unclutter
 USES=		imake
 USE_XORG=	x11 xext
-MAN1=		unclutter.1
-PLIST_FILES=	bin/unclutter
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/unclutter \
+		man/man1/unclutter.1.gz
+
 .include <bsd.port.mk>
