@@ -39,8 +39,6 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-# Downgrade VTE to 0.26
-	@${REINPLACE_CMD} -e 's|0.28|0.26|g' ${WRKSRC}/configure
 .if ! ${PORT_OPTIONS:MNLS}
 	@${REINPLACE_CMD} -e 's|	terminal||; \
 		s|po \\|terminal|' ${WRKSRC}/Makefile.in
