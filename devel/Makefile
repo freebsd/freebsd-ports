@@ -1140,6 +1140,7 @@
     SUBDIR += linux-f10-allegro
     SUBDIR += linux-f10-dbus-glib
     SUBDIR += linux-f10-dbus-libs
+    SUBDIR += linux-f10-devtools
     SUBDIR += linux-f10-libglade2
     SUBDIR += linux-f10-libsigc++20
     SUBDIR += linux-f10-ncurses-base
