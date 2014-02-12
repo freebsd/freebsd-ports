@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Math_BigInteger
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.2
 CATEGORIES=	math pear
 
 MAINTAINER=	meritus@innervision.pl
