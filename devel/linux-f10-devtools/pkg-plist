@@ -1386,7 +1386,6 @@ usr/share/man/man1/windmc.1.gz
 @dirrm usr/libexec/gcc/i386-redhat-linux
 @dirrm usr/libexec/gcc
 @dirrmtry usr/libexec
-@dirrm usr/lib/sse2
 @dirrm usr/lib/gcc/i386-redhat-linux/4.3.2/include
 @dirrm usr/lib/gcc/i386-redhat-linux/4.3.2/finclude
 @dirrm usr/lib/gcc/i386-redhat-linux/4.3.2
@@ -1438,6 +1437,5 @@ usr/share/man/man1/windmc.1.gz
 @dirrm usr/include/asm-generic
 @dirrm usr/include/asm
 @dirrm usr/include/arpa
-@dirrmtry usr/include
 @dirrmtry usr/bin
 @dirrmtry usr
