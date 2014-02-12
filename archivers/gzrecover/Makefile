@@ -23,13 +23,11 @@ OPTIONS_DEFINE=	DOCS
 .include <bsd.port.options.mk>
 
 do-build:
-	${CC} -o ${WRKSRC}/${PORTNAME} ${CFLAGS} ${WRKSRC}/${PORTNAME}.c
+	${CC} ${CFLAGS} -o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}/${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}/${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}/${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
