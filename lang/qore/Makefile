@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qore
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.8
 CATEGORIES=	lang
 MASTER_SITES=	SF/qore/qore/${PORTVERSION}/
 
@@ -16,8 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
-USES=		pathfix iconv
+USES=		gmake iconv pathfix
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -28,10 +27,8 @@ CONFIGURE_ENV=	LEX="${LOCALBASE}/bin/flex" \
 CONFIGURE_ARGS=	--disable-debug --disable-static --with-doxygen=no
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		qore.1
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"
