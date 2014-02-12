@@ -3,6 +3,7 @@
 
 PORTNAME=	Elasticsearch
 PORTVERSION=	1.02
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DRTECH
@@ -14,8 +15,6 @@ COMMENT=	ElasticSearch API
 LICENSE=	APACHE20
 
 RUN_DEPENDS:=	p5-Any-URI-Escape>=0:${PORTSDIR}/www/p5-Any-URI-Escape \
-		p5-Encode>=0:${PORTSDIR}/converters/p5-Encode \
-		p5-File-Temp>=0:${PORTSDIR}/devel/p5-File-Temp \
 		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-HTTP-Tiny>=0.036:${PORTSDIR}/www/p5-HTTP-Tiny \
 		p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress \
@@ -29,7 +28,6 @@ RUN_DEPENDS:=	p5-Any-URI-Escape>=0:${PORTSDIR}/www/p5-Any-URI-Escape \
 		p5-Moo>=1.003:${PORTSDIR}/devel/p5-Moo \
 		p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter \
-		p5-Time-HiRes>=0:${PORTSDIR}/devel/p5-Time-HiRes \
 		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
