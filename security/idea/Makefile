@@ -28,11 +28,8 @@ do-install:
 	${INSTALL_PROGRAM} -m 0555 ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/Examples ${STAGEDIR}${EXAMPLESDIR}
-
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/byte_ord.ps ${WRKSRC}/idea_cmd.txt \
 		${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
