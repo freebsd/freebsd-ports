@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.superliminal.com/cube/
 DISTNAME=	mc4d-src-${PORTVERSION:S/./_/}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	karlj000@unbc.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MagicCube4D is a four-dimensional analog of Rubik's cube
 
 USE_XORG=	x11 xext xt sm ice xaw
