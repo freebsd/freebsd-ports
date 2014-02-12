@@ -4248,6 +4248,7 @@
     SUBDIR += rubygem-mutter
     SUBDIR += rubygem-needle
     SUBDIR += rubygem-nice-ffi
+    SUBDIR += rubygem-nio4r
     SUBDIR += rubygem-notify
     SUBDIR += rubygem-open4
     SUBDIR += rubygem-orm_adapter
