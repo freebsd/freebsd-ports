@@ -3,6 +3,7 @@
 
 PORTNAME=	zenphoto
 PORTVERSION=	1.4.5.9
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/archive/
 
@@ -23,6 +24,9 @@ SUB_FILES=	pkg-message pkg-deinstall
 SUB_LIST=	PORTNAME=${PORTNAME}
 
 post-extract:
+	@${MKDIR} ${WRKSRC}/cache/
+	@${FIND} ${WRKSRC} -name .gitignore -delete
+	@${FIND} -s ${WRKSRC}/ -type d -empty | ${XARGS} -I % ${TOUCH} %/.keepme
 	@${RM} ${WRKSRC}/doc_files/Zenphoto\ license.txt ${WRKSRC}/doc_files/README.html ${WRKSRC}/zp-core/Zenphoto.package
 
 do-install:
@@ -35,7 +39,6 @@ MS_DIRRMTRY=	albums cache themes zp-core
 MS_PLIST=	${WRKDIR}/.ms-pkg-plist
 
 genplist: do-clean extract
-	cd ${WRKSRC}/ && ${MKDIR} ${MS_DIRRMTRY}
 	${ECHO} "@owner www" > ${MS_PLIST}
 	${ECHO} "@group www" >> ${MS_PLIST}
 	cd ${WRKSRC}/ && ${FIND} -s * -type f | ${SED} 's|^|%%WWWDIR%%/|' >> ${MS_PLIST}
