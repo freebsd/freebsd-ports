@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	icinga
-PORTVERSION=	1.10.2
-PORTREVISION=	1
+PORTVERSION=	1.10.3
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF
+MASTER_SITES=	https://github.com/Icinga/${PORTNAME}-core/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	Enterprise grade open source monitoring system based on Nagios
@@ -105,6 +104,13 @@ post-patch:
 # Use correct make(1) syntax to unbreak parallel builds
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
 		-E 's#cd (.+) && (make|\$$\(MAKE\))#$$(MAKE) -C \1#'
+
+pre-install:
+.if ${PORT_OPTIONS:MIDOUTILS}
+	@${STRIP_CMD} ${WRKSRC}/module/idoutils/src/ido2db \
+		${WRKSRC}/module/idoutils/src/log2ido \
+		${WRKSRC}/module/idoutils/src/idomod.so
+.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${ICINGAWWWDIR}/ssi
