@@ -10,8 +10,8 @@ COMMENT=	The Qore Programming Language
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre \
-		mpfr:${PORTSDIR}/math/mpfr
+LIB_DEPENDS=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libmpfr.so:${PORTSDIR}/math/mpfr
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/bin/bison:${PORTSDIR}/devel/bison
 
