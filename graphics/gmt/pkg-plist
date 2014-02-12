@@ -269,7 +269,6 @@ man/man5/gmtcolors.5.gz
 %%DATADIR%%/coast/binned_river_h.nc
 %%DATADIR%%/coast/binned_river_i.nc
 %%DATADIR%%/coast/binned_river_l.nc
-%%DATADIR%%/conf/gmt.conf
 %%DATADIR%%/conf/gmt_cpt.conf
 %%DATADIR%%/conf/gmt_custom_media.conf
 %%DATADIR%%/conf/gmt_custom_symbols.conf
