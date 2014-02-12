@@ -11,11 +11,9 @@ MAINTAINER=	uqs@FreeBSD.org
 COMMENT=	Utility to merge mp3 files (and other formats)
 
 GNU_CONFIGURE=	yes
-NO_STAGE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN1=		mp3wrap.1
-PLIST_FILES=	bin/mp3wrap
+PLIST_FILES=	bin/mp3wrap man/man1/mp3wrap.1.gz
 
 .include <bsd.port.mk>
