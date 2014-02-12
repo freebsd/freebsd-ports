@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	matreshka
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	devel
 MASTER_SITES=	http://forge.ada-ru.org/matreshka/downloads/
 
@@ -14,13 +13,26 @@ LICENSE=	BSD
 
 BUILD_DEPENDS=	gprbuild>=20120510:${PORTSDIR}/devel/gprbuild
 
-USES=		ada gmake
+USES=		ada gmake pkgconfig
+HAS_CONFIGURE=	yes
 NO_MTREE=	yes
 
 OPTIONS_DEFINE=	SQLITE3 FIREBIRD PGSQL MYSQL ORACLE AMF
 OPTIONS_DEFAULT=SQLITE3 FIREBIRD PGSQL MYSQL
 
+#FIREBIRD option requires Ada-2012; disable until new compiler arrives
+#Excluding option breaks X_CONFIGURE_ENABLE, so manually set that too
+OPTIONS_EXCLUDE=FIREBIRD
+CONFIGURE_ARGS+= --disable-firebird
+
 AMF_DESC=	Build Ada Modeling Framework
+
+SQLITE3_CONFIGURE_ENABLE=	sqlite3
+FIREBIRD_CONFIGURE_ENABLE=	firebird
+PGSQL_CONFIGURE_ENABLE=		postgresql
+MYSQL_CONFIGURE_ENABLE=		mysql
+ORACLE_CONFIGURE_ENABLE=	oracle
+AMF_CONFIGURE_ENABLE=		amf
 
 MAKE_JOBS_UNSAFE=	yes
 NO_LICENSES_INSTALL=	yes
@@ -30,28 +42,24 @@ MAKE_ENV+=	SMP_MFLAGS=-j${MAKE_JOBS_NUMBER}
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFIREBIRD}
-MAKE_ENV+= HAS_FIREBIRD=yes
+CONFIGURE_ARGS+= --with-firebird-libdir=${LOCALBASE}/lib
+USE_FIREBIRD= yes
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-MAKE_ENV+= HAS_MYSQL=yes
-.endif
-
-.if ${PORT_OPTIONS:MORACLE}
-MAKE_ENV+= HAS_OCI=yes
+USE_MYSQL= yes
 .endif
 
 .if ${PORT_OPTIONS:MPGSQL}
-MAKE_ENV+= HAS_POSTGRESQL=yes
+USE_PGSQL= yes
 .endif
 
 .if ${PORT_OPTIONS:MSQLITE3}
-MAKE_ENV+= HAS_SQLITE3=yes
+USE_SQLITE= yes
 .endif
 
-.if ${PORT_OPTIONS:MAMF}
-MAKE_ENV+= WANT_AMF=yes
-.endif
+pre-configure:
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${GMAKE} config
 
 post-install:
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
