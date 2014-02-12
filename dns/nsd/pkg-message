@@ -1,6 +1,6 @@
 **************************************************************************
 *
-*   To run nsd from startup, add nsd_enable="YES" to your /etc/rc.conf
+*   To run nsd from startup, add nsd_enable="YES" to your etc/rc.conf
 *
 *   Starting with nsd version 4 the old nsdc control program has been
 *   replaced by nsd-control. This requires some manual setup with
