@@ -23,7 +23,6 @@ USES=		pkgconfig
 
 INFO=	iksemel
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|@setfilename iksemel|@setfilename iksemel.info|' \
 	    ${WRKSRC}/doc/iksemel.texi
