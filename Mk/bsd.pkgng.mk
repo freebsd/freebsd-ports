@@ -25,7 +25,8 @@ _FORCE_POST_PATTERNS=	rmdir kldxref mkfontscale mkfontdir fc-cache \
 						load-octave-pkg \
 						update-desktop-database update-mime-database \
 						gdk-pixbuf-query-loaders catalog.ports \
-						glib-compile-schemas
+						glib-compile-schemas \
+						ccache-update-links
 
 PLIST_REINPLACE:=	${PLIST_REINPLACE:Ndirrmtry}
 PLIST_REINPLACE:=	${PLIST_REINPLACE:Nstopdaemon}
