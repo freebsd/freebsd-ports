@@ -3,7 +3,7 @@
 
 PORTNAME=	libutf
 PORTVERSION=	2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.cs.yorku.ca/pub/wily/misc/ \
 		http://www.westley.demon.co.uk/src/
@@ -18,7 +18,7 @@ MAKE_ARGS=	ETCDIR=${EXAMPLESDIR}
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/ure.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/utf.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_LIB} ${WRKSRC}/libutf.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libutf.a ${STAGEDIR}${PREFIX}/lib
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/langcoll.utf ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_MAN} ${WRKSRC}/utf.3 ${STAGEDIR}${MAN3PREFIX}/man/man3
