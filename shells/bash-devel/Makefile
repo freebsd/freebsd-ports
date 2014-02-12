@@ -48,9 +48,7 @@ INFO=			bash
 MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=		yes
 
-.if ${PORT_OPTIONS:MDOCS}
 PORTDOCS=		FAQ INTRO CHANGES COMPAT NEWS POSIX RBASH
-.endif
 
 CONFIGURE_ARGS=		--without-bash-malloc \
 			--disable-rpath \
@@ -109,14 +107,12 @@ pre-build:
 
 post-install:
 	@cd ${STAGEDIR}${PREFIX}/bin ; ${LN} -sf bash rbash
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/FAQ \
 		${WRKSRC}/doc/INTRO ${STAGEDIR}${DOCSDIR}
 	@for d in ${PORTDOCS:NFAQ:NINTRO}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${d} ${STAGEDIR}${DOCSDIR}; \
 	done
-.endif
 
 regress: build
 	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} test
