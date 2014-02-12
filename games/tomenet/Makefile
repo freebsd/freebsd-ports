@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tomenet
-PORTVERSION=	4.5.5
+PORTVERSION=	4.5.6
 CATEGORIES=	games
 MASTER_SITES=	http://tomenet.net/downloads/
 
@@ -28,7 +28,7 @@ do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/.tomenetrc ${STAGEDIR}${ETCDIR}/tomenetrc
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
