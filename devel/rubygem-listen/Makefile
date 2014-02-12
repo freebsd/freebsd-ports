@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	listen
-PORTVERSION=	2.4.1
+PORTVERSION=	2.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,13 +12,13 @@ COMMENT=	Listen to file modifications and notify about the changes
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-celluloid>=0.15.2:${PORTSDIR}/devel/rubygem-celluloid \
-		rubygem-rb-kqueue>=0.2:${PORTSDIR}/devel/rubygem-rb-kqueue
+		rubygem-celluloid-io>=0.15.0:${PORTSDIR}/devel/rubygem-celluloid-io
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e '27,54 d' ${WRKSRC}/${GEM_NAME}.gemspec
+	@${REINPLACE_CMD} -e '41,68 d' ${WRKSRC}/${GEM_NAME}.gemspec
 
 .include <bsd.port.mk>
