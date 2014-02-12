@@ -30,11 +30,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/watchd.conf ${STAGEDIR}${PREFIX}/etc/watchd.conf.sample
 	[ -f ${PREFIX}/etc/watchd.conf ] || \
 		${INSTALL_DATA} ${WRKSRC}/watchd.conf ${STAGEDIR}${PREFIX}/etc
-
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/doc/watchfolder.pdf \
 		${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
