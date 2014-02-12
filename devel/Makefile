@@ -2294,6 +2294,7 @@
     SUBDIR += p5-Module-Install
     SUBDIR += p5-Module-Install-AuthorRequires
     SUBDIR += p5-Module-Install-AuthorTests
+    SUBDIR += p5-Module-Install-ReadmeFromPod
     SUBDIR += p5-Module-Install-Repository
     SUBDIR += p5-Module-Install-Template
     SUBDIR += p5-Module-Install-XSUtil
