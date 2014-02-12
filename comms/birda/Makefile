@@ -10,10 +10,4 @@ MASTER_SITES=	ftp://ftp.augustsson.net/pub/netbsd/ \
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Bohlin's IrDA utilities, ported from NetBSD's pkgsrc
 
-MAN1=		ircomm.1 irobex.1 irs.1 \
-		mkobexcard.1 mkobexdate.1 mkobexmemo.1 mkobexpdb.1 \
-		mkobextel.1 mkobextodo.1
-MANCOMPRESSED=	yes
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
