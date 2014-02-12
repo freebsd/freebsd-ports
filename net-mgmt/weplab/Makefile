@@ -12,10 +12,9 @@ COMMENT=	WepLab is a tool designed to teach how WEP works
 GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 
-MAN1=		weplab.1
-PLIST_FILES=	bin/weplab
+PLIST_FILES=	bin/weplab \
+		man/man1/weplab.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E 's,^(CC|CFLAGS|LDFLAGS) *=,\1 ?=,g' \
 		${WRKSRC}/Makefile.in
