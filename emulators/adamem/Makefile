@@ -8,7 +8,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	http://www.komkon.org/~dekogel/files/coleco/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	karlj000@unbc.ca
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ADAMEm is a portable Coleco ADAM and ColecoVision emulator
 
 NO_WRKSUBDIR=	yes
