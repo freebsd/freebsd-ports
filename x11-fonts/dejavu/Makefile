@@ -3,6 +3,7 @@
 
 PORTNAME=	dejavu
 PORTVERSION=	2.34
+PORTREVISION=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-fonts-ttf-${PORTVERSION}
@@ -10,13 +11,14 @@ DISTNAME=	${PORTNAME}-fonts-ttf-${PORTVERSION}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Bitstream Vera Fonts clone with a wider range of characters
 
-BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${LOCALBASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig \
+		${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 OPTIONS_DEFINE=	DOCS LINKS
 LINKS_DESC=	Install links of configuration files in conf.d
 
-NO_BUILD=	yes
 USE_BZIP2=	yes
 
 FCDIR=		${PREFIX}/${FCDIR_REL}
@@ -37,10 +39,14 @@ PLIST_SUB+=	FCDIR_LINKS="${FCDIR_LINKS}"
 PLIST_SUB+=	FCDIR_LINKS="@comment "
 .endif
 
+do-build:
+	@cd ${WRKSRC}/ && ${LOCALBASE}/bin/mkfontscale
+	@cd ${WRKSRC}/ && ${LOCALBASE}/bin/mkfontdir
+
 do-install:
 	${MKDIR} ${STAGEDIR}${FCDIR}/ ${STAGEDIR}${PREFIX}/${FCDIR_LINKS}/ ${STAGEDIR}${FONTSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/fontconfig/*.conf ${STAGEDIR}${FCDIR}/
-	${INSTALL_DATA} ${WRKSRC}/ttf/*.ttf ${STAGEDIR}${FONTSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/fonts.* ${WRKSRC}/ttf/*.ttf ${STAGEDIR}${FONTSDIR}/
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
