@@ -15,9 +15,8 @@ bin/instmodsh
 bin/json_pp
 bin/libnetcfg
 bin/perl
+bin/perl5
 bin/perl%%PERL_VERSION%%
-@exec ln -fs %D/%F %B/perl5
-@unexec rm -f %B/perl5 2>&1 >/dev/null || true
 bin/perlbug
 bin/perldoc
 bin/perlivp
@@ -42,6 +41,7 @@ bin/shasum
 bin/splain
 bin/xsubpp
 %%MANCONF%%etc/man.d/perl%%PERL_VER%%.conf
+etc/perl5_version
 lib/perl5/%%PERL_VER%%/AnyDBM_File.pm
 lib/perl5/%%PERL_VER%%/App/Cpan.pm
 lib/perl5/%%PERL_VER%%/App/Prove.pm
@@ -3003,6 +3003,7 @@ man/man1/xsubpp.1.gz
 @dirrm lib/perl5/%%PERL_VER%%/BSDPAN/ExtUtils
 @dirrm lib/perl5/%%PERL_VER%%/BSDPAN
 @unexec find %D/%%SITE_PERL%%/%%PERL_ARCH%%/ -name '*.ph' -delete 2>/dev/null || true
+@exec cd /usr/include && %D/bin/h2ph *.h machine/*.h sys/*.h >/dev/null
 %%GDBM%%@dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/GDBM_File
 @dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/threads
 @dirrm lib/perl5/%%PERL_VER%%/%%PERL_ARCH%%/auto/threads/shared
@@ -3342,15 +3343,18 @@ man/man1/xsubpp.1.gz
 @dirrm lib/perl5/%%PERL_VER%%/autodie/exception
 @dirrm lib/perl5/%%PERL_VER%%/autodie
 @dirrmtry lib/perl5/%%PERL_VER%%/man/man3
+@exec install -d %D/lib/perl5/%%PERL_VER%%/man/man3
 @unexec /bin/rm -f %D/lib/perl5/%%PERL_VER%%/man/whatis
 @exec /usr/bin/makewhatis %D/lib/perl5/%%PERL_VER%%/man
 @dirrmtry lib/perl5/%%PERL_VER%%/man
 @dirrmtry lib/perl5/%%PERL_VER%%
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/sys
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/machine
+@exec install -d %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
 @dirrmtry %%SITE_PERL%%/auto
+@exec install -d %D/%%SITE_PERL%%/auto
 @dirrmtry %%SITE_PERL%%
 @dirrmtry lib/perl5/site_perl
 @dirrmtry lib/perl5
