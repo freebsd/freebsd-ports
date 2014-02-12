@@ -19,18 +19,18 @@ CONFLICTS_INSTALL=	tinymce-[0-35-9]* tinymce3-[0-9]*
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+post-extract:
+	@cd ${WRKSRC}/ && ${FIND} -s * -type d -empty | ${XARGS} -I % ${TOUCH} %/.keepme
+
 do-install:
 	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}/
 
 # maintainer section:
 
 #MS_DIRRMTRY=	# empty
-MS_EMPTYDIRS=	${WRKDIR}/.ms-empty-directories
 MS_PLIST=	${WRKDIR}/.ms-pkg-plist
 
 genplist: do-clean extract
-	cd ${WRKSRC}/ && ${FIND} -s * -type d -empty | ${XARGS} >> ${MS_EMPTYDIRS}
-	${SED} 's|[^ ]*|&/.keepme|g' ${MS_EMPTYDIRS} | ${XARGS} -J % ${TOUCH} %
 	${ECHO} "@owner www" > ${MS_PLIST}
 	${ECHO} "@group www" >> ${MS_PLIST}
 	cd ${WRKSRC}/ && ${FIND} -s * -type f | ${SED} 's|^|%%WWWDIR%%/|' >> ${MS_PLIST}
@@ -42,6 +42,5 @@ genplist: do-clean extract
 #	${REINPLACE_CMD} '/^@dirrm %%WWWDIR%%\/${dir:C/\//\\\//g}$$/ s|@dirrm|&try|' ${MS_PLIST}
 #.endfor
 	${INSTALL} -m 600 ${MS_PLIST} ${PLIST}
-	${REINPLACE_CMD} -e "/^EMPTYDIRS=/ s|	.*$$|	`${CAT} ${MS_EMPTYDIRS}`|" ${.CURDIR}/Makefile
 
 .include <bsd.port.mk>
