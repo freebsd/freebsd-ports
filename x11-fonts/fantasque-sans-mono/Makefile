@@ -1,10 +1,10 @@
 # $FreeBSD$
 
-PORTNAME=	cosmic-sans-neue-mono
-PORTVERSION=	1.3.1
+PORTNAME=	fantasque-sans-mono
+PORTVERSION=	1.6.1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://openfontlibrary.org/assets/downloads/${PORTNAME}/feb9d273fd3f3068493fd183c589ecff/
-DISTNAME=	${PORTNAME}
+MASTER_SITES=	http://openfontlibrary.org/assets/downloads/${PORTNAME}/1baf065481fd4829a407040743378130/
+DISTNAME=	fantasque-sans-mono
 
 MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Programming font, designed with functionality in mind
