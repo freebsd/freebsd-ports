@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Apr 26 15:14:26 2006
-+++ Makefile	Thu Jan 25 22:12:30 2007
+--- Makefile.orig	2006-04-26 21:14:26.000000000 +0200
++++ Makefile	2014-02-12 22:46:15.668989348 +0100
 @@ -43,8 +43,8 @@
  # CC		= /usr/lang/acc
  # CCFLAGS 	= -c -O
@@ -7,7 +7,7 @@
 -CC		= gcc -ansi -pedantic
 -CCFLAGS 	= -c -O2 -DNeedFunctionPrototypes=1
 +#CC              = gcc -ansi -pedantic
-+CCFLAGS         = -c -DNeedFunctionPrototypes=1
++CCFLAGS         += -c -DNeedFunctionPrototypes=1
  
  LD 		= $(CC)
  
@@ -30,7 +30,7 @@
  # not install gsm and toast outside of this directory.
  
 -INSTALL_ROOT	=
-+INSTALL_ROOT    =       $(PREFIX)
++INSTALL_ROOT    =       $(DESTDIR)$(PREFIX)
  
  # Where do you want to install the gsm library, header file, and manpages?
  #
