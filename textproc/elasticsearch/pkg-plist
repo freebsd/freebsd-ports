@@ -8,8 +8,8 @@ etc/elasticsearch/logging.yml.sample
 @exec if [ ! -f %D/etc/elasticsearch/logging.yml ] ; then cp -p %D/%F %B/logging.yml; fi
 @unexec if [ -d %%ELASTIC_LOGDIR%% ]; then echo "You should remove %%ELASTIC_LOGDIR%% if you don't need it any more."; fi
 @unexec if [ -d %%ELASTIC_DBDIR%% ]; then echo "You should remove %%ELASTIC_DBDIR%% if you don't need it any more."; fi
-@owner
-@group
+@owner root
+@group wheel
 bin/elasticsearch-plugin
 lib/elasticsearch/elasticsearch-%%PORTVERSION%%.jar
 lib/elasticsearch/jna-3.3.0.jar
