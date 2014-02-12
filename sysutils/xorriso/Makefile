@@ -18,13 +18,10 @@ RUN_DEPENDS=	libburn>=1.1.0:${PORTSDIR}/devel/libburn \
 		libisofs>=1.1.2:${PORTSDIR}/devel/libisofs
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USES=		pathfix pkgconfig iconv
+USES=		pathfix pkgconfig iconv gmake
 USE_LDCONFIG=	yes
 WANT_GNOME=	yes
 
 INFO=		xorrecord xorriso xorrisofs
-MAN1=		xorrecord.1 xorriso.1 xorrisofs.1
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
