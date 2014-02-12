@@ -14,13 +14,10 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ure.h:${PORTSDIR}/misc/libutf
 GNU_CONFIGURE=	YES
 ALL_TARGET=	ssam
 
-PLIST_FILES=	bin/ssam
+PLIST_FILES=	bin/ssam man/man1/ssam.1.gz
 
-MAN1=	ssam.1
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ssam ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ssam.1 ${MANPREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/ssam ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/ssam.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
