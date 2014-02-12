@@ -25,12 +25,10 @@ MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
