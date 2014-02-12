@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmt
-PORTVERSION=	4.5.9
+PORTVERSION=	4.5.11
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.soest.hawaii.edu/%SUBDIR%/ \
 		ftp://ftp.geologi.uio.no/pub/%SUBDIR%/ \
@@ -11,14 +11,11 @@ MASTER_SITES=	ftp://ftp.soest.hawaii.edu/%SUBDIR%/ \
 		http://gd.tuwien.ac.at/graphics/visual/%SUBDIR%/ \
 		http://gmt.mirror.ac.za/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		${GSHHG_DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} \
+		${GSHHG_DISTNAME}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Mapping Tools - data processing and display software package
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2014-03-10
 
 LICENSE=	GPLv2 LGPL3
 LICENSE_COMB=	multi
@@ -37,8 +34,6 @@ IMPERIAL_DESC=	Choose Imperial (inch) units over metric (cm)
 GDAL_DESC=	Compile in experimental GDAL support
 OCTAVE_DESC=	Build GMT-octave interface
 
-WRKSRC=		${WRKDIR}/${PORTNAME:U}${DISTVERSION}
-
 USE_BZIP2=	yes
 USES=		gmake shebangfix
 SHEBANG_FILES=	gmtswitch
@@ -53,7 +48,7 @@ PORTDOCS=	*
 DEBUG_CONFIGURE_ON=	--enable-debug --enable-devdebug
 SHARED_CONFIGURE_ON=	--enable-shared
 IMPERIAL_CONFIGURE_ON=	--enable-US
-EPS_CONFNIGURE_ON=	--enable-eps
+EPS_CONFIGURE_ON=	--enable-eps
 GDAL_LIB_DEPENDS=	libgdal.so:${PORTSDIR}/graphics/gdal
 GDAL_CONFIGURE_ON=	--enable-gdal
 OCTAVE_RUN_DEPENDS=	octave:${PORTSDIR}/math/octave
@@ -75,7 +70,7 @@ STRIP_FILES=	blockmean blockmedian blockmode filter1d fitcircle \
 		psxy psxyz sample1d spectrum1d splitxyz \
 		surface trend1d trend2d triangulate xyz2grd
 
-GSHHG_DISTNAME=	gshhg-gmt-nc3-2.2.2
+GSHHG_DISTNAME=	gshhg-gmt-2.3.0
 
 .include <bsd.port.options.mk>
 
