@@ -3,7 +3,7 @@
 
 PORTNAME=	dogecoin
 PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p finance
 
 MAINTAINER=	swills@FreeBSD.org
@@ -36,14 +36,12 @@ CXXFLAGS+=	-Wno-invalid-offsetof
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-endian
-.else
+.if ${OPSYS} == FreeBSD && ${OSVERSION} <= 1000000
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src__leveldb__Makefile
 .endif
 
 .if ${PORT_OPTIONS:MGUI} && !defined(WITHOUT_X11)
-USE_QT4=	corelib gui qmake_build linguist uic moc rcc
+USE_QT4=	corelib network gui qmake_build linguist_build uic_build moc_build rcc_build
 BINARY=		dogecoin-qt
 .else
 BINARY=		dogecoind
