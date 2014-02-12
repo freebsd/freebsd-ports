@@ -1,13 +1,15 @@
---- Makefile.in.orig	Sat May 10 13:57:39 2003
-+++ Makefile.in	Sat May 10 14:01:43 2003
-@@ -39,8 +39,8 @@
+--- ./Makefile.in.orig	1997-02-25 18:47:26.000000000 +0000
++++ ./Makefile.in	2014-02-12 19:07:37.000000000 +0000
+@@ -38,9 +38,9 @@
+ all				:	$(BINS)
  
  install			:	all
- 	$(srcdir)/mkinstalldirs $(BINDIR) $(MANDIR)/man1
+-	$(srcdir)/mkinstalldirs $(BINDIR) $(MANDIR)/man1
 -	for bin in $(BINS) ; do $(INSTALL) $$bin $(BINDIR)/$$bin ; done
 -	for man in $(MANS) ; do $(INSTALL_DATA) $(srcdir)/$$man $(MANDIR)/man1/$$man ; done
-+	for bin in $(BINS) ; do $(INSTALL) $$bin $(BINDIR)/utf8-$$bin ; done
-+	for man in $(MANS) ; do $(INSTALL_DATA) $(srcdir)/$$man $(MANDIR)/man1/utf8-$$man ; done
++	$(srcdir)/mkinstalldirs $(DESTDIR)$(BINDIR) $(DESTDIR)$(MANDIR)/man1
++	for bin in $(BINS) ; do $(INSTALL) $$bin $(DESTDIR)$(BINDIR)/utf8-$$bin ; done
++	for man in $(MANS) ; do $(INSTALL_DATA) $(srcdir)/$$man $(DESTDIR)$(MANDIR)/man1/utf8-$$man ; done
  
  uninstall		:
  	-for bin in $(BINS) ; do rm $(BINDIR)/$$bin ; done
