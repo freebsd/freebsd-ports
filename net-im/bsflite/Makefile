@@ -26,12 +26,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bsflite ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/config-example ${STAGEDIR}${EXAMPLESDIR}
-
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
