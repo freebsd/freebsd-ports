@@ -3,7 +3,7 @@
 %%ETCDIR%%/action.d/complain.conf
 %%ETCDIR%%/action.d/dshield.conf
 %%ETCDIR%%/action.d/dummy.conf
-%%ETCDIR%%/action.d/firewall-cmd-direct-new.conf
+%%ETCDIR%%/action.d/firewallcmd-new.conf
 %%ETCDIR%%/action.d/hostsdeny.conf
 %%ETCDIR%%/action.d/ipfilter.conf
 %%ETCDIR%%/action.d/ipfw.conf
