@@ -30,5 +30,4 @@ NAGIOSDIR?=	/var/spool/nagios
 PLIST_FILES=	libexec/nagios/check_mysql_health
 PLIST_DIRS=	libexec/nagios
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
