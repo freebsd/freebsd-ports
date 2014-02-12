@@ -6,9 +6,14 @@ PORTVERSION=	3.2.17
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
+PKGNAMESUFFIX=	3
 
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	Authoritative only non-recursive name server
+
+LICENSE=	BSD3CLAUSE
+
+PORTDOCS=	CREDITS ChangeLog LICENSE NSD-DATABASE NSD-DIFFFILE \
 
 CONFLICTS=	nsd-[0-2]* nsd-4*
 
@@ -62,7 +67,6 @@ MAXIPS_DESC=		Raise max-ips from 8 to ${NSDMAX_IPS}
 RRL_DESC=		Response Rate Limiting
 EUI_RRTYPES_DESC=	EUI48 and EUI64 RRtypes support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MROOT_SERVER}
@@ -137,11 +141,11 @@ pre-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/nsd.conf.sample \
-		${PREFIX}/etc/nsd/nsd.conf.sample
+		${STAGEDIR}${PREFIX}/etc/nsd/nsd.conf.sample
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}/${f}
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}/${f}
 .endfor
 .endif
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
