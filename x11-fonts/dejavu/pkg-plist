@@ -31,4 +31,6 @@
 %%FONTSDIR_REL%%/DejaVuSerifCondensed-BoldItalic.ttf
 %%FONTSDIR_REL%%/DejaVuSerifCondensed-Italic.ttf
 %%FONTSDIR_REL%%/DejaVuSerifCondensed.ttf
+%%FONTSDIR_REL%%/fonts.dir
+%%FONTSDIR_REL%%/fonts.scale
 @dirrm %%FONTSDIR_REL%%
