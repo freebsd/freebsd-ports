@@ -16,8 +16,8 @@ LIB_DEPENDS=	net:${PORTSDIR}/net/libnet
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	`${LIBNET_CONFIG} --defines` `${LIBNET_CONFIG} --cflags`
 
-MAN8=		packit.8
-PLIST_FILES=	sbin/packit
+PLIST_FILES=	sbin/packit \
+		man/man8/packit.8.gz
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
@@ -28,7 +28,6 @@ CONFIGURE_ARGS+=	--without-capture
 CONFIGURE_ARGS+=	--without-injection
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lnet|`${LIBNET_CONFIG} --libs`|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
