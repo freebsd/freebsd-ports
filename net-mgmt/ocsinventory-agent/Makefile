@@ -23,14 +23,7 @@ BUILD_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode \
 USES=		perl5
 USE_PERL5=	configure
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
-MAN1=		ocsinventory-agent.1
-MAN3=		Ocsinventory::Agent::XML::Inventory.3 \
-		Ocsinventory::Agent::Common.3
 SUB_FILES=	pkg-message
 SUB_LIST=	SITE_PERL=${SITE_PERL}
-
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
