@@ -4,10 +4,8 @@
 
 LINK_USRBIN="%%LINK_USRBIN%%"
 : ${OSVERSION:=`/sbin/sysctl -n kern.osreldate`};
-PERL_ARCH="%%PERL_ARCH%%"
 PERL_VERSION="%%PERL_VERSION%%"
 PERL_VER="%%PERL_VER%%"
-PERL5_SIGNATURE="%%PERL5_SIGNATURE%%"
 banner="# added by use.perl $(/bin/date +'%F %T')"
 special_link_list="perl perl5"
 
@@ -44,20 +42,6 @@ do_create_links()
 	done
 }
 
-do_post_install()
-{
-	INCLUDEDIR=/usr/include
-	install -d ${PKG_PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/auto
-	install -d ${PKG_PREFIX}/lib/perl5/site_perl/${PERL_VER}/auto
-	install -d ${PKG_PREFIX}/lib/perl5/${PERL_VER}/man/man3
-	cd ${INCLUDEDIR} && ${PKG_PREFIX}/bin/h2ph *.h machine/*.h sys/*.h >/dev/null
-}
-
-do_remove_perl5_signature()
-{
-	[ -f "${PERL5_SIGNATURE}" ] && /bin/rm "${PERL5_SIGNATURE}"
-}
-
 do_cleanup_manpath()
 {
 	if [ -f /etc/manpath.config ] ; then
@@ -73,13 +57,6 @@ do_cleanup_manpath()
 	fi
 }
 
-do_create_perl5_signature()
-{
-	echo "${banner}" >>"${PERL5_SIGNATURE}"
-	echo "# Do not modify PERL_VERSION here, instead use DEFAULT_VERSIONS= perl5=${PERL_VER}" >>"${PERL5_SIGNATURE}"
-	echo "PERL_VERSION=${PERL_VERSION}" >>"${PERL5_SIGNATURE}"
-}
-
 do_spam_manpath()
 {
 	if [ -f /etc/manpath.config ] ; then
@@ -89,11 +66,7 @@ do_spam_manpath()
 	fi
 }
 
-
 if [ "$2" = "POST-INSTALL" ] ; then
-	do_remove_perl5_signature
-	do_create_perl5_signature
-	do_post_install
 	if [ ${LINK_USRBIN} = yes ] ; then
 		do_remove_links
 		do_create_links
@@ -103,7 +76,6 @@ if [ "$2" = "POST-INSTALL" ] ; then
 		do_spam_manpath
 	fi
 elif [ "$2" = "POST-DEINSTALL" ] ; then
-	do_remove_perl5_signature
 	[ ${LINK_USRBIN} = yes ] && do_remove_links
 	[ "${OSVERSION}" -lt 900022 ] && do_cleanup_manpath
 fi
