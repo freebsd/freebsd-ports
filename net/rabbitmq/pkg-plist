@@ -209,7 +209,7 @@ man/man5/rabbitmq-env.conf.5.gz
 @exec mkdir -p %D/etc/rabbitmq
 @dirrmtry etc/rabbitmq
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbitmq.config.example
-@dirrmtry %%PORTEXAMPLES%%%%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
 @exec mkdir -p /var/log/rabbitmq
 @exec chown -R rabbitmq:rabbitmq /var/log/rabbitmq
 @exec mkdir -p /var/db/rabbitmq/mnesia

@@ -39,8 +39,8 @@ sbin/openvpn
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/bridge-stop
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/ucn.pl
 %%PORTDOCS%%%%DOCSDIR%%/sample-scripts/verify-cn
-@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/sample-scripts
-@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/sample-config-files
-@dirrmtry %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/sample-scripts
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/sample-config-files
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry lib/openvpn/plugins
 @dirrmtry lib/openvpn

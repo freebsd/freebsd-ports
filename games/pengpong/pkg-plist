@@ -6,4 +6,4 @@ bin/pengpong
 %%DATADIR%%/paddle.tga
 %%DATADIR%%/red.png
 @dirrmtry %%DATADIR%%
-@dirrmtry %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
