@@ -26,7 +26,6 @@ OPTIONS_DEFINE=	KQUEUE IPV6
 OPTIONS_DEFAULT=	KQUEUE
 KQUEUE_DESC=	Use kqueue(2) support
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OPENSSL_BASE)
