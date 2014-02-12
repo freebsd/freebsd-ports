@@ -16,6 +16,7 @@ COMMENT=	GNAT Ada compiler based on GCC ${GCC_BRANCH}
 LICENSE=	GPLv3
 
 DEPRECATED=	Superceded by gcc4.7-based lang/gcc-aux, use it instead
+EXPIRATION_DATE=2014-06-01
 
 .include "${.CURDIR}/Makefile.common"
 
