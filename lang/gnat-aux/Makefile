@@ -3,7 +3,7 @@
 
 PORTNAME=	gnat-aux
 PORTVERSION=	${SNAPSHOT}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
 		${MASTER_SITE_GCC}
@@ -13,7 +13,8 @@ DISTFILES=	gcc-core-${GCC_VERSION}.tar.bz2
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	GNAT Ada compiler based on GCC ${GCC_BRANCH}
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 GPLv3RLE
+LICENSE_COMB=	multi
 
 DEPRECATED=	Superceded by gcc4.7-based lang/gcc-aux, use it instead
 EXPIRATION_DATE=2014-06-01
