@@ -5447,3 +5447,4 @@ www/runsomebrowser|www/webbrowser|2014-02-09|Name changed
 irc/trickyirc||2014-02-10|Abandonware, segfaults, no releases in 15 years
 databases/p5-DBD-mysql55|databases/p5-DBD-mysql|2014-02-12|If you need a different default MYSQL version, use DEFAULT_VERSIONS
 databases/p5-DBD-mysql56|databases/p5-DBD-mysql|2014-02-12|If you need a different default MYSQL version, use DEFAULT_VERSIONS
+textproc/p5-ElasticSearch|textproc/p5-ElasticSearch-legacy|2014-02-12|This version is depricated in favour of the offical client
