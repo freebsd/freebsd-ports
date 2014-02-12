@@ -19,6 +19,9 @@ LICENSE=	GPLv3 LGPL3
 
 ONLY_FOR_ARCHS=		i386
 
+DEPRECATED=	The Ada framework is based on lang/gcc-aux, use it instead
+EXPIRATION_DATE=2014-04-01
+
 USES=			bison gmake iconv perl5
 USE_PERL5=		build
 
