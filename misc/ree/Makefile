@@ -28,10 +28,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin/rom-${PORTNAME}
 	${INSTALL_PROGRAM} ${WRKSRC}/fontdump ${STAGEDIR}${PREFIX}/bin
-
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
