@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-5.0-20090901
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Complete set of CAD tools and libraries for VLSI design
 
+BROKEN=		Does not compile
+
 NOT_FOR_ARCHS=	amd64 ia64 powerpc sparc64
 NOT_FOR_ARCHS_REASON=	${PKGNAME} does not build on ${ARCH}
 
