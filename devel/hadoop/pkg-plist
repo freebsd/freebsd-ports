@@ -288,6 +288,7 @@ bin/hadoop
 @unexec if cmp -s %D/%%ETCDIR%%/fair-scheduler.xml %D/%%EXAMPLESDIR%%/conf/fair-scheduler.xml; then rm -f %D/%%ETCDIR%%/fair-scheduler.xml; fi
 %%EXAMPLESDIR%%/conf/fair-scheduler.xml
 @exec [ -f %D/%%ETCDIR%%/fair-scheduler.xml ] || cp %D/%%EXAMPLESDIR%%/conf/fair-scheduler.xml %D/%%ETCDIR%%
+include/hadoop/hdfs.h
 include/hadoop/StringUtils.hh
 include/hadoop/SerialUtils.hh
 include/hadoop/Pipes.hh
