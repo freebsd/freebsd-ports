@@ -27,7 +27,8 @@ PORTDOCS=	*
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
+    		dot:${PORTSDIR}/graphics/graphviz
 
 post-build:
 	cd ${WRKSRC} && ${GMAKE} docs
