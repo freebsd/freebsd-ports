@@ -3,6 +3,7 @@
 
 PORTNAME=	matlab-installer
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	math science java
 MASTER_SITES=	http://acadix.biz/Ports/distfiles/ \
 		http://personalpages.tds.net/~jwbacon/Ports/distfiles/
@@ -14,9 +15,9 @@ LICENSE=	BSD
 
 # Move devtools depend to USE_LINUX_APPS when possible
 RUN_DEPENDS=	mount_cd9660_image:${PORTSDIR}/sysutils/diskimage-tools \
-		auto-ask:${PORTSDIR}/sysutils/auto-admin
-#		webbrowser:${PORTSDIR}/www/webbrowser \
-#		${LINUXBASE}/usr/bin/gfortran:${PORTSDIR}/devel/linux-f10-devtools
+		auto-ask:${PORTSDIR}/sysutils/auto-admin \
+		webbrowser:${PORTSDIR}/www/webbrowser \
+		${LINUXBASE}/usr/bin/gfortran:${PORTSDIR}/devel/linux-f10-devtools
 
 USE_XZ=		yes
 USE_LINUX=	yes
