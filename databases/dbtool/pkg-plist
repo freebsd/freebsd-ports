@@ -6,7 +6,7 @@ bin/dbtool
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/locate/updatedb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uback/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
-@dirrmtry %%PORTEXAMPLES%%%%EXAMPLESDIR%%/account-db
-@dirrmtry %%PORTEXAMPLES%%%%EXAMPLESDIR%%/locate
-@dirrmtry %%PORTEXAMPLES%%%%EXAMPLESDIR%%/uback
-@dirrmtry %%PORTEXAMPLES%%%%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/account-db
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/locate
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/uback
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
