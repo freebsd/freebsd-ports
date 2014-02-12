@@ -10,6 +10,8 @@ MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}/Ahven%20${PORTVERSION}
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Ada unit test framework
 
+LICENSE=	ISCL
+
 BUILD_DEPENDS=	adactl:${PORTSDIR}/lang/adacontrol
 
 USES=		ada
