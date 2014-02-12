@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	elasticsearch
-PORTVERSION=	0.90.0
+PORTVERSION=	0.90.11
 CATEGORIES=	textproc java devel
 MASTER_SITES=	http://download.elasticsearch.org/${PORTNAME}/${PORTNAME}/ \
 		http://mirrors.rit.edu/zi/
@@ -18,13 +18,12 @@ JAVA_VERSION=	1.7+
 ONLY_FOR_ARCHS=	i386 amd64
 USE_RC_SUBR=	${PORTNAME}
 
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS 
 
 .include <bsd.port.options.mk>
 
-LUCENEVER=	4.2.1
+LUCENEVER=	4.6.1
 CONFIG_FILES=	elasticsearch.yml logging.yml
 JARS=		elasticsearch-${PORTVERSION}.jar \
 		jna-3.3.0.jar \
@@ -71,26 +70,23 @@ post-patch:
 	${SED} -i .bak -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/config/elasticsearch.yml
 
 do-install:
-	${INSTALL} -d -o ${SEARCHUSER} -g ${SEARCHUSER} -m 750 ${PREFIX}/etc/elasticsearch
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/elasticsearch
 .for f in ${CONFIG_FILES}
-	${INSTALL} -o ${SEARCHUSER} -g ${SEARCHUSER} -m 444 ${WRKSRC}/config/${f} ${PREFIX}/etc/elasticsearch/${f}.sample
-	@if [ ! -f ${CONFIG_DIR}/${f} ]; then \
-		${CP} -p ${PREFIX}/etc/elasticsearch/${f}.sample ${PREFIX}/etc/elasticsearch/${f} ; \
-	fi
+	${INSTALL} -m 440 ${WRKSRC}/config/${f} ${STAGEDIR}${PREFIX}/etc/elasticsearch/${f}.sample
 .endfor
-	${INSTALL_SCRIPT} ${WRKDIR}/elasticsearch-plugin ${PREFIX}/bin/elasticsearch-plugin
-	${MKDIR} ${PREFIX}/lib/elasticsearch
+	${INSTALL_SCRIPT} ${WRKDIR}/elasticsearch-plugin ${STAGEDIR}${PREFIX}/bin/elasticsearch-plugin
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/elasticsearch
 .for f in ${JARS}
-	${INSTALL_DATA} ${WRKSRC}/lib/${f} ${PREFIX}/lib/elasticsearch/
+	${INSTALL_DATA} ${WRKSRC}/lib/${f} ${STAGEDIR}${PREFIX}/lib/elasticsearch/
 .endfor
 
-	${MKDIR} ${PREFIX}/lib/elasticsearch/sigar
-	${INSTALL_DATA} ${WRKSRC}/lib/sigar/sigar-1.6.4.jar ${PREFIX}/lib/elasticsearch/sigar/
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/elasticsearch/sigar
+	${INSTALL_DATA} ${WRKSRC}/lib/sigar/sigar-1.6.4.jar ${STAGEDIR}${PREFIX}/lib/elasticsearch/sigar/
 
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 .endif
 
