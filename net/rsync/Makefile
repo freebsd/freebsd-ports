@@ -139,10 +139,8 @@ pre-configure:
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/rsync
 	@${INSTALL_DATA} ${FILESDIR}/rsyncd.conf.sample ${STAGEDIR}${PREFIX}/etc/
-.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
-.endif
 
 test: build
 	@cd ${WRKSRC} && ${MAKE} check
