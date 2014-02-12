@@ -7,4 +7,8 @@ include/firetalk.h
 include/naim/modutil.h
 include/naim/naim.h
 include/naim/secs.h
+man/man1/naim.1.gz
+man/man1/nicq.1.gz
+man/man1/nirc.1.gz
+man/man1/nlily.1.gz
 @dirrm include/naim
