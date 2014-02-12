@@ -12,7 +12,4 @@ COMMENT=	Command-line nutrition analysis program
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=		pantry.1 pantryd.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
