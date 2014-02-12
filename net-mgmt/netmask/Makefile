@@ -15,9 +15,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 GNU_CONFIGURE=	yes
 USES=		gmake
 
-MAN1=		netmask.1
 INFO=		netmask
-PLIST_FILES=	bin/netmask
+PLIST_FILES=	bin/netmask \
+		man/man1/netmask.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
