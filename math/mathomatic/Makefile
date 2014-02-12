@@ -37,7 +37,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/icons/mathomatic.desktop \
 		${STAGEDIR}${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/icons/mathomatic.png ${STAGEDIR}${PREFIX}/share/pixmaps
-.if ${PORT_OPTIONS:MDOCS}
 .for d in m4 tests
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/${d}
 	${INSTALL_DATA} ${WRKSRC}/${d}/* ${STAGEDIR}${DOCSDIR}/${d}
@@ -47,6 +46,5 @@ do-install:
 .for f in AUTHORS README.txt changes.txt
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
 .endfor
-.endif
 
 .include <bsd.port.mk>
