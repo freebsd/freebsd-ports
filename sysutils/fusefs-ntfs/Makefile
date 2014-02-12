@@ -24,7 +24,7 @@ CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --disable-mount-helper \
 CPPFLAGS+=	-I${WRKSRC}/include/ntfs-3g/ -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	LOCK UBLIO
+OPTIONS_DEFINE=	LOCK UBLIO DOCS
 OPTIONS_DEFAULT=LOCK UBLIO
 LOCK_DESC=	Lock the device when mounting (avoids access)
 UBLIO_DESC=	Enable user space cache for improved speed
@@ -51,14 +51,8 @@ post-patch:
 		${WRKSRC}/libntfs-3g/security.c
 	@${REINPLACE_CMD} -e 's|\($$(AM_CFLAGS)\) \(-I$$(top_srcdir)/include/ntfs-3g\)|\2 \1|' \
 		${WRKSRC}/libntfs-3g/Makefile.in
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -Ee 's|^(install-data-am:) .*|\1|' \
-		${WRKSRC}/Makefile.in
-.endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${STAGEDIR}${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.post.mk>
