@@ -13,6 +13,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	numisemis@yahoo.com
 COMMENT=	Ruby interface to Oracle OCI8
 
+BROKEN=		Does not configure
+
 BUILD_DEPENDS=	${LOCALBASE}/oracle8-client/lib/libclntsh.a:${PORTSDIR}/databases/oracle8-client
 RUN_DEPENDS=	${LOCALBASE}/oracle8-client/lib/libclntsh.a:${PORTSDIR}/databases/oracle8-client
 
