@@ -13,11 +13,9 @@ LICENSE=	MIT
 
 USES=		gmake
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man8/omping.8.gz
 
-MAN8=		${PORTNAME}.8
-
-NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} -e 's|/share/man|/man|g' ${WRKSRC}/Makefile
 
