@@ -1,5 +1,5 @@
---- astro.h.orig	Sun Mar  6 22:43:59 2005
-+++ astro.h	Sun Mar  6 22:44:05 2005
+--- ./astro.h.orig	2003-01-28 01:55:32.000000000 +0100
++++ ./astro.h	2014-02-12 22:38:52.437019902 +0100
 @@ -43,4 +43,4 @@
   */
  extern double phase( double pdate, double* pphase, double* mage, double* dist, double* angdia, double* sudist, double* suangdia );
