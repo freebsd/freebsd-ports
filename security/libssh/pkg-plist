@@ -7,14 +7,14 @@ include/libssh/sftp.h
 include/libssh/ssh2.h
 lib/cmake/libssh/libssh-config.cmake
 lib/cmake/libssh/libssh-config-version.cmake
-lib/libssh.a
+%%STATIC%%lib/libssh.a
 lib/libssh.so
 lib/libssh.so.4
-lib/libssh.so.4.3.0
-lib/libssh_threads.a
+lib/libssh.so.4.4.0
+%%STATIC%%lib/libssh_threads.a
 lib/libssh_threads.so
 lib/libssh_threads.so.4
-lib/libssh_threads.so.4.3.0
+lib/libssh_threads.so.4.4.0
 libdata/pkgconfig/libssh.pc
 libdata/pkgconfig/libssh_threads.pc
 @dirrm lib/cmake/libssh
