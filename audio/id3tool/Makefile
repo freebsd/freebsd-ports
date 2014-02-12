@@ -9,9 +9,8 @@ MASTER_SITES=	http://nekohako.xware.cx/id3tool/
 MAINTAINER=	gavin@FreeBSD.org
 COMMENT=	A utility for manipulating mp3 ID3 Tags
 
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
-MAN1=		id3tool.1
-PLIST_FILES=	bin/id3tool
+
+PLIST_FILES=	bin/id3tool man/man1/id3tool.1.gz
 
 .include <bsd.port.mk>
