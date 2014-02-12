@@ -95,4 +95,11 @@ CONFIGURE_ARGS+=	--without-id3
 PLIST_SUB+=	ID3="@comment "
 .endif
 
+.if ! ${PORT_OPTIONS:MX11}
+post-patch:
+	@${REINPLACE_CMD} -e '/MY_LIBS =/s/-lXext -lX11//' \
+	${WRKSRC}/src/lib/Makefile.in
+
+.endif
+
 .include <bsd.port.mk>
