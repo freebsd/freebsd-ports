@@ -3,19 +3,21 @@
 
 PORTNAME=	vtk
 PORTVERSION=	5.10.1
+PORTREVISION=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${PORTVERSION:R}/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
+PKGNAMESUFFIX=	5
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	The Visualization Toolkit
 
-LIB_DEPENDS=	expat.[5-6]:${PORTSDIR}/textproc/expat2 \
-		jpeg:${PORTSDIR}/graphics/jpeg \
-		png15:${PORTSDIR}/graphics/png \
-		tiff:${PORTSDIR}/graphics/tiff
+LICENSE=	BSD3CLAUSE
 
-LATEST_LINK=	vtk5
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2 \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libpng15.so:${PORTSDIR}/graphics/png \
+		libtiff.so:${PORTSDIR}/graphics/tiff
 
 WRKSRC=		${WRKDIR}/VTK${PORTVERSION}
 
@@ -28,8 +30,8 @@ USE_XORG=	xt
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${PORTVERSION:R}
 CXXFLAGS+=	-DUSE_INTERP_ERRORLINE
 
-OPTIONS_DEFINE=	SHARED VTKMPEG2 GL2PS OSMESA QT4 JAVA PYTHON TCLTK \
-		DBGLEAKS LEGACY
+OPTIONS_DEFINE=	SHARED THEORA VTKMPEG2 GL2PS OSMESA QT4 JAVA \
+		PYTHON TCLTK DBGLEAKS LEGACY
 OPTIONS_DEFAULT=SHARED GL2PS QT4 PYTHON TCLTK LEGACY
 
 SHARED_DESC=	Build shared libraries
@@ -43,9 +45,7 @@ PLIST_SUB+=	VER1="${PORTVERSION}" \
 		VER2="${PORTVERSION:R}" \
 		VER3="${PORTVERSION:R:R}"
 
-MAN3=		vtk.3
 PORTDOCS=	README.html
-
 
 CMAKE_ARGS+=	-DBUILD_DOCUMENTATION:BOOL=ON \
 		-DBUILD_TESTING:BOOL=OFF \
@@ -58,7 +58,6 @@ CMAKE_ARGS+=	-DBUILD_DOCUMENTATION:BOOL=ON \
 		-DOPENGL_gl_LIBRARY:FILEPATH=${LOCALBASE}/lib/libGL.so \
 		-DOPENGL_glu_LIBRARY:FILEPATH=${LOCALBASE}/lib/libGLU.so
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSHARED}
@@ -82,18 +81,28 @@ PLIST_SUB+=	SHARED="@comment " \
 .endif
 
 .if ${PORT_OPTIONS:MVTKMPEG2}
-LIB_DEPENDS+=	vtkMPEG2Encode:${PORTSDIR}/multimedia/vtkmpeg2encode
+LIB_DEPENDS+=	libvtkMPEG2Encode.so:${PORTSDIR}/multimedia/vtkmpeg2encode
 PLIST_SUB+=	MPEG=""
 CMAKE_ARGS+=	-DVTK_USE_PATENTED:BOOL=ON \
 		-DVTK_USE_MPEG2_ENCODER:BOOL=ON \
-		-DvtkMPEG2Encode_INCLUDE_PATH=${LOCALBASE}/include/vtk-5.8 \
+		-DvtkMPEG2Encode_INCLUDE_PATH=${LOCALBASE}/include/vtk-${PORTVERSION:R} \
 		-DvtkMPEG2Encode_LIBRARIES=${LOCALBASE}/lib/libvtkMPEG2Encode.so
 .else
 PLIST_SUB+=	MPEG="@comment "
 .endif
 
+.if ${PORT_OPTIONS:MTHEORA}
+LIB_DEPENDS+=	libogg.so:${PORTSDIR}/audio/libogg \
+    		libtheora.so:${PORTSDIR}/multimedia/libtheora
+PLIST_SUB+=	THEORA=""
+CMAKE_ARGS+=	-DVTK_USE_OGGTHEORA_ENCODER:BOOL=ON
+.else
+PLIST_SUB+=	THEORA="@comment "
+CMAKE_ARGS+=	-DVTK_USE_OGGTHEORA_ENCODER:BOOL=OFF
+.endif
+
 .if ${PORT_OPTIONS:MGL2PS}
-LIB_DEPENDS+=	gl2ps:${PORTSDIR}/print/gl2ps
+LIB_DEPENDS+=	libgl2ps.so:${PORTSDIR}/print/gl2ps
 CMAKE_ARGS+=	-DVTK_USE_GL2PS:BOOL=ON
 PLIST_SUB+=	GL2PS=""
 .else
@@ -101,7 +110,7 @@ PLIST_SUB+=	GL2PS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MOSMESA}
-LIB_DEPENDS+=	OSMesa:${PORTSDIR}/graphics/libosmesa
+LIB_DEPENDS+=	libOSMesa.so:${PORTSDIR}/graphics/libosmesa
 CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
 		-DOSMESA_INCLUDE_DIR:PATH=${LOCALBASE}/include/Mesa \
 		-DOSMESA_LIBRARY:FILEPATH=${LOCALBASE}/lib/libOSMesa.so \
@@ -155,8 +164,7 @@ PLIST_SUB+=	TCLTK="@comment "
 
 # Used by both tcl/tk and python
 .if ${PORT_OPTIONS:MTCLTK} || ${PORT_OPTIONS:MPYTHON}
-USE_TCL=	84+
-USE_TK=		84+
+USES+=		tk
 CMAKE_ARGS+=	-DVTK_USE_TK:BOOL=ON \
 		-DTCL_INCLUDE_PATH=${TCL_INCLUDEDIR} \
 		-DTK_INCLUDE_PATH=${TK_INCLUDEDIR}
@@ -229,16 +237,16 @@ post-configure:
 
 pre-install:
 .if ${PORT_OPTIONS:MPYTHON}
-	${MKDIR} ${PYTHONPREFIX_SITELIBDIR}
+	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 .endif
-	${MKDIR} ${MANPREFIX}/man/man3
-	${INSTALL_MAN} ${WRKDIR}/vtk.3 ${MANPREFIX}/man/man3
+	${MKDIR} ${STAGEDIR}${PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKDIR}/vtk.3 ${STAGEDIR}${PREFIX}/man/man3
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.html ${STAGEDIR}${DOCSDIR}
 .endif
 
-LIBS_TOFIX=	vtkNetCDF_cxx vtkhdf5
+LIBS_TOFIX=	vtkNetCDF_cxx vtkhdf5 vtkhdf5_hl
 LIBDIR=		${PREFIX}/lib/vtk-${PORTVERSION:R}/
 
 post-install:
@@ -246,16 +254,19 @@ post-install:
 # only installs lib.so.x.y and lib.so.x.y.z.
 .if ${PORT_OPTIONS:MSHARED}
 	@for lib in ${LIBS_TOFIX}; do \
-		${CP} ${LIBDIR}/lib$$lib.so ${LIBDIR}/lib$$lib.so.${PORTVERSION}; \
+		${CP} ${STAGEDIR}${LIBDIR}/lib$$lib.so ${STAGEDIR}${LIBDIR}/lib$$lib.so.${PORTVERSION}; \
+		${LN} -sf lib$$lib.so.${PORTVERSION} ${STAGEDIR}${LIBDIR}/lib$$lib.so.${PORTVERSION:R}; \
 	done
-	@for lib in ${LIBDIR}/*.so; do \
+	@cd ${STAGEDIR}${LIBDIR}; \
+	for lib in *.so; do \
 	    ${RM} -f $$lib; \
-		 ${LN} -sf $$lib.${PORTVERSION} $$lib.${PORTVERSION:R}; \
-		 ${LN} -sf $$lib.${PORTVERSION:R} $$lib.${PORTVERSION:R:R}; \
-		 ${LN} -sf $$lib.${PORTVERSION:R:R} $$lib; \
+	    ${LN} -sf $$lib.${PORTVERSION} $$lib.${PORTVERSION:R}; \
+	    ${LN} -sf $$lib.${PORTVERSION:R} $$lib.${PORTVERSION:R:R}; \
+	    ${LN} -sf $$lib.${PORTVERSION:R:R} $$lib; \
 	done
 .if ${PORT_OPTIONS:MQT4}
-	@for lib in ${LIBDIR}/libQVTK*.so; do \
+	@cd ${STAGEDIR}${LIBDIR}; \
+	for lib in libQVTK*.so; do \
 	    ${RM} -f $$lib; \
 	    ${LN} -sf $$lib.${PORTVERSION} $$lib; \
 	    ${LN} -sf $$lib.${PORTVERSION} $$lib.${PORTVERSION:R:R}; \

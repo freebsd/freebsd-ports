@@ -1,5 +1,7 @@
+man/man3/vtk.3.gz
 %%GL2PS%%include/vtk-%%VER2%%/vtkGL2PSExporter.h
 %%MPEG%%include/vtk-%%VER2%%/vtkMPEG2Writer.h
+%%THEORA%%include/vtk-%%VER2%%/vtkOggTheoraWriter.h
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/__helper.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/__helper.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/vtk/__init__.py
@@ -134,6 +136,14 @@
 %%PYTHON%%include/vtk-%%VER2%%/PyVTKTemplate.h
 %%PYTHON%%include/vtk-%%VER2%%/PyVTKMutableObject.h
 %%PYTHON%%include/vtk-%%VER2%%/vtkPythonConfigure.h
+%%THEORA%%include/vtk-%%VER2%%/vtkoggtheora/include/ogg/config_types.h
+%%THEORA%%include/vtk-%%VER2%%/vtkoggtheora/include/ogg/ogg.h
+%%THEORA%%include/vtk-%%VER2%%/vtkoggtheora/include/ogg/os_types.h
+%%THEORA%%include/vtk-%%VER2%%/vtkoggtheora/include/theora/codec.h
+%%THEORA%%include/vtk-%%VER2%%/vtkoggtheora/include/theora/theora.h
+%%THEORA%%include/vtk-%%VER2%%/vtkoggtheora/include/theora/theoradec.h
+%%THEORA%%include/vtk-%%VER2%%/vtkoggtheora/include/theora/theoraenc.h
+%%THEORA%%include/vtk-%%VER2%%/vtkoggtheora/include/vtk_oggtheora_mangle.h
 %%STATIC%%lib/vtk-%%VER2%%/libCosmo.a
 %%STATIC%%lib/vtk-%%VER2%%/libMapReduceMPI.a
 %%STATIC%%lib/vtk-%%VER2%%/libVPIC.a
@@ -422,6 +432,10 @@
 %%SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkWidgetsTCL.so.%%VER1%%
 %%SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkWidgetsTCL.so.%%VER2%%
 %%SHARED%%%%TCLTK%%lib/vtk-%%VER2%%/libvtkWidgetsTCL.so.%%VER3%%
+%%SHARED%%%%THEORA%%lib/vtk-%%VER2%%/libvtkoggtheora.so
+%%SHARED%%%%THEORA%%lib/vtk-%%VER2%%/libvtkoggtheora.so.%%VER1%%
+%%SHARED%%%%THEORA%%lib/vtk-%%VER2%%/libvtkoggtheora.so.%%VER2%%
+%%SHARED%%%%THEORA%%lib/vtk-%%VER2%%/libvtkoggtheora.so.%%VER3%%
 %%TCLTK%%lib/vtk-%%VER2%%/pkgIndex.tcl
 %%TCLTK%%lib/vtk-%%VER2%%/tcl/README
 %%TCLTK%%lib/vtk-%%VER2%%/tcl/vtk/vtk.tcl
@@ -3061,6 +3075,7 @@ lib/vtk-%%VER2%%/hints
 %%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5.so.%%VER3%%
 %%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5.so.1.8.5
 %%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5_hl.so
+%%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5_hl.so.%%VER1%%
 %%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5_hl.so.%%VER2%%
 %%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5_hl.so.%%VER3%%
 %%SHARED%%lib/vtk-%%VER2%%/libvtkhdf5_hl.so.1.8.5
@@ -3196,5 +3211,9 @@ lib/vtk-%%VER2%%/vtkWidgetsKit.cmake
 %%STATIC%%@dirrm include/vtk-%%VER2%%/vtkpng
 %%STATIC%%@dirrm include/vtk-%%VER2%%/vtktiff
 %%STATIC%%@dirrm include/vtk-%%VER2%%/vtkexpat
+%%THEORA%%@dirrm include/vtk-%%VER2%%/vtkoggtheora/include/theora
+%%THEORA%%@dirrm include/vtk-%%VER2%%/vtkoggtheora/include/ogg
+%%THEORA%%@dirrm include/vtk-%%VER2%%/vtkoggtheora/include
+%%THEORA%%@dirrm include/vtk-%%VER2%%/vtkoggtheora
 @comment The following directory is shared with multimedia/vtkmpeg2encode
 @dirrmtry include/vtk-%%VER2%%
