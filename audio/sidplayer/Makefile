@@ -29,10 +29,8 @@ post-patch:
 
 do-install:
 	${INSTALL} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/PSID\ Demo/* ${STAGEDIR}${DOCSDIR}
-.endif
 
 post-install:
 	@${ECHO_MSG} "=============================================================="
