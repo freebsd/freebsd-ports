@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libgloox.so:${PORTSDIR}/net-im/gloox \
 		libboost_regex.so:${PORTSDIR}/devel/boost-libs
 
-USES=		cmake
+USES=		cmake pkgconfig
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
 DOCFILES=	README
