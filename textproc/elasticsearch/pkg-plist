@@ -1,15 +1,15 @@
+@owner %%SEARCHUSER%%
+@group %%SEARCHGROUP%%
 @unexec if cmp  -s %D/etc/elasticsearch/elasticsearch.yml.sample %D/etc/elasticsearch/elasticsearch.yml; then rm -f %D/etc/elasticsearch/elasticsearch.yml; fi
 etc/elasticsearch/elasticsearch.yml.sample
 @exec if [ ! -f %D/etc/elasticsearch/elasticsearch.yml ] ; then cp -p %D/%F %B/elasticsearch.yml; fi
 @unexec if cmp  -s %D/etc/elasticsearch/logging.yml.sample %D/etc/elasticsearch/logging.yml; then rm -f %D/etc/elasticsearch/logging.yml; fi
 etc/elasticsearch/logging.yml.sample
 @exec if [ ! -f %D/etc/elasticsearch/logging.yml ] ; then cp -p %D/%F %B/logging.yml; fi
-@exec install -d -o %%SEARCHUSER%% -g %%SEARCHGROUP%% %%ELASTIC_DBDIR%%
-@dirrmtry %%ELASTIC_LOGDIR%%
 @unexec if [ -d %%ELASTIC_LOGDIR%% ]; then echo "You should remove %%ELASTIC_LOGDIR%% if you don't need it any more."; fi
-@exec install -d -o %%SEARCHUSER%% -g %%SEARCHGROUP%% %%ELASTIC_LOGDIR%%
-@dirrmtry %%ELASTIC_DBDIR%%
 @unexec if [ -d %%ELASTIC_DBDIR%% ]; then echo "You should remove %%ELASTIC_DBDIR%% if you don't need it any more."; fi
+@owner
+@group
 bin/elasticsearch-plugin
 lib/elasticsearch/elasticsearch-%%PORTVERSION%%.jar
 lib/elasticsearch/jna-3.3.0.jar
