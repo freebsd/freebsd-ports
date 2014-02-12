@@ -2,30 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	cfgparse
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	devel python
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/v01_02
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	cfgparse-v01_02
 
 MAINTAINER=	jdferrell3@yahoo.com
 COMMENT=	Python module for parsing configuration files
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=	cfgparse
-PYDISTUTILS_EGGINFO=	${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-v01_02-${PYTHON_VERSION:S/thon//}.egg-info
+USES=			dos2unix
+DOS2UNIX_FILES=		cfgparse.py
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+USE_ZIP=		yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+PORTDOCS=	*
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/cfgparse/* ${DOCSDIR}
-.endif
-
-PLIST_SUB=	PYTHONVER=${PYTHON_VERSION:S/python//}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
