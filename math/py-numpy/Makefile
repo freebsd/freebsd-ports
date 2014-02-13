@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	numpy
-PORTVERSION=	1.7.0
-PORTREVISION=	2
+PORTVERSION=	1.8.0
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME:C/\..$/.0/}/:doc \
@@ -17,24 +16,26 @@ EXTRACT_ONLY=	numpy-${PORTVERSION:S/r/rc/}${EXTRACT_SUFX}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	The New Numeric Extension to Python
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 RUN_DEPENDS=	nosetests:${PORTSDIR}/devel/py-nose
 
-OPTIONS_DEFINE=	ATLAS SUITESPARSE
+OPTIONS_DEFINE=		ATLAS SUITESPARSE
 OPTIONS_DEFAULT=	SUITESPARSE
-ATLAS_DESC=	Use optimized blas library
+ATLAS_DESC=		Use optimized blas library
 SUITESPARSE_DESC=	Use AMD and UMFPACK in SuiteSparse
 
-USE_FORTRAN=	yes
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-MAN1=		f2py.1
+USE_FORTRAN=			yes
+USE_PYTHON=			yes
+USE_PYDISTUTILS=		yes
+PYDISTUTILS_CONFIGUREARGS+=	--fcompiler=gnu95
+PYDISTUTILS_BUILDARGS+=		--fcompiler=gnu95
+PYTHON_PY3K_PLIST_HACK=		yes
 
+PORTDOCS=	*
 LATEST_LINK=	py-${PORTNAME}
-WRKSRC=	${WRKDIR}/${DISTNAME:S/r/rc/}
+WRKSRC=		${WRKDIR}/${DISTNAME:S/r/rc/}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if (${OSVERSION} <= 703100 || \
@@ -55,21 +56,14 @@ DISTFILES+=	${FP_ARCH}/fenv.c?p=203441:fp ${FP_ARCH}/fenv.h?p=203441:fp
 .endif
 
 .if ${PORT_OPTIONS:MATLAS}
-LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 .else
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack \
-		blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack \
+		libblas.so:${PORTSDIR}/math/blas
 .endif
 
 .if ${PORT_OPTIONS:MSUITESPARSE}
-LIB_DEPENDS+=	umfpack.1:${PORTSDIR}/math/suitesparse
-.endif
-
-PYDISTUTILS_CONFIGUREARGS+=	--fcompiler=gnu95
-PYDISTUTILS_BUILDARGS+=	--fcompiler=gnu95
-
-.if ${PYTHON_REL} >= 320
-.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
+LIB_DEPENDS+=	libumfpack.so:${PORTSDIR}/math/suitesparse
 .endif
 
 post-extract:
@@ -113,12 +107,11 @@ pre-install:
 .endif
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/numpy/f2py/f2py.1 ${MAN1PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/numpy-ref-${PORTVERSION}.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/numpy-user-${PORTVERSION}.pdf ${DOCSDIR}
-.endif
+	${INSTALL_MAN} ${WRKSRC}/numpy/f2py/f2py.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/numpy-ref-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/numpy-user-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
+
 .if defined(WITH_FIXED_FENV)
 	@if [ "`${PKG_VERSION} -t \"\`\\\`${CC} -print-prog-name=as\\\` --version | ${AWK} 'NR==1 {sub(/\(GNU Binutils\)/,""); print $$3}'\`\" 2.18.49`" = ">" ] ; then \
 		${REINPLACE_CMD} -e "s|%%FENV%%||g" ${TMPPLIST}; \
