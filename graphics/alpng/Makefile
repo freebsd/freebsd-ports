@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}13
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Library for display PNG images in programs
 
-LIB_DEPENDS+=	alleg:${PORTSDIR}/devel/allegro
+LIB_DEPENDS=	liballeg.so:${PORTSDIR}/devel/allegro
 
 HAS_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}
@@ -23,12 +23,11 @@ CFLAGS+=	-I${LOCALBASE}/include
 PLIST_FILES=	include/alpng.h \
 		lib/libalpng.a
 
-NO_STAGE=	yes
 do-configure:
 	@${REINPLACE_CMD} -e "s/gcc/${CC}/g" ${WRKSRC}/makefile
 
 do-install:
-		${INSTALL_DATA} ${WRKSRC}/libalpng.a ${PREFIX}/lib/libalpng.a
-		${INSTALL_DATA} ${WRKSRC}/src/alpng.h ${PREFIX}/include/alpng.h
+	${INSTALL_DATA} ${WRKSRC}/libalpng.a ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/src/alpng.h ${STAGEDIR}${PREFIX}/include/
 
 .include <bsd.port.mk>
