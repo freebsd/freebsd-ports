@@ -30,7 +30,7 @@ MLINKS=		fcatcmd.1 fcat.1 fcdcmd.1 fcd.1 fducmd.1 fdu.1 \
 		frmdircmd.1 frmdir.1 fstatcmd.1 fstat.1 fmvcmd.1 fmv.1 \
 		fsetupcmd.1 fsetup.1
 
-USE_SCONS=	yes
+USES=		scons
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
@@ -42,7 +42,7 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MINFINITE}
-SCONS_ARGS+=	disable-timeout=yes
+MAKE_ARGS+=	disable-timeout=yes
 .endif
 
 .if ! ${PORT_OPTIONS:MNOCLIENTS}
