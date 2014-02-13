@@ -22,8 +22,6 @@ MAKE_ARGS=	prefix="${STAGEDIR}${PREFIX}" CC="${CC}" CCOPTS="${CFLAGS}" WARNINGS=
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
