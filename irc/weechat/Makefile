@@ -3,8 +3,12 @@
 
 PORTNAME=	weechat
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	irc
-MASTER_SITES=	http://weechat.org/files/src/
+MASTER_SITES=	http://weechat.org/files/src/ \
+		http://perturb.me.uk/distfiles/weechat/:mandocs \
+		${MASTER_SITE_LOCAL:S/$/:mandocs/}
+MASTER_SITE_SUBDIR=	jase/weechat/:mandocs
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jase@FreeBSD.org
@@ -118,12 +122,20 @@ CMAKE_ARGS+=	-DENABLE_LUA=no
 PLIST_SUB+=	LUA="@comment "
 .endif
 
+.if defined(MAINTAINER_MODE)
+BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
+		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
+		asciidoc:${PORTSDIR}/textproc/asciidoc \
+		source-highlight>=3.1.5:${PORTSDIR}/textproc/source-highlight
+CMAKE_ARGS+=	-DENABLE_MAN=yes -DMANDIR=${MANPREFIX}/man -DENABLE_DOC=yes
+.else
+CMAKE_ARGS+=	-DENABLE_MAN=no -DENABLE_DOC=no
+.endif
+
 .if ${PORT_OPTIONS:MDOCS}
 PLIST_SUB+=	DOCS=""
 .if !defined(MAINTAINER_MODE)
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:doc/}
-MASTER_SITE_SUBDIR+=	jase/weechat/:doc
-DISTFILES+=	${DISTNAME}-docs.txz:doc
+DISTFILES+=	${DISTNAME}-docs.txz:mandocs
 .endif
 .else
 PLIST_SUB+=	DOCS="@comment "
@@ -132,9 +144,7 @@ PLIST_SUB+=	DOCS="@comment "
 .if ${PORT_OPTIONS:MMANPAGES}
 PLIST_SUB+=	MANPAGES=""
 .if !defined(MAINTAINER_MODE)
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:man/}
-MASTER_SITE_SUBDIR+=	jase/weechat/:man
-DISTFILES+=	${DISTNAME}-manpages.txz:man
+DISTFILES+=	${DISTNAME}-manpages.txz:mandocs
 .endif
 .else
 PLIST_SUB+=	MANPAGES="@comment "
@@ -148,16 +158,6 @@ LIB_DEPENDS+=	execinfo:${PORTSDIR}/devel/libexecinfo
 PLIST_SUB+=	ICON=""
 .else
 PLIST_SUB+=	ICON="@comment "
-.endif
-
-.if defined(MAINTAINER_MODE)
-BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
-		asciidoc:${PORTSDIR}/textproc/asciidoc \
-		source-highlight>=3.1.5:${PORTSDIR}/textproc/source-highlight
-CMAKE_ARGS+=	-DENABLE_MAN=yes -DMANDIR=${MANPREFIX}/man -DENABLE_DOC=yes
-.else
-CMAKE_ARGS+=	-DENABLE_MAN=no -DENABLE_DOC=no
 .endif
 
 post-patch:
