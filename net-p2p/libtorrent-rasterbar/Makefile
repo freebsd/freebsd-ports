@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libtorrent-rasterbar
-PORTVERSION=	0.16.13
-PORTREVISION=	3
+PORTVERSION=	0.16.14
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME:S/-rasterbar//}/${PORTNAME:S/-rasterbar//}/
 
@@ -18,14 +17,9 @@ LIB_DEPENDS?=	libboost_date_time.so:${PORTSDIR}/devel/boost-libs \
 USES=		compiler:c++11-lang pathfix pkgconfig iconv
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CFLAGS+=	-w
 USE_LDCONFIG=	yes
 
-# Wrong versioning upstream
-PORTSCOUT=	skipv:0.16.14
-
-CONFIGURE_ARGS=	--disable-debug \
-		--disable-static \
+CONFIGURE_ARGS=	--disable-static \
 		--enable-dht \
 		--enable-encryption \
 		--enable-pool-allocators \
@@ -53,8 +47,10 @@ DOC_FILES2=	*.png *.jpg *.gif *.html *.rst *.css
 
 PORTEXAMPLES=	*.cpp
 
-OPTIONS_DEFINE=	DOCS EXAMPLES STRIP
+OPTIONS_DEFINE=	DEBUG DOCS EXAMPLES STRIP
 OPTIONS_DEFAULT=	STRIP
+
+DEBUG_CONFIGURE_ENABLE=	debug
 
 .include <bsd.port.options.mk>
 
