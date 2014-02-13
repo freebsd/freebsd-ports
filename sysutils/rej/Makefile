@@ -19,8 +19,6 @@ PLIST_FILES=	bin/rej bin/rej-qp bin/rej-mp
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|' \
 		${WRKSRC}/runtests.sh
