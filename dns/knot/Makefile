@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	knot
-DISTVERSION=	1.3.3
-PORTREVISION=	1
+DISTVERSION=	1.4.2
 CATEGORIES=	dns ipv6
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		http://dns-lab.com/downloads/knot-dns/
@@ -20,27 +19,37 @@ LIB_DEPENDS=	liburcu.so:${PORTSDIR}/sysutils/liburcu
 USE_AUTOTOOLS=	libtool
 
 USE_LDCONFIG=	yes
+
 USE_OPENSSL=	yes
+WITH_OPENSSL_PORT=yes
+
 GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS+=--with-storage=/var/db/knot
+CONFIGURE_ARGS+=--with-rundir=/var/run/knot
 
 SUB_FILES=	pkg-message
 
-USE_RC_SUBR=	${PORTNAME}d
+USE_RC_SUBR=	${PORTNAME}
 
 INFO=		knot
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README THANKS
 
-OPTIONS_DEFINE=	DOCS
+USERS=		knot
+GROUPS=		knot
+SUB_LIST+=	USERS="${USERS}" GROUPS="${GROUPS}"
+
+post-patch:
+	${REINPLACE_CMD} 's|$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|#$$(INSTALL) -d $$(DESTDIR)/\@run_dir\@|' \
+		${WRKSRC}/src/Makefile.in
+	${REINPLACE_CMD} 's|$$(INSTALL) -d $$(DESTDIR)/\@storage_dir\@|#$$(INSTALL) -d $$(DESTDIR)/\@storage_dir\@|' \
+		${WRKSRC}/src/Makefile.in
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/knot.sample.conf ${STAGEDIR}${ETCDIR}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}/
-	@${MKDIR} ${PREFIX}/var/lib/knot
-	@${MKDIR} ${PREFIX}/var/run/knot
-	@${CHOWN} 53:53 ${PREFIX}/var/lib/knot
-	@${CHOWN} 53:53 ${PREFIX}/var/run/knot
 
 .include <bsd.port.mk>
