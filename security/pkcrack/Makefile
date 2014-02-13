@@ -18,8 +18,6 @@ PORTDOCS=	README pkzip.ps.gz
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 .for f in pkcrack zipdecrypt
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
