@@ -17,8 +17,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-build:
 	${CC} ${WRKSRC}/idea.c ${WRKSRC}/idea_cmd.c ${CFLAGS} \
 		-o ${WRKSRC}/${PORTNAME}
