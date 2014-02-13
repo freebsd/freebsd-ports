@@ -24,7 +24,7 @@ NOMAN=		defined
 USE_BZIP2=	yes
 USE_GCC=	4.2+
 USE_PYTHON_BUILD=	2
-USE_SCONS=	yes
+USES=		scons
 NO_STAGE=	yes
 #USE_OPENSSL=	yes
 
@@ -59,38 +59,38 @@ do-fetch:
 XORP_GROUP=	xorp
 USE_RC_SUBR=	xorp
 
-SCONS_ARGS+=	prefix=${PREFIX}
+MAKE_ARGS+=	prefix=${PREFIX}
 
 .if ${PORT_OPTIONS:MOPTIMIZE}
-SCONS_ARGS+=	optimize=yes
+MAKE_ARGS+=	optimize=yes
 .else
-SCONS_ARGS+=	optimize=no
+MAKE_ARGS+=	optimize=no
 .endif
 
 .if ${PORT_OPTIONS:MSHARED}
-SCONS_ARGS+=	shared=true
+MAKE_ARGS+=	shared=true
 PLIST_SUB+=	XORP_SHLIB=""
 USE_LDCONFIG=	${PREFIX}/lib/xorp/lib
 . if ${PORT_OPTIONS:MORIGIN}
-SCONS_ARGS+=	origin=true
+MAKE_ARGS+=	origin=true
 . else
-SCONS_ARGS+=	origin=false
+MAKE_ARGS+=	origin=false
 . endif
 .else
-SCONS_ARGS+=	shared=false
+MAKE_ARGS+=	shared=false
 PLIST_SUB+=	XORP_SHLIB="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSTRIP}
-SCONS_ARGS+=	strip=true
+MAKE_ARGS+=	strip=true
 .else
-SCONS_ARGS+=	strip=false
+MAKE_ARGS+=	strip=false
 .endif
 
 .if ${PORT_OPTIONS:MTCP_RPC}
-SCONS_ARGS+=	transport=tcp
+MAKE_ARGS+=	transport=tcp
 .else
-SCONS_ARGS+=	transport=local
+MAKE_ARGS+=	transport=local
 .endif
 
 .if ${ARCH} == "sparc64"
