@@ -12,22 +12,17 @@ MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/compression/ \
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Compression program - often used in QNX
 
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	prog
+
 MAKE_ARGS+=	CFLAGS="${CFLAGS} -I. -DCOMPAT" CC="${CC}"
-MAN1=		freeze.1 melt.1 unfreeze.1 fcat.1 statist.1
-PLIST_FILES=	bin/fcat bin/freeze bin/melt bin/statist bin/unfreeze
+
 PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS 
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
