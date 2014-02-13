@@ -23,8 +23,6 @@ OPTIONS_DEFINE=	DOCS
 
 MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 
-.include <bsd.port.options.mk>
-
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in NEWS README
