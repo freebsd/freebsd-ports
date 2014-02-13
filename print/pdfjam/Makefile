@@ -23,19 +23,14 @@ PORTDOCS=	PDFjam-README.html pdfdroplets.png
 
 NO_BUILD=	yes
 
-.include <bsd.port.options.mk>
-
 do-install:
-.for FILE in ${PROGS}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/${FILE} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man1/${FILE}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/pdfjam.conf ${STAGEDIR}${PREFIX}/etc/pdfjam.conf.dist
-.ifndef NOPORTDOCS
+	${INSTALL_SCRIPT} ${PROGS:S|^|${WRKSRC}/bin/|g} \
+		${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${PROGS:S|^|${WRKSRC}/man1/|g:S|$|.1|g} \
+		${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/pdfjam.conf \
+		${STAGEDIR}${PREFIX}/etc/pdfjam.conf.dist
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for FILE in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|g} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
