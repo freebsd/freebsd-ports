@@ -18,8 +18,6 @@ EXTRACT_AFTER_ARGS=	--exclude 'getopt*'	\
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e "s/-Werror//g" ${WRKSRC}/Makefile.in
 
