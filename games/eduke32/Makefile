@@ -39,7 +39,7 @@ NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .endif
 
 .if ${ARCH} == "sparc64"
