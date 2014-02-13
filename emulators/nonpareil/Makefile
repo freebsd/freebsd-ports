@@ -15,11 +15,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
-USES=		bison pkgconfig
+USES=		bison pkgconfig scons
 USE_GNOME=	gtk20 libxml2
 USE_SDL=	sdl
-USE_SCONS=	yes
-SCONS_ARGS=	prefix="${PREFIX}"
 
 PLIST_EXECS=	bin/modutil bin/nonpareil bin/uasm
 PLIST_DATA=	lib/nonpareil/21.kml lib/nonpareil/21.obj \
