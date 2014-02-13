@@ -5449,3 +5449,4 @@ databases/p5-DBD-mysql55|databases/p5-DBD-mysql|2014-02-12|If you need a differe
 databases/p5-DBD-mysql56|databases/p5-DBD-mysql|2014-02-12|If you need a different default MYSQL version, use DEFAULT_VERSIONS
 textproc/p5-ElasticSearch|textproc/p5-ElasticSearch-legacy|2014-02-12|This version is depricated in favour of the offical client
 x11-fonts/cosmic-sans-neue-mono|x11-fonts/fantasque-sans-mono|2014-02-13|Renamed upstream
+mail/zmailer||2014-02-13|Broken since at least last August
