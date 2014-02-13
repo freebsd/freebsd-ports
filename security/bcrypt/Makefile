@@ -19,8 +19,6 @@ PLIST_FILES=	bin/bcrypt man/man1/bcrypt.1.gz
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -E 's/^(CC|CFLAGS|LDFLAGS|PREFIX)\ /\1?/' \
 		${WRKSRC}/Makefile
