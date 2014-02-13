@@ -15,8 +15,6 @@ PORTDOCS=	COPYING ChangeLog README
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -E '/^(CC|CFLAGS)/d' \
 		${WRKSRC}/${MAKEFILE} \
