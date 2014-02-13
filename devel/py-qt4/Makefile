@@ -10,50 +10,23 @@ DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	The "meta-port" for PyQt4
+COMMENT=	Python bindings for the Qt 4 toolkit (meta port)
 
 USE_PYTHON=	yes
 
 NO_BUILD=	yes
+NO_INSTALL=	yes
 NO_MTREE=	yes
 
-PKGNAMEPREFIX2=	${PYTHON_PKGNAMEPREFIX}${PORTNAME}-
-
-RUN_DEPENDS+=	${PKGNAMEPREFIX2}core>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-core \
-		${PKGNAMEPREFIX2}gui>=${PYQT4_VERSION}:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		${PKGNAMEPREFIX2}network>=${PYQT4_VERSION}:${PORTSDIR}/net/py-qt4-network \
-		${PKGNAMEPREFIX2}xml>=${PYQT4_VERSION}:${PORTSDIR}/textproc/py-qt4-xml \
-		${PKGNAMEPREFIX2}assistant>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-assistant \
-		${PKGNAMEPREFIX2}opengl>=${PYQT4_VERSION}:${PORTSDIR}/x11/py-qt4-opengl \
-		${PKGNAMEPREFIX2}script>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-script \
-		${PKGNAMEPREFIX2}scripttools>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-scripttools \
-		${PKGNAMEPREFIX2}sql>=${PYQT4_VERSION}:${PORTSDIR}/databases/py-qt4-sql \
-		${PKGNAMEPREFIX2}svg>=${PYQT4_VERSION}:${PORTSDIR}/graphics/py-qt4-svg \
-		${PKGNAMEPREFIX2}test>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-test \
-		${PKGNAMEPREFIX2}declarative>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-declarative \
-		${PKGNAMEPREFIX2}designer>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-designer \
-		${PKGNAMEPREFIX2}designerplugin>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-designerplugin \
-		${PKGNAMEPREFIX2}dbus>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-dbus \
-		${PKGNAMEPREFIX2}dbussupport>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-dbussupport \
-		${PKGNAMEPREFIX2}xmlpatterns>=${PYQT4_VERSION}:${PORTSDIR}/textproc/py-qt4-xmlpatterns \
-		${PKGNAMEPREFIX2}help>=${PYQT4_VERSION}:${PORTSDIR}/devel/py-qt4-help \
-		${PKGNAMEPREFIX2}webkit>=${PYQT4_VERSION}:${PORTSDIR}/www/py-qt4-webkit \
-		${PKGNAMEPREFIX2}multimedia>=${PYQT4_VERSION}:${PORTSDIR}/multimedia/py-qt4-multimedia \
-		${PKGNAMEPREFIX2}phonon>=${PYQT4_VERSION}:${PORTSDIR}/multimedia/py-qt4-phonon \
-		${PKGNAMEPREFIX2}qscintilla2>=${QSCI2_VERSION}:${PORTSDIR}/devel/py-qt4-qscintilla2
+OPTIONS_DEFINE=	ALL ${PYQT4_COMPONENTS}
+OPTIONS_DEFAULT=	ALL
+ALL_DESC=	All PyQt4 components
 
 .include "${.CURDIR}/bsd.pyqt.mk"
-.include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MEXAMPLES}
-RUN_DEPENDS+=	${PKGNAMEPREFIX2}demo>=${PYQT4_VERSION}:${PORTSDIR}/misc/py-qt4-demo
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-RUN_DEPENDS+=	${PKGNAMEPREFIX2}doc>=${PYQT4_VERSION}:${PORTSDIR}/misc/py-qt4-doc
-.endif
-
-do-install:
-	${DO_NADA}
+.for component in ${PYQT4_COMPONENTS}
+${component}_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-${component}>=0:${PORTSDIR}/${${component}_PORT}
+ALL_RUN_DEPENDS+=		${${component}_RUN_DEPENDS}
+.endfor
 
 .include <bsd.port.mk>
