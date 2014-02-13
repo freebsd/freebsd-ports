@@ -30,8 +30,8 @@ OPTIONS_DEFAULT=SSL
 SM_DESC=	Use SpiderMonkey instead of V8 for JavaScript
 TEST_DESC=	Add support for running regression test
 
-USE_SCONS=	yes
-SCONS_ARGS=	--prefix=${STAGEDIR}${PREFIX} --cc=${CC} --cxx=${CXX} \
+USES=		scons
+MAKE_ARGS=	--prefix=${STAGEDIR}${PREFIX} --cc=${CC} --cxx=${CXX} \
 		--use-system-pcre --use-system-snappy \
 		--full --sharedclient
 
@@ -45,32 +45,32 @@ PORTSCOUT=	limitw:1,even
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSM}
-SCONS_ARGS+=	--usesm --use-system-sm
+MAKE_ARGS+=	--usesm --use-system-sm
 LIB_DEPENDS+=	libjs.so:${PORTSDIR}/lang/spidermonkey17
 .else
-SCONS_ARGS+=	--usev8 --use-system-v8
+MAKE_ARGS+=	--usev8 --use-system-v8
 LIB_DEPENDS+=	libv8.so:${PORTSDIR}/lang/v8
 .endif
 
 .if ${PORT_OPTIONS:MSSL}
 USE_OPENSSL=	yes
-SCONS_ARGS+=	--ssl
+MAKE_ARGS+=	--ssl
 .endif
 
 .if ${PORT_OPTIONS:MSASL}
-SCONS_ARGS+=	--use-sasl-client
+MAKE_ARGS+=	--use-sasl-client
 LIB_DEPENDS+=	libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 .endif
 
 .if ${PORT_OPTIONS:MTEST}
 BUILD_DEPENDS=	pymongo>=2.5:${PORTSDIR}/databases/pymongo
-SCONS_TARGET=	all
+MAKE_TARGET=	all
 SMOKE_TESTS=	smokeAll smokeCppUnittests
 .	if ${PORT_OPTIONS:MSSL}
 SMOKE_TESTS+=	smokeSsl
 .	endif
 .else
-SCONS_TARGET=	core tools
+MAKE_TARGET=	core tools
 .endif
 
 .if ${OSVERSION} >= 1000024
@@ -87,7 +87,7 @@ post-patch:
 .if ${PORT_OPTIONS:MTEST}
 test: build-depends build
 	@cd ${BUILD_WRKSRC} && \
-		${SCONS_BIN} ${SCONS_ENV} ${SCONS_ARGS} ${SMOKE_TESTS}
+		${SCONS_BIN} ${SCONS_ENV} ${MAKE_ARGS} ${SMOKE_TESTS}
 .endif
 
 .include <bsd.port.mk>
