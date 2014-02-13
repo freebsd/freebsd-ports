@@ -5,3 +5,4 @@ lib/libggz.a
 lib/libggz.la
 lib/libggz.so
 lib/libggz.so.5
+man/man3/ggz.h.3.gz

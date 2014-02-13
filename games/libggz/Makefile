@@ -6,30 +6,30 @@ PORTVERSION=	${GGZ_VERSION}
 PORTREVISION=	11
 CATEGORIES=	games
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - Base Library
 
-LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-USE_AUTOTOOLS=	libtool
-USES=	pathfix
+USES=		libtool:oldver pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
 USE_LDCONFIG=	yes
 
-MAN3=	ggz.h.3
+INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
-.if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.26:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=	--with-tls=GnuTLS
-.else
-USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--with-tls=OpenSSL
-.endif
+OPTIONS_DEFAULT=	OPENSSL
+OPTIONS_SINGLE=		TLS
+OPTIONS_SINGLE_TLS=	GNUTLS OPENSSL
 
-NO_STAGE=	yes
+GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_CONFIGURE_ARGS=	--with-tls=GnuTLS
+
+OPENSSL_USE=		OPENSSL=yes
+OPENSSL_CONFIGURE_ARGS=	--with-tls=OpenSSL
+
 .include "${.CURDIR}/../libggz/bsd.ggz.mk"
 .include <bsd.port.mk>

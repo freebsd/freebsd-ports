@@ -6,31 +6,26 @@ PORTVERSION=	${GGZ_VERSION}
 PORTREVISION=	6
 CATEGORIES=	games
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - GTK+ Frontend
 
-USE_AUTOTOOLS=	libtool
+USES=		libtool:oldver
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
 USE_GGZ=	client
 USES=		pkgconfig
 
-MAN6=	ggz-gtk.6
+INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	NLS
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=	gettext
+NLS_CONFIGURE_ARGS=	--disable-nls
 
 .include "${.CURDIR}/../libggz/bsd.ggz.mk"
 .include <bsd.port.mk>
