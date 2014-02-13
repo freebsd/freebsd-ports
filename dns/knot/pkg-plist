@@ -14,6 +14,5 @@ bin/kdig
 bin/khost
 bin/knsec3hash
 bin/knsupdate
-info/dir
 sbin/knotc
 sbin/knotd
