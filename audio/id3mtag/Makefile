@@ -10,30 +10,25 @@ DISTNAME=	id3-${PORTVERSION}
 MAINTAINER=	squell@alumina.nl
 COMMENT=	Mass tagging utility for audio files
 
-MAN1=		id3.1
-PLIST_FILES=	bin/id3
+LICENSE=	BSD2CLAUSE
 
 MAKEFILE=	makefile
-NO_STAGE=	yes
 ALL_TARGET=	build
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 
-PORTDOCS=	*
+PLIST_FILES=	bin/id3 man/man1/id3.1.gz
+PORTDOCS=	README CHANGES
 
-OPTIONS_DEFINE=	DOCS 
-
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 do-install:
-	${MKDIR} ${PREFIX}/bin ${MANPREFIX}/man/man1
-	${INSTALL_PROGRAM} ${WRKSRC}/id3 ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/id3.man ${MANPREFIX}/man/man1/id3.1
-.if ${PORT_OPTIONS:MDOCS}
-		${MKDIR} ${DOCSDIR}
-		${INSTALL_DATA} ${WRKSRC}/README  ${DOCSDIR}
-		${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
-		${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
-.	endif
+	${MKDIR} ${PREFIX}/bin ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/id3 ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/id3.man ${STAGEDIR}${MANPREFIX}/man/man1/id3.1
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
