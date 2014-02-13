@@ -25,6 +25,7 @@ SOVERSION=	4
 PLIST_SUB=	PORTVERSION=${PORTVERSION:R} \
 		SOVERSION=${SOVERSION}
 SHEBANG_FILES=	${WRKSRC}/tools/splitconfig
+python_CMD=	${PYTHON_CMD}
 
 CONFIGURE_ARGS=	--enable-shared \
 		--disable-dependency-tracking
