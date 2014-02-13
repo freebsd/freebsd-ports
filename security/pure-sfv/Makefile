@@ -21,8 +21,6 @@ PORTDOCS=	ReadMe.txt
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -E 's/^(CFLAGS|CC)[ +=]*/\1?=/' \
 		${WRKSRC}/Makefile
