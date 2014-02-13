@@ -15,8 +15,6 @@ PORTDOCS=	MANUAL
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(INSTALL_PREFIX =\).*$$|\1 ${STAGEDIR}${PREFIX}|g' \
 		${WRKSRC}/Makefile
