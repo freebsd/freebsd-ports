@@ -20,11 +20,12 @@
  fi
  
  launchNbexec() {
-@@ -237,6 +241,7 @@
+@@ -237,6 +241,8 @@
              --jdkhome '"$netbeans_jdkhome"' \
              --branding nb \
              --clusters '"$netbeans_clusters"' \
 +            --nosplash \
++            -J-Dawt.useSystemAAFontSettings=default \
              -J-Dnetbeans.importclass=org.netbeans.upgrade.AutoUpgrade \
              -J-Dnetbeans.accept_license_class=org.netbeans.license.AcceptLicense \
              ${netbeans_default_options} \
