@@ -15,7 +15,6 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libboost_regex.so:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/lib/licq/protocol_icq.so:${PORTSDIR}/${LICQ_PORT}-icq
 
-USE_GCC=	yes
 USE_XORG=	x11 xext ice xscrnsaver
 USES=		cmake
 USE_QT4=	qmake_build moc_build rcc_build uic_build linguist_build
