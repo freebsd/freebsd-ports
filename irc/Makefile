@@ -4,6 +4,7 @@
     COMMENT = Internet Relay Chat utilities
 
     SUBDIR += anope
+    SUBDIR += atheme-services
     SUBDIR += bip
     SUBDIR += bitchx
     SUBDIR += bitlbee
