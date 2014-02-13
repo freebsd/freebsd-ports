@@ -17,8 +17,6 @@ PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|linux/limits.h|sys/syslimits.h|' \
 		${WRKSRC}/finder.c \
