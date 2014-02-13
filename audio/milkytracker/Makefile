@@ -32,8 +32,6 @@ ICONS=		carton.ico carton.png
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-install:
 .for f in ${ICONS}
 	${INSTALL_DATA} ${WRKSRC}/resources/pictures/${f} \
