@@ -172,6 +172,7 @@ pgbouncer:*:534:
 redis:*:535:
 _flowd:*:542:
 ejabberd:*:543:
+knot:*:553:
 qtss:*:554:
 ircdru:*:555:
 messagebus:*:556:
