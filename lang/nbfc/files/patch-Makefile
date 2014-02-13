@@ -1,0 +1,31 @@
+--- Makefile.orig	2014-02-13 14:22:14.000000000 +0100
++++ Makefile	2014-02-13 14:23:21.000000000 +0100
+@@ -1,20 +1,20 @@
+ all: compiler.o y.tab.o lex.yy.o 
+-	gcc -Wall -O4 -g -o nbfc compiler.o lex.yy.o y.tab.o -lfl
++	${CC} ${CFLAGS} -o nbfc compiler.o lex.yy.o y.tab.o -lfl
+ 
+ lex.yy.o: bf.l
+-	flex bf.l
+-	gcc -c lex.yy.c
++	${FLEX} bf.l
++	${CC} ${CFLAGS} -c lex.yy.c
+ 
+ y.tab.o: bf.y
+-	bison -yd bf.y
+-	gcc -c y.tab.c
++	${YACC} -yd bf.y
++	${CC} ${CFLAGS} -c y.tab.c
+ 
+ compiler.o: compiler.c
+-	gcc -c compiler.c
++	${CC} ${CFLAGS} -c compiler.c
+ 
+ install: 
+-	install -c nbfc /usr/bin/nbfc 
+-	install -c nbfc.1 /usr/man/man1/nbfc.1
++	install -s -c nbfc ${STAGEDIR}${PREFIX}/bin/nbfc 
++	install -c nbfc.1 ${STAGEDIR}${PREFIX}/man/man1/nbfc.1
+ 
+ clean:
+ 	rm -f *.o
