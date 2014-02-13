@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	maradns
-PORTVERSION=	1.4.13
+PORTVERSION=	1.4.14
 CATEGORIES=	dns
 MASTER_SITES=	http://maradns.samiam.org/download/1.4/\
 		http://www.maradns.org/download/1.4/
