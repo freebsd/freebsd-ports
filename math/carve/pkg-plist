@@ -74,8 +74,6 @@ include/carve/vertex_decl.hpp
 include/carve/vertex_impl.hpp
 include/carve/win32.h
 include/carve/xcode_config.h
-%%PORTDOCS%%%%DOCSDIR%%/carve.pdf
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/carve/external
 @dirrm include/carve/collection/unordered
 @dirrm include/carve/collection
