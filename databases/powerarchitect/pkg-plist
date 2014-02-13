@@ -49,8 +49,6 @@ bin/powerarchitect
 %%DATADIR%%/lib/velocity-1.6.2.jar
 %%DATADIR%%/lib/velocity-tools-generic-1.4.jar
 %%DATADIR%%/lib/xercesImpl-2.9.1.jar
-%%PORTDOCS%%%%DOCSDIR%%/README.generic
-@dirrm %%DATADIR%%/lib
-@dirrm %%DATADIR%%/jdbc
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%DATADIR%%/lib
+@dirrmtry %%DATADIR%%/jdbc
+@dirrmtry %%DATADIR%%
