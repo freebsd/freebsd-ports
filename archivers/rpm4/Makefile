@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rpm
-PORTVERSION=	4.11.1
-PORTREVISION=	1
+PORTVERSION=	4.11.2
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R}.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-${PORTVERSION:E}.x/
@@ -16,8 +15,13 @@ LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt \
 		libnss3.so:${PORTSDIR}/security/nss
 BUILD_DEPENDS=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 
-OPTIONS_DEFINE=	PYTHON
-OPTIONS_DEFAULT=PYTHON
+OPTIONS_DEFINE=	PYTHON NLS
+OPTIONS_DEFAULT=PYTHON NLS
+OPTIONS_SUB=	yes
+PYTHON_CONFIGURE_ENABLE=python
+PYTHON_USE=	PYTHON=yes
+NLS_CONFIGURE_ENABLE=nls
+NLS_USES=	gettext
 
 USES=		gmake shebangfix
 USE_AUTOTOOLS=	libtool
@@ -27,6 +31,7 @@ USE_BDB=	46+
 INVALID_BDB_VER=51
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 CONFLICTS_INSTALL=	rpm-[35].* rpm5-*
 SHEBANG_FILES=	scripts/brp-python-bytecompile scripts/check-prereqs \
 		scripts/check-rpaths-worker scripts/pythondeps.sh \
@@ -34,7 +39,8 @@ SHEBANG_FILES=	scripts/brp-python-bytecompile scripts/check-prereqs \
 		scripts/pkgconfigdeps.sh scripts/fontconfig.prov \
 		scripts/rpmdb_loadcvt \
 		scripts/perl.prov scripts/perl.req scripts/perldeps.pl \
-		scripts/osgideps.pl scripts/tcl.req
+		scripts/osgideps.pl scripts/tcl.req \
+		python/rpm/transaction.py
 
 CPPFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/nspr -I${LOCALBASE}/include/nss/nss \
@@ -51,30 +57,6 @@ CONFIGURE_ARGS+=--with-external-db \
 		LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER} -lm"
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MPYTHON}
-CONFIGURE_ARGS+=--enable-python
-USE_PYTHON=	yes
-PLIST_SUB+=	PYTHON=""
-CPPFLAGS+=	-I${PYTHON_INCLUDEDIR}
-LDFLAGS+=	-L${PYTHON_LIBDIR}
-SHEBANG_FILES+=	python/rpm/transaction.py
-.else
-CONFIGURE_ARGS+=--disable-python
-PLIST_SUB+=	PYTHON="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext iconv
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.include <bsd.port.pre.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e '/^pkgconfigdir/s:/:data/:' \
 		-e 's:\.\./\.\./bin/::' ${WRKSRC}/Makefile.in
@@ -84,17 +66,8 @@ post-patch:
 		${WRKSRC}/system.h
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 	# Install documentation
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/librpm/html
-	cd ${WRKSRC}/doc/librpm/html && ${FIND} . \
-		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} \
-			${STAGEDIR}${DOCSDIR}/librpm/html/
-.endif
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librpm*.so.* \
-		${STAGEDIR}${PREFIX}/lib/rpm-plugins/*.so
-.if ${PORT_OPTIONS:MPYTHON}
-	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/rpm/*.so
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} librpm/html ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
