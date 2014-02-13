@@ -22,8 +22,6 @@ ONLY_FOR_ARCHS_REASON=	Fails to compile: invokes i386 asm
 
 OPTIONS_DEFINE=DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e '/^CFLAGS/d' ${WRKSRC}/${MAKEFILE}
 
