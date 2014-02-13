@@ -23,8 +23,6 @@ PLIST_FILES=	bin/OpenSPClite include/OpenSPC.h lib/libOpenSPC.so \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
