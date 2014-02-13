@@ -1,6 +1,6 @@
 --- plugins/r/src/tm_r.c.orig	2010-11-24 12:52:55.000000000 -0800
 +++ plugins/r/src/tm_r.c	2010-12-12 11:31:52.000000000 -0800
-@@ -10,20 +10,22 @@
+@@ -10,18 +10,21 @@
  ******************************************************************************/
  
  #include <stdio.h>
@@ -20,7 +20,6 @@
  #include <stdlib.h>
  #include <signal.h>
  #include <string.h>
--#include <util.h>
  
 -#include <sys/types.h>
  #include <sys/stat.h>

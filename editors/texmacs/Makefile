@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	texmacs
-PORTVERSION=	1.0.7.14
-PORTREVISION=	2
+PORTVERSION=	1.0.7.21
 CATEGORIES=	editors print
 MASTER_SITES=	ftp://ftp.texmacs.org/TeXmacs/tmftp/source/ \
 		http://www.predatorlabs.net/dl/
@@ -12,37 +11,31 @@ DISTNAME=	TeXmacs-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WYSIWYG scientific text editor
 
-LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
+LICENSE=	GPLv3
 
+LIB_DEPENDS=	libguile.so:${PORTSDIR}/lang/guile
 
+USES=		gmake shared-mime-info desktop-file-utils
 USE_PYTHON=	yes
 USE_TEX=	tex
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-optimize="${CXXFLAGS}"
 MAKE_ARGS=	CP="${CP} -R -f"
 ALL_TARGET=	${PORTNAME:U}
+INSTALL_ICONS=	yes
 
 DATADIR=	${PREFIX}/share/TeXmacs
-
-MAN1=		texmacs.1 fig2ps.1
-MANCOMPRESSED=	yes
 
 OPTIONS_DEFINE=	FREETYPE GHOSTSCRIPT ICONV IMLIB2 PDF QT4
 OPTIONS_DEFAULT=	FREETYPE GHOSTSCRIPT ICONV IMLIB2 QT4
 PDF_DESC=	Experimental PDF renderer
 
-DESKTOP_ENTRIES=	"TeXmacs" "${COMMENT}" \
-			"${DATADIR}/misc/pixmaps/TeXmacs.xpm" "texmacs" \
-			"Education;Science;" false
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFREETYPE}
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	libfreetype.so:${PORTSDIR}/print/freetype2
 CONFIGURE_ARGS+=	--with-freetype=linked
 .else
 CONFIGURE_ARGS+=	--without-freetype
@@ -92,9 +85,5 @@ post-patch:
 	@ #fix for namespace clash with Qt3
 	@${REINPLACE_CMD} -e 's|qdrawutil.h|qt4/Qt/qdrawutil.h|' \
 		${WRKSRC}/src/Plugins/Qt/QTMStyle.cpp
-
-post-install:
-	${CHOWN} -R ${LIBOWN}:${LIBGRP} ${PREFIX}/libexec/TeXmacs
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 
 .include <bsd.port.post.mk>
