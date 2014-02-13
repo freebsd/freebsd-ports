@@ -24,10 +24,12 @@ ARGS=		-b ${PREFIX}/bin -d ${PYTHONPREFIX_SITELIBDIR} \
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS DEBUG
+
 .include "${.CURDIR}/../py-qt4/bsd.pyqt.mk"
 .include <bsd.port.options.mk>
 
-.if defined(WITH_DEBUG)
+.if ${PORT_OPTIONS:MDEBUG}
 ARGS+=		-u
 .endif
 
