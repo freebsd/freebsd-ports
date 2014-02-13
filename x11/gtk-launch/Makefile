@@ -20,8 +20,6 @@ PORTSCOUT=	skipv:1.1
 
 OPTIONS_DEFINE=DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	${ECHO_CMD} >> ${WRKSRC}/launch.c
 
