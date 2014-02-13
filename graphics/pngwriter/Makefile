@@ -17,7 +17,7 @@ USES=		pkgconfig
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-CXXFLAGS+=	`pkg-config --cflags freetype2 libpng15` -I${LOCALBASE}/include -w
+CXXFLAGS+=	`pkg-config --cflags freetype2 libpng15` -I${LOCALBASE}/include
 
 PLIST_FILES=	include/pngwriter.h \
 		lib/libpngwriter.a \
