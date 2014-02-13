@@ -16,30 +16,28 @@ USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USES=		gmake pkgconfig
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-EXTRAS_WRKSRC!=	cd ${PORTSDIR}/x11-toolkits/py-gnome-extras && ${MAKE} -V WRKSRC
+EXTRAS_DIR=	${PORTSDIR}/x11-toolkits/py-gnome-extras
 
 post-patch:
 	${SED} -e 's|@DATADIR@|${DATADIR}|' ${FILESDIR}/gmail-notifier > ${WRKSRC}/gmail-notifier
 	${SED} -e 's|@PYTHON_INCLUDEDIR@|${PYTHON_INCLUDEDIR}|' ${FILESDIR}/Makefile.in > ${WRKSRC}/Makefile
 
-pre-configure:
-	${CP} ${EXTRAS_WRKSRC}/egg/tray/eggtrayicon.[ch] ${EXTRAS_WRKSRC}/egg/tray/trayicon* ${WRKSRC}
+pre-build:
+	${CP} `${MAKE} -C ${EXTRAS_DIR} -V WRKSRC`/egg/tray/eggtrayicon.[ch] ${WRKSRC}
+	${CP} `${MAKE} -C ${EXTRAS_DIR} -V WRKSRC`/egg/tray/trayicon* ${WRKSRC}
 	${CP} ${FILESDIR}/config.h ${WRKSRC}
 	${RM} ${WRKSRC}/pytrayicon.so
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/gmail-notifier ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/*.py ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.png ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.jpg ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.so ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/langs.xml ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/gmail-notifier ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/*.py ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.png ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.jpg ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.so ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/langs.xml ${STAGEDIR}${DATADIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
