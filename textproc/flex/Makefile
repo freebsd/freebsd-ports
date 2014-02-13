@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	flex
-PORTVERSION=	2.5.37
-PORTREVISION=	1
+PORTVERSION=	2.5.38
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}
 
@@ -19,6 +18,7 @@ GNU_CONFIGURE=	yes
 # install flex header to its own dir to avoid conflict with system flex.
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/flex
 CONFIGURE_ENV=	M4=${LOCALBASE}/bin/gm4
+INSTALL_TARGET=	install-strip
 
 INFO=		flex
 
