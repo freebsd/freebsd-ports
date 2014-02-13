@@ -23,8 +23,6 @@ PORTDOCS=	index.html fldiff.jpg
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|@OPTIM@||' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|=Development|=Application;Development;|' \
