@@ -78,7 +78,6 @@ share/omf/mp3splt-gtk/mp3splt-gtk-ru_RU.omf
 share/pixmaps/mp3splt-gtk.png
 share/pixmaps/mp3splt-gtk_ico.svg
 @dirrmtry share/omf/mp3splt-gtk
-@dirrmtry share/omf
 @dirrm %%DATADIR%%
 @dirrm share/gnome/help/mp3splt-gtk/ru_RU/figures
 @dirrm share/gnome/help/mp3splt-gtk/ru_RU
