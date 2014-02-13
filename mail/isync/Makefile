@@ -27,8 +27,6 @@ OPTIONS_DEFINE=	DOCS
 # does not compile
 PORTSCOUT=	skipv:1.1.0
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|: install-docDATA|:|g' ${WRKSRC}/Makefile.in
 
