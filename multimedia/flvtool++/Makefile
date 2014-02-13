@@ -15,8 +15,7 @@ LIB_DEPENDS=	libboost_iostreams.so:${PORTSDIR}/devel/boost-libs
 CFLAGS+=	-I${LOCALBASE}/include/boost
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/flvtool++
-USE_SCONS=	yes
-SCONS_BUILDENV=	${SCONS_ENV}
+USES=		scons
 
 NO_STAGE=	yes
 post-patch:
