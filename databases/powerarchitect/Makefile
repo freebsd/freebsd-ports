@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	powerarchitect
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	databases java
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	SQL-Power-Architect-generic-jdbc-${PORTVERSION}
@@ -14,41 +14,31 @@ LICENSE=	GPLv3
 
 OPTIONS_DEFINE=	ORACLE_JDBC MYSQL_JDBC PGSQL_JDBC
 
+ORACLE_JDBC_RUN_DEPENDS=	${JAVALIBDIR}/ojdbc-10.2.0.5.jar:${PORTSDIR}/databases/jdbc-oracle10g
+MYSQL_JDBC_RUN_DEPENDS=	${JAVALIBDIR}/mysql-connector-java.jar:${PORTSDIR}/databases/mysql-connector-java
+PGSQL_JDBC_RUN_DEPENDS=	${JAVALIBDIR}/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc
+
 USE_JAVA=	yes
 
 JAVA_VERSION=	1.6+
 
 NO_BUILD=	yes
 
+PORTDOCS=	*
 PROJECTHOST=	power-architect
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/architect-${PORTVERSION}
 SUB_FILES=	${PORTNAME}
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MORACLE_JDBC}
-RUN_DEPENDS+=	${JAVALIBDIR}/ojdbc-10.2.0.5.jar:${PORTSDIR}/databases/jdbc-oracle10g
-.endif
-.if ${PORT_OPTIONS:MMYSQL_JDBC}
-RUN_DEPENDS+=	${JAVALIBDIR}/mysql-connector-java.jar:${PORTSDIR}/databases/mysql-connector-java
-.endif
-.if ${PORT_OPTIONS:MPGSQL_JDBC}
-RUN_DEPENDS+=	${JAVALIBDIR}/postgresql.jar:${PORTSDIR}/databases/postgresql-jdbc
-.endif
-
 do-install:
-	@${MKDIR} ${DATADIR}/jdbc
-	@cd ${WRKSRC}/ && \
-	    ${INSTALL_DATA} architect.jar ${DATADIR}/ && \
-	    ${INSTALL_DATA} jdbc/sqlserver_2005.jar ${DATADIR}/jdbc/ && \
-	    ${COPYTREE_SHARE} lib ${DATADIR}
-	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}/${DATADIR}/jdbc
+	(cd ${WRKSRC}/ && \
+	    ${INSTALL_DATA} architect.jar ${STAGEDIR}/${DATADIR}/ && \
+	    ${INSTALL_DATA} jdbc/sqlserver_2005.jar ${STAGEDIR}/${DATADIR}/jdbc/ && \
+	    ${COPYTREE_SHARE} lib ${STAGEDIR}/${DATADIR})
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${STAGEDIR}/${PREFIX}/bin/${PORTNAME}
 
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/README.generic ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}/${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/README.generic ${STAGEDIR}/${DOCSDIR}
 
 .include <bsd.port.mk>
