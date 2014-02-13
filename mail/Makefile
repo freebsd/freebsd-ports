@@ -761,6 +761,5 @@
     SUBDIR += xpbiff
     SUBDIR += xpi-displayquota
     SUBDIR += xpi-dispmua
-    SUBDIR += zmailer
 
 .include <bsd.port.subdir.mk>
