@@ -19,8 +19,6 @@ PORTDOCS=	COPYING CREDITS TODO cvsspam-doc.html cvsspam-doc.pdf
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 .for f in collect_diffs.rb cvsspam.rb record_lastdir.rb
 	@${REINPLACE_CMD} -e 's|/usr/bin/ruby|${RUBY}|' \
