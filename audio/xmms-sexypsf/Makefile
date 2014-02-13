@@ -31,8 +31,6 @@ PLIST_FILES=	lib/xmms/Input/libsexypsf.so
 
 OPTIONS_DEFINE=DOCS
 
-.include <bsd.port.options.mk>
-
 do-build:
 .for f in ${SOURCES}
 	${CC} ${CFLAGS} ${DEFINES} `gtk-config --cflags` -c -o ${WRKSRC}/${f}.o ${WRKSRC}/${f}.c
