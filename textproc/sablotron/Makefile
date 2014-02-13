@@ -17,10 +17,10 @@ OPTIONS_DEFINE=	CHECK_LEAKS DEBUGGER DISABLE_META DOCS \
 		DOCUMENT_ERRORS DOM ICONV_TYPECAST
 
 CHECK_LEAKS_DESC=	Enable memory leaks checking
-DEBUGGER_DESC=	Enable debugger
+DEBUGGER_DESC=		Enable debugger
 DISABLE_META_DESC=	Do not output the META html tag
 DOCUMENT_ERRORS_DESC=	Allow document errors
-DOM_DESC=	Use DOM
+DOM_DESC=		Use DOM
 ICONV_TYPECAST_DESC=	Use iconv typecast
 
 OPTIONS_DEFAULT=	DOM DOCUMENT_ERRORS
@@ -43,7 +43,7 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBTOOL=${LIBTOOL}
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include -w
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lexpat ${ICONV_LIB}
 
 PORTDOCS=	*
@@ -55,7 +55,7 @@ DOCSRCDIR2=	${WRKSRC}/doc/misc
 DOCSDIR2=	${DOCSDIR}/doc/misc
 DOC_FILES2=	DEBUGGER NOTES
 
-.include <bsd.port.options.mk> 
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${PERL} -pi -e \
