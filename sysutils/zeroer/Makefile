@@ -20,8 +20,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lpopt
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-build:
 	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/${PORTNAME}.c \
 		-o ${WRKSRC}/${PORTNAME}
