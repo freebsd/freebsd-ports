@@ -26,8 +26,6 @@ MAKE_ARGS=	READLINE=1
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 regression-test: build
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
