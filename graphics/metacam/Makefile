@@ -21,8 +21,6 @@ ALL_TARGET=	${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${FILESDIR}/${PORTNAME}.1 \
