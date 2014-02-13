@@ -25,13 +25,8 @@ USES=			gmake
 SUB_FILES=	pkg-message
 SUB_LIST+=	RUNFILE=${DATADIR}/bash_completion.sh
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MBASH_DEVEL}
-RUN_DEPENDS=bash:${PORTSDIR}/shells/bash-devel
-.else
-RUN_DEPENDS=bash:${PORTSDIR}/shells/bash
-.endif
+BASH_DEVEL_RUN_DEPENDS=		bash:${PORTSDIR}/shells/bash-devel
+BASH_DEVEL_RUN_DEPENDS_OFF=	bash:${PORTSDIR}/shells/bash
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|FLAC|&\|flv\|FLV|;' ${WRKSRC}/bash_completion
