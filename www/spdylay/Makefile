@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spdylay
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/tatsuhiro-t/${PORTNAME}/releases/download/v${PORTVERSION}/
 
@@ -13,7 +13,8 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libevent_openssl.so:${PORTSDIR}/devel/libevent2
 
-CONFIGURE_ARGS=	--enable-examples
+CONFIGURE_ARGS=	--enable-examples \
+		--enable-src
 CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl" \
 		ZLIB_CFLAGS="-I${INCLUDEDIR}" \
@@ -26,13 +27,16 @@ USE_OPENSSL=	yes
 USE_XZ=		yes
 USES=		compiler:c++11-lang pathfix pkgconfig
 
-PORTDOCS=	README.rst
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 1000000 && !defined(WITH_OPENSSL_PORT)
 IGNORE=		spdylay requires OpenSSL 1.0.1+
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|^Requires.private: zlib$$|Libs.private: -L${LIBDIR} -lz|' ${WRKSRC}/lib/libspdylay.pc.in
 
 post-build:
 	@${STRIP_CMD} ${WRKSRC}/lib/.libs/libspdylay.so.7
