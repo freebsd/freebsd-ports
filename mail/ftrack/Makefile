@@ -13,6 +13,8 @@ DISTNAME=	ftr${PORTVERSION:S/.//g}sr
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FTN Messages tracker
 
+BROKEN=		Does not compile
+
 LIB_DEPENDS=	smapi.2:${PORTSDIR}/news/husky-smapi
 
 USE_ZIP=	yes
