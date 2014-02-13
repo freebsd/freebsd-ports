@@ -16,8 +16,6 @@ PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 .for var in CFLAGS LDFLAGS CC
 	@${REINPLACE_CMD} -e 's|^\(${var}\)[ ]*=|\1 ?=|' \
