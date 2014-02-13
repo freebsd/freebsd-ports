@@ -20,8 +20,6 @@ TCLSH=		tclsh8.4
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|^\(exec\ \)tclsh|\1${TCLSH}|' \
 		${WRKSRC}/${PORTNAME}
