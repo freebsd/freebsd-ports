@@ -5,6 +5,7 @@ lib/libggz-gtk.so.1
 lib/libggz-gtk.so
 lib/libggz-gtk.la
 lib/libggz-gtk.a
+man/man6/ggz-gtk.6.gz
 share/applications/ggz-gtk.desktop
 share/ggz/ggz-gtk-client/about_bg.png
 share/ggz/ggz-gtk-client/ggz_gtk_admin.svg
