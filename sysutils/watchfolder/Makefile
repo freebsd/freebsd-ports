@@ -17,8 +17,6 @@ USE_RC_SUBR=	watchd
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc $$(OPT)|${CC} ${CFLAGS}|' \
 		${WRKSRC}/Makefile
