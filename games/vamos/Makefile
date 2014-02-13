@@ -27,11 +27,10 @@ CONFIGURE_ARGS=	ac_cv_lib_freeglut_glutGetModifiers=no \
 		--disable-unit-tests
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS} -w
+CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 INFO=		vamos
-
 PORTDOCS=	*
 
 DOCSRCDIR1=	${WRKSRC}
