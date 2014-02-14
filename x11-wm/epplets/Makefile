@@ -10,7 +10,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A collection of Enlightenment dock applications
 
 BUILD_DEPENDS=	e16:${PORTSDIR}/x11-wm/e16
-LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio
+LIB_DEPENDS=	libcdaudio.so:${PORTSDIR}/audio/libcdaudio
 RUN_DEPENDS=	e16:${PORTSDIR}/x11-wm/e16 \
 		import:${PORTSDIR}/graphics/ImageMagick
 
@@ -24,7 +24,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-auto-respawn
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|<machine/soundcard\.h>|<sys/soundcard.h>|g' \
 		${WRKSRC}/epplets/Emix.c
