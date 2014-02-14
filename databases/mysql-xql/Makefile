@@ -13,7 +13,7 @@ COMMENT=	Library provides XML output functions to MySQL server
 
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_MYSQL=	yes
 USE_LDCONFIG=	yes
 
@@ -23,9 +23,5 @@ PLIST_FILES=	\
 	lib/mysql/plugin/lib_mysqludf_xql.so
 
 PLIST_DIRS=	lib/mysql/plugin
-
-NO_STAGE=	yes
-post-install:
-	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
