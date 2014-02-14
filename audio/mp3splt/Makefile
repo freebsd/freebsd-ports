@@ -14,7 +14,6 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libmp3splt.so:${PORTSDIR}/audio/libmp3splt
 
 USES=	pkgconfig:build
-NO_STAGE=	yes
 USE_AUTOTOOLS=	libltdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-oggsplt_symlink
@@ -23,8 +22,9 @@ CONFIGURE_ENV+=	PKG_CONFIG_PATH=${LOCALBASE}/lib/pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAN1=		oggsplt.1 mp3splt.1
-PLIST_FILES=	bin/mp3splt bin/oggsplt
+PLIST_FILES=	bin/mp3splt bin/oggsplt \
+		man/man1/mp3splt.1.gz \
+		man/man1/oggsplt.1.gz
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_DEFAULT=	NLS
