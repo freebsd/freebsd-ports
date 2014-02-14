@@ -9,6 +9,6 @@ LICENSE=	GPLv2
 
 MASTERDIR=	${.CURDIR}/../../net/tintin++
 
-OPTIONS_FILE_SET=	BIG5
+OPTIONS_SLAVE=	BIG5
 
 .include "${MASTERDIR}/Makefile"
