@@ -1,0 +1,21 @@
+Quick Howto
+
+Create a new feed database:
+> r2e new you@example.com
+
+Edit $HOME/.config/rss2email.cfg if you so desire. Unless you've installed
+a local sendmail-equivalent MTA, you'll need to edit the SMTP options.
+
+Your local database is stored in $HOME/.local/share/rss2email.json
+
+Subscribe to some feeds:
+> r2e add freebsd-news http://www.freebsd.org/news/rss.xml
+
+Avoid the "first run flood" of all existing posts from the feed:
+> r2e run --no-send
+
+Run it through cron. Feel free to increase or decrease the interval.
+0 */4 * * * %%PREFIX%%/r2e run
+
+There is only output if there's an error (which you probably want emailed to you
+from cron anyway).

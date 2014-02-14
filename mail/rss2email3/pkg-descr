@@ -1,0 +1,8 @@
+rss2email is a python script that lets you subscribe to a list of
+RSS or Atom feeds and get new posts sent to you by email. It is
+generally run via cron, but can be run manually as well.
+
+This is a python 3 rewrite of the original rss2email project by
+Lindsey Smith at AllThingsRSS. It does not run on python 2.
+
+WWW: https://github.com/wking/rss2email
