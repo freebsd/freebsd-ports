@@ -18,7 +18,6 @@ bin/morbo
 %%SITE_PERL%%/Mojo/DOM.pm
 %%SITE_PERL%%/Mojo/DOM/CSS.pm
 %%SITE_PERL%%/Mojo/DOM/HTML.pm
-%%SITE_PERL%%/Mojo/DOM/Node.pm
 %%SITE_PERL%%/Mojo/Date.pm
 %%SITE_PERL%%/Mojo/EventEmitter.pm
 %%SITE_PERL%%/Mojo/Exception.pm
@@ -157,10 +156,9 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/public/mojo/prettify/prettify.js
 %%SITE_PERL%%/Mojolicious/public/mojo/prettify/run_prettify.js
 %%SITE_PERL%%/Mojolicious/public/mojo/stripes.png
-%%SITE_PERL%%/Mojolicious/templates/exception.development.html.ep
+%%SITE_PERL%%/Mojolicious/templates/development.html.ep
 %%SITE_PERL%%/Mojolicious/templates/exception.html.ep
 %%SITE_PERL%%/Mojolicious/templates/mojobar.html.ep
-%%SITE_PERL%%/Mojolicious/templates/not_found.development.html.ep
 %%SITE_PERL%%/Mojolicious/templates/not_found.html.ep
 %%SITE_PERL%%/Mojolicious/templates/perldoc.html.ep
 %%SITE_PERL%%/Test/Mojo.pm
@@ -183,7 +181,6 @@ bin/morbo
 %%PERL5_MAN3%%/Mojo::DOM.3.gz
 %%PERL5_MAN3%%/Mojo::DOM::CSS.3.gz
 %%PERL5_MAN3%%/Mojo::DOM::HTML.3.gz
-%%PERL5_MAN3%%/Mojo::DOM::Node.3.gz
 %%PERL5_MAN3%%/Mojo::Date.3.gz
 %%PERL5_MAN3%%/Mojo::EventEmitter.3.gz
 %%PERL5_MAN3%%/Mojo::Exception.3.gz
