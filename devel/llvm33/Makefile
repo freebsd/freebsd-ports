@@ -2,7 +2,7 @@
 
 PORTNAME=	llvm
 PORTVERSION=	3.3
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	devel lang
 MASTER_SITES=	http://llvm.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -112,10 +112,10 @@ CONFIGURE_ARGS+=	--disable-docs
 
 .if ${PORT_OPTIONS:MLIT}
 MAN1SRCS+=		lit.1
-USE_PYTHON=		yes
+USE_PYTHON=		-2.9
 LIT_COMMANDS=		lit llvm-lit FileCheck
 .else
-USE_PYTHON_BUILD=	yes
+USE_PYTHON_BUILD=	-2.9
 .endif
 
 .if ${PORT_OPTIONS:MLTOPLUGIN}
@@ -164,7 +164,7 @@ post-patch:
 .if ${PORT_OPTIONS:MCMAKE}
 post-configure:
 	${MKDIR} ${WRKDIR}/cmake
-	cd ${WRKDIR}/cmake && cmake -G "Unix Makefiles" ${WRKSRC}
+	cd ${WRKDIR}/cmake && cmake -DPYTHON_EXECUTABLE=${PYTHON_CMD} -G "Unix Makefiles" ${WRKSRC}
 	${REINPLACE_CMD} -e 's|${WRKDIR}/cmake|${LLVM_PREFIX}|' \
 	    -e 's|${WRKSRC}/cmake/modules|${DATADIR}/cmake|' \
 	    ${WRKDIR}/cmake/share/llvm/cmake/LLVMConfig.cmake
