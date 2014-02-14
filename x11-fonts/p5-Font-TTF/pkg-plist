@@ -74,11 +74,13 @@
 %%PERL5_MAN3%%/Font::TTF::Woff::MetaData.3.gz
 %%PERL5_MAN3%%/Font::TTF::Woff::PrivateData.3.gz
 %%PERL5_MAN3%%/Font::TTF::XMLparse.3.gz
+%%PERL5_MAN3%%/ttfmod.3.gz
 %%SITE_PERL%%/Font/TTF.pm
 %%SITE_PERL%%/Font/TTF/AATKern.pm
 %%SITE_PERL%%/Font/TTF/AATutils.pm
 %%SITE_PERL%%/Font/TTF/Anchor.pm
 %%SITE_PERL%%/Font/TTF/Bsln.pm
+%%SITE_PERL%%/Font/TTF/Changes_old.txt
 %%SITE_PERL%%/Font/TTF/Cmap.pm
 %%SITE_PERL%%/Font/TTF/Coverage.pm
 %%SITE_PERL%%/Font/TTF/Cvt_.pm
@@ -150,7 +152,6 @@
 %%SITE_PERL%%/Font/TTF/Woff/MetaData.pm
 %%SITE_PERL%%/Font/TTF/Woff/PrivateData.pm
 %%SITE_PERL%%/Font/TTF/XMLparse.pm
-%%SITE_PERL%%/Font/TTF/.Silf.pm.swo
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/TTF/.packlist
 %%SITE_PERL%%/ttfmod.pl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Font/TTF
