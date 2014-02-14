@@ -1,8 +1,7 @@
 bin/gmencoder
+man/man1/gmencoder.1.gz
 share/pixmaps/gmencoder/media-pause.png
 share/pixmaps/gmencoder/media-play.png
-%%PORTDOCS%%%%DOCSDIR%%/README
 %%NLS%%share/locale/es/LC_MESSAGES/gmencoder.mo
 %%NLS%%share/locale/en/LC_MESSAGES/gmencoder.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/pixmaps/gmencoder
