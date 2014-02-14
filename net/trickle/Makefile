@@ -10,7 +10,9 @@ MASTER_SITES=	http://monkey.org/~marius/trickle/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Lightweight, portable bandwidth shaper
 
-LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
+LIB_DEPENDS=	libevent-1.4.so:${PORTSDIR}/devel/libevent
+
+OPTIONS_DEFINE=	DOCS
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
@@ -23,23 +25,10 @@ CONFIGURE_ARGS+=--with-libevent=${LOCALBASE} \
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 
-MAN1=		trickle.1
-MAN5=		trickled.conf.5
-MAN8=		trickled.8
-
-NO_STAGE=	yes
+PORTDOCS=	*
 post-install:
-	if [ ! -f ${PREFIX}/etc/trickled.conf ]; then \
-		${INSTALL_DATA} ${FILESDIR}/trickled.conf ${PREFIX}/etc/trickled.conf; \
-		${INSTALL_DATA} ${FILESDIR}/trickled.conf ${PREFIX}/etc/trickled.conf.default; \
-	else \
-		${INSTALL_DATA} ${FILESDIR}/trickled.conf ${PREFIX}/etc/trickled.conf.default; \
-	fi
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_DATA} ${FILESDIR}/trickled.conf ${STAGEDIR}${PREFIX}/etc/trickled.conf.default
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
