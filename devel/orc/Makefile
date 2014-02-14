@@ -27,19 +27,14 @@ EXAMPLES_EXEC=	example1 example2 example3 mt19937ar volscale
 OPTIONS_DEFINE=	DOCS EXAMPLES
 DOCS_DESC=	Include gtk-doc documentation
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
 SUBDIRS+=	doc
-.else
-NOPORTDOCS=	yes
 .endif
 
 .if ${PORT_OPTIONS:MEXAMPLES}
 SUBDIRS+=	examples
-.else
-NOPORTEXAMPLES=	yes
 .endif
 
 MAKE_ARGS+=	SUBDIRS="${SUBDIRS}"
@@ -51,14 +46,12 @@ post-patch:
 		${WRKSRC}/configure 
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for FILE in ${EXAMPLES_DATA}
-	@${INSTALL_DATA} ${WRKSRC}/examples/${FILE} ${EXAMPLESDIR}/${FILE}
+	@${INSTALL_DATA} ${WRKSRC}/examples/${FILE} ${STAGEDIR}${EXAMPLESDIR}/${FILE}
 .endfor
 .for FILE in ${EXAMPLES_EXEC}
-	@${INSTALL_SCRIPT} ${WRKSRC}/examples/${FILE} ${EXAMPLESDIR}/${FILE}
+	@${INSTALL_SCRIPT} ${WRKSRC}/examples/${FILE} ${STAGEDIR}${EXAMPLESDIR}/${FILE}
 .endfor
-.endif
 
 .include <bsd.port.mk>
