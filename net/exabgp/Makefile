@@ -3,6 +3,7 @@
 
 PORTNAME=	exabgp
 PORTVERSION=	3.2.18
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GH GHC \
 		http://mirrors.rit.edu/zi/
@@ -28,7 +29,6 @@ GROUPS=		_bgpd
 
 MAN1=		${PORTNAME}.1
 
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	EXAMPLES 
 
@@ -41,16 +41,16 @@ do-build:
 	${PYTHON_CMD} -m compileall ${WRKSRC}/lib
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/sbin/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.1 ${PREFIX}/man/man1
-	@${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME} ${ETCDIR}
-	(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . ${PYTHON_SITELIBDIR})
+	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/debian/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
+	@${MKDIR} ${PYTHON_SITELIBDIR}/${PORTNAME} ${STAGEDIR}${ETCDIR}
+	(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . ${STAGEDIR}${PYTHON_SITELIBDIR})
 .if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/etc && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/etc && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 .endif
 	@if [ ! -f ${ETCDIR}/exabgp.env ]; then \
-	    	${CP} ${FILESDIR}/exabgp.env ${ETCDIR} ; \
+	    	${CP} ${FILESDIR}/exabgp.env ${STAGEDIR}${ETCDIR} ; \
 	fi
 
 post-install:
