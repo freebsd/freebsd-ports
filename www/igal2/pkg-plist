@@ -9,4 +9,5 @@ lib/igal2/igal2.css
 lib/igal2/indextemplate2.html
 lib/igal2/slidetemplate2.html
 lib/igal2/tile.png
+man/man1/igal2.1.gz
 @dirrm lib/igal2
