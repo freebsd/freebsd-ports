@@ -17,8 +17,6 @@ DOS2UNIX_REGEX=	.*\.(h|cpp)
 USE_QT4=	gui network moc_build rcc_build \
 		imageformats_run
 
-STRIP_FILES=	bin/qtfm
-
 post-patch:
 	@cd ${WRKSRC} && \
 		${REINPLACE_CMD} -e s@/usr/@${PREFIX}/@g \
@@ -29,6 +27,6 @@ post-patch:
 		icondlg.cpp mainwindow.cpp mymodel.cpp
 
 post-install:
-	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qtfm
 
 .include <bsd.port.mk>
