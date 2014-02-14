@@ -44,7 +44,7 @@ CONFIGURE_ARGS=	--enable-kernel-pfkey \
 OPTIONS_DEFINE=	CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS EAPSIMFILE IKEv1 \
 		IPSECKEY KERNELLIBIPSEC LOADTESTER LDAP MYSQL SQLITE \
 		TESTVECTOR UNBOUND XAUTH
-OPTIONS_SUB=	${OPTIONS_DEFINE}
+OPTIONS_SUB=	yes
 CURL_DESC=	Enable CURL to fetch CRL/OCSP
 EAPAKA3GPP2_DESC=	Enable EAP AKA with 3gpp2 backend
 EAPDYNAMIC_DESC=	Enable EAP dynamic proxy module
@@ -84,9 +84,9 @@ XAUTH_CONFIGURE_ON=	--enable-xauth-eap --enable-xauth-generic
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEAPSIMFILE} || ${PORT_OPTIONS:MEAPAKA3GPP2}
-PLIST_SUB+=SIMAKA=""
+PLIST_SUB+=	SIMAKA=""
 .else
-PLIST_SUB+=SIMAKA="@comment "
+PLIST_SUB+=	SIMAKA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MSQLITE}
@@ -98,7 +98,7 @@ PLIST_SUB+=	SQL="@comment "
 
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${MV} ${STAGEDIR}${PREFIX}/etc/strongswan.conf ${STAGEDIR}${EXAMPLESDIR}
-	${MV} ${STAGEDIR}${PREFIX}/etc/ipsec.conf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/strongswan.conf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/ipsec.conf ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
