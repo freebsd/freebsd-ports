@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=--with-ssl=openssl
 CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 .elif ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--with-ssl=gnutls
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -58,7 +58,7 @@ PLIST_SUB=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MIDN}
-LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
+LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
 CONFIGURE_ARGS+=--enable-iri --with-libidn=${LOCALBASE}
 USES+=		iconv
 .else
@@ -67,7 +67,7 @@ CONFIGURE_ARGS+=--disable-iri
 
 .if ${PORT_OPTIONS:MPCRE}
 # Wget will pick pcre automatically and link with it if it is present.
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .else
