@@ -15,7 +15,11 @@ USE_PYTHON=	yes
 
 BUILD_WRKSRC=	${WRKSRC}/python
 INSTALL_WRKSRC=	${WRKSRC}/python
-PLIST=		${.CURDIR}/pkg-plist
+PLIST=		# empty
+
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pyrtfcomp.a \
+		%%PYTHON_SITELIBDIR%%/pyrtfcomp.la \
+		%%PYTHON_SITELIBDIR%%/pyrtfcomp.so
 
 MASTERDIR=	${.CURDIR}/../librtfcomp
 SLAVEPORT=	py
