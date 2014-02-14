@@ -20,14 +20,10 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 USE_GNOME=	gnomeprefix libgnomeui
 USES=		pathfix gmake pkgconfig
 
-MAN1=		gmencoder.1
-
-DESKTOP_ENTRIES=	"Gmencoder" "Gnome2 front-end to mplayer/mencoder" \
+DESKTOP_ENTRIES="Gmencoder" "Gnome2 front-end to mplayer/mencoder" \
 		"" "gmencoder" "GNOME;AudioVideo;" false
 
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS NLS 
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
@@ -63,12 +59,6 @@ post-patch:
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-.for i in README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
-	${INSTALL_MAN}	${WRKSRC}/man/gmencoder.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN}	${WRKSRC}/man/gmencoder.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.post.mk>
