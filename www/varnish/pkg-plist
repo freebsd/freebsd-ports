@@ -7,7 +7,9 @@ bin/varnishsizes
 bin/varnishstat
 bin/varnishtest
 bin/varnishtop
-etc/varnish/default.vcl
+@unexec if cmp -s %D/etc/varnish/default.vcl.sample %D/etc/varnish/default.vcl; then rm -f %D/etc/varnish/default.vcl; fi
+etc/varnish/default.vcl.sample
+@exec if [ ! -f %D/etc/varnish/default.vcl ] ; then cp -p %D/%F %B/default.vcl; fi
 include/varnish/acct_fields.h
 include/varnish/body_status.h
 include/varnish/cache.h
