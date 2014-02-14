@@ -8,7 +8,7 @@ following steps:
 
 1) Copy the appropriate sample configuration file as follows:
 
-	cp %%PREFIX%%/watchtab.sample %%PREFIX%%/watchtab
+	cp %%PREFIX%%/etc/watchtab.sample %%PREFIX%%/etc/watchtab
 
 2) Edit filewatcherd's configuration file to suit your needs:
 
