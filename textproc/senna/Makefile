@@ -12,7 +12,7 @@ COMMENT=	Embeddable Fulltext Search Engine
 
 GNU_CONFIGURE=	YES
 USE_GCC=	any
-USE_GMAKE=	YES
+USES=		gmake
 USE_LDCONFIG=	YES
 CONFIGURE_ARGS=	--with-sennahome=${SENNA_HOME}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -26,7 +26,6 @@ OPTIONS_DEFAULT=	MECAB NFKC
 MECAB_DESC=	use mecab for morphological analysis
 NFKC_DESC=	use nfkc based utf8 normalization
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "sparc64"
