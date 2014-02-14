@@ -17,21 +17,18 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
 		libEZ.so:${PORTSDIR}/graphics/EZWGL
 
-WRKSRC=		${WRKDIR}/EZFM-${PORTVERSION}
 USES=		gmake
 
-MAN1=		ezfm.1
+WRKSRC=		${WRKDIR}/EZFM-${PORTVERSION}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ezfm ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/ezfm
+	${INSTALL_PROGRAM} ${WRKSRC}/ezfm ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for file in ezfmExtension ezfmMagic ezfmrc
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/ezfm
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DATADIR}
 .endfor
-	@${MKDIR} ${PREFIX}/share/ezfm/ezfmIcons
-	${TAR} -C ${WRKSRC}/ezfmIcons -cf - . | ${TAR} -xf - -C \
-		${PREFIX}/share/ezfm/ezfmIcons
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DATADIR}/ezfmIcons
+	cd ${WRKSRC}/ezfmIcons && ${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/ezfmIcons
+	${INSTALL_MAN} ${WRKSRC}/ezfm.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
