@@ -1,6 +1,9 @@
 bin/cmus
 bin/cmus-remote
 lib/cmus/ip/wav.so
+man/man1/cmus-remote.1.gz
+man/man1/cmus.1.gz
+man/man7/cmus-tutorial.7.gz
 %%FLAC%%lib/cmus/ip/flac.so
 %%MAD%%lib/cmus/ip/mad.so
 %%MODPLUG%%lib/cmus/ip/modplug.so
