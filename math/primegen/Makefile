@@ -6,7 +6,7 @@ PORTVERSION=	0.97
 CATEGORIES=	math
 MASTER_SITES=	http://cr.yp.to/primegen/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small, fast library to generate prime numbers in order
 
 ALL_TARGET=

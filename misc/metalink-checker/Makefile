@@ -8,7 +8,7 @@ MASTER_SITES=	SF/${PORTNAME}s/Metalink%20Checker/2007
 PKGNAMESUFFIX?=	-checker
 DISTNAME=	checker-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python script to check metalink files and complete a basic download
 
 LICENSE=	GPLv2

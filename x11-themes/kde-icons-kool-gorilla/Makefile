@@ -5,7 +5,7 @@ PORTNAME=	kool-gorilla
 PORTVERSION=	1.3.5
 MASTER_SITES=	${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
-		
+
 DISTNAME=	Korilla_Icons-v${PORTVERSION}
 
 COMMENT=	KDE Kool Gorilla iconset

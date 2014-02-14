@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.receita.fazenda.gov.br/publico/programas/IRPF/2010/PGDI
 PKGNAMEPREFIX?=	pt_BR-
 DISTNAME=	irpf2010-v1.0
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programa do Imposto de Renda Pessoa Fisica 2010 versao Java
 
 USE_ZIP=	yes

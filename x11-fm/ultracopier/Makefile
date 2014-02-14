@@ -8,7 +8,7 @@ CATEGORIES=	x11-fm kde
 MASTER_SITES=	http://files.first-world.info/ultracopier/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An advanced file copier
 
 LICENSE=	GPLv3
