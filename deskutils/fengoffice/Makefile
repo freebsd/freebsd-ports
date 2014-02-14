@@ -14,7 +14,6 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 USE_PHP=	mysql gd simplexml
 DEFAULT_PHP_VER=5
-IGNORE_WITH_PHP=4
 WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

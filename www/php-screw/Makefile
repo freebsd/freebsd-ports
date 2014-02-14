@@ -18,7 +18,6 @@ CRYPTKEY?=	11152, 368, 192, 1281, 62
 USE_AUTOTOOLS=	libtool
 USE_PHP=	zlib
 USE_PHPIZE=	yes
-IGNORE_WITH_PHP=4
 
 CONFIGURE_ARGS+=--enable-php_screw=shared
 

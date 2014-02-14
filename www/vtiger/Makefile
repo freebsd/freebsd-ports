@@ -19,7 +19,6 @@ SUB_FILES=	pkg-message
 
 USE_PHP=	mysql gd imap session pcre xml
 WANT_PHP_WEB=	YES
-IGNORE_WITH_PHP=	4
 
 WRKSRC=		${WRKDIR}/vtigercrm
 
