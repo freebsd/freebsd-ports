@@ -14,7 +14,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Sound theme based on the FreeDesktop specification
 
 USE_BZIP2=	yes
-NO_STAGE=	yes
 USE_GNOME=	gnomehier intlhack
 USES=		gettext gmake
 GNU_CONFIGURE=	yes
