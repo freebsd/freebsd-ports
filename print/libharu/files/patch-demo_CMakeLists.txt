@@ -1,0 +1,21 @@
+--- demo/CMakeLists.txt.orig	2013-11-18 14:51:59.000000000 +0100
++++ demo/CMakeLists.txt	2013-11-18 14:52:21.000000000 +0100
+@@ -86,15 +86,15 @@
+   # =======================================================================
+   install(
+     TARGETS ${demos_NAMES} ${demos_with_grid_NAMES} grid_sheet
+-    DESTINATION demo
++    DESTINATION ${EXAMPLESDIR}
+   )
+   foreach(demo ${demos_NAMES} ${demos_with_grid_NAMES} grid_sheet)
+-    install(FILES ${demo}.c DESTINATION demo)
++    install(FILES ${demo}.c DESTINATION ${EXAMPLESDIR})
+   endforeach(demo)
+ 
+   # install demo files
+   install(
+     DIRECTORY images mbtext pngsuite rawimage ttfont type1
+-    DESTINATION demo
++    DESTINATION ${EXAMPLESDIR}
+   )
+ endif(LIBHPDF_EXAMPLES)
