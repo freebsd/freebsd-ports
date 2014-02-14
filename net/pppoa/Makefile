@@ -13,6 +13,9 @@ EXTRACT_ONLY=		${SPEEDTOUCH}.tar.bz2
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Run PPP over Alcatel's USB Speedtouch device
 
+DEPRECATED=		Broken on FreeBSD 8 and later since june 2009
+EXPIRATION_DATE=	2014-03-14
+
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
 SPEEDTOUCH=		speedtouch-${PORTVERSION}
