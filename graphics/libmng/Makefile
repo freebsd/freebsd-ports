@@ -11,8 +11,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${PORTVERSION} \
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multiple-image Network Graphics (MNG) reference library
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		lcms:${PORTSDIR}/graphics/lcms
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		liblcms.so:${PORTSDIR}/graphics/lcms
 
 OPTIONS_DEFINE=	MNG_OPTIMIZE
 MNG_OPTIMIZE_DESC=	Use vendor's new optimization flags
@@ -20,14 +20,11 @@ MNG_OPTIMIZE_DESC=	Use vendor's new optimization flags
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 #USE_BZIP2=	yes	# Please, uncomment on next upgrade
 
+USES=		uidfix
 USE_LDCONFIG=	yes
 
-.include <bsd.port.options.mk>
-.if ${PORT_OPTIONS:MMNG_OPTIMIZE}
-MAKE_ARGS+=	WITH_MNG_OPTIMIZE=true
-.else
-MAKE_ARGS+=	WITH_MNG_OPTIMIZE=off
-.endif
+MNG_OPTIMIZE_MAKE_ARGS=	WITH_MNG_OPTIMIZE=true
+MNG_OPTIMIZE_MAKE_ARGS_OFF=	WITH_MNG_OPTIMIZE=off
 
 post-install:
 	cd ${WRKSRC}/doc/man && ${INSTALL_MAN} libmng.3 ${STAGEDIR}${PREFIX}/man/man3 \
