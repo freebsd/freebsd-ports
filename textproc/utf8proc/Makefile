@@ -2,15 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	utf8proc
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.6
 CATEGORIES=	textproc devel
-MASTER_SITES=	http://www.flexiguided.de/pub/
+MASTER_SITES=	http://www.public-software-group.org/pub/projects/${PORTNAME}/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	UTF-8 processing library
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	c-library
 
 USE_LDCONFIG=	yes
