@@ -14,16 +14,12 @@ LICENSE=	LGPL21
 
 PORTDOCS=	ChangeLog README cds-api.txt rcu-api.txt uatomic-api.txt
 
-USES=		pathfix
+USES=		pathfix gmake
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
-
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
 
 regression-test: build
 	@cd ${WRKSRC} && ${MAKE} check
