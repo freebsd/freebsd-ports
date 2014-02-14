@@ -43,9 +43,7 @@ FREETDS_CONFIGURE_WITH=	freetds
 PLIST_SUB+=	INGRES="@comment "
 PLIST_SUB+=	ORACLE="@comment "
 
-.if defined(.PARSEDIR)
 USES+=		gmake
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O20|${CFLAGS}|g' \
