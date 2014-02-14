@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}/source/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X Window System application for receiving electronic mail
 
+BROKEN=		Does not build
 DEPRECATED=	No more public distfiles
 EXPIRATION_DATE=	2014-03-10
 
