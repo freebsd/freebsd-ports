@@ -16,7 +16,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pkg_resources.py:${PORTSDIR}/devel/py-setuptoo
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	Cython
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
