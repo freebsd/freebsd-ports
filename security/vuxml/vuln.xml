@@ -51,6 +51,47 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="90b27045-9530-11e3-9d09-000c2980a9f3">
+    <topic>lighttpd -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>lighttpd</name>
+	<range><lt>1.4.34</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>lighttpd security advisories report:</p>
+	<blockquote cite="http://download.lighttpd.net/lighttpd/security/lighttpd_sa_2013_01.txt">
+	  <p>It is possible to inadvertantly enable vulnerable ciphers when using
+	    ssl.cipher-list.</p>
+	</blockquote>
+	<blockquote cite="http://download.lighttpd.net/lighttpd/security/lighttpd_sa_2013_02.txt">
+	  <p>In certain cases setuid() and similar can fail, potentially triggering
+	    lighttpd to restart running as root.</p>
+	</blockquote>
+	<blockquote cite="http://download.lighttpd.net/lighttpd/security/lighttpd_sa_2013_03.txt">
+	  <p>If FAMMonitorDirectory fails, the memory intended to store the context is
+	    released; some lines below the "version" compoment of that context is read.
+	    Reading invalid data doesn't matter, but the memory access could trigger a
+	    segfault.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://download.lighttpd.net/lighttpd/security/lighttpd_sa_2013_01.txt</url>
+      <url>http://download.lighttpd.net/lighttpd/security/lighttpd_sa_2013_02.txt</url>
+      <url>http://download.lighttpd.net/lighttpd/security/lighttpd_sa_2013_03.txt</url>
+      <cvename>CVE-2013-4508</cvename>
+      <cvename>CVE-2013-4559</cvename>
+      <cvename>CVE-2013-4560</cvename>
+    </references>
+    <dates>
+      <discovery>2013-11-28</discovery>
+      <entry>2014-02-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4dd575b8-8f82-11e3-bb11-0025905a4771">
     <topic>phpmyfaq -- multiple vulnerabilities</topic>
     <affects>
