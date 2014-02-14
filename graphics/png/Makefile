@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	png
-PORTVERSION=	1.5.17
+PORTVERSION=	1.5.18
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/lib${PORTNAME}15/${PORTVERSION}
 DISTNAME=	lib${PORTNAME}-${PORTVERSION}
@@ -21,26 +21,27 @@ USE_LDCONFIG=	yes
 CMAKE_ARGS+=	-DPNG_MAN_DIR:STRING=man
 SOSUFFIX=	.${PORTVERSION:E}
 
-OPTIONS_DEFINE=APNG
-OPTIONS_DEFAULT=APNG
+OPTIONS_DEFINE=APNG PNGTEST
+OPTIONS_DEFAULT=APNG PNGTEST
 APNG_DESC=Enable Animated PNG support
+PNGTEST_DESC=Enable Regression Test (recommended)
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPNG} || make(makesum) || defined(FETCH_ALL)
 MASTER_SITES+=	SF/apng/libpng/libpng15/:apng
 DISTFILES+=	${DISTNAME}-apng.patch.gz:apng
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY+=	${DISTNAME}${EXTRACT_SUFX}
 .endif
 .if ${PORT_OPTIONS:MAPNG}
-EXTRA_PATCHES=	${WRKSRC}/${DISTNAME}-apng.patch
+EXTRA_PATCHES+=	${WRKSRC}/${DISTNAME}-apng.unix
 .endif
 
 post-extract:
 .if ${PORT_OPTIONS:MAPNG}
-	@${LN} -sf ${WRKSRC} ${WRKSRC}/
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}-apng.patch.gz ${WRKSRC}/
 	${GZIP_CMD} -d ${WRKSRC}/${DISTNAME}-apng.patch.gz
+	${TR} -d '\r' < ${WRKSRC}/${DISTNAME}-apng.patch > ${WRKSRC}/${DISTNAME}-apng.unix
 .endif
 
 post-patch:
@@ -49,14 +50,16 @@ post-patch:
 		-e 's|LIBDIR}/pkgconfig|LIBDIR}data/pkgconfig|' \
 		${WRKSRC}/CMakeLists.txt
 
+.if ${PORT_OPTIONS:MPNGTEST}
 post-build:
-	@(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} test; then \
+	(cd ${BUILD_WRKSRC}; if ! ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} test; then \
         if [ x != x${BUILD_FAIL_MESSAGE} ] ; then \
             ${ECHO_MSG} "===> Compilation failed unexpectedly."; \
             (${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
             fi; \
         ${FALSE}; \
         fi)
+.endif
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/libpng
