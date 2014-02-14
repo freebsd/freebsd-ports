@@ -1,5 +1,14 @@
---- src/io-term.c.orig	2008-02-08 16:43:28.000000000 +0100
-+++ src/io-term.c	2008-02-08 16:45:06.000000000 +0100
+--- src/io-term.c.orig	2014-02-14 10:32:37.000000000 +0100
++++ src/io-term.c	2014-02-14 10:32:58.000000000 +0100
+@@ -1,7 +1,7 @@
+ /*
+  * $Id: io-term.c,v 1.51 2001/02/13 23:38:06 danny Exp $
+  *
+- * Copyright © 1990, 1992, 1993, 1999, 2000, 2001 Free Software Foundation, Inc.
++ * Copyright 1990, 1992, 1993, 1999, 2000, 2001 Free Software Foundation, Inc.
+  * 
+  * This file is part of Oleo, the GNU Spreadsheet.
+  * 
 @@ -220,6 +220,7 @@
  {
    int	set_opt = 1;
@@ -23,3 +32,12 @@
  
  		if (Preferences[i].cont == 0)
  			return 1;
+@@ -1023,7 +1026,7 @@
+ 	  case 'v':
+ 	  case 'V':
+ 	    printf(_("%s %s\n"), GNU_PACKAGE, VERSION);
+-            printf(_("Copyright © 1992-2000 Free Software Foundation, Inc.\n"));
++            printf(_("Copyright 1992-2000 Free Software Foundation, Inc.\n"));
+             printf(_("%s comes with ABSOLUTELY NO WARRANTY.\n"), GNU_PACKAGE);
+             printf(_("You may redistribute copies of %s\n"), PACKAGE);
+             printf(_("under the terms of the GNU General Public License.\n"));
