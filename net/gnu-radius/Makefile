@@ -13,9 +13,9 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	GNU RADIUS server
 
 CONFLICTS=	freeradius-0.* openradius-0.* radiusd-cistron-1.*
+USES=		gmake
 USE_RC_SUBR=	radiusd
 USE_SUBMAKE=	yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libltdl libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
@@ -24,9 +24,6 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 DATADIR=	${PREFIX}/share/radius
 
 INFO=		radius
-MAN1=		radgrep.1 radlast.1 raduse.1 radwho.1
-MAN8=		builddbm.8 radctl.8 radiusd.8 radping.8 radzap.8
-MANCOMPRESSED=	no
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		CURDIR="${.CURDIR}" \
@@ -34,7 +31,7 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 CONFIGURE_ARGS+=--with-include-path="${LOCALBASE}/include/" \
 		--with-lib-path="${LOCALBASE}/lib/"
 
-OPTIONS_DEFINE=	CLIENT DBM MYSQL PGSQL SNMP EMACS PAM
+OPTIONS_DEFINE=	CLIENT EXAMPLES DBM MYSQL PGSQL SNMP EMACS PAM
 OPTIONS_DEFAULT=MYSQL
 CLIENT_DESC=	Build client
 EMACS_DESC=	Install Emacs dotfiles
@@ -45,7 +42,6 @@ CONFIG_FILES=	access.deny client.conf clients config dictionary \
 EXAMPLE_FILES=	README ascend.rw c3620.rw cisco.rw comos.rw config.syntax \
 		filter.rw hints-0.96 jetstream.rw nt.rw pam.conf radius.php
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} >= 900007
@@ -57,7 +53,7 @@ CONFIGURE_ARGS+=--enable-snmp
 .endif
 
 .if ${PORT_OPTIONS:MCLIENT}
-LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	libguile.so:${PORTSDIR}/lang/guile
 CONFIGURE_ARGS+=--enable-client
 PLIST_SUB+=	CLIENT=""
 .else
@@ -121,15 +117,15 @@ post-patch:
 	${REINPLACE_CMD}  -e '889s,], || 1 ],' ${WRKSRC}/raddb/Makefile.in
 
 post-install:
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
+.if ${PORT_OPTIONS:MEXAMPLES}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 . for ex_file in ${EXAMPLE_FILES}
-	${INSTALL_DATA} ${WRKSRC}/examples/${ex_file} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/${ex_file} ${STAGEDIR}${EXAMPLESDIR}
 . endfor
 .endif
 .for conf_file in ${CONFIG_FILES}
 	@test -f ${PREFIX}/etc/raddb/${conf_file} || ${CP} -p \
-	${PREFIX}/etc/raddb/${conf_file}-dist ${PREFIX}/etc/raddb/${conf_file}
+	${STAGEDIR}${PREFIX}/etc/raddb/${conf_file}-dist ${STAGEDIR}${PREFIX}/etc/raddb/${conf_file}
 .endfor
 
 .include <bsd.port.mk>
