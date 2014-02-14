@@ -14,9 +14,7 @@ CONFIGURE_ARGS=--with-freebsd-ports
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
+USES=	gmake
 
 CONFLICTS_INSTALL=heirloom-doctools-[0-9]*
 
