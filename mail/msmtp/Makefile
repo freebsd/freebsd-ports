@@ -16,7 +16,6 @@ GNU_CONFIGURE=	yes
 USES=		pkgconfig
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-MAN1=	msmtp.1
 INFO=	msmtp
 
 OPTIONS_DEFINE=	GSASL NLS IDN GNOMEKEYRING MSMTPQ
@@ -27,11 +26,10 @@ OPTIONS_DEFAULT=	MSMTPQ OPENSSL
 GSASL_DESC=	GSASL support
 MSMTPQ_DESC=	Install offline messaging scripts
 
-NO_STAGE=	yes
 .include       <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGNUTLS}
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-ssl=gnutls
 .elif ${PORT_OPTIONS:MOPENSSL}
 USE_OPENSSL=	yes
@@ -46,14 +44,14 @@ RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_r
 .endif
 
 .if ${PORT_OPTIONS:MGSASL}
-LIB_DEPENDS+=	gsasl:${PORTSDIR}/security/gsasl
+LIB_DEPENDS+=	libgsasl.so:${PORTSDIR}/security/gsasl
 CONFIGURE_ARGS+=	--with-libgsasl
 .else
 CONFIGURE_ARGS+=	--without-libgsasl
 .endif
 
 .if ${PORT_OPTIONS:MIDN}
-LIB_DEPENDS+=	idn:${PORTSDIR}/dns/libidn
+LIB_DEPENDS+=	libidn.so:${PORTSDIR}/dns/libidn
 CONFIGURE_ARGS+=	--with-libidn
 .else
 CONFIGURE_ARGS+=	--without-libidn
@@ -61,7 +59,7 @@ CONFIGURE_ARGS+=	--without-libidn
 
 .if ${PORT_OPTIONS:MGNOMEKEYRING}
 CONFIGURE_ARGS+=	--with-gnome-keyring
-LIB_DEPENDS+=	gnome-keyring:${PORTSDIR}/security/gnome-keyring
+LIB_DEPENDS+=	libgnome-keyring.so:${PORTSDIR}/security/gnome-keyring
 .else
 CONFIGURE_ARGS+=	--without-gnome-keyring
 .endif
@@ -81,10 +79,10 @@ PLIST_SUB+=		NLS="@comment "
 PLIST_SUB+=	MSMTPQ=""
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/msmtpq/msmtp-queue ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/msmtpq/msmtpq ${PREFIX}/bin
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/scripts/msmtpq/README.msmtpq ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/msmtpq/msmtp-queue ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/msmtpq/msmtpq ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/scripts/msmtpq/README.msmtpq ${STAGEDIR}${DOCSDIR}
 .else
 PLIST_SUB+=	MSMTPQ="@comment "
 .endif
