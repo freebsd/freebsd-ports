@@ -10,8 +10,9 @@ MASTER_SITES=	http://www.gahr.ch/vtkfox/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	FOX/VTK Widget and Interactor
 
-LIB_DEPENDS=	vtkCommon.5:${PORTSDIR}/math/vtk5
+LIB_DEPENDS=	libvtkCommon.so.5:${PORTSDIR}/math/vtk5
 
+OPTIONS_DEFINE=	EXAMPLES
 OPTIONS_SINGLE=	FOX
 OPTIONS_SINGLE_FOX=	FOX16 FOX17
 FOX16_DESC=	Link against FOX-1.6
@@ -22,20 +23,21 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	gahr
 GH_COMMIT=	378836c
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFOX16}
-LIB_DEPENDS+=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16
+LIB_DEPENDS+=	libFOX-1.6.so:${PORTSDIR}/x11-toolkits/fox16
+CMAKE_ARGS+=	-DFOX17:BOOL=FALSE
 .endif
 
 .if ${PORT_OPTIONS:MFOX17}
-LIB_DEPENDS+=	FOX-1.7:${PORTSDIR}/x11-toolkits/fox17
+LIB_DEPENDS+=	libFOX-1.7.so:${PORTSDIR}/x11-toolkits/fox17
 CMAKE_ARGS+=	-DFOX17:BOOL=TRUE
 .endif
 
 USES=		cmake:outsource pkgconfig
 USE_LDCONFIG=	yes
+CMAKE_ARGS+=	-DVTK_DIR:PATH=${LOCALBASE}/lib/vtk-5.10
 
 PLIST_FILES=	include/vtkfox/FXVTKCanvas.h \
 		include/vtkfox/vtkFXRenderWindowInteractor.h \
@@ -45,20 +47,18 @@ PLIST_FILES=	include/vtkfox/FXVTKCanvas.h \
 		libdata/pkgconfig/vtkfox.pc
 PLIST_DIRS=	include/vtkfox
 
-post-patch:
-.if defined(NOPORTEXAMPLES)
-	${REINPLACE_CMD} -e 's| tests||' ${WRKSRC}/CMakeLists.txt
-.endif
-
-.if !defined(NOPORTEXAMPLES)
 SAMPLE_FILES=	imgsurf double cone quad xyplot simple
 PORTEXAMPLES=	*
 
+.if !${PORT_OPTIONS:MEXAMPLES}
+post-patch:
+	${REINPLACE_CMD} -e 's| tests||' ${WRKSRC}/CMakeLists.txt
+.else
 post-install:
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for sample_file in ${SAMPLE_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/tests/${sample_file}.cpp ${EXAMPLESDIR}
-	@${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/tests/${sample_file} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/tests/${sample_file}.cpp ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/tests/${sample_file} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
 .endif
 
