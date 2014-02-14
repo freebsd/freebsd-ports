@@ -32,12 +32,8 @@ USE_GNOME=	pygtk2
 USE_XORG=	xxf86vm xi x11 xmu xext xdamage xfixes xau xdmcp xt sm ice
 USE_GL=		gl glu
 USE_SDL=	sdl gfx
-USES=		pkgconfig iconv shebangfix
+USES=		pkgconfig iconv shebangfix gmake
 SHEBANG_FILES=	openalchemist-config
-
-.if defined(.PARSEDIR)
-USES+=	gmake
-.endif
 
 PORTDOCS=	AUTHORS ChangeLog README TODO
 

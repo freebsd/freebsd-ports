@@ -18,7 +18,7 @@ COMMENT=	The noeGNUd UI for the SLASH'EM variant of Nethack
 RUN_DEPENDS=	${LOCALBASE}/share/${NOEGNUDVERSION}/data/gui:${PORTSDIR}/games/noegnud-data
 
 NOEGNUDVERSION=	${PORTNAME}-0.8.0
-USES=		bison
+USES=		bison gmake
 USE_GL=		yes
 WANT_SDL=	yes
 USE_SDL=	sdl image mixer
@@ -28,10 +28,6 @@ PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}
 ALL_TARGET=	se006e4f8
 INSTALL_TARGET=	install_se006e4f8
 MAKE_JOBS_UNSAFE=	yes
-
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
