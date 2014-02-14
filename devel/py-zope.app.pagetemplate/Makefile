@@ -2,9 +2,11 @@
 
 PORTNAME=	zope.app.pagetemplate
 PORTVERSION=	3.11.2
+PORTREVISION=	1
 CATEGORIES=	devel python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	PageTemplate integration for Zope 3
@@ -24,10 +26,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.browserpage>=3.12.0:${PORTSDIR}/devel/p
 		${PYTHON_PKGNAMEPREFIX}zope.tales>=0:${PORTSDIR}/devel/py-zope.tales \
 		${PYTHON_PKGNAMEPREFIX}zope.traversing>=0:${PORTSDIR}/devel/py-zope.traversing
 
-DIST_SUBDIR=	zope
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-
-NO_STAGE=	yes
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
