@@ -431,7 +431,6 @@ x11-toolkits/ruby-fox10||2009-01-21|Removed deprecated port, use x11-toolkits/ru
 devel/linux-glib2||2009-01-21|Removed since the port is incorporated into all Linux base ports
 x11/xorg-protos||2009-01-23|Not really necessary
 x11-drivers/synaptics|x11-drivers/xf86-input-synaptics|2009-01-23|Now an official X.org driver
-net/mpich|net/mpich2|2009-01-23|Broken and superseded by mpich2
 lang/gcc28|lang/gcc42|2009-01-24|Abandoned upstream, superseded by gcc42 and, preferably, gcc43
 x11/xphelloworld||2009-01-24|Xprint application, deprecated upstream
 x11/xclock|x11-clocks/xclock|2009-01-28|Moved to a more appropriate category
