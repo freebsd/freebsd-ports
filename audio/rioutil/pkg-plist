@@ -4,3 +4,4 @@ lib/librioutil.a
 lib/librioutil.la
 lib/librioutil.so
 lib/librioutil.so.6
+man/man1/rioutil.1.gz
