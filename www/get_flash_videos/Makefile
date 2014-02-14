@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}-1.24-git-${DISTFILE_DATE}
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Download videos from various Flash-based video hosting sites
 
 LICENSE=	APACHE20

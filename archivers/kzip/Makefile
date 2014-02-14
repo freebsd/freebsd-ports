@@ -7,7 +7,7 @@ CATEGORIES=	archivers linux
 MASTER_SITES=	http://static.jonof.id.au.nyud.net/dl/kenutils/
 DISTNAME=	kzipmix-${DISTVERSION}-linux-static
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PKZIP-compatible compressor focusing on space over speed
 
 NO_CDROM=	License does not allow redistribution

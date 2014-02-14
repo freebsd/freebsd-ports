@@ -7,7 +7,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://pgina.xpasystems.com/files/
 DISTNAME=	pgina_pam-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon for allowing a pGina plugin to authenticate against Unix PAM
 
 LICENSE=	GPLv2

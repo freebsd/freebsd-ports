@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION:S/^0.//}
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fully compliant DynDNS.org client for UNIX (supports NIC v2.0)
 
 LICENSE=	GPLv2

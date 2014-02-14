@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-bin
 DISTNAME=	VGB${PORTVERSION:S/.//}-FreeBSD-80x86-bin
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nintendo GameBoy(tm) emulator (closed binary version of vgb)
 
 LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x

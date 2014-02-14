@@ -8,7 +8,7 @@ MASTER_SITES=	http://mirror.i2p2.de/ \
 		${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	i2psource_${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	i2p JNI to GNU MP Bignum library (libgmp)
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp

@@ -10,7 +10,7 @@ MASTER_SITES=	http://members.shaw.ca/gehrehmee/ \
 DISTNAME=	click
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates X11 mouse button click events
 
 USE_XORG=	x11 xtst xext xfixes xi

@@ -8,7 +8,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-src/${PORTNAME}-src-v${PORTVERSION}
 DISTNAME=	${PORTNAME}-src-v${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RSS client that serves HTTP to your local web browser
 
 RUN_DEPENDS=	\

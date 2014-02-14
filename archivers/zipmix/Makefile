@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.advsys.net/ken/util/
 DISTNAME=	${PORTNAME}_src
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce a .ZIP file from 2 other ones with the best compressed files
 
 USES=		dos2unix
