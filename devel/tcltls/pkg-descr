@@ -2,7 +2,4 @@ A portable extension that provides the power of OpenSSL to Tcl programs.
 This extension can be used to utilize SSL encryption on top of any valid
 Tcl Channel - not just sockets!
 
-Note,  that Scriptics  has released  this newer  version (1.4),  but the
-author's web-site listed below still only lists 1.3.
-
 WWW: http://www.sensus.org/tcl/tls.htm

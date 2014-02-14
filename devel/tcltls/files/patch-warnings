@@ -84,19 +84,45 @@
 +    dprintf(stderr,"\nWaitForConnect(%p)", (void *)statePtr);
  
      for (;;) {
---- tls.c	Thu Feb 12 21:09:21 2004
-+++ tls.c	Mon Jun 20 10:23:44 2005
-@@ -459,5 +459,5 @@
+ 
+--- tls.c.orig	2008-03-19 23:06:13.000000000 +0100
++++ tls.c	2013-10-22 14:32:14.000000000 +0200
+@@ -468,7 +468,7 @@
+ 	"ssl2",	"ssl3",	"tls1",	NULL
      };
      enum protocol {
 -	TLS_SSL2, TLS_SSL3, TLS_TLS1, TLS_NONE
 +	TLS_SSL2, TLS_SSL3, TLS_TLS1
      };
      Tcl_Obj *objPtr;
-@@ -1168,5 +1168,5 @@
+     SSL_CTX *ctx = NULL;
+@@ -1225,7 +1225,7 @@
+     Tcl_Obj	*CONST objv[];
  {
-     const char *commands [] = { "req", NULL };
+     CONST84 char *commands [] = { "req", NULL };
 -    enum command { C_REQ, C_DUMMY };
 +    enum command { C_REQ };
      int cmd;
+ 
+     if (objc < 2) {
+@@ -1329,13 +1329,13 @@
+ 		
+ 		name=X509_get_subject_name(cert);
+ 
+-		X509_NAME_add_entry_by_txt(name,"C", MBSTRING_ASC, k_C, -1, -1, 0);
+-		X509_NAME_add_entry_by_txt(name,"ST", MBSTRING_ASC, k_ST, -1, -1, 0);
+-		X509_NAME_add_entry_by_txt(name,"L", MBSTRING_ASC, k_L, -1, -1, 0);
+-		X509_NAME_add_entry_by_txt(name,"O", MBSTRING_ASC, k_O, -1, -1, 0);
+-		X509_NAME_add_entry_by_txt(name,"OU", MBSTRING_ASC, k_OU, -1, -1, 0);
+-		X509_NAME_add_entry_by_txt(name,"CN", MBSTRING_ASC, k_CN, -1, -1, 0);
+-		X509_NAME_add_entry_by_txt(name,"Email", MBSTRING_ASC, k_Email, -1, -1, 0);
++		X509_NAME_add_entry_by_txt(name,"C",     MBSTRING_ASC, (const unsigned char *)k_C, -1, -1, 0);
++		X509_NAME_add_entry_by_txt(name,"ST",    MBSTRING_ASC, (const unsigned char *)k_ST, -1, -1, 0);
++		X509_NAME_add_entry_by_txt(name,"L",     MBSTRING_ASC, (const unsigned char *)k_L, -1, -1, 0);
++		X509_NAME_add_entry_by_txt(name,"O",     MBSTRING_ASC, (const unsigned char *)k_O, -1, -1, 0);
++		X509_NAME_add_entry_by_txt(name,"OU",    MBSTRING_ASC, (const unsigned char *)k_OU, -1, -1, 0);
++		X509_NAME_add_entry_by_txt(name,"CN",    MBSTRING_ASC, (const unsigned char *)k_CN, -1, -1, 0);
++		X509_NAME_add_entry_by_txt(name,"Email", MBSTRING_ASC, (const unsigned char *)k_Email, -1, -1, 0);
+ 
+ 		X509_set_subject_name(cert,name);
  
