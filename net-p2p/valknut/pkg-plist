@@ -1,4 +1,5 @@
 bin/valknut
+man/man1/valknut.1.gz
 %%DATADIR%%/COPYING
 %%DATADIR%%/icons/appl/default/back.png
 %%DATADIR%%/icons/appl/default/ball_green.png

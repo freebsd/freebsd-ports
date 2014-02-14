@@ -8,14 +8,14 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	SF/wxdcgui/${PORTNAME}-qt4/${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A Direct Connect client QT GUI
+COMMENT=	Qt-based Direct Connect client
 
-LIB_DEPENDS=	dc.5:${PORTSDIR}/net-p2p/dclib \
-		xml2.5:${PORTSDIR}/textproc/libxml2
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libdc.so:${PORTSDIR}/net-p2p/dclib \
+		libxml2.so:${PORTSDIR}/textproc/libxml2
 
 WRKSRC=	${WRKDIR}/${DISTNAME}
-
-MAN1=	valknut.1
 
 USE_QT4=	corelib gui network qt3support \
 		moc_build uic_build rcc_build linguist_build
@@ -29,7 +29,6 @@ LDFLAGS+=	-L${QT_LIBDIR}
 QTCFGLIBS+=	${PTHREAD_LIBS}
 CONFIGURE_ENV+=	DCLIB_CFLAGS=-I${LOCALBASE}/include
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g;\
 	    s|-D_XOPEN_SOURCE=500||g' \
