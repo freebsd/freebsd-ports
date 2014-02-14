@@ -21,7 +21,6 @@ USE_PHP=	dom filter ftp json pcre pdo pdo_sqlite posix \
 USE_SQLITE=	yes
 
 DEFAULT_PHP_VER=	5
-IGNORE_WITH_PHP=	4
 
 VARBASE=	/var
 
