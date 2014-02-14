@@ -609,6 +609,7 @@
     SUBDIR += roundcube-veximaccountadmin
     SUBDIR += rspamd
     SUBDIR += rss2email
+    SUBDIR += rss2email3
     SUBDIR += ruby-rfilter
     SUBDIR += ruby-rmail
     SUBDIR += rubygem-actionmailer
