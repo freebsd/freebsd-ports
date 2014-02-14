@@ -1,0 +1,10 @@
+libexec/nagios/check_beanstalkd
+%%SITE_PERL%%/Nagios/Plugin/Beanstalk.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Nagios/Plugin/Beanstalk/.packlist
+%%PERL5_MAN3%%/Nagios::Plugin::Beanstalk.3.gz
+@dirrmtry libexec/nagios
+@dirrmtry %%SITE_PERL%%/Nagios/Plugin
+@dirrmtry %%SITE_PERL%%/Nagios
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nagios/Plugin/Beanstalk
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nagios/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nagios
