@@ -253,7 +253,9 @@ config/sierra
 etc/dpsprinter.ps
 etc/cover.templ
 etc/xferfaxlog
-etc/hosts.hfaxd
+@unexec if cmp -s %D/etc/hosts.hfaxd %D/etc/hosts.hfaxd-dist; then rm -f %D/etc/hosts.hfaxd; fi
+etc/hosts.hfaxd-dist
+@exec [ -f %B/hosts.hfaxd ] || cp %B/%f %B/hosts.hfaxd
 etc/dialrules
 etc/dialrules.sf-ba
 etc/dialrules.europe
