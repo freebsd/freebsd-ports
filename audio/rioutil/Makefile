@@ -11,12 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to interface with the Rio600, Rio800, and psa[play devices
 
 USES=		gmake
-NO_STAGE=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-
-MAN1=		rioutil.1
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
