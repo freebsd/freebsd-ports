@@ -24,7 +24,6 @@ LIBDIRS=	${LOCALBASE}/lib
 
 _BUILDING_PROFTPD_MODULE=	${PORTNAME}
 
-NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKDIR}/mod_sql_tds.c ${WRKSRC}/contrib
 
