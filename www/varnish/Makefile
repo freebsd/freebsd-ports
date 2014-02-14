@@ -61,8 +61,8 @@ post-install:
 .for f in vct.h vmod_abi.h vre.h vrt.h vqueue.h vsb.h libvarnish.h miniobj.h vas.h vav.h http_headers.h vcl_returns.h
 	${INSTALL_DATA} ${WRKSRC}/include/${f} ${STAGEDIR}${PREFIX}/include/varnish
 .endfor
-	@${CAT} ${PKGMESSAGE}
 	@${RM} -f ${STAGEDIR}${PREFIX}/lib/libvarnishapi.*a ${STAGEDIR}${PREFIX}/lib/varnish/lib*a ${STAGEDIR}${PREFIX}/lib/varnish/vmods/lib*a
+	@${MV} ${STAGEDIR}${ETCDIR}/default.vcl ${STAGEDIR}${ETCDIR}/default.vcl.sample
 
 .include <bsd.port.pre.mk>
 
