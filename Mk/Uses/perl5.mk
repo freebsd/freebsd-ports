@@ -47,9 +47,7 @@ PERL_VERSION!=	perl -e 'printf "%vd\n", $$^V;'
 .endif
 .else
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
-.if ${PERL5_DEFAULT} == 5.12
-PERL_VERSION=	5.12.5
-.elif ${PERL5_DEFAULT} == 5.14
+.if ${PERL5_DEFAULT} == 5.14
 PERL_VERSION=	5.14.4
 .elif ${PERL5_DEFAULT} == 5.16
 PERL_VERSION=	5.16.3
@@ -86,11 +84,8 @@ PERL_ARCH?=		mach
 PERL_PORT?=	perl5.18
 .elif    ${PERL_LEVEL} >= 501600
 PERL_PORT?=	perl5.16
-.elif  ${PERL_LEVEL} >= 501400
+.else  # ${PERL_LEVEL} < 501600
 PERL_PORT?=	perl5.14
-.else  # ${PERL_LEVEL} < 501400
-PERL_PORT?=	perl5.12
-WARNING+=	"perl 5.12 is deprecated and will be removed on 2014-02-14. Please upgrade to lang/perl5.16"
 .endif
 
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VER}
