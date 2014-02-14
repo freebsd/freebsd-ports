@@ -30,7 +30,7 @@ CMAKE_ARGS+=	-DOPTION_BUILD_SHARED_LIBS:BOOL=ON \
 		-DOPTION_PREFIX_INCLUDE:PATH=${PREFIX}/include/fltk-devel \
 		-DOPTION_PREFIX_LIB:PATH=${PREFIX}/lib/fltk-devel
 
-SNAPSHOT_VERS=	10022
+SNAPSHOT_VERS=	10102
 PORTEXAMPLES=	*
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}${PKGNAMESUFFIX}
 
@@ -45,6 +45,6 @@ CMAKE_ARGS+=	-DOPTION_BUILD_EXAMPLES:BOOL=OFF
 .endif
 
 post-install:
-	${LN} -s fltk-devel/libfltk.so ${STAGEDIR}${PREFIX}/lib/libfltk-devel.so
+	${LN} -sf fltk-devel/libfltk.so ${STAGEDIR}${PREFIX}/lib/libfltk-devel.so
 
 .include <bsd.port.mk>
