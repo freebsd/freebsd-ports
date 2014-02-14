@@ -14,7 +14,6 @@ include/finch/gntnotify.h
 include/finch/gntplugin.h
 include/finch/gntpounce.h
 include/finch/gntprefs.h
-include/finch/gntprogressbar.h
 include/finch/gntrequest.h
 include/finch/gntroomlist.h
 include/finch/gntsound.h
