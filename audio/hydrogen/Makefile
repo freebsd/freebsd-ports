@@ -17,8 +17,7 @@ LIB_DEPENDS+=	libsndfile.so:${PORTSDIR}/audio/libsndfile \
 
 MAJORVERSION=	0.9.5
 USE_QT4=	corelib gui linguist_build moc_build network qt3support rcc_build sql uic_build xml
-USE_SCONS=	yes
-USES=		pkgconfig
+USES=		pkgconfig scons
 
 OPTIONS_DEFINE=	JACK ALSA PORTAUDIO LIBARCHIVE LASH
 OPTIONS_DEFAULT=	JACK
@@ -30,47 +29,47 @@ post-patch:
 
 .include <bsd.port.options.mk>
 
-SCONS_ENV+=	oss=1
+MAKE_ARGS+=	oss=1
 
 .if ${PORT_OPTIONS:MJACK}
 LIB_DEPENDS+=	libjack.so:${PORTSDIR}/audio/jack
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
-SCONS_ENV+=	jack=1
+MAKE_ARGS+=	jack=1
 .else
-SCONS_ENV+=	jack=0
+MAKE_ARGS+=	jack=0
 .endif
 
 .if ${PORT_OPTIONS:MPORTAUDIO}
 LIB_DEPENDS+=	libportaudio.so:${PORTSDIR}/audio/portaudio
-SCONS_ENV+=	portaudio=1
+MAKE_ARGS+=	portaudio=1
 .else
-SCONS_ENV+=	portaudio=0
+MAKE_ARGS+=	portaudio=0
 .endif
 
 .if ${PORT_OPTIONS:MLIBARCHIVE}
 LIB_DEPENDS+=	libarchive.so:${PORTSDIR}/archivers/libarchive
-SCONS_ENV+=	libarchive=1
+MAKE_ARGS+=	libarchive=1
 .else
-SCONS_ENV+=	libarchive=0
+MAKE_ARGS+=	libarchive=0
 .endif
 
 .if ${PORT_OPTIONS:MALSA}
 LIB_DEPENDS+=	libasound.so:${PORTSDIR}/audio/alsa-lib
 RUN_DEPENDS+=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins
-SCONS_ENV+=	alsa=1
+MAKE_ARGS+=	alsa=1
 .else
-SCONS_ENV+=	alsa=0
+MAKE_ARGS+=	alsa=0
 .endif
 
 .if ${PORT_OPTIONS:MLASH}
 LIB_DEPENDS+=	liblash.so:${PORTSDIR}/audio/lash
-SCONS_ENV+=	lash=1
+MAKE_ARGS+=	lash=1
 .else
-SCONS_ENV+=	lash=0
+MAKE_ARGS+=	lash=0
 .endif
 
-SCONS_ENV+=	cppflags="${CXXFLAGS}" 	linkflags="${LINKFLAGS}" prefix="${PREFIX}" CC="${CC}" CXX="${CXX}"
+MAKE_ARGS+=	cppflags="${CXXFLAGS}" 	linkflags="${LINKFLAGS}" prefix="${PREFIX}" CC="${CC}" CXX="${CXX}"
 
 pre-install:
 	-@${RM} -rf ${WRKSRC}/data/doc/man
