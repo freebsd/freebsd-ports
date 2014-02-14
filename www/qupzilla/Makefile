@@ -11,6 +11,8 @@ COMMENT=	Modern web browser based on WebKit core and Qt Framework
 
 LICENSE=	GPLv3
 
+BROKEN=		Fetch fails
+
 LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
