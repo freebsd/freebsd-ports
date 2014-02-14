@@ -2,14 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	wget
-DISTVERSION=	1.14
-PORTREVISION=	3
+DISTVERSION=	1.15
 CATEGORIES=	ftp www ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	wget
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Retrieve files from the Net via HTTP(S) and FTP
+
+LICENSE=	GPLv3
 
 USES=		charsetfix gmake perl5
 USE_XZ=		yes
@@ -73,7 +74,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	ac_cv_header_pcre_h=no
 .endif
 
-MAN1=		wget.1
 INFO=		wget
 
 # eliminate gmakism
