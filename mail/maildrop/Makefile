@@ -20,7 +20,7 @@ COMMENT=	Mail delivery agent (MDA) with filtering abilities
 LICENSE=	GPLv3
 
 USE_BZIP2=	yes
-USES=		iconv shebangfix perl5 gmake
+USES=		iconv shebangfix perl5
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-syslog=1 \
 		--enable-use-flock=1 \

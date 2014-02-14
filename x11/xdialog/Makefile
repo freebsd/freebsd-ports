@@ -14,7 +14,6 @@ COMMENT=	A drop in replacement for the "dialog" or "cdialog" programs
 USE_BZIP2=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
-USES=		gmake
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

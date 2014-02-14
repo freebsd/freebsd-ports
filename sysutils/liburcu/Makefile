@@ -14,7 +14,7 @@ LICENSE=	LGPL21
 
 PORTDOCS=	ChangeLog README cds-api.txt rcu-api.txt uatomic-api.txt
 
-USES=		pathfix gmake
+USES=		pathfix
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
