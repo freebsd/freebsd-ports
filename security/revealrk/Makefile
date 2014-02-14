@@ -13,14 +13,12 @@ LICENSE=	GPLv3
 
 PLIST_FILES=	bin/revealrk man/man1/revealrk.1.gz
 
-MANCOMPRESSED=	yes
-NO_MANCOMPRESS=	yes
+USES=		scons
 
-USE_SCONS=	yes
 .if !empty(PREFIX)
-SCONS_ARGS=	--prefix=${STAGEDIR}${PREFIX}
+MAKE_ARGS+=    --prefix=${STAGEDIR}${PREFIX}
 .else
-SCONS_ARGS=	--prefix=${STAGEDIR}${LOCALBASE}
+MAKE_ARGS+=    --prefix=${STAGEDIR}${LOCALBASE}
 .endif
 
 .include <bsd.port.mk>
