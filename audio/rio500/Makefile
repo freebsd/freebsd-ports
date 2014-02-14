@@ -11,12 +11,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for Diamond Rio500
 
 USE_GNOME=	glib12
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-devicepath='/dev' \
 		--with-deviceentry='urio0' \
 		--with-id3support
-
 
 .include <bsd.port.pre.mk>
 
