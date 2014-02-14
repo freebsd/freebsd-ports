@@ -5,7 +5,6 @@ bin/oleo
 %%DATADIR%%/Oleo
 %%DATADIR%%/fr/Oleo
 %%DATADIR%%/nl/Oleo
-%%PORTDOCS%%%%DOCSDIR%%/oleo.html
 @dirrm %%DATADIR%%/nl
 @dirrm %%DATADIR%%/fr
 @dirrm %%DATADIR%%
