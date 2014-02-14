@@ -19,9 +19,6 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--disable-shared --enable-static --with-cxx \
 		--includedir=${PREFIX}/include/ossp
 
-MAN1=	uuid-config.1 uuid.1
-MAN3=	uuid.3 uuid++.3
-
 .if defined(WITH_PERL)
 USES+=		perl5
 CONFIGURE_ENV+=	PERL=${PERL5}
@@ -33,7 +30,6 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}
 PLIST_SUB+=	WITH_PERL='@comment '
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
