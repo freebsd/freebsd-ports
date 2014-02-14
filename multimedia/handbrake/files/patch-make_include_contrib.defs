@@ -1,22 +1,44 @@
---- ./make/include/contrib.defs.orig	2010-04-25 17:15:43.000000000 -0400
-+++ ./make/include/contrib.defs	2011-05-24 05:50:46.071806770 -0400
-@@ -28,7 +28,7 @@
-     $(1).FETCH.url    = FETCH_IS_UNDEFINED
-     $(1).FETCH.target = $$($(1).FETCH.tar)
-     define $(1).FETCH
--        $$(call FETCH,$$@,$$($(1).FETCH.url))
-+#        $$(call FETCH,$$@,$$($(1).FETCH.url))
-     endef
+--- make/include/contrib.defs.orig	2011-08-26 21:35:18.802615405 +0900
++++ make/include/contrib.defs	2011-08-26 21:35:24.468798054 +0900
+@@ -204,26 +204,26 @@
+ ##
+ ## target: fetch
+ ##
+-$($(1).name).fetch: $$($(1).FETCH.target)
+-
+-$$($(1).FETCH.target): | $$(dir $$($(1).FETCH.target))
+-	$$($(1).FETCH)
++#$($(1).name).fetch: $$($(1).FETCH.target)
++#
++#$$($(1).FETCH.target): | $$(dir $$($(1).FETCH.target))
++#	$$($(1).FETCH)
  
-     ##
-@@ -38,8 +38,8 @@
-     $(1).EXTRACT.dir/    = $$($(1).build/)$$($(1).EXTRACT.tarbase)/
-     $(1).EXTRACT.target  = $$($(1).build/).stamp.extract
-     define $(1).EXTRACT
--        $$(RM.exe) -fr $$($(1).EXTRACT.dir/)
--        $$(TAR.exe) xfC $$($(1).FETCH.tar) $$($(1).build/)
-+#        $$(RM.exe) -fr $$($(1).EXTRACT.dir/)
-+#        $$(TAR.exe) xfC $$($(1).FETCH.tar) $$($(1).build/)
-         $$(TOUCH.exe) $$@
-     endef
+ ##
+ ## target: extract
+ ## must touch dir after extraction because old timestamp is restored via tar.
+ ##
+-$($(1).name).extract: $$($(1).EXTRACT.target)
+-
+-$$($(1).EXTRACT.target): | $$(dir $$($(1).EXTRACT.target))
+-$$($(1).EXTRACT.target): $$($(1).FETCH.target)
+-	$$($(1).EXTRACT)
+-
+-$($(1).name).extract.touch:
+-	$$(TOUCH.exe) $$($(1).EXTRACT.target)
+-
+-$($(1).name).extract.untouch:
+-	$$(RM.exe) -f $$($(1).EXTRACT.target)
++#$($(1).name).extract: $$($(1).EXTRACT.target)
++#
++#$$($(1).EXTRACT.target): | $$(dir $$($(1).EXTRACT.target))
++#$$($(1).EXTRACT.target): $$($(1).FETCH.target)
++#	$$($(1).EXTRACT)
++#
++#$($(1).name).extract.touch:
++#	$$(TOUCH.exe) $$($(1).EXTRACT.target)
++#
++#$($(1).name).extract.untouch:
++#	$$(RM.exe) -f $$($(1).EXTRACT.target)
  
+ ##
+ ## target: patch
