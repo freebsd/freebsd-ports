@@ -1,0 +1,26 @@
+--- Makefile.orig	2014-02-14 12:27:23.000000000 +0100
++++ Makefile	2014-02-14 12:27:48.000000000 +0100
+@@ -1,11 +1,11 @@
+ ############################################################################
+ # if you change this, please also modify the value at the top of igal code
+-DESTDIR=/usr/local
++DESTDIR?=/usr/local
+ ############################################################################
+ 
+-BINDIR=$(DESTDIR)/bin
+-MANDIR=$(DESTDIR)/man/man1
+-LIBDIR=$(DESTDIR)/lib/igal2
++BINDIR=$(DESTDIR)$(PREFIX)/bin
++MANDIR=$(DESTDIR)$(PREFIX)/man/man1
++LIBDIR=$(DESTDIR)$(PREFIX)/lib/igal2
+ 
+ OLDLIBDIR=$(DESTDIR)/lib/igal
+ 
+@@ -24,7 +24,6 @@
+ install:: igal2
+ 	install -d $(BINDIR)
+ 	install -m 0755 igal2 $(BINDIR)
+-	ln -si $(BINDIR)/igal2 $(BINDIR)/igal
+ 	install -m 0755 utilities/igal2.sh $(BINDIR)
+ 	install -d $(MANDIR)
+ 	install -m 0644 igal2.1 $(MANDIR)
