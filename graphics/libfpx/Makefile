@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	libfpx
-DISTVERSION=	1.3.1-3
+DISTVERSION=	1.3.1-4
 CATEGORIES=	graphics
 MASTER_SITES=	http://imagemagick.mirrorcatalogs.com/delegates/	\
 		http://www.imagemagick.org/download/delegates/	\
@@ -17,7 +17,6 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Library routines for working with Flashpix images
 
 USE_XZ=	yes
-MAKE_JOBS_UNSAFE=yes
 
 PLIST_FILES=	lib/libfpx.so.2 lib/libfpx.so lib/libfpx.a include/fpxlib.h
 USE_LDCONFIG=	yes
