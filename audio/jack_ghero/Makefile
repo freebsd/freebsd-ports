@@ -15,11 +15,9 @@ LICENSE=	BSD
 LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 
 USE_BZIP2=	yes
-NO_STAGE=	yes
-MANCOMPRESSED=	yes
-MAN8=		jack_ghero.8
 
-PLIST_FILES=	sbin/jack_ghero
+PLIST_FILES=	sbin/jack_ghero \
+		man/man8/jack_ghero.8.gz
 
 OPTIONS_DEFINE=	DEBUG
 
@@ -30,10 +28,6 @@ MAKE_ARGS+=" PTHREAD_LIBS=${PTHREAD_LIBS}"
 
 .if ${PORT_OPTIONS:MDEBUG}
 MAKE_ARGS+=" HAVE_DEBUG=YES"
-.endif
-
-.if ${OSVERSION} < 800000
-IGNORE=		requires usb stack from FreeBSD 8.0-RELEASE or later
 .endif
 
 .include <bsd.port.mk>
