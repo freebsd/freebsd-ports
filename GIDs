@@ -142,6 +142,7 @@ prelude:*:281:
 spread:*:282:
 devmon:*:283:
 vnstat:*:284:
+exaddos:*:285:exaddos
 backuppc:*:300:
 _sphinx:*:312:
 dkfilter:*:325:
