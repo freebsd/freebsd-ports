@@ -2,9 +2,11 @@
 
 PORTNAME=	plone.app.upgrade
 PORTVERSION=	1.3.4
+PORTREVISION=	1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Upgrade machinery for Plone
@@ -46,12 +48,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}borg.localrole>=0:${PORTSDIR}/security/py-bo
 		${PYTHON_PKGNAMEPREFIX}Products.SecureMailHost>=0:${PORTSDIR}/mail/py-Products.SecureMailHost \
 		${PYTHON_PKGNAMEPREFIX}Products.ZCatalog>=2.13.4:${PORTSDIR}/devel/py-Products.ZCatalog
 
-DIST_SUBDIR=	zope
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-USE_ZIP=	yes
-USES=		zope
-
-NO_STAGE=	yes
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+USE_ZIP=		yes
+USES=			zope
 
 .include <bsd.port.mk>
