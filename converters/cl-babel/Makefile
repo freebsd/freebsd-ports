@@ -22,28 +22,21 @@ NO_BUILD=	yes
 
 USE_ASDF=	yes
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
-OPTIONS_DEFINE=	DOCS EXAMPLES 
-
-.include <bsd.port.options.mk>
 do-install:
-	@${MKDIR} ${ASDF_PATHNAME}
-	@${MKDIR} ${ASDF_PATHNAME}/src
-	@${INSTALL_DATA} ${WRKSRC}/src/*.lisp ${ASDF_PATHNAME}/src
-	@${INSTALL_DATA} ${WRKSRC}/babel.asd ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/babel-streams.asd ${ASDF_PATHNAME}
-	@${LN} -sf ${ASDF_PATHNAME}/*.asd ${ASDF_REGISTRY}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${ASDF_PATHNAME} ${STAGEDIR}${ASDF_REGISTRY}
+	@${MKDIR} ${STAGEDIR}${ASDF_PATHNAME}/src
+	@${INSTALL_DATA} ${WRKSRC}/src/*.lisp ${STAGEDIR}${ASDF_PATHNAME}/src
+	@${INSTALL_DATA} ${WRKSRC}/babel.asd ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/babel-streams.asd ${STAGEDIR}${ASDF_PATHNAME}
+	@${LN} -sf ${ASDF_PATHNAME}/babel.asd ${ASDF_PATHNAME}/babel-streams.asd ${STAGEDIR}${ASDF_REGISTRY}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in COPYRIGHT HEADER NOTES README
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/tests/* ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/tests/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>
