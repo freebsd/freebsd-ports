@@ -72,9 +72,6 @@ bin/pytest
 %%PYTHON_SITELIBDIR%%/logilab/common/optparser.py
 %%PYTHON_SITELIBDIR%%/logilab/common/optparser.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/optparser.pyo
-%%PYTHON_SITELIBDIR%%/logilab/common/pdf_ext.py
-%%PYTHON_SITELIBDIR%%/logilab/common/pdf_ext.pyc
-%%PYTHON_SITELIBDIR%%/logilab/common/pdf_ext.pyo
 %%PYTHON_SITELIBDIR%%/logilab/common/proc.py
 %%PYTHON_SITELIBDIR%%/logilab/common/proc.pyc
 %%PYTHON_SITELIBDIR%%/logilab/common/proc.pyo
