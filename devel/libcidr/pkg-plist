@@ -1,15 +1,22 @@
-lib/libcidr.so
-lib/libcidr.so.0
 bin/cidrcalc
 include/libcidr.h
+lib/libcidr.so
+lib/libcidr.so.0
 man/man3/libcidr.3.gz
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile.inc
+%%PORTDOCS%%%%DOCSDIR%%/codelibrary-html.css
+%%PORTDOCS%%%%DOCSDIR%%/libcidr-big.html
+%%PORTDOCS%%%%DOCSDIR%%/libcidr.dvi
+%%PORTDOCS%%%%DOCSDIR%%/libcidr.pdf
+%%PORTDOCS%%%%DOCSDIR%%/libcidr.ps
+%%PORTDOCS%%%%DOCSDIR%%/libcidr.rtf
+%%PORTDOCS%%%%DOCSDIR%%/libcidr.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cidrcalc/cidrcalc.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cidrcalc/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/acl/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/acl/acl.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/acl/acl.example
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/acl/Makefile
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/cidrcalc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/acl
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cidrcalc/Makefile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cidrcalc/cidrcalc.c
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/cidrcalc
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%/acl
+%%PORTEXAMPLES%%@dirrmtry %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
