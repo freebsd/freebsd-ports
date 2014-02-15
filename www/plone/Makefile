@@ -2,9 +2,11 @@
 
 PORTNAME=	plone
 PORTVERSION=	4.3.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 DISTNAME=	Plone-${PORTVERSION}
+DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Plone Content Management System
@@ -20,21 +22,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Products.CMFPlacefulWorkflow>=0:${PORTSDIR}/
 		${PYTHON_PKGNAMEPREFIX}plone.app.theming>0:${PORTSDIR}/www/py-plone.app.theming \
 		${PYTHON_PKGNAMEPREFIX}wicked>=0:${PORTSDIR}/textproc/py-wicked
 
-OPTIONS_DEFINE=	LDAP
-OPTIONS_EXCLUDE=NLS DOCS
+OPTIONS_DEFINE=		LDAP
+LDAP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.app.ldap>=1.2.6:${PORTSDIR}/www/py-plone.app.ldap
 
-DIST_SUBDIR=	zope
-PYDISTUTILS_PKGNAME=	Plone
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-USE_ZIP=	yes
-
-NO_STAGE=	yes
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLDAP}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}plone.app.ldap>=1.2.6:${PORTSDIR}/www/py-plone.app.ldap
-.endif
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+USE_ZIP=		yes
 
 .include <bsd.port.mk>
