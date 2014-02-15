@@ -1,0 +1,35 @@
+#!/bin/sh
+
+if [ "$2" != "DEINSTALL" ]; then
+	exit 0
+fi
+
+FONTDIR=${PKG_PREFIX}/lib/X11/fonts/local
+
+grepv() {
+	awk -v SRC=$1 'BEGIN{while (getline < SRC) {ENTRY[$0]=1}} (ENTRY[$0] != 1) {print}' $2
+}
+
+# font alias entry here!
+TMPFILE=/tmp/install-fonts-alias-$$
+cat << EOF > ${TMPFILE}
+k8  -elisa100-fixed-medium-r-normal--8-70-75-75-c-80-jisx0208.1983-0
+r8  -hiro-fixed-medium-r-normal--8-70-75-75-c-40-jisx0201.1976-0
+a8  -hiro-fixed-medium-r-normal--8-70-75-75-c-40-iso8859-1
+4x8 -hiro-fixed-medium-r-normal--8-70-75-75-c-40-iso8859-1
+EOF
+
+echo "Updating ${FONTDIR}/fonts.alias"
+cd ${FONTDIR}
+touch fonts.alias
+cp fonts.alias fonts.alias.orig
+grepv ${TMPFILE} fonts.alias.orig > fonts.alias
+if [ ! -s fonts.alias ]; then rm -f fonts.alias; fi
+rm -f fonts.alias.orig ${TMPFILE}
+
+echo "**********************************************************"
+echo "You should restart X server or do 'xset fp rehash' command"
+echo "to enable this update."
+echo "**********************************************************"
+
+exit 0
