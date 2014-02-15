@@ -1057,6 +1057,7 @@
     SUBDIR += libolecf
     SUBDIR += liboobs
     SUBDIR += liboop
+    SUBDIR += libopencm3
     SUBDIR += libopendaap
     SUBDIR += libopensync
     SUBDIR += libopensync022

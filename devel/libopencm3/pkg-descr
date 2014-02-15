@@ -1,0 +1,18 @@
+The libopencm3 project aims to create an open-source firmware library for
+various ARM Cortex-M3 microcontrollers.
+
+Currently (at least partly) supported microcontrollers:
+
+ - ST STM32F1 series
+ - ST STM32F2 series
+ - ST STM32F4 series
+ - NXP LPC1311/13/42/43
+
+The library is written completely from scratch based on the vendor datasheets,
+programming manuals, and application notes. The code is meant to be used
+with a GCC toolchain for ARM (arm-elf or arm-none-eabi), flashing of the
+code to a microcontroller can be done using the OpenOCD ARM JTAG software.
+
+This port depends on devel/gcc-arm-embedded toolchain.
+
+WWW: https://github.com/libopencm3/libopencm3
