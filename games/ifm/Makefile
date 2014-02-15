@@ -12,14 +12,10 @@ COMMENT=	Interactive Fiction mapper and walkthrough generator
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 
-USES=		perl5
-USE_GMAKE=	yes
+USES=		perl5 gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	WISH=${LOCALBASE}/bin/wish8.4
 
-MAN1=		ifm.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's/lib doc man/lib man/g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e '/docdir/d' ${WRKSRC}/Makefile.in
