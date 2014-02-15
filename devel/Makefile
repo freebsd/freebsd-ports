@@ -4440,6 +4440,7 @@
     SUBDIR += statsvn
     SUBDIR += stfl
     SUBDIR += stlfilt
+    SUBDIR += stlink
     SUBDIR += stlport
     SUBDIR += stormlib-ghost++
     SUBDIR += str
