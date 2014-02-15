@@ -7,32 +7,31 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.freebsdbrasil.com.br/~jmelo/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A lambda calculus interpreter
+COMMENT=	Lambda calculus interpreter
+
+LICENSE=	GPLv2
 
 USES=		perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
+
+OPTIONS_DEFINE=	DOCS
 
 PLIST_FILES=	bin/lambda \
 		share/lambda/definitions \
 		share/lambda/definitions_with_numbers
 PLIST_DIRS=	share/lambda
 
-.if !defined(NOPORTDOCS)
 DOCS=		lambda.html lambdamanual.html user_manual_style.css
 PORTDOCS=	*
-.endif
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/lambda ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/definitions* ${DATADIR}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/lambda ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/definitions* ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
