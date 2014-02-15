@@ -1,0 +1,13 @@
+  Some tools which enable multi-platform development on the TI Stellaris
+Launchpad boards. The Stellaris Launchpad is a low cost development board
+created by Texas Instruments that comes with an ARM Cortex-M4F processor.
+
+Included tools:
+
+  lm4flash Command-line firmware flashing tool using libusb-1.0
+ to communicate with the Stellaris Launchpad ICDI.
+
+  lmicdiusb TCP/USB bridge created by TI, letting GDB communicate with
+ the Stellaris Launchpad ICDI.
+
+WWW: https://launchpad.net/gcc-arm-embedded
