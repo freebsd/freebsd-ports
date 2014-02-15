@@ -1,0 +1,4 @@
+This is a wrapper around a SPARQL service. It helps in creating the query URI
+and, possibly, convert the result into a more manageable format.
+
+WWW: http://rdflib.github.io/sparqlwrapper/
