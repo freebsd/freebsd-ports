@@ -2,9 +2,11 @@
 
 PORTNAME=	Products.CMFPlone
 PORTVERSION=	4.3.2
+PORTREVISION=	1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Plone Content Management System (core)
@@ -114,11 +116,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisit
 		${PYTHON_PKGNAMEPREFIX}zope.tales>=0:${PORTSDIR}/devel/py-zope.tales \
 		${PYTHON_PKGNAMEPREFIX}zope.traversing>=0:${PORTSDIR}/devel/py-zope.traversing
 
-DIST_SUBDIR=	zope
-USE_PYTHON=	2
-USE_PYDISTUTILS=easy_install
-USE_ZIP=	yes
-
-NO_STAGE=	yes
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+USE_ZIP=		yes
 
 .include <bsd.port.mk>

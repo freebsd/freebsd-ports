@@ -2,9 +2,11 @@
 
 PORTNAME=	plone.app.blob
 PORTVERSION=	1.5.8
+PORTREVISION=	1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	ZODB blob support for Plone
@@ -17,11 +19,9 @@ RUN_DEPENDS=	zodb${PYTHON_PKGNAMESUFFIX}>=3.8.1:${PORTSDIR}/databases/zodb3 \
 		${PYTHON_PKGNAMEPREFIX}plone.app.imaging>1.0:${PORTSDIR}/www/py-plone.app.imaging \
 		${PYTHON_PKGNAMEPREFIX}plone.scale>=0:${PORTSDIR}/www/py-plone.scale
 
-DIST_SUBDIR=	zope
-USE_PYTHON=	2
-USE_PYDISTUTILS=easy_install
-USE_ZIP=	yes
-
-NO_STAGE=	yes
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+USE_ZIP=		yes
 
 .include <bsd.port.mk>

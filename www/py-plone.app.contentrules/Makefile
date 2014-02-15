@@ -2,9 +2,11 @@
 
 PORTNAME=	plone.app.contentrules
 PORTVERSION=	3.0.4
+PORTREVISION=	1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Plone integration for plone.contentrules
@@ -38,12 +40,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}five.formlib>=0:${PORTSDIR}/devel/py-five.fo
 		${PYTHON_PKGNAMEPREFIX}Products.statusmessages>=0:${PORTSDIR}/devel/py-Products.statusmessages \
 		zodb${PYTHON_PKGNAMESUFFIX}>=0:${PORTSDIR}/databases/zodb3
 
-DIST_SUBDIR=	zope
-USE_PYTHON=	2
-USE_PYDISTUTILS=easy_install
-USE_ZIP=	yes
-USES=		zope
-
-NO_STAGE=	yes
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+USE_ZIP=		yes
+USES=			zope
 
 .include <bsd.port.mk>

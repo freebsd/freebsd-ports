@@ -2,9 +2,11 @@
 
 PORTNAME=	plone.app.caching
 PORTVERSION=	1.1.6
+PORTREVISION=	1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Plone UI and default rules for plone.caching/z3c.caching
@@ -32,12 +34,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=0:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}z3c.form>=0:${PORTSDIR}/devel/py-z3c.form \
 		${PYTHON_PKGNAMEPREFIX}z3c.zcmlhook>=0:${PORTSDIR}/devel/py-z3c.zcmlhook
 
-DIST_SUBDIR=	zope
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-USE_ZIP=	yes
-USES=		zope
-
-NO_STAGE=	yes
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+USE_ZIP=		yes
+USES=			zope
 
 .include <bsd.port.mk>

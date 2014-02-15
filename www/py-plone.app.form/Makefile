@@ -2,9 +2,11 @@
 
 PORTNAME=	plone.app.form
 PORTVERSION=	2.2.3
+PORTREVISION=	1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	zope.formlib integration for Plone
@@ -29,12 +31,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}five.formlib>=0:${PORTSDIR}/devel/py-five.fo
 		${PYTHON_PKGNAMEPREFIX}Acquisition>=0:${PORTSDIR}/devel/py-Acquisition \
 		${PYTHON_PKGNAMEPREFIX}DateTime>=0:${PORTSDIR}/devel/py-DateTime
 
-DIST_SUBDIR=	zope
-USE_PYTHON=	2
-USE_PYDISTUTILS=easy_install
-USE_ZIP=	yes
-USES=		zope
-
-NO_STAGE=	yes
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+USE_ZIP=		yes
+USES=			zope
 
 .include <bsd.port.mk>

@@ -2,9 +2,11 @@
 
 PORTNAME=	plone.app.discussion
 PORTVERSION=	2.2.8
+PORTREVISION=	1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Enhanced discussion support for Plone
@@ -29,11 +31,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}collective.monkeypatcher>=0:${PORTSDIR}/deve
 		${PYTHON_PKGNAMEPREFIX}zope.site>=0:${PORTSDIR}/devel/py-zope.site \
 		${PYTHON_PKGNAMEPREFIX}z3c.form>=2.3.3:${PORTSDIR}/devel/py-z3c.form
 
-DIST_SUBDIR=	zope
-USE_PYTHON=	2
-USE_PYDISTUTILS=easy_install
-USE_ZIP=	yes
-
-NO_STAGE=	yes
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+USE_ZIP=		yes
 
 .include <bsd.port.mk>
