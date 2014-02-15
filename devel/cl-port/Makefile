@@ -19,17 +19,16 @@ NO_BUILD=	yes
 
 USE_ASDF=	yes
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	@${MKDIR} ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/clocc-port.asd ${ASDF_PATHNAME}/port.asd
-	@${INSTALL_DATA} ${WRKSRC}/port.system ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/*.lisp ${ASDF_PATHNAME}
-	@${LN} -sf ${ASDF_PATHNAME}/*.asd ${ASDF_REGISTRY}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/port.html ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${ASDF_PATHNAME} ${STAGEDIR}${ASDF_REGISTRY}
+	@${INSTALL_DATA} ${WRKSRC}/clocc-port.asd ${STAGEDIR}${ASDF_PATHNAME}/port.asd
+	@${INSTALL_DATA} ${WRKSRC}/port.system ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/*.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${LN} -sf ${ASDF_PATHNAME}/port.asd ${STAGEDIR}${ASDF_REGISTRY}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/port.html ${STAGEDIR}${DOCSDIR}
 
 .include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>
