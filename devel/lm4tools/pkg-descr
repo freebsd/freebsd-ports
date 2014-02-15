@@ -10,4 +10,4 @@ Included tools:
   lmicdiusb TCP/USB bridge created by TI, letting GDB communicate with
  the Stellaris Launchpad ICDI.
 
-WWW: https://launchpad.net/gcc-arm-embedded
+WWW: https://github.com/utzig/lm4tools
