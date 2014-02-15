@@ -19,21 +19,14 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/code
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/exec/chaco ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/exec/libchaco.a ${PREFIX}/lib
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/*.ps ${DOCSDIR}
-	${GZIP_CMD} ${DOCSDIR}/*.ps
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/exec/*.graph ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/exec/*.coords ${EXAMPLESDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKDIR}/${DISTNAME}/exec/chaco ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/exec/libchaco.a ${STAGEDIR}${PREFIX}/lib
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/*.ps ${STAGEDIR}${DOCSDIR}
+	${GZIP_CMD} ${STAGEDIR}${DOCSDIR}/*.ps
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/exec/*.graph ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/exec/*.coords ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
