@@ -13,8 +13,11 @@ bin/svnlook
 bin/svnmucc
 %%TOOLS%%bin/svnraisetreeconflict
 bin/svnrdump
-bin/svnserve
+%%NO_SVNSERVE_WRAPPER%%bin/svnserve
+%%SVNSERVE_WRAPPER%%@unexec if cmp -s %D/bin/svnserve.sample %D/bin/svnserve; then rm -r %D/bin/svnserve; fi
 %%SVNSERVE_WRAPPER%%bin/svnserve.bin
+%%SVNSERVE_WRAPPER%%bin/svnserve.sample
+%%SVNSERVE_WRAPPER%%@exec if [ ! -f %D/bin/svnserve ] ; then cp -p %D/%F %B/bin/svnserve; fi
 bin/svnsync
 bin/svnversion
 include/subversion-1/mod_authz_svn.h
