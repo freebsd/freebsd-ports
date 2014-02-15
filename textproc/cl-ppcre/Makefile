@@ -14,42 +14,41 @@ NO_BUILD=	yes
 
 USE_ASDF=	yes
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	@${MKDIR} ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/api.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/charmap.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/charset.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/chartest.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/closures.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/convert.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/errors.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/lexer.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/optimize.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/packages.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/parser.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/regex-class-util.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/regex-class.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/repetition-closures.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/scanner.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/specials.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/util.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/cl-ppcre.asd ${ASDF_PATHNAME}
-	@${LN} -sf ${ASDF_PATHNAME}/*.asd ${ASDF_REGISTRY}
+	@${MKDIR} ${STAGEDIR}${ASDF_PATHNAME} ${STAGEDIR}${ASDF_REGISTRY}
+	@${INSTALL_DATA} ${WRKSRC}/api.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/charmap.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/charset.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/chartest.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/closures.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/convert.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/errors.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/lexer.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/optimize.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/packages.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/parser.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/regex-class-util.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/regex-class.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/repetition-closures.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/scanner.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/specials.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/util.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/cl-ppcre.asd ${STAGEDIR}${ASDF_PATHNAME}
+	@${LN} -sf ${ASDF_PATHNAME}/cl-ppcre.asd ${STAGEDIR}${ASDF_REGISTRY}
 # cl-ppcre-test depends on flexi-streams
-	@${MKDIR} ${ASDF_PATHNAME}/test
-	@${INSTALL_DATA} ${WRKSRC}/test/packages.lisp ${ASDF_PATHNAME}/test
-	@${INSTALL_DATA} ${WRKSRC}/test/perl-tests.lisp ${ASDF_PATHNAME}/test
-	@${INSTALL_DATA} ${WRKSRC}/test/perltest.pl ${ASDF_PATHNAME}/test
-	@${INSTALL_DATA} ${WRKSRC}/test/perltestdata ${ASDF_PATHNAME}/test
-	@${INSTALL_DATA} ${WRKSRC}/test/perltestinput ${ASDF_PATHNAME}/test
-	@${INSTALL_DATA} ${WRKSRC}/test/simple ${ASDF_PATHNAME}/test
-	@${INSTALL_DATA} ${WRKSRC}/test/tests.lisp ${ASDF_PATHNAME}/test
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/index.html ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${ASDF_PATHNAME}/test
+	@${INSTALL_DATA} ${WRKSRC}/test/packages.lisp ${STAGEDIR}${ASDF_PATHNAME}/test
+	@${INSTALL_DATA} ${WRKSRC}/test/perl-tests.lisp ${STAGEDIR}${ASDF_PATHNAME}/test
+	@${INSTALL_DATA} ${WRKSRC}/test/perltest.pl ${STAGEDIR}${ASDF_PATHNAME}/test
+	@${INSTALL_DATA} ${WRKSRC}/test/perltestdata ${STAGEDIR}${ASDF_PATHNAME}/test
+	@${INSTALL_DATA} ${WRKSRC}/test/perltestinput ${STAGEDIR}${ASDF_PATHNAME}/test
+	@${INSTALL_DATA} ${WRKSRC}/test/simple ${STAGEDIR}${ASDF_PATHNAME}/test
+	@${INSTALL_DATA} ${WRKSRC}/test/tests.lisp ${STAGEDIR}${ASDF_PATHNAME}/test
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/index.html ${STAGEDIR}${DOCSDIR}
 
 .include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>
