@@ -26,12 +26,11 @@ NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	bin/p4
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .include "Makefile.inc"
 
 do-install:
-	${INSTALL_PROGRAM} ${_DISTDIR}/p4 ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${DISTDIR}/${DIST_SUBDIR}/p4 ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.post.mk>
