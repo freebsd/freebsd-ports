@@ -13,14 +13,15 @@ COMMENT=	An HTTP and WebDAV client library for Unix systems
 
 CONFLICTS=	neon2[^9]-[0-9]*
 
-OPTIONS_DEFINE=		OPENSSL NLS GSSAPI PROXY DOCS
-OPTIONS_DEFAULT=	EXPAT OPENSSL NLS GSSAPI
+OPTIONS_DEFINE=		CA_BUNDLE DOCS GSSAPI NLS OPENSSL PROXY
+OPTIONS_DEFAULT=	CA_BUNDLE EXPAT GSSAPI NLS OPENSSL
 OPTIONS_SINGLE=		XML
 OPTIONS_SINGLE_XML=	EXPAT LIBXML
 
-XML_DESC=		XML parser library
+CA_BUNDLE_DESC=		Install CA bundle for OpenSSL
 LIBXML_DESC=		libxml2 XML parser support
 PROXY_DESC=		libproxy support
+XML_DESC=		XML parser library
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
@@ -31,7 +32,15 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared \
 		--with-libs=${LOCALBASE}:${PREFIX}
 
+CA_BUNDLE_CONFIGURE_ON=	--with-ca-bundle=${LOCALBASE}/share/certs/ca-root-nss.crt
+CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MCA_BUNDLE} && !${PORT_OPTIONS:MOPENSSL}
+WARNING+=	"OpenSSL need for CA bundle support"
+WARNING+=	"Enable the OPENSSL option or disable the CA_BUNDLE option"
+.endif
 
 .if ${PORT_OPTIONS:MEXPAT}
 CONFIGURE_ARGS+=--with-expat
