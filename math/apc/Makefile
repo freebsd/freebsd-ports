@@ -9,14 +9,17 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	arved
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An xforms based Auto Payment Calculator
+COMMENT=	Xforms based Auto Payment Calculator
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libforms.so:${PORTSDIR}/x11-toolkits/xforms
 
 USE_XORG=	x11 xpm
-MAN1=		apc.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/apc
+PLIST_FILES=	bin/apc man/man1/apc.1.gz
 
-NO_STAGE=	yes
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/apc ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/apc.1 ${STAGEDIR}/${MAN1PREFIX}/man/man1/
+
 .include <bsd.port.mk>
