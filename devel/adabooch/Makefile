@@ -8,7 +8,7 @@ MASTER_SITES=	${MASTER_SITE}
 DISTNAME=	bc-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Library which provide container classes as well as powertools for Ada
 
 LICENSE=	GPLv2

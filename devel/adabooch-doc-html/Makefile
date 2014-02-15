@@ -8,7 +8,7 @@ MASTER_SITES=	http://www.adapower.net/booch/download/
 DISTNAME=	bc-html-${PORTVERSION}
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	sylvio@FreeBSD.org
+MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Manual for adabooch
 
 LICENSE=	GPLv2
