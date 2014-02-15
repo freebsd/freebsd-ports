@@ -3,6 +3,7 @@
 
 PORTNAME=	cerealizer
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	http://download.gna.org/soya/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,6 @@ COMMENT=	Secure pickle-like module
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	Cerealizer
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
