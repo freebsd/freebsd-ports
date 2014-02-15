@@ -16,11 +16,10 @@ CONFLICTS=	oneko-2.*
 
 USES=		imake
 USE_XORG=	x11 xext
-MAN6=		oneko.6
-PLIST_FILES=	bin/oneko
+PLIST_FILES=	bin/oneko \
+		man/man6/oneko.6.gz
 NO_CDROM=	Including derivatives from CARDCAPTOR SAKURA. See http://www.clamp-net.com/ -> INFORMATION
 
-NO_STAGE=	yes
 pre-configure:
 	@${REINPLACE_CMD} -e 's,/\*\*/# Cannot compile in using Gcc,/* Cannot compile using Gcc */,' \
 		${WRKSRC}/Imakefile
