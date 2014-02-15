@@ -62,8 +62,10 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.in
 
 .if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
 SUB_LIST+=	SVNSERVE_BIN_EXT=".bin"
+PLIST_SUB+=	NO_SVNSERVE_WRAPPER="@comment "
 .else
 SUB_LIST+=	SVNSERVE_BIN_EXT=""
+PLIST_SUB+=	NO_SVNSERVE_WRAPPER=""
 .endif
 
 .if ${PORT_OPTIONS:MMOD_DAV_SVN}
@@ -87,6 +89,7 @@ USES+=			gettext:build
 .  endif
 .  if ${PORT_OPTIONS:MBDB}
 BDB_BUILD_DEPENDS=	yes
+.else
 .  endif
 OLD_LIB_DEPENDS:=	${LIB_DEPENDS:S!^!${LOCALBASE}/lib/!:C!(\.so|\.[0-9]+)?:!.a:!}
 BUILD_DEPENDS+=		${OLD_LIB_DEPENDS}
@@ -94,6 +97,12 @@ LIB_DEPENDS=
 PLIST_SUB+=		DYNAMIC_ENABLED="@comment "
 .else
 PLIST_SUB+=		DYNAMIC_ENABLED=""
+.endif
+
+.if ${PORT_OPTIONS:MBDB}
+CONFIGURE_ARGS+=	--enable-bdb6
+.else
+CONFIGURE_ARGS+=	--without-berkeley-db
 .endif
 
 .if make(repository)
@@ -193,12 +202,10 @@ post-install:	${MKREPOS_TARGET}
 .endif
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/tools.examples && ${TAR} --exclude '*.in' -cf - * | ${TAR} -C ${STAGEDIR}${DATADIR} -xof - )
-
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-
 .if ${PORT_OPTIONS:MSVNSERVE_WRAPPER}
-	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${STAGEDIR}${PREFIX}/bin/svnserve
+	@${INSTALL_SCRIPT} ${FILESDIR}/svnserve.wrapper ${STAGEDIR}${PREFIX}/bin/svnserve.sample
 .endif
 
 # ===============================================================================
