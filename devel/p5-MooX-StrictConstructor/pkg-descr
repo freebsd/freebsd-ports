@@ -1,0 +1,5 @@
+Simply loading this module makes your constructors "strict". If your constructor
+is called with an attribute init argument that your class does not declare, then
+it dies. This is a great way to catch small typos.
+
+WWW: http://search.cpan.org/dist/MooX-StrictConstructor/
