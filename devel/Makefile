@@ -39,7 +39,6 @@
     SUBDIR += acme
     SUBDIR += activitymail
     SUBDIR += adabooch
-    SUBDIR += adabooch-doc-html
     SUBDIR += adacurses
     SUBDIR += adasdl
     SUBDIR += adime
