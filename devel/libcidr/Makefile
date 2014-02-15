@@ -2,24 +2,27 @@
 # $FreeBSD$
 
 PORTNAME=	libcidr
-DISTVERSION=	1.2.2
+DISTVERSION=	1.2.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.over-yonder.net/~fullermd/projects/${PORTNAME}/ \
-		http://distfiles.over-yonder.net/${PORTNAME}/ \
-		http://mirrors.rit.edu/zi/
+		http://distfiles.over-yonder.net/${PORTNAME}/
 
 MAINTAINER=	fullermd@over-yonder.net
-COMMENT=	A library to handle manipulating CIDR netblocks
+COMMENT=	Library to handle manipulating CIDR netblocks
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_XZ=		yes
 USE_LDCONFIG=	yes
-MAKE_ENV+=	CIDR_DOCDIR=${DOCSDIR} CIDR_EXDIR=${EXAMPLESDIR} NO_DOCS=yes
+MAKE_ENV+=	CIDR_DOCDIR=${DOCSDIR} CIDR_EXDIR=${EXAMPLESDIR}
 
-.if defined(NOPORTEXAMPLES)
-MAKE_ENV+=	NO_EXAMPLES=yes
-.endif
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+DOCS_MAKE_ENV_OFF=	NO_DOCS=yes
+EXAMPLES_MAKE_ENV_OFF=	NO_EXAMPLES=yes
+
+post-patch:
+	@${REINPLACE_CMD} 's|-g -O2 -pipe||' ${WRKSRC}/src/Makefile.inc
 
 .include <bsd.port.mk>
