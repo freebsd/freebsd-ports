@@ -15,5 +15,4 @@ COMMENT=	vCard and iCalendar support for ruby
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
