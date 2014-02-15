@@ -3,6 +3,7 @@
 
 PORTNAME=	idnkit-python
 PORTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://jprs.co.jp/idn/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,10 +16,8 @@ LIB_DEPENDS=	idnkitlite.2:${PORTSDIR}/dns/idnkit2
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/idnkit.so
-
-NO_STAGE=	yes
 post-patch:
 		${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		    ${WRKSRC}/setup.py
