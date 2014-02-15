@@ -19,12 +19,11 @@ NO_BUILD=	yes
 
 USE_ASDF=	yes
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/split-sequence.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/split-sequence.asd ${ASDF_PATHNAME}
-	@${LN} -sf ${ASDF_PATHNAME}/*.asd ${ASDF_REGISTRY}
+	@${MKDIR} ${STAGEDIR}${ASDF_PATHNAME} ${STAGEDIR}${ASDF_REGISTRY}
+	@${INSTALL_DATA} ${WRKSRC}/split-sequence.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/split-sequence.asd ${STAGEDIR}${ASDF_PATHNAME}
+	@${LN} -sf ${ASDF_PATHNAME}/split-sequence.asd ${STAGEDIR}${ASDF_REGISTRY}
 
 .include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>
