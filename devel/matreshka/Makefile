@@ -3,13 +3,14 @@
 
 PORTNAME=	matreshka
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://forge.ada-ru.org/matreshka/downloads/
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Ada framework for information systems development
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	gprbuild>=20120510:${PORTSDIR}/devel/gprbuild
 
