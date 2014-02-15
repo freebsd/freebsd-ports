@@ -175,6 +175,8 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2014-02-14</url>
+      <cvename>CVE-2013-7285</cvename>
+      <cvename>CVE-2013-5573</cvename>
     </references>
     <dates>
       <discovery>2014-02-14</discovery>
