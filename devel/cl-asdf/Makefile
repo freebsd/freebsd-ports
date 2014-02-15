@@ -1,7 +1,6 @@
 # Created by: Henrik Motakef <henrik.motakef@web.de>
 # $FreeBSD$
 
-NO_STAGE=	yes
 # The source tarball was obtained from the project's GIT repository:
 # wget -O asdf-2.017.tar.gz "http://common-lisp.net/gitweb?p=projects/asdf/asdf.git;a=snapshot;h=db16d0cc1a15697f831bcacc9429cc578304b6cb;sf=tgz"
 
@@ -21,28 +20,22 @@ NO_BUILD=	yes
 
 SUB_FILES+=	pkg-message
 
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	@${MKDIR} ${ASDF_PATHNAME}
-	@${MKDIR} ${ASDF_REGISTRY}
-	@${INSTALL_DATA} ${WRKSRC}/*.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/*.asd ${ASDF_PATHNAME}
-	@${LN} -sf ${ASDF_PATHNAME}/*.asd ${ASDF_REGISTRY}
-	@${SED}	-i '' -e 's|%%PREFIX%%|${PREFIX}|' ${ASDF_PATHNAME}/asdf.lisp
+	@${MKDIR} ${STAGEDIR}${ASDF_PATHNAME}
+	@${MKDIR} ${STAGEDIR}${ASDF_REGISTRY}
+	@${INSTALL_DATA} ${WRKSRC}/*.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/*.asd ${STAGEDIR}${ASDF_PATHNAME}
+	@${LN} -sf ${ASDF_PATHNAME}/asdf.asd ${STAGEDIR}${ASDF_REGISTRY}
+	@${SED}	-i '' -e 's|%%PREFIX%%|${PREFIX}|' ${STAGEDIR}${ASDF_PATHNAME}/asdf.lisp
 	@${SED}	-e 's|%%ASDF_PATHNAME%%|${ASDF_PATHNAME}/asdf|' \
 		-e 's|%%ASDF_REGISTRY%%|${ASDF_REGISTRY}|' \
 		-e 's|%%PREFIX%%|${PREFIX}|' \
 		${FILESDIR}/asdf-init.lisp > \
-		${PREFIX}/etc/asdf-init.lisp.default
-	@[ -f ${PREFIX}/etc/asdf-init.lisp ] || \
-		${CP} ${PREFIX}/etc/asdf-init.lisp.default \
-		${PREFIX}/etc/asdf-init.lisp
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+		${STAGEDIR}${PREFIX}/etc/asdf-init.lisp.default
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.cl-asdf.mk>
 .include <bsd.port.mk>
