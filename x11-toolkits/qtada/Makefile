@@ -3,12 +3,15 @@
 
 PORTNAME=	qtada
 PORTVERSION=	3.2.0.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.qtada.com/
 DISTNAME=	${PORTNAME}-gpl-3.2.0-20120708-3871
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Ada2005 language bindings to Qt4 framework
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	gprbuild>=20120510:${PORTSDIR}/devel/gprbuild \
 		gnat_util>=2013:${PORTSDIR}/lang/gnat_util \
