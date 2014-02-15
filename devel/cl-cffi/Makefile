@@ -31,44 +31,38 @@ NO_BUILD=	yes
 
 USE_ASDF=	yes
 
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS EXAMPLES 
-
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
-	@${MKDIR} ${ASDF_PATHNAME}
-	@${MKDIR} ${ASDF_PATHNAME}/src
-	@${MKDIR} ${ASDF_PATHNAME}/grovel
-	@${MKDIR} ${ASDF_PATHNAME}/uffi-compat
-	@${INSTALL_DATA} ${WRKSRC}/src/*.lisp ${ASDF_PATHNAME}/src
-	@${INSTALL_DATA} ${WRKSRC}/grovel/*.lisp ${ASDF_PATHNAME}/grovel
-	@${INSTALL_DATA} ${WRKSRC}/uffi-compat/*.asd ${ASDF_PATHNAME}/uffi-compat
-	@${INSTALL_DATA} ${WRKSRC}/uffi-compat/*.lisp ${ASDF_PATHNAME}/uffi-compat
-	@${INSTALL_DATA} ${WRKSRC}/cffi.asd ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/cffi-uffi-compat.asd ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/cffi-grovel.asd ${ASDF_PATHNAME}
-	@${LN} -sf ${ASDF_PATHNAME}/*.asd ${ASDF_REGISTRY}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${ASDF_PATHNAME}
+	@${MKDIR} ${STAGEDIR}${ASDF_PATHNAME}/src
+	@${MKDIR} ${STAGEDIR}${ASDF_PATHNAME}/grovel
+	@${MKDIR} ${STAGEDIR}${ASDF_PATHNAME}/uffi-compat
+	@${MKDIR} ${STAGEDIR}${ASDF_REGISTRY}
+	@${INSTALL_DATA} ${WRKSRC}/src/*.lisp ${STAGEDIR}${ASDF_PATHNAME}/src
+	@${INSTALL_DATA} ${WRKSRC}/grovel/*.lisp ${STAGEDIR}${ASDF_PATHNAME}/grovel
+	@${INSTALL_DATA} ${WRKSRC}/uffi-compat/*.asd ${STAGEDIR}${ASDF_PATHNAME}/uffi-compat
+	@${INSTALL_DATA} ${WRKSRC}/uffi-compat/*.lisp ${STAGEDIR}${ASDF_PATHNAME}/uffi-compat
+	@${INSTALL_DATA} ${WRKSRC}/cffi.asd ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/cffi-uffi-compat.asd ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/cffi-grovel.asd ${STAGEDIR}${ASDF_PATHNAME}
+	@${LN} -sf ${ASDF_PATHNAME}/cffi.asd ${ASDF_PATHNAME}/cffi-uffi-compat.asd \
+		${ASDF_PATHNAME}/cffi-grovel.asd ${STAGEDIR}${ASDF_REGISTRY}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 .for FILE in shareable-vectors.txt allegro-internals.txt mem-vector.txt
-	@${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/cffi-manual.html ${DOCSDIR}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/cffi-manual.txt ${DOCSDIR}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/cffi-manual.pdf ${DOCSDIR}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/cffi-sys-spec.html ${DOCSDIR}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/cffi-sys-spec.txt ${DOCSDIR}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/cffi-sys-spec.pdf ${DOCSDIR}
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-	@${MKDIR} ${EXAMPLESDIR}/tests
-	@${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${WRKSRC}/tests/* ${EXAMPLESDIR}/tests
-.endif
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/cffi-manual.html ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/cffi-manual.txt ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/cffi-manual.pdf ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/cffi-sys-spec.html ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/cffi-sys-spec.txt ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/cffi-sys-spec.pdf ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/tests
+	@${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/tests/* ${STAGEDIR}${EXAMPLESDIR}/tests
 
 .include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>
