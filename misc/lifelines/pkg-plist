@@ -2,6 +2,10 @@ bin/btedit
 bin/dbverify
 bin/llexec
 bin/llines
+man/man1/btedit.1.gz
+man/man1/dbverify.1.gz
+man/man1/llexec.1.gz
+man/man1/llines.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/.linesrc
 %%PORTDOCS%%%%DOCSDIR%%/ABOUT-NLS
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
@@ -15,10 +19,14 @@ bin/llines
 %%PORTDOCS%%%%DOCSDIR%%/README.INTERNATIONAL
 %%PORTDOCS%%%%DOCSDIR%%/README.LAYOUT
 %%PORTDOCS%%%%DOCSDIR%%/README.MAINTAINERS
+%%PORTDOCS%%%%DOCSDIR%%/README.MAINTAINERS.rpm
+%%PORTDOCS%%%%DOCSDIR%%/README.MAINTAINERS.win32
 %%PORTDOCS%%%%DOCSDIR%%/lines.cfg
 %%PORTDOCS%%%%DOCSDIR%%/lines.cfg.input
 %%PORTDOCS%%%%DOCSDIR%%/ll-devguide.html
 %%PORTDOCS%%%%DOCSDIR%%/ll-devguide.xml
+%%PORTDOCS%%%%DOCSDIR%%/ll-index.html
+%%PORTDOCS%%%%DOCSDIR%%/ll-index.sv.html
 %%PORTDOCS%%%%DOCSDIR%%/ll-reportmanual.html
 %%PORTDOCS%%%%DOCSDIR%%/ll-reportmanual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/ll-reportmanual.sv.html
@@ -147,6 +155,8 @@ bin/llines
 %%DATADIR%%/line.ll
 %%DATADIR%%/listsour.ll
 %%DATADIR%%/ll-devguide.html
+%%DATADIR%%/ll-index.html
+%%DATADIR%%/ll-index.sv.html
 %%DATADIR%%/ll-reportmanual.html
 %%DATADIR%%/ll-reportmanual.pdf
 %%DATADIR%%/ll-reportmanual.sv.html
@@ -156,7 +166,7 @@ bin/llines
 %%DATADIR%%/ll-userguide.sv.html
 %%DATADIR%%/ll-userguide.txt
 %%DATADIR%%/ll.png
-%%DATADIR%%/ll2html4.ll
+%%DATADIR%%/ll2html.ll
 %%DATADIR%%/ll2visio.ll
 %%DATADIR%%/lldb.ll
 %%DATADIR%%/longlines.ll

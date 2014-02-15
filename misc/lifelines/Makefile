@@ -2,10 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	lifelines
-PORTVERSION=	3.0.51
-PORTREVISION=	1
+PORTVERSION=	3.0.62
 CATEGORIES=	misc
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20beta%20versions/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	matt@gsicomp.on.ca
 COMMENT=	An advanced genealogical system
@@ -14,11 +13,7 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USES=		bison iconv
 
-MAN1=		btedit.1 dbverify.1 llines.1
-
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS NLS 
+OPTIONS_DEFINE=	DOCS NLS
 
 .include <bsd.port.options.mk>
 .if ${PORT_OPTIONS:MNLS}
@@ -38,10 +33,5 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,install-data-am: install-dist_pkgdataDATA install-docDATA install-man,install-data-am: install-dist_pkgdataDATA,' \
 		${WRKSRC}/docs/Makefile.in
 .endif
-
-post-install:
-.for file in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/docs/${file} ${MANPREFIX}/man/man1
-.endfor
 
 .include <bsd.port.mk>
