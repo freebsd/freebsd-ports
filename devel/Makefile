@@ -911,6 +911,7 @@
     SUBDIR += kyra
     SUBDIR += kyua
     SUBDIR += kyua-atf-compat
+    SUBDIR += kyua-cli
     SUBDIR += kyua-testers
     SUBDIR += lasi
     SUBDIR += lcov
