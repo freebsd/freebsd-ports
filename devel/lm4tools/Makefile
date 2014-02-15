@@ -24,8 +24,6 @@ USES=		gmake
 PORTDOCS=	README.md lmicdiusb/commands.txt lmicdiusb/README
 PLIST_FILES=	bin/lm4flash bin/lmicdi
 
-.include <bsd.port.pre.mk>
-
 do-build:
 	@${GMAKE} -C ${WRKSRC}/lm4flash all
 	@${GMAKE} -C ${WRKSRC}/lmicdiusb all
@@ -39,4 +37,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/lmicdiusb/commands.txt ${STAGEDIR}${DOCSDIR}/lmicdiusb/commands.txt
 	${INSTALL_DATA} ${WRKSRC}/lmicdiusb/README ${STAGEDIR}${DOCSDIR}/lmicdiusb/README
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
