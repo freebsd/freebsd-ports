@@ -14,14 +14,13 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 
 GNU_CONFIGURE=	yes
 USE_GCC=	any
-USE_GMAKE=	yes
+USES=		gmake
 CONFIGURE_ARGS+=	--enable-gmp
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|@prefix@/libdata/pkgconfig|' \
 		${WRKSRC}/Makefile.in
