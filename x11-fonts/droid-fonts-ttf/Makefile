@@ -23,18 +23,14 @@ PLIST_SUB=	FONTDIR=${FONTDIR}
 SUB_FILES=	pkg-message
 SUB_LIST=	FONTDIR=${FONTDIR}
 
-NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC}/ && \
 		${LOCALBASE}/bin/mkfontscale && \
 		${LOCALBASE}/bin/mkfontdir
 
 do-install:
-	${MKDIR} ${PREFIX}/${FONTDIR}/
-	cd ${WRKSRC}/ && ${INSTALL_DATA} *.ttf fonts.* ${PREFIX}/${FONTDIR}/
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} *.ttf fonts.* ${STAGEDIR}${PREFIX}/${FONTDIR}/
 
 # maintainer section:
 # http://android.git.kernel.org/?p=platform/frameworks/base.git;a=tree;f=data/fonts
