@@ -3,7 +3,7 @@
 
 PORTNAME=	naga10
 PORTVERSION=	1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA013391/fonts/
 DISTNAME=	knj10-${PORTVERSION}
@@ -16,25 +16,17 @@ BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 FONTSDIR=	lib/X11/fonts/local
 MAKE_ENV=	FONTSDIR=${FONTSDIR}
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	${CP} ${FILESDIR}/Makefile.in ${WRKSRC}/Makefile
 
-pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGREQ} ${PKGNAME} INSTALL
-
 post-install:
-	@(cd ${PREFIX}/${FONTSDIR} ; mkfontdir)
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/naga10
-	@${CP} ${WRKSRC}/README ${PREFIX}/share/doc/naga10/
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/naga10
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${PREFIX}/share/doc/naga10/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
