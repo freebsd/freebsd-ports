@@ -101,10 +101,10 @@ Note:  Please add new entries to the beginning of this file.
 	    <li>
 	      <p>iSECURITY-105</p>
 	      <p>In some places, Jenkins XML API uses XStream to deserialize
-	          arbitrary content, which is affected by CVE-2013-7285 reported
-	           against XStream. This allows malicious users of Jenkins with
-	           a limited set of permissions to execute arbitrary code inside
-	           Jenkins master.</p>
+	         arbitrary content, which is affected by CVE-2013-7285 reported
+	         against XStream. This allows malicious users of Jenkins with
+	         a limited set of permissions to execute arbitrary code inside
+	         Jenkins master.</p>
 	    </li>
 	    <li>
 	      <p>SECURITY-76 &amp; SECURITY-88 / CVE-2013-5573</p>
@@ -203,8 +203,8 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2014-02-14</url>
-      <cvename>CVE-2013-7285</cvename>
       <cvename>CVE-2013-5573</cvename>
+      <cvename>CVE-2013-7285</cvename>
     </references>
     <dates>
       <discovery>2014-02-14</discovery>
