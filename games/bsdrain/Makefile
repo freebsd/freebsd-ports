@@ -11,12 +11,9 @@ DISTNAME=	rain-${PORTVERSION}
 MAINTAINER=	jacob@whotookspaz.org
 COMMENT=	The original BSD rain program, ported from NetBSD
 
-MAN6=		rain.6
-MANCOMPRESSED=	yes
-
-PLIST_FILES=	bin/rain
+PLIST_FILES=	bin/rain \
+		man/man6/rain.6.gz
 
 USE_BZIP2=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
