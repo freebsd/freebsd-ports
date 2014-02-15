@@ -32,6 +32,8 @@ _INCLUDE_USES_SHEBANGFIX_MK=	yes
 
 bash_OLD_CMD?=	/bin/bash
 bash_CMD?=	${LOCALBASE}/bin/bash
+java_OLD_CMD?=	/usr/bin/java
+java_CMD?=	${LOCALBASE}/bin/java
 perl_OLD_CMD?=	/usr/bin/perl
 perl_CMD?=	${LOCALBASE}/bin/perl
 python_OLD_CMD?=	/usr/bin/python
@@ -41,7 +43,7 @@ ruby_CMD?=	${LOCALBASE}/bin/ruby
 php_OLD_CMD?=	/usr/bin/php
 php_CMD?=	${LOCALBASE}/bin/php
 
-SHEBANG_LANG+=	bash perl python ruby php
+SHEBANG_LANG+=	bash java perl python ruby php
 
 .for lang in ${SHEBANG_LANG}
 .if !defined(${lang}_CMD)
