@@ -18,7 +18,6 @@ USE_ASDF=	yes
 FASL_TARGET=	clisp
 FASL_BUILD=	yes
 
-NO_STAGE=	yes
 post-extract:
 	@${MKDIR} ${WRKSRC}
 
