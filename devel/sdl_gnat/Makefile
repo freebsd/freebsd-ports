@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 
 USES=		ada
 USE_BZIP2=	yes
-USE_SDL=	ttf
+USE_SDL=	sdl ttf
 USE_GL=		glu gl
 
 post-patch:
