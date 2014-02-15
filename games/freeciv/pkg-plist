@@ -24,7 +24,7 @@ man/man6/freeciv-server.6.gz
 man/man6/freeciv-xaw.6.gz
 %%GTK%%share/appdata/freeciv-gtk2.appdata.xml
 %%SDL%%share/appdata/freeciv-sdl.appdata.xml
-share/appdata/freeciv-modpack.appdata.xml
+%%X11%%share/appdata/freeciv-modpack.appdata.xml
 share/appdata/freeciv-server.appdata.xml
 share/applications/freeciv-server.desktop
 %%X11%%share/applications/freeciv-modpack.desktop
