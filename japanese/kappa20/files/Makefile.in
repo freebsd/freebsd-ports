@@ -55,8 +55,8 @@ fonts.alias: Makefile.dist
 	${CAT} fonts.alias.ayu >> $@
 
 install:
-	mkdir -p ${PREFIX}/${FONTSDIR}
-	${BSD_INSTALL_DATA} ${PCF_ALL} ${PREFIX}/${FONTSDIR}
+	mkdir -p ${DESTDIR}${PREFIX}/${FONTSDIR}
+	${BSD_INSTALL_DATA} ${PCF_ALL} ${DESTDIR}${PREFIX}/${FONTSDIR}
 
 clean::
 	rm ${MADE_BOLD} ${MADE_ITALIC} ${PCF_ALL}

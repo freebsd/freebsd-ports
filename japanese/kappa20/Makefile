@@ -3,7 +3,7 @@
 
 PORTNAME=	k20fonts
 PORTVERSION=	0.396
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	${MASTER_SITE_NETBSD:S/$/:kappa20/:S/%SUBDIR%/LOCAL_PORTS/} \
 		http://downloads.sourceforge.jp/x-tt/8412/:ayu20
@@ -24,14 +24,12 @@ BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 FONTSDIR=	lib/X11/fonts/local
-MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}"
 MAKE_ARGS=	FONTSDIR="${FONTSDIR}"
 PLIST_SUB=	FONTSDIR=${FONTSDIR}
 DOCSDIR=	${PREFIX}/share/doc/ja/${PORTNAME}
+
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	(cd ${WRKSRC} ; ${TAR} xpzf ${DISTDIR}/${AYUDISTNAME}${AYU_SUFFIX})
@@ -43,14 +41,8 @@ pre-build:
 	(cd ${WRKSRC} ; ${SH} makebdf.sh)
 
 pre-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/fonts.alias ${DOCSDIR}
-	@${CAT} ${WRKSRC}/fonts.alias >> ${PREFIX}/${FONTSDIR}/fonts.alias
-.if !defined(NOPORTDOCS)
-	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README.euc-jp
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/fonts.alias ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README.euc-jp
 
-post-install:
-	@(cd ${PREFIX}/${FONTSDIR} ; mkfontdir)
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
