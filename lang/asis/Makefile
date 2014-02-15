@@ -3,6 +3,7 @@
 
 PORTNAME=	asis
 PORTVERSION=	2011
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	${PORTNAME}-gpl-${PORTVERSION}-src
@@ -10,6 +11,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	GNAT implementation of Ada Semantic Interface Specification
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	gnat_util>=2013:${PORTSDIR}/lang/gnat_util \
 		xmlada>=3.2:${PORTSDIR}/textproc/xmlada
