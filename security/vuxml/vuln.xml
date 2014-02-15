@@ -51,6 +51,137 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3e0507c6-9614-11e3-b3a5-00e0814cab4e">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>1.551</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>1.532.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory reports:</p>
+	<blockquote cite="https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2014-02-14">
+	  <p>This advisory announces multiple security vulnerabilities that
+	    were found in Jenkins core.</p>
+	  <ol>
+	    <li>
+	      <p>iSECURITY-105</p>
+	      <p>In some places, Jenkins XML API uses XStream to deserialize
+		 arbitrary content, which is affected by CVE-2013-7285 reported
+		 against XStream. This allows malicious users of Jenkins with
+		 a limited set of permissions to execute arbitrary code inside
+		 Jenkins master.</p>
+	    </li>
+	    <li>
+	      <p>SECURITY-76 &amp; SECURITY-88 / CVE-2013-5573</p>
+	      <p>Restrictions of HTML tags for user-editable contents are too
+		 lax. This allows malicious users of Jenkins to trick other
+		 unsuspecting users into providing sensitive information.</p>
+	    </li>
+	    <li>
+	      <p>SECURITY-109</p>
+	      <p>Plugging a hole in the earlier fix to SECURITY-55. Under some
+		 circimstances, a malicious user of Jenkins can configure job
+		 X to trigger another job Y that the user has no access to.</p>
+	    </li>
+	    <li>
+	      <p>SECURITY-108</p>
+	      <p>CLI job creation had a directory traversal vulnerability. This
+		 allows a malicious user of Jenkins with a limited set of
+		 permissions to overwrite files in the Jenkins master and
+		 escalate privileges.</p>
+	    </li>
+	    <li>
+	      <p>SECURITY-106</p>
+	      <p>The embedded Winstone servlet container is susceptive to
+		 session hijacking attack.</p>
+	    </li>
+	    <li>
+	      <p>SECURITY-93</p>
+	      <p>The password input control in the password parameter
+		 definition in the Jenkins UI was serving the actual value of
+		 the password in HTML, not an encrypted one. If a sensitive
+		 value is set as the default value of such a parameter
+		 definition, it can be exposed to unintended audience.</p>
+	    </li>
+	    <li>
+	      <p>SECURITY-89</p>
+	      <p>Deleting the user was not invalidating the API token,
+		 allowing users to access Jenkins when they shouldn't be
+		 allowed to do so.</p>
+	    </li>
+	    <li>
+	      <p>SECURITY-80</p>
+	      <p>Jenkins UI was vulnerable to click jacking attacks.</p>
+	    </li>
+	    <li>
+	      <p>SECURITY-79</p>
+	      <p>"Jenkins' own user database" was revealing the
+		 presence/absence of users when login attempts fail.</p>
+	    </li>
+	    <li>
+	      <p>SECURITY-77</p>
+	      <p>Jenkins had a cross-site scripting vulnerability in one of its
+		 cookies. If Jenkins is deployed in an environment that allows
+		 an attacker to override Jenkins cookies in victim's browser,
+		 this vulnerability can be exploited.</p>
+	    </li>
+	    <li>
+	      <p>SECURITY-75</p>
+	      <p>Jenkins was vulnerable to session fixation attack. If Jenkins
+		 is deployed in an environment that allows an attacker to
+		 override Jenkins cookies in victim's browser, this
+		 vulnerability can be exploited.</p>
+	    </li>
+	    <li>
+	      <p>SECURITY-74</p>
+	      <p>Stored XSS vulnerability. A malicious user of Jenkins with a
+		 certain set of permissions can cause Jenkins to store
+		 arbitrary HTML fragment.</p>
+	    </li>
+	    <li>
+	      <p>SECURITY-73</p>
+	      <p>Some of the system diagnostic functionalities were checking a
+		 lesser permission than it should have. In a very limited
+		 circumstances, this can cause an attacker to gain information
+		 that he shouldn't have access to.</p>
+	    </li>
+	  </ol>
+	  <p>Severity</p>
+	  <ol>
+	    <li>SECURITY-106, and SECURITY-80 are rated <strong>high</strong>. An attacker only
+		needs direct HTTP access to the server to mount this attack.</li>
+	    <li>SECURITY-105, SECURITY-109, SECURITY-108, and SECURITY-74 are
+		rated <strong>high</strong>. These vulnerabilities allow attackes with valid
+		Jenkins user accounts to escalate privileges in various ways.</li>
+	    <li>SECURITY-76, SECURIT-88, and SECURITY-89 are rated <strong>medium.</strong>
+		These vulnerabilities requires an attacker to be an user of
+		Jenkins, and the mode of the attack is limited.</li>
+	    <li>SECURITY-93, and SECURITY-79 are <strong>rated</strong> low. These
+		vulnerabilities only affect a small part of Jenkins and has
+		limited impact.</li>
+	    <li>SECURITY-77, SECURITY-75, and SECURITY-73 are <strong>rated</strong> low. These
+		vulnerabilities are hard to exploit unless combined with other
+		exploit in the network.</li>
+	  </ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://wiki.jenkins-ci.org/display/SECURITY/Jenkins+Security+Advisory+2014-02-14</url>
+    </references>
+    <dates>
+      <discovery>2014-02-14</discovery>
+      <entry>2014-02-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="90b27045-9530-11e3-9d09-000c2980a9f3">
     <topic>lighttpd -- multiple vulnerabilities</topic>
     <affects>
