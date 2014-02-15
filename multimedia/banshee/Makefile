@@ -10,6 +10,8 @@ MASTER_SITES=	GNOME
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Music management and playback for gnome
 
+BROKEN=		Does not compile
+
 # Could do without bash, but it's brought in by gnome anyway.
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser \
 		bash:${PORTSDIR}/shells/bash
