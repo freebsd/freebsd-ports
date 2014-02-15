@@ -112,3 +112,4 @@
 @dirrm %%BRANCH2%%/%%TARGET%%
 @dirrm %%BRANCH2%%/bin
 @dirrm %%BRANCH2%%
+@dirrmtry share
