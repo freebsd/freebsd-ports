@@ -11,6 +11,9 @@ DISTNAME=	AdaSDL_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ada thin binding to SDL
 
+DEPRECATED=	Ancient, does not build on amd64; use devel/sdl_gnat instead
+EXPIRATION_DATE=2014-04-01
+
 ONLY_FOR_ARCHS=	i386
 
 USE_SDL=	mixer image sdl
