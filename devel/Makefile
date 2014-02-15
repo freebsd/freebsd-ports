@@ -4384,6 +4384,7 @@
     SUBDIR += sdl12
     SUBDIR += sdl20
     SUBDIR += sdl_console
+    SUBDIR += sdl_gnat
     SUBDIR += sdl_sge
     SUBDIR += sdlmm
     SUBDIR += sdlskk
