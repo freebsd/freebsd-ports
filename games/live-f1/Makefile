@@ -18,13 +18,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
 OPTIONS_DEFINE=	NLS
 
-USES=		pkgconfig gettext:build iconv
-USE_GMAKE=	yes
+USES=		pkgconfig gettext:build iconv gmake
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/live-f1 \
+		man/man1/live-f1.1.gz
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -32,11 +33,5 @@ CONFIGURE_ARGS+=	--enable-nls
 .else
 CONFIGURE_ARGS+=	--disable-nls
 .endif
-
-PLIST_FILES=	bin/live-f1
-MAN1=		live-f1.1
-
-#pre-configure:
-#	@cd ${WRKSRC} && autopoint
 
 .include <bsd.port.mk>
