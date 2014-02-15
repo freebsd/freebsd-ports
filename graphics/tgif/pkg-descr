@@ -10,10 +10,4 @@ encapsulated PostScript and XBM.
 Version 4 has a completely revamped 3-D user interface, as well as a host
 of new features.
 
-Tgif depends on the `netpbm' package, available from the `ports'
-collection.
-
-Tgif is written, maintained and enhanced by
-William Chia-Wei Cheng (bill.cheng@acm.org)
-
 WWW: http://bourbon.usc.edu:8001/tgif/

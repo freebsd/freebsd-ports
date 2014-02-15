@@ -25,6 +25,7 @@ lib/X11/tgif/tangram.sym
 lib/X11/tgif/eq4.sym
 lib/X11/tgif/eq4-2x.sym
 lib/X11/tgif/eq4-2x-jpg.sym
+lib/X11/tgif/eq4-2x-nowin-jpg.sym
 lib/X11/tgif/eq4-ps2epsi.sym
 lib/X11/tgif/eq4-epstool.sym
 lib/X11/tgif/eq4xpm.sym
@@ -36,6 +37,7 @@ lib/X11/tgif/keys.obj
 lib/X11/tgif/Copyright
 lib/X11/tgif/LICENSE.QPL
 @dirrm lib/X11/tgif
+man/man1/tgif.1.gz
 %%EXAMPLESDIR%%/demo/an-sr-flip-flop.obj
 %%EXAMPLESDIR%%/demo/example.tex
 %%EXAMPLESDIR%%/demo/fonts.obj
