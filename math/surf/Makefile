@@ -10,9 +10,11 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Visualize some real algebraic geometry
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		gmp.10:${PORTSDIR}/math/gmp
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtiff.so:${PORTSDIR}/graphics/tiff \
+		libgmp.so:${PORTSDIR}/math/gmp
 
 USE_XORG=	x11 xmu
 USE_GNOME=	gtk12
@@ -23,12 +25,13 @@ CONFIGURE_ARGS=	--disable-cups --datadir=${PREFIX}/share
 
 CONFLICTS=	surf-0* # www/surf
 
-MAN1=		${PORTNAME}.1
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	manual.sgml
-PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/${PORTNAME}.xpm
+PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/${PORTNAME}.xpm \
+		man/man1/${PORTNAME}.1.gz
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" -print0 | ${XARGS} -0 \
 		${REINPLACE_CMD} -e \
@@ -36,9 +39,7 @@ post-patch:
 		 s|@CUPS_FALSE@||g'
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/docs/,} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/docs/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
