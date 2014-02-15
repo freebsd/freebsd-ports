@@ -22,7 +22,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/${PORTNAME}
 
 INFO=		${PORTNAME}
-MAN1=		imap4d.1 mail.1 pop3d.1 popauth.1
 
 OPTIONS_DEFINE=		GDBM BDB TOKYOCABINET GNUTLS MYSQL PGSQL LDAP PYTHON
 OPTIONS_DEFINE+=	GUILE
@@ -42,7 +41,6 @@ GUILE_CONFIGURE_ON=	--with-guile
 GUILE_CONFIGURE_OFF=	--without-guile
 GUILE_LIB_DEPENDS=	guile:${PORTSDIR}/lang/guile
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGDBM}
