@@ -15,10 +15,9 @@ LICENSE=	PSFL
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1-modules>=0:${PORTSDIR}/devel/py-asn1-modules
 
 USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 USE_OPENLDAP=	yes
-PYDISTUTILS_PKGNAME=	python-ldap
-PYEASYINSTALL_ARCHDEP=	yes
 WANT_OPENLDAP_VER=	24
 
 REPLACE_ARGS=	-e 's,/opt/openldap-RE24/lib,${LOCALBASE}/lib,' \
@@ -28,7 +27,6 @@ REPLACE_ARGS=	-e 's,/opt/openldap-RE24/lib,${LOCALBASE}/lib,' \
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 OPTIONS_DEFINE=	SASL
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSASL}
