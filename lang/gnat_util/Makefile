@@ -3,6 +3,7 @@
 
 PORTNAME=	gnat_util
 PORTVERSION=	${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/gcc-${GCC_VERSION}
@@ -10,6 +11,9 @@ DISTNAME=	gcc-${GCC_VERSION}
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Library used to build GNAT tools such as ASIS
+
+LICENSE=	GPLv3 GPLv3RLE
+LICENSE_COMB=	multi
 
 USES=		ada
 USE_BZIP2=	yes
