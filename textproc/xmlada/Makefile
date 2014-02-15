@@ -3,14 +3,14 @@
 
 PORTNAME=	xmlada
 PORTVERSION=	4.4.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Adacore XML suite for the Ada language
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
