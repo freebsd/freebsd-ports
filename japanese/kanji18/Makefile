@@ -3,7 +3,7 @@
 
 PORTNAME=	kanji
 PORTVERSION?=	1.0
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=   ${MASTER_SITE_PORTS_JP}
 MASTER_SITE_SUBDIR=	${DISTNAME}
@@ -16,15 +16,14 @@ COMMENT=	X11 ${PKGNAMESUFFIX}-dot Kanji font
 
 EXTRACT_DEPENDS=	gunshar:${PORTSDIR}/archivers/sharutils
 BUILD_DEPENDS=	mkbold:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
+		bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
+RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
 DIST_SUBDIR=	${DISTNAME}
 FONTSDIR=	lib/X11/fonts/local
 NO_WRKSUBDIR=	yes
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 EXTRACT_CMD=		${GZCAT}
 EXTRACT_BEFORE_ARGS=
@@ -37,6 +36,8 @@ PLIST_SUB=	FONTSDIR=${FONTSDIR}
 README_FILE?=	573.z
 RESIZESED_FILE?=	18to16.sed
 RESIZED_ALIAS_FILE?=	kanji16.alias
+
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@(cd $(WRKSRC); ${CAT} ${DISTNAME}.?? | uudecode)
@@ -54,18 +55,12 @@ pre-install:
 		       -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 			< ${FILESDIR}/$${file}.tmpl > ${WRKSRC}/$${file}; \
 	done
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGREQ} ${PKGNAME} INSTALL
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/${DISTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/${RESIZESED_FILE} ${PREFIX}/share/doc/${DISTNAME}/
-	@${INSTALL_DATA} ${WRKSRC}/README.${DISTNAME} ${PREFIX}/share/doc/${DISTNAME}/
-	@${INSTALL_DATA} ${WRKSRC}/${RESIZED_ALIAS_FILE} ${PREFIX}/share/doc/${DISTNAME}/
-	@${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.alias ${PREFIX}/share/doc/${DISTNAME}/
-.endif
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/${DISTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${RESIZESED_FILE} ${STAGEDIR}${PREFIX}/share/doc/${DISTNAME}
+	${INSTALL_DATA} ${WRKSRC}/README.${DISTNAME} ${STAGEDIR}${PREFIX}/share/doc/${DISTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${RESIZED_ALIAS_FILE} ${STAGEDIR}${PREFIX}/share/doc/${DISTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${DISTNAME}.alias ${STAGEDIR}${PREFIX}/share/doc/${DISTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
