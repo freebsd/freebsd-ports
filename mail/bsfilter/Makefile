@@ -22,7 +22,6 @@ OPTIONS_DEFINE=	DOCS MECAB
 
 MECAB_DESC=	Part-of-Speech and Morphological Analyzer
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMECAB}
