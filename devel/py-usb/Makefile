@@ -1,4 +1,3 @@
-# Created by: R.Mahmatkhanov <R.Mahmatkhanov@SKYLINK.ru>
 # $FreeBSD$
 
 PORTNAME=	usb
