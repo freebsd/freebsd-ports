@@ -7,12 +7,9 @@ CATEGORIES=	math
 MASTER_SITES=	http://cr.yp.to/primegen/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A small, fast library to generate prime numbers in order
+COMMENT=	Small, fast library to generate prime numbers in order
 
 ALL_TARGET=
-
-MAN1=	primes.1 primegaps.1
-MAN3=	primegen.3
 
 PROGRAM_FILES=	primes primegaps
 HEADER_FILES=	primegen.h
@@ -27,7 +24,10 @@ PLIST_FILES+=	${HEADER_FILES:S,^,include/,}
 # libraries
 PLIST_FILES+=	${LIB_FILES:S,^,lib/,}
 
-NO_STAGE=	yes
+# man pages
+PLIST_FILES+=	man/man1/primes.1.gz man/man1/primegaps.1.gz \
+		man/man3/primegen.3.gz
+
 post-patch:
 	@${FIND} ${WRKSRC} -type f -exec \
 		${REINPLACE_CMD} -E -e 's!(primegen.a)!lib\1!' {} \;
@@ -39,19 +39,16 @@ do-configure:
 
 do-install:
 .for file in ${PROGRAM_FILES}
-	@${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for file in ${HEADER_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/include
 .endfor
 .for file in ${LIB_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/lib
 .endfor
-.for file in ${MAN1}
-	@${INSTALL_MAN} ${WRKSRC}/${file} ${MAN1PREFIX}/man/man1
-.endfor
-.for file in ${MAN3}
-	@${INSTALL_MAN} ${WRKSRC}/${file} ${MAN3PREFIX}/man/man3
-.endfor
+	@${INSTALL_MAN} ${WRKSRC}/primes.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/primegaps.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/primegen.3 ${STAGEDIR}${MAN3PREFIX}/man/man3
 
 .include <bsd.port.mk>
