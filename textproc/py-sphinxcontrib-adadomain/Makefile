@@ -3,16 +3,16 @@
 
 PORTNAME=	sphinxcontrib-adadomain
 PORTVERSION=	0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	https://pypi.python.org/packages/source/s/${PORTNAME}/ \
 		LOCAL/marino
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-LICENSE=	BSD
-
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Sphinx Adadomain Extension
+
+LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	${PKGNAMEPREFIX}sphinx>=1.1.3:${PORTSDIR}/textproc/py-sphinx
 
