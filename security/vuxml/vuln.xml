@@ -51,6 +51,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0871d18b-9638-11e3-a371-6805ca0b3d42">
+    <topic>phpMyAdmin -- Self-XSS due to unescaped HTML output in import.</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><ge>3.3.1</ge><lt>4.1.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2014-1.php">
+	  <p> When importing a file with crafted filename, it is
+	    possible to trigger an XSS.  We consider this vulnerability
+	    to be non critical.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2014-1.php</url>
+      <cvename>CVE-2014-1879</cvename>
+    </references>
+    <dates>
+      <discovery>2014-02-15</discovery>
+      <entry>2014-02-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3e0507c6-9614-11e3-b3a5-00e0814cab4e">
     <topic>jenkins -- multiple vulnerabilities</topic>
     <affects>
