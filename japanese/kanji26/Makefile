@@ -13,5 +13,4 @@ README_FILE?=	793.gz
 RESIZESED_FILE?=	26to24.sed
 RESIZED_ALIAS_FILE?=	kanji24.alias
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
