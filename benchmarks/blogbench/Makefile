@@ -13,20 +13,13 @@ COMMENT=	Performance Test of Filesystem I/O
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 
-MAN8=		blogbench.8
-PLIST_FILES=	bin/blogbench
+PLIST_FILES=	bin/blogbench man/man8/blogbench.8.gz
 PORTDOCS=	README
 
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS 
-
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
