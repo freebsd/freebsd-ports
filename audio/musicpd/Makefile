@@ -21,7 +21,7 @@ USE_RC_SUBR=	${PORTNAME}
 CONFIGURE_ARGS+=--disable-alsa --disable-systemd-daemon --disable-roar
 CFLAGS+=	-I${PREFIX}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/sidplay/builders
 
 PORTDOCS=	AUTHORS README COPYING NEWS UPGRADING
 
@@ -106,7 +106,7 @@ PULSEAUDIO_LIB_DEPENDS=libpulse.so:${PORTSDIR}/audio/pulseaudio
 SAMPLERATE_CONFIGURE_ENABLE=lsr
 SAMPLERATE_LIB_DEPENDS=libsamplerate.so:${PORTSDIR}/audio/libsamplerate
 SIDPLAY2_CONFIGURE_ENABLE=sidplay
-SIDPLAY_LIB_DEPENDS=libsidplay2.so:${PORTSDIR}/audio/libsidplay2
+SIDPLAY2_LIB_DEPENDS=libsidplay2.so:${PORTSDIR}/audio/libsidplay2
 SNDFILE_CONFIGURE_ENABLE=sndfile
 SNDFILE_LIB_DEPENDS=libsndfile.so:${PORTSDIR}/audio/libsndfile
 SQLITE3_CONFIGURE_ENABLE=sqlite
