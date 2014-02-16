@@ -3,7 +3,7 @@
 
 PORTNAME=	serialmail
 PORTVERSION=	0.75
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.gbnet.net/pub/qmail/ \
