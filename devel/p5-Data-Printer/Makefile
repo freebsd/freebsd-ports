@@ -2,19 +2,20 @@
 # $FreeBSD$
 
 PORTNAME=	Data-Printer
-PORTVERSION=	0.30
+PORTVERSION=	0.35
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Colored pretty-print of Perl data structures and objects
 
-BUILD_DEPENDS=	p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Clone-PP>=0:${PORTSDIR}/devel/p5-Clone-PP \
 		p5-File-HomeDir>=0.91:${PORTSDIR}/devel/p5-File-HomeDir \
-		p5-Hash-FieldHash>=0:${PORTSDIR}/devel/p5-Hash-FieldHash \
-		p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
+		p5-Package-Stash>=0.30:${PORTSDIR}/devel/p5-Package-Stash \
 		p5-Sort-Naturally>=0:${PORTSDIR}/textproc/p5-Sort-Naturally
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny \
@@ -25,11 +26,4 @@ TEST_DEPENDS=	p5-Capture-Tiny>=0:${PORTSDIR}/devel/p5-Capture-Tiny \
 USE_PERL5=	configure
 USES=		perl5
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 501400
-BUILD_DEPENDS+=	p5-Term-ANSIColor>=3:${PORTSDIR}/devel/p5-Term-ANSIColor
-RUN_DEPENDS+=	p5-Term-ANSIColor>=3:${PORTSDIR}/devel/p5-Term-ANSIColor
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
