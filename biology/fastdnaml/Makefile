@@ -20,16 +20,12 @@ PORTDOCS=	fastDNAml_doc_1.2.txt fastDNAml_scripts.txt
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/fastDNAml ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/bin/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/bin/${PORTNAME}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.txt ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/fastDNAml ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
