@@ -2,9 +2,11 @@ bin/flex
 bin/flex++
 include/flex/FlexLexer.h
 lib/libfl.a
-lib/libfl_pic.a
+lib/libfl.la
 lib/libfl.so
 lib/libfl.so.2
+lib/libfl_pic.a
+lib/libfl_pic.la
 lib/libfl_pic.so
 lib/libfl_pic.so.2
 man/man1/flex.1.gz
