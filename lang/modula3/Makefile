@@ -3,7 +3,7 @@
 
 PORTNAME=	modula3
 PORTVERSION=	5.8.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	https://modula3.elegosoft.com/cm3/releng/ \
 		http://downloads.dragonlace.net/m3/ \
@@ -12,6 +12,11 @@ DISTFILES=	${SRCDISTFILE} ${BOOTDIST}
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Critical Mass Modula-3 compiler
+
+LICENSE=	DECM3
+LICENSE_FILE=	${WRKSRC}/COM_LICENSE
+LICENSE_NAME=	CM3 License defined by DEC and Critical Mass copyrights
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/libiodbc
 
@@ -73,6 +78,7 @@ do-extract:
 	@${MKDIR} ${WRKSRC}
 	@(cd ${WRKSRC} && tar -xf ${DISTDIR}/${SRCDISTFILE})
 	@(cd ${WRKDIR} && tar -xf ${DISTDIR}/${BOOTDIST:C/:[^:]+$//})
+	@(cd ${WRKSRC} && ${CAT} COPYRIGHT-DEC COPYRIGHT-CMASS > COM_LICENSE)
 
 post-patch:
 # Use sed -i instead of ${REINPLACE_CMD} because we don't want .bak files
@@ -138,6 +144,7 @@ post-install:
 	cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
 	   ${SORT} | ${SED} -e 's/^man\/man[1578]\/.*[1578]$$/&.gz/' \
 	   > ${TMPPLIST}
+	@echo ${PLIST_FILES} | awk '{print $$1}' RS=' ' >> ${TMPPLIST}
 	cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${SORT} -r | \
 	   ${SED} -e '/^bin$$/d' -e '/^lib$$/d' -e '/^pkg$$/d' \
 	   -e '/^share\/examples$$/d' -e '/^share\/doc$$/d' -e '/^share$$/d' \
