@@ -16,21 +16,17 @@ NO_BUILD=	yes
 RESTRICTED=	Redistribution is not permitted
 
 PLIST_FILES=	bin/dbvis
-WRKSRC=		DbVisualizer-${PORTVERSION}
+WRKSRC=		${WRKDIR}/DbVisualizer-${PORTVERSION}
 
-NO_STAGE=	yes
 do-install:
-	cd ${WRKDIR}/${WRKSRC} \
-	  && ${FIND} . -type d -exec ${MKDIR} ${DATADIR}/{} \; \
-	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \; \
-	  && ${LN} -s ${DATADIR}/dbvis ${PREFIX}/bin/dbvis \
-	  && ${CHMOD} a+x ${DATADIR}/dbvis
+	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
+	${LN} -sf ${DATADIR}/dbvis ${STAGEDIR}${PREFIX}/bin/dbvis
+	${CHMOD} a+x ${STAGEDIR}${DATADIR}/dbvis
 
 post-install:
-	cd ${WRKDIR}/${WRKSRC} && \
-	${FIND} ${DATADIR} -not -type d \
-	  | ${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
-	${FIND} -d ${DATADIR} -type d \
-	  | ${SED} -ne 's,^${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
+	${FIND} ${STAGEDIR}${DATADIR} -not -type d \
+	  | ${SED} -ne 's,^${STAGEDIR}${PREFIX}/,,p' >> ${TMPPLIST}
+	${FIND} -d ${STAGEDIR}${DATADIR} -type d \
+	  | ${SED} -ne 's,^${STAGEDIR}${PREFIX}/,@dirrm ,p' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
