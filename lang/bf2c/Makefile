@@ -3,6 +3,7 @@
 
 PORTNAME=	bf2c
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	lang
 
 MAINTAINER=	rene@FreeBSD.org
@@ -19,12 +20,10 @@ MAKE_ARGS=	PREFIX="${STAGEDIR}${PREFIX}"
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bf2c
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gen_bf
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
