@@ -12,14 +12,11 @@ COMMENT=	GNU Interactive Tools - a file system browser for UNIX systems
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--disable-transition
-MAN1=		gitaction.1 gitdpkgname.1 gitfm.1 gitinternal.1 \
-		gitkeys.1 gitmount.1 gitps.1 gitregrep.1 gitrfgrep.1 \
-		gitrgrep.1 gitunpack.1 gitview.1 gitwipe.1
 
-NO_STAGE=	yes
 post-install:
-	 ${RM} -f ${PREFIX}/man/man1/gitmkdirs.1
-	 ${RM} -f ${PREFIX}/man/man1/gitwhich.1
-	 ${RM} -f ${PREFIX}/man/man1/gitxgrep.1
+	# Clean stage from orphans.
+	${RM} -f ${STAGEDIR}${PREFIX}/man/man1/gitmkdirs.1
+	${RM} -f ${STAGEDIR}${PREFIX}/man/man1/gitwhich.1
+	${RM} -f ${STAGEDIR}${PREFIX}/man/man1/gitxgrep.1
 
 .include <bsd.port.mk>
