@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	bottleneck
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ DISTNAME=	Bottleneck-${PORTVERSION}
 MAINTAINER=	xmj@chaot.net
 COMMENT=	Collection of fast NumPy array functions written in Cython
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	${PYNUMPY} \
 		cython:${PORTSDIR}/lang/cython
