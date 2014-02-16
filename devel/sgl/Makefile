@@ -11,6 +11,9 @@ DISTNAME=	SGL-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	STL implementation for ADA95
 
+DEPRECATED=	S/W never progressed beyond incomplete graduate project; library was never properly built - not worth fixing
+EXPIRATION_DATE=20140315
+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
