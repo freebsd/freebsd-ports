@@ -1,24 +1,23 @@
 # Created by: Frank Steinborn <steinex@nognu.de>
 # $FreeBSD$
-#    $MCom: ports/devel/libgee/Makefile,v 1.13 2012/10/14 20:47:22 kwm Exp $
+#    $MCom: ports/trunk/devel/libgee/Makefile 19007 2014-02-16 10:11:57Z kwm $
 
 PORTNAME=	libgee
-PORTVERSION=	0.8.5
+PORTVERSION=	0.12.0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GObject collection library
 
-BUILD_DEPENDS=	gobject-introspection>=0.9.0:${PORTSDIR}/devel/gobject-introspection
+BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-introspection=yes
-USE_GMAKE=	yes
 USE_XZ=		yes
-USE_GNOME=	glib20 gnomehier gnomehack
-USES=		pkgconfig
+USES=		gmake libtool pathfix pkgconfig
+USE_GNOME=	glib20 gnomehier introspection:build
 USE_LDCONFIG=	yes
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
