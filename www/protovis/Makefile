@@ -9,6 +9,8 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JavaScript graphical toolkit for data visualization
 
+LICENSE=	BSD3CLAUSE
+
 NO_BUILD=	yes
 USE_ZIP=	yes
 
