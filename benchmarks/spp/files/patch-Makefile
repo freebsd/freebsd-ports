@@ -1,0 +1,40 @@
+--- ./Makefile.orig	2013-05-22 03:50:24.000000000 +0200
++++ ./Makefile	2014-02-16 12:29:01.767731648 +0100
+@@ -39,8 +39,8 @@
+ SLIBS=  -pthread -lpcap
+ BINDIR=./bin
+ PROGRAM= $(BINDIR)/$(NAME)
+-CFLAGS += -I/usr/local/include 
+-LDFLAGS += -L/usr/local/lib
++CFLAGS += -I$(LOCALBASE)/include 
++LDFLAGS += -L$(LOCALBASE)/lib
+ INSTALL= install
+ 
+ 
+@@ -48,11 +48,11 @@
+ # If, for some reason, you don't want debugging info to bewww
+ # logged, then comment the following line.
+ #
+-CFLAGS+= -DDEBUG
++#CFLAGS+= -DDEBUG
+ 
+ # If you want the program with support for debuggers
+ # (gdb, etc), then uncomment the following line
+-CFLAGS+= -g
++#CFLAGS+= -g
+ 
+ # turn on optimisation
+ CFLAGS += -O2
+@@ -80,9 +80,10 @@
+ 		echo "You must be root to install" && exit 1 ; \
+ 	fi ;	
+ 	@echo "Installing spp binary"
+-	$(INSTALL) -c -m 755 $(PROGRAM) /usr/local/bin/
++	@strip $(PROGRAM)
++	$(INSTALL) -c -m 755 $(PROGRAM) $(DESTDIR)$(PREFIX)/bin/
+ 	@echo "Installing manual page"
+-	$(INSTALL) -c -m 644 doc/spp.1 /usr/local/man/man1/	
++	$(INSTALL) -c -m 644 doc/spp.1 $(DESTDIR)$(PREFIX)/man/man1/	
+ 
+ # target 'distro'
+ #
