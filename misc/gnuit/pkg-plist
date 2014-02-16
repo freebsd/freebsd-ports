@@ -55,6 +55,19 @@ bin/gitxgrep
 %%DATADIR%%/gnuitrc.xterm-color
 %%DATADIR%%/gnuitrc.xterm-debian
 %%DATADIR%%/gnuitrc.xterms
+man/man1/gitaction.1.gz
+man/man1/gitdpkgname.1.gz
+man/man1/gitfm.1.gz
+man/man1/gitinternal.1.gz
+man/man1/gitkeys.1.gz
+man/man1/gitmount.1.gz
+man/man1/gitps.1.gz
+man/man1/gitregrep.1.gz
+man/man1/gitrfgrep.1.gz
+man/man1/gitrgrep.1.gz
+man/man1/gitunpack.1.gz
+man/man1/gitview.1.gz
+man/man1/gitwipe.1.gz
 @dirrm %%DATADIR%%
 %%DOCSDIR%%/gnuit.html
 @dirrm %%DOCSDIR%%
