@@ -15,5 +15,4 @@ MAKE_ENV=	X11BASE=${LOCALBASE}
 USE_XORG=	x11 xext xi
 PLIST_FILES=	bin/tetrons
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
