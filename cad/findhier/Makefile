@@ -11,13 +11,10 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Hierarchy Viewer for magic/CIF/GDSII/PCSTR/GED/TeX
 
 NO_WRKSUBDIR=	yes
-PLIST_FILES=	bin/fh
+PLIST_FILES=	bin/fh man/man1/fh.1.gz
 
-MAN1=		fh.1
-
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fh ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/fh.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/fh ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/fh.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>
