@@ -24,12 +24,12 @@ DYNAMIC_DESC?=	Add support for dynamic linking
 PROFILE_DESC?=	Add support for profiling
 LLVM_DESC?=	Use the LLVM backend for code generation
 
-.if !exists(${GHC_CMD}) || (exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/ghc-${GHC_VERSION}/GHC.dyn_hi) && !defined(IGNORE_DYNAMIC))
+.if (!exists(${GHC_CMD}) || exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/ghc-${GHC_VERSION}/GHC.dyn_hi)) && !defined(IGNORE_DYNAMIC)
 OPTIONS_DEFINE+=	DYNAMIC
 OPTIONS_DEFAULT+=	DYNAMIC
 .endif
 
-.if !exists(${GHC_CMD}) || (exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/ghc-${GHC_VERSION}/GHC.p_hi) && !defined(IGNORE_PROFILE))
+.if (!exists(${GHC_CMD}) || exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/ghc-${GHC_VERSION}/GHC.p_hi)) && !defined(IGNORE_PROFILE)
 OPTIONS_DEFINE+=	PROFILE
 .endif
 
@@ -37,7 +37,7 @@ OPTIONS_DEFINE+=	PROFILE
 OPTIONS_DEFINE+=	LLVM
 .endif
 
-.if !exists(${GHC_CMD}) || ((exists(${HADDOCK_CMD}) && exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/html)) && !defined(NOPORTDOCS))
+.if (!exists(${GHC_CMD}) || (exists(${HADDOCK_CMD}) && exists(${LOCALBASE}/lib/ghc-${GHC_VERSION}/html))) && !defined(NOPORTDOCS)
 OPTIONS_DEFINE+=	DOCS
 OPTIONS_DEFAULT+=	DOCS
 HADDOCK_AVAILABLE=	yes

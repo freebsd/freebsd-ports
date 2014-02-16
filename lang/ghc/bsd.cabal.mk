@@ -86,8 +86,11 @@ CONFIGURE_ARGS+=	--with-gcc=${CC} --with-ld=${LD} --with-ar=${AR} \
 			--with-ranlib=${RANLIB}
 
 .if ${PORT_OPTIONS:MLLVM}
-BUILD_DEPENDS+=		llvm>=3.0:${PORTSDIR}/devel/llvm
-CONFIGURE_ARGS+=	--ghc-option=-fllvm
+CONFIGURE_ARGS+=	--ghc-option=-fllvm \
+			--ghc-option=-pgmlo --ghc-option=${LOCALBASE}/bin/opt32 \
+			--ghc-option=-pgmlc --ghc-option=${LOCALBASE}/bin/llc32
+
+BUILD_DEPENDS+=		${LOCALBASE}/bin/opt32:${PORTSDIR}/devel/llvm32
 .endif
 
 .if defined(USE_ALEX)

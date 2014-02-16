@@ -44,13 +44,14 @@ MAKE_ENV=	LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 # You can view below.
 GNU_CONFIGURE=	yes
 
-OPTIONS_DEFINE=		PROFILE DYNAMIC DOCS
+OPTIONS_DEFINE=		PROFILE DYNAMIC LLVM DOCS
 OPTIONS_DEFAULT=	PROFILE DYNAMIC DOCS
 
 BOOT_DESC=		Use installed GHC for bootstrapping
 BOOTH_DESC=		Use installed HsColour for bootstrapping
 PROFILE_DESC=		Add support for performance profiling
 DYNAMIC_DESC=		Add support for dynamic linking
+LLVM_DESC=		Add support for generating code via LLVM
 DOCS_DESC=		Install HTML documentation
 
 LOCALBASE?=	/usr/local
@@ -129,6 +130,14 @@ CONFIGURE_ARGS+=	--with-iconv-includes=${LOCALBASE}/include \
 CONFIGURE_ARGS+=	--with-system-libffi \
 			--with-ffi-includes=${LOCALBASE}/include \
 			--with-ffi-libraries=${LOCALBASE}/lib
+.endif
+
+.if ${PORT_OPTIONS:MLLVM}
+BUILD_DEPENDS+=		${LOCALBASE}/bin/opt32:${PORTSDIR}/devel/llvm32
+RUN_DEPENDS+=		${LOCALBASE}/bin/opt32:${PORTSDIR}/devel/llvm32
+
+CONFIGURE_ARGS+=	--with-opt=${LOCALBASE}/bin/opt32 \
+			--with-llc=${LOCALBASE}/bin/llc32
 .endif
 
 .if empty(PORT_OPTIONS:MBOOT)
