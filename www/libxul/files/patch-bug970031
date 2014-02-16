@@ -1,0 +1,13 @@
+diff --git xpcom/reflect/xptcall/src/md/unix/moz.build xpcom/reflect/xptcall/src/md/unix/moz.build
+index 5f88066..bd2a94f 100644
+--- xpcom/reflect/xptcall/src/md/unix/moz.build
++++ xpcom/reflect/xptcall/src/md/unix/moz.build
+@@ -235,7 +235,7 @@ if CONFIG['OS_ARCH'] == 'OpenBSD' and CO
+         'xptcstubs_sparc_openbsd.cpp',
+     ]
+ 
+-if CONFIG['OS_ARCH'] == 'OpenBSD' and CONFIG['OS_TEST'] == 'sparc64':
++if CONFIG['OS_ARCH'] in ('OpenBSD', 'FreeBSD') and CONFIG['OS_TEST'] == 'sparc64':
+     CPP_SOURCES += [
+         'xptcinvoke_sparc64_openbsd.cpp',
+         'xptcstubs_sparc64_openbsd.cpp',
