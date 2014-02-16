@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	foomatic-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${FOOMATICVER}-${PORTVERSION}
 DIST_SUBDIR=	foomatic
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Database for integrating printer drivers with common spoolers
 
 LIB_DEPENDS=	libxml2.so:${PORTSDIR}/textproc/libxml2 \

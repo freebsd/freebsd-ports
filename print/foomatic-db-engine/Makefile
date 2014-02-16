@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	foomatic-db-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	foomatic
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foomatic database engine
 
 LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
