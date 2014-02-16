@@ -535,6 +535,7 @@
     SUBDIR += ploticus
     SUBDIR += ploticus-nox11
     SUBDIR += plplot
+    SUBDIR += plplot-ada
     SUBDIR += polymake
     SUBDIR += primegen
     SUBDIR += prng

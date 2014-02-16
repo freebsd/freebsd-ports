@@ -1,0 +1,17 @@
+include/plplotada/plplot.adb
+include/plplotada/plplot.ads
+include/plplotada/plplot_auxiliary.adb
+include/plplotada/plplot_auxiliary.ads
+include/plplotada/plplot_thin.adb
+include/plplotada/plplot_thin.ads
+include/plplotada/plplot_traditional.adb
+include/plplotada/plplot_traditional.ads
+lib/gnat/plplot.gpr
+lib/plplotada/libplplotada.a
+lib/plplotada/plplot.ali
+lib/plplotada/plplot_auxiliary.ali
+lib/plplotada/plplot_thin.ali
+lib/plplotada/plplot_traditional.ali
+@dirrm lib/plplotada
+@dirrmtry lib/gnat
+@dirrm include/plplotada
