@@ -8,7 +8,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://code.adminlife.net/check_ports/files/
 PKGNAMEPREFIX=	nagios-
 
-MAINTAINER=	freebsd@troback.com
+MAINTAINER=	ryanrfrederick@gmail.com
 COMMENT=	Nagios Plugin to monitor your FreeBSD Ports
 
 RUN_DEPENDS=	portaudit:${PORTSDIR}/ports-mgmt/portaudit
