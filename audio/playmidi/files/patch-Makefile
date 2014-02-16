@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Oct  1 11:39:18 1998
-+++ Makefile	Tue Aug 15 23:27:03 2000
+--- Makefile.orig	1998-10-01 04:39:18.000000000 +0200
++++ Makefile	2014-02-16 11:55:45.713871624 +0100
 @@ -12,39 +12,40 @@
  
  # ncurses usually /usr/lib, -L/usr/local/lib doesn't hurt
@@ -42,8 +42,8 @@
  INCLUDES= $(INCNC) $(INCX11) $(INCVGA) $(INCAWE)
 -INSTALLDIR = /usr/bin
 -INSTALL = install -s
-+INSTALLDIR = ${PREFIX}/bin
-+MIDI = ${PREFIX}/share/midi
++INSTALLDIR = ${DESTDIR}${PREFIX}/bin
++MIDI = ${DESTDIR}${PREFIX}/share/midi
 +#INSTALL = install -s
  
  # if you are using the GUS Ultra driver module, add -DULTRA_DRIVER
@@ -97,24 +97,24 @@
  
  $(INSTALLDIR)/splaymidi: splaymidi
 -	$(INSTALL) splaymidi $(INSTALLDIR)
--
--/etc/std.o3:
--	cp -i std.o3 /etc
 +	${BSD_INSTALL_PROGRAM} splaymidi $(INSTALLDIR)
  
--/etc/drums.o3:
--	cp -i drums.o3 /etc
+-/etc/std.o3:
+-	cp -i std.o3 /etc
 +$(MIDI)/std.o3:
 +	${BSD_INSTALL_DATA} std.o3 $(MIDI)       
 +  
 +$(MIDI)/drums.o3:
 +	${BSD_INSTALL_DATA} drums.o3 $(MIDI)
  
--/etc/std.sb:
--	cp -i std.sb /etc
+-/etc/drums.o3:
+-	cp -i drums.o3 /etc
 +$(MIDI)/std.sb:
 +	${BSD_INSTALL_DATA} std.sb $(MIDI)       
  
+-/etc/std.sb:
+-	cp -i std.sb /etc
+-
 -/etc/drums.sb:
 -	cp -i drums.sb /etc
 +$(MIDI)/drums.sb:
@@ -122,35 +122,38 @@
  
  $(XAPPDEFAULTS)/XPlaymidi:
 -	cp -i XPlaymidi.ad $(XAPPDEFAULTS)/XPlaymidi
-+	${BSD_INSTALL_DATA} XPlaymidi.ad $(XAPPDEFAULTS)/XPlaymidi
- 
+-
 -install: $(INSTALLDIR)/playmidi $(INSTALLDIR)/splaymidi \
 -	 $(INSTALLDIR)/xplaymidi /etc/std.o3 /etc/drums.o3 \
 -	 /etc/std.sb /etc/drums.sb $(XAPPDEFAULTS)/XPlaymidi
-+dirs:
-+	-@mkdir -p $(MIDI)
- 
+-
 -install.novga: $(INSTALLDIR)/playmidi \
 -	 $(INSTALLDIR)/xplaymidi /etc/std.o3 /etc/drums.o3 \
 -	 /etc/std.sb /etc/drums.sb $(XAPPDEFAULTS)/XPlaymidi
-+install: dirs $(INSTALLDIR)/playmidi $(INSTALLDIR)/splaymidi \
-+	 $(INSTALLDIR)/xplaymidi $(MIDI)/std.o3 $(MIDI)/drums.o3 \
-+	 $(MIDI)/std.sb $(MIDI)/drums.sb $(XAPPDEFAULTS)/XPlaymidi
++	${BSD_INSTALL_DATA} XPlaymidi.ad $(XAPPDEFAULTS)/XPlaymidi
  
 -install.noX11: $(INSTALLDIR)/playmidi $(INSTALLDIR)/splaymidi \
 -	 /etc/std.o3 /etc/drums.o3 /etc/std.sb /etc/drums.sb
-+install.novga: dirs $(INSTALLDIR)/playmidi \
-+	 $(INSTALLDIR)/xplaymidi $(MIDI)/std.o3 $(MIDI)/drums.o3 \
-+	 $(MIDI)/std.sb $(MIDI)/drums.sb $(XAPPDEFAULTS)/XPlaymidi
++dirs:
++	-@mkdir -p $(MIDI)
  
 -install.Xonly: $(INSTALLDIR)/xplaymidi /etc/std.o3 /etc/drums.o3 \
 -	 /etc/std.sb /etc/drums.sb $(XAPPDEFAULTS)/XPlaymidi
+-
+-install.lame: $(INSTALLDIR)/playmidi \
+-	 /etc/std.o3 /etc/drums.o3 /etc/std.sb /etc/drums.sb
++install: dirs $(INSTALLDIR)/playmidi $(INSTALLDIR)/splaymidi \
++	 $(INSTALLDIR)/xplaymidi $(MIDI)/std.o3 $(MIDI)/drums.o3 \
++	 $(MIDI)/std.sb $(MIDI)/drums.sb $(XAPPDEFAULTS)/XPlaymidi
++
++install.novga: dirs $(INSTALLDIR)/playmidi \
++	 $(INSTALLDIR)/xplaymidi $(MIDI)/std.o3 $(MIDI)/drums.o3 \
++	 $(MIDI)/std.sb $(MIDI)/drums.sb $(XAPPDEFAULTS)/XPlaymidi
++
 +install.noX11: dirs $(INSTALLDIR)/playmidi $(INSTALLDIR)/splaymidi \
 +	 $(MIDI)/std.o3 $(MIDI)/drums.o3 \
 +	 $(MIDI)/std.sb $(MIDI)/drums.sb
- 
--install.lame: $(INSTALLDIR)/playmidi \
--	 /etc/std.o3 /etc/drums.o3 /etc/std.sb /etc/drums.sb
++
 +install.Xonly: dirs $(INSTALLDIR)/xplaymidi \
 +	 $(MIDI)/std.o3 $(MIDI)/drums.o3 \
 +	 $(MIDI)/std.sb $(MIDI)/drums.sb $(XAPPDEFAULTS)/XPlaymidi
@@ -161,7 +164,7 @@
  
  install.man:
 -	 cp playmidi.1 /usr/man/man1/
-+	 ${BSD_INSTALL_MAN} playmidi.1 ${PREFIX}/man/man1/
++	 ${BSD_INSTALL_MAN} playmidi.1 ${DESTDIR}${PREFIX}/man/man1/
  
  clean:
  	rm -f *.o playmidi splaymidi xplaymidi a.out toy seq2mid beat
