@@ -1,0 +1,18 @@
+%%SITE_PERL%%/MaxMind/DB/Common.pm
+%%SITE_PERL%%/MaxMind/DB/Metadata.pm
+%%SITE_PERL%%/MaxMind/DB/Role/Debugs.pm
+%%SITE_PERL%%/MaxMind/DB/Types.pm
+%%SITE_PERL%%/Test/MaxMind/DB/Common/Data.pm
+%%SITE_PERL%%/Test/MaxMind/DB/Common/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MaxMind/DB/Common/.packlist
+%%PERL5_MAN3%%/MaxMind::DB::Common.3.gz
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MaxMind/DB/Common
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MaxMind/DB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MaxMind
+@dirrm %%SITE_PERL%%/Test/MaxMind/DB/Common
+@dirrmtry %%SITE_PERL%%/Test/MaxMind/DB
+@dirrmtry %%SITE_PERL%%/Test/MaxMind
+@dirrmtry %%SITE_PERL%%/Test
+@dirrmtry %%SITE_PERL%%/MaxMind/DB/Role
+@dirrmtry %%SITE_PERL%%/MaxMind/DB
+@dirrmtry %%SITE_PERL%%/MaxMind
