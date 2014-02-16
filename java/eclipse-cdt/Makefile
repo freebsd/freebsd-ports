@@ -7,15 +7,15 @@ PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_ECLIPSE}
 MASTER_SITE_SUBDIR=tools/${PLUGIN}/releases/${ECLIPSE_CODENAME}/dist
-DISTNAME=	${PLUGIN}-master-${PORTVERSION}
 PKGNAMEPREFIX=	eclipse-
+DISTNAME=	${PLUGIN}-master-${PORTVERSION}
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ plugin for Eclipse IDE
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
-USE_ZIP=	YES
 USE_JAVA=	YES
 JAVA_OS=	native
 JAVA_RUN=	YES
@@ -45,7 +45,6 @@ RM_XLC=	features/org.eclipse.cdt.xlc.feature_6.0.0.201002161416.jar \
 	plugins/org.eclipse.cdt.managedbuilder.xlupc.ui.source_1.0.0.201002161416.jar \
 	plugins/org.eclipse.cdt.managedbuilder.xlupc.ui_1.0.0.201002161416.jar
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "i386"
@@ -70,8 +69,6 @@ do-patch:
 .endfor
 
 do-install:
-.for i in features plugins
-	@(cd ${WRKDIR}/${i} && ${COPYTREE_SHARE} \* ${PREFIX}/lib/eclipse/${i}/)
-.endfor
+	@(cd ${WRKDIR} && ${COPYTREE_SHARE} "features plugins" ${STAGEDIR}${PREFIX}/lib/eclipse)
 
 .include <bsd.port.post.mk>
