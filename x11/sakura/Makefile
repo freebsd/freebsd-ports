@@ -3,7 +3,7 @@
 
 PORTNAME=	sakura
 PORTVERSION=	3.1.3
-CATEGORIES=	x11-toolkits gnome
+CATEGORIES=	x11 gnome
 MASTER_SITES=	http://launchpadlibrarian.net/159682501/
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -18,7 +18,6 @@ USES=		cmake pkgconfig gettext
 USE_BZIP2=	yes
 LDFLAGS+=	-lintl
 
-.include <bsd.port.options.mk>
 post-patch:
 	@${REINPLACE_CMD} -e '/NOT MATCHES "Debug"/d ; \
 		 /"-O2"/d ; \
