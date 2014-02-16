@@ -1,0 +1,6 @@
+Data::IEEE754 provides some simple convenience functions for packing and
+unpacking IEEE 754 floats and doubles.
+
+Currently this module only implements big-endian order.
+
+WWW: http://search.cpan.org/dist/Data-IEEE754/
