@@ -21,19 +21,14 @@ USES=		gmake pkgconfig
 OPTIONS_DEFINE=	AUDIOFILE
 AUDIOFILE_DESC=	Support loading from .wav files
 
-.include <bsd.port.options.mk>
+AUDIOFILE_LIB_DEPENDS=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
+AUDIOFILE_CONFIGURE_OFF=	--without-libaudiofile
 
-.if ${PORT_OPTIONS:MAUDIOFILE}
-LIB_DEPENDS+=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
-.else
-CONFIGURE_ARGS+=--without-libaudiofile
-.endif
+INSTALL_TARGET=	install-strip
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} \
-		AUTHORS ChangeLog README THANKS doc/libspectrum.txt ${STAGEDIR}${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS ChangeLog README THANKS \
+	    doc/libspectrum.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
