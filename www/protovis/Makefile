@@ -5,26 +5,26 @@ PORTNAME=	protovis
 PORTVERSION=	3.2
 CATEGORIES=	www
 MASTER_SITES=	GOOGLE_CODE
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JavaScript graphical toolkit for data visualization
 
 LICENSE=	BSD3CLAUSE
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 NO_BUILD=	yes
-USE_ZIP=	yes
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 PROJECTHOST=	${PORTNAME}-js
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DOCSDIR}/ ${EXAMPLESDOR}/ ${WWWDIR}/
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/jsdoc/ && ${COPYTREE_SHARE} '*' ${DOCSDIR}/
-.endif
-.if !defined(NOPORTEXAMPLES)
-	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} '*' ${EXAMPLESDIR}/
-.endif
-	cd ${WRKSRC}/ && ${INSTALL_DATA} -o ${WWWOWN} -g ${WWWGRP} *.js ${WWWDIR}/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/ ${STAGEDIR}${EXAMPLESDIR}/ ${STAGEDIR}${WWWDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} *.js ${STAGEDIR}${WWWDIR}/
+	cd ${WRKSRC}/jsdoc/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
