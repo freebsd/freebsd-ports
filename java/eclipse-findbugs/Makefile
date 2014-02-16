@@ -8,15 +8,15 @@ CATEGORIES=	java devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20eclipse%20plugin/1.3.2
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	edu.umd.cs.findbugs.plugin.eclipse_${DISTVERSION}
+EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An Eclipse plug-in that provides FindBugs support
+COMMENT=	Eclipse plug-in that provides FindBugs support
 
 RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 
 NO_BUILD=	yes
-USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
 JAVA_OS=	native
@@ -72,17 +72,10 @@ PLIST_SUB=	\
 	ECLIPSE_PLUGINS="lib/eclipse/plugins" \
 	DISTNAME="${DISTNAME}"
 
-NO_STAGE=	yes
 post-extract:
 	@${RM} -Rf ${WRKSRC}/src
 
 do-install:
-		@${MKDIR} ${PREFIX}/lib/eclipse/plugins
-		@(cd ${WRKDIR} && \
-			${FIND} -s $$(${BASENAME} ${WRKSRC}) -type d \
-				-exec ${MKDIR} "${PREFIX}/lib/eclipse/plugins/{}" \; && \
-			${FIND} -s $$(${BASENAME} ${WRKSRC}) -not -type d \
-				-exec ${INSTALL_DATA} "{}" "${PREFIX}/lib/eclipse/plugins/{}" \; \
-		)
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/eclipse/plugins/${DISTNAME})
 
 .include <bsd.port.mk>
