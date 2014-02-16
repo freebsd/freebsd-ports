@@ -8,7 +8,7 @@ MASTER_SITES=	http://www1.cs.columbia.edu/dcc/nestor/presentations/SGL/ \
 		ftp://ftp.cs.rpi.edu/pub/stl/
 DISTNAME=	SGL-${PORTVERSION}
 
-MAINTAINER=	david@realityrift.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	STL implementation for ADA95
 
 NO_BUILD=	yes

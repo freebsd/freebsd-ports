@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.cs.kuleuven.ac.be/pub/Ada-Belgium/cdrom/ase02_02/tools/c
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.zip
 
-MAINTAINER=	david@realityrift.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translator for "thin" Ada bindings to C
 
 OPTIONS_DEFINE=	DOCS
