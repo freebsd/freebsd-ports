@@ -147,9 +147,9 @@ post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|%%REP_CC%%|${CC}|g' \
 		-e 's|%%REP_CXX%%|${CXX}|g' \
-		-e 's|%%REP_ARCHS%%|${CPUTYPE}|g' \
-		-e 's|%%REP_I%%|-I${LOCALBASE}/include|g' \
+		-e 's|%%REP_I%%|-I./contrib/include -I${LOCALBASE}/include|g' \
 		-e 's|%%REP_L%%|-L${LOCALBASE}/lib|g' \
+		-e 's|%%REP_ARCHS%%|${CPUTYPE}|g' \
 		-e 's|%%REP_ICONV%%|${ICONV_LIB:S/-l//}|g' \
 		${WRKSRC}/custom.defs
 
