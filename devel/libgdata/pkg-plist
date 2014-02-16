@@ -65,6 +65,7 @@ lib/libgdata.a
 lib/libgdata.la
 lib/libgdata.so
 lib/libgdata.so.7
+lib/libgdata.so.7.2.2
 libdata/pkgconfig/libgdata.pc
 share/doc/gdata/GDataAccessHandler.html
 share/doc/gdata/GDataAccessRule.html
