@@ -28,7 +28,6 @@ EPICFILES=	features/org.epic.feature.main_${PORTVERSION} \
 		plugins/org.epic.regexp_0.6.1 \
 		plugins/org.epic.source_${PORTVERSION}
 
-NO_STAGE=	yes
 post-extract:
 .for file in ${EPICFILES}
 	cd ${WRKSRC} \
@@ -37,12 +36,7 @@ post-extract:
 .endfor
 
 do-install:
-.for file in ${EPICFILES}
-	cd ${WRKSRC} \
-	  && ${MKDIR} ${ECLIPSE}/${file} \
-	  && ${FIND} ${file} -type d -exec ${MKDIR} ${ECLIPSE}/{} \; \
-	  && ${FIND} ${file} -type f -exec ${INSTALL_DATA} {} ${ECLIPSE}/{} \;
-.endfor
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "${EPICFILES}" ${STAGEDIR}${ECLIPSE}
 
 post-install:
 .for file in ${EPICFILES}
