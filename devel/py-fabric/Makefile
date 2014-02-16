@@ -2,13 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	fabric
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME:C/f/F/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
-
+DISTNAME=	${PORTNAME:C/f/F/}-${DISTVERSION}
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Simple pythonic remote deployment tool
 
@@ -30,6 +29,6 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
 regression-test: build
-	@cd ${WRKSRC} && nosetests -v
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test
 
 .include <bsd.port.mk>
