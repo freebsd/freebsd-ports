@@ -43,7 +43,8 @@ DIST_EXAMPLES=	ccx_${PORTVERSION}.test${EXTRACT_SUFX}	\
 		cgx_${PORTVERSION}.exa${EXTRACT_SUFX}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_GMAKE=	yes
+USES=		fortran gmake
+USE_GCC=	yes
 USE_XORG=	xmu
 USE_GL=	glut
 
@@ -54,7 +55,6 @@ CCX_VER=	ccx_${PORTVERSION}
 CGX_VER=	cgx_2.6
 
 NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 .include <bsd.port.options.mk>
 
 OPTIONS_DEFINE= METIS METIS_EDF
@@ -80,9 +80,6 @@ LIB_DEPENDS+=		liblapack.so:${PORTSDIR}/math/lapack
 BLAS_LIBS=		-lblas
 LAPACK_LIBS=		-llapack
 .endif
-
-USE_FORTRAN=	yes
-USE_GCC=	yes
 
 .if ${ARCH} == "sparc64"
 CFLAGS+=	-fPIC
@@ -148,4 +145,4 @@ do-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -17,8 +17,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Routines for performing multithreaded sparse factorization
 
-USE_FORTRAN=	yes
-USE_GMAKE=	yes
+USES=		fortran gmake
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
@@ -71,8 +70,10 @@ post-patch:
 	${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
 	@${REINPLACE_CMD} -e 's+%%BLAS%%+-L${LOCALBASE}/lib ${BLAS}+ ; \
 			s+%%CC%%+${CC}+; s+%%FC%%+${FC}+; \
+			s+%%CPPFLAGS%%+${CPPFLAGS}+; \
 			s+%%CFLAGS%%+${CFLAGS}+; \
 			s+%%FFLAGS%%+${FFLAGS}+; \
+			s+%%LDFLAGS%%+${LDFLAGS}+; \
 			s+%%FPIC%%++; \
 	  s+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+ ; \
 	  s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+ ' \
@@ -80,8 +81,10 @@ post-patch:
 
 	@${REINPLACE_CMD} -e 's+%%BLAS%%+-L${LOCALBASE}/lib ${BLAS}+ ; \
 			s+%%CC%%+${CC}+; s+%%FC%%+${FC}+; \
+			s+%%CPPFLAGS%%+${CPPFLAGS}+; \
 			s+%%CFLAGS%%+${CFLAGS} ${FPIC}+; \
 			s+%%FFLAGS%%+${FFLAGS} ${FPIC}+; \
+			s+%%LDFLAGS%%+${LDFLAGS}+; \
 			s+%%FPIC%%+${FPIC}+; \
 	  s+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS}+ ; \
 	  s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+ ' \

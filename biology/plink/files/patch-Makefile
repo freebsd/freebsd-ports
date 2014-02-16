@@ -1,15 +1,16 @@
 --- Makefile.orig	2009-10-10 11:00:20.000000000 -0500
 +++ Makefile	2012-09-07 08:24:26.000000000 -0500
-@@ -26,7 +26,7 @@
+@@ -26,25 +26,25 @@
  WITH_WEBCHECK = 1
  FORCE_32BIT = 
  WITH_ZLIB = 1
 -WITH_LAPACK = 
+-FORCE_DYNAMIC = 
 +WITH_LAPACK = 1
- FORCE_DYNAMIC = 
++FORCE_DYNAMIC = 1
  
  # Put C++ compiler here; Windows has it's own specific version
-@@ -34,17 +34,17 @@
+ CXX_UNIX = g++
  CXX_WIN = c:\bin\mingw\bin\mingw32-g++.exe
  
  # Any other compiler flags here ( -Wall, -g, etc)
@@ -18,7 +19,7 @@
  
  # Misc
 -LIB_LAPACK = /usr/lib/liblapack.so.3
-+LIB_LAPACK = -L${LOCALBASE}/lib -llapack -lblas -lgfortran
++LIB_LAPACK = ${LDFLAGS} -L${LOCALBASE}/lib -llapack -lblas
  
  
  # --------------------------------------------------------------------

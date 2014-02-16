@@ -3,6 +3,7 @@
 
 PORTNAME=	octave-forge-signal
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

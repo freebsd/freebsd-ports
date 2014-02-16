@@ -16,11 +16,14 @@ EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.gz
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Argand Library: large eigenvalue subroutines (serial version)
 
+BUILD_DEPENDS=	tradcpp:${PORTSDIR}/devel/tradcpp
+
 CONFLICTS=	arpack-ng-[0-9]*
+CPP=		tradcpp
 FFLAGS+=	-ffixed-line-length-none
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
-USE_FORTRAN=	yes
+USES=		fortran
 USE_LDCONFIG=	yes
 WRKSRC =	${WRKDIR}/ARPACK
 
@@ -128,7 +131,7 @@ pre-build:
 	@${ECHO_CMD} "Renaming LAPACK functions ..."
 	@for f in `${FIND} ${WRKDIR} -type f -mindepth 2 -name '*.f'` ; do \
 		${MV} $${f} $${f}.unproc ; \
-		${CPP} -C -I${WRKDIR} -imacros arpack_compat_f.h -traditional-cpp \
+		${CPP} -C -I${WRKDIR} -imacros arpack_compat_f.h \
 			$${f}.unproc $${f} ; done
 
 do-build:

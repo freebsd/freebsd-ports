@@ -10,9 +10,13 @@ MASTER_SITES=	SF
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	The massively parallel quantum computing library and program
 
-USES=		perl5 gmake
+GNU_CONFIGURE=	yes
+USES=		fortran gmake perl5
+USE_AUTOTOOLS=	autoconf
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
+
+OPTIONS_DEFINE=	DOCS
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
@@ -37,17 +41,13 @@ LAPACK=		-llapack
 LIB_DEPENDS+=	mpich:${PORTSDIR}/net/mpich2
 .endif
 LIB_DEPENDS+=	int.1:${PORTSDIR}/science/libint
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 USE_TEX=	latex:build
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
 BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 BUILD_DEPENDS+=	${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 .endif
-
-GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf
-USE_FORTRAN=	yes
 
 .if defined(WITH_ICC)
 CC=		${LOCALBASE}/intel_cc_80/bin/icc
@@ -83,7 +83,7 @@ CONFIGURE_ARGS+=--with-include="-I${WRKDIR} -I${LOCALBASE}/include"
 
 MPQC_COMMAND=	${PREFIX}/bin/mpqc
 
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 .include "${FILESDIR}/manpages"
 .endif
 
@@ -92,16 +92,12 @@ CFLAGS+=	-O2 -ffast-math
 CXXFLAGS+=	-O2 -ffast-math
 .endif
 
-EXTRARPATH=	-Wl,-rpath=`${CAT} ${WRKSRC}/LIBDIR`
-
 pre-configure:
 	@${ECHO} "You can optimize by setting WITH_OPTIMIZED_FLAGS=yes."
-	@${DIRNAME} `${CC} -print-file-name=libstdc++.so` > ${WRKSRC}/LIBDIR
-	@${REINPLACE_CMD} -e 's|%%EXTRARPATH%%|${EXTRARPATH}|g' ${WRKSRC}/lib/LocalMakefile.in
 
 do-build:
 	@cd ${WRKSRC} ; ${GMAKE}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	@cd ${WRKSRC}/doc ; ${GMAKE}
 .endif
 
@@ -113,7 +109,7 @@ do-install:
 		${TAR} -xf - -C ${PREFIX}/share/mpqc/validate
 	${FIND} ${PREFIX}/share/mpqc/validate | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
 	${FIND} ${PREFIX}/share/mpqc/validate -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
-.if !defined(NOPORTDOCS)
+.if ${PORT_OPTIONS:MDOCS}
 	rm -f ${WRKSRC}/doc/man/man1/_*mpqc_*.1
 	rm -f ${WRKSRC}/doc/man/man3/_*mpqc_*.3
 	rm -f ${WRKSRC}/doc/man/man3/sc_PsiCCSD_T.3* #somehow this file is not generated in tinderbox

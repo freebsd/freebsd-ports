@@ -17,6 +17,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A library of routines for performing sparse factorization
 
+USES=		fortran
+
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
@@ -39,7 +41,6 @@ LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
 BLAS=		-lptf77blas
 .endif
 
-USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 
 P_VERSION=	3.0

@@ -12,14 +12,13 @@ DIST_SUBDIR=	sdpa
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Very efficient SDP (semidefinite programming) solver
 
-USES=		gmake
+USES=		fortran gmake
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SRCDATE=	20090729
 MANUALFILE=	sdpa7-manual.pdf
-USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}.src
 

@@ -19,11 +19,9 @@ LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile \
 		hdf5.7:${PORTSDIR}/science/hdf5-18
 RUN_DEPENDS+=	harminv:${PORTSDIR}/science/harminv
 
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_FORTRAN=	yes
 USE_GCC=	yes
-USES=		gettext iconv pathfix
+USES=		fortran gettext gmake iconv pathfix
 USE_AUTOTOOLS+=	libltdl
 CPPFLAGS+=	-I${LOCALBASE}/include
 LD_LIBRARY_PATH=	-L${LOCALBASE}/lib -L/usr/lib

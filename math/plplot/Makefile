@@ -40,7 +40,7 @@ FREEFONT_DIR=	${LOCALBASE}/lib/X11/fonts/freefont-ttf
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFORTRAN}
-USE_FORTRAN=	yes
+USES+=		fortran
 CONFIGURE_ENV+=	CMAKE_Fortran_COMPILER="${FC}"
 CMAKE_ARGS+=	-DENABLE_f95:BOOL=ON -DENABLE_f77:BOOL=ON
 PLIST_SUB+=	FORTRAN=""

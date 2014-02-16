@@ -32,12 +32,10 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 PLIST_FILES=	bin/sage
-USE_FORTRAN=	yes
 USE_GCC=	yes
 USE_TK=		yes
-USE_GMAKE=	yes
 USE_TEX=	latex:build
-USES=		iconv
+USES=		fortran gmake iconv
 MAKE_JOBS_SAFE=	yes
 LDFLAGS:=	-Wl,-rpath=${WRKSRC}/local/lib ${LDFLAGS}
 FFLAGS+=	-Wl,-rpath=${WRKSRC}/local/lib ${FPM_FLAG}

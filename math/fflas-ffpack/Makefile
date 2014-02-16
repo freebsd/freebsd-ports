@@ -39,11 +39,11 @@ WITH_BLAS?=	gsl
 .if ${WITH_BLAS} == "gotoblas"
 CONFIGURE_ARGS+=	--with-gotoblas2="${LOCALBASE}" --with-lapack=blas
 LIB_DEPENDS+=	libgoto2p.so:${PORTSDIR}/math/gotoblas
-USE_FORTRAN=	yes
+USES+=		fortran
 .elif ${WITH_BLAS} == "atlas"
 CONFIGURE_ARGS+=	--with-cblas="${LOCALBASE}" --with-lapack=blas
 LIB_DEPENDS+=	libcblas.so:${PORTSDIR}/math/atlas
-USE_FORTRAN=	yes
+USES+=		fortran
 .elif ${WITH_BLAS} == "gsl"
 CONFIGURE_ARGS+=	--with-gsl="${LOCALBASE}"
 LIB_DEPENDS+=	libgslcblas.so:${PORTSDIR}/math/gsl

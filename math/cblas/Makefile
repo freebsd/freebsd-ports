@@ -13,7 +13,7 @@ COMMENT=	Reference implementation of the C interface to the legacy Fortran BLAS
 
 LICENSE=	BSD
 
-USE_FORTRAN=	yes
+USES=		fortran
 
 CONFLICTS_INSTALL=	atlas-[0-9]* atlas-devel-[0-9]*
 

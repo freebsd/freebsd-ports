@@ -43,7 +43,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
 
 LICENSE=	GPLv2
 
-USES=		bison
+USES=		bison fortran
 USE_PYTHON=	2	# >2.5 and <3.0
 USE_TK=		yes
 HAS_CONFIGURE=	yes
@@ -139,9 +139,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libcmumps.a:${PORTSDIR}/math/${MUMPS_PORT}
 LIB_DEPENDS+=	mpich.2:${PORTSDIR}/net/mpich2
 HOME_MPI=	${LOCALBASE}
 .endif
-
-USE_FORTRAN=	yes
-GCC_VER=	`${CC} -dumpversion`
 
 .if defined(WITH_ZSH)
 SHIA=		zsh

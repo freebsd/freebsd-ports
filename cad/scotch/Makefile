@@ -22,7 +22,7 @@ USES=		gmake
 MAKE_JOBS_UNSAFE=	yes
 
 .if defined(MAINTAINER_MODE)
-USE_FORTRAN=	yes
+USES+=		fortran
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/b_/_/}

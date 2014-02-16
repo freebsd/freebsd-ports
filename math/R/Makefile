@@ -108,7 +108,8 @@ R_SOVERSION=		1
 RBLAS_SOVERSION=	2
 RLAPACK_SOVERSION=	4
 RMATH_SOVERSION=	0
-USE_FORTRAN=		yes
+USES+=			fortran
+USE_GCC=		yes
 
 .include <bsd.port.options.mk>
 

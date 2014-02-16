@@ -14,7 +14,7 @@ COMMENT=	HUTIter library for use in the ELMER FEM package
 
 LIB_DEPENDS=	arpack.1:${PORTSDIR}/math/arpack
 
-USE_FORTRAN=	yes
+USES=		fortran
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

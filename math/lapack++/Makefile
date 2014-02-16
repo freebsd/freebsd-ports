@@ -3,7 +3,7 @@
 
 PORTNAME=	lapack++
 PORTVERSION=	2.5.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=   SF/lapackpp/lapackpp/${PORTVERSION} \
 		http://math.nist.gov/lapack++/:doc
@@ -19,8 +19,7 @@ EXTRACT_ONLY=   ${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Linear Algebra PACKage in C++, a wrapper for LAPACK
 
-WANT_GNOME=	yes
-USES=	pathfix gmake
+USES=		fortran gmake pathfix
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
@@ -35,7 +34,6 @@ LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 .endif
 
-USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
 .if defined(WITH_ATLAS)
 BLAS_LIB=	-L${LOCALBASE}/lib -lf77blas

@@ -19,8 +19,7 @@ OPTIONS_DEFINE=	GUI DOCS EXAMPLES
 OPTIONS_DEFAULT=	GUI
 GUI_DESC=	Install Java GUI
 
-USE_GMAKE=	yes
-USE_FORTRAN=	yes
+USES=		fortran gmake
 
 SUB_FILES=	dlpoly-gui
 

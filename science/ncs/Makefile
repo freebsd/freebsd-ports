@@ -24,8 +24,7 @@ RUN_DEPENDS=	xmgrace:${PORTSDIR}/math/grace	\
 		cs_preprocess:${PORTSDIR}/science/ecs
 
 USE_ZIP=	yes
-USE_GMAKE=	yes
-USES=		gettext iconv
+USES=		fortran gettext gmake iconv
 USE_GNOME=	libxml2
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -38,7 +37,6 @@ MAKE_ENV=	NOM_ARCH=${OPSYS} CS_MPI_PATH=${MPI_HOME}/bin	\
 		MPI_HOME=${MPI_HOME} MPI_LIBS="${MPI_LIBS}"
 USE_LDCONFIG=	yes
 
-USE_FORTRAN=	yes
 FORTRANLIBDIR=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``
 FORTRANLIBDIR2=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``/../../../
 

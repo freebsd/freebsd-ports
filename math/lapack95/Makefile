@@ -13,7 +13,7 @@ DIST_SUBDIR=	lapack95
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	LAPACK95, Fortran90/95 wrapper for LAPACK
 
-USE_FORTRAN=	yes
+USES=		fortran
 USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/LAPACK95
 

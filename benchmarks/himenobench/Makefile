@@ -22,9 +22,10 @@ USE_LHA=	yes
 BUILD_DEPENDS=	${LOCALBASE}/intel_cc_80/bin/icc:${PORTSDIR}/lang/icc
 .endif
 
-USE_FORTRAN=	yes
 .if defined(WITH_IFC)
-USE_FORTRAN=	ifort
+USES+=		fortran:ifort
+.else
+USES+=		fortran
 .endif
 
 NO_STAGE=	yes
@@ -42,7 +43,7 @@ PLIST_SUB+=	WITH_ICC=""
 .else
 PLIST_SUB+=	WITH_ICC="@comment "
 .endif
-.if ${USE_FORTRAN} == ifort
+.if defined(WITH_IFC)
 FFLAGS_IFC+=	-O3 -tpp7 -axN -Vaxlib -ipo
 IFC=		${LOCALBASE}/intel_fc_80/bin/ifort
 PLIST_SUB+=	WITH_IFC=""
@@ -50,14 +51,14 @@ PLIST_SUB+=	WITH_IFC=""
 PLIST_SUB+=	WITH_IFC="@comment "
 .endif
 
-.if ${USE_FORTRAN} != yes
+.if defined(WITH_IFC)
 PLIST_SUB+=	WITH_GFORTRAN="@comment "
 .else
 PLIST_SUB+=	WITH_GFORTRAN=""
 .endif
 
 do-build:
-.if ${USE_FORTRAN} == yes
+.if ! defined(WITH_IFC)
 	cd ${WRKSRC} ; ${FC} ${FFLAGS} -o himenobmtxp    himenobmtxp.f90
 .endif
 #	cd ${WRKSRC} ; ${FC} ${FFLAGS} -o himenobmtxp_xl himenobmtxp_xl.f #Too large
@@ -87,7 +88,7 @@ do-build:
 .endif
 do-install:
 #	${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_xl          ${PREFIX}/bin #Too large
-.if ${USE_FORTRAN} == yes
+.if ! defined(WITH_IFC)
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp            ${PREFIX}/bin
 .endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/himenobmtxp_l           ${PREFIX}/bin

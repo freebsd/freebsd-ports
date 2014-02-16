@@ -21,7 +21,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 VER=		${PORTVERSION:S/.//:S/./_/}
 
-USE_FORTRAN=	yes
+USES=		fortran
 
 WRKSRC=		${WRKDIR}/cdf${VER}-dist
 SUB_FILES=	pkg-message

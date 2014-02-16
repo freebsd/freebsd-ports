@@ -41,11 +41,11 @@
 -LOADER       = xlc_r
 -LOADOPTS     = -bmaxdata:0x80000000
 +CC           = %%CC%%
-+CFLAGS       = $(PREDEFS) %%CFLAGS%% %%PTHREAD_CFLAGS%%
-+FORTRAN	     = %%FC%%
++CFLAGS       = $(PREDEFS) %%CPPFLAGS%% %%CFLAGS%% %%PTHREAD_CFLAGS%%
++FORTRAN      = %%FC%%
 +FFLAGS       = %%FFLAGS%%
-+LOADER       = %%FC%%
-+LOADOPTS     = -O
++LOADER       = %%CC%%
++LOADOPTS     = %%LDFLAGS%%
 +NOOPTS       = %%FPIC%%
  #
  #  C preprocessor defs for compilation for the Fortran interface

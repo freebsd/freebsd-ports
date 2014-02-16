@@ -43,7 +43,7 @@ RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave
 BUILD_DEPENDS+=	R:${PORTSDIR}/math/R
 RUN_DEPENDS+=	R:${PORTSDIR}/math/R
 # Required to set CFLAGS for -lgfortran.
-USE_FORTRAN=	yes
+USES+=		fortran
 PLIST_SUB+=	R=""
 .else
 CMAKE_ARGS+=	-DWITH_R:BOOL=FALSE
