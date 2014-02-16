@@ -25,29 +25,17 @@ OPTIONS_DEFAULT=	AUDIOTOOLS
 
 AUDIOTOOLS_DESC=	Build audio <-> tape utilities
 
-.include <bsd.port.options.mk>
+OPTIONS_SUB=	yes
 
-.if ${PORT_OPTIONS:MAUDIOTOOLS}
-CONFIGURE_ARGS+=--with-audiofile
-LIB_DEPENDS+=	libaudiofile.so:${PORTSDIR}/audio/libaudiofile
-PLIST_SUB=	AUDIOTOOLS=""
-.else
-CONFIGURE_ARGS+=--without-audiofile
-PLIST_SUB=	AUDIOTOOLS="@comment "
-.endif
+AUDIOTOOLS_CONFIGURE_WITH=	audiofile
+AUDIOTOOLS_LIB_DEPENDS=		libaudiofile.so:${PORTSDIR}/audio/libaudiofile
 
 # FIXME no way to specify ffmpeg1 paths to configure script
-#.if ${PORT_OPTIONS:MFFMPEG}
-#LIB_DEPENDS+=	libavformat1.so:${PORTSDIR}/multimedia/ffmpeg1
-#CONFIGURE_ARGS+=--with-ffmpeg
-#.else
-CONFIGURE_ARGS+=--without-ffmpeg
-#.endif
+#FFMPEG_LIB_DEPENDS=	libavformat1.so:${PORTSDIR}/multimedia/ffmpeg1
+#FFMPEG_CONFIGURE_WITH=	ffmpeg
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} AUTHORS ChangeLog README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
