@@ -41,7 +41,6 @@ RDTFILES=	features/org.rubypeople.rdt_${RDTVERSION} \
 		plugins/org.rubypeople.rdt.testunit_${RDTVERSION} \
 		plugins/org.rubypeople.rdt.ui_${RDTVERSION}
 
-NO_STAGE=	yes
 post-extract:
 	${MKDIR} ${WRKSRC}
 .for FILE in ${RDTFILES}
@@ -51,12 +50,7 @@ post-extract:
 .endfor
 
 do-install:
-.for FILE in ${RDTFILES}
-	cd ${WRKSRC} \
-	  && ${MKDIR} ${ECLIPSE}/${FILE} \
-	  && ${FIND} ${FILE} -type d -exec ${MKDIR} ${ECLIPSE}/{} \; \
-	  && ${FIND} ${FILE} -type f -exec ${INSTALL_DATA} {} ${ECLIPSE}/{} \;
-.endfor
+	cd ${WRKSRC} && ${COPYTREE_SHARE} "${RDTFILES}" ${STAGEDIR}${ECLIPSE}
 
 post-install:
 .for FILE in ${RDTFILES}
