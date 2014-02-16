@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DBIx-Class
-PORTVERSION=	0.08250
+PORTVERSION=	0.08270
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RIBASUSHI
@@ -10,6 +10,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensible and flexible object <-> relational mapper
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-Accessor-Grouped>=0.10007:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 		p5-Class-C3-Componentised>=1.0009:${PORTSDIR}/devel/p5-Class-C3-Componentised \
@@ -25,9 +28,9 @@ BUILD_DEPENDS=	p5-Class-Accessor-Grouped>=0.10007:${PORTSDIR}/devel/p5-Class-Acc
 		p5-Hash-Merge>=0.12:${PORTSDIR}/textproc/p5-Hash-Merge \
 		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Module-Find>=0.06:${PORTSDIR}/devel/p5-Module-Find \
-		p5-Moo>=0.009100:${PORTSDIR}/devel/p5-Moo \
+		p5-Moo>=1.002000:${PORTSDIR}/devel/p5-Moo \
 		p5-Path-Class>=0.18:${PORTSDIR}/devel/p5-Path-Class \
-		p5-SQL-Abstract>=1.73:${PORTSDIR}/databases/p5-SQL-Abstract \
+		p5-SQL-Abstract>=1.77:${PORTSDIR}/databases/p5-SQL-Abstract \
 		p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard \
 		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
 		p5-Try-Tiny>=0.04:${PORTSDIR}/lang/p5-Try-Tiny \
@@ -45,6 +48,7 @@ TEST_DEPENDS=	p5-Class-DBI-Plugin-DeepAbstractSearch>=0:${PORTSDIR}/databases/p5
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Types>=0:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-MooseX-Types-JSON>=0:${PORTSDIR}/devel/p5-MooseX-Types-JSON \
+		p5-MooseX-Types-LoadableClass>=0:${PORTSDIR}/devel/p5-MooseX-Types-LoadableClass \
 		p5-MooseX-Types-Path-Class>=0.04:${PORTSDIR}/devel/p5-MooseX-Types-Path-Class \
 		p5-SQL-Translator>=0.09.004:${PORTSDIR}/databases/p5-SQL-Translator \
 		p5-Test-Exception>=0.31:${PORTSDIR}/devel/p5-Test-Exception \
