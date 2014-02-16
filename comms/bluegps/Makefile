@@ -10,11 +10,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dirkx@webweaving.org
 COMMENT=	Command line tool to download datalogs from the Royaltek RBT-3000 bluetooth GPS receiver
 
-MAN1=		bluegps.1
-PLIST_FILES=	bin/bluegps
-
-NO_STAGE=	yes
-post-patch:
-	@${REINPLACE_CMD} -e '/^CC=/d' ${WRKSRC}/Makefile
+PLIST_FILES=	bin/bluegps man/man1/bluegps.1.gz
 
 .include <bsd.port.mk>

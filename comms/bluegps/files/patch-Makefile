@@ -1,0 +1,22 @@
+--- ./Makefile.orig	2006-06-04 04:21:10.000000000 +0200
++++ ./Makefile	2014-02-16 13:19:18.792524225 +0100
+@@ -1,6 +1,5 @@
+ VERSION=2.0
+ PROJECT=bluegps
+-CC=gcc
+ 
+ all: $(PROJECT)
+ 
+@@ -13,6 +12,9 @@
+ dist:
+ 	cd ..; tar cvfz $(PROJECT)-linux-$(VERSION).tgz $(PROJECT)-linux/Makefile $(PROJECT)-linux/$(PROJECT).c $(PROJECT)-linux/rbt3000.h $(PROJECT)-linux/$(PROJECT).1
+ 
+-install: $(PROJECT) $(PROJECT).1
+-	install $(PROJECT) /usr/local/bin
+-	install $(PROJECT).1 /usr/local/man/man1
++strip:
++	strip $(PROJECT)
++
++install: $(PROJECT) $(PROJECT).1 strip
++	install $(PROJECT) $(DESTDIR)$(PREFIX)/bin
++	install $(PROJECT).1 $(DESTDIR)$(MANPREFIX)/man/man1
