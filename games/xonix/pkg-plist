@@ -1,3 +1,4 @@
 bin/xonix
 lib/X11/app-defaults/Xonix
+man/man1/xonix.1.gz
 @dirrm lib/X11/xonix

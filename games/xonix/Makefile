@@ -12,7 +12,5 @@ COMMENT=	Try to win land without colliding with `flyers' and `eaters'
 
 USES=		imake
 USE_XORG=	xaw
-MAN1=		xonix.1
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
