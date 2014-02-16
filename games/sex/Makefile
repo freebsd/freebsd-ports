@@ -10,12 +10,7 @@ MASTER_SITES=	http://spatula.net/software/sex/
 MAINTAINER=	freebsd@spatula.net
 COMMENT=	Spouts silly mad-lib-style porn-like text
 
-MAN6=		sex.6
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/sex
-
-NO_STAGE=	yes
-post-install:
-	@${CAT} ${PKGMESSAGE}
+PLIST_FILES=	bin/sex \
+		man/man6/sex.6.gz
 
 .include <bsd.port.mk>
