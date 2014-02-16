@@ -9,6 +9,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://update1.aptana.org/studio/3.2/024747/
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	aptana_update_${PORTVERSION:E}
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Aptana Web Development Tools (Eclipse plugin)
@@ -23,10 +24,8 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 USE_JAVA=	yes
-USE_ZIP=	yes
 
-NO_STAGE=	yes
 do-install:
-	@(cd ${WRKDIR} && ${CP} -R features ${PREFIX}/lib/eclipse && ${CP} -R plugins ${PREFIX}/lib/eclipse;)
+	@(cd ${WRKDIR} && ${COPYTREE_SHARE} "features plugins" ${STAGEDIR}${PREFIX}/lib/eclipse)
 
 .include <bsd.port.mk>
