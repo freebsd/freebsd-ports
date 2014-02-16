@@ -9,6 +9,7 @@ MASTER_SITES=	http://nivi.interfree.it/distfiles/eclipse-aptana2/
 PKGNAMEPREFIX=	eclipse-
 PKGNAMESUFFIX=	2
 DISTNAME=	com.aptana.ide.feature.studio-${PORTVERSION}-5-7857HJ97CFF61HN1HZHtem5tN7
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Aptana Studio 2 Web Development Tools (Eclipse plugin)
@@ -23,10 +24,8 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 USE_JAVA=	yes
-USE_ZIP=	yes
 
-NO_STAGE=	yes
 do-install:
-	@(cd ${WRKDIR} && ${CP} -R features ${PREFIX}/lib/eclipse && ${CP} -R plugins ${PREFIX}/lib/eclipse;)
+	@(cd ${WRKDIR} && ${COPYTREE_SHARE} "features plugins" ${STAGEDIR}${PREFIX}/lib/eclipse)
 
 .include <bsd.port.mk>
