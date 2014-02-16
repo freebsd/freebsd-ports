@@ -3,7 +3,7 @@
 #   $MCom: ports/trunk/math/gnumeric/Makefile 18444 2013-05-11 12:51:26Z kwm $
 
 PORTNAME=	gnumeric
-PORTVERSION=	1.12.9
+PORTVERSION=	1.12.11
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome3
@@ -21,15 +21,17 @@ RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 USE_XZ=		yes
 USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
-		shared-mime-info shebangfix
+		shebangfix
 USE_GNOME=	gnomehier gnomeprefix intlhack libgsf pygobject3
 USE_PYTHON=	2
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-compile-warnings
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 GLIB_SCHEMAS=	org.gnome.gnumeric.dialogs.gschema.xml \
 		org.gnome.gnumeric.gschema.xml \
@@ -68,15 +70,10 @@ post-patch:
 		${WRKSRC}/configure
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/gnumeric.desktop ${STAGEDIR}${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/gnumeric.mime ${STAGEDIR}${PREFIX}/share/mime-info
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -d \
-		${STAGEDIR}${PREFIX}/${dir}/gnumeric -f ${STAGEDIR}${PREFIX}/lib/gnumeric/${PORTVERSION}
+		${PREFIX}/${dir}/gnumeric -f ${STAGEDIR}${PREFIX}/lib/gnumeric/${PORTVERSION}
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d \
-		${STAGEDIR}${PREFIX}/${dir}/gnumeric -f ${STAGEDIR}${PREFIX}/lib/gnumeric/${PORTVERSION}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libspreadsheet-${PORTVERSION}.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/gnumeric/${PORTVERSION}/plugins/*/*.so
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/goffice/0.10/plugins/gnumeric/gnumeric.so
+		${PREFIX}/${dir}/gnumeric -f ${STAGEDIR}${PREFIX}/lib/gnumeric/${PORTVERSION}
 
 .include <bsd.port.mk>
 
