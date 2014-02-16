@@ -23,11 +23,7 @@ USE_PYTHON=	yes
 DESKTOP_ENTRIES="ConvertAll" "Unit converter" "${DATADIR}/icons/${PORTNAME}.svg" \
 		"${PORTNAME}" "Utility;Calculator;" true
 
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS 
-
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@cd ${WRKSRC}/source && ${REINPLACE_CMD} -e \
@@ -43,21 +39,19 @@ do-build:
 	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/source
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/convertall.sh ${PREFIX}/bin/convertall
-	@${MKDIR} ${PYTHON_SITELIBDIR}/convertall
-	${INSTALL_DATA} ${WRKSRC}/source/*.py ${PYTHON_SITELIBDIR}/convertall
-	${INSTALL_DATA} ${WRKSRC}/source/*.pyc ${PYTHON_SITELIBDIR}/convertall
-	${INSTALL_DATA} ${WRKSRC}/source/*.pyo ${PYTHON_SITELIBDIR}/convertall
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/data/*.dat ${DATADIR}
-	@${MKDIR} ${DATADIR}/icons
-	${INSTALL_DATA} ${WRKSRC}/icons/*.png ${DATADIR}/icons
-	${INSTALL_DATA} ${WRKSRC}/icons/*.svg ${DATADIR}/icons
-	@${MKDIR} ${DATADIR}/translations
-	${INSTALL_DATA} ${WRKSRC}/translations/*.qm ${DATADIR}/translations
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
-.endif
+	${INSTALL_SCRIPT} ${WRKDIR}/convertall.sh ${STAGEDIR}${PREFIX}/bin/convertall
+	@${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/convertall
+	${INSTALL_DATA} ${WRKSRC}/source/*.py ${STAGEDIR}${PYTHON_SITELIBDIR}/convertall
+	${INSTALL_DATA} ${WRKSRC}/source/*.pyc ${STAGEDIR}${PYTHON_SITELIBDIR}/convertall
+	${INSTALL_DATA} ${WRKSRC}/source/*.pyo ${STAGEDIR}${PYTHON_SITELIBDIR}/convertall
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/data/*.dat ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}/icons
+	${INSTALL_DATA} ${WRKSRC}/icons/*.png ${STAGEDIR}${DATADIR}/icons
+	${INSTALL_DATA} ${WRKSRC}/icons/*.svg ${STAGEDIR}${DATADIR}/icons
+	@${MKDIR} ${STAGEDIR}${DATADIR}/translations
+	${INSTALL_DATA} ${WRKSRC}/translations/*.qm ${STAGEDIR}${DATADIR}/translations
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
