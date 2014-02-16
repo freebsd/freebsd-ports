@@ -9,24 +9,21 @@ MASTER_SITES=	GNOME
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Library for single instance applications
 
-BUILD_DEPENDS=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
-LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 
-LATEST_LINK=	libunique3
 USE_XORG=	ice x11
 USE_XZ=		yes
-USES=		gettext gmake pkgconfig
+USES=		gettext gmake libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
-USE_AUTOTOOLS=	libtool
-USE_GNOME=	gtk30 gnomeprefix ltverhack:0
+USE_GNOME=	gtk30 gnomeprefix
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-maintainer-flags --enable-gtk-doc-html=no
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|g' \
+	@${REINPLACE_CMD} \
 		-e 's|unique tests doc|unique tests|g' \
 		${WRKSRC}/configure ${WRKSRC}/Makefile.in
 
