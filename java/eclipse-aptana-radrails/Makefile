@@ -10,6 +10,7 @@ MASTER_SITES=	http://update1.aptana.org/rails/${PORTVERSION}/ \
 PKGNAMEPREFIX=	eclipse-
 PKGNAMESUFFIX=	-radrails
 DISTNAME=	org.radrails.rails_feature-${PORTVERSION}-278787EUNvWohWG-fz0019H9P9Y9
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IDE for Ruby and the Ruby on Rails framework (Eclipse plugin)
@@ -22,10 +23,8 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 USE_JAVA=	yes
-USE_ZIP=	yes
 
-NO_STAGE=	yes
 do-install:
-	@(cd ${WRKDIR} && ${CP} -R features ${PREFIX}/lib/eclipse && ${CP} -R plugins ${PREFIX}/lib/eclipse;)
+	@(cd ${WRKDIR} && ${COPYTREE_SHARE} "features plugins" ${STAGEDIR}${PREFIX}/lib/eclipse)
 
 .include <bsd.port.mk>
