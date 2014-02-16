@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	qupzilla
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.3
 CATEGORIES=	www
 MASTER_SITES=	http://www.qupzilla.com/uploads/
 DISTNAME=	QupZilla-${PORTVERSION}
@@ -10,8 +10,6 @@ MAINTAINER=	javad.kouhi@gmail.com
 COMMENT=	Modern web browser based on WebKit core and Qt Framework
 
 LICENSE=	GPLv3
-
-BROKEN=		Fetch fails
 
 LIB_DEPENDS=	libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
 		libexecinfo.so:${PORTSDIR}/devel/libexecinfo
