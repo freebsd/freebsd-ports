@@ -1712,7 +1712,7 @@ EXTRACT_DEPENDS+=	${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 EXTRACT_DEPENDS+=	unmakeself:${PORTSDIR}/archivers/unmakeself
 .endif
 
-.if defined(USE_GCC) || defined(USE_FORTRAN)
+.if defined(USE_GCC)
 .include "${PORTSDIR}/Mk/bsd.gcc.mk"
 .endif
 

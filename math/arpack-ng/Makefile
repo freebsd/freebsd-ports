@@ -13,7 +13,7 @@ COMMENT=	Revised Argand library for solving large-scale eigenvalue problems
 
 LICENSE=	BSD
 
-USE_FORTRAN=	yes
+USES=		fortran
 USE_LDCONFIG=	yes
 
 CONFLICTS=	arpack-[0-9]*

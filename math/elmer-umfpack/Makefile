@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	UMFPACK library used by ELMER FEM package
 
-USE_FORTRAN=	yes
+USES=		fortran
 GNU_CONFIGURE=	yes
 ALL_TARGET=
 

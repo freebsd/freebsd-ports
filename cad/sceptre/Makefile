@@ -12,7 +12,7 @@ COMMENT=	General-purpose circuit analysis program
 
 LICENSE=	GPLv2
 
-USE_FORTRAN=	yes
+USES=		fortran
 
 MAKE_JOBS_UNSAFE=	yes
 NO_WRKSUBDIR=		yes

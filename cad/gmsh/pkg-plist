@@ -63,6 +63,7 @@ include/gmsh/OptHomRun.h
 include/gmsh/PView.h
 include/gmsh/PViewData.h
 include/gmsh/PViewDataGModel.h
+include/gmsh/PViewDataList.h
 include/gmsh/PViewOptions.h
 include/gmsh/Pair.h
 include/gmsh/ParamCoord.h
@@ -103,6 +104,7 @@ include/gmsh/linearSystem.h
 include/gmsh/linearSystemCSR.h
 include/gmsh/linearSystemFull.h
 include/gmsh/linearSystemGMM.h
+include/gmsh/linearSystemMUMPS.h
 include/gmsh/linearSystemPETSc.h
 include/gmsh/mathEvaluator.h
 include/gmsh/mathex.h

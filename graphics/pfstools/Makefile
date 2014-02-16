@@ -114,7 +114,7 @@ PLIST_SUB+=	IM="@comment "
 
 .if ${PORT_OPTIONS:MOCTAVE}
 CONFIGURE_ARGS+=--enable-octave
-USE_FORTRAN=	yes
+USES+=		fortran
 
 # need to determine which octave installed which patching
 PATCH_DEPENDS+=	mkoctfile:${PORTSDIR}/math/octave

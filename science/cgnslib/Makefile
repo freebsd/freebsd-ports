@@ -46,7 +46,7 @@ PLIST_SUB=	HDF5="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTESTS}
-USE_FORTRAN=	yes
+USES+=		fortran
 CMAKE_ARGS+=	-DENABLE_TESTS:BOOL=TRUE -DENABLE_FORTRAN:BOOL=TRUE
 TESTSBIN=	cgwrite cgread test_partial
 .endif

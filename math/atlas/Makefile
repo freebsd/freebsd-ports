@@ -17,7 +17,7 @@ LICENSE=	BSD
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/math/lapack:checksum
 
 USE_BZIP2=	yes
-USE_FORTRAN=	yes
+USES=		fortran
 
 CONFLICTS=	atlas-devel-[0-9]* cblas-[0-9]*
 MANUAL_PACKAGE_BUILD=	Optimizes for the local machine.

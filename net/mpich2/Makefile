@@ -22,8 +22,8 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 GNU_CONFIGURE=	yes
-USE_FORTRAN=	yes
-USES=		pkgconfig perl5
+USES=		fortran perl5 pkgconfig
+USE_GCC=	yes
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_PYTHON=	yes

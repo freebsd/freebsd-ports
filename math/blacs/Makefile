@@ -39,8 +39,7 @@ EXTRA_PATCHES+=	${FILESDIR}/Bmake.inc-mpich.diff
 
 USE_LDCONFIG=	yes
 
-USE_FORTRAN=	yes
-USE_GMAKE=yes
+USES=		fortran gmake
 F77EXTRAFLAGS=	#-w -fno-globals -fugly-complex
 DEBUG_LEVEL=	0
 

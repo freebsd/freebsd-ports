@@ -7,8 +7,7 @@
 #
 # To request the use of a current version of GCC, specify USE_GCC=yes in
 # your port/system configuration.  This is the preferred use of USE_GCC.
-# It defines a canonical, default version of GCC.  The same version of
-# GCC is also implied by USE_FORTRAN=yes.
+# It defines a canonical, default version of GCC.
 #
 # USE_GCC=any is similar, except that it also accepts the old GCC 4.2-
 # based system compiler in older versions of FreeBSD.
@@ -18,24 +17,12 @@
 # do so by specifying USE_GCC=X.Y+ which requests at least GCC version
 # X.Y.  To request a specific version omit the trailing + sign.
 #
-# Use of a Fortran compiler is declared by the USE_FORTRAN knob, not
-# USE_GCC.
-#
 # Examples:
 #   USE_GCC=	yes			# port requires a current version of GCC
 #							# (4.6 as of today, subject to change).
 #   USE_GCC=	any			# port requires GCC 4.2 or later.
 #   USE_GCC=	4.8+		# port requires GCC 4.8 or later.
 #   USE_GCC=	4.8			# port requires GCC 4.8.
-#
-# If your port needs a Fortran compiler, please specify that with the
-# USE_FORTRAN= knob.  Here is the list of options for that knob:
-#
-#   USE_FORTRAN=	yes		# use gfortran46 (lang/gcc46)
-#   USE_FORTRAN=	ifort	# use the Intel compiler (lang/ifc)
-#
-# Due to object file incompatiblity between Fortran compilers, we strongly
-# recommend to use only one of them on any system.
 #
 # If you are wondering what your port exactly does, use "make test-gcc"
 # to see some debugging.
@@ -80,34 +67,6 @@ _GCCVERSION_${v}_V=	${j}
 .  endif
 . endfor
 .endfor
-
-# bsd.gcc.mk can also be used for primarily requesting a Fortran compiler.
-# If we are using GCC we still define whatever we'd usually do for C and
-# C++ as well.
-
-.if defined (USE_FORTRAN)
-
-# The default case, with a current lang/gcc port.
-. if ${USE_FORTRAN} == yes
-_USE_GCC:=	${GCC_DEFAULT_VERSION}
-FC:=	gfortran${GCC_DEFAULT_V}
-F77:=	gfortran${GCC_DEFAULT_V}
-
-# Intel Fortran compiler from lang/ifc.
-. elif ${USE_FORTRAN} == ifort
-BUILD_DEPENDS+=	${LOCALBASE}/intel_fc_80/bin/ifort:${PORTSDIR}/lang/ifc
-RUN_DEPENDS+=	${LOCALBASE}/intel_fc_80/bin/ifort:${PORTSDIR}/lang/ifc
-FC:=	${LOCALBASE}/intel_fc_80/bin/ifort
-F77:=	${LOCALBASE}/intel_fc_80/bin/ifort
-
-. else
-IGNORE=	specifies unknown value "${USE_FORTRAN}" for USE_FORTRAN
-. endif
-
-CONFIGURE_ENV+=	F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
-MAKE_ENV+=		F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
-.endif
-
 
 .if defined(USE_GCC) && !defined(FORCE_BASE_CC_FOR_TESTING)
 
@@ -201,11 +160,6 @@ _GCC_RUNTIME:=		${LOCALBASE}/lib/gcc${V}
 CFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME}
 CXXFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME}
 LDFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME} -L${_GCC_RUNTIME}
-.    if defined (USE_FORTRAN)
-.    if ${USE_FORTRAN} == yes
-FFLAGS+=		-Wl,-rpath=${_GCC_RUNTIME}
-.    endif
-.    endif
 # The following is for the sakes of some ports which use this without
 # ever telling us; to be fixed.
 _GCC_BUILD_DEPENDS:=	${_GCC_PORT_DEPENDS}
@@ -234,7 +188,6 @@ USE_BINUTILS=	yes
 
 test-gcc:
 	@echo USE_GCC=${USE_GCC}
-	@echo USE_FORTRAN=${USE_FORTRAN}
 .if defined(IGNORE)
 	@echo "IGNORE: ${IGNORE}"
 .else
@@ -255,7 +208,6 @@ test-gcc:
 	@echo Using GCC version ${_USE_GCC}
 .endif
 	@echo CC=${CC} - CXX=${CXX} - CPP=${CPP} - CFLAGS=\"${CFLAGS}\"
-	@echo F77=${F77} - FC=${FC} - FFLAGS=\"${FFLAGS}\"
 	@echo LDFLAGS=\"${LDFLAGS}\"
 	@echo "BUILD_DEPENDS=${BUILD_DEPENDS}"
 	@echo "RUN_DEPENDS=${RUN_DEPENDS}"

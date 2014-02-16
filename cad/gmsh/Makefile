@@ -3,6 +3,7 @@
 
 PORTNAME=	gmsh
 PORTVERSION=	2.8.4
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
@@ -26,9 +27,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 
 SLAVEDIRS=	cad/gmsh-occ
 
-USE_FORTRAN=	yes
-USES=		cmake
-USE_GMAKE=	yes
+USES=		cmake fortran gmake
 USE_GL=		yes
 ALL_TARGET=	all
 

@@ -1,0 +1,11 @@
+--- configure.orig
++++ configure
+@@ -26093,7 +26093,7 @@
+     *)
+       ARCH="OS_${target_os}"
+       # Workaround for bogus system names
+-      ARCH=` echo ${ARCH} | ${SED} 's/^a-z0-9_//g' `
++      ARCH=` echo ${ARCH} | ${SED} 's/[^A-Za-z0-9_]//g' `
+       ;;
+ esac
+ { echo "$as_me:$LINENO: result: $ARCH" >&5

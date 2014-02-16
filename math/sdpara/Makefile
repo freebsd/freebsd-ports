@@ -22,8 +22,7 @@ MANDATE=	20080618
 MANUALVER=	7.1.1
 SRCFILE=	${PORTNAME}.${PORTVERSION}.src.${SRCDATE}.tar.gz
 #MANUALFILE=	${PORTNAME}.${MANUALVER}.manual.${MANDATE}.pdf
-USE_FORTRAN=	yes
-USES=		gmake
+USES=		fortran gmake
 WRKSRC=		${WRKDIR}/${PORTNAME}.${PORTVERSION}
 
 .if exists(${LOCALBASE}/lib/libgoto2.so)

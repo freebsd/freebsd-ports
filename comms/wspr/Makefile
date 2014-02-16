@@ -21,10 +21,9 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/scipy:${PORTSDIR}/science/py-scipy \
 		${LOCALBASE}/lib/portaudio2/libportaudio.so:${PORTSDIR}/audio/portaudio2 \
 		${PYNUMPY}
 
+USES=		fortran gmake
 USE_BZIP2=	yes
 ALL_TARGET=	build
-USE_GMAKE=	yes
-USE_FORTRAN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gfortran --prefix=${LOCALBASE} \
 		--with-portaudio-include-dir=${LOCALBASE}/include/portaudio2 \

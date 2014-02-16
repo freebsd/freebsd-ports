@@ -16,7 +16,7 @@ LIB_DEPENDS=	libcblas.so:${PORTSDIR}/math/cblas
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0.8.0:${PORTSDIR}/science/py-scipy
 
-USE_FORTRAN=	yes
+USES=		fortran
 LATEST_LINK=	py-${PORTNAME}
 
 USE_PYTHON=	yes

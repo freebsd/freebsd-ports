@@ -19,8 +19,7 @@ COMMENT=	Just Another Gibbs Sampler
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USES=		bison gmake
-USE_FORTRAN=	yes
+USES=		bison fortran gmake
 USE_LDCONFIG=	yes
 
 DIST_SUBDIR=	${PORTNAME}

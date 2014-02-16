@@ -20,9 +20,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
-USES=		pkgconfig
+USES=		fortran pkgconfig
 USE_QT4=	moc_build qmake_build
-USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
 

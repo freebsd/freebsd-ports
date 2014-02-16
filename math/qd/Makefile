@@ -11,7 +11,6 @@ MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Double-Double and Quad-Double Arithmetic
 
 GNU_CONFIGURE=	yes
-USE_FORTRAN=	yes
-CONFIGURE_ARGS+=	--enable-shared=yes
+USES=		fortran
 
 .include <bsd.port.mk>

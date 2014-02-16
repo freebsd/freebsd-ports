@@ -14,7 +14,7 @@ COMMENT=	Linear Programming Solver
 
 LIB_DEPENDS=	lapack.4:${PORTSDIR}/math/lapack
 
-USE_FORTRAN=	yes
+USES=		fortran
 CXXFLAGS+=	-ffast-math -fomit-frame-pointer
 
 GNU_CONFIGURE=	yes

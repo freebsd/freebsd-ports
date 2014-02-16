@@ -17,7 +17,7 @@ LIB_DEPENDS+=	netcdff:${PORTSDIR}/science/netcdf-ftn \
 		lapack:${PORTSDIR}/math/lapack \
 		blas:${PORTSDIR}/math/lapack
 
-USE_FORTRAN=	yes
+USES=		fortran
 WRKSRC=		${WRKDIR}/FVCOM2.7.1/FVCOM_source
 
 PLIST_FILES=	bin/${PORTNAME}${PKGNAMESUFFIX}

@@ -41,7 +41,7 @@ LIB_DEPENDS=	linpack.3:${PORTSDIR}/math/linpack
 NO_STAGE=	yes
 NO_WRKSUBDIR=	yes
 USE_LDCONFIG=	yes
-USE_FORTRAN=	yes
+USES=		fortran
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	fft.doc

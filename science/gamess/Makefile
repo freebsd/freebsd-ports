@@ -11,11 +11,9 @@ DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A freely obtainable ab-initio molecular orbital calculation program
 
-USE_GMAKE=	yes
+USES=		fortran gmake
 WRKSRC=         ${WRKDIR}/gamess
 SNAPDATE=	20130501.1
-
-USE_FORTRAN=   yes
 
 RESTRICTED=	NOT DISTRIBUTED FREELY. BUT YOU CAN OBTAIN SOURCE CODE FREELY.
 

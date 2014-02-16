@@ -38,8 +38,8 @@ REINPLACE_ARGS=	-i ""
 FETCH_CMD=	/usr/bin/fetch
 FETCH_BEFORE_ARGS=	-R -o ${DISTDIR}/${DISTFILES}
 
+USES=		fortran
 USE_XORG=	x11 xpm
-USE_FORTRAN=	yes
 FFLAGS+=	-O
 MEMORY_XD3D?=	64
 

@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=	--with-x-include=${LOCALBASE}/include	\
 			--with-x-lib=${LOCALBASE}/lib/libX11.so
 .endif
 
-USE_FORTRAN=	yes
+USES=		fortran
 FFLAGS+=	-O2
 PFX=		${PORTNAME}
 TARGET=		${OPSYS:L}

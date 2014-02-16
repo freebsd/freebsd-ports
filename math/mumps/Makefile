@@ -30,7 +30,7 @@ NO_STAGE=	yes
 
 SLAVEDIRS=	math/mumps-mpich
 
-USE_FORTRAN=	yes
+USES=		fortran
 
 FORTRANLIBS=	-lgfortran
 GCCLIBDIR=	-L`${CAT} ${WRKSRC}/LIBDIR` -L`${CAT} ${WRKSRC}/LIBDIR`/../../..

@@ -16,9 +16,8 @@ LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl \
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
-USES=		gmake pathfix pkgconfig
+USES=		fortran gmake pathfix pkgconfig
 WANT_GNOME=	yes
 
 ALL_TARGET=		# empty

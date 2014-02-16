@@ -3,7 +3,7 @@
 
 PORTNAME=	psi3
 PORTVERSION=	3.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	SF/psicode/psi/${PORTVERSION} \
 		http://www.psicode.org/doc/:doc \
@@ -45,17 +45,18 @@ LAPACK=		-lalapack -lptcblas
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_FORTRAN=	yes
+USES=		fortran gmake
 CONFIGURE_ARGS=	--with-cc=${CC} \
 		--with-cxx=${CXX} \
 		--with-fc=${FC} \
+		--with-opt="${CFLAGS}" \
 		--with-lapack="${LAPACK}" \
 		--with-blas="${BLAS}" \
 		--datadir=${PREFIX}/share/psi3 \
 		--docdir=${WRKSRC}/tmpdoc/ \
 		--with-libdirs="-L${LOCALBASE}/lib" \
 		--with-libs="-lcompat"
+CFLAGS+=	-Wno-error=return-type
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>

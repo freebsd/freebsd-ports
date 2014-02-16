@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-gsl
 PORTVERSION=	1.0.8
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -14,6 +14,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl
 
 GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} s+/bin/bash+${LOCALBASE}/bin/bash+g ${WRKSRC}/src/config*

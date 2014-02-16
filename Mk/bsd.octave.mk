@@ -21,8 +21,7 @@ RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave \
 		${LOCALBASE}/libexec/octave/load-octave-pkg:${PORTSDIR}/math/octave-forge-base
 LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre
 
-USE_FORTRAN=	yes
-USES+=		gmake
+USES+=		fortran gmake
 
 DIST_SUBDIR=	octave-forge
 OCTAVE_PKGNAME=	${PORTNAME:S/octave-forge-//}
