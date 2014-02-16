@@ -18,16 +18,11 @@ PORTDOCS=	errors.doc fluctuate.doc
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
-
-.include <bsd.port.options.mk>
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@ ${MKDIR} ${DOCSDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/*.doc ${DOCSDIR}/
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.doc ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
