@@ -4,7 +4,7 @@
 
 PORTNAME=	glib
 PORTVERSION=	2.36.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,12 +19,14 @@ PORTSCOUT=	limitw:1,even
 
 .if !defined(REFERENCE_PORT)
 
-LIB_DEPENDS+=	pcre:${PORTSDIR}/devel/pcre \
-		ffi:${PORTSDIR}/devel/libffi
+LIB_DEPENDS+=	libpcre.so:${PORTSDIR}/devel/pcre \
+		libffi.so:${PORTSDIR}/devel/libffi
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-USES=		gettext gmake iconv pathfix pkgconfig shebangfix perl5
+# iconv:wchar_t - our iconv in base doesn't support utf-8 -> wchar_t (boooo)
+# (wchar_t is used by glibmm, rawtherapee triggered this)
+USES=		gettext gmake iconv:wchar_t pathfix pkgconfig shebangfix perl5
 USE_GNOME=	ltverhack
 USE_PYTHON=	yes
 CONFIGURE_ARGS=	--enable-static \
@@ -35,13 +37,13 @@ CONFIGURE_ARGS=	--enable-static \
 CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 SHEBANG_FILES=	*/*.pl glib/gen-iswide-table.py
 
 OPTIONS_DEFINE=	COLLATION_FIX DEBUG
 COLLATION_FIX_DESC=	fix string collation
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # doesn't build yet
@@ -74,7 +76,7 @@ GLIB_ARCH=	${ARCH}
 CONFIGURE_TARGET=${GLIB_ARCH}-portbld-freebsd${OSREL}
 
 .if ${PORT_OPTIONS:MCOLLATION_FIX}
-LIB_DEPENDS+=	icui18n:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	libicui18n.so:${PORTSDIR}/devel/icu
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-glib_Makefile.in \
 		${FILESDIR}/extra-patch-glib_gunicollate.c
 # Disable it until someone can figure why it causes net-im/pidgin crashed.
@@ -101,8 +103,7 @@ post-patch:
 		s|#define HAVE_SYS_INOTIFY_H 1||' ${WRKSRC}/configure
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/GConf/gsettings
-	-${PREFIX}/bin/gio-querymodules ${PREFIX}/lib/gio/modules
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/GConf/gsettings
 
 .include <bsd.port.post.mk>
 
