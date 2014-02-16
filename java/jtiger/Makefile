@@ -7,42 +7,25 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://kaiwitte.org/jtiger/
 
 MAINTAINER=	wenheping@gmail.com
-COMMENT=	A Unit Test Framework and Tools for the Java2 Platform
+COMMENT=	Unit Test Framework and Tools for the Java2 Platform
 
 USE_JAVA=	1.5
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 SRCFILES=	src test-src
 
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 do-install:
-	${INSTALL_DATA} ${WRKDIR}/jtiger.jar ${JAVAJARDIR}/jtiger.jar
+	${INSTALL_DATA} ${WRKDIR}/jtiger.jar ${STAGEDIR}${JAVAJARDIR}/jtiger.jar
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	cd ${WRKDIR} && ${COPYTREE_SHARE} "${SRCFILES}" ${STAGEDIR}${DATADIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKDIR}/samples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/changes.html ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/cpl-v10.html ${STAGEDIR}${DOCSDIR}
+	cd ${WRKDIR}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
-post-install:
-.if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}
-	cd ${WRKDIR} \
-		&& ${FIND} ${SRCFILES} -type d -exec ${MKDIR} ${DATADIR}/\{} \; \
-		&& ${FIND} ${SRCFILES} -type f -exec ${INSTALL_DATA} \{} ${DATADIR}/\{} \;
-.endif
-
-.if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKDIR}/samples \
-		&& ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/\{} \; \
-		&& ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${EXAMPLESDIR}/\{} \;
-.endif
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/changes.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/cpl-v10.html ${DOCSDIR}
-	cd ${WRKDIR}/doc \
-		&& ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/\{} \; \
-		&& ${FIND} . -type f -exec ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
