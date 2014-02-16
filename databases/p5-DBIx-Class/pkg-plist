@@ -30,6 +30,7 @@ bin/dbicadmin
 %%PERL5_MAN3%%/DBIx::Class::Manual::Glossary.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Manual::Intro.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Manual::Joining.3.gz
+%%PERL5_MAN3%%/DBIx::Class::Manual::QuickStart.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Manual::Reading.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Manual::ResultClass.3.gz
 %%PERL5_MAN3%%/DBIx::Class::Manual::Troubleshooting.3.gz
@@ -173,6 +174,7 @@ bin/dbicadmin
 %%SITE_PERL%%/DBIx/Class/Manual/Glossary.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Intro.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Joining.pod
+%%SITE_PERL%%/DBIx/Class/Manual/QuickStart.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Reading.pod
 %%SITE_PERL%%/DBIx/Class/Manual/ResultClass.pod
 %%SITE_PERL%%/DBIx/Class/Manual/Troubleshooting.pod
