@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Feb 13 02:28:35 1999
-+++ Makefile	Sun Jul  6 20:06:03 2003
+--- ./Makefile.orig	1999-02-12 15:28:35.000000000 -0200
++++ ./Makefile	2014-02-16 15:38:19.000000000 -0300
 @@ -1,11 +1,10 @@
  # Makefile for gexpr
  # Last updated: 10 February 1999
@@ -14,3 +14,14 @@
  
  all: $(GEXPR)
  
+@@ -31,8 +30,8 @@
+ 	$(CC) $(OPTS) -c gexpr.c
+ 
+ install:
+-	cp -f gexpr /usr/local/bin;
+-	cp -f gexpr.1 /usr/local/man/man1
++	install -s gexpr ${DESTDIR}/usr/local/bin;
++	install gexpr.1 ${DESTDIR}/usr/local/man/man1
+ 	
+ clean:
+ 	rm -f *.o core
