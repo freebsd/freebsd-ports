@@ -11,8 +11,8 @@ COMMENT=	Simple KDE Calculator
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	mpfr:${PORTSDIR}/math/mpfr
+BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex
+LIB_DEPENDS=	libmpfr.so:${PORTSDIR}/math/mpfr
 
 USE_BZIP2=	yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
@@ -24,5 +24,4 @@ CMAKE_ARGS=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include" \
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
