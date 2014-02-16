@@ -33,6 +33,7 @@ share/xmahjongg/tiles/real.gif
 share/xmahjongg/tiles/small.gif
 share/xmahjongg/tiles/thick.gif
 share/xmahjongg/tiles/thin.gif
+man/man6/xmahjongg.6.gz
 @dirrm share/xmahjongg/tiles
 @dirrm share/xmahjongg/layouts
 @dirrm share/xmahjongg/backgrounds
