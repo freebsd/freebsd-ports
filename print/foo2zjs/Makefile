@@ -9,7 +9,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL:S,$,bsam/${PORTNAME}/,}  \
 		ftp://ftp.wart.ru/pub/FreeBSD/ports/distfiles/
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for printers that use the ZjStream wire protocol
 
 LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-base
