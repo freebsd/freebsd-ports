@@ -3,6 +3,7 @@
 
 PORTNAME=	kyua-atf-compat
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	kyua
@@ -12,7 +13,7 @@ COMMENT=	Kyua (automated testing framework) - ATF compatibility tools
 
 LICENSE=	BSD
 
-RUN_DEPENDS=	kyua:${PORTSDIR}/devel/kyua
+RUN_DEPENDS+=	${LOCALBASE}/bin/kyua:${PORTSDIR}/devel/kyua-cli
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
