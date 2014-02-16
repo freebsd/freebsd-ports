@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Apr  7 06:51:06 2003
-+++ Makefile	Wed Oct 22 16:41:57 2003
+--- Makefile.orig	2003-06-30 14:45:27.000000000 +0200
++++ Makefile	2014-02-16 12:01:21.454847187 +0100
 @@ -1,13 +1,12 @@
  # Makefile - makefile for rexima
  
@@ -16,3 +16,18 @@
  BINDIR=$(PREFIX)/bin
  MANDIR=$(PREFIX)/man/man1
  
+@@ -20,11 +19,11 @@
+ 	$(CC) $(CFLAGS) -o rexima rexima.o -lncurses
+ 
+ installdirs:
+-	/bin/sh ./mkinstalldirs $(BINDIR) $(MANDIR)
++	/bin/sh ./mkinstalldirs $(DESTDIR)$(BINDIR) $(DESTDIR)$(MANDIR)
+ 
+ install: rexima installdirs
+-	install -s -m 755 rexima $(BINDIR)
+-	install -m 644 rexima.1 $(MANDIR)
++	install -s -m 755 rexima $(DESTDIR)$(BINDIR)
++	install -m 644 rexima.1 $(DESTDIR)$(MANDIR)
+ 
+ uninstall:
+ 	$(RM) $(BINDIR)/rexima $(MANDIR)/rexima.1

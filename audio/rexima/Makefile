@@ -4,14 +4,14 @@
 PORTNAME=	rexima
 PORTVERSION=	1.4
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITES=	SUNSITE
 MASTER_SITE_SUBDIR=	apps/sound/mixers
 
 MAINTAINER=	jerry@freebsd.se
 COMMENT=	A ncurses-based console mixer
 
-MAN1=		rexima.1
-PLIST_FILES=	bin/rexima
-NO_STAGE=	yes
+LICENSE=	GPLv2
+
+PLIST_FILES=	bin/rexima man/man1/rexima.1.gz
 
 .include <bsd.port.mk>
