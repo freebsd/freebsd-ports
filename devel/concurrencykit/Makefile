@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	concurrencykit
-PORTVERSION=	0.3.2
+PORTVERSION=	0.3.5
 CATEGORIES=	devel
 MASTER_SITES=	http://concurrencykit.org/releases/ \
 		http://repnop.org/releases/
@@ -11,7 +11,7 @@ DISTNAME=	ck-${PORTVERSION}
 MAINTAINER=	koobs@FreeBSD.org
 COMMENT=	Lock-free data structures for high performance concurrent systems
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 USES=		pkgconfig
 USE_LDCONFIG=	yes

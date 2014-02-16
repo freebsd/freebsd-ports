@@ -42,8 +42,15 @@ include/gcc/ck_f_pr.h
 include/gcc/ck_cc.h
 include/ck_bitmap.h
 include/ck_barrier.h
-include/ck_bag.h
 include/ck_stdint.h
+include/spinlock/anderson.h
+include/spinlock/cas.h
+include/spinlock/clh.h
+include/spinlock/dec.h
+include/spinlock/fas.h
+include/spinlock/hclh.h
+include/spinlock/mcs.h
+include/spinlock/ticket.h
 lib/libck.so.%%VERSION%%
 lib/libck.so
 lib/libck.so.0
@@ -74,18 +81,6 @@ man/man3/ck_array_length.3.gz
 man/man3/ck_array_put.3.gz
 man/man3/ck_array_put_unique.3.gz
 man/man3/ck_array_remove.3.gz
-man/man3/ck_bag_allocator_set.3.gz
-man/man3/ck_bag_block_count.3.gz
-man/man3/ck_bag_block_next.3.gz
-man/man3/ck_bag_count.3.gz
-man/man3/ck_bag_destroy.3.gz
-man/man3/ck_bag_init.3.gz
-man/man3/ck_bag_iterator_init.3.gz
-man/man3/ck_bag_member_spmc.3.gz
-man/man3/ck_bag_next.3.gz
-man/man3/ck_bag_put_spmc.3.gz
-man/man3/ck_bag_remove_spmc.3.gz
-man/man3/ck_bag_set_spmc.3.gz
 man/man3/ck_bitmap_base.3.gz
 man/man3/ck_bitmap_bits.3.gz
 man/man3/ck_bitmap_buffer.3.gz
@@ -115,12 +110,14 @@ man/man3/ck_hs_count.3.gz
 man/man3/ck_hs_destroy.3.gz
 man/man3/ck_hs_fas.3.gz
 man/man3/ck_hs_get.3.gz
+man/man3/ck_hs_gc.3.gz
 man/man3/ck_hs_grow.3.gz
 man/man3/ck_hs_init.3.gz
 man/man3/ck_hs_iterator_init.3.gz
 man/man3/ck_hs_move.3.gz
 man/man3/ck_hs_next.3.gz
 man/man3/ck_hs_put.3.gz
+man/man3/ck_hs_rebuild.3.gz
 man/man3/ck_hs_remove.3.gz
 man/man3/ck_hs_reset.3.gz
 man/man3/ck_hs_reset_size.3.gz
@@ -138,6 +135,7 @@ man/man3/ck_ht_entry_set.3.gz
 man/man3/ck_ht_entry_set_direct.3.gz
 man/man3/ck_ht_entry_value.3.gz
 man/man3/ck_ht_entry_value_direct.3.gz
+man/man3/ck_ht_gc.3.gz
 man/man3/ck_ht_get_spmc.3.gz
 man/man3/ck_ht_grow_spmc.3.gz
 man/man3/ck_ht_hash.3.gz
@@ -162,6 +160,7 @@ man/man3/ck_pr_cas.3.gz
 man/man3/ck_pr_dec.3.gz
 man/man3/ck_pr_faa.3.gz
 man/man3/ck_pr_fas.3.gz
+man/man3/ck_pr_fence_acquire.3.gz
 man/man3/ck_pr_fence_atomic.3.gz
 man/man3/ck_pr_fence_atomic_load.3.gz
 man/man3/ck_pr_fence_atomic_store.3.gz
@@ -170,6 +169,7 @@ man/man3/ck_pr_fence_load_atomic.3.gz
 man/man3/ck_pr_fence_load_depends.3.gz
 man/man3/ck_pr_fence_load_store.3.gz
 man/man3/ck_pr_fence_memory.3.gz
+man/man3/ck_pr_fence_release.3.gz
 man/man3/ck_pr_fence_store.3.gz
 man/man3/ck_pr_fence_store_atomic.3.gz
 man/man3/ck_pr_fence_store_load.3.gz
@@ -178,6 +178,7 @@ man/man3/ck_pr_load.3.gz
 man/man3/ck_pr_neg.3.gz
 man/man3/ck_pr_not.3.gz
 man/man3/ck_pr_or.3.gz
+man/man3/ck_pr_rtm.3.gz
 man/man3/ck_pr_stall.3.gz
 man/man3/ck_pr_store.3.gz
 man/man3/ck_pr_sub.3.gz
@@ -197,6 +198,7 @@ man/man3/ck_rwcohort.3.gz
 man/man3/ck_rwlock.3.gz
 man/man3/ck_sequence.3.gz
 man/man3/ck_spinlock.3.gz
+@dirrmtry include/spinlock
 @dirrmtry include/gcc/x86_64
 @dirrmtry include/gcc/x86
 @dirrmtry include/gcc/sparcv9
