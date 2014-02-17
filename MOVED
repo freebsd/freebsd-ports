@@ -5449,5 +5449,5 @@ databases/p5-DBD-mysql56|databases/p5-DBD-mysql|2014-02-12|If you need a differe
 textproc/p5-ElasticSearch|textproc/p5-ElasticSearch-legacy|2014-02-12|This version is depricated in favour of the offical client
 x11-fonts/cosmic-sans-neue-mono|x11-fonts/fantasque-sans-mono|2014-02-13|Renamed upstream
 mail/zmailer||2014-02-13|Broken since at least last August
-lang/gcc34|lang/gcc46|2014-02-13|Superseded by GCC 4.6 or later
+lang/gcc34|lang/gcc|2014-02-13|Superseded by GCC 4.6 or later
 x11-toolkits/sakura|x11/sakura|2014-02-16|Moved to a better category
