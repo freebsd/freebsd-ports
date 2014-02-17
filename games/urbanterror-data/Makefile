@@ -16,7 +16,6 @@ MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Standalone realism based mod originally for Quake III Arena
 
 NO_BUILD=	yes
-NO_PACKAGE=	Package will be 1GB; set FORCE_PACKAGE if you really want it
 
 DATADIR=	${PREFIX}/share/quake3
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
@@ -26,22 +25,20 @@ URT_REV=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.([0-9]+)/\2/}
 
 PLIST_SUB+=	VER=${URT_VER}
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS 
 
 .include <bsd.port.options.mk>
 
 do-install:
-	${MKDIR} ${DATADIR}/q3ut4
+	${MKDIR} ${STAGEDIR}${DATADIR}/q3ut4
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DISTFILES} \
-		${EXTRACT_AFTER_ARGS} -C ${DATADIR} --strip-components 1 \
+		${EXTRACT_AFTER_ARGS} -C ${STAGEDIR}${DATADIR} --strip-components 1 \
 		UrbanTerror${URT_VER}/q3ut4
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${MV} ${DATADIR}/q3ut4/readme${URT_VER}.txt ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${MV} ${STAGEDIR}${DATADIR}/q3ut4/readme${URT_VER}.txt ${STAGEDIR}${DOCSDIR}
 .else
-	${RM} ${DATADIR}/q3ut4/readme${URT_VER}.txt
+	${RM} ${STAGEDIR}${DATADIR}/q3ut4/readme${URT_VER}.txt
 .endif
 
 .include <bsd.port.mk>
