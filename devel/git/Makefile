@@ -188,7 +188,7 @@ SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	V=1
@@ -267,7 +267,7 @@ MAKE_ENV+=	NO_ICONV=1
 MAKE_ENV+=	CURLDIR=${LOCALBASE}
 BUILD_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
 RUN_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
-LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	libexpat.so:${PORTSDIR}/textproc/expat2
 PLIST_SUB+=	CURL=""
 .else
 MAKE_ENV+=	NO_CURL=1 \
@@ -285,7 +285,7 @@ PLIST_SUB+=	HTMLDOCS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGUI}
-USE_TK=		84+
+USES+=		tk
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 MAN1+=		git-citool.1 \
 		git-gui.1 \
