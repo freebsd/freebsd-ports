@@ -17,9 +17,8 @@ CFLAGS+=	-Wno-error=return-type
 EXTRACT_AFTER_ARGS=	bin/diff man/man1/diff.1
 WRKSRC=		${WRKDIR}/bin/diff
 
-MAN1=		2diff.1
+PLIST_FILES=	bin/2diff libexec/2diffh man/man1/2diff.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
 				${WRKSRC}/../../man/man1/diff.1
