@@ -20,7 +20,6 @@ PLIST=		${WRKDIR}/pkg-plist
 WANT_PHP_WEB=	yes
 USE_PHP=	session imap pcre
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Don't install automatically CVS directories, patched files and the default config file.
@@ -39,14 +38,11 @@ pre-install:
 	@${ECHO_CMD} etc/hastymail.conf.sample >> ${PLIST}
 
 do-install:
-	@${MKDIR} ${PREFIX}/${INSTALL_DIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${INSTALL_DIR}
 	@cd ${WRKSRC} && ${FIND} . ${FIND_SKIP_OPTS} | \
-		${PAX} -rwd ${PREFIX}/${INSTALL_DIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${INSTALL_DIR}
+		${PAX} -rwd ${STAGEDIR}${PREFIX}/${INSTALL_DIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${PREFIX}/${INSTALL_DIR}
 	@${INSTALL_DATA} ${WRKSRC}/hastymail.conf-example \
-		${PREFIX}/etc/hastymail.conf.sample
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+		${STAGEDIR}${PREFIX}/etc/hastymail.conf.sample
 
 .include <bsd.port.post.mk>
