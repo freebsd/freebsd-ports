@@ -98,10 +98,10 @@ post-patch:
 post-install:
 .if ${PORT_OPTIONS:MGTK2}
 	${LN} -sf \
-	${SITE_PERL}${PERL_ARCH}/auto/share/dist/WWW-YoutubeViewer/gtk-youtube-viewer.desktop \
+	${SITE_PERL}/auto/share/dist/WWW-YoutubeViewer/gtk-youtube-viewer.desktop \
 		${STAGEDIR}${DESKTOPDIR}
 	${LN} -sf \
-	${SITE_PERL}${PERL_ARCH}/auto/share/dist/WWW-YoutubeViewer/gtk-youtube-viewer.png \
+	${SITE_PERL}/auto/share/dist/WWW-YoutubeViewer/gtk-youtube-viewer.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 .endif
 
