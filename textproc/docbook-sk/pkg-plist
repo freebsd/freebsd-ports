@@ -1,24 +1,24 @@
-share/xml/docbook/%%DTD_VERSION%%/40chg.txt
-share/xml/docbook/%%DTD_VERSION%%/41chg.txt
-share/xml/docbook/%%DTD_VERSION%%/ChangeLog
-share/xml/docbook/%%DTD_VERSION%%/calstblx.dtd
-share/xml/docbook/%%DTD_VERSION%%/dbcentx.mod
-share/xml/docbook/%%DTD_VERSION%%/dbgenent.mod
-share/xml/docbook/%%DTD_VERSION%%/dbhierx.mod
-share/xml/docbook/%%DTD_VERSION%%/dbnotnx.mod
-share/xml/docbook/%%DTD_VERSION%%/dbpoolx.mod
-share/xml/docbook/%%DTD_VERSION%%/docbook.cat
-share/xml/docbook/%%DTD_VERSION%%/docbookx.dtd
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ELEMENTS DocBook XML Information Pool V4.1.2//EN" file://%%DOCBOOKDIR%%/dbpoolx.mod
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//DTD DocBook XML V4.1.2//EN" file://%%DOCBOOKDIR%%/docbookx.dtd
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ENTITIES DocBook XML Character Entities V4.1.2//EN" file://%%DOCBOOKDIR%%/dbcentx.mod
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ENTITIES DocBook XML Notations V4.1.2//EN" file://%%DOCBOOKDIR%%/dbnotnx.mod
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ENTITIES DocBook XML Additional General Entities V4.1.2//EN" file://%%DOCBOOKDIR%%/dbgenent.mod
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ELEMENTS DocBook XML Document Hierarchy V4.1.2//EN" file://%%DOCBOOKDIR%%/dbhierx.mod
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//DTD XML Exchange Table Model 19990315//EN" file://%%DOCBOOKDIR%%/soextblx.dtd
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//DTD DocBook XML CALS Table Model V4.1.2//EN" file://%%DOCBOOKDIR%%/calstblx.dtd
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add rewriteSystem "http://www.oasis-open.org/docbook/xml/4.1.2" file://%%DOCBOOKDIR%%
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add rewriteURI "http://www.oasis-open.org/docbook/xml/4.1.2" file://%%DOCBOOKDIR%%
+%%DOCBOOKDIR%%/40chg.txt
+%%DOCBOOKDIR%%/41chg.txt
+%%DOCBOOKDIR%%/ChangeLog
+%%DOCBOOKDIR%%/calstblx.dtd
+%%DOCBOOKDIR%%/dbcentx.mod
+%%DOCBOOKDIR%%/dbgenent.mod
+%%DOCBOOKDIR%%/dbhierx.mod
+%%DOCBOOKDIR%%/dbnotnx.mod
+%%DOCBOOKDIR%%/dbpoolx.mod
+%%DOCBOOKDIR%%/docbook.cat
+%%DOCBOOKDIR%%/docbookx.dtd
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ELEMENTS DocBook XML Information Pool V4.1.2//EN" file://%D/%%DOCBOOKDIR%%/dbpoolx.mod
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//DTD DocBook XML V4.1.2//EN" file://%D/%%DOCBOOKDIR%%/docbookx.dtd
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ENTITIES DocBook XML Character Entities V4.1.2//EN" file://%D/%%DOCBOOKDIR%%/dbcentx.mod
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ENTITIES DocBook XML Notations V4.1.2//EN" file://%D/%%DOCBOOKDIR%%/dbnotnx.mod
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ENTITIES DocBook XML Additional General Entities V4.1.2//EN" file://%D/%%DOCBOOKDIR%%/dbgenent.mod
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ELEMENTS DocBook XML Document Hierarchy V4.1.2//EN" file://%D/%%DOCBOOKDIR%%/dbhierx.mod
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//DTD XML Exchange Table Model 19990315//EN" file://%D/%%DOCBOOKDIR%%/soextblx.dtd
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//DTD DocBook XML CALS Table Model V4.1.2//EN" file://%D/%%DOCBOOKDIR%%/calstblx.dtd
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add rewriteSystem "http://www.oasis-open.org/docbook/xml/4.1.2" file://%D/%%DOCBOOKDIR%%
+@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add rewriteURI "http://www.oasis-open.org/docbook/xml/4.1.2" file://%D/%%DOCBOOKDIR%%
 @unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove public "-//OASIS//ELEMENTS DocBook XML Information Pool V4.1.2//EN"
 @unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove public "-//OASIS//DTD DocBook XML V4.1.2//EN"
 @unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove public "-//OASIS//ENTITIES DocBook XML Character Entities V4.1.2//EN"
@@ -29,28 +29,28 @@ share/xml/docbook/%%DTD_VERSION%%/docbookx.dtd
 @unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove public "-//OASIS//DTD DocBook XML CALS Table Model V4.1.2//EN"
 @unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove rewriteSystem "http://www.oasis-open.org/docbook/xml/4.1.2"
 @unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove rewriteURI "http://www.oasis-open.org/docbook/xml/4.1.2"
-share/xml/docbook/%%DTD_VERSION%%/ent/iso-amsa.ent
-share/xml/docbook/%%DTD_VERSION%%/ent/iso-amsb.ent
-share/xml/docbook/%%DTD_VERSION%%/ent/iso-amsc.ent
-share/xml/docbook/%%DTD_VERSION%%/ent/iso-amsn.ent
-share/xml/docbook/%%DTD_VERSION%%/ent/iso-amso.ent
-share/xml/docbook/%%DTD_VERSION%%/ent/iso-amsr.ent
-share/xml/docbook/%%DTD_VERSION%%/ent/iso-box.ent
-share/xml/docbook/%%DTD_VERSION%%/ent/iso-cyr1.ent
-share/xml/docbook/%%DTD_VERSION%%/ent/iso-cyr2.ent
-share/xml/docbook/%%DTD_VERSION%%/ent/iso-dia.ent
-share/xml/docbook/%%DTD_VERSION%%/ent/iso-grk1.ent
-share/xml/docbook/%%DTD_VERSION%%/ent/iso-grk2.ent
-share/xml/docbook/%%DTD_VERSION%%/ent/iso-grk3.ent
-share/xml/docbook/%%DTD_VERSION%%/ent/iso-grk4.ent
-share/xml/docbook/%%DTD_VERSION%%/ent/iso-lat1.ent
-share/xml/docbook/%%DTD_VERSION%%/ent/iso-lat2.ent
-share/xml/docbook/%%DTD_VERSION%%/ent/iso-num.ent
-share/xml/docbook/%%DTD_VERSION%%/ent/iso-pub.ent
-share/xml/docbook/%%DTD_VERSION%%/ent/iso-tech.ent
-share/xml/docbook/%%DTD_VERSION%%/readme.txt
-share/xml/docbook/%%DTD_VERSION%%/soextblx.dtd
-@dirrm share/xml/docbook/%%DTD_VERSION%%/ent
-@dirrm share/xml/docbook/%%DTD_VERSION%%
+%%DOCBOOKDIR%%/ent/iso-amsa.ent
+%%DOCBOOKDIR%%/ent/iso-amsb.ent
+%%DOCBOOKDIR%%/ent/iso-amsc.ent
+%%DOCBOOKDIR%%/ent/iso-amsn.ent
+%%DOCBOOKDIR%%/ent/iso-amso.ent
+%%DOCBOOKDIR%%/ent/iso-amsr.ent
+%%DOCBOOKDIR%%/ent/iso-box.ent
+%%DOCBOOKDIR%%/ent/iso-cyr1.ent
+%%DOCBOOKDIR%%/ent/iso-cyr2.ent
+%%DOCBOOKDIR%%/ent/iso-dia.ent
+%%DOCBOOKDIR%%/ent/iso-grk1.ent
+%%DOCBOOKDIR%%/ent/iso-grk2.ent
+%%DOCBOOKDIR%%/ent/iso-grk3.ent
+%%DOCBOOKDIR%%/ent/iso-grk4.ent
+%%DOCBOOKDIR%%/ent/iso-lat1.ent
+%%DOCBOOKDIR%%/ent/iso-lat2.ent
+%%DOCBOOKDIR%%/ent/iso-num.ent
+%%DOCBOOKDIR%%/ent/iso-pub.ent
+%%DOCBOOKDIR%%/ent/iso-tech.ent
+%%DOCBOOKDIR%%/readme.txt
+%%DOCBOOKDIR%%/soextblx.dtd
+@dirrm %%DOCBOOKDIR%%/ent
+@dirrm %%DOCBOOKDIR%%
 @unexec /bin/rmdir %D/share/xml/docbook 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/share/xml 2>/dev/null || /usr/bin/true
