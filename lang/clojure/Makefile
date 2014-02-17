@@ -10,6 +10,8 @@ MASTER_SITES=	http://repo1.maven.org/maven2/org/clojure/clojure/${PORTVERSION}/
 MAINTAINER=	jan0sch@gmx.net
 COMMENT=	Dynamic programming language for the JVM
 
+LICENSE=	EPL
+
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
@@ -23,7 +25,6 @@ JLINE_DESC=	jline support for the REPL
 PLIST_FILES=	bin/clojure \
 		%%JAVAJARDIR%%/clojure.jar
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJLINE}
@@ -34,7 +35,7 @@ CLOJURE_JLINE_RUNNER=jline.ConsoleRunner
 SUB_LIST+=	CLOJURE_JLINE_RUNNER=${CLOJURE_JLINE_RUNNER}
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/clojure-bin ${PREFIX}/bin/clojure
-	@${INSTALL_DATA} ${WRKSRC}/clojure-${PORTVERSION}.jar ${JAVAJARDIR}/clojure.jar
+	@${INSTALL_SCRIPT} ${WRKDIR}/clojure-bin ${STAGEDIR}${PREFIX}/bin/clojure
+	@${INSTALL_DATA} ${WRKSRC}/clojure-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/clojure.jar
 
 .include <bsd.port.mk>
