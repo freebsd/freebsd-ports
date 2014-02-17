@@ -15,7 +15,7 @@
 +	mkdir -p $(DESTDIR)$(PREFIX)/lib/ahven
 +	mkdir -p $(DESTDIR)$(PREFIX)/lib/gnat
 +	$(BSD_INSTALL_DATA) $(SOURCES) $(DESTDIR)$(PREFIX)/include/ahven
-+	$(BSD_INSTALL_LIB)  $(ALI_FILES) $(DESTDIR)$(PREFIX)/lib/ahven
++	$(BSD_INSTALL_DATA) $(ALI_FILES) $(DESTDIR)$(PREFIX)/lib/ahven
 +	$(BSD_INSTALL_LIB)  lib/$(STATIC_LIBRARY) $(DESTDIR)$(PREFIX)/lib/ahven
 +	$(BSD_INSTALL_DATA) $(GPR_FILE) $(DESTDIR)$(PREFIX)/lib/gnat
  
