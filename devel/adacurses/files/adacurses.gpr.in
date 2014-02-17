@@ -4,7 +4,7 @@ library project ADACURSES is
 
    for Source_Dirs use ("../../include/adacurses");
    for Library_Dir use "../../lib/adacurses";
-   for Library_Name use "adacurses";
+   for Library_Name use "AdaCurses";
    for Library_Kind use "static";
    for Externally_Built use "True";
 
