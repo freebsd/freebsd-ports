@@ -3,6 +3,7 @@
 
 PORTNAME=	graph-core
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	graphics python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +14,7 @@ COMMENT=	A library for working with graphs in Python, core module
 
 PROJECTHOST=	python-graph
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	python_graph_core
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
