@@ -23,8 +23,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 
 INFO=	libassetml
 
-NO_STAGE=	yes
 post-install:
-	@${MKDIR} ${PREFIX}/share/assetml
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/assetml
 
 .include <bsd.port.mk>
