@@ -8,6 +8,8 @@ MASTER_SITES=	http://cloud.github.com/downloads/clojure/clojure-contrib/
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Extensions and enhancements to the Clojure libraries
 
+LICENSE=	EPL
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/clojure:${PORTSDIR}/lang/clojure
 
 USE_ZIP=	yes
@@ -17,8 +19,7 @@ JAVA_VERSION=	1.6+
 
 PLIST_FILES=	%%JAVAJARDIR%%/clojure-contrib-1.2.0.jar
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/target/clojure-contrib-1.2.0.jar ${JAVAJARDIR}
+	@${INSTALL_DATA} ${WRKSRC}/target/clojure-contrib-1.2.0.jar ${STAGEDIR}${JAVAJARDIR}
 
 .include <bsd.port.mk>
