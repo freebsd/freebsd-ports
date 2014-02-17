@@ -14,7 +14,6 @@ CONFLICTS=	jam-[0-9]*
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
-.ifndef(NOPORTDOCS)
 PORTDOCS=	\
 		Jam.html \
 		Jambase.html \
@@ -23,11 +22,9 @@ PORTDOCS=	\
 		README \
 		RELNOTES \
 		jam.c
-.endif
 
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 do-configure:
 	@${REINPLACE_CMD} -E \
 		-e 's|^(CC[[:space:]]*=).*$$|\1${CC}|' \
@@ -35,14 +32,12 @@ do-configure:
 		${BUILD_WRKSRC}/${MAKEFILE}
 
 do-install:
-.ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 . for file in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 . endfor
-.endif
 # INSTALL_WRKSRC changes depending on ARCH
 	@${INSTALL_PROGRAM} `${FIND} ${WRKSRC} -name "bin.unix*"`/jam \
-		${PREFIX}/bin/${PORTNAME}
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
