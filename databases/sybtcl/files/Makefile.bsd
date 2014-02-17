@@ -34,13 +34,13 @@ $s:	${.CURDIR}/samples/$s
 sp_who wisqlite: ${.CURDIR}
 
 ${PKGDIR}:
-	mkdir -p ${PKGDIR}
+	mkdir -p ${STAGEDIR}${PKGDIR}
 
 beforeinstall: ${PKGDIR}
 	${BSD_INSTALL_DATA} pkgIndex.tcl ${.CURDIR}/samples/sign_on.tcl \
-		${PKGDIR}
-	${BSD_INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin/
+		${STAGEDIR}${PKGDIR}
+	${BSD_INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${PREFIX}/bin/
 	${BSD_INSTALL_MAN} ${.CURDIR}/doc/sybtcl.man \
-		${LOCALBASE}/man/mann/sybtcl.n
+		${STAGEDIR}${PREFIX}/man/mann/sybtcl.n
 
 .include <bsd.lib.mk>

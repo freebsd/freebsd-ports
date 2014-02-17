@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	sybtcl
-PORTVERSION=	3.0rc2
+DISTVERSION=	3.0rc2
 PORTREVISION=	2
 CATEGORIES=	databases devel
 MASTER_SITES=	SF
@@ -12,14 +12,12 @@ COMMENT=	TCL extension to connect to Sybase servers
 
 LIB_DEPENDS=	libsybdb.so:${PORTSDIR}/databases/freetds
 
-USE_TCL=	84+
+USES=		tcl
 TCL_DVER=	${TCL_VER:S/.//}
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-MAKE_ARGS+=	TCL_VER=${TCL_VER}
+MAKE_ARGS+=	TCL_VER=${TCL_VER} \
+		STAGEDIR=${STAGEDIR}
 
-MANN=		${PORTNAME}.n
-
-NO_STAGE=	yes
 post-install:
 	#######
 	# This port installs two of the vendor-supplied sample programs,
