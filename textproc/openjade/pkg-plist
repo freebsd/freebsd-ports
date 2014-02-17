@@ -48,3 +48,4 @@ lib/libostyle.so.0
 @comment INSTALL_DATA: dsssl/spsanch.sgml %%DATADIR%%/spsanch.sgml
 @comment INSTALL_DATA: dsssl/style-sheet.dtd %%DATADIR%%/style-sheet.dtd
 @exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG openjade/catalog
+man/man1/openjade.1.gz
