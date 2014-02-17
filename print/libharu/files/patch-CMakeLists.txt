@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2014-02-17 11:28:46.000000000 +0100
++++ CMakeLists.txt	2014-02-17 11:29:06.000000000 +0100
+@@ -78,6 +78,8 @@
+   set(LIBHPDF_SHARED ON)
+ endif(BUILD_SHARED_LIBS)
+ 
++include_directories(${CMAKE_SOURCE_DIR}/include)
++
+ # =======================================================================
+ # look for headers and libraries
+ # =======================================================================
+@@ -110,7 +112,6 @@
+ if(MSVC_VERSION GREATER 1399)
+   add_definitions(-D_CRT_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_DEPRECATE)
+ endif(MSVC_VERSION GREATER 1399)
+-include_directories(${CMAKE_SOURCE_DIR}/include)
+ 
+ 
+ # these are options
