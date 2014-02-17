@@ -4,3 +4,4 @@ lib/libcfg.a
 lib/libcfg.la
 lib/libcfg.so
 lib/libcfg.so.9
+man/man3/cfg.3.gz
