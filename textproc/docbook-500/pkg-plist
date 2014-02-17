@@ -1,40 +1,24 @@
-@unexec %%XMLCAT_RM%%
-share/xml/docbook/5.0/catalog.xml
-%%PORTDOCS%%share/xml/docbook/5.0/docs/ChangeLog
-%%PORTDOCS%%share/xml/docbook/5.0/docs/README
-%%PORTDOCS%%share/xml/docbook/5.0/docs/VERSION
-%%PORTDOCS%%share/xml/docbook/5.0/docs/docbook-5.0-spec-cd-01.html
-%%PORTDOCS%%share/xml/docbook/5.0/docs/docbook-5.0-spec-cd-01.pdf
-%%PORTDOCS%%share/xml/docbook/5.0/docs/docbook-5.0-spec-cd-01.xml
-%%PORTDOCS%%share/xml/docbook/5.0/docs/howto.html
-%%PORTDOCS%%share/xml/docbook/5.0/docs/howto.pdf
-%%PORTDOCS%%share/xml/docbook/5.0/docs/howto.xml
-%%PORTDOCS%%share/xml/docbook/5.0/docs/images/emacs.png
-%%PORTDOCS%%share/xml/docbook/5.0/docs/images/oxygen1.png
-%%PORTDOCS%%share/xml/docbook/5.0/docs/images/oxygen2.png
-%%PORTDOCS%%share/xml/docbook/5.0/docs/images/oxygen3.png
-%%PORTDOCS%%share/xml/docbook/5.0/docs/images/xxe.png
-%%PORTDOCS%%@dirrm share/xml/docbook/5.0/docs/images
-%%PORTDOCS%%@dirrm share/xml/docbook/5.0/docs
-%%DTD%%share/xml/docbook/5.0/dtd/docbook.dtd
-%%DTD%%@dirrm share/xml/docbook/5.0/dtd
-%%NVDL%%share/xml/docbook/5.0/nvdl/docbook.nvdl
-%%NVDL%%@dirrm share/xml/docbook/5.0/nvdl
-%%RELAXNG%%share/xml/docbook/5.0/rng/docbook.rnc
-%%RELAXNG%%share/xml/docbook/5.0/rng/docbook.rng
-%%RELAXNG%%share/xml/docbook/5.0/rng/docbookxi.rnc
-%%RELAXNG%%share/xml/docbook/5.0/rng/docbookxi.rng
-%%RELAXNG%%@dirrm share/xml/docbook/5.0/rng
-%%SCHEMATRON%%share/xml/docbook/5.0/sch/docbook.sch
-%%SCHEMATRON%%@dirrm share/xml/docbook/5.0/sch
-%%TOOLS%%share/xml/docbook/5.0/tools/db4-entities.pl
-%%TOOLS%%share/xml/docbook/5.0/tools/db4-upgrade.xsl
-%%TOOLS%%@dirrm share/xml/docbook/5.0/tools
-%%SCHEMA%%share/xml/docbook/5.0/xsd/docbook.xsd
-%%SCHEMA%%share/xml/docbook/5.0/xsd/xlink.xsd
-%%SCHEMA%%share/xml/docbook/5.0/xsd/xml.xsd
-%%SCHEMA%%@dirrm share/xml/docbook/5.0/xsd
-@dirrm share/xml/docbook/5.0
+@unexec %%XMLCATMGR%% -c %%XMLCAT%% remove %D/%%DTDDIR%%/catalog.xml
+%%DTDDIR%%/catalog.xml
+%%DTD%%%%DTDDIR%%/dtd/docbook.dtd
+%%DTD%%@dirrm %%DTDDIR%%/dtd
+%%NVDL%%%%DTDDIR%%/nvdl/docbook.nvdl
+%%NVDL%%@dirrm %%DTDDIR%%/nvdl
+%%RELAX_NG%%%%DTDDIR%%/rng/docbook.rnc
+%%RELAX_NG%%%%DTDDIR%%/rng/docbook.rng
+%%RELAX_NG%%%%DTDDIR%%/rng/docbookxi.rnc
+%%RELAX_NG%%%%DTDDIR%%/rng/docbookxi.rng
+%%RELAX_NG%%@dirrm %%DTDDIR%%/rng
+%%SCHEMATRON%%%%DTDDIR%%/sch/docbook.sch
+%%SCHEMATRON%%@dirrm %%DTDDIR%%/sch
+%%TOOLS%%%%DTDDIR%%/tools/db4-entities.pl
+%%TOOLS%%%%DTDDIR%%/tools/db4-upgrade.xsl
+%%TOOLS%%@dirrm %%DTDDIR%%/tools
+%%SCHEMA%%%%DTDDIR%%/xsd/docbook.xsd
+%%SCHEMA%%%%DTDDIR%%/xsd/xlink.xsd
+%%SCHEMA%%%%DTDDIR%%/xsd/xml.xsd
+%%SCHEMA%%@dirrm %%DTDDIR%%/xsd
+@dirrm %%DTDDIR%%
 @dirrmtry share/xml/docbook
 @dirrmtry share/xml
-@exec %%XMLCAT_ADD%%
+@exec %%XMLCATMGR%% -c %%XMLCAT%% add nextCatalog %D/%%DTDDIR%%/catalog.xml
