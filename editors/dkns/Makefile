@@ -11,10 +11,7 @@ COMMENT=	Simple console text editor
 
 RUN_DEPENDS=	munger:${PORTSDIR}/lang/munger
 
-MAN1=		dkns.1
-MANCOMPRESSED=	yes
+PLIST_FILES=	bin/dkns \
+		man/man1/dkns.1.gz
 
-PLIST_FILES=	bin/dkns
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
