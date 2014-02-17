@@ -18,14 +18,12 @@ PLIST_SUB+=	PROFLIB="@comment "
 PLIST_SUB+=	PROFLIB=""
 .endif
 
+USES=		uidfix
+
 SRCCONF=	/dev/null
 MAKE_ENV+=	SRCCONF=${SRCCONF}
 
-NEED_ROOT=	yes
-
-OPTIONS_DEFINE=	DOCS 
-
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-extract:
 	@${CP} ${FILESDIR}/${MAKEFILE} ${WRKSRC}
@@ -38,9 +36,7 @@ pre-install:
 	@${ECHO_CMD} ${.MAKEFILE_LIST}
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
