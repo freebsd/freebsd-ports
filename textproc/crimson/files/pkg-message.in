@@ -1,6 +1,6 @@
 The following jar file has been installed: 
 
-  /usr/local/share/java/classes/crimson.jar
+  %%PREFIX%%/share/java/classes/crimson.jar
 
 Add it to your CLASSPATH to use JAXP.
 
@@ -9,4 +9,5 @@ NOTE:
   now only one jar file, crimson.jar.  You should remove the old port
   and any references to the jaxp.jar to avoid confusion.
 
-Documentation is in /usr/local/share/doc/java/crimson
+Documentation is in %%PREFIX%%/share/doc/crimson
+Examples is in %%PREFIX%%/share/examples/crimson
