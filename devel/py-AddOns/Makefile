@@ -3,6 +3,7 @@
 
 PORTNAME=	AddOns
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP \
 		http://www.turbogears.org/2.0/downloads/2.0.1/
@@ -14,11 +15,9 @@ COMMENT=	Dynamically extend other objects with AddOns
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}DecoratorTools>=1.7:${PORTSDIR}/devel/py-decoratortools
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-
 USE_ZIP=	yes
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
