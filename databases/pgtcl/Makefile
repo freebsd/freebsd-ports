@@ -12,9 +12,11 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	TCL extension for accessing a PostgreSQL server (PGTCL-NG)
 
-LICENSE=	BSD
+LICENSE=	PGSQL
 
-USE_TCL=	yes
+OPTIONS_DEFINE=	DOCS
+
+USES=		tcl
 USE_PGSQL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} --with-tclinclude=${TCL_INCLUDEDIR}
@@ -22,27 +24,33 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 MANUALREL=	20110918
 
-.if !defined(NOPORTDOCS)
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 EXTRACT_ONLY=	${_DISTFILES:M*tar.gz}
 DISTFILES+=	pgtcldocs-${MANUALREL}.zip:doc
 MASTER_SITES+=	SF/pgtclng/Manual/${MANUALREL}:doc
 .endif
 
-NO_STAGE=	yes
+PLIST_FILES=	lib/pgtcl/libpgtcl${PORTVERSION}.so \
+		lib/pgtcl/pkgIndex.tcl
+PLIST_DIRRM=	lib/pgtcl
+PORTDOCS=	*
+
 post-configure:
 	${REINPLACE_CMD} -e 's,tclstub,tcl,g' \
 	    -e 's,-DUSE_TCL_STUBS=1,-UUSE_TCL_STUBS,g' \
 		${WRKSRC}/Makefile
 
 do-install:
-	${MKDIR} ${LIBDIR}
+	@${MKDIR} ${STAGEDIR}${LIBDIR}
 	${INSTALL_DATA} ${WRKSRC}/pkgIndex.tcl	\
-		${WRKSRC}/libpgtcl${PORTVERSION}.so ${LIBDIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} -p ${DOCSDIR}
-	${TAR} -xf ${DISTDIR}/${_DISTFILES:M*.zip} -C ${DOCSDIR} \
+		${WRKSRC}/libpgtcl${PORTVERSION}.so ${STAGEDIR}${LIBDIR}
+.if ${PORT_OPTIONS:MDOCS}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${TAR} -xf ${DISTDIR}/${_DISTFILES:M*.zip} -C ${STAGEDIR}${DOCSDIR} \
 		--strip-components 1 --no-same-permission --no-same-owner
-	${CHMOD} ${SHAREMODE} ${DOCSDIR}/*
+	${CHMOD} ${SHAREMODE} ${STAGEDIR}${DOCSDIR}/*
 .endif
 
 .include <bsd.port.mk>
