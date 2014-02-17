@@ -36,9 +36,8 @@ CONFLICTS_INSTALL=	outguess-* csound6
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/c/C/}${PORTVERSION}
 
-USES=		bison gettext scons
+USES=		bison gettext scons compiler:openmp
 USE_PYTHON=	yes
-USE_GCC=	yes
 MAKE_ARGS=	instdir="${STAGEDIR}" prefix="${PREFIX}" \
 		CC="${CC}" CXX="${CXX}" \
 		buildCsoundAC=0 buildCsoundVST=0 buildInterfaces=1 \
