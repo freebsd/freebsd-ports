@@ -15,32 +15,27 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_AUTOTOOLS=	libtool
-USES=	pathfix
+USES=		pathfix desthack
 CONFIGURE_ARGS=	--with-docdir=no
 USE_LDCONFIG=	yes
-
-MAN1=	mxmldoc.1
-MAN3=	mxml.3
 
 PORTDOCS=	*
 
 PLIST_FILES=	bin/mxmldoc include/mxml.h \
 		lib/libmxml.a \
 		lib/libmxml.so lib/libmxml.so.1 lib/libmxml.so.1.5 \
-		libdata/pkgconfig/mxml.pc
-
-NO_STAGE=	yes
+		libdata/pkgconfig/mxml.pc \
+		man/man1/mxmldoc.1.gz \
+		man/man3/mxml.3.gz
 
 OPTIONS_DEFINE=	DOCS 
 
 .include <bsd.port.options.mk>
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR})
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
