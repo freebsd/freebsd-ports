@@ -40,7 +40,6 @@ NVDL_DESC=		NVDL description
 TOOLS_DESC=		Tools for working with DocBook
 XMLCHARENT_DESC=	Install ISO 8879 XML entites
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDTD}
@@ -83,34 +82,29 @@ RUN_DEPENDS+=	${LOCALBASE}/share/xml/xmlcharent/catalog:${PORTSDIR}/textproc/xml
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/${DOCBOOKDIR}
-	${INSTALL_DATA} ${WRKSRC}/catalog.xml ${PREFIX}/${DOCBOOKDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${DOCBOOKDIR}
+	${INSTALL_DATA} ${WRKSRC}/catalog.xml ${STAGEDIR}${PREFIX}/${DOCBOOKDIR}
 .for m in ${MODULES}
-		${MKDIR} ${PREFIX}/${DOCBOOKDIR}/${m}
+		${MKDIR} ${STAGEDIR}${PREFIX}/${DOCBOOKDIR}/${m}
 		files=$$(${FIND} ${WRKSRC}/${m} -type f); \
 		for i in $${files}; do \
-			${INSTALL_DATA} $${i} ${PREFIX}/${DOCBOOKDIR}/${m}; \
+			${INSTALL_DATA} $${i} ${STAGEDIR}${PREFIX}/${DOCBOOKDIR}/${m}; \
 		done
 .endfor
 .if ${PORT_OPTIONS:MNVDL}
-	${MKDIR} ${PREFIX}/${DOCBOOKDIR}/nvdl
-	${INSTALL_DATA} ${WRKSRC}/docbook.nvdl ${PREFIX}/${DOCBOOKDIR}/nvdl
+	${MKDIR} ${STAGEDIR}${PREFIX}/${DOCBOOKDIR}/nvdl
+	${INSTALL_DATA} ${WRKSRC}/docbook.nvdl ${STAGEDIR}${PREFIX}/${DOCBOOKDIR}/nvdl
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	files1=$$(${FIND} ${WRKSRC} -type f -depth 1| ${GREP} -v -e '.xml$$' -e '.nvdl$$'); \
 	files2=$$(${FIND} ${WRKSRC}/docs -type f -depth 1); \
 	for i in $${files1} $${files2}; do \
-		${INSTALL_DATA} $${i} ${DOCSDIR}; \
+		${INSTALL_DATA} $${i} ${STAGEDIR}${DOCSDIR}; \
 	done
-	${MKDIR} ${DOCSDIR}/images
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/images
 	files=$$(${FIND} ${WRKSRC}/docs/images -type f); \
 	for i in $${files}; do \
-		${INSTALL_DATA} $${i} ${DOCSDIR}/images; \
+		${INSTALL_DATA} $${i} ${STAGEDIR}${DOCSDIR}/images; \
 	done
-.endif
-
-post-install:
-	-${XMLCAT_ADD}
 
 .include <bsd.port.mk>
