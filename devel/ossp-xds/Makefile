@@ -14,13 +14,9 @@ COMMENT=	A generic and extensible framework for serialization
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-MAN1=		xds-config.1
-MAN3=		xds.3
-
 check:  build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "powerpc"
