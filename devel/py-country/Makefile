@@ -14,10 +14,7 @@ COMMENT=	Python API for ISO country, subdivision, language and currency
 
 USE_ZIP=	yes
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGNAME=	pycountry
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-
-NO_STAGE=	yes
 
 .include <bsd.port.mk>
