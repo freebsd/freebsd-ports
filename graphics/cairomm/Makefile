@@ -23,7 +23,6 @@ USE_GNOME=	gnomehack ltverhack
 CONFIGURE_ENV=	AUTOMAKE="${TRUE}" AUTOCONF="${TRUE}" DOXYGEN="${TRUE}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-NO_STAGE=	yes
 
 .if defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--disable-documentation
