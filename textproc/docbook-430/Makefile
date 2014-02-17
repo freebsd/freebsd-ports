@@ -36,7 +36,6 @@ DTD_FILES=	calstblx.dtd catalog.xml dbcentx.mod dbgenent.mod \
 		dbhierx.mod dbnotnx.mod dbpoolx.mod docbook.cat docbook.dcl \
 		docbook.dtd docbookx.dtd htmltblx.mod soextblx.dtd catalog
 
-NO_STAGE=	yes
 post-extract:
 	${CP} ${WRKSRC}/docbook.cat ${WRKSRC}/catalog
 
@@ -49,24 +48,18 @@ pre-install:
 		done;\
 	${ECHO_CMD} "@dirrm ${DTDDIR}";\
 	${ECHO_CMD} "@dirrmtry ${SGMLCATBASE}/${DTD_NAME}"; ) > ${PLIST}
-.if !defined(NOPORTDOCS)
 	(for F in ${DOC_FILES}; do \
 			${ECHO_CMD} "${DOCSDIR:S,^${PREFIX}/,,}/$${F}"; \
 		done;\
 	${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}" ) >> ${PLIST}
-.endif
 	${ECHO_CMD} "@exec ${XMLCATMGR} ${REGIST_CAT_FLAGS_SGML}" >> ${PLIST}
 	${ECHO_CMD} "@unexec ${XMLCATMGR} ${UNREGIST_CAT_FLAGS_SGML}" >> ${PLIST}
 
 do-install:
-	${MKDIR} ${PREFIX}/${DTDDIR}
-	${INSTALL_DATA} ${DTD_FILES:S,^,${WRKSRC}/,} ${PREFIX}/${DTDDIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${PREFIX}/${DTDDIR}
+	${INSTALL_DATA} ${DTD_FILES:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/${DTDDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-post-install:
-	-${XMLCATMGR} ${REGIST_CAT_FLAGS_SGML}
 
 .include <bsd.port.mk>
