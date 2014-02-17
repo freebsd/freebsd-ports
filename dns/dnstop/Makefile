@@ -9,17 +9,15 @@ MASTER_SITES=	http://dns.measurement-factory.com/tools/dnstop/src/
 MAINTAINER=	mark@foster.cc
 COMMENT=	Captures and analyzes DNS traffic (or analyzes libpcap dump)
 
-LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
 
-MAN8=		dnstop.8
-PLIST_FILES=	bin/dnstop
+PLIST_FILES=	bin/dnstop \
+		man/man8/dnstop.8.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dnstop ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/dnstop.8 ${PREFIX}/man/man8/
+	${INSTALL_PROGRAM} ${WRKSRC}/dnstop ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/dnstop.8 ${STAGEDIR}${MAN8PREFIX}/man/man8/
 
 .include <bsd.port.mk>
