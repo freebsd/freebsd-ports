@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	swift
-PORTVERSION=	1.10.0
+PORTVERSION=	1.12.0
 CATEGORIES=	databases python
-MASTER_SITES=	http://launchpadlibrarian.net/153988834/
+MASTER_SITES=	http://launchpadlibrarian.net/163953035/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	gslin@gslin.org
@@ -19,6 +19,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}PasteDeploy>0:${PORTSDIR}/www/py-pastedeplo
 		${PYTHON_PKGNAMEPREFIX}dnspython>=1.10.0:${PORTSDIR}/dns/py-dnspython \
 		${PYTHON_PKGNAMEPREFIX}eventlet>=0.9.8:${PORTSDIR}/net/py-eventlet \
 		${PYTHON_PKGNAMEPREFIX}netifaces>=0:${PORTSDIR}/net/py-netifaces \
+		${PYTHON_PKGNAMEPREFIX}swiftclient>=0:${PORTSDIR}/databases/py-swiftclient \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=0:${PORTSDIR}/devel/py-simplejson \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}webob>=0.9.8:${PORTSDIR}/www/py-webob \
@@ -26,7 +27,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}PasteDeploy>0:${PORTSDIR}/www/py-pastedeplo
 		rsync>=3.0:${PORTSDIR}/net/rsync
 
 USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 USE_RC_SUBR=	swift
 
@@ -60,12 +61,14 @@ post-patch:
 	    ${WRKSRC}/swift/common/db_replicator.py \
 	    ${WRKSRC}/swift/common/manager.py \
 	    ${WRKSRC}/swift/common/middleware/account_quotas.py \
+	    ${WRKSRC}/swift/common/middleware/container_sync.py \
+	    ${WRKSRC}/swift/common/middleware/gatekeeper.py \
 	    ${WRKSRC}/swift/common/middleware/list_endpoints.py \
 	    ${WRKSRC}/swift/common/middleware/memcache.py \
 	    ${WRKSRC}/swift/common/middleware/recon.py \
 	    ${WRKSRC}/swift/common/middleware/staticweb.py \
 	    ${WRKSRC}/swift/common/utils.py \
-	    ${WRKSRC}/swift/common/utils.py.orig \
+	    ${WRKSRC}/swift/container/server.py \
 	    ${WRKSRC}/swift/container/sync.py \
 	    ${WRKSRC}/swift/container/updater.py \
 	    ${WRKSRC}/swift/obj/expirer.py \

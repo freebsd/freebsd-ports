@@ -1,5 +1,6 @@
 etc/swift/account-server.conf-sample
 etc/swift/container-server.conf-sample
+etc/swift/container-sync-realms.conf-sample
 etc/swift/dispersion.conf-sample
 etc/swift/drive-audit.conf-sample
 etc/swift/memcache.conf-sample
@@ -8,7 +9,6 @@ etc/swift/object-expirer.conf-sample
 etc/swift/object-server.conf-sample
 etc/swift/proxy-server.conf-sample
 etc/swift/rsyncd.conf-sample
-etc/swift/swift-bench.conf-sample
 etc/swift/swift-rsyslog.conf-sample
 etc/swift/swift.conf-sample
 man/man1/swift-account-auditor.1.gz
