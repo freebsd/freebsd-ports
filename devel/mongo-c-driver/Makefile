@@ -18,7 +18,7 @@ GH_TAGNAME=	v0.7.1
 GH_COMMIT=	g98826a
 
 WRKSRC=		${WRKDIR}/mongodb-mongo-c-driver-17ff925
-USE_GMAKE=	yes
+USES=		gmake
 
 USE_LDCONFIG=	yes
 
@@ -33,5 +33,4 @@ PLIST_FILES=	include/mongo.h \
 		lib/libbson.so.0.7 \
 		lib/libbson.so
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
