@@ -20,10 +20,7 @@ USES=		cmake:outsource
 CMAKE_ARGS+=	-DTCL_INCLUDE_PATH=${TCL_INCLUDEDIR} \
 		-DTK_INCLUDE_PATH=${TK_INCLUDEDIR}
 
-MAN1=		vera++.1
-
-NO_STAGE=	yes
 post-install:
-	${INSTALL_MAN} ${WRKDIR}/vera++.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/vera++.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
