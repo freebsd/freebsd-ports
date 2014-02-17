@@ -1,5 +1,19 @@
 --- Makefile.in.orig	1997-06-04 18:09:59.000000000 +0200
-+++ Makefile.in	2008-04-22 17:31:33.000000000 +0200
++++ Makefile.in	2014-02-17 15:05:23.000000000 +0100
+@@ -14,10 +14,10 @@
+  CONFIGURE_IN = @MFILES_IN@
+  CONFFILES    = $(srcdir)/configure.in
+ 
+-       BINDIR = $(exec_prefix)/bin
+-       LIBDIR = $(prefix)/lib
++       BINDIR = $(STAGEDIR)$(exec_prefix)/bin
++       LIBDIR = $(STAGEDIR)$(prefix)/lib
+       ILIBDIR = $(LIBDIR)/ical/v@ICAL_VERSION@
+-       MANDIR = $(prefix)/man
++       MANDIR = $(STAGEDIR)$(prefix)/man
+ 
+            CC = @CC@
+           CXX = @CXX@
 @@ -59,14 +59,12 @@
  # Tiny bundled executable uses shared versions of tcl/tk libraries
   TINY_BLIBS = $(LIBS)
