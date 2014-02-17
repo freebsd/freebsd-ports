@@ -14,7 +14,6 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack \
 		libfluidsynth.so:${PORTSDIR}/audio/fluidsynth
 
-NO_STAGE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_QT_VER=	4
@@ -24,10 +23,6 @@ CONFIGURE_ARGS+=	--disable-alsa --enable-oss \
 			--enable-jack-default-audio \
 			--enable-jack-default-midi \
 			--disable-version-check
-
-
-MAN1=		bristol.1 bristoljackstats.1
-MLINKS=		bristol.1 brighton.1 bristol.1 startBristol.1
 
 PORTDATA=	*
 
