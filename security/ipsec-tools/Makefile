@@ -159,7 +159,7 @@ CONFIGURE_ARGS+=	--disable-idea
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s/-Werror//g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s/-Werror//g ; s/-R$$libdir/-Wl,-rpath=$$libdir/g" ${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/${PREFIX}/etc/racoon
