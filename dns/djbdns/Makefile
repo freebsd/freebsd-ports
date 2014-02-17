@@ -3,7 +3,8 @@
 
 PORTNAME?=	djbdns
 PORTVERSION?=	${DJBDNS_VER}
-PORTREVISION?=	16
+PORTREVISION?=	17
+PORTEPOCH?=	1
 CATEGORIES?=	dns
 MASTER_SITES=	http://cr.yp.to/djbdns/ \
 		ftp://cr.yp.to/djbdns/
@@ -114,7 +115,7 @@ BUILD_DEPENDS+=	nacl-sha256:${PORTSDIR}/security/nacl
 .endif
 
 DJBDNS_VER=	1.05
-DJBDNS_V6_VER=	test25
+DJBDNS_V6_VER=	test23
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
