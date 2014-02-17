@@ -8,6 +8,7 @@ PORTEPOCH=	1
 CATEGORIES=	java devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
+EXTRACT_SUFX=	.zip
 DISTFILES=	${DISTNAME}.zip xjavadoc-${XJAVADOC_VER}.zip
 
 MAINTAINER=	lxv@omut.org
@@ -17,7 +18,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
@@ -25,26 +25,16 @@ XJAVADOC_VER=	1.1
 
 PLIST_SUB+=	XJAVADOC_VER="${XJAVADOC_VER}"
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	cd ${WRKSRC}/xdoclet-${PORTVERSION} && ${FIND} lib -name '*xdoclet*' -exec \
-	    ${INSTALL_DATA} \{} ${JAVAJARDIR} \;
-	cd ${WRKSRC}/xdoclet-${PORTVERSION}/samples && ${FIND} . -type d -exec \
-	    ${MKDIR} ${EXAMPLESDIR}/\{} \;
-	cd ${WRKSRC}/xdoclet-${PORTVERSION}/samples && ${FIND} . -type f -exec \
-	    ${INSTALL_DATA} \{} ${EXAMPLESDIR}/\{} \;
+	${INSTALL_DATA} ${WRKSRC}/xdoclet-${PORTVERSION}/lib/*xdoclet* ${STAGEDIR}${JAVAJARDIR}
+	cd ${WRKSRC}/xdoclet-${PORTVERSION}/samples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} \
 	    ${WRKSRC}/xjavadoc-${XJAVADOC_VER}/xjavadoc-${XJAVADOC_VER}.jar \
-	    ${JAVAJARDIR}
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC}/xdoclet-${PORTVERSION}/docs && ${FIND} . -type d -exec \
-	    ${MKDIR} ${DOCSDIR}/\{} \;
-	cd ${WRKSRC}/xdoclet-${PORTVERSION}/docs && ${FIND} . -type f -exec \
-	    ${INSTALL_DATA} \{} ${DOCSDIR}/\{} \;
-.endif
+	    ${STAGEDIR}${JAVAJARDIR}
+	cd ${WRKSRC}/xdoclet-${PORTVERSION}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
