@@ -2,10 +2,12 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-DISTVERSION=	2.8.6
+DISTVERSION=	3.0.0-beta1
 CATEGORIES=	databases
-MASTER_SITES=	http://download.redis.io/releases/
+MASTER_SITES=	https://github.com/antirez/redis/archive/
 PKGNAMESUFFIX=	-devel
+DISTNAME=	${DISTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	A persistent key-value database with built-in net interface
@@ -20,6 +22,9 @@ OPTIONS_RADIO_EXTLUA=	LUA LUAJIT
 LUA_DESC=	Use lang/lua instead of builtin lua
 LUAJIT_DESC=	Use lang/luajit instead of builtin lua
 TESTS_DESC=	Install lang/tcl for redis unit tests
+
+FETCH_ARGS=	-Fpr
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
