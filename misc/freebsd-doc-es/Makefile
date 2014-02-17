@@ -1,7 +1,7 @@
 # Created by: Marc Fonvieille <blackend@FreeBSD.org>
 # $FreeBSD$
 
-CATEGORIES=	misc docs
+CATEGORIES=	misc docs spanish
 PKGNAMEPREFIX=	es-
 
 MAINTAINER=	doceng@FreeBSD.org
