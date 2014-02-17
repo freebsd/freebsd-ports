@@ -1,4 +1,4 @@
-@unexec %%SGMLCAT_RM%%
+@unexec %%XMLCATMGR%% -sc %%SGMLCAT%% remove %D/%%DTDDIR%%/catalog
 share/sgml/docbook/3.0/dtd/30chg.txt
 share/sgml/docbook/3.0/dtd/40issues.txt
 share/sgml/docbook/3.0/dtd/announce.txt
@@ -13,4 +13,4 @@ share/sgml/docbook/3.0/dtd/docbook.dtd
 @dirrm share/sgml/docbook/3.0/dtd
 @dirrm share/sgml/docbook/3.0
 @dirrmtry share/sgml/docbook
-@exec %%SGMLCAT_ADD%%
+@exec %%XMLCATMGR%% -sc %%SGMLCAT%% add CATALOG %D/%%DTDDIR%%/catalog
