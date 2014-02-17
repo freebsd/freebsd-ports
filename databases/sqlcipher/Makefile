@@ -7,12 +7,11 @@ CATEGORIES=	databases
 MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	Encrypted sqlite database
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USE_LDCONFIG=	yes
-USE_TCL_BUILD=	85
 USE_GITHUB=	yes
-USES=	pathfix
+USES=		pathfix tcl:85,build
 
 GH_ACCOUNT=	sqlcipher
 GH_TAGNAME=	v${PORTVERSION}
