@@ -35,17 +35,14 @@ SGMLCAT_RM=	${XMLCATMGR} -sc ${SGMLCAT} remove \
 
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/docbook-//}
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/${DTDDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${DTDDIR}
 	files=$$(${FIND} ${WRKSRC} -type f \! -name '.*'); \
 	for i in $${files}; do \
-		${INSTALL_DATA} $${i} ${PREFIX}/${DTDDIR}; \
+		${INSTALL_DATA} $${i} ${STAGEDIR}${PREFIX}/${DTDDIR}; \
 	done
-	${INSTALL_DATA} ${FILESDIR}/catalog ${PREFIX}/${DTDDIR}
-	@${ECHO} "CATALOG \"${ISOCAT}\"" >> ${PREFIX}/${DTDDIR}/catalog
+	${INSTALL_DATA} ${FILESDIR}/catalog ${STAGEDIR}${PREFIX}/${DTDDIR}
+	@${ECHO} "CATALOG \"${ISOCAT}\"" >> ${STAGEDIR}${PREFIX}/${DTDDIR}/catalog
 
-post-install:
-	-${SGMLCAT_ADD}
 
 .include <bsd.port.mk>
