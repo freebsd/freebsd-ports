@@ -35,8 +35,6 @@ FILES=	${WRKSRC}/fail2ban-regex \
 		${WRKSRC}/client/configreader.py \
 		${WRKSRC}/fail2ban-client
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${ECHO_CMD} ${FILES} | ${XARGS} ${REINPLACE_CMD} -e 's,/etc/fail2ban,${ETCDIR},g'
 	@${REINPLACE_CMD} -e 's,/bin/grep,grep,g' \
