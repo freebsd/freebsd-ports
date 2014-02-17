@@ -34,7 +34,7 @@ MASTER_SITES+=	SF/pgtclng/Manual/${MANUALREL}:doc
 
 PLIST_FILES=	lib/pgtcl/libpgtcl${PORTVERSION}.so \
 		lib/pgtcl/pkgIndex.tcl
-PLIST_DIRRM=	lib/pgtcl
+PLIST_DIRS=	lib/pgtcl
 PORTDOCS=	*
 
 post-configure:
