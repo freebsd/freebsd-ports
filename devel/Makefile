@@ -1105,6 +1105,7 @@
     SUBDIR += libsoup
     SUBDIR += libsoup-gnome
     SUBDIR += libsoup-reference
+    SUBDIR += libspark2012
     SUBDIR += libstatgrab
     SUBDIR += libstrfunc
     SUBDIR += libstroke
