@@ -1,7 +1,7 @@
 # Created by: SimaMoto,RyoTa <liangtai.s4@gmail.com>
 # $FreeBSD$
 
-CATEGORIES=	misc graphics
+CATEGORIES=	misc graphics spanish
 
 MAINTAINER=	liangtai.s16@gmail.com
 COMMENT=	The GIMP User Manual in Spanish

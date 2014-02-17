@@ -2,7 +2,7 @@
 
 PORTNAME=	calligra-l10n
 PORTVERSION=	${CALLIGRA_VERSION}
-CATEGORIES=	editors kde
+CATEGORIES=	editors kde spanish
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Spanish messages and documentation for Calligra
