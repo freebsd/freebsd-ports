@@ -23,7 +23,6 @@ OPTIONS_DEFAULT=	FAAD VORBIS
 LICENSE=	GPLv2
 
 USES=		iconv pkgconfig
-NO_STAGE=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-included-libmad \
@@ -31,8 +30,8 @@ CONFIGURE_ARGS=	--without-included-libmad \
 		--with-included-argv \
 		--with-included-cdk
 
-MAN1=		streamripper.1
-PLIST_FILES=	bin/streamripper
+PLIST_FILES=	bin/streamripper \
+		man/man1/streamripper.1.gz
 
 CFLAGS+=	-DANSI_PROTOTYPES
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -71,7 +70,7 @@ pre-build:
 		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/streamripper ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/streamripper.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/streamripper ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/streamripper.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
