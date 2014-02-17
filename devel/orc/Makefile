@@ -46,6 +46,7 @@ post-patch:
 		${WRKSRC}/configure 
 
 post-install:
+.if ${PORT_OPTIONS:MEXAMPLES}
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for FILE in ${EXAMPLES_DATA}
 	@${INSTALL_DATA} ${WRKSRC}/examples/${FILE} ${STAGEDIR}${EXAMPLESDIR}/${FILE}
@@ -53,5 +54,6 @@ post-install:
 .for FILE in ${EXAMPLES_EXEC}
 	@${INSTALL_SCRIPT} ${WRKSRC}/examples/${FILE} ${STAGEDIR}${EXAMPLESDIR}/${FILE}
 .endfor
+.endif
 
 .include <bsd.port.mk>
