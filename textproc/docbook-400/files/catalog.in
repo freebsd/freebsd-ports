@@ -34,3 +34,4 @@ PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.0//EN" "dbcent.mod"
 
   -- End of catalog data for DocBook V4.0 ................................. --
   -- ...................................................................... --
+CATALOG "%%PREFIX%%/share/sgml/iso8879/catalog"
