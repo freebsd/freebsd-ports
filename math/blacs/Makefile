@@ -20,6 +20,8 @@ COMMENT=	The BLACS (Basic Linear Algebra Communication Subprograms)
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
+USES=		fortran gmake
+USE_LDCONFIG=	yes
 
 NO_STAGE=	yes
 .include <bsd.port.pre.mk>
@@ -37,9 +39,6 @@ LIB_DEPENDS+=	mpich:${PORTSDIR}/net/mpich2
 EXTRA_PATCHES+=	${FILESDIR}/Bmake.inc-mpich.diff
 .endif
 
-USE_LDCONFIG=	yes
-
-USES=		fortran gmake
 F77EXTRAFLAGS=	#-w -fno-globals -fugly-complex
 DEBUG_LEVEL=	0
 
