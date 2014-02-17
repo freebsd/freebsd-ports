@@ -1,0 +1,18 @@
+@unexec %%XMLCATMGR%% -sc %%SGMLCAT%% remove %D/%%DTDDIR%%/catalog
+%%DTDDIR%%/calstblx.dtd
+%%DTDDIR%%/catalog
+%%DTDDIR%%/catalog.xml
+%%DTDDIR%%/dbcentx.mod
+%%DTDDIR%%/dbgenent.mod
+%%DTDDIR%%/dbhierx.mod
+%%DTDDIR%%/dbnotnx.mod
+%%DTDDIR%%/dbpoolx.mod
+%%DTDDIR%%/docbook.cat
+%%DTDDIR%%/docbook.dcl
+%%DTDDIR%%/docbook.dtd
+%%DTDDIR%%/docbookx.dtd
+%%DTDDIR%%/htmltblx.mod
+%%DTDDIR%%/soextblx.dtd
+@dirrm %%DTDDIR%%
+@dirrmtry share/sgml/docbook
+@exec %%XMLCATMGR%% -sc %%SGMLCAT%% add CATALOG %D/%%DTDDIR%%/catalog
