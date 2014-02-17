@@ -31,7 +31,7 @@ lib/xbmc/addons/visualization.projectm/projectM.vis
 lib/xbmc/addons/visualization.waveform/Waveform.vis
 lib/xbmc/system/ImageLib-%%ARCH%%-freebsd.so
 lib/xbmc/system/hdhomerun-%%ARCH%%-freebsd.so
-lib/xbmc/system/libcmyth-%%ARCH%%-freebsd.so
+%%MYSQL%%lib/xbmc/system/libcmyth-%%ARCH%%-freebsd.so
 lib/xbmc/system/libcpluff-%%ARCH%%-freebsd.so
 lib/xbmc/system/libexif-%%ARCH%%-freebsd.so
 lib/xbmc/system/players/dvdplayer/avcodec-54-%%ARCH%%-freebsd.so
