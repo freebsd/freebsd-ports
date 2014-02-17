@@ -36,14 +36,18 @@ java_OLD_CMD?=	/usr/bin/java
 java_CMD?=	${LOCALBASE}/bin/java
 perl_OLD_CMD?=	/usr/bin/perl
 perl_CMD?=	${LOCALBASE}/bin/perl
+php_OLD_CMD?=	/usr/bin/php
+php_CMD?=	${LOCALBASE}/bin/php
 python_OLD_CMD?=	/usr/bin/python
 python_CMD?=	${LOCALBASE}/bin/python
 ruby_OLD_CMD?=	/usr/bin/ruby
 ruby_CMD?=	${LOCALBASE}/bin/ruby
-php_OLD_CMD?=	/usr/bin/php
-php_CMD?=	${LOCALBASE}/bin/php
+tcl_OLD_CMD?=	/usr/bin/tclsh
+tcl_CMD?=	${TCLSH}
+tk_OLD_CMD?=	/usr/bin/wish
+tk_CMD?=	${WISH}
 
-SHEBANG_LANG+=	bash java perl python ruby php
+SHEBANG_LANG+=	bash java perl php python ruby tcl tk
 
 .for lang in ${SHEBANG_LANG}
 .if !defined(${lang}_CMD)
