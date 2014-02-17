@@ -1,7 +1,0 @@
-lib/%%TCL_VERSION%%/sql1.0/%%LIB_NAME%%
-lib/%%TCL_VERSION%%/sql1.0/pkgIndex.tcl
-@dirrm lib/%%TCL_VERSION%%/sql1.0
-%%PORTDOCS%%%%DOCSDIR%%/api.html
-%%PORTDOCS%%%%DOCSDIR%%/sample.full.txt
-%%PORTDOCS%%%%DOCSDIR%%/sample.simple.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
