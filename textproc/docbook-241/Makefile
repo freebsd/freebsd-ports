@@ -23,8 +23,7 @@ EXTRACT_AFTER_ARGS=	-s ,^,${DISTNAME}/,
 
 DTDDIR=		${PREFIX}/share/sgml/docbook/2.4.1/dtd
 PLIST_SUB+=	XMLCATMGR=${XMLCATMGR} SGMLCAT=${SGMLCAT} \
-		DTDDIR=${DTDDIR:S/${PREFIX}\///} \
-		FOO=" "
+		DTDDIR=${DTDDIR:S/${PREFIX}\///}
 
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 SGMLCAT=	${PREFIX}/share/sgml/catalog.ports
