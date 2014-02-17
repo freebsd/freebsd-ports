@@ -9,5 +9,4 @@ WITH_MSDBLIB=	yes
 
 MASTERDIR=	${.CURDIR}/../freetds
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
