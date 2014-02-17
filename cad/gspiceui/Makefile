@@ -28,27 +28,19 @@ OPTIONS_DEFAULT=	NGSPICE
 USE_WX=		2.6+
 WX_UNICODE=	yes
 USE_GCC=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
 DESKTOP_ENTRIES=	"GSpiceUI" "Circuit Simulator GUI" \
 			"${PREFIX}/share/pixmaps/gspiceui-48x48.xpm" \
 			"gspiceui" "Science;Electronics;" false
 
-MAN1=		gspiceui.1
 PORTDOCS=	*
 PORTEXAMPLES=	*
-PLIST_FILES=	bin/gspiceui share/pixmaps/gspiceui-48x48.xpm
+PLIST_FILES=	bin/gspiceui share/pixmaps/gspiceui-48x48.xpm \
+		man/man1/gspiceui.1.gz
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGNUCAP}
-RUN_DEPENDS+=	gnucap:${PORTSDIR}/cad/gnucap
-.endif
-
-.if ${PORT_OPTIONS:MNGSPICE}
-RUN_DEPENDS+=	ngspice:${PORTSDIR}/cad/ngspice_rework
-.endif
+GNUCAP_RUN_DEPENDS=	gnucap:${PORTSDIR}/cad/gnucap
+NGSPICE_RUN_DEPENDS=	ngspice:${PORTSDIR}/cad/ngspice_rework
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -61,23 +53,17 @@ post-patch:
 		${WRKSRC}/src/main/HelpTasks.cpp
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/gspiceui ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/gspiceui ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/src/icons/gspiceui-48x48.xpm \
-	    ${PREFIX}/share/pixmaps
-	${INSTALL_MAN} ${WRKSRC}/gspiceui.1 ${MANPREFIX}/man/man1
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for dir in html
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${DOCSDIR} \
+	    ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_MAN} ${WRKSRC}/gspiceui.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR} \
 		"! -name Makefile")
-.endfor
-.endif
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for dir in lib sch
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${EXAMPLESDIR} \
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${EXAMPLESDIR} \
 		"! -name Makefile")
 .endfor
-.endif
 
 .include <bsd.port.mk>
