@@ -11,16 +11,15 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}_src
 MAINTAINER=	dsh@vlink.ru
 COMMENT=	More TCL commands
 
+USES=		gmake tcl
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_TCL=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_src$//}
 
 INFO=		${PORTNAME}
 
 CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
 		--enable-threads
+MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
