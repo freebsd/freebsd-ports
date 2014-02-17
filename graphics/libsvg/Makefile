@@ -29,5 +29,4 @@ PLIST_FILES=	include/svg.h \
 		lib/libsvg.so.1 \
 		libdata/pkgconfig/libsvg.pc
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
