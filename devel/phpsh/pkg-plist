@@ -47,6 +47,7 @@ bin/%%PORTNAME%%
 %%PYTHON_SITELIBDIR%%/%%PORTNAME%%/xdebug-clients/geben/tree-widget/geben/no-guide.png
 %%PYTHON_SITELIBDIR%%/%%PORTNAME%%/xdebug-clients/geben/tree-widget/geben/no-handle.png
 %%PYTHON_SITELIBDIR%%/%%PORTNAME%%/xdebug-clients/geben/tree-widget/geben/open.png
+man/man1/phpsh.1.gz
 @dirrm %%PYTHON_SITELIBDIR%%/%%PORTNAME%%/xdebug-clients/geben/tree-widget/geben
 @dirrm %%PYTHON_SITELIBDIR%%/%%PORTNAME%%/xdebug-clients/geben/tree-widget
 @dirrm %%PYTHON_SITELIBDIR%%/%%PORTNAME%%/xdebug-clients/geben
