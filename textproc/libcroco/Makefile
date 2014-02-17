@@ -10,16 +10,14 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CSS2 parsing library
 
 USE_XZ=		yes
-USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack glib20 libxml2 ltverhack
-USES=		pkgconfig gettext
+USES=		pkgconfig gettext gmake
 CONFIGURE_ARGS=	--disable-gtk-doc-html
 
 PLIST_SUB=	VERSION="0.6"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 900035
