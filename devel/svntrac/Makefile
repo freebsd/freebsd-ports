@@ -13,5 +13,4 @@ MASTERDIR=	${.CURDIR}/../cvstrac
 MAKE_ARGS=	APPNAME=svntrac
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
-NO_STAGE=	yes
 .include "${MASTERDIR}/Makefile"
