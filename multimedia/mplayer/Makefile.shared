@@ -13,7 +13,7 @@ WRKSRC=		${WRKDIR}/mplayer-export-${MPLAYER_SNAPSHOT_DATE}
 
 PROJECTHOST=	bsdistfiles
 
-MAINTAINER?=	thomas.e.zander@googlemail.com
+MAINTAINER?=	riggs@FreeBSD.org
 
 LICENSE=	GPLv2
 
