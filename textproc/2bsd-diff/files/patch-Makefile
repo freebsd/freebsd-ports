@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Oct 22 13:29:46 1996
-+++ Makefile	Wed Mar 19 01:29:12 2003
+--- ./Makefile.orig	1996-10-22 04:29:46.000000000 +0000
++++ ./Makefile	2014-02-17 13:43:18.000000000 +0000
 @@ -1,9 +1,9 @@
  #	@(#)Makefile	4.1.1	1996/10/21
  #
@@ -31,6 +31,6 @@
  install: all
 -	install -s diff ${DESTDIR}/bin/diff
 -	install -s diffh ${DESTDIR}/usr/libexec/diffh
-+	${BSD_INSTALL_PROGRAM} diff  ${DIFF}
-+	${BSD_INSTALL_PROGRAM} diffh ${DIFFH}
-+	${BSD_INSTALL_MAN}     ../../man/man1/diff.1 ${MANPREFIX}/man/man1/2diff.1
++	${BSD_INSTALL_PROGRAM} diff  ${DESTDIR}${DIFF}
++	${BSD_INSTALL_PROGRAM} diffh ${DESTDIR}${DIFFH}
++	${BSD_INSTALL_MAN}     ../../man/man1/diff.1 ${DESTDIR}${MANPREFIX}/man/man1/2diff.1
