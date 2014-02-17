@@ -27,8 +27,6 @@ APC_DESC=	Enable memoize APC module
 MEMCACHED_DESC=	Enable memcached storage module
 MEMORY_DESC=	Enable the memoize memory storage module
 
-NO_STAGE=	yes
-
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MAPC}
