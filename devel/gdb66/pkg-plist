@@ -1,5 +1,6 @@
 bin/gdb%%VER%%
 bin/gdbtui%%VER%%
+man/man1/gdb%%VER%%.1.gz
 %%INSIGHT%%bin/insight
 %%INSIGHT%%share/redhat/gui/advice.tcl
 %%INSIGHT%%share/redhat/gui/balloon.tcl
