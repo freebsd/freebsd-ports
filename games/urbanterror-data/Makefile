@@ -16,6 +16,7 @@ MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Standalone realism based mod originally for Quake III Arena
 
 NO_BUILD=	yes
+NO_CDROM=	yes
 
 DATADIR=	${PREFIX}/share/quake3
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
@@ -25,7 +26,7 @@ URT_REV=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.([0-9]+)/\2/}
 
 PLIST_SUB+=	VER=${URT_VER}
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
