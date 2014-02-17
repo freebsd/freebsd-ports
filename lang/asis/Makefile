@@ -3,7 +3,7 @@
 
 PORTNAME=	asis
 PORTVERSION=	2011
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	${PORTNAME}-gpl-${PORTVERSION}-src
@@ -35,7 +35,7 @@ do-build:
 
 post-install:
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} * \( -type f -or -type l \) | \
-	   ${SORT} > ${TMPPLIST}
+	   ${SORT} >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX}; ${FIND} * -type d | ${AWK} '/\//' | \
 	   ${SORT} -r | ${SED} -e '/lib\/gnat$$/d' -e '/share\/doc$$/d' \
 	   -e '/share\/gps$$/d' -e '/share\/gps\/plug-ins$$/d' \
