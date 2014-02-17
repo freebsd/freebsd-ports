@@ -17,8 +17,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/guile/site/config/load.scm:${PORTSDIR}/devel/gui
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-MAN3=	ruin.3
 INFO=	libruin
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
