@@ -3,32 +3,27 @@
 
 PORTNAME=	docbook
 PORTVERSION=	5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.docbook.org/xml/5.0/
+PKGNAMESUFFIX=	500
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	DocBook 5.0, designed for technical documentation
 
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
-USE_ZIP=	yes
 NO_BUILD=	yes
-PKGNAMESUFFIX=	${PKGORIGIN:T:S/docbook-//}
 
-DOCBOOKDIR=	share/xml/${PORTNAME}/${PORTVERSION}
-DOCSDIR=	${PREFIX}/${DOCBOOKDIR}/docs
+DTDDIR=		share/xml/${PORTNAME}/${PORTVERSION}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}/${PORTVERSION}
 
-PLIST_SUB+=	XMLCAT_ADD="${XMLCAT_ADD}" \
-		XMLCAT_RM="${XMLCAT_RM}"
+PLIST_SUB+=	XMLCATMGR=${XMLCATMGR} XMLCAT=${XMLCAT} \
+		DTDDIR=${DTDDIR}
 
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 XMLCAT=		${PREFIX}/share/xml/catalog.ports
-
-XMLCAT_ADD=	${XMLCATMGR} -c ${XMLCAT} add nextCatalog \
-		    ${PREFIX}/${DOCBOOKDIR}/catalog.xml
-XMLCAT_RM=	${XMLCATMGR} -c ${XMLCAT} remove \
-		    ${PREFIX}/${DOCBOOKDIR}/catalog.xml
 
 OPTIONS_DEFINE=	DTD SCHEMA RELAX_NG SCHEMATRON NVDL TOOLS XMLCHARENT DOCS
 OPTIONS_DEFAULT=	DTD SCHEMA RELAX_NG SCHEMATRON NVDL TOOLS XMLCHARENT
@@ -39,72 +34,22 @@ SCHEMATRON_DESC=	Schematron constraints
 NVDL_DESC=		NVDL description
 TOOLS_DESC=		Tools for working with DocBook
 XMLCHARENT_DESC=	Install ISO 8879 XML entites
+OPTIONS_SUB=	yes
 
-.include <bsd.port.options.mk>
+XMLCHARENT_RUN_DEPENDS+=	${LOCALBASE}/share/xml/xmlcharent/catalog:${PORTSDIR}/textproc/xmlcharent
 
-.if ${PORT_OPTIONS:MDTD}
-PLIST_SUB+=	DTD=""
-MODULES+=	dtd
-.else
-PLIST_SUB+=	DTD="@comment "
-.endif
-.if ${PORT_OPTIONS:MSCHEMA}
-PLIST_SUB+=	SCHEMA=""
-MODULES+=	xsd
-.else
-PLIST_SUB+=	SCHEMA="@comment "
-.endif
-.if ${PORT_OPTIONS:MRELAX_NG}
-PLIST_SUB+=	RELAXNG=""
-MODULES+=	rng
-.else
-PLIST_SUB+=	RELAXNG="@comment "
-.endif
-.if ${PORT_OPTIONS:MSCHEMATRON}
-PLIST_SUB+=	SCHEMATRON=""
-MODULES+=	sch
-.else
-PLIST_SUB+=	SCHEMATRON="@comment "
-.endif
-.if ${PORT_OPTIONS:MNVDL}
-PLIST_SUB+=	NVDL=""
-.else
-PLIST_SUB+=	NVDL="@comment "
-.endif
-.if ${PORT_OPTIONS:MTOOLS}
-PLIST_SUB+=	TOOLS=""
-MODULES+=	tools
-.else
-PLIST_SUB+=	TOOLS="@comment "
-.endif
-.if ${PORT_OPTIONS:MXMLCHARENT}
-RUN_DEPENDS+=	${LOCALBASE}/share/xml/xmlcharent/catalog:${PORTSDIR}/textproc/xmlcharent
-.endif
+PORTDOCS=	*
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${DOCBOOKDIR}
-	${INSTALL_DATA} ${WRKSRC}/catalog.xml ${STAGEDIR}${PREFIX}/${DOCBOOKDIR}
-.for m in ${MODULES}
-		${MKDIR} ${STAGEDIR}${PREFIX}/${DOCBOOKDIR}/${m}
-		files=$$(${FIND} ${WRKSRC}/${m} -type f); \
-		for i in $${files}; do \
-			${INSTALL_DATA} $${i} ${STAGEDIR}${PREFIX}/${DOCBOOKDIR}/${m}; \
-		done
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${DTDDIR}
+	${INSTALL_DATA} ${WRKSRC}/catalog.xml ${STAGEDIR}${PREFIX}/${DTDDIR}
+.for m in dtd xsd rng sch tools
+	cd ${WRKSRC} && ${COPYTREE_SHARE} ${m} ${STAGEDIR}${PREFIX}/${DTDDIR}
 .endfor
-.if ${PORT_OPTIONS:MNVDL}
-	${MKDIR} ${STAGEDIR}${PREFIX}/${DOCBOOKDIR}/nvdl
-	${INSTALL_DATA} ${WRKSRC}/docbook.nvdl ${STAGEDIR}${PREFIX}/${DOCBOOKDIR}/nvdl
-.endif
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	files1=$$(${FIND} ${WRKSRC} -type f -depth 1| ${GREP} -v -e '.xml$$' -e '.nvdl$$'); \
-	files2=$$(${FIND} ${WRKSRC}/docs -type f -depth 1); \
-	for i in $${files1} $${files2}; do \
-		${INSTALL_DATA} $${i} ${STAGEDIR}${DOCSDIR}; \
-	done
-	${MKDIR} ${STAGEDIR}${DOCSDIR}/images
-	files=$$(${FIND} ${WRKSRC}/docs/images -type f); \
-	for i in $${files}; do \
-		${INSTALL_DATA} $${i} ${STAGEDIR}${DOCSDIR}/images; \
-	done
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${DTDDIR}/nvdl
+	${INSTALL_DATA} ${WRKSRC}/docbook.nvdl ${STAGEDIR}${PREFIX}/${DTDDIR}/nvdl
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ChangeLog README VERSION ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
