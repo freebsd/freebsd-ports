@@ -1,4 +1,5 @@
 etc/mail/smtpd.conf.sample
+libexec/opensmtpd/encrypt
 libexec/opensmtpd/mail.local
 libexec/opensmtpd/makemap
 libexec/opensmtpd/queue-null
