@@ -23,5 +23,4 @@ USE_PHPIZE=	yes
 USE_PHPEXT=	yes
 PHP_MODNAME=	msgpack
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
