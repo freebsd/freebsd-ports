@@ -16,9 +16,8 @@ USES=		perl5 shebangfix
 USE_PERL5=	configure
 SHEBANG_FILES=	egypt
 
-MAN1=		${PORTNAME}.1
-PLIST_FILES=	bin/${PORTNAME} %%SITE_PERL%%/%%PERL_ARCH%%/auto/${PORTNAME}/.packlist
+PLIST_FILES=	bin/${PORTNAME} %%SITE_PERL%%/%%PERL_ARCH%%/auto/${PORTNAME}/.packlist \
+		man/man1/egypt.1.gz
 PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
