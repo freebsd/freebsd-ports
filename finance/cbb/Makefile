@@ -10,21 +10,25 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	kline@thought.org
 COMMENT=	Checkbook balancing tool
 
-USE_TK=		yes
+LICENSE=	GPLv2
 
 NO_BUILD=	yes
-USES=		perl5
+USES=		shebangfix perl5 tk
+SHEBANG_FILES=	tcl/*.tcl */*.pl contrib/*
+SHEBANG_LANG=	perl tk
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-perl=${PERL} \
 		--with-wish=${WISH}
+MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 WRKSRC=		${WRKDIR}/${PKGNAME:R}
 PLIST_SUB+=	VERSION=${PORTVERSION:R:R}
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD}  -e 's|.aboutwin.frame.a.l6 ||' \
 	    ${WRKSRC}/tcl/help.tcl
 	${REINPLACE_CMD}  -e 's|%4Y%02m%02d|%Y%m%d|' \
 	    ${WRKSRC}/tcl/main.tcl
+	${REINPLACE_CMD} -e 's|/usr/bin/perl|${TCLSH}|' \
+	    ${WRKSRC}/languages/*.tcl
 
 .include <bsd.port.mk>
