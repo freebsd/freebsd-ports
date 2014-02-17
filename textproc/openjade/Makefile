@@ -26,10 +26,8 @@ PLIST_SUB=	XMLCATMGR=${XMLCATMGR} \
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 
-MAN1=		openjade.1
 DATADIR=	${PREFIX}/share/sgml/openjade
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|<iostream.h>|<iostream>|' ${WRKSRC}/style/MultiLineInlineNote.cxx
@@ -40,9 +38,8 @@ post-install:
 		${AWK} '/^@comment INSTALL_DATA:/ \
 			{printf "if ! ${GREP} -q \"%s\" ${PLIST}; then ${ECHO_CMD} \"%s\" >> %s; fi;  %s %s/%s %s/%s\n", \
 			$$4, $$4, "${TMPPLIST}", "${INSTALL_DATA}", \
-			"${WRKSRC}", $$3, "${PREFIX}", $$4}' | \
+			"${WRKSRC}", $$3, "${STAGEDIR}${PREFIX}", $$4}' | \
 		${SH}
-	@${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG openjade/catalog
 
 .include <bsd.port.pre.mk>
 
