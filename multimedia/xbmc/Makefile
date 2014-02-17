@@ -10,11 +10,6 @@ COMMENT=	Award winning media center application
 
 LICENSE=	GPLv2
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	xbmc
-GH_COMMIT=	8eb49b3
-GH_TAGNAME=	Gotham_alpha11
-
 BUILD_DEPENDS=	enca:${PORTSDIR}/converters/enca \
 		gawk:${PORTSDIR}/lang/gawk \
 		gperf:${PORTSDIR}/devel/gperf \
@@ -57,6 +52,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
 		xdpyinfo:${PORTSDIR}/x11/xdpyinfo
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	xbmc
+GH_COMMIT=	8eb49b3
+GH_TAGNAME=	Gotham_alpha11
+
 USES=		gmake iconv:wchar_t pkgconfig
 USE_AUTOTOOLS=	autoconf libtool automake libltdl
 GNU_CONFIGURE=	yes
@@ -77,6 +77,7 @@ DESKTOP_ENTRIES="XBMC" \
 		"AudioVideo;Video;" \
 		true
 
+OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	AIRPLAY AIRTUNES AVAHI CEC LAME \
 		LIBBLURAY HAL LIRC MYSQL NONFREE PULSEAUDIO RTMP SFTP \
 		SMB VAAPI VDPAU VORBIS WEBSERVER XRANDR
@@ -111,8 +112,12 @@ HAL_CONFIGURE_ENABLE=	hal
 LAME_LIB_DEPENDS=	libmp3lame.so:${PORTSDIR}/audio/lame
 LAME_CONFIGURE_ENABLE=	libmp3lame
 
+LIRC_RUN_DEPENDS=	lircd:${PORTSDIR}/comms/lirc
+
 MYSQL_USE=	MYSQL=yes
 MYSQL_CONFIGURE_ENABLE=	mysql
+
+NONFREE_CONFIGURE_ENABLE=	non-free
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:${PORTSDIR}/audio/pulseaudio
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
@@ -139,6 +144,9 @@ SFTP_BUILD_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
 SFTP_RUN_DEPENDS=	${LOCALBASE}/lib/libssh.so:${PORTSDIR}/security/libssh
 SFTP_CONFIGURE_ENABLE=	ssh
 
+XRANDR_USE=	XORG=xrandr
+XRANDR_CONFIGURE_ENABLE=	xrandr
+
 CONFIGURE_ARGS+=	--disable-debug --disable-nfs --disable-alsa
 
 .include <bsd.port.options.mk>
@@ -155,25 +163,9 @@ CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
-.if ${PORT_OPTIONS:MLIRC}
-RUN_DEPENDS+=	lircd:${PORTSDIR}/comms/lirc
-.endif
-
 .if ${PORT_OPTIONS:MNONFREE}
-CONFIGURE_ARGS+=	--enable-non-free
 NO_CDROM=	Restricted binary distribution
 NO_PACKAGE=	${NO_CDROM}
-.else
-CONFIGURE_ARGS+=	--disable-non-free
-.endif
-
-.if ${PORT_OPTIONS:MXRANDR}
-CONFIGURE_ARGS+=	--enable-xrandr
-USE_XORG+=	xrandr
-PLIST_SUB+=	XRANDR=""
-.else
-CONFIGURE_ARGS+=	--disable-xrandr
-PLIST_SUB+=	XRANDR="@comment "
 .endif
 
 post-patch:
