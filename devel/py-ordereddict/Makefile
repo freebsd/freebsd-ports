@@ -3,6 +3,7 @@
 
 PORTNAME=	ordereddict
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,10 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_PYTHON=	2 # for graphics/py-blockdiag
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/ordereddict.py \
-		%%PYTHON_SITELIBDIR%%/ordereddict.pyc \
-		%%PYTHON_SITELIBDIR%%/ordereddict.pyo
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
