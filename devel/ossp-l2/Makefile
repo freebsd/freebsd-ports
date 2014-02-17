@@ -14,11 +14,7 @@ COMMENT=	A C library for a flexible and sophisticated Unix logging facility
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-MAN1=		l2-config.1 l2tool.1
-MAN3=		l2.3
-
 check:	build
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
