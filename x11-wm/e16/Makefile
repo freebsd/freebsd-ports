@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	e16
-PORTVERSION=	1.0.13.003
+PORTVERSION=	1.0.13.004
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	SF/enlightenment/${PORTNAME}/Snapshots/
 
@@ -14,7 +14,8 @@ SOUND_DESC=	Sound support via pulseaudio/libsndfile
 
 USE_XORG=	compositeproto damageproto xextproto x11 xbitmaps xcomposite xdamage \
 		xext xfixes xft xinerama xrandr xrender xxf86vm
-USES=		gettext gmake iconv pkgconfig
+USES=		gettext gmake iconv pkgconfig shebangfix
+SHEBANG_FILES=	scripts/e_gen_menu
 USE_EFL=	imlib2
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
