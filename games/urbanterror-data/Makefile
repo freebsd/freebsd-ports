@@ -16,7 +16,7 @@ MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Standalone realism based mod originally for Quake III Arena
 
 NO_BUILD=	yes
-NO_CDROM=	yes
+NO_CDROM=	The mod files may not be sold or distributed on physical media unless with permission from id Software.
 
 DATADIR=	${PREFIX}/share/quake3
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
