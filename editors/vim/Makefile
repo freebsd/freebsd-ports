@@ -91,7 +91,7 @@ MAKE_ARGS+=	CONF_OPT_RUBY="--enable-rubyinterp"
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
-USE_TCL=	85+
+USES+=		tcl:85+
 MAKE_ARGS+=	CONF_OPT_TCL="--enable-tclinterp --with-tclsh="${TCLSH:S/${LOCALBASE}\/bin\///g}""
 .endif
 
