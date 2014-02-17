@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri May 21 20:24:36 2004
-+++ Makefile.in	Wed Apr 26 11:01:49 2006
+--- Makefile.in.orig	2004-05-21 18:24:36.000000000 +0200
++++ Makefile.in	2014-02-17 15:59:39.000000000 +0100
 @@ -44,7 +44,7 @@
  PACKAGE_NAME		= @PACKAGE_NAME@
  PACKAGE_VERSION		= @PACKAGE_VERSION@
@@ -9,6 +9,15 @@
  
  #PAGE
  ## ------------------------------------------------------------
+@@ -52,7 +52,7 @@
+ ## ------------------------------------------------------------
+ 
+ CONFIGDIR	= @CONFIGDIR@
+-INSTALL_ROOT	=
++INSTALL_ROOT	= ${STAGEDIR}
+ 
+ # If there is not a value for "TMPDIR" from the environment
+ # we select a common default.
 @@ -76,7 +76,7 @@
  
  bindir		= @bindir@
