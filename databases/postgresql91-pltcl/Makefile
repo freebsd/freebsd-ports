@@ -17,8 +17,7 @@ POSTGRESQL_PORT?=${PORTSDIR}/databases/postgresql${WANT_PGSQL_VER}-server
 
 WANT_PGSQL_VER?=91
 
-# you can use "make WITH_TCL_VER=84" or similar for your favourite tcl version
-USE_TCL=	84+
+USES=		tcl
 CONFIGURE_ARGS=	--with-tcl --without-tk \
 		--with-tclconfig="${TCL_LIBDIR}" \
 		--with-includes="${TCL_INCLUDEDIR}"
