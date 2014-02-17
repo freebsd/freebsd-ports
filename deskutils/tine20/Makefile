@@ -8,7 +8,7 @@ CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.tine20.org/downloads/${DISTVERSIONSUFFIX}/
 DISTNAME=	${PORTNAME}-allinone_${DISTVERSIONSUFFIX}
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Professional Open Source Groupware and CRM
 
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -35,12 +35,12 @@ MEMCACHE_USE=	php=memcache
 
 do-extract:
 	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}/${PORTNAME}
+	${MKDIR} ${WRKDIR}/${PORTNAME}
 	cd ${WRKDIR}/${PORTNAME} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${EXTRACT_ONLY} ${EXTRACT_AFTER_ARGS}
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${WWWDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
 
 post-install:
 	${CAT} ${PKGMESSAGE}
