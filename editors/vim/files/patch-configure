@@ -1,5 +1,5 @@
---- auto/configure.orig	2013-10-17 12:11:54.000000000 +0200
-+++ auto/configure	2013-10-17 12:12:56.000000000 +0200
+--- src/auto/configure.orig	2013-10-17 12:11:54.000000000 +0200
++++ src/auto/configure	2013-10-17 12:12:56.000000000 +0200
 @@ -858,7 +858,7 @@
  psdir='${docdir}'
  libdir='${exec_prefix}/lib'
