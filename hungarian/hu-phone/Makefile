@@ -13,14 +13,13 @@ MAINTAINER=	jmohacsi@bsd.hu
 COMMENT=	Phone codes in Hungary / Magyarorszagi korzetszamok
 
 PLIST_FILES=	share/misc/hu.phone
-NO_WRKSUBDIR=	YES
+NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=	# None
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/hu.phone
-NO_BUILD=	YES
+NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/hu.phone ${PREFIX}/share/misc
+	${INSTALL_DATA} ${WRKSRC}/hu.phone ${STAGEDIR}${PREFIX}/share/misc
 
 .include <bsd.port.mk>
