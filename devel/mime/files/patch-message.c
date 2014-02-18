@@ -1,5 +1,5 @@
---- message.c.orig	Tue Aug 31 10:14:24 2010
-+++ message.c	Tue Aug 31 10:14:10 2010
+--- ./message.c.orig	2003-09-16 01:37:19.000000000 +0200
++++ ./message.c	2014-02-18 11:11:32.983337749 +0100
 @@ -89,7 +89,7 @@
  		 * XXX - need to be fixed to support "\r\n"
  		 */
