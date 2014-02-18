@@ -15,14 +15,13 @@ BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 PLIST_FILES=	lib/xmms/Visualization/libfinespectrum.so
-USE_GMAKE=	yes
+USES=		gmake
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/finespectrum-1.0.1alpha
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '/objformat=/s|=.*|=elf|' ${WRKSRC}/ltconfig
 
