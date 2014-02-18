@@ -1,19 +1,17 @@
-share/sgml/docbook/4.2/ChangeLog
-share/sgml/docbook/4.2/calstblx.dtd
-@unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove %%DTD_NAME%%/%%DTD_VERSION%%/catalog
-share/sgml/docbook/4.2/catalog
-share/sgml/docbook/4.2/catalog.xml
-@exec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% add CATALOG %%DTD_NAME%%/%%DTD_VERSION%%/catalog
-share/sgml/docbook/4.2/dbcentx.mod
-share/sgml/docbook/4.2/dbgenent.mod
-share/sgml/docbook/4.2/dbhierx.mod
-share/sgml/docbook/4.2/dbnotnx.mod
-share/sgml/docbook/4.2/dbpoolx.mod
-share/sgml/docbook/4.2/docbook.cat
-share/sgml/docbook/4.2/docbook.dcl
-share/sgml/docbook/4.2/docbook.dtd
-share/sgml/docbook/4.2/docbookx.dtd
-share/sgml/docbook/4.2/soextblx.dtd
-share/sgml/docbook/4.2/README
-@dirrm share/sgml/docbook/4.2
-@dirrmtry share/sgml/docbook
+%%DTDDIR%%/calstblx.dtd
+%%DTDDIR%%/catalog
+@unexec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% remove %D/%F
+@exec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% add CATALOG %D/%F
+%%DTDDIR%%/catalog.xml
+%%DTDDIR%%/dbcentx.mod
+%%DTDDIR%%/dbgenent.mod
+%%DTDDIR%%/dbhierx.mod
+%%DTDDIR%%/dbnotnx.mod
+%%DTDDIR%%/dbpoolx.mod
+%%DTDDIR%%/docbook.cat
+%%DTDDIR%%/docbook.dcl
+%%DTDDIR%%/docbook.dtd
+%%DTDDIR%%/docbookx.dtd
+%%DTDDIR%%/soextblx.dtd
+%%DTDDIR%%/README
+@dirrm %%DTDDIR%%

@@ -3,30 +3,19 @@
 
 PORTNAME=	docbook-sk
 PORTVERSION=	4.1.2
-PORTREVISION=	4
-CATEGORIES=	textproc
-MASTER_SITES=	http://www.oasis-open.org/docbook/xml/${PORTVERSION}/
+PORTREVISION=	5
 DISTNAME=	docbkx${PORTVERSION:S/.//g}
-EXTRACT_SUFX=	.zip
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	XML version of the DocBook DTD version controlled for ScrollKeeper
 
-RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
+NO_ISOCAT=	yes
+XML_DTD=	yes
+HAS_MANUAL_CATALOG_FILE=	yes
 
-NO_BUILD=	yes
-EXTRACT_AFTER_ARGS=	-s ,^,${DISTNAME}/,
+DTD_SUBDIR?=	${PORTNAME:S/-sk//}
 
-PLIST_SUB=	XMLCATMGR=${XMLCATMGR} \
-		DOCBOOKDIR=${DOCBOOKDIR:S/${PREFIX}\///} \
-		CATALOG_PORTS_XML=${CATALOG_PORTS_XML}
+PORTDOCS=	ChangeLog *.txt
 
-DOCBOOKDIR=	${PREFIX}/share/xml/${PORTNAME:S/-sk//}/${PORTVERSION}
-XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
-CATALOG_PORTS_XML=	${PREFIX}/share/xml/catalog.ports
-
-do-install:
-	@${MKDIR} ${STAGEDIR}${DOCBOOKDIR}/ent
-	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCBOOKDIR}
-
+.include "../../textproc/docbook/bsd.docbook.mk"
 .include <bsd.port.mk>

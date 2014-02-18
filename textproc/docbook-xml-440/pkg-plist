@@ -1,0 +1,34 @@
+%%DTDDIR%%/calstblx.dtd
+%%DTDDIR%%/catalog.xml
+@unexec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% remove %D/%F
+@exec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% add nextCatalog %D/%F
+%%DTDDIR%%/dbcentx.mod
+%%DTDDIR%%/dbgenent.mod
+%%DTDDIR%%/dbhierx.mod
+%%DTDDIR%%/dbnotnx.mod
+%%DTDDIR%%/dbpoolx.mod
+%%DTDDIR%%/docbook.cat
+%%DTDDIR%%/docbookx.dtd
+%%DTDDIR%%/ent/isoamsa.ent
+%%DTDDIR%%/ent/isoamsb.ent
+%%DTDDIR%%/ent/isoamsc.ent
+%%DTDDIR%%/ent/isoamsn.ent
+%%DTDDIR%%/ent/isoamso.ent
+%%DTDDIR%%/ent/isoamsr.ent
+%%DTDDIR%%/ent/isobox.ent
+%%DTDDIR%%/ent/isocyr1.ent
+%%DTDDIR%%/ent/isocyr2.ent
+%%DTDDIR%%/ent/isodia.ent
+%%DTDDIR%%/ent/isogrk1.ent
+%%DTDDIR%%/ent/isogrk2.ent
+%%DTDDIR%%/ent/isogrk3.ent
+%%DTDDIR%%/ent/isogrk4.ent
+%%DTDDIR%%/ent/isolat1.ent
+%%DTDDIR%%/ent/isolat2.ent
+%%DTDDIR%%/ent/isonum.ent
+%%DTDDIR%%/ent/isopub.ent
+%%DTDDIR%%/ent/isotech.ent
+%%DTDDIR%%/htmltblx.mod
+%%DTDDIR%%/soextblx.dtd
+@dirrmtry %%DTDDIR%%/ent
+@dirrmtry %%DTDDIR%%

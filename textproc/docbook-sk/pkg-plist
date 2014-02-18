@@ -1,56 +1,50 @@
-%%DOCBOOKDIR%%/40chg.txt
-%%DOCBOOKDIR%%/41chg.txt
-%%DOCBOOKDIR%%/ChangeLog
-%%DOCBOOKDIR%%/calstblx.dtd
-%%DOCBOOKDIR%%/dbcentx.mod
-%%DOCBOOKDIR%%/dbgenent.mod
-%%DOCBOOKDIR%%/dbhierx.mod
-%%DOCBOOKDIR%%/dbnotnx.mod
-%%DOCBOOKDIR%%/dbpoolx.mod
-%%DOCBOOKDIR%%/docbook.cat
-%%DOCBOOKDIR%%/docbookx.dtd
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ELEMENTS DocBook XML Information Pool V4.1.2//EN" file://%D/%%DOCBOOKDIR%%/dbpoolx.mod
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//DTD DocBook XML V4.1.2//EN" file://%D/%%DOCBOOKDIR%%/docbookx.dtd
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ENTITIES DocBook XML Character Entities V4.1.2//EN" file://%D/%%DOCBOOKDIR%%/dbcentx.mod
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ENTITIES DocBook XML Notations V4.1.2//EN" file://%D/%%DOCBOOKDIR%%/dbnotnx.mod
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ENTITIES DocBook XML Additional General Entities V4.1.2//EN" file://%D/%%DOCBOOKDIR%%/dbgenent.mod
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//ELEMENTS DocBook XML Document Hierarchy V4.1.2//EN" file://%D/%%DOCBOOKDIR%%/dbhierx.mod
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//DTD XML Exchange Table Model 19990315//EN" file://%D/%%DOCBOOKDIR%%/soextblx.dtd
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add public "-//OASIS//DTD DocBook XML CALS Table Model V4.1.2//EN" file://%D/%%DOCBOOKDIR%%/calstblx.dtd
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add rewriteSystem "http://www.oasis-open.org/docbook/xml/4.1.2" file://%D/%%DOCBOOKDIR%%
-@exec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% add rewriteURI "http://www.oasis-open.org/docbook/xml/4.1.2" file://%D/%%DOCBOOKDIR%%
-@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove public "-//OASIS//ELEMENTS DocBook XML Information Pool V4.1.2//EN"
-@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove public "-//OASIS//DTD DocBook XML V4.1.2//EN"
-@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove public "-//OASIS//ENTITIES DocBook XML Character Entities V4.1.2//EN"
-@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove public "-//OASIS//ENTITIES DocBook XML Notations V4.1.2//EN"
-@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove public "-//OASIS//ENTITIES DocBook XML Additional General Entities V4.1.2//EN"
-@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove public "-//OASIS//ELEMENTS DocBook XML Document Hierarchy V4.1.2//EN"
-@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove public "-//OASIS//DTD XML Exchange Table Model 19990315//EN"
-@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove public "-//OASIS//DTD DocBook XML CALS Table Model V4.1.2//EN"
-@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove rewriteSystem "http://www.oasis-open.org/docbook/xml/4.1.2"
-@unexec %%XMLCATMGR%% -c %%CATALOG_PORTS_XML%% remove rewriteURI "http://www.oasis-open.org/docbook/xml/4.1.2"
-%%DOCBOOKDIR%%/ent/iso-amsa.ent
-%%DOCBOOKDIR%%/ent/iso-amsb.ent
-%%DOCBOOKDIR%%/ent/iso-amsc.ent
-%%DOCBOOKDIR%%/ent/iso-amsn.ent
-%%DOCBOOKDIR%%/ent/iso-amso.ent
-%%DOCBOOKDIR%%/ent/iso-amsr.ent
-%%DOCBOOKDIR%%/ent/iso-box.ent
-%%DOCBOOKDIR%%/ent/iso-cyr1.ent
-%%DOCBOOKDIR%%/ent/iso-cyr2.ent
-%%DOCBOOKDIR%%/ent/iso-dia.ent
-%%DOCBOOKDIR%%/ent/iso-grk1.ent
-%%DOCBOOKDIR%%/ent/iso-grk2.ent
-%%DOCBOOKDIR%%/ent/iso-grk3.ent
-%%DOCBOOKDIR%%/ent/iso-grk4.ent
-%%DOCBOOKDIR%%/ent/iso-lat1.ent
-%%DOCBOOKDIR%%/ent/iso-lat2.ent
-%%DOCBOOKDIR%%/ent/iso-num.ent
-%%DOCBOOKDIR%%/ent/iso-pub.ent
-%%DOCBOOKDIR%%/ent/iso-tech.ent
-%%DOCBOOKDIR%%/readme.txt
-%%DOCBOOKDIR%%/soextblx.dtd
-@dirrm %%DOCBOOKDIR%%/ent
-@dirrm %%DOCBOOKDIR%%
-@unexec /bin/rmdir %D/share/xml/docbook 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/share/xml 2>/dev/null || /usr/bin/true
+%%DTDDIR%%/calstblx.dtd
+%%DTDDIR%%/dbcentx.mod
+%%DTDDIR%%/dbgenent.mod
+%%DTDDIR%%/dbhierx.mod
+%%DTDDIR%%/dbnotnx.mod
+%%DTDDIR%%/dbpoolx.mod
+%%DTDDIR%%/docbook.cat
+%%DTDDIR%%/docbookx.dtd
+@exec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% add public "-//OASIS//ELEMENTS DocBook XML Information Pool V4.1.2//EN" file://%D/%%DTDDIR%%/dbpoolx.mod
+@exec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% add public "-//OASIS//DTD DocBook XML V4.1.2//EN" file://%D/%%DTDDIR%%/docbookx.dtd
+@exec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% add public "-//OASIS//ENTITIES DocBook XML Character Entities V4.1.2//EN" file://%D/%%DTDDIR%%/dbcentx.mod
+@exec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% add public "-//OASIS//ENTITIES DocBook XML Notations V4.1.2//EN" file://%D/%%DTDDIR%%/dbnotnx.mod
+@exec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% add public "-//OASIS//ENTITIES DocBook XML Additional General Entities V4.1.2//EN" file://%D/%%DTDDIR%%/dbgenent.mod
+@exec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% add public "-//OASIS//ELEMENTS DocBook XML Document Hierarchy V4.1.2//EN" file://%D/%%DTDDIR%%/dbhierx.mod
+@exec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% add public "-//OASIS//DTD XML Exchange Table Model 19990315//EN" file://%D/%%DTDDIR%%/soextblx.dtd
+@exec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% add public "-//OASIS//DTD DocBook XML CALS Table Model V4.1.2//EN" file://%D/%%DTDDIR%%/calstblx.dtd
+@exec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% add rewriteSystem "http://www.oasis-open.org/docbook/xml/4.1.2" file://%D/%%DTDDIR%%
+@exec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% add rewriteURI "http://www.oasis-open.org/docbook/xml/4.1.2" file://%D/%%DTDDIR%%
+@unexec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% remove public "-//OASIS//ELEMENTS DocBook XML Information Pool V4.1.2//EN"
+@unexec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% remove public "-//OASIS//DTD DocBook XML V4.1.2//EN"
+@unexec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% remove public "-//OASIS//ENTITIES DocBook XML Character Entities V4.1.2//EN"
+@unexec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% remove public "-//OASIS//ENTITIES DocBook XML Notations V4.1.2//EN"
+@unexec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% remove public "-//OASIS//ENTITIES DocBook XML Additional General Entities V4.1.2//EN"
+@unexec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% remove public "-//OASIS//ELEMENTS DocBook XML Document Hierarchy V4.1.2//EN"
+@unexec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% remove public "-//OASIS//DTD XML Exchange Table Model 19990315//EN"
+@unexec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% remove public "-//OASIS//DTD DocBook XML CALS Table Model V4.1.2//EN"
+@unexec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% remove rewriteSystem "http://www.oasis-open.org/docbook/xml/4.1.2"
+@unexec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% remove rewriteURI "http://www.oasis-open.org/docbook/xml/4.1.2"
+%%DTDDIR%%/ent/iso-amsa.ent
+%%DTDDIR%%/ent/iso-amsb.ent
+%%DTDDIR%%/ent/iso-amsc.ent
+%%DTDDIR%%/ent/iso-amsn.ent
+%%DTDDIR%%/ent/iso-amso.ent
+%%DTDDIR%%/ent/iso-amsr.ent
+%%DTDDIR%%/ent/iso-box.ent
+%%DTDDIR%%/ent/iso-cyr1.ent
+%%DTDDIR%%/ent/iso-cyr2.ent
+%%DTDDIR%%/ent/iso-dia.ent
+%%DTDDIR%%/ent/iso-grk1.ent
+%%DTDDIR%%/ent/iso-grk2.ent
+%%DTDDIR%%/ent/iso-grk3.ent
+%%DTDDIR%%/ent/iso-grk4.ent
+%%DTDDIR%%/ent/iso-lat1.ent
+%%DTDDIR%%/ent/iso-lat2.ent
+%%DTDDIR%%/ent/iso-num.ent
+%%DTDDIR%%/ent/iso-pub.ent
+%%DTDDIR%%/ent/iso-tech.ent
+%%DTDDIR%%/soextblx.dtd
+@dirrm %%DTDDIR%%/ent
+@dirrm %%DTDDIR%%
