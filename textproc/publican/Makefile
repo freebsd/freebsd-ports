@@ -53,7 +53,7 @@ BUILD_DEPENDS=	\
 		p5-XML-LibXSLT>=1.67:${PORTSDIR}/textproc/p5-XML-LibXSLT \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-XML-TreeBuilder>=4.0:${PORTSDIR}/textproc/p5-XML-TreeBuilder \
-		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml-450 \
+		${LOCALBASE}/share/xml/docbook/4.5:${PORTSDIR}/textproc/docbook-xml-450 \
 		${LOCALBASE}/share/sgml/docbook/4.2:${PORTSDIR}/textproc/docbook-420 \
 		${LOCALBASE}/share/xsl/docbook/html/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
 		librsvg2>=2.0:${PORTSDIR}/graphics/librsvg2 \

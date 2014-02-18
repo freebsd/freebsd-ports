@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgmime-2.6.so:${PORTSDIR}/mail/gmime26 \
 
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto \
-		${LOCALBASE}/share/sgml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-450
+		${LOCALBASE}/share/sgml/docbook/4.5:${PORTSDIR}/textproc/docbook-450
 
 CONFLICTS=	dbmail-2.* dbmail22-[0-9]*
 

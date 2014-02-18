@@ -23,7 +23,7 @@ BUILDTOOL=	${LOCALBASE}/bin/buildtool
 CONFIGURE_ARGS=	--prefix=${PREFIX} --dir-doc=${DOCSDIR} \
 		--dir-html=${DOCSDIR}
 
-DOCBOOK_XML=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd
+DOCBOOK_XML=	${LOCALBASE}/share/xml/docbook/4.2
 DOCBOOK_XSL=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl
 
 DOCS=		CHANGES COPYING PEOPLE README README.bt
