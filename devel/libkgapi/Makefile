@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	libkgapi
-PORTVERSION=	0.4.4
+PORTVERSION=	2.0.1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/libkgapi/${PORTVERSION}/src
@@ -14,18 +14,15 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	qjson.0:${PORTSDIR}/devel/qjson
 
-CONFLICTS=	akonadi-google-0.*
-
 USE_BZIP2=	yes
-USES=		cmake
+USES=		cmake:outsource
 USE_KDE4=	automoc4 kdelibs kdeprefix kdehier pimlibs
 USE_LDCONFIG=	yes
 USE_QT4=	corelib network webkit xml \
 		qmake_build moc_build rcc_build uic_build
 
-NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e '/pkgconfig/ s/$${LIB_INSTALL_DIR}/libdata/' \
-		${WRKSRC}/libkgapi/CMakeLists.txt
+		${WRKSRC}/libkgapi*/CMakeLists.txt
 
 .include <bsd.port.mk>
