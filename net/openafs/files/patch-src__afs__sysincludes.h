@@ -1,13 +1,17 @@
 diff --git a/src/afs/sysincludes.h b/src/afs/sysincludes.h
-index 5840227..9d68b1e 100644
+index 3e3a172..10343b8 100644
 --- a/src/afs/sysincludes.h
 +++ b/src/afs/sysincludes.h
-@@ -288,7 +288,7 @@ typedef unsigned short etap_event_t;
- # include "h/protosw.h"
+@@ -202,6 +202,12 @@ typedef unsigned short etap_event_t;
+ # include "h/systm.h"
+ # include "h/time.h"
  
- # if defined(AFS_FBSD_ENV)
--#  include "limits.h"
-+#  include "sys/limits.h"
- # endif
- 
- # ifdef AFS_HPUX_ENV
++# ifdef AFS_FBSD_ENV
++#  include <sys/socket.h>
++#  include <net/if.h>
++#  include <net/if_var.h>
++# endif
++
+ # ifdef	AFS_AIX_ENV
+ #  ifdef AFS_AIX41_ENV
+ #   include "sys/statfs.h"
