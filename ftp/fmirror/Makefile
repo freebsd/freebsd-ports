@@ -13,19 +13,17 @@ COMMENT=	Program for mirroring files and directories from a remote FTP server
 
 GNU_CONFIGURE=	yes
 
-MAN1=		fmirror.1
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-install:
 	cd ${WRKSRC} && \
-		${INSTALL_PROGRAM} fmirror ${PREFIX}/bin && \
-		${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR} && \
+		${INSTALL_PROGRAM} fmirror ${STAGEDIR}${PREFIX}/bin && \
+		${INSTALL_MAN} ${PORTNAME}.1 ${STAGEDIR}${PREFIX}/man/man1
+	${MKDIR} ${STAGEDIR}${DOCSDIR} && \
 	cd ${WRKSRC} && \
-		${INSTALL_DATA} ChangeLog README ${DOCSDIR} && \
+		${INSTALL_DATA} ChangeLog README ${STAGEDIR}${DOCSDIR} && \
 	cd ${WRKSRC}/configs && \
-		${INSTALL_DATA} generic.conf redhat.conf sample.conf ${DOCSDIR}
-.endif
+		${INSTALL_DATA} generic.conf redhat.conf sample.conf \
+			${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
