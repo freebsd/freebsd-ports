@@ -759,7 +759,6 @@
     SUBDIR += py-pychess
     SUBDIR += py-sgflib
     SUBDIR += py-sgfsummary
-    SUBDIR += py-ski
     SUBDIR += pyawale
     SUBDIR += pycadia
     SUBDIR += pyching
@@ -884,6 +883,7 @@
     SUBDIR += simsu
     SUBDIR += simutrans
     SUBDIR += sjeng
+    SUBDIR += ski
     SUBDIR += sl
     SUBDIR += slashem-tty
     SUBDIR += slump
