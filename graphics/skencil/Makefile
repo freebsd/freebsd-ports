@@ -22,11 +22,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}alpha
 
+USES=		tk desktop-file-utils
 USE_XORG=	x11 xext
-USE_TCL_BUILD=	yes
-USE_TCL=	yes
-USE_TK_BUILD=	yes
-USE_TK=		yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
@@ -48,8 +45,8 @@ post-patch:
 	 @${REINPLACE_CMD} -e \
 		"s|/usr/include|${LOCALBASE}/include|g ; \
 		 s|/usr/lib|${LOCALBASE}/lib|g ; \
-		 /tcl_ver/s|8\.[0-9]|${TCL_VER:S/.//}|g ; \
-		 /libtcl/s|8\.[0-9]|${TCL_VER:S/.//}|g ; \
+		 /tcl_ver/s|8\.[0-9]|${TCL_SHLIB_VER}|g ; \
+		 /libtcl/s|8\.[0-9]|${TCL_SHLIB_VER}|g ; \
 		 /libraries/s|tcl_ver\])|tcl_ver, 'intl'])|g ; \
 		 s|/usr/share|${PREFIX}/share|g" ${WRKSRC}/setup.py
 
