@@ -42,45 +42,4 @@ USES=		perl5
 USE_PERL5=	configure
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
-MAN1=	l2t_process.1 \
-	log2timeline.1 \
-	timescanner.1
-MAN3=	Log2Timeline.3 \
-	Log2t::BinRead.3 \
-	Log2t::Numbers.3 \
-	Log2t::Time.3 \
-	Log2t::base::input.3 \
-	Log2t::input::altiris.3 \
-	Log2t::input::encase_dirlisting.3 \
-	Log2t::input::evt.3 \
-	Log2t::input::evtx.3 \
-	Log2t::input::ff_bookmark.3 \
-	Log2t::input::firefox2.3 \
-	Log2t::input::ftk_dirlisting.3 \
-	Log2t::input::iehistory.3 \
-	Log2t::input::jp_ntfs_change.3 \
-	Log2t::input::mcafee.3 \
-	Log2t::input::mcafeefireup.3 \
-	Log2t::input::mcafeehel.3 \
-	Log2t::input::mcafeehs.3 \
-	Log2t::input::mft.3 \
-	Log2t::input::mssql_errlog.3 \
-	Log2t::input::opera.3 \
-	Log2t::input::pcap.3 \
-	Log2t::input::pdf.3 \
-	Log2t::input::setupapi.3 \
-	Log2t::input::sol.3 \
-	Log2t::input::symantec.3 \
-	Log2t::input::volatility.3 \
-	Log2t::input::wmiprov.3 \
-	Log2t::output::beedocs.3 \
-	Log2t::output::cef.3 \
-	Log2t::output::cftl.3 \
-	Log2t::output::csv.3 \
-	Log2t::output::serialize.3 \
-	Log2t::output::tab.3 \
-	Parse::Evtx2.3 \
-	Parse::Evtx2::Chunk.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>
