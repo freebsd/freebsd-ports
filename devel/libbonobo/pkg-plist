@@ -181,6 +181,7 @@ share/locale/yi/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/libbonobo-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libbonobo-2.0.mo
+man/man1/bonobo-activation-server.1.gz
 @dirrm share/idl/bonobo-activation-2.0
 @dirrm share/idl/bonobo-2.0
 @dirrm libdata/bonobo/servers

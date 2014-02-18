@@ -28,9 +28,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 MAKE_ENV=	gnomelocaledir=${PREFIX}/share/locale
 
-MAN1=		bonobo-activation-server.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
 		${WRKSRC}/configure \
