@@ -13,6 +13,8 @@ MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Scheme-to-C, a compiler and interpreter for compiling scheme into C
 
 BROKEN=		Does not build
+DEPRECATED=	Broken since July 2013
+EXPIRATION_DATE=2014-03-18
 
 ONLY_FOR_ARCHS=	i386
 
