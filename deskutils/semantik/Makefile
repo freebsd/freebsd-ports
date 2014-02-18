@@ -2,6 +2,7 @@
 
 PORTNAME=	semantik
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://${PORTNAME}.googlecode.com/files/
 
