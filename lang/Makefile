@@ -82,7 +82,6 @@
     SUBDIR += fpc-units
     SUBDIR += fpc-utils
     SUBDIR += fsharp
-    SUBDIR += g95
     SUBDIR += gambit-c
     SUBDIR += gauche
     SUBDIR += gawk
