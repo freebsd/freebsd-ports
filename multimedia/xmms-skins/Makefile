@@ -100,9 +100,8 @@ DATADIR=	${PREFIX}/share/xmms
 PLIST_FILES=	${DISTFILES:S,^,${DATADIR_REL}/Skins/,}
 PLIST_DIRSTRY=	${DATADIR_REL}/Skins ${DATADIR_REL}
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/Skins
-	${INSTALL_DATA} ${DISTFILES:S,^,${DISTDIR}/,} ${DATADIR}/Skins
+	${MKDIR} ${STAGEDIR}${DATADIR}/Skins
+	${INSTALL_DATA} ${DISTFILES:S,^,${DISTDIR}/,} ${STAGEDIR}${DATADIR}/Skins
 
 .include <bsd.port.mk>
