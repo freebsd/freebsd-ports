@@ -10,18 +10,18 @@ MASTER_SITES=	http://im-ja.sourceforge.net/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese input module for GTK2
 
-OPTIONS_DEFINE=	ANTHY CANNA WNN GNOMEPANEL
+OPTIONS_DEFINE=	ANTHY CANNA WNN
 OPTIONS_DEFAULT=	ANTHY CANNA WNN
 ANTHY_DESC=		Use Anthy
 CANNA_DESC=		Use Canna
 WNN_DESC=		Use FreeWnn
-GNOMEPANEL_DESC=	Build GNOME Panel Applet
 
 USES=		gmake pathfix perl5 pkgconfig
 USE_GNOME=	gconf2 gnomeprefix intlhack libglade2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-schemas-install # Avoid stage violation
+CONFIGURE_ARGS+=	--disable-gnome
 
 GCONF_SCHEMAS=	im-ja.schemas
 
@@ -46,14 +46,6 @@ CONFIGURE_ARGS+=	--disable-canna
 LIB_DEPENDS+=	libwnn.so:${PORTSDIR}/japanese/FreeWnn-lib
 .else
 CONFIGURE_ARGS+=	--disable-wnn
-.endif
-
-.if ${PORT_OPTIONS:MGNOMEPANEL}
-USE_GNOME+=	gnomepanel
-PLIST_SUB+=	GNOMEPANEL=""
-.else
-CONFIGURE_ARGS+=	--disable-gnome
-PLIST_SUB+=	GNOMEPANEL="@comment "
 .endif
 
 post-patch:
