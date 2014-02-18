@@ -30,6 +30,7 @@ NO_BUILD=	yes
 EXTRACT_AFTER_ARGS=	-s ,^,${DISTNAME}/,
 .endif
 
+CATALOG_FILES?=	catalog
 XMLCATMGR=	bin/xmlcatmgr
 SGMLCAT=	share/sgml/catalog.ports
 ISOCAT=		share/sgml/iso8879/catalog
@@ -43,8 +44,10 @@ DTD_SUBDIR?=	/dtd
 DTDDIR?=	share/${XML_SGML}/${DTD_NAME}/${DTD_VERSION}${DTD_SUBDIR}
 PLIST_SUB+=	XMLCATMGR=${XMLCATMGR} SGMLCAT=${SGMLCAT} XMLCAT=${XMLCAT} \
 		DTDDIR=${DTDDIR}
+SUB_LIST+=	DTDDIR=${PREFIX}/${DTDDIR}
 
-.if !defined(PORTDOCS)
+
+.if !defined(PORTDOCS) && !defined(MANUAL_DOCS)
 PORTDOCS=	*.txt
 .endif
 
@@ -60,17 +63,19 @@ post-patch:
 	@${ECHO_CMD} 'CATALOG "${LOCALBASE}/${ISOCAT}"' >> ${WRKSRC}/catalog
 	@${RM} ${WRKSRC}/catalog.orig
 .elifndef HAS_MANUAL_CATALOG_FILE
-SUB_FILES=	catalog
+SUB_FILES=	${CATALOG_FILES}
 .endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${DTDDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${DTDDIR}
 .if !defined(HAS_CATALOG_FILE) && !defined(HAS_MANUAL_CATALOG_FILE)
-	${INSTALL_DATA} ${WRKDIR}/catalog ${STAGEDIR}${PREFIX}/${DTDDIR}
+.  for f in ${CATALOG_FILES}
+	${INSTALL_DATA} ${WRKDIR}/${f} ${STAGEDIR}${PREFIX}/${DTDDIR}
+.  endfor
 .endif
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .if defined(PORTDOCS) && !defined(MANUAL_DOCS)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .  for f in ${PORTDOCS}
 	${MV} ${STAGEDIR}${PREFIX}/${DTDDIR}/${f} ${STAGEDIR}${DOCSDIR}
 .  endfor
