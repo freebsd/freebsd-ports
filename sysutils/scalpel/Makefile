@@ -11,25 +11,22 @@ COMMENT=	Frugal, high performance file carver
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	tre.5:${PORTSDIR}/textproc/libtre
+LIB_DEPENDS=	libtre.so:${PORTSDIR}/textproc/libtre
 
 GNU_CONFIGURE=	yes
 SUB_FILES=	pkg-message
 
-MAN1=		scalpel.1
-PLIST_FILES+=	etc/scalpel.conf.sample bin/scalpel
+PLIST_FILES=	etc/scalpel.conf.sample bin/scalpel man/man1/scalpel.1.gz
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's/#ifdef __APPLE__/#if defined(__APPLE__) || defined(__FreeBSD__)/' \
 		${WRKSRC}/src/scalpel.h
 
 post-install:
-	@${CP} -p ${WRKSRC}/scalpel.conf ${PREFIX}/etc/scalpel.conf.sample
-	@${CAT} ${PKGMESSAGE}
+	@${CP} -p ${WRKSRC}/scalpel.conf ${STAGEDIR}${PREFIX}/etc/scalpel.conf.sample
 
 .include <bsd.port.mk>
