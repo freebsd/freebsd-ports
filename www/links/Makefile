@@ -34,10 +34,8 @@ X11_DESC=	X11 graphics support
 
 OPTIONS_DEFAULT=	IPV6 UTF8 X11
 
-MAN1=		links.1
-PLIST_FILES=	bin/links
+PLIST_FILES=	bin/links man/man1/links.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 #CIPHERSTRING must be a valid OpenSSL cipher string(see ciphers(1)):
@@ -113,7 +111,7 @@ post-patch:
 
 .if ${PORT_OPTIONS:MX11}
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/graphics/links.xpm ${PREFIX}/share/pixmaps/links.xpm
+	@${INSTALL_DATA} ${WRKSRC}/graphics/links.xpm ${STAGEDIR}${PREFIX}/share/pixmaps/links.xpm
 .endif
 
 .include <bsd.port.mk>
