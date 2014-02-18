@@ -3,10 +3,8 @@
 
 PORTNAME=	kdepimlibs
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	3
-CATEGORIES=	deskutils kde ipv6
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+CATEGORIES=	deskutils kde
+MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
@@ -31,7 +29,6 @@ USE_QT4=	corelib dbus declarative designer_build gui network sql xml \
 		qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 		${PATCH_WRKSRC}/cmake/modules/*.cmake

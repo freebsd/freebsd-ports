@@ -9,8 +9,8 @@ lib/kde4/krdc_rdpplugin.so
 lib/kde4/krdc_testplugin.so
 lib/kde4/krdc_vncplugin.so
 lib/libkrdccore.so
-lib/libkrdccore.so.5
-lib/libkrdccore.so.5.0.1
+lib/libkrdccore.so.4
+lib/libkrdccore.so.%%KDE4_GENERIC_LIB_VERSION%%
 share/applications/kde4/krdc.desktop
 share/apps/krdc/krdcui.rc
 share/apps/krdc/pics/pointcursor.png

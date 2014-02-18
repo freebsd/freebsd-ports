@@ -2,10 +2,8 @@
 
 PORTNAME=	perlkde
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde perl5
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 PKGNAMEPREFIX=	p5-
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
@@ -13,13 +11,10 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Perl bindings for KDE
 
 USE_XZ=		yes
-# Build fails with system gcc
-USE_GCC=	yes
 USE_KDE4=	kdehier kdeprefix perlqt smokekde automoc4
 USE_QT4=	network opengl sql svg xml \
 		qmake_build moc_build uic_build rcc_build
-USES=		cmake:outsource perl5
-
+USES=		cmake:outsource compiler:c++11-lib perl5
 
 # Respect PREFIX
 CMAKE_ARGS+=	-DCUSTOM_PERL_SITE_ARCH_DIR=${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}

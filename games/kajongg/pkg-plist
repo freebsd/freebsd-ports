@@ -47,6 +47,8 @@ share/apps/kajongg/kajonggserver.py
 share/apps/kajongg/kajonggui.rc
 share/apps/kajongg/kde.py
 share/apps/kajongg/kde.pyc
+share/apps/kajongg/login.py
+share/apps/kajongg/login.pyc
 share/apps/kajongg/meld.py
 share/apps/kajongg/meld.pyc
 share/apps/kajongg/message.py
@@ -92,10 +94,14 @@ share/apps/kajongg/tilesetselector.pyc
 share/apps/kajongg/tilesetselector.ui
 share/apps/kajongg/tree.py
 share/apps/kajongg/tree.pyc
+share/apps/kajongg/uitile.py
+share/apps/kajongg/uitile.pyc
 share/apps/kajongg/uiwall.py
 share/apps/kajongg/uiwall.pyc
 share/apps/kajongg/util.py
 share/apps/kajongg/util.pyc
+share/apps/kajongg/visible.py
+share/apps/kajongg/visible.pyc
 share/apps/kajongg/voices/female1/COPYRIGHT
 share/apps/kajongg/voices/female1/b1.ogg
 share/apps/kajongg/voices/female1/b2.ogg

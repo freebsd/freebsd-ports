@@ -348,6 +348,7 @@
     SUBDIR += kmfl-varamozhi-malayalam
     SUBDIR += kmflcomp
     SUBDIR += kn-aspell
+    SUBDIR += kompare
     SUBDIR += ku-aspell
     SUBDIR += ky-aspell
     SUBDIR += l2a
@@ -367,6 +368,7 @@
     SUBDIR += libguess
     SUBDIR += libkmfl
     SUBDIR += libkolabxml
+    SUBDIR += libkomparediff2
     SUBDIR += liblingoteach
     SUBDIR += liblrdf
     SUBDIR += libmrss

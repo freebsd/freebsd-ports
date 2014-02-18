@@ -1,4 +1,5 @@
 bin/kmousetool
+man/man1/kmousetool.1.gz
 share/applications/kde4/kmousetool.desktop
 share/apps/kmousetool/sounds/mousetool_tap.wav
 share/doc/HTML/en/kmousetool/common

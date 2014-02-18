@@ -2,10 +2,8 @@
 
 PORTNAME=	kstars
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	astro kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,17 +11,12 @@ COMMENT=	KDE 4 desktop planetarium
 
 LIB_DEPENDS=	libcfitsio.so:${PORTSDIR}/astro/cfitsio \
 		libwcs.so:${PORTSDIR}/astro/wcslib
-
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2 \
 		xplanet:${PORTSDIR}/astro/xplanet
-
 RUN_DEPENDS=	xplanet:${PORTSDIR}/astro/xplanet
 
-CONFLICTS=	kdeedu-4.[0-6].*
-
-NO_STAGE=	yes
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
-USES=		cmake:outsource
+USES=		cmake:outsource compiler:c++11-lib
 USE_QT4=	opengl qmake_build moc_build rcc_build uic_build
 USE_XZ=		yes
 

@@ -5451,3 +5451,4 @@ x11-fonts/cosmic-sans-neue-mono|x11-fonts/fantasque-sans-mono|2014-02-13|Renamed
 mail/zmailer||2014-02-13|Broken since at least last August
 lang/gcc34|lang/gcc|2014-02-13|Superseded by GCC 4.6 or later
 x11-toolkits/sakura|x11/sakura|2014-02-16|Moved to a better category
+misc/kde4-shared-mime-info||2014-02-18|Removed, the port not needed anymore

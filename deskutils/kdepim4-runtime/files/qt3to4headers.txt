@@ -1,4 +1,0 @@
-s/<qfile.h>/<QFile>/g
-s/<qimage.h>/<QImage>/g
-s/<qlabel.h>/<QLabel>/g
-s/<qobject.h>/<QObject>/g

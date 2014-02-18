@@ -16,6 +16,8 @@
 %%MTREE%%share/polkit-1/actions
 %%MTREE%%@exec mkdir -p %%KDE4_PREFIX%%/bin
 %%MTREE%%@exec mkdir -p %%KDE4_PREFIX%%/etc
+%%MTREE%%@exec mkdir -p %%KDE4_PREFIX%%/etc/devd
+%%MTREE%%@exec mkdir -p %%KDE4_PREFIX%%/etc/man.d
 %%MTREE%%@exec mkdir -p %%KDE4_PREFIX%%/include
 %%MTREE%%@exec mkdir -p %%KDE4_PREFIX%%/include/X11
 %%MTREE%%@exec mkdir -p %%KDE4_PREFIX%%/info
@@ -493,7 +495,7 @@
 @exec mkdir -p %%KDE4_PREFIX%%/lib/kde4/plugins
 @exec mkdir -p %%KDE4_PREFIX%%/lib/kde4/plugins/designer
 @exec mkdir -p %%KDE4_PREFIX%%/lib/kde4/plugins/grantlee
-@exec mkdir -p %%KDE4_PREFIX%%/lib/kde4/plugins/grantlee/0.3
+@exec mkdir -p %%KDE4_PREFIX%%/lib/kde4/plugins/grantlee/0.4
 @exec mkdir -p %%KDE4_PREFIX%%/lib/kde4/plugins/styles
 @exec mkdir -p %%KDE4_PREFIX%%/lib/strigi
 @exec mkdir -p %%KDE4_PREFIX%%/share/applications/kde4
@@ -1830,7 +1832,7 @@
 @dirrmtry share/applications/kde4
 @dirrmtry lib/strigi
 @dirrmtry lib/kde4/plugins/styles
-@dirrmtry lib/kde4/plugins/grantlee/0.3
+@dirrmtry lib/kde4/plugins/grantlee/0.4
 @dirrmtry lib/kde4/plugins/grantlee
 @dirrmtry lib/kde4/plugins/designer
 @dirrmtry lib/kde4/plugins
@@ -2308,6 +2310,8 @@
 %%MTREE%%@dirrm info
 %%MTREE%%@dirrm include/X11
 %%MTREE%%@dirrm include
+%%MTREE%%@dirrm etc/man.d
+%%MTREE%%@dirrm etc/devd
 %%MTREE%%@dirrm etc
 %%MTREE%%@dirrm bin
 %%MTREE%%@cwd /

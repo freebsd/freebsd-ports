@@ -3,6 +3,7 @@ share/applications/kde4/kblackbox.desktop
 share/apps/kblackbox/kblackboxui.rc
 share/apps/kblackbox/pics/kblackbox.svgz
 share/doc/HTML/en/kblackbox/common
+share/doc/HTML/en/kblackbox/gameboard.png
 share/doc/HTML/en/kblackbox/index.cache.bz2
 share/doc/HTML/en/kblackbox/index.docbook
 share/icons/hicolor/128x128/apps/kblackbox.png

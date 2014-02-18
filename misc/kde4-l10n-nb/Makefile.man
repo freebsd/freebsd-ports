@@ -1,3 +1,0 @@
-MAN1+=	kbookmarkmerger.1
-MAN1+=	kdesu.1
-MAN1+=	kfind.1

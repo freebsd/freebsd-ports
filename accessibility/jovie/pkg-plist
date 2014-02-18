@@ -4,8 +4,8 @@ lib/kde4/jovie_talkerchooserplugin.so
 lib/kde4/jovie_xmltransformerplugin.so
 lib/kde4/kcm_kttsd.so
 lib/libkttsd.so
-lib/libkttsd.so.5
-lib/libkttsd.so.5.0.1
+lib/libkttsd.so.4
+lib/libkttsd.so.%%KDE4_GENERIC_LIB_VERSION%%
 share/applications/kde4/jovieapp.desktop
 share/apps/jovie/kcmkttsd_testmessage.desktop
 share/apps/jovie/stringreplacer/abbreviations.xml
@@ -20,7 +20,7 @@ share/apps/jovie/stringreplacer/qt2plaintext.xml
 share/apps/jovie/talkerchooser/female_notifications_rc
 share/apps/jovie/xmltransformer/xhtml2ssml.xsl
 share/apps/jovie/xmltransformer/xhtml2ssml_simple.xsl
-share/apps/kttsd/xslt/SSMLtoPlainText.xsl
+share/apps/jovie/xslt/SSMLtoPlainText.xsl
 share/doc/HTML/en/jovie/addtalker.png
 share/doc/HTML/en/jovie/common
 share/doc/HTML/en/jovie/filters.png
@@ -50,8 +50,7 @@ share/kde4/services/kcmkttsd.desktop
 share/kde4/services/kttsd.desktop
 share/kde4/servicetypes/jovie_filterplugin.desktop
 @dirrm share/doc/HTML/en/jovie
-@dirrm share/apps/kttsd/xslt
-@dirrm share/apps/kttsd
+@dirrm share/apps/jovie/xslt
 @dirrm share/apps/jovie/xmltransformer
 @dirrm share/apps/jovie/talkerchooser
 @dirrm share/apps/jovie/stringreplacer

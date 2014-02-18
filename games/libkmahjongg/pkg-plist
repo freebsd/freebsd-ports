@@ -3,8 +3,8 @@ include/kmahjonggconfigdialog.h
 include/kmahjonggtileset.h
 include/libkmahjongg_export.h
 lib/libkmahjongglib.so
-lib/libkmahjongglib.so.5
-lib/libkmahjongglib.so.5.0.1
+lib/libkmahjongglib.so.4
+lib/libkmahjongglib.so.%%KDE4_GENERIC_LIB_VERSION%%
 share/apps/kmahjongglib/backgrounds/chinese_landscape.copyright
 share/apps/kmahjongglib/backgrounds/chinese_landscape.desktop
 share/apps/kmahjongglib/backgrounds/chinese_landscape.svgz

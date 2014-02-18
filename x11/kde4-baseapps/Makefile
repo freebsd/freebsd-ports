@@ -2,18 +2,14 @@
 
 PORTNAME=	kde-baseapps
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Basic applications for KDE
 
-LIB_DEPENDS=	tidy-0.99.0:${PORTSDIR}/www/tidy-lib
-
-CONFLICTS=	kdebase-4.[0-6].* konq-plugins-4.[0-6].*
+LIB_DEPENDS=	libtidy-0.99.so:${PORTSDIR}/www/tidy-lib
 
 USE_XZ=		yes
 USE_GNOME=	glib20
@@ -28,25 +24,14 @@ USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib"
 
-MAN1=		kbookmarkmerger.1 \
-		kfind.1
-
 OPTIONS_DEFINE=	KONSOLE KWRITE
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
 KONSOLE_DESC=	Install Konsole terminal emulator
+KONSOLE_RUN_DEPENDS=	${KDE4_PREFIX}/bin/konsole:${PORTSDIR}/x11/konsole
+
 KWRITE_DESC=	Install KWrite text editor
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MKONSOLE}
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/konsole:${PORTSDIR}/x11/konsole
-.endif
-
-.if ${PORT_OPTIONS:MKWRITE}
-USE_KDE4+=	kate_run
-.endif
+KWRITE_USE=	KDE4=kate_run
 
 pre-configure:
 # Quick hack to avoid building libkonq here

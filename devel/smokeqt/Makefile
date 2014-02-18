@@ -3,17 +3,14 @@
 PORTNAME=	smokeqt
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	devel kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	SMOKE bindings for Qt
 
-LIB_DEPENDS=	qscintilla2:${PORTSDIR}/devel/qscintilla2 \
-		qwt.5:${PORTSDIR}/x11-toolkits/qwt5
-
-CONFLICTS=	kdebindings-smoke-4.[0-6].*
+LIB_DEPENDS=	libqscintilla2.so:${PORTSDIR}/devel/qscintilla2 \
+		libqwt.so:${PORTSDIR}/x11-toolkits/qwt5
 
 USE_KDE4=	kdehier kdeprefix smokegen qimageblitz
 USE_QT4=	corelib dbus declarative designer_build gui help \
@@ -24,5 +21,4 @@ USE_XZ=		yes
 USES=		cmake:outsource
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

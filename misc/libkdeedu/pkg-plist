@@ -23,8 +23,8 @@ lib/cmake/libkdeedu/LibKdeEduConfig.cmake
 lib/cmake/libkdeedu/LibKdeEduTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/libkdeedu/LibKdeEduTargets.cmake
 lib/libkeduvocdocument.so
-lib/libkeduvocdocument.so.5
-lib/libkeduvocdocument.so.5.0.1
+lib/libkeduvocdocument.so.4
+lib/libkeduvocdocument.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/libqtmmlwidget.a
 share/apps/kvtml/en/animals.kvtml
 share/apps/kvtml/en/clothing.kvtml

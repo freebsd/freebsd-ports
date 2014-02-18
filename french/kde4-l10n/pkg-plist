@@ -1,3 +1,61 @@
+man/fr/man1/adddebug.1.gz
+man/fr/man1/ark.1.gz
+man/fr/man1/cheatmake.1.gz
+man/fr/man1/checkXML.1.gz
+man/fr/man1/create_cvsignore.1.gz
+man/fr/man1/create_makefile.1.gz
+man/fr/man1/create_makefiles.1.gz
+man/fr/man1/cvscheck.1.gz
+man/fr/man1/cvslastchange.1.gz
+man/fr/man1/cvslastlog.1.gz
+man/fr/man1/cvsrevertlast.1.gz
+man/fr/man1/cxxmetric.1.gz
+man/fr/man1/demangle.1.gz
+man/fr/man1/dragon.1.gz
+man/fr/man1/extend_dmalloc.1.gz
+man/fr/man1/extractrc.1.gz
+man/fr/man1/fixincludes.1.gz
+man/fr/man1/kabcclient.1.gz
+man/fr/man1/kalzium.1.gz
+man/fr/man1/kbookmarkmerger.1.gz
+man/fr/man1/kbruch.1.gz
+man/fr/man1/kconfig_compiler.1.gz
+man/fr/man1/kde4-config.1.gz
+man/fr/man1/kdesu.1.gz
+man/fr/man1/kfind.1.gz
+man/fr/man1/kig.1.gz
+man/fr/man1/kjs.1.gz
+man/fr/man1/kjscmd.1.gz
+man/fr/man1/kmag.1.gz
+man/fr/man1/kmousetool.1.gz
+man/fr/man1/kmouth.1.gz
+man/fr/man1/kmplot.1.gz
+man/fr/man1/ktouch.1.gz
+man/fr/man1/makekdewidgets.1.gz
+man/fr/man1/okular.1.gz
+man/fr/man1/plasmaengineexplorer.1.gz
+man/fr/man1/plasmapkg.1.gz
+man/fr/man1/po2xml.1.gz
+man/fr/man1/preparetips.1.gz
+man/fr/man1/pruneemptydirs.1.gz
+man/fr/man1/qtdoc.1.gz
+man/fr/man1/reportview.1.gz
+man/fr/man1/split2po.1.gz
+man/fr/man1/swappo.1.gz
+man/fr/man1/transxx.1.gz
+man/fr/man1/xml2pot.1.gz
+man/fr/man1/zonetab2pot.py.1.gz
+man/fr/man6/amor.6.gz
+man/fr/man6/khangman.6.gz
+man/fr/man7/kdeoptions.7.gz
+man/fr/man7/qtoptions.7.gz
+man/fr/man8/kbuildsycoca4.8.gz
+man/fr/man8/kcookiejar4.8.gz
+man/fr/man8/kded4.8.gz
+man/fr/man8/kdeinit4.8.gz
+man/fr/man8/meinproc4.8.gz
+man/fr/man8/nepomukserver.8.gz
+man/fr/man8/nepomukservicestub.8.gz
 share/apps/autocorrect/fr.xml
 share/apps/khangman/fr.txt
 share/apps/ktuberling/sounds/fr.soundtheme
@@ -147,10 +205,14 @@ share/doc/HTML/fr/granatier/index.cache.bz2
 share/doc/HTML/fr/granatier/index.docbook
 share/doc/HTML/fr/gwenview/browse_mode.png
 share/doc/HTML/fr/gwenview/common
+share/doc/HTML/fr/gwenview/fullscreen-browse.png
+share/doc/HTML/fr/gwenview/fullscreen-view.png
 share/doc/HTML/fr/gwenview/fullscreen_mode.png
+share/doc/HTML/fr/gwenview/importer-picking-root-folder.png
 share/doc/HTML/fr/gwenview/importer.png
 share/doc/HTML/fr/gwenview/index.cache.bz2
 share/doc/HTML/fr/gwenview/index.docbook
+share/doc/HTML/fr/gwenview/start-page.png
 share/doc/HTML/fr/gwenview/view_mode.png
 share/doc/HTML/fr/jovie/common
 share/doc/HTML/fr/jovie/index.cache.bz2
@@ -226,9 +288,6 @@ share/doc/HTML/fr/kapptemplate/index.docbook
 share/doc/HTML/fr/katomic/common
 share/doc/HTML/fr/katomic/index.cache.bz2
 share/doc/HTML/fr/katomic/index.docbook
-share/doc/HTML/fr/kbattleship/common
-share/doc/HTML/fr/kbattleship/index.cache.bz2
-share/doc/HTML/fr/kbattleship/index.docbook
 share/doc/HTML/fr/kblackbox/common
 share/doc/HTML/fr/kblackbox/index.cache.bz2
 share/doc/HTML/fr/kblackbox/index.docbook
@@ -811,7 +870,6 @@ share/doc/HTML/fr/klinkstatus/index.docbook
 share/doc/HTML/fr/klipper/common
 share/doc/HTML/fr/klipper/index.cache.bz2
 share/doc/HTML/fr/klipper/index.docbook
-share/doc/HTML/fr/klipper/screenshot.png
 share/doc/HTML/fr/kmag/common
 share/doc/HTML/fr/kmag/index.cache.bz2
 share/doc/HTML/fr/kmag/index.docbook
@@ -828,18 +886,6 @@ share/doc/HTML/fr/kmahjongg/index.cache.bz2
 share/doc/HTML/fr/kmahjongg/index.docbook
 share/doc/HTML/fr/kmahjongg/numbered.png
 share/doc/HTML/fr/kmahjongg/shortcuts.png
-share/doc/HTML/fr/kmail/common
-share/doc/HTML/fr/kmail/configure.docbook
-share/doc/HTML/fr/kmail/credits-and-licenses.docbook
-share/doc/HTML/fr/kmail/faq.docbook
-share/doc/HTML/fr/kmail/getting-started.docbook
-share/doc/HTML/fr/kmail/importing.docbook
-share/doc/HTML/fr/kmail/index.cache.bz2
-share/doc/HTML/fr/kmail/index.docbook
-share/doc/HTML/fr/kmail/intro.docbook
-share/doc/HTML/fr/kmail/menus.docbook
-share/doc/HTML/fr/kmail/troubleshooting.docbook
-share/doc/HTML/fr/kmail/using-kmail.docbook
 share/doc/HTML/fr/kmenuedit/common
 share/doc/HTML/fr/kmenuedit/done.png
 share/doc/HTML/fr/kmenuedit/index.cache.bz2
@@ -892,6 +938,9 @@ share/doc/HTML/fr/kmplot/settings-fonts.png
 share/doc/HTML/fr/kmplot/settings-general.png
 share/doc/HTML/fr/kmplot/settings-graphing.png
 share/doc/HTML/fr/kmplot/using.docbook
+share/doc/HTML/fr/knavalbattle/common
+share/doc/HTML/fr/knavalbattle/index.cache.bz2
+share/doc/HTML/fr/knavalbattle/index.docbook
 share/doc/HTML/fr/knetattach/common
 share/doc/HTML/fr/knetattach/index.cache.bz2
 share/doc/HTML/fr/knetattach/index.docbook
@@ -1058,6 +1107,9 @@ share/doc/HTML/fr/kopete/index.docbook
 share/doc/HTML/fr/kopete/menus.docbook
 share/doc/HTML/fr/kopete/otr-auth-1.png
 share/doc/HTML/fr/kopete/pipes.docbook
+share/doc/HTML/fr/korganizer/common
+share/doc/HTML/fr/korganizer/index.cache.bz2
+share/doc/HTML/fr/korganizer/index.docbook
 share/doc/HTML/fr/kpat/clubs.png
 share/doc/HTML/fr/kpat/common
 share/doc/HTML/fr/kpat/diamonds.png
@@ -1142,118 +1194,6 @@ share/doc/HTML/fr/kspaceduel/kspaceduel3.png
 share/doc/HTML/fr/ksquares/common
 share/doc/HTML/fr/ksquares/index.cache.bz2
 share/doc/HTML/fr/ksquares/index.docbook
-share/doc/HTML/fr/kstars/aavso.png
-share/doc/HTML/fr/kstars/ai-contents.docbook
-share/doc/HTML/fr/kstars/altvstime.docbook
-share/doc/HTML/fr/kstars/altvstime.png
-share/doc/HTML/fr/kstars/astroinfo.docbook
-share/doc/HTML/fr/kstars/blackbody.docbook
-share/doc/HTML/fr/kstars/blackbody.png
-share/doc/HTML/fr/kstars/calc-altvstime.png
-share/doc/HTML/fr/kstars/calc-angdist.docbook
-share/doc/HTML/fr/kstars/calc-angdist.png
-share/doc/HTML/fr/kstars/calc-apcoords.docbook
-share/doc/HTML/fr/kstars/calc-apcoords.png
-share/doc/HTML/fr/kstars/calc-appcoords.png
-share/doc/HTML/fr/kstars/calc-dayduration.docbook
-share/doc/HTML/fr/kstars/calc-daylength.png
-share/doc/HTML/fr/kstars/calc-ecliptic.docbook
-share/doc/HTML/fr/kstars/calc-ecliptic.png
-share/doc/HTML/fr/kstars/calc-eqgal.docbook
-share/doc/HTML/fr/kstars/calc-eqgal.png
-share/doc/HTML/fr/kstars/calc-equinox.docbook
-share/doc/HTML/fr/kstars/calc-equinox.png
-share/doc/HTML/fr/kstars/calc-geodetic.docbook
-share/doc/HTML/fr/kstars/calc-geodetic.png
-share/doc/HTML/fr/kstars/calc-horizontal.docbook
-share/doc/HTML/fr/kstars/calc-horizontal.png
-share/doc/HTML/fr/kstars/calc-julian.png
-share/doc/HTML/fr/kstars/calc-julianday.docbook
-share/doc/HTML/fr/kstars/calc-planetcoords.docbook
-share/doc/HTML/fr/kstars/calc-planetcoords.png
-share/doc/HTML/fr/kstars/calc-precess.png
-share/doc/HTML/fr/kstars/calc-sidereal.docbook
-share/doc/HTML/fr/kstars/calc-sidereal.png
-share/doc/HTML/fr/kstars/calculator.docbook
-share/doc/HTML/fr/kstars/cequator.docbook
-share/doc/HTML/fr/kstars/color_indices.png
-share/doc/HTML/fr/kstars/colorandtemp.docbook
-share/doc/HTML/fr/kstars/commands.docbook
-share/doc/HTML/fr/kstars/common
-share/doc/HTML/fr/kstars/config.docbook
-share/doc/HTML/fr/kstars/cosmicdist.docbook
-share/doc/HTML/fr/kstars/cpoles.docbook
-share/doc/HTML/fr/kstars/credits.docbook
-share/doc/HTML/fr/kstars/csphere.docbook
-share/doc/HTML/fr/kstars/darkmatter.docbook
-share/doc/HTML/fr/kstars/detaildialog.png
-share/doc/HTML/fr/kstars/details.docbook
-share/doc/HTML/fr/kstars/devicemanager.png
-share/doc/HTML/fr/kstars/dumpmode.docbook
-share/doc/HTML/fr/kstars/ecliptic.docbook
-share/doc/HTML/fr/kstars/ellipticalgalaxies.docbook
-share/doc/HTML/fr/kstars/epoch.docbook
-share/doc/HTML/fr/kstars/equinox.docbook
-share/doc/HTML/fr/kstars/faq.docbook
-share/doc/HTML/fr/kstars/find.png
-share/doc/HTML/fr/kstars/fitsarea.png
-share/doc/HTML/fr/kstars/fitsviewer.docbook
-share/doc/HTML/fr/kstars/flux.docbook
-share/doc/HTML/fr/kstars/fovdialog.png
-share/doc/HTML/fr/kstars/geocoords.docbook
-share/doc/HTML/fr/kstars/geolocator.png
-share/doc/HTML/fr/kstars/graph1.png
-share/doc/HTML/fr/kstars/graph2.png
-share/doc/HTML/fr/kstars/graph3.png
-share/doc/HTML/fr/kstars/greatcircle.docbook
-share/doc/HTML/fr/kstars/horizon.docbook
-share/doc/HTML/fr/kstars/hourangle.docbook
-share/doc/HTML/fr/kstars/index.cache.bz2
-share/doc/HTML/fr/kstars/index.docbook
-share/doc/HTML/fr/kstars/indi.docbook
-share/doc/HTML/fr/kstars/indiclient.png
-share/doc/HTML/fr/kstars/indieclient.png
-share/doc/HTML/fr/kstars/install.docbook
-share/doc/HTML/fr/kstars/jmoons.docbook
-share/doc/HTML/fr/kstars/jmoons.png
-share/doc/HTML/fr/kstars/julianday.docbook
-share/doc/HTML/fr/kstars/kepler2nd.png
-share/doc/HTML/fr/kstars/leapyear.docbook
-share/doc/HTML/fr/kstars/lightcurve.png
-share/doc/HTML/fr/kstars/lightcurves.docbook
-share/doc/HTML/fr/kstars/luminosity.docbook
-share/doc/HTML/fr/kstars/magnitude.docbook
-share/doc/HTML/fr/kstars/meridian.docbook
-share/doc/HTML/fr/kstars/newfov.png
-share/doc/HTML/fr/kstars/observinglist.docbook
-share/doc/HTML/fr/kstars/observinglist.png
-share/doc/HTML/fr/kstars/obsplanner.docbook
-share/doc/HTML/fr/kstars/parallax.docbook
-share/doc/HTML/fr/kstars/popup.png
-share/doc/HTML/fr/kstars/precession.docbook
-share/doc/HTML/fr/kstars/quicktour.docbook
-share/doc/HTML/fr/kstars/retrograde.docbook
-share/doc/HTML/fr/kstars/screen1.png
-share/doc/HTML/fr/kstars/screen2.png
-share/doc/HTML/fr/kstars/screen3.png
-share/doc/HTML/fr/kstars/screen4.png
-share/doc/HTML/fr/kstars/scriptbuilder.docbook
-share/doc/HTML/fr/kstars/scriptbuilder.png
-share/doc/HTML/fr/kstars/sidereal.docbook
-share/doc/HTML/fr/kstars/skycoords.docbook
-share/doc/HTML/fr/kstars/solarsys.docbook
-share/doc/HTML/fr/kstars/solarsystem.png
-share/doc/HTML/fr/kstars/spiralgalaxies.docbook
-share/doc/HTML/fr/kstars/star_colors.png
-share/doc/HTML/fr/kstars/stars.docbook
-share/doc/HTML/fr/kstars/telescopes.docbook
-share/doc/HTML/fr/kstars/timezones.docbook
-share/doc/HTML/fr/kstars/tools.docbook
-share/doc/HTML/fr/kstars/utime.docbook
-share/doc/HTML/fr/kstars/viewops.png
-share/doc/HTML/fr/kstars/wut.docbook
-share/doc/HTML/fr/kstars/wut.png
-share/doc/HTML/fr/kstars/zenith.docbook
 share/doc/HTML/fr/ksudoku/common
 share/doc/HTML/fr/ksudoku/index.cache.bz2
 share/doc/HTML/fr/ksudoku/index.docbook
@@ -1394,9 +1334,6 @@ share/doc/HTML/fr/marble/routing-5.png
 share/doc/HTML/fr/marble/routing-6.png
 share/doc/HTML/fr/marble/search-1.png
 share/doc/HTML/fr/marble/search-2.png
-share/doc/HTML/fr/okteta/common
-share/doc/HTML/fr/okteta/index.cache.bz2
-share/doc/HTML/fr/okteta/index.docbook
 share/doc/HTML/fr/okular/annotation-properties.png
 share/doc/HTML/fr/okular/annotations.png
 share/doc/HTML/fr/okular/bookmark-management.png
@@ -1496,9 +1433,6 @@ share/doc/HTML/fr/picmi/index.docbook
 share/doc/HTML/fr/plasma-desktop/common
 share/doc/HTML/fr/plasma-desktop/index.cache.bz2
 share/doc/HTML/fr/plasma-desktop/index.docbook
-share/doc/HTML/fr/rocs/common
-share/doc/HTML/fr/rocs/index.cache.bz2
-share/doc/HTML/fr/rocs/index.docbook
 share/doc/HTML/fr/sonnet/common
 share/doc/HTML/fr/sonnet/index.cache.bz2
 share/doc/HTML/fr/sonnet/index.docbook
@@ -1519,14 +1453,17 @@ share/locale/fr/LC_MESSAGES/accountwizard_maildir.mo
 share/locale/fr/LC_MESSAGES/accountwizard_pop3.mo
 share/locale/fr/LC_MESSAGES/accountwizard_tine20.mo
 share/locale/fr/LC_MESSAGES/activitymanager_plugin_globalshortcuts.mo
-share/locale/fr/LC_MESSAGES/activitymanager_uihandler_declarative.mo
 share/locale/fr/LC_MESSAGES/adblock.mo
 share/locale/fr/LC_MESSAGES/akonadi-filestore.mo
 share/locale/fr/LC_MESSAGES/akonadi_archivemail_agent.mo
 share/locale/fr/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/fr/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/fr/LC_MESSAGES/akonadi_davgroupware_resource.mo
-share/locale/fr/LC_MESSAGES/akonadi_google_resource.mo
+share/locale/fr/LC_MESSAGES/akonadi_facebook_resource.mo
+share/locale/fr/LC_MESSAGES/akonadi_folderarchive_agent.mo
+share/locale/fr/LC_MESSAGES/akonadi_followupreminder_agent.mo
+share/locale/fr/LC_MESSAGES/akonadi_googlecalendar_resource.mo
+share/locale/fr/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/fr/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/fr/LC_MESSAGES/akonadi_icaldir_resource.mo
 share/locale/fr/LC_MESSAGES/akonadi_imap_resource.mo
@@ -1545,13 +1482,16 @@ share/locale/fr/LC_MESSAGES/akonadi_mailfilter_agent.mo
 share/locale/fr/LC_MESSAGES/akonadi_mailtransport_resource.mo
 share/locale/fr/LC_MESSAGES/akonadi_mbox_resource.mo
 share/locale/fr/LC_MESSAGES/akonadi_microblog_resource.mo
+share/locale/fr/LC_MESSAGES/akonadi_migration_agent.mo
 share/locale/fr/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
 share/locale/fr/LC_MESSAGES/akonadi_nepomuk_feeder.mo
 share/locale/fr/LC_MESSAGES/akonadi_nepomuktag_resource.mo
+share/locale/fr/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/fr/LC_MESSAGES/akonadi_next.mo
 share/locale/fr/LC_MESSAGES/akonadi_nntp_resource.mo
 share/locale/fr/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/fr/LC_MESSAGES/akonadi_pop3_resource.mo
+share/locale/fr/LC_MESSAGES/akonadi_sendlater_agent.mo
 share/locale/fr/LC_MESSAGES/akonadi_serializer_plugins.mo
 share/locale/fr/LC_MESSAGES/akonadi_singlefile_resource.mo
 share/locale/fr/LC_MESSAGES/akonadi_strigi_feeder.mo
@@ -1575,9 +1515,11 @@ share/locale/fr/LC_MESSAGES/blinken.mo
 share/locale/fr/LC_MESSAGES/blogilo.mo
 share/locale/fr/LC_MESSAGES/bomber.mo
 share/locale/fr/LC_MESSAGES/bovo.mo
+share/locale/fr/LC_MESSAGES/calendarjanitor.mo
 share/locale/fr/LC_MESSAGES/calendarsupport.mo
 share/locale/fr/LC_MESSAGES/cantor.mo
 share/locale/fr/LC_MESSAGES/cervisia.mo
+share/locale/fr/LC_MESSAGES/contactthemeeditor.mo
 share/locale/fr/LC_MESSAGES/cryptopageplugin.mo
 share/locale/fr/LC_MESSAGES/cvsservice.mo
 share/locale/fr/LC_MESSAGES/dirfilterplugin.mo
@@ -1594,8 +1536,10 @@ share/locale/fr/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/fr/LC_MESSAGES/fileviewsvnplugin.mo
 share/locale/fr/LC_MESSAGES/freespacenotifier.mo
 share/locale/fr/LC_MESSAGES/fsview.mo
+share/locale/fr/LC_MESSAGES/gid-migrator.mo
 share/locale/fr/LC_MESSAGES/granatier.mo
 share/locale/fr/LC_MESSAGES/gwenview.mo
+share/locale/fr/LC_MESSAGES/headerthemeeditor.mo
 share/locale/fr/LC_MESSAGES/htmlsearch.mo
 share/locale/fr/LC_MESSAGES/imagerename_plugin.mo
 share/locale/fr/LC_MESSAGES/imgalleryplugin.mo
@@ -1622,6 +1566,8 @@ share/locale/fr/LC_MESSAGES/kajongg.mo
 share/locale/fr/LC_MESSAGES/kalarm.mo
 share/locale/fr/LC_MESSAGES/kalgebra.mo
 share/locale/fr/LC_MESSAGES/kalzium.mo
+share/locale/fr/LC_MESSAGES/kanagram-active.mo
+share/locale/fr/LC_MESSAGES/kanagram-engine.mo
 share/locale/fr/LC_MESSAGES/kanagram-harmattan.mo
 share/locale/fr/LC_MESSAGES/kanagram.mo
 share/locale/fr/LC_MESSAGES/kapman.mo
@@ -1631,6 +1577,7 @@ share/locale/fr/LC_MESSAGES/kate.mo
 share/locale/fr/LC_MESSAGES/kate_kttsd.mo
 share/locale/fr/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/fr/LC_MESSAGES/katebuild-plugin.mo
+share/locale/fr/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/fr/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/fr/LC_MESSAGES/katefiletemplates.mo
 share/locale/fr/LC_MESSAGES/kategdbplugin.mo
@@ -1641,7 +1588,6 @@ share/locale/fr/LC_MESSAGES/kateopenheader.mo
 share/locale/fr/LC_MESSAGES/katepart4.mo
 share/locale/fr/LC_MESSAGES/kateproject.mo
 share/locale/fr/LC_MESSAGES/katesearch.mo
-share/locale/fr/LC_MESSAGES/katesnippets_tng.mo
 share/locale/fr/LC_MESSAGES/katesnippetsplugin.mo
 share/locale/fr/LC_MESSAGES/katesql.mo
 share/locale/fr/LC_MESSAGES/katesymbolviewer.mo
@@ -1651,7 +1597,6 @@ share/locale/fr/LC_MESSAGES/katetextfilter.mo
 share/locale/fr/LC_MESSAGES/katexmlcheck.mo
 share/locale/fr/LC_MESSAGES/katexmltools.mo
 share/locale/fr/LC_MESSAGES/katomic.mo
-share/locale/fr/LC_MESSAGES/kbattleship.mo
 share/locale/fr/LC_MESSAGES/kblackbox.mo
 share/locale/fr/LC_MESSAGES/kblankscrn.mo
 share/locale/fr/LC_MESSAGES/kblocks.mo
@@ -1682,9 +1627,9 @@ share/locale/fr/LC_MESSAGES/kcm_memory.mo
 share/locale/fr/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/fr/LC_MESSAGES/kcm_pci.mo
 share/locale/fr/LC_MESSAGES/kcm_phonon.mo
+share/locale/fr/LC_MESSAGES/kcm_pimactivity.mo
 share/locale/fr/LC_MESSAGES/kcm_platform.mo
 share/locale/fr/LC_MESSAGES/kcm_remotecontrol.mo
-share/locale/fr/LC_MESSAGES/kcm_solid.mo
 share/locale/fr/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/fr/LC_MESSAGES/kcm_standard_actions.mo
 share/locale/fr/LC_MESSAGES/kcmaccess.mo
@@ -1859,6 +1804,7 @@ share/locale/fr/LC_MESSAGES/kmix.mo
 share/locale/fr/LC_MESSAGES/kmousetool.mo
 share/locale/fr/LC_MESSAGES/kmouth.mo
 share/locale/fr/LC_MESSAGES/kmplot.mo
+share/locale/fr/LC_MESSAGES/knavalbattle.mo
 share/locale/fr/LC_MESSAGES/knetattach.mo
 share/locale/fr/LC_MESSAGES/knetwalk.mo
 share/locale/fr/LC_MESSAGES/knode.mo
@@ -1878,6 +1824,7 @@ share/locale/fr/LC_MESSAGES/konsoleprofiles.mo
 share/locale/fr/LC_MESSAGES/kontact.mo
 share/locale/fr/LC_MESSAGES/kontactinterfaces.mo
 share/locale/fr/LC_MESSAGES/kopete.mo
+share/locale/fr/LC_MESSAGES/korgac.mo
 share/locale/fr/LC_MESSAGES/korganizer-mobile.mo
 share/locale/fr/LC_MESSAGES/korganizer.mo
 share/locale/fr/LC_MESSAGES/kpartloader.mo
@@ -1929,8 +1876,6 @@ share/locale/fr/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/fr/LC_MESSAGES/ksystemlog.mo
 share/locale/fr/LC_MESSAGES/ksystraycmd.mo
 share/locale/fr/LC_MESSAGES/kteatime.mo
-share/locale/fr/LC_MESSAGES/ktesnippets_editor.mo
-share/locale/fr/LC_MESSAGES/ktexteditor_codesnippets_core.mo
 share/locale/fr/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/fr/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
 share/locale/fr/LC_MESSAGES/ktimer.mo
@@ -1955,6 +1900,7 @@ share/locale/fr/LC_MESSAGES/kwin.mo
 share/locale/fr/LC_MESSAGES/kwin_art_clients.mo
 share/locale/fr/LC_MESSAGES/kwin_clients.mo
 share/locale/fr/LC_MESSAGES/kwin_effects.mo
+share/locale/fr/LC_MESSAGES/kwin_scripting.mo
 share/locale/fr/LC_MESSAGES/kwinshutdown.mo
 share/locale/fr/LC_MESSAGES/kwinstartmenu.mo
 share/locale/fr/LC_MESSAGES/kwordquiz.mo
@@ -1965,9 +1911,14 @@ share/locale/fr/LC_MESSAGES/kxsconfig.mo
 share/locale/fr/LC_MESSAGES/lancelot.mo
 share/locale/fr/LC_MESSAGES/libakonadi-calendar.mo
 share/locale/fr/LC_MESSAGES/libakonadi-kmime.mo
+share/locale/fr/LC_MESSAGES/libakonadi-xml.mo
 share/locale/fr/LC_MESSAGES/libakonadi.mo
+share/locale/fr/LC_MESSAGES/libcomposereditorng.mo
 share/locale/fr/LC_MESSAGES/libeventviews.mo
+share/locale/fr/LC_MESSAGES/libgrantleetheme.mo
+share/locale/fr/LC_MESSAGES/libgrantleethemeeditor.mo
 share/locale/fr/LC_MESSAGES/libincidenceeditors.mo
+share/locale/fr/LC_MESSAGES/libkaddressbookgrantlee.mo
 share/locale/fr/LC_MESSAGES/libkalarmcal.mo
 share/locale/fr/LC_MESSAGES/libkasten.mo
 share/locale/fr/LC_MESSAGES/libkblog.mo
@@ -1989,6 +1940,7 @@ share/locale/fr/LC_MESSAGES/libkldap.mo
 share/locale/fr/LC_MESSAGES/libkleopatra.mo
 share/locale/fr/LC_MESSAGES/libkmahjongg.mo
 share/locale/fr/LC_MESSAGES/libkmime.mo
+share/locale/fr/LC_MESSAGES/libkomparediff2.mo
 share/locale/fr/LC_MESSAGES/libkonq.mo
 share/locale/fr/LC_MESSAGES/libkpgp.mo
 share/locale/fr/LC_MESSAGES/libkpimidentities.mo
@@ -2016,11 +1968,13 @@ share/locale/fr/LC_MESSAGES/liboktetagui.mo
 share/locale/fr/LC_MESSAGES/liboktetakasten.mo
 share/locale/fr/LC_MESSAGES/liboxygenstyleconfig.mo
 share/locale/fr/LC_MESSAGES/libphonon.mo
+share/locale/fr/LC_MESSAGES/libpimactivity.mo
 share/locale/fr/LC_MESSAGES/libpimcommon.mo
 share/locale/fr/LC_MESSAGES/libplasma.mo
 share/locale/fr/LC_MESSAGES/libplasma_groupingcontainment.mo
 share/locale/fr/LC_MESSAGES/libplasmaclock.mo
 share/locale/fr/LC_MESSAGES/libplasmaweather.mo
+share/locale/fr/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/fr/LC_MESSAGES/libtaskmanager.mo
 share/locale/fr/LC_MESSAGES/libtemplateparser.mo
 share/locale/fr/LC_MESSAGES/lokalize.mo
@@ -2029,6 +1983,7 @@ share/locale/fr/LC_MESSAGES/mailreader.mo
 share/locale/fr/LC_MESSAGES/marble.mo
 share/locale/fr/LC_MESSAGES/marble_qt.mo
 share/locale/fr/LC_MESSAGES/marble_xml_mimetypes.mo
+share/locale/fr/LC_MESSAGES/mboximporter.mo
 share/locale/fr/LC_MESSAGES/messageviewer_application_mstnef_plugin.mo
 share/locale/fr/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
 share/locale/fr/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
@@ -2039,15 +1994,14 @@ share/locale/fr/LC_MESSAGES/mplayerthumbs.mo
 share/locale/fr/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/fr/LC_MESSAGES/nepomukbackup.mo
 share/locale/fr/LC_MESSAGES/nepomukcleaner.mo
-share/locale/fr/LC_MESSAGES/nepomukcontroller.mo
 share/locale/fr/LC_MESSAGES/nepomukfileindexer.mo
+share/locale/fr/LC_MESSAGES/nepomukfilewatch.mo
+share/locale/fr/LC_MESSAGES/nepomukmigrator.mo
 share/locale/fr/LC_MESSAGES/nepomukpimindexerutility.mo
-share/locale/fr/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/fr/LC_MESSAGES/nepomukserver.mo
 share/locale/fr/LC_MESSAGES/nepomukservicestub.mo
 share/locale/fr/LC_MESSAGES/nepomukstorage.mo
 share/locale/fr/LC_MESSAGES/nepomukwidgets.mo
-share/locale/fr/LC_MESSAGES/newmailnotifieragent.mo
 share/locale/fr/LC_MESSAGES/notes-mobile.mo
 share/locale/fr/LC_MESSAGES/nsplugin.mo
 share/locale/fr/LC_MESSAGES/okteta-mobile.mo
@@ -2068,12 +2022,14 @@ share/locale/fr/LC_MESSAGES/okular_ooo.mo
 share/locale/fr/LC_MESSAGES/okular_plucker.mo
 share/locale/fr/LC_MESSAGES/okular_poppler.mo
 share/locale/fr/LC_MESSAGES/okular_tiff.mo
+share/locale/fr/LC_MESSAGES/okular_txt.mo
 share/locale/fr/LC_MESSAGES/okular_xps.mo
 share/locale/fr/LC_MESSAGES/org.kde.active.documentviewer.mo
 share/locale/fr/LC_MESSAGES/pairs.mo
 share/locale/fr/LC_MESSAGES/pairseditor.mo
 share/locale/fr/LC_MESSAGES/palapeli.mo
 share/locale/fr/LC_MESSAGES/parley.mo
+share/locale/fr/LC_MESSAGES/pate.mo
 share/locale/fr/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/fr/LC_MESSAGES/phonon_kde.mo
 share/locale/fr/LC_MESSAGES/phonon_vlc.mo
@@ -2109,7 +2065,7 @@ share/locale/fr/LC_MESSAGES/plasma_applet_groupingpanel.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_icontasks.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_incomingmsg.mo
-share/locale/fr/LC_MESSAGES/plasma_applet_kalgebra.mo
+share/locale/fr/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_katesession.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_kdeobservatory.mo
@@ -2135,6 +2091,7 @@ share/locale/fr/LC_MESSAGES/plasma_applet_nuclearCalculator.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_opendesktop.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_opendesktop_activities.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.notifications.mo
+share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.printmanager.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.showActivityManager.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_panel.mo
@@ -2143,7 +2100,6 @@ share/locale/fr/LC_MESSAGES/plasma_applet_paste.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_pastebin.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_plasmaboard.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_previewer.mo
-share/locale/fr/LC_MESSAGES/plasma_applet_printmanager.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_qalculate.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_qstardict.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_quicklaunch.mo
@@ -2173,7 +2129,6 @@ share/locale/fr/LC_MESSAGES/plasma_containmentactions_contextmenu.mo
 share/locale/fr/LC_MESSAGES/plasma_containmentactions_switchactivity.mo
 share/locale/fr/LC_MESSAGES/plasma_containmentactions_switchdesktop.mo
 share/locale/fr/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
-share/locale/fr/LC_MESSAGES/plasma_engine_calendar.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_kdeobservatory.mo
 share/locale/fr/LC_MESSAGES/plasma_engine_keystate.mo
@@ -2220,6 +2175,7 @@ share/locale/fr/LC_MESSAGES/plasma_runner_sessions.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_shell.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_solid.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_spellcheckrunner.mo
+share/locale/fr/LC_MESSAGES/plasma_runner_translator.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_windowedwidgets.mo
 share/locale/fr/LC_MESSAGES/plasma_runner_windows.mo
@@ -2234,7 +2190,6 @@ share/locale/fr/LC_MESSAGES/plasma_wallpaper_marble.mo
 share/locale/fr/LC_MESSAGES/plasma_wallpaper_pattern.mo
 share/locale/fr/LC_MESSAGES/plasma_wallpaper_potd.mo
 share/locale/fr/LC_MESSAGES/plasma_wallpaper_virus.mo
-share/locale/fr/LC_MESSAGES/plasma_wallpaper_wallpaper-qml.mo
 share/locale/fr/LC_MESSAGES/plasma_wallpaper_weather.mo
 share/locale/fr/LC_MESSAGES/plasmagenericshell.mo
 share/locale/fr/LC_MESSAGES/plasmapkg.mo
@@ -2253,9 +2208,7 @@ share/locale/fr/LC_MESSAGES/rocscore.mo
 share/locale/fr/LC_MESSAGES/rocsvisualeditor.mo
 share/locale/fr/LC_MESSAGES/searchbarplugin.mo
 share/locale/fr/LC_MESSAGES/solid-hardware.mo
-share/locale/fr/LC_MESSAGES/solid-network.mo
 share/locale/fr/LC_MESSAGES/solid_qt.mo
-share/locale/fr/LC_MESSAGES/solidcontrol.mo
 share/locale/fr/LC_MESSAGES/soliduiserver.mo
 share/locale/fr/LC_MESSAGES/step.mo
 share/locale/fr/LC_MESSAGES/step_qt.mo
@@ -2279,14 +2232,12 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/systemsettings
 @dirrm share/doc/HTML/fr/step
 @dirrm share/doc/HTML/fr/sonnet
-@dirrm share/doc/HTML/fr/rocs
 @dirrm share/doc/HTML/fr/plasma-desktop
 @dirrm share/doc/HTML/fr/picmi
 @dirrm share/doc/HTML/fr/parley
 @dirrm share/doc/HTML/fr/palapeli
 @dirrm share/doc/HTML/fr/onlinehelp
 @dirrm share/doc/HTML/fr/okular
-@dirrm share/doc/HTML/fr/okteta
 @dirrm share/doc/HTML/fr/marble
 @dirrm share/doc/HTML/fr/lskat
 @dirrm share/doc/HTML/fr/lokalize
@@ -2304,7 +2255,6 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/ksystemlog
 @dirrm share/doc/HTML/fr/ksysguard
 @dirrm share/doc/HTML/fr/ksudoku
-@dirrm share/doc/HTML/fr/kstars
 @dirrm share/doc/HTML/fr/ksquares
 @dirrm share/doc/HTML/fr/kspaceduel
 @dirrm share/doc/HTML/fr/ksnapshot
@@ -2316,6 +2266,7 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/krdc
 @dirrm share/doc/HTML/fr/kppp
 @dirrm share/doc/HTML/fr/kpat
+@dirrm share/doc/HTML/fr/korganizer
 @dirrm share/doc/HTML/fr/kopete
 @dirrm share/doc/HTML/fr/kontact-admin
 @dirrm share/doc/HTML/fr/kontact
@@ -2332,13 +2283,13 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/knode
 @dirrm share/doc/HTML/fr/knetwalk
 @dirrm share/doc/HTML/fr/knetattach
+@dirrm share/doc/HTML/fr/knavalbattle
 @dirrm share/doc/HTML/fr/kmplot
 @dirrm share/doc/HTML/fr/kmouth
 @dirrm share/doc/HTML/fr/kmousetool
 @dirrm share/doc/HTML/fr/kmix
 @dirrm share/doc/HTML/fr/kmines
 @dirrm share/doc/HTML/fr/kmenuedit
-@dirrm share/doc/HTML/fr/kmail
 @dirrm share/doc/HTML/fr/kmahjongg
 @dirrm share/doc/HTML/fr/kmag
 @dirrm share/doc/HTML/fr/klipper
@@ -2489,7 +2440,6 @@ share/locale/fr/entry.desktop
 @dirrm share/doc/HTML/fr/kbounce
 @dirrm share/doc/HTML/fr/kblocks
 @dirrm share/doc/HTML/fr/kblackbox
-@dirrm share/doc/HTML/fr/kbattleship
 @dirrm share/doc/HTML/fr/katomic
 @dirrm share/doc/HTML/fr/kapptemplate
 @dirrm share/doc/HTML/fr/kapman

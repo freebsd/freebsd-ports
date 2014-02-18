@@ -1,5 +1,5 @@
---- ./CMakeLists.txt.orig	2011-05-21 07:37:49.000000000 +1100
-+++ ./CMakeLists.txt	2011-08-15 14:56:28.177306481 +1100
+--- CMakeLists.txt.orig	2013-08-14 12:32:08.088461763 +0000
++++ CMakeLists.txt	2013-08-14 12:33:12.856460461 +0000
 @@ -36,17 +36,21 @@
  endif (DEPEND_PACKAGE_Marble)
  macro_log_feature(MARBLE_FOUND "Marble" "Desktop Globe" "http://marble.kde.org" FALSE "" "RECOMMENDED: Marble is used to provide a desktop globe wallpaper for Plasma.")

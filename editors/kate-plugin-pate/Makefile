@@ -2,10 +2,8 @@
 
 PORTNAME=	kate-plugin-pate
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	editors kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DISTNAME=	kate-${PORTVERSION}
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
@@ -23,9 +21,8 @@ USE_PYTHON=	yes
 DISTINFO_FILE=	${PORTSDIR}/editors/kate/distinfo
 
 # cmake.mk doesn't allow to overwrite BUILD_WRKSRC for out-of-source builds
-_pate_WRKSRC=	${BUILD_WRKSRC}/kate/plugins/pate
+_pate_WRKSRC=	${BUILD_WRKSRC}/addons/kate/pate
 
-NO_STAGE=	yes
 do-build:
 	cd ${_pate_WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET}

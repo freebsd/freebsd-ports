@@ -1,62 +1,40 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kdenetwork
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
-CATEGORIES=	net kde ipv6
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+CATEGORIES=	net kde
+DISTFILES=	#
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	KDE Network applications
+COMMENT=	KDE Network applications (meta port)
 
-LIB_DEPENDS=	libqca.so:${PORTSDIR}/devel/qca \
-		libktorrent.so:${PORTSDIR}/net-p2p/libktorrent \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libmms.so:${PORTSDIR}/net/libmms \
-		libjpeg.so:${PORTSDIR}/graphics/jpeg
-RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
+USE_KDE4=	kdeprefix
+NO_BUILD=	yes
+NO_INSTALL=	yes
+NO_MTREE=	yes
 
-LATEST_LINK=	${PORTNAME}4
-
-USE_KDE4=	kdehier kdelibs kdeprefix libkonq pimlibs workspace \
-		automoc4 ontologies strigi
-USES=		cmake:outsource
-USE_OPENSSL=	yes
-USE_QT4=	corelib gui sql \
-		moc_build qmake_build rcc_build uic_build
-USE_SQLITE=	yes
-USE_XORG=	x11 xdamage xext xscrnsaver xtst
-USE_XZ=		yes
-USE_LDCONFIG=	yes
-CONFIGURE_ENV=	XDG_CONFIG_HOME=/dev/null
-MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
-
-CMAKE_ARGS+=	-DBUILD_kopete=off \
-		-DBUILD_krdc=off \
-		-DBUILD_krfb=off
-
-OPTIONS_DEFINE=	KOPETE KRDC KRFB
+OPTIONS_DEFINE=	FILESHARING KDNSSD KGET KOPETE KRDC KRFB STRIGI
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
-KOPETE_DESC=	Multi-protocol instant messenger
-KRDC_DESC=	RDP and VNC client for KDE
-KRFB_DESC=	VNC server for KDE
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+FILESHARING_DESC=	Network file sharing via Samba
+FILESHARING_RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/sambausershareplugin.so:${PORTSDIR}/net/kdenetwork4-filesharing
 
-.if ${PORT_OPTIONS:MKOPETE}
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kopete:${PORTSDIR}/net-im/kopete-kde4
-.endif
+KDNSSD_DESC=		Network monitor for DNS-SD services (Zeroconf)
+KDNSSD_RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/kded_dnssdwatcher.so:${PORTSDIR}/net/kdnssd
 
-.if ${PORT_OPTIONS:MKRDC}
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/krdc:${PORTSDIR}/net/krdc
-.endif
+KGET_DESC=		Download manager
+KGET_RUN_DEPENDS=	${KDE4_PREFIX}/bin/kget:${PORTSDIR}/net/kget
 
-.if ${PORT_OPTIONS:MKRFB}
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/krfb:${PORTSDIR}/net/krfb
-.endif
+KOPETE_DESC=		Multi-protocol instant messenger
+KOPETE_RUN_DEPENDS=	${KDE4_PREFIX}/bin/kopete:${PORTSDIR}/net-im/kopete-kde4
+
+KRDC_DESC=		RDP and VNC client
+KRDC_RUN_DEPENDS=	${KDE4_PREFIX}/bin/krdc:${PORTSDIR}/net/krdc
+
+KRFB_DESC=		Desktop Sharing (VNC server)
+KRFB_RUN_DEPENDS=	${KDE4_PREFIX}/bin/krfb:${PORTSDIR}/net/krfb
+
+STRIGI_DESC=		Strigi analyzers for network-related file formats
+STRIGI_RUN_DEPENDS=	${KDE4_PREFIX}/lib/strigi/strigita_torrent_analyzer.so:${PORTSDIR}/net/kdenetwork4-strigi-analyzers
 
 .include <bsd.port.mk>

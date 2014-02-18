@@ -1,0 +1,8 @@
+bin/po2xml
+bin/split2po
+bin/swappo
+bin/xml2pot
+man/man1/po2xml.1.gz
+man/man1/split2po.1.gz
+man/man1/swappo.1.gz
+man/man1/xml2pot.1.gz

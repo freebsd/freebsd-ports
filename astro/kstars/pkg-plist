@@ -2,6 +2,8 @@ bin/kstars
 lib/libhtmesh.a
 share/applications/kde4/kstars.desktop
 share/apps/kstars/Cities.dat
+share/apps/kstars/Interesting.dat
+share/apps/kstars/PlanetFacts.dat
 share/apps/kstars/TZrules.dat
 share/apps/kstars/advinterface.dat
 share/apps/kstars/asteroids.dat
@@ -271,6 +273,13 @@ share/apps/kstars/textures/star.png
 share/apps/kstars/textures/sun.png
 share/apps/kstars/textures/uranus.png
 share/apps/kstars/textures/venus.png
+share/apps/kstars/tools/whatsinteresting/qml/ScrollBar.qml
+share/apps/kstars/tools/whatsinteresting/qml/leftArrow.png
+share/apps/kstars/tools/whatsinteresting/qml/next.png
+share/apps/kstars/tools/whatsinteresting/qml/previous.png
+share/apps/kstars/tools/whatsinteresting/qml/reloadIcon.png
+share/apps/kstars/tools/whatsinteresting/qml/settingsIcon.png
+share/apps/kstars/tools/whatsinteresting/qml/wiview.qml
 share/apps/kstars/tips
 share/apps/kstars/unnamedstars.dat
 share/apps/kstars/uranus.B0.vsop
@@ -448,6 +457,9 @@ share/icons/hicolor/48x48/apps/kstars.png
 share/icons/hicolor/64x64/apps/kstars.png
 share/icons/hicolor/scalable/apps/kstars.svgz
 @dirrm share/doc/HTML/en/kstars
+@dirrm share/apps/kstars/tools/whatsinteresting/qml
+@dirrm share/apps/kstars/tools/whatsinteresting
+@dirrm share/apps/kstars/tools
 @dirrm share/apps/kstars/textures
 @dirrm share/apps/kstars/scripts
 @dirrm share/apps/kstars/icons/hicolor/scalable/actions

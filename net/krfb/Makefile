@@ -2,21 +2,15 @@
 
 PORTNAME=	krfb
 PORTVERSION=	${KDE4_VERSION}
-CATEGORIES=	net kde ipv6
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DISTNAME=	kdenetwork-${PORTVERSION}
+CATEGORIES=	net kde
+MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	VNC server for KDE
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		telepathy-qt4.2:${PORTSDIR}/net-im/telepathy-qt4
-
-DISTINFO_FILE=	${.CURDIR}/../../net/kdenetwork4/distinfo
-
-CONFLICTS_INSTALL=	kdenetwork-4.[1-8].*
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libtelepathy-qt4.so:${PORTSDIR}/net-im/telepathy-qt4
 
 USES=		cmake:outsource
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
@@ -24,7 +18,4 @@ USE_QT4=	corelib gui network \
 		moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
 
-CMAKE_SOURCE_PATH=	${WRKSRC}/${PORTNAME}
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -9,9 +9,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Serbian messages and documentation for KDE SC 4
 
 KDE4_L10N=	sr
-MANLANG=	${KDE4_L10N} sr@latin
-NO_STAGE=	yes
-.include <${.CURDIR}/Makefile.man>
 
 .include "${.CURDIR}/../kde4-l10n/files/bsd.l10n.mk"
 .include <bsd.port.mk>

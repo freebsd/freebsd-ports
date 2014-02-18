@@ -1,0 +1,28 @@
+--- tests/CMakeLists.txt	2013-08-28 19:14:36.002837000 +0200
++++ tests/CMakeLists.txt	2014-01-12 00:03:59.284872188 +0100
+@@ -1,11 +1,14 @@
+ 
+ set(lauri_xml "${CMAKE_CURRENT_SOURCE_DIR}/lauri.xml")
+ 
+-if (HAVE_ANTLR AND GETTEXT_FOUND)
++find_program(CHECKXML_EXECUTABLE NAMES checkXML PATHS ${CMAKE_PREFIX}/bin)
++find_program(CHECKXML_EXECUTABLE NAMES checkXML)
++
++if (HAVE_ANTLR AND GETTEXT_FOUND AND CHECKXML_EXECUTABLE)
+ 
+ add_custom_command(
+   OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/lauri.pot
+-  COMMAND checkXML ${lauri_xml}
++  COMMAND ${CHECKXML_EXECUTABLE} ${lauri_xml}
+   COMMAND xml2pot ${lauri_xml} > lauri.pot
+   COMMAND msgmerge -o lauri.pot lauri.pot lauri.pot
+   DEPENDS ${lauri_xml}
+@@ -36,7 +39,7 @@
+ 
+ add_test(
+   NAME lauri_de
+-  COMMAND checkXML lauri_de.xml
++  COMMAND ${CHECKXML_EXECUTABLE} lauri_de.xml
+   WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+ )
+ 

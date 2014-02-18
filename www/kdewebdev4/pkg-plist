@@ -25,13 +25,13 @@ share/applications/kde4/kimagemapeditor.desktop
 share/applications/kde4/klinkstatus.desktop
 share/applnk/.hidden/kommander.desktop
 share/apps/kfilereplace/kfilereplaceui.rc
-share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/backup_option.png
-share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/casesensitive_option.png
-share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/command_option.png
-share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/filesimulate.png
-share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/invert.png
-share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/recursive_option.png
-share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions/regularexpression_option.png
+share/apps/kfilereplacepart/icons/hicolor/22x22/actions/backup_option.png
+share/apps/kfilereplacepart/icons/hicolor/22x22/actions/casesensitive_option.png
+share/apps/kfilereplacepart/icons/hicolor/22x22/actions/command_option.png
+share/apps/kfilereplacepart/icons/hicolor/22x22/actions/filesimulate.png
+share/apps/kfilereplacepart/icons/hicolor/22x22/actions/invert.png
+share/apps/kfilereplacepart/icons/hicolor/22x22/actions/recursive_option.png
+share/apps/kfilereplacepart/icons/hicolor/22x22/actions/regularexpression_option.png
 share/apps/kfilereplacepart/kfilereplacepartui.rc
 share/apps/kimagemapeditor/addpointcursor.png
 share/apps/kimagemapeditor/freehandcursor.png
@@ -131,9 +131,9 @@ share/kde4/services/krossmoduleklinkstatus.desktop
 @dirrm share/apps/klinkstatus/scripts
 @dirrm share/apps/klinkstatus
 @dirrm share/apps/kimagemapeditor
-@dirrm share/apps/kfilereplacepart/icons/crystalsvg/22x22/actions
-@dirrm share/apps/kfilereplacepart/icons/crystalsvg/22x22
-@dirrm share/apps/kfilereplacepart/icons/crystalsvg
+@dirrm share/apps/kfilereplacepart/icons/hicolor/22x22/actions
+@dirrm share/apps/kfilereplacepart/icons/hicolor/22x22
+@dirrm share/apps/kfilereplacepart/icons/hicolor
 @dirrm share/apps/kfilereplacepart/icons
 @dirrm share/apps/kfilereplacepart
 @dirrm share/apps/kfilereplace

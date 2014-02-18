@@ -10,19 +10,17 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	FreeBSD wallpapers designed by KDE artwork team
 
-CONFLICTS_INSTALL=	kde-workspace-4.[6-9].*
-
 USE_BZIP2=	yes
 USE_KDE4=	kdehier kdeprefix
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/share/apps/plasma-desktop/init
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/apps/plasma-desktop/init
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/wallpapers
 	${INSTALL_DATA} ${FILESDIR}/05-freebsdWallpaper.js \
-		${PREFIX}/share/apps/plasma-desktop/init
+		${STAGEDIR}${PREFIX}/share/apps/plasma-desktop/init
 	cd ${WRKSRC} && \
-		${COPYTREE_SHARE} . ${PREFIX}/share/wallpapers
+		${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/wallpapers
 
 .include <bsd.port.mk>

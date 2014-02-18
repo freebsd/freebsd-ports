@@ -3,16 +3,13 @@
 PORTNAME=	krossruby
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	devel kde ruby
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	kross-interpreters-${PORTVERSION}
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Ruby bindings for Qt/KDE
-
-CONFLICTS=	ruby1[89]-kdebindings-4.[0-6].*
 
 USE_KDE4=	kdehier kdelibs kdeprefix pimlibs automoc4
 USE_QT4=	corelib gui qmake_build moc_build uic_build rcc_build
@@ -25,5 +22,10 @@ CMAKE_ARGS+=	-DBUILD_python:BOOL=FALSE \
 
 PLIST_FILES=	lib/kde4/krossruby.so
 
-NO_STAGE=	yes
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} >= 2.0
+BROKEN=		Only works with Ruby 1.9
+.endif
+
+.include <bsd.port.post.mk>

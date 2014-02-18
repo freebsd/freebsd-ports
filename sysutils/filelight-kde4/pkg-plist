@@ -17,6 +17,7 @@ share/icons/hicolor/32x32/actions/view_filelight.png
 share/icons/hicolor/32x32/apps/filelight.png
 share/icons/hicolor/48x48/apps/filelight.png
 share/icons/hicolor/64x64/apps/filelight.png
+share/icons/hicolor/scalable/apps/filelight.svgz
 share/kde4/services/filelightpart.desktop
 @dirrm share/doc/HTML/en/filelight
 @dirrm share/apps/filelightpart

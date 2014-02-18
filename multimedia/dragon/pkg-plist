@@ -1,5 +1,6 @@
 bin/dragon
 lib/kde4/dragonpart.so
+man/man1/dragon.1.gz
 share/applications/kde4/dragonplayer.desktop
 share/apps/dragonplayer/dragonlogo.png
 share/apps/dragonplayer/dragonplayerui.rc

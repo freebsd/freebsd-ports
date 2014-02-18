@@ -45,7 +45,7 @@ share/locale/fa/LC_MESSAGES/katetextfilter.mo
 share/locale/fa/LC_MESSAGES/katexmlcheck.mo
 share/locale/fa/LC_MESSAGES/katexmltools.mo
 share/locale/fa/LC_MESSAGES/katomic.mo
-share/locale/fa/LC_MESSAGES/kbattleship.mo
+share/locale/fa/LC_MESSAGES/knavalbattle.mo
 share/locale/fa/LC_MESSAGES/kblackbox.mo
 share/locale/fa/LC_MESSAGES/kblankscrn.mo
 share/locale/fa/LC_MESSAGES/kbounce.mo
@@ -53,6 +53,7 @@ share/locale/fa/LC_MESSAGES/kbruch.mo
 share/locale/fa/LC_MESSAGES/kcachegrind.mo
 share/locale/fa/LC_MESSAGES/kcalc.mo
 share/locale/fa/LC_MESSAGES/kcharselect.mo
+share/locale/fa/LC_MESSAGES/kcm-kwin-scripts.mo
 share/locale/fa/LC_MESSAGES/kcm_attica.mo
 share/locale/fa/LC_MESSAGES/kcm_autostart.mo
 share/locale/fa/LC_MESSAGES/kcm_desktoppaths.mo
@@ -68,7 +69,6 @@ share/locale/fa/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/fa/LC_MESSAGES/kcm_pci.mo
 share/locale/fa/LC_MESSAGES/kcm_phonon.mo
 share/locale/fa/LC_MESSAGES/kcm_platform.mo
-share/locale/fa/LC_MESSAGES/kcm_solid.mo
 share/locale/fa/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/fa/LC_MESSAGES/kcm_standard_actions.mo
 share/locale/fa/LC_MESSAGES/kcmaccess.mo
@@ -325,9 +325,7 @@ share/locale/fa/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/fa/LC_MESSAGES/mf_konqplugin.mo
 share/locale/fa/LC_MESSAGES/minitoolsplugin.mo
 share/locale/fa/LC_MESSAGES/nepomukbackup.mo
-share/locale/fa/LC_MESSAGES/nepomukcontroller.mo
 share/locale/fa/LC_MESSAGES/nepomukfileindexer.mo
-share/locale/fa/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/fa/LC_MESSAGES/nepomukserver.mo
 share/locale/fa/LC_MESSAGES/nepomukservicestub.mo
 share/locale/fa/LC_MESSAGES/nepomukstorage.mo
@@ -351,6 +349,7 @@ share/locale/fa/LC_MESSAGES/plasma_applet_notifier.mo
 share/locale/fa/LC_MESSAGES/plasma_applet_pager.mo
 share/locale/fa/LC_MESSAGES/plasma_applet_tasks.mo
 share/locale/fa/LC_MESSAGES/plasma_applet_trash.mo
+share/locale/fa/LC_MESSAGES/plasma_containmentactions_contextmenu.mo
 share/locale/fa/LC_MESSAGES/plasma_runner_locations.mo
 share/locale/fa/LC_MESSAGES/plasma_runner_webshortcuts.mo
 share/locale/fa/LC_MESSAGES/plasma_scriptengine_qscript.mo
@@ -361,8 +360,6 @@ share/locale/fa/LC_MESSAGES/processui.mo
 share/locale/fa/LC_MESSAGES/rellinks.mo
 share/locale/fa/LC_MESSAGES/searchbarplugin.mo
 share/locale/fa/LC_MESSAGES/solid-hardware.mo
-share/locale/fa/LC_MESSAGES/solid-network.mo
-share/locale/fa/LC_MESSAGES/solidcontrol.mo
 share/locale/fa/LC_MESSAGES/soliduiserver.mo
 share/locale/fa/LC_MESSAGES/strigila_diff.mo
 share/locale/fa/LC_MESSAGES/superkaramba.mo

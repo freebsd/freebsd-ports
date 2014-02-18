@@ -12,7 +12,7 @@ lib/kde4/plugins
 lib/kde4/plugins/designer
 @comment One must remember to update this when Grantlee changes its version number.
 lib/kde4/plugins/grantlee
-lib/kde4/plugins/grantlee/0.3
+lib/kde4/plugins/grantlee/0.4
 lib/kde4/plugins/styles
 lib/strigi
 share/applications/kde4

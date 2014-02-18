@@ -459,6 +459,7 @@
     SUBDIR += kiriki
     SUBDIR += kjumpingcube
     SUBDIR += klavaro
+    SUBDIR += klickety
     SUBDIR += klines
     SUBDIR += klondike
     SUBDIR += kmahjongg
@@ -720,6 +721,7 @@
     SUBDIR += pengupop
     SUBDIR += phalanx
     SUBDIR += phlipple
+    SUBDIR += picmi
     SUBDIR += pinball
     SUBDIR += pingus
     SUBDIR += pink-pony
