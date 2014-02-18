@@ -4,12 +4,12 @@ lib/libgupnp-igd-1.0.a
 lib/libgupnp-igd-1.0.la
 lib/libgupnp-igd-1.0.so
 lib/libgupnp-igd-1.0.so.5
-%%PYTHON_SITELIBDIR%%/gupnp/__init__.py
-%%PYTHON_SITELIBDIR%%/gupnp/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gupnp/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gupnp/igd.a
-%%PYTHON_SITELIBDIR%%/gupnp/igd.la
-%%PYTHON_SITELIBDIR%%/gupnp/igd.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gupnp/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gupnp/__init__.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gupnp/__init__.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gupnp/igd.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gupnp/igd.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/gupnp/igd.so
 lib/girepository-1.0/GUPnPIgd-1.0.typelib
 libdata/pkgconfig/gupnp-igd-1.0.pc
 share/gir-1.0/GUPnPIgd-1.0.gir
@@ -28,8 +28,8 @@ share/gtk-doc/html/gupnp-igd/up.png
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
 @dirrmtry share/gir-1.0
-@dirrmtry %%PYTHON_SITELIBDIR%%/gupnp
-@dirrmtry %%PYTHON_SITELIBDIR%%
+%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%/gupnp
+%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrmtry lib/girepository-1.0
 @dirrmtry include/gupnp-igd-1.0/libgupnp-igd
 @dirrmtry include/gupnp-igd-1.0

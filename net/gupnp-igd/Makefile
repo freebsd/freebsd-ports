@@ -17,14 +17,20 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pygobject-2.0.pc:${PORTSDIR}/devel
 LIB_DEPENDS=	libgupnp-1.0.so:${PORTSDIR}/net/gupnp
 RUN_DEPENDS=	gupnp>=0.18:${PORTSDIR}/net/gupnp
 
+OPTIONS_DEFINE=	PYTHON
+OPTIONS_DEFAULT=PYTHON
+OPTIONS_SUB=	yes
+
 CONFIGURE_ARGS=	--enable-introspection=yes
 GNU_CONFIGURE=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG=${STRIP}
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
-USE_PYTHON=	yes
 USE_XZ=		yes
 USES=		gmake pathfix pkgconfig
+
+PYTHON_CONFIGURE_ENABLE=python
+PYTHON_USE=		PYTHON=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/ --define-variable=/d' ${WRKSRC}/configure
