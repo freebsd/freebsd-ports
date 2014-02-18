@@ -8,7 +8,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.bigorno.net/xrick/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	drs@rucus.ru.ac.za
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of Rick Dangerous
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
