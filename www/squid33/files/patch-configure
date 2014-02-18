@@ -1,6 +1,6 @@
---- configure.orig	2013-03-12 11:18:22.000000000 +0100
-+++ configure	2013-04-09 11:43:01.000000000 +0200
-@@ -22798,7 +22798,7 @@
+--- configure.orig	2013-11-30 07:56:05.000000000 -0600
++++ configure	2014-02-12 10:53:47.000000000 -0600
+@@ -22964,7 +22964,7 @@
  
  done
  
@@ -9,7 +9,7 @@
      for ac_header in gssapi/gssapi_generic.h
  do :
    ac_fn_cxx_check_header_mongrel "$LINENO" "gssapi/gssapi_generic.h" "ac_cv_header_gssapi_gssapi_generic_h" "$ac_includes_default"
-@@ -22995,7 +22995,7 @@
+@@ -23161,7 +23161,7 @@
  
  
    ac_com_error_message=no
@@ -18,7 +18,7 @@
        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  #include <com_err.h>
-@@ -23007,7 +23007,7 @@
+@@ -23173,7 +23173,7 @@
  fi
  rm -f conftest*
  
@@ -27,7 +27,7 @@
        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  #include <et/com_err.h>
-@@ -23068,7 +23068,7 @@
+@@ -23234,7 +23234,7 @@
  
    fi
  
@@ -36,7 +36,7 @@
      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for error_message in -lcom_err" >&5
  $as_echo_n "checking for error_message in -lcom_err... " >&6; }
  if ${ac_cv_lib_com_err_error_message+:} false; then :
-@@ -23111,7 +23111,7 @@
+@@ -23277,7 +23277,7 @@
  
  fi
  
@@ -45,7 +45,7 @@
      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for error_message in -lkrb5" >&5
  $as_echo_n "checking for error_message in -lkrb5... " >&6; }
  if ${ac_cv_lib_krb5_error_message+:} false; then :
-@@ -24704,6 +24704,7 @@
+@@ -24870,6 +24870,7 @@
    cassert \
    crypt.h \
    cstdarg \
@@ -53,3 +53,19 @@
    cstdlib \
    cstring \
    list \
+@@ -25178,12 +25179,12 @@
+ #if HAVE_NETINET_IP_H
+ #include <netinet/ip.h>
+ #endif
+-#if HAVE_NETINET_IP_COMPAT_H
+-#include <netinet/ip_compat.h>
+-#endif
+ #if HAVE_NET_IF_H
+ #include <net/if.h>
+ #endif
++#if HAVE_NETINET_IP_COMPAT_H
++#include <netinet/ip_compat.h>
++#endif
+ #if HAVE_NETINET_IP_FIL_H
+ #include <netinet/ip_fil.h>
+ #endif
