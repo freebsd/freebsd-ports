@@ -6,6 +6,13 @@ lib/tdbc%%VERSION%%/libtdbcstub.a
 lib/tdbc%%VERSION%%/pkgIndex.tcl
 lib/tdbc%%VERSION%%/tdbc.tcl
 lib/tdbc%%VERSION%%/tdbcConfig.sh
+man/man3/Tdbc_Init.3.gz
+man/mann/tdbc.n.gz
+man/mann/tdbc_connection.n.gz
+man/mann/tdbc_mapSqlState.n.gz
+man/mann/tdbc_resultset.n.gz
+man/mann/tdbc_statement.n.gz
+man/mann/tdbc_tokenize.n.gz
 @dirrm lib/tdbc%%VERSION%%
 
 @comment MySQL
@@ -15,6 +22,7 @@ lib/tdbc%%VERSION%%/tdbcConfig.sh
 %%MYSQL%%lib/tdbcmysql%%VERSION%%/tdbcmysql.tcl
 %%MYSQL%%lib/tdbcmysql%%VERSION%%/pkgIndex.tcl
 %%MYSQL%%@dirrm lib/tdbcmysql%%VERSION%%
+%%MYSQL%%man/mann/tdbc_mysql.n.gz
 
 @comment ODBC
 %%ODBC%%include/fakesql.h
@@ -23,6 +31,7 @@ lib/tdbc%%VERSION%%/tdbcConfig.sh
 %%ODBC%%lib/tdbcodbc%%VERSION%%/tdbcodbc.tcl
 %%ODBC%%lib/tdbcodbc%%VERSION%%/pkgIndex.tcl
 %%ODBC%%@dirrm lib/tdbcodbc%%VERSION%%
+%%ODBC%%man/mann/tdbc_odbc.n.gz
 
 @comment PGSQL
 %%PGSQL%%include/fakepq.h
@@ -32,6 +41,10 @@ lib/tdbc%%VERSION%%/tdbcConfig.sh
 %%PGSQL%%lib/tdbcpostgres%%VERSION%%/pkgIndex.tcl
 %%PGSQL%%@dirrm lib/tdbcpostgres%%VERSION%%
 
+
 @comment SQLITE
 %%SQLITE%%lib/tcl%%TCL_MAJ%%/%%TCL_VER%%/tdbc/sqlite3-%%VERSION%%.tm
+%%SQLITE%%man/mann/tdbc_sqlite3.n.gz
 %%SQLITE%%@dirrm lib/tcl%%TCL_MAJ%%/%%TCL_VER%%/tdbc
+%%SQLITE%%@dirrmtry lib/tcl%%TCL_MAJ%%/%%TCL_VER%%
+%%SQLITE%%@dirrmtry lib/tcl%%TCL_MAJ%%
