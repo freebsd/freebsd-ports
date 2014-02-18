@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Finance-Quote
-PORTVERSION=	1.18
+PORTVERSION=	1.19
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,13 +17,13 @@ BUILD_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-HTML-TableExtract>=0:${PORTSDIR}/www/p5-HTML-TableExtract \
 		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-HTTP-Message>=0:${PORTSDIR}/www/p5-HTTP-Message \
+		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
+		p5-Mozilla-CA>=0:${PORTSDIR}/www/p5-Mozilla-CA \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PERL5=	configure
 USES=		perl5
-
-post-patch:
-	@${FIND} ${WRKSRC}/lib/Finance/ -name '*.orig' -delete
 
 .include <bsd.port.mk>
