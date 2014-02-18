@@ -1,11 +1,8 @@
 --- src/Makefile.in
 +++ src/Makefile.in
-@@ -129,11 +129,11 @@ L_SURFACES =
- recode_SOURCES = main.c freeze.c mixed.c
- recode_LDADD = librecode.la ../lib/libreco.a
+@@ -131,9 +131,9 @@ L_SURFACES =
  
--librecode_la_SOURCES = argmatch.c charname.c combine.c fr-charname.c hash.c iconv.c libiconv.c localcharset.c merged.c names.c outer.c quotearg.c recode.c request.c strip-pool.c task.c xmalloc.c $(C_STEPS)
-+librecode_la_SOURCES = argmatch.c charname.c combine.c fr-charname.c hash.c libiconv.c localcharset.c merged.c names.c outer.c quotearg.c recode.c request.c strip-pool.c task.c xmalloc.c $(C_STEPS)
+ librecode_la_SOURCES = argmatch.c charname.c combine.c fr-charname.c hash.c iconv.c libiconv.c localcharset.c merged.c names.c outer.c quotearg.c recode.c request.c strip-pool.c task.c xmalloc.c $(C_STEPS)
  
 -librecode_la_LDFLAGS = -version-info 0:0:0
 +librecode_la_LDFLAGS = -version-info 3:6:0
@@ -15,100 +12,12 @@
  DEFS = -DLIBDIR=\"$(libdir)\" @DEFS@
  
  ETAGS_ARGS = $(L_STEPS)
-@@ -153,11 +153,11 @@ LTLIBRARIES =  $(lib_LTLIBRARIES)
- 
- CPPFLAGS = @CPPFLAGS@
- LDFLAGS = @LDFLAGS@
--LIBS = @LIBS@
-+LIBS = @LIBS@ ../lib/libreco.a
+@@ -157,7 +157,7 @@ LTLIBRARIES =  $(lib_LTLIBRARIES)
  ANSI2KNR = @ANSI2KNR@
  librecode_la_LIBADD = 
  librecode_la_OBJECTS =  argmatch$U.lo charname$U.lo combine$U.lo \
 -fr-charname$U.lo hash$U.lo iconv$U.lo libiconv$U.lo localcharset$U.lo \
-+fr-charname$U.lo hash$U.lo libiconv$U.lo localcharset$U.lo \
++fr-charname$U.lo hash$U.lo error$U.lo libiconv$U.lo localcharset$U.lo \
  merged$U.lo names$U.lo outer$U.lo quotearg$U.lo recode$U.lo \
  request$U.lo strip-pool$U.lo task$U.lo xmalloc$U.lo african$U.lo \
  afrtran$U.lo applemac$U.lo atarist$U.lo bangbang$U.lo cdcnos$U.lo \
-@@ -359,8 +359,6 @@ ibmpc_.c: ibmpc.c $(ANSI2KNR)
- 	$(CPP) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) `if test -f $(srcdir)/ibmpc.c; then echo $(srcdir)/ibmpc.c; else echo ibmpc.c; fi` | sed 's/^# \([0-9]\)/#line \1/' | $(ANSI2KNR) > ibmpc_.c
- iconqnx_.c: iconqnx.c $(ANSI2KNR)
- 	$(CPP) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) `if test -f $(srcdir)/iconqnx.c; then echo $(srcdir)/iconqnx.c; else echo iconqnx.c; fi` | sed 's/^# \([0-9]\)/#line \1/' | $(ANSI2KNR) > iconqnx_.c
--iconv_.c: iconv.c $(ANSI2KNR)
--	$(CPP) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) `if test -f $(srcdir)/iconv.c; then echo $(srcdir)/iconv.c; else echo iconv.c; fi` | sed 's/^# \([0-9]\)/#line \1/' | $(ANSI2KNR) > iconv_.c
- lat1asci_.c: lat1asci.c $(ANSI2KNR)
- 	$(CPP) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) `if test -f $(srcdir)/lat1asci.c; then echo $(srcdir)/lat1asci.c; else echo lat1asci.c; fi` | sed 's/^# \([0-9]\)/#line \1/' | $(ANSI2KNR) > lat1asci_.c
- lat1ltex_.c: lat1ltex.c $(ANSI2KNR)
-@@ -425,7 +423,7 @@ bangbang_.lo base64_.o base64_.lo cdcnos_.o cdcnos_.lo charname_.o \
- charname_.lo combine_.o combine_.lo dump_.o dump_.lo ebcdic_.o \
- ebcdic_.lo endline_.o endline_.lo flat_.o flat_.lo fr-charname_.o \
- fr-charname_.lo freeze_.o freeze_.lo hash_.o hash_.lo html_.o html_.lo \
--ibmpc_.o ibmpc_.lo iconqnx_.o iconqnx_.lo iconv_.o iconv_.lo \
-+ibmpc_.o ibmpc_.lo iconqnx_.o iconqnx_.lo \
- lat1asci_.o lat1asci_.lo lat1ltex_.o lat1ltex_.lo lat1txte_.o \
- lat1txte_.lo libiconv_.o libiconv_.lo localcharset_.o localcharset_.lo \
- main_.o main_.lo merged_.o merged_.lo mixed_.o mixed_.lo mule_.o \
-@@ -575,64 +573,6 @@ ibmpc.lo ibmpc.o : ibmpc.c common.h ../config.h xalloc.h argmatch.h \
- 	../lib/error.h recodext.h recode.h
- iconqnx.lo iconqnx.o : iconqnx.c common.h ../config.h xalloc.h \
- 	argmatch.h ../lib/error.h recodext.h recode.h
--iconv.lo iconv.o : iconv.c common.h ../config.h xalloc.h argmatch.h \
--	../lib/error.h recodext.h recode.h ../libiconv/iconv.h \
--	../libiconv/libcharset.h ../libiconv/converters.h \
--	../libiconv/ascii.h ../libiconv/utf8.h ../libiconv/ucs2.h \
--	../libiconv/ucs2be.h ../libiconv/ucs2le.h ../libiconv/ucs4.h \
--	../libiconv/ucs4be.h ../libiconv/ucs4le.h ../libiconv/utf16.h \
--	../libiconv/utf16be.h ../libiconv/utf16le.h ../libiconv/utf7.h \
--	../libiconv/ucs2internal.h ../libiconv/ucs2swapped.h \
--	../libiconv/ucs4internal.h ../libiconv/ucs4swapped.h \
--	../libiconv/java.h ../libiconv/iso8859_1.h \
--	../libiconv/iso8859_2.h ../libiconv/iso8859_3.h \
--	../libiconv/iso8859_4.h ../libiconv/iso8859_5.h \
--	../libiconv/iso8859_6.h ../libiconv/iso8859_7.h \
--	../libiconv/iso8859_8.h ../libiconv/iso8859_9.h \
--	../libiconv/iso8859_10.h ../libiconv/iso8859_13.h \
--	../libiconv/iso8859_14.h ../libiconv/iso8859_15.h \
--	../libiconv/iso8859_16.h ../libiconv/koi8_r.h \
--	../libiconv/koi8_u.h ../libiconv/koi8_ru.h ../libiconv/cp1250.h \
--	../libiconv/cp1251.h ../libiconv/cp1252.h ../libiconv/cp1253.h \
--	../libiconv/cp1254.h ../libiconv/cp1255.h ../libiconv/cp1256.h \
--	../libiconv/cp1257.h ../libiconv/cp1258.h ../libiconv/cp850.h \
--	../libiconv/cp866.h ../libiconv/mac_roman.h \
--	../libiconv/mac_centraleurope.h ../libiconv/mac_iceland.h \
--	../libiconv/mac_croatian.h ../libiconv/mac_romania.h \
--	../libiconv/mac_cyrillic.h ../libiconv/mac_ukraine.h \
--	../libiconv/mac_greek.h ../libiconv/mac_turkish.h \
--	../libiconv/mac_hebrew.h ../libiconv/mac_arabic.h \
--	../libiconv/mac_thai.h ../libiconv/hp_roman8.h \
--	../libiconv/nextstep.h ../libiconv/armscii_8.h \
--	../libiconv/georgian_academy.h ../libiconv/georgian_ps.h \
--	../libiconv/mulelao.h ../libiconv/cp1133.h ../libiconv/tis620.h \
--	../libiconv/cp874.h ../libiconv/viscii.h ../libiconv/tcvn.h \
--	../libiconv/iso646_jp.h ../libiconv/jisx0201.h \
--	../libiconv/jisx0208.h ../libiconv/jisx0212.h \
--	../libiconv/iso646_cn.h ../libiconv/gb2312.h \
--	../libiconv/isoir165.h ../libiconv/isoir165ext.h \
--	../libiconv/gbk.h ../libiconv/gbkext1.h ../libiconv/gbkext2.h \
--	../libiconv/gbkext_inv.h ../libiconv/cp936ext.h \
--	../libiconv/cns11643.h ../libiconv/cns11643_1.h \
--	../libiconv/cns11643_2.h ../libiconv/cns11643_3.h \
--	../libiconv/cns11643_inv.h ../libiconv/big5.h \
--	../libiconv/ksc5601.h ../libiconv/johab_hangul.h \
--	../libiconv/euc_jp.h ../libiconv/sjis.h ../libiconv/cp932.h \
--	../libiconv/cp932ext.h ../libiconv/iso2022_jp.h \
--	../libiconv/iso2022_jp1.h ../libiconv/iso2022_jp2.h \
--	../libiconv/euc_cn.h ../libiconv/ces_gbk.h \
--	../libiconv/gb18030.h ../libiconv/gb18030ext.h \
--	../libiconv/gb18030uni.h ../libiconv/iso2022_cn.h \
--	../libiconv/iso2022_cnext.h ../libiconv/hz.h \
--	../libiconv/euc_tw.h ../libiconv/ces_big5.h ../libiconv/cp950.h \
--	../libiconv/cp950ext.h ../libiconv/big5hkscs.h \
--	../libiconv/hkscs.h ../libiconv/euc_kr.h ../libiconv/cp949.h \
--	../libiconv/uhc_1.h ../libiconv/uhc_2.h ../libiconv/johab.h \
--	../libiconv/iso2022_kr.h ../libiconv/cjk_variants.h \
--	../libiconv/translit.h ../libiconv/encodings.def \
--	../libiconv/encodings_local.def ../libiconv/flags.h \
--	../libiconv/loops.h ../libiconv/loop_unicode.h \
--	../libiconv/loop_wchar.h ../libiconv/aliases.h
- lat1asci.lo lat1asci.o : lat1asci.c common.h ../config.h xalloc.h \
- 	argmatch.h ../lib/error.h recodext.h recode.h
- lat1ltex.lo lat1ltex.o : lat1ltex.c common.h ../config.h xalloc.h \
