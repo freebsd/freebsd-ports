@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	scipy
-PORTVERSION=	0.13.1
+PORTVERSION=	0.13.3
 CATEGORIES=	science python
 MASTER_SITES=	http://docs.scipy.org/doc/${DISTNAME}/:doc \
 		SF:source
@@ -18,7 +18,7 @@ LICENSE=	BSD
 
 BUILD_DEPENDS+=	${PYNUMPY} \
 		${LOCALBASE}/lib/libdjbfft.a:${PORTSDIR}/math/djbfft
-LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3
+LIB_DEPENDS=	libfftw3.so:${PORTSDIR}/math/fftw3
 RUN_DEPENDS=	${PYNUMPY}	\
 		nosetests:${PORTSDIR}/devel/py-nose
 
@@ -42,18 +42,18 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MATLAS}
-LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
+LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
 .if !exists(${LOCALBASE}/lib/libalapack.a)
 IGNORE=		atlas needs to be built with WITH_STATIC for scipy to function properly
 .endif
 .else
-LIB_DEPENDS+=	lapack:${PORTSDIR}/math/lapack \
-		blas:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	liblapack.so:${PORTSDIR}/math/lapack \
+		libblas.so:${PORTSDIR}/math/blas
 .endif
 
 .if ${PORT_OPTIONS:MSUITESPARSE}
 BUILD_DEPENDS+=	swig:${PORTSDIR}/devel/swig13
-LIB_DEPENDS+=	umfpack:${PORTSDIR}/math/suitesparse
+LIB_DEPENDS+=	libumfpack.so:${PORTSDIR}/math/suitesparse
 .endif
 
 PYDISTUTILS_CONFIGUREARGS+=	--fcompiler=gnu95
