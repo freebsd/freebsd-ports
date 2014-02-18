@@ -5456,3 +5456,4 @@ deskutils/kdepim44-runtime||2014-02-18|Removed: conflicts with new kdepimlibs
 deskutils/kdepim44||2014-02-18|Removed: depends on deskutils/kdepim44-runtime
 misc/kde-xdg-env||2014-02-18|Removed, remnant of KDE 3
 lang/g95||2014-02-18|Removed, uses an old version of GCC which can't be built anymore
+games/py-ski|games/ski|2014-02-18|Rename to match upstream naming
