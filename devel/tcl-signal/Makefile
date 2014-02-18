@@ -20,9 +20,13 @@ PLIST_FILES=	lib/signal/signal.so \
 		lib/signal/pkgIndex.tcl
 PLIST_DIRS=	lib/signal
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|\.\./lib||' ${WRKSRC}/${CONFIGURE_SCRIPT}
 	${REINPLACE_CMD} -e 's|mkdir|${MKDIR}|; s|@TCL_PACKAGE_PATH@|@TCL_PREFIX@/lib|g' ${WRKSRC}/Makefile.in
+
+do-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/signal
+	${INSTALL_DATA} ${WRKSRC}/signal.so ${STAGEDIR}${PREFIX}/lib/signal
+	${INSTALL_DATA} ${WRKSRC}/pkgIndex.tcl ${STAGEDIR}${PREFIX}/lib/signal
 
 .include <bsd.port.mk>
