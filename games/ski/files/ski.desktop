@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Ski
+GenericName=Ski game
+Comment=Skiing simulation with curses interface in python
+Icon=ski
+Exec=ski
+Categories=Game;SportsGame;
+Terminal=true
