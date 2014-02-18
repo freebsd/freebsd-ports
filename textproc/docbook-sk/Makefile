@@ -13,7 +13,7 @@ NO_ISOCAT=	yes
 XML_DTD=	yes
 HAS_MANUAL_CATALOG_FILE=	yes
 
-DTD_SUBDIR?=	${PORTNAME:S/-sk//}
+DTD_NAME?=	${PORTNAME:S/-sk//}
 
 PORTDOCS=	ChangeLog *.txt
 

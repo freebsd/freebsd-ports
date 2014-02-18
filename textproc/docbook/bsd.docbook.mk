@@ -35,9 +35,12 @@ SGMLCAT=	share/sgml/catalog.ports
 ISOCAT=		share/sgml/iso8879/catalog
 XMLCAT=		share/xml/catalog.ports
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}/${PORTVERSION}
-DTD_SUBDIR?=	${PORTNAME}
+DTD_NAME?=	${PORTNAME}
 DTD_VERSION?=	${PORTVERSION}
-DTDDIR?=	share/${XML_SGML}/${DTD_SUBDIR}/${DTD_VERSION}/dtd
+.ifndef NO_DTD_SUBDIR
+DTD_SUBDIR?=	/dtd
+.endif
+DTDDIR?=	share/${XML_SGML}/${DTD_NAME}/${DTD_VERSION}${DTD_SUBDIR}
 PLIST_SUB+=	XMLCATMGR=${XMLCATMGR} SGMLCAT=${SGMLCAT} XMLCAT=${XMLCAT} \
 		DTDDIR=${DTDDIR}
 
@@ -72,8 +75,10 @@ do-install:
 	${MV} ${STAGEDIR}${PREFIX}/${DTDDIR}/${f} ${STAGEDIR}${DOCSDIR}
 .  endfor
 .endif
-	@${ECHO_CMD} "@dirrm share/${XML_SGML}/${DTD_SUBDIR}/${DTD_VERSION}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@dirrmtry share/${XML_SGML}/${DTD_SUBDIR}" >> ${TMPPLIST}
+.ifndef NO_DTD_SUBDIR
+	@${ECHO_CMD} "@dirrm share/${XML_SGML}/${DTD_NAME}/${DTD_VERSION}" >> ${TMPPLIST}
+.endif
+	@${ECHO_CMD} "@dirrmtry share/${XML_SGML}/${DTD_NAME}" >> ${TMPPLIST}
 .if defined(PORTDOCS)
 	@${ECHO_CMD} "@dirrmtry share/doc/${PORTNAME}" >> ${TMPPLIST}
 .endif
