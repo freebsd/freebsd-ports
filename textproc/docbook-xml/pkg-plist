@@ -8,8 +8,8 @@
 %%DTDDIR%%/dbnotnx.mod
 %%DTDDIR%%/dbpoolx.mod
 %%DTDDIR%%/docbook.cat
-@unexec %D/%%XMLCATMGR%% -sc %D/%%XMLCAT%% remove %D/%F
-@exec %D/%%XMLCATMGR%% -sc %D/%%XMLCAT%% add CATALOG %D/%F
+@unexec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% remove %D/%F
+@exec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% add CATALOG %D/%F
 %%DTDDIR%%/docbookx.dtd
 %%DTDDIR%%/ent/iso-amsa.ent
 %%DTDDIR%%/ent/iso-amsb.ent
