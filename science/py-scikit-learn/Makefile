@@ -12,11 +12,20 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Machine learning algorithms for python
 
 BUILD_DEPENDS=	${PYNUMPY}
-LIB_DEPENDS=	libcblas.so:${PORTSDIR}/math/cblas
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0.8.0:${PORTSDIR}/science/py-scipy
 
 USES=		fortran
+
+OPTIONS_SINGLE=		BLAS
+OPTIONS_SINGLE_BLAS=	CBLAS ATLAS
+OPTIONS_DEFAULT=	CBLAS
+CBLAS_DESC=	Use math/cblas as BLAS library
+ATLAS_DESC=	Use math/atlas as BLAS library
+
+CBLAS_LIB_DEPENDS=	libcblas.so:${PORTSDIR}/math/cblas
+ATLAS_LIB_DEPENDS=	libcblas.so:${PORTSDIR}/math/atlas
+
 LATEST_LINK=	py-${PORTNAME}
 
 USE_PYTHON=	yes
