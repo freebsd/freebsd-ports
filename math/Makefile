@@ -416,6 +416,7 @@
     SUBDIR += p5-Math-Expr
     SUBDIR += p5-Math-FFT
     SUBDIR += p5-Math-FixedPrecision
+    SUBDIR += p5-Math-Fleximal
     SUBDIR += p5-Math-GMP
     SUBDIR += p5-Math-GMPf
     SUBDIR += p5-Math-GMPq
