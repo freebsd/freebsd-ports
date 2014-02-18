@@ -1,8 +1,7 @@
-@unexec %%XMLCATMGR%% -sc %%SGMLCAT%% remove %D/%%DTDDIR%%/catalog
-%%DTDDIR%%/241chg.txt
-%%DTDDIR%%/announce.txt
 %%DTDDIR%%/calstbl.mod
 %%DTDDIR%%/catalog
+@unexec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% remove %D/%F
+@exec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% add CATALOG %D/%F
 %%DTDDIR%%/dbgenent.mod
 %%DTDDIR%%/dbhier.mod
 %%DTDDIR%%/dbpool.mod
@@ -28,7 +27,4 @@
 %%DTDDIR%%/iso-num.gml
 %%DTDDIR%%/iso-pub.gml
 %%DTDDIR%%/iso-tech.gml
-@dirrmtry %%DTDDIR%%
-@dirrm share/sgml/docbook/2.4.1
-@dirrmtry share/sgml/docbook
-@exec %%XMLCATMGR%% -sc %%SGMLCAT%% add CATALOG %D/%%DTDDIR%%/catalog
+@dirrm %%DTDDIR%%

@@ -84,4 +84,4 @@ PUBLIC "ISO 8879:1986//ENTITIES Non-Russian Cyrillic//EN" "iso-cyr2.gml"
   -- End of catalog data for DocBook V4.2 ................................. --
   -- ...................................................................... --
 
-CATALOG "%%ISOCAT%%"
+CATALOG "%%PREFIX%%/share/sgml/iso8879/catalog"

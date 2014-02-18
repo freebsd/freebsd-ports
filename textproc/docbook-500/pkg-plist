@@ -1,5 +1,6 @@
-@unexec %%XMLCATMGR%% -c %%XMLCAT%% remove %D/%%DTDDIR%%/catalog.xml
 %%DTDDIR%%/catalog.xml
+@unexec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% remove %D/%F
+@exec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% add nextCatalog %D/%F
 %%DTD%%%%DTDDIR%%/dtd/docbook.dtd
 %%DTD%%@dirrm %%DTDDIR%%/dtd
 %%NVDL%%%%DTDDIR%%/nvdl/docbook.nvdl
@@ -19,6 +20,3 @@
 %%SCHEMA%%%%DTDDIR%%/xsd/xml.xsd
 %%SCHEMA%%@dirrm %%DTDDIR%%/xsd
 @dirrm %%DTDDIR%%
-@dirrmtry share/xml/docbook
-@dirrmtry share/xml
-@exec %%XMLCATMGR%% -c %%XMLCAT%% add nextCatalog %D/%%DTDDIR%%/catalog.xml
