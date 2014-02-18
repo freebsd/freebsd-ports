@@ -1,0 +1,13 @@
+This is a package for doing integer arithmetic while using a different
+base representation than normal. In base n arithmetic you have n
+symbols which have a representation. I was going to call them
+"glyphs", but being text strings they are not really. On Tye McQueen's
+whimsical suggestion I settled on the name Math::Fleximal, the set of
+text representations is called a "flex", and the representation of
+individual digits are the "flecks". These names are somewhat
+unofficial...
+
+This allows you to do basic arithmetic using whatever digits you want,
+and to convert from one to another.
+
+WWW: http://search.cpan.org/dist/Math-Fleximal/
