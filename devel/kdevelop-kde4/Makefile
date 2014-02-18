@@ -3,6 +3,7 @@
 
 PORTNAME=	kdevelop
 DISTVERSION=	${KDEVELOP_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDEVELOP_BRANCH}/kdevelop/${DISTVERSION}/src
@@ -24,7 +25,7 @@ OPTIONS_DEFAULT=	OKTETA PHP
 OPTIONS_SUB=	yes
 
 OKTETA_DESC=	Hex editing support via Okteta
-OKTETA_LIB_DEPENDS=	libokteta1core.so:${PORTSDIR}/devel/kdesdk4
+OKTETA_LIB_DEPENDS=	libokteta1core.so:${PORTSDIR}/devel/okteta
 
 PHP_DESC=	PHP support for KDevelop
 PHP_RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/kdevphplanguagesupport.so:${PORTSDIR}/devel/kdevelop-php
