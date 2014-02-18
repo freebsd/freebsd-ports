@@ -34,7 +34,8 @@ extra_commands=reload
 reload_cmd="${name}_reload"
 start_precmd="${name}_prestart"
 
-knot_prestart() {
+knot_prestart()
+{
 	if [ ! -d /var/run/knot ]; then
 		install -d -o %%USERS%% -g %%GROUPS%% /var/run/knot
 	fi
@@ -46,7 +47,12 @@ knot_prestart() {
 		echo "Notice: not running as uid.gid knot.knot or bind.bind"
 	fi
 	${control} -c ${knot_config} checkconf
-	}
+}
 
-knot_reload() {
+knot_reload()
+{
 	echo "Reloading ${name}."
+	${control} -c ${knot_config} reload
+}
+
+run_rc_command "$1"
