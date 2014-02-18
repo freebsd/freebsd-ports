@@ -28,37 +28,33 @@ SCRIPTS=	collectaddys def2html printcdb printdbm sendit.sh \
 		update-internaldomains vadduser-tmda vmailmgr-vdir.sh \
 		vpopmail-vdir.sh wrapfd3.sh
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${PYTHON_CMD} ./compileall
 
 do-install:
-	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/TMDA/pythonlib/email
-	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/TMDA/pythonlib/email/mime
-	@${MKDIR} ${PYTHONPREFIX_SITELIBDIR}/TMDA/Queue
-	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/*.py* ${PYTHONPREFIX_SITELIBDIR}/TMDA
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/TMDA/pythonlib/email
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/TMDA/pythonlib/email/mime
+	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/TMDA/Queue
+	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/*.py* ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/TMDA
 	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/pythonlib/email/*.py* \
-		${PYTHONPREFIX_SITELIBDIR}/TMDA/pythonlib/email
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/TMDA/pythonlib/email
 	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/pythonlib/email/mime/*.py* \
-		${PYTHONPREFIX_SITELIBDIR}/TMDA/pythonlib/email/mime
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/TMDA/pythonlib/email/mime
 	${INSTALL_SCRIPT} ${WRKSRC}/TMDA/Queue/*.py* \
-		${PYTHONPREFIX_SITELIBDIR}/TMDA/Queue
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/templates/*.txt ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/tmda-* ${PREFIX}/bin
-	@${MKDIR} ${EXAMPLESDIR}/dot-tmda/filters ${EXAMPLESDIR}/dot-tmda/lists
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/TMDA/Queue
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/templates/*.txt ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/tmda-* ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/dot-tmda/filters ${STAGEDIR}${EXAMPLESDIR}/dot-tmda/lists
 	cd ${WRKSRC}/contrib && \
-		${INSTALL_SCRIPT} ${SCRIPTS} ${EXAMPLESDIR} && \
-		${INSTALL_DATA} ${SAMPLES} ${EXAMPLESDIR}
+		${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${EXAMPLESDIR} && \
+		${INSTALL_DATA} ${SAMPLES} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/contrib/dot-tmda && \
-		${INSTALL_DATA} [Rc]* ${EXAMPLESDIR}/dot-tmda && \
-		${INSTALL_DATA} filters/* ${EXAMPLESDIR}/dot-tmda/filters && \
-		${INSTALL_DATA} lists/* ${EXAMPLESDIR}/dot-tmda/lists
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR} ${DOCSDIR}/html ${DOCSDIR}/pdf
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR} && \
-		${CP} -r doc/html doc/pdf ${DOCSDIR}
-.endif
-	@${CAT} ${PKGMESSAGE}
+		${INSTALL_DATA} [Rc]* ${STAGEDIR}${EXAMPLESDIR}/dot-tmda && \
+		${INSTALL_DATA} filters/* ${STAGEDIR}${EXAMPLESDIR}/dot-tmda/filters && \
+		${INSTALL_DATA} lists/* ${STAGEDIR}${EXAMPLESDIR}/dot-tmda/lists
+	@${MKDIR} ${STAGEDIR}${DOCSDIR} ${STAGEDIR}${DOCSDIR}/html ${STAGEDIR}${DOCSDIR}/pdf
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR} && \
+		${CP} -r doc/html doc/pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
