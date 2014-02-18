@@ -1,5 +1,5 @@
---- setup.py.ori	2012-06-21 15:38:54.044808453 -0700
-+++ setup.py	2012-06-21 15:41:16.067809618 -0700
+--- setup.py.orig	2013-08-21 17:11:04.000000000 +0000
++++ setup.py	2014-02-14 04:44:44.290189349 +0000
 @@ -15,11 +15,11 @@
  storage_dirs = []
  
@@ -23,3 +23,11 @@
  examples = [ ('examples', glob('examples/example-*')) ]
  
  setup(
+@@ -60,6 +60,6 @@
+   package_data={'graphite' :
+     ['templates/*', 'local_settings.py.example']},
+   scripts=glob('bin/*'),
+-  data_files=webapp_content.items() + storage_dirs + conf_files + examples,
++  data_files=conf_files,
+   **setup_kwargs
+ )
