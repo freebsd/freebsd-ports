@@ -1,5 +1,5 @@
---- Makefile.orig	2009-10-29 14:38:40.000000000 +0600
-+++ Makefile	2010-01-04 19:55:10.000000000 +0600
+--- Makefile.orig	2009-10-29 09:38:40.000000000 +0100
++++ Makefile	2014-02-18 19:19:51.140331100 +0100
 @@ -6,7 +6,7 @@
  
  # replace CFLAGS and LFLAGS -O (oh) with -g for GDB debugging
@@ -9,7 +9,25 @@
  
  # use $PREFIX if defined, else assume /usr/local
  ifeq "$(PREFIX)" ""
-@@ -39,15 +39,16 @@
+@@ -19,14 +19,14 @@
+ DESKTOP = $(DATADIR)/kornelix-$(PROGRAM).desktop
+ 
+ $(PROGRAM): $(PROGRAM).o zfuncs.o
+-	@ g++ $(LFLAGS) -o $(PROGRAM) $(PROGRAM).o zfuncs.o
++	@ ${CXX} $(LFLAGS) -o $(PROGRAM) $(PROGRAM).o zfuncs.o
+ 
+ $(PROGRAM).o: $(SOURCE) zfuncs.h
+-	@ g++ $(CFLAGS) -o $(PROGRAM).o $(SOURCE)		\
++	@ ${CXX} $(CFLAGS) -o $(PROGRAM).o $(SOURCE)		\
+ 	  -D "DATADIR=\"$(DATADIR)\"" -D "DOCDIR=\"$(DOCDIR)\""
+ 
+ zfuncs.o: zfuncs.cpp zfuncs.h
+-	@ g++ $(CFLAGS) zfuncs.cpp	\
++	@ ${CXX} $(CFLAGS) zfuncs.cpp	\
+ 	  -D "DATADIR=\"$(DATADIR)\"" -D "DOCDIR=\"$(DOCDIR)\"" -D "BINDIR=\"$(BINDIR)\""
+ 
+ install: $(PROGRAM)
+@@ -39,15 +39,15 @@
  	cp $(PROGRAM) $(DESTDIR)$(BINDIR)
  	cp -R locales/* $(DESTDIR)$(DATADIR)/locales
  	#  install .desktop file (menu entry)
@@ -22,7 +40,6 @@
 -	@echo "Icon=$(DATADIR)/icons/$(PROGRAM).png" >> $(DESKTOP)
 -	@echo "GenericName=Jigsaw Puzzle" >> $(DESKTOP)
 -	xdg-desktop-menu install $(DESKTOP)
-+	ln -s $(DESTDIR)$(DATADIR)/icons/picpuz.png ${PREFIX}/share/pixmaps/picpuz.png
 +#	@echo "[Desktop Entry]" > $(DESKTOP)
 +#	@echo "Name=$(PROGRAM)" >> $(DESKTOP)
 +#	@echo "Categories=Game" >> $(DESKTOP)

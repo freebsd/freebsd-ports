@@ -16,7 +16,7 @@ USE_GNOME=	gtk20
 
 ALL_TARGET=	#
 #RUN_DEPENDS+=	xdg-desktop-menu:${PORTSDIR}/devel/xdg-utils
-LIB_DEPENDS+=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 DESKTOP_ENTRIES="Picpuz" \
 		"Jigsaw Puzzle" \
 		"${PREFIX}/share/pixmaps/picpuz.png" \
@@ -24,5 +24,8 @@ DESKTOP_ENTRIES="Picpuz" \
 		"Graphics;Game;GTK;" \
 		true
 
-NO_STAGE=	yes
+post-install:
+	(cd ${STAGEDIR}${PREFIX}/share/pixmaps && \
+		${LN} -s ${DATADIR}/icons/picpuz.png .)
+
 .include <bsd.port.mk>
