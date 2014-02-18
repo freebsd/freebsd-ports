@@ -18,16 +18,16 @@ SCRIPTS_ENV=	CONFIGURE_TARGETS=${CONFIGURE_TARGETS}
 SRC=			${.CURDIR}/src
 CONFIGURE_TARGETS=	mkcatalog
 
-NO_STAGE=	yes
 do-fetch:
 	@${DO_NADA}
 
 pre-configure:
-	@for i in ${CONFIGURE_TARGETS} ; do \
-	    ${CP} ${SRC}/$${i}.in ${WRKDIR} ; \
-	done
+.for f in ${CONFIGURE_TARGETS}
+	${CP} ${SRC}/${f}.in ${WRKDIR}
+.endfor
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/mkcatalog ${PREFIX}/sbin/mkcatalog
+	@${INSTALL_SCRIPT} ${WRKDIR}/mkcatalog \
+		${STAGEDIR}${PREFIX}/sbin/mkcatalog
 
 .include <bsd.port.mk>
