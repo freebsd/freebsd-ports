@@ -2,8 +2,7 @@
 
 PORTNAME=	openafs
 DISTVERSION=	${AFS_DISTVERSION}.${DBVERSION:S/-//g}
-PORTREVISION=	1
-CATEGORIES=	net kld
+CATEGORIES=	net
 MASTER_SITES=	http://dl.central.org/dl/openafs/${AFS_DISTVERSION}/:openafs \
 		http://dl.openafs.org/dl/openafs/${AFS_DISTVERSION}/:openafs \
 		http://dl.central.org/dl/cellservdb/:gco \
@@ -22,17 +21,28 @@ LICENSE_NAME=	IBM Public License Version 1.0
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 LICENSE_PERMS=	auto-accept
 
-AFS_DISTVERSION=	1.6.5
+AFS_DISTVERSION=	1.6.6
 DBVERSION=	2013-01-28
 
-OPTIONS_DEFINE=	FUSE
-
+USES=		kmod
 USE_LDCONFIG=	yes
 PATCH_STRIP=	-p1
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS= --prefix=${PREFIX} \
+	--localstatedir=/var \
+	--mandir=${MANPREFIX}/man \
+	--with-bsd-kernel-headers=${SRC_BASE}/sys \
+	--with-bsd-kernel-build=${WRKDIR}/conf \
+	--enable-debug \
+	--enable-debug-kernel \
+	--enable-debug-lwp \
+	--includedir=${PREFIX}/include/openafs \
+	${CONFIGURE_TARGET}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${AFS_DISTVERSION}
 USE_RC_SUBR=	afsd afsserver
 
+CONFLICTS=	coda-server-6.[0-9]* heimdal-[0-9]*
 ONLY_FOR_ARCHS=	i386 amd64
 
 AFSMNTDIR?=	/afs
@@ -50,13 +60,15 @@ PLIST_SUB+=	AFSMNTDIR=${AFSMNTDIR:C,^/,,} \
 # figure out what type of compiler is in use.
 USES+= compiler
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	FUSE
+FUSE_USES=	fuse
+OPTIONS_SUB=	yes
+FUSE_CONFIGURE_OFF=	--disable-fuse-client
+
 .include <bsd.port.pre.mk>
 
 KERNCONF?=	GENERIC
 KERNCONFDIR?=	${SRC_BASE}/sys/${ARCH}/conf
-KMODDIR=	/boot/modules
-PLIST_SUB+=	KMODDIR=${KMODDIR:C,^/,,}
 
 # Use the first component of ${KERNCONF}.
 .for K in ${KERNCONF}
@@ -71,39 +83,15 @@ IGNORE=	requires kernel configuration file ${_KERNCONF} to build
 IGNORE=	supports FreeBSD 8.0 and later
 .endif
 
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-	--localstatedir=/var \
-	--mandir=${MANPREFIX}/man \
-	--with-bsd-kernel-headers=${SRC_BASE}/sys \
-	--with-bsd-kernel-build=${WRKDIR}/conf \
-	--enable-debug \
-	--enable-debug-kernel \
-	--enable-debug-lwp \
-	--includedir=${PREFIX}/include/openafs \
-	${CONFIGURE_TARGET}
-
-.if ${PORT_OPTIONS:MFUSE}
-USES+=		fuse
-PLIST_SUB+=	FUSE=""
-.else
-CONFIGURE_ARGS+=	--disable-fuse-client
-PLIST_SUB+=	FUSE="@comment "
-.endif
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${AFS_DISTVERSION}
-
-CONFLICTS=	coda-server-6.[0-9]* heimdal-[0-9]*
-
-.include "Makefile.man"
-
 # Do not show users the reminder about cleandepend and depend
 post-extract:
 	${MKDIR} ${WRKDIR}/conf
-	cd ${KERNCONFDIR} && /usr/sbin/config -d ${WRKDIR}/conf ${_KERNCONF} >/dev/null
+	cd ${KERNCONFDIR} && \
+	    /usr/sbin/config -d ${WRKDIR}/conf ${_KERNCONF} >/dev/null
 
 post-patch:
 .if ${COMPILER_TYPE} == clang
-	${REINPLACE_CMD} -e 's/XCFLAGS="-O2 -pipe -fPIC"/XCFLAGS="-O2 -pipe -fPIC -mstackrealign"/' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's/XCFLAGS="-O2 -pipe -fPIC"/XCFLAGS="${CFLAGS} -fPIC -mstackrealign"/' ${WRKSRC}/configure
 .endif
 
 create-sample-files:
@@ -112,17 +100,15 @@ create-sample-files:
 	@${INSTALL_DATA} ${DISTDIR}/CellServDB.${DBVERSION} ${WRKDIR}/CellServDB
 
 post-install: create-sample-files
-	@${MKDIR} ${PREFIX}/etc/openafs
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
 .for F in CellServDB ThisCell cacheinfo
-	@${INSTALL_DATA} ${WRKDIR}/${F} ${PREFIX}/etc/openafs/${F}.sample
-	@if [ ! -e ${PREFIX}/etc/openafs/${F} ]; then \
-		${INSTALL_DATA} ${WRKDIR}/${F} ${PREFIX}/etc/openafs/${F}; \
-	fi
+	@${INSTALL_DATA} ${WRKDIR}/${F} ${STAGEDIR}${ETCDIR}/${F}.sample
 .endfor
-	${INSTALL_KLD} ${PREFIX}/lib/openafs/libafs.ko ${KMODDIR}/
-	@${RM} ${PREFIX}/lib/openafs/libafs.ko
-	@${RMDIR} ${PREFIX}/lib/openafs
-	${MKDIR} ${AFSMNTDIR} ${AFSSTATEDIR} ${AFSCACHEDIR}
-	/usr/sbin/kldxref ${KMODDIR}
+	@${INSTALL_KLD} ${STAGEDIR}${PREFIX}/lib/openafs/libafs.ko \
+	    ${STAGEDIR}${KMODDIR}
+	@${RM} ${STAGEDIR}${PREFIX}/lib/openafs/libafs.ko
+	@${RMDIR} ${STAGEDIR}${PREFIX}/lib/openafs
+	${MKDIR} ${STAGEDIR}${AFSMNTDIR} \
+	    ${STAGEDIR}${AFSSTATEDIR} ${STAGEDIR}${AFSCACHEDIR}
 
 .include <bsd.port.post.mk>
