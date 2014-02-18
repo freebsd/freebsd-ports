@@ -595,6 +595,7 @@
     SUBDIR += qwtplot3d-qt4
     SUBDIR += randlib
     SUBDIR += rapid
+    SUBDIR += reduce
     SUBDIR += reed-solomon
     SUBDIR += rkward-kde4
     SUBDIR += rngstreams
