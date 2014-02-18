@@ -540,6 +540,7 @@
     SUBDIR += p5-JavaScript-RPC
     SUBDIR += p5-Jifty-Plugin-Authentication-Ldap
     SUBDIR += p5-MaxMind-DB-Common
+    SUBDIR += p5-MaxMind-DB-Reader
     SUBDIR += p5-Net
     SUBDIR += p5-Net-AMQP
     SUBDIR += p5-Net-APNS
