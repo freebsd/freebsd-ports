@@ -3,7 +3,7 @@
 
 PORTNAME=	ahven
 PORTVERSION=	2.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}/Ahven%20${PORTVERSION}
@@ -19,7 +19,11 @@ USES=		ada
 ALL_TARGET=	build_all
 MAKE_ENV+=	OS_VERSION=unix
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	TRACE DOCS
+OPTIONS_DEFAULT=TRACE
+NO_OPTIONS_SORT=yes
+
+TRACE_DESC=	Build with GNAT-specific symbolic tracing functionality
 
 .include <bsd.port.options.mk>
 
@@ -28,6 +32,10 @@ USE_PYTHON=	yes
 BUILD_DEPENDS+=	sphinx-build:${PORTSDIR}/textproc/py-sphinx \
 		${PYTHON_PKGNAMEPREFIX}sphinxcontrib-adadomain>0:${PORTSDIR}/textproc/py-sphinxcontrib-adadomain
 ALL_TARGET+=	docs
+.endif
+
+.if ${PORT_OPTIONS:MTRACE}
+EXTRA_PATCHES=	${FILESDIR}/extra-src_ahven-framework.adb
 .endif
 
 post-install:
