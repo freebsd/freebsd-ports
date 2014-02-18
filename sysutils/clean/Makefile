@@ -10,8 +10,7 @@ MAINTAINER=	chuck@pkix.net
 COMMENT=	Automatically remove unwanted files
 
 USE_BZIP2=	yes
-MAN1=		clean.1
-PLIST_FILES=	bin/clean
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/clean man/man1/clean.1.gz
+
 .include <bsd.port.mk>
