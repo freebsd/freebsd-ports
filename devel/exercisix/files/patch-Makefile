@@ -1,0 +1,19 @@
+--- ./Makefile.orig	2014-02-18 11:06:36.485355646 +0100
++++ ./Makefile	2014-02-18 11:07:14.494356722 +0100
+@@ -22,12 +22,12 @@
+ .PHONY: clean
+ 
+ install: all $(FILESDIR)
+-	install -o root -g wheel  -m 444 $(FILES) $(FILESDIR)
+-	install -C -o root -g wheel -m 444 $(INCS) $(INCLUDEDIR)
+-	install -o root -g wheel -m 444 $(COMPRESSED_MAN) $(MANDIR)3
++	install -o root -g wheel  -m 444 $(FILES) $(DESTDIR)$(FILESDIR)
++	install -C -o root -g wheel -m 444 $(INCS) $(DESTDIR)$(INCLUDEDIR)
++	install -o root -g wheel -m 444 $(COMPRESSED_MAN) $(DESTDIR)$(MANDIR)3
+ 
+ $(FILESDIR):
+-	mkdir $(FILESDIR)
++	mkdir $(DESTDIR)$(FILESDIR)
+ 
+ deinstall:
+ 	rm -r $(FILESDIR)
