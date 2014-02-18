@@ -13,12 +13,11 @@ COMMENT=	FM radio card manipulation utility
 DEPRECATED=	No more public distfiles
 EXPIRATION_DATE=	2014-03-07
 
-MAN1=		fmio.1
-MANCOMPRESSED=	no
 ONLY_FOR_ARCHS=	i386
-NO_STAGE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
+OPTIONS_DEFINE=	DOCS
 
 pre-build:
 .if !defined(WITH_BKTR)
@@ -35,17 +34,17 @@ post-build:
 
 do-install:
 .if defined(WITH_BKTR)
-	${INSTALL_PROGRAM} ${WRKSRC}/../utils/bktrctl ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${FILESDIR}/bktrctl.sh ${PREFIX}/etc/rc.d
+	${INSTALL_PROGRAM} ${WRKSRC}/../utils/bktrctl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/bktrctl.sh ${STAGEDIR}${PREFIX}/etc/rc.d
 .endif
-	${INSTALL_PROGRAM} ${WRKSRC}/fmio ${PREFIX}/bin
-	${CHMOD} 4555 ${PREFIX}/bin/fmio
-	${INSTALL_MAN} ${WRKSRC}/fmio.1 ${MANPREFIX}/man/man1
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../Changelog ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../doc/FAQ ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/../doc/FAQ.ru ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/fmio ${STAGEDIR}${PREFIX}/bin
+	${CHMOD} 4555 ${STAGEDIR}${PREFIX}/bin/fmio
+	${INSTALL_MAN} ${WRKSRC}/fmio.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../Changelog ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../doc/FAQ ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../doc/FAQ.ru ${STAGEDIR}${DOCSDIR}
 
 post-install:
 .if !defined(WITH_BKTR)
