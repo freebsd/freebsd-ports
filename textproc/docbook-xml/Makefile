@@ -3,7 +3,7 @@
 
 PORTNAME=	docbook-xml
 PORTVERSION=	4.2
-PORTREVISION=	2
+PORTREVISION=	3
 MASTER_SITES=	http://www.docbook.org/xml/${PORTVERSION}/ \
 		http://www.oasis-open.org/committees/docbook/xml/${PORTVERSION}/
 
