@@ -3,7 +3,8 @@
 
 PORTNAME=	docbook-xml
 PORTVERSION=	4.5
-PORTREVISION=	2
+PORTREVISION=	3
+PKGNAMESUFFIX=	450
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	DocBook/XML DTD V4.5, designed for technical documentation
