@@ -14,15 +14,11 @@ COMMENT=	Program to check the nesting of parenthesis in tcl scripts
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	 dist-mirror dist-sell pkg-mirror pkg-sell auto-accept	
 
-MAN1=		tclCheck.1
-PLIST_FILES=	bin/tclCheck
+PLIST_FILES=	bin/tclCheck \
+		man/man1/tclCheck.1.gz
 PORTDOCS=	*
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS 
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	${REINPLACE_CMD} \
@@ -35,11 +31,9 @@ post-patch:
 	    ${WRKSRC}/tclCheck.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tclCheck ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/tclCheck.1 ${MANPREFIX}/man/man1/
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/tclCheck ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/tclCheck.1 ${STAGEDIR}${PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
