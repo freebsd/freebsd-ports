@@ -9,21 +9,20 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Create a tags file from PHP sources
 
+LICENSE=	BSD2CLAUSE
+
 GNU_CONFIGURE=	yes
 
-MAN1=		phptags.1
-PLIST_FILES=	bin/phptags \
-		etc/phptags.conf.sample
+PLIST_FILES=	bin/phptags etc/phptags.conf.sample man/man1/phptags.1.gz
 PORTDOCS=	AUTHORS TODO README ChangeLog INSTALL
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-	@${INSTALL_DATA} ${WRKSRC}/phptags.conf.sample ${PREFIX}/etc
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/phptags.conf.sample ${STAGEDIR}${PREFIX}/etc
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
