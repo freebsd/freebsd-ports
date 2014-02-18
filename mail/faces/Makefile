@@ -19,13 +19,8 @@ SOX_DESC=	Sox audio support
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 
-MAN1=		compface.1
-MAN3=		compface.3
-MLINKS=		compface.1 uncompface.1 \
-		compface.3 uncompface.3
 PORTDOCS=	README
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ! ${PORT_OPTIONS:MX11}
@@ -40,7 +35,6 @@ LDFLAGS+=	-L../compface -L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--enable-imap --enable-pop \
 		--enable-name-unknown --with-spooldir=/var/mail \
 		--with-facedir=${DATADIR}
-MAN1+=		faces.1
 .endif
 
 .if ! ${PORT_OPTIONS:MNLS}
@@ -84,26 +78,24 @@ do-build:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/compface/compface ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/compface/uncompface ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/compface/compface.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/compface/libcompface.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/compface/libcompface.so.1 ${PREFIX}/lib
-	${LN} -sf libcompface.so.1 ${PREFIX}/lib/libcompface.so
-	${INSTALL_MAN} ${WRKSRC}/compface/compface.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/compface/compface.3 ${MANPREFIX}/man/man3
-	${INSTALL_SCRIPT} ${FILESDIR}/ikon2xbm ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${FILESDIR}/xbm2ikon ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${FILESDIR}/xbmcut48 ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${FILESDIR}/xbmsize48 ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/compface/compface ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/compface/uncompface ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/compface/compface.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/compface/libcompface.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/compface/libcompface.so.1 ${STAGEDIR}${PREFIX}/lib
+	${LN} -sf libcompface.so.1 ${STAGEDIR}${PREFIX}/lib/libcompface.so
+	${INSTALL_MAN} ${WRKSRC}/compface/compface.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/compface/compface.3 ${STAGEDIR}${MANPREFIX}/man/man3
+	${INSTALL_SCRIPT} ${FILESDIR}/ikon2xbm ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/xbm2ikon ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/xbmcut48 ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/xbmsize48 ${STAGEDIR}${PREFIX}/bin
 .if ${PORT_OPTIONS:MX11}
-	${INSTALL_PROGRAM} ${WRKSRC}/faces/faces ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/faces/faces.1 ${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/faces/Faces.ad ${LOCALBASE}/lib/X11/app-defaults/Faces
+	${INSTALL_PROGRAM} ${WRKSRC}/faces/faces ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/faces/faces.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/faces/Faces.ad ${STAGEDIR}${LOCALBASE}/lib/X11/app-defaults/Faces
 .endif
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
