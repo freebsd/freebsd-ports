@@ -2,6 +2,6 @@
 <!DOCTYPE catalog PUBLIC "-//OASIS//DTD Entity Resolution XML Catalog V1.0//EN"
 	"http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd">
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-  <public publicId="-//OASIS//DTD Simplified DocBook XML V1.1//EN" uri="file://@@DTDDIR@@/sdocbook.dtd" />
-  <public publicId="-//OASIS//DTD Simplified DocBook RefEntry XML V1.1//EN" uri="file://@@DTDDIR@@/sdocbookref.dtd" />
+  <public publicId="-//OASIS//DTD Simplified DocBook XML V1.1//EN" uri="file://%%DTDDIR%%/sdocbook.dtd" />
+  <public publicId="-//OASIS//DTD Simplified DocBook RefEntry XML V1.1//EN" uri="file://%%DTDDIR%%/sdocbookref.dtd" />
 </catalog>
