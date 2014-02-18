@@ -13,38 +13,33 @@ DISTNAME=	Imaging-${PORTVERSION}
 MAINTAINER=	mainland@apeiron.net
 COMMENT=	The Python Imaging Library
 
-LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
-		lcms.1:${PORTSDIR}/graphics/lcms \
-		freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		liblcms.so:${PORTSDIR}/graphics/lcms \
+		libfreetype.so:${PORTSDIR}/print/freetype2
 
 UNIQUENAME=	py-${PORTNAME}
 
 DIST_SUBDIR=	python
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	PIL
-PYDISTUTILS_EGGINFODIR=	${PYTHON_SITELIBDIR}/PIL
+PYDISTUTILS_AUTOPLIST=	yes
 
+PLIST_FILES=	%%PYTHON_INCLUDEDIR%%/ImPlatform.h %%PYTHON_INCLUDEDIR%%/Imaging.h
 PORTDOCS=	*
+PORTEXAMPLES=	*
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
-OPTIONS_DEFINE=	TKINTER
+OPTIONS_DEFINE=	DOCS TKINTER
 TKINTER_DESC=	tkinter for X support
 
 OPTIONS_DEFAULT=	TKINTER
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+TKINTER_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
+TKINTER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
 
-.if ${PORT_OPTIONS:MTKINTER}
-BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tkinter>0:${PORTSDIR}/x11-toolkits/py-tkinter
-PLIST_SUB+=	TKINTER=""
-.else
-PLIST_SUB+=	TKINTER="@comment "
-.endif
+.include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MTKINTER}
 post-patch:
@@ -53,13 +48,12 @@ post-patch:
 
 post-install:
 .for file in ImPlatform.h Imaging.h
-	${INSTALL_DATA} ${WRKSRC}/libImaging/${file} ${PYTHON_INCLUDEDIR}
+	@${MKDIR} ${STAGEDIR}${PYTHON_INCLUDEDIR}
+	${INSTALL_DATA} ${WRKSRC}/libImaging/${file} ${STAGEDIR}${PYTHON_INCLUDEDIR}
 .endfor
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/Scripts/* ${EXAMPLESDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Docs/* ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/Scripts/* ${STAGEDIR}${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Docs/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
