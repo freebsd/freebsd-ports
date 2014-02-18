@@ -23,6 +23,8 @@
 %%SITE_PERL%%/Finance/Quote/LeRevenu.pm
 %%SITE_PERL%%/Finance/Quote/ManInvestments.pm
 %%SITE_PERL%%/Finance/Quote/Morningstar.pm
+%%SITE_PERL%%/Finance/Quote/MorningstarJP.pm
+%%SITE_PERL%%/Finance/Quote/MtGox.pm
 %%SITE_PERL%%/Finance/Quote/NZX.pm
 %%SITE_PERL%%/Finance/Quote/Platinum.pm
 %%SITE_PERL%%/Finance/Quote/SEB.pm
@@ -74,6 +76,8 @@
 %%PERL5_MAN3%%/Finance::Quote::LeRevenu.3.gz
 %%PERL5_MAN3%%/Finance::Quote::ManInvestments.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Morningstar.3.gz
+%%PERL5_MAN3%%/Finance::Quote::MorningstarJP.3.gz
+%%PERL5_MAN3%%/Finance::Quote::MtGox.3.gz
 %%PERL5_MAN3%%/Finance::Quote::NZX.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Platinum.3.gz
 %%PERL5_MAN3%%/Finance::Quote::SEB.3.gz
