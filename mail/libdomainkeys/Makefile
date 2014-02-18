@@ -1,4 +1,4 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
+ Created by: Sergey Skvortsov <skv@protey.ru>
 # $FreeBSD$
 
 PORTNAME=	libdomainkeys
@@ -9,21 +9,20 @@ MASTER_SITES=	SF/domainkeys/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DomainKeys library
 
-USE_LDCONFIG=	YES
+USE_LDCONFIG=	yes
 SHLIB_MAJOR=	3
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
-USE_OPENSSL=	YES
+USE_OPENSSL=	yes
 
-NO_STAGE=	yes
 post-patch:
 	${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.prev
 	@${SED} -e "s=%%SHLIB_MAJOR%%=${SHLIB_MAJOR}=g" \
 		${FILESDIR}/Makefile > ${WRKSRC}/Makefile
 
 post-install:
-	@${MKDIR} ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/dknewkey ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/test ${DATADIR}/dktest
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/dknewkey ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/test ${STAGEDIR}${DATADIR}/dktest
 
 .include <bsd.port.mk>
