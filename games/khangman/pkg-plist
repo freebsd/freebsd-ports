@@ -3,8 +3,9 @@ include/khangman/khangman_engine_export.h
 include/khangman/khangmanengine.h
 include/khangman/prefs.h
 lib/libkhangmanengine.so
-lib/libkhangmanengine.so.5
-lib/libkhangmanengine.so.5.0.1
+lib/libkhangmanengine.so.4
+lib/libkhangmanengine.so.%%KDE4_GENERIC_LIB_VERSION%%
+man/man6/khangman.6.gz
 share/applications/kde4/khangman.desktop
 share/apps/khangman/fonts/Domestic_Manners.ttf
 share/apps/khangman/fonts/Dustismo_Roman.ttf

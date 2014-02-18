@@ -1,0 +1,3 @@
+Documents written in Traditional Chinese often use text encodings which
+require a Qt plugin available as chinese/qt4-codecs-tw in the ports
+collection.

@@ -52,7 +52,7 @@ share/locale/tg/LC_MESSAGES/katetextfilter.mo
 share/locale/tg/LC_MESSAGES/katexmlcheck.mo
 share/locale/tg/LC_MESSAGES/katexmltools.mo
 share/locale/tg/LC_MESSAGES/katomic.mo
-share/locale/tg/LC_MESSAGES/kbattleship.mo
+share/locale/tg/LC_MESSAGES/knavalbattle.mo
 share/locale/tg/LC_MESSAGES/kblackbox.mo
 share/locale/tg/LC_MESSAGES/kblankscrn.mo
 share/locale/tg/LC_MESSAGES/kbounce.mo
@@ -71,7 +71,6 @@ share/locale/tg/LC_MESSAGES/kcm_memory.mo
 share/locale/tg/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/tg/LC_MESSAGES/kcm_pci.mo
 share/locale/tg/LC_MESSAGES/kcm_phonon.mo
-share/locale/tg/LC_MESSAGES/kcm_solid.mo
 share/locale/tg/LC_MESSAGES/kcm_standard_actions.mo
 share/locale/tg/LC_MESSAGES/kcmaccess.mo
 share/locale/tg/LC_MESSAGES/kcmaudiocd.mo
@@ -313,7 +312,6 @@ share/locale/tg/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/tg/LC_MESSAGES/mf_konqplugin.mo
 share/locale/tg/LC_MESSAGES/minitoolsplugin.mo
 share/locale/tg/LC_MESSAGES/nepomukfileindexer.mo
-share/locale/tg/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/tg/LC_MESSAGES/nepomukserver.mo
 share/locale/tg/LC_MESSAGES/nepomukservicestub.mo
 share/locale/tg/LC_MESSAGES/nepomukstorage.mo
@@ -362,8 +360,6 @@ share/locale/tg/LC_MESSAGES/processui.mo
 share/locale/tg/LC_MESSAGES/rellinks.mo
 share/locale/tg/LC_MESSAGES/searchbarplugin.mo
 share/locale/tg/LC_MESSAGES/solid-hardware.mo
-share/locale/tg/LC_MESSAGES/solid-network.mo
-share/locale/tg/LC_MESSAGES/solidcontrol.mo
 share/locale/tg/LC_MESSAGES/soliduiserver.mo
 share/locale/tg/LC_MESSAGES/strigila_diff.mo
 share/locale/tg/LC_MESSAGES/sweeper.mo

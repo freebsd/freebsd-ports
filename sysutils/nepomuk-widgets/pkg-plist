@@ -1,13 +1,15 @@
+include/nepomuk2/filemetadataconfigwidget.h
 include/nepomuk2/filemetadatawidget.h
 include/nepomuk2/nepomukwidgets_export.h
+include/nepomuk2/resourcemodel.h
 include/nepomuk2/tagwidget.h
 lib/cmake/NepomukWidgets/NepomukWidgetsConfig.cmake
 lib/cmake/NepomukWidgets/NepomukWidgetsConfigVersion.cmake
 lib/cmake/NepomukWidgets/NepomukWidgetsTargetsWithPrefix-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/NepomukWidgets/NepomukWidgetsTargetsWithPrefix.cmake
 lib/libnepomukwidgets.so
-lib/libnepomukwidgets.so.5
-lib/libnepomukwidgets.so.5.0.1
+lib/libnepomukwidgets.so.4
+lib/libnepomukwidgets.so.%%KDE4_GENERIC_LIB_VERSION%%
 @dirrmtry lib/cmake/NepomukWidgets
 @dirrmtry lib/cmake
-@dirrm include/nepomuk2
+@dirrmtry include/nepomuk2

@@ -3,16 +3,13 @@
 PORTNAME=	kalgebra
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	math kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE graph calculator
 
-LIB_DEPENDS=	analitza.5:${PORTSDIR}/math/analitza
-
-CONFLICTS=	kdeedu-4.[0-6].*
+LIB_DEPENDS=	libanalitza.so:${PORTSDIR}/math/analitza
 
 CMAKE_ARGS=	-DBUILD_mobile:BOOL=FALSE
 USE_GL=		glu
@@ -22,5 +19,4 @@ USE_QT4=	corelib declarative gui opengl \
 		moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

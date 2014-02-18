@@ -5,6 +5,29 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140218:
+  AFFECTS: users of KDE SC 4
+  AUTHOR: kde@FreeBSD.org
+
+  KDE SC ports have been updated to 4.12.2. kdeadmin, kdenetwork, kdesdk,
+  and kdetoys ports have been split due to upstream changes.
+
+  KDE Workspace port has been updated to 4.11.6. It requires modern
+  Mesa libraries, provided by WITH_NEW_XORG knob. To update Xorg ports
+  to newer version follow instructions at https://wiki.freebsd.org/Graphics
+
+20140218:
+  AFFECTS: users of misc/kdehier4
+  AUTHOR: kde@FreeBSD.org
+
+  KDE4_PREFIX has been changed from /usr/local/kde4 to /usr/local.
+  All ports that depends on kdehier4 must be reinstalled.
+  PORTREVISION for affected ports has been increased, upgrading tools
+  (portmaster, pkg) should handle this update without manual intervention.
+  Please check /usr/local/kde4 for leftovers after upgrade. If you don't
+  have locally modified files, e.g. under /usr/local/kde4/etc, you may
+  safely remove /usr/local/kde4.
+
 20140214:
   AFFECTS: users of lang/perl5.12
   AUTHOR: mat@FreeBSD.org

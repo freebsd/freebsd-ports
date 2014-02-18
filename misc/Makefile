@@ -235,7 +235,6 @@
     SUBDIR += kde4-l10n-tr
     SUBDIR += kde4-l10n-ug
     SUBDIR += kde4-l10n-wa
-    SUBDIR += kde4-shared-mime-info
     SUBDIR += kde4-xdg-env
     SUBDIR += kdeedu4
     SUBDIR += kdehier4

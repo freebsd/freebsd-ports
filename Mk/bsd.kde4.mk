@@ -55,7 +55,6 @@ Kde_Pre_Include=	bsd.kde4.mk
 # pykdeuic4		- PyKDE user interface compiler
 # qtruby		- Qt 4 Ruby bindings
 # runtime		- Components required by many KDE Applications
-# sharedmime		- MIME types database for KDE ports
 # smokegen		- SMOKE base libraries
 # smokekde		- KDE SMOKE libraries
 # smokeqt		- Qt 4 SMOKE libraries
@@ -74,7 +73,8 @@ Kde_Pre_Include=	bsd.kde4.mk
 #			  ${LOCALBASE}/kde4, but this could change in the future.
 #
 
-KDE4_VERSION?=		4.10.5
+KDE4_VERSION?=		4.12.2
+KDE4_WORKSPACE_VERSION=	4.11.6
 KDE4_BRANCH?=		stable
 KTP_VERSION?=		0.6.1
 KTP_BRANCH?=		stable
@@ -83,11 +83,7 @@ CALLIGRA_BRANCH?=	stable
 KDEVELOP_VERSION?=	4.6.0
 KDEVELOP_BRANCH?=	stable
 
-#
-# KDE4 is installed into its own prefix to avoid conflicting with KDE3.
-#
-
-KDE4_PREFIX?=	${LOCALBASE}/kde4
+KDE4_PREFIX?=	${LOCALBASE}
 
 # Help cmake to find files when testing ports with non-default PREFIX
 CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH="${LOCALBASE};${KDE4_PREFIX}" \
@@ -104,7 +100,9 @@ NO_MTREE=	yes
 .endif
 
 PLIST_SUB+=	KDE4_PREFIX="${KDE4_PREFIX}" \
-		KDE4_VERSION="${KDE4_VERSION}"
+		KDE4_VERSION="${KDE4_VERSION}" \
+		KDE4_GENERIC_LIB_VERSION=${KDE4_VERSION} \
+		KDE4_NON_GENERIC_LIB_VERSION=${KDE4_VERSION:S,^4,5,}
 
 # Keep in sync with cmake/modules/PythonMacros.cmake
 _PYTHON_SHORT_VER=	${PYTHON_VERSION:S/^python//:S/.//}
@@ -135,7 +133,7 @@ _USE_KDE4_ALL=		baseapps kactivities kate kdehier kdelibs kdeprefix \
 			libkexiv2 libkdegames libkipi libkonq libksane marble \
 			nepomuk-core nepomuk-widgets \
 			okular oxygen perlkde perlqt pimlibs pykde4 pykdeuic4 \
-			qtruby runtime sharedmime smokegen smokekde smokeqt \
+			qtruby runtime smokegen smokekde smokeqt \
 			workspace
 # These components are not part of the Software Compilation.
 _USE_KDE4_ALL+=		akonadi attica automoc4 ontologies qimageblitz soprano \
@@ -146,60 +144,60 @@ baseapps_PATH=		${KDE4_PREFIX}/bin/kfmclient
 baseapps_TYPE=		run
 
 kactivities_PORT=	x11/kactivities
-kactivities_PATH=	${KDE4_PREFIX}/lib/libkactivities.so.6
+kactivities_PATH=	${KDE4_PREFIX}/lib/libkactivities.so
 
 kate_PORT=		editors/kate
-kate_PATH=		${KDE4_PREFIX}/lib/libkateinterfaces.so.5
+kate_PATH=		${KDE4_PREFIX}/lib/libkateinterfaces.so
 
 kdehier_PORT=		misc/kdehier4
 kdehier_PATH=		kdehier4>=0
 kdehier_TYPE=		run
 
 kdelibs_PORT=		x11/kdelibs4
-kdelibs_PATH=		${KDE4_PREFIX}/lib/libkdecore.so.7
+kdelibs_PATH=		${KDE4_PREFIX}/lib/libkdecore.so
 
 korundum_PORT=		devel/ruby-korundum
 korundum_PATH=		${KDE4_PREFIX}/lib/kde4/krubypluginfactory.so
 korundum_TYPE=		run
 
 libkcddb_PORT=		audio/libkcddb
-libkcddb_PATH=		${KDE4_PREFIX}/lib/libkcddb.so.5
+libkcddb_PATH=		${KDE4_PREFIX}/lib/libkcddb.so
 
 libkcompactdisc_PORT=	audio/libkcompactdisc
-libkcompactdisc_PATH=	${KDE4_PREFIX}/lib/libkcompactdisc.so.5
+libkcompactdisc_PATH=	${KDE4_PREFIX}/lib/libkcompactdisc.so
 
 libkdcraw_PORT=		graphics/libkdcraw-kde4
-libkdcraw_PATH=		${KDE4_PREFIX}/lib/libkdcraw.so.22
+libkdcraw_PATH=		${KDE4_PREFIX}/lib/libkdcraw.so
 
 libkdeedu_PORT=		misc/libkdeedu
-libkdeedu_PATH=		${KDE4_PREFIX}/lib/libkeduvocdocument.so.5
+libkdeedu_PATH=		${KDE4_PREFIX}/lib/libkeduvocdocument.so
 
 libkdegames_PORT=	games/libkdegames
-libkdegames_PATH=	${KDE4_PREFIX}/lib/libkdegames.so.6
+libkdegames_PATH=	${KDE4_PREFIX}/lib/libkdegames.so
 
 libkexiv2_PORT=		graphics/libkexiv2-kde4
-libkexiv2_PATH=		${KDE4_PREFIX}/lib/libkexiv2.so.11
+libkexiv2_PATH=		${KDE4_PREFIX}/lib/libkexiv2.so
 
 libkipi_PORT=		graphics/libkipi-kde4
-libkipi_PATH=		${KDE4_PREFIX}/lib/libkipi.so.10
+libkipi_PATH=		${KDE4_PREFIX}/lib/libkipi.so
 
 libkonq_PORT=		x11/libkonq
-libkonq_PATH=		${KDE4_PREFIX}/lib/libkonq.so.7
+libkonq_PATH=		${KDE4_PREFIX}/lib/libkonq.so
 
 libksane_PORT=		graphics/libksane
-libksane_PATH=		${KDE4_PREFIX}/lib/libksane.so.0
+libksane_PATH=		${KDE4_PREFIX}/lib/libksane.so
 
 marble_PORT=		astro/marble
-marble_PATH=		${KDE4_PREFIX}/lib/libmarblewidget.so.15
+marble_PATH=		${KDE4_PREFIX}/lib/libmarblewidget.so
 
 nepomuk-core_PORT=	sysutils/nepomuk-core
-nepomuk-core_PATH=	${KDE4_PREFIX}/lib/libnepomukcore.so.5
+nepomuk-core_PATH=	${KDE4_PREFIX}/lib/libnepomukcore.so
 
 nepomuk-widgets_PORT=	sysutils/nepomuk-widgets
-nepomuk-widgets_PATH=	${KDE4_PREFIX}/lib/libnepomukwidgets.so.5
+nepomuk-widgets_PATH=	${KDE4_PREFIX}/lib/libnepomukwidgets.so
 
 okular_PORT=		graphics/okular
-okular_PATH=		${KDE4_PREFIX}/lib/libokularcore.so.2
+okular_PATH=		${KDE4_PREFIX}/lib/libokularcore.so
 
 oxygen_PORT=		x11-themes/kde4-icons-oxygen
 oxygen_PATH=		${KDE4_PREFIX}/share/icons/oxygen/index.theme
@@ -213,7 +211,7 @@ perlqt_PORT=		devel/p5-perlqt
 perlqt_PATH=		${KDE4_PREFIX}/bin/puic4
 
 pimlibs_PORT=		deskutils/kdepimlibs4
-pimlibs_PATH=		${KDE4_PREFIX}/lib/libkpimutils.so.5
+pimlibs_PATH=		${KDE4_PREFIX}/lib/libkpimutils.so
 
 pykde4_PORT=		devel/py-pykde4
 pykde4_PATH=		${KDE4_PREFIX}/lib/kde4/kpythonpluginfactory.so
@@ -224,32 +222,29 @@ pykdeuic4_PATH=		${LOCALBASE}/bin/pykdeuic4
 pykdeuic4_TYPE=		run
 
 qtruby_PORT=		devel/ruby-qtruby
-qtruby_PATH=		${KDE4_PREFIX}/lib/libqtruby4shared.so.2
+qtruby_PATH=		${KDE4_PREFIX}/lib/libqtruby4shared.so
 
 runtime_PORT=		x11/kde4-runtime
 runtime_PATH=		${KDE4_PREFIX}/bin/knotify4
 runtime_TYPE=		run
 
-sharedmime_PORT=	misc/kde4-shared-mime-info
-sharedmime_PATH=	kde4-shared-mime-info>=0
-
 smokegen_PORT=		devel/smokegen
-smokegen_PATH=		${KDE4_PREFIX}/lib/libsmokebase.so.3
+smokegen_PATH=		${KDE4_PREFIX}/lib/libsmokebase.so
 
 smokekde_PORT=		devel/smokekde
-smokekde_PATH=		${KDE4_PREFIX}/lib/libsmokekdecore.so.3
+smokekde_PATH=		${KDE4_PREFIX}/lib/libsmokekdecore.so
 
 smokeqt_PORT=		devel/smokeqt
-smokeqt_PATH=		${KDE4_PREFIX}/lib/libsmokeqtcore.so.3
+smokeqt_PATH=		${KDE4_PREFIX}/lib/libsmokeqtcore.so
 
 workspace_PORT=		x11/kde4-workspace
-workspace_PATH=		${KDE4_PREFIX}/lib/libkworkspace.so.5
+workspace_PATH=		${KDE4_PREFIX}/lib/libkworkspace.so
 
 akonadi_PORT=		databases/akonadi
-akonadi_PATH=		${KDE4_PREFIX}/lib/libakonadiprotocolinternals.so.1
+akonadi_PATH=		${KDE4_PREFIX}/lib/libakonadiprotocolinternals.so
 
 attica_PORT=		x11-toolkits/attica
-attica_PATH=		${LOCALBASE}/lib/libattica.so.0
+attica_PATH=		${LOCALBASE}/lib/libattica.so
 
 automoc4_PORT=		devel/automoc4
 automoc4_PATH=		${LOCALBASE}/bin/automoc4
@@ -259,10 +254,10 @@ ontologies_PORT=	x11-toolkits/shared-desktop-ontologies
 ontologies_PATH=	${LOCALBASE}/share/ontology/core/rdf.ontology
 
 qimageblitz_PORT=	x11/qimageblitz
-qimageblitz_PATH=	${LOCALBASE}/lib/libqimageblitz.so.4
+qimageblitz_PATH=	${LOCALBASE}/lib/libqimageblitz.so
 
 soprano_PORT=		textproc/soprano
-soprano_PATH=		${LOCALBASE}/lib/libsoprano.so.4
+soprano_PATH=		${LOCALBASE}/lib/libsoprano.so
 
 strigi_PORT=		deskutils/libstreamanalyzer
 strigi_PATH=		${LOCALBASE}/lib/libstreamanalyzer.so.0
@@ -300,17 +295,5 @@ RUN_DEPENDS+=		${${component}_DEPENDS}
 IGNORE=				can't be installed: unknown USE_KDE4 component '${component}'
 . endif # ${_USE_KDE4_ALL:M${component}} != ""
 .endfor
-
-.if defined(USE_KDE4) && ${USE_KDE4:Msharedmime} != ""
-post-install:	post-install-sharedmime
-. if !target(post-install-sharedmime)
-post-install-sharedmime:
-.  if defined(NO_STAGE)
-	@-${LOCALBASE}/bin/update-mime-database ${KDE4_PREFIX}/share/mime
-.  endif
-	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-mime-database %D/share/mime > /dev/null || /usr/bin/true" >> ${TMPPLIST}
-. endif
-.endif
 
 .endif # defined(_POSTMKINCLUDED) && !defined(Kde_Post_Include)

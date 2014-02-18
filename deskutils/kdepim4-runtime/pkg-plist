@@ -1,7 +1,7 @@
 bin/accountwizard
-bin/akonadi2xml
 bin/akonadi_birthdays_resource
 bin/akonadi_davgroupware_resource
+bin/akonadi_facebook_resource
 bin/akonadi_googlecalendar_resource
 bin/akonadi_googlecontacts_resource
 bin/akonadi_icaldir_resource
@@ -15,14 +15,17 @@ bin/akonadi_localbookmarks_resource
 bin/akonadi_maildispatcher_agent
 bin/akonadi_mailtransport_dummy_resource
 bin/akonadi_microblog_resource
+bin/akonadi_migration_agent
 bin/akonadi_mixedmaildir_resource
 bin/akonadi_nepomuk_feeder
 bin/akonadi_nepomuktag_resource
+bin/akonadi_newmailnotifier_agent
 bin/akonadi_nntp_resource
 bin/akonadi_openxchange_resource
 bin/akonadi_pop3_resource
 bin/akonadi_vcarddir_resource
 bin/akonaditray
+bin/gidmigrator
 bin/kaddressbookmigrator
 bin/kjotsmigrator
 bin/kmail-migrator
@@ -34,7 +37,6 @@ lib/kde4/akonadi_contacts_resource.so
 lib/kde4/akonadi_ical_resource.so
 lib/kde4/akonadi_kalarm_dir_resource.so
 lib/kde4/akonadi_kalarm_resource.so
-lib/kde4/akonadi_knut_resource.so
 lib/kde4/akonadi_maildir_resource.so
 lib/kde4/akonadi_mbox_resource.so
 lib/kde4/akonadi_nepomuk_calendar_feeder.so
@@ -50,7 +52,35 @@ lib/kde4/akonadi_serializer_kcal.so
 lib/kde4/akonadi_serializer_kcalcore.so
 lib/kde4/akonadi_serializer_mail.so
 lib/kde4/akonadi_serializer_microblog.so
+lib/kde4/akonadi_serializer_socialnotification.so
 lib/kde4/akonadi_vcard_resource.so
+lib/kde4/imports/org/kde/BreadcrumbNavigationView.qml
+lib/kde4/imports/org/kde/Dialog.qml
+lib/kde4/imports/org/kde/Flap.qml
+lib/kde4/imports/org/kde/Flap2.qml
+lib/kde4/imports/org/kde/SlideoutPanel.qml
+lib/kde4/imports/org/kde/SlideoutPanelContainer.qml
+lib/kde4/imports/org/kde/akonadi/AkonadiBreadcrumbNavigationView.qml
+lib/kde4/imports/org/kde/akonadi/CollectionDelegate.qml
+lib/kde4/imports/org/kde/akonadi/border_dot.png
+lib/kde4/imports/org/kde/akonadi/check.png
+lib/kde4/imports/org/kde/akonadi/collectionview.qml
+lib/kde4/imports/org/kde/akonadi/qmldir
+lib/kde4/imports/org/kde/akonadi/sliderbackground.png
+lib/kde4/imports/org/kde/akonadi/transparentplus.png
+lib/kde4/imports/org/kde/dividing-line-horizontal.png
+lib/kde4/imports/org/kde/dividing-line.png
+lib/kde4/imports/org/kde/flap-collapsed-bottom.png
+lib/kde4/imports/org/kde/flap-collapsed-mid.png
+lib/kde4/imports/org/kde/flap-collapsed-top.png
+lib/kde4/imports/org/kde/flap-expanded-bottom.png
+lib/kde4/imports/org/kde/flap-expanded-mid.png
+lib/kde4/imports/org/kde/flap-expanded-top.png
+lib/kde4/imports/org/kde/libkdeqmlplugin.so
+lib/kde4/imports/org/kde/list-line-top.png
+lib/kde4/imports/org/kde/qmldir
+lib/kde4/imports/org/kde/scrollable-bottom.png
+lib/kde4/imports/org/kde/scrollable-top.png
 lib/kde4/kabc_akonadi.so
 lib/kde4/kcal_akonadi.so
 lib/kde4/kcm_akonadi.so
@@ -58,26 +88,24 @@ lib/kde4/kcm_akonadi_resources.so
 lib/kde4/kcm_akonadi_server.so
 lib/kde4/kio_akonadi.so
 lib/libakonadi-filestore.so
-lib/libakonadi-filestore.so.5
-lib/libakonadi-filestore.so.5.0.1
-lib/libakonadi-xml.so
-lib/libakonadi-xml.so.5
-lib/libakonadi-xml.so.5.0.1
+lib/libakonadi-filestore.so.4
+lib/libakonadi-filestore.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/libkdepim-copy.so
-lib/libkdepim-copy.so.5
-lib/libkdepim-copy.so.5.0.1
+lib/libkdepim-copy.so.4
+lib/libkdepim-copy.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/libkmindexreader.so
-lib/libkmindexreader.so.5
-lib/libkmindexreader.so.5.0.1
+lib/libkmindexreader.so.4
+lib/libkmindexreader.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/libmaildir.so
-lib/libmaildir.so.5
-lib/libmaildir.so.5.0.1
+lib/libmaildir.so.4
+lib/libmaildir.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/libnepomukfeederpluginlib.a
 share/akonadi/agents/akonadinepomukfeederagent.desktop
 share/akonadi/agents/akonotesresource.desktop
 share/akonadi/agents/birthdaysresource.desktop
 share/akonadi/agents/contactsresource.desktop
 share/akonadi/agents/davgroupwareresource.desktop
+share/akonadi/agents/facebookresource.desktop
 share/akonadi/agents/googlecalendarresource.desktop
 share/akonadi/agents/googlecontactsresource.desktop
 share/akonadi/agents/icaldirresource.desktop
@@ -89,16 +117,17 @@ share/akonadi/agents/kalarmdirresource.desktop
 share/akonadi/agents/kalarmresource.desktop
 share/akonadi/agents/kcalresource.desktop
 share/akonadi/agents/kdeaccountsresource.desktop
-share/akonadi/agents/knutresource.desktop
 share/akonadi/agents/kolabproxyresource.desktop
 share/akonadi/agents/localbookmarksresource.desktop
 share/akonadi/agents/maildirresource.desktop
 share/akonadi/agents/maildispatcheragent.desktop
 share/akonadi/agents/mboxresource.desktop
 share/akonadi/agents/microblog.desktop
+share/akonadi/agents/migrationagent.desktop
 share/akonadi/agents/mixedmaildirresource.desktop
 share/akonadi/agents/mtdummyresource.desktop
 share/akonadi/agents/nepomuktagresource.desktop
+share/akonadi/agents/newmailnotifieragent.desktop
 share/akonadi/agents/nntpresource.desktop
 share/akonadi/agents/notesresource.desktop
 share/akonadi/agents/openxchangeresource.desktop
@@ -131,7 +160,6 @@ share/apps/akonadi/accountwizard/pop3/pop3wizard.ui
 share/apps/akonadi/accountwizard/tine20/tine20wizard.desktop
 share/apps/akonadi/accountwizard/tine20/tine20wizard.es
 share/apps/akonadi/accountwizard/tine20/tine20wizard.ui
-share/apps/akonadi/akonadi-xml.xsd
 share/apps/akonadi/firstrun/defaultaddressbook
 share/apps/akonadi/firstrun/defaultcalendar
 share/apps/akonadi/firstrun/defaultnotebook
@@ -143,9 +171,11 @@ share/apps/akonadi/plugins/serializer/akonadi_serializer_kcal.desktop
 share/apps/akonadi/plugins/serializer/akonadi_serializer_kcalcore.desktop
 share/apps/akonadi/plugins/serializer/akonadi_serializer_mail.desktop
 share/apps/akonadi/plugins/serializer/akonadi_serializer_microblog.desktop
-share/apps/akonadi_knut_resource/knut-template.xml
+share/apps/akonadi/plugins/serializer/akonadi_serializer_socialnotification.desktop
+share/apps/akonadi_facebook_resource/akonadi_facebook_resource.notifyrc
 share/apps/akonadi_maildispatcher_agent/akonadi_maildispatcher_agent.notifyrc
-share/apps/akonadi_nepomuk_feeder/akonadi_nepomuk_feeder.notifyrc
+share/apps/akonadi_newmailnotifier_agent/akonadi_newmailnotifier_agent.notifyrc
+share/apps/kconf_update/newmailnotifier.upd
 share/apps/nepomukpimindexerutility/nepomukpimindexerutility.rc
 share/autostart/kaddressbookmigrator.desktop
 share/config/accountwizard.knsrc
@@ -155,10 +185,14 @@ share/dbus-1/interfaces/org.kde.Akonadi.Maildir.Settings.xml
 share/dbus-1/interfaces/org.kde.Akonadi.MixedMaildir.Settings.xml
 share/icons/hicolor/128x128/apps/akonaditray.png
 share/icons/hicolor/128x128/apps/ox.png
+share/icons/hicolor/16x16/apps/facebookresource.png
 share/icons/hicolor/16x16/apps/ox.png
 share/icons/hicolor/22x22/apps/akonaditray.png
+share/icons/hicolor/22x22/apps/facebookresource.png
 share/icons/hicolor/32x32/apps/akonaditray.png
+share/icons/hicolor/32x32/apps/facebookresource.png
 share/icons/hicolor/32x32/apps/ox.png
+share/icons/hicolor/48x48/apps/facebookresource.png
 share/icons/hicolor/48x48/apps/ox.png
 share/icons/hicolor/64x64/apps/akonaditray.png
 share/icons/hicolor/64x64/apps/kolab.png
@@ -169,6 +203,7 @@ share/kde4/services/akonadi/davgroupware-providers/citadel.desktop
 share/kde4/services/akonadi/davgroupware-providers/davical.desktop
 share/kde4/services/akonadi/davgroupware-providers/egroupware.desktop
 share/kde4/services/akonadi/davgroupware-providers/opengroupware.desktop
+share/kde4/services/akonadi/davgroupware-providers/owncloud-pre5.desktop
 share/kde4/services/akonadi/davgroupware-providers/owncloud.desktop
 share/kde4/services/akonadi/davgroupware-providers/scalix.desktop
 share/kde4/services/akonadi/davgroupware-providers/sogo.desktop
@@ -188,6 +223,7 @@ share/kde4/servicetypes/akonadinepomukfeeder.desktop
 share/kde4/servicetypes/davgroupwareprovider.desktop
 share/mime/packages/accountwizard-mime.xml
 share/mime/packages/kdepim-mime.xml
+share/mime/packages/x-vnd.akonadi.socialnotification.xml
 share/ontology/kde/aneo.ontology
 share/ontology/kde/aneo.trig
 @dirrmtry share/ontology/kde
@@ -195,9 +231,9 @@ share/ontology/kde/aneo.trig
 @dirrm share/kde4/services/akonadi/davgroupware-providers
 @dirrmtry share/kde4/services/akonadi
 @dirrm share/apps/nepomukpimindexerutility
-@dirrm share/apps/akonadi_nepomuk_feeder
+@dirrm share/apps/akonadi_newmailnotifier_agent
 @dirrm share/apps/akonadi_maildispatcher_agent
-@dirrm share/apps/akonadi_knut_resource
+@dirrm share/apps/akonadi_facebook_resource
 @dirrm share/apps/akonadi/plugins/serializer
 @dirrm share/apps/akonadi/plugins
 @dirrm share/apps/akonadi/firstrun
@@ -213,3 +249,4 @@ share/ontology/kde/aneo.trig
 @dirrmtry share/apps/akonadi
 @dirrm share/akonadi/agents
 @dirrm share/akonadi
+@dirrm lib/kde4/imports/org/kde/akonadi

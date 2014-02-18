@@ -2508,7 +2508,6 @@ share/icons/nuvola/128x128/apps/kivio.png
 share/icons/nuvola/128x128/apps/kjobviewer.png
 share/icons/nuvola/128x128/apps/kjots.png
 share/icons/nuvola/128x128/apps/klettres.png
-share/icons/nuvola/128x128/apps/klipper.png
 share/icons/nuvola/128x128/apps/klpq.png
 share/icons/nuvola/128x128/apps/kmag.png
 share/icons/nuvola/128x128/apps/kmahjong.png
@@ -4217,6 +4216,7 @@ share/icons/nuvola/22x22/status/mail-attachment.png
 share/icons/nuvola/22x22/status/media-playlist-repeat.png
 share/icons/nuvola/22x22/status/media-playlist-shuffle.png
 share/icons/nuvola/22x22/status/user-trash-full.png
+share/icons/nuvola/256x256/apps/klipper.png
 share/icons/nuvola/256x256/mimetypes/inode-directory.png
 share/icons/nuvola/256x256/mimetypes/text-html.png
 share/icons/nuvola/32x32/actions/about_kde.png
@@ -6371,8 +6371,6 @@ share/kde4/services/ScreenSavers/xmatrix.desktop
 share/kde4/services/ScreenSavers/xrayswarm.desktop
 share/kde4/services/ScreenSavers/xspirograph.desktop
 share/kde4/services/ScreenSavers/zoom.desktop
-share/sounds/KDE_Logout_new.wav
-share/sounds/KDE_Startup_new.wav
 share/wallpapers/Aghi/contents/images/1024x768.jpg
 share/wallpapers/Aghi/contents/images/1280x1024.jpg
 share/wallpapers/Aghi/contents/images/1280x800.jpg
@@ -6801,6 +6799,7 @@ share/wallpapers/Yellow_Flowers/metadata.desktop
 @dirrm share/icons/nuvola/32x32/actions
 @dirrm share/icons/nuvola/32x32
 @dirrm share/icons/nuvola/256x256/mimetypes
+@dirrm share/icons/nuvola/256x256/apps
 @dirrm share/icons/nuvola/256x256
 @dirrm share/icons/nuvola/22x22/status
 @dirrm share/icons/nuvola/22x22/places

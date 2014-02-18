@@ -1,95 +1,82 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kdesdk
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	2
 CATEGORIES=	devel kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+DISTFILES=	#
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE Software Development Kit
 
-LIB_DEPENDS=	libsvn_client-1.so:${PORTSDIR}/devel/subversion \
-		libboost_thread.so:${PORTSDIR}/devel/boost-libs \
-		libhunspell-1.3.so:${PORTSDIR}/textproc/hunspell \
-		libqca.so:${PORTSDIR}/devel/qca
-BUILD_DEPENDS=	${LOCALBASE}/include/ltdl.h:${PORTSDIR}/devel/libltdl
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
+USE_KDE4=	kdeprefix
+NO_BUILD=	yes
+NO_INSTALL=	yes
+NO_MTREE=	yes
 
-LATEST_LINK=	${PORTNAME}4
+OPTIONS_DEFINE=	CERVISIA \
+		DEVUTILS \
+		DEVSCRIPTS \
+		DOLPHIN \
+		KAPPTEMPLATE \
+		KATE \
+		KATE_PATE \
+		KCACHEGRIND \
+		KIOSLAVES \
+		KOMPARE \
+		LOKALIZE \
+		OKTETA \
+		POXML \
+		STRIGI \
+		THUMBNAILER \
+		UMBRELLO
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
-CONFLICTS=	kdeutils-4.5.[0-5]
+CERVISIA_DESC=		CVS frontend
+CERVISIA_RUN_DEPENDS=	${KDE4_PREFIX}/bin/cervisia:${PORTSDIR}/devel/cervisia
 
-USE_XZ=		yes
-USE_GNOME=	libxml2 libxslt
-USE_KDE4=	kdehier kdelibs kdeprefix libkonq pimlibs \
-		akonadi automoc4 qimageblitz_build strigi
-USES=		cmake:outsource perl5 gmake shared-mime-info
-USE_QT4=	corelib dbus declarative designer gui qt3support \
-		script scripttools sql xml \
-		qmake_build moc_build rcc_build uic_build uic3_build
-USE_LDCONFIG=	yes
-CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
+DEVUTILS_DESC=		KDE development utilities
+DEVUTILS_RUN_DEPENDS=	${KDE4_PREFIX}/bin/kuiviewer:${PORTSDIR}/devel/kde-dev-utils
 
-MAN1=	adddebug.1 \
-	cervisia.1 \
-	cheatmake.1 \
-	create_cvsignore.1 \
-	create_makefile.1 \
-	create_makefiles.1 \
-	cvscheck.1 \
-	cvslastchange.1 \
-	cvslastlog.1 \
-	cvsrevertlast.1 \
-	cxxmetric.1 \
-	extend_dmalloc.1 \
-	extractrc.1 \
-	fixincludes.1 \
-	po2xml.1 \
-	pruneemptydirs.1 \
-	qtdoc.1 \
-	reportview.1 \
-	split2po.1 \
-	swappo.1 \
-	transxx.1 \
-	xml2pot.1 \
-	zonetab2pot.py.1
+DEVSCRIPTS_DESC=	KDE development scripts
+DEVSCRIPTS_RUN_DEPENDS=	${KDE4_PREFIX}/bin/kdekillall:${PORTSDIR}/devel/kde-dev-scripts
 
-OPTIONS_DEFINE=	ANTLR KATE KATE_PATE
-OPTIONS_DEFAULT=	KATE
+DOLPHIN_DESC=		Plugins for Dolphin file manager
+DOLPHIN_RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/fileviewgitplugin.so:${PORTSDIR}/devel/dolphin-plugins
 
-ANTLR_DESC=	Support for po2xml and swappo tools
-KATE_DESC=	Install Kate advanced text editor
-KATE_PATE_DESC=	Support for Python plugins in Kate
+KAPPTEMPLATE_DESC=	Template generator
+KAPPTEMPLATE_RUN_DEPENDS=	${KDE4_PREFIX}/bin/kapptemplate:${PORTSDIR}/devel/kapptemplate
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+KATE_DESC=		KDE advanced text editor
+KATE_USE=		KDE4=kate_run
 
-.if ${PORT_OPTIONS:MANTLR}
-BUILD_DEPENDS+=	antlr:${PORTSDIR}/devel/antlr
-RUN_DEPENDS+=	antlr:${PORTSDIR}/devel/antlr
-PLIST_SUB+=	ANTLR=""
-.else
-CMAKE_ARGS+=	-DWITH_Antlr2:BOOL=off
-PLIST_SUB+=	ANTLR="@comment "
-.endif
+KATE_PATE_DESC=		Support for Python plugins in Kate
+KATE_PATE_RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/katepateplugin.so:${PORTSDIR}/editors/kate-plugin-pate
 
-.if ${PORT_OPTIONS:MKATE}
-USE_KDE4+=	kate_run
-.endif
+KCACHEGRIND_DESC=	Profiler frontend
+KCACHEGRIND_RUN_DEPENDS=	${KDE4_PREFIX}/bin/kcachegrind:${PORTSDIR}/devel/kcachegrind
 
-.if ${PORT_OPTIONS:MKATE_PATE}
-RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/pateplugin.so:${PORTSDIR}/editors/kate-plugin-pate
-.endif
+KIOSLAVES_DESC=		SDK related KIO slaves
+KIOSLAVES_RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/kio_svn.so:${PORTSDIR}/devel/kdesdk4-kioslaves
 
-post-patch:
-	${FIND} ${WRKSRC}/scripts -type f | \
-		${XARGS} ${REINPLACE_CMD} -Ee 's,/usr/bin/(perl|python|ruby|svn),${LOCALBASE}/bin/\1,g'
-	# Prevent updating MIME during build.
-	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d; /SharedMimeInfo/ d' \
-		${PATCH_WRKSRC}/okteta/mimetypes/CMakeLists.txt
+KOMPARE_DESC=		Diff/Patch frontend
+KOMPARE_RUN_DEPENDS=	${KDE4_PREFIX}/bin/kompare:${PORTSDIR}/textproc/kompare
+
+LOKALIZE_DESC=		Computer-aided translation system
+LOKALIZE_RUN_DEPENDS=	${KDE4_PREFIX}/bin/lokalize:${PORTSDIR}/devel/lokalize
+
+OKTETA_DESC=		Hex editor
+OKTETA_RUN_DEPENDS=	${KDE4_PREFIX}/bin/okteta:${PORTSDIR}/devel/okteta
+
+POXML_DESC=		Tools to translate DocBook XML using gettext
+POXML_RUN_DEPENDS=	${KDE4_PREFIX}/bin/po2xml:${PORTSDIR}/devel/poxml
+
+STRIGI_DESC=		Strigi analyzers for SDK file formats
+STRIGI_RUN_DEPENDS=	${KDE4_PREFIX}/lib/strigi/strigila_diff.so:${PORTSDIR}/devel/kdesdk4-strigi-analyzers
+
+THUMBNAILER_DESC=	Thumbnail generator for gettext po files
+THUMBNAILER_RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/pothumbnail.so:${PORTSDIR}/devel/kdesdk4-thumbnailers
+
+UMBRELLO_DESC=		UML modeller
+UMBRELLO_RUN_DEPENDS=	${KDE4_PREFIX}/bin/umbrello:${PORTSDIR}/devel/umbrello
 
 .include <bsd.port.mk>

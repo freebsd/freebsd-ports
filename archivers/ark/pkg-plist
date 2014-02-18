@@ -10,8 +10,9 @@ lib/kde4/kerfuffle_libgz.so
 lib/kde4/kerfuffle_libxz.so
 lib/kde4/libextracthere.so
 lib/libkerfuffle.so
-lib/libkerfuffle.so.5
-lib/libkerfuffle.so.5.0.1
+lib/libkerfuffle.so.4
+lib/libkerfuffle.so.%%KDE4_GENERIC_LIB_VERSION%%
+man/man1/ark.1.gz
 share/applications/kde4/ark.desktop
 share/apps/ark/ark_part.rc
 share/apps/ark/arkui.rc

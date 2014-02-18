@@ -431,6 +431,7 @@
     SUBDIR += k3b-kde4
     SUBDIR += k8temp
     SUBDIR += kcm-polkit-kde
+    SUBDIR += kcron
     SUBDIR += kdeadmin4
     SUBDIR += kdf
     SUBDIR += kdirstat
@@ -443,6 +444,8 @@
     SUBDIR += krename-kde4
     SUBDIR += kshutdown-kde4
     SUBDIR += ksysguardd
+    SUBDIR += ksystemlog
+    SUBDIR += kuser
     SUBDIR += lbl-cf
     SUBDIR += lbl-hf
     SUBDIR += lcdproc

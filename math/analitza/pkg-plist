@@ -39,14 +39,17 @@ lib/cmake/analitza/AnalitzaTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/analitza/AnalitzaTargets.cmake
 lib/libanalitza.so
 lib/libanalitza.so.5
-lib/libanalitza.so.5.0.1
+lib/libanalitza.so.5.0.0
 lib/libanalitzagui.so
 lib/libanalitzagui.so.5
-lib/libanalitzagui.so.5.0.1
+lib/libanalitzagui.so.5.0.0
 lib/libanalitzaplot.so
 lib/libanalitzaplot.so.5
-lib/libanalitzaplot.so.5.0.1
+lib/libanalitzaplot.so.5.0.0
+share/apps/libanalitza/plots/3Ds.plots
 share/apps/libanalitza/plots/basic_curves.plots
+share/apps/libanalitza/plots/conics.plots
+share/apps/libanalitza/plots/polar.plots
 @dirrm share/apps/libanalitza/plots
 @dirrm share/apps/libanalitza
 @dirrm lib/cmake/analitza

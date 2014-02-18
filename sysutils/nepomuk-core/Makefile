@@ -3,21 +3,19 @@
 
 PORTNAME=	nepomuk-core
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	sysutils kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Core Nepomuk system libraries and services for KDE
 
 LIB_DEPENDS=	libpoppler-qt4.so:${PORTSDIR}/graphics/poppler-qt4 \
-		tag.1:${PORTSDIR}/audio/taglib \
-		exiv2.12:${PORTSDIR}/graphics/exiv2 \
-		swscale:${PORTSDIR}/multimedia/ffmpeg
-
-CONFLICTS_INSTALL=	kde-runtime-4.[7-8].*
+		libtag.so:${PORTSDIR}/audio/taglib \
+		libexiv2.so:${PORTSDIR}/graphics/exiv2 \
+		libswscale.so:${PORTSDIR}/multimedia/ffmpeg \
+		libepub.so:${PORTSDIR}/textproc/ebook-tools \
+		libqmobipocket.so:${PORTSDIR}/graphics/kdegraphics4-mobipocket
 
 USE_XZ=		yes
 USE_KDE4=	kdeprefix kdehier automoc4 kdelibs ontologies soprano
@@ -28,9 +26,8 @@ MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 
 SUB_FILES=	nepomuk-env.sh
 
-NO_STAGE=	yes
 post-install:
-	${MKDIR} ${PREFIX}/env
-	${INSTALL_SCRIPT} ${WRKDIR}/nepomuk-env.sh ${PREFIX}/env
+	${MKDIR} ${STAGEDIR}${PREFIX}/env
+	${INSTALL_SCRIPT} ${WRKDIR}/nepomuk-env.sh ${STAGEDIR}${PREFIX}/env
 
 .include <bsd.port.mk>

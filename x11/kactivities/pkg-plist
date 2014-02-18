@@ -4,6 +4,7 @@ include/KDE/KActivities/Info
 include/KDE/KActivities/Models/ActivityModel
 include/KDE/KActivities/Models/ResourceModel
 include/KDE/KActivities/ResourceInstance
+include/KDE/KActivities/Version
 include/kactivities-models/activitymodel.h
 include/kactivities-models/kactivities_models_export.h
 include/kactivities-models/resourcemodel.h
@@ -12,6 +13,7 @@ include/kactivities/controller.h
 include/kactivities/info.h
 include/kactivities/kactivities_export.h
 include/kactivities/resourceinstance.h
+include/kactivities/version.h
 lib/cmake/KActivities-Models/KActivities-ModelsConfig.cmake
 lib/cmake/KActivities-Models/KActivities-ModelsConfigVersion.cmake
 lib/cmake/KActivities-Models/KActivitiesModelsLibraryTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -27,7 +29,7 @@ lib/libkactivities-models.so.1
 lib/libkactivities-models.so.1.0.0
 lib/libkactivities.so
 lib/libkactivities.so.6
-lib/libkactivities.so.6.1.0
+lib/libkactivities.so.6.2.0
 libdata/pkgconfig/libkactivities-models.pc
 libdata/pkgconfig/libkactivities.pc
 share/ontology/kde/kao.ontology

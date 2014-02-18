@@ -1,7 +1,7 @@
 bin/krfb
 lib/kde4/krfb_framebuffer_qt.so
 lib/kde4/krfb_framebuffer_x11.so
-lib/libkrfbprivate.so.5.0.1
+lib/libkrfbprivate.so.%%KDE4_GENERIC_LIB_VERSION%%
 share/applications/kde4/krfb.desktop
 share/apps/krfb/krfb.notifyrc
 share/dbus-1/services/org.freedesktop.Telepathy.Client.krfb_rfb_handler.service

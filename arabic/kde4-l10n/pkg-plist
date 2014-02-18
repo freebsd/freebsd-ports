@@ -105,7 +105,6 @@ share/locale/ar/LC_MESSAGES/katetextfilter.mo
 share/locale/ar/LC_MESSAGES/katexmlcheck.mo
 share/locale/ar/LC_MESSAGES/katexmltools.mo
 share/locale/ar/LC_MESSAGES/katomic.mo
-share/locale/ar/LC_MESSAGES/kbattleship.mo
 share/locale/ar/LC_MESSAGES/kblackbox.mo
 share/locale/ar/LC_MESSAGES/kblankscrn.mo
 share/locale/ar/LC_MESSAGES/kblocks.mo
@@ -134,7 +133,6 @@ share/locale/ar/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/ar/LC_MESSAGES/kcm_pci.mo
 share/locale/ar/LC_MESSAGES/kcm_phonon.mo
 share/locale/ar/LC_MESSAGES/kcm_platform.mo
-share/locale/ar/LC_MESSAGES/kcm_solid.mo
 share/locale/ar/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/ar/LC_MESSAGES/kcm_standard_actions.mo
 share/locale/ar/LC_MESSAGES/kcmaccess.mo
@@ -295,6 +293,7 @@ share/locale/ar/LC_MESSAGES/kmix.mo
 share/locale/ar/LC_MESSAGES/kmousetool.mo
 share/locale/ar/LC_MESSAGES/kmouth.mo
 share/locale/ar/LC_MESSAGES/kmplot.mo
+share/locale/ar/LC_MESSAGES/knavalbattle.mo
 share/locale/ar/LC_MESSAGES/knetattach.mo
 share/locale/ar/LC_MESSAGES/knetwalk.mo
 share/locale/ar/LC_MESSAGES/knode.mo
@@ -399,6 +398,7 @@ share/locale/ar/LC_MESSAGES/libkldap.mo
 share/locale/ar/LC_MESSAGES/libkleopatra.mo
 share/locale/ar/LC_MESSAGES/libkmahjongg.mo
 share/locale/ar/LC_MESSAGES/libkmime.mo
+share/locale/ar/LC_MESSAGES/libkomparediff2.mo
 share/locale/ar/LC_MESSAGES/libkonq.mo
 share/locale/ar/LC_MESSAGES/libkpgp.mo
 share/locale/ar/LC_MESSAGES/libkpimidentities.mo
@@ -434,9 +434,7 @@ share/locale/ar/LC_MESSAGES/minitoolsplugin.mo
 share/locale/ar/LC_MESSAGES/mplayerthumbs.mo
 share/locale/ar/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/ar/LC_MESSAGES/nepomukbackup.mo
-share/locale/ar/LC_MESSAGES/nepomukcontroller.mo
 share/locale/ar/LC_MESSAGES/nepomukfileindexer.mo
-share/locale/ar/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/ar/LC_MESSAGES/nepomukserver.mo
 share/locale/ar/LC_MESSAGES/nepomukservicestub.mo
 share/locale/ar/LC_MESSAGES/nepomukstorage.mo
@@ -535,7 +533,6 @@ share/locale/ar/LC_MESSAGES/plasma_containmentactions_contextmenu.mo
 share/locale/ar/LC_MESSAGES/plasma_containmentactions_switchactivity.mo
 share/locale/ar/LC_MESSAGES/plasma_containmentactions_switchdesktop.mo
 share/locale/ar/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
-share/locale/ar/LC_MESSAGES/plasma_engine_calendar.mo
 share/locale/ar/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/ar/LC_MESSAGES/plasma_engine_kuiserver.mo
 share/locale/ar/LC_MESSAGES/plasma_engine_metadata.mo
@@ -595,9 +592,7 @@ share/locale/ar/LC_MESSAGES/randrmonitor.mo
 share/locale/ar/LC_MESSAGES/rellinks.mo
 share/locale/ar/LC_MESSAGES/searchbarplugin.mo
 share/locale/ar/LC_MESSAGES/solid-hardware.mo
-share/locale/ar/LC_MESSAGES/solid-network.mo
 share/locale/ar/LC_MESSAGES/solid_qt.mo
-share/locale/ar/LC_MESSAGES/solidcontrol.mo
 share/locale/ar/LC_MESSAGES/soliduiserver.mo
 share/locale/ar/LC_MESSAGES/strigila_diff.mo
 share/locale/ar/LC_MESSAGES/superkaramba.mo

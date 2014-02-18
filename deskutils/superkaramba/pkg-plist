@@ -2,8 +2,8 @@ bin/superkaramba
 lib/kde4/plasma_package_superkaramba.so
 lib/kde4/plasma_scriptengine_superkaramba.so
 lib/libsuperkaramba.so
-lib/libsuperkaramba.so.5
-lib/libsuperkaramba.so.5.0.1
+lib/libsuperkaramba.so.4
+lib/libsuperkaramba.so.%%KDE4_GENERIC_LIB_VERSION%%
 share/applications/kde4/superkaramba.desktop
 share/apps/superkaramba/superkarambaui.rc
 share/config/superkaramba.knsrc

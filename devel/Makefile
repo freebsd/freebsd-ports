@@ -195,6 +195,7 @@
     SUBDIR += cdialog
     SUBDIR += cdk
     SUBDIR += cedet
+    SUBDIR += cervisia
     SUBDIR += cflow
     SUBDIR += cflow2vcg
     SUBDIR += cgdb
@@ -363,6 +364,7 @@
     SUBDIR += dmalloc
     SUBDIR += dmucs
     SUBDIR += doctorj
+    SUBDIR += dolphin-plugins
     SUBDIR += dotconf
     SUBDIR += dotconf++
     SUBDIR += doxygen
@@ -895,11 +897,17 @@
     SUBDIR += jzmq
     SUBDIR += k8048
     SUBDIR += kBuild
+    SUBDIR += kapptemplate
     SUBDIR += kaptain
     SUBDIR += kcachegrind
     SUBDIR += kdbg
+    SUBDIR += kde-dev-scripts
+    SUBDIR += kde-dev-utils
     SUBDIR += kdebindings4
     SUBDIR += kdesdk4
+    SUBDIR += kdesdk4-kioslaves
+    SUBDIR += kdesdk4-strigi-analyzers
+    SUBDIR += kdesdk4-thumbnailers
     SUBDIR += kdesvn-kde4
     SUBDIR += kdevelop-kde4
     SUBDIR += kdevelop-pg-qt
@@ -1171,6 +1179,7 @@
     SUBDIR += log4net
     SUBDIR += log4sh
     SUBDIR += log4shib
+    SUBDIR += lokalize
     SUBDIR += loki
     SUBDIR += looks
     SUBDIR += love
@@ -1320,6 +1329,7 @@
     SUBDIR += ode
     SUBDIR += ode-devel
     SUBDIR += ois
+    SUBDIR += okteta
     SUBDIR += omake
     SUBDIR += omniNotify
     SUBDIR += omniORB
@@ -3405,6 +3415,7 @@
     SUBDIR += poco-ssl
     SUBDIR += popt
     SUBDIR += poslib
+    SUBDIR += poxml
     SUBDIR += premake
     SUBDIR += premake4
     SUBDIR += preps-gui
@@ -4533,6 +4544,7 @@
     SUBDIR += ucpp
     SUBDIR += udis86
     SUBDIR += ultragetopt
+    SUBDIR += umbrello
     SUBDIR += umem
     SUBDIR += umlgraph
     SUBDIR += universalindentgui

@@ -54,7 +54,6 @@ share/locale/hi/LC_MESSAGES/katetextfilter.mo
 share/locale/hi/LC_MESSAGES/katexmlcheck.mo
 share/locale/hi/LC_MESSAGES/katexmltools.mo
 share/locale/hi/LC_MESSAGES/katomic.mo
-share/locale/hi/LC_MESSAGES/kbattleship.mo
 share/locale/hi/LC_MESSAGES/kblackbox.mo
 share/locale/hi/LC_MESSAGES/kblankscrn.mo
 share/locale/hi/LC_MESSAGES/kbounce.mo
@@ -78,7 +77,6 @@ share/locale/hi/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/hi/LC_MESSAGES/kcm_pci.mo
 share/locale/hi/LC_MESSAGES/kcm_phonon.mo
 share/locale/hi/LC_MESSAGES/kcm_platform.mo
-share/locale/hi/LC_MESSAGES/kcm_solid.mo
 share/locale/hi/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/hi/LC_MESSAGES/kcmaccess.mo
 share/locale/hi/LC_MESSAGES/kcmaudiocd.mo
@@ -207,6 +205,7 @@ share/locale/hi/LC_MESSAGES/kio_sieve.mo
 share/locale/hi/LC_MESSAGES/kio_smb.mo
 share/locale/hi/LC_MESSAGES/kio_smtp.mo
 share/locale/hi/LC_MESSAGES/kio_svn.mo
+share/locale/hi/LC_MESSAGES/kio_tags.mo
 share/locale/hi/LC_MESSAGES/kio_thumbnail.mo
 share/locale/hi/LC_MESSAGES/kio_timeline.mo
 share/locale/hi/LC_MESSAGES/kio_trash.mo
@@ -234,6 +233,7 @@ share/locale/hi/LC_MESSAGES/kmix.mo
 share/locale/hi/LC_MESSAGES/kmousetool.mo
 share/locale/hi/LC_MESSAGES/kmouth.mo
 share/locale/hi/LC_MESSAGES/kmplot.mo
+share/locale/hi/LC_MESSAGES/knavalbattle.mo
 share/locale/hi/LC_MESSAGES/knetattach.mo
 share/locale/hi/LC_MESSAGES/knetwalk.mo
 share/locale/hi/LC_MESSAGES/knotes.mo
@@ -327,6 +327,7 @@ share/locale/hi/LC_MESSAGES/libkldap.mo
 share/locale/hi/LC_MESSAGES/libkleopatra.mo
 share/locale/hi/LC_MESSAGES/libkmahjongg.mo
 share/locale/hi/LC_MESSAGES/libkmime.mo
+share/locale/hi/LC_MESSAGES/libkomparediff2.mo
 share/locale/hi/LC_MESSAGES/libkonq.mo
 share/locale/hi/LC_MESSAGES/libkpgp.mo
 share/locale/hi/LC_MESSAGES/libkpimidentities.mo
@@ -354,9 +355,7 @@ share/locale/hi/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/hi/LC_MESSAGES/messageviewer_text_xdiff_plugin.mo
 share/locale/hi/LC_MESSAGES/mf_konqplugin.mo
 share/locale/hi/LC_MESSAGES/minitoolsplugin.mo
-share/locale/hi/LC_MESSAGES/nepomukcontroller.mo
 share/locale/hi/LC_MESSAGES/nepomukfileindexer.mo
-share/locale/hi/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/hi/LC_MESSAGES/nepomukserver.mo
 share/locale/hi/LC_MESSAGES/nepomukservicestub.mo
 share/locale/hi/LC_MESSAGES/nepomukstorage.mo
@@ -449,8 +448,6 @@ share/locale/hi/LC_MESSAGES/processui.mo
 share/locale/hi/LC_MESSAGES/rellinks.mo
 share/locale/hi/LC_MESSAGES/searchbarplugin.mo
 share/locale/hi/LC_MESSAGES/solid-hardware.mo
-share/locale/hi/LC_MESSAGES/solid-network.mo
-share/locale/hi/LC_MESSAGES/solidcontrol.mo
 share/locale/hi/LC_MESSAGES/soliduiserver.mo
 share/locale/hi/LC_MESSAGES/strigila_diff.mo
 share/locale/hi/LC_MESSAGES/superkaramba.mo

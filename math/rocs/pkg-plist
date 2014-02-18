@@ -1,10 +1,11 @@
 bin/rocs
+include/rocs/ConsoleModule.h
 include/rocs/CoreTypes.h
 include/rocs/Data.h
 include/rocs/DataItem.h
 include/rocs/DataStructure.h
+include/rocs/DataStructureBackendInterface.h
 include/rocs/DataStructureBackendManager.h
-include/rocs/DataStructurePluginInterface.h
 include/rocs/Document.h
 include/rocs/GraphFileBackendManager.h
 include/rocs/GraphFilePluginInterface.h
@@ -25,12 +26,21 @@ lib/kde4/rocs_tgffileformat.so
 lib/kde4/rocs_tikzfileformat.so
 lib/kde4/rocs_transformedgesplugin.so
 lib/librocscore.so
-lib/librocscore.so.5
-lib/librocscore.so.5.0.1
+lib/librocscore.so.4
+lib/librocscore.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/librocsvisualeditor.so
-lib/librocsvisualeditor.so.5
-lib/librocsvisualeditor.so.5.0.1
+lib/librocsvisualeditor.so.4
+lib/librocsvisualeditor.so.%%KDE4_GENERIC_LIB_VERSION%%
 share/applications/kde4/rocs.desktop
+share/apps/rocs/engineapi/Console.xml
+share/apps/rocs/engineapi/Data.xml
+share/apps/rocs/engineapi/DataStructure.xml
+share/apps/rocs/engineapi/GraphEdge.xml
+share/apps/rocs/engineapi/GraphNode.xml
+share/apps/rocs/engineapi/GraphStructure.xml
+share/apps/rocs/engineapi/ListNode.xml
+share/apps/rocs/engineapi/ListStructure.xml
+share/apps/rocs/engineapi/Pointer.xml
 share/apps/rocs/examples/AdjustProjection.js
 share/apps/rocs/examples/NameAndNodes.js
 share/apps/rocs/examples/NamesValues.js
@@ -93,6 +103,7 @@ share/apps/rocs/icons/hicolor/64x64/actions/rocsalignvmiddle.png
 share/apps/rocs/icons/hicolor/64x64/actions/rocsselect.png
 share/apps/rocs/icons/hicolor/64x64/actions/rocsselectmove.png
 share/apps/rocs/icons/hicolor/scalable/actions/rocsadddata.svgz
+share/apps/rocs/icons/hicolor/scalable/actions/rocsadvancedsetup.svgz
 share/apps/rocs/icons/hicolor/scalable/actions/rocsdelete.svgz
 share/apps/rocs/icons/hicolor/scalable/actions/rocsdeletedata.svgz
 share/apps/rocs/icons/hicolor/scalable/actions/rocsdeletegrey.svgz
@@ -100,10 +111,21 @@ share/apps/rocs/icons/hicolor/scalable/actions/rocseyeblack.svgz
 share/apps/rocs/icons/hicolor/scalable/actions/rocsnew.svgz
 share/apps/rocs/icons/hicolor/scalable/actions/rocstexticon.svgz
 share/apps/rocs/icons/hicolor/scalable/actions/rocsvalueicon.svgz
+share/apps/rocs/plugin/apidoc/bootstrap-apiview.css
+share/apps/rocs/plugin/apidoc/bootstrap.css
+share/apps/rocs/plugin/apidoc/objectApi.html
+share/apps/rocs/plugin/apidoc/overview.html
 share/apps/rocs/rocsui.rc
+share/apps/rocs/schemes/engineApi.xsd
 share/apps/rocs_rootedtree/RootedTreeui.rc
 share/config.kcfg/rocs.kcfg
 share/config/rocs.knsrc
+share/doc/HTML/en/rocs/apiConsole.docbook
+share/doc/HTML/en/rocs/apiDatastructure.docbook
+share/doc/HTML/en/rocs/apiGraphstructure.docbook
+share/doc/HTML/en/rocs/apiLinkedListstructure.docbook
+share/doc/HTML/en/rocs/apiRootedTreestructure.docbook
+share/doc/HTML/en/rocs/chapterImportExport.docbook
 share/doc/HTML/en/rocs/common
 share/doc/HTML/en/rocs/document-selector.png
 share/doc/HTML/en/rocs/hi22-action-rocsadddata.png
@@ -135,6 +157,8 @@ share/doc/HTML/en/rocs/rocs-toolbar-main.png
 share/icons/hicolor/16x16/apps/rocs.png
 share/icons/hicolor/32x32/apps/rocs.png
 share/icons/hicolor/48x48/apps/rocs.png
+share/icons/hicolor/64x64/apps/rocs.png
+share/icons/hicolor/scalable/apps/rocs.svgz
 share/kde4/services/rocs_GraphStructure.desktop
 share/kde4/services/rocs_ListStructure.desktop
 share/kde4/services/rocs_RootedTreeStructure.desktop
@@ -151,6 +175,9 @@ share/kde4/servicetypes/RocsGraphFilePlugin.desktop
 share/kde4/servicetypes/RocsToolsPlugin.desktop
 @dirrm share/doc/HTML/en/rocs
 @dirrm share/apps/rocs_rootedtree
+@dirrm share/apps/rocs/schemes
+@dirrm share/apps/rocs/plugin/apidoc
+@dirrm share/apps/rocs/plugin
 @dirrm share/apps/rocs/icons/hicolor/scalable/actions
 @dirrm share/apps/rocs/icons/hicolor/scalable
 @dirrm share/apps/rocs/icons/hicolor/64x64/actions
@@ -167,5 +194,6 @@ share/kde4/servicetypes/RocsToolsPlugin.desktop
 @dirrm share/apps/rocs/icons
 @dirrm share/apps/rocs/iconpacks
 @dirrm share/apps/rocs/examples
+@dirrm share/apps/rocs/engineapi
 @dirrm share/apps/rocs
 @dirrm include/rocs

@@ -16,8 +16,8 @@ include/libkonq_export.h
 lib/kde4/kded_favicons.so
 lib/kde4/konq_sound.so
 lib/libkonq.so
-lib/libkonq.so.7
-lib/libkonq.so.7.0.1
+lib/libkonq.so.5
+lib/libkonq.so.%%KDE4_NON_GENERIC_LIB_VERSION%%
 share/apps/kbookmark/directory_bookmarkbar.desktop
 share/apps/konqueror/pics/arrow_bottomleft.png
 share/apps/konqueror/pics/arrow_bottomright.png

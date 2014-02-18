@@ -1,4 +1,5 @@
 bin/kmag
+man/man1/kmag.1.gz
 share/applications/kde4/kmag.desktop
 share/apps/kmag/kmagui.rc
 share/doc/HTML/en/kmag/common

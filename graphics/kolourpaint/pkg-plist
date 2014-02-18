@@ -1,7 +1,7 @@
 bin/kolourpaint
 lib/libkolourpaint_lgpl.so
-lib/libkolourpaint_lgpl.so.5
-lib/libkolourpaint_lgpl.so.5.0.1
+lib/libkolourpaint_lgpl.so.4
+lib/libkolourpaint_lgpl.so.%%KDE4_GENERIC_LIB_VERSION%%
 share/applications/kde4/kolourpaint.desktop
 share/apps/kolourpaint/icons/hicolor/16x16/actions/tool_brush.png
 share/apps/kolourpaint/icons/hicolor/16x16/actions/tool_color_eraser.png

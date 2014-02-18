@@ -11,7 +11,8 @@ share/locale/lv/LC_MESSAGES/akonadi_archivemail_agent.mo
 share/locale/lv/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/lv/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/lv/LC_MESSAGES/akonadi_davgroupware_resource.mo
-share/locale/lv/LC_MESSAGES/akonadi_google_resource.mo
+share/locale/lv/LC_MESSAGES/akonadi_googlecalendar_resource.mo
+share/locale/lv/LC_MESSAGES/akonadi_googlecontacts_resource.mo
 share/locale/lv/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/lv/LC_MESSAGES/akonadi_imap_resource.mo
 share/locale/lv/LC_MESSAGES/akonadi_invitations_agent.mo
@@ -31,6 +32,7 @@ share/locale/lv/LC_MESSAGES/akonadi_microblog_resource.mo
 share/locale/lv/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
 share/locale/lv/LC_MESSAGES/akonadi_nepomuk_feeder.mo
 share/locale/lv/LC_MESSAGES/akonadi_nepomuktag_resource.mo
+share/locale/lv/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/lv/LC_MESSAGES/akonadi_next.mo
 share/locale/lv/LC_MESSAGES/akonadi_nntp_resource.mo
 share/locale/lv/LC_MESSAGES/akonadi_openxchange_resource.mo
@@ -112,7 +114,6 @@ share/locale/lv/LC_MESSAGES/katemailfilesplugin.mo
 share/locale/lv/LC_MESSAGES/kateopenheader.mo
 share/locale/lv/LC_MESSAGES/katepart4.mo
 share/locale/lv/LC_MESSAGES/katesearch.mo
-share/locale/lv/LC_MESSAGES/katesnippets_tng.mo
 share/locale/lv/LC_MESSAGES/katesql.mo
 share/locale/lv/LC_MESSAGES/katesymbolviewer.mo
 share/locale/lv/LC_MESSAGES/katetabbarextension.mo
@@ -121,7 +122,6 @@ share/locale/lv/LC_MESSAGES/katetextfilter.mo
 share/locale/lv/LC_MESSAGES/katexmlcheck.mo
 share/locale/lv/LC_MESSAGES/katexmltools.mo
 share/locale/lv/LC_MESSAGES/katomic.mo
-share/locale/lv/LC_MESSAGES/kbattleship.mo
 share/locale/lv/LC_MESSAGES/kblackbox.mo
 share/locale/lv/LC_MESSAGES/kblankscrn.mo
 share/locale/lv/LC_MESSAGES/kblocks.mo
@@ -149,7 +149,6 @@ share/locale/lv/LC_MESSAGES/kcm_nepomuk.mo
 share/locale/lv/LC_MESSAGES/kcm_pci.mo
 share/locale/lv/LC_MESSAGES/kcm_phonon.mo
 share/locale/lv/LC_MESSAGES/kcm_platform.mo
-share/locale/lv/LC_MESSAGES/kcm_solid.mo
 share/locale/lv/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/lv/LC_MESSAGES/kcm_standard_actions.mo
 share/locale/lv/LC_MESSAGES/kcmaccess.mo
@@ -280,6 +279,7 @@ share/locale/lv/LC_MESSAGES/kio_nepomuksearch.mo
 share/locale/lv/LC_MESSAGES/kio_nfs.mo
 share/locale/lv/LC_MESSAGES/kio_nntp.mo
 share/locale/lv/LC_MESSAGES/kio_pop3.mo
+share/locale/lv/LC_MESSAGES/kio_recentdocuments.mo
 share/locale/lv/LC_MESSAGES/kio_remote.mo
 share/locale/lv/LC_MESSAGES/kio_sftp.mo
 share/locale/lv/LC_MESSAGES/kio_sieve.mo
@@ -316,6 +316,7 @@ share/locale/lv/LC_MESSAGES/kmix.mo
 share/locale/lv/LC_MESSAGES/kmousetool.mo
 share/locale/lv/LC_MESSAGES/kmouth.mo
 share/locale/lv/LC_MESSAGES/kmplot.mo
+share/locale/lv/LC_MESSAGES/knavalbattle.mo
 share/locale/lv/LC_MESSAGES/knetattach.mo
 share/locale/lv/LC_MESSAGES/knetwalk.mo
 share/locale/lv/LC_MESSAGES/knode.mo
@@ -375,8 +376,6 @@ share/locale/lv/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/lv/LC_MESSAGES/ksystemlog.mo
 share/locale/lv/LC_MESSAGES/ksystraycmd.mo
 share/locale/lv/LC_MESSAGES/kteatime.mo
-share/locale/lv/LC_MESSAGES/ktesnippets_editor.mo
-share/locale/lv/LC_MESSAGES/ktexteditor_codesnippets_core.mo
 share/locale/lv/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/lv/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
 share/locale/lv/LC_MESSAGES/ktimer.mo
@@ -426,6 +425,7 @@ share/locale/lv/LC_MESSAGES/libkldap.mo
 share/locale/lv/LC_MESSAGES/libkleopatra.mo
 share/locale/lv/LC_MESSAGES/libkmahjongg.mo
 share/locale/lv/LC_MESSAGES/libkmime.mo
+share/locale/lv/LC_MESSAGES/libkomparediff2.mo
 share/locale/lv/LC_MESSAGES/libkonq.mo
 share/locale/lv/LC_MESSAGES/libkpgp.mo
 share/locale/lv/LC_MESSAGES/libkpimidentities.mo
@@ -468,13 +468,10 @@ share/locale/lv/LC_MESSAGES/minitoolsplugin.mo
 share/locale/lv/LC_MESSAGES/mplayerthumbs.mo
 share/locale/lv/LC_MESSAGES/mplayerthumbsconfig.mo
 share/locale/lv/LC_MESSAGES/nepomukbackup.mo
-share/locale/lv/LC_MESSAGES/nepomukcontroller.mo
 share/locale/lv/LC_MESSAGES/nepomukfileindexer.mo
-share/locale/lv/LC_MESSAGES/nepomukqueryservice.mo
 share/locale/lv/LC_MESSAGES/nepomukserver.mo
 share/locale/lv/LC_MESSAGES/nepomukservicestub.mo
 share/locale/lv/LC_MESSAGES/nepomukstorage.mo
-share/locale/lv/LC_MESSAGES/newmailnotifieragent.mo
 share/locale/lv/LC_MESSAGES/nsplugin.mo
 share/locale/lv/LC_MESSAGES/okteta.mo
 share/locale/lv/LC_MESSAGES/oktetapart.mo
@@ -501,6 +498,7 @@ share/locale/lv/LC_MESSAGES/parley.mo
 share/locale/lv/LC_MESSAGES/phonon_gstreamer.mo
 share/locale/lv/LC_MESSAGES/phonon_kde.mo
 share/locale/lv/LC_MESSAGES/phononserver.mo
+share/locale/lv/LC_MESSAGES/picmi.mo
 share/locale/lv/LC_MESSAGES/pimsettingexporter.mo
 share/locale/lv/LC_MESSAGES/plasma-desktop.mo
 share/locale/lv/LC_MESSAGES/plasma-netbook.mo
@@ -527,7 +525,7 @@ share/locale/lv/LC_MESSAGES/plasma_applet_gasCalculator.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_icon.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_icontasks.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_incomingmsg.mo
-share/locale/lv/LC_MESSAGES/plasma_applet_kalgebra.mo
+share/locale/lv/LC_MESSAGES/plasma_applet_kalgebraplasmoid.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_kalzium.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_katesession.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_kdeobservatory.mo
@@ -588,7 +586,6 @@ share/locale/lv/LC_MESSAGES/plasma_containmentactions_contextmenu.mo
 share/locale/lv/LC_MESSAGES/plasma_containmentactions_switchactivity.mo
 share/locale/lv/LC_MESSAGES/plasma_containmentactions_switchdesktop.mo
 share/locale/lv/LC_MESSAGES/plasma_containmentactions_switchwindow.mo
-share/locale/lv/LC_MESSAGES/plasma_engine_calendar.mo
 share/locale/lv/LC_MESSAGES/plasma_engine_kalzium.mo
 share/locale/lv/LC_MESSAGES/plasma_engine_keystate.mo
 share/locale/lv/LC_MESSAGES/plasma_engine_kuiserver.mo
@@ -653,9 +650,7 @@ share/locale/lv/LC_MESSAGES/rocscore.mo
 share/locale/lv/LC_MESSAGES/rocsvisualeditor.mo
 share/locale/lv/LC_MESSAGES/searchbarplugin.mo
 share/locale/lv/LC_MESSAGES/solid-hardware.mo
-share/locale/lv/LC_MESSAGES/solid-network.mo
 share/locale/lv/LC_MESSAGES/solid_qt.mo
-share/locale/lv/LC_MESSAGES/solidcontrol.mo
 share/locale/lv/LC_MESSAGES/soliduiserver.mo
 share/locale/lv/LC_MESSAGES/step.mo
 share/locale/lv/LC_MESSAGES/step_qt.mo

@@ -1,5 +1,6 @@
 bin/kmplot
 lib/kde4/libkmplotpart.so
+man/man1/kmplot.1.gz
 share/applications/kde4/kmplot.desktop
 share/apps/kmplot/kmplot_part.rc
 share/apps/kmplot/kmplot_part_readonly.rc

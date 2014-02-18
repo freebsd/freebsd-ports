@@ -1,7 +1,11 @@
 bin/knetwalk
 share/applications/kde4/knetwalk.desktop
-share/apps/knetwalk/knetwalk.notifyrc
 share/apps/knetwalk/knetwalkui.rc
+share/apps/knetwalk/qml/Cable.qml
+share/apps/knetwalk/qml/CanvasItem.qml
+share/apps/knetwalk/qml/Cell.qml
+share/apps/knetwalk/qml/logic.js
+share/apps/knetwalk/qml/main.qml
 share/apps/knetwalk/sounds/click.wav
 share/apps/knetwalk/sounds/connect.wav
 share/apps/knetwalk/sounds/start.wav
@@ -26,4 +30,5 @@ share/icons/hicolor/scalable/apps/knetwalk.svgz
 @dirrm share/doc/HTML/en/knetwalk
 @dirrm share/apps/knetwalk/themes
 @dirrm share/apps/knetwalk/sounds
+@dirrm share/apps/knetwalk/qml
 @dirrm share/apps/knetwalk

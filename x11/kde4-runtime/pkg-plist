@@ -24,7 +24,6 @@ bin/ktrash
 bin/kuiserver
 bin/kwalletd
 bin/kwriteconfig
-bin/nepomukcontroller
 bin/plasma-remote-helper
 bin/plasmapkg
 bin/solid-hardware
@@ -43,6 +42,8 @@ lib/kde4/exrthumbnail.so
 lib/kde4/fixhosturifilter.so
 lib/kde4/htmlthumbnail.so
 lib/kde4/imagethumbnail.so
+lib/kde4/imports/org/kde/dirmodel/libdirmodelplugin.so
+lib/kde4/imports/org/kde/dirmodel/qmldir
 lib/kde4/imports/org/kde/draganddrop/libdraganddropplugin.so
 lib/kde4/imports/org/kde/draganddrop/qmldir
 lib/kde4/imports/org/kde/locale/liblocalebindingsplugin.so
@@ -250,6 +251,7 @@ lib/kde4/platformimports/touch/org/kde/plasma/components/private/TabBarLayout.qm
 lib/kde4/platformimports/touch/org/kde/plasma/components/private/TabGroup.js
 lib/kde4/platformimports/touch/org/kde/plasma/components/private/TextFieldFocus.qml
 lib/kde4/platformimports/touch/org/kde/plasma/components/qmldir
+lib/kde4/plugins/imageformats/kimg_webp.so
 lib/kde4/plugins/phonon_platform/kde.so
 lib/kde4/svgthumbnail.so
 lib/kde4/textthumbnail.so
@@ -262,14 +264,17 @@ lib/libkdeinit4_kuiserver.so
 lib/libkdeinit4_kwalletd.so
 lib/libknotifyplugin.so
 lib/libkwalletbackend.so
-lib/libkwalletbackend.so.5
-lib/libkwalletbackend.so.5.0.1
+lib/libkwalletbackend.so.4
+lib/libkwalletbackend.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/libmolletnetwork.so
-lib/libmolletnetwork.so.5
-lib/libmolletnetwork.so.5.0.1
+lib/libmolletnetwork.so.4
+lib/libmolletnetwork.so.%%KDE4_GENERIC_LIB_VERSION%%
+man/man1/kdesu.1.gz
+man/man1/plasmapkg.1.gz
+man/man8/nepomukserver.8.gz
+man/man8/nepomukservicestub.8.gz
 share/applications/kde4/Help.desktop
 share/applications/kde4/knetattach.desktop
-share/applications/kde4/nepomukcontroller.desktop
 share/apps/cmake/modules/FindCLucene.cmake
 share/apps/cmake/modules/FindSLP.cmake
 share/apps/desktoptheme/appdashboard/metadata.desktop
@@ -425,6 +430,7 @@ share/apps/kcm_componentchooser/kcm_wm.desktop
 share/apps/kcm_phonon/listview-background.png
 share/apps/kcmlocale/pics/background.png
 share/apps/kconf_update/devicepreference.upd
+share/apps/kconf_update/drkonqi-rename-config-section.upd
 share/apps/kconf_update/kuriikwsfilter.upd
 share/apps/kde/kde.notifyrc
 share/apps/kglobalaccel/kglobalaccel.notifyrc
@@ -476,7 +482,6 @@ share/apps/libphonon/hardwaredatabase
 share/apps/phonon/phonon.notifyrc
 share/apps/remoteview/network.desktop
 share/apps/remoteview/smb-network.desktop
-share/autostart/nepomukcontroller.desktop
 share/config.kcfg/jpegcreatorsettings.kcfg
 share/config.kcfg/khelpcenter.kcfg
 share/config/emoticons.knsrc
@@ -556,6 +561,40 @@ share/doc/HTML/en/fundamentals/tasks.docbook
 share/doc/HTML/en/fundamentals/toolbars-configure.png
 share/doc/HTML/en/fundamentals/toolbars-toolbar.png
 share/doc/HTML/en/fundamentals/ui.docbook
+share/doc/HTML/en/fundamentals/visualdict-breadcrumb.png
+share/doc/HTML/en/fundamentals/visualdict-button.png
+share/doc/HTML/en/fundamentals/visualdict-central-widget.png
+share/doc/HTML/en/fundamentals/visualdict-check-box.png
+share/doc/HTML/en/fundamentals/visualdict-color-selector.png
+share/doc/HTML/en/fundamentals/visualdict-combo-box.png
+share/doc/HTML/en/fundamentals/visualdict-context-menu.png
+share/doc/HTML/en/fundamentals/visualdict-dialog-box.png
+share/doc/HTML/en/fundamentals/visualdict-drop-down-box.png
+share/doc/HTML/en/fundamentals/visualdict-gui1.png
+share/doc/HTML/en/fundamentals/visualdict-gui2.png
+share/doc/HTML/en/fundamentals/visualdict-gui3.png
+share/doc/HTML/en/fundamentals/visualdict-gui4.png
+share/doc/HTML/en/fundamentals/visualdict-icon-list.png
+share/doc/HTML/en/fundamentals/visualdict-icon.png
+share/doc/HTML/en/fundamentals/visualdict-list-box.png
+share/doc/HTML/en/fundamentals/visualdict-menu-button.png
+share/doc/HTML/en/fundamentals/visualdict-menu.png
+share/doc/HTML/en/fundamentals/visualdict-menubar.png
+share/doc/HTML/en/fundamentals/visualdict-panel.png
+share/doc/HTML/en/fundamentals/visualdict-progress-bar.png
+share/doc/HTML/en/fundamentals/visualdict-radio-button.png
+share/doc/HTML/en/fundamentals/visualdict-scrollbar.png
+share/doc/HTML/en/fundamentals/visualdict-slider.png
+share/doc/HTML/en/fundamentals/visualdict-spin-box.png
+share/doc/HTML/en/fundamentals/visualdict-statusbar.png
+share/doc/HTML/en/fundamentals/visualdict-tab.png
+share/doc/HTML/en/fundamentals/visualdict-text-area.png
+share/doc/HTML/en/fundamentals/visualdict-text-box.png
+share/doc/HTML/en/fundamentals/visualdict-titlebar.png
+share/doc/HTML/en/fundamentals/visualdict-toolbar.png
+share/doc/HTML/en/fundamentals/visualdict-tree-view.png
+share/doc/HTML/en/fundamentals/visualdict-window.png
+share/doc/HTML/en/fundamentals/visualdict-window2.png
 share/doc/HTML/en/kcontrol/attica/common
 share/doc/HTML/en/kcontrol/attica/index.cache.bz2
 share/doc/HTML/en/kcontrol/attica/index.docbook
@@ -635,6 +674,7 @@ share/doc/HTML/en/kcontrol/khtml-plugins/index.docbook
 share/doc/HTML/en/kcontrol/language/common
 share/doc/HTML/en/kcontrol/language/index.cache.bz2
 share/doc/HTML/en/kcontrol/language/index.docbook
+share/doc/HTML/en/kcontrol/language/oxygen-22x22-document-revert.png
 share/doc/HTML/en/kcontrol/nepomuk/common
 share/doc/HTML/en/kcontrol/nepomuk/index.cache.bz2
 share/doc/HTML/en/kcontrol/nepomuk/index.docbook
@@ -801,7 +841,6 @@ share/icons/hicolor/22x22/apps/knetattach.png
 share/icons/hicolor/32x32/apps/knetattach.png
 share/icons/hicolor/48x48/apps/knetattach.png
 share/icons/hicolor/64x64/apps/knetattach.png
-%%HACK%%share/icons/hicolor/index.theme
 share/icons/hicolor/scalable/apps/knetattach.svgz
 share/kde4/services/about.protocol
 share/kde4/services/applications.protocol
@@ -813,6 +852,7 @@ share/kde4/services/cgi.protocol
 share/kde4/services/comicbookthumbnail.desktop
 share/kde4/services/componentchooser.desktop
 share/kde4/services/cursorthumbnail.desktop
+share/kde4/services/desktop-search.desktop
 share/kde4/services/desktop.protocol
 share/kde4/services/desktopthumbnail.desktop
 share/kde4/services/device_automounter_kcm.desktop
@@ -876,17 +916,16 @@ share/kde4/services/plasma-scriptengine-applet-simple-javascript.desktop
 share/kde4/services/plasma-scriptengine-dataengine-javascript.desktop
 share/kde4/services/plasma-scriptengine-runner-javascript.desktop
 share/kde4/services/programs.protocol
+share/kde4/services/qimageioplugins/webp.desktop
 share/kde4/services/recentdocuments.protocol
 share/kde4/services/remote.protocol
 share/kde4/services/renaudiodlg.desktop
 share/kde4/services/renimagedlg.desktop
 share/kde4/services/searchproviders/7digital.desktop
 share/kde4/services/searchproviders/acronym.desktop
-share/kde4/services/searchproviders/altavista.desktop
 share/kde4/services/searchproviders/amazon.desktop
 share/kde4/services/searchproviders/amazon_mp3.desktop
 share/kde4/services/searchproviders/amg.desktop
-share/kde4/services/searchproviders/austronaut.desktop
 share/kde4/services/searchproviders/backports.desktop
 share/kde4/services/searchproviders/baidu.desktop
 share/kde4/services/searchproviders/beolingus.desktop
@@ -925,9 +964,8 @@ share/kde4/services/searchproviders/flickrcc.desktop
 share/kde4/services/searchproviders/foldoc.desktop
 share/kde4/services/searchproviders/fr2de.desktop
 share/kde4/services/searchproviders/fr2en.desktop
+share/kde4/services/searchproviders/freecode.desktop
 share/kde4/services/searchproviders/freedb.desktop
-share/kde4/services/searchproviders/freshmeat.desktop
-share/kde4/services/searchproviders/froogle.desktop
 share/kde4/services/searchproviders/fsd.desktop
 share/kde4/services/searchproviders/github.desktop
 share/kde4/services/searchproviders/gitorious.desktop
@@ -940,7 +978,7 @@ share/kde4/services/searchproviders/google_lucky.desktop
 share/kde4/services/searchproviders/google_maps.desktop
 share/kde4/services/searchproviders/google_movie.desktop
 share/kde4/services/searchproviders/google_news.desktop
-share/kde4/services/searchproviders/gracenote.desktop
+share/kde4/services/searchproviders/google_shopping.desktop
 share/kde4/services/searchproviders/grec.desktop
 share/kde4/services/searchproviders/hyperdictionary.desktop
 share/kde4/services/searchproviders/hyperdictionary_thesaurus.desktop
@@ -952,14 +990,13 @@ share/kde4/services/searchproviders/imdb.desktop
 share/kde4/services/searchproviders/it2en.desktop
 share/kde4/services/searchproviders/jamendo.desktop
 share/kde4/services/searchproviders/jeeves.desktop
-share/kde4/services/searchproviders/katatudo.desktop
 share/kde4/services/searchproviders/kde.desktop
 share/kde4/services/searchproviders/kde_apps.desktop
 share/kde4/services/searchproviders/kde_forums.desktop
 share/kde4/services/searchproviders/kde_look.desktop
+share/kde4/services/searchproviders/kde_projects.desktop
 share/kde4/services/searchproviders/kde_techbase.desktop
 share/kde4/services/searchproviders/kde_userbase.desktop
-share/kde4/services/searchproviders/kde_websvn.desktop
 share/kde4/services/searchproviders/leo.desktop
 share/kde4/services/searchproviders/magnatune.desktop
 share/kde4/services/searchproviders/metacrawler.desktop
@@ -978,8 +1015,9 @@ share/kde4/services/searchproviders/pgpkeys.desktop
 share/kde4/services/searchproviders/php.desktop
 share/kde4/services/searchproviders/python.desktop
 share/kde4/services/searchproviders/qt.desktop
-share/kde4/services/searchproviders/qt3.desktop
+share/kde4/services/searchproviders/qt4.desktop
 share/kde4/services/searchproviders/rae.desktop
+share/kde4/services/searchproviders/rag.desktop
 share/kde4/services/searchproviders/rfc.desktop
 share/kde4/services/searchproviders/rpmfind.desktop
 share/kde4/services/searchproviders/ruby_application_archive.desktop
@@ -991,7 +1029,6 @@ share/kde4/services/searchproviders/tvtome.desktop
 share/kde4/services/searchproviders/urbandictionary.desktop
 share/kde4/services/searchproviders/uspto.desktop
 share/kde4/services/searchproviders/vimeo.desktop
-share/kde4/services/searchproviders/vivisimo.desktop
 share/kde4/services/searchproviders/voila.desktop
 share/kde4/services/searchproviders/webster.desktop
 share/kde4/services/searchproviders/wikia.desktop
@@ -1733,101 +1770,8 @@ share/locale/l10n/zm/entry.desktop
 share/locale/l10n/zm/flag.png
 share/locale/l10n/zw/entry.desktop
 share/locale/l10n/zw/flag.png
-share/mime/inode/vnd.kde.device.printer.xml
-share/mime/inode/vnd.kde.device.router.xml
-share/mime/inode/vnd.kde.device.scanner.xml
-share/mime/inode/vnd.kde.device.server.xml
-share/mime/inode/vnd.kde.device.unknown.xml
-share/mime/inode/vnd.kde.device.workstation.xml
-share/mime/inode/vnd.kde.network.xml
-share/mime/inode/vnd.kde.service.acrobat-server.xml
-share/mime/inode/vnd.kde.service.adobe-vc.xml
-share/mime/inode/vnd.kde.service.afpovertcp.xml
-share/mime/inode/vnd.kde.service.airmouse.xml
-share/mime/inode/vnd.kde.service.airport.xml
-share/mime/inode/vnd.kde.service.appletv-itunes.xml
-share/mime/inode/vnd.kde.service.appletv-pair.xml
-share/mime/inode/vnd.kde.service.couchdb_location.xml
-share/mime/inode/vnd.kde.service.daap.xml
-share/mime/inode/vnd.kde.service.dacp.xml
-share/mime/inode/vnd.kde.service.eppc.xml
-share/mime/inode/vnd.kde.service.ftp.xml
-share/mime/inode/vnd.kde.service.ftps.xml
-share/mime/inode/vnd.kde.service.ggz.xml
-share/mime/inode/vnd.kde.service.giver.xml
-share/mime/inode/vnd.kde.service.h323.xml
-share/mime/inode/vnd.kde.service.home-sharing.xml
-share/mime/inode/vnd.kde.service.http.xml
-share/mime/inode/vnd.kde.service.imap.xml
-share/mime/inode/vnd.kde.service.ipp.xml
-share/mime/inode/vnd.kde.service.kbattleship.xml
-share/mime/inode/vnd.kde.service.kfourinline.xml
-share/mime/inode/vnd.kde.service.ksirk.xml
-share/mime/inode/vnd.kde.service.ldap.xml
-share/mime/inode/vnd.kde.service.libvirt.xml
-share/mime/inode/vnd.kde.service.lobby.xml
-share/mime/inode/vnd.kde.service.lskat.xml
-share/mime/inode/vnd.kde.service.maemo-inf.xml
-share/mime/inode/vnd.kde.service.net-assistant.xml
-share/mime/inode/vnd.kde.service.nfs.xml
-share/mime/inode/vnd.kde.service.nssocketport.xml
-share/mime/inode/vnd.kde.service.ntp.xml
-share/mime/inode/vnd.kde.service.odisk.xml
-share/mime/inode/vnd.kde.service.pdl-datastream.xml
-share/mime/inode/vnd.kde.service.plasma.xml
-share/mime/inode/vnd.kde.service.pop3.xml
-share/mime/inode/vnd.kde.service.postgresql.xml
-share/mime/inode/vnd.kde.service.presence.xml
-share/mime/inode/vnd.kde.service.printer.xml
-share/mime/inode/vnd.kde.service.pulse-server.xml
-share/mime/inode/vnd.kde.service.pulse-sink.xml
-share/mime/inode/vnd.kde.service.pulse-source.xml
-share/mime/inode/vnd.kde.service.raop.xml
-share/mime/inode/vnd.kde.service.rdp.xml
-share/mime/inode/vnd.kde.service.realplayfavs.xml
-share/mime/inode/vnd.kde.service.rfb.xml
-share/mime/inode/vnd.kde.service.rsync.xml
-share/mime/inode/vnd.kde.service.sftp-ssh.xml
-share/mime/inode/vnd.kde.service.sip.xml
-share/mime/inode/vnd.kde.service.skype.xml
-share/mime/inode/vnd.kde.service.sleep-proxy.xml
-share/mime/inode/vnd.kde.service.smb.xml
-share/mime/inode/vnd.kde.service.ssh.xml
-share/mime/inode/vnd.kde.service.svn.xml
-share/mime/inode/vnd.kde.service.telnet.xml
-share/mime/inode/vnd.kde.service.touch-able.xml
-share/mime/inode/vnd.kde.service.udisks-ssh.xml
-share/mime/inode/vnd.kde.service.unknown.xml
-share/mime/inode/vnd.kde.service.upnp.BasicDevice1.xml
-share/mime/inode/vnd.kde.service.upnp.DigitalSecurityCamera1.xml
-share/mime/inode/vnd.kde.service.upnp.HVAC1.xml
-share/mime/inode/vnd.kde.service.upnp.InternetGatewayDevice1.xml
-share/mime/inode/vnd.kde.service.upnp.LANDevice1.xml
-share/mime/inode/vnd.kde.service.upnp.LightingControls1.xml
-share/mime/inode/vnd.kde.service.upnp.MediaRenderer1.xml
-share/mime/inode/vnd.kde.service.upnp.MediaRenderer2.xml
-share/mime/inode/vnd.kde.service.upnp.MediaServer1.xml
-share/mime/inode/vnd.kde.service.upnp.MediaServer2.xml
-share/mime/inode/vnd.kde.service.upnp.MediaServer3.xml
-share/mime/inode/vnd.kde.service.upnp.PrinterBasic1.xml
-share/mime/inode/vnd.kde.service.upnp.PrinterEnhanced1.xml
-share/mime/inode/vnd.kde.service.upnp.RAClient1.xml
-share/mime/inode/vnd.kde.service.upnp.RADiscoveryAgent1.xml
-share/mime/inode/vnd.kde.service.upnp.RAServer1.xml
-share/mime/inode/vnd.kde.service.upnp.RemoteUIClientDevice1.xml
-share/mime/inode/vnd.kde.service.upnp.RemoteUIServerDevice1.xml
-share/mime/inode/vnd.kde.service.upnp.Scanner1.xml
-share/mime/inode/vnd.kde.service.upnp.SolarProtectionBlind1.xml
-share/mime/inode/vnd.kde.service.upnp.Unknown.xml
-share/mime/inode/vnd.kde.service.upnp.WANConnectionDevice1.xml
-share/mime/inode/vnd.kde.service.upnp.WANDevice1.xml
-share/mime/inode/vnd.kde.service.upnp.WFADevice1.xml
-share/mime/inode/vnd.kde.service.upnp.WLANAccessPointDevice1.xml
-share/mime/inode/vnd.kde.service.webdav.xml
-share/mime/inode/vnd.kde.service.webdavs.xml
-share/mime/inode/vnd.kde.service.workstation.xml
-share/mime/inode/vnd.kde.service.xmpp-server.xml
 share/mime/packages/network.xml
+share/mime/packages/webp.xml
 share/polkit-1/actions/org.kde.kcontrol.kcmremotewidgets.policy
 share/sounds/KDE-Im-Cant-Connect.ogg
 share/sounds/KDE-Im-Connection-Lost.ogg
@@ -2186,7 +2130,7 @@ share/sounds/KDE-Window-Shade-Up.ogg
 @dirrm share/apps/libphonon
 @dirrm share/apps/kwalletd
 @dirrm share/apps/ksmserver/windowmanagers
-@dirrm share/apps/ksmserver
+@dirrmtry share/apps/ksmserver
 @dirrm share/apps/konqueror/dirtree/remote
 @dirrm share/apps/konqueror/dirtree
 @dirrmtry share/apps/konqsidebartng/virtual_folders/remote
@@ -2249,5 +2193,6 @@ share/sounds/KDE-Window-Shade-Up.ogg
 @dirrm lib/kde4/imports/org/kde/plasma
 @dirrm lib/kde4/imports/org/kde/locale
 @dirrm lib/kde4/imports/org/kde/draganddrop
+@dirrm lib/kde4/imports/org/kde/dirmodel
 @dirrmtry etc/xdg/menus
 @dirrmtry etc/xdg

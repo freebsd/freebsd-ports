@@ -1,24 +1,18 @@
 bin/kactivitymanagerd
 lib/kde4/activitymanager_plugin_activityranking.so
 lib/kde4/activitymanager_plugin_globalshortcuts.so
+lib/kde4/activitymanager_plugin_nepomuk.so
 lib/kde4/activitymanager_plugin_slc.so
 lib/kde4/activitymanager_plugin_sqlite.so
 lib/kde4/activitymanager_plugin_virtualdesktopswitch.so
-lib/kde4/activitymanager_uihandler_declarative.so
-lib/kde4/activitymanager_uihandler_kdialog.so
 lib/kde4/kactivitymanagerd_fileitem_linking_plugin.so
 lib/kde4/kcm_activities.so
 lib/kde4/kio_activities.so
 share/apps/activitymanager/workspace/settings/BlacklistApplicationView.qml
-share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/ChoiceDialog.qml
-share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/MessageDialog.qml
-share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/NewPasswordDialog.qml
-share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/PasswordDialog.qml
-share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui/uihandler.qml
-share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/metadata.desktop
 share/kde4/services/activities.protocol
 share/kde4/services/activitymanager-plugin-activityranking.desktop
 share/kde4/services/activitymanager-plugin-globalshortcuts.desktop
+share/kde4/services/activitymanager-plugin-nepomuk.desktop
 share/kde4/services/activitymanager-plugin-slc.desktop
 share/kde4/services/activitymanager-plugin-sqlite.desktop
 share/kde4/services/activitymanager-plugin-virtualdesktopswitch.desktop
@@ -26,10 +20,6 @@ share/kde4/services/kactivitymanagerd.desktop
 share/kde4/services/kactivitymanagerd_fileitem_linking_plugin.desktop
 share/kde4/services/kcm_activities.desktop
 share/kde4/servicetypes/activitymanager-plugin.desktop
-@dirrm share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents/ui
-@dirrm share/apps/plasma/packages/org.kde.ActivityManager.UiHandler/contents
-@dirrm share/apps/plasma/packages/org.kde.ActivityManager.UiHandler
-@dirrmtry share/apps/plasma/packages
 @dirrm share/apps/activitymanager/workspace/settings
 @dirrm share/apps/activitymanager/workspace
 @dirrm share/apps/activitymanager
