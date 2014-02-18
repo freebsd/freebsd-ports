@@ -3,15 +3,33 @@ bin/carbon-cache.py
 bin/carbon-client.py
 bin/carbon-relay.py
 bin/validate-storage-schemas.py
+@unexec if cmp -s %D/etc/carbon/rewrite-rules.conf.example %D/etc/carbon/rewrite-rules.conf; then rm -f %D/etc/carbon/rewrite-rules.conf; fi
 %%ETCDIR%%/rewrite-rules.conf.example
+@exec if [ ! -f %D/etc/carbon/rewrite-rules.conf ] ; then cp -p %D/%F %B/rewrite-rules.conf; fi
+@unexec if cmp -s %D/etc/carbon/carbon.amqp.conf.example %D/etc/carbon/carbon.amqp.conf; then rm -f %D/etc/carbon/carbon.amqp.conf; fi
 %%ETCDIR%%/carbon.amqp.conf.example
+@exec if [ ! -f %D/etc/carbon/carbon.amqp.conf ] ; then cp -p %D/%F %B/carbon.amqp.conf; fi
+@unexec if cmp -s %D/etc/carbon/carbon.conf.example %D/etc/carbon/carbon.conf; then rm -f %D/etc/carbon/carbon.conf; fi
 %%ETCDIR%%/carbon.conf.example
+@exec if [ ! -f %D/etc/carbon/carbon.conf ] ; then cp -p %D/%F %B/carbon.conf; fi
+@unexec if cmp -s %D/etc/carbon/aggregation-rules.conf.example %D/etc/carbon/aggregation-rules.conf; then rm -f %D/etc/carbon/aggregation-rules.conf; fi
 %%ETCDIR%%/aggregation-rules.conf.example
+@exec if [ ! -f %D/etc/carbon/aggregation-rules.conf ] ; then cp -p %D/%F %B/aggregation-rules.conf; fi
+@unexec if cmp -s %D/etc/carbon/relay-rules.conf.example %D/etc/carbon/relay-rules.conf; then rm -f %D/etc/carbon/relay-rules.conf; fi
 %%ETCDIR%%/relay-rules.conf.example
+@exec if [ ! -f %D/etc/carbon/relay-rules.conf ] ; then cp -p %D/%F %B/relay-rules.conf; fi
+@unexec if cmp -s %D/etc/carbon/storage-schemas.conf.example %D/etc/carbon/storage-schemas.conf; then rm -f %D/etc/carbon/storage-schemas.conf; fi
 %%ETCDIR%%/storage-schemas.conf.example
+@exec if [ ! -f %D/etc/carbon/storage-schemas.conf ] ; then cp -p %D/%F %B/storage-schemas.conf; fi
+@unexec if cmp -s %D/etc/carbon/blacklist.conf.example %D/etc/carbon/blacklist.conf; then rm -f %D/etc/carbon/blacklist.conf; fi
 %%ETCDIR%%/blacklist.conf.example
+@exec if [ ! -f %D/etc/carbon/blacklist.conf ] ; then cp -p %D/%F %B/blacklist.conf; fi
+@unexec if cmp -s %D/etc/carbon/storage-aggregation.conf.example %D/etc/carbon/storage-aggregation.conf; then rm -f %D/etc/carbon/storage-aggregation.conf; fi
 %%ETCDIR%%/storage-aggregation.conf.example
+@exec if [ ! -f %D/etc/carbon/storage-aggregation.conf ] ; then cp -p %D/%F %B/storage-aggregation.conf; fi
+@unexec if cmp -s %D/etc/carbon/whitelist.conf.example %D/etc/carbon/whitelist.conf; then rm -f %D/etc/carbon/whitelist.conf; fi
 %%ETCDIR%%/whitelist.conf.example
+@exec if [ ! -f %D/etc/carbon/whitelist.conf ] ; then cp -p %D/%F %B/whitelist.conf; fi
 %%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_aggregator_plugin.py
 %%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_relay_plugin.py
 %%PYTHON_SITELIBDIR%%/twisted/plugins/carbon_cache_plugin.py
@@ -103,6 +121,13 @@ bin/validate-storage-schemas.py
 %%PYTHON_SITELIBDIR%%/carbon/regexlist.py
 %%PYTHON_SITELIBDIR%%/carbon/regexlist.pyc
 %%PYTHON_SITELIBDIR%%/carbon/regexlist.pyo
-@dirrm %%ETCDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/carbon/aggregator
 @dirrm %%PYTHON_SITELIBDIR%%/carbon
+@dirrmtry %%ETCDIR%%
+@cwd /
+@dirrmtry var/db/carbon/whisper
+@dirrmtry var/db/carbon/rrd
+@dirrmtry var/db/carbon/log
+@dirrmtry var/db/carbon/lists
+@dirrmtry var/db/carbon
+@cwd %%RESETPREFIX%%
