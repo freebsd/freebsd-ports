@@ -1,4 +1,5 @@
 bin/gnubiff
+man/man1/gnubiff.1.gz
 share/applications/gnubiff.desktop
 %%NLS%%share/locale/cs/LC_MESSAGES/gnubiff.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gnubiff.mo
@@ -32,8 +33,6 @@ share/gnubiff/tux-jump(64x64).png
 share/gnubiff/tux-sleep(64x64).png
 share/gnubiff/tux-sleep.png
 share/pixmaps/gnubiff.png
-%%WITH_GNOME%%%%BONOBODIR%%/servers/GNOME_gnubiffApplet.server
-%%WITH_GNOME%%share/gnome-2.0/ui/GNOME_gnubiffApplet.xml
 @dirrmtry %%BONOBODIR%%/servers
 @dirrmtry %%BONOBODIR%%
 %%NLS%%@dirrmtry share/locale/fr_CA/LC_MESSAGES
