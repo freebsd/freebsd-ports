@@ -11,12 +11,11 @@ COMMENT=	Modelisation et Echanges de Donnees
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	hdf5.7:${PORTSDIR}/science/hdf5-18
+LIB_DEPENDS=	libhdf5.so.7:${PORTSDIR}/science/hdf5-18
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USES=		fortran gmake
-USE_TK=		yes
+USES=		fortran gmake tk
 FFLAGS+=	-O2
 
 CONFIGURE_ENV=	HDF5HOME=${LOCALBASE} 	\
@@ -36,7 +35,6 @@ TST2FIX=	c f
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-NO_STAGE=	yes
 pre-configure:
 .for ext in am in
 . if defined(NOPORTDOCS)
