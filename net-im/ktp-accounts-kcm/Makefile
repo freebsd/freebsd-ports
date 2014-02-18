@@ -2,6 +2,7 @@
 
 PORTNAME=	ktp-accounts-kcm
 PORTVERSION=	${KTP_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net-im kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KTP_BRANCH}/kde-telepathy/${PORTVERSION}/src
@@ -24,25 +25,14 @@ OPTIONS_DEFINE=	HAZE IRC JABBER SALUT
 OPTIONS_DEFAULT=JABBER
 
 HAZE_DESC=	libpurple protocols support
+HAZE_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-haze:${PORTSDIR}/net-im/telepathy-haze
+
 IRC_DESC=	Internet Relay Chat support
+IRC_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-idle:${PORTSDIR}/net-im/telepathy-idle
+
+JABBER_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-gabble:${PORTSDIR}/net-im/telepathy-gabble
+
 SALUT_DESC=	Link-local (serverless) XMPP support
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MHAZE}
-RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-haze:${PORTSDIR}/net-im/telepathy-haze
-.endif
-
-.if ${PORT_OPTIONS:MIRC}
-RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-idle:${PORTSDIR}/net-im/telepathy-idle
-.endif
-
-.if ${PORT_OPTIONS:MJABBER}
-RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-gabble:${PORTSDIR}/net-im/telepathy-gabble
-.endif
-
-.if ${PORT_OPTIONS:MSALUT}
-RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-salut:${PORTSDIR}/net-im/telepathy-salut
-.endif
+SALUT_RUN_DEPENDS=	${LOCALBASE}/libexec/telepathy-salut:${PORTSDIR}/net-im/telepathy-salut
 
 .include <bsd.port.mk>
