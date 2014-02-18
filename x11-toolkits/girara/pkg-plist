@@ -4,7 +4,6 @@ include/girara/completion.h
 include/girara/config.h
 include/girara/datastructures.h
 include/girara/girara.h
-include/girara/gtk2-compat.h
 include/girara/input-history.h
 include/girara/macros.h
 include/girara/session.h
