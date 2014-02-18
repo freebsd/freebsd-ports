@@ -1,4 +1,5 @@
 bin/cal
-etc/cal/calcol
-etc/cal/caldat
-@dirrm etc/cal
+%%ETCDIR%%/calcol
+%%ETCDIR%%/caldat
+man/man1/cal.1.gz
+@dirrm %%ETCDIR%%
