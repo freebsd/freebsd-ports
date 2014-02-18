@@ -2123,7 +2123,7 @@ math/geometry|math/ros-geometry|2011-05-03|Renamed
 devel/hs-FileManip|devel/hs-filemanip|2011-05-08|Renamed: Cabal package has been renamed
 devel/lhs2TeX|textproc/hs-lhs2tex|2011-05-08|Renamed: It has become a Cabal transcript
 devel/bnfc|devel/hs-BNFC|2011-05-08|Renamed: It has become a Cabal transcript
-graphics/hs-hgl||2011-05-08|Deleted: overridden by graphics/hs-HGL
+graphics/hs-hgl|graphics/hs-HGL|2011-05-08|Deleted: overridden by graphics/hs-HGL
 net/hs-network-bytestring||2011-05-08|Removed: It is deprecated by net/hs-network
 devel/hs-uvector||2011-05-08|Removed: It is deprecated by devel/hs-vector
 devel/hs-uvector-algorithms||2011-05-08|Removed: It is deprecated by devel/hs-vector-algorithms
