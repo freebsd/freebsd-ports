@@ -13,11 +13,10 @@ MAKEFILE=	makefile
 PLIST_FILES=	bin/autosig
 ALL_TARGET=	${PORTNAME}
 
-NO_STAGE=	yes
 pre-build:
 	${REINPLACE_CMD} -e '/^CC/d' ${WRKSRC}/makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
