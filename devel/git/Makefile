@@ -329,7 +329,7 @@ IGNORE=	using GITWEB support requires PERL support
 PLIST_SUB+=	CONTRIB=""
 BUILD_DEPENDS+=	xmlto:${PORTSDIR}/textproc/xmlto \
 		asciidoc:${PORTSDIR}/textproc/asciidoc \
-		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml-450
+		${LOCALBASE}/share/xml/docbook/4.5:${PORTSDIR}/textproc/docbook-xml-450
 MAN1+=		git-subtree.1
 .else
 PLIST_SUB+=	CONTRIB="@comment "

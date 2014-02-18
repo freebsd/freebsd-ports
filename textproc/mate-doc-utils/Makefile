@@ -13,8 +13,8 @@ COMMENT=	MATE doc utils
 BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian \
 		${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian \
-		${LOCALBASE}/share/xml/docbook/4.3/catalog.xml:${PORTSDIR}/textproc/docbook-xml-430 \
-		${LOCALBASE}/share/xml/docbook/4.4/catalog.xml:${PORTSDIR}/textproc/docbook-xml-440 \
+		${LOCALBASE}/share/xml/docbook/4.3:${PORTSDIR}/textproc/docbook-xml-430 \
+		${LOCALBASE}/share/xml/docbook/4.4:${PORTSDIR}/textproc/docbook-xml-440 \
 		xml2po:${PORTSDIR}/textproc/gnome-doc-utils
 
 PORTSCOUT=	limitw:1,even

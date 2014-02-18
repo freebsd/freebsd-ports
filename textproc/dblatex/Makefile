@@ -12,7 +12,7 @@ COMMENT=	DocBook to LaTeX/ConTeXt Publishing
 
 BUILD_DEPENDS=	${LOCALBASE}/share/texmf-local/tex/latex/ifxetex/ifxetex.sty:${PORTSDIR}/print/ifxetex
 RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/share/xml/docbook/4.2/docbook.cat:${PORTSDIR}/textproc/docbook-xml
+		${LOCALBASE}/share/xml/docbook/4.2:${PORTSDIR}/textproc/docbook-xml
 
 USE_BZIP2=	yes
 USE_TEX=	tex

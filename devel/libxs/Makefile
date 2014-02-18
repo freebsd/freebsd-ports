@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=	--enable-debug
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto \
-		${LOCALBASE}/share/xml/docbook/4.5/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml-450
+		${LOCALBASE}/share/xml/docbook/4.5:${PORTSDIR}/textproc/docbook-xml-450
 
 MAN3=	\
 	xs_bind.3 \

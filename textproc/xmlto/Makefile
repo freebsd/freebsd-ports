@@ -26,7 +26,7 @@ BUILD_DEPENDS=	${BASH_CMD}:${PORTSDIR}/shells/bash \
 		${XSL_DIR}:${PORTSDIR}/textproc/docbook-xsl \
 		paperconf:${PORTSDIR}/print/libpaper \
 		w3m:${PORTSDIR}/www/w3m \
-		${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
+		${LOCALBASE}/share/xml/docbook/4.2:${PORTSDIR}/textproc/docbook-xml
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 SUB_FILES=	pkg-message

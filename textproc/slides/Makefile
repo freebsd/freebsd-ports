@@ -12,7 +12,7 @@ COMMENT=	Doctype and stylesheets for making slides
 
 BUILD_DEPENDS=	xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr
 RUN_DEPENDS=	${LOCALBASE}/share/xsl/docbook/catalog:${PORTSDIR}/textproc/docbook-xsl
-RUN_DEPENDS+=	${LOCALBASE}/share/xml/docbook/4.3/catalog.xml:${PORTSDIR}/textproc/docbook-xml-430
+RUN_DEPENDS+=	${LOCALBASE}/share/xml/docbook/4.3:${PORTSDIR}/textproc/docbook-xml-430
 
 XMLDIR=		${LOCALBASE}/share/xml
 INSTDIR=	share/xsl/slides

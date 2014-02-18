@@ -15,8 +15,8 @@ BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian \
     		gawk:${PORTSDIR}/lang/gawk
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian \
 		${PYTHON_SITELIBDIR}/libxml2mod.so:${PORTSDIR}/textproc/py-libxml2 \
-		${LOCALBASE}/share/xml/docbook/4.3/catalog.xml:${PORTSDIR}/textproc/docbook-xml-430 \
-		${LOCALBASE}/share/xml/docbook/4.4/catalog.xml:${PORTSDIR}/textproc/docbook-xml-440
+		${LOCALBASE}/share/xml/docbook/4.3:${PORTSDIR}/textproc/docbook-xml-430 \
+		${LOCALBASE}/share/xml/docbook/4.4:${PORTSDIR}/textproc/docbook-xml-440
 
 USE_XZ=		yes
 MAKE_JOBS_UNSAFE=yes
