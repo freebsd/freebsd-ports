@@ -15,7 +15,6 @@ USE_SM_COMPAT=	yes
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME:S/-/_/}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 

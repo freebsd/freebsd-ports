@@ -14,7 +14,6 @@ LICENSE=	GPLv2
 USE_SM_COMPAT=	yes
 USE_GENERIC_PKGMESSAGE=	yes
 
-NO_STAGE=	yes
 
 post-patch:
 	@${MV} ${WRKSRC}/${SQUIRREL_PLUGIN_NAME}/config.php ${WRKSRC}/${SQUIRREL_PLUGIN_NAME}/config.php.sample

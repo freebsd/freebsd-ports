@@ -14,7 +14,6 @@ USE_SM_COMPAT=	YES
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME:S/-/_/}
 
-NO_STAGE=	yes
 post-patch:
 	@${RM} ${WRKSRC}/${SQUIRREL_PLUGIN_NAME}/mark_read.php.orig
 
