@@ -21,29 +21,14 @@ RUN_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-d
 
 CONFLICTS=	docbook2X-*
 
-USES=		perl5
+USES=		perl5 gmake
 USE_PERL5=	run
 USE_TEX=	jadetex
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 MAKE_ARGS+=	docdir="${DOCSDIR}" htmldir="${DOCSDIR}/html"
 
-MAN1=		jw.1 sgmldiff.1 docbook2man-spec.pl.1 docbook2texi-spec.pl.1
-MAN7=		backend-spec.7 frontend-spec.7
-MLINKS=		jw.1 docbook2dvi.1 \
-		jw.1 docbook2html.1 \
-		jw.1 docbook2man.1 \
-		jw.1 docbook2pdf.1 \
-		jw.1 docbook2ps.1 \
-		jw.1 docbook2rtf.1 \
-		jw.1 docbook2tex.1 \
-		jw.1 docbook2texi.1 \
-		jw.1 docbook2txt.1
-.if !defined(NOPORTDOCS)
 PORTDOCS=	*
-.endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/sgml/catalog|${PREFIX}/share/sgml/catalog|g' \
 		${WRKSRC}/doc/HTML/Makefile.in
@@ -51,10 +36,6 @@ post-patch:
 			-e 's|/usr/bin/|${LOCALBASE}/bin/|g' \
 			${WRKSRC}/doc/refentry/*.sgml \
 			${WRKSRC}/backends/txt
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|SUBDIRS = refentry man HTML|SUBDIRS = refentry man|' \
-			${WRKSRC}/doc/Makefile.in
-.endif
 
 pre-configure:
 	${RM} -f ${WRKSRC}/config.cache
