@@ -83,8 +83,8 @@ do-install:
 .ifndef NO_DTD_SUBDIR
 	@${ECHO_CMD} "@dirrm share/${XML_SGML}/${DTD_NAME}/${DTD_VERSION}" >> ${TMPPLIST}
 .endif
-	@${ECHO_CMD} "@unexec rmdir share/${XML_SGML}/${DTD_NAME} || :" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/share/${XML_SGML}/${DTD_NAME} 2>/dev/null || :" >> ${TMPPLIST}
 .if defined(PORTDOCS)
-	@${ECHO_CMD} "@unexec rmdir share/doc/${PORTNAME} || :" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/share/doc/${PORTNAME} 2>/dev/null || :" >> ${TMPPLIST}
 .endif
 
