@@ -3,7 +3,7 @@
 
 PORTNAME=	recode
 PORTVERSION=	3.6
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	converters
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	recode
@@ -11,14 +11,13 @@ MASTER_SITE_SUBDIR=	recode
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Converts files between character sets and usages
 
-USES=		gettext iconv perl5
-USE_AUTOTOOLS=	libtool
-USE_PERL5=	patch run build
+GNU_CONFIGURE=	yes
+USES=		gettext iconv libtool perl5
+USE_PERL5=	run build
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--without-included-gettext
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
-CFLAGS+=	-fPIC
 
 INFO=		recode
 
@@ -27,11 +26,13 @@ post-extract:
 	@${RM} -f ${WRKSRC}/doc/${PORTNAME}.info*
 
 post-patch:
-	@${PERL} -pi -e '\
-		if (/Project-Id-Version/) { \
+	@${REINPLACE_CMD} -E \
+		'/Project-Id-Version/ { \
 			s/3\.[45](r|\.[0-9])?/3.6/; \
-			s/: (Free )?recode/: GNU recode/; \
-		} \
-	' ${WRKSRC}/i18n/*.po
+			s/: (Free )?recode/: GNU recode/; }' \
+		${WRKSRC}/i18n/*.po
+	@${REINPLACE_CMD} 's,"iconv\.h","${ICONV_PREFIX}/include/iconv.h",' \
+		${WRKSRC}/src/libiconv.c
+	@${CP} ${WRKSRC}/lib/error.c ${WRKSRC}/src
 
 .include <bsd.port.mk>
