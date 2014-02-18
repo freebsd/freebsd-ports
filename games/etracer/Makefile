@@ -11,19 +11,15 @@ DISTNAME=		extremetuxracer-${PORTVERSION}
 MAINTAINER=		peter_dunning@dsl.pipex.com
 COMMENT=		The latest and greatest fork of the classic Tux Racer
 
-LIB_DEPENDS=		png15:${PORTSDIR}/graphics/png \
-			freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS=		libpng15.so:${PORTSDIR}/graphics/png \
+			libfreetype.so.9:${PORTSDIR}/print/freetype2
 
 USE_SDL=		mixer sdl
 USE_XORG=		x11 xi xext xmu xt
 USE_GL=			gl glu glut
-USES=			gmake pkgconfig
+USES=			gmake pkgconfig tcl
 GNU_CONFIGURE=		yes
 
-USE_TCL=		84+
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 CONFIGURE_ARGS=		--with-tcl="${TCL_LIBDIR}" \
 			--with-tcl-inc="${TCL_INCLUDEDIR}" \
 			--with-gl-libs="${LOCALBASE}/lib" \
@@ -36,4 +32,4 @@ post-patch:
 		-e 's|png_infopp_NULL|NULL|g' \
 		${WRKSRC}/src/ppgltk/images/png_reader.cpp
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
