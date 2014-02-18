@@ -9,8 +9,6 @@ CATEGORIES=		mail www
 MAINTAINER=	neil@darlow.co.uk
 COMMENT=	SquirrelMail plugin for Server-Side Mail Filtering management
 
-NO_STAGE=	yes
-
 pre-install:
 	${RM} -Rf ${WRKSRC}/${SQUIRREL_PLUGIN_NAME}/po
 	${FIND} ${WRKSRC}/${SQUIRREL_PLUGIN_NAME} -type f \

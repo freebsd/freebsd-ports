@@ -13,8 +13,6 @@ COMMENT=	Allows for the importing of addressbooks from a CSV (comma separated va
 
 SQUIRREL_PLUGIN_NAME=	${PORTNAME:S/-/_/}
 
-NO_STAGE=	yes
-
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 .include <bsd.port.post.mk>

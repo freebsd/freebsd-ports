@@ -11,8 +11,6 @@ COMMENT=		Plugin for the weather in Germany
 
 USE_SM_COMPAT=	yes
 
-NO_STAGE=	yes
-
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 .include <bsd.port.post.mk>

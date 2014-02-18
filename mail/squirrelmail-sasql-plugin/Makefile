@@ -14,8 +14,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/DB.php:${PORTSDIR}/databases/pear-DB
 USE_SM_COMPAT=	yes
 USE_GENERIC_PKGMESSAGE=	yes
 
-NO_STAGE=	yes
-
 post-patch:
 	@${REINPLACE_CMD} -e "s/\(\$$imap_server_type == \'cyrus\'\)/\1 || \$$imap_server_type == \'courier\'/g" \
 		-e 's/session_register/sqsession_register/g' \

@@ -16,8 +16,6 @@ USE_SM_COMPAT=	yes
 USE_GENERIC_PKGMESSAGE=	yes
 _SMSRCDIR=	calendar
 
-NO_STAGE=	yes
-
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 .include <bsd.port.mk>
