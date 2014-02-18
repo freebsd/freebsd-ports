@@ -1,5 +1,5 @@
---- configure.orig	2012-10-21 18:10:03.000000000 +0200
-+++ configure	2012-10-21 18:27:39.000000000 +0200
+--- configure.orig	2013-07-13 10:23:28.000000000 -0300
++++ configure	2014-02-18 01:53:05.000000000 -0300
 @@ -18416,7 +18416,7 @@
    GCCVER2=`echo $GCCVER | awk '{print $1 * 100}'`
    case "$host" in
@@ -62,3 +62,19 @@
    cstdlib \
    cstring \
    list \
+@@ -24341,12 +24342,12 @@
+ #if HAVE_NETINET_IP_H
+ #include <netinet/ip.h>
+ #endif
+-#if HAVE_NETINET_IP_COMPAT_H
+-#include <netinet/ip_compat.h>
+-#endif
+ #if HAVE_NET_IF_H
+ #include <net/if.h>
+ #endif
++#if HAVE_NETINET_IP_COMPAT_H
++#include <netinet/ip_compat.h>
++#endif
+ #if HAVE_NETINET_IP_FIL_H
+ #include <netinet/ip_fil.h>
+ #endif
