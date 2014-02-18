@@ -1,3 +1,0 @@
-lib/%%LIB_DIR%%/%%LIB_NAME%%
-lib/%%LIB_DIR%%/pkgIndex.tcl
-@dirrm lib/%%LIB_DIR%%
