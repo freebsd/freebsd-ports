@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lilypond
-PORTVERSION=	2.18.0
+PORTVERSION=	2.18.1
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v${PORTVERSION:R}/
 
@@ -10,6 +10,8 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	The GNU music typesetter
 
 LICENSE=	GPLv3
+
+OPTIONS_DEFINE=	NLS
 
 BUILD_DEPENDS=	pdftexi2dvi:${PORTSDIR}/print/texinfo \
 		t1ascii:${PORTSDIR}/print/t1utils \
@@ -38,6 +40,7 @@ INFO=		internals \
 		lilypond-internals \
 		lilypond-learning \
 		lilypond-notation \
+		lilypond-snippets \
 		lilypond-usage \
 		lilypond-web \
 		music-glossary
