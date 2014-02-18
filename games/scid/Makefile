@@ -9,15 +9,13 @@ MASTER_SITES=	SF/${PORTNAME}/Scid/Scid%204.3/
 MAINTAINER=	bsd@volki.at
 COMMENT=	A free chess database application
 
-USE_TK=		84+
-INVALID_TCL_VER=	86
-
 HAS_CONFIGURE=	yes
+USES=		gmake tk:84,85
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 
-TCL_LIBRARY=	-L${LOCALBASE}/lib -ltcl${USE_TCL}
+TCL_LIBRARY=	-L${LOCALBASE}/lib -ltcl${TCL_SHLIB_VER}
 
 CONFIGURE_ARGS=	\
     BINDIR="${PREFIX}/bin" \
@@ -25,7 +23,7 @@ CONFIGURE_ARGS=	\
     TCL_VERSION="${TCL_VER}" \
     TCL_INCLUDE="-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} -I${LOCALBASE}/include" \
     TCL_LIBRARY="${TCL_LIBRARY}" \
-    TK_LIBRARY="${TCL_LIBRARY} -ltk${USE_TK} -lX11" \
+    TK_LIBRARY="${TCL_LIBRARY} -ltk${TK_SHLIB_VER} -lX11" \
     OPTIMIZE="${CXXFLAGS} -fno-rtti -fno-exceptions" \
     WARNINGS=""
 
