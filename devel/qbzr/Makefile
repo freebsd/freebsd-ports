@@ -3,7 +3,7 @@
 
 PORTNAME=	qbzr
 PORTVERSION=	0.23.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/109906138/ \
 		http://www.c-s.li/ports/

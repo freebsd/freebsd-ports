@@ -3,6 +3,7 @@
 
 PORTNAME=	charmtimetracker
 PORTVERSION=	1.6.0
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://nodeload.github.com/KDAB/Charm/tarball/
 DISTNAME=	${PORTVERSION}
