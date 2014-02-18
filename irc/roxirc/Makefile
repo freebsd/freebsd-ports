@@ -13,20 +13,17 @@ COMMENT=	A tcl/tk irc client
 USES+=		tk:run
 NO_BUILD=	yes
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/roxirc
+PORTDOCS=	*
+
 post-patch:
 	@${REINPLACE_CMD} 's|if \[ -x .*|${WISH} "$$0" "$$@"|' ${WRKSRC}/roxirc
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/roxirc ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/config ${DOCSDIR}/config-example
-	${INSTALL_DATA} ${WRKSRC}/menus ${DOCSDIR}/menus-example
-	${INSTALL_DATA} ${WRKSRC}/bindings ${DOCSDIR}/bindings-example
-	${INSTALL_DATA} ${WRKSRC}/prefs ${DOCSDIR}/prefs-initial
-	${INSTALL_DATA} ${WRKSRC}/startup ${DOCSDIR}/startup-example
-	${INSTALL_DATA} ${WRKSRC}/help ${DOCSDIR}/help
-.endif
+	${INSTALL_SCRIPT} ${WRKSRC}/roxirc ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in config menus bindings prefs startup help
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/${f}-example
+.endfor
 
 .include <bsd.port.mk>
