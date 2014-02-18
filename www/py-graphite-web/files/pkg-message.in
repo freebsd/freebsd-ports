@@ -1,26 +1,24 @@
 ==============================================================================
 
-In /usr/local/etc/graphite/ copy the graphite.wsgi.example to graphite.wsgi
-
 To run graphite, you will need to setup Apache by creating a vhost similar to
 the following:
 
-WSGIImportScript /usr/local/etc/graphite/graphite.wsgi process-group=graphite application-group=%{GLOBAL}
 <VirtualHost *:80>
 	ServerName graphite
-	DocumentRoot "/usr/local/graphite/webapp"
+	DocumentRoot "%%DATADIR%%/content/"
 
 	# I've found that an equal number of processes & threads tends
 	# to show the best performance for Graphite (ymmv).
-	WSGIDaemonProcess graphite processes=5 threads=5 display-name='%{GROUP}' inactivity-timeout=120
+	WSGIDaemonProcess graphite processes=5 threads=5 inactivity-timeout=120 display-name=graphite
 	WSGIProcessGroup graphite
-	WSGIApplicationGroup %{GLOBAL}
+	WSGIApplicationGroup graphite
+        WSGIImportScript %%PREFIX%%/etc/graphite/graphite.wsgi process-group=graphite application-group=graphite
 
 	# XXX You will need to create this file! There is a graphite.wsgi.example
 	# file in this directory that you can safely use, just copy it to graphite.wgsi
-	WSGIScriptAlias / /usr/local/etc/graphite/graphite.wsgi
+	WSGIScriptAlias / %%PREFIX%%/etc/graphite/graphite.wsgi
 
-	Alias /content/ /usr/local/graphite/webapp/content/
+	Alias /content/ %%DATADIR%%/content/
 	<Location "/content/">
 		SetHandler None
 	</Location>
@@ -30,27 +28,47 @@ WSGIImportScript /usr/local/etc/graphite/graphite.wsgi process-group=graphite ap
 	# installation, which is probably something like:
 	# /usr/lib/python2.6/site-packages/django
 	#Alias /media/ "@DJANGO_ROOT@/contrib/admin/media/"
-	Alias /media/ ${${PYTHON_SITELIBDIR}}/django
+	Alias /media/ %%PYTHON_SITELIBDIR%%/django
 	<Location "/media/">
 		SetHandler None
 	</Location>
 
-	# The graphite.wsgi file has to be accessible by apache. It won't
-	# be visible to clients because of the DocumentRoot though.
-	<Directory /usr/local/etc/graphite/>
+	Alias /static/ "%%PYTHON_SITELIBDIR%%/django/contrib/admin/static/"
+	<Location "/static/">
+		SetHandler None
+	</Location>
+	<Directory "%%PYTHON_SITELIBDIR%%/django/contrib/admin/static/">
 		Order deny,allow
 		Allow from all
 	</Directory>
+
+	# The graphite.wsgi file has to be accessible by apache. It won't
+	# be visible to clients because of the DocumentRoot though.
+	<Directory %%PREFIX%%/etc/graphite/>
+		Order deny,allow
+		Allow from all
+	</Directory>
+
+	<Directory %%DATADIR%%/content/>
+		Order deny,allow
+		Allow from all
+	</Directory>
+
 </VirtualHost>
 
+You should set the SECRET_KEY in %%PREFIX%%/etc/graphite/local_settings.py
 
-Then initialize the sqllite user database and create the admin user:
+Then initialize the sqlite user database and create the admin user:
 
-	python ${PYTHON_SITELIBDIR}/graphite/manage.py syncdb
+	python2 %%PYTHON_SITELIBDIR%%/graphite/manage.py syncdb
+
+Then build the index:
+
+        %%PREFIX%%/bin/build-index.sh
 
 Change the ownership of the user database so the webapp can write to it:
 
-	chown ${WWWOWN} ${PREFIX}/graphite/storage/graphite.db
+	chown -R %%WWWOWN%%:%%WWWGRP%% /var/db/graphite/ /var/log/graphite/
 
 Now you should be able to access the graphite virtual host you created in the
 first step.
