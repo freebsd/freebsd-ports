@@ -105,10 +105,6 @@ CONFIGURE_ARGS+=	--disable-tv-v4l1 \
 # Build system handling (including OPTIONS)
 # =========================================
 
-.if ${OSVERSION} < 802502
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-base_system_log2f
-.endif
-
 #On i386, gcc runs out of general purpose registers when
 #trying to compile a debug version with the default flags.
 .if ${PORT_OPTIONS:MDEBUG}

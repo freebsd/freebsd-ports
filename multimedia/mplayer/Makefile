@@ -3,7 +3,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 
 COMMENT=	High performance media player supporting many formats
 
@@ -36,8 +36,6 @@ SKINS_DESC?=	Install skins for GUI
 WIN32_DESC?=	Install win32 binary codecs
 X11DGA_DESC?=	X11 DGA video driver support
 X11VM_DESC?=	X11 VidMode support
-
-#MANCOMPRESSED=	no
 
 SUB_FILES=	pkg-message
 
@@ -96,7 +94,7 @@ CONFIGURE_ARGS+=--disable-dga1 --disable-dga2
 .endif
 .if ${PORT_OPTIONS:MOPENGL}
 USE_XORG+=	glproto
-LIB_DEPENDS+=	GL:${PORTSDIR}/graphics/libGL
+LIB_DEPENDS+=	libGL.so:${PORTSDIR}/graphics/libGL
 .else
 CONFIGURE_ARGS+=--disable-gl
 .endif
@@ -178,7 +176,7 @@ post-install:
 .if ${PORT_OPTIONS:MGUI} && ${PORT_OPTIONS:MX11}
 	@${LN} -sf ${PREFIX}/bin/mplayer ${STAGEDIR}${PREFIX}/bin/gmplayer
 	@(cd ${STAGEDIR}${MAN1PREFIX}/man/man1 && ${LN} -sf mplayer.1.gz gmplayer.1.gz)
-	${CP} -f ${WRKSRC}/etc/mplayer256x256.png ${STAGEDIR}${LOCALBASE}/share/pixmaps/mplayer.png
+	${CP} -f ${WRKSRC}/etc/mplayer256x256.png ${STAGEDIR}${PREFIX}/share/pixmaps/mplayer.png
 .endif
 	@${CAT} ${PKGMESSAGE}
 
