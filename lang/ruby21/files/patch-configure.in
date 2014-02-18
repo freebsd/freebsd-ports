@@ -1,0 +1,59 @@
+--- configure.in.orig	2014-02-17 23:26:58.602684892 +0000
++++ configure.in	2014-02-17 23:30:59.146669242 +0000
+@@ -1072,10 +1072,10 @@
+   ],
+ [	LIBS="-lm $LIBS"])
+ 
+-AC_CHECK_LIB(crypt, crypt)      # glibc (GNU/Linux, GNU/Hurd, GNU/kFreeBSD)
+-AC_CHECK_LIB(dl, dlopen)	# Dynamic linking for SunOS/Solaris and SYSV
+-AC_CHECK_LIB(dld, shl_load)	# Dynamic linking for HP-UX
+-AC_CHECK_LIB(socket, shutdown)  # SunOS/Solaris
++AC_SEARCH_LIBS(crypt, crypt)      # glibc (GNU/Linux, GNU/Hurd, GNU/kFreeBSD)
++AC_SEARCH_LIBS(dlopen, dl)	# Dynamic linking for SunOS/Solaris and SYSV
++AC_SEARCH_LIBS(shl_load, dld)	# Dynamic linking for HP-UX
++AC_SEARCH_LIBS(shutdown, socket)  # SunOS/Solaris
+ 
+ dnl Checks for header files.
+ AC_HEADER_DIRENT
+@@ -1970,7 +1970,7 @@
+ if test x"$ac_cv_func_clock_gettime" != xyes; then
+     # glibc 2.17 moves clock_* functions from librt to the main C library.
+     # http://sourceware.org/ml/libc-announce/2012/msg00001.html
+-    AC_CHECK_LIB(rt, clock_gettime)
++    AC_SEARCH_LIBS(clock_gettime, rt)
+     if test x"$ac_cv_lib_rt_clock_gettime" = xyes; then
+ 	AC_DEFINE(HAVE_CLOCK_GETTIME, 1)
+     fi
+@@ -2411,7 +2411,7 @@
+ fi
+ 
+ if test x"$enable_pthread" = xyes; then
+-    for pthread_lib in thr pthread pthreads c c_r root; do
++    for pthread_lib in pthread thr pthreads c c_r root; do
+ 	AC_CHECK_LIB($pthread_lib, pthread_kill,
+ 		     rb_with_pthread=yes, rb_with_pthread=no)
+ 	if test "$rb_with_pthread" = "yes"; then break; fi
+@@ -2419,6 +2419,7 @@
+     if test x"$rb_with_pthread" = xyes; then
+ 	AC_DEFINE(_REENTRANT)
+ 	AC_DEFINE(_THREAD_SAFE)
++	[pthread],  [MAINLIBS="-pthread $MAINLIBS"],
+ 	AC_DEFINE(HAVE_LIBPTHREAD)
+ 	AC_CHECK_HEADERS(pthread_np.h, [], [], [@%:@include <pthread.h>])
+ 	AS_CASE([$pthread_lib],
+@@ -2656,7 +2657,6 @@
+ 			: ${LDSHARED='$(CC) -shared'}
+ 			if test "$rb_cv_binary_elf" = yes; then
+ 			    LDFLAGS="$LDFLAGS -rdynamic"
+-			    DLDFLAGS="$DLDFLAGS "'-Wl,-soname,$(.TARGET)'
+ 			else
+ 			  test "$GCC" = yes && test "$rb_cv_prog_gnu_ld" = yes || LDSHARED='$(LD) -Bshareable'
+ 			fi
+@@ -3109,6 +3109,7 @@
+     [freebsd*|dragonfly*], [
+ 	SOLIBS='$(LIBS)'
+ 	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.$(MAJOR)$(MINOR)'
++	LIBRUBY_DLDFLAGS='-Wl,-soname,$(LIBRUBY_SO)'
+ 	if test "$rb_cv_binary_elf" != "yes" ; then
+ 	    LIBRUBY_SO="$LIBRUBY_SO.\$(TEENY)"
+ 	    LIBRUBY_ALIASES=''
