@@ -389,7 +389,7 @@ lib/kde4/kdevswitchtobuddy.so
 lib/kde4/kdevtemplatemanager_config.so
 lib/kde4/kdevtestview.so
 lib/kde4/kdevvcschangesviewplugin.so
-lib/kde4/plugins/grantlee/0.3/kdev_filters.so
+lib/kde4/plugins/grantlee/%%GRANTLEE_VER%%/kdev_filters.so
 lib/libkdevplatformdebugger.so.%%SHLIB_VER%%
 lib/libkdevplatformdebugger.so
 lib/libkdevplatformdebugger.so.%%SHLIB_SHVER%%

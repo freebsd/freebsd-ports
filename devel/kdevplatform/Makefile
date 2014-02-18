@@ -27,7 +27,8 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	util/kdev_format_source util/kdevplatform_shell_environment.sh
 
 PLIST_SUB+=	SHLIB_VER=7.0.0 \
-		SHLIB_SHVER=7
+		SHLIB_SHVER=7 \
+		GRANTLEE_VER=0.4
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes

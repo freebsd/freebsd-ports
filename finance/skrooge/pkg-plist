@@ -11,7 +11,7 @@ lib/kde4/plasma_skroogoid_scheduledoperation.so
 lib/kde4/plasma_skroogoid_unit.so
 lib/kde4/plasma_widget_incomeexpenditure.so
 lib/kde4/plasma_widget_simulation.so
-lib/kde4/plugins/grantlee/0.3/grantlee_skgfilters.so
+lib/kde4/plugins/grantlee/%%GRANTLEE_VER%%/grantlee_skgfilters.so
 lib/kde4/skg_advice.so
 lib/kde4/skg_bookmark.so
 lib/kde4/skg_dashboard.so
