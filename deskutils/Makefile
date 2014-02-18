@@ -109,8 +109,6 @@
     SUBDIR += kchmviewer-kde4
     SUBDIR += kdepim4
     SUBDIR += kdepim4-runtime
-    SUBDIR += kdepim44
-    SUBDIR += kdepim44-runtime
     SUBDIR += kdepimlibs4
     SUBDIR += kdeplasma-addons
     SUBDIR += kruler
