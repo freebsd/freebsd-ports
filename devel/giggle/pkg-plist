@@ -78,5 +78,3 @@ share/locale/zh_CN/LC_MESSAGES/giggle.mo
 @dirrm include/giggle/libgiggle-git
 @dirrm include/giggle/libgiggle
 @dirrm include/giggle
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
