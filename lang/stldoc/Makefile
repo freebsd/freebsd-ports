@@ -12,9 +12,8 @@ COMMENT=	The STL reference manual by SGI
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/* ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
