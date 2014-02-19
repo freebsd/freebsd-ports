@@ -20,14 +20,12 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	sbin/ddns-server sbin/ddns-client \
 		etc/ddns_client.conf.sample etc/ddns_server.conf.sample
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ddns-client ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/ddns-server ${PREFIX}/sbin
-	${INSTALL_DATA} ${FILESDIR}/ddns_client.conf.sample ${PREFIX}/etc
-	${INSTALL_DATA} ${FILESDIR}/ddns_server.conf.sample ${PREFIX}/etc
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${INSTALL_PROGRAM} ${WRKSRC}/ddns-client ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/ddns-server ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_DATA} ${FILESDIR}/ddns_client.conf.sample \
+		${STAGEDIR}${PREFIX}/etc
+	${INSTALL_DATA} ${FILESDIR}/ddns_server.conf.sample \
+		${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>
