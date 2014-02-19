@@ -3,6 +3,7 @@
 
 PORTNAME=	dnspython
 PORTVERSION=	1.11.1
+PORTREVISION=	1
 CATEGORIES=	dns python
 MASTER_SITES=	http://www.dnspython.org/kits${PORTVERSIONSUFFIX}/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,20 +15,20 @@ COMMENT=	DNS toolkit for Python
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-PYDISTUTILS_PKGNAME=	${PORTNAME}${PORTVERSIONSUFFIX}
 
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}/options
-OPTIONS_DEFINE=	PYCRYPTO
+OPTIONS_DEFINE=	DOCS EXAMPLES PYCRYPTO
 PYCRYPTO_DESC=	Enable pycrypto (part of dnssec needs it)
 
 PORTDOCS=	ChangeLog README
 DOCSDIR=	${PREFIX}/share/doc/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
-EXAMPLE_FILES=	ddns.py e164.py mx.py name.py reverse.py reverse_name.py \
+PORTEXAMPLES=	ddns.py e164.py mx.py name.py reverse.py reverse_name.py \
 		xfr.py zonediff.py
 EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
-NO_STAGE=	yes
+PYCRYPTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_MAJOR_VER} < 3
@@ -37,35 +38,15 @@ PORTVERSIONSUFFIX=3
 EXAMPLESDIR:=	${EXAMPLESDIR}3
 .endif
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION} PYTHON_VER=${PYTHON_VER}
-
-post-patch:
-	for example in ${EXAMPLE_FILES} ; \
-	  do ${REINPLACE_CMD} -e 's|python3|${PYTHON_VERSION}|1' \
-	    ${WRKSRC}/examples/$${example} ; \
-	done
-
 post-install:
 # docs
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for docfile in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 # examples
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
-.for docfile in ${EXAMPLE_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/examples/${docfile} ${EXAMPLESDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/examples/,} ${STAGEDIR}${EXAMPLESDIR}
 # permission safeness
-	@${CHMOD} -R ${SHAREMODE} ${PYTHONPREFIX_SITELIBDIR}/dns/*
-	@${CHMOD} -R a+X ${PYTHONPREFIX_SITELIBDIR}/dns/*
-
-.if ${PORT_OPTIONS:MPYCRYPTO}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
-.endif
+	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/dns -type f -exec ${CHMOD} ${SHAREMODE} {} \;
+	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/dns -type d -exec ${CHMOD} 755 {} \;
 
 .include <bsd.port.post.mk>
