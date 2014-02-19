@@ -3,6 +3,7 @@
 
 PORTNAME=	gajim
 PORTVERSION=	0.15.4
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://gajim.org/downloads/0.15/
 
@@ -41,6 +42,10 @@ NLS_USES=	gettext
 
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-common_resolver.py
+.endif
 
 .if ! ${PORT_OPTIONS:MNLS}
 CONFIGURE_ARGS+=	--disable-nls
