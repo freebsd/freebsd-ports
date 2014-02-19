@@ -3,7 +3,7 @@
 
 PORTNAME=	linuxdoc
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://dist.bsdlab.org/ \
 		http://fallout.campusview.indiana.edu/ports/distfiles/
