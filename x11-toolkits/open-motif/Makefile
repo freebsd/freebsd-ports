@@ -31,8 +31,6 @@ MAKE_ENV=	LANG=C
 CPPFLAGS+=	-DCSRG_BASED -DXUSE_MTSAFE_API -DXNO_MTSAFE_PWDAPI -I${PREFIX}/include
 USE_CSTD=	gnu89
 
-DEMOS_SRC=	${WRKSRC}/demos/programs
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
@@ -42,8 +40,6 @@ CONFIGURE_ARGS+=	--with-pic
 .endif
 
 post-patch:
-	@${FIND} ${DEMOS_SRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|^install-data-am: |install-data-am: # |g'
 # fix sections
 	@${FIND} ${WRKSRC}/doc/man/man1 -name '*.1' -maxdepth 1 | \
 		${XARGS} ${REINPLACE_CMD} -e 's|user cmd|1|'
