@@ -13,7 +13,7 @@ COMMENT=	Lightweight terminal emulator from the LXDE project
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:${PORTSDIR}/textproc/p5-XML-Parser
-LIB_DEPENDS=	libvte.so:${PORTSDIR}/x11-toolkits/vte
+LIB_DEPENDS=	libvte2_90.so:${PORTSDIR}/x11-toolkits/vte3
 
 USES=		gmake iconv pkgconfig
 USE_GNOME=	gtk20 intlhack
