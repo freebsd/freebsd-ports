@@ -3,6 +3,7 @@
 
 PORTNAME=	glob2
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,8 +14,7 @@ COMMENT=	Glob that captures patterns and supports recursive wildcards
 LICENSE=	BSD
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
-NO_STAGE=	yes
 
 .include <bsd.port.mk>

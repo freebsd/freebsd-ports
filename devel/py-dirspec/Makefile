@@ -3,7 +3,7 @@
 
 PORTNAME=	dirspec
 PORTVERSION=	13.05
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/141027576/ \
 		http://nivit.altervista.org/FreeBSD/ports/distfiles/
@@ -15,7 +15,7 @@ COMMENT=	XDG Base and User directories implementation
 LICENSE=	GPLv3
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

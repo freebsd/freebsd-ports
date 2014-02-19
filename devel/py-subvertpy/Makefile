@@ -3,6 +3,7 @@
 
 PORTNAME=	subvertpy
 PORTVERSION=	0.8.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/90814723/ \
 		http://www.c-s.li/ports/
@@ -18,10 +19,6 @@ BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	subvertpy
-
-NO_STAGE=	yes
-#post-patch:
-#		@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/setup.py
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
