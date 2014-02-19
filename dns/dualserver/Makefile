@@ -11,11 +11,10 @@ DISTNAME=	${PORTNAME}V${PORTVERSION}
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	Combined DHCP/DNS server for small LANs
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 USE_RC_SUBR=	dualserver
 PLIST_FILES=	sbin/dualserver etc/dualserver.conf.sample
 
-NO_STAGE=	yes
 post-extract:
 	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
@@ -24,8 +23,8 @@ do-build:
 		${WRKSRC}/dualserverd.cpp ${PTHREAD_LIBS}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.ini \
-		${PREFIX}/etc/${PORTNAME}.conf.sample
+		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 
 .include <bsd.port.mk>
