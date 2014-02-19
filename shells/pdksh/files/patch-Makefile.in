@@ -11,16 +11,3 @@
  manext = 1
  
  # Suffix for executables: nothing for unix, .exe for os/2.
---- Makefile.in	2014-02-12 11:54:53.000000000 +0100
-+++ Makefile.in	2014-02-12 11:55:29.000000000 +0100
-@@ -26,8 +26,8 @@
- exec_prefix = @exec_prefix@
- transform=@program_transform_name@
- 
--bindir = $(exec_prefix)/bin
--mandir = $(prefix)/man/man$(manext)
-+bindir = ${DESTDIR}$(exec_prefix)/bin
-+mandir = ${DESTDIR}$(prefix)/man/man$(manext)
- manext = 1
- 
- # Suffix for executables: nothing for unix, .exe for os/2.
