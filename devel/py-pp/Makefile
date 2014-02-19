@@ -3,6 +3,7 @@
 
 PORTNAME=	pp
 PORTVERSION=	1.6.4
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.parallelpython.com/downloads/pp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,6 @@ COMMENT=	Parallel python execution server
 
 USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
-
-NO_STAGE=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
