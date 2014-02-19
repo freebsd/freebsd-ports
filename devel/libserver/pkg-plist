@@ -1,3 +1,4 @@
 include/server.h
 lib/libserver.so
 lib/libserver.so.%%PORTVERSION%%
+man/man8/libserver.8.gz
