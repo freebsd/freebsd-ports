@@ -12,11 +12,10 @@ COMMENT=	Convert the result of the cflow utility in a VCG format
 
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/cflow* ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/cflow* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
