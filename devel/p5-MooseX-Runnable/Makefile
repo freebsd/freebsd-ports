@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Runnable
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,9 +29,5 @@ TEST_DEPENDS=	p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 
 USE_PERL5=	modbuildtiny
 USES=		perl5
-
-post-patch:
-	@${MV} ${WRKSRC}/script/bin/mx-run ${WRKSRC}/script/
-	@${REINPLACE_CMD} -e 's|script/bin/mx-run|script/mx-run|' ${WRKSRC}/MANIFEST ${WRKSRC}/Makefile.PL ${WRKSRC}/xt/release/no-tabs.t ${WRKSRC}/xt/author/00-compile.t
 
 .include <bsd.port.mk>
