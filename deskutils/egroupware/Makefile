@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	eGroupware
-PORTVERSION=	1.8.005.20131007
+PORTVERSION=	1.8.006.20140217
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}-1.8/${PORTNAME}-${PORTVERSION}
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 \
@@ -38,45 +38,15 @@ MBSTRING_DESC=	Support multi-byte character sets
 POSTGRES_DESC=	PostgreSQL database support
 ZIP_DESC=	Install PHP zip extension
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_PHP+=	mysql
-USE_PHP+=	pdo_mysql
-.endif
-
-.if ${PORT_OPTIONS:MPOSTGRES}
-USE_PHP+=	pgsql
-USE_PHP+=	pdo_pgsql
-.endif
-
-.if ${PORT_OPTIONS:MMBSTRING}
-USE_PHP+=	mbstring
-.endif
-
-.if ${PORT_OPTIONS:MIMAP}
-USE_PHP+=	imap
-.endif
-
-.if ${PORT_OPTIONS:MOSSL}
-USE_PHP+=	openssl
-.endif
-
-.if ${PORT_OPTIONS:MTNEF}
-RUN_DEPENDS+=	tnef:${PORTSDIR}/converters/tnef
-.endif
-
-.if ${PORT_OPTIONS:MZIP}
-USE_PHP+=	zip
-.endif
-
-.if ${PORT_OPTIONS:MGD}
-USE_PHP+=	gd
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USE_PHP+=	ldap
-.endif
+MYSQL_USE=	PHP=mysql,pdo_mysql
+POSTGRES_USE=	PHP=pgsql,pdo_pgsql
+MBSTRING_USE=	PHP=mbstring
+IMAP_USE=	PHP=imap
+OSSL_USE=	PHP=openssl
+ZIP_USE=	PHP=zip
+GD_USE=		PHP=gd
+LDAP_USE=	PHP=ldap
+TNEF_RUN_DEPENDS=	tnef:${PORTSDIR}/converters/tnef
 
 WRKSRC=	${WRKDIR}/egroupware
 EG_DIR=	www/eg
