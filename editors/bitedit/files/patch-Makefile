@@ -1,0 +1,13 @@
+--- ./Makefile.orig	2003-05-27 14:23:25.000000000 +0200
++++ ./Makefile	2014-02-19 13:50:29.293943342 +0100
+@@ -9,8 +9,8 @@
+ DISTFILE=bitedit-$(VERSION).tar.gz
+ 
+ DEFINES=-DVERSION=\"$(VERSION)\"
+-CFLAGS=-g -Wall $(DEFINES) 
+-LD=$(CC) -g -Wall
++CFLAGS+=-Wall $(DEFINES) 
++LD=$(CC) -Wall
+ 
+ 
+ all: $(TARGETS)
