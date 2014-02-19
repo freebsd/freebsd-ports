@@ -31,5 +31,26 @@ include/spark2012/spark-unsigned.adb
 include/spark2012/spark-unsigned.ads
 include/spark2012/spark.ads
 lib/gnat/spark2012.gpr
+lib/spark2012/libspark2012.a
+lib/spark2012/spark-ada-command_line-unbounded_string.ali
+lib/spark2012/spark-ada-command_line.ali
+lib/spark2012/spark-ada-containers.ali
+lib/spark2012/spark-ada-strings-maps-not_spark.ali
+lib/spark2012/spark-ada-strings-maps.ali
+lib/spark2012/spark-ada-strings-not_spark.ali
+lib/spark2012/spark-ada-strings-unbounded-not_spark.ali
+lib/spark2012/spark-ada-strings-unbounded.ali
+lib/spark2012/spark-ada-strings.ali
+lib/spark2012/spark-ada-text_io-not_spark.ali
+lib/spark2012/spark-ada-text_io-unbounded_string.ali
+lib/spark2012/spark-ada-text_io.ali
+lib/spark2012/spark-ada.ali
+lib/spark2012/spark-crypto-debug.ali
+lib/spark2012/spark-crypto-hash-skein.ali
+lib/spark2012/spark-crypto-hash.ali
+lib/spark2012/spark-crypto.ali
+lib/spark2012/spark-unsigned.ali
+lib/spark2012/spark.ali
+@dirrm lib/spark2012
 @dirrmtry lib/gnat
 @dirrm include/spark2012
