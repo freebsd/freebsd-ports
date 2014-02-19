@@ -21,11 +21,10 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	${WRKSRC}/${SRC}
 PLIST_FILES=	bin/gh
 
-NO_STAGE=	yes
 do-build:
-		${CC} ${CFLAGS} -o ${WRKSRC}/${TGT} ${WRKSRC}/${SRC}
+	${CC} ${CFLAGS} -o ${WRKSRC}/${TGT} ${WRKSRC}/${SRC}
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/${TGT} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${TGT} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
