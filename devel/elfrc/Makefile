@@ -12,16 +12,15 @@ COMMENT=	Resource compiler for ELF systems
 PLIST_FILES=	bin/elfrc
 PORTDOCS=	README
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-build:
 	@${ECHO} '#define ELFRC_VERSION "${PORTVERSION}"' > ${WRKSRC}/config.h
 	${CC} ${CFLAGS} ${LDFLAGS} -o ${WRKSRC}/elfrc ${WRKSRC}/elfrc.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/elfrc ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/elfrc ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
