@@ -3,6 +3,7 @@
 
 PORTNAME=	mxml
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.msweet.org/files/project3/
 
@@ -15,8 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
-USES=		gmake
-USE_AUTOTOOLS=	libtool
 USES=		pathfix desthack
 CONFIGURE_ARGS=	--with-docdir=no
 USE_LDCONFIG=	yes
