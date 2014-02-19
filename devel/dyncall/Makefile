@@ -10,7 +10,6 @@ MASTER_SITES=	http://www.dyncall.org/r${PORTVERSION}/ \
 MAINTAINER=	tphilipp@potion-studios.com
 COMMENT=	Highly dynamic multi-platform foreign function call interface library
 
-MAN3=		dyncall.3
 HAS_CONFIGURE=	yes
 
 MAKEFILE=	BSDmakefile
@@ -18,7 +17,6 @@ MAKEFILE=	BSDmakefile
 # There is no install target in the BSD makefile for this version of the dyncall
 # library, so install it manually.
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64"
@@ -59,15 +57,13 @@ do-install:
 		${WRKSRC}/dyncallback/dyncall_args_arm32_arm.h \
 		${WRKSRC}/dyncallback/dyncall_args.h \
 		${WRKSRC}/dynload/dynload.h \
-		${PREFIX}/include
+		${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} \
 		${WRKSRC}/dyncall/libdyncall_s.a \
 		${WRKSRC}/dyncallback/libdyncallback_s.a \
 		${WRKSRC}/dynload/libdynload_s.a \
-		${PREFIX}/lib
+		${STAGEDIR}${PREFIX}/lib
 
-.for f3 in ${MAN3}
-	${INSTALL_MAN} ${WRKSRC}/dyncall/${f3} ${MAN3PREFIX}/man/man3
-.endfor
+	${INSTALL_MAN} ${WRKSRC}/dyncall/dyncall.3 ${STAGEDIR}${MAN3PREFIX}/man/man3
 
 .include <bsd.port.post.mk>

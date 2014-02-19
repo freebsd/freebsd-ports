@@ -33,3 +33,4 @@ include/dyncall_thunk_x86.h
 lib/libdyncall_s.a
 lib/libdyncallback_s.a
 lib/libdynload_s.a
+man/man3/dyncall.3.gz
