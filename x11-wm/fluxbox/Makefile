@@ -21,10 +21,7 @@ WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 
 PORTDOCS=		AUTHORS ChangeLog NEWS README TODO
-MAN1=		fbrun.1 fbsetbg.1 fbsetroot.1 fluxbox.1 \
-		startfluxbox.1 fluxbox-remote.1
-MAN5=		fluxbox-apps.5 fluxbox-keys.5 fluxbox-menu.5 \
-		fluxbox-style.5
+
 DOCSVERSION=	20060629
 
 OPTIONS_DEFINE=	DOCS DOCHTML PDFDOCS DEBUG GNOME IMLIB2 XINERAMA \
@@ -38,7 +35,6 @@ SYSTRAY_DESC=	Enable systray feature
 TOOLBAR_DESC=	Enable toolbar feature
 XRENDER_DESC=	Enable xrender support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -140,21 +136,19 @@ post-patch:
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 .if ${PORT_OPTIONS:MPDFDOCS}
-	@${MKDIR} ${DOCSDIR}/pdf
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/pdf
 	${INSTALL_DATA} ${DISTDIR}/fluxbook-${DOCSVERSION}.pdf \
-		${DOCSDIR}/pdf/
+		${STAGEDIR}${DOCSDIR}/pdf/
 .endif
 
 .if ${PORT_OPTIONS:MDOCHTML}
-	@${MKDIR} ${DOCSDIR}/html
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
 . for h in *.css *.html
-	(cd ${WRKDIR}/html && ${INSTALL_DATA} ${h} ${DOCSDIR}/html)
+	(cd ${WRKDIR}/html && ${INSTALL_DATA} ${h} ${STAGEDIR}${DOCSDIR}/html)
 . endfor
 .endif
 

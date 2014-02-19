@@ -306,6 +306,16 @@ bin/startfluxbox
 %%DATADIR%%/styles/zimek_darkblue/theme.cfg
 %%DATADIR%%/styles/zimek_green/theme.cfg
 %%DATADIR%%/windowmenu
+man/man1/fbrun.1.gz
+man/man1/fbsetbg.1.gz
+man/man1/fbsetroot.1.gz
+man/man1/fluxbox-remote.1.gz
+man/man1/fluxbox.1.gz
+man/man1/startfluxbox.1.gz
+man/man5/fluxbox-apps.5.gz
+man/man5/fluxbox-keys.5.gz
+man/man5/fluxbox-menu.5.gz
+man/man5/fluxbox-style.5.gz
 @dirrm %%DATADIR%%/styles/zimek_green
 @dirrm %%DATADIR%%/styles/zimek_darkblue
 @dirrm %%DATADIR%%/styles/zimek_bisque
