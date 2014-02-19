@@ -70,7 +70,6 @@ CONFLICTS+=	ocaml-[0-9]* ocaml-nox11-[0-9]*
 CONFIGURE_ARGS+=-no-tk
 .else
 USES+=		tk:84,85
-.include "${PORTSDIR}/Mk/bsd.tcl.mk"
 PLIST_SUB+=	TK=""
 CONFLICTS+=	ocaml-nox11-[0-9]* ocaml-notk-[0-9]*
 CONFIGURE_ARGS+=	-tkdefs \
