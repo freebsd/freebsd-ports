@@ -18,7 +18,13 @@ USE_GGZ=	client
 INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread -lexpat
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|_LDADD =|_LDADD = -lggzcore -lggz|' \
+		${WRKSRC}/ttt3d/Makefile.in
+	@${REINPLACE_CMD} -e 's|_LDADD =|_LDADD = -lggzcore|' \
+		${WRKSRC}/geekgame/Makefile.in
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/geekgame/module.dsc ${STAGEDIR}/${PREFIX}/share/ggz/geekgame.dsc
