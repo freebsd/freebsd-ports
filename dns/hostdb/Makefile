@@ -10,33 +10,31 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	rodrigc@FreeBSD.org
 COMMENT=	Generate DNS and DHCP config files from single source
 
+LICENSE=	GPLv2
+
+USES=		shebangfix
+
 NO_BUILD=	yes
 
 HOSTDB_EXAMPLES_DIRS=	example1/out example1/ example2 hiddenmaster
 HOSTDB_EXAMPLES_DIRS+=	mailserverexample/out mailserverexample
 
-NO_STAGE=	yes
+SHEBANG_FILES=	bin/mkdestinations bin/mknamedconf bin/zone2hostdbhelper \
+		bin/mkzones bin/canonzone bin/genrange
 
 OPTIONS_DEFINE=	DOCS EXAMPLES 
-
-.include <bsd.port.options.mk>
 
 pre-install:
 	${FIND} ${WRKSRC} -name "*\.orig" -delete
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/* ${PREFIX}/bin
-.if ${PORT_OPTIONS:MEXAMPLES}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/* ${STAGEDIR}${PREFIX}/bin
 .for dir in ${HOSTDB_EXAMPLES_DIRS}
-	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}/
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/
 .endfor
-.endif
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}/
-	cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

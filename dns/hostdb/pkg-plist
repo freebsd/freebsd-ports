@@ -15,7 +15,6 @@ bin/zone2hostdbhelper
 %%PORTDOCS%%%%DOCSDIR%%/hostdb-options.txt
 %%PORTDOCS%%%%DOCSDIR%%/lisa2005-paper.pdf
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/zoneconf.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/example1/dhcpd.conf-tail
