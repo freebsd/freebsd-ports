@@ -61,5 +61,4 @@ MODULE_FILES=	auth/services_keyauth/services_keyauth.admin.inc \
 
 DOC_FILES=	LICENSE.txt README.txt
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
