@@ -1,0 +1,8 @@
+bin/codechanges
+bin/decomment
+bin/pmccabe
+bin/vifn
+man/man1/codechanges.1.gz
+man/man1/decomment.1.gz
+man/man1/pmccabe.1.gz
+man/man1/vifn.1.gz
