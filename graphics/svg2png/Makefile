@@ -16,8 +16,7 @@ LIB_DEPENDS=	svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
 
-MAN1=		svg2png.1
-PLIST_FILES=	bin/svg2png
+PLIST_FILES=	bin/svg2png \
+		man/man1/svg2png.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
