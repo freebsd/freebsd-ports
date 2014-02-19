@@ -13,7 +13,6 @@ COMMENT=	A powerful literate-programming macro pre-processor
 PLIST_FILES=	bin/fw
 WRKSRC=		fw_src/source
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKDIR}/${WRKSRC} && { \
 		${CC} ${CFLAGS} -c *.c && \
@@ -21,6 +20,6 @@ do-build:
 		}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/${WRKSRC}/fw ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/${WRKSRC}/fw ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
