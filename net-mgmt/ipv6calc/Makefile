@@ -9,7 +9,7 @@ MASTER_SITES=	ftp://ftp.bieringer.de/pub/linux/IPv6/ipv6calc/
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Convert, change, and calculate with IPv6 addresses
 
-USES=		gettext gmake
+USES=		gettext gmake perl5
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/ipv6calc bin/ipv6logconv bin/ipv6logstats \
