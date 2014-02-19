@@ -26,8 +26,8 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		desktop-file-utils gettext gmake pkgconfig
-USE_GNOME=	gtk20 libxml2 gconf2 gnomehack
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig
+USE_GNOME=	gtk20 libxml2 gconf2
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
 
