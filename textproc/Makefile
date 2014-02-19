@@ -1203,6 +1203,7 @@
     SUBDIR += py-syck
     SUBDIR += py-texttable
     SUBDIR += py-trans
+    SUBDIR += py-transifex-client
     SUBDIR += py-translationstring
     SUBDIR += py-tvgrab
     SUBDIR += py-twistedLore
