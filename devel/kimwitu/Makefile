@@ -14,12 +14,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 ALL_TARGET=
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=		kc.1
-PLIST_FILES=	bin/kc
+PLIST_FILES=	bin/kc man/man1/kc.1.gz
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/Gen/kc ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/../man/kc.1 ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/Gen/kc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/../man/kc.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
