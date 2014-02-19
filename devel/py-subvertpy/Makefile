@@ -20,5 +20,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
+MAKE_ENV=	HOME=/dev/null
 
 .include <bsd.port.mk>
