@@ -55,7 +55,7 @@ post-patch:
 		-e "s,^#\(LIBDIR[ \t]*=\).*,\1${PREFIX}/lib/ocaml,g" \
 		-e "s,^#\(DLLDIR[ \t]*=\).*,\1${PREFIX}/lib/ocaml/stublibs,g" \
 		-e "/^TKINCLUDES/s,=.*$$,= -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}," \
-		-e "/^TKLIBS/s,=.*$$,= -L${LOCALBASE}/lib -ltk${TK_VER:S/.//}\
+		-e "/^TKLIBS/s,=.*$$,= -L${LOCALBASE}/lib -ltk${TK_SHLIB_VER}\
 		-ltcl${TCL_SHLIB_VER} ${THR_LD}," \
 		${WRKSRC}/Makefile.config
 
