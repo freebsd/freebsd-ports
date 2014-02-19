@@ -28,6 +28,18 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext
 NLS_CONFIGURE_ARGS=	--disable-nls
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|_LDADD =|_LDADD = -lggzcore|' \
+		${WRKSRC}/chess/Makefile.in \
+		${WRKSRC}/chinese-checkers/Makefile.in \
+		${WRKSRC}/combat/Makefile.in \
+		${WRKSRC}/dots/Makefile.in \
+		${WRKSRC}/ggzcards/Makefile.in \
+		${WRKSRC}/hastings/Makefile.in \
+		${WRKSRC}/reversi/Makefile.in \
+		${WRKSRC}/spades/Makefile.in \
+		${WRKSRC}/tictactoe/Makefile.in
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/chess/module.dsc ${STAGEDIR}/${PREFIX}/share/ggz/chess.dsc
 	${INSTALL_DATA} ${WRKSRC}/chinese-checkers/module.dsc ${STAGEDIR}/${PREFIX}/share/ggz/chinese-checkers.dsc
