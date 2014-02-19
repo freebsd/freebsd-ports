@@ -3,6 +3,7 @@
 
 PORTNAME=	urlimport
 PORTVERSION=	0.42b
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.cs.nctu.edu.tw/~lwhsu/ports/distfiles/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,12 +16,8 @@ NO_WRKSUBDIR=	yes
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/urlimport.py \
-		%%PYTHON_SITELIBDIR%%/urlimport.pyc \
-		%%PYTHON_SITELIBDIR%%/urlimport.pyo
-
-NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKDIR}
 	${CP} ${DISTDIR}/${DISTFILES} ${WRKDIR}/${PORTNAME}.py

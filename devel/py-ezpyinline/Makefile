@@ -3,6 +3,7 @@
 
 PORTNAME=	ezpyinline
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 DIST_SUBDIR=	python
@@ -12,6 +13,6 @@ COMMENT=	Easy embedded Inline C for Python
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

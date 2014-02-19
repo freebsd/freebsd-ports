@@ -3,6 +3,7 @@
 
 PORTNAME=	generate
 PORTVERSION=	2.6
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	ftp://ftp.druid.net/pub/distrib/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,12 +13,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	darcy@druid.net
 COMMENT=	Python module to implement generate
 
-USE_GMAKE=	yes
+USES=		gmake
 
-PLIST_FILES=	%%PYTHON_SITELIBDIR%%/generate.so
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGVERSION=	2.2
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
