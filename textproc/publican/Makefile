@@ -3,7 +3,7 @@
 
 PORTNAME=	publican
 PORTVERSION=	2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	http://pkgs.fedoraproject.org/repo/pkgs/publican/Publican-${PORTVERSION}.tar.gz/1ddcf8e93e96d0e49868f21df41b53a4/
 DISTNAME=	Publican-${PORTVERSION}
@@ -53,8 +53,8 @@ BUILD_DEPENDS=	\
 		p5-XML-LibXSLT>=1.67:${PORTSDIR}/textproc/p5-XML-LibXSLT \
 		p5-XML-Simple>=0:${PORTSDIR}/textproc/p5-XML-Simple \
 		p5-XML-TreeBuilder>=4.0:${PORTSDIR}/textproc/p5-XML-TreeBuilder \
-		${LOCALBASE}/share/xml/docbook/4.5:${PORTSDIR}/textproc/docbook-xml-450 \
-		${LOCALBASE}/share/sgml/docbook/4.2:${PORTSDIR}/textproc/docbook-420 \
+		${LOCALBASE}/share/xml/docbook/4.5:${PORTSDIR}/textproc/docbook-xml \
+		${LOCALBASE}/share/sgml/docbook/4.2:${PORTSDIR}/textproc/docbook-sgml \
 		${LOCALBASE}/share/xsl/docbook/html/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
 		librsvg2>=2.0:${PORTSDIR}/graphics/librsvg2 \
 		fop:${PORTSDIR}/textproc/fop \

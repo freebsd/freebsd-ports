@@ -5457,3 +5457,17 @@ deskutils/kdepim44||2014-02-18|Removed: depends on deskutils/kdepim44-runtime
 misc/kde-xdg-env||2014-02-18|Removed, remnant of KDE 3
 lang/g95||2014-02-18|Removed, uses an old version of GCC which can't be built anymore
 games/py-ski|games/ski|2014-02-18|Rename to match upstream naming
+textproc/docbook-241|textproc/docbook-sgml|2014-02-19|Merged into textproc/docbook-sgml
+textproc/docbook-300|textproc/docbook-sgml|2014-02-19|Merged into textproc/docbook-sgml
+textproc/docbook-310|textproc/docbook-sgml|2014-02-19|Merged into textproc/docbook-sgml
+textproc/docbook-400|textproc/docbook-sgml|2014-02-19|Merged into textproc/docbook-sgml
+textproc/docbook-410|textproc/docbook-sgml|2014-02-19|Merged into textproc/docbook-sgml
+textproc/docbook-420|textproc/docbook-sgml|2014-02-19|Merged into textproc/docbook-sgml
+textproc/docbook-430|textproc/docbook-sgml|2014-02-19|Merged into textproc/docbook-sgml
+textproc/docbook-440|textproc/docbook-sgml|2014-02-19|Merged into textproc/docbook-sgml
+textproc/docbook-450|textproc/docbook-sgml|2014-02-19|Merged into textproc/docbook-sgml
+textproc/docbook-xml-430|textproc/docbook-xml|2014-02-19|Merged into textproc/docbook-xml
+textproc/docbook-xml-440|textproc/docbook-xml|2014-02-19|Merged into textproc/docbook-xml
+textproc/docbook-xml-450|textproc/docbook-xml|2014-02-19|Merged into textproc/docbook-xml
+textproc/docbook-500|textproc/docbook-xml|2014-02-19|Merged into textproc/docbook-xml
+textproc/docbook-sk|textproc/docbook-xml|2014-02-19|Merged into textproc/docbook-xml

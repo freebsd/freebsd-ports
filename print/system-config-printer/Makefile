@@ -4,6 +4,7 @@
 
 PORTNAME=	system-config-printer
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	print gnome
 MASTER_SITES=	http://cyberelk.net/tim/data/${PORTNAME}/${PORTVERSION:R}/
 
@@ -11,7 +12,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	CUPS configuration Gtk+2.0 GUI
 
 BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto \
-		${LOCALBASE}/share/xml/docbook/4.1.2:${PORTSDIR}/textproc/docbook-sk
+		${LOCALBASE}/share/xml/docbook/4.1.2:${PORTSDIR}/textproc/docbook-xml
 LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cups.so:${PORTSDIR}/print/py-cups \
 		${PYTHON_SITELIBDIR}/pycurl.so:${PORTSDIR}/ftp/py-curl \

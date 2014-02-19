@@ -4,7 +4,7 @@
 
 PORTNAME=	scrollkeeper
 PORTVERSION=	0.3.14
-PORTREVISION=	12
+PORTREVISION=	13
 PORTEPOCH=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
@@ -15,12 +15,10 @@ COMMENT=	An Open Document Cataloging Project
 
 BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
-		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}:${PORTSDIR}/textproc/docbook-xml \
-    		${LOCALBASE}/share/xml/docbook/4.1.2:${PORTSDIR}/textproc/docbook-sk
+		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}:${PORTSDIR}/textproc/docbook-xml
 RUN_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
-    		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}:${PORTSDIR}/textproc/docbook-xml \
-    		${LOCALBASE}/share/xml/docbook/4.1.2:${PORTSDIR}/textproc/docbook-sk
+    		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}:${PORTSDIR}/textproc/docbook-xml
 
 DOCBOOK_VERSION=4.2
 

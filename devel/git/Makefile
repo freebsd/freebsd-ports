@@ -3,6 +3,7 @@
 
 PORTNAME=	git
 PORTVERSION=	1.8.5.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -329,7 +330,7 @@ IGNORE=	using GITWEB support requires PERL support
 PLIST_SUB+=	CONTRIB=""
 BUILD_DEPENDS+=	xmlto:${PORTSDIR}/textproc/xmlto \
 		asciidoc:${PORTSDIR}/textproc/asciidoc \
-		${LOCALBASE}/share/xml/docbook/4.5:${PORTSDIR}/textproc/docbook-xml-450
+		${LOCALBASE}/share/xml/docbook/4.5:${PORTSDIR}/textproc/docbook-xml
 MAN1+=		git-subtree.1
 .else
 PLIST_SUB+=	CONTRIB="@comment "

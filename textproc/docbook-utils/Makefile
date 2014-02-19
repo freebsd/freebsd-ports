@@ -3,7 +3,7 @@
 
 PORTNAME=	docbook-utils
 PORTVERSION=	0.6.14
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	docbook-tools/new-trials/SOURCES
@@ -11,7 +11,7 @@ MASTER_SITE_SUBDIR=	docbook-tools/new-trials/SOURCES
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Generates various output formats from DocBook SGML documents
 
-BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/3.1:${PORTSDIR}/textproc/docbook-310 \
+BUILD_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/3.1:${PORTSDIR}/textproc/docbook-sgml \
 		${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-docbook-modular \
 		nsgmls:${PORTSDIR}/textproc/jade
 RUN_DEPENDS+=	${LOCALBASE}/share/sgml/docbook/dsssl:${PORTSDIR}/textproc/dsssl-docbook-modular \
