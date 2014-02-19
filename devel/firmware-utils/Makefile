@@ -14,5 +14,4 @@ USE_BZIP2=	yes
 MAKEFILE=	${FILESDIR}/Makefile
 MAKE_ARGS+=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" PREFIX=${PREFIX}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

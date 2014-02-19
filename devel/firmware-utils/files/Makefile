@@ -28,7 +28,7 @@ PREFIX?=	/usr/local
 all: ${ALL}
 
 install: ${ALL}
-	${INSTALL_PROGRAM} ${ALL} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${ALL} ${DESTDIR}${PREFIX}/bin
 
 clean:
 	rm -f ${ALL} ${OBJS}
