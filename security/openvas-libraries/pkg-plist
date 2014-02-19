@@ -37,4 +37,5 @@ lib/libopenvas_hg.a
 lib/libopenvas_hg.la
 lib/libopenvas_hg.so
 lib/libopenvas_hg.so.2
+man/man1/libopenvas-config.1.gz
 @dirrm include/openvas

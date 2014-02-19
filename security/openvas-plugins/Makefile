@@ -12,9 +12,9 @@ COMMENT=	Plugins for OpenVAS
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet \
 		openvasd:${PORTSDIR}/security/openvas-server
-LIB_DEPENDS=	openvas.2:${PORTSDIR}/security/openvas-libraries \
-		openvasnasl.2:${PORTSDIR}/security/openvas-libnasl \
-		gnutls.26:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	libopenvas.so:${PORTSDIR}/security/openvas-libraries \
+		libopenvasnasl.so:${PORTSDIR}/security/openvas-libnasl \
+		libgnutls.so:${PORTSDIR}/security/gnutls
 RUN_DEPENDS=	openvasd:${PORTSDIR}/security/openvas-server \
 		${LOCALBASE}/bin/gmd5sum:${PORTSDIR}/sysutils/coreutils \
 		${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync
@@ -24,7 +24,6 @@ GNU_CONFIGURE=	yes
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 CPPFLAGS+=	"`${LIBNET_CONFIG} --cflags`"
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../openvas-libraries/Makefile.common"
 
