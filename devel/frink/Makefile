@@ -9,17 +9,15 @@ MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	A tcl formatter and static tester
 
-#MAN1=		${PORTNAME}.1
-MANCOMPRESSED=	maybe
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.2.2
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-NO_STAGE=	yes
 
-.ifndef NOPORTDOCS
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
