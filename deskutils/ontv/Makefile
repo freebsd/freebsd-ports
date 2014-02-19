@@ -14,8 +14,7 @@ COMMENT=	A GNOME Applet for monitoring current and upcoming TV programs
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify \
-		${PYTHON_SITELIBDIR}/gtk-2.0/vtemodule.so:${PORTSDIR}/x11-toolkits/py-vte
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/__init__.py:${PORTSDIR}/devel/py-notify
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		tv_check:${PORTSDIR}/textproc/p5-xmltv
 

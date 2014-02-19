@@ -202,7 +202,6 @@
     SUBDIR += py-tktreectrl
     SUBDIR += py-traitsbackendwx
     SUBDIR += py-traitsgui
-    SUBDIR += py-vte
     SUBDIR += py-wax
     SUBDIR += py-wmdockapps
     SUBDIR += py-wxPython26
@@ -263,7 +262,6 @@
     SUBDIR += vdk
     SUBDIR += vdkbuilder
     SUBDIR += viewklass
-    SUBDIR += vte
     SUBDIR += vte-reference
     SUBDIR += vte3
     SUBDIR += vtkfox
