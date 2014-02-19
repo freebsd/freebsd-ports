@@ -5471,3 +5471,4 @@ textproc/docbook-xml-440|textproc/docbook-xml|2014-02-19|Merged into textproc/do
 textproc/docbook-xml-450|textproc/docbook-xml|2014-02-19|Merged into textproc/docbook-xml
 textproc/docbook-500|textproc/docbook-xml|2014-02-19|Merged into textproc/docbook-xml
 textproc/docbook-sk|textproc/docbook-xml|2014-02-19|Merged into textproc/docbook-xml
+emulators/ski||2014-02-19|Removed, does not exist on HP's site anymore

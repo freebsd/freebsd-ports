@@ -137,7 +137,6 @@
     SUBDIR += rtc
     SUBDIR += sim6811
     SUBDIR += simh
-    SUBDIR += ski
     SUBDIR += skyeye
     SUBDIR += snes9express
     SUBDIR += snes9x
