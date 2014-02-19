@@ -54,5 +54,4 @@ MODULE_FILES=	translations/uk.po \
 
 DOC_FILES=	README.txt LICENSE.txt
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
