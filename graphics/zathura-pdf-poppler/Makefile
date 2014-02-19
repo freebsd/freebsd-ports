@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zathura-pdf-poppler
-PORTVERSION=	0.2.4
-PORTREVISION=	1
+PORTVERSION=	0.2.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://pwmt.org/projects/zathura/plugins/download/
 
