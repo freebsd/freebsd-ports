@@ -23,6 +23,11 @@ lib/imspector/ircprotocolplugin.so
 lib/imspector/miscfilterplugin.so
 lib/imspector/msnprotocolplugin.so
 lib/imspector/yahooprotocolplugin.so
+%%PLUGINS%%lib/imspector/dbfilterplugin.so
+%%PLUGINS%%lib/imspector/dbresponderplugin.so
+%%PLUGINS%%lib/imspector/mysqlloggingplugin.so
+%%PLUGINS%%lib/imspector/postgresqlloggingplugin.so
+%%PLUGINS%%lib/imspector/sqliteloggingplugin.so
 lib/libimspector.so
 sbin/imspector
 @dirrmtry %%ETCDIR%%
@@ -31,4 +36,4 @@ sbin/imspector
 @dirrmtry lib/imspector
 @dirrmtry lib
 @dirrmtry log/imspector
-@cwd 
+@cwd
