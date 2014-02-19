@@ -12,12 +12,12 @@ PKGNAMEPREFIX=	ocaml-
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	OpenGL interface for Objective Caml
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 WRKSRC=		${WRKDIR}/lablGL
+USES=		gmake
 USE_XORG=	x11 xext xmu
 USE_GL=		glut
-USE_GMAKE=	yes
 USE_OCAML=	yes
 USE_OCAML_WASH=	yes
 ALL_TARGET=	all opt
@@ -38,13 +38,11 @@ CONFLICTS=	ocaml-notk-[0-9]* ocaml-nox11-[0-9]*
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
-USE_TK=		84+
-INVALID_TK_VER =	86
+USES+=		tk:84,85
 .if ${PORT_OPTIONS:MTHREADS}
 THR_CPP=	${PTHREAD_CFLAGS}
 THR_LD =	${PTHREAD_LIBS}
 .endif
-.include "${PORTSDIR}/Mk/bsd.tcl.mk"
 
 post-extract:
 	@${CP} ${WRKSRC}/Makefile.config.freebsd ${WRKSRC}/Makefile.config
@@ -58,7 +56,7 @@ post-patch:
 		-e "s,^#\(DLLDIR[ \t]*=\).*,\1${PREFIX}/lib/ocaml/stublibs,g" \
 		-e "/^TKINCLUDES/s,=.*$$,= -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}," \
 		-e "/^TKLIBS/s,=.*$$,= -L${LOCALBASE}/lib -ltk${TK_VER:S/.//}\
-		-ltcl${TCL_VER:S/.//} ${THR_LD}," \
+		-ltcl${TCL_SHLIB_VER} ${THR_LD}," \
 		${WRKSRC}/Makefile.config
 
 	@${REINPLACE_CMD} \
