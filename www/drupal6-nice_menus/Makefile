@@ -21,5 +21,4 @@ MODULE_FILES=	arrow-right.png nice_menus.install nice_menus_default-rtl.css \
 		superfish/js/superfish.js
 DOC_FILES=	CHANGELOG.txt README.txt UPGRADE.txt LICENSE.txt
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
