@@ -11,7 +11,7 @@ DISTNAME=	silk-${PORTVERSION}
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Tools for large-scale network capture analysis
 
-LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo3 \
+LIB_DEPENDS=	liblzo2.so:${PORTSDIR}/archivers/lzo2 \
 		libfixbuf.so:${PORTSDIR}/net/libfixbuf
 
 GNU_CONFIGURE=	yes
