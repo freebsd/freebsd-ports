@@ -21,14 +21,13 @@ USE_DOS2UNIX=	*.h
 
 PS_FILES=	dwarf.v2.pdf index.v2.pdf libdwarf2.1.pdf libdwarf2p.1.pdf mips_extensions.pdf
 
-NO_STAGE=	yes
 do-install:
-		${INSTALL_DATA} ${WRKSRC}/libdwarf.a ${PREFIX}/lib
-		${INSTALL_DATA} ${WRKSRC}/dwarf.h ${PREFIX}/include
-		${INSTALL_DATA} ${WRKSRC}/libdwarf.h ${PREFIX}/include
-		${MKDIR} ${PREFIX}/share/doc/libdwarf
-		for f in ${PS_FILES}; do \
-			${INSTALL_DATA} ${WRKSRC}/$$f ${PREFIX}/share/doc/libdwarf ; \
-		done
+	${INSTALL_DATA} ${WRKSRC}/libdwarf.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/dwarf.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/libdwarf.h ${STAGEDIR}${PREFIX}/include
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/libdwarf
+.for f in ${PS_FILES}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/share/doc/libdwarf
+.endfor
 
 .include <bsd.port.mk>
