@@ -48,7 +48,6 @@ SYBASE_DESC=	Sybase backend
 # bypass infrastructure bug
 OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
@@ -104,27 +103,23 @@ pre-build:
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
 .if ${PYTHON_REL} >= 300
-	@${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/doc
+	@${PY2TO3_CMD} ${PY2TO3_ARGS} ${STAGEDIR}${WRKSRC}/doc
 .endif
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${AL_PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
 .for i in ${AL_PORTDOCS_SUBDIR}
-	${MKDIR} ${DOCSDIR}/${i}
-	@cd ${WRKSRC}/doc/${i} && ${COPYTREE_SHARE} . ${DOCSDIR}/${i}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}/${i}
+	@cd ${WRKSRC}/doc/${i} && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
-.endif
 
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .if ${PYTHON_REL} >= 300
 	@${PY2TO3_CMD} ${PY2TO3_ARGS} ${WRKSRC}/examples
 .endif
-	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
-.endif
+	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .if ${PYTHON_REL} < 300
 PLIST_SUB+=	SPEEDUPS=""
@@ -132,13 +127,6 @@ PLIST_SUB+=	SPEEDUPS=""
 # C extensions are not supported in py3k
 PLIST_SUB+=	SPEEDUPS="@comment "
 PYEASYINSTALL_OSARCH=
-
-easyinstall-setopt:
-	${DO_NADA}
-.endif
-
-.if ${PYTHON_REL} >= 320
-.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
 .endif
 
 regression-test: build
