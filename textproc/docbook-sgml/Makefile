@@ -45,7 +45,7 @@ do-install-${D:S/./_/g}:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/sgml/docbook/$D
 	cd ${WRKDIR}/${DBFILES:M${D}\:*:C,.*:,,} && \
 	    ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/sgml/docbook/$D
-	${ECHO_CMD} "CATALOG \"${PREFIX}/share/sgml/docbook/$D/docbook.cat" \
+	${ECHO_CMD} "CATALOG \"${PREFIX}/share/sgml/docbook/$D/docbook.cat\"" \
 	    >> ${STAGEDIR}${DBCAT}
 do-install: do-install-${D:S/./_/g}
 .endfor

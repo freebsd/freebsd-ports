@@ -56,7 +56,8 @@ do-install-${D:S/./_/g}:
 	    ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${DBKDIR}/$D
 	${XMLCATMGR_CMD} -c ${STAGEDIR}${DBCAT_XML} \
 	    add nextCatalog "${PREFIX}/${DBKDIR}/$D/catalog.xml"
-	${ECHO_CMD} "CATALOG \"${PREFIX}/${DBKDIR}/$D/docbook.cat" \
+	test "$D" = 5.0 || \
+	    ${ECHO_CMD} "CATALOG \"${PREFIX}/${DBKDIR}/$D/docbook.cat\"" \
 	    >> ${STAGEDIR}${DBCAT_SGML}
 do-install: do-install-${D:S/./_/g}
 .endfor
