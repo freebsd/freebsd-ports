@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140219:
+  AFFECTS: users of textproc/docbook*
+  AUTHOR: mat@FreeBSD.org
+
+  The textproc/docbook-* ports have been consolidated into two ports
+  textproc/docbook-sgml and textproc/docbook-xml.
+
+  Before upgrading you should force the removal of the existing ports, they
+  will conflict with the new ones.
+
+  pkg users can run:
+
+    pkg delete -f docbook-xml* docbook-sk* docbook[2345]??-* docbook-4*
+
+  the other users can run:
+
+    pkg_delete -f docbook-xml* docbook-sk* docbook[2345]??-* docbook-4*
+
 20140218:
   AFFECTS: users of KDE SC 4
   AUTHOR: kde@FreeBSD.org

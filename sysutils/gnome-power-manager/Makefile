@@ -4,7 +4,7 @@
 
 PORTNAME=	gnome-power-manager
 PORTVERSION=	2.32.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -38,7 +38,7 @@ GCONF_SCHEMAS=	gnome-power-manager.schemas
 
 .if !defined(NO_INSTALL_MANPAGES)
 BUILD_DEPENDS+=	docbook2html:${PORTSDIR}/textproc/docbook-utils \
-		${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-410
+		${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-sgml
 MAN1=		gnome-power-manager.1 gnome-power-preferences.1 \
 		gnome-power-statistics.1
 .endif

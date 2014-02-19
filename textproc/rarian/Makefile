@@ -4,6 +4,7 @@
 
 PORTNAME=	rarian
 PORTVERSION=	0.8.1
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	GNOME
 
@@ -11,14 +12,12 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An OMF help system based on the Freedesktop specification
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
-    		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}:${PORTSDIR}/textproc/docbook-xml \
-		${LOCALBASE}/share/xml/docbook/4.1.2:${PORTSDIR}/textproc/docbook-sk \
+    		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}:${PORTSDIR}/textproc/docbook-xml
 		bash:${PORTSDIR}/shells/bash
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
     		${LOCALBASE}/bin/getopt:${PORTSDIR}/misc/getopt \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:${PORTSDIR}/textproc/docbook-xsl \
-		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}:${PORTSDIR}/textproc/docbook-xml \
-		${LOCALBASE}/share/xml/docbook/4.1.2:${PORTSDIR}/textproc/docbook-sk
+		${LOCALBASE}/share/xml/docbook/${DOCBOOK_VERSION}:${PORTSDIR}/textproc/docbook-xml
 
 DOCBOOK_VERSION=4.2
 

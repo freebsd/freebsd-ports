@@ -3,7 +3,7 @@
 
 PORTNAME=	libxs
 PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://download.crossroads.io/
 
@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=	--enable-debug
 .if ${PORT_OPTIONS:MDOCS}
 BUILD_DEPENDS=	asciidoc:${PORTSDIR}/textproc/asciidoc \
 		xmlto:${PORTSDIR}/textproc/xmlto \
-		${LOCALBASE}/share/xml/docbook/4.5:${PORTSDIR}/textproc/docbook-xml-450
+		${LOCALBASE}/share/xml/docbook/4.5:${PORTSDIR}/textproc/docbook-xml
 
 MAN3=	\
 	xs_bind.3 \

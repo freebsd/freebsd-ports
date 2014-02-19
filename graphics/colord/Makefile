@@ -4,6 +4,7 @@
 
 PORTNAME=	colord
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.freedesktop.org/software/colord/releases/
 
@@ -47,7 +48,7 @@ NO_STAGE=	yes
 
 .if ${PORT_OPTIONS:MMANPAGES}
 BUILD_DEPENDS+=	docbook2html:${PORTSDIR}/textproc/docbook-utils \
-		${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-410
+		${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-sgml
 MAN1=		cd-create-profile.1 cd-fix-profile.1 colormgr.1
 .endif
 

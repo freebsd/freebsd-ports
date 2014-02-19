@@ -3,6 +3,7 @@
 
 PORTNAME=	dvdstyler
 PORTVERSION=	2.6.1
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 		mplex:${PORTSDIR}/multimedia/mjpegtools \
 		growisofs:${PORTSDIR}/sysutils/dvd+rw-tools \
-		docbook-sk>=4.1.2:${PORTSDIR}/textproc/docbook-sk \
+		docbook-xml>=4.1.2:${PORTSDIR}/textproc/docbook-xml \
 		xmlto:${PORTSDIR}/textproc/xmlto
 LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
 		libavcodec.so:${PORTSDIR}/multimedia/ffmpeg

@@ -1,35 +1,214 @@
-%%DTDDIR%%/calstblx.dtd
-%%DTDDIR%%/catalog.xml
-@unexec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% remove %D/%F
+%%DBKDIR%%/4.1.2/40chg.txt
+%%DBKDIR%%/4.1.2/41chg.txt
+%%DBKDIR%%/4.1.2/ChangeLog
+%%DBKDIR%%/4.1.2/calstblx.dtd
+%%DBKDIR%%/4.1.2/catalog.xml
+%%DBKDIR%%/4.1.2/dbcentx.mod
+%%DBKDIR%%/4.1.2/dbgenent.mod
+%%DBKDIR%%/4.1.2/dbhierx.mod
+%%DBKDIR%%/4.1.2/dbnotnx.mod
+%%DBKDIR%%/4.1.2/dbpoolx.mod
+%%DBKDIR%%/4.1.2/docbook.cat
+%%DBKDIR%%/4.1.2/docbookx.dtd
+%%DBKDIR%%/4.1.2/ent/iso-amsa.ent
+%%DBKDIR%%/4.1.2/ent/iso-amsb.ent
+%%DBKDIR%%/4.1.2/ent/iso-amsc.ent
+%%DBKDIR%%/4.1.2/ent/iso-amsn.ent
+%%DBKDIR%%/4.1.2/ent/iso-amso.ent
+%%DBKDIR%%/4.1.2/ent/iso-amsr.ent
+%%DBKDIR%%/4.1.2/ent/iso-box.ent
+%%DBKDIR%%/4.1.2/ent/iso-cyr1.ent
+%%DBKDIR%%/4.1.2/ent/iso-cyr2.ent
+%%DBKDIR%%/4.1.2/ent/iso-dia.ent
+%%DBKDIR%%/4.1.2/ent/iso-grk1.ent
+%%DBKDIR%%/4.1.2/ent/iso-grk2.ent
+%%DBKDIR%%/4.1.2/ent/iso-grk3.ent
+%%DBKDIR%%/4.1.2/ent/iso-grk4.ent
+%%DBKDIR%%/4.1.2/ent/iso-lat1.ent
+%%DBKDIR%%/4.1.2/ent/iso-lat2.ent
+%%DBKDIR%%/4.1.2/ent/iso-num.ent
+%%DBKDIR%%/4.1.2/ent/iso-pub.ent
+%%DBKDIR%%/4.1.2/ent/iso-tech.ent
+%%DBKDIR%%/4.1.2/readme.txt
+%%DBKDIR%%/4.1.2/soextblx.dtd
+%%DBKDIR%%/4.2/ChangeLog
+%%DBKDIR%%/4.2/README
+%%DBKDIR%%/4.2/calstblx.dtd
+%%DBKDIR%%/4.2/catalog.xml
+%%DBKDIR%%/4.2/dbcentx.mod
+%%DBKDIR%%/4.2/dbgenent.mod
+%%DBKDIR%%/4.2/dbhierx.mod
+%%DBKDIR%%/4.2/dbnotnx.mod
+%%DBKDIR%%/4.2/dbpoolx.mod
+%%DBKDIR%%/4.2/docbook.cat
+%%DBKDIR%%/4.2/docbookx.dtd
+%%DBKDIR%%/4.2/ent/iso-amsa.ent
+%%DBKDIR%%/4.2/ent/iso-amsb.ent
+%%DBKDIR%%/4.2/ent/iso-amsc.ent
+%%DBKDIR%%/4.2/ent/iso-amsn.ent
+%%DBKDIR%%/4.2/ent/iso-amso.ent
+%%DBKDIR%%/4.2/ent/iso-amsr.ent
+%%DBKDIR%%/4.2/ent/iso-box.ent
+%%DBKDIR%%/4.2/ent/iso-cyr1.ent
+%%DBKDIR%%/4.2/ent/iso-cyr2.ent
+%%DBKDIR%%/4.2/ent/iso-dia.ent
+%%DBKDIR%%/4.2/ent/iso-grk1.ent
+%%DBKDIR%%/4.2/ent/iso-grk2.ent
+%%DBKDIR%%/4.2/ent/iso-grk3.ent
+%%DBKDIR%%/4.2/ent/iso-grk4.ent
+%%DBKDIR%%/4.2/ent/iso-lat1.ent
+%%DBKDIR%%/4.2/ent/iso-lat2.ent
+%%DBKDIR%%/4.2/ent/iso-num.ent
+%%DBKDIR%%/4.2/ent/iso-pub.ent
+%%DBKDIR%%/4.2/ent/iso-tech.ent
+%%DBKDIR%%/4.2/soextblx.dtd
+%%DBKDIR%%/4.3/ChangeLog
+%%DBKDIR%%/4.3/README
+%%DBKDIR%%/4.3/calstblx.dtd
+%%DBKDIR%%/4.3/catalog.xml
+%%DBKDIR%%/4.3/dbcentx.mod
+%%DBKDIR%%/4.3/dbgenent.mod
+%%DBKDIR%%/4.3/dbhierx.mod
+%%DBKDIR%%/4.3/dbnotnx.mod
+%%DBKDIR%%/4.3/dbpoolx.mod
+%%DBKDIR%%/4.3/docbook.cat
+%%DBKDIR%%/4.3/docbookx.dtd
+%%DBKDIR%%/4.3/ent/iso-amsa.ent
+%%DBKDIR%%/4.3/ent/iso-amsb.ent
+%%DBKDIR%%/4.3/ent/iso-amsc.ent
+%%DBKDIR%%/4.3/ent/iso-amsn.ent
+%%DBKDIR%%/4.3/ent/iso-amso.ent
+%%DBKDIR%%/4.3/ent/iso-amsr.ent
+%%DBKDIR%%/4.3/ent/iso-box.ent
+%%DBKDIR%%/4.3/ent/iso-cyr1.ent
+%%DBKDIR%%/4.3/ent/iso-cyr2.ent
+%%DBKDIR%%/4.3/ent/iso-dia.ent
+%%DBKDIR%%/4.3/ent/iso-grk1.ent
+%%DBKDIR%%/4.3/ent/iso-grk2.ent
+%%DBKDIR%%/4.3/ent/iso-grk3.ent
+%%DBKDIR%%/4.3/ent/iso-grk4.ent
+%%DBKDIR%%/4.3/ent/iso-lat1.ent
+%%DBKDIR%%/4.3/ent/iso-lat2.ent
+%%DBKDIR%%/4.3/ent/iso-num.ent
+%%DBKDIR%%/4.3/ent/iso-pub.ent
+%%DBKDIR%%/4.3/ent/iso-tech.ent
+%%DBKDIR%%/4.3/htmltblx.mod
+%%DBKDIR%%/4.3/soextblx.dtd
+%%DBKDIR%%/4.4/ChangeLog
+%%DBKDIR%%/4.4/README
+%%DBKDIR%%/4.4/calstblx.dtd
+%%DBKDIR%%/4.4/catalog.xml
+%%DBKDIR%%/4.4/dbcentx.mod
+%%DBKDIR%%/4.4/dbgenent.mod
+%%DBKDIR%%/4.4/dbhierx.mod
+%%DBKDIR%%/4.4/dbnotnx.mod
+%%DBKDIR%%/4.4/dbpoolx.mod
+%%DBKDIR%%/4.4/docbook.cat
+%%DBKDIR%%/4.4/docbookx.dtd
+%%DBKDIR%%/4.4/ent/README
+%%DBKDIR%%/4.4/ent/isoamsa.ent
+%%DBKDIR%%/4.4/ent/isoamsb.ent
+%%DBKDIR%%/4.4/ent/isoamsc.ent
+%%DBKDIR%%/4.4/ent/isoamsn.ent
+%%DBKDIR%%/4.4/ent/isoamso.ent
+%%DBKDIR%%/4.4/ent/isoamsr.ent
+%%DBKDIR%%/4.4/ent/isobox.ent
+%%DBKDIR%%/4.4/ent/isocyr1.ent
+%%DBKDIR%%/4.4/ent/isocyr2.ent
+%%DBKDIR%%/4.4/ent/isodia.ent
+%%DBKDIR%%/4.4/ent/isogrk1.ent
+%%DBKDIR%%/4.4/ent/isogrk2.ent
+%%DBKDIR%%/4.4/ent/isogrk3.ent
+%%DBKDIR%%/4.4/ent/isogrk4.ent
+%%DBKDIR%%/4.4/ent/isolat1.ent
+%%DBKDIR%%/4.4/ent/isolat2.ent
+%%DBKDIR%%/4.4/ent/isonum.ent
+%%DBKDIR%%/4.4/ent/isopub.ent
+%%DBKDIR%%/4.4/ent/isotech.ent
+%%DBKDIR%%/4.4/htmltblx.mod
+%%DBKDIR%%/4.4/soextblx.dtd
+%%DBKDIR%%/4.5/ChangeLog
+%%DBKDIR%%/4.5/README
+%%DBKDIR%%/4.5/calstblx.dtd
+%%DBKDIR%%/4.5/catalog.xml
+%%DBKDIR%%/4.5/dbcentx.mod
+%%DBKDIR%%/4.5/dbgenent.mod
+%%DBKDIR%%/4.5/dbhierx.mod
+%%DBKDIR%%/4.5/dbnotnx.mod
+%%DBKDIR%%/4.5/dbpoolx.mod
+%%DBKDIR%%/4.5/docbook.cat
+%%DBKDIR%%/4.5/docbookx.dtd
+%%DBKDIR%%/4.5/ent/README
+%%DBKDIR%%/4.5/ent/isoamsa.ent
+%%DBKDIR%%/4.5/ent/isoamsb.ent
+%%DBKDIR%%/4.5/ent/isoamsc.ent
+%%DBKDIR%%/4.5/ent/isoamsn.ent
+%%DBKDIR%%/4.5/ent/isoamso.ent
+%%DBKDIR%%/4.5/ent/isoamsr.ent
+%%DBKDIR%%/4.5/ent/isobox.ent
+%%DBKDIR%%/4.5/ent/isocyr1.ent
+%%DBKDIR%%/4.5/ent/isocyr2.ent
+%%DBKDIR%%/4.5/ent/isodia.ent
+%%DBKDIR%%/4.5/ent/isogrk1.ent
+%%DBKDIR%%/4.5/ent/isogrk2.ent
+%%DBKDIR%%/4.5/ent/isogrk3.ent
+%%DBKDIR%%/4.5/ent/isogrk4.ent
+%%DBKDIR%%/4.5/ent/isolat1.ent
+%%DBKDIR%%/4.5/ent/isolat2.ent
+%%DBKDIR%%/4.5/ent/isonum.ent
+%%DBKDIR%%/4.5/ent/isopub.ent
+%%DBKDIR%%/4.5/ent/isotech.ent
+%%DBKDIR%%/4.5/htmltblx.mod
+%%DBKDIR%%/4.5/soextblx.dtd
+%%DBKDIR%%/5.0/ChangeLog
+%%DBKDIR%%/5.0/README
+%%DBKDIR%%/5.0/VERSION
+%%DBKDIR%%/5.0/catalog.xml
+%%DBKDIR%%/5.0/docbook.nvdl
+%%DBKDIR%%/5.0/docs/docbook-5.0-spec-cd-01.html
+%%DBKDIR%%/5.0/docs/docbook-5.0-spec-cd-01.pdf
+%%DBKDIR%%/5.0/docs/docbook-5.0-spec-cd-01.xml
+%%DBKDIR%%/5.0/docs/howto.html
+%%DBKDIR%%/5.0/docs/howto.pdf
+%%DBKDIR%%/5.0/docs/howto.xml
+%%DBKDIR%%/5.0/docs/images/emacs.png
+%%DBKDIR%%/5.0/docs/images/oxygen1.png
+%%DBKDIR%%/5.0/docs/images/oxygen2.png
+%%DBKDIR%%/5.0/docs/images/oxygen3.png
+%%DBKDIR%%/5.0/docs/images/xxe.png
+%%DBKDIR%%/5.0/dtd/docbook.dtd
+%%DBKDIR%%/5.0/rng/docbook.rnc
+%%DBKDIR%%/5.0/rng/docbook.rng
+%%DBKDIR%%/5.0/rng/docbookxi.rnc
+%%DBKDIR%%/5.0/rng/docbookxi.rng
+%%DBKDIR%%/5.0/sch/docbook.sch
+%%DBKDIR%%/5.0/tools/db4-entities.pl
+%%DBKDIR%%/5.0/tools/db4-upgrade.xsl
+%%DBKDIR%%/5.0/xsd/docbook.xsd
+%%DBKDIR%%/5.0/xsd/xlink.xsd
+%%DBKDIR%%/5.0/xsd/xml.xsd
+%%DBKDIR%%/catalog.xml
+@unexec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% remove nextCatalog %D/%F
 @exec %D/%%XMLCATMGR%% -c %D/%%XMLCAT%% add nextCatalog %D/%F
-%%DTDDIR%%/dbcentx.mod
-%%DTDDIR%%/dbgenent.mod
-%%DTDDIR%%/dbhierx.mod
-%%DTDDIR%%/dbnotnx.mod
-%%DTDDIR%%/dbpoolx.mod
-%%DTDDIR%%/docbook.cat
-@unexec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% remove %D/%F
+%%DBKDIR%%/catalog
+@unexec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% remove CATALOG %D/%F
 @exec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% add CATALOG %D/%F
-%%DTDDIR%%/docbookx.dtd
-%%DTDDIR%%/ent/iso-amsa.ent
-%%DTDDIR%%/ent/iso-amsb.ent
-%%DTDDIR%%/ent/iso-amsc.ent
-%%DTDDIR%%/ent/iso-amsn.ent
-%%DTDDIR%%/ent/iso-amso.ent
-%%DTDDIR%%/ent/iso-amsr.ent
-%%DTDDIR%%/ent/iso-box.ent
-%%DTDDIR%%/ent/iso-cyr1.ent
-%%DTDDIR%%/ent/iso-cyr2.ent
-%%DTDDIR%%/ent/iso-dia.ent
-%%DTDDIR%%/ent/iso-grk1.ent
-%%DTDDIR%%/ent/iso-grk2.ent
-%%DTDDIR%%/ent/iso-grk3.ent
-%%DTDDIR%%/ent/iso-grk4.ent
-%%DTDDIR%%/ent/iso-lat1.ent
-%%DTDDIR%%/ent/iso-lat2.ent
-%%DTDDIR%%/ent/iso-num.ent
-%%DTDDIR%%/ent/iso-pub.ent
-%%DTDDIR%%/ent/iso-tech.ent
-%%DTDDIR%%/soextblx.dtd
-@dirrm %%DTDDIR%%/ent
-@dirrm %%DTDDIR%%
+@dirrmtry %%DBKDIR%%/5.0/xsd
+@dirrmtry %%DBKDIR%%/5.0/tools
+@dirrmtry %%DBKDIR%%/5.0/sch
+@dirrmtry %%DBKDIR%%/5.0/rng
+@dirrmtry %%DBKDIR%%/5.0/dtd
+@dirrmtry %%DBKDIR%%/5.0/docs/images
+@dirrmtry %%DBKDIR%%/5.0/docs
+@dirrmtry %%DBKDIR%%/5.0
+@dirrmtry %%DBKDIR%%/4.5/ent
+@dirrmtry %%DBKDIR%%/4.5
+@dirrmtry %%DBKDIR%%/4.4/ent
+@dirrmtry %%DBKDIR%%/4.4
+@dirrmtry %%DBKDIR%%/4.3/ent
+@dirrmtry %%DBKDIR%%/4.3
+@dirrmtry %%DBKDIR%%/4.2/ent
+@dirrmtry %%DBKDIR%%/4.2
+@dirrmtry %%DBKDIR%%/4.1.2/ent
+@dirrmtry %%DBKDIR%%/4.1.2
+@dirrmtry %%DBKDIR%%

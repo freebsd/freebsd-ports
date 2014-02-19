@@ -4,7 +4,7 @@
 
 PORTNAME=	policykit
 PORTVERSION=	0.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 DISTNAME=	PolicyKit-${PORTVERSION}
@@ -40,7 +40,7 @@ NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMANPAGES}
-BUILD_DEPENDS=	${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-410 \
+BUILD_DEPENDS=	${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-sgml \
 		${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl
 USE_GNOME+=	libxslt:build
 

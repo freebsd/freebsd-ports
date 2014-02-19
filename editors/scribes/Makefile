@@ -3,6 +3,7 @@
 
 PORTNAME=	scribes
 PORTVERSION=	0.4.b954
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://launchpadlibrarian.net/66129407/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-dev-${PORTVERSION:E:S/b/build/}
@@ -15,7 +16,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}xdg>0:${PORTSDIR}/devel/py-xdg \
-		${LOCALBASE}/share/xml/docbook/4.5:${PORTSDIR}/textproc/docbook-xml-450 \
+		${LOCALBASE}/share/xml/docbook/4.5:${PORTSDIR}/textproc/docbook-xml \
 		yelp:${PORTSDIR}/x11/yelp
 
 USE_BZIP2=	yes

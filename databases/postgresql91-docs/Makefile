@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	postgresql
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX?=	${DISTV:S/.//}-docs
 DISTV=	${DISTVERSION:R}
 
@@ -27,7 +27,7 @@ BUILD_DEPENDS+=	onsgmls:${PORTSDIR}/textproc/opensp			\
 		openjade:${PORTSDIR}/textproc/openjade			\
 		${sgmldir}/iso8879/catalog:${PORTSDIR}/textproc/iso8879	\
 		${dbdir}/dsssl/modular/catalog:${PORTSDIR}/textproc/dsssl-docbook-modular \
-		${dbdir}/4.2:${PORTSDIR}/textproc/docbook-420
+		${dbdir}/4.2:${PORTSDIR}/textproc/docbook-sgml
 
 NO_STAGE=	yes
 do-build:
