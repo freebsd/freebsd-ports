@@ -11,7 +11,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/-pre/}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Object-oriented SGML/XML parser toolkit and DSSSL engine
 
-LIB_DEPENDS=	osp.5:${PORTSDIR}/textproc/opensp
+LIB_DEPENDS=	libosp.so:${PORTSDIR}/textproc/opensp
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
 USE_LDCONFIG=	yes
