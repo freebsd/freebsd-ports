@@ -10,7 +10,7 @@ PKGNAMEPREFIX=	eclipse-
 DISTNAME=	HibernateTools-${DISTVERSION}
 DIST_SUBDIR=	eclipse
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hibernate3 Tools for the Eclipse IDE
 
 ## XXX - Notify the maintainer if the dependencies on either

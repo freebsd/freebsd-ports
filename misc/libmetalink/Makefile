@@ -7,7 +7,7 @@ PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://launchpad.net/libmetalink/trunk/${PORTVERSION}/+download/
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Metalink library written in C language
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2

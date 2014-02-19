@@ -9,7 +9,7 @@ MASTER_SITES=	SF/${PORTNAME}s/Metalink%20Editor/${PORTVERSION}
 PKGNAMESUFFIX?=	-editor
 DISTNAME=	${PORTNAME}editor-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI editor to create and edit metalinks
 
 LICENSE=	GPLv2

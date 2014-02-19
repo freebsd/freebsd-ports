@@ -8,7 +8,7 @@ MASTER_SITES=	http://yorba.org/download/${PORTNAME}/${PORTVERSION:R}/
 DISTNAME=	libgexiv2_${PORTVERSION}
 WRKSRC=		${WRKDIR}/lib${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GObject-based wrapper around Exiv2 library
 
 LICENSE=	GPLv2

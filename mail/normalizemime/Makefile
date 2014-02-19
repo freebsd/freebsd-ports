@@ -9,7 +9,7 @@ DISTNAME=	normalizemime.cc
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mime normalizer to be used as a preprocessor for email classification
 
 LICENSE=	GPLv2

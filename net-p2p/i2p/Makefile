@@ -12,7 +12,7 @@ DISTFILES=	\
 		${JETTY_DISTFILE}:jetty
 EXTRACT_ONLY=	i2psource_${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An anonymizing network
 
 LICENSE=	AL2 EULA

@@ -7,7 +7,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.advsys.net/ken/util/
 DISTNAME=	${PORTNAME}_src
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Produce a .ZIP file from 2 other ones with the best compressed files
 
 NO_STAGE=	yes
