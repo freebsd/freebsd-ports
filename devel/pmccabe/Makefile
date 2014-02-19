@@ -16,21 +16,18 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 BINARIES=	decomment pmccabe
 SCRIPTS=	codechanges vifn
-MAN1=		codechanges.1 decomment.1 pmccabe.1 vifn.1
-PLIST_FILES=	${BINARIES:S,^,bin/,} \
-		${SCRIPTS:S,^,bin/,}
+MANPAGE=	codechanges.1 decomment.1 pmccabe.1 vifn.1
 
-NO_STAGE=	yes
 do-install:
 .for f in ${BINARIES}
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for f in ${SCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .if !defined(NO_INSTALL_MANPAGES)
-. for f in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/${f} ${MANPREFIX}/man/man1
+. for f in ${MANPAGE}
+	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${MANPREFIX}/man/man1
 . endfor
 .endif
 
