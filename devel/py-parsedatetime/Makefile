@@ -3,6 +3,7 @@
 
 PORTNAME=	parsedatetime
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +13,6 @@ COMMENT=	Python module for parsing 'human readable' date/time expressions
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-
-NO_STAGE=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
