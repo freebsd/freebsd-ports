@@ -14,8 +14,8 @@ COMMENT=	Motif X11 Toolkit (industry standard GUI (IEEE 1295))
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png \
-		jpeg:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
+		libjpeg.so:${PORTSDIR}/graphics/jpeg
 
 MAKE_JOBS_UNSAFE=	yes
 CONFLICTS=	lesstif-[0-9]*
@@ -33,40 +33,12 @@ USE_CSTD=	gnu89
 
 DEMOS_SRC=	${WRKSRC}/demos/programs
 
-.if defined(WITH_JDK_PATCH)
+OPTIONS_DEFINE=	DOCS
 
-PKGNAMESUFFIX=	-jdk
-WITHOUT_OPENMOTIF_MANUALS=	YES
-
-.if exists(${WITH_JDK_PATCH})
-EXTRA_PATCHES+=	${WITH_JDK_PATCH}
-.else
-.error "wrong WITH_JDK_PATCH value"
-.endif
-
-.endif
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
 CONFIGURE_ARGS+=	--with-pic
-.endif
-
-# User config option: Build and install Motif demos
-.if defined(WITH_OPENMOTIF_DEMOS)
-MAKE_ENV+=	DEMOS="demos"
-PLIST_SUB+=	MOTIF_DEMOS=""
-.else
-PLIST_SUB+=	MOTIF_DEMOS="@comment "
-.endif
-
-# User config option: Build and install Motif manuals
-.if !defined(WITHOUT_OPENMOTIF_MANUALS)
-.include "${.CURDIR}/Makefile.man"
-PLIST_SUB+=	MANUALS=""
-.else
-PLIST_SUB+=	MANUALS="@comment "
 .endif
 
 post-patch:
@@ -88,89 +60,9 @@ pre-configure:
 	cd ${WRKSRC} && ./autogen.sh
 
 post-install:
-.if defined(WITH_OPENMOTIF_DEMOS)
-	${INSTALL_DATA} ${DEMOS_SRC}/Column/Column.ad \
-		${PREFIX}/lib/X11/app-defaults/Column
-	${INSTALL_DATA} ${DEMOS_SRC}/DropDown/DropDown.ad \
-		${PREFIX}/lib/X11/app-defaults/DropDown
-	${INSTALL_DATA} ${DEMOS_SRC}/airport/XmdAirport.ad \
-		${PREFIX}/lib/X11/app-defaults/XmdAirport
-	${INSTALL_DATA} ${DEMOS_SRC}/animate/XmdAnimate.ad \
-		${PREFIX}/lib/X11/app-defaults/XmdAnimate
-	${INSTALL_DATA} ${DEMOS_SRC}/draw/XmdDraw.ad \
-		${PREFIX}/lib/X11/app-defaults/XmdDraw
-	${INSTALL_DATA} ${DEMOS_SRC}/filemanager/XmdFilemanager.ad \
-		${PREFIX}/lib/X11/app-defaults/XmdFilemanager
-	${INSTALL_DATA} ${DEMOS_SRC}/fileview/Fileview.ad \
-		${PREFIX}/lib/X11/app-defaults/Fileview
-	${INSTALL_DATA} ${DEMOS_SRC}/i18ninput/XmdI18nInput.ad \
-		${PREFIX}/lib/X11/app-defaults/XmdI18nInput
-	${INSTALL_DATA} ${DEMOS_SRC}/periodic/XmdPeriodic.ad \
-		${PREFIX}/lib/X11/app-defaults/XmdPeriodic
-	${INSTALL_DATA} ${DEMOS_SRC}/sampler2_0/XmdSampler2_0.ad \
-		${PREFIX}/lib/X11/app-defaults/XmdSampler2_0
-	${INSTALL_DATA} ${DEMOS_SRC}/setdate/XmdSetDate.ad \
-		${PREFIX}/lib/X11/app-defaults/XmdSetDate
-	${INSTALL_DATA} ${DEMOS_SRC}/todo/XmdTodo.ad \
-		${PREFIX}/lib/X11/app-defaults/XmdTodo
-	@${MKDIR} ${PREFIX}/lib/X11/help
-.for i in animate draw filemanager getsubres i18ninput sampler2_0 todo
-	${INSTALL_DATA} ${DEMOS_SRC}/${i}/${i}.help \
-		${PREFIX}/lib/X11/help/${i}.help
-.endfor
-	@${MKDIR} ${PREFIX}/lib/X11/uid
-	${INSTALL_DATA} ${DEMOS_SRC}/animate/dog.uid \
-		${PREFIX}/lib/X11/uid/dog.uid
-	${INSTALL_DATA} ${DEMOS_SRC}/animate/plane.uid \
-		${PREFIX}/lib/X11/uid/plane.uid
-	${INSTALL_DATA} ${DEMOS_SRC}/animate/superman.uid \
-		${PREFIX}/lib/X11/uid/superman.uid
-	${INSTALL_DATA} ${DEMOS_SRC}/animate/xmanimate.uid \
-		${PREFIX}/lib/X11/uid/xmanimate.uid
-	${INSTALL_DATA} ${DEMOS_SRC}/fileview/English.uid \
-		${PREFIX}/lib/X11/uid/English.uid
-	${INSTALL_DATA} ${DEMOS_SRC}/fileview/French.uid \
-		${PREFIX}/lib/X11/uid/French.uid
-	${INSTALL_DATA} ${DEMOS_SRC}/fileview/German.uid \
-		${PREFIX}/lib/X11/uid/German.uid
-	${INSTALL_DATA} ${DEMOS_SRC}/hellomotif/hellomotif.uid \
-		${PREFIX}/lib/X11/uid/hellomotif.uid
-	${INSTALL_DATA} ${DEMOS_SRC}/periodic/periodic.uid \
-		${PREFIX}/lib/X11/uid/periodic.uid
-	@${MKDIR} ${PREFIX}/lib/X11/uid/C/uid
-	${INSTALL_DATA} ${DEMOS_SRC}/hellomotifi18n/C/uid/l_strings.uid \
-		${PREFIX}/lib/X11/uid/C/uid/l_strings.uid
-	@${MKDIR} ${PREFIX}/lib/X11/uid/english/uid
-	${INSTALL_DATA} ${DEMOS_SRC}/hellomotifi18n/english/uid/l_strings.uid \
-		${PREFIX}/lib/X11/uid/english/uid/l_strings.uid
-	@${MKDIR} ${PREFIX}/lib/X11/uid/french/uid
-	${INSTALL_DATA} ${DEMOS_SRC}/hellomotifi18n/french/uid/l_strings.uid \
-		${PREFIX}/lib/X11/uid/french/uid/l_strings.uid
-	@${MKDIR} ${PREFIX}/lib/X11/uid/hebrew/uid
-	${INSTALL_DATA} ${DEMOS_SRC}/hellomotifi18n/hebrew/uid/l_strings.uid \
-		${PREFIX}/lib/X11/uid/hebrew/uid/l_strings.uid
-	@${MKDIR} ${PREFIX}/lib/X11/uid/japanese/uid
-	${INSTALL_DATA} ${DEMOS_SRC}/hellomotifi18n/japanese/uid/l_strings.uid \
-		${PREFIX}/lib/X11/uid/japanese/uid/l_strings.uid
-	@${MKDIR} ${PREFIX}/lib/X11/uid/swedish/uid
-	${INSTALL_DATA} ${DEMOS_SRC}/hellomotifi18n/swedish/uid/l_strings.uid \
-		${PREFIX}/lib/X11/uid/swedish/uid/l_strings.uid
-	${INSTALL_DATA} ${DEMOS_SRC}/hellomotifi18n/helloint.uid \
-		${PREFIX}/lib/X11/uid
-.for i in earth filemanager getsubres i18ninput panner piano sampler2_0 todo
-	${INSTALL_MAN} ${DEMOS_SRC}/${i}/${i}.man \
-		${MANPREFIX}/man/man1/${i}.1
-.endfor
-	${INSTALL_MAN} ${DEMOS_SRC}/popups/autopopups.man \
-		${MANPREFIX}/man/man1/autopopups.1
-	${INSTALL_MAN} ${DEMOS_SRC}/setdate/setDate.man \
-		${MANPREFIX}/man/man1/setDate.1
-.endif
-.if !defined(WITHOUT_OPENMOTIF_MANUALS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in BUGREPORT README RELNOTES
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.post.mk>
