@@ -26,16 +26,9 @@ ISOCAT=		${PREFIX}/share/sgml/iso8879/catalog
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 
-NO_STAGE=	yes
-pre-su-install:
-	@[ -d ${INSTDIR} ] || ${MKDIR} ${INSTDIR}
-
 do-install:
-	@zcat ${DISTDIR}/${DISTFILES} |(cd ${INSTDIR}; ${PAX} -r)
-	@${CHMOD} ${SHAREMODE} ${INSTDIR}/*
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${INSTDIR}
-
-post-install:
-	@${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${PORTNAME}/catalog
+	${MKDIR} ${STAGEDIR}${INSTDIR}
+	zcat ${DISTDIR}/${DISTFILES} |(cd ${STAGEDIR}${INSTDIR}; ${PAX} -r)
+	${CHMOD} ${SHAREMODE} ${STAGEDIR}${INSTDIR}/*
 
 .include <bsd.port.mk>
