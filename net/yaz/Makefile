@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	yaz
-PORTVERSION=	5.0.12
-PORTREVISION=	1
+PORTVERSION=	5.0.14
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
@@ -14,10 +13,6 @@ LIB_DEPENDS=	libicuuc.so:${PORTSDIR}/devel/icu
 
 USES=		iconv pathfix pkgconfig shebangfix tcl
 SHEBANG_FILES=	util/yaz-asncomp
-SHEBANG_LANG=	tcl
-tcl_OLD_CMD=	/usr/bin/tclsh
-tcl_CMD=	${TCLSH}
-
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_GNOME=	libxml2 libxslt
