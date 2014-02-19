@@ -368,5 +368,4 @@ DOC_DIRS=	ctools_plugin_example
 DOC_FILES=	ctools_plugin_example/README.txt LICENSE.txt \
 		CHANGELOG.txt API.txt
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

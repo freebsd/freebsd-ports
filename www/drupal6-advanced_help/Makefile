@@ -45,5 +45,4 @@ MODULE_FILES=	help/advanced_help.help.ini help/ini-file.html \
 		translations/fr.po
 DOC_FILES=	LICENSE.txt
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
