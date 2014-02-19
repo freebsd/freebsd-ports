@@ -262,7 +262,6 @@
     SUBDIR += vdk
     SUBDIR += vdkbuilder
     SUBDIR += viewklass
-    SUBDIR += vte-reference
     SUBDIR += vte3
     SUBDIR += vtkfox
     SUBDIR += wmapp
