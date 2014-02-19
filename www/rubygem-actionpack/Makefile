@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	actionpack
-PORTVERSION=	3.2.16
-PORTREVISION=	1
+PORTVERSION=	3.2.17
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -25,8 +24,5 @@ RUN_DEPENDS=	rubygem-activemodel>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-a
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e '115 s|~>|>=|' ${WRKSRC}/${GEM_NAME}.gemspec
 
 .include <bsd.port.mk>
