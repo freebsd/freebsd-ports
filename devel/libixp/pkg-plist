@@ -5,3 +5,4 @@ lib/libixp.so
 lib/libixp.so.1
 lib/libixp_pthread.so
 lib/libixp_pthread.so.1
+man/man1/ixpc.1.gz
