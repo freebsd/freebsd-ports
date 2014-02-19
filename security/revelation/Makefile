@@ -3,7 +3,7 @@
 
 PORTNAME=	revelation
 PORTVERSION=	0.4.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security gnome
 MASTER_SITES=	http://cdn.bitbucket.org/erikg/revelation/downloads/
 
@@ -14,22 +14,19 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
-LIB_DEPENDS=	crack:${PORTSDIR}/security/cracklib
+LIB_DEPENDS=	libcrack.so:${PORTSDIR}/security/cracklib
 RUN_DEPENDS:=	${BULID_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}cracklib>0:${PORTSDIR}/security/py-cracklib
 
-OPTIONS_DEFINE=	APPLET
-APPLET_DESC=	Build with applet
-
 USE_BZIP2=	yes
-USES=		desktop-file-utils gettext pathfix pkgconfig \
+USES=		desktop-file-utils gettext gmake pathfix pkgconfig \
 		shared-mime-info shebangfix
 SHEBANG_FILES= src/revelation.py
 USE_GNOME=	gnomeprefix pygnome2
 USE_PYTHON=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
+CONFIGURE_ARGS=	--without-applet
 
 GCONF_SCHEMAS=	revelation.schemas
 
@@ -38,17 +35,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 DICTPATH=	${LOCALBASE}/libdata/cracklib/pw_dict
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MAPPLET}
-USE_GNOME+=	pygnomedesktop pygnomeextras
-CONFIGURE_ARGS+=	--with-applet
-GCONF_SCHEMAS+=	revelation-applet.schemas
-PLIST_SUB+=	APPLET=""
-.else
-PLIST_SUB+=	APPLET="@comment "
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \

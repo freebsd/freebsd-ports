@@ -71,8 +71,6 @@ bin/revelation
 %%PYTHON_SITELIBDIR%%/revelation/util.py
 %%PYTHON_SITELIBDIR%%/revelation/util.pyc
 %%PYTHON_SITELIBDIR%%/revelation/util.pyo
-%%APPLET%%libdata/bonobo/servers/GNOME_RevelationApplet.server
-%%APPLET%%libexec/revelation-applet
 share/applications/revelation.desktop
 share/icons/hicolor/16x16/apps/revelation.png
 share/icons/hicolor/24x24/apps/revelation-locked.png
