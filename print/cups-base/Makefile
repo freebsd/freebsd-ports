@@ -325,6 +325,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|cups test|test|' \
 		-e 's|cups filter driver|driver|' \
+		-e '/cd cups/d' \
 		-e 's|$$.INSTALL_SCRIPT. cups-config|echo skip: cups-config|' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} \
