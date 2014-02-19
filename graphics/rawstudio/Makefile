@@ -26,12 +26,11 @@ BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-USES=		gettext gmake pkgconfig
-USE_GNOME=	gtk20 libxml2 gconf2 desktopfileutils gnomehack
+USES=		desktop-file-utils gettext gmake pkgconfig
+USE_GNOME=	gtk20 libxml2 gconf2 gnomehack
 USE_SQLITE=	3
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's, libssl,,' ${WRKSRC}/configure
 
