@@ -16,11 +16,10 @@ LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -lcurses
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
