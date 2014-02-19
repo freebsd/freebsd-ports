@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	railties
-PORTVERSION=	3.2.16
+PORTVERSION=	3.2.17
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -21,8 +21,5 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/rails
-
-post-patch:
-	@${REINPLACE_CMD} -e '61,72 d' ${WRKSRC}/${GEM_NAME}.gemspec
 
 .include <bsd.port.mk>

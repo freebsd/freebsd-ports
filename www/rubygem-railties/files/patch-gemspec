@@ -1,0 +1,24 @@
+--- railties-3.2.17.gemspec.orig	2014-02-19 02:43:27.232919992 +0000
++++ railties-3.2.17.gemspec	2014-02-19 02:43:36.405917593 +0000
+@@ -75,21 +75,6 @@
+   name: thor
+ - !ruby/object:Gem::Dependency 
+   type: :runtime
+-  version_requirements: &id004 !ruby/object:Gem::Requirement 
+-    none: false
+-    requirements: 
+-    - - ~>
+-      - !ruby/object:Gem::Version 
+-        hash: 15
+-        segments: 
+-        - 3
+-        - 4
+-        version: "3.4"
+-  prerelease: false
+-  requirement: *id004
+-  name: rdoc
+-- !ruby/object:Gem::Dependency 
+-  type: :runtime
+   version_requirements: &id005 !ruby/object:Gem::Requirement 
+     none: false
+     requirements: 
