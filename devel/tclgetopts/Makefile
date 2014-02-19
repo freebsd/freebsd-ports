@@ -11,18 +11,18 @@ EXTRACT_SUFX=	${PORTVERSION}.tar.gz
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Pure TCL code for command line options parsing
 
-NO_BUILD=	YES
+USES=		shebangfix
+NO_BUILD=	yes
 
-MANN=		getopt.n typedopts.n
+SHEBANG_FILES=	foxTypedOpts.tcl foxGetOpt.tcl
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/lib/foxGetOpt
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/foxGetOpt
 	${INSTALL_SCRIPT} \
 		${FILESDIR}/pkgIndex.tcl \
 		${WRKSRC}/foxTypedOpts.tcl \
-		${WRKSRC}/foxGetOpt.tcl ${PREFIX}/lib/foxGetOpt/
+		${WRKSRC}/foxGetOpt.tcl ${STAGEDIR}${PREFIX}/lib/foxGetOpt/
 	${INSTALL_MAN} ${WRKSRC}/getopt.n ${WRKSRC}/typedopts.n \
-		${PREFIX}/man/mann/
+		${STAGEDIR}${PREFIX}/man/mann/
 
 .include <bsd.port.mk>
