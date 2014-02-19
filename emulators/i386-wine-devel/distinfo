@@ -2,3 +2,7 @@ SHA256 (freebsd:8:x86:64/i386-wine-devel-1.7.12,1.txz) = e9c99d0ebe7a33dd5ba72a6
 SIZE (freebsd:8:x86:64/i386-wine-devel-1.7.12,1.txz) = 25773312
 SHA256 (freebsd:9:x86:64/i386-wine-devel-1.7.12,1.txz) = 2adf977878c56180cfb41e6945955cebcafc8799afdb50a7d78d9143014d23db
 SIZE (freebsd:9:x86:64/i386-wine-devel-1.7.12,1.txz) = 25754864
+SHA256 (freebsd:10:x86:64/i386-wine-devel-1.7.12,1.txz) = 6d01dc8f6e9ea4d0cc802c52d5ca642289245a2a60cac9fe2b78b05bf135cccb
+SIZE (freebsd:10:x86:64/i386-wine-devel-1.7.12,1.txz) = 25739496
+SHA256 (freebsd:11:x86:64/i386-wine-devel-1.7.12,1.txz) = 4d161b4c8c6195c1839e0f773619c71f813e7328a9913598ffcc6d47fcb1a80c
+SIZE (freebsd:11:x86:64/i386-wine-devel-1.7.12,1.txz) = 23178500
