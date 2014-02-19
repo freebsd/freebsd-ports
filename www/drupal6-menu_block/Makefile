@@ -21,5 +21,4 @@ MODULE_FILES=	menu-block-wrapper.tpl.php menu_block.admin.inc menu_block.book.in
 MODULE_DIRS=	plugins/content_types/menu_tree plugins/content_types plugins
 DOC_FILES=	CHANGELOG.txt README.txt LICENSE.txt
 
-NO_STAGE=	yes
 .include <bsd.port.mk>
