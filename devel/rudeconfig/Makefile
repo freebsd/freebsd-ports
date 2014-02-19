@@ -14,10 +14,10 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${PREFIX}
 USE_LDCONFIG=	yes
 
-MAN3=		rudeconfig.3
-
-NO_STAGE=	yes
 pre-install:
 	${CHMOD} 744 ${WRKSRC}/install-sh
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librudeconfig.so.5
 
 .include <bsd.port.mk>
