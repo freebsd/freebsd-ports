@@ -11,12 +11,10 @@ COMMENT=	DNS network traffic capture utility
 
 HAS_CONFIGURE=	yes
 
-MAN1=		dnscap.1
-PLIST_FILES=	bin/dnscap
+PLIST_FILES=	bin/dnscap man/man1/dnscap.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dnscap ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/dnscap.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/dnscap ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/dnscap.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>
