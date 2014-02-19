@@ -17,12 +17,11 @@ NO_BUILD=	yes
 USE_BZIP2=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${TAR} -cf- -C ${WRKSRC} . | \
-		${TAR} -xf- -C ${EXAMPLESDIR}
-	@${FIND} ${EXAMPLESDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
-	@${FIND} ${EXAMPLESDIR} -exec ${CHOWN} ${SHAREOWN} {} \;
+		${TAR} -xf- -C ${STAGEDIR}${EXAMPLESDIR}
+	@${FIND} ${STAGEDIR}${EXAMPLESDIR} -type f -exec ${CHMOD} ${SHAREMODE} {} \;
+	@${FIND} ${STAGEDIR}${EXAMPLESDIR} -exec ${CHOWN} ${SHAREOWN} {} \;
 
 .include <bsd.port.mk>
