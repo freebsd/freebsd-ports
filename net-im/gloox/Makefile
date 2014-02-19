@@ -2,32 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	gloox
-PORTVERSION=	1.0
-PORTREVISION=	3
+PORTVERSION=	1.0.9
 CATEGORIES=	net-im
 MASTER_SITES=	http://camaya.net/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jabber/XMPP client library
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	libidn.so:${PORTSDIR}/dns/libidn \
 		libgnutls.so:${PORTSDIR}/security/gnutls
 
-USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
-USES=	pathfix pkgconfig
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	${CXXFLAGS} -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+USES=		compiler:c++11-lang libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
+GNU_CONFIGURE=	yes
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 900033
+USE_BINUTILS=	yes
+LDFLAGS+=	-B${LOCALBASE}/bin
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|libgnutls-config|pkg-config gnutls|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|-lgcrypt||' ${WRKSRC}/configure
 
-post-install:
-	${FIND} ${STAGEDIR}${PREFIX}/include/gloox ! -type d | \
-		${SED} "s,${STAGEDIR}${PREFIX}/,," >> ${TMPPLIST}
-	${FIND} ${STAGEDIR}${PREFIX}/include/gloox -type d | ${SORT} -r | \
-		${SED} "s,${STAGEDIR}${PREFIX}/,@dirrm ," >> ${TMPPLIST}
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
