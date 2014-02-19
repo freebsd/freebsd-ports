@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Driver for printers that use the ZjStream wire protocol
 
-LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-base
+LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
 RUN_DEPENDS=	${LOCALBASE}/share/foomatic/db/oldprinterids:${PORTSDIR}/print/foomatic-db \
 		foomatic-rip:${PORTSDIR}/print/foomatic-filters
 
