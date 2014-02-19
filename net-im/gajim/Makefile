@@ -18,13 +18,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openssl>=0:${PORTSDIR}/security/py-openssl \
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
-USES=		gmake pathfix
+USES=		dos2unix gmake pathfix
 USE_BZIP2=	yes
-USE_DOS2UNIX=	src/plugins/plugins_i18n.py
+DOS2UNIX_FILES=	src/plugins/plugins_i18n.py
 USE_GNOME=	pygtk2
 USE_PYTHON=	2
 USE_XORG=	x11 xext xscrnsaver
-MAN1=		gajim.1 gajim-remote.1 gajim-history-manager.1
 
 CONFIGURE_ENV+=	PYTHON=${PYTHON_CMD}
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -32,54 +31,30 @@ CFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=	AVAHI CRYPTO DBUS DOCS GUPNP KEYRING NLS SPELL
 OPTIONS_DEFAULT=DBUS NLS SPELL
+OPTIONS_SUB=	yes
 CRYPTO_DESC=	End to end encryption support
 KEYRING_DESC=	Gnome Keyring support
 SPELL_DESC=	Spell checking support
 
-PORTDOCS=	AUTHORS ChangeLog README.html
-OPTIONS_SUB=	yes
-NLS_USES=	gettext
+AVAHI_RUN_DEPENDS=	avahi-discover:${PORTSDIR}/net/py-avahi
+CRYPTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
+DBUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
+GUPNP_RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gupnp/__init__.py:${PORTSDIR}/net/gupnp-igd
+KEYRING_USE=		GNOME=pygnomedesktop
+NLS_USES=		gettext
+SPELL_LIB_DEPENDS=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
 
-NO_STAGE=	yes
+PORTDOCS=	AUTHORS ChangeLog README.html
+
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1000000
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-common_resolver.py
 .endif
 
-.if ! ${PORT_OPTIONS:MNLS}
-CONFIGURE_ARGS+=	--disable-nls
-.endif
-
-.if ${PORT_OPTIONS:MAVAHI}
-RUN_DEPENDS+=	avahi-discover:${PORTSDIR}/net/py-avahi
-.endif
-
-.if ${PORT_OPTIONS:MDBUS}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>=0.82.2:${PORTSDIR}/devel/py-dbus
-.endif
-
-.if ${PORT_OPTIONS:MGUPNP}
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gupnp/__init__.py:${PORTSDIR}/net/gupnp-igd
-.endif
-
-.if ${PORT_OPTIONS:MCRYPTO}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pycrypto>0:${PORTSDIR}/security/py-pycrypto
-.endif
-
-.if ${PORT_OPTIONS:MKEYRING}
-USE_GNOME+=	pygnomedesktop
-.endif
-
-.if ${PORT_OPTIONS:MSPELL}
-LIB_DEPENDS=	gtkspell:${PORTSDIR}/textproc/gtkspell
-.endif
-
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
 pre-build:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/src
