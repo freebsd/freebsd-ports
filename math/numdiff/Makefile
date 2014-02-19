@@ -19,14 +19,12 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 		--infodir=${PREFIX}/${INFO_PATH} \
 		LIBS=-lm \
 		--disable-nls
-USE_GMAKE=	yes
+USES=		gmake
 
 INFO=	numdiff
-MAN1=	ndselect.1 numdiff.1
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDOCS}

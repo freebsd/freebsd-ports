@@ -10,6 +10,9 @@ MASTER_SITES=	SF
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	A CPU over- and undervolting daemon
 
+DEPRECATED=	Not maintained from upstream anymore and only supports ancient AMD K8.
+EXPIRATION_DATE=2014-05-01
+
 USE_RC_SUBR=	cpupowerd
 ONLY_FOR_ARCHS=	i386 amd64
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

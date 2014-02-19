@@ -11,14 +11,11 @@ include/libkdcraw/rnuminput.h
 include/libkdcraw/squeezedcombobox.h
 include/libkdcraw/version.h
 lib/libkdcraw.so
-lib/libkdcraw.so.22
-lib/libkdcraw.so.22.0.0
+lib/libkdcraw.so.23
+lib/libkdcraw.so.23.0.0
 libdata/pkgconfig/libkdcraw-kde4.pc
-share/apps/libkdcraw/profiles/adobergb.icm
-share/apps/libkdcraw/profiles/applergb.icm
 share/apps/libkdcraw/profiles/prophoto.icm
 share/apps/libkdcraw/profiles/srgb-d65.icm
-share/apps/libkdcraw/profiles/srgb.icm
 share/apps/libkdcraw/profiles/widegamut.icm
 share/icons/hicolor/128x128/apps/kdcraw.png
 share/icons/hicolor/32x32/apps/kdcraw.png

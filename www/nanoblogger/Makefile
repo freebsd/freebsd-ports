@@ -16,7 +16,6 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/nb
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/nb
@@ -26,28 +25,25 @@ post-patch:
 	@${RM} ${WRKSRC}/plugins/entry/format/*.orig
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/nb ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/nb.conf ${PREFIX}/etc/nb.conf.sample
-	@${MKDIR} ${DATADIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/nb ${STAGEDIR}${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKSRC}/nb.conf ${STAGEDIR}${PREFIX}/etc/nb.conf.sample
+	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for data in default lang lib moods plugins
-	@${MKDIR} ${DATADIR}/${data} && \
+	@${MKDIR} ${STAGEDIR}${DATADIR}/${data} && \
 		( cd ${WRKSRC}/${data} && \
-			${COPYTREE_SHARE} \* ${DATADIR}/${data} "! -name *.orig" )
+			${COPYTREE_SHARE} \* ${STAGEDIR}${DATADIR}/${data} "! -name *.orig" )
 .endfor
-	@${CP} ${WRKSRC}/welcome-to-nb.txt ${DATADIR}
+	@${CP} ${WRKSRC}/welcome-to-nb.txt ${STAGEDIR}${DATADIR}
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/nb.conf ]; then \
-		${CP} -p ${PREFIX}/etc/nb.conf.sample ${PREFIX}/etc/nb.conf; \
+	@if [ ! -f ${STAGEDIR}${PREFIX}/etc/nb.conf ]; then \
+		${CP} -p ${STAGEDIR}${PREFIX}/etc/nb.conf.sample ${STAGEDIR}${PREFIX}/etc/nb.conf; \
 	fi
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for doc in COPYING ChangeLog README TODO copyright
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
 .endfor
-	@${MKDIR} ${DOCSDIR}/html
-	@${INSTALL_DATA} ${WRKSRC}/docs/nanoblogger.html ${DOCSDIR}/html
-.endif
-	@${CAT} ${PKGMESSAGE}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}/html
+	@${INSTALL_DATA} ${WRKSRC}/docs/nanoblogger.html ${STAGEDIR}${DOCSDIR}/html
 
 .include <bsd.port.mk>

@@ -70,12 +70,10 @@ share/icons/hicolor/scalable/apps/xarchiver.svg
 share/pixmaps/xarchiver/xarchiver-add.png
 share/pixmaps/xarchiver/xarchiver-extract.png
 share/pixmaps/xarchiver/xarchiver-html.png
-%%NLS%%@dirrm share/locale/nb_NO/LC_MESSAGES
-%%NLS%%@dirrm share/locale/nb_NO
+%%NLS%%@dirrmtry share/locale/nb_NO/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nb_NO
 @dirrm share/pixmaps/xarchiver
 @dirrmtry libexec/thunar-archive-plugin
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true

@@ -14,14 +14,11 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 
-MAN1=		naim.1
-MLINKS=		naim.1 nirc.1 naim.1 nicq.1 naim.1 nlily.1
 PORTDOCS=	FAQ README commands.txt keyboard.txt
 
 OPTIONS_DEFINE=	DETACH DOCS
 DETACH_DESC=	Enable 'detach' feature (requires misc/screen)
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # Fix parallel (-jX) builds: events.c #include's generated "conio_cmds.h"

@@ -21,22 +21,21 @@ NO_CDROM=	No fees or compensation can be charged
 
 USE_ASDF=	yes
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 	@${MV} ${WRKSRC}/infix.cl ${WRKSRC}/infix.lisp
 
 do-install:
-	@${MKDIR} ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/*.lisp ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/infix.asd ${ASDF_PATHNAME}
-	@${INSTALL_DATA} ${WRKSRC}/infix.system ${ASDF_PATHNAME}
-	@${LN} -sf ${ASDF_PATHNAME}/*.asd ${ASDF_REGISTRY}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${ASDF_PATHNAME} ${STAGEDIR}${ASDF_REGISTRY}
+	@${INSTALL_DATA} ${WRKSRC}/*.lisp ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/infix.asd ${STAGEDIR}${ASDF_PATHNAME}
+	@${INSTALL_DATA} ${WRKSRC}/infix.system ${STAGEDIR}${ASDF_PATHNAME}
+	@${LN} -sf ${ASDF_PATHNAME}/infix.asd ${STAGEDIR}${ASDF_REGISTRY}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for FILE in COPYING infix.3lisp
-	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include "${.CURDIR}/../../devel/cl-asdf/bsd.cl-asdf.mk"
 .include <bsd.port.mk>

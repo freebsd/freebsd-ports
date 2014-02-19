@@ -1,7 +1,0 @@
-bin/pysnmpbulkwalk
-bin/pysnmpget
-bin/pysnmpset
-bin/pysnmptranslate
-bin/pysnmptrap
-bin/pysnmpwalk
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

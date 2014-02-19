@@ -1,2 +1,0 @@
-To enable the openfire startup script please add
-openfire_enable="YES" to your /etc/rc.conf file.

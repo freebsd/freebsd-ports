@@ -1,0 +1,7 @@
+bin/pcmfade
+bin/pcmplay
+bin/tosha
+etc/tosharc
+man/man1/pcmfade.1.gz
+man/man1/pcmplay.1.gz
+man/man1/tosha.1.gz

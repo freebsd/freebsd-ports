@@ -1,5 +1,14 @@
 --- Makefile.orig	2013-11-16 17:28:28.000000000 +0100
 +++ Makefile	2013-11-16 17:27:51.000000000 +0100
+@@ -11,7 +11,7 @@
+ #	On GNU,		        use S_CHAR="char"
+ #
+ 
+-CFLAGS+=	-DF77 -DS_CHAR="char"
++CFLAGS+=	-DF77 -DS_CHAR="char" -Wno-error=return-type
+ #CFLAGS+=	-DS_CHAR="char"
+ OBJS=		rat4.o lookup.o getopt.o
+ 
 @@ -26,13 +26,15 @@
  clean:
  	rm -f *.o *~ ratfor ratfor77 a.out test testw test.f testw.f

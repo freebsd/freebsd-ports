@@ -1,11 +1,11 @@
---- client/Makefile.orig	2012-11-14 05:29:54.000000000 -0600
-+++ client/Makefile	2013-04-23 09:14:36.635076021 -0500
+--- client/Makefile.orig	2014-01-07 15:43:56.000000000 -0600
++++ client/Makefile	2014-02-10 10:52:00.000000000 -0600
 @@ -69,15 +69,15 @@
- 	if test ! -d $(INSTALLROOT)$(XYMONHOME)/logs  ; then mkdir -p $(INSTALLROOT)$(XYMONHOME)/logs  ; fi
- 	if test ! -d $(INSTALLROOT)$(XYMONHOME)/ext   ; then mkdir -p $(INSTALLROOT)$(XYMONHOME)/ext   ; fi
- 	if test ! -d $(INSTALLROOT)$(XYMONHOME)/local ; then mkdir -p $(INSTALLROOT)$(XYMONHOME)/local ; fi
--	if test ! -f $(INSTALLROOT)$(XYMONHOME)/etc/localclient.cfg ; then cp localclient.cfg $(INSTALLROOT)$(XYMONHOME)/etc/ ; fi
-+	if test ! -f $(INSTALLROOT)$(XYMONHOME)/etc/localclient.cfg ; then cp localclient.cfg $(INSTALLROOT)$(XYMONHOME)/etc/localclient.cfg.DIST ; fi
+ 	if test ! -d $(INSTALLROOT)$(XYMONHOME)/logs  ; then mkdir -p $(INSTALLROOT)$(XYMONHOME)/logs  ; chmod 755 $(INSTALLROOT)$(XYMONHOME)/logs ; fi
+ 	if test ! -d $(INSTALLROOT)$(XYMONHOME)/ext   ; then mkdir -p $(INSTALLROOT)$(XYMONHOME)/ext   ; chmod 755 $(INSTALLROOT)$(XYMONHOME)/ext  ; fi
+ 	if test ! -d $(INSTALLROOT)$(XYMONHOME)/local ; then mkdir -p $(INSTALLROOT)$(XYMONHOME)/local ; chmod 755 $(INSTALLROOT)$(XYMONHOME)/local; fi
+-	if test ! -f $(INSTALLROOT)$(XYMONHOME)/etc/localclient.cfg ; then cp localclient.cfg $(INSTALLROOT)$(XYMONHOME)/etc/ ; chmod 644 $(INSTALLROOT)$(XYMONHOME)/etc/localclient.cfg; fi
++	if test ! -f $(INSTALLROOT)$(XYMONHOME)/etc/localclient.cfg.DIST ; then cp localclient.cfg $(INSTALLROOT)$(XYMONHOME)/etc/localclient.cfg.DIST ; chmod 644 $(INSTALLROOT)$(XYMONHOME)/etc/localclient.cfg.DIST; fi
  	if test ! -f $(INSTALLROOT)$(XYMONHOME)/local/README; then cp README-local $(INSTALLROOT)$(XYMONHOME)/local/README ; chmod 644 $(INSTALLROOT)$(XYMONHOME)/local/README; fi
  	chmod 755 runclient.sh $(PROGRAMS) xymonclient*.sh $(COMMONTOOLS) $(EXTRATOOLS)
  	cp -fp runclient.sh $(INSTALLROOT)$(XYMONHOME)

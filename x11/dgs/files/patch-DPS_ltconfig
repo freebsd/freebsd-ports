@@ -1,6 +1,6 @@
---- DPS/ltconfig.orig	2000-01-11 22:24:56.000000000 +0000
-+++ DPS/ltconfig
-@@ -1349,7 +1349,7 @@ else
+--- ./DPS/ltconfig.orig	2000-01-11 22:24:56.000000000 +0000
++++ ./DPS/ltconfig	2014-02-09 20:43:04.000000000 +0000
+@@ -1349,7 +1349,7 @@
      ;;
  
    # FreeBSD 3 and greater uses gcc -shared to do shared libraries.
@@ -9,7 +9,7 @@
      archive_cmds='$CC -shared -o $lib $libobjs $deplibs $linkopts'
      hardcode_libdir_flag_spec='-R$libdir'
      hardcode_direct=yes
-@@ -1823,7 +1823,7 @@ freebsd1*)
+@@ -1823,7 +1823,7 @@
    dynamic_linker=no
    ;;
    
@@ -18,3 +18,13 @@
    objformat=`test -x /usr/bin/objformat && /usr/bin/objformat || echo aout`
    version_type=freebsd-$objformat
    case "$version_type" in
+@@ -1831,7 +1831,8 @@
+       deplibs_check_method='file_magic ELF [0-9][0-9]*-bit [LM]SB shared object'
+       file_magic_cmd=/usr/bin/file
+       file_magic_test_file=`echo /usr/lib/libc.so*`
+-      library_names_spec='${libname}${release}.so$versuffix ${libname}${release}.so $libname.so'
++      library_names_spec='$libname$release.so$versuffix $libname$release.so$major $libname.so'
++      soname_spec='$libname$release.so$major'
+       need_version=no
+       need_lib_prefix=no
+       ;;

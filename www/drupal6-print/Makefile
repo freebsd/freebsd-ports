@@ -32,5 +32,4 @@ MODULE_FILES=	icons/mail_icon.gif icons/pdf_icon.gif icons/print_icon.gif \
 DOC_FILES=	CHANGELOG.txt CREDITS.txt INSTALL.txt \
 		LICENSE.txt MAINTAINERS.txt README.txt
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

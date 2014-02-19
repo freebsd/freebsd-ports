@@ -31,6 +31,8 @@ DESKTOP_ENTRIES="Fish Supper" \
 		"Game;ArcadeGame;" \
 		false
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} > 1000000

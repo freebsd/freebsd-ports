@@ -306,7 +306,7 @@ share/foo2qpdl/crd/black-text.ps
 @dirrmtry share/foo2lava
 @dirrmtry share/foo2hp
 @dirrmtry share/foo2hiperc
-@dirrmtry %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%
 @dirrmtry share/cups/model
 @dirrmtry share/cups
 @dirrmtry foomatic/db/source/printer

@@ -19,6 +19,8 @@ SUB_LIST=	PREFIX=${PREFIX}
 PLIST_FILES=	bin/mirmon bin/probe
 MAN1=		mirmon.1
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .if ! ${PORT_OPTIONS:MDOCS}

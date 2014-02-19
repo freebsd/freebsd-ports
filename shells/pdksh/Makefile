@@ -3,7 +3,7 @@
 
 PORTNAME=	pdksh
 PORTVERSION=	5.2.14p2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	shells
 MASTER_SITES=	http://gd.tuwien.ac.at/utils/shells/pdksh/ \
 		ftp://ftp.lip6.fr/pub/unix/shells/pdksh/ \
@@ -17,17 +17,11 @@ PATCH_DIST_STRIP=	-p2
 MAINTAINER=	rodrigo@FreeBSD.org
 COMMENT=	The Public Domain Korn Shell
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 GNU_CONFIGURE=	yes
-MAN1=		ksh.1
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
-
-.if ${OSVERSION} >= 1000039
-BROKEN=	hangs on 10.0: http://www.freebsd.org/cgi/query-pr.cgi?pr=181438
-.endif
 
 .if defined(WITH_STATIC)
 CONFIGURE_ENV+=	LDSTATIC=-static

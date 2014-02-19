@@ -23,7 +23,4 @@ RUBYGEM_AUTOPLIST=	yes
 
 PLIST_FILES=	bin/sprockets
 
-post-patch:
-	@${REINPLACE_CMD} -e '73 s|~>|">="|; 80,87 d' ${WRKSRC}/${GEM_NAME}.gemspec
-
 .include <bsd.port.mk>

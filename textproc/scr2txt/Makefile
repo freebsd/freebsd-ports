@@ -12,12 +12,10 @@ NO_WRKSUBDIR=	yes
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts the output of "vidcontrol -p" to text
 
-MAN1=		scr2txt.1
-MANCOMPRESSED=	yes
-PLIST_FILES=	bin/scr2txt
+PLIST_FILES=	bin/scr2txt \
+		man/man1/scr2txt.1.gz
 
-NO_STAGE=	yes
 do-install:
-	@cd ${WRKSRC}; ${MAKE} BINDIR=${LOCALBASE}/bin SHAREDIR=${LOCALBASE} install
+	@cd ${WRKSRC}; ${MAKE} BINDIR=${STAGEDIR}${PREFIX}/bin SHAREDIR=${STAGEDIR}${PREFIX} install
 
 .include <bsd.port.mk>

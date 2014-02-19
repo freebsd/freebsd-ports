@@ -12,7 +12,6 @@ MAINTAINER=	h.skuhra@gmail.com
 COMMENT=	Console-based music player with really cool features
 
 USES=		gmake pkgconfig iconv ncurses
-NO_STAGE=	yes
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV+=	HOSTCC=${CC}
@@ -174,9 +173,6 @@ CONFIGURE_ARGS+=CONFIG_DISCID=y
 .else
 CONFIGURE_ARGS+=CONFIG_DISCID=n
 .endif
-
-MAN1=	cmus.1 cmus-remote.1
-MAN7=	cmus-tutorial.7
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,doc/cmus/examples,examples/cmus,g' \

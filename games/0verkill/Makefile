@@ -31,23 +31,26 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/0verkill ${STAGEDIR}${PREFIX}/bin
-.for file in avi bot editor server test_server
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} \
-		${STAGEDIR}${PREFIX}/bin/0verkill-${file}
+.for filename in avi bot editor server test_server
+	${INSTALL_PROGRAM} ${WRKSRC}/${filename} \
+		${STAGEDIR}${PREFIX}/bin/0verkill-${filename}
 .endfor
 .if ${PORT_OPTIONS:MX11}
 	${INSTALL_PROGRAM} ${WRKSRC}/x0verkill ${STAGEDIR}${PREFIX}/bin
-.for file in avi editor
-	${INSTALL_PROGRAM} ${WRKSRC}/x${file} \
-		${STAGEDIR}${PREFIX}/bin/x0verkill-${file}
+.for filename in avi editor
+	${INSTALL_PROGRAM} ${WRKSRC}/x${filename} \
+		${STAGEDIR}${PREFIX}/bin/x0verkill-${filename}
 .endfor
 .endif
 .for dir in data grx
 	cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${DATADIR}
 .endfor
+
+.if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in AUTHORS README.html avi.txt bot.txt doc.html
-	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${DOCSDIR}
+.for filename in AUTHORS README.html avi.txt bot.txt doc.html
+	${INSTALL_DATA} ${WRKSRC}/doc/${filename} ${STAGEDIR}${DOCSDIR}
 .endfor
+.endif
 
 .include <bsd.port.mk>

@@ -21,7 +21,7 @@ RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 CONFLICTS=	sp-1.*
 
 USE_AUTOTOOLS=	libtool
-USES=		gmake
+USES=		gmake desthack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog
@@ -32,7 +32,6 @@ MAKE_JOBS_UNSAFE=	yes
 CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
 XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
 
-NO_STAGE=	yes
 post-extract:
 	@${CHMOD} u+w ${WRKSRC}/configure
 
@@ -42,17 +41,16 @@ pre-install:
 
 post-install:
 .for i in jade nsgmls sgmlnorm spam spent sx
-	${STRIP_CMD} ${PREFIX}/bin/$i
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/$i
 .endfor
-	${MKDIR} ${PREFIX}/include/sp
-	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/sp
-	${MKDIR} ${PREFIX}/share/doc/jade
-	${INSTALL_DATA} ${WRKSRC}/doc/*.htm ${PREFIX}/share/doc/jade
-	${MKDIR} ${PREFIX}/share/sgml/jade
-	${INSTALL_DATA} ${WRKSRC}/dsssl/* ${PREFIX}/share/sgml/jade
-	${MKDIR} ${PREFIX}/share/xml/jade
-	${INSTALL_DATA} ${WRKSRC}/pubtext/xml* ${PREFIX}/share/xml/jade
-	@${XMLCATMGR} -sc ${CATALOG_PORTS_SGML} add CATALOG ${PORTNAME}/catalog
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/sp
+	${INSTALL_DATA} ${WRKSRC}/include/* ${STAGEDIR}${PREFIX}/include/sp
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/jade
+	${INSTALL_DATA} ${WRKSRC}/doc/*.htm ${STAGEDIR}${PREFIX}/share/doc/jade
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/sgml/jade
+	${INSTALL_DATA} ${WRKSRC}/dsssl/* ${STAGEDIR}${PREFIX}/share/sgml/jade
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/xml/jade
+	${INSTALL_DATA} ${WRKSRC}/pubtext/xml* ${STAGEDIR}${PREFIX}/share/xml/jade
 
 .include <bsd.port.pre.mk>
 

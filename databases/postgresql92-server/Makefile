@@ -20,7 +20,7 @@ CONFLICTS?=	${PORTNAME}[^${PORTVERSION:R:R}]?-client* \
 WRKSRC=		${WRKDIR}/postgresql-${DISTVERSION}
 DIST_SUBDIR=	postgresql
 
-ICU_PATCHFILE?=	pg-910-icu-2012-12-19.diff.gz
+ICU_PATCHFILE?=	pg-923-icu-2014-02-10.diff.gz
 
 .if !defined(SLAVE_ONLY)
 UNIQUENAME?=	${PORTNAME}${DISTVERSION:R:S/.//}

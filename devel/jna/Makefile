@@ -9,6 +9,8 @@ MASTER_SITES=	GH
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Java access to native shared libraries
 
+BROKEN=		Build fails due to test failures
+
 USES=		gmake
 USE_GCC=	any
 USE_ANT=	yes
@@ -24,6 +26,8 @@ GH_COMMIT=	9b7ba38
 
 PLIST_FILES=	%%JAVAJARDIR%%/jna-platform.jar \
 		%%JAVAJARDIR%%/jna.jar
+
+OPTIONS_DEFINE=	DOCS 
 
 .include <bsd.port.options.mk>
 

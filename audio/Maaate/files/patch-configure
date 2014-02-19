@@ -1,5 +1,5 @@
---- configure.orig	Thu Sep  5 09:54:07 2002
-+++ configure	Mon Sep 30 22:55:21 2002
+--- configure.orig	2002-10-09 03:30:34.000000000 +0200
++++ configure	2013-12-18 12:38:19.000000000 +0100
 @@ -5691,6 +5691,7 @@
  
  # This can be used to rebuild libtool when needed
@@ -8,3 +8,11 @@
  
  # Always use our own libtool.
  LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -5699,7 +5700,6 @@
+ 
+ 
+ 
+-LDFLAGS="$LDFLAGS -lstdc++"
+ 
+ echo $ac_n "checking for cos in -lm""... $ac_c" 1>&6
+ echo "configure:5706: checking for cos in -lm" >&5

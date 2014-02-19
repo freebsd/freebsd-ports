@@ -1,0 +1,11 @@
+--- sass-rails-3.2.6.gemspec.orig	2014-02-19 03:55:59.669617961 +0000
++++ sass-rails-3.2.6.gemspec	2014-02-19 03:55:59.699618518 +0000
+@@ -43,7 +43,7 @@
+   name: tilt
+   requirement: !ruby/object:Gem::Requirement
+     requirements:
+-    - - "~>"
++    - - ">="
+       - !ruby/object:Gem::Version
+         version: '1.3'
+   type: :runtime

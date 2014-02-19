@@ -21,7 +21,6 @@ USE_GNOME=	libxml2
 
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1000015

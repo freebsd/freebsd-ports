@@ -15,9 +15,8 @@ NO_BUILD=	YES
 NO_INSTALL=	YES
 NO_PACKAGE=	"Nothing to package"
 
-USE_GMAKE=	YES
+USES=		gmake
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 REGR_LOG=	log.run-5current

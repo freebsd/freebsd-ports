@@ -56,6 +56,9 @@ DATADIR=	${PREFIX}/share/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

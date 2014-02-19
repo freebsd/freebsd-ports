@@ -30,7 +30,7 @@ ALL_TARGET=	# none
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-DMIX_ANSI_IOSTREAMS -DHAVE_BOOL -fPIC -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread
 
 FLTK_CONFIG=	${LOCALBASE}/bin/fltk-config
 GUI_LIBS=	$$(${FLTK_CONFIG} --use-gl --ldflags)

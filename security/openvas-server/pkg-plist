@@ -9,6 +9,13 @@ include/openvas/nessusraw.h
 include/openvas/nessustcp.h
 include/openvas/nessusudp.h
 include/openvas/threadcompat.h
+man/man1/openvas-mkcert-client.1.gz
+man/man1/openvas-mkrand.1.gz
+man/man1/openvasd-config.1.gz
+man/man8/openvas-adduser.8.gz
+man/man8/openvas-mkcert.8.gz
+man/man8/openvas-rmuser.8.gz
+man/man8/openvasd.8.gz
 openvas/lib/openvas/openvas-services
 sbin/openvas-adduser
 sbin/openvas-mkcert

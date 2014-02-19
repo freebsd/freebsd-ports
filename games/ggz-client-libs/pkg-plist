@@ -14,6 +14,14 @@ lib/libggzmod.a
 lib/libggzmod.la
 lib/libggzmod.so
 lib/libggzmod.so.5
+man/man1/ggzwrap.1.gz
+man/man3/ggzcore_h.3.gz
+man/man3/ggzmod_h.3.gz
+man/man5/ggz.modules.5.gz
+man/man6/ggz.6.gz
+man/man6/ggz-config.6.gz
+man/man6/ggz-wrapper.6.gz
+man/man7/ggz.7.gz
 share/desktop-directories/ggz-games.directory
 share/desktop-directories/ggz.directory
 %%NLS%%share/locale/ar/LC_MESSAGES/ggzcore.mo

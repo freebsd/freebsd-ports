@@ -2,13 +2,14 @@
 
 PORTNAME=	herbstluftwm
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://herbstluftwm.org/tarballs/
 
 MAINTAINER=	crshd@mail.com
 COMMENT=	Manual tiling window manager for X11
 
-LICENSE=	BSD
+LICENSE=	BSD2CLAUSE
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
@@ -19,9 +20,6 @@ USE_GNOME=	glib20
 MAKE_ARGS=	PREFIX=${PREFIX} SYSCONFDIR=${PREFIX}/etc \
 		DOCSDIR=${DOCSDIR} EXAMPLESDIR=${EXAMPLESDIR} \
 		MANDIR=${PREFIX}/man
-
-MAN1=		herbstclient.1 herbstluftwm.1
-MAN7=		herbstluftwm-tutorial.7
 
 OPTIONS_DEFINE=	BASH ZSH DOCS EXAMPLES
 

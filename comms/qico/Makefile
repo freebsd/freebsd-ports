@@ -26,6 +26,8 @@ PLIST_SUB+=	WITH_QICO_MORDA="@comment "
 
 NO_STAGE=	yes
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-install:

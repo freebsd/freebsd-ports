@@ -14,13 +14,11 @@ COMMENT=	GNOME JavaScript common modules and tests
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomehack intltool
-USES=		pkgconfig gettext
+USES=		pkgconfig gettext gmake
 
 PORTDOCS=	AUTHORS COPYING INSTALL NEWS README ChangeLog
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|== x|= x|g' \
 		${WRKSRC}/configure

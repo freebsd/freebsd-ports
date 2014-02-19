@@ -1,0 +1,17 @@
+--- patches/innodb56.patch	2014-01-23 15:59:36.000000000 +0100
++++ patches/innodb56.patch	2014-02-18 10:50:05.000000000 +0100
+@@ -2687,3 +2687,14 @@
+  /*********************************************************************//**
+  Wrapper around MySQL's copy_and_convert function.
+  @return	number of bytes copied to 'to' */
++--- a/extra/yassl/taocrypt/include/misc.hpp
+++++ b/extra/yassl/taocrypt/include/misc.hpp
++@@ -124,7 +124,7 @@
++ 
++ 
++ // no gas on these systems ?, disable for now
++-#if defined(__sun__) || defined (__APPLE__)
+++#if defined(__sun__) || defined (__APPLE__) || defined(__clang__)
++     #define TAOCRYPT_DISABLE_X86ASM
++ #endif
++ 

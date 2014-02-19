@@ -30,12 +30,10 @@ ADDITIONAL_LDFLAGS+=	-L${BDB_LIB_DIR}
 
 ENCORE_PORT?=	devel/fortytwo-encore
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	@${TAR} -C ${WRKDIR}/BDB-0.2.0-api-ref -cf - . | \
-		${TAR} -C ${DOCSDIR} -xf -
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKDIR}/BDB-0.2.0-api-ref && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

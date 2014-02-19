@@ -18,13 +18,10 @@ LIB_DEPENDS=	libFLAC.so:${PORTSDIR}/audio/flac \
 	libsamplerate.so:${PORTSDIR}/audio/libsamplerate \
 	libpng15.so:${PORTSDIR}/graphics/png
 
-MAN1=		dvda-author.1
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/FLAC
 
-NO_STAGE=	yes
 USE_AUTOTOOLS=	libltdl
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -32,6 +29,8 @@ CONFIGURE_ARGS=	--with-flac=${LOCALBASE}/lib/libFLAC.so \
 	--with-ogg=${LOCALBASE}/lib/libogg.so \
 	--enable-glibc
 USE_CSTD=	gnu89
+
+OPTIONS_DEFINE=	DOCS 
 
 .include <bsd.port.options.mk>
 

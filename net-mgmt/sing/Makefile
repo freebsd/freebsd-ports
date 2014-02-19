@@ -21,12 +21,11 @@ CONFIGURE_ARGS+=--with-libpcap-prefix=/usr
 CONFIGURE_ENV=	LIBS="`${LIBNET_CONFIG} --libs`"
 CPPFLAGS+=	`${LIBNET_CONFIG} --defines` \
 		`${LIBNET_CONFIG} --cflags`
-MAN8=		sing.8
-PLIST_FILES=	sbin/sing
+PLIST_FILES=	sbin/sing \
+		man/man8/sing.8.gz
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
-NO_STAGE=	yes
 post-extract:
 	@${RM} -rf ${WRKSRC}/libpcap-* ;\
 	${RM} -rf ${WRKSRC}/Libnet-*

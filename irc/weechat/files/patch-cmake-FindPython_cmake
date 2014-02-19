@@ -1,5 +1,5 @@
---- cmake/FindPython.cmake.orig	2013-01-11 00:10:37.730703018 +0000
-+++ cmake/FindPython.cmake	2013-01-11 00:21:33.725664455 +0000
+--- cmake/FindPython.cmake.orig	2014-02-09 08:52:53.000000000 +0000
++++ cmake/FindPython.cmake	2014-02-09 18:20:48.432096579 +0000
 @@ -33,17 +33,9 @@
     SET(PYTHON_FIND_QUIETLY TRUE)
  ENDIF(PYTHON_FOUND)

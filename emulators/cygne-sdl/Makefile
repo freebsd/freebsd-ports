@@ -11,6 +11,9 @@ DISTNAME=	Cygne-SDL-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SDL port of Cygne, a free Bandai Wonderswan emulator
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-10
+
 LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/Cygne-SDL-${PORTVERSION}/src

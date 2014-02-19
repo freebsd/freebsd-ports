@@ -17,14 +17,11 @@ RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 WRKSRC=	${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	(cd ${WRKSRC} && ./install ${PREFIX}/bin)
+	(cd ${WRKSRC} && ./install ${STAGEDIR}${PREFIX}/bin)
 
-.if !defined(NOPORTDOCS)
 post-install:
-	${INSTALL} -d ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

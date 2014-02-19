@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-Getopt
-PORTVERSION=	0.59
+PORTVERSION=	0.61
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ETHER
@@ -18,7 +18,8 @@ BUILD_DEPENDS=	p5-Getopt-Long-Descriptive>=0.081:${PORTSDIR}/devel/p5-Getopt-Lon
 		p5-Moose>=0.56:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-ConfigFromFile>=0:${PORTSDIR}/devel/p5-MooseX-ConfigFromFile \
 		p5-MooseX-Role-Parameterized>=0:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized \
-		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
+		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny \
+		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-MooseX-SimpleConfig>=0.07:${PORTSDIR}/devel/p5-MooseX-SimpleConfig \
 		p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \

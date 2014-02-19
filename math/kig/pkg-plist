@@ -1,7 +1,9 @@
 bin/kig
 bin/pykig.py
 lib/kde4/kigpart.so
+man/man1/kig.1.gz
 share/applications/kde4/kig.desktop
+%%PYTHON%%share/apps/katepart/syntax/python-kig.xml
 share/apps/kig/builtin-macros/circle_by_center_and_line.kigt
 share/apps/kig/builtin-macros/circle_by_point_and_diameter.kigt
 share/apps/kig/builtin-macros/equitriangle.kigt
@@ -71,6 +73,7 @@ share/apps/kig/icons/hicolor/22x22/actions/pointOnLine.png
 share/apps/kig/icons/hicolor/22x22/actions/pointxy.png
 share/apps/kig/icons/hicolor/22x22/actions/polygonsides.png
 share/apps/kig/icons/hicolor/22x22/actions/polygonvertices.png
+share/apps/kig/icons/hicolor/22x22/actions/projection.png
 share/apps/kig/icons/hicolor/22x22/actions/python.png
 share/apps/kig/icons/hicolor/22x22/actions/radicalline.png
 share/apps/kig/icons/hicolor/22x22/actions/ray.png
@@ -162,6 +165,7 @@ share/apps/kig/icons/hicolor/32x32/actions/pointOnLine.png
 share/apps/kig/icons/hicolor/32x32/actions/pointxy.png
 share/apps/kig/icons/hicolor/32x32/actions/polygonsides.png
 share/apps/kig/icons/hicolor/32x32/actions/polygonvertices.png
+share/apps/kig/icons/hicolor/32x32/actions/projection.png
 share/apps/kig/icons/hicolor/32x32/actions/python.png
 share/apps/kig/icons/hicolor/32x32/actions/radicalline.png
 share/apps/kig/icons/hicolor/32x32/actions/ray.png
@@ -252,6 +256,7 @@ share/apps/kig/icons/hicolor/scalable/actions/pointOnLine.svgz
 share/apps/kig/icons/hicolor/scalable/actions/pointxy.svgz
 share/apps/kig/icons/hicolor/scalable/actions/polygonsides.svgz
 share/apps/kig/icons/hicolor/scalable/actions/polygonvertices.svgz
+share/apps/kig/icons/hicolor/scalable/actions/projection.svgz
 share/apps/kig/icons/hicolor/scalable/actions/python.svgz
 share/apps/kig/icons/hicolor/scalable/actions/radicalline.svgz
 share/apps/kig/icons/hicolor/scalable/actions/ray.svgz

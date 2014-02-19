@@ -8,6 +8,7 @@
 %%WWWDIR%%/app/dashboards/logstash.js
 %%WWWDIR%%/app/dashboards/logstash.json
 %%WWWDIR%%/app/dashboards/noted.json
+%%WWWDIR%%/app/factories/store.js
 %%WWWDIR%%/app/panels/bettermap/editor.html
 %%WWWDIR%%/app/panels/bettermap/leaflet/images/layers-2x.png
 %%WWWDIR%%/app/panels/bettermap/leaflet/images/layers.png
@@ -27,11 +28,8 @@
 %%WWWDIR%%/app/panels/column/module.js
 %%WWWDIR%%/app/panels/column/panelgeneral.html
 %%WWWDIR%%/app/panels/dashcontrol/editor.html
-%%WWWDIR%%/app/panels/dashcontrol/load.html
 %%WWWDIR%%/app/panels/dashcontrol/module.html
 %%WWWDIR%%/app/panels/dashcontrol/module.js
-%%WWWDIR%%/app/panels/dashcontrol/save.html
-%%WWWDIR%%/app/panels/dashcontrol/share.html
 %%WWWDIR%%/app/panels/derivequeries/editor.html
 %%WWWDIR%%/app/panels/derivequeries/module.html
 %%WWWDIR%%/app/panels/derivequeries/module.js
@@ -46,6 +44,8 @@
 %%WWWDIR%%/app/panels/histogram/editor.html
 %%WWWDIR%%/app/panels/histogram/module.html
 %%WWWDIR%%/app/panels/histogram/module.js
+%%WWWDIR%%/app/panels/histogram/queriesEditor.html
+%%WWWDIR%%/app/panels/histogram/styleEditor.html
 %%WWWDIR%%/app/panels/hits/editor.html
 %%WWWDIR%%/app/panels/hits/module.html
 %%WWWDIR%%/app/panels/hits/module.js
@@ -59,10 +59,23 @@
 %%WWWDIR%%/app/panels/pie/module.html
 %%WWWDIR%%/app/panels/pie/module.js
 %%WWWDIR%%/app/panels/query/editor.html
+%%WWWDIR%%/app/panels/query/editors/lucene.html
+%%WWWDIR%%/app/panels/query/editors/regex.html
+%%WWWDIR%%/app/panels/query/editors/topN.html
+%%WWWDIR%%/app/panels/query/help/lucene.html
+%%WWWDIR%%/app/panels/query/help/regex.html
+%%WWWDIR%%/app/panels/query/help/topN.html
+%%WWWDIR%%/app/panels/query/helpModal.html
 %%WWWDIR%%/app/panels/query/meta.html
 %%WWWDIR%%/app/panels/query/module.html
 %%WWWDIR%%/app/panels/query/module.js
 %%WWWDIR%%/app/panels/query/query.css
+%%WWWDIR%%/app/panels/sparklines/editor.html
+%%WWWDIR%%/app/panels/sparklines/module.html
+%%WWWDIR%%/app/panels/sparklines/module.js
+%%WWWDIR%%/app/panels/stats/editor.html
+%%WWWDIR%%/app/panels/stats/module.html
+%%WWWDIR%%/app/panels/stats/module.js
 %%WWWDIR%%/app/panels/table/editor.html
 %%WWWDIR%%/app/panels/table/micropanel.html
 %%WWWDIR%%/app/panels/table/modal.html
@@ -113,13 +126,16 @@
 %%WWWDIR%%/font/fontawesome-webfont.svg
 %%WWWDIR%%/font/fontawesome-webfont.ttf
 %%WWWDIR%%/font/fontawesome-webfont.woff
+%%WWWDIR%%/img/cubes.png
 %%WWWDIR%%/img/glyphicons-halflings-white.png
 %%WWWDIR%%/img/glyphicons-halflings.png
 %%WWWDIR%%/img/kibana.png
+%%WWWDIR%%/img/light.png
 %%WWWDIR%%/img/load.gif
 %%WWWDIR%%/img/load_big.gif
 %%WWWDIR%%/img/small.png
 %%WWWDIR%%/index.html
+%%WWWDIR%%/vendor/LICENSE.json
 %%WWWDIR%%/vendor/bootstrap/less/tests/buttons.html
 %%WWWDIR%%/vendor/bootstrap/less/tests/css-tests.css
 %%WWWDIR%%/vendor/bootstrap/less/tests/css-tests.html
@@ -146,6 +162,10 @@
 @dirrm %%WWWDIR%%/app/panels/text
 @dirrm %%WWWDIR%%/app/panels/terms
 @dirrm %%WWWDIR%%/app/panels/table
+@dirrm %%WWWDIR%%/app/panels/stats
+@dirrm %%WWWDIR%%/app/panels/sparklines
+@dirrm %%WWWDIR%%/app/panels/query/help
+@dirrm %%WWWDIR%%/app/panels/query/editors
 @dirrm %%WWWDIR%%/app/panels/query
 @dirrm %%WWWDIR%%/app/panels/pie
 @dirrm %%WWWDIR%%/app/panels/map/lib
@@ -161,6 +181,7 @@
 @dirrm %%WWWDIR%%/app/panels/bettermap/leaflet
 @dirrm %%WWWDIR%%/app/panels/bettermap
 @dirrm %%WWWDIR%%/app/panels
+@dirrm %%WWWDIR%%/app/factories
 @dirrmtry %%WWWDIR%%/app/dashboards
 @dirrm %%WWWDIR%%/app/components
 @dirrmtry %%WWWDIR%%/app

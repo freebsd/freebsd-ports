@@ -1,6 +1,6 @@
 --- numpy/distutils/system_info.py.orig	2013-02-09 22:04:56.000000000 +0100
 +++ numpy/distutils/system_info.py	2013-03-22 21:01:34.000000000 +0100
-@@ -983,8 +983,8 @@
+@@ -995,8 +995,8 @@
      dir_env_var = 'ATLAS'
      _lib_names = ['f77blas', 'cblas']
      if sys.platform[:7] == 'freebsd':

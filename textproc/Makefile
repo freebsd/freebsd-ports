@@ -348,6 +348,7 @@
     SUBDIR += kmfl-varamozhi-malayalam
     SUBDIR += kmflcomp
     SUBDIR += kn-aspell
+    SUBDIR += kompare
     SUBDIR += ku-aspell
     SUBDIR += ky-aspell
     SUBDIR += l2a
@@ -367,6 +368,7 @@
     SUBDIR += libguess
     SUBDIR += libkmfl
     SUBDIR += libkolabxml
+    SUBDIR += libkomparediff2
     SUBDIR += liblingoteach
     SUBDIR += liblrdf
     SUBDIR += libmrss
@@ -504,8 +506,9 @@
     SUBDIR += p5-Devel-TraceSAX
     SUBDIR += p5-DocSet
     SUBDIR += p5-EBook-Tools
-    SUBDIR += p5-ElasticSearch
     SUBDIR += p5-ElasticSearch-SearchBuilder
+    SUBDIR += p5-ElasticSearch-legacy
+    SUBDIR += p5-Elasticsearch
     SUBDIR += p5-Excel-Template
     SUBDIR += p5-Excel-Writer-XLSX
     SUBDIR += p5-File-Inplace
@@ -1184,12 +1187,14 @@
     SUBDIR += py-qt4-xml
     SUBDIR += py-qt4-xmlpatterns
     SUBDIR += py-rdflib
+    SUBDIR += py-regex
     SUBDIR += py-reverend
     SUBDIR += py-rss2gen
     SUBDIR += py-rst2html5
     SUBDIR += py-rstyoutube
     SUBDIR += py-rxp
     SUBDIR += py-sgrep
+    SUBDIR += py-sparqlwrapper
     SUBDIR += py-sphinx
     SUBDIR += py-sphinxcontrib-adadomain
     SUBDIR += py-sphinxcontrib-bitbucket
@@ -1198,6 +1203,7 @@
     SUBDIR += py-syck
     SUBDIR += py-texttable
     SUBDIR += py-trans
+    SUBDIR += py-transifex-client
     SUBDIR += py-translationstring
     SUBDIR += py-tvgrab
     SUBDIR += py-twistedLore

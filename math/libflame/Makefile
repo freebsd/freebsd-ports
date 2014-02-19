@@ -205,7 +205,7 @@ CONFIGURE_ARGS+=	--enable-supermatrix
 CONFIGURE_ARGS+=	--disable-supermatrix
 .endif
 
-.if !(defined(USE_GCC) || defined(USE_FORTRAN) || !empty(CC:M*gcc4*))
+.if !(defined(USE_GCC) || !empty(CC:M*gcc4*))
 CONFIGURE_ARGS+=	--disable-autodetect-f77-ldflags \
 			--disable-autodetect-f77-name-mangling
 .endif

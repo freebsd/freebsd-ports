@@ -13,8 +13,7 @@ COMMENT=	SIP benchmarking and testing tool
 
 LICENSE=	GPLv2
 
-PLIST_FILES=	bin/sipp
-MAN1=		sipp.1
+PLIST_FILES=	bin/sipp man/man1/sipp.1.gz
 
 USES=		gmake
 CPP=		${CXX}
@@ -28,7 +27,6 @@ OPENSSL_DESC=	OpenSSL support (for digest auth and SIP over TLS)
 GSL_DESC=	GSL support (for statistical distributed pauses)
 PCAPPLAY_DESC=	RTP play support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGSL}
@@ -83,14 +81,14 @@ post-patch:
 .endif #defined(WITH_PCAPPLAY)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${FILESDIR}/sipp.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${FILESDIR}/sipp.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .if ${PORT_OPTIONS:MPCAPPLAY}
-	${MKDIR} ${DATADIR}/pcap
+	${MKDIR} ${STAGEDIR}${DATADIR}/pcap
 
 .for f in ${PCAP_FILES}
-	${INSTALL_DATA} ${WRKSRC}/pcap/${f} ${DATADIR}/pcap/${f}
+	${INSTALL_DATA} ${WRKSRC}/pcap/${f} ${STAGEDIR}${DATADIR}/pcap/${f}
 .endfor
 
 .endif #defined(WITH_PCAPPLAY)

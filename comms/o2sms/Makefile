@@ -20,17 +20,4 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=		aftsms.1 \
-		o2sms.1 \
-		meteorsms.1 \
-		threesms.1 \
-		vodasms.1
-MAN3=		WWW::SMS::IE::aftsms.3 \
-		WWW::SMS::IE::iesms.3 \
-		WWW::SMS::IE::o2sms.3 \
-		WWW::SMS::IE::meteorsms.3 \
-		WWW::SMS::IE::threesms.3 \
-		WWW::SMS::IE::vodasms.3
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

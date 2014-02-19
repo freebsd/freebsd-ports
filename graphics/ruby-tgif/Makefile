@@ -13,6 +13,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby extension library to draw Tgif graphics
 
+BROKEN=		Does not compile
+
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${TGIF_PORT}:build \
 		imake:${PORTSDIR}/devel/imake
 

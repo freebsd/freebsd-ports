@@ -41,6 +41,9 @@ CPPFLAGS+=	-DBR_NO_MACROS
 USE_GCC=	4.7+
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

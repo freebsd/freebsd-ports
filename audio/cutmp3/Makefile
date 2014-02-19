@@ -10,24 +10,20 @@ MASTER_SITES=	http://www.puchalla-online.de/ \
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A small and fast command line MP3 editor
 
-NO_STAGE=	yes
 USE_BZIP2=	yes
-MAN1=		${PORTNAME}.1
-MANCOMPRESSED=	yes
 
-PLIST_FILES=	bin/cutmp3
+PLIST_FILES=	bin/cutmp3 man/man1/cutmp3.1.gz
 
 PORTDOCS=	README README.timetable USAGE
 
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS 
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/Makefile
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}/
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

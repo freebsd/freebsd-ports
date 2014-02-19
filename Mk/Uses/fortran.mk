@@ -23,6 +23,7 @@ USE_BINUTILS=	yes
 F77=		gfortran${_GCC_VER}
 FC=		gfortran${_GCC_VER}
 FFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER}
+FCFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER}
 LDFLAGS+=	-Wl,-rpath=${LOCALBASE}/lib/gcc${_GCC_VER} \
 		-L${LOCALBASE}/lib/gcc${_GCC_VER}
 .elif ${fortran_ARGS} == ifort
@@ -34,7 +35,7 @@ FC=		${LOCALBASE}/intel_fc_80/bin/ifort
 IGNORE=		USES=fortran: invalid arguments: ${fortran_ARGS}
 .endif
 
-CONFIGURE_ENV+=	F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
-MAKE_ENV+=	F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}"
+CONFIGURE_ENV+=	F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}" FCFLAGS="${FCFLAGS}"
+MAKE_ENV+=	F77="${F77}" FC="${FC}" FFLAGS="${FFLAGS}" FCFLAGS="${FCFLAGS}"
 
 .endif

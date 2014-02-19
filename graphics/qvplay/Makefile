@@ -26,6 +26,9 @@ PORTDOCS=	FAQ.txt HISTORY PROTOCOL.eng PROTOCOL.txt \
 		README README.FreeBSD README.eng
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	zip-ada
-PORTVERSION=	45
+PORTVERSION=	46
 CATEGORIES=	archivers
 MASTER_SITES=	SF/unzip-ada/
 DISTNAME=	zipada${PORTVERSION}

@@ -22,8 +22,6 @@ ONLY_FOR_ARCHS_REASON=	Fails to compile: invokes i386 asm
 
 OPTIONS_DEFINE=DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e '/^CFLAGS/d' ${WRKSRC}/${MAKEFILE}
 
@@ -31,10 +29,7 @@ do-install:
 .for f in ${PLIST_FILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/${f:C/bin\///} ${STAGEDIR}${PREFIX}/bin
 .endfor
-
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

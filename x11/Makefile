@@ -263,6 +263,7 @@
     SUBDIR += rxvt
     SUBDIR += rxvt-devel
     SUBDIR += rxvt-unicode
+    SUBDIR += sakura
     SUBDIR += sbxkb
     SUBDIR += scripts
     SUBDIR += scrnsaverproto

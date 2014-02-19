@@ -22,5 +22,4 @@ PHP_MODNAME=	dav
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

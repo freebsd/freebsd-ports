@@ -17,7 +17,5 @@ GNU_CONFIGURE=	YES
 CPPFLAGS+=	-I${PREFIX}/include
 LDFLAGS+=	-L${PREFIX}/lib
 MAKE_ARGS=	RM="${RM} -f"
-MAN1=		wbemcli.1
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

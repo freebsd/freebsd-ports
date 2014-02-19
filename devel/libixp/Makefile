@@ -15,9 +15,6 @@ LDFLAGS+=	-L. -L${WRKSRC}/lib
 MAKE_ARGS=	PREFIX="${PREFIX}" CC="${CC} -c" LD="${CC}" \
 		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 
-MAN1=		ixpc.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|\.a|.so|g; s|(AR)|(LD) -shared -fPIC -o|' \
 		${WRKSRC}/mk/lib.mk ${WRKSRC}/mk/hdr.mk
@@ -29,17 +26,17 @@ post-patch:
 		${WRKSRC}/cmd/ixpc.c
 
 do-build:
-	cd ${WRKSRC}; ${MAKE};
+	cd ${WRKSRC}; ${MAKE_ENV} ${MAKE};
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/include/ixp.h ${PREFIX}/include
-	@${INSTALL_DATA} ${WRKSRC}/include/ixp_srvutil.h ${PREFIX}/include
-	@${INSTALL_PROGRAM} ${WRKSRC}/lib/libixp.so ${PREFIX}/lib/libixp.so.1
-	@${INSTALL_PROGRAM} ${WRKSRC}/lib/libixp_pthread.so \
-		${PREFIX}/lib/libixp_pthread.so.1
-	@${LN} -sf libixp.so.1 ${PREFIX}/lib/libixp.so
-	@${LN} -sf libixp_pthread.so.1 ${PREFIX}/lib/libixp_pthread.so
-	@${INSTALL_PROGRAM} ${WRKSRC}/cmd/ixpc.O ${PREFIX}/bin/ixpc
-	@${INSTALL_MAN} ${WRKSRC}/man/ixpc.1 ${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/include/ixp.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/include/ixp_srvutil.h ${STAGEDIR}${PREFIX}/include
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/libixp.so ${STAGEDIR}${PREFIX}/lib/libixp.so.1
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/libixp_pthread.so \
+		${STAGEDIR}${PREFIX}/lib/libixp_pthread.so.1
+	${LN} -sf libixp.so.1 ${STAGEDIR}${PREFIX}/lib/libixp.so
+	${LN} -sf libixp_pthread.so.1 ${STAGEDIR}${PREFIX}/lib/libixp_pthread.so
+	${INSTALL_PROGRAM} ${WRKSRC}/cmd/ixpc.O ${STAGEDIR}${PREFIX}/bin/ixpc
+	${INSTALL_MAN} ${WRKSRC}/man/ixpc.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

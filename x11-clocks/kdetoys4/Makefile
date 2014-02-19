@@ -1,26 +1,28 @@
-# Created by: Martin Wilke <miwi@FreeBSD.org>
 # $FreeBSD$
 
 PORTNAME=	kdetoys
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-clocks kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+DISTFILES=	#
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Collection of entertaining programs for KDE
+COMMENT=	KDE miscellaneous applications (meta port)
 
-LATEST_LINK=	${PORTNAME}4
+USE_KDE4=	kdeprefix
+NO_BUILD=	yes
+NO_INSTALL=	yes
+NO_MTREE=	yes
 
-USE_KDE4=	kdehier kdelibs kdeprefix workspace automoc4
-USES=		cmake:outsource
-USE_QT4=	qmake_build moc_build rcc_build uic_build
-USE_XORG=	x11
-USE_XZ=		yes
+OPTIONS_DEFINE=	AMOR KTEATIME KTUX
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
-MAN6=	amor.6
+AMOR_DESC=		Small animation which sits on top of active window
+AMOR_RUN_DEPENDS=	${KDE4_PREFIX}/bin/amor:${PORTSDIR}/x11-clocks/amor
 
-NO_STAGE=	yes
+KTEATIME_DESC=		Handy timer for steeping tea
+KTEATIME_RUN_DEPENDS=	${KDE4_PREFIX}/bin/kteatime:${PORTSDIR}/x11-clocks/kteatime
+
+KTUX_DESC=		Tux-in-a-Spaceship screen saver
+KTUX_RUN_DEPENDS=	${KDE4_PREFIX}/bin/ktux:${PORTSDIR}/x11-clocks/ktux
+
 .include <bsd.port.mk>

@@ -4,3 +4,5 @@ lib/libvar.a
 lib/libvar.la
 lib/libvar.so
 lib/libvar.so.11
+man/man1/var-config.1.gz
+man/man3/var.3.gz

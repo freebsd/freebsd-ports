@@ -15,22 +15,20 @@ COMMENT=	Calendar application
 
 LICENSE=	GPLv2
 
-USE_TK=		yes
+USES=		tk
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tclconfig=${TCL_LIBDIR} \
 		--with-tclhdir=${TCL_INCLUDEDIR} \
 		--with-tclsh=${TCLSH} \
 		--with-tkconfig=${TK_LIBDIR} \
 		--with-tkhdir=${TK_INCLUDEDIR}
+MAKE_ENV+=	STAGEDIR=${STAGEDIR}
 
-MAN1=		ical.1
-
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,tcl->result,Tcl_GetStringResult(tcl),' \
 		${WRKSRC}/ical.C
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/${DISTNAME}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${DISTNAME}
 
 .include <bsd.port.mk>

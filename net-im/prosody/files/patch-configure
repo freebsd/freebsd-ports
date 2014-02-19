@@ -1,10 +1,17 @@
---- ./configure.orig	2011-04-05 15:47:05.000000000 +0200
-+++ ./configure	2011-04-10 18:09:24.000000000 +0200
-@@ -2,7 +2,6 @@
+--- configure.orig	2013-12-08 19:05:39.000000000 +0100
++++ configure	2014-02-06 22:21:15.000000000 +0100
+@@ -13,11 +13,11 @@
+ IDN_LIB=idn
+ ICU_FLAGS="-licui18n -licudata -licuuc"
+ OPENSSL_LIB=crypto
+-CC=gcc
++CC=cc
+ CXX=g++
+-LD=gcc
++LD=cc
+ RUNWITH=lua
+-EXCERTS=yes
++EXCERTS=no
  
- # Defaults
- 
--PREFIX=/usr/local
- SYSCONFDIR="$PREFIX/etc/prosody"
- DATADIR="$PREFIX/var/lib/prosody"
- LUA_SUFFIX=""
+ CFLAGS="-fPIC -Wall"
+ LDFLAGS="-shared"

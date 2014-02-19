@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	fDOMDocument
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.3
 CATEGORIES=	devel www pear
 MASTER_SITES=	http://pear.netpirates.net/get/
 PKGNAMEPREFIX=	pear-TheSeer_

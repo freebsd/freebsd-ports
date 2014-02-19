@@ -1,0 +1,15 @@
+Namecoin is an open source decentralized key/value registration and transfer
+system based on Bitcoin technology (a decentralized cryptocurrency).
+
+It allows you to:
+
+    * Securely register and transfer arbitrary names (keys), no possible
+      censorship!
+    * Attach values (data) to the names (currently up to 520 bytes, will be
+      extended)
+    * Trade and transact namecoins, the digital currency NMC
+
+To register a name, you must own some namecoins (NMC, the internal
+cryptocurrency used by the software).
+
+WWW: http://namecoin.info/

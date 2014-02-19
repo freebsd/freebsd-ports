@@ -470,6 +470,7 @@
     SUBDIR += kiriki
     SUBDIR += kjumpingcube
     SUBDIR += klavaro
+    SUBDIR += klickety
     SUBDIR += klines
     SUBDIR += klondike
     SUBDIR += kmahjongg
@@ -583,6 +584,7 @@
     SUBDIR += madbomber
     SUBDIR += maelstrom
     SUBDIR += magiccube4d
+    SUBDIR += magicmaze
     SUBDIR += magicor
     SUBDIR += mahjong
     SUBDIR += maitretarot
@@ -731,6 +733,7 @@
     SUBDIR += pengupop
     SUBDIR += phalanx
     SUBDIR += phlipple
+    SUBDIR += picmi
     SUBDIR += pinball
     SUBDIR += pingus
     SUBDIR += pink-pony
@@ -768,7 +771,6 @@
     SUBDIR += py-pychess
     SUBDIR += py-sgflib
     SUBDIR += py-sgfsummary
-    SUBDIR += py-ski
     SUBDIR += pyawale
     SUBDIR += pycadia
     SUBDIR += pyching
@@ -894,6 +896,7 @@
     SUBDIR += simsu
     SUBDIR += simutrans
     SUBDIR += sjeng
+    SUBDIR += ski
     SUBDIR += sl
     SUBDIR += slashem-tty
     SUBDIR += slump

@@ -19,7 +19,7 @@ XYMONLOGDIR = /var/log/xymon
 # Where to install manpages
 MANROOT = ${PREFIX}/man
 # How to run fping or xymonping
-FPING = xymonping
+FPING = fping
 
 # Username running xymon
 #XYMONUSER = nobody
@@ -38,6 +38,12 @@ XYMONCGIURL = /xymon-cgi
 SECUREXYMONCGIURL = /xymon-seccgi
 # Webserver group-ID
 HTTPDGID=80
+
+# C-ARES settings
+SYSTEMCARES = yes
+CARESINCDIR = -I${LOCALBASE}/include
+CARESLIBS = -L${LOCALBASE}/lib -lcares
+RPATHVAL += ${LOCALBASE}/lib
 
 # PCRE settings
 PCREINCDIR = -I${LOCALBASE}/include

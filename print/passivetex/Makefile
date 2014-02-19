@@ -42,6 +42,9 @@ CLASS_FILES=	dummyels.sty fotex.xmt fotex.sty \
 		dummyels.sty nomulticol.sty
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 do-install:

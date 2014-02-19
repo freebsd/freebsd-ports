@@ -29,6 +29,9 @@ DESKTOP_ENTRIES="M17N-IM Configuration" \
 		true
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -19,5 +19,4 @@ USE_GCC=	yes
 
 CXXFLAGS+=	-include wchar.h
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

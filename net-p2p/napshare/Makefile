@@ -10,9 +10,8 @@ MASTER_SITES=	SF/${PORTNAME}/NapShare%20V${PORTVERSION}/Linux
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK based Gnutella client
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

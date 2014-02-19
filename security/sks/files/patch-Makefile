@@ -1,0 +1,15 @@
+--- Makefile.orig	2012-10-07 19:59:39.000000000 +0000
++++ Makefile
+@@ -126,10 +126,8 @@ keyMerge.cmx: keyMerge.ml
+ # Special targets
+ 
+ install:
+-	mkdir -p $(PREFIX)/bin
+-	install sks_build.sh sks sks_add_mail $(PREFIX)/bin
+-	mkdir -p $(MANDIR)/man8
+-	install sks.8.gz $(MANDIR)/man8
++	install sks_build.sh sks sks_add_mail $(DESTDIR)$(PREFIX)/bin
++	install sks.8.gz $(DESTDIR)$(MANDIR)/man8
+ 
+ install.bc:
+ 	mkdir -p $(PREFIX)/bin

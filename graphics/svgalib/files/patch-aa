@@ -17,8 +17,8 @@
  # NOTE: This directory must exist when you start the install.
 -TOPDIR=
 -prefix = $(TOPDIR)/usr/local
-+TOPDIR=$(PREFIX)
-+prefix = $(PREFIX)
++TOPDIR=$(DESTDIR)$(PREFIX)
++prefix = $(DESTDIR)$(PREFIX)
  exec_prefix = $(prefix)
  
  # Directory where the shared stubs and static library will be installed.

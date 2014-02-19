@@ -15,7 +15,6 @@ RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
-LRZSZ_DESC=	Install X/Y/ZMODEM protocol handlers
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 

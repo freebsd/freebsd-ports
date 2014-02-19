@@ -18,6 +18,4 @@ GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-DOCS_EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-disable-portdocs
-
 .include <bsd.port.mk>

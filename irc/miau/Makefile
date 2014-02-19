@@ -14,7 +14,6 @@ USES=			iconv
 GNU_CONFIGURE=		yes
 
 INFO=			miau
-MAN1=			miau.1
 
 CONFIGURE_ARGS=		--enable-dccbounce \
 			--enable-automode \
@@ -35,15 +34,12 @@ CPPFLAGS+=		-I${LOCALBASE}/include
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's,\$$datadir/doc/miau/examples,${EXAMPLESDIR},g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
-.if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/ChangeLog ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

@@ -46,4 +46,8 @@ BJAM_ARGS+=	inlining=full
 .endif
 
 post-patch:
+.if defined(USE_BINUTILS)
+	@${ECHO} "using ${BOOST_TOOLSET} : : ${CXX} : <linkflags>-B${LOCALBASE}/bin ;" >> ${WRKSRC}/tools/build/v2/user-config.jam
+.else
 	@${ECHO} "using ${BOOST_TOOLSET} : : ${CXX} ;" >> ${WRKSRC}/tools/build/v2/user-config.jam
+.endif

@@ -1,0 +1,26 @@
+--- Xresources/Makefile.in.orig	2001-03-10 15:32:46.000000000 +0100
++++ Xresources/Makefile.in	2014-02-14 10:40:45.000000000 +0100
+@@ -41,7 +41,7 @@
+ includedir = @includedir@
+ oldincludedir = /usr/include
+ 
+-DESTDIR =
++DESTDIR ?=
+ 
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -235,10 +235,10 @@
+ 
+ 
+ install-data-hook:
+-		$(mkinstalldirs) $(nldir) $(frdir) $(endir)
+-		$(INSTALL_DATA) $(srcdir)/Oleo.nl $(nldir)/Oleo
+-		$(INSTALL_DATA) $(srcdir)/Oleo.fr $(frdir)/Oleo
+-		$(INSTALL_DATA) $(srcdir)/Oleo.en $(endir)/Oleo
++		$(mkinstalldirs) $(DESTDIR)$(nldir) $(DESTDIR)$(frdir) $(DESTDIR)$(endir)
++		$(INSTALL_DATA) $(srcdir)/Oleo.nl $(DESTDIR)$(nldir)/Oleo
++		$(INSTALL_DATA) $(srcdir)/Oleo.fr $(DESTDIR)$(frdir)/Oleo
++		$(INSTALL_DATA) $(srcdir)/Oleo.en $(DESTDIR)$(endir)/Oleo
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

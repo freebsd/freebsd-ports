@@ -1,9 +1,12 @@
---- CMakeLists.txt~	2012-06-29 16:45:48.000000000 -0300
-+++ CMakeLists.txt	2012-06-29 16:46:54.000000000 -0300
-@@ -6,8 +6,8 @@
+--- CMakeLists.txt.orig	2013-07-09 23:19:54.000000000 +0000
++++ CMakeLists.txt	2013-08-12 23:11:31.141329406 +0000
+@@ -8,10 +8,10 @@
  
- add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
- 
+ ## Compiler flags
+ if(CMAKE_COMPILER_IS_GNUCXX)
+-    set(CMAKE_C_FLAGS "-std=c99")   ## ALSA no longer compiles with -std=c90, see https://bugzilla.novell.com/show_bug.cgi?id=817077
++    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99")   ## ALSA no longer compiles with -std=c90, see https://bugzilla.novell.com/show_bug.cgi?id=817077
+ endif()
 -find_package(Alsa)
 -alsa_configure_file(${CMAKE_CURRENT_BINARY_DIR}/config-alsa.h)
 +find_file(CONFIG_ALSA_H_CMAKE config-alsa.h.cmake ${CMAKE_MODULE_PATH})

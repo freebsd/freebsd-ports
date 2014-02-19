@@ -3,7 +3,7 @@
 
 PORTNAME=	tvheadend
 PORTVERSION=	3.4.0.20130726.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://people.freebsd.org/~decke/distfiles/
 DISTNAME=	decke-${PORTNAME}-8a8c1a8
@@ -33,14 +33,19 @@ GROUPS=		${TVHGROUP}
 SUB_LIST+=	TVHUSER="${TVHUSER}" \
 		TVHGROUP="${TVHGROUP}"
 
-OPTIONS_DEFINE=	AVAHI DVBCSA FFMPEG
-OPTIONS_DEFAULT=DVBCSA FFMPEG
+OPTIONS_DEFINE=	AVAHI DVBCSA
+OPTIONS_DEFAULT=DVBCSA
 DVBCSA_DESC=	Replace internal ffdecsa with dvbcsa
 
 CONFIGURE_ENV+=	PLATFORM=freebsd
-CONFIGURE_ARGS+=--disable-dvbscan --disable-zlib
+CONFIGURE_ARGS+=--disable-dvbscan --disable-zlib --disable-libav
 CFLAGS+=	-I${LOCALBASE}/include -Wno-conversion -Wno-int-to-pointer-cast
 LDFLAGS+=	-L${LOCALBASE}/lib -lexecinfo -lssl -lz
+
+AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
+
+DVBCSA_LIB_DEPENDS=	libdvbcsa.so:${PORTSDIR}/multimedia/libdvbcsa
+DVBCSA_CONFIGURE_ENABLE=	dvbcsa
 
 .include <bsd.port.pre.mk>
 
@@ -57,16 +62,6 @@ CFLAGS+=	-D__WORDSIZE=32
 CFLAGS+=	-Wno-microsoft \
 		-Wno-tautological-constant-out-of-range-compare
 .endif
-
-AVAHI_LIB_DEPENDS=	libavahi-client.so:${PORTSDIR}/net/avahi-app
-
-DVBCSA_LIB_DEPENDS=	libdvbcsa.so:${PORTSDIR}/multimedia/libdvbcsa
-DVBCSA_CONFIGURE_ON=	--enable-dvbcsa
-DVBCSA_CONFIGURE_OFF=	--disable-dvbcsa
-
-FFMPEG_LIB_DEPENDS=	libavcodec.so:${PORTSDIR}/multimedia/ffmpeg
-FFMPEG_CONFIGURE_ON=	--enable-libav
-FFMPEG_CONFIGURE_OFF=	--disable-libav
 
 post-patch:
 	@${REINPLACE_CMD} 's|-g||' \

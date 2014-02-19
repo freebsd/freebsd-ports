@@ -1,7 +1,0 @@
-%%SCRIPTDIR%%/pkgIndex.tcl
-%%SCRIPTDIR%%/tls.tcl
-@dirrm %%SCRIPTDIR%%
-lib/%%SHLIB_NAME%%
-lib/%%SHLIB_LINK%%
-%%PORTDOCS%%share/doc/tls/tls.htm
-%%PORTDOCS%%@dirrm share/doc/tls

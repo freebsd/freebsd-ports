@@ -19,6 +19,9 @@ LDFLAGS+=	-lintl -L${LOCALBASE}/lib
 MAN8=		ap-trapd.8 ap-mrtg.8 ap-config.8
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

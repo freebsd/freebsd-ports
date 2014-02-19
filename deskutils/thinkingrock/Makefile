@@ -3,7 +3,7 @@
 
 PORTNAME=	thinkingrock
 PORTVERSION=	2.2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils java
 MASTER_SITES=	SF/${PORTNAME}/ThinkingRock/TR%20${PORTVERSION}
 DISTNAME=	tr-${PORTVERSION}
@@ -20,8 +20,6 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/bin/tr
 	@${REINPLACE_CMD} -e \
@@ -33,14 +31,10 @@ post-patch:
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
 	@${CP} -r ${WRKSRC}/* ${STAGEDIR}${PREFIX}/${PORTNAME}
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${PREFIX}/${PORTNAME}
-	@${LN} -sf ${STAGEDIR}${PREFIX}/${PORTNAME}/bin/tr ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	@${LN} -sf ${PREFIX}/${PORTNAME}/bin/tr ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${ECHO} bin/${PORTNAME} >> ${TMPPLIST}
 	@(cd ${WRKSRC}; ${FIND} . ! -type d) | ${SORT} | ${SED} "s|^.|${PORTNAME}|" >> ${TMPPLIST}
 	@(cd ${WRKSRC}; ${FIND} . -type d) | ${SORT} -r | ${SED} "s|^.|@dirrm ${PORTNAME}|" >> ${TMPPLIST}
 	@(cd ${WRKSRC}; ${FIND} . -type d -empty) | ${SORT} -r | ${SED} "s|^.|@exec mkdir -p ${PORTNAME}|" >> ${TMPPLIST}
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

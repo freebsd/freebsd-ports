@@ -3,6 +3,7 @@
 
 PORTNAME=	html5lib
 PORTVERSION=	0.95
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	GOOGLE_CODE \
 		CHEESESHOP
@@ -13,8 +14,8 @@ COMMENT=	Python based HTML parser based on the HTML5 spec
 
 LICENSE=	MIT
 
-USE_PYTHON=	2
-USE_PYDISTUTILS=	easy_install
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

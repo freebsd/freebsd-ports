@@ -15,6 +15,8 @@ USES=		iconv
 
 SBINS=		vmw vmshrink vmftp
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

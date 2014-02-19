@@ -1,5 +1,7 @@
 bin/mkpreview
 bin/wmakerconf
+man/man1/mkpreview.1.gz
+man/man1/wmakerconf.1.gz
 share/applications/wmakerconf.desktop
 share/locale/ca/LC_MESSAGES/wmakerconf.mo
 share/locale/da/LC_MESSAGES/wmakerconf-data.mo

@@ -3,7 +3,7 @@
 
 PORTNAME=	libdjbdns
 PORTVERSION=	1.05
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://smarden.org/pape/djb/manpages/
 DISTNAME=	djbdns-pd-${PORTVERSION}
@@ -11,8 +11,9 @@ DISTNAME=	djbdns-pd-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Public domain DNS client library
 
+USES=		gmake
+
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
 ALL_TARGET=	it
 
 LIBS=		libdjbdns.a libdjbdns.so.1
@@ -22,11 +23,10 @@ INCLUDES=	alloc.h byte.h case.h dns.h env.h error.h fmt.h \
 		socket.h str.h stralloc.h tai.h taia.h uint16.h \
 		uint32.h uint64.h
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/include/libdjbdns
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/libdjbdns
 	cd ${WRKSRC} && \
-		${INSTALL_DATA} ${LIBS} ${PREFIX}/lib && \
-		${INSTALL_DATA} ${INCLUDES} ${PREFIX}/include/libdjbdns
+		${INSTALL_LIB} ${LIBS} ${STAGEDIR}${PREFIX}/lib && \
+		${INSTALL_DATA} ${INCLUDES} ${STAGEDIR}${PREFIX}/include/libdjbdns
 
 .include <bsd.port.mk>

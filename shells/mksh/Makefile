@@ -14,6 +14,8 @@ COMMENT=	MirBSD Korn Shell
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+OPTIONS_DEFINE=	EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 do-build:

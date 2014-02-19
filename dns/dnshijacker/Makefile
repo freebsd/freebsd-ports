@@ -18,11 +18,8 @@ PLIST_FILES=	bin/dnshijacker
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet10-config
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	README
-.endif
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && \
 	${CC} ${PORTNAME}.c ${CFLAGS} -I${LOCALBASE}/include \
@@ -30,10 +27,8 @@ do-build:
 	`${LIBNET_CONFIG} --cflags` -o ${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dnshijacker ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/dnshijacker ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

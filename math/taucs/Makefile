@@ -16,7 +16,7 @@ COMMENT=	C library of sparse linear solvers
 LIB_DEPENDS=	metis.1:${PORTSDIR}/math/metis4
 
 HAS_CONFIGURE=	yes
-USE_FORTRAN=	yes
+USES=		fortran
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -14,19 +14,14 @@ LIB_DEPENDS=	libtokyocabinet.so:${PORTSDIR}/databases/tokyocabinet
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_RC_SUBR=	ttserver
-
-MAN1=		tcrmgr.1 tcrmttest.1 tcrtest.1 ttserver.1 ttulmgr.1 ttultest.1
-MAN3=		tcrdb.3 tculog.3 ttutil.3
-MAN8=		ttservctl.8
 
 OPTIONS_DEFINE=	LUA
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 CFLAGS+=	-I${LOCALBASE}/include
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLUA}

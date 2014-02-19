@@ -9,15 +9,14 @@ MASTER_SITES=	SF
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Metadata injector for FLV files
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 PLIST_FILES=	bin/yamdi
 
-NO_STAGE=	yes
 do-build:
 	cd ${WRKSRC} && ${CC} ${CFLAGS} yamdi.c -o yamdi
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/yamdi ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/yamdi ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

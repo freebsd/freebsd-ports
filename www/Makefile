@@ -391,6 +391,7 @@
     SUBDIR += libecap
     SUBDIR += libepc
     SUBDIR += libgtkhtml
+    SUBDIR += libhpack
     SUBDIR += libhtp-suricata
     SUBDIR += libmicrohttpd
     SUBDIR += libsocialweb
@@ -573,6 +574,7 @@
     SUBDIR += node
     SUBDIR += node-devel
     SUBDIR += nostromo
+    SUBDIR += npapi-vlc
     SUBDIR += npapi-xine
     SUBDIR += npc
     SUBDIR += npm
@@ -1072,6 +1074,7 @@
     SUBDIR += p5-Mojo-Server-FastCGI
     SUBDIR += p5-MojoMojo
     SUBDIR += p5-Mojolicious
+    SUBDIR += p5-Mojolicious-Plugin-Authentication
     SUBDIR += p5-Mojolicious-Plugin-Database
     SUBDIR += p5-Mojolicious-Plugin-Mongodb
     SUBDIR += p5-Mojolicious-Plugin-YamlConfig
@@ -1411,6 +1414,7 @@
     SUBDIR += pecl-sphinx
     SUBDIR += pecl-swish
     SUBDIR += pecl-twig
+    SUBDIR += pecl-varnish
     SUBDIR += pecl-yaf
     SUBDIR += pecl-yar
     SUBDIR += pecl-zendopcache
@@ -1877,7 +1881,6 @@
     SUBDIR += rubygem-webrobots
     SUBDIR += rubygem-websocket
     SUBDIR += rubygem-yapra
-    SUBDIR += runsomebrowser
     SUBDIR += sahi
     SUBDIR += sakai
     SUBDIR += samidare
@@ -1993,6 +1996,7 @@
     SUBDIR += trac-hierwiki
     SUBDIR += trac-iniadmin
     SUBDIR += trac-keywords
+    SUBDIR += trac-keywordsecretticket
     SUBDIR += trac-ldap
     SUBDIR += trac-macropost
     SUBDIR += trac-mastertickets
@@ -2104,6 +2108,7 @@
     SUBDIR += wadcomblog
     SUBDIR += web2ldap
     SUBDIR += webalizer
+    SUBDIR += webbrowser
     SUBDIR += webcalendar
     SUBDIR += webcalendar-devel
     SUBDIR += webcheck

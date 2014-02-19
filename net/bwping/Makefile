@@ -17,6 +17,9 @@ MAN8=		bwping.8
 PLIST_FILES=	sbin/bwping
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	IPV6 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIPV6}

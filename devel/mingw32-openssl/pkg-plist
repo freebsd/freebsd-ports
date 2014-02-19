@@ -10,6 +10,7 @@ mingw32/include/openssl/bn.h
 mingw32/include/openssl/buffer.h
 mingw32/include/openssl/camellia.h
 mingw32/include/openssl/cast.h
+mingw32/include/openssl/cmac.h
 mingw32/include/openssl/cms.h
 mingw32/include/openssl/comp.h
 mingw32/include/openssl/conf.h
@@ -57,6 +58,8 @@ mingw32/include/openssl/rsa.h
 mingw32/include/openssl/safestack.h
 mingw32/include/openssl/seed.h
 mingw32/include/openssl/sha.h
+mingw32/include/openssl/srp.h
+mingw32/include/openssl/srtp.h
 mingw32/include/openssl/ssl.h
 mingw32/include/openssl/ssl2.h
 mingw32/include/openssl/ssl23.h

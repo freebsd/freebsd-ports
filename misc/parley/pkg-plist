@@ -102,7 +102,10 @@ share/apps/parley/plugins/mwclient/simplejson/__init__.py
 share/apps/parley/plugins/mwclient/simplejson/decoder.py
 share/apps/parley/plugins/mwclient/simplejson/encoder.py
 share/apps/parley/plugins/mwclient/simplejson/jsonfilter.py
+share/apps/parley/plugins/mwclient/simplejson/ordered_dict.py
 share/apps/parley/plugins/mwclient/simplejson/scanner.py
+share/apps/parley/plugins/mwclient/simplejson/tool.py
+share/apps/parley/plugins/mwclient/upload.py
 share/apps/parley/plugins/wiktionary_sound.desktop
 share/apps/parley/plugins/wiktionary_sound.py
 share/apps/parley/practicesummaryui.rc
@@ -146,7 +149,6 @@ share/doc/HTML/en/parley/Parley_create_new_exercise_collective_names7.png
 share/doc/HTML/en/parley/Parley_create_new_exercise_collective_names8.png
 share/doc/HTML/en/parley/Parley_document_properties.png
 share/doc/HTML/en/parley/Parley_edit_comparison_form_1.png
-share/doc/HTML/en/parley/Parley_edit_comparison_form_2.png
 share/doc/HTML/en/parley/Parley_edit_comparison_form_3.png
 share/doc/HTML/en/parley/Parley_edit_conjugation_1.png
 share/doc/HTML/en/parley/Parley_edit_conjugation_2.png
@@ -184,6 +186,7 @@ share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_003.png
 share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_004.png
 share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_005.png
 share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_006.png
+share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_006b.png
 share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_007.png
 share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_008.png
 share/doc/HTML/en/parley/Parley_trainer_eng-deu_0-9-4_009.png

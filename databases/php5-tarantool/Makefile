@@ -26,6 +26,4 @@ TR_VER=		20131031
 
 CONFIGURE_ARGS+=	--with-tarantool
 
-NO_STAGE=	yes
-
 .include <bsd.port.mk>

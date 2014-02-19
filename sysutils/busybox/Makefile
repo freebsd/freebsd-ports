@@ -32,6 +32,8 @@ USES=		compiler:nestedfct gmake
 
 PLIST_FILES=	bin/busybox
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

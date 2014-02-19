@@ -9,11 +9,11 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://www.servlets.com/cos/ \
 		http://www.oreilly.com.tw/bookcode/
 DISTNAME=	${PORTNAME}-05Nov2002
+EXTRACT_SUFX=	.zip
 
 MAINTAINER=	java@FreeBSD.org
-COMMENT=	The O\'Reilly package of utility classes for servlet developers
+COMMENT=	The O'Reilly package of utility classes for servlet developers
 
-USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
 NO_BUILD=	yes
@@ -21,12 +21,9 @@ RESTRICTED=	Special conditions apply for commercial use, see licence
 DATAFILES=	readme.txt license.txt doc
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/lib/cos.jar ${JAVAJARDIR}/
-	@cd ${WRKSRC} \
-	  && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} \; \
-	  && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
-	@${INSTALL_DATA} ${WRKSRC}/upload.war ${DATADIR}/doc
+	@${INSTALL_DATA} ${WRKSRC}/lib/cos.jar ${STAGEDIR}${JAVAJARDIR}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${DATAFILES}" ${STAGEDIR}${DATADIR}
+	@${INSTALL_DATA} ${WRKSRC}/upload.war ${STAGEDIR}${DATADIR}/doc
 
 .include <bsd.port.mk>

@@ -3,19 +3,19 @@
 
 PORTNAME=	gnubiff
 PORTVERSION=	2.2.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	tdb@FreeBSD.org
-COMMENT=	A mail notification program for Gnome
+COMMENT=	Mail notification program for Gnome
 
 OPTIONS_DEFINE=	NLS
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+LIB_DEPENDS=	libpopt.so:${PORTSDIR}/devel/popt
 
 USE_GNOME=	intlhack libglade2 esound
-USES=		fam gmake pkgconfig
+USES=		fam gmake pathfix pkgconfig
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -24,7 +24,6 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 # /usr/local/include/openssl/sha.h:173: error: ISO C++ does not support `long long'
 CXXFLAGS+=	"-Wno-long-long"
 
-MAN1=		gnubiff.1
 INFO=		gnubiff
 
 .include <bsd.port.options.mk>
@@ -42,22 +41,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
 .endif
 
-# This application can dock in the GNOME panel, or it can not.
-# Only install support if gnomepanel is already installed.
-WANT_GNOME=	yes
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mgnomepanel}!=""
-USE_GNOME+=		gnomepanel gconf2 gnomeprefix gnomehack
-PKGNAMESUFFIX+=		-gnome
-PLIST_SUB+=		BONOBODIR="libdata/bonobo"
-PLIST_SUB+=		WITH_GNOME=""
-.else
 CONFIGURE_ARGS+=	--disable-gnome
-PLIST_SUB+=		BONOBODIR="lib/bonobo"
-PLIST_SUB+=		WITH_GNOME="@comment "
-.endif
+PLIST_SUB+=		BONOBODIR="libdata/bonobo"
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

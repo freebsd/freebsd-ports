@@ -4,11 +4,8 @@ CATEGORIES=	mail ipv6
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-WITH_TLS=	yes
-WITH_SASL=	yes
-WITH_SASLAUTHD=	yes
-SENDMAIL_PORT?=		sendmail
-MASTERDIR?=	${.CURDIR}/../${SENDMAIL_PORT}
+OPTIONS_SET+=	TLS SASL SASLAUTHD
+MASTERDIR?=	${.CURDIR}/../sendmail
 
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"

@@ -19,13 +19,10 @@ LIB_DEPENDS=	libao.so:${PORTSDIR}/audio/libao \
 		libjson.so:${PORTSDIR}/devel/json-c \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-MAN1=		pianobar.1
-MAN_COMPRESSED=	no
-
-PLIST_FILES=	bin/pianobar
+PLIST_FILES=	bin/pianobar \
+		man/man1/pianobar.1.gz
 
 USES=		gmake pkgconfig
-NO_STAGE=	yes
 USE_BZIP2=	yes
 MAKE_ARGS+=	CC="${CC}" PREFIX="${PREFIX}"
 

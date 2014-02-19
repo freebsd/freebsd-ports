@@ -6,4 +6,4 @@ FreeBSD Port Tools includes the following commands:
 - port submit: submit a PR with new port, or port change/update
 - port test: automate testing a new port or a port update
 
-WWW: http://sourceforge.net/projects/porttools/
+WWW: http://github.com/xmj/porttools/

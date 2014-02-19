@@ -9,6 +9,9 @@ MASTER_SITES=	http://fetchyahoo.twizzler.org/
 MAINTAINER=	chalpin@cs.wisc.edu
 COMMENT=	Download e-mail from a Yahoo account to a Berkeley mailbox
 
+DEPRECATED=	Yahoo classic mail interface is discontinued, so this port is permanently broken
+EXPIRATION_DATE=	2014-03-09
+
 RUN_DEPENDS=	\
 	p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
 	p5-MIME-Tools>=0:${PORTSDIR}/mail/p5-MIME-Tools \

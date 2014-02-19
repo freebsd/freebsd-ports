@@ -298,7 +298,7 @@ exit $rc;
 sub wanted {
     my ($dev,$ino,$mode,$nlink,$uid,$gid);
 
-    if ((($dev,$ino,$mode,$nlink,$uid,$gid) = lstat($_)) && -f _)
+    if ((($dev,$ino,$mode,$nlink,$uid,$gid) = lstat($_)) && ! -d _)
     {
 	# only record clean names
 	if ($_ =~ $UNTAINT and $1) {
@@ -405,6 +405,13 @@ as sh, ash, ksh, bash):
 L<pkg_info>(8), L<portmaster>(8), L<portupgrade>(8), L<pkg_which>(8)
 
 =head1 HISTORY
+
+0.4.1 2014-02-11
+  - do not require files given on command line are regular files,
+    but accept any non-directory (for instance, symlinks).
+
+    Workaround for previous versions: use --no-find if you intend to
+    look up non-regular files.
 
 0.4.0 2013-11-28
   - support pkgNG. Known issue is that pkg which returns bogus exit

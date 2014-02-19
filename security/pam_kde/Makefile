@@ -3,7 +3,6 @@
 PORTNAME=	pam_kde
 PORTVERSION=	1.0
 CATEGORIES=	security kde
-MASTER_SITES=	# empty
 DISTFILES=	# none
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,18 +15,9 @@ PLIST_FILES=	etc/pam.d/kde
 OPTIONS_DEFINE=	AUTOLOGIN
 OPTIONS_DEFAULT=	AUTOLOGIN
 AUTOLOGIN_DESC=	Install module for automatic login
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MAUTOLOGIN}
-PLIST_FILES+=	etc/pam.d/kde-np
-.endif
+AUTOLOGIN_PLIST_FILES=	etc/pam.d/kde-np
 
 do-install:
-	${INSTALL_DATA} ${FILESDIR}/kde ${PREFIX}/etc/pam.d
-.if ${PORT_OPTIONS:MAUTOLOGIN}
-	${INSTALL_DATA} ${FILESDIR}/kde-np ${PREFIX}/etc/pam.d
-.endif
+	${INSTALL_DATA} ${PLIST_FILES:S,etc/pam.d,${FILESDIR},} ${STAGEDIR}${PREFIX}/etc/pam.d
 
 .include <bsd.port.mk>

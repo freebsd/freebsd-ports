@@ -1,0 +1,33 @@
+--- drivers/dahdi/dahdi_dynamic_eth.c.orig	2014-02-09 13:10:00.000000000 +0700
++++ drivers/dahdi/dahdi_dynamic_eth.c	2014-02-09 13:10:34.000000000 +0700
+@@ -191,10 +191,10 @@
+ 		dev = z->dev;
+ 		spin_unlock_irqrestore(&zlock, flags);
+ #if defined(__FreeBSD__)
+-		MGETHDR(m, M_DONTWAIT, MT_DATA);
++		MGETHDR(m, M_NOWAIT, MT_DATA);
+ 		if (m != NULL) {
+ 			if (sizeof(eh) + sizeof(zh) + msglen >= MINCLSIZE) {
+-				MCLGET(m, M_DONTWAIT);
++				MCLGET(m, M_NOWAIT);
+ 			}
+ 
+ 			/* copy ethernet header */
+--- drivers/dahdi/dahdi_dynamic_ethmf.c.orig	2014-02-09 13:10:51.000000000 +0700
++++ drivers/dahdi/dahdi_dynamic_ethmf.c	2014-02-09 13:11:10.000000000 +0700
+@@ -494,13 +494,13 @@
+ 		}
+ 
+ #if defined(__FreeBSD__)
+-		MGETHDR(m, M_DONTWAIT, MT_DATA);
++		MGETHDR(m, M_NOWAIT, MT_DATA);
+ 		if (m == NULL) {
+ 			rcu_read_unlock();
+ 			ethmf_errors_inc();
+ 			return;
+ 		}
+-		MCLGET(m, M_DONTWAIT);
++		MCLGET(m, M_NOWAIT);
+ 
+ 		/* copy ethernet header and reserve space for ztdeth header */
+ 		bcopy(dev->dev_addr, &eh.ether_shost, sizeof(eh.ether_shost));

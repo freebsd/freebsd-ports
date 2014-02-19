@@ -2,17 +2,15 @@
 
 PORTNAME=	pykde4
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel kde python
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python bindings for KDE
 
-LIB_DEPENDS=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5
+LIB_DEPENDS=	libqwt.so:${PORTSDIR}/x11-toolkits/qwt5
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtDesigner.so:${PORTSDIR}/devel/py-qt4-designer \
 		${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
@@ -29,7 +27,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 
 USE_KDE4=	kdehier kdelibs kdeprefix okular pimlibs \
 		akonadi automoc4 soprano
-USE_PYTHON=	yes
+USE_PYTHON=	2
 USE_QT4=	corelib dbus designer_build gui network xml \
 		qmake_build moc_build uic_build rcc_build
 USE_XZ=		yes
@@ -43,9 +41,6 @@ PLIST_SUB+=	SIPDIR=share/sip
 
 OPTIONS_DEFINE=	EXAMPLES
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 post-patch:
 	${FIND} -d ${PATCH_WRKSRC}/sip -name "*.orig" -delete
 
@@ -56,10 +51,9 @@ pre-configure:
 	${RM} ${WRKSRC}/examples/CMakeLists.txt
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
-.endif
-	${INSTALL_DATA} ${WRKDIR}/kdebindings4.pth ${PYTHON_SITELIBDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${INSTALL_DATA} ${WRKDIR}/kdebindings4.pth ${STAGEDIR}${PYTHON_SITELIBDIR}
 
 .include <bsd.port.mk>

@@ -8,7 +8,7 @@ CATEGORIES=	misc
 MASTER_SITES=	SF/metalinks/Metalink%20commandline/${PORTVERSION}
 PKGNAMESUFFIX?=	-tools
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Metalink generation tool
 
 LIB_DEPENDS=	gcrypt:${PORTSDIR}/security/libgcrypt \

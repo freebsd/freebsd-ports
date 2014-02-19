@@ -17,12 +17,10 @@ EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	| ${SED} -e '1,16d' | ${SH}
 WRKSRC=			${WRKDIR}/poppassd
 ALL_TARGET=	poppassd
-MAN8=		poppassd.8
-PLIST_FILES=	libexec/poppassd
+PLIST_FILES=	libexec/poppassd man/man8/poppassd.8.gz
 
-NO_STAGE=	yes
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/poppassd ${PREFIX}/libexec
-	@ ${INSTALL_MAN} ${FILESDIR}/poppassd.8 ${PREFIX}/man/man8/
+	${INSTALL_PROGRAM} ${WRKSRC}/poppassd ${STAGEDIR}${PREFIX}/libexec
+	${INSTALL_MAN} ${FILESDIR}/poppassd.8 ${STAGEDIR}${MANPREFIX}/man/man8/
 
 .include <bsd.port.mk>

@@ -17,6 +17,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -52,6 +52,9 @@ PLIST_FILES+=	bin/login \
 		bin/stunserver \
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-configure:

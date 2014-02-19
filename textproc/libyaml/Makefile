@@ -16,5 +16,4 @@ GNU_CONFIGURE=	yes
 USES=	pathfix
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

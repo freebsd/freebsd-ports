@@ -2,70 +2,37 @@
 # $FreeBSD$
 
 PORTNAME=	xaraya
-PORTVERSION=	1.2.3
+DISTVERSION=	2.4.0-b1
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/Core%20plus%20Modules/Xaraya%20${PORTVERSION}%20Core%20Plus
-DISTNAME=	${PORTNAME}-${PORTVERSION}-base
+MASTER_SITES=	SF/${PORTNAME}/Jamaica%20Core/Jamaica%20${DISTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Framework to create fully dynamic Content Management Solutions
 
-.if defined(WITH_PGSQL)
-USE_PHP=	pgsql
-.else
-USE_PHP=	mysql
-.endif
-USE_PHP+=	pcre xml
+LICENSE=	GPLv2
+
+OPTIONS_DEFINE=	PGSQL MYSQL
+
+USE_BZIP2=	yes
+USE_PHP=	pcre xml simplexml
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPGSQL}
+USE_PHP+=	pgsql
+.endif
+
+.if ${PORT_OPTIONS:MMYSQL}
+USE_PHP+=	mysql
+.endif
 
 # May user to override this
 XARAYADIR?=	www/xaraya
-
-NO_STAGE=	yes
-pre-install:
-	@${RM} -f ${TMPPLIST}
+PLIST_SUB+=	XARAYADIR=${XARAYADIR}
 
 do-install:
-	${MKDIR} ${PREFIX}/${XARAYADIR}
-	${CP} -R ${WRKSRC}/html/* ${PREFIX}/${XARAYADIR}
-.if !defined(NOTOOLS)
-	${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/tools/* ${EXAMPLESDIR}
-.endif
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${XARAYADIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/docs/* ${DOCSDIR}
-.endif
-
-# Create plist
-post-install:
-	@${FIND} ${PREFIX}/${XARAYADIR} ! -type d -and ! -name install.php \
-		-and ! -name upgrade.php | ${SED} -e \
-		's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${XARAYADIR} -type f -and '(' -name install.php \
-		-or -name upgrade.php ')' | ${SED} -e \
-		's,^${PREFIX}/\(.*\),@unexec rm -f %D/\1 >/dev/null 2>\&1 || true,' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${XARAYADIR} -type d -and -path "*var*" | \
-		${SED} -e 's,^${PREFIX}/\(.*\),@unexec rmdir %D/\1 >/dev/null 2>\&1 || true,' | \
-		${SORT} -r >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${XARAYADIR} -type d -and ! -path "*var*" | \
-		${SED} -e 's,^${PREFIX}/,@dirrm ,' | \
-		${SORT} -r >> ${TMPPLIST}
-.if !defined(NOPORTDOCS)
-	@${FIND} ${DOCSDIR} ! -type d | ${SED} -e \
-		's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${DOCSDIR} -type d | ${SED} -e \
-		's,^${PREFIX}/,@dirrm ,' | \
-		${SORT} -r >> ${TMPPLIST}
-.endif
-.if !defined(NOTOOLS)
-	@${FIND} ${EXAMPLESDIR} ! -type d | ${SED} -e \
-		's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${EXAMPLESDIR} -type d | ${SED} -e \
-		's,^${PREFIX}/,@dirrm ,' | \
-		${SORT} -r >> ${TMPPLIST}
-.endif
+	${MKDIR} ${STAGEDIR}${PREFIX}/${XARAYADIR}
+	cd ${WRKSRC}/html && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/${XARAYADIR}
 
 .include <bsd.port.mk>

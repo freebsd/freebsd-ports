@@ -20,6 +20,8 @@ USE_AUTOTOOLS=	autoconf
 WRKSRC=		${WRKDIR}/Libnet-${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

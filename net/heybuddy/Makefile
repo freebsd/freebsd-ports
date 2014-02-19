@@ -25,6 +25,9 @@ DESKTOP_ENTRIES=	"Heybuddy" \
 			false
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

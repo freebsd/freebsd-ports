@@ -16,9 +16,8 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/Skins
 DATADIR=	${PREFIX}/share/xmms
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}/Skins
-	${INSTALL_DATA} ${WRKSRC}/* ${DATADIR}/Skins
+	${MKDIR} ${STAGEDIR}${DATADIR}/Skins
+	${INSTALL_DATA} ${WRKSRC}/* ${STAGEDIR}${DATADIR}/Skins
 
 .include <bsd.port.mk>

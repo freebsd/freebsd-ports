@@ -36,6 +36,8 @@ PLIST_FILES=	bin/love
 
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

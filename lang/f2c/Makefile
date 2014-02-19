@@ -3,7 +3,7 @@
 
 PORTNAME=	f2c
 PORTVERSION=	20060810
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	maho/f2c
@@ -33,8 +33,6 @@ PLIST_SUB+=	FC=""
 .else
 PLIST_SUB+=	FC="@comment "
 .endif
-
-MAN1=		f2c.1
 
 PORTDOCS=	00lastchange README README_libf2c changes f2c.pdf permission
 
@@ -73,7 +71,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/fc ${STAGEDIR}${PREFIX}/bin/${FCNAME}
 .endif
 	${INSTALL_DATA} ${WRKSRC}/src/f2c.h ${STAGEDIR}${PREFIX}/include
-	${INSTALL_MAN} ${WRKSRC}/src/${MAN1}t ${STAGEDIR}${MAN1PREFIX}/man/man1/${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/src/f2c.1t ${STAGEDIR}${MAN1PREFIX}/man/man1/f2c.1
 	${INSTALL_DATA} ${WRKSRC}/libf2c/libf2c.a ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/libf2c/libf2c.so.2 ${STAGEDIR}${PREFIX}/lib
 	${LN} -sf libf2c.so.2 ${STAGEDIR}${PREFIX}/lib/libf2c.so

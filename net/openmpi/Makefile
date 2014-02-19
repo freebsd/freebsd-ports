@@ -20,8 +20,7 @@ CONFLICTS=	openmpi-devel-1.7.*
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
-USES=		gmake pkgconfig
-USE_FORTRAN=	yes
+USES=		fortran gmake pkgconfig
 
 MPIBASE?=	mpi
 MPIDIR?=	${MPIBASE}/${UNIQUENAME}

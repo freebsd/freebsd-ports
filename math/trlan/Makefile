@@ -14,7 +14,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Thick-restart Lanczos method for eigenproblems
 
-USE_FORTRAN=	yes
+USES=		fortran
 USE_LDCONFIG=	yes
 
 ALL_TARGET=	lib

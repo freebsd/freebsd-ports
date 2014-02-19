@@ -10,15 +10,12 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Utilities to access SCSI device parameters
 
-USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-MAN8=		sas_disk_blink.8 \
-		sdparm.8
-
 PLIST_FILES=	bin/sas_disk_blink \
-		bin/sdparm
+		bin/sdparm \
+		man/man8/sas_disk_blink.8.gz \
+		man/man8/sdparm.8.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

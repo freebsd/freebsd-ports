@@ -3,6 +3,7 @@
 
 PORTNAME=	creox
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	audio kde
 
 MAINTAINER=	ports@FreeBSD.org

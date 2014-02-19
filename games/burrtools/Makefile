@@ -18,12 +18,9 @@ LIB_DEPENDS=	libpng15.so:${PORTSDIR}/graphics/png \
 		libfltk.so:${PORTSDIR}/x11-toolkits/fltk \
 		libboost_thread.so:${PORTSDIR}/devel/boost-libs
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 USE_XORG=	x11 xt xext xmu xi
 USE_GL=		glu
 USES=		gmake
-USE_GCC=	4.2+
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	`fltk-config --cxxflags`
 LDFLAGS+=	`fltk-config --ldflags`
@@ -31,6 +28,14 @@ LDFLAGS+=	`fltk-config --ldflags`
 PORTDOCS=	*
 PORTEXAMPLES=	*
 PLIST_FILES=	bin/burrTxt bin/burrTxt2 bin/burrGui
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|g++|$$(CXX)|; \
+		/burrTxt2_LDADD =/ s|$$| -lboost_system|; \
+		/burrGui_LDADD =/ s|$$| -lboost_system|' \
+		${WRKSRC}/src/Makefile.am ${WRKSRC}/src/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/burrTxt ${STAGEDIR}${PREFIX}/bin

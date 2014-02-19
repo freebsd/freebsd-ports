@@ -18,12 +18,11 @@ NO_BUILD=	yes
 
 FONTSDIR=	share/fonts/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/${FONTSDIR}
-	cd ${PREFIX}/${FONTSDIR} && ${TAR} -x -z -U --strip-components 1 -f \
+	${MKDIR} ${STAGEDIR}${PREFIX}/${FONTSDIR}
+	cd ${STAGEDIR}${PREFIX}/${FONTSDIR} && ${TAR} -x -z -U --strip-components 1 -f \
 	    ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX}
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/${FONTSDIR}
-	${CHMOD} -R go-w ${PREFIX}/${FONTSDIR}
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${PREFIX}/${FONTSDIR}
+	${CHMOD} -R go-w ${STAGEDIR}${PREFIX}/${FONTSDIR}
 
 .include <bsd.port.mk>

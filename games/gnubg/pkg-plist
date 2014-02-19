@@ -243,5 +243,5 @@ share/icons/hicolor/48x48/apps/gnubg.png
 @dirrmtry %%DATADIR%%/fonts
 @dirrmtry %%DATADIR%%/flags
 @dirrmtry %%DATADIR%%
-@dirrmtry %%PORTDOCS%%%%DOCSDIR%%/images
-@dirrmtry %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

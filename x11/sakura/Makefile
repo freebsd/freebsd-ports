@@ -1,0 +1,31 @@
+# Created by: chinsan
+# $FreeBSD$
+
+PORTNAME=	sakura
+PORTVERSION=	3.1.3
+CATEGORIES=	x11 gnome
+MASTER_SITES=	http://launchpadlibrarian.net/159682501/
+
+MAINTAINER=	danilo@FreeBSD.org
+COMMENT=	Terminal emulator based on GTK and VTE
+
+LICENSE=	GPLv2
+
+OPTIONS_DEFINE=	DOCS
+
+USE_GNOME=	vte3
+USES=		cmake pkgconfig gettext
+USE_BZIP2=	yes
+LDFLAGS+=	-lintl
+
+post-patch:
+	@${REINPLACE_CMD} -e '/NOT MATCHES "Debug"/d ; \
+		 /"-O2"/d ; \
+		's,share/man,man,g' ; \
+		 /FILES INSTALL/d' ${WRKSRC}/CMakeLists.txt
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/INSTALL ${STAGEDIR}${DOCSDIR}
+
+.include <bsd.port.mk>

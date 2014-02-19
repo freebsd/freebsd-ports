@@ -6,17 +6,17 @@ Note for Oracle users:
     $ORACLE_HOME/network/admin/ directory a valid tnsnames.ora services file.
     Alternatively, you can set TNS_ADMIN to point out directly to that
     tnsnames.ora file.
-    
+
     After that choose "TNS" as "Connection Type" when you are going to add a
     new connection database.
 
 
 Note for MySQL users:
-    
+
     If you have enabled mysql support, it is needed to point out to SQL
     Developer where the MySQL JDBC classes are. Go to Tools -> Preferences
     menu, select Database -> Third Party JDBC Drivers and add the proper jar.
     Do not install 5.1 version of mysql jdbc connector; see
-    http://docs.oracle.com/cd/E35137_01/doc.32/e35119/install.htm#CIHDHHHJ
+    http://docs.oracle.com/cd/E39885_01/doc.40/e38928/install.htm#RPTIG129
 
 ************************************************************************

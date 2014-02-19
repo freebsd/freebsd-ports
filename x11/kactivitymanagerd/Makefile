@@ -2,17 +2,13 @@
 
 PORTNAME=	kactivitymanagerd
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	3
 CATEGORIES=	x11 kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
-DIST_SUBDIR=	KDE/${PORTVERSION}
+MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DISTNAME=	kactivities-${PORTVERSION}
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Activity Manager daemon
-
-CONFLICTS_INSTALL=	kdelibs-4.7.* kde-runtime-4.7.* kactivities-4.[8-9].*
 
 USE_XZ=		yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix soprano nepomuk-core \
@@ -27,12 +23,11 @@ MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 # https://bugs.kde.org/show_bug.cgi?id=305529#c10
 CMAKE_ARGS+=	-DCMAKE_SHARED_LIBRARY_LINK_CXX_FLAGS=-rdynamic
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 # Workaround to keep kactivitymanagerd from crashing:
 # http://lists.freebsd.org/pipermail/freebsd-current/2012-May/033972.html
-.if ${OSVERSION} > 1000000
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
 CXXFLAGS+=	-fno-use-cxa-atexit
 .endif
 

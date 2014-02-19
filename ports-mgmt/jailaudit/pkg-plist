@@ -1,11 +1,8 @@
 bin/jailaudit
-etc/jailaudit.conf.sample
+%%ETCDIR%%.conf.sample
 %%PERIODICDIR%%/security/410.jailaudit
+@dirrmtry %%XTMPDIR%%
+@dirrmtry %%REPORTDIR%%
+@dirrmtry jailaudit
 @dirrmtry %%PERIODICDIR%%/security
 @dirrmtry %%PERIODICDIR%%
-@exec mkdir -p %D/%%REPORTDIR%%
-@dirrmtry %%REPORTDIR%%
-@exec mkdir -p %D/%%XTMPDIR%%
-@dirrmtry %%XTMPDIR%%
-@unexec rmdir %DPDIR%% 2>/dev/null || true
-@dirrmtry jailaudit

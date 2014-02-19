@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	ioncube
-DISTVERSION=	4.5.1
+DISTVERSION=	4.5.3
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads3.ioncube.com/loader_downloads/ \
 		http://dl.ispsystem.info/ioncube/${DISTVERSION}/ \
@@ -35,7 +35,7 @@ VER=	8
 VER=	9
 .endif
 .else
-IGNORE= is unsupported on ${OPSYS}
+IGNORE=	is unsupported on ${OPSYS}
 .endif
 
 PHP_INSTVER=	${PHP_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}

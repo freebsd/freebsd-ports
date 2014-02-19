@@ -23,6 +23,9 @@ MAN8=		lsusb.8
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 CONFIGURE_ENV+=	LIBUSB_CFLAGS="-I/usr/include" \

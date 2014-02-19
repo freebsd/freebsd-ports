@@ -17,7 +17,7 @@ DRUPAL6_PORT=	yes
 USE_PHP=	gd pcre session xml mbstring
 WANT_PHP_WEB=	yes
 
-OPTIONS_DEFINE=	MYSQLI MYSQL PGSQL
+OPTIONS_DEFINE=	MYSQLI MYSQL PGSQL DOCS
 OPTIONS_DEFAULT=MYSQLI
 
 MYSQLI_DESC=	MySQL Improved Extension database
@@ -29,7 +29,6 @@ DOCS=		CHANGELOG.txt INSTALL.txt LICENSE.txt MAINTAINERS.txt \
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMYSQL}
@@ -44,36 +43,31 @@ USE_PHP+=	pgsql
 .endif
 
 do-install:
-	${MKDIR} ${DRUPAL_DIR}
-	${CP} ${WRKSRC}/.htaccess ${DRUPAL_DIR}
-	${CP} ${WRKSRC}/cron.php ${DRUPAL_DIR}
-	${CP} -R ${WRKSRC}/includes ${DRUPAL_DIR}
-	${CP} ${WRKSRC}/index.php ${DRUPAL_DIR}
-	${CP} ${WRKSRC}/install.php ${DRUPAL_DIR}
-	${CP} -R ${WRKSRC}/misc ${DRUPAL_DIR}
-	${CP} -R ${WRKSRC}/modules ${DRUPAL_DIR}
-	${CP} -R ${WRKSRC}/profiles ${DRUPAL_DIR}
-	${CP} ${WRKSRC}/robots.txt ${DRUPAL_DIR}
-	${CP} -R ${WRKSRC}/scripts ${DRUPAL_DIR}
-	${MKDIR} ${DRUPAL_DIR}/sites/all
-	${CP} ${WRKSRC}/sites/all/README.txt ${DRUPAL_DIR}/sites/all/
-	${MKDIR} ${DRUPAL_DIR}/sites/default
-	${CP} ${WRKSRC}/sites/default/default.settings.php ${DRUPAL_DIR}/sites/default/default.settings.php-dist
-	@if [ ! -f ${DRUPAL_DIR}/sites/default/default.settings.php ]; then \
-		${CP} -p ${DRUPAL_DIR}/sites/default/default.settings.php-dist ${DRUPAL_DIR}/sites/default/default.settings.php ; \
+	${MKDIR} ${STAGEDIR}${DRUPAL_DIR}
+	${CP} ${WRKSRC}/.htaccess ${STAGEDIR}${DRUPAL_DIR}
+	${CP} ${WRKSRC}/cron.php ${STAGEDIR}${DRUPAL_DIR}
+	${CP} -R ${WRKSRC}/includes ${STAGEDIR}${DRUPAL_DIR}
+	${CP} ${WRKSRC}/index.php ${STAGEDIR}${DRUPAL_DIR}
+	${CP} ${WRKSRC}/install.php ${STAGEDIR}${DRUPAL_DIR}
+	${CP} -R ${WRKSRC}/misc ${STAGEDIR}${DRUPAL_DIR}
+	${CP} -R ${WRKSRC}/modules ${STAGEDIR}${DRUPAL_DIR}
+	${CP} -R ${WRKSRC}/profiles ${STAGEDIR}${DRUPAL_DIR}
+	${CP} ${WRKSRC}/robots.txt ${STAGEDIR}${DRUPAL_DIR}
+	${CP} -R ${WRKSRC}/scripts ${STAGEDIR}${DRUPAL_DIR}
+	${MKDIR} ${STAGEDIR}${DRUPAL_DIR}/sites/all
+	${CP} ${WRKSRC}/sites/all/README.txt ${STAGEDIR}${DRUPAL_DIR}/sites/all/
+	${MKDIR} ${STAGEDIR}${DRUPAL_DIR}/sites/default
+	${CP} ${WRKSRC}/sites/default/default.settings.php ${STAGEDIR}${DRUPAL_DIR}/sites/default/default.settings.php-dist
+	@if [ ! -f ${STAGEDIR}${DRUPAL_DIR}/sites/default/default.settings.php ]; then \
+		${CP} -p ${STAGEDIR}${DRUPAL_DIR}/sites/default/default.settings.php-dist ${STAGEDIR}${DRUPAL_DIR}/sites/default/default.settings.php ; \
 	fi
-	${CP} -R ${WRKSRC}/themes ${DRUPAL_DIR}
-	${CP} ${WRKSRC}/update.php ${DRUPAL_DIR}
-	${CP} ${WRKSRC}/xmlrpc.php ${DRUPAL_DIR}
-	${MKDIR} ${DRUPAL_DIR}/sites/all/modules ${DRUPAL_DIR}/sites/all/themes
-	${TOUCH} ${DRUPAL_DIR}/sites/all/modules/.keepme ${DRUPAL_DIR}/sites/all/themes/.keepme
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${CP} ${DOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-.endif
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${DRUPAL_DIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${CP} -R ${WRKSRC}/themes ${STAGEDIR}${DRUPAL_DIR}
+	${CP} ${WRKSRC}/update.php ${STAGEDIR}${DRUPAL_DIR}
+	${CP} ${WRKSRC}/xmlrpc.php ${STAGEDIR}${DRUPAL_DIR}
+	${MKDIR} ${STAGEDIR}${DRUPAL_DIR}/sites/all/modules ${STAGEDIR}${DRUPAL_DIR}/sites/all/themes
+	${TOUCH} ${STAGEDIR}${DRUPAL_DIR}/sites/all/modules/.keepme ${STAGEDIR}${DRUPAL_DIR}/sites/all/themes/.keepme
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CP} ${DOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${DRUPAL_DIR}
 
 .include <bsd.port.mk>

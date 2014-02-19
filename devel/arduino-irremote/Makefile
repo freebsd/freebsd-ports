@@ -28,6 +28,9 @@ PLIST_FILES=	arduino/libraries/IRremote/IRremote.cpp \
 PLIST_DIRS=	arduino/libraries/IRremote
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}

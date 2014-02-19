@@ -11,19 +11,9 @@ MASTER_SITE_SUBDIR=	kuriyama
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	A modern implementation of DBM
 
-
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
-
-
-MAN1=		tcamgr.1 tcamttest.1 tcatest.1 tcbmgr.1 tcbmttest.1 tcbtest.1 \
-		tcfmgr.1 tcfmttest.1 tcftest.1 \
-		tchmgr.1 tchmttest.1 tchtest.1 tcucodec.1 tcumttest.1 \
-		tcutest.1 tctmgr.1 tctmttest.1 tcttest.1
-MAN3=		tcadb.3 tcbdb.3 tcfdb.3 tchdb.3 tclist.3 tcmap.3 \
-		tcmdb.3 tcmpool.3 tcutil.3 tcxstr.3 tokyocabinet.3 tctree.3 \
-		tctdb.3
 
 OPTIONS_DEFINE=	DEBUG DEVEL FASTEST LZMA LZO PTHREAD PROFILE SHARED SWAB UYIELD DOCS
 OPTIONS_DEFAULT=	PTHREAD SHARED
@@ -38,7 +28,6 @@ SHARED_DESC=	Shared build
 SWAB_DESC=	Swapping byte-orders build
 UYIELD_DESC=	Detecting race conditions
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

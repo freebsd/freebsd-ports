@@ -21,6 +21,9 @@ PLIST_FILES=	bin/${PORTNAME} \
 PLIST_DIRS=	%%PORTDOCS%%%%DOCSDIR%%
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-extract:

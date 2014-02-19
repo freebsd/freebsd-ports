@@ -2,14 +2,14 @@
 # $FreeBSD$
 
 PORTNAME=	netbeans
-DISTVERSION=	7.3beta2
+DISTVERSION=	8.0beta
 CATEGORIES=	java devel
-MASTER_SITES=	http://dlc.sun.com.edgesuite.net/netbeans/7.3/beta2/zip/
+MASTER_SITES=	http://dlc.sun.com.edgesuite.net/netbeans/8.0/beta/zip/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	netbeans-${DISTVERSION}-201211062253
+DISTNAME=	netbeans-${DISTVERSION}-201401141042
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A full-featured integrated environment for Java
+COMMENT=	Full-featured integrated environment for Java
 
 LICENSE=	CDDL GPLv2
 LICENSE_COMB=	dual
@@ -24,18 +24,17 @@ PREFIXDIR=	${PREFIX}/netbeans-${PORTVERSION}
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-IGNORE=		No development version available right now. Please use java/netbeans instead.
+#IGNORE=		No development version available right now. Please use java/netbeans instead.
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -i "" -e '19s|#||;19s|/path/to/jdk|${JAVA_HOME}|' \
+	@${REINPLACE_CMD} -e '57s|#||;57s|/path/to/jdk|${JAVA_HOME}|' \
 	    ${WRKSRC}/etc/netbeans.conf
 	${RM} ${WRKSRC}/bin/netbeans.orig
 
 do-install:
-	@${MKDIR} ${PREFIXDIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${PREFIXDIR})
-	@${CHMOD} ${BINMODE} ${PREFIXDIR}/bin/netbeans
-	@${LN} -sf ${PREFIXDIR}/bin/netbeans ${PREFIX}/bin/netbeans-${PORTVERSION}
+	@${MKDIR} ${STAGEDIR}${PREFIXDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIXDIR}
+	@${CHMOD} ${BINMODE} ${STAGEDIR}${PREFIXDIR}/bin/netbeans
+	${LN} -sf ${PREFIXDIR}/bin/netbeans ${STAGEDIR}${PREFIX}/bin/netbeans-${PORTVERSION}
 
 .include <bsd.port.mk>

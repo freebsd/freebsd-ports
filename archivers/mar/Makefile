@@ -16,8 +16,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -E "s#^(CFLAGS\ |CXXFLAGS\ |CC\ |CXX\ )#\1?#" \
 		${WRKSRC}/src/Makefile
@@ -26,10 +24,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/man1/mar.1 \
 		${STAGEDIR}${MAN1PREFIX}/man/man1
-
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/html/*.html ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

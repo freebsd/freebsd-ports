@@ -15,6 +15,8 @@ PLIST_FILES=	bin/dtaus man/man1/dtaus.1.gz man/man5/dtaus.5.gz
 PORTDOCS=	ChangeLog README TODO dtaus.txt
 PORTEXAMPLES=	dtaus.cls sample.ctl
 
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 do-configure:

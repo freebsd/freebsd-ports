@@ -1,0 +1,17 @@
+--- makefile.orig	2014-02-19 11:28:02.790529666 +0100
++++ makefile	2014-02-19 11:28:28.407549409 +0100
+@@ -17,12 +17,12 @@
+ OPTFLAGS = -g
+ #DFLAGS = -DBETTERHASH  -DSMV_SIGNALS -DOTHER_SIMP -DSERGEYDEBUG
+ DFLAGS = -DBETTERHASH -DSMV_SIGNALS -DOTHER_SIMP
+-CFLAGS =  $(OPTFLAGS) -I. $(DFLAGS) $(REORDER) $(TIMING) $(VERFLAG)
++CFLAGS +=  $(OPTFLAGS) -I. $(DFLAGS) $(REORDER) $(TIMING) $(VERFLAG)
+ LIB = -lm $(MACHLIB)
+ OBJ = grammar.o input.o init.o main.o assoc.o bdd.o  hash.o node.o storage.o \
+ 	string.o symbols.o
+ EXEC = smv
+-CC = gcc
++CC ?= gcc
+ M4 = m4
+ #M4 = gm4
+ 

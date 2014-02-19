@@ -3,6 +3,7 @@
 
 PORTNAME=	openconnect
 PORTVERSION=	5.03
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.infradead.org/pub/openconnect/ \
 		http://mirrors.rit.edu/zi/
@@ -54,7 +55,7 @@ LIB_DEPENDS+=	proxy:${PORTSDIR}/net/libproxy
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/TODO ${STAGEDIR}${DOCSDIR}
 .endif
 

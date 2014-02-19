@@ -3,6 +3,7 @@
 
 PORTNAME=	snobol4
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.ultimate.com/snobol/
 
@@ -17,5 +18,9 @@ PLIST_SUB+=	VERSION=${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} 's:[^=]*\.tmp$$:${WRKSRC}/&:' ${WRKSRC}/configure
+
+post-install:
+	${LN} -sf sdb-${PORTVERSION} ${STAGEDIR}${PREFIX}/bin/sdb
+	${LN} -sf snobol4-${PORTVERSION} ${STAGEDIR}${PREFIX}/bin/snobol4
 
 .include <bsd.port.mk>

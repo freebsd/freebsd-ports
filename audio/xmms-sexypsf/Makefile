@@ -31,8 +31,6 @@ PLIST_FILES=	lib/xmms/Input/libsexypsf.so
 
 OPTIONS_DEFINE=DOCS
 
-.include <bsd.port.options.mk>
-
 do-build:
 .for f in ${SOURCES}
 	${CC} ${CFLAGS} ${DEFINES} `gtk-config --cflags` -c -o ${WRKSRC}/${f}.o ${WRKSRC}/${f}.c
@@ -44,12 +42,9 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/xmms/Input
 	${INSTALL_PROGRAM} ${WRKSRC}/libsexypsf.so \
 		${STAGEDIR}${PREFIX}/lib/xmms/Input/libsexypsf.so
-
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/Docs/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

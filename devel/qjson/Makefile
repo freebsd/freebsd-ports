@@ -17,7 +17,8 @@ USE_LDCONFIG=	yes
 
 PORTDOCS=	*
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -34,9 +35,7 @@ post-build:
 .endif
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} \* ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC}/doc/html && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

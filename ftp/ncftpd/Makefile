@@ -21,9 +21,10 @@ RESTRICTED=	30 day evaluation license
 USE_RC_SUBR=	ncftpd
 SUB_FILES=	pkg-message
 
+OPTIONS_DEFINE=	DOCS
+
 PORTDOCS=	install.html README README.freebsd LICENSE
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900000
@@ -42,21 +43,17 @@ DIST_ARCH=	i386
 .endif
 
 do-install:
-	${MKDIR} ${PREFIX}/etc/ncftpd
-	${INSTALL_PROGRAM} ${WRKSRC}/ncftpd ${PREFIX}/sbin
-	${INSTALL_PROGRAM} ${WRKSRC}/ncftpd_edquota ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/ncftpd_passwd ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/ncftpd_repquota ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/ncftpd_spy ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/conf/general.cf-dist ${PREFIX}/etc/ncftpd
-	${INSTALL_DATA} ${WRKSRC}/conf/domain.cf-dist ${PREFIX}/etc/ncftpd
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/ncftpd
+	${INSTALL_PROGRAM} ${WRKSRC}/ncftpd ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/ncftpd_edquota ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ncftpd_passwd ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ncftpd_repquota ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ncftpd_spy ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/conf/general.cf-dist ${STAGEDIR}${PREFIX}/etc/ncftpd
+	${INSTALL_DATA} ${WRKSRC}/conf/domain.cf-dist ${STAGEDIR}${PREFIX}/etc/ncftpd
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}
-	@ cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
-
-	@${CAT} ${PKGMESSAGE}
+	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.post.mk>

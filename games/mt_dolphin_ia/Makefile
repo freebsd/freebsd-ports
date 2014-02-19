@@ -23,5 +23,4 @@ CONFIGURE_ARGS=		--with-libmt_client=${LOCALBASE}	\
 
 PLIST_FILES=		bin/mt_dolphin_ia
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

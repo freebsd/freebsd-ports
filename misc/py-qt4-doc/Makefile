@@ -17,7 +17,6 @@ NO_BUILD=	yes
 USE_PYTHON=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/py-qt4
-PORTDOCS=	*
 
 do-install:
 	cd ${WRKSRC} &&\

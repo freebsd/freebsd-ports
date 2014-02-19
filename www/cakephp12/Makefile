@@ -26,7 +26,6 @@ USES=		gettext
 USE_PHP=	session
 WANT_PHP_WEB=	yes
 DEFAULT_PHP_VER=5
-IGNORE_WITH_PHP=4
 
 CAKE_CONF_FILES=	\
 		app/config/acl.ini.php \

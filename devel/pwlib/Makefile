@@ -6,14 +6,14 @@ PORTVERSION=	1.12.0
 PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES= 	SF/openh323/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/openh323/${PORTNAME}/${PORTVERSION}
 DISTNAME=	ptlib-v${PORTVERSION:S/./_/g}-src
 DIST_SUBDIR=	openh323
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross platform C++ library, used by OpenH323
 
-LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	libexpat.so:${PORTSDIR}/textproc/expat2
 
 CONFLICTS=	ptlib-2.*
 
@@ -27,73 +27,44 @@ USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
+OPTIONS_DEFINE=	SDL PLUGINS LDAP ESOUND V4L
+OPTIONS_DEFAULT=	PLUGINS LDAP
+OPTIONS_SUB=	yes
+LDAP_DESC=	OpenLDAP support
 
-.if ${ARCH} == "arm"
-BROKEN=		Does not install on arm: mtree
-.endif
+BROKEN_armv6=	Does not install on arm: mtree
 
-CFLAGS=		-O1
+CFLAGS+=		-O1
 MAKE_ENV=	STDCCFLAGS+="-I${LOCALBASE}"
 CPPFLAGS+=	-O1 -I${WRKSRC}/include -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 CONFIGURE_ENV+=	ATOMICITY_H="<ext/atomicity.h>"
 
-# if explicitely asked for, depend upon it
-.if defined(WITH_SDL)
-USE_SDL+=	sdl
-CONFIGURE_ENV+=	SDLLIBDIR="${LOCALBASE}/lib"
-MAKE_ENV+=	SDLLIBDIR="${LOCALBASE}/lib"
-.endif
+SDL_USE=	SDL=sdl
+SDL_CONFIGURE_ENV=	SDLLIBDIR="${LOCALBASE}/lib"
+SDL_MAKE_ENV=	SDLLIBDIR="${LOCALBASE}/lib"
+SDL_CONFIGURE_ENABLE=	sdl
 
-# if explicitely disabled, do not depend upon it
-.if defined(WITHOUT_SDL)
-CONFIGURE_ARGS+=	--disable-sdl
-.endif
+PLUGINS_CONFIGURE_ENABLE=	plugins
 
-# if nobody cares, use it if it is installed already
-.if !defined(WITHOUT_SDL) && !defined(WITH_SDL)
-.if ${HAVE_SDL:Msdl}
-USE_SDL+=	sdl
-CONFIGURE_ENV+=	SDLLIBDIR="${LOCALBASE}/lib"
-MAKE_ENV+=	SDLLIBDIR="${LOCALBASE}/lib"
-.else
-CONFIGURE_ARGS+=	--disable-sdl
-.endif
-.endif
+LDAP_CONFIGURE_ENABLE=	openldap
+LDAP_USE=	OPENLDAP=yes
+LDAP_CONFIGURE_ENV=	OPENLDAPLIBDIR="${LOCALBASE}/lib"
+LDAP_MAKE_ENV=	OPENLDAPLIBDIR="${LOCALBASE}/lib"
 
-.if !defined(WITHOUT_PLUGINS)
-CONFIGURE_ARGS+=	--enable-plugins
-.endif
+ESOUND_USE=	GNOME=esound
+ESOUND_CONFIGURE_ENABLE=	esd
+
+V4L_CONFIGURE_ENABLE=	v4l
+V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
 
 #explicity build OSS
 CONFIGURE_ARGS+=	--enable-oss
-
-#disable OpenLDAP support in PWLIB
-.if defined(WITHOUT_LDAP)
-CONFIGURE_ARGS+=	--disable-openldap
-.else
-USE_OPENLDAP=	yes
-CONFIGURE_ENV+=	OPENLDAPLIBDIR="${LOCALBASE}/lib"
-MAKE_ENV+=	OPENLDAPLIBDIR="${LOCALBASE}/lib"
-.endif
-
 #disable OBDC support... it doesn't compile and nothing _seems_ to
 #actually use it. If you do have something that requires this please
 #send patches!
 CONFIGURE_ARGS+=	--disable-odbc
-
-#enable esound support
-.if defined(WITH_ESOUND) && ${HAVE_GNOME:Mesound}!=""
-USE_GNOME+=	esound
-CONFIGURE_ARGS+=	--enable-esd
-PLIST_SUB+=	ESD=""
-.else
-CONFIGURE_ARGS+=	--disable-esd
-PLIST_SUB+=	ESD="@comment "
-.endif
 
 # ONLY FOR THE BRAVE!
 # If someone owns a firewire(4) video device and wants to use it for
@@ -123,6 +94,8 @@ CONFIGURE_ARGS+=	--disable-dc
 PLIST_SUB+=	DC1394="@comment "
 #.endif
 
+.include <bsd.port.pre.mk>
+
 .if (${ARCH} == "amd64") || (${ARCH} == "ia64") || (${ARCH} == "powerpc") || (${ARCH} == "sparc64")
 CFLAGS+=	-fPIC
 .endif
@@ -131,16 +104,6 @@ CFLAGS+=	-fPIC
 PLIST_SUB+=	BSDVIDEO=""
 .else
 PLIST_SUB+=	BSDVIDEO="@comment "
-.endif
-
-.if defined(WITH_V4L) || ( exists(${LOCALBASE}/include/linux/videodev.h) && \
-	!defined(WITHOUT_V4L) )
-CONFIGURE_ARGS+=--enable-v4l
-PLIST_SUB+=	V4L=""
-BUILD_DEPENDS+=	${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
-.else
-CONFIGURE_ARGS+=--disable-v4l
-PLIST_SUB+=	V4L="@comment "
 .endif
 
 .include <bsd.port.post.mk>

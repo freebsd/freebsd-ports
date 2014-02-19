@@ -159,7 +159,6 @@ tests/atf/test-programs/srcdir_test
 @dirrm tests/atf/atf-c++
 @dirrm tests/atf/atf-c
 @dirrm tests/atf
-@dirrm tests
 %%TOOLS%%@dirrm share/xsl/atf
 %%TOOLS%%@dirrm share/xsl
 %%TOOLS%%@dirrm share/xml/atf

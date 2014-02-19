@@ -13,11 +13,10 @@ COMMENT=	Data files of enlightenment DOX
 
 RUN_DEPENDS=	${LOCALBASE}/bin/e16:${PORTSDIR}/x11-wm/e16
 
+USES=		gmake
 USE_XORG=	x11
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-fsstd
 DATADIR=	${PREFIX}/share/e16
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

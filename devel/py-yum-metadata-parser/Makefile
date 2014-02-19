@@ -3,6 +3,7 @@
 
 PORTNAME=	yum-metadata-parser
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://yum.baseurl.org/download/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,6 +18,6 @@ LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
 USES=		pkgconfig
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

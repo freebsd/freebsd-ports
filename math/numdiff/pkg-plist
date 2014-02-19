@@ -12,3 +12,5 @@ bin/numdiff
 %%PORTDOCS%%%%DOCSDIR%%/numdiff.pdf
 %%PORTDOCS%%%%DOCSDIR%%/numdiff.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+man/man1/ndselect.1.gz
+man/man1/numdiff.1.gz

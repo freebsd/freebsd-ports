@@ -12,8 +12,8 @@ COMMENT=	Control Language Library
 
 LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
 
+USES=		fortran
 USE_AUTOTOOLS=	libtool
-USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 
 MAN1=		gen-ctl-io.1

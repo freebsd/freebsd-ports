@@ -4,6 +4,7 @@
     COMMENT = Internet Relay Chat utilities
 
     SUBDIR += anope
+    SUBDIR += atheme-services
     SUBDIR += bip
     SUBDIR += bitchx
     SUBDIR += bitlbee
@@ -127,7 +128,6 @@
     SUBDIR += thales
     SUBDIR += tircd
     SUBDIR += tircproxy
-    SUBDIR += trickyirc
     SUBDIR += undernet-ircu
     SUBDIR += unreal
     SUBDIR += weechat

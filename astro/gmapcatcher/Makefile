@@ -20,6 +20,8 @@ USE_PYDISTUTILS=yes
 PYDISTUTILS_AUTOPLIST=	yes
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

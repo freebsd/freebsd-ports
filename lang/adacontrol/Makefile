@@ -3,6 +3,7 @@
 
 PORTNAME=	adacontrol
 PORTVERSION=	1.15r5
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF/adacontrol
 DISTNAME=	adactl_old-${PORTVERSION}-src
@@ -10,6 +11,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Tool for detecting use or non-use of specific Ada constructs
+
+LICENSE=	GPLv2 GMGPL
+LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	asis>=2011:${PORTSDIR}/lang/asis \
 		gnat_util>=2013:${PORTSDIR}/lang/gnat_util

@@ -12,5 +12,4 @@ COMMENT=	Statistics generator for BinkleyForce FTN mailer
 
 PLIST_FILES=	bin/bfhist
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

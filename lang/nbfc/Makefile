@@ -9,13 +9,18 @@ MASTER_SITES=	http://koeln.ccc.de/ablage/brainfuck/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	New Brainfuck Compiler
 
-MAN1=	nbfc.1
+LICENSE=	BSD2CLAUSE
 
-PLIST_FILES=	bin/nbfc
+PLIST_FILES=	bin/nbfc \
+		man/man1/nbfc.1.gz
 
-NO_STAGE=	yes
+MAKE_ENV+=	FLEX=${FLEX} \
+		YACC=${YACC} \
+		STAGEDIR=${STAGEDIR}
+
 post-patch:
-	${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g; s|bison -y|${YACC} -|g; s|gcc|${CC} ${CFLAGS}|g' \
-		${WRKSRC}/Makefile
+	# -O4 kills llvm
+	${REINPLACE_CMD} -e 's|/usr/bin/gcc|${CC}|; s|O4|O3|g' \
+	    ${WRKSRC}/config.h
 
 .include <bsd.port.mk>

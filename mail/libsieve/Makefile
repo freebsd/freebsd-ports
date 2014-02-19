@@ -6,7 +6,7 @@ PORTVERSION=	2.3.1
 CATEGORIES=	mail
 MASTER_SITES=	http://cloud.github.com/downloads/sodabrew/libsieve/
 
-MAINTAINER=	mark_sf@kikg.ifmo.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for parsing, sorting, and filtering mail
 
 LICENSE=LGPL21

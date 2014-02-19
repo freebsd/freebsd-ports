@@ -1,13 +1,19 @@
 #!/bin/sh
-#
+# 
+# $FreeBSD$
+# 
+
 # PROVIDE: carbon
 # KEYWORD: shutdown
-#
+
+# 
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
 # carbon_enable (bool):	Set to NO by default.
 #			Set it to YES to enable it.
+# carbon_conf:		File where carbon configuration resides
+#			Default: %%PREFIX%%/etc/carbon/carbon.conf
 # carbon_user:		The user account carbon daemon runs as what
 #			you want it to be. It uses 'root' user by
 #			default.
@@ -18,43 +24,38 @@
 #			mode, it may be very verbose. It will not run
 #			in debug by default.
 # carbon_logdir:	Directory where carbon logs are stored.
-#			Default: /usr/local/graphite/storage/log
-# carbon_conf:		File where carbon configuration resides
-#			Default: /usr/local/etc/carbon/carbon.conf
-# carbon_pidfile:	Location where carbon should place its pid file
-#			Default: /var/run/carbon.pid
+#			Default: /var/db/carbon/log
+# 
 
 . /etc/rc.subr
 
-name="carbon"
-rcvar=${name}_enable
+name=carbon
+rcvar=carbon_enable
 
 load_rc_config ${name}
 
-: ${carbon_enable:="NO"}
-: ${carbon_user:="root"}
-: ${carbon_group:="wheel"}
-: ${carbon_conf:="/usr/local/etc/carbon/carbon.conf"}
-: ${carbon_debug:="NO"}
-: ${carbon_logdir:="/usr/local/graphite/storage/log"}
-: ${carbon_pidfile:="/var/run/carbon.pid"}
+: ${carbon_enable:=NO}
+: ${carbon_user:=root}
+: ${carbon_group:=wheel}
+: ${carbon_conf:=%%PREFIX%%/etc/carbon/carbon.conf}
+: ${carbon_debug:=NO}
+: ${carbon_logdir:=/var/db/carbon/log/}
+: ${pidfile:=/var/run/carbon.pid}
 
-status_cmd="${name}_status"
 stop_cmd="${name}_stop"
+required_files="${carbon_conf} %%PREFIX%%/etc/carbon/storage-schemas.conf"
 
-command_interpreter="/usr/local/bin/python2.7"
-command="/usr/local/bin/carbon-cache.py"
-command_args="--config=${carbon_conf} --logdir ${carbon_logdir} --pidfile ${carbon_pidfile} start"
+command_interpreter="%%PREFIX%%/bin/python2.7"
+command="%%PREFIX%%/bin/carbon-cache.py"
+command_args="--config=${carbon_conf} --logdir ${carbon_logdir} --pidfile ${pidfile} start"
 
-carbon_stop() {
+carbon_stop()
+{
     echo "Stopping $name"
+    pids=`check_pidfile ${pidfile} ${command} ${command_interpreter}`
 
-    /usr/local/bin/carbon-cache.py --config=${carbon_conf} --pidfile ${carbon_pidfile} stop
-}
-
-carbon_status() {
-    /usr/local/bin/carbon-cache.py --config=${carbon_conf} --pidfile ${carbon_pidfile} status
-
+    %%PREFIX%%/bin/carbon-cache.py --config=${carbon_conf} --pidfile ${pidfile} stop
+    wait_for_pids ${pids}
 }
 
 run_rc_command "$1"

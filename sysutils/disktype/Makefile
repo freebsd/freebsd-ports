@@ -16,8 +16,6 @@ PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 .for var in CFLAGS LDFLAGS CC
 	@${REINPLACE_CMD} -e 's|^\(${var}\)[ ]*=|\1 ?=|' \
@@ -26,9 +24,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>

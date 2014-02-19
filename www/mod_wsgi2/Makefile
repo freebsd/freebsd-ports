@@ -36,7 +36,4 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "========================================================="
 
-post-install:
-	@${APXS} -e -a -n "${SHORTMODNAME}" "${APACHEMODDIR}/${MODULENAME}.so"
-
 .include <bsd.port.mk>

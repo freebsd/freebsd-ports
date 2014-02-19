@@ -9,7 +9,10 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	Resizeable button to be used in a Tk::HList column header
+COMMENT=	Resizable button to be used in a Tk::HList column header
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
 RUN_DEPENDS:=	${BUILD_DEPENDS}

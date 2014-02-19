@@ -8,7 +8,7 @@ MASTER_SITES=	SF/ed2k-tools/ed2k_hash/${PORTVERSION}
 PKGNAMESUFFIX=	-tool-hash
 DISTNAME=	ed2k_hash-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Both calculates 'eDonkey/Overnet hashes' producing ed2k:// file links
 
 LICENSE=	GPLv2

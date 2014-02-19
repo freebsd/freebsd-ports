@@ -16,25 +16,20 @@ LICENSE=	GPLv2
 
 OPTIONS_DEFINE=	XFT DOCS
 
+USES=		gmake
 USE_XORG=	x11 xext
-USE_GMAKE=	yes
 MAKE_ENV=	XROOT="${LOCALBASE}" SYSCONFDIR="${ETCDIR}"
 
-MAN1=		windowlab.1x
 PORTDOCS=	CHANGELOG README
-PLIST_FILES=	bin/windowlab %%ETCDIR%%/menurc
+PLIST_FILES=	bin/windowlab %%ETCDIR%%/menurc \
+		man/man1/windowlab.1x.gz
 PLIST_DIRS=	%%ETCDIR%%
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MXFT}
-USE_XORG+=	xft
-USES+=		pkgconfig
-MAKE_ENV+=	EXTRA_INC="$$(pkg-config --cflags xft)" \
+XFT_USE=	XORG=xft
+XFT_USES=	pkgconfig
+XFT_MAKE_ENV=	EXTRA_INC="$$(pkg-config --cflags xft)" \
 		EXTRA_LIBS="$$(pkg-config --libs xft)"
-CFLAGS+=	-DXFT
-.endif
+XFT_CFLAGS=	-DXFT
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -44,15 +39,13 @@ post-patch:
 		 s|^\(CC\) =|\1 ?=|' ${WRKSRC}/Makefile
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} windowlab ${PREFIX}/bin)
-	(cd ${WRKSRC} && ${INSTALL_MAN} windowlab.1x ${MANPREFIX}/man/man1)
-	@${MKDIR} ${ETCDIR}
-	(cd ${WRKSRC} && ${INSTALL_DATA} windowlab.menurc ${ETCDIR}/menurc)
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	(cd ${WRKSRC} && ${INSTALL_PROGRAM} windowlab ${STAGEDIR}${PREFIX}/bin)
+	(cd ${WRKSRC} && ${INSTALL_MAN} windowlab.1x ${STAGEDIR}${MANPREFIX}/man/man1)
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	(cd ${WRKSRC} && ${INSTALL_DATA} windowlab.menurc ${STAGEDIR}${ETCDIR}/menurc)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
-.endif
 
 .include <bsd.port.mk>

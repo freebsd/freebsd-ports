@@ -9,28 +9,27 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Ruby library for mathematical (algebraic) computations
+COMMENT=	Ruby library for mathematical (algebraic) computations
 
 USE_RUBY=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 NO_BUILD=	yes
 
+OPTIONS_DEFINE=	DOCS
+
 DOCS_EN=	doc/*.rd	doc/*.html
 DOCS_JA=	doc-ja/*.rd	doc-ja/*.html
 
-NO_STAGE=	yes
 do-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_MODEXAMPLESDIR}/
-	${MKDIR} ${RUBY_MODDOCDIR}/ja
+	@${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample/* ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
+	@${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
 .for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/ja/
 .endfor
-.endif
 
 .include <bsd.port.mk>

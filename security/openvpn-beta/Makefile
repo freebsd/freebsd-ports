@@ -3,6 +3,7 @@
 
 PORTNAME=	openvpn
 DISTVERSION=	2.3_rc2
+PORTREVISION=	1
 CATEGORIES=	security net
 MASTER_SITES=	http://swupdate.openvpn.net/community/releases/
 PKGNAMESUFFIX=	-beta

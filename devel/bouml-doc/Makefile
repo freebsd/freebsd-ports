@@ -14,9 +14,8 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/doc
 DOCSDIR=	${PREFIX}/share/doc/bouml
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>

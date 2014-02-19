@@ -1,4 +1,0 @@
-MAN1+=	kbookmarkmerger.1
-MAN1+=	plasmaengineexplorer.1
-MAN1+=	plasmapkg.1
-MAN1+=	plasmoidviewer.1

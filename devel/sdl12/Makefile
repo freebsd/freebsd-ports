@@ -3,7 +3,7 @@
 
 PORTNAME=	sdl
 PORTVERSION=	1.2.15
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/
@@ -69,6 +69,10 @@ DISPLAY_MSG=		${CAT} ${PKGMESSAGE}
 PKGMESSAGE=		none
 DISPLAY_MSG=		${DO_NADA}
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e '/EXTRA_LDFLAGS/s/-liconv/${ICONV_LIB}/' \
+		${WRKSRC}/configure
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR} &&\

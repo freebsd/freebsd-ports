@@ -24,6 +24,9 @@ ALL_TARGET=	all1
 MAN1=		${PORTNAME}.1
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 post-patch:

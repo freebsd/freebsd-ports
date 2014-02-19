@@ -12,6 +12,9 @@ DIST_SUBDIR=	gallery
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Slick web based photo album written using PHP
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-10
+
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm \
 		jhead:${PORTSDIR}/graphics/jhead \
 		${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
@@ -20,6 +23,9 @@ USE_PHP=	pcre session
 WANT_PHP_WEB=	yes
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

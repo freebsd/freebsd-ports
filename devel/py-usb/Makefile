@@ -1,4 +1,3 @@
-# Created by: R.Mahmatkhanov <R.Mahmatkhanov@SKYLINK.ru>
 # $FreeBSD$
 
 PORTNAME=	usb
@@ -14,17 +13,15 @@ COMMENT=	Python wrapper around libusb
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	py${PORTNAME}
+PYDISTUTILS_AUTOPLIST=	yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+PORTEXAMPLES=	*
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/* ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

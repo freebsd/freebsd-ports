@@ -18,6 +18,8 @@ USE_PGSQL=	server
 # WANT_PGSQL_VER=	83
 
 BROKEN=		Does not work with postgresql-9.0 or postgresql-8.4
+DEPRECATED=	Broken since June 2013
+EXPIRATION_DATE=2014-03-18
 
 # let configure find postgres stuff in non-standard places
 CONFIGURE_ARGS+=--with-pgconfigdir=${LOCALBASE}/bin \

@@ -21,6 +21,8 @@ PORTEXAMPLES=	bartender confuse echofunctions sample.icbrc
 PLIST_FILES=	bin/icb %%DATADIR%%/icbserverdb
 PLIST_DIRS=	%%DATADIR%%
 
+OPTIONS_DEFINE=	EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 do-install:

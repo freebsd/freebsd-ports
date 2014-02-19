@@ -14,7 +14,6 @@ COMMENT=	Yet another reads temperatures and humidity from a Strawberry Linux USB
 
 PLIST_FILES=	bin/usbrh
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} <= 800097
@@ -22,6 +21,6 @@ BROKEN=         does not build
 .endif
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/usbrh ${PREFIX}/bin/usbrh
+	@${INSTALL_SCRIPT} ${WRKSRC}/usbrh ${STAGEDIR}${PREFIX}/bin/usbrh
 
 .include <bsd.port.post.mk>

@@ -26,12 +26,3 @@
      }
  
  static struct pollfd *fds;
-@@ -134,7 +132,7 @@ static void register_stuff(const AFPObj 
- 
-     /* Register our service, prepare the TXT record */
-     TXTRecordCreate(&txt_adisk, 0, NULL);
--    TXTRecordPrintf(&txt_adisk, "sys", "waMa=0,adVF=0x100");
-+    TXTRecordPrintf(&txt_adisk, "sys", "waMa=0,adVF=0x100", NULL);
- 
-     /* Build AFP volumes list */
-     int i = 0;

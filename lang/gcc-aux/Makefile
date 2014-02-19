@@ -3,7 +3,7 @@
 
 PORTNAME=	gcc-aux
 PORTVERSION=	${SNAPSHOT}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/:boot \
 		${MASTER_SITE_GCC}
@@ -13,7 +13,8 @@ DISTFILES=	gcc-${GCC_VERSION}.tar.bz2
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Version of GCC ${GCC_BRANCH} with full Ada support
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3 GPLv3RLE
+LICENSE_COMB=	multi
 
 .include "${.CURDIR}/Makefile.common"
 

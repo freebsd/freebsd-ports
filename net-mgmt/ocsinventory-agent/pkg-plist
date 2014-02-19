@@ -196,6 +196,9 @@ bin/ocsinventory-agent
 %%SITE_PERL%%/Ocsinventory/LoggerBackend/Syslog.pm
 %%SITE_PERL%%/Ocsinventory/Unix/postinst.pl
 %%SITE_PERL%%/mach/auto/Ocsinventory/Unix/Agent/.packlist
+%%PERL5_MAN3%%/Ocsinventory::Agent::Common.3.gz
+%%PERL5_MAN3%%/Ocsinventory::Agent::XML::Inventory.3.gz
+man/man1/ocsinventory-agent.1.gz
 @dirrm %%SITE_PERL%%/mach/auto/Ocsinventory/Unix/Agent
 @dirrm %%SITE_PERL%%/mach/auto/Ocsinventory/Unix
 @dirrm %%SITE_PERL%%/mach/auto/Ocsinventory

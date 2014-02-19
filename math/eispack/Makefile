@@ -15,7 +15,7 @@ COMMENT=	Eigenvalue system package
 DIST_SUBDIR=	${PORTNAME}
 NO_WRKSUBDIR=	yes
 
-USE_FORTRAN=	yes
+USES=		fortran
 USE_LDCONFIG=	yes
 
 SHLIB_MAJOR=	2
@@ -28,7 +28,6 @@ MAKE_ENV+=	SHLIB_MAJOR="${SHLIB_MAJOR}" \
 
 OPTIONS_DEFINE=	PROFILE
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MPROFILE}

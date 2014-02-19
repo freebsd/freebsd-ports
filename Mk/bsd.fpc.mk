@@ -27,10 +27,16 @@
 
 _FPCMKINCLUDED=	yes
 
+.include "${PORTSDIR}/Mk/bsd.default-versions.mk"
+
+.if defined(DEFAULT_FPC_VER)
+WARNING+=	"DEFAULT_FPC_VER is defined, consider using DEFAULT_VERSIONS=fpc=${DEFAULT_FPC_VER} instead"
+.endif
+
 FPC_Include_MAINTAINER=	acm@FreeBSD.org
 FPC_Pre_Include=	bsd.fpc.mk
 
-DEFAULT_FPC_VER=	2.6.2
+DEFAULT_FPC_VER=	${FPC_DEFAULT}
 FPC_VER=		${DEFAULT_FPC_VER}
 FPC_ARCH=		${ARCH:S/amd64/x86_64/}
 

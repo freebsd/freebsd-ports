@@ -3,7 +3,7 @@
 
 PORTNAME=	nspluginwrapper
 PORTVERSION=	1.4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www linux emulators
 MASTER_SITES=	http://nspluginwrapper.org/download/ \
 		LOCAL/jkim \
@@ -59,9 +59,6 @@ PLIST_SUB+=	HOST_AMD64="@comment "
 post-patch:
 	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 	    ${WRKSRC}/src/npw-config.c
-	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
-		${WRKSRC}/src/npruntime.c ${WRKSRC}/src/npw-player.c \
-		${WRKSRC}/src/utils.c
 
 post-install:
 	${MKDIR} ${STAGEDIR}${LIBDIR}/i386/linux

@@ -2,11 +2,14 @@
 
 PORTNAME=	gtk-sharp-beans
 PORTVERSION=	2.14.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Extensions on top of GTK-sharp
+
+LICENSE=	LGPL21
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gio-sharp-2.0.pc:${PORTSDIR}/devel/gio-sharp
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -14,8 +17,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 GNU_CONFIGURE=	yes
 USES=		gmake pkgconfig
 USE_BZIP2=	yes
+MAKE_JOBS_UNSAFE=yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 post-extract:

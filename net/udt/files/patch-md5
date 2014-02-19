@@ -53,10 +53,11 @@ avoid a strlen().
  }
 --- src/core.cpp	2013-02-20 11:35:26.000000000 -0500
 +++ src/core.cpp	2013-02-26 18:49:00.000000000 -0500
-@@ -40,4 +40,5 @@
+@@ -40,4 +40,6 @@
  
  #ifndef WIN32
 +   #include <err.h>
++   #include <stdint.h>
     #include <unistd.h>
     #include <netdb.h>
 @@ -2460,12 +2461,28 @@

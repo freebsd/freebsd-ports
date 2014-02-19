@@ -88,6 +88,7 @@ include/libspreadsheet-%%SHORT_VER%%/spreadsheet/search.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/selection.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/session.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/sf-bessel.h
+include/libspreadsheet-%%SHORT_VER%%/spreadsheet/sf-dpq.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/sf-gamma.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/sf-trig.h
 include/libspreadsheet-%%SHORT_VER%%/spreadsheet/sheet-autofill.h
@@ -220,6 +221,7 @@ lib/gnumeric/%%VERSION%%/plugins/glpk/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/glossary-po-header
 lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/gnome_glossary.py
 lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/gnome_glossary.pyc
+lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/gnome_glossary.pyo
 lib/gnumeric/%%VERSION%%/plugins/gnome-glossary/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/html/html.la
 lib/gnumeric/%%VERSION%%/plugins/html/html.so
@@ -256,6 +258,7 @@ lib/gnumeric/%%VERSION%%/plugins/psiconv/psiconv.so
 lib/gnumeric/%%VERSION%%/plugins/py-func/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/py-func/py_func.py
 lib/gnumeric/%%VERSION%%/plugins/py-func/py_func.pyc
+lib/gnumeric/%%VERSION%%/plugins/py-func/py_func.pyo
 lib/gnumeric/%%VERSION%%/plugins/python-loader/plugin.xml
 lib/gnumeric/%%VERSION%%/plugins/python-loader/python_loader.la
 lib/gnumeric/%%VERSION%%/plugins/python-loader/python_loader.so
@@ -827,10 +830,9 @@ share/gnome/help/gnumeric/C/worksheets.xml
 share/icons/hicolor/16x16/apps/gnumeric.png
 share/icons/hicolor/22x22/apps/gnumeric.png
 share/icons/hicolor/24x24/apps/gnumeric.png
+share/icons/hicolor/256x256/apps/gnumeric.png
 share/icons/hicolor/32x32/apps/gnumeric.png
 share/icons/hicolor/48x48/apps/gnumeric.png
-share/icons/hicolor/scalable/apps/gnumeric.svg
-share/mime-info/gnumeric.mime
 share/omf/gnumeric/gnumeric-C.omf
 share/pixmaps/gnome-application-vnd.lotus-1-2-3.png
 share/pixmaps/gnome-application-x-applix-spreadsheet.png

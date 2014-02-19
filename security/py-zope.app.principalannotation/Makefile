@@ -2,9 +2,11 @@
 
 PORTNAME=	zope.app.principalannotation
 PORTVERSION=	3.7.0
+PORTREVISION=	1
 CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Bootstrap subscriber and browser menu item for zope.principalannotation
@@ -16,10 +18,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}transaction>=0:${PORTSDIR}/devel/py-transact
 		${PYTHON_PKGNAMEPREFIX}zope.processlifetime>=0:${PORTSDIR}/devel/py-zope.processlifetime \
 		${PYTHON_PKGNAMEPREFIX}zope.principalannotation>=0:${PORTSDIR}/security/py-zope.principalannotation
 
-DIST_SUBDIR=	zope
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-
-NO_STAGE=	yes
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

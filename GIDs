@@ -142,6 +142,7 @@ prelude:*:281:
 spread:*:282:
 devmon:*:283:
 vnstat:*:284:
+exaddos:*:285:exaddos
 backuppc:*:300:
 _sphinx:*:312:
 dkfilter:*:325:
@@ -172,6 +173,7 @@ pgbouncer:*:534:
 redis:*:535:
 _flowd:*:542:
 ejabberd:*:543:
+knot:*:553:
 qtss:*:554:
 ircdru:*:555:
 messagebus:*:556:

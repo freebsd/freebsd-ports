@@ -12,13 +12,13 @@ COMMENT=	Fibonacci Heap Library
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-MAN3=		fh_extractmin.3 fh_makeheap.3 fh_makekeyheap.3
+MANPAGES=	fh_extractmin.3 fh_makeheap.3 fh_makekeyheap.3
 
-NO_STAGE=	yes
 post-install:
-	${LN} -sf ${PREFIX}/lib/libfib.so.1 ${PREFIX}/lib/libfib.so
-.for mf in ${MAN3}
-	${INSTALL_MAN} ${WRKSRC}/${mf} ${PREFIX}/man/man3/
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libfib.so.1
+	@(cd ${STAGEDIR}${PREFIX}/lib/; ${LN} -sf libfib.so.1 libfib.so)
+.for mf in ${MANPAGES}
+	${INSTALL_MAN} ${WRKSRC}/${mf} ${STAGEDIR}${PREFIX}/man/man3/
 .endfor
 
 .include <bsd.port.mk>

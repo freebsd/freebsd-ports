@@ -1,21 +1,11 @@
-
 ####################################################################
 #
-# To get Knot DNS started:
+# To start using Knot DNS, you should complete the following tasks:
 #
-  cp %%ETCDIR%%/knot.sample.conf %%ETCDIR%%/knot.conf
-  $EDITOR %%ETCDIR%%/knot.conf
-  echo knot_enable=\"YES\" >> /etc/rc.conf
+# cp %%ETCDIR%%/knot.sample.conf %%ETCDIR%%/knot.conf
+# $EDITOR %%ETCDIR%%/knot.conf
+# echo knot_enable=\"YES\" >> /etc/rc.conf
 # echo knot_config=\"%%PREFIX%%/etc/knot/knot.conf\" >> /etc/rc.conf
-  %%PREFIX%%/etc/rc.d/knotd start
+# %%PREFIX%%/etc/rc.d/knot start
 #
 ####################################################################
-
-  When upgrading from version of before 1.3.0-RC1:
-  mind the default config file location has changed.
-
-  When upgrading from version of 1.3.1-RC1 or before:
-  the startup script has changed due to parameter changes.
-  That problem reapeared in port 1.3.3 and was fixed in 1.3.3_1.
-
-====================================================================

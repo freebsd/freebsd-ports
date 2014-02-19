@@ -11,8 +11,4 @@ COMMENT=	Command line quota tools
 
 WRKSRC=		${WRKDIR}/setquota/
 
-MAN8=		getquota.8 setquota.8
-MANCOMPRESSED=	yes
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

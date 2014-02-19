@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=--disable-production --enable-debug=all
 .endif
 
 .if ${PORT_OPTIONS:MFORTRAN}
-USE_FORTRAN=	yes
+USES+=		fortran
 CONFIGURE_ARGS+=--enable-fortran
 CONFIGURE_ENV+=	F9X=${FC}
 PLIST_SUB+=	FORTRAN=""

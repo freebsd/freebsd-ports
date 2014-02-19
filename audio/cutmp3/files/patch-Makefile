@@ -1,8 +1,8 @@
---- ./Makefile.orig	2010-05-16 10:59:44.000000000 +0200
-+++ ./Makefile	2010-06-01 20:18:57.000000000 +0200
-@@ -1,13 +1,12 @@
+--- ./Makefile.orig	2011-05-07 16:02:38.000000000 +0200
++++ ./Makefile	2014-02-13 13:02:59.627899989 +0100
+@@ -1,42 +1,37 @@
  NAME=cutmp3
- VERSION=2.0.2
+ VERSION=2.0.3
 -PREFIX=/usr
 +PREFIX?=/usr/local
  BINDIR=${PREFIX}/bin
@@ -14,19 +14,47 @@
  
  all:
 -	@echo -e "\n\n*** You need readline-devel, ncurses-devel or similar to compile ${NAME} ***\n*** Maybe you want to try the binary on compile failures? ***\n\n"
- 	gcc -O ${CFLAGS} -c mpglib.c
- 	gcc -O ${CFLAGS} -c main.c
- 	gcc main.o mpglib.o -o ${NAME} -lm -lreadline -lncurses
-@@ -25,12 +24,8 @@
- 	install -d ${BINDIR}
- 	install ${NAME} ${BINDIR}
+-	gcc -O ${CFLAGS} -c mpglib.c
+-	gcc -O ${CFLAGS} -c main.c
+-	gcc main.o mpglib.o -o ${NAME} -lm -lreadline -lncurses
++	cc -O ${CFLAGS} -c mpglib.c
++	cc -O ${CFLAGS} -c main.c
++	cc main.o mpglib.o -o ${NAME} -lm -lreadline -lncurses
+ 
+ i386:
+-	gcc -Wall -O -c mpglib.c
+-	gcc -Wall -O -c main.c
+-	gcc main.o mpglib.o -o ${NAME} -lm -lreadline -lncurses
++	cc -Wall -O -c mpglib.c
++	cc -Wall -O -c main.c
++	cc main.o mpglib.o -o ${NAME} -lm -lreadline -lncurses
+ 
+ clean:
+ 	rm -f *.o
+ 	rm -f ${NAME}
+ 
+ install:
+-	install -d ${BINDIR}
+-	install ${NAME} ${BINDIR}
++	install -d $(DESTDIR)${BINDIR}
++	install ${NAME} $(DESTDIR)${BINDIR}
  	if [ ! -z "${KDEDIR}" ]; then install -m 644 ${NAME}.desktop ${KDEDIR}/share/apps/konqueror/servicemenus; elif [ -d /usr/share/apps/konqueror/servicemenus ]; then install -m 644 ${NAME}.desktop /usr/share/apps/konqueror/servicemenus; elif [ -d /opt/kde/share/apps/konqueror/servicemenus ]; then install -m 644 ${NAME}.desktop /opt/kde/share/apps/konqueror/servicemenus; elif [ -d /opt/kde3/share/apps/konqueror/servicemenus ]; then install -m 644 ${NAME}.desktop /opt/kde3/share/apps/konqueror/servicemenus; fi
 -	install -d ${DOCDIR}/${NAME}
 -	install -m 644 README* USAGE ${DOCDIR}/${NAME}
 -	install -d ${MANDIR}
  	gzip ${NAME}.1
- 	install -m 644 ${NAME}.1.gz ${MANDIR}
+-	install -m 644 ${NAME}.1.gz ${MANDIR}
 -	gunzip ${NAME}.1.gz
++	install -m 644 ${NAME}.1.gz $(DESTDIR)${MANDIR}
  
  uninstall:
  	rm -f ${BINDIR}/${NAME}
+ 	rm -f ${KDEDIR}/share/apps/konqueror/servicemenus/${NAME}.desktop
+ 
+ debug:
+-	gcc -g -Wall -O -c mpglib.c
+-	gcc -g -Wall -O -c main.c
+-	gcc main.o mpglib.o -o ${NAME} -lm -lreadline -lncurses
++	cc -g -Wall -O -c mpglib.c
++	cc -g -Wall -O -c main.c
++	cc main.o mpglib.o -o ${NAME} -lm -lreadline -lncurses

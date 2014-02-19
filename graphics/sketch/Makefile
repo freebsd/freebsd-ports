@@ -21,6 +21,9 @@ USE_DOS2UNIX=	yes
 PLIST_FILES=	bin/sketch
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

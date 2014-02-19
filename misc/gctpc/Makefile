@@ -15,25 +15,22 @@ OPTIONS_DEFINE=	DOCS
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/source
 
-USE_GMAKE=	yes
+USES=		gmake
 ALL_TARGET=	libgctpc.so.1
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/libgctpc.a ${PREFIX}/lib
-	${INSTALL_PROGRAM} ${WRKSRC}/libgctpc.so.1 ${PREFIX}/lib
-	${LN} -sf libgctpc.so.1 ${PREFIX}/lib/libgctpc.so
-	${MKDIR} ${PREFIX}/include/gctpc
-	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/gctpc
-	${INSTALL_DATA} ${FILESDIR}/*.h ${PREFIX}/include/gctpc
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/../doc/* ${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/../README ${DOCSDIR}/README.main
-.endif
+	${INSTALL_DATA} ${WRKSRC}/libgctpc.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/libgctpc.so.1 ${STAGEDIR}${PREFIX}/lib
+	${LN} -sf libgctpc.so.1 ${STAGEDIR}${PREFIX}/lib/libgctpc.so
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/gctpc
+	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/gctpc
+	${INSTALL_DATA} ${FILESDIR}/*.h ${STAGEDIR}${PREFIX}/include/gctpc
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/../doc/* ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/../README ${STAGEDIR}${DOCSDIR}/README.main
 
 .include <bsd.port.mk>

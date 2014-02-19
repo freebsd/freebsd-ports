@@ -3,6 +3,7 @@
 
 PORTNAME=	hadoop
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/core/${PORTNAME}-${PORTVERSION}
@@ -21,7 +22,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 USE_JAVA=	yes
 JAVA_VERSION=	1.6
 USE_ANT=	yes
-ONLY_FOR_ARCHS= amd64 i386
+ONLY_FOR_ARCHS=	amd64 i386
+USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	DOCS
 
@@ -105,6 +107,7 @@ do-install:
 	${ECHO} "export HADOOP_PID_DIR=${HADOOP_RUNDIR}" > ${STAGEDIR}${ETCDIR}/envvars.d/004.hadoop_run.env
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${TAR} -cf - -C ${WRKSRC}/c++/${_HADOOP_ARCH} include lib | ${TAR} xf - -C ${STAGEDIR}${PREFIX}
+	${INSTALL_DATA} ${WRKSRC}/src/c++/libhdfs/hdfs.h ${STAGEDIR}${PREFIX}/include/hadoop/
 
 .for f in ${DEFAULTS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${EXAMPLESDIR}

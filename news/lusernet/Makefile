@@ -21,5 +21,4 @@ USE_GNUSTEP_LOCAL_LIBS+=	Pantomime:${PANTOMIME_PORT}
 
 PANTOMIME_PORT?=	mail/pantomime
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -18,6 +18,9 @@ USE_AUTOTOOLS=	autoconf automake aclocal
 AUTOMAKE_ARGS=	--add-missing
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-install:

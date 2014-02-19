@@ -15,8 +15,7 @@ LIB_DEPENDS=	png15:${PORTSDIR}/graphics/png
 
 MAKE_JOBS_UNSAFE=	yes
 
-USES=		shebangfix
-USE_FORTRAN=	yes
+USES=		fortran shebangfix
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xproto xt
 
@@ -26,6 +25,9 @@ SUFFIXES=	flib clib bin
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH:M*64*}

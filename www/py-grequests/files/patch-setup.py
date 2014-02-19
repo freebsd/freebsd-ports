@@ -1,10 +1,14 @@
---- ./setup.py.orig	2013-03-05 10:04:42.000000000 +1100
-+++ ./setup.py	2013-04-29 20:25:38.800634016 +1000
-@@ -56,5 +56,6 @@
+# Support test command w/ tests_require & test_suite
+# https://github.com/kennethreitz/grequests/pull/47
+
+--- ./setup.py.orig	2014-02-16 17:35:13.772145487 +1100
++++ ./setup.py	2014-02-16 17:36:15.191123632 +1100
+@@ -56,5 +56,7 @@
          'Programming Language :: Python',
          'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
          'Topic :: Software Development :: Libraries :: Python Modules'
 -    ]
 +    ],
-+    test_suite='tests'
++    tests_require = ['nose'],
++    test_suite = 'nose.collector',
  )

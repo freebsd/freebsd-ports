@@ -14,7 +14,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A library for manipulating Unicode characters and strings
 
 USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \
@@ -23,5 +23,4 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 CPPFLAGS+=	-I${LOCALBASE}/include
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

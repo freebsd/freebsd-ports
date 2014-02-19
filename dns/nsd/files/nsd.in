@@ -12,21 +12,22 @@
 # nsd_enable="YES"
 #
 
+: ${nsd_enable="NO"}
+
 . /etc/rc.subr
 
 name=nsd
-rcvar=${name}_enable
+rcvar=nsd_enable
 
 config=${nsd_config:=%%PREFIX%%/etc/nsd/nsd.conf}
 required_files=${config}
-
-command=%%PREFIX%%/sbin/nsd-control
-command_args="start"
 pidfile=`%%PREFIX%%/sbin/nsd-checkconf -o pidfile ${config}`
 
-procname=%%PREFIX%%/sbin/${name}
-
+command="%%PREFIX%%/sbin/${name}"
+command_args="-c ${required_files}"
 extra_commands="reload"
+
+load_rc_config $name
 
 run_rc_command "$1"
 

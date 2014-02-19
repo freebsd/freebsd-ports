@@ -14,7 +14,6 @@ LIB_DEPENDS=	libxmms.so:${PORTSDIR}/multimedia/xmms \
 		libaudio.so:${PORTSDIR}/audio/nas
 
 USE_GNOME=	gtk12
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

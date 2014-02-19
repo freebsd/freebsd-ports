@@ -24,6 +24,8 @@ PORTDOCS=	api LICENSE License.html readme.html tarman.html
 JARFILES=	tar.jar
 PLIST_FILES=	${JARFILES:S,^,%%JAVAJARDIR%%/,}
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-install:

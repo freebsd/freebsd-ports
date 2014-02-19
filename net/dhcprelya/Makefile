@@ -27,6 +27,9 @@ PLIST_FILES=	sbin/${PORTNAME} lib/${PORTNAME}_log_plugin.so \
 RADIUS_PLUGIN_PLUGIN_DESC=	build radius plugin
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRADIUS_PLUGIN}

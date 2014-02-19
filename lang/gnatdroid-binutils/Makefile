@@ -3,6 +3,7 @@
 
 PORTNAME=		binutils
 PORTVERSION=		2.24
+PORTREVISION=		1
 CATEGORIES=		lang
 MASTER_SITES=		${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	binutils/releases
@@ -10,6 +11,9 @@ PKGNAMEPREFIX=		gnatdroid-
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Infrastructure for C/Ada Android cross-compiler
+
+LICENSE=	GPLv3 LGPL3
+LICENSE_COMB=	multi
 
 BUILD_DEPENDS=	gnatdroid-sysroot>=9:${PORTSDIR}/lang/gnatdroid-sysroot \
 		${LOCALBASE}/lib/libgmp.so:${PORTSDIR}/math/gmp \

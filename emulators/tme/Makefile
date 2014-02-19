@@ -37,6 +37,9 @@ LDFLAGS+=	-L${WRKSRC}/ic/ieee754/.libs
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 post-patch:

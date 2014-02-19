@@ -17,14 +17,14 @@ BUILD_DEPENDS=	obabel:${PORTSDIR}/science/openbabel \
 LIB_DEPENDS+=	mpqc:${PORTSDIR}/science/mpqc \
 		f2c:${PORTSDIR}/lang/f2c
 
-USE_GMAKE=	yes
-USES=	pathfix pkgconfig gettext
+USES=		fortran gettext gmake pathfix pkgconfig
 USE_GL=		gl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=   yes
 
-USE_FORTRAN=	yes
 CONFIGURE_ARGS+=	--enable-mpqc
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_SUB=	LIBGHEMICAL_VERSION="${PORTVERSION}"
 
 NO_STAGE=	yes

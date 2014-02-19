@@ -485,6 +485,7 @@ man/man8/xymonproxy.8
 @dirrm %%WWWDIR%%/server/web
 @dirrm %%WWWDIR%%/server/tmp
 @dirrm %%WWWDIR%%/server/ext
+@dirrm %%WWWDIR%%/server/etc/tasks.d
 @dirrm %%WWWDIR%%/server/etc
 @dirrm %%WWWDIR%%/server/download
 @dirrm %%WWWDIR%%/server/bin

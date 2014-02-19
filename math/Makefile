@@ -291,6 +291,7 @@
     SUBDIR += octave-forge-database
     SUBDIR += octave-forge-dataframe
     SUBDIR += octave-forge-dicom
+    SUBDIR += octave-forge-divand
     SUBDIR += octave-forge-econometrics
     SUBDIR += octave-forge-engine
     SUBDIR += octave-forge-fenv
@@ -416,6 +417,7 @@
     SUBDIR += p5-Math-Expr
     SUBDIR += p5-Math-FFT
     SUBDIR += p5-Math-FixedPrecision
+    SUBDIR += p5-Math-Fleximal
     SUBDIR += p5-Math-GMP
     SUBDIR += p5-Math-GMPf
     SUBDIR += p5-Math-GMPq
@@ -520,6 +522,7 @@
     SUBDIR += pecl-big_int
     SUBDIR += pecl-bitset
     SUBDIR += pecl-stats
+    SUBDIR += pecl-trader
     SUBDIR += petsc
     SUBDIR += php5-bcmath
     SUBDIR += php5-gmp
@@ -534,6 +537,7 @@
     SUBDIR += ploticus
     SUBDIR += ploticus-nox11
     SUBDIR += plplot
+    SUBDIR += plplot-ada
     SUBDIR += polymake
     SUBDIR += primegen
     SUBDIR += prng
@@ -592,6 +596,7 @@
     SUBDIR += qwtplot3d-qt4
     SUBDIR += randlib
     SUBDIR += rapid
+    SUBDIR += reduce
     SUBDIR += reed-solomon
     SUBDIR += rkward-kde4
     SUBDIR += rngstreams

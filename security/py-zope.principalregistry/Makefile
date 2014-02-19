@@ -2,9 +2,11 @@
 
 PORTNAME=	zope.principalregistry
 PORTVERSION=	3.7.1
+PORTREVISION=	1
 CATEGORIES=	security python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Global principal registry component for Zope3
@@ -17,10 +19,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zope.authentication>=0:${PORTSDIR}/security/
 		${PYTHON_PKGNAMEPREFIX}zope.password>=0:${PORTSDIR}/security/py-zope.password \
 		${PYTHON_PKGNAMEPREFIX}zope.security>=0:${PORTSDIR}/security/py-zope.security
 
-DIST_SUBDIR=	zope
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-
-NO_STAGE=	yes
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 .include <bsd.port.mk>

@@ -20,14 +20,14 @@ OPTIONS_DEFAULT=FFTW
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S,${DISTVERSIONSUFFIX},,}
 
-USES=		gettext gmake pkgconfig shebangfix tk:wrapper
+USES=		gettext gmake libtool pkgconfig shebangfix tk:wrapper
 SHEBANG_FILES=	tcl/pkg_mkIndex.tcl
 SHEBANG_LANG=	tclsh
 tclsh_OLD_CMD=	/usr/bin/tclsh
 tclsh_CMD=	${LOCALBASE}/bin/tclsh
 USE_AUTOTOOLS=	aclocal libtoolize autoconf automake
 ACLOCAL_ARGS=	-I m4/generated -I m4
-LIBTOOLIZE_ARGS=--install --force
+LIBTOOLIZE_ARGS=--install --copy --force
 AUTOMAKE_ARGS=	--add-missing --copy --force-missing
 CONFIGURE_ENV=	ac_cv_lib_pthread_pthread_create=no
 
@@ -82,7 +82,7 @@ post-patch:
 pre-configure:
 	@(cd ${WRKSRC}/portaudio \
 		&& ${SETENV} ${AUTOTOOLS_ENV} ${ACLOCAL} \
-		&& ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} \
+		&& ${SETENV} ${AUTOTOOLS_ENV} ${LIBTOOLIZE} ${LIBTOOLIZE_ARGS} \
 		&& ${SETENV} ${AUTOTOOLS_ENV} ${AUTOCONF})
 
 do-install:

@@ -13,13 +13,7 @@ COMMENT=	Displays the phase of the moon
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
-		BINDIR=${LOCALBASE}/bin \
-		MANDIR=${MANPREFIX}/man/man1
-
-NO_STAGE=	yes
-MAN1=		phoon.1
-PLIST_FILES=	bin/phoon
+PLIST_FILES=	bin/phoon man/man1/phoon.1.gz
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|gmtoff = !!!;||g' \

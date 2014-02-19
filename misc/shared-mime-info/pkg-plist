@@ -63,6 +63,7 @@ share/locale/zh_CN/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_HK/LC_MESSAGES/shared-mime-info.mo
 share/locale/zh_TW/LC_MESSAGES/shared-mime-info.mo
 share/mime/packages/freedesktop.org.xml
+man/man1/update-mime-database.1.gz
 @rmtry share/mime/XMLnamespaces
 @rmtry share/mime/aliases
 @rmtry share/mime/generic-icons

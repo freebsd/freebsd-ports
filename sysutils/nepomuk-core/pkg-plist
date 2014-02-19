@@ -2,9 +2,17 @@ bin/nepomuk-simpleresource-rcgen
 bin/nepomuk2-rcgen
 bin/nepomukbackup
 bin/nepomukcleaner
+bin/nepomukcmd
+bin/nepomukctl
+bin/nepomukfileindexer
+bin/nepomukfilewatch
 bin/nepomukindexer
+bin/nepomukmigrator
+bin/nepomuksearch
 bin/nepomukserver
 bin/nepomukservicestub
+bin/nepomukshow
+bin/nepomukstorage
 env/nepomuk-env.sh
 include/Nepomuk2/CreateResourceJob
 include/Nepomuk2/DataManagement
@@ -54,6 +62,7 @@ include/Nepomuk2/Vocabulary/PIMO
 include/Nepomuk2/Vocabulary/TMO
 include/nepomuk2/andterm.h
 include/nepomuk2/class.h
+include/nepomuk2/cleaningjob.h
 include/nepomuk2/comparisonterm.h
 include/nepomuk2/createresourcejob.h
 include/nepomuk2/datamanagement.h
@@ -94,6 +103,7 @@ include/nepomuk2/resourcetypeterm.h
 include/nepomuk2/resourcewatcher.h
 include/nepomuk2/result.h
 include/nepomuk2/resultiterator.h
+include/nepomuk2/service2.h
 include/nepomuk2/simpleresource.h
 include/nepomuk2/simpleresourcegraph.h
 include/nepomuk2/simpleterm.h
@@ -110,19 +120,24 @@ lib/cmake/NepomukCore/NepomukCoreConfig.cmake
 lib/cmake/NepomukCore/NepomukCoreConfigVersion.cmake
 lib/cmake/NepomukCore/NepomukCoreTargetsWithPrefix-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/NepomukCore/NepomukCoreTargetsWithPrefix.cmake
+lib/kde4/nepomukepubextractor.so
 lib/kde4/nepomukexiv2extractor.so
 lib/kde4/nepomukffmpegextractor.so
-lib/kde4/nepomukfileindexer.so
-lib/kde4/nepomukfilewatch.so
+lib/kde4/nepomukmobiextractor.so
+lib/kde4/nepomukodfextractor.so
+lib/kde4/nepomukoffice2007extractor.so
+lib/kde4/nepomukofficeextractor.so
 lib/kde4/nepomukplaintextextractor.so
 lib/kde4/nepomukpopplerextractor.so
-lib/kde4/nepomukstorage.so
 lib/kde4/nepomuktaglibextractor.so
 lib/libkdeinit4_nepomukserver.so
+lib/libnepomukcleaner.so
+lib/libnepomukcleaner.so.4
+lib/libnepomukcleaner.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/libnepomukcommon.so
 lib/libnepomukcore.so
-lib/libnepomukcore.so.5
-lib/libnepomukcore.so.5.0.1
+lib/libnepomukcore.so.4
+lib/libnepomukcore.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/libnepomukextractor.so
 share/applications/kde4/nepomukbackup.desktop
 share/applications/kde4/nepomukcleaner.desktop
@@ -134,6 +149,7 @@ share/dbus-1/interfaces/org.kde.NepomukServer.xml
 share/dbus-1/interfaces/org.kde.nepomuk.BackupManager.xml
 share/dbus-1/interfaces/org.kde.nepomuk.DataManagement.xml
 share/dbus-1/interfaces/org.kde.nepomuk.FileIndexer.xml
+share/dbus-1/interfaces/org.kde.nepomuk.FileWatch.xml
 share/dbus-1/interfaces/org.kde.nepomuk.OntologyManager.xml
 share/dbus-1/interfaces/org.kde.nepomuk.Query.xml
 share/dbus-1/interfaces/org.kde.nepomuk.QueryService.xml
@@ -144,10 +160,15 @@ share/dbus-1/interfaces/org.kde.nepomuk.ServiceManager.xml
 share/dbus-1/interfaces/org.kde.nepomuk.Storage.xml
 share/kde4/services/nepomukactivitiesservice.desktop
 share/kde4/services/nepomukbackupsync.desktop
+share/kde4/services/nepomukepubextractor.desktop
 share/kde4/services/nepomukexiv2extractor.desktop
 share/kde4/services/nepomukffmpegextractor.desktop
 share/kde4/services/nepomukfileindexer.desktop
 share/kde4/services/nepomukfilewatch.desktop
+share/kde4/services/nepomukmobiextractor.desktop
+share/kde4/services/nepomukodfextractor.desktop
+share/kde4/services/nepomukoffice2007extractor.desktop
+share/kde4/services/nepomukofficeextractor.desktop
 share/kde4/services/nepomukontologyloader.desktop
 share/kde4/services/nepomukplaintextextractor.desktop
 share/kde4/services/nepomukpopplerextractor.desktop
@@ -156,22 +177,24 @@ share/kde4/services/nepomukremovablestorageservice.desktop
 share/kde4/services/nepomukstorage.desktop
 share/kde4/services/nepomukstrigiservice.desktop
 share/kde4/services/nepomuktaglibextractor.desktop
+share/kde4/servicetypes/nepomukcleaningjob.desktop
 share/kde4/servicetypes/nepomukextractor.desktop
 share/kde4/servicetypes/nepomukservice.desktop
+share/kde4/servicetypes/nepomukservice2.desktop
 share/ontology/kde/kext.ontology
 share/ontology/kde/kext.trig
 share/ontology/kde/kuvo.ontology
 share/ontology/kde/kuvo.trig
 share/ontology/kde/nrio.ontology
 share/ontology/kde/nrio.trig
-@dirrm share/ontology/kde
+@dirrmtry share/ontology/kde
 @dirrmtry share/ontology
 @dirrm share/apps/nepomukstorage
 @dirrm share/apps/nepomukfilewatch
 @dirrm share/apps/fileindexerservice
 @dirrm lib/cmake/NepomukCore
 @dirrmtry lib/cmake
-@dirrm include/nepomuk2
+@dirrmtry include/nepomuk2
 @dirrm include/Nepomuk2/Vocabulary
 @dirrm include/Nepomuk2/Types
 @dirrm include/Nepomuk2/Query

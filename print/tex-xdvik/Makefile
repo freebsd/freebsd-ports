@@ -49,6 +49,9 @@ PORTDOCS=	BUGS CHANGES INSTALL README README.CVS README.coding \
 		README.layout README.xdvik README_maintainer TODO
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-install:

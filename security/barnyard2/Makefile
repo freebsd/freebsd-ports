@@ -14,7 +14,7 @@ GH_ACCOUNT=	firnsy
 GH_TAGNAME=	v2-${PORTVERSION}
 GH_COMMIT=	272eaf7
 
-OPTIONS_DEFINE=	64BIT ARUBA BRO GRE IPV6 MPLS MYSQL MYSQL_SSL ODBC PRELUDE PGSQL
+OPTIONS_DEFINE=	64BIT ARUBA BRO GRE IPV6 MPLS MYSQL MYSQL_SSL ODBC PRELUDE PGSQL PORT_PCAP
 NO_OPTIONS_SORT=yes
 
 64BIT_DESC=	Enable 64bit compilation (experimental)
@@ -23,6 +23,7 @@ BRO_DESC=	Enable bro support (libbroccoli)
 GRE_DESC=	Enable gre support
 MYSQL_SSL_DESC=	Enable mysql ssl support (experimental)
 PRELUDE_DESC=	Enable prelude support
+PORT_PCAP_DESC=	Use libpcap from ports
 
 .if defined(SLAVE)
 OPTIONS_DEFINE+=	TCL
@@ -44,89 +45,33 @@ PORTDOCS1=	README RELEASE.NOTES
 PORTDOCS2=	INSTALL README.aruba README.database README.sguil README.sig_suppress README.snortsam
 EXAMPLES=	SCHEMA_ACCESS create_db2 create_mssql create_mysql create_oracle.sql create_postgresql
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:M64BIT}
-CONFIGURE_ARGS+=	--enable-64bit-gcc
-.else
-CONFIGURE_ARGS+=	--disable-64bit-gcc
-.endif
-
-.if ${PORT_OPTIONS:MARUBA}
-CONFIGURE_ARGS+=	--enable-aruba
-.else
-CONFIGURE_ARGS+=	--disable-aruba
-.endif
-
-.if ${PORT_OPTIONS:MBRO}
-LIB_DEPENDS+=		libbroccoli.so:${PORTSDIR}/security/broccoli
-CONFIGURE_ARGS+=	--enable-bro --with-broccoli=${LOCALBASE}/lib
-.else
-CONFIGURE_ARGS+=	--disable-bro
-.endif
-
-.if ${PORT_OPTIONS:MGRE}
-CONFIGURE_ARGS+=	--enable-gre
-.else
-CONFIGURE_ARGS+=	--disable-gre
-.endif
-
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=	--enable-ipv6
-.else
-CONFIGURE_ARGS+=	--disable-ipv6
-.endif
-
-.if ${PORT_OPTIONS:MMPLS}
-CONFIGURE_ARGS+=	--enable-mpls
-.else
-CONFIGURE_ARGS+=	--disable-mpls
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=		yes
-CONFIGURE_ARGS+=	--with-mysql \
-			--with-mysql-includes=${LOCALBASE}/include/mysql \
+64BIT_CONFIGURE_ENABLE=	64bit-gcc
+ARUBA_CONFIGURE_ENABLE=	aruba
+BRO_LIB_DEPENDS=	libbroccoli.so:${PORTSDIR}/security/broccoli
+BRO_CONFIGURE_ON=	--with-broccoli=${LOCALBASE}/lib
+BRO_CONFIGURE_ENABLE=	bro
+GRE_CONFIGURE_ENABLE=	gre
+IPV6_CONFIGURE_ENABLE=	ipv6
+MPLS_CONFIGURE_ENABLE=	mpls
+MYSQL_USE=		MYSQL=yes
+MYSQL_CONFIGURE_WITH=	mysql
+MYSQL_CONFIGURE_ON=	--with-mysql-includes=${LOCALBASE}/include/mysql \
 			--with-mysql-libraries=${LOCALBASE}/lib/mysql
-.else
-CONFIGURE_ARGS+=	--without-mysql
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL_SSL}
-USE_MYSQL=		yes
-CONFIGURE_ARGS+=	--enable-mysql-ssl-support
-.else
-CONFIGURE_ARGS+=	--disable-mysql-ssl-support
-.endif
-
-.if ${PORT_OPTIONS:MODBC}
-LIB_DEPENDS+=	odbc:${PORTSDIR}/databases/unixODBC
-CONFIGURE_ARGS+=	--with-odbc
-.else
-CONFIGURE_ARGS+=	--without-odbc
-.endif
-
-.if ${PORT_OPTIONS:MPRELUDE}
-BUILD_DEPENDS+=	prelude-manager:${PORTSDIR}/security/prelude-manager
-CONFIGURE_ARGS+=	--enable-prelude
-.else
-CONFIGURE_ARGS+=	--disable-prelude
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=		yes
+MYSQL_SSL_CONFIGURE_ENABLE=	mysql-ssl-support
+ODBC_LIB_DEPENDS=	libodbc.so:${PORTSDIR}/databases/unixODBC
+ODBC_WITH=		odbc
+PRELUDE_BUILD_DEPENDS=	prelude-manager:${PORTSDIR}/security/prelude-manager
+PRELUDE_CONFIGURE_ENABLE=	prelude
+PGSQL_USE=		PGSQL=yes
+PGSQL_CONFIGURE_ON=	--with-postgresql=${LOCALBASE}/bin/pg_config --with-pgsql-includes=${LOCALBASE}/include/postgresql/server
+PGSQL_CONFIGURE_OFF=	--without-postgresql
+TCL_USES=		tcl
+TCL_CONFIGURE_ON=	--with-tcl=${LOCALBASE}/lib/tcl${TCL_VER}
+TCL_CONFIGURE_OFF=	--without-tcl
 WANT_PGSQL_VER=		92+
-CONFIGURE_ARGS+=	--with-postgresql=${LOCALBASE}/bin/pg_config --with-pgsql-includes=${LOCALBASE}/include/postgresql/server
-.else
-CONFIGURE_ARGS+=	--without-postgresql
-.endif
-
-.if ${PORT_OPTIONS:MTCL}
-USES+=			tcl
-CONFIGURE_ARGS+=	--with-tcl=${LOCALBASE}/lib/tcl${TCL_VER}
-.else
-CONFIGURE_ARGS+=	--without-tcl
-.endif
+PORT_PCAP_LIB_DEPENDS=	libpcap.so:${PORTSDIR}/net/libpcap
+PORT_PCAP_CONFIGURE_ON=	--with-libpcap-includes=${LOCALBASE}/include \
+			--with-libpcap-libraries=${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} 's|/etc|${LOCALBASE}/etc|' \

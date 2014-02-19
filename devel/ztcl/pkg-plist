@@ -8,12 +8,4 @@ lib/libztclstub1.0.a
 lib/libztclstub1.a
 lib/ztcl/pkgIndex.tcl
 share/aclocal/ztcl.m4
-%%DOCSDIR%%/DESCRIPTION.txt
-%%DOCSDIR%%/HTML/ztcl-zlib.html
-%%DOCSDIR%%/HTML/ztcl.html
-%%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/README
-%%DOCSDIR%%/license.terms
 @dirrm lib/ztcl
-@dirrm %%DOCSDIR%%/HTML
-@dirrm %%DOCSDIR%%

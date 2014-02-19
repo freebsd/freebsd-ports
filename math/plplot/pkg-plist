@@ -41,7 +41,7 @@ lib/libplplotcxxd.so.11
 lib/libplplotcxxd.so.11.0.0
 lib/libplplotd.so
 lib/libplplotd.so.12
-lib/libplplotd.so.12.0.0
+lib/libplplotd.so.12.0.1
 %%FORTRAN%%lib/libplplotf77cd.so
 %%FORTRAN%%lib/libplplotf77cd.so.9
 %%FORTRAN%%lib/libplplotf77cd.so.9.1.1

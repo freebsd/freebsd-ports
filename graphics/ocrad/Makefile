@@ -23,6 +23,8 @@ PLIST_FILES=	bin/${PORTNAME} man/man1/ocrad.1.gz
 PORTDOCS=	AUTHORS ChangeLog NEWS README
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 .if ${OSVERSION} < 1000024

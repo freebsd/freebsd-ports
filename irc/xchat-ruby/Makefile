@@ -25,6 +25,8 @@ PLIST_FILES=	lib/xchat/plugins/xchat-ruby.so
 PORTDOCS=	README ChangeLog
 PORTEXAMPLES=	embedify.rb TimerSample.rb JFilter.rb JBanner.rb
 
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 post-patch:

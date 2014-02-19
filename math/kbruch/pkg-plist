@@ -1,4 +1,5 @@
 bin/kbruch
+man/man1/kbruch.1.gz
 share/applications/kde4/kbruch.desktop
 share/apps/kbruch/AppMenuWidgetui.rc
 share/apps/kbruch/FractionRingWidgetui.rc

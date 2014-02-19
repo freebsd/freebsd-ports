@@ -37,6 +37,9 @@ USES=		pathfix pkgconfig
 PLIST_SUB+=	WITH_OGRE=""
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

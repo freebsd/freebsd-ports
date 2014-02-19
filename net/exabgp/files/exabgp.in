@@ -48,7 +48,7 @@ exabgp_start()
 	${procname} ${command} --folder %%ETCDIR%% ${exabgp_conf}
 }
 
-exabgp_reload_all() {
+exabgp_reload_all()
 {
     	echo "Reloading exabgp configuration and processes."
 	kill -USR2 $rc_pid

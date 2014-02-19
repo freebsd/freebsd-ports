@@ -1,31 +1,32 @@
+bin/kde-add-printer
+bin/kde-print-queue
+lib/kde4/imports/org/kde/printmanager/libprintmanager.so
+lib/kde4/imports/org/kde/printmanager/qmldir
 lib/kde4/kcm_printer_manager.so
 lib/kde4/kded_printmanager.so
-lib/kde4/libexec/add-printer
 lib/kde4/libexec/configure-printer
-lib/kde4/libexec/print-queue
-lib/kde4/plasma_engine_printers.so
-lib/kde4/plasma_engine_printjobs.so
+lib/kde4/plugins/designer/printmanagerwidget.so
 lib/libkcupslib.so
-share/apps/plasma/plasmoids/printmanager/contents/config/main.xml
-share/apps/plasma/plasmoids/printmanager/contents/ui/JobItem.qml
-share/apps/plasma/plasmoids/printmanager/contents/ui/PrinterItem.qml
-share/apps/plasma/plasmoids/printmanager/contents/ui/ScrollableListView.qml
-share/apps/plasma/plasmoids/printmanager/contents/ui/config.ui
-share/apps/plasma/plasmoids/printmanager/contents/ui/printmanager.qml
-share/apps/plasma/plasmoids/printmanager/metadata.desktop
-share/apps/plasma/services/org.kde.printers.operations
-share/apps/plasma/services/org.kde.printjobs.operations
+share/apps/plasma/plasmoids/org.kde.printmanager/contents/config/main.xml
+share/apps/plasma/plasmoids/org.kde.printmanager/contents/ui/CompactRepresentation.qml
+share/apps/plasma/plasmoids/org.kde.printmanager/contents/ui/JobItem.qml
+share/apps/plasma/plasmoids/org.kde.printmanager/contents/ui/NIHSwitch.qml
+share/apps/plasma/plasmoids/org.kde.printmanager/contents/ui/PrinterItem.qml
+share/apps/plasma/plasmoids/org.kde.printmanager/contents/ui/ScrollableListView.qml
+share/apps/plasma/plasmoids/org.kde.printmanager/contents/ui/StatusView.qml
+share/apps/plasma/plasmoids/org.kde.printmanager/contents/ui/config.ui
+share/apps/plasma/plasmoids/org.kde.printmanager/contents/ui/printmanager.qml
+share/apps/plasma/plasmoids/org.kde.printmanager/contents/ui/private/RoundShadow.qml
+share/apps/plasma/plasmoids/org.kde.printmanager/metadata.desktop
 share/apps/printmanager/printmanager.notifyrc
-share/dbus-1/services/org.kde.AddPrinter.service
 share/dbus-1/services/org.kde.ConfigurePrinter.service
-share/dbus-1/services/org.kde.PrintQueue.service
 share/kde4/services/kcm_printer_manager.desktop
 share/kde4/services/kded/printmanager.desktop
 share/kde4/services/plasma-applet-printmanager.desktop
-share/kde4/services/plasma-engine-printers.desktop
-share/kde4/services/plasma-engine-printjobs.desktop
 @dirrm share/apps/printmanager
-@dirrm share/apps/plasma/plasmoids/printmanager/contents/ui
-@dirrm share/apps/plasma/plasmoids/printmanager/contents/config
-@dirrm share/apps/plasma/plasmoids/printmanager/contents
-@dirrm share/apps/plasma/plasmoids/printmanager
+@dirrm share/apps/plasma/plasmoids/org.kde.printmanager/contents/ui/private
+@dirrm share/apps/plasma/plasmoids/org.kde.printmanager/contents/ui
+@dirrm share/apps/plasma/plasmoids/org.kde.printmanager/contents/config
+@dirrm share/apps/plasma/plasmoids/org.kde.printmanager/contents
+@dirrm share/apps/plasma/plasmoids/org.kde.printmanager
+@dirrm lib/kde4/imports/org/kde/printmanager

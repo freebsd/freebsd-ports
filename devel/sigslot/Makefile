@@ -14,12 +14,11 @@ PLIST_FILES=	include/sigslot.h
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	@(cd ${WRKSRC} ; ${MV} -f sigslot.h sigslot.h.orig ; \
 		${CAT} sigslot.h.orig | /usr/bin/col -b > sigslot.h)
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/sigslot.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/sigslot.h ${STAGEDIR}${PREFIX}/include
 
 .include <bsd.port.mk>

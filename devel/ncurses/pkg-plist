@@ -118,6 +118,7 @@ man/man1/clear.1.gz
 man/man1/infocmp.1m.gz
 man/man1/infotocap.1m.gz
 man/man1/ncurses5-config.1.gz
+man/man1/ncursesw5-config.1.gz
 man/man1/reset.1.gz
 man/man1/tabs.1.gz
 man/man1/tic.1m.gz

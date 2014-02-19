@@ -23,7 +23,6 @@ CMAKE_ARGS+=	-DUFC_PKGCONFIG_DIR=${PREFIX}/libdata/pkgconfig
 
 MMVERSION=	2.2
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|lib/pkgconfig|libdata/pkgconfig|g' \
 		${WRKSRC}/CMakeLists.txt

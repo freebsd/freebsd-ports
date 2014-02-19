@@ -19,9 +19,8 @@ CONFIGURE_ARGS+=--with-tcl=${TCL_LIBDIR} \
 
 PLIST_DIRS=	lib/mmap${PORTVERSION}
 PLIST_FILES=	lib/mmap${PORTVERSION}/pkgIndex.tcl \
-		lib/mmap${PORTVERSION}/libmmap${PORTVERSION}.so
-
-MANN=	tcl-mmap.n
+		lib/mmap${PORTVERSION}/libmmap${PORTVERSION}.so \
+		man/mann/tcl-mmap.n.gz
 
 regression-test: build
 	cd ${WRKSRC}/tests; \
@@ -30,5 +29,4 @@ regression-test: build
 	    echo "load ../libmmap${PORTVERSION}.so; source $$t" | ${TCLSH}; \
 	done;
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -11,25 +11,26 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	The GNU spreadsheet for X11 and terminals
 
+LICENSE=	GPLv2
+
 USE_PERL5=	build
 USES=		bison perl5
 USE_AUTOTOOLS=	autoconf213
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
+MAKE_ENV+=	DESTDIR=${STAGEDIR}
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--with-x --without-xlt --without-SciPlot
 
 INFO=		oleo
-PORTDOCS=	AUTHORS FAQ
 
 OPTIONS_DEFINE=	MOTIF NLS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMOTIF}
-LIB_DEPENDS+=	plot:${PORTSDIR}/graphics/plotutils \
-		Xbae:${PORTSDIR}/x11-toolkits/xbae \
-		XmHTML:${PORTSDIR}/x11-toolkits/xmhtml
+LIB_DEPENDS+=	libplot.so:${PORTSDIR}/graphics/plotutils \
+		libXbae.so:${PORTSDIR}/x11-toolkits/xbae \
+		libXmHTML.so:${PORTSDIR}/x11-toolkits/xmhtml
 USES+=		motif
 CONFIGURE_ARGS+=	--with-motif
 .else
@@ -48,20 +49,14 @@ PLIST_SUB=	NLS="@comment "
 post-patch:
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
+	@${REINPLACE_CMD} -e '/^DESTDIR/s|=|?=|' \
+	    ${WRKSRC}/Makefile.in
 .for pof in en fr nl
 	@${REINPLACE_CMD} -e "s|CHARSET|ISO-8859-1|;s|ENCODING|8bit|"	\
 		${WRKSRC}/po/${pof}.po
 .endfor
-.if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e "s|am: install-docDATA|am:|" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|install-info-am install-htmlDATA|install-info-am|" \
 		${WRKSRC}/doc/Makefile.in
-.endif
-
-pre-build:
-.for file in src/io-term.c
-	cd ${WRKSRC} && ${MV} ${file} ${file}.pre_iconv \
-		&& iconv -c -t ascii ${file}.pre_iconv > ${file} || ${TRUE}
-.endfor
 
 .include <bsd.port.mk>

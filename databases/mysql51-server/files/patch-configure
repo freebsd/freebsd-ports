@@ -1,6 +1,15 @@
---- configure.orig	Sat May 26 12:22:14 2007
-+++ configure	Fri Jun  1 07:53:46 2007
-@@ -26935,8 +26933,8 @@
+--- configure.orig	2013-11-04 18:55:16.000000000 +0000
++++ configure	2014-02-11 13:34:06.586185156 +0000
+@@ -22206,7 +22206,7 @@
+ int
+ main ()
+ {
+-return gethostbyname_r ();
++return incompatible_gethostbyname_r ();
+   ;
+   return 0;
+ }
+@@ -24768,8 +24768,8 @@
  # Some system specific hacks
  #
  

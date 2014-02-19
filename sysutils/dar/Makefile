@@ -6,16 +6,19 @@ PORTVERSION=	2.3.11
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	SF
 
-MAINTAINER=	jadawin@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full featured command-line backup tool, aimed for disks
 
 USE_AUTOTOOLS=	libtool
 
+USE_GCC=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-build-html --datadir=${DATADIR} --disable-upx
 
 CPPFLAGS+=	-DHAVE_DECL_GETOPT=0
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

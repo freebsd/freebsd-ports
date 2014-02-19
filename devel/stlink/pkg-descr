@@ -1,0 +1,6 @@
+ ST-Link v1 / ST-Link v2 STMicroelectronics JTAG variat support.
+
+ This packahe provide utilities to flash and debug STMicro microcontrollers
+via ST-Link v1 / ST-Link v2 protocols.
+
+WWW: https://github.com/texane/stlink

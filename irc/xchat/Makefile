@@ -18,8 +18,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 CONFLICTS=	xchat-1* xchat-systray-plugin-[0-9]*
 
 USE_BZIP2=	yes
-USES=		gettext pkgconfig gmake
-USE_GNOME=	gnomehack gtk20
+USES=		gettext pkgconfig gmake pathfix
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
@@ -35,11 +35,10 @@ LIBSEXY_DESC=	Spell check support via libsexy
 .if defined(WITH_PYTHON)
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDBUS}
-LIB_DEPENDS+=	dbus-glib-1:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	libdbus-glib-1.so:${PORTSDIR}/devel/dbus-glib
 CONFIGURE_ARGS+=--enable-dbus
 USE_GNOME+=	gconf2
 GCONF_SCHEMAS+=	apps_xchat_url_handler.schemas
@@ -50,10 +49,10 @@ PLIST_SUB+=	DBUS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MGTKSPELL}
-LIB_DEPENDS+=	gtkspell:${PORTSDIR}/textproc/gtkspell
+LIB_DEPENDS+=	libgtkspell.so:${PORTSDIR}/textproc/gtkspell
 CONFIGURE_ARGS+=--enable-spell=gtkspell
 .elif ${PORT_OPTIONS:MLIBSEXY}
-LIB_DEPENDS+=	sexy:${PORTSDIR}/x11-toolkits/libsexy
+LIB_DEPENDS+=	libsexy.so:${PORTSDIR}/x11-toolkits/libsexy
 CONFIGURE_ARGS+=--enable-spell=libsexy
 .else
 CONFIGURE_ARGS+=--enable-spell=none
@@ -83,12 +82,12 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSOCKS}
-LIB_DEPENDS+=	socks:${PORTSDIR}/net/dante
+LIB_DEPENDS+=	libsocks.so:${PORTSDIR}/net/dante
 CONFIGURE_ARGS+=--enable-socks
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
-USE_TCL=	84+
+USES+=		tcl
 CONFIGURE_ARGS+=--enable-tcl=${TCL_LIBDIR}
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} \
 		-L${TCL_LIBDIR}"

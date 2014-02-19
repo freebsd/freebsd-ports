@@ -21,6 +21,9 @@ USES=		gmake pkgconfig
 GNU_CONFIGURE=	yes
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

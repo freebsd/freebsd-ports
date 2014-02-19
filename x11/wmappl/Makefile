@@ -12,13 +12,14 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Application launcher dockapp similar to wmbutton
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2014-03-10
+
 GNU_CONFIGURE=	yes
 USE_XORG=	xpm x11 xext sm ice
 MAKE_ENV=	DATADIR="${DATADIR}"
 
-.if defined(.PARSEDIR)
-USES+=		gmake
-.endif
+OPTIONS_DEFINE=	DOCS 
 
 .include <bsd.port.options.mk>
 

@@ -76,5 +76,6 @@ post-install:
 		${SED} -e 's,^${STAGEDIR}${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} -ds ${STAGEDIR}${PREFIX}/${CONFIGURE_TARGET} -type d | \
 		${SED} -e 's,^${STAGEDIR}${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
+	${RM} ${STAGEDIR}${PREFIX}/include/ansidecl.h
 
 .include <bsd.port.mk>

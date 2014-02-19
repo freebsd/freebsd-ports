@@ -1,5 +1,5 @@
---- Makefile.orig	2003-05-01 16:12:56.000000000 +0300
-+++ Makefile	2009-05-30 15:06:02.000000000 +0300
+--- Makefile.orig	2003-05-01 15:12:56.000000000 +0200
++++ Makefile	2014-02-19 12:59:01.676164732 +0100
 @@ -1,25 +1,12 @@
 -# $Id: Makefile,v 1.7 2003/05/01 13:12:56 armin Exp $
  
@@ -7,8 +7,8 @@
 -SRCS=dnsreflector.c
 -MAN=dnsreflector.1
 +OBJS = dnsreflector.o
-+CFLAGS = -g -Wall -Werror
-+CC = gcc
++CFLAGS += -Wall -Werror
++CC ?= gcc
 +STRIP = strip
  
 -BINDIR=/usr/local/sbin

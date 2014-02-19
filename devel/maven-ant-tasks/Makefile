@@ -21,7 +21,8 @@ NO_BUILD=	yes
 PLIST_FILES=	%%JAVASHAREDIR%%/apache-ant/lib/${DISTNAME}${EXTRACT_SUFX}
 
 do-install:
-	@${INSTALL_DATA} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
-		${STAGEDIR}${JAVASHAREDIR}/apache-ant/lib/
+	@${MKDIR} ${STAGEDIR}${JAVASHAREDIR}/apache-ant/lib
+	${INSTALL_DATA} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
+		${STAGEDIR}${JAVASHAREDIR}/apache-ant/lib
 
 .include <bsd.port.mk>

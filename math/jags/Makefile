@@ -19,8 +19,7 @@ COMMENT=	Just Another Gibbs Sampler
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-USES=		bison gmake
-USE_FORTRAN=	yes
+USES=		bison fortran gmake
 USE_LDCONFIG=	yes
 
 DIST_SUBDIR=	${PORTNAME}
@@ -33,6 +32,9 @@ PLIST_SUB=	MODULEVERSION=${S}
 S=		${PORTVERSION:C|\..*||}
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS} || make(makesum)

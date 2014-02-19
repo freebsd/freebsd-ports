@@ -7,12 +7,12 @@ CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	zookeeper/zookeeper-${PORTVERSION}
 
-MAINTAINER=	gnn@FreeBSD.org
+MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	A Coordination Service for Distributed Applications
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	cppunit:${PORTSDIR}/devel/cppunit
+LIB_DEPENDS=	libcppunit.so:${PORTSDIR}/devel/cppunit
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 OPTIONS_DEFINE=	C PYTHON

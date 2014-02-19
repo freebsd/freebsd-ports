@@ -22,6 +22,7 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	bzr
 USES=		gettext
+MAKE_ENV=	BZR_LOG=/dev/null
 
 .include <bsd.port.options.mk>
 

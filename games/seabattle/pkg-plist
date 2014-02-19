@@ -7,4 +7,4 @@ bin/seabattle
 %%DATADIR%%/opening.au
 %%DATADIR%%/sunkit.au
 @dirrmtry %%DATADIR%%
-@dirrmtry %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrmtry %%DOCSDIR%%

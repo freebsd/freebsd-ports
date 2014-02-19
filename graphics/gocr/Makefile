@@ -11,16 +11,16 @@ COMMENT=	OCR (Optical Character Recognition) program
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
+LIB_DEPENDS=	libnetpbm.so:${PORTSDIR}/graphics/netpbm
 
+USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-netpbm=${LOCALBASE}
-USE_GMAKE=	yes
 MAKE_ARGS=	prefix=${PREFIX} exec_prefix=${PREFIX} DESTDIR=${DESTDIR}
 
-PLIST_FILES=	bin/gocr
+PLIST_FILES=	bin/gocr \
+		man/man1/gocr.1.gz
 
-MAN1=	gocr.1
 PORTDOCS=	*
 
 DOCSRCDIR1=	${WRKSRC}
@@ -36,23 +36,24 @@ OPTIONS_DEFAULT=	X11
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
-USE_TK_WRAPPER=	yes
+USES+=		tk
 PLIST_FILES+=	bin/gocr.tcl
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|@LIBS@|-L${LOCALBASE}/lib @LIBS@|g' ${WRKSRC}/src/Makefile.in
 .if !  ${PORT_OPTIONS:MX11}
 	@${REINPLACE_CMD} -e '/gocr.tcl/d' ${WRKSRC}/src/Makefile.in
+.else
+	@${REINPLACE_CMD} -e 's|exec wish|exec ${WISH}|' ${WRKSRC}/bin/gocr.tcl
 .endif
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOC_FILES1:S|^|${DOCSRCDIR1}/|} ${STAGEDIR}${DOCSDIR}
 	@${MKDIR} ${DOCSDIR2}
-	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${DOCSDIR2}
+	${INSTALL_DATA} ${DOC_FILES2:S|^|${DOCSRCDIR2}/|} ${STAGEDIR}${DOCSDIR2}
 .endif
 
 .include <bsd.port.mk>

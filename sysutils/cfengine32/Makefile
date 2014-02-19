@@ -37,12 +37,6 @@ CONFIGURE_ENV+=	BERKELEY_DB_CFLAGS=-I${BDB_INCLUDE_DIR} \
 		BERKELEY_DB_LDFLAGS=-L${BDB_LIB_DIR} \
 		BERKELEY_DB_LIB=-l${BDB_LIB_NAME}
 
-MAN8=	cf-agent.8	cf-key.8	cf-monitord.8	\
-	cf-report.8	cf-serverd.8	cf-execd.8	\
-	cf-know.8	cf-promises.8	cf-runagent.8
-	
-
-NO_STAGE=	yes
 post-patch:
 		@${REINPLACE_CMD} -e '/^htmldir/s!=.*!= @htmldir@!'\
 				  ${WRKSRC}/docs/Makefile.in

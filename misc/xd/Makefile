@@ -15,9 +15,7 @@ LICENSE=	BSD
 MAKE_ARGS=	CC="${CC}" BINDIR="${PREFIX}/bin" \
 		MANDIR="${MAN1PREFIX}/man/man"
 
-MAN1=		xd.1
-MANCOMPRESSED=	maybe
-PLIST_FILES=	bin/xd
+PLIST_FILES=	bin/xd \
+		man/man1/xd.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

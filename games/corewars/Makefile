@@ -16,10 +16,7 @@ USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-
-.if defined(.PARSEDIR)
 USES=		gmake
-.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

@@ -21,9 +21,6 @@ LICENSE=	GPLv3
 
 USE_BZIP2=	yes
 USES=		iconv shebangfix perl5
-.if defined(.PARSEDIR)
-USES+=		gmake
-.endif
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-syslog=1 \
 		--enable-use-flock=1 \

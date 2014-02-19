@@ -11,8 +11,8 @@ lib/cmake/libkcddb/LibkcddbTargets.cmake
 lib/cmake/libkcddb/LibkcddbTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/kde4/kcm_cddb.so
 lib/libkcddb.so
-lib/libkcddb.so.5
-lib/libkcddb.so.5.0.1
+lib/libkcddb.so.4
+lib/libkcddb.so.%%KDE4_GENERIC_LIB_VERSION%%
 share/config.kcfg/libkcddb.kcfg
 share/doc/HTML/en/kcontrol/cddbretrieval/common
 share/doc/HTML/en/kcontrol/cddbretrieval/index.cache.bz2

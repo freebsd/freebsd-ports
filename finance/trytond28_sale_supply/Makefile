@@ -3,6 +3,7 @@
 
 PORTNAME=	trytond28_sale_supply
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	finance python
 MASTER_SITES=	https://pypi.python.org/packages/source/t/trytond_sale_supply/ \
 		http://downloads.tryton.org/${PORTVERSION:R}/
@@ -18,7 +19,8 @@ RUN_DEPENDS=	trytond28_sale>=2.8.1:${PORTSDIR}/finance/trytond28_sale
 CONFLICTS=	trytond_sale_supply-2.[46].*
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 PYEASYINSTALL_EGG=${DISTNAME}-py${PYTHON_VER}${PYEASYINSTALL_OSARCH}.egg
 
 .include <bsd.port.mk>

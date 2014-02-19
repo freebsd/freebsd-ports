@@ -1,41 +1,67 @@
-lib/kde4/pateplugin.so
+lib/kde4/katepateplugin.so
 %%PYTHON_SITELIBDIR%%/PyKate4/__init__.py
 %%PYTHON_SITELIBDIR%%/PyKate4/kate.so
 share/apps/kate/pate/block.py
-share/apps/kate/pate/close_tag.py
+share/apps/kate/pate/color_tools.py
+share/apps/kate/pate/color_tools_toolview.ui
 share/apps/kate/pate/commentar.py
-share/apps/kate/pate/console/config.ui
-share/apps/kate/pate/console/console.py
-share/apps/kate/pate/expand.py
-share/apps/kate/pate/expand/all.expand
-share/apps/kate/pate/expand/text_css.expand
-share/apps/kate/pate/expand/text_html.expand
-share/apps/kate/pate/expand/text_x-c++hdr.expand
-share/apps/kate/pate/expand/text_x-c++src.expand
-share/apps/kate/pate/expand/text_x-chdr.expand
-share/apps/kate/pate/expand/text_x-python.expand
+share/apps/kate/pate/commentar_config.ui
+share/apps/kate/pate/django_utils/django_settings.py
+share/apps/kate/pate/django_utils/django_snippets.py
+share/apps/kate/pate/django_utils/django_template.py
+share/apps/kate/pate/django_utils/django_utils.py
+share/apps/kate/pate/django_utils/django_utils.ui
 share/apps/kate/pate/format.py
 share/apps/kate/pate/gid/config.ui
 share/apps/kate/pate/gid/gid.py
 share/apps/kate/pate/gid/idutils.py
 share/apps/kate/pate/gid/tool.ui
 share/apps/kate/pate/libkatepate/__init__.py
+share/apps/kate/pate/libkatepate/autocomplete.py
 share/apps/kate/pate/libkatepate/common.py
+share/apps/kate/pate/libkatepate/compat.py
+share/apps/kate/pate/libkatepate/debug.py
 share/apps/kate/pate/libkatepate/decorators.py
+share/apps/kate/pate/libkatepate/errors.py
+share/apps/kate/pate/libkatepate/menu.py
 share/apps/kate/pate/libkatepate/pred.py
+share/apps/kate/pate/libkatepate/project_utils.py
 share/apps/kate/pate/libkatepate/selection.py
+share/apps/kate/pate/libkatepate/text.py
 share/apps/kate/pate/libkatepate/ui.py
-share/apps/kate/pate/tools.py
+share/apps/kate/pate/python_autocomplete/python_autocomplete.py
+share/apps/kate/pate/python_autocomplete/python_autocomplete_parse.py
+share/apps/kate/pate/python_console_classic/config.ui
+share/apps/kate/pate/python_console_classic/python_console_classic.py
+share/apps/kate/pate/python_console_ipython/python_console_ipython.css
+share/apps/kate/pate/python_console_ipython/python_console_ipython.py
+share/apps/kate/pate/python_console_ipython/python_console_ipython.ui
+share/apps/kate/pate/python_utils/python_checkers/__init__.py
+share/apps/kate/pate/python_utils/python_checkers/all_checker.py
+share/apps/kate/pate/python_utils/python_checkers/parse_checker.py
+share/apps/kate/pate/python_utils/python_checkers/pep8_checker.py
+share/apps/kate/pate/python_utils/python_checkers/pyflakes_checker.py
+share/apps/kate/pate/python_utils/python_checkers/utils.py
+share/apps/kate/pate/python_utils/python_settings.py
+share/apps/kate/pate/python_utils/python_snippets.py
+share/apps/kate/pate/python_utils/python_utils.py
+share/apps/kate/pate/python_utils/python_utils.ui
+share/apps/kate/pate/xml_pretty.py
+share/apps/kate/pate/xml_pretty.ui
 share/apps/kate/plugins/pate/kate/__init__.py
 share/apps/kate/plugins/pate/kate/gui.py
 share/kde4/services/pate.desktop
 @dirrm share/apps/kate/plugins/pate/kate
 @dirrm share/apps/kate/plugins/pate
 @dirrm share/apps/kate/plugins
+@dirrm share/apps/kate/pate/python_utils/python_checkers
+@dirrm share/apps/kate/pate/python_utils
+@dirrm share/apps/kate/pate/python_console_ipython
+@dirrm share/apps/kate/pate/python_console_classic
+@dirrm share/apps/kate/pate/python_autocomplete
 @dirrm share/apps/kate/pate/libkatepate
 @dirrm share/apps/kate/pate/gid
-@dirrm share/apps/kate/pate/expand
-@dirrm share/apps/kate/pate/console
+@dirrm share/apps/kate/pate/django_utils
 @dirrm share/apps/kate/pate
 @dirrm share/apps/kate
 @dirrm %%PYTHON_SITELIBDIR%%/PyKate4

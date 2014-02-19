@@ -24,6 +24,8 @@ PORTDOCS=	README
 
 PORTEXAMPLES=	*
 
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 post-install:

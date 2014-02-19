@@ -14,7 +14,7 @@ COMMENT=	DTP application for X
 
 BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
 		docbook2html:${PORTSDIR}/textproc/docbook-utils \
-    		${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-410
+    		${LOCALBASE}/share/sgml/docbook/4.1:${PORTSDIR}/textproc/docbook-410
 LIB_DEPENDS=	xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26 \
 		gnomecanvasmm-2.6:${PORTSDIR}/graphics/libgnomecanvasmm26
 RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt

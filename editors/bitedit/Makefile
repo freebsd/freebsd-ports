@@ -9,16 +9,17 @@ MASTER_SITES=	http://freebsdcluster.org/~mich/software/
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Bitedit is a simple ncurses program for editing a file
 
+LICENSE=	GPLv2
+
 MAKE_ARGS=	CFLAGS="${CFLAGS} -DVERSION=\\\"${PORTVERSION}\\\""
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bitedit ${PREFIX}/bin/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/bitedit.txt ${DOCSDIR}/bitedit.txt
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/bitedit ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/bitedit.txt ${STAGEDIR}${DOCSDIR}/bitedit.txt
 
 .include <bsd.port.mk>

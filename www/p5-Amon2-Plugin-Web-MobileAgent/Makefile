@@ -14,7 +14,7 @@ RUN_DEPENDS=	\
 	ja-p5-Encode-JP-Mobile>=0.29:${PORTSDIR}/japanese/p5-Encode-JP-Mobile \
 	p5-HTTP-MobileAgent>0:${PORTSDIR}/www/p5-HTTP-MobileAgent \
 	p5-HTTP-MobileAgent-Plugin-Charset>0:${PORTSDIR}/www/p5-HTTP-MobileAgent-Plugin-Charset \
-	p5-Lingua-JA-Regular-Unicode>0:${PORTSDIR}/japanese/p5-Lingua-JA-Regular-Unicode
+	ja-p5-Lingua-JA-Regular-Unicode>0:${PORTSDIR}/japanese/p5-Lingua-JA-Regular-Unicode
 BUILD_DEPENDS=	${RUN_DEPENDS}
 TEST_DEPENDS=	\
 	p5-Test-Requires>0:${PORTSDIR}/devel/p5-Test-Requires \

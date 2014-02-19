@@ -336,6 +336,8 @@ lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/http_stream.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/isub.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/json.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/libswipl.a
+lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/libswipl.so
+lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/libswipl.so.%%VER%%
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/memfile.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/mime.so
 lib/%%DISTNAME%%/lib/%%ARCH%%-%%OS%%/ntriples.so

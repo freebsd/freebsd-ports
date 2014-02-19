@@ -1,8 +1,16 @@
 ================================================================================
 To enable the tor server, set tor_enable="YES" in your /etc/rc.conf
-and edit %%PREFIX%%/etc/tor/torrc.  Note that the rc.subr script overrides
-many torrc options and is tunable: see %%PREFIX%%/etc/rc.d/tor for details.
-To use the torify script, install the net/torsocks port. After removing the
-package, or updating to a new version, users may need to delete all files
-in /var/db/tor.
+and edit %%PREFIX%%/etc/tor/torrc as desired. (However, note that the
+%%PREFIX%%/etc/rc.d/tor rc.subr script can override some torrc
+options: see that script for details.) To use the torify script, install
+the net/torsocks port. After installing tor for the first time, or after
+a major update of tor, you should:
+
+rm -r /var/db/tor /var/run/tor
+mkdir -p /var/db/tor/data /var/run/tor
+touch /var/log/tor
+chown -R _tor:_tor /var/db/tor /var/log/tor /var/run/tor
+chmod -R 700 /var/db/tor
+
+before starting the tor server.
 ================================================================================

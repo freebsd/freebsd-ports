@@ -11,9 +11,8 @@ COMMENT=	Window Maker Dockapp for MusicPD
 
 GNU_CONFIGURE=	yes
 USE_XORG=	x11 xpm
-NO_STAGE=	yes
 
-PLIST_FILES=	bin/WMmp
-MAN1=		WMmp.1
+PLIST_FILES=	bin/WMmp \
+		man/man1/WMmp.1.gz
 
 .include <bsd.port.mk>

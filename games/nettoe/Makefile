@@ -18,6 +18,8 @@ USES=		gmake
 GNU_CONFIGURE=	yes
 PORTDOCS=	AUTHORS BUGS ChangeLog NEWS README TO-DO
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-install:

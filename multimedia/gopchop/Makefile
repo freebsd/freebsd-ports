@@ -24,6 +24,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

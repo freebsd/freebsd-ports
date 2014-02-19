@@ -21,10 +21,6 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
 
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
-
 regression-test: build
 	@cd ${WRKSRC} && ${MAKE} check
 

@@ -1,0 +1,18 @@
+--- ./Makefile.in.orig	2014-02-19 12:30:54.040272078 +0100
++++ ./Makefile.in	2014-02-19 12:31:21.743269418 +0100
+@@ -43,11 +43,11 @@
+ 	./regression
+ 
+ install:	$(TARGETLIB)
+-	$(MKDIR) $(libdir)
+-	$(MKDIR) $(includedir)
+-	$(INSTALL_DATA) $(TARGETLIB) $(libdir)/$(TARGETLIB)
++	$(MKDIR) $(DESTDIR)$(libdir)
++	$(MKDIR) $(DESTDIR)$(includedir)
++	$(INSTALL_DATA) $(TARGETLIB) $(DESTDIR)$(libdir)/$(TARGETLIB)
+ 	for i in $(TARGETINCS);do \
+-	(set -x;$(INSTALL_DATA) $(srcdir)/$$i $(includedir)); \
++	(set -x;$(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(includedir)); \
+ 	done
+ 
+ regression: regression.o $(TARGETLIB)

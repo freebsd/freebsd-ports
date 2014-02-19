@@ -6,4 +6,11 @@ include/memchanDecls.h
 include/buf.h
 include/bufDecls.h
 include/bufIntDecls.h
+man/mann/fifo.n.gz
+man/mann/fifo2.n.gz
+man/mann/memchan.n.gz
+man/mann/memchanapi.n.gz
+man/mann/null.n.gz
+man/mann/random.n.gz
+man/mann/zero.n.gz
 @dirrm lib/Memchan%%PORTVERSION%%

@@ -16,6 +16,8 @@ PLIST_FILES=	bin/kua bin/ua \
 PORTDOCS=	README
 MAN1=		kua.1 ua.1
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-install:

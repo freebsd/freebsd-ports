@@ -31,7 +31,6 @@ USE_LDCONFIG=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if !empty(PORT_OPTIONS:MDEBUG)
@@ -65,11 +64,11 @@ post-patch:
 			  ${WRKSRC}/configure
 
 post-install:
-	@if [ ! -f ${PREFIX}/etc/razorback/api.conf ]; then \
-		${CP} -p ${PREFIX}/etc/razorback/api.conf.sample ${PREFIX}/etc/razorback/api.conf ; \
+	@if [ ! -f ${STAGEDIR}${PREFIX}/etc/razorback/api.conf ]; then \
+		${CP} -p ${STAGEDIR}${PREFIX}/etc/razorback/api.conf.sample ${STAGEDIR}${PREFIX}/etc/razorback/api.conf ; \
 	fi
-	@if [ ! -f ${PREFIX}/etc/razorback/magic ]; then \
-		${CP} -p ${PREFIX}/etc/razorback/magic.sample ${PREFIX}/etc/razorback/magic ; \
+	@if [ ! -f ${STAGEDIR}${PREFIX}/etc/razorback/magic ]; then \
+		${CP} -p ${STAGEDIR}${PREFIX}/etc/razorback/magic.sample ${STAGEDIR}${PREFIX}/etc/razorback/magic ; \
 	fi
 
 .include <bsd.port.post.mk>

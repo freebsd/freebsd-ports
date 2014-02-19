@@ -2,37 +2,26 @@
 # $FreeBSD$
 
 PORTNAME=	kcachegrind
-PORTVERSION=	0.7.3
+PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	devel kde
-MASTER_SITES=	http://kcachegrind.sourceforge.net/
+MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
+DIST_SUBDIR=	KDE/${PORTVERSION}
 
-MAINTAINER=	beat@FreeBSD.org
-COMMENT=	Profiling Visualization Tool
+MAINTAINER=	kde@FreeBSD.org
+COMMENT=	Profiler frontend for KDE
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
-
-ONLY_FOR_ARCHS=	i386 amd64
-
-USES=		cmake gettext
-USE_KDE4=	automoc4 kdehier kdelibs
-USE_QT4=	moc_build qmake_build rcc_build uic_build
-INSTALLS_ICONS=	yes
+USE_XZ=		yes
+USE_KDE4=	kdelibs kdeprefix kdehier automoc4
+USES=		cmake:outsource
+USE_QT4=	moc_build qmake_build rcc_build uic_build \
+		corelib dbus gui
 
 OPTIONS_DEFINE=	DOT VALGRIND
-OPTIONS_DEFAULT=	DOT
-DOT_DESC=	Use GraphViz/dot to render call graphs
-VALGRIND_DESC=	Install devel/valgrind
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+DOT_DESC=		Use GraphViz/dot to render call graphs
+DOT_RUN_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 
-.if ${PORT_OPTIONS:MDOT}
-RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
-.endif
-
-.if ${PORT_OPTIONS:MVALGRIND}
-RUN_DEPENDS+=	valgrind:${PORTSDIR}/devel/valgrind
-.endif
+VALGRIND_DESC=		Install devel/valgrind
+VALGRIND_RUN_DEPENDS=	valgrind:${PORTSDIR}/devel/valgrind
 
 .include <bsd.port.mk>

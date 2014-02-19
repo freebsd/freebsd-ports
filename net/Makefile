@@ -283,6 +283,10 @@
     SUBDIR += jumpgate
     SUBDIR += jwhois
     SUBDIR += kdenetwork4
+    SUBDIR += kdenetwork4-filesharing
+    SUBDIR += kdenetwork4-strigi-analyzers
+    SUBDIR += kdnssd
+    SUBDIR += kget
     SUBDIR += kio-upnp-ms
     SUBDIR += kippo
     SUBDIR += kissd
@@ -398,6 +402,7 @@
     SUBDIR += mosh
     SUBDIR += mpd-l2tp-ipv6pd-client
     SUBDIR += mpd5
+    SUBDIR += mpich
     SUBDIR += mpich2
     SUBDIR += mping
     SUBDIR += mrouted
@@ -539,6 +544,8 @@
     SUBDIR += p5-IPC-Session
     SUBDIR += p5-JavaScript-RPC
     SUBDIR += p5-Jifty-Plugin-Authentication-Ldap
+    SUBDIR += p5-MaxMind-DB-Common
+    SUBDIR += p5-MaxMind-DB-Reader
     SUBDIR += p5-Net
     SUBDIR += p5-Net-AMQP
     SUBDIR += p5-Net-APNS

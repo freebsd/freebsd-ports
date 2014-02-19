@@ -35,6 +35,9 @@ PORTEXAMPLES=	*
 PLIST_FILES=	bin/emc2 bin/prf_f3d
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/emc2 ${PREFIX}/bin

@@ -49,7 +49,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MSSH}
-LIB_DEPENDS+=	libssh.so:${PORTSDIR}/security/libssh
+LIB_DEPENDS+=	libssh_threads.so:${PORTSDIR}/security/libssh
 .if ${OSVERSION} >= 800040
 LDFLAGS+=	-fstack-protector
 .endif

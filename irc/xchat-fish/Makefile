@@ -29,6 +29,8 @@ PLIST_FILES=	lib/xchat/plugins/xfish.so
 PORTDOCS=	FiSH-xchat.txt \
 		FiSH-xchat_History.txt
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

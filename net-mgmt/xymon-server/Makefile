@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	xymon
-PORTVERSION=	4.3.12
-PORTREVISION=	1
+PORTVERSION=	4.3.16
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/xymon/Xymon/${PORTVERSION}
 PKGNAMESUFFIX=	-server${PKGNAMESUFFIX2}
@@ -15,7 +14,8 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 LIB_DEPENDS=	libpng.so:${PORTSDIR}/graphics/png \
-		libpcre.so:${PORTSDIR}/devel/pcre
+		libpcre.so:${PORTSDIR}/devel/pcre \
+		libcares.so:${PORTSDIR}/dns/c-ares
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool \
 		fping:${PORTSDIR}/net/fping \
 		mtr:${PORTSDIR}/net/mtr-nox11
@@ -71,7 +71,6 @@ post-patch:
 	${REINPLACE_CMD} -e 's|install-docs install-client|install-docs|' ${WRKSRC}/build/Makefile.rules
 	${REINPLACE_CMD} -e 's|$(INSTALLETCDIR)/protocols.cfg|$(INSTALLETCDIR)/protocols.cfg.DIST|' ${WRKSRC}/xymonnet/Makefile
 	${REINPLACE_CMD} -e 's|TRACEROUTE="traceroute"|TRACEROUTE="mtr -c 2 -n --report"|' ${WRKSRC}/xymond/etcfiles/xymonserver.cfg.DIST
-	${REINPLACE_CMD} -e 's|FPING="@FPING@"|FPING="fping"|' ${WRKSRC}/xymond/etcfiles/xymonserver.cfg.DIST
 
 # Configure script is interactive
 do-configure:

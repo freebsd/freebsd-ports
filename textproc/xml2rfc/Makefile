@@ -3,7 +3,7 @@
 
 PORTNAME=	xml2rfc
 PORTVERSION=	2.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://tools.ietf.org/tools/xml2rfc2/cli/
 

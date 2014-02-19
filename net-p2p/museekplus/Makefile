@@ -14,11 +14,10 @@ COMMENT=	SoulSeek client with separate terminal and Qt based interface
 LIB_DEPENDS=	xml\\+\\+:${PORTSDIR}/textproc/libxml++26
 BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig13
 
-USES=		fam pkgconfig
+USES=		fam pkgconfig scons
 USE_BZIP2=	yes
-USE_SCONS=	yes
 
-SCONS_ARGS=	QTDIR=${QT_PREFIX} QT_LIB=qt-mt PREFIX=${PREFIX} VORBIS=yes
+MAKE_ARGS+=	QTDIR=${QT_PREFIX} QT_LIB=qt-mt PREFIX=${PREFIX} VORBIS=yes
 DATADIR=	share/museek
 MAN1=		musetup.1 mulog.1 museekcontrol.1 muscan.1 muscand.1 museekd.1
 
@@ -36,55 +35,55 @@ NO_STAGE=	yes
 USE_PYTHON=	yes
 .endif
 
-SCONS_ARGS+=	MUSEEQ=no
+MAKE_ARGS+=	MUSEEQ=no
 PLIST_SUB+=	MUSEEQ="@comment "
-SCONS_ARGS+=	QSA=no
+MAKE_ARGS+=	QSA=no
 
 .if ${PORT_OPTIONS:MVORBIS}
-SCONS_ARGS+=	VORBIS=yes
+MAKE_ARGS+=	VORBIS=yes
 LIB_DEPENDS+=	vorbis:${PORTSDIR}/audio/libvorbis
 .else
-SCONS_ARGS+=	VORBIS=no
+MAKE_ARGS+=	VORBIS=no
 .endif
 
 .if ${PORT_OPTIONS:MMUSETUPGTK}
-SCONS_ARGS+=	MUSETUPGTK=yes
+MAKE_ARGS+=	MUSETUPGTK=yes
 MAN1+=		musetup-gtk.1
 PLIST_SUB+=	MUSETUPGTK=""
 .else
-SCONS_ARGS+=	MUSETUPGTK=no
+MAKE_ARGS+=	MUSETUPGTK=no
 PLIST_SUB+=	MUSETUPGTK="@comment "
 .endif
 .if ${PORT_OPTIONS:MPYMUCIPHER}
-SCONS_ARGS+=	PYMUCIPHER=yes
+MAKE_ARGS+=	PYMUCIPHER=yes
 PLIST_SUB+=	PYMUCIPHER=""
 .else
-SCONS_ARGS+=	PYMUCIPHER=no
+MAKE_ARGS+=	PYMUCIPHER=no
 PLIST_SUB+=	PYMUCIPHER="@comment "
 .endif
 .if ${PORT_OPTIONS:MMURMUR}
-SCONS_ARGS+=	MURMUR=yes
+MAKE_ARGS+=	MURMUR=yes
 MAN1+=		murmur.1
 PLIST_SUB+=	MURMUR=""
 .else
-SCONS_ARGS+=	MURMUR=no
+MAKE_ARGS+=	MURMUR=no
 PLIST_SUB+=	MURMUR="@comment "
 .endif
 .if ${PORT_OPTIONS:MMUCOUS}
-SCONS_ARGS+=	MUCOUS=yes
+MAKE_ARGS+=	MUCOUS=yes
 MAN1+=		mucous.1
 PLIST_SUB+=	MUCOUS=""
 .else
-SCONS_ARGS+=	MUCOUS=no
+MAKE_ARGS+=	MUCOUS=no
 PLIST_SUB+=	MUCOUS="@comment "
 .endif
 .if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-SCONS_ARGS+=	RELEASE=yes
+MAKE_ARGS+=	RELEASE=yes
 .else
-SCONS_ARGS+=	RELEASE=no
+MAKE_ARGS+=	RELEASE=no
 .endif
 .if ${PORT_OPTIONS:MDEBUG}
-SCONS_ARGS+=	MULOG="cycle,debug"
+MAKE_ARGS+=	MULOG="cycle,debug"
 .endif
 
 post-patch:

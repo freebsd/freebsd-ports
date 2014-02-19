@@ -22,6 +22,8 @@ USE_GNOME=	glib20 gtk20 intltool intlhack
 USE_XFCE=	configenv libexo libmenu libutil panel
 USES=		pkgconfig gmake
 
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

@@ -33,21 +33,17 @@ CONFIGURE_ARGS+=	--disable-audacious --with-mp3splt=${LOCALBASE} \
 		--with-mp3splt-libraries=${LOCALBASE}/lib --disable-mp3splttest \
 		--disable-gtk3
 
-PORTDOCS=	*
+#PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS NLS
+#OPTIONS_DEFINE=	DOCS NLS
+OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-LIB_DEPENDS+=	libgvc.so:${PORTSDIR}/graphics/graphviz
-BUILD_DEPENDS+=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
-.else
-CONFIGURE_ARGS+=	--disable-doxygen-doc
-.endif
+#DOCS_LIB_DEPENDS=	libgvc.so:${PORTSDIR}/graphics/graphviz
+#DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
+#DOCS_CONFIGURE_OFF=	--disable-doxygen-doc
 
 .include <bsd.port.mk>

@@ -2,7 +2,15 @@ bin/kreversi
 share/applications/kde4/kreversi.desktop
 share/apps/kreversi/kreversi.notifyrc
 share/apps/kreversi/kreversiui.rc
+share/apps/kreversi/pics/default_theme.desktop
 share/apps/kreversi/pics/default_theme.svgz
+share/apps/kreversi/qml/Board.qml
+share/apps/kreversi/qml/CanvasItem.qml
+share/apps/kreversi/qml/Cell.qml
+share/apps/kreversi/qml/Chip.qml
+share/apps/kreversi/qml/Popup.qml
+share/apps/kreversi/qml/Table.qml
+share/apps/kreversi/qml/globals.js
 share/apps/kreversi/sounds/reversi-click.wav
 share/apps/kreversi/sounds/reversi-won.wav
 share/doc/HTML/en/kreversi/common
@@ -27,5 +35,6 @@ share/icons/oxygen/scalable/actions/lastmoves.svgz
 share/icons/oxygen/scalable/actions/legalmoves.svgz
 @dirrm share/doc/HTML/en/kreversi
 @dirrm share/apps/kreversi/sounds
+@dirrm share/apps/kreversi/qml
 @dirrm share/apps/kreversi/pics
 @dirrm share/apps/kreversi

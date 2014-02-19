@@ -33,6 +33,8 @@ PORTDOCS=	README.md
 
 REV=		b1cb9ea
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

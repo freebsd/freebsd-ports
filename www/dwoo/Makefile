@@ -20,7 +20,6 @@ USE_PHP=	pcre
 WANT_PHP_WEB=	yes
 
 DEFAULT_PHP_VER=5
-IGNORE_WITH_PHP=4
 
 SUB_FILES=	pkg-message
 

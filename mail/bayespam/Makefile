@@ -22,6 +22,9 @@ FILES_DOCS=	AUTHORS COPYING Changelog INSTALL README TODO \
 FILES_SCRIPTS=	bayes_process_email.pl bayes_spam_check.pl bayestest.pl
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

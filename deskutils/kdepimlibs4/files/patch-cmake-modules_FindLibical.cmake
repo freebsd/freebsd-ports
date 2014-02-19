@@ -1,6 +1,6 @@
---- ./cmake/modules/FindLibical.cmake.orgi	2009-02-27 17:59:51.000000000 +0100
-+++ ./cmake/modules/FindLibical.cmake	2009-02-27 18:00:20.000000000 +0100
-@@ -52,7 +52,7 @@
+--- cmake/modules/FindLibical.cmake.orig	2013-08-10 13:38:51.103327753 +0000
++++ cmake/modules/FindLibical.cmake	2013-08-10 13:40:47.134325441 +0000
+@@ -49,7 +49,7 @@
  
  if(LIBICAL_INCLUDE_DIRS AND LIBICAL_LIBRARIES)
    set(FIND_LIBICAL_VERSION_SOURCE

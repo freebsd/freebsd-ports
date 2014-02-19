@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	tcllib
-PORTVERSION=	1.15
-PORTREVISION=	3
+PORTVERSION=	1.16
 CATEGORIES=	devel tcl
-MASTER_SITES=	SF
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Collection of utility modules for Tcl
@@ -16,6 +14,12 @@ LICENSE_FILE=	${WRKSRC}/license.terms
 LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
 OPTIONS_DEFINE=	DOCS MANPAGES
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	tcltk
+GH_PROJECT=	tcllib
+GH_TAGNAME=	tcllib_${PORTVERSION:S/./_/}
+GH_COMMIT=	ce4a0e4
 
 USES+=		tcl
 GNU_CONFIGURE=	yes
@@ -79,6 +83,19 @@ post-patch:
 #
 	for man in `${FIND} ${WRKSRC} -name "tcllib_*.man"`; do \
 	    ${MV} $$man `echo $$man | ${SED} -e 's|tcllib_||'`; \
+	done
+	for man in `${FIND} ${WRKSRC} -name "tcllib_*.n"`; do \
+	    ${MV} $$man `echo $$man | ${SED} -e 's|tcllib_||'`; \
+	done
+
+#
+#	add the .tcllib suffix to man pages
+#
+	for man in `${FIND} ${WRKSRC} -name "*.man"`; do \
+	    ${MV} $$man `echo $$man | ${SED} -e 's|man$$|tcllib.man|'`; \
+	done
+	for man in `${FIND} ${WRKSRC} -name "*.n"`; do \
+	    ${MV} $$man `echo $$man | ${SED} -e 's|n$$|tcllib.n|'`; \
 	done
 
 do-install:

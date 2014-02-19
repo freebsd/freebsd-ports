@@ -25,6 +25,9 @@ DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 PORTDOCS=	README.txt
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-install:

@@ -230,4 +230,13 @@ libdata/pkgconfig/lutok.pc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/interpreter.cpp
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/raii.cpp
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%TEST%%tests/lutok/Kyuafile
+%%TEST%%tests/lutok/c_gate_test
+%%TEST%%tests/lutok/debug_test
+%%TEST%%tests/lutok/examples_test
+%%TEST%%tests/lutok/exceptions_test
+%%TEST%%tests/lutok/operations_test
+%%TEST%%tests/lutok/stack_cleaner_test
+%%TEST%%tests/lutok/state_test
+%%TEST%%@dirrm tests/lutok
 @dirrm include/lutok

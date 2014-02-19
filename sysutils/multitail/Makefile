@@ -21,6 +21,8 @@ PLIST_FILES=	bin/multitail etc/multitail.conf.sample \
 		man/man1/multitail.1.gz
 PORTDOCS=	readme.txt license.txt
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

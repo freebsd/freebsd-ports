@@ -11,11 +11,8 @@ MAINTAINER=	vlm@lionet.info
 COMMENT=	Modern ASN.1 to C compiler
 
 GNU_CONFIGURE=	yes
-USES=		perl5
+USES=		perl5 gmake
 SUB_FILES=	pkg-message
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
 
 MAN1=	asn1c.1 enber.1 unber.1
 

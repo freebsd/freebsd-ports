@@ -8,6 +8,7 @@ lib/libaa.a
 lib/libaa.la
 lib/libaa.so
 lib/libaa.so.1
+lib/libaa.so.1.0.4
 share/aclocal/aalib.m4
 man/man3/aa_attrs.3.gz
 man/man3/aa_autoinit.3.gz

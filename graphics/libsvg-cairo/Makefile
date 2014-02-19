@@ -17,7 +17,7 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USES=	pathfix pkgconfig
+USES=		pathfix pkgconfig
 USE_LDCONFIG=	yes
 PLIST_FILES=	include/svg-cairo.h \
 		lib/libsvg-cairo.a \
@@ -26,5 +26,4 @@ PLIST_FILES=	include/svg-cairo.h \
 		lib/libsvg-cairo.so.1 \
 		libdata/pkgconfig/libsvg-cairo.pc
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

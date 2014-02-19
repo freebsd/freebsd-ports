@@ -1,4 +1,3 @@
-@exec echo "Be sure to edit %D/bin/Pnews and %D/bin/newsetup to set the Distribution codes"
 bin/Pnews
 bin/Rnmail
 bin/newsetup
@@ -14,4 +13,9 @@ lib/trn/makedir
 lib/trn/mbox.saver
 lib/trn/newsnews
 lib/trn/norm.saver
+man/man1/trn.1.gz
+man/man1/Pnews.1.gz
+man/man1/Rnmail.1.gz
+man/man1/newsetup.1.gz
+man/man1/newsgroups.1.gz
 @dirrm lib/trn

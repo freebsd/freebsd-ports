@@ -2,7 +2,7 @@ bin/qupzilla
 lib/libQupZilla.so
 lib/libQupZilla.so.1
 lib/libQupZilla.so.1.6
-lib/libQupZilla.so.1.6.1
+lib/libQupZilla.so.1.6.3
 lib/qupzilla/libAccessKeysNavigation.so
 lib/qupzilla/libGreaseMonkey.so
 lib/qupzilla/libMouseGestures.so

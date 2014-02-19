@@ -14,7 +14,6 @@ USE_SM_COMPAT=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../squirrelmail/bsd.squirrelmail.mk"
 
@@ -24,8 +23,8 @@ pre-install::
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/${PORTNAME}/docs \
 	&& ${RM} .htaccess index.php \
-	&& ${MKDIR} ${DOCSDIR} \
-	&& ${COPYTREE_SHARE} \* ${DOCSDIR} \
+	&& ${MKDIR} ${STAGEDIR}${DOCSDIR} \
+	&& ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR} \
 	&& cd ${WRKSRC}/${PORTNAME} \
 	&& ${RM} -rf README docs
 .else

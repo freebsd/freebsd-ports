@@ -61,6 +61,7 @@
     SUBDIR += inadyn
     SUBDIR += inadyn-mt
     SUBDIR += ipcheck
+    SUBDIR += ironsides
     SUBDIR += knot
     SUBDIR += ldapdns
     SUBDIR += ldns

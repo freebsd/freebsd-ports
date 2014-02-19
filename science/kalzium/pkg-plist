@@ -17,11 +17,12 @@ lib/kde4/plasma_applet_didyouknow.so
 lib/kde4/plasma_applet_molmassCalculator.so
 lib/kde4/plasma_engine_kalzium.so
 lib/libcompoundviewer.so
-lib/libcompoundviewer.so.5
-lib/libcompoundviewer.so.5.0.1
+lib/libcompoundviewer.so.4
+lib/libcompoundviewer.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/libscience.so
-lib/libscience.so.5
-lib/libscience.so.5.0.1
+lib/libscience.so.4
+lib/libscience.so.%%KDE4_GENERIC_LIB_VERSION%%
+man/man1/kalzium.1.gz
 share/applications/kde4/kalzium.desktop
 share/applications/kde4/kalzium_cml.desktop
 share/apps/desktoptheme/default/widgets/chalkboard.svg
@@ -374,7 +375,6 @@ share/doc/HTML/en/kalzium/infodialog_misc.png
 share/doc/HTML/en/kalzium/infodialog_spectrum.png
 share/doc/HTML/en/kalzium/man-kalzium.1.docbook
 share/doc/HTML/en/kalzium/quick-1.png
-share/doc/HTML/en/kalzium/quick-2.png
 share/doc/HTML/en/kalzium/quick-3.png
 share/doc/HTML/en/kalzium/quick-4.png
 share/doc/HTML/en/kalzium/screenshot-calc-conc.png
@@ -397,7 +397,6 @@ share/doc/HTML/en/kalzium/settings2.png
 share/doc/HTML/en/kalzium/settings3.png
 share/doc/HTML/en/kalzium/settings4.png
 share/doc/HTML/en/kalzium/sidebar1.png
-share/doc/HTML/en/kalzium/sidebar2.png
 share/icons/hicolor/128x128/apps/kalzium.png
 share/icons/hicolor/16x16/apps/kalzium.png
 share/icons/hicolor/22x22/apps/kalzium.png
@@ -413,7 +412,7 @@ share/kde4/services/plasma-dataengine-kalzium.desktop
 share/kde4/services/plasma_didyouknow.desktop
 @dirrm share/doc/HTML/en/kalzium
 @dirrm share/apps/libkdeedu/data
-@dirrm share/apps/libkdeedu
+@dirrmtry share/apps/libkdeedu
 @dirrm share/apps/kalzium/qml
 @dirrm share/apps/kalzium/icons/hicolor/scalable/actions
 @dirrm share/apps/kalzium/icons/hicolor/scalable

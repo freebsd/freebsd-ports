@@ -22,6 +22,8 @@ USE_XORG=	xt xaw xmu
 
 NO_STAGE=	yes
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 pre-patch:

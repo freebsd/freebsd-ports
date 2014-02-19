@@ -24,6 +24,9 @@ USES=		twisted:run,web
 PORTDOCS=	CHANGELOG CREDITS README
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 # more fully-featured rar needs i386

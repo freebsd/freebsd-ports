@@ -24,6 +24,9 @@ PLIST_FILES=	bin/rubix
 DOCFILES=	AUTHORS BUGS INSTALL README TODO
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-install:

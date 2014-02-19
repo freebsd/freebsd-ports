@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	MooseX-NonMoose
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,9 +13,10 @@ COMMENT=	Easy subclassing of non-Moose classes
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-RUN_DEPENDS=	p5-Moose>=1.15:${PORTSDIR}/devel/p5-Moose
-BUILD_DEPENDS:=	${RUN_DEPENDS}
-TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
+BUILD_DEPENDS=	p5-Module-Runtime>=0:${PORTSDIR}/devel/p5-Module-Runtime \
+		p5-Moose>=2:${PORTSDIR}/devel/p5-Moose
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+TEST_DEPENDS=	p5-MooseX-InsideOut>=0:${PORTSDIR}/devel/p5-MooseX-InsideOut \
 		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal
 
 USES=		perl5

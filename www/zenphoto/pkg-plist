@@ -2,12 +2,13 @@
 @group www
 %%WWWDIR%%/CHANGELOG.md
 %%WWWDIR%%/README.md
-%%WWWDIR%%/albums/.gitignore
+%%WWWDIR%%/albums/.keepme
+%%WWWDIR%%/cache/.keepme
 %%WWWDIR%%/doc_files/zenphoto_database_quick_reference.pdf
 %%WWWDIR%%/index.php
-%%WWWDIR%%/plugins/gd_fonts/.gitignore
-%%WWWDIR%%/plugins/imagick_fonts/.gitignore
-%%WWWDIR%%/plugins/watermarks/.gitignore
+%%WWWDIR%%/plugins/gd_fonts/.keepme
+%%WWWDIR%%/plugins/imagick_fonts/.keepme
+%%WWWDIR%%/plugins/watermarks/.keepme
 %%WWWDIR%%/themes/default/404.php
 %%WWWDIR%%/themes/default/album.php
 %%WWWDIR%%/themes/default/archive.php
@@ -238,7 +239,7 @@
 %%WWWDIR%%/themes/zpmobile/theme.png
 %%WWWDIR%%/themes/zpmobile/theme_description.php
 %%WWWDIR%%/themes/zpmobile/themeoptions.php
-%%WWWDIR%%/uploaded/.gitignore
+%%WWWDIR%%/uploaded/.keepme
 %%WWWDIR%%/zp-core/404.php
 %%WWWDIR%%/zp-core/admin-albumsort.php
 %%WWWDIR%%/zp-core/admin-dynamic-album.php
@@ -1543,7 +1544,7 @@
 %%WWWDIR%%/zp-core/zp-extensions/zenphoto_sendmail.php
 %%WWWDIR%%/zp-core/zp-extensions/zpCaptcha/c.php
 %%WWWDIR%%/zp-core/zp-extensions/zpCaptcha.php
-%%WWWDIR%%/zp-data/.gitignore
+%%WWWDIR%%/zp-data/.keepme
 @dirrm %%WWWDIR%%/zp-data
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/zpCaptcha
 @dirrm %%WWWDIR%%/zp-core/zp-extensions/zenphoto_news

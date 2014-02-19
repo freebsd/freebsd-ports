@@ -3,7 +3,7 @@
 
 PORTNAME=	shapelib
 PORTVERSION=	1.3.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel geography
 MASTER_SITES=	http://download.osgeo.org/shapelib/ \
 		ftp://ftp.remotesensing.org/shapelib/ \
@@ -41,7 +41,6 @@ ENDIAN=		-D_BIG_ENDIAN	# mips*eb, powerpc, powerpc64 and sparc
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e 's|%%LIBTOOL%%|${LIBTOOL}|g' \
 		-e 's|%%ENDIAN%%|${ENDIAN}|g' \
 		-e 's|%%PROJ%%|${PROJ}|g' \
 			${WRKSRC}/Makefile ${WRKSRC}/contrib/Makefile

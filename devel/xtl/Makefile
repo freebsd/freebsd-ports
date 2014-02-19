@@ -11,8 +11,7 @@ COMMENT=	A library for R/W structured data to/from an external representation
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	${CP} -R ${WRKSRC}/include/* ${PREFIX}/include
+	${CP} -R ${WRKSRC}/include/* ${STAGEDIR}${PREFIX}/include
 
 .include <bsd.port.mk>

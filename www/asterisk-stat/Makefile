@@ -5,7 +5,7 @@ PORTNAME=	asterisk-stat
 PORTVERSION=	2.0.1
 PORTREVISION=	14
 CATEGORIES=	www
-MASTER_SITES=	http://www.areski.net/${SITE_SUBDIR}/
+MASTER_SITES=	http://ftp.iij.ad.jp/pub/FreeBSD/distfiles/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}
 
 MAINTAINER=	jfkimura@yahoo.co.jp

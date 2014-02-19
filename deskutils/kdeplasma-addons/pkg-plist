@@ -111,6 +111,7 @@ lib/kde4/krunner_konsolesessions.so
 lib/kde4/krunner_kopete.so
 lib/kde4/krunner_mediawiki.so
 lib/kde4/krunner_spellcheckrunner.so
+lib/kde4/krunner_translator.so
 lib/kde4/krunner_youtube.so
 %%IBUS%%lib/kde4/libexec/kimpanel-ibus-panel
 %%SCIM%%lib/kde4/libexec/kimpanel-scim-panel
@@ -178,6 +179,7 @@ lib/kde4/plasma_packagestructure_comic.so
 lib/kde4/plasma_potd_apodprovider.so
 lib/kde4/plasma_potd_epodprovider.so
 lib/kde4/plasma_potd_flickrprovider.so
+lib/kde4/plasma_potd_natgeoprovider.so
 lib/kde4/plasma_potd_oseiprovider.so
 lib/kde4/plasma_potd_wcpotdprovider.so
 lib/kde4/plasma_runner_datetime.so
@@ -196,8 +198,8 @@ lib/liblancelot.so
 lib/liblancelot.so.1.9.0
 lib/liblancelot.so.2
 lib/libplasma_groupingcontainment.so
-lib/libplasma_groupingcontainment.so.5
-lib/libplasma_groupingcontainment.so.5.0.1
+lib/libplasma_groupingcontainment.so.4
+lib/libplasma_groupingcontainment.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/libplasmacomicprovidercore.so
 lib/libplasmacomicprovidercore.so.1
 lib/libplasmacomicprovidercore.so.1.0.0
@@ -205,11 +207,11 @@ lib/libplasmapotdprovidercore.so
 lib/libplasmapotdprovidercore.so.1
 lib/libplasmapotdprovidercore.so.1.0.0
 lib/libplasmaweather.so
-lib/libplasmaweather.so.5
-lib/libplasmaweather.so.5.0.1
+lib/libplasmaweather.so.4
+lib/libplasmaweather.so.%%KDE4_GENERIC_LIB_VERSION%%
 lib/librtm.so
-lib/librtm.so.5
-lib/librtm.so.5.0.1
+lib/librtm.so.4
+lib/librtm.so.%%KDE4_GENERIC_LIB_VERSION%%
 share/apps/bball/bball.svgz
 share/apps/bball/bounce.ogg
 share/apps/bball/football.svgz
@@ -362,7 +364,7 @@ share/apps/plasma/plasmoids/konsoleprofiles/contents/ui/konsoleprofiles.qml
 share/apps/plasma/plasmoids/konsoleprofiles/metadata.desktop
 share/apps/plasma/plasmoids/nowplaying/contents/code/service.js
 share/apps/plasma/plasmoids/nowplaying/contents/config/main.xml
-share/apps/plasma/plasmoids/nowplaying/contents/images/nocover.svgz
+share/apps/plasma/plasmoids/nowplaying/contents/theme/nowplaying/nocover.svgz
 share/apps/plasma/plasmoids/nowplaying/contents/ui/AlbumArt.qml
 share/apps/plasma/plasmoids/nowplaying/contents/ui/CompactLayout.qml
 share/apps/plasma/plasmoids/nowplaying/contents/ui/Controls.qml
@@ -452,7 +454,7 @@ share/icons/hicolor/128x128/apps/luna.png
 share/icons/hicolor/128x128/apps/plasmaapplet-shelf.png
 share/icons/hicolor/128x128/apps/previewer.png
 share/icons/hicolor/128x128/apps/qalculate-applet.png
-share/icons/hicolor/16x16/actions/youtube.png
+share/icons/hicolor/16x16/actions/krunner_youtube.png
 share/icons/hicolor/16x16/apps/bball.png
 share/icons/hicolor/16x16/apps/eyes.png
 share/icons/hicolor/16x16/apps/kdeobservatory.png
@@ -462,7 +464,7 @@ share/icons/hicolor/16x16/apps/lifegame.png
 share/icons/hicolor/16x16/apps/luna.png
 share/icons/hicolor/16x16/apps/plasmaapplet-shelf.png
 share/icons/hicolor/16x16/apps/previewer.png
-share/icons/hicolor/22x22/actions/youtube.png
+share/icons/hicolor/22x22/actions/krunner_youtube.png
 share/icons/hicolor/22x22/apps/eyes.png
 share/icons/hicolor/22x22/apps/kdeobservatory.png
 share/icons/hicolor/22x22/apps/lancelot-start.png
@@ -473,7 +475,7 @@ share/icons/hicolor/22x22/apps/plasmaapplet-shelf.png
 share/icons/hicolor/22x22/apps/previewer.png
 share/icons/hicolor/256x256/apps/eyes.png
 share/icons/hicolor/256x256/apps/lifegame.png
-share/icons/hicolor/32x32/actions/youtube.png
+share/icons/hicolor/32x32/actions/krunner_youtube.png
 share/icons/hicolor/32x32/apps/bball.png
 share/icons/hicolor/32x32/apps/kdeobservatory.png
 share/icons/hicolor/32x32/apps/lancelot-start.png
@@ -482,7 +484,7 @@ share/icons/hicolor/32x32/apps/lifegame.png
 share/icons/hicolor/32x32/apps/luna.png
 share/icons/hicolor/32x32/apps/plasmaapplet-shelf.png
 share/icons/hicolor/32x32/apps/previewer.png
-share/icons/hicolor/48x48/actions/youtube.png
+share/icons/hicolor/48x48/actions/krunner_youtube.png
 share/icons/hicolor/48x48/apps/bball.png
 share/icons/hicolor/48x48/apps/kdeobservatory.png
 share/icons/hicolor/48x48/apps/lancelot-start.png
@@ -492,7 +494,7 @@ share/icons/hicolor/48x48/apps/luna.png
 share/icons/hicolor/48x48/apps/plasmaapplet-shelf.png
 share/icons/hicolor/48x48/apps/previewer.png
 share/icons/hicolor/48x48/apps/qalculate-applet.png
-share/icons/hicolor/64x64/actions/youtube.png
+share/icons/hicolor/64x64/actions/krunner_youtube.png
 share/icons/hicolor/64x64/apps/bball.png
 share/icons/hicolor/64x64/apps/eyes.png
 share/icons/hicolor/64x64/apps/kdeobservatory.png
@@ -502,7 +504,7 @@ share/icons/hicolor/64x64/apps/lifegame.png
 share/icons/hicolor/64x64/apps/luna.png
 share/icons/hicolor/64x64/apps/plasmaapplet-shelf.png
 share/icons/hicolor/64x64/apps/previewer.png
-share/icons/hicolor/scalable/actions/youtube.svgz
+share/icons/hicolor/scalable/actions/krunner_youtube.svgz
 share/icons/hicolor/scalable/apps/accessories-dictionary.svgz
 share/icons/hicolor/scalable/apps/bball.svgz
 share/icons/hicolor/scalable/apps/eyes.svgz
@@ -520,6 +522,7 @@ share/kde4/services/katesessions.desktop
 share/kde4/services/konquerorsessions.desktop
 share/kde4/services/konsolesessions.desktop
 share/kde4/services/lancelot.desktop
+share/kde4/services/natgeoprovider.desktop
 share/kde4/services/oseiprovider.desktop
 share/kde4/services/plasma-applet-bball.desktop
 share/kde4/services/plasma-applet-binaryclock.desktop
@@ -597,6 +600,7 @@ share/kde4/services/plasma-runner-kopete.desktop
 share/kde4/services/plasma-runner-spellchecker.desktop
 share/kde4/services/plasma-runner-spellchecker_config.desktop
 share/kde4/services/plasma-runner-techbase.desktop
+share/kde4/services/plasma-runner-translator.desktop
 share/kde4/services/plasma-runner-wikipedia.desktop
 share/kde4/services/plasma-runner-wikitravel.desktop
 share/kde4/services/plasma-runner-youtube.desktop
@@ -628,7 +632,8 @@ share/mime/packages/lancelotpart-mime.xml
 @dirrm share/apps/plasma/wallpapers/org.kde.animals
 @dirrm share/apps/plasma/wallpapers
 @dirrm share/apps/plasma/plasmoids/nowplaying/contents/ui
-@dirrm share/apps/plasma/plasmoids/nowplaying/contents/images
+@dirrm share/apps/plasma/plasmoids/nowplaying/contents/theme/nowplaying
+@dirrm share/apps/plasma/plasmoids/nowplaying/contents/theme
 @dirrm share/apps/plasma/plasmoids/nowplaying/contents/config
 @dirrm share/apps/plasma/plasmoids/nowplaying/contents/code
 @dirrm share/apps/plasma/plasmoids/nowplaying/contents

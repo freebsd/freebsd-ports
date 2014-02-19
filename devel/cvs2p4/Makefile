@@ -19,7 +19,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 PERFORCE_PORT?=	1666
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's,!!PREFIX!!,${PREFIX},g;' \
@@ -29,10 +28,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name '*.bak' -delete
 
 do-install:
-	${MKDIR} ${PREFIX}/${PORTNAME}
-	${CP} -R ${WRKSRC}/* ${PREFIX}/${PORTNAME}/
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/${PORTNAME}
+	${CP} -R ${WRKSRC}/* ${STAGEDIR}${PREFIX}/${PORTNAME}/
 
 .include <bsd.port.mk>

@@ -18,5 +18,4 @@ GH_ACCOUNT=	waitman
 GH_TAGNAME=	${GH_COMMIT}
 GH_COMMIT=	4a52e16
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

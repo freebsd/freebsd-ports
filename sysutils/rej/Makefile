@@ -19,8 +19,6 @@ PLIST_FILES=	bin/rej bin/rej-qp bin/rej-mp
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/bin/bash|${SH}|' \
 		${WRKSRC}/runtests.sh
@@ -31,13 +29,10 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-${f}
 .endfor
-
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 run-test: patch
 	@cd ${WRKSRC}; ${SH} runtests.sh

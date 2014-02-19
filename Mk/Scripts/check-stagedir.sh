@@ -78,6 +78,7 @@ else
 	# generate plist - pretend the plist had been empty
 	: >${WRKDIR}/.plist-dirs-unsorted
 	: >${WRKDIR}/.plist-files
+	echo '/you/have/to/check/what/makeplist/gives/you'
 fi
 
 ### PRODUCE MTREE FILE

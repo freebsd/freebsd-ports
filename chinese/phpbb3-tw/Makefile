@@ -41,6 +41,8 @@ NO_STAGE=	yes
 PHPBBDIR=	${WWWDOCROOT}/${PHPBBURL}
 PKGOPTS=	${FILESDIR}/pkg-opts
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 options:

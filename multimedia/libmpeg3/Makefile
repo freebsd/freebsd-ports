@@ -18,7 +18,7 @@ OPTIONS_DEFINE_i386=	MMX
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=	gmake
 MAKE_ARGS=	CC="${CC}" USE_CSS=0 OBJDIR="obj" \
 		CFLAGS="${CFLAGS} ${CPPFLAGS}" LIBS="${LDFLAGS}"
 
@@ -35,7 +35,6 @@ LDFLAGS+=	-lm -L${LOCALBASE}/lib -la52 ${PTHREAD_LIBS}
 
 NASM?=		${LOCALBASE}/bin/nasm
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMMX}
@@ -55,19 +54,17 @@ post-patch:
 
 do-install:
 .for file in ${BIN_FILES}
-	cd ${WRKSRC}/obj && ${INSTALL_PROGRAM} ${file} ${PREFIX}/bin
+	cd ${WRKSRC}/obj && ${INSTALL_PROGRAM} ${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
 .for file in ${INC_FILES}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${file} ${PREFIX}/include
+	cd ${WRKSRC} && ${INSTALL_DATA} ${file} ${STAGEDIR}${PREFIX}/include
 .endfor
 .for file in ${LIB_FILES}
-	cd ${WRKSRC}/obj && ${INSTALL_DATA} ${file} ${PREFIX}/lib
+	cd ${WRKSRC}/obj && ${INSTALL_DATA} ${file} ${STAGEDIR}${PREFIX}/lib
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	cd ${WRKSRC}/docs && ${INSTALL_DATA} ${file} ${DOCSDIR}
+	cd ${WRKSRC}/docs && ${INSTALL_DATA} ${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

@@ -12,23 +12,19 @@ MASTER_SITE_SUBDIR=	dryice
 MAINTAINER=	gamato@users.sf.net
 COMMENT=	Readline wrapper
 
-GNU_CONFIGURE=		yes
-
-MAN1=	rlwrap.1
-MAN3=	RlwrapFilter.3pm
+GNU_CONFIGURE=	yes
 
 PORTDOCS=	AUTHORS BUGS NEWS PLEA README TODO
+
+OPTIONS_DEFINE=	DOCS
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} 's|/dev/ptmx|${NONEXISTENT}|' ${WRKSRC}/configure
 
-NO_STAGE=	yes
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

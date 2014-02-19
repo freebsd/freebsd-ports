@@ -3,6 +3,7 @@
 
 PORTNAME=	dynare
 PORTVERSION=	4.4.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.dynare.org/release/source/
 
@@ -10,13 +11,12 @@ MAINTAINER=	fernando.apesteguia@gmail.com
 COMMENT=	Software platform for handling a wide class of economic models
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/unordered_set.hpp:${PORTSDIR}/devel/boost-libs
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libumfpack.so:${PORTSDIR}/math/suitesparse
-BUILD_DEPENDS+=	${LOCALBASE}/include/matio.h:${PORTSDIR}/math/matio
+LIB_DEPENDS=	libumfpack.so:${PORTSDIR}/math/suitesparse \
+		libmatio.so:${PORTSDIR}/math/matio
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 GNU_CONFIGURE=	yes
-USES=		gmake
-USE_FORTRAN=	yes
+USES=		fortran gmake
 USE_XZ=		yes
 
 INFO=		dynare
@@ -29,6 +29,9 @@ OPTIONS_DEFAULT=	OCTAVE
 MATLAB_CONFIGURE_ENABLE=	matlab
 OCTAVE_CONFIGURE_ENABLE=	octave
 OCTAVE_BUILD_DEPENDS=		octave:${PORTSDIR}/math/octave
+
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-configure:
 	@${ECHO_MSG} ""

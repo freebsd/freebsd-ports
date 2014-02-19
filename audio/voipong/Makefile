@@ -14,6 +14,8 @@ PORTDOCS=	ALGORITHMS AUTHORS ChangeLog COPYING INSTALL KNOWN_BUGS \
 		LICENSE  NEWS README THANKS TODO
 NO_STAGE=	yes
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 post-patch:
 	${MV} ${WRKSRC}/Makefile.bsd ${WRKSRC}/Makefile

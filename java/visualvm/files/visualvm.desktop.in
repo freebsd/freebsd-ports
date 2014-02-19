@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=VisualVM
+GenericName=VisualVM Java Profiling, Monitoring and Troubleshooting All-In-One
+Comment=Java Profiling, Monitoring and Troubleshooting All-In-One
+Icon=%%DATADIR%%/visualvm.png
+Exec=%%PREFIX%%/bin/visualvm
+Categories=Development

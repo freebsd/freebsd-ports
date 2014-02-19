@@ -3,7 +3,7 @@
 
 PORTNAME=	kdesvn
 DISTVERSION=	1.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel kde
 MASTER_SITES=	http://kdesvn.alwins-world.de/downloads/
 
@@ -23,6 +23,8 @@ USE_KDE4=	kdelibs kdeprefix automoc4
 USE_LDCONFIG=	yes
 USE_QT4=	corelib gui xml network dbus svg qt3support sql \
 		qmake_build moc_build rcc_build uic_build linguist_build
+
+OPTIONS_DEFINE=	DOCS NLS 
 
 .include <bsd.port.options.mk>
 

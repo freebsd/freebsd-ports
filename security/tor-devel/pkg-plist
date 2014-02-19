@@ -4,12 +4,11 @@ bin/tor-gencert
 bin/tor-resolve
 bin/torify
 etc/tor/torrc.sample
+man/man1/tor-gencert.1.gz
+man/man1/tor-resolve.1.gz
+man/man1/tor.1.gz
+man/man1/torify.1.gz
 %%DATADIR%%/geoip
 %%DATADIR%%/geoip6
 @dirrm %%DATADIR%%
 @dirrmtry etc/tor
-@cwd /
-@dirrmtry var/run/tor
-@dirrmtry var/db/tor/data
-@dirrmtry var/db/tor
-@cwd

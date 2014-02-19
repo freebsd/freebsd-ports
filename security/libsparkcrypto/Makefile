@@ -3,7 +3,7 @@
 
 PORTNAME=	libsparkcrypto
 PORTVERSION=	0.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://senier.net/libsparkcrypto/
 EXTRACT_SUFX=	.tgz
@@ -11,7 +11,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Cryptographic library implemented in SPARK
 
-LICENSE=	BSD
+LICENSE=	BSD3CLAUSE
 
 USES=		ada gmake
 USE_DOS2UNIX=	Makefile build/libsparkcrypto.gpr

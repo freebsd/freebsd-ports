@@ -110,6 +110,42 @@ bin/ace.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/timestamps.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/title.al
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/version.al
+%%PERL5_MAN3%%/Ace.3.gz
+%%PERL5_MAN3%%/Ace::Browser::AceSubs.3.gz
+%%PERL5_MAN3%%/Ace::Browser::SearchSubs.3.gz
+%%PERL5_MAN3%%/Ace::Browser::SiteDefs.3.gz
+%%PERL5_MAN3%%/Ace::Graphics::Fk.3.gz
+%%PERL5_MAN3%%/Ace::Graphics::Glyph.3.gz
+%%PERL5_MAN3%%/Ace::Graphics::Glyph::anchored_arrow.3.gz
+%%PERL5_MAN3%%/Ace::Graphics::Glyph::arrow.3.gz
+%%PERL5_MAN3%%/Ace::Graphics::Glyph::box.3.gz
+%%PERL5_MAN3%%/Ace::Graphics::Glyph::dot.3.gz
+%%PERL5_MAN3%%/Ace::Graphics::Glyph::ex.3.gz
+%%PERL5_MAN3%%/Ace::Graphics::Glyph::graded_segments.3.gz
+%%PERL5_MAN3%%/Ace::Graphics::Glyph::group.3.gz
+%%PERL5_MAN3%%/Ace::Graphics::Glyph::line.3.gz
+%%PERL5_MAN3%%/Ace::Graphics::Glyph::primers.3.gz
+%%PERL5_MAN3%%/Ace::Graphics::Glyph::segments.3.gz
+%%PERL5_MAN3%%/Ace::Graphics::Glyph::span.3.gz
+%%PERL5_MAN3%%/Ace::Graphics::Glyph::toomany.3.gz
+%%PERL5_MAN3%%/Ace::Graphics::Glyph::transcript.3.gz
+%%PERL5_MAN3%%/Ace::Graphics::Glyph::triangle.3.gz
+%%PERL5_MAN3%%/Ace::Graphics::GlyphFactory.3.gz
+%%PERL5_MAN3%%/Ace::Graphics::Panel.3.gz
+%%PERL5_MAN3%%/Ace::Graphics::Track.3.gz
+%%PERL5_MAN3%%/Ace::Iterator.3.gz
+%%PERL5_MAN3%%/Ace::Local.3.gz
+%%PERL5_MAN3%%/Ace::Model.3.gz
+%%PERL5_MAN3%%/Ace::Object.3.gz
+%%PERL5_MAN3%%/Ace::Sequence.3.gz
+%%PERL5_MAN3%%/Ace::Sequence::Feature.3.gz
+%%PERL5_MAN3%%/Ace::Sequence::FeatureList.3.gz
+%%PERL5_MAN3%%/Ace::Sequence::GappedAlignment.3.gz
+%%PERL5_MAN3%%/Ace::Sequence::Gene.3.gz
+%%PERL5_MAN3%%/Ace::Sequence::Homol.3.gz
+%%PERL5_MAN3%%/Ace::Sequence::Multi.3.gz
+%%PERL5_MAN3%%/Ace::Sequence::Transcript.3.gz
+man/man1/ace.pl.1.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Sequence/Feature
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/Sequence
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Ace/RPC

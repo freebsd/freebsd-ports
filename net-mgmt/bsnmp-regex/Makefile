@@ -17,7 +17,11 @@ CPPFLAGS+=	"-I${LOCALBASE}/include"
 OPTIONS_DEFINE=	DEBUG PCRE
 PCRE_DESC=	Use PCRE instead of the default regex library
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/sockin lib/snmp_regex.so lib/snmp_regex.so.0 \
+		lib/snmp_regex.a lib/snmp_regex.la man/man1/sockin.1.gz \
+		man/man5/bsnmp-regex.conf.5.gz \
+		man/man8/bsnmp-regex.8.gz
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -32,12 +36,5 @@ CONFIGURE_ARGS+=	--enable-pcre
 .else
 CONFIGURE_ARGS+=	--disable-pcre
 .endif
-
-MAN1=		sockin.1
-MAN5=		bsnmp-regex.conf.5
-MAN8=		bsnmp-regex.8
-
-PLIST_FILES=	bin/sockin lib/snmp_regex.so lib/snmp_regex.so.0 \
-		lib/snmp_regex.a lib/snmp_regex.la
 
 .include <bsd.port.mk>

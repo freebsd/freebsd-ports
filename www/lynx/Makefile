@@ -28,7 +28,6 @@ OPTIONS_DEFINE=	DEFAULT_COLORS IPV6 NLS SSL
 OPTIONS_DEFAULT=	SSL
 DEFAULT_COLORS_DESC=	Colors support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if empty(PORT_OPTIONS:MNLS)
@@ -66,20 +65,16 @@ MAKE_ARGS=	helpdir=${L_HELP} docdir=${DOCSDIR}
 .endif
 
 MAKEFILE=	makefile
-MAN1=		lynx.1
 
 L_LIB=		${PREFIX}/etc
 
 SUB_FILES=	pkg-message
 
 post-install:
-.if empty(PORT_OPTIONS:MDOCS)
-	[ -f ${L_LIB}/lynx.cfg ] || ${INSTALL} ${L_LIB}/lynx.cfg.sample ${L_LIB}/lynx.cfg
-	[ -f ${L_LIB}/lynx.lss ] || ${INSTALL} ${L_LIB}/lynx.lss.sample ${L_LIB}/lynx.lss
-.else
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${L_HELP}
+.if ${PORT_OPTIONS:MDOCS}
+# Fix some stage symlinks
+	${LN} -sf ${DOCSDIR}/COPYHEADER ${STAGEDIR}${L_HELP}
+	${LN} -sf ${DOCSDIR}/COPYING ${STAGEDIR}${L_HELP}
 .endif
-	${CHOWN} ${SHAREOWN}:${SHAREGRP} ${L_LIB}/lynx.cfg
 
 .include <bsd.port.mk>

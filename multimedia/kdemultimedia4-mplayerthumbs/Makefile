@@ -4,8 +4,7 @@
 PORTNAME=	mplayerthumbs
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	multimedia kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 PKGNAMEPREFIX=	kdemultimedia-
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
@@ -16,12 +15,9 @@ LICENSE=	LGPL21
 
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
 
-CONFLICTS_INSTALL=	kdemultimedia-4.[1-8].*
-
 USES=		cmake:outsource
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 USE_QT4=	phonon moc_build qmake_build rcc_build uic_build
 USE_XZ=		yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

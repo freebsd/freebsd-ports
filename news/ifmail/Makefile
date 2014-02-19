@@ -19,6 +19,8 @@ PLIST_SUB+=	IFMAIL_RUNAS="${IFMAIL_RUNAS}"
 # USERS does not work here
 #USERS=		ifmail
 
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 pre-configure:

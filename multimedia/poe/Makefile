@@ -8,11 +8,11 @@ MASTER_SITES=	http://www.eskimo.com/~pburns/Poe/files/
 DISTNAME=	Poe-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A vorbis comment editor for GNUstep
-
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
+COMMENT=	vorbis comment editor for GNUstep
 
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	libvorbis.so:${PORTSDIR}/audio/libvorbis
 
 USE_GNUSTEP=	yes
 USE_GNUSTEP_BACK=	yes
@@ -21,7 +21,6 @@ USE_GNUSTEP_INSTALL=	yes
 
 PORTSCOUT=	skipv:0.5.2
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|-lvorbisfile$$|-lvorbisfile -logg|' \
 		${WRKSRC}/GNUmakefile

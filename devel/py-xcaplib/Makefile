@@ -3,6 +3,7 @@
 
 PORTNAME=	xcaplib
 PORTVERSION=	1.0.16
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://download.ag-projects.com/XCAP/ \
 		http://grosbein.net/python/
@@ -20,7 +21,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-PYDISTUTILS_PKGNAME=python_${PORTNAME}
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

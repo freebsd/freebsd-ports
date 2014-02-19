@@ -18,14 +18,13 @@ PATCH_SITES=	${MASTER_SITE_QMAIL}
 PATCHFILES=	qmail-1.03-dk-0.54.patch
 
 USES=		qmail
-NO_STAGE=	yes
 
 PREFIX?=	${QMAIL_PREFIX}
 
 WRKSRC=		${WRKDIR}/qmail-1.03
-PLIST_FILES=	bin/qmail-dk
-MAN8=		qmail-dk.8
-ALL_TARGET=	qmail-dk ${MAN8}
+PLIST_FILES=	bin/qmail-dk \
+		man/man8/qmail-dk.8.gz
+ALL_TARGET=	qmail-dk qmail-dk.8
 CFLAGS+=	-I${LOCALBASE}/include
 
 OPTIONS_DEFINE=	SMTP_AUTH
@@ -33,7 +32,7 @@ OPTIONS_DEFAULT=SMTP_AUTH
 
 SMTP_AUTH_DESC=	Support SMTP_AUTH
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSMTP_AUTH}
 PATCH_SITES+=	http://jeremy.kister.net/code/:auth
@@ -58,9 +57,7 @@ post-patch:
 		${WRKSRC}/conf-groups
 
 do-install:
-	${INSTALL} -o qmailq -m 4711 ${WRKSRC}/qmail-dk ${PREFIX}/bin
-.for m in ${MAN8}
-	${INSTALL_MAN} ${WRKSRC}/${m} ${MAN8PREFIX}/man/man8
-.endfor
+	${INSTALL} -o qmailq -m 4711 ${WRKSRC}/qmail-dk ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/qmail-dk.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	portlint
-PORTVERSION=	2.14.9
+PORTVERSION=	2.14.10
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none

@@ -12,7 +12,6 @@ MAINTAINER=	zi@FreeBSD.org
 COMMENT=	DNS flood detector
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 WRKSRC=		${WRKDIR}/dns_flood_detector_1.2
 
@@ -20,19 +19,18 @@ PLIST_FILES=	sbin/dns_flood_detector
 USE_RC_SUBR=	dnsflood
 PORTDOCS=	README
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 pre-patch:
 	@${LN} -sf ${WRKSRC}/makefiles/Makefile-FreeBSD ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/dns_flood_detector ${PREFIX}/sbin
+	${INSTALL_PROGRAM} ${WRKSRC}/dns_flood_detector ${STAGEDIR}${PREFIX}/sbin
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

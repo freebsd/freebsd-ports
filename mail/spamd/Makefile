@@ -51,6 +51,9 @@ SUB_LIST=	PREFIX=${PREFIX} \
 		${PLIST_SUB}
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 pre-install:

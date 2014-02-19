@@ -20,6 +20,8 @@ PORTDOCS=	README.rus.html
 
 USE_RC_SUBR=	autocd
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-install:

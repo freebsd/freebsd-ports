@@ -20,10 +20,9 @@ LICENSE_COMB=	dual
 LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 
 USE_XZ=		yes
-USE_SCONS=	yes
-SCONS_ARGS+=	--prefix=${PREFIX} --libdatadir=${PREFIX}/share
+MAKE_ARGS+=	--prefix=${PREFIX} --libdatadir=${PREFIX}/share
 USE_LDCONFIG=	yes
-USES=		gmake iconv pkgconfig
+USES=		scons gmake iconv pkgconfig
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 
 NO_STAGE=	yes

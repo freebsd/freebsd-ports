@@ -10,28 +10,25 @@ MASTER_SITES=	http://www.timshel.ca/tkp4/
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Tcl/Tk frontends to Perforce's p4
 
+OPTIONS_DEFINE=	DOCS
+
 RUN_DEPENDS=	p4:${PORTSDIR}/devel/p4
 
 NO_BUILD=	yes
 REINPLACE_ARGS=	-i ""
-USE_TK_RUN=	yes
+USES=		tk:run
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.tcl ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/tkp4 ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.tcl ${STAGEDIR}${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/tkp4 ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/CHANGES ${WRKSRC}/P4WINdifferences \
-		${WRKSRC}/UsingTkP4 ${DOCSDIR}
-.endif
+		${WRKSRC}/UsingTkP4 ${STAGEDIR}${DOCSDIR}
 
 post-patch:
-	${REINPLACE_CMD} -e 's|wish|wish${TCL_VER}|' ${WRKSRC}/tkp4
-.if defined(PREFIX) && ${PREFIX} != "/usr/local"
+	${REINPLACE_CMD} -e 's|wish|${WISH}|' ${WRKSRC}/tkp4
 	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
 		`${GREP} -Fl /usr/local ${WRKSRC}/*`
-.endif
 
 .include <bsd.port.mk>

@@ -20,6 +20,9 @@ MYPORTDOCS=	AUTHORS ChangeLog FAQ NEWS README doc/color.txt \
 		doc/quedit.txt doc/rfc1459.txt doc/tdcc.txt
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 CONFIGURE_ARGS=	--with-wish=${WISH} \

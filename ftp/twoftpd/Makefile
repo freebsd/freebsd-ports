@@ -7,15 +7,14 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple, secure, efficient FTP server
+COMMENT=	Simple, secure, efficient FTP server
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/bg-installer:${PORTSDIR}/devel/bglibs
-LIB_DEPENDS=	cvm-v2client:${PORTSDIR}/security/cvm
-
-#LICENSE=	GPLv2
+LIB_DEPENDS=	libcvm-v2client.so:${PORTSDIR}/security/cvm
 
 OPTIONS_DEFINE=	DOCS
-
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -23,15 +22,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 BGLIBS_LIB=	${LOCALBASE}/lib/bglibs
 BGLIBS_INCLUDE=	${LOCALBASE}/include/bglibs
 
-MAN1=		twoftpd-auth.1 twoftpd-switch.1 twoftpd-xfer.1
 PORTDOCS=	NEWS README TODO
 PLIST_FILES=	bin/twoftpd-anon bin/twoftpd-anon-conf \
 		bin/twoftpd-auth bin/twoftpd-bind-port \
 		bin/twoftpd-conf bin/twoftpd-drop \
-		bin/twoftpd-switch bin/twoftpd-xfer
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+		bin/twoftpd-switch bin/twoftpd-xfer \
+		man/man1/twoftpd-auth.1.gz man/man1/twoftpd-switch.1.gz \
+		man/man1/twoftpd-xfer.1.gz
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,timezone,tm.tm_gmtoff,' ${WRKSRC}/statmod.c
@@ -44,12 +41,17 @@ do-configure:
 	@${ECHO_CMD} "${BGLIBS_INCLUDE}" > ${WRKSRC}/conf-bgincs
 	@${ECHO_CMD} "${BGLIBS_LIB}" > ${WRKSRC}/conf-bglibs
 
-post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-.for i in NEWS README TODO
-	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${DOCSDIR})
+do-install:
+.for f in twoftpd-anon twoftpd-anon-conf twoftpd-auth twoftpd-bind-port \
+	twoftpd-conf twoftpd-drop twoftpd-switch twoftpd-xfer
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin/
 .endfor
-.endif
+.for f in twoftpd-auth.1 twoftpd-switch.1 twoftpd-xfer.1
+	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${MAN1PREFIX}/man/man1/
+.endfor
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for i in NEWS README TODO
+	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
+.endfor
 
 .include <bsd.port.mk>

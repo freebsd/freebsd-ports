@@ -12,9 +12,6 @@ COMMENT=	UTF-aware wc, fmt, expand, and unexpand
 BUILD_DEPENDS=	${LOCALBASE}/lib/libutf.a:${PORTSDIR}/misc/libutf
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	'--libdir=${PREFIX}/lib'
+CONFIGURE_ARGS=	--libdir=${LOCALBASE}/lib --includedir=${LOCALBASE}/include
 
-MAN1=	utf8-expand.1 utf8-fmt.1 utf8-unexpand.1 utf8-wc.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

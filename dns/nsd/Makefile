@@ -3,6 +3,7 @@
 
 PORTNAME=	nsd
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 		ftp://ftp.rhnet.is/pub/nsd/
@@ -10,7 +11,9 @@ MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/	\
 MAINTAINER=	jaap@NLnetLabs.nl
 COMMENT=	An authoritative only non-recursive name server
 
-CONFLICTS=	nsd-[0-]* nsd3-*
+LICENSE=	BSD3CLAUSE
+
+CONFLICTS=	nsd-[0-3]* nsd3-[0-9]*
 
 USE_RC_SUBR=	nsd
 
@@ -46,7 +49,7 @@ PORTDOCS=	CREDITS ChangeLog LICENSE NSD-DATABASE NSD-DIFFFILE \
 		differences.tex
 
 OPTIONS_DEFINE=		ROOT_SERVER LARGEFILE IPV6 BIND8_STATS CHECKING \
-		MINRESPSIZE NSEC3 NSEC3PREHASH MMAP MAXIPS DOCS EUI_RRTYPES
+		MINRESPSIZE NSEC3 NSEC3PREHASH MMAP MAXIPS DOCS RRL EUI_RRTYPES
 OPTIONS_DEFAULT=	LARGEFILE IPV6 NSEC3 NSEC3PREHASH MINRESPSIZE RRL \
 		 EUI_RRTYPES
 
@@ -62,7 +65,6 @@ MAXIPS_DESC=		Raise max-ips from 8 to ${NSDMAX_IPS}
 RRL_DESC=		Response Rate Limiting
 EUI_RRTYPES_DESC=	EUI48 and EUI64 RRtypes support
 
-NO_STAGE=		yes
 .include <bsd.port.options.mk>
 
 LIB_DEPENDS+=	event-1:${PORTSDIR}/devel/libevent
@@ -132,11 +134,11 @@ pre-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/nsd.conf.sample \
-		${PREFIX}/etc/nsd/nsd.conf.sample
+		${STAGEDIR}${PREFIX}/etc/nsd/nsd.conf.sample
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${DOCSDIR}/${f}
+	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${STAGEDIR}${DOCSDIR}/${f}
 .endfor
 .endif
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

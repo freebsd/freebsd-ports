@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	remotebox
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	net
 MASTER_SITES=	http://remotebox.knobgoblin.org.uk/downloads/
 DISTNAME=	RemoteBox-${PORTVERSION}

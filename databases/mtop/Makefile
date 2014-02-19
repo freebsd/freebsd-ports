@@ -17,9 +17,6 @@ RUN_DEPENDS=	p5-Curses>=0:${PORTSDIR}/devel/p5-Curses \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN1=	mkill.1 mtop.1
-
-NO_STAGE=	yes
 post-patch:
 	${RM} ${WRKSRC}/cpan2spec.pl
 

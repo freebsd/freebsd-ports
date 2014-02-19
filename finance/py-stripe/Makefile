@@ -4,7 +4,7 @@
 
 PORTNAME=	stripe
 PORTVERSION=	1.9.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	finance python
 MASTER_SITES=	https://code.stripe.com/stripe/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,14 +18,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests1>=0.8.8:${PORTSDIR}/www/py-requests
 TEST_DEPENDS:=	${RUN_DEPENDS}
 
 USE_PYTHON=		yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
 PYDISTUTILS_AUTOPLIST=	yes
 
 post-patch:
-	@${REINPLACE_CMD} 's/version=version\.VERSION,/version=version.VERSION, zip_safe=False,/' \
-		${WRKSRC}/setup.py
-
-NO_STAGE=	yes
+	@${REINPLACE_CMD} "s|, '../VERSION'||" ${WRKSRC}/setup.py
 
 regression-test: build
 	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} test

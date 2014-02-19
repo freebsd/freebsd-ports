@@ -1,0 +1,21 @@
+--- ./cmake/FindGObjectIntrospection.cmake.orig	2013-08-10 02:01:58.000000000 +0000
++++ ./cmake/FindGObjectIntrospection.cmake	2013-09-28 15:03:47.000000000 +0000
+@@ -50,6 +50,18 @@
+   endif()
+ endif()
+ 
++if (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
++  string (REPLACE "/usr/local"
++    ${CMAKE_INSTALL_PREFIX} GIR_DIR ${INTROSPECTION_GIRDIR})
++  unset (INTROSPECTION_GIRDIR)
++  set (INTROSPECTION_GIRDIR ${GIR_DIR})
++
++  string (REPLACE "/usr/local"
++    ${CMAKE_INSTALL_PREFIX} TYPELIB_DIR ${INTROSPECTION_TYPELIBDIR})
++  unset (INTROSPECTION_TYPELIBDIR)
++  set (INTROSPECTION_TYPELIBDIR ${TYPELIB_DIR})
++endif ()
++
+ mark_as_advanced(
+   INTROSPECTION_SCANNER
+   INTROSPECTION_COMPILER

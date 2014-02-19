@@ -3,6 +3,7 @@
 
 PORTNAME=	pybloom
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +14,7 @@ COMMENT=	A Probabilistic data structure
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bitarray>0:${PORTSDIR}/devel/py-bitarray
 
 USE_PYTHON=	yes
-USE_PYDISTUTILS=	easy_install
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

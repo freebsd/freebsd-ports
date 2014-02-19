@@ -1,6 +1,6 @@
---- src/bookmarks.cpp.orig	2012-07-11 18:10:56.065528820 -0500
-+++ src/bookmarks.cpp	2012-07-11 18:19:42.041677562 -0500
-@@ -22,6 +22,11 @@
+--- src/bookmarks.cpp.orig	2014-02-12 05:22:32.988231816 +0400
++++ src/bookmarks.cpp	2014-02-12 05:22:53.244712591 +0400
+@@ -22,6 +22,13 @@
  #ifndef BOOKMARKS_CPP
  #define BOOKMARKS_CPP
  
@@ -9,10 +9,12 @@
 +#include <sys/mount.h>
 +#endif
 +
++#include <unistd.h>
++
  #include <QtGui>
  #include "bookmarkmodel.h"
  #include "icondlg.h"
-@@ -80,44 +85,74 @@ void MainWindow::mountWatcherTriggered()
+@@ -80,44 +87,74 @@
  }
  
  //---------------------------------------------------------------------------

@@ -3,13 +3,14 @@
 
 PORTNAME=	filewatcherd
 PORTVERSION=	1.0b2
+PORTREVISION=	1
 DISTNAME=	${PORTNAME}-${GH_TAGNAME}
 CATEGORIES=	sysutils
 
 MAINTAINER=	natbsd@instinctive.eu
 COMMENT=	Daemon that watches files and runs commands when they change
 
-LICENSE=	BSD
+LICENSE=	ISCL
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	faelys
@@ -24,8 +25,5 @@ PLIST_FILES=	sbin/filewatcherd etc/watchtab.sample
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/filewatcherd ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_DATA} ${FILESDIR}/watchtab.sample ${STAGEDIR}${PREFIX}/etc
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

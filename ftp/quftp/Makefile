@@ -8,7 +8,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A scriptable FTP client
+COMMENT=	Scriptable FTP client
 
 LICENSE=	GPLv2
 
@@ -18,15 +18,13 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
 
-MAN1=		quftp.1
-PLIST_FILES=	bin/quftp
+PLIST_FILES=	bin/quftp man/man1/quftp.1.gz
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^CFLAGS|#CFLAGS|' ${WRKSRC}/Makefile.in
 
 post-install:
-	@${STRIP_CMD} ${PREFIX}/bin/quftp
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/quftp
 
 .include <bsd.port.mk>

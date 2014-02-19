@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	rtiff
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -11,7 +11,7 @@ COMMENT=	TIFF reader for R
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff
+LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	R-cran-pixmap>0:${PORTSDIR}/graphics/R-cran-pixmap
 
 USES=	cran:auto-plist

@@ -3,6 +3,7 @@
 
 PORTNAME=	gps
 PORTVERSION=	5.2.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 DISTNAME=	gps-5.2.1-1-src
@@ -11,6 +12,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	GNAT Programming Studio - IDE for Ada and many other languages
+
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	gtkada>=2.24:${PORTSDIR}/x11-toolkits/gtkada \
 		xmlada>=3.2:${PORTSDIR}/textproc/xmlada \

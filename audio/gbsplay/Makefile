@@ -88,14 +88,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/po/${l}.mo \
 		${STAGEDIR}${PREFIX}/share/locale/${l}/LC_MESSAGES/gbsplay.mo
 .endfor
-
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-
 .endif
 
 .include <bsd.port.mk>

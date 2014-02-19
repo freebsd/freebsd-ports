@@ -24,5 +24,4 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 PLIST_FILES=	bin/zoom %%DATADIR%%/zoomrc
 PLIST_DIRS=	%%DATADIR%%
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

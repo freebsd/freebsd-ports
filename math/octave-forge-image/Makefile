@@ -3,6 +3,7 @@
 
 PORTNAME=	octave-forge-image
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -16,6 +17,8 @@ WRKSRC=		${WRKDIR}/${OCTSRC}/src
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/signal.tar.gz:${PORTSDIR}/math/octave-forge-signal
 RUN_DEPENDS+=	${TARBALLS_DIR}/general.tar.gz:${PORTSDIR}/math/octave-forge-general
+
+USES=		compiler:c++0x
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 

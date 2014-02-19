@@ -37,18 +37,17 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/nwn
 NO_PACKAGE=	Compressed package is in excess of 1 GB
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${DATADIR}
+	${MKDIR} ${STAGEDIR}${DATADIR}
 .if defined(NWN_DIAMOND)
 	7z e -y -x'r!*.dll' -x'r!*.exe' -o${WRKSRC}/Kingmaker\
 		${CDROM_MOUNT}/KingmakerSetup.exe
 .for zipfile in Data_Shared.zip Data_linux.zip data/XP1.zip data/XP2.zip
-	(cd ${DATADIR} && ${UNZIP_CMD} -o ${CDROM_MOUNT}/${zipfile})
+	(cd ${STAGEDIR}${DATADIR} && ${UNZIP_CMD} -o ${CDROM_MOUNT}/${zipfile})
 .endfor
 .else
 	(cd ${WRKSRC} && ${FIND} . -print | \
-	    ${CPIO} -pdmuv -R${SHAREOWN}:${SHAREGRP} ${DATADIR})
+	    ${CPIO} -pdmuv -R${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DATADIR})
 .endif
 
 .include <bsd.port.mk>

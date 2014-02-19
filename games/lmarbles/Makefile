@@ -32,12 +32,11 @@ DOC_FILES2=	*.jpg *.html
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|(datadir)/icons|(datadir)/pixmaps|g ; \
+	@${REINPLACE_CMD} -e 's|(datadir)/icons|(datadir)/pixmaps|; \
 	s|(datadir)/pixmaps/lmarbles48.gif|(datadir)/pixmaps/lmarbles48.png|' \
 		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|@CFLAGS@|@CFLAGS@ -w| ; \
-	s|-m 666||g ; \
-	s|lmarbles.prfs|lmarbles.prfs.sample|g' \
+	@${REINPLACE_CMD} -e 's|-m 666||; \
+		s|lmarbles.prfs|lmarbles.prfs.sample|' \
 		${WRKSRC}/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|icons/lmarbles48.gif|icons/lmarbles48.png|' \
 		${WRKSRC}/lmarbles.desktop.in

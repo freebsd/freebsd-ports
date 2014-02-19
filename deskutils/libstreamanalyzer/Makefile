@@ -2,7 +2,7 @@
 
 PORTNAME=	libstreamanalyzer
 PORTVERSION=	${STRIGI_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	${STRIGI_MASTER_SITES}
 
@@ -36,4 +36,10 @@ post-patch:
 		${WRKSRC}/libstreamanalyzer/CMakeLists.txt
 
 .include <${.CURDIR}/../strigi/Makefile.common>
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if empty(ICONV_LIB)
+CMAKE_ARGS+=	-DICONV_LIBRARIES:STRING="/usr/lib/libc.so"
+.endif
+
+.include <bsd.port.post.mk>

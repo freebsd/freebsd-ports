@@ -18,12 +18,8 @@ ONLY_FOR_ARCHS=	i386 amd64
 
 USES=		uidfix kmod
 
-.include <bsd.port.pre.mk>
-
-PLIST_SUB+=	PREFIX=${PREFIX}
-
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/biosfont.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_MAN} ${WRKSRC}/biosfont.4 ${STAGEDIR}${PREFIX}/man/man4
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

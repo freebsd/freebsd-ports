@@ -20,6 +20,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-0.1
 PLIST_FILES=	bin/mp3asm
 PORTDOCS=	Changelog README
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-extract:

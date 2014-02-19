@@ -21,6 +21,8 @@ USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--enable-amalgamation
 
+OPTIONS_DEFINE=	EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEXAMPLES}

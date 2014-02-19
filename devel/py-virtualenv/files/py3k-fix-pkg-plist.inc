@@ -1,3 +1,6 @@
+# Other ports reference this include file. DO NOT REMOVE until that is not the
+# case. See PR: ports/186669
+#
 # When Python version is 3.2+ we rewrite all the filenames
 # of TMPPLIST that end with .py[co], so that they conform
 # to PEP 3147 (see http://www.python.org/dev/peps/pep-3147/)

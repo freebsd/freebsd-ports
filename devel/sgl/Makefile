@@ -8,8 +8,11 @@ MASTER_SITES=	http://www1.cs.columbia.edu/dcc/nestor/presentations/SGL/ \
 		ftp://ftp.cs.rpi.edu/pub/stl/
 DISTNAME=	SGL-${PORTVERSION}
 
-MAINTAINER=	david@realityrift.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	STL implementation for ADA95
+
+DEPRECATED=	S/W never progressed beyond incomplete graduate project; library was never properly built - not worth fixing
+EXPIRATION_DATE=20140315
 
 NO_BUILD=	yes
 

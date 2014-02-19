@@ -13,6 +13,8 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-DHANZI # LDFLAGS=-s datadir=/usr/local/lib/less
 CPP=		#
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-install:

@@ -64,6 +64,7 @@
     SUBDIR += mldonkey-perlreactor
     SUBDIR += mldonkey-urlslave
     SUBDIR += museekplus
+    SUBDIR += namecoin
     SUBDIR += napshare
     SUBDIR += ncdc
     SUBDIR += opendchub

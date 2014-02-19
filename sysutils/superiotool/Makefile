@@ -17,16 +17,15 @@ ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=The tool is for x86-specific hardware
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
-PLIST_FILES=	sbin/superiotool
-MAN8=		superiotool.8
+PLIST_FILES=	sbin/superiotool \
+		man/man8/superiotool.8.gz
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 UPSTREAM_VERS=	4.0-2827-g1a00cf0
 MAKE_ENV+=	VERSION=-DSUPERIOTOOL_VERSION='\"${UPSTREAM_VERS}\"'
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile
 

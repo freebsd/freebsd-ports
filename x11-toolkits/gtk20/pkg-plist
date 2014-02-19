@@ -288,8 +288,8 @@ lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-viqr.la
 lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-viqr.so
 lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-xim.la
 lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-xim.so
-%%CUPS:%%lib/gtk-2.0/%%GTK2_VERSION%%/printbackends/libprintbackend-cups.la
-%%CUPS:%%lib/gtk-2.0/%%GTK2_VERSION%%/printbackends/libprintbackend-cups.so
+%%CUPS%%lib/gtk-2.0/%%GTK2_VERSION%%/printbackends/libprintbackend-cups.la
+%%CUPS%%lib/gtk-2.0/%%GTK2_VERSION%%/printbackends/libprintbackend-cups.so
 lib/gtk-2.0/%%GTK2_VERSION%%/printbackends/libprintbackend-file.la
 lib/gtk-2.0/%%GTK2_VERSION%%/printbackends/libprintbackend-file.so
 lib/gtk-2.0/%%GTK2_VERSION%%/printbackends/libprintbackend-lpr.la

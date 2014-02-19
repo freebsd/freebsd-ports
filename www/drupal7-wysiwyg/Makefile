@@ -18,7 +18,6 @@ TINYMCE3_DESC=	Install TinyMCE3 Editor
 CKEDITOR_DESC=	Install CKEditor
 YUI_DESC=	Install Yahoo UI Editor
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTINYMCE3}
@@ -103,13 +102,13 @@ DOC_FILES=	CHANGELOG.txt README.txt LICENSE.txt
 
 post-install:
 .if ${PORT_OPTIONS:MTINYMCE3}
-	${LN} -fs ${PREFIX}/www/tinymce ${PREFIX}/${DRUPAL_MODLIB}
+	${LN} -fs ${PREFIX}/www/tinymce ${STAGEDIR}${PREFIX}/${DRUPAL_MODLIB}
 .endif
 .if ${PORT_OPTIONS:MCKEDITOR}
-	${LN} -fs ${PREFIX}/www/CKEditor ${PREFIX}/${DRUPAL_MODLIB}/ckeditor
+	${LN} -fs ${PREFIX}/www/CKEditor ${STAGEDIR}${PREFIX}/${DRUPAL_MODLIB}/ckeditor
 .endif
 .if ${PORT_OPTIONS:MYUI}
-	${LN} -fs ${PREFIX}/www/yahoo ${PREFIX}/${DRUPAL_MODLIB}/yui
+	${LN} -fs ${PREFIX}/www/yahoo ${STAGEDIR}${PREFIX}/${DRUPAL_MODLIB}/yui
 .endif
 
 .include <bsd.port.mk>

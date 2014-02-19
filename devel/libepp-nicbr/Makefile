@@ -28,11 +28,8 @@ DATADIR=	${PREFIX}/share/${PORTNAME:S/-/_/}
 
 PLIST_SUB=	VER="${PORTVERSION}"
 
-.if defined(.PARSEDIR)
-USE_GMAKE=	yes
-.endif
+USES=		gmake
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MREADLINE}

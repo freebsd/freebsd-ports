@@ -18,6 +18,8 @@ MAKE_ARGS=	CC="${CC} ${CFLAGS}"
 PLIST_FILES=	bin/cmunge bin/ctran bin/proc-incl
 PORTDOCS=	*
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -34,15 +34,13 @@ EXCLUDE=	dejagnu expect readline sim texinfo intl
 EXTRACT_AFTER_ARGS=	${EXCLUDE:S/^/--exclude /}
 VER=		${PORTVERSION:S/.//}
 PLIST_SUB=	VER=${VER}
-MAN1=		gdb${VER}.1
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MINSIGHT}
 PKGNAMESUFFIX=	-insight
-USE_TK=		84+
-LIB_DEPENDS=	itk:${PORTSDIR}/x11-toolkits/itk
+USES+=		tk
+LIB_DEPENDS=	libitk.so:${PORTSDIR}/x11-toolkits/itk
 RUN_DEPENDS=	${LOCALBASE}/lib/iwidgets:${PORTSDIR}/x11-toolkits/iwidgets
 DISTFILES+=	gdbtk-6.6${EXTRACT_SUFX}:gdbtk
 PLIST_SUB+=	INSIGHT=''
@@ -50,10 +48,10 @@ EXTRA_PATCHES=	${FILESDIR}/itcl33-patch \
 		${FILESDIR}/extra-gdb-gdbtk-generic-gdbtk.c \
 		${FILESDIR}/extra-gdb-gdbtk-generic-gdbtk-hooks.c
 CONFIGURE_ARGS+=--enable-gdbtk \
-		--with-tclconfig=${LOCALBASE}/lib/tcl${TCL_VER} \
-		--with-tclinclude=${LOCALBASE}/include/tcl${TCL_VER}/generic \
-		--with-tkconfig=${LOCALBASE}/lib/tk${TK_VER} \
-		--with-tkinclude=${LOCALBASE}/include/tk${TK_VER}/generic \
+		--with-tclconfig=${TCL_LIBDIR} \
+		--with-tclinclude=${TCL_INCLUDEDIR}/generic \
+		--with-tkconfig=${TK_LIBDIR} \
+		--with-tkinclude=${TK_INCLUDEDIR}/generic \
 		--with-itclconfig=${LOCALBASE}/lib/itcl3.4 \
 		--with-itkconfig=${LOCALBASE}/lib/itk3.3
 
@@ -88,19 +86,19 @@ post-patch:
 		-e 's/^readline/#readline/' \
 		-e 's,^LIBICONV =.*,LIBICONV=-L${LOCALBASE}/lib ${ICONV_LIB},' \
 		${WRKSRC}/gdb/Makefile.in
-	${ECHO} 'READLINE = -lreadline' >> ${WRKSRC}/gdb/Makefile.in
+	${ECHO} 'READLINE = -lreadline_p' >> ${WRKSRC}/gdb/Makefile.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${PREFIX}/bin/gdb${VER}
-	${LN} ${PREFIX}/bin/gdb${VER} ${PREFIX}/bin/gdbtui${VER}
-	${INSTALL_MAN} ${WRKSRC}/gdb/gdb.1 ${MAN1PREFIX}/man/man1/gdb${VER}.1
+	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb ${STAGEDIR}${PREFIX}/bin/gdb${VER}
+	${LN} -sf gdb${VER} ${STAGEDIR}${PREFIX}/bin/gdbtui${VER}
+	${INSTALL_MAN} ${WRKSRC}/gdb/gdb.1 ${STAGEDIR}${PREFIX}/man/man1/gdb${VER}.1
 .if ${PORT_OPTIONS:MINSIGHT}
-	${LN} ${PREFIX}/bin/gdb${VER} ${PREFIX}/bin/insight
-	${MKDIR} ${PREFIX}/share/redhat/gui
+	${LN} -sf gdb${VER} ${STAGEDIR}${PREFIX}/bin/insight
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/redhat/gui
 	${CP} -p ${WRKSRC}/libgui/library/*.tcl	\
 		${WRKSRC}/libgui/library/tclIndex \
-			${PREFIX}/share/redhat/gui/
-	${MKDIR} ${PREFIX}/lib/insight1.0
+			${STAGEDIR}${PREFIX}/share/redhat/gui/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/insight1.0
 	${CP} -Rp ${WRKSRC}/gdb/gdbtk/library/*.tcl	\
 		${WRKSRC}/gdb/gdbtk/library/*.itcl	\
 		${WRKSRC}/gdb/gdbtk/library/*.ith	\
@@ -108,7 +106,7 @@ do-install:
 		${WRKSRC}/gdb/gdbtk/library/help	\
 		${WRKSRC}/gdb/gdbtk/library/images*	\
 		${WRKSRC}/gdb/gdbtk/library/tclIndex	\
-			${PREFIX}/lib/insight1.0
+			${STAGEDIR}${PREFIX}/lib/insight1.0
 .endif
 
 .include <bsd.port.mk>

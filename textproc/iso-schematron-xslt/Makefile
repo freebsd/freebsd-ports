@@ -14,7 +14,6 @@ COMMENT=	The Leading Implementation of ISO Schematron
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-extract:
 	${MKDIR} ${WRKDIR}/xslt1
 	${MKDIR} ${WRKDIR}/xslt2
@@ -25,9 +24,9 @@ INSTDIR=	share/xsl/iso-schematron
 PLIST_SUB+=	INSTDIR="${INSTDIR}"
 
 do-install:
-	${MKDIR} ${PREFIX}/${INSTDIR}/xslt1
-	( ${FIND} ${WRKDIR}/xslt1 -type f -exec ${INSTALL_DATA} {} ${PREFIX}/${INSTDIR}/xslt1/ \; )
-	${MKDIR} ${PREFIX}/${INSTDIR}/xslt2
-	( ${FIND} ${WRKDIR}/xslt2 -type f -exec ${INSTALL_DATA} {} ${PREFIX}/${INSTDIR}/xslt2/ \; )
+	${MKDIR} ${STAGEDIR}${PREFIX}/${INSTDIR}/xslt1
+	( ${FIND} ${WRKDIR}/xslt1 -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${PREFIX}/${INSTDIR}/xslt1/ \; )
+	${MKDIR} ${STAGEDIR}${PREFIX}/${INSTDIR}/xslt2
+	( ${FIND} ${WRKDIR}/xslt2 -type f -exec ${INSTALL_DATA} {} ${STAGEDIR}${PREFIX}/${INSTDIR}/xslt2/ \; )
 
 .include <bsd.port.mk>

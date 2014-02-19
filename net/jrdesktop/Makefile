@@ -2,36 +2,35 @@
 # $FreeBSD$
 
 PORTNAME=	jrdesktop
-PORTVERSION=	0.2.0030
+PORTVERSION=	0.3.1.0
 CATEGORIES=	net java
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}.src
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R:R}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}.jar
+EXTRACT_SUFX=
+EXTRACT_ONLY=
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	View and/or control a remote PC
 
+LICENSE=	GPLv3
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.6+
-USE_ANT=	yes
-USE_ZIP=	yes
+NO_BUILD=	yes
 
-WRKSRC=	${WRKDIR}/${DISTNAME}/${PORTNAME}
-TXTFILES=	changes.txt license.txt readme.txt
+SUB_FILES=	jrdesktop
+SUB_LIST+=	JAVA=${JAVA} \
+		PORTNAME=${PORTNAME} \
+		PORTVERSION=${PORTVERSION}
 
-NO_STAGE=	yes
+PLIST_FILES=	${JAVAJARDIR:S/${PREFIX}\///}/${DISTNAME} \
+		bin/${PORTNAME}
+
+post-extract:
+	${CP} ${DISTDIR}/${DISTNAME} ${WRKDIR}
+
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/dist/jrdesktop.jar ${JAVAJARDIR}
-	${INSTALL_SCRIPT} ${FILESDIR}/jrdesktop.in ${PREFIX}/bin/jrdesktop
-
-post-install:
-	${REINPLACE_CMD} -i "" -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|;s|%%JAVA%%|${JAVA}|' \
-	    ${PREFIX}/bin/jrdesktop
-.if !defined(NOPORTDOCS)
-	${INSTALL} -d ${DOCSDIR}
-	(cd ${WRKSRC}/dist && ${COPYTREE_SHARE} javadoc ${DOCSDIR})
-.for txt in ${TXTFILES}
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/${txt} ${DOCSDIR}
-.endfor
-.endif
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME} ${STAGEDIR}${JAVAJARDIR}
+	${INSTALL_SCRIPT} ${WRKDIR}/jrdesktop ${STAGEDIR}${PREFIX}/bin/jrdesktop
 
 .include <bsd.port.mk>

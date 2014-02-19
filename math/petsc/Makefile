@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=	--with-x-include=${LOCALBASE}/include	\
 			--with-x-lib=${LOCALBASE}/lib/libX11.so
 .endif
 
-USE_FORTRAN=	yes
+USES=		fortran
 FFLAGS+=	-O2
 PFX=		${PORTNAME}
 TARGET=		${OPSYS:L}
@@ -56,6 +56,9 @@ CONFIGURE_ARGS+=	--with-umfpack-include="${LOCALBASE}/include/suitesparse"	\
 .endif
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

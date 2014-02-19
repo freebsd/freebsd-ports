@@ -14,6 +14,20 @@ bin/lm-solve
 %%SITE_PERL%%/Games/LMSolve.pm
 %%SITE_PERL%%/Games/get-version.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/LMSolve/.packlist
+man/man1/lm-solve.1.gz
+%%PERL5_MAN3%%/Games::LMSolve.3.gz
+%%PERL5_MAN3%%/Games::LMSolve::Alice.3.gz
+%%PERL5_MAN3%%/Games::LMSolve::Base.3.gz
+%%PERL5_MAN3%%/Games::LMSolve::Input.3.gz
+%%PERL5_MAN3%%/Games::LMSolve::Minotaur.3.gz
+%%PERL5_MAN3%%/Games::LMSolve::Numbers.3.gz
+%%PERL5_MAN3%%/Games::LMSolve::Plank::Base.3.gz
+%%PERL5_MAN3%%/Games::LMSolve::Plank::Hex.3.gz
+%%PERL5_MAN3%%/Games::LMSolve::Registry.3.gz
+%%PERL5_MAN3%%/Games::LMSolve::Tilt::Base.3.gz
+%%PERL5_MAN3%%/Games::LMSolve::Tilt::Multi.3.gz
+%%PERL5_MAN3%%/Games::LMSolve::Tilt::RedBlue.3.gz
+%%PERL5_MAN3%%/Games::LMSolve::Tilt::Single.3.gz
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Games/LMSolve
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Games
 @dirrm %%SITE_PERL%%/Games/LMSolve/Tilt

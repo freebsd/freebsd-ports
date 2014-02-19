@@ -22,12 +22,7 @@ PORTDOCS=	README protocol.htm usage.htm
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|CFLAGS = @CFLAGS@|CFLAGS = @CFLAGS@ -w|' \
-		${WRKSRC}/Makefile.in
-
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
-
 .include <bsd.port.mk>

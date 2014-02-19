@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gcc47
-PORTVERSION=	4.7.4.20140118
+PORTVERSION=	4.7.4.20140208
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${DISTVERSION}
@@ -70,6 +70,7 @@ CONFIGURE_ARGS+=--disable-bootstrap
 ALL_TARGET=	bootstrap-lean
 .endif
 CONFIGURE_ARGS+=--disable-nls \
+		--enable-gnu-indirect-function \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
 		--program-suffix=${SUFFIX} \
@@ -129,6 +130,7 @@ full-regression-test: build
 
 post-install:
 	${RM} -f ${STAGEDIR}${TARGLIB}/*.la
+	${RM} -f ${STAGEDIR}${PREFIX}/man/man7/*
 	# Add target libraries and include files to packaging list.
 	${RM} -f ${WRKDIR}/PLIST.lib
 .for d in ${TARGLIB:S/^${PREFIX}\///} ${LIBEXEC:S/^${PREFIX}\///} include/gcj include/gnu include/java include/javax
@@ -139,8 +141,5 @@ post-install:
 	fi
 .endfor
 	cd ${WRKDIR} ; ${SED} -i -e "/PLIST.lib/ r PLIST.lib" ${TMPPLIST}
-	@if type ccache-update-links >/dev/null 2>&1; then \
-	    ccache-update-links -v; \
-	fi
 
 .include <bsd.port.post.mk>

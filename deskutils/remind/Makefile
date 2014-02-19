@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	remind
-PORTVERSION=	3.1.12
+PORTVERSION=	3.1.13
 CATEGORIES=	deskutils
 MASTER_SITES=	http://www.roaringpenguin.com/files/download/ \
 		http://freebsd.unixfreunde.de/sources/
-DISTNAME=	${PORTNAME}-03.01.12
+DISTNAME=	${PORTNAME}-03.01.13
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	Sophisticated calendar and alarm program
@@ -28,7 +28,7 @@ PLIST_FILES=	bin/rem \
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MTCLTK}
-USE_TK=		yes
+USES=		tk
 RUN_DEPENDS+=	dtplite:${PORTSDIR}/devel/tcllib
 PLIST_FILES+=	bin/cm2rem.tcl bin/tkremind
 .endif

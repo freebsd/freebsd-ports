@@ -2,14 +2,11 @@ bin/im-ja-conf
 bin/im-ja-xim-server
 lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-ja.la
 lib/gtk-2.0/%%GTK2_VERSION%%/immodules/im-ja.so
-%%GNOMEPANEL%%libdata/bonobo/servers/GNOME_ImJaApplet.server
-%%GNOMEPANEL%%libexec/im-ja/im-ja-applet
 libexec/im-ja/im-ja-helper
 libexec/im-ja/kpengine
 man/man1/im-ja-conf.1.gz
 man/man1/im-ja-xim-server.1.gz
 share/applications/im-ja.desktop
-%%GNOMEPANEL%%share/gnome-2.0/ui/GNOME_ImJaApplet.xml
 share/im-ja/01.unistrok
 share/im-ja/02.unistrok
 share/im-ja/03.unistrok

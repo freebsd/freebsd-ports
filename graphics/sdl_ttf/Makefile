@@ -3,6 +3,7 @@
 
 PORTNAME=	sdl_ttf
 PORTVERSION=	2.0.11
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_ttf/release/
 DISTNAME=	SDL_ttf-${PORTVERSION}
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libfreetype.so:${PORTSDIR}/print/freetype2
 
 USE_AUTOTOOLS=	libtool
 USE_SDL=	sdl
-USES=		gmake pathfix pkgconfig
+USES=		gmake iconv pathfix pkgconfig
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

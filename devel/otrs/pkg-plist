@@ -57,6 +57,7 @@ otrs/Kernel/Language/fa.pm
 otrs/Kernel/Language/fi.pm
 otrs/Kernel/Language/fr.pm
 otrs/Kernel/Language/fr_CA.pm
+otrs/Kernel/Language/he.pm
 otrs/Kernel/Language/hi.pm
 otrs/Kernel/Language/hr.pm
 otrs/Kernel/Language/hu.pm
@@ -1918,6 +1919,7 @@ otrs/var/httpd/htdocs/js/thirdparty/d3js/models/multiBarTimeSeries.js
 otrs/var/httpd/htdocs/js/thirdparty/d3js/models/multiBarTimeSeriesChart.js
 otrs/var/httpd/htdocs/js/thirdparty/d3js/models/multiChart.js
 otrs/var/httpd/htdocs/js/thirdparty/d3js/models/ohlcBar.js
+otrs/var/httpd/htdocs/js/thirdparty/d3js/models/OTRSmultiBarChart.js
 otrs/var/httpd/htdocs/js/thirdparty/d3js/models/parallelCoordinates.js
 otrs/var/httpd/htdocs/js/thirdparty/d3js/models/pie.js
 otrs/var/httpd/htdocs/js/thirdparty/d3js/models/pieChart.js
@@ -1943,7 +1945,7 @@ otrs/var/httpd/htdocs/js/thirdparty/jquery-tablesorter-2.0.5/jquery.tablesorter.
 otrs/var/httpd/htdocs/js/thirdparty/jquery-ui-1.10.3/jquery-ui.js
 otrs/var/httpd/htdocs/js/thirdparty/jquery-validate-1.11.1/jquery.validate.js
 otrs/var/httpd/htdocs/js/thirdparty/json/json2.js
-otrs/var/httpd/htdocs/js/thirdparty/jsplumb-1.5.4/jsplumb.js
+otrs/var/httpd/htdocs/js/thirdparty/jsplumb-1.5.5/jsplumb.js
 otrs/var/httpd/htdocs/js/thirdparty/qunit-1.11.0/qunit-1.11.0.css
 otrs/var/httpd/htdocs/js/thirdparty/qunit-1.11.0/qunit-1.11.0.js
 otrs/var/httpd/htdocs/js/thirdparty/stacktrace-0.4/stacktrace.js
@@ -2267,7 +2269,7 @@ otrs/var/stats/Stats.TicketOverview.en.xml
 @dirrmtry otrs/var/httpd/htdocs/js/js-cache
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/stacktrace-0.4
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/qunit-1.11.0
-@dirrm otrs/var/httpd/htdocs/js/thirdparty/jsplumb-1.5.4
+@dirrm otrs/var/httpd/htdocs/js/thirdparty/jsplumb-1.5.5
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/json
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-validate-1.11.1
 @dirrm otrs/var/httpd/htdocs/js/thirdparty/jquery-ui-1.10.3

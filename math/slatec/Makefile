@@ -18,8 +18,8 @@ EXTRACT_ONLY=	slatec_src.tgz slatec_chk.tgz
 MAINTAINER=	mexas@bris.ac.uk
 COMMENT=	SLATEC Common Mathematical Library
 
+USES=		fortran
 USE_LDCONFIG=	yes
-USE_FORTRAN=	yes
 WRKSRC=		${WRKDIR}/src
 SHLIB_MAJOR=	1
 

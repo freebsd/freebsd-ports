@@ -14,9 +14,8 @@ USE_PHP=	gettext iconv mbstring session xml zlib
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${WWWDIR}
-	${CP} -R ${WRKSRC}/ ${WWWDIR}
+	${MKDIR} ${STAGEDIR}${WWWDIR}
+	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>

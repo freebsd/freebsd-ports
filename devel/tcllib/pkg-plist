@@ -3,6 +3,7 @@ bin/nns
 bin/nnsd
 bin/nnslog
 bin/page
+bin/pt
 bin/tcldocstrip
 lib/tcllib/aes/aes.tcl
 lib/tcllib/aes/pkgIndex.tcl
@@ -66,6 +67,11 @@ lib/tcllib/crc/pkgIndex.tcl
 lib/tcllib/crc/sum.tcl
 lib/tcllib/csv/csv.tcl
 lib/tcllib/csv/pkgIndex.tcl
+lib/tcllib/debug/caller.tcl
+lib/tcllib/debug/debug.tcl
+lib/tcllib/debug/heartbeat.tcl
+lib/tcllib/debug/pkgIndex.tcl
+lib/tcllib/debug/timestamp.tcl
 lib/tcllib/des/des.tcl
 lib/tcllib/des/pkgIndex.tcl
 lib/tcllib/des/tcldes.tcl
@@ -170,6 +176,8 @@ lib/tcllib/doctools2toc/msgcat_fr.tcl
 lib/tcllib/doctools2toc/parse.tcl
 lib/tcllib/doctools2toc/pkgIndex.tcl
 lib/tcllib/doctools2toc/structure.tcl
+lib/tcllib/dtplite/dtplite.tcl
+lib/tcllib/dtplite/pkgIndex.tcl
 lib/tcllib/fileutil/decode.tcl
 lib/tcllib/fileutil/fileutil.tcl
 lib/tcllib/fileutil/multi.tcl
@@ -235,8 +243,11 @@ lib/tcllib/javascript/pkgIndex.tcl
 lib/tcllib/jpeg/jpeg.tcl
 lib/tcllib/jpeg/pkgIndex.tcl
 lib/tcllib/json/json.tcl
+lib/tcllib/json/json_tcl.tcl
 lib/tcllib/json/json_write.tcl
+lib/tcllib/json/jsonc.tcl
 lib/tcllib/json/pkgIndex.tcl
+lib/tcllib/json/test_support.tcl
 lib/tcllib/lambda/lambda.tcl
 lib/tcllib/lambda/pkgIndex.tcl
 lib/tcllib/ldap/ldap.tcl
@@ -287,6 +298,7 @@ lib/tcllib/math/qcomplex.tcl
 lib/tcllib/math/rational_funcs.tcl
 lib/tcllib/math/romannumerals.tcl
 lib/tcllib/math/special.tcl
+lib/tcllib/math/stat_kernel.tcl
 lib/tcllib/math/statistics.tcl
 lib/tcllib/math/symdiff.tcl
 lib/tcllib/math/tclIndex
@@ -440,6 +452,7 @@ lib/tcllib/sasl/gtoken.tcl
 lib/tcllib/sasl/ntlm.tcl
 lib/tcllib/sasl/pkgIndex.tcl
 lib/tcllib/sasl/sasl.tcl
+lib/tcllib/sasl/scram.tcl
 lib/tcllib/sha1/pkgIndex.tcl
 lib/tcllib/sha1/sha1.tcl
 lib/tcllib/sha1/sha1c.tcl
@@ -467,6 +480,9 @@ lib/tcllib/stooop/pkgIndex.tcl
 lib/tcllib/stooop/stooop.tcl
 lib/tcllib/stooop/switched.tcl
 lib/tcllib/stooop/xifo.tcl
+lib/tcllib/string/pkgIndex.tcl
+lib/tcllib/string/token.tcl
+lib/tcllib/string/token_shell.tcl
 lib/tcllib/stringprep/pkgIndex.tcl
 lib/tcllib/stringprep/stringprep.tcl
 lib/tcllib/stringprep/stringprep_data.tcl
@@ -505,8 +521,10 @@ lib/tcllib/struct/tree_c.tcl
 lib/tcllib/struct/tree_tcl.tcl
 lib/tcllib/tar/pkgIndex.tcl
 lib/tcllib/tar/tar.tcl
+lib/tcllib/tar/test-support.tcl
 lib/tcllib/tepam/pkgIndex.tcl
 lib/tcllib/tepam/tepam.tcl
+lib/tcllib/tepam/tepam_doc_gen.tcl
 lib/tcllib/term/ansi/code.tcl
 lib/tcllib/term/ansi/code/attr.tcl
 lib/tcllib/term/ansi/code/ctrl.tcl
@@ -613,6 +631,8 @@ lib/tcllib/virtchannel_transform/pkgIndex.tcl
 lib/tcllib/virtchannel_transform/rot.tcl
 lib/tcllib/virtchannel_transform/spacer.tcl
 lib/tcllib/virtchannel_transform/zlib.tcl
+lib/tcllib/websocket/pkgIndex.tcl
+lib/tcllib/websocket/websocket.tcl
 lib/tcllib/wip/pkgIndex.tcl
 lib/tcllib/wip/wip.tcl
 lib/tcllib/wip/wip2.tcl
@@ -643,12 +663,23 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/base32hex.tcllib.n.gz
 %%MAN%%man/mann/base64.tcllib.n.gz
 %%MAN%%man/mann/bee.tcllib.n.gz
+%%MAN%%man/mann/bench.tcllib.n.gz
+%%MAN%%man/mann/bench_intro.tcllib.n.gz
+%%MAN%%man/mann/bench_lang_intro.tcllib.n.gz
+%%MAN%%man/mann/bench_lang_spec.tcllib.n.gz
+%%MAN%%man/mann/bench_read.tcllib.n.gz
+%%MAN%%man/mann/bench_wcsv.tcllib.n.gz
+%%MAN%%man/mann/bench_wtext.tcllib.n.gz
 %%MAN%%man/mann/bibtex.tcllib.n.gz
 %%MAN%%man/mann/bigfloat.tcllib.n.gz
 %%MAN%%man/mann/bignum.tcllib.n.gz
 %%MAN%%man/mann/blowfish.tcllib.n.gz
 %%MAN%%man/mann/calculus.tcllib.n.gz
 %%MAN%%man/mann/cat.tcllib.n.gz
+%%MAN%%man/mann/cc_amex.tcllib.n.gz
+%%MAN%%man/mann/cc_discover.tcllib.n.gz
+%%MAN%%man/mann/cc_mastercard.tcllib.n.gz
+%%MAN%%man/mann/cc_visa.tcllib.n.gz
 %%MAN%%man/mann/cfront.tcllib.n.gz
 %%MAN%%man/mann/cgen.tcllib.n.gz
 %%MAN%%man/mann/changelog.tcllib.n.gz
@@ -659,10 +690,11 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/comm_wire.tcllib.n.gz
 %%MAN%%man/mann/connect.tcllib.n.gz
 %%MAN%%man/mann/constants.tcllib.n.gz
-%%MAN%%man/mann/container.tcllib.n.gz
 %%MAN%%man/mann/control.tcllib.n.gz
 %%MAN%%man/mann/copyops.tcllib.n.gz
 %%MAN%%man/mann/core.tcllib.n.gz
+%%MAN%%man/mann/coro_auto.tcllib.n.gz
+%%MAN%%man/mann/coroutine.tcllib.n.gz
 %%MAN%%man/mann/counter.tcllib.n.gz
 %%MAN%%man/mann/crc16.tcllib.n.gz
 %%MAN%%man/mann/crc32.tcllib.n.gz
@@ -670,7 +702,12 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/cvs.tcllib.n.gz
 %%MAN%%man/mann/dacceptor.tcllib.n.gz
 %%MAN%%man/mann/ddest.tcllib.n.gz
+%%MAN%%man/mann/debug.tcllib.n.gz
+%%MAN%%man/mann/debug_caller.tcllib.n.gz
+%%MAN%%man/mann/debug_heartbeat.tcllib.n.gz
+%%MAN%%man/mann/debug_timestamp.tcllib.n.gz
 %%MAN%%man/mann/decimal.tcllib.n.gz
+%%MAN%%man/mann/decode.tcllib.n.gz
 %%MAN%%man/mann/deleg_method.tcllib.n.gz
 %%MAN%%man/mann/deleg_proc.tcllib.n.gz
 %%MAN%%man/mann/des.tcllib.n.gz
@@ -702,16 +739,12 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/doctools_plugin_apiref.tcllib.n.gz
 %%MAN%%man/mann/dsource.tcllib.n.gz
 %%MAN%%man/mann/dtplite.tcllib.n.gz
+%%MAN%%man/mann/ean13.tcllib.n.gz
+%%MAN%%man/mann/encode.tcllib.n.gz
 %%MAN%%man/mann/events.tcllib.n.gz
 %%MAN%%man/mann/expander.tcllib.n.gz
-%%MAN%%man/mann/export.tcllib.n.gz
 %%MAN%%man/mann/export_docidx.tcllib.n.gz
 %%MAN%%man/mann/export_doctoc.tcllib.n.gz
-%%MAN%%man/mann/export_html.tcllib.n.gz
-%%MAN%%man/mann/export_json.tcllib.n.gz
-%%MAN%%man/mann/export_nroff.tcllib.n.gz
-%%MAN%%man/mann/export_text.tcllib.n.gz
-%%MAN%%man/mann/export_wiki.tcllib.n.gz
 %%MAN%%man/mann/fa.tcllib.n.gz
 %%MAN%%man/mann/facade.tcllib.n.gz
 %%MAN%%man/mann/faop.tcllib.n.gz
@@ -726,9 +759,11 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/fuzzy.tcllib.n.gz
 %%MAN%%man/mann/gasm.tcllib.n.gz
 %%MAN%%man/mann/generator.tcllib.n.gz
+%%MAN%%man/mann/gpx.tcllib.n.gz
 %%MAN%%man/mann/graph.tcllib.n.gz
 %%MAN%%man/mann/graph1.tcllib.n.gz
 %%MAN%%man/mann/graphops.tcllib.n.gz
+%%MAN%%man/mann/gtoken.tcllib.n.gz
 %%MAN%%man/mann/halfpipe.tcllib.n.gz
 %%MAN%%man/mann/hex.tcllib.n.gz
 %%MAN%%man/mann/hook.tcllib.n.gz
@@ -736,21 +771,37 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/html_cssdefaults.tcllib.n.gz
 %%MAN%%man/mann/htmlparse.tcllib.n.gz
 %%MAN%%man/mann/huddle.tcllib.n.gz
+%%MAN%%man/mann/iban.tcllib.n.gz
 %%MAN%%man/mann/ident.tcllib.n.gz
 %%MAN%%man/mann/identity.tcllib.n.gz
+%%MAN%%man/mann/idx_container.tcllib.n.gz
+%%MAN%%man/mann/idx_export.tcllib.n.gz
+%%MAN%%man/mann/idx_export_html.tcllib.n.gz
+%%MAN%%man/mann/idx_export_json.tcllib.n.gz
+%%MAN%%man/mann/idx_export_nroff.tcllib.n.gz
+%%MAN%%man/mann/idx_export_text.tcllib.n.gz
+%%MAN%%man/mann/idx_export_wiki.tcllib.n.gz
+%%MAN%%man/mann/idx_import.tcllib.n.gz
+%%MAN%%man/mann/idx_import_json.tcllib.n.gz
+%%MAN%%man/mann/idx_introduction.tcllib.n.gz
+%%MAN%%man/mann/idx_msgcat_c.tcllib.n.gz
+%%MAN%%man/mann/idx_msgcat_de.tcllib.n.gz
+%%MAN%%man/mann/idx_msgcat_en.tcllib.n.gz
+%%MAN%%man/mann/idx_msgcat_fr.tcllib.n.gz
+%%MAN%%man/mann/idx_parse.tcllib.n.gz
+%%MAN%%man/mann/idx_structure.tcllib.n.gz
 %%MAN%%man/mann/imap4.tcllib.n.gz
+%%MAN%%man/mann/imei.tcllib.n.gz
 %%MAN%%man/mann/imenu.tcllib.n.gz
-%%MAN%%man/mann/import.tcllib.n.gz
 %%MAN%%man/mann/import_docidx.tcllib.n.gz
 %%MAN%%man/mann/import_doctoc.tcllib.n.gz
-%%MAN%%man/mann/import_json.tcllib.n.gz
 %%MAN%%man/mann/ini.tcllib.n.gz
 %%MAN%%man/mann/interp.tcllib.n.gz
 %%MAN%%man/mann/interpolate.tcllib.n.gz
-%%MAN%%man/mann/introduction.tcllib.n.gz
 %%MAN%%man/mann/ip.tcllib.n.gz
 %%MAN%%man/mann/ipager.tcllib.n.gz
 %%MAN%%man/mann/irc.tcllib.n.gz
+%%MAN%%man/mann/isbn.tcllib.n.gz
 %%MAN%%man/mann/iso8601.tcllib.n.gz
 %%MAN%%man/mann/javascript.tcllib.n.gz
 %%MAN%%man/mann/jpeg.tcllib.n.gz
@@ -765,6 +816,8 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/logger.tcllib.n.gz
 %%MAN%%man/mann/loggerAppender.tcllib.n.gz
 %%MAN%%man/mann/loggerUtils.tcllib.n.gz
+%%MAN%%man/mann/luhn.tcllib.n.gz
+%%MAN%%man/mann/luhn5.tcllib.n.gz
 %%MAN%%man/mann/machineparameters.tcllib.n.gz
 %%MAN%%man/mann/map_geocode_nominatim.tcllib.n.gz
 %%MAN%%man/mann/map_slippy.tcllib.n.gz
@@ -791,10 +844,6 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/montecarlo.tcllib.n.gz
 %%MAN%%man/mann/mpexpand.tcllib.n.gz
 %%MAN%%man/mann/msgcat.tcllib.n.gz
-%%MAN%%man/mann/msgcat_c.tcllib.n.gz
-%%MAN%%man/mann/msgcat_de.tcllib.n.gz
-%%MAN%%man/mann/msgcat_en.tcllib.n.gz
-%%MAN%%man/mann/msgcat_fr.tcllib.n.gz
 %%MAN%%man/mann/multi.tcllib.n.gz
 %%MAN%%man/mann/multiop.tcllib.n.gz
 %%MAN%%man/mann/multiplexer.tcllib.n.gz
@@ -812,6 +861,7 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/nnslog.tcllib.n.gz
 %%MAN%%man/mann/nntp.tcllib.n.gz
 %%MAN%%man/mann/nroff_manmacros.tcllib.n.gz
+%%MAN%%man/mann/ntlm.tcllib.n.gz
 %%MAN%%man/mann/ntp_time.tcllib.n.gz
 %%MAN%%man/mann/null.tcllib.n.gz
 %%MAN%%man/mann/nullzero.tcllib.n.gz
@@ -828,10 +878,10 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/page_util_norm_peg.tcllib.n.gz
 %%MAN%%man/mann/page_util_peg.tcllib.n.gz
 %%MAN%%man/mann/page_util_quote.tcllib.n.gz
-%%MAN%%man/mann/parse.tcllib.n.gz
 %%MAN%%man/mann/peg.tcllib.n.gz
 %%MAN%%man/mann/peg_interp.tcllib.n.gz
 %%MAN%%man/mann/picoirc.tcllib.n.gz
+%%MAN%%man/mann/pkg_dtplite.tcllib.n.gz
 %%MAN%%man/mann/pki.tcllib.n.gz
 %%MAN%%man/mann/pluginmgr.tcllib.n.gz
 %%MAN%%man/mann/png.tcllib.n.gz
@@ -850,6 +900,7 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/pt_introduction.tcllib.n.gz
 %%MAN%%man/mann/pt_json_language.tcllib.n.gz
 %%MAN%%man/mann/pt_param.tcllib.n.gz
+%%MAN%%man/mann/pt_parse_peg.tcllib.n.gz
 %%MAN%%man/mann/pt_parser_api.tcllib.n.gz
 %%MAN%%man/mann/pt_peg_container.tcllib.n.gz
 %%MAN%%man/mann/pt_peg_container_peg.tcllib.n.gz
@@ -867,6 +918,7 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/pt_peg_interp.tcllib.n.gz
 %%MAN%%man/mann/pt_peg_introduction.tcllib.n.gz
 %%MAN%%man/mann/pt_peg_language.tcllib.n.gz
+%%MAN%%man/mann/pt_peg_op.tcllib.n.gz
 %%MAN%%man/mann/pt_peg_to_container.tcllib.n.gz
 %%MAN%%man/mann/pt_peg_to_cparam.tcllib.n.gz
 %%MAN%%man/mann/pt_peg_to_json.tcllib.n.gz
@@ -902,6 +954,7 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/rot.tcllib.n.gz
 %%MAN%%man/mann/rtcore.tcllib.n.gz
 %%MAN%%man/mann/sasl.tcllib.n.gz
+%%MAN%%man/mann/scram.tcllib.n.gz
 %%MAN%%man/mann/sha1.tcllib.n.gz
 %%MAN%%man/mann/sha256.tcllib.n.gz
 %%MAN%%man/mann/simulation_random.tcllib.n.gz
@@ -924,14 +977,17 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/struct_set.tcllib.n.gz
 %%MAN%%man/mann/struct_tree.tcllib.n.gz
 %%MAN%%man/mann/struct_tree1.tcllib.n.gz
-%%MAN%%man/mann/structure.tcllib.n.gz
 %%MAN%%man/mann/sum.tcllib.n.gz
+%%MAN%%man/mann/switched.tcllib.n.gz
 %%MAN%%man/mann/symdiff.tcllib.n.gz
 %%MAN%%man/mann/tabify.tcllib.n.gz
 %%MAN%%man/mann/tar.tcllib.n.gz
 %%MAN%%man/mann/tcl_parse.tcllib.n.gz
+%%MAN%%man/mann/tcldes.tcllib.n.gz
+%%MAN%%man/mann/tcldesjr.tcllib.n.gz
 %%MAN%%man/mann/tcldocstrip.tcllib.n.gz
 %%MAN%%man/mann/tepam_argument_dialogbox.tcllib.n.gz
+%%MAN%%man/mann/tepam_doc_gen.tcllib.n.gz
 %%MAN%%man/mann/tepam_introduction.tcllib.n.gz
 %%MAN%%man/mann/tepam_procedure.tcllib.n.gz
 %%MAN%%man/mann/term.tcllib.n.gz
@@ -944,6 +1000,24 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/tie.tcllib.n.gz
 %%MAN%%man/mann/tie_std.tcllib.n.gz
 %%MAN%%man/mann/tiff.tcllib.n.gz
+%%MAN%%man/mann/toc_container.tcllib.n.gz
+%%MAN%%man/mann/toc_export.tcllib.n.gz
+%%MAN%%man/mann/toc_export_html.tcllib.n.gz
+%%MAN%%man/mann/toc_export_json.tcllib.n.gz
+%%MAN%%man/mann/toc_export_nroff.tcllib.n.gz
+%%MAN%%man/mann/toc_export_text.tcllib.n.gz
+%%MAN%%man/mann/toc_export_wiki.tcllib.n.gz
+%%MAN%%man/mann/toc_import.tcllib.n.gz
+%%MAN%%man/mann/toc_import_json.tcllib.n.gz
+%%MAN%%man/mann/toc_introduction.tcllib.n.gz
+%%MAN%%man/mann/toc_msgcat_c.tcllib.n.gz
+%%MAN%%man/mann/toc_msgcat_de.tcllib.n.gz
+%%MAN%%man/mann/toc_msgcat_en.tcllib.n.gz
+%%MAN%%man/mann/toc_msgcat_fr.tcllib.n.gz
+%%MAN%%man/mann/toc_parse.tcllib.n.gz
+%%MAN%%man/mann/toc_structure.tcllib.n.gz
+%%MAN%%man/mann/token.tcllib.n.gz
+%%MAN%%man/mann/token_shell.tcllib.n.gz
 %%MAN%%man/mann/tqueue.tcllib.n.gz
 %%MAN%%man/mann/transformcore.tcllib.n.gz
 %%MAN%%man/mann/transmitter.tcllib.n.gz
@@ -958,9 +1032,17 @@ lib/tcllib/zip/pkgIndex.tcl
 %%MAN%%man/mann/units.tcllib.n.gz
 %%MAN%%man/mann/uri.tcllib.n.gz
 %%MAN%%man/mann/urn-scheme.tcllib.n.gz
+%%MAN%%man/mann/usnpi.tcllib.n.gz
 %%MAN%%man/mann/uuencode.tcllib.n.gz
 %%MAN%%man/mann/uuid.tcllib.n.gz
+%%MAN%%man/mann/valtype_common.tcllib.n.gz
 %%MAN%%man/mann/variable.tcllib.n.gz
+%%MAN%%man/mann/verhoeff.tcllib.n.gz
+%%MAN%%man/mann/vt_base64.tcllib.n.gz
+%%MAN%%man/mann/vt_counter.tcllib.n.gz
+%%MAN%%man/mann/vt_crc32.tcllib.n.gz
+%%MAN%%man/mann/vt_otp.tcllib.n.gz
+%%MAN%%man/mann/websocket.tcllib.n.gz
 %%MAN%%man/mann/wip.tcllib.n.gz
 %%MAN%%man/mann/xsxp.tcllib.n.gz
 %%MAN%%man/mann/yaml.tcllib.n.gz
@@ -970,6 +1052,7 @@ lib/tcllib/zip/pkgIndex.tcl
 @dirrm lib/tcllib/zip
 @dirrm lib/tcllib/yaml
 @dirrm lib/tcllib/wip
+@dirrm lib/tcllib/websocket
 @dirrm lib/tcllib/virtchannel_transform
 @dirrm lib/tcllib/virtchannel_core
 @dirrm lib/tcllib/virtchannel_base
@@ -991,6 +1074,7 @@ lib/tcllib/zip/pkgIndex.tcl
 @dirrm lib/tcllib/tar
 @dirrm lib/tcllib/struct
 @dirrm lib/tcllib/stringprep
+@dirrm lib/tcllib/string
 @dirrm lib/tcllib/stooop
 @dirrm lib/tcllib/soundex
 @dirrm lib/tcllib/snit
@@ -1054,6 +1138,7 @@ lib/tcllib/zip/pkgIndex.tcl
 @dirrm lib/tcllib/ftpd
 @dirrm lib/tcllib/ftp
 @dirrm lib/tcllib/fileutil
+@dirrm lib/tcllib/dtplite
 @dirrm lib/tcllib/doctools2toc
 @dirrm lib/tcllib/doctools2idx
 @dirrm lib/tcllib/doctools2base
@@ -1063,6 +1148,7 @@ lib/tcllib/zip/pkgIndex.tcl
 @dirrm lib/tcllib/dns/msgs
 @dirrm lib/tcllib/dns
 @dirrm lib/tcllib/des
+@dirrm lib/tcllib/debug
 @dirrm lib/tcllib/csv
 @dirrm lib/tcllib/crc
 @dirrm lib/tcllib/counter

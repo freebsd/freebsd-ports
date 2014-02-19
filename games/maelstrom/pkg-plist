@@ -1,5 +1,9 @@
+@group games
+@mode 2755
 bin/Maelstrom
 bin/Maelstrom-netd
+@mode
+@group
 %%DATADIR%%/Images/Maelstrom_Icon#100.cicn
 %%DATADIR%%/Images/Maelstrom_Icon#101.cicn
 %%DATADIR%%/Images/Maelstrom_Icon#102.cicn
@@ -28,7 +32,11 @@ bin/Maelstrom-netd
 %%DATADIR%%/Images/Maelstrom_Titles#999.bmp
 %%DATADIR%%/Images/Makefile
 %%DATADIR%%/Images/Makefile.in
+@group games
+@mode 644
 %%DATADIR%%/Maelstrom-Scores
+@mode
+@group
 %%DATADIR%%/Maelstrom_Fonts
 %%DATADIR%%/Maelstrom_Sounds
 %%DATADIR%%/Maelstrom_Sprites

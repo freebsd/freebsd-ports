@@ -31,6 +31,9 @@ PLIST_FILES=	bin/${PORTNAME}.pl
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 CPPFILT?=	/usr/bin/c++filt

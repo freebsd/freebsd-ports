@@ -3,7 +3,7 @@
 
 PORTNAME=	wheel
 PORTVERSION=	0.21.0
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,8 @@ COMMENT=	Built-package format for Python
 
 LICENSE=	MIT
 
-USE_PYDISTUTILS=	easy_install
+PYDISTUTILS_AUTOPLIST=	yes
+USE_PYDISTUTILS=	yes
 # Python 3 ready
 USE_PYTHON=	yes
 
@@ -37,10 +38,6 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}argparse>=1.1:${PORTSDIR}/devel/py-argparse
 .	endif
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dirspec>=13.05:${PORTSDIR}/devel/py-dirspec \
 		${PYTHON_PKGNAMEPREFIX}keyring>=1.3:${PORTSDIR}/security/py-keyring
-.endif
-
-.if ${PYTHON_REL} >= 320
-.include "${PORTSDIR}/devel/py-virtualenv/files/py3k-fix-pkg-plist.inc"
 .endif
 
 .include <bsd.port.post.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	xtrabackup
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.7
 CATEGORIES=	databases
 MASTER_SITES=	http://www.percona.com/downloads/%SUBDIR%/
 DISTNAME=	percona-${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
@@ -31,27 +31,26 @@ USES=		cmake iconv gettext gmake perl5
 MASTER_SITE_SUBDIR=	XtraBackup/XtraBackup-${PORTVERSION}/source/
 
 PLIST_FILES=	bin/xtrabackup bin/xtrabackup_55 bin/xtrabackup_56 bin/xbstream \
-	bin/innobackupex bin/xbcrypt
+		bin/innobackupex bin/xbcrypt
 
-NO_STAGE=	yes
 pre-build:
 	${CP} ${DISTDIR}/percona-xtrabackup-${PORTVERSION}.tar.gz ${WRKSRC}
 
 do-build:
-	cd ${WRKSRC} && ./utils/build.sh xtradb55
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./utils/build.sh xtradb55)
 	${CP} ${WRKSRC}/src/xtrabackup_55 ${WRKSRC}
-	cd ${WRKSRC} && ./utils/build.sh innodb56
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./utils/build.sh innodb56)
 	${CP} ${WRKSRC}/src/xtrabackup_56 ${WRKSRC}
-	cd ${WRKSRC} && ./utils/build.sh xtradb
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./utils/build.sh xtradb)
 	${CP} ${WRKSRC}/src/xtrabackup ${WRKSRC}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xtrabackup ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/xtrabackup_55 ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/xtrabackup_56 ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/xbstream ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/src/xbcrypt ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/innobackupex ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/xtrabackup ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/xtrabackup_55 ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/xtrabackup_56 ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/xbstream ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/src/xbcrypt ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/innobackupex ${STAGEDIR}${PREFIX}/bin
 
 # autoconf is running by build.sh
 do-configure:

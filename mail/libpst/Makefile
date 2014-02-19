@@ -3,6 +3,7 @@
 
 PORTNAME=	libpst
 PORTVERSION=	0.6.63
+PORTREVISION=	1
 CATEGORIES=	mail converters
 MASTER_SITES=	http://www.five-ten-sg.com/libpst/packages/ \
 		http://fossies.org/unix/privat/
@@ -12,7 +13,7 @@ COMMENT=	Tool for converting Outlook .pst files to mbox and other formats
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gsf-1:${PORTSDIR}/devel/libgsf
+LIB_DEPENDS=	libgsf-1.so:${PORTSDIR}/devel/libgsf
 
 GNU_CONFIGURE=	yes
 USES=		iconv pathfix gmake pkgconfig
@@ -20,9 +21,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
 CONFIGURE_ARGS+=	--disable-python --enable-libpst-shared
 USE_LDCONFIG=	yes
-
-MAN1=	lspst.1 pst2dii.1 pst2ldif.1 readpst.1
-MAN5=	outlook.pst.5
 
 PORTDOCS=	*
 
@@ -35,7 +33,7 @@ PST2DII_DESC=	Allow Summation Document Image Information output
 CONFIGURE_ARGS+=	--enable-dii=yes
 BUILD_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
 RUN_DEPENDS+=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
-LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
+LIB_DEPENDS+=	libgd.so:${PORTSDIR}/graphics/gd
 PLIST_SUB+=	PST2DII=""
 .else
 CONFIGURE_ARGS+=	--enable-dii=no

@@ -14,8 +14,7 @@ LICENSE=	MIT
 MAKEFILE=	${FILESDIR}/BSDmakefile
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 pre-su-install:
-	${MKDIR} ${PREFIX}/include/dht
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/dht
 
 .include <bsd.port.mk>

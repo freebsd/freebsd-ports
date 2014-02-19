@@ -3,7 +3,7 @@
 
 PORTNAME=	netcdf
 PORTVERSION=	4.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
@@ -52,7 +52,7 @@ CONFLICTS+=	netcdf-4.*
 MAN3+=		netcdf_f77.3 netcdf_f90.3
 PKGNAMESUFFIX+=	-ftn
 PLIST_SUB+=	FORTRAN=""
-USE_FORTRAN=	yes
+USES+=		fortran
 .else
 CONFIGURE_ARGS+=--disable-f77 --disable-f90
 CONFLICTS+=	netcdf-ftn-4.*

@@ -27,6 +27,8 @@ PYDISTUTILS_AUTOPLIST=	yes
 
 PORTDOCS=	CHANGELOG INSTALL.rst README.rst
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-install:

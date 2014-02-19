@@ -431,7 +431,6 @@ x11-toolkits/ruby-fox10||2009-01-21|Removed deprecated port, use x11-toolkits/ru
 devel/linux-glib2||2009-01-21|Removed since the port is incorporated into all Linux base ports
 x11/xorg-protos||2009-01-23|Not really necessary
 x11-drivers/synaptics|x11-drivers/xf86-input-synaptics|2009-01-23|Now an official X.org driver
-net/mpich|net/mpich2|2009-01-23|Broken and superseded by mpich2
 lang/gcc28|lang/gcc42|2009-01-24|Abandoned upstream, superseded by gcc42 and, preferably, gcc43
 x11/xphelloworld||2009-01-24|Xprint application, deprecated upstream
 x11/xclock|x11-clocks/xclock|2009-01-28|Moved to a more appropriate category
@@ -2124,7 +2123,7 @@ math/geometry|math/ros-geometry|2011-05-03|Renamed
 devel/hs-FileManip|devel/hs-filemanip|2011-05-08|Renamed: Cabal package has been renamed
 devel/lhs2TeX|textproc/hs-lhs2tex|2011-05-08|Renamed: It has become a Cabal transcript
 devel/bnfc|devel/hs-BNFC|2011-05-08|Renamed: It has become a Cabal transcript
-graphics/hs-hgl||2011-05-08|Deleted: overridden by graphics/hs-HGL
+graphics/hs-hgl|graphics/hs-HGL|2011-05-08|Deleted: overridden by graphics/hs-HGL
 net/hs-network-bytestring||2011-05-08|Removed: It is deprecated by net/hs-network
 devel/hs-uvector||2011-05-08|Removed: It is deprecated by devel/hs-vector
 devel/hs-uvector-algorithms||2011-05-08|Removed: It is deprecated by devel/hs-vector-algorithms
@@ -5128,8 +5127,6 @@ japanese/gorua||2013-10-21|Has expired: Does not work with Ruby 1.9
 x11-toolkits/ruby-gtk||2013-10-21|Has expired: Does not work with Ruby 1.9
 astro/boinc-setiathome-enhanced|astro/boinc-setiathome-v7|2013-10-21|Removed: Project is switching, use astro/boinc-setiathome-v7 instead; broken on 10.0
 multimedia/ffmpeg-devel|multimedia/ffmpeg|2013-10-21|Use multimedia/ffmpeg instead
-devel/ruby-sdl||2013-10-22|Has expired: Does not work with Ruby 1.9
-games/magicmaze||2013-10-22|Has expired: Does not work with Ruby 1.9
 lang/ruby18|lang/ruby19|2013-10-22|Has expired: Please use lang/ruby19
 www/rubygem-mongrel_cluster||2013-10-22|Has expired: Does not work with Ruby 1.9
 www/rubygem-mongrel||2013-10-22|Removed
@@ -5160,7 +5157,7 @@ textproc/jakarta-poi|textproc/apache-poi|2013-11-04|Replaced with apache-poi
 net-im/qutim||2013-11-05|Has expired: Old version, a new one needs to be ported from scratch
 textproc/gtkdiff||2013-11-05|Has expired: Gnome1 EOLed by upstream for a while
 net-p2p/libtorrent-rasterbar-16|net-p2p/libtorrent-rasterbar|2013-11-06|Moved to net-p2p/libtorrent-rasterbar since it's a stable version
-net-p2p/libtorrent-rasterbar-python-16|net-p2p/libtorrent-rasterbar-python|2013-11-06|Moved to net-p2p/libtorrent-rasterbar-python since it's a stable version
+net-p2p/libtorrent-rasterbar-16-python|net-p2p/libtorrent-rasterbar-python|2013-11-06|Moved to net-p2p/libtorrent-rasterbar-python since it's a stable version
 devel/ORBit||2013-11-07|Has expired: EOLed upstream for very long
 x11/gnome-libs||2013-11-07|Has expired: EOLed upstream for very long
 textproc/stardict2||2013-11-07|Has expired: Newer version available in ports: textproc/stardict3
@@ -5241,7 +5238,7 @@ devel/netbsd-pkgsrc-mk-files||2013-11-20|Has expired: Imported for devel/mk-conf
 net/ptpd|net/ptpd2|2013-11-20|Protocol and software no longer supported
 audio/gstreamer1-plugins-celt||2013-11-20|Removed, audio/gstreamer1-plugins-opus can be used as replacement
 math/p5-MatrixReal|math/p5-Math-MatrixReal|2013-11-22|Rename to match upstream naming
-lang/gcc42|lang/gcc46|2013-11-23|Superseded by GCC 4.6 or later
+lang/gcc42|lang/gcc|2013-11-23|Superseded by GCC 4.6 or later
 devel/p5-IO||2013-11-23|Removed: newer versions are included in all supported Perl releases
 www/mod_wsgi|www/mod_wsgi2|2013-11-24|Rename to match version
 net/ftelnetd||2013-11-25|Has expired: "Unfetchable due to parked MASTER_SITES"
@@ -5397,7 +5394,7 @@ cad/salome-sierpinsky||2014-01-24|Has expired: depends on expired cad/salome-ker
 cad/salome-geom||2014-01-24|Has expired: depends on expired cad/salome-kernel
 devel/combat||2014-01-24|Has expired: depends on expired devel/mico
 net-mgmt/nagios-devel|net-mgmt/nagios|2014-01-25|Master site gone, outdated
-math/math/octave-forge-image-acquisition||2014-01-27|Depends on multimedia/libv4l which no longer has necessary headers
+math/octave-forge-image-acquisition||2014-01-27|Depends on multimedia/libv4l which no longer has necessary headers
 lang/racket-textual|lang/racket-minimal|2014-01-27|Renamed upstream
 mail/pop-before-smtp||2014-01-27|Removed
 graphics/glfw-devel||2014-01-28|Removed
@@ -5406,24 +5403,24 @@ german/ispell|german/aspell|2014-01-29|Removed, consider using aspell instead
 german/ispell-alt|german/aspell|2014-01-29|Removed, consider using aspell instead
 german/ispell-neu|german/aspell|2014-01-29|Removed, consider using aspell instead
 hungarian/ispell|hungarian/aspell|2014-01-29|Removed, consider using aspell instead
-polish/ispell|polish/aspell|2014-01-28|Removed, consider using aspell instead
-portuguese/ispell-pt_BR|portuguese/aspell-pt_BR|2014-01-28|Removed, consider using aspell instead
+polish/ispell|polish/aspell|2014-01-29|Removed, consider using aspell instead
+portuguese/ispell-pt_BR|portuguese/aspell-pt_BR|2014-01-29|Removed, consider using aspell instead
 russian/rus-ispell|russian/aspell|2014-01-29|Removed, consider using aspell instead
-textproc/british-ispell|textroc/en-aspell|2014-01-29|Removed, consider using aspell instead
+textproc/british-ispell|textproc/en-aspell|2014-01-29|Removed, consider using aspell instead
 textproc/es-ispell|textproc/es-aspell|2014-01-29|Removed, consider using aspell instead
 textproc/ispell|textproc/aspell-ispell|2014-01-29|Removed, consider using aspell instead
 textproc/it-ispell|textproc/it-aspell|2014-01-29|Removed, consider using aspell instead
-textproc/nl-ispell|textproc/nl-ispell|2014-01-29|Removed, consider using aspell instead
-textproc/sk-ispell|textproc/sk-ispell|2014-01-29|Removed, consider using aspell instead
+textproc/nl-ispell|textproc/nl-aspell|2014-01-29|Removed, consider using aspell instead
+textproc/sk-ispell|textproc/sk-aspell|2014-01-29|Removed, consider using aspell instead
 ukrainian/ispell|ukrainian/aspell|2014-01-29|Removed, consider using aspell instead
 audio/gsi||2014-01-30|Removed, abandonware
-multimedia/kino||2014-01-31|Has expired: Not developed since 2009, declared dead 05.08.2013 on there website.
-x11-drivers/xf86-video-imstt||2014-01-31|Has expired: Broken, unsupported and unmaintained upstream.
-x11-drivers/xf86-video-via||2014-01-31|Has expired: Broken, not supported upstream.
+multimedia/kino||2014-01-31|Has expired: Not developed since 2009, declared dead 05.08.2013 on there website
+x11-drivers/xf86-video-imstt||2014-01-31|Has expired: Broken, unsupported and unmaintained upstream
+x11-drivers/xf86-video-via||2014-01-31|Has expired: Broken, not supported upstream
 multimedia/vdr-plugin-softdevice||2014-01-31|Has expired: Broken after ffmpeg update (not sure it ever worked)
 sysutils/mbmon|sysutils/xmbmon|2014-01-31|Has expired: Use sysutils/xmbmon instead. This port will be removed soon
 dns/bind96||2014-01-31|Has expired: EOL in January 2014, consider moving to Bind 9.8 or 9.9
-x11-drivers/xf86-video-nouveau||2014-01-31|Has expired: Not supported, missing kernel support. use the nvidia driver.
+x11-drivers/xf86-video-nouveau||2014-01-31|Has expired: Not supported, missing kernel support. use the nvidia driver
 cad/mars||2014-01-31|Removed, abandonware, no releases in the past 20 years
 polish/gimp-help||2014-02-01|Removed, excluded from gimp-help-2.8.1 release
 multimedia/xbmc-pvr||2014-02-03|Has expired: multimedia/xbmc and multimedia/xbmc-addon-pvr are newer
@@ -5436,7 +5433,7 @@ sysutils/relpath||2014-02-03|Has expired: unfetchable distfiles
 sysutils/decomment||2014-02-03|Has expired: unfetchable distfiles
 multimedia/openmovieeditor||2014-02-03|Has expired: segfaults, upstread development ceased
 french/gfaim||2014-02-04|Abandonware
-math/matlab-R2012a-installer|matlab-installer|2014-02-04|Now it can handle any Matlab version
+math/matlab-R2012a-installer|math/matlab-installer|2014-02-04|Now it can handle any Matlab version
 games/deal||2014-02-05|Abandonware
 graphics/nurbs++||2014-02-05|Broken on all supported versions
 japanese/grep|textproc/gnugrep|2014-02-06|Official version properly support multi-byte, consider using textproc/gnugrep
@@ -5508,3 +5505,18 @@ x11/yelp3|x11/yelp|%DATE%|moved
 x11-fm/nautilus3|x11-fm/nautilus|%DATE%|moved
 x11-toolkits/gdl3|x11-toolkits/gdl|%DATE%|moved
 x11-wm/metacity3|x11-wm/metacity|%DATE%|moved
+www/runsomebrowser|www/webbrowser|2014-02-09|Name changed
+irc/trickyirc||2014-02-10|Abandonware, segfaults, no releases in 15 years
+databases/p5-DBD-mysql55|databases/p5-DBD-mysql|2014-02-12|If you need a different default MYSQL version, use DEFAULT_VERSIONS
+databases/p5-DBD-mysql56|databases/p5-DBD-mysql|2014-02-12|If you need a different default MYSQL version, use DEFAULT_VERSIONS
+textproc/p5-ElasticSearch|textproc/p5-ElasticSearch-legacy|2014-02-12|This version is depricated in favour of the offical client
+x11-fonts/cosmic-sans-neue-mono|x11-fonts/fantasque-sans-mono|2014-02-13|Renamed upstream
+mail/zmailer||2014-02-13|Broken since at least last August
+lang/gcc34|lang/gcc|2014-02-13|Superseded by GCC 4.6 or later
+x11-toolkits/sakura|x11/sakura|2014-02-16|Moved to a better category
+misc/kde4-shared-mime-info||2014-02-18|Removed, the port not needed anymore
+deskutils/kdepim44-runtime||2014-02-18|Removed: conflicts with new kdepimlibs
+deskutils/kdepim44||2014-02-18|Removed: depends on deskutils/kdepim44-runtime
+misc/kde-xdg-env||2014-02-18|Removed, remnant of KDE 3
+lang/g95||2014-02-18|Removed, uses an old version of GCC which can't be built anymore
+games/py-ski|games/ski|2014-02-18|Rename to match upstream naming

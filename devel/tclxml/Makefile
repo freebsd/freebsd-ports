@@ -16,7 +16,7 @@ PORTDOCS=	README.xml html.xsl man.macros nroff.xsl tcldoc-1.0.dtd \
 		tcldom.html tcldom.xml tclxml.css tclxml.html tclxml.xml \
 		tclxslt.html tclxslt.xml transform.tcl txt.xsl
 
-USE_TCL=	84+
+USES=		tcl
 USE_XZ=		yes
 XML_CONFIG?=	${LOCALBASE}/bin/xml2-config
 GNU_CONFIGURE=	yes
@@ -26,6 +26,9 @@ CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
 PLIST_SUB=	VER=${PORTVERSION}
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

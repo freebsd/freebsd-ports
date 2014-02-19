@@ -17,7 +17,7 @@ NO_BUILD=	yes
 USE_MYSQL=	yes
 USE_PHP=	ctype tokenizer pdo mysql filter mbstring session json pdo_mysql hash
 WANT_PHP_WEB=	yes
-IGNORE_WITH_PHP=4 52
+IGNORE_WITH_PHP=52
 IGNORE_WITH_MYSQL=	41 50
 
 SUB_FILES=	pkg-message

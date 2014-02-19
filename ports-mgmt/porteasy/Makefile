@@ -15,16 +15,10 @@ USES=		perl5
 
 SRC=		${.CURDIR}/src
 
-MAN8=		porteasy.8
-
-NO_STAGE=	yes
-do-fetch:
-	@${DO_NADA}
-
 do-configure:
 	@${SED} "s,%%PREFIX%%,${PREFIX}," ${SRC}/porteasy.pl >${WRKDIR}/porteasy
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/porteasy ${PREFIX}/bin/porteasy
-	@${INSTALL_MAN} ${SRC}/porteasy.8 ${PREFIX}/man/man8
+	@${INSTALL_SCRIPT} ${WRKDIR}/porteasy ${STAGEDIR}${PREFIX}/bin/porteasy
+	@${INSTALL_MAN} ${SRC}/porteasy.8 ${STAGEDIR}${PREFIX}/man/man8
 
 .include <bsd.port.mk>

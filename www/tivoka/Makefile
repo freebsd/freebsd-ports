@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tivoka
-PORTVERSION=	3.0.1
+PORTVERSION=	3.2.1
 CATEGORIES=	www
 
 MAINTAINER=	gahr@FreeBSD.org
@@ -10,24 +10,25 @@ COMMENT=	JSON-RPC client/server library for PHP
 
 LICENSE=	MIT
 
+OPTIONS_DEFINE=	EXAMPLES
+
 USE_PHP=	json filter
 NO_BUILD=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	marcelklehr
-GH_COMMIT=	4cbf436
+GH_COMMIT=	3d4525b
 
 LIBDIR=		${PREFIX}/lib/php/${PHP_EXT_DIR}/${PORTNAME}
 PLIST_SUB+=	LIBDIR=${LIBDIR:S/${PREFIX}\///}
 
-NO_STAGE=	yes
+PORTEXAMPLES=	*
+
 do-install:
-	@${MKDIR} ${LIBDIR}
-	@${INSTALL_DATA} ${WRKSRC}/include.php ${LIBDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} lib ${LIBDIR}
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/example && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${LIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/include.php ${STAGEDIR}${LIBDIR}
+	cd ${WRKSRC} && ${COPYTREE_SHARE} lib ${STAGEDIR}${LIBDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/example && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

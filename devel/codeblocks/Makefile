@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	codeblocks
-PORTVERSION=	12.11
-PORTREVISION=	1
+PORTVERSION=	13.12
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/Sources/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}-1
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libboost_system.so:${PORTSDIR}/devel/boost-libs \
 		librsync.so:${PORTSDIR}/net/librsync
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-USES=		fam pkgconfig
+USES=		fam:gamin pkgconfig compiler
 USE_WX=		2.8
 WANT_UNICODE=	yes
 USE_GNOME=	gnomehack desktopfileutils
@@ -28,14 +27,18 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}release8629
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+.include <bsd.port.pre.mk>
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+.if ${CHOSEN_COMPILER_TYPE} == clang
+CXXFLAGS+=	-std=c++0x
+.endif
 
 CONFIGURE_ARGS+=	--with-wx-config=${WX_CONFIG} --with-contrib-plugins=all
 
 MAN1=	cb_console_runner.1 cb_share_config.1 codeblocks.1 codesnippets.1
 
-NO_STAGE=	yes
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

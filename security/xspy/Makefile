@@ -16,8 +16,7 @@ USE_XORG=	x11
 
 ALL_TARGET=	xspy
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xspy ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/xspy ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

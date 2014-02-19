@@ -12,17 +12,14 @@ COMMENT=	Convert XBase / FoxPro tables to PostgreSQL
 LICENSE=	GPLv3
 
 USE_XZ=		yes
-
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 
-MAN1=		pgdbf.1
-
 PLIST_FILES=	bin/pgdbf \
-		%%DOCSDIR%%/README
+		%%DOCSDIR%%/README \
+		man/man1/pgdbf.1.gz
 PLIST_DIRS=	%%DOCSDIR%%
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"

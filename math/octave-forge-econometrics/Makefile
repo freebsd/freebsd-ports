@@ -3,7 +3,7 @@
 
 PORTNAME=	octave-forge-econometrics
 PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

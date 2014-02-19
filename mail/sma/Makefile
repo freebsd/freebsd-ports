@@ -14,6 +14,8 @@ ALL_TARGET=	sma
 SAMPLEFILES=	sma.conf
 DOCSFILES=	BUGS COPYRIGHT HISTORY README TODO
 
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 do-configure:

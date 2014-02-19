@@ -2,6 +2,7 @@
 
 PORTNAME=	Products.MailHost
 PORTVERSION=	2.13.1
+PORTREVISION=	1
 CATEGORIES=	mail python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,9 +13,9 @@ COMMENT=	Zope.sendmail integration for Zope 2
 
 LICENSE=	ZPL21
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=easy_install
-USE_ZIP=	yes
+USE_PYTHON=		yes
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
+USE_ZIP=		yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

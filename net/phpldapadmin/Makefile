@@ -3,7 +3,7 @@
 
 PORTNAME=	phpldapadmin
 PORTVERSION=	1.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-php5/${PORTVERSION}
@@ -17,7 +17,6 @@ LICENSE=	GPLv2
 NO_ARCH=	yes
 NO_BUILD=	yes
 USE_PHP=	gettext ldap openssl pcre session xml iconv hash
-DEFAULT_PHP_VER=	5
 
 WANT_PHP_WEB=	yes
 

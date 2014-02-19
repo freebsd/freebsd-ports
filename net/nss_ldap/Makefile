@@ -3,7 +3,7 @@
 
 PORTNAME=	nss_ldap
 PORTVERSION=	1.${NSS_LDAP_VERSION}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net
 MASTER_SITES=	http://www.padl.com/download/ \
 		LOCAL/martymac
@@ -39,8 +39,6 @@ CONFIGURE_ARGS=	--with-ldap-conf-file=${PREFIX}/etc/nss_ldap.conf \
 		--enable-rfc2307bis \
 		--enable-paged-results
 
-MAN5=	nss_ldap.5
-
 SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
@@ -68,7 +66,7 @@ post-patch:
 	@${REINPLACE_CMD} 's,#!/usr/bin/perl,#!${PERL},' \
 		${WRKSRC}/vers_string
 	@${REINPLACE_CMD} 's,/etc/ldap\.,${PREFIX}/etc/nss_ldap.,g' \
-		${WRKSRC}/${MAN5}
+		${WRKSRC}/nss_ldap.5
 
 # XXX: newer autoconf's rely on the compiler result, not the preprocessor
 #      for checking headers, so the configure.in needs to be fixed upstream
@@ -81,6 +79,6 @@ post-configure:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nss_ldap.so ${STAGEDIR}/${PREFIX}/lib/nss_ldap.so.1
 	${INSTALL_DATA} ${WRKSRC}/ldap.conf ${STAGEDIR}/${PREFIX}/etc/nss_ldap.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/${MAN5} ${STAGEDIR}/${MAN5PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/nss_ldap.5 ${STAGEDIR}/${MAN5PREFIX}/man/man5
 
 .include <bsd.port.mk>

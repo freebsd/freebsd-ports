@@ -15,22 +15,16 @@ GNU_CONFIGURE=	yes
 
 USE_RC_SUBR=	dnsproxy
 
-MAN1=		dnsproxy.1
-PLIST_FILES=	sbin/dnsproxy etc/${PORTNAME}/dnsproxy.conf.sample
+PLIST_FILES=	sbin/dnsproxy etc/${PORTNAME}/dnsproxy.conf.sample \
+		man/man1/dnsproxy.1.gz
 
 SUB_FILES=	pkg-message
 PLIST_DIRS=	%%ETCDIR%%
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/dnsproxy ${PREFIX}/sbin
-	@${INSTALL_MAN} ${WRKSRC}/dnsproxy.1 ${MAN1PREFIX}/man/man1
-	@${MKDIR} ${ETCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/dnsproxy.conf ${ETCDIR}/dnsproxy.conf.sample
+	${INSTALL_PROGRAM} ${WRKSRC}/dnsproxy ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/dnsproxy.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/dnsproxy.conf ${STAGEDIR}${ETCDIR}/dnsproxy.conf.sample
 
-post-install:
-	${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

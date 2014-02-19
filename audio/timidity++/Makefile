@@ -30,6 +30,8 @@ PLIST_SUB+=	TIMID_LIBDIR=${TIMID_LIBDIR} EUCJP_LOCALE=${EUCJP_LOCALE}
 EUCJP_LOCALE=	ja_JP.eucJP
 TIMID_LIBDIR=	lib/timidity
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .if !defined(PKGNAMESUFFIX)

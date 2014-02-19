@@ -16,5 +16,4 @@ MODULE_FILES=	magic magic.mgc magic.mime \
 		mimedetect.info mimedetect.install mimedetect.module
 DOC_FILES=	LICENSE.txt README.txt
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

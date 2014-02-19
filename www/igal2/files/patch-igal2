@@ -1,0 +1,11 @@
+--- igal2.orig	2014-02-14 12:28:33.000000000 +0100
++++ igal2	2014-02-14 12:28:40.000000000 +0100
+@@ -5,7 +5,7 @@
+ ############################################################################
+ # Please change this accordingly if you change the DESTDIR in the tarball 
+ # distribution Makefile or the --prefix of the RPM installation
+-$LIBDIR = "/usr/local/lib/igal2";
++$LIBDIR = "%%LIBDIR%%";
+ # for example if you make DESTDIR=/usr then $LIBDIR="/usr/lib/igal2"
+ ############################################################################
+ #

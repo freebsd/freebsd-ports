@@ -55,7 +55,7 @@ SUB_LIST+=		SQUIRREL_PLUGIN_NAME=${SQUIRREL_PLUGIN_NAME}
 
 # As with mail/squirreldir, if you were using WITHOUT_WWWDIR=yes,
 # set SQUIRRELDIR=${PREFIX}/squirrelmail
-SQUIRRELDIR?=	${PREFIX}/www/squirrelmail
+SQUIRRELDIR?=		${PREFIX}/www/squirrelmail
 PLIST_SUB+=		SQUIRRELDIR=${SQUIRRELDIR:S,${PREFIX}/,,}
 SUB_LIST+=		SQUIRRELDIR=${SQUIRRELDIR}
 
@@ -92,19 +92,19 @@ _SMSRCDIR?=	${SQUIRREL_PLUGIN_NAME}
 .if !target(do-install)
 do-install:
 	cd ${WRKSRC}/${_SMSRCDIR} && ${FIND} -d . | \
-		${CPIO} -dump ${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME} >/dev/null 2>&1 && \
-	${FIND} ${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME} \
+		${CPIO} -dump ${STAGEDIR}${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME} >/dev/null 2>&1 && \
+	${FIND} ${STAGEDIR}${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME} \
 		-type d -exec chmod 755 {} \; && \
-	${FIND} ${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME} \
+	${FIND} ${STAGEDIR}${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME} \
 		-type f -exec chmod 644 {} \;
 .endif
 
 .if !target(post-install)
 post-install:
 .ifndef WITHOUT_ACTIVATE
-.if exists( ${SQUIRRELDIR}/config/config.php )
+.if exists( ${STAGEDIR}${SQUIRRELDIR}/config/config.php )
 	@${ECHO_CMD} "Activating plug-in in SquirrelMail"
-	${SQUIRRELDIR}/config/conf.pl --install-plugin ${SQUIRREL_PLUGIN_NAME}
+	${STAGEDIR}${SQUIRRELDIR}/config/conf.pl --install-plugin ${SQUIRREL_PLUGIN_NAME}
 .endif
 .else
 	@${ECHO_CMD} "To activate the plug-in in SquirrelMail use"

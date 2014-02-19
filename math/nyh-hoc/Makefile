@@ -16,5 +16,7 @@ MAKE_JOBS_UNSAFE= yes
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/hoc ${STAGEDIR}${PREFIX}/bin
+
 .include <bsd.port.mk>

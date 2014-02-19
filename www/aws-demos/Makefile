@@ -3,12 +3,16 @@
 
 PORTNAME=	aws
 PORTVERSION=	3.1.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://downloads.dragonlace.net/src/
 PKGNAMESUFFIX=	-demos
 
 MAINTAINER=	marino@FreeBSD.org
 COMMENT=	Adacore Ada Web Server demos
+
+LICENSE=	GPLv3 GPLv3RLE
+LICENSE_COMB=	multi
 
 BUILD_DEPENDS+=	gprbuild>=20120510:${PORTSDIR}/devel/gprbuild \
 		xmlada>=3.2:${PORTSDIR}/textproc/xmlada \

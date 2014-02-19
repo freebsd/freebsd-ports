@@ -23,6 +23,8 @@ MAKE_ENV+=	WITHOUT_LIBNOVA=yes
 LIB_DEPENDS+=	libnova.so:${PORTSDIR}/astro/libnova
 .endif
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 pre-everything::

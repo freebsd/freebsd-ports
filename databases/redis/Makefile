@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	redis
-DISTVERSION=	2.8.4
+DISTVERSION=	2.8.6
 CATEGORIES=	databases
 MASTER_SITES=	http://download.redis.io/releases/
 
@@ -39,7 +39,7 @@ LDFLAGS+=	-Wl,-E
 .endif
 
 .if ${PORT_OPTIONS:MTESTS}
-USE_TCL_BUILD=	yes
+USES+=		tcl:build
 .endif
 
 CFLAGS+=	-I${LOCALBASE}/include
@@ -47,7 +47,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lm -lexecinfo
 
 CONFLICTS?=	redis-devel-2.*
 
-USE_GMAKE=	yes
+USES+=		gmake
 MAKE_ENV=	"V=yo"
 USE_RC_SUBR=	redis
 BIN_FILES=	redis-benchmark redis-check-aof redis-check-dump \

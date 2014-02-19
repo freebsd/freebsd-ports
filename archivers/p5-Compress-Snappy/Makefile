@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Compress-Snappy
-PORTVERSION=	0.22
-PORTREVISION=	1
+PORTVERSION=	0.23
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,6 +12,8 @@ COMMENT=	Perl interface to Google Snappy (de)compressor
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Devel-CheckLib>=0:${PORTSDIR}/devel/p5-Devel-CheckLib
 
 USE_PERL5=	configure
 USES=		perl5

@@ -22,6 +22,8 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-install:

@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0:${PORTSDIR}/databases/py-sqlalchemy
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_FORTRAN=		yes
+USES=			fortran
 USE_ZIP=		yes
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install

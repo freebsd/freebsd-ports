@@ -1,4 +1,6 @@
 bin/mkill
 bin/mtop
+man/man1/mkill.1.gz
+man/man1/mtop.1.gz
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/mtop/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/mtop

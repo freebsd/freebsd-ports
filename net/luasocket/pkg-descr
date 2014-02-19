@@ -4,6 +4,4 @@ transport layers.
 Extra Lua modules implementing SMTP, HTTP and FTP protocols are installed
 to /usr/local/lib/lua/luasocket.
 
-Note that this port requires Lua v4 and does not compile with Lua v5.
-
-WWW: http://www.cs.princeton.edu/~diego/professional/luasocket/
+WWW: https://github.com/diegonehab/luasocket

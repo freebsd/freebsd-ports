@@ -11,7 +11,7 @@ PKGNAMEPREFIX=	elmer-
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	ELMER FEM Package Data base Interface
 
-USE_FORTRAN=	yes
+USES=		fortran
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=

@@ -16,22 +16,17 @@ USE_BZIP2=	yes
 AUX_DIR=	lib/doc
 AUX_FILES=	doc-1.awk doc-3.awk doc-4.awk INFO RFC.XXXX
 
-MAN8=		doc.8
-
-NO_STAGE=	yes
 do-build:
 	@${MV} ${WRKSRC}/doc ${WRKSRC}/doc.org
 	@${SED} -e 's|$${PREFIX}|${PREFIX}|g' -e 's|$${AUX_DIR}|${AUX_DIR}|g' ${WRKSRC}/doc.org \
 	> ${WRKSRC}/doc
 
 do-install:
-	@${MKDIR} ${PREFIX}/${AUX_DIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/doc ${PREFIX}/bin/doc
-	@for file in ${AUX_FILES}; do \
-	    ${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/${AUX_DIR}/ ; \
-	done
-.if !defined(NO_INSTALL_MANPAGES)
-	@${INSTALL_DATA} ${WRKSRC}/doc.8 ${PREFIX}/man/man8/doc.8
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${AUX_DIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/doc ${STAGEDIR}${PREFIX}/bin/doc
+.for f in ${AUX_FILES}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/${AUX_DIR}
+.endfor
+	@${INSTALL_DATA} ${WRKSRC}/doc.8 ${STAGEDIR}${PREFIX}/man/man8/doc.8
 
 .include <bsd.port.mk>

@@ -13,13 +13,9 @@ LIB_DEPENDS=	libtre.so:${PORTSDIR}/textproc/libtre
 
 DATADIR=	${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 
-MAN1=		munger.1
-MANCOMPRESSED=	yes
-
 OPTIONS_DEFINE=	SQLITE
 OPTIONS_DEFAULT=	SQLITE
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSQLITE}

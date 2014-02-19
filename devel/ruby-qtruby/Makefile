@@ -3,19 +3,15 @@
 PORTNAME=	qtruby
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	devel kde ruby
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Ruby bindings for Qt
 
-LIB_DEPENDS=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
-		qscintilla2:${PORTSDIR}/devel/qscintilla2
-
-CONFLICTS_INSTALL=	ruby1[89]-kdebindings-4.[0-6].* \
-			ruby1[89]-kdebindings-korundum-4.7.*
+LIB_DEPENDS=	libqwt.so:${PORTSDIR}/x11-toolkits/qwt5 \
+		libqscintilla2.so:${PORTSDIR}/devel/qscintilla2
 
 USE_KDE4=	kdehier kdeprefix smokeqt
 USE_QT4=	corelib dbus declarative gui network phonon script webkit xml \
@@ -28,9 +24,6 @@ USE_LDCONFIG=	yes
 SUB_FILES=	ruby-kdebindings-env.sh pkg-message
 SUB_LIST+=	RUBY_SITELIBDIR=${RUBY_SITELIBDIR} \
 		RUBY_SITEARCHLIBDIR=${RUBY_SITEARCHLIBDIR}
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 CMAKE_ARGS+=	-DRUBY_LIBRARY=${LOCALBASE}/lib/lib${RUBY_NAME}.so \
 		-DRUBY_INCLUDE_PATH=${LOCALBASE}/lib/ruby/${RUBY_VER}/${RUBY_ARCH} \
@@ -45,8 +38,7 @@ post-patch:
 		${WRKSRC}/src/CMakeLists.txt
 
 post-install:
-	${MKDIR} ${PREFIX}/env
-	${INSTALL_SCRIPT} ${WRKDIR}/ruby-kdebindings-env.sh ${PREFIX}/env
-	@${CAT} ${PKGMESSAGE}
+	${MKDIR} ${STAGEDIR}${PREFIX}/env
+	${INSTALL_SCRIPT} ${WRKDIR}/ruby-kdebindings-env.sh ${STAGEDIR}${PREFIX}/env
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

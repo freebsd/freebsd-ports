@@ -7,7 +7,7 @@ CATEGORIES=	archivers linux
 MASTER_SITES=	http://static.jonof.id.au.nyud.net/dl/kenutils/
 DISTNAME=	kzipmix-${DISTVERSION}-linux-static
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PKZIP-compatible compressor focusing on space over speed
 
 NO_CDROM=	License does not allow redistribution
@@ -16,7 +16,6 @@ RESTRICTED=	${NO_CDROM}
 
 ONLY_FOR_ARCHS=	i386
 
-NO_STAGE=	yes
 USE_LINUX=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/kzipmix-static
@@ -34,7 +33,7 @@ post-extract:
 
 do-install:
 .for file in ${FILES}
-	@${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin/${file:S/-static$//}
+	@${INSTALL_PROGRAM} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin/${file:S/-static$//}
 .endfor
 
 .include <bsd.port.mk>

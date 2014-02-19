@@ -8,19 +8,18 @@ MASTER_SITES=	http://hp.vector.co.jp/authors/VA007663/topaz/bin/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}-src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A command driven graph plotting system for scientists and engineers
+COMMENT=	Command driven graph plotting system for scientists and engineers
+
+LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_XORG=	x11
 MAKEFILE=	Makefile.freebsd
 
-NO_STAGE=	yes
 post-install:
-	${LN} -sf ${PREFIX}/lib/topaz/topaz.sh ${PREFIX}/bin/topaz
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/sample/* ${EXAMPLESDIR}
-.endif
+	${LN} -sf ${PREFIX}/lib/topaz/topaz.sh ${STAGEDIR}${PREFIX}/bin/topaz
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample/* ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

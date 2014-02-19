@@ -3,7 +3,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.8.5
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES+=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 DIST_SUBDIR=	subversion18
@@ -118,4 +118,6 @@ post-patch:
 		| ${XARGS} ${REINPLACE_CMD} -e '1s|#\!/bin/b|#\!/usr/local/bin/b|' \
 		-e '1s|#\!/bin/env|#\!/usr/bin/env|' \
 		-e '1s|#\!/usr/bin/p|#\!/usr/local/bin/p|'
+# remove all .bak files to clean the stage
+	${FIND} ${WRKSRC} -name '*.bak' -delete
 

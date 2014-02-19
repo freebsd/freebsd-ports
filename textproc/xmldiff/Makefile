@@ -21,12 +21,11 @@ SHEBANG_FILES=	xmldiff.pl
 
 PLIST_FILES=	bin/xmldiff
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 	@${CP} -f ${_DISTDIR}/${_DISTFILES} ${WRKSRC}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/xmldiff.pl ${PREFIX}/bin/xmldiff
+	${INSTALL_SCRIPT} ${WRKSRC}/xmldiff.pl ${STAGEDIR}${PREFIX}/bin/xmldiff
 
 .include <bsd.port.mk>

@@ -13,17 +13,12 @@ COMMENT=	Tool for verification of C++ source code
 
 BUILD_DEPENDS=	boost-libs>=0:${PORTSDIR}/devel/boost-libs
 
-USE_TCL=	yes
-USE_TK=		yes
-USES=		cmake:outsource
+USES=		cmake:outsource tk
 
 CMAKE_ARGS+=	-DTCL_INCLUDE_PATH=${TCL_INCLUDEDIR} \
 		-DTK_INCLUDE_PATH=${TK_INCLUDEDIR}
 
-MAN1=		vera++.1
-
-NO_STAGE=	yes
 post-install:
-	${INSTALL_MAN} ${WRKDIR}/vera++.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIR}/vera++.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>

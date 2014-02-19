@@ -31,10 +31,8 @@ JAVA_RUN=	yes
 BUILD_DEPENDS+=	${ANT_CMD}:${PORTSDIR}/devel/apache-ant
 ANT_CMD?=	${LOCALBASE}/bin/ant
 ANT=		${SETENV} JAVA_HOME=${JAVA_HOME} ${ANT_CMD}
-.  if ${PORT_OPTIONS:MCOMPILE}
 JAVA_BUILD=	yes
 ANT_TARGETS=	jar
-.  endif
 .  if ${PORT_OPTIONS:MDOCS}
 ANT_TARGETS+=	doc
 PORTDOCS=	*
@@ -60,8 +58,7 @@ do-install-jar:
 do-install-javadoc:
 .if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/doc && ${FIND} . \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 .endif
 
 .include <bsd.port.mk>

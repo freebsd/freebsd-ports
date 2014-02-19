@@ -19,6 +19,8 @@ PYDISTUTILS_AUTOPLIST=	yes
 
 PORTDOCS=	docs/*
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-install:

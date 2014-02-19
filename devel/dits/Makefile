@@ -11,11 +11,9 @@ COMMENT=	Data integrity verifying disk exercising test tool
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 
-PLIST_FILES=	bin/dits
-MAN1=		dits.1
-MANCOMPRESSED=	no
+PLIST_FILES=	bin/dits \
+		man/man1/dits.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

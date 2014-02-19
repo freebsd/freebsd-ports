@@ -16,8 +16,14 @@ OPTIONS_DEFINE=	DOCS
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USES=	libtool pathfix pkgconfig
+USES=		libtool pathfix pkgconfig
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+
+post-install:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for file in README COPYING AUTHORS THANKS NEWS
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>

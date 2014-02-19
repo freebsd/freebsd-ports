@@ -13,15 +13,18 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Performance Test of Filesystem I/O
 
 NO_WRKSUBDIR=	yes
-#CFLAGS+=	-static
 MAKE_ARGS+=	-e CFLAGS="${CFLAGS}"
 ALL_TARGET=	bsd
-MAN1=		bonnie.1
-PLIST_FILES=	bin/bonnie
+PLIST_FILES=	bin/bonnie man/man1/bonnie.1.gz
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	STATIC
+
+STATIC_CFLAGS+=	-static
+
+.include <bsd.port.options.mk>
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Bonnie ${PREFIX}/bin/bonnie
-	${INSTALL_MAN} ${FILESDIR}/bonnie.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/Bonnie ${STAGEDIR}${PREFIX}/bin/bonnie
+	${INSTALL_MAN} ${FILESDIR}/bonnie.1 ${STAGEDIR}${PREFIX}/man/man1
 
 .include <bsd.port.mk>

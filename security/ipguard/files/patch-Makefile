@@ -1,0 +1,35 @@
+--- Makefile.orig	2014-02-11 16:45:41.000000000 -0200
++++ Makefile	2014-02-11 16:46:25.000000000 -0200
+@@ -10,7 +10,7 @@
+ ETHERS?=/etc/ethers
+ 
+ ## FreeBSD
+-LOCALBASE=/usr/local
++LOCALBASE?=/usr/local
+ LIBNET_CONFIG=libnet11-config
+ 
+ ## OpenBSD (tested by irix)
+@@ -26,7 +26,7 @@
+ DEFINES=`${LIBNET_CONFIG} --defines`
+ 
+ STATIC=
+-CC=gcc
++CC?=gcc
+ 
+ CFLAGS+=-g -Wall -DETHERS='"$(ETHERS)"'
+ 
+@@ -58,10 +58,10 @@
+ 	@rm -f $(NAME)
+ 
+ install: all
+-	mkdir -p -m 755 $(PREFIX)/sbin
+-	install -s -m 755 $(NAME) $(PREFIX)/sbin/$(NAME)
+-	mkdir -p -m 755 $(PREFIX)/man/man8
+-	install -m 644 doc/$(NAME).8 $(PREFIX)/man/man8/$(NAME).8
++	mkdir -p -m 755 ${DESTDIR}$(PREFIX)/sbin
++	install -s -m 755 $(NAME) ${DESTDIR}$(PREFIX)/sbin/$(NAME)
++	mkdir -p -m 755 ${DESTDIR}$(PREFIX)/man/man8
++	install -m 644 doc/$(NAME).8 ${DESTDIR}$(PREFIX)/man/man8/$(NAME).8
+ 
+ uninstall: deinstall
+ 

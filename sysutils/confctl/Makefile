@@ -14,8 +14,7 @@ COMMENT=	Utility to parse and modify C-like configuration files
 LICENSE=	BSD
 
 GNU_CONFIGURE=	yes
-MAN1=		confctl.1
-PLIST_FILES=	bin/confctl
+PLIST_FILES=	bin/confctl \
+		man/man1/confctl.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

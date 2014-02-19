@@ -2,10 +2,8 @@
 
 PORTNAME=	kdeplasma-addons
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
-CATEGORIES=	deskutils kde ipv6
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+CATEGORIES=	deskutils kde
+MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,7 +14,6 @@ LIB_DEPENDS=	libqalculate.so:${PORTSDIR}/math/libqalculate \
 		libqca.so:${PORTSDIR}/devel/qca \
 		libqoauth.so:${PORTSDIR}/net/qoauth \
 		libqjson.so:${PORTSDIR}/devel/qjson
-
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/eigen2.pc:${PORTSDIR}/math/eigen2
 
 CONFLICTS_INSTALL=	plasma-applet-icontasks-0.[89].*
@@ -30,45 +27,24 @@ USE_QT4=	corelib dbus declarative gui network script sql webkit \
 USE_XORG=	x11 xrender xtst
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	MARBLE SCIM # IBUS
+OPTIONS_DEFINE=	MARBLE SCIM IBUS
 OPTIONS_DEFAULT=	MARBLE
+OPTIONS_SUB=	yes
 
 MARBLE_DESC=	Support for desktop globe wallpaper
+MARBLE_USE=	KDE4=marble
+MARBLE_CMAKE_OFF=	-DWITH_Marble=off
+
 IBUS_DESC=	Enable IBUS backend for input dialog
+IBUS_LIB_DEPENDS=	libibus-1.0.so:${PORTSDIR}/textproc/ibus
+IBUS_CMAKE_OFF=	-DBUILD_ibus=off
+
 SCIM_DESC=	Enable SCIM backend for input dialog
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMARBLE}
-USE_KDE4+=	marble
-PLIST_SUB+=	MARBLE=""
-.else
-CMAKE_ARGS+=	-DWITH_Marble:BOOL=FALSE
-PLIST_SUB+=	MARBLE="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MIBUS}
-IGNORE=		requires ibus version 1.4.2 or greater
-LIB_DEPENDS+=	libibus-1.0.so:${PORTSDIR}/textproc/ibus
-PLIST_SUB+=	IBUS=""
-.else
-CMAKE_ARGS+=	-DBUILD_ibus=off
-PLIST_SUB+=	IBUS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSCIM}
-LIB_DEPENDS+=	libscim-1.0.so:${PORTSDIR}/textproc/scim
-PLIST_SUB+=	SCIM=""
-.else
-CMAKE_ARGS+=	-DBUILD_scim=off
-PLIST_SUB+=	SCIM="@comment "
-.endif
+SCIM_LIB_DEPENDS=	libscim-1.0.so:${PORTSDIR}/textproc/scim
+SCIM_CMAKE_OFF=	-DBUILD_scim=off
 
 post-patch:
-	${GREP} -H -r "#include <q" ${WRKSRC} | ${CUT} -d: -f1 | uniq | \
-		${XARGS} ${REINPLACE_CMD} -f ${FILESDIR}/qt3to4headers.txt
-	# Respect prefix, don't update MIME when installing.
+# Respect prefix, don't update MIME when installing.
 	${REINPLACE_CMD} -e '/^update_xdg_mimetypes/ d; /SharedMimeInfo/ d' \
 		${WRKSRC}/applets/lancelot/parts/CMakeLists.txt
 

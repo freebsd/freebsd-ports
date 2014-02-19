@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	minimunin
-PORTVERSION=	0.1
-PORTREVISION=	1
+PORTVERSION=	0.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://erdgeist.org/arts/software/minimunin/
 

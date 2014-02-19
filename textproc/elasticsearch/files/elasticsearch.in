@@ -73,7 +73,9 @@ command_args="-f %%LOCALBASE%%/bin/java -Des.pidfile=${pidfile} ${elasticsearch_
 elasticsearch_precmd() {
         touch ${pidfile}
         chown ${elasticsearch_user}:${elasticsearch_group} ${pidfile}
-	/usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 750 ${elasticsearch_tmp}	
+	/usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 750 ${elasticsearch_tmp}
+	/usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 750 /var/db/elasticsearch
+	/usr/bin/install -d -o ${elasticsearch_user} -g ${elasticsearch_group} -m 750 /var/log/elasticsearch
 }
 
 elasticsearch_console () {

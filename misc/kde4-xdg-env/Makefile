@@ -1,13 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	xdg
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1
 CATEGORIES=	misc kde
-MASTER_SITES=	# none
 PKGNAMEPREFIX=	kde4-
 PKGNAMESUFFIX=	-env
-DISTNAME=	# none
-EXTRACT_SUFX=	# none
+DISTFILES=	# none
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Script which hooks into startkde and helps KDE pick up XDG apps/menus
@@ -23,9 +21,8 @@ SUB_FILES=	xdg-env.sh
 PLIST_FILES=	env/xdg-env.sh
 PLIST_DIRSTRY=	env
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/env
-	${INSTALL_SCRIPT} ${WRKDIR}/xdg-env.sh ${PREFIX}/env
+	${MKDIR} ${STAGEDIR}${PREFIX}/env
+	${INSTALL_SCRIPT} ${WRKDIR}/xdg-env.sh ${STAGEDIR}${PREFIX}/env
 
 .include <bsd.port.mk>

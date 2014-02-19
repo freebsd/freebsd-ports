@@ -20,6 +20,7 @@ LICENSE=	BSD3CLAUSE
 CONFLICTS=	vtk-4*
 USE_GL=		gl
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
+USE_XORG=	xt
 USES=		cmake:outsource
 CXXFLAGS+=	-I${LOCALBASE}/include
 

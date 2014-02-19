@@ -1,6 +1,8 @@
 @comment BSD.local.dist mtree replacement (used only if KDE4_PREFIX != LOCALBASE)
 bin
 etc
+etc/man.d
+etc/devd
 @comment the following commented dirs will be linked from the corresponding LOCALBASE dirs
 @comment-dir etc/pam.d
 @comment-dir etc/rc.d

@@ -34,7 +34,7 @@ PORTDOCS=	${DOCS:T}
 
 SLAVEDIRS=	chinese/tintin++
 
-BIG5_CONFIGURE_ARGS=	--enable-big5
+BIG5_CONFIGURE_ON=	--enable-big5
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|-pthread|' ${WRKSRC}/Makefile

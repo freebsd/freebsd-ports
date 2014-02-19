@@ -22,6 +22,9 @@ INSTALLS_ICONS=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

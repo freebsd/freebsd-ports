@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	nginx
-PORTVERSION=	1.4.4
-PORTREVISION=	3
+PORTVERSION=	1.4.5
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
@@ -327,6 +326,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_cache_purge-${NGINX_CACHE_PURGE_VERSI
 .endif
 
 .if ${PORT_OPTIONS:MCTPP2}
+IGNORE=	CTPP2: update require
 LIB_DEPENDS+=	libctpp2.so:${PORTSDIR}/textproc/ctpp2
 NGINX_CTPP2_VERSION=	0.5
 MASTER_SITES+=	http://dl.vbart.ru/ngx-ctpp/:ctpp2

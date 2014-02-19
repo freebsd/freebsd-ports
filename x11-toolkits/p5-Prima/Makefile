@@ -3,6 +3,7 @@
 
 PORTNAME=	Prima
 PORTVERSION=	1.37
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -43,5 +44,8 @@ CONFIGURE_ARGS+=WITH_XFT=0
 USE_GNOME=	gtk20
 CONFIGURE_ARGS+=WITH_GTK2=1
 .endif
+
+post-install:
+	@${SED} -i '' 's,${STAGEDIR},,g' ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/Prima/Config.pm
 
 .include <bsd.port.mk>

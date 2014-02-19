@@ -26,6 +26,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 NO_STAGE=	yes
 
+OPTIONS_DEFINE=	DOCS EXAMPLES 
+
 .include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_TESTS)

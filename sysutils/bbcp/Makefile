@@ -19,6 +19,9 @@ PORTDOCS=	${PORTNAME}.pdf
 USE_XZ=		yes
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-install:

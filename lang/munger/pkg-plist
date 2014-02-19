@@ -17,4 +17,5 @@ bin/munger
 %%DATADIR%%/view.munger
 %%DATADIR%%/cal.munger
 %%DATADIR%%/xml2buffer.munger
+man/man1/munger.1.gz
 @dirrm %%DATADIR%%

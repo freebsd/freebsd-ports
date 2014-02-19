@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	plexmediaserver
-PORTVERSION=	0.9.8.18.290
+PORTVERSION=	0.9.9.2.374
 CATEGORIES=	multimedia
 MASTER_SITES=	http://plex.r.worldssl.net/plex-media-server/${PORTVERSION}-${PLEX_BUILD}/
 DISTNAME=	PlexMediaServer-${PORTVERSION}-${PLEX_BUILD}-freebsd-amd64
@@ -11,7 +11,7 @@ MAINTAINER=	feld@FreeBSD.org
 COMMENT=	The Plex Media Server component
 
 USE_BZIP2=	yes
-PLEX_BUILD=	11b7fdd
+PLEX_BUILD=	aa23a69
 NO_BUILD=	yes
 WRKSRC=	${WRKDIR}/PlexMediaServer-${PORTVERSION}-${PLEX_BUILD}
 
@@ -35,10 +35,13 @@ IGNORE= supplied binaries compiled for FreeBSD 9
 .endif
 
 .if ${OSVERSION} >= 1000054
-BROKEN=	Waiting for Plex to include Python patch http://bugs.python.org/issue18178
 RUN_DEPENDS+=	${LOCALBASE}/lib/compat/libstdc++.so.6:${PORTSDIR}/misc/compat9x
 .endif
 .endif
+
+post-patch:
+	# binaries don't come pre-stripped
+	${FIND} ${WRKSRC} -name '*.so' -exec ${STRIP_CMD} {} \;
 
 do-install:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} Resources ${STAGEDIR}/${SCRIPT_PATH})

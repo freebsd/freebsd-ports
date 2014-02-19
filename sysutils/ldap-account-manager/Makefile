@@ -29,6 +29,8 @@ SUB_FILES=	pkg-message
 CONFIGS=	config.cfg lam.conf
 WRITEABLES=	config sess tmp
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 do-install:

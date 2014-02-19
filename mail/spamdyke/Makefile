@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	spamdyke
-PORTVERSION=	4.3.1
+PORTVERSION=	5.0.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spamdyke.org/releases/
 EXTRACT_SUFX=	.tgz
@@ -17,7 +17,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
 WRKSRC=		${WRKDIR}/${DISTNAME}/spamdyke
 
 USES=		qmail
-NO_STAGE=	yes
 
 GNU_CONFIGURE=	yes
 
@@ -45,18 +44,15 @@ PORTDOCS=	Changelog.txt FAQ.html GNUGPL.txt INSTALL.txt \
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKDIR}/${DISTNAME}/documentation && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKDIR}/${DISTNAME}/documentation && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 .endif
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/documentation/spamdyke.conf.example ${PREFIX}/etc
-	@if [ ! -f ${PREFIX}/etc/spamdyke.conf ]; then \
-		${CP} -p ${PREFIX}/etc/spamdyke.conf.example ${PREFIX}/etc/spamdyke.conf; \
-	fi
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/documentation/spamdyke.conf.example ${STAGEDIR}${PREFIX}/etc
 
 post-patch:
 	@${REINPLACE_CMD} -e 's#^CFLAGS :=.*#CFLAGS = ${CFLAGS}#' ${WRKSRC}/Makefile.in
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/spamdyke ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/spamdyke ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

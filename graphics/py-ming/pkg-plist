@@ -1,7 +1,0 @@
-%%PYTHON_SITELIBDIR%%/_mingc.so
-%%PYTHON_SITELIBDIR%%/ming.py
-%%PYTHON_SITELIBDIR%%/ming.pyc
-%%PYTHON_SITELIBDIR%%/ming.pyo
-%%PYTHON_SITELIBDIR%%/mingc.py
-%%PYTHON_SITELIBDIR%%/mingc.pyc
-%%PYTHON_SITELIBDIR%%/mingc.pyo

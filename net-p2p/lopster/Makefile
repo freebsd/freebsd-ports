@@ -12,7 +12,7 @@ MAINTAINER=	conrads@cox.net
 COMMENT=	GTK+ client for Napster and free alternatives
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
+USES=		gmake
 USE_GNOME=	gtk12
 CONFIGURE_ARGS=	--with-pthread=yes
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -21,7 +21,6 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 OPTIONS_DEFINE=	FLAC OGG ZLIB
 OPTIONS_DEFAULT=	FLAC OGG ZLIB
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 # --with-flac is on by default

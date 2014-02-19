@@ -1,29 +1,6 @@
-bin/virtualenvwrapper.sh
-bin/virtualenvwrapper_lazy.sh
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/namespace_packages.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/virtualenvwrapper.sh
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/virtualenvwrapper_lazy.sh
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/__init__.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/__init__.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/hook_loader.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/hook_loader.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/hook_loader.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/project.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/project.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/project.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/user_scripts.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/user_scripts.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper/user_scripts.pyo
 %%PORTDOCS%%%%DOCSDIR%%/.buildinfo
 %%PORTDOCS%%%%DOCSDIR%%/_sources/command_ref.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/design.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/developers.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/extensions.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/history.txt
@@ -55,6 +32,7 @@ bin/virtualenvwrapper_lazy.sh
 %%PORTDOCS%%%%DOCSDIR%%/_static/up.png
 %%PORTDOCS%%%%DOCSDIR%%/_static/websupport.js
 %%PORTDOCS%%%%DOCSDIR%%/command_ref.html
+%%PORTDOCS%%%%DOCSDIR%%/design.html
 %%PORTDOCS%%%%DOCSDIR%%/developers.html
 %%PORTDOCS%%%%DOCSDIR%%/extensions.html
 %%PORTDOCS%%%%DOCSDIR%%/history.html
@@ -71,7 +49,3 @@ bin/virtualenvwrapper_lazy.sh
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/_static
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/_sources
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/virtualenvwrapper
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

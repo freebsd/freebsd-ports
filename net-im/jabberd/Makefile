@@ -3,6 +3,7 @@
 
 PORTNAME=	jabberd
 DISTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/jabberd2/jabberd2/releases/download/${PORTNAME}-${DISTVERSION}/ \
 		LOCAL/matthew/${PORTNAME}
@@ -110,7 +111,7 @@ EXPERIMENTAL_DESC=	Enable experimental features (TLS-Everywhere)
 
 .include <bsd.port.options.mk>
 
-.if (${OPSYS} != FreeBSD || ${OSVERSION} < 10000000)
+.if (${OPSYS} != FreeBSD || ${OSVERSION} < 1000000)
 WITH_OPENSSL_PORT=	yes
 .endif
 

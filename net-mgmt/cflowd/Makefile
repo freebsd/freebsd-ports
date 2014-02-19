@@ -3,7 +3,7 @@
 
 PORTNAME=	cflowd
 PORTVERSION=	2.1.b1
-PORTREVISION=	10
+PORTREVISION=	11
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.caida.org/tools/measurement/cflowd/download/
@@ -14,9 +14,8 @@ COMMENT=	Flow analysis tool used for analyzing Cisco's NetFlow switching
 
 LIB_DEPENDS=	Arts:${PORTSDIR}/net-mgmt/arts++
 
-USE_AUTOTOOLS=	libtool
-USE_GMAKE=	yes
-USES=		bison
+GNU_CONFIGURE=	yes
+USES=		bison gmake libtool
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--enable-shared --with-artspp=${LOCALBASE}
@@ -30,6 +29,10 @@ FLOWSCAN_DESC=	FlowScan patch
 NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} > 1000000
+BROKEN=		Fails with recent flex/clang/libc++, try net-mgmt/flow-tools
+.endif
+
 .if ${PORT_OPTIONS:MFLOWSCAN}
 PATCH_SITES+=	http://net.doit.wisc.edu/~plonka/cflowd/
 PATCHFILES+=	cflowd-${PORTVERSION:S|.|-|g}-djp.patch
@@ -39,20 +42,9 @@ post-extract:
 	${CHMOD} -R u+w ${WRKSRC}
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f | ${XARGS}	\
-		${REINPLACE_CMD} -e 's|iostream.h>|iostream>|;s|strstream.h|sstream|'
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS}	\
-		${REINPLACE_CMD} -e '/^LIBTOOL =/s^\$$(top_builddir)/libtool^${LIBTOOL}^'	\
-		-e '/LIBTOOL/ { ;\
-			N ;\
-			/ -o / s|$${LIBTOOL} $${CXX}|$${LIBTOOL} --mode=link $${CXX}| ;\
-			P ;\
-			D ;\
-		}';
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|$${LIBTOOL} $$(CXX)|$${LIBTOOL} --mode=compile $$(CXX)|'		\
-		-e 's|$${LIBTOOL} $${CXX}|$${LIBTOOL} --mode=compile $${CXX}|'		\
-		-e 's|$${LIBTOOL} \.\.|$${LIBTOOL} --mode=install ..|'
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|fstream\.h|fstream|' -e 's|iomanip\.h|iomanip|' \
+		-e 's|iostream\.h|iostream|' -e 's|strstream\.h|strstream|'
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/cflowd.sh \

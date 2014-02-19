@@ -2,10 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	osm2pgsql
-PORTVERSION=	r29250
-PORTREVISION=	2
+PORTVERSION=	0.84.0
 CATEGORIES=	converters geography
-MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Convert OSM XML data to PostgreSQL database
@@ -16,15 +14,24 @@ LIB_DEPENDS=	libproj.so:${PORTSDIR}/graphics/proj \
 		libgeos.so:${PORTSDIR}/graphics/geos \
 		libprotobuf-c.so:${PORTSDIR}/devel/protobuf-c
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	openstreetmap
+GH_COMMIT=	237b125
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf automake libtool aclocal autoheader libtoolize
+CONFIGURE_ARGS=	LUA="${LUA_CMD}" \
+		LUA_INCLUDE="-I${LUA_INCDIR}" \
+		LUA_LIB="-L${LUA_LIBDIR} -llua"
 USES=		gmake
 USE_PGSQL=	yes
+USE_LUA=	5.0+
 USE_GNOME=	libxml2
 
 PLIST_FILES=	bin/nodecachefilereader \
 		bin/osm2pgsql \
+		man/man1/nodecachefilereader.1.gz \
 		man/man1/osm2pgsql.1.gz
 
 PORTDOCS=	ChangeLog README AUTHORS TODO

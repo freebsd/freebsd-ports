@@ -43,5 +43,4 @@ DRIVER_MANAGER=		iodbc
 CFLAGS+=		-I${LOCALBASE}/include
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

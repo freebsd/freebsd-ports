@@ -18,8 +18,7 @@ CONFLICTS=	openmpi-1.6.*
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
-USES=		gmake pkgconfig
-USE_FORTRAN=	yes
+USES=		fortran gmake pkgconfig
 
 MPIBASE?=	mpi
 MPIDIR?=	${MPIBASE}/${UNIQUENAME}${PKGNAMESUFFIX}
@@ -32,6 +31,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
 			--program-prefix= \
 			--with-hwloc=${LOCALBASE} \
 			--with-libltdl=${LOCALBASE}
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_LDCONFIG=	${PREFIX}/${MPIDIR}/lib \
 		${PREFIX}/${MPIDIR}/lib/openmpi

@@ -7,6 +7,7 @@
     SUBDIR += aclock
     SUBDIR += alarm-clock
     SUBDIR += alltraxclock
+    SUBDIR += amor
     SUBDIR += asclock
     SUBDIR += asclock-gtk
     SUBDIR += asclock-xlib
@@ -26,7 +27,9 @@
     SUBDIR += gtubeclock
     SUBDIR += intclock
     SUBDIR += kdetoys4
+    SUBDIR += kteatime
     SUBDIR += ktimer
+    SUBDIR += ktux
     SUBDIR += lmclock
     SUBDIR += mlclock
     SUBDIR += mouseclock

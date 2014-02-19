@@ -20,6 +20,9 @@ include/kttimeddb.h
 include/ktulog.h
 include/ktutil.h
 lib/libkyototycoon.a
+lib/libkyototycoon.so
+lib/libkyototycoon.so.2
+lib/libkyototycoon.so.2.19.0
 libdata/pkgconfig/kyototycoon.pc
 libexec/ktplugdbvoid.so
 libexec/ktplugservmemc.so

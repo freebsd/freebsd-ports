@@ -9,18 +9,17 @@ MASTER_SITES=	http://cryp.to/librfc2822/
 MAINTAINER=	ismail@EnderUNIX.org
 COMMENT=	A complete parser for RFC822 addresses
 
-GNU_CONFIGURE=	YES
+GNU_CONFIGURE=	yes
 
 PORTDOCS=	user-manual.html
 PLIST_FILES=	include/rfc822.hpp lib/librfc822.a
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/rfc822.hpp ${PREFIX}/include
-	${INSTALL_DATA} ${WRKSRC}/librfc822.a ${PREFIX}/lib
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/rfc822.hpp ${STAGEDIR}${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/librfc822.a ${STAGEDIR}${PREFIX}/lib
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

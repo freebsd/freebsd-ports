@@ -20,13 +20,11 @@ USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	ltverhack
-USES=		pathfix pkgconfig
-USE_GMAKE=	yes
+USES=		pathfix pkgconfig gmake
 CONFIGURE_ARGS=	--disable-introspection
 
 OPTIONS_DEFINE=	SIMD
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSIMD}

@@ -29,6 +29,9 @@ MAN1=	bino.1
 INFO=	bino
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

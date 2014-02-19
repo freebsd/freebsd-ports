@@ -20,16 +20,8 @@ VERILOG_DESC=	Support Verilog with Icarus Verilog
 VHDL_VHDL=	Support VHDL with FreeHDL
 OPTIONS_DEFAULT=	VERILOG VHDL
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MVERILOG}
-RUN_DEPENDS+=	iverilog:${PORTSDIR}/cad/iverilog
-.endif
-
-.if ${PORT_OPTIONS:MVHDL}
-RUN_DEPENDS+=	freehdl-v2cc:${PORTSDIR}/cad/freehdl
-.endif
+VERILOG_RUN_DEPENDS=	iverilog:${PORTSDIR}/cad/iverilog
+VHDL_RUN_DEPENDS=	freehdl-v2cc:${PORTSDIR}/cad/freehdl
 
 PLIST_SUB=	VER=${PORTVERSION} \
 		ECLIPSE=${ECLIPSE}
@@ -41,8 +33,8 @@ ECLIPSE=	lib/eclipse
 PLUGINS=	plugins
 
 do-install:
-	@${MKDIR} ${PREFIX}/${ECLIPSE}/${PLUGINS}
-	@${INSTALL_DATA} ${DISTDIR}/${DISTFILES} \
-		${PREFIX}/${ECLIPSE}/${PLUGINS}/
+	@${MKDIR} ${STAGEDIR}${PREFIX}/${ECLIPSE}/${PLUGINS}
+	${INSTALL_DATA} ${DISTDIR}/${DISTFILES} \
+		${STAGEDIR}${PREFIX}/${ECLIPSE}/${PLUGINS}
 
 .include <bsd.port.mk>

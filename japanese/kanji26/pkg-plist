@@ -7,4 +7,3 @@
 %%PORTDOCS%%share/doc/kanji26/kanji24.alias
 %%PORTDOCS%%share/doc/kanji26/kanji26.alias
 %%PORTDOCS%%@dirrm share/doc/kanji26
-@unexec if [ ! -s %D/%%FONTSDIR%%/fonts.alias ]; then rm -f %D/%%FONTSDIR%%/fonts.alias; fi

@@ -8,7 +8,7 @@ MASTER_SITES=	http://yorba.org/download/${PORTNAME}/${PORTVERSION:R}/
 DISTNAME=	libgexiv2_${PORTVERSION}
 WRKSRC=		${WRKDIR}/lib${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GObject-based wrapper around Exiv2 library
 
 LICENSE=	GPLv2
@@ -23,7 +23,6 @@ USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 MAKE_ARGS=	REQUIRED_CFLAGS=""
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -E \
 		-e 's|^([[:space:]]+)m4[[:space:]]|\1gm4 |' \
@@ -31,6 +30,6 @@ post-patch:
 			${WRKSRC}/${MAKEFILE}
 
 pre-install:
-	@${MKDIR} ${PREFIX}/share/vala/vapi
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/vala/vapi
 
 .include <bsd.port.mk>

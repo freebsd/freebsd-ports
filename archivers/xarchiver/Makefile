@@ -2,17 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	xarchiver
-PORTVERSION=	0.5.2
-PORTREVISION=	6
+PORTVERSION=	0.5.3
 CATEGORIES=	archivers
 MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=	${PORTNAME:L}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Desktop-agnostic GTK+2 frontend to various archiving tools
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
+RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils \
+	7zr:${PORTSDIR}/archivers/p7zip \
+	zip:${PORTSDIR}/archivers/zip
 
 USES=		gmake pkgconfig desktop-file-utils
 USE_BZIP2=	yes
@@ -34,17 +36,11 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|;multipart/x-zip||' \
-		${WRKSRC}/xarchiver.desktop.in
-
 .if ! ${PORT_OPTIONS:MDOCS}
 	@${REINPLACE_CMD} -e 's|doc||g' ${WRKSRC}/Makefile.in
 .endif
 .if empty(PORT_OPTIONS:MNLS)
 	@${REINPLACE_CMD} -e 's| po | |g' ${WRKSRC}/Makefile.in
 .endif
-
-post-install:
-	@-update-desktop-database
 
 .include <bsd.port.mk>

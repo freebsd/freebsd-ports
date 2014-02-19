@@ -106,8 +106,8 @@ do-build:
 .if !target(do-install)
 
 do-install:
-	@${MKDIR} ${FASL_PATHNAME}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${FASL_PATHNAME}
+	@${MKDIR} ${STAGEDIR}${FASL_PATHNAME}
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${FASL_PATHNAME}
 
 .endif # !target(do-install)
 

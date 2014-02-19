@@ -19,8 +19,6 @@ PORTDOCS=	COPYING CREDITS TODO cvsspam-doc.html cvsspam-doc.pdf
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-patch:
 .for f in collect_diffs.rb cvsspam.rb record_lastdir.rb
 	@${REINPLACE_CMD} -e 's|/usr/bin/ruby|${RUBY}|' \
@@ -41,12 +39,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/cvsspam.conf \
 		${STAGEDIR}${PREFIX}/etc/cvsspam.conf
 .endif
-
-.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>

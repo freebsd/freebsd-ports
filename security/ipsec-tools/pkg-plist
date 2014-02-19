@@ -22,10 +22,12 @@ lib/libipsec.a
 lib/libipsec.la
 lib/libipsec.so
 lib/libipsec.so.0
+lib/libipsec.so.0.0.1
 lib/libracoon.a
 lib/libracoon.la
 lib/libracoon.so
 lib/libracoon.so.0
+lib/libracoon.so.0.0.0
 man/man3/ipsec_set_policy.3.gz
 man/man3/ipsec_strerror.3.gz
 man/man5/racoon.conf.5.gz

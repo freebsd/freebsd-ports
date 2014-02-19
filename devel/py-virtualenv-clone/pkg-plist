@@ -1,2 +1,0 @@
-bin/virtualenv-clone
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

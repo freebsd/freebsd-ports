@@ -7,9 +7,7 @@ LOCALCLIENT = no
 # configure settings for Xymon
 #
 # Toplevel dir
-XYMONTOPDIR = ${PREFIX}/www/xymon
-# Server home dir for etc/, www/
-XYMONHOME = ${PREFIX}/www/xymon/client
+XYMONTOPDIR = ${PREFIX}/www/xymon/client
 
 # hobbit settings follows
 #

@@ -657,6 +657,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/docs/index.html
 %%ICINGAWWWDIR%%/docs/js/icinga-docs.js
 %%ICINGAWWWDIR%%/docs/js/jquery-min.js
+%%ICINGAWWWDIR%%/js/jquery-1.8.0.js
 %%ICINGAWWWDIR%%/docs/robots.txt
 %%ICINGAWWWDIR%%/docs/stylesheets/icinga-docs.css
 %%ICINGAWWWDIR%%/images/Icinga_Header_Webinterface.jpg
@@ -711,7 +712,10 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/images/logos/icinga.gd2
 %%ICINGAWWWDIR%%/images/logos/icinga.gif
 %%ICINGAWWWDIR%%/images/logos/icingavrml.png
+%%ICINGAWWWDIR%%/images/logos/printer.png
+%%ICINGAWWWDIR%%/images/logos/router.png
 %%ICINGAWWWDIR%%/images/logos/s.gif
+%%ICINGAWWWDIR%%/images/logos/switch.png
 %%ICINGAWWWDIR%%/images/logos/unknown.gd2
 %%ICINGAWWWDIR%%/images/logos/unknown.gif
 %%ICINGAWWWDIR%%/images/logrotate.png
@@ -758,6 +762,7 @@ libexec/icinga/eventhandlers/submit_check_result
 %%ICINGAWWWDIR%%/images/zoom2.gif
 %%ICINGAWWWDIR%%/index.html
 %%ICINGAWWWDIR%%/jquery-ui-addon/jquery.ui.timepicker-addon.css
+%%ICINGAWWWDIR%%/jquery-ui-addon/jquery.ui.timepicker-addon.js
 %%ICINGAWWWDIR%%/jquery-ui-addon/jquery.ui.timepicker-addon.min.js
 %%ICINGAWWWDIR%%/jquery-ui/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png
 %%ICINGAWWWDIR%%/jquery-ui/themes/base/images/ui-bg_flat_75_ffffff_40x100.png

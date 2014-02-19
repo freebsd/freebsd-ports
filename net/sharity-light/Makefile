@@ -16,6 +16,9 @@ PLIST_FILES=	sbin/shlight sbin/unshlight
 PORTDOCS=	*
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-extract:

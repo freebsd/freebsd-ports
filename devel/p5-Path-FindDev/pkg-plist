@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Path/FindDev.pm
+%%SITE_PERL%%/Path/FindDev/Object.pm
+%%PERL5_MAN3%%/Path::FindDev.3.gz
+%%PERL5_MAN3%%/Path::FindDev::Object.3.gz
+@dirrm %%SITE_PERL%%/Path/FindDev
+@dirrmtry %%SITE_PERL%%/Path

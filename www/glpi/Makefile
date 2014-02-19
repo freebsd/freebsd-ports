@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	glpi
-PORTVERSION=	0.84.2
+PORTVERSION=	0.84.4
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://droidng.free.fr/freebsd/ \
@@ -13,15 +13,15 @@ COMMENT=	Free IT and asset management software
 
 LICENSE=	GPLv2
 
-USE_PHP=	mysql mbstring pcre session xml json ctype
+USE_PHP=	mysqli mbstring pcre session xml json ctype
 WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
-CPIOARGS=	--quiet -pdum
-
 GLPIDIR?=	www/${PORTNAME}
+
+SUB_FILES=	pkg-message
+SUB_LIST=	GLPIDIR=${GLPIDIR} PREFIX=${PREFIX}
 
 OPTIONS_DEFINE=	LDAP IMAP
 IMAP_DESC=	IMAP support
@@ -39,12 +39,8 @@ USE_PHP+=	imap
 post-extract:
 	@${FIND} ${WRKSRC} -name '*~' -delete
 
-post-configure:
-	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
-	  -e 's,%%GLPIDIR%%,${GLPIDIR},g' pkg-message > ${PKGMESSAGE}
-
 do-install:
-	@${MKDIR} -m 0755 ${STAGEDIR}${PREFIX}/${GLPIDIR}
-	@cd ${WRKSRC} && ${FIND} * -print | ${CPIO} ${CPIOARGS} ${STAGEDIR}${PREFIX}/${GLPIDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	${CP} -R ${WRKSRC}/* ${STAGEDIR}${WWWDIR}
 
 .include <bsd.port.mk>

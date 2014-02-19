@@ -20,6 +20,7 @@ KDE4_GAMES_ALL=	bomber \
 		kiriki \
 		kjumpingcube \
 		klines \
+		klickety \
 		kmahjongg \
 		kmines \
 		knavalbattle \
@@ -38,9 +39,9 @@ KDE4_GAMES_ALL=	bomber \
 		ktuberling \
 		kubrick \
 		lskat \
-		palapeli
+		palapeli \
+		picmi
 
-knavalbattle_DETECT=	${KDE4_PREFIX}/bin/kbattleship
 ksnakeduel_DETECT=	${KDE4_PREFIX}/bin/ktron
 
 bomber_DESC=	Arcade Bombing game
@@ -61,6 +62,7 @@ killbots_DESC=	Evade killer robots
 kiriki_DESC=	Yahtzee-like Dice game
 kjumpingcube_DESC=	Territory Capture game
 klines_DESC=	Tactical game
+klickety_DESC=	Tetris themed solitaire
 kmahjongg_DESC=	Mahjongg Solitaire
 kmines_DESC=	Minesweeper-like game
 knavalbattle_DESC=	Ship Sinking game
@@ -80,3 +82,4 @@ ktuberling_DESC=	Picture game for Children
 kubrick_DESC=	3-D game based on Rubik's Cube
 lskat_DESC=	Card game
 palapeli_DESC=	Jigsaw puzzle game
+picmi_DESC=	Single player logic-based puzzle game

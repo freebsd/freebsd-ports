@@ -22,7 +22,6 @@ DSHGROUPS_DESC=		DSH groups supprt
 NETGROUP_DESC=		NIS Netgroup support
 RSH_DESC=		RSH support
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSH}
@@ -63,8 +62,5 @@ PLIST_SUB+=		RSH=""
 CONFIGURE_ARGS+=	--without-rsh
 PLIST_SUB+=		RSH="@comment "
 .endif
-
-MAN1=		dshbak.1 pdcp.1 pdsh.1
-MLINKS=		pdcp.1 rpdcp.1
 
 .include <bsd.port.mk>

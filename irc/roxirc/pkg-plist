@@ -1,8 +1,0 @@
-bin/roxirc
-%%PORTDOCS%%%%DOCSDIR%%/bindings-example
-%%PORTDOCS%%%%DOCSDIR%%/config-example
-%%PORTDOCS%%%%DOCSDIR%%/menus-example
-%%PORTDOCS%%%%DOCSDIR%%/prefs-initial
-%%PORTDOCS%%%%DOCSDIR%%/startup-example
-%%PORTDOCS%%%%DOCSDIR%%/help
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

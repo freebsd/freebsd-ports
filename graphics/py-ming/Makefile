@@ -12,18 +12,18 @@ COMMENT=	Python module for Ming which allows you to create Flash 4/5 movies
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-BUILD_WRKSRC=	${WRKSRC}/py_ext
 CONFIGURE_ARGS=	--enable-python
+PYDISTUTILS_AUTOPLIST=	yes
+USE_PYDISTUTILS=yes
+USE_PYTHON=	2
+
+BUILD_WRKSRC=	${WRKSRC}/py_ext
 INSTALL_WRKSRC=	${WRKSRC}/py_ext
 PATCH_WRKSRC=	${WRKSRC}/py_ext
 PATCHDIR=	${.CURDIR}/files
-PLIST=		${.CURDIR}/pkg-plist
-USE_PYTHON=	2
-USE_PYDISTUTILS=yes
+PLIST=		# empty
 
 MASTERDIR=	${.CURDIR}/../../graphics/ming
 SLAVEPORT=	py
-PYDISTUTILS_PKGNAME=	mingc
-PYDISTUTILS_PKGVERSION=	${PORTVERSION}
 
 .include "${MASTERDIR}/Makefile"

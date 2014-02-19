@@ -16,12 +16,11 @@ USE_BZIP2=	yes
 USE_PYTHON=	yes
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e '1s|/usr/bin/python|${PYTHON_CMD}|'\
 		${WRKSRC}/${PORTNAME}.py
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.py ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>

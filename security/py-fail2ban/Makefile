@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	fail2ban
-PORTVERSION=	0.8.11
-PORTREVISION=	1
+PORTVERSION=	0.8.12
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -14,7 +13,7 @@ LICENSE=	GPLv2
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}
 GH_PROJECT=	${PORTNAME}
-GH_COMMIT=	fc213a1
+GH_COMMIT=	33dd173
 GH_TAGNAME=	${PORTVERSION}
 
 USE_PYTHON=	2
@@ -35,8 +34,6 @@ FILES=	${WRKSRC}/fail2ban-regex \
 		${WRKSRC}/setup.py \
 		${WRKSRC}/client/configreader.py \
 		${WRKSRC}/fail2ban-client
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${ECHO_CMD} ${FILES} | ${XARGS} ${REINPLACE_CMD} -e 's,/etc/fail2ban,${ETCDIR},g'

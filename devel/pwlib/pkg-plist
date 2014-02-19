@@ -167,7 +167,7 @@ lib/libpt.so
 lib/libpt_r.so
 lib/libpt_r.so.1
 lib/pwlib/devices/sound/oss_pwplugin.so
-%%ESD%%lib/pwlib/devices/sound/esd_pwplugin.so
+%%ESOUND%%lib/pwlib/devices/sound/esd_pwplugin.so
 %%AVC1394%%lib/pwlib/devices/videoinput/avc_pwplugin.so
 %%BSDVIDEO%%lib/pwlib/devices/videoinput/bsdvideo_pwplugin.so
 %%DC1394%%lib/pwlib/devices/videoinput/dc_pwplugin.so

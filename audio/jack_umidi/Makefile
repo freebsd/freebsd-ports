@@ -15,11 +15,8 @@ LICENSE=	BSD
 LIB_DEPENDS=	libjack.so:${PORTSDIR}/audio/jack
 
 USE_BZIP2=	yes
-NO_STAGE=	yes
-MANCOMPRESSED=	yes
-MAN8=		jack_umidi.8
-
-PLIST_FILES=	sbin/jack_umidi
+PLIST_FILES=	sbin/jack_umidi \
+		man/man8/jack_umidi.8.gz
 
 OPTIONS_DEFINE=        DEBUG
 

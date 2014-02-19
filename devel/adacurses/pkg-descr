@@ -1,1 +1,5 @@
-Ada95 bindings for ncurses.
+The ncurses Ada95 binding was originally written by Juergen Pfeifer in
+1996.  It has been improved several times by Juergen, as wll as
+Eugen V. Melaragno and Nicolas Boulenguez.
+
+WWW: http://invisible-island.net/ncurses/ncurses-Ada95.html

@@ -33,12 +33,13 @@ post-patch:
 		s:CFLAGS =:CFLAGS +=:g; \
 		s:CXXFLAGS=:CXXFLAGS+=:g; \
 		s:-lm:${PTHREAD_LIBS} -lm:g; \
-		s:/usr/X11R6:${LOCALBASE}:g" \
+		s:/usr/X11R6:${LOCALBASE}:g; \
+		s:gcc:${CC}:; s:g\+\+:${CXX}:" \
 		< ${WRKSRC}/Makefile.in.orig > ${WRKSRC}/Makefile.in
 
 	@${FIND} ${WRKSRC} -type f -name "*.C" -o -name "*.cpp" -o -name "*.h" | ${XARGS} \
 	   ${REINPLACE_CMD} -e '/^#include <FL/s|.h>$$|.H>|; /^#include "FL/s|.h"$$|.H"|; \
-	   s|fl_file_chooser.H|Fl_File_Chooser.H|g'
+	   s|fl_file_chooser.H|Fl_File_Chooser.H|g; s|iostream.h|iostream|; s|fstream.h|fstream|'
 
 pre-install:
 	${ECHO_CMD} bin/SpiralLoops > ${PLIST}

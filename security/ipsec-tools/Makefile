@@ -8,7 +8,7 @@
 
 PORTNAME=	ipsec-tools
 PORTVERSION=	0.8.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -20,9 +20,10 @@ CONFLICTS=	racoon-[0-9]*
 USE_RC_SUBR=	racoon
 USE_OPENSSL=	yes
 USE_BZIP2=	yes
-USE_GCC=	any
 
-USE_AUTOTOOLS=	libtool
+INSTALL_TARGET=	install-strip
+
+USES=		libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-shared --sysconfdir=${PREFIX}/etc/racoon \
@@ -156,6 +157,9 @@ CONFIGURE_ARGS+=	--enable-idea
 .else
 CONFIGURE_ARGS+=	--disable-idea
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e "s/-Werror//g ; s/-R$$libdir/-Wl,-rpath=$$libdir/g" ${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/${PREFIX}/etc/racoon

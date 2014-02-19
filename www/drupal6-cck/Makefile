@@ -244,5 +244,4 @@ MODULE_FILES=	help/add-existing-field.html \
 DOC_FILES=	CHANGELOG.txt DEVELOPER.txt README.txt UPGRADE.txt \
 		LICENSE.txt
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

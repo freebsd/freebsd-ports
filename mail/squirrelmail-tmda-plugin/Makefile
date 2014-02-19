@@ -31,7 +31,6 @@ PLIST_SUB+=	SQUIRRELDIR=squirrelmail
 TMDATOOLDIR?=	${SQUIRRELDIR}/plugins/${SQUIRREL_PLUGIN_NAME}
 PLIST_SUB+=	TMDATOOLDIR=plugins/${SQUIRREL_PLUGIN_NAME}
 
-NO_STAGE=	yes
 pre-everything::
 	@${ECHO} "The plugin expects SquirrelMail install in ${SQUIRRELDIR}"
 	@${ECHO} "To use the old location ${PREFIX}/squirrelmail define WITHOUT_WWWDIR=yes"
@@ -44,9 +43,9 @@ post-patch:
 	@${RM} ${WRKSRC}/tmdatools_config.php.sample.bak
 
 do-install:
-	@${MKDIR} ${TMDATOOLDIR}
-	@${CP} -Rp ${WRKSRC}/ ${TMDATOOLDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${TMDATOOLDIR}
+	@${MKDIR} ${STAGEDIR}${TMDATOOLDIR}
+	@${CP} -Rp ${WRKSRC}/ ${STAGEDIR}${TMDATOOLDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${TMDATOOLDIR}
 	@${RM} -f ${WRKSRC}/tmdatools_config.php.sample.bak
 
 post-install:

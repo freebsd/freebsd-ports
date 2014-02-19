@@ -10,11 +10,12 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}_2_1/movingmotiv-2.3.1
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Display scientific data as dynamic plot
 
+LICENSE=	GPLv2
+
 USES=		motif
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"

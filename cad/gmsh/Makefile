@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	gmsh
-PORTVERSION=	2.8.3
+PORTVERSION=	2.8.4
 PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/ \
@@ -27,9 +27,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 
 SLAVEDIRS=	cad/gmsh-occ
 
-USE_FORTRAN=	yes
-USES=		cmake
-USE_GMAKE=	yes
+USES=		cmake fortran gmake
 USE_GL=		yes
 ALL_TARGET=	all
 

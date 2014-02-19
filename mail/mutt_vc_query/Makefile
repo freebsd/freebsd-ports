@@ -20,6 +20,8 @@ CFLAGS+=	-I${PREFIX}/include \
 PORTDOCS=	*
 PLIST_FILES=	bin/mutt_vc_query man/man1/mutt_vc_query.1.gz
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}

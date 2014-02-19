@@ -10,7 +10,6 @@ COMMENT=	XMMS plugin for Audioscrobbler.com
 CONFLICTS=	scrobbler-*
 
 MASTERDIR=	${.CURDIR}/../scrobbler
-NO_STAGE=	yes
 
 WITH_XMMS=	yes
 

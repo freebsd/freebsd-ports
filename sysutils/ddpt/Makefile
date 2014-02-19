@@ -13,12 +13,11 @@ COMMENT=	A dd tool that specializes in files that are block devices
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_GMAKE=	yes
+USES=		gmake
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
-MAN8=		ddpt.8
-PLIST_FILES=	bin/ddpt
+PLIST_FILES=	bin/ddpt \
+		man/man8/ddpt.8.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

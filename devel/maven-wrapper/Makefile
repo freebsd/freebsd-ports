@@ -15,12 +15,8 @@ NO_BUILD=	yes
 SUB_FILES=	mvn.sh
 SUB_LIST=	CAT=${CAT} FIND=${FIND} TAIL=${TAIL}
 
-NO_STAGE=	yes
-do-fecth:
-	@${DO_NADA}
-
 do-install:
-	${MKDIR} "${PREFIX}/etc/maven-wrapper/instances.d"
-	${INSTALL_SCRIPT} "${WRKDIR}/mvn.sh" "${PREFIX}/bin/mvn"
+	${MKDIR} "${STAGEDIR}${PREFIX}/etc/maven-wrapper/instances.d"
+	${INSTALL_SCRIPT} "${WRKDIR}/mvn.sh" "${STAGEDIR}${PREFIX}/bin/mvn"
 
 .include <bsd.port.mk>

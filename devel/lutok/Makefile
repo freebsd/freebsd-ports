@@ -3,7 +3,7 @@
 
 PORTNAME=	lutok
 PORTVERSION=	0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -16,7 +16,10 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		pkgconfig lua
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES TEST
+
+OPTIONS_SUB=		yes
+TEST_CONFIGURE_WITH=	atf
 
 .include <bsd.port.options.mk>
 
@@ -25,8 +28,6 @@ CONFIGURE_ARGS+=	--htmldir=${DOCSDIR}/html
 # The distfile contains prebuilt doxygen files.  Specify --without_doxygen so
 # we won't rebuild them
 CONFIGURE_ARGS+=	--without-doxygen
-# TODO: install the tests, once FreeBSD has a system for ports to install tests
-CONFIGURE_ARGS+=	--without-atf
 
 # Force the use of the lua version we have chosen via USE_LUA.  If we allow
 # lutok's configure script search for one using pkgconfig files, it might pick

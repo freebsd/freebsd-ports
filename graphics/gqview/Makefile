@@ -27,6 +27,9 @@ CONFLICTS=	gqview-devel-[0-9]*
 PORTSCOUT=	limitw:1,even
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

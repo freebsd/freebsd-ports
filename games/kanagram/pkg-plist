@@ -3,8 +3,8 @@ include/kanagram/kanagram_engine_export.h
 include/kanagram/kanagramgame.h
 include/kanagram/kanagramsettings.h
 lib/libkanagramengine.so
-lib/libkanagramengine.so.5
-lib/libkanagramengine.so.5.0.1
+lib/libkanagramengine.so.4
+lib/libkanagramengine.so.%%KDE4_GENERIC_LIB_VERSION%%
 share/applications/kde4/kanagram.desktop
 share/apps/kanagram/images/kanagram.svg
 share/apps/kanagram/sounds/chalk.ogg

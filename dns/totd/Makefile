@@ -10,20 +10,23 @@ MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
 MAINTAINER=	ed@FreeBSD.org
 COMMENT=	DNS proxy that supports IPv6 <==> IPv4 record translation
 
+USES=		desthack uidfix
+
 USE_RC_SUBR=	totd
 GNU_CONFIGURE=	yes
 
-MAN8=		totd.8
-PLIST_FILES=	etc/totd.conf.sample sbin/totd
+PLIST_FILES=	etc/totd.conf.sample sbin/totd \
+		man/man8/totd.8.gz
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-ne_mesg.c \
 		${FILESDIR}/extra-patch-tcp_response.c
 
-NO_STAGE=	yes
+MAKE_ARGS=	CC="${CC}"
+
 post-patch:
-	@${REINPLACE_CMD} -e '/^CC/d' ${WRKSRC}/${MAKEFILE}.in
+	${REINPLACE_CMD} -e 's/-o bin -g bin//g; s/-o root -g wheel//g' ${WRKSRC}/Makefile.in
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/totd.conf.sample ${PREFIX}/etc
+	${INSTALL_DATA} ${FILESDIR}/totd.conf.sample ${STAGEDIR}${PREFIX}/etc
 
 .include <bsd.port.mk>

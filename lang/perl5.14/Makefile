@@ -3,7 +3,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -20,7 +20,7 @@ COMMENT=	Practical Extraction and Report Language
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-CONFLICTS_INSTALL=	perl5.12-* perl5.14-* perl5.16-* perl5.18-*
+CONFLICTS_INSTALL=	perl5.14-* perl5.16-* perl5.18-*
 
 OPTIONS_DEFINE=	DEBUG GDBM PERL_MALLOC PERL_64BITINT THREADS PTHREAD \
 		MULTIPLICITY SITECUSTOMIZE USE_PERL
@@ -64,6 +64,15 @@ LOCALE_CLEANUP=	LANG="" LC_ALL="" LC_COLLATE="" LC_CTYPE="" \
 CONFIGURE_ENV+=	${LOCALE_CLEANUP} UNAME_v="$$(uname -v | sed 'y/=/ /')"
 MAKE_ENV+=	${LOCALE_CLEANUP}
 
+SUB_LIST+=	PERL_VERSION=${PERL_VERSION} \
+		PERL_VER=${PERL_VER} \
+		PERL_ARCH=${PERL_ARCH}
+
+SUB_FILES=	perl5_version use.perl perl-man.conf
+
+PKGINSTALL=	${WRKDIR}/use.perl
+PKGDEINSTALL=	${WRKDIR}/use.perl
+
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.default-versions.mk"
 
@@ -86,6 +95,13 @@ CONFIGURE_ARGS+=	\
 	-Dvendorlib=${PERL_VENDOR_PREFIX}/lib/perl5/${PERL_VER} \
 	-Dvendorman3dir=${PERL_VENDOR_PREFIX}/lib/perl5/${PERL_VER}/man/man3 \
 	-Dvendorman1dir=${PERL_VENDOR_PREFIX}/man/man1
+.endif
+
+# http://perl5.git.perl.org/perl.git/commit/b83080de5c4254
+# PERLIOBUF_DEFAULT_BUFSIZ size in bytes (default: 8192 bytes)
+.if defined(PERLIOBUF_DEFAULT_BUFSIZ)
+CONFIGURE_ARGS+=	\
+    -Accflags=-DPERLIOBUF_DEFAULT_BUFSIZ=${PERLIOBUF_DEFAULT_BUFSIZ}
 .endif
 
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VER}/perl
@@ -154,8 +170,7 @@ LINK_USRBIN=	yes
 .else
 LINK_USRBIN=	no
 .endif
-
-LATEST_LINK=	perl
+SUB_LIST+=	LINK_USRBIN=${LINK_USRBIN}
 
 BSDPAN_DEST=	${PREFIX}/lib/perl5/${PERL_VER}/BSDPAN
 BSDPAN_FILES=	BSDPAN.pm BSDPAN/Override.pm Config.pm \
@@ -165,24 +180,7 @@ BSDPAN_FILES=	BSDPAN.pm BSDPAN/Override.pm Config.pm \
 BSDPAN_VERSION=	20111107
 BSDPAN_WRKSRC=	${WRKDIR}/BSDPAN-${BSDPAN_VERSION}
 
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
-
 post-patch:
-	${SED} -e 's|%%PREFIX%%|${PREFIX}|g;' \
-		-e 's|%%PERL_VERSION%%|${PERL_VERSION}|g;' \
-		-e 's|%%PERL_VER%%|${PERL_VER}|g;' \
-		-e 's|%%PERL_ARCH%%|${PERL_ARCH}|g;' \
-		-e 's|%%PERL5_SIGNATURE%%|${LOCALBASE}/etc/perl5_version|g;' \
-		-e 's|%%LINK_USRBIN%%|${LINK_USRBIN}|g;' \
-		${FILESDIR}/use.perl \
-		> ${WRKDIR}/use.perl
-	${SED} -e 's|%%PREFIX%%|${PREFIX}|g;' \
-		-e 's|%%PERL_VER%%|${PERL_VER}|g;' \
-		${FILESDIR}/perl-man.conf \
-		> ${WRKDIR}/perl-man.conf
-	${CP} ${WRKDIR}/use.perl ${PKGINSTALL}
-	${CP} ${WRKDIR}/use.perl ${PKGDEINSTALL}
 	${SED} -i '' -e 's|%%PERL_PKGNAME%%|${PKGNAME}|g; s|%%PERL_VER%%|${PERL_VER}|g;' \
 		-e 's!%%BSDPAN_VERSION%%!${BSDPAN_VERSION}!g;' \
 		${BSDPAN_WRKSRC}/ExtUtils/*.pm
@@ -204,12 +202,14 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/machine
 	@${MKDIR} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/sys
 	@${MKDIR} ${STAGEDIR}${SITE_PERL}/auto
+	@${LN} ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION} ${STAGEDIR}${PREFIX}/bin/perl5
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/perl${PERL_VERSION}
+	${INSTALL_DATA} ${WRKDIR}/perl5_version ${STAGEDIR}${PREFIX}/etc
 .if ${OSVERSION} >= 900022
-	@${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${STAGEDIR}${PREFIX}/etc/man.d/perl${PERL_VER}.conf
+	${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${STAGEDIR}${PREFIX}/etc/man.d/perl${PERL_VER}.conf
 .endif
 .for files in ${BSDPAN_FILES}
-	${MKDIR} ${STAGEDIR}${BSDPAN_DEST}/${files:H}
+	@${MKDIR} ${STAGEDIR}${BSDPAN_DEST}/${files:H}
 	${INSTALL_DATA} \
 		${BSDPAN_WRKSRC}/${files} ${STAGEDIR}${BSDPAN_DEST}/${files}
 .endfor

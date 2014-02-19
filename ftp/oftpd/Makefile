@@ -8,15 +8,17 @@ MASTER_SITES=	http://www.time-travellers.org/oftpd/ \
 		http://atreides.freenix.no/~anders/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A threaded, anonymous only FTP server designed for security
+COMMENT=	Threaded, anonymous only FTP server designed for security
+
+LICENSE=	BSD2CLAUSE
 
 GNU_CONFIGURE=	yes
 
-MAN8=		oftpd.8
 PORTDOCS=	README AUTHORS ChangeLog NEWS TODO BUGS
-PLIST_FILES=	sbin/oftpd
+PLIST_FILES=	sbin/oftpd man/man8/oftpd.8.gz
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-patch:
 	${REINPLACE_CMD} -e 's|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|g ; \
 		 s|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
@@ -25,14 +27,11 @@ post-patch:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/oftpd ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/man/oftpd.8 ${MANPREFIX}/man/man8
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/oftpd ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/man/oftpd.8 ${STAGEDIR}${MANPREFIX}/man/man8
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

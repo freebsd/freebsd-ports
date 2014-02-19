@@ -13,7 +13,7 @@ COMMENT=	A gnutella client
 PORTSCOUT=	skipv:0.05	# older than current one
 
 USE_GNOME=	gtk12
-USE_GMAKE=	yes
+USES=		gmake
 GNU_CONFIGURE=	yes
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
@@ -21,5 +21,4 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 PLIST_FILES=	bin/gnewtellium %%DATADIR%%/pixmaps/gnewtellium.xpm
 PLIST_DIRS=	%%DATADIR%%/pixmaps %%DATADIR%%
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

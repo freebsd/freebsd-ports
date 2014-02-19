@@ -2,14 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	Graphics-Primitive-Driver-Cairo
-PORTVERSION=	0.44
-PORTREVISION=	1
+PORTVERSION=	0.45
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Cairo backend for Graphics::Primitive
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Cairo>=0:${PORTSDIR}/graphics/p5-Cairo \
 		p5-Graphics-Primitive>=0:${PORTSDIR}/graphics/p5-Graphics-Primitive \

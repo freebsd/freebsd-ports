@@ -3,6 +3,7 @@
 
 PORTNAME=	iterpipes
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +13,6 @@ COMMENT=	A library for running shell pipelines using shell-like syntax
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

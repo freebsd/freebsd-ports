@@ -10,7 +10,7 @@ MASTER_SITES=	http://www.cups.org/software/${DISTVERSION}/ \
 		EASYSW/${PORTNAME}/${DISTVERSION}
 PKGNAMESUFFIX=	${CUPS_SUFFIX}${PKGNAMESUFFIX2}
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common UNIX Printing System: ${COMMENT2}
 
 LICENSE=	GPLv2
@@ -325,6 +325,7 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|cups test|test|' \
 		-e 's|cups filter driver|driver|' \
+		-e '/cd cups/d' \
 		-e 's|$$.INSTALL_SCRIPT. cups-config|echo skip: cups-config|' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} \

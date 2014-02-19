@@ -9,6 +9,7 @@ MASTER_SITES=	${MASTER_SITE_ECLIPSE}
 MASTER_SITE_SUBDIR=	R-3.0-200406251208
 PKGNAMEPREFIX=	eclipse-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
+EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	freebsd-eclipse@FreeBSD.org
@@ -18,12 +19,8 @@ RUN_DEPENDS=    ${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-USE_ZIP=	yes
 
-NO_STAGE=	yes
 do-install:
-		@${MKDIR} ${PREFIX}/lib/eclipse
-		@${CP} -r ${WRKSRC}/eclipse/plugins ${PREFIX}/lib/eclipse
-		@${CP} -r ${WRKSRC}/eclipse/features ${PREFIX}/lib/eclipse
+	cd ${WRKSRC}/eclipse && ${COPYTREE_SHARE} "features plugins" ${STAGEDIR}${PREFIX}/lib/eclipse
 
 .include <bsd.port.mk>

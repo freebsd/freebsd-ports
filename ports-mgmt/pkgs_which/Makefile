@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pkgs_which
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	ports-mgmt perl5
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -15,6 +15,8 @@ LICENSE=	GPLv3
 USES=		perl5
 NO_BUILD=	yes
 PLIST_FILES=	bin/${PORTNAME}
+
+OPTIONS_DEFINE=	DOCS 
 
 .include <bsd.port.options.mk>
 

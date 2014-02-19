@@ -9,12 +9,12 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/math/calc
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A shell calculator
+COMMENT=	Shell calculator
 
-MAN1=		gexpr.1
-PLIST_FILES=	bin/gexpr
+LICENSE=	GPLv2
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/gexpr man/man1/gexpr.1.gz
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX}," ${WRKSRC}/Makefile
 

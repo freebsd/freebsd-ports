@@ -5,4 +5,6 @@ lib/libopenvasnasl.a
 lib/libopenvasnasl.la
 lib/libopenvasnasl.so
 lib/libopenvasnasl.so.2
+man/man1/openvas-libnasl-config.1.gz
+man/man1/openvas-nasl.1.gz
 @dirrmtry include/openvas

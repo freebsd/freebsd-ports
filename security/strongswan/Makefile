@@ -11,7 +11,7 @@ MASTER_SITES=	http://download.strongswan.org/ \
 MAINTAINER=	strongswan@nanoteq.com
 COMMENT=	Open Source IKEv2 IPsec-based VPN solution
 
-LIB_DEPENDS=	execinfo:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 
 USE_BZIP2=	yes
 USE_OPENSSL=	yes
@@ -41,14 +41,10 @@ CONFIGURE_ARGS=	--enable-kernel-pfkey \
 		--with-group=wheel  \
 		--with-lib-prefix=${PREFIX}
 
-# Man pages with default install
-MAN5=	ipsec.conf.5 ipsec.secrets.5 strongswan.conf.5
-MAN8=	ipsec.8 _updown.8 _updown_espmark.8
-
 OPTIONS_DEFINE=	CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS EAPSIMFILE IKEv1 \
 		IPSECKEY KERNELLIBIPSEC LOADTESTER LDAP MYSQL SQLITE \
 		TESTVECTOR UNBOUND XAUTH
-OPTIONS_SUB=	${OPTIONS_DEFINE}
+OPTIONS_SUB=	yes
 CURL_DESC=	Enable CURL to fetch CRL/OCSP
 EAPAKA3GPP2_DESC=	Enable EAP AKA with 3gpp2 backend
 EAPDYNAMIC_DESC=	Enable EAP dynamic proxy module
@@ -64,9 +60,9 @@ XAUTH_DESC=	Enable XAuth password verification
 
 # Extra options
 CURL_CONFIGURE_ON=	--enable-curl
-CURL_LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+CURL_LIB_DEPENDS=	libcurl.so:${PORTSDIR}/ftp/curl
 EAPAKA3GPP2_CONFIGURE_ON=	--enable-eap-aka --enable-eap-aka-3gpp2
-EAPAKA3GPP2_LIB_DEPENDS=gmp:${PORTSDIR}/math/gmp
+EAPAKA3GPP2_LIB_DEPENDS=libgmp.so:${PORTSDIR}/math/gmp
 EAPDYNAMIC_CONFIGURE_ON=--enable-eap-dynamic
 EAPRADIUS_CONFIGURE_ON=	--enable-eap-radius
 EAPSIMFILE_CONFIGURE_ON=--enable-eap-sim --enable-eap-sim-file
@@ -79,18 +75,18 @@ LDAP_USE=		USE_OPENLDAP=yes
 MYSQL_CONFIGURE_ON=	--enable-mysql
 MYSQL_USE=		USE_MYSQL=yes
 SQLITE_CONFIGURE_ON=	--enable-sqlite
-SQLITE_LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3
+SQLITE_LIB_DEPENDS=	libsqlite3.so:${PORTSDIR}/databases/sqlite3
 TESTVECTOR_CONFIGURE_ON=--enable-test-vectors
 UNBOUND_CONFIGURE_ON=	--enable-unbound
-UNBOUND_LIB_DEPENDS=	unbound:${PORTSDIR}/dns/unbound
+UNBOUND_LIB_DEPENDS=	libunbound.so:${PORTSDIR}/dns/unbound
 XAUTH_CONFIGURE_ON=	--enable-xauth-eap --enable-xauth-generic
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MEAPSIMFILE} || ${PORT_OPTIONS:MEAPAKA3GPP2}
-PLIST_SUB+=SIMAKA=""
+PLIST_SUB+=	SIMAKA=""
 .else
-PLIST_SUB+=SIMAKA="@comment "
+PLIST_SUB+=	SIMAKA="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL} || ${PORT_OPTIONS:MSQLITE}
@@ -102,7 +98,7 @@ PLIST_SUB+=	SQL="@comment "
 
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${MV} ${STAGEDIR}${PREFIX}/etc/strongswan.conf ${STAGEDIR}${EXAMPLESDIR}
-	${MV} ${STAGEDIR}${PREFIX}/etc/ipsec.conf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/strongswan.conf ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${STAGEDIR}${PREFIX}/etc/ipsec.conf ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

@@ -10,8 +10,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RCP server for routers and network devices
 
 GNU_CONFIGURE=	yes
-MAN1=		rcpd.1
-PLIST_FILES=	sbin/rcpd
 
-NO_STAGE=	yes
+PLIST_FILES=	sbin/rcpd \
+		man/man1/rcpd.1.gz
+
 .include <bsd.port.mk>

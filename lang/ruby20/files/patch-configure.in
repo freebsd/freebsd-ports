@@ -1,6 +1,6 @@
---- configure.in.orig	2013-05-27 03:48:52.340695232 +0000
-+++ configure.in	2013-05-27 03:49:12.060695078 +0000
-@@ -1380,11 +1380,11 @@
+--- configure.in.orig	2014-02-17 23:37:01.241643774 +0000
++++ configure.in	2014-02-17 23:38:03.349639470 +0000
+@@ -1386,11 +1386,11 @@
  AC_CHECK_DECLS([sys_nerr], [], [], [$ac_includes_default
  @%:@include <errno.h>])
  
@@ -10,14 +10,14 @@
 -AC_CHECK_LIB(socket, socketpair)	# SunOS/Solaris
 -AC_CHECK_LIB(rt, clock_gettime)	# GNU/Linux
 +AC_SEARCH_LIBS(crypt, crypt)
-+AC_SEARCH_LIBS(dl, dlopen)	# Dynamic linking for SunOS/Solaris and SYSV
-+AC_SEARCH_LIBS(dld, shl_load)	# Dynamic linking for HP-UX
-+AC_SEARCH_LIBS(socket, socketpair)	# SunOS/Solaris
-+AC_SEARCH_LIBS(rt, clock_gettime)	# GNU/Linux
++AC_SEARCH_LIBS(dlopen, dl)	# Dynamic linking for SunOS/Solaris and SYSV
++AC_SEARCH_LIBS(shl_load, dld)	# Dynamic linking for HP-UX
++AC_SEARCH_LIBS(socketpair, socket)	# SunOS/Solaris
++AC_SEARCH_LIBS(clock_gettime, rt)	# GNU/Linux
  
  AS_CASE(["$target_cpu"],
  [alpha*|sh4|sh4el|sh4eb], [AS_CASE(["$target_os"::"$GCC"],
-@@ -2074,7 +2074,7 @@
+@@ -2081,7 +2081,7 @@
  fi
  
  if test x"$enable_pthread" = xyes; then
@@ -26,7 +26,7 @@
  	AC_CHECK_LIB($pthread_lib, pthread_kill,
  		     rb_with_pthread=yes, rb_with_pthread=no)
  	if test "$rb_with_pthread" = "yes"; then break; fi
-@@ -2082,6 +2082,7 @@
+@@ -2089,6 +2089,7 @@
      if test x"$rb_with_pthread" = xyes; then
  	AC_DEFINE(_REENTRANT)
  	AC_DEFINE(_THREAD_SAFE)
@@ -34,7 +34,7 @@
  	AC_DEFINE(HAVE_LIBPTHREAD)
  	AC_CHECK_HEADERS(pthread_np.h, [], [], [@%:@include <pthread.h>])
  	AS_CASE([$pthread_lib],
-@@ -2319,7 +2320,6 @@
+@@ -2326,7 +2327,6 @@
  			: ${LDSHARED='$(CC) -shared'}
  			if test "$rb_cv_binary_elf" = yes; then
  			    LDFLAGS="$LDFLAGS -rdynamic"
@@ -42,7 +42,7 @@
  			else
  			  test "$GCC" = yes && test "$rb_cv_prog_gnu_ld" = yes || LDSHARED='$(LD) -Bshareable'
  			fi
-@@ -2703,6 +2703,7 @@
+@@ -2713,6 +2713,7 @@
      [freebsd*|dragonfly*], [
  	SOLIBS='$(LIBS)'
  	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.$(MAJOR)$(MINOR)'

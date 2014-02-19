@@ -330,6 +330,10 @@ share/aclocal/mailutils.m4
 %%NLS%%@dirrmtry share/locale/vi/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/vi
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/mailutils
+man/man1/imap4d.1.gz
+man/man1/mail.1.gz
+man/man1/pop3d.1.gz
+man/man1/popauth.1.gz
 @dirrm %%DATADIR%%/mh
 @dirrm %%DATADIR%%/2.2/modules
 @dirrm %%DATADIR%%/2.2

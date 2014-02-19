@@ -22,19 +22,19 @@ COMMENT?=	Fast x86 and x86-64 disassembler library
 
 LICENSE=	GPLv3
 
-USE_DOS2UNIX=	yes
+USES=		dos2unix
 USE_XZ =	yes
 
 .if defined(PYTHON_SLAVEPORT)
 USE_PYTHON=		2
 
-USE_PYDISTUTILS=		yes
-PYDISTUTILS_PKGNAME=		distorm3
-PYDISTUTILS_PKGVERSION =	3
+USE_PYDISTUTILS=	yes
+PYDISTUTILS_PKGNAME=	distorm3
+PYDISTUTILS_PKGVERSION=	3
 
 PLIST_DIRS=	%%PYTHON_SITELIBDIR%%/distorm3
 
-PLIST_FILES =	bin/dislib.py \
+PLIST_FILES=	bin/dislib.py \
 		%%PYTHON_SITELIBDIR%%/distorm3/sample.py \
 		%%PYTHON_SITELIBDIR%%/distorm3/__init__.py \
 		%%PYTHON_SITELIBDIR%%/distorm3/libdistorm3.so \
@@ -55,7 +55,6 @@ PLIST_FILES=	bin/disasm \
 		lib/libdistorm3.so.1
 .endif
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
@@ -73,7 +72,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "\|extra_compile_args=|s| '-O2',||" ${WRKSRC}/setup.py
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/dislib.py ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/dislib.py ${STAGEDIR}${PREFIX}/bin
 
 .else
 do-build:
@@ -89,11 +88,11 @@ check regression-test test: build
 	@cd ${BUILD_WRKSRC}; ./disasm disasm
 
 do-install:
-	@(cd ${BUILD_WRKSRC}; ${INSTALL_LIB} libdistorm3.a ${PREFIX}/lib; \
-	${INSTALL_LIB} libdistorm3.so ${PREFIX}/lib/libdistorm3.so.1; \
-	${LN} -sf libdistorm3.so.1 ${PREFIX}/lib/libdistorm3.so; \
-	${INSTALL_PROGRAM} disasm ${PREFIX}/bin)
-	@${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include
+	@(cd ${BUILD_WRKSRC}; ${INSTALL_LIB} libdistorm3.a ${STAGEDIR}${PREFIX}/lib; \
+	${INSTALL_LIB} libdistorm3.so ${STAGEDIR}${PREFIX}/lib/libdistorm3.so.1; \
+	${LN} -sf libdistorm3.so.1 ${STAGEDIR}${PREFIX}/lib/libdistorm3.so; \
+	${INSTALL_PROGRAM} disasm ${STAGEDIR}${PREFIX}/bin)
+	@${INSTALL_DATA} ${WRKSRC}/include/*.h ${STAGEDIR}${PREFIX}/include
 
 .endif
 .include <bsd.port.post.mk>

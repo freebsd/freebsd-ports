@@ -8,6 +8,6 @@ Features:
    Strict coding style enforced by AdaControl
       This allows integration with tools like Jenkins and CruiseControl
    Limited to Ada95 language features
-   Permissions open source license (ISC)
+   Permissive open source license (ISC)
 
 WWW: http://ahven.stronglytyped.org

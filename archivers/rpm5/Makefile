@@ -108,9 +108,8 @@ post-build:
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
-	# Install documentation
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/apidocs/html
-	cd ${WRKSRC}/apidocs/html && ${COPYTREE_SHARE} . ${DOCSDIR}/apidocs/html/
+	cd ${WRKSRC}/apidocs/html && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}/apidocs/html/
 .endif
 
 .include <bsd.port.mk>

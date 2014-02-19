@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	DateTime-TimeZone
-PORTVERSION=	1.63
+PORTVERSION=	1.64
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,6 +23,8 @@ USES=		perl5
 USE_PERL5=	configure
 
 PORTDOCS=	Changes README
+
+OPTIONS_DEFINE=	DOCS 
 
 .include <bsd.port.options.mk>
 

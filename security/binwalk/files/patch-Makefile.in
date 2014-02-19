@@ -1,0 +1,19 @@
+--- ./Makefile.in.orig	2014-02-08 19:01:44.646322607 +0100
++++ ./Makefile.in	2014-02-08 19:02:14.258306650 +0100
+@@ -47,11 +47,11 @@
+ 	cat $(MAGICFILES) > $(MAGIC).binwalk
+ 
+ install:
+-	mkdir -p $(ETC)
+-	mkdir -p $(BIN)
+-	cp $(MAGIC).bin* $(ETC)
+-	cp $(EXTRACT_FILE) $(ETC)
+-	cp binwalk $(BIN)/binwalk
++	mkdir -p $(DESTDIR)$(ETC)
++	mkdir -p $(DESTDIR)$(BIN)
++	cp $(MAGIC).bin* $(DESTDIR)$(ETC)
++	cp $(EXTRACT_FILE) $(DESTDIR)$(ETC)
++	cp binwalk $(DESTDIR)$(BIN)/binwalk
+ 
+ uninstall:
+ 	rm -rf $(ETC)

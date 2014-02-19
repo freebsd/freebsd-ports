@@ -83,14 +83,12 @@
     SUBDIR += fpc-units
     SUBDIR += fpc-utils
     SUBDIR += fsharp
-    SUBDIR += g95
     SUBDIR += gambit-c
     SUBDIR += gauche
     SUBDIR += gawk
     SUBDIR += gcc
     SUBDIR += gcc-aux
     SUBDIR += gcc-ecj45
-    SUBDIR += gcc34
     SUBDIR += gcc44
     SUBDIR += gcc46
     SUBDIR += gcc47
@@ -239,7 +237,6 @@
     SUBDIR += pbasic
     SUBDIR += pcc
     SUBDIR += pecl-perl
-    SUBDIR += perl5.12
     SUBDIR += perl5.14
     SUBDIR += perl5.16
     SUBDIR += perl5.18
@@ -303,6 +300,7 @@
     SUBDIR += ruby-usersguide
     SUBDIR += ruby19
     SUBDIR += ruby20
+    SUBDIR += ruby21
     SUBDIR += runawk
     SUBDIR += rust
     SUBDIR += s9fes

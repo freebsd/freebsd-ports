@@ -14,14 +14,13 @@ LIB_DEPENDS=	libtkgeomap.so:${PORTSDIR}/astro/tkgeomap
 
 USES+=		tk:run
 NO_BUILD=	yes
-NO_STAGE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -Ee 's,\[pwd\],${DATADIR}/src,;s,(lines/|places/|src/),${DATADIR}/\1,g;s,wish,${WISH},' ${WRKSRC}/src/PTiger.tcl
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/src/PTiger.tcl ${PREFIX}/bin/${PORTNAME}
-	@${INSTALL} -d ${DATADIR}
-	@${CP} -Rf ${WRKSRC}/lines ${WRKSRC}/places ${WRKSRC}/src ${DATADIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/src/PTiger.tcl ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${CP} -Rf ${WRKSRC}/lines ${WRKSRC}/places ${WRKSRC}/src ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>

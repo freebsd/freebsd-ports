@@ -39,6 +39,8 @@ DESKTOP_ENTRIES="TeamSpeak" \
 		"Network;Telephony;" \
 		false
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-extract:

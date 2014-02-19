@@ -19,9 +19,6 @@ USE_PHP_BUILD=	yes
 
 PEARDIR=	${PREFIX}/share/pear
 
-# https://github.com/pear/pear-core/blob/master/install-pear.php
-# supports ${SETENV} INSTALL_ROOT=${STAGEDIR}
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" \
 		-e "s|%%BUNDLEDIR%%|${WRKSRC}/go-pear-bundle|" \
@@ -36,11 +33,12 @@ post-patch:
 	@cd ${WRKSRC}/go-pear-bundle/tmp && ${TAR} -cf ../PEAR-${PORTVERSION}.tar package2.xml PEAR-${PORTVERSION} package.xml
 
 do-install:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/php -q ./go-pear
+	@cd ${WRKSRC} && ${SETENV} DESTDIR=${STAGEDIR} ${LOCALBASE}/bin/php -q ./go-pear
 	@${SED} -i "" "s|<?php|<?php dl('pcre.so'); dl('xml.so');|" \
-		${PEARDIR}/peclcmd.php
-
-post-install:
-	@${CP} -n ${PREFIX}/etc/pear.conf.sample ${PREFIX}/etc/pear.conf || ${TRUE}
+		${STAGEDIR}${PEARDIR}/peclcmd.php
+# pear violates stage when staging as root, hide this
+.if defined(PACKAGE_BUILDING)
+	@${RM} -rf ${PEARDIR}
+.endif
 
 .include <bsd.port.mk>

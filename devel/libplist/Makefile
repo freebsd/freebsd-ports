@@ -27,6 +27,9 @@ USE_LDCONFIG=	${LOCALBASE}/lib
 PORTDOCS=	AUTHORS NEWS README
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

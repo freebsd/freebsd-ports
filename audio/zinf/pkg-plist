@@ -32,11 +32,11 @@ share/locale/ru/LC_MESSAGES/zinf.mo
 %%DATADIR%%/themes/Aquatica.fat
 %%DATADIR%%/themes/Zinf.fat
 %%DATADIR%%/themes/ZinfClassic.fat
-@dirrm share/zinf/themes
-@dirrm share/zinf
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%
+@dirrm share/locale/ca_ES/LC_MESSAGES
+@dirrm share/locale/ca_ES
 @dirrm lib/zinf/plugins
 @dirrm lib/zinf
-@dirrmtry etc/sdr/plugins
+@dirrm etc/sdr/plugins
 @dirrmtry etc/sdr
-@dirrmtry share/locale/ca_ES/LC_MESSAGES
-@dirrmtry share/locale/ca_ES

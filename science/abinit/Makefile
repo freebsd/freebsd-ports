@@ -15,8 +15,7 @@ BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
 LIB_DEPENDS=	netcdff.4:${PORTSDIR}/science/netcdf3-ftn	\
 		gsl:${PORTSDIR}/math/gsl
 
-USES=		gmake perl5
-USE_FORTRAN=	yes
+USES=		fortran gmake perl5
 USE_PYTHON=	yes
 USE_PERL5=	build
 USE_AUTOTOOLS=	autoconf automake
@@ -26,17 +25,20 @@ CONFIGURE_ARGS=	--disable-wannier90 --disable-bigdft --disable-etsf-io	\
 		--with-netcdf-includes="-I${LOCALBASE}/include"		\
 		--enable-bindings --enable-gsl				\
 		--with-netcdf-libs="-L${LOCALBASE}/lib -lnetcdff -lnetcdf"
-ALL_TARGET=	all libabinit
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-.if !defined(NOPORTDOCS)
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MDOCS}
 USE_TEX=	latex:build dvipsk:build
 BUILD_DEPENDS+= gm4:${PORTSDIR}/devel/m4		\
 		markdown:${PORTSDIR}/textproc/markdown
 USE_GHOSTSCRIPT_BUILD=	yes
 .endif
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
 
 .if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
 MANUAL_PACKAGE_BUILD=	takes a tremendous amount of time to build on pointyhat nodes
@@ -57,14 +59,18 @@ LAPACK=		-llapack
 .endif
 
 pre-configure:
-.if defined(NOPORTDOCS)
+.if ! ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e '/^abinit_top_subdirs =/s| doc||' ${WRKSRC}/config/specs/other.cf
 .endif
-.if defined(NOPORTEXAMPLES)
+.if ! ${PORT_OPTIONS:MEXAMPLES}
 	${REINPLACE_CMD} -e '/^abinit_top_subdirs =/s| tests||' ${WRKSRC}/config/specs/other.cf
 .endif
 	(cd ${WRKSRC} && ./config/scripts/makemake)
 	${CHMOD} a+x ${WRKSRC}/bindings/parser/*.py
+
+post-build:
+	@(cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} libabinit)
 
 post-install:
 	${MKDIR} ${PREFIX}/include ${PREFIX}/lib
@@ -79,4 +85,4 @@ post-install:
 regression-test:
 	cd ${WRKSRC}/tests ; ${GMAKE} tests_min
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

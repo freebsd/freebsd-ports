@@ -10,11 +10,12 @@ MASTER_SITES=	SF/${PORTNAME}2/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mathematical function graph plotter
 
+LICENSE=	BSD3CLAUSE
+
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2 gnomehier
 USE_PYDISTUTILS=	yes
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g'\
 		${WRKSRC}/${PORTNAME}.py

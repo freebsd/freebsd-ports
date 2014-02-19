@@ -1,4 +1,5 @@
 bin/kmouth
+man/man1/kmouth.1.gz
 share/applications/kde4/kmouth.desktop
 share/apps/kmouth/books/de/de-courteousness.phrasebook
 share/apps/kmouth/books/de/de-greetings.phrasebook

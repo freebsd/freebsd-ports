@@ -9,14 +9,9 @@ MASTER_SITES=	SF
 MAINTAINER=	stefan@fh-mainz.de
 COMMENT=	Programs to make using DNS easier
 
+DESTDIRNAME=	RPM_BUILD_ROOT
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all sure
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=		dns-boot-check.1 dns-bootp.1 dns-bootparams.1 \
-		dns-conf-check.1 dns-dhcp.1 dns-ethers-import.1 \
-		dns-ethers.1 dns-filter.1 dns-hosts-import.1 \
-		dns-hosts.1 dns-license.1 dns-ng.1 dns-rev.1
-
-NO_STAGE=	yes
 .include <bsd.port.mk>

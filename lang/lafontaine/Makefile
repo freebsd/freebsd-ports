@@ -20,6 +20,9 @@ USE_CSTD=	gnu89
 LDFLAGS+=	-lm
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

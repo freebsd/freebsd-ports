@@ -2,9 +2,11 @@
 
 PORTNAME=	plone.app.layout
 PORTVERSION=	2.3.7
+PORTREVISION=	1
 CATEGORIES=	www python zope
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DIST_SUBDIR=	zope
 
 MAINTAINER=	zope@FreeBSD.org
 COMMENT=	Layout mechanisms for Plone
@@ -32,12 +34,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plone.app.viewletmanager>=1.2:${PORTSDIR}/ww
 		${PYTHON_PKGNAMEPREFIX}Products.CMFDynamicViewFTI>=0:${PORTSDIR}/devel/py-Products.CMFDynamicViewFTI \
 		${PYTHON_PKGNAMEPREFIX}Products.CMFEditions>=1.2.2:${PORTSDIR}/devel/py-Products.CMFEditions
 
-DIST_SUBDIR=	zope
-USE_PYTHON=	2
-USE_PYDISTUTILS=easy_install
-USE_ZIP=	yes
-USES=		zope
-
-NO_STAGE=	yes
+USE_PYTHON=		2
+USE_PYDISTUTILS=	yes
+USE_ZIP=		yes
+USES=			zope
 
 .include <bsd.port.mk>

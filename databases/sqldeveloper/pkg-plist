@@ -1,31 +1,36 @@
 bin/sqldeveloper
-%%DATADIR%%/dataminer/demos/cuecards/GettingStarted/identify.xml
-%%DATADIR%%/dataminer/demos/cuecards/StarSchemaMining/StarSchemaMining.xml
-%%DATADIR%%/dataminer/demos/cuecards/TextMining/TextMining.xml
-%%DATADIR%%/dataminer/demos/cuecards/Transformations/Transformations.xml
-%%DATADIR%%/dataminer/demos/obe/StarSchemaMining/StarSchemaMining.xml
-%%DATADIR%%/dataminer/demos/obe/TextMining/TextMining.xml
-%%DATADIR%%/dataminer/demos/obe/UsingOracleDataMiner/Targeting_Best_Customers.xml
+%%DATADIR%%/configuration/bundles.info
+%%DATADIR%%/configuration/oracle.datamodeler.bundles.info
+%%DATADIR%%/configuration/oracle.ide.sqldev.bundles.info
 %%DATADIR%%/dataminer/scripts/XMLSchema.xsd
 %%DATADIR%%/dataminer/scripts/alterDBRestrictSession.sql
 %%DATADIR%%/dataminer/scripts/alterDBUnRestrictSession.sql
 %%DATADIR%%/dataminer/scripts/alterUserDefaultRole.sql
+%%DATADIR%%/dataminer/scripts/checkEnviroment.sql
+%%DATADIR%%/dataminer/scripts/copyTablesFromBackupAccount.sql
+%%DATADIR%%/dataminer/scripts/copyTablesToBackupAccount.sql
+%%DATADIR%%/dataminer/scripts/createODMRSYST.sql
 %%DATADIR%%/dataminer/scripts/createuser.sql
 %%DATADIR%%/dataminer/scripts/createusersgrantbackup.sql
 %%DATADIR%%/dataminer/scripts/createxmlworkflowsbackup.sql
 %%DATADIR%%/dataminer/scripts/createxmlworkflowsbackup2.sql
+%%DATADIR%%/dataminer/scripts/dbHasSchema.sql
 %%DATADIR%%/dataminer/scripts/disconnectODMRSessions.sql
+%%DATADIR%%/dataminer/scripts/displayVersion.sql
 %%DATADIR%%/dataminer/scripts/dmsh.sql
 %%DATADIR%%/dataminer/scripts/dmshgrants.sql
 %%DATADIR%%/dataminer/scripts/dropDemoData.sql
+%%DATADIR%%/dataminer/scripts/dropODMRSYST.sql
 %%DATADIR%%/dataminer/scripts/dropPublicSynonyms.sql
 %%DATADIR%%/dataminer/scripts/dropRepository.sql
 %%DATADIR%%/dataminer/scripts/dropRepositoryAndUserObjects.sql
 %%DATADIR%%/dataminer/scripts/dropRole.sql
 %%DATADIR%%/dataminer/scripts/dropSHDemoData.sql
 %%DATADIR%%/dataminer/scripts/dropSchedulerObjects.sql
+%%DATADIR%%/dataminer/scripts/dropSchema.sql
 %%DATADIR%%/dataminer/scripts/dropUserTablesViews.sql
 %%DATADIR%%/dataminer/scripts/dropusergrants.sql
+%%DATADIR%%/dataminer/scripts/instCarsDemoData.sql
 %%DATADIR%%/dataminer/scripts/instDemoData.sql
 %%DATADIR%%/dataminer/scripts/instInsurCustData.sql
 %%DATADIR%%/dataminer/scripts/install_scripts_readme.html
@@ -45,9 +50,14 @@ bin/sqldeveloper
 %%DATADIR%%/dataminer/scripts/instobjects.sql
 %%DATADIR%%/dataminer/scripts/instodmrsys.sql
 %%DATADIR%%/dataminer/scripts/instpackages.sql
+%%DATADIR%%/dataminer/scripts/instscheduler.sql
 %%DATADIR%%/dataminer/scripts/instschema_g.sql
 %%DATADIR%%/dataminer/scripts/inststopwords.sql
+%%DATADIR%%/dataminer/scripts/instsynonyms.sql
 %%DATADIR%%/dataminer/scripts/insureWorkflowsInactive.sql
+%%DATADIR%%/dataminer/scripts/isBinaryXMLMigrationAllowed.sql
+%%DATADIR%%/dataminer/scripts/isMigrationAllowed.sql
+%%DATADIR%%/dataminer/scripts/isNewTableSpaceRequired.sql
 %%DATADIR%%/dataminer/scripts/migrateodmr.sql
 %%DATADIR%%/dataminer/scripts/migrateodmrhelper.sql
 %%DATADIR%%/dataminer/scripts/odmr_constant_hdr.sql
@@ -56,6 +66,8 @@ bin/sqldeveloper
 %%DATADIR%%/dataminer/scripts/odmr_engine_data_hdr.sql
 %%DATADIR%%/dataminer/scripts/odmr_engine_data_sec_body.plb
 %%DATADIR%%/dataminer/scripts/odmr_engine_data_sec_hdr.sql
+%%DATADIR%%/dataminer/scripts/odmr_engine_dynamic_node_body.plb
+%%DATADIR%%/dataminer/scripts/odmr_engine_dynamic_node_hdr.sql
 %%DATADIR%%/dataminer/scripts/odmr_engine_hdr.sql
 %%DATADIR%%/dataminer/scripts/odmr_engine_mining_body.plb
 %%DATADIR%%/dataminer/scripts/odmr_engine_mining_hdr.sql
@@ -92,9 +104,15 @@ bin/sqldeveloper
 %%DATADIR%%/dataminer/scripts/odmr_workflow_sec_body.plb
 %%DATADIR%%/dataminer/scripts/odmr_workflow_sec_hdr.sql
 %%DATADIR%%/dataminer/scripts/restorexmlworkflowfrombackup.sql
+%%DATADIR%%/dataminer/scripts/restorexmlworkflowfrombackup2.sql
 %%DATADIR%%/dataminer/scripts/revokeSHGrants.sql
 %%DATADIR%%/dataminer/scripts/schema11_2_0_1_9to11_2_1_1_1.sql
+%%DATADIR%%/dataminer/scripts/schema11_2_1_1_1to11_2_2_1_1.sql
+%%DATADIR%%/dataminer/scripts/schema11_2_2_1_1to12_1_0_1_1.sql
+%%DATADIR%%/dataminer/scripts/schema12_1_0_1_1to12_1_0_1_2.sql
+%%DATADIR%%/dataminer/scripts/schema12_1_0_1_2to12_1_0_1_3.sql
 %%DATADIR%%/dataminer/scripts/updateRepositoryProperty.sql
+%%DATADIR%%/dataminer/scripts/upgradeORSchema.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepo11_2_0_1_10To11_2_0_1_11.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepo11_2_0_1_11To11_2_0_1_12.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepo11_2_0_1_12To11_2_0_1_13.sql
@@ -104,14 +122,104 @@ bin/sqldeveloper
 %%DATADIR%%/dataminer/scripts/upgradeRepo11_2_1_1_3To11_2_1_1_4.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepo11_2_1_1_4To11_2_1_1_5.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepo11_2_1_1_5To11_2_1_1_6.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepo11_2_1_1_6To11_2_2_1_1.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepo11_2_2_1_1To12_1_0_1_1.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepo12_1_0_1_1To12_1_0_1_2.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepo12_1_0_1_2To12_1_0_1_3.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepoFromORToBinary.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepoWithNewTableSpace.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepository.sql
+%%DATADIR%%/dataminer/scripts/upgradeSchemaFromORToBinary.sql
+%%DATADIR%%/dataminer/scripts/upgradeTablespaceForBinary.sql
+%%DATADIR%%/dataminer/scripts/upgradexmlschema.sql
 %%DATADIR%%/dataminer/scripts/usergrants.sql
 %%DATADIR%%/dataminer/scripts/usergrantshelper.sql
 %%DATADIR%%/dataminer/scripts/validateODMRSYS.sql
 %%DATADIR%%/dataminer/scripts/validateVersionUpgrade.sql
+%%DATADIR%%/dropins/readme.txt
+%%DATADIR%%/dvt/dt/dvt-jclient-gui.jar
+%%DATADIR%%/equinox/org.eclipse.equinox.common_3.6.0.v20100503.jar
+%%DATADIR%%/external/oracle.adf-logging-handler.jar
+%%DATADIR%%/external/oracle.adf-share-base.jar
+%%DATADIR%%/external/oracle.adf-share-ca.jar
+%%DATADIR%%/external/oracle.db-ca.jar
+%%DATADIR%%/external/oracle.dvt-jclient.jar
+%%DATADIR%%/external/oracle.dvt-utils.jar
+%%DATADIR%%/external/oracle.external.antlr.jar
+%%DATADIR%%/external/oracle.external.apache_httpclient.jar
+%%DATADIR%%/external/oracle.external.apexlistener.jar
+%%DATADIR%%/external/oracle.external.aqb.jar
+%%DATADIR%%/external/oracle.external.aurora.jar
+%%DATADIR%%/external/oracle.external.avalon-framework.jar
+%%DATADIR%%/external/oracle.external.awxml.jar
+%%DATADIR%%/external/oracle.external.balishare.jar
+%%DATADIR%%/external/oracle.external.batik.all.jar
+%%DATADIR%%/external/oracle.external.batik.jar
+%%DATADIR%%/external/oracle.external.berkeleydb.jar
+%%DATADIR%%/external/oracle.external.bouncycastle.jar
+%%DATADIR%%/external/oracle.external.commons-httpclient.jar
+%%DATADIR%%/external/oracle.external.commons-io.jar
+%%DATADIR%%/external/oracle.external.el-for-uix2.jar
+%%DATADIR%%/external/oracle.external.el.jar
+%%DATADIR%%/external/oracle.external.emapi.jar
+%%DATADIR%%/external/oracle.external.fop.jar
+%%DATADIR%%/external/oracle.external.itext.jar
+%%DATADIR%%/external/oracle.external.jaxb.jar
+%%DATADIR%%/external/oracle.external.jcommander.jar
+%%DATADIR%%/external/oracle.external.jdbc.jar
+%%DATADIR%%/external/oracle.external.jfx.jar
+%%DATADIR%%/external/oracle.external.jgraphx.jar
+%%DATADIR%%/external/oracle.external.jline.jar
+%%DATADIR%%/external/oracle.external.jrf-api.jar
+%%DATADIR%%/external/oracle.external.js.jar
+%%DATADIR%%/external/oracle.external.jsch.jar
+%%DATADIR%%/external/oracle.external.jsp.jar
+%%DATADIR%%/external/oracle.external.jxlayer.jar
+%%DATADIR%%/external/oracle.external.ldap.jar
+%%DATADIR%%/external/oracle.external.log4j.jar
+%%DATADIR%%/external/oracle.external.logging.jar
+%%DATADIR%%/external/oracle.external.miglayout.jar
+%%DATADIR%%/external/oracle.external.nlsrtl.jar
+%%DATADIR%%/external/oracle.external.odl.jar
+%%DATADIR%%/external/oracle.external.ohj.jar
+%%DATADIR%%/external/oracle.external.ojmisc.jar
+%%DATADIR%%/external/oracle.external.olap_api.jar
+%%DATADIR%%/external/oracle.external.oracle-ice.jar
+%%DATADIR%%/external/oracle.external.oracle-jrf-adminserver.jar
+%%DATADIR%%/external/oracle.external.oracle-jrf-dms.jar
+%%DATADIR%%/external/oracle.external.oracle-jrf-logging.jar
+%%DATADIR%%/external/oracle.external.pdfbox.jar
+%%DATADIR%%/external/oracle.external.poi.jar
+%%DATADIR%%/external/oracle.external.qb.jar
+%%DATADIR%%/external/oracle.external.rsyntaxtextarea.jar
+%%DATADIR%%/external/oracle.external.servlet-runtime.jar
+%%DATADIR%%/external/oracle.external.spatial.jar
+%%DATADIR%%/external/oracle.external.sqldev.jsch.jar
+%%DATADIR%%/external/oracle.external.sqlinform.jar
+%%DATADIR%%/external/oracle.external.sqlj-rt.jar
+%%DATADIR%%/external/oracle.external.sunjaxb.jar
+%%DATADIR%%/external/oracle.external.svnkit.jar
+%%DATADIR%%/external/oracle.external.timing.jar
+%%DATADIR%%/external/oracle.external.uel.jar
+%%DATADIR%%/external/oracle.external.xdb.jar
+%%DATADIR%%/external/oracle.external.xdk.jar
+%%DATADIR%%/external/oracle.external.xmlgraphics-commons.jar
+%%DATADIR%%/external/oracle.external.xmlparser.jar
+%%DATADIR%%/external/oracle.external.xquery.jar
+%%DATADIR%%/external/oracle.icons.jar
+%%DATADIR%%/external/oracle.javamodel-rt.jar
+%%DATADIR%%/external/oracle.javatools-jndi-local.jar
+%%DATADIR%%/external/oracle.javatools-nodeps.jar
+%%DATADIR%%/external/oracle.jdev-cm.jar
+%%DATADIR%%/external/oracle.orahelp-helpshare.jar
+%%DATADIR%%/external/oracle.orahelp-ohj.jar
+%%DATADIR%%/external/oracle.xmlef.jar
 %%DATADIR%%/icon.png
+%%DATADIR%%/ide/bin/SplashFontBranding.png
 %%DATADIR%%/ide/bin/edt.properties
 %%DATADIR%%/ide/bin/encodings.xml
+%%DATADIR%%/ide/bin/headless-logging-debug.conf
+%%DATADIR%%/ide/bin/headless-logging.conf
 %%DATADIR%%/ide/bin/ide-logging-debug.conf
 %%DATADIR%%/ide/bin/ide-logging.conf
 %%DATADIR%%/ide/bin/ide.boot
@@ -119,115 +227,141 @@ bin/sqldeveloper
 %%DATADIR%%/ide/bin/jdk.conf
 %%DATADIR%%/ide/bin/launcher.sh
 %%DATADIR%%/ide/bin/product-launcher.template
+%%DATADIR%%/ide/bin/product-user-config.template
+%%DATADIR%%/ide/bin/swing-thread-violations.conf
 %%DATADIR%%/ide/doc/extension/bundle.xsd
 %%DATADIR%%/ide/doc/extension/bundle10.xsd
 %%DATADIR%%/ide/doc/extension/center.xsd
-%%DATADIR%%/ide/doc/extension/idehook.xsd
 %%DATADIR%%/ide/doc/extension/update.xsd
+%%DATADIR%%/ide/extensions/oracle.ide.bookmarks.jar
+%%DATADIR%%/ide/extensions/oracle.ide.ceditor-bookmarks.jar
+%%DATADIR%%/ide/extensions/oracle.ide.ceditor-find.jar
+%%DATADIR%%/ide/extensions/oracle.ide.ceditor-saveactions.jar
+%%DATADIR%%/ide/extensions/oracle.ide.ceditor-tint.jar
 %%DATADIR%%/ide/extensions/oracle.ide.ceditor.jar
+%%DATADIR%%/ide/extensions/oracle.ide.compareapi.jar
 %%DATADIR%%/ide/extensions/oracle.ide.db.jar
+%%DATADIR%%/ide/extensions/oracle.ide.db.timesten.jar
 %%DATADIR%%/ide/extensions/oracle.ide.dependency.jar
-%%DATADIR%%/ide/extensions/oracle.ide.diffmerge.jar
 %%DATADIR%%/ide/extensions/oracle.ide.externaltools.jar
+%%DATADIR%%/ide/extensions/oracle.ide.file.jar
 %%DATADIR%%/ide/extensions/oracle.ide.files.jar
 %%DATADIR%%/ide/extensions/oracle.ide.gallery.jar
 %%DATADIR%%/ide/extensions/oracle.ide.help.jar
+%%DATADIR%%/ide/extensions/oracle.ide.helpstartpage.jar
 %%DATADIR%%/ide/extensions/oracle.ide.importexport.jar
 %%DATADIR%%/ide/extensions/oracle.ide.indexing.jar
+%%DATADIR%%/ide/extensions/oracle.ide.insight.jar
 %%DATADIR%%/ide/extensions/oracle.ide.inspector.jar
 %%DATADIR%%/ide/extensions/oracle.ide.jar
+%%DATADIR%%/ide/extensions/oracle.ide.localhistory.jar
 %%DATADIR%%/ide/extensions/oracle.ide.log.jar
+%%DATADIR%%/ide/extensions/oracle.ide.markers.jar
 %%DATADIR%%/ide/extensions/oracle.ide.navigator.jar
 %%DATADIR%%/ide/extensions/oracle.ide.palette1.jar
 %%DATADIR%%/ide/extensions/oracle.ide.palette2.jar
-%%DATADIR%%/ide/extensions/oracle.ide.peek.jar
 %%DATADIR%%/ide/extensions/oracle.ide.persistence.jar
+%%DATADIR%%/ide/extensions/oracle.ide.print.jar
 %%DATADIR%%/ide/extensions/oracle.ide.quickdiff.jar
 %%DATADIR%%/ide/extensions/oracle.ide.replace.jar
 %%DATADIR%%/ide/extensions/oracle.ide.runner.jar
+%%DATADIR%%/ide/extensions/oracle.ide.searchbar.jar
+%%DATADIR%%/ide/extensions/oracle.ide.vcscore.jar
 %%DATADIR%%/ide/extensions/oracle.ide.vfs.jar
 %%DATADIR%%/ide/extensions/oracle.ide.vhv.jar
 %%DATADIR%%/ide/extensions/oracle.ide.webbrowser.jar
 %%DATADIR%%/ide/extensions/oracle.ide.webupdate.jar
 %%DATADIR%%/ide/extensions/oracle.ideimpl.apple.jar
-%%DATADIR%%/ide/extensions/oracle.ideimpl.indexing-migrator.jar
+%%DATADIR%%/ide/extensions/oracle.ideimpl.peek.jar
+%%DATADIR%%/ide/lib/TimingFramework.jar
 %%DATADIR%%/ide/lib/annotations.jar
+%%DATADIR%%/ide/lib/ceditor-text-format.jar
+%%DATADIR%%/ide/lib/commons-codec-1.3.jar
+%%DATADIR%%/ide/lib/commons-httpclient-3.1.jar
+%%DATADIR%%/ide/lib/commons-io-1.2.jar
+%%DATADIR%%/ide/lib/commons-logging-1.1.1.jar
 %%DATADIR%%/ide/lib/dbapi-impl.jar
 %%DATADIR%%/ide/lib/dbapi.jar
 %%DATADIR%%/ide/lib/dbplsql.jar
+%%DATADIR%%/ide/lib/fcpboot.jar
 %%DATADIR%%/ide/lib/ide-boot.jar
-%%DATADIR%%/ide/lib/ideimpl.jar
+%%DATADIR%%/ide/lib/ide-cache.jar
+%%DATADIR%%/ide/lib/ide-print-api.jar
 %%DATADIR%%/ide/lib/idert.jar
-%%DATADIR%%/ide/lib/indexing-migrator-boot.jar
 %%DATADIR%%/ide/lib/javatools.jar
 %%DATADIR%%/ide/lib/javax-ide.jar
 %%DATADIR%%/ide/lib/jxlayer.jar
-%%DATADIR%%/ide/lib/miglayout-3.6-swing.jar
-%%DATADIR%%/ide/lib/oicons.jar
+%%DATADIR%%/ide/lib/miglayout-swing.jar
+%%DATADIR%%/ide/lib/oracle.ide.osgi.jar
+%%DATADIR%%/ide/lib/peek.jar
+%%DATADIR%%/ide/lib/stax2-api-3.1.1.jar
 %%DATADIR%%/ide/lib/uic.jar
+%%DATADIR%%/ide/lib/webupdate-rt-boot.jar
+%%DATADIR%%/ide/lib/webupdate-rt.jar
+%%DATADIR%%/ide/lib/woodstox-core-asl-4.2.0.jar
+%%DATADIR%%/ide/lib/xml-factory.jar
+%%DATADIR%%/ide/macros/external-jdbc.properties
+%%DATADIR%%/ide/macros/external-nlsrtl.properties
+%%DATADIR%%/ide/macros/external-xdb.properties
 %%DATADIR%%/ide/macros/ide-boot.properties
-%%DATADIR%%/ide/macros/oracle.jdbc-driver-locator.jar
+%%DATADIR%%/ide/src/javax-ide-src.zip
 %%DATADIR%%/ide/themes/creating_themes.html
 %%DATADIR%%/ide/themes/fusionblue.jar
 %%DATADIR%%/ide/themes/sizingmargins.png
 %%DATADIR%%/javavm/lib/aurora.jar
 %%DATADIR%%/jdbc/lib/ojdbc6.jar
-%%DATADIR%%/jdbc/lib/ojdbc6dms.jar
-%%DATADIR%%/jdev.label
-%%DATADIR%%/jdev/bin/ojmigrator
-%%DATADIR%%/jdev/bin/ojmigrator.boot
-%%DATADIR%%/jdev/bin/ojmigrator.conf
+%%DATADIR%%/jdev/bin/ojwebupdate
+%%DATADIR%%/jdev/bin/ojwebupdate-logging.conf
+%%DATADIR%%/jdev/bin/ojwebupdate.boot
+%%DATADIR%%/jdev/bin/ojwebupdate.conf
 %%DATADIR%%/jdev/doc/extension/extension.xsd
 %%DATADIR%%/jdev/extensions/oracle.bm.jdukshare.jar
+%%DATADIR%%/jdev/extensions/oracle.deploy.core.jar
 %%DATADIR%%/jdev/extensions/oracle.diagram.jar
-%%DATADIR%%/jdev/extensions/oracle.diagram.javadoc.jar
 %%DATADIR%%/jdev/extensions/oracle.diagram.registration.jar
-%%DATADIR%%/jdev/extensions/oracle.diagram.thumbnail.jar
 %%DATADIR%%/jdev/extensions/oracle.ide.audit.jar
 %%DATADIR%%/jdev/extensions/oracle.ide.db.explorer.jar
+%%DATADIR%%/jdev/extensions/oracle.ide.library.jar
+%%DATADIR%%/jdev/extensions/oracle.ide.macros.jar
 %%DATADIR%%/jdev/extensions/oracle.ide.status.jar
+%%DATADIR%%/jdev/extensions/oracle.ide.thumbnail.jar
+%%DATADIR%%/jdev/extensions/oracle.ide.usages-tracking.jar
 %%DATADIR%%/jdev/extensions/oracle.ide.xmlef.jar
-%%DATADIR%%/jdev/extensions/oracle.javacore.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.build.jar
 %%DATADIR%%/jdev/extensions/oracle.jdeveloper.classpath.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.common.jar
 %%DATADIR%%/jdev/extensions/oracle.jdeveloper.db.connection.jar
 %%DATADIR%%/jdev/extensions/oracle.jdeveloper.db.debug.probe.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.db.extras.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.git.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.git/license/License.txt
 %%DATADIR%%/jdev/extensions/oracle.jdeveloper.history.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.java.core.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.markers.todo.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.patch.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.runner.core.jar
 %%DATADIR%%/jdev/extensions/oracle.jdeveloper.runner.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.style.jar
 %%DATADIR%%/jdev/extensions/oracle.jdeveloper.subversion.jar
-%%DATADIR%%/jdev/extensions/oracle.jdeveloper.subversion/ganymed.jar
-%%DATADIR%%/jdev/extensions/oracle.jdeveloper.subversion/svnClientAdapter.jar
-%%DATADIR%%/jdev/extensions/oracle.jdeveloper.subversion/svnjavahl.jar
-%%DATADIR%%/jdev/extensions/oracle.jdeveloper.subversion/svnkit.jar
-%%DATADIR%%/jdev/extensions/oracle.jdeveloper.subversion/trilead.jar
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.subversion/licenses/COPYING
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.subversion/licenses/license.txt
+%%DATADIR%%/jdev/extensions/oracle.jdeveloper.technology.jar
 %%DATADIR%%/jdev/extensions/oracle.jdeveloper.vcs.jar
 %%DATADIR%%/jdev/extensions/oracle.mof.xmi.jar
-%%DATADIR%%/jdev/lib/batik-awt-util.jar
-%%DATADIR%%/jdev/lib/batik-bridge.jar
-%%DATADIR%%/jdev/lib/batik-css.jar
-%%DATADIR%%/jdev/lib/batik-dom.jar
-%%DATADIR%%/jdev/lib/batik-ext.jar
-%%DATADIR%%/jdev/lib/batik-gui-util.jar
-%%DATADIR%%/jdev/lib/batik-gvt.jar
-%%DATADIR%%/jdev/lib/batik-parser.jar
-%%DATADIR%%/jdev/lib/batik-script.jar
-%%DATADIR%%/jdev/lib/batik-svg-dom.jar
-%%DATADIR%%/jdev/lib/batik-svggen.jar
-%%DATADIR%%/jdev/lib/batik-transcoder.jar
-%%DATADIR%%/jdev/lib/batik-util.jar
-%%DATADIR%%/jdev/lib/batik-xml.jar
+%%DATADIR%%/jdev/extensions/oracle.webbrowser.osx/libLaunchService.dylib
 %%DATADIR%%/jdev/lib/javacompiler.jar
-%%DATADIR%%/jdev/lib/javacore.jar
-%%DATADIR%%/jdev/lib/jdev-remote.jar
 %%DATADIR%%/jdev/lib/jdev-rt.jar
 %%DATADIR%%/jdev/lib/jdev.jar
 %%DATADIR%%/jdev/lib/jdkver.jar
-%%DATADIR%%/jdev/lib/ojc.jar
+%%DATADIR%%/jdev/lib/jsch.jar
 %%DATADIR%%/jdev/lib/xmleditor.jar
 %%DATADIR%%/jdev/lib/xmlef-swing.jar
 %%DATADIR%%/jlib/dbui4.jar
+%%DATADIR%%/jlib/ewt3.jar
 %%DATADIR%%/jlib/inspect4.jar
-%%DATADIR%%/jlib/jdev-cm.jar
 %%DATADIR%%/jlib/jewt4.jar
+%%DATADIR%%/jlib/jgoodies-looks.jar
+%%DATADIR%%/jlib/jle3.jar
 %%DATADIR%%/jlib/orai18n-collation.jar
 %%DATADIR%%/jlib/orai18n-mapping.jar
 %%DATADIR%%/jlib/orai18n-servlet.jar
@@ -237,58 +371,530 @@ bin/sqldeveloper
 %%DATADIR%%/jviews/jviews-diagrammer.jar
 %%DATADIR%%/jviews/jviews-framework-lib.jar
 %%DATADIR%%/jviews/jviews-fwk-support.jar
-%%DATADIR%%/modules/glassfish.el_1.0.0.0_2-1.jar
-%%DATADIR%%/modules/glassfish.jaxb.xjc_1.0.0.0_2-1-12.jar
-%%DATADIR%%/modules/glassfish.jaxb_1.0.0.0_2-1-12.jar
-%%DATADIR%%/modules/javax.activation_1.1.jar
-%%DATADIR%%/modules/javax.jsp_1.2.0.0_2-1.jar
-%%DATADIR%%/modules/javax.xml.bind_2.1.1.jar
-%%DATADIR%%/modules/javax.xml.stream_1.0.0.0.jar
-%%DATADIR%%/modules/oracle.adf.model_11.1.1/db-ca.jar
-%%DATADIR%%/modules/oracle.adf.model_11.1.1/jdev-cm.jar
-%%DATADIR%%/modules/oracle.adf.model_11.1.1/oicons.jar
-%%DATADIR%%/modules/oracle.adf.share.ca_11.1.1/adf-share-base.jar
-%%DATADIR%%/modules/oracle.adf.share.ca_11.1.1/adf-share-ca.jar
-%%DATADIR%%/modules/oracle.adf.share_11.1.1/adflogginghandler.jar
-%%DATADIR%%/modules/oracle.adf.share_11.1.1/commons-el.jar
-%%DATADIR%%/modules/oracle.adf.share_11.1.1/jsp-el-api.jar
-%%DATADIR%%/modules/oracle.adf.share_11.1.1/oracle-el.jar
-%%DATADIR%%/modules/oracle.adf.view_11.1.1/dvt-jclient.jar
-%%DATADIR%%/modules/oracle.adf.view_11.1.1/dvt-utils.jar
-%%DATADIR%%/modules/oracle.bali.share_11.1.1/share.jar
-%%DATADIR%%/modules/oracle.classloader_11.1.1.jar
+%%DATADIR%%/modules/com.sun.xml.bind.jaxb-core_2.2.jar
+%%DATADIR%%/modules/com.sun.xml.bind.jaxb-impl_2.2.jar
+%%DATADIR%%/modules/com.sun.xml.bind.jaxb-jxc_2.2.jar
+%%DATADIR%%/modules/com.sun.xml.bind.jaxb-xjc_2.2.jar
+%%DATADIR%%/modules/el-api-2.2.1-b04.jar
+%%DATADIR%%/modules/glassfish.el_1.2.0.0_2-2.jar
+%%DATADIR%%/modules/javax.el-2.2.5.jar
+%%DATADIR%%/modules/javax.jsp_4.0.0.0_2-2.jar
+%%DATADIR%%/modules/javax.xml.bind_1.0.0.0_2-2-3.jar
+%%DATADIR%%/modules/javax.xml.stream_1.1.1.0.jar
+%%DATADIR%%/modules/oracle.adf.model_12.1.3/db-ca.jar
+%%DATADIR%%/modules/oracle.adf.model_12.1.3/jdev-cm.jar
+%%DATADIR%%/modules/oracle.adf.share.ca_12.1.3/adf-share-base.jar
+%%DATADIR%%/modules/oracle.adf.share.ca_12.1.3/adf-share-ca.jar
+%%DATADIR%%/modules/oracle.adf.share_12.1.3/adflogginghandler.jar
+%%DATADIR%%/modules/oracle.adf.share_12.1.3/commons-el.jar
+%%DATADIR%%/modules/oracle.adf.share_12.1.3/oracle-el.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/batik-anim.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/batik-awt-util.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/batik-bridge.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/batik-codec.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/batik-css.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/batik-dom.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/batik-ext.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/batik-extension.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/batik-gui-util.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/batik-gvt.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/batik-parser.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/batik-script.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/batik-svg-dom.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/batik-svggen.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/batik-swing.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/batik-transcoder.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/batik-util.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/batik-xml.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/dvt-jclient.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/dvt-utils.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/xml-apis-ext.jar
+%%DATADIR%%/modules/oracle.adf.view_12.1.3/xml-apis.jar
+%%DATADIR%%/modules/oracle.bali.share_12.1.3/share.jar
 %%DATADIR%%/modules/oracle.help_5.0/help-share.jar
 %%DATADIR%%/modules/oracle.help_5.0/ohj.jar
 %%DATADIR%%/modules/oracle.help_5.0/oracle_ice.jar
-%%DATADIR%%/modules/oracle.javatools_11.1.1/javamodel-rt.jar
-%%DATADIR%%/modules/oracle.javatools_11.1.1/javatools-nodeps.jar
-%%DATADIR%%/modules/oracle.ldap_11.1.1/jremtool.jar
-%%DATADIR%%/modules/oracle.ldap_11.1.1/ldapjclnt11.jar
-%%DATADIR%%/modules/oracle.ldap_11.1.1/ldifloadtool.jar
-%%DATADIR%%/modules/oracle.ldap_11.1.1/ojmisc.jar
-%%DATADIR%%/modules/oracle.xdb_11.1.0.jar
-%%DATADIR%%/modules/oracle.xdk_11.1.0/oraclexsql.jar
-%%DATADIR%%/modules/oracle.xdk_11.1.0/xml.jar
-%%DATADIR%%/modules/oracle.xdk_11.1.0/xmlmesg.jar
-%%DATADIR%%/modules/oracle.xdk_11.1.0/xmlparserv2.jar
-%%DATADIR%%/modules/oracle.xdk_11.1.0/xmlparserv2_jaxp_services.jar
-%%DATADIR%%/modules/oracle.xdk_11.1.0/xmlparserv2_sans_jaxp_services.jar
-%%DATADIR%%/modules/oracle.xdk_11.1.0/xquery.jar
-%%DATADIR%%/modules/oracle.xdk_11.1.0/xsqlserializers.jar
-%%DATADIR%%/modules/oracle.xdk_11.1.0/xsu12.jar
-%%DATADIR%%/modules/oracle.xmlef_11.1.1/xmlef.jar
+%%DATADIR%%/modules/oracle.javatools_12.1.3/javamodel-rt.jar
+%%DATADIR%%/modules/oracle.javatools_12.1.3/javatools-jndi-local.jar
+%%DATADIR%%/modules/oracle.javatools_12.1.3/javatools-nodeps.jar
+%%DATADIR%%/modules/oracle.javatools_12.1.3/oicons.jar
+%%DATADIR%%/modules/oracle.jrf_12.1.2/jrf-api.jar
+%%DATADIR%%/modules/oracle.ldap_12.1.2/ojmisc.jar
+%%DATADIR%%/modules/oracle.logging-utils_12.1.3.jar
+%%DATADIR%%/modules/oracle.xdk_12.1.2/oraclexsql.jar
+%%DATADIR%%/modules/oracle.xdk_12.1.2/xml.jar
+%%DATADIR%%/modules/oracle.xdk_12.1.2/xmlparserv2.jar
+%%DATADIR%%/modules/oracle.xdk_12.1.2/xqjapi.jar
+%%DATADIR%%/modules/oracle.xdk_12.1.2/xquery.jar
+%%DATADIR%%/modules/oracle.xdk_12.1.2/xsqlserializers.jar
+%%DATADIR%%/modules/oracle.xdk_12.1.2/xsu12.jar
+%%DATADIR%%/modules/oracle.xmlef_12.1.3/xmlef.jar
+%%DATADIR%%/netbeans/fcpbridge/.lastModified
+%%DATADIR%%/netbeans/fcpbridge/config/Modules/com-oracle-jdeveloper-extcache.xml
+%%DATADIR%%/netbeans/fcpbridge/config/Modules/com-oracle-jdeveloper-nbactions.xml
+%%DATADIR%%/netbeans/fcpbridge/config/Modules/com-oracle-jdeveloper-nbbridge.xml
+%%DATADIR%%/netbeans/fcpbridge/config/Modules/com-oracle-jdeveloper-nbwindowsystem.xml
+%%DATADIR%%/netbeans/fcpbridge/core/locale/core_jdev.jar
+%%DATADIR%%/netbeans/fcpbridge/core/org-netbeans-core-dynamicconfig.jar
+%%DATADIR%%/netbeans/fcpbridge/modules/com-oracle-jdeveloper-extcache.jar
+%%DATADIR%%/netbeans/fcpbridge/modules/com-oracle-jdeveloper-nbactions.jar
+%%DATADIR%%/netbeans/fcpbridge/modules/com-oracle-jdeveloper-nbbridge.jar
+%%DATADIR%%/netbeans/fcpbridge/modules/com-oracle-jdeveloper-nbwindowsystem.jar
+%%DATADIR%%/netbeans/fcpbridge/modules/locale/org-netbeans-core-netigso_jdev.jar
+%%DATADIR%%/netbeans/fcpbridge/modules/locale/org-netbeans-core-windows_jdev.jar
+%%DATADIR%%/netbeans/fcpbridge/modules/locale/org-netbeans-swing-plaf_jdev.jar
+%%DATADIR%%/netbeans/fcpbridge/modules/locale/org-openide-awt_jdev.jar
+%%DATADIR%%/netbeans/fcpbridge/modules/org-netbeans-core-dynamicconfig.jar
+%%DATADIR%%/netbeans/fcpbridge/update_tracking/com-oracle-jdeveloper-extcache.xml
+%%DATADIR%%/netbeans/fcpbridge/update_tracking/com-oracle-jdeveloper-nbactions.xml
+%%DATADIR%%/netbeans/fcpbridge/update_tracking/com-oracle-jdeveloper-nbbridge.xml
+%%DATADIR%%/netbeans/fcpbridge/update_tracking/com-oracle-jdeveloper-nbwindowsystem.xml
+%%DATADIR%%/netbeans/fcpbridge/update_tracking/org-netbeans-core-dynamicconfig.xml
+%%DATADIR%%/netbeans/ide/.lastModified
+%%DATADIR%%/netbeans/ide/config/Modules/com-jcraft-jsch.xml
+%%DATADIR%%/netbeans/ide/config/Modules/com-jcraft-jzlib.xml
+%%DATADIR%%/netbeans/ide/config/Modules/org-eclipse-jgit.xml
+%%DATADIR%%/netbeans/ide/config/Modules/org-netbeans-libs-git.xml
+%%DATADIR%%/netbeans/ide/config/Modules/org-netbeans-modules-editor-guards.xml
+%%DATADIR%%/netbeans/ide/modules/com-jcraft-jsch.jar
+%%DATADIR%%/netbeans/ide/modules/com-jcraft-jzlib.jar
+%%DATADIR%%/netbeans/ide/modules/locale/org-netbeans-libs-git_ja.jar
+%%DATADIR%%/netbeans/ide/modules/locale/org-netbeans-libs-git_pt_BR.jar
+%%DATADIR%%/netbeans/ide/modules/locale/org-netbeans-libs-git_zh_CN.jar
+%%DATADIR%%/netbeans/ide/modules/locale/org-netbeans-modules-editor-guards_de.jar
+%%DATADIR%%/netbeans/ide/modules/locale/org-netbeans-modules-editor-guards_es.jar
+%%DATADIR%%/netbeans/ide/modules/locale/org-netbeans-modules-editor-guards_fr.jar
+%%DATADIR%%/netbeans/ide/modules/locale/org-netbeans-modules-editor-guards_it.jar
+%%DATADIR%%/netbeans/ide/modules/locale/org-netbeans-modules-editor-guards_ja.jar
+%%DATADIR%%/netbeans/ide/modules/locale/org-netbeans-modules-editor-guards_ko.jar
+%%DATADIR%%/netbeans/ide/modules/locale/org-netbeans-modules-editor-guards_pt_BR.jar
+%%DATADIR%%/netbeans/ide/modules/locale/org-netbeans-modules-editor-guards_zh_CN.jar
+%%DATADIR%%/netbeans/ide/modules/locale/org-netbeans-modules-editor-guards_zh_TW.jar
+%%DATADIR%%/netbeans/ide/modules/org-eclipse-jgit.jar
+%%DATADIR%%/netbeans/ide/modules/org-netbeans-libs-git.jar
+%%DATADIR%%/netbeans/ide/modules/org-netbeans-modules-editor-guards.jar
+%%DATADIR%%/netbeans/ide/update_tracking/org-netbeans-libs-git.xml
+%%DATADIR%%/netbeans/ide/update_tracking/org-netbeans-modules-editor-guards.xml
+%%DATADIR%%/netbeans/platform/.lastModified
+%%DATADIR%%/netbeans/platform/config/ModuleAutoDeps/org-netbeans-core.xml
+%%DATADIR%%/netbeans/platform/config/ModuleAutoDeps/org-netbeans-modules-options-api.xml
+%%DATADIR%%/netbeans/platform/config/ModuleAutoDeps/org-netbeans-modules-queries.xml
+%%DATADIR%%/netbeans/platform/config/ModuleAutoDeps/org-openide-explorer.xml
+%%DATADIR%%/netbeans/platform/config/ModuleAutoDeps/org-openide-filesystems.xml
+%%DATADIR%%/netbeans/platform/config/ModuleAutoDeps/org-openide-loaders.xml
+%%DATADIR%%/netbeans/platform/config/ModuleAutoDeps/org-openide-modules.xml
+%%DATADIR%%/netbeans/platform/config/ModuleAutoDeps/org-openide-nodes.xml
+%%DATADIR%%/netbeans/platform/config/ModuleAutoDeps/org-openide-text.xml
+%%DATADIR%%/netbeans/platform/config/ModuleAutoDeps/org-openide-util.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-netbeans-api-annotations-common.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-netbeans-api-progress.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-netbeans-core-netigso.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-netbeans-core-windows.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-netbeans-core.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-netbeans-libs-osgi.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-netbeans-modules-editor-mimelookup.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-netbeans-modules-keyring.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-netbeans-modules-masterfs.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-netbeans-modules-netbinox.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-netbeans-modules-options-api.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-netbeans-modules-progress-ui.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-netbeans-modules-queries.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-netbeans-modules-sampler.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-netbeans-modules-settings.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-netbeans-spi-quicksearch.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-netbeans-swing-outline.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-netbeans-swing-plaf.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-netbeans-swing-tabcontrol.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-openide-actions.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-openide-awt.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-openide-dialogs.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-openide-explorer.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-openide-io.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-openide-loaders.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-openide-nodes.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-openide-text.xml
+%%DATADIR%%/netbeans/platform/config/Modules/org-openide-windows.xml
+%%DATADIR%%/netbeans/platform/core/core.jar
+%%DATADIR%%/netbeans/platform/core/locale/core_de.jar
+%%DATADIR%%/netbeans/platform/core/locale/core_es.jar
+%%DATADIR%%/netbeans/platform/core/locale/core_fr.jar
+%%DATADIR%%/netbeans/platform/core/locale/core_it.jar
+%%DATADIR%%/netbeans/platform/core/locale/core_ja.jar
+%%DATADIR%%/netbeans/platform/core/locale/core_ko.jar
+%%DATADIR%%/netbeans/platform/core/locale/core_pt_BR.jar
+%%DATADIR%%/netbeans/platform/core/locale/core_zh_CN.jar
+%%DATADIR%%/netbeans/platform/core/locale/core_zh_TW.jar
+%%DATADIR%%/netbeans/platform/core/locale/org-openide-filesystems_de.jar
+%%DATADIR%%/netbeans/platform/core/locale/org-openide-filesystems_es.jar
+%%DATADIR%%/netbeans/platform/core/locale/org-openide-filesystems_fr.jar
+%%DATADIR%%/netbeans/platform/core/locale/org-openide-filesystems_it.jar
+%%DATADIR%%/netbeans/platform/core/locale/org-openide-filesystems_ja.jar
+%%DATADIR%%/netbeans/platform/core/locale/org-openide-filesystems_ko.jar
+%%DATADIR%%/netbeans/platform/core/locale/org-openide-filesystems_pt_BR.jar
+%%DATADIR%%/netbeans/platform/core/locale/org-openide-filesystems_zh_CN.jar
+%%DATADIR%%/netbeans/platform/core/locale/org-openide-filesystems_zh_TW.jar
+%%DATADIR%%/netbeans/platform/core/org-openide-filesystems.jar
+%%DATADIR%%/netbeans/platform/lib/boot.jar
+%%DATADIR%%/netbeans/platform/lib/locale/boot_de.jar
+%%DATADIR%%/netbeans/platform/lib/locale/boot_es.jar
+%%DATADIR%%/netbeans/platform/lib/locale/boot_fr.jar
+%%DATADIR%%/netbeans/platform/lib/locale/boot_it.jar
+%%DATADIR%%/netbeans/platform/lib/locale/boot_ja.jar
+%%DATADIR%%/netbeans/platform/lib/locale/boot_ko.jar
+%%DATADIR%%/netbeans/platform/lib/locale/boot_pt_BR.jar
+%%DATADIR%%/netbeans/platform/lib/locale/boot_zh_CN.jar
+%%DATADIR%%/netbeans/platform/lib/locale/boot_zh_TW.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-modules_de.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-modules_es.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-modules_fr.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-modules_it.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-modules_ja.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-modules_ko.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-modules_pt_BR.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-modules_zh_CN.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-modules_zh_TW.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-util-lookup_de.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-util-lookup_es.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-util-lookup_fr.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-util-lookup_it.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-util-lookup_ja.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-util-lookup_ko.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-util-lookup_pt_BR.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-util-lookup_zh_CN.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-util_de.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-util_es.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-util_fr.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-util_it.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-util_ja.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-util_ko.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-util_pt_BR.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-util_zh_CN.jar
+%%DATADIR%%/netbeans/platform/lib/locale/org-openide-util_zh_TW.jar
+%%DATADIR%%/netbeans/platform/lib/org-openide-modules.jar
+%%DATADIR%%/netbeans/platform/lib/org-openide-util-lookup.jar
+%%DATADIR%%/netbeans/platform/lib/org-openide-util.jar
+%%DATADIR%%/netbeans/platform/modules/ext/nsProxyAutoConfig.js
+%%DATADIR%%/netbeans/platform/modules/ext/org.eclipse.osgi_3.8.0.v20120529-1548.jar
+%%DATADIR%%/netbeans/platform/modules/ext/osgi.cmpn-4.2.jar
+%%DATADIR%%/netbeans/platform/modules/ext/osgi.core-5.0.0.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-annotations-common_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-annotations-common_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-annotations-common_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-annotations-common_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-annotations-common_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-annotations-common_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-annotations-common_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-annotations-common_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-annotations-common_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-progress_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-progress_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-progress_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-progress_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-progress_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-progress_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-progress_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-progress_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-progress_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core-netigso_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core-netigso_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core-netigso_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core-netigso_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core-netigso_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core-netigso_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core-netigso_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core-netigso_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core-windows_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core-windows_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core-windows_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core-windows_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core-windows_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core-windows_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core-windows_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core-windows_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core-windows_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-core_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-libs-osgi_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-libs-osgi_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-libs-osgi_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-libs-osgi_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-libs-osgi_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-libs-osgi_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-libs-osgi_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-libs-osgi_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-editor-mimelookup_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-editor-mimelookup_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-editor-mimelookup_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-editor-mimelookup_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-editor-mimelookup_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-editor-mimelookup_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-editor-mimelookup_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-editor-mimelookup_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-editor-mimelookup_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-keyring_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-keyring_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-keyring_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-keyring_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-keyring_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-keyring_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-keyring_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-keyring_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-masterfs_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-masterfs_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-masterfs_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-masterfs_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-masterfs_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-masterfs_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-masterfs_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-masterfs_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-masterfs_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-netbinox_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-netbinox_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-netbinox_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-netbinox_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-netbinox_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-netbinox_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-netbinox_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-options-api_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-options-api_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-options-api_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-options-api_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-options-api_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-options-api_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-options-api_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-options-api_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-options-api_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-progress-ui_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-progress-ui_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-progress-ui_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-progress-ui_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-progress-ui_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-progress-ui_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-progress-ui_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-progress-ui_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-progress-ui_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-queries_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-queries_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-queries_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-queries_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-queries_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-queries_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-queries_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-queries_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-queries_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-sampler_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-sampler_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-sampler_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-sampler_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-sampler_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-sampler_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-sampler_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-settings_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-settings_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-settings_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-settings_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-settings_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-settings_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-settings_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-settings_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-modules-settings_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-spi-quicksearch_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-spi-quicksearch_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-spi-quicksearch_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-spi-quicksearch_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-spi-quicksearch_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-spi-quicksearch_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-spi-quicksearch_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-spi-quicksearch_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-spi-quicksearch_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-outline_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-outline_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-outline_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-outline_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-outline_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-outline_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-outline_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-outline_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-outline_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-plaf_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-plaf_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-plaf_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-plaf_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-plaf_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-plaf_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-plaf_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-plaf_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-plaf_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-tabcontrol_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-tabcontrol_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-tabcontrol_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-tabcontrol_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-tabcontrol_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-tabcontrol_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-tabcontrol_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-tabcontrol_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-swing-tabcontrol_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-actions_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-actions_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-actions_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-actions_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-actions_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-actions_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-actions_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-actions_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-actions_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-awt_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-awt_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-awt_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-awt_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-awt_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-awt_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-awt_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-awt_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-awt_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-dialogs_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-dialogs_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-dialogs_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-dialogs_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-dialogs_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-dialogs_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-dialogs_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-dialogs_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-dialogs_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-explorer_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-explorer_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-explorer_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-explorer_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-explorer_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-explorer_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-explorer_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-explorer_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-explorer_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-io_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-io_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-io_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-io_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-io_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-io_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-io_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-io_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-io_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-loaders_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-loaders_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-loaders_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-loaders_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-loaders_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-loaders_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-loaders_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-loaders_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-loaders_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-nodes_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-nodes_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-nodes_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-nodes_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-nodes_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-nodes_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-nodes_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-nodes_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-nodes_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-text_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-text_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-text_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-text_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-text_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-text_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-text_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-text_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-text_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-windows_de.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-windows_es.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-windows_fr.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-windows_it.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-windows_ja.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-windows_ko.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-windows_pt_BR.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-windows_zh_CN.jar
+%%DATADIR%%/netbeans/platform/modules/locale/org-openide-windows_zh_TW.jar
+%%DATADIR%%/netbeans/platform/modules/org-netbeans-api-annotations-common.jar
+%%DATADIR%%/netbeans/platform/modules/org-netbeans-api-progress.jar
+%%DATADIR%%/netbeans/platform/modules/org-netbeans-core-netigso.jar
+%%DATADIR%%/netbeans/platform/modules/org-netbeans-core-windows.jar
+%%DATADIR%%/netbeans/platform/modules/org-netbeans-core.jar
+%%DATADIR%%/netbeans/platform/modules/org-netbeans-libs-osgi.jar
+%%DATADIR%%/netbeans/platform/modules/org-netbeans-modules-editor-mimelookup.jar
+%%DATADIR%%/netbeans/platform/modules/org-netbeans-modules-keyring.jar
+%%DATADIR%%/netbeans/platform/modules/org-netbeans-modules-masterfs.jar
+%%DATADIR%%/netbeans/platform/modules/org-netbeans-modules-netbinox.jar
+%%DATADIR%%/netbeans/platform/modules/org-netbeans-modules-options-api.jar
+%%DATADIR%%/netbeans/platform/modules/org-netbeans-modules-progress-ui.jar
+%%DATADIR%%/netbeans/platform/modules/org-netbeans-modules-queries.jar
+%%DATADIR%%/netbeans/platform/modules/org-netbeans-modules-sampler.jar
+%%DATADIR%%/netbeans/platform/modules/org-netbeans-modules-settings.jar
+%%DATADIR%%/netbeans/platform/modules/org-netbeans-spi-quicksearch.jar
+%%DATADIR%%/netbeans/platform/modules/org-netbeans-swing-outline.jar
+%%DATADIR%%/netbeans/platform/modules/org-netbeans-swing-plaf.jar
+%%DATADIR%%/netbeans/platform/modules/org-netbeans-swing-tabcontrol.jar
+%%DATADIR%%/netbeans/platform/modules/org-openide-actions.jar
+%%DATADIR%%/netbeans/platform/modules/org-openide-awt.jar
+%%DATADIR%%/netbeans/platform/modules/org-openide-dialogs.jar
+%%DATADIR%%/netbeans/platform/modules/org-openide-explorer.jar
+%%DATADIR%%/netbeans/platform/modules/org-openide-io.jar
+%%DATADIR%%/netbeans/platform/modules/org-openide-loaders.jar
+%%DATADIR%%/netbeans/platform/modules/org-openide-nodes.jar
+%%DATADIR%%/netbeans/platform/modules/org-openide-text.jar
+%%DATADIR%%/netbeans/platform/modules/org-openide-windows.jar
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-api-annotations-common.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-api-progress.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-bootstrap.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-core-netigso.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-core-startup.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-core-windows.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-core.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-libs-osgi.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-modules-editor-mimelookup.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-modules-keyring.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-modules-masterfs.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-modules-netbinox.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-modules-options-api.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-modules-progress-ui.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-modules-queries.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-modules-sampler.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-modules-settings.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-spi-quicksearch.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-swing-outline.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-swing-plaf.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-netbeans-swing-tabcontrol.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-openide-actions.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-openide-awt.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-openide-dialogs.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-openide-explorer.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-openide-filesystems.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-openide-io.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-openide-loaders.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-openide-modules.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-openide-nodes.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-openide-text.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-openide-util-lookup.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-openide-util.xml
+%%DATADIR%%/netbeans/platform/update_tracking/org-openide-windows.xml
 %%DATADIR%%/rdbms/jlib/ojdi.jar
-%%DATADIR%%/sleepycat/je-3.3.62/lib/je-3.3.62.jar
-%%DATADIR%%/sqldeveloper/bin/apputil.sh
-%%DATADIR%%/sqldeveloper/bin/format.sh
-%%DATADIR%%/sqldeveloper/bin/headless
-%%DATADIR%%/sqldeveloper/bin/headless-Darwin.conf
-%%DATADIR%%/sqldeveloper/bin/headless.boot
-%%DATADIR%%/sqldeveloper/bin/headless.conf
+%%DATADIR%%/rdbms/jlib/xdb6.jar
+%%DATADIR%%/sleepycat/je-3.3.98/lib/je-3.3.98.jar
+%%DATADIR%%/sqldeveloper/bin/SQLDeveloperIcons.icns
 %%DATADIR%%/sqldeveloper/bin/jdk.conf
 %%DATADIR%%/sqldeveloper/bin/logging-debug.conf
 %%DATADIR%%/sqldeveloper/bin/logging.conf
-%%DATADIR%%/sqldeveloper/bin/migration.sh
+%%DATADIR%%/sqldeveloper/bin/sdcli
+%%DATADIR%%/sqldeveloper/bin/sdcli-Darwin.conf
+%%DATADIR%%/sqldeveloper/bin/sdcli.boot
+%%DATADIR%%/sqldeveloper/bin/sdcli.conf
 %%DATADIR%%/sqldeveloper/bin/splash.gif
 %%DATADIR%%/sqldeveloper/bin/splash.png
 %%DATADIR%%/sqldeveloper/bin/sqldeveloper
@@ -297,7 +903,6 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/bin/sqldeveloper-nondebug.conf
 %%DATADIR%%/sqldeveloper/bin/sqldeveloper.boot
 %%DATADIR%%/sqldeveloper/bin/sqldeveloper.conf
-%%DATADIR%%/sqldeveloper/bin/ututil.sh
 %%DATADIR%%/sqldeveloper/bin/version.properties
 %%DATADIR%%/sqldeveloper/demo/migration/application/README.txt
 %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/README.txt
@@ -316,6 +921,7 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/demo/migration/application/rules/asp.xml
 %%DATADIR%%/sqldeveloper/demo/migration/application/rules/java.xml
 %%DATADIR%%/sqldeveloper/demo/migration/application/rules/ksh.xml
+%%DATADIR%%/sqldeveloper/demo/migration/application/rules/perl-bteq.xml
 %%DATADIR%%/sqldeveloper/demo/migration/application/rules/perl.xml
 %%DATADIR%%/sqldeveloper/demo/migration/application/rules/sample.sql
 %%DATADIR%%/sqldeveloper/demo/migration/application/rules/specialized.xml
@@ -324,7 +930,6 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/demo/migration/application/rules/sybase_ctlib_c.xml
 %%DATADIR%%/sqldeveloper/demo/migration/application/rules/sybase_dblib_c.xml
 %%DATADIR%%/sqldeveloper/demo/migration/application/schema/scanner.xsd
-%%DATADIR%%/sqldeveloper/doc/dataminer_cue_cards.jar
 %%DATADIR%%/sqldeveloper/doc/dataminer_help.jar
 %%DATADIR%%/sqldeveloper/doc/icon.png
 %%DATADIR%%/sqldeveloper/doc/otn_new.css
@@ -335,6 +940,8 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/doc/welcome/de/welcome.html
 %%DATADIR%%/sqldeveloper/doc/welcome/en/Training.html
 %%DATADIR%%/sqldeveloper/doc/welcome/en/welcome.html
+%%DATADIR%%/sqldeveloper/doc/welcome/en/welcome.js
+%%DATADIR%%/sqldeveloper/doc/welcome/en/welcome_tran_source.js
 %%DATADIR%%/sqldeveloper/doc/welcome/es/Training.html
 %%DATADIR%%/sqldeveloper/doc/welcome/es/welcome.html
 %%DATADIR%%/sqldeveloper/doc/welcome/footer_style.css
@@ -390,11 +997,13 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/doc/welcome/zh_TW/welcome.html
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/datamodeler_help.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/en/welcome.html
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/en/welcome.js
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/en/welcome_tran_source.js
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/footer_style.css
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/main.css
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/startPage_script.js
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/subPage_script.js
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/welcome.html
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/welcomeImages/TPaths.png
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/welcomeImages/closedbook.png
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/welcomeImages/codesampleicon.png
@@ -428,31 +1037,35 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/welcomeImages/welcome_r2_c3_f3.png
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/welcomeImages/welcome_r2_c3_f4.png
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/welcomeImages/welcome_r2_c3_f5.png
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/icon.png
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/ActiveQueryBuilder.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/RSyntaxTextArea.License.txt
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/avalon-framework-4.2.0.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/awxml.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/batik-all-1.7.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/commons-io-1.3.1.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/commons-logging-1.0.4.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/dom4j-1.6.1.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/fop.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/jlfgr.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/js.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/log4j.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/ojmisc.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/olap_api.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/poi.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/pdfbox-app-1.8.0.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/rsyntaxtextarea.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/serializer-2.7.0.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/xalan-2.7.0.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/xml-apis-ext.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/xml-apis.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/xmlbeans-2.3.0.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib/xmlgraphics-commons-1.3.1.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/readme.html
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/CreateExtraUserForReporting.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/DMRS_Upgrade_Script_DM2.0patch_DM2.1.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/DMRS_Upgrade_Script_DM2.0patch_DM3.0.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/DMRS_Upgrade_Script_DM2.0patch_DM3.0_DML.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/DMRS_Upgrade_Script_DM2_DM2patch.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/DMRS_Upgrade_Script_DM3.0_DM3.1.sql
-%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/DMRS_Upgrade_Script_DM3.1_DM3.2.sql
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/DMRS_Upgrade_Script_DM3.1_DM3.3.sql
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/DMRS_Upgrade_Script_DM3.3_DM4.0.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/Pkg_Osdm_Utils.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/Pkg_Osdm_Utils_body.sql
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/Reporting Schema diagrams/Data Types model.pdf
@@ -499,6 +1112,12 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/MeasurementsDetails_html.xslt
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/MeasurementsDetails_pdf.xslt
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/MeasurementsDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/ObjectsComparison_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/ObjectsComparison_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/ObjectsComparison_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SearchResults_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SearchResults_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SearchResults_rtf.xslt
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SingleCollectionTypeDetails_html.xslt
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SingleCollectionTypeDetails_pdf.xslt
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10/SingleCollectionTypeDetails_rtf.xslt
@@ -541,6 +1160,12 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/MeasurementsDetails_html.xslt
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/MeasurementsDetails_pdf.xslt
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/MeasurementsDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/ObjectsComparison_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/ObjectsComparison_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/ObjectsComparison_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SearchResults_html.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SearchResults_pdf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SearchResults_rtf.xslt
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleCollectionTypeDetails_html.xslt
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleCollectionTypeDetails_pdf.xslt
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleCollectionTypeDetails_rtf.xslt
@@ -556,9 +1181,13 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleTableDetails_html.xslt
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleTableDetails_pdf.xslt
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20/SingleTableDetails_rtf.xslt
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/samples/Dimensional_model/Global11_demo.pdf
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/samples/Dimensional_model/global11_demo.zip
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/templates/ABBREVS_SAMPLE.csv
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/templates/plurals.csv
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/types/custom_report_templates.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/types/defaultRDBMSSites.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/types/dl_settings.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/types/dr_custom_scripts.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/types/old_defaultdomains.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/types/types.xml
@@ -618,6 +1247,7 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionTypeProxyOracle.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionTypeProxyOraclev10g.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/CollectionTypeProxyOraclev9i.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/Column.DependentColumnDescriptor.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/Column.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnIdentityDB2.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnIdentityDB2v80.xml
@@ -627,6 +1257,7 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnProxyOracle.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnProxyOraclev10g.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnProxyOraclev11g.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnProxyOraclev12c.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnProxyOraclev9i.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnProxySqlServer.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ColumnProxySqlServerv2k.xml
@@ -676,6 +1307,7 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DefaultSqlServer.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DefaultSqlServerv2k.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DefaultSqlServerv2k5.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/Design.DesignStorageDesc.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/Design.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DesignObject.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/DesignPart.xml
@@ -804,6 +1436,8 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/LoginSqlServer.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/LoginSqlServerv2k.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/LoginSqlServerv2k5.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/MaskTemplate.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/MaskTemplateFileWrapper.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/Measure.AggregateFunction.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/Measure.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/MeasureFolder.xml
@@ -828,6 +1462,7 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/MultidimensionalDesign.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/NodeGroupUDB.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/NodeGroupUDBv71.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/OptimizerHint.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/Owner.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/OwnerUDB.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/OwnerUDBv81.xml
@@ -872,6 +1507,7 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/QuotaItemOraclev10g.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/QuotaItemOraclev9i.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/RDBMSSite.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/RMDeletedMap.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/RMExtendedMap.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/RaggedHLink.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/RecordStructure.xml
@@ -914,6 +1550,8 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/SegmentOraclev10g.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/SegmentOraclev9i.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/SelectionCriteria.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/SensitiveType.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/SensitiveTypeFileWrapper.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/SequenceDB2.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/SequenceOracle.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/SequenceOraclev10g.xml
@@ -964,6 +1602,9 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/SynonymOraclev10g.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/SynonymOraclev9i.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/SynonymSqlServer.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/TSDPPolicy.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/TSDPPolicyFileWrapper.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/TSDPSubPolicy.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/TVConnector.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/TVDiagramView.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/Table.ColumnGroup.xml
@@ -1012,6 +1653,7 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/TemporaryTablespaceOracle.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/TemporaryTablespaceOraclev10g.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/TemporaryTablespaceOraclev9i.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/TopView.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/Transformation.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/TransformationFlow.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/TransformationPackage.xml
@@ -1057,6 +1699,7 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/UserSqlServerv2k.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/UserSqlServerv2k5.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/VCatDB2.xml
+%%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/ValidTimeDimension.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/VolumesDB2.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/XMLSchemaCollectionSqlServer.xml
 %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/XMLSchemaCollectionSqlServerv2k5.xml
@@ -1070,8 +1713,13 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.dmt.dataminer.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.dmt.dataminer/lib/chartbuilder.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.dmt.dataminer/lib/dtSchema.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.dmt.dataminer/lib/uic2.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.dmt.dataminer/lib/xmlschema.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.olap.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.olap/lib/collections.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.olap/lib/expresshelp.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.olap/lib/olap_api.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.olap/lib/olaphelp.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.olap/lib/olaplang.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.datamodeler_reports.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.dbanavigator.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.dbcart.jar
@@ -1085,19 +1733,19 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.msaccess.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.mysql.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.postgresql.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.sqlserver.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.sybase.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.teradata.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.core.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.core_antlr3.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.db2.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.gui.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.teradata_translator.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.oviewer.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.mysql.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.migration.translation.teradata.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.report.jar
+%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.rest.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.scheduler.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.schemabrowser.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.searchbar.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.security.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.snippet.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.spatial.jar
@@ -1106,7 +1754,6 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.timesten.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.tuning.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.unit_test.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.userextensions.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.worksheet.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.xmlschema.jar
 %%DATADIR%%/sqldeveloper/lib/ActiveQueryBuilder.jar
@@ -1114,9 +1761,9 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/lib/SQLinForm.jar
 %%DATADIR%%/sqldeveloper/lib/antlr-all-2.7.6.jar
 %%DATADIR%%/sqldeveloper/lib/antlr-runtime-3.1.3.jar
-%%DATADIR%%/sqldeveloper/lib/bcmail-jdk16-145.jar
-%%DATADIR%%/sqldeveloper/lib/bcprov-jdk16-145.jar
-%%DATADIR%%/sqldeveloper/lib/bctsp-jdk16-145.jar
+%%DATADIR%%/sqldeveloper/lib/aurora.jar
+%%DATADIR%%/sqldeveloper/lib/bcpkix-jdk15on-1.48.jar
+%%DATADIR%%/sqldeveloper/lib/bcprov-jdk15on-1.48.jar
 %%DATADIR%%/sqldeveloper/lib/common.jar
 %%DATADIR%%/sqldeveloper/lib/commons-codec-1.4.jar
 %%DATADIR%%/sqldeveloper/lib/commons-logging-1.1.1.jar
@@ -1127,143 +1774,174 @@ bin/sqldeveloper
 %%DATADIR%%/sqldeveloper/lib/httpclient-cache-4.1.1.jar
 %%DATADIR%%/sqldeveloper/lib/httpcore-4.1.jar
 %%DATADIR%%/sqldeveloper/lib/httpmime-4.1.1.jar
-%%DATADIR%%/sqldeveloper/lib/itextpdf-5.1.2.jar
+%%DATADIR%%/sqldeveloper/lib/itextpdf-5.4.4.jar
+%%DATADIR%%/sqldeveloper/lib/jcommander.jar
 %%DATADIR%%/sqldeveloper/lib/jgraphx.jar
-%%DATADIR%%/sqldeveloper/lib/jle2.jar
 %%DATADIR%%/sqldeveloper/lib/jline-0.9.9.jar
 %%DATADIR%%/sqldeveloper/lib/jsch.jar
 %%DATADIR%%/sqldeveloper/lib/log4j-1.2.13.jar
+%%DATADIR%%/sqldeveloper/lib/ojmisc.jar
+%%DATADIR%%/sqldeveloper/lib/oracle.dbtools.headless.jar
+%%DATADIR%%/sqldeveloper/lib/oracle.sqldeveloper.homesupport.jar
 %%DATADIR%%/sqldeveloper/lib/oracle.sqldeveloper.utils-nodeps.jar
 %%DATADIR%%/sqldeveloper/lib/oracle.sqldeveloper.utils.jar
-%%DATADIR%%/sqldeveloper/lib/poi-3.7-20101029.jar
-%%DATADIR%%/sqldeveloper/lib/poi-ooxml-3.7-20101029.jar
-%%DATADIR%%/sqldeveloper/lib/poi-ooxml-schemas-3.7-20101029.jar
+%%DATADIR%%/sqldeveloper/lib/poi-3.8-20120326.jar
+%%DATADIR%%/sqldeveloper/lib/poi-ooxml-3.8-20120326.jar
+%%DATADIR%%/sqldeveloper/lib/poi-ooxml-schemas-3.8-20120326.jar
 %%DATADIR%%/sqldeveloper/lib/resource-templates.jar
 %%DATADIR%%/sqldeveloper/lib/sdoapi.jar
 %%DATADIR%%/sqldeveloper/lib/sdovis.jar
 %%DATADIR%%/sqldeveloper/lib/stringtemplate-3.1b1.jar
 %%DATADIR%%/sqldeveloper/lib/xmlbeans-2.3.0.jar
-%%DATADIR%%/sqldeveloper/searchengines/SQLDevForum.png
-%%DATADIR%%/sqldeveloper/searchengines/SQLDevForum.src
-%%DATADIR%%/sqldeveloper/searchengines/asktom.png
-%%DATADIR%%/sqldeveloper/searchengines/asktom.src
-%%DATADIR%%/sqldeveloper/searchengines/google.gif
-%%DATADIR%%/sqldeveloper/searchengines/google.src
-%%DATADIR%%/sqldeveloper/searchengines/metalink.png
-%%DATADIR%%/sqldeveloper/searchengines/metalink.src
-%%DATADIR%%/sqldeveloper/searchengines/oradocs.png
-%%DATADIR%%/sqldeveloper/searchengines/oradocs.src
-%%DATADIR%%/sqldeveloper/searchengines/oradocs102vbook.png
-%%DATADIR%%/sqldeveloper/searchengines/oradocs102vbook.src
-%%DATADIR%%/sqldeveloper/searchengines/oradocs11vbook.png
-%%DATADIR%%/sqldeveloper/searchengines/oradocs11vbook.src
-%%DATADIR%%/sqldeveloper/searchengines/oradocs92vbook.png
-%%DATADIR%%/sqldeveloper/searchengines/oradocs92vbook.src
-%%DATADIR%%/sqldeveloper/searchengines/searchoraclecom.png
-%%DATADIR%%/sqldeveloper/searchengines/searchoraclecom.src
 %%DATADIR%%/sqlj/lib/runtime12.jar
-%%DATADIR%%/timingframework/README
-%%DATADIR%%/timingframework/TimingFramework.jar
+%%DATADIR%%/svnkit/antlr-runtime.jar
+%%DATADIR%%/svnkit/licenses/ANTLR-LICENSE
+%%DATADIR%%/svnkit/licenses/COPYING
+%%DATADIR%%/svnkit/licenses/JAVAHL-LICENSE
+%%DATADIR%%/svnkit/licenses/SEQUENCE-LICENSE
+%%DATADIR%%/svnkit/licenses/SQLJET-LICENSE
+%%DATADIR%%/svnkit/licenses/TRILEAD-LICENSE
+%%DATADIR%%/svnkit/licenses/license.txt
+%%DATADIR%%/svnkit/sequence.jar
+%%DATADIR%%/svnkit/sqljet.jar
+%%DATADIR%%/svnkit/svnClientAdapter.jar
+%%DATADIR%%/svnkit/svnjavahl.jar
+%%DATADIR%%/svnkit/svnkit.jar
+%%DATADIR%%/svnkit/trilead.jar
 %%DATADIR%%/view-source-paths.lis
-@dirrm %%DATADIR%%/timingframework
-@dirrm %%DATADIR%%/sqlj/lib
-@dirrm %%DATADIR%%/sqlj
-@dirrm %%DATADIR%%/sqldeveloper/searchengines
-@dirrm %%DATADIR%%/sqldeveloper/lib
-@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.dmt.dataminer/lib
-@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.dmt.dataminer
-@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/doc
-@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata
-@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/types
-@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/templates
-@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20
-@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10
-@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt
-@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/Reporting Schema diagrams
-@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports
-@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib
-@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/welcomeImages
-@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome
-@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc
-@dirrm %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler
-@dirrm %%DATADIR%%/sqldeveloper/extensions
-@dirrm %%DATADIR%%/sqldeveloper/doc/welcome/zh_TW
-@dirrm %%DATADIR%%/sqldeveloper/doc/welcome/zh_CN
-@dirrm %%DATADIR%%/sqldeveloper/doc/welcome/welcomeImages
-@dirrm %%DATADIR%%/sqldeveloper/doc/welcome/pt_BR
-@dirrm %%DATADIR%%/sqldeveloper/doc/welcome/ko
-@dirrm %%DATADIR%%/sqldeveloper/doc/welcome/ja
-@dirrm %%DATADIR%%/sqldeveloper/doc/welcome/it
-@dirrm %%DATADIR%%/sqldeveloper/doc/welcome/fr
-@dirrm %%DATADIR%%/sqldeveloper/doc/welcome/es
-@dirrm %%DATADIR%%/sqldeveloper/doc/welcome/en
-@dirrm %%DATADIR%%/sqldeveloper/doc/welcome/de
-@dirrm %%DATADIR%%/sqldeveloper/doc/welcome
-@dirrm %%DATADIR%%/sqldeveloper/doc
-@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/schema
-@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/rules
-@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/recognizers
-@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/sql
-@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/php
-@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/perl
-@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/ksh
-@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/java
-@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/example
-@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/c
-@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/asp
-@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource
-@dirrm %%DATADIR%%/sqldeveloper/demo/migration/application
-@dirrm %%DATADIR%%/sqldeveloper/demo/migration
-@dirrm %%DATADIR%%/sqldeveloper/demo
-@dirrm %%DATADIR%%/sqldeveloper/bin
-@dirrm %%DATADIR%%/sqldeveloper
-@dirrm %%DATADIR%%/sleepycat/je-3.3.62/lib
-@dirrm %%DATADIR%%/sleepycat/je-3.3.62
-@dirrm %%DATADIR%%/sleepycat
-@dirrm %%DATADIR%%/rdbms/jlib
-@dirrm %%DATADIR%%/rdbms
-@dirrm %%DATADIR%%/modules/oracle.xmlef_11.1.1
-@dirrm %%DATADIR%%/modules/oracle.xdk_11.1.0
-@dirrm %%DATADIR%%/modules/oracle.ldap_11.1.1
-@dirrm %%DATADIR%%/modules/oracle.javatools_11.1.1
-@dirrm %%DATADIR%%/modules/oracle.help_5.0
-@dirrm %%DATADIR%%/modules/oracle.bali.share_11.1.1
-@dirrm %%DATADIR%%/modules/oracle.adf.view_11.1.1
-@dirrm %%DATADIR%%/modules/oracle.adf.share_11.1.1
-@dirrm %%DATADIR%%/modules/oracle.adf.share.ca_11.1.1
-@dirrm %%DATADIR%%/modules/oracle.adf.model_11.1.1
-@dirrm %%DATADIR%%/modules
-@dirrm %%DATADIR%%/jviews
-@dirrm %%DATADIR%%/jlib
-@dirrm %%DATADIR%%/jdev/lib
-@dirrm %%DATADIR%%/jdev/extensions/oracle.jdeveloper.subversion
-@dirrm %%DATADIR%%/jdev/extensions
-@dirrm %%DATADIR%%/jdev/doc/extension
-@dirrm %%DATADIR%%/jdev/doc
-@dirrm %%DATADIR%%/jdev/bin
-@dirrm %%DATADIR%%/jdev
-@dirrm %%DATADIR%%/jdbc/lib
-@dirrm %%DATADIR%%/jdbc
-@dirrm %%DATADIR%%/javavm/lib
-@dirrm %%DATADIR%%/javavm
-@dirrm %%DATADIR%%/ide/themes
-@dirrm %%DATADIR%%/ide/macros
-@dirrm %%DATADIR%%/ide/lib
-@dirrm %%DATADIR%%/ide/extensions
-@dirrm %%DATADIR%%/ide/doc/extension
-@dirrm %%DATADIR%%/ide/doc
-@dirrm %%DATADIR%%/ide/bin
-@dirrm %%DATADIR%%/ide
-@dirrm %%DATADIR%%/dataminer/scripts
-@dirrm %%DATADIR%%/dataminer/demos/obe/UsingOracleDataMiner
-@dirrm %%DATADIR%%/dataminer/demos/obe/TextMining
-@dirrm %%DATADIR%%/dataminer/demos/obe/StarSchemaMining
-@dirrm %%DATADIR%%/dataminer/demos/obe
-@dirrm %%DATADIR%%/dataminer/demos/cuecards/Transformations
-@dirrm %%DATADIR%%/dataminer/demos/cuecards/TextMining
-@dirrm %%DATADIR%%/dataminer/demos/cuecards/StarSchemaMining
-@dirrm %%DATADIR%%/dataminer/demos/cuecards/GettingStarted
-@dirrm %%DATADIR%%/dataminer/demos/cuecards
-@dirrm %%DATADIR%%/dataminer/demos
-@dirrm %%DATADIR%%/dataminer
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/svnkit/licenses
+@dirrmtry %%DATADIR%%/svnkit
+@dirrmtry %%DATADIR%%/sqlj/lib
+@dirrmtry %%DATADIR%%/sqlj
+@dirrmtry %%DATADIR%%/sqldeveloper/lib
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.olap/lib
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.olap
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.dmt.dataminer/lib
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.dmt.dataminer
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata/doc
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/xmlmetadata
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/types
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/templates
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/samples/Dimensional_model
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/samples
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/20
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt/10
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/xslt
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports/Reporting Schema diagrams
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/reports
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/lib
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/welcomeImages
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome/en
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc/welcome
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler/doc
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions/oracle.datamodeler
+@dirrmtry %%DATADIR%%/sqldeveloper/extensions
+@dirrmtry %%DATADIR%%/sqldeveloper/doc/welcome/zh_TW
+@dirrmtry %%DATADIR%%/sqldeveloper/doc/welcome/zh_CN
+@dirrmtry %%DATADIR%%/sqldeveloper/doc/welcome/welcomeImages
+@dirrmtry %%DATADIR%%/sqldeveloper/doc/welcome/pt_BR
+@dirrmtry %%DATADIR%%/sqldeveloper/doc/welcome/ko
+@dirrmtry %%DATADIR%%/sqldeveloper/doc/welcome/ja
+@dirrmtry %%DATADIR%%/sqldeveloper/doc/welcome/it
+@dirrmtry %%DATADIR%%/sqldeveloper/doc/welcome/fr
+@dirrmtry %%DATADIR%%/sqldeveloper/doc/welcome/es
+@dirrmtry %%DATADIR%%/sqldeveloper/doc/welcome/en
+@dirrmtry %%DATADIR%%/sqldeveloper/doc/welcome/de
+@dirrmtry %%DATADIR%%/sqldeveloper/doc/welcome
+@dirrmtry %%DATADIR%%/sqldeveloper/doc
+@dirrmtry %%DATADIR%%/sqldeveloper/demo/migration/application/schema
+@dirrmtry %%DATADIR%%/sqldeveloper/demo/migration/application/rules
+@dirrmtry %%DATADIR%%/sqldeveloper/demo/migration/application/recognizers
+@dirrmtry %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/sql
+@dirrmtry %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/php
+@dirrmtry %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/perl
+@dirrmtry %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/ksh
+@dirrmtry %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/java
+@dirrmtry %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/example
+@dirrmtry %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/c
+@dirrmtry %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource/asp
+@dirrmtry %%DATADIR%%/sqldeveloper/demo/migration/application/exampleSource
+@dirrmtry %%DATADIR%%/sqldeveloper/demo/migration/application
+@dirrmtry %%DATADIR%%/sqldeveloper/demo/migration
+@dirrmtry %%DATADIR%%/sqldeveloper/demo
+@dirrmtry %%DATADIR%%/sqldeveloper/bin
+@dirrmtry %%DATADIR%%/sqldeveloper
+@dirrmtry %%DATADIR%%/sleepycat/je-3.3.98/lib
+@dirrmtry %%DATADIR%%/sleepycat/je-3.3.98
+@dirrmtry %%DATADIR%%/sleepycat
+@dirrmtry %%DATADIR%%/rdbms/jlib
+@dirrmtry %%DATADIR%%/rdbms
+@dirrmtry %%DATADIR%%/netbeans/platform/update_tracking
+@dirrmtry %%DATADIR%%/netbeans/platform/modules/locale
+@dirrmtry %%DATADIR%%/netbeans/platform/modules/ext
+@dirrmtry %%DATADIR%%/netbeans/platform/modules
+@dirrmtry %%DATADIR%%/netbeans/platform/lib/locale
+@dirrmtry %%DATADIR%%/netbeans/platform/lib
+@dirrmtry %%DATADIR%%/netbeans/platform/core/locale
+@dirrmtry %%DATADIR%%/netbeans/platform/core
+@dirrmtry %%DATADIR%%/netbeans/platform/config/Modules
+@dirrmtry %%DATADIR%%/netbeans/platform/config/ModuleAutoDeps
+@dirrmtry %%DATADIR%%/netbeans/platform/config
+@dirrmtry %%DATADIR%%/netbeans/platform
+@dirrmtry %%DATADIR%%/netbeans/ide/update_tracking
+@dirrmtry %%DATADIR%%/netbeans/ide/modules/locale
+@dirrmtry %%DATADIR%%/netbeans/ide/modules
+@dirrmtry %%DATADIR%%/netbeans/ide/config/Modules
+@dirrmtry %%DATADIR%%/netbeans/ide/config
+@dirrmtry %%DATADIR%%/netbeans/ide
+@dirrmtry %%DATADIR%%/netbeans/fcpbridge/update_tracking
+@dirrmtry %%DATADIR%%/netbeans/fcpbridge/modules/locale
+@dirrmtry %%DATADIR%%/netbeans/fcpbridge/modules
+@dirrmtry %%DATADIR%%/netbeans/fcpbridge/core/locale
+@dirrmtry %%DATADIR%%/netbeans/fcpbridge/core
+@dirrmtry %%DATADIR%%/netbeans/fcpbridge/config/Modules
+@dirrmtry %%DATADIR%%/netbeans/fcpbridge/config
+@dirrmtry %%DATADIR%%/netbeans/fcpbridge
+@dirrmtry %%DATADIR%%/netbeans
+@dirrmtry %%DATADIR%%/modules/oracle.xmlef_12.1.3
+@dirrmtry %%DATADIR%%/modules/oracle.xdk_12.1.2
+@dirrmtry %%DATADIR%%/modules/oracle.ldap_12.1.2
+@dirrmtry %%DATADIR%%/modules/oracle.jrf_12.1.2
+@dirrmtry %%DATADIR%%/modules/oracle.javatools_12.1.3
+@dirrmtry %%DATADIR%%/modules/oracle.help_5.0
+@dirrmtry %%DATADIR%%/modules/oracle.bali.share_12.1.3
+@dirrmtry %%DATADIR%%/modules/oracle.adf.view_12.1.3
+@dirrmtry %%DATADIR%%/modules/oracle.adf.share_12.1.3
+@dirrmtry %%DATADIR%%/modules/oracle.adf.share.ca_12.1.3
+@dirrmtry %%DATADIR%%/modules/oracle.adf.model_12.1.3
+@dirrmtry %%DATADIR%%/modules
+@dirrmtry %%DATADIR%%/jviews
+@dirrmtry %%DATADIR%%/jlib
+@dirrmtry %%DATADIR%%/jdev/lib
+@dirrmtry %%DATADIR%%/jdev/extensions/oracle.webbrowser.osx
+@dirrmtry %%DATADIR%%/jdev/extensions/oracle.jdeveloper.subversion/licenses
+@dirrmtry %%DATADIR%%/jdev/extensions/oracle.jdeveloper.subversion
+@dirrmtry %%DATADIR%%/jdev/extensions/oracle.jdeveloper.git/license
+@dirrmtry %%DATADIR%%/jdev/extensions/oracle.jdeveloper.git
+@dirrmtry %%DATADIR%%/jdev/extensions
+@dirrmtry %%DATADIR%%/jdev/doc/extension
+@dirrmtry %%DATADIR%%/jdev/doc
+@dirrmtry %%DATADIR%%/jdev/bin
+@dirrmtry %%DATADIR%%/jdev
+@dirrmtry %%DATADIR%%/jdbc/lib
+@dirrmtry %%DATADIR%%/jdbc
+@dirrmtry %%DATADIR%%/javavm/lib
+@dirrmtry %%DATADIR%%/javavm
+@dirrmtry %%DATADIR%%/ide/themes
+@dirrmtry %%DATADIR%%/ide/src
+@dirrmtry %%DATADIR%%/ide/macros
+@dirrmtry %%DATADIR%%/ide/lib
+@dirrmtry %%DATADIR%%/ide/extensions
+@dirrmtry %%DATADIR%%/ide/doc/extension
+@dirrmtry %%DATADIR%%/ide/doc
+@dirrmtry %%DATADIR%%/ide/bin
+@dirrmtry %%DATADIR%%/ide
+@dirrmtry %%DATADIR%%/external
+@dirrmtry %%DATADIR%%/equinox
+@dirrmtry %%DATADIR%%/dvt/dt
+@dirrmtry %%DATADIR%%/dvt
+@dirrmtry %%DATADIR%%/dropins
+@dirrmtry %%DATADIR%%/dataminer/scripts
+@dirrmtry %%DATADIR%%/dataminer
+@dirrmtry %%DATADIR%%/configuration
+@dirrmtry %%DATADIR%%

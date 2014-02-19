@@ -19,6 +19,8 @@ PORTDOCS=	README
 PLIST_FILES=	bin/darkbot %%ETCDIR%%/logs/.pkgcreate man/man1/darkbot.1.gz
 PLIST_DIRSTRY=	%%ETCDIR%%/logs/ %%ETCDIR%%/dat/ %%ETCDIR%%
 
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 pre-configure:

@@ -413,6 +413,15 @@ man/man1/pycolor.1.gz
 %%PYTHON_SITELIBDIR%%/IPython/external/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/external/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/external/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/external/appnope/__init__.py
+%%PYTHON_SITELIBDIR%%/IPython/external/appnope/__init__.pyc
+%%PYTHON_SITELIBDIR%%/IPython/external/appnope/__init__.pyo
+%%PYTHON_SITELIBDIR%%/IPython/external/appnope/_dummy.py
+%%PYTHON_SITELIBDIR%%/IPython/external/appnope/_dummy.pyc
+%%PYTHON_SITELIBDIR%%/IPython/external/appnope/_dummy.pyo
+%%PYTHON_SITELIBDIR%%/IPython/external/appnope/_nope.py
+%%PYTHON_SITELIBDIR%%/IPython/external/appnope/_nope.pyc
+%%PYTHON_SITELIBDIR%%/IPython/external/appnope/_nope.pyo
 %%PYTHON_SITELIBDIR%%/IPython/external/argparse/__init__.py
 %%PYTHON_SITELIBDIR%%/IPython/external/argparse/__init__.pyc
 %%PYTHON_SITELIBDIR%%/IPython/external/argparse/__init__.pyo
@@ -2634,6 +2643,7 @@ man/man1/pycolor.1.gz
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/external/decorators
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/external/decorator
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/external/argparse
+@dirrm %%PYTHON_SITELIBDIR%%/IPython/external/appnope
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/external
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/extensions/tests
 @dirrm %%PYTHON_SITELIBDIR%%/IPython/extensions

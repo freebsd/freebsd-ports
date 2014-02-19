@@ -7,22 +7,23 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
-COMMENT=	A lightweight pager for netwm compatible window managers
+COMMENT=	Lightweight pager for netwm compatible window managers
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
+USES=		gmake
 USE_XORG=	x11 xext
-USE_GMAKE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g; \
 	    s|%%LOCALBASE%%|${LOCALBASE}|g; \
 	    s|%%CXX%%|${CXX}|g; \
 	    s|sed|gsed|g' ${WRKSRC}/Makefile
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>

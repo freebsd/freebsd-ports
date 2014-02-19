@@ -22,6 +22,7 @@ DESKTOP_ENTRIES="zNotes" "Notes managment" \
 		"Utility;TextEditor;Qt;" true
 
 OPTIONS_DEFINE=		NLS
+OPTIONS_SUB=		yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/.path =/s|/usr|$$$$PREFIX|g' \

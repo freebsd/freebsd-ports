@@ -12,9 +12,7 @@ COMMENT=	Command line shell-like ftp client
 LICENSE=	GPLv3
 
 GNU_CONFIGURE=	yes
-MAN1=		${PORTNAME}.1
 
-PLIST_FILES=	bin/cmdftp
+PLIST_FILES=	bin/cmdftp man/man1/${PORTNAME}.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

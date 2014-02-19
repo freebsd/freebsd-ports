@@ -21,7 +21,6 @@ PEAR_CHANNEL=	pirum
 PEAR_AUTOINSTALL=	yes
 
 DEFAULT_PHP_VER=5
-IGNORE_WITH_PHP=4
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/devel/pear/bsd.pear.mk"

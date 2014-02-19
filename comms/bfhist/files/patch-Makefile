@@ -1,0 +1,14 @@
+--- ./Makefile.orig	2004-11-26 09:58:08.000000000 +0100
++++ ./Makefile	2014-02-16 13:15:20.704540535 +0100
+@@ -13,6 +13,9 @@
+ 	rm -f $(OBJS)
+ 	rm -f $(BINS)
+ 
+-install: all
+-	$(INSTALL) bfhist $(PREFIX)/bin
++strip:
++	strip bfhist
++
++install: strip all
++	$(INSTALL) bfhist $(DESTDIR)$(PREFIX)/bin
+ 

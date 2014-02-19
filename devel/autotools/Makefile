@@ -23,8 +23,7 @@ PLIST_FILES=	share/${PORTNAME}
 NO_BUILD=	yes
 NO_FETCH=	yes
 
-NO_STAGE=	yes
 do-install:
-	@${ECHO_CMD} "Placeholder file" > ${PREFIX}/${PLIST_FILES}
+	@${ECHO_CMD} "Placeholder file" > ${STAGEDIR}${PREFIX}/${PLIST_FILES}
 
 .include <bsd.port.mk>

@@ -404,5 +404,4 @@ module-dirs: patch
 module-files: patch
 	@cd ${WRKSRC}; ${FIND} -s . -type f -d | ${SED} -e's|^\./|		|;s|$$| \\|'
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

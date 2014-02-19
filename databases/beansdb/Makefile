@@ -13,8 +13,7 @@ GNU_CONFIGURE=	yes
 USE_CSTD=	gnu89
 CFLAGS+=	${PTHREAD_LIBS}
 
-MAN1=		beansdb.1
-PLIST_FILES=	bin/beansdb
+PLIST_FILES=	bin/beansdb \
+		man/man1/beansdb.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

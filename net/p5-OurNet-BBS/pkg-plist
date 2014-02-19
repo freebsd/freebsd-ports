@@ -116,6 +116,12 @@ bin/bbsmail
 %%SITE_PERL%%/OurNet/BBS/SocketScalar.pm
 %%SITE_PERL%%/OurNet/BBS/Tutorial.pod
 %%SITE_PERL%%/OurNet/BBS/Utils.pm
+%%PERL5_MAN3%%/OurNet::BBS.3.gz
+%%PERL5_MAN3%%/OurNet::BBS::Roadmap.3.gz
+%%PERL5_MAN3%%/OurNet::BBS::Tutorial.3.gz
+man/man1/bbsboard.1.gz
+man/man1/bbscomd.1.gz
+man/man1/bbsmail.1.gz
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OurNet/BBS
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/OurNet
 @dirrmtry %%SITE_PERL%%/OurNet/BBS/BBSAgent

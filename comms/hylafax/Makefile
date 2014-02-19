@@ -3,6 +3,7 @@
 
 PORTNAME=	hylafax
 PORTVERSION=	6.0.6
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
@@ -15,7 +16,6 @@ LIB_DEPENDS=	libtiff.so:${PORTSDIR}/graphics/tiff \
 		libjbig.so:${PORTSDIR}/graphics/jbigkit
 
 MAKE_JOBS_UNSAFE=	yes
-#NO_STAGE=	yes
 NEED_ROOT=	yes
 
 USE_GHOSTSCRIPT=yes
@@ -85,6 +85,8 @@ post-patch:
 		${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's,-O hfaxd.conf,-O hfaxd.conf-dist,' \
 		${WRKSRC}/hfaxd/Makefile.in
+	${REINPLACE_CMD} -e 's,hosts.hfaxd,hosts.hfaxd-dist,' \
+		${WRKSRC}/etc/Makefile.in
 	${REINPLACE_CMD} -e 's,-O typerules,-O typerules-dist,' \
 		-e 's,-O pagesizes,-O pagesizes-dist -src pagesizes,' \
 		${WRKSRC}/libhylafax/Makefile.in

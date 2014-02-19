@@ -3,6 +3,7 @@
 
 PORTNAME=	astyle
 PORTVERSION=	2.04
+PORTREVISION=	1
 CATEGORIES=	devel textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}_linux
@@ -16,17 +17,17 @@ ALL_TARGET=	astyle
 CFLAGS+=	-W -Wall -fno-rtti -fno-exceptions
 LDFLAGS+=	-s
 MAKE_ARGS+=	CFLAGS="${CFLAGS}"
-USES=		gmake
-USE_GCC=	yes
+USES=		compiler gmake iconv
 
 WRKSRC=		${WRKDIR}/astyle/build/gcc
 
 pre-patch:
-	@${REINPLACE_CMD} -e 's,^CFLAGS,#CFLAGS,; s,g++,${CXX},;' ${WRKSRC}/Makefile
-
-.include <bsd.port.options.mk>
+	@${REINPLACE_CMD} -e 's,^CFLAGS,#CFLAGS,; s,g++,${CXX},; \
+		s,\(CFLAGSr.*=.*\),\1 -I${LOCALBASE}/include,' \
+		${WRKSRC}/Makefile
 
 do-install:
+	${STRIP_CMD} ${WRKSRC}/bin/astyle
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/astyle ${STAGEDIR}${PREFIX}/bin
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/astyle/doc/*.html ${STAGEDIR}${DOCSDIR}

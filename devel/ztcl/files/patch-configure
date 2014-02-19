@@ -1,5 +1,14 @@
---- configure.orig	Sat May 22 09:41:22 2004
-+++ configure	Wed Apr 26 12:01:02 2006
+--- configure.orig	2004-05-22 07:41:22.000000000 +0200
++++ configure	2014-02-17 16:43:40.000000000 +0100
+@@ -3919,7 +3919,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ltclmorestub0.7g -ltclstub8.4g $LIBS"
++LIBS="-ltclmorestub0.7g $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
 @@ -3986,7 +3986,7 @@
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
@@ -9,6 +18,15 @@
  cat >conftest.$ac_ext <<_ACEOF
  #line $LINENO "configure"
  /* confdefs.h.  */
+@@ -6748,7 +6748,7 @@
+ 	    # results, and the version is kept in special file).
+ 
+ 	    if test -r /etc/.relid -a "X`uname -n`" = "X`uname -s`" ; then
+-		system=MP-RAS-`awk '{print }' /etc/.relid'`
++		system=MP-RAS-`awk '{print }' /etc/.relid`
+ 	    fi
+ 	    if test "`uname -s`" = "AIX" ; then
+ 		system=AIX-`uname -v`.`uname -r`
 @@ -7892,11 +7892,12 @@
  		EXTRA_CFLAGS="-pthread"
  	    	LDFLAGS="$LDFLAGS -pthread"

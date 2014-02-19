@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tgif
-PORTVERSION=	4.2.2
-PORTREVISION=	1
+PORTVERSION=	4.2.5
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://bourbon.usc.edu/pub/tgif/ \
 		http://groups.yahoo.com/group/tgif4-announce/files/ \
@@ -11,7 +10,12 @@ MASTER_SITES=	ftp://bourbon.usc.edu/pub/tgif/ \
 DISTNAME=	${PORTNAME}-QPL-${PORTVERSION}
 
 MAINTAINER=	bmc@clapper.org
-COMMENT=	An Xlib-based two-dimensional drawing tool and hyper-object browser
+COMMENT=	Xlib-based two-dimensional drawing tool and hyper-object browser
+
+LICENSE=	QPLv1
+LICENSE_NAME=	Q PUBLIC LICENSE v1.0
+LICENSE_FILE=	${WRKSRC}/LICENSE.QPL
+LICENSE_PERMS=	auto-accept
 
 RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 
@@ -22,11 +26,7 @@ USES=		imake
 PORTDOCS=	HISTORY README
 USE_XORG=	x11 xext xt sm ice
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
-CFLAGS+=	${PTHREAD_CFLAGS}
 
-MAN1=		tgif.1
-
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}
@@ -57,13 +57,11 @@ pre-configure:
 		) > ${WRKSRC}/Tgif.tmpl-freebsdports
 post-install:
 .for D in demo spice
-		${MKDIR} ${EXAMPLESDIR}/${D}
+		${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${D}
 		cd ${WRKSRC}/${D:S/demo//} \
-			&& ${INSTALL_DATA} ${EXAMPLES.${D}} ${EXAMPLESDIR}/${D}
+			&& ${INSTALL_DATA} ${EXAMPLES.${D}} ${STAGEDIR}${EXAMPLESDIR}/${D}
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-		${MKDIR} ${DOCSDIR}
-		cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
-.endif
+		${MKDIR} ${STAGEDIR}${DOCSDIR}
+		cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

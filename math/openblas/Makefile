@@ -24,11 +24,9 @@ GH_COMMIT=	835293c
 LARGE_FILE=	large.tgz
 TIMING_FILE=	timing.tgz
 
-USES=		gmake perl5
+USES=		fortran gmake perl5
 USE_GCC=	4.6+
-USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
-USE_FORTRAN=	yes
 USE_PERL5=	build
 
 OPENBLAS_SUFX=	r${PORTVERSION}

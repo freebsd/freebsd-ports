@@ -11,6 +11,5 @@ MAINTAINER=	ericb@thedeepsky.com
 COMMENT=	Verifies the integrity of mp3 audio files
 
 PLIST_FILES=	bin/mp3_check
-NO_STAGE=	yes
 
 .include <bsd.port.mk>

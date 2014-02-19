@@ -12,7 +12,7 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	jh@jameshoward.us
 COMMENT=	X-12-ARIMA seasonal adjustment program
 
-USE_FORTRAN=	yes
+USES=		fortran
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile.lnx
 NO_STAGE=	yes

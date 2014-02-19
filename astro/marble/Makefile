@@ -3,16 +3,12 @@
 PORTNAME=	marble
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	astro kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
+MASTER_SITES=	KDE/${KDE4_BRANCH}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE/${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Virtual globe and world atlas for KDE
 
-CONFLICTS=	kdeedu-4.4.[0-4]
-
-NO_STAGE=	yes
 USE_KDE4=	kdehier kdelibs kdeprefix automoc4
 USES=		cmake:outsource gmake shared-mime-info
 USE_QT4=	corelib dbus declarative designer_build gui network phonon \
@@ -23,22 +19,21 @@ USE_LDCONFIG=	yes
 MAKE_ENV=	XDG_CONFIG_HOME=/dev/null
 CMAKE_ARGS=	-DMOBILE:BOOL=FALSE
 
+LIB_DEPENDS=	libquazip.so:${PORTSDIR}/archivers/quazip
+
 OPTIONS_DEFINE=	GPS
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
+OPTIONS_DEFAULT=	GPS
+OPTIONS_SUB=	yes
+
 GPS_DESC=	Support for GPS position provider
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MGPS}
-LIB_DEPENDS+=	gps.20:${PORTSDIR}/astro/gpsd
-PLIST_SUB+=	GPS=""
-.else
-CMAKE_ARGS+=	-DWITH_libgps:BOOL=FALSE
-PLIST_SUB+=	GPS="@comment "
-.endif
+GPS_LIB_DEPENDS=	libgps.so:${PORTSDIR}/astro/gpsd
+GPS_CMAKE_OFF=	-DWITH_libgps:BOOL=FALSE
 
 pre-configure:
 	${REINPLACE_CMD} -e '/libgps/ s/FIND_PACKAGE/macro_optional_find_package/' \
 		${WRKSRC}/src/plugins/positionprovider/CMakeLists.txt
+# Prevent updating MIME during build.
+	${REINPLACE_CMD} -e '/update_xdg_mimetypes/ d' \
+		${PATCH_WRKSRC}/data/CMakeLists.txt
 
 .include <bsd.port.mk>

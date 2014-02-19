@@ -20,6 +20,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--libdir=/usr/lib
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-install:

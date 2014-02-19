@@ -13,7 +13,7 @@
  
  /* Our library omits declarations for these functions! */
  
-+#ifndef __FreeBSD__
++#if !defined(__FreeBSD__) && !defined(__DragonFly__)
  int link           PP( (char *, char *) );
  int unlink         PP( (char *) );
 +#endif

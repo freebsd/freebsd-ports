@@ -3,49 +3,19 @@
 
 PORTNAME=	docbook-sk
 PORTVERSION=	4.1.2
-PORTREVISION=	4
-CATEGORIES=	textproc
-MASTER_SITES=	http://www.oasis-open.org/docbook/xml/${PORTVERSION}/
+PORTREVISION=	5
 DISTNAME=	docbkx${PORTVERSION:S/.//g}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	XML version of the DocBook DTD version controlled for ScrollKeeper
 
-RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
+NO_ISOCAT=	yes
+XML_DTD=	yes
+HAS_MANUAL_CATALOG_FILE=	yes
 
-USE_ZIP=	yes
-NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
-PLIST_SUB=	DTD_VERSION=${PORTVERSION} \
-		XMLCATMGR=${XMLCATMGR} \
-		DOCBOOKDIR=${DOCBOOKDIR} \
-		CATALOG_PORTS_SGML=${CATALOG_PORTS_SGML} \
-		CATALOG_PORTS_XML=${CATALOG_PORTS_XML}
+DTD_NAME?=	${PORTNAME:S/-sk//}
 
-DOCBOOKDIR=	${PREFIX}/share/xml/${PORTNAME:S/-sk//}/${PORTVERSION}
-XMLCATMGR=	${LOCALBASE}/bin/xmlcatmgr
-CATALOG_PORTS_SGML=	${PREFIX}/share/sgml/catalog.ports
-CATALOG_PORTS_XML=	${PREFIX}/share/xml/catalog.ports
+PORTDOCS=	ChangeLog *.txt
 
-NO_STAGE=	yes
-pre-su-install:
-	@[ -d ${DOCBOOKDIR}/ent ] || ${MKDIR} ${DOCBOOKDIR}/ent
-
-do-install:
-	for file in `${FIND} ${WRKSRC} -type f | ${SED} -e 's|^${WRKSRC}/||' | ${GREP} -v '^\.' | ${SORT}`; do \
-		${INSTALL_DATA} ${WRKSRC}/$$file ${DOCBOOKDIR}/$$file; \
-	done
-
-post-install:
-	@${XMLCATMGR} -c ${CATALOG_PORTS_XML} add public "-//OASIS//ELEMENTS DocBook XML Information Pool V4.1.2//EN" file://${DOCBOOKDIR}/dbpoolx.mod
-	@${XMLCATMGR} -c ${CATALOG_PORTS_XML} add public "-//OASIS//DTD DocBook XML V4.1.2//EN" file://${DOCBOOKDIR}/docbookx.dtd
-	@${XMLCATMGR} -c ${CATALOG_PORTS_XML} add public "-//OASIS//ENTITIES DocBook XML Character Entities V4.1.2//EN" file://${DOCBOOKDIR}/dbcentx.mod
-	@${XMLCATMGR} -c ${CATALOG_PORTS_XML} add public "-//OASIS//ENTITIES DocBook XML Notations V4.1.2//EN" file://${DOCBOOKDIR}/dbnotnx.mod
-	@${XMLCATMGR} -c ${CATALOG_PORTS_XML} add public "-//OASIS//ENTITIES DocBook XML Additional General Entities V4.1.2//EN" file://${DOCBOOKDIR}/dbgenent.mod
-	@${XMLCATMGR} -c ${CATALOG_PORTS_XML} add public "-//OASIS//ELEMENTS DocBook XML Document Hierarchy V4.1.2//EN" file://${DOCBOOKDIR}/dbhierx.mod
-	@${XMLCATMGR} -c ${CATALOG_PORTS_XML} add public "-//OASIS//DTD XML Exchange Table Model 19990315//EN" file://${DOCBOOKDIR}/soextblx.dtd
-	@${XMLCATMGR} -c ${CATALOG_PORTS_XML} add public "-//OASIS//DTD DocBook XML CALS Table Model V4.1.2//EN" file://${DOCBOOKDIR}/calstblx.dtd
-	@${XMLCATMGR} -c ${CATALOG_PORTS_XML} add rewriteSystem "http://www.oasis-open.org/docbook/xml/4.1.2" file://${DOCBOOKDIR}
-	@${XMLCATMGR} -c ${CATALOG_PORTS_XML} add rewriteURI "http://www.oasis-open.org/docbook/xml/4.1.2" file://${DOCBOOKDIR}
-
+.include "../../textproc/docbook/bsd.docbook.mk"
 .include <bsd.port.mk>

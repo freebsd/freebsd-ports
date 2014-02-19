@@ -21,6 +21,9 @@ MAN1=		plotmtv.1
 MAKE_JOBS_UNSAFE=	yes
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

@@ -5,6 +5,96 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140218:
+  AFFECTS: users of KDE SC 4
+  AUTHOR: kde@FreeBSD.org
+
+  KDE SC ports have been updated to 4.12.2. kdeadmin, kdenetwork, kdesdk,
+  and kdetoys ports have been split due to upstream changes.
+
+  KDE Workspace port has been updated to 4.11.6. It requires modern
+  Mesa libraries, provided by WITH_NEW_XORG knob. To update Xorg ports
+  to newer version follow instructions at https://wiki.freebsd.org/Graphics
+
+20140218:
+  AFFECTS: users of misc/kdehier4
+  AUTHOR: kde@FreeBSD.org
+
+  KDE4_PREFIX has been changed from /usr/local/kde4 to /usr/local.
+  All ports that depends on kdehier4 must be reinstalled.
+  PORTREVISION for affected ports has been increased, upgrading tools
+  (portmaster, pkg) should handle this update without manual intervention.
+  Please check /usr/local/kde4 for leftovers after upgrade. If you don't
+  have locally modified files, e.g. under /usr/local/kde4/etc, you may
+  safely remove /usr/local/kde4.
+
+20140214:
+  AFFECTS: users of lang/perl5.12
+  AUTHOR: mat@FreeBSD.org
+
+  Perl 5.12 has been removed.  The default Perl is lang/perl5.16.
+
+  Portupgrade users:
+    0) Fix pkgdb.db (for safety):
+	pkgdb -Ff
+
+    1) Reinstall new version of Perl (5.16):
+	portupgrade -o lang/perl5.16 -f lang/perl5.12
+
+    2) Reinstall everything that depends on Perl:
+	portupgrade -fr lang/perl5.16
+
+  Portmaster users:
+	portmaster -o lang/perl5.16 lang/perl5.12
+
+	Conservative:
+	portmaster p5-
+
+	Comprehensive (but perhaps overkill):
+	portmaster -r perl-
+
+  Note: If the "perl-" glob matches more than one port you will need to specify
+	the name of the Perl directory in /var/db/pkg explicitly.  Also,
+	depending on when you've upgraded perl 5.12 last, the prefix may be
+	perl5- or perl5.12-.
+
+20140211:
+  AFFECTS: users of lang/php* database/postgresql* database/mysql* www/apache*
+  AUTHOR: mat@FreeBSD.org
+
+  The default versions of lang/php*, databases/postgresql*,
+  databases/mysql* and www/apache* have been changed to support the
+  new DEFAULT_VERSIONS variable.
+
+  DEFAULT_APACHE_VER, DEFAULT_MYSQL_VER, DEFAULT_PGSQL_VER,
+  DEFAULT_FPC_VER and DEFAULT_PHP_VER are now deprecated.  You can use
+  the new DEFAULT_VERSIONS variable like this:
+
+  DEFAULT_VERSIONS=php=5.5 mysql=5.6 apache=2.4
+
+20140208:
+  AFFECTS: users of spamdyke
+  AUTHOR: bdrewery@FreeBSD.org
+
+  Spamdyke has been updated to 5.0.0. The behavior has changed from
+  4.x. Please see the upgrading notes at:
+
+  http://www.spamdyke.org/documentation/UPGRADING_version_4_to_version_5.txt
+
+20140208:
+  AFFECTS: users of icu
+  AUTHOR: bapt@FreeBSD.org
+
+  icu has been updated to 52.1. Please rebuild all ports that depend on it
+  if you have the glib20 port built with COLLATION_FIX option activated
+
+  If you use portmaster:
+        portmaster -w -r icu
+  If you use portupgrade:
+        portupgrade -fr devel/icu
+  If you use pkgng with binary packages:
+        pkg install -fR devel/icu
+
 20140201:
   AFFECTS: users of net-mgmt/zabbix*
   AUTHOR: koobs@FreeBSD.org
@@ -633,6 +723,11 @@ you update your ports collection, before attempting any port upgrades.
 
   10-CURRENT after r254273 (committed on August 13, 2013) has an
   implementation of iconv enabled by default in libc.
+
+  NOTE: after r341775 (committed on January 29, 2014) and other
+  following commits, a few ports, including devel/glib20, depend
+  on the devel/libiconv again due to missing functionality in the
+  base iconv implementation.
 
   Due to this change some major overhauling of the ports tree has
   been necessary to move the ports to using that implementation.

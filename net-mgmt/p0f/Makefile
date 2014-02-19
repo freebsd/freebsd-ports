@@ -21,6 +21,9 @@ PORTDOCS=	ChangeLog README TODO existential-notes.txt \
 MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS 
+
 .include <bsd.port.options.mk>
 
 post-patch:

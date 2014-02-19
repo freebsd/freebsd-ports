@@ -15,8 +15,7 @@ COMMENT=	A rather general finite element solver using mixed finite elements
 LIB_DEPENDS=	gsl:${PORTSDIR}/math/gsl	\
 		lapack.4:${PORTSDIR}/math/lapack
 
-USE_GMAKE=	yes
-USE_FORTRAN=	yes
+USES=		fortran gmake
 GNU_CONFIGURE=	yes
 # Using --enable-sparskit instead of math/petsc.  The maintainer couldn't get
 # the math/petsc to work.  This is a bmake/gmake clash.
@@ -28,6 +27,9 @@ WANT_PERL=	yes
 MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/-lgfortran/& $${LDFLAGS}/' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)

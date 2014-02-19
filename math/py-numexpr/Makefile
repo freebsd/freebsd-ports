@@ -11,13 +11,13 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast numerical array expression evaluator for Python and NumPy
 
+LICENSE=	MIT
+
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_PYTHON=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 USE_PYDISTUTILS=yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|\(import\) \(setuptools\)|\1 do_not_use_\2|' ${WRKSRC}/${PYSETUP}
+USE_PYTHON=	yes
 
 .include <bsd.port.mk>

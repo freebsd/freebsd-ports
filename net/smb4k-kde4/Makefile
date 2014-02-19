@@ -3,7 +3,7 @@
 
 PORTNAME=		smb4k-kde4
 PORTVERSION=		0.10.9
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=		net kde
 MASTER_SITES=		${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	smb4k
@@ -27,6 +27,9 @@ DOCSDIR=	${PREFIX}/share/doc/HTML/en/smb4k
 SUB_FILES=	pkg-message
 
 NO_STAGE=	yes
+
+OPTIONS_DEFINE=	DOCS NLS 
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MNLS}

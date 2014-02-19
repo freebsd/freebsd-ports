@@ -1,13 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	weechat
-PORTVERSION=	20140110
+PORTVERSION=	20140213
 CATEGORIES=	irc
-MASTER_SITES=	http://perturb.me.uk/distfiles/ \
+MASTER_SITES=	http://perturb.me.uk/distfiles/weechat-devel/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	jase/weechat-devel
 PKGNAMESUFFIX=	-devel
 DISTNAME=	weechat-devel-${GITREV}
+DISTFILES=	${DISTNAME}.txz
 
 MAINTAINER=	jase@FreeBSD.org
 COMMENT=	A lightweight and user friendly ncurses based IRC client
@@ -19,14 +20,14 @@ UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 CONFLICTS=	weechat-0.3*
 
 USE_LDCONFIG=	yes
-USES=		cmake iconv
+USES=		cmake iconv ncurses
 CMAKE_ARGS+=	-DENABLE_GUILE=no
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 LIB_DEPENDS+=	libcurl.so:${PORTSDIR}/ftp/curl \
 		libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
-GITDESC=	v0.4.2-211-g3bba891
+GITDESC=	v0.4.3-14-gc324610
 GITREV!=	echo "${GITDESC}" | sed -E 's/^.*-g(.{7})$$/\1/'
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GITREV}
 
@@ -35,12 +36,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${GITREV}
 # Release.
 
 OPTIONS_DEFINE=	RUBY PYTHON PERL TCL LUA CHARSET BACKTRACE DEBUG ASPELL \
-		GNUTLS NLS DOCUMENTATION COLOR256 ICON MANPAGES
-OPTIONS_DEFAULT=CHARSET BACKTRACE DEBUG MANPAGES
+		GNUTLS NLS DOCS ICON MANPAGES
+OPTIONS_DEFAULTS=	RUBY PYTHON PERL TCL LUA CHARSET BACKTRACE DEBUG ASPELL \
+		GNUTLS ICON MANPAGES
 
 BACKTRACE_DESC=	Provide crash backtraces
 CHARSET_DESC=	Charset conversion support
-DOCUMENTATION_DESC=	Build and install documentation
 LUA_DESC=	Lua scripting support
 PERL_DESC=	Perl scripting support
 PYTHON_DESC=	Python scripting support
@@ -110,7 +111,7 @@ PLIST_SUB+=	PERL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
-USE_TCL=	84+
+USE_TCL=	85+
 .include "${PORTSDIR}/Mk/bsd.tcl.mk"
 CMAKE_ARGS+=	-DBSD_TCL_VER=${TCL_VER} \
 		-DBSD_TCL_LIBDIR=${LOCALBASE}/lib \
@@ -131,47 +132,36 @@ CMAKE_ARGS+=	-DENABLE_LUA=no
 PLIST_SUB+=	LUA="@comment "
 .endif
 
-.if ${PORT_OPTIONS:MDOCUMENTATION}
-BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
+.if defined(MAINTAINER_MODE)
+BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
+		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl \
+		asciidoc:${PORTSDIR}/textproc/asciidoc \
 		source-highlight>=3.1.5:${PORTSDIR}/textproc/source-highlight
-CMAKE_ARGS+=	-DENABLE_DOC=yes
-PLIST_SUB+=	DOCUMENTATION=""
+CMAKE_ARGS+=	-DENABLE_MAN=yes -DMANDIR=${MANPREFIX}/man -DENABLE_DOC=yes
 .else
-CMAKE_ARGS+=	-DENABLE_DOC=no
-PLIST_SUB+=	DOCUMENTATION="@comment "
+CMAKE_ARGS+=	-DENABLE_MAN=no -DENABLE_DOC=no
+.endif
+
+.if ${PORT_OPTIONS:MDOCS}
+PLIST_SUB+=	DOCS=""
+.if !defined(MAINTAINER_MODE)
+DISTFILES+=	${DISTNAME}-docs.txz
+.endif
+.else
+PLIST_SUB+=	DOCS="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MMANPAGES}
-.if defined(MAINTAINER_MODE)
-BUILD_DEPENDS+=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		docbook-xsl>=0:${PORTSDIR}/textproc/docbook-xsl
-.if empty(PORT_OPTIONS:MDOCUMENTATION)
-BUILD_DEPENDS+=	asciidoc:${PORTSDIR}/textproc/asciidoc \
-		source-highlight>=3.1.5:${PORTSDIR}/textproc/source-highlight
-.endif
-CMAKE_ARGS+=	-DENABLE_MAN=yes -DMANDIR=${MANPREFIX}/man
-.else
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:man/}
-MASTER_SITE_SUBDIR+=	jase/weechat-devel/:man
-DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
-		weechat-devel-20131015-manpages.tar.gz:man
-CMAKE_ARGS+=	-DENABLE_MAN=no
-.endif
 PLIST_SUB+=	MANPAGES=""
+.if !defined(MAINTAINER_MODE)
+DISTFILES+=	${DISTNAME}-manpages.txz
+.endif
 .else
-CMAKE_ARGS+=	-DENABLE_MAN=no
-PLIST_SUB+=	MANPAGES="@comment"
+PLIST_SUB+=	MANPAGES="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MBACKTRACE}
 LIB_DEPENDS+=	execinfo:${PORTSDIR}/devel/libexecinfo
-.endif
-
-.if ${PORT_OPTIONS:MCOLOR256}
-USES+=		ncurses:port
-CMAKE_ARGS+=	-DNCURSES_INCLUDE_PATH=${LOCALBASE}/include/ncurses
-.else
-USES+=		ncurses
 .endif
 
 .if ${PORT_OPTIONS:MICON}
@@ -195,24 +185,17 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^# icon$$/,/^$$/d' ${WRKSRC}/CMakeLists.txt
 .endif
 
-pre-configure:
-.if ${PORT_OPTIONS:MCOLOR256}
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "==> You have selected the ncurses 256 color option. Please ensure that"
-	@${ECHO_MSG} "==> the devel/ncurses port is built with the EXTCOLORS option enabled."
-	@${ECHO_MSG} "==>"
-	@${ECHO_MSG} "==> Press Ctrl-C now if you want to re-configure."
-	@${ECHO_MSG} ""
-	@sleep 5
-.endif
-
 post-install:
 .if ${PORT_OPTIONS:MMANPAGES} && !defined(MAINTAINER_MODE)
 	${INSTALL_MAN} ${WRKDIR}/manpages/weechat.1 ${STAGEDIR}${PREFIX}/man/man1
-.for f in de fr it ja
+.for f in de fr it ja pl
 	@${MKDIR} ${STAGEDIR}${PREFIX}/man/${f}/man1
 	${INSTALL_MAN} ${WRKDIR}/manpages/${f}/weechat.1 ${STAGEDIR}${PREFIX}/man/${f}/man1
 .endfor
+.endif
+.if ${PORT_OPTIONS:MDOCS} && !defined(MAINTAINER_MODE)
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/docs/* ${STAGEDIR}${DOCSDIR}/
 .endif
 	${LN} -sf ${PREFIX}/bin/weechat ${STAGEDIR}${PREFIX}/bin/weechat-curses
 

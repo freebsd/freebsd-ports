@@ -181,21 +181,12 @@ RUBY_PORTREVISION=	1
 RUBY_PORTEPOCH=		1
 RUBY_PATCHLEVEL=	484
 
-RUBY_VERSION?=		${RUBY_RELVERSION}.${RUBY_PATCHLEVEL}
-RUBY_DISTVERSION?=	${RUBY_RELVERSION}-p${RUBY_PATCHLEVEL}
-
-RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_DISTVERSION}
-
-RUBY_CONFIGURE_ARGS+=	--with-rubyhdrdir="${PREFIX}/include/ruby-1.9/" \
-			--with-rubylibprefix="${PREFIX}/lib/ruby" \
-			--docdir="${RUBY_DOCDIR}" \
-			--with-soname=ruby19
-
 #
 # PLIST_SUB helpers
 #
 RUBY19=			""
 RUBY20=			"@comment "
+RUBY21=			"@comment "
 
 . elif ${RUBY_VER} == 2.0
 #
@@ -206,30 +197,51 @@ RUBY_PORTREVISION=	4
 RUBY_PORTEPOCH=		1
 RUBY_PATCHLEVEL=	353
 
-RUBY_VERSION?=		${RUBY_RELVERSION}.${RUBY_PATCHLEVEL}
-RUBY_DISTVERSION?=	${RUBY_RELVERSION}-p${RUBY_PATCHLEVEL}
-
-RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_DISTVERSION}
-
-RUBY_CONFIGURE_ARGS+=	--with-rubyhdrdir="${PREFIX}/include/ruby-2.0/" \
-			--with-rubylibprefix="${PREFIX}/lib/ruby" \
-			--docdir="${RUBY_DOCDIR}" \
-			--with-soname=ruby20
-
 #
 # PLIST_SUB helpers
 #
 RUBY19=			"@comment "
 RUBY20=			""
+RUBY21=			"@comment "
 
+. elif ${RUBY_VER} == 2.1
+#
+# Ruby 2.1
+#
+RUBY_RELVERSION=	2.1.0
+RUBY_PORTREVISION=	0
+RUBY_PORTEPOCH=		1
+RUBY_PATCHLEVEL=	0
+
+#
+# PLIST_SUB helpers
+#
+RUBY19=			"@comment "
+RUBY20=			"@comment "
+RUBY21=			""
 
 . else
 #
 # Other versions
 #
-IGNORE=	Only ruby 1.9 and 2.0 are supported
+IGNORE=	Only ruby 1.9, 2.0 and 2.1 are supported
 . endif
 .endif # defined(RUBY_VER)
+
+.if ${RUBY_PATCHLEVEL} == 0
+RUBY_VERSION?=		${RUBY_RELVERSION}
+RUBY_DISTVERSION?=	${RUBY_RELVERSION}
+.else
+RUBY_VERSION?=		${RUBY_RELVERSION}.${RUBY_PATCHLEVEL}
+RUBY_DISTVERSION?=	${RUBY_RELVERSION}-p${RUBY_PATCHLEVEL}
+.endif
+
+RUBY_WRKSRC=		${WRKDIR}/ruby-${RUBY_DISTVERSION}
+
+RUBY_CONFIGURE_ARGS+=	--with-rubyhdrdir="${PREFIX}/include/ruby-${RUBY_VER}/" \
+			--with-rubylibprefix="${PREFIX}/lib/ruby" \
+			--docdir="${RUBY_DOCDIR}" \
+			--with-soname=ruby${RUBY_SUFFIX}
 
 CONFIGURE_TARGET?=	${ARCH}-portbld-freebsd${OSREL:C/\..*//}
 
@@ -345,6 +357,7 @@ PLIST_SUB+=		${PLIST_RUBY_DIRS:C,DIR="(${LOCALBASE}|${PREFIX})/,DIR=",} \
 			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}" \
 			RUBY19=${RUBY19} \
 			RUBY20=${RUBY20} \
+			RUBY21=${RUBY21}
 
 .if defined(USE_RUBY_RDOC)
 MAKE_ENV+=	RUBY_RDOC=${RUBY_RDOC}
@@ -554,8 +567,13 @@ do-install:	ruby-setup-install
 
 ruby-setup-install:
 	@${ECHO_MSG} "===>  Running ${RUBY_SETUP} to install"
+.  if defined(NO_STAGE)
 	@cd ${INSTALL_WRKSRC}; \
 	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} install
+.  else
+	@cd ${INSTALL_WRKSRC}; \
+	${SETENV} ${MAKE_ENV} ${RUBY} ${RUBY_FLAGS} ${RUBY_SETUP} install --prefix=${STAGEDIR}
+.  endif
 .endif
 
 .if defined(USE_LIBRUBY)

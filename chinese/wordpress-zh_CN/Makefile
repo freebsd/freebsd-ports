@@ -30,7 +30,6 @@ OPTIONS_DEFINE=	DOCS
 SUB_FILES+=	pkg-message
 SUB_LISTS+=	WWWDIR=${WWWDIR}
 
-NO_STAGE=	yes
 pre-everything::
 	@${ECHO_CMD} "If you want to upgrade, you must read upgrade document."
 	@${ECHO_CMD} ""
@@ -48,21 +47,16 @@ pre-install:
 .include <bsd.port.options.mk>
 
 do-install:
-	@${MKDIR} ${WWWDIR}
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${WWWDIR}
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${STAGEDIR}${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
 		>> ${TMPPLIST}
-	@${CHMOD} -R 755 ${WWWDIR}
+	@${CHMOD} -R 755 ${STAGEDIR}${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${WWWDIR}' >> ${TMPPLIST}
-	${CP} -R ${WRKSRC}/ ${WWWDIR}
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
+	${CP} -R ${WRKSRC}/ ${STAGEDIR}${WWWDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}/${i}
 .endfor
-.endif
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

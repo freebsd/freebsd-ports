@@ -4,92 +4,58 @@
 PORTNAME=	kdeutils
 PORTVERSION=	${KDE4_VERSION}
 CATEGORIES=	misc kde
-MASTER_SITES=	# empty
 DISTFILES=	# empty
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Collection of utilities for KDE 4
 
-LATEST_LINK=	${PORTNAME}4
-
 USE_KDE4=	kdeprefix
 NO_BUILD=	yes
+NO_INSTALL=	yes
+NO_MTREE=	yes
 
 OPTIONS_DEFINE=	ARK FILELIGHT KCALC KCHARSELECT KDF KFLOPPY KGPG \
 		KREMOTECONTROL KTIMER KWALLET PRINTMANAGER \
 		SUPERKARAMBA SWEEPER
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
 
-ARK_DESC=		Install archiving tool Ark
-FILELIGHT_DESC=		Install file system viewer Filelight
-KCALC_DESC=		Install scientific calculator KCalc
-KCHARSELECT_DESC=	Install character selector KCharSelect
-KDF_DESC=		Install disk usage tool KDiskFree
-KFLOPPY_DESC=		Install floppy formatter KFloppy
-KGPG_DESC=		Install encryption tool KGpg
-KREMOTECONTROL_DESC=	Install KRemoteControl
-KTIMER_DESC=		Install countdown launcher KTimer
-KWALLET_DESC=		Install password manager KWallet
-PRINTMANAGER_DESC=	Install print manager
-SUPERKARAMBA_DESC=	Install widget framework SuperKaramba
-SWEEPER_DESC=		Install system cleaner Sweeper
+ARK_DESC=		Archiving tool Ark
+ARK_RUN_DEPENDS=	${KDE4_PREFIX}/bin/ark:${PORTSDIR}/archivers/ark
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
+FILELIGHT_DESC=		File system viewer Filelight
+FILELIGHT_RUN_DEPENDS=	${KDE4_PREFIX}/bin/filelight:${PORTSDIR}/sysutils/filelight-kde4
 
-.if ${PORT_OPTIONS:MARK}
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/ark:${PORTSDIR}/archivers/ark
-.endif
+KCALC_DESC=		Scientific calculator KCalc
+KCALC_RUN_DEPENDS=	${KDE4_PREFIX}/bin/kcalc:${PORTSDIR}/math/kcalc
 
-.if ${PORT_OPTIONS:MFILELIGHT}
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/filelight:${PORTSDIR}/sysutils/filelight-kde4
-.endif
+KCHARSELECT_DESC=	Character selector KCharSelect
+KCHARSELECT_RUN_DEPENDS=	${KDE4_PREFIX}/bin/kcharselect:${PORTSDIR}/deskutils/kcharselect
 
-.if ${PORT_OPTIONS:MKCALC}
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kcalc:${PORTSDIR}/math/kcalc
-.endif
+KDF_DESC=		Disk usage tool KDiskFree
+KDF_RUN_DEPENDS=	${KDE4_PREFIX}/bin/kdf:${PORTSDIR}/sysutils/kdf
 
-.if ${PORT_OPTIONS:MKCHARSELECT}
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kcharselect:${PORTSDIR}/deskutils/kcharselect
-.endif
+KFLOPPY_DESC=		Floppy formatter KFloppy
+KFLOPPY_RUN_DEPENDS=	${KDE4_PREFIX}/bin/kfloppy:${PORTSDIR}/sysutils/kfloppy
 
-.if ${PORT_OPTIONS:MKDF}
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kdf:${PORTSDIR}/sysutils/kdf
-.endif
+KGPG_DESC=		Encryption tool KGpg
+KGPG_RUN_DEPENDS=	${KDE4_PREFIX}/bin/kgpg:${PORTSDIR}/security/kgpg-kde4
 
-.if ${PORT_OPTIONS:MKFLOPPY}
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kfloppy:${PORTSDIR}/sysutils/kfloppy
-.endif
+KREMOTECONTROL_DESC=	KRemoteControl
+KREMOTECONTROL_RUN_DEPENDS=	${KDE4_PREFIX}/bin/krcdnotifieritem:${PORTSDIR}/comms/kremotecontrol
 
-.if ${PORT_OPTIONS:MKGPG}
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kgpg:${PORTSDIR}/security/kgpg-kde4
-.endif
+KTIMER_DESC=		Countdown launcher KTimer
+KTIMER_RUN_DEPENDS=	${KDE4_PREFIX}/bin/ktimer:${PORTSDIR}/x11-clocks/ktimer
 
-.if ${PORT_OPTIONS:MKREMOTECONTROL}
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/krcdnotifieritem:${PORTSDIR}/comms/kremotecontrol
-.endif
+KWALLET_DESC=		Password manager KWallet
+KWALLET_RUN_DEPENDS=	${KDE4_PREFIX}/bin/kwalletmanager:${PORTSDIR}/security/kwallet
 
-.if ${PORT_OPTIONS:MKTIMER}
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/ktimer:${PORTSDIR}/x11-clocks/ktimer
-.endif
+PRINTMANAGER_DESC=	Print manager
+PRINTMANAGER_RUN_DEPENDS=	${KDE4_PREFIX}/lib/kde4/kcm_printer_manager.so:${PORTSDIR}/print/kde4-print-manager
 
-.if ${PORT_OPTIONS:MKWALLET}
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/kwalletmanager:${PORTSDIR}/security/kwallet
-.endif
+SUPERKARAMBA_DESC=	Widget framework SuperKaramba
+SUPERKARAMBA_RUN_DEPENDS=	${KDE4_PREFIX}/bin/superkaramba:${PORTSDIR}/deskutils/superkaramba
 
-.if ${PORT_OPTIONS:MPRINTMANAGER}
-RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/kcm_printer_manager.so:${PORTSDIR}/print/kde4-print-manager
-.endif
-
-.if ${PORT_OPTIONS:MSUPERKARAMBA}
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/superkaramba:${PORTSDIR}/deskutils/superkaramba
-.endif
-
-.if ${PORT_OPTIONS:MSWEEPER}
-RUN_DEPENDS+=	${KDE4_PREFIX}/bin/sweeper:${PORTSDIR}/sysutils/sweeper
-.endif
-
-do-install:
-		${DO_NADA}
+SWEEPER_DESC=		System cleaner Sweeper
+SWEEPER_RUN_DEPENDS=	${KDE4_PREFIX}/bin/sweeper:${PORTSDIR}/sysutils/sweeper
 
 .include <bsd.port.mk>

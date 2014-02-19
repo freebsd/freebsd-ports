@@ -10,9 +10,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	Convert your source code to syntax highlighted HTML
 
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -27,11 +24,9 @@ pre-patch:
 		's|IO->close()|if(IO) IO->close()|g'
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in AUTHORS COPYING README TODO docs.html
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,22 +1,17 @@
 # $FreeBSD$
 
 PORTNAME=	topic
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	textproc
-MASTER_SITES=	# http://topcat.hypermart.net/code/
+MASTER_SITES=	http://freebsd.hypermart.net/code/
 
-MAINTAINER=	mike@topcat.hypermart.net
+MAINTAINER=	email@freebsd.hypermart.net
 COMMENT=	Topic markup parser
 
-PLIST_FILES=	bin/${PORTNAME}
-MAN1=		${PORTNAME}.1
-
-NO_STAGE=	yes
-pre-build:
-	@${RM} ${WRKSRC}/topic.txt
+LICENSE=	BSD2CLAUSE
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/topic ${STAGEDIR}${PREFIX}/bin/topic
+	${INSTALL_MAN} ${WRKSRC}/topic.1 ${STAGEDIR}${PREFIX}/man/man1/topic.1
 
 .include <bsd.port.mk>

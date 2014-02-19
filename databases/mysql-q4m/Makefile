@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	q4m
-PORTVERSION=	0.9.10
-PORTREVISION=	1
+PORTVERSION=	0.9.13
 CATEGORIES=	databases
 MASTER_SITES=	http://q4m.kazuhooku.com/dist/
 PKGNAMEPREFIX=	${_MYSQL_SERVER:T:C/-server$/-/}
@@ -17,6 +16,7 @@ USES=		gmake perl5
 USE_AUTOTOOLS=	libtool
 USE_MYSQL=	server
 USE_GCC=	4.2+
+USE_PERL5=	run
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -DDBUG_OFF

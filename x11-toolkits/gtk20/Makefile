@@ -27,11 +27,11 @@ RUN_DEPENDS+=	${LOCALBASE}/share/mime/magic:${PORTSDIR}/misc/shared-mime-info \
 		${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme \
 		python:${PORTSDIR}/lang/python
 
-USE_LDCONFIG=	yes
+USES=		gettext gmake pathfix perl5 pkgconfig
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk pango gdkpixbuf2 introspection:build ltverhack \
 		gtk-update-icon-cache
-USES=		gettext gmake pathfix pkgconfig perl5
+USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_XORG=	xext xrender x11 xinerama xi xrandr xcursor xfixes xdamage \
 		xcomposite
@@ -41,24 +41,17 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=	CUPS DEBUG
 OPTIONS_DEFAULT=CUPS
+OPTIONS_SUB=	yes
+
+CUPS_LIB_DEPENDS=	libcups.so:${PORTSDIR}/print/cups-client
+CUPS_CONFIGURE_ON=	--enable-cups=auto
+CUPS_CONFIGURE_OFF=	--disable-cups
+DEBUG_CONFIGURE_ON=	--enable-debug=yes
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MCUPS}
-LIB_DEPENDS+=	libcups.so:${PORTSDIR}/print/cups-client
-CONFIGURE_ARGS+=--enable-cups=auto
-PLIST_SUB+=	CUPS:=""
-.else
-CONFIGURE_ARGS+=--disable-cups
-PLIST_SUB+=	CUPS:="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--enable-debug=yes
-.endif
-
 post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${GREP} -l lgmodule | \
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${GREP} -l lgmodule | \
 		${XARGS} ${REINPLACE_CMD} -e 's|-lgmodule|@GMODULE_LIBS@|g'
 	@${REINPLACE_CMD} -e 's|[{]libdir[}]/locale|{datadir}/locale|g' \
 		${WRKSRC}/configure

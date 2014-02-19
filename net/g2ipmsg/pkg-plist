@@ -1,5 +1,4 @@
 bin/g2ipmsg
-%%GNOMEPANEL%%bin/g2ipmsg_applet
 libdata/bonobo/servers/g2ipmsg.server
 share/applications/g2ipmsg.desktop
 share/locale/ja/LC_MESSAGES/g2ipmsg.mo
@@ -10,7 +9,5 @@ share/pixmaps/g2ipmsg/ipmsg.xpm
 share/pixmaps/g2ipmsg/ipmsgrev.xpm
 share/pixmaps/ipmsg.png
 share/sounds/g2ipmsg/g2ipmsg.ogg
-@exec   %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrm share/sounds/g2ipmsg
 @dirrm share/pixmaps/g2ipmsg

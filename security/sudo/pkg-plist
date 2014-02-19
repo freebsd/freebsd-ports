@@ -14,6 +14,7 @@ libexec/sudo/sudoers.so
 libexec/sudo/system_group.so
 man/man5/sudo.conf.5.gz
 man/man5/sudoers.5.gz
+%%LDAP%%man/man5/sudoers.ldap.5.gz
 man/man8/sudo.8.gz
 man/man8/sudo_plugin.8.gz
 man/man8/sudoedit.8.gz

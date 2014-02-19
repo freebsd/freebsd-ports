@@ -36,7 +36,7 @@ NO_STAGE=	yes
 
 .if defined(WITH_FORTRAN)
 LIBTOOLFILES+=		fortran/configure
-USE_FORTRAN=		yes
+USES+=			fortran
 CONFIGURE_ENV+=		F9X=${FC}
 CONFIGURE_ARGS+=	--enable-fortran
 PLIST_SUB+=		FORTRAN=""

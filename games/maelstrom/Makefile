@@ -3,7 +3,7 @@
 
 PORTNAME=	maelstrom
 PORTVERSION=	3.0.6
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://slouken.libsdl.org/projects/Maelstrom/src/ \
 		SF/nemysisfreebsdp/${CATEGORIES}/:icons
@@ -29,33 +29,17 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
+DOCS_INSTALL_TARGET=install install_gamedocs
+
 DESKTOP_ENTRIES="Maelstrom" "" ${PORTNAME} \
 		"Maelstrom" "Game;ArcadeGame;" ""
 
-.include <bsd.port.options.mk>
-
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|prefix = @prefix@|prefix = $${DESTDIR}@prefix@| ; \
+	@${REINPLACE_CMD} -e 's|@prefix@|$${DESTDIR}@prefix@|; \
 		s|$$(DESTDIR)$$(bindir)|$$(bindir)|' \
 		${WRKSRC}/Makefile.in
 
-	@(cd ${WRKSRC} ; ${REINPLACE_CMD} \
-		-e 's|@CFLAGS@|@CFLAGS@ -w| ; \
-		s|$$(CXXFLAGS)|$$(CXXFLAGS) -w|' \
-		Makefile.in maclib/Makefile.in \
-		netlogic/Makefile.in screenlib/Makefile.in)
-
-.if ${PORT_OPTIONS:MDOCS}
-INSTALL_TARGET=	install install_gamedocs
-.endif
-
 post-install:
-	${CHOWN} root:games ${STAGEDIR}${PREFIX}/bin/Maelstrom
-	${CHMOD} 2755 ${STAGEDIR}${PREFIX}/bin/Maelstrom
-	${CHMOD} 664 ${STAGEDIR}${PREFIX}/share/Maelstrom/Maelstrom-Scores
-	${CHOWN} root:games \
-		${STAGEDIR}${PREFIX}/share/Maelstrom/Maelstrom-Scores
 	${INSTALL_DATA} ${_DISTDIR}/${PORTNAME}.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/
 

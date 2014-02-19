@@ -76,5 +76,4 @@ MODULE_DIRS=	components \
 
 DOC_FILES=	CHANGELOG.txt LICENSE.txt README.txt THEMING.txt
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

@@ -1,16 +1,11 @@
-@unexec %%SGMLCAT_RM%%
-share/sgml/docbook/3.0/dtd/30chg.txt
-share/sgml/docbook/3.0/dtd/40issues.txt
-share/sgml/docbook/3.0/dtd/announce.txt
-share/sgml/docbook/3.0/dtd/cals-tbl.dtd
-share/sgml/docbook/3.0/dtd/catalog
-share/sgml/docbook/3.0/dtd/dbgenent.mod
-share/sgml/docbook/3.0/dtd/dbhier.mod
-share/sgml/docbook/3.0/dtd/dbpool.mod
-share/sgml/docbook/3.0/dtd/docbook.cat
-share/sgml/docbook/3.0/dtd/docbook.dcl
-share/sgml/docbook/3.0/dtd/docbook.dtd
-@dirrm share/sgml/docbook/3.0/dtd
-@dirrm share/sgml/docbook/3.0
-@dirrmtry share/sgml/docbook
-@exec %%SGMLCAT_ADD%%
+%%DTDDIR%%/cals-tbl.dtd
+%%DTDDIR%%/catalog
+@unexec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% remove %D/%F
+@exec %D/%%XMLCATMGR%% -sc %D/%%SGMLCAT%% add CATALOG %D/%F
+%%DTDDIR%%/dbgenent.mod
+%%DTDDIR%%/dbhier.mod
+%%DTDDIR%%/dbpool.mod
+%%DTDDIR%%/docbook.cat
+%%DTDDIR%%/docbook.dcl
+%%DTDDIR%%/docbook.dtd
+@dirrm %%DTDDIR%%

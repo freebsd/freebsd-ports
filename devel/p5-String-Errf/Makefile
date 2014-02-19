@@ -21,9 +21,6 @@ BUILD_DEPENDS:=	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
 USES=		perl5
 USE_PERL5=	configure
 
-MAN3=	String::Errf.3
-
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501400

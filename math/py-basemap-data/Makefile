@@ -3,6 +3,7 @@
 
 PORTNAME=	basemap-data
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	SF/matplotlib/matplotlib-toolkits/basemap-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,24 +13,9 @@ COMMENT=	Map data for py-basemap
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+PYDISTUTILS_AUTOPLIST=	yes
 
 DATADIR=	${PREFIX}/share/py-${PORTNAME}
-
 MAKE_ENV=	BASEMAP_DATA_PATH=${DATADIR}
 
-PLISTDIR=	${DATADIR}/*_[hi].txt \
-		${PYTHON_SITELIBDIR}/basemap_data-0.9-py2.5.egg-info
-
-NO_STAGE=	yes
-.include <bsd.port.pre.mk>
-
-post-install:
-.for dir in ${PLISTDIR}
-	@${FIND} ${dir} ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} ${dir} -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.endfor
-	@${ECHO} "@dirrm ${DATADIR:S,${PREFIX}/,,}" >> ${TMPPLIST}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

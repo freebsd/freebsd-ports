@@ -17,22 +17,16 @@ PLIST_SUB=	DOCSDIR="share/doc/${PORTNAME}" DATADIR="share/${PORTNAME}"
 
 DOCSLIST=	NOTES readme
 
-NO_STAGE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|operm5\.cov|${DATADIR}/operm5.cov|g;' \
 		${WRKSRC}/cdoperm5.c
 	@${REINPLACE_CMD} -e 's|CC=gcc||g;' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/diehard ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/operm5.cov ${DATADIR}
-
-post-install:
-.ifndef(NOPORTDOCS)
-	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOCSLIST:S!^!${WRKSRC}/!} ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/diehard ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/operm5.cov ${STAGEDIR}${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${DOCSLIST:S!^!${WRKSRC}/!} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

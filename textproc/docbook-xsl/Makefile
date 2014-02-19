@@ -2,7 +2,7 @@
 
 PORTNAME=	docbook-xsl
 PORTVERSION=	1.76.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/docbook/${PORTNAME}/${PORTVERSION}:src \
 		SF/docbook/${PORTNAME}-doc/${PORTVERSION}:doc
@@ -62,7 +62,6 @@ DXVERSIONS=	1.36 1.37 1.38 1.39 1.40 1.41 1.42 1.43 1.44 1.45 1.46 1.47 \
 		1.64.1 1.65.0 1.65.1 1.66.0 1.66.1 1.67.0 1.67.2 1.68.0 \
 		1.68.1 1.69.0 1.69.1 1.70.0 1.70.1 1.71.0 1.71.1 current
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDOCS}
@@ -161,41 +160,28 @@ post-extract:
 
 do-install:
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${TAR} -cf - . |\
-		${TAR} -xf - -C${DOCSDIR})
+		${TAR} -xf - -C${STAGEDIR}${DOCSDIR})
 .endif
 .for m in ${MODULES}
-		${MKDIR} ${PREFIX}/${INSTDIR}/${m}
+		${MKDIR} ${STAGEDIR}${PREFIX}/${INSTDIR}/${m}
 		dirs=$$(${FIND} ${WRKSRC}/${m} -type d | ${SED} 's|^${WRKSRC}/${m}||g'); \
 		for d in $${dirs}; do \
 			files=$$(${FIND} ${WRKSRC}/${m}/$${d} -type f); \
-			${MKDIR} ${PREFIX}/${INSTDIR}/${m}/$${d}; \
+			${MKDIR} ${STAGEDIR}${PREFIX}/${INSTDIR}/${m}/$${d}; \
 			for i in $${files}; do \
-				${INSTALL_DATA} $${i} ${PREFIX}/${INSTDIR}/${m}/$${d}; \
+				${INSTALL_DATA} $${i} ${STAGEDIR}${PREFIX}/${INSTDIR}/${m}/$${d}; \
 			done; \
 		done; \
 		files=$$(${FIND} ${WRKSRC}/${m} -type f -depth 1); \
 		for i in $${files}; do \
-			${INSTALL_DATA} $${i} ${PREFIX}/${INSTDIR}/${m}; \
+			${INSTALL_DATA} $${i} ${STAGEDIR}${PREFIX}/${INSTDIR}/${m}; \
 		done
-.endfor
-		${XMLCATMGR} -c ${CATALOG_XSL} create
-.for dxversion in ${DXVERSIONS}
-	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteSystem \
-		http://docbook.sourceforge.net/release/xsl/${dxversion} \
-		"file://${PREFIX}/${INSTDIR}"
-	${XMLCATMGR} -c "${CATALOG_XSL}" add rewriteURI \
-		http://docbook.sourceforge.net/release/xsl/${dxversion} \
-		"file://${PREFIX}/${INSTDIR}"
 .endfor
 		files=$$(${FIND} ${WRKSRC} -type f -depth 1); \
 		for i in $${files}; do \
-			${INSTALL_DATA} $${i} ${PREFIX}/${INSTDIR}; \
+			${INSTALL_DATA} $${i} ${STAGEDIR}${PREFIX}/${INSTDIR}; \
 		done
-
-post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>

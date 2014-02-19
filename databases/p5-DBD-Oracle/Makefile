@@ -17,14 +17,12 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 OPTIONS_DEFINE=	OCI8 EXAMPLES
 OCI8_DESC=	Use OCI8
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure patch
 CONFIGURE_ENV=	ORACLE_HOME="${ORACLE_HOME}"
 
-MAN1=		ora_explain.1
-MAN3=		DBD::Oracle.3 DBD::Oraperl.3
+SHEBANG_FILES=	Oracle.ex/*
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOCI8}
@@ -54,13 +52,12 @@ post-patch:
 		${WRKSRC}/dbdimp.c ${WRKSRC}/Oracle.xs ${WRKSRC}/oci[78].c
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
+	${STRIP_CMD} ${STAGEDIR}${SITE_PERL}/${PERL_ARCH}/auto/DBD/Oracle/Oracle.so
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/Oracle.ex/Readme 	${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/Oracle.ex/*.pl	${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/Oracle.ex/japh	${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/Oracle.ex/sql	${EXAMPLESDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/Oracle.ex/Readme 	${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/Oracle.ex/*.pl	${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/Oracle.ex/japh	${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/Oracle.ex/sql	${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>

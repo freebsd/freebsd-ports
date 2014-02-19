@@ -1,0 +1,3 @@
+sbin/ironsides
+%%EXAMPLESDIR%%/dfcs.usafa.edu.zonefile
+@dirrm %%EXAMPLESDIR%%

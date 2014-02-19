@@ -1100,6 +1100,7 @@ MASTER_SITE_RINGSERVER+= \
 
 .if !defined(IGNORE_MASTER_SITE_RUBY)
 MASTER_SITE_RUBY+= \
+	http://cache.ruby-lang.org/pub/ruby/%SUBDIR%/ \
 	ftp://ftp.ruby-lang.org/pub/ruby/%SUBDIR%/ \
 	ftp://ftp.SpringDaemons.com/pub/ruby/ruby/%SUBDIR%/ \
 	http://www.ibiblio.org/pub/languages/ruby/%SUBDIR%/ \
@@ -1311,6 +1312,49 @@ MASTER_SITE_THEMES+= \
 	ftp://gd.tuwien.ac.at/opsys/linux/freshmeat/themes/%SUBDIR%/
 .endif
 
+# Derived from: https://www.torproject.org/getinvolved/mirrors.html.en
+.if !defined(IGNORE_MASTER_SITE_TOR)
+MASTER_SITE_TOR+=	\
+		https://www.torproject.org/dist/%SUBDIR%/ \
+		https://archive.torproject.org/tor-package-archive/%SUBDIR%/ \
+		ftp://ftp.bit.nl/mirror/tor/%SUBDIR%/ \
+		http://cyberside.net.ee/tor/%SUBDIR%/ \
+		http://ftp.bit.nl/mirror/tor/%SUBDIR%/ \
+		http://mirror.hessmo.com/tor/dist/%SUBDIR%/ \
+		http://mirror.host4site.co.il/torproject.org/dist/%SUBDIR%/ \
+		http://mirror.open-networx.org/torproject.org/dist/%SUBDIR%/ \
+		http://mirror.tor.hu/dist/%SUBDIR%/ \
+		https://mirror.torland.me/torproject.org/dist/%SUBDIR%/ \
+		http://mirrors.chaos-darmstadt.de/tor-mirror/dist/%SUBDIR%/ \
+		http://theonionrouter.com/dist/%SUBDIR%/ \
+		http://tor.amorphis.eu/dist/%SUBDIR%/ \
+		http://tor.askapache.com/dist/%SUBDIR%/ \
+		http://tor.beme-it.de/dist/%SUBDIR%/ \
+		http://tor.borgmann.tv/dist/%SUBDIR%/ \
+		http://tor.ccc.de/dist/%SUBDIR%/ \
+		http://tor.cyberarmy.at/dist/%SUBDIR%/ \
+		http://tor.dont-know-me.at/dist/%SUBDIR%/ \
+		http://tor.factor.cc/dist/%SUBDIR%/ \
+		http://tor.homosu.net/dist/%SUBDIR%/ \
+		http://tor.idnr.ws/dist/%SUBDIR%/ \
+		http://tor.myrl.net/dist/%SUBDIR%/ \
+		http://tor.kamagurka.org/dist/%SUBDIR%/ \
+		http://tor.spline.de/dist/%SUBDIR%/ \
+		http://tor.vesta.nu/dist/%SUBDIR%/ \
+		http://torproj.xpdm.us/dist/%SUBDIR%/ \
+		https://torproject.antagonism.org/dist/%SUBDIR%/ \
+		https://torproject.crypto.is/dist/%SUBDIR%/ \
+		http://torproject.is/dist/%SUBDIR%/ \
+		http://torproject.nwlinux.us/dist/%SUBDIR%/ \
+		http://torproject.ph3x.at/dist/%SUBDIR%/ \
+		https://www.coevoet.nl/tor/dist/%SUBDIR%/ \
+		http://www.oignon.net/dist/%SUBDIR%/ \
+		http://www.torproject.nl/dist/%SUBDIR%/ \
+		http://www.torproject.org.nyud.net/dist/%SUBDIR%/ \
+		http://www.torproject.us/dist/%SUBDIR%/ \
+		http://www.torservers.net/mirrors/torproject.org/dist/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_TUCOWS)
 .for mirror in ankara blueyonder casemanl chariot clix dataphone dialog epix \
 	fastweb genotec hellasonline iinets inspirenet latvia mclink netvisao \
@@ -1330,7 +1374,7 @@ MASTER_SITE_VIM+= \
 	http://ftp.vim.org/pub/vim/unix/ \
 	http://artfiles.org/vim.org/unix/ \
 	http://ftp.gr.vim.org/pub/vim/unix/ \
-	http://ftp.stut.edu.tw/vim/unix/ \
+	http://ftp.stu.edu.tw/vim/unix/ \
 	http://ftp.tw.vim.org/pub/vim/unix/ \
 	http://ftp.vim.ossmirror.de/pub/vim/unix/ \
 	http://ftp2.jp.vim.org/pub/vim/unix/ \
@@ -1350,8 +1394,8 @@ MASTER_SITE_VIM+= \
 	ftp://ftp.is.vim.org/pub/vim/unix/ \
 	ftp://ftp.jp.vim.org/pub/vim/unix/ \
 	ftp://ftp.pl.vim.org/pub/vim/unix/ \
-	ftp://ftp.stut.edu.tw/pub/vim/unix/ \
 	ftp://ftp.uk.vim.org/pub/vim/unix/ \
+	ftp://ftp.stu.edu.tw/pub/vim/unix/ \
 	ftp://ftp.za.vim.org/mirrors/ftp.vim.org/unix/ \
 	ftp://ftp2.kr.vim.org/pub/vim/unix/ \
 	ftp://ftp2.tw.vim.org/pub/vim/unix/ \
