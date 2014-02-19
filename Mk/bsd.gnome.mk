@@ -86,7 +86,7 @@ _USE_GNOME_ALL+= atk atspi cairo desktopfileutils eel2 gal2 \
 		libgnomeui libgsf libgtkhtml libidl librsvg2 libwnck \
 		libxml2 libxslt libzvt linc \
 		orbit2 pango pangox-compat pygnome2 pygnomeextras pygobject pygtk2 \
-		pygtksourceview vte
+		pygtksourceview
 
 # GNOME 3 components
 _USE_GNOME_ALL+=dconf evolutiondataserver3 gnomecontrolcenter3 gnomedesktop3 \
@@ -370,7 +370,7 @@ gnomedesktop3_USE_GNOME_IMPL=	gnomedocutils gtk30
 gnomedesktopsharp20_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-desktop-sharp-2.0.pc
 gnomedesktopsharp20_BUILD_DEPENDS=	${gnomedesktopsharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-desktop-sharp20
 gnomedesktopsharp20_RUN_DEPENDS=	${gnomedesktopsharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-desktop-sharp20
-gnomedesktopsharp20_USE_GNOME_IMPL=	gnomesharp20 gnomepanel3 gtkhtml3 librsvg2 vte libgnomeprintui gtksourceview2 libwnck nautiluscdburner
+gnomedesktopsharp20_USE_GNOME_IMPL=	gnomesharp20 gnomepanel3 gtkhtml3 librsvg2 libgnomeprintui gtksourceview2 libwnck nautiluscdburner
 gnomedesktopsharp20_GNOME_DESKTOP_VERSION=2
 
 libwnck_LIB_DEPENDS=	libwnck-1.so:${PORTSDIR}/x11-toolkits/libwnck
@@ -382,10 +382,6 @@ libwnck3_LIB_DEPENDS=	libwnck-3.so:${PORTSDIR}/x11-toolkits/libwnck3
 libwnck3_DETECT=	${LOCALBASE}/libdata/pkgconfig/libwnck-3.0.pc
 libwnck3_USE_GNOME_IMPL=gtk30
 libwnck3_GNOME_DESKTOP_VERSION=3
-
-vte_LIB_DEPENDS=	libvte.so:${PORTSDIR}/x11-toolkits/vte
-vte_DETECT=		${LOCALBASE}/libdata/pkgconfig/vte.pc
-vte_USE_GNOME_IMPL=	gtk20
 
 vte3_LIB_DEPENDS=	libvte2_90.so:${PORTSDIR}/x11-toolkits/vte3
 vte3_DETECT=		${LOCALBASE}/libdata/pkgconfig/vte-2.90.pc
@@ -549,7 +545,7 @@ gtksharp20_USE_GNOME_IMPL=	gtk20
 gnomesharp20_DETECT=		${LOCALBASE}/libdata/pkgconfig/gnome-sharp-2.0.pc
 gnomesharp20_BUILD_DEPENDS=	${gnomesharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-sharp20
 gnomesharp20_RUN_DEPENDS=	${gnomesharp20_DETECT}:${PORTSDIR}/x11-toolkits/gnome-sharp20
-gnomesharp20_USE_GNOME_IMPL=	gnomepanel3 gtkhtml3 gtksharp20 librsvg2 vte
+gnomesharp20_USE_GNOME_IMPL=	gnomepanel3 gtkhtml3 gtksharp20 librsvg2
 
 libgnomekbd_DETECT=		${LOCALBASE}/libdata/pkgconfig/libgnomekbd.pc
 libgnomekbd_LIB_DEPENDS=	libgnomekbd.so:${PORTSDIR}/x11/libgnomekbd
