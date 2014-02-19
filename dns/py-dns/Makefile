@@ -19,23 +19,15 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USE_PYTHON=	2
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_PKGNAME=	pydns
+PYDISTUTILS_AUTOPLIST=	yes
 
-DOCS=		README.txt README-guido.txt
+PORTDOCS=	README.txt README-guido.txt
 DOCSDIR=	${PREFIX}/share/doc/py-dns
-
-NO_STAGE=	yes
 
 OPTIONS_DEFINE=	DOCS 
 
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
