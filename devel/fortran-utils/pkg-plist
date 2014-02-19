@@ -1,2 +1,4 @@
 bin/fpr
 bin/fsplit
+man/man1/fpr.1.gz
+man/man1/fsplit.1.gz
