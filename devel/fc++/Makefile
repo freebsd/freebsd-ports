@@ -14,15 +14,10 @@ OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
 do-install:
-	@${MKDIR} ${PREFIX}/include/fc++
-	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/fc++
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/changes.html ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/fc++
+	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include/fc++
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/changes.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
