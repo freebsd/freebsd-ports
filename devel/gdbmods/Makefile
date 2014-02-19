@@ -15,8 +15,8 @@ COMMENT=	Wrapper for gdb -k to provide kld symbol information
 NO_BUILD=	yes
 PLIST_FILES=	bin/gdbmods
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} \
+		${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
