@@ -27,10 +27,6 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|(prefix)|(DESTDIR)$$(prefix)|g' \
-		${WRKSRC}/Makefile.in
-
 post-install:
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
