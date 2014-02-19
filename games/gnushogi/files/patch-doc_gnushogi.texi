@@ -1,5 +1,5 @@
---- doc/gnushogi.texinfo.orig	Sat Apr 27 00:42:22 2002
-+++ doc/gnushogi.texinfo	Mon Mar 15 20:19:37 2004
+--- doc/gnushogi.texi.orig	2014-02-17 21:26:59.000000000 +0100
++++ doc/gnushogi.texi	2014-02-19 20:38:54.000000000 +0100
 @@ -3,6 +3,10 @@
  @c % **  Start of header.
  @setfilename gnushogi.info
@@ -10,4 +10,4 @@
 +@end direntry
  @c % **  End of header.
  
- @setchapternewpage odd
+ @dircategory Games
