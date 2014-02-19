@@ -19,23 +19,23 @@ CONFLICTS=	djbdns-[0-9]*
 PROGRAMS=	dnsip dnsipq dnsname dnstxt dnsmx dnsfilter \
 		random-ip dnsqr dnsq dnstrace
 SCRIPTS=	dnstracesort
-MAN1=		dnsfilter.1 dnsip.1 dnsipq.1 dnsmx.1 dnsname.1 \
+
+MANPAGES=	dnsfilter.1 dnsip.1 dnsipq.1 dnsmx.1 dnsname.1 \
 		dnsq.1 dnsqr.1 dnstrace.1 dnstracesort.1 dnstxt.1
 
 ALL_TARGET=	it
 
-NO_STAGE=	yes
 do-patch:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} "${CC} ${STRIP}" > ${WRKSRC}/conf-ld
 	@${ECHO_CMD} "${PREFIX}" > ${WRKSRC}/conf-home
 
 do-install:
-	@${MKDIR} ${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/bin
 	@cd ${WRKSRC} && \
-	${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/bin && \
-	${INSTALL_SCRIPT} ${SCRIPTS} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${PROGRAMS} ${STAGEDIR}${PREFIX}/bin && \
+	${INSTALL_SCRIPT} ${SCRIPTS} ${STAGEDIR}${PREFIX}/bin
 	@cd ${WRKDIR}/djbdns-man && \
-	${INSTALL_MAN} ${MAN1} ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${MANPAGES} ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
