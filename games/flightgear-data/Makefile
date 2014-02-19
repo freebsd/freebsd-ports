@@ -10,7 +10,7 @@ MASTER_SITES=	http://mirrors.ibiblio.org/flightgear/ftp/Shared/ \
 		ftp://ftp.kingmont.com/flightsims/flightgear/Shared/ \
 		ftp://ftp.de.flightgear.org/pub/fgfs/Shared/ \
 		ftp://flightgear.wo0t.de/flightgear-ftp/ftp/Shared/
-DISTNAME=	FlightGear-${PORTVERSION}-data
+DISTNAME=	FlightGear-data-${PORTVERSION}
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	FlightGear scenery, textures, and aircraft models
