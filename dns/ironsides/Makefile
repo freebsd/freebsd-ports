@@ -22,8 +22,7 @@ DOS2UNIX_FILES=	dfcs.usafa.edu.zonefile
 
 post-extract:
 	@${MV} ${WRKDIR}/trunk ${WRKSRC}
-	@(cd ${WRKSRC}; ${RM} *.bak *.bk.[0-9])
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} gnatclean -q spark_dns_main)
+	@(cd ${WRKSRC}; ${RM} *.bak *.bk.[0-9] *.o *.ali)
 	@${CP} ${FILESDIR}/ironsides.gpr ${FILESDIR}/Makefile ${WRKSRC}/
 
 .include <bsd.port.mk>
