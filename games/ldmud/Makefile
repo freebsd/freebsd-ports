@@ -30,65 +30,43 @@ MAKE_JOBS_UNSAFE=	yes
 USERS=		mud
 GROUPS=		mud
 
-OPTIONS_DEFINE=	MYSQL PGSQL SQLITE IPV6 LPMUD
+OPTIONS_DEFINE=	MYSQL PGSQL SQLITE IPV6
 OPTIONS_DEFAULT=MYSQL PGSQL SQLITE IPV6 LPMUD
+OPTIONS_SINGLE=	MUDLIB
+OPTIONS_SINGLE_MUDLIB=	LPMUD DEMOLIB
+OPTIONS_SUB=	yes
 LPMUD_DESC=	Install default mudlib (LP-245)
+IPV6_CONFIGURE_ENABLE=	use-ipv6
+MYSQL_USE=		MYSQL=yes
+MYSQL_CONFIGURE_ENABLE=	use-mysql
+PGSQL_USE=		PGSQL=yes
+PGSQL_CONFIGURE_ENABLE=	use-pgsql
+SQLITE_USE=		SQLITE=yes
+SQLITE_CONFIGURE_ENABLE=use-sqlite
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MIPV6}
-CONFIGURE_ARGS+=--enable-use-ipv6
-.else
-CONFIGURE_ARGS+=--disable-use-ipv6
-.endif
-
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib/mysql
-CONFIGURE_ARGS+=--enable-use-mysql
-.else
-CONFIGURE_ARGS+=--disable-use-mysql
 .endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USE_PGSQL=	yes
-CONFIGURE_ARGS+=--enable-use-pgsql
-.else
-CONFIGURE_ARGS+=--disable-use-pgsql
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-USE_SQLITE=	yes
-CONFIGURE_ARGS+=--enable-use-sqlite
-.else
-CONFIGURE_ARGS+=--disable-use-sqlite
-.endif
-
-.if ${PORT_OPTIONS:MLPMUD}
-PLIST_SUB+=	LPMUD="" DEMOLIB="@comment "
-.else
-PLIST_SUB+=	LPMUD="@comment " DEMOLIB=""
-.endif
-
-.include <bsd.port.pre.mk>
 
 post-install:
 #	# Install mudlib and other directories
 	@${MKDIR} ${STAGEDIR}${DATADIR} ${STAGEDIR}/var/log/${PORTNAME} \
 		${STAGEDIR}/var/run/${PORTNAME}
-	@${CHOWN} ${USERS}:${GROUPS} /var/log/${PORTNAME} /var/run/${PORTNAME}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/sbin/ldmud
 .if ${PORT_OPTIONS:MLPMUD}
-	@cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/mud/lp-245 && ${FIND} . \
-		| ${CPIO} -pdmu -R ${USERS}:${GROUPS} ${STAGEDIR}${DATADIR}
+	cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/mud/lp-245 && ${FIND} . \
+		| ${CPIO} -pdmu ${STAGEDIR}${DATADIR}
 .else
-	@cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/mudlib && ${FIND} . \
-		| ${CPIO} -pdmu -R ${USERS}:${GROUPS} ${STAGEDIR}${DATADIR}
+	cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/mudlib && ${FIND} . \
+		| ${CPIO} -pdmu ${STAGEDIR}${DATADIR}
 .endif
 .if ${PORT_OPTIONS:MDOCS}
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc && ${FIND} . \
-		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}/doc && ${FIND} . \
+		| ${CPIO} -pdmu ${STAGEDIR}${DOCSDIR}
 	@${RM} -f ${STAGEDIR}${DOCSDIR}/Makefile
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
