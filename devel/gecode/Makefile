@@ -15,8 +15,7 @@ OPTIONS_DEFINE=	GIST
 GIST_DESC=	Interactive Search Tool (requires Qt)
 
 USE_PERL5=	build
-USES=		bison perl5
-USE_GMAKE=	yes
+USES=		bison perl5 gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
 		--enable-shared \
@@ -33,7 +32,6 @@ CONFIGURE_ARGS=	--disable-static \
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGIST}
