@@ -1,4 +1,6 @@
 bin/OpenVAS-Client
 bin/openvasclient-mkcert
 lib/openvas/openvas-ssh-client-rpm-creator.sh
+man/man1/OpenVAS-Client.1.gz
+man/man1/openvasclient-mkcert.1.gz
 @dirrmtry lib/openvas

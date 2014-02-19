@@ -14,17 +14,14 @@ LIB_DEPENDS=	libgcrypt.so:${PORTSDIR}/security/libgcrypt \
 		libgnutls.so:${PORTSDIR}/security/gnutls \
 		libgpg-error.so:${PORTSDIR}/security/libgpg-error \
 		libgpgme.so:${PORTSDIR}/security/gpgme \
-		libopenvas.so.2:${PORTSDIR}/security/openvas-libraries \
-		libopenvas_hg.so.2:${PORTSDIR}/security/openvas-libraries \
+		libopenvas.so:${PORTSDIR}/security/openvas-libraries \
+		libopenvas_hg.so:${PORTSDIR}/security/openvas-libraries \
 		libtasn1.so:${PORTSDIR}/security/libtasn1
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USES=		bison iconv pkgconfig
 
-MAN1=		openvas-libnasl-config.1 openvas-nasl.1
-
-NO_STAGE=	yes
 .include "${.CURDIR}/../../security/openvas-libraries/Makefile.common"
 
 LDFLAGS+=	-lgcrypt
