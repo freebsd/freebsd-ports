@@ -20,7 +20,7 @@ USE_GGZ=	core
 INSTALL_TARGET=	install-strip
 
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
+LDFLAGS+=	-L${LOCALBASE}/lib -pthread -lexpat
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
@@ -30,7 +30,11 @@ NLS_CONFIGURE_ARGS=	--disable-nls
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|libggz.la|libggz.so|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!/bin/sh|' ${WRKSRC}/ggz-wrapper/ggz
+	@${REINPLACE_CMD} -e 's|#!/bin/bash|#!/bin/sh|' \
+		${WRKSRC}/ggz-wrapper/ggz
+	@${REINPLACE_CMD} -e \
+		's|@LIB_GGZ@|@LIB_GGZ@ ../ggzcore/.libs/libggzcore.so|' \
+		${WRKSRC}/ggzwrap/Makefile.in
 
 .include "${.CURDIR}/../libggz/bsd.ggz.mk"
 .include <bsd.port.mk>
