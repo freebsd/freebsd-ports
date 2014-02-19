@@ -13,6 +13,7 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	TCL extension for accessing a PostgreSQL server (PGTCL-NG)
 
 LICENSE=	PGSQL
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 OPTIONS_DEFINE=	DOCS
 
