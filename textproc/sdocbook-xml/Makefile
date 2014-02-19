@@ -3,6 +3,7 @@
 
 PORTNAME=	sdocbook-xml
 PORTVERSION=	1.1
+PORTREVISION=	1
 PORTEPOCH=	2
 MASTER_SITES=	http://www.oasis-open.org/docbook/xml/simple/${PORTVERSION}/
 DISTNAME=	docbook-simple-${PORTVERSION}
