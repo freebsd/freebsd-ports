@@ -11,11 +11,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful make utility
 
 WRKSRC=		${WRKDIR}/xmake
-MAN1=		xmake.1
-PLIST_FILES=	bin/xmake
+PLIST_FILES=	bin/xmake man/man1/xmake.1.gz
 
-NO_STAGE=	yes
-pre-build:
+post-extract:
 	@${RM} -rf ${WRKSRC}/obj
 
 .include <bsd.port.mk>
