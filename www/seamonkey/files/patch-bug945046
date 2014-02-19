@@ -35,15 +35,16 @@ diff --git xpcom/base/nsMemoryReporterManager.cpp xpcom/base/nsMemoryReporterMan
 index b8147c8..0ffb34e 100644
 --- mozilla/xpcom/base/nsMemoryReporterManager.cpp
 +++ mozilla/xpcom/base/nsMemoryReporterManager.cpp
-@@ -196,6 +196,43 @@ static nsresult GetResidentFast(int64_t*
-     return GetResident(aN);
+@@ -204,6 +204,61 @@ ResidentFastDistinguishedAmount(int64_t* aN)
+     return ResidentDistinguishedAmount(aN);
  }
  
 +#ifdef __FreeBSD__
 +#include <libutil.h>
++#include <algorithm>
 +
 +static nsresult
-+GetKinfoVmentrySelf(int64_t* prss)
++GetKinfoVmentrySelf(int64_t* prss, uint64_t* maxreg)
 +{
 +    int cnt;
 +    struct kinfo_vmentry *vmmap, *kve;
@@ -52,11 +53,16 @@ index b8147c8..0ffb34e 100644
 +
 +    if (prss)
 +        *prss = 0;
++    if (maxreg)
++        *maxreg = 0;
 +
 +    for (int i = 0; i < cnt; i++) {
 +        kve = &vmmap[i];
 +        if (prss)
 +            *prss += kve->kve_private_resident;
++        if (maxreg)
++            *maxreg = std::max(*maxreg,
++                               kve->kve_end - kve->kve_start);
 +    }
 +
 +    free(vmmap);
@@ -65,12 +71,24 @@ index b8147c8..0ffb34e 100644
 +
 +#define HAVE_PRIVATE_REPORTER
 +static nsresult
-+GetPrivate(int64_t* aN)
++PrivateDistinguishedAmount(int64_t* aN)
 +{
 +    int64_t priv;
-+    nsresult rv = GetKinfoVmentrySelf(&priv);
++    nsresult rv = GetKinfoVmentrySelf(&priv, NULL);
 +    if (NS_SUCCEEDED(rv))
 +        *aN = priv * getpagesize();
++
++    return NS_OK;
++}
++
++#define HAVE_VSIZE_MAX_CONTIGUOUS_REPORTER 1
++static nsresult
++VsizeMaxContiguousDistinguishedAmount(int64_t* aN)
++{
++    uint64_t biggestRegion;
++    nsresult rv = GetKinfoVmentrySelf(NULL, &biggestRegion);
++    if (NS_SUCCEEDED(rv))
++        *aN = biggestRegion;
 +
 +    return NS_OK;
 +}
@@ -79,12 +97,13 @@ index b8147c8..0ffb34e 100644
  #elif defined(SOLARIS)
  
  #include <procfs.h>
-@@ -370,6 +407,24 @@ static nsresult GetResidentFast(int64_t*
+@@ -416,6 +470,25 @@ VsizeMaxContiguousDistinguishedAmount(int64_t* aN)
+     return NS_OK;
  }
  
- #define HAVE_PRIVATE_REPORTER
++#define HAVE_PRIVATE_REPORTER
 +static nsresult
-+GetPrivate(int64_t* aN)
++PrivateDistinguishedAmount(int64_t* aN)
 +{
 +    PROCESS_MEMORY_COUNTERS_EX pmcex;
 +    pmcex.cb = sizeof(PROCESS_MEMORY_COUNTERS_EX);
@@ -100,11 +119,22 @@ index b8147c8..0ffb34e 100644
 +}
 +#endif  // XP_<PLATFORM>
 +
++#ifdef HAVE_VSIZE_MAX_CONTIGUOUS_REPORTER
+ class VsizeMaxContiguousReporter MOZ_FINAL : public MemoryUniReporter
+ {
+ public:
+@@ -429,8 +502,9 @@ public:
+         return VsizeMaxContiguousDistinguishedAmount(aAmount);
+     }
+ };
++#endif
+ 
+-#define HAVE_PRIVATE_REPORTER
 +#ifdef HAVE_PRIVATE_REPORTER
  class PrivateReporter MOZ_FINAL : public MemoryUniReporter
  {
  public:
-@@ -382,21 +437,10 @@ public:
+@@ -443,21 +517,10 @@ public:
  
      NS_IMETHOD GetAmount(int64_t* aAmount)
      {
@@ -119,7 +149,7 @@ index b8147c8..0ffb34e 100644
 -
 -        *aAmount = pmcex.PrivateUsage;
 -        return NS_OK;
-+        return GetPrivate(aAmount);
++        return PrivateDistinguishedAmount(aAmount);
      }
  };
 -

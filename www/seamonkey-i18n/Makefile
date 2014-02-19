@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	seamonkey-i18n
-PORTVERSION=	2.23
+PORTVERSION=	2.24
 CATEGORIES=	www mail news editors irc
 MASTER_SITES=	MOZILLA/${PORTNAME:S|-i18n||}/releases/${PORTVERSION}/langpack
 PKGNAMEPREFIX=
