@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 
-# PROVIDE: zoneserver
+# PROVIDE: Deadwood
 # REQUIRE: SERVERS
 # BEFORE: DAEMON
 # KEYWORD: shutdown
@@ -11,14 +11,14 @@
 
 . /etc/rc.subr
 
-: ${zoneserver_enable="NO"}
-: ${maradns_conf="%%ETCDIR%%/mararc"}
+: ${dwood3_enable="NO"}
+: ${dwood3_conf="%%ETCDIR%%/dwood3rc"}
 
-name="zoneserver"
-rcvar=zoneserver_enable
+name="Deadwood"
+rcvar=dwood3_enable
 command="%%PREFIX%%/bin/duende"
 pidfile="/var/run/${name}.pid"
-command_args="--pid=${pidfile} %%PREFIX%%/sbin/zoneserver -f ${maradns_conf}"
+command_args="--pid=${pidfile} %%PREFIX%%/sbin/Deadwood -f ${dwood3_conf}"
 
 load_rc_config $name
 

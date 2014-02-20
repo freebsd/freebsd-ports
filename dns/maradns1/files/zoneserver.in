@@ -12,13 +12,13 @@
 . /etc/rc.subr
 
 : ${zoneserver_enable="NO"}
-: ${maradns_conf="%%ETCDIR%%/mararc"}
+: ${maradns_conf="%%PREFIX%%/etc/mararc"}
 
 name="zoneserver"
 rcvar=zoneserver_enable
 command="%%PREFIX%%/bin/duende"
+command_args="%%PREFIX%%/sbin/zoneserver -f ${maradns_conf}"
 pidfile="/var/run/${name}.pid"
-command_args="--pid=${pidfile} %%PREFIX%%/sbin/zoneserver -f ${maradns_conf}"
 
 load_rc_config $name
 
