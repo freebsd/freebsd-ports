@@ -11,11 +11,10 @@ COMMENT=	Formats an ASCII file for printing on a postscript printer with Korean 
 
 PLIST_FILES=	bin/h2ps
 
-NO_STAGE=	yes
 pre-build:
 	@(cd ${WRKSRC}; make clean)
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/h2ps ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/h2ps ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
