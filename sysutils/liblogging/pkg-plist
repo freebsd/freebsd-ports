@@ -1,0 +1,8 @@
+include/liblogging/stdlog.h
+lib/liblogging-stdlog.a
+lib/liblogging-stdlog.la
+lib/liblogging-stdlog.so
+lib/liblogging-stdlog.so.0
+lib/pkgconfig/liblogging-stdlog.pc
+@dirrmtry lib/pkgconfig
+@dirrm include/liblogging
