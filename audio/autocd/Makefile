@@ -10,24 +10,16 @@ MASTER_SITES=	ftp://kot.spb.ru/pub/src/projects/autocd/
 MAINTAINER=	KOT@MATPOCKuH.Ru
 COMMENT=	Compact disc control utility
 
-NO_STAGE=	yes
 GNU_CONFIGURE=	yes
-MAN1=		cdctl.1 acdplay.1
-MAN8=		autocd.8
-MLINKS=		cdctl.1 eject.1 cdctl.1 pause.1
-PLIST_FILES=	sbin/autocd bin/acdplay bin/cdctl bin/pause bin/eject
+
 PORTDOCS=	README.rus.html
 
 USE_RC_SUBR=	autocd
 
-OPTIONS_DEFINE=	DOCS 
-
-.include <bsd.port.options.mk>
+OPTIONS_DEFINE=	DOCS
 
 post-install:
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
