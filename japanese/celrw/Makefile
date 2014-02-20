@@ -17,7 +17,8 @@ ALL_TARGET=	${PORTNAME}
 PORTDOCS=	README
 PLIST_FILES=	bin/celrw
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 post-extract:
 .for file in config.guess config.sub install.sh
 	@${RM} -f ${WRKSRC}/${file}
@@ -25,10 +26,8 @@ post-extract:
 .endfor
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/celrw ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/celrw ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
