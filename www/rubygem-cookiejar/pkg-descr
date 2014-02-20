@@ -6,4 +6,4 @@ persistence of the cookies in a JSON string.
 
 Both Netscape/RFC 2109 cookies and RFC 2965 cookies are supported.
 
-WWW:	https://github.com/dwaite/cookiejar
+WWW: https://github.com/dwaite/cookiejar
