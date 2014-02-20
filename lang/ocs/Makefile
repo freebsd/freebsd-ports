@@ -24,9 +24,7 @@ PLIST=		${WRKDIR}/pkg-plist
 ALL_TARGET=	install
 
 USE_BZIP2=	yes
-USES=		gmake perl5
-USE_TCL=	yes
-USE_TK=		yes
+USES=		gmake perl5 tk
 HAS_CONFIGURE=	yes
 USE_XORG=	xt
 MAKE_JOBS_UNSAFE=	yes
@@ -37,9 +35,9 @@ NOT_FOR_ARCHS=	amd64 ia64 sparc64
 CONFIGURE_ARGS=	--prefix="${WRKDIR}" \
 		--disable-absolute-pathes \
 		--disable-locallinks \
-		--with-tcl-lib="-L${LOCALBASE}/lib -ltcl${TCL_VER:S/.//}" \
+		--with-tcl-lib="-L${LOCALBASE}/lib -ltcl${TCL_SHLIB_VER}" \
 		--with-tcl-incl="-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} -I${LOCALBASE}/include" \
-		--with-tk-lib="-ltk${TK_VER:S/.//}" \
+		--with-tk-lib="-ltk${TK_SHLIB_VER}" \
 		--with-tk-incl="-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} -I${LOCALBASE}/include"
 
 MAN1=		ocs.1 oc.1 genmake.1
