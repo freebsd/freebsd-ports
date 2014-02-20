@@ -18,8 +18,7 @@ EXTRACT_BEFORE_ARGS=	# None
 EXTRACT_AFTER_ARGS=	> ${WRKSRC}/de.phone
 NO_BUILD=	YES
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/de.phone ${PREFIX}/share/misc
+	${INSTALL_DATA} ${WRKSRC}/de.phone ${STAGEDIR}${PREFIX}/share/misc
 
 .include <bsd.port.mk>
