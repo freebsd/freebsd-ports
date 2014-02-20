@@ -11,7 +11,7 @@ DISTNAME=	itcl${PORTVERSION}
 MAINTAINER=	erik@bz.bzflag.bz
 COMMENT=	Object-oriented extension to Tcl [incr Tcl]
 
-USE_TCL=	84+
+USES+=		tcl
 
 USE_LDCONFIG=	${PREFIX}/lib/itcl${PORTVERSION:R}
 
