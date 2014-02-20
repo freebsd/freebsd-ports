@@ -3,7 +3,7 @@
 
 PORTNAME=	xplanet
 PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro geography
 MASTER_SITES=	SF
 
@@ -12,6 +12,7 @@ COMMENT=	Draw pictures of the earth textured by an image
 
 NO_STAGE=	yes
 GNU_CONFIGURE=	yes
+USES=		iconv
 USE_XORG=	xt xscrnsaver
 USE_GNOME=	#
 CONFIGURE_ARGS=	--with-map-extension=jpg
