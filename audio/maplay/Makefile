@@ -13,8 +13,9 @@ COMMENT=	MPEG audio player/decoder decoding layer I and II MPEG audio streams
 
 LICENSE=	GPLv2
 
+USE_GCC=	yes
+
 NO_WRKSUBDIR=	yes
-NO_STAGE=	yes
 
 PLIST_FILES=	bin/maplay
 PORTDOCS=	README
@@ -28,10 +29,8 @@ post-patch:
 		${WRKSRC}/configuration.sh
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/maplay ${PREFIX}/bin
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/maplay ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
