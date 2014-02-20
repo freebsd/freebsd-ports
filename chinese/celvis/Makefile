@@ -11,14 +11,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vi/ex clone that speaks Chinese
 
 CFLAGS+=	-Wno-error=return-type
-MAN1=		celvis.1
-MLINKS=		celvis.1 cvi.1
 
-NO_STAGE=	yes
 do-install:
 	@# install target in celvis Makefile is not too good -- this is easier
-	${INSTALL_PROGRAM} ${WRKSRC}/celvis ${WRKSRC}/virec ${PREFIX}/bin
-	${LN} -f ${PREFIX}/bin/celvis ${PREFIX}/bin/cvi
-	${INSTALL_MAN} ${FILESDIR}/celvis.1 ${PREFIX}/man/man1/celvis.1
+	${INSTALL_PROGRAM} ${WRKSRC}/celvis ${WRKSRC}/virec ${STAGEDIR}${PREFIX}/bin
+	${LN} -s celvis ${STAGEDIR}${PREFIX}/bin/cvi
+	${INSTALL_MAN} ${FILESDIR}/celvis.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
