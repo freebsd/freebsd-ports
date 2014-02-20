@@ -131,6 +131,7 @@
     SUBDIR += etherboot
     SUBDIR += etrace
     SUBDIR += exabgp
+    SUBDIR += exaddos
     SUBDIR += findmtu
     SUBDIR += flowgrep
     SUBDIR += fonulator
