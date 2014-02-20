@@ -1,12 +1,14 @@
 # $FreeBSD$
 
 PORTNAME=	xcb-util-wm
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	x11
 MASTER_SITES=	http://xcb.freedesktop.org/dist/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Framework for window manager implementation
+
+LICNESE=	MIT
 
 LIB_DEPENDS=	libxcb-util.so:${PORTSDIR}/x11/xcb-util
 
