@@ -54,8 +54,7 @@ USE_PERL5+=		run build
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
-USE_TCL=		84+
-.include "${PORTSDIR}/Mk/bsd.tcl.mk"
+USES+=			tcl
 CONFIGURE_ARGS+=	--with-tcl=${TCL_LIBDIR}
 .endif
 
