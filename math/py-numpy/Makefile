@@ -25,7 +25,7 @@ OPTIONS_DEFAULT=	SUITESPARSE
 ATLAS_DESC=		Use optimized blas library
 SUITESPARSE_DESC=	Use AMD and UMFPACK in SuiteSparse
 
-USES=		fortran
+USE_FORTRAN=			yes
 USE_PYTHON=			yes
 USE_PYDISTUTILS=		yes
 PYDISTUTILS_CONFIGUREARGS+=	--fcompiler=gnu95
@@ -33,27 +33,9 @@ PYDISTUTILS_BUILDARGS+=		--fcompiler=gnu95
 PYTHON_PY3K_PLIST_HACK=		yes
 
 PORTDOCS=	*
-LATEST_LINK=	py-${PORTNAME}
 WRKSRC=		${WRKDIR}/${DISTNAME:S/r/rc/}
 
 .include <bsd.port.pre.mk>
-
-.if (${OSVERSION} <= 703100 || \
-(${OSVERSION} >= 800000 && ${OSVERSION} <= 800502) || \
-(${OSVERSION} >= 900000 && ${OSVERSION} <= 900009)) && \
-(${ARCH} == "i386" || ${ARCH} == "amd64")
-WITH_FIXED_FENV=	yes
-.endif
-
-.if defined(WITH_FIXED_FENV)
-MASTER_SITES+=	http://svn.freebsd.org/base/head/lib/msun/:fp
-.if ${ARCH} == "i386"
-FP_ARCH=	i387
-.elif ${ARCH} == "amd64"
-FP_ARCH=	${ARCH}
-.endif
-DISTFILES+=	${FP_ARCH}/fenv.c?p=203441:fp ${FP_ARCH}/fenv.h?p=203441:fp
-.endif
 
 .if ${PORT_OPTIONS:MATLAS}
 LIB_DEPENDS+=	libatlas.so:${PORTSDIR}/math/atlas
@@ -77,15 +59,8 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|'LDFLAGS'|None|" ${WRKSRC}/numpy/distutils/fcompiler/__init__.py
 
 GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so|${SED} -e s/libgfortran.so//
+
 pre-configure:
-.if defined(WITH_FIXED_FENV)
-	@if [ "`${PKG_VERSION} -t \"\`\\\`${CC} -print-prog-name=as\\\` --version | ${AWK} 'NR==1 {sub(/\(GNU Binutils\)/,""); print $$3}'\`\" 2.18.49`" = ">" ] ; then \
-		${CP} ${DISTDIR}/${FP_ARCH}/fenv.c?p=203441 ${WRKSRC}/numpy/core/include/numpy/fenv/fenv.c; \
-		${CP} ${DISTDIR}/${FP_ARCH}/fenv.h?p=203441 ${WRKSRC}/numpy/core/include/numpy/fenv/fenv.h; \
-		${REINPLACE_CMD} -e 's|<fenv.h>|"fenv.h"|' ${WRKSRC}/numpy/core/include/numpy/fenv/fenv.c; \
-		${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/fenv.patch; \
- 	fi
-.endif
 .if ${PORT_OPTIONS:MATLAS}
 	@${REINPLACE_CMD} -e "s+%%ATLASLIBS%%+alapack, f77blas, cblas, atlas+" ${WRKSRC}/site.cfg
 .else
@@ -99,27 +74,10 @@ pre-configure:
 		${WRKSRC}/site.cfg
 	@${REINPLACE_CMD} -e "s+%%GCCLIBDIR%%+$$(${GCCLIBDIR_CMDS})+" ${WRKSRC}/numpy/distutils/system_info.py
 
-pre-install:
-.if defined(WITH_FIXED_FENV)
-	@if [ "`${PKG_VERSION} -t \"\`\\\`${CC} -print-prog-name=as\\\` --version | ${AWK} 'NR==1 {sub(/\(GNU Binutils\)/,""); print $$3}'\`\" 2.18.49`" = ">" ] ; then \
-		${RM} ${WRKSRC}/numpy/core/include/numpy/fenv/fenv.c.bak; \
-	fi
-.endif
-
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/numpy/f2py/f2py.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/numpy-ref-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/numpy-user-${PORTVERSION}.pdf ${STAGEDIR}${DOCSDIR}
-
-.if defined(WITH_FIXED_FENV)
-	@if [ "`${PKG_VERSION} -t \"\`\\\`${CC} -print-prog-name=as\\\` --version | ${AWK} 'NR==1 {sub(/\(GNU Binutils\)/,""); print $$3}'\`\" 2.18.49`" = ">" ] ; then \
-		${REINPLACE_CMD} -e "s|%%FENV%%||g" ${TMPPLIST}; \
-	else \
-		${REINPLACE_CMD} -e "s|%%FENV%%|@comment |g" ${TMPPLIST}; \
-	fi
-.else
-	@${REINPLACE_CMD} -e "s|%%FENV%%|@comment |g" ${TMPPLIST}
-.endif
 
 .include <bsd.port.post.mk>
