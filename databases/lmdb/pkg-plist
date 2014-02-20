@@ -1,0 +1,8 @@
+bin/mdb_copy
+bin/mdb_stat
+include/lmdb.h
+lib/liblmdb.a
+lib/liblmdb.so
+lib/liblmdb.so.0
+man/man1/mdb_copy.1.gz
+man/man1/mdb_stat.1.gz
