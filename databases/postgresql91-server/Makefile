@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME?=	postgresql
-DISTVERSION?=	9.1.11
-PORTREVISION?=	1
+DISTVERSION?=	9.1.12
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -123,9 +123,6 @@ USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS+=--with-icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
 PATCHFILES+=	${ICU_PATCHFILE}:icu
-.    if defined(ICU_EXTRAPATCH)
-EXTRA_PATCHES+=	${ICU_EXTRAPATCH}
-.    endif
 LIB_DEPENDS+=	libicudata.so:${PORTSDIR}/devel/icu
 .  endif
 .endif # !SLAVE_ONLY

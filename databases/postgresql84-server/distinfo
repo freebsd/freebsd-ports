@@ -1,4 +1,4 @@
-SHA256 (postgresql/postgresql-8.4.19.tar.bz2) = f744d04a5d9feeea516fa57fea92be5568527bab03a84cf660a06ce90f90dcea
-SIZE (postgresql/postgresql-8.4.19.tar.bz2) = 14825794
+SHA256 (postgresql/postgresql-8.4.20.tar.bz2) = e84e46083a6accd2bf37f0bd7253415649afcafc49f2564bc8481c10ed90d7c1
+SIZE (postgresql/postgresql-8.4.20.tar.bz2) = 14642312
 SHA256 (postgresql/pg-8419-icu-2014-02-10.diff.gz) = a67fc17ef9985200cd25d6d534338305978496ea13d86fc6d1f6125d36ecf78f
 SIZE (postgresql/pg-8419-icu-2014-02-10.diff.gz) = 4374
