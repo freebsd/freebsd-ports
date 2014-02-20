@@ -15,14 +15,13 @@ MAKE_ARGS=	CC="${CC}"
 PLIST_FILES=	bin/edic bin/engdic
 PORTDATA=	[a-z].dic.gz
 
-NO_STAGE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' ${WRKSRC}/engdic.h
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/engdic ${PREFIX}/bin
-	${LN} -sf ${PREFIX}/bin/engdic ${PREFIX}/bin/edic
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/data/[a-z].dic.gz ${DATADIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/engdic ${STAGEDIR}${PREFIX}/bin
+	${LN} -sf ${PREFIX}/bin/engdic ${STAGEDIR}${PREFIX}/bin/edic
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/data/[a-z].dic.gz ${STAGEDIR}${DATADIR}
 
 .include <bsd.port.mk>
