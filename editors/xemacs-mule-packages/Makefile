@@ -27,7 +27,6 @@ WRKSRC=		${WRKDIR}/${PACKAGES_SUBDIR}
 XEMACSDIR=	${PREFIX}/lib/xemacs
 PACKAGES_SUBDIR=	mule-packages
 
-NO_STAGE=	yes
 do-extract:
 	@${MKDIR} ${WRKSRC}
 .for f in ${DISTFILES}
@@ -36,8 +35,8 @@ do-extract:
 .endfor
 
 do-install:
-	${MKDIR} ${XEMACSDIR}
-	${CP} -R ${WRKSRC} ${XEMACSDIR}
+	${MKDIR} ${STAGEDIR}${XEMACSDIR}
+	${CP} -R ${WRKSRC} ${STAGEDIR}${XEMACSDIR}
 
 post-install:
 	@cd ${WRKDIR} && \
