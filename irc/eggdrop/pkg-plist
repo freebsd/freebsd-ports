@@ -1,5 +1,6 @@
 bin/eggdrop
 etc/eggdrop.conf.sample
+man/man1/eggdrop.1.gz
 lib/eggdrop/assoc.so
 lib/eggdrop/blowfish.so
 lib/eggdrop/channels.so
@@ -16,79 +17,6 @@ lib/eggdrop/share.so
 lib/eggdrop/transfer.so
 lib/eggdrop/uptime.so
 lib/eggdrop/wire.so
-%%PORTDOCS%%%%DOCSDIR%%/ABOUT
-%%PORTDOCS%%%%DOCSDIR%%/BANS
-%%PORTDOCS%%%%DOCSDIR%%/BOTNET
-%%PORTDOCS%%%%DOCSDIR%%/BUG-REPORT
-%%PORTDOCS%%%%DOCSDIR%%/COMPILE-GUIDE
-%%PORTDOCS%%%%DOCSDIR%%/CONTENTS
-%%PORTDOCS%%%%DOCSDIR%%/Changes1.6
-%%PORTDOCS%%%%DOCSDIR%%/FIRST-SCRIPT
-%%PORTDOCS%%%%DOCSDIR%%/KNOWN-PROBLEMS
-%%PORTDOCS%%%%DOCSDIR%%/MODULES
-%%PORTDOCS%%%%DOCSDIR%%/PARTYLINE
-%%PORTDOCS%%%%DOCSDIR%%/PATCH-HOWTO
-%%PORTDOCS%%%%DOCSDIR%%/TEXT-SUBSTITUTIONS
-%%PORTDOCS%%%%DOCSDIR%%/TRICKS
-%%PORTDOCS%%%%DOCSDIR%%/USERS
-%%PORTDOCS%%%%DOCSDIR%%/WEIRD-MESSAGES
-%%PORTDOCS%%%%DOCSDIR%%/html/about.html
-%%PORTDOCS%%%%DOCSDIR%%/html/app-problems.html
-%%PORTDOCS%%%%DOCSDIR%%/html/app-textsub.html
-%%PORTDOCS%%%%DOCSDIR%%/html/app-tricks.html
-%%PORTDOCS%%%%DOCSDIR%%/html/app-weird.html
-%%PORTDOCS%%%%DOCSDIR%%/html/bans.html
-%%PORTDOCS%%%%DOCSDIR%%/html/botnet.html
-%%PORTDOCS%%%%DOCSDIR%%/html/compiling.html
-%%PORTDOCS%%%%DOCSDIR%%/html/egg-core.html
-%%PORTDOCS%%%%DOCSDIR%%/html/faqs.html
-%%PORTDOCS%%%%DOCSDIR%%/html/features.html
-%%PORTDOCS%%%%DOCSDIR%%/html/index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/install.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mod-assoc.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mod-blowfish.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mod-channels.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mod-compress.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mod-console.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mod-ctcp.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mod-dns.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mod-filesys.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mod-irc.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mod-notes.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mod-seen.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mod-server.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mod-share.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mod-transfer.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mod-uptime.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mod-wire.html
-%%PORTDOCS%%%%DOCSDIR%%/html/mod-woobie.html
-%%PORTDOCS%%%%DOCSDIR%%/html/news.html
-%%PORTDOCS%%%%DOCSDIR%%/html/party.html
-%%PORTDOCS%%%%DOCSDIR%%/html/patch-howto.html
-%%PORTDOCS%%%%DOCSDIR%%/html/readme.html
-%%PORTDOCS%%%%DOCSDIR%%/html/starting.html
-%%PORTDOCS%%%%DOCSDIR%%/html/tcl-commands.html
-%%PORTDOCS%%%%DOCSDIR%%/html/users.html
-%%PORTDOCS%%%%DOCSDIR%%/settings/CONTENTS
-%%PORTDOCS%%%%DOCSDIR%%/settings/core.settings
-%%PORTDOCS%%%%DOCSDIR%%/settings/mod.assoc
-%%PORTDOCS%%%%DOCSDIR%%/settings/mod.blowfish
-%%PORTDOCS%%%%DOCSDIR%%/settings/mod.channels
-%%PORTDOCS%%%%DOCSDIR%%/settings/mod.compress
-%%PORTDOCS%%%%DOCSDIR%%/settings/mod.console
-%%PORTDOCS%%%%DOCSDIR%%/settings/mod.ctcp
-%%PORTDOCS%%%%DOCSDIR%%/settings/mod.dns
-%%PORTDOCS%%%%DOCSDIR%%/settings/mod.filesys
-%%PORTDOCS%%%%DOCSDIR%%/settings/mod.irc
-%%PORTDOCS%%%%DOCSDIR%%/settings/mod.notes
-%%PORTDOCS%%%%DOCSDIR%%/settings/mod.seen
-%%PORTDOCS%%%%DOCSDIR%%/settings/mod.server
-%%PORTDOCS%%%%DOCSDIR%%/settings/mod.share
-%%PORTDOCS%%%%DOCSDIR%%/settings/mod.transfer
-%%PORTDOCS%%%%DOCSDIR%%/settings/mod.uptime
-%%PORTDOCS%%%%DOCSDIR%%/settings/mod.wire
-%%PORTDOCS%%%%DOCSDIR%%/settings/mod.woobie
-%%PORTDOCS%%%%DOCSDIR%%/tcl-commands.doc
 %%DATADIR%%/help/assoc.help
 %%DATADIR%%/help/chaninfo.help
 %%DATADIR%%/help/channels.help
@@ -187,7 +115,4 @@ lib/eggdrop/wire.so
 @dirrm %%DATADIR%%/help/msg
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/settings
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/eggdrop
