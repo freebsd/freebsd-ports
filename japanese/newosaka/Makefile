@@ -13,11 +13,10 @@ COMMENT=	Translator of Japanese EUC documents into Osaka language
 PLIST_FILES=	bin/osaka
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 do-build:
 	(cd ${WRKSRC}; ${CC} ${CFLAGS} -o osaka osaka.c -I${WRKSRC})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/osaka ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/osaka ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
