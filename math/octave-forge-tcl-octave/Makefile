@@ -11,7 +11,7 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 GNU_CONFIGURE=	yes
 
-USE_TCL_WRAPPER=	yes
+USES+=		tcl:wrapper
 
 .include "${.CURDIR}/../../Mk/bsd.octave.mk"
 .include <bsd.port.mk>
