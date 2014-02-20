@@ -3,6 +3,7 @@
 
 PORTNAME=	yorick
 PORTVERSION=	2.2.02
+PORTREVISION=	1
 CATEGORIES=	lang math
 EXTRACT_SUFX=	.tgz
 
@@ -29,6 +30,7 @@ post-patch:
 	@${REINPLACE_CMD} -E 's|cd (.+); (\$$\(MAKE\))|\2 -C \1|' \
 		${WRKSRC}/gist/Makefile ${WRKSRC}/play/Makefile \
 		${WRKSRC}/yorick/Makefile ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's/-ldl[[:>:]]//' ${WRKSRC}/play/unix/config.sh
 
 do-configure:
 	cd ${CONFIGURE_WRKSRC} && ${SETENV} ${MAKE_ENV} \
