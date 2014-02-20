@@ -1,6 +1,6 @@
---- Makefile.orig	2012-12-05 02:03:10.000000000 +0100
-+++ Makefile	2012-12-21 10:29:40.000000000 +0100
-@@ -288,7 +288,7 @@
+--- Makefile.orig	2014-01-24 22:07:36.000000000 +0100
++++ Makefile	2014-02-18 18:57:41.000000000 +0100
+@@ -292,7 +292,7 @@
   lLIBS += $(shell pkg-config --libs gmodule-2.0)
  endif
  # -lrt needed for clock_gettime(), explicit -lm, -ldl needed for some arch-linux distros
@@ -9,19 +9,10 @@
  ifeq ($(USE_GAMIN), 1)
  #gamin code is a superset of FAM code, so gamin needs fam as well
  lLIBS += -lfam
-@@ -305,7 +305,7 @@
-  ifeq ($(EXTDBUS), 1)
-   lLIBS += $(shell pkg-config --libs dbus-1 dbus-glib-1 hal hal-storage)
-  else
--  lLIBS += $(shell pkg-config --libs dbus-1 hal hal-storage)
-+  lLIBS += $(shell pkg-config --libs dbus-1 dbus-glib-1 hal hal-storage)
-  endif
- endif
- endif
-@@ -333,10 +333,6 @@
- 	@for file in `ls $(ICONS)/ |grep -v svn`; do \
- 		install -m 644 $(ICONS)/$$file $(ICON_DIR); \
+@@ -347,16 +347,12 @@
+ 		install -m 644 $$file $(ICON_DIR)/stock; \
  	done
+ endif
 -	@install -d $(DOC_DIR)
 -	@for file in `ls $(DOCS)/ |grep -v svn |grep -v desktop_environment |grep -v api |grep -v emelfm2.1`; do \
 -		install -m 644 $(DOCS)/$$file $(DOC_DIR); \
@@ -29,3 +20,10 @@
  	@install -d $(MAN_DIR)
  	@install -m 644 $(DOCS)/emelfm2.1 $(MAN_DIR)/$(TARGET).1;
  
+ 	@if [ "`grep "#define E2_XDG" $(BUILD_FILE)`" = "#define E2_XDG" ]; then \
+ 		install -d $(XDG_DESKTOP_DIR); \
+-		install -m 644 -T $(DOCS)/desktop_environment/$(TARGET).desktop $(XDG_DESKTOP_DIR)/$(TARGET).desktop; \
++		install -m 644 $(DOCS)/desktop_environment/$(TARGET).desktop $(XDG_DESKTOP_DIR)/$(TARGET).desktop; \
+ 	fi
+ 
+ # no i18n install unless specific target used
