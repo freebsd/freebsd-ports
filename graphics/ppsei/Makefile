@@ -11,14 +11,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	romain@FreeBSD.org
 COMMENT=	PowerPoint images extractor
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/ppsei
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-NO_STAGE=	yes
 do-build:
-	@(cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c)
+	${CC} ${CFLAGS} -o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
 
 do-install:
-	@(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${PREFIX}/bin)
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
