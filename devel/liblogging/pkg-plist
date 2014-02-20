@@ -1,9 +1,8 @@
-include/liblogging/liblogging.h
-include/liblogging/settings.h
-include/liblogging/srAPI.h
-include/liblogging/syslogmessage.h
-lib/liblogging.la
-lib/liblogging.so
-lib/liblogging.so.0
-libdata/pkgconfig/liblogging.pc
+include/liblogging/stdlog.h
+lib/liblogging-stdlog.a
+lib/liblogging-stdlog.la
+lib/liblogging-stdlog.so
+lib/liblogging-stdlog.so.0
+lib/liblogging-stdlog.so.0.0.0
+libdata/pkgconfig/liblogging-stdlog.pc
 @dirrm include/liblogging
