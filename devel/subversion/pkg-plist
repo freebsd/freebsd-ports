@@ -410,7 +410,6 @@ man/man8/svnserve.8.gz
 @dirrm %%DATADIR%%/xslt
 @dirrm %%DATADIR%%/server-side/svnpubsub/svnpubsub
 @dirrm %%DATADIR%%/server-side/svnpubsub/rc.d
-@dirrm %%DATADIR%%/server-side/svnpubsub/notes
 @dirrm %%DATADIR%%/server-side/svnpubsub
 @dirrm %%DATADIR%%/server-side/mod_dontdothat
 @dirrm %%DATADIR%%/server-side
