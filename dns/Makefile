@@ -71,6 +71,7 @@
     SUBDIR += libidn
     SUBDIR += linux-f10-libasyncns
     SUBDIR += maradns
+    SUBDIR += maradns1
     SUBDIR += mdnsd
     SUBDIR += mydns
     SUBDIR += mydns-ng

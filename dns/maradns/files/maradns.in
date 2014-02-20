@@ -12,13 +12,13 @@
 . /etc/rc.subr
 
 : ${maradns_enable="NO"}
-: ${maradns_conf="%%PREFIX%%/etc/mararc"}
+: ${maradns_conf="%%ETCDIR%%/mararc"}
 
 name="maradns"
 rcvar=maradns_enable
 command="%%PREFIX%%/bin/duende"
-command_args="%%PREFIX%%/sbin/maradns -f ${maradns_conf}"
 pidfile="/var/run/${name}.pid"
+command_args="--pid=${pidfile} %%PREFIX%%/sbin/maradns -f ${maradns_conf}"
 
 load_rc_config $name
 
