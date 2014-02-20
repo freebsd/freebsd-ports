@@ -159,6 +159,8 @@ lib/yorick/include/ydata.h
 lib/yorick/include/yio.h
 lib/yorick/include/yversion.h
 lib/yorick/lib/codger
+lib/yorick/lib/drat.so
+lib/yorick/lib/hex.so
 lib/yorick/lib/install.grp
 lib/yorick/lib/install.sh
 lib/yorick/lib/libdep.sh
