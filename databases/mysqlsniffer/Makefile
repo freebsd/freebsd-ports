@@ -14,11 +14,12 @@ COMMENT=	Tcpdump clone specifically for MySQL
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/mysqlsniffer
 
-NO_STAGE=	yes
 do-build:
-	${CC} -lpcap -o ${WRKSRC}/${PORTNAME} ${WRKSRC}/mysqlsniffer.c ${WRKSRC}/packet_handlers.c ${WRKSRC}/misc.c
+	${CC} ${CFLAGS} -lpcap -o ${WRKSRC}/${PORTNAME} \
+		${WRKSRC}/mysqlsniffer.c ${WRKSRC}/packet_handlers.c \
+			${WRKSRC}/misc.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
