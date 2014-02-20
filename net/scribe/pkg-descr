@@ -3,4 +3,4 @@ from a large number of servers. It is designed to be scalable,
 extensible without client-side modification, and robust to failure of
 the network or any specific machine.
 
-WWW:	http://github.com/facebook/scribe
+WWW: http://github.com/facebook/scribe
