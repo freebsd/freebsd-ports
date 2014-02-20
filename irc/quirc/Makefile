@@ -17,7 +17,6 @@ USE_XORG=	xt
 
 GNU_CONFIGURE=	yes
 MAKE_ENV+=	DESTDIR=${STAGEDIR}
-CFLAGS+=	-Wno-deprecated-writable-strings
 
 MYPORTDOCS=	AUTHORS ChangeLog FAQ NEWS README doc/color.txt \
 		doc/dccresum.txt doc/links.txt doc/nickcomp.txt \
