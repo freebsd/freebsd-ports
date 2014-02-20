@@ -25,7 +25,7 @@ OPTIONS_DEFAULT=	SUITESPARSE
 ATLAS_DESC=		Use optimized blas library
 SUITESPARSE_DESC=	Use AMD and UMFPACK in SuiteSparse
 
-USE_FORTRAN=			yes
+USES=				fortran
 USE_PYTHON=			yes
 USE_PYDISTUTILS=		yes
 PYDISTUTILS_CONFIGUREARGS+=	--fcompiler=gnu95
