@@ -14,7 +14,7 @@ COMMENT=	Enhanced ircII client that supports scripts, colors, and more
 
 USES=		gmake iconv ncurses
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-ipv6 --enable-regexp --enable-iconv
+CONFIGURE_ARGS=	--enable-ipv6 --enable-regexp --enable-utf8
 MAKE_ENV=	IRCLIB="${PREFIX}/share/scrollz"
 
 MAN1=		scrollz.1
@@ -38,6 +38,9 @@ CONFIGURE_ARGS+=	--with-ssl=${LOCALBASE}
 USE_OPENSSL=		yes
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/configure
 
 pre-build:
 .if !defined(BATCH)
