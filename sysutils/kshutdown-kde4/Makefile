@@ -15,9 +15,6 @@ USES=		cmake
 USE_QT4=	moc_build qmake_build rcc_build uic_build
 USE_KDE4=	automoc4 kdehier kdeprefix workspace
 
-LATEST_LINK=	${PORTNAME}-kde4
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

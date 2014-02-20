@@ -4,12 +4,11 @@ PORTNAME=	kiconedit
 PORTVERSION=	${EXTRA_VER}
 PORTREVISION=	3
 CATEGORIES=	graphics kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/extragear
+MASTER_SITES=	KDE/stable/extragear
 DIST_SUBDIR=	KDE/extragear
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	A KDE icon editor
+COMMENT=	KDE icon editor
 
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
@@ -18,7 +17,6 @@ USES=		cmake
 
 EXTRA_VER=	4.4.0
 
-NO_STAGE=	yes
 post-patch:
 #Fix build with kdelibs>=4.5.0
 	${REINPLACE_CMD} -e 's,V4.1.2-Based,V4.2-Based,g' \

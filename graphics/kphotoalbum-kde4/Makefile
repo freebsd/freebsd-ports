@@ -5,15 +5,14 @@ PORTNAME=	kphotoalbum
 PORTVERSION=	4.4
 PORTREVISION=	1
 CATEGORIES=	graphics kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
+MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Image viewer and organizer for KDE
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
-		exiv2:${PORTSDIR}/graphics/exiv2
+LIB_DEPENDS=	libjpeg.so:${PORTSDIR}/graphics/jpeg \
+		libexiv2.so:${PORTSDIR}/graphics/exiv2
 
 USE_KDE4=	kdehier kdelibs kdeprefix libkdcraw libkipi automoc4
 USE_QT4=	phonon sql \
@@ -21,28 +20,15 @@ USE_QT4=	phonon sql \
 USE_BZIP2=	yes
 USES=		cmake:outsource
 
-LATEST_LINK=	${PORTNAME}-kde4
-
-OPTIONS_DEFINE=	MARBLE
-OPTIONS_DEFAULT=MARBLE
+OPTIONS_DEFINE=	MARBLE NLS
+OPTIONS_DEFAULT=	MARBLE
+OPTIONS_SUB=	yes # NLS
 
 MARBLE_DESC=	Geolocation support
+MARBLE_USE=	KDE4=marble
+MARBLE_CMAKE_OFF=	-DWITH_Marble:BOOL=Off
 
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMARBLE}
-USE_KDE4+=	marble
-.else
-CMAKE_ARGS+=	-DWITH_Marble:BOOL=Off
-.endif
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=		gettext
-PLIST_SUB+=	NLS=""
-.else
-CMAKE_ARGS+=	-DBUILD_po:BOOL=Off
-PLIST_SUB+=	NLS="@comment "
-.endif
+NLS_USES=	gettext
+NLS_CMAKE_OFF=	-DBUILD_po:BOOL=Off
 
 .include <bsd.port.mk>

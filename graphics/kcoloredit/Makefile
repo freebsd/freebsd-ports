@@ -4,8 +4,7 @@ PORTNAME=	kcoloredit
 PORTVERSION=	${APP_VER}.${EXTRA_VER}
 PORTREVISION=	3
 CATEGORIES=	graphics kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/extragear
+MASTER_SITES=	KDE/stable/extragear
 DISTNAME=	${PORTNAME}-${APP_VER}-kde${EXTRA_VER}
 DIST_SUBDIR=	KDE/extragear
 
@@ -20,5 +19,4 @@ USES=		cmake
 APP_VER=	2.0.0
 EXTRA_VER=	4.4.0
 
-NO_STAGE=	yes
 .include <bsd.port.mk>

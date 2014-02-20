@@ -4,8 +4,7 @@ PORTNAME=	kpovmodeler
 PORTVERSION=	${APP_VER}.${EXTRA_VER}
 PORTREVISION=	10
 CATEGORIES=	graphics kde
-MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	Attic/${EXTRA_VER}/src/extragear
+MASTER_SITES=	KDE/Attic/${EXTRA_VER}/src/extragear
 DISTNAME=	${PORTNAME}-${APP_VER}-kde${EXTRA_VER}
 DIST_SUBDIR=	KDE/extragear
 
@@ -23,7 +22,6 @@ USES=		cmake gettext
 APP_VER=	1.1.3
 EXTRA_VER=	4.3.1
 
-NO_STAGE=	yes
 post-patch:
 #Fix build with kdelibs>=4.5.0
 	${REINPLACE_CMD} -e 's,V4.1.2-Based,V4.2-Based,g' \
