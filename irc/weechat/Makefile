@@ -87,7 +87,7 @@ PLIST_SUB+=	RUBY="@comment "
 
 .if ${PORT_OPTIONS:MGNUTLS}
 USES+=		pkgconfig
-LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	libgnutls.so:${PORTSDIR}/security/gnutls
 .else
 CMAKE_ARGS+=	-DENABLE_GNUTLS=no
 .endif
@@ -101,8 +101,7 @@ PLIST_SUB+=	PERL="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MTCL}
-USE_TCL=	85+
-.include "${PORTSDIR}/Mk/bsd.tcl.mk"
+USES+=		tcl:85+
 CMAKE_ARGS+=	-DBSD_TCL_VER=${TCL_VER} \
 		-DBSD_TCL_LIBDIR=${LOCALBASE}/lib \
 		-DBSD_TCL_INCDIR=${TCL_INCLUDEDIR}
@@ -151,7 +150,7 @@ PLIST_SUB+=	MANPAGES="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MBACKTRACE}
-LIB_DEPENDS+=	execinfo:${PORTSDIR}/devel/libexecinfo
+LIB_DEPENDS+=	libexecinfo.so:${PORTSDIR}/devel/libexecinfo
 .endif
 
 .if ${PORT_OPTIONS:MICON}
