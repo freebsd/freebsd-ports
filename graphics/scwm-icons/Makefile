@@ -12,11 +12,11 @@ COMMENT=	An icon collection for the scwm window manager
 
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	@${MKDIR} ${PREFIX}/share/scwm/pixmaps
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/scwm/pixmaps
 .for dir in icons mini-icons startup
-	${INSTALL_DATA} ${WRKSRC}/${dir}/*.xpm ${PREFIX}/share/scwm/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/${dir}/*.xpm \
+		${STAGEDIR}${PREFIX}/share/scwm/pixmaps
 .endfor
 
 .include <bsd.port.mk>
