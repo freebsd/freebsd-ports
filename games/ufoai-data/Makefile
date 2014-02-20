@@ -13,16 +13,21 @@ DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	UFO alien invasion data files
 
-EXTRACT_DEPENDS= ${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+# See http://ufoai.org/wiki/License
+LICENSE=	GPLv2 CCbySA3
+LICENSE_COMB=	multi
+LICENSE_NAME_CCbySA3=	Creative Commons Attribution-ShareAlike 3.0 Unported
+LICENSE_TEXT_CCbySA3=	See http://creativecommons.org/licenses/by-sa/3.0/
+LICENSE_PERMS_CCbySA3=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-NO_PACKAGE=	Package will be 900MB, set FORCE_PACKAGE if you really want it
+EXTRACT_DEPENDS=	${UNZIP_CMD}:${PORTSDIR}/archivers/unzip
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 DATADIR=	share/${PKGNAMEPREFIX:S/-//}
 PLIST=		${WRKDIR}/pkg-plist
 
-NO_STAGE=	yes
 post-extract:
 	@cd ${WRKDIR}/base && \
 		${FIND} * -type f -exec ${UNZIP_CMD} "{}" -d ${WRKDIR}/base \;
@@ -37,9 +42,6 @@ pre-install:
 	@${ECHO_CMD} "@dirrmtry %%DATADIR%%" >> ${PLIST}
 
 do-install:
-	${MKDIR} ${PREFIX}/${DATADIR}/base
-	cd ${WRKDIR}/base && \
-		${FIND} * -type d -exec ${MKDIR} "${PREFIX}/${DATADIR}/base/{}" \; && \
-			${FIND} * -type f -exec ${INSTALL_DATA} "{}" "${PREFIX}/${DATADIR}/base/{}" \;
+	cd ${WRKDIR}/base && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${DATADIR}/base
 
 .include <bsd.port.mk>
