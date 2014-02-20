@@ -47,7 +47,6 @@ PLIST_SUB=	FPC_I386="@comment " \
 .endif
 
 .if !defined(PKGNAMESUFFIX)
-NO_STAGE=	yes
 SUB_FILES=	pkg-message
 
 BUILDNAME=	${FPC_ARCH}-freebsd
@@ -55,50 +54,13 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		BUILDNAME=${BUILDNAME}
 DISTFILES+=	${PPNAME}-${PORTVERSION}-${OPSYS:L}${EXTRACT_SUFX}:bootstrap \
 		${DISTNAME:S/$/.man/}${EXTRACT_SUFX}:man
-MAKE_ENV+=	PP=${WRKDIR}/${PPNAME}-${PORTVERSION}-${OPSYS:L} \
+MAKE_ARGS+=	PP=${WRKDIR}/${PPNAME}-${PORTVERSION}-${OPSYS:L} \
 		FPCMAKE=${WRKDIR}/${FPCSRCDIR}/utils/fpcm/fpcmake \
 		FPCTARGET=${BUILDNAME} \
 		ARCH=${FPC_ARCH} \
 		OPT="${OPT}" \
-		BSDHIER=1
-
-MAN1=	bin2obj.1 \
-	chmcmd.1 \
-	chmls.1 \
-	data2inc.1 \
-	delp.1 \
-	fd2pascal.1 \
-	fp.1 \
-	fpc.1 \
-	fpclasschart.1 \
-	fpcmake.1 \
-	fpcmkcfg.1 \
-	fpdoc.1 \
-	fprcp.1 \
-	fpcres.1 \
-	fpcsubst.1 \
-	fppkg.1 \
-	grab_vcsa.1 \
-	h2pas.1 \
-	h2paspp.1 \
-	makeskel.1 \
-	plex.1 \
-	postw32.1 \
-	ppc386.1 \
-	ppcarm.1 \
-	ppcppc.1 \
-	ppcsparc.1 \
-	ppcx64.1 \
-	ppdep.1 \
-	ppudump.1 \
-	ppufiles.1 \
-	ppumove.1 \
-	ptop.1 \
-	pyacc.1 \
-	rmcvsdir.1 \
-	rstconv.1 \
-	unitdiff.1
-MAN5=	fpc.cfg.5 fpcmake.5 ptop.cfg.5
+		BSDHIER=1 \
+		INSTALL_PREFIX=${STAGEDIR}${PREFIX}
 
 do-extract:
 # unpack binary distribution
@@ -132,35 +94,32 @@ post-patch:
 
 do-build:
 # build fpc compiler
-	@cd ${WRKDIR}/${FPCSRCDIR}/compiler && ${GMAKE} cycle ${MAKE_ENV}
+	@cd ${WRKDIR}/${FPCSRCDIR}/compiler && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} cycle ${MAKE_ARGS}
 # build fpcmkcfg
-	@cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcm && ${GMAKE} ${MAKE_ENV}
-	@cd ${WRKDIR}/${FPCSRCDIR}/packages/fcl-base && ${GMAKE} ${MAKE_ENV}
-	@cd ${WRKDIR}/${FPCSRCDIR}/packages/fcl-process && ${GMAKE} ${MAKE_ENV}
-	@cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcmkcfg && ${GMAKE} ${MAKE_ENV}
+	@cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcm && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS}
+	@cd ${WRKDIR}/${FPCSRCDIR}/packages/fcl-base && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS}
+	@cd ${WRKDIR}/${FPCSRCDIR}/packages/fcl-process && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS}
+	@cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcmkcfg && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS}
 
 do-install:
 # 	Installing fpc compiler
-	@cd ${WRKDIR}/${FPCSRCDIR}/rtl && ${GMAKE} install ${MAKE_ENV}
+	@cd ${WRKDIR}/${FPCSRCDIR}/rtl && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} install ${MAKE_ARGS}
 # 	Installing fpc runtime
-	@cd ${WRKDIR}/${FPCSRCDIR}/compiler && ${GMAKE} install ${MAKE_ENV}
+	@cd ${WRKDIR}/${FPCSRCDIR}/compiler && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} install ${MAKE_ARGS}
 # 	Installng fpcmkcfg
-	@cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcmkcfg && ${GMAKE} install ${MAKE_ENV}
+	@cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcmkcfg && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} install ${MAKE_ARGS}
 # 	Installng fpcmake
-	@cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcm && ${GMAKE} install ${MAKE_ENV}
+	@cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcm && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} install ${MAKE_ARGS}
 # 	Installing manpages
-	${INSTALL_DATA} ${WRKDIR}/man/man1/* ${MAN1PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKDIR}/man/man5/* ${MAN1PREFIX}/man/man5
+	${INSTALL_DATA} ${WRKDIR}/man/man1/* ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKDIR}/man/man5/* ${STAGEDIR}${MAN1PREFIX}/man/man5
 
 post-install:
-	if [ -e "${PREFIX}/bin/${PPNAME}" ]; then ${RM} -f "${PREFIX}/bin/${PPNAME}"; fi
-	${LN} -s "${PREFIX}/lib/fpc/${PORTVERSION}/${PPNAME}" "${PREFIX}/bin"
-	${SH} "${PREFIX}/lib/fpc/${PORTVERSION}/samplecfg" "${PREFIX}/lib/fpc/${PORTVERSION}" "${PREFIX}/etc"
-	@${REINPLACE_CMD} -i "" -e 's|^-Fl/usr/local/lib|-Fl${LOCALBASE}/lib;${LOCALBASE}/lib/qt4|g' ${PREFIX}/etc/fpc.cfg.sample
-	@if [ ! -f ${PREFIX}/etc/fpc.cfg ]; then \
-		${CP} ${PREFIX}/etc/fpc.cfg.sample ${PREFIX}/etc/fpc.cfg; \
-	fi
-	@${CAT} ${PKGMESSAGE}
+	if [ -e "${STAGEDIR}${PREFIX}/bin/${PPNAME}" ]; then ${RM} -f "${STAGEDIR}${PREFIX}/bin/${PPNAME}"; fi
+	${LN} -sf "${PREFIX}/lib/fpc/${PORTVERSION}/${PPNAME}" "${STAGEDIR}${PREFIX}/bin"
+	${SH} "${STAGEDIR}${PREFIX}/lib/fpc/${PORTVERSION}/samplecfg" "${STAGEDIR}${PREFIX}/lib/fpc/${PORTVERSION}" "${STAGEDIR}${PREFIX}/etc"
+	@${REINPLACE_CMD} -i "" -e 's|${STAGEDIR}||' \
+		-e 's|^-Fl/usr/local/lib|-Fl${LOCALBASE}/lib;${LOCALBASE}/lib/qt4|g' ${STAGEDIR}${PREFIX}/etc/fpc.cfg.sample
 
 .else
 .include "${MASTERDIR}/Makefile.units"
