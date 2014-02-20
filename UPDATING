@@ -17,11 +17,11 @@ you update your ports collection, before attempting any port upgrades.
 
   pkg users can run:
 
-    pkg delete -f docbook-xml* docbook-sk* docbook[2345]??-* docbook-4*
+    pkg delete -f docbook-xml\* docbook-sk\* docbook\[2345\]\?\?-\* docbook-4\*
 
   the other users can run:
 
-    pkg_delete -f docbook-xml* docbook-sk* docbook[2345]??-* docbook-4*
+    pkg_delete -f docbook-xml\* docbook-sk\* docbook\[2345\]\?\?-\* docbook-4\*
 
 20140218:
   AFFECTS: users of KDE SC 4
