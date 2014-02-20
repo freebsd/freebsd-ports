@@ -2,19 +2,19 @@
 # $FreeBSD$
 
 PORTNAME=	liblogging
-PORTVERSION=	0.7.1
+PORTVERSION=	1.0.1
 CATEGORIES=	devel
-MASTER_SITES=	CENKES http://download.rsyslog.com/liblogging/
+MASTER_SITES=	http://download.rsyslog.com/liblogging/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	brd@FreeBSD.org
 COMMENT=	Easy to use system logging library
 
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-static
+LICENSE=	BSD2CLAUSE
 
-post-patch:
-	@${REINPLACE_CMD} -e '/^pkgconfigdir =/s|=.*| \
-		= ${PREFIX}/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
+GNU_CONFIGURE=	yes
+USES=	libtool pathfix
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/liblogging-stdlog.so.0.0.0
 
 .include <bsd.port.mk>
