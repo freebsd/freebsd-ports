@@ -14,13 +14,10 @@ YC_VERSION=	4.0.13
 
 PLIST_FILES+=	bin/icanna
 
-NO_STAGE=	yes
 do-build:
-	cd ${WRKSRC} && \
-		${CC} ${CFLAGS} -o icanna icanna.c
+	${CC} ${CFLAGS} -o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
 
 do-install:
-	cd ${WRKSRC} && \
-		${INSTALL_PROGRAM} icanna ${PREFIX}/bin/icanna
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
