@@ -22,6 +22,7 @@ lib/libqca.so.2.0
 lib/libqca.so.2.0.3
 %%DEBUG%%lib/libqca.so.2.0.3.debug
 libdata/pkgconfig/qca2.pc
+man/man1/qcatool2.1.gz
 share/qca/certs/README
 share/qca/certs/rootcerts.pem
 share/qt4/mkspecs/features/crypto.prf

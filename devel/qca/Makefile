@@ -9,43 +9,31 @@ MASTER_SITES=	http://delta.affinix.com/download/qca/2.0/
 DISTNAME=	qca-${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Cross-platform crypto API for QT
+COMMENT=	Cross-platform crypto API for Qt
 
 USE_BZIP2=	yes
 USE_QT4=	corelib qmake_build moc_build
 HAS_CONFIGURE=	yes
 QT_NONSTANDARD=	yes
-CONFIGURE_ARGS+=--prefix=${PREFIX}
+CONFIGURE_ARGS+=--prefix=${PREFIX} \
+		--disable-tests
 CONFIGURE_ENV+=	QMAKESPEC=${QMAKESPEC}
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
-
-MAN1=		qcatool2.1
+DESTDIRNAME=	INSTALL_ROOT
 
 .if defined(PACKAGE_BUILDING)
 CONFIGURE_ENV+=	QC_VERBOSE=Y
 .endif
 
-.if defined(MAINTAINER_MODE)
-USE_QT4+=	qtestlib
-.else
-CONFIGURE_ARGS+=--disable-tests
-.endif
+OPTIONS_DEFINE=	DEBUG
+OPTIONS_SUB=	yes
 
-.if !defined(WITH_DEBUG)
-CONFIGURE_ARGS+=--release --no-separate-debug-info
-PLIST_SUB+=	DEBUG="@comment "
-.else
-CONFIGURE_ARGS+=--debug
-PLIST_SUB+=	DEBUG=""
-.endif
+DEBUG_CONFIGURE_ON=	--debug
+DEBUG_CONFIGURE_OFF=	--release --no-separate-debug-info
 
-NO_STAGE=	yes
 pre-configure:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/configure
 	${MKDIR} ${WRKSRC}/libdata/pkgconfig
-
-post-install:
-	${STRIP_CMD} ${PREFIX}/bin/qcatool2 ${PREFIX}/lib/libqca.so.${PORTVERSION}
 
 .include <bsd.port.mk>

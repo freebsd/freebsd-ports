@@ -9,8 +9,8 @@ MASTER_SITES=	http://delta.affinix.com/download/qca/2.0/plugins/
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	QCA Cyrus SASL plugin
 
-LIB_DEPENDS=	qca.2:${PORTSDIR}/devel/qca \
-		sasl2:${PORTSDIR}/security/cyrus-sasl2
+LIB_DEPENDS=	libqca.so:${PORTSDIR}/devel/qca \
+		libsasl2.so:${PORTSDIR}/security/cyrus-sasl2
 
 USE_BZIP2=	yes
 USE_QT4=	corelib qmake_build moc_build
@@ -19,17 +19,12 @@ QT_NONSTANDARD=	yes
 CONFIGURE_ARGS+=--plugins-path=${PREFIX}/${QT_PLUGINDIR_REL} \
 		--with-sasl-inc=${LOCALBASE}/include \
 		--with-sasl-lib=${LOCALBASE}/lib
+DESTDIRNAME=	INSTALL_ROOT
 
-.if !defined(WITH_DEBUG)
-CONFIGURE_ARGS+=--release --no-separate-debug-info
-PLIST_SUB+=	DEBUG="@comment "
-.else
-CONFIGURE_ARGS+=--debug
-PLIST_SUB+=	DEBUG=""
-.endif
+OPTIONS_DEFINE=	DEBUG
+OPTIONS_SUB=	yes
 
-NO_STAGE=	yes
-post-install:
-	${STRIP_CMD} ${PREFIX}/${QT_PLUGINDIR_REL}/crypto/libqca-cyrus-sasl.so
+DEBUG_CONFIGURE_ON=	--debug
+DEBUG_CONFIGURE_OFF=	--release --no-separate-debug-info
 
 .include <bsd.port.mk>
