@@ -121,7 +121,7 @@ CONFIGURE_ARGS+=--disable-kernel-poll
 .endif
 
 .if ${PORT_OPTIONS:MGS}
-USE_TK_RUN=	yes
+USES+=		tk:run
 .endif
 
 .if ${PORT_OPTIONS:MWX}
