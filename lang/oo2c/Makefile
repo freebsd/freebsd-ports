@@ -3,6 +3,7 @@
 
 PORTNAME=	oo2c
 PORTVERSION=	2.1.11
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	SF/ooc/ooc2/${PORTVERSION}
 DISTNAME=	${PORTNAME}_${BITS}-${PORTVERSION}
@@ -25,6 +26,10 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 ONLY_FOR_ARCHS=	i386 amd64 ia64
+
+post-patch:
+	@${REINPLACE_CMD} 's/dir=@/dir=$${DESTDIR}@/' \
+		 ${WRKSRC}/Makefile.config.in
 
 .include <bsd.port.pre.mk>
 
