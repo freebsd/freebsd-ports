@@ -12,7 +12,6 @@ COMMENT=	Neuroimaging Informatics Technology Initiative data format
 # LICENSE=	public domain
 
 USES=		gmake
-MAKE_JOBS_UNSAFE=yes
 
 # AFNI currently has nifti embedded in the distfile and installs the
 # nifti bins by itself.
