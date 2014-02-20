@@ -20,7 +20,7 @@ USE_LDCONFIG=	YES
 USE_BZIP2=	YES
 USES=		cmake
 USE_SDL=	sdl
-USE_XORG=	xaw
+USE_XORG=	xaw xrandr
 USE_GCC=	4.7+
 
 NO_STAGE=	yes
