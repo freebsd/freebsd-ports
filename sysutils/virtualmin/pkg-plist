@@ -1382,6 +1382,8 @@ lib/webmin/virtual-server/help/template_web_port.html
 lib/webmin/virtual-server/help/template_web_port.nl.html
 lib/webmin/virtual-server/help/template_web_sslport.html
 lib/webmin/virtual-server/help/template_web_sslport.nl.html
+lib/webmin/virtual-server/help/template_web_urlport.html
+lib/webmin/virtual-server/help/template_web_urlsslport.html
 lib/webmin/virtual-server/help/template_web_usermin_ssl.html
 lib/webmin/virtual-server/help/template_web_usermin_ssl.nl.html
 lib/webmin/virtual-server/help/template_web_webmin_ssl.html
@@ -1788,6 +1790,7 @@ lib/webmin/virtual-server/newfeatures-gpl/4.01/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.02/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.03/0-scripts
 lib/webmin/virtual-server/newfeatures-gpl/4.05/0-scripts
+lib/webmin/virtual-server/newfeatures-gpl/4.06/0-scripts
 lib/webmin/virtual-server/newfeatures-lib.pl
 lib/webmin/virtual-server/newip_form.cgi
 lib/webmin/virtual-server/newkey.cgi
@@ -1907,6 +1910,7 @@ lib/webmin/virtual-server/summary_domain.cgi
 lib/webmin/virtual-server/test-imap.pl
 lib/webmin/virtual-server/test-pop3.pl
 lib/webmin/virtual-server/test-smtp.pl
+lib/webmin/virtual-server/transfer-domain.pl
 lib/webmin/virtual-server/transfer.cgi
 lib/webmin/virtual-server/transfer_form.cgi
 lib/webmin/virtual-server/unalias-domain.pl
@@ -1938,6 +1942,7 @@ lib/webmin/virtual-server/wizard-lib.pl
 lib/webmin/virtual-server/wizard.cgi
 lib/webmin/virtual-server/writelogs.pl
 @dirrm lib/webmin/virtual-server/scripts
+@dirrm lib/webmin/virtual-server/newfeatures-gpl/4.06
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/4.05
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/4.03
 @dirrm lib/webmin/virtual-server/newfeatures-gpl/4.02
