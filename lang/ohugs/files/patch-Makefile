@@ -1,0 +1,25 @@
+--- Makefile.orig	2014-02-20 12:06:18.000000000 +0100
++++ Makefile	2014-02-20 12:08:16.000000000 +0100
+@@ -5,14 +5,14 @@
+ 	cd src; make
+ 
+ install: ohugs
+-	rm -rf $(INSTLIB)
+-	rm -f $(INSTBIN)/ohugs $(INSTBIN)/rohugs
+-	mkdir -p $(INSTLIB)
+-	tar cf - lib/*.hs libhugs/*.hs | (cd $(INSTLIB); tar xf -)
+-	cp -p src/ohugs src/rohugs $(INSTLIB)/
+-	sed -e "s#XX_INSTLIB#$(INSTLIB)#" ohugs > $(INSTBIN)/ohugs
+-	sed -e "s#XX_INSTLIB#$(INSTLIB)#" rohugs > $(INSTBIN)/rohugs
+-	chmod 755 $(INSTBIN)/ohugs $(INSTBIN)/rohugs
++	rm -rf $(DESTDIR)$(INSTLIB)
++	rm -f $(DESTDIR)$(INSTBIN)/ohugs $(DESTDIR)$(INSTBIN)/rohugs
++	mkdir -p $(DESTDIR)$(INSTLIB)
++	tar cf - lib/*.hs libhugs/*.hs | (cd $(DESTDIR)$(INSTLIB); tar xf -)
++	$(BSD_INSTALL_PROGRAM) src/ohugs src/rohugs $(DESTDIR)$(INSTLIB)
++	sed -e "s#XX_INSTLIB#$(INSTLIB)#" ohugs > $(DESTDIR)$(INSTBIN)/ohugs
++	sed -e "s#XX_INSTLIB#$(INSTLIB)#" rohugs > $(DESTDIR)$(INSTBIN)/rohugs
++	chmod 755 $(DESTDIR)$(INSTBIN)/ohugs $(DESTDIR)$(INSTBIN)/rohugs
+ 
+ clean:
+ 	cd src; make clean
