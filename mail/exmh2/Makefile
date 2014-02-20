@@ -19,7 +19,7 @@ BUILD_DEPENDS=	tclsh8.0jp:${PORTSDIR}/japanese/tcl80
 WISH=		wish8.0jp
 TCLSH=		tclsh8.0jp
 .else
-USE_TK=		86
+USES=		tk
 .endif
 
 # exmh is pretty useless without this, but it's not needed to build it.
