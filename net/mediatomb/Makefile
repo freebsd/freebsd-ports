@@ -20,6 +20,7 @@ CONFIGURE_ARGS=	--with-search="${LOCALBASE}" \
 		--disable-inotify
 CONFIGURE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
+USES=		iconv
 USE_RC_SUBR=	mediatomb
 
 # --- configurable variables ---
