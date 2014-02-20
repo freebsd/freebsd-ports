@@ -24,22 +24,16 @@ GO_PROJECT=	mdb
 GO_TAGNAME=	${PORTNAME:U}_${PORTVERSION}
 FETCH_ARGS?=	-o ${DISTDIR}/${DISTFILES}
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_LIB} ${WRKSRC}/liblmdb.a ${PREFIX}/lib/
-	${INSTALL_LIB} ${WRKSRC}/liblmdb.so ${PREFIX}/lib/liblmdb.so.0
-	${LN} -sf liblmdb.so.0 ${PREFIX}/lib/liblmdb.so
+	${INSTALL_LIB} ${WRKSRC}/liblmdb.a ${STAGEDIR}${PREFIX}/lib/
+	${INSTALL_LIB} ${WRKSRC}/liblmdb.so ${STAGEDIR}${PREFIX}/lib/liblmdb.so.0
+	${LN} -sf liblmdb.so.0 ${STAGEDIR}${PREFIX}/lib/liblmdb.so
 .for f in mdb_stat mdb_copy
-	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/lmdb.h ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/lmdb.h ${STAGEDIR}${PREFIX}/include
 .for f in mdb_stat.1 mdb_copy.1
-	${INSTALL_MAN} ${WRKSRC}/${f} ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${f} ${STAGEDIR}${PREFIX}/man/man1
 .endfor
-
-MAN1=		mdb_stat.1 mdb_copy.1
-PLIST_FILES=	lib/liblmdb.a lib/liblmdb.so lib/liblmdb.so.0
-PLIST_FILES+=	bin/mdb_stat bin/mdb_copy
-PLIST_FILES+=	include/lmdb.h
 
 .include <bsd.port.mk>
