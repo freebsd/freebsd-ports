@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20140220:
+  AFFECTS: users of editors/vim
+  AUTHOR: sunpoet@FreeBSD.org
+
+  The editors/vim port has been reworked to simplify option handling. In UI
+  option group, a new option (CONSOLE) was added for users who do not need
+  GUI support. This option is off by default. You might encounter install
+  or package failures with "old" option setting. Please run "make config" to
+  modify your setting.
+
 20140219:
   AFFECTS: users of textproc/docbook*
   AUTHOR: mat@FreeBSD.org
