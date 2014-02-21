@@ -31,7 +31,7 @@ PLIST_FILES=	lib/xchat/plugins/mircryption.so
 PORTDOCS=	README.txt
 PORTEXAMPLES=	mcps_masterkey_on_start.pl
 
-OPTIONS_DEFINE=	DOCS EXAMPLES 
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 
