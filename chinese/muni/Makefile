@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.whizkidtech.redprince.net/i18n/muni/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find Unicode values for Chinese characters
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
