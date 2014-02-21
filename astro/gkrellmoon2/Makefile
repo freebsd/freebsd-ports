@@ -20,7 +20,7 @@ USE_GNOME=	gtk20
 
 ALL_TARGET=	gkrellmoon.so
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
