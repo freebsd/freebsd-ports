@@ -1,2 +1,3 @@
 bin/ltrace
 etc/ltrace.conf
+man/man1/ltrace.1.gz
