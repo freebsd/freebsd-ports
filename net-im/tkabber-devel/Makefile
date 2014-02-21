@@ -11,7 +11,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	dsh@wizard.volgograd.ru
 COMMENT=	Tcl/Tk based jabber client, development version
 
-LIB_DEPENDS=	tkXwin.1:${PORTSDIR}/x11/tkXwin
+LIB_DEPENDS=	libtkXwin.so:${PORTSDIR}/x11/tkXwin
 RUN_DEPENDS=	tcllib>=1.10:${PORTSDIR}/devel/tcllib \
 		tcltls>=1.5.0:${PORTSDIR}/devel/tcltls \
 		bwidget>=1.8.0:${PORTSDIR}/x11-toolkits/bwidget
@@ -21,8 +21,10 @@ NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_BZIP2=	yes
-USE_TCL_RUN=	85+
-USE_TK_RUN=	85+
+USES=		tk:85+,run
+
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 DESKTOP_ENTRIES=	"${PORTNAME}" \
 		"${COMMENT}" \
@@ -36,36 +38,35 @@ SUBDIRS=	emoticons ifacetk mclistbox msgs pixmaps plugins sounds \
 
 OPTIONS_DEFINE=	ZLIB
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 do-install:
 	${ECHO} -e "#!/bin/sh\nexec ${WISH} ${DATADIR}/tkabber.tcl \
 		-name tkabber \"\$$@\"\n" > ${WRKDIR}/tkabber.sh
-	${INSTALL_SCRIPT} ${WRKDIR}/tkabber.sh ${PREFIX}/bin/tkabber
+	${INSTALL_SCRIPT} ${WRKDIR}/tkabber.sh ${STAGEDIR}${PREFIX}/bin/tkabber
 
 	${ECHO} -e "#!/bin/sh\nexec ${TCLSH} ${DATADIR}/tkabber-remote.tcl \
 		-name tkabber-remote \"\$$@\"\n" > ${WRKDIR}/tkabber-remote.sh
-	${INSTALL_SCRIPT} ${WRKDIR}/tkabber-remote.sh ${PREFIX}/bin/tkabber-remote
+	${INSTALL_SCRIPT} ${WRKDIR}/tkabber-remote.sh ${STAGEDIR}${PREFIX}/bin/tkabber-remote
 
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.tcl ${DATADIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${SUBDIRS}" ${DATADIR})
-	${HEAD} -1 ${WRKSRC}/ChangeLog > ${DATADIR}/version
+	${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.tcl ${STAGEDIR}${DATADIR}
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${SUBDIRS}" ${STAGEDIR}${DATADIR})
+	${HEAD} -1 ${WRKSRC}/ChangeLog > ${STAGEDIR}${DATADIR}/version
 
-	${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${STAGEDIR}${EXAMPLESDIR})
 
 .if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .  for i in AUTHORS COPYING ChangeLog README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${STAGEDIR}${DOCSDIR}
 .  endfor
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${STAGEDIR}${DOCSDIR}
 .endif
 
 .if ${PORT_OPTIONS:MZLIB}
-LIB_DEPENDS+=	ztcl[0-9]:${PORTSDIR}/devel/ztcl
+LIB_DEPENDS+=	libztcl[0-9].so:${PORTSDIR}/devel/ztcl
 .endif
 
 .include <bsd.port.mk>
