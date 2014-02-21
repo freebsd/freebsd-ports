@@ -13,9 +13,7 @@ RESTRICTED=	no-commercial-use
 
 MAKE_ARGS=	CC="${CC}" FLAGS="${CFLAGS}"
 
-NO_STAGE=	yes
-
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
@@ -24,14 +22,12 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ringtonetools ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/ringtonetools ${STAGEDIR}${PREFIX}/bin
 .for i in face.txt hemglass.mid ionian.rtttl usa.emelody yngwie_trilogy.rtttl
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/samples/${i} ${DATADIR}
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/${i} ${STAGEDIR}${DATADIR}
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/README ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
