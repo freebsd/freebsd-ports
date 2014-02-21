@@ -9,7 +9,7 @@ MASTER_SITES=	http://www.mmonit.com/monit/dist/
 MAINTAINER=	martinp@tildeslash.com
 COMMENT=	Unix system management and proactive monitoring
 
-LICENSE=	GPLV3
+LICENSE=	GPLv3
 LICENSE_FILE=	COPYING
 
 GNU_CONFIGURE=	yes
