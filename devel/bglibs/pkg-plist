@@ -244,6 +244,7 @@ lib/bglibs/vmailmgr/vpwentry.a
 %%PORTDOCS%%%%DOCSDIR%%/surf_8h-source.html
 %%PORTDOCS%%%%DOCSDIR%%/surfrand_8h-source.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+man/man1/cli-generate.1.gz
 @dirrm include/bglibs/adt
 @dirrm include/bglibs/base64
 @dirrm include/bglibs/cdb

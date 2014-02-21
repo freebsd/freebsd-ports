@@ -24,11 +24,9 @@ BGLIBS_LIB=	${PREFIX}/lib/${PORTNAME}
 USE_LDCONFIG=	${BGLIBS_LIB}
 
 DOCS=		NEWS README TODO doc/html/*
-MAN1=		cli-generate.1
 
 OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -37,17 +35,15 @@ post-patch:
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}"	> ${WRKSRC}/conf-cc
 	${ECHO_CMD} "${CC} ${STRIP} ${LDFLAGS}"	> ${WRKSRC}/conf-ld
-	${ECHO_CMD} "${PREFIX}"		> ${WRKSRC}/conf-home
-	${ECHO_CMD} "${PREFIX}/bin"	> ${WRKSRC}/conf-bin
-	${ECHO_CMD} "${PREFIX}/man"	> ${WRKSRC}/conf-man
-	${ECHO_CMD} "${BGLIBS_INC}"	> ${WRKSRC}/conf-include
-	${ECHO_CMD} "${BGLIBS_LIB}"	> ${WRKSRC}/conf-lib
+	${ECHO_CMD} "${STAGEDIR}${PREFIX}"		> ${WRKSRC}/conf-home
+	${ECHO_CMD} "${STAGEDIR}${PREFIX}/bin"	> ${WRKSRC}/conf-bin
+	${ECHO_CMD} "${STAGEDIR}${PREFIX}/man"	> ${WRKSRC}/conf-man
+	${ECHO_CMD} "${STAGEDIR}${BGLIBS_INC}"	> ${WRKSRC}/conf-include
+	${ECHO_CMD} "${STAGEDIR}${BGLIBS_LIB}"	> ${WRKSRC}/conf-lib
 
-.if ${PORT_OPTIONS:MDOCS}
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
-.endif
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}
 
 selftest: build
 	cd ${WRKSRC} && ${SH} selftests.sh
