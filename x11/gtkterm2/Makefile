@@ -23,7 +23,7 @@ PLIST_DIRS=	%%DATADIR%%/pixmaps %%DATADIR%%
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

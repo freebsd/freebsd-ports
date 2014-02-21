@@ -18,7 +18,7 @@ USES=		gmake
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gpm
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

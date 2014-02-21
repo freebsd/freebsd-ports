@@ -22,7 +22,7 @@ CONFIGURE_ARGS=	--sbindir=${PREFIX}/bin \
 		--without-gnome
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
