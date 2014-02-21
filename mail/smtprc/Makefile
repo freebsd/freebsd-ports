@@ -10,16 +10,19 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	A scanner for open SMTP relays
 
-.if defined(WITH_GUI)
+OPTIONS_DEFINE=	DOCS GUI
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGUI}
 RUN_DEPENDS=	p5-Tk>=0:${PORTSDIR}/x11-toolkits/p5-Tk
 PLIST_SUB+=	WITHGUI=""
 .else
 PLIST_SUB+=	WITHGUI="@comment "
 .endif
 
-NO_STAGE=	yes
 pre-fetch:
-.if defined(WITH_GUI)
+.if ${PORT_OPTIONS:MGUI}
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Installed with GUI"
 	@${ECHO_MSG} ""
@@ -34,26 +37,17 @@ post-patch:
 	    s,gcc,${CC},g" ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/etc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/auto.conf ${PREFIX}/etc/${PORTNAME}/auto.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/email.tmpl ${PREFIX}/etc/${PORTNAME}/email.tmpl.sample
-	${INSTALL_DATA} ${WRKSRC}/rcheck.conf ${PREFIX}/etc/${PORTNAME}/rcheck.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1
-.if defined(WITH_GUI)
-	${INSTALL_SCRIPT} ${WRKSRC}/gsmtprc ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/gsmtprc.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/auto.conf ${STAGEDIR}${PREFIX}/etc/${PORTNAME}/auto.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/email.tmpl ${STAGEDIR}${PREFIX}/etc/${PORTNAME}/email.tmpl.sample
+	${INSTALL_DATA} ${WRKSRC}/rcheck.conf ${STAGEDIR}${PREFIX}/etc/${PORTNAME}/rcheck.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${MANPREFIX}/man/man1
+.if ${PORT_OPTIONS:MGUI}
+	${INSTALL_SCRIPT} ${WRKSRC}/gsmtprc ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/gsmtprc.1 ${STAGEDIR}${PREFIX}/man/man1
 .endif
-
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
-.endif
-
-.if defined(WITH_GUI)
-MAN1=		smtprc.1 gsmtprc.1
-.else
-MAN1=		smtprc.1
-.endif
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}/README
 
 .include <bsd.port.mk>
