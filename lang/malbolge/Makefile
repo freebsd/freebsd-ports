@@ -17,7 +17,7 @@ NO_STAGE=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/malbolge ${PREFIX}/bin
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
