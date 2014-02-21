@@ -1,3 +1,4 @@
 sbin/ironsides
+man/man1/ironsides.1.gz
 %%EXAMPLESDIR%%/dfcs.usafa.edu.zonefile
 @dirrm %%EXAMPLESDIR%%
