@@ -24,7 +24,7 @@ INSTALLS_ICONS=	yes
 
 CONFIGURE_ARGS=	--disable-quick-launch
 
-OPTIONS_DEFINE=	NLS EXAMPLES 
+OPTIONS_DEFINE=	NLS EXAMPLES
 
 .include <bsd.port.options.mk>
 
