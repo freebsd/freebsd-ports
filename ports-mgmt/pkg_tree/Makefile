@@ -12,12 +12,10 @@ COMMENT=	Get a 'graphical' tree-overview of installed packages
 
 USES=		perl5
 
-MAN7=		pkg_tree.7
-PLIST_FILES=	bin/pkg_tree
+PLIST_FILES=	bin/pkg_tree man/man7/pkg_tree.7.gz
 
-NO_STAGE=	yes
 post-patch:
-	@${REINPLACE_CMD} -e 's|__PREFIX__|${PREFIX}|g ; \
+	@${REINPLACE_CMD} -e 's|__PREFIX__|${STAGEDIR}${PREFIX}|g ; \
 		s|__INSTALL_MAN__|${INSTALL_MAN}|g ; \
 		s|__INSTALL_SCRIPT__|${INSTALL_SCRIPT}|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|#!/usr/bin/perl -w|#!${PERL5} -w|' \
