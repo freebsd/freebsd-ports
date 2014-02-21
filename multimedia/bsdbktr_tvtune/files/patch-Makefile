@@ -1,0 +1,11 @@
+--- ./Makefile.orig	2014-02-21 16:33:19.453413028 +0100
++++ ./Makefile	2014-02-21 16:33:44.640427076 +0100
+@@ -3,7 +3,7 @@
+ #
+ 
+ bsdbktr_tvtune: bsdbktr_tvtune.c
+-	gcc -Wall -O -o bsdbktr_tvtune bsdbktr_tvtune.c
++	${CC} ${CFLAGS} -o bsdbktr_tvtune bsdbktr_tvtune.c
+ 	strip bsdbktr_tvtune
+ 
+ clean:
