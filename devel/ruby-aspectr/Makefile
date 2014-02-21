@@ -12,22 +12,23 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby libraries for Aspect programming
 
-USE_RUBY=	yes
+OPTIONS_DEFINE=		DOCS
 
+USE_RUBY=	yes
 NO_BUILD=	yes
 
 DOCS=		CHANGELOG README TODO
 
-NO_STAGE=	yes
+.include <bsd.port.options.mk>
+
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/lib/aspectr.rb ${RUBY_SITELIBDIR}/
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODDOCDIR}
+	${MKDIR} ${STAGEDIR}${RUBY_SITELIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/lib/aspectr.rb ${STAGEDIR}${RUBY_SITELIBDIR}/
+	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}
 .for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${RUBY_MODDOCDIR}/
 .endfor
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/logger.rb ${RUBY_MODEXAMPLESDIR}/
-.endif
+	${MKDIR} ${STAGEDIR}${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/logger.rb ${STAGEDIR}${RUBY_MODEXAMPLESDIR}/
 
 .include <bsd.port.mk>
