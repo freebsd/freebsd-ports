@@ -10,29 +10,25 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IP traffic summarizer
 
-MAN1=		ipaudit.1 ipstrings.1 total.1
+MANPAGE=	ipaudit.1 ipstrings.1 total.1
 
 BIN=		ipaudit ipstrings total
 
 MSG_FILE=	${PKGDIR}/pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-NO_STAGE=	yes
-do-install:
-.for b in ${BIN}
-	cd ${WRKSRC}/src && ${INSTALL_PROGRAM} $b ${PREFIX}/bin
-.endfor
-.for m in ${MAN1}
-	cd ${WRKSRC}/man/man1 && ${INSTALL_MAN} $m ${PREFIX}/man/man1
-.endfor
-	cd ${WRKSRC}/src && ${INSTALL_DATA} ipaudit.conf.sample ${PREFIX}/etc
+OPTIONS_DEFINE=	DOCS
 
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-.endif
+do-install:
+.for f in ${BIN}
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${f} ${STAGEDIR}${PREFIX}/bin
+.endfor
+.for f in ${MANPAGE}
+	${INSTALL_MAN} ${WRKSRC}/man/man1/${f} ${STAGEDIR}${PREFIX}/man/man1
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/src/ipaudit.conf.sample ${STAGEDIR}${PREFIX}/etc
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
