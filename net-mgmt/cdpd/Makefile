@@ -13,13 +13,10 @@ GNU_CONFIGURE=	yes
 EXTRACT_SUFX=	.tgz
 
 USE_RC_SUBR=	cdpd
-PLIST_FILES=	sbin/cdpd
+PLIST_FILES=	sbin/cdpd man/man8/cdpd.8.gz
 
-MAN8=	cdpd.8
-
-NO_STAGE=	yes
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/cdpd ${PREFIX}/sbin
-	@${INSTALL_MAN} ${WRKSRC}/cdpd.8 ${MAN8PREFIX}/man/man8
+	${INSTALL_PROGRAM} ${WRKSRC}/cdpd ${STAGEDIR}${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/cdpd.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
 .include <bsd.port.mk>
