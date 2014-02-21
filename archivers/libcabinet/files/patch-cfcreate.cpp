@@ -1,15 +1,17 @@
---- cfcreate.cpp.orig	Sun Oct 24 13:29:53 1999
-+++ cfcreate.cpp	Tue Aug 19 21:16:05 2003
-@@ -29,6 +29,8 @@
+--- cfcreate.cpp.orig	1999-10-24 07:29:53.000000000 -0400
++++ cfcreate.cpp	2014-02-21 15:48:26.812268415 -0500
+@@ -29,6 +29,10 @@
  #include <unistd.h>
  #endif
  
 +using std::ios;
++using std::ifstream;
++using std::ofstream;
 +
  ///////////////////////////////////////***************************************
  
  int cfc_fileinfo::write_entry(ostream& out)
-@@ -129,7 +131,7 @@
+@@ -129,7 +133,7 @@
  		}
  	}
  
@@ -18,7 +20,7 @@
  #ifndef unix
  	if(getftime(in.rdbuf()->fd(), &datetime) != 0) return GETTIME_FAILURE;
  #endif
-@@ -194,7 +196,7 @@
+@@ -194,7 +198,7 @@
  	unprocessed_data = NULL;				// Reset buffer holder
  	unprocessed_data_len = 0u;
  
@@ -27,7 +29,7 @@
  	{
  		delete[] buf;
  		buf = NULL;
-@@ -272,7 +274,7 @@
+@@ -272,7 +276,7 @@
  		return WRITE_ERROR;
  	}
  

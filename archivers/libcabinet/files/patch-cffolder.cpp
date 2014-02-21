@@ -1,5 +1,14 @@
---- cffolder.cpp.orig	Tue Aug 19 18:23:48 2003
-+++ cffolder.cpp	Tue Aug 19 18:24:14 2003
+--- cffolder.cpp.orig	1999-10-24 02:13:29.000000000 -0400
++++ cffolder.cpp	2014-02-21 15:53:49.255245183 -0500
+@@ -17,7 +17,7 @@
+ #ifndef __CFFOLDER_CPP__
+ #define __CFFOLDER_CPP__
+ 
+-#include <fstream.h>
++#include <fstream>
+ #include "cftypes.h"
+ #include "cfheader.h"
+ #include "cffolder.h"
 @@ -70,7 +70,7 @@
  			ra_size = cab_header.get_folder_ra_size();
  			reserved_area = new byte[ra_size];
