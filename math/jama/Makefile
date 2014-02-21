@@ -22,16 +22,13 @@ RUN_DEPENDS=	${LOCALBASE}/include/tnt/tnt.h:${PORTSDIR}/devel/tnt
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-NO_STAGE=	yes
 do-install:
-	${MKDIR} ${PREFIX}/include/tnt
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/tnt
 	${EXTRACT_CMD} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} \
-		-d ${PREFIX}/include/tnt
-.ifndef NOPORTDOCS
-	${MKDIR} ${WRKDIR}/doc ${DOCSDIR}
+		-d ${STAGEDIR}${PREFIX}/include/tnt
+	${MKDIR} ${WRKDIR}/doc ${STAGEDIR}${DOCSDIR}
 	${EXTRACT_CMD} -o ${DISTDIR}/${DIST_SUBDIR}/jama102doc \
 		-d ${WRKDIR}/doc
-	(cd ${WRKDIR}/doc/doxygen && ${COPYTREE_SHARE} \* ${DOCSDIR})
-.endif
+	(cd ${WRKDIR}/doc/doxygen && ${COPYTREE_SHARE} \* ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
