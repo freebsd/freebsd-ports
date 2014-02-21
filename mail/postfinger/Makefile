@@ -17,18 +17,17 @@ EXTRACT_AFTER_ARGS=	${WRKDIR}
 NO_BUILD=		yes
 WRKSRC=			${WRKDIR}
 
-PLIST_FILES=		bin/postfinger
+PLIST_FILES=	bin/postfinger
+PORTDOCS=	README
 
-PORTDOCS=		README
+OPTIONS_DEFINE=	DOCS
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} ${PREFIX}/bin/${PORTNAME}
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTNAME} \
+		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
