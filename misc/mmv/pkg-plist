@@ -1,0 +1,8 @@
+bin/mad
+bin/mcp
+bin/mln
+bin/mmv
+man/man1/mad.1.gz
+man/man1/mcp.1.gz
+man/man1/mln.1.gz
+man/man1/mmv.1.gz
