@@ -23,11 +23,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.orig
 
 GNU_CONFIGURE=	yes
 
-MAN1=		xspread.1 pxspread.1
 PORTDOCS=	*
-PLIST_FILES=	bin/pxspread bin/xspread
+PLIST_FILES=	bin/pxspread bin/xspread man/man1/pxspread.1.gz \
+		man/man1/xspread.1.gz
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MX11}
@@ -46,19 +45,17 @@ post-patch:
 		's|^void main|int main|' ${WRKSRC}/psc.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/pxspread ${PREFIX}/bin/pxspread
-	${INSTALL_PROGRAM} ${WRKSRC}/xspread ${PREFIX}/bin/xspread
-	${INSTALL_MAN} ${WRKSRC}/pxspread.man ${MANPREFIX}/man/man1/pxspread.1
-	${INSTALL_MAN} ${WRKSRC}/xspread.man ${MANPREFIX}/man/man1/xspread.1
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/x/notes ${DOCSDIR}
+	${INSTALL_PROGRAM} ${WRKSRC}/pxspread ${STAGEDIR}${PREFIX}/bin/pxspread
+	${INSTALL_PROGRAM} ${WRKSRC}/xspread ${STAGEDIR}${PREFIX}/bin/xspread
+	${INSTALL_MAN} ${WRKSRC}/pxspread.man ${STAGEDIR}${MANPREFIX}/man/man1/pxspread.1
+	${INSTALL_MAN} ${WRKSRC}/xspread.man ${STAGEDIR}${MANPREFIX}/man/man1/xspread.1
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/x/notes ${STAGEDIR}${DOCSDIR}
 .for dir in doc documents sample_files tests
 	@${TAR} -C ${WRKSRC} --exclude '*.tmp' -cf - ${dir} | \
-		${TAR} -C ${DOCSDIR} --unlink -xf -
+		${TAR} -C ${STAGEDIR}${DOCSDIR} --unlink -xf -
 .endfor
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
-.endif
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
