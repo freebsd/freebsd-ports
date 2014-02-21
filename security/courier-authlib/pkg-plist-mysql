@@ -4,7 +4,6 @@ etc/authlib/authmysqlrc.dist
 lib/courier-authlib/libauthmysql.a
 lib/courier-authlib/libauthmysql.la
 lib/courier-authlib/libauthmysql.so
-lib/courier-authlib/libauthmysql.so.0
 %%PORTDOCS%%%%DOCSDIR%%/README.authmysql.html
 %%PORTDOCS%%%%DOCSDIR%%/README.authmysql.myownquery
 
