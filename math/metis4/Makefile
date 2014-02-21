@@ -24,8 +24,10 @@ PORTSCOUT=	limit:4.*
 PROGRAMS=	graphchk kmetis mesh2dual mesh2nodal	\
 		oemetis onmetis partnmesh partdmesh pmetis
 
-NO_STAGE=	yes
+OPTIONS_DEFINE=	DOCS
+
 .include <bsd.port.pre.mk>
+
 .if ${ARCH} == "sparc64"
 PICFLAG?=	-fPIC
 .else
@@ -49,16 +51,13 @@ check regression-test test: build
 	cd ${WRKSRC}/Graphs ; ./mtest 4elt.graph
 
 do-install:
-	cd ${WRKSRC} ; ${INSTALL_PROGRAM} ${PROGRAMS} ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/include/metis
-	${INSTALL_DATA} ${WRKSRC}/Lib/*.h    ${PREFIX}/include/metis
-	${INSTALL_DATA} ${WRKSRC}/libmetis.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}_SHARED/libmetis.so.1 ${PREFIX}/lib
-	${LN} -sf libmetis.so.1 ${PREFIX}/lib/libmetis.so
-
-.ifndef NOPORTDOCS
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Doc/manual.ps ${DOCSDIR}
-.endif
+	cd ${WRKSRC} ; ${INSTALL_PROGRAM} ${PROGRAMS} ${STAGEDIR}${PREFIX}/bin
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/metis
+	${INSTALL_DATA} ${WRKSRC}/Lib/*.h    ${STAGEDIR}${PREFIX}/include/metis
+	${INSTALL_DATA} ${WRKSRC}/libmetis.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}_SHARED/libmetis.so.1 ${STAGEDIR}${PREFIX}/lib
+	${LN} -sf libmetis.so.1 ${STAGEDIR}${PREFIX}/lib/libmetis.so
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Doc/manual.ps ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.post.mk>
