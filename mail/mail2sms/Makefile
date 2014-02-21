@@ -12,16 +12,10 @@ COMMENT=	Mail to SMS converter
 
 GNU_CONFIGURE=	yes
 
-PLIST_FILES=	bin/${PORTNAME}
-MAN1=		mail2sms.1
-MAN5=		mail2sms.5
-
 OPTIONS_DEFINE=	DOCS
 
+PLIST_FILES=	bin/mail2sms man/man1/mail2sms.1.gz man/man5/mail2sms.5.gz
 PORTDOCS=	README REGEX example.conf
-
-NO_STAGE=	yes
-.include <bsd.port.options.mk>
 
 post-patch:
 	${CP} ${WRKSRC}/mail2sms.4 ${WRKSRC}/mail2sms.5
@@ -29,12 +23,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/main.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/mail2sms ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1/
-	${INSTALL_MAN} ${WRKSRC}/${MAN5} ${PREFIX}/man/man5/
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/mail2sms ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/mail2sms.1 ${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/mail2sms.5 ${STAGEDIR}${PREFIX}/man/man5
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
