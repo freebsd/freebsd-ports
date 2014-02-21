@@ -12,13 +12,10 @@ COMMENT=	A small program to add cvsweb links to FreeBSD commit messages
 
 DIST_SUBDIR=	${PORTNAME}
 ALL_TARGET=	cvsmail
-MANCOMPRESSED=	no
-MAN1=		cvsmail.1
-PLIST_FILES=	bin/cvsmail
+PLIST_FILES=	bin/cvsmail man/man1/cvsmail.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/cvsmail ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/cvsmail.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/cvsmail ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/cvsmail.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
