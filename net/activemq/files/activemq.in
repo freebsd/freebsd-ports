@@ -40,9 +40,12 @@ load_rc_config $name
 : ${activemq_classpath:=%%ETCDIR%%}
 : ${activemq_conf:=%%ETCDIR%%}
 : ${activemq_data:=%%MQDB%%}
+: ${activemq_logs:=/var/log/activemq}
 : ${activemq_home:=%%DATADIR%%}
 : ${activemq_javargs:='-Xmx512M -Dorg.apache.activemq.UseDedicatedTaskRunner=true -Djava.util.logging.config.file=logging.properties -Dcom.sun.management.jmxremote'}
 : ${activemq_stop_timeout:="10"}
+: ${activemq_hostname:=`/bin/hostname`}
+
 
 pidfile=/var/run/${name}.pid
 
@@ -52,8 +55,10 @@ java_options=" 	-server -jar ${activemq_javargs} \
 		-Dactivemq.classpath=${activemq_classpath} \
 		-Dactivemq.conf=${activemq_conf} \
 		-Dactivemq.data=${activemq_data} \
+		-Dactivemq.logs=${activemq_logs} \
 		-Dactivemq.home=${activemq_home} \
-		-Dactivemq.base=${activemq_home}"
+		-Dactivemq.base=${activemq_home} \
+		-Dactivemq.hostname=${activemq_hostname}"
 
 java_command="%%LOCALBASE%%/bin/java ${java_options} ${jar_file}"
 
@@ -66,6 +71,12 @@ stop_cmd="activemq_stop"
 activemq_precmd() {
         touch ${pidfile}
         chown ${activemq_user}:${activemq_group} ${pidfile}
+	if [ ! -d ${activemq_logs} ]; then 
+		/usr/bin/install -d -o ${activemq_user} -g ${activemq_group} ${activemq_logs}
+	fi
+	if [ ! -d ${activemq_data} ]; then 
+		/usr/bin/install -d -o ${activemq_user} -g ${activemq_group} ${activemq_data}
+	fi
 }
 
 activemq_stop() {
