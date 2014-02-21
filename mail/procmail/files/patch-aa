@@ -13,7 +13,7 @@
   
   # BASENAME should point to where the whole lot will be installed
   # change BASENAME to your home directory if need be
-! BASENAME      = $(PREFIX)
+! BASENAME      = $(DESTDIR)$(PREFIX)
   # For display in the man pages
   VISIBLE_BASENAME= $(BASENAME)
   
