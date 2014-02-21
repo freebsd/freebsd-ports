@@ -16,7 +16,7 @@ GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/ctorrent
 PORTDOCS=	README-DNH.TXT UserGuide
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
