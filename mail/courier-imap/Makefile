@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	courier-imap
-PORTVERSION=	4.14
+PORTVERSION=	4.15
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/courier/imap/${PORTVERSION}
@@ -92,7 +92,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAN1=		couriertcpd.1 maildiracl.1 maildirkw.1 \
 		maildirmake.1
 
-MAN8=		deliverquota.8 imapd.8 mkimapdcert.8 mkpop3dcert.8
+MAN8=		deliverquota.8 imapd.8 mkimapdcert.8 mkpop3dcert.8 mkdhparams.8
 
 EXTRA_DOCS=	AUTHORS INSTALL NEWS \
 		libs/imap/ChangeLog \
