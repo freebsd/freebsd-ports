@@ -30,7 +30,7 @@ RABINDIR=	${PREFIX}/bin
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	NLS 
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
