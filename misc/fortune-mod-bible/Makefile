@@ -18,16 +18,13 @@ USE_BZIP2=	yes
 SUB_FILES+=	pkg-message
 _STRFILE=	/usr/games/strfile
 
-NO_STAGE=	yes
 do-build:
 	@cd ${WRKSRC} && ${_STRFILE} -C bible
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/games
-	@${MKDIR} ${PREFIX}/share/games/fortune
-	@${INSTALL_DATA} ${WRKSRC}/bible* ${PREFIX}/share/games/fortune
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/games/fortune
+	@${INSTALL_DATA} ${WRKSRC}/bible* ${STAGEDIR}${PREFIX}/share/games/fortune
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
