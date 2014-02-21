@@ -18,7 +18,7 @@ CONFLICTS=	iroffer-1.* iroffer-dinoex-3.*
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 
-OPTIONS_DEFINE=	DOCS EXAMPLES 
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 .include <bsd.port.options.mk>
 
