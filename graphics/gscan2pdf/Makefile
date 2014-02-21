@@ -70,7 +70,7 @@ PORT_VERBS=	${PORTNAME} Gscan2pdf
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	NLS 
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
