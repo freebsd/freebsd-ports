@@ -9,14 +9,14 @@ MASTER_SITES=	http://downloads.laffeycomputer.com/current_builds/
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Rpl is a Unix text replacement utility
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 
-MAN1=		rpl.1
-PLIST_FILES=	bin/rpl
+PLIST_FILES=	bin/rpl man/man1/rpl.1.gz
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/rpl ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/man/rpl.1 ${MANPREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/src/rpl ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/rpl.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
