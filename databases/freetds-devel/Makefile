@@ -11,6 +11,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	Sybase/Microsoft TDS protocol library
 
+LICENSE=	LGPL20
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 TDS_VER?=	5.0
 USES=		gmake iconv pkgconfig
@@ -20,12 +22,9 @@ CPPFLAGS+=	"-I${LOCALBASE}/include"
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-tdsver=${TDS_VER}
 USE_LDCONFIG=	yes
+SUB_FILES=	pkg-message
 
 PORTDOCS=	*
-
-MAN1=		datacopy.1 freebcp.1 tsql.1 bsqldb.1 bsqlodbc.1 \
-		defncopy.1 fisql.1 osql.1
-MAN5=		freetds.conf.5
 
 # OPTIONS_DEFINE=	OPENSSL GNUTLS IODBC UNIXODBC MSDBLIB
 OPTIONS_DEFINE=	MSDBLIB ODBCWIDE
@@ -45,7 +44,6 @@ ODBCWIDE_DESC=	Enable Wide ODBC Support
 
 CONFLICTS=	freetds-0.64.[0-9]
 
-NO_STAGE=	yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MOPENSSL}
@@ -102,14 +100,11 @@ post-patch:
 		 s|%%ICONV_LIB%%|${ICONV_LIB}|'
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} images ${DOCSDIR}
-	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} doc/${PORTNAME}-${PORTVERSION}/reference ${DOCSDIR}
-	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} doc/${PORTNAME}-${PORTVERSION}/userguide ${DOCSDIR}
-.endif
-	@${MKDIR} ${PREFIX}/etc/freetds
-	@${INSTALL_DATA} ${WRKSRC}/interfaces ${PREFIX}/etc/freetds/interfaces.dist
-	@${ECHO_CMD} "Sample configuration files have been installed in ${PREFIX}/etc"
-	@${ECHO_CMD} "You should edit them and remove the .dist-suffix from their names"
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} images ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} doc/${PORTNAME}-${PORTVERSION}/reference ${STAGEDIR}${DOCSDIR}
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} doc/${PORTNAME}-${PORTVERSION}/userguide ${STAGEDIR}${DOCSDIR}
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/freetds
+	@${INSTALL_DATA} ${WRKSRC}/interfaces ${STAGEDIR}${PREFIX}/etc/freetds/interfaces.dist
 
 .include <bsd.port.mk>
