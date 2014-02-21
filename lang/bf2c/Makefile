@@ -11,19 +11,24 @@ COMMENT=	Optimizing BrainF*ck to C compiler
 
 LICENSE=	BSD2CLAUSE
 
+PATCH_STRIP=	-p1
 USE_GITHUB=	yes
 GH_ACCOUNT=	rene0
 GH_COMMIT=	4761081
 USE_XZ=		yes
 
-MAKE_ARGS=	PREFIX="${STAGEDIR}${PREFIX}"
-
 OPTIONS_DEFINE=	DOCS
 
+INSTALL_TARGET=	install-strip
+
+PORTDOCS=	README.md
+
+PLIST_FILES=	bin/bf2c bin/gen_bf
+
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/bf2c
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/gen_bf
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>

@@ -1,4 +1,0 @@
-bin/bf2c
-bin/gen_bf
-%%PORTDOCS%%%%DOCSDIR%%/README.md
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
