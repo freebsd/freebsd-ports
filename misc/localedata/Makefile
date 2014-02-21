@@ -19,12 +19,11 @@ TARGET_DIR=	${PREFIX}/share/compat
 
 WRKSRC=		${WRKDIR}/${ARCH}
 
-NO_STAGE=	yes
 post-extract:
 	cd ${WRKDIR}/ia64; ${MV} usr/share/locale .
 
 do-install:
-	${MKDIR} ${TARGET_DIR}
-	${PAX} -rw -s,${WRKSRC},, ${WRKSRC}/locale ${TARGET_DIR}
+	${MKDIR} ${STAGEDIR}${TARGET_DIR}
+	${PAX} -rw -s,${WRKSRC},, ${WRKSRC}/locale ${STAGEDIR}${TARGET_DIR}
 
 .include <bsd.port.mk>
