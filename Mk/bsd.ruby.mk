@@ -243,9 +243,9 @@ RUBY_CONFIGURE_ARGS+=	--with-rubyhdrdir="${PREFIX}/include/ruby-${RUBY_VER}/" \
 			--docdir="${RUBY_DOCDIR}" \
 			--with-soname=ruby${RUBY_SUFFIX}
 
-CONFIGURE_TARGET?=	${ARCH}-portbld-freebsd${OSREL:C/\..*//}
+CONFIGURE_TARGET?=	${ARCH}-portbld-${OPSYS:L}${OSREL:C/\..*//}
 
-RUBY_ARCH?=		${ARCH}-freebsd${OSREL:C/\..*//}
+RUBY_ARCH?=		${ARCH}-${OPSYS:L}${OSREL:C/\..*//}
 RUBY_NAME?=		ruby${RUBY_SUFFIX}
 
 _RUBY_SYSLIBDIR?=	${PREFIX}/lib
