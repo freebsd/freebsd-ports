@@ -20,8 +20,6 @@ PORTDOCS=	ChangeLog README TODO existential-notes.txt \
 
 MAKE_ARGS+=	CC="${CC}" CFLAGS="${CFLAGS}"
 
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
@@ -32,15 +30,12 @@ post-patch:
 
 do-install:
 .for ii in p0f tools/p0f-client tools/p0f-sendsyn tools/p0f-sendsyn6
-	${INSTALL_PROGRAM} ${WRKSRC}/${ii} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${ii} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/p0f.fp ${PREFIX}/etc/
-
-.if ${PORT_OPTIONS:MDOCS}
-	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/p0f.fp ${STAGEDIR}${PREFIX}/etc/
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for ii in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/docs/${ii} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/${ii} ${STAGEDIR}${DOCSDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
