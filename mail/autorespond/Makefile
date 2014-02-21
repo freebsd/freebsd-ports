@@ -12,8 +12,7 @@ PATCHFILES=	${DISTNAME}-conf-strcasestr.patch
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple autoresponder for qmail
 
-MAN1=		autorespond.1
-PLIST_FILES=	bin/autorespond
+PLIST_FILES=	bin/autorespond man/man1/autorespond.1.gz
 
 .if defined(WITHOUT_MDOC_MANPAGE)
 AR_MANPAGE=	${WRKSRC}/autorespond.1
@@ -21,14 +20,13 @@ AR_MANPAGE=	${WRKSRC}/autorespond.1
 AR_MANPAGE=	${FILESDIR}/autorespond.1
 .endif
 
-NO_STAGE=	yes
 post-patch:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	${ECHO_CMD} "${CC} ${STRIP}" > ${WRKSRC}/conf-ld
 	${ECHO_CMD} "${PREFIX}" > ${WRKSRC}/conf-home
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/autorespond ${PREFIX}/bin/
-	${INSTALL_MAN} ${AR_MANPAGE} ${PREFIX}/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/autorespond ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${AR_MANPAGE} ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
