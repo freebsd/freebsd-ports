@@ -15,7 +15,7 @@ GNU_CONFIGURE=	yes
 DOCS=		agenda-flashing-overview.txt troubleshooting.txt \
 		pmon-protect-unprotect.txt usage.txt
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

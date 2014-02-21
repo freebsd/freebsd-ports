@@ -30,7 +30,7 @@ post-build:
 	${CAT} ${WRKSRC}/fax.orig | ${SED} -e s!%%PREFIX%%!${PREFIX}!g > \
 		${WRKSRC}/fax
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

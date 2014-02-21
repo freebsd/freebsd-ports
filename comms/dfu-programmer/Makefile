@@ -19,7 +19,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lusb
 PLIST_FILES=	bin/dfu-programmer man/man1/dfu-programmer.1.gz
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
