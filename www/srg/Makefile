@@ -16,10 +16,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
-MAN1=		srg.1
-
-NO_STAGE=	yes
-
 OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.options.mk>
@@ -30,11 +26,9 @@ post-patch:
 		 /LDFLAGS/s|-L/usr/local/lib||' ${WRKSRC}/configure
 
 post-install:
-.if ${PORT_OPTIONS:MEXAMPLES}
-	@${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for ex in srg.daily srg.monthly srg.weekly
-	${INSTALL_DATA} ${WRKSRC}/examples/${ex} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/${ex} ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-.endif
 
 .include <bsd.port.mk>
