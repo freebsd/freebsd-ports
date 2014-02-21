@@ -68,7 +68,7 @@ NO_CCACHE=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-OPTIONS_DEFINE=	NLS 
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 
