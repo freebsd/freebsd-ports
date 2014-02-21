@@ -6,4 +6,5 @@ include/RAPID/moments.H
 include/RAPID/obb.H
 include/RAPID/overlap.H
 lib/libRAPID.a
+man/man1/rapid.1.gz
 @dirrm include/RAPID
