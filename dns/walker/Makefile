@@ -20,7 +20,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/walker man/man1/walker.1.gz
 PORTDOCS=	index.html
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

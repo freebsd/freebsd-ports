@@ -24,7 +24,7 @@ USE_RC_SUBR=	${PORTNAME} zoneserver
 USERS=		bind
 GROUPS=		bind
 
-OPTIONS_DEFINE=	DOCS EXAMPLES 
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e \
