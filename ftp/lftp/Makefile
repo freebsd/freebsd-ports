@@ -48,6 +48,7 @@ OPENSSL_CONFIGURE_WITH=	openssl
 OPENSSL_USE=	OPENSSL=yes
 GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:${PORTSDIR}/security/gnutls
+GNUTLS_USES+=	pkgconfig
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/lftp.conf \
