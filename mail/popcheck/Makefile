@@ -13,17 +13,10 @@ COMMENT=	Preview and delete messages in POP3 mailbox
 
 ALL_TARGET=	popcheck
 
-.if !defined(NO_INSTALL_MANPAGES)
-MAN1=		popcheck.1
-.endif
+PLIST_FILES=	bin/popcheck man/man1/popcheck.1.gz
 
-PLIST_FILES=	bin/popcheck
-
-NO_STAGE=	yes
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/popcheck ${PREFIX}/bin
-.if !defined(NO_INSTALL_MANPAGES)
-		${INSTALL_MAN} ${WRKSRC}/popcheck.1 ${MAN1PREFIX}/man/man1
-.endif
+	${INSTALL_PROGRAM} ${WRKSRC}/popcheck ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/popcheck.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
