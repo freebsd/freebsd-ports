@@ -3,7 +3,6 @@
 
 PORTNAME=	pver
 PORTVERSION=	0.16
-PORTREVISION=	0
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~weiyu/software/ \
 		${MASTER_SITE_GOOGLE_CODE}
@@ -18,6 +17,9 @@ DB185_DESC=	Use BerkeleyDB 1.85/1.86
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKE_ARGS+=	PORTSDIR=${PORTSDIR}
 MAKE_JOBS_UNSAFE=yes
+
+DEPRECATED=	Not compatible with pkgNG
+EXPIRATION_DATE=2014-09-01
 
 PLIST_FILES=	bin/pver \
 		bin/pver_c \
