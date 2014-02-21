@@ -13,7 +13,7 @@ COMMENT=	Session framework for the GNOME desktop to manage color profiles
 
 BUILD_DEPENDS=	docbook2man:${PORTSDIR}/textproc/docbook-utils \
 		itstool:${PORTSDIR}/textproc/itstool \
-		${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-410
+		${LOCALBASE}/share/sgml/docbook/4.1/dtd/catalog:${PORTSDIR}/textproc/docbook-sgml
 LIB_DEPENDS=	liblcms2.so:${PORTSDIR}/graphics/lcms2 \
 		libcolord.so:${PORTSDIR}/graphics/colord \
 		libcolord-gtk.so:${PORTSDIR}/graphics/colord-gtk \
