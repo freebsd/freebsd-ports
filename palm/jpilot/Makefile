@@ -32,7 +32,7 @@ MAN1=		jpilot-dial.1 jpilot-dump.1 jpilot-sync.1 jpilot.1
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	DOCS NLS 
+OPTIONS_DEFINE=	DOCS NLS
 
 .include <bsd.port.options.mk>
 
