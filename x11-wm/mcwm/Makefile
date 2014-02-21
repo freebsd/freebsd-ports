@@ -45,7 +45,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/hidden.man \
 		${MAN1PREFIX}/man/man1/hidden.1
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
