@@ -17,18 +17,18 @@ RUN_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib
 USE_RC_SUBR=	tclhttpd
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl="${TCL_LIBDIR}"	\
-		--with-tclinclude="${TCL_INCLUDEDIR}"
+		--with-tclinclude="${TCL_INCLUDEDIR}" \
+		--exec-prefix=${PREFIX}
 
-USE_TCL=	84+
-MAN1=		tclhttpd.1
+USES=		tcl
 
-NO_STAGE=	yes
 .include <bsd.port.pre.mk>
 
 SHLIB_NAME!=	${MAKE} -f "${FILESDIR}/Makefile.lib" -V SHLIB_NAME
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		SHLIB_NAME=${SHLIB_NAME}
-MAKE_ENV+=	TCLSH_PROG=${TCLSH} FILESDIR="${FILESDIR}" TCL_DVER=${TCL_VER}
+MAKE_ENV+=	TCLSH_PROG=${TCLSH} FILESDIR="${FILESDIR}" TCL_DVER=${TCL_VER} \
+		PREFIX=${STAGEDIR}${PREFIX}
 SCRIPTS_ENV+=	TCL_DVER=${TCL_VER}
 SUB_LIST+=	TCL_DVER=${TCL_VER}
 
@@ -38,20 +38,17 @@ do-build:
 		${_MAKE_JOBS} -f "${FILESDIR}/Makefile.lib"
 
 pre-su-install:
-	${MKDIR} ${PREFIX}/tclhttpd/custom
+	${MKDIR} ${STAGEDIR}${PREFIX}/tclhttpd/custom
 
 post-install:
-	${CHOWN} -R nobody ${DATADIR}${PORTVERSION}
 	${INSTALL_DATA} ${WRKSRC}/${SHLIB_NAME} \
-		${PREFIX}/lib/${PORTNAME}${PORTVERSION}/${SHLIB_NAME}
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PORTVERSION}/${SHLIB_NAME}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/httpd.tcl \
-		${WRKSRC}/bin/httpdthread.tcl ${PREFIX}/bin/
+		${WRKSRC}/bin/httpdthread.tcl ${STAGEDIR}${PREFIX}/bin/
 	${SED} 's%@VER@%${PORTVERSION}%g' < ${WRKSRC}/bin/tclhttpd.rc \
-		> ${PREFIX}/etc/tclhttpd.rc.default
-	cd ${PREFIX}/etc; test -e tclhttpd.rc || \
-		${CP} -p tclhttpd.rc.default tclhttpd.rc
+		> ${STAGEDIR}${PREFIX}/etc/tclhttpd.rc.default
 	${SED} 's%@LIB@%${SHLIB_NAME}%g' < \
 		${FILESDIR}/pkgIndex.tcl >> \
-		${PREFIX}/lib/${PORTNAME}${PORTVERSION}/pkgIndex.tcl
+		${STAGEDIR}${PREFIX}/lib/${PORTNAME}${PORTVERSION}/pkgIndex.tcl
 
 .include <bsd.port.post.mk>
