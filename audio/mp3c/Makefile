@@ -23,7 +23,7 @@ NO_STAGE=	yes
 MAN1=		mp3c.1
 MANCOMPRESSED=	no
 
-OPTIONS_DEFINE=	NLS 
+OPTIONS_DEFINE=	NLS
 
 .include <bsd.port.options.mk>
 

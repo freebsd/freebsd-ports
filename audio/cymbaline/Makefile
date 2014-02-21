@@ -18,7 +18,7 @@ USE_PYDISTUTILS=	yes
 
 PLIST_FILES=	bin/cymbaline
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

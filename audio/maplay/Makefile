@@ -20,7 +20,7 @@ NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/maplay
 PORTDOCS=	README
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 

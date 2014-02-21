@@ -29,7 +29,7 @@ USE_BZIP2=	yes
 SHEBANG_FILES=	ripit.pl
 perl_OLD_CMD=	/usr/bin/env perl
 
-OPTIONS_DEFINE=	EXAMPLES 
+OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.options.mk>
 

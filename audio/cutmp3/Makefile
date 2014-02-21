@@ -16,7 +16,7 @@ PLIST_FILES=	bin/cutmp3 man/man1/cutmp3.1.gz
 
 PORTDOCS=	README README.timetable USAGE
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/Makefile
