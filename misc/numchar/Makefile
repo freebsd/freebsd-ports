@@ -9,11 +9,11 @@ MASTER_SITES=	ftp://www.whizkidtech.redprince.net/unix/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts phone numbers between digits and characters
 
-NO_STAGE=	yes
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/numchar ${PREFIX}/bin
-	${LN} -fs ${PREFIX}/bin/numchar ${PREFIX}/bin/phdecode
-	${MKDIR} ${PREFIX}/share/doc/numchar
-	${INSTALL_MAN} ${WRKSRC}/numchar.html ${PREFIX}/share/doc/numchar
+	${INSTALL_PROGRAM} ${WRKSRC}/numchar ${STAGEDIR}${PREFIX}/bin
+	${LN} -fs ${PREFIX}/bin/numchar ${STAGEDIR}${PREFIX}/bin/phdecode
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/numchar
+	${INSTALL_MAN} ${WRKSRC}/numchar.html \
+		${STAGEDIR}${PREFIX}/share/doc/numchar
 
 .include <bsd.port.mk>
