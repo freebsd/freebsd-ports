@@ -16,12 +16,11 @@ CONFLICTS=	teTeX-base-[0-9]* tex-[0-9]* ja-ptex-base-*
 PLIST_FILES=	bin/newer
 NO_EXTRACT=	yes
 
-NO_STAGE=	yes
 do-build:
 	${CP} ${DISTDIR}/newer.c ${WRKDIR}/newer.c
 	${CC} ${CFLAGS} -o ${WRKDIR}/newer ${WRKDIR}/newer.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/newer ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKDIR}/newer ${STAGEDIR}${PREFIX}/bin
 
 .include <bsd.port.mk>
