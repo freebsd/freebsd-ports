@@ -3,6 +3,7 @@
 
 PORTNAME=		mod_auth_mellon
 PORTVERSION=		0.7.0
+PORTREVISION=		1
 CATEGORIES=		www
 MASTER_SITES=		http://modmellon.googlecode.com/files/
 DIST_SUBDIR=		apache2
@@ -10,7 +11,9 @@ DIST_SUBDIR=		apache2
 MAINTAINER=		tj@FreeBSD.org
 COMMENT=		Apache auth module for identifying SSO users
 
-LIB_DEPENDS=		lasso.8:${PORTSDIR}/security/lasso \
+LICENSE=		GPLv2
+
+LIB_DEPENDS=		lasso:${PORTSDIR}/security/lasso \
 			curl:${PORTSDIR}/ftp/curl
 
 USES=			pkgconfig
