@@ -10,17 +10,15 @@ MASTER_SITES=	http://0xcc.net/ttyrec/
 MAINTAINER=	lippe@FreeBSD.org
 COMMENT=	Tty recorder
 
-PLIST_FILES=	bin/ttyplay \
-		bin/ttyrec \
-		bin/ttytime
-
-MAN1=	ttyplay.1 ttyrec.1
-BINS=	ttyplay ttyrec ttytime
+MANPAGE=	ttyplay.1 ttyrec.1
+BINS=		ttyplay ttyrec ttytime
 
 OPTIONS_DEFINE=	OPENPTY
 OPENPTY_DESC=	Use openpty instead
 
-NO_STAGE=	yes
+PLIST_FILES=	bin/ttyplay bin/ttyrec bin/ttytime \
+		man/man1/ttyplay.1.gz man/man1/ttyrec.1.gz
+
 .include <bsd.port.options.mk>
 
 post-patch:
@@ -28,8 +26,9 @@ post-patch:
 		${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${BINS:S,^,${WRKSRC}/,} ${PREFIX}/bin
-	${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/,} ${MAN1PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${BINS:S,^,${WRKSRC}/,} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${MANPAGE:S,^,${WRKSRC}/,} \
+		${STAGEDIR}${MANPREFIX}/man/man1
 
 .if ${PORT_OPTIONS:MOPENPTY}
 CFLAGS+=	-DHAVE_openpty -lutil
