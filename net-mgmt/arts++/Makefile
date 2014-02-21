@@ -22,7 +22,7 @@ MANL=		artsportagg.l artsports.l artsprotos.l artsnets.l artsdump.l \
 
 NO_STAGE=	yes
 
-OPTIONS_DEFINE=	DOCS 
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
